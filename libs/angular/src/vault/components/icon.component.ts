@@ -35,7 +35,7 @@ export class IconComponent implements OnInit {
 
   constructor(
     private environmentService: EnvironmentService,
-    private settingsService: SettingsService
+    private settingsService: SettingsService,
   ) {}
 
   async ngOnInit() {

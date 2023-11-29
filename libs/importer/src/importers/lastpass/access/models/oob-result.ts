@@ -4,7 +4,7 @@ export class OobResult {
   constructor(
     public waitForOutOfBand: boolean,
     public passcode: string,
-    public rememberMe: boolean
+    public rememberMe: boolean,
   ) {}
 
   waitForApproval(rememberMe: boolean) {

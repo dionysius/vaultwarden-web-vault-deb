@@ -2,7 +2,10 @@ import { CryptoService } from "../abstractions/crypto.service";
 import { EncryptService } from "../abstractions/encrypt.service";
 
 export class ContainerService {
-  constructor(private cryptoService: CryptoService, private encryptService: EncryptService) {}
+  constructor(
+    private cryptoService: CryptoService,
+    private encryptService: EncryptService,
+  ) {}
 
   attachToGlobal(global: any) {
     if (!global.bitwardenContainerService) {

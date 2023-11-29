@@ -138,7 +138,7 @@ describe("AccessSelectorComponent", () => {
       expect(mockChange.mock.lastCall[0]).toHaveProperty("[0].id", "123");
       expect(mockChange.mock.lastCall[0]).toHaveProperty(
         "[0].permission",
-        CollectionPermission.Edit
+        CollectionPermission.Edit,
       );
     });
 
@@ -246,7 +246,7 @@ describe("AccessSelectorComponent", () => {
         // Assert
         const colHeading = fixture.nativeElement.querySelector("#permissionColHeading");
         expect(!!colHeading).toEqual(shouldShowColumn);
-      }
+      },
     );
   });
 });

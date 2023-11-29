@@ -78,7 +78,7 @@ describe("WebAuthnLoginService", () => {
       configService,
       webAuthnLoginPrfCryptoService,
       window,
-      logService
+      logService,
     );
   }
 
@@ -135,11 +135,11 @@ describe("WebAuthnLoginService", () => {
       };
 
       const mockedCredentialAssertionOptionsResponse = new CredentialAssertionOptionsResponse(
-        mockedCredentialAssertionOptionsServerResponse
+        mockedCredentialAssertionOptionsServerResponse,
       );
 
       webAuthnLoginApiService.getCredentialAssertionOptions.mockResolvedValue(
-        mockedCredentialAssertionOptionsResponse
+        mockedCredentialAssertionOptionsResponse,
       );
 
       // Act
@@ -190,11 +190,11 @@ describe("WebAuthnLoginService", () => {
               }),
             }),
           }),
-        })
+        }),
       );
 
       expect(webAuthnLoginPrfCryptoService.createSymmetricKeyFromPrf).toHaveBeenCalledWith(
-        prfResult
+        prfResult,
       );
 
       expect(result).toBeInstanceOf(WebAuthnLoginCredentialAssertionView);
@@ -320,7 +320,7 @@ class MockPublicKeyCredential implements PublicKeyCredential {
   // Creating the array buffer from a known hex value allows us to
   // assert on the value in tests
   private prfKeyArrayBuffer: ArrayBuffer = Utils.hexStringToArrayBuffer(
-    "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef"
+    "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",
   );
 
   getClientExtensionResults(): any {
@@ -367,11 +367,11 @@ function buildCredentialAssertionOptions(): WebAuthnLoginCredentialAssertionOpti
   };
 
   const credentialAssertionOptionsResponse = new CredentialAssertionOptionsResponse(
-    credentialAssertionOptionsServerResponse
+    credentialAssertionOptionsServerResponse,
   );
 
   return new WebAuthnLoginCredentialAssertionOptionsView(
     credentialAssertionOptionsResponse.options,
-    credentialAssertionOptionsResponse.token
+    credentialAssertionOptionsResponse.token,
   );
 }

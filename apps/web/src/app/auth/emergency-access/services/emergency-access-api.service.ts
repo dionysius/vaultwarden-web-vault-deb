@@ -41,7 +41,7 @@ export class EmergencyAccessApiService {
       "/emergency-access/" + id + "/policies",
       null,
       true,
-      true
+      true,
     );
     return new ListResponse(r, PolicyResponse);
   }
@@ -68,7 +68,7 @@ export class EmergencyAccessApiService {
       "/emergency-access/" + id + "/accept",
       request,
       true,
-      false
+      false,
     );
   }
 
@@ -78,7 +78,7 @@ export class EmergencyAccessApiService {
       "/emergency-access/" + id + "/confirm",
       request,
       true,
-      false
+      false,
     );
   }
 
@@ -100,21 +100,21 @@ export class EmergencyAccessApiService {
       "/emergency-access/" + id + "/takeover",
       null,
       true,
-      true
+      true,
     );
     return new EmergencyAccessTakeoverResponse(r);
   }
 
   async postEmergencyAccessPassword(
     id: string,
-    request: EmergencyAccessPasswordRequest
+    request: EmergencyAccessPasswordRequest,
   ): Promise<void> {
     await this.apiService.send(
       "POST",
       "/emergency-access/" + id + "/password",
       request,
       true,
-      true
+      true,
     );
   }
 
@@ -124,7 +124,7 @@ export class EmergencyAccessApiService {
       "/emergency-access/" + id + "/view",
       null,
       true,
-      true
+      true,
     );
     return new EmergencyAccessViewResponse(r);
   }

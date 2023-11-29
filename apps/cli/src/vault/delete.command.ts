@@ -14,7 +14,7 @@ export class DeleteCommand {
     private folderService: FolderService,
     private stateService: StateService,
     private apiService: ApiService,
-    private folderApiService: FolderApiServiceAbstraction
+    private folderApiService: FolderApiServiceAbstraction,
   ) {}
 
   async run(object: string, id: string, cmdOptions: Record<string, any>): Promise<Response> {

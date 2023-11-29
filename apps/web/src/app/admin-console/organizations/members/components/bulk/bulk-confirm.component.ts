@@ -33,7 +33,7 @@ export class BulkConfirmComponent implements OnInit {
     protected cryptoService: CryptoService,
     protected apiService: ApiService,
     private organizationUserService: OrganizationUserService,
-    private i18nService: I18nService
+    private i18nService: I18nService,
   ) {}
 
   async ngOnInit() {
@@ -95,7 +95,7 @@ export class BulkConfirmComponent implements OnInit {
   protected async getPublicKeys() {
     return await this.organizationUserService.postOrganizationUsersPublicKey(
       this.organizationId,
-      this.filteredUsers.map((user) => user.id)
+      this.filteredUsers.map((user) => user.id),
     );
   }
 
@@ -107,7 +107,7 @@ export class BulkConfirmComponent implements OnInit {
     const request = new OrganizationUserBulkConfirmRequest(userIdsWithKeys);
     return await this.organizationUserService.postOrganizationUserBulkConfirm(
       this.organizationId,
-      request
+      request,
     );
   }
 }

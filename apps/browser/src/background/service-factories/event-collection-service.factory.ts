@@ -34,7 +34,7 @@ export type EventCollectionServiceInitOptions = EventCollectionServiceOptions &
 
 export function eventCollectionServiceFactory(
   cache: { eventCollectionService?: AbstractEventCollectionService } & CachedServices,
-  opts: EventCollectionServiceInitOptions
+  opts: EventCollectionServiceInitOptions,
 ): Promise<AbstractEventCollectionService> {
   return factory(
     cache,
@@ -45,7 +45,7 @@ export function eventCollectionServiceFactory(
         await cipherServiceFactory(cache, opts),
         await stateServiceFactory(cache, opts),
         await organizationServiceFactory(cache, opts),
-        await eventUploadServiceFactory(cache, opts)
-      )
+        await eventUploadServiceFactory(cache, opts),
+      ),
   );
 }

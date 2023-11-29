@@ -19,7 +19,7 @@ export class SecretsManagerImportErrorDialogComponent {
   constructor(
     public dialogRef: DialogRef,
     private i18nService: I18nService,
-    @Inject(DIALOG_DATA) public data: SecretsManagerImportErrorDialogOperation
+    @Inject(DIALOG_DATA) public data: SecretsManagerImportErrorDialogOperation,
   ) {
     this.errorLines = data.error.lines;
   }

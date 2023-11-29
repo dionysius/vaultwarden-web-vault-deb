@@ -18,12 +18,12 @@ export type OrganizationServiceInitOptions = OrganizationServiceFactoryOptions &
 
 export function organizationServiceFactory(
   cache: { organizationService?: AbstractOrganizationService } & CachedServices,
-  opts: OrganizationServiceInitOptions
+  opts: OrganizationServiceInitOptions,
 ): Promise<AbstractOrganizationService> {
   return factory(
     cache,
     "organizationService",
     opts,
-    async () => new BrowserOrganizationService(await stateServiceFactory(cache, opts))
+    async () => new BrowserOrganizationService(await stateServiceFactory(cache, opts)),
   );
 }

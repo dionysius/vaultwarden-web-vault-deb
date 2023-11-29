@@ -31,7 +31,7 @@ export class ExportComponent extends BaseExportComponent {
     userVerificationService: UserVerificationService,
     formBuilder: UntypedFormBuilder,
     fileDownloadService: FileDownloadService,
-    dialogService: DialogService
+    dialogService: DialogService,
   ) {
     super(
       cryptoService,
@@ -45,7 +45,7 @@ export class ExportComponent extends BaseExportComponent {
       userVerificationService,
       formBuilder,
       fileDownloadService,
-      dialogService
+      dialogService,
     );
   }
 

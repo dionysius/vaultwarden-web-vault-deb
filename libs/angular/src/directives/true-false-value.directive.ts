@@ -16,7 +16,10 @@ export class TrueFalseValueDirective implements ControlValueAccessor {
   @Input() trueValue: boolean | string = true;
   @Input() falseValue: boolean | string = false;
 
-  constructor(private elementRef: ElementRef, private renderer: Renderer2) {}
+  constructor(
+    private elementRef: ElementRef,
+    private renderer: Renderer2,
+  ) {}
 
   @HostListener("change", ["$event"])
   onHostChange(ev: any) {

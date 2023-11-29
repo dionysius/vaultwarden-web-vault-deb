@@ -58,7 +58,7 @@ class AutofillOverlayButton extends AutofillOverlayPageElement {
     this.buttonElement.classList.add("overlay-button");
     this.buttonElement.setAttribute(
       "aria-label",
-      this.getTranslation("toggleBitwardenVaultOverlay")
+      this.getTranslation("toggleBitwardenVaultOverlay"),
     );
     this.buttonElement.addEventListener(EVENTS.CLICK, this.handleButtonElementClick);
 

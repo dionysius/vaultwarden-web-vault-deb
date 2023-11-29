@@ -32,7 +32,7 @@ export class SponsoringOrgRowComponent implements OnInit {
     private i18nService: I18nService,
     private logService: LogService,
     private platformUtilsService: PlatformUtilsService,
-    private dialogService: DialogService
+    private dialogService: DialogService,
   ) {}
 
   async ngOnInit() {
@@ -42,7 +42,7 @@ export class SponsoringOrgRowComponent implements OnInit {
       this.isSelfHosted,
       this.sponsoringOrg.familySponsorshipToDelete,
       this.sponsoringOrg.familySponsorshipValidUntil,
-      this.sponsoringOrg.familySponsorshipLastSyncDate
+      this.sponsoringOrg.familySponsorshipLastSyncDate,
     );
   }
 
@@ -89,7 +89,7 @@ export class SponsoringOrgRowComponent implements OnInit {
     selfHosted: boolean,
     toDelete?: boolean,
     validUntil?: Date,
-    lastSyncDate?: Date
+    lastSyncDate?: Date,
   ) {
     /*
      * Possible Statuses:
@@ -104,7 +104,7 @@ export class SponsoringOrgRowComponent implements OnInit {
       // They want to delete but there is a valid until date which means there is an active sponsorship
       this.statusMessage = this.i18nService.t(
         "revokeWhenExpired",
-        formatDate(validUntil, "MM/dd/yyyy", this.locale)
+        formatDate(validUntil, "MM/dd/yyyy", this.locale),
       );
       this.statusClass = "text-danger";
     } else if (toDelete) {

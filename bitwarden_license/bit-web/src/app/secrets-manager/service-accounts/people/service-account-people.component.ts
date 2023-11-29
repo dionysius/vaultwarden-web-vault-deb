@@ -46,7 +46,7 @@ export class ServiceAccountPeopleComponent {
       startWith(null),
       combineLatestWith(this.route.params),
       switchMap(([_, params]) =>
-        this.accessPolicyService.getServiceAccountAccessPolicies(params.serviceAccountId)
+        this.accessPolicyService.getServiceAccountAccessPolicies(params.serviceAccountId),
       ),
       map((policies) => {
         const rows: AccessSelectorRowView[] = [];
@@ -80,7 +80,7 @@ export class ServiceAccountPeopleComponent {
 
         return rows;
       }),
-      share()
+      share(),
     );
 
   protected handleCreateAccessPolicies(selected: SelectItemView[]) {
@@ -109,7 +109,7 @@ export class ServiceAccountPeopleComponent {
 
     return this.accessPolicyService.createServiceAccountAccessPolicies(
       this.serviceAccountId,
-      serviceAccountAccessPoliciesView
+      serviceAccountAccessPoliciesView,
     );
   }
 
@@ -118,7 +118,7 @@ export class ServiceAccountPeopleComponent {
       await this.accessPolicyService.needToShowAccessRemovalWarning(
         this.organizationId,
         policy,
-        this.rows
+        this.rows,
       )
     ) {
       this.launchDeleteWarningDialog(policy);
@@ -145,7 +145,7 @@ export class ServiceAccountPeopleComponent {
     private dialogService: DialogService,
     private i18nService: I18nService,
     private validationService: ValidationService,
-    private accessPolicyService: AccessPolicyService
+    private accessPolicyService: AccessPolicyService,
   ) {}
 
   ngOnInit(): void {

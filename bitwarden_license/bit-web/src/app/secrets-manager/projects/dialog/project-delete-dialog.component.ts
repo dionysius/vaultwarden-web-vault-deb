@@ -38,14 +38,14 @@ export class ProjectDeleteDialogComponent implements OnInit {
     private projectService: ProjectService,
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
-    private dialogService: DialogService
+    private dialogService: DialogService,
   ) {}
 
   ngOnInit(): void {
     if (!(this.data.projects?.length >= 1)) {
       this.dialogRef.close();
       throw new Error(
-        "The project delete dialog was not called with the appropriate operation values."
+        "The project delete dialog was not called with the appropriate operation values.",
       );
     }
   }

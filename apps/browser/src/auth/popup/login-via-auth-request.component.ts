@@ -48,7 +48,7 @@ export class LoginViaAuthRequestComponent
     syncService: SyncService,
     deviceTrustCryptoService: DeviceTrustCryptoServiceAbstraction,
     authReqCryptoService: AuthRequestCryptoServiceAbstraction,
-    private location: Location
+    private location: Location,
   ) {
     super(
       router,
@@ -67,7 +67,7 @@ export class LoginViaAuthRequestComponent
       stateService,
       loginService,
       deviceTrustCryptoService,
-      authReqCryptoService
+      authReqCryptoService,
     );
     super.onSuccessfulLogin = async () => {
       await syncService.fullSync(true);

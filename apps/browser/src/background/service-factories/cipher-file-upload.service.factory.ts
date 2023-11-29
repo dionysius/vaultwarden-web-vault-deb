@@ -23,7 +23,7 @@ export type CipherFileUploadServiceInitOptions = CipherFileUploadServiceFactoyOp
 
 export function cipherFileUploadServiceFactory(
   cache: { cipherFileUploadService?: CipherFileUploadServiceAbstraction } & CachedServices,
-  opts: CipherFileUploadServiceInitOptions
+  opts: CipherFileUploadServiceInitOptions,
 ): Promise<CipherFileUploadServiceAbstraction> {
   return factory(
     cache,
@@ -32,7 +32,7 @@ export function cipherFileUploadServiceFactory(
     async () =>
       new CipherFileUploadService(
         await apiServiceFactory(cache, opts),
-        await fileUploadServiceFactory(cache, opts)
-      )
+        await fileUploadServiceFactory(cache, opts),
+      ),
   );
 }

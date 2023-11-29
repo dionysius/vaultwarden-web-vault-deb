@@ -11,7 +11,7 @@ export class AccountSwitcherComponent {
   constructor(
     private accountSwitcherService: AccountSwitcherService,
     private router: Router,
-    private routerService: BrowserRouterService
+    private routerService: BrowserRouterService,
   ) {}
 
   get accountOptions$() {

@@ -124,8 +124,11 @@ h2 {
 
 @font-face {
   font-family: "bwi-font";
-  src: url(../images/bwi-font.svg) format("svg"), url(../fonts/bwi-font.ttf) format("truetype"),
-    url(../fonts/bwi-font.woff) format("woff"), url(../fonts/bwi-font.woff2) format("woff2");
+  src:
+    url(../images/bwi-font.svg) format("svg"),
+    url(../fonts/bwi-font.ttf) format("truetype"),
+    url(../fonts/bwi-font.woff) format("woff"),
+    url(../fonts/bwi-font.woff2) format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: block;

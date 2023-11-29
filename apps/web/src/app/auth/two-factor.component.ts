@@ -44,7 +44,7 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
     appIdService: AppIdService,
     loginService: LoginService,
     configService: ConfigServiceAbstraction,
-    @Inject(WINDOW) protected win: Window
+    @Inject(WINDOW) protected win: Window,
   ) {
     super(
       authService,
@@ -60,7 +60,7 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
       twoFactorService,
       appIdService,
       loginService,
-      configService
+      configService,
     );
     this.onSuccessfulLoginNavigate = this.goAfterLogIn;
   }
@@ -80,7 +80,7 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
         comp.onRecoverSelected.subscribe(() => {
           modal.close();
         });
-      }
+      },
     );
   }
 

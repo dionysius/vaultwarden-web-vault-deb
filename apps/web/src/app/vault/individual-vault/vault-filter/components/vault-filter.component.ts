@@ -84,7 +84,7 @@ export class VaultFilterComponent implements OnInit, OnDestroy {
     protected vaultFilterService: VaultFilterService,
     protected policyService: PolicyService,
     protected i18nService: I18nService,
-    protected platformUtilsService: PlatformUtilsService
+    protected platformUtilsService: PlatformUtilsService,
   ) {}
 
   async ngOnInit(): Promise<void> {
@@ -109,7 +109,7 @@ export class VaultFilterComponent implements OnInit, OnDestroy {
       this.platformUtilsService.showToast(
         "error",
         null,
-        this.i18nService.t("disabledOrganizationFilterError")
+        this.i18nService.t("disabledOrganizationFilterError"),
       );
       return;
     }
@@ -162,7 +162,7 @@ export class VaultFilterComponent implements OnInit, OnDestroy {
   protected async addOrganizationFilter(): Promise<VaultFilterSection> {
     const singleOrgPolicy = await this.policyService.policyAppliesToUser(PolicyType.SingleOrg);
     const personalVaultPolicy = await this.policyService.policyAppliesToUser(
-      PolicyType.PersonalOwnership
+      PolicyType.PersonalOwnership,
     );
 
     const addAction = !singleOrgPolicy
@@ -221,7 +221,7 @@ export class VaultFilterComponent implements OnInit, OnDestroy {
     const typeFilterSection: VaultFilterSection = {
       data$: this.vaultFilterService.buildTypeTree(
         { id: "AllItems", name: "allItems", type: "all", icon: "" },
-        allTypeFilters.filter((f) => !excludeTypes.includes(f.type))
+        allTypeFilters.filter((f) => !excludeTypes.includes(f.type)),
       ),
       header: {
         showHeader: true,
@@ -276,7 +276,7 @@ export class VaultFilterComponent implements OnInit, OnDestroy {
             type: "trash",
             icon: "bwi-trash",
           },
-        ]
+        ],
       ),
       header: {
         showHeader: false,

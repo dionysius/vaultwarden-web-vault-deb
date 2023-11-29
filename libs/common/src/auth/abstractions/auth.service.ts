@@ -27,11 +27,11 @@ export abstract class AuthService {
       | PasswordLoginCredentials
       | SsoLoginCredentials
       | AuthRequestLoginCredentials
-      | WebAuthnLoginCredentials
+      | WebAuthnLoginCredentials,
   ) => Promise<AuthResult>;
   logInTwoFactor: (
     twoFactor: TokenTwoFactorRequest,
-    captchaResponse: string
+    captchaResponse: string,
   ) => Promise<AuthResult>;
   logOut: (callback: () => void) => void;
   makePreloginKey: (masterPassword: string, email: string) => Promise<MasterKey>;
@@ -44,7 +44,7 @@ export abstract class AuthService {
   passwordlessLogin: (
     id: string,
     key: string,
-    requestApproved: boolean
+    requestApproved: boolean,
   ) => Promise<AuthRequestResponse>;
   getPushNotificationObs$: () => Observable<any>;
 }

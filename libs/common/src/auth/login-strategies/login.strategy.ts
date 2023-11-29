@@ -55,7 +55,7 @@ export abstract class LoginStrategy {
     protected messagingService: MessagingService,
     protected logService: LogService,
     protected stateService: StateService,
-    protected twoFactorService: TwoFactorService
+    protected twoFactorService: TwoFactorService,
   ) {}
 
   abstract logIn(
@@ -64,12 +64,12 @@ export abstract class LoginStrategy {
       | PasswordLoginCredentials
       | SsoLoginCredentials
       | AuthRequestLoginCredentials
-      | WebAuthnLoginCredentials
+      | WebAuthnLoginCredentials,
   ): Promise<AuthResult>;
 
   async logInTwoFactor(
     twoFactor: TokenTwoFactorRequest,
-    captchaResponse: string = null
+    captchaResponse: string = null,
   ): Promise<AuthResult> {
     this.tokenRequest.setTwoFactor(twoFactor);
     const [authResult] = await this.startLogIn();
@@ -153,7 +153,7 @@ export abstract class LoginStrategy {
         keys: accountKeys,
         decryptionOptions: AccountDecryptionOptions.fromResponse(tokenResponse),
         adminAuthRequest: adminAuthRequest?.toJSON(),
-      })
+      }),
     );
   }
 

@@ -52,7 +52,7 @@ export class TwoFactorAuthenticatorComponent
     platformUtilsService: PlatformUtilsService,
     logService: LogService,
     private stateService: StateService,
-    dialogService: DialogService
+    dialogService: DialogService,
   ) {
     super(
       apiService,
@@ -60,7 +60,7 @@ export class TwoFactorAuthenticatorComponent
       platformUtilsService,
       logService,
       userVerificationService,
-      dialogService
+      dialogService,
     );
     this.qrScript = window.document.createElement("script");
     this.qrScript.src = "scripts/qrious.min.js";

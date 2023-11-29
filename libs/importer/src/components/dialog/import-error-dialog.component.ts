@@ -18,7 +18,10 @@ export interface ErrorListItem {
 export class ImportErrorDialogComponent implements OnInit {
   protected dataSource = new TableDataSource<ErrorListItem>();
 
-  constructor(public dialogRef: DialogRef, @Inject(DIALOG_DATA) public data: Error) {}
+  constructor(
+    public dialogRef: DialogRef,
+    @Inject(DIALOG_DATA) public data: Error,
+  ) {}
 
   ngOnInit(): void {
     const split = this.data.message.split("\n\n");

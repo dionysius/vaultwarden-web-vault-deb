@@ -95,12 +95,12 @@ export class ProductSwitcherContentComponent {
         bento,
         other,
       };
-    })
+    }),
   );
 
   constructor(
     private organizationService: OrganizationService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
   ) {}
 }

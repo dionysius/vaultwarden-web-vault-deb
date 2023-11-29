@@ -46,14 +46,14 @@
     <tr bitRow alignContent="top" *ngFor="let r of rows$ | async">
       <td bitCell class="tw-flex-col">
         <div>{{ r.email }}</div>
-        <code class="tw-text-sm">{{ r.publicKey | fingerprint : r.email | async }}</code>
+        <code class="tw-text-sm">{{ r.publicKey | fingerprint: r.email | async }}</code>
       </td>
       <td bitCell class="tw-flex-col">
         <div>{{ r.requestDeviceType }}</div>
         <div class="tw-text-sm">{{ r.requestIpAddress }}</div>
       </td>
       <td bitCell class="tw-flex-col tw-text-muted">
-        {{ r.creationDate | date : "medium" }}
+        {{ r.creationDate | date: "medium" }}
       </td>
       <td bitCell class="tw-align-middle">
         <button

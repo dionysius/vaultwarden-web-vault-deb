@@ -89,7 +89,7 @@ export type AuthServiceInitOptions = AuthServiceFactoyOptions &
 
 export function authServiceFactory(
   cache: { authService?: AbstractAuthService } & CachedServices,
-  opts: AuthServiceInitOptions
+  opts: AuthServiceInitOptions,
 ): Promise<AbstractAuthService> {
   return factory(
     cache,
@@ -113,7 +113,7 @@ export function authServiceFactory(
         await passwordStrengthServiceFactory(cache, opts),
         await policyServiceFactory(cache, opts),
         await deviceTrustCryptoServiceFactory(cache, opts),
-        await authRequestCryptoServiceFactory(cache, opts)
-      )
+        await authRequestCryptoServiceFactory(cache, opts),
+      ),
   );
 }

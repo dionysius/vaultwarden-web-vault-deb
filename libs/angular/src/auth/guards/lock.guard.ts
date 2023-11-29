@@ -23,7 +23,7 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
 export function lockGuard(): CanActivateFn {
   return async (
     activatedRouteSnapshot: ActivatedRouteSnapshot,
-    routerStateSnapshot: RouterStateSnapshot
+    routerStateSnapshot: RouterStateSnapshot,
   ) => {
     const authService = inject(AuthService);
     const cryptoService = inject(CryptoService);

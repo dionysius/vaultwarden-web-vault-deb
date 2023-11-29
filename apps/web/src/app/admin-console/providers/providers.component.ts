@@ -14,7 +14,10 @@ export class ProvidersComponent implements OnInit {
   loaded = false;
   actionPromise: Promise<any>;
 
-  constructor(private providerService: ProviderService, private i18nService: I18nService) {}
+  constructor(
+    private providerService: ProviderService,
+    private i18nService: I18nService,
+  ) {}
 
   async ngOnInit() {
     document.body.classList.remove("layout_frontend");

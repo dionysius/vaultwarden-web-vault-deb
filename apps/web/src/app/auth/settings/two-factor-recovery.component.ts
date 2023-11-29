@@ -33,7 +33,7 @@ export class TwoFactorRecoveryComponent {
         "</code></div>" +
         '<p style="text-align: center;">' +
         new Date() +
-        "</p>"
+        "</p>",
     );
     w.onafterprint = () => w.close();
     w.print();

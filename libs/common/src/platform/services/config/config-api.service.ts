@@ -5,7 +5,10 @@ import { ConfigApiServiceAbstraction } from "../../abstractions/config/config-ap
 import { ServerConfigResponse } from "../../models/response/server-config.response";
 
 export class ConfigApiService implements ConfigApiServiceAbstraction {
-  constructor(private apiService: ApiService, private authService: AuthService) {}
+  constructor(
+    private apiService: ApiService,
+    private authService: AuthService,
+  ) {}
 
   async get(): Promise<ServerConfigResponse> {
     const authed: boolean =

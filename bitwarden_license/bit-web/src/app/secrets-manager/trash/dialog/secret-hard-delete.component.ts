@@ -20,7 +20,7 @@ export class SecretHardDeleteDialogComponent {
     private secretService: SecretService,
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
-    @Inject(DIALOG_DATA) public data: SecretHardDeleteOperation
+    @Inject(DIALOG_DATA) public data: SecretHardDeleteOperation,
   ) {}
 
   get title() {

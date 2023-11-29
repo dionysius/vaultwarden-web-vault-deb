@@ -57,7 +57,7 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
     private cryptoService: CryptoService,
     private logService: LogService,
     private organizationUserService: OrganizationUserService,
-    private dialogService: DialogService
+    private dialogService: DialogService,
   ) {}
 
   async ngOnInit() {
@@ -66,7 +66,7 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.destroy$))
       .subscribe(
         (enforcedPasswordPolicyOptions) =>
-          (this.enforcedPolicyOptions = enforcedPasswordPolicyOptions)
+          (this.enforcedPolicyOptions = enforcedPasswordPolicyOptions),
       );
   }
 
@@ -99,7 +99,7 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
     this.platformUtilsService.showToast(
       "info",
       null,
-      this.i18nService.t("valueCopied", this.i18nService.t("password"))
+      this.i18nService.t("valueCopied", this.i18nService.t("password")),
     );
   }
 
@@ -109,7 +109,7 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
-        this.i18nService.t("masterPasswordRequired")
+        this.i18nService.t("masterPasswordRequired"),
       );
       return false;
     }
@@ -118,7 +118,7 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
-        this.i18nService.t("masterPasswordMinlength", Utils.minimumPasswordLength)
+        this.i18nService.t("masterPasswordMinlength", Utils.minimumPasswordLength),
       );
       return false;
     }
@@ -128,13 +128,13 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
       !this.policyService.evaluateMasterPassword(
         this.passwordStrengthResult.score,
         this.newPassword,
-        this.enforcedPolicyOptions
+        this.enforcedPolicyOptions,
       )
     ) {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
-        this.i18nService.t("masterPasswordPolicyRequirementsNotMet")
+        this.i18nService.t("masterPasswordPolicyRequirementsNotMet"),
       );
       return;
     }
@@ -171,7 +171,7 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
           const orgSymKey = await this.cryptoService.getOrgKey(this.organizationId);
           const decPrivateKey = await this.cryptoService.decryptToBytes(
             new EncString(encryptedPrivateKey),
-            orgSymKey
+            orgSymKey,
           );
 
           // Decrypt User's Reset Password Key to get UserKey
@@ -183,17 +183,17 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
             this.newPassword,
             this.email.trim().toLowerCase(),
             kdfType,
-            new KdfConfig(kdfIterations, kdfMemory, kdfParallelism)
+            new KdfConfig(kdfIterations, kdfMemory, kdfParallelism),
           );
           const newMasterKeyHash = await this.cryptoService.hashMasterKey(
             this.newPassword,
-            newMasterKey
+            newMasterKey,
           );
 
           // Create new encrypted user key for the User
           const newUserKey = await this.cryptoService.encryptUserKeyWithMasterKey(
             newMasterKey,
-            existingUserKey
+            existingUserKey,
           );
 
           // Create request
@@ -205,7 +205,7 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
           return this.organizationUserService.putOrganizationUserResetPassword(
             this.organizationId,
             this.id,
-            request
+            request,
           );
         });
 
@@ -213,7 +213,7 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
       this.platformUtilsService.showToast(
         "success",
         null,
-        this.i18nService.t("resetPasswordSuccess")
+        this.i18nService.t("resetPasswordSuccess"),
       );
       this.onPasswordReset.emit();
     } catch (e) {

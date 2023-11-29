@@ -33,7 +33,7 @@ export class ProgressComponent {
 
   get outerBarStyles() {
     return ["tw-overflow-hidden", "tw-rounded", "tw-bg-secondary-100"].concat(
-      SizeClasses[this.size]
+      SizeClasses[this.size],
     );
   }
 

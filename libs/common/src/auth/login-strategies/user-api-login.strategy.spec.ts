@@ -72,7 +72,7 @@ describe("UserApiLoginStrategy", () => {
       stateService,
       twoFactorService,
       environmentService,
-      keyConnectorService
+      keyConnectorService,
     );
 
     credentials = new UserApiLoginCredentials(apiClientId, apiClientSecret);
@@ -93,7 +93,7 @@ describe("UserApiLoginStrategy", () => {
           provider: null,
           token: null,
         }),
-      })
+      }),
     );
   });
 

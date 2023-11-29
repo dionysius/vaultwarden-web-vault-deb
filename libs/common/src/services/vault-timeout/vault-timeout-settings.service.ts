@@ -22,7 +22,7 @@ export class VaultTimeoutSettingsService implements VaultTimeoutSettingsServiceA
     private tokenService: TokenService,
     private policyService: PolicyService,
     private stateService: StateService,
-    private userVerificationService: UserVerificationService
+    private userVerificationService: UserVerificationService,
   ) {}
 
   async setVaultTimeoutOptions(timeout: number, action: VaultTimeoutAction): Promise<void> {

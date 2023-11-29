@@ -71,7 +71,7 @@ export class AccessPolicyService {
     private cryptoService: CryptoService,
     private organizationService: OrganizationService,
     protected apiService: ApiService,
-    protected encryptService: EncryptService
+    protected encryptService: EncryptService,
   ) {}
 
   refreshProjectAccessPolicyChanges() {
@@ -84,14 +84,14 @@ export class AccessPolicyService {
 
   async getGrantedPolicies(
     serviceAccountId: string,
-    organizationId: string
+    organizationId: string,
   ): Promise<ServiceAccountProjectAccessPolicyView[]> {
     const r = await this.apiService.send(
       "GET",
       "/service-accounts/" + serviceAccountId + "/granted-policies",
       null,
       true,
-      true
+      true,
     );
 
     const results = new ListResponse(r, ServiceAccountProjectAccessPolicyResponse);
@@ -101,7 +101,7 @@ export class AccessPolicyService {
   async createGrantedPolicies(
     organizationId: string,
     serviceAccountId: string,
-    policies: ServiceAccountProjectAccessPolicyView[]
+    policies: ServiceAccountProjectAccessPolicyView[],
   ): Promise<ServiceAccountProjectAccessPolicyView[]> {
     const request = this.getGrantedPoliciesCreateRequest(policies);
     const r = await this.apiService.send(
@@ -109,12 +109,12 @@ export class AccessPolicyService {
       "/service-accounts/" + serviceAccountId + "/granted-policies",
       request,
       true,
-      true
+      true,
     );
     const results = new ListResponse(r, ServiceAccountProjectAccessPolicyResponse);
     const views = await this.createServiceAccountProjectAccessPolicyViews(
       results.data,
-      organizationId
+      organizationId,
     );
     this._serviceAccountGrantedPolicyChanges$.next(views);
     return views;
@@ -122,14 +122,14 @@ export class AccessPolicyService {
 
   async getProjectAccessPolicies(
     organizationId: string,
-    projectId: string
+    projectId: string,
   ): Promise<ProjectAccessPoliciesView> {
     const r = await this.apiService.send(
       "GET",
       "/projects/" + projectId + "/access-policies",
       null,
       true,
-      true
+      true,
     );
 
     const results = new ProjectAccessPoliciesResponse(r);
@@ -137,14 +137,14 @@ export class AccessPolicyService {
   }
 
   async getProjectPeopleAccessPolicies(
-    projectId: string
+    projectId: string,
   ): Promise<ProjectPeopleAccessPoliciesView> {
     const r = await this.apiService.send(
       "GET",
       "/projects/" + projectId + "/access-policies/people",
       null,
       true,
-      true
+      true,
     );
 
     const results = new ProjectPeopleAccessPoliciesResponse(r);
@@ -153,7 +153,7 @@ export class AccessPolicyService {
 
   async putProjectPeopleAccessPolicies(
     projectId: string,
-    peoplePoliciesView: ProjectPeopleAccessPoliciesView
+    peoplePoliciesView: ProjectPeopleAccessPoliciesView,
   ) {
     const request = this.getPeopleAccessPoliciesRequest(peoplePoliciesView);
     const r = await this.apiService.send(
@@ -161,21 +161,21 @@ export class AccessPolicyService {
       "/projects/" + projectId + "/access-policies/people",
       request,
       true,
-      true
+      true,
     );
     const results = new ProjectPeopleAccessPoliciesResponse(r);
     return this.createProjectPeopleAccessPoliciesView(results);
   }
 
   async getServiceAccountAccessPolicies(
-    serviceAccountId: string
+    serviceAccountId: string,
   ): Promise<ServiceAccountAccessPoliciesView> {
     const r = await this.apiService.send(
       "GET",
       "/service-accounts/" + serviceAccountId + "/access-policies",
       null,
       true,
-      true
+      true,
     );
 
     const results = new ServiceAccountAccessPoliciesResponse(r);
@@ -185,7 +185,7 @@ export class AccessPolicyService {
   async createProjectAccessPolicies(
     organizationId: string,
     projectId: string,
-    projectAccessPoliciesView: ProjectAccessPoliciesView
+    projectAccessPoliciesView: ProjectAccessPoliciesView,
   ): Promise<ProjectAccessPoliciesView> {
     const request = this.getAccessPoliciesCreateRequest(projectAccessPoliciesView);
     const r = await this.apiService.send(
@@ -193,7 +193,7 @@ export class AccessPolicyService {
       "/projects/" + projectId + "/access-policies",
       request,
       true,
-      true
+      true,
     );
     const results = new ProjectAccessPoliciesResponse(r);
     const view = await this.createProjectAccessPoliciesView(organizationId, results);
@@ -203,17 +203,17 @@ export class AccessPolicyService {
 
   async createServiceAccountAccessPolicies(
     serviceAccountId: string,
-    serviceAccountAccessPoliciesView: ServiceAccountAccessPoliciesView
+    serviceAccountAccessPoliciesView: ServiceAccountAccessPoliciesView,
   ): Promise<ServiceAccountAccessPoliciesView> {
     const request = this.getServiceAccountAccessPoliciesCreateRequest(
-      serviceAccountAccessPoliciesView
+      serviceAccountAccessPoliciesView,
     );
     const r = await this.apiService.send(
       "POST",
       "/service-accounts/" + serviceAccountId + "/access-policies",
       request,
       true,
-      true
+      true,
     );
     const results = new ServiceAccountAccessPoliciesResponse(r);
     const view = await this.createServiceAccountAccessPoliciesView(results);
@@ -237,14 +237,14 @@ export class AccessPolicyService {
       "/access-policies/" + baseAccessPolicyView.id,
       payload,
       true,
-      true
+      true,
     );
   }
 
   async needToShowAccessRemovalWarning(
     organizationId: string,
     policy: AccessSelectorRowView,
-    currentPolicies: AccessSelectorRowView[]
+    currentPolicies: AccessSelectorRowView[],
   ): Promise<boolean> {
     const organization = this.organizationService.get(organizationId);
     if (organization.isOwner || organization.isAdmin) {
@@ -273,7 +273,7 @@ export class AccessPolicyService {
 
   private async createProjectAccessPoliciesView(
     organizationId: string,
-    projectAccessPoliciesResponse: ProjectAccessPoliciesResponse
+    projectAccessPoliciesResponse: ProjectAccessPoliciesResponse,
   ): Promise<ProjectAccessPoliciesView> {
     const orgKey = await this.getOrganizationKey(organizationId);
     const view = new ProjectAccessPoliciesView();
@@ -287,13 +287,13 @@ export class AccessPolicyService {
     view.serviceAccountAccessPolicies = await Promise.all(
       projectAccessPoliciesResponse.serviceAccountAccessPolicies.map(async (ap) => {
         return await this.createServiceAccountProjectAccessPolicyView(orgKey, ap);
-      })
+      }),
     );
     return view;
   }
 
   private createProjectPeopleAccessPoliciesView(
-    peopleAccessPoliciesResponse: ProjectPeopleAccessPoliciesResponse
+    peopleAccessPoliciesResponse: ProjectPeopleAccessPoliciesResponse,
   ): ProjectPeopleAccessPoliciesView {
     const view = new ProjectPeopleAccessPoliciesView();
 
@@ -307,7 +307,7 @@ export class AccessPolicyService {
   }
 
   private getAccessPoliciesCreateRequest(
-    projectAccessPoliciesView: ProjectAccessPoliciesView
+    projectAccessPoliciesView: ProjectAccessPoliciesView,
   ): AccessPoliciesCreateRequest {
     const createRequest = new AccessPoliciesCreateRequest();
 
@@ -315,7 +315,7 @@ export class AccessPolicyService {
       createRequest.userAccessPolicyRequests = projectAccessPoliciesView.userAccessPolicies.map(
         (ap) => {
           return this.getAccessPolicyRequest(ap.organizationUserId, ap);
-        }
+        },
       );
     }
 
@@ -323,7 +323,7 @@ export class AccessPolicyService {
       createRequest.groupAccessPolicyRequests = projectAccessPoliciesView.groupAccessPolicies.map(
         (ap) => {
           return this.getAccessPolicyRequest(ap.groupId, ap);
-        }
+        },
       );
     }
 
@@ -337,7 +337,7 @@ export class AccessPolicyService {
   }
 
   private getPeopleAccessPoliciesRequest(
-    projectPeopleAccessPoliciesView: ProjectPeopleAccessPoliciesView
+    projectPeopleAccessPoliciesView: ProjectPeopleAccessPoliciesView,
   ): PeopleAccessPoliciesRequest {
     const request = new PeopleAccessPoliciesRequest();
 
@@ -345,7 +345,7 @@ export class AccessPolicyService {
       request.userAccessPolicyRequests = projectPeopleAccessPoliciesView.userAccessPolicies.map(
         (ap) => {
           return this.getAccessPolicyRequest(ap.organizationUserId, ap);
-        }
+        },
       );
     }
 
@@ -353,7 +353,7 @@ export class AccessPolicyService {
       request.groupAccessPolicyRequests = projectPeopleAccessPoliciesView.groupAccessPolicies.map(
         (ap) => {
           return this.getAccessPolicyRequest(ap.groupId, ap);
-        }
+        },
       );
     }
 
@@ -361,7 +361,7 @@ export class AccessPolicyService {
   }
 
   private createUserProjectAccessPolicyView(
-    response: UserProjectAccessPolicyResponse
+    response: UserProjectAccessPolicyResponse,
   ): UserProjectAccessPolicyView {
     return {
       ...this.createBaseAccessPolicyView(response),
@@ -374,7 +374,7 @@ export class AccessPolicyService {
   }
 
   private createGroupProjectAccessPolicyView(
-    response: GroupProjectAccessPolicyResponse
+    response: GroupProjectAccessPolicyResponse,
   ): GroupProjectAccessPolicyView {
     return {
       ...this.createBaseAccessPolicyView(response),
@@ -387,7 +387,7 @@ export class AccessPolicyService {
 
   private async createServiceAccountProjectAccessPolicyView(
     organizationKey: SymmetricCryptoKey,
-    response: ServiceAccountProjectAccessPolicyResponse
+    response: ServiceAccountProjectAccessPolicyResponse,
   ): Promise<ServiceAccountProjectAccessPolicyView> {
     return {
       ...this.createBaseAccessPolicyView(response),
@@ -396,18 +396,18 @@ export class AccessPolicyService {
       grantedProjectName: response.grantedProjectName
         ? await this.encryptService.decryptToUtf8(
             new EncString(response.grantedProjectName),
-            organizationKey
+            organizationKey,
           )
         : null,
       serviceAccountName: await this.encryptService.decryptToUtf8(
         new EncString(response.serviceAccountName),
-        organizationKey
+        organizationKey,
       ),
     };
   }
 
   private getServiceAccountAccessPoliciesCreateRequest(
-    serviceAccountAccessPoliciesView: ServiceAccountAccessPoliciesView
+    serviceAccountAccessPoliciesView: ServiceAccountAccessPoliciesView,
   ): AccessPoliciesCreateRequest {
     const createRequest = new AccessPoliciesCreateRequest();
 
@@ -429,7 +429,7 @@ export class AccessPolicyService {
   }
 
   private async createServiceAccountAccessPoliciesView(
-    serviceAccountAccessPoliciesResponse: ServiceAccountAccessPoliciesResponse
+    serviceAccountAccessPoliciesResponse: ServiceAccountAccessPoliciesResponse,
   ): Promise<ServiceAccountAccessPoliciesView> {
     const view = new ServiceAccountAccessPoliciesView();
     view.userAccessPolicies = serviceAccountAccessPoliciesResponse.userAccessPolicies.map((ap) => {
@@ -438,13 +438,13 @@ export class AccessPolicyService {
     view.groupAccessPolicies = serviceAccountAccessPoliciesResponse.groupAccessPolicies.map(
       (ap) => {
         return this.createGroupServiceAccountAccessPolicyView(ap);
-      }
+      },
     );
     return view;
   }
 
   private createUserServiceAccountAccessPolicyView(
-    response: UserServiceAccountAccessPolicyResponse
+    response: UserServiceAccountAccessPolicyResponse,
   ): UserServiceAccountAccessPolicyView {
     return {
       ...this.createBaseAccessPolicyView(response),
@@ -456,7 +456,7 @@ export class AccessPolicyService {
   }
 
   private createGroupServiceAccountAccessPolicyView(
-    response: GroupServiceAccountAccessPolicyResponse
+    response: GroupServiceAccountAccessPolicyResponse,
   ): GroupServiceAccountAccessPolicyView {
     return {
       ...this.createBaseAccessPolicyView(response),
@@ -473,7 +473,7 @@ export class AccessPolicyService {
       "/organizations/" + organizationId + "/access-policies/people/potential-grantees",
       null,
       true,
-      true
+      true,
     );
     const results = new ListResponse(r, PotentialGranteeResponse);
     return await this.createPotentialGranteeViews(organizationId, results.data);
@@ -485,7 +485,7 @@ export class AccessPolicyService {
       "/organizations/" + organizationId + "/access-policies/service-accounts/potential-grantees",
       null,
       true,
-      true
+      true,
     );
     const results = new ListResponse(r, PotentialGranteeResponse);
     return await this.createPotentialGranteeViews(organizationId, results.data);
@@ -497,7 +497,7 @@ export class AccessPolicyService {
       "/organizations/" + organizationId + "/access-policies/projects/potential-grantees",
       null,
       true,
-      true
+      true,
     );
     const results = new ListResponse(r, PotentialGranteeResponse);
     return await this.createPotentialGranteeViews(organizationId, results.data);
@@ -514,7 +514,7 @@ export class AccessPolicyService {
       | UserServiceAccountAccessPolicyView
       | GroupProjectAccessPolicyView
       | GroupServiceAccountAccessPolicyView
-      | ServiceAccountProjectAccessPolicyView
+      | ServiceAccountProjectAccessPolicyView,
   ) {
     const request = new AccessPolicyRequest();
     request.granteeId = granteeId;
@@ -529,7 +529,7 @@ export class AccessPolicyService {
       | UserServiceAccountAccessPolicyResponse
       | GroupProjectAccessPolicyResponse
       | GroupServiceAccountAccessPolicyResponse
-      | ServiceAccountProjectAccessPolicyResponse
+      | ServiceAccountProjectAccessPolicyResponse,
   ) {
     return {
       id: response.id,
@@ -542,7 +542,7 @@ export class AccessPolicyService {
 
   private async createPotentialGranteeViews(
     organizationId: string,
-    results: PotentialGranteeResponse[]
+    results: PotentialGranteeResponse[],
   ): Promise<PotentialGranteeView[]> {
     const orgKey = await this.getOrganizationKey(organizationId);
     return await Promise.all(
@@ -560,12 +560,12 @@ export class AccessPolicyService {
           view.name = r.name;
         }
         return view;
-      })
+      }),
     );
   }
 
   private getGrantedPoliciesCreateRequest(
-    policies: ServiceAccountProjectAccessPolicyView[]
+    policies: ServiceAccountProjectAccessPolicyView[],
   ): GrantedPolicyRequest[] {
     return policies.map((ap) => {
       const request = new GrantedPolicyRequest();
@@ -578,7 +578,7 @@ export class AccessPolicyService {
 
   private async createServiceAccountProjectAccessPolicyViews(
     responses: ServiceAccountProjectAccessPolicyResponse[],
-    organizationId: string
+    organizationId: string,
   ): Promise<ServiceAccountProjectAccessPolicyView[]> {
     const orgKey = await this.getOrganizationKey(organizationId);
     return await Promise.all(
@@ -594,17 +594,17 @@ export class AccessPolicyService {
         view.serviceAccountName = response.serviceAccountName
           ? await this.encryptService.decryptToUtf8(
               new EncString(response.serviceAccountName),
-              orgKey
+              orgKey,
             )
           : null;
         view.grantedProjectName = response.grantedProjectName
           ? await this.encryptService.decryptToUtf8(
               new EncString(response.grantedProjectName),
-              orgKey
+              orgKey,
             )
           : null;
         return view;
-      })
+      }),
     );
   }
 }

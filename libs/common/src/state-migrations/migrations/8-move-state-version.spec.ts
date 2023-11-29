@@ -50,7 +50,7 @@ describe("moveStateVersion", () => {
     it("should throw if state version not found", async () => {
       helper.get.mockReturnValue({ otherStuff: "otherStuff1" } as any);
       await expect(sut.migrate(helper)).rejects.toThrow(
-        "Migration failed, state version not found"
+        "Migration failed, state version not found",
       );
     });
 

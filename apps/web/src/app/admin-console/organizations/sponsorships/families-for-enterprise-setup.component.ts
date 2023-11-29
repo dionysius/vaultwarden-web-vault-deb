@@ -64,7 +64,7 @@ export class FamiliesForEnterpriseSetupComponent implements OnInit, OnDestroy {
     private syncService: SyncService,
     private validationService: ValidationService,
     private organizationService: OrganizationService,
-    private dialogService: DialogService
+    private dialogService: DialogService,
   ) {}
 
   async ngOnInit() {
@@ -77,7 +77,7 @@ export class FamiliesForEnterpriseSetupComponent implements OnInit, OnDestroy {
           "error",
           null,
           this.i18nService.t("sponsoredFamiliesAcceptFailed"),
-          { timeout: 10000 }
+          { timeout: 10000 },
         );
         this.router.navigate(["/"]);
         return;
@@ -91,7 +91,7 @@ export class FamiliesForEnterpriseSetupComponent implements OnInit, OnDestroy {
     });
 
     this.existingFamilyOrganizations$ = this.organizationService.organizations$.pipe(
-      map((orgs) => orgs.filter((o) => o.planProductType === ProductType.Families))
+      map((orgs) => orgs.filter((o) => o.planProductType === ProductType.Families)),
     );
 
     this.existingFamilyOrganizations$.pipe(takeUntil(this._destroy)).subscribe((orgs) => {
@@ -131,7 +131,7 @@ export class FamiliesForEnterpriseSetupComponent implements OnInit, OnDestroy {
       this.platformUtilsService.showToast(
         "success",
         null,
-        this.i18nService.t("sponsoredFamiliesOfferRedeemed")
+        this.i18nService.t("sponsoredFamiliesOfferRedeemed"),
       );
       await this.syncService.fullSync(true);
 

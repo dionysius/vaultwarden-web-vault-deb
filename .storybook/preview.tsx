@@ -48,7 +48,7 @@ const decorator = componentWrapperDecorator(
   },
   ({ globals }) => {
     return { theme: `${globals["theme"]}` };
-  }
+  },
 );
 
 const preview: Preview = {

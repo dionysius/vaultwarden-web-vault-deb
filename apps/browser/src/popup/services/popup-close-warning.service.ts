@@ -26,7 +26,7 @@ export class PopupCloseWarningService {
         // Older methods with better support
         e.returnValue = confirmationMessage;
         return confirmationMessage;
-      }
+      },
     );
   }
 

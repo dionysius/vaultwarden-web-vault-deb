@@ -24,7 +24,7 @@ export class MultithreadEncryptServiceImplementation extends EncryptServiceImple
    */
   async decryptItems<T extends InitializerMetadata>(
     items: Decryptable<T>[],
-    key: SymmetricCryptoKey
+    key: SymmetricCryptoKey,
   ): Promise<T[]> {
     if (items == null || items.length < 1) {
       return [];
@@ -36,8 +36,8 @@ export class MultithreadEncryptServiceImplementation extends EncryptServiceImple
       new URL(
         /* webpackChunkName: 'encrypt-worker' */
         "@bitwarden/common/platform/services/cryptography/encrypt.worker.ts",
-        import.meta.url
-      )
+        import.meta.url,
+      ),
     );
 
     this.restartTimeout();
@@ -58,11 +58,11 @@ export class MultithreadEncryptServiceImplementation extends EncryptServiceImple
           items.map((jsonItem: Jsonify<T>) => {
             const initializer = getClassInitializer<T>(jsonItem.initializerKey);
             return initializer(jsonItem);
-          })
+          }),
         ),
         takeUntil(this.clear$),
-        defaultIfEmpty([])
-      )
+        defaultIfEmpty([]),
+      ),
     );
   }
 

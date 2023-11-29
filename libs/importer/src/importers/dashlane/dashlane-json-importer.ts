@@ -67,7 +67,7 @@ export class DashlaneJsonImporter extends BaseImporter implements Importer {
 
       cipher.login.username = this.getValueOrDefault(
         credential.login,
-        this.getValueOrDefault(credential.secondaryLogin)
+        this.getValueOrDefault(credential.secondaryLogin),
       );
       if (this.isNullOrWhitespace(cipher.login.username)) {
         cipher.login.username = this.getValueOrDefault(credential.email);

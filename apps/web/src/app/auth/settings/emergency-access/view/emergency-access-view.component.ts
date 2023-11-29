@@ -28,7 +28,7 @@ export class EmergencyAccessViewComponent implements OnInit {
     private modalService: ModalService,
     private router: Router,
     private route: ActivatedRoute,
-    private emergencyAccessService: EmergencyAccessService
+    private emergencyAccessService: EmergencyAccessService,
   ) {}
 
   ngOnInit() {
@@ -52,7 +52,7 @@ export class EmergencyAccessViewComponent implements OnInit {
       (comp) => {
         comp.cipherId = cipher == null ? null : cipher.id;
         comp.cipher = cipher;
-      }
+      },
     );
 
     return childComponent;
@@ -70,7 +70,7 @@ export class EmergencyAccessViewComponent implements OnInit {
       (comp) => {
         comp.cipher = cipher;
         comp.emergencyAccessId = this.id;
-      }
+      },
     );
   }
 }

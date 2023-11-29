@@ -8,11 +8,11 @@ import { I18nService as BaseI18nService } from "@bitwarden/common/platform/servi
 export class I18nMainService extends BaseI18nService {
   constructor(systemLanguage: string, localesDirectory: string) {
     super(systemLanguage, localesDirectory, (formattedLocale: string) =>
-      this.readLanguageFile(formattedLocale)
+      this.readLanguageFile(formattedLocale),
     );
 
     ipcMain.handle("getLanguageFile", async (event, formattedLocale: string) =>
-      this.readLanguageFile(formattedLocale)
+      this.readLanguageFile(formattedLocale),
     );
 
     // Please leave 'en' where it is, as it's our fallback language in case no translation can be found

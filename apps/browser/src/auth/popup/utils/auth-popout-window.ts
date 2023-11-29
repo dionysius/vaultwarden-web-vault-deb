@@ -47,7 +47,7 @@ async function closeUnlockPopout() {
 async function openSsoAuthResultPopout(resultData: { code: string; state: string }) {
   const { code, state } = resultData;
   const authResultUrl = `popup/index.html#/sso?code=${encodeURIComponent(
-    code
+    code,
   )}&state=${encodeURIComponent(state)}`;
 
   await BrowserPopupUtils.openPopout(authResultUrl, {

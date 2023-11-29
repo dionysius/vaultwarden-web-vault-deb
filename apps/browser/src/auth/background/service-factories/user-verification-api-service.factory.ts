@@ -18,12 +18,12 @@ export type UserVerificationApiServiceInitOptions = UserVerificationApiServiceFa
 
 export function userVerificationApiServiceFactory(
   cache: { userVerificationApiService?: UserVerificationApiServiceAbstraction } & CachedServices,
-  opts: UserVerificationApiServiceInitOptions
+  opts: UserVerificationApiServiceInitOptions,
 ): Promise<UserVerificationApiServiceAbstraction> {
   return factory(
     cache,
     "userVerificationApiService",
     opts,
-    async () => new UserVerificationApiService(await apiServiceFactory(cache, opts))
+    async () => new UserVerificationApiService(await apiServiceFactory(cache, opts)),
   );
 }

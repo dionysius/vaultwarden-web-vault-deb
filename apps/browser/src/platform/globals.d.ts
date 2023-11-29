@@ -10,7 +10,7 @@ type OperaAddons = {
   installExtension: (
     id: string,
     success_callback: () => void,
-    error_callback: (errorMessage: string) => void
+    error_callback: (errorMessage: string) => void,
   ) => void;
 };
 
@@ -49,7 +49,7 @@ type OperaSidebarAction = {
       path?: string | Record<number, string>;
       tabId?: number;
     },
-    callback?: () => void
+    callback?: () => void,
   ) => void;
   /**
    * @link https://dev.opera.com/extensions/sidebar-action-api/#method-setpanel
@@ -84,7 +84,7 @@ type OperaSidebarAction = {
    */
   getBadgeBackgroundColor: (
     details: { tabId?: number },
-    callback: (result: ColorArray) => void
+    callback: (result: ColorArray) => void,
   ) => void;
   /**
    * *Not supported on mac*

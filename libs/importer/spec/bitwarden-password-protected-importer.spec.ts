@@ -33,7 +33,7 @@ describe("BitwardenPasswordProtectedImporter", () => {
       cryptoService,
       i18nService,
       cipherService,
-      promptForPassword_callback
+      promptForPassword_callback,
     );
   });
 

@@ -34,7 +34,7 @@ describe("ConfigService", () => {
       configApiService,
       authService,
       environmentService,
-      logService
+      logService,
     );
     configService.init();
     return configService;
@@ -51,7 +51,7 @@ describe("ConfigService", () => {
 
     serverResponseCount = 1;
     configApiService.get.mockImplementation(() =>
-      Promise.resolve(serverConfigResponseFactory("server" + serverResponseCount++))
+      Promise.resolve(serverConfigResponseFactory("server" + serverResponseCount++)),
     );
 
     jest.useFakeTimers();
@@ -124,7 +124,7 @@ describe("ConfigService", () => {
 
         const oneHourInMs = 1000 * 3600;
         jest.advanceTimersByTime(oneHourInMs * hours + 1);
-      }
+      },
     );
 
     it("when environment URLs change", (done) => {
@@ -166,7 +166,7 @@ describe("ConfigService", () => {
     configService.serverConfig$.pipe(take(1)).subscribe(() => {
       try {
         expect(stateService.setServerConfig).toHaveBeenCalledWith(
-          expect.objectContaining({ gitHash: "server1" })
+          expect.objectContaining({ gitHash: "server1" }),
         );
         done();
       } catch (e) {

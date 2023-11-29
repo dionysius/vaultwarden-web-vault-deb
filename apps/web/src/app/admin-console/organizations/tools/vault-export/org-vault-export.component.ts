@@ -34,7 +34,7 @@ export class OrganizationVaultExportComponent extends ExportComponent {
     userVerificationService: UserVerificationService,
     formBuilder: UntypedFormBuilder,
     fileDownloadService: FileDownloadService,
-    dialogService: DialogService
+    dialogService: DialogService,
   ) {
     super(
       cryptoService,
@@ -47,7 +47,7 @@ export class OrganizationVaultExportComponent extends ExportComponent {
       userVerificationService,
       formBuilder,
       fileDownloadService,
-      dialogService
+      dialogService,
     );
   }
 
@@ -80,7 +80,7 @@ export class OrganizationVaultExportComponent extends ExportComponent {
       EventType.Organization_ClientExportedVault,
       null,
       null,
-      this.organizationId
+      this.organizationId,
     );
   }
 }

@@ -7,7 +7,7 @@ export class WebAuthnLoginTokenRequest extends TokenRequest {
   constructor(
     public token: string,
     public deviceResponse: WebAuthnLoginAssertionResponseRequest,
-    device?: DeviceRequest
+    device?: DeviceRequest,
   ) {
     super(undefined, device);
   }

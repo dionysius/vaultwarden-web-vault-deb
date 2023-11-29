@@ -29,7 +29,7 @@ export class AccountComponent {
     private route: ActivatedRoute,
     private syncService: SyncService,
     private platformUtilsService: PlatformUtilsService,
-    private logService: LogService
+    private logService: LogService,
   ) {}
 
   async ngOnInit() {

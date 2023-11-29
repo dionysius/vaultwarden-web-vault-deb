@@ -26,7 +26,7 @@ export class FolderAddEditComponent extends BaseFolderAddEditComponent {
     private route: ActivatedRoute,
     logService: LogService,
     dialogService: DialogService,
-    formBuilder: FormBuilder
+    formBuilder: FormBuilder,
   ) {
     super(
       folderService,
@@ -35,7 +35,7 @@ export class FolderAddEditComponent extends BaseFolderAddEditComponent {
       platformUtilsService,
       logService,
       dialogService,
-      formBuilder
+      formBuilder,
     );
   }
 

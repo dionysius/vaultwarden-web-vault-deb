@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     private router: Router,
     private i18nService: I18nService,
     private environmentService: EnvironmentService,
-    private loginService: LoginService
+    private loginService: LoginService,
   ) {}
 
   async ngOnInit(): Promise<void> {
@@ -73,7 +73,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccured"),
-        this.i18nService.t("invalidEmail")
+        this.i18nService.t("invalidEmail"),
       );
       return;
     }

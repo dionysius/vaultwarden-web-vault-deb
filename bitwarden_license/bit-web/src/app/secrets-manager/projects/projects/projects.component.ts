@@ -40,7 +40,7 @@ export class ProjectsComponent implements OnInit {
     private projectService: ProjectService,
     private accessPolicyService: AccessPolicyService,
     private dialogService: DialogService,
-    private organizationService: OrganizationService
+    private organizationService: OrganizationService,
   ) {}
 
   ngOnInit() {
@@ -54,7 +54,7 @@ export class ProjectsComponent implements OnInit {
         this.organizationEnabled = this.organizationService.get(params.organizationId)?.enabled;
 
         return await this.getProjects();
-      })
+      }),
     );
   }
 
@@ -97,7 +97,7 @@ export class ProjectsComponent implements OnInit {
             message: "smProjectsDeleteBulkConfirmation",
             details: this.getBulkConfirmationDetails(readOnlyProjects),
           },
-        }
+        },
       );
 
       const result = await lastValueFrom(dialogRef.closed);

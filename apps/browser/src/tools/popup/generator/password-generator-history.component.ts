@@ -15,7 +15,7 @@ export class PasswordGeneratorHistoryComponent extends BasePasswordGeneratorHist
     passwordGenerationService: PasswordGenerationServiceAbstraction,
     platformUtilsService: PlatformUtilsService,
     i18nService: I18nService,
-    private location: Location
+    private location: Location,
   ) {
     super(passwordGenerationService, platformUtilsService, i18nService, window);
   }

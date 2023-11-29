@@ -13,7 +13,7 @@ export type Metadata = { SENDER: typeof SENDER };
 export type MessageWithMetadata = Message & Metadata;
 type Handler = (
   message: MessageWithMetadata,
-  abortController?: AbortController
+  abortController?: AbortController,
 ) => Promise<Message | undefined>;
 
 /**

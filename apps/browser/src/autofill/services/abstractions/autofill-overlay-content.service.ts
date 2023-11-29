@@ -17,7 +17,7 @@ interface AutofillOverlayContentService {
   init(): void;
   setupAutofillOverlayListenerOnField(
     autofillFieldElement: ElementWithOpId<FormFieldElement>,
-    autofillFieldData: AutofillField
+    autofillFieldData: AutofillField,
   ): Promise<void>;
   openAutofillOverlay(options: OpenAutofillOverlayOptions): void;
   removeAutofillOverlay(): void;

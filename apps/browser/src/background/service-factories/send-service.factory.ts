@@ -29,7 +29,7 @@ export type SendServiceInitOptions = SendServiceFactoryOptions &
 
 export function sendServiceFactory(
   cache: { sendService?: InternalSendService } & CachedServices,
-  opts: SendServiceInitOptions
+  opts: SendServiceInitOptions,
 ): Promise<InternalSendService> {
   return factory(
     cache,
@@ -40,7 +40,7 @@ export function sendServiceFactory(
         await cryptoServiceFactory(cache, opts),
         await i18nServiceFactory(cache, opts),
         await cryptoFunctionServiceFactory(cache, opts),
-        await stateServiceFactory(cache, opts)
-      )
+        await stateServiceFactory(cache, opts),
+      ),
   );
 }

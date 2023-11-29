@@ -16,7 +16,7 @@ export class SendGetCommand extends DownloadCommand {
     private sendService: SendService,
     private environmentService: EnvironmentService,
     private searchService: SearchService,
-    cryptoService: CryptoService
+    cryptoService: CryptoService,
   ) {
     super(cryptoService);
   }

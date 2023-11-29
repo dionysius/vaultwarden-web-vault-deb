@@ -135,7 +135,7 @@ describe("NordPass CSV Importer", () => {
 
   it("should parse identity records", async () => {
     const result = await importer.parse(
-      identityData.replace("#fullName", "MyFirstName MyMiddleName MyLastName")
+      identityData.replace("#fullName", "MyFirstName MyMiddleName MyLastName"),
     );
 
     expect(result).not.toBeNull();

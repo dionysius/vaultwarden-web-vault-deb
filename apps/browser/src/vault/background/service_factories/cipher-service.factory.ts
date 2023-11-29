@@ -58,7 +58,7 @@ export type CipherServiceInitOptions = CipherServiceFactoryOptions &
 
 export function cipherServiceFactory(
   cache: { cipherService?: AbstractCipherService } & CachedServices,
-  opts: CipherServiceInitOptions
+  opts: CipherServiceInitOptions,
 ): Promise<AbstractCipherService> {
   return factory(
     cache,
@@ -74,7 +74,7 @@ export function cipherServiceFactory(
         await stateServiceFactory(cache, opts),
         await encryptServiceFactory(cache, opts),
         await cipherFileUploadServiceFactory(cache, opts),
-        await configServiceFactory(cache, opts)
-      )
+        await configServiceFactory(cache, opts),
+      ),
   );
 }

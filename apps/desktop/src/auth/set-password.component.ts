@@ -43,7 +43,7 @@ export class SetPasswordComponent extends BaseSetPasswordComponent implements On
     stateService: StateService,
     organizationApiService: OrganizationApiServiceAbstraction,
     organizationUserService: OrganizationUserService,
-    dialogService: DialogService
+    dialogService: DialogService,
   ) {
     super(
       i18nService,
@@ -60,7 +60,7 @@ export class SetPasswordComponent extends BaseSetPasswordComponent implements On
       stateService,
       organizationApiService,
       organizationUserService,
-      dialogService
+      dialogService,
     );
   }
 
@@ -89,7 +89,7 @@ export class SetPasswordComponent extends BaseSetPasswordComponent implements On
   protected async onSetPasswordSuccess(
     masterKey: MasterKey,
     userKey: [UserKey, EncString],
-    keyPair: [string, EncString]
+    keyPair: [string, EncString],
   ): Promise<void> {
     await super.onSetPasswordSuccess(masterKey, userKey, keyPair);
     this.messagingService.send("redrawMenu");

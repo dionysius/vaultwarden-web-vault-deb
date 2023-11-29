@@ -65,11 +65,11 @@ describe("InactiveTwoFactorReportComponent", () => {
     const expectedIdTwo: any = "cbea34a8-bde4-46ad-9d19-b05001227nm5";
     component.services.set(
       "101domain.com",
-      "https://help.101domain.com/account-management/account-security/enabling-disabling-two-factor-verification"
+      "https://help.101domain.com/account-management/account-security/enabling-disabling-two-factor-verification",
     );
     component.services.set(
       "123formbuilder.com",
-      "https://www.123formbuilder.com/docs/multi-factor-authentication-login"
+      "https://www.123formbuilder.com/docs/multi-factor-authentication-login",
     );
 
     jest.spyOn(component as any, "getAllCiphers").mockReturnValue(Promise.resolve<any>(cipherData));

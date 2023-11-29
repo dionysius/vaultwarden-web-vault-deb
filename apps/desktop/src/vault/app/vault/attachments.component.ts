@@ -25,7 +25,7 @@ export class AttachmentsComponent extends BaseAttachmentsComponent {
     logService: LogService,
     stateService: StateService,
     fileDownloadService: FileDownloadService,
-    dialogService: DialogService
+    dialogService: DialogService,
   ) {
     super(
       cipherService,
@@ -37,7 +37,7 @@ export class AttachmentsComponent extends BaseAttachmentsComponent {
       logService,
       stateService,
       fileDownloadService,
-      dialogService
+      dialogService,
     );
   }
 }

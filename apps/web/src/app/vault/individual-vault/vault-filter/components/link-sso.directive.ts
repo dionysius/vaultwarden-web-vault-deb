@@ -39,7 +39,7 @@ export class LinkSsoDirective extends SsoComponent implements AfterContentInit {
     stateService: StateService,
     environmentService: EnvironmentService,
     logService: LogService,
-    configService: ConfigServiceAbstraction
+    configService: ConfigServiceAbstraction,
   ) {
     super(
       authService,
@@ -53,7 +53,7 @@ export class LinkSsoDirective extends SsoComponent implements AfterContentInit {
       environmentService,
       passwordGenerationService,
       logService,
-      configService
+      configService,
     );
 
     this.returnUri = "/settings/organizations";

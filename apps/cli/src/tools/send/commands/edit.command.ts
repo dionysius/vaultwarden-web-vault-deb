@@ -14,7 +14,7 @@ export class SendEditCommand {
     private sendService: SendService,
     private stateService: StateService,
     private getCommand: SendGetCommand,
-    private sendApiService: SendApiService
+    private sendApiService: SendApiService,
   ) {}
 
   async run(requestJson: string, cmdOptions: Record<string, any>): Promise<Response> {

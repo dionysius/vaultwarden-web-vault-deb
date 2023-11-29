@@ -37,7 +37,7 @@ export class ExportComponent extends BaseExportComponent {
     userVerificationService: UserVerificationService,
     formBuilder: UntypedFormBuilder,
     fileDownloadService: FileDownloadService,
-    dialogService: DialogService
+    dialogService: DialogService,
   ) {
     super(
       cryptoService,
@@ -51,7 +51,7 @@ export class ExportComponent extends BaseExportComponent {
       userVerificationService,
       formBuilder,
       fileDownloadService,
-      dialogService
+      dialogService,
     );
   }
 
@@ -60,7 +60,7 @@ export class ExportComponent extends BaseExportComponent {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
-        this.i18nService.t("filePasswordAndConfirmFilePasswordDoNotMatch")
+        this.i18nService.t("filePasswordAndConfirmFilePasswordDoNotMatch"),
       );
       return;
     }
@@ -74,7 +74,7 @@ export class ExportComponent extends BaseExportComponent {
       this.platformUtilsService.showToast(
         "error",
         null,
-        this.i18nService.t("personalVaultExportPolicyInEffect")
+        this.i18nService.t("personalVaultExportPolicyInEffect"),
       );
       return;
     }

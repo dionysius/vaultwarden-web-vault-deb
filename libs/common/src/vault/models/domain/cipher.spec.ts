@@ -230,11 +230,11 @@ describe("Cipher DTO", () => {
 
       (window as any).bitwardenContainerService = new ContainerService(
         cryptoService,
-        encryptService
+        encryptService,
       );
 
       const cipherView = await cipher.decrypt(
-        await cipherService.getKeyForCipherKeyDecryption(cipher)
+        await cipherService.getKeyForCipherKeyDecryption(cipher),
       );
 
       expect(cipherView).toMatchObject({
@@ -350,11 +350,11 @@ describe("Cipher DTO", () => {
 
       (window as any).bitwardenContainerService = new ContainerService(
         cryptoService,
-        encryptService
+        encryptService,
       );
 
       const cipherView = await cipher.decrypt(
-        await cipherService.getKeyForCipherKeyDecryption(cipher)
+        await cipherService.getKeyForCipherKeyDecryption(cipher),
       );
 
       expect(cipherView).toMatchObject({
@@ -488,11 +488,11 @@ describe("Cipher DTO", () => {
 
       (window as any).bitwardenContainerService = new ContainerService(
         cryptoService,
-        encryptService
+        encryptService,
       );
 
       const cipherView = await cipher.decrypt(
-        await cipherService.getKeyForCipherKeyDecryption(cipher)
+        await cipherService.getKeyForCipherKeyDecryption(cipher),
       );
 
       expect(cipherView).toMatchObject({
@@ -650,11 +650,11 @@ describe("Cipher DTO", () => {
 
       (window as any).bitwardenContainerService = new ContainerService(
         cryptoService,
-        encryptService
+        encryptService,
       );
 
       const cipherView = await cipher.decrypt(
-        await cipherService.getKeyForCipherKeyDecryption(cipher)
+        await cipherService.getKeyForCipherKeyDecryption(cipher),
       );
 
       expect(cipherView).toMatchObject({

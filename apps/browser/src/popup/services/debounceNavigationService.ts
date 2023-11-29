@@ -16,11 +16,11 @@ export class DebounceNavigationService implements CanActivate, OnDestroy {
     this.navigationStartSub = this.router.events
       .pipe(
         filter((event) => event instanceof NavigationStart),
-        pairwise()
+        pairwise(),
       )
       .subscribe(
         (events: [NavigationStart, NavigationStart]) =>
-          ([this.lastNavigation, this.thisNavigation] = events)
+          ([this.lastNavigation, this.thisNavigation] = events),
       );
 
     this.navigationSuccessSub = this.router.events

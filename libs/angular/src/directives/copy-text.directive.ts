@@ -7,7 +7,10 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
   selector: "[appCopyText]",
 })
 export class CopyTextDirective {
-  constructor(private el: ElementRef, private platformUtilsService: PlatformUtilsService) {}
+  constructor(
+    private el: ElementRef,
+    private platformUtilsService: PlatformUtilsService,
+  ) {}
 
   @Input("appCopyText") copyText: string;
 

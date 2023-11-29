@@ -21,7 +21,7 @@ export class BrowserConfigService extends ConfigService {
     authService: AuthService,
     environmentService: EnvironmentService,
     logService: LogService,
-    subscribe = false
+    subscribe = false,
   ) {
     super(stateService, configApiService, authService, environmentService, logService, subscribe);
   }

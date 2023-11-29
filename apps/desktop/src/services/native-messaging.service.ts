@@ -38,7 +38,7 @@ export class NativeMessagingService {
     private stateService: StateService,
     private nativeMessageHandler: NativeMessageHandlerService,
     private dialogService: DialogService,
-    private ngZone: NgZone
+    private ngZone: NgZone,
   ) {}
 
   init() {
@@ -77,13 +77,13 @@ export class NativeMessagingService {
 
         const fingerprint = await this.cryptoService.getFingerprint(
           await this.stateService.getUserId(),
-          remotePublicKey
+          remotePublicKey,
         );
 
         this.messagingService.send("setFocus");
 
         const dialogRef = this.ngZone.run(() =>
-          BrowserSyncVerificationDialogComponent.open(this.dialogService, { fingerprint })
+          BrowserSyncVerificationDialogComponent.open(this.dialogService, { fingerprint }),
         );
 
         const browserSyncVerified = await firstValueFrom(dialogRef.closed);
@@ -106,7 +106,10 @@ export class NativeMessagingService {
     }
 
     const message: LegacyMessage = JSON.parse(
-      await this.cryptoService.decryptToUtf8(rawMessage as EncString, this.sharedSecrets.get(appId))
+      await this.cryptoService.decryptToUtf8(
+        rawMessage as EncString,
+        this.sharedSecrets.get(appId),
+      ),
     );
 
     // Shared secret is invalidated, force re-authentication
@@ -139,13 +142,13 @@ export class NativeMessagingService {
               content: { key: "biometricsNotEnabledDesc" },
               cancelButtonText: null,
               acceptButtonText: { key: "cancel" },
-            })
+            }),
           );
         }
 
         const userKey = await this.cryptoService.getUserKeyFromStorage(
           KeySuffixOptions.Biometric,
-          message.userId
+          message.userId,
         );
         const masterKey = await this.cryptoService.getMasterKey(message.userId);
 
@@ -160,7 +163,7 @@ export class NativeMessagingService {
               keyB64: masterKey?.keyB64,
               userKeyB64: userKey.keyB64,
             },
-            appId
+            appId,
           );
         } else {
           this.send({ command: "biometricUnlock", response: "canceled" }, appId);
@@ -179,7 +182,7 @@ export class NativeMessagingService {
 
     const encrypted = await this.cryptoService.encrypt(
       JSON.stringify(message),
-      this.sharedSecrets.get(appId)
+      this.sharedSecrets.get(appId),
     );
 
     ipc.platform.nativeMessaging.sendMessage({ appId: appId, message: encrypted });
@@ -192,7 +195,7 @@ export class NativeMessagingService {
     const encryptedSecret = await this.cryptoFunctionService.rsaEncrypt(
       secret,
       remotePublicKey,
-      EncryptionAlgorithm
+      EncryptionAlgorithm,
     );
     ipc.platform.nativeMessaging.sendMessage({
       appId: appId,

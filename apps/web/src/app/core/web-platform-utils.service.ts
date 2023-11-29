@@ -13,7 +13,7 @@ export class WebPlatformUtilsService implements PlatformUtilsService {
   constructor(
     private i18nService: I18nService,
     private messagingService: MessagingService,
-    private logService: LogService
+    private logService: LogService,
   ) {}
 
   getDevice(): DeviceType {
@@ -122,7 +122,7 @@ export class WebPlatformUtilsService implements PlatformUtilsService {
     type: "error" | "success" | "warning" | "info",
     title: string,
     text: string | string[],
-    options?: any
+    options?: any,
   ): void {
     this.messagingService.send("showToast", {
       text: text,

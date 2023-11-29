@@ -22,7 +22,7 @@ export class FakeGlobalStateProvider implements GlobalStateProvider {
 
   getFake<T>(keyDefinition: KeyDefinition<T>): FakeGlobalState<T> {
     const key = Array.from(this.states.keys()).find(
-      (k) => k.stateDefinition === keyDefinition.stateDefinition && k.key === keyDefinition.key
+      (k) => k.stateDefinition === keyDefinition.stateDefinition && k.key === keyDefinition.key,
     );
     return this.get(key) as FakeGlobalState<T>;
   }
@@ -42,7 +42,7 @@ export class FakeUserStateProvider implements UserStateProvider {
 
   getFake<T>(keyDefinition: KeyDefinition<T>): FakeUserState<T> {
     const key = Array.from(this.states.keys()).find(
-      (k) => k.stateDefinition === keyDefinition.stateDefinition && k.key === keyDefinition.key
+      (k) => k.stateDefinition === keyDefinition.stateDefinition && k.key === keyDefinition.key,
     );
     return this.get(key) as FakeUserState<T>;
   }

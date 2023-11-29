@@ -56,7 +56,7 @@ export function devFlagEnabled<DevFlags extends SharedDevFlags>(flag: keyof DevF
  * @throws Error if the flag is not enabled
  */
 export function devFlagValue<DevFlags extends SharedDevFlags>(
-  flag: keyof DevFlags
+  flag: keyof DevFlags,
 ): DevFlags[keyof DevFlags] {
   if (!devFlagEnabled(flag)) {
     throw new Error(`This method should not be called, it is protected by a disabled dev flag.`);

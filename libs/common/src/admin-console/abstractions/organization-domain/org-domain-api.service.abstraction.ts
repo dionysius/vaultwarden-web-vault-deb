@@ -7,11 +7,11 @@ export abstract class OrgDomainApiServiceAbstraction {
   getAllByOrgId: (orgId: string) => Promise<Array<OrganizationDomainResponse>>;
   getByOrgIdAndOrgDomainId: (
     orgId: string,
-    orgDomainId: string
+    orgDomainId: string,
   ) => Promise<OrganizationDomainResponse>;
   post: (
     orgId: string,
-    orgDomain: OrganizationDomainRequest
+    orgDomain: OrganizationDomainRequest,
   ) => Promise<OrganizationDomainResponse>;
   verify: (orgId: string, orgDomainId: string) => Promise<OrganizationDomainResponse>;
   delete: (orgId: string, orgDomainId: string) => Promise<any>;

@@ -14,7 +14,10 @@ import { Utils } from "@bitwarden/common/platform/misc/utils";
   templateUrl: "organization-switcher.component.html",
 })
 export class OrganizationSwitcherComponent implements OnInit {
-  constructor(private organizationService: OrganizationService, private i18nService: I18nService) {}
+  constructor(
+    private organizationService: OrganizationService,
+    private i18nService: I18nService,
+  ) {}
 
   @Input() activeOrganization: Organization = null;
   organizations$: Observable<Organization[]>;
@@ -24,7 +27,7 @@ export class OrganizationSwitcherComponent implements OnInit {
   async ngOnInit() {
     this.organizations$ = this.organizationService.memberOrganizations$.pipe(
       canAccessAdmin(this.i18nService),
-      map((orgs) => orgs.sort(Utils.getSortFunction(this.i18nService, "name")))
+      map((orgs) => orgs.sort(Utils.getSortFunction(this.i18nService, "name"))),
     );
 
     this.loaded = true;

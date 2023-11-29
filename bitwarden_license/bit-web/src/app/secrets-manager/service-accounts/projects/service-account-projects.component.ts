@@ -26,7 +26,7 @@ export class ServiceAccountProjectsComponent implements OnInit, OnDestroy {
       startWith(null),
       combineLatestWith(this.route.params),
       switchMap(([_, params]) =>
-        this.accessPolicyService.getGrantedPolicies(params.serviceAccountId, params.organizationId)
+        this.accessPolicyService.getGrantedPolicies(params.serviceAccountId, params.organizationId),
       ),
       map((policies) => {
         return policies.map((policy) => {
@@ -41,7 +41,7 @@ export class ServiceAccountProjectsComponent implements OnInit, OnDestroy {
             static: false,
           } as AccessSelectorRowView;
         });
-      })
+      }),
     );
 
   protected handleCreateAccessPolicies(selected: SelectItemView[]) {
@@ -59,14 +59,14 @@ export class ServiceAccountProjectsComponent implements OnInit, OnDestroy {
     return this.accessPolicyService.createGrantedPolicies(
       this.organizationId,
       this.serviceAccountId,
-      serviceAccountProjectAccessPolicyView
+      serviceAccountProjectAccessPolicyView,
     );
   }
 
   protected async handleUpdateAccessPolicy(policy: AccessSelectorRowView) {
     try {
       return await this.accessPolicyService.updateAccessPolicy(
-        AccessSelectorComponent.getBaseAccessPolicyView(policy)
+        AccessSelectorComponent.getBaseAccessPolicyView(policy),
       );
     } catch (e) {
       this.validationService.showError(e);
@@ -84,7 +84,7 @@ export class ServiceAccountProjectsComponent implements OnInit, OnDestroy {
   constructor(
     private route: ActivatedRoute,
     private validationService: ValidationService,
-    private accessPolicyService: AccessPolicyService
+    private accessPolicyService: AccessPolicyService,
   ) {}
 
   ngOnInit(): void {

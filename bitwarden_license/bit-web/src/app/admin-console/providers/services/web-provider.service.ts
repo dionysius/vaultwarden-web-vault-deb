@@ -10,7 +10,7 @@ export class WebProviderService {
   constructor(
     private cryptoService: CryptoService,
     private syncService: SyncService,
-    private apiService: ApiService
+    private apiService: ApiService,
   ) {}
 
   async addOrganizationToProvider(providerId: string, organizationId: string) {

@@ -30,7 +30,7 @@ describe("NotificationBackground", () => {
       policyService,
       folderService,
       stateService,
-      environmentService
+      environmentService,
     );
   });
 

@@ -70,7 +70,7 @@ describe("OverlayBackground", () => {
       environmentService,
       settingsService,
       stateService,
-      i18nService
+      i18nService,
     );
     overlayBackground.init();
   });
@@ -163,7 +163,7 @@ describe("OverlayBackground", () => {
         new Map([
           ["overlay-cipher-0", cipher2],
           ["overlay-cipher-1", cipher1],
-        ])
+        ]),
       );
       expect(overlayBackground["getOverlayCipherData"]).toHaveBeenCalled();
     });
@@ -219,7 +219,7 @@ describe("OverlayBackground", () => {
       expect(BrowserApi.tabSendMessageData).toHaveBeenCalledWith(
         tab,
         "updateIsOverlayCiphersPopulated",
-        { isOverlayCiphersPopulated: true }
+        { isOverlayCiphersPopulated: true },
       );
     });
   });
@@ -489,7 +489,7 @@ describe("OverlayBackground", () => {
       const returnValue = overlayBackground["handleExtensionMessage"](
         message,
         sender,
-        sendResponse
+        sendResponse,
       );
 
       expect(returnValue).toBe(undefined);
@@ -507,7 +507,7 @@ describe("OverlayBackground", () => {
       const returnValue = overlayBackground["handleExtensionMessage"](
         message,
         sender,
-        sendResponse
+        sendResponse,
       );
 
       expect(returnValue).toBe(undefined);
@@ -526,7 +526,7 @@ describe("OverlayBackground", () => {
       const returnValue = overlayBackground["handleExtensionMessage"](
         message,
         sender,
-        sendResponse
+        sendResponse,
       );
 
       expect(returnValue).toBe(true);
@@ -555,7 +555,7 @@ describe("OverlayBackground", () => {
               isFocusingFieldElement: false,
               isOpeningFullOverlay: false,
               authStatus: AuthenticationStatus.Unlocked,
-            }
+            },
           );
         });
       });
@@ -614,7 +614,7 @@ describe("OverlayBackground", () => {
                 password: "password",
               },
             },
-            sender
+            sender,
           );
           await flushPromises();
 
@@ -635,7 +635,7 @@ describe("OverlayBackground", () => {
           await flushPromises();
 
           expect(overlayBackground["overlayVisibility"]).toBe(
-            AutofillOverlayVisibility.OnFieldFocus
+            AutofillOverlayVisibility.OnFieldFocus,
           );
         });
 
@@ -645,7 +645,7 @@ describe("OverlayBackground", () => {
           sendExtensionRuntimeMessage(
             { command: "getAutofillOverlayVisibility" },
             undefined,
-            sendMessageSpy
+            sendMessageSpy,
           );
           await flushPromises();
 
@@ -851,7 +851,7 @@ describe("OverlayBackground", () => {
         it("stores the page details provided by the message by the tab id of the sender", () => {
           sendExtensionRuntimeMessage(
             { command: "collectPageDetailsResponse", details: pageDetails1 },
-            sender
+            sender,
           );
 
           expect(overlayBackground["pageDetailsForTab"][sender.tab.id]).toStrictEqual([
@@ -870,7 +870,7 @@ describe("OverlayBackground", () => {
 
           sendExtensionRuntimeMessage(
             { command: "collectPageDetailsResponse", details: pageDetails2 },
-            sender
+            sender,
           );
 
           expect(overlayBackground["pageDetailsForTab"][sender.tab.id]).toStrictEqual([
@@ -930,7 +930,7 @@ describe("OverlayBackground", () => {
               isFocusingFieldElement: true,
               isOpeningFullOverlay: false,
               authStatus: AuthenticationStatus.Unlocked,
-            }
+            },
           );
         });
       });
@@ -1096,7 +1096,7 @@ describe("OverlayBackground", () => {
           expect(BrowserApi.tabSendMessageData).toHaveBeenCalledWith(
             buttonPortSpy.sender.tab,
             "redirectOverlayFocusOut",
-            { direction: RedirectFocusDirection.Next }
+            { direction: RedirectFocusDirection.Next },
           );
         });
       });
@@ -1142,11 +1142,11 @@ describe("OverlayBackground", () => {
                 sender: listPortSpy.sender,
               },
               target: "overlay.background",
-            }
+            },
           );
           expect(overlayBackground["openUnlockPopout"]).toHaveBeenCalledWith(
             listPortSpy.sender.tab,
-            true
+            true,
           );
         });
       });
@@ -1160,7 +1160,7 @@ describe("OverlayBackground", () => {
           getLoginCiphersSpy = jest.spyOn(overlayBackground["overlayLoginCiphers"], "get");
           isPasswordRepromptRequiredSpy = jest.spyOn(
             overlayBackground["autofillService"],
-            "isPasswordRepromptRequired"
+            "isPasswordRepromptRequired",
           );
           doAutoFillSpy = jest.spyOn(overlayBackground["autofillService"], "doAutoFill");
         });
@@ -1192,7 +1192,7 @@ describe("OverlayBackground", () => {
           expect(getLoginCiphersSpy).toHaveBeenCalled();
           expect(isPasswordRepromptRequiredSpy).toHaveBeenCalledWith(
             cipher,
-            listPortSpy.sender.tab
+            listPortSpy.sender.tab,
           );
           expect(doAutoFillSpy).not.toHaveBeenCalled();
         });
@@ -1216,7 +1216,7 @@ describe("OverlayBackground", () => {
 
           expect(isPasswordRepromptRequiredSpy).toHaveBeenCalledWith(
             cipher2,
-            listPortSpy.sender.tab
+            listPortSpy.sender.tab,
           );
           expect(doAutoFillSpy).toHaveBeenCalledWith({
             tab: listPortSpy.sender.tab,
@@ -1230,7 +1230,7 @@ describe("OverlayBackground", () => {
               ["overlay-cipher-2", cipher2],
               ["overlay-cipher-1", cipher1],
               ["overlay-cipher-3", cipher3],
-            ]).entries()
+            ]).entries(),
           );
         });
       });
@@ -1289,7 +1289,7 @@ describe("OverlayBackground", () => {
             {
               cipherId: cipher.id,
               action: SHOW_AUTOFILL_BUTTON,
-            }
+            },
           );
         });
       });
@@ -1302,7 +1302,7 @@ describe("OverlayBackground", () => {
           };
           const redirectOverlayFocusOutSpy = jest.spyOn(
             overlayBackground as any,
-            "redirectOverlayFocusOut"
+            "redirectOverlayFocusOut",
           );
 
           sendPortMessage(listPortSpy, message);

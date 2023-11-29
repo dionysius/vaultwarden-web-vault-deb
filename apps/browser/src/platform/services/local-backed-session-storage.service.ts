@@ -31,7 +31,7 @@ export class LocalBackedSessionStorageService extends AbstractMemoryStorageServi
 
   constructor(
     private encryptService: EncryptService,
-    private keyGenerationService: AbstractKeyGenerationService
+    private keyGenerationService: AbstractKeyGenerationService,
   ) {
     super();
     this.updates$ = this.updatesSubject.asObservable();

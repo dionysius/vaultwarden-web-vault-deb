@@ -44,14 +44,14 @@ export class ProjectComponent implements OnInit, OnDestroy {
     private dialogService: DialogService,
     private platformUtilsService: PlatformUtilsService,
     private i18nService: I18nService,
-    private organizationService: OrganizationService
+    private organizationService: OrganizationService,
   ) {}
 
   ngOnInit(): void {
     // Update project if it is edited
     const currentProjectEdited = this.projectService.project$.pipe(
       filter((p) => p?.id === this.projectId),
-      startWith(null)
+      startWith(null),
     );
 
     this.project$ = combineLatest([this.route.params, currentProjectEdited]).pipe(
@@ -61,11 +61,11 @@ export class ProjectComponent implements OnInit, OnDestroy {
           this.platformUtilsService.showToast(
             "error",
             null,
-            this.i18nService.t("notFound", this.i18nService.t("project"))
+            this.i18nService.t("notFound", this.i18nService.t("project")),
           );
         });
         return EMPTY;
-      })
+      }),
     );
 
     this.route.params.pipe(takeUntil(this.destroy$)).subscribe((params) => {

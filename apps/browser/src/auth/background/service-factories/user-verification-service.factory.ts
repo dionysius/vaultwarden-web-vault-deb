@@ -34,7 +34,7 @@ export type UserVerificationServiceInitOptions = UserVerificationServiceFactoryO
 
 export function userVerificationServiceFactory(
   cache: { userVerificationService?: AbstractUserVerificationService } & CachedServices,
-  opts: UserVerificationServiceInitOptions
+  opts: UserVerificationServiceInitOptions,
 ): Promise<AbstractUserVerificationService> {
   return factory(
     cache,
@@ -45,7 +45,7 @@ export function userVerificationServiceFactory(
         await stateServiceFactory(cache, opts),
         await cryptoServiceFactory(cache, opts),
         await i18nServiceFactory(cache, opts),
-        await userVerificationApiServiceFactory(cache, opts)
-      )
+        await userVerificationApiServiceFactory(cache, opts),
+      ),
   );
 }

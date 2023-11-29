@@ -44,7 +44,7 @@ export class SimpleConfigurableDialogComponent {
   constructor(
     public dialogRef: DialogRef,
     private i18nService: I18nService,
-    @Inject(DIALOG_DATA) public simpleDialogOpts?: SimpleDialogOptions
+    @Inject(DIALOG_DATA) public simpleDialogOpts?: SimpleDialogOptions,
   ) {
     this.localizeText();
   }
@@ -66,7 +66,7 @@ export class SimpleConfigurableDialogComponent {
       // If accept text is overridden, use cancel, otherwise no
       this.cancelButtonText = this.translate(
         this.simpleDialogOpts.cancelButtonText,
-        this.simpleDialogOpts.acceptButtonText !== undefined ? "cancel" : "no"
+        this.simpleDialogOpts.acceptButtonText !== undefined ? "cancel" : "no",
       );
     }
   }

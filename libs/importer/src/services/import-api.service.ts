@@ -13,14 +13,14 @@ export class ImportApiService implements ImportApiServiceAbstraction {
 
   async postImportOrganizationCiphers(
     organizationId: string,
-    request: ImportOrganizationCiphersRequest
+    request: ImportOrganizationCiphersRequest,
   ): Promise<any> {
     return await this.apiService.send(
       "POST",
       "/ciphers/import-organization?organizationId=" + organizationId,
       request,
       true,
-      false
+      false,
     );
   }
 }

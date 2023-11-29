@@ -35,14 +35,14 @@ export class HeaderComponent {
     private stateService: StateService,
     private platformUtilsService: PlatformUtilsService,
     private vaultTimeoutSettingsService: VaultTimeoutSettingsService,
-    private messagingService: MessagingService
+    private messagingService: MessagingService,
   ) {
     this.routeData$ = this.route.data.pipe(
       map((params) => {
         return {
           titleId: params.titleId,
         };
-      })
+      }),
     );
 
     this.selfHosted = this.platformUtilsService.isSelfHost();
@@ -53,7 +53,7 @@ export class HeaderComponent {
     ]).pipe(
       map(([activeAccount, accounts]) => {
         return accounts[activeAccount]?.profile;
-      })
+      }),
     );
     this.canLock$ = this.vaultTimeoutSettingsService
       .availableVaultTimeoutActions$()

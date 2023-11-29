@@ -2,7 +2,10 @@ import { LinkedIdType } from "./enums";
 import { ItemView } from "./models/view/item.view";
 
 export class LinkedMetadata {
-  constructor(readonly propertyKey: string, private readonly _i18nKey?: string) {}
+  constructor(
+    readonly propertyKey: string,
+    private readonly _i18nKey?: string,
+  ) {}
 
   get i18nKey() {
     return this._i18nKey ?? this.propertyKey;

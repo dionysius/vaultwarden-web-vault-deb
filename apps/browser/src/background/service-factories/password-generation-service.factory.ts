@@ -30,7 +30,7 @@ export type PasswordGenerationServiceInitOptions = PasswordGenerationServiceFact
 
 export function passwordGenerationServiceFactory(
   cache: { passwordGenerationService?: PasswordGenerationServiceAbstraction } & CachedServices,
-  opts: PasswordGenerationServiceInitOptions
+  opts: PasswordGenerationServiceInitOptions,
 ): Promise<PasswordGenerationServiceAbstraction> {
   return factory(
     cache,
@@ -40,7 +40,7 @@ export function passwordGenerationServiceFactory(
       new PasswordGenerationService(
         await cryptoServiceFactory(cache, opts),
         await policyServiceFactory(cache, opts),
-        await stateServiceFactory(cache, opts)
-      )
+        await stateServiceFactory(cache, opts),
+      ),
   );
 }

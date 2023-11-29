@@ -19,7 +19,7 @@ export class SafariApp {
         },
         (response: any) => {
           resolve(response);
-        }
+        },
       );
     });
   }

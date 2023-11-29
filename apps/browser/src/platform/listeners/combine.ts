@@ -4,7 +4,7 @@ type Listener<T extends unknown[]> = (...args: [...T, CachedServices]) => Promis
 
 export const combine = <T extends unknown[]>(
   listeners: Listener<T>[],
-  startingServices: CachedServices = {}
+  startingServices: CachedServices = {},
 ) => {
   return async (...args: T) => {
     const cachedServices = { ...startingServices };

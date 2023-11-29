@@ -89,19 +89,19 @@ export class OverviewComponent implements OnInit, OnDestroy {
     private organizationService: OrganizationService,
     private stateService: StateService,
     private platformUtilsService: PlatformUtilsService,
-    private i18nService: I18nService
+    private i18nService: I18nService,
   ) {}
 
   ngOnInit() {
     const orgId$ = this.route.params.pipe(
       map((p) => p.organizationId),
-      distinctUntilChanged()
+      distinctUntilChanged(),
     );
 
     orgId$
       .pipe(
         map((orgId) => this.organizationService.get(orgId)),
-        takeUntil(this.destroy$)
+        takeUntil(this.destroy$),
       )
       .subscribe((org) => {
         this.organizationId = org.id;
@@ -116,7 +116,7 @@ export class OverviewComponent implements OnInit, OnDestroy {
       this.projectService.project$.pipe(startWith(null)),
     ]).pipe(
       switchMap(([orgId]) => this.projectService.getProjects(orgId)),
-      share()
+      share(),
     );
 
     const secrets$ = combineLatest([
@@ -125,7 +125,7 @@ export class OverviewComponent implements OnInit, OnDestroy {
       this.projectService.project$.pipe(startWith(null)),
     ]).pipe(
       switchMap(([orgId]) => this.secretService.getSecrets(orgId)),
-      share()
+      share(),
     );
 
     const serviceAccounts$ = combineLatest([
@@ -133,7 +133,7 @@ export class OverviewComponent implements OnInit, OnDestroy {
       this.serviceAccountService.serviceAccount$.pipe(startWith(null)),
     ]).pipe(
       switchMap(([orgId]) => this.serviceAccountService.getServiceAccounts(orgId, false)),
-      share()
+      share(),
     );
 
     this.view$ = orgId$.pipe(
@@ -150,16 +150,16 @@ export class OverviewComponent implements OnInit, OnDestroy {
               createProject: projects.length > 0,
               createServiceAccount: serviceAccounts.length > 0,
             }),
-          }))
-        )
-      )
+          })),
+        ),
+      ),
     );
 
     // Refresh onboarding status when orgId changes by fetching the first value from view$.
     orgId$
       .pipe(
         switchMap(() => this.view$.pipe(take(1))),
-        takeUntil(this.destroy$)
+        takeUntil(this.destroy$),
       )
       .subscribe((view) => {
         this.showOnboarding = Object.values(view.tasks).includes(false);
@@ -182,11 +182,11 @@ export class OverviewComponent implements OnInit, OnDestroy {
 
   private async saveCompletedTasks(
     organizationId: string,
-    orgTasks: OrganizationTasks
+    orgTasks: OrganizationTasks,
   ): Promise<OrganizationTasks> {
     const prevTasks = ((await this.stateService.getSMOnboardingTasks()) || {}) as Tasks;
     const newlyCompletedOrgTasks = Object.fromEntries(
-      Object.entries(orgTasks).filter(([_k, v]) => v === true)
+      Object.entries(orgTasks).filter(([_k, v]) => v === true),
     );
     const nextOrgTasks = {
       importSecrets: false,
@@ -294,7 +294,7 @@ export class OverviewComponent implements OnInit, OnDestroy {
       id,
       this.platformUtilsService,
       this.i18nService,
-      this.secretService
+      this.secretService,
     );
   }
 

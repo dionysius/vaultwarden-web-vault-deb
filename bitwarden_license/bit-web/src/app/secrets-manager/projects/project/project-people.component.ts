@@ -35,12 +35,12 @@ export class ProjectPeopleComponent implements OnInit, OnDestroy {
     switchMap(([params]) =>
       this.accessPolicyService.getProjectPeopleAccessPolicies(params.projectId).then((policies) => {
         return convertToAccessPolicyItemViews(policies);
-      })
+      }),
     ),
     catchError(() => {
       this.router.navigate(["/sm", this.organizationId, "projects"]);
       return EMPTY;
-    })
+    }),
   );
 
   private potentialGrantees$ = combineLatest([this.route.params]).pipe(
@@ -49,8 +49,8 @@ export class ProjectPeopleComponent implements OnInit, OnDestroy {
         .getPeoplePotentialGrantees(params.organizationId)
         .then((grantees) => {
           return convertPotentialGranteesToApItemViewType(grantees);
-        })
-    )
+        }),
+    ),
   );
 
   protected formGroup = new FormGroup({
@@ -69,7 +69,7 @@ export class ProjectPeopleComponent implements OnInit, OnDestroy {
     private router: Router,
     private platformUtilsService: PlatformUtilsService,
     private i18nService: I18nService,
-    private accessPolicySelectorService: AccessPolicySelectorService
+    private accessPolicySelectorService: AccessPolicySelectorService,
   ) {}
 
   ngOnInit(): void {
@@ -101,7 +101,7 @@ export class ProjectPeopleComponent implements OnInit, OnDestroy {
     const showAccessRemovalWarning =
       await this.accessPolicySelectorService.showAccessRemovalWarning(
         this.organizationId,
-        this.formGroup.value.accessPolicies
+        this.formGroup.value.accessPolicies,
       );
 
     if (showAccessRemovalWarning) {
@@ -115,11 +115,11 @@ export class ProjectPeopleComponent implements OnInit, OnDestroy {
     try {
       const projectPeopleView = convertToProjectPeopleAccessPoliciesView(
         this.projectId,
-        this.formGroup.value.accessPolicies
+        this.formGroup.value.accessPolicies,
       );
       const peoplePoliciesViews = await this.accessPolicyService.putProjectPeopleAccessPolicies(
         this.projectId,
-        projectPeopleView
+        projectPeopleView,
       );
       this.currentAccessPolicies = convertToAccessPolicyItemViews(peoplePoliciesViews);
 
@@ -129,7 +129,7 @@ export class ProjectPeopleComponent implements OnInit, OnDestroy {
       this.platformUtilsService.showToast(
         "success",
         null,
-        this.i18nService.t("projectAccessUpdated")
+        this.i18nService.t("projectAccessUpdated"),
       );
     } catch (e) {
       this.validationService.showError(e);

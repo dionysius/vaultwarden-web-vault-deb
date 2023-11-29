@@ -35,7 +35,7 @@ function findSortedIndex<T>(sortedArray: T[], val: T, compareFn: (a: T, b: T) =>
  */
 export class FormSelectionList<
   TItem extends SelectionItemId,
-  TControlValue extends SelectionItemId
+  TControlValue extends SelectionItemId,
 > {
   allItems: TItem[] = [];
   /**
@@ -64,7 +64,7 @@ export class FormSelectionList<
    */
   constructor(
     private controlFactory: (item: TItem) => AbstractControl<Partial<TControlValue>, TControlValue>,
-    private compareFn: (a: TItem, b: TItem) => number
+    private compareFn: (a: TItem, b: TItem) => number,
   ) {}
 
   /**
@@ -172,7 +172,7 @@ export class FormSelectionList<
     const sortedInsertIndex = findSortedIndex(
       this.deselectedItems,
       deselectedOption,
-      this.compareFn
+      this.compareFn,
     );
 
     this.deselectedItems = [
@@ -204,7 +204,7 @@ export class FormSelectionList<
    * @param fn - The function to call for each form control and its corresponding item
    */
   forEachControlItem(
-    fn: (control: AbstractControl<Partial<TControlValue>, TControlValue>, value: TItem) => void
+    fn: (control: AbstractControl<Partial<TControlValue>, TControlValue>, value: TItem) => void,
   ) {
     for (let i = 0; i < this.formArray.length; i++) {
       // The selectedItems array and formArray are explicitly kept in sync,

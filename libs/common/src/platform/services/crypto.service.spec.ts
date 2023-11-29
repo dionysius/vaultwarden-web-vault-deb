@@ -38,7 +38,7 @@ describe("cryptoService", () => {
       encryptService,
       platformUtilService,
       logService,
-      stateService
+      stateService,
     );
   });
 
@@ -165,7 +165,7 @@ describe("cryptoService", () => {
         cryptoSvcMakePinKey = jest.spyOn(cryptoService, "makePinKey");
         cryptoSvcMakePinKey.mockResolvedValue(new SymmetricCryptoKey(new Uint8Array(64)) as PinKey);
         encPin = new EncString(
-          "2.jcow2vTUePO+CCyokcIfVw==|DTBNlJ5yVsV2Bsk3UU3H6Q==|YvFBff5gxWqM+UsFB6BKimKxhC32AtjF3IStpU1Ijwg="
+          "2.jcow2vTUePO+CCyokcIfVw==|DTBNlJ5yVsV2Bsk3UU3H6Q==|YvFBff5gxWqM+UsFB6BKimKxhC32AtjF3IStpU1Ijwg=",
         );
         encryptService.encrypt.mockResolvedValue(encPin);
       });
@@ -174,8 +174,8 @@ describe("cryptoService", () => {
         stateService.getProtectedPin.mockResolvedValue(protectedPin);
         stateService.getPinKeyEncryptedUserKey.mockResolvedValue(
           new EncString(
-            "2.OdGNE3L23GaDZGvu9h2Brw==|/OAcNnrYwu0rjiv8+RUr3Tc+Ef8fV035Tm1rbTxfEuC+2LZtiCAoIvHIZCrM/V1PWnb/pHO2gh9+Koks04YhX8K29ED4FzjeYP8+YQD/dWo=|+12xTcIK/UVRsOyawYudPMHb6+lCHeR2Peq1pQhPm0A="
-          )
+            "2.OdGNE3L23GaDZGvu9h2Brw==|/OAcNnrYwu0rjiv8+RUr3Tc+Ef8fV035Tm1rbTxfEuC+2LZtiCAoIvHIZCrM/V1PWnb/pHO2gh9+Koks04YhX8K29ED4FzjeYP8+YQD/dWo=|+12xTcIK/UVRsOyawYudPMHb6+lCHeR2Peq1pQhPm0A=",
+          ),
         );
 
         await cryptoService.setUserKey(mockUserKey, mockUserId);
@@ -195,7 +195,7 @@ describe("cryptoService", () => {
           expect.any(EncString),
           {
             userId: mockUserId,
-          }
+          },
         );
       });
 

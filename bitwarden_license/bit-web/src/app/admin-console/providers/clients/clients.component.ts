@@ -63,7 +63,7 @@ export class ClientsComponent implements OnInit {
     private modalService: ModalService,
     private organizationService: OrganizationService,
     private organizationApiService: OrganizationApiServiceAbstraction,
-    private dialogService: DialogService
+    private dialogService: DialogService,
   ) {}
 
   async ngOnInit() {
@@ -86,12 +86,12 @@ export class ClientsComponent implements OnInit {
     this.manageOrganizations =
       (await this.providerService.get(this.providerId)).type === ProviderUserType.ProviderAdmin;
     const candidateOrgs = (await this.organizationService.getAll()).filter(
-      (o) => o.isOwner && o.providerId == null
+      (o) => o.isOwner && o.providerId == null,
     );
     const allowedOrgsIds = await Promise.all(
-      candidateOrgs.map((o) => this.organizationApiService.get(o.id))
+      candidateOrgs.map((o) => this.organizationApiService.get(o.id)),
     ).then((orgs) =>
-      orgs.filter((o) => !DisallowedPlanTypes.includes(o.planType)).map((o) => o.id)
+      orgs.filter((o) => !DisallowedPlanTypes.includes(o.planType)).map((o) => o.id),
     );
     this.addableOrganizations = candidateOrgs.filter((o) => allowedOrgsIds.includes(o.id));
 
@@ -127,7 +127,7 @@ export class ClientsComponent implements OnInit {
     }
     if (this.clients.length > pagedLength) {
       this.pagedClients = this.pagedClients.concat(
-        this.clients.slice(pagedLength, pagedLength + pagedSize)
+        this.clients.slice(pagedLength, pagedLength + pagedSize),
       );
     }
     this.pagedClientsCount = this.pagedClients.length;
@@ -158,14 +158,14 @@ export class ClientsComponent implements OnInit {
 
     this.actionPromise = this.webProviderService.detachOrganization(
       this.providerId,
-      organization.id
+      organization.id,
     );
     try {
       await this.actionPromise;
       this.platformUtilsService.showToast(
         "success",
         null,
-        this.i18nService.t("detachedOrganization", organization.organizationName)
+        this.i18nService.t("detachedOrganization", organization.organizationName),
       );
       await this.load();
     } catch (e) {

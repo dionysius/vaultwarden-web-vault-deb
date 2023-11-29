@@ -78,7 +78,7 @@ const mockedOrganizationDomainSsoDetailsServerResponse = {
 };
 
 const mockedOrganizationDomainSsoDetailsResponse = new OrganizationDomainSsoDetailsResponse(
-  mockedOrganizationDomainSsoDetailsServerResponse
+  mockedOrganizationDomainSsoDetailsServerResponse,
 );
 
 describe("Org Domain API Service", () => {
@@ -194,7 +194,7 @@ describe("Org Domain API Service", () => {
       "/organizations/domain/sso/details",
       new OrganizationDomainSsoDetailsRequest(email),
       false, //anonymous
-      true
+      true,
     );
 
     expect(result).toEqual(mockedOrganizationDomainSsoDetailsResponse);

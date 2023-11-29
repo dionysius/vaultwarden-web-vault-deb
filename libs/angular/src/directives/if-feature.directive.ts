@@ -31,7 +31,7 @@ export class IfFeatureDirective implements OnInit {
     private templateRef: TemplateRef<any>,
     private viewContainer: ViewContainerRef,
     private configService: ConfigServiceAbstraction,
-    private logService: LogService
+    private logService: LogService,
   ) {}
 
   async ngOnInit() {

@@ -35,12 +35,12 @@ describe("AutofillOverlayPageElement", () => {
       const linkElement = autofillOverlayPageElement["initOverlayPage"](
         "button",
         "https://jest-testing-website.com",
-        translations
+        translations,
       );
 
       expect(globalThis.document.documentElement.setAttribute).toHaveBeenCalledWith(
         "lang",
-        translations.locale
+        translations.locale,
       );
       expect(globalThis.document.head.title).toEqual(translations.buttonPageTitle);
       expect(globalThis.document.createElement).toHaveBeenCalledWith("link");
@@ -62,7 +62,7 @@ describe("AutofillOverlayPageElement", () => {
 
       expect(globalThis.parent.postMessage).toHaveBeenCalledWith(
         { command: "test" },
-        "https://jest-testing-website.com"
+        "https://jest-testing-website.com",
       );
     });
   });
@@ -79,25 +79,25 @@ describe("AutofillOverlayPageElement", () => {
     it("sets up global event listeners", () => {
       const handleWindowMessageSpy = jest.spyOn(
         autofillOverlayPageElement as any,
-        "handleWindowMessage"
+        "handleWindowMessage",
       );
       const handleWindowBlurEventSpy = jest.spyOn(
         autofillOverlayPageElement as any,
-        "handleWindowBlurEvent"
+        "handleWindowBlurEvent",
       );
       const handleDocumentKeyDownEventSpy = jest.spyOn(
         autofillOverlayPageElement as any,
-        "handleDocumentKeyDownEvent"
+        "handleDocumentKeyDownEvent",
       );
       autofillOverlayPageElement["setupGlobalListeners"](
-        mock<OverlayButtonWindowMessageHandlers>()
+        mock<OverlayButtonWindowMessageHandlers>(),
       );
 
       expect(globalThis.addEventListener).toHaveBeenCalledWith("message", handleWindowMessageSpy);
       expect(globalThis.addEventListener).toHaveBeenCalledWith("blur", handleWindowBlurEventSpy);
       expect(globalThis.document.addEventListener).toHaveBeenCalledWith(
         "keydown",
-        handleDocumentKeyDownEventSpy
+        handleDocumentKeyDownEventSpy,
       );
     });
 
@@ -106,18 +106,18 @@ describe("AutofillOverlayPageElement", () => {
       autofillOverlayPageElement["setupGlobalListeners"](
         mock<OverlayButtonWindowMessageHandlers>({
           initAutofillOverlayButton: initAutofillOverlayButtonSpy,
-        })
+        }),
       );
 
       globalThis.dispatchEvent(
         new MessageEvent("message", {
           data: { command: "initAutofillOverlayButton" },
           origin: "https://jest-testing-website.com",
-        })
+        }),
       );
 
       expect(autofillOverlayPageElement["messageOrigin"]).toEqual(
-        "https://jest-testing-website.com"
+        "https://jest-testing-website.com",
       );
     });
 
@@ -126,7 +126,7 @@ describe("AutofillOverlayPageElement", () => {
       autofillOverlayPageElement["setupGlobalListeners"](
         mock<OverlayButtonWindowMessageHandlers>({
           initAutofillOverlayButton: initAutofillOverlayButtonSpy,
-        })
+        }),
       );
       const data = { command: "initAutofillOverlayButton" };
 
@@ -140,7 +140,7 @@ describe("AutofillOverlayPageElement", () => {
       autofillOverlayPageElement["setupGlobalListeners"](
         mock<OverlayButtonWindowMessageHandlers>({
           initAutofillOverlayButton: initAutofillOverlayButtonSpy,
-        })
+        }),
       );
 
       globalThis.dispatchEvent(new MessageEvent("message", { data: { command: "test" } }));
@@ -151,20 +151,20 @@ describe("AutofillOverlayPageElement", () => {
     it("posts a message to the parent when the window is blurred", () => {
       autofillOverlayPageElement["messageOrigin"] = "https://jest-testing-website.com";
       autofillOverlayPageElement["setupGlobalListeners"](
-        mock<OverlayButtonWindowMessageHandlers>()
+        mock<OverlayButtonWindowMessageHandlers>(),
       );
 
       globalThis.dispatchEvent(new Event("blur"));
 
       expect(globalThis.parent.postMessage).toHaveBeenCalledWith(
         { command: "overlayPageBlurred" },
-        "https://jest-testing-website.com"
+        "https://jest-testing-website.com",
       );
     });
 
     it("skips redirecting keyboard focus when a KeyDown event triggers and the key is not a `Tab` or `Escape` key", () => {
       autofillOverlayPageElement["setupGlobalListeners"](
-        mock<OverlayButtonWindowMessageHandlers>()
+        mock<OverlayButtonWindowMessageHandlers>(),
       );
 
       globalThis.document.dispatchEvent(new KeyboardEvent("keydown", { code: "test" }));
@@ -175,44 +175,44 @@ describe("AutofillOverlayPageElement", () => {
     it("redirects the overlay focus out to the previous element on KeyDown of the `Tab+Shift` keys", () => {
       autofillOverlayPageElement["messageOrigin"] = "https://jest-testing-website.com";
       autofillOverlayPageElement["setupGlobalListeners"](
-        mock<OverlayButtonWindowMessageHandlers>()
+        mock<OverlayButtonWindowMessageHandlers>(),
       );
 
       globalThis.document.dispatchEvent(
-        new KeyboardEvent("keydown", { code: "Tab", shiftKey: true })
+        new KeyboardEvent("keydown", { code: "Tab", shiftKey: true }),
       );
 
       expect(globalThis.parent.postMessage).toHaveBeenCalledWith(
         { command: "redirectOverlayFocusOut", direction: "previous" },
-        "https://jest-testing-website.com"
+        "https://jest-testing-website.com",
       );
     });
 
     it("redirects the overlay focus out to the next element on KeyDown of the `Tab` key", () => {
       autofillOverlayPageElement["messageOrigin"] = "https://jest-testing-website.com";
       autofillOverlayPageElement["setupGlobalListeners"](
-        mock<OverlayButtonWindowMessageHandlers>()
+        mock<OverlayButtonWindowMessageHandlers>(),
       );
 
       globalThis.document.dispatchEvent(new KeyboardEvent("keydown", { code: "Tab" }));
 
       expect(globalThis.parent.postMessage).toHaveBeenCalledWith(
         { command: "redirectOverlayFocusOut", direction: "next" },
-        "https://jest-testing-website.com"
+        "https://jest-testing-website.com",
       );
     });
 
     it("redirects the overlay focus out to the current element on KeyDown of the `Escape` key", () => {
       autofillOverlayPageElement["messageOrigin"] = "https://jest-testing-website.com";
       autofillOverlayPageElement["setupGlobalListeners"](
-        mock<OverlayButtonWindowMessageHandlers>()
+        mock<OverlayButtonWindowMessageHandlers>(),
       );
 
       globalThis.document.dispatchEvent(new KeyboardEvent("keydown", { code: "Escape" }));
 
       expect(globalThis.parent.postMessage).toHaveBeenCalledWith(
         { command: "redirectOverlayFocusOut", direction: "current" },
-        "https://jest-testing-website.com"
+        "https://jest-testing-website.com",
       );
     });
   });

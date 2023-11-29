@@ -69,7 +69,7 @@ export class CliUtils {
           },
           (reason) => {
             reject(reason);
-          }
+          },
         );
       });
     });
@@ -216,7 +216,7 @@ export class CliUtils {
   static async getPassword(
     password: string,
     options: { passwordFile?: string; passwordEnv?: string },
-    logService?: LogService
+    logService?: LogService,
   ): Promise<string | Response> {
     if (Utils.isNullOrEmpty(password)) {
       if (options?.passwordFile) {
@@ -243,7 +243,7 @@ export class CliUtils {
         password = answer.password;
       } else {
         return Response.badRequest(
-          "Master password is required. Try again in interactive mode or provide a password file or environment variable."
+          "Master password is required. Try again in interactive mode or provide a password file or environment variable.",
         );
       }
     }

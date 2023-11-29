@@ -23,7 +23,7 @@ export class Folder extends Domain {
         id: null,
         name: null,
       },
-      ["id"]
+      ["id"],
     );
 
     this.revisionDate = obj.revisionDate != null ? new Date(obj.revisionDate) : null;
@@ -35,7 +35,7 @@ export class Folder extends Domain {
       {
         name: null,
       },
-      null
+      null,
     );
   }
 

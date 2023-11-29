@@ -45,7 +45,7 @@ export class LoginComponent extends BaseLoginComponent {
     formValidationErrorService: FormValidationErrorsService,
     route: ActivatedRoute,
     loginService: LoginService,
-    webAuthnLoginService: WebAuthnLoginServiceAbstraction
+    webAuthnLoginService: WebAuthnLoginServiceAbstraction,
   ) {
     super(
       devicesApiService,
@@ -64,7 +64,7 @@ export class LoginComponent extends BaseLoginComponent {
       formValidationErrorService,
       route,
       loginService,
-      webAuthnLoginService
+      webAuthnLoginService,
     );
     super.onSuccessfulLogin = async () => {
       await syncService.fullSync(true);
@@ -123,7 +123,7 @@ export class LoginComponent extends BaseLoginComponent {
         "&codeChallenge=" +
         codeChallenge +
         "&email=" +
-        encodeURIComponent(this.formGroup.controls.email.value)
+        encodeURIComponent(this.formGroup.controls.email.value),
     );
   }
 }

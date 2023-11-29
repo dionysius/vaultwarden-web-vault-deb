@@ -171,7 +171,7 @@ function distSafariApp(cb, subBuildPath) {
       },
       () => {
         return cb;
-      }
+      },
     );
 }
 
@@ -182,7 +182,7 @@ function safariCopyAssets(source, dest) {
       .on("error", reject)
       .pipe(gulpif("safari/Info.plist", replace("0.0.1", manifest.version)))
       .pipe(
-        gulpif("safari/Info.plist", replace("0.0.2", process.env.BUILD_NUMBER || manifest.version))
+        gulpif("safari/Info.plist", replace("0.0.2", process.env.BUILD_NUMBER || manifest.version)),
       )
       .pipe(gulpif("desktop.xcodeproj/project.pbxproj", replace("../../../build", "../safari/app")))
       .pipe(gulp.dest(dest))
@@ -208,8 +208,8 @@ async function safariCopyBuild(source, dest) {
             delete manifest.optional_permissions;
             manifest.permissions.push("nativeMessaging");
             return manifest;
-          })
-        )
+          }),
+        ),
       )
       .pipe(gulp.dest(dest))
       .on("end", resolve);

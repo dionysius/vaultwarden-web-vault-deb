@@ -19,14 +19,14 @@ export class ThemingService implements AbstractThemingService {
   constructor(
     private stateService: StateService,
     @Inject(WINDOW) private window: Window,
-    @Inject(DOCUMENT) private document: Document
+    @Inject(DOCUMENT) private document: Document,
   ) {
     this.monitorThemeChanges();
   }
 
   async monitorThemeChanges(): Promise<void> {
     this._theme.next(
-      new ThemeBuilder(await this.stateService.getTheme(), await this.getSystemTheme())
+      new ThemeBuilder(await this.stateService.getTheme(), await this.getSystemTheme()),
     );
     this.monitorConfiguredThemeChanges();
     this.monitorSystemThemeChanges();
@@ -47,7 +47,7 @@ export class ThemingService implements AbstractThemingService {
         "theme_" + ThemeType.Light,
         "theme_" + ThemeType.Dark,
         "theme_" + ThemeType.Nord,
-        "theme_" + ThemeType.SolarizedDark
+        "theme_" + ThemeType.SolarizedDark,
       );
       this.document.documentElement.classList.add("theme_" + theme.effectiveTheme);
     });
@@ -64,7 +64,7 @@ export class ThemingService implements AbstractThemingService {
   protected monitorSystemThemeChanges(): void {
     fromEvent<MediaQueryListEvent>(
       window.matchMedia("(prefers-color-scheme: dark)"),
-      "change"
+      "change",
     ).subscribe((event) => {
       this.updateSystemTheme(event.matches ? ThemeType.Dark : ThemeType.Light);
     });

@@ -15,7 +15,7 @@ export class AuthGuard implements CanActivate {
     private router: Router,
     private messagingService: MessagingService,
     private keyConnectorService: KeyConnectorService,
-    private stateService: StateService
+    private stateService: StateService,
   ) {}
 
   async canActivate(route: ActivatedRouteSnapshot, routerState: RouterStateSnapshot) {

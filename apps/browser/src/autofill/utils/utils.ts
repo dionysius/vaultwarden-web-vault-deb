@@ -65,7 +65,7 @@ function buildSvgDomElement(svgString: string, ariaHidden = true): HTMLElement {
  */
 async function sendExtensionMessage(
   command: string,
-  options: Record<string, any> = {}
+  options: Record<string, any> = {},
 ): Promise<any | void> {
   return new Promise((resolve) => {
     chrome.runtime.sendMessage(Object.assign({ command }, options), (response) => {
@@ -88,7 +88,7 @@ async function sendExtensionMessage(
 function setElementStyles(
   element: HTMLElement,
   styles: Partial<CSSStyleDeclaration>,
-  priority?: boolean
+  priority?: boolean,
 ) {
   if (!element || !styles || !Object.keys(styles).length) {
     return;
@@ -98,7 +98,7 @@ function setElementStyles(
     element.style.setProperty(
       styleProperty.replace(/([a-z])([A-Z])/g, "$1-$2"), // Convert camelCase to kebab-case
       styles[styleProperty],
-      priority ? "important" : undefined
+      priority ? "important" : undefined,
     );
   }
 }

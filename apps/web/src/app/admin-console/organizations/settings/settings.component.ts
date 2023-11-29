@@ -14,11 +14,14 @@ export class SettingsComponent implements OnInit {
   organization$: Observable<Organization>;
   FeatureFlag = FeatureFlag;
 
-  constructor(private route: ActivatedRoute, private organizationService: OrganizationService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private organizationService: OrganizationService,
+  ) {}
 
   ngOnInit() {
     this.organization$ = this.route.params.pipe(
-      switchMap((params) => this.organizationService.get$(params.organizationId))
+      switchMap((params) => this.organizationService.get$(params.organizationId)),
     );
   }
 }

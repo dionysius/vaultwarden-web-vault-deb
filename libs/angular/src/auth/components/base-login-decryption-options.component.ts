@@ -87,7 +87,7 @@ export class BaseLoginDecryptionOptionsComponent implements OnInit, OnDestroy {
     protected validationService: ValidationService,
     protected deviceTrustCryptoService: DeviceTrustCryptoServiceAbstraction,
     protected platformUtilsService: PlatformUtilsService,
-    protected passwordResetEnrollmentService: PasswordResetEnrollmentServiceAbstraction
+    protected passwordResetEnrollmentService: PasswordResetEnrollmentServiceAbstraction,
   ) {}
 
   async ngOnInit() {
@@ -152,16 +152,16 @@ export class BaseLoginDecryptionOptionsComponent implements OnInit, OnDestroy {
     this.rememberDevice.valueChanges
       .pipe(
         switchMap((value) =>
-          defer(() => this.deviceTrustCryptoService.setShouldTrustDevice(value))
+          defer(() => this.deviceTrustCryptoService.setShouldTrustDevice(value)),
         ),
-        takeUntil(this.destroy$)
+        takeUntil(this.destroy$),
       )
       .subscribe();
   }
 
   async loadNewUserData() {
     const autoEnrollStatus$ = defer(() =>
-      this.stateService.getUserSsoOrganizationIdentifier()
+      this.stateService.getUserSsoOrganizationIdentifier(),
     ).pipe(
       switchMap((organizationIdentifier) => {
         if (organizationIdentifier == undefined) {
@@ -173,7 +173,7 @@ export class BaseLoginDecryptionOptionsComponent implements OnInit, OnDestroy {
       catchError((err: unknown) => {
         this.validationService.showError(err);
         return of(undefined);
-      })
+      }),
     );
 
     const email$ = from(this.stateService.getEmail()).pipe(
@@ -181,7 +181,7 @@ export class BaseLoginDecryptionOptionsComponent implements OnInit, OnDestroy {
         this.validationService.showError(err);
         return of(undefined);
       }),
-      takeUntil(this.destroy$)
+      takeUntil(this.destroy$),
     );
 
     const autoEnrollStatus = await firstValueFrom(autoEnrollStatus$);
@@ -199,7 +199,7 @@ export class BaseLoginDecryptionOptionsComponent implements OnInit, OnDestroy {
         this.validationService.showError(err);
         return of(undefined);
       }),
-      takeUntil(this.destroy$)
+      takeUntil(this.destroy$),
     );
 
     email$
@@ -207,7 +207,7 @@ export class BaseLoginDecryptionOptionsComponent implements OnInit, OnDestroy {
         takeUntil(this.destroy$),
         finalize(() => {
           this.loading = false;
-        })
+        }),
       )
       .subscribe((email) => {
         const showApproveFromOtherDeviceBtn =
@@ -264,7 +264,7 @@ export class BaseLoginDecryptionOptionsComponent implements OnInit, OnDestroy {
       this.platformUtilsService.showToast(
         "success",
         null,
-        this.i18nService.t("accountSuccessfullyCreated")
+        this.i18nService.t("accountSuccessfullyCreated"),
       );
 
       await this.passwordResetEnrollmentService.enroll(this.data.organizationId);

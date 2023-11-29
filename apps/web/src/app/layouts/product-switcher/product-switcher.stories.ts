@@ -89,8 +89,8 @@ export default {
                 ],
               },
             ],
-            { useHash: true }
-          )
+            { useHash: true },
+          ),
         ),
       ],
     }),

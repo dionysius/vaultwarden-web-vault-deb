@@ -93,7 +93,7 @@ export class DeleteOrganizationDialogComponent implements OnInit, OnDestroy {
     private cipherService: CipherService,
     private organizationService: OrganizationService,
     private organizationApiService: OrganizationApiServiceAbstraction,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
   ) {}
 
   ngOnDestroy(): void {
@@ -124,7 +124,7 @@ export class DeleteOrganizationDialogComponent implements OnInit, OnDestroy {
     this.platformUtilsService.showToast(
       "success",
       this.i18nService.t("organizationDeleted"),
-      this.i18nService.t("organizationDeletedDesc")
+      this.i18nService.t("organizationDeletedDesc"),
     );
     this.dialogRef.close(DeleteOrganizationDialogResult.Deleted);
   };
@@ -144,8 +144,8 @@ export class DeleteOrganizationDialogComponent implements OnInit, OnDestroy {
         organizationContentSummary.itemCountByType.push(
           new OrganizationContentSummaryItem(
             count,
-            this.getOrganizationItemLocalizationKeysByType(CipherType[cipherType])
-          )
+            this.getOrganizationItemLocalizationKeysByType(CipherType[cipherType]),
+          ),
         );
       }
     }
@@ -169,10 +169,10 @@ export class DeleteOrganizationDialogComponent implements OnInit, OnDestroy {
  */
 export function openDeleteOrganizationDialog(
   dialogService: DialogService,
-  config: DialogConfig<DeleteOrganizationDialogParams>
+  config: DialogConfig<DeleteOrganizationDialogParams>,
 ) {
   return dialogService.open<DeleteOrganizationDialogResult, DeleteOrganizationDialogParams>(
     DeleteOrganizationDialogComponent,
-    config
+    config,
   );
 }

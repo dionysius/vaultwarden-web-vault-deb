@@ -50,7 +50,7 @@ export type KeyConnectorServiceInitOptions = KeyConnectorServiceFactoryOptions &
 
 export function keyConnectorServiceFactory(
   cache: { keyConnectorService?: AbstractKeyConnectorService } & CachedServices,
-  opts: KeyConnectorServiceInitOptions
+  opts: KeyConnectorServiceInitOptions,
 ): Promise<AbstractKeyConnectorService> {
   return factory(
     cache,
@@ -65,7 +65,7 @@ export function keyConnectorServiceFactory(
         await logServiceFactory(cache, opts),
         await organizationServiceFactory(cache, opts),
         await cryptoFunctionServiceFactory(cache, opts),
-        opts.keyConnectorServiceOptions.logoutCallback
-      )
+        opts.keyConnectorServiceOptions.logoutCallback,
+      ),
   );
 }

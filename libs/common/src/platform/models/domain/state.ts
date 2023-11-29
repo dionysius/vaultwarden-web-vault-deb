@@ -5,7 +5,7 @@ import { GlobalState } from "./global-state";
 
 export class State<
   TGlobalState extends GlobalState = GlobalState,
-  TAccount extends Account = Account
+  TAccount extends Account = Account,
 > {
   accounts: { [userId: string]: TAccount } = {};
   globals: TGlobalState;
@@ -20,7 +20,7 @@ export class State<
   // TODO, make Jsonify<State,TGlobalState,TAccount> work. It currently doesn't because Globals doesn't implement Jsonify.
   static fromJSON<TGlobalState extends GlobalState, TAccount extends Account>(
     obj: any,
-    accountDeserializer: (json: Jsonify<TAccount>) => TAccount
+    accountDeserializer: (json: Jsonify<TAccount>) => TAccount,
   ): State<TGlobalState, TAccount> {
     if (obj == null) {
       return null;
@@ -33,7 +33,7 @@ export class State<
 
   private static buildAccountMapFromJSON<TAccount extends Account>(
     jsonAccounts: { [userId: string]: Jsonify<TAccount> },
-    accountDeserializer: (json: Jsonify<TAccount>) => TAccount
+    accountDeserializer: (json: Jsonify<TAccount>) => TAccount,
   ) {
     if (!jsonAccounts) {
       return {};

@@ -17,7 +17,7 @@ const providerFactory = (props: Partial<Provider> = {}) =>
       enabled: true,
       type: ProviderUserType.ServiceUser,
     },
-    props
+    props,
   );
 
 describe("Provider Permissions Guard", () => {
@@ -43,7 +43,7 @@ describe("Provider Permissions Guard", () => {
       providerService,
       router,
       mock<PlatformUtilsService>(),
-      mock<I18nService>()
+      mock<I18nService>(),
     );
   });
 

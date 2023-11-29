@@ -11,7 +11,7 @@ import * as config from "../variables";
 
   const response = await nativeMessageService.sendHandshake(
     config.testRsaPublicKey,
-    config.applicationName
+    config.applicationName,
   );
   LogUtils.logSuccess("Received response to handshake request");
   if (response.status) {

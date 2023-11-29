@@ -20,7 +20,7 @@ type FlagValue = boolean | number | string;
 export const canAccessFeature = (
   featureFlag: FeatureFlag,
   requiredFlagValue: FlagValue = true,
-  redirectUrlOnDisabled?: string
+  redirectUrlOnDisabled?: string,
 ): CanActivateFn => {
   return async () => {
     const configService = inject(ConfigServiceAbstraction);

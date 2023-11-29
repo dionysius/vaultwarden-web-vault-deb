@@ -33,7 +33,7 @@ export class ExportComponent extends BaseExportComponent implements OnInit {
     private broadcasterService: BroadcasterService,
     logService: LogService,
     fileDownloadService: FileDownloadService,
-    dialogService: DialogService
+    dialogService: DialogService,
   ) {
     super(
       cryptoService,
@@ -47,7 +47,7 @@ export class ExportComponent extends BaseExportComponent implements OnInit {
       userVerificationService,
       formBuilder,
       fileDownloadService,
-      dialogService
+      dialogService,
     );
   }
 

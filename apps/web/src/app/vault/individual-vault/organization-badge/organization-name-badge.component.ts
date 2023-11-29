@@ -25,7 +25,7 @@ export class OrganizationNameBadgeComponent implements OnChanges {
   constructor(
     private i18nService: I18nService,
     private avatarService: AvatarUpdateService,
-    private tokenService: TokenService
+    private tokenService: TokenService,
   ) {}
 
   // ngOnChanges is required since this component might be reused as part of

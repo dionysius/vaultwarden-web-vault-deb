@@ -23,7 +23,7 @@ export class SecurityKeysComponent implements OnInit {
     private userVerificationService: UserVerificationService,
     private stateService: StateService,
     private modalService: ModalService,
-    private apiService: ApiService
+    private apiService: ApiService,
   ) {}
 
   async ngOnInit() {

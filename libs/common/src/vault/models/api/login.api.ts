@@ -33,7 +33,7 @@ export class LoginApi extends BaseResponse {
     const fido2Credentials = this.getResponseProperty("Fido2Credentials");
     if (fido2Credentials != null) {
       this.fido2Credentials = fido2Credentials.map(
-        (key: JsonObject) => new Fido2CredentialApi(key)
+        (key: JsonObject) => new Fido2CredentialApi(key),
       );
     }
   }

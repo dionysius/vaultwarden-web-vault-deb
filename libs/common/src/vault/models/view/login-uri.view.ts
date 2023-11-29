@@ -113,7 +113,7 @@ export class LoginUriView implements View {
   matchesUri(
     targetUri: string,
     equivalentDomains: Set<string>,
-    defaultUriMatch: UriMatchType = null
+    defaultUriMatch: UriMatchType = null,
   ): boolean {
     if (!this.uri || !targetUri) {
       return false;

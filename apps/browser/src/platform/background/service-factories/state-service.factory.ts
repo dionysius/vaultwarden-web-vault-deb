@@ -35,7 +35,7 @@ export type StateServiceInitOptions = StateServiceFactoryOptions &
 
 export async function stateServiceFactory(
   cache: { stateService?: BrowserStateService } & CachedServices,
-  opts: StateServiceInitOptions
+  opts: StateServiceInitOptions,
 ): Promise<BrowserStateService> {
   const service = await factory(
     cache,
@@ -49,8 +49,8 @@ export async function stateServiceFactory(
         await logServiceFactory(cache, opts),
         opts.stateServiceOptions.stateFactory,
         await accountServiceFactory(cache, opts),
-        opts.stateServiceOptions.useAccountCache
-      )
+        opts.stateServiceOptions.useAccountCache,
+      ),
   );
   service.init();
   return service;

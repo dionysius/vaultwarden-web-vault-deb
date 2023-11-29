@@ -6,7 +6,10 @@ import { GroupPolicyEnvironment } from "../../admin-console/types/group-policy-e
 import { devFlagEnabled, devFlagValue } from "../flags";
 
 export class BrowserEnvironmentService extends EnvironmentService {
-  constructor(stateService: StateService, private logService: LogService) {
+  constructor(
+    stateService: StateService,
+    private logService: LogService,
+  ) {
     super(stateService);
   }
 

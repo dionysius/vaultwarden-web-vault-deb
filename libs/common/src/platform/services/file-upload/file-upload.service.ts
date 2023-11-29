@@ -23,7 +23,7 @@ export class FileUploadService implements FileUploadServiceAbstraction {
     uploadData: { url: string; fileUploadType: FileUploadType },
     fileName: EncString,
     encryptedFileData: EncArrayBuffer,
-    fileUploadMethods: FileUploadApiMethods
+    fileUploadMethods: FileUploadApiMethods,
   ) {
     try {
       switch (uploadData.fileUploadType) {
@@ -31,14 +31,14 @@ export class FileUploadService implements FileUploadServiceAbstraction {
           await this.bitwardenFileUploadService.upload(
             fileName.encryptedString,
             encryptedFileData,
-            (fd) => fileUploadMethods.postDirect(fd)
+            (fd) => fileUploadMethods.postDirect(fd),
           );
           break;
         case FileUploadType.Azure: {
           await this.azureFileUploadService.upload(
             uploadData.url,
             encryptedFileData,
-            fileUploadMethods.renewFileUploadUrl
+            fileUploadMethods.renewFileUploadUrl,
           );
           break;
         }

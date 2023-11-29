@@ -44,7 +44,7 @@ export class BitPasswordInputToggleDirective implements AfterContentInit, OnChan
   constructor(
     @Host() private button: BitIconButtonComponent,
     private formField: BitFormFieldComponent,
-    private i18nService: I18nService
+    private i18nService: I18nService,
   ) {}
 
   get icon() {

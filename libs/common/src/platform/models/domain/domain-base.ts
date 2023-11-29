@@ -9,7 +9,7 @@ export default class Domain {
     domain: D,
     dataObj: any,
     map: any,
-    notEncList: any[] = []
+    notEncList: any[] = [],
   ) {
     for (const prop in map) {
       // eslint-disable-next-line
@@ -29,7 +29,7 @@ export default class Domain {
     domain: D,
     dataObj: any,
     map: any,
-    notEncStringList: any[] = []
+    notEncStringList: any[] = [],
   ) {
     for (const prop in map) {
       // eslint-disable-next-line
@@ -50,7 +50,7 @@ export default class Domain {
     viewModel: T,
     map: any,
     orgId: string,
-    key: SymmetricCryptoKey = null
+    key: SymmetricCryptoKey = null,
   ): Promise<T> {
     const promises = [];
     const self: any = this;

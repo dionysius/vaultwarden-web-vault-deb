@@ -23,7 +23,7 @@ export class GroupService {
       "/organizations/" + orgId + "/groups/" + groupId + "/details",
       null,
       true,
-      true
+      true,
     );
 
     return GroupView.fromResponse(new GroupDetailsResponse(r));
@@ -35,7 +35,7 @@ export class GroupService {
       "/organizations/" + orgId + "/groups",
       null,
       true,
-      true
+      true,
     );
 
     const listResponse = new ListResponse(r, GroupDetailsResponse);
@@ -56,7 +56,7 @@ export class InternalGroupService extends GroupService {
       "/organizations/" + orgId + "/groups/" + groupId,
       null,
       true,
-      false
+      false,
     );
   }
 
@@ -66,7 +66,7 @@ export class InternalGroupService extends GroupService {
       "/organizations/" + orgId + "/groups",
       new OrganizationGroupBulkRequest(groupIds),
       true,
-      true
+      true,
     );
   }
 
@@ -76,7 +76,7 @@ export class InternalGroupService extends GroupService {
     request.accessAll = group.accessAll;
     request.users = group.members;
     request.collections = group.collections.map(
-      (c) => new SelectionReadOnlyRequest(c.id, c.readOnly, c.hidePasswords, c.manage)
+      (c) => new SelectionReadOnlyRequest(c.id, c.readOnly, c.hidePasswords, c.manage),
     );
 
     if (group.id == undefined) {
@@ -92,7 +92,7 @@ export class InternalGroupService extends GroupService {
       "/organizations/" + organizationId + "/groups",
       request,
       true,
-      true
+      true,
     );
     return GroupView.fromResponse(new GroupResponse(r));
   }
@@ -100,14 +100,14 @@ export class InternalGroupService extends GroupService {
   private async putGroup(
     organizationId: string,
     id: string,
-    request: GroupRequest
+    request: GroupRequest,
   ): Promise<GroupView> {
     const r = await this.apiService.send(
       "PUT",
       "/organizations/" + organizationId + "/groups/" + id,
       request,
       true,
-      true
+      true,
     );
     return GroupView.fromResponse(new GroupResponse(r));
   }

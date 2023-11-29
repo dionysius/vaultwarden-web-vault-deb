@@ -9,7 +9,7 @@ export class EventUploadService implements EventUploadServiceAbstraction {
   constructor(
     private apiService: ApiService,
     private stateService: StateService,
-    private logService: LogService
+    private logService: LogService,
   ) {}
 
   init(checkOnInterval: boolean) {

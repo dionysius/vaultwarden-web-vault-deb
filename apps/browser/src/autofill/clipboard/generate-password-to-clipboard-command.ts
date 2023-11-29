@@ -9,7 +9,7 @@ import { copyToClipboard } from "./copy-to-clipboard-command";
 export class GeneratePasswordToClipboardCommand {
   constructor(
     private passwordGenerationService: PasswordGenerationServiceAbstraction,
-    private stateService: BrowserStateService
+    private stateService: BrowserStateService,
   ) {}
 
   async generatePasswordToClipboard(tab: chrome.tabs.Tab) {

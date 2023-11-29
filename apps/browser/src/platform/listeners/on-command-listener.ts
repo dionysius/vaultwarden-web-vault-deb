@@ -98,7 +98,7 @@ const doGeneratePasswordToClipboard = async (tab: chrome.tabs.Tab): Promise<void
 
   const command = new GeneratePasswordToClipboardCommand(
     await passwordGenerationServiceFactory(cache, options),
-    await stateServiceFactory(cache, options)
+    await stateServiceFactory(cache, options),
   );
   command.generatePasswordToClipboard(tab);
 };

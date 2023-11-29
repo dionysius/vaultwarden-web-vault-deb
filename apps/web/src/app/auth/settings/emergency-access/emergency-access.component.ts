@@ -53,7 +53,7 @@ export class EmergencyAccessComponent implements OnInit {
     private logService: LogService,
     private stateService: StateService,
     private organizationService: OrganizationService,
-    protected dialogService: DialogService
+    protected dialogService: DialogService,
   ) {}
 
   async ngOnInit() {
@@ -94,7 +94,7 @@ export class EmergencyAccessComponent implements OnInit {
           modal.close();
           this.remove(details);
         });
-      }
+      },
     );
   }
 
@@ -111,7 +111,7 @@ export class EmergencyAccessComponent implements OnInit {
     this.platformUtilsService.showToast(
       "success",
       null,
-      this.i18nService.t("hasBeenReinvited", contact.email)
+      this.i18nService.t("hasBeenReinvited", contact.email),
     );
     this.actionPromise = null;
   }
@@ -145,10 +145,10 @@ export class EmergencyAccessComponent implements OnInit {
             this.platformUtilsService.showToast(
               "success",
               null,
-              this.i18nService.t("hasBeenConfirmed", this.userNamePipe.transform(contact))
+              this.i18nService.t("hasBeenConfirmed", this.userNamePipe.transform(contact)),
             );
           });
-        }
+        },
       );
       return;
     }
@@ -160,7 +160,7 @@ export class EmergencyAccessComponent implements OnInit {
     this.platformUtilsService.showToast(
       "success",
       null,
-      this.i18nService.t("hasBeenConfirmed", this.userNamePipe.transform(contact))
+      this.i18nService.t("hasBeenConfirmed", this.userNamePipe.transform(contact)),
     );
     this.actionPromise = null;
   }
@@ -181,7 +181,7 @@ export class EmergencyAccessComponent implements OnInit {
       this.platformUtilsService.showToast(
         "success",
         null,
-        this.i18nService.t("removedUserId", this.userNamePipe.transform(details))
+        this.i18nService.t("removedUserId", this.userNamePipe.transform(details)),
       );
 
       if (details instanceof GranteeEmergencyAccess) {
@@ -215,13 +215,13 @@ export class EmergencyAccessComponent implements OnInit {
     this.platformUtilsService.showToast(
       "success",
       null,
-      this.i18nService.t("requestSent", this.userNamePipe.transform(details))
+      this.i18nService.t("requestSent", this.userNamePipe.transform(details)),
     );
   }
 
   async approve(details: GranteeEmergencyAccess) {
     const type = this.i18nService.t(
-      details.type === EmergencyAccessType.View ? "view" : "takeover"
+      details.type === EmergencyAccessType.View ? "view" : "takeover",
     );
 
     const confirmed = await this.dialogService.openSimpleDialog({
@@ -244,7 +244,7 @@ export class EmergencyAccessComponent implements OnInit {
     this.platformUtilsService.showToast(
       "success",
       null,
-      this.i18nService.t("emergencyApproved", this.userNamePipe.transform(details))
+      this.i18nService.t("emergencyApproved", this.userNamePipe.transform(details)),
     );
   }
 
@@ -255,7 +255,7 @@ export class EmergencyAccessComponent implements OnInit {
     this.platformUtilsService.showToast(
       "success",
       null,
-      this.i18nService.t("emergencyRejected", this.userNamePipe.transform(details))
+      this.i18nService.t("emergencyRejected", this.userNamePipe.transform(details)),
     );
   }
 
@@ -274,10 +274,10 @@ export class EmergencyAccessComponent implements OnInit {
           this.platformUtilsService.showToast(
             "success",
             null,
-            this.i18nService.t("passwordResetFor", this.userNamePipe.transform(details))
+            this.i18nService.t("passwordResetFor", this.userNamePipe.transform(details)),
           );
         });
-      }
+      },
     );
   }
 

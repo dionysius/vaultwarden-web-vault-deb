@@ -7,7 +7,7 @@
       <h2 bitTypography="h2" class="tw-mb-4 tw-text-center">View Send</h2>
     </div>
     <div class="tw-w-full tw-text-center" *ngIf="creatorIdentifier != null">
-      <p>{{ "sendAccessCreatorIdentifier" | i18n : creatorIdentifier }}</p>
+      <p>{{ "sendAccessCreatorIdentifier" | i18n: creatorIdentifier }}</p>
     </div>
     <bit-callout *ngIf="hideEmail" type="warning" title="{{ 'warning' | i18n }}">
       {{ "viewSendHiddenEmailWarning" | i18n }}
@@ -51,7 +51,7 @@
             ></app-send-access-file>
           </ng-container>
           <p *ngIf="expirationDate" class="tw-text-center tw-text-muted">
-            Expires: {{ expirationDate | date : "medium" }}
+            Expires: {{ expirationDate | date: "medium" }}
           </p>
         </div>
       </ng-container>

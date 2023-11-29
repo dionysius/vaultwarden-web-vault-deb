@@ -43,7 +43,7 @@ export class UpdatePasswordComponent extends BaseChangePasswordComponent {
     stateService: StateService,
     private userVerificationService: UserVerificationService,
     private logService: LogService,
-    dialogService: DialogService
+    dialogService: DialogService,
   ) {
     super(
       i18nService,
@@ -53,7 +53,7 @@ export class UpdatePasswordComponent extends BaseChangePasswordComponent {
       platformUtilsService,
       policyService,
       stateService,
-      dialogService
+      dialogService,
     );
   }
 
@@ -72,7 +72,7 @@ export class UpdatePasswordComponent extends BaseChangePasswordComponent {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
-        this.i18nService.t("masterPasswordRequired")
+        this.i18nService.t("masterPasswordRequired"),
       );
       return false;
     }
@@ -96,14 +96,14 @@ export class UpdatePasswordComponent extends BaseChangePasswordComponent {
   async performSubmitActions(
     newMasterKeyHash: string,
     newMasterKey: MasterKey,
-    newUserKey: [UserKey, EncString]
+    newUserKey: [UserKey, EncString],
   ) {
     try {
       // Create Request
       const request = new PasswordRequest();
       request.masterPasswordHash = await this.cryptoService.hashMasterKey(
         this.currentMasterPassword,
-        await this.cryptoService.getOrDeriveMasterKey(this.currentMasterPassword)
+        await this.cryptoService.getOrDeriveMasterKey(this.currentMasterPassword),
       );
       request.newMasterPasswordHash = newMasterKeyHash;
       request.key = newUserKey[1].encryptedString;
@@ -114,7 +114,7 @@ export class UpdatePasswordComponent extends BaseChangePasswordComponent {
       this.platformUtilsService.showToast(
         "success",
         this.i18nService.t("masterPasswordChanged"),
-        this.i18nService.t("logBackIn")
+        this.i18nService.t("logBackIn"),
       );
 
       if (this.onSuccessfulChangePassword != null) {

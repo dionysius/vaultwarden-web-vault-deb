@@ -13,12 +13,12 @@ export type CryptoFunctionServiceInitOptions = CryptoFunctionServiceFactoryOptio
 
 export function cryptoFunctionServiceFactory(
   cache: { cryptoFunctionService?: CryptoFunctionService } & CachedServices,
-  opts: CryptoFunctionServiceFactoryOptions
+  opts: CryptoFunctionServiceFactoryOptions,
 ): Promise<CryptoFunctionService> {
   return factory(
     cache,
     "cryptoFunctionService",
     opts,
-    () => new WebCryptoFunctionService(opts.cryptoFunctionServiceOptions.win)
+    () => new WebCryptoFunctionService(opts.cryptoFunctionServiceOptions.win),
   );
 }

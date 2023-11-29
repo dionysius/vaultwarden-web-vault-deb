@@ -20,7 +20,7 @@ export class DomainRulesComponent implements OnInit {
     private apiService: ApiService,
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
-    private logService: LogService
+    private logService: LogService,
   ) {}
 
   async ngOnInit() {

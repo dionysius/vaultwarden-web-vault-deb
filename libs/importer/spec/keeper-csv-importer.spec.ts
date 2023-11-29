@@ -54,7 +54,7 @@ describe("Keeper CSV Importer", () => {
 
     const cipher3 = result.ciphers.shift();
     expect(cipher3.login.totp).toEqual(
-      "otpauth://totp/Amazon:me@company.com?secret=JBSWY3DPEHPK3PXP&issuer=Amazon&algorithm=SHA1&digits=6&period=30"
+      "otpauth://totp/Amazon:me@company.com?secret=JBSWY3DPEHPK3PXP&issuer=Amazon&algorithm=SHA1&digits=6&period=30",
     );
   });
 

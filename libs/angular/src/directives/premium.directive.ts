@@ -12,7 +12,7 @@ export class PremiumDirective implements OnInit {
   constructor(
     private templateRef: TemplateRef<any>,
     private viewContainer: ViewContainerRef,
-    private stateService: StateService
+    private stateService: StateService,
   ) {}
 
   async ngOnInit(): Promise<void> {

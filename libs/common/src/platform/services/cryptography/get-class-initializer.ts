@@ -16,7 +16,7 @@ const classInitializers: Record<InitializerKey, (obj: any) => any> = {
 };
 
 export function getClassInitializer<T extends InitializerMetadata>(
-  className: InitializerKey
+  className: InitializerKey,
 ): (obj: Jsonify<T>) => T {
   return classInitializers[className];
 }

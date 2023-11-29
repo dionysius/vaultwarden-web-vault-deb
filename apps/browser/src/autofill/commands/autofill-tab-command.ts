@@ -21,7 +21,7 @@ export class AutofillTabCommand {
         },
       ],
       tab,
-      true
+      true,
     );
   }
 
@@ -64,7 +64,7 @@ export class AutofillTabCommand {
           }
 
           resolve(response);
-        }
+        },
       );
     });
   }

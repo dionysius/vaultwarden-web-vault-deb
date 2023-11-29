@@ -64,7 +64,7 @@ export class AccessComponent implements OnInit {
     private sendApiService: SendApiService,
     private platformUtilsService: PlatformUtilsService,
     private i18nService: I18nService,
-    protected formBuilder: FormBuilder
+    protected formBuilder: FormBuilder,
   ) {}
 
   protected get expirationDate() {
@@ -105,7 +105,7 @@ export class AccessComponent implements OnInit {
           this.password,
           keyArray,
           "sha256",
-          SEND_KDF_ITERATIONS
+          SEND_KDF_ITERATIONS,
         );
         this.accessRequest.password = Utils.fromBufferToB64(passwordHash);
       }
@@ -130,7 +130,7 @@ export class AccessComponent implements OnInit {
           this.platformUtilsService.showToast(
             "error",
             this.i18nService.t("errorOccurred"),
-            e.message
+            e.message,
           );
         } else {
           this.error = true;

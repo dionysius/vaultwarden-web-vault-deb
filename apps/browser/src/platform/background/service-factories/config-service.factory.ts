@@ -30,7 +30,7 @@ export type ConfigServiceInitOptions = ConfigServiceFactoryOptions &
 
 export function configServiceFactory(
   cache: { configService?: ConfigServiceAbstraction } & CachedServices,
-  opts: ConfigServiceInitOptions
+  opts: ConfigServiceInitOptions,
 ): Promise<ConfigServiceAbstraction> {
   return factory(
     cache,
@@ -43,7 +43,7 @@ export function configServiceFactory(
         await authServiceFactory(cache, opts),
         await environmentServiceFactory(cache, opts),
         await logServiceFactory(cache, opts),
-        opts.configServiceOptions?.subscribe ?? true
-      )
+        opts.configServiceOptions?.subscribe ?? true,
+      ),
   );
 }

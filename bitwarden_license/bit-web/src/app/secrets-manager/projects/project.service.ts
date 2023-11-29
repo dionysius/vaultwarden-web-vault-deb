@@ -26,7 +26,7 @@ export class ProjectService {
   constructor(
     private cryptoService: CryptoService,
     private apiService: ApiService,
-    private encryptService: EncryptService
+    private encryptService: EncryptService,
   ) {}
 
   async getByProjectId(projectId: string): Promise<ProjectView> {
@@ -41,7 +41,7 @@ export class ProjectService {
       "/organizations/" + organizationId + "/projects",
       null,
       true,
-      true
+      true,
     );
     const results = new ListResponse(r, ProjectListItemResponse);
     return await this.createProjectsListView(organizationId, results.data);
@@ -54,7 +54,7 @@ export class ProjectService {
       "/organizations/" + organizationId + "/projects",
       request,
       true,
-      true
+      true,
     );
 
     const project = await this.createProjectView(new ProjectResponse(r));
@@ -87,7 +87,7 @@ export class ProjectService {
 
   private async getProjectRequest(
     organizationId: string,
-    projectView: ProjectView
+    projectView: ProjectView,
   ): Promise<ProjectRequest> {
     const orgKey = await this.getOrganizationKey(organizationId);
     const request = new ProjectRequest();
@@ -108,14 +108,14 @@ export class ProjectService {
     projectView.write = projectResponse.write;
     projectView.name = await this.encryptService.decryptToUtf8(
       new EncString(projectResponse.name),
-      orgKey
+      orgKey,
     );
     return projectView;
   }
 
   private async createProjectsListView(
     organizationId: string,
-    projects: ProjectListItemResponse[]
+    projects: ProjectListItemResponse[],
   ): Promise<ProjectListView[]> {
     const orgKey = await this.getOrganizationKey(organizationId);
     return await Promise.all(
@@ -127,12 +127,12 @@ export class ProjectService {
         projectListView.write = s.write;
         projectListView.name = await this.encryptService.decryptToUtf8(
           new EncString(s.name),
-          orgKey
+          orgKey,
         );
         projectListView.creationDate = s.creationDate;
         projectListView.revisionDate = s.revisionDate;
         return projectListView;
-      })
+      }),
     );
   }
 }

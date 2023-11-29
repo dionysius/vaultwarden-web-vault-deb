@@ -19,8 +19,8 @@ export class ZonedMessageListenerService {
     callback: (
       message: any,
       sender: chrome.runtime.MessageSender,
-      sendResponse: any
-    ) => boolean | void
+      sendResponse: any,
+    ) => boolean | void,
   ) {
     BrowserApi.messageListener(name, (message, sender, sendResponse) => {
       return this.ngZone.run(() => callback(message, sender, sendResponse));

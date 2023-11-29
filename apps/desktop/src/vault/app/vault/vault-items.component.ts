@@ -16,7 +16,7 @@ export class VaultItemsComponent extends BaseVaultItemsComponent {
   constructor(
     searchService: SearchService,
     searchBarService: SearchBarService,
-    cipherService: CipherService
+    cipherService: CipherService,
   ) {
     super(searchService, cipherService);
 

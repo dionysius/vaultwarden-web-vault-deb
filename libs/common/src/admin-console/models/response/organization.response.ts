@@ -70,10 +70,10 @@ export class OrganizationResponse extends BaseResponse {
     this.maxAutoscaleSmSeats = this.getResponseProperty("MaxAutoscaleSmSeats");
     this.maxAutoscaleSmServiceAccounts = this.getResponseProperty("MaxAutoscaleSmServiceAccounts");
     this.limitCollectionCreationDeletion = this.getResponseProperty(
-      "LimitCollectionCreationDeletion"
+      "LimitCollectionCreationDeletion",
     );
     this.allowAdminAccessToAllCollectionItems = this.getResponseProperty(
-      "AllowAdminAccessToAllCollectionItems"
+      "AllowAdminAccessToAllCollectionItems",
     );
   }
 }

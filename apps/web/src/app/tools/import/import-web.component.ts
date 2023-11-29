@@ -23,7 +23,7 @@ export class ImportWebComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private organizationService: OrganizationService,
-    private router: Router
+    private router: Router,
   ) {}
 
   ngOnInit(): void {

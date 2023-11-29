@@ -26,7 +26,7 @@ export class CollectionsComponent extends BaseCollectionsComponent {
     i18nService: I18nService,
     cipherService: CipherService,
     private apiService: ApiService,
-    logService: LogService
+    logService: LogService,
   ) {
     super(collectionService, platformUtilsService, i18nService, cipherService, logService);
     this.allowSelectNone = true;

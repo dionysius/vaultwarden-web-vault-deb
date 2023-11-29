@@ -19,7 +19,7 @@ export class RotateableKeySetService {
    * @returns RotateableKeySet containing the current users `UserKey`
    */
   async createKeySet<ExternalKey extends SymmetricCryptoKey>(
-    externalKey: ExternalKey
+    externalKey: ExternalKey,
   ): Promise<RotateableKeySet<ExternalKey>> {
     const [publicKey, encryptedPrivateKey] = await this.cryptoService.makeKeyPair(externalKey);
 

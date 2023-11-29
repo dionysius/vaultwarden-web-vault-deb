@@ -16,7 +16,7 @@ export class FirstMenu {
     protected readonly _window: BrowserWindow,
     protected readonly _accounts: { [userId: string]: MenuAccount },
     protected readonly _isLocked: boolean,
-    protected readonly _isLockable: boolean
+    protected readonly _isLockable: boolean,
   ) {}
 
   protected get hasAccounts(): boolean {

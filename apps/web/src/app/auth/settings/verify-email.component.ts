@@ -20,7 +20,7 @@ export class VerifyEmailComponent {
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
     private logService: LogService,
-    private tokenService: TokenService
+    private tokenService: TokenService,
   ) {}
 
   async verifyEmail(): Promise<void> {
@@ -35,7 +35,7 @@ export class VerifyEmailComponent {
     this.platformUtilsService.showToast(
       "success",
       null,
-      this.i18nService.t("checkInboxForVerification")
+      this.i18nService.t("checkInboxForVerification"),
     );
   }
 

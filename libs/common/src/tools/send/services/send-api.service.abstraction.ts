@@ -14,7 +14,7 @@ export abstract class SendApiService {
   postSendAccess: (
     id: string,
     request: SendAccessRequest,
-    apiUrl?: string
+    apiUrl?: string,
   ) => Promise<SendAccessResponse>;
   getSends: () => Promise<ListResponse<SendResponse>>;
   postSend: (request: SendRequest) => Promise<SendResponse>;
@@ -31,7 +31,7 @@ export abstract class SendApiService {
   getSendFileDownloadData: (
     send: SendAccessView,
     request: SendAccessRequest,
-    apiUrl?: string
+    apiUrl?: string,
   ) => Promise<SendFileDownloadDataResponse>;
   renewSendFileUploadUrl: (sendId: string, fileId: string) => Promise<SendFileUploadDataResponse>;
   removePassword: (id: string) => Promise<any>;

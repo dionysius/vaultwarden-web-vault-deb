@@ -27,7 +27,7 @@ export class AboutMenu implements IMenubarMenu {
     i18nService: I18nService,
     version: string,
     window: BrowserWindow,
-    updater: UpdaterMain
+    updater: UpdaterMain,
   ) {
     this._i18nService = i18nService;
     this._updater = updater;

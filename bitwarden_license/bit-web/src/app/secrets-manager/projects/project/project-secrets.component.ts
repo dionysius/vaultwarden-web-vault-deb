@@ -41,20 +41,20 @@ export class ProjectSecretsComponent {
     private dialogService: DialogService,
     private platformUtilsService: PlatformUtilsService,
     private i18nService: I18nService,
-    private organizationService: OrganizationService
+    private organizationService: OrganizationService,
   ) {}
 
   ngOnInit() {
     // Refresh list if project is edited
     const currentProjectEdited = this.projectService.project$.pipe(
       filter((p) => p?.id === this.projectId),
-      startWith(null)
+      startWith(null),
     );
 
     this.project$ = combineLatest([this.route.params, currentProjectEdited]).pipe(
       switchMap(([params, _]) => {
         return this.projectService.getByProjectId(params.projectId);
-      })
+      }),
     );
 
     this.secrets$ = this.secretService.secret$.pipe(
@@ -65,7 +65,7 @@ export class ProjectSecretsComponent {
         this.projectId = params.projectId;
         this.organizationEnabled = this.organizationService.get(params.organizationId)?.enabled;
         return await this.getSecretsByProject();
-      })
+      }),
     );
   }
 
@@ -112,7 +112,7 @@ export class ProjectSecretsComponent {
       id,
       this.platformUtilsService,
       this.i18nService,
-      this.secretService
+      this.secretService,
     );
   }
 

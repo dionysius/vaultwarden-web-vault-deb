@@ -26,13 +26,16 @@ export class SingleOrgPolicyComponent extends BasePolicyComponent {
     if (!this.enabled.value) {
       if (policiesEnabledMap.get(PolicyType.RequireSso) ?? false) {
         throw new Error(
-          this.i18nService.t("disableRequiredError", this.i18nService.t("requireSso"))
+          this.i18nService.t("disableRequiredError", this.i18nService.t("requireSso")),
         );
       }
 
       if (policiesEnabledMap.get(PolicyType.MaximumVaultTimeout) ?? false) {
         throw new Error(
-          this.i18nService.t("disableRequiredError", this.i18nService.t("maximumVaultTimeoutLabel"))
+          this.i18nService.t(
+            "disableRequiredError",
+            this.i18nService.t("maximumVaultTimeoutLabel"),
+          ),
         );
       }
     }

@@ -57,7 +57,7 @@ export class TaxInfoComponent {
     private apiService: ApiService,
     private route: ActivatedRoute,
     private logService: LogService,
-    private organizationApiService: OrganizationApiServiceAbstraction
+    private organizationApiService: OrganizationApiServiceAbstraction,
   ) {}
 
   async ngOnInit() {
@@ -120,7 +120,7 @@ export class TaxInfoComponent {
   get taxRate() {
     if (this.taxRates != null) {
       const localTaxRate = this.taxRates.find(
-        (x) => x.country === this.taxInfo.country && x.postalCode === this.taxInfo.postalCode
+        (x) => x.country === this.taxInfo.country && x.postalCode === this.taxInfo.postalCode,
       );
       return localTaxRate?.rate ?? null;
     }
@@ -164,7 +164,7 @@ export class TaxInfoComponent {
     return this.organizationId
       ? this.organizationApiService.updateTaxInfo(
           this.organizationId,
-          request as OrganizationTaxInfoUpdateRequest
+          request as OrganizationTaxInfoUpdateRequest,
         )
       : this.apiService.putTaxInfo(request);
   }

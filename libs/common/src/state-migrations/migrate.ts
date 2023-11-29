@@ -20,12 +20,12 @@ export type MinVersion = typeof MIN_VERSION;
 
 export async function migrate(
   storageService: AbstractStorageService,
-  logService: LogService
+  logService: LogService,
 ): Promise<void> {
   const migrationHelper = new MigrationHelper(
     await currentVersion(storageService, logService),
     storageService,
-    logService
+    logService,
   );
   if (migrationHelper.currentVersion < 0) {
     // Cannot determine state, assuming empty so we don't repeatedly apply a migration.
@@ -46,7 +46,7 @@ export async function migrate(
 
 export async function currentVersion(
   storageService: AbstractStorageService,
-  logService: LogService
+  logService: LogService,
 ) {
   let state = await storageService.get<number>("stateVersion");
   if (state == null) {

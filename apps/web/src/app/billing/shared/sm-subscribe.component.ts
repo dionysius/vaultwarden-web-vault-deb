@@ -17,7 +17,7 @@ export interface SecretsManagerSubscription {
 }
 
 export const secretsManagerSubscribeFormFactory = (
-  formBuilder: FormBuilder
+  formBuilder: FormBuilder,
 ): FormGroup<ControlsOf<SecretsManagerSubscription>> =>
   formBuilder.group({
     enabled: [false],

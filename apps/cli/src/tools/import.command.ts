@@ -13,13 +13,13 @@ export class ImportCommand {
   constructor(
     private importService: ImportServiceAbstraction,
     private organizationService: OrganizationService,
-    private syncService: SyncService
+    private syncService: SyncService,
   ) {}
 
   async run(
     format: ImportType,
     filepath: string,
-    options: program.OptionValues
+    options: program.OptionValues,
   ): Promise<Response> {
     const organizationId = options.organizationid;
     if (organizationId != null) {
@@ -27,13 +27,13 @@ export class ImportCommand {
 
       if (organization == null) {
         return Response.badRequest(
-          `You do not belong to an organization with the ID of ${organizationId}. Check the organization ID and sync your vault.`
+          `You do not belong to an organization with the ID of ${organizationId}. Check the organization ID and sync your vault.`,
         );
       }
 
       if (!organization.canAccessImportExport) {
         return Response.badRequest(
-          "You are not authorized to import into the provided organization."
+          "You are not authorized to import into the provided organization.",
         );
       }
     }
@@ -58,7 +58,7 @@ export class ImportCommand {
     const importer = await this.importService.getImporter(
       format,
       promptForPassword_callback,
-      organizationId
+      organizationId,
     );
     if (importer === null) {
       return Response.badRequest("Proper importer type required.");

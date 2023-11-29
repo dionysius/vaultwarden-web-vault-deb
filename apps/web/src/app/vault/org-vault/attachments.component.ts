@@ -33,7 +33,7 @@ export class AttachmentsComponent extends BaseAttachmentsComponent {
     apiService: ApiService,
     logService: LogService,
     fileDownloadService: FileDownloadService,
-    dialogService: DialogService
+    dialogService: DialogService,
   ) {
     super(
       cipherService,
@@ -44,7 +44,7 @@ export class AttachmentsComponent extends BaseAttachmentsComponent {
       apiService,
       logService,
       fileDownloadService,
-      dialogService
+      dialogService,
     );
   }
 
@@ -66,7 +66,7 @@ export class AttachmentsComponent extends BaseAttachmentsComponent {
     return this.cipherService.saveAttachmentWithServer(
       this.cipherDomain,
       file,
-      this.organization.canEditAnyCollection
+      this.organization.canEditAnyCollection,
     );
   }
 

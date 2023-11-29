@@ -11,7 +11,7 @@ type TestState = { authenticatedAccounts: string[] } & { [key: string]: unknown 
 // This could become a helper available to anyone
 const runMigrator = async <TMigrator extends Migrator<number, number>>(
   migrator: TMigrator,
-  initalData?: Record<string, unknown>
+  initalData?: Record<string, unknown>,
 ): Promise<Record<string, unknown>> => {
   const fakeStorageService = new FakeStorageService(initalData);
   const helper = new MigrationHelper(migrator.fromVersion, fakeStorageService, mock());

@@ -43,7 +43,7 @@ describe("Folder Service", () => {
 
     cryptoService.hasUserKey.mockResolvedValue(true);
     cryptoService.getUserKeyWithLegacySupport.mockResolvedValue(
-      new SymmetricCryptoKey(makeStaticByteArray(32)) as UserKey
+      new SymmetricCryptoKey(makeStaticByteArray(32)) as UserKey,
     );
     encryptService.decryptToUtf8.mockResolvedValue("DEC");
 

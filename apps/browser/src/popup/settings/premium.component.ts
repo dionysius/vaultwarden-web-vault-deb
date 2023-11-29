@@ -26,7 +26,7 @@ export class PremiumComponent extends BasePremiumComponent {
     private location: Location,
     private currencyPipe: CurrencyPipe,
     dialogService: DialogService,
-    environmentService: EnvironmentService
+    environmentService: EnvironmentService,
   ) {
     super(
       i18nService,
@@ -35,7 +35,7 @@ export class PremiumComponent extends BasePremiumComponent {
       logService,
       stateService,
       dialogService,
-      environmentService
+      environmentService,
     );
 
     // Support old price string. Can be removed in future once all translations are properly updated.

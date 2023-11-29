@@ -4,8 +4,8 @@
     <input bitInput id="smSeatCount" formControlName="seatCount" type="number" step="1" min="1" />
     <bit-hint>
       <strong>{{ "total" | i18n }}:</strong>
-      {{ formGroup.value.seatCount || 0 }} &times; {{ options.seatPrice | currency : "$" }} =
-      {{ seatTotalCost | currency : "$" }} / {{ options.interval | i18n }}
+      {{ formGroup.value.seatCount || 0 }} &times; {{ options.seatPrice | currency: "$" }} =
+      {{ seatTotalCost | currency: "$" }} / {{ options.interval | i18n }}
     </bit-hint>
   </bit-form-field>
   <bit-form-control>
@@ -27,8 +27,8 @@
     />
     <bit-hint>
       <strong>{{ "maxSeatCost" | i18n }}:</strong>
-      {{ formGroup.value.maxAutoscaleSeats || 0 }} &times;
-      {{ options.seatPrice | currency : "$" }} = {{ maxSeatTotalCost | currency : "$" }} /
+      {{ formGroup.value.maxAutoscaleSeats || 0 }} &times; {{ options.seatPrice | currency: "$" }} =
+      {{ maxSeatTotalCost | currency: "$" }} /
       {{ options.interval | i18n }}
     </bit-hint>
   </bit-form-field>
@@ -44,14 +44,14 @@
     />
     <bit-hint>
       <div>
-        {{ "includedServiceAccounts" | i18n : options.baseServiceAccountCount }}
-        {{ "addAdditionalServiceAccounts" | i18n : (monthlyServiceAccountPrice | currency : "$") }}
+        {{ "includedServiceAccounts" | i18n: options.baseServiceAccountCount }}
+        {{ "addAdditionalServiceAccounts" | i18n: (monthlyServiceAccountPrice | currency: "$") }}
       </div>
       <div>
         <strong>{{ "total" | i18n }}:</strong>
         {{ formGroup.value.additionalServiceAccounts || 0 }} &times;
-        {{ options.additionalServiceAccountPrice | currency : "$" }} =
-        {{ serviceAccountTotalCost | currency : "$" }} / {{ options.interval | i18n }}
+        {{ options.additionalServiceAccountPrice | currency: "$" }} =
+        {{ serviceAccountTotalCost | currency: "$" }} / {{ options.interval | i18n }}
       </div>
     </bit-hint>
   </bit-form-field>
@@ -79,12 +79,12 @@
     />
     <bit-hint>
       <div>
-        {{ "includedServiceAccounts" | i18n : options.baseServiceAccountCount }}
+        {{ "includedServiceAccounts" | i18n: options.baseServiceAccountCount }}
       </div>
       <strong>{{ "maxServiceAccountCost" | i18n }}:</strong>
       {{ maxAdditionalServiceAccounts }} &times;
-      {{ options.additionalServiceAccountPrice | currency : "$" }} =
-      {{ maxServiceAccountTotalCost | currency : "$" }} / {{ options.interval | i18n }}
+      {{ options.additionalServiceAccountPrice | currency: "$" }} =
+      {{ maxServiceAccountTotalCost | currency: "$" }} / {{ options.interval | i18n }}
     </bit-hint>
   </bit-form-field>
   <button type="submit" bitButton buttonType="primary" bitFormButton>

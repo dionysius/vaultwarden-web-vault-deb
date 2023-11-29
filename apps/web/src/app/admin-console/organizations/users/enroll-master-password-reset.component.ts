@@ -41,7 +41,7 @@ export class EnrollMasterPasswordReset {
     private syncService: SyncService,
     private logService: LogService,
     private organizationApiService: OrganizationApiServiceAbstraction,
-    private organizationUserService: OrganizationUserService
+    private organizationUserService: OrganizationUserService,
   ) {
     this.organization = data.organization;
   }
@@ -53,7 +53,7 @@ export class EnrollMasterPasswordReset {
       await this.userVerificationService
         .buildRequest(
           this.formGroup.value.verification,
-          OrganizationUserResetPasswordEnrollmentRequest
+          OrganizationUserResetPasswordEnrollmentRequest,
         )
         .then(async (request) => {
           // Set variables
@@ -78,7 +78,7 @@ export class EnrollMasterPasswordReset {
           await this.organizationUserService.putOrganizationUserResetPasswordEnrollment(
             this.organization.id,
             this.organization.userId,
-            request
+            request,
           );
 
           await this.syncService.fullSync(true);

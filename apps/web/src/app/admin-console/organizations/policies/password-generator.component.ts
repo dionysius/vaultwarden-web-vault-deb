@@ -34,7 +34,10 @@ export class PasswordGeneratorPolicyComponent extends BasePolicyComponent {
 
   defaultTypes: { name: string; value: string }[];
 
-  constructor(private formBuilder: UntypedFormBuilder, i18nService: I18nService) {
+  constructor(
+    private formBuilder: UntypedFormBuilder,
+    i18nService: I18nService,
+  ) {
     super();
 
     this.defaultTypes = [

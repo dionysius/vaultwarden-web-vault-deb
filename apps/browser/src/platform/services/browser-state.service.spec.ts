@@ -66,7 +66,7 @@ describe("Browser State Service", () => {
         logService,
         stateFactory,
         accountService,
-        useAccountCache
+        useAccountCache,
       );
     });
 

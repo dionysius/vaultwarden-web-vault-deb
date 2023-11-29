@@ -52,7 +52,7 @@ describe("setElementStyles", () => {
     const domParser = new DOMParser();
     const testDivDOM = domParser.parseFromString(
       "<div>This is an unexciting div.</div>",
-      "text/html"
+      "text/html",
     );
     const testDiv = testDivDOM.querySelector("div");
 
@@ -67,7 +67,7 @@ describe("setElementStyles", () => {
     const domParser = new DOMParser();
     const testDivDOM = domParser.parseFromString(
       "<div>This is an unexciting div.</div>",
-      "text/html"
+      "text/html",
     );
     const testDiv = testDivDOM.querySelector("div");
 
@@ -82,7 +82,7 @@ describe("setElementStyles", () => {
     const domParser = new DOMParser();
     const testDivDOM = domParser.parseFromString(
       "<div>This is an unexciting div.</div>",
-      "text/html"
+      "text/html",
     );
     const testDiv = testDivDOM.querySelector("div");
 
@@ -101,7 +101,7 @@ describe("setElementStyles", () => {
     const domParser = new DOMParser();
     const testDivDOM = domParser.parseFromString(
       "<div>This is an unexciting div.</div>",
-      "text/html"
+      "text/html",
     );
     const testDiv = testDivDOM.querySelector("div");
 

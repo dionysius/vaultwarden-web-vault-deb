@@ -29,14 +29,14 @@ export class ForegroundMemoryStorageService extends AbstractMemoryStorageService
     this._port = chrome.runtime.connect({ name: portName(chrome.storage.session) });
     this._backgroundResponses$ = fromChromeEvent(this._port.onMessage).pipe(
       map(([message]) => message),
-      filter((message) => message.originator === "background")
+      filter((message) => message.originator === "background"),
     );
 
     this._backgroundResponses$
       .pipe(
         filter(
-          (message) => message.action === "subject_update" || message.action === "initialization"
-        )
+          (message) => message.action === "subject_update" || message.action === "initialization",
+        ),
       )
       .subscribe((message) => {
         switch (message.action) {
@@ -71,15 +71,15 @@ export class ForegroundMemoryStorageService extends AbstractMemoryStorageService
   private async delegateToBackground<T>(
     action: MemoryStoragePortMessage["action"],
     key: string,
-    data?: T
+    data?: T,
   ): Promise<T> {
     const id = Utils.newGuid();
     // listen for response before request
     const response = firstValueFrom(
       this._backgroundResponses$.pipe(
         filter((message) => message.id === id),
-        map((message) => JSON.parse((message.data as string) ?? null) as T)
-      )
+        map((message) => JSON.parse((message.data as string) ?? null) as T),
+      ),
     );
 
     this.sendMessage({

@@ -62,7 +62,7 @@ export class EntityEventsComponent implements OnInit {
     private logService: LogService,
     private organizationUserService: OrganizationUserService,
     private formBuilder: FormBuilder,
-    private validationService: ValidationService
+    private validationService: ValidationService,
   ) {}
 
   async ngOnInit() {
@@ -106,13 +106,13 @@ export class EntityEventsComponent implements OnInit {
     try {
       dates = this.eventService.formatDateFilters(
         this.filterFormGroup.value.start,
-        this.filterFormGroup.value.end
+        this.filterFormGroup.value.end,
       );
     } catch (e) {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
-        this.i18nService.t("invalidDateRange")
+        this.i18nService.t("invalidDateRange"),
       );
       return;
     }
@@ -124,7 +124,7 @@ export class EntityEventsComponent implements OnInit {
         this.params.entityId,
         dates[0],
         dates[1],
-        clearExisting ? null : this.continuationToken
+        clearExisting ? null : this.continuationToken,
       );
     } else if (this.params.entity === "user") {
       response = await this.apiService.getEventsOrganizationUser(
@@ -132,14 +132,14 @@ export class EntityEventsComponent implements OnInit {
         this.params.entityId,
         dates[0],
         dates[1],
-        clearExisting ? null : this.continuationToken
+        clearExisting ? null : this.continuationToken,
       );
     } else {
       response = await this.apiService.getEventsCipher(
         this.params.entityId,
         dates[0],
         dates[1],
-        clearExisting ? null : this.continuationToken
+        clearExisting ? null : this.continuationToken,
       );
     }
 
@@ -168,7 +168,7 @@ export class EntityEventsComponent implements OnInit {
           systemUser: r.systemUser,
           serviceAccountId: r.serviceAccountId,
         });
-      })
+      }),
     );
 
     if (!clearExisting && this.dataSource.data != null && this.dataSource.data.length > 0) {
@@ -186,7 +186,7 @@ export class EntityEventsComponent implements OnInit {
  */
 export const openEntityEventsDialog = (
   dialogService: DialogService,
-  config: DialogConfig<EntityEventsDialogParams>
+  config: DialogConfig<EntityEventsDialogParams>,
 ) => {
   return dialogService.open<void, EntityEventsDialogParams>(EntityEventsComponent, config);
 };

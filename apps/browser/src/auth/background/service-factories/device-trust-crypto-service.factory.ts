@@ -53,7 +53,7 @@ export type DeviceTrustCryptoServiceInitOptions = DeviceTrustCryptoServiceFactor
 
 export function deviceTrustCryptoServiceFactory(
   cache: { deviceTrustCryptoService?: DeviceTrustCryptoServiceAbstraction } & CachedServices,
-  opts: DeviceTrustCryptoServiceInitOptions
+  opts: DeviceTrustCryptoServiceInitOptions,
 ): Promise<DeviceTrustCryptoServiceAbstraction> {
   return factory(
     cache,
@@ -68,7 +68,7 @@ export function deviceTrustCryptoServiceFactory(
         await appIdServiceFactory(cache, opts),
         await devicesApiServiceFactory(cache, opts),
         await i18nServiceFactory(cache, opts),
-        await platformUtilsServiceFactory(cache, opts)
-      )
+        await platformUtilsServiceFactory(cache, opts),
+      ),
   );
 }

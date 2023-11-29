@@ -38,7 +38,7 @@ export class BrowserPolicyService extends PolicyService {
         if (activated === undefined) {
           this.stateService.setActivateAutoFillOnPageLoadFromPolicy(!autofillEnabled);
         }
-      })
+      }),
     );
   }
 }

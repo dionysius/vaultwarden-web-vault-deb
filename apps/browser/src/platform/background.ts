@@ -28,7 +28,7 @@ if (BrowserApi.manifestVersion === 3) {
     "runtime.background",
     (message: { command: string }, sender, sendResponse) => {
       runtimeMessageListener(message, sender);
-    }
+    },
   );
 } else {
   const bitwardenMain = ((window as any).bitwardenMain = new MainBackground());

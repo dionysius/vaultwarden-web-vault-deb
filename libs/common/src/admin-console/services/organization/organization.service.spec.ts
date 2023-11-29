@@ -14,7 +14,7 @@ describe("Organization Service", () => {
   let activeAccountUnlocked: BehaviorSubject<boolean>;
 
   const resetStateService = async (
-    customizeStateService: (stateService: MockProxy<StateService>) => void
+    customizeStateService: (stateService: MockProxy<StateService>) => void,
   ) => {
     mockClear(stateService);
     stateService = mock<StateService>();

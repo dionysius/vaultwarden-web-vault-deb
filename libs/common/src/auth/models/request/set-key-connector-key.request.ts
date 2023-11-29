@@ -16,7 +16,7 @@ export class SetKeyConnectorKeyRequest {
     kdf: KdfType,
     kdfConfig: KdfConfig,
     orgIdentifier: string,
-    keys: KeysRequest
+    keys: KeysRequest,
   ) {
     this.key = key;
     this.kdf = kdf;

@@ -178,7 +178,7 @@ export class ImportComponent implements OnInit, OnDestroy {
     protected folderService: FolderService,
     protected collectionService: CollectionService,
     protected organizationService: OrganizationService,
-    protected formBuilder: FormBuilder
+    protected formBuilder: FormBuilder,
   ) {}
 
   protected get importBlockedByPolicy(): boolean {
@@ -202,8 +202,8 @@ export class ImportComponent implements OnInit, OnDestroy {
     this.organizations$ = concat(
       this.organizationService.memberOrganizations$.pipe(
         canAccessImportExport(this.i18nService),
-        map((orgs) => orgs.sort(Utils.getSortFunction(this.i18nService, "name")))
-      )
+        map((orgs) => orgs.sort(Utils.getSortFunction(this.i18nService, "name"))),
+      ),
     );
 
     combineLatest([
@@ -225,12 +225,12 @@ export class ImportComponent implements OnInit, OnDestroy {
       this.collections$ = Utils.asyncToObservable(() =>
         this.collectionService
           .getAllDecrypted()
-          .then((c) => c.filter((c2) => c2.organizationId === this.organizationId))
+          .then((c) => c.filter((c2) => c2.organizationId === this.organizationId)),
       );
     } else {
       // Filter out the `no folder`-item from folderViews$
       this.folders$ = this.folderService.folderViews$.pipe(
-        map((folders) => folders.filter((f) => f.id != null))
+        map((folders) => folders.filter((f) => f.id != null)),
       );
       this.formGroup.controls.targetSelector.disable();
 
@@ -245,7 +245,7 @@ export class ImportComponent implements OnInit, OnDestroy {
             this.collections$ = Utils.asyncToObservable(() =>
               this.collectionService
                 .getAllDecrypted()
-                .then((c) => c.filter((c2) => c2.organizationId === value))
+                .then((c) => c.filter((c2) => c2.organizationId === value)),
             );
           }
         });
@@ -273,7 +273,7 @@ export class ImportComponent implements OnInit, OnDestroy {
   private async asyncValidatorsFinished() {
     if (this.formGroup.pending) {
       await firstValueFrom(
-        this.formGroup.statusChanges.pipe(filter((status) => status !== "PENDING"))
+        this.formGroup.statusChanges.pipe(filter((status) => status !== "PENDING")),
       );
     }
   }
@@ -295,7 +295,7 @@ export class ImportComponent implements OnInit, OnDestroy {
       this.platformUtilsService.showToast(
         "error",
         null,
-        this.i18nService.t("personalOwnershipPolicyInEffectImports")
+        this.i18nService.t("personalOwnershipPolicyInEffectImports"),
       );
       return;
     }
@@ -307,14 +307,14 @@ export class ImportComponent implements OnInit, OnDestroy {
     const importer = this.importService.getImporter(
       this.format,
       promptForPassword_callback,
-      this.organizationId
+      this.organizationId,
     );
 
     if (importer === null) {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
-        this.i18nService.t("selectFormat")
+        this.i18nService.t("selectFormat"),
       );
       return;
     }
@@ -326,7 +326,7 @@ export class ImportComponent implements OnInit, OnDestroy {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
-        this.i18nService.t("selectFile")
+        this.i18nService.t("selectFile"),
       );
       return;
     }
@@ -346,7 +346,7 @@ export class ImportComponent implements OnInit, OnDestroy {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
-        this.i18nService.t("selectFile")
+        this.i18nService.t("selectFile"),
       );
       return;
     }
@@ -361,7 +361,7 @@ export class ImportComponent implements OnInit, OnDestroy {
         fileContents,
         this.organizationId,
         this.formGroup.controls.targetSelector.value,
-        this.canAccessImportExport(this.organizationId)
+        this.canAccessImportExport(this.organizationId),
       );
 
       //No errors, display success message
@@ -486,7 +486,7 @@ export class ImportComponent implements OnInit, OnDestroy {
         },
         function error(e) {
           return "";
-        }
+        },
       );
   }
 

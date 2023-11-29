@@ -50,12 +50,12 @@ function generateCipherView(deleted: boolean) {
           username: GetUniqueString("username"),
           password: GetUniqueString("password"),
         },
-        LoginView
+        LoginView,
       ),
       collectionIds: null,
       deletedDate: deleted ? new Date() : null,
     },
-    CipherView
+    CipherView,
   );
 }
 
@@ -70,12 +70,12 @@ function generateCipherDomain(deleted: boolean) {
           username: new EncString(GetUniqueString("username")),
           password: new EncString(GetUniqueString("password")),
         },
-        Login
+        Login,
       ),
       collectionIds: null,
       deletedDate: deleted ? new Date() : null,
     },
-    Cipher
+    Cipher,
   );
 }
 
@@ -86,7 +86,7 @@ function generateFolderView() {
       name: GetUniqueString("name"),
       revisionDate: new Date(),
     },
-    FolderView
+    FolderView,
   );
 }
 
@@ -168,7 +168,7 @@ describe("VaultExportService", () => {
       apiService,
       cryptoService,
       cryptoFunctionService,
-      stateService
+      stateService,
     );
   });
 

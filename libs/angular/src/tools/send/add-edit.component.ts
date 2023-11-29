@@ -115,7 +115,7 @@ export class AddEditComponent implements OnInit, OnDestroy {
     protected stateService: StateService,
     protected sendApiService: SendApiService,
     protected dialogService: DialogService,
-    protected formBuilder: FormBuilder
+    protected formBuilder: FormBuilder,
   ) {
     this.typeOptions = [
       { name: i18nService.t("sendTypeFile"), value: SendType.File, premium: true },
@@ -238,7 +238,7 @@ export class AddEditComponent implements OnInit, OnDestroy {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
-        this.i18nService.t("sendDisabledWarning")
+        this.i18nService.t("sendDisabledWarning"),
       );
       return false;
     }
@@ -258,7 +258,7 @@ export class AddEditComponent implements OnInit, OnDestroy {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
-        this.i18nService.t("nameRequired")
+        this.i18nService.t("nameRequired"),
       );
       return false;
     }
@@ -271,7 +271,7 @@ export class AddEditComponent implements OnInit, OnDestroy {
         this.platformUtilsService.showToast(
           "error",
           this.i18nService.t("errorOccurred"),
-          this.i18nService.t("selectFile")
+          this.i18nService.t("selectFile"),
         );
         return;
       }
@@ -282,7 +282,7 @@ export class AddEditComponent implements OnInit, OnDestroy {
         this.platformUtilsService.showToast(
           "error",
           this.i18nService.t("errorOccurred"),
-          this.i18nService.t("maxFileSize")
+          this.i18nService.t("maxFileSize"),
         );
         return;
       }
@@ -309,7 +309,7 @@ export class AddEditComponent implements OnInit, OnDestroy {
       this.platformUtilsService.showToast(
         "success",
         null,
-        this.i18nService.t(this.editMode ? "editedSend" : "createdSend")
+        this.i18nService.t(this.editMode ? "editedSend" : "createdSend"),
       );
     });
     try {
@@ -424,7 +424,7 @@ export class AddEditComponent implements OnInit, OnDestroy {
           : null,
       defaultDeletionDateTime: this.datePipe.transform(
         new Date(this.send.deletionDate),
-        "yyyy-MM-ddTHH:mm"
+        "yyyy-MM-ddTHH:mm",
       ),
     });
 
@@ -439,7 +439,7 @@ export class AddEditComponent implements OnInit, OnDestroy {
       this.platformUtilsService.showToast(
         "success",
         null,
-        this.i18nService.t(this.editMode ? "editedSend" : "createdSend")
+        this.i18nService.t(this.editMode ? "editedSend" : "createdSend"),
       );
     } else {
       await this.dialogService.openSimpleDialog({
@@ -471,7 +471,7 @@ export class AddEditComponent implements OnInit, OnDestroy {
         const now = new Date();
         const milliseconds = now.setTime(
           now.getTime() +
-            (this.formGroup.controls.selectedExpirationDatePreset.value as number) * 60 * 60 * 1000
+            (this.formGroup.controls.selectedExpirationDatePreset.value as number) * 60 * 60 * 1000,
         );
         return new Date(milliseconds).toString();
       }
@@ -489,7 +489,7 @@ export class AddEditComponent implements OnInit, OnDestroy {
         const now = new Date();
         const milliseconds = now.setTime(
           now.getTime() +
-            (this.formGroup.controls.selectedDeletionDatePreset.value as number) * 60 * 60 * 1000
+            (this.formGroup.controls.selectedDeletionDatePreset.value as number) * 60 * 60 * 1000,
         );
         return new Date(milliseconds).toString();
       }

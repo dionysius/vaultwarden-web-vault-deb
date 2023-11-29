@@ -38,7 +38,7 @@ export class MigrateFromLegacyEncryptionService {
     private cipherService: CipherService,
     private folderService: FolderService,
     private sendService: SendService,
-    private stateService: StateService
+    private stateService: StateService,
   ) {}
 
   /**
@@ -51,7 +51,7 @@ export class MigrateFromLegacyEncryptionService {
       masterPassword,
       await this.stateService.getEmail(),
       await this.stateService.getKdfType(),
-      await this.stateService.getKdfConfig()
+      await this.stateService.getKdfConfig(),
     );
 
     if (!masterKey) {
@@ -77,14 +77,14 @@ export class MigrateFromLegacyEncryptionService {
   async updateKeysAndEncryptedData(
     masterPassword: string,
     newUserKey: UserKey,
-    newEncUserKey: EncString
+    newEncUserKey: EncString,
   ): Promise<void> {
     // Create new request and add master key and hash
     const request = new UpdateKeyRequest();
     request.key = newEncUserKey.encryptedString;
     request.masterPasswordHash = await this.cryptoService.hashMasterKey(
       masterPassword,
-      await this.cryptoService.getOrDeriveMasterKey(masterPassword)
+      await this.cryptoService.getOrDeriveMasterKey(masterPassword),
     );
 
     // Sync before encrypting to make sure we have latest data
@@ -132,13 +132,13 @@ export class MigrateFromLegacyEncryptionService {
       request.resetPasswordKey = encryptedKey.encryptedString;
       request.masterPasswordHash = await this.cryptoService.hashMasterKey(
         masterPassword,
-        await this.cryptoService.getOrDeriveMasterKey(masterPassword)
+        await this.cryptoService.getOrDeriveMasterKey(masterPassword),
       );
 
       await this.organizationUserService.putOrganizationUserResetPasswordEnrollment(
         org.id,
         org.userId,
-        request
+        request,
       );
     }
   }
@@ -160,7 +160,7 @@ export class MigrateFromLegacyEncryptionService {
       folders.map(async (folder) => {
         const encryptedFolder = await this.folderService.encrypt(folder, newUserKey);
         return new FolderWithIdRequest(encryptedFolder);
-      })
+      }),
     );
   }
 
@@ -173,7 +173,7 @@ export class MigrateFromLegacyEncryptionService {
       ciphers.map(async (cipher) => {
         const encryptedCipher = await this.cipherService.encrypt(cipher, newUserKey);
         return new CipherWithIdRequest(encryptedCipher);
-      })
+      }),
     );
   }
 
@@ -187,7 +187,7 @@ export class MigrateFromLegacyEncryptionService {
         const sendKey = await this.encryptService.decryptToBytes(send.key, null);
         send.key = (await this.encryptService.encrypt(sendKey, newUserKey)) ?? send.key;
         return new SendWithIdRequest(send);
-      })
+      }),
     );
   }
 }

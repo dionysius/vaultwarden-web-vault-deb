@@ -46,7 +46,7 @@ export enum BulkCollectionsDialogResult {
 export class BulkCollectionsDialogComponent implements OnDestroy {
   protected flexibleCollectionsEnabled$ = this.configService.getFeatureFlag$(
     FeatureFlag.FlexibleCollections,
-    false
+    false,
   );
 
   protected readonly PermissionMode = PermissionMode;
@@ -71,7 +71,7 @@ export class BulkCollectionsDialogComponent implements OnDestroy {
     private platformUtilsService: PlatformUtilsService,
     private i18nService: I18nService,
     private collectionAdminService: CollectionAdminService,
-    private configService: ConfigServiceAbstraction
+    private configService: ConfigServiceAbstraction,
   ) {
     this.numCollections = this.params.collections.length;
     const organization$ = this.organizationService.get$(this.params.organizationId);
@@ -81,7 +81,7 @@ export class BulkCollectionsDialogComponent implements OnDestroy {
           return of([] as GroupView[]);
         }
         return this.groupService.getAll(organization.id);
-      })
+      }),
     );
 
     combineLatest([
@@ -95,7 +95,7 @@ export class BulkCollectionsDialogComponent implements OnDestroy {
 
         this.accessItems = [].concat(
           groups.map(mapGroupToAccessItemView),
-          users.data.map(mapUserToAccessItemView)
+          users.data.map(mapUserToAccessItemView),
         );
 
         this.loading = false;
@@ -120,7 +120,7 @@ export class BulkCollectionsDialogComponent implements OnDestroy {
       this.organization.id,
       this.params.collections.map((c) => c.id),
       users,
-      groups
+      groups,
     );
 
     this.platformUtilsService.showToast("success", null, this.i18nService.t("editedCollections"));
@@ -131,7 +131,7 @@ export class BulkCollectionsDialogComponent implements OnDestroy {
   static open(dialogService: DialogService, config: DialogConfig<BulkCollectionsDialogParams>) {
     return dialogService.open<BulkCollectionsDialogResult, BulkCollectionsDialogParams>(
       BulkCollectionsDialogComponent,
-      config
+      config,
     );
   }
 }

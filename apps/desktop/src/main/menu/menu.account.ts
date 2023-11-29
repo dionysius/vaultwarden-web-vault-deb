@@ -39,7 +39,7 @@ export class AccountMenu implements IMenubarMenu {
     webVaultUrl: string,
     window: BrowserWindow,
     isLocked: boolean,
-    hasMasterPassword: boolean
+    hasMasterPassword: boolean,
   ) {
     this._i18nService = i18nService;
     this._messagingService = messagingService;

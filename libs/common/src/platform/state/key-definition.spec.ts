@@ -47,11 +47,11 @@ describe("KeyDefinition", () => {
         "fake",
         {
           deserializer: (value) => !value,
-        }
+        },
       );
 
       const fancyRecord = recordDefinition.deserializer(
-        JSON.parse(`{ "myKey": false, "mySecondKey": true }`)
+        JSON.parse(`{ "myKey": false, "mySecondKey": true }`),
       );
 
       expect(fancyRecord).toBeTruthy();

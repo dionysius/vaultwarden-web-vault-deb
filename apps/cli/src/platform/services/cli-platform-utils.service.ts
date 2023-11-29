@@ -11,7 +11,10 @@ export class CliPlatformUtilsService implements PlatformUtilsService {
 
   private deviceCache: DeviceType = null;
 
-  constructor(clientType: ClientType, private packageJson: any) {
+  constructor(
+    clientType: ClientType,
+    private packageJson: any,
+  ) {
     this.clientType = clientType;
   }
 
@@ -107,7 +110,7 @@ export class CliPlatformUtilsService implements PlatformUtilsService {
     type: "error" | "success" | "warning" | "info",
     title: string,
     text: string | string[],
-    options?: any
+    options?: any,
   ): void {
     throw new Error("Not implemented.");
   }

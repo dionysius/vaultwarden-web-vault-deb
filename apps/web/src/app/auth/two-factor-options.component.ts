@@ -15,7 +15,7 @@ export class TwoFactorOptionsComponent extends BaseTwoFactorOptionsComponent {
     twoFactorService: TwoFactorService,
     router: Router,
     i18nService: I18nService,
-    platformUtilsService: PlatformUtilsService
+    platformUtilsService: PlatformUtilsService,
   ) {
     super(twoFactorService, router, i18nService, platformUtilsService, window);
   }

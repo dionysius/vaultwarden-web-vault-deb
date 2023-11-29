@@ -26,7 +26,7 @@ export enum BulkConfirmationResult {
 export class BulkConfirmationDialogComponent implements OnInit {
   constructor(
     public dialogRef: DialogRef,
-    @Inject(DIALOG_DATA) public data: BulkConfirmationDetails
+    @Inject(DIALOG_DATA) public data: BulkConfirmationDetails,
   ) {}
 
   protected bulkConfirmationResult = BulkConfirmationResult;
@@ -41,7 +41,7 @@ export class BulkConfirmationDialogComponent implements OnInit {
     ) {
       this.dialogRef.close();
       throw new Error(
-        "The bulk confirmation dialog was not called with the appropriate operation values."
+        "The bulk confirmation dialog was not called with the appropriate operation values.",
       );
     }
   }

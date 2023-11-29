@@ -36,7 +36,7 @@ describe("BaseImporter class", () => {
         expect(cipher.card.expMonth).toBe(expectedMonth);
         expect(cipher.card.expYear).toBe(expectedYear);
         expect(result).toBe(true);
-      }
+      },
     );
 
     it.each([
@@ -69,7 +69,7 @@ describe("BaseImporter class", () => {
         expect(cipher.card.expMonth).toBe("1");
         expect(cipher.card.expYear).toBe("2025");
         expect(result).toBe(true);
-      }
+      },
     );
 
     it.each([[""], ["  "], [null]])(
@@ -77,7 +77,7 @@ describe("BaseImporter class", () => {
       (expiration) => {
         const result = importer.setCardExpiration(cipher, expiration);
         expect(result).toBe(false);
-      }
+      },
     );
 
     it.each([["0123"], ["01/03/23"]])(
@@ -85,7 +85,7 @@ describe("BaseImporter class", () => {
       (expiration) => {
         const result = importer.setCardExpiration(cipher, expiration);
         expect(result).toBe(false);
-      }
+      },
     );
 
     it.each([["5/"], ["03/231"], ["12/1"], ["2/20221"]])(
@@ -93,7 +93,7 @@ describe("BaseImporter class", () => {
       (expiration) => {
         const result = importer.setCardExpiration(cipher, expiration);
         expect(result).toBe(false);
-      }
+      },
     );
 
     it.each([["/2023"], ["003/2023"], ["111/32"]])(
@@ -101,7 +101,7 @@ describe("BaseImporter class", () => {
       (expiration) => {
         const result = importer.setCardExpiration(cipher, expiration);
         expect(result).toBe(false);
-      }
+      },
     );
   });
 });

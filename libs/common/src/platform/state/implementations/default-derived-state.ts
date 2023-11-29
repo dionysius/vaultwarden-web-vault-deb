@@ -10,14 +10,14 @@ export class DefaultDerivedUserState<TFrom, TTo> implements DerivedUserState<TTo
   constructor(
     private converter: Converter<TFrom, TTo>,
     private encryptService: EncryptService,
-    private userState: UserState<TFrom>
+    private userState: UserState<TFrom>,
   ) {
     this.state$ = userState.state$.pipe(
       switchMap(async (from) => {
         // TODO: How do I get the key?
         const convertedData = await this.converter(from, new DeriveContext(null, encryptService));
         return convertedData;
-      })
+      }),
     );
   }
 }

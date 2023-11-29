@@ -8,7 +8,7 @@ export abstract class PasswordGenerationServiceAbstraction {
   generatePassphrase: (options: PasswordGeneratorOptions) => Promise<string>;
   getOptions: () => Promise<[PasswordGeneratorOptions, PasswordGeneratorPolicyOptions]>;
   enforcePasswordGeneratorPoliciesOnOptions: (
-    options: PasswordGeneratorOptions
+    options: PasswordGeneratorOptions,
   ) => Promise<[PasswordGeneratorOptions, PasswordGeneratorPolicyOptions]>;
   getPasswordGeneratorPolicyOptions: () => Promise<PasswordGeneratorPolicyOptions>;
   saveOptions: (options: PasswordGeneratorOptions) => Promise<void>;
@@ -17,6 +17,6 @@ export abstract class PasswordGenerationServiceAbstraction {
   clear: (userId?: string) => Promise<void>;
   normalizeOptions: (
     options: PasswordGeneratorOptions,
-    enforcedPolicyOptions: PasswordGeneratorPolicyOptions
+    enforcedPolicyOptions: PasswordGeneratorPolicyOptions,
   ) => void;
 }

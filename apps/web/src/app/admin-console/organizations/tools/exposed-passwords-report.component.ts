@@ -26,7 +26,7 @@ export class ExposedPasswordsReportComponent extends BaseExposedPasswordsReportC
     modalService: ModalService,
     organizationService: OrganizationService,
     private route: ActivatedRoute,
-    passwordRepromptService: PasswordRepromptService
+    passwordRepromptService: PasswordRepromptService,
   ) {
     super(cipherService, auditService, organizationService, modalService, passwordRepromptService);
   }

@@ -20,7 +20,7 @@ export class ShareComponent extends BaseShareComponent implements OnDestroy {
     i18nService: I18nService,
     cipherService: CipherService,
     organizationService: OrganizationService,
-    logService: LogService
+    logService: LogService,
   ) {
     super(
       collectionService,
@@ -28,7 +28,7 @@ export class ShareComponent extends BaseShareComponent implements OnDestroy {
       i18nService,
       cipherService,
       logService,
-      organizationService
+      organizationService,
     );
   }
 

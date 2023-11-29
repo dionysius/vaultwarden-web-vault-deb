@@ -29,7 +29,7 @@ export class NestedCheckboxComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.destroy$))
       .subscribe((value) => {
         Object.values(this.checkboxes.controls).forEach((control) =>
-          control.setValue(value, { emitEvent: false })
+          control.setValue(value, { emitEvent: false }),
         );
       });
   }

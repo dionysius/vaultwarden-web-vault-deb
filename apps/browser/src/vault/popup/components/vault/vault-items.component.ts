@@ -64,7 +64,7 @@ export class VaultItemsComponent extends BaseVaultItemsComponent implements OnIn
     private collectionService: CollectionService,
     private platformUtilsService: PlatformUtilsService,
     cipherService: CipherService,
-    private vaultFilterService: VaultFilterService
+    private vaultFilterService: VaultFilterService,
   ) {
     super(searchService, cipherService);
     this.applySavedState =
@@ -143,7 +143,7 @@ export class VaultItemsComponent extends BaseVaultItemsComponent implements OnIn
               : null;
         }
         await this.load(
-          (c) => c.collectionIds != null && c.collectionIds.indexOf(this.collectionId) > -1
+          (c) => c.collectionIds != null && c.collectionIds.indexOf(this.collectionId) > -1,
         );
       } else {
         this.showVaultFilter = true;

@@ -29,7 +29,7 @@
     <ng-container *ngIf="billingSyncSetUp">
       <dt>{{ "lastLicenseSync" | i18n }}</dt>
       <dd>
-        {{ lastLicenseSync != null ? (lastLicenseSync | date : "medium") : ("never" | i18n) }}
+        {{ lastLicenseSync != null ? (lastLicenseSync | date: "medium") : ("never" | i18n) }}
       </dd>
     </ng-container>
     <dt>
@@ -51,12 +51,12 @@
         (subscription.hasSeparateGracePeriod
           ? subscription.expirationWithoutGracePeriod
           : subscription.expirationWithGracePeriod
-        ) | date : "mediumDate"
+        ) | date: "mediumDate"
       }}
       <div *ngIf="subscription.hasSeparateGracePeriod" class="tw-text-muted">
         {{
           "selfHostGracePeriodHelp"
-            | i18n : (subscription.expirationWithGracePeriod | date : "mediumDate")
+            | i18n: (subscription.expirationWithGracePeriod | date: "mediumDate")
         }}
       </div>
     </dd>

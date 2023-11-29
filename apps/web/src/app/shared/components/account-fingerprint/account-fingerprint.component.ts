@@ -23,7 +23,7 @@ export class AccountFingerprintComponent implements OnInit {
     // TODO - In the future, remove this code and use the fingerprint pipe once merged
     const generatedFingerprint = await this.cryptoService.getFingerprint(
       this.fingerprintMaterial,
-      this.publicKeyBuffer
+      this.publicKeyBuffer,
     );
     this.fingerprint = generatedFingerprint?.join("-") ?? null;
   }

@@ -21,7 +21,7 @@ export class HeaderComponent {
         }
 
         return Object.values(accounts).some((a) => a.status !== AuthenticationStatus.LoggedOut);
-      })
+      }),
     );
   }
 }

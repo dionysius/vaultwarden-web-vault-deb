@@ -30,11 +30,11 @@ export enum BulkShareDialogResult {
  */
 export const openBulkShareDialog = (
   dialogService: DialogService,
-  config: DialogConfig<BulkShareDialogParams>
+  config: DialogConfig<BulkShareDialogParams>,
 ) => {
   return dialogService.open<BulkShareDialogResult, BulkShareDialogParams>(
     BulkShareDialogComponent,
-    config
+    config,
   );
 };
 
@@ -60,7 +60,7 @@ export class BulkShareDialogComponent implements OnInit {
     private i18nService: I18nService,
     private collectionService: CollectionService,
     private organizationService: OrganizationService,
-    private logService: LogService
+    private logService: LogService,
   ) {
     this.ciphers = params.ciphers ?? [];
     this.organizationId = params.organizationId;
@@ -68,7 +68,7 @@ export class BulkShareDialogComponent implements OnInit {
 
   async ngOnInit() {
     this.shareableCiphers = this.ciphers.filter(
-      (c) => !c.hasOldAttachments && c.organizationId == null
+      (c) => !c.hasOldAttachments && c.organizationId == null,
     );
     this.nonShareableCount = this.ciphers.length - this.shareableCiphers.length;
     const allCollections = await this.collectionService.getAllDecrypted();
@@ -90,7 +90,7 @@ export class BulkShareDialogComponent implements OnInit {
       this.collections = [];
     } else {
       this.collections = this.writeableCollections.filter(
-        (c) => c.organizationId === this.organizationId
+        (c) => c.organizationId === this.organizationId,
       );
     }
   }
@@ -101,7 +101,7 @@ export class BulkShareDialogComponent implements OnInit {
       await this.cipherService.shareManyWithServer(
         this.shareableCiphers,
         this.organizationId,
-        checkedCollectionIds
+        checkedCollectionIds,
       );
       const orgName =
         this.organizations.find((o) => o.id === this.organizationId)?.name ??
@@ -109,7 +109,7 @@ export class BulkShareDialogComponent implements OnInit {
       this.platformUtilsService.showToast(
         "success",
         null,
-        this.i18nService.t("movedItemsToOrg", orgName)
+        this.i18nService.t("movedItemsToOrg", orgName),
       );
       this.close(BulkShareDialogResult.Shared);
     } catch (e) {

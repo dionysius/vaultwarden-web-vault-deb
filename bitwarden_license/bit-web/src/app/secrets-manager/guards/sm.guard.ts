@@ -17,7 +17,7 @@ import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.serv
  */
 export const canActivateSM: CanActivateFn = async (
   route: ActivatedRouteSnapshot,
-  state: RouterStateSnapshot
+  state: RouterStateSnapshot,
 ) => {
   const syncService = inject(SyncService);
   const authService = inject(AuthService);

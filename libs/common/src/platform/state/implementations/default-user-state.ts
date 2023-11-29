@@ -43,15 +43,15 @@ export class DefaultUserState<T> implements UserState<T> {
     protected keyDefinition: KeyDefinition<T>,
     private accountService: AccountService,
     private encryptService: EncryptService,
-    private chosenStorageLocation: AbstractStorageService & ObservableStorageService
+    private chosenStorageLocation: AbstractStorageService & ObservableStorageService,
   ) {
     this.formattedKey$ = this.accountService.activeAccount$.pipe(
       map((account) =>
         account != null && account.id != null
           ? userKeyBuilder(account.id, this.keyDefinition)
-          : null
+          : null,
       ),
-      shareReplay({ bufferSize: 1, refCount: false })
+      shareReplay({ bufferSize: 1, refCount: false }),
     );
 
     const activeAccountData$ = this.formattedKey$.pipe(
@@ -62,11 +62,11 @@ export class DefaultUserState<T> implements UserState<T> {
         return await getStoredValue(
           key,
           this.chosenStorageLocation,
-          this.keyDefinition.deserializer
+          this.keyDefinition.deserializer,
         );
       }),
       // Share the execution
-      shareReplay({ refCount: false, bufferSize: 1 })
+      shareReplay({ refCount: false, bufferSize: 1 }),
     );
 
     const storageUpdates$ = this.chosenStorageLocation.updates$.pipe(
@@ -79,10 +79,10 @@ export class DefaultUserState<T> implements UserState<T> {
         const data = await getStoredValue(
           key,
           this.chosenStorageLocation,
-          this.keyDefinition.deserializer
+          this.keyDefinition.deserializer,
         );
         return data;
-      })
+      }),
     );
 
     // Whomever subscribes to this data, should be notified of updated data
@@ -101,7 +101,7 @@ export class DefaultUserState<T> implements UserState<T> {
             accountChangeSubscription.unsubscribe();
             storageUpdateSubscription.unsubscribe();
           },
-        })
+        }),
       );
     })
       // I fake the generic here because I am filtering out the other union type
@@ -111,7 +111,7 @@ export class DefaultUserState<T> implements UserState<T> {
 
   async update<TCombine>(
     configureState: (state: T, dependency: TCombine) => T,
-    options: StateUpdateOptions<T, TCombine> = {}
+    options: StateUpdateOptions<T, TCombine> = {},
   ): Promise<T> {
     options = populateOptionsWithDefault(options);
     const key = await this.createKey();
@@ -133,7 +133,7 @@ export class DefaultUserState<T> implements UserState<T> {
   async updateFor<TCombine>(
     userId: UserId,
     configureState: (state: T, dependencies: TCombine) => T,
-    options: StateUpdateOptions<T, TCombine> = {}
+    options: StateUpdateOptions<T, TCombine> = {},
   ): Promise<T> {
     if (userId == null) {
       throw new Error("Attempting to update user state, but no userId has been supplied.");
@@ -144,7 +144,7 @@ export class DefaultUserState<T> implements UserState<T> {
     const currentState = await getStoredValue(
       key,
       this.chosenStorageLocation,
-      this.keyDefinition.deserializer
+      this.keyDefinition.deserializer,
     );
     const combinedDependencies =
       options.combineLatestWith != null
@@ -187,7 +187,7 @@ export class DefaultUserState<T> implements UserState<T> {
     const value = await getStoredValue(
       key,
       this.chosenStorageLocation,
-      this.keyDefinition.deserializer
+      this.keyDefinition.deserializer,
     );
     this.stateSubject.next(value);
     return value;

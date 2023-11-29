@@ -36,7 +36,7 @@ describe("AutofillOverlayList", () => {
           createInitAutofillOverlayListMessageMock({
             authStatus: AuthenticationStatus.Locked,
             cipherList: [],
-          })
+          }),
         );
       });
 
@@ -52,7 +52,7 @@ describe("AutofillOverlayList", () => {
 
         expect(globalThis.parent.postMessage).toHaveBeenCalledWith(
           { command: "unlockVault" },
-          "https://localhost/"
+          "https://localhost/",
         );
       });
     });
@@ -63,7 +63,7 @@ describe("AutofillOverlayList", () => {
           createInitAutofillOverlayListMessageMock({
             authStatus: AuthenticationStatus.Unlocked,
             ciphers: [],
-          })
+          }),
         );
       });
 
@@ -79,7 +79,7 @@ describe("AutofillOverlayList", () => {
 
         expect(globalThis.parent.postMessage).toHaveBeenCalledWith(
           { command: "addNewVaultItem" },
-          "https://localhost/"
+          "https://localhost/",
         );
       });
     });
@@ -113,7 +113,7 @@ describe("AutofillOverlayList", () => {
         autofillOverlayList["cipherListScrollDebounceTimeout"] = setTimeout(jest.fn, 0);
         const handleDebouncedScrollEventSpy = jest.spyOn(
           autofillOverlayList as any,
-          "handleDebouncedScrollEvent"
+          "handleDebouncedScrollEvent",
         );
 
         autofillOverlayList["handleCiphersListScrollEvent"]();
@@ -139,7 +139,7 @@ describe("AutofillOverlayList", () => {
 
           expect(globalThis.parent.postMessage).toHaveBeenCalledWith(
             { command: "fillSelectedListItem", overlayCipherId: "1" },
-            "https://localhost/"
+            "https://localhost/",
           );
         });
 
@@ -227,7 +227,7 @@ describe("AutofillOverlayList", () => {
 
           expect(globalThis.parent.postMessage).toHaveBeenCalledWith(
             { command: "viewSelectedCipher", overlayCipherId: "1" },
-            "https://localhost/"
+            "https://localhost/",
           );
         });
 
@@ -298,7 +298,7 @@ describe("AutofillOverlayList", () => {
 
       expect(globalThis.parent.postMessage).toHaveBeenCalledWith(
         { command: "checkAutofillOverlayButtonFocused" },
-        "https://localhost/"
+        "https://localhost/",
       );
     });
 
@@ -317,7 +317,7 @@ describe("AutofillOverlayList", () => {
           createInitAutofillOverlayListMessageMock({
             authStatus: AuthenticationStatus.Locked,
             cipherList: [],
-          })
+          }),
         );
         const unlockButton =
           autofillOverlayList["overlayListContainer"].querySelector("#unlock-button");
@@ -382,7 +382,7 @@ describe("AutofillOverlayList", () => {
 
       expect(globalThis.parent.postMessage).toHaveBeenCalledWith(
         { command: "updateAutofillOverlayListHeight", styles: { height: "300px" } },
-        "https://localhost/"
+        "https://localhost/",
       );
     });
   });

@@ -32,7 +32,7 @@ export class AdjustPaymentComponent {
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
     private logService: LogService,
-    private organizationApiService: OrganizationApiServiceAbstraction
+    private organizationApiService: OrganizationApiServiceAbstraction,
   ) {}
 
   async submit() {
@@ -59,7 +59,7 @@ export class AdjustPaymentComponent {
       this.platformUtilsService.showToast(
         "success",
         null,
-        this.i18nService.t("updatedPaymentMethod")
+        this.i18nService.t("updatedPaymentMethod"),
       );
       this.onAdjusted.emit();
     } catch (e) {

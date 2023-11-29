@@ -42,7 +42,7 @@ export class BillingSyncApiKeyComponent {
     private platformUtilsService: PlatformUtilsService,
     private i18nService: I18nService,
     private organizationApiService: OrganizationApiServiceAbstraction,
-    private logService: LogService
+    private logService: LogService,
   ) {
     this.organizationId = data.organizationId;
     this.hasBillingToken = data.hasBillingToken;
@@ -70,7 +70,7 @@ export class BillingSyncApiKeyComponent {
         this.platformUtilsService.showToast(
           "success",
           null,
-          this.i18nService.t("billingSyncApiKeyRotated")
+          this.i18nService.t("billingSyncApiKeyRotated"),
         );
       } else {
         const response = await request.then((request) => {

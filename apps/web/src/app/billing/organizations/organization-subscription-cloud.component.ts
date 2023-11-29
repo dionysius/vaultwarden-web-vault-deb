@@ -57,7 +57,7 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
     private organizationApiService: OrganizationApiServiceAbstraction,
     private route: ActivatedRoute,
     private dialogService: DialogService,
-    private datePipe: DatePipe
+    private datePipe: DatePipe,
   ) {}
 
   async ngOnInit() {
@@ -72,7 +72,7 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
           await this.load();
           this.firstLoaded = true;
         }),
-        takeUntil(this.destroy$)
+        takeUntil(this.destroy$),
       )
       .subscribe();
   }
@@ -107,10 +107,10 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
     }
 
     const apiKeyResponse = await this.organizationApiService.getApiKeyInformation(
-      this.organizationId
+      this.organizationId,
     );
     this.hasBillingSyncToken = apiKeyResponse.data.some(
-      (i) => i.keyType === OrganizationApiKeyType.BillingSync
+      (i) => i.keyType === OrganizationApiKeyType.BillingSync,
     );
 
     this.showSecretsManagerSubscribe =
@@ -204,7 +204,7 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
         this.sub.smServiceAccounts - this.sub.plan.SecretsManager.baseServiceAccount,
       interval: this.sub.plan.isAnnual ? "year" : "month",
       additionalServiceAccountPrice: this.discountPrice(
-        this.sub.plan.SecretsManager.additionalPricePerServiceAccount
+        this.sub.plan.SecretsManager.additionalPricePerServiceAccount,
       ),
       baseServiceAccountCount: this.sub.plan.SecretsManager.baseServiceAccount,
     };
@@ -265,7 +265,7 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
     } else {
       return this.i18nService.t(
         "subscriptionUserSeatsLimitedAutoscale",
-        this.sub.maxAutoscaleSeats.toString()
+        this.sub.maxAutoscaleSeats.toString(),
       );
     }
   }
@@ -280,7 +280,7 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
     return this.i18nService.translate(
       "smBetaEndedDesc",
       this.datePipe.transform(this._smBetaEndingDate),
-      Utils.daysRemaining(this._smGracePeriodEndingDate).toString()
+      Utils.daysRemaining(this._smGracePeriodEndingDate).toString(),
     );
   }
 
@@ -304,7 +304,7 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
       this.platformUtilsService.showToast(
         "success",
         null,
-        this.i18nService.t("canceledSubscription")
+        this.i18nService.t("canceledSubscription"),
       );
       this.load();
     } catch (e) {
@@ -395,7 +395,7 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
       this.platformUtilsService.showToast(
         "success",
         null,
-        this.i18nService.t("removeSponsorshipSuccess")
+        this.i18nService.t("removeSponsorshipSuccess"),
       );
       await this.load();
     } catch (e) {
@@ -422,7 +422,7 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
  */
 function sortSubscriptionItems(
   a: BillingSubscriptionItemResponse,
-  b: BillingSubscriptionItemResponse
+  b: BillingSubscriptionItemResponse,
 ) {
   if (a.productName == b.productName) {
     if (a.addonSubscriptionItem == b.addonSubscriptionItem) {

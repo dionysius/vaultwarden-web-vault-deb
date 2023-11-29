@@ -19,7 +19,7 @@ export class CryptoUtils {
     if (iterationCount == 1) {
       return await this.cryptoFunctionService.hash(
         Utils.fromBufferToHex(key.buffer) + password,
-        "sha256"
+        "sha256",
       );
     }
     return await this.cryptoFunctionService.pbkdf2(key, password, "sha256", 1);
@@ -39,7 +39,7 @@ export class CryptoUtils {
   async decryptAes256PlainWithDefault(
     data: Uint8Array,
     encryptionKey: Uint8Array,
-    defaultValue: string
+    defaultValue: string,
   ) {
     try {
       return this.decryptAes256Plain(data, encryptionKey);
@@ -51,7 +51,7 @@ export class CryptoUtils {
   async decryptAes256Base64WithDefault(
     data: Uint8Array,
     encryptionKey: Uint8Array,
-    defaultValue: string
+    defaultValue: string,
   ) {
     try {
       return this.decryptAes256Base64(data, encryptionKey);
@@ -86,7 +86,7 @@ export class CryptoUtils {
     data: Uint8Array,
     encryptionKey: Uint8Array,
     mode: "cbc" | "ecb",
-    iv: Uint8Array = new Uint8Array(16)
+    iv: Uint8Array = new Uint8Array(16),
   ): Promise<string> {
     if (data.length === 0) {
       return "";

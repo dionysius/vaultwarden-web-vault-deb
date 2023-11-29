@@ -25,7 +25,7 @@ export class EmergencyAccessConfirmComponent implements OnInit {
     private apiService: ApiService,
     private cryptoService: CryptoService,
     private stateService: StateService,
-    private logService: LogService
+    private logService: LogService,
   ) {}
 
   async ngOnInit() {

@@ -35,7 +35,7 @@ export class AdjustStorageComponent {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private logService: LogService,
-    private organizationApiService: OrganizationApiServiceAbstraction
+    private organizationApiService: OrganizationApiServiceAbstraction,
   ) {}
 
   async submit() {
@@ -54,7 +54,7 @@ export class AdjustStorageComponent {
         } else {
           response = this.formPromise = this.organizationApiService.updateStorage(
             this.organizationId,
-            request
+            request,
           );
         }
         const result = await response;
@@ -62,7 +62,7 @@ export class AdjustStorageComponent {
           try {
             await this.paymentComponent.handleStripeCardPayment(
               result.paymentIntentClientSecret,
-              null
+              null,
             );
           } catch {
             paymentFailed = true;
@@ -77,14 +77,14 @@ export class AdjustStorageComponent {
           "warning",
           null,
           this.i18nService.t("couldNotChargeCardPayInvoice"),
-          { timeout: 10000 }
+          { timeout: 10000 },
         );
         this.router.navigate(["../billing"], { relativeTo: this.activatedRoute });
       } else {
         this.platformUtilsService.showToast(
           "success",
           null,
-          this.i18nService.t("adjustedStorage", request.storageGbAdjustment.toString())
+          this.i18nService.t("adjustedStorage", request.storageGbAdjustment.toString()),
         );
       }
     } catch (e) {

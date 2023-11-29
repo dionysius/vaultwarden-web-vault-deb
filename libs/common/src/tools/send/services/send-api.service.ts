@@ -25,7 +25,7 @@ export class SendApiService implements SendApiServiceAbstraction {
   constructor(
     private apiService: ApiService,
     private fileUploadService: FileUploadService,
-    private sendService: InternalSendService
+    private sendService: InternalSendService,
   ) {}
 
   async getSend(id: string): Promise<SendResponse> {
@@ -36,7 +36,7 @@ export class SendApiService implements SendApiServiceAbstraction {
   async postSendAccess(
     id: string,
     request: SendAccessRequest,
-    apiUrl?: string
+    apiUrl?: string,
   ): Promise<SendAccessResponse> {
     const addSendIdHeader = (headers: Headers) => {
       headers.set("Send-Id", id);
@@ -48,7 +48,7 @@ export class SendApiService implements SendApiServiceAbstraction {
       false,
       true,
       apiUrl,
-      addSendIdHeader
+      addSendIdHeader,
     );
     return new SendAccessResponse(r);
   }
@@ -56,7 +56,7 @@ export class SendApiService implements SendApiServiceAbstraction {
   async getSendFileDownloadData(
     send: SendAccessView,
     request: SendAccessRequest,
-    apiUrl?: string
+    apiUrl?: string,
   ): Promise<SendFileDownloadDataResponse> {
     const addSendIdHeader = (headers: Headers) => {
       headers.set("Send-Id", send.id);
@@ -68,7 +68,7 @@ export class SendApiService implements SendApiServiceAbstraction {
       false,
       true,
       apiUrl,
-      addSendIdHeader
+      addSendIdHeader,
     );
     return new SendFileDownloadDataResponse(r);
   }
@@ -90,14 +90,14 @@ export class SendApiService implements SendApiServiceAbstraction {
 
   async renewSendFileUploadUrl(
     sendId: string,
-    fileId: string
+    fileId: string,
   ): Promise<SendFileUploadDataResponse> {
     const r = await this.apiService.send(
       "GET",
       "/sends/" + sendId + "/file/" + fileId,
       null,
       true,
-      true
+      true,
     );
     return new SendFileUploadDataResponse(r);
   }
@@ -126,7 +126,7 @@ export class SendApiService implements SendApiServiceAbstraction {
       "/sends/" + id + "/remove-password",
       null,
       true,
-      true
+      true,
     );
     return new SendResponse(r);
   }
@@ -169,7 +169,7 @@ export class SendApiService implements SendApiServiceAbstraction {
             uploadDataResponse,
             sendData[0].file.fileName,
             sendData[1],
-            this.generateMethods(uploadDataResponse, response)
+            this.generateMethods(uploadDataResponse, response),
           );
         } catch (e) {
           if (e instanceof ErrorResponse && (e as ErrorResponse).statusCode === 404) {
@@ -191,7 +191,7 @@ export class SendApiService implements SendApiServiceAbstraction {
 
   private generateMethods(
     uploadData: SendFileUploadDataResponse,
-    response: SendResponse
+    response: SendResponse,
   ): FileUploadApiMethods {
     return {
       postDirect: this.generatePostDirectCallback(response),
@@ -225,7 +225,7 @@ export class SendApiService implements SendApiServiceAbstraction {
    */
   async legacyServerSendFileUpload(
     sendData: [Send, EncArrayBuffer],
-    request: SendRequest
+    request: SendRequest,
   ): Promise<SendResponse> {
     const fd = new FormData();
     try {
@@ -241,7 +241,7 @@ export class SendApiService implements SendApiServiceAbstraction {
           {
             filepath: sendData[0].file.fileName.encryptedString,
             contentType: "application/octet-stream",
-          } as any
+          } as any,
         );
       } else {
         throw e;

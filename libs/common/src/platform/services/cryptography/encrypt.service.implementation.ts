@@ -15,7 +15,7 @@ export class EncryptServiceImplementation implements EncryptService {
   constructor(
     protected cryptoFunctionService: CryptoFunctionService,
     protected logService: LogService,
-    protected logMacFailures: boolean
+    protected logMacFailures: boolean,
   ) {}
 
   async encrypt(plainValue: string | Uint8Array, key: SymmetricCryptoKey): Promise<EncString> {
@@ -84,13 +84,13 @@ export class EncryptServiceImplementation implements EncryptService {
       encString.data,
       encString.iv,
       encString.mac,
-      key
+      key,
     );
     if (fastParams.macKey != null && fastParams.mac != null) {
       const computedMac = await this.cryptoFunctionService.hmacFast(
         fastParams.macData,
         fastParams.macKey,
-        "sha256"
+        "sha256",
       );
       const macsEqual = await this.cryptoFunctionService.compareFast(fastParams.mac, computedMac);
       if (!macsEqual) {
@@ -141,7 +141,7 @@ export class EncryptServiceImplementation implements EncryptService {
       encThing.dataBytes,
       encThing.ivBytes,
       key.encKey,
-      "cbc"
+      "cbc",
     );
 
     return result ?? null;
@@ -149,7 +149,7 @@ export class EncryptServiceImplementation implements EncryptService {
 
   async decryptItems<T extends InitializerMetadata>(
     items: Decryptable<T>[],
-    key: SymmetricCryptoKey
+    key: SymmetricCryptoKey,
   ): Promise<T[]> {
     if (items == null || items.length < 1) {
       return [];

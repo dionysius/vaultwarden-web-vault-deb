@@ -13,17 +13,20 @@ export class ReportingComponent implements OnInit {
   organization$: Observable<Organization>;
   showLeftNav$: Observable<boolean>;
 
-  constructor(private route: ActivatedRoute, private organizationService: OrganizationService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private organizationService: OrganizationService,
+  ) {}
 
   ngOnInit() {
     this.organization$ = this.route.params.pipe(
       switchMap((params) => this.organizationService.get$(params.organizationId)),
-      shareReplay({ refCount: true, bufferSize: 1 })
+      shareReplay({ refCount: true, bufferSize: 1 }),
     );
 
     this.showLeftNav$ = this.organization$.pipe(
       map((o) => o.canAccessEventLogs && o.canAccessReports),
-      startWith(true)
+      startWith(true),
     );
   }
 }

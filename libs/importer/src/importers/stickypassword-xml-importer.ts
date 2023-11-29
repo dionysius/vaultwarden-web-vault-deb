@@ -31,7 +31,7 @@ export class StickyPasswordXmlImporter extends BaseImporter implements Importer 
         "root > Database > Accounts > Account > " +
           'LoginLinks > Login[SourceLoginID="' +
           accountId +
-          '"]'
+          '"]',
       );
       if (accountLogin != null) {
         const account = accountLogin.parentElement.parentElement;

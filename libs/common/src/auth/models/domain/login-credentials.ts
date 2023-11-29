@@ -14,7 +14,7 @@ export class PasswordLoginCredentials {
     public email: string,
     public masterPassword: string,
     public captchaToken?: string,
-    public twoFactor?: TokenTwoFactorRequest
+    public twoFactor?: TokenTwoFactorRequest,
   ) {}
 }
 
@@ -26,14 +26,17 @@ export class SsoLoginCredentials {
     public codeVerifier: string,
     public redirectUrl: string,
     public orgId: string,
-    public twoFactor?: TokenTwoFactorRequest
+    public twoFactor?: TokenTwoFactorRequest,
   ) {}
 }
 
 export class UserApiLoginCredentials {
   readonly type = AuthenticationType.UserApi;
 
-  constructor(public clientId: string, public clientSecret: string) {}
+  constructor(
+    public clientId: string,
+    public clientSecret: string,
+  ) {}
 }
 
 export class AuthRequestLoginCredentials {
@@ -46,7 +49,7 @@ export class AuthRequestLoginCredentials {
     public decryptedUserKey: UserKey,
     public decryptedMasterKey: MasterKey,
     public decryptedMasterKeyHash: string,
-    public twoFactor?: TokenTwoFactorRequest
+    public twoFactor?: TokenTwoFactorRequest,
   ) {}
 }
 
@@ -56,6 +59,6 @@ export class WebAuthnLoginCredentials {
   constructor(
     public token: string,
     public deviceResponse: WebAuthnLoginAssertionResponseRequest,
-    public prfKey?: SymmetricCryptoKey
+    public prfKey?: SymmetricCryptoKey,
   ) {}
 }

@@ -104,7 +104,7 @@ export class BitInputDirective implements BitFormFieldControl {
   constructor(
     @Optional() @Self() private ngControl: NgControl,
     private ngZone: NgZone,
-    private elementRef: ElementRef<HTMLInputElement>
+    private elementRef: ElementRef<HTMLInputElement>,
   ) {}
 
   focus() {

@@ -120,19 +120,19 @@ describe("CipherContextMenuHandler", () => {
       expect(mainContextMenuHandler.loadOptions).toHaveBeenCalledWith(
         "Test Cipher (Test Username)",
         "5",
-        loginCipher
+        loginCipher,
       );
 
       expect(mainContextMenuHandler.loadOptions).toHaveBeenCalledWith(
         "Test Reprompt Cipher (Test Username)",
         "6",
-        repromptLoginCipher
+        repromptLoginCipher,
       );
 
       expect(mainContextMenuHandler.loadOptions).toHaveBeenCalledWith(
         "Test Card Cipher",
         "7",
-        cardCipher
+        cardCipher,
       );
     });
   });

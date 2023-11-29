@@ -134,7 +134,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
     private logService: LogService,
     private messagingService: MessagingService,
     private formBuilder: FormBuilder,
-    private organizationApiService: OrganizationApiServiceAbstraction
+    private organizationApiService: OrganizationApiServiceAbstraction,
   ) {
     this.selfHosted = platformUtilsService.isSelfHost();
   }
@@ -200,13 +200,13 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
 
   get selectedPlan() {
     return this.passwordManagerPlans.find(
-      (plan) => plan.type === this.formGroup.controls.plan.value
+      (plan) => plan.type === this.formGroup.controls.plan.value,
     );
   }
 
   get selectedSecretsManagerPlan() {
     return this.secretsManagerPlans.find(
-      (plan) => plan.type === this.formGroup.controls.plan.value
+      (plan) => plan.type === this.formGroup.controls.plan.value,
     );
   }
 
@@ -217,7 +217,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
   get selectableProducts() {
     if (this.acceptingSponsorship) {
       const familyPlan = this.passwordManagerPlans.find(
-        (plan) => plan.type === PlanType.FamiliesAnnually
+        (plan) => plan.type === PlanType.FamiliesAnnually,
       );
       this.discount = familyPlan.PasswordManager.basePrice;
       return [familyPlan];
@@ -237,7 +237,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
         (this.currentProductType !== ProductType.TeamsStarter ||
           plan.product === ProductType.Teams ||
           plan.product === ProductType.Enterprise) &&
-        (!this.providerId || plan.product !== ProductType.TeamsStarter)
+        (!this.providerId || plan.product !== ProductType.TeamsStarter),
     );
 
     result.sort((planA, planB) => planA.displaySortOrder - planB.displaySortOrder);
@@ -248,7 +248,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
   get selectablePlans() {
     const selectedProductType = this.formGroup.controls.product.value;
     const result = this.passwordManagerPlans?.filter(
-      (plan) => this.planIsEnabled(plan) && plan.product === selectedProductType
+      (plan) => this.planIsEnabled(plan) && plan.product === selectedProductType,
     );
 
     result.sort((planA, planB) => planA.displaySortOrder - planB.displaySortOrder);
@@ -323,7 +323,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
     ) {
       subTotal += this.passwordManagerSeatTotal(
         this.selectedPlan,
-        this.formGroup.value.additionalSeats
+        this.formGroup.value.additionalSeats,
       );
     }
     if (
@@ -459,7 +459,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
           const key = orgKey[0].encryptedString;
           const collection = await this.cryptoService.encrypt(
             this.i18nService.t("defaultCollection"),
-            orgKey[1]
+            orgKey[1],
           );
           const collectionCt = collection.encryptedString;
           const orgKeys = await this.cryptoService.makeKeyPair(orgKey[1]);
@@ -473,14 +473,14 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
           this.platformUtilsService.showToast(
             "success",
             this.i18nService.t("organizationCreated"),
-            this.i18nService.t("organizationReadyToGo")
+            this.i18nService.t("organizationReadyToGo"),
           );
         } else {
           orgId = await this.updateOrganization(orgId);
           this.platformUtilsService.showToast(
             "success",
             null,
-            this.i18nService.t("organizationUpgraded")
+            this.i18nService.t("organizationUpgraded"),
           );
         }
 
@@ -555,7 +555,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
     key: string,
     collectionCt: string,
     orgKeys: [string, EncString],
-    orgKey: SymmetricCryptoKey
+    orgKey: SymmetricCryptoKey,
   ) {
     const request = new OrganizationCreateRequest();
     request.key = key;
@@ -597,7 +597,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
     if (this.hasProvider) {
       const providerRequest = new ProviderOrganizationCreateRequest(
         this.formGroup.controls.clientOwnerEmail.value,
-        request
+        request,
       );
       const providerKey = await this.cryptoService.getProviderKey(this.providerId);
       providerRequest.organizationCreateRequest.key = (
@@ -654,7 +654,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
   }
 
   private buildSecretsManagerRequest(
-    request: OrganizationCreateRequest | OrganizationUpgradeRequest
+    request: OrganizationCreateRequest | OrganizationUpgradeRequest,
   ): void {
     const formValues = this.secretsManagerForm.value;
 

@@ -21,7 +21,7 @@ export const ACCOUNT_ACCOUNTS = KeyDefinition.record<AccountInfo, UserId>(
   "accounts",
   {
     deserializer: (accountInfo) => accountInfo,
-  }
+  },
 );
 
 export const ACCOUNT_ACTIVE_ACCOUNT_ID = new KeyDefinition(ACCOUNT_MEMORY, "activeAccountId", {
@@ -42,19 +42,19 @@ export class AccountServiceImplementation implements InternalAccountService {
   constructor(
     private messagingService: MessagingService,
     private logService: LogService,
-    private globalStateProvider: GlobalStateProvider
+    private globalStateProvider: GlobalStateProvider,
   ) {
     this.accountsState = this.globalStateProvider.get(ACCOUNT_ACCOUNTS);
     this.activeAccountIdState = this.globalStateProvider.get(ACCOUNT_ACTIVE_ACCOUNT_ID);
 
     this.accounts$ = this.accountsState.state$.pipe(
-      map((accounts) => (accounts == null ? {} : accounts))
+      map((accounts) => (accounts == null ? {} : accounts)),
     );
     this.activeAccount$ = this.activeAccountIdState.state$.pipe(
       combineLatestWith(this.accounts$),
       map(([id, accounts]) => (id ? { id, ...accounts[id] } : undefined)),
       distinctUntilChanged((a, b) => a?.id === b?.id && accountInfoEqual(a, b)),
-      shareReplay({ bufferSize: 1, refCount: false })
+      shareReplay({ bufferSize: 1, refCount: false }),
     );
   }
 
@@ -103,7 +103,7 @@ export class AccountServiceImplementation implements InternalAccountService {
           // update only if userId changes
           return id !== userId;
         },
-      }
+      },
     );
   }
 
@@ -136,7 +136,7 @@ export class AccountServiceImplementation implements InternalAccountService {
 
           return !accountInfoEqual(accounts[userId], newAccountInfo(accounts[userId]));
         },
-      }
+      },
     );
   }
 }

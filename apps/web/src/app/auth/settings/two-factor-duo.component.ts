@@ -32,7 +32,7 @@ export class TwoFactorDuoComponent extends TwoFactorBaseComponent {
     platformUtilsService: PlatformUtilsService,
     logService: LogService,
     userVerificationService: UserVerificationService,
-    dialogService: DialogService
+    dialogService: DialogService,
   ) {
     super(
       apiService,
@@ -40,7 +40,7 @@ export class TwoFactorDuoComponent extends TwoFactorBaseComponent {
       platformUtilsService,
       logService,
       userVerificationService,
-      dialogService
+      dialogService,
     );
   }
 
@@ -67,7 +67,7 @@ export class TwoFactorDuoComponent extends TwoFactorBaseComponent {
       if (this.organizationId != null) {
         this.formPromise = this.apiService.putTwoFactorOrganizationDuo(
           this.organizationId,
-          request
+          request,
         );
       } else {
         this.formPromise = this.apiService.putTwoFactorDuo(request);

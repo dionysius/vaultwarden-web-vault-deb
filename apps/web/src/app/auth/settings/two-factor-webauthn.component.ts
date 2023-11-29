@@ -51,7 +51,7 @@ export class TwoFactorWebAuthnComponent extends TwoFactorBaseComponent {
     private ngZone: NgZone,
     logService: LogService,
     userVerificationService: UserVerificationService,
-    dialogService: DialogService
+    dialogService: DialogService,
   ) {
     super(
       apiService,
@@ -59,7 +59,7 @@ export class TwoFactorWebAuthnComponent extends TwoFactorBaseComponent {
       platformUtilsService,
       logService,
       userVerificationService,
-      dialogService
+      dialogService,
     );
   }
 

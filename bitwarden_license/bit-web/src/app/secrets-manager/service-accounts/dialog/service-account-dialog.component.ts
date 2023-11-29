@@ -32,7 +32,7 @@ export class ServiceAccountDialogComponent {
         updateOn: "submit",
       }),
     },
-    {}
+    {},
   );
 
   protected loading = false;
@@ -42,7 +42,7 @@ export class ServiceAccountDialogComponent {
     @Inject(DIALOG_DATA) private data: ServiceAccountOperation,
     private serviceAccountService: ServiceAccountService,
     private i18nService: I18nService,
-    private platformUtilsService: PlatformUtilsService
+    private platformUtilsService: PlatformUtilsService,
   ) {}
 
   async ngOnInit() {
@@ -56,7 +56,7 @@ export class ServiceAccountDialogComponent {
     const serviceAccount: ServiceAccountView =
       await this.serviceAccountService.getByServiceAccountId(
         this.data.serviceAccountId,
-        this.data.organizationId
+        this.data.organizationId,
       );
     this.formGroup.patchValue({ name: serviceAccount.name });
     this.loading = false;
@@ -67,7 +67,7 @@ export class ServiceAccountDialogComponent {
       this.platformUtilsService.showToast(
         "error",
         null,
-        this.i18nService.t("serviceAccountsCannotCreate")
+        this.i18nService.t("serviceAccountsCannotCreate"),
       );
       return;
     }
@@ -88,7 +88,7 @@ export class ServiceAccountDialogComponent {
       await this.serviceAccountService.update(
         this.data.serviceAccountId,
         this.data.organizationId,
-        serviceAccountView
+        serviceAccountView,
       );
       serviceAccountMessage = this.i18nService.t("serviceAccountUpdated");
     }

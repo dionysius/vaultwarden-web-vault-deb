@@ -85,7 +85,7 @@ export class VaultFilterComponent implements OnInit, OnDestroy {
     private searchService: SearchService,
     private location: Location,
     private browserStateService: BrowserStateService,
-    private vaultFilterService: VaultFilterService
+    private vaultFilterService: VaultFilterService,
   ) {
     this.noFolderListSize = 100;
   }
@@ -177,7 +177,7 @@ export class VaultFilterComponent implements OnInit, OnDestroy {
 
   async loadCollections() {
     const allCollections = await this.vaultFilterService.buildCollections(
-      this.selectedOrganization
+      this.selectedOrganization,
     );
     this.collections = allCollections.fullList;
     this.nestedCollections = allCollections.nestedList;
@@ -185,7 +185,7 @@ export class VaultFilterComponent implements OnInit, OnDestroy {
 
   async loadFolders() {
     const allFolders = await firstValueFrom(
-      this.vaultFilterService.buildNestedFolders(this.selectedOrganization)
+      this.vaultFilterService.buildNestedFolders(this.selectedOrganization),
     );
     this.folders = allFolders.fullList;
     this.nestedFolders = allFolders.nestedList;
@@ -202,10 +202,10 @@ export class VaultFilterComponent implements OnInit, OnDestroy {
       this.ciphers = await this.searchService.searchCiphers(
         this.searchText,
         filterDeleted,
-        this.allCiphers
+        this.allCiphers,
       );
       this.ciphers = this.ciphers.filter(
-        (c) => !this.vaultFilterService.filterCipherForSelectedVault(c)
+        (c) => !this.vaultFilterService.filterCipherForSelectedVault(c),
       );
       return;
     }
@@ -218,11 +218,11 @@ export class VaultFilterComponent implements OnInit, OnDestroy {
         this.ciphers = await this.searchService.searchCiphers(
           this.searchText,
           filterDeleted,
-          this.allCiphers
+          this.allCiphers,
         );
       }
       this.ciphers = this.ciphers.filter(
-        (c) => !this.vaultFilterService.filterCipherForSelectedVault(c)
+        (c) => !this.vaultFilterService.filterCipherForSelectedVault(c),
       );
       this.searchPending = false;
     }, timeout);
@@ -301,7 +301,7 @@ export class VaultFilterComponent implements OnInit, OnDestroy {
     const typeCounts = new Map<CipherType, number>();
 
     this.deletedCount = this.allCiphers.filter(
-      (c) => c.isDeleted && !this.vaultFilterService.filterCipherForSelectedVault(c)
+      (c) => c.isDeleted && !this.vaultFilterService.filterCipherForSelectedVault(c),
     ).length;
 
     this.ciphers?.forEach((c) => {

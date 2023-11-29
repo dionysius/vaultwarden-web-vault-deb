@@ -95,7 +95,7 @@ describe("LoginUriView", () => {
         const uri = uriFactory(UriMatchType.Domain, exampleUris.standard);
         const actual = uri.matchesUri(
           exampleUris.differentDomain,
-          exampleUris.noEquivalentDomains()
+          exampleUris.noEquivalentDomains(),
         );
         expect(actual).toBe(false);
       });
@@ -136,7 +136,7 @@ describe("LoginUriView", () => {
         const uri = uriFactory(UriMatchType.Exact, exampleUris.standard);
         const actual = uri.matchesUri(
           exampleUris.standard + "#",
-          exampleUris.noEquivalentDomains()
+          exampleUris.noEquivalentDomains(),
         );
         expect(actual).toBe(false);
       });
@@ -147,7 +147,7 @@ describe("LoginUriView", () => {
         const uri = uriFactory(UriMatchType.StartsWith, exampleUris.standard);
         const actual = uri.matchesUri(
           exampleUris.standard + "#bookmark",
-          exampleUris.noEquivalentDomains()
+          exampleUris.noEquivalentDomains(),
         );
         expect(actual).toBe(true);
       });
@@ -156,7 +156,7 @@ describe("LoginUriView", () => {
         const uri = uriFactory(UriMatchType.StartsWith, exampleUris.standard);
         const actual = uri.matchesUri(
           exampleUris.standard.slice(1),
-          exampleUris.noEquivalentDomains()
+          exampleUris.noEquivalentDomains(),
         );
         expect(actual).toBe(false);
       });

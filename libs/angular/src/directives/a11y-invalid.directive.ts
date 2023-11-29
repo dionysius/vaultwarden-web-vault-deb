@@ -8,7 +8,10 @@ import { Subscription } from "rxjs";
 export class A11yInvalidDirective implements OnDestroy, OnInit {
   private sub: Subscription;
 
-  constructor(private el: ElementRef<HTMLInputElement>, private formControlDirective: NgControl) {}
+  constructor(
+    private el: ElementRef<HTMLInputElement>,
+    private formControlDirective: NgControl,
+  ) {}
 
   ngOnInit() {
     this.sub = this.formControlDirective.control.statusChanges.subscribe((status) => {

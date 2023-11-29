@@ -47,7 +47,7 @@ export class ScimComponent implements OnInit {
     private i18nService: I18nService,
     private environmentService: EnvironmentService,
     private organizationApiService: OrganizationApiServiceAbstraction,
-    private dialogService: DialogService
+    private dialogService: DialogService,
   ) {}
 
   async ngOnInit() {
@@ -62,7 +62,7 @@ export class ScimComponent implements OnInit {
     const connection = await this.apiService.getOrganizationConnection(
       this.organizationId,
       OrganizationConnectionType.Scim,
-      ScimConfigApi
+      ScimConfigApi,
     );
     await this.setConnectionFormValues(connection);
   }
@@ -73,7 +73,7 @@ export class ScimComponent implements OnInit {
     apiKeyRequest.masterPasswordHash = "N/A";
     const apiKeyResponse = await this.organizationApiService.getOrCreateApiKey(
       this.organizationId,
-      apiKeyRequest
+      apiKeyRequest,
     );
     this.formData.setValue({
       endpointUrl: this.getScimEndpointUrl(),
@@ -127,7 +127,7 @@ export class ScimComponent implements OnInit {
         this.organizationId,
         OrganizationConnectionType.Scim,
         true,
-        new ScimConfigRequest(this.enabled.value)
+        new ScimConfigRequest(this.enabled.value),
       );
       if (this.existingConnectionId == null) {
         this.formPromise = this.apiService.createOrganizationConnection(request, ScimConfigApi);
@@ -135,7 +135,7 @@ export class ScimComponent implements OnInit {
         this.formPromise = this.apiService.updateOrganizationConnection(
           request,
           ScimConfigApi,
-          this.existingConnectionId
+          this.existingConnectionId,
         );
       }
       const response = (await this.formPromise) as OrganizationConnectionResponse<ScimConfigApi>;

@@ -32,7 +32,10 @@ export class VaultItemsComponent {
     this._searchText = value;
   }
 
-  constructor(protected searchService: SearchService, protected cipherService: CipherService) {}
+  constructor(
+    protected searchService: SearchService,
+    protected cipherService: CipherService,
+  ) {}
 
   async load(filter: (cipher: CipherView) => boolean = null, deleted = false) {
     this.deleted = deleted ?? false;
@@ -97,7 +100,7 @@ export class VaultItemsComponent {
     this.ciphers = await this.searchService.searchCiphers(
       this.searchText,
       [this.filter, this.deletedFilter],
-      indexedCiphers
+      indexedCiphers,
     );
   }
 }

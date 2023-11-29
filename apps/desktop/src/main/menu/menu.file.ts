@@ -53,7 +53,7 @@ export class FileMenu extends FirstMenu implements IMenubarMenu {
     window: BrowserWindow,
     accounts: { [userId: string]: MenuAccount },
     isLocked: boolean,
-    isLockable: boolean
+    isLockable: boolean,
   ) {
     super(i18nService, messagingService, updater, window, accounts, isLocked, isLockable);
   }

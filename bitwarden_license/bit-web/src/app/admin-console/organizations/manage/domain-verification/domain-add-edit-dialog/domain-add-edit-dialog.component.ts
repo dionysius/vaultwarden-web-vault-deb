@@ -38,7 +38,7 @@ export class DomainAddEditDialogComponent implements OnInit, OnDestroy {
         domainNameValidator(this.i18nService.t("invalidDomainNameMessage")),
         uniqueInArrayValidator(
           this.data.existingDomainNames,
-          this.i18nService.t("duplicateDomainError")
+          this.i18nService.t("duplicateDomainError"),
         ),
       ],
     ],
@@ -66,7 +66,7 @@ export class DomainAddEditDialogComponent implements OnInit, OnDestroy {
     private orgDomainApiService: OrgDomainApiServiceAbstraction,
     private orgDomainService: OrgDomainServiceAbstraction,
     private validationService: ValidationService,
-    private dialogService: DialogService
+    private dialogService: DialogService,
   ) {}
 
   // Angular Method Implementations
@@ -98,7 +98,7 @@ export class DomainAddEditDialogComponent implements OnInit, OnDestroy {
       // Google uses 43 chars for their TXT record value: https://support.google.com/a/answer/2716802
       // So, chose a magic # of 33 bytes to achieve at least that once converted to base 64 (47 char length).
       const generatedTxt = `bw=${Utils.fromBufferToB64(
-        await this.cryptoFunctionService.randomBytes(33)
+        await this.cryptoFunctionService.randomBytes(33),
       )}`;
       this.txtCtrl.setValue(generatedTxt);
     }
@@ -131,7 +131,7 @@ export class DomainAddEditDialogComponent implements OnInit, OnDestroy {
 
     const request: OrganizationDomainRequest = new OrganizationDomainRequest(
       this.txtCtrl.value,
-      this.domainNameCtrl.value
+      this.domainNameCtrl.value,
     );
 
     try {
@@ -162,7 +162,7 @@ export class DomainAddEditDialogComponent implements OnInit, OnDestroy {
 
             this.rejectedDomainNameValidator = uniqueInArrayValidator(
               this.rejectedDomainNames,
-              this.i18nService.t("domainNotAvailable", this.domainNameCtrl.value)
+              this.i18nService.t("domainNotAvailable", this.domainNameCtrl.value),
             );
 
             this.domainNameCtrl.addValidators(this.rejectedDomainNameValidator);
@@ -195,7 +195,7 @@ export class DomainAddEditDialogComponent implements OnInit, OnDestroy {
     try {
       this.data.orgDomain = await this.orgDomainApiService.verify(
         this.data.organizationId,
-        this.data.orgDomain.id
+        this.data.orgDomain.id,
       );
 
       if (this.data.orgDomain.verifiedDate) {
@@ -245,7 +245,7 @@ export class DomainAddEditDialogComponent implements OnInit, OnDestroy {
     // Update this item so the last checked date gets updated.
     await this.orgDomainApiService.getByOrgIdAndOrgDomainId(
       this.data.organizationId,
-      this.data.orgDomain.id
+      this.data.orgDomain.id,
     );
   }
 

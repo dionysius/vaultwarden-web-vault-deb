@@ -26,7 +26,7 @@ export class WebAuthnLoginService implements WebAuthnLoginServiceAbstraction {
     private configService: ConfigServiceAbstraction,
     private webAuthnLoginPrfCryptoService: WebAuthnLoginPrfCryptoServiceAbstraction,
     private window: Window,
-    private logService?: LogService
+    private logService?: LogService,
   ) {
     this.enabled$ = this.configService.getFeatureFlag$(FeatureFlag.PasswordlessLogin, false);
     this.navigatorCredentials = this.window.navigator.credentials;
@@ -38,7 +38,7 @@ export class WebAuthnLoginService implements WebAuthnLoginServiceAbstraction {
   }
 
   async assertCredential(
-    credentialAssertionOptions: WebAuthnLoginCredentialAssertionOptionsView
+    credentialAssertionOptions: WebAuthnLoginCredentialAssertionOptionsView,
   ): Promise<WebAuthnLoginCredentialAssertionView> {
     const nativeOptions: CredentialRequestOptions = {
       publicKey: credentialAssertionOptions.options,
@@ -57,9 +57,8 @@ export class WebAuthnLoginService implements WebAuthnLoginServiceAbstraction {
       const prfResult = (response.getClientExtensionResults() as any).prf?.results?.first;
       let symmetricPrfKey: PrfKey | undefined;
       if (prfResult != undefined) {
-        symmetricPrfKey = await this.webAuthnLoginPrfCryptoService.createSymmetricKeyFromPrf(
-          prfResult
-        );
+        symmetricPrfKey =
+          await this.webAuthnLoginPrfCryptoService.createSymmetricKeyFromPrf(prfResult);
       }
 
       const deviceResponse = new WebAuthnLoginAssertionResponseRequest(response);
@@ -73,7 +72,7 @@ export class WebAuthnLoginService implements WebAuthnLoginServiceAbstraction {
       return new WebAuthnLoginCredentialAssertionView(
         credentialAssertionOptions.token,
         deviceResponse,
-        symmetricPrfKey
+        symmetricPrfKey,
       );
     } catch (error) {
       this.logService?.error(error);
@@ -85,7 +84,7 @@ export class WebAuthnLoginService implements WebAuthnLoginServiceAbstraction {
     const credential = new WebAuthnLoginCredentials(
       assertion.token,
       assertion.deviceResponse,
-      assertion.prfKey
+      assertion.prfKey,
     );
     const result = await this.authService.logIn(credential);
     return result;

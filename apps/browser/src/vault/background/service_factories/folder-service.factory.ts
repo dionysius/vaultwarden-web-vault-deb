@@ -31,7 +31,7 @@ export type FolderServiceInitOptions = FolderServiceFactoryOptions &
 
 export function folderServiceFactory(
   cache: { folderService?: AbstractFolderService } & CachedServices,
-  opts: FolderServiceInitOptions
+  opts: FolderServiceInitOptions,
 ): Promise<AbstractFolderService> {
   return factory(
     cache,
@@ -42,7 +42,7 @@ export function folderServiceFactory(
         await cryptoServiceFactory(cache, opts),
         await i18nServiceFactory(cache, opts),
         await cipherServiceFactory(cache, opts),
-        await stateServiceFactory(cache, opts)
-      )
+        await stateServiceFactory(cache, opts),
+      ),
   );
 }

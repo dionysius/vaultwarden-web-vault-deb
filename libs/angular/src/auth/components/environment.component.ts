@@ -25,7 +25,7 @@ export class EnvironmentComponent {
     protected platformUtilsService: PlatformUtilsService,
     protected environmentService: EnvironmentService,
     protected i18nService: I18nService,
-    private modalService: ModalService
+    private modalService: ModalService,
   ) {
     const urls = this.environmentService.getUrls();
     if (this.environmentService.selectedRegion != Region.SelfHosted) {

@@ -59,7 +59,7 @@ export class ExportComponent implements OnInit, OnDestroy {
     private userVerificationService: UserVerificationService,
     private formBuilder: UntypedFormBuilder,
     protected fileDownloadService: FileDownloadService,
-    protected dialogService: DialogService
+    protected dialogService: DialogService,
   ) {}
 
   async ngOnInit() {
@@ -75,7 +75,7 @@ export class ExportComponent implements OnInit, OnDestroy {
 
     merge(
       this.exportForm.get("format").valueChanges,
-      this.exportForm.get("fileEncryptionType").valueChanges
+      this.exportForm.get("fileEncryptionType").valueChanges,
     )
       .pipe(takeUntil(this.destroy$))
       .pipe(startWith(0))
@@ -109,7 +109,7 @@ export class ExportComponent implements OnInit, OnDestroy {
       this.platformUtilsService.showToast(
         "error",
         null,
-        this.i18nService.t("personalVaultExportPolicyInEffect")
+        this.i18nService.t("personalVaultExportPolicyInEffect"),
       );
       return;
     }

@@ -43,14 +43,14 @@ export class SecretsManagerExportComponent implements OnInit, OnDestroy {
     private fileDownloadService: FileDownloadService,
     private logService: LogService,
     private dialogService: DialogService,
-    private secretsManagerApiService: SecretsManagerPortingApiService
+    private secretsManagerApiService: SecretsManagerPortingApiService,
   ) {}
 
   async ngOnInit() {
     this.route.params
       .pipe(
         switchMap(async (params) => await this.organizationService.get(params.organizationId)),
-        takeUntil(this.destroy$)
+        takeUntil(this.destroy$),
       )
       .subscribe((organization) => {
         this.orgName = organization.name;

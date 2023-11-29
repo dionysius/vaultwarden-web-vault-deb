@@ -36,7 +36,7 @@ export class DomainVerificationComponent implements OnInit, OnDestroy {
     private orgDomainApiService: OrgDomainApiServiceAbstraction,
     private orgDomainService: OrgDomainServiceAbstraction,
     private dialogService: DialogService,
-    private validationService: ValidationService
+    private validationService: ValidationService,
   ) {}
 
   // eslint-disable-next-line @typescript-eslint/no-empty-function
@@ -52,7 +52,7 @@ export class DomainVerificationComponent implements OnInit, OnDestroy {
           this.organizationId = params.organizationId;
           await this.load();
         }),
-        takeUntil(this.componentDestroyed$)
+        takeUntil(this.componentDestroyed$),
       )
       .subscribe();
   }
@@ -106,7 +106,7 @@ export class DomainVerificationComponent implements OnInit, OnDestroy {
     try {
       const orgDomain: OrganizationDomainResponse = await this.orgDomainApiService.verify(
         this.organizationId,
-        orgDomainId
+        orgDomainId,
       );
 
       if (orgDomain.verifiedDate) {
@@ -115,7 +115,7 @@ export class DomainVerificationComponent implements OnInit, OnDestroy {
         this.platformUtilsService.showToast(
           "error",
           null,
-          this.i18nService.t("domainNotVerified", domainName)
+          this.i18nService.t("domainNotVerified", domainName),
         );
         // Update this item so the last checked date gets updated.
         await this.updateOrgDomain(orgDomainId);
@@ -141,7 +141,7 @@ export class DomainVerificationComponent implements OnInit, OnDestroy {
             this.platformUtilsService.showToast(
               "error",
               null,
-              this.i18nService.t("domainNotAvailable", domainName)
+              this.i18nService.t("domainNotAvailable", domainName),
             );
           }
           break;

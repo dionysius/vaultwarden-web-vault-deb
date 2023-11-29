@@ -15,12 +15,12 @@ export abstract class DownloadCommand {
     url: string,
     key: SymmetricCryptoKey,
     fileName: string,
-    output?: string
+    output?: string,
   ) {
     const response = await fet.default(new fet.Request(url, { headers: { cache: "no-cache" } }));
     if (response.status !== 200) {
       return Response.error(
-        "A " + response.status + " error occurred while downloading the attachment."
+        "A " + response.status + " error occurred while downloading the attachment.",
       );
     }
 

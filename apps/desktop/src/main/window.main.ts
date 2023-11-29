@@ -39,7 +39,7 @@ export class WindowMain {
     private logService: LogService,
     private storageService: AbstractStorageService,
     private argvCallback: (argv: string[]) => void = null,
-    private createWindowCallback: (win: BrowserWindow) => void
+    private createWindowCallback: (win: BrowserWindow) => void,
   ) {}
 
   init(): Promise<any> {
@@ -133,7 +133,7 @@ export class WindowMain {
   async createWindow(): Promise<void> {
     this.windowStates[mainWindowSizeKey] = await this.getWindowState(
       this.defaultWidth,
-      this.defaultHeight
+      this.defaultHeight,
     );
     this.enableAlwaysOnTop = await this.stateService.getEnableAlwaysOnTop();
 
@@ -183,7 +183,7 @@ export class WindowMain {
       }),
       {
         userAgent: cleanUserAgent(this.win.webContents.userAgent),
-      }
+      },
     );
 
     // Open the DevTools.

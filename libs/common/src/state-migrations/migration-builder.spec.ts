@@ -50,7 +50,7 @@ describe("MigrationBuilder", () => {
   it("should throw if instantiated incorrectly", () => {
     expect(() => MigrationBuilder.create().with(TestMigrator, null, null)).toThrow();
     expect(() =>
-      MigrationBuilder.create().with(TestMigrator, 0, 1).with(TestBadMigrator, 1, 0)
+      MigrationBuilder.create().with(TestMigrator, 0, 1).with(TestBadMigrator, 1, 0),
     ).toThrow();
   });
 

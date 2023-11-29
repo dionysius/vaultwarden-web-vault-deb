@@ -12,7 +12,7 @@ const DEFAULT_TEST_OPTIONS: StateUpdateOptions<any, any> = {
 };
 
 function populateOptionsWithDefault(
-  options: StateUpdateOptions<any, any>
+  options: StateUpdateOptions<any, any>,
 ): StateUpdateOptions<any, any> {
   return {
     ...DEFAULT_TEST_OPTIONS,
@@ -26,13 +26,13 @@ export class FakeGlobalState<T> implements GlobalState<T> {
 
   update: <TCombine>(
     configureState: (state: T, dependency: TCombine) => T,
-    options?: StateUpdateOptions<T, TCombine>
+    options?: StateUpdateOptions<T, TCombine>,
   ) => Promise<T> = jest.fn(async (configureState, options) => {
     options = populateOptionsWithDefault(options);
     if (this.stateSubject["_buffer"].length == 0) {
       // throw a more helpful not initialized error
       throw new Error(
-        "You must initialize the state with a value before calling update. Try calling `stateSubject.next(initialState)` before calling update"
+        "You must initialize the state with a value before calling update. Try calling `stateSubject.next(initialState)` before calling update",
       );
     }
     const current = await firstValueFrom(this.state$.pipe(timeout(100)));
@@ -61,7 +61,7 @@ export class FakeUserState<T> implements UserState<T> {
 
   update: <TCombine>(
     configureState: (state: T, dependency: TCombine) => T,
-    options?: StateUpdateOptions<T, TCombine>
+    options?: StateUpdateOptions<T, TCombine>,
   ) => Promise<T> = jest.fn(async (configureState, options) => {
     options = populateOptionsWithDefault(options);
     const current = await firstValueFrom(this.state$.pipe(timeout(options.msTimeout)));
@@ -82,11 +82,11 @@ export class FakeUserState<T> implements UserState<T> {
   updateFor: <TCombine>(
     userId: UserId,
     configureState: (state: T, dependency: TCombine) => T,
-    options?: StateUpdateOptions<T, TCombine>
+    options?: StateUpdateOptions<T, TCombine>,
   ) => Promise<T> = jest.fn();
 
   createDerived: <TTo>(
-    converter: (data: T, context: any) => Promise<TTo>
+    converter: (data: T, context: any) => Promise<TTo>,
   ) => DerivedUserState<TTo> = jest.fn();
 
   getFromState: () => Promise<T> = jest.fn(async () => {

@@ -57,7 +57,7 @@ export class PreferencesComponent implements OnInit {
     private messagingService: MessagingService,
     private themingService: AbstractThemingService,
     private settingsService: SettingsService,
-    private dialogService: DialogService
+    private dialogService: DialogService,
   ) {
     this.vaultTimeoutOptions = [
       { name: i18nService.t("oneMinute"), value: 1 },
@@ -112,7 +112,7 @@ export class PreferencesComponent implements OnInit {
         } else {
           this.form.controls.vaultTimeoutAction.enable({ emitEvent: false });
         }
-      })
+      }),
     );
 
     this.form.controls.vaultTimeoutAction.valueChanges
@@ -133,13 +133,13 @@ export class PreferencesComponent implements OnInit {
             }
           }
         }),
-        takeUntil(this.destroy$)
+        takeUntil(this.destroy$),
       )
       .subscribe();
     const initialFormValues = {
       vaultTimeout: await this.vaultTimeoutSettingsService.getVaultTimeout(),
       vaultTimeoutAction: await firstValueFrom(
-        this.vaultTimeoutSettingsService.vaultTimeoutAction$()
+        this.vaultTimeoutSettingsService.vaultTimeoutAction$(),
       ),
       enableFavicons: !(await this.settingsService.getDisableFavicon()),
       enableFullWidth: await this.stateService.getEnableFullWidth(),
@@ -156,7 +156,7 @@ export class PreferencesComponent implements OnInit {
       this.platformUtilsService.showToast(
         "error",
         null,
-        this.i18nService.t("vaultTimeoutRangeError")
+        this.i18nService.t("vaultTimeoutRangeError"),
       );
       return;
     }
@@ -164,7 +164,7 @@ export class PreferencesComponent implements OnInit {
 
     await this.vaultTimeoutSettingsService.setVaultTimeoutOptions(
       values.vaultTimeout,
-      values.vaultTimeoutAction
+      values.vaultTimeoutAction,
     );
     await this.settingsService.setDisableFavicon(!values.enableFavicons);
     await this.stateService.setEnableFullWidth(values.enableFullWidth);
@@ -180,7 +180,7 @@ export class PreferencesComponent implements OnInit {
       this.platformUtilsService.showToast(
         "success",
         null,
-        this.i18nService.t("preferencesUpdated")
+        this.i18nService.t("preferencesUpdated"),
       );
     }
   }

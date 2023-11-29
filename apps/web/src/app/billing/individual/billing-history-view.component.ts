@@ -16,7 +16,7 @@ export class BillingHistoryViewComponent implements OnInit {
   constructor(
     private apiService: ApiService,
     private platformUtilsService: PlatformUtilsService,
-    private router: Router
+    private router: Router,
   ) {}
 
   async ngOnInit() {

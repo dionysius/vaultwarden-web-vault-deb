@@ -21,7 +21,7 @@ export class GeneratorComponent extends BaseGeneratorComponent {
     platformUtilsService: PlatformUtilsService,
     i18nService: I18nService,
     route: ActivatedRoute,
-    logService: LogService
+    logService: LogService,
   ) {
     super(
       passwordGenerationService,
@@ -31,7 +31,7 @@ export class GeneratorComponent extends BaseGeneratorComponent {
       i18nService,
       logService,
       route,
-      window
+      window,
     );
   }
 

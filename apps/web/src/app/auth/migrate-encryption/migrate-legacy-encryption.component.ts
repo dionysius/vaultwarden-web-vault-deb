@@ -31,7 +31,7 @@ export class MigrateFromLegacyEncryptionComponent {
     private migrationService: MigrateFromLegacyEncryptionService,
     private cryptoService: CryptoService,
     private messagingService: MessagingService,
-    private logService: LogService
+    private logService: LogService,
   ) {}
 
   submit = async () => {
@@ -51,9 +51,8 @@ export class MigrateFromLegacyEncryptionComponent {
 
     try {
       // Create new user key
-      const [newUserKey, masterKeyEncUserKey] = await this.migrationService.createNewUserKey(
-        masterPassword
-      );
+      const [newUserKey, masterKeyEncUserKey] =
+        await this.migrationService.createNewUserKey(masterPassword);
 
       // Update admin recover keys
       await this.migrationService.updateAllAdminRecoveryKeys(masterPassword, newUserKey);
@@ -65,14 +64,14 @@ export class MigrateFromLegacyEncryptionComponent {
       await this.migrationService.updateKeysAndEncryptedData(
         masterPassword,
         newUserKey,
-        masterKeyEncUserKey
+        masterKeyEncUserKey,
       );
 
       this.platformUtilsService.showToast(
         "success",
         this.i18nService.t("keyUpdated"),
         this.i18nService.t("logBackInOthersToo"),
-        { timeout: 15000 }
+        { timeout: 15000 },
       );
       this.messagingService.send("logout");
     } catch (e) {

@@ -57,7 +57,7 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
         [
           InputsFieldMatch.validateInputsDoesntMatch(
             "masterPassword",
-            this.i18nService.t("hintEqualsPassword")
+            this.i18nService.t("hintEqualsPassword"),
           ),
         ],
       ],
@@ -68,9 +68,9 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
       validator: InputsFieldMatch.validateFormInputsMatch(
         "masterPassword",
         "confirmMasterPassword",
-        this.i18nService.t("masterPassDoesntMatch")
+        this.i18nService.t("masterPassDoesntMatch"),
       ),
-    }
+    },
   );
 
   protected successRoute = "login";
@@ -93,7 +93,7 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
     environmentService: EnvironmentService,
     protected logService: LogService,
     protected auditService: AuditService,
-    protected dialogService: DialogService
+    protected dialogService: DialogService,
   ) {
     super(environmentService, i18nService, platformUtilsService);
     this.showTerms = !platformUtilsService.isSelfHost();
@@ -114,7 +114,7 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
       if (!this.accountCreated) {
         const registerResponse = await this.registerAccount(
           await this.buildRegisterRequest(email, masterPassword, name),
-          showToast
+          showToast,
         );
         if (!registerResponse.successful) {
           return;
@@ -127,7 +127,7 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
           this.platformUtilsService.showToast(
             "success",
             null,
-            this.i18nService.t("trialAccountCreated")
+            this.i18nService.t("trialAccountCreated"),
           );
         }
         const loginResponse = await this.logIn(email, masterPassword, this.captchaBypassToken);
@@ -139,7 +139,7 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
         this.platformUtilsService.showToast(
           "success",
           null,
-          this.i18nService.t("newAccountCreated")
+          this.i18nService.t("newAccountCreated"),
         );
         this.router.navigate([this.successRoute], { queryParams: { email: email } });
       }
@@ -206,7 +206,7 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
-        this.i18nService.t("acceptPoliciesRequired")
+        this.i18nService.t("acceptPoliciesRequired"),
       );
       return { isValid: false };
     }
@@ -267,7 +267,7 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
   private async buildRegisterRequest(
     email: string,
     masterPassword: string,
-    name: string
+    name: string,
   ): Promise<RegisterRequest> {
     const hint = this.formGroup.value.hint;
     const kdf = DEFAULT_KDF_TYPE;
@@ -287,7 +287,7 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
       kdf,
       kdfConfig.iterations,
       kdfConfig.memory,
-      kdfConfig.parallelism
+      kdfConfig.parallelism,
     );
     request.keys = new KeysRequest(keys[0], keys[1].encryptedString);
     const orgInvite = await this.stateService.getOrganizationInvitation();
@@ -300,7 +300,7 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
 
   private async registerAccount(
     request: RegisterRequest,
-    showToast: boolean
+    showToast: boolean,
   ): Promise<{ successful: boolean; captchaBypassToken?: string }> {
     if (!(await this.validateRegistration(showToast)).isValid) {
       return { successful: false };
@@ -321,13 +321,13 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
   private async logIn(
     email: string,
     masterPassword: string,
-    captchaBypassToken: string
+    captchaBypassToken: string,
   ): Promise<{ captchaRequired: boolean }> {
     const credentials = new PasswordLoginCredentials(
       email,
       masterPassword,
       captchaBypassToken,
-      null
+      null,
     );
     const loginResponse = await this.authService.logIn(credentials);
     if (this.handleCaptchaRequired(loginResponse)) {

@@ -20,7 +20,7 @@ describe("browserSession decorator", () => {
     expect(() => {
       new TestClass();
     }).toThrowError(
-      "Cannot decorate TestClass with browserSession, Browser's AbstractMemoryStorageService must be accessible through the observed classes parameters"
+      "Cannot decorate TestClass with browserSession, Browser's AbstractMemoryStorageService must be accessible through the observed classes parameters",
     );
   });
 

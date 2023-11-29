@@ -38,7 +38,7 @@ export type VaultTimeoutSettingsServiceInitOptions = VaultTimeoutSettingsService
 
 export function vaultTimeoutSettingsServiceFactory(
   cache: { vaultTimeoutSettingsService?: AbstractVaultTimeoutSettingsService } & CachedServices,
-  opts: VaultTimeoutSettingsServiceInitOptions
+  opts: VaultTimeoutSettingsServiceInitOptions,
 ): Promise<AbstractVaultTimeoutSettingsService> {
   return factory(
     cache,
@@ -50,7 +50,7 @@ export function vaultTimeoutSettingsServiceFactory(
         await tokenServiceFactory(cache, opts),
         await policyServiceFactory(cache, opts),
         await stateServiceFactory(cache, opts),
-        await userVerificationServiceFactory(cache, opts)
-      )
+        await userVerificationServiceFactory(cache, opts),
+      ),
   );
 }

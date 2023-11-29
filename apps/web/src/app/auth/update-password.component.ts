@@ -31,7 +31,7 @@ export class UpdatePasswordComponent extends BaseUpdatePasswordComponent {
     logService: LogService,
     stateService: StateService,
     userVerificationService: UserVerificationService,
-    dialogService: DialogService
+    dialogService: DialogService,
   ) {
     super(
       router,
@@ -45,7 +45,7 @@ export class UpdatePasswordComponent extends BaseUpdatePasswordComponent {
       stateService,
       userVerificationService,
       logService,
-      dialogService
+      dialogService,
     );
   }
 }

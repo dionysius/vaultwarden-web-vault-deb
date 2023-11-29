@@ -10,7 +10,10 @@ export class InputVerbatimDirective {
 
   private disableComplete: boolean;
 
-  constructor(private el: ElementRef, private renderer: Renderer2) {}
+  constructor(
+    private el: ElementRef,
+    private renderer: Renderer2,
+  ) {}
 
   ngOnInit() {
     if (this.disableComplete && !this.el.nativeElement.hasAttribute("autocomplete")) {

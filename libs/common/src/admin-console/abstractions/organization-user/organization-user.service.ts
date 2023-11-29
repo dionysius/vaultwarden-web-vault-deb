@@ -34,7 +34,7 @@ export abstract class OrganizationUserService {
     id: string,
     options?: {
       includeGroups?: boolean;
-    }
+    },
   ): Promise<OrganizationUserDetailsResponse>;
 
   /**
@@ -54,7 +54,7 @@ export abstract class OrganizationUserService {
     options?: {
       includeCollections?: boolean;
       includeGroups?: boolean;
-    }
+    },
   ): Promise<ListResponse<OrganizationUserUserDetailsResponse>>;
 
   /**
@@ -64,7 +64,7 @@ export abstract class OrganizationUserService {
    */
   abstract getOrganizationUserResetPasswordDetails(
     organizationId: string,
-    id: string
+    id: string,
   ): Promise<OrganizationUserResetPasswordDetailsResponse>;
 
   /**
@@ -74,7 +74,7 @@ export abstract class OrganizationUserService {
    */
   abstract postOrganizationUserInvite(
     organizationId: string,
-    request: OrganizationUserInviteRequest
+    request: OrganizationUserInviteRequest,
   ): Promise<void>;
 
   /**
@@ -92,7 +92,7 @@ export abstract class OrganizationUserService {
    */
   abstract postManyOrganizationUserReinvite(
     organizationId: string,
-    ids: string[]
+    ids: string[],
   ): Promise<ListResponse<OrganizationUserBulkResponse>>;
 
   /**
@@ -106,7 +106,7 @@ export abstract class OrganizationUserService {
   abstract postOrganizationUserAcceptInit(
     organizationId: string,
     id: string,
-    request: OrganizationUserAcceptInitRequest
+    request: OrganizationUserAcceptInitRequest,
   ): Promise<void>;
 
   /**
@@ -118,7 +118,7 @@ export abstract class OrganizationUserService {
   abstract postOrganizationUserAccept(
     organizationId: string,
     id: string,
-    request: OrganizationUserAcceptRequest
+    request: OrganizationUserAcceptRequest,
   ): Promise<void>;
 
   /**
@@ -130,7 +130,7 @@ export abstract class OrganizationUserService {
   abstract postOrganizationUserConfirm(
     organizationId: string,
     id: string,
-    request: OrganizationUserConfirmRequest
+    request: OrganizationUserConfirmRequest,
   ): Promise<void>;
 
   /**
@@ -140,7 +140,7 @@ export abstract class OrganizationUserService {
    */
   abstract postOrganizationUsersPublicKey(
     organizationId: string,
-    ids: string[]
+    ids: string[],
   ): Promise<ListResponse<OrganizationUserBulkPublicKeyResponse>>;
 
   /**
@@ -150,7 +150,7 @@ export abstract class OrganizationUserService {
    */
   abstract postOrganizationUserBulkConfirm(
     organizationId: string,
-    request: OrganizationUserBulkConfirmRequest
+    request: OrganizationUserBulkConfirmRequest,
   ): Promise<ListResponse<OrganizationUserBulkResponse>>;
 
   /**
@@ -162,7 +162,7 @@ export abstract class OrganizationUserService {
   abstract putOrganizationUser(
     organizationId: string,
     id: string,
-    request: OrganizationUserUpdateRequest
+    request: OrganizationUserUpdateRequest,
   ): Promise<void>;
 
   /**
@@ -174,7 +174,7 @@ export abstract class OrganizationUserService {
   abstract putOrganizationUserGroups(
     organizationId: string,
     id: string,
-    groupIds: OrganizationUserUpdateGroupsRequest
+    groupIds: OrganizationUserUpdateGroupsRequest,
   ): Promise<void>;
 
   /**
@@ -186,7 +186,7 @@ export abstract class OrganizationUserService {
   abstract putOrganizationUserResetPasswordEnrollment(
     organizationId: string,
     userId: string,
-    request: OrganizationUserResetPasswordEnrollmentRequest
+    request: OrganizationUserResetPasswordEnrollmentRequest,
   ): Promise<void>;
 
   /**
@@ -198,7 +198,7 @@ export abstract class OrganizationUserService {
   abstract putOrganizationUserResetPassword(
     organizationId: string,
     id: string,
-    request: OrganizationUserResetPasswordRequest
+    request: OrganizationUserResetPasswordRequest,
   ): Promise<void>;
 
   /**
@@ -209,7 +209,7 @@ export abstract class OrganizationUserService {
    */
   abstract putOrganizationUserBulkEnableSecretsManager(
     organizationId: string,
-    ids: string[]
+    ids: string[],
   ): Promise<void>;
 
   /**
@@ -227,7 +227,7 @@ export abstract class OrganizationUserService {
    */
   abstract deleteManyOrganizationUsers(
     organizationId: string,
-    ids: string[]
+    ids: string[],
   ): Promise<ListResponse<OrganizationUserBulkResponse>>;
 
   /**
@@ -245,7 +245,7 @@ export abstract class OrganizationUserService {
    */
   abstract revokeManyOrganizationUsers(
     organizationId: string,
-    ids: string[]
+    ids: string[],
   ): Promise<ListResponse<OrganizationUserBulkResponse>>;
 
   /**
@@ -263,6 +263,6 @@ export abstract class OrganizationUserService {
    */
   abstract restoreManyOrganizationUsers(
     organizationId: string,
-    ids: string[]
+    ids: string[],
   ): Promise<ListResponse<OrganizationUserBulkResponse>>;
 }

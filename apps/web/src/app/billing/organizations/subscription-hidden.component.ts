@@ -29,7 +29,7 @@ const SubscriptionHiddenIcon = svgIcon`
   selector: "app-org-subscription-hidden",
   template: `<div class="tw-flex tw-flex-col tw-items-center tw-text-info">
     <bit-icon [icon]="subscriptionHiddenIcon"></bit-icon>
-    <p class="tw-font-bold">{{ "billingManagedByProvider" | i18n : providerName }}</p>
+    <p class="tw-font-bold">{{ "billingManagedByProvider" | i18n: providerName }}</p>
     <p>{{ "billingContactProviderForAssistance" | i18n }}</p>
   </div>`,
 })

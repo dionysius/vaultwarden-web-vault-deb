@@ -6,6 +6,6 @@
     <span class="tw-sr-only" *ngIf="!last || isFiltered">, </span>
   </ng-container>
   <span *ngIf="isFiltered" bitBadge [badgeType]="badgeType">
-    {{ "plusNMore" | i18n : (items.length - filteredItems.length).toString() }}
+    {{ "plusNMore" | i18n: (items.length - filteredItems.length).toString() }}
   </span>
 </div>

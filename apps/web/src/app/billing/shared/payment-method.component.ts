@@ -59,7 +59,7 @@ export class PaymentMethodComponent implements OnInit {
     private logService: LogService,
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
-    private dialogService: DialogService
+    private dialogService: DialogService,
   ) {}
 
   async ngOnInit() {
@@ -86,7 +86,7 @@ export class PaymentMethodComponent implements OnInit {
     if (this.forOrganization) {
       const billingPromise = this.organizationApiService.getBilling(this.organizationId);
       const organizationSubscriptionPromise = this.organizationApiService.getSubscription(
-        this.organizationId
+        this.organizationId,
       );
 
       [this.billing, this.org] = await Promise.all([
@@ -164,7 +164,7 @@ export class PaymentMethodComponent implements OnInit {
       this.platformUtilsService.showToast(
         "success",
         null,
-        this.i18nService.t("verifiedBankAccount")
+        this.i18nService.t("verifiedBankAccount"),
       );
       this.load();
     } catch (e) {

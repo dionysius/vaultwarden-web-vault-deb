@@ -40,7 +40,7 @@ export default class NotificationBackground {
     private policyService: PolicyService,
     private folderService: FolderService,
     private stateService: BrowserStateService,
-    private environmentService: EnvironmentService
+    private environmentService: EnvironmentService,
   ) {}
 
   async init() {
@@ -52,7 +52,7 @@ export default class NotificationBackground {
       "notification.background",
       (msg: any, sender: chrome.runtime.MessageSender) => {
         this.processMessage(msg, sender);
-      }
+      },
     );
 
     this.cleanupNotificationQueue();
@@ -97,7 +97,7 @@ export default class NotificationBackground {
           await BrowserApi.tabSendMessageData(
             sender.tab,
             "addToLockedVaultPendingNotifications",
-            retryMessage
+            retryMessage,
           );
           await openUnlockPopout(sender.tab);
           return;
@@ -259,7 +259,7 @@ export default class NotificationBackground {
 
     const ciphers = await this.cipherService.getAllDecryptedForUrl(loginInfo.url);
     const usernameMatches = ciphers.filter(
-      (c) => c.login.username != null && c.login.username.toLowerCase() === normalizedUsername
+      (c) => c.login.username != null && c.login.username.toLowerCase() === normalizedUsername,
     );
     if (usernameMatches.length === 0) {
       if (disabledAddLogin) {
@@ -284,7 +284,7 @@ export default class NotificationBackground {
     loginDomain: string,
     loginInfo: AddLoginRuntimeMessage,
     tab: chrome.tabs.Tab,
-    isVaultLocked = false
+    isVaultLocked = false,
   ) {
     // remove any old messages for this tab
     this.removeTabFromNotificationQueue(tab);
@@ -317,7 +317,7 @@ export default class NotificationBackground {
     const ciphers = await this.cipherService.getAllDecryptedForUrl(changeData.url);
     if (changeData.currentPassword != null) {
       const passwordMatches = ciphers.filter(
-        (c) => c.login.password === changeData.currentPassword
+        (c) => c.login.password === changeData.currentPassword,
       );
       if (passwordMatches.length === 1) {
         id = passwordMatches[0].id;
@@ -339,7 +339,7 @@ export default class NotificationBackground {
    */
   private async unlockVault(
     message: { data?: { skipNotification?: boolean } },
-    tab: chrome.tabs.Tab
+    tab: chrome.tabs.Tab,
   ) {
     if (message.data?.skipNotification) {
       return;
@@ -363,7 +363,7 @@ export default class NotificationBackground {
     loginDomain: string,
     newPassword: string,
     tab: chrome.tabs.Tab,
-    isVaultLocked = false
+    isVaultLocked = false,
   ) {
     // remove any old messages for this tab
     this.removeTabFromNotificationQueue(tab);
@@ -421,7 +421,7 @@ export default class NotificationBackground {
           const allCiphers = await this.cipherService.getAllDecryptedForUrl(queueMessage.uri);
           const existingCipher = allCiphers.find(
             (c) =>
-              c.login.username != null && c.login.username.toLowerCase() === queueMessage.username
+              c.login.username != null && c.login.username.toLowerCase() === queueMessage.username,
           );
 
           if (existingCipher != null) {
@@ -449,7 +449,7 @@ export default class NotificationBackground {
     cipherView: CipherView,
     newPassword: string,
     edit: boolean,
-    tab: chrome.tabs.Tab
+    tab: chrome.tabs.Tab,
   ) {
     cipherView.login.password = newPassword;
 
@@ -525,13 +525,13 @@ export default class NotificationBackground {
 
   private async removeIndividualVault(): Promise<boolean> {
     return await firstValueFrom(
-      this.policyService.policyAppliesToActiveUser$(PolicyType.PersonalOwnership)
+      this.policyService.policyAppliesToActiveUser$(PolicyType.PersonalOwnership),
     );
   }
 
   private async handleUnlockCompleted(
     messageData: LockedVaultPendingNotificationsItem,
-    sender: chrome.runtime.MessageSender
+    sender: chrome.runtime.MessageSender,
   ): Promise<void> {
     if (messageData.commandToRetry.msg.command === "autofill_login") {
       await BrowserApi.tabSendMessageData(sender.tab, "closeNotificationBar");
@@ -543,7 +543,7 @@ export default class NotificationBackground {
 
     await this.processMessage(
       messageData.commandToRetry.msg.command,
-      messageData.commandToRetry.sender
+      messageData.commandToRetry.sender,
     );
   }
 }

@@ -27,7 +27,7 @@ export class UnlockCommand {
     private environmentService: EnvironmentService,
     private syncService: SyncService,
     private organizationApiService: OrganizationApiServiceAbstraction,
-    private logout: () => Promise<void>
+    private logout: () => Promise<void>,
   ) {}
 
   async run(password: string, cmdOptions: Record<string, any>) {
@@ -55,7 +55,7 @@ export class UnlockCommand {
         const serverKeyHash = await this.cryptoService.hashMasterKey(
           password,
           masterKey,
-          HashPurpose.ServerAuthorization
+          HashPurpose.ServerAuthorization,
         );
         const request = new SecretVerificationRequest();
         request.masterPasswordHash = serverKeyHash;
@@ -65,7 +65,7 @@ export class UnlockCommand {
           const localKeyHash = await this.cryptoService.hashMasterKey(
             password,
             masterKey,
-            HashPurpose.LocalAuthorization
+            HashPurpose.LocalAuthorization,
           );
           await this.cryptoService.setMasterKeyHash(localKeyHash);
         } catch {
@@ -85,7 +85,7 @@ export class UnlockCommand {
           this.environmentService,
           this.syncService,
           this.organizationApiService,
-          this.logout
+          this.logout,
         );
         const convertResponse = await convertToKeyConnectorCommand.run();
         if (!convertResponse.success) {
@@ -117,7 +117,7 @@ export class UnlockCommand {
         '"\n\n' +
         "You can also pass the session key to any command with the `--session` option. ex:\n" +
         "$ bw list items --session " +
-        process.env.BW_SESSION
+        process.env.BW_SESSION,
     );
     res.raw = process.env.BW_SESSION;
     return Response.success(res);

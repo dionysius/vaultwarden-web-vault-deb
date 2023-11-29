@@ -291,7 +291,7 @@ import { ModalService } from "./modal.service";
         stateService: StateServiceAbstraction,
         encryptService: EncryptService,
         fileUploadService: CipherFileUploadServiceAbstraction,
-        configService: ConfigServiceAbstraction
+        configService: ConfigServiceAbstraction,
       ) =>
         new CipherService(
           cryptoService,
@@ -302,7 +302,7 @@ import { ModalService } from "./modal.service";
           stateService,
           encryptService,
           fileUploadService,
-          configService
+          configService,
         ),
       deps: [
         CryptoServiceAbstraction,
@@ -792,7 +792,7 @@ export class JslibServicesModule {}
 function encryptServiceFactory(
   cryptoFunctionservice: CryptoFunctionServiceAbstraction,
   logService: LogService,
-  logMacFailures: boolean
+  logMacFailures: boolean,
 ): EncryptService {
   return flagEnabled("multithreadDecryption")
     ? new MultithreadEncryptServiceImplementation(cryptoFunctionservice, logService, logMacFailures)

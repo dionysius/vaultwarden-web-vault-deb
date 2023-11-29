@@ -16,7 +16,7 @@ export class ServiceUtils {
     parts: string[],
     obj: ITreeNodeObject,
     parent: TreeNode<ITreeNodeObject> | undefined,
-    delimiter: string
+    delimiter: string,
   ) {
     if (parts.length <= partIndex) {
       return;
@@ -41,7 +41,7 @@ export class ServiceUtils {
         parts,
         obj,
         nodeTree[i],
-        delimiter
+        delimiter,
       );
       return;
     }
@@ -63,7 +63,7 @@ export class ServiceUtils {
         [newPartName, ...parts.slice(partIndex + 2)],
         obj,
         parent,
-        delimiter
+        delimiter,
       );
     }
   }
@@ -76,7 +76,7 @@ export class ServiceUtils {
    */
   static getTreeNodeObject<T extends ITreeNodeObject>(
     nodeTree: TreeNode<T>,
-    id: string
+    id: string,
   ): TreeNode<T> {
     if (nodeTree.node.id === id) {
       return nodeTree;
@@ -100,7 +100,7 @@ export class ServiceUtils {
    */
   static getTreeNodeObjectFromList<T extends ITreeNodeObject>(
     nodeTree: TreeNode<T>[],
-    id: string
+    id: string,
   ): TreeNode<T> {
     for (let i = 0; i < nodeTree.length; i++) {
       if (nodeTree[i].node.id === id) {

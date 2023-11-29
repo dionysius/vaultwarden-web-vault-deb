@@ -33,7 +33,7 @@ export class BitFormButtonDirective implements OnDestroy {
   constructor(
     buttonComponent: ButtonLikeAbstraction,
     @Optional() submitDirective?: BitSubmitDirective,
-    @Optional() actionDirective?: BitActionDirective
+    @Optional() actionDirective?: BitActionDirective,
   ) {
     if (submitDirective && buttonComponent) {
       submitDirective.loading$.pipe(takeUntil(this.destroy$)).subscribe((loading) => {

@@ -38,7 +38,7 @@ export class UserAddEditComponent implements OnInit {
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
     private logService: LogService,
-    private dialogService: DialogService
+    private dialogService: DialogService,
   ) {}
 
   async ngOnInit() {
@@ -68,7 +68,7 @@ export class UserAddEditComponent implements OnInit {
         this.formPromise = this.apiService.putProviderUser(
           this.providerId,
           this.providerUserId,
-          request
+          request,
         );
       } else {
         const request = new ProviderUserInviteRequest();
@@ -80,7 +80,7 @@ export class UserAddEditComponent implements OnInit {
       this.platformUtilsService.showToast(
         "success",
         null,
-        this.i18nService.t(this.editMode ? "editedUserId" : "invitedUsers", this.name)
+        this.i18nService.t(this.editMode ? "editedUserId" : "invitedUsers", this.name),
       );
       this.onSavedUser.emit();
     } catch (e) {
@@ -109,7 +109,7 @@ export class UserAddEditComponent implements OnInit {
       this.platformUtilsService.showToast(
         "success",
         null,
-        this.i18nService.t("removedUserId", this.name)
+        this.i18nService.t("removedUserId", this.name),
       );
       this.onDeletedUser.emit();
     } catch (e) {

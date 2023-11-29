@@ -7,30 +7,29 @@ import { PotentialGranteeView } from "../../../../models/view/potential-grantee.
 import { ApItemEnum, ApItemEnumUtil } from "./enums/ap-item.enum";
 import { ApPermissionEnum, ApPermissionEnumUtil } from "./enums/ap-permission.enum";
 
-export type ApItemViewType =
-  | SelectItemView & {
-      accessPolicyId?: string;
-      permission?: ApPermissionEnum;
-    } & (
-        | {
-            type: ApItemEnum.User;
-            userId?: string;
-            currentUser?: boolean;
-          }
-        | {
-            type: ApItemEnum.Group;
-            currentUserInGroup?: boolean;
-          }
-        | {
-            type: ApItemEnum.ServiceAccount;
-          }
-        | {
-            type: ApItemEnum.Project;
-          }
-      );
+export type ApItemViewType = SelectItemView & {
+  accessPolicyId?: string;
+  permission?: ApPermissionEnum;
+} & (
+    | {
+        type: ApItemEnum.User;
+        userId?: string;
+        currentUser?: boolean;
+      }
+    | {
+        type: ApItemEnum.Group;
+        currentUserInGroup?: boolean;
+      }
+    | {
+        type: ApItemEnum.ServiceAccount;
+      }
+    | {
+        type: ApItemEnum.Project;
+      }
+  );
 
 export function convertToAccessPolicyItemViews(
-  value: ProjectPeopleAccessPoliciesView
+  value: ProjectPeopleAccessPoliciesView,
 ): ApItemViewType[] {
   const accessPolicies: ApItemViewType[] = [];
 
@@ -65,7 +64,7 @@ export function convertToAccessPolicyItemViews(
 }
 
 export function convertPotentialGranteesToApItemViewType(
-  grantees: PotentialGranteeView[]
+  grantees: PotentialGranteeView[],
 ): ApItemViewType[] {
   return grantees.map((granteeView) => {
     let icon: string;

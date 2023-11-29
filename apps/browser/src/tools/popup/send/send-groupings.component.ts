@@ -50,7 +50,7 @@ export class SendGroupingsComponent extends BaseSendComponent {
     private broadcasterService: BroadcasterService,
     logService: LogService,
     sendApiService: SendApiService,
-    dialogService: DialogService
+    dialogService: DialogService,
   ) {
     super(
       sendService,
@@ -62,7 +62,7 @@ export class SendGroupingsComponent extends BaseSendComponent {
       policyService,
       logService,
       sendApiService,
-      dialogService
+      dialogService,
     );
     super.onSuccessfulLoad = async () => {
       this.calculateTypeCounts();

@@ -52,7 +52,7 @@ describe("DefaultUserState", () => {
       testKeyDefinition,
       accountService,
       null, // Not testing anything with encrypt service
-      diskStorageService
+      diskStorageService,
     );
   });
 
@@ -111,17 +111,17 @@ describe("DefaultUserState", () => {
     expect(diskStorageService.mock.get).toHaveBeenNthCalledWith(
       1,
       "user_00000000-0000-1000-a000-000000000001_fake_fake",
-      any()
+      any(),
     );
     expect(diskStorageService.mock.get).toHaveBeenNthCalledWith(
       2,
       "user_00000000-0000-1000-a000-000000000001_fake_fake",
-      any()
+      any(),
     );
     expect(diskStorageService.mock.get).toHaveBeenNthCalledWith(
       3,
       "user_00000000-0000-1000-a000-000000000002_fake_fake",
-      any()
+      any(),
     );
 
     // Should only have saved data for the first user
@@ -129,7 +129,7 @@ describe("DefaultUserState", () => {
     expect(diskStorageService.mock.save).toHaveBeenNthCalledWith(
       1,
       "user_00000000-0000-1000-a000-000000000001_fake_fake",
-      any()
+      any(),
     );
   });
 
@@ -275,7 +275,7 @@ describe("DefaultUserState", () => {
         },
         {
           combineLatestWith: of(combinedDependencies),
-        }
+        },
       );
       await awaitAsync();
 
@@ -295,7 +295,7 @@ describe("DefaultUserState", () => {
         },
         {
           shouldUpdate: () => false,
-        }
+        },
       );
 
       await awaitAsync();

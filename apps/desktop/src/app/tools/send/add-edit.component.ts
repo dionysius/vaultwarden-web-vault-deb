@@ -31,7 +31,7 @@ export class AddEditComponent extends BaseAddEditComponent {
     logService: LogService,
     sendApiService: SendApiService,
     dialogService: DialogService,
-    formBuilder: FormBuilder
+    formBuilder: FormBuilder,
   ) {
     super(
       i18nService,
@@ -45,7 +45,7 @@ export class AddEditComponent extends BaseAddEditComponent {
       stateService,
       sendApiService,
       dialogService,
-      formBuilder
+      formBuilder,
     );
   }
 
@@ -65,7 +65,7 @@ export class AddEditComponent extends BaseAddEditComponent {
     this.platformUtilsService.showToast(
       "success",
       null,
-      this.i18nService.t("valueCopied", this.i18nService.t("sendLink"))
+      this.i18nService.t("valueCopied", this.i18nService.t("sendLink")),
     );
   }
 

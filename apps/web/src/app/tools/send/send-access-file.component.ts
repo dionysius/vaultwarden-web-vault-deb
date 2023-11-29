@@ -28,7 +28,7 @@ export class SendAccessFileComponent {
     private platformUtilsService: PlatformUtilsService,
     private cryptoService: CryptoService,
     private fileDownloadService: FileDownloadService,
-    private sendApiService: SendApiService
+    private sendApiService: SendApiService,
   ) {}
 
   protected download = async () => {
@@ -38,7 +38,7 @@ export class SendAccessFileComponent {
 
     const downloadData = await this.sendApiService.getSendFileDownloadData(
       this.send,
-      this.accessRequest
+      this.accessRequest,
     );
 
     if (Utils.isNullOrWhitespace(downloadData.url)) {

@@ -77,7 +77,7 @@
     </ng-container>
     <ng-template body>
       <tr bitRow *ngFor="let e of events" alignContent="top">
-        <td bitCell class="tw-whitespace-nowrap">{{ e.date | date : "medium" }}</td>
+        <td bitCell class="tw-whitespace-nowrap">{{ e.date | date: "medium" }}</td>
         <td bitCell>
           <span title="{{ e.appName }}, {{ e.ip }}">{{ e.appName }}</span>
         </td>

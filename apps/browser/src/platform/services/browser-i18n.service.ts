@@ -11,7 +11,10 @@ export class BrowserI18nService extends I18nService {
   @sessionSync({ initializer: (s: string) => s })
   protected _locale: ReplaySubject<string>;
 
-  constructor(systemLanguage: string, private stateService: StateService) {
+  constructor(
+    systemLanguage: string,
+    private stateService: StateService,
+  ) {
     super(systemLanguage);
   }
 }

@@ -44,7 +44,7 @@ export class DialogService extends Dialog implements OnDestroy {
     @Optional() router: Router,
     @Optional() authService: AuthService,
 
-    protected i18nService: I18nService
+    protected i18nService: I18nService,
   ) {
     super(_overlay, _injector, _defaultOptions, _parentDialog, _overlayContainer, scrollStrategy);
 
@@ -55,7 +55,7 @@ export class DialogService extends Dialog implements OnDestroy {
           filter((event) => event instanceof NavigationEnd),
           switchMap(() => authService.getAuthStatus()),
           filter((v) => v !== AuthenticationStatus.Unlocked),
-          takeUntil(this._destroy$)
+          takeUntil(this._destroy$),
         )
         .subscribe(() => this.closeAll());
     }
@@ -69,7 +69,7 @@ export class DialogService extends Dialog implements OnDestroy {
 
   override open<R = unknown, D = unknown, C = unknown>(
     componentOrTemplateRef: ComponentType<C> | TemplateRef<C>,
-    config?: DialogConfig<D, DialogRef<R, C>>
+    config?: DialogConfig<D, DialogRef<R, C>>,
   ): DialogRef<R, C> {
     config = {
       backdropClass: this.backDropClasses,

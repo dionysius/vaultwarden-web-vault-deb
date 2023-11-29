@@ -63,7 +63,7 @@ export class AccessSelectorComponent implements ControlValueAccessor, OnInit, On
    */
   private updateRowControlDisableState = (
     controlRow: FormGroup<ControlsOf<AccessItemValue>>,
-    item: AccessItemView
+    item: AccessItemView,
   ) => {
     // Disable entire row form group if readonly
     if (item.readonly) {
@@ -140,14 +140,14 @@ export class AccessSelectorComponent implements ControlValueAccessor, OnInit, On
 
   set items(val: AccessItemView[]) {
     const selected = (this.selectionList.formArray.getRawValue() ?? []).concat(
-      val.filter((m) => m.readonly)
+      val.filter((m) => m.readonly),
     );
     this.selectionList.populateItems(
       val.map((m) => {
         m.icon = m.icon ?? this.itemIcon(m); // Ensure an icon is set
         return m;
       }),
-      selected
+      selected,
     );
   }
 
@@ -203,7 +203,7 @@ export class AccessSelectorComponent implements ControlValueAccessor, OnInit, On
 
   constructor(
     private readonly formBuilder: FormBuilder,
-    private readonly i18nService: I18nService
+    private readonly i18nService: I18nService,
   ) {}
 
   /** Required for NG_VALUE_ACCESSOR */

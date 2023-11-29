@@ -21,7 +21,7 @@ export class ShareComponent extends BaseShareComponent {
     platformUtilsService: PlatformUtilsService,
     logService: LogService,
     organizationService: OrganizationService,
-    private modalRef: ModalRef
+    private modalRef: ModalRef,
   ) {
     super(
       collectionService,
@@ -29,7 +29,7 @@ export class ShareComponent extends BaseShareComponent {
       i18nService,
       cipherService,
       logService,
-      organizationService
+      organizationService,
     );
   }
 

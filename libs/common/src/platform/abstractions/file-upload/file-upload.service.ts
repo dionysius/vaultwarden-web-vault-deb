@@ -7,7 +7,7 @@ export abstract class FileUploadService {
     uploadData: { url: string; fileUploadType: FileUploadType },
     fileName: EncString,
     encryptedFileData: EncArrayBuffer,
-    fileUploadMethods: FileUploadApiMethods
+    fileUploadMethods: FileUploadApiMethods,
   ) => Promise<void>;
 }
 

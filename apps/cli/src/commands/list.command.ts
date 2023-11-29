@@ -35,7 +35,7 @@ export class ListCommand {
     private searchService: SearchService,
     private organizationUserService: OrganizationUserService,
     private apiService: ApiService,
-    private eventCollectionService: EventCollectionService
+    private eventCollectionService: EventCollectionService,
   ) {}
 
   async run(object: string, cmdOptions: Record<string, any>): Promise<Response> {
@@ -133,7 +133,7 @@ export class ListCommand {
         EventType.Cipher_ClientViewed,
         c.id,
         index === ciphers.length - 1,
-        c.organizationId
+        c.organizationId,
       );
     });
 
@@ -229,7 +229,7 @@ export class ListCommand {
           u.type = r.type;
           u.twoFactorEnabled = r.twoFactorEnabled;
           return u;
-        })
+        }),
       );
       return Response.success(res);
     } catch (e) {

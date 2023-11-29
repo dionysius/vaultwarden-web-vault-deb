@@ -7,7 +7,7 @@ import { ScimConfigApi } from "../api/scim-config.api";
 export type OrganizationConnectionConfigApis = BillingSyncConfigApi | ScimConfigApi;
 
 export class OrganizationConnectionResponse<
-  TConfig extends OrganizationConnectionConfigApis
+  TConfig extends OrganizationConnectionConfigApis,
 > extends BaseResponse {
   id: string;
   type: OrganizationConnectionType;

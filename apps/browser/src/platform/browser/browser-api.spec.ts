@@ -24,7 +24,7 @@ describe("BrowserApi", () => {
       expect(chrome.windows.get).toHaveBeenCalledWith(
         windowId,
         { populate: true },
-        expect.anything()
+        expect.anything(),
       );
     });
   });
@@ -46,7 +46,7 @@ describe("BrowserApi", () => {
       expect(chrome.windows.get).toHaveBeenCalledWith(
         windowId,
         { populate: true },
-        expect.anything()
+        expect.anything(),
       );
     });
   });
@@ -73,7 +73,7 @@ describe("BrowserApi", () => {
       expect(chrome.windows.update).toHaveBeenCalledWith(
         windowId,
         windowOptions,
-        expect.anything()
+        expect.anything(),
       );
     });
   });
@@ -87,7 +87,7 @@ describe("BrowserApi", () => {
       expect(chrome.windows.update).toHaveBeenCalledWith(
         windowId,
         { focused: true },
-        expect.anything()
+        expect.anything(),
       );
     });
   });
@@ -98,7 +98,7 @@ describe("BrowserApi", () => {
       const injectDetails = mock<chrome.tabs.InjectDetails>();
       jest.spyOn(BrowserApi, "manifestVersion", "get").mockReturnValue(2);
       (chrome.tabs.executeScript as jest.Mock).mockImplementation(
-        (tabId, injectDetails, callback) => callback(executeScriptResult)
+        (tabId, injectDetails, callback) => callback(executeScriptResult),
       );
 
       const result = await BrowserApi.executeScriptInTab(tabId, injectDetails);
@@ -106,7 +106,7 @@ describe("BrowserApi", () => {
       expect(chrome.tabs.executeScript).toHaveBeenCalledWith(
         tabId,
         injectDetails,
-        expect.any(Function)
+        expect.any(Function),
       );
       expect(result).toEqual(executeScriptResult);
     });

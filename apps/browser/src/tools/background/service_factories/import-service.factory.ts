@@ -42,7 +42,7 @@ export function importServiceFactory(
   cache: {
     importService?: ImportServiceAbstraction;
   } & CachedServices,
-  opts: ImportServiceInitOptions
+  opts: ImportServiceInitOptions,
 ): Promise<ImportServiceAbstraction> {
   return factory(
     cache,
@@ -55,7 +55,7 @@ export function importServiceFactory(
         await importApiServiceFactory(cache, opts),
         await i18nServiceFactory(cache, opts),
         await collectionServiceFactory(cache, opts),
-        await cryptoServiceFactory(cache, opts)
-      )
+        await cryptoServiceFactory(cache, opts),
+      ),
   );
 }

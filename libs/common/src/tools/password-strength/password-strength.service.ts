@@ -12,7 +12,7 @@ export class PasswordStrengthService implements PasswordStrengthServiceAbstracti
   getPasswordStrength(
     password: string,
     emailInput: string = null,
-    userInputs: string[] = null
+    userInputs: string[] = null,
   ): zxcvbn.ZXCVBNResult {
     if (password == null || password.length === 0) {
       return null;

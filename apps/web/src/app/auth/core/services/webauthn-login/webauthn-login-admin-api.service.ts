@@ -13,7 +13,7 @@ export class WebAuthnLoginAdminApiService {
   constructor(private apiService: ApiService) {}
 
   async getCredentialCreateOptions(
-    request: SecretVerificationRequest
+    request: SecretVerificationRequest,
   ): Promise<WebauthnLoginCredentialCreateOptionsResponse> {
     const response = await this.apiService.send("POST", "/webauthn/options", request, true, true);
     return new WebauthnLoginCredentialCreateOptionsResponse(response);

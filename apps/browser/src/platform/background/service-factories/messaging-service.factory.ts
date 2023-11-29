@@ -13,7 +13,7 @@ export type MessagingServiceInitOptions = MessagingServiceFactoryOptions;
 
 export function messagingServiceFactory(
   cache: { messagingService?: AbstractMessagingService } & CachedServices,
-  opts: MessagingServiceInitOptions
+  opts: MessagingServiceInitOptions,
 ): Promise<AbstractMessagingService> {
   return factory(cache, "messagingService", opts, () => new BrowserMessagingService());
 }

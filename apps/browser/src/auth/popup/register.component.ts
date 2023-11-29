@@ -38,7 +38,7 @@ export class RegisterComponent extends BaseRegisterComponent {
     environmentService: EnvironmentService,
     logService: LogService,
     auditService: AuditService,
-    dialogService: DialogService
+    dialogService: DialogService,
   ) {
     super(
       formValidationErrorService,
@@ -54,7 +54,7 @@ export class RegisterComponent extends BaseRegisterComponent {
       environmentService,
       logService,
       auditService,
-      dialogService
+      dialogService,
     );
   }
 }

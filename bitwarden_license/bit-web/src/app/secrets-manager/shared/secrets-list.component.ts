@@ -50,7 +50,7 @@ export class SecretsListComponent implements OnDestroy {
 
   constructor(
     private i18nService: I18nService,
-    private platformUtilsService: PlatformUtilsService
+    private platformUtilsService: PlatformUtilsService,
   ) {
     this.selection.changed
       .pipe(takeUntil(this.destroy$))
@@ -82,13 +82,13 @@ export class SecretsListComponent implements OnDestroy {
   bulkDeleteSecrets() {
     if (this.selection.selected.length >= 1) {
       this.deleteSecretsEvent.emit(
-        this.secrets.filter((secret) => this.selection.isSelected(secret.id))
+        this.secrets.filter((secret) => this.selection.isSelected(secret.id)),
       );
     } else {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
-        this.i18nService.t("nothingSelected")
+        this.i18nService.t("nothingSelected"),
       );
     }
   }
@@ -100,7 +100,7 @@ export class SecretsListComponent implements OnDestroy {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
-        this.i18nService.t("nothingSelected")
+        this.i18nService.t("nothingSelected"),
       );
     }
   }
@@ -121,13 +121,13 @@ export class SecretsListComponent implements OnDestroy {
   static copySecretName(
     name: string,
     platformUtilsService: PlatformUtilsService,
-    i18nService: I18nService
+    i18nService: I18nService,
   ) {
     platformUtilsService.copyToClipboard(name);
     platformUtilsService.showToast(
       "success",
       null,
-      i18nService.t("valueCopied", i18nService.t("name"))
+      i18nService.t("valueCopied", i18nService.t("name")),
     );
   }
 
@@ -138,14 +138,14 @@ export class SecretsListComponent implements OnDestroy {
     id: string,
     platformUtilsService: PlatformUtilsService,
     i18nService: I18nService,
-    secretService: SecretService
+    secretService: SecretService,
   ) {
     const value = secretService.getBySecretId(id).then((secret) => secret.value);
     SecretsListComponent.copyToClipboardAsync(value, platformUtilsService).then(() => {
       platformUtilsService.showToast(
         "success",
         null,
-        i18nService.t("valueCopied", i18nService.t("value"))
+        i18nService.t("valueCopied", i18nService.t("value")),
       );
     });
   }
@@ -153,13 +153,13 @@ export class SecretsListComponent implements OnDestroy {
   static copySecretUuid(
     id: string,
     platformUtilsService: PlatformUtilsService,
-    i18nService: I18nService
+    i18nService: I18nService,
   ) {
     platformUtilsService.copyToClipboard(id);
     platformUtilsService.showToast(
       "success",
       null,
-      i18nService.t("valueCopied", i18nService.t("uuid"))
+      i18nService.t("valueCopied", i18nService.t("uuid")),
     );
   }
 
@@ -168,7 +168,7 @@ export class SecretsListComponent implements OnDestroy {
    */
   private static copyToClipboardAsync(
     text: Promise<string>,
-    platformUtilsService: PlatformUtilsService
+    platformUtilsService: PlatformUtilsService,
   ) {
     if (platformUtilsService.isSafari()) {
       return navigator.clipboard.write([

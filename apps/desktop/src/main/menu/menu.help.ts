@@ -150,7 +150,7 @@ export class HelpMenu implements IMenubarMenu {
         label: "iOS",
         click: () => {
           shell.openExternal(
-            "https://itunes.apple.com/app/" + "bitwarden-free-password-manager/id1137397744?mt=8"
+            "https://itunes.apple.com/app/" + "bitwarden-free-password-manager/id1137397744?mt=8",
           );
         },
       },
@@ -160,7 +160,7 @@ export class HelpMenu implements IMenubarMenu {
         visible: !isMacAppStore(), // Apple Guideline 2.3.10 - Accurate Metadata
         click: () => {
           shell.openExternal(
-            "https://play.google.com/store/apps/" + "details?id=com.x8bit.bitwarden"
+            "https://play.google.com/store/apps/" + "details?id=com.x8bit.bitwarden",
           );
         },
       },
@@ -184,7 +184,7 @@ export class HelpMenu implements IMenubarMenu {
         click: () => {
           shell.openExternal(
             "https://chrome.google.com/webstore/detail/" +
-              "bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb"
+              "bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb",
           );
         },
       },
@@ -193,7 +193,7 @@ export class HelpMenu implements IMenubarMenu {
         label: "Firefox",
         click: () => {
           shell.openExternal(
-            "https://addons.mozilla.org/firefox/addon/" + "bitwarden-password-manager/"
+            "https://addons.mozilla.org/firefox/addon/" + "bitwarden-password-manager/",
           );
         },
       },
@@ -202,7 +202,7 @@ export class HelpMenu implements IMenubarMenu {
         label: "Opera",
         click: () => {
           shell.openExternal(
-            "https://addons.opera.com/extensions/details/" + "bitwarden-free-password-manager/"
+            "https://addons.opera.com/extensions/details/" + "bitwarden-free-password-manager/",
           );
         },
       },
@@ -212,7 +212,7 @@ export class HelpMenu implements IMenubarMenu {
         click: () => {
           shell.openExternal(
             "https://microsoftedge.microsoft.com/addons/" +
-              "detail/jbkfoedolllekgbhcbcoahefnbanhhlh"
+              "detail/jbkfoedolllekgbhcbcoahefnbanhhlh",
           );
         },
       },

@@ -48,7 +48,7 @@ export class VaultExportService implements VaultExportServiceAbstraction {
     private apiService: ApiService,
     private cryptoService: CryptoService,
     private cryptoFunctionService: CryptoFunctionService,
-    private stateService: StateService
+    private stateService: StateService,
   ) {}
 
   async getExport(format: ExportFormat = "csv", organizationId?: string): Promise<string> {
@@ -94,7 +94,7 @@ export class VaultExportService implements VaultExportServiceAbstraction {
 
   async getOrganizationExport(
     organizationId: string,
-    format: ExportFormat = "csv"
+    format: ExportFormat = "csv",
   ): Promise<string> {
     if (format === "encrypted_json") {
       return this.getOrganizationEncryptedExport(organizationId);
@@ -115,13 +115,13 @@ export class VaultExportService implements VaultExportServiceAbstraction {
     promises.push(
       this.folderService.getAllDecryptedFromState().then((folders) => {
         decFolders = folders;
-      })
+      }),
     );
 
     promises.push(
       this.cipherService.getAllDecrypted().then((ciphers) => {
         decCiphers = ciphers.filter((f) => f.deletedDate == null);
-      })
+      }),
     );
 
     await Promise.all(promises);
@@ -191,13 +191,13 @@ export class VaultExportService implements VaultExportServiceAbstraction {
     promises.push(
       this.folderService.getAllFromState().then((f) => {
         folders = f;
-      })
+      }),
     );
 
     promises.push(
       this.cipherService.getAll().then((c) => {
         ciphers = c.filter((f) => f.deletedDate == null);
-      })
+      }),
     );
 
     await Promise.all(promises);
@@ -235,7 +235,7 @@ export class VaultExportService implements VaultExportServiceAbstraction {
 
   private async getOrganizationDecryptedExport(
     organizationId: string,
-    format: "json" | "csv"
+    format: "json" | "csv",
   ): Promise<string> {
     const decCollections: CollectionView[] = [];
     const decCiphers: CipherView[] = [];
@@ -251,7 +251,7 @@ export class VaultExportService implements VaultExportServiceAbstraction {
               exportPromises.push(
                 collection.decrypt().then((decCol) => {
                   decCollections.push(decCol);
-                })
+                }),
               );
             });
           }
@@ -266,13 +266,13 @@ export class VaultExportService implements VaultExportServiceAbstraction {
                     .then((key) => cipher.decrypt(key))
                     .then((decCipher) => {
                       decCiphers.push(decCipher);
-                    })
+                    }),
                 );
               });
           }
         }
         return Promise.all(exportPromises);
-      })
+      }),
     );
 
     await Promise.all(promises);
@@ -337,7 +337,7 @@ export class VaultExportService implements VaultExportServiceAbstraction {
             collections.push(collection);
           });
         }
-      })
+      }),
     );
 
     promises.push(
@@ -350,7 +350,7 @@ export class VaultExportService implements VaultExportServiceAbstraction {
               ciphers.push(cipher);
             });
         }
-      })
+      }),
     );
 
     await Promise.all(promises);

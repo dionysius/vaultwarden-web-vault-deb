@@ -12,7 +12,7 @@ import {
 export class WebauthnUtils {
   static mapCredentialCreationOptions(
     options: CredentialCreationOptions,
-    fallbackSupported: boolean
+    fallbackSupported: boolean,
   ): InsecureCreateCredentialParams {
     const keyOptions = options.publicKey;
 
@@ -92,7 +92,7 @@ export class WebauthnUtils {
 
   static mapCredentialRequestOptions(
     options: CredentialRequestOptions,
-    fallbackSupported: boolean
+    fallbackSupported: boolean,
   ): InsecureAssertCredentialParams {
     const keyOptions = options.publicKey;
 

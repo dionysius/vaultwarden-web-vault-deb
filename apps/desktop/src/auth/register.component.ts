@@ -40,7 +40,7 @@ export class RegisterComponent extends BaseRegisterComponent implements OnInit, 
     private ngZone: NgZone,
     logService: LogService,
     auditService: AuditService,
-    dialogService: DialogService
+    dialogService: DialogService,
   ) {
     super(
       formValidationErrorService,
@@ -56,7 +56,7 @@ export class RegisterComponent extends BaseRegisterComponent implements OnInit, 
       environmentService,
       logService,
       auditService,
-      dialogService
+      dialogService,
     );
   }
 

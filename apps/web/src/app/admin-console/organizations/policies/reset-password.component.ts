@@ -28,7 +28,10 @@ export class ResetPasswordPolicyComponent extends BasePolicyComponent {
   });
   showKeyConnectorInfo = false;
 
-  constructor(private formBuilder: FormBuilder, private organizationService: OrganizationService) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private organizationService: OrganizationService,
+  ) {
     super();
   }
 

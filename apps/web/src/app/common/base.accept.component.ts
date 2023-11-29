@@ -25,7 +25,7 @@ export abstract class BaseAcceptComponent implements OnInit {
     protected platformUtilService: PlatformUtilsService,
     protected i18nService: I18nService,
     protected route: ActivatedRoute,
-    protected stateService: StateService
+    protected stateService: StateService,
   ) {}
 
   abstract authedHandler(qParams: Params): Promise<void>;
@@ -37,7 +37,7 @@ export abstract class BaseAcceptComponent implements OnInit {
         first(),
         switchMap(async (qParams) => {
           let error = this.requiredParameters.some(
-            (e) => qParams?.[e] == null || qParams[e] === ""
+            (e) => qParams?.[e] == null || qParams[e] === "",
           );
           let errorMessage: string = null;
           if (!error) {
@@ -67,7 +67,7 @@ export abstract class BaseAcceptComponent implements OnInit {
 
           this.loading = false;
         }),
-        takeUntil(this.destroy$)
+        takeUntil(this.destroy$),
       )
       .subscribe();
   }

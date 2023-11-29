@@ -14,7 +14,7 @@ export class DesktopCredentialStorageListener {
   constructor(
     private serviceName: string,
     private biometricService: BiometricsServiceAbstraction,
-    private logService: ConsoleLogService
+    private logService: ConsoleLogService,
   ) {}
 
   init() {

@@ -34,7 +34,7 @@ export class InitService {
     private cryptoService: CryptoServiceAbstraction,
     private themingService: AbstractThemingService,
     private encryptService: EncryptService,
-    private configService: ConfigService
+    private configService: ConfigService,
   ) {}
 
   init() {

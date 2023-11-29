@@ -25,7 +25,7 @@ export class TwoFactorVerifyComponent {
   constructor(
     private apiService: ApiService,
     private logService: LogService,
-    private userVerificationService: UserVerificationService
+    private userVerificationService: UserVerificationService,
   ) {}
 
   async submit() {

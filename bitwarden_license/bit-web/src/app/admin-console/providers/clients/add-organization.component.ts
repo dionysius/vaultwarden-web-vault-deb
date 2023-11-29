@@ -31,7 +31,7 @@ export class AddOrganizationComponent implements OnInit {
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
     private validationService: ValidationService,
-    private dialogService: DialogService
+    private dialogService: DialogService,
   ) {}
 
   async ngOnInit() {
@@ -66,7 +66,7 @@ export class AddOrganizationComponent implements OnInit {
       try {
         await this.webProviderService.addOrganizationToProvider(
           this.data.providerId,
-          organization.id
+          organization.id,
         );
       } catch (e) {
         this.validationService.showError(e);
@@ -76,7 +76,7 @@ export class AddOrganizationComponent implements OnInit {
       this.platformUtilsService.showToast(
         "success",
         null,
-        this.i18nService.t("organizationJoinedProvider")
+        this.i18nService.t("organizationJoinedProvider"),
       );
 
       this.dialogRef.close(true);

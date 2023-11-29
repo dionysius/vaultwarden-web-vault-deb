@@ -55,7 +55,7 @@ export class UpdateTempPasswordComponent extends BaseChangePasswordComponent {
     private logService: LogService,
     private userVerificationService: UserVerificationService,
     private router: Router,
-    dialogService: DialogService
+    dialogService: DialogService,
   ) {
     super(
       i18nService,
@@ -65,7 +65,7 @@ export class UpdateTempPasswordComponent extends BaseChangePasswordComponent {
       platformUtilsService,
       policyService,
       stateService,
-      dialogService
+      dialogService,
     );
   }
 
@@ -117,11 +117,11 @@ export class UpdateTempPasswordComponent extends BaseChangePasswordComponent {
         this.masterPassword,
         this.email.trim().toLowerCase(),
         this.kdf,
-        this.kdfConfig
+        this.kdfConfig,
       );
       const newPasswordHash = await this.cryptoService.hashMasterKey(
         this.masterPassword,
-        newMasterKey
+        newMasterKey,
       );
 
       // Grab user key
@@ -130,7 +130,7 @@ export class UpdateTempPasswordComponent extends BaseChangePasswordComponent {
       // Encrypt user key with new master key
       const newProtectedUserKey = await this.cryptoService.encryptUserKeyWithMasterKey(
         newMasterKey,
-        userKey
+        userKey,
       );
 
       await this.performSubmitActions(newPasswordHash, newMasterKey, newProtectedUserKey);
@@ -142,7 +142,7 @@ export class UpdateTempPasswordComponent extends BaseChangePasswordComponent {
   async performSubmitActions(
     masterPasswordHash: string,
     masterKey: MasterKey,
-    userKey: [UserKey, EncString]
+    userKey: [UserKey, EncString],
   ) {
     try {
       switch (this.reason) {
@@ -158,7 +158,7 @@ export class UpdateTempPasswordComponent extends BaseChangePasswordComponent {
       this.platformUtilsService.showToast(
         "success",
         null,
-        this.i18nService.t("updatedMasterPassword")
+        this.i18nService.t("updatedMasterPassword"),
       );
 
       await this.stateService.setForceSetPasswordReason(ForceSetPasswordReason.None);
@@ -184,7 +184,7 @@ export class UpdateTempPasswordComponent extends BaseChangePasswordComponent {
   private async updatePassword(newMasterPasswordHash: string, userKey: [UserKey, EncString]) {
     const request = await this.userVerificationService.buildRequest(
       this.verification,
-      PasswordRequest
+      PasswordRequest,
     );
     request.masterPasswordHint = this.hint;
     request.newMasterPasswordHash = newMasterPasswordHash;

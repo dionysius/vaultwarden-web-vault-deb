@@ -63,7 +63,7 @@ export class SetPasswordComponent extends BaseChangePasswordComponent {
     stateService: StateService,
     private organizationApiService: OrganizationApiServiceAbstraction,
     private organizationUserService: OrganizationUserService,
-    dialogService: DialogService
+    dialogService: DialogService,
   ) {
     super(
       i18nService,
@@ -73,7 +73,7 @@ export class SetPasswordComponent extends BaseChangePasswordComponent {
       platformUtilsService,
       policyService,
       stateService,
-      dialogService
+      dialogService,
     );
   }
 
@@ -109,12 +109,12 @@ export class SetPasswordComponent extends BaseChangePasswordComponent {
         switchMap((orgAutoEnrollStatusResponse: OrganizationAutoEnrollStatusResponse) =>
           // Must get org id from response to get master password policy options
           this.policyApiService.getMasterPasswordPolicyOptsForOrgUser(
-            orgAutoEnrollStatusResponse.id
-          )
+            orgAutoEnrollStatusResponse.id,
+          ),
         ),
         tap((masterPasswordPolicyOptions: MasterPasswordPolicyOptions) => {
           this.enforcedPolicyOptions = masterPasswordPolicyOptions;
-        })
+        }),
       )
       .subscribe({
         error: () => {
@@ -132,7 +132,7 @@ export class SetPasswordComponent extends BaseChangePasswordComponent {
   async performSubmitActions(
     masterPasswordHash: string,
     masterKey: MasterKey,
-    userKey: [UserKey, EncString]
+    userKey: [UserKey, EncString],
   ) {
     let keysRequest: KeysRequest | null = null;
     let newKeyPair: [string, EncString] | null = null;
@@ -157,7 +157,7 @@ export class SetPasswordComponent extends BaseChangePasswordComponent {
       this.kdf,
       this.kdfConfig.iterations,
       this.kdfConfig.memory,
-      this.kdfConfig.parallelism
+      this.kdfConfig.parallelism,
     );
     try {
       if (this.resetPasswordAutoEnroll) {
@@ -185,7 +185,7 @@ export class SetPasswordComponent extends BaseChangePasswordComponent {
             return this.organizationUserService.putOrganizationUserResetPasswordEnrollment(
               this.orgId,
               userId,
-              resetRequest
+              resetRequest,
             );
           });
       } else {
@@ -214,7 +214,7 @@ export class SetPasswordComponent extends BaseChangePasswordComponent {
   protected async onSetPasswordSuccess(
     masterKey: MasterKey,
     userKey: [UserKey, EncString],
-    keyPair: [string, EncString] | null
+    keyPair: [string, EncString] | null,
   ) {
     // Clear force set password reason to allow navigation back to vault.
     await this.stateService.setForceSetPasswordReason(ForceSetPasswordReason.None);
@@ -244,7 +244,7 @@ export class SetPasswordComponent extends BaseChangePasswordComponent {
     const localMasterKeyHash = await this.cryptoService.hashMasterKey(
       this.masterPassword,
       masterKey,
-      HashPurpose.LocalAuthorization
+      HashPurpose.LocalAuthorization,
     );
     await this.cryptoService.setMasterKeyHash(localMasterKeyHash);
   }

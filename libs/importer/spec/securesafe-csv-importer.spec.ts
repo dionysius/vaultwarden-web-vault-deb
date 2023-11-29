@@ -65,7 +65,7 @@ describe("SecureSafe CSV Importer", () => {
         expect.objectContaining({
           username: data.expected.login.username,
           password: data.expected.login.password,
-        })
+        }),
       );
       expect(cipher.login.uris.length).toEqual(1);
       expect(cipher.login.uris[0].uri).toEqual(data.expected.login.uris[0].uri);

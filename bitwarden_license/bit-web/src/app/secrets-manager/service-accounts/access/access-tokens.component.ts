@@ -38,7 +38,7 @@ export class AccessTokenComponent implements OnInit, OnDestroy {
     private dialogService: DialogService,
     private platformUtilsService: PlatformUtilsService,
     private i18nService: I18nService,
-    private serviceAccountService: ServiceAccountService
+    private serviceAccountService: ServiceAccountService,
   ) {}
 
   ngOnInit() {
@@ -46,8 +46,8 @@ export class AccessTokenComponent implements OnInit, OnDestroy {
       startWith(null),
       combineLatestWith(this.route.params),
       switchMap(async ([_, params]) =>
-        this.accessService.getAccessTokens(params.organizationId, params.serviceAccountId)
-      )
+        this.accessService.getAccessTokens(params.organizationId, params.serviceAccountId),
+      ),
     );
 
     this.serviceAccountService.serviceAccount$
@@ -57,10 +57,10 @@ export class AccessTokenComponent implements OnInit, OnDestroy {
         switchMap(([_, params]) =>
           this.serviceAccountService.getByServiceAccountId(
             params.serviceAccountId,
-            params.organizationId
-          )
+            params.organizationId,
+          ),
         ),
-        takeUntil(this.destroy$)
+        takeUntil(this.destroy$),
       )
       .subscribe((serviceAccountView) => {
         this.serviceAccountView = serviceAccountView;
@@ -77,7 +77,7 @@ export class AccessTokenComponent implements OnInit, OnDestroy {
       this.platformUtilsService.showToast(
         "error",
         null,
-        this.i18nService.t("noAccessTokenSelected")
+        this.i18nService.t("noAccessTokenSelected"),
       );
       return;
     }
@@ -88,7 +88,7 @@ export class AccessTokenComponent implements OnInit, OnDestroy {
 
     await this.accessService.revokeAccessTokens(
       this.serviceAccountView.id,
-      tokens.map((t) => t.id)
+      tokens.map((t) => t.id),
     );
 
     this.platformUtilsService.showToast("success", null, this.i18nService.t("accessTokenRevoked"));
@@ -97,7 +97,7 @@ export class AccessTokenComponent implements OnInit, OnDestroy {
   protected openNewAccessTokenDialog() {
     AccessTokenCreateDialogComponent.openNewAccessTokenDialog(
       this.dialogService,
-      this.serviceAccountView
+      this.serviceAccountView,
     );
   }
 

@@ -210,7 +210,7 @@ describe("TwoFactorComponent", () => {
         component.captchaToken = captchaToken;
 
         mockStateService.getAccountDecryptionOptions.mockResolvedValue(
-          mockAcctDecryptionOpts.withMasterPassword
+          mockAcctDecryptionOpts.withMasterPassword,
         );
       });
 
@@ -224,7 +224,7 @@ describe("TwoFactorComponent", () => {
         // Assert
         expect(mockAuthService.logInTwoFactor).toHaveBeenCalledWith(
           new TokenTwoFactorRequest(component.selectedProviderType, token, remember),
-          captchaToken
+          captchaToken,
         );
       });
 
@@ -286,7 +286,7 @@ describe("TwoFactorComponent", () => {
           beforeEach(() => {
             // Only need to test the case where the user has no master password to test the primary change mp flow here
             mockStateService.getAccountDecryptionOptions.mockResolvedValue(
-              mockAcctDecryptionOpts.noMasterPassword
+              mockAcctDecryptionOpts.noMasterPassword,
             );
           });
 
@@ -295,7 +295,7 @@ describe("TwoFactorComponent", () => {
 
         it("does not navigate to the change password route when the user has key connector even if user has no master password", async () => {
           mockStateService.getAccountDecryptionOptions.mockResolvedValue(
-            mockAcctDecryptionOpts.noMasterPasswordWithKeyConnector
+            mockAcctDecryptionOpts.noMasterPasswordWithKeyConnector,
           );
 
           await component.doSubmit();
@@ -318,7 +318,7 @@ describe("TwoFactorComponent", () => {
           beforeEach(() => {
             // use standard user with MP because this test is not concerned with password reset.
             mockStateService.getAccountDecryptionOptions.mockResolvedValue(
-              mockAcctDecryptionOpts.withMasterPassword
+              mockAcctDecryptionOpts.withMasterPassword,
             );
 
             const authResult = new AuthResult();
@@ -382,7 +382,7 @@ describe("TwoFactorComponent", () => {
         describe("Given Trusted Device Encryption is enabled and user needs to set a master password", () => {
           beforeEach(() => {
             mockStateService.getAccountDecryptionOptions.mockResolvedValue(
-              mockAcctDecryptionOpts.noMasterPasswordWithTrustedDeviceWithManageResetPassword
+              mockAcctDecryptionOpts.noMasterPasswordWithTrustedDeviceWithManageResetPassword,
             );
 
             const authResult = new AuthResult();
@@ -396,13 +396,13 @@ describe("TwoFactorComponent", () => {
             // Assert
 
             expect(mockStateService.setForceSetPasswordReason).toHaveBeenCalledWith(
-              ForceSetPasswordReason.TdeUserWithoutPasswordHasPasswordResetPermission
+              ForceSetPasswordReason.TdeUserWithoutPasswordHasPasswordResetPermission,
             );
 
             expect(mockRouter.navigate).toHaveBeenCalledTimes(1);
             expect(mockRouter.navigate).toHaveBeenCalledWith(
               [_component.trustedDeviceEncRoute],
-              undefined
+              undefined,
             );
           });
         });
@@ -417,7 +417,7 @@ describe("TwoFactorComponent", () => {
             beforeEach(() => {
               // use standard user with MP because this test is not concerned with password reset.
               mockStateService.getAccountDecryptionOptions.mockResolvedValue(
-                mockAcctDecryptionOpts.withMasterPasswordAndTrustedDevice
+                mockAcctDecryptionOpts.withMasterPasswordAndTrustedDevice,
               );
 
               const authResult = new AuthResult();
@@ -433,7 +433,7 @@ describe("TwoFactorComponent", () => {
           let authResult;
           beforeEach(() => {
             mockStateService.getAccountDecryptionOptions.mockResolvedValue(
-              mockAcctDecryptionOpts.withMasterPasswordAndTrustedDevice
+              mockAcctDecryptionOpts.withMasterPasswordAndTrustedDevice,
             );
 
             authResult = new AuthResult();
@@ -447,7 +447,7 @@ describe("TwoFactorComponent", () => {
             expect(mockRouter.navigate).toHaveBeenCalledTimes(1);
             expect(mockRouter.navigate).toHaveBeenCalledWith(
               [_component.trustedDeviceEncRoute],
-              undefined
+              undefined,
             );
           });
 

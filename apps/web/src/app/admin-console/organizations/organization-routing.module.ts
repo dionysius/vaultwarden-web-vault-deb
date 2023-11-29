@@ -45,7 +45,7 @@ const routes: Routes = [
         path: "settings",
         loadChildren: () =>
           import("./settings/organization-settings.module").then(
-            (m) => m.OrganizationSettingsModule
+            (m) => m.OrganizationSettingsModule,
           ),
       },
       {
@@ -65,14 +65,14 @@ const routes: Routes = [
         path: "reporting",
         loadChildren: () =>
           import("../organizations/reporting/organization-reporting.module").then(
-            (m) => m.OrganizationReportingModule
+            (m) => m.OrganizationReportingModule,
           ),
       },
       {
         path: "billing",
         loadChildren: () =>
           import("../../billing/organizations/organization-billing.module").then(
-            (m) => m.OrganizationBillingModule
+            (m) => m.OrganizationBillingModule,
           ),
       },
     ],

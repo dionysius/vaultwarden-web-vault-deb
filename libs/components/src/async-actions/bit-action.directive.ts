@@ -27,7 +27,7 @@ export class BitActionDirective implements OnDestroy {
   constructor(
     private buttonComponent: ButtonLikeAbstraction,
     @Optional() private validationService?: ValidationService,
-    @Optional() private logService?: LogService
+    @Optional() private logService?: LogService,
   ) {}
 
   get loading() {
@@ -55,7 +55,7 @@ export class BitActionDirective implements OnDestroy {
           },
         }),
         finalize(() => (this.loading = false)),
-        takeUntil(this.destroy$)
+        takeUntil(this.destroy$),
       )
       .subscribe();
   }

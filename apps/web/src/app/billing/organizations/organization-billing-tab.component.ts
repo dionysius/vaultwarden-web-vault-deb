@@ -14,7 +14,7 @@ export class OrganizationBillingTabComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private organizationService: OrganizationService,
-    private platformUtilsService: PlatformUtilsService
+    private platformUtilsService: PlatformUtilsService,
   ) {}
 
   ngOnInit() {
@@ -24,8 +24,8 @@ export class OrganizationBillingTabComponent implements OnInit {
         (org) =>
           !this.platformUtilsService.isSelfHost() &&
           org.canViewBillingHistory &&
-          org.canEditPaymentMethods
-      )
+          org.canEditPaymentMethods,
+      ),
     );
   }
 }

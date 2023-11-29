@@ -49,7 +49,7 @@ export class EmergencyAddEditCipherComponent extends BaseAddEditComponent {
     logService: LogService,
     sendApiService: SendApiService,
     dialogService: DialogService,
-    datePipe: DatePipe
+    datePipe: DatePipe,
   ) {
     super(
       cipherService,
@@ -69,7 +69,7 @@ export class EmergencyAddEditCipherComponent extends BaseAddEditComponent {
       passwordRepromptService,
       sendApiService,
       dialogService,
-      datePipe
+      datePipe,
     );
   }
 

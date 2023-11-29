@@ -13,7 +13,10 @@ export class ManageComponent implements OnInit {
   provider: Provider;
   accessEvents = false;
 
-  constructor(private route: ActivatedRoute, private providerService: ProviderService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private providerService: ProviderService,
+  ) {}
 
   ngOnInit() {
     // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe

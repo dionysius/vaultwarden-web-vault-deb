@@ -36,7 +36,7 @@ export class EmergencyAccessService {
     private cryptoService: CryptoService,
     private encryptService: EncryptService,
     private cipherService: CipherService,
-    private logService: LogService
+    private logService: LogService,
   ) {}
 
   /**
@@ -148,7 +148,7 @@ export class EmergencyAccessService {
     try {
       this.logService.debug(
         "User's fingerprint: " +
-          (await this.cryptoService.getFingerprint(granteeId, publicKey)).join("-")
+          (await this.cryptoService.getFingerprint(granteeId, publicKey)).join("-"),
       );
     } catch {
       // Ignore errors since it's just a debug message
@@ -208,7 +208,7 @@ export class EmergencyAccessService {
 
     const ciphers = await this.encryptService.decryptItems(
       response.ciphers.map((c) => new Cipher(c)),
-      grantorUserKey
+      grantorUserKey,
     );
     return ciphers.sort(this.cipherService.getLocaleSortingFunction());
   }
@@ -237,8 +237,8 @@ export class EmergencyAccessService {
       new KdfConfig(
         takeoverResponse.kdfIterations,
         takeoverResponse.kdfMemory,
-        takeoverResponse.kdfParallelism
-      )
+        takeoverResponse.kdfParallelism,
+      ),
     );
     const masterKeyHash = await this.cryptoService.hashMasterKey(masterPassword, masterKey);
 
@@ -266,7 +266,7 @@ export class EmergencyAccessService {
       EmergencyAccessStatusType.RecoveryApproved,
     ]);
     const filteredAccesses = existingEmergencyAccess.data.filter((d) =>
-      allowedStatuses.has(d.status)
+      allowedStatuses.has(d.status),
     );
 
     for (const details of filteredAccesses) {

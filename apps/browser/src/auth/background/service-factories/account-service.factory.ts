@@ -28,7 +28,7 @@ export type AccountServiceInitOptions = AccountServiceFactoryOptions &
 
 export function accountServiceFactory(
   cache: { accountService?: AccountService } & CachedServices,
-  opts: AccountServiceInitOptions
+  opts: AccountServiceInitOptions,
 ): Promise<AccountService> {
   return factory(
     cache,
@@ -38,7 +38,7 @@ export function accountServiceFactory(
       new AccountServiceImplementation(
         await messagingServiceFactory(cache, opts),
         await logServiceFactory(cache, opts),
-        await globalStateProviderFactory(cache, opts)
-      )
+        await globalStateProviderFactory(cache, opts),
+      ),
   );
 }

@@ -37,7 +37,7 @@ export class PoliciesComponent implements OnInit {
     private organizationService: OrganizationService,
     private policyApiService: PolicyApiServiceAbstraction,
     private policyListService: PolicyListService,
-    private router: Router
+    private router: Router,
   ) {}
 
   async ngOnInit() {
@@ -93,7 +93,7 @@ export class PoliciesComponent implements OnInit {
           modal.close();
           this.load();
         });
-      }
+      },
     );
   }
 }

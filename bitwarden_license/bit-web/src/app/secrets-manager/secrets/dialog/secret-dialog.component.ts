@@ -67,7 +67,7 @@ export class SecretDialogComponent implements OnInit {
     private platformUtilsService: PlatformUtilsService,
     private projectService: ProjectService,
     private dialogService: DialogService,
-    private organizationService: OrganizationService
+    private organizationService: OrganizationService,
   ) {}
 
   async ngOnInit() {
@@ -208,12 +208,12 @@ export class SecretDialogComponent implements OnInit {
         data: {
           secrets: secretListView,
         },
-      }
+      },
     );
 
     // If the secret is deleted, chain close this dialog after the delete dialog
     lastValueFrom(dialogRef.closed).then(
-      (closeData) => closeData !== undefined && this.dialogRef.close()
+      (closeData) => closeData !== undefined && this.dialogRef.close(),
     );
   }
 

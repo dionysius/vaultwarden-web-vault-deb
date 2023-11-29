@@ -22,7 +22,7 @@ export class DeauthorizeSessionsComponent {
     private platformUtilsService: PlatformUtilsService,
     private userVerificationService: UserVerificationService,
     private messagingService: MessagingService,
-    private logService: LogService
+    private logService: LogService,
   ) {}
 
   async submit() {
@@ -34,7 +34,7 @@ export class DeauthorizeSessionsComponent {
       this.platformUtilsService.showToast(
         "success",
         this.i18nService.t("sessionsDeauthorized"),
-        this.i18nService.t("logBackIn")
+        this.i18nService.t("logBackIn"),
       );
       this.messagingService.send("logout");
     } catch (e) {

@@ -94,13 +94,13 @@ export class ProfileOrganizationResponse extends BaseResponse {
     this.keyConnectorEnabled = this.getResponseProperty("KeyConnectorEnabled") ?? false;
     this.keyConnectorUrl = this.getResponseProperty("KeyConnectorUrl");
     const familySponsorshipLastSyncDateString = this.getResponseProperty(
-      "FamilySponsorshipLastSyncDate"
+      "FamilySponsorshipLastSyncDate",
     );
     if (familySponsorshipLastSyncDateString) {
       this.familySponsorshipLastSyncDate = new Date(familySponsorshipLastSyncDateString);
     }
     const familySponsorshipValidUntilString = this.getResponseProperty(
-      "FamilySponsorshipValidUntil"
+      "FamilySponsorshipValidUntil",
     );
     if (familySponsorshipValidUntilString) {
       this.familySponsorshipValidUntil = new Date(familySponsorshipValidUntilString);
@@ -108,10 +108,10 @@ export class ProfileOrganizationResponse extends BaseResponse {
     this.familySponsorshipToDelete = this.getResponseProperty("FamilySponsorshipToDelete");
     this.accessSecretsManager = this.getResponseProperty("AccessSecretsManager");
     this.limitCollectionCreationDeletion = this.getResponseProperty(
-      "LimitCollectionCreationDeletion"
+      "LimitCollectionCreationDeletion",
     );
     this.allowAdminAccessToAllCollectionItems = this.getResponseProperty(
-      "AllowAdminAccessToAllCollectionItems"
+      "AllowAdminAccessToAllCollectionItems",
     );
   }
 }

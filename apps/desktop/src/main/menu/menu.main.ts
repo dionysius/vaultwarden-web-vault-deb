@@ -18,7 +18,7 @@ export class MenuMain {
     private messagingService: MessagingService,
     private stateService: StateService,
     private windowMain: WindowMain,
-    private updaterMain: UpdaterMain
+    private updaterMain: UpdaterMain,
   ) {}
 
   async init() {
@@ -39,8 +39,8 @@ export class MenuMain {
         this.windowMain,
         await this.getWebVaultUrl(),
         app.getVersion(),
-        updateRequest
-      ).menu
+        updateRequest,
+      ).menu,
     );
   }
 

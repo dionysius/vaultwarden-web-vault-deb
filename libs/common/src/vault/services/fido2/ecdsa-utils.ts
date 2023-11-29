@@ -78,7 +78,7 @@ export function joseToDer(signature: Uint8Array, alg: Alg) {
         paramBytes * 2 +
         '" bytes, saw "' +
         signatureBytes +
-        '"'
+        '"',
     );
   }
 

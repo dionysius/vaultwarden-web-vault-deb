@@ -161,7 +161,7 @@ export class OnePassword1PifImporter extends BaseImporter implements Importer {
     cipher: CipherView,
     designationKey: string,
     valueKey: string,
-    nameKey: string
+    nameKey: string,
   ) {
     fields.forEach((field: any) => {
       if (field[valueKey] == null || field[valueKey].toString().trim() === "") {

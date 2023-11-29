@@ -11,6 +11,6 @@ export class OrganizationConnectionRequest {
     public organizationId: string,
     public type: OrganizationConnectionType,
     public enabled: boolean,
-    public config: OrganizationConnectionRequestConfigs
+    public config: OrganizationConnectionRequestConfigs,
   ) {}
 }

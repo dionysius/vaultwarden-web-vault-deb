@@ -103,7 +103,7 @@ describe("AuthPopoutWindow", () => {
 
       expect(openPopoutSpy).toHaveBeenCalledWith(
         "popup/index.html#/2fa;webAuthnResponse=data;remember=remember",
-        { singleActionKey: AuthPopoutType.twoFactorAuth }
+        { singleActionKey: AuthPopoutType.twoFactorAuth },
       );
     });
   });

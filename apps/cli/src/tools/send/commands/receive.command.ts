@@ -31,7 +31,7 @@ export class SendReceiveCommand extends DownloadCommand {
     private cryptoFunctionService: CryptoFunctionService,
     private platformUtilsService: PlatformUtilsService,
     private environmentService: EnvironmentService,
-    private sendApiService: SendApiService
+    private sendApiService: SendApiService,
   ) {
     super(cryptoService);
   }
@@ -89,13 +89,13 @@ export class SendReceiveCommand extends DownloadCommand {
         const downloadData = await this.sendApiService.getSendFileDownloadData(
           response,
           this.sendAccessRequest,
-          apiUrl
+          apiUrl,
         );
         return await this.saveAttachmentToFile(
           downloadData.url,
           this.decKey,
           response?.file?.fileName,
-          options.output
+          options.output,
         );
       }
       default:
@@ -126,7 +126,7 @@ export class SendReceiveCommand extends DownloadCommand {
       password,
       keyArray,
       "sha256",
-      100000
+      100000,
     );
     return Utils.fromBufferToB64(passwordHash);
   }
@@ -134,13 +134,13 @@ export class SendReceiveCommand extends DownloadCommand {
   private async sendRequest(
     url: string,
     id: string,
-    key: Uint8Array
+    key: Uint8Array,
   ): Promise<Response | SendAccessView> {
     try {
       const sendResponse = await this.sendApiService.postSendAccess(
         id,
         this.sendAccessRequest,
-        url
+        url,
       );
 
       const sendAccess = new SendAccess(sendResponse);

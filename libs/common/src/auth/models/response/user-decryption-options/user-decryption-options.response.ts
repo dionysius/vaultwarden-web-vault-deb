@@ -33,17 +33,17 @@ export class UserDecryptionOptionsResponse extends BaseResponse {
 
     if (response.TrustedDeviceOption) {
       this.trustedDeviceOption = new TrustedDeviceUserDecryptionOptionResponse(
-        this.getResponseProperty("TrustedDeviceOption")
+        this.getResponseProperty("TrustedDeviceOption"),
       );
     }
     if (response.KeyConnectorOption) {
       this.keyConnectorOption = new KeyConnectorUserDecryptionOptionResponse(
-        this.getResponseProperty("KeyConnectorOption")
+        this.getResponseProperty("KeyConnectorOption"),
       );
     }
     if (response.WebAuthnPrfOption) {
       this.webAuthnPrfOption = new WebAuthnPrfDecryptionOptionResponse(
-        this.getResponseProperty("WebAuthnPrfOption")
+        this.getResponseProperty("WebAuthnPrfOption"),
       );
     }
   }

@@ -69,7 +69,7 @@ export class CompletionCommand {
       .concat(
         `'(-h --help)'{-h,--help}'[output usage information]'`,
         hasCommands ? '"1: :->cmnds"' : null,
-        '"*::arg:->args"'
+        '"*::arg:->args"',
       )
       .filter(Boolean);
 
@@ -100,7 +100,7 @@ export class CompletionCommand {
     ${commands
       .map(({ _name }) => [`${_name})`, `_${name}_${_name}`, ";;"].join("\n      "))
       .join("\n    ")}
-  esac`
+  esac`,
       );
     }
 
@@ -110,7 +110,7 @@ export class CompletionCommand {
 
     if (hasCommands) {
       commandBlocParts.push(
-        commands.map((c) => this.renderCommandBlock(`${name}_${c._name}`, c)).join("\n\n")
+        commands.map((c) => this.renderCommandBlock(`${name}_${c._name}`, c)).join("\n\n"),
       );
     }
 

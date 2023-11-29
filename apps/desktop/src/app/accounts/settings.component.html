@@ -4,7 +4,7 @@
       <div class="modal-body form" [formGroup]="form">
         <div class="box">
           <h1 class="box-header" id="settingsTitle">
-            {{ "settingsTitle" | i18n : currentUserEmail }}
+            {{ "settingsTitle" | i18n: currentUserEmail }}
           </h1>
           <div class="box-content box-content-padded">
             <h2>
@@ -34,20 +34,17 @@
                 <span *ngIf="policy.timeout && policy.action">
                   {{
                     "vaultTimeoutPolicyWithActionInEffect"
-                      | i18n
-                        : policy.timeout.hours
-                        : policy.timeout.minutes
-                        : (policy.action | i18n)
+                      | i18n: policy.timeout.hours : policy.timeout.minutes : (policy.action | i18n)
                   }}
                 </span>
                 <span *ngIf="policy.timeout && !policy.action">
                   {{
                     "vaultTimeoutPolicyInEffect"
-                      | i18n : policy.timeout.hours : policy.timeout.minutes
+                      | i18n: policy.timeout.hours : policy.timeout.minutes
                   }}
                 </span>
                 <span *ngIf="!policy.timeout && policy.action">
-                  {{ "vaultTimeoutActionPolicyInEffect" | i18n : (policy.action | i18n) }}
+                  {{ "vaultTimeoutActionPolicyInEffect" | i18n: (policy.action | i18n) }}
                 </span>
               </app-callout>
               <app-vault-timeout-input

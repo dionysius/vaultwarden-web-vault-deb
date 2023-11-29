@@ -33,7 +33,7 @@ export class RoutedVaultFilterBridge implements VaultFilter {
   constructor(
     private routedFilter: RoutedVaultFilterModel,
     private legacyFilter: VaultFilter,
-    private bridgeService: RoutedVaultFilterBridgeService
+    private bridgeService: RoutedVaultFilterBridgeService,
   ) {}
   get collectionBreadcrumbs(): TreeNode<CollectionFilter>[] {
     return this.legacyFilter.collectionBreadcrumbs;

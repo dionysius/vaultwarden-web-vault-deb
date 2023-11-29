@@ -36,7 +36,7 @@ export class LowdbStorageService implements AbstractStorageService {
     defaults?: any,
     private dir?: string,
     private allowCache = false,
-    private requireLock = false
+    private requireLock = false,
   ) {
     this.defaults = defaults;
     this.updates$ = this.updatesSubject.asObservable();
@@ -59,7 +59,7 @@ export class LowdbStorageService implements AbstractStorageService {
       this.dataFilePath = path.join(this.dir, "data.json");
       if (!fs.existsSync(this.dataFilePath)) {
         this.logService.warning(
-          `Could not find data file, "${this.dataFilePath}"; creating it instead.`
+          `Could not find data file, "${this.dataFilePath}"; creating it instead.`,
         );
         fs.writeFileSync(this.dataFilePath, "", { mode: 0o600 });
         fs.chmodSync(this.dataFilePath, 0o600);
@@ -78,14 +78,14 @@ export class LowdbStorageService implements AbstractStorageService {
     } catch (e) {
       if (e instanceof SyntaxError) {
         this.logService.warning(
-          `Error creating lowdb storage adapter, "${e.message}"; emptying data file.`
+          `Error creating lowdb storage adapter, "${e.message}"; emptying data file.`,
         );
         if (fs.existsSync(this.dataFilePath)) {
           const backupPath = this.dataFilePath + ".bak";
           this.logService.warning(`Writing backup of data file to ${backupPath}`);
           await fs.copyFile(this.dataFilePath, backupPath, () => {
             this.logService.warning(
-              `Error while creating data file backup, "${e.message}". No backup may have been created.`
+              `Error while creating data file backup, "${e.message}". No backup may have been created.`,
             );
           });
         }

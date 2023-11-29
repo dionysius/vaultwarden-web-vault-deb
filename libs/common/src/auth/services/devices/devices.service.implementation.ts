@@ -26,7 +26,7 @@ export class DevicesServiceImplementation implements DevicesServiceAbstraction {
         return deviceResponses.data.map((deviceResponse: DeviceResponse) => {
           return new DeviceView(deviceResponse);
         });
-      })
+      }),
     );
   }
 
@@ -35,7 +35,7 @@ export class DevicesServiceImplementation implements DevicesServiceAbstraction {
    */
   getDeviceByIdentifier$(deviceIdentifier: string): Observable<DeviceView> {
     return defer(() => this.devicesApiService.getDeviceByIdentifier(deviceIdentifier)).pipe(
-      map((deviceResponse: DeviceResponse) => new DeviceView(deviceResponse))
+      map((deviceResponse: DeviceResponse) => new DeviceView(deviceResponse)),
     );
   }
 
@@ -54,15 +54,15 @@ export class DevicesServiceImplementation implements DevicesServiceAbstraction {
     deviceIdentifier: string,
     devicePublicKeyEncryptedUserKey: string,
     userKeyEncryptedDevicePublicKey: string,
-    deviceKeyEncryptedDevicePrivateKey: string
+    deviceKeyEncryptedDevicePrivateKey: string,
   ): Observable<DeviceView> {
     return defer(() =>
       this.devicesApiService.updateTrustedDeviceKeys(
         deviceIdentifier,
         devicePublicKeyEncryptedUserKey,
         userKeyEncryptedDevicePublicKey,
-        deviceKeyEncryptedDevicePrivateKey
-      )
+        deviceKeyEncryptedDevicePrivateKey,
+      ),
     ).pipe(map((deviceResponse: DeviceResponse) => new DeviceView(deviceResponse)));
   }
 }

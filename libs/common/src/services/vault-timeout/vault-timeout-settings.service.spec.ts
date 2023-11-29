@@ -31,7 +31,7 @@ describe("VaultTimeoutSettingsService", () => {
       tokenService,
       policyService,
       stateService,
-      userVerificationService
+      userVerificationService,
     );
   });
 
@@ -100,14 +100,14 @@ describe("VaultTimeoutSettingsService", () => {
           userVerificationService.hasMasterPassword.mockResolvedValue(true);
           policyService.policyAppliesToUser.mockResolvedValue(policy === null ? false : true);
           policyService.getAll.mockResolvedValue(
-            policy === null ? [] : ([{ data: { action: policy } }] as unknown as Policy[])
+            policy === null ? [] : ([{ data: { action: policy } }] as unknown as Policy[]),
           );
           stateService.getVaultTimeoutAction.mockResolvedValue(userPreference);
 
           const result = await firstValueFrom(service.vaultTimeoutAction$());
 
           expect(result).toBe(expected);
-        }
+        },
       );
     });
 
@@ -128,14 +128,14 @@ describe("VaultTimeoutSettingsService", () => {
           userVerificationService.hasMasterPassword.mockResolvedValue(false);
           policyService.policyAppliesToUser.mockResolvedValue(policy === null ? false : true);
           policyService.getAll.mockResolvedValue(
-            policy === null ? [] : ([{ data: { action: policy } }] as unknown as Policy[])
+            policy === null ? [] : ([{ data: { action: policy } }] as unknown as Policy[]),
           );
           stateService.getVaultTimeoutAction.mockResolvedValue(userPreference);
 
           const result = await firstValueFrom(service.vaultTimeoutAction$());
 
           expect(result).toBe(expected);
-        }
+        },
       );
     });
   });

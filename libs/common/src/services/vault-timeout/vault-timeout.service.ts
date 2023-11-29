@@ -30,7 +30,7 @@ export class VaultTimeoutService implements VaultTimeoutServiceAbstraction {
     private authService: AuthService,
     private vaultTimeoutSettingsService: VaultTimeoutSettingsService,
     private lockedCallback: (userId?: string) => Promise<void> = null,
-    private loggedOutCallback: (expired: boolean, userId?: string) => Promise<void> = null
+    private loggedOutCallback: (expired: boolean, userId?: string) => Promise<void> = null,
   ) {}
 
   async init(checkOnInterval: boolean) {
@@ -71,7 +71,7 @@ export class VaultTimeoutService implements VaultTimeoutServiceAbstraction {
     }
 
     const availableActions = await firstValueFrom(
-      this.vaultTimeoutSettingsService.availableVaultTimeoutActions$(userId)
+      this.vaultTimeoutSettingsService.availableVaultTimeoutActions$(userId),
     );
     const supportsLock = availableActions.includes(VaultTimeoutAction.Lock);
     if (!supportsLock) {
@@ -134,7 +134,7 @@ export class VaultTimeoutService implements VaultTimeoutServiceAbstraction {
 
   private async executeTimeoutAction(userId: string): Promise<void> {
     const timeoutAction = await firstValueFrom(
-      this.vaultTimeoutSettingsService.vaultTimeoutAction$(userId)
+      this.vaultTimeoutSettingsService.vaultTimeoutAction$(userId),
     );
     timeoutAction === VaultTimeoutAction.LogOut
       ? await this.logOut(userId)

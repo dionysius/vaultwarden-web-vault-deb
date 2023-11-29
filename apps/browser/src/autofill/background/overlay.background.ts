@@ -88,7 +88,7 @@ class OverlayBackground implements OverlayBackgroundInterface {
     private environmentService: EnvironmentService,
     private settingsService: SettingsService,
     private stateService: StateService,
-    private i18nService: I18nService
+    private i18nService: I18nService,
   ) {
     this.iconsServerUrl = this.environmentService.getIconsUrl();
   }
@@ -130,7 +130,7 @@ class OverlayBackground implements OverlayBackgroundInterface {
 
     this.overlayLoginCiphers = new Map();
     const ciphersViews = (await this.cipherService.getAllDecryptedForUrl(currentTab.url)).sort(
-      (a, b) => this.cipherService.sortCiphersByLastUsedThenName(a, b)
+      (a, b) => this.cipherService.sortCiphersByLastUsedThenName(a, b),
     );
     for (let cipherIndex = 0; cipherIndex < ciphersViews.length; cipherIndex++) {
       this.overlayLoginCiphers.set(`overlay-cipher-${cipherIndex}`, ciphersViews[cipherIndex]);
@@ -189,7 +189,7 @@ class OverlayBackground implements OverlayBackgroundInterface {
    */
   private storePageDetails(
     message: OverlayBackgroundExtensionMessage,
-    sender: chrome.runtime.MessageSender
+    sender: chrome.runtime.MessageSender,
   ) {
     const pageDetails = {
       frameId: sender.frameId,
@@ -214,7 +214,7 @@ class OverlayBackground implements OverlayBackgroundInterface {
    */
   private async fillSelectedOverlayListItem(
     { overlayCipherId }: OverlayPortMessage,
-    { sender }: chrome.runtime.Port
+    { sender }: chrome.runtime.Port,
   ) {
     if (!overlayCipherId) {
       return;
@@ -528,7 +528,7 @@ class OverlayBackground implements OverlayBackgroundInterface {
     await BrowserApi.tabSendMessageData(
       sender.tab,
       "addToLockedVaultPendingNotifications",
-      retryMessage
+      retryMessage,
     );
     await this.openUnlockPopout(sender.tab, true);
   }
@@ -541,7 +541,7 @@ class OverlayBackground implements OverlayBackgroundInterface {
    */
   private async viewSelectedCipher(
     { overlayCipherId }: OverlayPortMessage,
-    { sender }: chrome.runtime.Port
+    { sender }: chrome.runtime.Port,
   ) {
     const cipher = this.overlayLoginCiphers.get(overlayCipherId);
     if (!cipher) {
@@ -609,7 +609,7 @@ class OverlayBackground implements OverlayBackgroundInterface {
    */
   private redirectOverlayFocusOut(
     { direction }: OverlayPortMessage,
-    { sender }: chrome.runtime.Port
+    { sender }: chrome.runtime.Port,
   ) {
     if (!direction) {
       return;
@@ -637,7 +637,7 @@ class OverlayBackground implements OverlayBackgroundInterface {
    */
   private async addNewVaultItem(
     { login }: OverlayAddNewItemMessage,
-    sender: chrome.runtime.MessageSender
+    sender: chrome.runtime.MessageSender,
   ) {
     if (!login) {
       return;
@@ -683,7 +683,7 @@ class OverlayBackground implements OverlayBackgroundInterface {
   private handleExtensionMessage = (
     message: OverlayBackgroundExtensionMessage,
     sender: chrome.runtime.MessageSender,
-    sendResponse: (response?: any) => void
+    sendResponse: (response?: any) => void,
   ) => {
     const handler: CallableFunction | undefined = this.extensionMessageHandlers[message?.command];
     if (!handler) {
@@ -742,7 +742,7 @@ class OverlayBackground implements OverlayBackgroundInterface {
    */
   private handleOverlayElementPortMessage = (
     message: OverlayBackgroundExtensionMessage,
-    port: chrome.runtime.Port
+    port: chrome.runtime.Port,
   ) => {
     const command = message?.command;
     let handler: CallableFunction | undefined;

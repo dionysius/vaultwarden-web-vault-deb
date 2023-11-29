@@ -23,7 +23,7 @@ export class BulkEnableSecretsManagerDialogComponent implements OnInit {
     @Inject(DIALOG_DATA) private data: BulkEnableSecretsManagerDialogData,
     private organizationUserService: OrganizationUserService,
     private platformUtilsService: PlatformUtilsService,
-    private i18nService: I18nService
+    private i18nService: I18nService,
   ) {}
 
   ngOnInit(): void {
@@ -33,12 +33,12 @@ export class BulkEnableSecretsManagerDialogComponent implements OnInit {
   submit = async () => {
     await this.organizationUserService.putOrganizationUserBulkEnableSecretsManager(
       this.data.orgId,
-      this.dataSource.data.map((u) => u.id)
+      this.dataSource.data.map((u) => u.id),
     );
     this.platformUtilsService.showToast(
       "success",
       null,
-      this.i18nService.t("activatedAccessToSecretsManager")
+      this.i18nService.t("activatedAccessToSecretsManager"),
     );
     this.dialogRef.close();
   };
@@ -46,7 +46,7 @@ export class BulkEnableSecretsManagerDialogComponent implements OnInit {
   static open(dialogService: DialogService, data: BulkEnableSecretsManagerDialogData) {
     return dialogService.open<unknown, BulkEnableSecretsManagerDialogData>(
       BulkEnableSecretsManagerDialogComponent,
-      { data }
+      { data },
     );
   }
 }

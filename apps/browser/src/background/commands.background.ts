@@ -19,7 +19,7 @@ export default class CommandsBackground {
     private passwordGenerationService: PasswordGenerationServiceAbstraction,
     private platformUtilsService: PlatformUtilsService,
     private vaultTimeoutService: VaultTimeoutService,
-    private authService: AuthService
+    private authService: AuthService,
   ) {
     this.isSafari = this.platformUtilsService.isSafari();
     this.isVivaldi = this.platformUtilsService.isVivaldi();
@@ -85,7 +85,7 @@ export default class CommandsBackground {
       await BrowserApi.tabSendMessageData(
         tab,
         "addToLockedVaultPendingNotifications",
-        retryMessage
+        retryMessage,
       );
 
       await openUnlockPopout(tab);

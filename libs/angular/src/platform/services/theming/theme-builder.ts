@@ -7,7 +7,10 @@ export class ThemeBuilder implements Theme {
     return this.configuredTheme != ThemeType.System ? this.configuredTheme : this.systemTheme;
   }
 
-  constructor(readonly configuredTheme: ThemeType, readonly systemTheme: ThemeType) {}
+  constructor(
+    readonly configuredTheme: ThemeType,
+    readonly systemTheme: ThemeType,
+  ) {}
 
   updateSystemTheme(systemTheme: ThemeType): ThemeBuilder {
     return new ThemeBuilder(this.configuredTheme, systemTheme);

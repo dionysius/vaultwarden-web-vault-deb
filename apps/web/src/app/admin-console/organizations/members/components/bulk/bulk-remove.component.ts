@@ -33,7 +33,7 @@ export class BulkRemoveComponent {
   constructor(
     protected apiService: ApiService,
     protected i18nService: I18nService,
-    private organizationUserService: OrganizationUserService
+    private organizationUserService: OrganizationUserService,
   ) {}
 
   async submit() {
@@ -56,7 +56,7 @@ export class BulkRemoveComponent {
   protected async deleteUsers() {
     return await this.organizationUserService.deleteManyOrganizationUsers(
       this.organizationId,
-      this.users.map((user) => user.id)
+      this.users.map((user) => user.id),
     );
   }
 

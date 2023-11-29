@@ -227,7 +227,7 @@ describe("SsoComponent", () => {
 
         // use standard user with MP because this test is not concerned with password reset.
         mockStateService.getAccountDecryptionOptions.mockResolvedValue(
-          mockAcctDecryptionOpts.withMasterPassword
+          mockAcctDecryptionOpts.withMasterPassword,
         );
 
         mockAuthService.logIn.mockResolvedValue(authResult);
@@ -338,7 +338,7 @@ describe("SsoComponent", () => {
         let authResult;
         beforeEach(() => {
           mockStateService.getAccountDecryptionOptions.mockResolvedValue(
-            mockAcctDecryptionOpts.noMasterPasswordWithTrustedDeviceWithManageResetPassword
+            mockAcctDecryptionOpts.noMasterPasswordWithTrustedDeviceWithManageResetPassword,
           );
 
           authResult = new AuthResult();
@@ -350,7 +350,7 @@ describe("SsoComponent", () => {
           expect(mockAuthService.logIn).toHaveBeenCalledTimes(1);
 
           expect(mockStateService.setForceSetPasswordReason).toHaveBeenCalledWith(
-            ForceSetPasswordReason.TdeUserWithoutPasswordHasPasswordResetPermission
+            ForceSetPasswordReason.TdeUserWithoutPasswordHasPasswordResetPermission,
           );
 
           expect(mockOnSuccessfulLoginTdeNavigate).not.toHaveBeenCalled();
@@ -358,7 +358,7 @@ describe("SsoComponent", () => {
           expect(mockRouter.navigate).toHaveBeenCalledTimes(1);
           expect(mockRouter.navigate).toHaveBeenCalledWith(
             [_component.trustedDeviceEncRoute],
-            undefined
+            undefined,
           );
 
           expect(mockLogService.error).not.toHaveBeenCalled();
@@ -374,7 +374,7 @@ describe("SsoComponent", () => {
           let authResult;
           beforeEach(() => {
             mockStateService.getAccountDecryptionOptions.mockResolvedValue(
-              mockAcctDecryptionOpts.withMasterPasswordAndTrustedDevice
+              mockAcctDecryptionOpts.withMasterPasswordAndTrustedDevice,
             );
 
             authResult = new AuthResult();
@@ -391,7 +391,7 @@ describe("SsoComponent", () => {
         let authResult;
         beforeEach(() => {
           mockStateService.getAccountDecryptionOptions.mockResolvedValue(
-            mockAcctDecryptionOpts.withMasterPasswordAndTrustedDevice
+            mockAcctDecryptionOpts.withMasterPasswordAndTrustedDevice,
           );
 
           authResult = new AuthResult();
@@ -406,7 +406,7 @@ describe("SsoComponent", () => {
           expect(mockRouter.navigate).toHaveBeenCalledTimes(1);
           expect(mockRouter.navigate).toHaveBeenCalledWith(
             [_component.trustedDeviceEncRoute],
-            undefined
+            undefined,
           );
           expect(mockLogService.error).not.toHaveBeenCalled();
         });
@@ -437,7 +437,7 @@ describe("SsoComponent", () => {
         beforeEach(() => {
           // Only need to test the case where the user has no master password to test the primary change mp flow here
           mockStateService.getAccountDecryptionOptions.mockResolvedValue(
-            mockAcctDecryptionOpts.noMasterPassword
+            mockAcctDecryptionOpts.noMasterPassword,
           );
         });
 
@@ -447,7 +447,7 @@ describe("SsoComponent", () => {
 
       it("does not navigate to the change password route when the user has key connector even if user has no master password", async () => {
         mockStateService.getAccountDecryptionOptions.mockResolvedValue(
-          mockAcctDecryptionOpts.noMasterPasswordWithKeyConnector
+          mockAcctDecryptionOpts.noMasterPasswordWithKeyConnector,
         );
 
         await _component.logIn(code, codeVerifier, orgIdFromState);
@@ -472,7 +472,7 @@ describe("SsoComponent", () => {
         beforeEach(() => {
           // use standard user with MP because this test is not concerned with password reset.
           mockStateService.getAccountDecryptionOptions.mockResolvedValue(
-            mockAcctDecryptionOpts.withMasterPassword
+            mockAcctDecryptionOpts.withMasterPassword,
           );
 
           const authResult = new AuthResult();
@@ -491,7 +491,7 @@ describe("SsoComponent", () => {
         authResult.twoFactorProviders = null;
         // use standard user with MP because this test is not concerned with password reset.
         mockStateService.getAccountDecryptionOptions.mockResolvedValue(
-          mockAcctDecryptionOpts.withMasterPassword
+          mockAcctDecryptionOpts.withMasterPassword,
         );
         authResult.forcePasswordReset = ForceSetPasswordReason.None;
         mockAuthService.logIn.mockResolvedValue(authResult);
@@ -574,7 +574,7 @@ describe("SsoComponent", () => {
       expect(mockPlatformUtilsService.showToast).toHaveBeenCalledWith(
         "error",
         null,
-        "ssoKeyConnectorError"
+        "ssoKeyConnectorError",
       );
 
       expect(mockRouter.navigate).not.toHaveBeenCalled();

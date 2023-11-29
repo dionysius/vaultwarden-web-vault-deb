@@ -13,11 +13,11 @@ export class ServiceAccountAccessPoliciesResponse extends BaseResponse {
     super(response);
     const userAccessPolicies = this.getResponseProperty("UserAccessPolicies");
     this.userAccessPolicies = userAccessPolicies.map(
-      (k: any) => new UserServiceAccountAccessPolicyResponse(k)
+      (k: any) => new UserServiceAccountAccessPolicyResponse(k),
     );
     const groupAccessPolicies = this.getResponseProperty("GroupAccessPolicies");
     this.groupAccessPolicies = groupAccessPolicies.map(
-      (k: any) => new GroupServiceAccountAccessPolicyResponse(k)
+      (k: any) => new GroupServiceAccountAccessPolicyResponse(k),
     );
   }
 }

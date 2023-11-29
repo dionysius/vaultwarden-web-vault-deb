@@ -7,7 +7,7 @@
         [queryParams]="{ organizationId: activeOrganizationId, collectionId: All }"
         queryParamsHandling="merge"
       >
-        {{ activeOrganizationId | orgNameFromId : organizations }} {{ "vault" | i18n | lowercase }}
+        {{ activeOrganizationId | orgNameFromId: organizations }} {{ "vault" | i18n | lowercase }}
       </bit-breadcrumb>
       <ng-container>
         <bit-breadcrumb

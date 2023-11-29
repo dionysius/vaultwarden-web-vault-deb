@@ -40,7 +40,7 @@ export class PremiumComponent implements OnInit {
     private syncService: SyncService,
     private logService: LogService,
     private stateService: StateService,
-    private environmentService: EnvironmentService
+    private environmentService: EnvironmentService,
   ) {
     this.selfHosted = platformUtilsService.isSelfHost();
     this.cloudWebVaultUrl = this.environmentService.getCloudWebVaultUrl();
@@ -64,7 +64,7 @@ export class PremiumComponent implements OnInit {
         this.platformUtilsService.showToast(
           "error",
           this.i18nService.t("errorOccurred"),
-          this.i18nService.t("selectFile")
+          this.i18nService.t("selectFile"),
         );
         return;
       }
@@ -77,7 +77,7 @@ export class PremiumComponent implements OnInit {
           this.platformUtilsService.showToast(
             "error",
             this.i18nService.t("errorOccurred"),
-            this.i18nService.t("verifyEmailFirst")
+            this.i18nService.t("verifyEmailFirst"),
           );
           return;
         }
@@ -105,7 +105,7 @@ export class PremiumComponent implements OnInit {
             if (!paymentResponse.success && paymentResponse.paymentIntentClientSecret != null) {
               return this.paymentComponent.handleStripeCardPayment(
                 paymentResponse.paymentIntentClientSecret,
-                () => this.finalizePremium()
+                () => this.finalizePremium(),
               );
             } else {
               return this.finalizePremium();

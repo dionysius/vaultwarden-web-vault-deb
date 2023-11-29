@@ -16,7 +16,10 @@ export class UpdaterMain {
   private doingUpdateCheckWithFeedback = false;
   private canUpdate = false;
 
-  constructor(private i18nService: I18nService, private windowMain: WindowMain) {
+  constructor(
+    private i18nService: I18nService,
+    private windowMain: WindowMain,
+  ) {
     autoUpdater.logger = log;
 
     const linuxCanUpdate = process.platform === "linux" && isAppImage();
@@ -102,7 +105,7 @@ export class UpdaterMain {
       if (this.doingUpdateCheckWithFeedback) {
         dialog.showErrorBox(
           this.i18nService.t("updateError"),
-          error == null ? this.i18nService.t("unknown") : (error.stack || error).toString()
+          error == null ? this.i18nService.t("unknown") : (error.stack || error).toString(),
         );
       }
 

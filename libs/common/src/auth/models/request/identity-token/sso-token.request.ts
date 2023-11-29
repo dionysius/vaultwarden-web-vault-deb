@@ -8,7 +8,7 @@ export class SsoTokenRequest extends TokenRequest {
     public codeVerifier: string,
     public redirectUri: string,
     protected twoFactor: TokenTwoFactorRequest,
-    device?: DeviceRequest
+    device?: DeviceRequest,
   ) {
     super(twoFactor, device);
   }

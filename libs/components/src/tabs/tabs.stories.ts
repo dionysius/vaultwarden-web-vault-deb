@@ -57,8 +57,8 @@ export default {
               { path: "item-3", component: ItemThreeDummyComponent },
               { path: "disabled", component: DisabledDummyComponent },
             ],
-            { useHash: true }
-          )
+            { useHash: true },
+          ),
         ),
       ],
     }),

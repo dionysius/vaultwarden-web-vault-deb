@@ -133,7 +133,7 @@ export abstract class CryptoService {
     password: string,
     email: string,
     kdf: KdfType,
-    KdfConfig: KdfConfig
+    KdfConfig: KdfConfig,
   ) => Promise<MasterKey>;
   /**
    * Clears the user's master key
@@ -149,7 +149,7 @@ export abstract class CryptoService {
    */
   encryptUserKeyWithMasterKey: (
     masterKey: MasterKey,
-    userKey?: UserKey
+    userKey?: UserKey,
   ) => Promise<[UserKey, EncString]>;
   /**
    * Decrypts the user key with the provided master key
@@ -161,7 +161,7 @@ export abstract class CryptoService {
   decryptUserKeyWithMasterKey: (
     masterKey: MasterKey,
     userKey?: EncString,
-    userId?: string
+    userId?: string,
   ) => Promise<UserKey>;
   /**
    * Creates a master password hash from the user's master password. Can
@@ -204,7 +204,7 @@ export abstract class CryptoService {
    */
   setOrgKeys: (
     orgs: ProfileOrganizationResponse[],
-    providerOrgs: ProfileProviderOrganizationResponse[]
+    providerOrgs: ProfileProviderOrganizationResponse[],
   ) => Promise<void>;
   /**
    * Returns the organization's symmetric key
@@ -322,7 +322,7 @@ export abstract class CryptoService {
     salt: string,
     kdf: KdfType,
     kdfConfig: KdfConfig,
-    protectedKeyCs?: EncString
+    protectedKeyCs?: EncString,
   ) => Promise<UserKey>;
   /**
    * Creates a new Pin key that encrypts the user key instead of the
@@ -342,7 +342,7 @@ export abstract class CryptoService {
     email: string,
     kdf: KdfType,
     kdfConfig: KdfConfig,
-    oldPinKey: EncString
+    oldPinKey: EncString,
   ) => Promise<UserKey>;
   /**
    * Replaces old master auto keys with new user auto keys
@@ -398,7 +398,7 @@ export abstract class CryptoService {
     salt: string,
     kdf: KdfType,
     kdfConfig: KdfConfig,
-    protectedKeyCs?: EncString
+    protectedKeyCs?: EncString,
   ) => Promise<MasterKey>;
   /**
    * Previously, the master key was used for any additional key like the biometrics or pin key.

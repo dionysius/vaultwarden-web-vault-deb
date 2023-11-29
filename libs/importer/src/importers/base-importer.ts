@@ -146,7 +146,7 @@ export abstract class BaseImporter {
     const parseOptions: papa.ParseConfig<string> = Object.assign(
       { header: header },
       this.parseCsvOptions,
-      options
+      options,
     );
     data = this.splitNewLine(data).join("\n").trim();
     const result = papa.parse(data, parseOptions);
@@ -321,7 +321,7 @@ export abstract class BaseImporter {
     cipher: CipherView,
     key: string,
     value: string,
-    type: FieldType = FieldType.Text
+    type: FieldType = FieldType.Text,
   ) {
     if (this.isNullOrWhitespace(value)) {
       return;

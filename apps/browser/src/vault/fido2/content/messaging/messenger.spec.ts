@@ -99,7 +99,7 @@ class TestChannelPair {
 class TestMessageHandler {
   readonly handler: (
     message: TestMessage,
-    abortController?: AbortController
+    abortController?: AbortController,
   ) => Promise<Message | undefined>;
 
   private recievedMessages: {
@@ -144,7 +144,7 @@ class MockMessagePort<T> {
 
   postMessage(message: T, port?: MessagePort) {
     this.remotePort.onmessage(
-      new MessageEvent("message", { data: message, ports: port ? [port] : [] })
+      new MessageEvent("message", { data: message, ports: port ? [port] : [] }),
     );
   }
 

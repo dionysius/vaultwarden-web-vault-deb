@@ -15,7 +15,7 @@ export class PasswordGeneratorHistoryComponent implements OnInit {
     protected passwordGenerationService: PasswordGenerationServiceAbstraction,
     protected platformUtilsService: PlatformUtilsService,
     protected i18nService: I18nService,
-    private win: Window
+    private win: Window,
   ) {}
 
   async ngOnInit() {
@@ -33,7 +33,7 @@ export class PasswordGeneratorHistoryComponent implements OnInit {
     this.platformUtilsService.showToast(
       "info",
       null,
-      this.i18nService.t("valueCopied", this.i18nService.t("password"))
+      this.i18nService.t("valueCopied", this.i18nService.t("password")),
     );
   }
 }

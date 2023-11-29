@@ -15,12 +15,12 @@ type ServiceCache = { importApiService?: ImportApiServiceAbstraction } & CachedS
 
 export function importApiServiceFactory(
   cache: ServiceCache,
-  opts: ImportApiServiceInitOptions
+  opts: ImportApiServiceInitOptions,
 ): Promise<ImportApiServiceAbstraction> {
   return factory(
     cache,
     "importApiService",
     opts,
-    async () => new ImportApiService(await apiServiceFactory(cache, opts))
+    async () => new ImportApiService(await apiServiceFactory(cache, opts)),
   );
 }

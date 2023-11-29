@@ -42,12 +42,12 @@ export class Fido2ClientService implements Fido2ClientServiceAbstraction {
     private configService: ConfigServiceAbstraction,
     private authService: AuthService,
     private stateService: StateService,
-    private logService?: LogService
+    private logService?: LogService,
   ) {}
 
   async isFido2FeatureEnabled(): Promise<boolean> {
     const featureFlagEnabled = await this.configService.getFeatureFlag<boolean>(
-      FeatureFlag.Fido2VaultCredentials
+      FeatureFlag.Fido2VaultCredentials,
     );
     const userEnabledPasskeys = await this.stateService.getEnablePasskeys();
     return featureFlagEnabled && userEnabledPasskeys;
@@ -56,7 +56,7 @@ export class Fido2ClientService implements Fido2ClientServiceAbstraction {
   async createCredential(
     params: CreateCredentialParams,
     tab: chrome.tabs.Tab,
-    abortController = new AbortController()
+    abortController = new AbortController(),
   ): Promise<CreateCredentialResult> {
     const enableFido2VaultCredentials = await this.isFido2FeatureEnabled();
 
@@ -74,7 +74,7 @@ export class Fido2ClientService implements Fido2ClientServiceAbstraction {
 
     if (!params.sameOriginWithAncestors) {
       this.logService?.warning(
-        `[Fido2Client] Invalid 'sameOriginWithAncestors' value: ${params.sameOriginWithAncestors}`
+        `[Fido2Client] Invalid 'sameOriginWithAncestors' value: ${params.sameOriginWithAncestors}`,
       );
       throw new DOMException("Invalid 'sameOriginWithAncestors' value", "NotAllowedError");
     }
@@ -82,7 +82,7 @@ export class Fido2ClientService implements Fido2ClientServiceAbstraction {
     const userId = Fido2Utils.stringToBuffer(params.user.id);
     if (userId.length < 1 || userId.length > 64) {
       this.logService?.warning(
-        `[Fido2Client] Invalid 'user.id' length: ${params.user.id} (${userId.length})`
+        `[Fido2Client] Invalid 'user.id' length: ${params.user.id} (${userId.length})`,
       );
       throw new TypeError("Invalid 'user.id' length");
     }
@@ -103,7 +103,7 @@ export class Fido2ClientService implements Fido2ClientServiceAbstraction {
 
     if (!isValidRpId(params.rp.id, params.origin)) {
       this.logService?.warning(
-        `[Fido2Client] 'rp.id' cannot be used with the current origin: rp.id = ${params.rp.id}; origin = ${params.origin}`
+        `[Fido2Client] 'rp.id' cannot be used with the current origin: rp.id = ${params.rp.id}; origin = ${params.origin}`,
       );
       throw new DOMException("'rp.id' cannot be used with the current origin", "SecurityError");
     }
@@ -112,7 +112,7 @@ export class Fido2ClientService implements Fido2ClientServiceAbstraction {
     if (params.pubKeyCredParams?.length > 0) {
       // Filter out all unsupported algorithms
       credTypesAndPubKeyAlgs = params.pubKeyCredParams.filter(
-        (kp) => kp.alg === -7 && kp.type === "public-key"
+        (kp) => kp.alg === -7 && kp.type === "public-key",
       );
     } else {
       // Assign default algorithms
@@ -125,7 +125,7 @@ export class Fido2ClientService implements Fido2ClientServiceAbstraction {
     if (credTypesAndPubKeyAlgs.length === 0) {
       const requestedAlgorithms = credTypesAndPubKeyAlgs.map((p) => p.alg).join(", ");
       this.logService?.warning(
-        `[Fido2Client] No compatible algorithms found, RP requested: ${requestedAlgorithms}`
+        `[Fido2Client] No compatible algorithms found, RP requested: ${requestedAlgorithms}`,
       );
       throw new DOMException("No supported key algorithms were found", "NotSupportedError");
     }
@@ -154,7 +154,7 @@ export class Fido2ClientService implements Fido2ClientServiceAbstraction {
     const timeout = setAbortTimeout(
       abortController,
       params.authenticatorSelection?.userVerification,
-      params.timeout
+      params.timeout,
     );
 
     let makeCredentialResult;
@@ -162,7 +162,7 @@ export class Fido2ClientService implements Fido2ClientServiceAbstraction {
       makeCredentialResult = await this.authenticator.makeCredential(
         makeCredentialParams,
         tab,
-        abortController
+        abortController,
       );
     } catch (error) {
       if (
@@ -184,7 +184,7 @@ export class Fido2ClientService implements Fido2ClientServiceAbstraction {
       this.logService?.info(`[Fido2Client] Aborted by user: ${error}`);
       throw new DOMException(
         "The operation either timed out or was not allowed.",
-        "NotAllowedError"
+        "NotAllowedError",
       );
     }
 
@@ -208,7 +208,7 @@ export class Fido2ClientService implements Fido2ClientServiceAbstraction {
   async assertCredential(
     params: AssertCredentialParams,
     tab: chrome.tabs.Tab,
-    abortController = new AbortController()
+    abortController = new AbortController(),
   ): Promise<AssertCredentialResult> {
     const enableFido2VaultCredentials = await this.isFido2FeatureEnabled();
 
@@ -240,7 +240,7 @@ export class Fido2ClientService implements Fido2ClientServiceAbstraction {
 
     if (!isValidRpId(params.rpId, params.origin)) {
       this.logService?.warning(
-        `[Fido2Client] 'rp.id' cannot be used with the current origin: rp.id = ${params.rpId}; origin = ${params.origin}`
+        `[Fido2Client] 'rp.id' cannot be used with the current origin: rp.id = ${params.rpId}; origin = ${params.origin}`,
       );
       throw new DOMException("'rp.id' cannot be used with the current origin", "SecurityError");
     }
@@ -269,7 +269,7 @@ export class Fido2ClientService implements Fido2ClientServiceAbstraction {
       getAssertionResult = await this.authenticator.getAssertion(
         getAssertionParams,
         tab,
-        abortController
+        abortController,
       );
     } catch (error) {
       if (error instanceof FallbackRequestedError) {
@@ -296,7 +296,7 @@ export class Fido2ClientService implements Fido2ClientServiceAbstraction {
       this.logService?.info(`[Fido2Client] Aborted by user: ${error}`);
       throw new DOMException(
         "The operation either timed out or was not allowed.",
-        "NotAllowedError"
+        "NotAllowedError",
       );
     }
 
@@ -335,7 +335,7 @@ const TIMEOUTS = {
 function setAbortTimeout(
   abortController: AbortController,
   userVerification?: UserVerification,
-  timeout?: number
+  timeout?: number,
 ): number {
   let clampedTimeout: number;
 
@@ -343,13 +343,13 @@ function setAbortTimeout(
     timeout = timeout ?? TIMEOUTS.WITH_VERIFICATION.DEFAULT;
     clampedTimeout = Math.max(
       TIMEOUTS.WITH_VERIFICATION.MIN,
-      Math.min(timeout, TIMEOUTS.WITH_VERIFICATION.MAX)
+      Math.min(timeout, TIMEOUTS.WITH_VERIFICATION.MAX),
     );
   } else {
     timeout = timeout ?? TIMEOUTS.NO_VERIFICATION.DEFAULT;
     clampedTimeout = Math.max(
       TIMEOUTS.NO_VERIFICATION.MIN,
-      Math.min(timeout, TIMEOUTS.NO_VERIFICATION.MAX)
+      Math.min(timeout, TIMEOUTS.NO_VERIFICATION.MAX),
     );
   }
 

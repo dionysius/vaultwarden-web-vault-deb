@@ -15,7 +15,7 @@ export class EnvironmentComponent extends BaseEnvironmentComponent {
     platformUtilsService: PlatformUtilsService,
     environmentService: EnvironmentService,
     i18nService: I18nService,
-    modalService: ModalService
+    modalService: ModalService,
   ) {
     super(platformUtilsService, environmentService, i18nService, modalService);
   }

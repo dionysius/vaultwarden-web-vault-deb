@@ -21,7 +21,7 @@ export class RegisterRequest implements CaptchaProtectedRequest {
     public kdf: KdfType,
     public kdfIterations: number,
     public kdfMemory?: number,
-    public kdfParallelism?: number
+    public kdfParallelism?: number,
   ) {
     this.masterPasswordHint = masterPasswordHint ? masterPasswordHint : null;
   }

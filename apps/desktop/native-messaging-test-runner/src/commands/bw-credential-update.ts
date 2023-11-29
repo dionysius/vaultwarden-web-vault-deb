@@ -49,7 +49,7 @@ const { name, username, password, uri, credentialId } = argv;
   LogUtils.logInfo("Sending Handshake");
   const handshakeResponse = await nativeMessageService.sendHandshake(
     config.testRsaPublicKey,
-    config.applicationName
+    config.applicationName,
   );
 
   if (!handshakeResponse.status) {

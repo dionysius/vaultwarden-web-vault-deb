@@ -122,7 +122,10 @@ class StoryDialogComponent {
   calloutType = "info";
   dialogCloseResult: boolean;
 
-  constructor(public dialogService: DialogService, private i18nService: I18nService) {}
+  constructor(
+    public dialogService: DialogService,
+    private i18nService: I18nService,
+  ) {}
 
   async openSimpleConfigurableDialog(opts: SimpleDialogOptions) {
     this.dialogCloseResult = await this.dialogService.openSimpleDialog(opts);

@@ -64,7 +64,7 @@ export class LoginComponent extends BaseLoginComponent implements OnInit {
     formBuilder: FormBuilder,
     formValidationErrorService: FormValidationErrorsService,
     loginService: LoginService,
-    webAuthnLoginService: WebAuthnLoginServiceAbstraction
+    webAuthnLoginService: WebAuthnLoginServiceAbstraction,
   ) {
     super(
       devicesApiService,
@@ -83,7 +83,7 @@ export class LoginComponent extends BaseLoginComponent implements OnInit {
       formValidationErrorService,
       route,
       loginService,
-      webAuthnLoginService
+      webAuthnLoginService,
     );
     this.onSuccessfulLogin = async () => {
       this.messagingService.send("setFullWidth");
@@ -122,7 +122,7 @@ export class LoginComponent extends BaseLoginComponent implements OnInit {
           invite.organizationId,
           invite.token,
           invite.email,
-          invite.organizationUserId
+          invite.organizationUserId,
         );
         policyList = this.policyService.mapPoliciesFromToken(this.policies);
       } catch (e) {
@@ -132,7 +132,7 @@ export class LoginComponent extends BaseLoginComponent implements OnInit {
       if (policyList != null) {
         const resetPasswordPolicy = this.policyService.getResetPasswordPolicyOptions(
           policyList,
-          invite.organizationId
+          invite.organizationId,
         );
         // Set to true if policy enabled and auto-enroll enabled
         this.showResetPasswordAutoEnrollWarning =
@@ -155,7 +155,7 @@ export class LoginComponent extends BaseLoginComponent implements OnInit {
     if (this.enforcedPasswordPolicyOptions != null) {
       const strengthResult = this.passwordStrengthService.getPasswordStrength(
         masterPassword,
-        this.formGroup.value.email
+        this.formGroup.value.email,
       );
       const masterPasswordScore = strengthResult == null ? null : strengthResult.score;
 
@@ -164,7 +164,7 @@ export class LoginComponent extends BaseLoginComponent implements OnInit {
         !this.policyService.evaluateMasterPassword(
           masterPasswordScore,
           masterPassword,
-          this.enforcedPasswordPolicyOptions
+          this.enforcedPasswordPolicyOptions,
         )
       ) {
         const policiesData: { [id: string]: PolicyData } = {};

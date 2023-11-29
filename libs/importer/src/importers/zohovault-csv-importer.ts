@@ -27,10 +27,10 @@ export class ZohoVaultCsvImporter extends BaseImporter implements Importer {
       cipher.notes = this.getValueOrDefault(value.Notes);
       cipher.name = this.getValueOrDefault(
         value["Password Name"],
-        this.getValueOrDefault(value["Secret Name"], "--")
+        this.getValueOrDefault(value["Secret Name"], "--"),
       );
       cipher.login.uris = this.makeUriArray(
-        this.getValueOrDefault(value["Password URL"], this.getValueOrDefault(value["Secret URL"]))
+        this.getValueOrDefault(value["Password URL"], this.getValueOrDefault(value["Secret URL"])),
       );
       this.parseData(cipher, value.SecretData);
       this.parseData(cipher, value.CustomData);

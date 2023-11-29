@@ -37,7 +37,10 @@ export class EncryptedOrganizationKey implements BaseEncryptedOrganizationKey {
 }
 
 export class ProviderEncryptedOrganizationKey implements BaseEncryptedOrganizationKey {
-  constructor(private key: string, private providerId: string) {}
+  constructor(
+    private key: string,
+    private providerId: string,
+  ) {}
 
   async decrypt(cryptoService: CryptoService) {
     const providerKey = await cryptoService.getProviderKey(this.providerId);

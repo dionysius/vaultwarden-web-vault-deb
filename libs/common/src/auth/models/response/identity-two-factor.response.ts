@@ -25,7 +25,7 @@ export class IdentityTwoFactorResponse extends BaseResponse {
       }
     }
     this.masterPasswordPolicy = new MasterPasswordPolicyResponse(
-      this.getResponseProperty("MasterPasswordPolicy")
+      this.getResponseProperty("MasterPasswordPolicy"),
     );
 
     this.ssoEmail2faSessionToken = this.getResponseProperty("SsoEmail2faSessionToken");

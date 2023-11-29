@@ -48,7 +48,7 @@ export class SendAddEditComponent extends BaseAddEditComponent {
     sendApiService: SendApiService,
     dialogService: DialogService,
     formBuilder: FormBuilder,
-    private filePopoutUtilsService: FilePopoutUtilsService
+    private filePopoutUtilsService: FilePopoutUtilsService,
   ) {
     super(
       i18nService,
@@ -62,7 +62,7 @@ export class SendAddEditComponent extends BaseAddEditComponent {
       stateService,
       sendApiService,
       dialogService,
-      formBuilder
+      formBuilder,
     );
   }
 

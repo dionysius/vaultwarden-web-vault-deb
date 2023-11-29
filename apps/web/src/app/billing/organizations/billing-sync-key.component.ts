@@ -26,7 +26,7 @@ export class BillingSyncKeyComponent {
   protected existingConnectionId: string;
   protected billingSyncKey: string;
   protected setParentConnection: (
-    connection: OrganizationConnectionResponse<BillingSyncConfigApi>
+    connection: OrganizationConnectionResponse<BillingSyncConfigApi>,
   ) => void;
 
   protected formGroup: FormGroup;
@@ -35,7 +35,7 @@ export class BillingSyncKeyComponent {
     private dialogRef: DialogRef,
     @Inject(DIALOG_DATA) protected data: BillingSyncKeyModalData,
     private apiService: ApiService,
-    private logService: LogService
+    private logService: LogService,
   ) {
     this.entityId = data.entityId;
     this.existingConnectionId = data.existingConnectionId;
@@ -53,7 +53,7 @@ export class BillingSyncKeyComponent {
         this.entityId,
         OrganizationConnectionType.CloudBillingSync,
         true,
-        new BillingSyncConfigRequest(this.formGroup.value.billingSyncKey)
+        new BillingSyncConfigRequest(this.formGroup.value.billingSyncKey),
       );
 
       const response =
@@ -62,7 +62,7 @@ export class BillingSyncKeyComponent {
           : await this.apiService.updateOrganizationConnection(
               request,
               BillingSyncConfigApi,
-              this.existingConnectionId
+              this.existingConnectionId,
             );
 
       this.existingConnectionId = response?.id;

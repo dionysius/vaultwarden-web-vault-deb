@@ -16,7 +16,7 @@ export class ModalService extends BaseModalService {
     componentFactoryResolver: ComponentFactoryResolver,
     applicationRef: ApplicationRef,
     injector: Injector,
-    private messagingService: MessagingService
+    private messagingService: MessagingService,
   ) {
     super(componentFactoryResolver, applicationRef, injector);
   }

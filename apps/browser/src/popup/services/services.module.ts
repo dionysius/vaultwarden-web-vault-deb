@@ -183,7 +183,7 @@ function getBgService<T>(service: keyof MainBackground) {
         return new PopupSearchService(
           getBgService<SearchService>("searchService")(),
           logService,
-          i18nService
+          i18nService,
         );
       },
       deps: [LogServiceAbstraction, I18nServiceAbstraction],
@@ -210,7 +210,7 @@ function getBgService<T>(service: keyof MainBackground) {
         cryptoService: CryptoService,
         i18nService: I18nServiceAbstraction,
         cipherService: CipherService,
-        stateService: StateServiceAbstraction
+        stateService: StateServiceAbstraction,
       ) => {
         return new BrowserFolderService(cryptoService, i18nService, cipherService, stateService);
       },
@@ -293,7 +293,7 @@ function getBgService<T>(service: keyof MainBackground) {
       provide: PolicyService,
       useFactory: (
         stateService: StateServiceAbstraction,
-        organizationService: OrganizationService
+        organizationService: OrganizationService,
       ) => {
         return new BrowserPolicyService(stateService, organizationService);
       },
@@ -304,7 +304,7 @@ function getBgService<T>(service: keyof MainBackground) {
       useFactory: (
         policyService: InternalPolicyService,
         apiService: ApiService,
-        stateService: StateService
+        stateService: StateService,
       ) => {
         return new PolicyApiService(policyService, apiService, stateService);
       },
@@ -332,13 +332,13 @@ function getBgService<T>(service: keyof MainBackground) {
         cryptoService: CryptoService,
         i18nService: I18nServiceAbstraction,
         cryptoFunctionService: CryptoFunctionService,
-        stateServiceAbstraction: StateServiceAbstraction
+        stateServiceAbstraction: StateServiceAbstraction,
       ) => {
         return new BrowserSendService(
           cryptoService,
           i18nService,
           cryptoFunctionService,
-          stateServiceAbstraction
+          stateServiceAbstraction,
         );
       },
       deps: [CryptoService, I18nServiceAbstraction, CryptoFunctionService, StateServiceAbstraction],
@@ -352,7 +352,7 @@ function getBgService<T>(service: keyof MainBackground) {
       useFactory: (
         apiService: ApiService,
         fileUploadService: FileUploadService,
-        sendService: InternalSendServiceAbstraction
+        sendService: InternalSendServiceAbstraction,
       ) => {
         return new SendApiService(apiService, fileUploadService, sendService);
       },
@@ -430,7 +430,7 @@ function getBgService<T>(service: keyof MainBackground) {
         stateService: StateServiceAbstraction,
         organizationService: OrganizationService,
         folderService: FolderService,
-        policyService: PolicyService
+        policyService: PolicyService,
       ) => {
         return new VaultFilterService(
           stateService,
@@ -438,7 +438,7 @@ function getBgService<T>(service: keyof MainBackground) {
           folderService,
           getBgService<CipherService>("cipherService")(),
           getBgService<CollectionService>("collectionService")(),
-          policyService
+          policyService,
         );
       },
       deps: [StateServiceAbstraction, OrganizationService, FolderService, PolicyService],
@@ -472,7 +472,7 @@ function getBgService<T>(service: keyof MainBackground) {
         secureStorageService: AbstractStorageService,
         memoryStorageService: AbstractMemoryStorageService,
         logService: LogServiceAbstraction,
-        accountService: AccountServiceAbstraction
+        accountService: AccountServiceAbstraction,
       ) => {
         return new BrowserStateService(
           storageService,
@@ -480,7 +480,7 @@ function getBgService<T>(service: keyof MainBackground) {
           memoryStorageService,
           logService,
           new StateFactory(GlobalState, Account),
-          accountService
+          accountService,
         );
       },
       deps: [
@@ -514,14 +514,14 @@ function getBgService<T>(service: keyof MainBackground) {
       provide: AbstractThemingService,
       useFactory: (
         stateService: StateServiceAbstraction,
-        platformUtilsService: PlatformUtilsService
+        platformUtilsService: PlatformUtilsService,
       ) => {
         return new ThemingService(
           stateService,
           // Safari doesn't properly handle the (prefers-color-scheme) media query in the popup window, it always returns light.
           // In Safari we have to use the background page instead, which comes with limitations like not dynamically changing the extension theme when the system theme is changed.
           platformUtilsService.isSafari() ? getBgService<Window>("backgroundWindow")() : window,
-          document
+          document,
         );
       },
       deps: [StateServiceAbstraction, PlatformUtilsService],

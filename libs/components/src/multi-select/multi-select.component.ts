@@ -56,7 +56,10 @@ export class MultiSelectComponent implements OnInit, BitFormFieldControl, Contro
 
   @Output() onItemsConfirmed = new EventEmitter<any[]>();
 
-  constructor(private i18nService: I18nService, @Optional() @Self() private ngControl?: NgControl) {
+  constructor(
+    private i18nService: I18nService,
+    @Optional() @Self() private ngControl?: NgControl,
+  ) {
     if (ngControl != null) {
       ngControl.valueAccessor = this;
     }

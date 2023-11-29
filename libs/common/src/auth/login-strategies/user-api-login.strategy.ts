@@ -29,7 +29,7 @@ export class UserApiLoginStrategy extends LoginStrategy {
     stateService: StateService,
     twoFactorService: TwoFactorService,
     private environmentService: EnvironmentService,
-    private keyConnectorService: KeyConnectorService
+    private keyConnectorService: KeyConnectorService,
   ) {
     super(
       cryptoService,
@@ -40,7 +40,7 @@ export class UserApiLoginStrategy extends LoginStrategy {
       messagingService,
       logService,
       stateService,
-      twoFactorService
+      twoFactorService,
     );
   }
 
@@ -49,7 +49,7 @@ export class UserApiLoginStrategy extends LoginStrategy {
       credentials.clientId,
       credentials.clientSecret,
       await this.buildTwoFactor(),
-      await this.buildDeviceRequest()
+      await this.buildDeviceRequest(),
     );
 
     const [authResult] = await this.startLogIn();
@@ -77,7 +77,7 @@ export class UserApiLoginStrategy extends LoginStrategy {
 
   protected override async setPrivateKey(response: IdentityTokenResponse): Promise<void> {
     await this.cryptoService.setPrivateKey(
-      response.privateKey ?? (await this.createKeyPairForOldAccount())
+      response.privateKey ?? (await this.createKeyPairForOldAccount()),
     );
   }
 

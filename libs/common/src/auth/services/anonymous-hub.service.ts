@@ -22,7 +22,7 @@ export class AnonymousHubService implements AnonymousHubServiceAbstraction {
   constructor(
     private environmentService: EnvironmentService,
     private authService: AuthService,
-    private logService: LogService
+    private logService: LogService,
   ) {}
 
   async createHubConnection(token: string) {
@@ -51,7 +51,7 @@ export class AnonymousHubService implements AnonymousHubServiceAbstraction {
 
   private async ProcessNotification(notification: NotificationResponse) {
     await this.authService.authResponsePushNotification(
-      notification.payload as AuthRequestPushNotification
+      notification.payload as AuthRequestPushNotification,
     );
   }
 }

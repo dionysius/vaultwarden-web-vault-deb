@@ -28,7 +28,7 @@ export class ApiKeyComponent {
 
   constructor(
     private userVerificationService: UserVerificationService,
-    private logService: LogService
+    private logService: LogService,
   ) {}
 
   async submit() {

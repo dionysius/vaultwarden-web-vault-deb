@@ -32,7 +32,7 @@ export class SsoComponent extends BaseSsoComponent {
     environmentService: EnvironmentService,
     passwordGenerationService: PasswordGenerationServiceAbstraction,
     logService: LogService,
-    configService: ConfigServiceAbstraction
+    configService: ConfigServiceAbstraction,
   ) {
     super(
       authService,
@@ -46,7 +46,7 @@ export class SsoComponent extends BaseSsoComponent {
       environmentService,
       passwordGenerationService,
       logService,
-      configService
+      configService,
     );
     super.onSuccessfulLogin = async () => {
       syncService.fullSync(true);

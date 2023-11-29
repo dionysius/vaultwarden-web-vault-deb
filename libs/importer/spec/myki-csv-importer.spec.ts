@@ -374,7 +374,7 @@ function expectSoftwareLicense(cipher: CipherView) {
   expect(cipher.type).toBe(CipherType.Identity);
   expect(cipher.name).toBe("Software license ID card");
   expect(cipher.notes).toBe(
-    "It seems like the fields don't change, which makes it pretty useless that they have so many ID card types."
+    "It seems like the fields don't change, which makes it pretty useless that they have so many ID card types.",
   );
 
   expect(cipher.identity.fullName).toBe("Joe M User");

@@ -9,5 +9,8 @@ export class StateDefinition {
    * @param name The name of the state, this needs to be unique from all other {@link StateDefinition}'s.
    * @param storageLocation The location of where this state should be stored.
    */
-  constructor(readonly name: string, readonly storageLocation: StorageLocation) {}
+  constructor(
+    readonly name: string,
+    readonly storageLocation: StorageLocation,
+  ) {}
 }

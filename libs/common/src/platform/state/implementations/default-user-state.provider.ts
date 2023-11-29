@@ -19,7 +19,7 @@ export class DefaultUserStateProvider implements UserStateProvider {
     protected accountService: AccountService,
     protected encryptService: EncryptService,
     protected memoryStorage: AbstractMemoryStorageService & ObservableStorageService,
-    protected diskStorage: AbstractStorageService & ObservableStorageService
+    protected diskStorage: AbstractStorageService & ObservableStorageService,
   ) {}
 
   get<T>(keyDefinition: KeyDefinition<T>): UserState<T> {
@@ -41,7 +41,7 @@ export class DefaultUserStateProvider implements UserStateProvider {
       keyDefinition,
       this.accountService,
       this.encryptService,
-      this.getLocation(keyDefinition.stateDefinition.storageLocation)
+      this.getLocation(keyDefinition.stateDefinition.storageLocation),
     );
   }
 

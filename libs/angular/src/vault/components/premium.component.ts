@@ -22,7 +22,7 @@ export class PremiumComponent implements OnInit {
     private logService: LogService,
     protected stateService: StateService,
     protected dialogService: DialogService,
-    private environmentService: EnvironmentService
+    private environmentService: EnvironmentService,
   ) {
     this.cloudWebVaultUrl = this.environmentService.getCloudWebVaultUrl();
   }

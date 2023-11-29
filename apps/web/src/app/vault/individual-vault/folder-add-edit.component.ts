@@ -25,7 +25,7 @@ export class FolderAddEditComponent extends BaseFolderAddEditComponent {
     dialogService: DialogService,
     formBuilder: FormBuilder,
     protected dialogRef: DialogRef<FolderAddEditDialogResult>,
-    @Inject(DIALOG_DATA) params: FolderAddEditDialogParams
+    @Inject(DIALOG_DATA) params: FolderAddEditDialogParams,
   ) {
     super(
       folderService,
@@ -34,7 +34,7 @@ export class FolderAddEditComponent extends BaseFolderAddEditComponent {
       platformUtilsService,
       logService,
       dialogService,
-      formBuilder
+      formBuilder,
     );
     params?.folderId ? (this.folderId = params.folderId) : null;
   }
@@ -76,7 +76,7 @@ export class FolderAddEditComponent extends BaseFolderAddEditComponent {
       this.platformUtilsService.showToast(
         "success",
         null,
-        this.i18nService.t(this.editMode ? "editedFolder" : "addedFolder")
+        this.i18nService.t(this.editMode ? "editedFolder" : "addedFolder"),
       );
       this.onSavedFolder.emit(this.folder);
       this.dialogRef.close(FolderAddEditDialogResult.Saved);
@@ -104,10 +104,10 @@ export enum FolderAddEditDialogResult {
  */
 export function openFolderAddEditDialog(
   dialogService: DialogService,
-  config?: DialogConfig<FolderAddEditDialogParams>
+  config?: DialogConfig<FolderAddEditDialogParams>,
 ) {
   return dialogService.open<FolderAddEditDialogResult, FolderAddEditDialogParams>(
     FolderAddEditComponent,
-    config
+    config,
   );
 }

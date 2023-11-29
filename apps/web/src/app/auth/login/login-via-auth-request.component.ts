@@ -45,7 +45,7 @@ export class LoginViaAuthRequestComponent
     stateService: StateService,
     loginService: LoginService,
     deviceTrustCryptoService: DeviceTrustCryptoServiceAbstraction,
-    authReqCryptoService: AuthRequestCryptoServiceAbstraction
+    authReqCryptoService: AuthRequestCryptoServiceAbstraction,
   ) {
     super(
       router,
@@ -64,7 +64,7 @@ export class LoginViaAuthRequestComponent
       stateService,
       loginService,
       deviceTrustCryptoService,
-      authReqCryptoService
+      authReqCryptoService,
     );
   }
 }

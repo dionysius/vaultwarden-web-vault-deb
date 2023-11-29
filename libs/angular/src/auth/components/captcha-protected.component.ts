@@ -15,7 +15,7 @@ export abstract class CaptchaProtectedComponent {
   constructor(
     protected environmentService: EnvironmentService,
     protected i18nService: I18nService,
-    protected platformUtilsService: PlatformUtilsService
+    protected platformUtilsService: PlatformUtilsService,
   ) {}
 
   async setupCaptcha() {
@@ -33,7 +33,7 @@ export abstract class CaptchaProtectedComponent {
       },
       (info: string) => {
         this.platformUtilsService.showToast("info", this.i18nService.t("info"), info);
-      }
+      },
     );
   }
 

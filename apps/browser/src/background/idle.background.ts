@@ -14,7 +14,7 @@ export default class IdleBackground {
   constructor(
     private vaultTimeoutService: VaultTimeoutService,
     private stateService: BrowserStateService,
-    private notificationsService: NotificationsService
+    private notificationsService: NotificationsService,
   ) {
     this.idle = chrome.idle || (browser != null ? browser.idle : null);
   }

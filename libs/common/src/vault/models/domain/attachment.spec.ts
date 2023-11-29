@@ -69,7 +69,7 @@ describe("Attachment", () => {
 
       (window as any).bitwardenContainerService = new ContainerService(
         cryptoService,
-        encryptService
+        encryptService,
       );
     });
 

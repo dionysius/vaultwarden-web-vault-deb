@@ -12,7 +12,7 @@ export const serviceAccountAccessGuard: CanActivateFn = async (route: ActivatedR
   try {
     const serviceAccount = await serviceAccountService.getByServiceAccountId(
       route.params.serviceAccountId,
-      route.params.organizationId
+      route.params.organizationId,
     );
     if (serviceAccount) {
       return true;

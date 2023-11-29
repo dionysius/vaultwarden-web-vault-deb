@@ -40,7 +40,7 @@ export class ProjectDialogComponent implements OnInit {
     private projectService: ProjectService,
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
-    private router: Router
+    private router: Router,
   ) {}
 
   async ngOnInit() {
@@ -68,7 +68,7 @@ export class ProjectDialogComponent implements OnInit {
       this.platformUtilsService.showToast(
         "error",
         null,
-        this.i18nService.t("projectsCannotCreate")
+        this.i18nService.t("projectsCannotCreate"),
       );
       return;
     }

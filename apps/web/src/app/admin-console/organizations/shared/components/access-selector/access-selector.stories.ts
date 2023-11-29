@@ -100,7 +100,7 @@ const sampleMembers = itemsFactory(10, AccessItemType.Member);
 const sampleGroups = itemsFactory(6, AccessItemType.Group);
 
 const StandaloneAccessSelectorTemplate: Story<AccessSelectorComponent> = (
-  args: AccessSelectorComponent
+  args: AccessSelectorComponent,
 ) => ({
   props: {
     items: [],
@@ -126,7 +126,7 @@ const StandaloneAccessSelectorTemplate: Story<AccessSelectorComponent> = (
 });
 
 const DialogAccessSelectorTemplate: Story<AccessSelectorComponent> = (
-  args: AccessSelectorComponent
+  args: AccessSelectorComponent,
 ) => ({
   props: {
     items: [],
@@ -338,7 +338,7 @@ GroupMembersAccess.story = {
 const fb = new FormBuilder();
 
 const ReactiveFormAccessSelectorTemplate: Story<AccessSelectorComponent> = (
-  args: AccessSelectorComponent
+  args: AccessSelectorComponent,
 ) => ({
   props: {
     items: [],

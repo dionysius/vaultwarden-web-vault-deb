@@ -32,7 +32,7 @@ import { VaultFilterService } from "../../../services/vault-filter.service";
         "void",
         style({
           opacity: 0,
-        })
+        }),
       ),
       transition(
         "void => open",
@@ -40,8 +40,8 @@ import { VaultFilterService } from "../../../services/vault-filter.service";
           "100ms linear",
           style({
             opacity: 1,
-          })
-        )
+          }),
+        ),
       ),
       transition("* => void", animate("100ms linear", style({ opacity: 0 }))),
     ]),
@@ -87,7 +87,7 @@ export class VaultSelectComponent implements OnInit, OnDestroy {
     private overlay: Overlay,
     private viewContainerRef: ViewContainerRef,
     private platformUtilsService: PlatformUtilsService,
-    private organizationService: OrganizationService
+    private organizationService: OrganizationService,
   ) {}
 
   @HostListener("document:keydown.escape", ["$event"])
@@ -118,14 +118,14 @@ export class VaultSelectComponent implements OnInit, OnDestroy {
               this._selectedVault.next(this.i18nService.t(this.vaultFilterService.myVault));
             } else if (this.vaultFilterService.vaultFilter.selectedOrganizationId != null) {
               const selectedOrganization = organizations.find(
-                (o) => o.id === this.vaultFilterService.vaultFilter.selectedOrganizationId
+                (o) => o.id === this.vaultFilterService.vaultFilter.selectedOrganizationId,
               );
               this._selectedVault.next(selectedOrganization.name);
             } else {
               this._selectedVault.next(this.i18nService.t(this.vaultFilterService.allVaults));
             }
           }
-        })
+        }),
       )
       .pipe(takeUntil(this._destroy))
       .subscribe();
@@ -167,7 +167,7 @@ export class VaultSelectComponent implements OnInit, OnDestroy {
     merge(
       this.overlayRef.outsidePointerEvents(),
       this.overlayRef.backdropClick(),
-      this.overlayRef.detachments()
+      this.overlayRef.detachments(),
       // eslint-disable-next-line rxjs-angular/prefer-takeuntil
     ).subscribe(() => {
       this.close();
@@ -187,7 +187,7 @@ export class VaultSelectComponent implements OnInit, OnDestroy {
       this.platformUtilsService.showToast(
         "error",
         null,
-        this.i18nService.t("disabledOrganizationFilterError")
+        this.i18nService.t("disabledOrganizationFilterError"),
       );
     } else {
       this._selectedVault.next(organization.name);

@@ -65,7 +65,7 @@ export class Cipher extends Domain implements Decryptable<CipherView> {
         notes: null,
         key: null,
       },
-      ["id", "organizationId", "folderId"]
+      ["id", "organizationId", "folderId"],
     );
 
     this.type = obj.type;
@@ -138,7 +138,7 @@ export class Cipher extends Domain implements Decryptable<CipherView> {
         notes: null,
       },
       this.organizationId,
-      encKey
+      encKey,
     );
 
     switch (this.type) {

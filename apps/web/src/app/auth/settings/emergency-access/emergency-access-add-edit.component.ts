@@ -34,7 +34,7 @@ export class EmergencyAccessAddEditComponent implements OnInit {
     private emergencyAccessService: EmergencyAccessService,
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
-    private logService: LogService
+    private logService: LogService,
   ) {}
 
   async ngOnInit() {
@@ -54,7 +54,7 @@ export class EmergencyAccessAddEditComponent implements OnInit {
       this.title = this.i18nService.t("editEmergencyContact");
       try {
         const emergencyAccess = await this.emergencyAccessService.getEmergencyAccess(
-          this.emergencyAccessId
+          this.emergencyAccessId,
         );
         this.type = emergencyAccess.type;
         this.waitTime = emergencyAccess.waitTimeDays;
@@ -81,7 +81,7 @@ export class EmergencyAccessAddEditComponent implements OnInit {
       this.platformUtilsService.showToast(
         "success",
         null,
-        this.i18nService.t(this.editMode ? "editedUserId" : "invitedUsers", this.name)
+        this.i18nService.t(this.editMode ? "editedUserId" : "invitedUsers", this.name),
       );
       this.onSaved.emit();
     } catch (e) {

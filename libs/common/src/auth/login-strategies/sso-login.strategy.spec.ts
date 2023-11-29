@@ -89,7 +89,7 @@ describe("SsoLoginStrategy", () => {
       keyConnectorService,
       deviceTrustCryptoService,
       authRequestCryptoService,
-      i18nService
+      i18nService,
     );
     credentials = new SsoLoginCredentials(ssoCode, ssoCodeVerifier, ssoRedirectUrl, ssoOrgId);
   });
@@ -111,7 +111,7 @@ describe("SsoLoginStrategy", () => {
           provider: null,
           token: null,
         }),
-      })
+      }),
     );
   });
 
@@ -185,7 +185,7 @@ describe("SsoLoginStrategy", () => {
       // Arrange
       const idTokenResponse: IdentityTokenResponse = identityTokenResponseFactory(
         null,
-        userDecryptionOptsServerResponseWithTdeOption
+        userDecryptionOptsServerResponseWithTdeOption,
       );
 
       apiService.postIdentityToken.mockResolvedValue(idTokenResponse);
@@ -208,7 +208,7 @@ describe("SsoLoginStrategy", () => {
       // Arrange
       const idTokenResponse: IdentityTokenResponse = identityTokenResponseFactory(
         null,
-        userDecryptionOptsServerResponseWithTdeOption
+        userDecryptionOptsServerResponseWithTdeOption,
       );
       apiService.postIdentityToken.mockResolvedValue(idTokenResponse);
       // Set deviceKey to be null
@@ -248,7 +248,7 @@ describe("SsoLoginStrategy", () => {
       // Arrange
       const idTokenResponse: IdentityTokenResponse = identityTokenResponseFactory(
         null,
-        userDecryptionOptsServerResponseWithTdeOption
+        userDecryptionOptsServerResponseWithTdeOption,
       );
       apiService.postIdentityToken.mockResolvedValue(idTokenResponse);
       deviceTrustCryptoService.getDeviceKey.mockResolvedValue(mockDeviceKey);
@@ -275,7 +275,7 @@ describe("SsoLoginStrategy", () => {
 
     it("gets and sets the master key if Key Connector is enabled and the user doesn't have a master password", async () => {
       const masterKey = new SymmetricCryptoKey(
-        new Uint8Array(64).buffer as CsprngArray
+        new Uint8Array(64).buffer as CsprngArray,
       ) as MasterKey;
 
       apiService.postIdentityToken.mockResolvedValue(tokenResponse);
@@ -295,14 +295,14 @@ describe("SsoLoginStrategy", () => {
 
       expect(keyConnectorService.convertNewSsoUserToKeyConnector).toHaveBeenCalledWith(
         tokenResponse,
-        ssoOrgId
+        ssoOrgId,
       );
     });
 
     it("decrypts and sets the user key if Key Connector is enabled and the user doesn't have a master password", async () => {
       const userKey = new SymmetricCryptoKey(new Uint8Array(64).buffer as CsprngArray) as UserKey;
       const masterKey = new SymmetricCryptoKey(
-        new Uint8Array(64).buffer as CsprngArray
+        new Uint8Array(64).buffer as CsprngArray,
       ) as MasterKey;
 
       apiService.postIdentityToken.mockResolvedValue(tokenResponse);
@@ -326,7 +326,7 @@ describe("SsoLoginStrategy", () => {
 
     it("gets and sets the master key if Key Connector is enabled and the user doesn't have a master password", async () => {
       const masterKey = new SymmetricCryptoKey(
-        new Uint8Array(64).buffer as CsprngArray
+        new Uint8Array(64).buffer as CsprngArray,
       ) as MasterKey;
 
       apiService.postIdentityToken.mockResolvedValue(tokenResponse);
@@ -346,14 +346,14 @@ describe("SsoLoginStrategy", () => {
 
       expect(keyConnectorService.convertNewSsoUserToKeyConnector).toHaveBeenCalledWith(
         tokenResponse,
-        ssoOrgId
+        ssoOrgId,
       );
     });
 
     it("decrypts and sets the user key if Key Connector is enabled and the user doesn't have a master password", async () => {
       const userKey = new SymmetricCryptoKey(new Uint8Array(64).buffer as CsprngArray) as UserKey;
       const masterKey = new SymmetricCryptoKey(
-        new Uint8Array(64).buffer as CsprngArray
+        new Uint8Array(64).buffer as CsprngArray,
       ) as MasterKey;
 
       apiService.postIdentityToken.mockResolvedValue(tokenResponse);

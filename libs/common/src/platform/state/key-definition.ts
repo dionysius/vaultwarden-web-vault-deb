@@ -39,11 +39,11 @@ export class KeyDefinition<T> {
   constructor(
     readonly stateDefinition: StateDefinition,
     readonly key: string,
-    private readonly options: KeyDefinitionOptions<T>
+    private readonly options: KeyDefinitionOptions<T>,
   ) {
     if (options.deserializer == null) {
       throw new Error(
-        `'deserializer' is a required property on key ${stateDefinition.name} > ${key}`
+        `'deserializer' is a required property on key ${stateDefinition.name} > ${key}`,
       );
     }
   }
@@ -75,7 +75,7 @@ export class KeyDefinition<T> {
     stateDefinition: StateDefinition,
     key: string,
     // We have them provide options for the element of the array, depending on future options we add, this could get a little weird.
-    options: KeyDefinitionOptions<T> // The array helper forces  an initialValue of an empty array
+    options: KeyDefinitionOptions<T>, // The array helper forces  an initialValue of an empty array
   ) {
     return new KeyDefinition<T[]>(stateDefinition, key, {
       ...options,
@@ -107,7 +107,7 @@ export class KeyDefinition<T> {
     stateDefinition: StateDefinition,
     key: string,
     // We have them provide options for the value of the record, depending on future options we add, this could get a little weird.
-    options: KeyDefinitionOptions<T> // The array helper forces an initialValue of an empty record
+    options: KeyDefinitionOptions<T>, // The array helper forces an initialValue of an empty record
   ) {
     return new KeyDefinition<Record<TKey, T>>(stateDefinition, key, {
       ...options,

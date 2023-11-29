@@ -67,7 +67,7 @@ class DomElementVisibilityService implements domElementVisibilityServiceInterfac
   private getElementStyle(element: HTMLElement, styleProperty: string): string {
     if (!this.cachedComputedStyle) {
       this.cachedComputedStyle = (element.ownerDocument.defaultView || window).getComputedStyle(
-        element
+        element,
       );
     }
 
@@ -132,7 +132,7 @@ class DomElementVisibilityService implements domElementVisibilityServiceInterfac
    */
   private isElementOutsideViewportBounds(
     targetElement: HTMLElement,
-    targetElementBoundingClientRect: DOMRectReadOnly | null = null
+    targetElementBoundingClientRect: DOMRectReadOnly | null = null,
   ): boolean {
     const documentElement = targetElement.ownerDocument.documentElement;
     const documentElementWidth = documentElement.scrollWidth;
@@ -171,7 +171,7 @@ class DomElementVisibilityService implements domElementVisibilityServiceInterfac
    */
   private formFieldIsNotHiddenBehindAnotherElement(
     targetElement: FormFieldElement,
-    targetElementBoundingClientRect: DOMRectReadOnly | null = null
+    targetElementBoundingClientRect: DOMRectReadOnly | null = null,
   ): boolean {
     const elementBoundingClientRect =
       targetElementBoundingClientRect || targetElement.getBoundingClientRect();
@@ -180,7 +180,7 @@ class DomElementVisibilityService implements domElementVisibilityServiceInterfac
       elementRootNode instanceof ShadowRoot ? elementRootNode : targetElement.ownerDocument;
     const elementAtCenterPoint = rootElement.elementFromPoint(
       elementBoundingClientRect.left + elementBoundingClientRect.width / 2,
-      elementBoundingClientRect.top + elementBoundingClientRect.height / 2
+      elementBoundingClientRect.top + elementBoundingClientRect.height / 2,
     );
 
     if (elementAtCenterPoint === targetElement) {

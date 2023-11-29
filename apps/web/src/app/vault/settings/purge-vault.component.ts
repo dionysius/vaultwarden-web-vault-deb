@@ -26,7 +26,7 @@ export class PurgeVaultComponent {
     private userVerificationService: UserVerificationService,
     private router: Router,
     private logService: LogService,
-    private syncService: SyncService
+    private syncService: SyncService,
   ) {}
 
   async submit() {

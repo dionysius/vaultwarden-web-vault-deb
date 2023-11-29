@@ -16,7 +16,7 @@ export class AviraCsvImporter extends BaseImporter implements Importer {
       const cipher = this.initLoginCipher();
       cipher.name = this.getValueOrDefault(
         value.name,
-        this.getValueOrDefault(this.nameFromUrl(value.website), "--")
+        this.getValueOrDefault(this.nameFromUrl(value.website), "--"),
       );
       cipher.login.uris = this.makeUriArray(value.website);
       cipher.login.password = this.getValueOrDefault(value.password);

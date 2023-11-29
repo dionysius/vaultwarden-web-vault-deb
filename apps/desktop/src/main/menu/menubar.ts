@@ -51,7 +51,7 @@ export class Menubar {
     windowMain: WindowMain,
     webVaultUrl: string,
     appVersion: string,
-    updateRequest?: MenuUpdateRequest
+    updateRequest?: MenuUpdateRequest,
   ) {
     let isLocked = true;
     if (
@@ -74,7 +74,7 @@ export class Menubar {
         windowMain.win,
         updateRequest?.accounts,
         isLocked,
-        isLockable
+        isLockable,
       ),
       new EditMenu(i18nService, messagingService, isLocked),
       new ViewMenu(i18nService, messagingService, isLocked),
@@ -84,13 +84,13 @@ export class Menubar {
         webVaultUrl,
         windowMain.win,
         isLocked,
-        hasMasterPassword
+        hasMasterPassword,
       ),
       new WindowMenu(i18nService, messagingService, windowMain),
       new HelpMenu(
         i18nService,
         webVaultUrl,
-        new AboutMenu(i18nService, appVersion, windowMain.win, updaterMain)
+        new AboutMenu(i18nService, appVersion, windowMain.win, updaterMain),
       ),
     ];
 
@@ -104,7 +104,7 @@ export class Menubar {
             windowMain.win,
             updateRequest?.accounts,
             isLocked,
-            isLockable
+            isLockable,
           ),
         ],
         ...this.items,

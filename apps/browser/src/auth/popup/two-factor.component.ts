@@ -51,7 +51,7 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
     loginService: LoginService,
     configService: ConfigServiceAbstraction,
     private dialogService: DialogService,
-    @Inject(WINDOW) protected win: Window
+    @Inject(WINDOW) protected win: Window,
   ) {
     super(
       authService,
@@ -67,7 +67,7 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
       twoFactorService,
       appIdService,
       loginService,
-      configService
+      configService,
     );
     super.onSuccessfulLogin = async () => {
       syncService.fullSync(true);

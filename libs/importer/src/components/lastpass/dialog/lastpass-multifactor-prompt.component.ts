@@ -59,7 +59,7 @@ export class LastPassMultifactorPromptComponent {
 
   constructor(
     public dialogRef: DialogRef,
-    @Inject(DIALOG_DATA) protected data: LastPassMultifactorPromptData
+    @Inject(DIALOG_DATA) protected data: LastPassMultifactorPromptData,
   ) {}
 
   submit = () => {

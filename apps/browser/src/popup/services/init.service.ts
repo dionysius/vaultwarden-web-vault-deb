@@ -17,7 +17,7 @@ export class InitService {
     private stateService: StateServiceAbstraction,
     private logService: LogServiceAbstraction,
     private themingService: AbstractThemingService,
-    private configService: ConfigService
+    private configService: ConfigService,
   ) {}
 
   init() {

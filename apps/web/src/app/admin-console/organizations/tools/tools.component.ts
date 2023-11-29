@@ -18,7 +18,7 @@ export class ToolsComponent {
   constructor(
     private route: ActivatedRoute,
     private organizationService: OrganizationService,
-    private messagingService: MessagingService
+    private messagingService: MessagingService,
   ) {}
 
   ngOnInit() {

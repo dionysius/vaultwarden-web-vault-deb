@@ -17,12 +17,12 @@ export type DevicesApiServiceInitOptions = DevicesApiServiceFactoryOptions & Api
 
 export function devicesApiServiceFactory(
   cache: { devicesApiService?: DevicesApiServiceAbstraction } & CachedServices,
-  opts: DevicesApiServiceInitOptions
+  opts: DevicesApiServiceInitOptions,
 ): Promise<DevicesApiServiceAbstraction> {
   return factory(
     cache,
     "devicesApiService",
     opts,
-    async () => new DevicesApiServiceImplementation(await apiServiceFactory(cache, opts))
+    async () => new DevicesApiServiceImplementation(await apiServiceFactory(cache, opts)),
   );
 }

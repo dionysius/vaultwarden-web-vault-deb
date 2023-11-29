@@ -32,7 +32,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
     private platformUtilsService: PlatformUtilsService,
     private logService: LogService,
     private stateService: StateService,
-    private modalService: ModalService
+    private modalService: ModalService,
   ) {}
 
   async ngOnInit() {
@@ -55,7 +55,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
         modal.changeColor.pipe(takeUntil(this.destroy$)).subscribe(() => {
           modalOpened[0].close();
         });
-      }
+      },
     );
   }
 

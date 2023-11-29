@@ -5,7 +5,7 @@ import { AbstractStorageService } from "../../abstractions/storage.service";
 export async function getStoredValue<T>(
   key: string,
   storage: AbstractStorageService,
-  deserializer: (jsonValue: Jsonify<T>) => T
+  deserializer: (jsonValue: Jsonify<T>) => T,
 ) {
   if (storage.valuesRequireDeserialization) {
     const jsonValue = await storage.get<Jsonify<T>>(key);

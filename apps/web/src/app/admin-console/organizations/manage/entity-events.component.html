@@ -54,7 +54,7 @@
       </ng-container>
       <ng-template body let-rows$>
         <tr bitRow *ngFor="let r of rows$ | async">
-          <td bitCell>{{ r.date | date : "medium" }}</td>
+          <td bitCell>{{ r.date | date: "medium" }}</td>
           <td bitCell>
             <i
               class="tw-text-muted bwi bwi-lg {{ r.appIcon }}"

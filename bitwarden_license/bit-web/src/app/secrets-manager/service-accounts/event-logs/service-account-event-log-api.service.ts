@@ -14,14 +14,14 @@ export class ServiceAccountEventLogApiService {
     serviceAccountId: string,
     start: string,
     end: string,
-    token: string
+    token: string,
   ): Promise<ListResponse<EventResponse>> {
     const r = await this.apiService.send(
       "GET",
       this.addEventParameters("/sm/events/service-accounts/" + serviceAccountId, start, end, token),
       null,
       true,
-      true
+      true,
     );
     return new ListResponse(r, EventResponse);
   }

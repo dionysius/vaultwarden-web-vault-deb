@@ -10,6 +10,6 @@ export abstract class CipherFileUploadService {
     encFileName: EncString,
     encData: EncArrayBuffer,
     admin: boolean,
-    dataEncKey: [SymmetricCryptoKey, EncString]
+    dataEncKey: [SymmetricCryptoKey, EncString],
   ) => Promise<CipherResponse>;
 }

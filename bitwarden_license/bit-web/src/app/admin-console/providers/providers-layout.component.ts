@@ -13,7 +13,10 @@ export class ProvidersLayoutComponent {
   provider: Provider;
   private providerId: string;
 
-  constructor(private route: ActivatedRoute, private providerService: ProviderService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private providerService: ProviderService,
+  ) {}
 
   ngOnInit() {
     document.body.classList.remove("layout_frontend");

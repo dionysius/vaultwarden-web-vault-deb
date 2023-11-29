@@ -32,7 +32,7 @@ export class SecretsManagerSubscribeStandaloneComponent {
     private platformUtilsService: PlatformUtilsService,
     private i18nService: I18nService,
     private organizationApiService: OrganizationApiServiceAbstraction,
-    private organizationService: InternalOrganizationServiceAbstraction
+    private organizationService: InternalOrganizationServiceAbstraction,
   ) {}
 
   submit = async () => {
@@ -46,7 +46,7 @@ export class SecretsManagerSubscribeStandaloneComponent {
 
     const profileOrganization = await this.organizationApiService.subscribeToSecretsManager(
       this.organization.id,
-      request
+      request,
     );
     const organizationData = new OrganizationData(profileOrganization, {
       isMember: this.organization.isMember,
@@ -63,7 +63,7 @@ export class SecretsManagerSubscribeStandaloneComponent {
     this.platformUtilsService.showToast(
       "success",
       null,
-      this.i18nService.t("subscribedToSecretsManager")
+      this.i18nService.t("subscribedToSecretsManager"),
     );
 
     this.onSubscribe.emit();

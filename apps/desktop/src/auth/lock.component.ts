@@ -52,7 +52,7 @@ export class LockComponent extends BaseLockComponent {
     logService: LogService,
     dialogService: DialogService,
     deviceTrustCryptoService: DeviceTrustCryptoServiceAbstraction,
-    userVerificationService: UserVerificationService
+    userVerificationService: UserVerificationService,
   ) {
     super(
       router,
@@ -72,7 +72,7 @@ export class LockComponent extends BaseLockComponent {
       passwordStrengthService,
       dialogService,
       deviceTrustCryptoService,
-      userVerificationService
+      userVerificationService,
     );
   }
 

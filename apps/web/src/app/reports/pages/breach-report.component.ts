@@ -15,7 +15,10 @@ export class BreachReportComponent implements OnInit {
   breachedAccounts: BreachAccountResponse[] = [];
   formPromise: Promise<BreachAccountResponse[]>;
 
-  constructor(private auditService: AuditService, private stateService: StateService) {}
+  constructor(
+    private auditService: AuditService,
+    private stateService: StateService,
+  ) {}
 
   async ngOnInit() {
     this.username = await this.stateService.getEmail();

@@ -30,7 +30,7 @@ export class ActionButtonsComponent {
     private eventCollectionService: EventCollectionService,
     private totpService: TotpService,
     private stateService: StateService,
-    private passwordRepromptService: PasswordRepromptService
+    private passwordRepromptService: PasswordRepromptService,
   ) {}
 
   async ngOnInit() {
@@ -64,7 +64,7 @@ export class ActionButtonsComponent {
     this.platformUtilsService.showToast(
       "info",
       null,
-      this.i18nService.t("valueCopied", this.i18nService.t(typeI18nKey))
+      this.i18nService.t("valueCopied", this.i18nService.t(typeI18nKey)),
     );
 
     if (typeI18nKey === "password") {

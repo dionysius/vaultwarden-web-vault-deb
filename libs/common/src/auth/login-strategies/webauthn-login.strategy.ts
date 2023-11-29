@@ -35,13 +35,13 @@ export class WebAuthnLoginStrategy extends LoginStrategy {
       // decrypt prf encrypted private key
       const privateKey = await this.cryptoService.decryptToBytes(
         webAuthnPrfOption.encryptedPrivateKey,
-        this.credentials.prfKey
+        this.credentials.prfKey,
       );
 
       // decrypt user key with private key
       const userKey = await this.cryptoService.rsaDecrypt(
         webAuthnPrfOption.encryptedUserKey.encryptedString,
-        privateKey
+        privateKey,
       );
 
       if (userKey) {
@@ -52,7 +52,7 @@ export class WebAuthnLoginStrategy extends LoginStrategy {
 
   protected override async setPrivateKey(response: IdentityTokenResponse): Promise<void> {
     await this.cryptoService.setPrivateKey(
-      response.privateKey ?? (await this.createKeyPairForOldAccount())
+      response.privateKey ?? (await this.createKeyPairForOldAccount()),
     );
   }
 
@@ -66,7 +66,7 @@ export class WebAuthnLoginStrategy extends LoginStrategy {
     this.tokenRequest = new WebAuthnLoginTokenRequest(
       credentials.token,
       credentials.deviceResponse,
-      await this.buildDeviceRequest()
+      await this.buildDeviceRequest(),
     );
 
     const [authResult] = await this.startLogIn();

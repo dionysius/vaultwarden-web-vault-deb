@@ -46,7 +46,7 @@ export class OptionsComponent implements OnInit {
     private totpService: TotpService,
     i18nService: I18nService,
     private themingService: AbstractThemingService,
-    private settingsService: SettingsService
+    private settingsService: SettingsService,
   ) {
     this.themeOptions = [
       { name: i18nService.t("default"), value: ThemeType.System },
@@ -118,7 +118,7 @@ export class OptionsComponent implements OnInit {
 
   async updateChangedPasswordNotification() {
     await this.stateService.setDisableChangedPasswordNotification(
-      !this.enableChangedPasswordNotification
+      !this.enableChangedPasswordNotification,
     );
   }
 

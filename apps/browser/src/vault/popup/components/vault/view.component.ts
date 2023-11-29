@@ -95,7 +95,7 @@ export class ViewComponent extends BaseViewComponent {
     passwordRepromptService: PasswordRepromptService,
     logService: LogService,
     fileDownloadService: FileDownloadService,
-    dialogService: DialogService
+    dialogService: DialogService,
   ) {
     super(
       cipherService,
@@ -116,7 +116,7 @@ export class ViewComponent extends BaseViewComponent {
       logService,
       stateService,
       fileDownloadService,
-      dialogService
+      dialogService,
     );
   }
 
@@ -249,7 +249,7 @@ export class ViewComponent extends BaseViewComponent {
           this.platformUtilsService.showToast(
             "success",
             null,
-            this.i18nService.t("autoFillSuccessAndSavedUri")
+            this.i18nService.t("autoFillSuccessAndSavedUri"),
           );
           return;
         }
@@ -265,7 +265,7 @@ export class ViewComponent extends BaseViewComponent {
         this.platformUtilsService.showToast(
           "success",
           null,
-          this.i18nService.t("autoFillSuccessAndSavedUri")
+          this.i18nService.t("autoFillSuccessAndSavedUri"),
         );
         this.messagingService.send("editedCipher");
       } catch {

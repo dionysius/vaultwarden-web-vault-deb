@@ -27,6 +27,6 @@ export abstract class VaultFilterService {
   setOrganizationFilter: (organization: Organization) => void;
   buildTypeTree: (
     head: CipherTypeFilter,
-    array: CipherTypeFilter[]
+    array: CipherTypeFilter[],
   ) => Observable<TreeNode<CipherTypeFilter>>;
 }

@@ -75,7 +75,7 @@ export class VaultItemsComponent {
 
   async ngOnInit() {
     this.flexibleCollectionsEnabled = await this.configService.getFeatureFlag(
-      FeatureFlag.FlexibleCollections
+      FeatureFlag.FlexibleCollections,
     );
   }
 
@@ -179,7 +179,7 @@ export class VaultItemsComponent {
     this.editableItems = items.filter(
       (item) =>
         item.cipher !== undefined ||
-        (item.collection !== undefined && this.canDeleteCollection(item.collection))
+        (item.collection !== undefined && this.canDeleteCollection(item.collection)),
     );
     this.dataSource.data = items;
   }

@@ -22,7 +22,7 @@ describe("VaultFilter", () => {
         type: "all",
         icon: "",
       },
-      null
+      null,
     );
     const favoriteCiphersFilter = new TreeNode<CipherTypeFilter>(
       {
@@ -31,7 +31,7 @@ describe("VaultFilter", () => {
         type: "favorites",
         icon: "bwi-star",
       },
-      null
+      null,
     );
     const identityCiphersFilter = new TreeNode<CipherTypeFilter>(
       {
@@ -40,7 +40,7 @@ describe("VaultFilter", () => {
         type: CipherType.Identity,
         icon: "bwi-id-card",
       },
-      null
+      null,
     );
     const trashFilter = new TreeNode<CipherTypeFilter>(
       {
@@ -49,7 +49,7 @@ describe("VaultFilter", () => {
         type: "trash",
         icon: "bwi-trash",
       },
-      null
+      null,
     );
     describe("generic cipher", () => {
       it("should return true when no filter is applied", () => {
@@ -287,7 +287,7 @@ function createFilterFunction(options: Partial<VaultFilter> = {}) {
 }
 
 function createOrganizationFilterNode(
-  options: Partial<OrganizationFilter>
+  options: Partial<OrganizationFilter>,
 ): TreeNode<OrganizationFilter> {
   const org = new Organization() as OrganizationFilter;
   org.id = options.id;
@@ -305,7 +305,7 @@ function createFolderFilterNode(options: Partial<FolderFilter>): TreeNode<Folder
 }
 
 function createCollectionFilterNode(
-  options: Partial<CollectionFilter>
+  options: Partial<CollectionFilter>,
 ): TreeNode<CollectionFilter> {
   const collection = new CollectionView() as CollectionFilter;
   collection.id = options.id;

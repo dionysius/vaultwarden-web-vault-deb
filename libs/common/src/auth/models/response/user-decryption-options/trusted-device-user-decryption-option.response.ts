@@ -22,7 +22,7 @@ export class TrustedDeviceUserDecryptionOptionResponse extends BaseResponse {
 
     this.hasLoginApprovingDevice = this.getResponseProperty("HasLoginApprovingDevice");
     this.hasManageResetPasswordPermission = this.getResponseProperty(
-      "HasManageResetPasswordPermission"
+      "HasManageResetPasswordPermission",
     );
 
     if (response.EncryptedPrivateKey) {

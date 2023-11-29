@@ -69,7 +69,7 @@ export class AvatarComponent implements OnChanges, OnInit {
     const html = window.document.createElement("div").appendChild(svg).outerHTML;
     const svgHtml = window.btoa(unescape(encodeURIComponent(html)));
     this.src = this.sanitizer.bypassSecurityTrustResourceUrl(
-      "data:image/svg+xml;base64," + svgHtml
+      "data:image/svg+xml;base64," + svgHtml,
     );
   }
 
@@ -108,7 +108,7 @@ export class AvatarComponent implements OnChanges, OnInit {
     textTag.setAttribute(
       "font-family",
       '"Open Sans","Helvetica Neue",Helvetica,Arial,' +
-        'sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"'
+        'sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"',
     );
     textTag.textContent = character;
     textTag.style.fontWeight = this.svgFontWeight.toString();

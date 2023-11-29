@@ -26,7 +26,7 @@ export class AddEditCustomFieldsComponent implements OnChanges {
 
   constructor(
     private i18nService: I18nService,
-    private eventCollectionService: EventCollectionService
+    private eventCollectionService: EventCollectionService,
   ) {
     this.addFieldTypeOptions = [
       { name: i18nService.t("cfTypeText"), value: FieldType.Text },
@@ -78,7 +78,7 @@ export class AddEditCustomFieldsComponent implements OnChanges {
     if (this.editMode && f.showValue) {
       this.eventCollectionService.collect(
         EventType.Cipher_ClientToggledHiddenFieldVisible,
-        this.cipher.id
+        this.cipher.id,
       );
     }
   }
@@ -98,7 +98,7 @@ export class AddEditCustomFieldsComponent implements OnChanges {
 
     const options: any = [];
     this.cipher.linkedFieldOptions.forEach((linkedFieldOption, id) =>
-      options.push({ name: this.i18nService.t(linkedFieldOption.i18nKey), value: id })
+      options.push({ name: this.i18nService.t(linkedFieldOption.i18nKey), value: id }),
     );
     this.linkedFieldOptions = options.sort(Utils.getSortFunction(this.i18nService, "name"));
   }

@@ -88,7 +88,7 @@ describe("context-menu", () => {
           id: id ?? "1",
           type: CipherType.Login,
           viewPassword: viewPassword ?? true,
-        } as any)
+        } as any),
       );
       cipherView.login.username = username ?? "USERNAME";
       cipherView.login.password = password ?? "PASSWORD";
@@ -113,7 +113,7 @@ describe("context-menu", () => {
           username: "",
           totp: "",
           viewPassword: false,
-        })
+        }),
       );
 
       expect(createSpy).toHaveBeenCalledTimes(1);

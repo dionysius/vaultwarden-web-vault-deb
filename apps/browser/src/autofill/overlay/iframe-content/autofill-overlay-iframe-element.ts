@@ -6,7 +6,7 @@ class AutofillOverlayIframeElement extends HTMLElement {
     portName: string,
     initStyles: Partial<CSSStyleDeclaration>,
     iframeTitle: string,
-    ariaAlert?: string
+    ariaAlert?: string,
   ) {
     super();
 
@@ -14,7 +14,7 @@ class AutofillOverlayIframeElement extends HTMLElement {
     const autofillOverlayIframeService = new AutofillOverlayIframeService(
       iframePath,
       portName,
-      shadow
+      shadow,
     );
     autofillOverlayIframeService.initOverlayIframe(initStyles, iframeTitle, ariaAlert);
   }

@@ -17,12 +17,12 @@ export type TokenServiceInitOptions = TokenServiceFactoryOptions & StateServiceI
 
 export function tokenServiceFactory(
   cache: { tokenService?: AbstractTokenService } & CachedServices,
-  opts: TokenServiceInitOptions
+  opts: TokenServiceInitOptions,
 ): Promise<AbstractTokenService> {
   return factory(
     cache,
     "tokenService",
     opts,
-    async () => new TokenService(await stateServiceFactory(cache, opts))
+    async () => new TokenService(await stateServiceFactory(cache, opts)),
   );
 }

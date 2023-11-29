@@ -25,7 +25,7 @@ export class CipherReportComponent {
   constructor(
     private modalService: ModalService,
     protected passwordRepromptService: PasswordRepromptService,
-    protected organizationService: OrganizationService
+    protected organizationService: OrganizationService,
   ) {
     this.organizations$ = this.organizationService.organizations$;
   }
@@ -69,7 +69,7 @@ export class CipherReportComponent {
           modal.close();
           await this.load();
         });
-      }
+      },
     );
 
     return childComponent;

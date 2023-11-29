@@ -46,7 +46,7 @@ export class ServiceAccountsListComponent implements OnDestroy {
 
   constructor(
     private i18nService: I18nService,
-    private platformUtilsService: PlatformUtilsService
+    private platformUtilsService: PlatformUtilsService,
   ) {
     this.selection.changed
       .pipe(takeUntil(this.destroy$))
@@ -82,13 +82,13 @@ export class ServiceAccountsListComponent implements OnDestroy {
   bulkDeleteServiceAccounts() {
     if (this.selection.selected.length >= 1) {
       this.deleteServiceAccountsEvent.emit(
-        this.serviceAccounts.filter((sa) => this.selection.isSelected(sa.id))
+        this.serviceAccounts.filter((sa) => this.selection.isSelected(sa.id)),
       );
     } else {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
-        this.i18nService.t("nothingSelected")
+        this.i18nService.t("nothingSelected"),
       );
     }
   }

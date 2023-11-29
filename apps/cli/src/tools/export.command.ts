@@ -19,7 +19,7 @@ export class ExportCommand {
   constructor(
     private exportService: VaultExportServiceAbstraction,
     private policyService: PolicyService,
-    private eventCollectionService: EventCollectionService
+    private eventCollectionService: EventCollectionService,
   ) {}
 
   async run(options: program.OptionValues): Promise<Response> {
@@ -28,7 +28,7 @@ export class ExportCommand {
       (await this.policyService.policyAppliesToUser(PolicyType.DisablePersonalVaultExport))
     ) {
       return Response.badRequest(
-        "One or more organization policies prevents you from exporting your personal vault."
+        "One or more organization policies prevents you from exporting your personal vault.",
       );
     }
 
@@ -36,8 +36,8 @@ export class ExportCommand {
     if (!this.isSupportedExportFormat(format)) {
       return Response.badRequest(
         `'${format}' is not a supported export format. Supported formats: ${EXPORT_FORMATS.join(
-          ", "
-        )}.`
+          ", ",
+        )}.`,
       );
     }
 
@@ -76,7 +76,7 @@ export class ExportCommand {
   private async saveFile(
     exportContent: string,
     options: program.OptionValues,
-    format: ExportFormat
+    format: ExportFormat,
   ): Promise<Response> {
     try {
       const fileName = this.getFileName(format, options.organizationid != null ? "org" : null);

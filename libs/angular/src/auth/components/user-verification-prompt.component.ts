@@ -30,7 +30,7 @@ export class UserVerificationPromptComponent {
     protected userVerificationService: UserVerificationService,
     private formBuilder: FormBuilder,
     private platformUtilsService: PlatformUtilsService,
-    private i18nService: I18nService
+    private i18nService: I18nService,
   ) {}
 
   get secret() {

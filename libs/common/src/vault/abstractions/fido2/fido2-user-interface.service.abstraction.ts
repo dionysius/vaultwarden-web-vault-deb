@@ -51,7 +51,7 @@ export abstract class Fido2UserInterfaceService {
   newSession: (
     fallbackSupported: boolean,
     tab: chrome.tabs.Tab,
-    abortController?: AbortController
+    abortController?: AbortController,
   ) => Promise<Fido2UserInterfaceSession>;
 }
 
@@ -64,7 +64,7 @@ export abstract class Fido2UserInterfaceSession {
    * @returns The ID of the cipher that contains the credentials the user picked.
    */
   pickCredential: (
-    params: PickCredentialParams
+    params: PickCredentialParams,
   ) => Promise<{ cipherId: string; userVerified: boolean }>;
 
   /**
@@ -75,7 +75,7 @@ export abstract class Fido2UserInterfaceSession {
    * @returns The ID of the cipher where the new credential should be saved.
    */
   confirmNewCredential: (
-    params: NewCredentialParams
+    params: NewCredentialParams,
   ) => Promise<{ cipherId: string; userVerified: boolean }>;
 
   /**

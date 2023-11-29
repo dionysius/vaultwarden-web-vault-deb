@@ -66,12 +66,12 @@ export class VaultHeaderComponent {
     private dialogService: DialogService,
     private collectionAdminService: CollectionAdminService,
     private router: Router,
-    private configService: ConfigServiceAbstraction
+    private configService: ConfigServiceAbstraction,
   ) {}
 
   async ngOnInit() {
     this.flexibleCollectionsEnabled = await this.configService.getFeatureFlag(
-      FeatureFlag.FlexibleCollections
+      FeatureFlag.FlexibleCollections,
     );
   }
 
@@ -118,7 +118,7 @@ export class VaultHeaderComponent {
         this.organization.canEditSubscription
           ? "freeOrgMaxCollectionReachedManageBilling"
           : "freeOrgMaxCollectionReachedNoManageBilling",
-        this.organization.maxCollections
+        this.organization.maxCollections,
       ),
       type: "primary",
     };

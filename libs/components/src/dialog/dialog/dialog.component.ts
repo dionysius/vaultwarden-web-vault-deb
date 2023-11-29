@@ -32,7 +32,7 @@ export class DialogComponent {
 
   @HostBinding("class") get classes() {
     return ["tw-flex", "tw-flex-col", "tw-max-h-screen", "tw-w-screen", "tw-p-4"].concat(
-      this.width
+      this.width,
     );
   }
 

@@ -106,14 +106,14 @@ export class AccessPolicySelectorComponent implements ControlValueAccessor, OnIn
           m.icon = m.icon ?? ApItemEnumUtil.itemIcon(m.type);
           return m;
         }),
-        selected
+        selected,
       );
     }
   }
 
   constructor(
     private readonly formBuilder: FormBuilder,
-    private readonly i18nService: I18nService
+    private readonly i18nService: I18nService,
   ) {}
 
   /** Required for NG_VALUE_ACCESSOR */

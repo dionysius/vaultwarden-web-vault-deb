@@ -23,7 +23,7 @@ export class BaseLoginViaWebAuthnComponent implements OnInit {
     private router: Router,
     private logService: LogService,
     private validationService: ValidationService,
-    private i18nService: I18nService
+    private i18nService: I18nService,
   ) {}
 
   ngOnInit(): void {
@@ -50,7 +50,7 @@ export class BaseLoginViaWebAuthnComponent implements OnInit {
 
       if (authResult.requiresTwoFactor) {
         this.validationService.showError(
-          this.i18nService.t("twoFactorForPasskeysNotSupportedOnClientUpdateToLogIn")
+          this.i18nService.t("twoFactorForPasskeysNotSupportedOnClientUpdateToLogIn"),
         );
         this.currentState = "assertFailed";
       } else if (authResult.forcePasswordReset == ForceSetPasswordReason.AdminForcePasswordReset) {

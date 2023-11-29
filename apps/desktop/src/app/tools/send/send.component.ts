@@ -48,7 +48,7 @@ export class SendComponent extends BaseSendComponent implements OnInit, OnDestro
     private searchBarService: SearchBarService,
     logService: LogService,
     sendApiService: SendApiService,
-    dialogService: DialogService
+    dialogService: DialogService,
   ) {
     super(
       sendService,
@@ -60,7 +60,7 @@ export class SendComponent extends BaseSendComponent implements OnInit, OnDestro
       policyService,
       logService,
       sendApiService,
-      dialogService
+      dialogService,
     );
     // eslint-disable-next-line rxjs-angular/prefer-takeuntil
     this.searchBarService.searchText$.subscribe((searchText) => {

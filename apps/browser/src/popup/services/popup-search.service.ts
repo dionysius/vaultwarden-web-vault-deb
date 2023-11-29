@@ -6,7 +6,7 @@ export class PopupSearchService extends SearchService {
   constructor(
     private mainSearchService: SearchService,
     consoleLogService: ConsoleLogService,
-    i18nService: I18nService
+    i18nService: I18nService,
   ) {
     super(consoleLogService, i18nService);
   }

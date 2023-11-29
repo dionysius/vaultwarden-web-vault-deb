@@ -11,7 +11,7 @@ export class HasPremiumGuard implements CanActivate {
   constructor(
     private router: Router,
     private stateService: StateService,
-    private messagingService: MessagingService
+    private messagingService: MessagingService,
   ) {}
 
   async canActivate(route: ActivatedRouteSnapshot, routerState: RouterStateSnapshot) {

@@ -19,7 +19,7 @@ export class DownloadLicenseComponent {
   constructor(
     private fileDownloadService: FileDownloadService,
     private logService: LogService,
-    private organizationApiService: OrganizationApiServiceAbstraction
+    private organizationApiService: OrganizationApiServiceAbstraction,
   ) {}
 
   async submit() {
@@ -30,7 +30,7 @@ export class DownloadLicenseComponent {
     try {
       this.formPromise = this.organizationApiService.getLicense(
         this.organizationId,
-        this.installationId
+        this.installationId,
       );
       const license = await this.formPromise;
       const licenseString = JSON.stringify(license, null, 2);

@@ -14,7 +14,7 @@ import { ProductType } from "@bitwarden/common/enums";
 export function orgWithoutAdditionalSeatLimitReachedWithUpgradePathValidator(
   organization: Organization,
   allOrganizationUserEmails: string[],
-  errorMessage: string
+  errorMessage: string,
 ): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
     if (control.value === "" || !control.value) {
@@ -30,10 +30,10 @@ export function orgWithoutAdditionalSeatLimitReachedWithUpgradePathValidator(
               newEmailToAdd &&
               newEmailToAdd.trim() !== "" &&
               !allOrganizationUserEmails.some(
-                (existingEmail) => existingEmail === newEmailToAdd.trim()
-              )
-          )
-      )
+                (existingEmail) => existingEmail === newEmailToAdd.trim(),
+              ),
+          ),
+      ),
     );
 
     return organization.planProductType === ProductType.Free &&

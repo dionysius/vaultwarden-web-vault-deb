@@ -40,7 +40,7 @@ export class MasterPasswordPolicyComponent extends BasePolicyComponent {
   constructor(
     private formBuilder: FormBuilder,
     i18nService: I18nService,
-    private organizationService: OrganizationService
+    private organizationService: OrganizationService,
   ) {
     super();
 

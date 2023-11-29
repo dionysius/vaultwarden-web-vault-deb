@@ -451,7 +451,7 @@ export class OnePassword1PuxImporter extends BaseImporter implements Importer {
     field: FieldsEntity,
     fieldValue: string,
     cipher: CipherView,
-    valueKey: string
+    valueKey: string,
   ): boolean {
     if (this.isNullOrWhitespace(cipher.identity.firstName) && field.id === "firstname") {
       cipher.identity.firstName = fieldValue;

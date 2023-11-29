@@ -20,7 +20,7 @@ export class RecoverDeleteComponent {
     private apiService: ApiService,
     private platformUtilsService: PlatformUtilsService,
     private i18nService: I18nService,
-    private logService: LogService
+    private logService: LogService,
   ) {}
 
   async submit() {
@@ -32,7 +32,7 @@ export class RecoverDeleteComponent {
       this.platformUtilsService.showToast(
         "success",
         null,
-        this.i18nService.t("deleteRecoverEmailSent")
+        this.i18nService.t("deleteRecoverEmailSent"),
       );
       this.router.navigate(["/"]);
     } catch (e) {

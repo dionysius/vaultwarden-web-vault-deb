@@ -10,6 +10,6 @@ export abstract class DevicesServiceAbstraction {
     deviceIdentifier: string,
     devicePublicKeyEncryptedUserKey: string,
     userKeyEncryptedDevicePublicKey: string,
-    deviceKeyEncryptedDevicePrivateKey: string
+    deviceKeyEncryptedDevicePrivateKey: string,
   ) => Observable<DeviceView>;
 }

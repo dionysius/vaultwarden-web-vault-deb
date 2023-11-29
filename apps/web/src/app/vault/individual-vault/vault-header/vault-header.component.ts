@@ -59,11 +59,14 @@ export class VaultHeaderComponent {
   /** Emits an event when the delete collection button is clicked in the header */
   @Output() onDeleteCollection = new EventEmitter<void>();
 
-  constructor(private i18nService: I18nService, private configService: ConfigServiceAbstraction) {}
+  constructor(
+    private i18nService: I18nService,
+    private configService: ConfigServiceAbstraction,
+  ) {}
 
   async ngOnInit() {
     this.flexibleCollectionsEnabled = await this.configService.getFeatureFlag(
-      FeatureFlag.FlexibleCollections
+      FeatureFlag.FlexibleCollections,
     );
   }
 
@@ -141,7 +144,7 @@ export class VaultHeaderComponent {
 
     // Otherwise, check if we can edit the specified collection
     const organization = this.organizations.find(
-      (o) => o.id === this.collection?.node.organizationId
+      (o) => o.id === this.collection?.node.organizationId,
     );
     return this.collection.node.canEdit(organization);
   }
@@ -158,7 +161,7 @@ export class VaultHeaderComponent {
 
     // Otherwise, check if we can delete the specified collection
     const organization = this.organizations.find(
-      (o) => o.id === this.collection?.node.organizationId
+      (o) => o.id === this.collection?.node.organizationId,
     );
 
     return this.collection.node.canDelete(organization, this.flexibleCollectionsEnabled);

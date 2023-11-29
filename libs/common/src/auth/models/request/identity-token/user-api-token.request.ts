@@ -7,7 +7,7 @@ export class UserApiTokenRequest extends TokenRequest {
     public clientId: string,
     public clientSecret: string,
     protected twoFactor: TokenTwoFactorRequest,
-    device?: DeviceRequest
+    device?: DeviceRequest,
   ) {
     super(twoFactor, device);
   }

@@ -117,7 +117,7 @@ export class SettingsComponent implements OnInit {
     private themingService: AbstractThemingService,
     private settingsService: SettingsService,
     private dialogService: DialogService,
-    private userVerificationService: UserVerificationServiceAbstraction
+    private userVerificationService: UserVerificationServiceAbstraction,
   ) {
     const isMac = this.platformUtilsService.getDevice() === DeviceType.MacOsDesktop;
 
@@ -205,7 +205,7 @@ export class SettingsComponent implements OnInit {
     this.currentUserEmail = await this.stateService.getEmail();
 
     this.availableVaultTimeoutActions$ = this.refreshTimeoutSettings$.pipe(
-      switchMap(() => this.vaultTimeoutSettingsService.availableVaultTimeoutActions$())
+      switchMap(() => this.vaultTimeoutSettingsService.availableVaultTimeoutActions$()),
     );
 
     // Load timeout policy
@@ -227,7 +227,7 @@ export class SettingsComponent implements OnInit {
         } else {
           this.form.controls.vaultTimeoutAction.enable({ emitEvent: false });
         }
-      })
+      }),
     );
 
     // Load initial values
@@ -237,7 +237,7 @@ export class SettingsComponent implements OnInit {
     const initialValues = {
       vaultTimeout: await this.vaultTimeoutSettingsService.getVaultTimeout(),
       vaultTimeoutAction: await firstValueFrom(
-        this.vaultTimeoutSettingsService.vaultTimeoutAction$()
+        this.vaultTimeoutSettingsService.vaultTimeoutAction$(),
       ),
       pin: this.userHasPinSet,
       biometric: await this.vaultTimeoutSettingsService.isBiometricLockSet(),
@@ -283,7 +283,7 @@ export class SettingsComponent implements OnInit {
     this.refreshTimeoutSettings$
       .pipe(
         switchMap(() => this.vaultTimeoutSettingsService.vaultTimeoutAction$()),
-        takeUntil(this.destroy$)
+        takeUntil(this.destroy$),
       )
       .subscribe((action) => {
         this.form.controls.vaultTimeoutAction.setValue(action, { emitEvent: false });
@@ -296,7 +296,7 @@ export class SettingsComponent implements OnInit {
         concatMap(async (value) => {
           await this.saveVaultTimeout(value);
         }),
-        takeUntil(this.destroy$)
+        takeUntil(this.destroy$),
       )
       .subscribe();
 
@@ -305,7 +305,7 @@ export class SettingsComponent implements OnInit {
         concatMap(async (action) => {
           await this.saveVaultTimeoutAction(action);
         }),
-        takeUntil(this.destroy$)
+        takeUntil(this.destroy$),
       )
       .subscribe();
 
@@ -315,7 +315,7 @@ export class SettingsComponent implements OnInit {
           await this.updatePin(value);
           this.refreshTimeoutSettings$.next();
         }),
-        takeUntil(this.destroy$)
+        takeUntil(this.destroy$),
       )
       .subscribe();
 
@@ -325,7 +325,7 @@ export class SettingsComponent implements OnInit {
           await this.updateBiometric(enabled);
           this.refreshTimeoutSettings$.next();
         }),
-        takeUntil(this.destroy$)
+        takeUntil(this.destroy$),
       )
       .subscribe();
 
@@ -363,7 +363,7 @@ export class SettingsComponent implements OnInit {
       this.platformUtilsService.showToast(
         "error",
         null,
-        this.i18nService.t("vaultTimeoutTooLarge")
+        this.i18nService.t("vaultTimeoutTooLarge"),
       );
       return;
     }
@@ -372,7 +372,7 @@ export class SettingsComponent implements OnInit {
 
     await this.vaultTimeoutSettingsService.setVaultTimeoutOptions(
       newValue,
-      this.form.value.vaultTimeoutAction
+      this.form.value.vaultTimeoutAction,
     );
   }
 
@@ -396,14 +396,14 @@ export class SettingsComponent implements OnInit {
       this.platformUtilsService.showToast(
         "error",
         null,
-        this.i18nService.t("vaultTimeoutTooLarge")
+        this.i18nService.t("vaultTimeoutTooLarge"),
       );
       return;
     }
 
     await this.vaultTimeoutSettingsService.setVaultTimeoutOptions(
       this.form.value.vaultTimeout,
-      newValue
+      newValue,
     );
   }
 
@@ -573,7 +573,7 @@ export class SettingsComponent implements OnInit {
   async saveOpenAtLogin() {
     this.stateService.setOpenAtLogin(this.form.value.openAtLogin);
     this.messagingService.send(
-      this.form.value.openAtLogin ? "addOpenAtLogin" : "removeOpenAtLogin"
+      this.form.value.openAtLogin ? "addOpenAtLogin" : "removeOpenAtLogin",
     );
   }
 
@@ -617,7 +617,7 @@ export class SettingsComponent implements OnInit {
     this.messagingService.send(
       this.form.value.enableBrowserIntegration
         ? "enableBrowserIntegration"
-        : "disableBrowserIntegration"
+        : "disableBrowserIntegration",
     );
 
     if (!this.form.value.enableBrowserIntegration) {
@@ -628,7 +628,7 @@ export class SettingsComponent implements OnInit {
 
   async saveDdgBrowserIntegration() {
     await this.stateService.setEnableDuckDuckGoBrowserIntegration(
-      this.form.value.enableDuckDuckGoBrowserIntegration
+      this.form.value.enableDuckDuckGoBrowserIntegration,
     );
 
     if (!this.form.value.enableBrowserIntegration) {
@@ -638,13 +638,13 @@ export class SettingsComponent implements OnInit {
     this.messagingService.send(
       this.form.value.enableDuckDuckGoBrowserIntegration
         ? "enableDuckDuckGoBrowserIntegration"
-        : "disableDuckDuckGoBrowserIntegration"
+        : "disableDuckDuckGoBrowserIntegration",
     );
   }
 
   async saveBrowserIntegrationFingerprint() {
     await this.stateService.setEnableBrowserIntegrationFingerprint(
-      this.form.value.enableBrowserIntegrationFingerprint
+      this.form.value.enableBrowserIntegrationFingerprint,
     );
   }
 

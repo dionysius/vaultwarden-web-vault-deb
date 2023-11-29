@@ -52,7 +52,7 @@
               [appApiAction]="k.removePromise"
             >
               <i class="bwi bwi-li bwi-key"></i>
-              <strong *ngIf="!k.configured || !k.name">{{ "webAuthnkeyX" | i18n : i + 1 }}</strong>
+              <strong *ngIf="!k.configured || !k.name">{{ "webAuthnkeyX" | i18n: i + 1 }}</strong>
               <strong *ngIf="k.configured && k.name">{{ k.name }}</strong>
               <ng-container *ngIf="k.configured && !$any(removeKeyBtn).loading">
                 <ng-container *ngIf="k.migrated">

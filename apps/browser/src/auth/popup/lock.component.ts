@@ -56,7 +56,7 @@ export class LockComponent extends BaseLockComponent {
     dialogService: DialogService,
     deviceTrustCryptoService: DeviceTrustCryptoServiceAbstraction,
     userVerificationService: UserVerificationService,
-    private routerService: BrowserRouterService
+    private routerService: BrowserRouterService,
   ) {
     super(
       router,
@@ -76,7 +76,7 @@ export class LockComponent extends BaseLockComponent {
       passwordStrengthService,
       dialogService,
       deviceTrustCryptoService,
-      userVerificationService
+      userVerificationService,
     );
     this.successRoute = "/tabs/current";
     this.isInitialLockScreen = (window as any).previousPopupUrl == null;

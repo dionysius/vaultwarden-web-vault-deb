@@ -5,6 +5,6 @@ export abstract class EventCollectionService {
     eventType: EventType,
     cipherId?: string,
     uploadImmediately?: boolean,
-    organizationId?: string
+    organizationId?: string,
   ) => Promise<any>;
 }

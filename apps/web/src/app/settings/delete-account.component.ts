@@ -23,7 +23,7 @@ export class DeleteAccountComponent {
     private platformUtilsService: PlatformUtilsService,
     private formBuilder: FormBuilder,
     private accountApiService: AccountApiService,
-    private logService: LogService
+    private logService: LogService,
   ) {}
 
   async submit() {
@@ -34,7 +34,7 @@ export class DeleteAccountComponent {
       this.platformUtilsService.showToast(
         "success",
         this.i18nService.t("accountDeleted"),
-        this.i18nService.t("accountDeletedDesc")
+        this.i18nService.t("accountDeletedDesc"),
       );
     } catch (e) {
       this.logService.error(e);

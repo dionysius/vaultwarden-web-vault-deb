@@ -3,7 +3,7 @@
 <table class="table mb-2" *ngIf="invoices && invoices.length">
   <tbody>
     <tr *ngFor="let i of invoices">
-      <td>{{ i.date | date : "mediumDate" }}</td>
+      <td>{{ i.date | date: "mediumDate" }}</td>
       <td>
         <a
           href="{{ i.pdfUrl }}"
@@ -15,10 +15,10 @@
           <i class="bwi bwi-file-pdf" aria-hidden="true"></i
         ></a>
         <a href="{{ i.url }}" target="_blank" rel="noopener" title="{{ 'viewInvoice' | i18n }}">
-          {{ "invoiceNumber" | i18n : i.number }}</a
+          {{ "invoiceNumber" | i18n: i.number }}</a
         >
       </td>
-      <td>{{ i.amount | currency : "$" }}</td>
+      <td>{{ i.amount | currency: "$" }}</td>
       <td>
         <span *ngIf="i.paid">
           <i class="bwi bwi-check text-success" aria-hidden="true"></i>
@@ -37,7 +37,7 @@
 <table class="table mb-2" *ngIf="transactions && transactions.length">
   <tbody>
     <tr *ngFor="let t of transactions">
-      <td>{{ t.createdDate | date : "mediumDate" }}</td>
+      <td>{{ t.createdDate | date: "mediumDate" }}</td>
       <td>
         <span *ngIf="t.type === transactionType.Charge || t.type === transactionType.Credit">
           {{ "chargeNoun" | i18n }}
@@ -57,9 +57,9 @@
         [ngClass]="{ 'text-strike': t.refunded }"
         title="{{ (t.refunded ? 'refunded' : '') | i18n }}"
       >
-        {{ t.amount | currency : "$" }}
+        {{ t.amount | currency: "$" }}
       </td>
     </tr>
   </tbody>
 </table>
-<small class="text-muted">* {{ "chargesStatement" | i18n : "BITWARDEN" }}</small>
+<small class="text-muted">* {{ "chargesStatement" | i18n: "BITWARDEN" }}</small>

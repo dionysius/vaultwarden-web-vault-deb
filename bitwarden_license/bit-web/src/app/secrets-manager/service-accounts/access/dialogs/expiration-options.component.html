@@ -4,7 +4,7 @@
     <select bitInput formControlName="expires">
       <option ngValue="never">{{ "never" | i18n }}</option>
       <option *ngFor="let day of expirationDayOptions" [ngValue]="day">
-        {{ "days" | i18n : day }}
+        {{ "days" | i18n: day }}
       </option>
       <option ngValue="custom">{{ "custom" | i18n }}</option>
     </select>
@@ -14,7 +14,7 @@
     <input
       bitInput
       type="datetime-local"
-      [min]="currentDate | date : 'YYYY-MM-ddThh:mm'"
+      [min]="currentDate | date: 'YYYY-MM-ddThh:mm'"
       formControlName="expireDateTime"
     />
   </bit-form-field>

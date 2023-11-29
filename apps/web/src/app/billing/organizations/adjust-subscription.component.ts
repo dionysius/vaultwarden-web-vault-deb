@@ -27,7 +27,7 @@ export class AdjustSubscription {
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
     private logService: LogService,
-    private organizationApiService: OrganizationApiServiceAbstraction
+    private organizationApiService: OrganizationApiServiceAbstraction,
   ) {}
 
   ngOnInit() {
@@ -40,11 +40,11 @@ export class AdjustSubscription {
     try {
       const request = new OrganizationSubscriptionUpdateRequest(
         this.additionalSeatCount,
-        this.newMaxSeats
+        this.newMaxSeats,
       );
       this.formPromise = this.organizationApiService.updatePasswordManagerSeats(
         this.organizationId,
-        request
+        request,
       );
 
       await this.formPromise;
@@ -52,7 +52,7 @@ export class AdjustSubscription {
       this.platformUtilsService.showToast(
         "success",
         null,
-        this.i18nService.t("subscriptionUpdated")
+        this.i18nService.t("subscriptionUpdated"),
       );
     } catch (e) {
       this.logService.error(e);

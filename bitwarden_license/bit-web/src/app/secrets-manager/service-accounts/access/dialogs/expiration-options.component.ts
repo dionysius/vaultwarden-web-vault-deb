@@ -52,7 +52,10 @@ export class ExpirationOptionsComponent
     expireDateTime: new FormControl("", [Validators.required, this.expiresInFutureValidator()]),
   });
 
-  constructor(private datePipe: DatePipe, private i18nService: I18nService) {}
+  constructor(
+    private datePipe: DatePipe,
+    private i18nService: I18nService,
+  ) {}
 
   async ngOnInit() {
     this.form.valueChanges.pipe(takeUntil(this.destroy$)).subscribe(() => {

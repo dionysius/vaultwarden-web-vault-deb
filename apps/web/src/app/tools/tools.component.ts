@@ -10,7 +10,10 @@ import { StateService } from "@bitwarden/common/platform/abstractions/state.serv
 export class ToolsComponent implements OnInit {
   canAccessPremium = false;
 
-  constructor(private stateService: StateService, private messagingService: MessagingService) {}
+  constructor(
+    private stateService: StateService,
+    private messagingService: MessagingService,
+  ) {}
 
   async ngOnInit() {
     this.canAccessPremium = await this.stateService.getCanAccessPremium();

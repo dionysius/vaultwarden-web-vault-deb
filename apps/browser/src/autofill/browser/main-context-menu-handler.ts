@@ -46,7 +46,7 @@ export class MainContextMenuHandler {
   constructor(
     private stateService: BrowserStateService,
     private i18nService: I18nService,
-    private logService: LogService
+    private logService: LogService,
   ) {
     if (chrome.contextMenus) {
       this.create = (options) => {
@@ -89,7 +89,7 @@ export class MainContextMenuHandler {
     return new MainContextMenuHandler(
       await stateServiceFactory(cachedServices, serviceOptions),
       await i18nServiceFactory(cachedServices, serviceOptions),
-      await logServiceFactory(cachedServices, serviceOptions)
+      await logServiceFactory(cachedServices, serviceOptions),
     );
   }
 
@@ -274,7 +274,7 @@ export class MainContextMenuHandler {
       const authed = await this.stateService.getIsAuthenticated();
       await this.loadOptions(
         this.i18nService.t(authed ? "unlockVaultMenu" : "loginToVaultMenu"),
-        NOOP_COMMAND_SUFFIX
+        NOOP_COMMAND_SUFFIX,
       );
     }
   }

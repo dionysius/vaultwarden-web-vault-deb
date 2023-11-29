@@ -18,7 +18,7 @@ export class OrgBillingHistoryViewComponent implements OnInit, OnDestroy {
 
   constructor(
     private organizationApiService: OrganizationApiServiceAbstraction,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
   ) {}
 
   async ngOnInit() {
@@ -29,7 +29,7 @@ export class OrgBillingHistoryViewComponent implements OnInit, OnDestroy {
           await this.load();
           this.firstLoaded = true;
         }),
-        takeUntil(this.destroy$)
+        takeUntil(this.destroy$),
       )
       .subscribe();
   }

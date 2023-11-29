@@ -5,7 +5,7 @@ export class RestClient {
   async get(
     endpoint: string,
     headers: Map<string, string> = null,
-    cookies: Map<string, string> = null
+    cookies: Map<string, string> = null,
   ): Promise<Response> {
     const requestInit: RequestInit = {
       method: "GET",
@@ -21,7 +21,7 @@ export class RestClient {
     endpoint: string,
     parameters: Map<string, any> = null,
     headers: Map<string, string> = null,
-    cookies: Map<string, string> = null
+    cookies: Map<string, string> = null,
   ): Promise<Response> {
     const setBody = (requestInit: RequestInit, headerMap: Map<string, string>) => {
       if (parameters != null && parameters.size > 0) {
@@ -39,7 +39,7 @@ export class RestClient {
     endpoint: string,
     body: any,
     headers: Map<string, string> = null,
-    cookies: Map<string, string> = null
+    cookies: Map<string, string> = null,
   ): Promise<Response> {
     const setBody = (requestInit: RequestInit, headerMap: Map<string, string>) => {
       if (body != null) {
@@ -54,7 +54,7 @@ export class RestClient {
     endpoint: string,
     setBody: (requestInit: RequestInit, headers: Map<string, string>) => void,
     headers: Map<string, string> = null,
-    cookies: Map<string, string> = null
+    cookies: Map<string, string> = null,
   ) {
     const requestInit: RequestInit = {
       method: "POST",
@@ -73,7 +73,7 @@ export class RestClient {
   private setHeaders(
     requestInit: RequestInit,
     headers: Map<string, string> = null,
-    cookies: Map<string, string> = null
+    cookies: Map<string, string> = null,
   ) {
     const requestHeaders = new Headers();
     let setHeaders = false;

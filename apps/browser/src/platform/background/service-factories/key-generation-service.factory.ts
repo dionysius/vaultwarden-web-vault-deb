@@ -13,12 +13,12 @@ export type KeyGenerationServiceInitOptions = KeyGenerationServiceFactoryOptions
 
 export function keyGenerationServiceFactory(
   cache: { keyGenerationService?: KeyGenerationService } & CachedServices,
-  opts: KeyGenerationServiceInitOptions
+  opts: KeyGenerationServiceInitOptions,
 ): Promise<KeyGenerationService> {
   return factory(
     cache,
     "keyGenerationService",
     opts,
-    async () => new KeyGenerationService(await cryptoFunctionServiceFactory(cache, opts))
+    async () => new KeyGenerationService(await cryptoFunctionServiceFactory(cache, opts)),
   );
 }

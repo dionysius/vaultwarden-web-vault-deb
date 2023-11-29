@@ -21,7 +21,7 @@ describe("state", () => {
             userId: {},
           },
         },
-        Account.fromJSON
+        Account.fromJSON,
       );
 
       expect(state.accounts["userId"]).toBeInstanceOf(Account);

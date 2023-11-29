@@ -23,14 +23,14 @@ export class EditCommand {
     private folderService: FolderService,
     private cryptoService: CryptoService,
     private apiService: ApiService,
-    private folderApiService: FolderApiServiceAbstraction
+    private folderApiService: FolderApiServiceAbstraction,
   ) {}
 
   async run(
     object: string,
     id: string,
     requestJson: any,
-    cmdOptions: Record<string, any>
+    cmdOptions: Record<string, any>,
   ): Promise<Response> {
     if (process.env.BW_SERVE !== "true" && (requestJson == null || requestJson === "")) {
       requestJson = await CliUtils.readStdin();
@@ -78,7 +78,7 @@ export class EditCommand {
     }
 
     let cipherView = await cipher.decrypt(
-      await this.cipherService.getKeyForCipherKeyDecryption(cipher)
+      await this.cipherService.getKeyForCipherKeyDecryption(cipher),
     );
     if (cipherView.isDeleted) {
       return Response.badRequest("You may not edit a deleted item. Use the restore command first.");
@@ -89,7 +89,7 @@ export class EditCommand {
       await this.cipherService.updateWithServer(encCipher);
       const updatedCipher = await this.cipherService.get(cipher.id);
       const decCipher = await updatedCipher.decrypt(
-        await this.cipherService.getKeyForCipherKeyDecryption(updatedCipher)
+        await this.cipherService.getKeyForCipherKeyDecryption(updatedCipher),
       );
       const res = new CipherResponse(decCipher);
       return Response.success(res);
@@ -105,7 +105,7 @@ export class EditCommand {
     }
     if (cipher.organizationId == null) {
       return Response.badRequest(
-        "Item does not belong to an organization. Consider moving it first."
+        "Item does not belong to an organization. Consider moving it first.",
       );
     }
 
@@ -114,7 +114,7 @@ export class EditCommand {
       await this.cipherService.saveCollectionsWithServer(cipher);
       const updatedCipher = await this.cipherService.get(cipher.id);
       const decCipher = await updatedCipher.decrypt(
-        await this.cipherService.getKeyForCipherKeyDecryption(updatedCipher)
+        await this.cipherService.getKeyForCipherKeyDecryption(updatedCipher),
       );
       const res = new CipherResponse(decCipher);
       return Response.success(res);
@@ -146,7 +146,7 @@ export class EditCommand {
   private async editOrganizationCollection(
     id: string,
     req: OrganizationCollectionRequest,
-    options: Options
+    options: Options,
   ) {
     if (options.organizationId == null || options.organizationId === "") {
       return Response.badRequest("`organizationid` option is required.");
@@ -170,7 +170,7 @@ export class EditCommand {
         req.groups == null
           ? null
           : req.groups.map(
-              (g) => new SelectionReadOnlyRequest(g.id, g.readOnly, g.hidePasswords, g.manage)
+              (g) => new SelectionReadOnlyRequest(g.id, g.readOnly, g.hidePasswords, g.manage),
             );
       const request = new CollectionRequest();
       request.name = (await this.cryptoService.encrypt(req.name, orgKey)).encryptedString;

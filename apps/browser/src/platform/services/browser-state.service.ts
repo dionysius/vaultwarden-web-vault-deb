@@ -44,7 +44,7 @@ export class BrowserStateService
     logService: LogService,
     stateFactory: StateFactory<GlobalState, Account>,
     accountService: AccountService,
-    useAccountCache = true
+    useAccountCache = true,
   ) {
     super(
       storageService,
@@ -53,7 +53,7 @@ export class BrowserStateService
       logService,
       stateFactory,
       accountService,
-      useAccountCache
+      useAccountCache,
     );
 
     // TODO: This is a hack to fix having a disk cache on both the popup and
@@ -88,7 +88,7 @@ export class BrowserStateService
   }
 
   async getBrowserGroupingComponentState(
-    options?: StorageOptions
+    options?: StorageOptions,
   ): Promise<BrowserGroupingsComponentState> {
     return (
       await this.getAccount(this.reconcileOptions(options, await this.defaultInMemoryOptions()))
@@ -97,20 +97,20 @@ export class BrowserStateService
 
   async setBrowserGroupingComponentState(
     value: BrowserGroupingsComponentState,
-    options?: StorageOptions
+    options?: StorageOptions,
   ): Promise<void> {
     const account = await this.getAccount(
-      this.reconcileOptions(options, await this.defaultInMemoryOptions())
+      this.reconcileOptions(options, await this.defaultInMemoryOptions()),
     );
     account.groupings = value;
     await this.saveAccount(
       account,
-      this.reconcileOptions(options, await this.defaultInMemoryOptions())
+      this.reconcileOptions(options, await this.defaultInMemoryOptions()),
     );
   }
 
   async getBrowserVaultItemsComponentState(
-    options?: StorageOptions
+    options?: StorageOptions,
   ): Promise<BrowserComponentState> {
     return (
       await this.getAccount(this.reconcileOptions(options, await this.defaultInMemoryOptions()))
@@ -119,15 +119,15 @@ export class BrowserStateService
 
   async setBrowserVaultItemsComponentState(
     value: BrowserComponentState,
-    options?: StorageOptions
+    options?: StorageOptions,
   ): Promise<void> {
     const account = await this.getAccount(
-      this.reconcileOptions(options, await this.defaultInMemoryOptions())
+      this.reconcileOptions(options, await this.defaultInMemoryOptions()),
     );
     account.ciphers = value;
     await this.saveAccount(
       account,
-      this.reconcileOptions(options, await this.defaultInMemoryOptions())
+      this.reconcileOptions(options, await this.defaultInMemoryOptions()),
     );
   }
 
@@ -139,15 +139,15 @@ export class BrowserStateService
 
   async setBrowserSendComponentState(
     value: BrowserSendComponentState,
-    options?: StorageOptions
+    options?: StorageOptions,
   ): Promise<void> {
     const account = await this.getAccount(
-      this.reconcileOptions(options, await this.defaultInMemoryOptions())
+      this.reconcileOptions(options, await this.defaultInMemoryOptions()),
     );
     account.send = value;
     await this.saveAccount(
       account,
-      this.reconcileOptions(options, await this.defaultInMemoryOptions())
+      this.reconcileOptions(options, await this.defaultInMemoryOptions()),
     );
   }
 
@@ -159,15 +159,15 @@ export class BrowserStateService
 
   async setBrowserSendTypeComponentState(
     value: BrowserComponentState,
-    options?: StorageOptions
+    options?: StorageOptions,
   ): Promise<void> {
     const account = await this.getAccount(
-      this.reconcileOptions(options, await this.defaultInMemoryOptions())
+      this.reconcileOptions(options, await this.defaultInMemoryOptions()),
     );
     account.sendType = value;
     await this.saveAccount(
       account,
-      this.reconcileOptions(options, await this.defaultInMemoryOptions())
+      this.reconcileOptions(options, await this.defaultInMemoryOptions()),
     );
   }
 
@@ -175,7 +175,7 @@ export class BrowserStateService
   // to delete the cache in the constructor above.
   protected override async saveAccountToDisk(
     account: Account,
-    options: StorageOptions
+    options: StorageOptions,
   ): Promise<void> {
     const storageLocation = options.useSecureStorage
       ? this.secureStorageService

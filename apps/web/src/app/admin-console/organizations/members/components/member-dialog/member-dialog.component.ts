@@ -71,7 +71,7 @@ export enum MemberDialogResult {
 export class MemberDialogComponent implements OnInit, OnDestroy {
   protected flexibleCollectionsEnabled$ = this.configService.getFeatureFlag$(
     FeatureFlag.FlexibleCollections,
-    false
+    false,
   );
 
   loading = true;
@@ -145,7 +145,7 @@ export class MemberDialogComponent implements OnInit, OnDestroy {
     private userService: UserAdminService,
     private organizationUserService: OrganizationUserService,
     private dialogService: DialogService,
-    private configService: ConfigServiceAbstraction
+    private configService: ConfigServiceAbstraction,
   ) {}
 
   async ngOnInit() {
@@ -154,7 +154,7 @@ export class MemberDialogComponent implements OnInit, OnDestroy {
     this.title = this.i18nService.t(this.editMode ? "editMember" : "inviteMember");
 
     const organization$ = of(this.organizationService.get(this.params.organizationId)).pipe(
-      shareReplay({ refCount: true, bufferSize: 1 })
+      shareReplay({ refCount: true, bufferSize: 1 }),
     );
     const groups$ = organization$.pipe(
       switchMap((organization) => {
@@ -163,7 +163,7 @@ export class MemberDialogComponent implements OnInit, OnDestroy {
         }
 
         return this.groupService.getAll(this.params.organizationId);
-      })
+      }),
     );
 
     combineLatest({
@@ -186,12 +186,12 @@ export class MemberDialogComponent implements OnInit, OnDestroy {
           orgWithoutAdditionalSeatLimitReachedWithUpgradePathValidator(
             this.organization,
             this.params.allOrganizationUserEmails,
-            this.i18nService.t("subscriptionFreePlan", organization.seats)
+            this.i18nService.t("subscriptionFreePlan", organization.seats),
           ),
           orgWithoutAdditionalSeatLimitReachedWithoutUpgradePathValidator(
             this.organization,
             this.params.allOrganizationUserEmails,
-            this.i18nService.t("subscriptionFamiliesPlan", organization.seats)
+            this.i18nService.t("subscriptionFamiliesPlan", organization.seats),
           ),
         ];
 
@@ -200,11 +200,11 @@ export class MemberDialogComponent implements OnInit, OnDestroy {
         emailsControl.updateValueAndValidity();
 
         this.collectionAccessItems = [].concat(
-          collections.map((c) => mapCollectionToAccessItemView(c))
+          collections.map((c) => mapCollectionToAccessItemView(c)),
         );
 
         this.groupAccessItems = [].concat(
-          groups.map<AccessItemView>((g) => mapGroupToAccessItemView(g))
+          groups.map<AccessItemView>((g) => mapGroupToAccessItemView(g)),
         );
 
         if (this.params.organizationUserId) {
@@ -252,13 +252,13 @@ export class MemberDialogComponent implements OnInit, OnDestroy {
               group.collections.map((accessSelection) => {
                 const collection = collections.find((c) => c.id === accessSelection.id);
                 return { group, collection, accessSelection };
-              })
+              }),
             );
 
           this.collectionAccessItems = this.collectionAccessItems.concat(
             collectionsFromGroups.map(({ collection, accessSelection, group }) =>
-              mapCollectionToAccessItemView(collection, accessSelection, group)
-            )
+              mapCollectionToAccessItemView(collection, accessSelection, group),
+            ),
           );
 
           const accessSelections = mapToAccessSelections(userDetails);
@@ -328,7 +328,7 @@ export class MemberDialogComponent implements OnInit, OnDestroy {
       this.platformUtilsService.showToast(
         "info",
         null,
-        this.i18nService.t("accountRecoveryManageUsers")
+        this.i18nService.t("accountRecoveryManageUsers"),
       );
     }
   }
@@ -341,7 +341,7 @@ export class MemberDialogComponent implements OnInit, OnDestroy {
         this.platformUtilsService.showToast(
           "error",
           null,
-          this.i18nService.t("fieldOnTabRequiresAttention", this.i18nService.t("role"))
+          this.i18nService.t("fieldOnTabRequiresAttention", this.i18nService.t("role")),
         );
       }
       return;
@@ -351,7 +351,7 @@ export class MemberDialogComponent implements OnInit, OnDestroy {
       this.platformUtilsService.showToast(
         "error",
         null,
-        this.i18nService.t("customNonEnterpriseError")
+        this.i18nService.t("customNonEnterpriseError"),
       );
       return;
     }
@@ -363,7 +363,7 @@ export class MemberDialogComponent implements OnInit, OnDestroy {
     userView.type = this.formGroup.value.type;
     userView.permissions = this.setRequestPermissions(
       userView.permissions ?? new PermissionsApi(),
-      userView.type !== OrganizationUserType.Custom
+      userView.type !== OrganizationUserType.Custom,
     );
     userView.collections = this.formGroup.value.access
       .filter((v) => v.type === AccessItemType.Collection)
@@ -399,7 +399,7 @@ export class MemberDialogComponent implements OnInit, OnDestroy {
     this.platformUtilsService.showToast(
       "success",
       null,
-      this.i18nService.t(this.editMode ? "editedUserId" : "invitedUsers", this.params.name)
+      this.i18nService.t(this.editMode ? "editedUserId" : "invitedUsers", this.params.name),
     );
     this.close(MemberDialogResult.Saved);
   };
@@ -433,13 +433,13 @@ export class MemberDialogComponent implements OnInit, OnDestroy {
 
     await this.organizationUserService.deleteOrganizationUser(
       this.params.organizationId,
-      this.params.organizationUserId
+      this.params.organizationUserId,
     );
 
     this.platformUtilsService.showToast(
       "success",
       null,
-      this.i18nService.t("removedUserId", this.params.name)
+      this.i18nService.t("removedUserId", this.params.name),
     );
     this.close(MemberDialogResult.Deleted);
   };
@@ -470,13 +470,13 @@ export class MemberDialogComponent implements OnInit, OnDestroy {
 
     await this.organizationUserService.revokeOrganizationUser(
       this.params.organizationId,
-      this.params.organizationUserId
+      this.params.organizationUserId,
     );
 
     this.platformUtilsService.showToast(
       "success",
       null,
-      this.i18nService.t("revokedUserId", this.params.name)
+      this.i18nService.t("revokedUserId", this.params.name),
     );
     this.isRevoked = true;
     this.close(MemberDialogResult.Revoked);
@@ -489,13 +489,13 @@ export class MemberDialogComponent implements OnInit, OnDestroy {
 
     await this.organizationUserService.restoreOrganizationUser(
       this.params.organizationId,
-      this.params.organizationUserId
+      this.params.organizationUserId,
     );
 
     this.platformUtilsService.showToast(
       "success",
       null,
-      this.i18nService.t("restoredUserId", this.params.name)
+      this.i18nService.t("restoredUserId", this.params.name),
     );
     this.isRevoked = false;
     this.close(MemberDialogResult.Restored);
@@ -533,7 +533,7 @@ export class MemberDialogComponent implements OnInit, OnDestroy {
 function mapCollectionToAccessItemView(
   collection: CollectionView,
   accessSelection?: CollectionAccessSelectionView,
-  group?: GroupView
+  group?: GroupView,
 ): AccessItemView {
   return {
     type: AccessItemType.Collection,
@@ -564,7 +564,7 @@ function mapToAccessSelections(user: OrganizationUserAdminView): AccessItemValue
       id: selection.id,
       type: AccessItemType.Collection,
       permission: convertToPermission(selection),
-    }))
+    })),
   );
 }
 
@@ -576,7 +576,7 @@ function mapToGroupAccessSelections(groups: string[]): AccessItemValue[] {
     groups.map((groupId) => ({
       id: groupId,
       type: AccessItemType.Group,
-    }))
+    })),
   );
 }
 
@@ -587,7 +587,7 @@ function mapToGroupAccessSelections(groups: string[]): AccessItemValue[] {
  */
 export function openUserAddEditDialog(
   dialogService: DialogService,
-  config: DialogConfig<MemberDialogParams>
+  config: DialogConfig<MemberDialogParams>,
 ) {
   return dialogService.open<MemberDialogResult, MemberDialogParams>(MemberDialogComponent, config);
 }

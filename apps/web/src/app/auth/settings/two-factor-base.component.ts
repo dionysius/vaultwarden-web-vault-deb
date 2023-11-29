@@ -32,7 +32,7 @@ export abstract class TwoFactorBaseComponent {
     protected platformUtilsService: PlatformUtilsService,
     protected logService: LogService,
     protected userVerificationService: UserVerificationService,
-    protected dialogService: DialogService
+    protected dialogService: DialogService,
   ) {}
 
   protected auth(authResponse: AuthResponseBase) {
@@ -79,7 +79,7 @@ export abstract class TwoFactorBaseComponent {
   }
 
   protected async buildRequestModel<T extends SecretVerificationRequest>(
-    requestClass: new () => T
+    requestClass: new () => T,
   ) {
     return this.userVerificationService.buildRequest(
       {
@@ -87,7 +87,7 @@ export abstract class TwoFactorBaseComponent {
         type: this.verificationType,
       },
       requestClass,
-      true
+      true,
     );
   }
 }

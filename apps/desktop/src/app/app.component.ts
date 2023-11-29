@@ -143,7 +143,7 @@ export class AppComponent implements OnInit, OnDestroy {
     private keyConnectorService: KeyConnectorService,
     private userVerificationService: UserVerificationService,
     private configService: ConfigServiceAbstraction,
-    private dialogService: DialogService
+    private dialogService: DialogService,
   ) {}
 
   ngOnInit() {
@@ -203,7 +203,7 @@ export class AppComponent implements OnInit, OnDestroy {
             Promise.all(
               Object.keys(accounts)
                 .filter((u) => u !== currentUser)
-                .map((u) => this.vaultTimeoutService.lock(u))
+                .map((u) => this.vaultTimeoutService.lock(u)),
             );
             break;
           }
@@ -243,7 +243,7 @@ export class AppComponent implements OnInit, OnDestroy {
             break;
           case "showFingerprintPhrase": {
             const fingerprint = await this.cryptoService.getFingerprint(
-              await this.stateService.getUserId()
+              await this.stateService.getUserId(),
             );
             const dialogRef = FingerprintDialogComponent.open(this.dialogService, { fingerprint });
             await firstValueFrom(dialogRef.closed);
@@ -255,7 +255,7 @@ export class AppComponent implements OnInit, OnDestroy {
           case "openPasswordHistory":
             await this.openModal<PasswordGeneratorHistoryComponent>(
               PasswordGeneratorHistoryComponent,
-              this.passwordHistoryRef
+              this.passwordHistoryRef,
             );
             break;
           case "showToast":
@@ -292,7 +292,7 @@ export class AppComponent implements OnInit, OnDestroy {
             });
             if (emailVerificationConfirmed) {
               this.platformUtilsService.launchUri(
-                "https://bitwarden.com/help/create-bitwarden-account/"
+                "https://bitwarden.com/help/create-bitwarden-account/",
               );
             }
             break;
@@ -303,13 +303,13 @@ export class AppComponent implements OnInit, OnDestroy {
               this.platformUtilsService.showToast(
                 "success",
                 null,
-                this.i18nService.t("syncingComplete")
+                this.i18nService.t("syncingComplete"),
               );
             } catch {
               this.platformUtilsService.showToast(
                 "error",
                 null,
-                this.i18nService.t("syncingFailed")
+                this.i18nService.t("syncingFailed"),
               );
             }
             break;
@@ -417,7 +417,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
     const [modal, childComponent] = await this.modalService.openViewRef(
       ExportComponent,
-      this.exportVaultModalRef
+      this.exportVaultModalRef,
     );
     this.modal = modal;
 
@@ -438,7 +438,7 @@ export class AppComponent implements OnInit, OnDestroy {
     const [modal, childComponent] = await this.modalService.openViewRef(
       FolderAddEditComponent,
       this.folderAddEditModalRef,
-      (comp) => (comp.folderId = null)
+      (comp) => (comp.folderId = null),
     );
     this.modal = modal;
 
@@ -460,7 +460,7 @@ export class AppComponent implements OnInit, OnDestroy {
     [this.modal] = await this.modalService.openViewRef(
       GeneratorComponent,
       this.generatorModalRef,
-      (comp) => (comp.comingFromAddEdit = false)
+      (comp) => (comp.comingFromAddEdit = false),
     );
 
     // eslint-disable-next-line rxjs-angular/prefer-takeuntil
@@ -496,7 +496,7 @@ export class AppComponent implements OnInit, OnDestroy {
         if (i != null && stateAccounts[i]?.profile?.userId != null) {
           const userId = stateAccounts[i].profile.userId;
           const availableTimeoutActions = await firstValueFrom(
-            this.vaultTimeoutSettingsService.availableVaultTimeoutActions$(userId)
+            this.vaultTimeoutSettingsService.availableVaultTimeoutActions$(userId),
           );
 
           accounts[userId] = {
@@ -557,7 +557,7 @@ export class AppComponent implements OnInit, OnDestroy {
           this.platformUtilsService.showToast(
             "warning",
             this.i18nService.t("loggedOut"),
-            this.i18nService.t("loginExpired")
+            this.i18nService.t("loginExpired"),
           );
         }
       });
@@ -625,7 +625,7 @@ export class AppComponent implements OnInit, OnDestroy {
     } else {
       msg.text.forEach(
         (t: string) =>
-          (message += "<p>" + this.sanitizer.sanitize(SecurityContext.HTML, t) + "</p>")
+          (message += "<p>" + this.sanitizer.sanitize(SecurityContext.HTML, t) + "</p>"),
       );
       options.enableHtml = true;
     }

@@ -27,7 +27,7 @@ export class ViewCustomFieldsComponent {
     if (f.showValue) {
       this.eventCollectionService.collect(
         EventType.Cipher_ClientToggledHiddenFieldVisible,
-        this.cipher.id
+        this.cipher.id,
       );
     }
   }

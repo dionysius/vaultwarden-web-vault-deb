@@ -59,7 +59,7 @@ export class SsoComponent {
     protected environmentService: EnvironmentService,
     protected passwordGenerationService: PasswordGenerationServiceAbstraction,
     protected logService: LogService,
-    protected configService: ConfigServiceAbstraction
+    protected configService: ConfigServiceAbstraction,
   ) {}
 
   async ngOnInit() {
@@ -98,7 +98,7 @@ export class SsoComponent {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("ssoValidationFailed"),
-        this.i18nService.t("ssoIdentifierRequired")
+        this.i18nService.t("ssoIdentifierRequired"),
       );
       return;
     }
@@ -109,7 +109,7 @@ export class SsoComponent {
     const authorizeUrl = await this.buildAuthorizeUrl(
       returnUri,
       includeUserIdentifier,
-      response.token
+      response.token,
     );
     this.platformUtilsService.launchUri(authorizeUrl, { sameWindow: true });
   }
@@ -117,7 +117,7 @@ export class SsoComponent {
   protected async buildAuthorizeUrl(
     returnUri?: string,
     includeUserIdentifier?: boolean,
-    token?: string
+    token?: string,
   ): Promise<string> {
     let codeChallenge = this.codeChallenge;
     let state = this.state;
@@ -186,7 +186,7 @@ export class SsoComponent {
         code,
         codeVerifier,
         this.redirectUri,
-        orgSsoIdentifier
+        orgSsoIdentifier,
       );
       this.formPromise = this.authService.logIn(credentials);
       const authResult = await this.formPromise;
@@ -215,14 +215,14 @@ export class SsoComponent {
       }
 
       const tdeEnabled = await this.isTrustedDeviceEncEnabled(
-        acctDecryptionOpts.trustedDeviceOption
+        acctDecryptionOpts.trustedDeviceOption,
       );
 
       if (tdeEnabled) {
         return await this.handleTrustedDeviceEncryptionEnabled(
           authResult,
           orgSsoIdentifier,
-          acctDecryptionOpts
+          acctDecryptionOpts,
         );
       }
 
@@ -246,10 +246,10 @@ export class SsoComponent {
   }
 
   private async isTrustedDeviceEncEnabled(
-    trustedDeviceOption: TrustedDeviceUserDecryptionOption
+    trustedDeviceOption: TrustedDeviceUserDecryptionOption,
   ): Promise<boolean> {
     const trustedDeviceEncryptionFeatureActive = await this.configService.getFeatureFlag<boolean>(
-      FeatureFlag.TrustedDeviceEncryption
+      FeatureFlag.TrustedDeviceEncryption,
     );
 
     return trustedDeviceEncryptionFeatureActive && trustedDeviceOption !== undefined;
@@ -264,14 +264,14 @@ export class SsoComponent {
           identifier: orgIdentifier,
           sso: "true",
         },
-      }
+      },
     );
   }
 
   private async handleTrustedDeviceEncryptionEnabled(
     authResult: AuthResult,
     orgIdentifier: string,
-    acctDecryptionOpts: AccountDecryptionOptions
+    acctDecryptionOpts: AccountDecryptionOptions,
   ): Promise<void> {
     // If user doesn't have a MP, but has reset password permission, they must set a MP
     if (
@@ -282,7 +282,7 @@ export class SsoComponent {
       // Note: we cannot directly navigate in this scenario as we are in a pre-decryption state, and
       // if you try to set a new MP before decrypting, you will invalidate the user's data by making a new user key.
       await this.stateService.setForceSetPasswordReason(
-        ForceSetPasswordReason.TdeUserWithoutPasswordHasPasswordResetPermission
+        ForceSetPasswordReason.TdeUserWithoutPasswordHasPasswordResetPermission,
       );
     }
 
@@ -295,7 +295,7 @@ export class SsoComponent {
       this.onSuccessfulLoginTdeNavigate,
       // Navigate to TDE page (if user was on trusted device and TDE has decrypted
       //  their user key, the login-initiated guard will redirect them to the vault)
-      [this.trustedDeviceEncRoute]
+      [this.trustedDeviceEncRoute],
     );
   }
 
@@ -307,7 +307,7 @@ export class SsoComponent {
         queryParams: {
           identifier: orgIdentifier,
         },
-      }
+      },
     );
   }
 
@@ -319,7 +319,7 @@ export class SsoComponent {
         queryParams: {
           identifier: orgIdentifier,
         },
-      }
+      },
     );
   }
 
@@ -340,7 +340,7 @@ export class SsoComponent {
       this.platformUtilsService.showToast(
         "error",
         null,
-        this.i18nService.t("ssoKeyConnectorError")
+        this.i18nService.t("ssoKeyConnectorError"),
       );
     }
   }
@@ -348,7 +348,7 @@ export class SsoComponent {
   private async navigateViaCallbackOrRoute(
     callback: () => Promise<unknown>,
     commands: unknown[],
-    extras?: NavigationExtras
+    extras?: NavigationExtras,
   ): Promise<void> {
     if (callback) {
       await callback();

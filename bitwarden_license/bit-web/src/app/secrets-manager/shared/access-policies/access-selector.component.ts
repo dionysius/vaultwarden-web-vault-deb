@@ -108,8 +108,8 @@ export class AccessSelectorComponent implements OnInit {
               labelName: labelName,
               listName: listName,
             };
-          })
-      )
+          }),
+      ),
     ),
     map((selectItems) => selectItems.sort((a, b) => a.listName.localeCompare(b.listName))),
     tap(() => {
@@ -117,10 +117,13 @@ export class AccessSelectorComponent implements OnInit {
       this.formGroup.reset();
       this.formGroup.enable();
     }),
-    share()
+    share(),
   );
 
-  constructor(private accessPolicyService: AccessPolicyService, private route: ActivatedRoute) {}
+  constructor(
+    private accessPolicyService: AccessPolicyService,
+    private route: ActivatedRoute,
+  ) {}
 
   ngOnInit(): void {
     this.formGroup.disable();

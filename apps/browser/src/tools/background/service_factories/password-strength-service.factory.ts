@@ -17,7 +17,7 @@ export function passwordStrengthServiceFactory(
   cache: {
     passwordStrengthService?: PasswordStrengthServiceAbstraction;
   } & CachedServices,
-  opts: PasswordStrengthServiceInitOptions
+  opts: PasswordStrengthServiceInitOptions,
 ): Promise<PasswordStrengthServiceAbstraction> {
   return factory(cache, "passwordStrengthService", opts, async () => new PasswordStrengthService());
 }

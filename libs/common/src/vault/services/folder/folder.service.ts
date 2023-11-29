@@ -23,7 +23,7 @@ export class FolderService implements InternalFolderServiceAbstraction {
     private cryptoService: CryptoService,
     private i18nService: I18nService,
     private cipherService: CipherService,
-    private stateService: StateService
+    private stateService: StateService,
   ) {
     this.stateService.activeAccountUnlocked$
       .pipe(
@@ -41,7 +41,7 @@ export class FolderService implements InternalFolderServiceAbstraction {
           const data = await this.stateService.getEncryptedFolders();
 
           await this.updateObservables(data);
-        })
+        }),
       )
       .subscribe();
   }

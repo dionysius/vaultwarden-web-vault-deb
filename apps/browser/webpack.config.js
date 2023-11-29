@@ -268,7 +268,7 @@ if (manifestVersion == 2) {
       template: "./src/platform/background.html",
       filename: "background.html",
       chunks: ["vendor", "background"],
-    })
+    }),
   );
 
   // Manifest V2 background pages can be run through the regular build pipeline.

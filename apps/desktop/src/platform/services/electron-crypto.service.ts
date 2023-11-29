@@ -21,7 +21,7 @@ export class ElectronCryptoService extends CryptoService {
     encryptService: EncryptService,
     platformUtilsService: PlatformUtilsService,
     logService: LogService,
-    protected override stateService: ElectronStateService
+    protected override stateService: ElectronStateService,
   ) {
     super(cryptoFunctionService, encryptService, platformUtilsService, logService, stateService);
   }
@@ -59,7 +59,7 @@ export class ElectronCryptoService extends CryptoService {
 
   protected override async getKeyFromStorage(
     keySuffix: KeySuffixOptions,
-    userId?: string
+    userId?: string,
   ): Promise<UserKey> {
     if (keySuffix === KeySuffixOptions.Biometric) {
       await this.migrateBiometricKeyIfNeeded(userId);
@@ -76,7 +76,7 @@ export class ElectronCryptoService extends CryptoService {
     }
     await this.stateService.setUserKeyBiometric(
       { key: key.keyB64, clientEncKeyHalf },
-      { userId: userId }
+      { userId: userId },
     );
   }
 

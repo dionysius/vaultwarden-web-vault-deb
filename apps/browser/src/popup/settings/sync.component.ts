@@ -15,7 +15,7 @@ export class SyncComponent implements OnInit {
   constructor(
     private syncService: SyncService,
     private platformUtilsService: PlatformUtilsService,
-    private i18nService: I18nService
+    private i18nService: I18nService,
   ) {}
 
   async ngOnInit() {

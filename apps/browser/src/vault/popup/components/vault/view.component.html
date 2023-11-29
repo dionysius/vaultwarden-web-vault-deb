@@ -149,7 +149,7 @@
             <div class="box-content-row text-muted">
               <span class="row-label">{{ "typePasskey" | i18n }}</span>
               {{ "dateCreated" | i18n }}
-              {{ cipher.login.fido2Credentials[0].creationDate | date : "short" }}
+              {{ cipher.login.fido2Credentials[0].creationDate | date: "short" }}
             </div>
           </div>
         </div>
@@ -233,10 +233,10 @@
               >{{ "number" | i18n }}</span
             >
             <span [hidden]="showCardNumber" class="monospaced">{{
-              cipher.card.maskedNumber | creditCardNumber : cipher.card.brand
+              cipher.card.maskedNumber | creditCardNumber: cipher.card.brand
             }}</span>
             <span [hidden]="!showCardNumber" class="monospaced">{{
-              cipher.card.number | creditCardNumber : cipher.card.brand
+              cipher.card.number | creditCardNumber: cipher.card.brand
             }}</span>
           </div>
           <div class="action-buttons">
@@ -655,15 +655,15 @@
     <div class="box-footer">
       <div>
         <b class="font-weight-semibold">{{ "dateUpdated" | i18n }}:</b>
-        {{ cipher.revisionDate | date : "medium" }}
+        {{ cipher.revisionDate | date: "medium" }}
       </div>
       <div *ngIf="cipher.creationDate">
         <b class="font-weight-semibold">{{ "dateCreated" | i18n }}:</b>
-        {{ cipher.creationDate | date : "medium" }}
+        {{ cipher.creationDate | date: "medium" }}
       </div>
       <div *ngIf="cipher.passwordRevisionDisplayDate">
         <b class="font-weight-semibold">{{ "datePasswordUpdated" | i18n }}:</b>
-        {{ cipher.passwordRevisionDisplayDate | date : "medium" }}
+        {{ cipher.passwordRevisionDisplayDate | date: "medium" }}
       </div>
       <div *ngIf="cipher.hasPasswordHistory">
         <b class="font-weight-semibold">{{ "passwordHistory" | i18n }}:</b>

@@ -7,7 +7,7 @@ async function copyText(text: string) {
 async function onMessageListener(
   msg: TabMessage,
   sender: chrome.runtime.MessageSender,
-  responseCallback: (response: unknown) => void
+  responseCallback: (response: unknown) => void,
 ) {
   switch (msg.command) {
     case "copyText":

@@ -112,7 +112,7 @@ module.exports = {
             "mask-repeat": value,
           }),
         },
-        {}
+        {},
       );
     }),
   ],

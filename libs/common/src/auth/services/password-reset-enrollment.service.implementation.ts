@@ -16,13 +16,12 @@ export class PasswordResetEnrollmentServiceImplementation
     protected stateService: StateService,
     protected cryptoService: CryptoService,
     protected organizationUserService: OrganizationUserService,
-    protected i18nService: I18nService
+    protected i18nService: I18nService,
   ) {}
 
   async enrollIfRequired(organizationSsoIdentifier: string): Promise<void> {
-    const orgAutoEnrollStatusResponse = await this.organizationApiService.getAutoEnrollStatus(
-      organizationSsoIdentifier
-    );
+    const orgAutoEnrollStatusResponse =
+      await this.organizationApiService.getAutoEnrollStatus(organizationSsoIdentifier);
 
     if (!orgAutoEnrollStatusResponse.resetPasswordEnabled) {
       await this.enroll(orgAutoEnrollStatusResponse.id, null, null);
@@ -50,7 +49,7 @@ export class PasswordResetEnrollmentServiceImplementation
     await this.organizationUserService.putOrganizationUserResetPasswordEnrollment(
       organizationId,
       userId,
-      resetRequest
+      resetRequest,
     );
   }
 }

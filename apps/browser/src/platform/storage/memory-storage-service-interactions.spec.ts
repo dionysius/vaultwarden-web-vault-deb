@@ -34,7 +34,7 @@ describe("foreground background memory storage interaction", () => {
 
       const result = await foreground[action](key);
       expect(result).toEqual(value);
-    }
+    },
   );
 
   test("background should call save from foreground", async () => {

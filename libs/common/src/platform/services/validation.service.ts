@@ -6,7 +6,7 @@ import { ValidationService as ValidationServiceAbstraction } from "../abstractio
 export class ValidationService implements ValidationServiceAbstraction {
   constructor(
     private i18nService: I18nService,
-    private platformUtilsService: PlatformUtilsService
+    private platformUtilsService: PlatformUtilsService,
   ) {}
 
   showError(data: any): string[] {

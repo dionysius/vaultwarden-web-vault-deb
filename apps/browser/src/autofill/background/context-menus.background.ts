@@ -15,14 +15,14 @@ export default class ContextMenusBackground {
     }
 
     this.contextMenus.onClicked.addListener((info, tab) =>
-      this.contextMenuClickedHandler.run(info, tab)
+      this.contextMenuClickedHandler.run(info, tab),
     );
 
     BrowserApi.messageListener(
       "contextmenus.background",
       (
         msg: { command: string; data: LockedVaultPendingNotificationsItem },
-        sender: chrome.runtime.MessageSender
+        sender: chrome.runtime.MessageSender,
       ) => {
         if (msg.command === "unlockCompleted" && msg.data.target === "contextmenus.background") {
           this.contextMenuClickedHandler
@@ -31,7 +31,7 @@ export default class ContextMenusBackground {
               BrowserApi.tabSendMessageData(sender.tab, "closeNotificationBar");
             });
         }
-      }
+      },
     );
   }
 }

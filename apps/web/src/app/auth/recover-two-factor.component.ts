@@ -26,7 +26,7 @@ export class RecoverTwoFactorComponent {
     private i18nService: I18nService,
     private cryptoService: CryptoService,
     private authService: AuthService,
-    private logService: LogService
+    private logService: LogService,
   ) {}
 
   async submit() {
@@ -41,7 +41,7 @@ export class RecoverTwoFactorComponent {
       this.platformUtilsService.showToast(
         "success",
         null,
-        this.i18nService.t("twoStepRecoverDisabled")
+        this.i18nService.t("twoStepRecoverDisabled"),
       );
       this.router.navigate(["/"]);
     } catch (e) {

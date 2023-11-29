@@ -79,7 +79,7 @@ export class LoginComponent extends CaptchaProtectedComponent implements OnInit,
     protected formValidationErrorService: FormValidationErrorsService,
     protected route: ActivatedRoute,
     protected loginService: LoginService,
-    protected webAuthnLoginService: WebAuthnLoginServiceAbstraction
+    protected webAuthnLoginService: WebAuthnLoginServiceAbstraction,
   ) {
     super(environmentService, i18nService, platformUtilsService);
   }
@@ -149,7 +149,7 @@ export class LoginComponent extends CaptchaProtectedComponent implements OnInit,
         data.email,
         data.masterPassword,
         this.captchaToken,
-        null
+        null,
       );
       this.formPromise = this.authService.logIn(credentials);
       const response = await this.formPromise;
@@ -244,7 +244,7 @@ export class LoginComponent extends CaptchaProtectedComponent implements OnInit,
         "&codeChallenge=" +
         codeChallenge +
         "&email=" +
-        encodeURIComponent(this.formGroup.controls.email.value)
+        encodeURIComponent(this.formGroup.controls.email.value),
     );
   }
 
@@ -300,7 +300,7 @@ export class LoginComponent extends CaptchaProtectedComponent implements OnInit,
     this.platformUtilsService.showToast(
       "error",
       this.i18nService.t("errorOccured"),
-      this.i18nService.t("encryptionKeyMigrationRequired")
+      this.i18nService.t("encryptionKeyMigrationRequired"),
     );
     return true;
   }
@@ -334,7 +334,7 @@ export class LoginComponent extends CaptchaProtectedComponent implements OnInit,
       const deviceIdentifier = await this.appIdService.getAppId();
       this.showLoginWithDevice = await this.devicesApiService.getKnownDevice(
         email,
-        deviceIdentifier
+        deviceIdentifier,
       );
     } catch (e) {
       this.showLoginWithDevice = false;

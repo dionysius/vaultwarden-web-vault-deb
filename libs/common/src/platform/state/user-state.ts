@@ -9,7 +9,10 @@ import { StateUpdateOptions } from "./state-update-options";
 import { DerivedUserState } from ".";
 
 export class DeriveContext {
-  constructor(readonly activeUserKey: UserKey, readonly encryptService: EncryptService) {}
+  constructor(
+    readonly activeUserKey: UserKey,
+    readonly encryptService: EncryptService,
+  ) {}
 }
 
 export type Converter<TFrom, TTo> = (data: TFrom, context: DeriveContext) => Promise<TTo>;
@@ -32,7 +35,7 @@ export interface UserState<T> {
    */
   readonly update: <TCombine>(
     configureState: (state: T, dependencies: TCombine) => T,
-    options?: StateUpdateOptions<T, TCombine>
+    options?: StateUpdateOptions<T, TCombine>,
   ) => Promise<T>;
   /**
    * Updates backing stores for the given userId, which may or may not be active.
@@ -48,7 +51,7 @@ export interface UserState<T> {
   readonly updateFor: <TCombine>(
     userId: UserId,
     configureState: (state: T, dependencies: TCombine) => T,
-    options?: StateUpdateOptions<T, TCombine>
+    options?: StateUpdateOptions<T, TCombine>,
   ) => Promise<T>;
 
   /**

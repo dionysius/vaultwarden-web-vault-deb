@@ -32,7 +32,7 @@ export class ConfigCommand {
       const stringRes = new StringResponse(
         this.environmentService.hasBaseUrl()
           ? this.environmentService.getUrls().base
-          : "https://bitwarden.com"
+          : "https://bitwarden.com",
       );
       return Response.success(stringRes);
     }

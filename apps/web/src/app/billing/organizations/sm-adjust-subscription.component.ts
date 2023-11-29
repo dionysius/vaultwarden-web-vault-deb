@@ -74,7 +74,7 @@ export class SecretsManagerAdjustSubscriptionComponent implements OnInit, OnDest
 
   get serviceAccountTotalCost(): number {
     return Math.abs(
-      this.formGroup.value.additionalServiceAccounts * this.options.additionalServiceAccountPrice
+      this.formGroup.value.additionalServiceAccounts * this.options.additionalServiceAccountPrice,
     );
   }
 
@@ -99,7 +99,7 @@ export class SecretsManagerAdjustSubscriptionComponent implements OnInit, OnDest
     private formBuilder: FormBuilder,
     private organizationApiService: OrganizationApiServiceAbstraction,
     private i18nService: I18nService,
-    private platformUtilsService: PlatformUtilsService
+    private platformUtilsService: PlatformUtilsService,
   ) {}
 
   ngOnInit() {
@@ -155,13 +155,13 @@ export class SecretsManagerAdjustSubscriptionComponent implements OnInit, OnDest
 
     await this.organizationApiService.updateSecretsManagerSubscription(
       this.organizationId,
-      request
+      request,
     );
 
     await this.platformUtilsService.showToast(
       "success",
       null,
-      this.i18nService.t("subscriptionUpdated")
+      this.i18nService.t("subscriptionUpdated"),
     );
 
     this.onAdjusted.emit();

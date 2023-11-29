@@ -32,7 +32,7 @@ export class DefaultGlobalState<T> implements GlobalState<T> {
 
   constructor(
     private keyDefinition: KeyDefinition<T>,
-    private chosenLocation: AbstractStorageService & ObservableStorageService
+    private chosenLocation: AbstractStorageService & ObservableStorageService,
   ) {
     this.storageKey = globalKeyBuilder(this.keyDefinition);
 
@@ -45,10 +45,10 @@ export class DefaultGlobalState<T> implements GlobalState<T> {
         return await getStoredValue(
           this.storageKey,
           this.chosenLocation,
-          this.keyDefinition.deserializer
+          this.keyDefinition.deserializer,
         );
       }),
-      shareReplay({ bufferSize: 1, refCount: false })
+      shareReplay({ bufferSize: 1, refCount: false }),
     );
 
     this.state$ = defer(() => {
@@ -65,17 +65,17 @@ export class DefaultGlobalState<T> implements GlobalState<T> {
           complete: () => {
             storageUpdateSubscription.unsubscribe();
           },
-        })
+        }),
       );
     }).pipe(
       shareReplay({ refCount: false, bufferSize: 1 }),
-      filter<T>((i) => i != FAKE_DEFAULT)
+      filter<T>((i) => i != FAKE_DEFAULT),
     );
   }
 
   async update<TCombine>(
     configureState: (state: T, dependency: TCombine) => T,
-    options: StateUpdateOptions<T, TCombine> = {}
+    options: StateUpdateOptions<T, TCombine> = {},
   ): Promise<T> {
     options = populateOptionsWithDefault(options);
     const currentState = await this.getGuaranteedState();
@@ -102,7 +102,7 @@ export class DefaultGlobalState<T> implements GlobalState<T> {
     return await getStoredValue(
       this.storageKey,
       this.chosenLocation,
-      this.keyDefinition.deserializer
+      this.keyDefinition.deserializer,
     );
   }
 }

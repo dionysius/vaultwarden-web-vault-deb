@@ -24,7 +24,7 @@
     </div>
     <div *ngIf="add" class="mb-3">
       <strong>{{ "total" | i18n }}:</strong> {{ storageAdjustment || 0 }} GB &times;
-      {{ storageGbPrice | currency : "$" }} = {{ adjustedStorageTotal | currency : "$" }} /{{
+      {{ storageGbPrice | currency: "$" }} = {{ adjustedStorageTotal | currency: "$" }} /{{
         interval | i18n
       }}
     </div>

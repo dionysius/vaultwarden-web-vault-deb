@@ -37,7 +37,7 @@ export class ChangeKdfConfirmationComponent {
     private messagingService: MessagingService,
     private stateService: StateService,
     private logService: LogService,
-    @Inject(DIALOG_DATA) params: { kdf: KdfType; kdfConfig: KdfConfig }
+    @Inject(DIALOG_DATA) params: { kdf: KdfType; kdfConfig: KdfConfig },
   ) {
     this.kdf = params.kdf;
     this.kdfConfig = params.kdfConfig;
@@ -53,7 +53,7 @@ export class ChangeKdfConfirmationComponent {
       this.platformUtilsService.showToast(
         "success",
         this.i18nService.t("encKeySettingsChanged"),
-        this.i18nService.t("logBackIn")
+        this.i18nService.t("logBackIn"),
       );
       this.messagingService.send("logout");
     } catch (e) {
@@ -77,11 +77,11 @@ export class ChangeKdfConfirmationComponent {
       masterPassword,
       email,
       this.kdf,
-      this.kdfConfig
+      this.kdfConfig,
     );
     request.newMasterPasswordHash = await this.cryptoService.hashMasterKey(
       masterPassword,
-      newMasterKey
+      newMasterKey,
     );
     const newUserKey = await this.cryptoService.encryptUserKeyWithMasterKey(newMasterKey);
     request.key = newUserKey[1].encryptedString;

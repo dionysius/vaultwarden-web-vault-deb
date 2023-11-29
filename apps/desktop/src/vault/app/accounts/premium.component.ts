@@ -21,7 +21,7 @@ export class PremiumComponent extends BasePremiumComponent {
     logService: LogService,
     stateService: StateService,
     dialogService: DialogService,
-    environmentService: EnvironmentService
+    environmentService: EnvironmentService,
   ) {
     super(
       i18nService,
@@ -30,7 +30,7 @@ export class PremiumComponent extends BasePremiumComponent {
       logService,
       stateService,
       dialogService,
-      environmentService
+      environmentService,
     );
   }
 }

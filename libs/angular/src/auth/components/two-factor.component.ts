@@ -72,7 +72,7 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
     protected twoFactorService: TwoFactorService,
     protected appIdService: AppIdService,
     protected loginService: LoginService,
-    protected configService: ConfigServiceAbstraction
+    protected configService: ConfigServiceAbstraction,
   ) {
     super(environmentService, i18nService, platformUtilsService);
     this.webAuthnSupported = this.platformUtilsService.supportsWebAuthn(win);
@@ -113,7 +113,7 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
           if (info === "ready") {
             this.webAuthnReady = true;
           }
-        }
+        },
       );
     }
 
@@ -178,7 +178,7 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
-        this.i18nService.t("verificationCodeRequired")
+        this.i18nService.t("verificationCodeRequired"),
       );
       return;
     }
@@ -208,7 +208,7 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
   async doSubmit() {
     this.formPromise = this.authService.logInTwoFactor(
       new TokenTwoFactorRequest(this.selectedProviderType, this.token, this.remember),
-      this.captchaToken
+      this.captchaToken,
     );
     const authResult: AuthResult = await this.formPromise;
 
@@ -223,7 +223,7 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
     this.platformUtilsService.showToast(
       "error",
       this.i18nService.t("errorOccured"),
-      this.i18nService.t("encryptionKeyMigrationRequired")
+      this.i18nService.t("encryptionKeyMigrationRequired"),
     );
     return true;
   }
@@ -255,7 +255,7 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
       return await this.handleTrustedDeviceEncryptionEnabled(
         authResult,
         this.orgIdentifier,
-        acctDecryptionOpts
+        acctDecryptionOpts,
       );
     }
 
@@ -272,11 +272,11 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
   }
 
   private async isTrustedDeviceEncEnabled(
-    trustedDeviceOption: TrustedDeviceUserDecryptionOption
+    trustedDeviceOption: TrustedDeviceUserDecryptionOption,
   ): Promise<boolean> {
     const ssoTo2faFlowActive = this.route.snapshot.queryParamMap.get("sso") === "true";
     const trustedDeviceEncryptionFeatureActive = await this.configService.getFeatureFlag<boolean>(
-      FeatureFlag.TrustedDeviceEncryption
+      FeatureFlag.TrustedDeviceEncryption,
     );
 
     return (
@@ -289,7 +289,7 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
   private async handleTrustedDeviceEncryptionEnabled(
     authResult: AuthResult,
     orgIdentifier: string,
-    acctDecryptionOpts: AccountDecryptionOptions
+    acctDecryptionOpts: AccountDecryptionOptions,
   ): Promise<void> {
     // If user doesn't have a MP, but has reset password permission, they must set a MP
     if (
@@ -300,7 +300,7 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
       // Note: we cannot directly navigate to the set password screen in this scenario as we are in a pre-decryption state, and
       // if you try to set a new MP before decrypting, you will invalidate the user's data by making a new user key.
       await this.stateService.setForceSetPasswordReason(
-        ForceSetPasswordReason.TdeUserWithoutPasswordHasPasswordResetPermission
+        ForceSetPasswordReason.TdeUserWithoutPasswordHasPasswordResetPermission,
       );
     }
 
@@ -314,7 +314,7 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
       this.onSuccessfulLoginTdeNavigate,
       // Navigate to TDE page (if user was on trusted device and TDE has decrypted
       //  their user key, the login-initiated guard will redirect them to the vault)
-      [this.trustedDeviceEncRoute]
+      [this.trustedDeviceEncRoute],
     );
   }
 
@@ -365,7 +365,7 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
   private async navigateViaCallbackOrRoute(
     callback: () => Promise<unknown>,
     commands: unknown[],
-    extras?: NavigationExtras
+    extras?: NavigationExtras,
   ): Promise<void> {
     if (callback) {
       await callback();
@@ -387,7 +387,7 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
-        this.i18nService.t("sessionTimeout")
+        this.i18nService.t("sessionTimeout"),
       );
       return;
     }
@@ -406,7 +406,7 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
         this.platformUtilsService.showToast(
           "success",
           null,
-          this.i18nService.t("verificationCodeEmailSent", this.twoFactorEmail)
+          this.i18nService.t("verificationCodeEmailSent", this.twoFactorEmail),
         );
       }
     } catch (e) {

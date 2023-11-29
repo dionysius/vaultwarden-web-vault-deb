@@ -38,7 +38,7 @@ export class SecretsComponent implements OnInit {
     private dialogService: DialogService,
     private platformUtilsService: PlatformUtilsService,
     private i18nService: I18nService,
-    private organizationService: OrganizationService
+    private organizationService: OrganizationService,
   ) {}
 
   ngOnInit() {
@@ -50,7 +50,7 @@ export class SecretsComponent implements OnInit {
         this.organizationEnabled = this.organizationService.get(params.organizationId)?.enabled;
 
         return await this.getSecrets();
-      })
+      }),
     );
 
     if (this.route.snapshot.queryParams.search) {
@@ -100,7 +100,7 @@ export class SecretsComponent implements OnInit {
       id,
       this.platformUtilsService,
       this.i18nService,
-      this.secretService
+      this.secretService,
     );
   }
 

@@ -18,7 +18,7 @@ export class CollectionsComponent extends BaseCollectionsComponent implements On
     platformUtilsService: PlatformUtilsService,
     i18nService: I18nService,
     cipherService: CipherService,
-    logService: LogService
+    logService: LogService,
   ) {
     super(collectionService, platformUtilsService, i18nService, cipherService, logService);
   }

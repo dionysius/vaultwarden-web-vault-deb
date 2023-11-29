@@ -19,7 +19,7 @@ function expectIdentity(cipher: CipherView) {
       company: "bitwarden",
       phone: "8005555555",
       email: "email@bitwarden.com",
-    })
+    }),
   );
 
   expect(cipher.notes).toContain("address\ncity state zip\nUnited States");
@@ -35,7 +35,7 @@ function expectCreditCard(cipher: CipherView) {
       cardholderName: "test",
       expMonth: "1",
       expYear: "2030",
-    })
+    }),
   );
 }
 

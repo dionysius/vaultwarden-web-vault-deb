@@ -17,7 +17,7 @@ export class RouterService {
     private activatedRoute: ActivatedRoute,
     private titleService: Title,
     private stateService: StateService,
-    i18nService: I18nService
+    i18nService: I18nService,
   ) {
     this.currentUrl = this.router.url;
 

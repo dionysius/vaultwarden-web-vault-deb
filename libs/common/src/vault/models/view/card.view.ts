@@ -98,7 +98,7 @@ export class CardView extends ItemView {
     // Updated for Mastercard 2017 BINs expansion
     if (
       /^(5[1-5][0-9]{14}|2(22[1-9][0-9]{12}|2[3-9][0-9]{13}|[3-6][0-9]{14}|7[0-1][0-9]{13}|720[0-9]{12}))$/.test(
-        cardNum
+        cardNum,
       )
     ) {
       return "Mastercard";
@@ -112,7 +112,7 @@ export class CardView extends ItemView {
 
     // Discover
     re = new RegExp(
-      "^(6011|622(12[6-9]|1[3-9][0-9]|[2-8][0-9]{2}|9[0-1][0-9]|92[0-5]|64[4-9])|65)"
+      "^(6011|622(12[6-9]|1[3-9][0-9]|[2-8][0-9]{2}|9[0-1][0-9]|92[0-5]|64[4-9])|65)",
     );
     if (cardNum.match(re) != null) {
       return "Discover";

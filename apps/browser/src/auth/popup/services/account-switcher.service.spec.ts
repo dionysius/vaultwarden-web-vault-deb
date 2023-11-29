@@ -26,7 +26,7 @@ describe("AccountSwitcherService", () => {
     accountSwitcherService = new AccountSwitcherService(
       accountService,
       stateService,
-      messagingService
+      messagingService,
     );
   });
 
@@ -45,7 +45,7 @@ describe("AccountSwitcherService", () => {
       activeAccountSubject.next(Object.assign(user1AccountInfo, { id: "1" as UserId }));
 
       const accounts = await firstValueFrom(
-        accountSwitcherService.accountOptions$.pipe(timeout(20))
+        accountSwitcherService.accountOptions$.pipe(timeout(20)),
       );
       expect(accounts).toHaveLength(2);
       expect(accounts[0].id).toBe("1");
@@ -68,7 +68,7 @@ describe("AccountSwitcherService", () => {
         }
         accountsSubject.next(seedAccounts);
         activeAccountSubject.next(
-          Object.assign(seedAccounts["1" as UserId], { id: "1" as UserId })
+          Object.assign(seedAccounts["1" as UserId], { id: "1" as UserId }),
         );
 
         const accounts = await firstValueFrom(accountSwitcherService.accountOptions$);
@@ -77,7 +77,7 @@ describe("AccountSwitcherService", () => {
         accounts.forEach((account) => {
           expect(account.id).not.toBe("addAccount");
         });
-      }
+      },
     );
   });
 
@@ -99,7 +99,7 @@ describe("AccountSwitcherService", () => {
         "switchAccount",
         matches((payload) => {
           return payload.userId === "1";
-        })
+        }),
       );
     });
   });

@@ -33,7 +33,7 @@ export class UsernameGenerationService implements UsernameGenerationServiceAbstr
   constructor(
     private cryptoService: CryptoService,
     private stateService: StateService,
-    private apiService: ApiService
+    private apiService: ApiService,
   ) {}
 
   generateUsername(options: UsernameGeneratorOptions): Promise<string> {

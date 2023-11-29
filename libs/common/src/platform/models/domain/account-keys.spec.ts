@@ -31,7 +31,7 @@ describe("AccountKeys", () => {
       const accountKeys = new AccountKeys();
       const deviceKeyBytesLength = 64;
       accountKeys.deviceKey = new SymmetricCryptoKey(
-        new Uint8Array(deviceKeyBytesLength).buffer as CsprngArray
+        new Uint8Array(deviceKeyBytesLength).buffer as CsprngArray,
       ) as DeviceKey;
 
       // Act

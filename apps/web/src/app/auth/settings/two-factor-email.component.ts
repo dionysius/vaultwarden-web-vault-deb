@@ -36,7 +36,7 @@ export class TwoFactorEmailComponent extends TwoFactorBaseComponent {
     logService: LogService,
     userVerificationService: UserVerificationService,
     private stateService: StateService,
-    dialogService: DialogService
+    dialogService: DialogService,
   ) {
     super(
       apiService,
@@ -44,7 +44,7 @@ export class TwoFactorEmailComponent extends TwoFactorBaseComponent {
       platformUtilsService,
       logService,
       userVerificationService,
-      dialogService
+      dialogService,
     );
   }
 

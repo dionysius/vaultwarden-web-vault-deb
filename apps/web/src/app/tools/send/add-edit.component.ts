@@ -37,7 +37,7 @@ export class AddEditComponent extends BaseAddEditComponent {
     dialogService: DialogService,
     formBuilder: FormBuilder,
     protected dialogRef: DialogRef,
-    @Inject(DIALOG_DATA) params: { sendId: string }
+    @Inject(DIALOG_DATA) params: { sendId: string },
   ) {
     super(
       i18nService,
@@ -51,7 +51,7 @@ export class AddEditComponent extends BaseAddEditComponent {
       stateService,
       sendApiService,
       dialogService,
-      formBuilder
+      formBuilder,
     );
 
     this.sendId = params.sendId;

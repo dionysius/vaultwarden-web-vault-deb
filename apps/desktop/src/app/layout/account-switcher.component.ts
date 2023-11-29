@@ -34,7 +34,7 @@ type InactiveAccount = ActiveAccount & {
         "void",
         style({
           opacity: 0,
-        })
+        }),
       ),
       transition(
         "void => open",
@@ -42,8 +42,8 @@ type InactiveAccount = ActiveAccount & {
           "100ms linear",
           style({
             opacity: 1,
-          })
-        )
+          }),
+        ),
       ),
       transition("* => void", animate("100ms linear", style({ opacity: 0 }))),
     ]),
@@ -87,7 +87,7 @@ export class AccountSwitcherComponent implements OnInit, OnDestroy {
     private messagingService: MessagingService,
     private router: Router,
     private tokenService: TokenService,
-    private environmentService: EnvironmentService
+    private environmentService: EnvironmentService,
   ) {}
 
   async ngOnInit(): Promise<void> {
@@ -108,7 +108,7 @@ export class AccountSwitcherComponent implements OnInit, OnDestroy {
             this.activeAccount = undefined;
           }
         }),
-        takeUntil(this.destroy$)
+        takeUntil(this.destroy$),
       )
       .subscribe();
   }

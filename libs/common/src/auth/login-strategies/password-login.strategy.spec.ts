@@ -39,8 +39,8 @@ const hashedPassword = "HASHED_PASSWORD";
 const localHashedPassword = "LOCAL_HASHED_PASSWORD";
 const masterKey = new SymmetricCryptoKey(
   Utils.fromB64ToArray(
-    "N2KWjlLpfi5uHjv+YcfUKIpZ1l+W+6HRensmIqD+BFYBf6N/dvFpJfWwYnVBdgFCK2tJTAIMLhqzIQQEUmGFgg=="
-  )
+    "N2KWjlLpfi5uHjv+YcfUKIpZ1l+W+6HRensmIqD+BFYBf6N/dvFpJfWwYnVBdgFCK2tJTAIMLhqzIQQEUmGFgg==",
+  ),
 ) as MasterKey;
 const deviceId = Utils.newGuid();
 const masterPasswordPolicy = new MasterPasswordPolicyResponse({
@@ -106,7 +106,7 @@ describe("PasswordLoginStrategy", () => {
       twoFactorService,
       passwordStrengthService,
       policyService,
-      authService
+      authService,
     );
     credentials = new PasswordLoginCredentials(email, masterPassword);
     tokenResponse = identityTokenResponseFactory(masterPasswordPolicy);
@@ -129,7 +129,7 @@ describe("PasswordLoginStrategy", () => {
           token: null,
         }),
         captchaResponse: undefined,
-      })
+      }),
     );
   });
 
@@ -175,7 +175,7 @@ describe("PasswordLoginStrategy", () => {
 
     expect(policyService.evaluateMasterPassword).toHaveBeenCalled();
     expect(stateService.setForceSetPasswordReason).toHaveBeenCalledWith(
-      ForceSetPasswordReason.WeakMasterPassword
+      ForceSetPasswordReason.WeakMasterPassword,
     );
     expect(result.forcePasswordReset).toEqual(ForceSetPasswordReason.WeakMasterPassword);
   });
@@ -198,7 +198,7 @@ describe("PasswordLoginStrategy", () => {
 
     // Second login request succeeds
     apiService.postIdentityToken.mockResolvedValueOnce(
-      identityTokenResponseFactory(masterPasswordPolicy)
+      identityTokenResponseFactory(masterPasswordPolicy),
     );
     const secondResult = await passwordLoginStrategy.logInTwoFactor(
       {
@@ -206,7 +206,7 @@ describe("PasswordLoginStrategy", () => {
         token: "123456",
         remember: false,
       },
-      ""
+      "",
     );
 
     // First login attempt should not save the force password reset options
@@ -214,7 +214,7 @@ describe("PasswordLoginStrategy", () => {
 
     // Second login attempt should save the force password reset options and return in result
     expect(stateService.setForceSetPasswordReason).toHaveBeenCalledWith(
-      ForceSetPasswordReason.WeakMasterPassword
+      ForceSetPasswordReason.WeakMasterPassword,
     );
     expect(secondResult.forcePasswordReset).toEqual(ForceSetPasswordReason.WeakMasterPassword);
   });

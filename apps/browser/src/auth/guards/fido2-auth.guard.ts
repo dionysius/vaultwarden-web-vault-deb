@@ -17,7 +17,7 @@ import { BrowserRouterService } from "../../platform/popup/services/browser-rout
  */
 export const fido2AuthGuard: CanActivateFn = async (
   route: ActivatedRouteSnapshot,
-  state: RouterStateSnapshot
+  state: RouterStateSnapshot,
 ) => {
   const routerService = inject(BrowserRouterService);
   const authService = inject(AuthService);

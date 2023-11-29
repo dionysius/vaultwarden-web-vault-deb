@@ -17,7 +17,7 @@ export class BiometricsService implements BiometricsServiceAbstraction {
     private stateService: ElectronStateService,
     private logService: LogService,
     private messagingService: MessagingService,
-    private platform: NodeJS.Platform
+    private platform: NodeJS.Platform,
   ) {
     this.loadPlatformSpecificService(this.platform);
   }
@@ -37,7 +37,7 @@ export class BiometricsService implements BiometricsServiceAbstraction {
       this.i18nService,
       this.windowMain,
       this.stateService,
-      this.logService
+      this.logService,
     );
   }
 
@@ -81,7 +81,7 @@ export class BiometricsService implements BiometricsServiceAbstraction {
       (response) => {
         result = response;
         return !response;
-      }
+      },
     );
     return result;
   }
@@ -93,7 +93,7 @@ export class BiometricsService implements BiometricsServiceAbstraction {
       return await this.platformSpecificService.getBiometricKey(
         service,
         storageKey,
-        this.getClientKeyHalf(service, storageKey)
+        this.getClientKeyHalf(service, storageKey),
       );
     });
   }
@@ -105,7 +105,7 @@ export class BiometricsService implements BiometricsServiceAbstraction {
       service,
       storageKey,
       value,
-      this.getClientKeyHalf(service, storageKey)
+      this.getClientKeyHalf(service, storageKey),
     );
   }
 
@@ -133,7 +133,7 @@ export class BiometricsService implements BiometricsServiceAbstraction {
 
   private async interruptProcessReload<T>(
     callback: () => Promise<T>,
-    restartReloadCallback: (arg: T) => boolean = () => false
+    restartReloadCallback: (arg: T) => boolean = () => false,
   ): Promise<T> {
     this.messagingService.send("cancelProcessReload");
     let restartReload = false;

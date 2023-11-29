@@ -18,7 +18,7 @@ export type PlatformUtilsServiceInitOptions = PlatformUtilsServiceFactoryOptions
 
 export function platformUtilsServiceFactory(
   cache: { platformUtilsService?: PlatformUtilsService } & CachedServices,
-  opts: PlatformUtilsServiceInitOptions
+  opts: PlatformUtilsServiceInitOptions,
 ): Promise<PlatformUtilsService> {
   return factory(
     cache,
@@ -29,7 +29,7 @@ export function platformUtilsServiceFactory(
         await messagingServiceFactory(cache, opts),
         opts.platformUtilsServiceOptions.clipboardWriteCallback,
         opts.platformUtilsServiceOptions.biometricCallback,
-        opts.platformUtilsServiceOptions.win
-      )
+        opts.platformUtilsServiceOptions.win,
+      ),
   );
 }

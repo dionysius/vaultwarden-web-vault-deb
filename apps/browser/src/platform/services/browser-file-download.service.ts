@@ -26,7 +26,7 @@ export class BrowserFileDownloadService implements FileDownloadService {
           blobOptions: request.blobOptions,
           fileName: request.fileName,
         }),
-        true
+        true,
       );
     } else {
       const a = window.document.createElement("a");

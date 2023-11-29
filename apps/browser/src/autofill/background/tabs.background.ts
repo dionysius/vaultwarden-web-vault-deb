@@ -7,7 +7,7 @@ export default class TabsBackground {
   constructor(
     private main: MainBackground,
     private notificationBackground: NotificationBackground,
-    private overlayBackground: OverlayBackground
+    private overlayBackground: OverlayBackground,
   ) {}
 
   private focusedWindowId: number;
@@ -74,7 +74,7 @@ export default class TabsBackground {
   private handleTabOnUpdated = async (
     tabId: number,
     changeInfo: chrome.tabs.TabChangeInfo,
-    tab: chrome.tabs.Tab
+    tab: chrome.tabs.Tab,
   ) => {
     const removePageDetailsStatus = new Set(["loading", "unloaded"]);
     if (removePageDetailsStatus.has(changeInfo.status)) {

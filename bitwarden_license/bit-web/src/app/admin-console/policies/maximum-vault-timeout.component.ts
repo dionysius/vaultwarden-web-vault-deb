@@ -29,7 +29,10 @@ export class MaximumVaultTimeoutPolicyComponent extends BasePolicyComponent {
     action: new FormControl<string>(null),
   });
 
-  constructor(private formBuilder: FormBuilder, private i18nService: I18nService) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private i18nService: I18nService,
+  ) {
     super();
     this.vaultTimeoutActionOptions = [
       { name: i18nService.t("userPreference"), value: null },

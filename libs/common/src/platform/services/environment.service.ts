@@ -57,7 +57,7 @@ export class EnvironmentService implements EnvironmentServiceAbstraction {
             return;
           }
           await this.setUrlsFromStorage();
-        })
+        }),
       )
       .subscribe();
   }
@@ -296,7 +296,7 @@ export class EnvironmentService implements EnvironmentServiceAbstraction {
       default: {
         // Environment is self-hosted
         const envUrls = await this.stateService.getEnvironmentUrls(
-          userId ? { userId: userId } : null
+          userId ? { userId: userId } : null,
         );
         return Utils.getHost(envUrls.webVault || envUrls.base);
       }

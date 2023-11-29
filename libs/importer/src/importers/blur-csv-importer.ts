@@ -19,7 +19,7 @@ export class BlurCsvImporter extends BaseImporter implements Importer {
       const cipher = this.initLoginCipher();
       cipher.name = this.getValueOrDefault(
         value.label,
-        this.getValueOrDefault(this.nameFromUrl(value.domain), "--")
+        this.getValueOrDefault(this.nameFromUrl(value.domain), "--"),
       );
       cipher.login.uris = this.makeUriArray(value.domain);
       cipher.login.password = this.getValueOrDefault(value.password);

@@ -18,7 +18,7 @@ export class TwoFactorOptionsComponent implements OnInit {
     protected router: Router,
     protected i18nService: I18nService,
     protected platformUtilsService: PlatformUtilsService,
-    protected win: Window
+    protected win: Window,
   ) {}
 
   ngOnInit() {

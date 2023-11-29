@@ -42,11 +42,11 @@ export class OrganizationApiServiceAbstraction {
   upgrade: (id: string, request: OrganizationUpgradeRequest) => Promise<PaymentResponse>;
   updatePasswordManagerSeats: (
     id: string,
-    request: OrganizationSubscriptionUpdateRequest
+    request: OrganizationSubscriptionUpdateRequest,
   ) => Promise<void>;
   updateSecretsManagerSubscription: (
     id: string,
-    request: OrganizationSmSubscriptionUpdateRequest
+    request: OrganizationSmSubscriptionUpdateRequest,
   ) => Promise<void>;
   updateSeats: (id: string, request: SeatRequest) => Promise<PaymentResponse>;
   updateStorage: (id: string, request: StorageRequest) => Promise<PaymentResponse>;
@@ -60,7 +60,7 @@ export class OrganizationApiServiceAbstraction {
   getOrCreateApiKey: (id: string, request: OrganizationApiKeyRequest) => Promise<ApiKeyResponse>;
   getApiKeyInformation: (
     id: string,
-    organizationApiKeyType?: OrganizationApiKeyType
+    organizationApiKeyType?: OrganizationApiKeyType,
   ) => Promise<ListResponse<OrganizationApiKeyInformationResponse>>;
   rotateApiKey: (id: string, request: OrganizationApiKeyRequest) => Promise<ApiKeyResponse>;
   getTaxInfo: (id: string) => Promise<TaxInfoResponse>;
@@ -72,10 +72,10 @@ export class OrganizationApiServiceAbstraction {
   selfHostedSyncLicense: (id: string) => Promise<void>;
   subscribeToSecretsManager: (
     id: string,
-    request: SecretsManagerSubscribeRequest
+    request: SecretsManagerSubscribeRequest,
   ) => Promise<ProfileOrganizationResponse>;
   updateCollectionManagement: (
     id: string,
-    request: OrganizationCollectionManagementUpdateRequest
+    request: OrganizationCollectionManagementUpdateRequest,
   ) => Promise<OrganizationResponse>;
 }

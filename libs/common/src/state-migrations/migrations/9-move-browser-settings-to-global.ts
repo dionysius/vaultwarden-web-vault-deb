@@ -27,7 +27,7 @@ export class MoveBrowserSettingsToGlobal extends Migrator<8, 9> {
   tryAddSetting(
     accounts: { userId: string; account: ExpectedAccountType }[],
     accountSelector: (account: ExpectedAccountType) => boolean | undefined,
-    globalSetter: (value: boolean | undefined) => void
+    globalSetter: (value: boolean | undefined) => void,
   ): void {
     const hasValue = accounts.some(({ account }) => {
       return accountSelector(account) !== undefined;
@@ -65,19 +65,19 @@ export class MoveBrowserSettingsToGlobal extends Migrator<8, 9> {
     this.tryAddSetting(
       accounts,
       (a) => a.settings?.disableAddLoginNotification,
-      (v) => (targetGlobalState.disableAddLoginNotification = v)
+      (v) => (targetGlobalState.disableAddLoginNotification = v),
     );
 
     this.tryAddSetting(
       accounts,
       (a) => a.settings?.disableChangedPasswordNotification,
-      (v) => (targetGlobalState.disableChangedPasswordNotification = v)
+      (v) => (targetGlobalState.disableChangedPasswordNotification = v),
     );
 
     this.tryAddSetting(
       accounts,
       (a) => a.settings?.disableContextMenuItem,
-      (v) => (targetGlobalState.disableContextMenuItem = v)
+      (v) => (targetGlobalState.disableContextMenuItem = v),
     );
 
     await helper.set<TargetGlobalState>("global", {
@@ -92,7 +92,7 @@ export class MoveBrowserSettingsToGlobal extends Migrator<8, 9> {
         delete account.settings?.disableContextMenuItem;
         delete account.settings?.neverDomains;
         await helper.set(userId, account);
-      })
+      }),
     );
   }
 

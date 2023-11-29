@@ -17,7 +17,7 @@ export class UserVerificationService implements UserVerificationServiceAbstracti
     private stateService: StateService,
     private cryptoService: CryptoService,
     private i18nService: I18nService,
-    private userVerificationApiService: UserVerificationApiServiceAbstraction
+    private userVerificationApiService: UserVerificationApiServiceAbstraction,
   ) {}
 
   /**
@@ -29,7 +29,7 @@ export class UserVerificationService implements UserVerificationServiceAbstracti
   async buildRequest<T extends SecretVerificationRequest>(
     verification: Verification,
     requestClass?: new () => T,
-    alreadyHashed?: boolean
+    alreadyHashed?: boolean,
   ) {
     this.validateInput(verification);
 
@@ -45,7 +45,7 @@ export class UserVerificationService implements UserVerificationServiceAbstracti
           verification.secret,
           await this.stateService.getEmail(),
           await this.stateService.getKdfType(),
-          await this.stateService.getKdfConfig()
+          await this.stateService.getKdfConfig(),
         );
       }
       request.masterPasswordHash = alreadyHashed
@@ -78,12 +78,12 @@ export class UserVerificationService implements UserVerificationServiceAbstracti
           verification.secret,
           await this.stateService.getEmail(),
           await this.stateService.getKdfType(),
-          await this.stateService.getKdfConfig()
+          await this.stateService.getKdfConfig(),
         );
       }
       const passwordValid = await this.cryptoService.compareAndUpdateKeyHash(
         verification.secret,
-        masterKey
+        masterKey,
       );
       if (!passwordValid) {
         throw new Error(this.i18nService.t("invalidMasterPassword"));

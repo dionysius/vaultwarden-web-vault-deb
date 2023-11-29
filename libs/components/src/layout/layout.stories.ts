@@ -18,9 +18,10 @@ export default {
        * Applying a CSS transform makes a `position: fixed` element act like it is `position: relative`
        * https://github.com/storybookjs/storybook/issues/8011#issue-490251969
        */
-      (story) => /* HTML */ `<div class="tw-scale-100 tw-border-2 tw-border-solid tw-border-[red]">
-        ${story}
-      </div>`
+      (story) =>
+        /* HTML */ `<div class="tw-scale-100 tw-border-2 tw-border-solid tw-border-[red]">
+          ${story}
+        </div>`,
     ),
     moduleMetadata({
       imports: [NavigationModule, RouterTestingModule, CalloutModule],

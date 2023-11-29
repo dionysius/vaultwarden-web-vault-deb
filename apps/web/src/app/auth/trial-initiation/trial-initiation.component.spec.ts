@@ -113,7 +113,7 @@ describe("TrialInitiationComponent", () => {
           token: "token",
           email: "testEmail",
           organizationUserId: "123",
-        })
+        }),
       );
       policyApiServiceMock.getPoliciesByToken.mockReturnValueOnce(
         Promise.resolve({
@@ -135,7 +135,7 @@ describe("TrialInitiationComponent", () => {
               enabled: true,
             },
           ],
-        } as ListResponse<PolicyResponse>)
+        } as ListResponse<PolicyResponse>),
       );
       policyServiceMock.masterPasswordPolicyOptions$.mockReturnValue(
         of({
@@ -145,7 +145,7 @@ describe("TrialInitiationComponent", () => {
           requireNumbers: null,
           requireSpecial: null,
           requireUpper: null,
-        } as MasterPasswordPolicyOptions)
+        } as MasterPasswordPolicyOptions),
       );
 
       // Need to recreate component with new service mocks

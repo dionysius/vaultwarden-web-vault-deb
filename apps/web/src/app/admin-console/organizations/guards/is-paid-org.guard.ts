@@ -13,7 +13,7 @@ export class IsPaidOrgGuard implements CanActivate {
     private router: Router,
     private organizationService: OrganizationService,
     private messagingService: MessagingService,
-    private dialogService: DialogService
+    private dialogService: DialogService,
   ) {}
 
   async canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {

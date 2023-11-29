@@ -5,6 +5,6 @@ export abstract class ImportApiServiceAbstraction {
   postImportCiphers: (request: ImportCiphersRequest) => Promise<any>;
   postImportOrganizationCiphers: (
     organizationId: string,
-    request: ImportOrganizationCiphersRequest
+    request: ImportOrganizationCiphersRequest,
   ) => Promise<any>;
 }

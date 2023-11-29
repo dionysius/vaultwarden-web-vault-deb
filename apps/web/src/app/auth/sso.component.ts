@@ -39,7 +39,7 @@ export class SsoComponent extends BaseSsoComponent {
     logService: LogService,
     private orgDomainApiService: OrgDomainApiServiceAbstraction,
     private validationService: ValidationService,
-    configService: ConfigServiceAbstraction
+    configService: ConfigServiceAbstraction,
   ) {
     super(
       authService,
@@ -53,7 +53,7 @@ export class SsoComponent extends BaseSsoComponent {
       environmentService,
       passwordGenerationService,
       logService,
-      configService
+      configService,
     );
     this.redirectUri = window.location.origin + "/sso-connector.html";
     this.clientId = "web";

@@ -32,7 +32,7 @@ export class StateService extends BaseStateService<GlobalState, Account> {
     logService: LogService,
     @Inject(STATE_FACTORY) stateFactory: StateFactory<GlobalState, Account>,
     accountService: AccountService,
-    @Inject(STATE_SERVICE_USE_CACHE) useAccountCache = true
+    @Inject(STATE_SERVICE_USE_CACHE) useAccountCache = true,
   ) {
     super(
       storageService,
@@ -41,7 +41,7 @@ export class StateService extends BaseStateService<GlobalState, Account> {
       logService,
       stateFactory,
       accountService,
-      useAccountCache
+      useAccountCache,
     );
   }
 
@@ -58,14 +58,14 @@ export class StateService extends BaseStateService<GlobalState, Account> {
 
   async setEncryptedCiphers(
     value: { [id: string]: CipherData },
-    options?: StorageOptions
+    options?: StorageOptions,
   ): Promise<void> {
     options = this.reconcileOptions(options, await this.defaultInMemoryOptions());
     return await super.setEncryptedCiphers(value, options);
   }
 
   async getEncryptedCollections(
-    options?: StorageOptions
+    options?: StorageOptions,
   ): Promise<{ [id: string]: CollectionData }> {
     options = this.reconcileOptions(options, await this.defaultInMemoryOptions());
     return await super.getEncryptedCollections(options);
@@ -73,7 +73,7 @@ export class StateService extends BaseStateService<GlobalState, Account> {
 
   async setEncryptedCollections(
     value: { [id: string]: CollectionData },
-    options?: StorageOptions
+    options?: StorageOptions,
   ): Promise<void> {
     options = this.reconcileOptions(options, await this.defaultInMemoryOptions());
     return await super.setEncryptedCollections(value, options);
@@ -86,7 +86,7 @@ export class StateService extends BaseStateService<GlobalState, Account> {
 
   async setEncryptedFolders(
     value: { [id: string]: FolderData },
-    options?: StorageOptions
+    options?: StorageOptions,
   ): Promise<void> {
     options = this.reconcileOptions(options, await this.defaultInMemoryOptions());
     return await super.setEncryptedFolders(value, options);
@@ -99,7 +99,7 @@ export class StateService extends BaseStateService<GlobalState, Account> {
 
   async setEncryptedSends(
     value: { [id: string]: SendData },
-    options?: StorageOptions
+    options?: StorageOptions,
   ): Promise<void> {
     options = this.reconcileOptions(options, await this.defaultInMemoryOptions());
     return await super.setEncryptedSends(value, options);

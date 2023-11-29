@@ -9,7 +9,10 @@ import { ProviderService } from "@bitwarden/common/admin-console/abstractions/pr
 })
 // eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class SettingsComponent {
-  constructor(private route: ActivatedRoute, private providerService: ProviderService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private providerService: ProviderService,
+  ) {}
 
   ngOnInit() {
     // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe

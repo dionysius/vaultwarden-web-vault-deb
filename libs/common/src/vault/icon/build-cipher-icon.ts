@@ -5,7 +5,7 @@ import { CipherView } from "../models/view/cipher.view";
 export function buildCipherIcon(
   iconsServerUrl: string,
   cipher: CipherView,
-  isFaviconDisabled: boolean
+  isFaviconDisabled: boolean,
 ) {
   const imageEnabled = !isFaviconDisabled;
   let icon;

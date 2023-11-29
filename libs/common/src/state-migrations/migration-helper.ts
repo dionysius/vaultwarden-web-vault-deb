@@ -7,7 +7,7 @@ export class MigrationHelper {
   constructor(
     public currentVersion: number,
     private storageService: AbstractStorageService,
-    public logService: LogService
+    public logService: LogService,
   ) {}
 
   get<T>(key: string): Promise<T> {
@@ -31,7 +31,7 @@ export class MigrationHelper {
       userIds.map(async (userId) => ({
         userId,
         account: await this.get<ExpectedAccountType>(userId),
-      }))
+      })),
     );
   }
 }

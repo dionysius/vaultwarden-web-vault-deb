@@ -16,7 +16,7 @@ const AllowedSecureNoteTypes = new Set<string>([
 export class Parser {
   constructor(
     private cryptoFunctionService: CryptoFunctionService,
-    private cryptoUtils: CryptoUtils
+    private cryptoUtils: CryptoUtils,
   ) {}
 
   /*
@@ -30,7 +30,7 @@ export class Parser {
     chunk: Chunk,
     encryptionKey: Uint8Array,
     folder: SharedFolder,
-    options: ParserOptions
+    options: ParserOptions,
   ): Promise<Account> {
     const placeholder = "decryption failed";
     const reader = new BinaryReader(chunk.payload);
@@ -43,19 +43,19 @@ export class Parser {
     const name = await this.cryptoUtils.decryptAes256PlainWithDefault(
       this.readItem(reader),
       encryptionKey,
-      placeholder
+      placeholder,
     );
 
     // 2: group
     const group = await this.cryptoUtils.decryptAes256PlainWithDefault(
       this.readItem(reader),
       encryptionKey,
-      placeholder
+      placeholder,
     );
 
     // 3: url
     let url = Utils.fromBufferToUtf8(
-      Utils.fromHexToArray(Utils.fromBufferToUtf8(this.readItem(reader)))
+      Utils.fromHexToArray(Utils.fromBufferToUtf8(this.readItem(reader))),
     );
 
     // Ignore "group" accounts. They have no credentials.
@@ -67,7 +67,7 @@ export class Parser {
     const notes = await this.cryptoUtils.decryptAes256PlainWithDefault(
       this.readItem(reader),
       encryptionKey,
-      placeholder
+      placeholder,
     );
 
     // 5: fav (is favorite)
@@ -80,14 +80,14 @@ export class Parser {
     let username = await this.cryptoUtils.decryptAes256PlainWithDefault(
       this.readItem(reader),
       encryptionKey,
-      placeholder
+      placeholder,
     );
 
     // 8: password
     let password = await this.cryptoUtils.decryptAes256PlainWithDefault(
       this.readItem(reader),
       encryptionKey,
-      placeholder
+      placeholder,
     );
 
     // 9: pwprotect (?)
@@ -215,7 +215,7 @@ export class Parser {
     const totp = await this.cryptoUtils.decryptAes256PlainWithDefault(
       this.readItem(reader),
       encryptionKey,
-      placeholder
+      placeholder,
     );
 
     // 3 more left. Don't even bother skipping them.
@@ -244,7 +244,7 @@ export class Parser {
   async parseShar(
     chunk: Chunk,
     encryptionKey: Uint8Array,
-    rsaKey: Uint8Array
+    rsaKey: Uint8Array,
   ): Promise<SharedFolder> {
     const reader = new BinaryReader(chunk.payload);
 
@@ -257,7 +257,7 @@ export class Parser {
     const decFolderKey = await this.cryptoFunctionService.rsaDecrypt(
       rsaEncryptedFolderKey,
       rsaKey,
-      "sha1"
+      "sha1",
     );
     const key = Utils.fromHexToArray(Utils.fromBufferToUtf8(decFolderKey));
 
@@ -277,7 +277,7 @@ export class Parser {
       Utils.fromHexToArray(encryptedPrivateKey),
       encryptionKey,
       "cbc",
-      encryptionKey.subarray(0, 16)
+      encryptionKey.subarray(0, 16),
     );
 
     const header = "LastPassPrivateKey<";

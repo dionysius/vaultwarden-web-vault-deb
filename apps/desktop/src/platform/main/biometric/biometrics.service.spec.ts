@@ -33,7 +33,7 @@ describe("biometrics tests", function () {
       stateService,
       logService,
       messagingService,
-      process.platform
+      process.platform,
     );
 
     const mockService = mock<OsBiometricService>();
@@ -57,7 +57,7 @@ describe("biometrics tests", function () {
         stateService,
         logService,
         messagingService,
-        "win32"
+        "win32",
       );
 
       const internalService = (sut as any).platformSpecificService;
@@ -72,7 +72,7 @@ describe("biometrics tests", function () {
         stateService,
         logService,
         messagingService,
-        "darwin"
+        "darwin",
       );
       const internalService = (sut as any).platformSpecificService;
       expect(internalService).not.toBeNull();
@@ -91,7 +91,7 @@ describe("biometrics tests", function () {
         stateService,
         logService,
         messagingService,
-        process.platform
+        process.platform,
       );
 
       innerService = mock();

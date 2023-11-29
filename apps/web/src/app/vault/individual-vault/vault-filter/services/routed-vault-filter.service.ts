@@ -40,7 +40,7 @@ export class RoutedVaultFilterService implements OnDestroy {
           type,
         };
       }),
-      takeUntil(this.onDestroy)
+      takeUntil(this.onDestroy),
     );
   }
 

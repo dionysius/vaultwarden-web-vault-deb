@@ -58,7 +58,7 @@ describe("RemoveLegacyEtmKeyMigrator", () => {
 
     it("should handle missing authenticatedAccounts", async () => {
       storage.get.mockImplementation((key) =>
-        key === "authenticatedAccounts" ? undefined : (exampleJSON as any)[key]
+        key === "authenticatedAccounts" ? undefined : (exampleJSON as any)[key],
       );
       const accounts = await sut.getAccounts();
       expect(accounts).toEqual([]);

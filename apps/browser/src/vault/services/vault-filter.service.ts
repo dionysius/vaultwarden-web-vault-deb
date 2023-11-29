@@ -20,7 +20,7 @@ export class VaultFilterService extends BaseVaultFilterService {
     folderService: FolderService,
     cipherService: CipherService,
     collectionService: CollectionService,
-    policyService: PolicyService
+    policyService: PolicyService,
   ) {
     super(
       stateService,
@@ -28,7 +28,7 @@ export class VaultFilterService extends BaseVaultFilterService {
       folderService,
       cipherService,
       collectionService,
-      policyService
+      policyService,
     );
     this.vaultFilter.myVaultOnly = false;
     this.vaultFilter.selectedOrganizationId = null;

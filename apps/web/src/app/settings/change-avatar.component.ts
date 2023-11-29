@@ -55,7 +55,7 @@ export class ChangeAvatarComponent implements OnInit, OnDestroy {
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
     private logService: LogService,
-    private accountUpdateService: AvatarUpdateService
+    private accountUpdateService: AvatarUpdateService,
   ) {}
 
   async ngOnInit() {

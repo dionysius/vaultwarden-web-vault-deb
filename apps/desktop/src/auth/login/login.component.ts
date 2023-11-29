@@ -73,7 +73,7 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
     formValidationErrorService: FormValidationErrorsService,
     route: ActivatedRoute,
     loginService: LoginService,
-    webAuthnLoginService: WebAuthnLoginServiceAbstraction
+    webAuthnLoginService: WebAuthnLoginServiceAbstraction,
   ) {
     super(
       devicesApiService,
@@ -92,7 +92,7 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
       formValidationErrorService,
       route,
       loginService,
-      webAuthnLoginService
+      webAuthnLoginService,
     );
     super.onSuccessfulLogin = () => {
       return syncService.fullSync(true);
@@ -135,7 +135,7 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
   async settings() {
     const [modal, childComponent] = await this.modalService.openViewRef(
       EnvironmentComponent,
-      this.environmentModal
+      this.environmentModal,
     );
 
     modal.onShown.pipe(takeUntil(this.componentDestroyed$)).subscribe(() => {
@@ -164,7 +164,7 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccured"),
-        this.i18nService.t("invalidEmail")
+        this.i18nService.t("invalidEmail"),
       );
       return;
     }

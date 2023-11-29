@@ -72,7 +72,7 @@ export class LoginView extends ItemView {
   matchesUri(
     targetUri: string,
     equivalentDomains: Set<string>,
-    defaultUriMatch: UriMatchType = null
+    defaultUriMatch: UriMatchType = null,
   ): boolean {
     if (this.uris == null) {
       return false;

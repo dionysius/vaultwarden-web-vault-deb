@@ -16,7 +16,10 @@ export class SearchComponent implements OnInit, OnDestroy {
 
   private activeAccountSubscription: Subscription;
 
-  constructor(private searchBarService: SearchBarService, private stateService: StateService) {
+  constructor(
+    private searchBarService: SearchBarService,
+    private stateService: StateService,
+  ) {
     // eslint-disable-next-line rxjs-angular/prefer-takeuntil
     this.searchBarService.state$.subscribe((state) => {
       this.state = state;

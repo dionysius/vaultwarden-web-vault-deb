@@ -383,7 +383,7 @@ describe("BrowserPopupUtils", () => {
 
     it("returns false if the popoutKey is not provided", async () => {
       await expect(BrowserPopupUtils["isSingleActionPopoutOpen"](undefined, {})).resolves.toBe(
-        false
+        false,
       );
     });
 
@@ -391,7 +391,7 @@ describe("BrowserPopupUtils", () => {
       jest.spyOn(BrowserApi, "tabsQuery").mockResolvedValueOnce([]);
 
       await expect(
-        BrowserPopupUtils["isSingleActionPopoutOpen"]("123", windowOptions)
+        BrowserPopupUtils["isSingleActionPopoutOpen"]("123", windowOptions),
       ).resolves.toBe(false);
     });
 
@@ -412,7 +412,7 @@ describe("BrowserPopupUtils", () => {
       ]);
 
       await expect(
-        BrowserPopupUtils["isSingleActionPopoutOpen"]("789", windowOptions)
+        BrowserPopupUtils["isSingleActionPopoutOpen"]("789", windowOptions),
       ).resolves.toBe(false);
     });
 
@@ -433,7 +433,7 @@ describe("BrowserPopupUtils", () => {
       ]);
 
       await expect(
-        BrowserPopupUtils["isSingleActionPopoutOpen"]("123", windowOptions)
+        BrowserPopupUtils["isSingleActionPopoutOpen"]("123", windowOptions),
       ).resolves.toBe(true);
       expect(BrowserApi.updateWindowProperties).toHaveBeenCalledWith(2, {
         focused: true,

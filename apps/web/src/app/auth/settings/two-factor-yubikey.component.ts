@@ -38,7 +38,7 @@ export class TwoFactorYubiKeyComponent extends TwoFactorBaseComponent {
     platformUtilsService: PlatformUtilsService,
     logService: LogService,
     userVerificationService: UserVerificationService,
-    dialogService: DialogService
+    dialogService: DialogService,
   ) {
     super(
       apiService,
@@ -46,7 +46,7 @@ export class TwoFactorYubiKeyComponent extends TwoFactorBaseComponent {
       platformUtilsService,
       logService,
       userVerificationService,
-      dialogService
+      dialogService,
     );
   }
 

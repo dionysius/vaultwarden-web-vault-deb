@@ -8,25 +8,25 @@ import { BrowserSendComponentState } from "../../../models/browserSendComponentS
 
 export abstract class BrowserStateService extends BaseStateServiceAbstraction<Account> {
   getBrowserGroupingComponentState: (
-    options?: StorageOptions
+    options?: StorageOptions,
   ) => Promise<BrowserGroupingsComponentState>;
   setBrowserGroupingComponentState: (
     value: BrowserGroupingsComponentState,
-    options?: StorageOptions
+    options?: StorageOptions,
   ) => Promise<void>;
   getBrowserVaultItemsComponentState: (options?: StorageOptions) => Promise<BrowserComponentState>;
   setBrowserVaultItemsComponentState: (
     value: BrowserComponentState,
-    options?: StorageOptions
+    options?: StorageOptions,
   ) => Promise<void>;
   getBrowserSendComponentState: (options?: StorageOptions) => Promise<BrowserSendComponentState>;
   setBrowserSendComponentState: (
     value: BrowserSendComponentState,
-    options?: StorageOptions
+    options?: StorageOptions,
   ) => Promise<void>;
   getBrowserSendTypeComponentState: (options?: StorageOptions) => Promise<BrowserComponentState>;
   setBrowserSendTypeComponentState: (
     value: BrowserComponentState,
-    options?: StorageOptions
+    options?: StorageOptions,
   ) => Promise<void>;
 }

@@ -23,7 +23,7 @@ export class SendText extends Domain {
       {
         text: null,
       },
-      []
+      [],
     );
   }
 
@@ -34,7 +34,7 @@ export class SendText extends Domain {
         text: null,
       },
       null,
-      key
+      key,
     );
   }
 

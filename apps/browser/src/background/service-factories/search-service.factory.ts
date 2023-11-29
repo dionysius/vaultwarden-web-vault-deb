@@ -23,13 +23,16 @@ export type SearchServiceInitOptions = SearchServiceFactoryOptions &
 
 export function searchServiceFactory(
   cache: { searchService?: AbstractSearchService } & CachedServices,
-  opts: SearchServiceInitOptions
+  opts: SearchServiceInitOptions,
 ): Promise<AbstractSearchService> {
   return factory(
     cache,
     "searchService",
     opts,
     async () =>
-      new SearchService(await logServiceFactory(cache, opts), await i18nServiceFactory(cache, opts))
+      new SearchService(
+        await logServiceFactory(cache, opts),
+        await i18nServiceFactory(cache, opts),
+      ),
   );
 }

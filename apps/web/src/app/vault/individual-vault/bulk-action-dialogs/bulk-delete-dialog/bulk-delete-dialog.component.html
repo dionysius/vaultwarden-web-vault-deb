@@ -5,15 +5,15 @@
   <span bitDialogContent>
     <ng-container *ngIf="!permanent">
       <span *ngIf="cipherIds?.length">
-        {{ "deleteSelectedItemsDesc" | i18n : cipherIds.length }}
+        {{ "deleteSelectedItemsDesc" | i18n: cipherIds.length }}
       </span>
       <span *ngIf="collectionIds?.length">
-        {{ "deleteSelectedCollectionsDesc" | i18n : collectionIds.length }}
+        {{ "deleteSelectedCollectionsDesc" | i18n: collectionIds.length }}
       </span>
       {{ "deleteSelectedConfirmation" | i18n }}
     </ng-container>
     <ng-container *ngIf="permanent">
-      {{ "permanentlyDeleteSelectedItemsDesc" | i18n : cipherIds.length }}
+      {{ "permanentlyDeleteSelectedItemsDesc" | i18n: cipherIds.length }}
     </ng-container>
   </span>
   <ng-container bitDialogFooter>

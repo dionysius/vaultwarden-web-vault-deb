@@ -38,7 +38,7 @@ export class ServiceAccountsComponent implements OnInit {
     private dialogService: DialogService,
     private accessPolicyService: AccessPolicyService,
     private serviceAccountService: ServiceAccountService,
-    private organizationService: OrganizationService
+    private organizationService: OrganizationService,
   ) {}
 
   ngOnInit() {
@@ -52,7 +52,7 @@ export class ServiceAccountsComponent implements OnInit {
         this.organizationEnabled = this.organizationService.get(params.organizationId)?.enabled;
 
         return await this.getServiceAccounts();
-      })
+      }),
     );
   }
 
@@ -84,7 +84,7 @@ export class ServiceAccountsComponent implements OnInit {
         data: {
           serviceAccounts: event,
         },
-      }
+      },
     );
   }
 

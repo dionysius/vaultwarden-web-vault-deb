@@ -47,7 +47,7 @@ if (browserNativeWebauthnSupport) {
 
 const browserCredentials = {
   create: navigator.credentials.create.bind(
-    navigator.credentials
+    navigator.credentials,
   ) as typeof navigator.credentials.create,
   get: navigator.credentials.get.bind(navigator.credentials) as typeof navigator.credentials.get,
 };
@@ -55,7 +55,7 @@ const browserCredentials = {
 const messenger = ((window as any).messenger = Messenger.forDOMCommunication(window));
 navigator.credentials.create = async (
   options?: CredentialCreationOptions,
-  abortController?: AbortController
+  abortController?: AbortController,
 ): Promise<Credential> => {
   if (!isWebauthnCall(options)) {
     return await browserCredentials.create(options);
@@ -72,7 +72,7 @@ navigator.credentials.create = async (
         type: MessageType.CredentialCreationRequest,
         data: WebauthnUtils.mapCredentialCreationOptions(options, fallbackSupported),
       },
-      abortController
+      abortController,
     );
 
     if (response.type !== MessageType.CredentialCreationResponse) {
@@ -92,7 +92,7 @@ navigator.credentials.create = async (
 
 navigator.credentials.get = async (
   options?: CredentialRequestOptions,
-  abortController?: AbortController
+  abortController?: AbortController,
 ): Promise<Credential> => {
   if (!isWebauthnCall(options)) {
     return await browserCredentials.get(options);
@@ -110,7 +110,7 @@ navigator.credentials.get = async (
         type: MessageType.CredentialGetRequest,
         data: WebauthnUtils.mapCredentialRequestOptions(options, fallbackSupported),
       },
-      abortController
+      abortController,
     );
 
     if (response.type !== MessageType.CredentialGetResponse) {
@@ -161,9 +161,9 @@ async function waitForFocus(fallbackWait = 500, timeout = 5 * 60 * 1000) {
     timeoutId = window.setTimeout(
       () =>
         reject(
-          new DOMException("The operation either timed out or was not allowed.", "AbortError")
+          new DOMException("The operation either timed out or was not allowed.", "AbortError"),
         ),
-      timeout
+      timeout,
     );
   });
 

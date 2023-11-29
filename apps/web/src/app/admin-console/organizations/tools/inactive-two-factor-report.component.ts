@@ -23,7 +23,7 @@ export class InactiveTwoFactorReportComponent extends BaseInactiveTwoFactorRepor
     private route: ActivatedRoute,
     logService: LogService,
     passwordRepromptService: PasswordRepromptService,
-    organizationService: OrganizationService
+    organizationService: OrganizationService,
   ) {
     super(cipherService, organizationService, modalService, logService, passwordRepromptService);
   }

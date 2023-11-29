@@ -26,7 +26,7 @@
 <ng-container *ngIf="billing">
   <h2>{{ (isCreditBalance ? "accountCredit" : "accountBalance") | i18n }}</h2>
   <p class="text-lg">
-    <strong>{{ creditOrBalance | currency : "$" }}</strong>
+    <strong>{{ creditOrBalance | currency: "$" }}</strong>
   </p>
   <p>{{ "creditAppliedDesc" | i18n }}</p>
   <button
@@ -67,12 +67,12 @@
         ngNativeValidate
       >
         <bit-form-field class="tw-mr-2 tw-w-40">
-          <bit-label>{{ "amountX" | i18n : "1" }}</bit-label>
+          <bit-label>{{ "amountX" | i18n: "1" }}</bit-label>
           <input bitInput type="number" step="1" placeholder="xx" formControlName="amount1" />
           <span bitPrefix>$0.</span>
         </bit-form-field>
         <bit-form-field class="tw-mr-2 tw-w-40">
-          <bit-label>{{ "amountX" | i18n : "2" }}</bit-label>
+          <bit-label>{{ "amountX" | i18n: "2" }}</bit-label>
           <input bitInput type="number" step="1" placeholder="xx" formControlName="amount2" />
           <span bitPrefix>$0.</span>
         </bit-form-field>

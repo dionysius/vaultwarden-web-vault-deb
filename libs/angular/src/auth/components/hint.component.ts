@@ -22,7 +22,7 @@ export class HintComponent implements OnInit {
     protected apiService: ApiService,
     protected platformUtilsService: PlatformUtilsService,
     private logService: LogService,
-    private loginService: LoginService
+    private loginService: LoginService,
   ) {}
 
   ngOnInit(): void {
@@ -34,7 +34,7 @@ export class HintComponent implements OnInit {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
-        this.i18nService.t("emailRequired")
+        this.i18nService.t("emailRequired"),
       );
       return;
     }
@@ -42,7 +42,7 @@ export class HintComponent implements OnInit {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
-        this.i18nService.t("invalidEmail")
+        this.i18nService.t("invalidEmail"),
       );
       return;
     }

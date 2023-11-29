@@ -30,7 +30,7 @@ export class NewMenuComponent implements OnInit, OnDestroy {
   constructor(
     private route: ActivatedRoute,
     private dialogService: DialogService,
-    private organizationService: OrganizationService
+    private organizationService: OrganizationService,
   ) {}
 
   ngOnInit() {

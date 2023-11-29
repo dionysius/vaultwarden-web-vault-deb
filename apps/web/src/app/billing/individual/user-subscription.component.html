@@ -54,7 +54,7 @@
   </bit-callout>
   <dl *ngIf="selfHosted">
     <dt>{{ "expiration" | i18n }}</dt>
-    <dd *ngIf="sub.expiration">{{ sub.expiration | date : "mediumDate" }}</dd>
+    <dd *ngIf="sub.expiration">{{ sub.expiration | date: "mediumDate" }}</dd>
     <dd *ngIf="!sub.expiration">{{ "neverExpires" | i18n }}</dd>
   </dl>
   <div class="row" *ngIf="!selfHosted">
@@ -71,9 +71,9 @@
         <dd>
           {{
             nextInvoice
-              ? (nextInvoice.date | date : "mediumDate") +
+              ? (nextInvoice.date | date: "mediumDate") +
                 ", " +
-                (nextInvoice.amount | currency : "$")
+                (nextInvoice.amount | currency: "$")
               : "-"
           }}
         </dd>
@@ -86,9 +86,9 @@
           <tr *ngFor="let i of subscription.items">
             <td>
               {{ i.name }} {{ i.quantity > 1 ? "&times;" + i.quantity : "" }} @
-              {{ i.amount | currency : "$" }}
+              {{ i.amount | currency: "$" }}
             </td>
-            <td>{{ i.quantity * i.amount | currency : "$" }} /{{ i.interval | i18n }}</td>
+            <td>{{ i.quantity * i.amount | currency: "$" }} /{{ i.interval | i18n }}</td>
           </tr>
         </tbody>
       </table>
@@ -155,7 +155,7 @@
       </button>
     </div>
     <h2 class="spaced-header">{{ "storage" | i18n }}</h2>
-    <p>{{ "subscriptionStorage" | i18n : sub.maxStorageGb || 0 : sub.storageName || "0 MB" }}</p>
+    <p>{{ "subscriptionStorage" | i18n: sub.maxStorageGb || 0 : sub.storageName || "0 MB" }}</p>
     <div class="progress">
       <div
         class="progress-bar bg-success"

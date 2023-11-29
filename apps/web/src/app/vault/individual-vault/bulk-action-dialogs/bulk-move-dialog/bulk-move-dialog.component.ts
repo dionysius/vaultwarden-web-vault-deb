@@ -26,11 +26,11 @@ export enum BulkMoveDialogResult {
  */
 export const openBulkMoveDialog = (
   dialogService: DialogService,
-  config: DialogConfig<BulkMoveDialogParams>
+  config: DialogConfig<BulkMoveDialogParams>,
 ) => {
   return dialogService.open<BulkMoveDialogResult, BulkMoveDialogParams>(
     BulkMoveDialogComponent,
-    config
+    config,
   );
 };
 
@@ -52,7 +52,7 @@ export class BulkMoveDialogComponent implements OnInit {
     private platformUtilsService: PlatformUtilsService,
     private i18nService: I18nService,
     private folderService: FolderService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
   ) {
     this.cipherIds = params.cipherIds ?? [];
   }

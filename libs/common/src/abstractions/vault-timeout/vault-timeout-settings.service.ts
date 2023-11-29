@@ -12,7 +12,7 @@ export abstract class VaultTimeoutSettingsService {
    */
   setVaultTimeoutOptions: (
     vaultTimeout: number,
-    vaultTimeoutAction: VaultTimeoutAction
+    vaultTimeoutAction: VaultTimeoutAction,
   ) => Promise<void>;
 
   /**

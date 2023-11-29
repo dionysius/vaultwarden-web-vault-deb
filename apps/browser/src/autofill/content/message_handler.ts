@@ -24,7 +24,7 @@ window.addEventListener(
       });
     }
   },
-  false
+  false,
 );
 
 const forwardCommands = [

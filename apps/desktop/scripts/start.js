@@ -26,7 +26,7 @@ concurrently(
     {
       name: "Elec",
       command: `npx wait-on ./build/main.js && npx electron --inspect=5858 ${args.join(
-        " "
+        " ",
       )} ./build --watch`,
       prefixColor: "green",
     },
@@ -35,5 +35,5 @@ concurrently(
     prefix: "name",
     outputStream: process.stdout,
     killOthers: ["success", "failure"],
-  }
+  },
 );

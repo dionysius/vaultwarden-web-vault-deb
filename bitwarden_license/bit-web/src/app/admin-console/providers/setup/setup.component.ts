@@ -35,7 +35,7 @@ export class SetupComponent implements OnInit {
     private cryptoService: CryptoService,
     private apiService: ApiService,
     private syncService: SyncService,
-    private validationService: ValidationService
+    private validationService: ValidationService,
   ) {}
 
   ngOnInit() {
@@ -49,7 +49,7 @@ export class SetupComponent implements OnInit {
           "error",
           null,
           this.i18nService.t("emergencyInviteAcceptFailed"),
-          { timeout: 10000 }
+          { timeout: 10000 },
         );
         this.router.navigate(["/"]);
         return;

@@ -43,11 +43,11 @@ export class AccountComponent {
   taxFormPromise: Promise<unknown>;
   flexibleCollectionsEnabled$ = this.configService.getFeatureFlag$(
     FeatureFlag.FlexibleCollections,
-    false
+    false,
   );
   flexibleCollectionsV1Enabled$ = this.configService.getFeatureFlag$(
     FeatureFlag.FlexibleCollectionsV1,
-    false
+    false,
   );
 
   // FormGroup validators taken from server Organization domain object
@@ -57,15 +57,15 @@ export class AccountComponent {
       {
         validators: [Validators.required, Validators.maxLength(50)],
         updateOn: "change",
-      }
+      },
     ),
     billingEmail: this.formBuilder.control(
       { value: "", disabled: true },
-      { validators: [Validators.required, Validators.email, Validators.maxLength(256)] }
+      { validators: [Validators.required, Validators.email, Validators.maxLength(256)] },
     ),
     businessName: this.formBuilder.control(
       { value: "", disabled: true },
-      { validators: [Validators.maxLength(50)] }
+      { validators: [Validators.maxLength(50)] },
     ),
   });
 
@@ -93,7 +93,7 @@ export class AccountComponent {
     private organizationApiService: OrganizationApiServiceAbstraction,
     private dialogService: DialogService,
     private formBuilder: FormBuilder,
-    private configService: ConfigServiceAbstraction
+    private configService: ConfigServiceAbstraction,
   ) {}
 
   async ngOnInit() {
@@ -111,7 +111,7 @@ export class AccountComponent {
             from(this.organizationApiService.getKeys(organization.id)),
           ]);
         }),
-        takeUntil(this.destroy$)
+        takeUntil(this.destroy$),
       )
       .subscribe(([organization, orgResponse, orgKeys]) => {
         // Set domain level organization variables
@@ -198,7 +198,7 @@ export class AccountComponent {
     this.platformUtilsService.showToast(
       "success",
       null,
-      this.i18nService.t("collectionManagementUpdated")
+      this.i18nService.t("collectionManagementUpdated"),
     );
   };
 
@@ -228,7 +228,7 @@ export class AccountComponent {
       comp.keyType = "organization";
       comp.entityId = this.organizationId;
       comp.postKey = this.organizationApiService.getOrCreateApiKey.bind(
-        this.organizationApiService
+        this.organizationApiService,
       );
       comp.scope = "api.organization";
       comp.grantType = "client_credentials";

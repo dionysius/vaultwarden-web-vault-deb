@@ -12,7 +12,7 @@ export class PolicyApiServiceAbstraction {
     organizationId: string,
     token: string,
     email: string,
-    organizationUserId: string
+    organizationUserId: string,
   ) => Promise<ListResponse<PolicyResponse>>;
 
   getMasterPasswordPolicyOptsForOrgUser: (orgId: string) => Promise<MasterPasswordPolicyOptions>;

@@ -44,7 +44,7 @@ export class Fido2Credential extends Domain {
         userDisplayName: null,
         discoverable: null,
       },
-      []
+      [],
     );
     this.creationDate = obj.creationDate != null ? new Date(obj.creationDate) : null;
   }
@@ -66,7 +66,7 @@ export class Fido2Credential extends Domain {
         discoverable: null,
       },
       orgId,
-      encKey
+      encKey,
     );
 
     const { counter } = await this.decryptObj(
@@ -75,7 +75,7 @@ export class Fido2Credential extends Domain {
         counter: null,
       },
       orgId,
-      encKey
+      encKey,
     );
     // Counter will end up as NaN if this fails
     view.counter = parseInt(counter);
@@ -86,7 +86,7 @@ export class Fido2Credential extends Domain {
         discoverable: null,
       },
       orgId,
-      encKey
+      encKey,
     );
     view.discoverable = discoverable === "true";
     view.creationDate = this.creationDate;

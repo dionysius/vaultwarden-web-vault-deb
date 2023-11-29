@@ -18,12 +18,12 @@ export type AuthRequestCryptoServiceInitOptions = AuthRequestCryptoServiceFactor
 
 export function authRequestCryptoServiceFactory(
   cache: { authRequestCryptoService?: AuthRequestCryptoServiceAbstraction } & CachedServices,
-  opts: AuthRequestCryptoServiceInitOptions
+  opts: AuthRequestCryptoServiceInitOptions,
 ): Promise<AuthRequestCryptoServiceAbstraction> {
   return factory(
     cache,
     "authRequestCryptoService",
     opts,
-    async () => new AuthRequestCryptoServiceImplementation(await cryptoServiceFactory(cache, opts))
+    async () => new AuthRequestCryptoServiceImplementation(await cryptoServiceFactory(cache, opts)),
   );
 }

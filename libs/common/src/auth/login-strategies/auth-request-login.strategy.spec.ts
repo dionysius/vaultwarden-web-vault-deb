@@ -45,7 +45,7 @@ describe("AuthRequestLoginStrategy", () => {
   const accessCode = "ACCESS_CODE";
   const authRequestId = "AUTH_REQUEST_ID";
   const decMasterKey = new SymmetricCryptoKey(
-    new Uint8Array(64).buffer as CsprngArray
+    new Uint8Array(64).buffer as CsprngArray,
   ) as MasterKey;
   const decUserKey = new SymmetricCryptoKey(new Uint8Array(64).buffer as CsprngArray) as UserKey;
   const decMasterKeyHash = "LOCAL_PASSWORD_HASH";
@@ -76,7 +76,7 @@ describe("AuthRequestLoginStrategy", () => {
       logService,
       stateService,
       twoFactorService,
-      deviceTrustCryptoService
+      deviceTrustCryptoService,
     );
 
     tokenResponse = identityTokenResponseFactory();
@@ -90,7 +90,7 @@ describe("AuthRequestLoginStrategy", () => {
       authRequestId,
       null,
       decMasterKey,
-      decMasterKeyHash
+      decMasterKeyHash,
     );
 
     const masterKey = new SymmetricCryptoKey(new Uint8Array(64).buffer as CsprngArray) as MasterKey;
@@ -117,7 +117,7 @@ describe("AuthRequestLoginStrategy", () => {
       authRequestId,
       decUserKey, // Pass userKey
       null, // No masterKey
-      null // No masterKeyHash
+      null, // No masterKeyHash
     );
 
     // Call logIn

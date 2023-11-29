@@ -85,7 +85,7 @@ export class SimpleValue {
 export function decode<T = any>(
   data: ArrayBuffer | SharedArrayBuffer,
   tagger?: TaggedValueFunction,
-  simpleValue?: SimpleValueFunction
+  simpleValue?: SimpleValueFunction,
 ): T {
   let dataView = new DataView(data);
   let ta = new Uint8Array(data);
@@ -485,7 +485,7 @@ export const CBOR: {
   decode: <T = any>(
     data: ArrayBuffer | SharedArrayBuffer,
     tagger?: TaggedValueFunction,
-    simpleValue?: SimpleValueFunction
+    simpleValue?: SimpleValueFunction,
   ) => T;
   encode: <T = any>(value: T) => ArrayBuffer;
 } = {

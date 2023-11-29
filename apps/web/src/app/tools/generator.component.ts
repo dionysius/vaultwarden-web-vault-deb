@@ -25,7 +25,7 @@ export class GeneratorComponent extends BaseGeneratorComponent {
     i18nService: I18nService,
     logService: LogService,
     route: ActivatedRoute,
-    private dialogService: DialogService
+    private dialogService: DialogService,
   ) {
     super(
       passwordGenerationService,
@@ -35,7 +35,7 @@ export class GeneratorComponent extends BaseGeneratorComponent {
       i18nService,
       logService,
       route,
-      window
+      window,
     );
     if (platformUtilsService.isSelfHost()) {
       // Allow only valid email forwarders for self host

@@ -28,7 +28,7 @@ export type EventUploadServiceInitOptions = EventUploadServiceOptions &
 
 export function eventUploadServiceFactory(
   cache: { eventUploadService?: AbstractEventUploadService } & CachedServices,
-  opts: EventUploadServiceInitOptions
+  opts: EventUploadServiceInitOptions,
 ): Promise<AbstractEventUploadService> {
   return factory(
     cache,
@@ -38,7 +38,7 @@ export function eventUploadServiceFactory(
       new EventUploadService(
         await apiServiceFactory(cache, opts),
         await stateServiceFactory(cache, opts),
-        await logServiceFactory(cache, opts)
-      )
+        await logServiceFactory(cache, opts),
+      ),
   );
 }

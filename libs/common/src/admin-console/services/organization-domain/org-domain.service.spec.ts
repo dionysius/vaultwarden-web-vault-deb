@@ -47,14 +47,14 @@ const mockedExtraDomainServerResponse = {
 };
 
 const mockedUnverifiedOrgDomainResponse = new OrganizationDomainResponse(
-  mockedUnverifiedDomainServerResponse
+  mockedUnverifiedDomainServerResponse,
 );
 const mockedVerifiedOrgDomainResponse = new OrganizationDomainResponse(
-  mockedVerifiedDomainServerResponse
+  mockedVerifiedDomainServerResponse,
 );
 
 const mockedExtraOrgDomainResponse = new OrganizationDomainResponse(
-  mockedExtraDomainServerResponse
+  mockedExtraDomainServerResponse,
 );
 
 describe("Org Domain Service", () => {
@@ -96,11 +96,11 @@ describe("Org Domain Service", () => {
     orgDomainService.replace(orgDomains);
 
     expect(orgDomainService.get(mockedVerifiedOrgDomainResponse.id)).toEqual(
-      mockedVerifiedOrgDomainResponse
+      mockedVerifiedOrgDomainResponse,
     );
 
     expect(orgDomainService.get(mockedUnverifiedOrgDomainResponse.id)).toEqual(
-      mockedUnverifiedOrgDomainResponse
+      mockedUnverifiedOrgDomainResponse,
     );
   });
 
@@ -116,7 +116,7 @@ describe("Org Domain Service", () => {
     orgDomainService.upsert([changedOrgDomain]);
 
     expect(orgDomainService.get(mockedVerifiedOrgDomainResponse.id).domainName).toEqual(
-      changedOrgDomain.domainName
+      changedOrgDomain.domainName,
     );
 
     const newOrgDomain = new OrganizationDomainResponse({

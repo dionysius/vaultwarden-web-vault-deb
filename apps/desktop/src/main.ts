@@ -90,7 +90,7 @@ export class Main {
     this.memoryStorageService = new MemoryStorageService();
     const globalStateProvider = new DefaultGlobalStateProvider(
       this.memoryStorageService,
-      this.storageService
+      this.storageService,
     );
 
     // TODO: this state service will have access to on disk storage, but not in memory storage.
@@ -105,9 +105,9 @@ export class Main {
       new AccountServiceImplementation(
         new NoopMessagingService(),
         this.logService,
-        globalStateProvider
+        globalStateProvider,
       ), // will not broadcast logouts. This is a hack until we can remove messaging dependency
-      false // Do not use disk caching because this will get out of sync with the renderer service
+      false, // Do not use disk caching because this will get out of sync with the renderer service
     );
 
     this.windowMain = new WindowMain(
@@ -115,7 +115,7 @@ export class Main {
       this.logService,
       this.storageService,
       (arg) => this.processDeepLink(arg),
-      (win) => this.trayMain.setupWindowListeners(win)
+      (win) => this.trayMain.setupWindowListeners(win),
     );
     this.messagingMain = new MessagingMain(this, this.stateService);
     this.updaterMain = new UpdaterMain(this.i18nService, this.windowMain);
@@ -130,7 +130,7 @@ export class Main {
       this.messagingService,
       this.stateService,
       this.windowMain,
-      this.updaterMain
+      this.updaterMain,
     );
 
     this.biometricsService = new BiometricsService(
@@ -139,20 +139,20 @@ export class Main {
       this.stateService,
       this.logService,
       this.messagingService,
-      process.platform
+      process.platform,
     );
 
     this.desktopCredentialStorageListener = new DesktopCredentialStorageListener(
       "Bitwarden",
       this.biometricsService,
-      this.logService
+      this.logService,
     );
 
     this.nativeMessagingMain = new NativeMessagingMain(
       this.logService,
       this.windowMain,
       app.getPath("userData"),
-      app.getPath("exe")
+      app.getPath("exe"),
     );
 
     this.clipboardMain = new ClipboardMain();
@@ -219,7 +219,7 @@ export class Main {
       (e: any) => {
         // eslint-disable-next-line
         console.error(e);
-      }
+      },
     );
   }
 

@@ -18,7 +18,7 @@ export class EncString implements Encrypted {
     encryptedStringOrType: string | EncryptionType,
     data?: string,
     iv?: string,
-    mac?: string
+    mac?: string,
   ) {
     if (data != null) {
       this.initFromData(encryptedStringOrType as EncryptionType, data, iv, mac);

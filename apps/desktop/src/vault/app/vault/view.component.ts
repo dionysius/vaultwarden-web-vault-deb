@@ -55,7 +55,7 @@ export class ViewComponent extends BaseViewComponent implements OnChanges {
     logService: LogService,
     stateService: StateService,
     fileDownloadService: FileDownloadService,
-    dialogService: DialogService
+    dialogService: DialogService,
   ) {
     super(
       cipherService,
@@ -76,7 +76,7 @@ export class ViewComponent extends BaseViewComponent implements OnChanges {
       logService,
       stateService,
       fileDownloadService,
-      dialogService
+      dialogService,
     );
   }
   ngOnInit() {

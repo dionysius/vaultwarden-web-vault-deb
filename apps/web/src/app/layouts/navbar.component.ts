@@ -38,7 +38,7 @@ export class NavbarComponent implements OnInit {
     private syncService: SyncService,
     private organizationService: OrganizationService,
     private vaultTimeoutSettingsService: VaultTimeoutSettingsService,
-    private i18nService: I18nService
+    private i18nService: I18nService,
   ) {
     this.selfHosted = this.platformUtilsService.isSelfHost();
   }
@@ -58,7 +58,7 @@ export class NavbarComponent implements OnInit {
     this.providers = await this.providerService.getAll();
 
     this.organizations$ = this.organizationService.memberOrganizations$.pipe(
-      canAccessAdmin(this.i18nService)
+      canAccessAdmin(this.i18nService),
     );
     this.canLock$ = this.vaultTimeoutSettingsService
       .availableVaultTimeoutActions$()

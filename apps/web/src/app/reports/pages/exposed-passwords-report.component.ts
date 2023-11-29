@@ -23,7 +23,7 @@ export class ExposedPasswordsReportComponent extends CipherReportComponent imple
     protected auditService: AuditService,
     protected organizationService: OrganizationService,
     modalService: ModalService,
-    passwordRepromptService: PasswordRepromptService
+    passwordRepromptService: PasswordRepromptService,
   ) {
     super(modalService, passwordRepromptService, organizationService);
   }

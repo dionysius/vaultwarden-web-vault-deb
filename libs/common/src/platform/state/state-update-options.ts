@@ -17,7 +17,7 @@ type DefinitelyTypedDefault<T, TCombine> = Omit<
 export type StateUpdateOptions<T, TCombine> = Partial<DefinitelyTypedDefault<T, TCombine>>;
 
 export function populateOptionsWithDefault<T, TCombine>(
-  options: StateUpdateOptions<T, TCombine>
+  options: StateUpdateOptions<T, TCombine>,
 ): StateUpdateOptions<T, TCombine> {
   return {
     ...(DEFAULT_OPTIONS as StateUpdateOptions<T, TCombine>),

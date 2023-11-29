@@ -24,6 +24,6 @@ export class AboutComponent {
 
   constructor(
     private configService: ConfigServiceAbstraction,
-    private environmentService: EnvironmentService
+    private environmentService: EnvironmentService,
   ) {}
 }

@@ -9,7 +9,7 @@ import { CliUtils } from "../utils";
 export class GenerateCommand {
   constructor(
     private passwordGenerationService: PasswordGenerationServiceAbstraction,
-    private stateService: StateService
+    private stateService: StateService,
   ) {}
 
   async run(cmdOptions: Record<string, any>): Promise<Response> {

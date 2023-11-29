@@ -33,41 +33,40 @@ export enum AccessItemType {
  * and then joined back with the base type.
  *
  */
-export type AccessItemView =
-  | SelectItemView & {
-      /**
-       * Flag that this group/member can access all items.
-       * This will disable the permission editor for this item.
-       */
-      accessAllItems?: boolean;
+export type AccessItemView = SelectItemView & {
+  /**
+   * Flag that this group/member can access all items.
+   * This will disable the permission editor for this item.
+   */
+  accessAllItems?: boolean;
 
-      /**
-       * Flag that this item cannot be modified.
-       * This will disable the permission editor and will keep
-       * the item always selected.
-       */
-      readonly?: boolean;
+  /**
+   * Flag that this item cannot be modified.
+   * This will disable the permission editor and will keep
+   * the item always selected.
+   */
+  readonly?: boolean;
 
-      /**
-       * Optional permission that will be rendered for this
-       * item if it set to readonly.
-       */
-      readonlyPermission?: CollectionPermission;
-    } & (
-        | {
-            type: AccessItemType.Collection;
-            viaGroupName?: string;
-          }
-        | {
-            type: AccessItemType.Group;
-          }
-        | {
-            type: AccessItemType.Member; // Members have a few extra details required to display, so they're added here
-            email: string;
-            role: OrganizationUserType;
-            status: OrganizationUserStatusType;
-          }
-      );
+  /**
+   * Optional permission that will be rendered for this
+   * item if it set to readonly.
+   */
+  readonlyPermission?: CollectionPermission;
+} & (
+    | {
+        type: AccessItemType.Collection;
+        viaGroupName?: string;
+      }
+    | {
+        type: AccessItemType.Group;
+      }
+    | {
+        type: AccessItemType.Member; // Members have a few extra details required to display, so they're added here
+        email: string;
+        role: OrganizationUserType;
+        status: OrganizationUserStatusType;
+      }
+  );
 
 /**
  * A type that is emitted as a value for the ngControl

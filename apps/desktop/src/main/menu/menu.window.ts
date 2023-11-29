@@ -33,7 +33,7 @@ export class WindowMenu implements IMenubarMenu {
   constructor(
     i18nService: I18nService,
     messagingService: MessagingService,
-    windowMain: WindowMain
+    windowMain: WindowMain,
   ) {
     this._i18nService = i18nService;
     this._messagingService = messagingService;

@@ -104,7 +104,7 @@ function onMessage() {
         start();
       }
     },
-    false
+    false,
   );
 }
 

@@ -18,7 +18,7 @@ export class PolicyApiService implements PolicyApiServiceAbstraction {
   constructor(
     private policyService: InternalPolicyService,
     private apiService: ApiService,
-    private stateService: StateService
+    private stateService: StateService,
   ) {}
 
   async getPolicy(organizationId: string, type: PolicyType): Promise<PolicyResponse> {
@@ -27,7 +27,7 @@ export class PolicyApiService implements PolicyApiServiceAbstraction {
       "/organizations/" + organizationId + "/policies/" + type,
       null,
       true,
-      true
+      true,
     );
     return new PolicyResponse(r);
   }
@@ -38,7 +38,7 @@ export class PolicyApiService implements PolicyApiServiceAbstraction {
       "/organizations/" + organizationId + "/policies",
       null,
       true,
-      true
+      true,
     );
     return new ListResponse(r, PolicyResponse);
   }
@@ -47,7 +47,7 @@ export class PolicyApiService implements PolicyApiServiceAbstraction {
     organizationId: string,
     token: string,
     email: string,
-    organizationUserId: string
+    organizationUserId: string,
   ): Promise<ListResponse<PolicyResponse>> {
     const r = await this.apiService.send(
       "GET",
@@ -62,35 +62,34 @@ export class PolicyApiService implements PolicyApiServiceAbstraction {
         organizationUserId,
       null,
       false,
-      true
+      true,
     );
     return new ListResponse(r, PolicyResponse);
   }
 
   private async getMasterPasswordPolicyResponseForOrgUser(
-    organizationId: string
+    organizationId: string,
   ): Promise<PolicyResponse> {
     const response = await this.apiService.send(
       "GET",
       "/organizations/" + organizationId + "/policies/master-password",
       null,
       true,
-      true
+      true,
     );
 
     return new PolicyResponse(response);
   }
 
   async getMasterPasswordPolicyOptsForOrgUser(
-    orgId: string
+    orgId: string,
   ): Promise<MasterPasswordPolicyOptions | null> {
     try {
-      const masterPasswordPolicyResponse = await this.getMasterPasswordPolicyResponseForOrgUser(
-        orgId
-      );
+      const masterPasswordPolicyResponse =
+        await this.getMasterPasswordPolicyResponseForOrgUser(orgId);
 
       const masterPasswordPolicy = this.policyService.mapPolicyFromResponse(
-        masterPasswordPolicyResponse
+        masterPasswordPolicyResponse,
       );
 
       if (!masterPasswordPolicy) {
@@ -98,7 +97,7 @@ export class PolicyApiService implements PolicyApiServiceAbstraction {
       }
 
       return await firstValueFrom(
-        this.policyService.masterPasswordPolicyOptions$([masterPasswordPolicy])
+        this.policyService.masterPasswordPolicyOptions$([masterPasswordPolicy]),
       );
     } catch (error) {
       // If policy not found, return null
@@ -116,7 +115,7 @@ export class PolicyApiService implements PolicyApiServiceAbstraction {
       "/organizations/" + organizationId + "/policies/" + type,
       request,
       true,
-      true
+      true,
     );
     const response = new PolicyResponse(r);
     const data = new PolicyData(response);

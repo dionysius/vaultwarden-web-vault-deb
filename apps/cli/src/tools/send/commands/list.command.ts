@@ -10,7 +10,7 @@ export class SendListCommand {
   constructor(
     private sendService: SendService,
     private environmentService: EnvironmentService,
-    private searchService: SearchService
+    private searchService: SearchService,
   ) {}
 
   async run(cmdOptions: Record<string, any>): Promise<Response> {

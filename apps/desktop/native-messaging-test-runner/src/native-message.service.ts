@@ -44,7 +44,7 @@ export default class NativeMessageService {
     this.encryptService = new EncryptServiceImplementation(
       this.nodeCryptoFunctionService,
       new ConsoleLogService(false),
-      false
+      false,
     );
   }
 
@@ -61,7 +61,7 @@ export default class NativeMessageService {
       },
       {
         overrideTimeout: CONFIRMATION_MESSAGE_TIMEOUT,
-      }
+      },
     );
     return rawResponse.payload as HandshakeResponse;
   }
@@ -71,7 +71,7 @@ export default class NativeMessageService {
       {
         command: "bw-status",
       },
-      key
+      key,
     );
 
     const response = await this.sendEncryptedMessage({
@@ -89,7 +89,7 @@ export default class NativeMessageService {
           uri: uri,
         },
       },
-      key
+      key,
     );
     const response = await this.sendEncryptedMessage({
       encryptedCommand,
@@ -100,14 +100,14 @@ export default class NativeMessageService {
 
   async credentialCreation(
     key: string,
-    credentialData: CredentialCreatePayload
+    credentialData: CredentialCreatePayload,
   ): Promise<DecryptedCommandData> {
     const encryptedCommand = await this.encryptCommandData(
       {
         command: "bw-credential-create",
         payload: credentialData,
       },
-      key
+      key,
     );
     const response = await this.sendEncryptedMessage({
       encryptedCommand,
@@ -118,14 +118,14 @@ export default class NativeMessageService {
 
   async credentialUpdate(
     key: string,
-    credentialData: CredentialUpdatePayload
+    credentialData: CredentialUpdatePayload,
   ): Promise<DecryptedCommandData> {
     const encryptedCommand = await this.encryptCommandData(
       {
         command: "bw-credential-update",
         payload: credentialData,
       },
-      key
+      key,
     );
     const response = await this.sendEncryptedMessage({
       encryptedCommand,
@@ -142,7 +142,7 @@ export default class NativeMessageService {
           userId: userId,
         },
       },
-      key
+      key,
     );
     const response = await this.sendEncryptedMessage({
       encryptedCommand,
@@ -155,7 +155,7 @@ export default class NativeMessageService {
 
   private async sendEncryptedMessage(
     message: Omit<EncryptedMessage, keyof MessageCommon>,
-    options: IPCOptions = {}
+    options: IPCOptions = {},
   ): Promise<EncryptedMessageResponse> {
     const result = await this.sendMessage(message, options);
     return result as EncryptedMessageResponse;
@@ -163,7 +163,7 @@ export default class NativeMessageService {
 
   private async sendUnencryptedMessage(
     message: Omit<UnencryptedMessage, keyof MessageCommon>,
-    options: IPCOptions = {}
+    options: IPCOptions = {},
   ): Promise<UnencryptedMessageResponse> {
     const result = await this.sendMessage(message, options);
     return result as UnencryptedMessageResponse;
@@ -173,7 +173,7 @@ export default class NativeMessageService {
     message:
       | Omit<UnencryptedMessage, keyof MessageCommon>
       | Omit<EncryptedMessage, keyof MessageCommon>,
-    options: IPCOptions
+    options: IPCOptions,
   ): Promise<EncryptedMessageResponse | UnencryptedMessageResponse> {
     // Attempt to connect before sending any messages. If the connection has already
     // been made, this is a NOOP within the IPCService.
@@ -205,7 +205,7 @@ export default class NativeMessageService {
   // Data Encryption
   private async encryptCommandData(
     commandData: DecryptedCommandData,
-    key: string
+    key: string,
   ): Promise<EncString> {
     const commandDataString = JSON.stringify(commandData);
 
@@ -216,7 +216,7 @@ export default class NativeMessageService {
 
   private async decryptResponsePayload(
     payload: EncString,
-    key: string
+    key: string,
   ): Promise<DecryptedCommandData> {
     const sharedKey = await this.getSharedKeyForKey(key);
     const decrypted = await this.encryptService.decryptToUtf8(payload, sharedKey);
@@ -229,7 +229,7 @@ export default class NativeMessageService {
     const privKey = Utils.fromB64ToArray(config.testRsaPrivateKey);
 
     return new SymmetricCryptoKey(
-      await this.nodeCryptoFunctionService.rsaDecrypt(dataBuffer, privKey, "sha1")
+      await this.nodeCryptoFunctionService.rsaDecrypt(dataBuffer, privKey, "sha1"),
     );
   }
 }

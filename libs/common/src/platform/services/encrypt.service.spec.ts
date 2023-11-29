@@ -31,7 +31,7 @@ describe("EncryptService", () => {
 
     it("throws if no key is provided", () => {
       return expect(encryptService.encryptToBytes(plainValue, null)).rejects.toThrow(
-        "No encryption key"
+        "No encryption key",
       );
     });
 
@@ -57,7 +57,7 @@ describe("EncryptService", () => {
         expect(actual.macBytes).toEqualBuffer(mac);
         expect(actual.dataBytes).toEqualBuffer(encryptedData);
         expect(actual.buffer.byteLength).toEqual(
-          1 + iv.byteLength + mac.byteLength + encryptedData.byteLength
+          1 + iv.byteLength + mac.byteLength + encryptedData.byteLength,
         );
       });
 
@@ -93,13 +93,13 @@ describe("EncryptService", () => {
 
     it("throws if no key is provided", () => {
       return expect(encryptService.decryptToBytes(encBuffer, null)).rejects.toThrow(
-        "No encryption key"
+        "No encryption key",
       );
     });
 
     it("throws if no encrypted value is provided", () => {
       return expect(encryptService.decryptToBytes(null, key)).rejects.toThrow(
-        "Nothing provided for decryption"
+        "Nothing provided for decryption",
       );
     });
 
@@ -116,7 +116,7 @@ describe("EncryptService", () => {
         expect.toEqualBuffer(encBuffer.dataBytes),
         expect.toEqualBuffer(encBuffer.ivBytes),
         expect.toEqualBuffer(key.encKey),
-        "cbc"
+        "cbc",
       );
 
       expect(actual).toEqualBuffer(decryptedBytes);
@@ -124,7 +124,7 @@ describe("EncryptService", () => {
 
     it("compares macs using CryptoFunctionService", async () => {
       const expectedMacData = new Uint8Array(
-        encBuffer.ivBytes.byteLength + encBuffer.dataBytes.byteLength
+        encBuffer.ivBytes.byteLength + encBuffer.dataBytes.byteLength,
       );
       expectedMacData.set(new Uint8Array(encBuffer.ivBytes));
       expectedMacData.set(new Uint8Array(encBuffer.dataBytes), encBuffer.ivBytes.byteLength);
@@ -134,12 +134,12 @@ describe("EncryptService", () => {
       expect(cryptoFunctionService.hmac).toBeCalledWith(
         expect.toEqualBuffer(expectedMacData),
         key.macKey,
-        "sha256"
+        "sha256",
       );
 
       expect(cryptoFunctionService.compare).toBeCalledWith(
         expect.toEqualBuffer(encBuffer.macBytes),
-        expect.toEqualBuffer(computedMac)
+        expect.toEqualBuffer(computedMac),
       );
     });
 

@@ -30,7 +30,7 @@ export class Collection extends Domain {
         hidePasswords: null,
         manage: null,
       },
-      ["id", "organizationId", "externalId", "readOnly", "hidePasswords", "manage"]
+      ["id", "organizationId", "externalId", "readOnly", "hidePasswords", "manage"],
     );
   }
 
@@ -40,7 +40,7 @@ export class Collection extends Domain {
       {
         name: null,
       },
-      this.organizationId
+      this.organizationId,
     );
   }
 }

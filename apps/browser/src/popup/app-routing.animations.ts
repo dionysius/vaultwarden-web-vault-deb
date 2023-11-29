@@ -5,7 +5,7 @@ const queryShown = query(
   [style({ position: "fixed", width: "100%", height: "100%" })],
   {
     optional: true,
-  }
+  },
 );
 
 // ref: https://github.com/angular/angular/issues/15477
@@ -20,7 +20,7 @@ export function queryTranslate(
   axis: string,
   from: number,
   to: number,
-  zIndex = 1000
+  zIndex = 1000,
 ) {
   return query(
     ":" + direction,
@@ -32,7 +32,7 @@ export function queryTranslate(
       }),
       animate(speed + " ease-in-out", style({ transform: "translate" + axis + "(" + to + "%)" })),
     ],
-    { optional: true }
+    { optional: true },
   );
 }
 
@@ -144,7 +144,7 @@ export const routerTransition = trigger("routerTransition", [
   transition("view-cipher => edit-cipher, view-cipher => cipher-password-history", inSlideUp),
   transition(
     "edit-cipher => view-cipher, cipher-password-history => view-cipher, edit-cipher => tabs",
-    outSlideDown
+    outSlideDown,
   ),
 
   transition("view-cipher => clone-cipher", inSlideUp),
@@ -161,11 +161,11 @@ export const routerTransition = trigger("routerTransition", [
 
   transition(
     "add-cipher => generator, edit-cipher => generator, clone-cipher => generator",
-    inSlideUp
+    inSlideUp,
   ),
   transition(
     "generator => add-cipher, generator => edit-cipher, generator => clone-cipher",
-    outSlideDown
+    outSlideDown,
   ),
 
   transition("edit-cipher => attachments, edit-cipher => collections", inSlideLeft),

@@ -58,7 +58,7 @@ export class SendComponent implements OnInit, OnDestroy {
     protected policyService: PolicyService,
     private logService: LogService,
     protected sendApiService: SendApiService,
-    protected dialogService: DialogService
+    protected dialogService: DialogService,
   ) {}
 
   async ngOnInit() {
@@ -201,7 +201,7 @@ export class SendComponent implements OnInit, OnDestroy {
     this.platformUtilsService.showToast(
       "success",
       null,
-      this.i18nService.t("valueCopied", this.i18nService.t("sendLink"))
+      this.i18nService.t("valueCopied", this.i18nService.t("sendLink")),
     );
   }
 

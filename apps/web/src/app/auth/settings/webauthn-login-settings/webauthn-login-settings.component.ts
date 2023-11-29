@@ -31,7 +31,7 @@ export class WebauthnLoginSettingsComponent implements OnInit, OnDestroy {
   constructor(
     private webauthnService: WebauthnLoginAdminService,
     private dialogService: DialogService,
-    private policyService: PolicyService
+    private policyService: PolicyService,
   ) {}
 
   @HostBinding("attr.aria-busy")

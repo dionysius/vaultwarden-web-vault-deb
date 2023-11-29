@@ -44,7 +44,7 @@ export class Send extends Domain {
         notes: null,
         key: null,
       },
-      ["id", "accessId"]
+      ["id", "accessId"],
     );
 
     this.type = obj.type;
@@ -88,7 +88,7 @@ export class Send extends Domain {
         notes: null,
       },
       null,
-      model.cryptoKey
+      model.cryptoKey,
     );
 
     switch (this.type) {

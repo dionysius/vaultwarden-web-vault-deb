@@ -30,7 +30,7 @@ export class DeviceTrustCryptoService implements DeviceTrustCryptoServiceAbstrac
     private appIdService: AppIdService,
     private devicesApiService: DevicesApiServiceAbstraction,
     private i18nService: I18nService,
-    private platformUtilsService: PlatformUtilsService
+    private platformUtilsService: PlatformUtilsService,
   ) {}
 
   /**
@@ -67,9 +67,8 @@ export class DeviceTrustCryptoService implements DeviceTrustCryptoServiceAbstrac
     const deviceKey = await this.makeDeviceKey();
 
     // Generate asymmetric RSA key pair: devicePrivateKey, devicePublicKey
-    const [devicePublicKey, devicePrivateKey] = await this.cryptoFunctionService.rsaGenerateKeyPair(
-      2048
-    );
+    const [devicePublicKey, devicePrivateKey] =
+      await this.cryptoFunctionService.rsaGenerateKeyPair(2048);
 
     const [
       devicePublicKeyEncryptedUserKey,
@@ -92,7 +91,7 @@ export class DeviceTrustCryptoService implements DeviceTrustCryptoServiceAbstrac
       deviceIdentifier,
       devicePublicKeyEncryptedUserKey.encryptedString,
       userKeyEncryptedDevicePublicKey.encryptedString,
-      deviceKeyEncryptedDevicePrivateKey.encryptedString
+      deviceKeyEncryptedDevicePrivateKey.encryptedString,
     );
 
     // store device key in local/secure storage if enc keys posted to server successfully
@@ -121,25 +120,25 @@ export class DeviceTrustCryptoService implements DeviceTrustCryptoServiceAbstrac
     // Get the keys that are used in rotating a devices keys from the server
     const currentDeviceKeys = await this.devicesApiService.getDeviceKeys(
       deviceIdentifier,
-      secretVerificationRequest
+      secretVerificationRequest,
     );
 
     // Decrypt the existing device public key with the old user key
     const decryptedDevicePublicKey = await this.encryptService.decryptToBytes(
       currentDeviceKeys.encryptedPublicKey,
-      oldUserKey
+      oldUserKey,
     );
 
     // Encrypt the brand new user key with the now-decrypted public key for the device
     const encryptedNewUserKey = await this.cryptoService.rsaEncrypt(
       newUserKey.key,
-      decryptedDevicePublicKey
+      decryptedDevicePublicKey,
     );
 
     // Re-encrypt the device public key with the new user key
     const encryptedDevicePublicKey = await this.encryptService.encrypt(
       decryptedDevicePublicKey,
-      newUserKey
+      newUserKey,
     );
 
     const currentDeviceUpdateRequest = new DeviceKeysUpdateRequest();
@@ -176,7 +175,7 @@ export class DeviceTrustCryptoService implements DeviceTrustCryptoServiceAbstrac
   async decryptUserKeyWithDeviceKey(
     encryptedDevicePrivateKey: EncString,
     encryptedUserKey: EncString,
-    deviceKey?: DeviceKey
+    deviceKey?: DeviceKey,
   ): Promise<UserKey | null> {
     // If device key provided use it, otherwise try to retrieve from storage
     deviceKey ||= await this.getDeviceKey();
@@ -190,13 +189,13 @@ export class DeviceTrustCryptoService implements DeviceTrustCryptoServiceAbstrac
       // attempt to decrypt encryptedDevicePrivateKey with device key
       const devicePrivateKey = await this.encryptService.decryptToBytes(
         encryptedDevicePrivateKey,
-        deviceKey
+        deviceKey,
       );
 
       // Attempt to decrypt encryptedUserDataKey with devicePrivateKey
       const userKey = await this.cryptoService.rsaDecrypt(
         encryptedUserKey.encryptedString,
-        devicePrivateKey
+        devicePrivateKey,
       );
 
       return new SymmetricCryptoKey(userKey) as UserKey;

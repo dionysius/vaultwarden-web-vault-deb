@@ -7,6 +7,6 @@ export class PendingWebauthnLoginCredentialView {
   constructor(
     readonly createOptions: CredentialCreateOptionsView,
     readonly deviceResponse: PublicKeyCredential,
-    readonly supportsPrf: boolean
+    readonly supportsPrf: boolean,
   ) {}
 }

@@ -6,6 +6,6 @@ export class CreateAuthRequest {
     readonly deviceIdentifier: string,
     readonly publicKey: string,
     readonly type: AuthRequestType,
-    readonly accessCode: string
+    readonly accessCode: string,
   ) {}
 }

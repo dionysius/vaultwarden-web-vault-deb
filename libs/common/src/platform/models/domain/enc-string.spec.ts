@@ -66,7 +66,7 @@ describe("EncString", () => {
       const cryptoService = mock<CryptoService>();
       cryptoService.hasUserKey.mockResolvedValue(true);
       cryptoService.getUserKeyWithLegacySupport.mockResolvedValue(
-        new SymmetricCryptoKey(makeStaticByteArray(32)) as UserKey
+        new SymmetricCryptoKey(makeStaticByteArray(32)) as UserKey,
       );
 
       const encryptService = mock<EncryptService>();
@@ -77,7 +77,7 @@ describe("EncString", () => {
       beforeEach(() => {
         (window as any).bitwardenContainerService = new ContainerService(
           cryptoService,
-          encryptService
+          encryptService,
         );
       });
 
@@ -206,7 +206,7 @@ describe("EncString", () => {
 
       (window as any).bitwardenContainerService = new ContainerService(
         cryptoService,
-        encryptService
+        encryptService,
       );
     });
 
@@ -215,7 +215,7 @@ describe("EncString", () => {
 
       (window as any).bitwardenContainerService = new ContainerService(
         cryptoService,
-        encryptService
+        encryptService,
       );
 
       const decrypted = await encString.decrypt(null);

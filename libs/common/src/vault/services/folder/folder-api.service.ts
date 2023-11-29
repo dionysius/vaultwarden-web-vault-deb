@@ -7,7 +7,10 @@ import { FolderRequest } from "../../../vault/models/request/folder.request";
 import { FolderResponse } from "../../../vault/models/response/folder.response";
 
 export class FolderApiService implements FolderApiServiceAbstraction {
-  constructor(private folderService: InternalFolderService, private apiService: ApiService) {}
+  constructor(
+    private folderService: InternalFolderService,
+    private apiService: ApiService,
+  ) {}
 
   async save(folder: Folder): Promise<any> {
     const request = new FolderRequest(folder);

@@ -29,7 +29,7 @@ export class EmergencyAccessAttachmentsComponent extends BaseAttachmentsComponen
     apiService: ApiService,
     logService: LogService,
     fileDownloadService: FileDownloadService,
-    dialogService: DialogService
+    dialogService: DialogService,
   ) {
     super(
       cipherService,
@@ -41,7 +41,7 @@ export class EmergencyAccessAttachmentsComponent extends BaseAttachmentsComponen
       logService,
       stateService,
       fileDownloadService,
-      dialogService
+      dialogService,
     );
   }
 

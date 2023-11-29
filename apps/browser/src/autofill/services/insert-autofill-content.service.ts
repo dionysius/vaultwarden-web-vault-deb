@@ -21,7 +21,7 @@ class InsertAutofillContentService implements InsertAutofillContentServiceInterf
    */
   constructor(
     domElementVisibilityService: DomElementVisibilityService,
-    collectAutofillContentService: CollectAutofillContentService
+    collectAutofillContentService: CollectAutofillContentService,
   ) {
     this.domElementVisibilityService = domElementVisibilityService;
     this.collectAutofillContentService = collectAutofillContentService;
@@ -97,8 +97,8 @@ class InsertAutofillContentService implements InsertAutofillContentServiceInterf
       this.collectAutofillContentService.queryAllTreeWalkerNodes(
         document.documentElement,
         (node: Node) => node instanceof HTMLInputElement && node.type === "password",
-        false
-      )?.length
+        false,
+      )?.length,
     );
   }
 
@@ -139,7 +139,7 @@ class InsertAutofillContentService implements InsertAutofillContentServiceInterf
    */
   private runFillScriptAction = (
     [action, opid, value]: FillScript,
-    actionIndex: number
+    actionIndex: number,
   ): Promise<void> => {
     if (!opid || !this.autofillInsertActions[action]) {
       return;
@@ -150,7 +150,7 @@ class InsertAutofillContentService implements InsertAutofillContentServiceInterf
       setTimeout(() => {
         this.autofillInsertActions[action]({ opid, value });
         resolve();
-      }, delayActionsInMilliseconds * actionIndex)
+      }, delayActionsInMilliseconds * actionIndex),
     );
   };
 
@@ -233,7 +233,7 @@ class InsertAutofillContentService implements InsertAutofillContentServiceInterf
    */
   private handleInsertValueAndTriggerSimulatedEvents(
     element: FormFieldElement,
-    valueChangeCallback: CallableFunction
+    valueChangeCallback: CallableFunction,
   ): void {
     this.triggerPreInsertEventsOnElement(element);
     valueChangeCallback();
@@ -341,7 +341,7 @@ class InsertAutofillContentService implements InsertAutofillContentServiceInterf
    */
   private simulateUserMouseClickAndFocusEventInteractions(
     element: FormFieldElement,
-    shouldResetValue = false
+    shouldResetValue = false,
   ): void {
     this.triggerClickOnElement(element);
     this.triggerFocusOnElement(element, shouldResetValue);

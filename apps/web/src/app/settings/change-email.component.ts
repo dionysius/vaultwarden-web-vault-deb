@@ -31,13 +31,13 @@ export class ChangeEmailComponent implements OnInit {
     private cryptoService: CryptoService,
     private messagingService: MessagingService,
     private logService: LogService,
-    private stateService: StateService
+    private stateService: StateService,
   ) {}
 
   async ngOnInit() {
     const twoFactorProviders = await this.apiService.getTwoFactorProviders();
     this.showTwoFactorEmailWarning = twoFactorProviders.data.some(
-      (p) => p.type === TwoFactorProviderType.Email && p.enabled
+      (p) => p.type === TwoFactorProviderType.Email && p.enabled,
     );
   }
 
@@ -48,7 +48,7 @@ export class ChangeEmailComponent implements OnInit {
       request.newEmail = this.newEmail;
       request.masterPasswordHash = await this.cryptoService.hashMasterKey(
         this.masterPassword,
-        await this.cryptoService.getOrDeriveMasterKey(this.masterPassword)
+        await this.cryptoService.getOrDeriveMasterKey(this.masterPassword),
       );
       try {
         this.formPromise = this.apiService.postEmailToken(request);
@@ -63,7 +63,7 @@ export class ChangeEmailComponent implements OnInit {
       request.newEmail = this.newEmail;
       request.masterPasswordHash = await this.cryptoService.hashMasterKey(
         this.masterPassword,
-        await this.cryptoService.getOrDeriveMasterKey(this.masterPassword)
+        await this.cryptoService.getOrDeriveMasterKey(this.masterPassword),
       );
       const kdf = await this.stateService.getKdfType();
       const kdfConfig = await this.stateService.getKdfConfig();
@@ -71,11 +71,11 @@ export class ChangeEmailComponent implements OnInit {
         this.masterPassword,
         this.newEmail,
         kdf,
-        kdfConfig
+        kdfConfig,
       );
       request.newMasterPasswordHash = await this.cryptoService.hashMasterKey(
         this.masterPassword,
-        newMasterKey
+        newMasterKey,
       );
       const newUserKey = await this.cryptoService.encryptUserKeyWithMasterKey(newMasterKey);
       request.key = newUserKey[1].encryptedString;
@@ -86,7 +86,7 @@ export class ChangeEmailComponent implements OnInit {
         this.platformUtilsService.showToast(
           "success",
           this.i18nService.t("emailChanged"),
-          this.i18nService.t("logBackIn")
+          this.i18nService.t("logBackIn"),
         );
         this.messagingService.send("logout");
       } catch (e) {

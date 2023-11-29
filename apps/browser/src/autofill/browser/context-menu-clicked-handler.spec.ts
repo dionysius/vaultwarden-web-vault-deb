@@ -31,7 +31,7 @@ import {
 describe("ContextMenuClickedHandler", () => {
   const createData = (
     menuItemId: chrome.contextMenus.OnClickData["menuItemId"],
-    parentMenuItemId?: chrome.contextMenus.OnClickData["parentMenuItemId"]
+    parentMenuItemId?: chrome.contextMenus.OnClickData["parentMenuItemId"],
   ): chrome.contextMenus.OnClickData => {
     return {
       menuItemId: menuItemId,
@@ -52,7 +52,7 @@ describe("ContextMenuClickedHandler", () => {
       new Cipher({
         id: id ?? "1",
         type: CipherType.Login,
-      } as any)
+      } as any),
     );
 
     cipherView.login.username = username ?? "USERNAME";
@@ -92,7 +92,7 @@ describe("ContextMenuClickedHandler", () => {
       stateService,
       totpService,
       eventCollectionService,
-      userVerificationService
+      userVerificationService,
     );
   });
 

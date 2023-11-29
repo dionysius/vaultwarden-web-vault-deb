@@ -12,7 +12,10 @@ import { FolderView } from "@bitwarden/common/vault/models/view/folder.view";
 export class FoldersComponent {
   folders$: Observable<FolderView[]>;
 
-  constructor(private folderService: FolderService, private router: Router) {
+  constructor(
+    private folderService: FolderService,
+    private router: Router,
+  ) {
     this.folders$ = this.folderService.folderViews$.pipe(
       map((folders) => {
         if (folders.length > 0) {
@@ -20,7 +23,7 @@ export class FoldersComponent {
         }
 
         return folders;
-      })
+      }),
     );
   }
 

@@ -17,7 +17,7 @@ export class SessionSyncer {
   constructor(
     private subject: Subject<any>,
     private memoryStorageService: AbstractMemoryStorageService,
-    private metaData: SyncedItemMetadata
+    private metaData: SyncedItemMetadata,
   ) {
     if (!(subject instanceof Subject)) {
       throw new Error("subject must inherit from Subject");
@@ -66,7 +66,7 @@ export class SessionSyncer {
             return;
           }
           await this.updateSession(next);
-        })
+        }),
       )
       .subscribe();
   }

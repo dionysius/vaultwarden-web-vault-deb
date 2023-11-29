@@ -9,10 +9,13 @@ import { Icon, Icons } from "@bitwarden/components";
   templateUrl: "./org-suspended.component.html",
 })
 export class OrgSuspendedComponent {
-  constructor(private organizationService: OrganizationService, private route: ActivatedRoute) {}
+  constructor(
+    private organizationService: OrganizationService,
+    private route: ActivatedRoute,
+  ) {}
 
   protected NoAccess: Icon = Icons.NoAccess;
   protected organizationName$ = this.route.params.pipe(
-    map((params) => this.organizationService.get(params.organizationId)?.name)
+    map((params) => this.organizationService.get(params.organizationId)?.name),
   );
 }

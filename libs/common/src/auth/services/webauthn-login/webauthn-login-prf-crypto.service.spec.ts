@@ -16,7 +16,7 @@ describe("WebAuthnLoginPrfCryptoService", () => {
   describe("createSymmetricKeyFromPrf", () => {
     it("should stretch the key to 64 bytes when given a key with 32 bytes", async () => {
       cryptoFunctionService.hkdfExpand.mockImplementation((key, salt, length) =>
-        Promise.resolve(randomBytes(length))
+        Promise.resolve(randomBytes(length)),
       );
 
       const result = await service.createSymmetricKeyFromPrf(randomBytes(32));

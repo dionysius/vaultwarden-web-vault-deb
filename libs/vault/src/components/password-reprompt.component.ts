@@ -42,23 +42,23 @@ export class PasswordRepromptComponent {
     protected platformUtilsService: PlatformUtilsService,
     protected i18nService: I18nService,
     protected formBuilder: FormBuilder,
-    protected dialogRef: DialogRef
+    protected dialogRef: DialogRef,
   ) {}
 
   submit = async () => {
     const storedMasterKey = await this.cryptoService.getOrDeriveMasterKey(
-      this.formGroup.value.masterPassword
+      this.formGroup.value.masterPassword,
     );
     if (
       !(await this.cryptoService.compareAndUpdateKeyHash(
         this.formGroup.value.masterPassword,
-        storedMasterKey
+        storedMasterKey,
       ))
     ) {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
-        this.i18nService.t("invalidMasterPassword")
+        this.i18nService.t("invalidMasterPassword"),
       );
       return;
     }

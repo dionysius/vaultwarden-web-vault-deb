@@ -30,7 +30,7 @@ export class OrganizationUserServiceImplementation implements OrganizationUserSe
     id: string,
     options?: {
       includeGroups?: boolean;
-    }
+    },
   ): Promise<OrganizationUserDetailsResponse> {
     const params = new URLSearchParams();
 
@@ -43,7 +43,7 @@ export class OrganizationUserServiceImplementation implements OrganizationUserSe
       `/organizations/${organizationId}/users/${id}?${params.toString()}`,
       null,
       true,
-      true
+      true,
     );
     return new OrganizationUserDetailsResponse(r);
   }
@@ -54,7 +54,7 @@ export class OrganizationUserServiceImplementation implements OrganizationUserSe
       "/organizations/" + organizationId + "/users/" + id + "/groups",
       null,
       true,
-      true
+      true,
     );
     return r;
   }
@@ -64,7 +64,7 @@ export class OrganizationUserServiceImplementation implements OrganizationUserSe
     options?: {
       includeCollections?: boolean;
       includeGroups?: boolean;
-    }
+    },
   ): Promise<ListResponse<OrganizationUserUserDetailsResponse>> {
     const params = new URLSearchParams();
 
@@ -80,35 +80,35 @@ export class OrganizationUserServiceImplementation implements OrganizationUserSe
       `/organizations/${organizationId}/users?${params.toString()}`,
       null,
       true,
-      true
+      true,
     );
     return new ListResponse(r, OrganizationUserUserDetailsResponse);
   }
 
   async getOrganizationUserResetPasswordDetails(
     organizationId: string,
-    id: string
+    id: string,
   ): Promise<OrganizationUserResetPasswordDetailsResponse> {
     const r = await this.apiService.send(
       "GET",
       "/organizations/" + organizationId + "/users/" + id + "/reset-password-details",
       null,
       true,
-      true
+      true,
     );
     return new OrganizationUserResetPasswordDetailsResponse(r);
   }
 
   postOrganizationUserInvite(
     organizationId: string,
-    request: OrganizationUserInviteRequest
+    request: OrganizationUserInviteRequest,
   ): Promise<void> {
     return this.apiService.send(
       "POST",
       "/organizations/" + organizationId + "/users/invite",
       request,
       true,
-      false
+      false,
     );
   }
 
@@ -118,20 +118,20 @@ export class OrganizationUserServiceImplementation implements OrganizationUserSe
       "/organizations/" + organizationId + "/users/" + id + "/reinvite",
       null,
       true,
-      false
+      false,
     );
   }
 
   async postManyOrganizationUserReinvite(
     organizationId: string,
-    ids: string[]
+    ids: string[],
   ): Promise<ListResponse<OrganizationUserBulkResponse>> {
     const r = await this.apiService.send(
       "POST",
       "/organizations/" + organizationId + "/users/reinvite",
       new OrganizationUserBulkRequest(ids),
       true,
-      true
+      true,
     );
     return new ListResponse(r, OrganizationUserBulkResponse);
   }
@@ -139,139 +139,139 @@ export class OrganizationUserServiceImplementation implements OrganizationUserSe
   postOrganizationUserAcceptInit(
     organizationId: string,
     id: string,
-    request: OrganizationUserAcceptInitRequest
+    request: OrganizationUserAcceptInitRequest,
   ): Promise<void> {
     return this.apiService.send(
       "POST",
       "/organizations/" + organizationId + "/users/" + id + "/accept-init",
       request,
       true,
-      false
+      false,
     );
   }
 
   postOrganizationUserAccept(
     organizationId: string,
     id: string,
-    request: OrganizationUserAcceptRequest
+    request: OrganizationUserAcceptRequest,
   ): Promise<void> {
     return this.apiService.send(
       "POST",
       "/organizations/" + organizationId + "/users/" + id + "/accept",
       request,
       true,
-      false
+      false,
     );
   }
 
   postOrganizationUserConfirm(
     organizationId: string,
     id: string,
-    request: OrganizationUserConfirmRequest
+    request: OrganizationUserConfirmRequest,
   ): Promise<void> {
     return this.apiService.send(
       "POST",
       "/organizations/" + organizationId + "/users/" + id + "/confirm",
       request,
       true,
-      false
+      false,
     );
   }
 
   async postOrganizationUsersPublicKey(
     organizationId: string,
-    ids: string[]
+    ids: string[],
   ): Promise<ListResponse<OrganizationUserBulkPublicKeyResponse>> {
     const r = await this.apiService.send(
       "POST",
       "/organizations/" + organizationId + "/users/public-keys",
       new OrganizationUserBulkRequest(ids),
       true,
-      true
+      true,
     );
     return new ListResponse(r, OrganizationUserBulkPublicKeyResponse);
   }
 
   async postOrganizationUserBulkConfirm(
     organizationId: string,
-    request: OrganizationUserBulkConfirmRequest
+    request: OrganizationUserBulkConfirmRequest,
   ): Promise<ListResponse<OrganizationUserBulkResponse>> {
     const r = await this.apiService.send(
       "POST",
       "/organizations/" + organizationId + "/users/confirm",
       request,
       true,
-      true
+      true,
     );
     return new ListResponse(r, OrganizationUserBulkResponse);
   }
 
   async putOrganizationUserBulkEnableSecretsManager(
     organizationId: string,
-    ids: string[]
+    ids: string[],
   ): Promise<void> {
     await this.apiService.send(
       "PUT",
       "/organizations/" + organizationId + "/users/enable-secrets-manager",
       new OrganizationUserBulkRequest(ids),
       true,
-      false
+      false,
     );
   }
 
   putOrganizationUser(
     organizationId: string,
     id: string,
-    request: OrganizationUserUpdateRequest
+    request: OrganizationUserUpdateRequest,
   ): Promise<void> {
     return this.apiService.send(
       "PUT",
       "/organizations/" + organizationId + "/users/" + id,
       request,
       true,
-      false
+      false,
     );
   }
 
   putOrganizationUserGroups(
     organizationId: string,
     id: string,
-    request: OrganizationUserUpdateGroupsRequest
+    request: OrganizationUserUpdateGroupsRequest,
   ): Promise<void> {
     return this.apiService.send(
       "PUT",
       "/organizations/" + organizationId + "/users/" + id + "/groups",
       request,
       true,
-      false
+      false,
     );
   }
 
   putOrganizationUserResetPasswordEnrollment(
     organizationId: string,
     userId: string,
-    request: OrganizationUserResetPasswordEnrollmentRequest
+    request: OrganizationUserResetPasswordEnrollmentRequest,
   ): Promise<void> {
     return this.apiService.send(
       "PUT",
       "/organizations/" + organizationId + "/users/" + userId + "/reset-password-enrollment",
       request,
       true,
-      false
+      false,
     );
   }
 
   putOrganizationUserResetPassword(
     organizationId: string,
     id: string,
-    request: OrganizationUserResetPasswordRequest
+    request: OrganizationUserResetPasswordRequest,
   ): Promise<void> {
     return this.apiService.send(
       "PUT",
       "/organizations/" + organizationId + "/users/" + id + "/reset-password",
       request,
       true,
-      false
+      false,
     );
   }
 
@@ -281,20 +281,20 @@ export class OrganizationUserServiceImplementation implements OrganizationUserSe
       "/organizations/" + organizationId + "/users/" + id,
       null,
       true,
-      false
+      false,
     );
   }
 
   async deleteManyOrganizationUsers(
     organizationId: string,
-    ids: string[]
+    ids: string[],
   ): Promise<ListResponse<OrganizationUserBulkResponse>> {
     const r = await this.apiService.send(
       "DELETE",
       "/organizations/" + organizationId + "/users",
       new OrganizationUserBulkRequest(ids),
       true,
-      true
+      true,
     );
     return new ListResponse(r, OrganizationUserBulkResponse);
   }
@@ -305,20 +305,20 @@ export class OrganizationUserServiceImplementation implements OrganizationUserSe
       "/organizations/" + organizationId + "/users/" + id + "/revoke",
       null,
       true,
-      false
+      false,
     );
   }
 
   async revokeManyOrganizationUsers(
     organizationId: string,
-    ids: string[]
+    ids: string[],
   ): Promise<ListResponse<OrganizationUserBulkResponse>> {
     const r = await this.apiService.send(
       "PUT",
       "/organizations/" + organizationId + "/users/revoke",
       new OrganizationUserBulkRequest(ids),
       true,
-      true
+      true,
     );
     return new ListResponse(r, OrganizationUserBulkResponse);
   }
@@ -329,20 +329,20 @@ export class OrganizationUserServiceImplementation implements OrganizationUserSe
       "/organizations/" + organizationId + "/users/" + id + "/restore",
       null,
       true,
-      false
+      false,
     );
   }
 
   async restoreManyOrganizationUsers(
     organizationId: string,
-    ids: string[]
+    ids: string[],
   ): Promise<ListResponse<OrganizationUserBulkResponse>> {
     const r = await this.apiService.send(
       "PUT",
       "/organizations/" + organizationId + "/users/restore",
       new OrganizationUserBulkRequest(ids),
       true,
-      true
+      true,
     );
     return new ListResponse(r, OrganizationUserBulkResponse);
   }

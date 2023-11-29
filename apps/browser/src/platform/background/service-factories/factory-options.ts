@@ -9,12 +9,12 @@ export type FactoryOptions = {
 export async function factory<
   TCache extends CachedServices,
   TName extends keyof TCache,
-  TOpts extends FactoryOptions
+  TOpts extends FactoryOptions,
 >(
   cachedServices: TCache,
   name: TName,
   opts: TOpts,
-  factory: () => TCache[TName] | Promise<TCache[TName]>
+  factory: () => TCache[TName] | Promise<TCache[TName]>,
 ): Promise<TCache[TName]> {
   let instance = cachedServices[name];
   if (opts.alwaysInitializeNewService || !instance) {

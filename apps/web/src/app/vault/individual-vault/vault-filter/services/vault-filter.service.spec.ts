@@ -48,7 +48,7 @@ describe("vault filter service", () => {
       folderService,
       cipherService,
       policyService,
-      i18nService
+      i18nService,
     );
   });
 
@@ -68,7 +68,7 @@ describe("vault filter service", () => {
       stateService.getCollapsedGroupings.mockResolvedValue(["1", "2"]);
 
       await expect(firstValueFrom(vaultFilterService.collapsedFilterNodes$)).resolves.toEqual(
-        nodes
+        nodes,
       );
     });
   });

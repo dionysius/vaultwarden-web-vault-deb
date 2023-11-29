@@ -41,7 +41,7 @@ export class LastPassDirectImportService {
     private passwordGenerationService: PasswordGenerationServiceAbstraction,
     private broadcasterService: BroadcasterService,
     private ngZone: NgZone,
-    private dialogService: DialogService
+    private dialogService: DialogService,
   ) {
     this.vault = new Vault(this.cryptoFunctionService, this.tokenService);
 
@@ -73,7 +73,7 @@ export class LastPassDirectImportService {
       const csvData = await this.handleFederatedImport(
         oidc.oidcCode,
         oidc.oidcState,
-        includeSharedFolders
+        includeSharedFolders,
       );
       return csvData;
     }
@@ -155,7 +155,7 @@ export class LastPassDirectImportService {
   private async handleStandardImport(
     email: string,
     password: string,
-    includeSharedFolders: boolean
+    includeSharedFolders: boolean,
   ): Promise<string> {
     const clientInfo = await this.createClientInfo(email);
     await this.vault.open(email, password, clientInfo, this.lastPassDirectImportUIService, {
@@ -168,10 +168,10 @@ export class LastPassDirectImportService {
   private async handleFederatedImport(
     oidcCode: string,
     oidcState: string,
-    includeSharedFolders: boolean
+    includeSharedFolders: boolean,
   ): Promise<string> {
     const response = await this.oidcClient.processSigninResponse(
-      this.getOidcRedirectUrlWithParams(oidcCode, oidcState)
+      this.getOidcRedirectUrlWithParams(oidcCode, oidcState),
     );
     const userState = response.userState as any;
 

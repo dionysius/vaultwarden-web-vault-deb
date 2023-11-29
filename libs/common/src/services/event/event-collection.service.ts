@@ -11,14 +11,14 @@ export class EventCollectionService implements EventCollectionServiceAbstraction
     private cipherService: CipherService,
     private stateService: StateService,
     private organizationService: OrganizationService,
-    private eventUploadService: EventUploadService
+    private eventUploadService: EventUploadService,
   ) {}
 
   async collect(
     eventType: EventType,
     cipherId: string = null,
     uploadImmediately = false,
-    organizationId: string = null
+    organizationId: string = null,
   ): Promise<any> {
     const authed = await this.stateService.getIsAuthenticated();
     if (!authed) {

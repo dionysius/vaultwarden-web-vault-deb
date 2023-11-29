@@ -12,7 +12,7 @@ import * as config from "../variables";
   LogUtils.logInfo("Sending Handshake");
   const handshakeResponse = await nativeMessageService.sendHandshake(
     config.testRsaPublicKey,
-    config.applicationName
+    config.applicationName,
   );
   LogUtils.logSuccess("Received response to handshake request");
 

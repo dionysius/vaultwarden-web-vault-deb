@@ -72,7 +72,7 @@ export class LockComponent implements OnInit, OnDestroy {
     protected passwordStrengthService: PasswordStrengthServiceAbstraction,
     protected dialogService: DialogService,
     protected deviceTrustCryptoService: DeviceTrustCryptoServiceAbstraction,
-    protected userVerificationService: UserVerificationService
+    protected userVerificationService: UserVerificationService,
   ) {}
 
   async ngOnInit() {
@@ -81,7 +81,7 @@ export class LockComponent implements OnInit, OnDestroy {
         concatMap(async () => {
           await this.load();
         }),
-        takeUntil(this.destroy$)
+        takeUntil(this.destroy$),
       )
       .subscribe();
   }
@@ -141,7 +141,7 @@ export class LockComponent implements OnInit, OnDestroy {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
-        this.i18nService.t("pinRequired")
+        this.i18nService.t("pinRequired"),
       );
       return;
     }
@@ -185,7 +185,7 @@ export class LockComponent implements OnInit, OnDestroy {
           this.email,
           kdf,
           kdfConfig,
-          oldPinKey
+          oldPinKey,
         );
       } else {
         userKey = await this.cryptoService.decryptUserKeyWithPin(
@@ -193,14 +193,14 @@ export class LockComponent implements OnInit, OnDestroy {
           this.email,
           kdf,
           kdfConfig,
-          userKeyPin
+          userKeyPin,
         );
       }
 
       const protectedPin = await this.stateService.getProtectedPin();
       const decryptedPin = await this.cryptoService.decryptToUtf8(
         new EncString(protectedPin),
-        userKey
+        userKey,
       );
       failed = decryptedPin !== this.pin;
 
@@ -220,7 +220,7 @@ export class LockComponent implements OnInit, OnDestroy {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
-        this.i18nService.t("invalidPin")
+        this.i18nService.t("invalidPin"),
       );
     }
   }
@@ -230,7 +230,7 @@ export class LockComponent implements OnInit, OnDestroy {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
-        this.i18nService.t("masterPasswordRequired")
+        this.i18nService.t("masterPasswordRequired"),
       );
       return;
     }
@@ -245,7 +245,7 @@ export class LockComponent implements OnInit, OnDestroy {
       this.masterPassword,
       this.email,
       kdf,
-      kdfConfig
+      kdfConfig,
     );
     const storedPasswordHash = await this.cryptoService.getMasterKeyHash();
 
@@ -255,7 +255,7 @@ export class LockComponent implements OnInit, OnDestroy {
       // Offline unlock possible
       passwordValid = await this.cryptoService.compareAndUpdateKeyHash(
         this.masterPassword,
-        masterKey
+        masterKey,
       );
     } else {
       // Online only
@@ -263,7 +263,7 @@ export class LockComponent implements OnInit, OnDestroy {
       const serverKeyHash = await this.cryptoService.hashMasterKey(
         this.masterPassword,
         masterKey,
-        HashPurpose.ServerAuthorization
+        HashPurpose.ServerAuthorization,
       );
       request.masterPasswordHash = serverKeyHash;
       try {
@@ -274,7 +274,7 @@ export class LockComponent implements OnInit, OnDestroy {
         const localKeyHash = await this.cryptoService.hashMasterKey(
           this.masterPassword,
           masterKey,
-          HashPurpose.LocalAuthorization
+          HashPurpose.LocalAuthorization,
         );
         await this.cryptoService.setMasterKeyHash(localKeyHash);
       } catch (e) {
@@ -288,7 +288,7 @@ export class LockComponent implements OnInit, OnDestroy {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
-        this.i18nService.t("invalidMasterPassword")
+        this.i18nService.t("invalidMasterPassword"),
       );
       return;
     }
@@ -317,13 +317,13 @@ export class LockComponent implements OnInit, OnDestroy {
         // If we do not have any saved policies, attempt to load them from the service
         if (this.enforcedMasterPasswordOptions == undefined) {
           this.enforcedMasterPasswordOptions = await firstValueFrom(
-            this.policyService.masterPasswordPolicyOptions$()
+            this.policyService.masterPasswordPolicyOptions$(),
           );
         }
 
         if (this.requirePasswordChange()) {
           await this.stateService.setForceSetPasswordReason(
-            ForceSetPasswordReason.WeakMasterPassword
+            ForceSetPasswordReason.WeakMasterPassword,
           );
           this.router.navigate([this.forcePasswordResetRoute]);
           return;
@@ -353,7 +353,7 @@ export class LockComponent implements OnInit, OnDestroy {
     //        - If they have biometrics enabled, they will be presented with the biometric prompt
 
     const availableVaultTimeoutActions = await firstValueFrom(
-      this.vaultTimeoutSettingsService.availableVaultTimeoutActions$()
+      this.vaultTimeoutSettingsService.availableVaultTimeoutActions$(),
     );
     const supportsLock = availableVaultTimeoutActions.includes(VaultTimeoutAction.Lock);
     if (!supportsLock) {
@@ -393,13 +393,13 @@ export class LockComponent implements OnInit, OnDestroy {
 
     const passwordStrength = this.passwordStrengthService.getPasswordStrength(
       this.masterPassword,
-      this.email
+      this.email,
     )?.score;
 
     return !this.policyService.evaluateMasterPassword(
       passwordStrength,
       this.masterPassword,
-      this.enforcedMasterPasswordOptions
+      this.enforcedMasterPasswordOptions,
     );
   }
 }

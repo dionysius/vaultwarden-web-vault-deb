@@ -22,7 +22,7 @@ export class AccessRemovalDialogComponent implements OnInit {
     public dialogRef: DialogRef,
     private router: Router,
     private accessPolicyService: AccessPolicyService,
-    @Inject(DIALOG_DATA) public data: AccessRemovalDetails
+    @Inject(DIALOG_DATA) public data: AccessRemovalDetails,
   ) {}
 
   ngOnInit(): void {
@@ -36,7 +36,7 @@ export class AccessRemovalDialogComponent implements OnInit {
     ) {
       this.dialogRef.close();
       throw new Error(
-        "The access removal dialog was not called with the appropriate operation values."
+        "The access removal dialog was not called with the appropriate operation values.",
       );
     }
   }
@@ -47,7 +47,7 @@ export class AccessRemovalDialogComponent implements OnInit {
       await this.accessPolicyService.deleteAccessPolicy(this.data.policy.accessPolicyId);
     } else if (this.data.operation == "update") {
       await this.accessPolicyService.updateAccessPolicy(
-        AccessSelectorComponent.getBaseAccessPolicyView(this.data.policy)
+        AccessSelectorComponent.getBaseAccessPolicyView(this.data.policy),
       );
       this.refreshPolicyChanges();
     }

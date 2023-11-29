@@ -12,7 +12,7 @@ export class I18nService extends TranslationService implements I18nServiceAbstra
   constructor(
     protected systemLanguage: string,
     protected localesDirectory: string,
-    protected getLocalesJson: (formattedLocale: string) => Promise<any>
+    protected getLocalesJson: (formattedLocale: string) => Promise<any>,
   ) {
     super(systemLanguage, localesDirectory, getLocalesJson);
   }

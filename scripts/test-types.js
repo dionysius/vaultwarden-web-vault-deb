@@ -25,5 +25,5 @@ concurrently(
   files.map((file) => ({
     name: path.basename(path.dirname(file)),
     command: `npx tsc --noEmit --project ${file}`,
-  }))
+  })),
 );

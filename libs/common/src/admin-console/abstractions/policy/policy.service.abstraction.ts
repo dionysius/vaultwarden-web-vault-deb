@@ -38,7 +38,7 @@ export abstract class PolicyService {
    */
   policyAppliesToActiveUser$: (
     policyType: PolicyType,
-    policyFilter?: (policy: Policy) => boolean
+    policyFilter?: (policy: Policy) => boolean,
   ) => Observable<boolean>;
 
   /**
@@ -49,7 +49,7 @@ export abstract class PolicyService {
   policyAppliesToUser: (
     policyType: PolicyType,
     policyFilter?: (policy: Policy) => boolean,
-    userId?: string
+    userId?: string,
   ) => Promise<boolean>;
 
   // Policy specific interfaces
@@ -67,7 +67,7 @@ export abstract class PolicyService {
   evaluateMasterPassword: (
     passwordStrength: number,
     newPassword: string,
-    enforcedPolicyOptions?: MasterPasswordPolicyOptions
+    enforcedPolicyOptions?: MasterPasswordPolicyOptions,
   ) => boolean;
 
   /**
@@ -76,7 +76,7 @@ export abstract class PolicyService {
    */
   getResetPasswordPolicyOptions: (
     policies: Policy[],
-    orgId: string
+    orgId: string,
   ) => [ResetPasswordPolicyOptions, boolean];
 
   // Helpers

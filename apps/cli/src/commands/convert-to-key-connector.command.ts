@@ -14,7 +14,7 @@ export class ConvertToKeyConnectorCommand {
     private environmentService: EnvironmentService,
     private syncService: SyncService,
     private organizationApiService: OrganizationApiServiceAbstraction,
-    private logout: () => Promise<void>
+    private logout: () => Promise<void>,
   ) {}
 
   async run(): Promise<Response> {
@@ -26,8 +26,8 @@ export class ConvertToKeyConnectorCommand {
         new MessageResponse(
           "An organization you are a member of is using Key Connector. " +
             "In order to access the vault, you must opt-in to Key Connector now via the web vault. You have been logged out.",
-          null
-        )
+          null,
+        ),
       );
     }
 

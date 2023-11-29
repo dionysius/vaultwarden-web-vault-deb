@@ -29,19 +29,19 @@ export class AccessService {
     private cryptoService: CryptoService,
     private apiService: ApiService,
     private cryptoFunctionService: CryptoFunctionService,
-    private encryptService: EncryptService
+    private encryptService: EncryptService,
   ) {}
 
   async getAccessTokens(
     organizationId: string,
-    serviceAccountId: string
+    serviceAccountId: string,
   ): Promise<AccessTokenView[]> {
     const r = await this.apiService.send(
       "GET",
       "/service-accounts/" + serviceAccountId + "/access-tokens",
       null,
       true,
-      true
+      true,
     );
     const results = new ListResponse(r, AccessTokenResponse);
 
@@ -51,7 +51,7 @@ export class AccessService {
   async createAccessToken(
     organizationId: string,
     serviceAccountId: string,
-    accessTokenView: AccessTokenView
+    accessTokenView: AccessTokenView,
   ): Promise<string> {
     const keyMaterial = await this.cryptoFunctionService.aesGenerateKey(128);
     const key = await this.cryptoFunctionService.hkdf(
@@ -59,21 +59,21 @@ export class AccessService {
       "bitwarden-accesstoken",
       "sm-access-token",
       64,
-      "sha256"
+      "sha256",
     );
     const encryptionKey = new SymmetricCryptoKey(key);
 
     const request = await this.createAccessTokenRequest(
       organizationId,
       encryptionKey,
-      accessTokenView
+      accessTokenView,
     );
     const r = await this.apiService.send(
       "POST",
       "/service-accounts/" + serviceAccountId + "/access-tokens",
       request,
       true,
-      true
+      true,
     );
     const result = new AccessTokenCreationResponse(r);
     this._accessToken.next(null);
@@ -90,7 +90,7 @@ export class AccessService {
       "/service-accounts/" + serviceAccountId + "/access-tokens/revoke",
       request,
       true,
-      false
+      false,
     );
 
     this._accessToken.next(null);
@@ -99,7 +99,7 @@ export class AccessService {
   private async createAccessTokenRequest(
     organizationId: string,
     encryptionKey: SymmetricCryptoKey,
-    accessTokenView: AccessTokenView
+    accessTokenView: AccessTokenView,
   ): Promise<AccessTokenRequest> {
     const organizationKey = await this.getOrganizationKey(organizationId);
     const accessTokenRequest = new AccessTokenRequest();
@@ -107,7 +107,7 @@ export class AccessService {
       await this.encryptService.encrypt(accessTokenView.name, organizationKey),
       await this.encryptService.encrypt(
         JSON.stringify({ encryptionKey: organizationKey.keyB64 }),
-        encryptionKey
+        encryptionKey,
       ),
       await this.encryptService.encrypt(encryptionKey.keyB64, organizationKey),
     ]);
@@ -125,7 +125,7 @@ export class AccessService {
 
   private async createAccessTokenViews(
     organizationId: string,
-    accessTokenResponses: AccessTokenResponse[]
+    accessTokenResponses: AccessTokenResponse[],
   ): Promise<AccessTokenView[]> {
     const orgKey = await this.getOrganizationKey(organizationId);
     return await Promise.all(
@@ -138,7 +138,7 @@ export class AccessService {
         view.creationDate = new Date(s.creationDate);
         view.revisionDate = new Date(s.revisionDate);
         return view;
-      })
+      }),
     );
   }
 }

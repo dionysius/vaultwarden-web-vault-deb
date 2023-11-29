@@ -321,10 +321,10 @@
               role="group"
               class="row"
               *ngFor="let u of cipher.login.uris; let i = index; trackBy: trackByFunction"
-              attr.aria-label="{{ 'uriPosition' | i18n : i + 1 }}"
+              attr.aria-label="{{ 'uriPosition' | i18n: i + 1 }}"
             >
               <div class="col-7 form-group">
-                <label for="loginUri{{ i }}">{{ "uriPosition" | i18n : i + 1 }}</label>
+                <label for="loginUri{{ i }}">{{ "uriPosition" | i18n: i + 1 }}</label>
                 <div class="input-group">
                   <input
                     class="form-control"
@@ -893,15 +893,15 @@
           <div class="small text-muted mt-4">
             <div>
               <b class="font-weight-semibold">{{ "dateUpdated" | i18n }}:</b>
-              {{ cipher.revisionDate | date : "medium" }}
+              {{ cipher.revisionDate | date: "medium" }}
             </div>
             <div *ngIf="cipher.creationDate">
               <b class="font-weight-semibold">{{ "dateCreated" | i18n }}:</b>
-              {{ cipher.creationDate | date : "medium" }}
+              {{ cipher.creationDate | date: "medium" }}
             </div>
             <div *ngIf="showRevisionDate">
               <b class="font-weight-semibold">{{ "datePasswordUpdated" | i18n }}:</b>
-              {{ cipher.passwordRevisionDisplayDate | date : "medium" }}
+              {{ cipher.passwordRevisionDisplayDate | date: "medium" }}
             </div>
             <div *ngIf="hasPasswordHistory">
               <b class="font-weight-semibold">{{ "passwordHistory" | i18n }}:</b>
@@ -911,7 +911,7 @@
             </div>
             <div class="ml-3" *ngIf="viewingPasswordHistory">
               <div *ngFor="let ph of cipher.passwordHistory">
-                {{ ph.lastUsedDate | date : "short" }} -
+                {{ ph.lastUsedDate | date: "short" }} -
                 <bit-color-password [password]="ph.password"></bit-color-password>
               </div>
             </div>

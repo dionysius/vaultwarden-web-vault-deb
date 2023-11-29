@@ -31,15 +31,15 @@ describe("canAccessFeature", () => {
     // Mock the correct getter based on the type of flagValue; also mock default values if one is not provided
     if (typeof flagValue === "boolean") {
       mockConfigService.getFeatureFlag.mockImplementation((flag, defaultValue = false) =>
-        flag == testFlag ? Promise.resolve(flagValue) : Promise.resolve(defaultValue)
+        flag == testFlag ? Promise.resolve(flagValue) : Promise.resolve(defaultValue),
       );
     } else if (typeof flagValue === "string") {
       mockConfigService.getFeatureFlag.mockImplementation((flag, defaultValue = "") =>
-        flag == testFlag ? Promise.resolve(flagValue) : Promise.resolve(defaultValue)
+        flag == testFlag ? Promise.resolve(flagValue) : Promise.resolve(defaultValue),
       );
     } else if (typeof flagValue === "number") {
       mockConfigService.getFeatureFlag.mockImplementation((flag, defaultValue = 0) =>
-        flag == testFlag ? Promise.resolve(flagValue) : Promise.resolve(defaultValue)
+        flag == testFlag ? Promise.resolve(flagValue) : Promise.resolve(defaultValue),
       );
     }
 
@@ -120,7 +120,7 @@ describe("canAccessFeature", () => {
     expect(mockPlatformUtilsService.showToast).toHaveBeenCalledWith(
       "error",
       null,
-      "Access Denied!"
+      "Access Denied!",
     );
   });
 

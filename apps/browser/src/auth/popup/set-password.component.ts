@@ -36,7 +36,7 @@ export class SetPasswordComponent extends BaseSetPasswordComponent {
     route: ActivatedRoute,
     organizationApiService: OrganizationApiServiceAbstraction,
     organizationUserService: OrganizationUserService,
-    dialogService: DialogService
+    dialogService: DialogService,
   ) {
     super(
       i18nService,
@@ -53,7 +53,7 @@ export class SetPasswordComponent extends BaseSetPasswordComponent {
       stateService,
       organizationApiService,
       organizationUserService,
-      dialogService
+      dialogService,
     );
   }
 }

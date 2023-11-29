@@ -40,8 +40,8 @@ describe("PolicyService", () => {
             true,
             true,
             OrganizationUserStatusType.Accepted,
-            false
-          )
+            false,
+          ),
         ),
       ]);
     organizationService.getAll.calledWith(undefined).mockResolvedValue([]);
@@ -168,10 +168,10 @@ describe("PolicyService", () => {
       const data: any = {};
       const model = [
         new Policy(
-          policyData("3", "test-organization-3", PolicyType.DisablePersonalVaultExport, true, data)
+          policyData("3", "test-organization-3", PolicyType.DisablePersonalVaultExport, true, data),
         ),
         new Policy(
-          policyData("4", "test-organization-3", PolicyType.MaximumVaultTimeout, true, data)
+          policyData("4", "test-organization-3", PolicyType.MaximumVaultTimeout, true, data),
         ),
       ];
 
@@ -186,7 +186,7 @@ describe("PolicyService", () => {
       };
       const model = [
         new Policy(
-          policyData("3", "test-organization-3", PolicyType.DisablePersonalVaultExport, true, data)
+          policyData("3", "test-organization-3", PolicyType.DisablePersonalVaultExport, true, data),
         ),
         new Policy(policyData("4", "test-organization-3", PolicyType.MasterPassword, true, data)),
       ];
@@ -290,13 +290,13 @@ describe("PolicyService", () => {
         new Policy(
           policyData("1", "organization-1", PolicyType.DisablePersonalVaultExport, true, {
             requireUpper: true,
-          })
+          }),
         ),
         new Policy(
           policyData("2", "organization-2", PolicyType.DisableSend, false, {
             minComplexity: 5,
             minLength: 20,
-          })
+          }),
         ),
       ]);
     });
@@ -305,7 +305,7 @@ describe("PolicyService", () => {
   describe("policyAppliesToActiveUser$", () => {
     it("MasterPassword does not apply", async () => {
       const result = await firstValueFrom(
-        policyService.policyAppliesToActiveUser$(PolicyType.MasterPassword)
+        policyService.policyAppliesToActiveUser$(PolicyType.MasterPassword),
       );
 
       expect(result).toEqual(false);
@@ -313,7 +313,7 @@ describe("PolicyService", () => {
 
     it("MaximumVaultTimeout applies", async () => {
       const result = await firstValueFrom(
-        policyService.policyAppliesToActiveUser$(PolicyType.MaximumVaultTimeout)
+        policyService.policyAppliesToActiveUser$(PolicyType.MaximumVaultTimeout),
       );
 
       expect(result).toEqual(true);
@@ -321,7 +321,7 @@ describe("PolicyService", () => {
 
     it("PolicyFilter filters result", async () => {
       const result = await firstValueFrom(
-        policyService.policyAppliesToActiveUser$(PolicyType.MaximumVaultTimeout, (p) => false)
+        policyService.policyAppliesToActiveUser$(PolicyType.MaximumVaultTimeout, (p) => false),
       );
 
       expect(result).toEqual(false);
@@ -329,7 +329,7 @@ describe("PolicyService", () => {
 
     it("DisablePersonalVaultExport does not apply", async () => {
       const result = await firstValueFrom(
-        policyService.policyAppliesToActiveUser$(PolicyType.DisablePersonalVaultExport)
+        policyService.policyAppliesToActiveUser$(PolicyType.DisablePersonalVaultExport),
       );
 
       expect(result).toEqual(false);
@@ -341,7 +341,7 @@ describe("PolicyService", () => {
       const result = await policyService.policyAppliesToUser(
         PolicyType.MasterPassword,
         null,
-        "user"
+        "user",
       );
 
       expect(result).toEqual(false);
@@ -351,7 +351,7 @@ describe("PolicyService", () => {
       const result = await policyService.policyAppliesToUser(
         PolicyType.MaximumVaultTimeout,
         null,
-        "user"
+        "user",
       );
 
       expect(result).toEqual(true);
@@ -361,7 +361,7 @@ describe("PolicyService", () => {
       const result = await policyService.policyAppliesToUser(
         PolicyType.MaximumVaultTimeout,
         (p) => false,
-        "user"
+        "user",
       );
 
       expect(result).toEqual(false);
@@ -371,7 +371,7 @@ describe("PolicyService", () => {
       const result = await policyService.policyAppliesToUser(
         PolicyType.DisablePersonalVaultExport,
         null,
-        "user"
+        "user",
       );
 
       expect(result).toEqual(false);
@@ -383,7 +383,7 @@ describe("PolicyService", () => {
     organizationId: string,
     type: PolicyType,
     enabled: boolean,
-    data?: any
+    data?: any,
   ) {
     const policyData = new PolicyData({} as any);
     policyData.id = id;
@@ -400,7 +400,7 @@ describe("PolicyService", () => {
     enabled: boolean,
     usePolicies: boolean,
     status: OrganizationUserStatusType,
-    managePolicies: boolean
+    managePolicies: boolean,
   ) {
     const organizationData = new OrganizationData({} as any, {} as any);
     organizationData.id = id;

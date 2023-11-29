@@ -47,19 +47,19 @@ export abstract class AutofillService {
   injectAutofillScripts: (
     sender: chrome.runtime.MessageSender,
     autofillV2?: boolean,
-    autofillOverlay?: boolean
+    autofillOverlay?: boolean,
   ) => Promise<void>;
   getFormsWithPasswordFields: (pageDetails: AutofillPageDetails) => FormData[];
   doAutoFill: (options: AutoFillOptions) => Promise<string | null>;
   doAutoFillOnTab: (
     pageDetails: PageDetail[],
     tab: chrome.tabs.Tab,
-    fromCommand: boolean
+    fromCommand: boolean,
   ) => Promise<string | null>;
   doAutoFillActiveTab: (
     pageDetails: PageDetail[],
     fromCommand: boolean,
-    cipherType?: CipherType
+    cipherType?: CipherType,
   ) => Promise<string | null>;
   isPasswordRepromptRequired: (cipher: CipherView, tab: chrome.tabs.Tab) => Promise<boolean>;
 }

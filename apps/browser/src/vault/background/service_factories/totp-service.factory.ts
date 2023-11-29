@@ -23,7 +23,7 @@ export type TotpServiceInitOptions = TotpServiceOptions &
 
 export function totpServiceFactory(
   cache: { totpService?: AbstractTotpService } & CachedServices,
-  opts: TotpServiceInitOptions
+  opts: TotpServiceInitOptions,
 ): Promise<AbstractTotpService> {
   return factory(
     cache,
@@ -32,7 +32,7 @@ export function totpServiceFactory(
     async () =>
       new TotpService(
         await cryptoFunctionServiceFactory(cache, opts),
-        await logServiceFactory(cache, opts)
-      )
+        await logServiceFactory(cache, opts),
+      ),
   );
 }

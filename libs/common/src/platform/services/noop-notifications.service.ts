@@ -6,7 +6,7 @@ export class NoopNotificationsService implements NotificationsServiceAbstraction
 
   init(): Promise<void> {
     this.logService.info(
-      "Initializing no-op notification service, no push notifications will be received"
+      "Initializing no-op notification service, no push notifications will be received",
     );
     return Promise.resolve();
   }

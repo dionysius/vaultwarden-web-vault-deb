@@ -32,7 +32,7 @@ describe("WebauthnAdminService", () => {
       userVerificationService,
       rotateableKeySetService,
       webAuthnLoginPrfCryptoService,
-      credentials
+      credentials,
     );
   });
 

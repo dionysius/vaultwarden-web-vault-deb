@@ -11,14 +11,14 @@ export abstract class ConfigServiceAbstraction {
   cloudRegion$: Observable<Region>;
   getFeatureFlag$: <T extends boolean | number | string>(
     key: FeatureFlag,
-    defaultValue?: T
+    defaultValue?: T,
   ) => Observable<T>;
   getFeatureFlag: <T extends boolean | number | string>(
     key: FeatureFlag,
-    defaultValue?: T
+    defaultValue?: T,
   ) => Promise<T>;
   checkServerMeetsVersionRequirement$: (
-    minimumRequiredServerVersion: SemVer
+    minimumRequiredServerVersion: SemVer,
   ) => Observable<boolean>;
 
   /**

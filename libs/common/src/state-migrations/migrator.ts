@@ -17,7 +17,10 @@ export type VersionTo<T> = T extends Migrator<number, infer TTo>
 export type Direction = "up" | "down";
 
 export abstract class Migrator<TFrom extends number, TTo extends number> {
-  constructor(public fromVersion: TFrom, public toVersion: TTo) {
+  constructor(
+    public fromVersion: TFrom,
+    public toVersion: TTo,
+  ) {
     if (fromVersion == null || toVersion == null) {
       throw new Error("Invalid migration");
     }

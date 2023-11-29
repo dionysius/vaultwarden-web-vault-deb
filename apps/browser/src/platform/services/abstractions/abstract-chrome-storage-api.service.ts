@@ -32,7 +32,7 @@ export default abstract class AbstractChromeStorageService
             updateType: updateType,
           };
         });
-      })
+      }),
     );
   }
 

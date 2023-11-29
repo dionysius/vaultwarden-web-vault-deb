@@ -18,7 +18,7 @@ export type GlobalStateProviderInitOptions = GlobalStateProviderFactoryOptions &
 
 export async function globalStateProviderFactory(
   cache: { globalStateProvider?: GlobalStateProvider } & CachedServices,
-  opts: GlobalStateProviderInitOptions
+  opts: GlobalStateProviderInitOptions,
 ): Promise<GlobalStateProvider> {
   return factory(
     cache,
@@ -27,7 +27,7 @@ export async function globalStateProviderFactory(
     async () =>
       new DefaultGlobalStateProvider(
         await observableMemoryStorageServiceFactory(cache, opts),
-        await observableDiskStorageServiceFactory(cache, opts)
-      )
+        await observableDiskStorageServiceFactory(cache, opts),
+      ),
   );
 }

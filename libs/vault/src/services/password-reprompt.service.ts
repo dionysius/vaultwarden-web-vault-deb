@@ -14,7 +14,7 @@ import { PasswordRepromptComponent } from "../components/password-reprompt.compo
 export class PasswordRepromptService {
   constructor(
     private dialogService: DialogService,
-    private userVerificationService: UserVerificationService
+    private userVerificationService: UserVerificationService,
   ) {}
 
   protectedFields() {

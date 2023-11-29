@@ -25,7 +25,7 @@ export class UserVerificationPromptComponent extends BaseUserVerificationPrompt 
     userVerificationService: UserVerificationService,
     formBuilder: FormBuilder,
     platformUtilsService: PlatformUtilsService,
-    i18nService: I18nService
+    i18nService: I18nService,
   ) {
     // TODO: Remove when BaseUserVerificationPrompt has support for CL
     const modalConfig: ModalConfig = { data };
@@ -35,7 +35,7 @@ export class UserVerificationPromptComponent extends BaseUserVerificationPrompt 
       userVerificationService,
       formBuilder,
       platformUtilsService,
-      i18nService
+      i18nService,
     );
   }
 
@@ -51,10 +51,10 @@ export class UserVerificationPromptComponent extends BaseUserVerificationPrompt 
  */
 export const openUserVerificationPrompt = (
   dialogService: DialogService,
-  config: DialogConfig<UserVerificationPromptParams>
+  config: DialogConfig<UserVerificationPromptParams>,
 ) => {
   return dialogService.open<boolean, UserVerificationPromptParams>(
     UserVerificationPromptComponent,
-    config
+    config,
   );
 };

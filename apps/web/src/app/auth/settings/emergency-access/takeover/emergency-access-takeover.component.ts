@@ -43,7 +43,7 @@ export class EmergencyAccessTakeoverComponent
     policyService: PolicyService,
     private emergencyAccessService: EmergencyAccessService,
     private logService: LogService,
-    dialogService: DialogService
+    dialogService: DialogService,
   ) {
     super(
       i18nService,
@@ -53,7 +53,7 @@ export class EmergencyAccessTakeoverComponent
       platformUtilsService,
       policyService,
       stateService,
-      dialogService
+      dialogService,
     );
   }
 
@@ -79,7 +79,7 @@ export class EmergencyAccessTakeoverComponent
       await this.emergencyAccessService.takeover(
         this.emergencyAccessId,
         this.masterPassword,
-        this.email
+        this.email,
       );
       this.onDone.emit();
     } catch (e) {
@@ -87,7 +87,7 @@ export class EmergencyAccessTakeoverComponent
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
-        this.i18nService.t("unexpectedError")
+        this.i18nService.t("unexpectedError"),
       );
     }
   }

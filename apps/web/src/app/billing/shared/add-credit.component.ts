@@ -53,7 +53,7 @@ export class AddCreditComponent implements OnInit {
     private platformUtilsService: PlatformUtilsService,
     private organizationService: OrganizationService,
     private logService: LogService,
-    private configService: ConfigServiceAbstraction
+    private configService: ConfigServiceAbstraction,
   ) {
     const payPalConfig = process.env.PAYPAL_CONFIG as PayPalConfig;
     this.ppButtonFormAction = payPalConfig.buttonAction;

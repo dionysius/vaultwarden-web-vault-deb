@@ -5,7 +5,10 @@ import { Response } from "../../../models/response";
 import { SendResponse } from "../models/send.response";
 
 export class SendRemovePasswordCommand {
-  constructor(private sendService: SendService, private sendApiService: SendApiService) {}
+  constructor(
+    private sendService: SendService,
+    private sendApiService: SendApiService,
+  ) {}
 
   async run(id: string) {
     try {

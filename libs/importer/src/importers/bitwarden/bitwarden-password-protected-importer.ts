@@ -19,7 +19,7 @@ export class BitwardenPasswordProtectedImporter extends BitwardenJsonImporter im
     cryptoService: CryptoService,
     i18nService: I18nService,
     cipherService: CipherService,
-    private promptForPassword_callback: () => Promise<string>
+    private promptForPassword_callback: () => Promise<string>,
   ) {
     super(cryptoService, i18nService, cipherService);
   }
@@ -63,7 +63,7 @@ export class BitwardenPasswordProtectedImporter extends BitwardenJsonImporter im
 
   private async checkPassword(
     jdoc: BitwardenPasswordProtectedFileFormat,
-    password: string
+    password: string,
   ): Promise<boolean> {
     if (this.isNullOrWhitespace(password)) {
       return false;
@@ -73,14 +73,14 @@ export class BitwardenPasswordProtectedImporter extends BitwardenJsonImporter im
       password,
       jdoc.salt,
       jdoc.kdfType,
-      new KdfConfig(jdoc.kdfIterations, jdoc.kdfMemory, jdoc.kdfParallelism)
+      new KdfConfig(jdoc.kdfIterations, jdoc.kdfMemory, jdoc.kdfParallelism),
     );
 
     const encKeyValidation = new EncString(jdoc.encKeyValidation_DO_NOT_EDIT);
 
     const encKeyValidationDecrypt = await this.cryptoService.decryptToUtf8(
       encKeyValidation,
-      this.key
+      this.key,
     );
     if (encKeyValidationDecrypt === null) {
       return false;

@@ -23,17 +23,17 @@ describe("AutofillOverlayIframeService", () => {
     autofillOverlayIframeService = new AutofillOverlayIframeService(
       iframePath,
       AutofillOverlayPort.Button,
-      shadow
+      shadow,
     );
     shadowAppendSpy = jest.spyOn(shadow, "appendChild");
     handlePortDisconnectSpy = jest.spyOn(
       autofillOverlayIframeService as any,
-      "handlePortDisconnect"
+      "handlePortDisconnect",
     );
     handlePortMessageSpy = jest.spyOn(autofillOverlayIframeService as any, "handlePortMessage");
     handleWindowMessageSpy = jest.spyOn(autofillOverlayIframeService as any, "handleWindowMessage");
     chrome.runtime.connect = jest.fn((connectInfo: chrome.runtime.ConnectInfo) =>
-      createPortSpyMock(connectInfo.name)
+      createPortSpyMock(connectInfo.name),
     ) as unknown as typeof chrome.runtime.connect;
   });
 
@@ -54,7 +54,7 @@ describe("AutofillOverlayIframeService", () => {
       autofillOverlayIframeService.initOverlayIframe({}, "title");
 
       expect(autofillOverlayIframeService["shadow"].appendChild).toBeCalledWith(
-        autofillOverlayIframeService["iframe"]
+        autofillOverlayIframeService["iframe"],
       );
     });
 
@@ -147,7 +147,7 @@ describe("AutofillOverlayIframeService", () => {
 
         expect(globalThis.removeEventListener).toBeCalledWith(
           EVENTS.MESSAGE,
-          handleWindowMessageSpy
+          handleWindowMessageSpy,
         );
       });
 
@@ -186,7 +186,7 @@ describe("AutofillOverlayIframeService", () => {
 
         expect(autofillOverlayIframeService["iframe"].contentWindow.postMessage).toBeCalledWith(
           message,
-          "*"
+          "*",
         );
       });
 
@@ -204,7 +204,7 @@ describe("AutofillOverlayIframeService", () => {
         beforeEach(() => {
           updateElementStylesSpy = jest.spyOn(
             autofillOverlayIframeService as any,
-            "updateElementStyles"
+            "updateElementStyles",
           );
         });
 
@@ -219,7 +219,7 @@ describe("AutofillOverlayIframeService", () => {
           expect(updateElementStylesSpy).not.toBeCalled();
           expect(autofillOverlayIframeService["iframe"].contentWindow.postMessage).toBeCalledWith(
             message,
-            "*"
+            "*",
           );
         });
 
@@ -344,7 +344,7 @@ describe("AutofillOverlayIframeService", () => {
           new MessageEvent("message", {
             data: {},
             source: window,
-          })
+          }),
         );
 
         expect(portSpy.postMessage).not.toBeCalled();
@@ -356,7 +356,7 @@ describe("AutofillOverlayIframeService", () => {
             data: {},
             source: autofillOverlayIframeService["iframe"].contentWindow,
             origin: "https://www.google.com",
-          })
+          }),
         );
 
         expect(portSpy.postMessage).not.toBeCalled();
@@ -368,7 +368,7 @@ describe("AutofillOverlayIframeService", () => {
             data: { command: "not-a-handled-command" },
             source: autofillOverlayIframeService["iframe"].contentWindow,
             origin: "chrome-extension://id",
-          })
+          }),
         );
 
         expect(portSpy.postMessage).toBeCalledWith({ command: "not-a-handled-command" });
@@ -380,7 +380,7 @@ describe("AutofillOverlayIframeService", () => {
             data: { command: "updateAutofillOverlayListHeight", styles: { height: "300px" } },
             source: autofillOverlayIframeService["iframe"].contentWindow,
             origin: "chrome-extension://id",
-          })
+          }),
         );
 
         expect(autofillOverlayIframeService["iframe"].style.height).toBe("300px");

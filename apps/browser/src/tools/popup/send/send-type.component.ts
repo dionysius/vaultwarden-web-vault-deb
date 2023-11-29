@@ -50,7 +50,7 @@ export class SendTypeComponent extends BaseSendComponent {
     private router: Router,
     logService: LogService,
     sendApiService: SendApiService,
-    dialogService: DialogService
+    dialogService: DialogService,
   ) {
     super(
       sendService,
@@ -62,7 +62,7 @@ export class SendTypeComponent extends BaseSendComponent {
       policyService,
       logService,
       sendApiService,
-      dialogService
+      dialogService,
     );
     super.onSuccessfulLoad = async () => {
       this.selectType(this.type);

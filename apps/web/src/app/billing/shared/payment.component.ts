@@ -50,7 +50,7 @@ export class PaymentComponent implements OnInit, OnDestroy {
   constructor(
     private apiService: ApiService,
     private logService: LogService,
-    private themingService: AbstractThemingService
+    private themingService: AbstractThemingService,
   ) {
     this.stripeScript = window.document.createElement("script");
     this.stripeScript.src = "https://js.stripe.com/v3/?advancedFraudSignals=false";
@@ -166,7 +166,7 @@ export class PaymentComponent implements OnInit, OnDestroy {
               return;
             }
             this.btInstance = instance;
-          }
+          },
         );
       }, 250);
     } else {
@@ -195,7 +195,7 @@ export class PaymentComponent implements OnInit, OnDestroy {
           this.apiService
             .postSetupPayment()
             .then((clientSecret) =>
-              this.stripe.handleCardSetup(clientSecret, this.stripeCardNumberElement)
+              this.stripe.handleCardSetup(clientSecret, this.stripeCardNumberElement),
             )
             .then((result: any) => {
               if (result.error) {
@@ -281,11 +281,11 @@ export class PaymentComponent implements OnInit, OnDestroy {
       const style = getComputedStyle(document.documentElement);
       this.StripeElementStyle.base.color = `rgb(${style.getPropertyValue("--color-text-main")})`;
       this.StripeElementStyle.base["::placeholder"].color = `rgb(${style.getPropertyValue(
-        "--color-text-muted"
+        "--color-text-muted",
       )})`;
       this.StripeElementStyle.invalid.color = `rgb(${style.getPropertyValue("--color-text-main")})`;
       this.StripeElementStyle.invalid.borderColor = `rgb(${style.getPropertyValue(
-        "--color-danger-500"
+        "--color-danger-500",
       )})`;
     });
   }

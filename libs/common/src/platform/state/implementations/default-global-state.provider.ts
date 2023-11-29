@@ -15,7 +15,7 @@ export class DefaultGlobalStateProvider implements GlobalStateProvider {
 
   constructor(
     private memoryStorage: AbstractMemoryStorageService & ObservableStorageService,
-    private diskStorage: AbstractStorageService & ObservableStorageService
+    private diskStorage: AbstractStorageService & ObservableStorageService,
   ) {}
 
   get<T>(keyDefinition: KeyDefinition<T>): GlobalState<T> {
@@ -29,7 +29,7 @@ export class DefaultGlobalStateProvider implements GlobalStateProvider {
 
     const newGlobalState = new DefaultGlobalState<T>(
       keyDefinition,
-      this.getLocation(keyDefinition.stateDefinition.storageLocation)
+      this.getLocation(keyDefinition.stateDefinition.storageLocation),
     );
 
     this.globalStateCache[cacheKey] = newGlobalState;

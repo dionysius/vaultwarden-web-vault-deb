@@ -36,7 +36,7 @@ describe("electronCryptoService", () => {
       encryptService,
       platformUtilService,
       logService,
-      stateService
+      stateService,
     );
   });
 
@@ -64,7 +64,7 @@ describe("electronCryptoService", () => {
           expect.objectContaining({ key: expect.any(String), clientEncKeyHalf: null }),
           {
             userId: mockUserId,
-          }
+          },
         );
       });
 

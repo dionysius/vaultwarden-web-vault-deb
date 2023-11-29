@@ -25,7 +25,7 @@ export class AcceptProviderComponent extends BaseAcceptComponent {
     route: ActivatedRoute,
     stateService: StateService,
     private apiService: ApiService,
-    platformUtilService: PlatformUtilsService
+    platformUtilService: PlatformUtilsService,
   ) {
     super(router, platformUtilService, i18nService, route, stateService);
   }
@@ -37,13 +37,13 @@ export class AcceptProviderComponent extends BaseAcceptComponent {
     await this.apiService.postProviderUserAccept(
       qParams.providerId,
       qParams.providerUserId,
-      request
+      request,
     );
     this.platformUtilService.showToast(
       "success",
       this.i18nService.t("inviteAccepted"),
       this.i18nService.t("providerInviteAcceptedDesc"),
-      { timeout: 10000 }
+      { timeout: 10000 },
     );
     this.router.navigate(["/vault"]);
   }

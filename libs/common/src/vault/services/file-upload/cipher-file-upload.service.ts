@@ -15,14 +15,17 @@ import { AttachmentUploadDataResponse } from "../../models/response/attachment-u
 import { CipherResponse } from "../../models/response/cipher.response";
 
 export class CipherFileUploadService implements CipherFileUploadServiceAbstraction {
-  constructor(private apiService: ApiService, private fileUploadService: FileUploadService) {}
+  constructor(
+    private apiService: ApiService,
+    private fileUploadService: FileUploadService,
+  ) {}
 
   async upload(
     cipher: Cipher,
     encFileName: EncString,
     encData: EncArrayBuffer,
     admin: boolean,
-    dataEncKey: [SymmetricCryptoKey, EncString]
+    dataEncKey: [SymmetricCryptoKey, EncString],
   ): Promise<CipherResponse> {
     const request: AttachmentRequest = {
       key: dataEncKey[1].encryptedString,
@@ -39,7 +42,7 @@ export class CipherFileUploadService implements CipherFileUploadServiceAbstracti
         uploadDataResponse,
         encFileName,
         encData,
-        this.generateMethods(uploadDataResponse, response, request.adminRequest)
+        this.generateMethods(uploadDataResponse, response, request.adminRequest),
       );
     } catch (e) {
       if (
@@ -51,7 +54,7 @@ export class CipherFileUploadService implements CipherFileUploadServiceAbstracti
           cipher.id,
           encFileName,
           encData,
-          dataEncKey[1]
+          dataEncKey[1],
         );
       } else if (e instanceof ErrorResponse) {
         throw new Error((e as ErrorResponse).getSingleMessage());
@@ -65,7 +68,7 @@ export class CipherFileUploadService implements CipherFileUploadServiceAbstracti
   private generateMethods(
     uploadData: AttachmentUploadDataResponse,
     response: CipherResponse,
-    isAdmin: boolean
+    isAdmin: boolean,
   ): FileUploadApiMethods {
     return {
       postDirect: this.generatePostDirectCallback(uploadData, isAdmin),
@@ -84,12 +87,12 @@ export class CipherFileUploadService implements CipherFileUploadServiceAbstracti
   private generateRenewFileUploadUrlCallback(
     uploadData: AttachmentUploadDataResponse,
     response: CipherResponse,
-    isAdmin: boolean
+    isAdmin: boolean,
   ) {
     return async () => {
       const renewResponse = await this.apiService.renewAttachmentUploadUrl(
         response.id,
-        uploadData.attachmentId
+        uploadData.attachmentId,
       );
       return renewResponse?.url;
     };
@@ -98,7 +101,7 @@ export class CipherFileUploadService implements CipherFileUploadServiceAbstracti
   private generateRollbackCallback(
     response: CipherResponse,
     uploadData: AttachmentUploadDataResponse,
-    isAdmin: boolean
+    isAdmin: boolean,
   ) {
     return () => {
       if (isAdmin) {
@@ -118,7 +121,7 @@ export class CipherFileUploadService implements CipherFileUploadServiceAbstracti
     cipherId: string,
     encFileName: EncString,
     encData: EncArrayBuffer,
-    key: EncString
+    key: EncString,
   ) {
     const fd = new FormData();
     try {
@@ -134,7 +137,7 @@ export class CipherFileUploadService implements CipherFileUploadServiceAbstracti
           {
             filepath: encFileName.encryptedString,
             contentType: "application/octet-stream",
-          } as any
+          } as any,
         );
       } else {
         throw e;

@@ -53,13 +53,15 @@ export function getOrganizationById(id: string) {
 
 export function canAccessAdmin(i18nService: I18nService) {
   return map<Organization[], Organization[]>((orgs) =>
-    orgs.filter(canAccessOrgAdmin).sort(Utils.getSortFunction(i18nService, "name"))
+    orgs.filter(canAccessOrgAdmin).sort(Utils.getSortFunction(i18nService, "name")),
   );
 }
 
 export function canAccessImportExport(i18nService: I18nService) {
   return map<Organization[], Organization[]>((orgs) =>
-    orgs.filter((org) => org.canAccessImportExport).sort(Utils.getSortFunction(i18nService, "name"))
+    orgs
+      .filter((org) => org.canAccessImportExport)
+      .sort(Utils.getSortFunction(i18nService, "name")),
   );
 }
 

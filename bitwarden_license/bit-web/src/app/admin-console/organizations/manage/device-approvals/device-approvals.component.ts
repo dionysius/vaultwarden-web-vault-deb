@@ -41,7 +41,7 @@ export class DeviceApprovalsComponent implements OnInit, OnDestroy {
     private platformUtilsService: PlatformUtilsService,
     private i18nService: I18nService,
     private logService: LogService,
-    private validationService: ValidationService
+    private validationService: ValidationService,
   ) {}
 
   async ngOnInit() {
@@ -52,11 +52,11 @@ export class DeviceApprovalsComponent implements OnInit, OnDestroy {
           this.refresh$.pipe(
             tap(() => (this.loading = true)),
             switchMap(() =>
-              this.organizationAuthRequestService.listPendingRequests(this.organizationId)
-            )
-          )
+              this.organizationAuthRequestService.listPendingRequests(this.organizationId),
+            ),
+          ),
         ),
-        takeUntil(this.destroy$)
+        takeUntil(this.destroy$),
       )
       .subscribe((r) => {
         this.tableDataSource.data = r;
@@ -72,7 +72,7 @@ export class DeviceApprovalsComponent implements OnInit, OnDestroy {
    */
   private async getEncryptedUserKey(
     devicePublicKey: string,
-    resetPasswordDetails: OrganizationUserResetPasswordDetailsResponse
+    resetPasswordDetails: OrganizationUserResetPasswordDetailsResponse,
   ): Promise<EncString> {
     const encryptedUserKey = resetPasswordDetails.resetPasswordKey;
     const encryptedOrgPrivateKey = resetPasswordDetails.encryptedPrivateKey;
@@ -82,7 +82,7 @@ export class DeviceApprovalsComponent implements OnInit, OnDestroy {
     const orgSymKey = await this.cryptoService.getOrgKey(this.organizationId);
     const decOrgPrivateKey = await this.cryptoService.decryptToBytes(
       new EncString(encryptedOrgPrivateKey),
-      orgSymKey
+      orgSymKey,
     );
 
     // Decrypt user key with decrypted org private key
@@ -97,7 +97,7 @@ export class DeviceApprovalsComponent implements OnInit, OnDestroy {
     await this.performAsyncAction(async () => {
       const details = await this.organizationUserService.getOrganizationUserResetPasswordDetails(
         this.organizationId,
-        authRequest.organizationUserId
+        authRequest.organizationUserId,
       );
 
       // The user must be enrolled in account recovery (password reset) in order for the request to be approved.
@@ -105,7 +105,7 @@ export class DeviceApprovalsComponent implements OnInit, OnDestroy {
         this.platformUtilsService.showToast(
           "error",
           null,
-          this.i18nService.t("resetPasswordDetailsError")
+          this.i18nService.t("resetPasswordDetailsError"),
         );
         return;
       }
@@ -115,13 +115,13 @@ export class DeviceApprovalsComponent implements OnInit, OnDestroy {
       await this.organizationAuthRequestService.approvePendingRequest(
         this.organizationId,
         authRequest.id,
-        encryptedKey
+        encryptedKey,
       );
 
       this.platformUtilsService.showToast(
         "success",
         null,
-        this.i18nService.t("loginRequestApproved")
+        this.i18nService.t("loginRequestApproved"),
       );
     });
   }
@@ -141,12 +141,12 @@ export class DeviceApprovalsComponent implements OnInit, OnDestroy {
     await this.performAsyncAction(async () => {
       await this.organizationAuthRequestService.denyPendingRequests(
         this.organizationId,
-        ...this.tableDataSource.data.map((r) => r.id)
+        ...this.tableDataSource.data.map((r) => r.id),
       );
       this.platformUtilsService.showToast(
         "error",
         null,
-        this.i18nService.t("allLoginRequestsDenied")
+        this.i18nService.t("allLoginRequestsDenied"),
       );
     });
   }

@@ -46,24 +46,24 @@ export class SendProgram extends Program {
         "Work with Bitwarden sends. A Send can be quickly created using this command or subcommands can be used to fine-tune the Send",
         {
           data: "The data to Send. Specify as a filepath with the --file option",
-        }
+        },
       )
       .option("-f, --file", "Specifies that <data> is a filepath")
       .option(
         "-d, --deleteInDays <days>",
         "The number of days in the future to set deletion date, defaults to 7",
-        "7"
+        "7",
       )
       .option("-a, --maxAccessCount <amount>", "The amount of max possible accesses.")
       .option("--hidden", "Hide <data> in web by default. Valid only if --file is not set.")
       .option(
         "-n, --name <name>",
-        "The name of the Send. Defaults to a guid for text Sends and the filename for files."
+        "The name of the Send. Defaults to a guid for text Sends and the filename for files.",
       )
       .option("--notes <notes>", "Notes to add to the Send.")
       .option(
         "--fullObject",
-        "Specifies that the full Send object should be returned rather than just the access url."
+        "Specifies that the full Send object should be returned rather than just the access url.",
       )
       .addCommand(this.listCommand())
       .addCommand(this.templateCommand())
@@ -95,14 +95,14 @@ export class SendProgram extends Program {
       .option("--passwordenv <passwordenv>", "Environment variable storing the Send's password")
       .option(
         "--passwordfile <passwordfile>",
-        "Path to a file containing the Sends password as its first line"
+        "Path to a file containing the Sends password as its first line",
       )
       .option("--obj", "Return the Send's json object rather than the Send's content")
       .option("--output <location>", "Specify a file path to save a File-type Send to")
       .on("--help", () => {
         writeLn("");
         writeLn(
-          "If a password is required, the provided password is used or the user is prompted."
+          "If a password is required, the provided password is used or the user is prompted.",
         );
         writeLn("", true);
       })
@@ -113,7 +113,7 @@ export class SendProgram extends Program {
           this.main.cryptoFunctionService,
           this.main.platformUtilsService,
           this.main.environmentService,
-          this.main.sendApiService
+          this.main.sendApiService,
         );
         const response = await cmd.run(url, options);
         this.processResponse(response);
@@ -132,7 +132,7 @@ export class SendProgram extends Program {
         const cmd = new SendListCommand(
           this.main.sendService,
           this.main.environmentService,
-          this.main.searchService
+          this.main.searchService,
         );
         const response = await cmd.run(options);
         this.processResponse(response);
@@ -157,7 +157,7 @@ export class SendProgram extends Program {
           this.main.searchService,
           this.main.apiService,
           this.main.organizationService,
-          this.main.eventCollectionService
+          this.main.eventCollectionService,
         );
         const response = await cmd.run("template", object, null);
         this.processResponse(response);
@@ -195,7 +195,7 @@ export class SendProgram extends Program {
           this.main.sendService,
           this.main.environmentService,
           this.main.searchService,
-          this.main.cryptoService
+          this.main.cryptoService,
         );
         const response = await cmd.run(id, options);
         this.processResponse(response);
@@ -213,7 +213,7 @@ export class SendProgram extends Program {
       .option("--hidden", "text hidden flag. Valid only with the --text option.")
       .option(
         "--password <password>",
-        "optional password to access this Send. Can also be specified in JSON"
+        "optional password to access this Send. Can also be specified in JSON",
       )
       .on("--help", () => {
         writeLn("");
@@ -225,7 +225,7 @@ export class SendProgram extends Program {
         async (
           encodedJson: string,
           options: program.OptionValues,
-          args: { parent: program.Command }
+          args: { parent: program.Command },
         ) => {
           // Work-around to support `--fullObject` option for `send create --fullObject`
           // Calling `option('--fullObject', ...)` above won't work due to Commander doesn't like same option
@@ -238,7 +238,7 @@ export class SendProgram extends Program {
 
           const response = await this.runCreate(encodedJson, mergedOptions);
           this.processResponse(response);
-        }
+        },
       );
   }
 
@@ -262,13 +262,13 @@ export class SendProgram extends Program {
           this.main.sendService,
           this.main.environmentService,
           this.main.searchService,
-          this.main.cryptoService
+          this.main.cryptoService,
         );
         const cmd = new SendEditCommand(
           this.main.sendService,
           this.main.stateService,
           getCmd,
-          this.main.sendApiService
+          this.main.sendApiService,
         );
         const response = await cmd.run(encodedJson, options);
         this.processResponse(response);
@@ -338,7 +338,7 @@ export class SendProgram extends Program {
       this.main.sendService,
       this.main.stateService,
       this.main.environmentService,
-      this.main.sendApiService
+      this.main.sendApiService,
     );
     return await cmd.run(encodedJson, options);
   }

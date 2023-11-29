@@ -56,7 +56,7 @@ export class OrganizationData {
     options: {
       isMember: boolean;
       isProviderUser: boolean;
-    }
+    },
   ) {
     this.id = response.id;
     this.name = response.name;

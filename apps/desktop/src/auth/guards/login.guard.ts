@@ -14,7 +14,7 @@ export class LoginGuard implements CanActivate {
   constructor(
     private stateService: StateService,
     private platformUtilsService: PlatformUtilsService,
-    private i18nService: I18nService
+    private i18nService: I18nService,
   ) {}
 
   async canActivate() {

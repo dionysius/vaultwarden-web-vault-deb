@@ -14,7 +14,7 @@ export abstract class SendService {
     model: SendView,
     file: File | ArrayBuffer,
     password: string,
-    key?: SymmetricCryptoKey
+    key?: SymmetricCryptoKey,
   ) => Promise<[Send, EncArrayBuffer]>;
   get: (id: string) => Send;
   /**

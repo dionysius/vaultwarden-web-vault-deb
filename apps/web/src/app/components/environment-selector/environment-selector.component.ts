@@ -10,7 +10,10 @@ import { Utils } from "@bitwarden/common/platform/misc/utils";
   templateUrl: "environment-selector.component.html",
 })
 export class EnvironmentSelectorComponent implements OnInit {
-  constructor(private platformUtilsService: PlatformUtilsService, private router: Router) {}
+  constructor(
+    private platformUtilsService: PlatformUtilsService,
+    private router: Router,
+  ) {}
 
   isEuServer: boolean;
   isUsServer: boolean;

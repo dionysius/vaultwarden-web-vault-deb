@@ -32,13 +32,13 @@ export interface OsBiometricService {
   getBiometricKey: (
     service: string,
     key: string,
-    clientKeyHalfB64: string | undefined
+    clientKeyHalfB64: string | undefined,
   ) => Promise<string | null>;
   setBiometricKey: (
     service: string,
     key: string,
     value: string,
-    clientKeyHalfB64: string | undefined
+    clientKeyHalfB64: string | undefined,
   ) => Promise<void>;
   deleteBiometricKey: (service: string, key: string) => Promise<void>;
 }

@@ -13,7 +13,7 @@ export class KeyGenerationService implements AbstractKeyGenerationService {
       "bitwarden-ephemeral",
       "ephemeral",
       64,
-      "sha256"
+      "sha256",
     );
     return new SymmetricCryptoKey(key);
   }

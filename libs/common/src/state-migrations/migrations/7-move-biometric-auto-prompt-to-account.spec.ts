@@ -75,7 +75,7 @@ describe("RemoveLegacyEtmKeyMigrator", () => {
       await sut.migrate(helper);
       expect(helper.set).not.toHaveBeenCalledWith(
         matches((s) => s != "global"),
-        any()
+        any(),
       );
     });
   });
@@ -95,7 +95,7 @@ describe("RemoveLegacyEtmKeyMigrator", () => {
         "global",
         Object.assign({}, exampleJSON().global, {
           stateVersion: 7,
-        })
+        }),
       );
     });
   });

@@ -130,7 +130,7 @@ export class GroupsComponent implements OnInit, OnDestroy {
     private searchService: SearchService,
     private logService: LogService,
     private collectionService: CollectionService,
-    private searchPipe: SearchPipe
+    private searchPipe: SearchPipe,
   ) {}
 
   async ngOnInit() {
@@ -141,13 +141,13 @@ export class GroupsComponent implements OnInit, OnDestroy {
           combineLatest([
             // collectionMap
             from(this.apiService.getCollections(this.organizationId)).pipe(
-              concatMap((response) => this.toCollectionMap(response))
+              concatMap((response) => this.toCollectionMap(response)),
             ),
             // groups
             this.refreshGroups$.pipe(
-              switchMap(() => this.groupService.getAll(this.organizationId))
+              switchMap(() => this.groupService.getAll(this.organizationId)),
             ),
-          ])
+          ]),
         ),
         map(([collectionMap, groups]) => {
           return groups
@@ -162,7 +162,7 @@ export class GroupsComponent implements OnInit, OnDestroy {
                 .sort(this.i18nService.collator?.compare),
             }));
         }),
-        takeUntil(this.destroy$)
+        takeUntil(this.destroy$),
       )
       .subscribe((groups) => {
         this.groups = groups;
@@ -177,7 +177,7 @@ export class GroupsComponent implements OnInit, OnDestroy {
         concatMap(async (qParams) => {
           this.searchText = qParams.search;
         }),
-        takeUntil(this.destroy$)
+        takeUntil(this.destroy$),
       )
       .subscribe();
   }
@@ -198,7 +198,7 @@ export class GroupsComponent implements OnInit, OnDestroy {
     }
     if (this.groups.length > pagedLength) {
       this.pagedGroups = this.pagedGroups.concat(
-        this.groups.slice(pagedLength, pagedLength + pagedSize)
+        this.groups.slice(pagedLength, pagedLength + pagedSize),
       );
     }
     this.pagedGroupsCount = this.pagedGroups.length;
@@ -207,7 +207,7 @@ export class GroupsComponent implements OnInit, OnDestroy {
 
   async edit(
     group: GroupDetailsRow,
-    startingTabIndex: GroupAddEditTabType = GroupAddEditTabType.Info
+    startingTabIndex: GroupAddEditTabType = GroupAddEditTabType.Info,
   ) {
     const dialogRef = openGroupAddEditDialog(this.dialogService, {
       data: {
@@ -245,7 +245,7 @@ export class GroupsComponent implements OnInit, OnDestroy {
       this.platformUtilsService.showToast(
         "success",
         null,
-        this.i18nService.t("deletedGroupId", groupRow.details.name)
+        this.i18nService.t("deletedGroupId", groupRow.details.name),
       );
       this.removeGroup(groupRow.details.id);
     } catch (e) {
@@ -276,12 +276,12 @@ export class GroupsComponent implements OnInit, OnDestroy {
     try {
       await this.groupService.deleteMany(
         this.organizationId,
-        groupsToDelete.map((g) => g.details.id)
+        groupsToDelete.map((g) => g.details.id),
       );
       this.platformUtilsService.showToast(
         "success",
         null,
-        this.i18nService.t("deletedManyGroups", groupsToDelete.length.toString())
+        this.i18nService.t("deletedManyGroups", groupsToDelete.length.toString()),
       );
 
       groupsToDelete.forEach((g) => this.removeGroup(g.details.id));
@@ -326,7 +326,7 @@ export class GroupsComponent implements OnInit, OnDestroy {
 
   private async toCollectionMap(response: ListResponse<CollectionResponse>) {
     const collections = response.data.map(
-      (r) => new Collection(new CollectionData(r as CollectionDetailsResponse))
+      (r) => new Collection(new CollectionData(r as CollectionDetailsResponse)),
     );
     const decryptedCollections = await this.collectionService.decryptMany(collections);
 
@@ -344,7 +344,7 @@ export class GroupsComponent implements OnInit, OnDestroy {
         this.groups,
         this.searchText,
         (group) => group.details.name,
-        (group) => group.details.id
+        (group) => group.details.id,
       );
     }
   }

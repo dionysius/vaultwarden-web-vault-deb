@@ -66,7 +66,7 @@ export type VaultTimeoutServiceInitOptions = VaultTimeoutServiceFactoryOptions &
 
 export function vaultTimeoutServiceFactory(
   cache: { vaultTimeoutService?: AbstractVaultTimeoutService } & CachedServices,
-  opts: VaultTimeoutServiceInitOptions
+  opts: VaultTimeoutServiceInitOptions,
 ): Promise<AbstractVaultTimeoutService> {
   return factory(
     cache,
@@ -85,7 +85,7 @@ export function vaultTimeoutServiceFactory(
         await authServiceFactory(cache, opts),
         await vaultTimeoutSettingsServiceFactory(cache, opts),
         opts.vaultTimeoutServiceOptions.lockedCallback,
-        opts.vaultTimeoutServiceOptions.loggedOutCallback
-      )
+        opts.vaultTimeoutServiceOptions.loggedOutCallback,
+      ),
   );
 }

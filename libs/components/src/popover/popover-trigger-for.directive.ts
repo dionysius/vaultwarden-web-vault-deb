@@ -66,7 +66,7 @@ export class PopoverTriggerForDirective implements OnDestroy, AfterViewInit {
   constructor(
     private elementRef: ElementRef<HTMLElement>,
     private viewContainerRef: ViewContainerRef,
-    private overlay: Overlay
+    private overlay: Overlay,
   ) {}
 
   @HostListener("click")

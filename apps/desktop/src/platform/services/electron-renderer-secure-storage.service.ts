@@ -9,7 +9,7 @@ export class ElectronRendererSecureStorageService implements AbstractStorageServ
   }
   get updates$() {
     return throwError(
-      () => new Error("Secure storage implementations cannot have their updates subscribed to.")
+      () => new Error("Secure storage implementations cannot have their updates subscribed to."),
     );
   }
 

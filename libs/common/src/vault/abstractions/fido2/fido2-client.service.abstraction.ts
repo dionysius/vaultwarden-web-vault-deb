@@ -25,7 +25,7 @@ export abstract class Fido2ClientService {
   createCredential: (
     params: CreateCredentialParams,
     tab: chrome.tabs.Tab,
-    abortController?: AbortController
+    abortController?: AbortController,
   ) => Promise<CreateCredentialResult>;
 
   /**
@@ -40,7 +40,7 @@ export abstract class Fido2ClientService {
   assertCredential: (
     params: AssertCredentialParams,
     tab: chrome.tabs.Tab,
-    abortController?: AbortController
+    abortController?: AbortController,
   ) => Promise<AssertCredentialResult>;
 
   isFido2FeatureEnabled: () => Promise<boolean>;

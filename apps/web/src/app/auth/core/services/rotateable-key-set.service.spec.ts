@@ -51,7 +51,7 @@ describe("RotateableKeySetService", () => {
 
 function createSymmetricKey() {
   const key = Utils.fromB64ToArray(
-    "1h-TuPwSbX5qoX0aVgjmda_Lfq85qAcKssBlXZnPIsQC3HNDGIecunYqXhJnp55QpdXRh-egJiLH3a0wqlVQsQ"
+    "1h-TuPwSbX5qoX0aVgjmda_Lfq85qAcKssBlXZnPIsQC3HNDGIecunYqXhJnp55QpdXRh-egJiLH3a0wqlVQsQ",
   );
   return new SymmetricCryptoKey(key);
 }

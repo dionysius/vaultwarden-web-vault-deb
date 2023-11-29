@@ -30,7 +30,7 @@ export class SettingsService implements SettingsServiceAbstraction {
 
           this._settings.next(data);
           this._disableFavicon.next(disableFavicon);
-        })
+        }),
       )
       .subscribe();
   }

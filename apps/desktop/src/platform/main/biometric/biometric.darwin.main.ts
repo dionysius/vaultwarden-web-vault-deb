@@ -7,7 +7,10 @@ import { passwords } from "@bitwarden/desktop-native";
 import { OsBiometricService } from "./biometrics.service.abstraction";
 
 export default class BiometricDarwinMain implements OsBiometricService {
-  constructor(private i18nservice: I18nService, private stateService: StateService) {}
+  constructor(
+    private i18nservice: I18nService,
+    private stateService: StateService,
+  ) {}
 
   async init() {
     await this.stateService.setBiometricText("unlockWithTouchId");

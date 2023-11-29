@@ -12,7 +12,7 @@ export class StatusCommand {
     private envService: EnvironmentService,
     private syncService: SyncService,
     private stateService: StateService,
-    private authService: AuthService
+    private authService: AuthService,
   ) {}
 
   async run(): Promise<Response> {
@@ -30,7 +30,7 @@ export class StatusCommand {
           userEmail: email,
           userId: userId,
           status: status,
-        })
+        }),
       );
     } catch (e) {
       return Response.error(e);

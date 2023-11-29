@@ -10,7 +10,7 @@ export class ConfirmCommand {
   constructor(
     private apiService: ApiService,
     private cryptoService: CryptoService,
-    private organizationUserService: OrganizationUserService
+    private organizationUserService: OrganizationUserService,
   ) {}
 
   async run(object: string, id: string, cmdOptions: Record<string, any>): Promise<Response> {
@@ -44,7 +44,7 @@ export class ConfirmCommand {
       }
       const orgUser = await this.organizationUserService.getOrganizationUser(
         options.organizationId,
-        id
+        id,
       );
       if (orgUser == null) {
         throw new Error("Member id does not exist for this organization.");
@@ -57,7 +57,7 @@ export class ConfirmCommand {
       await this.organizationUserService.postOrganizationUserConfirm(
         options.organizationId,
         id,
-        req
+        req,
       );
       return Response.success();
     } catch (e) {

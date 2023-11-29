@@ -13,7 +13,7 @@ export class PasswordHistoryComponent extends BasePasswordHistoryComponent {
   constructor(
     cipherService: CipherService,
     platformUtilsService: PlatformUtilsService,
-    i18nService: I18nService
+    i18nService: I18nService,
   ) {
     super(cipherService, platformUtilsService, i18nService, window);
   }

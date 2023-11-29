@@ -73,7 +73,7 @@ export abstract class TranslationService implements TranslationServiceAbstractio
   constructor(
     protected systemLanguage: string,
     protected localesDirectory: string,
-    protected getLocalesJson: (formattedLocale: string) => Promise<any>
+    protected getLocalesJson: (formattedLocale: string) => Promise<any>,
   ) {
     this.systemLanguage = systemLanguage.replace("_", "-");
   }
@@ -171,7 +171,7 @@ export abstract class TranslationService implements TranslationServiceAbstractio
           }
           messagesObj[prop] = messagesObj[prop].replace(
             new RegExp(replaceToken, "g"),
-            replaceContent
+            replaceContent,
           );
         }
       }

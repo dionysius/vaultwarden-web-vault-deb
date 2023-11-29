@@ -23,7 +23,7 @@ export class CollectionsComponent extends BaseCollectionsComponent {
     cipherService: CipherService,
     private route: ActivatedRoute,
     private location: Location,
-    logService: LogService
+    logService: LogService,
   ) {
     super(collectionService, platformUtilsService, i18nService, cipherService, logService);
   }

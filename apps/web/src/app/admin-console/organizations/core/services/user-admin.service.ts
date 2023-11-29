@@ -16,14 +16,14 @@ export class UserAdminService {
 
   async get(
     organizationId: string,
-    organizationUserId: string
+    organizationUserId: string,
   ): Promise<OrganizationUserAdminView | undefined> {
     const userResponse = await this.organizationUserService.getOrganizationUser(
       organizationId,
       organizationUserId,
       {
         includeGroups: true,
-      }
+      },
     );
 
     if (userResponse == null) {
@@ -62,7 +62,7 @@ export class UserAdminService {
 
   private async decryptMany(
     organizationId: string,
-    users: OrganizationUserDetailsResponse[]
+    users: OrganizationUserDetailsResponse[],
   ): Promise<OrganizationUserAdminView[]> {
     const promises = users.map(async (u) => {
       const view = new OrganizationUserAdminView();

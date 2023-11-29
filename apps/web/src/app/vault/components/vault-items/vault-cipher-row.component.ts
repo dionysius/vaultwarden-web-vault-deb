@@ -34,7 +34,10 @@ export class VaultCipherRowComponent {
 
   protected CipherType = CipherType;
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+  ) {}
 
   @HostBinding("class")
   get classes() {

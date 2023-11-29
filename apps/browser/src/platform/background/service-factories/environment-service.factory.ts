@@ -15,7 +15,7 @@ export type EnvironmentServiceInitOptions = EnvironmentServiceFactoryOptions &
 
 export function environmentServiceFactory(
   cache: { environmentService?: BrowserEnvironmentService } & CachedServices,
-  opts: EnvironmentServiceInitOptions
+  opts: EnvironmentServiceInitOptions,
 ): Promise<BrowserEnvironmentService> {
   return factory(
     cache,
@@ -24,7 +24,7 @@ export function environmentServiceFactory(
     async () =>
       new BrowserEnvironmentService(
         await stateServiceFactory(cache, opts),
-        await logServiceFactory(cache, opts)
-      )
+        await logServiceFactory(cache, opts),
+      ),
   );
 }

@@ -67,7 +67,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     private stateService: StateService,
     private passwordRepromptService: PasswordRepromptService,
     private organizationService: OrganizationService,
-    private vaultFilterService: VaultFilterService
+    private vaultFilterService: VaultFilterService,
   ) {}
 
   async ngOnInit() {
@@ -124,7 +124,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
       this.platformUtilsService.showToast(
         "info",
         null,
-        this.i18nService.t("autofillPageLoadPolicyActivated")
+        this.i18nService.t("autofillPageLoadPolicyActivated"),
       );
     }
   }
@@ -252,7 +252,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
 
     const ciphers = await this.cipherService.getAllDecryptedForUrl(
       this.url,
-      otherTypes.length > 0 ? otherTypes : null
+      otherTypes.length > 0 ? otherTypes : null,
     );
 
     this.loginCiphers = [];
@@ -278,7 +278,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     });
 
     this.loginCiphers = this.loginCiphers.sort((a, b) =>
-      this.cipherService.sortCiphersByLastUsedThenName(a, b)
+      this.cipherService.sortCiphersByLastUsedThenName(a, b),
     );
     this.isLoading = this.loaded = true;
   }

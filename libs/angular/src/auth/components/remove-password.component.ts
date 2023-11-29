@@ -28,7 +28,7 @@ export class RemovePasswordComponent implements OnInit {
     private i18nService: I18nService,
     private keyConnectorService: KeyConnectorService,
     private organizationApiService: OrganizationApiServiceAbstraction,
-    private dialogService: DialogService
+    private dialogService: DialogService,
   ) {}
 
   async ngOnInit() {
@@ -47,7 +47,7 @@ export class RemovePasswordComponent implements OnInit {
       this.platformUtilsService.showToast(
         "success",
         null,
-        this.i18nService.t("removedMasterPassword")
+        this.i18nService.t("removedMasterPassword"),
       );
       await this.keyConnectorService.removeConvertAccountRequired();
       this.router.navigate([""]);

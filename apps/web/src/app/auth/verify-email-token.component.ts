@@ -22,7 +22,7 @@ export class VerifyEmailTokenComponent implements OnInit {
     private route: ActivatedRoute,
     private apiService: ApiService,
     private logService: LogService,
-    private stateService: StateService
+    private stateService: StateService,
   ) {}
 
   ngOnInit() {
@@ -31,7 +31,7 @@ export class VerifyEmailTokenComponent implements OnInit {
       if (qParams.userId != null && qParams.token != null) {
         try {
           await this.apiService.postAccountVerifyEmailToken(
-            new VerifyEmailRequest(qParams.userId, qParams.token)
+            new VerifyEmailRequest(qParams.userId, qParams.token),
           );
           if (await this.stateService.getIsAuthenticated()) {
             await this.apiService.refreshIdentityToken();

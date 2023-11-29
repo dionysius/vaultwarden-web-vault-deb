@@ -56,7 +56,7 @@ export class LoginViaAuthRequestComponent
     loginService: LoginService,
     deviceTrustCryptoService: DeviceTrustCryptoServiceAbstraction,
     authReqCryptoService: AuthRequestCryptoServiceAbstraction,
-    private location: Location
+    private location: Location,
   ) {
     super(
       router,
@@ -75,7 +75,7 @@ export class LoginViaAuthRequestComponent
       stateService,
       loginService,
       deviceTrustCryptoService,
-      authReqCryptoService
+      authReqCryptoService,
     );
 
     super.onSuccessfulLogin = () => {
@@ -86,7 +86,7 @@ export class LoginViaAuthRequestComponent
   async settings() {
     const [modal, childComponent] = await this.modalService.openViewRef(
       EnvironmentComponent,
-      this.environmentModal
+      this.environmentModal,
     );
 
     // eslint-disable-next-line rxjs-angular/prefer-takeuntil

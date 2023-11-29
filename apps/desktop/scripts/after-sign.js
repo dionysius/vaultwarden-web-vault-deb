@@ -24,7 +24,7 @@ async function run(context) {
       fse.mkdirSync(path.join(appPath, "Contents/PlugIns"));
       fse.copySync(
         path.join(plugIn, "safari.appex"),
-        path.join(appPath, "Contents/PlugIns/safari.appex")
+        path.join(appPath, "Contents/PlugIns/safari.appex"),
       );
 
       // Resign to sign safari extension
@@ -32,7 +32,7 @@ async function run(context) {
         const masBuildOptions = deepAssign(
           {},
           context.packager.platformSpecificBuildOptions,
-          context.packager.config.mas
+          context.packager.config.mas,
         );
         if (context.targets.some((e) => e.name === "mas-dev")) {
           deepAssign(masBuildOptions, {

@@ -13,23 +13,23 @@ export class AuthRequestCryptoServiceImplementation implements AuthRequestCrypto
 
   async setUserKeyAfterDecryptingSharedUserKey(
     authReqResponse: AuthRequestResponse,
-    authReqPrivateKey: Uint8Array
+    authReqPrivateKey: Uint8Array,
   ) {
     const userKey = await this.decryptPubKeyEncryptedUserKey(
       authReqResponse.key,
-      authReqPrivateKey
+      authReqPrivateKey,
     );
     await this.cryptoService.setUserKey(userKey);
   }
 
   async setKeysAfterDecryptingSharedMasterKeyAndHash(
     authReqResponse: AuthRequestResponse,
-    authReqPrivateKey: Uint8Array
+    authReqPrivateKey: Uint8Array,
   ) {
     const { masterKey, masterKeyHash } = await this.decryptPubKeyEncryptedMasterKeyAndHash(
       authReqResponse.key,
       authReqResponse.masterPasswordHash,
-      authReqPrivateKey
+      authReqPrivateKey,
     );
 
     // Decrypt and set user key in state
@@ -45,11 +45,11 @@ export class AuthRequestCryptoServiceImplementation implements AuthRequestCrypto
   // Decryption helpers
   async decryptPubKeyEncryptedUserKey(
     pubKeyEncryptedUserKey: string,
-    privateKey: Uint8Array
+    privateKey: Uint8Array,
   ): Promise<UserKey> {
     const decryptedUserKeyBytes = await this.cryptoService.rsaDecrypt(
       pubKeyEncryptedUserKey,
-      privateKey
+      privateKey,
     );
 
     return new SymmetricCryptoKey(decryptedUserKeyBytes) as UserKey;
@@ -58,16 +58,16 @@ export class AuthRequestCryptoServiceImplementation implements AuthRequestCrypto
   async decryptPubKeyEncryptedMasterKeyAndHash(
     pubKeyEncryptedMasterKey: string,
     pubKeyEncryptedMasterKeyHash: string,
-    privateKey: Uint8Array
+    privateKey: Uint8Array,
   ): Promise<{ masterKey: MasterKey; masterKeyHash: string }> {
     const decryptedMasterKeyArrayBuffer = await this.cryptoService.rsaDecrypt(
       pubKeyEncryptedMasterKey,
-      privateKey
+      privateKey,
     );
 
     const decryptedMasterKeyHashArrayBuffer = await this.cryptoService.rsaDecrypt(
       pubKeyEncryptedMasterKeyHash,
-      privateKey
+      privateKey,
     );
 
     const masterKey = new SymmetricCryptoKey(decryptedMasterKeyArrayBuffer) as MasterKey;

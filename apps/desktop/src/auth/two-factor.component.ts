@@ -47,7 +47,7 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
     appIdService: AppIdService,
     loginService: LoginService,
     configService: ConfigServiceAbstraction,
-    @Inject(WINDOW) protected win: Window
+    @Inject(WINDOW) protected win: Window,
   ) {
     super(
       authService,
@@ -63,7 +63,7 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
       twoFactorService,
       appIdService,
       loginService,
-      configService
+      configService,
     );
     super.onSuccessfulLogin = async () => {
       syncService.fullSync(true);
@@ -77,7 +77,7 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
   async anotherMethod() {
     const [modal, childComponent] = await this.modalService.openViewRef(
       TwoFactorOptionsComponent,
-      this.twoFactorOptionsModal
+      this.twoFactorOptionsModal,
     );
 
     // eslint-disable-next-line rxjs-angular/prefer-takeuntil

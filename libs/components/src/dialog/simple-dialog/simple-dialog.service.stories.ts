@@ -50,7 +50,10 @@ class StoryDialogComponent {
   `,
 })
 class StoryDialogContentComponent {
-  constructor(public dialogRef: DialogRef, @Inject(DIALOG_DATA) private data: Animal) {}
+  constructor(
+    public dialogRef: DialogRef,
+    @Inject(DIALOG_DATA) private data: Animal,
+  ) {}
 
   get animal() {
     return this.data?.animal;

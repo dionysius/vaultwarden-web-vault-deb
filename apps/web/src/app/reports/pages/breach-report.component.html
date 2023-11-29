@@ -25,10 +25,10 @@
   <p *ngIf="error">{{ "reportError" | i18n }}...</p>
   <ng-container *ngIf="!error">
     <app-callout type="success" title="{{ 'goodNews' | i18n }}" *ngIf="!breachedAccounts.length">
-      {{ "breachUsernameNotFound" | i18n : checkedUsername }}
+      {{ "breachUsernameNotFound" | i18n: checkedUsername }}
     </app-callout>
     <app-callout type="danger" title="{{ 'breachFound' | i18n }}" *ngIf="breachedAccounts.length">
-      {{ "breachUsernameFound" | i18n : checkedUsername : breachedAccounts.length }}
+      {{ "breachUsernameFound" | i18n: checkedUsername : breachedAccounts.length }}
     </app-callout>
     <ul class="list-group list-group-breach" *ngIf="breachedAccounts.length">
       <li *ngFor="let a of breachedAccounts" class="list-group-item min-height-fix">
@@ -51,9 +51,9 @@
               <dt>{{ "affectedUsers" | i18n }}</dt>
               <dd>{{ a.pwnCount | number }}</dd>
               <dt>{{ "breachOccurred" | i18n }}</dt>
-              <dd>{{ a.breachDate | date : "mediumDate" }}</dd>
+              <dd>{{ a.breachDate | date: "mediumDate" }}</dd>
               <dt>{{ "breachReported" | i18n }}</dt>
-              <dd>{{ a.addedDate | date : "mediumDate" }}</dd>
+              <dd>{{ a.addedDate | date: "mediumDate" }}</dd>
             </dl>
           </div>
         </div>

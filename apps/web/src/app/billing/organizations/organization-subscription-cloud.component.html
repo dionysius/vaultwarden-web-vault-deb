@@ -57,7 +57,7 @@
         {{ "subscriptionExpiration" | i18n }}
       </dt>
       <dd [ngClass]="{ 'tw-text-danger': isExpired }">
-        {{ nextInvoice ? (nextInvoice.date | date : "mediumDate") : "-" }}
+        {{ nextInvoice ? (nextInvoice.date | date: "mediumDate") : "-" }}
       </dd>
     </ng-container>
   </dl>
@@ -73,10 +73,10 @@
               <td bitCell [ngClass]="{ 'tw-pl-20': i.addonSubscriptionItem }">
                 <span *ngIf="!i.addonSubscriptionItem">{{ i.productName | i18n }} -</span>
                 {{ i.name }} {{ i.quantity > 1 ? "&times;" + i.quantity : "" }} @
-                {{ i.amount | currency : "$" }}
+                {{ i.amount | currency: "$" }}
               </td>
               <td bitCell class="tw-text-right">
-                {{ i.quantity * i.amount | currency : "$" }} /{{ i.interval | i18n }}
+                {{ i.quantity * i.amount | currency: "$" }} /{{ i.interval | i18n }}
               </td>
             </tr>
           </ng-container>
@@ -95,12 +95,12 @@
               {{ "secretsManager" | i18n }} -
               {{ "beta" | i18n }}
               ({{ "annually" | i18n }}) @
-              {{ 0 | currency : "$" }}
+              {{ 0 | currency: "$" }}
               <span bitBadge badgeType="warning" class="tw-ml-2">{{
                 "betaEnding" | i18n | uppercase
               }}</span>
             </td>
-            <td bitCell class="tw-text-right">{{ 0 | currency : "$" }} /{{ "year" | i18n }}</td>
+            <td bitCell class="tw-text-right">{{ 0 | currency: "$" }} /{{ "year" | i18n }}</td>
           </tr>
         </ng-template>
       </bit-table>
@@ -176,7 +176,7 @@
     </button>
     <h4 bitTypography="h4" class="tw-mt-9">{{ "storage" | i18n }}</h4>
     <p bitTypography="body1">
-      {{ "subscriptionStorage" | i18n : sub.maxStorageGb || 0 : sub.storageName || "0 MB" }}
+      {{ "subscriptionStorage" | i18n: sub.maxStorageGb || 0 : sub.storageName || "0 MB" }}
     </p>
     <bit-progress [barWidth]="storagePercentage" bgColor="success"></bit-progress>
     <ng-container *ngIf="subscription && !subscription.cancelled && !subscriptionMarkedForCancel">

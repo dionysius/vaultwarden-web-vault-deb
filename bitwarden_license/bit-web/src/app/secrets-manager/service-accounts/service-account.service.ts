@@ -31,12 +31,12 @@ export class ServiceAccountService {
   constructor(
     private cryptoService: CryptoService,
     private apiService: ApiService,
-    private encryptService: EncryptService
+    private encryptService: EncryptService,
   ) {}
 
   async getServiceAccounts(
     organizationId: string,
-    includeAccessToSecrets?: boolean
+    includeAccessToSecrets?: boolean,
   ): Promise<ServiceAccountSecretsDetailsView[]> {
     const params = new URLSearchParams();
     if (includeAccessToSecrets) {
@@ -48,7 +48,7 @@ export class ServiceAccountService {
       "/organizations/" + organizationId + "/service-accounts?" + params.toString(),
       null,
       true,
-      true
+      true,
     );
     const results = new ListResponse(r, ServiceAccountSecretsDetailsResponse);
     return await this.createServiceAccountSecretsDetailsViews(organizationId, results.data);
@@ -56,7 +56,7 @@ export class ServiceAccountService {
 
   async getByServiceAccountId(
     serviceAccountId: string,
-    organizationId: string
+    organizationId: string,
   ): Promise<ServiceAccountView> {
     const orgKey = await this.getOrganizationKey(organizationId);
     const r = await this.apiService.send(
@@ -64,7 +64,7 @@ export class ServiceAccountService {
       "/service-accounts/" + serviceAccountId,
       null,
       true,
-      true
+      true,
     );
 
     return await this.createServiceAccountView(orgKey, new ServiceAccountResponse(r));
@@ -73,7 +73,7 @@ export class ServiceAccountService {
   async update(
     serviceAccountId: string,
     organizationId: string,
-    serviceAccountView: ServiceAccountView
+    serviceAccountView: ServiceAccountView,
   ) {
     const orgKey = await this.getOrganizationKey(organizationId);
     const request = await this.getServiceAccountRequest(orgKey, serviceAccountView);
@@ -82,10 +82,10 @@ export class ServiceAccountService {
       "/service-accounts/" + serviceAccountId,
       request,
       true,
-      true
+      true,
     );
     this._serviceAccount.next(
-      await this.createServiceAccountView(orgKey, new ServiceAccountResponse(r))
+      await this.createServiceAccountView(orgKey, new ServiceAccountResponse(r)),
     );
   }
 
@@ -97,10 +97,10 @@ export class ServiceAccountService {
       "/organizations/" + organizationId + "/service-accounts",
       request,
       true,
-      true
+      true,
     );
     this._serviceAccount.next(
-      await this.createServiceAccountView(orgKey, new ServiceAccountResponse(r))
+      await this.createServiceAccountView(orgKey, new ServiceAccountResponse(r)),
     );
   }
 
@@ -125,7 +125,7 @@ export class ServiceAccountService {
 
   private async getServiceAccountRequest(
     organizationKey: SymmetricCryptoKey,
-    serviceAccountView: ServiceAccountView
+    serviceAccountView: ServiceAccountView,
   ) {
     const request = new ServiceAccountRequest();
     request.name = await this.encryptService.encrypt(serviceAccountView.name, organizationKey);
@@ -134,7 +134,7 @@ export class ServiceAccountService {
 
   private async createServiceAccountView(
     organizationKey: SymmetricCryptoKey,
-    serviceAccountResponse: ServiceAccountResponse
+    serviceAccountResponse: ServiceAccountResponse,
   ): Promise<ServiceAccountView> {
     const serviceAccountView = new ServiceAccountView();
     serviceAccountView.id = serviceAccountResponse.id;
@@ -144,7 +144,7 @@ export class ServiceAccountService {
     serviceAccountView.name = serviceAccountResponse.name
       ? await this.encryptService.decryptToUtf8(
           new EncString(serviceAccountResponse.name),
-          organizationKey
+          organizationKey,
         )
       : null;
     return serviceAccountView;
@@ -152,7 +152,7 @@ export class ServiceAccountService {
 
   private async createServiceAccountSecretsDetailsView(
     organizationKey: SymmetricCryptoKey,
-    response: ServiceAccountSecretsDetailsResponse
+    response: ServiceAccountSecretsDetailsResponse,
   ): Promise<ServiceAccountSecretsDetailsView> {
     const view = new ServiceAccountSecretsDetailsView();
     view.id = response.id;
@@ -168,13 +168,13 @@ export class ServiceAccountService {
 
   private async createServiceAccountSecretsDetailsViews(
     organizationId: string,
-    serviceAccountResponses: ServiceAccountSecretsDetailsResponse[]
+    serviceAccountResponses: ServiceAccountSecretsDetailsResponse[],
   ): Promise<ServiceAccountSecretsDetailsView[]> {
     const orgKey = await this.getOrganizationKey(organizationId);
     return await Promise.all(
       serviceAccountResponses.map(async (s: ServiceAccountSecretsDetailsResponse) => {
         return await this.createServiceAccountSecretsDetailsView(orgKey, s);
-      })
+      }),
     );
   }
 }

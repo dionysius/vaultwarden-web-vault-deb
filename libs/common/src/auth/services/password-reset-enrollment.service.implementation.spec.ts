@@ -28,7 +28,7 @@ describe("PasswordResetEnrollmentServiceImplementation", () => {
       stateService,
       cryptoService,
       organizationUserService,
-      i18nService
+      i18nService,
     );
   });
 
@@ -88,13 +88,13 @@ describe("PasswordResetEnrollmentServiceImplementation", () => {
       await service.enroll("orgId");
 
       expect(
-        organizationUserService.putOrganizationUserResetPasswordEnrollment
+        organizationUserService.putOrganizationUserResetPasswordEnrollment,
       ).toHaveBeenCalledWith(
         "orgId",
         "userId",
         expect.objectContaining({
           resetPasswordKey: encryptedKey.encryptedString,
-        })
+        }),
       );
     });
 
@@ -110,13 +110,13 @@ describe("PasswordResetEnrollmentServiceImplementation", () => {
       await service.enroll("orgId", "userId", { key: "key" } as any);
 
       expect(
-        organizationUserService.putOrganizationUserResetPasswordEnrollment
+        organizationUserService.putOrganizationUserResetPasswordEnrollment,
       ).toHaveBeenCalledWith(
         "orgId",
         "userId",
         expect.objectContaining({
           resetPasswordKey: encryptedKey.encryptedString,
-        })
+        }),
       );
     });
   });

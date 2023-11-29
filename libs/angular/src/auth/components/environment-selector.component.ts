@@ -19,7 +19,7 @@ import {
         "void",
         style({
           opacity: 0,
-        })
+        }),
       ),
       transition(
         "void => open",
@@ -27,8 +27,8 @@ import {
           "100ms linear",
           style({
             opacity: 1,
-          })
-        )
+          }),
+        ),
       ),
       transition("* => void", animate("100ms linear", style({ opacity: 0 }))),
     ]),
@@ -53,7 +53,7 @@ export class EnvironmentSelectorComponent implements OnInit, OnDestroy {
   constructor(
     protected environmentService: EnvironmentServiceAbstraction,
     protected configService: ConfigServiceAbstraction,
-    protected router: Router
+    protected router: Router,
   ) {}
 
   async ngOnInit() {

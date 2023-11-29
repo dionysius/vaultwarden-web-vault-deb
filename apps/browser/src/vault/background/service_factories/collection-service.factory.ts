@@ -28,7 +28,7 @@ export type CollectionServiceInitOptions = CollectionServiceFactoryOptions &
 
 export function collectionServiceFactory(
   cache: { collectionService?: AbstractCollectionService } & CachedServices,
-  opts: CollectionServiceInitOptions
+  opts: CollectionServiceInitOptions,
 ): Promise<AbstractCollectionService> {
   return factory(
     cache,
@@ -38,7 +38,7 @@ export function collectionServiceFactory(
       new CollectionService(
         await cryptoServiceFactory(cache, opts),
         await i18nServiceFactory(cache, opts),
-        await stateServiceFactory(cache, opts)
-      )
+        await stateServiceFactory(cache, opts),
+      ),
   );
 }

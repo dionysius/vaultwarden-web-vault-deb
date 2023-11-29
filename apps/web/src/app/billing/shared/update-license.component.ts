@@ -23,7 +23,7 @@ export class UpdateLicenseComponent {
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
     private logService: LogService,
-    private organizationApiService: OrganizationApiServiceAbstraction
+    private organizationApiService: OrganizationApiServiceAbstraction,
   ) {}
 
   async submit() {
@@ -33,7 +33,7 @@ export class UpdateLicenseComponent {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
-        this.i18nService.t("selectFile")
+        this.i18nService.t("selectFile"),
       );
       return;
     }
@@ -57,7 +57,7 @@ export class UpdateLicenseComponent {
       this.platformUtilsService.showToast(
         "success",
         null,
-        this.i18nService.t("licenseUploadSuccess")
+        this.i18nService.t("licenseUploadSuccess"),
       );
       this.onUpdated.emit();
     } catch (e) {

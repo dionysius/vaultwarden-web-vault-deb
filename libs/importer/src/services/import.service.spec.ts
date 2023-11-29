@@ -39,7 +39,7 @@ describe("ImportService", () => {
       importApiService,
       i18nService,
       collectionService,
-      cryptoService
+      cryptoService,
     );
   });
 
@@ -56,7 +56,7 @@ describe("ImportService", () => {
         importer = importService.getImporter(
           "bitwardenpasswordprotected",
           promptForPassword_callback,
-          organizationId
+          organizationId,
         );
       });
 
@@ -96,7 +96,7 @@ describe("ImportService", () => {
 
     it("passing importTarget adds it to folders", async () => {
       folderService.getAllDecryptedFromState.mockReturnValue(
-        Promise.resolve([mockImportTargetFolder])
+        Promise.resolve([mockImportTargetFolder]),
       );
 
       await importService["setImportTarget"](importResult, null, "myImportTarget");

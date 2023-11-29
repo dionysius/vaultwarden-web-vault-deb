@@ -120,7 +120,7 @@ describe("DefaultGlobalState", () => {
         },
         {
           combineLatestWith: of(combinedDependencies),
-        }
+        },
       );
 
       await awaitAsync();
@@ -140,7 +140,7 @@ describe("DefaultGlobalState", () => {
         },
         {
           shouldUpdate: () => false,
-        }
+        },
       );
 
       expect(diskStorageService.mock.save).not.toHaveBeenCalled();

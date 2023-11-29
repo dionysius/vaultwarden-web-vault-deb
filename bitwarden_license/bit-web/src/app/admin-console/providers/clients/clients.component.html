@@ -38,7 +38,7 @@
 </ng-container>
 
 <ng-container
-  *ngIf="!loading && (clients | search : searchText : 'organizationName' : 'id') as searchedClients"
+  *ngIf="!loading && (clients | search: searchText : 'organizationName' : 'id') as searchedClients"
 >
   <p *ngIf="!searchedClients.length">{{ "noClientsInList" | i18n }}</p>
   <ng-container *ngIf="searchedClients.length">

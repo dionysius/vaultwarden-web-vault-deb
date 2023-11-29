@@ -24,7 +24,7 @@ export class LoginUri extends Domain {
       {
         uri: null,
       },
-      []
+      [],
     );
   }
 
@@ -35,7 +35,7 @@ export class LoginUri extends Domain {
         uri: null,
       },
       orgId,
-      encKey
+      encKey,
     );
   }
 
@@ -48,7 +48,7 @@ export class LoginUri extends Domain {
         uri: null,
         match: null,
       },
-      ["match"]
+      ["match"],
     );
     return u;
   }

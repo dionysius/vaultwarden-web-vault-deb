@@ -2,7 +2,7 @@ import { AbstractControl, AsyncValidatorFn, ValidationErrors } from "@angular/fo
 
 export function notAllowedValueAsync(
   valueGetter: () => Promise<string>,
-  caseInsensitive = false
+  caseInsensitive = false,
 ): AsyncValidatorFn {
   return async (control: AbstractControl): Promise<ValidationErrors | null> => {
     let notAllowedValue = await valueGetter();

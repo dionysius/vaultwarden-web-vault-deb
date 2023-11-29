@@ -27,7 +27,7 @@ export class SecretDeleteDialogComponent {
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
     @Inject(DIALOG_DATA) private data: SecretDeleteOperation,
-    private dialogService: DialogService
+    private dialogService: DialogService,
   ) {}
 
   showSoftDeleteSecretWarning = this.data.secrets.length === 1;

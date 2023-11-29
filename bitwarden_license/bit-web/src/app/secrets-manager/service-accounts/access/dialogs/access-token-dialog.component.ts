@@ -18,7 +18,7 @@ export class AccessTokenDialogComponent implements OnInit {
     public dialogRef: DialogRef,
     @Inject(DIALOG_DATA) public data: AccessTokenDetails,
     private platformUtilsService: PlatformUtilsService,
-    private i18nService: I18nService
+    private i18nService: I18nService,
   ) {
     this.dialogRef.disableClose = true;
   }
@@ -36,7 +36,7 @@ export class AccessTokenDialogComponent implements OnInit {
     this.platformUtilsService.showToast(
       "success",
       null,
-      this.i18nService.t("accessTokenCreatedAndCopied")
+      this.i18nService.t("accessTokenCreatedAndCopied"),
     );
     this.dialogRef.close();
   }

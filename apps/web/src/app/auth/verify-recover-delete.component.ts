@@ -26,7 +26,7 @@ export class VerifyRecoverDeleteComponent implements OnInit {
     private platformUtilsService: PlatformUtilsService,
     private i18nService: I18nService,
     private route: ActivatedRoute,
-    private logService: LogService
+    private logService: LogService,
   ) {}
 
   ngOnInit() {
@@ -50,7 +50,7 @@ export class VerifyRecoverDeleteComponent implements OnInit {
       this.platformUtilsService.showToast(
         "success",
         this.i18nService.t("accountDeleted"),
-        this.i18nService.t("accountDeletedDesc")
+        this.i18nService.t("accountDeletedDesc"),
       );
       this.router.navigate(["/"]);
     } catch (e) {

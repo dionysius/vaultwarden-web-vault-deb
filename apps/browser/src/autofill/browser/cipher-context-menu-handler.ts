@@ -38,7 +38,7 @@ export class CipherContextMenuHandler {
   constructor(
     private mainContextMenuHandler: MainContextMenuHandler,
     private authService: AuthService,
-    private cipherService: CipherService
+    private cipherService: CipherService,
   ) {}
 
   static async create(cachedServices: CachedServices) {
@@ -74,7 +74,7 @@ export class CipherContextMenuHandler {
     return new CipherContextMenuHandler(
       await MainContextMenuHandler.mv3Create(cachedServices),
       await authServiceFactory(cachedServices, serviceOptions),
-      await cipherServiceFactory(cachedServices, serviceOptions)
+      await cipherServiceFactory(cachedServices, serviceOptions),
     );
   }
 
@@ -86,7 +86,7 @@ export class CipherContextMenuHandler {
 
   static async tabsOnActivatedListener(
     activeInfo: chrome.tabs.TabActiveInfo,
-    serviceCache: CachedServices
+    serviceCache: CachedServices,
   ) {
     const cipherContextMenuHandler = await CipherContextMenuHandler.create(serviceCache);
     const tab = await BrowserApi.getTab(activeInfo.tabId);
@@ -96,7 +96,7 @@ export class CipherContextMenuHandler {
   static async tabsOnReplacedListener(
     addedTabId: number,
     removedTabId: number,
-    serviceCache: CachedServices
+    serviceCache: CachedServices,
   ) {
     const cipherContextMenuHandler = await CipherContextMenuHandler.create(serviceCache);
     const tab = await BrowserApi.getTab(addedTabId);
@@ -107,7 +107,7 @@ export class CipherContextMenuHandler {
     tabId: number,
     changeInfo: chrome.tabs.TabChangeInfo,
     tab: chrome.tabs.Tab,
-    serviceCache: CachedServices
+    serviceCache: CachedServices,
   ) {
     if (changeInfo.status !== "complete") {
       return;
@@ -119,7 +119,7 @@ export class CipherContextMenuHandler {
   static async messageListener(
     message: { command: string },
     sender: chrome.runtime.MessageSender,
-    cachedServices: CachedServices
+    cachedServices: CachedServices,
   ) {
     if (!CipherContextMenuHandler.shouldListen(message)) {
       return;
@@ -183,7 +183,7 @@ export class CipherContextMenuHandler {
         [CipherType.Login]: [],
         [CipherType.Card]: [],
         [CipherType.Identity]: [],
-      }
+      },
     );
 
     if (groupedCiphers[CipherType.Login].length === 0) {

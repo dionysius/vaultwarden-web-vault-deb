@@ -22,7 +22,7 @@ export default class BiometricWindowsMain implements OsBiometricService {
     private i18nService: I18nService,
     private windowMain: WindowMain,
     private stateService: ElectronStateService,
-    private logService: LogService
+    private logService: LogService,
   ) {}
 
   async init() {
@@ -37,7 +37,7 @@ export default class BiometricWindowsMain implements OsBiometricService {
   async getBiometricKey(
     service: string,
     storageKey: string,
-    clientKeyHalfB64: string
+    clientKeyHalfB64: string,
   ): Promise<string | null> {
     const value = await passwords.getPassword(service, storageKey);
 
@@ -54,7 +54,7 @@ export default class BiometricWindowsMain implements OsBiometricService {
         storageKey,
         value,
         storageDetails.key_material,
-        storageDetails.ivB64
+        storageDetails.ivB64,
       );
       return value;
     } else {
@@ -71,7 +71,7 @@ export default class BiometricWindowsMain implements OsBiometricService {
     service: string,
     storageKey: string,
     value: string,
-    clientKeyPartB64: string | undefined
+    clientKeyPartB64: string | undefined,
   ): Promise<void> {
     const parsedValue = SymmetricCryptoKey.fromString(value);
     if (await this.valueUpToDate({ value: parsedValue, clientKeyPartB64, service, storageKey })) {
@@ -84,7 +84,7 @@ export default class BiometricWindowsMain implements OsBiometricService {
       storageKey,
       value,
       storageDetails.key_material,
-      storageDetails.ivB64
+      storageDetails.ivB64,
     );
     const parsedStoredValue = new EncString(storedValue);
     await this.storeValueWitness(
@@ -92,7 +92,7 @@ export default class BiometricWindowsMain implements OsBiometricService {
       parsedStoredValue,
       service,
       storageKey,
-      clientKeyPartB64
+      clientKeyPartB64,
     );
   }
 
@@ -148,7 +148,7 @@ export default class BiometricWindowsMain implements OsBiometricService {
     encryptedValue: EncString,
     service: string,
     storageKey: string,
-    clientKeyPartB64: string
+    clientKeyPartB64: string,
   ) {
     if (encryptedValue.iv == null || encryptedValue == null) {
       return;
@@ -163,7 +163,7 @@ export default class BiometricWindowsMain implements OsBiometricService {
       storageKey + KEY_WITNESS_SUFFIX,
       WITNESS_VALUE,
       storageDetails.keyMaterial,
-      storageDetails.ivB64
+      storageDetails.ivB64,
     );
   }
 
@@ -196,7 +196,7 @@ export default class BiometricWindowsMain implements OsBiometricService {
       witness = await biometrics.getBiometricSecret(
         service,
         storageKey + KEY_WITNESS_SUFFIX,
-        witnessKeyMaterial
+        witnessKeyMaterial,
       );
     } catch {
       this.logService.debug("Error retrieving witness key, assuming value is not up to date.");
@@ -213,7 +213,7 @@ export default class BiometricWindowsMain implements OsBiometricService {
   /** Derives a witness key from a symmetric key being stored for biometric protection */
   private witnessKeyMaterial(
     symmetricKey: SymmetricCryptoKey,
-    clientKeyPartB64: string
+    clientKeyPartB64: string,
   ): biometrics.KeyMaterial {
     const key = symmetricKey?.macKeyB64 ?? symmetricKey?.keyB64;
     return {

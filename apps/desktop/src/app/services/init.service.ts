@@ -37,7 +37,7 @@ export class InitService {
     private nativeMessagingService: NativeMessagingService,
     private themingService: AbstractThemingService,
     private encryptService: EncryptService,
-    private configService: ConfigService
+    private configService: ConfigService,
   ) {}
 
   init() {

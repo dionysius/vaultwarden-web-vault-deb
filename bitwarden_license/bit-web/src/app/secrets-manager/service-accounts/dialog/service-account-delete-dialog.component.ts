@@ -38,7 +38,7 @@ export class ServiceAccountDeleteDialogComponent {
     private serviceAccountService: ServiceAccountService,
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
-    private dialogService: DialogService
+    private dialogService: DialogService,
   ) {}
 
   get title() {
@@ -101,7 +101,7 @@ export class ServiceAccountDeleteDialogComponent {
       ? this.i18nService.t("deleteProjectConfirmMessage", this.data.serviceAccounts[0].name)
       : this.i18nService.t(
           "deleteServiceAccountsConfirmMessage",
-          this.data.serviceAccounts?.length.toString()
+          this.data.serviceAccounts?.length.toString(),
         );
   }
 

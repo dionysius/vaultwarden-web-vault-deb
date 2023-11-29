@@ -21,7 +21,7 @@ export class UnsecuredWebsitesReportComponent extends BaseUnsecuredWebsitesRepor
     modalService: ModalService,
     private route: ActivatedRoute,
     organizationService: OrganizationService,
-    passwordRepromptService: PasswordRepromptService
+    passwordRepromptService: PasswordRepromptService,
   ) {
     super(cipherService, organizationService, modalService, passwordRepromptService);
   }

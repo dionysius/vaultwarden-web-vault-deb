@@ -52,7 +52,7 @@
       !loading &&
       (isPaging()
         ? pagedUsers
-        : (users | search : searchText : 'name' : 'email' : 'id')) as searchedUsers
+        : (users | search: searchText : 'name' : 'email' : 'id')) as searchedUsers
     "
   >
     <p *ngIf="!searchedUsers.length">{{ "noMembersInList" | i18n }}</p>

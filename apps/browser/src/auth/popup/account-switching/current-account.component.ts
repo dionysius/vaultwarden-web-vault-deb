@@ -10,7 +10,10 @@ import { Utils } from "@bitwarden/common/platform/misc/utils";
   templateUrl: "current-account.component.html",
 })
 export class CurrentAccountComponent {
-  constructor(private accountService: AccountService, private router: Router) {}
+  constructor(
+    private accountService: AccountService,
+    private router: Router,
+  ) {}
 
   get currentAccount$() {
     return this.accountService.activeAccount$;
@@ -20,7 +23,7 @@ export class CurrentAccountComponent {
     return this.currentAccount$.pipe(
       map((a) => {
         return Utils.isNullOrWhitespace(a.name) ? a.email : a.name;
-      })
+      }),
     );
   }
 

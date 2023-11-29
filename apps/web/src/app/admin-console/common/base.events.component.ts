@@ -32,7 +32,7 @@ export abstract class BaseEventsComponent {
     protected exportService: EventExportService,
     protected platformUtilsService: PlatformUtilsService,
     protected logService: LogService,
-    protected fileDownloadService: FileDownloadService
+    protected fileDownloadService: FileDownloadService,
   ) {
     const defaultDates = this.eventService.getDefaultDateFilters();
     this.start = defaultDates[0];
@@ -79,7 +79,7 @@ export abstract class BaseEventsComponent {
       const promise = this.loadAndParseEvents(
         dates[0],
         dates[1],
-        clearExisting ? null : this.continuationToken
+        clearExisting ? null : this.continuationToken,
       );
       if (clearExisting) {
         this.refreshPromise = promise;
@@ -108,14 +108,14 @@ export abstract class BaseEventsComponent {
   protected abstract requestEvents(
     startDate: string,
     endDate: string,
-    continuationToken: string
+    continuationToken: string,
   ): Promise<ListResponse<EventResponse>>;
   protected abstract getUserName(r: EventResponse, userId: string): { name: string; email: string };
 
   protected async loadAndParseEvents(
     startDate: string,
     endDate: string,
-    continuationToken: string
+    continuationToken: string,
   ) {
     const response = await this.requestEvents(startDate, endDate, continuationToken);
 
@@ -141,7 +141,7 @@ export abstract class BaseEventsComponent {
           systemUser: r.systemUser,
           serviceAccountId: r.serviceAccountId,
         });
-      })
+      }),
     );
     return { continuationToken: response.continuationToken, events: events };
   }
@@ -154,7 +154,7 @@ export abstract class BaseEventsComponent {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
-        this.i18nService.t("invalidDateRange")
+        this.i18nService.t("invalidDateRange"),
       );
       return null;
     }

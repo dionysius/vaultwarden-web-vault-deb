@@ -25,12 +25,12 @@ describe("AutofillOverlayButton", () => {
   describe("initAutofillOverlayButton", () => {
     it("creates the button element with the locked icon when the user's auth status is not Unlocked", () => {
       postWindowMessage(
-        createInitAutofillOverlayButtonMessageMock({ authStatus: AuthenticationStatus.Locked })
+        createInitAutofillOverlayButtonMessageMock({ authStatus: AuthenticationStatus.Locked }),
       );
 
       expect(autofillOverlayButton["buttonElement"]).toMatchSnapshot();
       expect(autofillOverlayButton["buttonElement"].querySelector("svg")).toBe(
-        autofillOverlayButton["logoLockedIconElement"]
+        autofillOverlayButton["logoLockedIconElement"],
       );
     });
 
@@ -39,7 +39,7 @@ describe("AutofillOverlayButton", () => {
 
       expect(autofillOverlayButton["buttonElement"]).toMatchSnapshot();
       expect(autofillOverlayButton["buttonElement"].querySelector("svg")).toBe(
-        autofillOverlayButton["logoIconElement"]
+        autofillOverlayButton["logoIconElement"],
       );
     });
 
@@ -49,7 +49,7 @@ describe("AutofillOverlayButton", () => {
 
       expect(globalThis.parent.postMessage).toHaveBeenCalledWith(
         { command: "overlayButtonClicked" },
-        "https://localhost/"
+        "https://localhost/",
       );
     });
   });
@@ -74,7 +74,7 @@ describe("AutofillOverlayButton", () => {
 
       expect(globalThis.parent.postMessage).toHaveBeenCalledWith(
         { command: "closeAutofillOverlay" },
-        "https://localhost/"
+        "https://localhost/",
       );
     });
 

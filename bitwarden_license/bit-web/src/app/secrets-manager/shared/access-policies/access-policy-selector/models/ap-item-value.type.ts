@@ -17,7 +17,7 @@ export type ApItemValueType = {
 
 export function convertToProjectPeopleAccessPoliciesView(
   projectId: string,
-  selectedPolicyValues: ApItemValueType[]
+  selectedPolicyValues: ApItemValueType[],
 ): ProjectPeopleAccessPoliciesView {
   const view = new ProjectPeopleAccessPoliciesView();
   view.userAccessPolicies = selectedPolicyValues

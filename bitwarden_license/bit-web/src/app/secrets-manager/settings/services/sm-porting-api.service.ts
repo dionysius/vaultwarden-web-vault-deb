@@ -26,7 +26,7 @@ export class SecretsManagerPortingApiService {
     private apiService: ApiService,
     private encryptService: EncryptService,
     private cryptoService: CryptoService,
-    private i18nService: I18nService
+    private i18nService: I18nService,
   ) {}
 
   async export(organizationId: string): Promise<string> {
@@ -35,13 +35,13 @@ export class SecretsManagerPortingApiService {
       "/sm/" + organizationId + "/export",
       null,
       true,
-      true
+      true,
     );
 
     return JSON.stringify(
       await this.decryptExport(organizationId, new SecretsManagerExportResponse(response)),
       null,
-      "  "
+      "  ",
     );
   }
 
@@ -57,7 +57,7 @@ export class SecretsManagerPortingApiService {
         "/sm/" + organizationId + "/import",
         requestBody,
         true,
-        true
+        true,
       );
     } catch (error) {
       const errorResponse = new ErrorResponse(error, 400);
@@ -67,7 +67,7 @@ export class SecretsManagerPortingApiService {
 
   private async encryptImport(
     organizationId: string,
-    importData: any
+    importData: any,
   ): Promise<SecretsManagerImportRequest> {
     const encryptedImport = new SecretsManagerImportRequest();
 
@@ -82,7 +82,7 @@ export class SecretsManagerPortingApiService {
           project.id = p.id;
           project.name = await this.encryptService.encrypt(p.name, orgKey);
           return project;
-        })
+        }),
       );
 
       encryptedImport.secrets = await Promise.all(
@@ -99,7 +99,7 @@ export class SecretsManagerPortingApiService {
           secret.projectIds = s.projectIds;
 
           return secret;
-        })
+        }),
       );
     } catch (error) {
       return null;
@@ -110,7 +110,7 @@ export class SecretsManagerPortingApiService {
 
   private async decryptExport(
     organizationId: string,
-    exportData: SecretsManagerExportResponse
+    exportData: SecretsManagerExportResponse,
   ): Promise<SecretsManagerExport> {
     const orgKey = await this.cryptoService.getOrgKey(organizationId);
     const decryptedExport = new SecretsManagerExport();
@@ -123,7 +123,7 @@ export class SecretsManagerPortingApiService {
         project.id = p.id;
         project.name = await this.encryptService.decryptToUtf8(new EncString(p.name), orgKey);
         return project;
-      })
+      }),
     );
 
     decryptedExport.secrets = await Promise.all(
@@ -140,7 +140,7 @@ export class SecretsManagerPortingApiService {
         secret.projectIds = s.projectIds;
 
         return secret;
-      })
+      }),
     );
 
     return decryptedExport;
@@ -148,7 +148,7 @@ export class SecretsManagerPortingApiService {
 
   private handleServerError(
     errorResponse: ErrorResponse,
-    importResult: any
+    importResult: any,
   ): SecretsManagerImportError {
     if (errorResponse.validationErrors == null) {
       return new SecretsManagerImportError(errorResponse.message);

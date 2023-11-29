@@ -14,7 +14,7 @@ const orgFactory = (props: Partial<Organization> = {}) =>
       enabled: true,
       type: OrganizationUserType.Admin,
     },
-    props
+    props,
   );
 
 describe("orgWithoutAdditionalSeatLimitReachedWithUpgradePathValidator", () => {
@@ -30,7 +30,7 @@ describe("orgWithoutAdditionalSeatLimitReachedWithUpgradePathValidator", () => {
     validatorFn = orgWithoutAdditionalSeatLimitReachedWithUpgradePathValidator(
       organization,
       allOrganizationUserEmails,
-      "You cannot invite more than 2 members without upgrading your plan."
+      "You cannot invite more than 2 members without upgrading your plan.",
     );
     const control = new FormControl("");
 
@@ -43,7 +43,7 @@ describe("orgWithoutAdditionalSeatLimitReachedWithUpgradePathValidator", () => {
     validatorFn = orgWithoutAdditionalSeatLimitReachedWithUpgradePathValidator(
       organization,
       allOrganizationUserEmails,
-      "You cannot invite more than 2 members without upgrading your plan."
+      "You cannot invite more than 2 members without upgrading your plan.",
     );
     const control = new FormControl(null);
 
@@ -60,7 +60,7 @@ describe("orgWithoutAdditionalSeatLimitReachedWithUpgradePathValidator", () => {
     validatorFn = orgWithoutAdditionalSeatLimitReachedWithUpgradePathValidator(
       organization,
       allOrganizationUserEmails,
-      "You cannot invite more than 2 members without upgrading your plan."
+      "You cannot invite more than 2 members without upgrading your plan.",
     );
     const control = new FormControl("user2@example.com");
 
@@ -77,7 +77,7 @@ describe("orgWithoutAdditionalSeatLimitReachedWithUpgradePathValidator", () => {
     validatorFn = orgWithoutAdditionalSeatLimitReachedWithUpgradePathValidator(
       organization,
       allOrganizationUserEmails,
-      "You cannot invite more than 10 members without upgrading your plan."
+      "You cannot invite more than 10 members without upgrading your plan.",
     );
     const control = new FormControl(
       "user2@example.com," +
@@ -88,7 +88,7 @@ describe("orgWithoutAdditionalSeatLimitReachedWithUpgradePathValidator", () => {
         "user7@example.com," +
         "user8@example.com," +
         "user9@example.com," +
-        "user10@example.com"
+        "user10@example.com",
     );
 
     const result = validatorFn(control);
@@ -105,7 +105,7 @@ describe("orgWithoutAdditionalSeatLimitReachedWithUpgradePathValidator", () => {
     validatorFn = orgWithoutAdditionalSeatLimitReachedWithUpgradePathValidator(
       organization,
       allOrganizationUserEmails,
-      "You cannot invite more than 2 members without upgrading your plan."
+      "You cannot invite more than 2 members without upgrading your plan.",
     );
     const control = new FormControl("user2@example.com,user3@example.com");
 
@@ -123,7 +123,7 @@ describe("orgWithoutAdditionalSeatLimitReachedWithUpgradePathValidator", () => {
     validatorFn = orgWithoutAdditionalSeatLimitReachedWithUpgradePathValidator(
       organization,
       allOrganizationUserEmails,
-      "You cannot invite more than 2 members without upgrading your plan."
+      "You cannot invite more than 2 members without upgrading your plan.",
     );
 
     const result = validatorFn(control);

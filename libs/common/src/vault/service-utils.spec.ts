@@ -55,11 +55,11 @@ describe("serviceUtils", () => {
 
 type TreeNodeFactory<T extends ITreeNodeObject> = (
   obj: T,
-  children?: TreeNodeFactoryWithoutParent<T>[]
+  children?: TreeNodeFactoryWithoutParent<T>[],
 ) => TreeNodeFactoryWithoutParent<T>;
 
 type TreeNodeFactoryWithoutParent<T extends ITreeNodeObject> = (
-  parent?: TreeNode<T>
+  parent?: TreeNode<T>,
 ) => TreeNode<T>;
 
 const createTreeNode: TreeNodeFactory<FakeObject> =

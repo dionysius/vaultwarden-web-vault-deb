@@ -49,7 +49,7 @@ export class EventsComponent extends BaseEventsComponent implements OnInit, OnDe
     private organizationService: OrganizationService,
     private organizationUserService: OrganizationUserService,
     private providerService: ProviderService,
-    fileDownloadService: FileDownloadService
+    fileDownloadService: FileDownloadService,
   ) {
     super(
       eventService,
@@ -57,7 +57,7 @@ export class EventsComponent extends BaseEventsComponent implements OnInit, OnDe
       exportService,
       platformUtilsService,
       logService,
-      fileDownloadService
+      fileDownloadService,
     );
   }
 
@@ -73,7 +73,7 @@ export class EventsComponent extends BaseEventsComponent implements OnInit, OnDe
           }
           await this.load();
         }),
-        takeUntil(this.destroy$)
+        takeUntil(this.destroy$),
       )
       .subscribe();
   }
@@ -93,7 +93,7 @@ export class EventsComponent extends BaseEventsComponent implements OnInit, OnDe
           (await this.providerService.get(this.organization.providerId)).canManageUsers
         ) {
           const providerUsersResponse = await this.apiService.getProviderUsers(
-            this.organization.providerId
+            this.organization.providerId,
           );
           providerUsersResponse.data.forEach((u) => {
             const name = this.userNamePipe.transform(u);
@@ -117,7 +117,7 @@ export class EventsComponent extends BaseEventsComponent implements OnInit, OnDe
       this.organizationId,
       startDate,
       endDate,
-      continuationToken
+      continuationToken,
     );
   }
 

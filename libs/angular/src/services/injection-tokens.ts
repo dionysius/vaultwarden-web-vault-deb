@@ -22,7 +22,7 @@ export const LOGOUT_CALLBACK = new InjectionToken<
   (expired: boolean, userId?: string) => Promise<void>
 >("LOGOUT_CALLBACK");
 export const LOCKED_CALLBACK = new InjectionToken<(userId?: string) => Promise<void>>(
-  "LOCKED_CALLBACK"
+  "LOCKED_CALLBACK",
 );
 export const LOCALES_DIRECTORY = new InjectionToken<string>("LOCALES_DIRECTORY");
 export const SYSTEM_LANGUAGE = new InjectionToken<string>("SYSTEM_LANGUAGE");

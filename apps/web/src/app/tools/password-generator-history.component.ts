@@ -13,7 +13,7 @@ export class PasswordGeneratorHistoryComponent extends BasePasswordGeneratorHist
   constructor(
     passwordGenerationService: PasswordGenerationServiceAbstraction,
     platformUtilsService: PlatformUtilsService,
-    i18nService: I18nService
+    i18nService: I18nService,
   ) {
     super(passwordGenerationService, platformUtilsService, i18nService, window);
   }

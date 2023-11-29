@@ -34,7 +34,7 @@ export class ExcludedDomainsComponent implements OnInit, OnDestroy {
     private router: Router,
     private broadcasterService: BroadcasterService,
     private ngZone: NgZone,
-    private platformUtilsService: PlatformUtilsService
+    private platformUtilsService: PlatformUtilsService,
   ) {
     this.accountSwitcherEnabled = flagEnabled("accountSwitching");
   }
@@ -60,7 +60,7 @@ export class ExcludedDomainsComponent implements OnInit, OnDestroy {
             }
             this.loadCurrentUrisTimeout = window.setTimeout(
               async () => await this.loadCurrentUris(),
-              500
+              500,
             );
             break;
           default:
@@ -96,7 +96,7 @@ export class ExcludedDomainsComponent implements OnInit, OnDestroy {
             this.platformUtilsService.showToast(
               "error",
               null,
-              this.i18nService.t("excludedDomainsInvalidDomain", domain.uri)
+              this.i18nService.t("excludedDomainsInvalidDomain", domain.uri),
             );
             return;
           }
@@ -116,7 +116,7 @@ export class ExcludedDomainsComponent implements OnInit, OnDestroy {
   getNewlyAddedDomains(domain: ExcludedDomain[]): ExcludedDomain[] {
     const result = this.excludedDomains.filter(
       (newDomain) =>
-        !this.existingExcludedDomains.some((oldDomain) => newDomain.uri === oldDomain.uri)
+        !this.existingExcludedDomains.some((oldDomain) => newDomain.uri === oldDomain.uri),
     );
     return result;
   }

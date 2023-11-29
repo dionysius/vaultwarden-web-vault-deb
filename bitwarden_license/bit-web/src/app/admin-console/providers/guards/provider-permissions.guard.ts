@@ -12,7 +12,7 @@ export class ProviderPermissionsGuard implements CanActivate {
     private providerService: ProviderService,
     private router: Router,
     private platformUtilsService: PlatformUtilsService,
-    private i18nService: I18nService
+    private i18nService: I18nService,
   ) {}
 
   async canActivate(route: ActivatedRouteSnapshot) {

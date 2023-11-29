@@ -445,7 +445,7 @@ async function loadNotificationBar() {
     // know what type of form we are watching
     const submitButton = getSubmitButton(
       form,
-      unionSets(logInButtonNames, changePasswordButtonNames)
+      unionSets(logInButtonNames, changePasswordButtonNames),
     );
 
     if (submitButton != null) {
@@ -475,7 +475,7 @@ async function loadNotificationBar() {
         watchedForm.formEl,
         watchedForm.data.password,
         inputs,
-        true // Only do fallback if we have expect to find a single password field
+        true, // Only do fallback if we have expect to find a single password field
       );
     } else if (watchedForm.data.passwords != null) {
       // if we didn't find a username field, try to locate multiple password fields
@@ -499,7 +499,7 @@ async function loadNotificationBar() {
     form: HTMLFormElement,
     passwordData: AutofillField,
     inputs: HTMLInputElement[],
-    doLastFallback: boolean
+    doLastFallback: boolean,
   ): HTMLInputElement {
     let el = locateField(form, passwordData, inputs);
     if (el != null && el.type !== "password") {
@@ -521,7 +521,7 @@ async function loadNotificationBar() {
   function locateField(
     form: HTMLFormElement,
     fieldData: AutofillField,
-    inputs: HTMLInputElement[]
+    inputs: HTMLInputElement[],
   ): HTMLInputElement | null {
     // If we have no field data, we cannot locate the field
     if (fieldData == null) {
@@ -667,7 +667,7 @@ async function loadNotificationBar() {
             // Check if the submit button contains any of the change password button names as a safeguard
             const buttonText = getButtonText(getSubmitButton(form, changePasswordButtonNames));
             const matches = Array.from(changePasswordButtonContainsNames).filter(
-              (n) => buttonText.indexOf(n) > -1
+              (n) => buttonText.indexOf(n) > -1,
             );
 
             if (matches.length > 0) {
@@ -744,8 +744,8 @@ async function loadNotificationBar() {
     if (submitButton == null) {
       const possibleSubmitButtons = Array.from(
         wrappingEl.querySelectorAll(
-          'a, span, button[type="button"], ' + 'input[type="button"], button:not([type])'
-        )
+          'a, span, button[type="button"], ' + 'input[type="button"], button:not([type])',
+        ),
       ) as HTMLElement[];
       let typelessButton: HTMLElement = null;
       // Loop through all possible submit buttons and find the first one that matches a submit button name

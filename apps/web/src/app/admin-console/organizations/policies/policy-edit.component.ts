@@ -47,7 +47,7 @@ export class PolicyEditComponent {
     private platformUtilsService: PlatformUtilsService,
     private componentFactoryResolver: ComponentFactoryResolver,
     private cdr: ChangeDetectorRef,
-    private logService: LogService
+    private logService: LogService,
   ) {}
 
   async ngAfterViewInit() {
@@ -67,7 +67,7 @@ export class PolicyEditComponent {
     try {
       this.policyResponse = await this.policyApiService.getPolicy(
         this.organizationId,
-        this.policy.type
+        this.policy.type,
       );
     } catch (e) {
       if (e.statusCode === 404) {
@@ -91,13 +91,13 @@ export class PolicyEditComponent {
       this.formPromise = this.policyApiService.putPolicy(
         this.organizationId,
         this.policy.type,
-        request
+        request,
       );
       await this.formPromise;
       this.platformUtilsService.showToast(
         "success",
         null,
-        this.i18nService.t("editedPolicyId", this.i18nService.t(this.policy.name))
+        this.i18nService.t("editedPolicyId", this.i18nService.t(this.policy.name)),
       );
       this.onSavedPolicy.emit();
     } catch (e) {

@@ -20,7 +20,7 @@ export class SecretRestoreDialogComponent {
     private secretService: SecretService,
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
-    @Inject(DIALOG_DATA) public data: SecretRestoreOperation
+    @Inject(DIALOG_DATA) public data: SecretRestoreOperation,
   ) {}
 
   get title() {

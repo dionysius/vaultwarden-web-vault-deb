@@ -44,14 +44,14 @@ export class UpdateBadge {
 
   static async windowsOnFocusChangedListener(
     windowId: number,
-    serviceCache: Record<string, unknown>
+    serviceCache: Record<string, unknown>,
   ) {
     await new UpdateBadge(self).run({ windowId, existingServices: serviceCache });
   }
 
   static async tabsOnActivatedListener(
     activeInfo: chrome.tabs.TabActiveInfo,
-    serviceCache: Record<string, unknown>
+    serviceCache: Record<string, unknown>,
   ) {
     await new UpdateBadge(self).run({
       tabId: activeInfo.tabId,
@@ -63,7 +63,7 @@ export class UpdateBadge {
   static async tabsOnReplacedListener(
     addedTabId: number,
     removedTabId: number,
-    serviceCache: Record<string, unknown>
+    serviceCache: Record<string, unknown>,
   ) {
     await new UpdateBadge(self).run({ tabId: addedTabId, existingServices: serviceCache });
   }
@@ -72,7 +72,7 @@ export class UpdateBadge {
     tabId: number,
     changeInfo: chrome.tabs.TabChangeInfo,
     tab: chrome.tabs.Tab,
-    serviceCache: Record<string, unknown>
+    serviceCache: Record<string, unknown>,
   ) {
     await new UpdateBadge(self).run({
       tabId,
@@ -83,7 +83,7 @@ export class UpdateBadge {
 
   static async messageListener(
     message: { command: string; tabId: number },
-    serviceCache: Record<string, unknown>
+    serviceCache: Record<string, unknown>,
   ) {
     if (!UpdateBadge.listenedToCommands.includes(message.command)) {
       return;
@@ -229,7 +229,7 @@ export class UpdateBadge {
 
     if (this.isOperaSidebar(this.sidebarAction)) {
       await new Promise<void>((resolve) =>
-        (this.sidebarAction as OperaSidebarAction).setIcon(options, () => resolve())
+        (this.sidebarAction as OperaSidebarAction).setIcon(options, () => resolve()),
       );
     } else {
       await this.sidebarAction.setIcon(options);
@@ -290,7 +290,7 @@ export class UpdateBadge {
     if (!self.bitwardenContainerService) {
       new ContainerService(
         serviceCache.cryptoService as CryptoService,
-        serviceCache.encryptService as EncryptService
+        serviceCache.encryptService as EncryptService,
       ).attachToGlobal(self);
     }
 
@@ -300,7 +300,7 @@ export class UpdateBadge {
   }
 
   private isOperaSidebar(
-    action: OperaSidebarAction | FirefoxSidebarAction
+    action: OperaSidebarAction | FirefoxSidebarAction,
   ): action is OperaSidebarAction {
     return action != null && (action as OperaSidebarAction).setBadgeText != null;
   }

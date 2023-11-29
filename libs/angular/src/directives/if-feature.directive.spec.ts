@@ -43,7 +43,7 @@ describe("IfFeatureDirective", () => {
 
   const mockConfigFlagValue = (flag: FeatureFlag, flagValue: FeatureFlagValue) => {
     mockConfigService.getFeatureFlag.mockImplementation((f, defaultValue) =>
-      flag == f ? Promise.resolve(flagValue) : Promise.resolve(defaultValue)
+      flag == f ? Promise.resolve(flagValue) : Promise.resolve(defaultValue),
     );
   };
 

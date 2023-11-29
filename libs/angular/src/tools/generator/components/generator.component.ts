@@ -48,7 +48,7 @@ export class GeneratorComponent implements OnInit {
     protected i18nService: I18nService,
     protected logService: LogService,
     protected route: ActivatedRoute,
-    private win: Window
+    private win: Window,
   ) {
     this.typeOptions = [
       { name: i18nService.t("password"), value: "password" },
@@ -180,7 +180,7 @@ export class GeneratorComponent implements OnInit {
   async generateUsername() {
     try {
       this.usernameGeneratingPromise = this.usernameGenerationService.generateUsername(
-        this.usernameOptions
+        this.usernameOptions,
       );
       this.username = await this.usernameGeneratingPromise;
       if (this.username === "" || this.username === null) {
@@ -196,12 +196,12 @@ export class GeneratorComponent implements OnInit {
     const copyOptions = this.win != null ? { window: this.win } : null;
     this.platformUtilsService.copyToClipboard(
       password ? this.password : this.username,
-      copyOptions
+      copyOptions,
     );
     this.platformUtilsService.showToast(
       "info",
       null,
-      this.i18nService.t("valueCopied", this.i18nService.t(password ? "password" : "username"))
+      this.i18nService.t("valueCopied", this.i18nService.t(password ? "password" : "username")),
     );
   }
 
@@ -238,7 +238,7 @@ export class GeneratorComponent implements OnInit {
 
     this.passwordGenerationService.normalizeOptions(
       this.passwordOptions,
-      this.enforcedPasswordPolicyOptions
+      this.enforcedPasswordPolicyOptions,
     );
   }
 

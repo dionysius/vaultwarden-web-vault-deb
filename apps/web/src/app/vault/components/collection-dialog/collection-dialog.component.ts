@@ -72,7 +72,7 @@ export enum CollectionDialogAction {
 export class CollectionDialogComponent implements OnInit, OnDestroy {
   protected flexibleCollectionsEnabled$ = this.configService.getFeatureFlag$(
     FeatureFlag.FlexibleCollections,
-    false
+    false,
   );
 
   private destroy$ = new Subject<void>();
@@ -107,7 +107,7 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
     private organizationUserService: OrganizationUserService,
     private dialogService: DialogService,
     private changeDetectorRef: ChangeDetectorRef,
-    private configService: ConfigServiceAbstraction
+    private configService: ConfigServiceAbstraction,
   ) {
     this.tabIndex = params.initialTab ?? CollectionDialogTabType.Info;
   }
@@ -123,8 +123,8 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
         map((orgs) =>
           orgs
             .filter((o) => o.canCreateNewCollections && !o.isProviderUser)
-            .sort(Utils.getSortFunction(this.i18nService, "name"))
-        )
+            .sort(Utils.getSortFunction(this.i18nService, "name")),
+        ),
       );
       // patchValue will trigger a call to loadOrg() in this case, so no need to call it again here
       this.formGroup.patchValue({ selectedOrg: this.params.organizationId });
@@ -141,7 +141,7 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
 
   async loadOrg(orgId: string, collectionIds: string[]) {
     const organization$ = of(this.organizationService.get(orgId)).pipe(
-      shareReplay({ refCount: true, bufferSize: 1 })
+      shareReplay({ refCount: true, bufferSize: 1 }),
     );
     const groups$ = organization$.pipe(
       switchMap((organization) => {
@@ -150,7 +150,7 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
         }
 
         return this.groupService.getAll(orgId);
-      })
+      }),
     );
     combineLatest({
       organization: organization$,
@@ -168,7 +168,7 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
           this.organization = organization;
           this.accessItems = [].concat(
             groups.map(mapGroupToAccessItemView),
-            users.data.map(mapUserToAccessItemView)
+            users.data.map(mapUserToAccessItemView),
           );
 
           // Force change detection to update the access selector's items
@@ -201,9 +201,8 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
           } else {
             this.nestOptions = collections;
             const parent = collections.find((c) => c.id === this.params.parentCollectionId);
-            const currentOrgUserId = users.data.find(
-              (u) => u.userId === this.organization?.userId
-            )?.id;
+            const currentOrgUserId = users.data.find((u) => u.userId === this.organization?.userId)
+              ?.id;
             const initialSelection: AccessItemValue[] =
               currentOrgUserId !== undefined
                 ? [
@@ -224,7 +223,7 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
           }
 
           this.loading = false;
-        }
+        },
       );
   }
 
@@ -250,13 +249,13 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
         this.platformUtilsService.showToast(
           "error",
           null,
-          this.i18nService.t("fieldOnTabRequiresAttention", this.i18nService.t("collectionInfo"))
+          this.i18nService.t("fieldOnTabRequiresAttention", this.i18nService.t("collectionInfo")),
         );
       } else if (this.tabIndex === CollectionDialogTabType.Info && accessTabError) {
         this.platformUtilsService.showToast(
           "error",
           null,
-          this.i18nService.t("fieldOnTabRequiresAttention", this.i18nService.t("access"))
+          this.i18nService.t("fieldOnTabRequiresAttention", this.i18nService.t("access")),
         );
       }
       return;
@@ -287,8 +286,8 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
       null,
       this.i18nService.t(
         this.editMode ? "editedCollectionId" : "createdCollectionId",
-        collectionView.name
-      )
+        collectionView.name,
+      ),
     );
 
     this.close(CollectionDialogAction.Saved, savedCollection);
@@ -310,7 +309,7 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
     this.platformUtilsService.showToast(
       "success",
       null,
-      this.i18nService.t("deletedCollectionId", this.collection?.name)
+      this.i18nService.t("deletedCollectionId", this.collection?.name),
     );
 
     this.close(CollectionDialogAction.Deleted, this.collection);
@@ -348,7 +347,7 @@ function mapToAccessSelections(collectionDetails: CollectionAdminView): AccessIt
       id: selection.id,
       type: AccessItemType.Member,
       permission: convertToPermission(selection),
-    }))
+    })),
   );
 }
 
@@ -369,10 +368,10 @@ function validateCanManagePermission(control: AbstractControl) {
  */
 export function openCollectionDialog(
   dialogService: DialogService,
-  config: DialogConfig<CollectionDialogParams>
+  config: DialogConfig<CollectionDialogParams>,
 ) {
   return dialogService.open<CollectionDialogResult, CollectionDialogParams>(
     CollectionDialogComponent,
-    config
+    config,
   );
 }

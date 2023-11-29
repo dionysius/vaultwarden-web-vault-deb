@@ -9,7 +9,7 @@ const SteamChars = "23456789BCDFGHJKMNPQRTVWXY";
 export class TotpService implements TotpServiceAbstraction {
   constructor(
     private cryptoFunctionService: CryptoFunctionService,
-    private logService: LogService
+    private logService: LogService,
   ) {}
 
   async getCode(key: string): Promise<string> {
@@ -160,7 +160,7 @@ export class TotpService implements TotpServiceAbstraction {
   private async sign(
     keyBytes: Uint8Array,
     timeBytes: Uint8Array,
-    alg: "sha1" | "sha256" | "sha512"
+    alg: "sha1" | "sha256" | "sha512",
   ) {
     const signature = await this.cryptoFunctionService.hmac(timeBytes, keyBytes, alg);
     return new Uint8Array(signature);

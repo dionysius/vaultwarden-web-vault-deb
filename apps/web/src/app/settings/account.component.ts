@@ -24,7 +24,7 @@ export class AccountComponent {
 
   constructor(
     private modalService: ModalService,
-    private userVerificationService: UserVerificationService
+    private userVerificationService: UserVerificationService,
   ) {}
 
   async ngOnInit() {

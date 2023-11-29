@@ -26,14 +26,14 @@ export class WeakPasswordsReportComponent extends BaseWeakPasswordsReportCompone
     modalService: ModalService,
     private route: ActivatedRoute,
     organizationService: OrganizationService,
-    passwordRepromptService: PasswordRepromptService
+    passwordRepromptService: PasswordRepromptService,
   ) {
     super(
       cipherService,
       passwordStrengthService,
       organizationService,
       modalService,
-      passwordRepromptService
+      passwordRepromptService,
     );
   }
 

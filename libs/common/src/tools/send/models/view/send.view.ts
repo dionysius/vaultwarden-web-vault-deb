@@ -72,7 +72,7 @@ export class SendView implements View {
       { ...this },
       {
         key: Utils.fromBufferToB64(this.key),
-      }
+      },
     );
   }
 

@@ -38,7 +38,7 @@ export class RoutedVaultFilterBridgeService {
   constructor(
     private router: Router,
     private routedVaultFilterService: RoutedVaultFilterService,
-    legacyVaultFilterService: VaultFilterService
+    legacyVaultFilterService: VaultFilterService,
   ) {
     this.activeFilter$ = combineLatest([
       routedVaultFilterService.filter$,
@@ -55,11 +55,11 @@ export class RoutedVaultFilterBridgeService {
               collectionTree,
               folderTree,
               organizationTree,
-              cipherTypeTree
+              cipherTypeTree,
             );
 
         return new RoutedVaultFilterBridge(filter, legacyFilter, this);
-      })
+      }),
     );
   }
 
@@ -84,38 +84,38 @@ function isAdminConsole(filter: RoutedVaultFilterModel) {
 function createLegacyFilterForAdminConsole(
   filter: RoutedVaultFilterModel,
   collectionTree: TreeNode<CollectionFilter>,
-  cipherTypeTree: TreeNode<CipherTypeFilter>
+  cipherTypeTree: TreeNode<CipherTypeFilter>,
 ): VaultFilter {
   const legacyFilter = new VaultFilter();
 
   if (filter.collectionId === undefined && filter.type === undefined) {
     legacyFilter.selectedCollectionNode = ServiceUtils.getTreeNodeObject(
       collectionTree,
-      "AllCollections"
+      "AllCollections",
     );
   } else if (filter.collectionId !== undefined && filter.collectionId === Unassigned) {
     legacyFilter.selectedCollectionNode = ServiceUtils.getTreeNodeObject(collectionTree, null);
   } else if (filter.collectionId !== undefined) {
     legacyFilter.selectedCollectionNode = ServiceUtils.getTreeNodeObject(
       collectionTree,
-      filter.collectionId
+      filter.collectionId,
     );
   }
 
   if (filter.collectionId === undefined && filter.type === All) {
     legacyFilter.selectedCipherTypeNode = ServiceUtils.getTreeNodeObject(
       cipherTypeTree,
-      "AllItems"
+      "AllItems",
     );
   } else if (filter.type !== undefined && filter.type === "trash") {
     legacyFilter.selectedCipherTypeNode = new TreeNode<CipherTypeFilter>(
       { id: "trash", name: "", type: "trash", icon: "" },
-      null
+      null,
     );
   } else if (filter.type !== undefined && filter.type !== "trash") {
     legacyFilter.selectedCipherTypeNode = ServiceUtils.getTreeNodeObject(
       cipherTypeTree,
-      filter.type
+      filter.type,
     );
   }
 
@@ -127,7 +127,7 @@ function createLegacyFilterForEndUser(
   collectionTree: TreeNode<CollectionFilter>,
   folderTree: TreeNode<FolderFilter>,
   organizationTree: TreeNode<OrganizationFilter>,
-  cipherTypeTree: TreeNode<CipherTypeFilter>
+  cipherTypeTree: TreeNode<CipherTypeFilter>,
 ): VaultFilter {
   const legacyFilter = new VaultFilter();
 
@@ -136,12 +136,12 @@ function createLegacyFilterForEndUser(
   } else if (filter.collectionId !== undefined && filter.collectionId === All) {
     legacyFilter.selectedCollectionNode = ServiceUtils.getTreeNodeObject(
       collectionTree,
-      "AllCollections"
+      "AllCollections",
     );
   } else if (filter.collectionId !== undefined) {
     legacyFilter.selectedCollectionNode = ServiceUtils.getTreeNodeObject(
       collectionTree,
-      filter.collectionId
+      filter.collectionId,
     );
   }
 
@@ -154,29 +154,29 @@ function createLegacyFilterForEndUser(
   if (filter.organizationId !== undefined && filter.organizationId === Unassigned) {
     legacyFilter.selectedOrganizationNode = ServiceUtils.getTreeNodeObject(
       organizationTree,
-      "MyVault"
+      "MyVault",
     );
   } else if (filter.organizationId !== undefined && filter.organizationId !== Unassigned) {
     legacyFilter.selectedOrganizationNode = ServiceUtils.getTreeNodeObject(
       organizationTree,
-      filter.organizationId
+      filter.organizationId,
     );
   }
 
   if (filter.type === undefined) {
     legacyFilter.selectedCipherTypeNode = ServiceUtils.getTreeNodeObject(
       cipherTypeTree,
-      "AllItems"
+      "AllItems",
     );
   } else if (filter.type !== undefined && filter.type === "trash") {
     legacyFilter.selectedCipherTypeNode = new TreeNode<CipherTypeFilter>(
       { id: "trash", name: "", type: "trash", icon: "" },
-      null
+      null,
     );
   } else if (filter.type !== undefined && filter.type !== "trash") {
     legacyFilter.selectedCipherTypeNode = ServiceUtils.getTreeNodeObject(
       cipherTypeTree,
-      filter.type
+      filter.type,
     );
   }
 

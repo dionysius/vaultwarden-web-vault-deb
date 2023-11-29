@@ -29,7 +29,7 @@ export class ServiceAccountEventsComponent extends BaseEventsComponent implement
     exportService: EventExportService,
     platformUtilsService: PlatformUtilsService,
     logService: LogService,
-    fileDownloadService: FileDownloadService
+    fileDownloadService: FileDownloadService,
   ) {
     super(
       eventService,
@@ -37,7 +37,7 @@ export class ServiceAccountEventsComponent extends BaseEventsComponent implement
       exportService,
       platformUtilsService,
       logService,
-      fileDownloadService
+      fileDownloadService,
     );
   }
 
@@ -59,7 +59,7 @@ export class ServiceAccountEventsComponent extends BaseEventsComponent implement
       this.serviceAccountId,
       startDate,
       endDate,
-      continuationToken
+      continuationToken,
     );
   }
 

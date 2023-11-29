@@ -4,7 +4,10 @@ import { SendService } from "@bitwarden/common/tools/send/services/send.service.
 import { Response } from "../../../models/response";
 
 export class SendDeleteCommand {
-  constructor(private sendService: SendService, private sendApiService: SendApiService) {}
+  constructor(
+    private sendService: SendService,
+    private sendApiService: SendApiService,
+  ) {}
 
   async run(id: string) {
     const send = await this.sendService.getFromState(id);

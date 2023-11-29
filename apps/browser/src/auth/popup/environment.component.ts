@@ -20,7 +20,7 @@ export class EnvironmentComponent extends BaseEnvironmentComponent implements On
     public environmentService: BrowserEnvironmentService,
     i18nService: I18nService,
     private router: Router,
-    modalService: ModalService
+    modalService: ModalService,
   ) {
     super(platformUtilsService, environmentService, i18nService, modalService);
     this.showCustom = true;

@@ -28,7 +28,7 @@ class AutofillOverlayPageElement extends HTMLElement {
   protected initOverlayPage(
     elementName: "button" | "list",
     styleSheetUrl: string,
-    translations: Record<string, string>
+    translations: Record<string, string>,
   ): HTMLLinkElement {
     this.translations = translations;
     globalThis.document.documentElement.setAttribute("lang", this.getTranslation("locale"));
@@ -127,7 +127,7 @@ class AutofillOverlayPageElement extends HTMLElement {
 
     if (event.code === "Tab") {
       this.redirectOverlayFocusOutMessage(
-        event.shiftKey ? RedirectFocusDirection.Previous : RedirectFocusDirection.Next
+        event.shiftKey ? RedirectFocusDirection.Previous : RedirectFocusDirection.Next,
       );
       return;
     }

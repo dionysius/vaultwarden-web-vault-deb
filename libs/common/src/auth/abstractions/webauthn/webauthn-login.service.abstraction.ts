@@ -33,7 +33,7 @@ export abstract class WebAuthnLoginServiceAbstraction {
    * If the assertion is not successfully obtained, it returns undefined.
    */
   assertCredential: (
-    credentialAssertionOptions: WebAuthnLoginCredentialAssertionOptionsView
+    credentialAssertionOptions: WebAuthnLoginCredentialAssertionOptionsView,
   ) => Promise<WebAuthnLoginCredentialAssertionView | undefined>;
 
   /**

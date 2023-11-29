@@ -44,7 +44,7 @@ export class ChangePasswordComponent implements OnInit, OnDestroy {
     protected platformUtilsService: PlatformUtilsService,
     protected policyService: PolicyService,
     protected stateService: StateService,
-    protected dialogService: DialogService
+    protected dialogService: DialogService,
   ) {}
 
   async ngOnInit() {
@@ -54,7 +54,7 @@ export class ChangePasswordComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.destroy$))
       .subscribe(
         (enforcedPasswordPolicyOptions) =>
-          (this.enforcedPolicyOptions ??= enforcedPasswordPolicyOptions)
+          (this.enforcedPolicyOptions ??= enforcedPasswordPolicyOptions),
       );
   }
 
@@ -85,11 +85,11 @@ export class ChangePasswordComponent implements OnInit, OnDestroy {
       this.masterPassword,
       email.trim().toLowerCase(),
       this.kdf,
-      this.kdfConfig
+      this.kdfConfig,
     );
     const newMasterKeyHash = await this.cryptoService.hashMasterKey(
       this.masterPassword,
-      newMasterKey
+      newMasterKey,
     );
 
     let newProtectedUserKey: [UserKey, EncString] = null;
@@ -112,7 +112,7 @@ export class ChangePasswordComponent implements OnInit, OnDestroy {
   async performSubmitActions(
     newMasterKeyHash: string,
     newMasterKey: MasterKey,
-    newUserKey: [UserKey, EncString]
+    newUserKey: [UserKey, EncString],
   ) {
     // Override in sub-class
   }
@@ -122,7 +122,7 @@ export class ChangePasswordComponent implements OnInit, OnDestroy {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
-        this.i18nService.t("masterPasswordRequired")
+        this.i18nService.t("masterPasswordRequired"),
       );
       return false;
     }
@@ -130,7 +130,7 @@ export class ChangePasswordComponent implements OnInit, OnDestroy {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
-        this.i18nService.t("masterPasswordMinimumlength", this.minimumLength)
+        this.i18nService.t("masterPasswordMinimumlength", this.minimumLength),
       );
       return false;
     }
@@ -138,7 +138,7 @@ export class ChangePasswordComponent implements OnInit, OnDestroy {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
-        this.i18nService.t("masterPassDoesntMatch")
+        this.i18nService.t("masterPassDoesntMatch"),
       );
       return false;
     }
@@ -150,13 +150,13 @@ export class ChangePasswordComponent implements OnInit, OnDestroy {
       !this.policyService.evaluateMasterPassword(
         strengthResult.score,
         this.masterPassword,
-        this.enforcedPolicyOptions
+        this.enforcedPolicyOptions,
       )
     ) {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
-        this.i18nService.t("masterPasswordPolicyRequirementsNotMet")
+        this.i18nService.t("masterPasswordPolicyRequirementsNotMet"),
       );
       return false;
     }

@@ -37,7 +37,7 @@ export class DeleteCredentialDialogComponent implements OnInit, OnDestroy {
     private webauthnService: WebauthnLoginAdminService,
     private platformUtilsService: PlatformUtilsService,
     private i18nService: I18nService,
-    private logService: LogService
+    private logService: LogService,
   ) {}
 
   ngOnInit(): void {
@@ -64,7 +64,7 @@ export class DeleteCredentialDialogComponent implements OnInit, OnDestroy {
         this.platformUtilsService.showToast(
           "error",
           this.i18nService.t("unexpectedError"),
-          error.message
+          error.message,
         );
       }
       return false;
@@ -88,7 +88,7 @@ export class DeleteCredentialDialogComponent implements OnInit, OnDestroy {
  */
 export const openDeleteCredentialDialogComponent = (
   dialogService: DialogService,
-  config: DialogConfig<DeleteCredentialDialogParams>
+  config: DialogConfig<DeleteCredentialDialogParams>,
 ) => {
   return dialogService.open<unknown>(DeleteCredentialDialogComponent, config);
 };

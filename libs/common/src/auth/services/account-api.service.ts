@@ -10,7 +10,7 @@ export class AccountApiServiceImplementation implements AccountApiService {
     private apiService: ApiService,
     private userVerificationService: UserVerificationService,
     private logService: LogService,
-    private accountService: InternalAccountService
+    private accountService: InternalAccountService,
   ) {}
 
   async deleteAccount(verification: Verification): Promise<void> {

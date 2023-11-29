@@ -17,7 +17,7 @@ export type ConfigApiServiceInitOptions = ConfigApiServiceFactoyOptions &
 
 export function configApiServiceFactory(
   cache: { configApiService?: ConfigApiServiceAbstraction } & CachedServices,
-  opts: ConfigApiServiceInitOptions
+  opts: ConfigApiServiceInitOptions,
 ): Promise<ConfigApiServiceAbstraction> {
   return factory(
     cache,
@@ -26,7 +26,7 @@ export function configApiServiceFactory(
     async () =>
       new ConfigApiService(
         await apiServiceFactory(cache, opts),
-        await authServiceFactory(cache, opts)
-      )
+        await authServiceFactory(cache, opts),
+      ),
   );
 }

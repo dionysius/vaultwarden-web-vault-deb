@@ -18,7 +18,7 @@ export interface GlobalState<T> {
    */
   update: <TCombine>(
     configureState: (state: T, dependency: TCombine) => T,
-    options?: StateUpdateOptions<T, TCombine>
+    options?: StateUpdateOptions<T, TCombine>,
   ) => Promise<T>;
 
   /**

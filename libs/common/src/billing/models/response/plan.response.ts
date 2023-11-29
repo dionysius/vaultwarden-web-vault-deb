@@ -95,12 +95,12 @@ export class SecretsManagerPlanFeaturesResponse extends BaseResponse {
     this.maxSeats = this.getResponseProperty("MaxSeats");
     this.stripeServiceAccountPlanId = this.getResponseProperty("StripeServiceAccountPlanId");
     this.additionalPricePerServiceAccount = this.getResponseProperty(
-      "AdditionalPricePerServiceAccount"
+      "AdditionalPricePerServiceAccount",
     );
     this.baseServiceAccount = this.getResponseProperty("BaseServiceAccount");
     this.maxServiceAccount = this.getResponseProperty("MaxServiceAccount");
     this.hasAdditionalServiceAccountOption = this.getResponseProperty(
-      "HasAdditionalServiceAccountOption"
+      "HasAdditionalServiceAccountOption",
     );
     this.maxAdditionalServiceAccounts = this.getResponseProperty("MaxAdditionalServiceAccounts");
     this.maxProjects = this.getResponseProperty("MaxProjects");

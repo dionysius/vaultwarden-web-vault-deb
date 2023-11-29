@@ -37,7 +37,7 @@ export class SsoComponent extends BaseSsoComponent {
     environmentService: EnvironmentService,
     logService: LogService,
     configService: ConfigServiceAbstraction,
-    @Inject(WINDOW) private win: Window
+    @Inject(WINDOW) private win: Window,
   ) {
     super(
       authService,
@@ -51,7 +51,7 @@ export class SsoComponent extends BaseSsoComponent {
       environmentService,
       passwordGenerationService,
       logService,
-      configService
+      configService,
     );
 
     const url = this.environmentService.getWebVaultUrl();

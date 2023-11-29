@@ -19,7 +19,7 @@ export class HintComponent extends BaseHintComponent {
     i18nService: I18nService,
     apiService: ApiService,
     logService: LogService,
-    loginService: LoginService
+    loginService: LoginService,
   ) {
     super(router, i18nService, apiService, platformUtilsService, logService, loginService);
   }

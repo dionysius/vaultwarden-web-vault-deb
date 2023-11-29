@@ -20,7 +20,7 @@
       [routerLink]="[]"
       [queryParams]="{ itemId: cipher.id }"
       queryParamsHandling="merge"
-      title="{{ 'editItemWithName' | i18n : cipher.name }}"
+      title="{{ 'editItemWithName' | i18n: cipher.name }}"
       type="button"
       appStopProp
     >
@@ -52,7 +52,7 @@
   <app-org-badge
     [disabled]="disabled"
     [organizationId]="cipher.organizationId"
-    [organizationName]="cipher.organizationId | orgNameFromId : organizations"
+    [organizationName]="cipher.organizationId | orgNameFromId: organizations"
     appStopProp
   >
   </app-org-badge>

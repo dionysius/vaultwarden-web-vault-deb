@@ -56,7 +56,7 @@ export class ImportLastPassComponent implements OnInit, OnDestroy {
       if (status === "PENDING") {
         return this.i18nService.t("importingYourAccount");
       }
-    })
+    }),
   );
 
   @Output() csvDataLoaded = new EventEmitter<string>();
@@ -66,7 +66,7 @@ export class ImportLastPassComponent implements OnInit, OnDestroy {
     private controlContainer: ControlContainer,
     private logService: LogService,
     private lastPassDirectImportService: LastPassDirectImportService,
-    private i18nService: I18nService
+    private i18nService: I18nService,
   ) {}
 
   ngOnInit(): void {
@@ -88,7 +88,7 @@ export class ImportLastPassComponent implements OnInit, OnDestroy {
       try {
         const csvData = await this.lastPassDirectImportService.handleImport(
           this.formGroup.controls.email.value,
-          this.formGroup.controls.includeSharedFolders.value
+          this.formGroup.controls.includeSharedFolders.value,
         );
         this.csvDataLoaded.emit(csvData);
         return null;

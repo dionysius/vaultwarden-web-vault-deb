@@ -10,7 +10,7 @@
       <p *ngIf="isCloud">
         {{ "serverVersion" | i18n }}: {{ this.serverConfig?.version }}
         <span *ngIf="!serverConfig.isValid()">
-          ({{ "lastSeenOn" | i18n : (serverConfig.utcDate | date : "mediumDate") }})
+          ({{ "lastSeenOn" | i18n: (serverConfig.utcDate | date: "mediumDate") }})
         </span>
       </p>
 
@@ -20,11 +20,11 @@
             {{ "serverVersion" | i18n }} <small>({{ "thirdParty" | i18n }})</small>:
             {{ this.serverConfig?.version }}
             <span *ngIf="!serverConfig.isValid()">
-              ({{ "lastSeenOn" | i18n : (serverConfig.utcDate | date : "mediumDate") }})
+              ({{ "lastSeenOn" | i18n: (serverConfig.utcDate | date: "mediumDate") }})
             </span>
           </p>
           <div>
-            <small>{{ "thirdPartyServerMessage" | i18n : serverConfig.server?.name }}</small>
+            <small>{{ "thirdPartyServerMessage" | i18n: serverConfig.server?.name }}</small>
           </div>
         </ng-container>
 
@@ -32,7 +32,7 @@
           {{ "serverVersion" | i18n }} <small>({{ "selfHostedServer" | i18n }})</small>:
           {{ this.serverConfig?.version }}
           <span *ngIf="!serverConfig.isValid()">
-            ({{ "lastSeenOn" | i18n : (serverConfig.utcDate | date : "mediumDate") }})
+            ({{ "lastSeenOn" | i18n: (serverConfig.utcDate | date: "mediumDate") }})
           </span>
         </p>
       </ng-container>

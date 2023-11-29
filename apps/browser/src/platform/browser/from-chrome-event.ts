@@ -21,7 +21,7 @@ import { BrowserApi } from "./browser-api";
  * ```
  */
 export function fromChromeEvent<T extends unknown[]>(
-  event: chrome.events.Event<(...args: T) => void>
+  event: chrome.events.Event<(...args: T) => void>,
 ): Observable<T> {
   return new Observable<T>((subscriber) => {
     const handler = (...args: T) => {

@@ -48,7 +48,7 @@ export class SelectableAvatarComponent {
               "hover:tw-outline-primary-300",
               "focus:tw-outline-2",
               "focus:tw-outline-primary-500",
-            ]
+            ],
       );
   }
 }

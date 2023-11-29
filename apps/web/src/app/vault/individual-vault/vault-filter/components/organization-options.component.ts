@@ -45,12 +45,12 @@ export class OrganizationOptionsComponent implements OnInit, OnDestroy {
     private organizationApiService: OrganizationApiServiceAbstraction,
     private organizationUserService: OrganizationUserService,
     private dialogService: DialogService,
-    private stateService: StateService
+    private stateService: StateService,
   ) {}
 
   async ngOnInit() {
     const resetPasswordPolicies$ = this.policyService.policies$.pipe(
-      map((policies) => policies.filter((policy) => policy.type === PolicyType.ResetPassword))
+      map((policies) => policies.filter((policy) => policy.type === PolicyType.ResetPassword)),
     );
 
     combineLatest([
@@ -62,7 +62,7 @@ export class OrganizationOptionsComponent implements OnInit, OnDestroy {
       .subscribe(([organization, resetPasswordPolicies, decryptionOptions]) => {
         this.organization = organization;
         this.resetPasswordPolicy = resetPasswordPolicies.find(
-          (p) => p.organizationId === organization.id
+          (p) => p.organizationId === organization.id,
         );
 
         // A user can leave an organization if they are NOT using TDE and Key Connector, or they have a master password.
@@ -153,14 +153,14 @@ export class OrganizationOptionsComponent implements OnInit, OnDestroy {
       this.actionPromise = this.organizationUserService.putOrganizationUserResetPasswordEnrollment(
         this.organization.id,
         this.organization.userId,
-        request
+        request,
       );
       try {
         await this.actionPromise;
         this.platformUtilsService.showToast(
           "success",
           null,
-          this.i18nService.t("withdrawPasswordResetSuccess")
+          this.i18nService.t("withdrawPasswordResetSuccess"),
         );
         await this.syncService.fullSync(true);
       } catch (e) {

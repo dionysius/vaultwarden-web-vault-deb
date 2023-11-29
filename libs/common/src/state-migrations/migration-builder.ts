@@ -12,7 +12,7 @@ export class MigrationBuilder<TCurrent extends number = 0> {
   }
 
   private constructor(
-    private migrations: readonly { migrator: Migrator<number, number>; direction: Direction }[]
+    private migrations: readonly { migrator: Migrator<number, number>; direction: Direction }[],
   ) {}
 
   /** Add a migrator to the MigrationBuilder. Types are updated such that the chained MigrationBuilder must currently be
@@ -26,7 +26,7 @@ export class MigrationBuilder<TCurrent extends number = 0> {
   with<
     TMigrator extends Migrator<number, number>,
     TFrom extends VersionFrom<TMigrator> & TCurrent,
-    TTo extends VersionTo<TMigrator>
+    TTo extends VersionTo<TMigrator>,
   >(
     ...migrate: [new () => TMigrator] | [new (from: TFrom, to: TTo) => TMigrator, TFrom, TTo]
   ): MigrationBuilder<TTo> {
@@ -45,7 +45,7 @@ export class MigrationBuilder<TCurrent extends number = 0> {
   rollback<
     TMigrator extends Migrator<number, number>,
     TFrom extends VersionFrom<TMigrator>,
-    TTo extends VersionTo<TMigrator> & TCurrent
+    TTo extends VersionTo<TMigrator> & TCurrent,
   >(
     ...migrate: [new () => TMigrator] | [new (from: TFrom, to: TTo) => TMigrator, TTo, TFrom]
   ): MigrationBuilder<TFrom> {
@@ -62,17 +62,17 @@ export class MigrationBuilder<TCurrent extends number = 0> {
         promise.then(async () => {
           await this.runMigrator(migrator.migrator, helper, migrator.direction);
         }),
-      Promise.resolve()
+      Promise.resolve(),
     );
   }
 
   private addMigrator<
     TMigrator extends Migrator<number, number>,
     TFrom extends VersionFrom<TMigrator> & TCurrent,
-    TTo extends VersionTo<TMigrator>
+    TTo extends VersionTo<TMigrator>,
   >(
     migrate: [new () => TMigrator] | [new (from: TFrom, to: TTo) => TMigrator, TFrom, TTo],
-    direction: Direction = "up"
+    direction: Direction = "up",
   ) {
     const newMigration =
       migrate.length === 1
@@ -85,21 +85,21 @@ export class MigrationBuilder<TCurrent extends number = 0> {
   private async runMigrator(
     migrator: Migrator<number, number>,
     helper: MigrationHelper,
-    direction: Direction
+    direction: Direction,
   ): Promise<void> {
     const shouldMigrate = await migrator.shouldMigrate(helper, direction);
     helper.info(
-      `Migrator ${migrator.constructor.name} (to version ${migrator.toVersion}) should migrate: ${shouldMigrate} - ${direction}`
+      `Migrator ${migrator.constructor.name} (to version ${migrator.toVersion}) should migrate: ${shouldMigrate} - ${direction}`,
     );
     if (shouldMigrate) {
       const method = direction === "up" ? migrator.migrate : migrator.rollback;
       await method.bind(migrator)(helper);
       helper.info(
-        `Migrator ${migrator.constructor.name} (to version ${migrator.toVersion}) migrated - ${direction}`
+        `Migrator ${migrator.constructor.name} (to version ${migrator.toVersion}) migrated - ${direction}`,
       );
       await migrator.updateVersion(helper, direction);
       helper.info(
-        `Migrator ${migrator.constructor.name} (to version ${migrator.toVersion}) updated version - ${direction}`
+        `Migrator ${migrator.constructor.name} (to version ${migrator.toVersion}) updated version - ${direction}`,
       );
     }
   }

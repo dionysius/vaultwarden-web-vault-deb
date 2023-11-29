@@ -106,7 +106,7 @@ function createGenerateFillScriptOptionsMock(customFields = {}): GenerateFillScr
 
 function createAutofillScriptMock(
   customFields = {},
-  scriptTypes?: Record<string, string>
+  scriptTypes?: Record<string, string>,
 ): AutofillScript {
   let script: FillScript[] = [
     ["click_on_opid", "default-field"],
@@ -152,7 +152,7 @@ const overlayPagesTranslations = {
   addNewVaultItem: "addNewVaultItem",
 };
 function createInitAutofillOverlayButtonMessageMock(
-  customFields = {}
+  customFields = {},
 ): InitAutofillOverlayButtonMessage {
   return {
     command: "initAutofillOverlayButton",
@@ -181,7 +181,7 @@ function createAutofillOverlayCipherDataMock(index: number, customFields = {}): 
 }
 
 function createInitAutofillOverlayListMessageMock(
-  customFields = {}
+  customFields = {},
 ): InitAutofillOverlayListMessage {
   return {
     command: "initAutofillOverlayList",

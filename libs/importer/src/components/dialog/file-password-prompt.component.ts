@@ -31,7 +31,10 @@ export class FilePasswordPromptComponent {
     filePassword: ["", Validators.required],
   });
 
-  constructor(public dialogRef: DialogRef, protected formBuilder: FormBuilder) {}
+  constructor(
+    public dialogRef: DialogRef,
+    protected formBuilder: FormBuilder,
+  ) {}
 
   submit = () => {
     this.formGroup.markAsTouched();

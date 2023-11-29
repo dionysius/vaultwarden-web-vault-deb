@@ -59,7 +59,7 @@ export class PasswordStrengthComponent implements OnChanges {
 
   constructor(
     private i18nService: I18nService,
-    private passwordStrengthService: PasswordStrengthServiceAbstraction
+    private passwordStrengthService: PasswordStrengthServiceAbstraction,
   ) {}
 
   ngOnChanges(): void {
@@ -99,7 +99,7 @@ export class PasswordStrengthComponent implements OnChanges {
     const strengthResult = this.passwordStrengthService.getPasswordStrength(
       masterPassword,
       this.email,
-      this.name?.trim().toLowerCase().split(" ")
+      this.name?.trim().toLowerCase().split(" "),
     );
     this.passwordStrengthResult.emit(strengthResult);
     this.masterPasswordScore = strengthResult == null ? null : strengthResult.score;

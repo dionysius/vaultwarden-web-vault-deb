@@ -76,7 +76,7 @@ const twoFactorRemember = true;
 
 export function identityTokenResponseFactory(
   masterPasswordPolicyResponse: MasterPasswordPolicyResponse = null,
-  userDecryptionOptions: IUserDecryptionOptionsServerResponse = null
+  userDecryptionOptions: IUserDecryptionOptionsServerResponse = null,
 ) {
   return new IdentityTokenResponse({
     ForcePasswordReset: false,
@@ -143,7 +143,7 @@ describe("LoginStrategy", () => {
       twoFactorService,
       passwordStrengthService,
       policyService,
-      authService
+      authService,
     );
     credentials = new PasswordLoginCredentials(email, masterPassword);
   });
@@ -156,10 +156,10 @@ describe("LoginStrategy", () => {
 
     beforeEach(() => {
       userKey = new SymmetricCryptoKey(
-        new Uint8Array(userKeyBytesLength).buffer as CsprngArray
+        new Uint8Array(userKeyBytesLength).buffer as CsprngArray,
       ) as UserKey;
       masterKey = new SymmetricCryptoKey(
-        new Uint8Array(masterKeyBytesLength).buffer as CsprngArray
+        new Uint8Array(masterKeyBytesLength).buffer as CsprngArray,
       ) as MasterKey;
     });
 
@@ -191,7 +191,7 @@ describe("LoginStrategy", () => {
           },
           keys: new AccountKeys(),
           decryptionOptions: AccountDecryptionOptions.fromResponse(idTokenResponse),
-        })
+        }),
       );
       expect(messagingService.send).toHaveBeenCalledWith("loggedIn");
     });
@@ -202,7 +202,7 @@ describe("LoginStrategy", () => {
       apiService.postIdentityToken.mockResolvedValue(idTokenResponse);
 
       const deviceKey = new SymmetricCryptoKey(
-        new Uint8Array(userKeyBytesLength).buffer as CsprngArray
+        new Uint8Array(userKeyBytesLength).buffer as CsprngArray,
       ) as DeviceKey;
 
       stateService.getDeviceKey.mockResolvedValue(deviceKey);
@@ -215,7 +215,7 @@ describe("LoginStrategy", () => {
 
       // Assert
       expect(stateService.addAccount).toHaveBeenCalledWith(
-        expect.objectContaining({ keys: accountKeys })
+        expect.objectContaining({ keys: accountKeys }),
       );
     });
 
@@ -273,7 +273,7 @@ describe("LoginStrategy", () => {
       expect(cryptoService.setUserKey).toHaveBeenCalled();
       expect(cryptoService.makeKeyPair).toHaveBeenCalled();
       expect(cryptoService.setUserKey.mock.invocationCallOrder[0]).toBeLessThan(
-        cryptoService.makeKeyPair.mock.invocationCallOrder[0]
+        cryptoService.makeKeyPair.mock.invocationCallOrder[0],
       );
 
       expect(apiService.postAccountKeys).toHaveBeenCalled();
@@ -352,7 +352,7 @@ describe("LoginStrategy", () => {
             token: twoFactorToken,
             remember: false,
           } as TokenTwoFactorRequest,
-        })
+        }),
       );
     });
 
@@ -362,7 +362,7 @@ describe("LoginStrategy", () => {
       credentials.twoFactor = new TokenTwoFactorRequest(
         twoFactorProviderType,
         twoFactorToken,
-        twoFactorRemember
+        twoFactorRemember,
       );
 
       await passwordLoginStrategy.logIn(credentials);
@@ -374,7 +374,7 @@ describe("LoginStrategy", () => {
             token: twoFactorToken,
             remember: twoFactorRemember,
           } as TokenTwoFactorRequest,
-        })
+        }),
       );
     });
 
@@ -384,14 +384,14 @@ describe("LoginStrategy", () => {
         email,
         masterPasswordHash,
         null,
-        null
+        null,
       );
 
       apiService.postIdentityToken.mockResolvedValue(identityTokenResponseFactory());
 
       await passwordLoginStrategy.logInTwoFactor(
         new TokenTwoFactorRequest(twoFactorProviderType, twoFactorToken, twoFactorRemember),
-        null
+        null,
       );
 
       expect(apiService.postIdentityToken).toHaveBeenCalledWith(
@@ -401,7 +401,7 @@ describe("LoginStrategy", () => {
             token: twoFactorToken,
             remember: twoFactorRemember,
           } as TokenTwoFactorRequest,
-        })
+        }),
       );
     });
   });

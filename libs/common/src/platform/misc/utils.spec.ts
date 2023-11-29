@@ -49,13 +49,13 @@ describe("Utils Service", () => {
       expect(Utils.getDomain("https://www.vault.bitwarden.com")).toBe("bitwarden.com");
 
       expect(
-        Utils.getDomain("user:password@bitwarden.com:8080/password/sites?and&query#hash")
+        Utils.getDomain("user:password@bitwarden.com:8080/password/sites?and&query#hash"),
       ).toBe("bitwarden.com");
       expect(
-        Utils.getDomain("http://user:password@bitwarden.com:8080/password/sites?and&query#hash")
+        Utils.getDomain("http://user:password@bitwarden.com:8080/password/sites?and&query#hash"),
       ).toBe("bitwarden.com");
       expect(
-        Utils.getDomain("https://user:password@bitwarden.com:8080/password/sites?and&query#hash")
+        Utils.getDomain("https://user:password@bitwarden.com:8080/password/sites?and&query#hash"),
       ).toBe("bitwarden.com");
 
       expect(Utils.getDomain("bitwarden.unknown")).toBe("bitwarden.unknown");
@@ -87,7 +87,7 @@ describe("Utils Service", () => {
       expect(Utils.getDomain("subdomain.xn--btwarden-65a.com")).toBe("xn--btwarden-65a.com");
       expect(Utils.getDomain("http://subdomain.xn--btwarden-65a.com")).toBe("xn--btwarden-65a.com");
       expect(Utils.getDomain("https://subdomain.xn--btwarden-65a.com")).toBe(
-        "xn--btwarden-65a.com"
+        "xn--btwarden-65a.com",
       );
     });
 
@@ -165,10 +165,10 @@ describe("Utils Service", () => {
       expect(Utils.getHostname("https://www.vault.bitwarden.com")).toBe("www.vault.bitwarden.com");
 
       expect(
-        Utils.getHostname("user:password@bitwarden.com:8080/password/sites?and&query#hash")
+        Utils.getHostname("user:password@bitwarden.com:8080/password/sites?and&query#hash"),
       ).toBe("bitwarden.com");
       expect(
-        Utils.getHostname("https://user:password@bitwarden.com:8080/password/sites?and&query#hash")
+        Utils.getHostname("https://user:password@bitwarden.com:8080/password/sites?and&query#hash"),
       ).toBe("bitwarden.com");
       expect(Utils.getHostname("https://bitwarden.unknown")).toBe("bitwarden.unknown");
     });
@@ -195,13 +195,13 @@ describe("Utils Service", () => {
       expect(Utils.getHostname("xn--btwarden-65a.com")).toBe("xn--btwarden-65a.com");
 
       expect(Utils.getHostname("subdomain.xn--btwarden-65a.com")).toBe(
-        "subdomain.xn--btwarden-65a.com"
+        "subdomain.xn--btwarden-65a.com",
       );
       expect(Utils.getHostname("http://subdomain.xn--btwarden-65a.com")).toBe(
-        "subdomain.xn--btwarden-65a.com"
+        "subdomain.xn--btwarden-65a.com",
       );
       expect(Utils.getHostname("https://subdomain.xn--btwarden-65a.com")).toBe(
-        "subdomain.xn--btwarden-65a.com"
+        "subdomain.xn--btwarden-65a.com",
       );
     });
 
@@ -337,7 +337,7 @@ describe("Utils Service", () => {
 
         // Compare the original ArrayBuffer with the round-tripped ArrayBuffer
         expect(roundTrippedArray).toEqual(originalArray);
-      }
+      },
     );
 
     runInBothEnvironments(
@@ -351,7 +351,7 @@ describe("Utils Service", () => {
 
         // Compare the original base64 string with the round-tripped base64 string
         expect(roundTrippedB64String).toBe(b64HelloWorldString);
-      }
+      },
     );
   });
 
@@ -402,7 +402,7 @@ describe("Utils Service", () => {
         const hexString = Utils.fromBufferToHex(largeBuffer);
         const expectedHexString = createSequentialHexByteString(256).repeat(4);
         expect(hexString).toBe(expectedHexString);
-      }
+      },
     );
 
     runInBothEnvironments("should correctly convert a buffer with a single byte to hex", () => {
@@ -417,7 +417,7 @@ describe("Utils Service", () => {
         const oddByteBuffer = new Uint8Array([0x01, 0x23, 0x45, 0x67, 0x89]).buffer;
         const hexString = Utils.fromBufferToHex(oddByteBuffer);
         expect(hexString).toBe("0123456789");
-      }
+      },
     );
   });
 
@@ -467,7 +467,7 @@ describe("Utils Service", () => {
         const hexString = Utils.fromBufferToHex(originalBuffer);
         const roundTripBuffer = Utils.hexStringToArrayBuffer(hexString);
         expect(new Uint8Array(roundTripBuffer)).toEqual(new Uint8Array(originalBuffer));
-      }
+      },
     );
 
     runInBothEnvironments(
@@ -477,7 +477,7 @@ describe("Utils Service", () => {
         const bufferFromHex = Utils.hexStringToArrayBuffer(hexString);
         const roundTripHexString = Utils.fromBufferToHex(bufferFromHex);
         expect(roundTripHexString).toBe(hexString);
-      }
+      },
     );
   });
 
@@ -535,7 +535,7 @@ describe("Utils Service", () => {
         new Map([
           [1, "value1"],
           [2, "value2"],
-        ])
+        ]),
       );
       expect(Utils.mapToRecord(result)).toEqual(record);
     });
@@ -552,16 +552,16 @@ describe("Utils Service", () => {
   describe("encodeRFC3986URIComponent", () => {
     it("returns input string with expected encoded chars", () => {
       expect(Utils.encodeRFC3986URIComponent("test'user@example.com")).toBe(
-        "test%27user%40example.com"
+        "test%27user%40example.com",
       );
       expect(Utils.encodeRFC3986URIComponent("(test)user@example.com")).toBe(
-        "%28test%29user%40example.com"
+        "%28test%29user%40example.com",
       );
       expect(Utils.encodeRFC3986URIComponent("testuser!@example.com")).toBe(
-        "testuser%21%40example.com"
+        "testuser%21%40example.com",
       );
       expect(Utils.encodeRFC3986URIComponent("Test*User@example.com")).toBe(
-        "Test%2AUser%40example.com"
+        "Test%2AUser%40example.com",
       );
     });
   });
@@ -581,7 +581,7 @@ describe("Utils Service", () => {
 
     it("removes multiple encoded traversals", () => {
       expect(
-        Utils.normalizePath("api/sends/access/..%2f..%2f..%2fapi%2fsends%2faccess%2fsendkey")
+        Utils.normalizePath("api/sends/access/..%2f..%2f..%2fapi%2fsends%2faccess%2fsendkey"),
       ).toBe(path.normalize("api/sends/access/sendkey"));
     });
   });

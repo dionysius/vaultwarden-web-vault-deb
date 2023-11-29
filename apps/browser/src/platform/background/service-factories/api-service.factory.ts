@@ -36,7 +36,7 @@ export type ApiServiceInitOptions = ApiServiceFactoryOptions &
 
 export function apiServiceFactory(
   cache: { apiService?: AbstractApiService } & CachedServices,
-  opts: ApiServiceInitOptions
+  opts: ApiServiceInitOptions,
 ): Promise<AbstractApiService> {
   return factory(
     cache,
@@ -49,7 +49,7 @@ export function apiServiceFactory(
         await environmentServiceFactory(cache, opts),
         await appIdServiceFactory(cache, opts),
         opts.apiServiceOptions.logoutCallback,
-        opts.apiServiceOptions.customUserAgent
-      )
+        opts.apiServiceOptions.customUserAgent,
+      ),
   );
 }

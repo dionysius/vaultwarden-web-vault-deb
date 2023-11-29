@@ -132,7 +132,7 @@ describe("Cipher Service", () => {
       stateService,
       encryptService,
       cipherFileUploadService,
-      configService
+      configService,
     );
 
     cipherObj = new Cipher(cipherData);
@@ -142,10 +142,10 @@ describe("Cipher Service", () => {
       const fileName = "filename";
       const fileData = new Uint8Array(10);
       cryptoService.getOrgKey.mockReturnValue(
-        Promise.resolve<any>(new SymmetricCryptoKey(new Uint8Array(32)) as OrgKey)
+        Promise.resolve<any>(new SymmetricCryptoKey(new Uint8Array(32)) as OrgKey),
       );
       cryptoService.makeDataEncKey.mockReturnValue(
-        Promise.resolve<any>(new SymmetricCryptoKey(new Uint8Array(32)))
+        Promise.resolve<any>(new SymmetricCryptoKey(new Uint8Array(32))),
       );
 
       configService.checkServerMeetsVersionRequirement$.mockReturnValue(of(false));
@@ -253,7 +253,7 @@ describe("Cipher Service", () => {
       encryptService.decryptToBytes.mockReturnValue(Promise.resolve(makeStaticByteArray(64)));
       configService.checkServerMeetsVersionRequirement$.mockReturnValue(of(true));
       cryptoService.makeCipherKey.mockReturnValue(
-        Promise.resolve(new SymmetricCryptoKey(makeStaticByteArray(64)) as CipherKey)
+        Promise.resolve(new SymmetricCryptoKey(makeStaticByteArray(64)) as CipherKey),
       );
       cryptoService.encrypt.mockReturnValue(Promise.resolve(new EncString(ENCRYPTED_TEXT)));
     });

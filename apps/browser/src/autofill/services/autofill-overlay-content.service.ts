@@ -80,7 +80,7 @@ class AutofillOverlayContentService implements AutofillOverlayContentServiceInte
    */
   async setupAutofillOverlayListenerOnField(
     formFieldElement: ElementWithOpId<FormFieldElement>,
-    autofillFieldData: AutofillField
+    autofillFieldData: AutofillField,
   ) {
     if (this.isIgnoredField(autofillFieldData)) {
       return;
@@ -241,7 +241,7 @@ class AutofillOverlayContentService implements AutofillOverlayContentServiceInte
     }
 
     const focusedElementIndex = this.focusableElements.findIndex(
-      (element) => element === this.mostRecentlyFocusedField
+      (element) => element === this.mostRecentlyFocusedField,
     );
 
     const indexOffset = direction === RedirectFocusDirection.Previous ? -1 : 1;
@@ -263,15 +263,15 @@ class AutofillOverlayContentService implements AutofillOverlayContentServiceInte
     formFieldElement.addEventListener(EVENTS.KEYUP, this.handleFormFieldKeyupEvent);
     formFieldElement.addEventListener(
       EVENTS.INPUT,
-      this.handleFormFieldInputEvent(formFieldElement)
+      this.handleFormFieldInputEvent(formFieldElement),
     );
     formFieldElement.addEventListener(
       EVENTS.CLICK,
-      this.handleFormFieldClickEvent(formFieldElement)
+      this.handleFormFieldClickEvent(formFieldElement),
     );
     formFieldElement.addEventListener(
       EVENTS.FOCUS,
-      this.handleFormFieldFocusEvent(formFieldElement)
+      this.handleFormFieldFocusEvent(formFieldElement),
     );
   }
 
@@ -314,7 +314,7 @@ class AutofillOverlayContentService implements AutofillOverlayContentServiceInte
    */
   private getFormFieldHandlerMemoIndex(
     formFieldElement: ElementWithOpId<FormFieldElement>,
-    event: string
+    event: string,
   ) {
     return `${formFieldElement.opid}-${formFieldElement.id}-${event}-handler`;
   }
@@ -381,7 +381,7 @@ class AutofillOverlayContentService implements AutofillOverlayContentServiceInte
   private handleFormFieldInputEvent = (formFieldElement: ElementWithOpId<FormFieldElement>) => {
     return this.useEventHandlersMemo(
       () => this.triggerFormFieldInput(formFieldElement),
-      this.getFormFieldHandlerMemoIndex(formFieldElement, EVENTS.INPUT)
+      this.getFormFieldHandlerMemoIndex(formFieldElement, EVENTS.INPUT),
     );
   };
 
@@ -436,7 +436,7 @@ class AutofillOverlayContentService implements AutofillOverlayContentServiceInte
   private handleFormFieldClickEvent = (formFieldElement: ElementWithOpId<FormFieldElement>) => {
     return this.useEventHandlersMemo(
       () => this.triggerFormFieldClickedAction(formFieldElement),
-      this.getFormFieldHandlerMemoIndex(formFieldElement, EVENTS.CLICK)
+      this.getFormFieldHandlerMemoIndex(formFieldElement, EVENTS.CLICK),
     );
   };
 
@@ -462,7 +462,7 @@ class AutofillOverlayContentService implements AutofillOverlayContentServiceInte
   private handleFormFieldFocusEvent = (formFieldElement: ElementWithOpId<FormFieldElement>) => {
     return this.useEventHandlersMemo(
       () => this.triggerFormFieldFocusedAction(formFieldElement),
-      this.getFormFieldHandlerMemoIndex(formFieldElement, EVENTS.FOCUS)
+      this.getFormFieldHandlerMemoIndex(formFieldElement, EVENTS.FOCUS),
     );
   };
 
@@ -637,13 +637,12 @@ class AutofillOverlayContentService implements AutofillOverlayContentServiceInte
    * @param formFieldElement - The form field element that triggered the focus event.
    */
   private async updateMostRecentlyFocusedField(
-    formFieldElement: ElementWithOpId<FormFieldElement>
+    formFieldElement: ElementWithOpId<FormFieldElement>,
   ) {
     this.mostRecentlyFocusedField = formFieldElement;
     const { paddingRight, paddingLeft } = globalThis.getComputedStyle(formFieldElement);
-    const { width, height, top, left } = await this.getMostRecentlyFocusedFieldRects(
-      formFieldElement
-    );
+    const { width, height, top, left } =
+      await this.getMostRecentlyFocusedFieldRects(formFieldElement);
     this.focusedFieldData = {
       focusedFieldStyles: { paddingRight, paddingLeft },
       focusedFieldRects: { width, height, top, left },
@@ -664,11 +663,10 @@ class AutofillOverlayContentService implements AutofillOverlayContentServiceInte
    * @param formFieldElement - The form field element that triggered the focus event.
    */
   private async getMostRecentlyFocusedFieldRects(
-    formFieldElement: ElementWithOpId<FormFieldElement>
+    formFieldElement: ElementWithOpId<FormFieldElement>,
   ) {
-    const focusedFieldRects = await this.getBoundingClientRectFromIntersectionObserver(
-      formFieldElement
-    );
+    const focusedFieldRects =
+      await this.getBoundingClientRectFromIntersectionObserver(formFieldElement);
     if (focusedFieldRects) {
       return focusedFieldRects;
     }
@@ -682,7 +680,7 @@ class AutofillOverlayContentService implements AutofillOverlayContentServiceInte
    * @param formFieldElement - The form field element that triggered the focus event.
    */
   private async getBoundingClientRectFromIntersectionObserver(
-    formFieldElement: ElementWithOpId<FormFieldElement>
+    formFieldElement: ElementWithOpId<FormFieldElement>,
   ): Promise<DOMRectReadOnly | null> {
     if (!("IntersectionObserver" in window) && !("IntersectionObserverEntry" in window)) {
       return null;
@@ -703,7 +701,7 @@ class AutofillOverlayContentService implements AutofillOverlayContentServiceInte
           root: globalThis.document.body,
           rootMargin: "0px",
           threshold: 0.9999, // Safari doesn't seem to function properly with a threshold of 1
-        }
+        },
       );
       intersectionObserver.observe(formFieldElement);
     });
@@ -896,15 +894,15 @@ class AutofillOverlayContentService implements AutofillOverlayContentServiceInte
    */
   private setupMutationObserver = () => {
     this.overlayElementsMutationObserver = new MutationObserver(
-      this.handleOverlayElementMutationObserverUpdate
+      this.handleOverlayElementMutationObserverUpdate,
     );
 
     this.bodyElementMutationObserver = new MutationObserver(
-      this.handleBodyElementMutationObserverUpdate
+      this.handleBodyElementMutationObserverUpdate,
     );
 
     const documentElementMutationObserver = new MutationObserver(
-      this.handleDocumentElementMutationObserverUpdate
+      this.handleDocumentElementMutationObserverUpdate,
     );
     documentElementMutationObserver.observe(globalThis.document.documentElement, {
       childList: true,
@@ -1095,7 +1093,7 @@ class AutofillOverlayContentService implements AutofillOverlayContentServiceInte
     this.mutationObserverIterations++;
     this.mutationObserverIterationsResetTimeout = setTimeout(
       () => (this.mutationObserverIterations = 0),
-      2000
+      2000,
     );
 
     if (this.mutationObserverIterations > 100) {

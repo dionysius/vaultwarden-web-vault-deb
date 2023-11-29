@@ -31,7 +31,7 @@ export default {
     applicationConfig({
       providers: [
         importProvidersFrom(
-          RouterModule.forRoot([{ path: "**", component: EmptyComponent }], { useHash: true })
+          RouterModule.forRoot([{ path: "**", component: EmptyComponent }], { useHash: true }),
         ),
       ],
     }),

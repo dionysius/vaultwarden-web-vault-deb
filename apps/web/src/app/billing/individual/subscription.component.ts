@@ -12,7 +12,7 @@ export class SubscriptionComponent {
 
   constructor(
     private stateService: StateService,
-    private platformUtilsService: PlatformUtilsService
+    private platformUtilsService: PlatformUtilsService,
   ) {}
 
   async ngOnInit() {

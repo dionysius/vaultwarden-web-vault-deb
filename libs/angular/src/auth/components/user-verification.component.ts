@@ -65,7 +65,7 @@ export class UserVerificationComponent implements ControlValueAccessor, OnInit, 
   constructor(
     private cryptoService: CryptoService,
     private userVerificationService: UserVerificationService,
-    private i18nService: I18nService
+    private i18nService: I18nService,
   ) {}
 
   async ngOnInit() {

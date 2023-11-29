@@ -41,12 +41,12 @@ const NestingDelimiter = "/";
 export class VaultFilterService implements VaultFilterServiceAbstraction {
   protected _collapsedFilterNodes = new BehaviorSubject<Set<string>>(null);
   collapsedFilterNodes$: Observable<Set<string>> = this._collapsedFilterNodes.pipe(
-    switchMap(async (nodes) => nodes ?? (await this.getCollapsedFilterNodes()))
+    switchMap(async (nodes) => nodes ?? (await this.getCollapsedFilterNodes())),
   );
 
   organizationTree$: Observable<TreeNode<OrganizationFilter>> =
     this.organizationService.memberOrganizations$.pipe(
-      switchMap((orgs) => this.buildOrganizationTree(orgs))
+      switchMap((orgs) => this.buildOrganizationTree(orgs)),
     );
 
   protected _organizationFilter = new BehaviorSubject<Organization>(null);
@@ -55,10 +55,10 @@ export class VaultFilterService implements VaultFilterServiceAbstraction {
     combineLatestWith(this._organizationFilter),
     switchMap(([folders, org]) => {
       return this.filterFolders(folders, org);
-    })
+    }),
   );
   folderTree$: Observable<TreeNode<FolderFilter>> = this.filteredFolders$.pipe(
-    map((folders) => this.buildFolderTree(folders))
+    map((folders) => this.buildFolderTree(folders)),
   );
 
   // TODO: Remove once collections is refactored with observables
@@ -70,10 +70,10 @@ export class VaultFilterService implements VaultFilterServiceAbstraction {
   ]).pipe(
     switchMap(([collections, org]) => {
       return this.filterCollections(collections, org);
-    })
+    }),
   );
   collectionTree$: Observable<TreeNode<CollectionFilter>> = this.filteredCollections$.pipe(
-    map((collections) => this.buildCollectionTree(collections))
+    map((collections) => this.buildCollectionTree(collections)),
   );
 
   cipherTypeTree$: Observable<TreeNode<CipherTypeFilter>> = this.buildCipherTypeTree();
@@ -84,7 +84,7 @@ export class VaultFilterService implements VaultFilterServiceAbstraction {
     protected folderService: FolderService,
     protected cipherService: CipherService,
     protected policyService: PolicyService,
-    protected i18nService: I18nService
+    protected i18nService: I18nService,
   ) {}
 
   async reloadCollections(collections: CollectionView[]) {
@@ -124,7 +124,7 @@ export class VaultFilterService implements VaultFilterServiceAbstraction {
   }
 
   protected async buildOrganizationTree(
-    orgs?: Organization[]
+    orgs?: Organization[],
   ): Promise<TreeNode<OrganizationFilter>> {
     const headNode = this.getOrganizationFilterHead();
     if (!(await this.policyService.policyAppliesToUser(PolicyType.PersonalOwnership))) {
@@ -166,7 +166,7 @@ export class VaultFilterService implements VaultFilterServiceAbstraction {
 
   buildTypeTree(
     head: CipherTypeFilter,
-    array?: CipherTypeFilter[]
+    array?: CipherTypeFilter[],
   ): Observable<TreeNode<CipherTypeFilter>> {
     const headNode = new TreeNode<CipherTypeFilter>(head, null);
     array?.forEach((filter) => {
@@ -178,7 +178,7 @@ export class VaultFilterService implements VaultFilterServiceAbstraction {
 
   protected async filterCollections(
     storedCollections: CollectionView[],
-    org?: Organization
+    org?: Organization,
   ): Promise<CollectionView[]> {
     return org?.id != null
       ? storedCollections.filter((c) => c.organizationId === org.id)
@@ -220,7 +220,7 @@ export class VaultFilterService implements VaultFilterServiceAbstraction {
 
   protected async filterFolders(
     storedFolders: FolderView[],
-    org?: Organization
+    org?: Organization,
   ): Promise<FolderView[]> {
     // If no org or "My Vault" is selected, show all folders
     if (org?.id == null || org?.id == "MyVault") {
@@ -231,7 +231,7 @@ export class VaultFilterService implements VaultFilterServiceAbstraction {
     const ciphers = await this.cipherService.getAllDecrypted();
     const orgCiphers = ciphers.filter((c) => c.organizationId == org?.id);
     return storedFolders.filter(
-      (f) => orgCiphers.some((oc) => oc.folderId == f.id) || f.id == null
+      (f) => orgCiphers.some((oc) => oc.folderId == f.id) || f.id == null,
     );
   }
 
@@ -298,7 +298,7 @@ export class VaultFilterService implements VaultFilterServiceAbstraction {
 
     return this.buildTypeTree(
       { id: "AllItems", name: "allItems", type: "all", icon: "" },
-      allTypeFilters
+      allTypeFilters,
     );
   }
 }

@@ -33,7 +33,7 @@ export class TrashComponent implements OnInit {
     private secretService: SecretService,
     private platformUtilsService: PlatformUtilsService,
     private i18nService: I18nService,
-    private dialogService: DialogService
+    private dialogService: DialogService,
   ) {}
 
   ngOnInit() {
@@ -43,7 +43,7 @@ export class TrashComponent implements OnInit {
       switchMap(async ([_, params]) => {
         this.organizationId = params.organizationId;
         return await this.getSecrets();
-      })
+      }),
     );
   }
 

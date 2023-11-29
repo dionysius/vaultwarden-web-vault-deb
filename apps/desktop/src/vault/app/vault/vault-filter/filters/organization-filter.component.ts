@@ -22,7 +22,7 @@ export class OrganizationFilterComponent extends BaseOrganizationFilterComponent
 
   constructor(
     private i18nService: I18nService,
-    private platformUtilsService: PlatformUtilsService
+    private platformUtilsService: PlatformUtilsService,
   ) {
     super();
   }
@@ -35,7 +35,7 @@ export class OrganizationFilterComponent extends BaseOrganizationFilterComponent
       this.platformUtilsService.showToast(
         "error",
         null,
-        this.i18nService.t("disabledOrganizationFilterError")
+        this.i18nService.t("disabledOrganizationFilterError"),
       );
     }
   }

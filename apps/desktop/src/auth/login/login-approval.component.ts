@@ -41,7 +41,7 @@ export class LoginApprovalComponent implements OnInit, OnDestroy {
     protected appIdService: AppIdService,
     protected cryptoService: CryptoService,
     private modalRef: ModalRef,
-    config: ModalConfig
+    config: ModalConfig,
   ) {
     this.notificationId = config.data.notificationId;
 
@@ -80,7 +80,7 @@ export class LoginApprovalComponent implements OnInit, OnDestroy {
         await ipc.auth.loginRequest(
           this.i18nService.t("logInRequested"),
           this.i18nService.t("confirmLoginAtemptForMail", this.email),
-          this.i18nService.t("close")
+          this.i18nService.t("close"),
         );
       }
     }
@@ -99,13 +99,13 @@ export class LoginApprovalComponent implements OnInit, OnDestroy {
       this.platformUtilsService.showToast(
         "info",
         null,
-        this.i18nService.t("thisRequestIsNoLongerValid")
+        this.i18nService.t("thisRequestIsNoLongerValid"),
       );
     } else {
       const loginResponse = await this.authService.passwordlessLogin(
         this.authRequestResponse.id,
         this.authRequestResponse.publicKey,
-        approveLogin
+        approveLogin,
       );
       this.showResultToast(loginResponse);
     }
@@ -119,14 +119,14 @@ export class LoginApprovalComponent implements OnInit, OnDestroy {
         this.i18nService.t(
           "logInConfirmedForEmailOnDevice",
           this.email,
-          loginResponse.requestDeviceType
-        )
+          loginResponse.requestDeviceType,
+        ),
       );
     } else {
       this.platformUtilsService.showToast(
         "info",
         null,
-        this.i18nService.t("youDeniedALogInAttemptFromAnotherDevice")
+        this.i18nService.t("youDeniedALogInAttemptFromAnotherDevice"),
       );
     }
   }
@@ -140,7 +140,7 @@ export class LoginApprovalComponent implements OnInit, OnDestroy {
       requestDate.getUTCHours(),
       requestDate.getUTCMinutes(),
       requestDate.getUTCSeconds(),
-      requestDate.getUTCMilliseconds()
+      requestDate.getUTCMilliseconds(),
     );
 
     const dateNow = new Date(Date.now());
@@ -151,7 +151,7 @@ export class LoginApprovalComponent implements OnInit, OnDestroy {
       dateNow.getUTCHours(),
       dateNow.getUTCMinutes(),
       dateNow.getUTCSeconds(),
-      dateNow.getUTCMilliseconds()
+      dateNow.getUTCMilliseconds(),
     );
 
     const diffInMinutes = dateNowUTC - requestDateUTC;
@@ -161,7 +161,7 @@ export class LoginApprovalComponent implements OnInit, OnDestroy {
     } else if (diffInMinutes < RequestTimeOut) {
       this.requestTimeText = this.i18nService.t(
         "requestedXMinutesAgo",
-        (diffInMinutes / 60000).toFixed()
+        (diffInMinutes / 60000).toFixed(),
       );
     } else {
       clearInterval(this.interval);
@@ -169,7 +169,7 @@ export class LoginApprovalComponent implements OnInit, OnDestroy {
       this.platformUtilsService.showToast(
         "info",
         null,
-        this.i18nService.t("loginRequestHasAlreadyExpired")
+        this.i18nService.t("loginRequestHasAlreadyExpired"),
       );
     }
   }

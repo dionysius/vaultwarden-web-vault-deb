@@ -63,7 +63,7 @@ export class VaultTimeoutInputComponent
     private formBuilder: FormBuilder,
     private policyService: PolicyService,
     private vaultTimeoutSettingsService: VaultTimeoutSettingsService,
-    private i18nService: I18nService
+    private i18nService: I18nService,
   ) {}
 
   async ngOnInit() {
@@ -71,7 +71,7 @@ export class VaultTimeoutInputComponent
       .get$(PolicyType.MaximumVaultTimeout)
       .pipe(
         filter((policy) => policy != null),
-        takeUntil(this.destroy$)
+        takeUntil(this.destroy$),
       )
       .subscribe((policy) => {
         this.vaultTimeoutPolicy = policy;
@@ -93,7 +93,7 @@ export class VaultTimeoutInputComponent
     this.form.controls.vaultTimeout.valueChanges
       .pipe(
         filter((value) => value !== VaultTimeoutInputComponent.CUSTOM_VALUE),
-        takeUntil(this.destroy$)
+        takeUntil(this.destroy$),
       )
       .subscribe((value) => {
         const current = Math.max(value, 0);
@@ -108,7 +108,7 @@ export class VaultTimeoutInputComponent
               minutes: current % 60,
             },
           },
-          { emitEvent: false }
+          { emitEvent: false },
         );
       });
 
@@ -202,7 +202,7 @@ export class VaultTimeoutInputComponent
       (t) =>
         t.value <= this.vaultTimeoutPolicy.data.minutes &&
         (t.value > 0 || t.value === VaultTimeoutInputComponent.CUSTOM_VALUE) &&
-        t.value != null
+        t.value != null,
     );
     this.validatorChange();
   }

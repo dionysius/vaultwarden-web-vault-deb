@@ -33,7 +33,7 @@ export class FolderAddEditComponent implements OnInit {
     protected platformUtilsService: PlatformUtilsService,
     protected logService: LogService,
     protected dialogService: DialogService,
-    protected formBuilder: FormBuilder
+    protected formBuilder: FormBuilder,
   ) {}
 
   async ngOnInit() {
@@ -46,7 +46,7 @@ export class FolderAddEditComponent implements OnInit {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
-        this.i18nService.t("nameRequired")
+        this.i18nService.t("nameRequired"),
       );
       return false;
     }
@@ -58,7 +58,7 @@ export class FolderAddEditComponent implements OnInit {
       this.platformUtilsService.showToast(
         "success",
         null,
-        this.i18nService.t(this.editMode ? "editedFolder" : "addedFolder")
+        this.i18nService.t(this.editMode ? "editedFolder" : "addedFolder"),
       );
       this.onSavedFolder.emit(this.folder);
       return true;

@@ -5,6 +5,6 @@ export class WebAuthnLoginCredentialAssertionView {
   constructor(
     readonly token: string,
     readonly deviceResponse: WebAuthnLoginAssertionResponseRequest,
-    readonly prfKey?: PrfKey
+    readonly prfKey?: PrfKey,
   ) {}
 }

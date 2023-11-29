@@ -20,7 +20,7 @@ export class OrganizationAuthRequestService {
       `/organizations/${organizationId}/auth-requests`,
       null,
       true,
-      true
+      true,
     );
 
     const listResponse = new ListResponse(r, PendingOrganizationAuthRequestResponse);
@@ -34,21 +34,21 @@ export class OrganizationAuthRequestService {
       `/organizations/${organizationId}/auth-requests/deny`,
       new BulkDenyAuthRequestsRequest(requestIds),
       true,
-      false
+      false,
     );
   }
 
   async approvePendingRequest(
     organizationId: string,
     requestId: string,
-    encryptedKey: EncString
+    encryptedKey: EncString,
   ): Promise<void> {
     await this.apiService.send(
       "POST",
       `/organizations/${organizationId}/auth-requests/${requestId}`,
       new AdminAuthRequestUpdateRequest(true, encryptedKey.encryptedString),
       true,
-      false
+      false,
     );
   }
 }

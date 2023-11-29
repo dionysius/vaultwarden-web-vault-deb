@@ -69,7 +69,7 @@ export class PeopleComponent
     userNamePipe: UserNamePipe,
     stateService: StateService,
     private providerService: ProviderService,
-    dialogService: DialogService
+    dialogService: DialogService,
   ) {
     super(
       apiService,
@@ -83,7 +83,7 @@ export class PeopleComponent
       searchPipe,
       userNamePipe,
       stateService,
-      dialogService
+      dialogService,
     );
   }
 
@@ -161,7 +161,7 @@ export class PeopleComponent
           modal.close();
           this.removeUser(user);
         });
-      }
+      },
     );
   }
 
@@ -188,7 +188,7 @@ export class PeopleComponent
       (comp) => {
         comp.providerId = this.providerId;
         comp.users = this.getCheckedUsers();
-      }
+      },
     );
 
     await modal.onClosedPromise();
@@ -207,7 +207,7 @@ export class PeopleComponent
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
-        this.i18nService.t("noSelectedUsersApplicable")
+        this.i18nService.t("noSelectedUsersApplicable"),
       );
       return;
     }
@@ -219,7 +219,7 @@ export class PeopleComponent
         users,
         filteredUsers,
         response,
-        this.i18nService.t("bulkReinviteMessage")
+        this.i18nService.t("bulkReinviteMessage"),
       );
     } catch (e) {
       this.validationService.showError(e);
@@ -238,7 +238,7 @@ export class PeopleComponent
       (comp) => {
         comp.providerId = this.providerId;
         comp.users = this.getCheckedUsers();
-      }
+      },
     );
 
     await modal.onClosedPromise();
@@ -249,14 +249,14 @@ export class PeopleComponent
     users: ProviderUserUserDetailsResponse[],
     filteredUsers: ProviderUserUserDetailsResponse[],
     request: Promise<ListResponse<ProviderUserBulkResponse>>,
-    successfullMessage: string
+    successfullMessage: string,
   ) {
     const [modal, childComponent] = await this.modalService.openViewRef(
       BulkStatusComponent,
       this.bulkStatusModalRef,
       (comp) => {
         comp.loading = true;
-      }
+      },
     );
 
     // Workaround to handle closing the modal shortly after it has been opened

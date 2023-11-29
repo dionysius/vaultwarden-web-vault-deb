@@ -5,7 +5,10 @@ export abstract class TokenRequest {
   protected device?: DeviceRequest;
   protected authRequest: string;
 
-  constructor(protected twoFactor?: TokenTwoFactorRequest, device?: DeviceRequest) {
+  constructor(
+    protected twoFactor?: TokenTwoFactorRequest,
+    device?: DeviceRequest,
+  ) {
     this.device = device != null ? device : null;
   }
 
