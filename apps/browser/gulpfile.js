@@ -1,7 +1,7 @@
 const child = require("child_process");
 const fs = require("fs");
 
-const del = require("del");
+const { rimraf } = require("rimraf");
 const gulp = require("gulp");
 const gulpif = require("gulp-if");
 const jeditor = require("gulp-json-editor");
@@ -131,7 +131,7 @@ function distSafariApp(cb, subBuildPath) {
     ];
   }
 
-  return del([buildPath + "**/*"])
+  return rimraf([buildPath + "**/*"], { glob: true })
     .then(() => safariCopyAssets(paths.safari + "**/*", buildPath))
     .then(() => safariCopyBuild(paths.build + "**/*", buildPath + "safari/app"))
     .then(() => {
