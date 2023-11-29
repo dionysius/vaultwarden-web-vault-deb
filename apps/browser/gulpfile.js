@@ -3,11 +3,9 @@ const fs = require("fs");
 
 const del = require("del");
 const gulp = require("gulp");
-const filter = require("gulp-filter");
 const gulpif = require("gulp-if");
 const jeditor = require("gulp-json-editor");
 const replace = require("gulp-replace");
-const zip = require("gulp-zip");
 
 const manifest = require("./src/manifest.json");
 
@@ -47,7 +45,10 @@ function distFileName(browserName, ext) {
   return `dist-${browserName}${buildString()}.${ext}`;
 }
 
-function dist(browserName, manifest) {
+async function dist(browserName, manifest) {
+  const { default: zip } = await import("gulp-zip");
+  const { default: filter } = await import("gulp-filter");
+
   return gulp
     .src(paths.build + "**/*")
     .pipe(filter(["**"].concat(filters.fonts).concat(filters.safari)))
@@ -144,7 +145,9 @@ function distSafariApp(cb, subBuildPath) {
       stdOutProc(proc);
       return new Promise((resolve) => proc.on("close", resolve));
     })
-    .then(() => {
+    .then(async () => {
+      const { default: filter } = await import("gulp-filter");
+
       const libs = fs
         .readdirSync(builtAppexFrameworkPath)
         .filter((p) => p.endsWith(".dylib"))
@@ -187,7 +190,9 @@ function safariCopyAssets(source, dest) {
   });
 }
 
-function safariCopyBuild(source, dest) {
+async function safariCopyBuild(source, dest) {
+  const { default: filter } = await import("gulp-filter");
+
   return new Promise((resolve, reject) => {
     gulp
       .src(source)
@@ -216,7 +221,10 @@ function stdOutProc(proc) {
   proc.stderr.on("data", (data) => console.error(data.toString()));
 }
 
-function ciCoverage(cb) {
+async function ciCoverage(cb) {
+  const { default: zip } = await import("gulp-zip");
+  const { default: filter } = await import("gulp-filter");
+
   return gulp
     .src(paths.coverage + "**/*")
     .pipe(filter(["**", "!coverage/coverage*.zip"]))
