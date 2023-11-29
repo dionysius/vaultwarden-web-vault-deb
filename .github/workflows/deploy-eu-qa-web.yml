@@ -11,6 +11,21 @@ on:
         default: master
 
 jobs:
+  notify-start:
+    name: Notify Slack with start message
+    runs-on: ubuntu-22.04
+    if: always()
+    steps:
+      - uses: bitwarden/gh-actions/report-deployment-status-to-slack@main
+        with:
+          project: Web
+          environment: EU QA Cloud
+          tag: ${{ github.ref_name }}
+          slack-channel: team-eng-qa-devops
+          event: 'start'
+          url: https://github.com/bitwarden/clients/actions/runs/${{ github.run_id }}
+          AZURE_KV_CI_SERVICE_PRINCIPAL: ${{ secrets.AZURE_KV_CI_SERVICE_PRINCIPAL }}
+
   azure-deploy:
     name: Deploy to Azure
     runs-on: ubuntu-22.04
@@ -71,5 +86,6 @@ jobs:
           environment: EU QA Cloud
           tag: ${{ github.event.inputs.tag }}
           slack-channel: team-eng-qa-devops
-          failure: ${{ needs.azure-deploy.result == 'failure' }}
+          event: ${{ needs.azure-deploy.result }}
+          url: https://github.com/bitwarden/devops/actions/runs/${{ github.run_id }}
           AZURE_KV_CI_SERVICE_PRINCIPAL: ${{ secrets.AZURE_KV_CI_SERVICE_PRINCIPAL }}

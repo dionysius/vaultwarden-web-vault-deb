@@ -57,6 +57,21 @@ jobs:
             echo "environment-artifact=web-*-cloud-COMMERCIAL.zip" >> $GITHUB_OUTPUT
           fi
 
+  notify-start:
+    name: Notify Slack with start message
+    runs-on: ubuntu-22.04
+    if: always()
+    steps:
+      - uses: bitwarden/gh-actions/report-deployment-status-to-slack@main
+        with:
+          project: Web
+          environment: US ${{ inputs.environment }} Cloud
+          tag: ${{ github.ref_name }}
+          slack-channel: team-eng-qa-devops
+          event: 'start'
+          url: https://github.com/bitwarden/clients/actions/runs/${{ github.run_id }}
+          AZURE_KV_CI_SERVICE_PRINCIPAL: ${{ secrets.AZURE_KV_CI_SERVICE_PRINCIPAL }}
+
   artifact-check:
     name: Check if Web artifact is present
     runs-on: ubuntu-22.04
@@ -253,5 +268,6 @@ jobs:
           environment: US ${{ inputs.environment }} Cloud
           tag: ${{ github.ref_name }}
           slack-channel: team-eng-qa-devops
-          failure: ${{ needs.cfpages-deploy.result == 'failure' }}
+          event: ${{ needs.cfpages-deploy.result }}
+          url: https://github.com/bitwarden/clients/actions/runs/${{ github.run_id }}
           AZURE_KV_CI_SERVICE_PRINCIPAL: ${{ secrets.AZURE_KV_CI_SERVICE_PRINCIPAL }}
