@@ -55,5 +55,8 @@ export class SendAccessTextComponent {
 
   protected toggleText() {
     this.showText = !this.showText;
+    this.formGroup.controls.sendText.patchValue(
+      this.showText ? this.send.text.text : this.send.text.maskedText
+    );
   }
 }
