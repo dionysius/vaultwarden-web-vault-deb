@@ -1,9 +1,14 @@
-import { Component } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { Component, Input } from "@angular/core";
+
+export type LayoutVariant = "primary" | "secondary";
 
 @Component({
   selector: "bit-layout",
   templateUrl: "layout.component.html",
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
 })
-export class LayoutComponent {}
+export class LayoutComponent {
+  @Input() variant: LayoutVariant = "primary";
+}

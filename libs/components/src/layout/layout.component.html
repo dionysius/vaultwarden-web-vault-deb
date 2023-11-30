@@ -1,5 +1,13 @@
 <div class="tw-flex tw-w-full">
   <aside
+    [ngStyle]="
+      variant === 'secondary' && {
+        '--color-text-alt2': 'var(--color-text-main)',
+        '--color-background-alt3': 'var(--color-secondary-100)',
+        '--color-background-alt4': 'var(--color-secondary-300)',
+        '--color-secondary-300': 'var(--color-secondary-500)'
+      }
+    "
     class="tw-fixed tw-inset-y-0 tw-left-0 tw-h-screen tw-w-60 tw-overflow-auto tw-bg-background-alt3"
   >
     <ng-content select="[slot=sidebar]"></ng-content>
