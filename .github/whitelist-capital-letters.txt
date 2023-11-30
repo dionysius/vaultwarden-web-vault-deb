@@ -40,14 +40,6 @@
 ./apps/browser/README.md
 ./apps/browser/store/windows/AppxManifest.xml
 ./apps/browser/src/background/nativeMessaging.background.ts
-./apps/browser/src/background/models/addLoginRuntimeMessage.ts
-./apps/browser/src/background/models/addChangePasswordQueueMessage.ts
-./apps/browser/src/background/models/addLoginQueueMessage.ts
-./apps/browser/src/background/models/changePasswordRuntimeMessage.ts
-./apps/browser/src/background/models/notificationQueueMessage.ts
-./apps/browser/src/background/models/notificationQueueMessageType.ts
-./apps/browser/src/background/models/lockedVaultPendingNotificationsItem.ts
-./apps/browser/src/background/webRequest.background.ts
 ./apps/browser/src/popup/services/debounceNavigationService.ts
 ./apps/browser/src/models/browserComponentState.ts
 ./apps/browser/src/models/browserSendComponentState.ts

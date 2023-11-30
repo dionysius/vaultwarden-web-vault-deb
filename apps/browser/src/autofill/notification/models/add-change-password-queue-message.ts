@@ -1,5 +1,5 @@
-import NotificationQueueMessage from "./notificationQueueMessage";
-import { NotificationQueueMessageType } from "./notificationQueueMessageType";
+import NotificationQueueMessage from "./notification-queue-message";
+import { NotificationQueueMessageType } from "./notification-queue-message-type";
 
 export default class AddChangePasswordQueueMessage extends NotificationQueueMessage {
   type: NotificationQueueMessageType.ChangePassword;

@@ -5,10 +5,10 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 
 import { openUnlockPopout } from "../auth/popup/utils/auth-popout-window";
+import LockedVaultPendingNotificationsItem from "../autofill/notification/models/locked-vault-pending-notifications-item";
 import { BrowserApi } from "../platform/browser/browser-api";
 
 import MainBackground from "./main.background";
-import LockedVaultPendingNotificationsItem from "./models/lockedVaultPendingNotificationsItem";
 
 export default class CommandsBackground {
   private isSafari: boolean;

@@ -13,6 +13,7 @@ import {
   openSsoAuthResultPopout,
   openTwoFactorAuthPopout,
 } from "../auth/popup/utils/auth-popout-window";
+import LockedVaultPendingNotificationsItem from "../autofill/notification/models/locked-vault-pending-notifications-item";
 import { AutofillService } from "../autofill/services/abstractions/autofill.service";
 import { BrowserApi } from "../platform/browser/browser-api";
 import { BrowserStateService } from "../platform/services/abstractions/browser-state.service";
@@ -21,7 +22,6 @@ import BrowserPlatformUtilsService from "../platform/services/browser-platform-u
 import { AbortManager } from "../vault/background/abort-manager";
 
 import MainBackground from "./main.background";
-import LockedVaultPendingNotificationsItem from "./models/lockedVaultPendingNotificationsItem";
 
 export default class RuntimeBackground {
   private autofillTimeout: any;

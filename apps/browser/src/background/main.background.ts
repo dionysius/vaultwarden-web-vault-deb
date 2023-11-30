@@ -128,6 +128,7 @@ import ContextMenusBackground from "../autofill/background/context-menus.backgro
 import NotificationBackground from "../autofill/background/notification.background";
 import OverlayBackground from "../autofill/background/overlay.background";
 import TabsBackground from "../autofill/background/tabs.background";
+import WebRequestBackground from "../autofill/background/web-request.background";
 import { CipherContextMenuHandler } from "../autofill/browser/cipher-context-menu-handler";
 import { ContextMenuClickedHandler } from "../autofill/browser/context-menu-clicked-handler";
 import { MainContextMenuHandler } from "../autofill/browser/main-context-menu-handler";
@@ -162,7 +163,6 @@ import CommandsBackground from "./commands.background";
 import IdleBackground from "./idle.background";
 import { NativeMessagingBackground } from "./nativeMessaging.background";
 import RuntimeBackground from "./runtime.background";
-import WebRequestBackground from "./webRequest.background";
 
 export default class MainBackground {
   messagingService: MessagingServiceAbstraction;

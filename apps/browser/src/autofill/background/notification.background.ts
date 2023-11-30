@@ -13,17 +13,17 @@ import { CipherType } from "@bitwarden/common/vault/enums";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 
 import { openUnlockPopout } from "../../auth/popup/utils/auth-popout-window";
-import AddUnlockVaultQueueMessage from "../../background/models/add-unlock-vault-queue-message";
-import AddChangePasswordQueueMessage from "../../background/models/addChangePasswordQueueMessage";
-import AddLoginQueueMessage from "../../background/models/addLoginQueueMessage";
-import AddLoginRuntimeMessage from "../../background/models/addLoginRuntimeMessage";
-import ChangePasswordRuntimeMessage from "../../background/models/changePasswordRuntimeMessage";
-import LockedVaultPendingNotificationsItem from "../../background/models/lockedVaultPendingNotificationsItem";
-import { NotificationQueueMessageType } from "../../background/models/notificationQueueMessageType";
 import { BrowserApi } from "../../platform/browser/browser-api";
 import { BrowserStateService } from "../../platform/services/abstractions/browser-state.service";
 import { openAddEditVaultItemPopout } from "../../vault/popup/utils/vault-popout-window";
 import { NOTIFICATION_BAR_LIFESPAN_MS } from "../constants";
+import AddChangePasswordQueueMessage from "../notification/models/add-change-password-queue-message";
+import AddLoginQueueMessage from "../notification/models/add-login-queue-message";
+import AddLoginRuntimeMessage from "../notification/models/add-login-runtime-message";
+import AddUnlockVaultQueueMessage from "../notification/models/add-unlock-vault-queue-message";
+import ChangePasswordRuntimeMessage from "../notification/models/change-password-runtime-message";
+import LockedVaultPendingNotificationsItem from "../notification/models/locked-vault-pending-notifications-item";
+import { NotificationQueueMessageType } from "../notification/models/notification-queue-message-type";
 import { AutofillService } from "../services/abstractions/autofill.service";
 
 export default class NotificationBackground {

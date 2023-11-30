@@ -4,7 +4,7 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { UriMatchType } from "@bitwarden/common/vault/enums";
 
-import { BrowserApi } from "../platform/browser/browser-api";
+import { BrowserApi } from "../../platform/browser/browser-api";
 
 export default class WebRequestBackground {
   private pendingAuthRequests: any[] = [];

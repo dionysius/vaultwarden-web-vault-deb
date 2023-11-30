@@ -4,8 +4,8 @@ import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { LoginUriView } from "@bitwarden/common/vault/models/view/login-uri.view";
 import { LoginView } from "@bitwarden/common/vault/models/view/login.view";
 
-import NotificationQueueMessage from "./notificationQueueMessage";
-import { NotificationQueueMessageType } from "./notificationQueueMessageType";
+import NotificationQueueMessage from "./notification-queue-message";
+import { NotificationQueueMessageType } from "./notification-queue-message-type";
 
 export default class AddLoginQueueMessage extends NotificationQueueMessage {
   type: NotificationQueueMessageType.AddLogin;

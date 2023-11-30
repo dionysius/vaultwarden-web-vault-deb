@@ -1,7 +1,7 @@
-import AddLoginRuntimeMessage from "../../background/models/addLoginRuntimeMessage";
-import ChangePasswordRuntimeMessage from "../../background/models/changePasswordRuntimeMessage";
 import AutofillField from "../models/autofill-field";
 import { WatchedForm } from "../models/watched-form";
+import AddLoginRuntimeMessage from "../notification/models/add-login-runtime-message";
+import ChangePasswordRuntimeMessage from "../notification/models/change-password-runtime-message";
 import { FormData } from "../services/abstractions/autofill.service";
 import { GlobalSettings, UserSettings } from "../types";
 
