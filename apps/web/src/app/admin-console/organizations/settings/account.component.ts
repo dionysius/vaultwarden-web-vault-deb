@@ -18,7 +18,7 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { DialogService } from "@bitwarden/components";
 
-import { ApiKeyComponent } from "../../../settings/api-key.component";
+import { ApiKeyComponent } from "../../../auth/settings/security/api-key.component";
 import { PurgeVaultComponent } from "../../../vault/settings/purge-vault.component";
 
 import { DeleteOrganizationDialogResult, openDeleteOrganizationDialog } from "./components";

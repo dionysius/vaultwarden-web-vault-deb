@@ -3,9 +3,9 @@ import { Component, ViewChild, ViewContainerRef } from "@angular/core";
 import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 
-import { DeauthorizeSessionsComponent } from "../auth/settings/deauthorize-sessions.component";
-import { PurgeVaultComponent } from "../vault/settings/purge-vault.component";
+import { PurgeVaultComponent } from "../../../vault/settings/purge-vault.component";
 
+import { DeauthorizeSessionsComponent } from "./deauthorize-sessions.component";
 import { DeleteAccountComponent } from "./delete-account.component";
 
 @Component({

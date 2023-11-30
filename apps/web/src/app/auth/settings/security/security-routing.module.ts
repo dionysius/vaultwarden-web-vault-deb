@@ -1,8 +1,8 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
-import { ChangePasswordComponent } from "../auth/settings/change-password.component";
-import { TwoFactorSetupComponent } from "../auth/settings/two-factor-setup.component";
+import { ChangePasswordComponent } from "../change-password.component";
+import { TwoFactorSetupComponent } from "../two-factor-setup.component";
 
 import { SecurityKeysComponent } from "./security-keys.component";
 import { SecurityComponent } from "./security.component";
