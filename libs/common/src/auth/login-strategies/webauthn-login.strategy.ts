@@ -61,7 +61,9 @@ export class WebAuthnLoginStrategy extends LoginStrategy {
   }
 
   async logIn(credentials: WebAuthnLoginCredentials) {
-    this.credentials = credentials;
+    // NOTE: To avoid DeadObject references on Firefox, do not set the credentials object directly
+    // Use deep copy in future if objects are added that were created in popup
+    this.credentials = { ...credentials };
 
     this.tokenRequest = new WebAuthnLoginTokenRequest(
       credentials.token,

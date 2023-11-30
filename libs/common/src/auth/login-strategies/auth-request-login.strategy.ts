@@ -58,7 +58,9 @@ export class AuthRequestLoginStrategy extends LoginStrategy {
   }
 
   override async logIn(credentials: AuthRequestLoginCredentials) {
-    this.authRequestCredentials = credentials;
+    // NOTE: To avoid DeadObject references on Firefox, do not set the credentials object directly
+    // Use deep copy in future if objects are added that were created in popup
+    this.authRequestCredentials = { ...credentials };
 
     this.tokenRequest = new PasswordTokenRequest(
       credentials.email,

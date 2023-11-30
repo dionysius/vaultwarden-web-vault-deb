@@ -208,6 +208,8 @@ export class AuthService implements AuthServiceAbstraction {
         break;
     }
 
+    // Note: Do not set the credentials object directly on the strategy. They are
+    // created in the popup and can cause DeadObject references on Firefox.
     const result = await strategy.logIn(credentials as any);
 
     if (result?.requiresTwoFactor) {
