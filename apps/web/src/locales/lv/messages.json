@@ -612,13 +612,13 @@
     "message": "Pieteikties ar galveno paroli"
   },
   "readingPasskeyLoading": {
-    "message": "Reading passkey..."
+    "message": "Nolasa piekļuves atslēgu…"
   },
   "readingPasskeyLoadingInfo": {
-    "message": "Keep this window open and follow prompts from your browser."
+    "message": "Šis logs ir jāpatur atvērts un jāseko uzvednēm pārlūkā."
   },
   "useADifferentLogInMethod": {
-    "message": "Use a different log in method"
+    "message": "Jāizmanto cits pieteikšanās veids"
   },
   "loginWithPasskey": {
     "message": "Pieteikties ar piekļuves atslēgu"
@@ -7322,6 +7322,9 @@
   "limitCollectionCreationDeletionDesc": {
     "message": "Ļaut krājumu izveidošanu un izdzēšanu tikai īpašniekiem un pārvaldniekiem"
   },
+  "allowAdminAccessToAllCollectionItemsDesc": {
+    "message": "Īpašnieki un pārvaldnieki var pārvaldīt visus krājumus un vienumus"
+  },
   "collectionManagementUpdated": {
     "message": "Krājumu pārvaldības uzvedība saglabāta"
   },
@@ -7403,6 +7406,15 @@
   },
   "passkeyNotCopiedAlert": {
     "message": "Piekļuves atslēga netiks ievietota klonētajā vienumā. Vai turpināt šī vienuma klonēšanu?"
+  },
+  "modifiedCollectionManagement": {
+    "message": "Mainīts krājuma pārvaldības iestatījums $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
+      }
+    }
   },
   "seeDetailedInstructions": {
     "message": "Izvērstas norādes ir aplūkojamas mūsu palīdzības vietnē",

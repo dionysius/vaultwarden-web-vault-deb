@@ -612,13 +612,13 @@
     "message": "Пријавите се са главном лозинком"
   },
   "readingPasskeyLoading": {
-    "message": "Reading passkey..."
+    "message": "Читање притупачног кључа..."
   },
   "readingPasskeyLoadingInfo": {
-    "message": "Keep this window open and follow prompts from your browser."
+    "message": "Држите овај прозор отворен и пратите упутства из прегледача."
   },
   "useADifferentLogInMethod": {
-    "message": "Use a different log in method"
+    "message": "Користи други начин пријављивања"
   },
   "loginWithPasskey": {
     "message": "Пријавите се са приступачним кључем"
@@ -7322,6 +7322,9 @@
   "limitCollectionCreationDeletionDesc": {
     "message": "Ограничите креирање и брисање збирке на власнике и администраторе"
   },
+  "allowAdminAccessToAllCollectionItemsDesc": {
+    "message": "Власници и администратори могу да управљају свим колекцијама и ставкама"
+  },
   "collectionManagementUpdated": {
     "message": "Понашање управљања збирке је сачувано"
   },
@@ -7403,6 +7406,15 @@
   },
   "passkeyNotCopiedAlert": {
     "message": "Приступачни кључ неће бити копиран на клонирану ставку. Да ли желите да наставите са клонирањем ставке?"
+  },
+  "modifiedCollectionManagement": {
+    "message": "Измењено подешавање управљања колекцијом $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
+      }
+    }
   },
   "seeDetailedInstructions": {
     "message": "Погледајте детаљна упутства на нашој веб локацији за помоћ на",

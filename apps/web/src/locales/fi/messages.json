@@ -612,22 +612,22 @@
     "message": "Kirjaudu pääsalasanalla"
   },
   "readingPasskeyLoading": {
-    "message": "Reading passkey..."
+    "message": "Luetaan suojausavaimia..."
   },
   "readingPasskeyLoadingInfo": {
-    "message": "Keep this window open and follow prompts from your browser."
+    "message": "Pidä tämä ikkuna auki ja seuraa opasteita selaimessasi."
   },
   "useADifferentLogInMethod": {
-    "message": "Use a different log in method"
+    "message": "Käytä eri sisäänkirjautumistapaa"
   },
   "loginWithPasskey": {
     "message": "Kirjaudu suojausavaimella"
   },
   "invalidPasskeyPleaseTryAgain": {
-    "message": "Invalid Passkey. Please try again."
+    "message": "Kelpaamaton suojausavain. Ole hyvä ja yritä uudelleen."
   },
   "twoFactorForPasskeysNotSupportedOnClientUpdateToLogIn": {
-    "message": "2FA for passkeys is not supported. Update the app to log in."
+    "message": "2FA salausavaimille ei ole tuettu. Päivitä ohjelma kirjautuaksesi sisään."
   },
   "loginWithPasskeyInfo": {
     "message": "Käytä generoitua suojausavainta, joka kirjaa sinut automaattisesti sisään ilman salasanaa. Henkilöllisyytesi vahvistetaan kasvojen tunnistuksen tai sormenjäljen kataisilla biometrisillä tiedoilla, tai jollakin muulla FIDO2-suojausratkaisulla."
@@ -681,7 +681,7 @@
     "message": "Käytetään salaukseen"
   },
   "loginWithPasskeyEnabled": {
-    "message": "Kirjautuminen suojausavaimella on käytössä"
+    "message": "Suojausavainkirjautuminen on käytössä"
   },
   "passkeySaved": {
     "message": "$NAME$ tallennettiin",
@@ -2778,7 +2778,7 @@
     "message": "Verkkoholvi"
   },
   "cli": {
-    "message": "komentoliittymä"
+    "message": "komentorivi"
   },
   "bitWebVault": {
     "message": "Bitwarden Verkkoholvi"
@@ -7322,6 +7322,9 @@
   "limitCollectionCreationDeletionDesc": {
     "message": "Rajoita kokoelmien luonti ja poisto omistajille ja ylläpitäjille."
   },
+  "allowAdminAccessToAllCollectionItemsDesc": {
+    "message": "Omistajat ja ylläpitäjät voivat hallita kaikkia kokoelmia ja kohteita"
+  },
   "collectionManagementUpdated": {
     "message": "Kokoelmien hallintakäyttäytyminen tallennettiin"
   },
@@ -7404,6 +7407,15 @@
   "passkeyNotCopiedAlert": {
     "message": "Suojausavain ei kopioidu kloonattuun kohteeseen. Haluatko jatkaa kloonausta?"
   },
+  "modifiedCollectionManagement": {
+    "message": "Muutettu kokoelman hallinta-asetusta $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
+      }
+    }
+  },
   "seeDetailedInstructions": {
     "message": "Katso tarkemmat ohjeet tukisivustoltamme osoitteesta",
     "description": "This is followed a by a hyperlink to the help website."
@@ -7415,12 +7427,12 @@
     "message": "Odottamaton virhe ladattaessa Sendiä. Yritä myöhemmin uudelleen."
   },
   "seatLimitReached": {
-    "message": "Seat limit has been reached"
+    "message": "Istuntojen määrä on saavutettu"
   },
   "contactYourProvider": {
-    "message": "Contact your provider to purchase additional seats."
+    "message": "Ota yhteyttä palveluntarjoajaasi ostaaksesi lisäpaikkoja."
   },
   "seatLimitReachedContactYourProvider": {
-    "message": "Seat limit has been reached. Contact your provider to purchase additional seats."
+    "message": "Istuntojen määrä on saavutettu. Ota yhteyttä toimittajaasi ostaaksesi lisäpaikkoja."
   }
 }

@@ -7322,6 +7322,9 @@
   "limitCollectionCreationDeletionDesc": {
     "message": "Limitar a criação e eliminação de coleções aos proprietários e administradores"
   },
+  "allowAdminAccessToAllCollectionItemsDesc": {
+    "message": "Os proprietários e administradores podem gerir todas as coleções e itens"
+  },
   "collectionManagementUpdated": {
     "message": "Comportamento de gestão de coleções guardado"
   },
@@ -7403,6 +7406,15 @@
   },
   "passkeyNotCopiedAlert": {
     "message": "A chave de acesso não será copiada para o item duplicado. Pretende ainda assim duplicar este item?"
+  },
+  "modifiedCollectionManagement": {
+    "message": "Definição de gestão de coleções modificada $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
+      }
+    }
   },
   "seeDetailedInstructions": {
     "message": "Consulte as instruções detalhadas no nosso site de ajuda em",

@@ -615,10 +615,10 @@
     "message": "Geçiş anahtarı okunuyor..."
   },
   "readingPasskeyLoadingInfo": {
-    "message": "Bu pencereyi açık tutun ve tarayıcınızdan gelen talimatları izleyin."
+    "message": "Bu pencereyi açık tutun ve tarayıcınızdan gelen talimatları uygulayın."
   },
   "useADifferentLogInMethod": {
-    "message": "Farklı bir oturum açma yöntemi kullanın"
+    "message": "Başka bir giriş yöntemi kullan"
   },
   "loginWithPasskey": {
     "message": "Geçiş anahtarıyla giriş yap"
@@ -7322,6 +7322,9 @@
   "limitCollectionCreationDeletionDesc": {
     "message": "Koleksiyon oluşturma ve silme işlemlerini sahipler ve yöneticilerle sınırlandırın"
   },
+  "allowAdminAccessToAllCollectionItemsDesc": {
+    "message": "Sahipler ve yöneticiler tüm koleksiyonları ve öğeleri yönetebilir"
+  },
   "collectionManagementUpdated": {
     "message": "Collection management behavior saved"
   },
@@ -7403,6 +7406,15 @@
   },
   "passkeyNotCopiedAlert": {
     "message": "Geçiş anahtarı klonlanan öğeye kopyalanmayacaktır. Bu öğeyi klonlamaya devam etmek istiyor musunuz?"
+  },
+  "modifiedCollectionManagement": {
+    "message": "Koleksiyon yönetimi ayarı $ID$ değiştirildi.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
+      }
+    }
   },
   "seeDetailedInstructions": {
     "message": "Ayrıntılı talimatları yardım sitemizde bulabilirsiniz:",

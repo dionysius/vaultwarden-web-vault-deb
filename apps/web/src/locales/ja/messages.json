@@ -7322,6 +7322,9 @@
   "limitCollectionCreationDeletionDesc": {
     "message": "コレクションの作成・削除を所有者と管理者のみに制限"
   },
+  "allowAdminAccessToAllCollectionItemsDesc": {
+    "message": "所有者と管理者はすべてのコレクションとアイテムを管理できます"
+  },
   "collectionManagementUpdated": {
     "message": "コレクション管理の挙動を保存しました"
   },
@@ -7403,6 +7406,15 @@
   },
   "passkeyNotCopiedAlert": {
     "message": "パスキーは複製されたアイテムにコピーされません。このアイテムを複製しますか？"
+  },
+  "modifiedCollectionManagement": {
+    "message": "コレクション管理設定 $ID$ を変更しました。",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
+      }
+    }
   },
   "seeDetailedInstructions": {
     "message": "詳細な手順はこちらをご覧ください：",

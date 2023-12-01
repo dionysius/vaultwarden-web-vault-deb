@@ -612,13 +612,13 @@
     "message": "Se connecter avec le mot de passe principal"
   },
   "readingPasskeyLoading": {
-    "message": "Reading passkey..."
+    "message": "Lecture de la Passkey..."
   },
   "readingPasskeyLoadingInfo": {
-    "message": "Keep this window open and follow prompts from your browser."
+    "message": "Gardez cette fenêtre ouverte et suivez les instructions de votre navigateur."
   },
   "useADifferentLogInMethod": {
-    "message": "Use a different log in method"
+    "message": "Utiliser une méthode de connexion différente"
   },
   "loginWithPasskey": {
     "message": "Se connecter avec la clé d'accès"
@@ -7322,6 +7322,9 @@
   "limitCollectionCreationDeletionDesc": {
     "message": "Limiter la création et la suppression de la collection aux propriétaires et administrateurs"
   },
+  "allowAdminAccessToAllCollectionItemsDesc": {
+    "message": "Les propriétaires et les administrateurs peuvent gérer toutes les collections et tous les éléments"
+  },
   "collectionManagementUpdated": {
     "message": "Comportement de gestion de la collection enregistré"
   },
@@ -7403,6 +7406,15 @@
   },
   "passkeyNotCopiedAlert": {
     "message": "La passkey ne sera pas copiée à l'item cloné. Voulez-vous continuez à cloner cet élément?"
+  },
+  "modifiedCollectionManagement": {
+    "message": "Paramètre de gestion de la collection modifiée $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
+      }
+    }
   },
   "seeDetailedInstructions": {
     "message": "Consultez les instructions détaillées sur notre site d'aide à",

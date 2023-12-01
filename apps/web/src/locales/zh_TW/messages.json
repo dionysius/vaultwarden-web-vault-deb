@@ -7322,6 +7322,9 @@
   "limitCollectionCreationDeletionDesc": {
     "message": "對擁有者和管理員限制集合的建立和刪除"
   },
+  "allowAdminAccessToAllCollectionItemsDesc": {
+    "message": "Owners and admins can manage all collections and items"
+  },
   "collectionManagementUpdated": {
     "message": "集合管理行為已儲存"
   },
@@ -7403,6 +7406,15 @@
   },
   "passkeyNotCopiedAlert": {
     "message": "密碼金鑰不會被複製到克隆的項目。您想繼續克隆該項目嗎？"
+  },
+  "modifiedCollectionManagement": {
+    "message": "Modified collection management setting $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
+      }
+    }
   },
   "seeDetailedInstructions": {
     "message": "請參閱我們的幫助網站上的詳細說明：",

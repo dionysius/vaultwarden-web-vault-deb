@@ -7322,6 +7322,9 @@
   "limitCollectionCreationDeletionDesc": {
     "message": "Дозволити створення та видалення збірок лише власникам та адміністраторам"
   },
+  "allowAdminAccessToAllCollectionItemsDesc": {
+    "message": "Власники та адміністратори можуть керувати всіма збірками та записами"
+  },
   "collectionManagementUpdated": {
     "message": "Налаштування керування збірками збережено"
   },
@@ -7403,6 +7406,15 @@
   },
   "passkeyNotCopiedAlert": {
     "message": "Ключ доступу не буде скопійовано до клонованого запису. Хочете продовжити клонування цього запису?"
+  },
+  "modifiedCollectionManagement": {
+    "message": "Змінено налаштування керування збіркою $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
+      }
+    }
   },
   "seeDetailedInstructions": {
     "message": "Перегляньте докладні інструкції на нашому довідковому сайті",

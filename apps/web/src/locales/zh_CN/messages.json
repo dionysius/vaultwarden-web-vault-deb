@@ -7322,6 +7322,9 @@
   "limitCollectionCreationDeletionDesc": {
     "message": "对所有者和管理员限制集合的创建和删除"
   },
+  "allowAdminAccessToAllCollectionItemsDesc": {
+    "message": "所有者和管理员可以管理所有集合和项目"
+  },
   "collectionManagementUpdated": {
     "message": "集合管理行为已保存"
   },
@@ -7403,6 +7406,15 @@
   },
   "passkeyNotCopiedAlert": {
     "message": "通行密钥将不会被复制到克隆的项目。要继续克隆这个项目吗？"
+  },
+  "modifiedCollectionManagement": {
+    "message": "Modified collection management setting $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
+      }
+    }
   },
   "seeDetailedInstructions": {
     "message": "请参阅我们的帮助网站上的详细说明：",

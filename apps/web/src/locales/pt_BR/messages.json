@@ -612,13 +612,13 @@
     "message": "Entrar com senha mestra"
   },
   "readingPasskeyLoading": {
-    "message": "Reading passkey..."
+    "message": "Lendo a senha..."
   },
   "readingPasskeyLoadingInfo": {
-    "message": "Keep this window open and follow prompts from your browser."
+    "message": "Mantenha esta janela aberta e siga as instruções do seu navegador."
   },
   "useADifferentLogInMethod": {
-    "message": "Use a different log in method"
+    "message": "Use um método de login diferente"
   },
   "loginWithPasskey": {
     "message": "Iniciar sessão com a chave de acesso"
@@ -7322,6 +7322,9 @@
   "limitCollectionCreationDeletionDesc": {
     "message": "Limitar criação de coleção e exclusão a proprietários e administradores"
   },
+  "allowAdminAccessToAllCollectionItemsDesc": {
+    "message": "Proprietários e administradores podem gerenciar todas as coleções e itens"
+  },
   "collectionManagementUpdated": {
     "message": "Comportamento de Gerenciamento de Coleção salvo"
   },
@@ -7403,6 +7406,15 @@
   },
   "passkeyNotCopiedAlert": {
     "message": "The passkey will not be copied to the cloned item. Do you want to continue cloning this item?"
+  },
+  "modifiedCollectionManagement": {
+    "message": "Definição de gerenciamento da coleção $ID$ modificada.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
+      }
+    }
   },
   "seeDetailedInstructions": {
     "message": "Veja instruções detalhadas no nosso site de ajuda em",

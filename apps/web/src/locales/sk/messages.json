@@ -7322,6 +7322,9 @@
   "limitCollectionCreationDeletionDesc": {
     "message": "Obmedziť vytváranie a vymazávanie zbierky len pre vlastníkov a administrátorov"
   },
+  "allowAdminAccessToAllCollectionItemsDesc": {
+    "message": "Vlastníci a správcovia môžu spravovať všetky zbierky a položky"
+  },
   "collectionManagementUpdated": {
     "message": "Nastavenie správy zbierky uložené"
   },
@@ -7403,6 +7406,15 @@
   },
   "passkeyNotCopiedAlert": {
     "message": "The passkey will not be copied to the cloned item. Do you want to continue cloning this item?"
+  },
+  "modifiedCollectionManagement": {
+    "message": "Modified collection management setting $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
+      }
+    }
   },
   "seeDetailedInstructions": {
     "message": "Podrobné pokyny nájdete na našej stránke pomoci na adrese",

@@ -7322,6 +7322,9 @@
   "limitCollectionCreationDeletionDesc": {
     "message": "Ограничить создание и удаление коллекций владельцам и администраторам"
   },
+  "allowAdminAccessToAllCollectionItemsDesc": {
+    "message": "Владельцы и администраторы могут управлять всеми коллекциями и элементами"
+  },
   "collectionManagementUpdated": {
     "message": "Настройки управления коллекциями сохранены"
   },
@@ -7403,6 +7406,15 @@
   },
   "passkeyNotCopiedAlert": {
     "message": "Ключ доступа не будет скопирован в клонированный элемент. Продолжить клонирование этого элемента?"
+  },
+  "modifiedCollectionManagement": {
+    "message": "Изменена настройка управления коллекцией $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
+      }
+    }
   },
   "seeDetailedInstructions": {
     "message": "Подробные инструкции см. на нашем справочном сайте по адресу",

@@ -7322,6 +7322,9 @@
   "limitCollectionCreationDeletionDesc": {
     "message": "Ogranicz tworzenie i usuwanie kolekcji dla właścicieli i administratorów"
   },
+  "allowAdminAccessToAllCollectionItemsDesc": {
+    "message": "Właściciele i administratorzy mogą zarządzać wszystkimi zbiorami i elementami"
+  },
   "collectionManagementUpdated": {
     "message": "Zachowanie zarządzania kolekcją zapisane"
   },
@@ -7403,6 +7406,15 @@
   },
   "passkeyNotCopiedAlert": {
     "message": "Passkey nie zostanie skopiowane do sklonowanego elementu. Czy chcesz kontynuować klonowanie tego elementu?"
+  },
+  "modifiedCollectionManagement": {
+    "message": "Zmodyfikowano ustawienia zarządzania zbiorem $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
+      }
+    }
   },
   "seeDetailedInstructions": {
     "message": "Zobacz szczegółowe instrukcje na naszej stronie pomocy pod adresem",

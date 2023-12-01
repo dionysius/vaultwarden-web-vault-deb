@@ -612,13 +612,13 @@
     "message": "Đăng nhập bằng mật khẩu chính"
   },
   "readingPasskeyLoading": {
-    "message": "Reading passkey..."
+    "message": "Đang đọc passkey..."
   },
   "readingPasskeyLoadingInfo": {
-    "message": "Keep this window open and follow prompts from your browser."
+    "message": "Giữ cửa sổ này mở và làm theo lời nhắc từ trình duyệt của bạn."
   },
   "useADifferentLogInMethod": {
-    "message": "Use a different log in method"
+    "message": "Dùng phương thức đăng nhập khác"
   },
   "loginWithPasskey": {
     "message": "Log in with passkey"
@@ -7322,6 +7322,9 @@
   "limitCollectionCreationDeletionDesc": {
     "message": "Limit collection creation and deletion to owners and admins"
   },
+  "allowAdminAccessToAllCollectionItemsDesc": {
+    "message": "Chủ sở hữu và quản trị viên có thể quản lý tất cả các bộ sưu tập và mục"
+  },
   "collectionManagementUpdated": {
     "message": "Collection management behavior saved"
   },
@@ -7403,6 +7406,15 @@
   },
   "passkeyNotCopiedAlert": {
     "message": "The passkey will not be copied to the cloned item. Do you want to continue cloning this item?"
+  },
+  "modifiedCollectionManagement": {
+    "message": "Cài đặt quản lý bộ sưu tập đã sửa đổi $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
+      }
+    }
   },
   "seeDetailedInstructions": {
     "message": "See detailed instructions on our help site at",

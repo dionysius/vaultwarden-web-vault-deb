@@ -2490,7 +2490,7 @@
     }
   },
   "onPremHostingOptional": {
-    "message": "Možnost hostování na vlastní doméně"
+    "message": "Hostování na vlastní doméně (volitelné)"
   },
   "usersGetPremium": {
     "message": "Uživatelé získají přístup k prémiovým funkcím"
@@ -7322,6 +7322,9 @@
   "limitCollectionCreationDeletionDesc": {
     "message": "Omezí vytváření a mazání kolekce na vlastníky a správce"
   },
+  "allowAdminAccessToAllCollectionItemsDesc": {
+    "message": "Vlastníci a správci mohou spravovat všechny kolekce a předměty"
+  },
   "collectionManagementUpdated": {
     "message": "Chování správy kolekce bylo uloženo"
   },
@@ -7403,6 +7406,15 @@
   },
   "passkeyNotCopiedAlert": {
     "message": "Přístupový klíč nebude zkopírován do duplikované položky. Chete pokračovat v duplikování této položky?"
+  },
+  "modifiedCollectionManagement": {
+    "message": "Upraveno nastavení správy kolekce $ID$.",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "Unique ID"
+      }
+    }
   },
   "seeDetailedInstructions": {
     "message": "Podívejte se na podrobné pokyny na našem webu s nápovědou na",
