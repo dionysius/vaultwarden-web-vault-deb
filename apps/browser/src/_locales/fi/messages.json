@@ -658,10 +658,10 @@
     "message": "Ask to update a login's password when a change is detected on a website. Applies to all logged in accounts."
   },
   "enableUsePasskeys": {
-    "message": "Ask to save and use passkeys"
+    "message": "Pyydä tallentamaan ja käyttämään salausavaimia"
   },
   "usePasskeysDesc": {
-    "message": "Ask to save new passkeys or log in with passkeys stored in your vault. Applies to all logged in accounts."
+    "message": "Pyydä tallentamaan uusia salausavaimia tai kirjaudu sisään holviisi tallennetuilla salausavaimilla. Koskee kaikkia sisäänkirjautuneita tilejä."
   },
   "notificationChangeDesc": {
     "message": "Haluatko päivittää salasanan Bitwardeniin?"
@@ -2678,6 +2678,9 @@
   },
   "confirmFilePassword": {
     "message": "Vahvista tiedoston salasana"
+  },
+  "typePasskey": {
+    "message": "Suojausavain"
   },
   "passkeyNotCopied": {
     "message": "Suojausavainta ei kopioida"

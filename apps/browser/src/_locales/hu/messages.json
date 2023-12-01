@@ -658,10 +658,10 @@
     "message": "A bejelentkezési jelszó frissítésének kérése, ha változást lett érzékelve egy webhelyen. Minden bejelentkezett fiókra vonatkozik."
   },
   "enableUsePasskeys": {
-    "message": "Kérés a jelszó mentésére és használatára"
+    "message": "Kérés a jhozzáférési kulcs mentésére és használatára"
   },
   "usePasskeysDesc": {
-    "message": "Kérés az új jelszavak mentésére vagy bejelentkezés a széfben tárolt jelszavakkal. Minden bejelentkezett fiókra vonatkozik."
+    "message": "Kérés az új hozzáféréi kulcsok mentésére vagy bejelentkezés a széfben tárolt hozzáférési kulcsokkal. Minden bejelentkezett fiókra vonatkozik."
   },
   "notificationChangeDesc": {
     "message": "Frissítésre kerüljön a jelszó a Bitwardenben?"
@@ -1021,14 +1021,14 @@
     "message": "A környezeti webcímek mentésre kerültek."
   },
   "showAutoFillMenuOnFormFields": {
-    "message": "Show auto-fill menu on form fields",
+    "message": "Automatikus kitöltés menü megjelenítése az űrlapmezőkön",
     "description": "Represents the message for allowing the user to enable the auto-fill overlay"
   },
   "showAutoFillMenuOnFormFieldsDescAlt": {
     "message": "Minden bejelentkezett fiókra vonatkozik."
   },
   "autofillOverlayVisibilityOff": {
-    "message": "Off",
+    "message": "Ki",
     "description": "Overlay setting select option for disabling autofill overlay"
   },
   "autofillOverlayVisibilityOnFieldFocus": {
@@ -1036,7 +1036,7 @@
     "description": "Overlay appearance select option for showing the field on focus of the input element"
   },
   "autofillOverlayVisibilityOnButtonClick": {
-    "message": "When auto-fill icon is selected",
+    "message": "Ha az automatikus kitöltés menü került kiválasztásra",
     "description": "Overlay appearance select option for showing the field on click of the overlay icon"
   },
   "enableAutoFillOnPageLoad": {
@@ -2503,7 +2503,7 @@
     "description": "Screen reader and tool tip label for the overlay button"
   },
   "bitwardenVault": {
-    "message": "Bitwarden auto-fill menu",
+    "message": "Bitwarden automatikus kitöltési menü",
     "description": "Page title in overlay"
   },
   "unlockYourAccountToViewMatchingLogins": {
@@ -2511,27 +2511,27 @@
     "description": "Text to display in overlay when the account is locked."
   },
   "unlockAccount": {
-    "message": "Unlock account",
+    "message": "Fiók feloldása",
     "description": "Button text to display in overlay when the account is locked."
   },
   "fillCredentialsFor": {
-    "message": "Fill credentials for",
+    "message": "Töltse kia hitelesítő adatokat",
     "description": "Screen reader text for when overlay item is in focused"
   },
   "partialUsername": {
-    "message": "Partial username",
+    "message": "Részleges felhasználónév",
     "description": "Screen reader text for when a login item is focused where a partial username is displayed. SR will announce this phrase before reading the text of the partial username"
   },
   "noItemsToShow": {
-    "message": "No items to show",
+    "message": "Nincsenek megjeleníthető elemek",
     "description": "Text to show in overlay if there are no matching items"
   },
   "newItem": {
-    "message": "New item",
+    "message": "Új elem",
     "description": "Button text to display in overlay when there are no matching items"
   },
   "addNewVaultItem": {
-    "message": "Add new vault item",
+    "message": "Elem hozzáadása",
     "description": "Screen reader text (aria-label) for new item button in overlay"
   },
   "bitwardenOverlayMenuAvailable": {
@@ -2551,21 +2551,21 @@
     "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "turnOn": {
-    "message": "Turn on"
+    "message": "Bekapcsolás"
   },
   "ignore": {
-    "message": "Ignore"
+    "message": "Mellőz"
   },
   "overrideBrowserAutoFillSettings": {
-    "message": "Override browser auto-fill settings",
+    "message": "A böngésző automatikus kitöltési beállításainak felülbírálása",
     "description": "Label for the setting that allows overriding the default browser autofill settings"
   },
   "extensionPrivacyPermissionNotGrantedTitle": {
-    "message": "Unable to override browser auto-fill",
+    "message": "Nem lehet felülbírálni a böngésző automatikus kitöltését",
     "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "extensionPrivacyPermissionNotGrantedDescription": {
-    "message": "Bitwarden must have access to the extension's privacy permission to override browser auto-fill settings.",
+    "message": "A Bitwardennek hozzáféréssel kell rendelkeznie a bővítmény adatvédelmi engedélyéhez, hogy felülbírálhassa a böngésző automatikus kitöltési beállításait.",
     "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "importData": {
@@ -2678,6 +2678,9 @@
   },
   "confirmFilePassword": {
     "message": "Fájl jelszó megerősítés"
+  },
+  "typePasskey": {
+    "message": "Hozzáférési kulcs"
   },
   "passkeyNotCopied": {
     "message": "A hozzáférési kulcs nem kerül másolásra."

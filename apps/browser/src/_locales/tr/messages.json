@@ -2499,7 +2499,7 @@
     "description": "Page title for the iframe containing the overlay button"
   },
   "toggleBitwardenVaultOverlay": {
-    "message": "Toggle Bitwarden auto-fill menu",
+    "message": "Bitwarden otomatik doldurma menüsünü aç/kapat",
     "description": "Screen reader and tool tip label for the overlay button"
   },
   "bitwardenVault": {
@@ -2507,15 +2507,15 @@
     "description": "Page title in overlay"
   },
   "unlockYourAccountToViewMatchingLogins": {
-    "message": "Eşleşen giriş bilgilerini görüntülemek için hesabınızın kilidini açın",
+    "message": "Eşleşen hesaplarınızı görmek için hesabınızın kilidini açın",
     "description": "Text to display in overlay when the account is locked."
   },
   "unlockAccount": {
-    "message": "Hesabın kilidini açın",
+    "message": "Hesap kilidini aç",
     "description": "Button text to display in overlay when the account is locked."
   },
   "fillCredentialsFor": {
-    "message": "Kimlik bilgilerini doldurun",
+    "message": "Bilgileri doldur",
     "description": "Screen reader text for when overlay item is in focused"
   },
   "partialUsername": {
@@ -2523,15 +2523,15 @@
     "description": "Screen reader text for when a login item is focused where a partial username is displayed. SR will announce this phrase before reading the text of the partial username"
   },
   "noItemsToShow": {
-    "message": "Gösterilecek öğe yok",
+    "message": "Gösterilecek kayıt yok",
     "description": "Text to show in overlay if there are no matching items"
   },
   "newItem": {
-    "message": "Yeni öge",
+    "message": "Yeni kayıt",
     "description": "Button text to display in overlay when there are no matching items"
   },
   "addNewVaultItem": {
-    "message": "Add new vault item",
+    "message": "Kasaya yeni kayıt ekle",
     "description": "Screen reader text (aria-label) for new item button in overlay"
   },
   "bitwardenOverlayMenuAvailable": {
@@ -2543,7 +2543,7 @@
     "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideBrowserAutofillDescription": {
-    "message": "Bu ayarı kapalı bırakmak, Bitwarden otomatik doldurma menüsü ile tarayıcınızınki arasında çakışmalara neden olabilir.",
+    "message": "Bu ayarı kapalı bırakırsanız Bitwarden otomatik doldurma menüsüyle tarayıcınızınki arasında çakışma yaşanabilir.",
     "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideBrowserAutofillPrivacyRequiredDescription": {
@@ -2551,10 +2551,10 @@
     "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "turnOn": {
-    "message": "Turn on"
+    "message": "Aç"
   },
   "ignore": {
-    "message": "Yoksay"
+    "message": "Yok say"
   },
   "overrideBrowserAutoFillSettings": {
     "message": "Tarayıcının otomatik doldurma ayarlarını geçersiz kıl",
@@ -2678,6 +2678,9 @@
   },
   "confirmFilePassword": {
     "message": "Dosya parolasını onaylayın"
+  },
+  "typePasskey": {
+    "message": "Geçiş anahtarı"
   },
   "passkeyNotCopied": {
     "message": "Passkey will not be copied"

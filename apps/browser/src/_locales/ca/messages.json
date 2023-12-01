@@ -2264,7 +2264,7 @@
     "message": "Com emplenar automàticament"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Select an item from this screen, use the shortcut $COMMAND$, or explore other options in settings.",
+    "message": "Seleccioneu un element d'aquesta pantalla, utilitzeu la drecera $COMMAND$ o exploreu altres opcions a la configuració.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2273,7 +2273,7 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "Select an item from this screen, or explore other options in settings."
+    "message": "Seleccioneu un element d'aquesta pantalla, o exploreu altres opcions a la configuració."
   },
   "gotIt": {
     "message": "D'acord"
@@ -2678,6 +2678,9 @@
   },
   "confirmFilePassword": {
     "message": "Confirma la contrasenya del fitxer"
+  },
+  "typePasskey": {
+    "message": "Clau de pas"
   },
   "passkeyNotCopied": {
     "message": "La clau de pas no es copiarà"

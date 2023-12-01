@@ -2264,7 +2264,7 @@
     "message": "Как се ползва автоматичното попълване"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Select an item from this screen, use the shortcut $COMMAND$, or explore other options in settings.",
+    "message": "Изберете елемент на този екран, използвайте комбинацията $COMMAND$ или разгледайте други опции в настройките.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2273,7 +2273,7 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "Select an item from this screen, or explore other options in settings."
+    "message": "Изберете елемент на този екран или разгледайте други опции в настройките."
   },
   "gotIt": {
     "message": "Разбрано"
@@ -2678,6 +2678,9 @@
   },
   "confirmFilePassword": {
     "message": "Потвърждаване на паролата на файла"
+  },
+  "typePasskey": {
+    "message": "Секретен ключ"
   },
   "passkeyNotCopied": {
     "message": "Секретният ключ няма да бъде копиран"
