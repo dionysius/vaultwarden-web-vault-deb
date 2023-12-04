@@ -255,10 +255,6 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
     return result;
   }
 
-  get teamsStarterPlanFeatureFlagIsEnabled(): boolean {
-    return this.passwordManagerPlans.some((plan) => plan.product === ProductType.TeamsStarter);
-  }
-
   get hasProvider() {
     return this.providerId != null;
   }
@@ -420,13 +416,8 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
     if (!this.formGroup.controls.businessOwned.value || this.selectedPlan.canBeUsedByBusiness) {
       return;
     }
-    if (this.teamsStarterPlanFeatureFlagIsEnabled) {
-      this.formGroup.controls.product.setValue(ProductType.TeamsStarter);
-      this.formGroup.controls.plan.setValue(PlanType.TeamsStarter);
-    } else {
-      this.formGroup.controls.product.setValue(ProductType.Teams);
-      this.formGroup.controls.plan.setValue(PlanType.TeamsAnnually);
-    }
+    this.formGroup.controls.product.setValue(ProductType.TeamsStarter);
+    this.formGroup.controls.plan.setValue(PlanType.TeamsStarter);
     this.changedProduct();
   }
 

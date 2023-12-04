@@ -68,11 +68,7 @@
       </ng-container>
       <ng-template #nonEnterprisePlans>
         <ng-container
-          *ngIf="
-            teamsStarterPlanFeatureFlagIsEnabled &&
-              selectableProduct.product === productTypes.Teams;
-            else fullFeatureList
-          "
+          *ngIf="selectableProduct.product === productTypes.Teams; else fullFeatureList"
         >
           <small>• {{ "includeAllTeamsStarterFeatures" | i18n }}</small>
           <small>• {{ "chooseMonthlyOrAnnualBilling" | i18n }}</small>
