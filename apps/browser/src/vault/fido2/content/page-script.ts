@@ -62,9 +62,9 @@ navigator.credentials.create = async (
   }
 
   const fallbackSupported =
-    (options?.publicKey?.authenticatorSelection.authenticatorAttachment === "platform" &&
+    (options?.publicKey?.authenticatorSelection?.authenticatorAttachment === "platform" &&
       browserNativeWebauthnPlatformAuthenticatorSupport) ||
-    (options?.publicKey?.authenticatorSelection.authenticatorAttachment !== "platform" &&
+    (options?.publicKey?.authenticatorSelection?.authenticatorAttachment !== "platform" &&
       browserNativeWebauthnSupport);
   try {
     const response = await messenger.request(
