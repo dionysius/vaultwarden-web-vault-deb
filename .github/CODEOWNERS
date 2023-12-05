@@ -1,10 +1,8 @@
-# Please sort lines alphabetically, this will ensure we don't accidentally add duplicates.
+# Please sort into logical groups with comment headers. Sort groups in order of specificity.
+# For example, default owners should always be the first group.
+# Sort lines alphabetically within these groups to avoid accidentally adding duplicates.
 #
 # https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
-
-# The following owners will be the default owners for everything in the repo.
-# Unless a later match takes precedence
-* @bitwarden/tech-leads
 
 ## Secrets Manager team files ##
 bitwarden_license/bit-web/src/app/secrets-manager @bitwarden/team-secrets-manager-dev
@@ -90,30 +88,6 @@ libs/components @bitwarden/team-component-library
 
 ## Desktop native module ##
 apps/desktop/desktop_native @bitwarden/team-platform-dev
-
-## Multiple file owners ##
-apps/browser/package.json
-apps/browser/src/manifest.json
-apps/browser/src/manifest.v3.json
-
-apps/cli/package.json
-
-apps/desktop/package.json
-apps/desktop/src/package-lock.json
-apps/desktop/src/package.json
-
-/apps/web/config
-/apps/web/package.json
-
-package.json
-package-lock.json
-
-## Locales ##
-apps/browser/src/_locales/en/messages.json
-apps/browser/store/locales/en
-apps/cli/src/locales/en/messages.json
-apps/desktop/src/locales/en/messages.json
-apps/web/src/locales/en/messages.json
 
 ## DevOps team files ##
 /.github/workflows @bitwarden/dept-devops
