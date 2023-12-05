@@ -14,7 +14,7 @@ import { UserId } from "../../../types/guid";
 import { KeyDefinition } from "../key-definition";
 import { StateDefinition } from "../state-definition";
 
-import { DefaultUserState } from "./default-user-state";
+import { DefaultActiveUserState } from "./default-active-user-state";
 
 class TestState {
   date: Date;
@@ -37,18 +37,18 @@ const testKeyDefinition = new KeyDefinition<TestState>(testStateDefinition, "fak
   deserializer: TestState.fromJSON,
 });
 
-describe("DefaultUserState", () => {
+describe("DefaultActiveUserState", () => {
   const accountService = mock<AccountService>();
   let diskStorageService: FakeStorageService;
   let activeAccountSubject: BehaviorSubject<{ id: UserId } & AccountInfo>;
-  let userState: DefaultUserState<TestState>;
+  let userState: DefaultActiveUserState<TestState>;
 
   beforeEach(() => {
     activeAccountSubject = new BehaviorSubject<{ id: UserId } & AccountInfo>(undefined);
     accountService.activeAccount$ = activeAccountSubject;
 
     diskStorageService = new FakeStorageService();
-    userState = new DefaultUserState(
+    userState = new DefaultActiveUserState(
       testKeyDefinition,
       accountService,
       null, // Not testing anything with encrypt service

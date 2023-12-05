@@ -37,22 +37,6 @@ export interface UserState<T> {
     configureState: (state: T, dependencies: TCombine) => T,
     options?: StateUpdateOptions<T, TCombine>,
   ) => Promise<T>;
-  /**
-   * Updates backing stores for the given userId, which may or may not be active.
-   * @param userId the UserId to target the update for
-   * @param configureState function that takes the current state for the targeted user and returns the new state
-   * @param options Defaults given by @see {module:state-update-options#DEFAULT_OPTIONS}
-   * @param options.shouldUpdate A callback for determining if you want to update state. Defaults to () => true
-   * @param options.combineLatestWith An observable that you want to combine with the current state for callbacks. Defaults to null
-   * @param options.msTimeout A timeout for how long you are willing to wait for a `combineLatestWith` option to complete. Defaults to 1000ms. Only applies if `combineLatestWith` is set.
-
-   * @returns The new state
-   */
-  readonly updateFor: <TCombine>(
-    userId: UserId,
-    configureState: (state: T, dependencies: TCombine) => T,
-    options?: StateUpdateOptions<T, TCombine>,
-  ) => Promise<T>;
 
   /**
    * Creates a derives state from the current state. Derived states are always tied to the active user.
@@ -60,4 +44,12 @@ export interface UserState<T> {
    * @returns
    */
   createDerived: <TTo>(converter: Converter<T, TTo>) => DerivedUserState<TTo>;
+}
+
+export const activeMarker: unique symbol = Symbol("active");
+export interface ActiveUserState<T> extends UserState<T> {
+  readonly [activeMarker]: true;
+}
+export interface SingleUserState<T> extends UserState<T> {
+  readonly userId: UserId;
 }

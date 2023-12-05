@@ -7,13 +7,13 @@ import {
 } from "../../abstractions/storage.service";
 import { KeyDefinition } from "../key-definition";
 import { StorageLocation } from "../state-definition";
-import { UserState } from "../user-state";
-import { UserStateProvider } from "../user-state.provider";
+import { ActiveUserState } from "../user-state";
+import { ActiveUserStateProvider } from "../user-state.provider";
 
-import { DefaultUserState } from "./default-user-state";
+import { DefaultActiveUserState } from "./default-active-user-state";
 
-export class DefaultUserStateProvider implements UserStateProvider {
-  private userStateCache: Record<string, UserState<unknown>> = {};
+export class DefaultActiveUserStateProvider implements ActiveUserStateProvider {
+  private cache: Record<string, ActiveUserState<unknown>> = {};
 
   constructor(
     protected accountService: AccountService,
@@ -22,22 +22,22 @@ export class DefaultUserStateProvider implements UserStateProvider {
     protected diskStorage: AbstractStorageService & ObservableStorageService,
   ) {}
 
-  get<T>(keyDefinition: KeyDefinition<T>): UserState<T> {
-    const cacheKey = keyDefinition.buildCacheKey();
-    const existingUserState = this.userStateCache[cacheKey];
+  get<T>(keyDefinition: KeyDefinition<T>): ActiveUserState<T> {
+    const cacheKey = keyDefinition.buildCacheKey("user", "active");
+    const existingUserState = this.cache[cacheKey];
     if (existingUserState != null) {
       // I have to cast out of the unknown generic but this should be safe if rules
       // around domain token are made
-      return existingUserState as DefaultUserState<T>;
+      return existingUserState as ActiveUserState<T>;
     }
 
-    const newUserState = this.buildUserState(keyDefinition);
-    this.userStateCache[cacheKey] = newUserState;
+    const newUserState = this.buildActiveUserState(keyDefinition);
+    this.cache[cacheKey] = newUserState;
     return newUserState;
   }
 
-  protected buildUserState<T>(keyDefinition: KeyDefinition<T>): UserState<T> {
-    return new DefaultUserState<T>(
+  protected buildActiveUserState<T>(keyDefinition: KeyDefinition<T>): ActiveUserState<T> {
+    return new DefaultActiveUserState<T>(
       keyDefinition,
       this.accountService,
       this.encryptService,

@@ -13,7 +13,6 @@ import {
 } from "rxjs";
 
 import { AccountService } from "../../../auth/abstractions/account.service";
-import { UserId } from "../../../types/guid";
 import { EncryptService } from "../../abstractions/encrypt.service";
 import {
   AbstractStorageService,
@@ -22,14 +21,15 @@ import {
 import { DerivedUserState } from "../derived-user-state";
 import { KeyDefinition, userKeyBuilder } from "../key-definition";
 import { StateUpdateOptions, populateOptionsWithDefault } from "../state-update-options";
-import { Converter, UserState } from "../user-state";
+import { Converter, ActiveUserState, activeMarker } from "../user-state";
 
 import { DefaultDerivedUserState } from "./default-derived-state";
 import { getStoredValue } from "./util";
 
 const FAKE_DEFAULT = Symbol("fakeDefault");
 
-export class DefaultUserState<T> implements UserState<T> {
+export class DefaultActiveUserState<T> implements ActiveUserState<T> {
+  [activeMarker]: true;
   private formattedKey$: Observable<string>;
 
   protected stateSubject: BehaviorSubject<T | typeof FAKE_DEFAULT> = new BehaviorSubject<
@@ -127,37 +127,6 @@ export class DefaultUserState<T> implements UserState<T> {
 
     const newState = configureState(currentState, combinedDependencies);
     await this.saveToStorage(key, newState);
-    return newState;
-  }
-
-  async updateFor<TCombine>(
-    userId: UserId,
-    configureState: (state: T, dependencies: TCombine) => T,
-    options: StateUpdateOptions<T, TCombine> = {},
-  ): Promise<T> {
-    if (userId == null) {
-      throw new Error("Attempting to update user state, but no userId has been supplied.");
-    }
-    options = populateOptionsWithDefault(options);
-
-    const key = userKeyBuilder(userId, this.keyDefinition);
-    const currentState = await getStoredValue(
-      key,
-      this.chosenStorageLocation,
-      this.keyDefinition.deserializer,
-    );
-    const combinedDependencies =
-      options.combineLatestWith != null
-        ? await firstValueFrom(options.combineLatestWith.pipe(timeout(options.msTimeout)))
-        : null;
-
-    if (!options.shouldUpdate(currentState, combinedDependencies)) {
-      return;
-    }
-
-    const newState = configureState(currentState, combinedDependencies);
-    await this.saveToStorage(key, newState);
-
     return newState;
   }
 

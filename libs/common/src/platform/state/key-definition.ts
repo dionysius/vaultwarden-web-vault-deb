@@ -129,8 +129,13 @@ export class KeyDefinition<T> {
    * Create a string that should be unique across the entire application.
    * @returns A string that can be used to cache instances created via this key.
    */
-  buildCacheKey(): string {
-    return `${this.stateDefinition.storageLocation}_${this.stateDefinition.name}_${this.key}`;
+  buildCacheKey(scope: "user" | "global", userId?: "active" | UserId): string {
+    if (scope === "user" && userId == null) {
+      throw new Error("You must provide a userId when building a user scoped cache key.");
+    }
+    return userId === null
+      ? `${scope}_${userId}_${this.stateDefinition.name}_${this.key}`
+      : `${scope}_${this.stateDefinition.name}_${this.key}`;
   }
 }
 

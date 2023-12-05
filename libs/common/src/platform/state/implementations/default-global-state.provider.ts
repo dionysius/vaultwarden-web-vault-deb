@@ -19,7 +19,7 @@ export class DefaultGlobalStateProvider implements GlobalStateProvider {
   ) {}
 
   get<T>(keyDefinition: KeyDefinition<T>): GlobalState<T> {
-    const cacheKey = keyDefinition.buildCacheKey();
+    const cacheKey = keyDefinition.buildCacheKey("global");
     const existingGlobalState = this.globalStateCache[cacheKey];
     if (existingGlobalState != null) {
       // The cast into the actual generic is safe because of rules around key definitions

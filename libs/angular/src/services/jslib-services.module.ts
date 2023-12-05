@@ -107,9 +107,18 @@ import { NoopNotificationsService } from "@bitwarden/common/platform/services/no
 import { StateService } from "@bitwarden/common/platform/services/state.service";
 import { ValidationService } from "@bitwarden/common/platform/services/validation.service";
 import { WebCryptoFunctionService } from "@bitwarden/common/platform/services/web-crypto-function.service";
-import { GlobalStateProvider } from "@bitwarden/common/platform/state";
-// eslint-disable-next-line import/no-restricted-paths -- We need the implementation to inject, but generally this should not be accessed
+import {
+  ActiveUserStateProvider,
+  GlobalStateProvider,
+  SingleUserStateProvider,
+  StateProvider,
+} from "@bitwarden/common/platform/state";
+/* eslint-disable import/no-restricted-paths -- We need the implementations to inject, but generally these should not be accessed */
+import { DefaultActiveUserStateProvider } from "@bitwarden/common/platform/state/implementations/default-active-user-state.provider";
 import { DefaultGlobalStateProvider } from "@bitwarden/common/platform/state/implementations/default-global-state.provider";
+import { DefaultSingleUserStateProvider } from "@bitwarden/common/platform/state/implementations/default-single-user-state.provider";
+import { DefaultStateProvider } from "@bitwarden/common/platform/state/implementations/default-state.provider";
+/* eslint-enable import/no-restricted-paths */
 import { AvatarUpdateService } from "@bitwarden/common/services/account/avatar-update.service";
 import { ApiService } from "@bitwarden/common/services/api.service";
 import { AuditService } from "@bitwarden/common/services/audit.service";
@@ -784,6 +793,26 @@ import { ModalService } from "./modal.service";
       provide: GlobalStateProvider,
       useClass: DefaultGlobalStateProvider,
       deps: [OBSERVABLE_MEMORY_STORAGE, OBSERVABLE_DISK_STORAGE],
+    },
+    {
+      provide: ActiveUserStateProvider,
+      useClass: DefaultActiveUserStateProvider,
+      deps: [
+        AccountServiceAbstraction,
+        EncryptService,
+        OBSERVABLE_MEMORY_STORAGE,
+        OBSERVABLE_DISK_STORAGE,
+      ],
+    },
+    {
+      provide: SingleUserStateProvider,
+      useClass: DefaultSingleUserStateProvider,
+      deps: [EncryptService, OBSERVABLE_MEMORY_STORAGE, OBSERVABLE_DISK_STORAGE],
+    },
+    {
+      provide: StateProvider,
+      useClass: DefaultStateProvider,
+      deps: [ActiveUserStateProvider, SingleUserStateProvider, GlobalStateProvider],
     },
   ],
 })
