@@ -5,7 +5,7 @@ import { KdfConfig } from "@bitwarden/common/auth/models/domain/kdf-config";
 import { CipherWithIdExport } from "@bitwarden/common/models/export/cipher-with-ids.export";
 import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/crypto-function.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
-import { KdfType, DEFAULT_PBKDF2_ITERATIONS } from "@bitwarden/common/platform/enums";
+import { KdfType, PBKDF2_ITERATIONS } from "@bitwarden/common/platform/enums";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { EncryptedString, EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 import { StateService } from "@bitwarden/common/platform/services/state.service";
@@ -159,7 +159,7 @@ describe("VaultExportService", () => {
     folderService.getAllDecryptedFromState.mockResolvedValue(UserFolderViews);
     folderService.getAllFromState.mockResolvedValue(UserFolders);
     stateService.getKdfType.mockResolvedValue(KdfType.PBKDF2_SHA256);
-    stateService.getKdfConfig.mockResolvedValue(new KdfConfig(DEFAULT_PBKDF2_ITERATIONS));
+    stateService.getKdfConfig.mockResolvedValue(new KdfConfig(PBKDF2_ITERATIONS.defaultValue));
     cryptoService.encrypt.mockResolvedValue(new EncString("encrypted"));
 
     exportService = new VaultExportService(
@@ -240,7 +240,7 @@ describe("VaultExportService", () => {
       });
 
       it("specifies kdfIterations", () => {
-        expect(exportObject.kdfIterations).toEqual(DEFAULT_PBKDF2_ITERATIONS);
+        expect(exportObject.kdfIterations).toEqual(PBKDF2_ITERATIONS.defaultValue);
       });
 
       it("has kdfType", () => {

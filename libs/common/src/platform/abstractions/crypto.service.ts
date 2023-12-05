@@ -391,6 +391,14 @@ export abstract class CryptoService {
   }>;
 
   /**
+   * Validate that the KDF config follows the requirements for the given KDF type.
+   *
+   * @remarks
+   * Should always be called before updating a users KDF config.
+   */
+  validateKdfConfig: (kdf: KdfType, kdfConfig: KdfConfig) => void;
+
+  /**
    * @deprecated Left for migration purposes. Use decryptUserKeyWithPin instead.
    */
   decryptMasterKeyWithPin: (

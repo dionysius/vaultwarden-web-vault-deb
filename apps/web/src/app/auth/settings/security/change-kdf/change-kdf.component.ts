@@ -4,10 +4,10 @@ import { KdfConfig } from "@bitwarden/common/auth/models/domain/kdf-config";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import {
   DEFAULT_KDF_CONFIG,
-  DEFAULT_PBKDF2_ITERATIONS,
-  DEFAULT_ARGON2_ITERATIONS,
-  DEFAULT_ARGON2_MEMORY,
-  DEFAULT_ARGON2_PARALLELISM,
+  PBKDF2_ITERATIONS,
+  ARGON2_ITERATIONS,
+  ARGON2_MEMORY,
+  ARGON2_PARALLELISM,
   KdfType,
 } from "@bitwarden/common/platform/enums";
 import { DialogService } from "@bitwarden/components";
@@ -23,7 +23,12 @@ export class ChangeKdfComponent implements OnInit {
   kdfConfig: KdfConfig = DEFAULT_KDF_CONFIG;
   kdfType = KdfType;
   kdfOptions: any[] = [];
-  recommendedPbkdf2Iterations = DEFAULT_PBKDF2_ITERATIONS;
+
+  // Default values for template
+  protected PBKDF2_ITERATIONS = PBKDF2_ITERATIONS;
+  protected ARGON2_ITERATIONS = ARGON2_ITERATIONS;
+  protected ARGON2_MEMORY = ARGON2_MEMORY;
+  protected ARGON2_PARALLELISM = ARGON2_PARALLELISM;
 
   constructor(
     private stateService: StateService,
@@ -42,12 +47,12 @@ export class ChangeKdfComponent implements OnInit {
 
   async onChangeKdf(newValue: KdfType) {
     if (newValue === KdfType.PBKDF2_SHA256) {
-      this.kdfConfig = new KdfConfig(DEFAULT_PBKDF2_ITERATIONS);
+      this.kdfConfig = new KdfConfig(PBKDF2_ITERATIONS.defaultValue);
     } else if (newValue === KdfType.Argon2id) {
       this.kdfConfig = new KdfConfig(
-        DEFAULT_ARGON2_ITERATIONS,
-        DEFAULT_ARGON2_MEMORY,
-        DEFAULT_ARGON2_PARALLELISM,
+        ARGON2_ITERATIONS.defaultValue,
+        ARGON2_MEMORY.defaultValue,
+        ARGON2_PARALLELISM.defaultValue,
       );
     } else {
       throw new Error("Unknown KDF type.");

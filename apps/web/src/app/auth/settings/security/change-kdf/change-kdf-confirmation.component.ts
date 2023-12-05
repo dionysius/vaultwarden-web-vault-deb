@@ -73,6 +73,10 @@ export class ChangeKdfConfirmationComponent {
     const masterKey = await this.cryptoService.getOrDeriveMasterKey(masterPassword);
     request.masterPasswordHash = await this.cryptoService.hashMasterKey(masterPassword, masterKey);
     const email = await this.stateService.getEmail();
+
+    // Ensure the KDF config is valid.
+    this.cryptoService.validateKdfConfig(this.kdf, this.kdfConfig);
+
     const newMasterKey = await this.cryptoService.makeMasterKey(
       masterPassword,
       email,
