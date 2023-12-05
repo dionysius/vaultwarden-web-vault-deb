@@ -1,4 +1,4 @@
-import { firstValueFrom } from "rxjs";
+import { firstValueFrom, timeout } from "rxjs";
 
 import { SearchService } from "../../abstractions/search.service";
 import { VaultTimeoutSettingsService } from "../../abstractions/vault-timeout/vault-timeout-settings.service";
@@ -52,13 +52,14 @@ export class VaultTimeoutService implements VaultTimeoutServiceAbstraction {
   }
 
   async checkVaultTimeout(): Promise<void> {
-    if (await this.platformUtilsService.isViewOpen()) {
-      return;
-    }
+    // Get whether or not the view is open a single time so it can be compared for each user
+    const isViewOpen = await this.platformUtilsService.isViewOpen();
+
+    const activeUserId = await firstValueFrom(this.stateService.activeAccount$.pipe(timeout(500)));
 
     const accounts = await firstValueFrom(this.stateService.accounts$);
     for (const userId in accounts) {
-      if (userId != null && (await this.shouldLock(userId))) {
+      if (userId != null && (await this.shouldLock(userId, activeUserId, isViewOpen))) {
         await this.executeTimeoutAction(userId);
       }
     }
@@ -108,7 +109,18 @@ export class VaultTimeoutService implements VaultTimeoutServiceAbstraction {
     }
   }
 
-  private async shouldLock(userId: string): Promise<boolean> {
+  private async shouldLock(
+    userId: string,
+    activeUserId: string,
+    isViewOpen: boolean,
+  ): Promise<boolean> {
+    if (isViewOpen && userId === activeUserId) {
+      // We know a view is open and this is the currently active user
+      // which means they are likely looking at their vault
+      // and they should not lock.
+      return false;
+    }
+
     const authStatus = await this.authService.getAuthStatus(userId);
     if (
       authStatus === AuthenticationStatus.Locked ||

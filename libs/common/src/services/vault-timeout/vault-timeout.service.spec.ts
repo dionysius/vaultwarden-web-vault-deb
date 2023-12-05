@@ -91,7 +91,10 @@ describe("VaultTimeoutService", () => {
         availableTimeoutActions?: VaultTimeoutAction[];
       }
     >,
-    userId?: string,
+    globalSetups?: {
+      userId?: string;
+      isViewOpen?: boolean;
+    },
   ) => {
     // Both are available by default and the specific test can change this per test
     availableVaultTimeoutActionsSubject.next([VaultTimeoutAction.Lock, VaultTimeoutAction.LogOut]);
@@ -111,7 +114,11 @@ describe("VaultTimeoutService", () => {
       return Promise.resolve(accounts[options.userId]?.lastActive);
     });
 
-    stateService.getUserId.mockResolvedValue(userId);
+    stateService.getUserId.mockResolvedValue(globalSetups?.userId);
+
+    stateService.activeAccount$ = new BehaviorSubject<string>(globalSetups?.userId);
+
+    platformUtilsService.isViewOpen.mockResolvedValue(globalSetups?.isViewOpen ?? false);
 
     vaultTimeoutSettingsService.vaultTimeoutAction$.mockImplementation((userId) => {
       return new BehaviorSubject<VaultTimeoutAction>(accounts[userId]?.timeoutAction);
@@ -217,22 +224,25 @@ describe("VaultTimeoutService", () => {
 
     it("should lock an account that isn't active and has immediate as their timeout when view is not open", async () => {
       // Arrange
-      platformUtilsService.isViewOpen.mockResolvedValue(false);
-
-      setupAccounts({
-        1: {
-          authStatus: AuthenticationStatus.Unlocked,
-          isAuthenticated: true,
-          vaultTimeout: 0, // Immediately
-          lastActive: new Date().getTime() - 10 * 1000, // Last active 10 seconds ago
+      setupAccounts(
+        {
+          1: {
+            authStatus: AuthenticationStatus.Unlocked,
+            isAuthenticated: true,
+            vaultTimeout: 0, // Immediately
+            lastActive: new Date().getTime() - 10 * 1000, // Last active 10 seconds ago
+          },
+          2: {
+            authStatus: AuthenticationStatus.Unlocked,
+            isAuthenticated: true,
+            vaultTimeout: 1, // One minute
+            lastActive: new Date().getTime() - 10 * 1000, // Last active 10 seconds ago
+          },
         },
-        2: {
-          authStatus: AuthenticationStatus.Unlocked,
-          isAuthenticated: true,
-          vaultTimeout: 1, // One minute
-          lastActive: new Date().getTime() - 10 * 1000, // Last active 10 seconds ago
+        {
+          isViewOpen: false,
         },
-      });
+      );
 
       // Act
       await vaultTimeoutService.checkVaultTimeout();
@@ -243,8 +253,6 @@ describe("VaultTimeoutService", () => {
     });
 
     it("should run action on an account that hasn't been active for greater than 1 minute and has a vault timeout for 1 minutes", async () => {
-      platformUtilsService.isViewOpen.mockResolvedValue(false);
-
       setupAccounts(
         {
           1: {
@@ -276,7 +284,7 @@ describe("VaultTimeoutService", () => {
             availableTimeoutActions: [VaultTimeoutAction.LogOut],
           },
         },
-        "2", // Treat user 2 as the active user
+        { userId: "2", isViewOpen: false }, // Treat user 2 as the active user
       );
 
       await vaultTimeoutService.checkVaultTimeout();
@@ -292,18 +300,37 @@ describe("VaultTimeoutService", () => {
       expectUserToHaveLoggedOut("4"); // They may have had lock as their chosen action but it's not available to them so logout
     });
 
-    it("should not lock any accounts as long as a view is known to be open, no matter if they haven't been active since before their timeout", async () => {
-      platformUtilsService.isViewOpen.mockResolvedValue(true);
-
-      setupAccounts({
-        1: {
-          // Neither of these setup values ever get called
-          authStatus: AuthenticationStatus.Unlocked,
-          isAuthenticated: true,
-          lastActive: new Date().getTime() - 80 * 1000, // Last active 80 seconds ago
-          vaultTimeout: 1, // Vault timeout of 1 minute ago
+    it("should lock an account if they haven't been active passed their vault timeout even if a view is open when they are not the active user.", async () => {
+      setupAccounts(
+        {
+          1: {
+            // Neither of these setup values ever get called
+            authStatus: AuthenticationStatus.Unlocked,
+            isAuthenticated: true,
+            lastActive: new Date().getTime() - 80 * 1000, // Last active 80 seconds ago
+            vaultTimeout: 1, // Vault timeout of 1 minute
+          },
         },
-      });
+        { userId: "2", isViewOpen: true },
+      );
+
+      await vaultTimeoutService.checkVaultTimeout();
+
+      expectUserToHaveLocked("1");
+    });
+
+    it("should not lock an account that is active and we know that a view is open, even if they haven't been active passed their timeout", async () => {
+      setupAccounts(
+        {
+          1: {
+            authStatus: AuthenticationStatus.Unlocked,
+            isAuthenticated: true,
+            lastActive: new Date().getTime() - 80 * 1000, // Last active 80 seconds ago
+            vaultTimeout: 1, // Vault timeout of 1 minute
+          },
+        },
+        { userId: "1", isViewOpen: true }, // They are the currently active user
+      );
 
       await vaultTimeoutService.checkVaultTimeout();
 
