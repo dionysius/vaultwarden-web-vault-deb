@@ -48,7 +48,7 @@ export class FakeGlobalState<T> implements GlobalState<T> {
         ? await firstValueFrom(options.combineLatestWith.pipe(timeout(options.msTimeout)))
         : null;
     if (!options.shouldUpdate(current, combinedDependencies)) {
-      return;
+      return current;
     }
     const newState = configureState(current, combinedDependencies);
     this.stateSubject.next(newState);
@@ -77,7 +77,7 @@ export class FakeUserState<T> implements UserState<T> {
         ? await firstValueFrom(options.combineLatestWith.pipe(timeout(options.msTimeout)))
         : null;
     if (!options.shouldUpdate(current, combinedDependencies)) {
-      return;
+      return current;
     }
     const newState = configureState(current, combinedDependencies);
     this.stateSubject.next(newState);

@@ -122,7 +122,7 @@ export class DefaultActiveUserState<T> implements ActiveUserState<T> {
         : null;
 
     if (!options.shouldUpdate(currentState, combinedDependencies)) {
-      return;
+      return currentState;
     }
 
     const newState = configureState(currentState, combinedDependencies);

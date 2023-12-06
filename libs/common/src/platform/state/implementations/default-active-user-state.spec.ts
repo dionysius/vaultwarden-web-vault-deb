@@ -301,7 +301,7 @@ describe("DefaultActiveUserState", () => {
       await awaitAsync();
 
       expect(diskStorageService.mock.save).not.toHaveBeenCalled();
-      expect(result).toBe(undefined);
+      expect(result).toBeNull();
       expect(emissions).toEqual([null]);
     });
 

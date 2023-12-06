@@ -91,7 +91,7 @@ export class DefaultSingleUserState<T> implements SingleUserState<T> {
         : null;
 
     if (!options.shouldUpdate(currentState, combinedDependencies)) {
-      return;
+      return currentState;
     }
 
     const newState = configureState(currentState, combinedDependencies);

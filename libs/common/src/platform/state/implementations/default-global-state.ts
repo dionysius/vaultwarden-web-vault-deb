@@ -85,7 +85,7 @@ export class DefaultGlobalState<T> implements GlobalState<T> {
         : null;
 
     if (!options.shouldUpdate(currentState, combinedDependencies)) {
-      return;
+      return currentState;
     }
 
     const newState = configureState(currentState, combinedDependencies);

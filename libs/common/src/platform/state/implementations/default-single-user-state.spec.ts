@@ -156,7 +156,7 @@ describe("DefaultSingleUserState", () => {
 
       expect(diskStorageService.mock.save).not.toHaveBeenCalled();
       expect(emissions).toEqual([null]); // Initial value
-      expect(result).toBeUndefined();
+      expect(result).toBeNull();
     });
 
     it("should provide the update callback with the current State", async () => {
