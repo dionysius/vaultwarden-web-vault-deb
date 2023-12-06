@@ -97,3 +97,10 @@ apps/desktop/desktop_native @bitwarden/team-platform-dev
 **/*.Dockerfile @bitwarden/dept-devops
 **/.dockerignore @bitwarden/dept-devops
 **/entrypoint.sh @bitwarden/dept-devops
+
+## Locales ##
+apps/browser/src/_locales/en/messages.json
+apps/browser/store/locales/en
+apps/cli/src/locales/en/messages.json
+apps/desktop/src/locales/en/messages.json
+apps/web/src/locales/en/messages.json
