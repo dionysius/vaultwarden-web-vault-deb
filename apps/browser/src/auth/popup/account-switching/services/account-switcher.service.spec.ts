@@ -3,6 +3,8 @@ import { BehaviorSubject, firstValueFrom, timeout } from "rxjs";
 
 import { AccountInfo, AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
+import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
+import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { UserId } from "@bitwarden/common/types/guid";
@@ -16,6 +18,8 @@ describe("AccountSwitcherService", () => {
   const accountService = mock<AccountService>();
   const stateService = mock<StateService>();
   const messagingService = mock<MessagingService>();
+  const environmentService = mock<EnvironmentService>();
+  const logService = mock<LogService>();
 
   let accountSwitcherService: AccountSwitcherService;
 
@@ -27,10 +31,12 @@ describe("AccountSwitcherService", () => {
       accountService,
       stateService,
       messagingService,
+      environmentService,
+      logService,
     );
   });
 
-  describe("accountOptions$", () => {
+  describe("availableAccounts$", () => {
     it("should return all accounts and an add account option when accounts are less than 5", async () => {
       const user1AccountInfo: AccountInfo = {
         name: "Test User 1",
@@ -45,14 +51,14 @@ describe("AccountSwitcherService", () => {
       activeAccountSubject.next(Object.assign(user1AccountInfo, { id: "1" as UserId }));
 
       const accounts = await firstValueFrom(
-        accountSwitcherService.accountOptions$.pipe(timeout(20)),
+        accountSwitcherService.availableAccounts$.pipe(timeout(20)),
       );
       expect(accounts).toHaveLength(2);
       expect(accounts[0].id).toBe("1");
-      expect(accounts[0].isSelected).toBeTruthy();
+      expect(accounts[0].isActive).toBeTruthy();
 
       expect(accounts[1].id).toBe("addAccount");
-      expect(accounts[1].isSelected).toBeFalsy();
+      expect(accounts[1].isActive).toBeFalsy();
     });
 
     it.each([5, 6])(
@@ -71,7 +77,7 @@ describe("AccountSwitcherService", () => {
           Object.assign(seedAccounts["1" as UserId], { id: "1" as UserId }),
         );
 
-        const accounts = await firstValueFrom(accountSwitcherService.accountOptions$);
+        const accounts = await firstValueFrom(accountSwitcherService.availableAccounts$);
 
         expect(accounts).toHaveLength(numberOfAccounts);
         accounts.forEach((account) => {
@@ -83,16 +89,46 @@ describe("AccountSwitcherService", () => {
 
   describe("selectAccount", () => {
     it("initiates an add account logic when add account is selected", async () => {
-      await accountSwitcherService.selectAccount("addAccount");
+      let listener: (
+        message: { command: string; userId: string },
+        sender: unknown,
+        sendResponse: unknown,
+      ) => void = null;
+      jest.spyOn(chrome.runtime.onMessage, "addListener").mockImplementation((addedListener) => {
+        listener = addedListener;
+      });
 
-      expect(stateService.setActiveUser).toBeCalledWith(null);
-      expect(stateService.setRememberedEmail).toBeCalledWith(null);
+      const removeListenerSpy = jest.spyOn(chrome.runtime.onMessage, "removeListener");
 
-      expect(accountService.switchAccount).not.toBeCalled();
+      const selectAccountPromise = accountSwitcherService.selectAccount("addAccount");
+
+      expect(listener).not.toBeNull();
+      listener({ command: "switchAccountFinish", userId: null }, undefined, undefined);
+
+      await selectAccountPromise;
+
+      expect(accountService.switchAccount).toBeCalledWith(null);
+
+      expect(removeListenerSpy).toBeCalledTimes(1);
     });
 
     it("initiates an account switch with an account id", async () => {
-      await accountSwitcherService.selectAccount("1");
+      let listener: (
+        message: { command: string; userId: string },
+        sender: unknown,
+        sendResponse: unknown,
+      ) => void;
+      jest.spyOn(chrome.runtime.onMessage, "addListener").mockImplementation((addedListener) => {
+        listener = addedListener;
+      });
+
+      const removeListenerSpy = jest.spyOn(chrome.runtime.onMessage, "removeListener");
+
+      const selectAccountPromise = accountSwitcherService.selectAccount("1");
+
+      listener({ command: "switchAccountFinish", userId: "1" }, undefined, undefined);
+
+      await selectAccountPromise;
 
       expect(accountService.switchAccount).toBeCalledWith("1");
       expect(messagingService.send).toBeCalledWith(
@@ -101,6 +137,7 @@ describe("AccountSwitcherService", () => {
           return payload.userId === "1";
         }),
       );
+      expect(removeListenerSpy).toBeCalledTimes(1);
     });
   });
 });

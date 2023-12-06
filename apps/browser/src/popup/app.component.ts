@@ -93,9 +93,7 @@ export class AppComponent implements OnInit, OnDestroy {
             });
           }
 
-          if (this.activeUserId === null) {
-            this.router.navigate(["home"]);
-          }
+          this.router.navigate(["home"]);
         });
         this.changeDetectorRef.detectChanges();
       } else if (msg.command === "authBlocked") {

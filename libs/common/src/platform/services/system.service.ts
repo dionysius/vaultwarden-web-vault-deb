@@ -1,7 +1,9 @@
-import { firstValueFrom } from "rxjs";
+import { firstValueFrom, timeout } from "rxjs";
 
+import { VaultTimeoutSettingsService } from "../../abstractions/vault-timeout/vault-timeout-settings.service";
 import { AuthService } from "../../auth/abstractions/auth.service";
 import { AuthenticationStatus } from "../../auth/enums/authentication-status";
+import { VaultTimeoutAction } from "../../enums/vault-timeout-action.enum";
 import { MessagingService } from "../abstractions/messaging.service";
 import { PlatformUtilsService } from "../abstractions/platform-utils.service";
 import { StateService } from "../abstractions/state.service";
@@ -18,6 +20,7 @@ export class SystemService implements SystemServiceAbstraction {
     private platformUtilsService: PlatformUtilsService,
     private reloadCallback: () => Promise<void> = null,
     private stateService: StateService,
+    private vaultTimeoutSettingsService: VaultTimeoutSettingsService,
   ) {}
 
   async startProcessReload(authService: AuthService): Promise<void> {
@@ -54,6 +57,19 @@ export class SystemService implements SystemServiceAbstraction {
     if (!biometricLockedFingerprintValidated) {
       clearInterval(this.reloadInterval);
       this.reloadInterval = null;
+
+      const currentUser = await firstValueFrom(this.stateService.activeAccount$.pipe(timeout(500)));
+      // Replace current active user if they will be logged out on reload
+      if (currentUser != null) {
+        const timeoutAction = await firstValueFrom(
+          this.vaultTimeoutSettingsService.vaultTimeoutAction$().pipe(timeout(500)),
+        );
+        if (timeoutAction === VaultTimeoutAction.LogOut) {
+          const nextUser = await this.stateService.nextUpActiveUser();
+          await this.stateService.setActiveUser(nextUser);
+        }
+      }
+
       this.messagingService.send("reloadProcess");
       if (this.reloadCallback != null) {
         await this.reloadCallback();

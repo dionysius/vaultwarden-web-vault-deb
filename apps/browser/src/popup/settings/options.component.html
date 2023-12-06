@@ -205,7 +205,9 @@
           />
         </div>
       </div>
-      <div id="faviconHelp" class="box-footer">{{ "faviconDesc" | i18n }}</div>
+      <div id="faviconHelp" class="box-footer">
+        {{ accountSwitcherEnabled ? ("faviconDescAlt" | i18n) : ("faviconDesc" | i18n) }}
+      </div>
     </div>
     <div class="box">
       <div class="box-content">

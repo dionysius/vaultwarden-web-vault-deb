@@ -69,7 +69,29 @@ export class BrowserStateService
           }
         }
       });
+
+      BrowserApi.addListener(
+        chrome.runtime.onMessage,
+        (message: { command: string }, _, respond) => {
+          if (message.command === "initializeDiskCache") {
+            respond(JSON.stringify(this.accountDiskCache.value));
+          }
+        },
+      );
     }
+  }
+
+  override async initAccountState(): Promise<void> {
+    if (this.isRecoveredSession && this.useAccountCache) {
+      // request cache initialization
+
+      const response = await BrowserApi.sendMessageWithResponse<string>("initializeDiskCache");
+      this.accountDiskCache.next(JSON.parse(response));
+
+      return;
+    }
+
+    await super.initAccountState();
   }
 
   async addAccount(account: Account) {

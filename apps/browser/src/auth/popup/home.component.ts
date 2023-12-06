@@ -10,6 +10,8 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 
+import { AccountSwitcherService } from "./account-switching/services/account-switcher.service";
+
 @Component({
   selector: "app-home",
   templateUrl: "home.component.html",
@@ -33,6 +35,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     private i18nService: I18nService,
     private environmentService: EnvironmentService,
     private loginService: LoginService,
+    private accountSwitcherService: AccountSwitcherService,
   ) {}
 
   async ngOnInit(): Promise<void> {
@@ -65,6 +68,10 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.destroyed$.next();
     this.destroyed$.complete();
+  }
+
+  get availableAccounts$() {
+    return this.accountSwitcherService.availableAccounts$;
   }
 
   submit() {

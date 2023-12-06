@@ -1,4 +1,4 @@
-<header>
+<app-header>
   <h1 class="sr-only">{{ "currentTab" | i18n }}</h1>
   <div class="left">
     <app-pop-out *ngIf="!inSidebar"></app-pop-out>
@@ -11,7 +11,7 @@
       <i class="bwi bwi-refresh-tab bwi-lg bwi-fw" aria-hidden="true"></i>
     </button>
   </div>
-  <div class="search">
+  <div class="search center">
     <input
       type="{{ searchTypeSearch ? 'search' : 'text' }}"
       placeholder="{{ 'searchVault' | i18n }}"
@@ -29,7 +29,7 @@
       <i class="bwi bwi-plus bwi-lg bwi-fw" aria-hidden="true"></i>
     </button>
   </div>
-</header>
+</app-header>
 <main tabindex="-1">
   <div class="no-items" *ngIf="!loaded">
     <i class="bwi bwi-spinner bwi-spin bwi-3x" aria-hidden="true"></i>

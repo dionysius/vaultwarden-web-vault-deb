@@ -1,9 +1,9 @@
-<header>
+<app-header>
   <div class="left" *ngIf="showLeftHeader">
     <app-pop-out></app-pop-out>
   </div>
   <h1 class="sr-only">{{ "send" | i18n }}</h1>
-  <div class="search">
+  <div class="search center">
     <input
       type="search"
       placeholder="{{ 'searchSends' | i18n }}"
@@ -25,7 +25,7 @@
       <i class="bwi bwi-plus bwi-lg bwi-fw" aria-hidden="true"></i>
     </button>
   </div>
-</header>
+</app-header>
 <main tabindex="-1" [ngClass]="{ flex: disableSend, 'tab-page': disableSend }">
   <app-callout type="warning" title="{{ 'sendDisabled' | i18n }}" *ngIf="disableSend">
     {{ "sendDisabledWarning" | i18n }}

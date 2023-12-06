@@ -315,6 +315,11 @@ export class BrowserApi {
     return chrome.runtime.sendMessage(message);
   }
 
+  static sendMessageWithResponse<TResponse>(subscriber: string, arg: any = {}) {
+    const message = Object.assign({}, { command: subscriber }, arg);
+    return new Promise<TResponse>((resolve) => chrome.runtime.sendMessage(message, resolve));
+  }
+
   static async focusTab(tabId: number) {
     chrome.tabs.update(tabId, { active: true, highlighted: true });
   }

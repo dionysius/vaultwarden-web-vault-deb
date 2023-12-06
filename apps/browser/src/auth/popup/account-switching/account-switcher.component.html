@@ -1,7 +1,70 @@
-<div *ngIf="accountOptions$ | async as accountOptions" class="box-content">
-  <div *ngFor="let accountOption of accountOptions" class="box-content-row box-content-row-flex">
-    <button type="button" (click)="selectAccount(accountOption.id)" class="row-main">
-      {{ accountOption.name }}
-    </button>
+<app-header>
+  <div class="left">
+    <button type="button" (click)="back()">{{ "close" | i18n }}</button>
   </div>
-</div>
+  <div class="center tw-font-bold">{{ "switchAccounts" | i18n }}</div>
+</app-header>
+
+<main
+  *ngIf="loading"
+  class="tw-absolute tw-z-50 tw-box-border tw-flex tw-cursor-not-allowed tw-items-center tw-justify-center tw-bg-background tw-opacity-60"
+>
+  <i class="bwi bwi-spinner bwi-2x bwi-spin" aria-hidden="true"></i>
+</main>
+<main>
+  <div class="tw-p-2">
+    <div *ngIf="availableAccounts$ | async as availableAccounts">
+      <ul class="tw-grid tw-list-none tw-gap-2" role="listbox">
+        <li *ngFor="let availableAccount of availableAccounts" role="option">
+          <auth-account [account]="availableAccount" (loading)="loading = $event"></auth-account>
+        </li>
+      </ul>
+      <!--
+        If the user has not reached the account limit, the last 'availableAccount' will have an 'id' of
+        'SPECIAL_ADD_ACCOUNT_ID'. Since we don't want to count this as one of the actual accounts,
+        we check to make sure the 'id' of the last 'availableAccount' is not equal to 'SPECIAL_ADD_ACCOUNT_ID'
+    -->
+      <p
+        class="tw-text-sm tw-text-muted"
+        *ngIf="
+          availableAccounts.length >= accountLimit &&
+          availableAccounts[availableAccounts.length - 1].id !== specialAddAccountId
+        "
+      >
+        {{ "accountLimitReached" | i18n }}
+      </p>
+    </div>
+
+    <div class="tw-mt-8" *ngIf="currentAccount$ | async as currentAccount">
+      <div class="tw-mb-2 tw-uppercase tw-text-muted">{{ "options" | i18n }}</div>
+      <div class="tw-grid tw-gap-2">
+        <button
+          type="button"
+          class="tw-flex tw-w-full tw-items-center tw-gap-3 tw-rounded-md tw-bg-background tw-p-3 hover:tw-bg-background-alt disabled:tw-cursor-not-allowed disabled:tw-border-text-muted/60 disabled:!tw-text-muted/60"
+          (click)="lock()"
+          [disabled]="currentAccount.status === lockedStatus || !activeUserCanLock"
+          [title]="!activeUserCanLock ? ('unlockMethodNeeded' | i18n) : ''"
+        >
+          <i class="bwi bwi-lock tw-text-2xl" aria-hidden="true"></i>
+          {{ "lockNow" | i18n }}
+        </button>
+        <button
+          type="button"
+          class="tw-flex tw-w-full tw-items-center tw-gap-3 tw-rounded-md tw-bg-background tw-p-3 hover:tw-bg-background-alt"
+          (click)="logOut()"
+        >
+          <i class="bwi bwi-sign-out tw-text-2xl" aria-hidden="true"></i>
+          {{ "logOut" | i18n }}
+        </button>
+        <button
+          type="button"
+          class="tw-mt-2 tw-flex tw-w-full tw-items-center tw-gap-3 tw-rounded-md tw-bg-background tw-p-3 hover:tw-bg-background-alt"
+          (click)="lockAll()"
+        >
+          <i class="bwi bwi-lock tw-text-2xl" aria-hidden="true"></i>
+          {{ "lockAll" | i18n }}
+        </button>
+      </div>
+    </div>
+  </div>
+</main>
