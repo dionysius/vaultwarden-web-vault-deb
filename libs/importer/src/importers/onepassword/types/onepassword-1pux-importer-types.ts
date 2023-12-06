@@ -74,7 +74,7 @@ export enum LoginFieldTypeEnum {
   Number = "N",
   Password = "P",
   TextArea = "A",
-  PhoneNumber = "T",
+  PhoneNumber = "TEL",
   CheckBox = "C",
 }
 export interface LoginFieldsEntity {
