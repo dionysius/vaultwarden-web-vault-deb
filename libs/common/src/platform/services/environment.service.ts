@@ -1,4 +1,4 @@
-import { concatMap, Observable, ReplaySubject } from "rxjs";
+import { concatMap, distinctUntilChanged, Observable, ReplaySubject } from "rxjs";
 
 import { EnvironmentUrls } from "../../auth/models/domain/environment-urls";
 import {
@@ -52,6 +52,8 @@ export class EnvironmentService implements EnvironmentServiceAbstraction {
   constructor(private stateService: StateService) {
     this.stateService.activeAccount$
       .pipe(
+        // Use == here to not trigger on undefined -> null transition
+        distinctUntilChanged((oldUserId: string, newUserId: string) => oldUserId == newUserId),
         concatMap(async () => {
           if (!this.initialized) {
             return;

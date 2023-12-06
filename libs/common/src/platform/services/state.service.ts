@@ -224,7 +224,6 @@ export class StateService<
       email: account.profile.email,
     });
     await this.setActiveUser(account.profile.userId);
-    this.activeAccountSubject.next(account.profile.userId);
   }
 
   async setActiveUser(userId: string): Promise<void> {
