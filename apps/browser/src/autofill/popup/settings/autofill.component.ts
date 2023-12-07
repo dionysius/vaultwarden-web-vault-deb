@@ -7,7 +7,6 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { UriMatchType } from "@bitwarden/common/vault/enums";
-import { DialogService } from "@bitwarden/components";
 
 import { BrowserApi } from "../../../platform/browser/browser-api";
 import { flagEnabled } from "../../../platform/flags";
@@ -18,11 +17,10 @@ import { AutofillOverlayVisibility } from "../../utils/autofill-overlay.enum";
   templateUrl: "autofill.component.html",
 })
 export class AutofillComponent implements OnInit {
-  protected canOverrideBrowserAutofillSetting = false;
-  protected defaultBrowserAutofillDisabled = false;
   protected isAutoFillOverlayFlagEnabled = false;
   protected autoFillOverlayVisibility: number;
   protected autoFillOverlayVisibilityOptions: any[];
+  protected disablePasswordManagerLink: string;
   enableAutoFillOnPageLoad = false;
   autoFillOnPageLoadDefault = false;
   autoFillOnPageLoadOptions: any[];
@@ -37,7 +35,6 @@ export class AutofillComponent implements OnInit {
     private platformUtilsService: PlatformUtilsService,
     private configService: ConfigServiceAbstraction,
     private settingsService: SettingsService,
-    private dialogService: DialogService,
   ) {
     this.autoFillOverlayVisibilityOptions = [
       {
@@ -67,13 +64,10 @@ export class AutofillComponent implements OnInit {
     ];
 
     this.accountSwitcherEnabled = flagEnabled("accountSwitching");
+    this.disablePasswordManagerLink = this.getDisablePasswordManagerLink();
   }
 
   async ngOnInit() {
-    this.canOverrideBrowserAutofillSetting = this.platformUtilsService.isChrome();
-
-    this.defaultBrowserAutofillDisabled = await this.browserAutofillSettingCurrentlyOverridden();
-
     this.isAutoFillOverlayFlagEnabled = await this.configService.getFeatureFlag<boolean>(
       FeatureFlag.AutofillOverlay,
     );
@@ -91,54 +85,8 @@ export class AutofillComponent implements OnInit {
     await this.setAutofillKeyboardHelperText(command);
   }
 
-  async updateDefaultBrowserAutofillDisabled() {
-    const privacyPermissionGranted = await this.privacyPermissionGranted();
-    if (!this.defaultBrowserAutofillDisabled && !privacyPermissionGranted) {
-      return;
-    }
-
-    if (
-      !privacyPermissionGranted &&
-      !(await BrowserApi.requestPermission({ permissions: ["privacy"] }))
-    ) {
-      await this.dialogService.openSimpleDialog({
-        title: { key: "extensionPrivacyPermissionNotGrantedTitle" },
-        content: { key: "extensionPrivacyPermissionNotGrantedDescription" },
-        acceptButtonText: { key: "ok" },
-        cancelButtonText: null,
-        type: "warning",
-      });
-      this.defaultBrowserAutofillDisabled = false;
-
-      return;
-    }
-
-    await BrowserApi.updateDefaultBrowserAutofillSettings(!this.defaultBrowserAutofillDisabled);
-  }
-
   async updateAutoFillOverlayVisibility() {
     await this.settingsService.setAutoFillOverlayVisibility(this.autoFillOverlayVisibility);
-
-    if (
-      this.autoFillOverlayVisibility === AutofillOverlayVisibility.Off ||
-      !this.canOverrideBrowserAutofillSetting ||
-      (await this.browserAutofillSettingCurrentlyOverridden())
-    ) {
-      return;
-    }
-
-    const permissionGranted = await this.privacyPermissionGranted();
-    const contentKey = permissionGranted
-      ? "overrideBrowserAutofillDescription"
-      : "overrideBrowserAutofillPrivacyRequiredDescription";
-    await this.dialogService.openSimpleDialog({
-      title: { key: "overrideBrowserAutofillTitle" },
-      content: { key: contentKey },
-      acceptButtonText: { key: "turnOn" },
-      acceptAction: async () => await this.handleOverrideDialogAccept(),
-      cancelButtonText: { key: "ignore" },
-      type: "info",
-    });
   }
 
   async updateAutoFillOnPageLoad() {
@@ -175,24 +123,25 @@ export class AutofillComponent implements OnInit {
     }
   }
 
-  private handleOverrideDialogAccept = async () => {
-    this.defaultBrowserAutofillDisabled = true;
-    await this.updateDefaultBrowserAutofillDisabled();
-  };
-
-  async browserAutofillSettingCurrentlyOverridden() {
-    if (!this.canOverrideBrowserAutofillSetting) {
-      return false;
+  private getDisablePasswordManagerLink(): string {
+    if (this.platformUtilsService.isChrome()) {
+      return "chrome://settings/autofill";
+    }
+    if (this.platformUtilsService.isOpera()) {
+      return "opera://settings/autofill";
+    }
+    if (this.platformUtilsService.isEdge()) {
+      return "edge://settings/passwords";
+    }
+    if (this.platformUtilsService.isVivaldi()) {
+      return "vivaldi://settings/autofill";
     }
 
-    if (!(await this.privacyPermissionGranted())) {
-      return false;
-    }
-
-    return await BrowserApi.browserAutofillSettingsOverridden();
+    return "https://bitwarden.com/help/disable-browser-autofill/";
   }
 
-  async privacyPermissionGranted(): Promise<boolean> {
-    return await BrowserApi.permissionsGranted(["privacy"]);
+  protected openDisablePasswordManagerLink(event: Event) {
+    event.preventDefault();
+    BrowserApi.createNewTab(this.disablePasswordManagerLink);
   }
 }

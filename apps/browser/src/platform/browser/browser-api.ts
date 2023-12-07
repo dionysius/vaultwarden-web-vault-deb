@@ -439,33 +439,4 @@ export class BrowserApi {
       });
     });
   }
-
-  /**
-   * Identifies if the browser autofill settings are overridden by the extension.
-   */
-  static async browserAutofillSettingsOverridden(): Promise<boolean> {
-    const autofillAddressOverridden: boolean = await new Promise((resolve) =>
-      chrome.privacy.services.autofillAddressEnabled.get({}, (details) =>
-        resolve(details.levelOfControl === "controlled_by_this_extension" && !details.value),
-      ),
-    );
-
-    const autofillCreditCardOverridden: boolean = await new Promise((resolve) =>
-      chrome.privacy.services.autofillCreditCardEnabled.get({}, (details) =>
-        resolve(details.levelOfControl === "controlled_by_this_extension" && !details.value),
-      ),
-    );
-
-    return autofillAddressOverridden && autofillCreditCardOverridden;
-  }
-
-  /**
-   * Updates the browser autofill settings to the given value.
-   *
-   * @param value - Determines whether to enable or disable the autofill settings.
-   */
-  static async updateDefaultBrowserAutofillSettings(value: boolean) {
-    chrome.privacy.services.autofillAddressEnabled.set({ value });
-    chrome.privacy.services.autofillCreditCardEnabled.set({ value });
-  }
 }
