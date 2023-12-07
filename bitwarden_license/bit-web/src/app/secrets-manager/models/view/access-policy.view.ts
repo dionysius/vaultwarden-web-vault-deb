@@ -19,6 +19,7 @@ export class UserServiceAccountAccessPolicyView extends BaseAccessPolicyView {
   organizationUserName: string;
   grantedServiceAccountId: string;
   userId: string;
+  currentUser: boolean;
 }
 
 export class GroupProjectAccessPolicyView extends BaseAccessPolicyView {
@@ -53,7 +54,7 @@ export class ProjectPeopleAccessPoliciesView {
   groupAccessPolicies: GroupProjectAccessPolicyView[];
 }
 
-export class ServiceAccountAccessPoliciesView {
+export class ServiceAccountPeopleAccessPoliciesView {
   userAccessPolicies: UserServiceAccountAccessPolicyView[];
   groupAccessPolicies: GroupServiceAccountAccessPolicyView[];
 }

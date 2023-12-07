@@ -1,162 +1,93 @@
-import { Component } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
-import {
-  combineLatestWith,
-  map,
-  Observable,
-  share,
-  startWith,
-  Subject,
-  switchMap,
-  takeUntil,
-} from "rxjs";
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from "@angular/core";
+import { FormControl, FormGroup } from "@angular/forms";
+import { ActivatedRoute, Router } from "@angular/router";
+import { catchError, combineLatest, EMPTY, Subject, switchMap, takeUntil } from "rxjs";
 
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
+import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { ValidationService } from "@bitwarden/common/platform/abstractions/validation.service";
-import { DialogService, SimpleDialogOptions } from "@bitwarden/components";
-import { SelectItemView } from "@bitwarden/components/src/multi-select/models/select-item-view";
+import { DialogService } from "@bitwarden/components";
 
+import { AccessPolicySelectorService } from "../../shared/access-policies/access-policy-selector/access-policy-selector.service";
 import {
-  GroupServiceAccountAccessPolicyView,
-  ServiceAccountAccessPoliciesView,
-  UserServiceAccountAccessPolicyView,
-} from "../../models/view/access-policy.view";
+  ApItemValueType,
+  convertToServiceAccountPeopleAccessPoliciesView,
+} from "../../shared/access-policies/access-policy-selector/models/ap-item-value.type";
+import {
+  ApItemViewType,
+  convertPotentialGranteesToApItemViewType,
+  convertToAccessPolicyItemViews,
+} from "../../shared/access-policies/access-policy-selector/models/ap-item-view.type";
+import { ApItemEnum } from "../../shared/access-policies/access-policy-selector/models/enums/ap-item.enum";
+import { ApPermissionEnum } from "../../shared/access-policies/access-policy-selector/models/enums/ap-permission.enum";
 import { AccessPolicyService } from "../../shared/access-policies/access-policy.service";
-import {
-  AccessSelectorComponent,
-  AccessSelectorRowView,
-} from "../../shared/access-policies/access-selector.component";
-import {
-  AccessRemovalDetails,
-  AccessRemovalDialogComponent,
-} from "../../shared/access-policies/dialogs/access-removal-dialog.component";
 
 @Component({
   selector: "sm-service-account-people",
   templateUrl: "./service-account-people.component.html",
 })
-export class ServiceAccountPeopleComponent {
+export class ServiceAccountPeopleComponent implements OnInit, OnDestroy {
+  private currentAccessPolicies: ApItemViewType[];
   private destroy$ = new Subject<void>();
-  private serviceAccountId: string;
   private organizationId: string;
-  private rows: AccessSelectorRowView[];
+  private serviceAccountId: string;
 
-  protected rows$: Observable<AccessSelectorRowView[]> =
-    this.accessPolicyService.serviceAccountAccessPolicyChanges$.pipe(
-      startWith(null),
-      combineLatestWith(this.route.params),
-      switchMap(([_, params]) =>
-        this.accessPolicyService.getServiceAccountAccessPolicies(params.serviceAccountId),
-      ),
-      map((policies) => {
-        const rows: AccessSelectorRowView[] = [];
-        policies.userAccessPolicies.forEach((policy) => {
-          rows.push({
-            type: "user",
-            name: policy.organizationUserName,
-            id: policy.organizationUserId,
-            accessPolicyId: policy.id,
-            read: policy.read,
-            write: policy.write,
-            userId: policy.userId,
-            icon: AccessSelectorComponent.userIcon,
-            static: true,
-          });
-        });
+  private currentAccessPolicies$ = combineLatest([this.route.params]).pipe(
+    switchMap(([params]) =>
+      this.accessPolicyService
+        .getServiceAccountPeopleAccessPolicies(params.serviceAccountId)
+        .then((policies) => {
+          return convertToAccessPolicyItemViews(policies);
+        }),
+    ),
+    catchError(() => {
+      this.router.navigate(["/sm", this.organizationId, "service-accounts"]);
+      return EMPTY;
+    }),
+  );
 
-        policies.groupAccessPolicies.forEach((policy) => {
-          rows.push({
-            type: "group",
-            name: policy.groupName,
-            id: policy.groupId,
-            accessPolicyId: policy.id,
-            read: policy.read,
-            write: policy.write,
-            currentUserInGroup: policy.currentUserInGroup,
-            icon: AccessSelectorComponent.groupIcon,
-            static: true,
-          });
-        });
+  private potentialGrantees$ = combineLatest([this.route.params]).pipe(
+    switchMap(([params]) =>
+      this.accessPolicyService
+        .getPeoplePotentialGrantees(params.organizationId)
+        .then((grantees) => {
+          return convertPotentialGranteesToApItemViewType(grantees);
+        }),
+    ),
+  );
 
-        return rows;
-      }),
-      share(),
-    );
+  protected formGroup = new FormGroup({
+    accessPolicies: new FormControl([] as ApItemValueType[]),
+  });
 
-  protected handleCreateAccessPolicies(selected: SelectItemView[]) {
-    const serviceAccountAccessPoliciesView = new ServiceAccountAccessPoliciesView();
-    serviceAccountAccessPoliciesView.userAccessPolicies = selected
-      .filter((selection) => AccessSelectorComponent.getAccessItemType(selection) === "user")
-      .map((filtered) => {
-        const view = new UserServiceAccountAccessPolicyView();
-        view.grantedServiceAccountId = this.serviceAccountId;
-        view.organizationUserId = filtered.id;
-        view.read = true;
-        view.write = true;
-        return view;
-      });
-
-    serviceAccountAccessPoliciesView.groupAccessPolicies = selected
-      .filter((selection) => AccessSelectorComponent.getAccessItemType(selection) === "group")
-      .map((filtered) => {
-        const view = new GroupServiceAccountAccessPolicyView();
-        view.grantedServiceAccountId = this.serviceAccountId;
-        view.groupId = filtered.id;
-        view.read = true;
-        view.write = true;
-        return view;
-      });
-
-    return this.accessPolicyService.createServiceAccountAccessPolicies(
-      this.serviceAccountId,
-      serviceAccountAccessPoliciesView,
-    );
-  }
-
-  protected async handleDeleteAccessPolicy(policy: AccessSelectorRowView) {
-    if (
-      await this.accessPolicyService.needToShowAccessRemovalWarning(
-        this.organizationId,
-        policy,
-        this.rows,
-      )
-    ) {
-      this.launchDeleteWarningDialog(policy);
-      return;
-    }
-
-    try {
-      await this.accessPolicyService.deleteAccessPolicy(policy.accessPolicyId);
-      const simpleDialogOpts: SimpleDialogOptions = {
-        title: this.i18nService.t("saPeopleWarningTitle"),
-        content: this.i18nService.t("saPeopleWarningMessage"),
-        type: "warning",
-        acceptButtonText: { key: "close" },
-        cancelButtonText: null,
-      };
-      this.dialogService.openSimpleDialogRef(simpleDialogOpts);
-    } catch (e) {
-      this.validationService.showError(e);
-    }
-  }
+  protected loading = true;
+  protected potentialGrantees: ApItemViewType[];
+  protected staticPermission = ApPermissionEnum.CanReadWrite;
 
   constructor(
     private route: ActivatedRoute,
     private dialogService: DialogService,
-    private i18nService: I18nService,
+    private changeDetectorRef: ChangeDetectorRef,
     private validationService: ValidationService,
     private accessPolicyService: AccessPolicyService,
+    private router: Router,
+    private platformUtilsService: PlatformUtilsService,
+    private i18nService: I18nService,
+    private accessPolicySelectorService: AccessPolicySelectorService,
   ) {}
 
   ngOnInit(): void {
     this.route.params.pipe(takeUntil(this.destroy$)).subscribe((params) => {
-      this.serviceAccountId = params.serviceAccountId;
       this.organizationId = params.organizationId;
+      this.serviceAccountId = params.serviceAccountId;
     });
 
-    this.rows$.pipe(takeUntil(this.destroy$)).subscribe((rows) => {
-      this.rows = rows;
-    });
+    combineLatest([this.potentialGrantees$, this.currentAccessPolicies$])
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(([potentialGrantees, currentAccessPolicies]) => {
+        this.potentialGrantees = potentialGrantees;
+        this.setSelected(currentAccessPolicies);
+      });
   }
 
   ngOnDestroy(): void {
@@ -164,16 +95,133 @@ export class ServiceAccountPeopleComponent {
     this.destroy$.complete();
   }
 
-  private launchDeleteWarningDialog(policy: AccessSelectorRowView) {
-    this.dialogService.open<unknown, AccessRemovalDetails>(AccessRemovalDialogComponent, {
-      data: {
-        title: "smAccessRemovalWarningSaTitle",
-        message: "smAccessRemovalWarningSaMessage",
-        operation: "delete",
-        type: "service-account",
-        returnRoute: ["sm", this.organizationId, "service-accounts"],
-        policy,
-      },
+  submit = async () => {
+    if (this.isFormInvalid()) {
+      return;
+    }
+
+    const showAccessRemovalWarning =
+      await this.accessPolicySelectorService.showAccessRemovalWarning(
+        this.organizationId,
+        this.formGroup.value.accessPolicies,
+      );
+
+    if (
+      await this.handleAccessRemovalWarning(showAccessRemovalWarning, this.currentAccessPolicies)
+    ) {
+      return;
+    }
+
+    try {
+      const peoplePoliciesViews = await this.updateServiceAccountPeopleAccessPolicies(
+        this.serviceAccountId,
+        this.formGroup.value.accessPolicies,
+      );
+
+      await this.handleAccessTokenAvailableWarning(
+        showAccessRemovalWarning,
+        this.currentAccessPolicies,
+        this.formGroup.value.accessPolicies,
+      );
+
+      this.currentAccessPolicies = convertToAccessPolicyItemViews(peoplePoliciesViews);
+
+      this.platformUtilsService.showToast(
+        "success",
+        null,
+        this.i18nService.t("serviceAccountAccessUpdated"),
+      );
+    } catch (e) {
+      this.validationService.showError(e);
+      this.setSelected(this.currentAccessPolicies);
+    }
+  };
+
+  private setSelected(policiesToSelect: ApItemViewType[]) {
+    this.loading = true;
+    this.currentAccessPolicies = policiesToSelect;
+    if (policiesToSelect != undefined) {
+      // Must detect changes so that AccessSelector @Inputs() are aware of the latest
+      // potentialGrantees, otherwise no selected values will be patched below
+      this.changeDetectorRef.detectChanges();
+      this.formGroup.patchValue({
+        accessPolicies: policiesToSelect.map((m) => ({
+          type: m.type,
+          id: m.id,
+          permission: m.permission,
+          currentUser: m.type == ApItemEnum.User ? m.currentUser : null,
+          currentUserInGroup: m.type == ApItemEnum.Group ? m.currentUserInGroup : null,
+        })),
+      });
+    }
+    this.loading = false;
+  }
+
+  private isFormInvalid(): boolean {
+    this.formGroup.markAllAsTouched();
+    return this.formGroup.invalid;
+  }
+
+  private async handleAccessRemovalWarning(
+    showAccessRemovalWarning: boolean,
+    currentAccessPolicies: ApItemViewType[],
+  ): Promise<boolean> {
+    if (showAccessRemovalWarning) {
+      const confirmed = await this.showWarning();
+      if (!confirmed) {
+        this.setSelected(currentAccessPolicies);
+        return true;
+      }
+    }
+    return false;
+  }
+
+  private async updateServiceAccountPeopleAccessPolicies(
+    serviceAccountId: string,
+    selectedPolicies: ApItemValueType[],
+  ) {
+    const serviceAccountPeopleView = convertToServiceAccountPeopleAccessPoliciesView(
+      serviceAccountId,
+      selectedPolicies,
+    );
+    return await this.accessPolicyService.putServiceAccountPeopleAccessPolicies(
+      serviceAccountId,
+      serviceAccountPeopleView,
+    );
+  }
+
+  private async handleAccessTokenAvailableWarning(
+    showAccessRemovalWarning: boolean,
+    currentAccessPolicies: ApItemViewType[],
+    selectedPolicies: ApItemValueType[],
+  ): Promise<void> {
+    if (showAccessRemovalWarning) {
+      this.router.navigate(["sm", this.organizationId, "service-accounts"]);
+    } else if (
+      this.accessPolicySelectorService.isAccessRemoval(currentAccessPolicies, selectedPolicies)
+    ) {
+      await this.showAccessTokenStillAvailableWarning();
+    }
+  }
+
+  private async showWarning(): Promise<boolean> {
+    const confirmed = await this.dialogService.openSimpleDialog({
+      title: { key: "smAccessRemovalWarningSaTitle" },
+      content: { key: "smAccessRemovalWarningSaMessage" },
+      acceptButtonText: { key: "removeAccess" },
+      cancelButtonText: { key: "cancel" },
+      type: "warning",
+    });
+    return confirmed;
+  }
+
+  private async showAccessTokenStillAvailableWarning(): Promise<void> {
+    await this.dialogService.openSimpleDialog({
+      title: { key: "saPeopleWarningTitle" },
+      content: { key: "saPeopleWarningMessage" },
+      type: "warning",
+      acceptButtonText: { key: "close" },
+      cancelButtonText: null,
     });
   }
 }

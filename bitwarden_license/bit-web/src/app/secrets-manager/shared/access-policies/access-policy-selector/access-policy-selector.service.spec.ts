@@ -6,6 +6,7 @@ import { Organization } from "@bitwarden/common/admin-console/models/domain/orga
 
 import { AccessPolicySelectorService } from "./access-policy-selector.service";
 import { ApItemValueType } from "./models/ap-item-value.type";
+import { ApItemViewType } from "./models/ap-item-view.type";
 import { ApItemEnum } from "./models/enums/ap-item.enum";
 import { ApPermissionEnum } from "./models/enums/ap-permission.enum";
 
@@ -210,6 +211,113 @@ describe("AccessPolicySelectorService", () => {
       expect(result).toBe(true);
     });
   });
+  describe("isAccessRemoval", () => {
+    it("returns false when there are no previous policies and no selected policies", async () => {
+      const currentAccessPolicies: ApItemViewType[] = [];
+      const selectedPolicyValues: ApItemValueType[] = [];
+
+      const result = sut.isAccessRemoval(currentAccessPolicies, selectedPolicyValues);
+
+      expect(result).toBe(false);
+    });
+    it("returns false when there are no previous policies", async () => {
+      const currentAccessPolicies: ApItemViewType[] = [];
+      const selectedPolicyValues: ApItemValueType[] = [
+        createApItemValueType({
+          id: "example",
+          permission: ApPermissionEnum.CanRead,
+          currentUser: true,
+        }),
+      ];
+
+      const result = sut.isAccessRemoval(currentAccessPolicies, selectedPolicyValues);
+
+      expect(result).toBe(false);
+    });
+    it("returns false when previous policies and selected policies are the same", async () => {
+      const currentAccessPolicies: ApItemViewType[] = [
+        createApItemViewType({
+          id: "example",
+          permission: ApPermissionEnum.CanRead,
+          currentUser: true,
+        }),
+      ];
+      const selectedPolicyValues: ApItemValueType[] = [
+        createApItemValueType({
+          id: "example",
+          permission: ApPermissionEnum.CanRead,
+          currentUser: true,
+        }),
+      ];
+
+      const result = sut.isAccessRemoval(currentAccessPolicies, selectedPolicyValues);
+
+      expect(result).toBe(false);
+    });
+    it("returns false when previous policies are still selected", async () => {
+      const currentAccessPolicies: ApItemViewType[] = [
+        createApItemViewType({
+          id: "example",
+          permission: ApPermissionEnum.CanRead,
+          currentUser: true,
+        }),
+      ];
+      const selectedPolicyValues: ApItemValueType[] = [
+        createApItemValueType({
+          id: "example",
+          permission: ApPermissionEnum.CanRead,
+          currentUser: true,
+        }),
+        createApItemValueType({
+          id: "example-2",
+          permission: ApPermissionEnum.CanRead,
+          currentUser: true,
+        }),
+      ];
+
+      const result = sut.isAccessRemoval(currentAccessPolicies, selectedPolicyValues);
+
+      expect(result).toBe(false);
+    });
+    it("returns true when previous policies are not selected", async () => {
+      const currentAccessPolicies: ApItemViewType[] = [
+        createApItemViewType({
+          id: "example",
+          permission: ApPermissionEnum.CanRead,
+          currentUser: true,
+        }),
+      ];
+      const selectedPolicyValues: ApItemValueType[] = [
+        createApItemValueType({
+          id: "test",
+          permission: ApPermissionEnum.CanRead,
+          currentUser: true,
+        }),
+        createApItemValueType({
+          id: "example-2",
+          permission: ApPermissionEnum.CanRead,
+          currentUser: true,
+        }),
+      ];
+
+      const result = sut.isAccessRemoval(currentAccessPolicies, selectedPolicyValues);
+
+      expect(result).toBe(true);
+    });
+    it("returns true when there are previous policies and nothing was selected", async () => {
+      const currentAccessPolicies: ApItemViewType[] = [
+        createApItemViewType({
+          permission: ApPermissionEnum.CanRead,
+          currentUser: true,
+        }),
+      ];
+      const selectedPolicyValues: ApItemValueType[] = [];
+
+      const result = sut.isAccessRemoval(currentAccessPolicies, selectedPolicyValues);
+
+      expect(result).toBe(true);
+    });
+  });
 });
 
 const orgFactory = (props: Partial<Organization> = {}) =>
@@ -229,6 +337,16 @@ function createApItemValueType(options: Partial<ApItemValueType> = {}) {
     type: options?.type ?? ApItemEnum.User,
     permission: options?.permission ?? ApPermissionEnum.CanRead,
     currentUserInGroup: options?.currentUserInGroup ?? false,
+  };
+}
+
+function createApItemViewType(options: Partial<ApItemViewType> = {}) {
+  return {
+    id: options?.id ?? "test",
+    listName: options?.listName ?? "test",
+    labelName: options?.labelName ?? "test",
+    type: options?.type ?? ApItemEnum.User,
+    permission: options?.permission ?? ApPermissionEnum.CanRead,
   };
 }
 

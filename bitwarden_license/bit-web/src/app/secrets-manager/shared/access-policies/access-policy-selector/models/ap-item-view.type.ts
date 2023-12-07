@@ -1,7 +1,10 @@
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { SelectItemView } from "@bitwarden/components";
 
-import { ProjectPeopleAccessPoliciesView } from "../../../../models/view/access-policy.view";
+import {
+  ProjectPeopleAccessPoliciesView,
+  ServiceAccountPeopleAccessPoliciesView,
+} from "../../../../models/view/access-policy.view";
 import { PotentialGranteeView } from "../../../../models/view/potential-grantee.view";
 
 import { ApItemEnum, ApItemEnumUtil } from "./enums/ap-item.enum";
@@ -29,7 +32,7 @@ export type ApItemViewType = SelectItemView & {
   );
 
 export function convertToAccessPolicyItemViews(
-  value: ProjectPeopleAccessPoliciesView,
+  value: ProjectPeopleAccessPoliciesView | ServiceAccountPeopleAccessPoliciesView,
 ): ApItemViewType[] {
   const accessPolicies: ApItemViewType[] = [];
 

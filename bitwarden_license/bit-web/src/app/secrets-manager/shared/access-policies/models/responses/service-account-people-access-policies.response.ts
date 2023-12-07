@@ -5,7 +5,7 @@ import {
   UserServiceAccountAccessPolicyResponse,
 } from "./access-policy.response";
 
-export class ServiceAccountAccessPoliciesResponse extends BaseResponse {
+export class ServiceAccountPeopleAccessPoliciesResponse extends BaseResponse {
   userAccessPolicies: UserServiceAccountAccessPolicyResponse[];
   groupAccessPolicies: GroupServiceAccountAccessPolicyResponse[];
 
