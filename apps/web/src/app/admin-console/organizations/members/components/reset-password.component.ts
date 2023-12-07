@@ -10,7 +10,7 @@ import {
 import { Subject, takeUntil } from "rxjs";
 import zxcvbn from "zxcvbn";
 
-import { PasswordStrengthComponent } from "@bitwarden/angular/shared/components/password-strength/password-strength.component";
+import { PasswordStrengthComponent } from "@bitwarden/angular/tools/password-strength/password-strength.component";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { MasterPasswordPolicyOptions } from "@bitwarden/common/admin-console/models/domain/master-password-policy-options";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";

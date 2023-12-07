@@ -16,7 +16,7 @@ import { EncryptedExportType } from "@bitwarden/common/tools/enums/encrypted-exp
 import { DialogService } from "@bitwarden/components";
 import { VaultExportServiceAbstraction } from "@bitwarden/exporter/vault-export";
 
-import { PasswordStrengthComponent } from "../../../shared/components/password-strength/password-strength.component";
+import { PasswordStrengthComponent } from "../../password-strength/password-strength.component";
 
 @Directive()
 export class ExportComponent implements OnInit, OnDestroy {

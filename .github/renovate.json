@@ -79,7 +79,6 @@
       "matchPackageNames": [
         "@types/duo_web_sdk",
         "@types/node-ipc",
-        "@types/zxcvbn",
         "duo_web_sdk",
         "node-ipc",
         "qrious",
@@ -215,6 +214,7 @@
         "@microsoft/signalr-protocol-msgpack",
         "@types/jsdom",
         "@types/papaparse",
+        "@types/zxcvbn",
         "electron",
         "electron-builder",
         "electron-log",
@@ -225,7 +225,8 @@
         "jszip",
         "oidc-client-ts",
         "papaparse",
-        "utf-8-validate"
+        "utf-8-validate",
+        "zxcvbn"
       ],
       "description": "Tools owned dependencies",
       "commitMessagePrefix": "[deps] Tools:",

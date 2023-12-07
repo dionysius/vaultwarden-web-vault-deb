@@ -16,7 +16,7 @@ import { MasterKey, UserKey } from "@bitwarden/common/platform/models/domain/sym
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 import { DialogService } from "@bitwarden/components";
 
-import { PasswordColorText } from "../../shared/components/password-strength/password-strength.component";
+import { PasswordColorText } from "../../tools/password-strength/password-strength.component";
 
 @Directive()
 export class ChangePasswordComponent implements OnInit, OnDestroy {

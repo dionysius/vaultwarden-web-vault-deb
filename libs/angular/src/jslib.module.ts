@@ -28,8 +28,8 @@ import { UserTypePipe } from "./pipes/user-type.pipe";
 import { EllipsisPipe } from "./platform/pipes/ellipsis.pipe";
 import { FingerprintPipe } from "./platform/pipes/fingerprint.pipe";
 import { I18nPipe } from "./platform/pipes/i18n.pipe";
-import { PasswordStrengthComponent } from "./shared/components/password-strength/password-strength.component";
 import { ExportScopeCalloutComponent } from "./tools/export/components/export-scope-callout.component";
+import { PasswordStrengthComponent } from "./tools/password-strength/password-strength.component";
 import { IconComponent } from "./vault/components/icon.component";
 
 @NgModule({
