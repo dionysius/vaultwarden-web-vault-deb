@@ -95,6 +95,12 @@ export abstract class OrganizationService {
 }
 
 export abstract class InternalOrganizationServiceAbstraction extends OrganizationService {
-  replace: (organizations: { [id: string]: OrganizationData }) => Promise<void>;
-  upsert: (OrganizationData: OrganizationData | OrganizationData[]) => Promise<void>;
+  replace: (
+    organizations: { [id: string]: OrganizationData },
+    flexibleCollectionsEnabled: boolean,
+  ) => Promise<void>;
+  upsert: (
+    OrganizationData: OrganizationData | OrganizationData[],
+    flexibleCollectionsEnabled: boolean,
+  ) => Promise<void>;
 }

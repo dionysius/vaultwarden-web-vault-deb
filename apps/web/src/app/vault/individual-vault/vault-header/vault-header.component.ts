@@ -146,7 +146,7 @@ export class VaultHeaderComponent {
     const organization = this.organizations.find(
       (o) => o.id === this.collection?.node.organizationId,
     );
-    return this.collection.node.canEdit(organization);
+    return this.collection.node.canEdit(organization, this.flexibleCollectionsEnabled);
   }
 
   async editCollection(tab: CollectionDialogTabType): Promise<void> {

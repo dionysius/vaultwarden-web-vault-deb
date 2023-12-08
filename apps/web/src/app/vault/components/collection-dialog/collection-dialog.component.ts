@@ -313,6 +313,13 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
     this.close(CollectionDialogAction.Deleted, this.collection);
   };
 
+  protected canDelete$ = this.flexibleCollectionsEnabled$.pipe(
+    map(
+      (flexibleCollectionsEnabled) =>
+        this.editMode && this.collection.canDelete(this.organization, flexibleCollectionsEnabled),
+    ),
+  );
+
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();

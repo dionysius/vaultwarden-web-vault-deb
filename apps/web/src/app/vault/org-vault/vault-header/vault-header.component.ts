@@ -152,7 +152,7 @@ export class VaultHeaderComponent {
     }
 
     // Otherwise, check if we can edit the specified collection
-    return this.collection.node.canEdit(this.organization);
+    return this.collection.node.canEdit(this.organization, this.flexibleCollectionsEnabled);
   }
 
   addCipher() {

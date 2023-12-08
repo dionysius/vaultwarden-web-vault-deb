@@ -138,25 +138,128 @@
             </div>
           </fieldset>
           <ng-container *ngIf="customUserTypeSelected">
-            <h3 class="mt-4 d-flex tw-font-semibold">
-              {{ "permissions" | i18n }}
-            </h3>
-            <div class="row" [formGroup]="permissionsGroup">
-              <div class="col-6">
-                <div class="mb-3">
-                  <label class="tw-font-semibold">{{ "managerPermissions" | i18n }}</label>
-                  <hr class="tw-mb-2 tw-mr-2 tw-mt-0" />
-                  <app-nested-checkbox
-                    parentId="manageAssignedCollections"
-                    [checkboxes]="permissionsGroup.controls.manageAssignedCollectionsGroup"
-                  >
-                  </app-nested-checkbox>
+            <ng-container *ngIf="!(flexibleCollectionsEnabled$ | async); else customPermissionsFC">
+              <h3 class="mt-4 d-flex tw-font-semibold">
+                {{ "permissions" | i18n }}
+              </h3>
+              <div class="row" [formGroup]="permissionsGroup">
+                <div class="col-6">
+                  <div class="mb-3">
+                    <label class="tw-font-semibold">{{ "managerPermissions" | i18n }}</label>
+                    <hr class="tw-mb-2 tw-mr-2 tw-mt-0" />
+                    <app-nested-checkbox
+                      parentId="manageAssignedCollections"
+                      [checkboxes]="permissionsGroup.controls.manageAssignedCollectionsGroup"
+                    >
+                    </app-nested-checkbox>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="mb-3">
+                    <label class="tw-font-semibold">{{ "adminPermissions" | i18n }}</label>
+                    <hr class="tw-mb-2 tw-mr-2 tw-mt-0" />
+                    <div>
+                      <input
+                        type="checkbox"
+                        name="accessEventLogs"
+                        id="accessEventLogs"
+                        formControlName="accessEventLogs"
+                      />
+                      <label class="!tw-font-normal" for="accessEventLogs">
+                        {{ "accessEventLogs" | i18n }}
+                      </label>
+                    </div>
+                    <div>
+                      <input
+                        type="checkbox"
+                        name="accessImportExport"
+                        id="accessImportExport"
+                        formControlName="accessImportExport"
+                      />
+                      <label class="!tw-font-normal" for="accessImportExport">
+                        {{ "accessImportExport" | i18n }}
+                      </label>
+                    </div>
+                    <div>
+                      <input
+                        type="checkbox"
+                        name="accessReports"
+                        id="accessReports"
+                        formControlName="accessReports"
+                      />
+                      <label class="!tw-font-normal" for="accessReports">
+                        {{ "accessReports" | i18n }}
+                      </label>
+                    </div>
+                    <app-nested-checkbox
+                      parentId="manageAllCollections"
+                      [checkboxes]="permissionsGroup.controls.manageAllCollectionsGroup"
+                    >
+                    </app-nested-checkbox>
+                    <div>
+                      <input
+                        type="checkbox"
+                        name="manageGroups"
+                        id="manageGroups"
+                        formControlName="manageGroups"
+                      />
+                      <label class="!tw-font-normal" for="manageGroups">
+                        {{ "manageGroups" | i18n }}
+                      </label>
+                    </div>
+                    <div>
+                      <input
+                        type="checkbox"
+                        name="manageSso"
+                        id="manageSso"
+                        formControlName="manageSso"
+                      />
+                      <label class="!tw-font-normal" for="manageSso">
+                        {{ "manageSso" | i18n }}
+                      </label>
+                    </div>
+                    <div>
+                      <input
+                        type="checkbox"
+                        name="managePolicies"
+                        id="managePolicies"
+                        formControlName="managePolicies"
+                      />
+                      <label class="!tw-font-normal" for="managePolicies">
+                        {{ "managePolicies" | i18n }}
+                      </label>
+                    </div>
+                    <div>
+                      <input
+                        type="checkbox"
+                        name="manageUsers"
+                        id="manageUsers"
+                        formControlName="manageUsers"
+                        (change)="handleDependentPermissions()"
+                      />
+                      <label class="!tw-font-normal" for="manageUsers">
+                        {{ "manageUsers" | i18n }}
+                      </label>
+                    </div>
+                    <div>
+                      <input
+                        type="checkbox"
+                        name="manageResetPassword"
+                        id="manageResetPassword"
+                        formControlName="manageResetPassword"
+                        (change)="handleDependentPermissions()"
+                      />
+                      <label class="!tw-font-normal" for="manageResetPassword">
+                        {{ "manageAccountRecovery" | i18n }}
+                      </label>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="col-6">
-                <div class="mb-3">
-                  <label class="tw-font-semibold">{{ "adminPermissions" | i18n }}</label>
-                  <hr class="tw-mb-2 tw-mr-2 tw-mt-0" />
+            </ng-container>
+            <ng-template #customPermissionsFC>
+              <div class="row" [formGroup]="permissionsGroup">
+                <div class="col-4">
                   <div>
                     <input
                       type="checkbox"
@@ -190,71 +293,77 @@
                       {{ "accessReports" | i18n }}
                     </label>
                   </div>
+                </div>
+                <div class="col-4">
                   <app-nested-checkbox
                     parentId="manageAllCollections"
                     [checkboxes]="permissionsGroup.controls.manageAllCollectionsGroup"
                   >
                   </app-nested-checkbox>
-                  <div>
-                    <input
-                      type="checkbox"
-                      name="manageGroups"
-                      id="manageGroups"
-                      formControlName="manageGroups"
-                    />
-                    <label class="!tw-font-normal" for="manageGroups">
-                      {{ "manageGroups" | i18n }}
-                    </label>
-                  </div>
-                  <div>
-                    <input
-                      type="checkbox"
-                      name="manageSso"
-                      id="manageSso"
-                      formControlName="manageSso"
-                    />
-                    <label class="!tw-font-normal" for="manageSso">
-                      {{ "manageSso" | i18n }}
-                    </label>
-                  </div>
-                  <div>
-                    <input
-                      type="checkbox"
-                      name="managePolicies"
-                      id="managePolicies"
-                      formControlName="managePolicies"
-                    />
-                    <label class="!tw-font-normal" for="managePolicies">
-                      {{ "managePolicies" | i18n }}
-                    </label>
-                  </div>
-                  <div>
-                    <input
-                      type="checkbox"
-                      name="manageUsers"
-                      id="manageUsers"
-                      formControlName="manageUsers"
-                      (change)="handleDependentPermissions()"
-                    />
-                    <label class="!tw-font-normal" for="manageUsers">
-                      {{ "manageUsers" | i18n }}
-                    </label>
-                  </div>
-                  <div>
-                    <input
-                      type="checkbox"
-                      name="manageResetPassword"
-                      id="manageResetPassword"
-                      formControlName="manageResetPassword"
-                      (change)="handleDependentPermissions()"
-                    />
-                    <label class="!tw-font-normal" for="manageResetPassword">
-                      {{ "manageAccountRecovery" | i18n }}
-                    </label>
+                </div>
+                <div class="col-4">
+                  <div class="mb-3">
+                    <div>
+                      <input
+                        type="checkbox"
+                        name="manageGroups"
+                        id="manageGroups"
+                        formControlName="manageGroups"
+                      />
+                      <label class="!tw-font-normal" for="manageGroups">
+                        {{ "manageGroups" | i18n }}
+                      </label>
+                    </div>
+                    <div>
+                      <input
+                        type="checkbox"
+                        name="manageSso"
+                        id="manageSso"
+                        formControlName="manageSso"
+                      />
+                      <label class="!tw-font-normal" for="manageSso">
+                        {{ "manageSso" | i18n }}
+                      </label>
+                    </div>
+                    <div>
+                      <input
+                        type="checkbox"
+                        name="managePolicies"
+                        id="managePolicies"
+                        formControlName="managePolicies"
+                      />
+                      <label class="!tw-font-normal" for="managePolicies">
+                        {{ "managePolicies" | i18n }}
+                      </label>
+                    </div>
+                    <div>
+                      <input
+                        type="checkbox"
+                        name="manageUsers"
+                        id="manageUsers"
+                        formControlName="manageUsers"
+                        (change)="handleDependentPermissions()"
+                      />
+                      <label class="!tw-font-normal" for="manageUsers">
+                        {{ "manageUsers" | i18n }}
+                      </label>
+                    </div>
+                    <div>
+                      <input
+                        type="checkbox"
+                        name="manageResetPassword"
+                        id="manageResetPassword"
+                        formControlName="manageResetPassword"
+                        (change)="handleDependentPermissions()"
+                      />
+                      <label class="!tw-font-normal" for="manageResetPassword">
+                        {{ "manageAccountRecovery" | i18n }}
+                      </label>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </ng-template>
           </ng-container>
           <ng-container *ngIf="canUseSecretsManager">
             <h3 class="mt-4">

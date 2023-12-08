@@ -106,7 +106,7 @@ export class VaultItemsComponent {
     }
 
     const organization = this.allOrganizations.find((o) => o.id === collection.organizationId);
-    return collection.canEdit(organization);
+    return collection.canEdit(organization, this.flexibleCollectionsEnabled);
   }
 
   protected canDeleteCollection(collection: CollectionView): boolean {
