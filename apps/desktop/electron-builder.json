@@ -19,7 +19,7 @@
     "**/node_modules/@bitwarden/desktop-native/index.js",
     "**/node_modules/@bitwarden/desktop-native/desktop_native.${platform}-${arch}*.node"
   ],
-  "electronVersion": "25.9.1",
+  "electronVersion": "27.1.3",
   "generateUpdatesFilesForAllChannels": true,
   "publish": {
     "provider": "generic",
