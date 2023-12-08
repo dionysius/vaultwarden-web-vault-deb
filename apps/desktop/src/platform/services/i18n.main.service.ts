@@ -1,4 +1,4 @@
-import { promises as fs } from "fs";
+import * as fs from "fs";
 import * as path from "path";
 
 import { ipcMain } from "electron";
@@ -76,14 +76,14 @@ export class I18nMainService extends BaseI18nService {
     ];
   }
 
-  private async readLanguageFile(formattedLocale: string): Promise<any> {
+  private readLanguageFile(formattedLocale: string): Promise<any> {
     // Check that the provided locale only contains letters and dashes and underscores to avoid possible path traversal
     if (!/^[a-zA-Z_-]+$/.test(formattedLocale)) {
       return Promise.resolve({});
     }
 
     const filePath = path.join(__dirname, this.localesDirectory, formattedLocale, "messages.json");
-    const localesJson = await fs.readFile(filePath, "utf8");
+    const localesJson = fs.readFileSync(filePath, "utf8");
     const locales = JSON.parse(localesJson.replace(/^\uFEFF/, "")); // strip the BOM
     return Promise.resolve(locales);
   }
