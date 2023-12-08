@@ -137,6 +137,10 @@ export abstract class BaseImporter {
   }
 
   protected parseXml(data: string): Document {
+    // Ensure there are no external entity elements in the XML to prevent against XXE attacks.
+    if (!this.validateNoExternalEntities(data)) {
+      return null;
+    }
     const parser = new DOMParser();
     const doc = parser.parseFromString(data, "application/xml");
     return doc != null && doc.querySelector("parsererror") == null ? doc : null;
@@ -401,5 +405,11 @@ export abstract class BaseImporter {
       cipher.identity.middleName = this.getValueOrDefault(nameParts[1]);
       cipher.identity.lastName = nameParts.slice(2, nameParts.length).join(" ");
     }
+  }
+
+  private validateNoExternalEntities(data: string): boolean {
+    const regex = new RegExp("<!ENTITY", "i");
+    const hasExternalEntities = regex.test(data);
+    return !hasExternalEntities;
   }
 }
