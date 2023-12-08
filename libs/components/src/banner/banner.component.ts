@@ -17,6 +17,7 @@ export class BannerComponent implements OnInit {
   @Input("bannerType") bannerType: BannerTypes = "info";
   @Input() icon: string;
   @Input() useAlertRole = true;
+  @Input() showClose = true;
 
   @Output() onClose = new EventEmitter<void>();
 

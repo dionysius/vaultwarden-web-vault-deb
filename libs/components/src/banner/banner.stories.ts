@@ -35,6 +35,7 @@ export default {
   },
   args: {
     bannerType: "warning",
+    showClose: true,
   },
   argTypes: {
     onClose: { action: "onClose" },
@@ -50,7 +51,7 @@ export const Premium: Story = {
   render: (args: BannerComponent) => ({
     props: args,
     template: `
-      <bit-banner [bannerType]="bannerType" (onClose)="onClose($event)">
+      <bit-banner [bannerType]="bannerType" (onClose)="onClose($event)" [showClose]=showClose>
         Content Really Long Text Lorem Ipsum Ipsum Ipsum
         <button bitLink linkType="contrast">Button</button>
       </bit-banner>
@@ -80,5 +81,12 @@ export const Danger: Story = {
   ...Premium,
   args: {
     bannerType: "danger",
+  },
+};
+
+export const HideClose: Story = {
+  ...Premium,
+  args: {
+    showClose: false,
   },
 };
