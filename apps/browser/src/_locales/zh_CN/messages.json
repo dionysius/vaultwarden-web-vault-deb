@@ -365,6 +365,9 @@
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "设置一个解锁方式以更改您的密码库超时动作。"
   },
+  "unlockMethodNeeded": {
+    "message": "在设置中设置解锁方法"
+  },
   "rateExtension": {
     "message": "为本扩展打分"
   },
@@ -404,6 +407,9 @@
   },
   "lockNow": {
     "message": "立即锁定"
+  },
+  "lockAll": {
+    "message": "全部锁定"
   },
   "immediately": {
     "message": "立即"
@@ -1027,6 +1033,12 @@
   "showAutoFillMenuOnFormFieldsDescAlt": {
     "message": "适用于所有已登录的账户。"
   },
+  "turnOffBrowserBuiltInPasswordManagerSettings": {
+    "message": "Turn off your browser’s built in password manager settings to avoid conflicts."
+  },
+  "turnOffBrowserBuiltInPasswordManagerSettingsLink": {
+    "message": "编辑浏览器设置。"
+  },
   "autofillOverlayVisibilityOff": {
     "message": "关闭",
     "description": "Overlay setting select option for disabling autofill overlay"
@@ -1130,6 +1142,9 @@
   },
   "faviconDesc": {
     "message": "在每个登录项目旁边显示一个可识别的图像。"
+  },
+  "faviconDescAlt": {
+    "message": "在每个登录的旁边显示一个可识别的图像。适用于所有已登录的账户。"
   },
   "enableBadgeCounter": {
     "message": "显示角标计数器"
@@ -2538,35 +2553,11 @@
     "message": "Bitwarden 自动填充菜单可用。按向下箭头键进行选择。",
     "description": "Screen reader text for announcing when the overlay opens on the page"
   },
-  "overrideBrowserAutofillTitle": {
-    "message": "覆盖浏览器自动填充吗？",
-    "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideBrowserAutofillDescription": {
-    "message": "关闭此设置可能会导致 Bitwarden 自动填充菜单与浏览器菜单发生冲突。",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideBrowserAutofillPrivacyRequiredDescription": {
-    "message": "关闭此设置可能会导致 Bitwarden 自动填充菜单与浏览器菜单发生冲突。打开此选项将重新启动 Bitwarden 扩展。",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
   "turnOn": {
     "message": "开启"
   },
   "ignore": {
     "message": "忽略"
-  },
-  "overrideBrowserAutoFillSettings": {
-    "message": "覆盖浏览器的自动填充设置",
-    "description": "Label for the setting that allows overriding the default browser autofill settings"
-  },
-  "extensionPrivacyPermissionNotGrantedTitle": {
-    "message": "无法覆盖浏览器自动填充",
-    "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
-  },
-  "extensionPrivacyPermissionNotGrantedDescription": {
-    "message": "Bitwarden 必须拥有访问扩展隐私的权限，才能覆盖浏览器的自动填充设置。",
-    "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "importData": {
     "message": "导入数据",
@@ -2796,5 +2787,35 @@
   },
   "lastPassYubikeyDesc": {
     "message": "将与您的 LastPass 账户关联的 YubiKey 插入计算机的 USB 端口，然后触摸其按钮。"
+  },
+  "switchAccount": {
+    "message": "切换账户"
+  },
+  "switchAccounts": {
+    "message": "切换账户"
+  },
+  "switchToAccount": {
+    "message": "切换到账户"
+  },
+  "activeAccount": {
+    "message": "活动账户"
+  },
+  "accountLimitReached": {
+    "message": "已达到账户上限。请注销一个账户后再添加其他账户。"
+  },
+  "active": {
+    "message": "已生效"
+  },
+  "locked": {
+    "message": "已锁定"
+  },
+  "unlocked": {
+    "message": "已解锁"
+  },
+  "server": {
+    "message": "服务器"
+  },
+  "hostedAt": {
+    "message": "托管于"
   }
 }

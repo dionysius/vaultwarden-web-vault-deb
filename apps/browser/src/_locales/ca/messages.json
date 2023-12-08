@@ -365,6 +365,9 @@
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "Configura un mètode de desbloqueig per canviar l'acció del temps d'espera de la caixa forta."
   },
+  "unlockMethodNeeded": {
+    "message": "Set up an unlock method in Settings"
+  },
   "rateExtension": {
     "message": "Valora aquesta extensió"
   },
@@ -404,6 +407,9 @@
   },
   "lockNow": {
     "message": "Bloqueja ara"
+  },
+  "lockAll": {
+    "message": "Lock all"
   },
   "immediately": {
     "message": "Immediatament"
@@ -1027,6 +1033,12 @@
   "showAutoFillMenuOnFormFieldsDescAlt": {
     "message": "S'aplica a tots els comptes connectats."
   },
+  "turnOffBrowserBuiltInPasswordManagerSettings": {
+    "message": "Turn off your browser’s built in password manager settings to avoid conflicts."
+  },
+  "turnOffBrowserBuiltInPasswordManagerSettingsLink": {
+    "message": "Edit browser settings."
+  },
   "autofillOverlayVisibilityOff": {
     "message": "Desactivat",
     "description": "Overlay setting select option for disabling autofill overlay"
@@ -1130,6 +1142,9 @@
   },
   "faviconDesc": {
     "message": "Mostra una imatge reconeixible al costat de cada inici de sessió."
+  },
+  "faviconDescAlt": {
+    "message": "Show a recognizable image next to each login. Applies to all logged in accounts."
   },
   "enableBadgeCounter": {
     "message": "Mostra el comptador insígnia"
@@ -2538,35 +2553,11 @@
     "message": "El menú d'emplenament automàtic de Bitwarden està disponible. Premeu la tecla de fletxa avall per seleccionar-lo.",
     "description": "Screen reader text for announcing when the overlay opens on the page"
   },
-  "overrideBrowserAutofillTitle": {
-    "message": "Voleu substituir l'emplenament automàtic del navegador?",
-    "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideBrowserAutofillDescription": {
-    "message": "Si deixeu aquesta configuració desactivada, és possible que hi haja conflictes entre el menú d'emplenament automàtic de Bitwarden i el del navegador.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideBrowserAutofillPrivacyRequiredDescription": {
-    "message": "Si deixeu aquesta configuració desactivada, és possible que hi haja conflictes entre el menú d'emplenament automàtic de Bitwarden i el del navegador. En activar-la, es reiniciarà l'extensió Bitwarden.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
   "turnOn": {
     "message": "Activa"
   },
   "ignore": {
     "message": "Ignora"
-  },
-  "overrideBrowserAutoFillSettings": {
-    "message": "Anul·la la configuració d'emplenament automàtic del navegador",
-    "description": "Label for the setting that allows overriding the default browser autofill settings"
-  },
-  "extensionPrivacyPermissionNotGrantedTitle": {
-    "message": "No es pot anul·lar l'emplenament automàtic del navegador",
-    "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
-  },
-  "extensionPrivacyPermissionNotGrantedDescription": {
-    "message": "Bitwarden ha de tenir accés al permís de privadesa de l'extensió per anul·lar la configuració d'emplenament automàtic del navegador.",
-    "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "importData": {
     "message": "Importa dades",
@@ -2796,5 +2787,35 @@
   },
   "lastPassYubikeyDesc": {
     "message": "Inseriu la YubiKey associada al compte del LastPass al port USB de l'ordinador i, després, toqueu-ne el botó."
+  },
+  "switchAccount": {
+    "message": "Switch account"
+  },
+  "switchAccounts": {
+    "message": "Switch accounts"
+  },
+  "switchToAccount": {
+    "message": "Switch to account"
+  },
+  "activeAccount": {
+    "message": "Active account"
+  },
+  "accountLimitReached": {
+    "message": "Account limit reached. Log out of an account to add another."
+  },
+  "active": {
+    "message": "active"
+  },
+  "locked": {
+    "message": "locked"
+  },
+  "unlocked": {
+    "message": "unlocked"
+  },
+  "server": {
+    "message": "server"
+  },
+  "hostedAt": {
+    "message": "hosted at"
   }
 }

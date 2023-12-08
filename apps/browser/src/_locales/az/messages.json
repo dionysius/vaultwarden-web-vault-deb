@@ -365,6 +365,9 @@
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "Anbar vaxt bitməsi əməliyyatınızı dəyişdirmək üçün bir kilid açma üsulu qurun."
   },
+  "unlockMethodNeeded": {
+    "message": "Ayarlarda bir kilid açma üsulu qurun"
+  },
   "rateExtension": {
     "message": "Uzantını qiymətləndir"
   },
@@ -404,6 +407,9 @@
   },
   "lockNow": {
     "message": "İndi kilidlə"
+  },
+  "lockAll": {
+    "message": "Hamısını kilidlə"
   },
   "immediately": {
     "message": "Dərhal"
@@ -1027,6 +1033,12 @@
   "showAutoFillMenuOnFormFieldsDescAlt": {
     "message": "Giriş etmiş bütün hesablara aiddir."
   },
+  "turnOffBrowserBuiltInPasswordManagerSettings": {
+    "message": "Turn off your browser’s built in password manager settings to avoid conflicts."
+  },
+  "turnOffBrowserBuiltInPasswordManagerSettingsLink": {
+    "message": "Edit browser settings."
+  },
   "autofillOverlayVisibilityOff": {
     "message": "Bağlı",
     "description": "Overlay setting select option for disabling autofill overlay"
@@ -1130,6 +1142,9 @@
   },
   "faviconDesc": {
     "message": "Hər girişin yanında tanına bilən təsvir göstər."
+  },
+  "faviconDescAlt": {
+    "message": "Hər bir giriş elementinin yanında tanına bilən bir təsvir göstər. Giriş etmiş bütün hesablara aiddir."
   },
   "enableBadgeCounter": {
     "message": "Nişan sayğacını göstər"
@@ -2538,35 +2553,11 @@
     "message": "Bitwarden avto-doldurma menyusu mövcuddur. Seçmək üçün aşağı ox düyməsinə basın.",
     "description": "Screen reader text for announcing when the overlay opens on the page"
   },
-  "overrideBrowserAutofillTitle": {
-    "message": "Brauzerin avto-doldurması yararsız edilsin?",
-    "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideBrowserAutofillDescription": {
-    "message": "Bu ayarın söndürülməsi, \"Bitwarden\"in və brauzerinizin avto-doldurma menyuları arasında ziddiyyətlərə səbəb ola bilər.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideBrowserAutofillPrivacyRequiredDescription": {
-    "message": "Bu ayarın söndürülməsi, \"Bitwarden\"in və brauzerinizin avto-doldurma menyuları arasında ziddiyyətlərə səbəb ola bilər. Bunu işə salmaq, Bitwarden uzantısını yenidən başladacaq.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
   "turnOn": {
     "message": "İşə sal"
   },
   "ignore": {
     "message": "Yox say"
-  },
-  "overrideBrowserAutoFillSettings": {
-    "message": "Brauzerin avto-doldurma ayarlarını yararsız et",
-    "description": "Label for the setting that allows overriding the default browser autofill settings"
-  },
-  "extensionPrivacyPermissionNotGrantedTitle": {
-    "message": "Brauzerin avto-doldurması yararsız edilə bilmir",
-    "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
-  },
-  "extensionPrivacyPermissionNotGrantedDescription": {
-    "message": "Bitwarden, brauzerin avto-doldurma ayarlarını yararsız etmək üçün uzantının gizlilik icazəsinə müraciət etməlidir.",
-    "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "importData": {
     "message": "Datanı daxilə köçür",
@@ -2796,5 +2787,35 @@
   },
   "lastPassYubikeyDesc": {
     "message": "LastPass hesabınızla əlaqələndirilmiş \"YubiKey\"i kompüterinizin USB yuvasına taxın, daha sonra düyməsinə basın."
+  },
+  "switchAccount": {
+    "message": "Hesabı dəyişdir"
+  },
+  "switchAccounts": {
+    "message": "Hesabları dəyişdir"
+  },
+  "switchToAccount": {
+    "message": "Hesaba keç"
+  },
+  "activeAccount": {
+    "message": "Aktiv hesab"
+  },
+  "accountLimitReached": {
+    "message": "Hesab limiti keçildi. Başqa bir hesab əlavə etmək üçün bir hesabdan çıxış edin."
+  },
+  "active": {
+    "message": "aktiv"
+  },
+  "locked": {
+    "message": "kilidli"
+  },
+  "unlocked": {
+    "message": "kilidi açılmış"
+  },
+  "server": {
+    "message": "server"
+  },
+  "hostedAt": {
+    "message": "sahiblik edən"
   }
 }

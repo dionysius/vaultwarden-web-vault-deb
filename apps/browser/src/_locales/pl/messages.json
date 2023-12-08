@@ -365,6 +365,9 @@
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "Ustaw metodę odblokowania, aby zmienić czas blokowania sejfu."
   },
+  "unlockMethodNeeded": {
+    "message": "Ustaw metodę odblokowania w Ustawieniach"
+  },
   "rateExtension": {
     "message": "Oceń rozszerzenie"
   },
@@ -404,6 +407,9 @@
   },
   "lockNow": {
     "message": "Zablokuj"
+  },
+  "lockAll": {
+    "message": "Zablokuj wszystko"
   },
   "immediately": {
     "message": "Natychmiast"
@@ -1027,6 +1033,12 @@
   "showAutoFillMenuOnFormFieldsDescAlt": {
     "message": "Dotyczy wszystkich zalogowanych kont."
   },
+  "turnOffBrowserBuiltInPasswordManagerSettings": {
+    "message": "Wyłącz wbudowany w przeglądarkę menedżera haseł, aby uniknąć konfliktów."
+  },
+  "turnOffBrowserBuiltInPasswordManagerSettingsLink": {
+    "message": "Edytuj ustawienia przeglądarki."
+  },
   "autofillOverlayVisibilityOff": {
     "message": "Wył.",
     "description": "Overlay setting select option for disabling autofill overlay"
@@ -1130,6 +1142,9 @@
   },
   "faviconDesc": {
     "message": "Pokaż rozpoznawalny obraz obok danych logowania."
+  },
+  "faviconDescAlt": {
+    "message": "Pokaż rozpoznawalny obraz obok każdego logowania. Dotyczy wszystkich zalogowanych kont."
   },
   "enableBadgeCounter": {
     "message": "Pokaż licznik na ikonie"
@@ -2538,35 +2553,11 @@
     "message": "Dostępne menu autouzupełniania Bitwarden. Naciśnij przycisk strzałki w dół, aby wybrać.",
     "description": "Screen reader text for announcing when the overlay opens on the page"
   },
-  "overrideBrowserAutofillTitle": {
-    "message": "Zastąpić automatyczne wypełnianie przeglądarki?",
-    "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideBrowserAutofillDescription": {
-    "message": "Pozostawienie tego ustawienia jako wyłączonego może spowodować konflikty pomiędzy menu autouzupełniania Bitwarden a przeglądarką.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideBrowserAutofillPrivacyRequiredDescription": {
-    "message": "Pozostawienie tego ustawienia jako wyłączonego może spowodować konflikty pomiędzy menu autouzupełniania Bitwarden a przeglądarką. Włączenie tego spowoduje ponowne uruchomienie rozszerzenia Bitwarden.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
   "turnOn": {
     "message": "Włącz"
   },
   "ignore": {
     "message": "Ignoruj"
-  },
-  "overrideBrowserAutoFillSettings": {
-    "message": "Nadpisz ustawienia autouzupełniania przeglądarki",
-    "description": "Label for the setting that allows overriding the default browser autofill settings"
-  },
-  "extensionPrivacyPermissionNotGrantedTitle": {
-    "message": "Nie można napisać autouzupełniania przeglądarki",
-    "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
-  },
-  "extensionPrivacyPermissionNotGrantedDescription": {
-    "message": "Bitwarden musi mieć dostęp do uprawnień prywatności rozszerzenia, aby nadpisać ustawienia autouzupełniania przeglądarki.",
-    "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "importData": {
     "message": "Importuj dane",
@@ -2796,5 +2787,35 @@
   },
   "lastPassYubikeyDesc": {
     "message": "Włóż YubiKey powiązany z Twoim kontem LastPass do portu USB komputera, a następnie naciśnij jego przycisk."
+  },
+  "switchAccount": {
+    "message": "Przełącz konto"
+  },
+  "switchAccounts": {
+    "message": "Przełącz konta"
+  },
+  "switchToAccount": {
+    "message": "Przełącz na konto"
+  },
+  "activeAccount": {
+    "message": "Aktywne konto"
+  },
+  "accountLimitReached": {
+    "message": "Limit kont został osiągnięty. Wyloguj się z konta, aby dodać inne."
+  },
+  "active": {
+    "message": "aktywne"
+  },
+  "locked": {
+    "message": "zablokowane"
+  },
+  "unlocked": {
+    "message": "odblokowane"
+  },
+  "server": {
+    "message": "serwer"
+  },
+  "hostedAt": {
+    "message": "hostowany w"
   }
 }

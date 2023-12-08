@@ -365,6 +365,9 @@
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "Configure um método de desbloqueio para alterar a ação de tempo limite do seu cofre."
   },
+  "unlockMethodNeeded": {
+    "message": "Definir um método de desbloqueio nas Definições"
+  },
   "rateExtension": {
     "message": "Avaliar a extensão"
   },
@@ -404,6 +407,9 @@
   },
   "lockNow": {
     "message": "Bloquear agora"
+  },
+  "lockAll": {
+    "message": "Bloquear tudo"
   },
   "immediately": {
     "message": "Imediatamente"
@@ -1027,6 +1033,12 @@
   "showAutoFillMenuOnFormFieldsDescAlt": {
     "message": "Aplica-se a todas as contas com sessão iniciada."
   },
+  "turnOffBrowserBuiltInPasswordManagerSettings": {
+    "message": "Desative as definições do gestor de palavras-passe incorporado do seu navegador para evitar conflitos."
+  },
+  "turnOffBrowserBuiltInPasswordManagerSettingsLink": {
+    "message": "Editar as definições do navegador."
+  },
   "autofillOverlayVisibilityOff": {
     "message": "Desligado",
     "description": "Overlay setting select option for disabling autofill overlay"
@@ -1130,6 +1142,9 @@
   },
   "faviconDesc": {
     "message": "Mostrar uma imagem reconhecível junto a cada credencial."
+  },
+  "faviconDescAlt": {
+    "message": "Mostrar uma imagem reconhecível junto a cada credencial. Aplica-se a todas as contas com sessão iniciada."
   },
   "enableBadgeCounter": {
     "message": "Mostrar distintivo de contador"
@@ -2538,35 +2553,11 @@
     "message": "Menu de preenchimento automático Bitwarden disponível. Prima a tecla de seta para baixo para selecionar.",
     "description": "Screen reader text for announcing when the overlay opens on the page"
   },
-  "overrideBrowserAutofillTitle": {
-    "message": "Anular o preenchimento automático do navegador?",
-    "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideBrowserAutofillDescription": {
-    "message": "Deixar esta definição desativada pode causar conflitos entre o menu de preenchimento automático do Bitwarden e o do seu navegador.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideBrowserAutofillPrivacyRequiredDescription": {
-    "message": "Deixar esta configuração desativada pode causar conflitos entre o menu de preenchimento automático do Bitwarden e o do seu navegador. Ativar esta opção reiniciará a extensão Bitwarden.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
   "turnOn": {
     "message": "Ativar"
   },
   "ignore": {
     "message": "Ignorar"
-  },
-  "overrideBrowserAutoFillSettings": {
-    "message": "Substituir as definições de preenchimento automático do navegador",
-    "description": "Label for the setting that allows overriding the default browser autofill settings"
-  },
-  "extensionPrivacyPermissionNotGrantedTitle": {
-    "message": "Não é possível anular o preenchimento automático do navegador",
-    "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
-  },
-  "extensionPrivacyPermissionNotGrantedDescription": {
-    "message": "O Bitwarden deve ter acesso à permissão de privacidade da extensão para substituir as definições de preenchimento automático do navegador.",
-    "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "importData": {
     "message": "Importar dados",
@@ -2796,5 +2787,35 @@
   },
   "lastPassYubikeyDesc": {
     "message": "Insira a YubiKey associada à sua conta LastPass na porta USB do seu computador e, em seguida, toque no respetivo botão."
+  },
+  "switchAccount": {
+    "message": "Mudar de conta"
+  },
+  "switchAccounts": {
+    "message": "Mudar de contas"
+  },
+  "switchToAccount": {
+    "message": "Mudar para conta"
+  },
+  "activeAccount": {
+    "message": "Conta ativa"
+  },
+  "accountLimitReached": {
+    "message": "Limite de contas atingido. Termine a sessão de uma das contas para adicionar outra."
+  },
+  "active": {
+    "message": "ativa"
+  },
+  "locked": {
+    "message": "bloqueado"
+  },
+  "unlocked": {
+    "message": "desbloqueado"
+  },
+  "server": {
+    "message": "servidor"
+  },
+  "hostedAt": {
+    "message": "hosted at"
   }
 }

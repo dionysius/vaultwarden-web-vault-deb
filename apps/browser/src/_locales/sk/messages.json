@@ -365,6 +365,9 @@
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "Nastavte metódu odomknutia, aby ste zmenili akciu pri vypršaní času trezoru."
   },
+  "unlockMethodNeeded": {
+    "message": "Nastavte metódu odomknutia v Nastaveniach"
+  },
   "rateExtension": {
     "message": "Ohodnotiť rozšírenie"
   },
@@ -404,6 +407,9 @@
   },
   "lockNow": {
     "message": "Uzamknúť teraz"
+  },
+  "lockAll": {
+    "message": "Uzamknúť všetky"
   },
   "immediately": {
     "message": "Okamžite"
@@ -1027,6 +1033,12 @@
   "showAutoFillMenuOnFormFieldsDescAlt": {
     "message": "Platí pre všetky prihlásené účty."
   },
+  "turnOffBrowserBuiltInPasswordManagerSettings": {
+    "message": "Turn off your browser’s built in password manager settings to avoid conflicts."
+  },
+  "turnOffBrowserBuiltInPasswordManagerSettingsLink": {
+    "message": "Edit browser settings."
+  },
   "autofillOverlayVisibilityOff": {
     "message": "Vypnuté",
     "description": "Overlay setting select option for disabling autofill overlay"
@@ -1130,6 +1142,9 @@
   },
   "faviconDesc": {
     "message": "Pri každom prihlásení zobrazí rozpoznateľný obrázok."
+  },
+  "faviconDescAlt": {
+    "message": "Vedľa každého účtu zobraziť rozpoznateľný obrázok. Použije sa na všetky prihlásené účty."
   },
   "enableBadgeCounter": {
     "message": "Zobraziť počítadlo na ikone"
@@ -2538,35 +2553,11 @@
     "message": "K dispozícii je ponuka automatického vyplňovania Bitwardenu. Stlačte tlačidlo so šípkou nadol a vyberte.",
     "description": "Screen reader text for announcing when the overlay opens on the page"
   },
-  "overrideBrowserAutofillTitle": {
-    "message": "Prepísať automatické vypĺňanie prehliadača?",
-    "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideBrowserAutofillDescription": {
-    "message": "Ak necháte toto nastavenie vypnuté, môže to spôsobiť konflikty medzi ponukou automatického vypĺňania Bitwardenu a ponukou vášho prehliadača.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideBrowserAutofillPrivacyRequiredDescription": {
-    "message": "Ak necháte toto nastavenie vypnuté, môže to spôsobiť konflikty medzi ponukou automatického vypĺňania Bitwardenu a ponukou vášho prehliadača. Zapnutím nastavenia sa rozšírenie Bitwarden reštartuje.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
   "turnOn": {
     "message": "Zapnúť"
   },
   "ignore": {
     "message": "Ignorovať"
-  },
-  "overrideBrowserAutoFillSettings": {
-    "message": "Prepísať automatické vypĺňanie prehliadača",
-    "description": "Label for the setting that allows overriding the default browser autofill settings"
-  },
-  "extensionPrivacyPermissionNotGrantedTitle": {
-    "message": "Nedá sa prepísať automatické vypĺňanie prehliadača",
-    "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
-  },
-  "extensionPrivacyPermissionNotGrantedDescription": {
-    "message": "Bitwarden musí mať povolenie rozšírenia na nastavenie súkromia, aby mohol zrušiť nastavenia automatického vypĺňania prehliadača.",
-    "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "importData": {
     "message": "Import údajov",
@@ -2796,5 +2787,35 @@
   },
   "lastPassYubikeyDesc": {
     "message": "Vložte kľúč YubiKey priradený k vášmu účtu LastPass do USB portu počítača a potom sa dotknite jeho tlačidla."
+  },
+  "switchAccount": {
+    "message": "Prepnúť účet"
+  },
+  "switchAccounts": {
+    "message": "Prepnúť účty"
+  },
+  "switchToAccount": {
+    "message": "Prepnúť na účet"
+  },
+  "activeAccount": {
+    "message": "Aktívny účet"
+  },
+  "accountLimitReached": {
+    "message": "Dosiahnutý limit účtu. Odhláste sa z účtu, ak chcete pridať ďalší."
+  },
+  "active": {
+    "message": "aktívne"
+  },
+  "locked": {
+    "message": "zamknuté"
+  },
+  "unlocked": {
+    "message": "odomknuté"
+  },
+  "server": {
+    "message": "server"
+  },
+  "hostedAt": {
+    "message": "hotované na"
   }
 }

@@ -365,6 +365,9 @@
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "Задайте метод за отключване, за да може да промените действието при изтичане на времето за достъп до трезора."
   },
+  "unlockMethodNeeded": {
+    "message": "Задайте метод за отключване в Настройките"
+  },
   "rateExtension": {
     "message": "Оценяване на разширението"
   },
@@ -404,6 +407,9 @@
   },
   "lockNow": {
     "message": "Заключване сега"
+  },
+  "lockAll": {
+    "message": "Заключване на всички"
   },
   "immediately": {
     "message": "Незабавно"
@@ -1027,6 +1033,12 @@
   "showAutoFillMenuOnFormFieldsDescAlt": {
     "message": "Прилага се за всички регистрации, в които сте вписан(а)."
   },
+  "turnOffBrowserBuiltInPasswordManagerSettings": {
+    "message": "Turn off your browser’s built in password manager settings to avoid conflicts."
+  },
+  "turnOffBrowserBuiltInPasswordManagerSettingsLink": {
+    "message": "Edit browser settings."
+  },
   "autofillOverlayVisibilityOff": {
     "message": "Изключено",
     "description": "Overlay setting select option for disabling autofill overlay"
@@ -1130,6 +1142,9 @@
   },
   "faviconDesc": {
     "message": "Показване на разпознаваемо изображение до всеки запис."
+  },
+  "faviconDescAlt": {
+    "message": "Показване на разпознаваемо изображение до всеки елемент. Прилага се към всички акаунти, в които сте Вписан(а)."
   },
   "enableBadgeCounter": {
     "message": "Показване на брояч в значка"
@@ -2376,7 +2391,7 @@
     "message": "Устройството е доверено"
   },
   "inputRequired": {
-    "message": "Полето е задължтелно да бъде попълнено."
+    "message": "Полето е задължително да бъде попълнено."
   },
   "required": {
     "message": "задължително"
@@ -2538,35 +2553,11 @@
     "message": "Има налично меню за авт. попълване на Битуорден. Натиснете стрелката надолу, за да го изберете.",
     "description": "Screen reader text for announcing when the overlay opens on the page"
   },
-  "overrideBrowserAutofillTitle": {
-    "message": "Замяна на автоматичното попълване на браузъра?",
-    "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideBrowserAutofillDescription": {
-    "message": "Ако оставите тази настройка изключена, може да има конфликт между менюто за автоматично попълване на Битуорден и това на браузъра.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideBrowserAutofillPrivacyRequiredDescription": {
-    "message": "Ако оставите тази настройка изключена, може да има конфликт между менюто за автоматично попълване на Битуорден и това на браузъра. Ако я включите, разширението на Битуорден ще трябва да бъде рестартирано.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
   "turnOn": {
     "message": "Включване"
   },
   "ignore": {
     "message": "Пренебрегване"
-  },
-  "overrideBrowserAutoFillSettings": {
-    "message": "Настройки за замяна на автоматичното попълване на браузъра",
-    "description": "Label for the setting that allows overriding the default browser autofill settings"
-  },
-  "extensionPrivacyPermissionNotGrantedTitle": {
-    "message": "Автоматичното попълване на браузъра не може да бъде заменено",
-    "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
-  },
-  "extensionPrivacyPermissionNotGrantedDescription": {
-    "message": "Битуорден трябва да има разрешение за достъп до поверителността на разширението, за да може да замени настройките за автоматично попълване на браузъра.",
-    "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "importData": {
     "message": "Внасяне на данни",
@@ -2796,5 +2787,35 @@
   },
   "lastPassYubikeyDesc": {
     "message": "Поставете устройството на YubiKey, което е свързано с регистрацията Ви в LastPass, в USB порт и натиснете бутона на устройството."
+  },
+  "switchAccount": {
+    "message": "Превключване на регистрацията"
+  },
+  "switchAccounts": {
+    "message": "Превключване на регистрациите"
+  },
+  "switchToAccount": {
+    "message": "Превключване към регистрацията"
+  },
+  "activeAccount": {
+    "message": "Активиране на регистрацията"
+  },
+  "accountLimitReached": {
+    "message": "Достигнато е ограничението на броя регистрации. Излезте от някоя, за да добавите друга."
+  },
+  "active": {
+    "message": "активно"
+  },
+  "locked": {
+    "message": "заключено"
+  },
+  "unlocked": {
+    "message": "отключено"
+  },
+  "server": {
+    "message": "сървър"
+  },
+  "hostedAt": {
+    "message": "hosted at"
   }
 }

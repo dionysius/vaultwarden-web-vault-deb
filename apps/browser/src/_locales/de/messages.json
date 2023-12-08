@@ -365,6 +365,9 @@
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "Richte eine Entsperrmethode ein, um deine Aktion bei Timeout-Timeout zu ändern."
   },
+  "unlockMethodNeeded": {
+    "message": "Set up an unlock method in Settings"
+  },
   "rateExtension": {
     "message": "Erweiterung bewerten"
   },
@@ -404,6 +407,9 @@
   },
   "lockNow": {
     "message": "Jetzt sperren"
+  },
+  "lockAll": {
+    "message": "Lock all"
   },
   "immediately": {
     "message": "Sofort"
@@ -1027,6 +1033,12 @@
   "showAutoFillMenuOnFormFieldsDescAlt": {
     "message": "Gilt für alle angemeldeten Konten."
   },
+  "turnOffBrowserBuiltInPasswordManagerSettings": {
+    "message": "Turn off your browser’s built in password manager settings to avoid conflicts."
+  },
+  "turnOffBrowserBuiltInPasswordManagerSettingsLink": {
+    "message": "Edit browser settings."
+  },
   "autofillOverlayVisibilityOff": {
     "message": "Aus",
     "description": "Overlay setting select option for disabling autofill overlay"
@@ -1130,6 +1142,9 @@
   },
   "faviconDesc": {
     "message": "Ein wiedererkennbares Bild neben jeden Zugangsdaten anzeigen."
+  },
+  "faviconDescAlt": {
+    "message": "Show a recognizable image next to each login. Applies to all logged in accounts."
   },
   "enableBadgeCounter": {
     "message": "Badge-Zähler anzeigen"
@@ -2538,35 +2553,11 @@
     "message": "Bitwarden Auto-Ausfüllen Menü verfügbar. Drücke die Pfeiltaste nach unten zum Auswählen.",
     "description": "Screen reader text for announcing when the overlay opens on the page"
   },
-  "overrideBrowserAutofillTitle": {
-    "message": "Auto-Ausfüllen Funktion des Browsers überschreiben?",
-    "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideBrowserAutofillDescription": {
-    "message": "Wenn du diese Einstellung deaktivierst, kann dies zu Konflikten zwischen dem Bitwarden Auto-Ausfüllen Menü und dem des Browsers führen.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideBrowserAutofillPrivacyRequiredDescription": {
-    "message": "Wenn du diese Einstellung deaktivierst, kann es zu Konflikten zwischen dem Bitwarden Auto-Ausfüllen Menü und dem des Browsers kommen. Wenn du diese Einstellung aktivierst, wird die Bitwarden-Erweiterung neu gestartet.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
   "turnOn": {
     "message": "Einschalten"
   },
   "ignore": {
     "message": "Ignorieren"
-  },
-  "overrideBrowserAutoFillSettings": {
-    "message": "Auto-Ausfüllen Einstellungen des Browsers überschreiben",
-    "description": "Label for the setting that allows overriding the default browser autofill settings"
-  },
-  "extensionPrivacyPermissionNotGrantedTitle": {
-    "message": "Konnte Auto-Ausfüllen Einstellungen des Browsers nicht überschreiben",
-    "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
-  },
-  "extensionPrivacyPermissionNotGrantedDescription": {
-    "message": "Bitwarden muss Zugriff auf die Datenschutz-Berechtigung der Erweiterung haben, um die Auto-Ausfüllen-Einstellungen des Browsers zu überschreiben.",
-    "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "importData": {
     "message": "Daten importieren",
@@ -2796,5 +2787,35 @@
   },
   "lastPassYubikeyDesc": {
     "message": "Stecke den YubiKey, der mit deinem LastPass Konto verknüpft ist, in den USB-Port deines Computers und drücke dann den Knopf des YubiKey."
+  },
+  "switchAccount": {
+    "message": "Switch account"
+  },
+  "switchAccounts": {
+    "message": "Switch accounts"
+  },
+  "switchToAccount": {
+    "message": "Switch to account"
+  },
+  "activeAccount": {
+    "message": "Active account"
+  },
+  "accountLimitReached": {
+    "message": "Account limit reached. Log out of an account to add another."
+  },
+  "active": {
+    "message": "active"
+  },
+  "locked": {
+    "message": "locked"
+  },
+  "unlocked": {
+    "message": "unlocked"
+  },
+  "server": {
+    "message": "server"
+  },
+  "hostedAt": {
+    "message": "hosted at"
   }
 }

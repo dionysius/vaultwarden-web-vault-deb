@@ -365,6 +365,9 @@
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "Állítsunk be egy feloldási módot a széf időkifutási műveletének módosításához."
   },
+  "unlockMethodNeeded": {
+    "message": "Feloldási mód beállítása a Beállításokban"
+  },
   "rateExtension": {
     "message": "Bővítmény értékelése"
   },
@@ -404,6 +407,9 @@
   },
   "lockNow": {
     "message": "Zárolás most"
+  },
+  "lockAll": {
+    "message": "Összes zárolása"
   },
   "immediately": {
     "message": "Azonnal"
@@ -1027,6 +1033,12 @@
   "showAutoFillMenuOnFormFieldsDescAlt": {
     "message": "Minden bejelentkezett fiókra vonatkozik."
   },
+  "turnOffBrowserBuiltInPasswordManagerSettings": {
+    "message": "Turn off your browser’s built in password manager settings to avoid conflicts."
+  },
+  "turnOffBrowserBuiltInPasswordManagerSettingsLink": {
+    "message": "Edit browser settings."
+  },
   "autofillOverlayVisibilityOff": {
     "message": "Ki",
     "description": "Overlay setting select option for disabling autofill overlay"
@@ -1130,6 +1142,9 @@
   },
   "faviconDesc": {
     "message": "Felismerhető kép megjelenítése minden bejelentkezés mellett."
+  },
+  "faviconDescAlt": {
+    "message": "Minden bejelentkezés mellett egy felismerhető kép megjelenítése. Minden bejelentkezett fiókra vonatkozik."
   },
   "enableBadgeCounter": {
     "message": "Számláló jelvény megjelenítése"
@@ -2538,35 +2553,11 @@
     "message": "Bitwarden auto-fill menu available. Press the down arrow key to select.",
     "description": "Screen reader text for announcing when the overlay opens on the page"
   },
-  "overrideBrowserAutofillTitle": {
-    "message": "Override browser auto-fill?",
-    "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideBrowserAutofillDescription": {
-    "message": "Leaving this setting off may cause conflicts between the Bitwarden auto-fill menu and your browser’s.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideBrowserAutofillPrivacyRequiredDescription": {
-    "message": "Leaving this setting off may cause conflicts between the Bitwarden auto-fill menu and your browser’s. Turning this on will restart the Bitwarden extension.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
   "turnOn": {
     "message": "Bekapcsolás"
   },
   "ignore": {
     "message": "Mellőz"
-  },
-  "overrideBrowserAutoFillSettings": {
-    "message": "A böngésző automatikus kitöltési beállításainak felülbírálása",
-    "description": "Label for the setting that allows overriding the default browser autofill settings"
-  },
-  "extensionPrivacyPermissionNotGrantedTitle": {
-    "message": "Nem lehet felülbírálni a böngésző automatikus kitöltését",
-    "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
-  },
-  "extensionPrivacyPermissionNotGrantedDescription": {
-    "message": "A Bitwardennek hozzáféréssel kell rendelkeznie a bővítmény adatvédelmi engedélyéhez, hogy felülbírálhassa a böngésző automatikus kitöltési beállításait.",
-    "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "importData": {
     "message": "Adatok importálása",
@@ -2796,5 +2787,35 @@
   },
   "lastPassYubikeyDesc": {
     "message": "Illesszük be a LastPass-fiókhoz társított YubiKey eszközt a számítógép USB portjába, majd érintsük meg annak gombját."
+  },
+  "switchAccount": {
+    "message": "Fiók váltása"
+  },
+  "switchAccounts": {
+    "message": "Fiókok váltása"
+  },
+  "switchToAccount": {
+    "message": "Váltás fiókra"
+  },
+  "activeAccount": {
+    "message": "Aktív fiók"
+  },
+  "accountLimitReached": {
+    "message": "A fiók korlát elérésre került. Jelentkezzünk ki egy fiókból egy másik hozzáadásához."
+  },
+  "active": {
+    "message": "aktív"
+  },
+  "locked": {
+    "message": "zárolt"
+  },
+  "unlocked": {
+    "message": "feloldott"
+  },
+  "server": {
+    "message": "szerver"
+  },
+  "hostedAt": {
+    "message": "tárolva:"
   }
 }

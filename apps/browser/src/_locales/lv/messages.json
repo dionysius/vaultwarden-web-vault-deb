@@ -365,6 +365,9 @@
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "Jāuzstāda atslēgšanas veids, lai mainītu glabātavas noildzes darbību."
   },
+  "unlockMethodNeeded": {
+    "message": "Jāuzstāda atslēgšanas veids iestatījumos"
+  },
   "rateExtension": {
     "message": "Novērtēt paplašinājumu"
   },
@@ -404,6 +407,9 @@
   },
   "lockNow": {
     "message": "Aizslēgt"
+  },
+  "lockAll": {
+    "message": "Aizslēgt visu"
   },
   "immediately": {
     "message": "Nekavējoties"
@@ -1027,6 +1033,12 @@
   "showAutoFillMenuOnFormFieldsDescAlt": {
     "message": "Attiecas uz visiem pieslēgtajiem kontiem."
   },
+  "turnOffBrowserBuiltInPasswordManagerSettings": {
+    "message": "Jāizslēdz sava pārlūka iebūvētā paroļu pārvaldnieka iestatījumi, lai izvairītos no nesaderībām."
+  },
+  "turnOffBrowserBuiltInPasswordManagerSettingsLink": {
+    "message": "Mainīt pārlūka iestatījumus."
+  },
   "autofillOverlayVisibilityOff": {
     "message": "Izslēgts",
     "description": "Overlay setting select option for disabling autofill overlay"
@@ -1130,6 +1142,9 @@
   },
   "faviconDesc": {
     "message": "Attēlot atpazīstamu attēlu pie katra pieteikšanās vienuma."
+  },
+  "faviconDescAlt": {
+    "message": "Parādīt atpazīstamu attēlu pie katra pieteikšanās vienuma. Attiecas uz visiem kontiem, kuros ir notikusi pieteikšanās."
   },
   "enableBadgeCounter": {
     "message": "Rādīt skaita nozīmīti"
@@ -2538,35 +2553,11 @@
     "message": "Ir pieejama Bitwarden automātiskās aizpildes izvēlne. Jānospiež poga ar bultu uz leju, lai atlasītu.",
     "description": "Screen reader text for announcing when the overlay opens on the page"
   },
-  "overrideBrowserAutofillTitle": {
-    "message": "Aizvietot pārlūka automātisko aizpildi?",
-    "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideBrowserAutofillDescription": {
-    "message": "Šī iestatījuma neieslēgšana var radīt nesaderības starp Bitwarden automātiskās aizpildes izvēlni un pārlūku.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideBrowserAutofillPrivacyRequiredDescription": {
-    "message": "Šī iestatījuma neieslēgšana var radīt nesaderības starp Bitwarden automātiskās aizpildes izvēlni un pārlūku. Ieslēgšana pārsāknēs Bitwarden paplašinājumu.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
   "turnOn": {
     "message": "Ieslēgt"
   },
   "ignore": {
     "message": "Neņemt vērā"
-  },
-  "overrideBrowserAutoFillSettings": {
-    "message": "Aizvietot pārlūka automātiskās aizpildes iestatījumus",
-    "description": "Label for the setting that allows overriding the default browser autofill settings"
-  },
-  "extensionPrivacyPermissionNotGrantedTitle": {
-    "message": "Nebija iespējams aizvietot pārlūka automātisko aizpildi",
-    "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
-  },
-  "extensionPrivacyPermissionNotGrantedDescription": {
-    "message": "Bitwarden ir jābūt piekļuvei paplašinājuma privātuma atļaujai, lai aizvietotu pārlūka automātiskās aizpildes iestatījumus.",
-    "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "importData": {
     "message": "Ievietot datus",
@@ -2796,5 +2787,35 @@
   },
   "lastPassYubikeyDesc": {
     "message": "Jāievieto ar LastPass kontu sasaistītā YubiKey datora USB ligzdā, tad jāpieskaras tās pogai."
+  },
+  "switchAccount": {
+    "message": "Pārslēgties starp kontiem"
+  },
+  "switchAccounts": {
+    "message": "Pārslēgties starp kontiem"
+  },
+  "switchToAccount": {
+    "message": "Pārslēgties uz kontu"
+  },
+  "activeAccount": {
+    "message": "Pašlaik izmantotais konts"
+  },
+  "accountLimitReached": {
+    "message": "Sasniegti konta ierobežojumi. Jāizrakstās no konta, lai pievienotu citu."
+  },
+  "active": {
+    "message": "izmantots"
+  },
+  "locked": {
+    "message": "aizslēgts"
+  },
+  "unlocked": {
+    "message": "atslēgta"
+  },
+  "server": {
+    "message": "serveris"
+  },
+  "hostedAt": {
+    "message": "izvietots"
   }
 }

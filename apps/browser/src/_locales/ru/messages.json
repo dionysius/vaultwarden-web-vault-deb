@@ -365,6 +365,9 @@
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "Настройте способ разблокировки для изменения действия по тайм-ауту хранилища."
   },
+  "unlockMethodNeeded": {
+    "message": "Установите способ разблокировки в настройках"
+  },
   "rateExtension": {
     "message": "Оценить расширение"
   },
@@ -404,6 +407,9 @@
   },
   "lockNow": {
     "message": "Заблокировать"
+  },
+  "lockAll": {
+    "message": "Заблокировать все"
   },
   "immediately": {
     "message": "Немедленно"
@@ -1027,6 +1033,12 @@
   "showAutoFillMenuOnFormFieldsDescAlt": {
     "message": "Применяется ко всем авторизованным аккаунтам."
   },
+  "turnOffBrowserBuiltInPasswordManagerSettings": {
+    "message": "Turn off your browser’s built in password manager settings to avoid conflicts."
+  },
+  "turnOffBrowserBuiltInPasswordManagerSettingsLink": {
+    "message": "Edit browser settings."
+  },
   "autofillOverlayVisibilityOff": {
     "message": "Выкл",
     "description": "Overlay setting select option for disabling autofill overlay"
@@ -1130,6 +1142,9 @@
   },
   "faviconDesc": {
     "message": "Отображать узнаваемое изображение рядом с каждым логином."
+  },
+  "faviconDescAlt": {
+    "message": "Показывать узнаваемое изображение рядом с каждым логином. Применяется ко всем авторизованным аккаунтам."
   },
   "enableBadgeCounter": {
     "message": "Показать счетчик на значке"
@@ -2538,35 +2553,11 @@
     "message": "Доступно меню автозаполнения Bitwarden. Для выбора нажмите клавишу со стрелкой вниз.",
     "description": "Screen reader text for announcing when the overlay opens on the page"
   },
-  "overrideBrowserAutofillTitle": {
-    "message": "Переопределить автозаполнение браузера?",
-    "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideBrowserAutofillDescription": {
-    "message": "Отключение этого параметра может привести к конфликту между меню автозаполнения Bitwarden и меню вашего браузера.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideBrowserAutofillPrivacyRequiredDescription": {
-    "message": "Отключение этого параметра может привести к конфликту между меню автозаполнения Bitwarden и меню браузера. Включение этого параметра приведет к перезапуску расширения Bitwarden.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
   "turnOn": {
     "message": "Включить"
   },
   "ignore": {
     "message": "Игнорировать"
-  },
-  "overrideBrowserAutoFillSettings": {
-    "message": "Переопределить настройки автозаполнения браузера",
-    "description": "Label for the setting that allows overriding the default browser autofill settings"
-  },
-  "extensionPrivacyPermissionNotGrantedTitle": {
-    "message": "Невозможно переопределить автозаполнение браузера",
-    "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
-  },
-  "extensionPrivacyPermissionNotGrantedDescription": {
-    "message": "Bitwarden должен иметь доступ к полномочиям конфиденциальности расширения для переопределения настроек автозаполнения браузера.",
-    "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "importData": {
     "message": "Импорт данных",
@@ -2796,5 +2787,35 @@
   },
   "lastPassYubikeyDesc": {
     "message": "Вставьте YubiKey, связанный с аккаунтом LastPass, в USB-порт компьютера и нажмите на его кнопку."
+  },
+  "switchAccount": {
+    "message": "Сменить аккаунт"
+  },
+  "switchAccounts": {
+    "message": "Сменить аккаунты"
+  },
+  "switchToAccount": {
+    "message": "Переключиться на аккаунт"
+  },
+  "activeAccount": {
+    "message": "Активный аккаунт"
+  },
+  "accountLimitReached": {
+    "message": "Достигнут лимит аккаунтов. Выйдите, чтобы добавить другой."
+  },
+  "active": {
+    "message": "активный"
+  },
+  "locked": {
+    "message": "заблокирован"
+  },
+  "unlocked": {
+    "message": "разблокирован"
+  },
+  "server": {
+    "message": "сервер"
+  },
+  "hostedAt": {
+    "message": "под управлением"
   }
 }

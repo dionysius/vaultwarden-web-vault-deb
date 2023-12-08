@@ -365,6 +365,9 @@
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "Opsæt en oplåsningsmetode til at ændre bokstimeouthandlingen."
   },
+  "unlockMethodNeeded": {
+    "message": "Opsæt en oplåsningsmetode i Indstillinger"
+  },
   "rateExtension": {
     "message": "Bedøm udvidelsen"
   },
@@ -404,6 +407,9 @@
   },
   "lockNow": {
     "message": "Lås nu"
+  },
+  "lockAll": {
+    "message": "Lås alle"
   },
   "immediately": {
     "message": "Straks"
@@ -1027,6 +1033,12 @@
   "showAutoFillMenuOnFormFieldsDescAlt": {
     "message": "Gælder for alle indloggede konti."
   },
+  "turnOffBrowserBuiltInPasswordManagerSettings": {
+    "message": "Turn off your browser’s built in password manager settings to avoid conflicts."
+  },
+  "turnOffBrowserBuiltInPasswordManagerSettingsLink": {
+    "message": "Edit browser settings."
+  },
   "autofillOverlayVisibilityOff": {
     "message": "Fra",
     "description": "Overlay setting select option for disabling autofill overlay"
@@ -1130,6 +1142,9 @@
   },
   "faviconDesc": {
     "message": "Vis et genkendeligt billede ud for hvert login."
+  },
+  "faviconDescAlt": {
+    "message": "Vis et genkendeligt billede ved siden af hvert login. Gælder for alle indloggede konti."
   },
   "enableBadgeCounter": {
     "message": "Vis badge-tæller"
@@ -2538,35 +2553,11 @@
     "message": "Bitwarden autoudfyld-menu tilgængelig. Tryk på pil ned-tasten for at vælge.",
     "description": "Screen reader text for announcing when the overlay opens on the page"
   },
-  "overrideBrowserAutofillTitle": {
-    "message": "Tilsidesæt browser-autoudfyldning?",
-    "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideBrowserAutofillDescription": {
-    "message": "Lades denne indstilling deaktiveret, kan det forårsage konflikter mellem Bitwardens autoudfyld-menu og webbrowsere.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideBrowserAutofillPrivacyRequiredDescription": {
-    "message": "Lades denne indstilling deaktiveret, kan det forårsage konflikter mellem Bitwardens autoudfyld-menu og webbrowsere. Aktiveres indstillingen, genstartes Bitwarden-udvidelsen.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
   "turnOn": {
     "message": "Slå til"
   },
   "ignore": {
     "message": "Ignorér"
-  },
-  "overrideBrowserAutoFillSettings": {
-    "message": "Tilsidesæt webbrowser autoudfyld-indstillinger",
-    "description": "Label for the setting that allows overriding the default browser autofill settings"
-  },
-  "extensionPrivacyPermissionNotGrantedTitle": {
-    "message": "Kan ikke tilsidesætte webbrowser-autoudfyld",
-    "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
-  },
-  "extensionPrivacyPermissionNotGrantedDescription": {
-    "message": "Bitwarden skal kunne tilgå udvidelsens fortrolighedstilladelse for at tilsidesætte indstillinger for webbrowser-autoudfyld.",
-    "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "importData": {
     "message": "Importér data",
@@ -2796,5 +2787,35 @@
   },
   "lastPassYubikeyDesc": {
     "message": "Indsæt den til LastPass-kontoen tilknyttede YubiKey i computers USB-port, og tryk dernæst på dens knap."
+  },
+  "switchAccount": {
+    "message": "Skift konto"
+  },
+  "switchAccounts": {
+    "message": "Skift konti"
+  },
+  "switchToAccount": {
+    "message": "Skift til konto"
+  },
+  "activeAccount": {
+    "message": "Aktiv konto"
+  },
+  "accountLimitReached": {
+    "message": "Kontokvote nået. Log ud af en konto for at tilføje en anden."
+  },
+  "active": {
+    "message": "aktiv"
+  },
+  "locked": {
+    "message": "låst"
+  },
+  "unlocked": {
+    "message": "oplåst"
+  },
+  "server": {
+    "message": "server"
+  },
+  "hostedAt": {
+    "message": "hostet hos"
   }
 }

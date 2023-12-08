@@ -365,6 +365,9 @@
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "保管庫のタイムアウト動作を変更するには、ロック解除方法を設定してください。"
   },
+  "unlockMethodNeeded": {
+    "message": "設定でロック解除方法をセットアップ"
+  },
   "rateExtension": {
     "message": "拡張機能の評価"
   },
@@ -404,6 +407,9 @@
   },
   "lockNow": {
     "message": "今すぐロック"
+  },
+  "lockAll": {
+    "message": "すべてロック"
   },
   "immediately": {
     "message": "すぐに"
@@ -1027,6 +1033,12 @@
   "showAutoFillMenuOnFormFieldsDescAlt": {
     "message": "ログインしているすべてのアカウントに適用されます。"
   },
+  "turnOffBrowserBuiltInPasswordManagerSettings": {
+    "message": "競合を避けるために、ブラウザーのパスワード管理設定をオフにしてください。"
+  },
+  "turnOffBrowserBuiltInPasswordManagerSettingsLink": {
+    "message": "ブラウザーの設定を編集してください。"
+  },
   "autofillOverlayVisibilityOff": {
     "message": "オフ",
     "description": "Overlay setting select option for disabling autofill overlay"
@@ -1130,6 +1142,9 @@
   },
   "faviconDesc": {
     "message": "ログイン情報の隣にアイコン画像を表示します"
+  },
+  "faviconDescAlt": {
+    "message": "各ログインの横に認識可能な画像を表示します。すべてのログイン済みアカウントに適用されます。"
   },
   "enableBadgeCounter": {
     "message": "バッジカウンターを表示"
@@ -2538,35 +2553,11 @@
     "message": "Bitwarden 自動入力メニューがあります。下矢印キーを押すと選択できます。",
     "description": "Screen reader text for announcing when the overlay opens on the page"
   },
-  "overrideBrowserAutofillTitle": {
-    "message": "ブラウザの自動入力を上書きしますか？",
-    "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideBrowserAutofillDescription": {
-    "message": "この設定をオフにすると、Bitwarden 自動入力メニューとブラウザの間で競合が発生する可能性があります。",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideBrowserAutofillPrivacyRequiredDescription": {
-    "message": "この設定をオフにすると、Bitwarden 自動入力メニューとブラウザの間で競合が発生する可能性があります。これをオンにすると、 Bitwarden 拡張機能は再起動します。",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
   "turnOn": {
     "message": "オンにする"
   },
   "ignore": {
     "message": "無視"
-  },
-  "overrideBrowserAutoFillSettings": {
-    "message": "ブラウザの自動入力設定を上書きする",
-    "description": "Label for the setting that allows overriding the default browser autofill settings"
-  },
-  "extensionPrivacyPermissionNotGrantedTitle": {
-    "message": "ブラウザの自動入力を上書きできません",
-    "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
-  },
-  "extensionPrivacyPermissionNotGrantedDescription": {
-    "message": "Bitwarden はブラウザの自動入力設定を上書きするために、拡張機能のプライバシー権限にアクセスする必要があります。",
-    "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "importData": {
     "message": "データのインポート",
@@ -2796,5 +2787,35 @@
   },
   "lastPassYubikeyDesc": {
     "message": "LastPass アカウントに関連付けられた YubiKey を USB ポートに挿入し、ボタンをタッチしてください。"
+  },
+  "switchAccount": {
+    "message": "アカウントの切り替え"
+  },
+  "switchAccounts": {
+    "message": "アカウントの切り替え"
+  },
+  "switchToAccount": {
+    "message": "アカウントに切り替え"
+  },
+  "activeAccount": {
+    "message": "アクティブなアカウント"
+  },
+  "accountLimitReached": {
+    "message": "アカウントの制限に達しました。別のアカウントを追加するにはまずログアウトしてください。"
+  },
+  "active": {
+    "message": "アクティブ"
+  },
+  "locked": {
+    "message": "ロック中"
+  },
+  "unlocked": {
+    "message": "ロック解除済み"
+  },
+  "server": {
+    "message": "サーバー"
+  },
+  "hostedAt": {
+    "message": "ホスト"
   }
 }

@@ -365,6 +365,9 @@
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "Imposta un metodo di sblocco per modificare l'azione timeout cassaforte."
   },
+  "unlockMethodNeeded": {
+    "message": "Imposta un metodo di sblocco in Impostazioni"
+  },
   "rateExtension": {
     "message": "Valuta l'estensione"
   },
@@ -404,6 +407,9 @@
   },
   "lockNow": {
     "message": "Blocca ora"
+  },
+  "lockAll": {
+    "message": "Blocca tutto"
   },
   "immediately": {
     "message": "Immediatamente"
@@ -1027,6 +1033,12 @@
   "showAutoFillMenuOnFormFieldsDescAlt": {
     "message": "Applies to all logged in accounts."
   },
+  "turnOffBrowserBuiltInPasswordManagerSettings": {
+    "message": "Turn off your browser’s built in password manager settings to avoid conflicts."
+  },
+  "turnOffBrowserBuiltInPasswordManagerSettingsLink": {
+    "message": "Edit browser settings."
+  },
   "autofillOverlayVisibilityOff": {
     "message": "No",
     "description": "Overlay setting select option for disabling autofill overlay"
@@ -1130,6 +1142,9 @@
   },
   "faviconDesc": {
     "message": "Mostra un piccolo logo riconoscibile accanto a ogni login."
+  },
+  "faviconDescAlt": {
+    "message": "Mostra un piccolo logo riconoscibile accanto a ogni login. Si applica a tutti gli account connessi."
   },
   "enableBadgeCounter": {
     "message": "Mostra badge contatore"
@@ -2538,35 +2553,11 @@
     "message": "Il menu di riempimento automatico di Bitwarden è disponibile. Premi il tasto freccia giù per selezionare.",
     "description": "Screen reader text for announcing when the overlay opens on the page"
   },
-  "overrideBrowserAutofillTitle": {
-    "message": "Ignora il riempimento automatico del browser?",
-    "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideBrowserAutofillDescription": {
-    "message": "Se questa opzione è disattivata potrebbe causare conflitti tra il menu di riempimento automatico di Bitwarden e quello del tuo browser.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideBrowserAutofillPrivacyRequiredDescription": {
-    "message": "Se questa opzione è disattivata potrebbe causare conflitti tra il menu di riempimento automatico di Bitwarden e quello del tuo browser. Attivandola, l'estensione di Bitwarden si riavvierà.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
   "turnOn": {
     "message": "Attiva"
   },
   "ignore": {
     "message": "Ignora"
-  },
-  "overrideBrowserAutoFillSettings": {
-    "message": "Ignora il riempimento automatico del browser",
-    "description": "Label for the setting that allows overriding the default browser autofill settings"
-  },
-  "extensionPrivacyPermissionNotGrantedTitle": {
-    "message": "Impossibile ignorare il riempimento automatico del browser",
-    "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
-  },
-  "extensionPrivacyPermissionNotGrantedDescription": {
-    "message": "Bitwarden deve avere accesso all'autorizzazione alla privacy dell'estensione per modificare le impostazioni di riempimento automatico del browser.",
-    "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "importData": {
     "message": "Importa dati",
@@ -2796,5 +2787,35 @@
   },
   "lastPassYubikeyDesc": {
     "message": "Inserisci la tua YubiKey associata al tuo account LastPass nella porta USB del computer, poi premi il suo bottone."
+  },
+  "switchAccount": {
+    "message": "Cambia account"
+  },
+  "switchAccounts": {
+    "message": "Cambia account"
+  },
+  "switchToAccount": {
+    "message": "Passa all'account"
+  },
+  "activeAccount": {
+    "message": "Account attivo"
+  },
+  "accountLimitReached": {
+    "message": "Limite di account raggiunto. Esci da un account per aggiungerne un altro."
+  },
+  "active": {
+    "message": "attivo"
+  },
+  "locked": {
+    "message": "bloccato"
+  },
+  "unlocked": {
+    "message": "sbloccato"
+  },
+  "server": {
+    "message": "server"
+  },
+  "hostedAt": {
+    "message": "hosted in"
   }
 }

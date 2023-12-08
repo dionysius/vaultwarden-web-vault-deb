@@ -365,6 +365,9 @@
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "Muuta holvisi aikakatkaisutoimintoa määrittämällä lukituksen avaustapa."
   },
+  "unlockMethodNeeded": {
+    "message": "Määritä avaustapa asetuksista"
+  },
   "rateExtension": {
     "message": "Arvioi laajennus"
   },
@@ -404,6 +407,9 @@
   },
   "lockNow": {
     "message": "Lukitse nyt"
+  },
+  "lockAll": {
+    "message": "Lukitse kaikki"
   },
   "immediately": {
     "message": "Välittömästi"
@@ -1027,6 +1033,12 @@
   "showAutoFillMenuOnFormFieldsDescAlt": {
     "message": "Applies to all logged in accounts."
   },
+  "turnOffBrowserBuiltInPasswordManagerSettings": {
+    "message": "Turn off your browser’s built in password manager settings to avoid conflicts."
+  },
+  "turnOffBrowserBuiltInPasswordManagerSettingsLink": {
+    "message": "Edit browser settings."
+  },
   "autofillOverlayVisibilityOff": {
     "message": "Off",
     "description": "Overlay setting select option for disabling autofill overlay"
@@ -1130,6 +1142,9 @@
   },
   "faviconDesc": {
     "message": "Näytä tunnistettava kuva jokaiselle kirjautumistiedolle."
+  },
+  "faviconDescAlt": {
+    "message": "Näytä tunnistettava kuva jokaisen kirjautumistiedon vieressä. Koskee kaikkia kirjautuneita tilejä."
   },
   "enableBadgeCounter": {
     "message": "Näytä laskuri"
@@ -2511,7 +2526,7 @@
     "description": "Text to display in overlay when the account is locked."
   },
   "unlockAccount": {
-    "message": "Unlock account",
+    "message": "Avaa tili",
     "description": "Button text to display in overlay when the account is locked."
   },
   "fillCredentialsFor": {
@@ -2519,54 +2534,30 @@
     "description": "Screen reader text for when overlay item is in focused"
   },
   "partialUsername": {
-    "message": "Partial username",
+    "message": "Osittainen käyttäjätunnus",
     "description": "Screen reader text for when a login item is focused where a partial username is displayed. SR will announce this phrase before reading the text of the partial username"
   },
   "noItemsToShow": {
-    "message": "No items to show",
+    "message": "Ei näytettäviä kohteita",
     "description": "Text to show in overlay if there are no matching items"
   },
   "newItem": {
-    "message": "New item",
+    "message": "Uusi kohde",
     "description": "Button text to display in overlay when there are no matching items"
   },
   "addNewVaultItem": {
-    "message": "Add new vault item",
+    "message": "Lisää uusi holvikohde",
     "description": "Screen reader text (aria-label) for new item button in overlay"
   },
   "bitwardenOverlayMenuAvailable": {
     "message": "Bitwarden auto-fill menu available. Press the down arrow key to select.",
     "description": "Screen reader text for announcing when the overlay opens on the page"
   },
-  "overrideBrowserAutofillTitle": {
-    "message": "Override browser auto-fill?",
-    "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideBrowserAutofillDescription": {
-    "message": "Leaving this setting off may cause conflicts between the Bitwarden auto-fill menu and your browser’s.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideBrowserAutofillPrivacyRequiredDescription": {
-    "message": "Leaving this setting off may cause conflicts between the Bitwarden auto-fill menu and your browser’s. Turning this on will restart the Bitwarden extension.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
   "turnOn": {
-    "message": "Turn on"
+    "message": "Ota käyttöön"
   },
   "ignore": {
-    "message": "Ignore"
-  },
-  "overrideBrowserAutoFillSettings": {
-    "message": "Override browser auto-fill settings",
-    "description": "Label for the setting that allows overriding the default browser autofill settings"
-  },
-  "extensionPrivacyPermissionNotGrantedTitle": {
-    "message": "Unable to override browser auto-fill",
-    "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
-  },
-  "extensionPrivacyPermissionNotGrantedDescription": {
-    "message": "Bitwarden must have access to the extension's privacy permission to override browser auto-fill settings.",
-    "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
+    "message": "Ohita"
   },
   "importData": {
     "message": "Tuo tietoja",
@@ -2796,5 +2787,35 @@
   },
   "lastPassYubikeyDesc": {
     "message": "Kytke LastPass-tiliisi liitetty YubiKey tietokoneen USB-porttiin ja kosketa sen painiketta."
+  },
+  "switchAccount": {
+    "message": "Vaihda tiliä"
+  },
+  "switchAccounts": {
+    "message": "Vaihda tilejä"
+  },
+  "switchToAccount": {
+    "message": "Vaihda tiliin"
+  },
+  "activeAccount": {
+    "message": "Aktiivinen tili"
+  },
+  "accountLimitReached": {
+    "message": "Tilien enimmäismäärä on saavutettu. Kirjaa jokin niistä ulos lisätäksesi tilin."
+  },
+  "active": {
+    "message": "aktiivinen"
+  },
+  "locked": {
+    "message": "lukittu"
+  },
+  "unlocked": {
+    "message": "avoin"
+  },
+  "server": {
+    "message": "palvelin"
+  },
+  "hostedAt": {
+    "message": "palvelimelta"
   }
 }

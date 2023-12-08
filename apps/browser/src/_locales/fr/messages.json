@@ -365,6 +365,9 @@
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "Configurez une méthode de déverrouillage pour changer le délai d'attente de votre coffre."
   },
+  "unlockMethodNeeded": {
+    "message": "Configurer une méthode de déverrouillage dans Paramètres"
+  },
   "rateExtension": {
     "message": "Noter l'extension"
   },
@@ -404,6 +407,9 @@
   },
   "lockNow": {
     "message": "Verrouiller maintenant"
+  },
+  "lockAll": {
+    "message": "Tout verrouiller"
   },
   "immediately": {
     "message": "Immédiatement"
@@ -698,7 +704,7 @@
     "message": "Modifier le thème de couleur de l'application."
   },
   "themeDescAlt": {
-    "message": "Change the application's color theme. Applies to all logged in accounts."
+    "message": "Modifier le thème de couleur de l'application. S'applique à tous les comptes connectés."
   },
   "dark": {
     "message": "Sombre",
@@ -1021,11 +1027,17 @@
     "message": "Les URLs d'environnement ont été enregistrées."
   },
   "showAutoFillMenuOnFormFields": {
-    "message": "Show auto-fill menu on form fields",
+    "message": "Afficher le menu de saisie automatique sur les champs du formulaire",
     "description": "Represents the message for allowing the user to enable the auto-fill overlay"
   },
   "showAutoFillMenuOnFormFieldsDescAlt": {
     "message": "Appliquer à tous les comptes connectés."
+  },
+  "turnOffBrowserBuiltInPasswordManagerSettings": {
+    "message": "Turn off your browser’s built in password manager settings to avoid conflicts."
+  },
+  "turnOffBrowserBuiltInPasswordManagerSettingsLink": {
+    "message": "Edit browser settings."
   },
   "autofillOverlayVisibilityOff": {
     "message": "Off",
@@ -1036,7 +1048,7 @@
     "description": "Overlay appearance select option for showing the field on focus of the input element"
   },
   "autofillOverlayVisibilityOnButtonClick": {
-    "message": "When auto-fill icon is selected",
+    "message": "Lorsque l'icône de saisie automatique est sélectionnée",
     "description": "Overlay appearance select option for showing the field on click of the overlay icon"
   },
   "enableAutoFillOnPageLoad": {
@@ -1130,6 +1142,9 @@
   },
   "faviconDesc": {
     "message": "Afficher une image reconnaissable à côté de chaque identifiant."
+  },
+  "faviconDescAlt": {
+    "message": "Show a recognizable image next to each login. Applies to all logged in accounts."
   },
   "enableBadgeCounter": {
     "message": "Afficher le compteur de badge"
@@ -2495,7 +2510,7 @@
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
   "bitwardenOverlayButton": {
-    "message": "Bitwarden auto-fill menu button",
+    "message": "Bouton menu de saisie automatique Bitwarden",
     "description": "Page title for the iframe containing the overlay button"
   },
   "toggleBitwardenVaultOverlay": {
@@ -2519,7 +2534,7 @@
     "description": "Screen reader text for when overlay item is in focused"
   },
   "partialUsername": {
-    "message": "Partial username",
+    "message": "Nom d'utilisateur partiel",
     "description": "Screen reader text for when a login item is focused where a partial username is displayed. SR will announce this phrase before reading the text of the partial username"
   },
   "noItemsToShow": {
@@ -2538,35 +2553,11 @@
     "message": "Bitwarden auto-fill menu available. Press the down arrow key to select.",
     "description": "Screen reader text for announcing when the overlay opens on the page"
   },
-  "overrideBrowserAutofillTitle": {
-    "message": "Override browser auto-fill?",
-    "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideBrowserAutofillDescription": {
-    "message": "Leaving this setting off may cause conflicts between the Bitwarden auto-fill menu and your browser’s.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideBrowserAutofillPrivacyRequiredDescription": {
-    "message": "Leaving this setting off may cause conflicts between the Bitwarden auto-fill menu and your browser’s. Turning this on will restart the Bitwarden extension.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
   "turnOn": {
     "message": "Activer"
   },
   "ignore": {
     "message": "Ignorer"
-  },
-  "overrideBrowserAutoFillSettings": {
-    "message": "Override browser auto-fill settings",
-    "description": "Label for the setting that allows overriding the default browser autofill settings"
-  },
-  "extensionPrivacyPermissionNotGrantedTitle": {
-    "message": "Unable to override browser auto-fill",
-    "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
-  },
-  "extensionPrivacyPermissionNotGrantedDescription": {
-    "message": "Bitwarden must have access to the extension's privacy permission to override browser auto-fill settings.",
-    "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "importData": {
     "message": "Import data",
@@ -2796,5 +2787,35 @@
   },
   "lastPassYubikeyDesc": {
     "message": "Insérez la YubiKey associée à votre compte LastPass dans le port USB de votre ordinateur, puis appuyez sur son bouton."
+  },
+  "switchAccount": {
+    "message": "Switch account"
+  },
+  "switchAccounts": {
+    "message": "Switch accounts"
+  },
+  "switchToAccount": {
+    "message": "Switch to account"
+  },
+  "activeAccount": {
+    "message": "Active account"
+  },
+  "accountLimitReached": {
+    "message": "Account limit reached. Log out of an account to add another."
+  },
+  "active": {
+    "message": "active"
+  },
+  "locked": {
+    "message": "locked"
+  },
+  "unlocked": {
+    "message": "unlocked"
+  },
+  "server": {
+    "message": "server"
+  },
+  "hostedAt": {
+    "message": "hosted at"
   }
 }

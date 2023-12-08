@@ -365,6 +365,9 @@
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "Kasa zaman aşımı eyleminizi değiştirmek için kilit açma yönteminizi ayarlayın."
   },
+  "unlockMethodNeeded": {
+    "message": "Ayarlar'da bir kilit açma yöntemi ayarlayın"
+  },
   "rateExtension": {
     "message": "Uzantıyı değerlendirin"
   },
@@ -404,6 +407,9 @@
   },
   "lockNow": {
     "message": "Şimdi kilitle"
+  },
+  "lockAll": {
+    "message": "Tümünü kilitle"
   },
   "immediately": {
     "message": "Hemen"
@@ -1027,6 +1033,12 @@
   "showAutoFillMenuOnFormFieldsDescAlt": {
     "message": "Oturum açmış tüm hesaplara uygulanır."
   },
+  "turnOffBrowserBuiltInPasswordManagerSettings": {
+    "message": "Turn off your browser’s built in password manager settings to avoid conflicts."
+  },
+  "turnOffBrowserBuiltInPasswordManagerSettingsLink": {
+    "message": "Edit browser settings."
+  },
   "autofillOverlayVisibilityOff": {
     "message": "Kapalı",
     "description": "Overlay setting select option for disabling autofill overlay"
@@ -1130,6 +1142,9 @@
   },
   "faviconDesc": {
     "message": "Hesapların yanında tanıdık görseller göster."
+  },
+  "faviconDescAlt": {
+    "message": "Her hesabın yanında tanınabilir bir resim göster. Oturum açmış tüm hesaplar için geçerlidir."
   },
   "enableBadgeCounter": {
     "message": "Rozet sayacını göster"
@@ -2538,35 +2553,11 @@
     "message": "Bitwarden auto-fill menu available. Press the down arrow key to select.",
     "description": "Screen reader text for announcing when the overlay opens on the page"
   },
-  "overrideBrowserAutofillTitle": {
-    "message": "Override browser auto-fill?",
-    "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideBrowserAutofillDescription": {
-    "message": "Bu ayarı kapalı bırakırsanız Bitwarden otomatik doldurma menüsüyle tarayıcınızınki arasında çakışma yaşanabilir.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideBrowserAutofillPrivacyRequiredDescription": {
-    "message": "Leaving this setting off may cause conflicts between the Bitwarden auto-fill menu and your browser’s. Turning this on will restart the Bitwarden extension.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
   "turnOn": {
     "message": "Aç"
   },
   "ignore": {
     "message": "Yok say"
-  },
-  "overrideBrowserAutoFillSettings": {
-    "message": "Tarayıcının otomatik doldurma ayarlarını geçersiz kıl",
-    "description": "Label for the setting that allows overriding the default browser autofill settings"
-  },
-  "extensionPrivacyPermissionNotGrantedTitle": {
-    "message": "Unable to override browser auto-fill",
-    "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
-  },
-  "extensionPrivacyPermissionNotGrantedDescription": {
-    "message": "Bitwarden must have access to the extension's privacy permission to override browser auto-fill settings.",
-    "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "importData": {
     "message": "Verileri içe aktar",
@@ -2796,5 +2787,35 @@
   },
   "lastPassYubikeyDesc": {
     "message": "LastPass hesabınızla ilişkili YubiKey'i bilgisayarınızın USB bağlantı noktasına takın ve ardından düğmesine dokunun."
+  },
+  "switchAccount": {
+    "message": "Hesabı değiştir"
+  },
+  "switchAccounts": {
+    "message": "Hesapları değiştir"
+  },
+  "switchToAccount": {
+    "message": "Hesaba geç"
+  },
+  "activeAccount": {
+    "message": "Aktif hesap"
+  },
+  "accountLimitReached": {
+    "message": "Hesap sınırına ulaştınız. Yeni hesap eklemek için hesaplardan birinden çıkış yapın."
+  },
+  "active": {
+    "message": "aktif"
+  },
+  "locked": {
+    "message": "kilitli"
+  },
+  "unlocked": {
+    "message": "kilitli değil"
+  },
+  "server": {
+    "message": "sunucu"
+  },
+  "hostedAt": {
+    "message": "konum"
   }
 }

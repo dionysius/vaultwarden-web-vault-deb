@@ -365,6 +365,9 @@
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "Налаштуйте спосіб розблокування, щоб змінити час очікування сховища."
   },
+  "unlockMethodNeeded": {
+    "message": "Встановіть спосіб розблокування в налаштуваннях"
+  },
   "rateExtension": {
     "message": "Оцінити розширення"
   },
@@ -404,6 +407,9 @@
   },
   "lockNow": {
     "message": "Блокувати зараз"
+  },
+  "lockAll": {
+    "message": "Заблокувати все"
   },
   "immediately": {
     "message": "Негайно"
@@ -1027,6 +1033,12 @@
   "showAutoFillMenuOnFormFieldsDescAlt": {
     "message": "Застосовується для всіх облікових записів, до яких виконано вхід."
   },
+  "turnOffBrowserBuiltInPasswordManagerSettings": {
+    "message": "Turn off your browser’s built in password manager settings to avoid conflicts."
+  },
+  "turnOffBrowserBuiltInPasswordManagerSettingsLink": {
+    "message": "Edit browser settings."
+  },
   "autofillOverlayVisibilityOff": {
     "message": "Вимк",
     "description": "Overlay setting select option for disabling autofill overlay"
@@ -1130,6 +1142,9 @@
   },
   "faviconDesc": {
     "message": "Показувати впізнаване зображення біля кожного запису."
+  },
+  "faviconDescAlt": {
+    "message": "Показати впізнаване зображення поруч з кожним записом. Застосовується для всіх облікових записів, до яких виконано вхід."
   },
   "enableBadgeCounter": {
     "message": "Показувати лічильник"
@@ -2538,35 +2553,11 @@
     "message": "Доступне меню автозаповнення Bitwarden. Натисніть клавішу стрілки для вибору.",
     "description": "Screen reader text for announcing when the overlay opens on the page"
   },
-  "overrideBrowserAutofillTitle": {
-    "message": "Перевизначити автозаповнення браузера?",
-    "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideBrowserAutofillDescription": {
-    "message": "Якщо залишити цей параметр вимкненим, може виникнути конфлікт між меню автозаповнення Bitwarden та вашого браузера.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideBrowserAutofillPrivacyRequiredDescription": {
-    "message": "Якщо залишити цей параметр вимкненим, може виникнути конфлікт між меню автозаповнення Bitwarden та вашого браузера. Якщо увімкнути, розширення Bitwarden перезапуститься.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
   "turnOn": {
     "message": "Увімкнути"
   },
   "ignore": {
     "message": "Ігнорувати"
-  },
-  "overrideBrowserAutoFillSettings": {
-    "message": "Перевизначити налаштування автозаповнення браузера",
-    "description": "Label for the setting that allows overriding the default browser autofill settings"
-  },
-  "extensionPrivacyPermissionNotGrantedTitle": {
-    "message": "Неможливо перевизначити автозаповнення браузера",
-    "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
-  },
-  "extensionPrivacyPermissionNotGrantedDescription": {
-    "message": "Bitwarden повинен мати доступ до дозволу приватності розширення, щоб перевизначати налаштування автозаповнення браузера.",
-    "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "importData": {
     "message": "Імпортувати дані",
@@ -2796,5 +2787,35 @@
   },
   "lastPassYubikeyDesc": {
     "message": "Вставте YubiKey пов'язаний з обліковим записом LastPass в USB порт вашого комп'ютера, потім торкніться його кнопки."
+  },
+  "switchAccount": {
+    "message": "Перемкнути обліковий запис"
+  },
+  "switchAccounts": {
+    "message": "Перемкнути облікові записи"
+  },
+  "switchToAccount": {
+    "message": "Перемкнути на обліковий запис"
+  },
+  "activeAccount": {
+    "message": "Активний обліковий запис"
+  },
+  "accountLimitReached": {
+    "message": "Досягнуто обмеження облікового запису. Вийдіть, щоб додати інший обліковий запис."
+  },
+  "active": {
+    "message": "активний"
+  },
+  "locked": {
+    "message": "заблокований"
+  },
+  "unlocked": {
+    "message": "розблокований"
+  },
+  "server": {
+    "message": "сервер"
+  },
+  "hostedAt": {
+    "message": "розміщений на"
   }
 }

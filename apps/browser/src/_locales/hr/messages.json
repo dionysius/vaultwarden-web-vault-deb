@@ -365,6 +365,9 @@
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "Za promjenu vremena isteka trezora, odredi način otključavanja."
   },
+  "unlockMethodNeeded": {
+    "message": "Set up an unlock method in Settings"
+  },
   "rateExtension": {
     "message": "Ocijeni proširenje"
   },
@@ -404,6 +407,9 @@
   },
   "lockNow": {
     "message": "Zaključaj sada"
+  },
+  "lockAll": {
+    "message": "Lock all"
   },
   "immediately": {
     "message": "Odmah"
@@ -620,7 +626,7 @@
     "message": "Upit za dodavanje prijave pojavljuje se kada se otkrije prva prijava na neko web mjesto. Bitwarden će te pitatati želiš li uneseno korisničko ime i lozinku spremiti u svoj trezor."
   },
   "addLoginNotificationDescAlt": {
-    "message": "Ask to add an item if one isn't found in your vault. Applies to all logged in accounts."
+    "message": "Pitaj za dodavanje stavke ako nije pronađena u tvojem trezoru. Primjenjuje se na sve prijavljene račune."
   },
   "showCardsCurrentTab": {
     "message": "Prikaži platne kartice"
@@ -655,13 +661,13 @@
     "message": "Upitaj za ažuriranje lozinke prijave ako se otkrije promjena na web stranici."
   },
   "changedPasswordNotificationDescAlt": {
-    "message": "Ask to update a login's password when a change is detected on a website. Applies to all logged in accounts."
+    "message": "Pitaj za ažuriranje lozinke za prijavu kada se otkrije promjena na web stranici. Primjenjuje se na sve prijavljene račune."
   },
   "enableUsePasskeys": {
-    "message": "Ask to save and use passkeys"
+    "message": "Pitaj za spremanje i korištenje pristupnih ključeva"
   },
   "usePasskeysDesc": {
-    "message": "Ask to save new passkeys or log in with passkeys stored in your vault. Applies to all logged in accounts."
+    "message": "Pitaj za spremanje novih pristupnih ključeva ili se prijavi pomoću pristupnih ključeva pohranjenih u tvojem trezoru. Primjenjuje se na sve prijavljene račune."
   },
   "notificationChangeDesc": {
     "message": "Želiš li ovu lozinku ažurirati u Bitwarden-u?"
@@ -682,7 +688,7 @@
     "message": "Koristi sekundarni klik za pristup generatoru lozinki i pripadajućim prijavama trenunte web stranice. "
   },
   "contextMenuItemDescAlt": {
-    "message": "Use a secondary click to access password generation and matching logins for the website. Applies to all logged in accounts."
+    "message": "Koristi sekundarni klik za pristup generiranju lozinki i odgovarajućim prijavama za mrežno mjesto. Primjenjuje se na sve prijavljene račune."
   },
   "defaultUriMatchDetection": {
     "message": "Zadano otkrivanje URI podudaranja",
@@ -698,7 +704,7 @@
     "message": "Promijeni temu boja."
   },
   "themeDescAlt": {
-    "message": "Change the application's color theme. Applies to all logged in accounts."
+    "message": "Promijeni boju aplikacije. Primjenjuje se na sve prijavljene račune."
   },
   "dark": {
     "message": "Tamna",
@@ -1021,22 +1027,28 @@
     "message": "URL-ovi okoline su spremljeni."
   },
   "showAutoFillMenuOnFormFields": {
-    "message": "Show auto-fill menu on form fields",
+    "message": "Prikaži izbornik za auto-ispunu u poljima obrasca",
     "description": "Represents the message for allowing the user to enable the auto-fill overlay"
   },
   "showAutoFillMenuOnFormFieldsDescAlt": {
-    "message": "Applies to all logged in accounts."
+    "message": "Primjenjuje se na sve prijavljene račune."
+  },
+  "turnOffBrowserBuiltInPasswordManagerSettings": {
+    "message": "Turn off your browser’s built in password manager settings to avoid conflicts."
+  },
+  "turnOffBrowserBuiltInPasswordManagerSettingsLink": {
+    "message": "Edit browser settings."
   },
   "autofillOverlayVisibilityOff": {
-    "message": "Off",
+    "message": "Isključeno",
     "description": "Overlay setting select option for disabling autofill overlay"
   },
   "autofillOverlayVisibilityOnFieldFocus": {
-    "message": "When field is selected (on focus)",
+    "message": "Kada je odabrano polje (u fokusu)",
     "description": "Overlay appearance select option for showing the field on focus of the input element"
   },
   "autofillOverlayVisibilityOnButtonClick": {
-    "message": "When auto-fill icon is selected",
+    "message": "Kada je odabrana ikona auto-ispune",
     "description": "Overlay appearance select option for showing the field on click of the overlay icon"
   },
   "enableAutoFillOnPageLoad": {
@@ -1130,6 +1142,9 @@
   },
   "faviconDesc": {
     "message": "Prikaži prepoznatljivu sliku pored svake prijave."
+  },
+  "faviconDescAlt": {
+    "message": "Show a recognizable image next to each login. Applies to all logged in accounts."
   },
   "enableBadgeCounter": {
     "message": "Prikaži značku brojača"
@@ -1700,7 +1715,7 @@
     "message": "Bitwarden neće pitati treba li spremiti prijavne podatke za ove domene. Za primjenu promjena, potrebno je osvježiti stranicu."
   },
   "excludedDomainsDescAlt": {
-    "message": "Bitwarden will not ask to save login details for these domains for all logged in accounts. You must refresh the page for changes to take effect."
+    "message": "Bitwarden neće tražiti spremanje podataka za prijavu za ove domene za sve prijavljene račune. Moraš osvježiti stranicu kako bi promjene stupile na snagu."
   },
   "excludedDomainsInvalidDomain": {
     "message": "$DOMAIN$ nije valjana domena",
@@ -2264,7 +2279,7 @@
     "message": "Kako auto-ispuniti"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Select an item from this screen, use the shortcut $COMMAND$, or explore other options in settings.",
+    "message": "Odaberi stavku s ovog zaslona, upotrijebi prečac $COMMAND$ ili istraži druge opcije u postavkama.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2273,7 +2288,7 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "Select an item from this screen, or explore other options in settings."
+    "message": "Odaberi stavku s ovog zaslona ili istraži druge opcije u postavkama."
   },
   "gotIt": {
     "message": "U redu"
@@ -2495,78 +2510,54 @@
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
   "bitwardenOverlayButton": {
-    "message": "Bitwarden auto-fill menu button",
+    "message": "Tipka izbornika Bitwarden auto-ispune",
     "description": "Page title for the iframe containing the overlay button"
   },
   "toggleBitwardenVaultOverlay": {
-    "message": "Toggle Bitwarden auto-fill menu",
+    "message": "U/isključivanje izbornika Bitwarden auto-ispune",
     "description": "Screen reader and tool tip label for the overlay button"
   },
   "bitwardenVault": {
-    "message": "Bitwarden auto-fill menu",
+    "message": "Izbornik Bitwarden auto-ispune",
     "description": "Page title in overlay"
   },
   "unlockYourAccountToViewMatchingLogins": {
-    "message": "Unlock your account to view matching logins",
+    "message": "Otklučaj svoj račun za prikaz podudarnih prijava",
     "description": "Text to display in overlay when the account is locked."
   },
   "unlockAccount": {
-    "message": "Unlock account",
+    "message": "Otključaj račun",
     "description": "Button text to display in overlay when the account is locked."
   },
   "fillCredentialsFor": {
-    "message": "Fill credentials for",
+    "message": "Unesi vjerodajnice za",
     "description": "Screen reader text for when overlay item is in focused"
   },
   "partialUsername": {
-    "message": "Partial username",
+    "message": "Djelomično korisničko ime",
     "description": "Screen reader text for when a login item is focused where a partial username is displayed. SR will announce this phrase before reading the text of the partial username"
   },
   "noItemsToShow": {
-    "message": "No items to show",
+    "message": "Nema stavki za prikaz",
     "description": "Text to show in overlay if there are no matching items"
   },
   "newItem": {
-    "message": "New item",
+    "message": "Nova stavka",
     "description": "Button text to display in overlay when there are no matching items"
   },
   "addNewVaultItem": {
-    "message": "Add new vault item",
+    "message": "Dodaj novu stavku trezora",
     "description": "Screen reader text (aria-label) for new item button in overlay"
   },
   "bitwardenOverlayMenuAvailable": {
-    "message": "Bitwarden auto-fill menu available. Press the down arrow key to select.",
+    "message": "Dostupan je Bitwarden izbornik auto-ispune. Pritisni tipku sa strelicom prema dolje za odabir.",
     "description": "Screen reader text for announcing when the overlay opens on the page"
   },
-  "overrideBrowserAutofillTitle": {
-    "message": "Override browser auto-fill?",
-    "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideBrowserAutofillDescription": {
-    "message": "Leaving this setting off may cause conflicts between the Bitwarden auto-fill menu and your browser’s.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideBrowserAutofillPrivacyRequiredDescription": {
-    "message": "Leaving this setting off may cause conflicts between the Bitwarden auto-fill menu and your browser’s. Turning this on will restart the Bitwarden extension.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
   "turnOn": {
-    "message": "Turn on"
+    "message": "Uključi"
   },
   "ignore": {
-    "message": "Ignore"
-  },
-  "overrideBrowserAutoFillSettings": {
-    "message": "Override browser auto-fill settings",
-    "description": "Label for the setting that allows overriding the default browser autofill settings"
-  },
-  "extensionPrivacyPermissionNotGrantedTitle": {
-    "message": "Unable to override browser auto-fill",
-    "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
-  },
-  "extensionPrivacyPermissionNotGrantedDescription": {
-    "message": "Bitwarden must have access to the extension's privacy permission to override browser auto-fill settings.",
-    "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
+    "message": "Zanemari"
   },
   "importData": {
     "message": "Uvezi podatke",
@@ -2680,7 +2671,7 @@
     "message": "Potvrdi lozinku datoteke"
   },
   "typePasskey": {
-    "message": "Passkey"
+    "message": "Pristupni ključ"
   },
   "passkeyNotCopied": {
     "message": "Pristupni ključ neće biti kopiran"
@@ -2796,5 +2787,35 @@
   },
   "lastPassYubikeyDesc": {
     "message": "Umetni YubiKey pridružen svojem LastPass računu u USB priključak račuanala, a zatim dodirni njegovu tipku."
+  },
+  "switchAccount": {
+    "message": "Switch account"
+  },
+  "switchAccounts": {
+    "message": "Switch accounts"
+  },
+  "switchToAccount": {
+    "message": "Switch to account"
+  },
+  "activeAccount": {
+    "message": "Active account"
+  },
+  "accountLimitReached": {
+    "message": "Account limit reached. Log out of an account to add another."
+  },
+  "active": {
+    "message": "active"
+  },
+  "locked": {
+    "message": "locked"
+  },
+  "unlocked": {
+    "message": "unlocked"
+  },
+  "server": {
+    "message": "server"
+  },
+  "hostedAt": {
+    "message": "hosted at"
   }
 }
