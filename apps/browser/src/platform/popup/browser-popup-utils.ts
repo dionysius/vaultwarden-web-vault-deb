@@ -127,9 +127,7 @@ class BrowserPopupUtils {
       top: senderWindow.top + offsetTop,
       ...defaultPopoutWindowOptions,
       ...windowOptions,
-      url: chrome.runtime.getURL(
-        BrowserPopupUtils.buildPopoutUrlPath(extensionUrlPath, singleActionKey),
-      ),
+      url: BrowserPopupUtils.buildPopoutUrl(extensionUrlPath, singleActionKey),
     };
 
     if (
@@ -252,23 +250,15 @@ class BrowserPopupUtils {
    * @param extensionUrlPath - A relative path to the extension page. Example: "popup/index.html#/tabs/vault"
    * @param singleActionKey - The single action popout key used to identify the popout.
    */
-  private static buildPopoutUrlPath(extensionUrlPath: string, singleActionKey: string) {
-    let formattedExtensionUrlPath = extensionUrlPath;
-    if (formattedExtensionUrlPath.includes("uilocation=")) {
-      formattedExtensionUrlPath = formattedExtensionUrlPath.replace(
-        /uilocation=[^&]*/g,
-        "uilocation=popout",
-      );
-    } else {
-      formattedExtensionUrlPath +=
-        (formattedExtensionUrlPath.includes("?") ? "&" : "?") + "uilocation=popout";
-    }
+  private static buildPopoutUrl(extensionUrlPath: string, singleActionKey: string) {
+    const parsedUrl = new URL(chrome.runtime.getURL(extensionUrlPath));
+    parsedUrl.searchParams.set("uilocation", "popout");
 
     if (singleActionKey) {
-      formattedExtensionUrlPath += `&singleActionPopout=${singleActionKey}`;
+      parsedUrl.searchParams.set("singleActionPopout", singleActionKey);
     }
 
-    return formattedExtensionUrlPath;
+    return parsedUrl.toString();
   }
 }
 

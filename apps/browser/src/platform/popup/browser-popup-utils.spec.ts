@@ -191,25 +191,18 @@ describe("BrowserPopupUtils", () => {
       });
     });
 
-    it("replaces any existing `uilocation=` query params within the passed extension url path to state the the uilocaiton is a popup", async () => {
-      const url = "popup/index.html#/tabs/vault?uilocation=sidebar";
+    it("skips parsing the passed extension url path if the option to do that is set", () => {
+      const url = "popup/index.html?uilocation=popout#/tabs/vault";
       jest.spyOn(BrowserPopupUtils as any, "isSingleActionPopoutOpen").mockResolvedValueOnce(false);
+      jest.spyOn(BrowserPopupUtils as any, "buildPopoutUrl");
 
-      await BrowserPopupUtils.openPopout(url);
+      BrowserPopupUtils.openPopout(url);
 
-      expect(BrowserApi.createWindow).toHaveBeenCalledWith({
-        type: "popup",
-        focused: true,
-        width: 380,
-        height: 630,
-        left: 85,
-        top: 190,
-        url: `chrome-extension://id/popup/index.html#/tabs/vault?uilocation=popout`,
-      });
+      expect(BrowserPopupUtils["buildPopoutUrl"]).not.toHaveBeenCalled();
     });
 
-    it("appends the uilocation to the search params if an existing param is passed with the extension url path", async () => {
-      const url = "popup/index.html#/tabs/vault?existingParam=123";
+    it("replaces any existing `uilocation=` query params within the passed extension url path to state the the uilocaiton is a popup", async () => {
+      const url = "popup/index.html?uilocation=sidebar#/tabs/vault";
       jest.spyOn(BrowserPopupUtils as any, "isSingleActionPopoutOpen").mockResolvedValueOnce(false);
 
       await BrowserPopupUtils.openPopout(url);
@@ -221,7 +214,7 @@ describe("BrowserPopupUtils", () => {
         height: 630,
         left: 85,
         top: 190,
-        url: `chrome-extension://id/${url}&uilocation=popout`,
+        url: `chrome-extension://id/popup/index.html?uilocation=popout#/tabs/vault`,
       });
     });
 
