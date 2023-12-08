@@ -7434,5 +7434,11 @@
   },
   "seatLimitReachedContactYourProvider": {
     "message": "A helyek száma elérésre került.  További helyek vásárlásához forduljunk a szolgáltatóhoz."
+  },
+  "collectionAccessRestricted": {
+    "message": "A gyűjtemény elérése korlátozott."
+  },
+  "serviceAccountAccessUpdated": {
+    "message": "Service account access updated"
   }
 }

@@ -7434,5 +7434,11 @@
   },
   "seatLimitReachedContactYourProvider": {
     "message": "Bol dosiahnutý limit počtu používateľských licencií. Kontaktujte vášho poskytovateľa pre zakúpenie dodatočných licencií."
+  },
+  "collectionAccessRestricted": {
+    "message": "Collection access is restricted"
+  },
+  "serviceAccountAccessUpdated": {
+    "message": "Service account access updated"
   }
 }

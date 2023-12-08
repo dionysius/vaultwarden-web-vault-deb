@@ -7434,5 +7434,11 @@
   },
   "seatLimitReachedContactYourProvider": {
     "message": "Достигнуто је ограничење броја места. Обратите се свом провајдеру да бисте купили додатна места."
+  },
+  "collectionAccessRestricted": {
+    "message": "Collection access is restricted"
+  },
+  "serviceAccountAccessUpdated": {
+    "message": "Service account access updated"
   }
 }

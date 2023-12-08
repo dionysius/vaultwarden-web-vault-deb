@@ -7434,5 +7434,11 @@
   },
   "seatLimitReachedContactYourProvider": {
     "message": "Das Benutzerplatzlimit wurde erreicht. Kontaktiere deinen Anbieter, um zusätzliche Benutzerplätze zu erwerben."
+  },
+  "collectionAccessRestricted": {
+    "message": "Zugriff auf Sammlungen ist eingeschränkt"
+  },
+  "serviceAccountAccessUpdated": {
+    "message": "Service account access updated"
   }
 }

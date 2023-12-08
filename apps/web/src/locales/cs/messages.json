@@ -7434,5 +7434,11 @@
   },
   "seatLimitReachedContactYourProvider": {
     "message": "Byl dosažen limit počtu uživatelů. Kontaktujte svého poskytovatele pro zakoupení dalších uživatelů."
+  },
+  "collectionAccessRestricted": {
+    "message": "Přístup ke kolekci je omezen"
+  },
+  "serviceAccountAccessUpdated": {
+    "message": "Service account access updated"
   }
 }

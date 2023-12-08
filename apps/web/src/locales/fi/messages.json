@@ -612,22 +612,22 @@
     "message": "Kirjaudu pääsalasanalla"
   },
   "readingPasskeyLoading": {
-    "message": "Luetaan suojausavaimia..."
+    "message": "Luetaan suojausavainta..."
   },
   "readingPasskeyLoadingInfo": {
-    "message": "Pidä tämä ikkuna auki ja seuraa opasteita selaimessasi."
+    "message": "Pidä tämä ikkuna avoinna ja seuraa selaimesi opasteita."
   },
   "useADifferentLogInMethod": {
-    "message": "Käytä eri sisäänkirjautumistapaa"
+    "message": "Käytä eri kirjautumistapaa"
   },
   "loginWithPasskey": {
     "message": "Kirjaudu suojausavaimella"
   },
   "invalidPasskeyPleaseTryAgain": {
-    "message": "Kelpaamaton suojausavain. Ole hyvä ja yritä uudelleen."
+    "message": "Suojausavain ei kelpaa. Yritä uudelleen."
   },
   "twoFactorForPasskeysNotSupportedOnClientUpdateToLogIn": {
-    "message": "2FA salausavaimille ei ole tuettu. Päivitä ohjelma kirjautuaksesi sisään."
+    "message": "Kaksivaiheista salausavainkirjautumista ei tueta. Päivitä sovellus kirjautuaksesi sisään."
   },
   "loginWithPasskeyInfo": {
     "message": "Käytä generoitua suojausavainta, joka kirjaa sinut automaattisesti sisään ilman salasanaa. Henkilöllisyytesi vahvistetaan kasvojen tunnistuksen tai sormenjäljen kataisilla biometrisillä tiedoilla, tai jollakin muulla FIDO2-suojausratkaisulla."
@@ -3597,7 +3597,7 @@
     "message": "Päivitä salausavain"
   },
   "updateEncryptionSchemeDesc": {
-    "message": "Olemme muuttaneet salausmallia tarjotaksemme paremman tietoturvan. Päivitä salausavaimesi syöttämällä alle pääsalasanasi."
+    "message": "Olemme muuttaneet salausmallia tietoturvan tehostamiseksi. Päivitä salausavaimesi syöttämällä pääsalasanasi alle."
   },
   "updateEncryptionKeyWarning": {
     "message": "Salausavaimesi päivityksen jälkeen, sinun tulee kirjautua ulos ja sitten takaisin sisään kaikissa Bitwarden-sovelluksissa, jotka ovat käytössäsi (esim. mobiilisovellus ja selainlaajennukset). Uudelleenkirjautumisen (joka lataa uuden salausavaimen) suorittamatta jättäminen saattaa johtaa tietojen vaurioitumiseen. Yritämme kirjata sinut ulos autmaattisesti, mutta tämä voi tapahtua vasta jonkin ajan kuluttua."
@@ -7317,16 +7317,16 @@
     "message": "Kokoelmien hallinta"
   },
   "collectionManagementDesc": {
-    "message": "Hallinnoi organisaation kokoelmien käyttäytymistä."
+    "message": "Hallitse organisaation kokoelmien toimintaa."
   },
   "limitCollectionCreationDeletionDesc": {
     "message": "Rajoita kokoelmien luonti ja poisto omistajille ja ylläpitäjille."
   },
   "allowAdminAccessToAllCollectionItemsDesc": {
-    "message": "Omistajat ja ylläpitäjät voivat hallita kaikkia kokoelmia ja kohteita"
+    "message": "Omistajat ja ylläpitäjät voivat hallita kaikkia kokoelmia ja kohteita."
   },
   "collectionManagementUpdated": {
-    "message": "Kokoelmien hallintakäyttäytyminen tallennettiin"
+    "message": "Kokoelmien hallinnan määritykset tallennettiin"
   },
   "passwordManagerPlanPrice": {
     "message": "Salasanahallinnan tilauksen hinta"
@@ -7427,12 +7427,18 @@
     "message": "Odottamaton virhe ladattaessa Sendiä. Yritä myöhemmin uudelleen."
   },
   "seatLimitReached": {
-    "message": "Istuntojen määrä on saavutettu"
+    "message": "Käyttäjäpaikkojen enimmäismäärä on saavutettu"
   },
   "contactYourProvider": {
-    "message": "Ota yhteyttä palveluntarjoajaasi ostaaksesi lisäpaikkoja."
+    "message": "Ole lisäpaikkojen hankinnasta yhteydessä palveluntarjoajaasi."
   },
   "seatLimitReachedContactYourProvider": {
-    "message": "Istuntojen määrä on saavutettu. Ota yhteyttä toimittajaasi ostaaksesi lisäpaikkoja."
+    "message": "Käyttäjäpaikkojen enimmäismäärä on saavutettu. Ole lisäpaikoista yhteydessä palveluntarjoajaasi."
+  },
+  "collectionAccessRestricted": {
+    "message": "Kokoelman käyttöä on rajoitettu"
+  },
+  "serviceAccountAccessUpdated": {
+    "message": "Service account access updated"
   }
 }

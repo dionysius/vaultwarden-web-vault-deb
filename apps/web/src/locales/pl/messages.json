@@ -7434,5 +7434,11 @@
   },
   "seatLimitReachedContactYourProvider": {
     "message": "Seat limit has been reached. Contact your provider to purchase additional seats."
+  },
+  "collectionAccessRestricted": {
+    "message": "Dostęp do kolekcji jest ograniczony"
+  },
+  "serviceAccountAccessUpdated": {
+    "message": "Zaktualizowano dostęp do konta serwisowego"
   }
 }

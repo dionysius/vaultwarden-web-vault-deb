@@ -7434,5 +7434,11 @@
   },
   "seatLimitReachedContactYourProvider": {
     "message": "シート数の上限に達しました。追加のシートを購入するには、プロバイダに連絡してください。"
+  },
+  "collectionAccessRestricted": {
+    "message": "コレクションへのアクセスが制限されています"
+  },
+  "serviceAccountAccessUpdated": {
+    "message": "サービスアカウントへのアクセスが更新されました"
   }
 }

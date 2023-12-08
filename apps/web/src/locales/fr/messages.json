@@ -7434,5 +7434,11 @@
   },
   "seatLimitReachedContactYourProvider": {
     "message": "La limite de places a été atteinte. Contactez votre fournisseur pour acheter des places supplémentaires."
+  },
+  "collectionAccessRestricted": {
+    "message": "L'accès à la collection est restreint"
+  },
+  "serviceAccountAccessUpdated": {
+    "message": "Service account access updated"
   }
 }

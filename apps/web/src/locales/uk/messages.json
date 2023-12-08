@@ -7434,5 +7434,11 @@
   },
   "seatLimitReachedContactYourProvider": {
     "message": "Досягнуто обмеження кількості місць. Зверніться до свого провайдера для придбання додаткових місць."
+  },
+  "collectionAccessRestricted": {
+    "message": "Доступ до збірки обмежено"
+  },
+  "serviceAccountAccessUpdated": {
+    "message": "Service account access updated"
   }
 }

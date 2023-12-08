@@ -5835,7 +5835,7 @@
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "inputRequired": {
-    "message": "Полето е задължтелно да бъде попълнено."
+    "message": "Полето е задължително да бъде попълнено."
   },
   "inputEmail": {
     "message": "Въведеният в полето текст не е адрес на е-поща."
@@ -7434,5 +7434,11 @@
   },
   "seatLimitReachedContactYourProvider": {
     "message": "Достигнат е максималният брой потребители. Свържете се с доставчика си, за да закупи допълнителни места."
+  },
+  "collectionAccessRestricted": {
+    "message": "Достъпът до колекцията е ограничен"
+  },
+  "serviceAccountAccessUpdated": {
+    "message": "Service account access updated"
   }
 }

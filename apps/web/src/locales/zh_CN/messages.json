@@ -7408,7 +7408,7 @@
     "message": "通行密钥将不会被复制到克隆的项目。要继续克隆这个项目吗？"
   },
   "modifiedCollectionManagement": {
-    "message": "Modified collection management setting $ID$.",
+    "message": "修改了集合管理设置 $ID$。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -7434,5 +7434,11 @@
   },
   "seatLimitReachedContactYourProvider": {
     "message": "已达到席位限制。请联系您的供应商购买更多席位。"
+  },
+  "collectionAccessRestricted": {
+    "message": "访问集合受限"
+  },
+  "serviceAccountAccessUpdated": {
+    "message": "服务账户访问权限已更新"
   }
 }
