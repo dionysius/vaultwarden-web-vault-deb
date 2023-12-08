@@ -1969,7 +1969,7 @@
     "message": "Lietotnes iestatījumi (visi konti)"
   },
   "accountSwitcherLimitReached": {
-    "message": "Sasniegti konta ierobežojumi. Atteikties, lai pievienotu citu."
+    "message": "Sasniegti konta ierobežojumi. Jāizrakstās no konta, lai pievienotu citu."
   },
   "settingsTitle": {
     "message": "Lietotnes iestatījumi kontam $EMAIL$",
@@ -2002,10 +2002,10 @@
     }
   },
   "locked": {
-    "message": "Slēgts"
+    "message": "Aizslēgta"
   },
   "unlocked": {
-    "message": "Atslēgts"
+    "message": "Atslēgta"
   },
   "generator": {
     "message": "Veidotājs"
