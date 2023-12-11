@@ -47,7 +47,7 @@ import { VaultItemsComponent } from "../vault/popup/components/vault/vault-items
 import { ViewComponent } from "../vault/popup/components/vault/view.component";
 import { FolderAddEditComponent } from "../vault/popup/settings/folder-add-edit.component";
 
-import { DebounceNavigationService } from "./services/debounceNavigationService";
+import { debounceNavigationGuard } from "./services/debounce-navigation.service";
 import { ExcludedDomainsComponent } from "./settings/excluded-domains.component";
 import { FoldersComponent } from "./settings/folders.component";
 import { HelpAndFeedbackComponent } from "./settings/help-and-feedback.component";
@@ -183,14 +183,14 @@ const routes: Routes = [
   {
     path: "add-cipher",
     component: AddEditComponent,
-    canActivate: [AuthGuard, DebounceNavigationService],
+    canActivate: [AuthGuard, debounceNavigationGuard()],
     data: { state: "add-cipher" },
     runGuardsAndResolvers: "always",
   },
   {
     path: "edit-cipher",
     component: AddEditComponent,
-    canActivate: [AuthGuard, DebounceNavigationService],
+    canActivate: [AuthGuard, debounceNavigationGuard()],
     data: { state: "edit-cipher" },
     runGuardsAndResolvers: "always",
   },

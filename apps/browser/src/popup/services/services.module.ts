@@ -116,7 +116,7 @@ import { FilePopoutUtilsService } from "../../tools/popup/services/file-popout-u
 import { BrowserFolderService } from "../../vault/services/browser-folder.service";
 import { VaultFilterService } from "../../vault/services/vault-filter.service";
 
-import { DebounceNavigationService } from "./debounceNavigationService";
+import { DebounceNavigationService } from "./debounce-navigation.service";
 import { InitService } from "./init.service";
 import { PopupCloseWarningService } from "./popup-close-warning.service";
 import { PopupSearchService } from "./popup-search.service";

@@ -40,7 +40,6 @@
 ./apps/browser/README.md
 ./apps/browser/store/windows/AppxManifest.xml
 ./apps/browser/src/background/nativeMessaging.background.ts
-./apps/browser/src/popup/services/debounceNavigationService.ts
 ./apps/browser/src/models/browserComponentState.ts
 ./apps/browser/src/models/browserSendComponentState.ts
 ./apps/browser/src/models/browserGroupingsComponentState.ts

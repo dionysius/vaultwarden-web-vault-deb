@@ -1,10 +1,24 @@
-import { Injectable, OnDestroy } from "@angular/core";
-import { CanActivate, NavigationEnd, NavigationStart, Router } from "@angular/router";
+import { inject, Injectable, OnDestroy } from "@angular/core";
+import { CanActivateFn, NavigationEnd, NavigationStart, Router } from "@angular/router";
 import { Subscription } from "rxjs";
 import { filter, pairwise } from "rxjs/operators";
 
+/**
+ * CanActivate guard that cancels duplicate navigation events, which can otherwise reinitialize some components
+ * unexpectedly.
+ * Specifically, this is used to avoid data loss when navigating from the password generator component back to the
+ * add/edit cipher component in browser.
+ * For more information, see https://github.com/bitwarden/clients/pull/1935
+ */
+export function debounceNavigationGuard(): CanActivateFn {
+  return async () => {
+    const debounceNavigationService = inject(DebounceNavigationService);
+    return debounceNavigationService.canActivate();
+  };
+}
+
 @Injectable()
-export class DebounceNavigationService implements CanActivate, OnDestroy {
+export class DebounceNavigationService implements OnDestroy {
   navigationStartSub: Subscription;
   navigationSuccessSub: Subscription;
 

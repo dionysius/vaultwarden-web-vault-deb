@@ -3,7 +3,7 @@ import { RouterModule, Routes } from "@angular/router";
 
 import { AuthGuard } from "@bitwarden/angular/auth/guards";
 
-import { HasPremiumGuard } from "../core/guards/has-premium.guard";
+import { hasPremiumGuard } from "../core/guards/has-premium.guard";
 
 import { BreachReportComponent } from "./pages/breach-report.component";
 import { ExposedPasswordsReportComponent } from "./pages/exposed-passwords-report.component";
@@ -30,31 +30,31 @@ const routes: Routes = [
         path: "reused-passwords-report",
         component: ReusedPasswordsReportComponent,
         data: { titleId: "reusedPasswordsReport" },
-        canActivate: [HasPremiumGuard],
+        canActivate: [hasPremiumGuard()],
       },
       {
         path: "unsecured-websites-report",
         component: UnsecuredWebsitesReportComponent,
         data: { titleId: "unsecuredWebsitesReport" },
-        canActivate: [HasPremiumGuard],
+        canActivate: [hasPremiumGuard()],
       },
       {
         path: "weak-passwords-report",
         component: WeakPasswordsReportComponent,
         data: { titleId: "weakPasswordsReport" },
-        canActivate: [HasPremiumGuard],
+        canActivate: [hasPremiumGuard()],
       },
       {
         path: "exposed-passwords-report",
         component: ExposedPasswordsReportComponent,
         data: { titleId: "exposedPasswordsReport" },
-        canActivate: [HasPremiumGuard],
+        canActivate: [hasPremiumGuard()],
       },
       {
         path: "inactive-two-factor-report",
         component: InactiveTwoFactorReportComponent,
         data: { titleId: "inactive2faReport" },
-        canActivate: [HasPremiumGuard],
+        canActivate: [hasPremiumGuard()],
       },
     ],
   },
