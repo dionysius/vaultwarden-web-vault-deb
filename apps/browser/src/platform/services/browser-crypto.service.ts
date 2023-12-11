@@ -18,15 +18,18 @@ export class BrowserCryptoService extends CryptoService {
    * Browser doesn't store biometric keys, so we retrieve them from the desktop and return
    * if we successfully saved it into memory as the User Key
    */
-  protected override async getKeyFromStorage(keySuffix: KeySuffixOptions): Promise<UserKey> {
+  protected override async getKeyFromStorage(
+    keySuffix: KeySuffixOptions,
+    userId?: string,
+  ): Promise<UserKey> {
     if (keySuffix === KeySuffixOptions.Biometric) {
       await this.platformUtilService.authenticateBiometric();
-      const userKey = await this.stateService.getUserKey();
+      const userKey = await this.stateService.getUserKey({ userId: userId });
       if (userKey) {
         return new SymmetricCryptoKey(Utils.fromB64ToArray(userKey.keyB64)) as UserKey;
       }
     }
 
-    return await super.getKeyFromStorage(keySuffix);
+    return await super.getKeyFromStorage(keySuffix, userId);
   }
 }
