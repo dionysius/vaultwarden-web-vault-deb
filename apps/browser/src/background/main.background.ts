@@ -891,17 +891,16 @@ export default class MainBackground {
     //Needs to be checked before state is cleaned
     const needStorageReseed = await this.needsStorageReseed();
 
+    const currentUserId = await this.stateService.getUserId();
     const newActiveUser = await this.stateService.clean({ userId: userId });
 
     if (newActiveUser != null) {
       // we have a new active user, do not continue tearing down application
       await this.switchAccount(newActiveUser as UserId);
       this.messagingService.send("switchAccountFinish");
-      this.messagingService.send("doneLoggingOut", { expired: expired, userId: userId });
-      return;
     }
 
-    if (userId == null || userId === (await this.stateService.getUserId())) {
+    if (userId == null || userId === currentUserId) {
       this.searchService.clearIndex();
       this.messagingService.send("doneLoggingOut", { expired: expired, userId: userId });
     }
