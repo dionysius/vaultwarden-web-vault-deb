@@ -20,7 +20,7 @@ class AutofillInit implements AutofillInitInterface {
     collectPageDetailsImmediately: ({ message }) => this.collectPageDetails(message, true),
     fillForm: ({ message }) => this.fillForm(message),
     openAutofillOverlay: ({ message }) => this.openAutofillOverlay(message),
-    closeAutofillOverlay: () => this.removeAutofillOverlay(),
+    closeAutofillOverlay: ({ message }) => this.removeAutofillOverlay(message),
     addNewVaultItemFromOverlay: () => this.addNewVaultItemFromOverlay(),
     redirectOverlayFocusOut: ({ message }) => this.redirectOverlayFocusOut(message),
     updateIsOverlayCiphersPopulated: ({ message }) => this.updateIsOverlayCiphersPopulated(message),
@@ -153,7 +153,12 @@ class AutofillInit implements AutofillInitInterface {
    * If the autofill is currently filling, only the overlay list will be
    * removed.
    */
-  private removeAutofillOverlay() {
+  private removeAutofillOverlay(message?: AutofillExtensionMessage) {
+    if (message?.data?.forceCloseOverlay) {
+      this.autofillOverlayContentService?.removeAutofillOverlay();
+      return;
+    }
+
     if (
       !this.autofillOverlayContentService ||
       this.autofillOverlayContentService.isFieldCurrentlyFocused

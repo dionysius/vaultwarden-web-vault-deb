@@ -118,7 +118,9 @@ class AutofillOverlayList extends AutofillOverlayPageElement {
   private updateListItems(ciphers: OverlayCipherData[]) {
     this.ciphers = ciphers;
     this.currentCipherIndex = 0;
-    this.overlayListContainer.innerHTML = "";
+    if (this.overlayListContainer) {
+      this.overlayListContainer.innerHTML = "";
+    }
 
     if (!ciphers?.length) {
       this.buildNoResultsOverlayList();

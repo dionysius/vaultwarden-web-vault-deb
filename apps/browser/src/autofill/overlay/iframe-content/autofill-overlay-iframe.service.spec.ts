@@ -392,6 +392,23 @@ describe("AutofillOverlayIframeService", () => {
     beforeEach(() => {
       autofillOverlayIframeService.initOverlayIframe({ height: "0px" }, "title", "ariaAlert");
       autofillOverlayIframeService["iframe"].dispatchEvent(new Event(EVENTS.LOAD));
+      portSpy = autofillOverlayIframeService["port"];
+    });
+
+    it("skips handling found mutations if excessive mutations are triggering", async () => {
+      jest.useFakeTimers();
+      jest
+        .spyOn(
+          autofillOverlayIframeService as any,
+          "isTriggeringExcessiveMutationObserverIterations",
+        )
+        .mockReturnValue(true);
+      jest.spyOn(autofillOverlayIframeService as any, "updateElementStyles");
+
+      autofillOverlayIframeService["iframe"].style.visibility = "hidden";
+      await flushPromises();
+
+      expect(autofillOverlayIframeService["updateElementStyles"]).not.toBeCalled();
     });
 
     it("reverts any styles changes made directly to the iframe", async () => {
@@ -401,6 +418,48 @@ describe("AutofillOverlayIframeService", () => {
       await flushPromises();
 
       expect(autofillOverlayIframeService["iframe"].style.visibility).toBe("visible");
+    });
+
+    it("force closes the autofill overlay if more than 9 foreign mutations are triggered", async () => {
+      jest.useFakeTimers();
+      autofillOverlayIframeService["foreignMutationsCount"] = 10;
+
+      autofillOverlayIframeService["iframe"].src = "http://malicious-site.com";
+      await flushPromises();
+
+      expect(portSpy.postMessage).toBeCalledWith({ command: "forceCloseAutofillOverlay" });
+    });
+
+    it("force closes the autofill overlay if excessive mutations are being triggered", async () => {
+      jest.useFakeTimers();
+      autofillOverlayIframeService["mutationObserverIterations"] = 20;
+
+      autofillOverlayIframeService["iframe"].src = "http://malicious-site.com";
+      await flushPromises();
+
+      expect(portSpy.postMessage).toBeCalledWith({ command: "forceCloseAutofillOverlay" });
+    });
+
+    it("resets the excessive mutations and foreign mutation counters", async () => {
+      jest.useFakeTimers();
+      autofillOverlayIframeService["foreignMutationsCount"] = 9;
+      autofillOverlayIframeService["mutationObserverIterations"] = 19;
+
+      autofillOverlayIframeService["iframe"].src = "http://malicious-site.com";
+      jest.advanceTimersByTime(2001);
+      await flushPromises();
+
+      expect(autofillOverlayIframeService["foreignMutationsCount"]).toBe(0);
+      expect(autofillOverlayIframeService["mutationObserverIterations"]).toBe(0);
+    });
+
+    it("resets any mutated default attributes for the iframe", async () => {
+      jest.useFakeTimers();
+
+      autofillOverlayIframeService["iframe"].title = "some-other-title";
+      await flushPromises();
+
+      expect(autofillOverlayIframeService["iframe"].title).toBe("title");
     });
   });
 });

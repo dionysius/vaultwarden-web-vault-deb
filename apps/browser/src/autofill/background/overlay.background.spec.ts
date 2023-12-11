@@ -1056,13 +1056,29 @@ describe("OverlayBackground", () => {
 
       describe("closeAutofillOverlay", () => {
         it("sends a `closeOverlay` message to the sender tab", () => {
-          jest.spyOn(BrowserApi, "tabSendMessage");
+          jest.spyOn(BrowserApi, "tabSendMessageData");
 
           sendPortMessage(buttonPortSpy, { command: "closeAutofillOverlay" });
 
-          expect(BrowserApi.tabSendMessage).toHaveBeenCalledWith(buttonPortSpy.sender.tab, {
-            command: "closeAutofillOverlay",
-          });
+          expect(BrowserApi.tabSendMessageData).toHaveBeenCalledWith(
+            buttonPortSpy.sender.tab,
+            "closeAutofillOverlay",
+            { forceCloseOverlay: false },
+          );
+        });
+      });
+
+      describe("forceCloseAutofillOverlay", () => {
+        it("sends a `closeOverlay` message to the sender tab with a `forceCloseOverlay` flag of `true` set", () => {
+          jest.spyOn(BrowserApi, "tabSendMessageData");
+
+          sendPortMessage(buttonPortSpy, { command: "forceCloseAutofillOverlay" });
+
+          expect(BrowserApi.tabSendMessageData).toHaveBeenCalledWith(
+            buttonPortSpy.sender.tab,
+            "closeAutofillOverlay",
+            { forceCloseOverlay: true },
+          );
         });
       });
 
@@ -1110,6 +1126,20 @@ describe("OverlayBackground", () => {
           sendPortMessage(listPortSpy, { command: "checkAutofillOverlayButtonFocused" });
 
           expect(overlayBackground["checkOverlayButtonFocused"]).toHaveBeenCalled();
+        });
+      });
+
+      describe("forceCloseAutofillOverlay", () => {
+        it("sends a `closeOverlay` message to the sender tab with a `forceCloseOverlay` flag of `true` set", () => {
+          jest.spyOn(BrowserApi, "tabSendMessageData");
+
+          sendPortMessage(listPortSpy, { command: "forceCloseAutofillOverlay" });
+
+          expect(BrowserApi.tabSendMessageData).toHaveBeenCalledWith(
+            listPortSpy.sender.tab,
+            "closeAutofillOverlay",
+            { forceCloseOverlay: true },
+          );
         });
       });
 

@@ -16,6 +16,7 @@ type AutofillExtensionMessage = {
     isOverlayCiphersPopulated?: boolean;
     direction?: "previous" | "next";
     isOpeningFullOverlay?: boolean;
+    forceCloseOverlay?: boolean;
   };
 };
 
@@ -27,7 +28,7 @@ type AutofillExtensionMessageHandlers = {
   collectPageDetailsImmediately: ({ message }: AutofillExtensionMessageParam) => void;
   fillForm: ({ message }: AutofillExtensionMessageParam) => void;
   openAutofillOverlay: ({ message }: AutofillExtensionMessageParam) => void;
-  closeAutofillOverlay: () => void;
+  closeAutofillOverlay: ({ message }: AutofillExtensionMessageParam) => void;
   addNewVaultItemFromOverlay: () => void;
   redirectOverlayFocusOut: ({ message }: AutofillExtensionMessageParam) => void;
   updateIsOverlayCiphersPopulated: ({ message }: AutofillExtensionMessageParam) => void;

@@ -30,6 +30,16 @@ class AutofillOverlayIframeService implements AutofillOverlayIframeServiceInterf
     colorScheme: "normal",
     opacity: "0",
   };
+  private defaultIframeAttributes: Record<string, string> = {
+    src: "",
+    title: "",
+    sandbox: "allow-scripts",
+    allowtransparency: "true",
+    tabIndex: "-1",
+  };
+  private foreignMutationsCount = 0;
+  private mutationObserverIterations = 0;
+  private mutationObserverIterationsResetTimeout: NodeJS.Timeout;
   private readonly windowMessageHandlers: AutofillOverlayIframeWindowMessageHandlers = {
     updateAutofillOverlayListHeight: (message) =>
       this.updateElementStyles(this.iframe, message.styles),
@@ -71,13 +81,14 @@ class AutofillOverlayIframeService implements AutofillOverlayIframeServiceInterf
     iframeTitle: string,
     ariaAlert?: string,
   ) {
+    this.defaultIframeAttributes.src = chrome.runtime.getURL(this.iframePath);
+    this.defaultIframeAttributes.title = iframeTitle;
+
     this.iframe = globalThis.document.createElement("iframe");
-    this.iframe.src = chrome.runtime.getURL(this.iframePath);
     this.updateElementStyles(this.iframe, { ...this.iframeStyles, ...initStyles });
-    this.iframe.tabIndex = -1;
-    this.iframe.setAttribute("title", iframeTitle);
-    this.iframe.setAttribute("sandbox", "allow-scripts");
-    this.iframe.setAttribute("allowtransparency", "true");
+    for (const [attribute, value] of Object.entries(this.defaultIframeAttributes)) {
+      this.iframe.setAttribute(attribute, value);
+    }
     this.iframe.addEventListener(EVENTS.LOAD, this.setupPortMessageListener);
 
     if (ariaAlert) {
@@ -290,9 +301,20 @@ class AutofillOverlayIframeService implements AutofillOverlayIframeServiceInterf
    * @param mutations - The mutations to the iframe element
    */
   private handleMutations = (mutations: MutationRecord[]) => {
+    if (this.isTriggeringExcessiveMutationObserverIterations()) {
+      return;
+    }
+
     for (let index = 0; index < mutations.length; index++) {
       const mutation = mutations[index];
-      if (mutation.type !== "attributes" || mutation.attributeName !== "style") {
+      if (mutation.type !== "attributes") {
+        continue;
+      }
+
+      const element = mutation.target as HTMLElement;
+      if (mutation.attributeName !== "style") {
+        this.handleElementAttributeMutation(element);
+
         continue;
       }
 
@@ -300,6 +322,41 @@ class AutofillOverlayIframeService implements AutofillOverlayIframeServiceInterf
       this.updateElementStyles(this.iframe, this.iframeStyles);
     }
   };
+
+  /**
+   * Handles mutations to the iframe element's attributes. This ensures that
+   * the iframe element's attributes are not modified by a third party source.
+   *
+   * @param element - The element to handle attribute mutations for
+   */
+  private handleElementAttributeMutation(element: HTMLElement) {
+    const attributes = Array.from(element.attributes);
+    for (let attributeIndex = 0; attributeIndex < attributes.length; attributeIndex++) {
+      const attribute = attributes[attributeIndex];
+      if (attribute.name === "style") {
+        continue;
+      }
+
+      if (this.foreignMutationsCount >= 10) {
+        this.port?.postMessage({ command: "forceCloseAutofillOverlay" });
+        break;
+      }
+
+      const defaultIframeAttribute = this.defaultIframeAttributes[attribute.name];
+      if (!defaultIframeAttribute) {
+        this.iframe.removeAttribute(attribute.name);
+        this.foreignMutationsCount++;
+        continue;
+      }
+
+      if (attribute.value === defaultIframeAttribute) {
+        continue;
+      }
+
+      this.iframe.setAttribute(attribute.name, defaultIframeAttribute);
+      this.foreignMutationsCount++;
+    }
+  }
 
   /**
    * Observes the iframe element for mutations to its style attribute.
@@ -313,6 +370,35 @@ class AutofillOverlayIframeService implements AutofillOverlayIframeServiceInterf
    */
   private unobserveIframe() {
     this.iframeMutationObserver.disconnect();
+  }
+
+  /**
+   * Identifies if the mutation observer is triggering excessive iterations.
+   * Will remove the autofill overlay if any set mutation observer is
+   * triggering excessive iterations.
+   */
+  private isTriggeringExcessiveMutationObserverIterations() {
+    const resetCounters = () => {
+      this.mutationObserverIterations = 0;
+      this.foreignMutationsCount = 0;
+    };
+
+    if (this.mutationObserverIterationsResetTimeout) {
+      clearTimeout(this.mutationObserverIterationsResetTimeout);
+    }
+
+    this.mutationObserverIterations++;
+    this.mutationObserverIterationsResetTimeout = setTimeout(() => resetCounters(), 2000);
+
+    if (this.mutationObserverIterations > 20) {
+      clearTimeout(this.mutationObserverIterationsResetTimeout);
+      resetCounters();
+      this.port?.postMessage({ command: "forceCloseAutofillOverlay" });
+
+      return true;
+    }
+
+    return false;
   }
 }
 

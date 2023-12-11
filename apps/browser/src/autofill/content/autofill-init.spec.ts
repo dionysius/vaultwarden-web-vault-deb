@@ -297,6 +297,30 @@ describe("AutofillInit", () => {
           autofillInit["autofillOverlayContentService"].isCurrentlyFilling = false;
         });
 
+        it("skips attempting to remove the overlay if the autofillOverlayContentService is not present", () => {
+          const newAutofillInit = new AutofillInit(undefined);
+          newAutofillInit.init();
+          jest.spyOn(newAutofillInit as any, "removeAutofillOverlay");
+
+          sendExtensionRuntimeMessage({
+            command: "closeAutofillOverlay",
+            data: { forceCloseOverlay: false },
+          });
+
+          expect(newAutofillInit["autofillOverlayContentService"]).toBe(undefined);
+        });
+
+        it("removes the autofill overlay if the message flags a forced closure", () => {
+          sendExtensionRuntimeMessage({
+            command: "closeAutofillOverlay",
+            data: { forceCloseOverlay: true },
+          });
+
+          expect(
+            autofillInit["autofillOverlayContentService"].removeAutofillOverlay,
+          ).toHaveBeenCalled();
+        });
+
         it("ignores the message if a field is currently focused", () => {
           autofillInit["autofillOverlayContentService"].isFieldCurrentlyFocused = true;
 
