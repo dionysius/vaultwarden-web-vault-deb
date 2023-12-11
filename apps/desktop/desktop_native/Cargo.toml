@@ -13,19 +13,19 @@ default = []
 manual_test = []
 
 [dependencies]
-aes = "=0.8.2"
-anyhow = "=1.0.71"
+aes = "=0.8.3"
+anyhow = "=1.0.75"
 arboard = { version = "=3.2.1", default-features = false }
-base64 = "=0.21.2"
+base64 = "=0.21.4"
 cbc = { version = "=0.1.2", features = ["alloc"] }
-napi = { version = "=2.13.1", features = ["async"] }
+napi = { version = "=2.13.3", features = ["async"] }
 napi-derive = "=2.13.0"
 rand = "=0.8.5"
 retry = "=2.0.0"
-scopeguard = "=1.1.0"
-sha2 = "=0.10.6"
-thiserror = "=1.0.40"
-tokio = { version = "=1.28.2", features = ["full"] }
+scopeguard = "=1.2.0"
+sha2 = "=0.10.7"
+thiserror = "=1.0.48"
+tokio = { version = "=1.32.0", features = ["full"] }
 typenum = "=1.16.0"
 
 [build-dependencies]
@@ -33,7 +33,7 @@ napi-build = "=2.0.1"
 
 [target.'cfg(windows)'.dependencies]
 widestring = "=1.0.2"
-windows = { version = "=0.48.0", features = [
+windows = { version = "=0.51.1", features = [
   "Foundation",
   "Security_Credentials_UI",
   "Security_Cryptography",
@@ -50,9 +50,9 @@ keytar = "=0.1.6"
 
 [target.'cfg(target_os = "macos")'.dependencies]
 core-foundation = "=0.9.3"
-security-framework = "=2.9.1"
-security-framework-sys = "=2.9.0"
+security-framework = "=2.9.2"
+security-framework-sys = "=2.9.1"
 
 [target.'cfg(target_os = "linux")'.dependencies]
-gio = "=0.17.9"
-libsecret = "=0.3.0"
+gio = "=0.18.1"
+libsecret = "=0.4.0"

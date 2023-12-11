@@ -7,8 +7,7 @@ use rand::RngCore;
 use retry::delay::Fixed;
 use sha2::{Digest, Sha256};
 use windows::{
-    core::{factory, HSTRING},
-    h,
+    core::{factory, h, s, HSTRING},
     Foundation::IAsyncOperation,
     Security::{
         Credentials::{
@@ -202,7 +201,7 @@ fn focus_security_prompt() -> Result<()> {
         retry::OperationResult::Retry(())
     }
 
-    let class_name = windows::s!("Credential Dialog Xaml Host");
+    let class_name = s!("Credential Dialog Xaml Host");
     retry::retry_with_index(Fixed::from_millis(500), |current_try| {
         if current_try > 3 {
             return retry::OperationResult::Err(());
