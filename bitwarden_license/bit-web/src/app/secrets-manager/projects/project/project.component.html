@@ -1,4 +1,4 @@
-<sm-header *ngIf="project$ | async as project" [title]="project.name" icon="bwi-collection">
+<app-header *ngIf="project$ | async as project" [title]="project.name" icon="bwi-collection">
   <bit-breadcrumbs slot="breadcrumbs">
     <bit-breadcrumb [route]="['..']" icon="bwi-angle-left">{{ "projects" | i18n }}</bit-breadcrumb>
   </bit-breadcrumbs>
@@ -20,5 +20,5 @@
   >
     {{ "editProject" | i18n }}
   </button>
-</sm-header>
+</app-header>
 <router-outlet></router-outlet>

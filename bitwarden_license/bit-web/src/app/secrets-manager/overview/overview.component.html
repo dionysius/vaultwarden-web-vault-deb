@@ -1,6 +1,6 @@
-<sm-header [title]="organizationName">
+<app-header [title]="organizationName">
   <sm-new-menu></sm-new-menu>
-</sm-header>
+</app-header>
 
 <div *ngIf="!loading && view$ | async as view; else spinner">
   <sm-onboarding [title]="'getStarted' | i18n" *ngIf="showOnboarding" (dismiss)="hideOnboarding()">

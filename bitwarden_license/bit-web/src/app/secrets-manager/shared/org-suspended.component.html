@@ -1,6 +1,6 @@
-<sm-header [title]="organizationName$ | async">
+<app-header [title]="organizationName$ | async">
   <sm-new-menu></sm-new-menu>
-</sm-header>
+</app-header>
 <bit-no-items [icon]="NoAccess">
   <ng-container slot="title">{{ "organizationIsDisabled" | i18n }}</ng-container>
   <ng-container slot="description">{{ "secretsAccessSuspended" | i18n }}</ng-container>

@@ -10,10 +10,10 @@ import { StateService } from "@bitwarden/common/platform/abstractions/state.serv
 import { AccountProfile } from "@bitwarden/common/platform/models/domain/account";
 
 @Component({
-  selector: "sm-header",
-  templateUrl: "./header.component.html",
+  selector: "app-header",
+  templateUrl: "./web-header.component.html",
 })
-export class HeaderComponent {
+export class WebHeaderComponent {
   /**
    * Custom title that overrides the route data `titleId`
    */
