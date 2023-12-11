@@ -122,13 +122,13 @@ export class AccountComponent {
         // Update disabled states - reactive forms prefers not using disabled attribute
         if (!this.selfHosted) {
           this.formGroup.get("orgName").enable();
+          this.formGroup.get("businessName").enable();
           this.collectionManagementFormGroup.get("limitCollectionCreationDeletion").enable();
           this.collectionManagementFormGroup.get("allowAdminAccessToAllCollectionItems").enable();
         }
 
-        if (!this.selfHosted || this.canEditSubscription) {
+        if (!this.selfHosted && this.canEditSubscription) {
           this.formGroup.get("billingEmail").enable();
-          this.formGroup.get("businessName").enable();
         }
 
         // Org Response
