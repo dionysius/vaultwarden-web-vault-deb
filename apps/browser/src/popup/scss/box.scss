@@ -767,3 +767,24 @@ form {
     }
   }
 }
+
+.account-switcher-row {
+  @include themify($themes) {
+    color: themed("textColor");
+    background-color: themed("boxBackgroundColor");
+  }
+
+  &:hover,
+  &:focus,
+  &.active {
+    @include themify($themes) {
+      background-color: themed("listItemBackgroundHoverColor");
+    }
+  }
+
+  &-details {
+    @include themify($themes) {
+      color: themed("mutedColor");
+    }
+  }
+}

@@ -40,7 +40,7 @@
       <div class="tw-grid tw-gap-2">
         <button
           type="button"
-          class="tw-flex tw-w-full tw-items-center tw-gap-3 tw-rounded-md tw-bg-background tw-p-3 hover:tw-bg-background-alt disabled:tw-cursor-not-allowed disabled:tw-border-text-muted/60 disabled:!tw-text-muted/60"
+          class="account-switcher-row tw-flex tw-w-full tw-items-center tw-gap-3 tw-rounded-md tw-p-3 disabled:tw-cursor-not-allowed disabled:tw-border-text-muted/60 disabled:!tw-text-muted/60"
           (click)="lock()"
           [disabled]="currentAccount.status === lockedStatus || !activeUserCanLock"
           [title]="!activeUserCanLock ? ('unlockMethodNeeded' | i18n) : ''"
@@ -50,7 +50,7 @@
         </button>
         <button
           type="button"
-          class="tw-flex tw-w-full tw-items-center tw-gap-3 tw-rounded-md tw-bg-background tw-p-3 hover:tw-bg-background-alt"
+          class="account-switcher-row tw-flex tw-w-full tw-items-center tw-gap-3 tw-rounded-md tw-p-3"
           (click)="logOut()"
         >
           <i class="bwi bwi-sign-out tw-text-2xl" aria-hidden="true"></i>
@@ -58,7 +58,7 @@
         </button>
         <button
           type="button"
-          class="tw-mt-2 tw-flex tw-w-full tw-items-center tw-gap-3 tw-rounded-md tw-bg-background tw-p-3 hover:tw-bg-background-alt"
+          class="account-switcher-row tw-mt-2 tw-flex tw-w-full tw-items-center tw-gap-3 tw-rounded-md tw-p-3"
           (click)="lockAll()"
         >
           <i class="bwi bwi-lock tw-text-2xl" aria-hidden="true"></i>
