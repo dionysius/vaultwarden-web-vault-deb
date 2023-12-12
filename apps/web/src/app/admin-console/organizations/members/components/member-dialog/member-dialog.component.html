@@ -408,7 +408,7 @@
           <div *ngIf="organization.useGroups" class="tw-mb-6">
             {{ "userPermissionOverrideHelper" | i18n }}
           </div>
-          <div class="tw-mb-6">
+          <div *ngIf="!(flexibleCollectionsEnabled$ | async)" class="tw-mb-6">
             <bit-form-control>
               <input type="checkbox" bitCheckbox formControlName="accessAllCollections" />
               <bit-label>

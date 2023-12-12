@@ -10,6 +10,10 @@ export class OrganizationUserResponse extends BaseResponse {
   type: OrganizationUserType;
   status: OrganizationUserStatusType;
   externalId: string;
+  /**
+   * @deprecated
+   * To be removed alongside `FeatureFlag.FlexibleCollections`.
+   **/
   accessAll: boolean;
   accessSecretsManager: boolean;
   permissions: PermissionsApi;

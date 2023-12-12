@@ -6,13 +6,18 @@ import {
   OrganizationUserUpdateRequest,
 } from "@bitwarden/common/admin-console/abstractions/organization-user/requests";
 import { OrganizationUserDetailsResponse } from "@bitwarden/common/admin-console/abstractions/organization-user/responses";
+import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
+import { ConfigServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config.service.abstraction";
 
 import { CoreOrganizationModule } from "../core-organization.module";
 import { OrganizationUserAdminView } from "../views/organization-user-admin-view";
 
 @Injectable({ providedIn: CoreOrganizationModule })
 export class UserAdminService {
-  constructor(private organizationUserService: OrganizationUserService) {}
+  constructor(
+    private configService: ConfigServiceAbstraction,
+    private organizationUserService: OrganizationUserService,
+  ) {}
 
   async get(
     organizationId: string,
@@ -73,7 +78,12 @@ export class UserAdminService {
       view.type = u.type;
       view.status = u.status;
       view.externalId = u.externalId;
-      view.accessAll = u.accessAll;
+      view.accessAll = (await this.configService.getFeatureFlag(
+        FeatureFlag.FlexibleCollections,
+        false,
+      ))
+        ? false
+        : u.accessAll;
       view.permissions = u.permissions;
       view.resetPasswordEnrolled = u.resetPasswordEnrolled;
       view.collections = u.collections.map((c) => ({

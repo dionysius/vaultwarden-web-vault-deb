@@ -5,6 +5,10 @@ export class GroupResponse extends BaseResponse {
   id: string;
   organizationId: string;
   name: string;
+  /**
+   * @deprecated
+   * To be removed alongside `FeatureFlag.FlexibleCollections`.
+   **/
   accessAll: boolean;
   externalId: string;
 
