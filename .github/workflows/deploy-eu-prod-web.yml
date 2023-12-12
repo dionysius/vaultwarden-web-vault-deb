@@ -5,10 +5,10 @@ on:
   workflow_dispatch:
     inputs:
       tag:
-        description: "Branch name to deploy (examples: 'master', 'feature/sm')"
+        description: "Branch name to deploy (examples: 'main', 'feature/sm')"
         required: true
         type: string
-        default: master
+        default: main
 
 jobs:
   azure-deploy:

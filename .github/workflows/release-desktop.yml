@@ -136,7 +136,7 @@ jobs:
         with:
           workflow: build-desktop.yml
           workflow_conclusion: success
-          branch: master
+          branch: main
           path: apps/desktop/artifacts
 
       - name: Rename .pkg to .pkg.archive
@@ -291,7 +291,7 @@ jobs:
         with:
           workflow: build-desktop.yml
           workflow_conclusion: success
-          branch: master
+          branch: main
           artifacts: bitwarden_${{ env._PKG_VERSION }}_amd64.snap
           path: apps/desktop/dist
 
@@ -359,7 +359,7 @@ jobs:
         with:
           workflow: build-desktop.yml
           workflow_conclusion: success
-          branch: master
+          branch: main
           artifacts: bitwarden.${{ env._PKG_VERSION }}.nupkg
           path: apps/desktop/dist
 

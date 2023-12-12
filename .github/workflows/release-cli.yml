@@ -92,7 +92,7 @@ jobs:
           workflow: build-cli.yml
           path: apps/cli
           workflow_conclusion: success
-          branch: master
+          branch: main
 
       - name: Create release
         if: ${{ github.event.inputs.release_type != 'Dry Run' }}
@@ -175,7 +175,7 @@ jobs:
           workflow: build-cli.yml
           path: apps/cli
           workflow_conclusion: success
-          branch: master
+          branch: main
           artifacts: bw_${{ env._PKG_VERSION }}_amd64.snap
 
       - name: Publish Snap & logout
@@ -235,7 +235,7 @@ jobs:
           workflow: build-cli.yml
           path: apps/cli/dist
           workflow_conclusion: success
-          branch: master
+          branch: main
           artifacts: bitwarden-cli.${{ env._PKG_VERSION }}.nupkg
 
       - name: Push to Chocolatey
@@ -285,7 +285,7 @@ jobs:
           workflow: build-cli.yml
           path: apps/cli/build
           workflow_conclusion: success
-          branch: master
+          branch: main
           artifacts: bitwarden-cli-${{ env._PKG_VERSION }}-npm-build.zip
 
       - name: Setup NPM

@@ -1,5 +1,5 @@
 # Runs creation of Pull Requests
-# If the PR destination branch is master, add a needs-qa label unless created by renovate[bot]
+# If the PR destination branch is main, add a needs-qa label unless created by renovate[bot]
 ---
 name: Label Issue Pull Request
 
@@ -10,7 +10,7 @@ on:
     paths-ignore:
       - .github/workflows/** # We don't need QA on workflow changes
     branches:
-      - 'master' # We only want to check when PRs target master
+      - 'main' # We only want to check when PRs target main
 
 jobs:
   add-needs-qa-label:

@@ -159,7 +159,7 @@ jobs:
           workflow: build-web.yml
           path: assets
           workflow_conclusion: success
-          branch: master
+          branch: main
           artifacts: web-*-cloud-COMMERCIAL.zip
 
       - name: Unzip build asset
@@ -196,12 +196,12 @@ jobs:
             gh pr create --title "Deploy v${_RELEASE_VERSION} to GitHub Pages" \
               --draft \
               --body "Deploying v${_RELEASE_VERSION}" \
-              --base master \
+              --base main \
               --head "${_BRANCH}"
           else
             gh pr create --title "Deploy v${_RELEASE_VERSION} to GitHub Pages" \
               --body "Deploying v${_RELEASE_VERSION}" \
-              --base master \
+              --base main \
               --head "${_BRANCH}"
           fi
 
@@ -243,7 +243,7 @@ jobs:
           workflow: build-web.yml
           path: apps/web/artifacts
           workflow_conclusion: success
-          branch: master
+          branch: main
           artifacts: "web-*-selfhosted-COMMERCIAL.zip,
             web-*-selfhosted-open-source.zip"
 

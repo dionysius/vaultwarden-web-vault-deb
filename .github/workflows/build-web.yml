@@ -15,7 +15,7 @@ on:
       - '.github/workflows/build-web.yml'
   push:
     branches:
-      - 'master'
+      - 'main'
       - 'rc'
       - 'hotfix-rc-web'
     paths:
@@ -170,7 +170,7 @@ jobs:
 
       - name: Check Branch to Publish
         env:
-          PUBLISH_BRANCHES: "master,rc,hotfix-rc-web"
+          PUBLISH_BRANCHES: "main,rc,hotfix-rc-web"
         id: publish-branch-check
         run: |
           IFS="," read -a publish_branches <<< $PUBLISH_BRANCHES
@@ -218,7 +218,7 @@ jobs:
             IMAGE_TAG=$(echo "${GITHUB_REF:11}" | sed "s#/#-#g")
           fi
 
-          if [[ "$IMAGE_TAG" == "master" ]]; then
+          if [[ "$IMAGE_TAG" == "main" ]]; then
             IMAGE_TAG=dev
           fi
 
@@ -259,7 +259,7 @@ jobs:
 
   crowdin-push:
     name: Crowdin Push
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/main'
     needs: build-artifacts
     runs-on: ubuntu-22.04
     steps:
@@ -286,7 +286,7 @@ jobs:
           CROWDIN_PROJECT_ID: "308189"
         with:
           config: apps/web/crowdin.yml
-          crowdin_branch_name: master
+          crowdin_branch_name: main
           upload_sources: true
           upload_translations: false
 
@@ -303,7 +303,7 @@ jobs:
       - crowdin-push
     steps:
       - name: Check if any job failed
-        if: ${{ (github.ref == 'refs/heads/master') || (github.ref == 'refs/heads/rc') }}
+        if: ${{ (github.ref == 'refs/heads/main') || (github.ref == 'refs/heads/rc') }}
         env:
           CLOC_STATUS: ${{ needs.cloc.result }}
           SETUP_STATUS: ${{ needs.setup.result }}
