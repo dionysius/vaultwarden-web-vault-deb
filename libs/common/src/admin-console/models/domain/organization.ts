@@ -131,6 +131,9 @@ export class Organization {
 
   /**
    * Whether a user has Manager permissions or greater
+   *
+   * @deprecated
+   * This is deprecated with the introduction of Flexible Collections.
    */
   get isManager() {
     return this.type === OrganizationUserType.Manager || this.isAdmin;

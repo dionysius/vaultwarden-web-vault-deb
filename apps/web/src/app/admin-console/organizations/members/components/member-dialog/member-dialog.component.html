@@ -60,7 +60,10 @@
                 </div>
               </label>
             </div>
-            <div class="tw-mb-2 tw-flex tw-items-baseline">
+            <div
+              *ngIf="!(flexibleCollectionsEnabled$ | async)"
+              class="tw-mb-2 tw-flex tw-items-baseline"
+            >
               <input
                 type="radio"
                 id="userTypeManager"
