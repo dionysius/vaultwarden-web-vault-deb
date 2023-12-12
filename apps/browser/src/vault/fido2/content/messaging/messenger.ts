@@ -1,3 +1,5 @@
+import { FallbackRequestedError } from "@bitwarden/common/vault/abstractions/fido2/fido2-client.service.abstraction";
+
 import { Message, MessageType } from "./message";
 
 const SENDER = "bitwarden-webauthn";
@@ -6,15 +8,16 @@ type PostMessageFunction = (message: MessageWithMetadata, remotePort: MessagePor
 
 export type Channel = {
   addEventListener: (listener: (message: MessageEvent<MessageWithMetadata>) => void) => void;
+  removeEventListener: (listener: (message: MessageEvent<MessageWithMetadata>) => void) => void;
   postMessage: PostMessageFunction;
 };
 
-export type Metadata = { SENDER: typeof SENDER };
+export type Metadata = { SENDER: typeof SENDER; senderId: string };
 export type MessageWithMetadata = Message & Metadata;
 type Handler = (
   message: MessageWithMetadata,
   abortController?: AbortController,
-) => Promise<Message | undefined>;
+) => void | Promise<Message | undefined>;
 
 /**
  * A class that handles communication between the page and content script. It converts
@@ -22,6 +25,9 @@ type Handler = (
  * handling aborts and exceptions across separate execution contexts.
  */
 export class Messenger {
+  private messageEventListener: (event: MessageEvent<MessageWithMetadata>) => void | null = null;
+  private onDestroy = new EventTarget();
+
   /**
    * Creates a messenger that uses the browser's `window.postMessage` API to initiate
    * requests in the content script. Every request will then create it's own
@@ -35,14 +41,8 @@ export class Messenger {
 
     return new Messenger({
       postMessage: (message, port) => window.postMessage(message, windowOrigin, [port]),
-      addEventListener: (listener) =>
-        window.addEventListener("message", (event: MessageEvent<unknown>) => {
-          if (event.origin !== windowOrigin) {
-            return;
-          }
-
-          listener(event as MessageEvent<MessageWithMetadata>);
-        }),
+      addEventListener: (listener) => window.addEventListener("message", listener),
+      removeEventListener: (listener) => window.removeEventListener("message", listener),
     });
   }
 
@@ -53,38 +53,11 @@ export class Messenger {
    */
   handler?: Handler;
 
+  private messengerId = this.generateUniqueId();
+
   constructor(private broadcastChannel: Channel) {
-    this.broadcastChannel.addEventListener(async (event) => {
-      if (this.handler === undefined) {
-        return;
-      }
-
-      const message = event.data;
-      const port = event.ports?.[0];
-      if (message?.SENDER !== SENDER || message == null || port == null) {
-        return;
-      }
-
-      const abortController = new AbortController();
-      port.onmessage = (event: MessageEvent<MessageWithMetadata>) => {
-        if (event.data.type === MessageType.AbortRequest) {
-          abortController.abort();
-        }
-      };
-
-      try {
-        const handlerResponse = await this.handler(message, abortController);
-        port.postMessage({ ...handlerResponse, SENDER });
-      } catch (error) {
-        port.postMessage({
-          SENDER,
-          type: MessageType.ErrorResponse,
-          error: JSON.stringify(error, Object.getOwnPropertyNames(error)),
-        });
-      } finally {
-        port.close();
-      }
-    });
+    this.messageEventListener = this.createMessageEventListener();
+    this.broadcastChannel.addEventListener(this.messageEventListener);
   }
 
   /**
@@ -111,7 +84,10 @@ export class Messenger {
         });
       abortController?.signal.addEventListener("abort", abortListener);
 
-      this.broadcastChannel.postMessage({ ...request, SENDER }, remotePort);
+      this.broadcastChannel.postMessage(
+        { ...request, SENDER, senderId: this.messengerId },
+        remotePort,
+      );
       const response = await promise;
 
       abortController?.signal.removeEventListener("abort", abortListener);
@@ -126,5 +102,80 @@ export class Messenger {
     } finally {
       localPort.close();
     }
+  }
+
+  private createMessageEventListener() {
+    return async (event: MessageEvent<MessageWithMetadata>) => {
+      const windowOrigin = window.location.origin;
+      if (event.origin !== windowOrigin || !this.handler) {
+        return;
+      }
+
+      const message = event.data;
+      const port = event.ports?.[0];
+      if (
+        message?.SENDER !== SENDER ||
+        message.senderId == this.messengerId ||
+        message == null ||
+        port == null
+      ) {
+        return;
+      }
+
+      const abortController = new AbortController();
+      port.onmessage = (event: MessageEvent<MessageWithMetadata>) => {
+        if (event.data.type === MessageType.AbortRequest) {
+          abortController.abort();
+        }
+      };
+
+      let onDestroyListener;
+      const destroyPromise: Promise<never> = new Promise((_, reject) => {
+        onDestroyListener = () => reject(new FallbackRequestedError());
+        this.onDestroy.addEventListener("destroy", onDestroyListener);
+      });
+
+      try {
+        const handlerResponse = await Promise.race([
+          this.handler(message, abortController),
+          destroyPromise,
+        ]);
+        port.postMessage({ ...handlerResponse, SENDER });
+      } catch (error) {
+        port.postMessage({
+          SENDER,
+          type: MessageType.ErrorResponse,
+          error: JSON.stringify(error, Object.getOwnPropertyNames(error)),
+        });
+      } finally {
+        this.onDestroy.removeEventListener("destroy", onDestroyListener);
+        port.close();
+      }
+    };
+  }
+
+  /**
+   * Cleans up the messenger by removing the message event listener
+   */
+  async destroy() {
+    this.onDestroy.dispatchEvent(new Event("destroy"));
+
+    if (this.messageEventListener) {
+      await this.sendDisconnectCommand();
+      this.broadcastChannel.removeEventListener(this.messageEventListener);
+      this.messageEventListener = null;
+    }
+  }
+
+  async sendReconnectCommand() {
+    await this.request({ type: MessageType.ReconnectRequest });
+  }
+
+  private async sendDisconnectCommand() {
+    await this.request({ type: MessageType.DisconnectRequest });
+  }
+
+  private generateUniqueId() {
+    return Date.now().toString(36) + Math.random().toString(36).substring(2);
   }
 }

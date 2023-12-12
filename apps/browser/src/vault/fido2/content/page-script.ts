@@ -53,10 +53,21 @@ const browserCredentials = {
 };
 
 const messenger = ((window as any).messenger = Messenger.forDOMCommunication(window));
-navigator.credentials.create = async (
+
+navigator.credentials.create = createWebAuthnCredential;
+navigator.credentials.get = getWebAuthnCredential;
+
+/**
+ * Creates a new webauthn credential.
+ *
+ * @param options Options for creating new credentials.
+ * @param abortController Abort controller to abort the request if needed.
+ * @returns Promise that resolves to the new credential object.
+ */
+async function createWebAuthnCredential(
   options?: CredentialCreationOptions,
   abortController?: AbortController,
-): Promise<Credential> => {
+): Promise<Credential> {
   if (!isWebauthnCall(options)) {
     return await browserCredentials.create(options);
   }
@@ -88,12 +99,19 @@ navigator.credentials.create = async (
 
     throw error;
   }
-};
+}
 
-navigator.credentials.get = async (
+/**
+ * Retrieves a webauthn credential.
+ *
+ * @param options Options for creating new credentials.
+ * @param abortController Abort controller to abort the request if needed.
+ * @returns Promise that resolves to the new credential object.
+ */
+async function getWebAuthnCredential(
   options?: CredentialRequestOptions,
   abortController?: AbortController,
-): Promise<Credential> => {
+): Promise<Credential> {
   if (!isWebauthnCall(options)) {
     return await browserCredentials.get(options);
   }
@@ -126,7 +144,7 @@ navigator.credentials.get = async (
 
     throw error;
   }
-};
+}
 
 function isWebauthnCall(options?: CredentialCreationOptions | CredentialRequestOptions) {
   return options && "publicKey" in options;
@@ -174,3 +192,23 @@ async function waitForFocus(fallbackWait = 500, timeout = 5 * 60 * 1000) {
     window.clearTimeout(timeoutId);
   }
 }
+
+/**
+ * Sets up a listener to handle cleanup or reconnection when the extension's
+ * context changes due to being reloaded or unloaded.
+ */
+messenger.handler = (message, abortController) => {
+  const type = message.type;
+
+  // Handle cleanup for disconnect request
+  if (type === MessageType.DisconnectRequest && browserNativeWebauthnSupport) {
+    navigator.credentials.create = browserCredentials.create;
+    navigator.credentials.get = browserCredentials.get;
+  }
+
+  // Handle reinitialization for reconnect request
+  if (type === MessageType.ReconnectRequest && browserNativeWebauthnSupport) {
+    navigator.credentials.create = createWebAuthnCredential;
+    navigator.credentials.get = getWebAuthnCredential;
+  }
+};

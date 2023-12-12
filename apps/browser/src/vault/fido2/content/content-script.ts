@@ -61,12 +61,28 @@ async function isLocationBitwardenVault(activeUserSettings: Record<string, any>)
   return window.location.origin === activeUserSettings.serverConfig.environment.vault;
 }
 
-function initializeFido2ContentScript() {
-  const s = document.createElement("script");
-  s.src = chrome.runtime.getURL("content/fido2/page-script.js");
-  (document.head || document.documentElement).appendChild(s);
+const messenger = Messenger.forDOMCommunication(window);
 
-  const messenger = Messenger.forDOMCommunication(window);
+function injectPageScript() {
+  // Locate an existing page-script on the page
+  const existingPageScript = document.getElementById("bw-fido2-page-script");
+
+  // Inject the page-script if it doesn't exist
+  if (!existingPageScript) {
+    const s = document.createElement("script");
+    s.src = chrome.runtime.getURL("content/fido2/page-script.js");
+    s.id = "bw-fido2-page-script";
+    (document.head || document.documentElement).appendChild(s);
+
+    return;
+  }
+
+  // If the page-script already exists, send a reconnect message to the page-script
+  messenger.sendReconnectCommand();
+}
+
+function initializeFido2ContentScript() {
+  injectPageScript();
 
   messenger.handler = async (message, abortController) => {
     const requestId = Date.now().toString();
@@ -78,7 +94,7 @@ function initializeFido2ContentScript() {
     abortController.signal.addEventListener("abort", abortHandler);
 
     if (message.type === MessageType.CredentialCreationRequest) {
-      return new Promise((resolve, reject) => {
+      return new Promise<Message | undefined>((resolve, reject) => {
         const data: CreateCredentialParams = {
           ...message.data,
           origin: window.location.origin,
@@ -92,7 +108,7 @@ function initializeFido2ContentScript() {
             requestId: requestId,
           },
           (response) => {
-            if (response.error !== undefined) {
+            if (response && response.error !== undefined) {
               return reject(response.error);
             }
 
@@ -106,7 +122,7 @@ function initializeFido2ContentScript() {
     }
 
     if (message.type === MessageType.CredentialGetRequest) {
-      return new Promise((resolve, reject) => {
+      return new Promise<Message | undefined>((resolve, reject) => {
         const data: AssertCredentialParams = {
           ...message.data,
           origin: window.location.origin,
@@ -120,7 +136,7 @@ function initializeFido2ContentScript() {
             requestId: requestId,
           },
           (response) => {
-            if (response.error !== undefined) {
+            if (response && response.error !== undefined) {
               return reject(response.error);
             }
 
@@ -155,6 +171,12 @@ async function run() {
   }
 
   initializeFido2ContentScript();
+
+  const port = chrome.runtime.connect({ name: "fido2ContentScriptReady" });
+  port.onDisconnect.addListener(() => {
+    // Cleanup the messenger and remove the event listener
+    messenger.destroy();
+  });
 }
 
 run();
