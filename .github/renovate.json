@@ -6,25 +6,28 @@
     ":dependencyDashboard",
     ":maintainLockFilesWeekly",
     ":pinAllExceptPeerDependencies",
+    ":prConcurrentLimit10",
     ":rebaseStalePrs",
     ":separateMajorReleases",
     "group:monorepos",
     "schedule:weekends"
   ],
-  "prConcurrentLimit": 3,
   "enabledManagers": ["cargo", "github-actions", "npm"],
   "commitMessagePrefix": "[deps]:",
   "commitMessageTopic": "{{depName}}",
   "packageRules": [
     {
-      "groupName": "cargo minor",
-      "matchManagers": ["cargo"],
-      "matchUpdateTypes": ["minor", "patch"]
-    },
-    {
       "groupName": "gh minor",
       "matchManagers": ["github-actions"],
       "matchUpdateTypes": ["minor", "patch"]
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "commitMessagePrefix": "[deps] DevOps:"
+    },
+    {
+      "matchManagers": ["cargo"],
+      "commitMessagePrefix": "[deps] Platform:"
     },
     {
       "matchPackageNames": ["typescript", "zone.js"],
@@ -210,17 +213,17 @@
       "matchPackageNames": [
         "@electron/notarize",
         "@electron/rebuild",
-        "@microsoft/signalr",
         "@microsoft/signalr-protocol-msgpack",
+        "@microsoft/signalr",
         "@types/jsdom",
         "@types/papaparse",
         "@types/zxcvbn",
-        "electron",
         "electron-builder",
         "electron-log",
         "electron-reload",
         "electron-store",
         "electron-updater",
+        "electron",
         "jsdom",
         "jszip",
         "oidc-client-ts",
