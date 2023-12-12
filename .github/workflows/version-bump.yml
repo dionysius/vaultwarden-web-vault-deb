@@ -1,51 +1,60 @@
 ---
 name: Version Bump
-run-name: Version Bump - ${{ github.ref_name }}
+run-name: Version Bump - v${{ inputs.version_number }}
 
 on:
   workflow_dispatch:
     inputs:
       bump_browser:
-        description: "Browser Project Version Bump"
+        description: "Bump Browser?"
         type: boolean
         default: false
       bump_cli:
-        description: "CLI Project Version Bump"
+        description: "Bump CLI?"
         type: boolean
         default: false
       bump_desktop:
-        description: "Desktop Project Version Bump"
+        description: "Bump Desktop?"
         type: boolean
         default: false
       bump_web:
-        description: "Web Project Version Bump"
+        description: "Bump Web?"
         type: boolean
         default: false
       version_number:
-        description: "New Version"
+        description: "New version (example: '2024.1.0')"
         required: true
 
   workflow_call:
     inputs:
-      version_number:
-        required: true
-        type: string
-      bump_desktop:
-        description: "Desktop Project Version Bump"
+      bump_browser:
+        description: "Bump Browser?"
         type: boolean
         default: false
-
-defaults:
-  run:
-    shell: bash
+      bump_cli:
+        description: "Bump CLI?"
+        type: boolean
+        default: false
+      bump_desktop:
+        description: "Bump Desktop?"
+        type: boolean
+        default: false
+      bump_web:
+        description: "Bump Web?"
+        type: boolean
+        default: false
+      version_number:
+        description: "New version (example: '2024.1.0')"
+        required: true
+        type: string
 
 jobs:
   bump_version:
-    name: "Bump Version"
+    name: "Bump Version to v${{ inputs.version_number }}"
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout Branch
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4.1.0
 
       - name: Login to Azure - Prod Subscription
         uses: Azure/login@92a5484dfaf04ca78a94597f4f19fea633851fa2 # v1.4.7
@@ -57,10 +66,12 @@ jobs:
         uses: bitwarden/gh-actions/get-keyvault-secrets@main
         with:
           keyvault: "bitwarden-ci"
-          secrets: "github-gpg-private-key, github-gpg-private-key-passphrase"
+          secrets: "github-gpg-private-key,
+            github-gpg-private-key-passphrase,
+            github-pat-bitwarden-devops-bot-repo-scope"
 
       - name: Import GPG key
-        uses: crazy-max/ghaction-import-gpg@72b6676b71ab476b77e676928516f6982eef7a41 # v5.3.0
+        uses: crazy-max/ghaction-import-gpg@82a020f1f7f605c65dd2449b392a52c3fcfef7ef # v6.0.0
         with:
           gpg_private_key: ${{ steps.retrieve-secrets.outputs.github-gpg-private-key }}
           passphrase: ${{ steps.retrieve-secrets.outputs.github-gpg-private-key-passphrase }}
@@ -68,9 +79,7 @@ jobs:
           git_commit_gpgsign: true
 
       - name: Create Version Branch
-        id: branch
-        env:
-          VERSION: ${{ inputs.version_number }}
+        id: create-branch
         run: |
           CLIENTS=()
           if [[ ${{ inputs.bump_browser }} == true ]]; then
@@ -88,9 +97,9 @@ jobs:
           printf -v joined '%s,' "${CLIENTS[@]}"
           echo "client=${joined%,}" >> $GITHUB_OUTPUT
 
-          BRANCH=version_bump_${VERSION}_${GITHUB_SHA:0:7}
-          echo "branch=$BRANCH" >> $GITHUB_OUTPUT
-          git switch -c ${BRANCH}
+          NAME=version_bump_${{ github.ref_name }}_${{ inputs.version_number }}
+          git switch -c $NAME
+          echo "name=$NAME" >> $GITHUB_OUTPUT
 
       ########################
       # VERSION BUMP SECTION #
@@ -114,14 +123,15 @@ jobs:
           printf '%s\n' "${CURRENT_VERSION}" "${NEW_VERSION}" | sort -C -V
           if [ $? -eq 0 ]; then
             echo "Version check successful."
+          else
+            echo "Version check failed."
+            exit 1
           fi
         working-directory: apps/browser
 
       - name: Bump Browser Version
         if: ${{ inputs.bump_browser == true }}
-        env:
-          VERSION: ${{ inputs.version_number }}
-        run: npm version --workspace=@bitwarden/browser ${VERSION}
+        run: npm version --workspace=@bitwarden/browser ${{ inputs.version_number }}
 
       - name: Bump Browser Version - Manifest
         if: ${{ inputs.bump_browser == true }}
@@ -162,14 +172,15 @@ jobs:
           printf '%s\n' "${CURRENT_VERSION}" "${NEW_VERSION}" | sort -C -V
           if [ $? -eq 0 ]; then
             echo "Version check successful."
+          else
+            echo "Version check failed."
+            exit 1
           fi
         working-directory: apps/cli
 
       - name: Bump CLI Version
         if: ${{ inputs.bump_cli == true }}
-        env:
-          VERSION: ${{ inputs.version_number }}
-        run: npm version --workspace=@bitwarden/cli ${VERSION}
+        run: npm version --workspace=@bitwarden/cli ${{ inputs.version_number }}
 
       ### Desktop
       - name: Desktop - Verify input version
@@ -189,20 +200,19 @@ jobs:
           printf '%s\n' "${CURRENT_VERSION}" "${NEW_VERSION}" | sort -C -V
           if [ $? -eq 0 ]; then
             echo "Version check successful."
+          else
+            echo "Version check failed."
+            exit 1
           fi
         working-directory: apps/desktop
 
       - name: Bump Desktop Version - Root
         if: ${{ inputs.bump_desktop == true }}
-        env:
-          VERSION: ${{ inputs.version_number }}
-        run: npm version --workspace=@bitwarden/desktop ${VERSION}
+        run: npm version --workspace=@bitwarden/desktop ${{ inputs.version_number }}
 
       - name: Bump Desktop Version - App
         if: ${{ inputs.bump_desktop == true }}
-        env:
-          VERSION: ${{ inputs.version_number }}
-        run: npm version ${VERSION}
+        run: npm version ${{ inputs.version_number }}
         working-directory: "apps/desktop/src"
 
       ### Web
@@ -223,14 +233,15 @@ jobs:
           printf '%s\n' "${CURRENT_VERSION}" "${NEW_VERSION}" | sort -C -V
           if [ $? -eq 0 ]; then
             echo "Version check successful."
+          else
+            echo "Version check failed."
+            exit 1
           fi
         working-directory: apps/web
 
       - name: Bump Web Version
         if: ${{ inputs.bump_web == true }}
-        env:
-          VERSION: ${{ inputs.version_number }}
-        run: npm version --workspace=@bitwarden/web-vault ${VERSION}
+        run: npm version --workspace=@bitwarden/web-vault ${{ inputs.version_number }}
 
       ########################
 
@@ -252,27 +263,27 @@ jobs:
       - name: Commit files
         if: ${{ steps.version-changed.outputs.changes_to_commit == 'TRUE' }}
         env:
-          CLIENT: ${{ steps.branch.outputs.client }}
+          CLIENT: ${{ steps.create-branch.outputs.client }}
           VERSION: ${{ inputs.version_number }}
         run: git commit -m "Bumped ${CLIENT} version to ${VERSION}" -a
 
       - name: Push changes
-        if: ${{ (github.ref == 'refs/heads/master') && (steps.version-changed.outputs.changes_to_commit == 'TRUE') }}
+        if: ${{ steps.version-changed.outputs.changes_to_commit == 'TRUE' }}
         env:
-          BRANCH: ${{ steps.branch.outputs.branch }}
-        run: git push -u origin ${BRANCH}
+          PR_BRANCH: ${{ steps.create-branch.outputs.name }}
+        run: git push -u origin $PR_BRANCH
 
-      - name: Create Bump Version PR
-        if: ${{ (github.ref == 'refs/heads/master') && (steps.version-changed.outputs.changes_to_commit == 'TRUE') }}
+      - name: Create Version PR
+        if: ${{ steps.version-changed.outputs.changes_to_commit == 'TRUE' }}
+        id: create-pr
         env:
-          BASE_BRANCH: master
-          BRANCH: ${{ steps.branch.outputs.branch }}
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          TITLE: "Bump ${{ steps.branch.outputs.client }} version to ${{ inputs.version_number }}"
+          PR_BRANCH: ${{ steps.create-branch.outputs.name }}
+          GH_TOKEN: ${{ steps.retrieve-secrets.outputs.github-pat-bitwarden-devops-bot-repo-scope }}
+          TITLE: "Bump ${{ steps.create-branch.outputs.client }} version to ${{ inputs.version_number }}"
         run: |
-          gh pr create --title "$TITLE" \
-            --base "$BASE_BRANCH" \
-            --head "$BRANCH" \
+          PR_URL=$(gh pr create --title "$TITLE" \
+            --base "$GITHUB_REF" \
+            --head "$PR_BRANCH" \
             --label "version update" \
             --label "automated pr" \
             --body "
@@ -284,4 +295,17 @@ jobs:
               - [X] Other
 
               ## Objective
-              Automated ${{ steps.branch.outputs.client }} version bump to ${{ inputs.version_number }}"
+              Automated ${{ steps.create-branch.outputs.client }} version bump to ${{ inputs.version_number }}")
+          echo "pr_number=${PR_URL##*/}" >> $GITHUB_OUTPUT
+
+      - name: Approve PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ steps.create-pr.outputs.pr_number }}
+        run: gh pr review $PR_NUMBER --approve
+
+      - name: Merge PR
+        env:
+          GH_TOKEN: ${{ steps.retrieve-secrets.outputs.github-pat-bitwarden-devops-bot-repo-scope }}
+          PR_NUMBER: ${{ steps.create-pr.outputs.pr_number }}
+        run: gh pr merge $PR_NUMBER --squash --auto --delete-branch
