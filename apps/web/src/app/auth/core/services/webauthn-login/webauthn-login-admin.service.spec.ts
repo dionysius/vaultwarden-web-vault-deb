@@ -1,12 +1,21 @@
+import { randomBytes } from "crypto";
+
 import { mock, MockProxy } from "jest-mock-extended";
 
+import { RotateableKeySet } from "@bitwarden/auth";
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { WebAuthnLoginPrfCryptoServiceAbstraction } from "@bitwarden/common/auth/abstractions/webauthn/webauthn-login-prf-crypto.service.abstraction";
+import { WebAuthnLoginCredentialAssertionView } from "@bitwarden/common/auth/models/view/webauthn-login/webauthn-login-credential-assertion.view";
+import { WebAuthnLoginAssertionResponseRequest } from "@bitwarden/common/auth/services/webauthn-login/request/webauthn-login-assertion-response.request";
+import { Utils } from "@bitwarden/common/platform/misc/utils";
+import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
+import { PrfKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
 
 import { CredentialCreateOptionsView } from "../../views/credential-create-options.view";
 import { PendingWebauthnLoginCredentialView } from "../../views/pending-webauthn-login-credential.view";
 import { RotateableKeySetService } from "../rotateable-key-set.service";
 
+import { EnableCredentialEncryptionRequest } from "./request/enable-credential-encryption.request";
 import { WebAuthnLoginAdminApiService } from "./webauthn-login-admin-api.service";
 import { WebauthnLoginAdminService } from "./webauthn-login-admin.service";
 
@@ -18,10 +27,13 @@ describe("WebauthnAdminService", () => {
   let credentials: MockProxy<CredentialsContainer>;
   let service!: WebauthnLoginAdminService;
 
+  let originalAuthenticatorAssertionResponse!: AuthenticatorAssertionResponse | any;
+
   beforeAll(() => {
     // Polyfill missing class
     window.PublicKeyCredential = class {} as any;
     window.AuthenticatorAttestationResponse = class {} as any;
+    window.AuthenticatorAssertionResponse = class {} as any;
     apiService = mock<WebAuthnLoginAdminApiService>();
     userVerificationService = mock<UserVerificationService>();
     rotateableKeySetService = mock<RotateableKeySetService>();
@@ -34,6 +46,20 @@ describe("WebauthnAdminService", () => {
       webAuthnLoginPrfCryptoService,
       credentials,
     );
+
+    // Save original global class
+    originalAuthenticatorAssertionResponse = global.AuthenticatorAssertionResponse;
+    // Mock the global AuthenticatorAssertionResponse class b/c the class is only available in secure contexts
+    global.AuthenticatorAssertionResponse = MockAuthenticatorAssertionResponse;
+  });
+
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
+  afterAll(() => {
+    // Restore global after all tests are done
+    global.AuthenticatorAssertionResponse = originalAuthenticatorAssertionResponse;
   });
 
   describe("createCredential", () => {
@@ -68,6 +94,94 @@ describe("WebauthnAdminService", () => {
       const result = await service.createCredential(createOptions);
 
       expect(result.supportsPrf).toBe(true);
+    });
+  });
+
+  describe("enableCredentialEncryption", () => {
+    it("should call the necessary methods to update the credential", async () => {
+      // Arrange
+      const response = new MockPublicKeyCredential();
+      const prfKeySet = new RotateableKeySet<PrfKey>(
+        new EncString("test_encryptedUserKey"),
+        new EncString("test_encryptedPublicKey"),
+        new EncString("test_encryptedPrivateKey"),
+      );
+
+      const assertionOptions: WebAuthnLoginCredentialAssertionView =
+        new WebAuthnLoginCredentialAssertionView(
+          "enable_credential_encryption_test_token",
+          new WebAuthnLoginAssertionResponseRequest(response),
+          {} as PrfKey,
+        );
+
+      const request = new EnableCredentialEncryptionRequest();
+      request.token = assertionOptions.token;
+      request.deviceResponse = assertionOptions.deviceResponse;
+      request.encryptedUserKey = prfKeySet.encryptedUserKey.encryptedString;
+      request.encryptedPublicKey = prfKeySet.encryptedPublicKey.encryptedString;
+      request.encryptedPrivateKey = prfKeySet.encryptedPrivateKey.encryptedString;
+
+      // Mock the necessary methods and services
+      const createKeySetMock = jest
+        .spyOn(rotateableKeySetService, "createKeySet")
+        .mockResolvedValue(prfKeySet);
+      const updateCredentialMock = jest.spyOn(apiService, "updateCredential").mockResolvedValue();
+
+      // Act
+      await service.enableCredentialEncryption(assertionOptions);
+
+      // Assert
+      expect(createKeySetMock).toHaveBeenCalledWith(assertionOptions.prfKey);
+      expect(updateCredentialMock).toHaveBeenCalledWith(request);
+    });
+
+    it("should throw error when PRF Key is undefined", async () => {
+      // Arrange
+      const response = new MockPublicKeyCredential();
+
+      const assertionOptions: WebAuthnLoginCredentialAssertionView =
+        new WebAuthnLoginCredentialAssertionView(
+          "enable_credential_encryption_test_token",
+          new WebAuthnLoginAssertionResponseRequest(response),
+          undefined,
+        );
+
+      // Mock the necessary methods and services
+      const createKeySetMock = jest
+        .spyOn(rotateableKeySetService, "createKeySet")
+        .mockResolvedValue(null);
+      const updateCredentialMock = jest.spyOn(apiService, "updateCredential").mockResolvedValue();
+
+      // Act
+      try {
+        await service.enableCredentialEncryption(assertionOptions);
+      } catch (error) {
+        // Assert
+        expect(error).toEqual(new Error("invalid credential"));
+        expect(createKeySetMock).not.toHaveBeenCalled();
+        expect(updateCredentialMock).not.toHaveBeenCalled();
+      }
+    });
+
+    it("should throw error when WehAuthnLoginCredentialAssertionView is undefined", async () => {
+      // Arrange
+      const assertionOptions: WebAuthnLoginCredentialAssertionView = undefined;
+
+      // Mock the necessary methods and services
+      const createKeySetMock = jest
+        .spyOn(rotateableKeySetService, "createKeySet")
+        .mockResolvedValue(null);
+      const updateCredentialMock = jest.spyOn(apiService, "updateCredential").mockResolvedValue();
+
+      // Act
+      try {
+        await service.enableCredentialEncryption(assertionOptions);
+      } catch (error) {
+        // Assert
+        expect(error).toEqual(new Error("invalid credential"));
+        expect(createKeySetMock).not.toHaveBeenCalled();
+        expect(updateCredentialMock).not.toHaveBeenCalled();
+      }
     });
   });
 });
@@ -114,4 +228,59 @@ function createDeviceResponse({ prf = false }: { prf?: boolean } = {}): PublicKe
   Object.setPrototypeOf(credential.response, AuthenticatorAttestationResponse.prototype);
 
   return credential;
+}
+
+/**
+ * Mocks for the PublicKeyCredential and AuthenticatorAssertionResponse classes copied from webauthn-login.service.spec.ts
+ */
+
+// AuthenticatorAssertionResponse && PublicKeyCredential are only available in secure contexts
+// so we need to mock them and assign them to the global object to make them available
+// for the tests
+class MockAuthenticatorAssertionResponse implements AuthenticatorAssertionResponse {
+  clientDataJSON: ArrayBuffer = randomBytes(32).buffer;
+  authenticatorData: ArrayBuffer = randomBytes(196).buffer;
+  signature: ArrayBuffer = randomBytes(72).buffer;
+  userHandle: ArrayBuffer = randomBytes(16).buffer;
+
+  clientDataJSONB64Str = Utils.fromBufferToUrlB64(this.clientDataJSON);
+  authenticatorDataB64Str = Utils.fromBufferToUrlB64(this.authenticatorData);
+  signatureB64Str = Utils.fromBufferToUrlB64(this.signature);
+  userHandleB64Str = Utils.fromBufferToUrlB64(this.userHandle);
+}
+
+class MockPublicKeyCredential implements PublicKeyCredential {
+  authenticatorAttachment = "cross-platform";
+  id = "mockCredentialId";
+  type = "public-key";
+  rawId: ArrayBuffer = randomBytes(32).buffer;
+  rawIdB64Str = Utils.fromBufferToUrlB64(this.rawId);
+
+  response: MockAuthenticatorAssertionResponse = new MockAuthenticatorAssertionResponse();
+
+  // Use random 64 character hex string (32 bytes - matters for symmetric key creation)
+  // to represent the prf key binary data and convert to ArrayBuffer
+  // Creating the array buffer from a known hex value allows us to
+  // assert on the value in tests
+  private prfKeyArrayBuffer: ArrayBuffer = Utils.hexStringToArrayBuffer(
+    "1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef",
+  );
+
+  getClientExtensionResults(): any {
+    return {
+      prf: {
+        results: {
+          first: this.prfKeyArrayBuffer,
+        },
+      },
+    };
+  }
+
+  static isConditionalMediationAvailable(): Promise<boolean> {
+    return Promise.resolve(false);
+  }
+
+  static isUserVerifyingPlatformAuthenticatorAvailable(): Promise<boolean> {
+    return Promise.resolve(false);
+  }
 }

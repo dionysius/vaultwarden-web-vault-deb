@@ -94,7 +94,7 @@ export class CreateCredentialDialogComponent implements OnInit {
     }
 
     try {
-      this.credentialOptions = await this.webauthnService.getCredentialCreateOptions(
+      this.credentialOptions = await this.webauthnService.getCredentialAttestationOptions(
         this.formGroup.value.userVerification.secret,
       );
     } catch (error) {

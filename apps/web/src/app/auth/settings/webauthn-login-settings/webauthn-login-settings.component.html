@@ -39,8 +39,16 @@
         <span bitTypography="body1" class="tw-text-muted">{{ "usedForEncryption" | i18n }}</span>
       </ng-container>
       <ng-container *ngIf="credential.prfStatus === WebauthnLoginCredentialPrfStatus.Supported">
-        <i class="bwi bwi-lock-encrypted"></i>
-        <span bitTypography="body1" class="tw-text-muted">{{ "encryptionNotEnabled" | i18n }}</span>
+        <button
+          type="button"
+          bitLink
+          [disabled]="loading"
+          [attr.aria-label]="('enablePasskeyEncryption' | i18n) + ' ' + credential.name"
+          (click)="enableEncryption(credential.id)"
+        >
+          <i class="bwi bwi-lock-encrypted"></i>
+          {{ "enablePasskeyEncryption" | i18n }}
+        </button>
       </ng-container>
       <span
         *ngIf="credential.prfStatus === WebauthnLoginCredentialPrfStatus.Unsupported"

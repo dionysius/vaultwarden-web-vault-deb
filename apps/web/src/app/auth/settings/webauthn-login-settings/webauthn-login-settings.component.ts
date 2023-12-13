@@ -11,6 +11,7 @@ import { WebauthnLoginCredentialView } from "../../core/views/webauthn-login-cre
 
 import { openCreateCredentialDialog } from "./create-credential-dialog/create-credential-dialog.component";
 import { openDeleteCredentialDialogComponent } from "./delete-credential-dialog/delete-credential-dialog.component";
+import { openEnableCredentialDialogComponent } from "./enable-encryption-dialog/enable-encryption-dialog.component";
 
 @Component({
   selector: "app-webauthn-login-settings",
@@ -82,5 +83,9 @@ export class WebauthnLoginSettingsComponent implements OnInit, OnDestroy {
 
   protected deleteCredential(credentialId: string) {
     openDeleteCredentialDialogComponent(this.dialogService, { data: { credentialId } });
+  }
+
+  protected enableEncryption(credentialId: string) {
+    openEnableCredentialDialogComponent(this.dialogService, { data: { credentialId } });
   }
 }
