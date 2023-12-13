@@ -673,7 +673,7 @@ class OverlayBackground implements OverlayBackgroundInterface {
    */
   private setupExtensionMessageListeners() {
     BrowserApi.messageListener("overlay.background", this.handleExtensionMessage);
-    chrome.runtime.onConnect.addListener(this.handlePortOnConnect);
+    BrowserApi.addListener(chrome.runtime.onConnect, this.handlePortOnConnect);
   }
 
   /**

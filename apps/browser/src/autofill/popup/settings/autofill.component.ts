@@ -10,6 +10,7 @@ import { UriMatchType } from "@bitwarden/common/vault/enums";
 
 import { BrowserApi } from "../../../platform/browser/browser-api";
 import { flagEnabled } from "../../../platform/flags";
+import { AutofillService } from "../../services/abstractions/autofill.service";
 import { AutofillOverlayVisibility } from "../../utils/autofill-overlay.enum";
 
 @Component({
@@ -35,6 +36,7 @@ export class AutofillComponent implements OnInit {
     private platformUtilsService: PlatformUtilsService,
     private configService: ConfigServiceAbstraction,
     private settingsService: SettingsService,
+    private autofillService: AutofillService,
   ) {
     this.autoFillOverlayVisibilityOptions = [
       {
@@ -86,7 +88,10 @@ export class AutofillComponent implements OnInit {
   }
 
   async updateAutoFillOverlayVisibility() {
+    const previousAutoFillOverlayVisibility =
+      await this.settingsService.getAutoFillOverlayVisibility();
     await this.settingsService.setAutoFillOverlayVisibility(this.autoFillOverlayVisibility);
+    await this.handleUpdatingAutofillOverlayContentScripts(previousAutoFillOverlayVisibility);
   }
 
   async updateAutoFillOnPageLoad() {
@@ -143,5 +148,26 @@ export class AutofillComponent implements OnInit {
   protected openDisablePasswordManagerLink(event: Event) {
     event.preventDefault();
     BrowserApi.createNewTab(this.disablePasswordManagerLink);
+  }
+
+  private async handleUpdatingAutofillOverlayContentScripts(
+    previousAutoFillOverlayVisibility: number,
+  ) {
+    const autofillOverlayPreviouslyDisabled =
+      previousAutoFillOverlayVisibility === AutofillOverlayVisibility.Off;
+    const autofillOverlayCurrentlyDisabled =
+      this.autoFillOverlayVisibility === AutofillOverlayVisibility.Off;
+
+    if (!autofillOverlayPreviouslyDisabled && !autofillOverlayCurrentlyDisabled) {
+      const tabs = await BrowserApi.tabsQuery({});
+      tabs.forEach((tab) =>
+        BrowserApi.tabSendMessageData(tab, "updateAutofillOverlayVisibility", {
+          autofillOverlayVisibility: this.autoFillOverlayVisibility,
+        }),
+      );
+      return;
+    }
+
+    await this.autofillService.reloadAutofillScripts();
   }
 }

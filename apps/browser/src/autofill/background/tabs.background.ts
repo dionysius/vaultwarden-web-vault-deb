@@ -20,6 +20,14 @@ export default class TabsBackground {
       return;
     }
 
+    this.updateCurrentTabData();
+    this.setupTabEventListeners();
+  }
+
+  /**
+   * Sets up the tab and window event listeners.
+   */
+  private setupTabEventListeners() {
     chrome.windows.onFocusChanged.addListener(this.handleWindowOnFocusChanged);
     chrome.tabs.onActivated.addListener(this.handleTabOnActivated);
     chrome.tabs.onReplaced.addListener(this.handleTabOnReplaced);
@@ -33,7 +41,7 @@ export default class TabsBackground {
    * @param windowId - The ID of the window that was focused.
    */
   private handleWindowOnFocusChanged = async (windowId: number) => {
-    if (!windowId) {
+    if (windowId == null || windowId < 0) {
       return;
     }
 
@@ -116,8 +124,10 @@ export default class TabsBackground {
    * for the current tab. Also updates the overlay ciphers.
    */
   private updateCurrentTabData = async () => {
-    await this.main.refreshBadge();
-    await this.main.refreshMenu();
-    await this.overlayBackground.updateOverlayCiphers();
+    await Promise.all([
+      this.main.refreshBadge(),
+      this.main.refreshMenu(),
+      this.overlayBackground.updateOverlayCiphers(),
+    ]);
   };
 }

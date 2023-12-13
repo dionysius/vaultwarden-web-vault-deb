@@ -10,16 +10,12 @@ import AutofillField from "../models/autofill-field";
 import AutofillOverlayButtonIframe from "../overlay/iframe-content/autofill-overlay-button-iframe";
 import AutofillOverlayListIframe from "../overlay/iframe-content/autofill-overlay-list-iframe";
 import { ElementWithOpId, FillableFormFieldElement, FormFieldElement } from "../types";
+import { generateRandomCustomElementName, sendExtensionMessage, setElementStyles } from "../utils";
 import {
   AutofillOverlayElement,
   RedirectFocusDirection,
   AutofillOverlayVisibility,
 } from "../utils/autofill-overlay.enum";
-import {
-  generateRandomCustomElementName,
-  sendExtensionMessage,
-  setElementStyles,
-} from "../utils/utils";
 
 import {
   AutofillOverlayContentService as AutofillOverlayContentServiceInterface,
@@ -32,9 +28,10 @@ class AutofillOverlayContentService implements AutofillOverlayContentServiceInte
   isCurrentlyFilling = false;
   isOverlayCiphersPopulated = false;
   pageDetailsUpdateRequired = false;
+  autofillOverlayVisibility: number;
   private readonly findTabs = tabbable;
   private readonly sendExtensionMessage = sendExtensionMessage;
-  private autofillOverlayVisibility: number;
+  private formFieldElements: Set<ElementWithOpId<FormFieldElement>> = new Set([]);
   private userFilledFields: Record<string, FillableFormFieldElement> = {};
   private authStatus: AuthenticationStatus;
   private focusableElements: FocusableElement[] = [];
@@ -47,6 +44,7 @@ class AutofillOverlayContentService implements AutofillOverlayContentServiceInte
   private userInteractionEventTimeout: NodeJS.Timeout;
   private overlayElementsMutationObserver: MutationObserver;
   private bodyElementMutationObserver: MutationObserver;
+  private documentElementMutationObserver: MutationObserver;
   private mutationObserverIterations = 0;
   private mutationObserverIterationsResetTimeout: NodeJS.Timeout;
   private autofillFieldKeywordsMap: WeakMap<AutofillField, string> = new WeakMap();
@@ -85,6 +83,8 @@ class AutofillOverlayContentService implements AutofillOverlayContentServiceInte
     if (this.isIgnoredField(autofillFieldData)) {
       return;
     }
+
+    this.formFieldElements.add(formFieldElement);
 
     if (!this.autofillOverlayVisibility) {
       await this.getAutofillOverlayVisibility();
@@ -901,10 +901,10 @@ class AutofillOverlayContentService implements AutofillOverlayContentServiceInte
       this.handleBodyElementMutationObserverUpdate,
     );
 
-    const documentElementMutationObserver = new MutationObserver(
+    this.documentElementMutationObserver = new MutationObserver(
       this.handleDocumentElementMutationObserverUpdate,
     );
-    documentElementMutationObserver.observe(globalThis.document.documentElement, {
+    this.documentElementMutationObserver.observe(globalThis.document.documentElement, {
       childList: true,
     });
   };
@@ -1116,6 +1116,28 @@ class AutofillOverlayContentService implements AutofillOverlayContentServiceInte
   private getRootNodeActiveElement(element: Element): Element {
     const documentRoot = element.getRootNode() as ShadowRoot | Document;
     return documentRoot?.activeElement;
+  }
+
+  /**
+   * Destroys the autofill overlay content service. This method will
+   * disconnect the mutation observers and remove all event listeners.
+   */
+  destroy() {
+    this.documentElementMutationObserver?.disconnect();
+    this.clearUserInteractionEventTimeout();
+    this.formFieldElements.forEach((formFieldElement) => {
+      this.removeCachedFormFieldEventListeners(formFieldElement);
+      formFieldElement.removeEventListener(EVENTS.BLUR, this.handleFormFieldBlurEvent);
+      formFieldElement.removeEventListener(EVENTS.KEYUP, this.handleFormFieldKeyupEvent);
+      this.formFieldElements.delete(formFieldElement);
+    });
+    globalThis.document.removeEventListener(
+      EVENTS.VISIBILITYCHANGE,
+      this.handleVisibilityChangeEvent,
+    );
+    globalThis.removeEventListener(EVENTS.FOCUSOUT, this.handleFormFieldBlurEvent);
+    this.removeAutofillOverlay();
+    this.removeOverlayRepositionEventListeners();
   }
 }
 

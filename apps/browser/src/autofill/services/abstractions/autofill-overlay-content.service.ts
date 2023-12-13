@@ -14,6 +14,7 @@ interface AutofillOverlayContentService {
   isCurrentlyFilling: boolean;
   isOverlayCiphersPopulated: boolean;
   pageDetailsUpdateRequired: boolean;
+  autofillOverlayVisibility: number;
   init(): void;
   setupAutofillOverlayListenerOnField(
     autofillFieldElement: ElementWithOpId<FormFieldElement>,
@@ -27,6 +28,7 @@ interface AutofillOverlayContentService {
   redirectOverlayFocusOut(direction: "previous" | "next"): void;
   focusMostRecentOverlayField(): void;
   blurMostRecentOverlayField(): void;
+  destroy(): void;
 }
 
 export { OpenAutofillOverlayOptions, AutofillOverlayContentService };

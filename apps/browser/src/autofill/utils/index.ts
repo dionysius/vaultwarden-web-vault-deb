@@ -1,3 +1,5 @@
+import { AutofillPort } from "../enums/autofill-port.enums";
+
 /**
  * Generates a random string of characters that formatted as a custom element name.
  */
@@ -103,9 +105,57 @@ function setElementStyles(
   }
 }
 
+/**
+ * Get data from local storage based on the keys provided.
+ *
+ * @param keys - String or array of strings of keys to get from local storage
+ */
+async function getFromLocalStorage(keys: string | string[]): Promise<Record<string, any>> {
+  return new Promise((resolve) => {
+    chrome.storage.local.get(keys, (storage: Record<string, any>) => resolve(storage));
+  });
+}
+
+/**
+ * Sets up a long-lived connection with the extension background
+ * and triggers an onDisconnect event if the extension context
+ * is invalidated.
+ *
+ * @param callback - Callback function to run when the extension disconnects
+ */
+function setupExtensionDisconnectAction(callback: (port: chrome.runtime.Port) => void) {
+  const port = chrome.runtime.connect({ name: AutofillPort.InjectedScript });
+  const onDisconnectCallback = (disconnectedPort: chrome.runtime.Port) => {
+    callback(disconnectedPort);
+    port.onDisconnect.removeListener(onDisconnectCallback);
+  };
+  port.onDisconnect.addListener(onDisconnectCallback);
+}
+
+/**
+ * Handles setup of the extension disconnect action for the autofill init class
+ * in both instances where the overlay might or might not be initialized.
+ *
+ * @param windowContext - The global window context
+ */
+function setupAutofillInitDisconnectAction(windowContext: Window) {
+  if (!windowContext.bitwardenAutofillInit) {
+    return;
+  }
+
+  const onDisconnectCallback = () => {
+    windowContext.bitwardenAutofillInit.destroy();
+    delete windowContext.bitwardenAutofillInit;
+  };
+  setupExtensionDisconnectAction(onDisconnectCallback);
+}
+
 export {
   generateRandomCustomElementName,
   buildSvgDomElement,
   sendExtensionMessage,
   setElementStyles,
+  getFromLocalStorage,
+  setupExtensionDisconnectAction,
+  setupAutofillInitDisconnectAction,
 };

@@ -22,6 +22,7 @@ interface CollectAutofillContentService {
     filterCallback: CallableFunction,
     isObservingShadowRoot?: boolean,
   ): Node[];
+  destroy(): void;
 }
 
 export {

@@ -2,7 +2,9 @@ import { mock, mockReset } from "jest-mock-extended";
 
 import { UserVerificationService } from "@bitwarden/common/auth/services/user-verification/user-verification.service";
 import { EventType } from "@bitwarden/common/enums";
+import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
+import { ConfigService } from "@bitwarden/common/platform/services/config/config.service";
 import { EventCollectionService } from "@bitwarden/common/services/event/event-collection.service";
 import { SettingsService } from "@bitwarden/common/services/settings.service";
 import {
@@ -24,6 +26,7 @@ import { TotpService } from "@bitwarden/common/vault/services/totp.service";
 
 import { BrowserApi } from "../../platform/browser/browser-api";
 import { BrowserStateService } from "../../platform/services/browser-state.service";
+import { AutofillPort } from "../enums/autofill-port.enums";
 import {
   createAutofillFieldMock,
   createAutofillPageDetailsMock,
@@ -54,6 +57,7 @@ describe("AutofillService", () => {
   const logService = mock<LogService>();
   const settingsService = mock<SettingsService>();
   const userVerificationService = mock<UserVerificationService>();
+  const configService = mock<ConfigService>();
 
   beforeEach(() => {
     autofillService = new AutofillService(
@@ -64,12 +68,79 @@ describe("AutofillService", () => {
       logService,
       settingsService,
       userVerificationService,
+      configService,
     );
   });
 
   afterEach(() => {
     jest.clearAllMocks();
     mockReset(cipherService);
+  });
+
+  describe("loadAutofillScriptsOnInstall", () => {
+    let tab1: chrome.tabs.Tab;
+    let tab2: chrome.tabs.Tab;
+    let tab3: chrome.tabs.Tab;
+
+    beforeEach(() => {
+      tab1 = createChromeTabMock({ id: 1, url: "https://some-url.com" });
+      tab2 = createChromeTabMock({ id: 2, url: "http://some-url.com" });
+      tab3 = createChromeTabMock({ id: 3, url: "chrome-extension://some-extension-route" });
+      jest.spyOn(BrowserApi, "tabsQuery").mockResolvedValueOnce([tab1, tab2]);
+    });
+
+    it("queries all browser tabs and injects the autofill scripts into them", async () => {
+      jest.spyOn(autofillService, "injectAutofillScripts");
+
+      await autofillService.loadAutofillScriptsOnInstall();
+
+      expect(BrowserApi.tabsQuery).toHaveBeenCalledWith({});
+      expect(autofillService.injectAutofillScripts).toHaveBeenCalledWith(tab1, 0, false);
+      expect(autofillService.injectAutofillScripts).toHaveBeenCalledWith(tab2, 0, false);
+    });
+
+    it("skips injecting scripts into tabs that do not have an http(s) protocol", async () => {
+      jest.spyOn(autofillService, "injectAutofillScripts");
+
+      await autofillService.loadAutofillScriptsOnInstall();
+
+      expect(BrowserApi.tabsQuery).toHaveBeenCalledWith({});
+      expect(autofillService.injectAutofillScripts).not.toHaveBeenCalledWith(tab3);
+    });
+
+    it("sets up an extension runtime onConnect listener", async () => {
+      await autofillService.loadAutofillScriptsOnInstall();
+
+      // eslint-disable-next-line no-restricted-syntax
+      expect(chrome.runtime.onConnect.addListener).toHaveBeenCalledWith(expect.any(Function));
+    });
+  });
+
+  describe("reloadAutofillScripts", () => {
+    it("disconnects and removes all autofill script ports", () => {
+      const port1 = mock<chrome.runtime.Port>({
+        disconnect: jest.fn(),
+      });
+      const port2 = mock<chrome.runtime.Port>({
+        disconnect: jest.fn(),
+      });
+      autofillService["autofillScriptPortsSet"] = new Set([port1, port2]);
+
+      autofillService.reloadAutofillScripts();
+
+      expect(port1.disconnect).toHaveBeenCalled();
+      expect(port2.disconnect).toHaveBeenCalled();
+      expect(autofillService["autofillScriptPortsSet"].size).toBe(0);
+    });
+
+    it("re-injects the autofill scripts in all tabs", () => {
+      autofillService["autofillScriptPortsSet"] = new Set([mock<chrome.runtime.Port>()]);
+      jest.spyOn(autofillService as any, "injectAutofillScriptsInAllTabs");
+
+      autofillService.reloadAutofillScripts();
+
+      expect(autofillService["injectAutofillScriptsInAllTabs"]).toHaveBeenCalled();
+    });
   });
 
   describe("injectAutofillScripts", () => {
@@ -83,12 +154,12 @@ describe("AutofillService", () => {
 
     beforeEach(() => {
       tabMock = createChromeTabMock();
-      sender = { tab: tabMock };
+      sender = { tab: tabMock, frameId: 1 };
       jest.spyOn(BrowserApi, "executeScriptInTab").mockImplementation();
     });
 
     it("accepts an extension message sender and injects the autofill scripts into the tab of the sender", async () => {
-      await autofillService.injectAutofillScripts(sender);
+      await autofillService.injectAutofillScripts(sender.tab, sender.frameId, true);
 
       [autofillV1Script, ...defaultAutofillScripts].forEach((scriptName) => {
         expect(BrowserApi.executeScriptInTab).toHaveBeenCalledWith(tabMock.id, {
@@ -105,7 +176,11 @@ describe("AutofillService", () => {
     });
 
     it("will inject the bootstrap-autofill script if the enableAutofillV2 flag is set", async () => {
-      await autofillService.injectAutofillScripts(sender, true);
+      jest
+        .spyOn(configService, "getFeatureFlag")
+        .mockImplementation((flag) => Promise.resolve(flag === FeatureFlag.AutofillV2));
+
+      await autofillService.injectAutofillScripts(sender.tab, sender.frameId);
 
       expect(BrowserApi.executeScriptInTab).toHaveBeenCalledWith(tabMock.id, {
         file: `content/${autofillV2BootstrapScript}`,
@@ -121,10 +196,15 @@ describe("AutofillService", () => {
 
     it("will inject the bootstrap-autofill-overlay script if the enableAutofillOverlay flag is set and the user has the autofill overlay enabled", async () => {
       jest
+        .spyOn(configService, "getFeatureFlag")
+        .mockImplementation((flag) =>
+          Promise.resolve(flag === FeatureFlag.AutofillOverlay || flag === FeatureFlag.AutofillV2),
+        );
+      jest
         .spyOn(autofillService["settingsService"], "getAutoFillOverlayVisibility")
         .mockResolvedValue(AutofillOverlayVisibility.OnFieldFocus);
 
-      await autofillService.injectAutofillScripts(sender, true, true);
+      await autofillService.injectAutofillScripts(sender.tab, sender.frameId);
 
       expect(BrowserApi.executeScriptInTab).toHaveBeenCalledWith(tabMock.id, {
         file: `content/${autofillOverlayBootstrapScript}`,
@@ -145,17 +225,24 @@ describe("AutofillService", () => {
 
     it("will inject the bootstrap-autofill script if the enableAutofillOverlay flag is set but the user does not have the autofill overlay enabled", async () => {
       jest
+        .spyOn(configService, "getFeatureFlag")
+        .mockImplementation((flag) =>
+          Promise.resolve(flag === FeatureFlag.AutofillOverlay || flag === FeatureFlag.AutofillV2),
+        );
+      jest
         .spyOn(autofillService["settingsService"], "getAutoFillOverlayVisibility")
         .mockResolvedValue(AutofillOverlayVisibility.Off);
 
-      await autofillService.injectAutofillScripts(sender, true, true);
+      await autofillService.injectAutofillScripts(sender.tab, sender.frameId);
 
       expect(BrowserApi.executeScriptInTab).toHaveBeenCalledWith(tabMock.id, {
         file: `content/${autofillV2BootstrapScript}`,
+        frameId: sender.frameId,
         ...defaultExecuteScriptOptions,
       });
       expect(BrowserApi.executeScriptInTab).not.toHaveBeenCalledWith(tabMock.id, {
         file: `content/${autofillV1Script}`,
+        frameId: sender.frameId,
         ...defaultExecuteScriptOptions,
       });
     });
@@ -4434,6 +4521,60 @@ describe("AutofillService", () => {
 
       expect(result).toBe(false);
       expect(autofillService["currentlyOpeningPasswordRepromptPopout"]).toBe(false);
+    });
+  });
+
+  describe("handleInjectedScriptPortConnection", () => {
+    it("ignores port connections that do not have the correct port name", () => {
+      const port = mock<chrome.runtime.Port>({
+        name: "some-invalid-port-name",
+        onDisconnect: { addListener: jest.fn() },
+      }) as any;
+
+      autofillService["handleInjectedScriptPortConnection"](port);
+
+      expect(port.onDisconnect.addListener).not.toHaveBeenCalled();
+      expect(autofillService["autofillScriptPortsSet"].size).toBe(0);
+    });
+
+    it("adds the connect port to the set of injected script ports and sets up an onDisconnect listener", () => {
+      const port = mock<chrome.runtime.Port>({
+        name: AutofillPort.InjectedScript,
+        onDisconnect: { addListener: jest.fn() },
+      }) as any;
+      jest.spyOn(autofillService as any, "handleInjectScriptPortOnDisconnect");
+
+      autofillService["handleInjectedScriptPortConnection"](port);
+
+      expect(port.onDisconnect.addListener).toHaveBeenCalledWith(
+        autofillService["handleInjectScriptPortOnDisconnect"],
+      );
+      expect(autofillService["autofillScriptPortsSet"].size).toBe(1);
+    });
+  });
+
+  describe("handleInjectScriptPortOnDisconnect", () => {
+    it("ignores port disconnections that do not have the correct port name", () => {
+      autofillService["autofillScriptPortsSet"].add(mock<chrome.runtime.Port>());
+
+      autofillService["handleInjectScriptPortOnDisconnect"](
+        mock<chrome.runtime.Port>({
+          name: "some-invalid-port-name",
+        }),
+      );
+
+      expect(autofillService["autofillScriptPortsSet"].size).toBe(1);
+    });
+
+    it("removes the port from the set of injected script ports", () => {
+      const port = mock<chrome.runtime.Port>({
+        name: AutofillPort.InjectedScript,
+      }) as any;
+      autofillService["autofillScriptPortsSet"].add(port);
+
+      autofillService["handleInjectScriptPortOnDisconnect"](port);
+
+      expect(autofillService["autofillScriptPortsSet"].size).toBe(0);
     });
   });
 });

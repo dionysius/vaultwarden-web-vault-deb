@@ -15,7 +15,7 @@ import OverlayBackground from "./overlay.background";
 import TabsBackground from "./tabs.background";
 
 describe("TabsBackground", () => {
-  let tabsBackgorund: TabsBackground;
+  let tabsBackground: TabsBackground;
   const mainBackground = mock<MainBackground>({
     messagingService: {
       send: jest.fn(),
@@ -25,7 +25,7 @@ describe("TabsBackground", () => {
   const overlayBackground = mock<OverlayBackground>();
 
   beforeEach(() => {
-    tabsBackgorund = new TabsBackground(mainBackground, notificationBackground, overlayBackground);
+    tabsBackground = new TabsBackground(mainBackground, notificationBackground, overlayBackground);
   });
 
   afterEach(() => {
@@ -35,11 +35,11 @@ describe("TabsBackground", () => {
   describe("init", () => {
     it("sets up a window on focusChanged listener", () => {
       const handleWindowOnFocusChangedSpy = jest.spyOn(
-        tabsBackgorund as any,
+        tabsBackground as any,
         "handleWindowOnFocusChanged",
       );
 
-      tabsBackgorund.init();
+      tabsBackground.init();
 
       expect(chrome.windows.onFocusChanged.addListener).toHaveBeenCalledWith(
         handleWindowOnFocusChangedSpy,
@@ -49,7 +49,7 @@ describe("TabsBackground", () => {
 
   describe("tab event listeners", () => {
     beforeEach(() => {
-      tabsBackgorund.init();
+      tabsBackground["setupTabEventListeners"]();
     });
 
     describe("window onFocusChanged event", () => {
@@ -64,7 +64,7 @@ describe("TabsBackground", () => {
         triggerWindowOnFocusedChangedEvent(10);
         await flushPromises();
 
-        expect(tabsBackgorund["focusedWindowId"]).toBe(10);
+        expect(tabsBackground["focusedWindowId"]).toBe(10);
       });
 
       it("updates the current tab data", async () => {
@@ -144,7 +144,7 @@ describe("TabsBackground", () => {
 
       beforeEach(() => {
         mainBackground.onUpdatedRan = false;
-        tabsBackgorund["focusedWindowId"] = focusedWindowId;
+        tabsBackground["focusedWindowId"] = focusedWindowId;
         tab = mock<chrome.tabs.Tab>({
           windowId: focusedWindowId,
           active: true,

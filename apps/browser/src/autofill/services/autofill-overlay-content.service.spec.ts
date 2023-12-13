@@ -1609,4 +1609,100 @@ describe("AutofillOverlayContentService", () => {
       expect(autofillOverlayContentService["removeAutofillOverlay"]).toHaveBeenCalled();
     });
   });
+
+  describe("destroy", () => {
+    let autofillFieldElement: ElementWithOpId<FormFieldElement>;
+    let autofillFieldData: AutofillField;
+
+    beforeEach(() => {
+      document.body.innerHTML = `
+      <form id="validFormId">
+        <input type="text" id="username-field" placeholder="username" />
+        <input type="password" id="password-field" placeholder="password" />
+      </form>
+      `;
+
+      autofillFieldElement = document.getElementById(
+        "username-field",
+      ) as ElementWithOpId<FormFieldElement>;
+      autofillFieldElement.opid = "op-1";
+      autofillFieldData = createAutofillFieldMock({
+        opid: "username-field",
+        form: "validFormId",
+        placeholder: "username",
+        elementNumber: 1,
+      });
+      autofillOverlayContentService.setupAutofillOverlayListenerOnField(
+        autofillFieldElement,
+        autofillFieldData,
+      );
+      autofillOverlayContentService["mostRecentlyFocusedField"] = autofillFieldElement;
+    });
+
+    it("disconnects all mutation observers", () => {
+      autofillOverlayContentService["setupMutationObserver"]();
+      jest.spyOn(autofillOverlayContentService["bodyElementMutationObserver"], "disconnect");
+      jest.spyOn(autofillOverlayContentService["documentElementMutationObserver"], "disconnect");
+
+      autofillOverlayContentService.destroy();
+
+      expect(
+        autofillOverlayContentService["documentElementMutationObserver"].disconnect,
+      ).toHaveBeenCalled();
+      expect(
+        autofillOverlayContentService["bodyElementMutationObserver"].disconnect,
+      ).toHaveBeenCalled();
+    });
+
+    it("clears the user interaction event timeout", () => {
+      jest.spyOn(autofillOverlayContentService as any, "clearUserInteractionEventTimeout");
+
+      autofillOverlayContentService.destroy();
+
+      expect(autofillOverlayContentService["clearUserInteractionEventTimeout"]).toHaveBeenCalled();
+    });
+
+    it("de-registers all global event listeners", () => {
+      jest.spyOn(globalThis.document, "removeEventListener");
+      jest.spyOn(globalThis, "removeEventListener");
+      jest.spyOn(autofillOverlayContentService as any, "removeOverlayRepositionEventListeners");
+
+      autofillOverlayContentService.destroy();
+
+      expect(globalThis.document.removeEventListener).toHaveBeenCalledWith(
+        EVENTS.VISIBILITYCHANGE,
+        autofillOverlayContentService["handleVisibilityChangeEvent"],
+      );
+      expect(globalThis.removeEventListener).toHaveBeenCalledWith(
+        EVENTS.FOCUSOUT,
+        autofillOverlayContentService["handleFormFieldBlurEvent"],
+      );
+      expect(
+        autofillOverlayContentService["removeOverlayRepositionEventListeners"],
+      ).toHaveBeenCalled();
+    });
+
+    it("de-registers any event listeners that are attached to the form field elements", () => {
+      jest.spyOn(autofillOverlayContentService as any, "removeCachedFormFieldEventListeners");
+      jest.spyOn(autofillFieldElement, "removeEventListener");
+      jest.spyOn(autofillOverlayContentService["formFieldElements"], "delete");
+
+      autofillOverlayContentService.destroy();
+
+      expect(
+        autofillOverlayContentService["removeCachedFormFieldEventListeners"],
+      ).toHaveBeenCalledWith(autofillFieldElement);
+      expect(autofillFieldElement.removeEventListener).toHaveBeenCalledWith(
+        EVENTS.BLUR,
+        autofillOverlayContentService["handleFormFieldBlurEvent"],
+      );
+      expect(autofillFieldElement.removeEventListener).toHaveBeenCalledWith(
+        EVENTS.KEYUP,
+        autofillOverlayContentService["handleFormFieldKeyupEvent"],
+      );
+      expect(autofillOverlayContentService["formFieldElements"].delete).toHaveBeenCalledWith(
+        autofillFieldElement,
+      );
+    });
+  });
 });

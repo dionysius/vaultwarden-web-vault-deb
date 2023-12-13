@@ -26,6 +26,7 @@ class AutofillInit implements AutofillInitInterface {
     updateIsOverlayCiphersPopulated: ({ message }) => this.updateIsOverlayCiphersPopulated(message),
     bgUnlockPopoutOpened: () => this.blurAndRemoveOverlay(),
     bgVaultItemRepromptPopoutOpened: () => this.blurAndRemoveOverlay(),
+    updateAutofillOverlayVisibility: ({ message }) => this.updateAutofillOverlayVisibility(message),
   };
 
   /**
@@ -215,6 +216,19 @@ class AutofillInit implements AutofillInitInterface {
   }
 
   /**
+   * Updates the autofill overlay visibility.
+   *
+   * @param data - Contains the autoFillOverlayVisibility value
+   */
+  private updateAutofillOverlayVisibility({ data }: AutofillExtensionMessage) {
+    if (!this.autofillOverlayContentService || isNaN(data?.autofillOverlayVisibility)) {
+      return;
+    }
+
+    this.autofillOverlayContentService.autofillOverlayVisibility = data?.autofillOverlayVisibility;
+  }
+
+  /**
    * Sets up the extension message listeners for the content script.
    */
   private setupExtensionMessageListeners() {
@@ -247,6 +261,16 @@ class AutofillInit implements AutofillInitInterface {
     Promise.resolve(messageResponse).then((response) => sendResponse(response));
     return true;
   };
+
+  /**
+   * Handles destroying the autofill init content script. Removes all
+   * listeners, timeouts, and object instances to prevent memory leaks.
+   */
+  destroy() {
+    chrome.runtime.onMessage.removeListener(this.handleExtensionMessage);
+    this.collectAutofillContentService.destroy();
+    this.autofillOverlayContentService?.destroy();
+  }
 }
 
 export default AutofillInit;
