@@ -54,6 +54,8 @@ class CollectAutofillContentService implements CollectAutofillContentServiceInte
     }
 
     if (!this.domRecentlyMutated && this.autofillFieldElements.size) {
+      this.updateCachedAutofillFieldVisibility();
+
       return this.getFormattedPageDetails(
         this.getFormattedAutofillFormsData(),
         this.getFormattedAutofillFieldsData(),
@@ -147,10 +149,9 @@ class CollectAutofillContentService implements CollectAutofillContentServiceInte
 
   /**
    * Formats and returns the AutofillPageDetails object
-   * @param {Record<string, AutofillForm>} autofillFormsData
-   * @param {AutofillField[]} autofillFieldsData
-   * @returns {AutofillPageDetails}
-   * @private
+   *
+   * @param autofillFormsData - The data for all the forms found in the page
+   * @param autofillFieldsData - The data for all the fields found in the page
    */
   private getFormattedPageDetails(
     autofillFormsData: Record<string, AutofillForm>,
@@ -164,6 +165,20 @@ class CollectAutofillContentService implements CollectAutofillContentServiceInte
       fields: autofillFieldsData,
       collectedTimestamp: Date.now(),
     };
+  }
+
+  /**
+   * Re-checks the visibility for all form fields and updates the
+   * cached data to reflect the most recent visibility state.
+   *
+   * @private
+   */
+  private updateCachedAutofillFieldVisibility() {
+    this.autofillFieldElements.forEach(
+      async (autofillField, element) =>
+        (autofillField.viewable =
+          await this.domElementVisibilityService.isFormFieldViewable(element)),
+    );
   }
 
   /**
