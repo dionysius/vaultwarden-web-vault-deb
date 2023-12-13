@@ -176,7 +176,7 @@
             <input
               id="length"
               type="number"
-              min="5"
+              [min]="passwordOptions.minLength"
               max="128"
               [(ngModel)]="passwordOptions.length"
               (change)="savePasswordOptions()"
@@ -184,7 +184,7 @@
             <input
               id="lengthRange"
               type="range"
-              min="5"
+              [min]="passwordOptions.minLength"
               max="128"
               step="1"
               [(ngModel)]="passwordOptions.length"
@@ -193,6 +193,18 @@
               attr.aria-label="{{ 'length' | i18n }}"
               tabindex="-1"
             />
+          </div>
+          <div class="box-content-row" appBoxRow>
+            <span>{{ "passwordMinLength" | i18n }}</span>
+            <span
+              class="sr-only"
+              attr.aria-label="{{ 'passwordMinLength' | i18n }}"
+              role="status"
+              aria-live="polite"
+            >
+              {{ passwordOptionsMinLengthForReader$ | async }}
+            </span>
+            <span class="txt-right">{{ passwordOptions.minLength }}</span>
           </div>
           <div class="box-content-row box-content-row-checkbox" appBoxRow>
             <label for="uppercase">A-Z</label>
@@ -221,10 +233,10 @@
             <input
               id="numbers"
               type="checkbox"
-              (change)="savePasswordOptions()"
               attr.aria-label="{{ 'numbers' | i18n }}"
               [disabled]="enforcedPasswordPolicyOptions.useNumbers"
-              [(ngModel)]="passwordOptions.number"
+              [ngModel]="passwordOptions.number"
+              (ngModelChange)="setPasswordOptionsNumber($event)"
             />
           </div>
           <div class="box-content-row box-content-row-checkbox" appBoxRow>
@@ -232,10 +244,10 @@
             <input
               id="special"
               type="checkbox"
-              (change)="savePasswordOptions()"
               attr.aria-label="{{ 'specialCharacters' | i18n }}"
               [disabled]="enforcedPasswordPolicyOptions.useSpecial"
-              [(ngModel)]="passwordOptions.special"
+              [ngModel]="passwordOptions.special"
+              (ngModelChange)="setPasswordOptionsSpecial($event)"
             />
           </div>
         </div>
@@ -249,8 +261,8 @@
               type="number"
               min="0"
               max="9"
-              (change)="savePasswordOptions()"
               [(ngModel)]="passwordOptions.minNumber"
+              (input)="onPasswordOptionsMinNumberInput($event)"
             />
           </div>
           <div class="box-content-row box-content-row-input" appBoxRow>
@@ -260,8 +272,8 @@
               type="number"
               min="0"
               max="9"
-              (change)="savePasswordOptions()"
               [(ngModel)]="passwordOptions.minSpecial"
+              (input)="onPasswordOptionsMinSpecialInput($event)"
             />
           </div>
           <div class="box-content-row box-content-row-checkbox" appBoxRow>

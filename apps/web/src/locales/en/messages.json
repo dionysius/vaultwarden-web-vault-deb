@@ -1150,6 +1150,9 @@
   "length": {
     "message": "Length"
   },
+  "passwordMinLength": {
+    "message": "Minimum password length"
+  },
   "uppercase": {
     "message": "Uppercase (A-Z)",
     "description": "Include uppercase letters in the password generator."

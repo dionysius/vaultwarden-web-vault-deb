@@ -109,12 +109,30 @@
           id="length"
           class="form-control"
           type="number"
-          min="5"
+          [min]="passwordOptions.minLength"
           max="128"
           [(ngModel)]="passwordOptions.length"
           (blur)="savePasswordOptions()"
           (change)="lengthChanged()"
         />
+      </div>
+      <div class="form-group col-4">
+        <label for="min-length">{{ "passwordMinLength" | i18n }}</label>
+        <input
+          id="min-length"
+          class="form-control"
+          type="text"
+          readonly="true"
+          [value]="passwordOptions.length"
+        />
+        <span
+          class="sr-only"
+          attr.aria-label="{{ 'passwordMinLength' | i18n }}"
+          role="status"
+          aria-live="polite"
+        >
+          {{ passwordOptionsMinLengthForReader$ | async }}
+        </span>
       </div>
       <div class="form-group col-4">
         <label for="min-number">{{ "minNumbers" | i18n }}</label>
@@ -124,8 +142,8 @@
           type="number"
           min="0"
           max="9"
-          (blur)="savePasswordOptions()"
           [(ngModel)]="passwordOptions.minNumber"
+          (input)="onPasswordOptionsMinNumberInput($event)"
           (change)="minNumberChanged()"
         />
       </div>
@@ -137,8 +155,8 @@
           type="number"
           min="0"
           max="9"
-          (blur)="savePasswordOptions()"
           [(ngModel)]="passwordOptions.minSpecial"
+          (input)="onPasswordOptionsMinSpecialInput($event)"
           (change)="minSpecialChanged()"
         />
       </div>
@@ -175,7 +193,8 @@
           class="form-check-input"
           type="checkbox"
           (change)="savePasswordOptions()"
-          [(ngModel)]="passwordOptions.number"
+          [ngModel]="passwordOptions.number"
+          (ngModelChange)="setPasswordOptionsNumber($event)"
           [disabled]="enforcedPasswordPolicyOptions?.useNumbers"
           attr.aria-label="{{ 'numbers' | i18n }}"
         />
@@ -186,8 +205,8 @@
           id="special"
           class="form-check-input"
           type="checkbox"
-          (change)="savePasswordOptions()"
-          [(ngModel)]="passwordOptions.special"
+          [ngModel]="passwordOptions.special"
+          (ngModelChange)="setPasswordOptionsSpecial($event)"
           [disabled]="enforcedPasswordPolicyOptions?.useSpecial"
           attr.aria-label="{{ 'specialCharacters' | i18n }}"
         />
