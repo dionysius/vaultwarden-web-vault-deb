@@ -59,7 +59,7 @@ export class FakeStorageService implements AbstractStorageService {
     return Promise.resolve(this.store[key] != null);
   }
   save<T>(key: string, obj: T, options?: StorageOptions): Promise<void> {
-    this.mock.save(key, options);
+    this.mock.save(key, obj, options);
     this.store[key] = obj;
     this.updatesSubject.next({ key: key, updateType: "save" });
     return Promise.resolve();

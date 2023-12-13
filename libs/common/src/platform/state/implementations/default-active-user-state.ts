@@ -4,12 +4,12 @@ import {
   map,
   shareReplay,
   switchMap,
-  tap,
-  defer,
   firstValueFrom,
   combineLatestWith,
   filter,
   timeout,
+  Subscription,
+  tap,
 } from "rxjs";
 
 import { AccountService } from "../../../auth/abstractions/account.service";
@@ -31,13 +31,22 @@ const FAKE_DEFAULT = Symbol("fakeDefault");
 export class DefaultActiveUserState<T> implements ActiveUserState<T> {
   [activeMarker]: true;
   private formattedKey$: Observable<string>;
+  private updatePromise: Promise<T> | null = null;
+  private storageUpdateSubscription: Subscription;
+  private activeAccountUpdateSubscription: Subscription;
+  private subscriberCount = new BehaviorSubject<number>(0);
+  private stateObservable: Observable<T>;
+  private reinitialize = false;
 
   protected stateSubject: BehaviorSubject<T | typeof FAKE_DEFAULT> = new BehaviorSubject<
     T | typeof FAKE_DEFAULT
   >(FAKE_DEFAULT);
   private stateSubject$ = this.stateSubject.asObservable();
 
-  state$: Observable<T>;
+  get state$() {
+    this.stateObservable = this.stateObservable ?? this.initializeObservable();
+    return this.stateObservable;
+  }
 
   constructor(
     protected keyDefinition: KeyDefinition<T>,
@@ -51,62 +60,12 @@ export class DefaultActiveUserState<T> implements ActiveUserState<T> {
           ? userKeyBuilder(account.id, this.keyDefinition)
           : null,
       ),
+      tap(() => {
+        // We have a new key, so we should forget about previous update promises
+        this.updatePromise = null;
+      }),
       shareReplay({ bufferSize: 1, refCount: false }),
     );
-
-    const activeAccountData$ = this.formattedKey$.pipe(
-      switchMap(async (key) => {
-        if (key == null) {
-          return FAKE_DEFAULT;
-        }
-        return await getStoredValue(
-          key,
-          this.chosenStorageLocation,
-          this.keyDefinition.deserializer,
-        );
-      }),
-      // Share the execution
-      shareReplay({ refCount: false, bufferSize: 1 }),
-    );
-
-    const storageUpdates$ = this.chosenStorageLocation.updates$.pipe(
-      combineLatestWith(this.formattedKey$),
-      filter(([update, key]) => key !== null && update.key === key),
-      switchMap(async ([update, key]) => {
-        if (update.updateType === "remove") {
-          return null;
-        }
-        const data = await getStoredValue(
-          key,
-          this.chosenStorageLocation,
-          this.keyDefinition.deserializer,
-        );
-        return data;
-      }),
-    );
-
-    // Whomever subscribes to this data, should be notified of updated data
-    // if someone calls my update() method, or the active user changes.
-    this.state$ = defer(() => {
-      const accountChangeSubscription = activeAccountData$.subscribe((data) => {
-        this.stateSubject.next(data);
-      });
-      const storageUpdateSubscription = storageUpdates$.subscribe((data) => {
-        this.stateSubject.next(data);
-      });
-
-      return this.stateSubject$.pipe(
-        tap({
-          complete: () => {
-            accountChangeSubscription.unsubscribe();
-            storageUpdateSubscription.unsubscribe();
-          },
-        }),
-      );
-    })
-      // I fake the generic here because I am filtering out the other union type
-      // and this makes it so that typescript understands the true type
-      .pipe(filter<T>((value) => value != FAKE_DEFAULT));
   }
 
   async update<TCombine>(
@@ -114,8 +73,34 @@ export class DefaultActiveUserState<T> implements ActiveUserState<T> {
     options: StateUpdateOptions<T, TCombine> = {},
   ): Promise<T> {
     options = populateOptionsWithDefault(options);
+    try {
+      if (this.updatePromise != null) {
+        await this.updatePromise;
+      }
+      this.updatePromise = this.internalUpdate(configureState, options);
+      const newState = await this.updatePromise;
+      return newState;
+    } finally {
+      this.updatePromise = null;
+    }
+  }
+
+  // TODO: this should be removed
+  async getFromState(): Promise<T> {
     const key = await this.createKey();
-    const currentState = await this.getGuaranteedState(key);
+    return await getStoredValue(key, this.chosenStorageLocation, this.keyDefinition.deserializer);
+  }
+
+  createDerived<TTo>(converter: Converter<T, TTo>): DerivedUserState<TTo> {
+    return new DefaultDerivedUserState<T, TTo>(converter, this.encryptService, this);
+  }
+
+  private async internalUpdate<TCombine>(
+    configureState: (state: T, dependency: TCombine) => T,
+    options: StateUpdateOptions<T, TCombine>,
+  ) {
+    const key = await this.createKey();
+    const currentState = await this.getStateForUpdate(key);
     const combinedDependencies =
       options.combineLatestWith != null
         ? await firstValueFrom(options.combineLatestWith.pipe(timeout(options.msTimeout)))
@@ -130,13 +115,59 @@ export class DefaultActiveUserState<T> implements ActiveUserState<T> {
     return newState;
   }
 
-  async getFromState(): Promise<T> {
-    const key = await this.createKey();
-    return await getStoredValue(key, this.chosenStorageLocation, this.keyDefinition.deserializer);
-  }
+  private initializeObservable() {
+    this.storageUpdateSubscription = this.chosenStorageLocation.updates$
+      .pipe(
+        combineLatestWith(this.formattedKey$),
+        filter(([update, key]) => key !== null && update.key === key),
+        switchMap(async ([update, key]) => {
+          if (update.updateType === "remove") {
+            return null;
+          }
+          return await this.getState(key);
+        }),
+      )
+      .subscribe((v) => this.stateSubject.next(v));
 
-  createDerived<TTo>(converter: Converter<T, TTo>): DerivedUserState<TTo> {
-    return new DefaultDerivedUserState<T, TTo>(converter, this.encryptService, this);
+    this.activeAccountUpdateSubscription = this.formattedKey$
+      .pipe(
+        switchMap(async (key) => {
+          if (key == null) {
+            return FAKE_DEFAULT;
+          }
+          return await this.getState(key);
+        }),
+      )
+      .subscribe((v) => this.stateSubject.next(v));
+
+    this.subscriberCount.subscribe((count) => {
+      if (count === 0 && this.stateObservable != null) {
+        this.triggerCleanup();
+      }
+    });
+
+    return new Observable<T>((subscriber) => {
+      this.incrementSubscribers();
+
+      // reinitialize listeners after cleanup
+      if (this.reinitialize) {
+        this.reinitialize = false;
+        this.initializeObservable();
+      }
+
+      const prevUnsubscribe = subscriber.unsubscribe.bind(subscriber);
+      subscriber.unsubscribe = () => {
+        this.decrementSubscribers();
+        prevUnsubscribe();
+      };
+
+      return this.stateSubject
+        .pipe(
+          // Filter out fake default, which is used to indicate that state is not ready to be emitted yet.
+          filter((i) => i !== FAKE_DEFAULT),
+        )
+        .subscribe(subscriber);
+    });
   }
 
   protected async createKey(): Promise<string> {
@@ -147,22 +178,47 @@ export class DefaultActiveUserState<T> implements ActiveUserState<T> {
     return formattedKey;
   }
 
-  protected async getGuaranteedState(key: string) {
+  /** For use in update methods, does not wait for update to complete before yielding state.
+   * The expectation is that that await is already done
+   */
+  protected async getStateForUpdate(key: string) {
     const currentValue = this.stateSubject.getValue();
-    return currentValue === FAKE_DEFAULT ? await this.seedInitial(key) : currentValue;
+    return currentValue === FAKE_DEFAULT
+      ? await getStoredValue(key, this.chosenStorageLocation, this.keyDefinition.deserializer)
+      : currentValue;
   }
 
-  private async seedInitial(key: string): Promise<T> {
-    const value = await getStoredValue(
-      key,
-      this.chosenStorageLocation,
-      this.keyDefinition.deserializer,
-    );
-    this.stateSubject.next(value);
-    return value;
+  /** To be used in observables. Awaits updates to ensure they are complete */
+  private async getState(key: string): Promise<T> {
+    if (this.updatePromise != null) {
+      await this.updatePromise;
+    }
+    return await getStoredValue(key, this.chosenStorageLocation, this.keyDefinition.deserializer);
   }
 
   protected saveToStorage(key: string, data: T): Promise<void> {
     return this.chosenStorageLocation.save(key, data);
+  }
+
+  private incrementSubscribers() {
+    this.subscriberCount.next(this.subscriberCount.value + 1);
+  }
+
+  private decrementSubscribers() {
+    this.subscriberCount.next(this.subscriberCount.value - 1);
+  }
+
+  private triggerCleanup() {
+    setTimeout(() => {
+      if (this.subscriberCount.value === 0) {
+        this.updatePromise = null;
+        this.storageUpdateSubscription?.unsubscribe();
+        this.activeAccountUpdateSubscription?.unsubscribe();
+        this.subscriberCount.complete();
+        this.subscriberCount = new BehaviorSubject<number>(0);
+        this.stateSubject.next(FAKE_DEFAULT);
+        this.reinitialize = true;
+      }
+    }, this.keyDefinition.cleanupDelayMs);
   }
 }

@@ -1,12 +1,10 @@
 import {
   BehaviorSubject,
   Observable,
-  defer,
+  Subscription,
   filter,
   firstValueFrom,
-  shareReplay,
   switchMap,
-  tap,
   timeout,
 } from "rxjs";
 
@@ -23,54 +21,26 @@ const FAKE_DEFAULT = Symbol("fakeDefault");
 
 export class DefaultGlobalState<T> implements GlobalState<T> {
   private storageKey: string;
+  private updatePromise: Promise<T> | null = null;
+  private storageUpdateSubscription: Subscription;
+  private subscriberCount = new BehaviorSubject<number>(0);
+  private stateObservable: Observable<T>;
+  private reinitialize = false;
 
   protected stateSubject: BehaviorSubject<T | typeof FAKE_DEFAULT> = new BehaviorSubject<
     T | typeof FAKE_DEFAULT
   >(FAKE_DEFAULT);
 
-  state$: Observable<T>;
+  get state$() {
+    this.stateObservable = this.stateObservable ?? this.initializeObservable();
+    return this.stateObservable;
+  }
 
   constructor(
     private keyDefinition: KeyDefinition<T>,
     private chosenLocation: AbstractStorageService & ObservableStorageService,
   ) {
     this.storageKey = globalKeyBuilder(this.keyDefinition);
-
-    const storageUpdates$ = this.chosenLocation.updates$.pipe(
-      filter((update) => update.key === this.storageKey),
-      switchMap(async (update) => {
-        if (update.updateType === "remove") {
-          return null;
-        }
-        return await getStoredValue(
-          this.storageKey,
-          this.chosenLocation,
-          this.keyDefinition.deserializer,
-        );
-      }),
-      shareReplay({ bufferSize: 1, refCount: false }),
-    );
-
-    this.state$ = defer(() => {
-      const storageUpdateSubscription = storageUpdates$.subscribe((value) => {
-        this.stateSubject.next(value);
-      });
-
-      this.getFromState().then((s) => {
-        this.stateSubject.next(s);
-      });
-
-      return this.stateSubject.pipe(
-        tap({
-          complete: () => {
-            storageUpdateSubscription.unsubscribe();
-          },
-        }),
-      );
-    }).pipe(
-      shareReplay({ refCount: false, bufferSize: 1 }),
-      filter<T>((i) => i != FAKE_DEFAULT),
-    );
   }
 
   async update<TCombine>(
@@ -78,7 +48,24 @@ export class DefaultGlobalState<T> implements GlobalState<T> {
     options: StateUpdateOptions<T, TCombine> = {},
   ): Promise<T> {
     options = populateOptionsWithDefault(options);
-    const currentState = await this.getGuaranteedState();
+    if (this.updatePromise != null) {
+      await this.updatePromise;
+    }
+
+    try {
+      this.updatePromise = this.internalUpdate(configureState, options);
+      const newState = await this.updatePromise;
+      return newState;
+    } finally {
+      this.updatePromise = null;
+    }
+  }
+
+  private async internalUpdate<TCombine>(
+    configureState: (state: T, dependency: TCombine) => T,
+    options: StateUpdateOptions<T, TCombine>,
+  ): Promise<T> {
+    const currentState = await this.getStateForUpdate();
     const combinedDependencies =
       options.combineLatestWith != null
         ? await firstValueFrom(options.combineLatestWith.pipe(timeout(options.msTimeout)))
@@ -93,16 +80,94 @@ export class DefaultGlobalState<T> implements GlobalState<T> {
     return newState;
   }
 
-  private async getGuaranteedState() {
+  private initializeObservable() {
+    this.storageUpdateSubscription = this.chosenLocation.updates$
+      .pipe(
+        filter((update) => update.key === this.storageKey),
+        switchMap(async (update) => {
+          if (update.updateType === "remove") {
+            return null;
+          }
+          return await this.getFromState();
+        }),
+      )
+      .subscribe((v) => this.stateSubject.next(v));
+
+    this.subscriberCount.subscribe((count) => {
+      if (count === 0 && this.stateObservable != null) {
+        this.triggerCleanup();
+      }
+    });
+
+    // Intentionally un-awaited promise, we don't want to delay return of observable, but we do want to
+    // trigger populating it immediately.
+    this.getFromState().then((s) => {
+      this.stateSubject.next(s);
+    });
+
+    return new Observable<T>((subscriber) => {
+      this.incrementSubscribers();
+
+      // reinitialize listeners after cleanup
+      if (this.reinitialize) {
+        this.reinitialize = false;
+        this.initializeObservable();
+      }
+
+      const prevUnsubscribe = subscriber.unsubscribe.bind(subscriber);
+      subscriber.unsubscribe = () => {
+        this.decrementSubscribers();
+        prevUnsubscribe();
+      };
+
+      return this.stateSubject
+        .pipe(
+          // Filter out fake default, which is used to indicate that state is not ready to be emitted yet.
+          filter<T>((i) => i != FAKE_DEFAULT),
+        )
+        .subscribe(subscriber);
+    });
+  }
+
+  /** For use in update methods, does not wait for update to complete before yielding state.
+   * The expectation is that that await is already done
+   */
+  private async getStateForUpdate() {
     const currentValue = this.stateSubject.getValue();
-    return currentValue === FAKE_DEFAULT ? await this.getFromState() : currentValue;
+    return currentValue === FAKE_DEFAULT
+      ? await getStoredValue(this.storageKey, this.chosenLocation, this.keyDefinition.deserializer)
+      : currentValue;
   }
 
   async getFromState(): Promise<T> {
+    if (this.updatePromise != null) {
+      return await this.updatePromise;
+    }
     return await getStoredValue(
       this.storageKey,
       this.chosenLocation,
       this.keyDefinition.deserializer,
     );
+  }
+
+  private incrementSubscribers() {
+    this.subscriberCount.next(this.subscriberCount.value + 1);
+  }
+
+  private decrementSubscribers() {
+    this.subscriberCount.next(this.subscriberCount.value - 1);
+  }
+
+  private triggerCleanup() {
+    setTimeout(() => {
+      if (this.subscriberCount.value === 0) {
+        this.updatePromise = null;
+        this.storageUpdateSubscription.unsubscribe();
+        this.subscriberCount.complete();
+        this.subscriberCount = new BehaviorSubject<number>(0);
+        this.stateSubject.next(FAKE_DEFAULT);
+        this.reinitialize = true;
+      }
+    }, this.keyDefinition.cleanupDelayMs);
   }
 }
