@@ -4,9 +4,11 @@ import { firstValueFrom } from "rxjs";
 
 import { ExportComponent as BaseExportComponent } from "@bitwarden/angular/tools/export/components/export.component";
 import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
+import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
-import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
+import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
+import { ConfigServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config.service.abstraction";
 import { FileDownloadService } from "@bitwarden/common/platform/abstractions/file-download/file-download.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
@@ -22,12 +24,15 @@ import { openUserVerificationPrompt } from "../../auth/shared/components/user-ve
   templateUrl: "export.component.html",
 })
 export class ExportComponent extends BaseExportComponent {
-  organizationId: string;
   encryptedExportType = EncryptedExportType;
   protected showFilePassword: boolean;
 
+  protected flexibleCollectionsEnabled$ = this.configService.getFeatureFlag$(
+    FeatureFlag.FlexibleCollections,
+    false,
+  );
+
   constructor(
-    cryptoService: CryptoService,
     i18nService: I18nService,
     platformUtilsService: PlatformUtilsService,
     exportService: VaultExportServiceAbstraction,
@@ -38,20 +43,21 @@ export class ExportComponent extends BaseExportComponent {
     formBuilder: UntypedFormBuilder,
     fileDownloadService: FileDownloadService,
     dialogService: DialogService,
+    organizationService: OrganizationService,
+    protected configService: ConfigServiceAbstraction,
   ) {
     super(
-      cryptoService,
       i18nService,
       platformUtilsService,
       exportService,
       eventCollectionService,
       policyService,
-      window,
       logService,
       userVerificationService,
       formBuilder,
       fileDownloadService,
       dialogService,
+      organizationService,
     );
   }
 
