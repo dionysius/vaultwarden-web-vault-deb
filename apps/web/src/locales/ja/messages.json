@@ -674,8 +674,8 @@
   "encryptionNotSupported": {
     "message": "暗号化はサポートされていません"
   },
-  "encryptionNotEnabled": {
-    "message": "暗号化が有効ではありません"
+  "enablePasskeyEncryption": {
+    "message": "暗号化の設定"
   },
   "usedForEncryption": {
     "message": "暗号化に使用中"
@@ -1074,6 +1074,9 @@
   "export": {
     "message": "エクスポート"
   },
+  "exportFrom": {
+    "message": "エクスポート元"
+  },
   "exportVault": {
     "message": "保管庫のエクスポート"
   },
@@ -1149,6 +1152,9 @@
   },
   "length": {
     "message": "長さ"
+  },
+  "passwordMinLength": {
+    "message": "パスワードの最低文字数"
   },
   "uppercase": {
     "message": "大文字（A-Z）",

@@ -674,8 +674,8 @@
   "encryptionNotSupported": {
     "message": "Chiffrement non pris en charge"
   },
-  "encryptionNotEnabled": {
-    "message": "Chiffrement non activé"
+  "enablePasskeyEncryption": {
+    "message": "Configurer le chiffrement"
   },
   "usedForEncryption": {
     "message": "Utilisé pour le chiffrement"
@@ -1074,6 +1074,9 @@
   "export": {
     "message": "Exporter"
   },
+  "exportFrom": {
+    "message": "Exporter à partir de"
+  },
   "exportVault": {
     "message": "Exporter le coffre"
   },
@@ -1149,6 +1152,9 @@
   },
   "length": {
     "message": "Longueur"
+  },
+  "passwordMinLength": {
+    "message": "Longueur minimale du mot de passe"
   },
   "uppercase": {
     "message": "Majuscule (A-Z)",
@@ -7439,6 +7445,6 @@
     "message": "L'accès à la collection est restreint"
   },
   "serviceAccountAccessUpdated": {
-    "message": "Service account access updated"
+    "message": "Accès au compte de service mis à jour"
   }
 }

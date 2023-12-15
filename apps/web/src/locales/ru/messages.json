@@ -674,8 +674,8 @@
   "encryptionNotSupported": {
     "message": "Шифрование не поддерживается"
   },
-  "encryptionNotEnabled": {
-    "message": "Шифрование не включено"
+  "enablePasskeyEncryption": {
+    "message": "Настройка шифрования"
   },
   "usedForEncryption": {
     "message": "Используется для шифрования"
@@ -1074,6 +1074,9 @@
   "export": {
     "message": "Экспорт"
   },
+  "exportFrom": {
+    "message": "Экспорт из"
+  },
   "exportVault": {
     "message": "Экспорт хранилища"
   },
@@ -1149,6 +1152,9 @@
   },
   "length": {
     "message": "Длина"
+  },
+  "passwordMinLength": {
+    "message": "Минимальная длина пароля"
   },
   "uppercase": {
     "message": "Прописные буквы (A-Z)",
@@ -7439,6 +7445,6 @@
     "message": "Доступ к коллекции ограничен"
   },
   "serviceAccountAccessUpdated": {
-    "message": "Service account access updated"
+    "message": "Доступ сервисного аккаунта изменен"
   }
 }

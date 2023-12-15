@@ -674,8 +674,8 @@
   "encryptionNotSupported": {
     "message": "Encryption not supported"
   },
-  "encryptionNotEnabled": {
-    "message": "Encryption not enabled"
+  "enablePasskeyEncryption": {
+    "message": "Thiết lập mã hóa"
   },
   "usedForEncryption": {
     "message": "Used for encryption"
@@ -1074,6 +1074,9 @@
   "export": {
     "message": "Xuất"
   },
+  "exportFrom": {
+    "message": "Xuất từ"
+  },
   "exportVault": {
     "message": "Xuất kho"
   },
@@ -1149,6 +1152,9 @@
   },
   "length": {
     "message": "Độ dài"
+  },
+  "passwordMinLength": {
+    "message": "Độ dài mật khẩu tối thiểu"
   },
   "uppercase": {
     "message": "Chữ hoa (A-Z)",

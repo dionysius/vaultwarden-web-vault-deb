@@ -674,8 +674,8 @@
   "encryptionNotSupported": {
     "message": "Encriptação não suportada"
   },
-  "encryptionNotEnabled": {
-    "message": "Encriptação não ativada"
+  "enablePasskeyEncryption": {
+    "message": "Set up encryption"
   },
   "usedForEncryption": {
     "message": "Utilizado para encriptação"
@@ -1074,6 +1074,9 @@
   "export": {
     "message": "Exportar"
   },
+  "exportFrom": {
+    "message": "Exportar de"
+  },
   "exportVault": {
     "message": "Exportar cofre"
   },
@@ -1149,6 +1152,9 @@
   },
   "length": {
     "message": "Comprimento"
+  },
+  "passwordMinLength": {
+    "message": "Comprimento mínimo da palavra-passe"
   },
   "uppercase": {
     "message": "Maiúsculas (A-Z)",
@@ -7439,6 +7445,6 @@
     "message": "O acesso à coleção é restrito"
   },
   "serviceAccountAccessUpdated": {
-    "message": "Service account access updated"
+    "message": "Acesso à conta de serviço atualizado"
   }
 }

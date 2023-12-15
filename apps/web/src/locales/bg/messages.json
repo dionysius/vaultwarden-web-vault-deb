@@ -674,8 +674,8 @@
   "encryptionNotSupported": {
     "message": "Шифроването не се поддържа"
   },
-  "encryptionNotEnabled": {
-    "message": "Шифроването не е включено"
+  "enablePasskeyEncryption": {
+    "message": "Настройване на шифроването"
   },
   "usedForEncryption": {
     "message": "Използва се за шифроване"
@@ -1074,6 +1074,9 @@
   "export": {
     "message": "Изнасяне"
   },
+  "exportFrom": {
+    "message": "Изнасяне от"
+  },
   "exportVault": {
     "message": "Изнасяне на трезора"
   },
@@ -1149,6 +1152,9 @@
   },
   "length": {
     "message": "Дължина"
+  },
+  "passwordMinLength": {
+    "message": "Минимална дължина на паролата"
   },
   "uppercase": {
     "message": "Главни букви (A-Z)",
@@ -7439,6 +7445,6 @@
     "message": "Достъпът до колекцията е ограничен"
   },
   "serviceAccountAccessUpdated": {
-    "message": "Service account access updated"
+    "message": "Достъпът на сервизния акаунт е променен"
   }
 }

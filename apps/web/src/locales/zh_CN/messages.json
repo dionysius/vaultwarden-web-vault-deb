@@ -674,8 +674,8 @@
   "encryptionNotSupported": {
     "message": "不支持加密"
   },
-  "encryptionNotEnabled": {
-    "message": "未启用加密"
+  "enablePasskeyEncryption": {
+    "message": "设置加密"
   },
   "usedForEncryption": {
     "message": "用于加密"
@@ -1074,6 +1074,9 @@
   "export": {
     "message": "导出"
   },
+  "exportFrom": {
+    "message": "导出自"
+  },
   "exportVault": {
     "message": "导出密码库"
   },
@@ -1149,6 +1152,9 @@
   },
   "length": {
     "message": "长度"
+  },
+  "passwordMinLength": {
+    "message": "最小密码长度"
   },
   "uppercase": {
     "message": "大写 (A-Z)",
@@ -7436,7 +7442,7 @@
     "message": "已达到席位限制。请联系您的供应商购买更多席位。"
   },
   "collectionAccessRestricted": {
-    "message": "访问集合受限"
+    "message": "集合访问受限"
   },
   "serviceAccountAccessUpdated": {
     "message": "服务账户访问权限已更新"

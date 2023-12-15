@@ -674,8 +674,8 @@
   "encryptionNotSupported": {
     "message": "El xifratge no és compatible"
   },
-  "encryptionNotEnabled": {
-    "message": "Xifratge no habilitat"
+  "enablePasskeyEncryption": {
+    "message": "Configura el xifratge"
   },
   "usedForEncryption": {
     "message": "S'utilitza per al xifratge"
@@ -1074,6 +1074,9 @@
   "export": {
     "message": "Exporta"
   },
+  "exportFrom": {
+    "message": "Export from"
+  },
   "exportVault": {
     "message": "Exporta la caixa forta"
   },
@@ -1149,6 +1152,9 @@
   },
   "length": {
     "message": "Longitud"
+  },
+  "passwordMinLength": {
+    "message": "Longitud mínima de la contrasenya"
   },
   "uppercase": {
     "message": "Majúscula (A-Z)",
@@ -7436,9 +7442,9 @@
     "message": "S'ha arribat al límit de places. Contacta amb el teu proveïdor per comprar places addicionals."
   },
   "collectionAccessRestricted": {
-    "message": "Collection access is restricted"
+    "message": "L'accés a la col·lecció està restringit"
   },
   "serviceAccountAccessUpdated": {
-    "message": "Service account access updated"
+    "message": "Accés al compte del servei actualitzat"
   }
 }

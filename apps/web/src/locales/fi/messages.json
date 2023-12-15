@@ -206,7 +206,7 @@
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Tunnistuksen oletustapa",
+    "message": "Oletusarvoinen tunnistustapa",
     "description": "Default URI match detection for auto-fill."
   },
   "never": {
@@ -674,8 +674,8 @@
   "encryptionNotSupported": {
     "message": "Salausta ei tueta"
   },
-  "encryptionNotEnabled": {
-    "message": "Salaus ei ole käytössä"
+  "enablePasskeyEncryption": {
+    "message": "Määritä salaus"
   },
   "usedForEncryption": {
     "message": "Käytetään salaukseen"
@@ -1074,6 +1074,9 @@
   "export": {
     "message": "Vie"
   },
+  "exportFrom": {
+    "message": "Vie lähteestä"
+  },
   "exportVault": {
     "message": "Vie holvi"
   },
@@ -1149,6 +1152,9 @@
   },
   "length": {
     "message": "Pituus"
+  },
+  "passwordMinLength": {
+    "message": "Salasanan vähimmäispituus"
   },
   "uppercase": {
     "message": "Isot kirjaimet (A-Z)",
@@ -2952,7 +2958,7 @@
     }
   },
   "autofilledItemId": {
-    "message": "Kohde $ID$ täytetty automaattisesti.",
+    "message": " Automaattitäytettiin $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -5087,16 +5093,16 @@
     "message": "Yksi tai useampi organisaatiokäytäntö estää yksityisen holvisi viennin."
   },
   "activateAutofill": {
-    "message": "Aktivoi automaattinen täyttö"
+    "message": "Aktivoi automaattitäyttö"
   },
   "activateAutofillPolicyDesc": {
-    "message": "Aktivoi selainlaajennuksen \"Automaattinen täyttö sivun avautuessa\" -asetus kaikille nykyisille ja uusille jäsenille."
+    "message": "Aktivoi selainlaajennuksen \"Automaattitäyttö sivun avautuessa\" -asetus kaikille nykyisille ja uusille jäsenille."
   },
   "experimentalFeature": {
-    "message": "Vaarantuneet tai epäluotettavat sivustot voivat väärinkäyttää sivun avautuessa suoritettavaa automaattista täyttöä."
+    "message": "Vaarantuneet tai epäluotettavat sivustot voivat väärinkäyttää sivun avautuessa suoritettavaa automaattitäyttöä."
   },
   "learnMoreAboutAutofill": {
-    "message": "Lue lisää automaattisesta täytöstä"
+    "message": "Lue lisää automaattitäytöstä"
   },
   "selectType": {
     "message": "Valitse kertakirjautumisen tyyppi"
@@ -5750,7 +5756,7 @@
     "message": "Luo sähköpostialias ulkoisella ohjauspalvelulla."
   },
   "hostname": {
-    "message": "Osoite",
+    "message": "Isäntä",
     "description": "Part of a URL."
   },
   "apiAccessToken": {
@@ -7408,7 +7414,7 @@
     "message": "Suojausavain ei kopioidu kloonattuun kohteeseen. Haluatko jatkaa kloonausta?"
   },
   "modifiedCollectionManagement": {
-    "message": "Muutettu kokoelman hallinta-asetusta $ID$.",
+    "message": "Muokkasi kokoelman hallinta-asetusta $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -7439,6 +7445,6 @@
     "message": "Kokoelman käyttöä on rajoitettu"
   },
   "serviceAccountAccessUpdated": {
-    "message": "Service account access updated"
+    "message": "Palvelutilin oikeuksia muutettiin"
   }
 }

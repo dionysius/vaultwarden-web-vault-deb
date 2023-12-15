@@ -674,8 +674,8 @@
   "encryptionNotSupported": {
     "message": "Şifreleme desteklenmiyor"
   },
-  "encryptionNotEnabled": {
-    "message": "Şifreleme etkin değil"
+  "enablePasskeyEncryption": {
+    "message": "Şifreleme ayarla"
   },
   "usedForEncryption": {
     "message": "Şifreleme için kullanılır"
@@ -1074,6 +1074,9 @@
   "export": {
     "message": "Dışarı aktar"
   },
+  "exportFrom": {
+    "message": "Dışa aktarılacak konum"
+  },
   "exportVault": {
     "message": "Kasayı dışa aktar"
   },
@@ -1149,6 +1152,9 @@
   },
   "length": {
     "message": "Uzunluk"
+  },
+  "passwordMinLength": {
+    "message": "Minimum parola uzunluğu"
   },
   "uppercase": {
     "message": "Büyük harf (A-Z)",
@@ -7439,6 +7445,6 @@
     "message": "Koleksiyona erişim kısıtlı"
   },
   "serviceAccountAccessUpdated": {
-    "message": "Service account access updated"
+    "message": "Hizmet hesabı erişimi güncellendi"
   }
 }

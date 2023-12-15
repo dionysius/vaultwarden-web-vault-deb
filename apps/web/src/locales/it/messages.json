@@ -674,8 +674,8 @@
   "encryptionNotSupported": {
     "message": "Crittografia non supportata"
   },
-  "encryptionNotEnabled": {
-    "message": "Crittografia non attivata"
+  "enablePasskeyEncryption": {
+    "message": "Configura crittografia"
   },
   "usedForEncryption": {
     "message": "Usata per la crittografia"
@@ -1074,6 +1074,9 @@
   "export": {
     "message": "Esporta"
   },
+  "exportFrom": {
+    "message": "Esporta da"
+  },
   "exportVault": {
     "message": "Esporta cassaforte"
   },
@@ -1149,6 +1152,9 @@
   },
   "length": {
     "message": "Lunghezza"
+  },
+  "passwordMinLength": {
+    "message": "Lunghezza minima della password"
   },
   "uppercase": {
     "message": "Maiuscole (A-Z)",
@@ -7439,6 +7445,6 @@
     "message": "L'accesso alla raccolta è limitato"
   },
   "serviceAccountAccessUpdated": {
-    "message": "Service account access updated"
+    "message": "Accesso all'account di servizio aggiornato"
   }
 }

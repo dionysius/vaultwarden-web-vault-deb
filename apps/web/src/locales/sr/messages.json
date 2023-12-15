@@ -674,8 +674,8 @@
   "encryptionNotSupported": {
     "message": "Шифровање није подржано"
   },
-  "encryptionNotEnabled": {
-    "message": "Шифрирање није омогућено"
+  "enablePasskeyEncryption": {
+    "message": "Set up encryption"
   },
   "usedForEncryption": {
     "message": "Употребљено за шифровање"
@@ -1074,6 +1074,9 @@
   "export": {
     "message": "Извези"
   },
+  "exportFrom": {
+    "message": "Export from"
+  },
   "exportVault": {
     "message": "Извоз сефа"
   },
@@ -1149,6 +1152,9 @@
   },
   "length": {
     "message": "Дужина"
+  },
+  "passwordMinLength": {
+    "message": "Минимална дужина лозинке"
   },
   "uppercase": {
     "message": "Велика слова (A-Z)",
@@ -7436,9 +7442,9 @@
     "message": "Достигнуто је ограничење броја места. Обратите се свом провајдеру да бисте купили додатна места."
   },
   "collectionAccessRestricted": {
-    "message": "Collection access is restricted"
+    "message": "Приступ колекцији је ограничен"
   },
   "serviceAccountAccessUpdated": {
-    "message": "Service account access updated"
+    "message": "Приступ услужног налога ажуриран"
   }
 }

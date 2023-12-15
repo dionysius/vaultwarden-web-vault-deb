@@ -674,8 +674,8 @@
   "encryptionNotSupported": {
     "message": "Šifrovanie nie je podporované"
   },
-  "encryptionNotEnabled": {
-    "message": "Encryption not enabled"
+  "enablePasskeyEncryption": {
+    "message": "Nastaviť šifrovanie"
   },
   "usedForEncryption": {
     "message": "Used for encryption"
@@ -1074,6 +1074,9 @@
   "export": {
     "message": "Exportovať"
   },
+  "exportFrom": {
+    "message": "Exportovať z"
+  },
   "exportVault": {
     "message": "Export trezoru"
   },
@@ -1149,6 +1152,9 @@
   },
   "length": {
     "message": "Dĺžka"
+  },
+  "passwordMinLength": {
+    "message": "Minimálna dĺžka hesla"
   },
   "uppercase": {
     "message": "Veľké písmená (A-Z)",
@@ -7439,6 +7445,6 @@
     "message": "Collection access is restricted"
   },
   "serviceAccountAccessUpdated": {
-    "message": "Service account access updated"
+    "message": "Prístup služobného konta aktualizovaný"
   }
 }

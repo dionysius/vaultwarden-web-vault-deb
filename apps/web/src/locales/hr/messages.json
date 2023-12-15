@@ -674,8 +674,8 @@
   "encryptionNotSupported": {
     "message": "Šifriranje nije podržano"
   },
-  "encryptionNotEnabled": {
-    "message": "Šifriranje nije uključeno"
+  "enablePasskeyEncryption": {
+    "message": "Set up encryption"
   },
   "usedForEncryption": {
     "message": "Koristi se za šifriranje"
@@ -1074,6 +1074,9 @@
   "export": {
     "message": "Izvoz"
   },
+  "exportFrom": {
+    "message": "Export from"
+  },
   "exportVault": {
     "message": "Izvezi trezor"
   },
@@ -1149,6 +1152,9 @@
   },
   "length": {
     "message": "Duljina"
+  },
+  "passwordMinLength": {
+    "message": "Minimum password length"
   },
   "uppercase": {
     "message": "Velika slova (A - Z)",

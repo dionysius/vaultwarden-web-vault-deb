@@ -674,8 +674,8 @@
   "encryptionNotSupported": {
     "message": "Шифрування не підтримується"
   },
-  "encryptionNotEnabled": {
-    "message": "Шифрування не увімкнено"
+  "enablePasskeyEncryption": {
+    "message": "Налаштувати шифрування"
   },
   "usedForEncryption": {
     "message": "Використовується для шифрування"
@@ -1074,6 +1074,9 @@
   "export": {
     "message": "Експорт"
   },
+  "exportFrom": {
+    "message": "Експортувати з"
+  },
   "exportVault": {
     "message": "Експортувати сховище"
   },
@@ -1149,6 +1152,9 @@
   },
   "length": {
     "message": "Довжина"
+  },
+  "passwordMinLength": {
+    "message": "Мінімальна довжина пароля"
   },
   "uppercase": {
     "message": "Верхній регістр (A-Z)",
@@ -7439,6 +7445,6 @@
     "message": "Доступ до збірки обмежено"
   },
   "serviceAccountAccessUpdated": {
-    "message": "Service account access updated"
+    "message": "Доступ до службового облікового запису оновлено"
   }
 }

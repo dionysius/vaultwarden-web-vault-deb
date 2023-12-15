@@ -674,8 +674,8 @@
   "encryptionNotSupported": {
     "message": "Szyfrowanie nie jest obsługiwane"
   },
-  "encryptionNotEnabled": {
-    "message": "Encryption not enabled"
+  "enablePasskeyEncryption": {
+    "message": "Skonfiguruj szyfrowanie"
   },
   "usedForEncryption": {
     "message": "Used for encryption"
@@ -1074,6 +1074,9 @@
   "export": {
     "message": "Eksportuj"
   },
+  "exportFrom": {
+    "message": "Eksportuj z"
+  },
   "exportVault": {
     "message": "Eksportuj sejf"
   },
@@ -1149,6 +1152,9 @@
   },
   "length": {
     "message": "Długość"
+  },
+  "passwordMinLength": {
+    "message": "Minimalna długość hasła"
   },
   "uppercase": {
     "message": "Wielkie litery (A-Z)",

@@ -674,8 +674,8 @@
   "encryptionNotSupported": {
     "message": "Şifrələmə dəstəklənmir"
   },
-  "encryptionNotEnabled": {
-    "message": "Şifrələmə fəal deyil"
+  "enablePasskeyEncryption": {
+    "message": "Şifrələməni qur"
   },
   "usedForEncryption": {
     "message": "Şifrələmə üçün istifadə edilir"
@@ -1074,6 +1074,9 @@
   "export": {
     "message": "İxrac et"
   },
+  "exportFrom": {
+    "message": "Export from"
+  },
   "exportVault": {
     "message": "Anbarı ixrac et"
   },
@@ -1149,6 +1152,9 @@
   },
   "length": {
     "message": "Uzunluq"
+  },
+  "passwordMinLength": {
+    "message": "Minimal parol uzunluğu"
   },
   "uppercase": {
     "message": "Böyük hərf (A-Z)",
@@ -7439,6 +7445,6 @@
     "message": "Kolleksiya müraciəti məhdudlaşdırıldı"
   },
   "serviceAccountAccessUpdated": {
-    "message": "Service account access updated"
+    "message": "Xidmət hesabına müraciət güncəlləndi"
   }
 }

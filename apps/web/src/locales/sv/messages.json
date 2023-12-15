@@ -606,85 +606,85 @@
     "message": "Logga in med enhet"
   },
   "loginWithDeviceEnabledNote": {
-    "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
+    "message": "\"Logga in med enhet\" måste ställas in i inställningarna i Bitwardens app. Behöver du ett annat alternativ?"
   },
   "loginWithMasterPassword": {
     "message": "Logga in med huvudlösenord"
   },
   "readingPasskeyLoading": {
-    "message": "Reading passkey..."
+    "message": "Läser nyckel..."
   },
   "readingPasskeyLoadingInfo": {
-    "message": "Keep this window open and follow prompts from your browser."
+    "message": "Håll det här fönstret öppet och följ anvisningarna från din webbläsare."
   },
   "useADifferentLogInMethod": {
     "message": "Använd en annan inloggningsmetod"
   },
   "loginWithPasskey": {
-    "message": "Log in with passkey"
+    "message": "Logga in med nyckel"
   },
   "invalidPasskeyPleaseTryAgain": {
-    "message": "Invalid Passkey. Please try again."
+    "message": "Ogiltig nyckel. Vänligen försök igen."
   },
   "twoFactorForPasskeysNotSupportedOnClientUpdateToLogIn": {
-    "message": "2FA for passkeys is not supported. Update the app to log in."
+    "message": "Tvåstegsverifiering stöds inte för nycklar. Uppdatera appen för att logga in."
   },
   "loginWithPasskeyInfo": {
-    "message": "Use a generated passkey that will automatically log you in without a password. Biometrics, like facial recognition or fingerprint, or another FIDO2 security method will verify your identity."
+    "message": "Använd en genererad nyckel som automatiskt loggar in dig utan lösenord. Din identitet verifieras med biometri, såsom ansiktsigenkänning eller fingeravtryck, eller en annan FIDO2-säkerhetsmetod."
   },
   "newPasskey": {
-    "message": "New passkey"
+    "message": "Ny nyckel"
   },
   "learnMoreAboutPasswordless": {
-    "message": "Learn more about passwordless"
+    "message": "Läs mer om lösenordsfri inloggning"
   },
   "passkeyEnterMasterPassword": {
-    "message": "Enter your master password to modify log in with passkey settings."
+    "message": "Ange ditt huvudlösenord för att ändra inställningar för inloggning med nyckel."
   },
   "creatingPasskeyLoading": {
-    "message": "Creating passkey..."
+    "message": "Skapar nyckel..."
   },
   "creatingPasskeyLoadingInfo": {
-    "message": "Keep this window open and follow prompts from your browser."
+    "message": "Håll det här fönstret öppet och följ anvisningarna från din webbläsare."
   },
   "errorCreatingPasskey": {
-    "message": "Error creating passkey"
+    "message": "Fel vid skapande av nyckel"
   },
   "errorCreatingPasskeyInfo": {
-    "message": "There was a problem creating your passkey."
+    "message": "Det uppstod ett problem med att skapa nyckeln."
   },
   "passkeySuccessfullyCreated": {
-    "message": "Passkey successfully created!"
+    "message": "Nyckeln har skapats!"
   },
   "customName": {
     "message": "Anpassat namn"
   },
   "customPasskeyNameInfo": {
-    "message": "Name your passkey to help you identify it."
+    "message": "Namnge din nyckel för att hjälpa dig att identifiera den."
   },
   "useForVaultEncryption": {
-    "message": "Use for vault encryption"
+    "message": "Använd för valvkryptering"
   },
   "useForVaultEncryptionInfo": {
-    "message": "Log in and unlock on supported devices without your master password. Follow the prompts from your browser to finalize setup."
+    "message": "Logga in och lås upp utan ditt huvudlösenord på enheter som stöds. Följ anvisningarna från din webbläsare för att slutföra konfigurationen."
   },
   "useForVaultEncryptionErrorReadingPasskey": {
-    "message": "Error reading passkey. Try again or uncheck this option."
+    "message": "Fel när nyckeln skulle läsas. Försök igen eller avmarkera det här alternativet."
   },
   "encryptionNotSupported": {
-    "message": "Encryption not supported"
+    "message": "Kryptering stöds inte"
   },
-  "encryptionNotEnabled": {
-    "message": "Encryption not enabled"
+  "enablePasskeyEncryption": {
+    "message": "Set up encryption"
   },
   "usedForEncryption": {
-    "message": "Used for encryption"
+    "message": "Används för kryptering"
   },
   "loginWithPasskeyEnabled": {
-    "message": "Log in with passkey turned on"
+    "message": "Inloggning med nyckel är aktiverad"
   },
   "passkeySaved": {
-    "message": "$NAME$ saved",
+    "message": "$NAME$ sparad",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -693,16 +693,16 @@
     }
   },
   "passkeyRemoved": {
-    "message": "Passkey removed"
+    "message": "Nyckel borttagen"
   },
   "removePasskey": {
-    "message": "Remove passkey"
+    "message": "Ta bort nyckel"
   },
   "removePasskeyInfo": {
-    "message": "If all passkeys are removed, you will be unable to log into new devices without your master password."
+    "message": "Om alla nycklar tas bort kommer du inte kunna logga in på nya enheter utan ditt huvudlösenord."
   },
   "passkeyLimitReachedInfo": {
-    "message": "Passkey limit reached. Remove a passkey to add another."
+    "message": "Gränsen för antal nycklar har uppnåtts. Ta bort en nyckel innan du lägger till en ny."
   },
   "tryAgain": {
     "message": "Försök igen"
@@ -805,7 +805,7 @@
     "message": "Ett oväntat fel har inträffat."
   },
   "expirationDateError": {
-    "message": "Please select an expiration date that is in the future."
+    "message": "Välj ett utgångsdatum som är i framtiden."
   },
   "emailAddress": {
     "message": "E-postadress"
@@ -1057,7 +1057,7 @@
     "message": "Bekräfta export av valv"
   },
   "confirmSecretsExport": {
-    "message": "Confirm secrets export"
+    "message": "Bekräfta exportering av hemligheter"
   },
   "exportWarningDesc": {
     "message": "Denna export innehåller ditt valv i ett okrypterat format. Du bör inte lagra eller skicka den exporterade filen över osäkra kanaler (t.ex. e-post). Radera den omedelbart när du är färdig med den."
@@ -1074,11 +1074,14 @@
   "export": {
     "message": "Exportera"
   },
+  "exportFrom": {
+    "message": "Export from"
+  },
   "exportVault": {
     "message": "Exportera valv"
   },
   "exportSecrets": {
-    "message": "Export secrets"
+    "message": "Exportera hemligheter"
   },
   "fileFormat": {
     "message": "Filformat"
@@ -1149,6 +1152,9 @@
   },
   "length": {
     "message": "Längd"
+  },
+  "passwordMinLength": {
+    "message": "Minimum password length"
   },
   "uppercase": {
     "message": "Versaler (A-Ö)",
@@ -1519,10 +1525,10 @@
     "message": "Säkra ditt konto genom att kräva ett ytterligare steg vid inloggning."
   },
   "twoStepLoginTeamsDesc": {
-    "message": "Enable two-step login for your organization."
+    "message": "Aktivera tvåstegsverifiering för din organisation."
   },
   "twoStepLoginEnterpriseDescStart": {
-    "message": "Enforce Bitwarden Two-step Login options for members by using the ",
+    "message": "Kräv att medlemmar använder tvåstegsverifiering med hjälp av ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
   "twoStepLoginPolicy": {
@@ -2024,7 +2030,7 @@
     "message": "1 GB krypterad lagring."
   },
   "premiumSignUpTwoStepOptions": {
-    "message": "Proprietary two-step login options such as YubiKey and Duo."
+    "message": "Premium-alternativ för tvåstegsverifiering, såsom YubiKey och Duo."
   },
   "premiumSignUpEmergency": {
     "message": "Nödåtkomst"
@@ -2164,7 +2170,7 @@
     "message": "Avsluta prenumeration"
   },
   "subscriptionExpiration": {
-    "message": "Subscription expiration"
+    "message": "Förfallodatum för prenumeration"
   },
   "subscriptionCanceled": {
     "message": "Prenumerationen har avslutats."
@@ -2673,7 +2679,7 @@
     "message": "Redigera medlem"
   },
   "fieldOnTabRequiresAttention": {
-    "message": "A field on the '$TAB$' tab requires your attention.",
+    "message": "Ett fält på fliken '$TAB$' kräver din uppmärksamhet.",
     "placeholders": {
       "tab": {
         "content": "$1",
@@ -2793,7 +2799,7 @@
     "message": "Ändrade kontolösenord"
   },
   "enabledUpdated2fa": {
-    "message": "Two-step login saved"
+    "message": "Tvåstegsverifiering sparad"
   },
   "disabled2fa": {
     "message": "Inaktiverade tvåstegsverifiering"

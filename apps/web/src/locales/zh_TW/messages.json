@@ -615,7 +615,7 @@
     "message": "Reading passkey..."
   },
   "readingPasskeyLoadingInfo": {
-    "message": "Keep this window open and follow prompts from your browser."
+    "message": "保持此視窗打開，然後按照瀏覽器的提示進行操作。"
   },
   "useADifferentLogInMethod": {
     "message": "Use a different log in method"
@@ -674,8 +674,8 @@
   "encryptionNotSupported": {
     "message": "加密不支援"
   },
-  "encryptionNotEnabled": {
-    "message": "Encryption not enabled"
+  "enablePasskeyEncryption": {
+    "message": "Set up encryption"
   },
   "usedForEncryption": {
     "message": "Used for encryption"
@@ -1074,6 +1074,9 @@
   "export": {
     "message": "匯出"
   },
+  "exportFrom": {
+    "message": "Export from"
+  },
   "exportVault": {
     "message": "匯出密碼庫"
   },
@@ -1149,6 +1152,9 @@
   },
   "length": {
     "message": "長度"
+  },
+  "passwordMinLength": {
+    "message": "Minimum password length"
   },
   "uppercase": {
     "message": "大寫 (A-Z)",
@@ -4625,7 +4631,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or sign up to **try it today.**'"
   },
   "sendAccessCreatorIdentifier": {
-    "message": "Bitwarden member $USER_IDENTIFIER$ shared the following with you",
+    "message": "Bitwarden 成員 $USER_IDENTIFIER$ 與您共用了以下內容",
     "placeholders": {
       "user_identifier": {
         "content": "$1",
@@ -5913,7 +5919,7 @@
     "message": "開啟"
   },
   "off": {
-    "message": "Off"
+    "message": "關閉"
   },
   "members": {
     "message": "成員"

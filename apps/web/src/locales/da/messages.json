@@ -674,8 +674,8 @@
   "encryptionNotSupported": {
     "message": "Kryptering ikke understøttet"
   },
-  "encryptionNotEnabled": {
-    "message": "Kryptering ikke aktiveret"
+  "enablePasskeyEncryption": {
+    "message": "Set up encryption"
   },
   "usedForEncryption": {
     "message": "Bruges til kryptering"
@@ -1074,6 +1074,9 @@
   "export": {
     "message": "Eksportér"
   },
+  "exportFrom": {
+    "message": "Export from"
+  },
   "exportVault": {
     "message": "Eksportér boks"
   },
@@ -1149,6 +1152,9 @@
   },
   "length": {
     "message": "Længde"
+  },
+  "passwordMinLength": {
+    "message": "Minimumslængde på adgangskode"
   },
   "uppercase": {
     "message": "Majuskler (A-Z)",
@@ -7439,6 +7445,6 @@
     "message": "Adgang til samling er begrænset"
   },
   "serviceAccountAccessUpdated": {
-    "message": "Service account access updated"
+    "message": "Tjenestekontoadgang opdateret"
   }
 }

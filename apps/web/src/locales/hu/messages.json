@@ -674,8 +674,8 @@
   "encryptionNotSupported": {
     "message": "A titkosítás nem támogatott."
   },
-  "encryptionNotEnabled": {
-    "message": "A titkosítás nem engedélyezett."
+  "enablePasskeyEncryption": {
+    "message": "Titkosítás beállítása"
   },
   "usedForEncryption": {
     "message": "Használat titkosításhoz"
@@ -1074,6 +1074,9 @@
   "export": {
     "message": "Exportálás"
   },
+  "exportFrom": {
+    "message": "Exportálás innen:"
+  },
   "exportVault": {
     "message": "Széf exportálása"
   },
@@ -1149,6 +1152,9 @@
   },
   "length": {
     "message": "Hossz"
+  },
+  "passwordMinLength": {
+    "message": "Minimum jelszó hosszúság"
   },
   "uppercase": {
     "message": "Nagybetűs (A-Z)",
@@ -7439,6 +7445,6 @@
     "message": "A gyűjtemény elérése korlátozott."
   },
   "serviceAccountAccessUpdated": {
-    "message": "Service account access updated"
+    "message": "A szolgáltatás fiók elérése frissítésre került."
   }
 }

@@ -674,8 +674,8 @@
   "encryptionNotSupported": {
     "message": "Encryptie niet ondersteund"
   },
-  "encryptionNotEnabled": {
-    "message": "Encryption not enabled"
+  "enablePasskeyEncryption": {
+    "message": "Set up encryption"
   },
   "usedForEncryption": {
     "message": "Used for encryption"
@@ -1074,6 +1074,9 @@
   "export": {
     "message": "Exporteren"
   },
+  "exportFrom": {
+    "message": "Exporteren vanuit"
+  },
   "exportVault": {
     "message": "Kluis exporteren"
   },
@@ -1149,6 +1152,9 @@
   },
   "length": {
     "message": "Lengte"
+  },
+  "passwordMinLength": {
+    "message": "Minimale wachtwoordlengte"
   },
   "uppercase": {
     "message": "Hoofdletters (A-Z)",

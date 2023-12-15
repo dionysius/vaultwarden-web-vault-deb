@@ -674,8 +674,8 @@
   "encryptionNotSupported": {
     "message": "Šifrování není podporováno"
   },
-  "encryptionNotEnabled": {
-    "message": "Šifrování nebylo zapnuto"
+  "enablePasskeyEncryption": {
+    "message": "Nastavit šifrování"
   },
   "usedForEncryption": {
     "message": "Použito pro šifrování"
@@ -1074,6 +1074,9 @@
   "export": {
     "message": "Exportovat"
   },
+  "exportFrom": {
+    "message": "Exportovat z"
+  },
   "exportVault": {
     "message": "Exportovat trezor"
   },
@@ -1149,6 +1152,9 @@
   },
   "length": {
     "message": "Délka"
+  },
+  "passwordMinLength": {
+    "message": "Minimální délka hesla"
   },
   "uppercase": {
     "message": "Velká písmena (A-Z)",
@@ -7439,6 +7445,6 @@
     "message": "Přístup ke kolekci je omezen"
   },
   "serviceAccountAccessUpdated": {
-    "message": "Service account access updated"
+    "message": "Přístup účtu služby byl aktualizován"
   }
 }

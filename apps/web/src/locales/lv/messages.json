@@ -674,8 +674,8 @@
   "encryptionNotSupported": {
     "message": "Šifrēšana nav atbalstīta"
   },
-  "encryptionNotEnabled": {
-    "message": "Šifrēšana nav iespējota"
+  "enablePasskeyEncryption": {
+    "message": "Uzstādīt šifrēšanu"
   },
   "usedForEncryption": {
     "message": "Izmantota šifrēšanai"
@@ -1074,6 +1074,9 @@
   "export": {
     "message": "Izgūšana"
   },
+  "exportFrom": {
+    "message": "Izgūt no"
+  },
   "exportVault": {
     "message": "Izgūt glabātavas saturu"
   },
@@ -1149,6 +1152,9 @@
   },
   "length": {
     "message": "Garums"
+  },
+  "passwordMinLength": {
+    "message": "Mazākais pieļaujamais paroles garums"
   },
   "uppercase": {
     "message": "Lielie burti (A-Z)",
@@ -7439,6 +7445,6 @@
     "message": "Piekļuve krājumam ir ierobežota"
   },
   "serviceAccountAccessUpdated": {
-    "message": "Service account access updated"
+    "message": "Pakalpojuma konta piekļuve ir atjaunināta"
   }
 }

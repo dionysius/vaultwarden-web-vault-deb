@@ -674,8 +674,8 @@
   "encryptionNotSupported": {
     "message": "Verschlüsselung nicht unterstützt"
   },
-  "encryptionNotEnabled": {
-    "message": "Verschlüsselung nicht aktiviert"
+  "enablePasskeyEncryption": {
+    "message": "Set up encryption"
   },
   "usedForEncryption": {
     "message": "Wird für die Verschlüsselung verwendet"
@@ -1074,6 +1074,9 @@
   "export": {
     "message": "Exportieren"
   },
+  "exportFrom": {
+    "message": "Export from"
+  },
   "exportVault": {
     "message": "Tresor exportieren"
   },
@@ -1149,6 +1152,9 @@
   },
   "length": {
     "message": "Länge"
+  },
+  "passwordMinLength": {
+    "message": "Minimale Passwortlänge"
   },
   "uppercase": {
     "message": "Großbuchstaben (A-Z)",
@@ -7439,6 +7445,6 @@
     "message": "Zugriff auf Sammlungen ist eingeschränkt"
   },
   "serviceAccountAccessUpdated": {
-    "message": "Service account access updated"
+    "message": "Zugriff zum Dienstkonto aktualisiert"
   }
 }
