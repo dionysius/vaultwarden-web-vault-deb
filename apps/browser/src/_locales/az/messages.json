@@ -268,6 +268,9 @@
   "length": {
     "message": "Uzunluq"
   },
+  "passwordMinLength": {
+    "message": "Minimal parol uzunluğu"
+  },
   "uppercase": {
     "message": "Böyük hərf (A-Z)"
   },
@@ -1034,10 +1037,10 @@
     "message": "Giriş etmiş bütün hesablara aiddir."
   },
   "turnOffBrowserBuiltInPasswordManagerSettings": {
-    "message": "Turn off your browser’s built in password manager settings to avoid conflicts."
+    "message": "Ziddiyyətləri önləmək üçün brauzerinizin daxili parol meneceri ayarlarını söndürün."
   },
   "turnOffBrowserBuiltInPasswordManagerSettingsLink": {
-    "message": "Edit browser settings."
+    "message": "Brauzer ayarlarına düzəliş et."
   },
   "autofillOverlayVisibilityOff": {
     "message": "Bağlı",

@@ -268,6 +268,9 @@
   "length": {
     "message": "الطول"
   },
+  "passwordMinLength": {
+    "message": "Minimum password length"
+  },
   "uppercase": {
     "message": "أحرف كبيرة (من A إلى Z)"
   },
@@ -366,7 +369,7 @@
     "message": "أعدنّ طريقة إلغاء القُفْل لتغيير إجراء مهلة المخزن الخاص بك."
   },
   "unlockMethodNeeded": {
-    "message": "Set up an unlock method in Settings"
+    "message": "إعداد طريقة إلغاء القفل في الإعدادات"
   },
   "rateExtension": {
     "message": "قيِّم هذه الإضافة"
@@ -409,7 +412,7 @@
     "message": "إقفل الآن"
   },
   "lockAll": {
-    "message": "Lock all"
+    "message": "قفل الكل"
   },
   "immediately": {
     "message": "حالاً"
@@ -626,7 +629,7 @@
     "message": "اطلب إضافة عنصر إذا لم يُعثر عليه في خزنتك."
   },
   "addLoginNotificationDescAlt": {
-    "message": "Ask to add an item if one isn't found in your vault. Applies to all logged in accounts."
+    "message": "اطلب إضافة عنصر إذا لم يتم العثور على عنصر في المخزن الخاص بك. ينطبق على جميع حسابات تسجيل الدخول."
   },
   "showCardsCurrentTab": {
     "message": "أظهر البطاقات في صفحة التبويبات"

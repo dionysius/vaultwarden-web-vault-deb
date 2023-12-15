@@ -268,6 +268,9 @@
   "length": {
     "message": "Longueur"
   },
+  "passwordMinLength": {
+    "message": "Minimum password length"
+  },
   "uppercase": {
     "message": "Majuscules (A-Z)"
   },
@@ -1037,10 +1040,10 @@
     "message": "Turn off your browser’s built in password manager settings to avoid conflicts."
   },
   "turnOffBrowserBuiltInPasswordManagerSettingsLink": {
-    "message": "Edit browser settings."
+    "message": "Éditer les paramètres du navigateur."
   },
   "autofillOverlayVisibilityOff": {
-    "message": "Off",
+    "message": "Arrêt",
     "description": "Overlay setting select option for disabling autofill overlay"
   },
   "autofillOverlayVisibilityOnFieldFocus": {
@@ -2518,7 +2521,7 @@
     "description": "Screen reader and tool tip label for the overlay button"
   },
   "bitwardenVault": {
-    "message": "Bitwarden auto-fill menu",
+    "message": "Menu de saisie automatique Bitwarden",
     "description": "Page title in overlay"
   },
   "unlockYourAccountToViewMatchingLogins": {
@@ -2546,7 +2549,7 @@
     "description": "Button text to display in overlay when there are no matching items"
   },
   "addNewVaultItem": {
-    "message": "Add new vault item",
+    "message": "Ajouter un nouvel élément de coffre",
     "description": "Screen reader text (aria-label) for new item button in overlay"
   },
   "bitwardenOverlayMenuAvailable": {
@@ -2609,10 +2612,10 @@
     "message": "Error decrypting the exported file. Your encryption key does not match the encryption key used export the data."
   },
   "invalidFilePassword": {
-    "message": "Invalid file password, please use the password you entered when you created the export file."
+    "message": "Mot de passe du fichier incorrect, veuillez utiliser le mot de passe saisi lors de l'exportation du fichier."
   },
   "importDestination": {
-    "message": "Import destination"
+    "message": "Importer la destination"
   },
   "learnAboutImportOptions": {
     "message": "En savoir plus sur vos options d'importation"
@@ -2634,13 +2637,13 @@
     }
   },
   "importUnassignedItemsError": {
-    "message": "File contains unassigned items."
+    "message": "Le fichier contient des éléments non assignés."
   },
   "selectFormat": {
-    "message": "Select the format of the import file"
+    "message": "Sélectionnez le format du fichier d'import"
   },
   "selectImportFile": {
-    "message": "Select the import file"
+    "message": "Sélectionnez le fichier d'import"
   },
   "chooseFile": {
     "message": "Choisir le fichier"
@@ -2649,7 +2652,7 @@
     "message": "Aucun fichier choisi"
   },
   "orCopyPasteFileContents": {
-    "message": "or copy/paste the import file contents"
+    "message": "ou copiez/collez les contenus du fichier d'importation"
   },
   "instructionsFor": {
     "message": "Instructions $NAME$",
@@ -2767,7 +2770,7 @@
     "message": "En attente de l'authentification SSO"
   },
   "awaitingSSODesc": {
-    "message": "Please continue to log in using your company credentials."
+    "message": "Veuillez continuer à vous connecter en utilisant les identifiants de votre entreprise."
   },
   "seeDetailedInstructions": {
     "message": "Consultez les instructions détaillées sur notre site d'aide à",
@@ -2789,33 +2792,33 @@
     "message": "Insérez la YubiKey associée à votre compte LastPass dans le port USB de votre ordinateur, puis appuyez sur son bouton."
   },
   "switchAccount": {
-    "message": "Switch account"
+    "message": "Basculer le compte"
   },
   "switchAccounts": {
-    "message": "Switch accounts"
+    "message": "Basculer les comptes"
   },
   "switchToAccount": {
-    "message": "Switch to account"
+    "message": "Basculer vers le compte"
   },
   "activeAccount": {
-    "message": "Active account"
+    "message": "Compte actif"
   },
   "accountLimitReached": {
-    "message": "Account limit reached. Log out of an account to add another."
+    "message": "Limite du compte atteinte. Déconnectez-vous d'un compte pour en ajouter un autre."
   },
   "active": {
-    "message": "active"
+    "message": "actif"
   },
   "locked": {
-    "message": "locked"
+    "message": "verrouillé"
   },
   "unlocked": {
-    "message": "unlocked"
+    "message": "déverrouillé"
   },
   "server": {
-    "message": "server"
+    "message": "serveur"
   },
   "hostedAt": {
-    "message": "hosted at"
+    "message": "hébergé sur"
   }
 }

@@ -268,6 +268,9 @@
   "length": {
     "message": "Дужина"
   },
+  "passwordMinLength": {
+    "message": "Минимална дужина лозинке"
+  },
   "uppercase": {
     "message": "Велика слова (A-Z)"
   },
@@ -366,7 +369,7 @@
     "message": "Подесите метод откључавања да бисте променили радњу временског ограничења сефа."
   },
   "unlockMethodNeeded": {
-    "message": "Set up an unlock method in Settings"
+    "message": "Подесите метод откључавања у подешавањима"
   },
   "rateExtension": {
     "message": "Оцени овај додатак"
@@ -409,7 +412,7 @@
     "message": "Закључај одмах"
   },
   "lockAll": {
-    "message": "Lock all"
+    "message": "Закључај све"
   },
   "immediately": {
     "message": "Одмах"
@@ -1034,10 +1037,10 @@
     "message": "Односи се на све пријављене налоге."
   },
   "turnOffBrowserBuiltInPasswordManagerSettings": {
-    "message": "Turn off your browser’s built in password manager settings to avoid conflicts."
+    "message": "Искључите уграђен менаџер лозинки вашег претраживача да бисте избегли сукобе."
   },
   "turnOffBrowserBuiltInPasswordManagerSettingsLink": {
-    "message": "Edit browser settings."
+    "message": "Измените подешавања претраживача."
   },
   "autofillOverlayVisibilityOff": {
     "message": "Искључено",
@@ -1144,7 +1147,7 @@
     "message": "Прикажи препознатљиву слику поред сваке ставке за пријаву."
   },
   "faviconDescAlt": {
-    "message": "Show a recognizable image next to each login. Applies to all logged in accounts."
+    "message": "Приказује препознатљиву слику поред сваке пријаве. Важи за све пријављене налоге."
   },
   "enableBadgeCounter": {
     "message": "Прикажи бедж са бројачем"
@@ -2789,31 +2792,31 @@
     "message": "Унети YubiKey који је асоциран са LastPass налогом у УСБ порт вашег рачунара, и затим додирните његово дугме."
   },
   "switchAccount": {
-    "message": "Switch account"
+    "message": "Промени налог"
   },
   "switchAccounts": {
-    "message": "Switch accounts"
+    "message": "Промени налог"
   },
   "switchToAccount": {
-    "message": "Switch to account"
+    "message": "Пребаците се на налог"
   },
   "activeAccount": {
-    "message": "Active account"
+    "message": "Активан налог"
   },
   "accountLimitReached": {
-    "message": "Account limit reached. Log out of an account to add another."
+    "message": "Граница налога достигнута. Одјавите се од једног налога да би додали други."
   },
   "active": {
-    "message": "active"
+    "message": "активан"
   },
   "locked": {
-    "message": "locked"
+    "message": "закључан"
   },
   "unlocked": {
-    "message": "unlocked"
+    "message": "деблокиран"
   },
   "server": {
-    "message": "server"
+    "message": "сервер"
   },
   "hostedAt": {
     "message": "hosted at"

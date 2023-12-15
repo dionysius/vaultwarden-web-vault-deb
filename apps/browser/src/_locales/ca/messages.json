@@ -268,6 +268,9 @@
   "length": {
     "message": "Longitud"
   },
+  "passwordMinLength": {
+    "message": "Longitud mínima de la contrasenya"
+  },
   "uppercase": {
     "message": "Majúscula (A-Z)"
   },
@@ -366,7 +369,7 @@
     "message": "Configura un mètode de desbloqueig per canviar l'acció del temps d'espera de la caixa forta."
   },
   "unlockMethodNeeded": {
-    "message": "Set up an unlock method in Settings"
+    "message": "Configura un mètode de desbloqueig a Configuració"
   },
   "rateExtension": {
     "message": "Valora aquesta extensió"
@@ -409,7 +412,7 @@
     "message": "Bloqueja ara"
   },
   "lockAll": {
-    "message": "Lock all"
+    "message": "Bloqueja-ho tot"
   },
   "immediately": {
     "message": "Immediatament"
@@ -1034,10 +1037,10 @@
     "message": "S'aplica a tots els comptes connectats."
   },
   "turnOffBrowserBuiltInPasswordManagerSettings": {
-    "message": "Turn off your browser’s built in password manager settings to avoid conflicts."
+    "message": "Desactiveu la configuració integrada del gestor de contrasenyes del vostre navegador per evitar conflictes."
   },
   "turnOffBrowserBuiltInPasswordManagerSettingsLink": {
-    "message": "Edit browser settings."
+    "message": "Edita la configuració del navegador."
   },
   "autofillOverlayVisibilityOff": {
     "message": "Desactivat",
@@ -1144,7 +1147,7 @@
     "message": "Mostra una imatge reconeixible al costat de cada inici de sessió."
   },
   "faviconDescAlt": {
-    "message": "Show a recognizable image next to each login. Applies to all logged in accounts."
+    "message": "Mostra una imatge reconeixible al costat de cada sessió. S'aplica a tots els comptes connectats."
   },
   "enableBadgeCounter": {
     "message": "Mostra el comptador insígnia"
@@ -2789,33 +2792,33 @@
     "message": "Inseriu la YubiKey associada al compte del LastPass al port USB de l'ordinador i, després, toqueu-ne el botó."
   },
   "switchAccount": {
-    "message": "Switch account"
+    "message": "Canvia de compte"
   },
   "switchAccounts": {
-    "message": "Switch accounts"
+    "message": "Canvia de comptes"
   },
   "switchToAccount": {
-    "message": "Switch to account"
+    "message": "Canvia al compte"
   },
   "activeAccount": {
-    "message": "Active account"
+    "message": "Activa el compte"
   },
   "accountLimitReached": {
-    "message": "Account limit reached. Log out of an account to add another."
+    "message": "S'ha arribat al límit del compte. Tanqueu la sessió d'un compte per afegir-ne un altre."
   },
   "active": {
-    "message": "active"
+    "message": "activa"
   },
   "locked": {
-    "message": "locked"
+    "message": "bloquejat"
   },
   "unlocked": {
-    "message": "unlocked"
+    "message": "desbloquejat"
   },
   "server": {
-    "message": "server"
+    "message": "servidor"
   },
   "hostedAt": {
-    "message": "hosted at"
+    "message": "allotjat a"
   }
 }

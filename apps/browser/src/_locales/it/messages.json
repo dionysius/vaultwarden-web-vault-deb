@@ -268,6 +268,9 @@
   "length": {
     "message": "Lunghezza"
   },
+  "passwordMinLength": {
+    "message": "Lunghezza minima della password"
+  },
   "uppercase": {
     "message": "Maiuscole (A-Z)"
   },
@@ -626,7 +629,7 @@
     "message": "Chiedi di aggiungere un nuovo elemento se non ce n'è uno nella tua cassaforte."
   },
   "addLoginNotificationDescAlt": {
-    "message": "Ask to add an item if one isn't found in your vault. Applies to all logged in accounts."
+    "message": "Chiedi di aggiungere un elemento se non è stato trovato nella tua cassaforte. Si applica a tutti i profili connessi."
   },
   "showCardsCurrentTab": {
     "message": "Mostra le carte nella sezione Scheda"
@@ -661,7 +664,7 @@
     "message": "Chiedi di aggiornare la password di un login quando rileviamo che è cambiata su un sito web."
   },
   "changedPasswordNotificationDescAlt": {
-    "message": "Ask to update a login's password when a change is detected on a website. Applies to all logged in accounts."
+    "message": "Chiedi di aggiornare la password di un accesso quando una modifica è rilevata su un sito web. Si applica a tutti i profili connessi."
   },
   "enableUsePasskeys": {
     "message": "Chiedi di salvare e usare le passkey"
@@ -688,7 +691,7 @@
     "message": "Utilizza un secondo clic per accedere alla generazione di password e login corrispondenti per il sito web. "
   },
   "contextMenuItemDescAlt": {
-    "message": "Use a secondary click to access password generation and matching logins for the website. Applies to all logged in accounts."
+    "message": "Utilizza un click secondario per accedere alla generazione della password e agli accessi corrispondenti per il sito web. Si applica a tutti i profili connessi."
   },
   "defaultUriMatchDetection": {
     "message": "Rilevamento corrispondenza URI predefinito",
@@ -704,7 +707,7 @@
     "message": "Cambia lo schema di colori dell'app."
   },
   "themeDescAlt": {
-    "message": "Change the application's color theme. Applies to all logged in accounts."
+    "message": "Modifica il tema del colore dell'applicazione. Si applica a tutti i profili connessi."
   },
   "dark": {
     "message": "Scuro",
@@ -1031,13 +1034,13 @@
     "description": "Represents the message for allowing the user to enable the auto-fill overlay"
   },
   "showAutoFillMenuOnFormFieldsDescAlt": {
-    "message": "Applies to all logged in accounts."
+    "message": "Si applica a tutti i profili connessi."
   },
   "turnOffBrowserBuiltInPasswordManagerSettings": {
-    "message": "Turn off your browser’s built in password manager settings to avoid conflicts."
+    "message": "Disattiva il password manager del tuo browser per evitare conflitti con Bitwarden."
   },
   "turnOffBrowserBuiltInPasswordManagerSettingsLink": {
-    "message": "Edit browser settings."
+    "message": "Modifica le impostazioni del browser."
   },
   "autofillOverlayVisibilityOff": {
     "message": "No",
@@ -1715,7 +1718,7 @@
     "message": "Bitwarden non ti chiederà di aggiungere nuovi login per questi domini. Ricorda di ricaricare la pagina perché le modifiche abbiano effetto."
   },
   "excludedDomainsDescAlt": {
-    "message": "Bitwarden will not ask to save login details for these domains for all logged in accounts. You must refresh the page for changes to take effect."
+    "message": "Bitwarden non chiederà di salvare i dettagli di accesso per questi domini per tutti i profili connessi. Devi aggiornare la pagina perché le modifiche diventino effettive."
   },
   "excludedDomainsInvalidDomain": {
     "message": "$DOMAIN$ non è un dominio valido",
@@ -2279,7 +2282,7 @@
     "message": "Come riempire automaticamente"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Select an item from this screen, use the shortcut $COMMAND$, or explore other options in settings.",
+    "message": "Seleziona un elemento da questa schermata, utilizza la scorciatoia $COMMAND$ o esplora altre opzioni nelle impostazioni.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2288,7 +2291,7 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "Select an item from this screen, or explore other options in settings."
+    "message": "Seleziona un elemento da questa schermata, o esplora altre opzioni nelle impostazioni."
   },
   "gotIt": {
     "message": "Ok"

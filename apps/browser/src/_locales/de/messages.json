@@ -268,6 +268,9 @@
   "length": {
     "message": "Länge"
   },
+  "passwordMinLength": {
+    "message": "Minimale Passwortlänge"
+  },
   "uppercase": {
     "message": "Großbuchstaben (A-Z)"
   },
@@ -366,7 +369,7 @@
     "message": "Richte eine Entsperrmethode ein, um deine Aktion bei Timeout-Timeout zu ändern."
   },
   "unlockMethodNeeded": {
-    "message": "Set up an unlock method in Settings"
+    "message": "Lege eine Entsperrmethode in den Einstellungen fest"
   },
   "rateExtension": {
     "message": "Erweiterung bewerten"
@@ -409,7 +412,7 @@
     "message": "Jetzt sperren"
   },
   "lockAll": {
-    "message": "Lock all"
+    "message": "Alles sperren"
   },
   "immediately": {
     "message": "Sofort"
@@ -1034,10 +1037,10 @@
     "message": "Gilt für alle angemeldeten Konten."
   },
   "turnOffBrowserBuiltInPasswordManagerSettings": {
-    "message": "Turn off your browser’s built in password manager settings to avoid conflicts."
+    "message": "Deaktiviere die Einstellungen des eingebauten Passwort-Managers deines Browsers, um Konflikte zu vermeiden."
   },
   "turnOffBrowserBuiltInPasswordManagerSettingsLink": {
-    "message": "Edit browser settings."
+    "message": "Browsereinstellungen bearbeiten."
   },
   "autofillOverlayVisibilityOff": {
     "message": "Aus",
@@ -1144,7 +1147,7 @@
     "message": "Ein wiedererkennbares Bild neben jeden Zugangsdaten anzeigen."
   },
   "faviconDescAlt": {
-    "message": "Show a recognizable image next to each login. Applies to all logged in accounts."
+    "message": "Ein wiedererkennbares Bild neben jeden Zugangsdaten anzeigen. Gilt für alle angemeldeten Konten."
   },
   "enableBadgeCounter": {
     "message": "Badge-Zähler anzeigen"
@@ -2279,7 +2282,7 @@
     "message": "So funktioniert Auto-Ausfüllen"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Select an item from this screen, use the shortcut $COMMAND$, or explore other options in settings.",
+    "message": "Wähle einen Eintrag von dieser Bildschirmseite, verwende das Tastaturkürzel $COMMAND$ oder entdecke andere Optionen in den Einstellungen.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2288,7 +2291,7 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "Select an item from this screen, or explore other options in settings."
+    "message": "Wähle einen Eintrag von dieser Bildschirmseite oder entdecke andere Optionen in den Einstellungen."
   },
   "gotIt": {
     "message": "Verstanden"
@@ -2789,33 +2792,33 @@
     "message": "Stecke den YubiKey, der mit deinem LastPass Konto verknüpft ist, in den USB-Port deines Computers und drücke dann den Knopf des YubiKey."
   },
   "switchAccount": {
-    "message": "Switch account"
+    "message": "Konto wechseln"
   },
   "switchAccounts": {
-    "message": "Switch accounts"
+    "message": "Konten wechseln"
   },
   "switchToAccount": {
-    "message": "Switch to account"
+    "message": "Zum Konto wechseln"
   },
   "activeAccount": {
-    "message": "Active account"
+    "message": "Aktives Konto"
   },
   "accountLimitReached": {
-    "message": "Account limit reached. Log out of an account to add another."
+    "message": "Kontolimit erreicht. Von einem Konto abmelden, um ein anderes hinzuzufügen."
   },
   "active": {
-    "message": "active"
+    "message": "aktiv"
   },
   "locked": {
-    "message": "locked"
+    "message": "gesperrt"
   },
   "unlocked": {
-    "message": "unlocked"
+    "message": "entsperrt"
   },
   "server": {
-    "message": "server"
+    "message": "Server"
   },
   "hostedAt": {
-    "message": "hosted at"
+    "message": "gehostet in"
   }
 }

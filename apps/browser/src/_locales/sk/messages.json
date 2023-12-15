@@ -268,6 +268,9 @@
   "length": {
     "message": "Dĺžka"
   },
+  "passwordMinLength": {
+    "message": "Minimálna dĺžka hesla"
+  },
   "uppercase": {
     "message": "Veľké písmená (A-Z)"
   },
@@ -1034,10 +1037,10 @@
     "message": "Platí pre všetky prihlásené účty."
   },
   "turnOffBrowserBuiltInPasswordManagerSettings": {
-    "message": "Turn off your browser’s built in password manager settings to avoid conflicts."
+    "message": "Aby sa predišlo konfliktom, vypnite vstavaného správcu hesiel."
   },
   "turnOffBrowserBuiltInPasswordManagerSettingsLink": {
-    "message": "Edit browser settings."
+    "message": "Upraviť nastavenia prehliadača."
   },
   "autofillOverlayVisibilityOff": {
     "message": "Vypnuté",
@@ -2279,7 +2282,7 @@
     "message": "Ako používať automatické vypĺňanie"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Select an item from this screen, use the shortcut $COMMAND$, or explore other options in settings.",
+    "message": "Vyberte položku z ponuky, použite klávesovú skratku $COMMAND$, alebo preskúmajte ďalšie možnosti nastavenia.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2288,7 +2291,7 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "Select an item from this screen, or explore other options in settings."
+    "message": "Vyberte položku z ponuky alebo preskúmajte ďalšie možnosti nastavenia."
   },
   "gotIt": {
     "message": "Chápem"

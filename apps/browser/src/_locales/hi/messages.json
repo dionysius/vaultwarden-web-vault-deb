@@ -92,13 +92,13 @@
     "message": "स्वत:भरण"
   },
   "autoFillLogin": {
-    "message": "Auto-fill login"
+    "message": "स्वचालित लॉगिन विवरण"
   },
   "autoFillCard": {
-    "message": "Auto-fill card"
+    "message": "स्वचालित कार्ड विवरण"
   },
   "autoFillIdentity": {
-    "message": "Auto-fill identity"
+    "message": "स्वचालित पहचान विवरण"
   },
   "generatePasswordCopied": {
     "message": "Generate Password (copied)"
@@ -110,19 +110,19 @@
     "message": "कोई मेल-मिला लॉगिन नहीं |"
   },
   "noCards": {
-    "message": "No cards"
+    "message": "कोई कार्ड उपलब्ध नहीं"
   },
   "noIdentities": {
-    "message": "No identities"
+    "message": "कोई पहचान उपलब्ध नहीं"
   },
   "addLoginMenu": {
-    "message": "Add login"
+    "message": "लॉगिन जोड़ें"
   },
   "addCardMenu": {
-    "message": "Add card"
+    "message": "कार्ड जोड़ें"
   },
   "addIdentityMenu": {
-    "message": "Add identity"
+    "message": "पहचान जोड़ें"
   },
   "unlockVaultMenu": {
     "message": "आपकी तिजोरी का ताला खोलें"
@@ -267,6 +267,9 @@
   },
   "length": {
     "message": "लंबाई"
+  },
+  "passwordMinLength": {
+    "message": "Minimum password length"
   },
   "uppercase": {
     "message": "बड़े अक्षर (A-Z)"
@@ -1034,10 +1037,10 @@
     "message": "Applies to all logged in accounts."
   },
   "turnOffBrowserBuiltInPasswordManagerSettings": {
-    "message": "Turn off your browser’s built in password manager settings to avoid conflicts."
+    "message": "टकराव से बचने के लिए अपने ब्राउज़र की अंतर्निहित पासवर्ड प्रबंधक सेटिंग को बंद करें."
   },
   "turnOffBrowserBuiltInPasswordManagerSettingsLink": {
-    "message": "Edit browser settings."
+    "message": "ब्राउज़र सेटिंग संपादित करें."
   },
   "autofillOverlayVisibilityOff": {
     "message": "Off",

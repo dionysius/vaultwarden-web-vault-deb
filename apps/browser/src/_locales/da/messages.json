@@ -268,6 +268,9 @@
   "length": {
     "message": "Længde"
   },
+  "passwordMinLength": {
+    "message": "Minimumslængde på adgangskode"
+  },
   "uppercase": {
     "message": "Store bogstaver (A-Z)"
   },
@@ -1034,10 +1037,10 @@
     "message": "Gælder for alle indloggede konti."
   },
   "turnOffBrowserBuiltInPasswordManagerSettings": {
-    "message": "Turn off your browser’s built in password manager settings to avoid conflicts."
+    "message": "Slå indstillingerne til webbrowsers indbyggede adgangskodehåndtering fra for at undgå konflikter."
   },
   "turnOffBrowserBuiltInPasswordManagerSettingsLink": {
-    "message": "Edit browser settings."
+    "message": "Redigér webbrowserindstillinger."
   },
   "autofillOverlayVisibilityOff": {
     "message": "Fra",
