@@ -2,6 +2,7 @@ import { VaultFilter } from "@bitwarden/angular/vault/vault-filter/models/vault-
 import { VaultFilterService as BaseVaultFilterService } from "@bitwarden/angular/vault/vault-filter/services/vault-filter.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CollectionService } from "@bitwarden/common/vault/abstractions/collection.service";
@@ -21,6 +22,7 @@ export class VaultFilterService extends BaseVaultFilterService {
     cipherService: CipherService,
     collectionService: CollectionService,
     policyService: PolicyService,
+    private accountService: AccountService,
   ) {
     super(
       stateService,
@@ -32,6 +34,10 @@ export class VaultFilterService extends BaseVaultFilterService {
     );
     this.vaultFilter.myVaultOnly = false;
     this.vaultFilter.selectedOrganizationId = null;
+
+    this.accountService.activeAccount$.subscribe((account) => {
+      this.setVaultFilter(this.allVaults);
+    });
   }
 
   getVaultFilter() {

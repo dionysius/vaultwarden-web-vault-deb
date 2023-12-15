@@ -496,6 +496,7 @@ export default class MainBackground {
       this.cipherService,
       this.collectionService,
       this.policyService,
+      this.accountService,
     );
 
     this.vaultTimeoutService = new VaultTimeoutService(
