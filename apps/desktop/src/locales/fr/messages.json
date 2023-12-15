@@ -403,6 +403,9 @@
   "length": {
     "message": "Longueur"
   },
+  "passwordMinLength": {
+    "message": "Longueur minimale du mot de passe"
+  },
   "uppercase": {
     "message": "Majuscules (A-Z)"
   },
@@ -470,7 +473,7 @@
     "message": "Fichier"
   },
   "selectFile": {
-    "message": "Sélectionnez un fichier."
+    "message": "Sélectionnez un fichier"
   },
   "maxFileSize": {
     "message": "La taille maximale du fichier est de 500 Mo."
@@ -711,7 +714,7 @@
     "message": "URL du serveur d’icônes"
   },
   "environmentSaved": {
-    "message": "Les URLs d'environnement ont été enregistrées."
+    "message": "Les URL d'environnement ont été enregistrées"
   },
   "ok": {
     "message": "Ok"
@@ -2079,7 +2082,7 @@
     "message": "Abonnement Premium requis"
   },
   "organizationIsDisabled": {
-    "message": "L'organisation est désactivée."
+    "message": "L'organisation est désactivée"
   },
   "disabledOrganizationFilterError": {
     "message": "Les éléments des Organisations désactivées ne sont pas accessibles. Contactez le propriétaire de votre Organisation pour obtenir de l'aide."
@@ -2572,7 +2575,7 @@
     "message": "Authentification multifacteur LastPass requise"
   },
   "lastPassMFADesc": {
-    "message": "Enter your one-time passcode from your authentication app"
+    "message": "Entrez votre code d'accès unique depuis votre application d'authentification"
   },
   "lastPassOOBDesc": {
     "message": "Approuvez la demande de connexion dans votre application d'authentification ou saisissez le code d'accès à usage unique."
@@ -2590,7 +2593,7 @@
     "message": "En attente de l'authentification SSO"
   },
   "awaitingSSODesc": {
-    "message": "Please continue to log in using your company credentials."
+    "message": "Veuillez continuer à vous connecter en utilisant les identifiants de votre entreprise."
   },
   "seeDetailedInstructions": {
     "message": "Consultez les instructions détaillées sur notre site d'aide à",
@@ -2603,12 +2606,12 @@
     "message": "Importer depuis un fichier CSV"
   },
   "lastPassTryAgainCheckEmail": {
-    "message": "Try again or look for an email from LastPass to verify it's you."
+    "message": "Essayez à nouveau ou cherchez un courriel de LastPass pour vérifier que c'est vous."
   },
   "collection": {
     "message": "Collection"
   },
   "lastPassYubikeyDesc": {
-    "message": "Insert the YubiKey associated with your LastPass account into your computer's USB port, then touch its button."
+    "message": "Insérez la YubiKey associée à votre compte LastPass dans le port USB de votre ordinateur, puis appuyez sur son bouton."
   }
 }

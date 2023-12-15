@@ -403,6 +403,9 @@
   "length": {
     "message": "Pituus"
   },
+  "passwordMinLength": {
+    "message": "Salasanan vähimmäispituus"
+  },
   "uppercase": {
     "message": "Isot kirjaimet (A-Z)"
   },
@@ -1248,7 +1251,7 @@
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "Tunnistuksen oletustapa",
+    "message": "Oletusarvoinen tunnistustapa",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
@@ -2066,7 +2069,7 @@
     "message": "Luo sähköpostialias ulkoisella ohjauspalvelulla."
   },
   "hostname": {
-    "message": "Osoite",
+    "message": "Isäntä",
     "description": "Part of a URL."
   },
   "apiAccessToken": {
