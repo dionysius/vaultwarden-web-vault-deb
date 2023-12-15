@@ -1,6 +1,6 @@
 import { Input, HostBinding, Directive } from "@angular/core";
 
-export type LinkType = "primary" | "secondary" | "contrast";
+export type LinkType = "primary" | "secondary" | "contrast" | "light";
 
 const linkStyles: Record<LinkType, string[]> = {
   primary: [
@@ -20,6 +20,12 @@ const linkStyles: Record<LinkType, string[]> = {
     "hover:!tw-text-contrast",
     "focus-visible:before:tw-ring-text-contrast",
     "disabled:!tw-text-contrast/60",
+  ],
+  light: [
+    "!tw-text-alt2",
+    "hover:!tw-text-alt2",
+    "focus-visible:before:tw-ring-text-alt2",
+    "disabled:!tw-text-alt2/60",
   ],
 };
 

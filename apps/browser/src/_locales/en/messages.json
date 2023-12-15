@@ -2512,6 +2512,9 @@
     "message": "Turn off master password re-prompt to edit this field",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
+  "skipToContent": {
+    "message": "Skip to content"
+  },
   "bitwardenOverlayButton": {
     "message": "Bitwarden auto-fill menu button",
     "description": "Page title for the iframe containing the overlay button"

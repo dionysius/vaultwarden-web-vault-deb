@@ -1,5 +1,6 @@
 import { RouterTestingModule } from "@angular/router/testing";
 import { Meta, StoryObj, componentWrapperDecorator, moduleMetadata } from "@storybook/angular";
+import { userEvent } from "@storybook/testing-library";
 
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 
@@ -30,6 +31,7 @@ export default {
           provide: I18nService,
           useFactory: () => {
             return new I18nMockService({
+              skipToContent: "Skip to content",
               submenu: "submenu",
               toggleCollapse: "toggle collapse",
             });
@@ -132,6 +134,13 @@ export const WithContent: Story = {
       </bit-layout>
     `,
   }),
+};
+
+export const SkipLinks: Story = {
+  ...WithContent,
+  play: async () => {
+    await userEvent.tab();
+  },
 };
 
 export const Secondary: Story = {
