@@ -10,14 +10,17 @@
     "types": [],
     "baseUrl": ".",
     "paths": {
+      "@bitwarden/admin-console": ["../../libs/admin-console/src"],
       "@bitwarden/angular/*": ["../../libs/angular/src/*"],
       "@bitwarden/auth": ["../../libs/auth/src"],
+      "@bitwarden/billing": ["../../libs/billing/src"],
       "@bitwarden/common/*": ["../../libs/common/src/*"],
       "@bitwarden/components": ["../../libs/components/src"],
       "@bitwarden/exporter/*": ["../../libs/exporter/src/*"],
       "@bitwarden/importer/core": ["../../libs/importer/src"],
       "@bitwarden/importer/ui": ["../../libs/importer/src/components"],
       "@bitwarden/node/*": ["../../libs/node/src/*"],
+      "@bitwarden/platform": ["../../libs/platform/src"],
       "@bitwarden/vault": ["../../libs/vault/src"]
     },
     "useDefineForClassFields": false

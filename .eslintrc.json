@@ -140,6 +140,15 @@
       }
     },
     {
+      "files": ["libs/admin-console/src/**/*.ts"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          { "patterns": ["@bitwarden/admin-console/*", "src/**/*"] }
+        ]
+      }
+    },
+    {
       "files": ["libs/angular/src/**/*.ts"],
       "rules": {
         "no-restricted-imports": ["error", { "patterns": ["@bitwarden/angular/*", "src/**/*"] }]
@@ -149,6 +158,12 @@
       "files": ["libs/auth/src/**/*.ts"],
       "rules": {
         "no-restricted-imports": ["error", { "patterns": ["@bitwarden/auth/*", "src/**/*"] }]
+      }
+    },
+    {
+      "files": ["libs/billing/src/**/*.ts"],
+      "rules": {
+        "no-restricted-imports": ["error", { "patterns": ["@bitwarden/billing/*", "src/**/*"] }]
       }
     },
     {
@@ -182,6 +197,12 @@
       "files": ["libs/node/src/**/*.ts"],
       "rules": {
         "no-restricted-imports": ["error", { "patterns": ["@bitwarden/node/*", "src/**/*"] }]
+      }
+    },
+    {
+      "files": ["libs/platform/src/**/*.ts"],
+      "rules": {
+        "no-restricted-imports": ["error", { "patterns": ["@bitwarden/platform/*", "src/**/*"] }]
       }
     },
     {

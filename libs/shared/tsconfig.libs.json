@@ -2,13 +2,16 @@
   "extends": "./tsconfig",
   "compilerOptions": {
     "paths": {
+      "@bitwarden/admin-console": ["../admin-console/src"],
       "@bitwarden/angular/*": ["../angular/src/*"],
       "@bitwarden/auth": ["../auth/src"],
+      "@bitwarden/billing": ["../billing/src"],
       "@bitwarden/common/*": ["../common/src/*"],
       "@bitwarden/components": ["../components/src"],
       "@bitwarden/exporter/*": ["../exporter/src/*"],
       "@bitwarden/importer/core": ["../importer/src"],
       "@bitwarden/importer/ui": ["../importer/src/components"],
+      "@bitwarden/platform": ["../platform/src"],
       "@bitwarden/node/*": ["../node/src/*"],
       "@bitwarden/vault": ["../vault/src"]
     }

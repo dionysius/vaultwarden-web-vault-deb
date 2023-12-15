@@ -55,11 +55,13 @@ apps/web/src/app/admin-console @bitwarden/team-admin-console-dev
 bitwarden_license/bit-web/src/app/admin-console @bitwarden/team-admin-console-dev
 libs/angular/src/admin-console @bitwarden/team-admin-console-dev
 libs/common/src/admin-console @bitwarden/team-admin-console-dev
+libs/admin-console @bitwarden/team-admin-console-dev
 
 ## Billing team files ##
 apps/web/src/app/billing @bitwarden/team-billing-dev
 libs/angular/src/billing @bitwarden/team-billing-dev
 libs/common/src/billing @bitwarden/team-billing-dev
+libs/billing @bitwarden/team-billing-dev
 
 ## Platform team files ##
 apps/browser/src/platform @bitwarden/team-platform-dev
@@ -70,6 +72,7 @@ libs/angular/src/platform @bitwarden/team-platform-dev
 libs/common/src/platform @bitwarden/team-platform-dev
 libs/common/spec @bitwarden/team-platform-dev
 libs/common/src/state-migrations @bitwarden/team-platform-dev
+libs/platform @bitwarden/team-platform-dev
 # Node-specifc platform files
 libs/node @bitwarden/team-platform-dev
 # Web utils used across app and connectors
