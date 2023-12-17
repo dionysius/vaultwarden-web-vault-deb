@@ -12,7 +12,7 @@ index 6029cfd833..04324b7d19 100644
      </bit-form-field>
      <bit-form-field class="tw-w-1/2" *ngIf="isProvider">
 diff --git a/apps/web/src/app/admin-console/organizations/settings/account.component.html b/apps/web/src/app/admin-console/organizations/settings/account.component.html
-index c7ac9910ac..e03c8fedcb 100644
+index bbce9b2e51..64aeab89f3 100644
 --- a/apps/web/src/app/admin-console/organizations/settings/account.component.html
 +++ b/apps/web/src/app/admin-console/organizations/settings/account.component.html
 @@ -15,7 +15,7 @@
@@ -25,10 +25,10 @@ index c7ac9910ac..e03c8fedcb 100644
        </bit-form-field>
        <bit-form-field>
 diff --git a/apps/web/src/app/app.component.ts b/apps/web/src/app/app.component.ts
-index 97d065c689..7b07888eba 100644
+index 734862081f..0020644e56 100644
 --- a/apps/web/src/app/app.component.ts
 +++ b/apps/web/src/app/app.component.ts
-@@ -183,6 +183,10 @@ export class AppComponent implements OnDestroy, OnInit {
+@@ -180,6 +180,10 @@ export class AppComponent implements OnDestroy, OnInit {
              break;
            }
            case "showToast":
@@ -71,7 +71,7 @@ index 7f13f5e08f..53a0f80e6e 100644
    }
  }
 diff --git a/apps/web/src/app/billing/organizations/organization-plans.component.html b/apps/web/src/app/billing/organizations/organization-plans.component.html
-index 6dd97b1eec..8e01ba7a95 100644
+index 0a925dc228..7e15c4e4d1 100644
 --- a/apps/web/src/app/billing/organizations/organization-plans.component.html
 +++ b/apps/web/src/app/billing/organizations/organization-plans.component.html
 @@ -28,7 +28,7 @@
@@ -84,10 +84,10 @@ index 6dd97b1eec..8e01ba7a95 100644
  >
    <app-org-info
 diff --git a/apps/web/src/app/billing/organizations/organization-plans.component.ts b/apps/web/src/app/billing/organizations/organization-plans.component.ts
-index 9af3296169..458f6efee4 100644
+index afcd9cb18d..940d310b11 100644
 --- a/apps/web/src/app/billing/organizations/organization-plans.component.ts
 +++ b/apps/web/src/app/billing/organizations/organization-plans.component.ts
-@@ -134,6 +134,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
+@@ -140,6 +140,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
    }
  
    async ngOnInit() {
@@ -95,7 +95,7 @@ index 9af3296169..458f6efee4 100644
      if (!this.selfHosted) {
        const plans = await this.apiService.getPlans();
        this.passwordManagerPlans = plans.data.filter((plan) => !!plan.PasswordManager);
-@@ -143,6 +144,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
+@@ -149,6 +150,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
          this.formGroup.controls.businessOwned.setValue(true);
        }
      }
@@ -103,15 +103,15 @@ index 9af3296169..458f6efee4 100644
  
      if (this.hasProvider) {
        this.formGroup.controls.businessOwned.setValue(true);
-@@ -196,6 +198,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
+@@ -215,6 +217,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
    }
  
    get selectableProducts() {
 +    return null;
-     let validPlans = this.passwordManagerPlans.filter((plan) => plan.type !== PlanType.Custom);
- 
-     if (this.formGroup.controls.businessOwned.value) {
-@@ -358,7 +361,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
+     if (this.acceptingSponsorship) {
+       const familyPlan = this.passwordManagerPlans.find(
+         (plan) => plan.type === PlanType.FamiliesAnnually
+@@ -386,7 +389,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
    }
  
    get planOffersSecretsManager() {
@@ -120,7 +120,7 @@ index 9af3296169..458f6efee4 100644
    }
  
    changedProduct() {
-@@ -521,7 +524,9 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
+@@ -563,7 +566,9 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
      request.name = this.formGroup.controls.name.value;
      request.billingEmail = this.formGroup.controls.billingEmail.value;
      request.keys = new OrganizationKeysRequest(orgKeys[0], orgKeys[1].encryptedString);
@@ -130,7 +130,7 @@ index 9af3296169..458f6efee4 100644
      if (this.selectedPlan.type === PlanType.Free) {
        request.planType = PlanType.Free;
      } else {
-@@ -551,7 +556,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
+@@ -593,7 +598,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
  
      // Secrets Manager
      this.buildSecretsManagerRequest(request);
@@ -140,10 +140,10 @@ index 9af3296169..458f6efee4 100644
        const providerRequest = new ProviderOrganizationCreateRequest(
          this.formGroup.controls.clientOwnerEmail.value,
 diff --git a/apps/web/src/app/components/environment-selector/environment-selector.component.ts b/apps/web/src/app/components/environment-selector/environment-selector.component.ts
-index 3c1c5a1973..418471459f 100644
+index bede7a2e14..5846628e44 100644
 --- a/apps/web/src/app/components/environment-selector/environment-selector.component.ts
 +++ b/apps/web/src/app/components/environment-selector/environment-selector.component.ts
-@@ -31,7 +31,7 @@ export class EnvironmentSelectorComponent implements OnInit {
+@@ -21,7 +21,7 @@ export class EnvironmentSelectorComponent implements OnInit {
      const domain = Utils.getDomain(window.location.href);
      this.isEuServer = domain.includes(RegionDomain.EU);
      this.isUsServer = domain.includes(RegionDomain.US) || domain.includes(RegionDomain.USQA);
@@ -195,10 +195,10 @@ index f171217d3c..4ff756e645 100644
        // Workaround to ignore stateService.activeAccount until process.env.URLS are set
        // TODO: Remove this when implementing ticket PM-2637
 diff --git a/apps/web/src/app/core/router.service.ts b/apps/web/src/app/core/router.service.ts
-index 82399d4e49..56e72cdcdb 100644
+index 18656be775..1e08691c72 100644
 --- a/apps/web/src/app/core/router.service.ts
 +++ b/apps/web/src/app/core/router.service.ts
-@@ -23,7 +23,7 @@ export class RouterService {
+@@ -26,7 +26,7 @@ export class RouterService {
        .subscribe((event: NavigationEnd) => {
          this.currentUrl = event.url;
  
@@ -330,43 +330,41 @@ index 7eb8d6cf23..de909d9c14 100644
        this.forwardOptions = this.forwardOptions.filter((forwarder) => forwarder.validForSelfHosted);
      }
 diff --git a/apps/web/src/app/tools/send/access.component.html b/apps/web/src/app/tools/send/access.component.html
-index 634d0bbf40..5b012e9541 100644
+index 7b891f4f6f..3abba92ef4 100644
 --- a/apps/web/src/app/tools/send/access.component.html
 +++ b/apps/web/src/app/tools/send/access.component.html
-@@ -1,7 +1,7 @@
- <form #form (ngSubmit)="load()" [appApiAction]="formPromise" class="container" ngNativeValidate>
-   <div class="row justify-content-center mt-5">
-     <div class="col-12">
--      <h1 class="lead text-center mb-4">Bitwarden Send</h1>
-+      <h1 class="lead text-center mb-4">Vaultwarden Send</h1>
+@@ -2,7 +2,7 @@
+   <div
+     class="tw-mx-auto tw-mt-5 tw-flex tw-max-w-xl tw-flex-col tw-items-center tw-justify-center tw-p-8"
+   >
+-    <img class="logo logo-themed" alt="Bitwarden" />
++    <img class="logo logo-themed" alt="Vaultwarden" />
+     <div class="tw-mt-5 tw-w-full">
+       <h2 bitTypography="h2" class="tw-mb-4 tw-text-center">View Send</h2>
      </div>
-     <div class="col-12 text-center" *ngIf="creatorIdentifier != null">
-       <p>{{ "sendCreatorIdentifier" | i18n : creatorIdentifier }}</p>
-@@ -135,18 +135,7 @@
-       </div>
-     </div>
-     <div class="col-12 text-center mt-5 text-muted">
--      <p class="mb-0">
--        {{ "sendAccessTaglineProductDesc" | i18n }}<br />
+@@ -69,17 +69,6 @@
+     <div class="tw-mt-5 tw-w-10/12 tw-text-center tw-text-muted">
+       <p bitTypography="body2" class="tw-mb-0">
+         {{ "sendAccessTaglineProductDesc" | i18n }}
 -        {{ "sendAccessTaglineLearnMore" | i18n }}
--        <a href="https://www.bitwarden.com/products/send?source=web-vault" target="_blank"
+-        <a
+-          bitLink
+-          href="https://www.bitwarden.com/products/send?source=web-vault"
+-          target="_blank"
+-          rel="noopener noreferrer"
 -          >Bitwarden Send</a
 -        >
 -        {{ "sendAccessTaglineOr" | i18n }}
--        <a href="https://vault.bitwarden.com/#/register" target="_blank">{{
--          "sendAccessTaglineSignUp" | i18n
--        }}</a>
+-        <a bitLink routerLink="/register" target="_blank">{{ "sendAccessTaglineSignUp" | i18n }}</a>
 -        {{ "sendAccessTaglineTryToday" | i18n }}
--      </p>
-+      <p class="mb-0">{{ "sendAccessTaglineProductDesc" | i18n }}<br /></p>
+       </p>
      </div>
    </div>
- </form>
 diff --git a/apps/web/src/app/vault/individual-vault/vault.component.ts b/apps/web/src/app/vault/individual-vault/vault.component.ts
-index aae45d27e2..2f796ed306 100644
+index 9396d6b181..b5340b6a38 100644
 --- a/apps/web/src/app/vault/individual-vault/vault.component.ts
 +++ b/apps/web/src/app/vault/individual-vault/vault.component.ts
-@@ -182,11 +182,7 @@ export class VaultComponent implements OnInit, OnDestroy {
+@@ -187,11 +187,7 @@ export class VaultComponent implements OnInit, OnDestroy {
  
    async ngOnInit() {
      this.showBrowserOutdated = window.navigator.userAgent.indexOf("MSIE") !== -1;
@@ -380,10 +378,10 @@ index aae45d27e2..2f796ed306 100644
      const firstSetup$ = this.route.queryParams.pipe(
        first(),
 diff --git a/apps/web/src/app/vault/org-vault/vault.component.ts b/apps/web/src/app/vault/org-vault/vault.component.ts
-index 22aa277fc2..0fb6473cc6 100644
+index bc6d3bb751..87e6e9f162 100644
 --- a/apps/web/src/app/vault/org-vault/vault.component.ts
 +++ b/apps/web/src/app/vault/org-vault/vault.component.ts
-@@ -156,11 +156,7 @@ export class VaultComponent implements OnInit, OnDestroy {
+@@ -167,11 +167,7 @@ export class VaultComponent implements OnInit, OnDestroy {
    ) {}
  
    async ngOnInit() {
@@ -550,7 +548,7 @@ index 0254636895..9a2ea1e8fb 100644
        { from: "./src/locales", to: "locales" },
        { from: "../../node_modules/qrious/dist/qrious.min.js", to: "scripts" },
 diff --git a/libs/angular/src/auth/components/register.component.ts b/libs/angular/src/auth/components/register.component.ts
-index 0a930ac90b..6b71d987d9 100644
+index a56498bdf0..1dbfe591fc 100644
 --- a/libs/angular/src/auth/components/register.component.ts
 +++ b/libs/angular/src/auth/components/register.component.ts
 @@ -38,7 +38,7 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
