@@ -103,7 +103,7 @@ export class AccountSwitcherComponent implements OnInit, OnDestroy {
       this.messagingService.send("logout");
     }
 
-    this.router.navigate(["account-switcher"]);
+    this.router.navigate(["home"]);
   }
 
   ngOnDestroy() {
