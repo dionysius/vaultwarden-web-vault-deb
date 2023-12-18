@@ -25,6 +25,7 @@ import { DialogService } from "@bitwarden/components";
 })
 export class RegisterFormComponent extends BaseRegisterComponent {
   @Input() queryParamEmail: string;
+  @Input() queryParamFromOrgInvite: boolean;
   @Input() enforcedPolicyOptions: MasterPasswordPolicyOptions;
   @Input() referenceDataValue: ReferenceEventRequest;
 
