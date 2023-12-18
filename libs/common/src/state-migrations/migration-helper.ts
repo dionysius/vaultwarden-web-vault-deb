@@ -123,8 +123,8 @@ export class MigrationHelper {
    * @returns
    */
   private getUserKey(userId: string, keyDefinition: KeyDefinitionLike): string {
-    if (this.currentVersion < 10) {
-      return userKeyBuilderPre10();
+    if (this.currentVersion < 9) {
+      return userKeyBuilderPre9();
     } else {
       return userKeyBuilder(userId, keyDefinition);
     }
@@ -137,8 +137,8 @@ export class MigrationHelper {
    * @returns
    */
   private getGlobalKey(keyDefinition: KeyDefinitionLike): string {
-    if (this.currentVersion < 10) {
-      return globalKeyBuilderPre10();
+    if (this.currentVersion < 9) {
+      return globalKeyBuilderPre9();
     } else {
       return globalKeyBuilder(keyDefinition);
     }
@@ -158,8 +158,8 @@ function userKeyBuilder(userId: string, keyDefinition: KeyDefinitionLike): strin
   return `user_${userId}_${keyDefinition.stateDefinition.name}_${keyDefinition.key}`;
 }
 
-function userKeyBuilderPre10(): string {
-  throw Error("No key builder should be used for versions prior to 10.");
+function userKeyBuilderPre9(): string {
+  throw Error("No key builder should be used for versions prior to 9.");
 }
 
 /**
@@ -174,6 +174,6 @@ function globalKeyBuilder(keyDefinition: KeyDefinitionLike): string {
   return `global_${keyDefinition.stateDefinition.name}_${keyDefinition.key}`;
 }
 
-function globalKeyBuilderPre10(): string {
-  throw Error("No key builder should be used for versions prior to 10.");
+function globalKeyBuilderPre9(): string {
+  throw Error("No key builder should be used for versions prior to 9.");
 }

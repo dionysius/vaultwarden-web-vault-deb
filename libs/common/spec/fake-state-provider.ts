@@ -4,6 +4,9 @@ import {
   KeyDefinition,
   ActiveUserState,
   SingleUserState,
+  SingleUserStateProvider,
+  StateProvider,
+  ActiveUserStateProvider,
 } from "../src/platform/state";
 import { UserId } from "../src/types/guid";
 
@@ -26,7 +29,7 @@ export class FakeGlobalStateProvider implements GlobalStateProvider {
   }
 }
 
-export class FakeSingleUserStateProvider {
+export class FakeSingleUserStateProvider implements SingleUserStateProvider {
   states: Map<string, SingleUserState<unknown>> = new Map();
   get<T>(userId: UserId, keyDefinition: KeyDefinition<T>): SingleUserState<T> {
     let result = this.states.get(keyDefinition.buildCacheKey("user", userId)) as SingleUserState<T>;
@@ -43,7 +46,7 @@ export class FakeSingleUserStateProvider {
   }
 }
 
-export class FakeActiveUserStateProvider {
+export class FakeActiveUserStateProvider implements ActiveUserStateProvider {
   states: Map<string, ActiveUserState<unknown>> = new Map();
   get<T>(keyDefinition: KeyDefinition<T>): ActiveUserState<T> {
     let result = this.states.get(
@@ -60,4 +63,22 @@ export class FakeActiveUserStateProvider {
   getFake<T>(keyDefinition: KeyDefinition<T>): FakeActiveUserState<T> {
     return this.get(keyDefinition) as FakeActiveUserState<T>;
   }
+}
+
+export class FakeStateProvider implements StateProvider {
+  getActive<T>(keyDefinition: KeyDefinition<T>): ActiveUserState<T> {
+    return this.activeUser.get(keyDefinition);
+  }
+
+  getGlobal<T>(keyDefinition: KeyDefinition<T>): GlobalState<T> {
+    return this.global.get(keyDefinition);
+  }
+
+  getUser<T>(userId: UserId, keyDefinition: KeyDefinition<T>): SingleUserState<T> {
+    return this.singleUser.get(userId, keyDefinition);
+  }
+
+  global: FakeGlobalStateProvider = new FakeGlobalStateProvider();
+  singleUser: FakeSingleUserStateProvider = new FakeSingleUserStateProvider();
+  activeUser: FakeActiveUserStateProvider = new FakeActiveUserStateProvider();
 }
