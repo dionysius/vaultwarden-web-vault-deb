@@ -1554,13 +1554,11 @@ export class StateService<
   }
 
   async getAutoFillOverlayVisibility(options?: StorageOptions): Promise<number> {
-    return (
-      (
-        await this.getGlobals(
-          this.reconcileOptions(options, await this.defaultOnDiskLocalOptions()),
-        )
-      )?.autoFillOverlayVisibility ?? AutofillOverlayVisibility.OnFieldFocus
-    );
+    const locallyStoredOptions = await this.defaultOnDiskLocalOptions();
+    const reconciledOptions = this.reconcileOptions(options, locallyStoredOptions);
+    const globals = await this.getGlobals(reconciledOptions);
+
+    return globals?.autoFillOverlayVisibility ?? AutofillOverlayVisibility.Off;
   }
 
   async setAutoFillOverlayVisibility(value: number, options?: StorageOptions): Promise<void> {
