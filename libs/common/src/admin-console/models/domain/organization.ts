@@ -68,6 +68,10 @@ export class Organization {
    * Refers to the ability for an organization to limit collection creation and deletion to owners and admins only
    */
   limitCollectionCreationDeletion: boolean;
+  /**
+   * Refers to the ability for an owner/admin to access all collection items, regardless of assigned collections
+   */
+  allowAdminAccessToAllCollectionItems: boolean;
 
   constructor(obj?: OrganizationData) {
     if (obj == null) {
@@ -120,6 +124,7 @@ export class Organization {
     this.familySponsorshipToDelete = obj.familySponsorshipToDelete;
     this.accessSecretsManager = obj.accessSecretsManager;
     this.limitCollectionCreationDeletion = obj.limitCollectionCreationDeletion;
+    this.allowAdminAccessToAllCollectionItems = obj.allowAdminAccessToAllCollectionItems;
   }
 
   get canAccess() {
