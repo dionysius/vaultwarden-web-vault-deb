@@ -63,9 +63,20 @@ import { MultithreadEncryptServiceImplementation } from "@bitwarden/common/platf
 import { FileUploadService } from "@bitwarden/common/platform/services/file-upload/file-upload.service";
 import { SystemService } from "@bitwarden/common/platform/services/system.service";
 import { WebCryptoFunctionService } from "@bitwarden/common/platform/services/web-crypto-function.service";
-import { GlobalStateProvider } from "@bitwarden/common/platform/state";
+import {
+  ActiveUserStateProvider,
+  GlobalStateProvider,
+  SingleUserStateProvider,
+  StateProvider,
+} from "@bitwarden/common/platform/state";
+// eslint-disable-next-line import/no-restricted-paths -- We need the implementation to inject, but generally this should not be accessed
+import { DefaultActiveUserStateProvider } from "@bitwarden/common/platform/state/implementations/default-active-user-state.provider";
 // eslint-disable-next-line import/no-restricted-paths -- We need the implementation to inject, but generally this should not be accessed
 import { DefaultGlobalStateProvider } from "@bitwarden/common/platform/state/implementations/default-global-state.provider";
+// eslint-disable-next-line import/no-restricted-paths -- We need the implementation to inject, but generally this should not be accessed
+import { DefaultSingleUserStateProvider } from "@bitwarden/common/platform/state/implementations/default-single-user-state.provider";
+// eslint-disable-next-line import/no-restricted-paths -- We need the implementation to inject, but generally this should not be accessed
+import { DefaultStateProvider } from "@bitwarden/common/platform/state/implementations/default-state.provider";
 import { AvatarUpdateService } from "@bitwarden/common/services/account/avatar-update.service";
 import { ApiService } from "@bitwarden/common/services/api.service";
 import { AuditService } from "@bitwarden/common/services/audit.service";
@@ -234,6 +245,9 @@ export default class MainBackground {
   authRequestCryptoService: AuthRequestCryptoServiceAbstraction;
   accountService: AccountServiceAbstraction;
   globalStateProvider: GlobalStateProvider;
+  singleUserStateProvider: SingleUserStateProvider;
+  activeUserStateProvider: ActiveUserStateProvider;
+  stateProvider: StateProvider;
   fido2Service: Fido2ServiceAbstraction;
 
   // Passed to the popup for Safari to workaround issues with theming, downloading, etc.
@@ -294,9 +308,34 @@ export default class MainBackground {
       this.memoryStorageService as BackgroundMemoryStorageService,
       this.storageService as BrowserLocalStorageService,
     );
+
+    this.encryptService = flagEnabled("multithreadDecryption")
+      ? new MultithreadEncryptServiceImplementation(
+          this.cryptoFunctionService,
+          this.logService,
+          true,
+        )
+      : new EncryptServiceImplementation(this.cryptoFunctionService, this.logService, true);
+
+    this.singleUserStateProvider = new DefaultSingleUserStateProvider(
+      this.encryptService,
+      this.memoryStorageService as BackgroundMemoryStorageService,
+      this.storageService as BrowserLocalStorageService,
+    );
     this.accountService = new AccountServiceImplementation(
       this.messagingService,
       this.logService,
+      this.globalStateProvider,
+    );
+    this.activeUserStateProvider = new DefaultActiveUserStateProvider(
+      this.accountService,
+      this.encryptService,
+      this.memoryStorageService as BackgroundMemoryStorageService,
+      this.storageService as BrowserLocalStorageService,
+    );
+    this.stateProvider = new DefaultStateProvider(
+      this.activeUserStateProvider,
+      this.singleUserStateProvider,
       this.globalStateProvider,
     );
     this.stateService = new BrowserStateService(
@@ -330,13 +369,7 @@ export default class MainBackground {
       window,
     );
     this.i18nService = new BrowserI18nService(BrowserApi.getUILanguage(), this.stateService);
-    this.encryptService = flagEnabled("multithreadDecryption")
-      ? new MultithreadEncryptServiceImplementation(
-          this.cryptoFunctionService,
-          this.logService,
-          true,
-        )
-      : new EncryptServiceImplementation(this.cryptoFunctionService, this.logService, true);
+
     this.cryptoService = new BrowserCryptoService(
       this.cryptoFunctionService,
       this.encryptService,
