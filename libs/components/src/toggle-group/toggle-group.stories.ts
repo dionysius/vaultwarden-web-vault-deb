@@ -33,17 +33,17 @@ export const Default: Story = {
     template: `
       <bit-toggle-group [(selected)]="selected" aria-label="People list filter">
         <bit-toggle value="all">
-          All <span bitBadge badgeType="info">3</span>
+          All <span bitBadge variant="info">3</span>
         </bit-toggle>
-  
+
         <bit-toggle value="invited">
           Invited
         </bit-toggle>
-  
+
         <bit-toggle value="accepted">
-          Accepted <span bitBadge badgeType="info">2</span>
+          Accepted <span bitBadge variant="info">2</span>
         </bit-toggle>
-  
+
         <bit-toggle value="deactivated">
           Deactivated
         </bit-toggle>

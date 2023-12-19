@@ -63,7 +63,7 @@
         <dt>{{ "status" | i18n }}</dt>
         <dd>
           <span class="text-capitalize">{{ (subscription && subscription.status) || "-" }}</span>
-          <span bitBadge badgeType="warning" *ngIf="subscriptionMarkedForCancel">{{
+          <span bitBadge variant="warning" *ngIf="subscriptionMarkedForCancel">{{
             "pendingCancellation" | i18n
           }}</span>
         </dd>

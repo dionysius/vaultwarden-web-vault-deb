@@ -12,10 +12,10 @@
         data.orgDomain.domainName
       }}</span>
 
-      <span *ngIf="data?.orgDomain && !data.orgDomain?.verifiedDate" bitBadge badgeType="warning">{{
+      <span *ngIf="data?.orgDomain && !data.orgDomain?.verifiedDate" bitBadge variant="warning">{{
         "domainStatusUnverified" | i18n
       }}</span>
-      <span *ngIf="data?.orgDomain && data?.orgDomain?.verifiedDate" bitBadge badgeType="success">{{
+      <span *ngIf="data?.orgDomain && data?.orgDomain?.verifiedDate" bitBadge variant="success">{{
         "domainStatusVerified" | i18n
       }}</span>
     </span>

@@ -41,10 +41,10 @@
               </button>
             </td>
             <td bitCell>
-              <span *ngIf="!orgDomain?.verifiedDate" bitBadge badgeType="warning">{{
+              <span *ngIf="!orgDomain?.verifiedDate" bitBadge variant="warning">{{
                 "domainStatusUnverified" | i18n
               }}</span>
-              <span *ngIf="orgDomain?.verifiedDate" bitBadge badgeType="success">{{
+              <span *ngIf="orgDomain?.verifiedDate" bitBadge variant="success">{{
                 "domainStatusVerified" | i18n
               }}</span>
             </td>

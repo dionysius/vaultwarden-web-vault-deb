@@ -7,7 +7,7 @@ import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/pass
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CipherType } from "@bitwarden/common/vault/enums";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
-import { BadgeTypes } from "@bitwarden/components";
+import { BadgeVariant } from "@bitwarden/components";
 import { PasswordRepromptService } from "@bitwarden/vault";
 
 import { CipherReportComponent } from "./cipher-report.component";
@@ -17,7 +17,7 @@ import { CipherReportComponent } from "./cipher-report.component";
   templateUrl: "weak-passwords-report.component.html",
 })
 export class WeakPasswordsReportComponent extends CipherReportComponent implements OnInit {
-  passwordStrengthMap = new Map<string, [string, BadgeTypes]>();
+  passwordStrengthMap = new Map<string, [string, BadgeVariant]>();
   disabled = true;
 
   private passwordStrengthCache = new Map<string, number>();
@@ -118,7 +118,7 @@ export class WeakPasswordsReportComponent extends CipherReportComponent implemen
     return c.login.password + "_____" + (this.isUserNameNotEmpty(c) ? c.login.username : "");
   }
 
-  private scoreKey(score: number): [string, BadgeTypes] {
+  private scoreKey(score: number): [string, BadgeVariant] {
     switch (score) {
       case 4:
         return ["strong", "success"];

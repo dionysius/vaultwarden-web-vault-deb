@@ -8,17 +8,17 @@
     >
       <bit-toggle [value]="null">
         {{ "all" | i18n }}
-        <span bitBadge badgeType="info" *ngIf="allCount">{{ allCount }}</span>
+        <span bitBadge variant="info" *ngIf="allCount">{{ allCount }}</span>
       </bit-toggle>
 
       <bit-toggle [value]="userStatusType.Invited">
         {{ "invited" | i18n }}
-        <span bitBadge badgeType="info" *ngIf="invitedCount">{{ invitedCount }}</span>
+        <span bitBadge variant="info" *ngIf="invitedCount">{{ invitedCount }}</span>
       </bit-toggle>
 
       <bit-toggle [value]="userStatusType.Accepted">
         {{ "accepted" | i18n }}
-        <span bitBadge badgeType="warning" *ngIf="acceptedCount">{{ acceptedCount }}</span>
+        <span bitBadge variant="warning" *ngIf="acceptedCount">{{ acceptedCount }}</span>
       </bit-toggle>
     </bit-toggle-group>
 
@@ -120,10 +120,10 @@
           </td>
           <td>
             <a href="#" appStopClick (click)="edit(u)">{{ u.email }}</a>
-            <span bitBadge badgeType="secondary" *ngIf="u.status === userStatusType.Invited">{{
+            <span bitBadge variant="secondary" *ngIf="u.status === userStatusType.Invited">{{
               "invited" | i18n
             }}</span>
-            <span bitBadge badgeType="warning" *ngIf="u.status === userStatusType.Accepted">{{
+            <span bitBadge variant="warning" *ngIf="u.status === userStatusType.Accepted">{{
               "accepted" | i18n
             }}</span>
             <small class="text-muted d-block" *ngIf="u.name">{{ u.name }}</small>

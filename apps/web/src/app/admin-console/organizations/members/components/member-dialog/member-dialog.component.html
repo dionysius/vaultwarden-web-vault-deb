@@ -5,7 +5,7 @@
       <span class="tw-text-sm tw-normal-case tw-text-muted" *ngIf="!loading && params.name">{{
         params.name
       }}</span>
-      <span bitBadge badgeType="secondary" *ngIf="isRevoked">{{ "revoked" | i18n }}</span>
+      <span bitBadge variant="secondary" *ngIf="isRevoked">{{ "revoked" | i18n }}</span>
     </span>
     <div bitDialogContent>
       <ng-container *ngIf="loading">

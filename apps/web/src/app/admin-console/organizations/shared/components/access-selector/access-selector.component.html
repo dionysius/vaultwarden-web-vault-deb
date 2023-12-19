@@ -63,7 +63,7 @@
           <div class="tw-flex tw-flex-col">
             <div>
               {{ item.labelName }}
-              <span *ngIf="$any(item).status == 0" bitBadge badgeType="secondary">
+              <span *ngIf="$any(item).status == 0" bitBadge variant="secondary">
                 {{ "invited" | i18n }}
               </span>
             </div>

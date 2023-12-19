@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges } from "@angular/core";
 
-import { BadgeTypes } from "../badge";
+import { BadgeVariant } from "../badge";
 
 @Component({
   selector: "bit-badge-list",
@@ -12,7 +12,7 @@ export class BadgeListComponent implements OnChanges {
   protected filteredItems: string[] = [];
   protected isFiltered = false;
 
-  @Input() badgeType: BadgeTypes = "primary";
+  @Input() variant: BadgeVariant = "primary";
   @Input() items: string[] = [];
   @Input() truncate = true;
 

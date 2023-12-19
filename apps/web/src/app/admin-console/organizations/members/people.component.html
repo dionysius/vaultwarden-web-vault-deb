@@ -8,22 +8,22 @@
         [attr.aria-label]="'memberStatusFilter' | i18n"
       >
         <bit-toggle [value]="null">
-          {{ "all" | i18n }} <span bitBadge badgeType="info" *ngIf="allCount">{{ allCount }}</span>
+          {{ "all" | i18n }} <span bitBadge variant="info" *ngIf="allCount">{{ allCount }}</span>
         </bit-toggle>
 
         <bit-toggle [value]="userStatusType.Invited">
           {{ "invited" | i18n }}
-          <span bitBadge badgeType="info" *ngIf="invitedCount">{{ invitedCount }}</span>
+          <span bitBadge variant="info" *ngIf="invitedCount">{{ invitedCount }}</span>
         </bit-toggle>
 
         <bit-toggle [value]="userStatusType.Accepted">
           {{ "needsConfirmation" | i18n }}
-          <span bitBadge badgeType="info" *ngIf="acceptedCount">{{ acceptedCount }}</span>
+          <span bitBadge variant="info" *ngIf="acceptedCount">{{ acceptedCount }}</span>
         </bit-toggle>
 
         <bit-toggle [value]="userStatusType.Revoked">
           {{ "revoked" | i18n }}
-          <span bitBadge badgeType="info" *ngIf="revokedCount">{{ revokedCount }}</span>
+          <span bitBadge variant="info" *ngIf="revokedCount">{{ revokedCount }}</span>
         </bit-toggle>
       </bit-toggle-group>
 
@@ -160,21 +160,21 @@
                     <span
                       bitBadge
                       class="tw-text-xs"
-                      badgeType="secondary"
+                      variant="secondary"
                       *ngIf="u.status === userStatusType.Invited"
                       >{{ "invited" | i18n }}</span
                     >
                     <span
                       bitBadge
                       class="tw-text-xs"
-                      badgeType="warning"
+                      variant="warning"
                       *ngIf="u.status === userStatusType.Accepted"
                       >{{ "needsConfirmation" | i18n }}</span
                     >
                     <span
                       bitBadge
                       class="tw-text-xs"
-                      badgeType="secondary"
+                      variant="secondary"
                       *ngIf="u.status === userStatusType.Revoked"
                       >{{ "revoked" | i18n }}</span
                     >
@@ -195,7 +195,7 @@
                 *ngIf="organization.useGroups || !u.accessAll"
                 [items]="organization.useGroups ? u.groupNames : u.collectionNames"
                 [maxItems]="3"
-                badgeType="secondary"
+                variant="secondary"
               ></bit-badge-list>
               <span *ngIf="!organization.useGroups && u.accessAll">{{ "all" | i18n }}</span>
             </td>

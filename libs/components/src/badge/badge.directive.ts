@@ -1,8 +1,8 @@
 import { Directive, ElementRef, HostBinding, Input } from "@angular/core";
 
-export type BadgeTypes = "primary" | "secondary" | "success" | "danger" | "warning" | "info";
+export type BadgeVariant = "primary" | "secondary" | "success" | "danger" | "warning" | "info";
 
-const styles: Record<BadgeTypes, string[]> = {
+const styles: Record<BadgeVariant, string[]> = {
   primary: ["tw-bg-primary-500"],
   secondary: ["tw-bg-text-muted"],
   success: ["tw-bg-success-500"],
@@ -11,7 +11,7 @@ const styles: Record<BadgeTypes, string[]> = {
   info: ["tw-bg-info-500"],
 };
 
-const hoverStyles: Record<BadgeTypes, string[]> = {
+const hoverStyles: Record<BadgeVariant, string[]> = {
   primary: ["hover:tw-bg-primary-700"],
   secondary: ["hover:tw-bg-secondary-700"],
   success: ["hover:tw-bg-success-700"],
@@ -44,15 +44,22 @@ export class BadgeDirective {
       "focus:tw-ring-offset-2",
       "focus:tw-ring-primary-700",
     ]
-      .concat(styles[this.badgeType])
-      .concat(this.hasHoverEffects ? hoverStyles[this.badgeType] : [])
+      .concat(styles[this.variant])
+      .concat(this.hasHoverEffects ? hoverStyles[this.variant] : [])
       .concat(this.truncate ? ["tw-truncate", "tw-max-w-40"] : []);
   }
   @HostBinding("attr.title") get title() {
     return this.truncate ? this.el.nativeElement.textContent.trim() : null;
   }
 
-  @Input() badgeType: BadgeTypes = "primary";
+  /**
+   * Variant, sets the background color of the badge.
+   */
+  @Input() variant: BadgeVariant = "primary";
+
+  /**
+   * Truncate long text
+   */
   @Input() truncate = true;
 
   private hasHoverEffects = false;

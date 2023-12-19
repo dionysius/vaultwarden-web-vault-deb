@@ -13,7 +13,7 @@ export default {
     }),
   ],
   args: {
-    badgeType: "primary",
+    variant: "primary",
     truncate: false,
   },
   parameters: {
@@ -30,11 +30,11 @@ export const Primary: Story = {
   render: (args) => ({
     props: args,
     template: `
-      <span class="tw-text-main">Span </span><span bitBadge [badgeType]="badgeType" [truncate]="truncate">Badge containing lengthy text</span>
+      <span class="tw-text-main">Span </span><span bitBadge [variant]="variant" [truncate]="truncate">Badge containing lengthy text</span>
       <br><br>
-      <span class="tw-text-main">Link </span><a href="#" bitBadge [badgeType]="badgeType" [truncate]="truncate">Badge</a>
+      <span class="tw-text-main">Link </span><a href="#" bitBadge [variant]="variant" [truncate]="truncate">Badge</a>
       <br><br>
-      <span class="tw-text-main">Button </span><button bitBadge [badgeType]="badgeType" [truncate]="truncate">Badge</button>
+      <span class="tw-text-main">Button </span><button bitBadge [variant]="variant" [truncate]="truncate">Badge</button>
     `,
   }),
 };
@@ -42,35 +42,35 @@ export const Primary: Story = {
 export const Secondary: Story = {
   ...Primary,
   args: {
-    badgeType: "secondary",
+    variant: "secondary",
   },
 };
 
 export const Success: Story = {
   ...Primary,
   args: {
-    badgeType: "success",
+    variant: "success",
   },
 };
 
 export const Danger: Story = {
   ...Primary,
   args: {
-    badgeType: "danger",
+    variant: "danger",
   },
 };
 
 export const Warning: Story = {
   ...Primary,
   args: {
-    badgeType: "warning",
+    variant: "warning",
   },
 };
 
 export const Info: Story = {
   ...Primary,
   args: {
-    badgeType: "info",
+    variant: "info",
   },
 };
 

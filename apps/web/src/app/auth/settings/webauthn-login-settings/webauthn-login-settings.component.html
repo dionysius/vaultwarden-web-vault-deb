@@ -4,21 +4,21 @@
     <span
       *ngIf="requireSsoPolicyEnabled"
       bitBadge
-      badgeType="secondary"
+      variant="secondary"
       class="tw-max-w-full !tw-align-middle"
     >
       {{ "off" | i18n }} - {{ "ssoLoginIsRequired" | i18n }}
     </span>
     <ng-container *ngIf="!requireSsoPolicyEnabled">
-      <span *ngIf="hasCredentials" bitBadge badgeType="success" class="!tw-align-middle">{{
+      <span *ngIf="hasCredentials" bitBadge variant="success" class="!tw-align-middle">{{
         "on" | i18n
       }}</span>
-      <span *ngIf="!hasCredentials" bitBadge badgeType="secondary" class="!tw-align-middle">{{
+      <span *ngIf="!hasCredentials" bitBadge variant="secondary" class="!tw-align-middle">{{
         "off" | i18n
       }}</span>
     </ng-container>
   </ng-container>
-  <span bitBadge badgeType="warning" class="!tw-align-middle">{{ "beta" | i18n }}</span>
+  <span bitBadge variant="warning" class="!tw-align-middle">{{ "beta" | i18n }}</span>
   <ng-container *ngIf="loading">
     <i class="bwi bwi-spinner bwi-spin tw-ml-1" aria-hidden="true"></i>
   </ng-container>
