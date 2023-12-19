@@ -34,7 +34,7 @@ export class ImportWebComponent implements OnInit {
    * Callback that is called after a successful import.
    */
   protected async onSuccessfulImport(organizationId: string): Promise<void> {
-    if (!organizationId) {
+    if (!this.routeOrgId) {
       await this.router.navigate(["vault"]);
       return;
     }
