@@ -353,6 +353,18 @@ export class SyncService implements SyncServiceAbstraction {
     const acctDecryptionOpts: AccountDecryptionOptions =
       await this.stateService.getAccountDecryptionOptions();
 
+    // Account decryption options should never be null or undefined b/c it is always initialized
+    // during the processing of the ID token response, but there might be a state issue
+    // where it is being overwritten with undefined affecting browser extension + FireFox users.
+    // TODO: Consider removing this once we figure out the root cause of the state issue or after the state provider refactor.
+    if (acctDecryptionOpts === null || acctDecryptionOpts === undefined) {
+      this.logService.error("Sync: Account decryption options are null or undefined.");
+      // Early return as a bandaid to allow the rest of the sync to continue so users can access
+      // their data that they might have added from another device.
+      // Otherwise, trying to access properties on undefined below will throw an error.
+      return;
+    }
+
     // Even though TDE users should only be in a single org (per single org policy), check
     // through all orgs for the manageResetPassword permission. If they have it in any org,
     // they should be forced to set a password.
