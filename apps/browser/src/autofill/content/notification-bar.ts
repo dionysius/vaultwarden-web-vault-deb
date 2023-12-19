@@ -87,6 +87,7 @@ async function loadNotificationBar() {
 
   // Look up the active user id from storage
   const activeUserIdKey = "activeUserId";
+  const globalStorageKey = "global";
   let activeUserId: string;
 
   const activeUserStorageValue = await getFromLocalStorage(activeUserIdKey);
@@ -98,7 +99,9 @@ async function loadNotificationBar() {
   const userSettingsStorageValue = await getFromLocalStorage(activeUserId);
   if (userSettingsStorageValue[activeUserId]) {
     const userSettings: UserSettings = userSettingsStorageValue[activeUserId].settings;
-    const globalSettings: GlobalSettings = await getFromLocalStorage("global");
+    const globalSettings: GlobalSettings = (await getFromLocalStorage(globalStorageKey))[
+      globalStorageKey
+    ];
 
     // Do not show the notification bar on the Bitwarden vault
     // because they can add logins and change passwords there
