@@ -49,7 +49,7 @@ windows = { version = "=0.51.1", features = [
 keytar = "=0.1.6"
 
 [target.'cfg(target_os = "macos")'.dependencies]
-core-foundation = "=0.9.3"
+core-foundation = "=0.9.4"
 security-framework = "=2.9.2"
 security-framework-sys = "=2.9.1"
 
