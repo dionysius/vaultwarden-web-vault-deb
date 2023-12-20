@@ -98,8 +98,12 @@ jobs:
       - setup
     runs-on: ubuntu-22.04
     if: always()
+    outputs:
+      channel_id: ${{ steps.slack-message.outputs.channel_id }}
+      ts: ${{ steps.slack-message.outputs.ts }}
     steps:
       - uses: bitwarden/gh-actions/report-deployment-status-to-slack@main
+        id: slack-message
         with:
           project: Clients
           environment: ${{ needs.setup.outputs.environment-name }}
@@ -242,6 +246,7 @@ jobs:
     runs-on: ubuntu-22.04
     if: always()
     needs:
+      - notify-start
       - azure-deploy
       - setup
     steps:
@@ -250,7 +255,8 @@ jobs:
           project: Clients
           environment: ${{ needs.setup.outputs.environment-name }}
           tag: ${{ inputs.branch-or-tag }}
-          slack-channel: team-eng-qa-devops
+          slack-channel: ${{ needs.notify-start.outputs.channel_id }}
           event: ${{ needs.azure-deploy.result }}
           url: https://github.com/bitwarden/clients/actions/runs/${{ github.run_id }}
+          update-ts: ${{ needs.notify-start.outputs.ts }}
           AZURE_KV_CI_SERVICE_PRINCIPAL: ${{ secrets.AZURE_KV_CI_SERVICE_PRINCIPAL }}
