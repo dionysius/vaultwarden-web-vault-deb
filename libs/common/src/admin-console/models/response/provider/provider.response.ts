@@ -5,6 +5,7 @@ export class ProviderResponse extends BaseResponse {
   name: string;
   businessName: string;
   billingEmail: string;
+  creationDate: Date;
 
   constructor(response: any) {
     super(response);
@@ -12,5 +13,6 @@ export class ProviderResponse extends BaseResponse {
     this.name = this.getResponseProperty("Name");
     this.businessName = this.getResponseProperty("BusinessName");
     this.billingEmail = this.getResponseProperty("BillingEmail");
+    this.creationDate = this.getResponseProperty("CreationDate");
   }
 }
