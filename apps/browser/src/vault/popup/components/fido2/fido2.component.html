@@ -130,10 +130,7 @@
         </button>
       </ng-container>
     </ng-container>
-    <div class="useBrowserlink">
-      <button *ngIf="data.fallbackSupported" appStopClick type="button" (click)="abort(true)">
-        {{ "useBrowserName" | i18n }}
-      </button>
-    </div>
+
+    <app-fido2-use-browser-link></app-fido2-use-browser-link>
   </div>
 </ng-container>

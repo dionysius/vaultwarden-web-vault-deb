@@ -153,14 +153,6 @@ body.body-full {
   margin: 15px 0 15px 0;
 }
 
-.useBrowserlink {
-  padding: 0 10px 5px 10px;
-  position: fixed;
-  bottom: 10px;
-  left: 0;
-  right: 0;
-}
-
 app-options {
   .box {
     margin: 10px 0;
@@ -181,6 +173,52 @@ app-vault-attachments {
     & + .box {
       margin-top: 25px;
     }
+  }
+}
+
+.useBrowserlink {
+  margin-left: 5px;
+  margin-top: 20px;
+
+  span {
+    font-weight: 700;
+    font-size: $font-size-small;
+  }
+}
+
+.fido2-browser-selector-dropdown {
+  @include themify($themes) {
+    background-color: themed("boxBackgroundColor");
+  }
+  padding: 8px;
+  width: 100%;
+  box-shadow:
+    0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 3px 1px -2px rgba(0, 0, 0, 0.12),
+    0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  border-radius: $border-radius;
+}
+
+.fido2-browser-selector-dropdown-item {
+  @include themify($themes) {
+    color: themed("textColor") !important;
+  }
+  width: 100%;
+  text-align: left;
+  padding: 0px 15px 0px 5px;
+  margin-bottom: 5px;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    @include themify($themes) {
+      background-color: themed("listItemBackgroundHoverColor") !important;
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 0;
   }
 }
 
@@ -266,7 +304,6 @@ app-fido2 {
       align-items: flex-start;
       flex-direction: column;
       margin-top: 32px;
-      margin-bottom: 32px;
 
       .subtitle {
         font-family: Open Sans;

@@ -46,6 +46,7 @@ export function fido2PopoutSessionData$() {
       sessionId: queryParams.sessionId as string,
       fallbackSupported: queryParams.fallbackSupported === "true",
       userVerification: queryParams.userVerification === "true",
+      senderUrl: queryParams.senderUrl as string,
     })),
   );
 }

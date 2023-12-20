@@ -49,8 +49,6 @@ interface ViewData {
 export class Fido2Component implements OnInit, OnDestroy {
   private destroy$ = new Subject<void>();
   private hasSearched = false;
-  private searchTimeout: any = null;
-  private hasLoadedAllCiphers = false;
 
   protected cipher: CipherView;
   protected searchTypeSearch = false;
