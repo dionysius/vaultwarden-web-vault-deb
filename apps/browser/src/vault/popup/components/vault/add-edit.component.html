@@ -131,7 +131,12 @@
           </div>
 
           <!--Passkey-->
-          <div class="box" *ngIf="cipher.login.hasFido2Credentials && !cloneMode">
+          <div
+            class="box"
+            *ngIf="cipher.login.hasFido2Credentials && !cloneMode"
+            tabindex="0"
+            attr.aria-label="{{ 'typePasskey' | i18n }} {{ fido2CredentialCreationDateValue }}"
+          >
             <div class="box-content">
               <div class="box-content-row text-muted">
                 <span class="row-label">{{ "typePasskey" | i18n }}</span>

@@ -144,12 +144,16 @@
         </div>
 
         <!--Passkey-->
-        <div class="box" *ngIf="cipher.login.hasFido2Credentials">
+        <div
+          class="box"
+          *ngIf="cipher.login.hasFido2Credentials"
+          tabindex="0"
+          attr.aria-label="{{ 'typePasskey' | i18n }} {{ fido2CredentialCreationDateValue }}"
+        >
           <div class="box-content">
             <div class="box-content-row text-muted">
               <span class="row-label">{{ "typePasskey" | i18n }}</span>
-              {{ "dateCreated" | i18n }}
-              {{ cipher.login.fido2Credentials[0].creationDate | date: "short" }}
+              {{ fido2CredentialCreationDateValue }}
             </div>
           </div>
         </div>

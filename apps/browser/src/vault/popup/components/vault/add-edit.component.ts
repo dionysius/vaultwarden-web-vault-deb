@@ -1,4 +1,4 @@
-import { Location } from "@angular/common";
+import { DatePipe, Location } from "@angular/common";
 import { Component } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { firstValueFrom } from "rxjs";
@@ -66,6 +66,7 @@ export class AddEditComponent extends BaseAddEditComponent {
     logService: LogService,
     sendApiService: SendApiService,
     dialogService: DialogService,
+    datePipe: DatePipe,
   ) {
     super(
       cipherService,
@@ -83,6 +84,7 @@ export class AddEditComponent extends BaseAddEditComponent {
       organizationService,
       sendApiService,
       dialogService,
+      datePipe,
     );
   }
 

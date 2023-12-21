@@ -195,7 +195,13 @@
             <div class="row">
               <div class="col-6 form-group">
                 <label for="loginFido2credential">{{ "typePasskey" | i18n }}</label>
-                <div class="input-group">
+                <div
+                  class="input-group"
+                  tabindex="0"
+                  attr.aria-label="{{ 'typePasskey' | i18n }} {{
+                    fido2CredentialCreationDateValue
+                  }}"
+                >
                   <input
                     id="loginFido2credential"
                     class="form-control"

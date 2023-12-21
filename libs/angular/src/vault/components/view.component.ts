@@ -1,3 +1,4 @@
+import { DatePipe } from "@angular/common";
 import {
   ChangeDetectorRef,
   Directive,
@@ -68,6 +69,15 @@ export class ViewComponent implements OnDestroy, OnInit {
   private previousCipherId: string;
   private passwordReprompted = false;
 
+  get fido2CredentialCreationDateValue(): string {
+    const dateCreated = this.i18nService.t("dateCreated");
+    const creationDate = this.datePipe.transform(
+      this.cipher?.login?.fido2Credentials?.[0]?.creationDate,
+      "short",
+    );
+    return `${dateCreated} ${creationDate}`;
+  }
+
   constructor(
     protected cipherService: CipherService,
     protected folderService: FolderService,
@@ -88,6 +98,7 @@ export class ViewComponent implements OnDestroy, OnInit {
     protected stateService: StateService,
     protected fileDownloadService: FileDownloadService,
     protected dialogService: DialogService,
+    protected datePipe: DatePipe,
   ) {}
 
   ngOnInit() {

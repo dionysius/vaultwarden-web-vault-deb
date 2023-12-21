@@ -1,3 +1,4 @@
+import { DatePipe } from "@angular/common";
 import { Directive, EventEmitter, Input, OnDestroy, OnInit, Output } from "@angular/core";
 import { Observable, Subject, takeUntil, concatMap } from "rxjs";
 
@@ -85,6 +86,15 @@ export class AddEditComponent implements OnInit, OnDestroy {
   private personalOwnershipPolicyAppliesToActiveUser: boolean;
   private previousCipherId: string;
 
+  get fido2CredentialCreationDateValue(): string {
+    const dateCreated = this.i18nService.t("dateCreated");
+    const creationDate = this.datePipe.transform(
+      this.cipher?.login?.fido2Credentials?.[0]?.creationDate,
+      "short",
+    );
+    return `${dateCreated} ${creationDate}`;
+  }
+
   constructor(
     protected cipherService: CipherService,
     protected folderService: FolderService,
@@ -101,6 +111,7 @@ export class AddEditComponent implements OnInit, OnDestroy {
     private organizationService: OrganizationService,
     protected sendApiService: SendApiService,
     protected dialogService: DialogService,
+    protected datePipe: DatePipe,
   ) {
     this.typeOptions = [
       { name: i18nService.t("typeLogin"), value: CipherType.Login },

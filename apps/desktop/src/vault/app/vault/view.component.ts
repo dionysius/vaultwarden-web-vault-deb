@@ -1,3 +1,4 @@
+import { DatePipe } from "@angular/common";
 import {
   ChangeDetectorRef,
   Component,
@@ -56,6 +57,7 @@ export class ViewComponent extends BaseViewComponent implements OnChanges {
     stateService: StateService,
     fileDownloadService: FileDownloadService,
     dialogService: DialogService,
+    datePipe: DatePipe,
   ) {
     super(
       cipherService,
@@ -77,6 +79,7 @@ export class ViewComponent extends BaseViewComponent implements OnChanges {
       stateService,
       fileDownloadService,
       dialogService,
+      datePipe,
     );
   }
   ngOnInit() {
