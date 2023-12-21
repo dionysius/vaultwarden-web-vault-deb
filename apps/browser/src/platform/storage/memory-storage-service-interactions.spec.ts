@@ -7,15 +7,14 @@ import { trackEmissions } from "@bitwarden/common/../spec/utils";
 
 import { BackgroundMemoryStorageService } from "./background-memory-storage.service";
 import { ForegroundMemoryStorageService } from "./foreground-memory-storage.service";
-import { mockPort } from "./mock-port.spec-util";
-import { portName } from "./port-name";
+import { mockPorts } from "./mock-ports.spec-util";
 
 describe("foreground background memory storage interaction", () => {
   let foreground: ForegroundMemoryStorageService;
   let background: BackgroundMemoryStorageService;
 
   beforeEach(() => {
-    mockPort(portName(chrome.storage.session));
+    mockPorts();
 
     background = new BackgroundMemoryStorageService();
     foreground = new ForegroundMemoryStorageService();
@@ -62,5 +61,17 @@ describe("foreground background memory storage interaction", () => {
     await background.save(key, value);
 
     expect(emissions).toEqual([{ key, updateType }]);
+  });
+
+  test("background should message only the requesting foreground", async () => {
+    const secondForeground = new ForegroundMemoryStorageService();
+    const secondPort = secondForeground["_port"];
+    const secondPost = secondPort.postMessage as jest.Mock;
+    secondPost.mockClear();
+
+    const key = "key";
+    await foreground.get(key);
+
+    expect(secondPost).not.toHaveBeenCalled();
   });
 });

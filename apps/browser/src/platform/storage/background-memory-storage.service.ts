@@ -25,20 +25,23 @@ export class BackgroundMemoryStorageService extends MemoryStorageService {
       });
       port.onMessage.addListener(listenerCallback);
       // Initialize the new memory storage service with existing data
-      this.sendMessage({
+      this.sendMessageTo(port, {
         action: "initialization",
         data: Array.from(this.store.keys()),
       });
     });
     this.updates$.subscribe((update) => {
-      this.sendMessage({
+      this.broadcastMessage({
         action: "subject_update",
         data: update,
       });
     });
   }
 
-  private async onMessageFromForeground(message: MemoryStoragePortMessage) {
+  private async onMessageFromForeground(
+    message: MemoryStoragePortMessage,
+    port: chrome.runtime.Port,
+  ) {
     if (message.originator === "background") {
       return;
     }
@@ -60,19 +63,26 @@ export class BackgroundMemoryStorageService extends MemoryStorageService {
         break;
     }
 
-    this.sendMessage({
+    this.sendMessageTo(port, {
       id: message.id,
       key: message.key,
       data: JSON.stringify(result),
     });
   }
 
-  private async sendMessage(data: Omit<MemoryStoragePortMessage, "originator">) {
+  private broadcastMessage(data: Omit<MemoryStoragePortMessage, "originator">) {
     this._ports.forEach((port) => {
-      port.postMessage({
-        ...data,
-        originator: "background",
-      });
+      this.sendMessageTo(port, data);
+    });
+  }
+
+  private sendMessageTo(
+    port: chrome.runtime.Port,
+    data: Omit<MemoryStoragePortMessage, "originator">,
+  ) {
+    port.postMessage({
+      ...data,
+      originator: "background",
     });
   }
 }
