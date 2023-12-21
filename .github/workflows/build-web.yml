@@ -97,6 +97,8 @@ jobs:
             npm_command: "build:bit:euprd"
           - name: "cloud-euqa"
             npm_command: "build:bit:euqa"
+          - name: "cloud-usdev"
+            npm_command: "build:bit:usdev"
 
     steps:
       - name: Checkout repo
