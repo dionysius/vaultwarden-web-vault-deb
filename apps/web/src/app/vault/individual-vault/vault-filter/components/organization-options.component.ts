@@ -87,9 +87,9 @@ export class OrganizationOptionsComponent implements OnInit, OnDestroy {
   }
 
   allowEnrollmentChanges(org: OrganizationFilter): boolean {
-    if (org.usePolicies && org.useResetPassword && org.hasPublicAndPrivateKeys) {
+    if (org?.usePolicies && org?.useResetPassword && org?.hasPublicAndPrivateKeys) {
       if (this.resetPasswordPolicy != undefined && this.resetPasswordPolicy.enabled) {
-        return !(org.resetPasswordEnrolled && this.resetPasswordPolicy.data.autoEnrollEnabled);
+        return !(org?.resetPasswordEnrolled && this.resetPasswordPolicy.data.autoEnrollEnabled);
       }
     }
 
@@ -97,7 +97,7 @@ export class OrganizationOptionsComponent implements OnInit, OnDestroy {
   }
 
   showSsoOptions(org: OrganizationFilter) {
-    return org.useSso && org.identifier;
+    return org?.useSso && org?.identifier;
   }
 
   async unlinkSso(org: Organization) {

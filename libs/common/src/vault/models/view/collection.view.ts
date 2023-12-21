@@ -33,7 +33,7 @@ export class CollectionView implements View, ITreeNodeObject {
 
   // For editing collection details, not the items within it.
   canEdit(org: Organization, flexibleCollectionsEnabled: boolean): boolean {
-    if (org.id !== this.organizationId) {
+    if (org != null && org.id !== this.organizationId) {
       throw new Error(
         "Id of the organization provided does not match the org id of the collection.",
       );
@@ -46,7 +46,7 @@ export class CollectionView implements View, ITreeNodeObject {
 
   // For deleting a collection, not the items within it.
   canDelete(org: Organization, flexibleCollectionsEnabled: boolean): boolean {
-    if (org.id !== this.organizationId) {
+    if (org != null && org.id !== this.organizationId) {
       throw new Error(
         "Id of the organization provided does not match the org id of the collection.",
       );
