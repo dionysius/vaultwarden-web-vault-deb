@@ -145,6 +145,7 @@ jobs:
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
       _NODE_VERSION: ${{ needs.setup.outputs.node_version }}
+      NODE_OPTIONS: --max_old_space_size=4096
     defaults:
       run:
         working-directory: apps/desktop
@@ -158,9 +159,6 @@ jobs:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
           node-version: ${{ env._NODE_VERSION }}
-
-      - name: Set Node options
-        run: echo "NODE_OPTIONS=--max_old_space_size=4096" >> $GITHUB_ENV
 
       - name: Set up environment
         run: |
@@ -260,6 +258,7 @@ jobs:
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
       _NODE_VERSION: ${{ needs.setup.outputs.node_version }}
+      NODE_OPTIONS: --max_old_space_size=4096
     steps:
       - name: Checkout repo
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
@@ -270,9 +269,6 @@ jobs:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
           node-version: ${{ env._NODE_VERSION }}
-
-      - name: Set Node options
-        run: echo "NODE_OPTIONS=--max_old_space_size=4096" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
 
       - name: Install AST
         run: dotnet tool install --global AzureSignTool --version 4.0.1
@@ -466,6 +462,7 @@ jobs:
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
       _NODE_VERSION: ${{ needs.setup.outputs.node_version }}
+      NODE_OPTIONS: --max_old_space_size=4096
     defaults:
       run:
         working-directory: apps/desktop
@@ -479,9 +476,6 @@ jobs:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
           node-version: ${{ env._NODE_VERSION }}
-
-      - name: Set Node options
-        run: echo "NODE_OPTIONS=--max_old_space_size=4096" >> $GITHUB_ENV
 
       - name: Rust
         shell: pwsh
@@ -614,6 +608,7 @@ jobs:
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
       _NODE_VERSION: ${{ needs.setup.outputs.node_version }}
+      NODE_OPTIONS: --max_old_space_size=4096
     defaults:
       run:
         working-directory: apps/desktop
@@ -627,9 +622,6 @@ jobs:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
           node-version: ${{ env._NODE_VERSION }}
-
-      - name: Set Node options
-        run: echo "NODE_OPTIONS=--max_old_space_size=4096" >> $GITHUB_ENV
 
       - name: Rust
         shell: pwsh
@@ -807,6 +799,7 @@ jobs:
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
       _NODE_VERSION: ${{ needs.setup.outputs.node_version }}
+      NODE_OPTIONS: --max_old_space_size=4096
     defaults:
       run:
         working-directory: apps/desktop
@@ -820,9 +813,6 @@ jobs:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
           node-version: ${{ env._NODE_VERSION }}
-
-      - name: Set Node options
-        run: echo "NODE_OPTIONS=--max_old_space_size=4096" >> $GITHUB_ENV
 
       - name: Rust
         shell: pwsh
@@ -992,6 +982,7 @@ jobs:
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
       _NODE_VERSION: ${{ needs.setup.outputs.node_version }}
+      NODE_OPTIONS: --max_old_space_size=4096
     defaults:
       run:
         working-directory: apps/desktop
@@ -1005,9 +996,6 @@ jobs:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
           node-version: ${{ env._NODE_VERSION }}
-
-      - name: Set Node options
-        run: echo "NODE_OPTIONS=--max_old_space_size=4096" >> $GITHUB_ENV
 
       - name: Print environment
         run: |
