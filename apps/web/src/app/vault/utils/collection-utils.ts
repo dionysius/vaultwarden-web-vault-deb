@@ -54,5 +54,6 @@ function cloneCollection(
   cloned.name = collection.name;
   cloned.organizationId = collection.organizationId;
   cloned.readOnly = collection.readOnly;
+  cloned.manage = collection.manage;
   return cloned;
 }
