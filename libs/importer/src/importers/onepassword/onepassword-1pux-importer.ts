@@ -199,11 +199,16 @@ export class OnePassword1PuxImporter extends BaseImporter implements Importer {
         return;
       }
 
-      this.parseSectionFields(category, section.fields, cipher);
+      this.parseSectionFields(category, section.fields, cipher, section.title);
     });
   }
 
-  private parseSectionFields(category: CategoryEnum, fields: FieldsEntity[], cipher: CipherView) {
+  private parseSectionFields(
+    category: CategoryEnum,
+    fields: FieldsEntity[],
+    cipher: CipherView,
+    sectionTitle: string,
+  ) {
     fields.forEach((field: FieldsEntity) => {
       const valueKey = Object.keys(field.value)[0];
       const anyField = field as any;
@@ -216,7 +221,7 @@ export class OnePassword1PuxImporter extends BaseImporter implements Importer {
         return;
       }
 
-      const fieldName = this.getFieldName(field.id, field.title);
+      const fieldName = this.getFieldName(field.title, sectionTitle);
       const fieldValue = this.extractValue(field.value, valueKey);
 
       if (cipher.type === CipherType.Login) {
@@ -338,16 +343,18 @@ export class OnePassword1PuxImporter extends BaseImporter implements Importer {
     });
   }
 
-  private getFieldName(id: string, title: string): string {
-    if (this.isNullOrWhitespace(title)) {
-      return id;
-    }
-
-    // Naive approach of checking if the fields id is usable
-    if (id.length > 25 && RegExp(/[0-9]{2}[A-Z]{2}/, "i").test(id)) {
+  // Use the title if available. If not use the sectionTitle if available.
+  // Default to an empty string in all other cases.
+  private getFieldName(title: string, sectionTitle?: string): string {
+    if (!this.isNullOrWhitespace(title)) {
       return title;
     }
-    return id;
+
+    if (!this.isNullOrWhitespace(sectionTitle)) {
+      return sectionTitle;
+    }
+
+    return "";
   }
 
   private extractValue(value: Value, valueKey: string): string {
@@ -363,7 +370,7 @@ export class OnePassword1PuxImporter extends BaseImporter implements Importer {
   }
 
   private fillLogin(field: FieldsEntity, fieldValue: string, cipher: CipherView): boolean {
-    const fieldName = this.getFieldName(field.id, field.title);
+    const fieldName = this.getFieldName(field.title);
 
     if (this.isNullOrWhitespace(cipher.login.username) && fieldName === "username") {
       cipher.login.username = fieldValue;
@@ -388,7 +395,7 @@ export class OnePassword1PuxImporter extends BaseImporter implements Importer {
   }
 
   private fillApiCredentials(field: FieldsEntity, fieldValue: string, cipher: CipherView): boolean {
-    const fieldName = this.getFieldName(field.id, field.title);
+    const fieldName = this.getFieldName(field.title);
 
     if (this.isNullOrWhitespace(cipher.login.password) && fieldName === "credential") {
       cipher.login.password = fieldValue;
