@@ -145,6 +145,18 @@ button {
   font-family: $font-family-sans-serif;
 }
 
+.success-message {
+  @include themify($themes) {
+    color: themed("successColor");
+  }
+}
+
+.error-message {
+  @include themify($themes) {
+    color: themed("errorColor");
+  }
+}
+
 @media screen and (max-width: 768px) {
   #select-folder {
     display: none;

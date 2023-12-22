@@ -32,6 +32,15 @@ function sendExtensionRuntimeMessage(
   );
 }
 
+function triggerRuntimeOnConnectEvent(port: chrome.runtime.Port) {
+  (chrome.runtime.onConnect.addListener as unknown as jest.SpyInstance).mock.calls.forEach(
+    (call) => {
+      const callback = call[0];
+      callback(port);
+    },
+  );
+}
+
 function sendPortMessage(port: chrome.runtime.Port, message: any) {
   (port.onMessage.addListener as unknown as jest.SpyInstance).mock.calls.forEach((call) => {
     const callback = call[0];
@@ -94,6 +103,7 @@ export {
   flushPromises,
   postWindowMessage,
   sendExtensionRuntimeMessage,
+  triggerRuntimeOnConnectEvent,
   sendPortMessage,
   triggerPortOnDisconnectEvent,
   triggerWindowOnFocusedChangedEvent,

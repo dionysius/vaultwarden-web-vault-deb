@@ -20,18 +20,20 @@ import { NOTIFICATION_BAR_LIFESPAN_MS } from "../constants";
 import AddChangePasswordQueueMessage from "../notification/models/add-change-password-queue-message";
 import AddLoginQueueMessage from "../notification/models/add-login-queue-message";
 import AddLoginRuntimeMessage from "../notification/models/add-login-runtime-message";
+import AddRequestFilelessImportQueueMessage from "../notification/models/add-request-fileless-import-queue-message";
 import AddUnlockVaultQueueMessage from "../notification/models/add-unlock-vault-queue-message";
 import ChangePasswordRuntimeMessage from "../notification/models/change-password-runtime-message";
 import LockedVaultPendingNotificationsItem from "../notification/models/locked-vault-pending-notifications-item";
-import { NotificationQueueMessageType } from "../notification/models/notification-queue-message-type";
+import {
+  NotificationQueueMessageType,
+  NotificationTypes,
+} from "../notification/models/notification-queue-message-type";
 import { AutofillService } from "../services/abstractions/autofill.service";
 
+import { NotificationQueueMessageItem } from "./abstractions/notification.background";
+
 export default class NotificationBackground {
-  private notificationQueue: (
-    | AddLoginQueueMessage
-    | AddChangePasswordQueueMessage
-    | AddUnlockVaultQueueMessage
-  )[] = [];
+  private notificationQueue: NotificationQueueMessageItem[] = [];
 
   constructor(
     private autofillService: AutofillService,
@@ -162,53 +164,49 @@ export default class NotificationBackground {
   }
 
   private async doNotificationQueueCheck(tab: chrome.tabs.Tab): Promise<void> {
-    if (tab == null) {
+    const tabDomain = Utils.getDomain(tab?.url);
+    if (!tabDomain) {
       return;
     }
 
-    const tabDomain = Utils.getDomain(tab.url);
-    if (tabDomain == null) {
-      return;
+    const queueMessage = this.notificationQueue.find(
+      (message) => message.tab.id === tab.id && message.domain === tabDomain,
+    );
+    if (queueMessage) {
+      this.sendNotificationQueueMessage(tab, queueMessage);
+    }
+  }
+
+  private async sendNotificationQueueMessage(
+    tab: chrome.tabs.Tab,
+    notificationQueueMessage: NotificationQueueMessageItem,
+  ) {
+    const notificationType = notificationQueueMessage.type;
+    const webVaultURL =
+      notificationType !== NotificationQueueMessageType.UnlockVault
+        ? this.environmentService.getWebVaultUrl()
+        : null;
+    const typeData: Record<string, any> = {
+      isVaultLocked: notificationQueueMessage.wasVaultLocked,
+      theme: await this.getCurrentTheme(),
+      webVaultURL,
+    };
+
+    switch (notificationType) {
+      case NotificationQueueMessageType.AddLogin:
+        typeData.removeIndividualVault = await this.removeIndividualVault();
+        break;
+      case NotificationQueueMessageType.RequestFilelessImport:
+        typeData.importType = (
+          notificationQueueMessage as AddRequestFilelessImportQueueMessage
+        ).importType;
+        break;
     }
 
-    for (let i = 0; i < this.notificationQueue.length; i++) {
-      if (
-        this.notificationQueue[i].tab.id !== tab.id ||
-        this.notificationQueue[i].domain !== tabDomain
-      ) {
-        continue;
-      }
-
-      if (this.notificationQueue[i].type === NotificationQueueMessageType.AddLogin) {
-        BrowserApi.tabSendMessageData(tab, "openNotificationBar", {
-          type: "add",
-          typeData: {
-            isVaultLocked: this.notificationQueue[i].wasVaultLocked,
-            theme: await this.getCurrentTheme(),
-            removeIndividualVault: await this.removeIndividualVault(),
-            webVaultURL: await this.environmentService.getWebVaultUrl(),
-          },
-        });
-      } else if (this.notificationQueue[i].type === NotificationQueueMessageType.ChangePassword) {
-        BrowserApi.tabSendMessageData(tab, "openNotificationBar", {
-          type: "change",
-          typeData: {
-            isVaultLocked: this.notificationQueue[i].wasVaultLocked,
-            theme: await this.getCurrentTheme(),
-            webVaultURL: await this.environmentService.getWebVaultUrl(),
-          },
-        });
-      } else if (this.notificationQueue[i].type === NotificationQueueMessageType.UnlockVault) {
-        BrowserApi.tabSendMessageData(tab, "openNotificationBar", {
-          type: "unlock",
-          typeData: {
-            isVaultLocked: this.notificationQueue[i].wasVaultLocked,
-            theme: await this.getCurrentTheme(),
-          },
-        });
-      }
-      break;
-    }
+    await BrowserApi.tabSendMessageData(tab, "openNotificationBar", {
+      type: NotificationTypes[notificationType],
+      typeData,
+    });
   }
 
   private async getCurrentTheme() {
@@ -351,11 +349,28 @@ export default class NotificationBackground {
     }
 
     const loginDomain = Utils.getDomain(tab.url);
-    if (!loginDomain) {
+    if (loginDomain) {
+      this.pushUnlockVaultToQueue(loginDomain, tab);
+    }
+  }
+
+  /**
+   * Sets up a notification to request a fileless import when the user
+   * attempts to trigger an import from a third party website.
+   *
+   * @param tab - The tab that we are sending the notification to
+   * @param importType - The type of import that is being requested
+   */
+  async requestFilelessImport(tab: chrome.tabs.Tab, importType: string) {
+    const currentAuthStatus = await this.authService.getAuthStatus();
+    if (currentAuthStatus !== AuthenticationStatus.Unlocked || this.notificationQueue.length) {
       return;
     }
 
-    this.pushUnlockVaultToQueue(loginDomain, tab);
+    const loginDomain = Utils.getDomain(tab.url);
+    if (loginDomain) {
+      this.pushRequestFilelessImportToQueue(loginDomain, tab, importType);
+    }
   }
 
   private async pushChangePasswordToQueue(
@@ -388,6 +403,32 @@ export default class NotificationBackground {
       tab: tab,
       expires: new Date(new Date().getTime() + 0.5 * 60000), // 30 seconds
       wasVaultLocked: true,
+    };
+    await this.sendNotificationQueueMessage(tab, message);
+  }
+
+  /**
+   * Pushes a request to start a fileless import to the notification queue.
+   * This will display a notification bar to the user, prompting them to
+   * start the import.
+   *
+   * @param loginDomain - The domain of the tab that we are sending the notification to
+   * @param tab - The tab that we are sending the notification to
+   * @param importType - The type of import that is being requested
+   */
+  private async pushRequestFilelessImportToQueue(
+    loginDomain: string,
+    tab: chrome.tabs.Tab,
+    importType?: string,
+  ) {
+    this.removeTabFromNotificationQueue(tab);
+    const message: AddRequestFilelessImportQueueMessage = {
+      type: NotificationQueueMessageType.RequestFilelessImport,
+      domain: loginDomain,
+      tab,
+      expires: new Date(new Date().getTime() + 0.5 * 60000), // 30 seconds
+      wasVaultLocked: false,
+      importType,
     };
     this.notificationQueue.push(message);
     await this.checkNotificationQueue(tab);

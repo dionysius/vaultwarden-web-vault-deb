@@ -180,6 +180,7 @@ const mainConfig = {
     "overlay/button": "./src/autofill/overlay/pages/button/bootstrap-autofill-overlay-button.ts",
     "overlay/list": "./src/autofill/overlay/pages/list/bootstrap-autofill-overlay-list.ts",
     "encrypt-worker": "../../libs/common/src/platform/services/cryptography/encrypt.worker.ts",
+    "content/lp-fileless-importer": "./src/tools/content/lp-fileless-importer.ts",
   },
   optimization: {
     minimize: ENV !== "development",

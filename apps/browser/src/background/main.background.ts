@@ -166,6 +166,7 @@ import { BackgroundMemoryStorageService } from "../platform/storage/background-m
 import { BrowserSendService } from "../services/browser-send.service";
 import { BrowserSettingsService } from "../services/browser-settings.service";
 import VaultTimeoutService from "../services/vault-timeout/vault-timeout.service";
+import FilelessImporterBackground from "../tools/background/fileless-importer.background";
 import { BrowserFido2UserInterfaceService } from "../vault/fido2/browser-fido2-user-interface.service";
 import { Fido2Service as Fido2ServiceAbstraction } from "../vault/services/abstractions/fido2.service";
 import { BrowserFolderService } from "../vault/services/browser-folder.service";
@@ -262,6 +263,7 @@ export default class MainBackground {
   private idleBackground: IdleBackground;
   private notificationBackground: NotificationBackground;
   private overlayBackground: OverlayBackground;
+  private filelessImporterBackground: FilelessImporterBackground;
   private runtimeBackground: RuntimeBackground;
   private tabsBackground: TabsBackground;
   private webRequestBackground: WebRequestBackground;
@@ -723,6 +725,14 @@ export default class MainBackground {
       this.stateService,
       this.i18nService,
     );
+    this.filelessImporterBackground = new FilelessImporterBackground(
+      this.configService,
+      this.authService,
+      this.policyService,
+      this.notificationBackground,
+      this.importService,
+      this.syncService,
+    );
     this.tabsBackground = new TabsBackground(
       this,
       this.notificationBackground,
@@ -805,6 +815,7 @@ export default class MainBackground {
     await (this.eventUploadService as EventUploadService).init(true);
     await this.runtimeBackground.init();
     await this.notificationBackground.init();
+    this.filelessImporterBackground.init();
     await this.commandsBackground.init();
 
     this.configService.init();

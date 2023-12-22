@@ -24,6 +24,12 @@ $solarizedDarkBase2: #eee8d5;
 $solarizedDarkCyan: #2aa198;
 $solarizedDarkGreen: #859900;
 
+$success-color-light: #017e45;
+$success-color-dark: #8db89b;
+
+$error-color-light: #c83522;
+$error-color-dark: #ee9792;
+
 $themes: (
   light: (
     textColor: $text-color,
@@ -37,6 +43,8 @@ $themes: (
     inputBackgroundColor: #ffffff,
     borderColor: $border-color,
     focusOutlineColor: $focus-outline-color,
+    successColor: $success-color-light,
+    errorColor: $error-color-light,
   ),
   dark: (
     textColor: #ffffff,
@@ -50,6 +58,8 @@ $themes: (
     inputBackgroundColor: #2f343d,
     borderColor: #4c525f,
     focusOutlineColor: $focus-outline-color,
+    successColor: $success-color-dark,
+    errorColor: $error-color-dark,
   ),
   nord: (
     textColor: $nord5,
@@ -63,6 +73,7 @@ $themes: (
     inputBackgroundColor: $nord2,
     borderColor: $nord0,
     focusOutlineColor: $focus-outline-color,
+    successColor: $success-color-dark,
   ),
   solarizedDark: (
     textColor: $solarizedDarkBase2,
@@ -77,6 +88,7 @@ $themes: (
     inputBackgroundColor: $solarizedDarkBase01,
     borderColor: $solarizedDarkBase2,
     focusOutlineColor: $focus-outline-color,
+    successColor: $success-color-dark,
   ),
 );
 

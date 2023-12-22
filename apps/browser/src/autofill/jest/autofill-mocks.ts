@@ -250,6 +250,7 @@ function createPortSpyMock(name: string) {
       addListener: jest.fn(),
     },
     postMessage: jest.fn(),
+    disconnect: jest.fn(),
     sender: {
       tab: createChromeTabMock(),
     },

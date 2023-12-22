@@ -847,6 +847,7 @@ async function loadNotificationBar() {
       theme: typeData.theme,
       removeIndividualVault: typeData.removeIndividualVault,
       webVaultURL: typeData.webVaultURL,
+      importType: typeData.importType,
     };
     const barQueryString = new URLSearchParams(barQueryParams).toString();
     const barPage = "notification/bar.html?" + barQueryString;
