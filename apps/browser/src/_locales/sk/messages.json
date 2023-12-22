@@ -1725,7 +1725,7 @@
     "placeholders": {
       "domain": {
         "content": "$1",
-        "example": "googlecom"
+        "example": "google.com"
       }
     }
   },
@@ -2512,6 +2512,9 @@
     "message": "Vypnite výzvu na opätovné zadanie hlavného hesla na úpravu tohto poľa",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
+  "skipToContent": {
+    "message": "Preskočiť na obsah"
+  },
   "bitwardenOverlayButton": {
     "message": "Tlačidlo ponuky automatického vypĺňania Bitwardenu",
     "description": "Page title for the iframe containing the overlay button"
@@ -2724,9 +2727,6 @@
   "yourPasskeyIsLocked": {
     "message": "Na použitie prístupového kľúča sa vyžaduje overenie. Ak chcete pokračovať, overte svoju totožnosť."
   },
-  "useBrowserName": {
-    "message": "Použiť webový prehliadač"
-  },
   "multifactorAuthenticationCancelled": {
     "message": "Viacfaktorové overenie zrušené"
   },
@@ -2820,5 +2820,23 @@
   },
   "hostedAt": {
     "message": "hotované na"
+  },
+  "useDeviceOrHardwareKey": {
+    "message": "Použiť vaše zariadenie alebo hardvérový kľúč"
+  },
+  "justOnce": {
+    "message": "Iba raz"
+  },
+  "alwaysForThisSite": {
+    "message": "Vždy pre túto stránku"
+  },
+  "domainAddedToExcludedDomains": {
+    "message": "$DOMAIN$ pridaná do vylúčených domén.",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "google.com"
+      }
+    }
   }
 }

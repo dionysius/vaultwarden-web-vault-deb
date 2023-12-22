@@ -1725,7 +1725,7 @@
     "placeholders": {
       "domain": {
         "content": "$1",
-        "example": "googlecom"
+        "example": "google.com"
       }
     }
   },
@@ -2512,6 +2512,9 @@
     "message": "Изключете повторното въвеждане на главната парола, за да редактирате това поле",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
+  "skipToContent": {
+    "message": "Прескачане към съдържанието"
+  },
   "bitwardenOverlayButton": {
     "message": "Бутон на менюто за авт. попълване на Битуорден",
     "description": "Page title for the iframe containing the overlay button"
@@ -2724,9 +2727,6 @@
   "yourPasskeyIsLocked": {
     "message": "За да се ползва секретният ключ, е необходимо удостоверяване. Потвърдете самоличността си, за да продължите."
   },
-  "useBrowserName": {
-    "message": "Използване на браузъра"
-  },
   "multifactorAuthenticationCancelled": {
     "message": "Многостъпковото удостоверяване е отменено"
   },
@@ -2820,5 +2820,23 @@
   },
   "hostedAt": {
     "message": "hosted at"
+  },
+  "useDeviceOrHardwareKey": {
+    "message": "Използвайте своето устройство или хардуерен ключ"
+  },
+  "justOnce": {
+    "message": "Само веднъж"
+  },
+  "alwaysForThisSite": {
+    "message": "Винаги за този уеб сайт"
+  },
+  "domainAddedToExcludedDomains": {
+    "message": "$DOMAIN$ беше добавено към изключените домейни.",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "google.com"
+      }
+    }
   }
 }

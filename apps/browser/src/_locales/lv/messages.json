@@ -1725,7 +1725,7 @@
     "placeholders": {
       "domain": {
         "content": "$1",
-        "example": "googlecom"
+        "example": "google.com"
       }
     }
   },
@@ -2282,7 +2282,7 @@
     "message": "Kā automātiski aizpildīt"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Select an item from this screen, use the shortcut $COMMAND$, or explore other options in settings.",
+    "message": "Jāizvēlas šī skata vienums, jāizmanto īsceļš $COMMAND$ vai iestatījumos jāizpēta citas iespējas.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2291,7 +2291,7 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "Select an item from this screen, or explore other options in settings."
+    "message": "Jāizvēlas šī skata vienums vai iestatījumos jāizpēta citas iespējas."
   },
   "gotIt": {
     "message": "Sapratu"
@@ -2512,6 +2512,9 @@
     "message": "Jāizslēdz galvenās paroles pārvaicāšana, lai labotu šo lauku",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
+  "skipToContent": {
+    "message": "Pāriet uz saturu"
+  },
   "bitwardenOverlayButton": {
     "message": "Bitwarden automātiskās aizpildes izvēlnes poga",
     "description": "Page title for the iframe containing the overlay button"
@@ -2674,7 +2677,7 @@
     "message": "Apstiprināt datnes paroli"
   },
   "typePasskey": {
-    "message": "Passkey"
+    "message": "Piekļuves atslēga"
   },
   "passkeyNotCopied": {
     "message": "Piekļuves atslēga netiks ievietota starpliktuvē"
@@ -2723,9 +2726,6 @@
   },
   "yourPasskeyIsLocked": {
     "message": "Nepieciešama apstiprinājums, lai izmantotu piekļuves atslēgu. Jāapliecina sava identitāte, lai turpinātu."
-  },
-  "useBrowserName": {
-    "message": "Izmantot pārlūku"
   },
   "multifactorAuthenticationCancelled": {
     "message": "Daudzpakāpju pieteikšanās atcelta"
@@ -2820,5 +2820,23 @@
   },
   "hostedAt": {
     "message": "izvietots"
+  },
+  "useDeviceOrHardwareKey": {
+    "message": "Jāizmanto sava ierīce vai aparatūras atslēga"
+  },
+  "justOnce": {
+    "message": "Tikai vienreiz"
+  },
+  "alwaysForThisSite": {
+    "message": "Vienmēr šai vietnei"
+  },
+  "domainAddedToExcludedDomains": {
+    "message": "$DOMAIN$ pievienots neiekļautajiem domēniem.",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "google.com"
+      }
+    }
   }
 }

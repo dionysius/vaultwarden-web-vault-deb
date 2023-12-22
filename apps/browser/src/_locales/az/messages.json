@@ -1725,7 +1725,7 @@
     "placeholders": {
       "domain": {
         "content": "$1",
-        "example": "googlecom"
+        "example": "google.com"
       }
     }
   },
@@ -2512,6 +2512,9 @@
     "message": "Bu sahəyə düzəliş etmək üçün \"Ana parolu təkrar soruş\"u söndürün",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
+  "skipToContent": {
+    "message": "Məzmunu ötür"
+  },
   "bitwardenOverlayButton": {
     "message": "Bitwarden avto-doldurma menyu düyməsi",
     "description": "Page title for the iframe containing the overlay button"
@@ -2724,9 +2727,6 @@
   "yourPasskeyIsLocked": {
     "message": "Keçid açarını istifadə etmək üçün kimlik doğrulama tələb olunur. Davam etmək üçün kimliyinizi doğrulayın."
   },
-  "useBrowserName": {
-    "message": "Brauzer istifadə et"
-  },
   "multifactorAuthenticationCancelled": {
     "message": "Çox faktorlu kimlik doğrulama ləğv edildi"
   },
@@ -2820,5 +2820,23 @@
   },
   "hostedAt": {
     "message": "sahiblik edən"
+  },
+  "useDeviceOrHardwareKey": {
+    "message": "Cihazınızı və ya avadanlıq açarınızı istifadə edin"
+  },
+  "justOnce": {
+    "message": "Yalnız bir dəfə"
+  },
+  "alwaysForThisSite": {
+    "message": "Bu sayt üçün həmişə"
+  },
+  "domainAddedToExcludedDomains": {
+    "message": "$DOMAIN$, istisna domenlərə əlavə edildi.",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "google.com"
+      }
+    }
   }
 }

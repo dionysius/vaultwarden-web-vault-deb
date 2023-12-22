@@ -1725,7 +1725,7 @@
     "placeholders": {
       "domain": {
         "content": "$1",
-        "example": "googlecom"
+        "example": "google.com"
       }
     }
   },
@@ -2512,6 +2512,9 @@
     "message": "關閉主密碼重新提示以編輯此欄位",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
+  "skipToContent": {
+    "message": "Skip to content"
+  },
   "bitwardenOverlayButton": {
     "message": "Bitwarden 自動填入選單按鈕",
     "description": "Page title for the iframe containing the overlay button"
@@ -2724,9 +2727,6 @@
   "yourPasskeyIsLocked": {
     "message": "使用密碼金鑰需要身分驗證。請驗證您的身份以繼續。"
   },
-  "useBrowserName": {
-    "message": "使用瀏覽器"
-  },
   "multifactorAuthenticationCancelled": {
     "message": "多因素驗證已取消"
   },
@@ -2820,5 +2820,23 @@
   },
   "hostedAt": {
     "message": "hosted at"
+  },
+  "useDeviceOrHardwareKey": {
+    "message": "Use your device or hardware key"
+  },
+  "justOnce": {
+    "message": "Just once"
+  },
+  "alwaysForThisSite": {
+    "message": "Always for this site"
+  },
+  "domainAddedToExcludedDomains": {
+    "message": "$DOMAIN$ added to excluded domains.",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "google.com"
+      }
+    }
   }
 }

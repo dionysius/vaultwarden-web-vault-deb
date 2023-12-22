@@ -1725,7 +1725,7 @@
     "placeholders": {
       "domain": {
         "content": "$1",
-        "example": "googlecom"
+        "example": "google.com"
       }
     }
   },
@@ -2512,6 +2512,9 @@
     "message": "Для редактирования этого поля отключите повторный запрос мастер-пароля",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
+  "skipToContent": {
+    "message": "Перейти к содержимому"
+  },
   "bitwardenOverlayButton": {
     "message": "Кнопка меню автозаполнения Bitwarden",
     "description": "Page title for the iframe containing the overlay button"
@@ -2724,9 +2727,6 @@
   "yourPasskeyIsLocked": {
     "message": "Для использования ключа доступа необходима аутентификация. Для продолжения работы подтвердите свою личность."
   },
-  "useBrowserName": {
-    "message": "Использовать браузер"
-  },
   "multifactorAuthenticationCancelled": {
     "message": "Многофакторная аутентификация отменена"
   },
@@ -2820,5 +2820,23 @@
   },
   "hostedAt": {
     "message": "под управлением"
+  },
+  "useDeviceOrHardwareKey": {
+    "message": "Используйте ваше устройство или аппаратный ключ"
+  },
+  "justOnce": {
+    "message": "Только сейчас"
+  },
+  "alwaysForThisSite": {
+    "message": "Всегда для этого сайта"
+  },
+  "domainAddedToExcludedDomains": {
+    "message": "$DOMAIN$ добавлен в исключенные домены.",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "google.com"
+      }
+    }
   }
 }

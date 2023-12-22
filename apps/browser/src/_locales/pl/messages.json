@@ -1725,7 +1725,7 @@
     "placeholders": {
       "domain": {
         "content": "$1",
-        "example": "googlecom"
+        "example": "google.com"
       }
     }
   },
@@ -2512,6 +2512,9 @@
     "message": "Wyłącz prośbę o podanie hasła głównego, aby edytować to pole",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
+  "skipToContent": {
+    "message": "Przejdź do treści"
+  },
   "bitwardenOverlayButton": {
     "message": "Przycisk menu autouzupełniania Bitwarden",
     "description": "Page title for the iframe containing the overlay button"
@@ -2724,9 +2727,6 @@
   "yourPasskeyIsLocked": {
     "message": "Wymagane uwierzytelnienie aby używać passkey. Sprawdź swoją tożsamość, aby kontynuować."
   },
-  "useBrowserName": {
-    "message": "Użyj przeglądarki"
-  },
   "multifactorAuthenticationCancelled": {
     "message": "Uwierzytelnianie wieloskładnikowe zostało anulowane"
   },
@@ -2820,5 +2820,23 @@
   },
   "hostedAt": {
     "message": "hostowany w"
+  },
+  "useDeviceOrHardwareKey": {
+    "message": "Użyj swojego urządzenia lub klucza sprzętowego"
+  },
+  "justOnce": {
+    "message": "Tylko raz"
+  },
+  "alwaysForThisSite": {
+    "message": "Zawsze dla tej witryny"
+  },
+  "domainAddedToExcludedDomains": {
+    "message": "$DOMAIN$ dodana do wykluczonych domen.",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "google.com"
+      }
+    }
   }
 }

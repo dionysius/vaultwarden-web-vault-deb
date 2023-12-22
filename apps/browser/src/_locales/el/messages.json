@@ -1725,7 +1725,7 @@
     "placeholders": {
       "domain": {
         "content": "$1",
-        "example": "googlecom"
+        "example": "google.com"
       }
     }
   },
@@ -2512,6 +2512,9 @@
     "message": "Turn off master password re-prompt to edit this field",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
+  "skipToContent": {
+    "message": "Skip to content"
+  },
   "bitwardenOverlayButton": {
     "message": "Bitwarden auto-fill menu button",
     "description": "Page title for the iframe containing the overlay button"
@@ -2724,9 +2727,6 @@
   "yourPasskeyIsLocked": {
     "message": "Authentication required to use passkey. Verify your identity to continue."
   },
-  "useBrowserName": {
-    "message": "Χρήση περιηγητή"
-  },
   "multifactorAuthenticationCancelled": {
     "message": "Ο πολυμερής έλεγχος ταυτότητας ακυρώθηκε"
   },
@@ -2820,5 +2820,23 @@
   },
   "hostedAt": {
     "message": "hosted at"
+  },
+  "useDeviceOrHardwareKey": {
+    "message": "Use your device or hardware key"
+  },
+  "justOnce": {
+    "message": "Just once"
+  },
+  "alwaysForThisSite": {
+    "message": "Always for this site"
+  },
+  "domainAddedToExcludedDomains": {
+    "message": "$DOMAIN$ added to excluded domains.",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "google.com"
+      }
+    }
   }
 }

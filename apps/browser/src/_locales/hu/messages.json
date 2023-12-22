@@ -1725,7 +1725,7 @@
     "placeholders": {
       "domain": {
         "content": "$1",
-        "example": "googlecom"
+        "example": "google.com"
       }
     }
   },
@@ -2512,6 +2512,9 @@
     "message": "Kapcsoljuk ki a mesterjelszó újbóli bekérését a mező szerkesztéséhez.",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
+  "skipToContent": {
+    "message": "Ugrás a tartalomra"
+  },
   "bitwardenOverlayButton": {
     "message": "Bitwarden auto-fill menu button",
     "description": "Page title for the iframe containing the overlay button"
@@ -2724,9 +2727,6 @@
   "yourPasskeyIsLocked": {
     "message": "A hozzáférési kulcs használatához hitelesítés szükséges. A személyazonosság ellenőrzése szükséges a folytatáshoz."
   },
-  "useBrowserName": {
-    "message": "Böngésző használata"
-  },
   "multifactorAuthenticationCancelled": {
     "message": "A többtényezős hitelesítés megszakításra került."
   },
@@ -2820,5 +2820,23 @@
   },
   "hostedAt": {
     "message": "tárolva:"
+  },
+  "useDeviceOrHardwareKey": {
+    "message": "Saját eszköz vagy hardverkulcs használata"
+  },
+  "justOnce": {
+    "message": "Csak egyszer"
+  },
+  "alwaysForThisSite": {
+    "message": "Ennél a webhelynél mindig"
+  },
+  "domainAddedToExcludedDomains": {
+    "message": "$DOMAIN$ bekerült a kizárt tartományokba.",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "google.com"
+      }
+    }
   }
 }

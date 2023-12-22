@@ -369,7 +369,7 @@
     "message": "设置一个解锁方式以更改您的密码库超时动作。"
   },
   "unlockMethodNeeded": {
-    "message": "在设置中设置解锁方法"
+    "message": "在设置中设置一个解锁方式"
   },
   "rateExtension": {
     "message": "为本扩展打分"
@@ -1037,7 +1037,7 @@
     "message": "适用于所有已登录的账户。"
   },
   "turnOffBrowserBuiltInPasswordManagerSettings": {
-    "message": "关闭您浏览器自带的密码管理器设置以免冲突"
+    "message": "关闭您浏览器自带的密码管理器设置以避免冲突。"
   },
   "turnOffBrowserBuiltInPasswordManagerSettingsLink": {
     "message": "编辑浏览器设置。"
@@ -1725,7 +1725,7 @@
     "placeholders": {
       "domain": {
         "content": "$1",
-        "example": "googlecom"
+        "example": "google.com"
       }
     }
   },
@@ -2512,6 +2512,9 @@
     "message": "关闭主密码重新提示以编辑此字段",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
+  "skipToContent": {
+    "message": "跳转到内容"
+  },
   "bitwardenOverlayButton": {
     "message": "Bitwarden 自动填充菜单按钮",
     "description": "Page title for the iframe containing the overlay button"
@@ -2724,9 +2727,6 @@
   "yourPasskeyIsLocked": {
     "message": "使用通行密钥需要身份验证。请验证身份以继续。"
   },
-  "useBrowserName": {
-    "message": "使用浏览器"
-  },
   "multifactorAuthenticationCancelled": {
     "message": "多重身份验证已取消"
   },
@@ -2820,5 +2820,23 @@
   },
   "hostedAt": {
     "message": "托管于"
+  },
+  "useDeviceOrHardwareKey": {
+    "message": "使用您的设备或实体钥匙"
+  },
+  "justOnce": {
+    "message": "仅此一次"
+  },
+  "alwaysForThisSite": {
+    "message": "总是为此站点"
+  },
+  "domainAddedToExcludedDomains": {
+    "message": "$DOMAIN$ 已经添加到排除域名列表",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "google.com"
+      }
+    }
   }
 }

@@ -1725,7 +1725,7 @@
     "placeholders": {
       "domain": {
         "content": "$1",
-        "example": "googlecom"
+        "example": "google.com"
       }
     }
   },
@@ -2512,6 +2512,9 @@
     "message": "Pro úpravu tohoto pole vypněte požadavek na hlavní heslo",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
+  "skipToContent": {
+    "message": "Přeskočit na obsah"
+  },
   "bitwardenOverlayButton": {
     "message": "Tlačítko nabídky automatického vyplňování Bitwardenu",
     "description": "Page title for the iframe containing the overlay button"
@@ -2724,9 +2727,6 @@
   "yourPasskeyIsLocked": {
     "message": "Pro použití přístupového klíče je vyžadováno ověření. Chcete-li pokračovat, ověřte svou identitu."
   },
-  "useBrowserName": {
-    "message": "Použít prohlížeč"
-  },
   "multifactorAuthenticationCancelled": {
     "message": "Vícefázové ověření zrušeno"
   },
@@ -2820,5 +2820,23 @@
   },
   "hostedAt": {
     "message": "hostováno na"
+  },
+  "useDeviceOrHardwareKey": {
+    "message": "Použijte Vaše zařízení nebo hardwarový klíč"
+  },
+  "justOnce": {
+    "message": "Jen jednou"
+  },
+  "alwaysForThisSite": {
+    "message": "Vždy pro tuto stránku"
+  },
+  "domainAddedToExcludedDomains": {
+    "message": "$DOMAIN$ přidán do vyloučených domén.",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "google.com"
+      }
+    }
   }
 }

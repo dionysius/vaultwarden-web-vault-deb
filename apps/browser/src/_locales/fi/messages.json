@@ -1725,7 +1725,7 @@
     "placeholders": {
       "domain": {
         "content": "$1",
-        "example": "googlecom"
+        "example": "google.com"
       }
     }
   },
@@ -2512,6 +2512,9 @@
     "message": "Poista pääsalasanan uudelleenkysely käytöstä muokataksesi kenttää",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
+  "skipToContent": {
+    "message": "Siirry sisältöön"
+  },
   "bitwardenOverlayButton": {
     "message": "Bitwardenin automaattitäytön painike",
     "description": "Page title for the iframe containing the overlay button"
@@ -2724,9 +2727,6 @@
   "yourPasskeyIsLocked": {
     "message": "Salausavaimen käyttö edellyttää todennusta. Jatka vahvistamalla henkilöllisyytesi."
   },
-  "useBrowserName": {
-    "message": "Käytä verkkoselainta"
-  },
   "multifactorAuthenticationCancelled": {
     "message": "Monivaiheinen todennus peruttiin"
   },
@@ -2820,5 +2820,23 @@
   },
   "hostedAt": {
     "message": "palvelimelta"
+  },
+  "useDeviceOrHardwareKey": {
+    "message": "Use your device or hardware key"
+  },
+  "justOnce": {
+    "message": "Just once"
+  },
+  "alwaysForThisSite": {
+    "message": "Always for this site"
+  },
+  "domainAddedToExcludedDomains": {
+    "message": "$DOMAIN$ added to excluded domains.",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "google.com"
+      }
+    }
   }
 }

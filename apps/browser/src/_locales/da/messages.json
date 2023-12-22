@@ -1725,7 +1725,7 @@
     "placeholders": {
       "domain": {
         "content": "$1",
-        "example": "googlecom"
+        "example": "google.com"
       }
     }
   },
@@ -2512,6 +2512,9 @@
     "message": "Slå anmodning om hovedadgangskode igen fra for at redigere dette felt",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
+  "skipToContent": {
+    "message": "Spring til indhold"
+  },
   "bitwardenOverlayButton": {
     "message": "Bitwarden autoudfyld-menuknap",
     "description": "Page title for the iframe containing the overlay button"
@@ -2724,9 +2727,6 @@
   "yourPasskeyIsLocked": {
     "message": "Godkendelse kræves for brug af adgangsnøgle. Bekræft din identitet for at fortsætte."
   },
-  "useBrowserName": {
-    "message": "Benyt webbrowser"
-  },
   "multifactorAuthenticationCancelled": {
     "message": "Multifaktorgodkendelse afbrudt"
   },
@@ -2820,5 +2820,23 @@
   },
   "hostedAt": {
     "message": "hostet hos"
+  },
+  "useDeviceOrHardwareKey": {
+    "message": "Brug din enhed eller hardwarenøgle"
+  },
+  "justOnce": {
+    "message": "Kun én gang"
+  },
+  "alwaysForThisSite": {
+    "message": "Altid for dette websted"
+  },
+  "domainAddedToExcludedDomains": {
+    "message": "$DOMAIN$ føjet til undtagne domæner.",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "google.com"
+      }
+    }
   }
 }

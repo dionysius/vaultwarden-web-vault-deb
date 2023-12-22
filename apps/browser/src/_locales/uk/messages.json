@@ -1725,7 +1725,7 @@
     "placeholders": {
       "domain": {
         "content": "$1",
-        "example": "googlecom"
+        "example": "google.com"
       }
     }
   },
@@ -2512,6 +2512,9 @@
     "message": "Вимкніть повторний запит головного пароля, щоб редагувати це поле",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
+  "skipToContent": {
+    "message": "Перейти до вмісту"
+  },
   "bitwardenOverlayButton": {
     "message": "Кнопка меню автозаповнення Bitwarden",
     "description": "Page title for the iframe containing the overlay button"
@@ -2724,9 +2727,6 @@
   "yourPasskeyIsLocked": {
     "message": "Для використання ключа доступу потрібна автентифікація. Пройдіть перевірку, щоб продовжити."
   },
-  "useBrowserName": {
-    "message": "Скористатися браузером"
-  },
   "multifactorAuthenticationCancelled": {
     "message": "Багатофакторну автентифікацію скасовано"
   },
@@ -2820,5 +2820,23 @@
   },
   "hostedAt": {
     "message": "розміщений на"
+  },
+  "useDeviceOrHardwareKey": {
+    "message": "Скористайтеся своїм пристроєм або апаратним ключем"
+  },
+  "justOnce": {
+    "message": "Лише раз"
+  },
+  "alwaysForThisSite": {
+    "message": "Завжди для цього сайту"
+  },
+  "domainAddedToExcludedDomains": {
+    "message": "$DOMAIN$ додано до винятків.",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "google.com"
+      }
+    }
   }
 }

@@ -1725,7 +1725,7 @@
     "placeholders": {
       "domain": {
         "content": "$1",
-        "example": "googlecom"
+        "example": "google.com"
       }
     }
   },
@@ -2512,6 +2512,9 @@
     "message": "Искључите поновни упит главне лозинке да бисте уредили ово поље",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
+  "skipToContent": {
+    "message": "Прескочи на садржај"
+  },
   "bitwardenOverlayButton": {
     "message": "Bitwarden мени дугмета ауто-попуњавања",
     "description": "Page title for the iframe containing the overlay button"
@@ -2724,9 +2727,6 @@
   "yourPasskeyIsLocked": {
     "message": "За коришћење приступног кључа је потребна аутентификација. Потврдите свој идентитет да бисте наставили."
   },
-  "useBrowserName": {
-    "message": "Користите претраживач"
-  },
   "multifactorAuthenticationCancelled": {
     "message": "Вишефакторска аутентификација је отказана"
   },
@@ -2820,5 +2820,23 @@
   },
   "hostedAt": {
     "message": "hosted at"
+  },
+  "useDeviceOrHardwareKey": {
+    "message": "Use your device or hardware key"
+  },
+  "justOnce": {
+    "message": "Just once"
+  },
+  "alwaysForThisSite": {
+    "message": "Always for this site"
+  },
+  "domainAddedToExcludedDomains": {
+    "message": "$DOMAIN$ added to excluded domains.",
+    "placeholders": {
+      "domain": {
+        "content": "$1",
+        "example": "google.com"
+      }
+    }
   }
 }
