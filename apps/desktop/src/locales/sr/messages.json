@@ -467,13 +467,13 @@
     "message": "Сигурно обрисати овај прилог?"
   },
   "attachmentSaved": {
-    "message": "Прилог је сачуван."
+    "message": "Прилог је сачуван"
   },
   "file": {
     "message": "Датотека"
   },
   "selectFile": {
-    "message": "Изабери датотеку."
+    "message": "Изабери датотеку"
   },
   "maxFileSize": {
     "message": "Максимална величина је 500МБ."
@@ -714,7 +714,7 @@
     "message": "УРЛ сервера иконице"
   },
   "environmentSaved": {
-    "message": "УРЛ адресе окружења су сачуване."
+    "message": "УРЛ адресе окружења су сачуване"
   },
   "ok": {
     "message": "У реду"
@@ -1004,7 +1004,7 @@
     "description": "Copy to clipboard"
   },
   "checkForUpdates": {
-    "message": "Провери доступна ажурирања"
+    "message": "Провери доступна ажурирања…"
   },
   "version": {
     "message": "Верзија $VERSION_NUM$",
@@ -1408,7 +1408,7 @@
     "message": "Додатна подешавања Touch ID"
   },
   "touchIdConsentMessage": {
-    "message": "Откључај свој сеф"
+    "message": "откључај свој сеф"
   },
   "autoPromptWindowsHello": {
     "message": "Захтевај Windows Hello при покретању"
@@ -1936,7 +1936,7 @@
     "message": "Уклони главну лозинку"
   },
   "removedMasterPassword": {
-    "message": "Главна лозинка уклоњена."
+    "message": "Главна лозинка уклоњена"
   },
   "convertOrganizationEncryptionDesc": {
     "message": "$ORGANIZATION$ користи SSO уз сопствени сервер за кључеве. Главна лозинка за пријаву више није неопходна за чланове ове организације.",
@@ -2082,7 +2082,7 @@
     "message": "Premium претплата је потребна"
   },
   "organizationIsDisabled": {
-    "message": "Организација је онемогућена."
+    "message": "Организација је онемогућена"
   },
   "disabledOrganizationFilterError": {
     "message": "Није могуће приступити ставкама у онемогућене организације. Обратите се власнику организације за помоћ."
@@ -2426,6 +2426,9 @@
   },
   "submenu": {
     "message": "Под-мени"
+  },
+  "skipToContent": {
+    "message": "Прескочи на садржај"
   },
   "typePasskey": {
     "message": "Приступачни кључ"

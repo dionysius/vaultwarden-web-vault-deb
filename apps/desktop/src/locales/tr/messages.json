@@ -2427,11 +2427,14 @@
   "submenu": {
     "message": "Alt menü"
   },
+  "skipToContent": {
+    "message": "İçeriğe geç"
+  },
   "typePasskey": {
     "message": "Geçiş anahtarı"
   },
   "passkeyNotCopied": {
-    "message": "Şifre anahtarı kopyalanmayacak"
+    "message": "Geçiş anahtarı kopyalanmayacak"
   },
   "passkeyNotCopiedAlert": {
     "message": "Geçiş anahtarı klonlanan öğeye kopyalanmayacaktır. Bu öğeyi klonlamaya devam etmek istiyor musunuz?"
@@ -2612,6 +2615,6 @@
     "message": "Koleksiyon"
   },
   "lastPassYubikeyDesc": {
-    "message": "LastPass hesabınızla ilişkili YubiKey'i bilgisayarınızın USB bağlantı noktasına takın ve ardından düğmesine dokunun."
+    "message": "LastPass hesabınızla ilişkili YubiKey'i bilgisayarınızın USB portuna takıp düğmesine dokunun."
   }
 }
