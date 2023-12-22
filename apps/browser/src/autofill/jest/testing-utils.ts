@@ -11,8 +11,8 @@ function flushPromises() {
   });
 }
 
-function postWindowMessage(data: any, origin = "https://localhost/") {
-  globalThis.dispatchEvent(new MessageEvent("message", { data, origin }));
+function postWindowMessage(data: any, origin = "https://localhost/", source = window) {
+  globalThis.dispatchEvent(new MessageEvent("message", { data, origin, source }));
 }
 
 function sendExtensionRuntimeMessage(

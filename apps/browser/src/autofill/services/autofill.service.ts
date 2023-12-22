@@ -109,9 +109,16 @@ export default class AutofillService implements AutofillServiceInterface {
     }
 
     const injectedScripts = [mainAutofillScript];
+
     if (triggeringOnPageLoad) {
       injectedScripts.push("autofiller.js");
+    } else {
+      await BrowserApi.executeScriptInTab(tab.id, {
+        file: "content/bootstrap-content-message-handler.js",
+        runAt: "document_start",
+      });
     }
+
     injectedScripts.push("notificationBar.js", "contextMenuHandler.js");
 
     for (const injectedScript of injectedScripts) {
@@ -121,11 +128,6 @@ export default class AutofillService implements AutofillServiceInterface {
         runAt: "document_start",
       });
     }
-
-    await BrowserApi.executeScriptInTab(tab.id, {
-      file: "content/message_handler.js",
-      runAt: "document_start",
-    });
   }
 
   /**

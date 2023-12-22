@@ -29,7 +29,7 @@
     },
     {
       "all_frames": false,
-      "js": ["content/message_handler.js"],
+      "js": ["content/bootstrap-content-message-handler.js"],
       "matches": ["http://*/*", "https://*/*", "file:///*"],
       "run_at": "document_start"
     },
