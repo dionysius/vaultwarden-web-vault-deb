@@ -5,3 +5,7 @@ export class EmergencyAccessUpdateRequest {
   waitTimeDays: number;
   keyEncrypted?: string;
 }
+
+export class EmergencyAccessWithIdRequest extends EmergencyAccessUpdateRequest {
+  id: string;
+}

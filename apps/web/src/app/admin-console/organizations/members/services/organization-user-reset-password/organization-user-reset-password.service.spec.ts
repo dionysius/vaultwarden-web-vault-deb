@@ -19,10 +19,10 @@ import {
 } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
 import { CsprngArray } from "@bitwarden/common/types/csprng";
 
-import { AccountRecoveryService } from "./account-recovery.service";
+import { OrganizationUserResetPasswordService } from "./organization-user-reset-password.service";
 
-describe("AccountRecoveryService", () => {
-  let sut: AccountRecoveryService;
+describe("OrganizationUserResetPasswordService", () => {
+  let sut: OrganizationUserResetPasswordService;
 
   let cryptoService: MockProxy<CryptoService>;
   let encryptService: MockProxy<EncryptService>;
@@ -39,7 +39,7 @@ describe("AccountRecoveryService", () => {
     organizationApiService = mock<OrganizationApiService>();
     i18nService = mock<I18nService>();
 
-    sut = new AccountRecoveryService(
+    sut = new OrganizationUserResetPasswordService(
       cryptoService,
       encryptService,
       organizationService,
@@ -161,7 +161,7 @@ describe("AccountRecoveryService", () => {
     });
   });
 
-  describe("rotate", () => {
+  describe("getRotatedKeys", () => {
     beforeEach(() => {
       organizationService.getAll.mockResolvedValue([
         createOrganization("1", "org1"),
@@ -178,29 +178,12 @@ describe("AccountRecoveryService", () => {
       );
     });
 
-    it("should rotate all of the user's recovery key", async () => {
-      organizationApiService.getKeys.mockResolvedValue(
-        new OrganizationKeysResponse({
-          privateKey: "test-private-key",
-          publicKey: "test-public-key",
-        }),
-      );
-      cryptoService.rsaEncrypt.mockResolvedValue(
-        new EncString(EncryptionType.Rsa2048_OaepSha1_B64, "mockEncryptedUserKey"),
-      );
-      organizationService.getAll.mockResolvedValue([
-        createOrganization("1", "org1"),
-        createOrganization("2", "org2"),
-      ]);
-
-      await sut.rotate(
+    it("should return all re-encrypted account recovery keys", async () => {
+      const result = await sut.getRotatedKeys(
         new SymmetricCryptoKey(new Uint8Array(64)) as UserKey,
-        "test-master-password-hash",
       );
 
-      expect(
-        organizationUserService.putOrganizationUserResetPasswordEnrollment,
-      ).toHaveBeenCalledTimes(2);
+      expect(result).toHaveLength(2);
     });
   });
 });

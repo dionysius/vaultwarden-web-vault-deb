@@ -4,8 +4,8 @@ import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-conso
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { OrganizationUserService } from "@bitwarden/common/admin-console/abstractions/organization-user/organization-user.service";
 import {
-  OrganizationUserResetPasswordEnrollmentRequest,
   OrganizationUserResetPasswordRequest,
+  OrganizationUserResetPasswordWithIdRequest,
 } from "@bitwarden/common/admin-console/abstractions/organization-user/requests";
 import { KdfConfig } from "@bitwarden/common/auth/models/domain/kdf-config";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
@@ -21,7 +21,7 @@ import {
 @Injectable({
   providedIn: "root",
 })
-export class AccountRecoveryService {
+export class OrganizationUserResetPasswordService {
   constructor(
     private cryptoService: CryptoService,
     private encryptService: EncryptService,
@@ -120,36 +120,60 @@ export class AccountRecoveryService {
   }
 
   /**
-   * Rotates the user's recovery key for all enrolled organizations.
+   * Returns existing account recovery keys re-encrypted with the new user key.
    * @param newUserKey the new user key
-   * @param masterPasswordHash the user's master password hash (required for user verification)
+   * @throws Error if new user key is null
    */
-  async rotate(newUserKey: UserKey, masterPasswordHash: string): Promise<void> {
+  async getRotatedKeys(
+    newUserKey: UserKey,
+  ): Promise<OrganizationUserResetPasswordWithIdRequest[] | null> {
+    if (newUserKey == null) {
+      throw new Error("New user key is required for rotation.");
+    }
+
     const allOrgs = await this.organizationService.getAll();
 
+    if (!allOrgs) {
+      return;
+    }
+
+    const requests: OrganizationUserResetPasswordWithIdRequest[] = [];
     for (const org of allOrgs) {
       // If not already enrolled, skip
       if (!org.resetPasswordEnrolled) {
         continue;
       }
 
-      try {
-        // Re-enroll - encrypt user key with organization public key
-        const encryptedKey = await this.buildRecoveryKey(org.id, newUserKey);
+      // Re-enroll - encrypt user key with organization public key
+      const encryptedKey = await this.buildRecoveryKey(org.id, newUserKey);
 
-        // Create/Execute request
-        const request = new OrganizationUserResetPasswordEnrollmentRequest();
-        request.resetPasswordKey = encryptedKey;
-        request.masterPasswordHash = masterPasswordHash;
+      // Create/Execute request
+      const request = new OrganizationUserResetPasswordWithIdRequest();
+      request.organizationId = org.id;
+      request.resetPasswordKey = encryptedKey;
+      request.masterPasswordHash = "ignored";
 
-        await this.organizationUserService.putOrganizationUserResetPasswordEnrollment(
-          org.id,
-          org.userId,
-          request,
-        );
-      } catch (e) {
-        // If enrollment fails, continue to next org
-      }
+      requests.push(request);
+    }
+    return requests;
+  }
+
+  /**
+   * @deprecated Nov 6, 2023: Use new Key Rotation Service for posting rotated data.
+   */
+  async postLegacyRotation(
+    userId: string,
+    requests: OrganizationUserResetPasswordWithIdRequest[],
+  ): Promise<void> {
+    if (requests == null) {
+      return;
+    }
+    for (const request of requests) {
+      await this.organizationUserService.putOrganizationUserResetPasswordEnrollment(
+        request.organizationId,
+        userId,
+        request,
+      );
     }
   }
 }

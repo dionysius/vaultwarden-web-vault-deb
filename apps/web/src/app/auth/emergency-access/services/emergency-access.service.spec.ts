@@ -20,7 +20,6 @@ import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.servi
 import { EmergencyAccessStatusType } from "../enums/emergency-access-status-type";
 import { EmergencyAccessType } from "../enums/emergency-access-type";
 import { EmergencyAccessPasswordRequest } from "../request/emergency-access-password.request";
-import { EmergencyAccessUpdateRequest } from "../request/emergency-access-update.request";
 import {
   EmergencyAccessGranteeDetailsResponse,
   EmergencyAccessTakeoverResponse,
@@ -210,7 +209,7 @@ describe("EmergencyAccessService", () => {
     });
   });
 
-  describe("rotate", () => {
+  describe("getRotatedKeys", () => {
     let mockUserKey: UserKey;
     const allowedStatuses = [
       EmergencyAccessStatusType.Confirmed,
@@ -245,26 +244,10 @@ describe("EmergencyAccessService", () => {
       });
     });
 
-    it("Only updates emergency accesses with allowed statuses", async () => {
-      await emergencyAccessService.rotate(mockUserKey);
+    it("Only returns emergency accesses with allowed statuses", async () => {
+      const result = await emergencyAccessService.getRotatedKeys(mockUserKey);
 
-      let expectedCallCount = 0;
-
-      mockEmergencyAccess.data.forEach((emergencyAccess) => {
-        if (allowedStatuses.includes(emergencyAccess.status)) {
-          expect(emergencyAccessApiService.putEmergencyAccess).toHaveBeenCalledWith(
-            emergencyAccess.id,
-            expect.any(EmergencyAccessUpdateRequest),
-          );
-          expectedCallCount++;
-        } else {
-          expect(emergencyAccessApiService.putEmergencyAccess).not.toHaveBeenCalledWith(
-            emergencyAccess.id,
-            expect.any(EmergencyAccessUpdateRequest),
-          );
-        }
-      });
-      expect(emergencyAccessApiService.putEmergencyAccess).toHaveBeenCalledTimes(expectedCallCount);
+      expect(result).toHaveLength(allowedStatuses.length);
     });
   });
 });

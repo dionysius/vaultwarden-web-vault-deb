@@ -3,3 +3,7 @@ import { SecretVerificationRequest } from "../../../../auth/models/request/secre
 export class OrganizationUserResetPasswordEnrollmentRequest extends SecretVerificationRequest {
   resetPasswordKey: string;
 }
+
+export class OrganizationUserResetPasswordWithIdRequest extends OrganizationUserResetPasswordEnrollmentRequest {
+  organizationId: string;
+}

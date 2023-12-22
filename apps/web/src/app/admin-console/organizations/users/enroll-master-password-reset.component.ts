@@ -13,7 +13,7 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 import { DialogService } from "@bitwarden/components";
 
-import { AccountRecoveryService } from "../members/services/account-recovery/account-recovery.service";
+import { OrganizationUserResetPasswordService } from "../members/services/organization-user-reset-password/organization-user-reset-password.service";
 
 interface EnrollMasterPasswordResetData {
   organization: Organization;
@@ -33,7 +33,7 @@ export class EnrollMasterPasswordReset {
   constructor(
     private dialogRef: DialogRef,
     @Inject(DIALOG_DATA) protected data: EnrollMasterPasswordResetData,
-    private accountRecoveryService: AccountRecoveryService,
+    private resetPasswordService: OrganizationUserResetPasswordService,
     private userVerificationService: UserVerificationService,
     private platformUtilsService: PlatformUtilsService,
     private i18nService: I18nService,
@@ -53,7 +53,7 @@ export class EnrollMasterPasswordReset {
         )
         .then(async (request) => {
           // Create request and execute enrollment
-          request.resetPasswordKey = await this.accountRecoveryService.buildRecoveryKey(
+          request.resetPasswordKey = await this.resetPasswordService.buildRecoveryKey(
             this.organization.id,
           );
           await this.organizationUserService.putOrganizationUserResetPasswordEnrollment(

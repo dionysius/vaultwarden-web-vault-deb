@@ -20,7 +20,7 @@ import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 import { DialogService } from "@bitwarden/components";
 
-import { AccountRecoveryService } from "../services/account-recovery/account-recovery.service";
+import { OrganizationUserResetPasswordService } from "../services/organization-user-reset-password/organization-user-reset-password.service";
 
 @Component({
   selector: "app-reset-password",
@@ -43,7 +43,7 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
   private destroy$ = new Subject<void>();
 
   constructor(
-    private accountRecoveryService: AccountRecoveryService,
+    private resetPasswordService: OrganizationUserResetPasswordService,
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
     private passwordGenerationService: PasswordGenerationServiceAbstraction,
@@ -144,7 +144,7 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
     }
 
     try {
-      this.formPromise = this.accountRecoveryService.resetMasterPassword(
+      this.formPromise = this.resetPasswordService.resetMasterPassword(
         this.newPassword,
         this.email,
         this.id,

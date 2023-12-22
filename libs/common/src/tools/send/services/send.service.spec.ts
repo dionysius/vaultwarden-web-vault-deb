@@ -7,6 +7,7 @@ import { EncryptService } from "../../../platform/abstractions/encrypt.service";
 import { I18nService } from "../../../platform/abstractions/i18n.service";
 import { StateService } from "../../../platform/abstractions/state.service";
 import { EncString } from "../../../platform/models/domain/enc-string";
+import { SymmetricCryptoKey, UserKey } from "../../../platform/models/domain/symmetric-crypto-key";
 import { ContainerService } from "../../../platform/services/container.service";
 import { SendData } from "../models/data/send.data";
 import { Send } from "../models/domain/send";
@@ -90,6 +91,37 @@ describe("SendService", () => {
     await sendService.getAllDecryptedFromState();
 
     expect(stateService.getDecryptedSends).toHaveBeenCalledTimes(1);
+  });
+
+  describe("getRotatedKeys", () => {
+    let encryptedKey: EncString;
+    beforeEach(() => {
+      cryptoService.decryptToBytes.mockResolvedValue(new Uint8Array(32));
+      encryptedKey = new EncString("Re-encrypted Send Key");
+      cryptoService.encrypt.mockResolvedValue(encryptedKey);
+    });
+
+    it("returns re-encrypted user sends", async () => {
+      const newUserKey = new SymmetricCryptoKey(new Uint8Array(32)) as UserKey;
+      const result = await sendService.getRotatedKeys(newUserKey);
+
+      expect(result).toMatchObject([{ id: "1", key: "Re-encrypted Send Key" }]);
+    });
+
+    it("returns null if there are no sends", async () => {
+      sendService.replace(null);
+
+      const newUserKey = new SymmetricCryptoKey(new Uint8Array(32)) as UserKey;
+      const result = await sendService.getRotatedKeys(newUserKey);
+
+      expect(result).toEqual([]);
+    });
+
+    it("throws if the new user key is null", async () => {
+      await expect(sendService.getRotatedKeys(null)).rejects.toThrowError(
+        "New user key is required for rotation.",
+      );
+    });
   });
 
   // InternalSendService
