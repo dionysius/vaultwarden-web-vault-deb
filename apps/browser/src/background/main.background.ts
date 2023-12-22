@@ -687,6 +687,7 @@ export default class MainBackground {
       this.logService,
       this.configService,
       this.fido2Service,
+      this.settingsService,
     );
     this.nativeMessagingBackground = new NativeMessagingBackground(
       this.cryptoService,

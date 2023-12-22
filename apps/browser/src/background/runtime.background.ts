@@ -1,4 +1,5 @@
 import { NotificationsService } from "@bitwarden/common/abstractions/notifications.service";
+import { SettingsService } from "@bitwarden/common/abstractions/settings.service";
 import { ConfigServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config.service.abstraction";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
@@ -14,6 +15,7 @@ import {
 } from "../auth/popup/utils/auth-popout-window";
 import LockedVaultPendingNotificationsItem from "../autofill/notification/models/locked-vault-pending-notifications-item";
 import { AutofillService } from "../autofill/services/abstractions/autofill.service";
+import { AutofillOverlayVisibility } from "../autofill/utils/autofill-overlay.enum";
 import { BrowserApi } from "../platform/browser/browser-api";
 import { BrowserStateService } from "../platform/services/abstractions/browser-state.service";
 import { BrowserEnvironmentService } from "../platform/services/browser-environment.service";
@@ -43,6 +45,7 @@ export default class RuntimeBackground {
     private logService: LogService,
     private configService: ConfigServiceAbstraction,
     private fido2Service: Fido2Service,
+    private settingsService: SettingsService,
   ) {
     // onInstalled listener must be wired up before anything else, so we do it in the ctor
     chrome.runtime.onInstalled.addListener((details: any) => {
@@ -325,6 +328,9 @@ export default class RuntimeBackground {
       if (this.onInstalledReason != null) {
         if (this.onInstalledReason === "install") {
           BrowserApi.createNewTab("https://bitwarden.com/browser-start/");
+          await this.settingsService.setAutoFillOverlayVisibility(
+            AutofillOverlayVisibility.OnFieldFocus,
+          );
 
           if (await this.environmentService.hasManagedEnvironment()) {
             await this.environmentService.setUrlsToManagedEnvironment();
