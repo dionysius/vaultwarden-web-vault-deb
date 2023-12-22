@@ -52,21 +52,23 @@ const MAX_OCTET = 0x80,
   ENCODED_TAG_SEQ = TAG_SEQ | PRIMITIVE_BIT | (CLASS_UNIVERSAL << 6),
   ENCODED_TAG_INT = TAG_INT | (CLASS_UNIVERSAL << 6);
 
-function countPadding(buf: Uint8Array, start: number, stop: number) {
+// Counts leading zeros and determines if there's a need for 0x00 padding
+function countPadding(
+  buf: Uint8Array,
+  start: number,
+  end: number,
+): { padding: number; needs0x00: boolean } {
   let padding = 0;
-  while (start + padding < stop && buf[start + padding] === 0) {
-    ++padding;
+  while (start + padding < end && buf[start + padding] === 0) {
+    padding++;
   }
 
-  const needsSign = buf[start + padding] >= MAX_OCTET;
-  if (needsSign) {
-    --padding;
-  }
-
-  return padding;
+  const needs0x00 = (buf[start + padding] & MAX_OCTET) === MAX_OCTET;
+  return { padding, needs0x00 };
 }
 
-export function joseToDer(signature: Uint8Array, alg: Alg) {
+export function p1363ToDer(signature: Uint8Array) {
+  const alg = "ES256";
   const paramBytes = getParamBytesForAlg(alg);
 
   const signatureBytes = signature.length;
@@ -82,12 +84,20 @@ export function joseToDer(signature: Uint8Array, alg: Alg) {
     );
   }
 
-  const rPadding = countPadding(signature, 0, paramBytes);
-  const sPadding = countPadding(signature, paramBytes, signature.length);
-  const rLength = paramBytes - rPadding;
-  const sLength = paramBytes - sPadding;
+  const { padding: rPadding, needs0x00: rNeeds0x00 } = countPadding(signature, 0, paramBytes);
+  const { padding: sPadding, needs0x00: sNeeds0x00 } = countPadding(
+    signature,
+    paramBytes,
+    signature.length,
+  );
 
-  const rsBytes = 1 + 1 + rLength + 1 + 1 + sLength;
+  const rActualLength = paramBytes - rPadding;
+  const sActualLength = paramBytes - sPadding;
+
+  const rLength = rActualLength + (rNeeds0x00 ? 1 : 0);
+  const sLength = sActualLength + (sNeeds0x00 ? 1 : 0);
+
+  const rsBytes = 2 + rLength + 2 + sLength;
 
   const shortLength = rsBytes < MAX_OCTET;
 
@@ -101,24 +111,23 @@ export function joseToDer(signature: Uint8Array, alg: Alg) {
     dst[offset++] = MAX_OCTET | 1;
     dst[offset++] = rsBytes & 0xff;
   }
+
+  // Encoding 'R' component
   dst[offset++] = ENCODED_TAG_INT;
   dst[offset++] = rLength;
-  if (rPadding < 0) {
+  if (rNeeds0x00) {
     dst[offset++] = 0;
-    dst.set(signature.subarray(0, paramBytes), offset);
-    offset += paramBytes;
-  } else {
-    dst.set(signature.subarray(rPadding, paramBytes), offset);
-    offset += paramBytes;
   }
+  dst.set(signature.subarray(rPadding, rPadding + rActualLength), offset);
+  offset += rActualLength;
+
+  // Encoding 'S' component
   dst[offset++] = ENCODED_TAG_INT;
   dst[offset++] = sLength;
-  if (sPadding < 0) {
+  if (sNeeds0x00) {
     dst[offset++] = 0;
-    dst.set(signature.subarray(paramBytes), offset);
-  } else {
-    dst.set(signature.subarray(paramBytes + sPadding), offset);
   }
+  dst.set(signature.subarray(paramBytes + sPadding, paramBytes + sPadding + sActualLength), offset);
 
   return dst;
 }
