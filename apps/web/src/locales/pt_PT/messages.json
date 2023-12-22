@@ -675,7 +675,7 @@
     "message": "Encriptação não suportada"
   },
   "enablePasskeyEncryption": {
-    "message": "Set up encryption"
+    "message": "Configurar a encriptação"
   },
   "usedForEncryption": {
     "message": "Utilizado para encriptação"
@@ -7394,6 +7394,9 @@
   },
   "alreadyHaveAccount": {
     "message": "Já tem uma conta?"
+  },
+  "skipToContent": {
+    "message": "Avançar para o conteúdo"
   },
   "customBillingStart": {
     "message": "A faturação personalizada não é refletida. Visite a "

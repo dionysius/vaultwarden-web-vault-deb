@@ -675,7 +675,7 @@
     "message": "Шифровање није подржано"
   },
   "enablePasskeyEncryption": {
-    "message": "Set up encryption"
+    "message": "Подесити шифровање"
   },
   "usedForEncryption": {
     "message": "Употребљено за шифровање"
@@ -1075,7 +1075,7 @@
     "message": "Извези"
   },
   "exportFrom": {
-    "message": "Export from"
+    "message": "Извоз од"
   },
   "exportVault": {
     "message": "Извоз сефа"
@@ -7394,6 +7394,9 @@
   },
   "alreadyHaveAccount": {
     "message": "Већ имате налог?"
+  },
+  "skipToContent": {
+    "message": "Прескочи на садржај"
   },
   "customBillingStart": {
     "message": "Прилагођени обрачун се не одражава. Посетите "

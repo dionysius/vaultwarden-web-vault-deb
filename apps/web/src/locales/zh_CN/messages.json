@@ -7395,6 +7395,9 @@
   "alreadyHaveAccount": {
     "message": "已经有一个账户？"
   },
+  "skipToContent": {
+    "message": "跳转到内容"
+  },
   "customBillingStart": {
     "message": "Custom billing is not reflected. Visit the "
   },
@@ -7436,13 +7439,13 @@
     "message": "已达到席位限制"
   },
   "contactYourProvider": {
-    "message": "请联系您的供应商购买更多席位。"
+    "message": "请联系您的提供商购买更多席位。"
   },
   "seatLimitReachedContactYourProvider": {
-    "message": "已达到席位限制。请联系您的供应商购买更多席位。"
+    "message": "已达到席位限制。请联系您的提供商购买更多席位。"
   },
   "collectionAccessRestricted": {
-    "message": "集合访问受限"
+    "message": "集合访问权限受限"
   },
   "serviceAccountAccessUpdated": {
     "message": "服务账户访问权限已更新"
