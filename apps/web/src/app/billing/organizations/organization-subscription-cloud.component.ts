@@ -249,12 +249,13 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
       return this.i18nService.t("subscriptionFreePlan", this.sub.seats.toString());
     } else if (
       this.sub.planType === PlanType.FamiliesAnnually ||
-      this.sub.planType === PlanType.FamiliesAnnually2019
+      this.sub.planType === PlanType.FamiliesAnnually2019 ||
+      this.sub.planType === PlanType.TeamsStarter
     ) {
       if (this.isSponsoredSubscription) {
         return this.i18nService.t("subscriptionSponsoredFamiliesPlan", this.sub.seats.toString());
       } else {
-        return this.i18nService.t("subscriptionFamiliesPlan", this.sub.seats.toString());
+        return this.i18nService.t("subscriptionUpgrade", this.sub.seats.toString());
       }
     } else if (this.sub.maxAutoscaleSeats === this.sub.seats && this.sub.seats != null) {
       return this.i18nService.t("subscriptionMaxReached", this.sub.seats.toString());
@@ -413,7 +414,7 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
   };
 
   get showChangePlanButton() {
-    return this.subscription == null && this.sub.planType === PlanType.Free && !this.showChangePlan;
+    return this.sub.plan.product !== ProductType.Enterprise && !this.showChangePlan;
   }
 }
 

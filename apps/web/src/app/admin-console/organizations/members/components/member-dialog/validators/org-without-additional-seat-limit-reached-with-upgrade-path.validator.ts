@@ -36,9 +36,14 @@ export function orgWithoutAdditionalSeatLimitReachedWithUpgradePathValidator(
       ),
     );
 
-    return organization.planProductType === ProductType.Free &&
+    const productHasAdditionalSeatsOption =
+      organization.planProductType !== ProductType.Free &&
+      organization.planProductType !== ProductType.Families &&
+      organization.planProductType !== ProductType.TeamsStarter;
+
+    return !productHasAdditionalSeatsOption &&
       allOrganizationUserEmails.length + newEmailsToAdd.length > organization.seats
-      ? { freePlanLimitReached: { message: errorMessage } }
+      ? { seatLimitReached: { message: errorMessage } }
       : null;
   };
 }

@@ -111,7 +111,7 @@ describe("orgWithoutAdditionalSeatLimitReachedWithUpgradePathValidator", () => {
 
     const result = validatorFn(control);
 
-    expect(result).toStrictEqual({ freePlanLimitReached: { message: errorMessage } });
+    expect(result).toStrictEqual({ seatLimitReached: { message: errorMessage } });
   });
 
   it("should return null when not on free plan", () => {

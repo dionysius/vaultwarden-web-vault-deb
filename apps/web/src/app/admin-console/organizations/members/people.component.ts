@@ -376,17 +376,6 @@ export class PeopleComponent
     return `${product}InvLimitReached${this.getManageBillingText()}`;
   }
 
-  private getDialogTitle(productType: ProductType): string {
-    switch (productType) {
-      case ProductType.Free:
-        return "upgrade";
-      case ProductType.TeamsStarter:
-        return "contactSupportShort";
-      default:
-        throw new Error(`Unsupported product type: ${productType}`);
-    }
-  }
-
   private getDialogContent(): string {
     return this.i18nService.t(
       this.getProductKey(this.organization.planProductType),
@@ -399,7 +388,13 @@ export class PeopleComponent
       return this.i18nService.t("ok");
     }
 
-    return this.i18nService.t(this.getDialogTitle(this.organization.planProductType));
+    const productType = this.organization.planProductType;
+
+    if (productType !== ProductType.Free && productType !== ProductType.TeamsStarter) {
+      throw new Error(`Unsupported product type: ${productType}`);
+    }
+
+    return this.i18nService.t("upgrade");
   }
 
   private async handleDialogClose(result: boolean | undefined): Promise<void> {
@@ -407,19 +402,16 @@ export class PeopleComponent
       return;
     }
 
-    switch (this.organization.planProductType) {
-      case ProductType.Free:
-        await this.router.navigate(
-          ["/organizations", this.organization.id, "billing", "subscription"],
-          { queryParams: { upgrade: true } },
-        );
-        break;
-      case ProductType.TeamsStarter:
-        window.open("https://bitwarden.com/contact/", "_blank");
-        break;
-      default:
-        throw new Error(`Unsupported product type: ${this.organization.planProductType}`);
+    const productType = this.organization.planProductType;
+
+    if (productType !== ProductType.Free && productType !== ProductType.TeamsStarter) {
+      throw new Error(`Unsupported product type: ${this.organization.planProductType}`);
     }
+
+    await this.router.navigate(
+      ["/organizations", this.organization.id, "billing", "subscription"],
+      { queryParams: { upgrade: true } },
+    );
   }
 
   private async showSeatLimitReachedDialog(): Promise<void> {
