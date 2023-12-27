@@ -53,10 +53,10 @@ jobs:
       # Tests in apps/ are typechecked when their app is built, so we just do it here for libs/
       # See https://bitwarden.atlassian.net/browse/EC-497
       - name: Run typechecking
-        run: npm run test:types
+        run: npm run test:types --coverage
 
       - name: Run tests
-        run: npm run test
+        run: npm run test --coverage
 
       - name: Report test results
         uses: dorny/test-reporter@c9b3d0e2bd2a4e96aaf424dbaa31c46b42318226 # v1.6.0
@@ -66,6 +66,11 @@ jobs:
           path: "junit.xml"
           reporter: jest-junit
           fail-on-error: true
+
+      - name: Upload to codecov.io
+        uses: codecov/codecov-action@eaaf4bedf32dbdc6b720b63067d99c4d77d6047d # v3.1.4
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
   rust:
     name: rust - ${{ matrix.os }}
