@@ -272,11 +272,6 @@ export class Fido2ClientService implements Fido2ClientServiceAbstraction {
         abortController,
       );
     } catch (error) {
-      if (error instanceof FallbackRequestedError) {
-        this.logService?.info(`[Fido2Client] Aborting because of auto fallback`);
-        throw error;
-      }
-
       if (
         abortController.signal.aborted &&
         abortController.signal.reason === UserRequestedFallbackAbortReason

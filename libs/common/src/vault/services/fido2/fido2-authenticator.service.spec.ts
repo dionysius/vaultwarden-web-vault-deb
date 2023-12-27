@@ -9,7 +9,6 @@ import {
   Fido2AuthenticatorGetAssertionParams,
   Fido2AuthenticatorMakeCredentialsParams,
 } from "../../abstractions/fido2/fido2-authenticator.service.abstraction";
-import { FallbackRequestedError } from "../../abstractions/fido2/fido2-client.service.abstraction";
 import {
   Fido2UserInterfaceService,
   Fido2UserInterfaceSession,
@@ -482,17 +481,6 @@ describe("FidoAuthenticatorService", () => {
         } catch {}
 
         expect(userInterfaceSession.informCredentialNotFound).toHaveBeenCalled();
-      });
-
-      it("should automatically fallback if no credential exists when fallback is supported", async () => {
-        params.fallbackSupported = true;
-        cipherService.getAllDecrypted.mockResolvedValue([]);
-        userInterfaceSession.informCredentialNotFound.mockResolvedValue();
-
-        const result = async () => await authenticator.getAssertion(params, tab);
-
-        await expect(result).rejects.toThrowError(FallbackRequestedError);
-        expect(userInterfaceSession.informCredentialNotFound).not.toHaveBeenCalled();
       });
 
       it("should inform user if credential exists but rpId does not match", async () => {
