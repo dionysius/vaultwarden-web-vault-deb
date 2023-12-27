@@ -409,16 +409,17 @@ export class SettingsComponent implements OnInit {
 
   async updatePin(value: boolean) {
     if (value) {
-      const ref = this.modalService.open(SetPinComponent, { allowMultipleModals: true });
+      const dialogRef = SetPinComponent.open(this.dialogService);
 
-      if (ref == null) {
+      if (dialogRef == null) {
         this.form.controls.pin.setValue(false, { emitEvent: false });
         return;
       }
 
-      this.userHasPinSet = await ref.onClosedPromise();
+      this.userHasPinSet = await firstValueFrom(dialogRef.closed);
       this.form.controls.pin.setValue(this.userHasPinSet, { emitEvent: false });
     }
+
     if (!value) {
       // If user turned off PIN without having a MP and has biometric + require MP/PIN on restart enabled
       if (this.form.value.requirePasswordOnStart && !this.userHasMasterPassword) {
@@ -429,6 +430,7 @@ export class SettingsComponent implements OnInit {
 
       await this.vaultTimeoutSettingsService.clear();
     }
+
     this.messagingService.send("redrawMenu");
   }
 

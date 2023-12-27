@@ -1,57 +1,63 @@
+import { DialogRef } from "@angular/cdk/dialog";
 import { Directive, OnInit } from "@angular/core";
+import { FormBuilder, Validators } from "@angular/forms";
 
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 
-import { ModalRef } from "../../components/modal/modal.ref";
-
 @Directive()
 export class SetPinComponent implements OnInit {
-  pin = "";
-  showPin = false;
-  masterPassOnRestart = true;
   showMasterPassOnRestart = true;
 
+  setPinForm = this.formBuilder.group({
+    pin: ["", [Validators.required]],
+    masterPassOnRestart: true,
+  });
+
   constructor(
-    private modalRef: ModalRef,
+    private dialogRef: DialogRef,
     private cryptoService: CryptoService,
     private userVerificationService: UserVerificationService,
     private stateService: StateService,
+    private formBuilder: FormBuilder,
   ) {}
 
   async ngOnInit() {
-    this.showMasterPassOnRestart = this.masterPassOnRestart =
-      await this.userVerificationService.hasMasterPassword();
+    const hasMasterPassword = await this.userVerificationService.hasMasterPassword();
+
+    this.setPinForm.controls.masterPassOnRestart.setValue(hasMasterPassword);
+    this.showMasterPassOnRestart = hasMasterPassword;
   }
 
-  toggleVisibility() {
-    this.showPin = !this.showPin;
-  }
+  submit = async () => {
+    const pin = this.setPinForm.get("pin").value;
+    const masterPassOnRestart = this.setPinForm.get("masterPassOnRestart").value;
 
-  async submit() {
-    if (Utils.isNullOrWhitespace(this.pin)) {
-      this.modalRef.close(false);
+    if (Utils.isNullOrWhitespace(pin)) {
+      this.dialogRef.close(false);
       return;
     }
 
     const pinKey = await this.cryptoService.makePinKey(
-      this.pin,
+      pin,
       await this.stateService.getEmail(),
       await this.stateService.getKdfType(),
       await this.stateService.getKdfConfig(),
     );
     const userKey = await this.cryptoService.getUserKey();
     const pinProtectedKey = await this.cryptoService.encrypt(userKey.key, pinKey);
-    const encPin = await this.cryptoService.encrypt(this.pin, userKey);
+    const encPin = await this.cryptoService.encrypt(pin, userKey);
+
     await this.stateService.setProtectedPin(encPin.encryptedString);
-    if (this.masterPassOnRestart) {
+
+    if (masterPassOnRestart) {
       await this.stateService.setPinKeyEncryptedUserKeyEphemeral(pinProtectedKey);
     } else {
       await this.stateService.setPinKeyEncryptedUserKey(pinProtectedKey);
     }
 
-    this.modalRef.close(true);
-  }
+    this.dialogRef.close(true);
+  };
 }
