@@ -109,7 +109,7 @@
         {{ "cancel" | i18n }}
       </button>
       <button
-        *ngIf="canDelete$ | async"
+        *ngIf="showDeleteButton"
         type="button"
         bitIconButton="bwi-trash"
         buttonType="danger"

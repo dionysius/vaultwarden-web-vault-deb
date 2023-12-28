@@ -94,6 +94,7 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
     selectedOrg: "",
   });
   protected PermissionMode = PermissionMode;
+  protected showDeleteButton = false;
 
   constructor(
     @Inject(DIALOG_DATA) private params: CollectionDialogParams,
@@ -198,6 +199,8 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
               parent,
               access: accessSelections,
             });
+
+            this.showDeleteButton = this.collection.canDelete(organization, flexibleCollections);
           } else {
             this.nestOptions = collections;
             const parent = collections.find((c) => c.id === this.params.parentCollectionId);
@@ -312,13 +315,6 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
 
     this.close(CollectionDialogAction.Deleted, this.collection);
   };
-
-  protected canDelete$ = this.flexibleCollectionsEnabled$.pipe(
-    map(
-      (flexibleCollectionsEnabled) =>
-        this.editMode && this.collection.canDelete(this.organization, flexibleCollectionsEnabled),
-    ),
-  );
 
   ngOnDestroy(): void {
     this.destroy$.next();
