@@ -269,7 +269,7 @@
     "message": "Longitud"
   },
   "passwordMinLength": {
-    "message": "Minimum password length"
+    "message": "Longitud mínima de contraseña"
   },
   "uppercase": {
     "message": "Mayúsculas (A-Z)"
@@ -369,7 +369,7 @@
     "message": "Configura un método de desbloqueo para cambiar tu acción de cierre de la bóveda."
   },
   "unlockMethodNeeded": {
-    "message": "Set up an unlock method in Settings"
+    "message": "Configure un método de desbloqueo en Configuración"
   },
   "rateExtension": {
     "message": "Valora la extensión"
@@ -412,7 +412,7 @@
     "message": "Bloquear"
   },
   "lockAll": {
-    "message": "Lock all"
+    "message": "Bloquear todo"
   },
   "immediately": {
     "message": "Inmediatamente"
@@ -629,7 +629,7 @@
     "message": "La opción \"Notificación para añadir entradas\" pregunta automáticamente si quieres guardar nuevas entradas en tu caja fuerte cuando te identificas en un sitio web por primera vez."
   },
   "addLoginNotificationDescAlt": {
-    "message": "Ask to add an item if one isn't found in your vault. Applies to all logged in accounts."
+    "message": "Pide que se agregue un elemento si no se encuentra uno en su caja fuerte. Se aplica a todas las cuentas que hayan iniciado sesión."
   },
   "showCardsCurrentTab": {
     "message": "Mostrar las tarjetas en la pestaña"
@@ -667,7 +667,7 @@
     "message": "Ask to update a login's password when a change is detected on a website. Applies to all logged in accounts."
   },
   "enableUsePasskeys": {
-    "message": "Ask to save and use passkeys"
+    "message": "Solicitar guardar y usar claves de acceso"
   },
   "usePasskeysDesc": {
     "message": "Ask to save new passkeys or log in with passkeys stored in your vault. Applies to all logged in accounts."
@@ -1030,11 +1030,11 @@
     "message": "Las URLs del entorno han sido guardadas."
   },
   "showAutoFillMenuOnFormFields": {
-    "message": "Show auto-fill menu on form fields",
+    "message": "Mostrar menú de autocompletar en los campos del formulario",
     "description": "Represents the message for allowing the user to enable the auto-fill overlay"
   },
   "showAutoFillMenuOnFormFieldsDescAlt": {
-    "message": "Applies to all logged in accounts."
+    "message": "Se aplica a todas las cuentas que hayan iniciado sesión."
   },
   "turnOffBrowserBuiltInPasswordManagerSettings": {
     "message": "Turn off your browser’s built in password manager settings to avoid conflicts."
@@ -2496,6 +2496,38 @@
   "toggleCollapse": {
     "message": "Colapsar/Expandir",
     "description": "Toggling an expand/collapse state."
+  },
+  "filelessImport": {
+    "message": "¿Quiere importar sus datos a Bitwarden?",
+    "description": "Default notification title for triggering a fileless import."
+  },
+  "lpFilelessImport": {
+    "message": "¿Quiere proteger sus datos de LastPass e importarlos a Bitwarden?",
+    "description": "LastPass specific notification title for triggering a fileless import."
+  },
+  "lpCancelFilelessImport": {
+    "message": "Guardar como archivo no cifrado",
+    "description": "LastPass specific notification button text for cancelling a fileless import."
+  },
+  "startFilelessImport": {
+    "message": "Importar a Bitwarden",
+    "description": "Notification button text for starting a fileless import."
+  },
+  "importing": {
+    "message": "Importando...",
+    "description": "Notification message for when an import is in progress."
+  },
+  "dataSuccessfullyImported": {
+    "message": "Se importaron los datos correctamente.",
+    "description": "Notification message for when an import has completed successfully."
+  },
+  "dataImportFailed": {
+    "message": "Se produjo un error al importar. Revise la consola para obtener detalles.",
+    "description": "Notification message for when an import has failed."
+  },
+  "importNetworkError": {
+    "message": "Se produjo un error de red durante la importación.",
+    "description": "Notification message for when an import has failed due to a network error."
   },
   "aliasDomain": {
     "message": "Seudónimo del dominio"

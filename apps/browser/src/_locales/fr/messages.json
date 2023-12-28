@@ -269,7 +269,7 @@
     "message": "Longueur"
   },
   "passwordMinLength": {
-    "message": "Minimum password length"
+    "message": "Longueur minimale du mot de passe"
   },
   "uppercase": {
     "message": "Majuscules (A-Z)"
@@ -629,7 +629,7 @@
     "message": "Demander à ajouter un élément si aucun n'est trouvé dans votre coffre."
   },
   "addLoginNotificationDescAlt": {
-    "message": "Ask to add an item if one isn't found in your vault. Applies to all logged in accounts."
+    "message": "Demander d'ajouter un élément s'il n'est pas présent dans le coffre. S'applique à tous les comptes connectés."
   },
   "showCardsCurrentTab": {
     "message": "Afficher les cartes sur la page de l'onglet"
@@ -2497,6 +2497,38 @@
     "message": "Déplier/Replier",
     "description": "Toggling an expand/collapse state."
   },
+  "filelessImport": {
+    "message": "Import your data to Bitwarden?",
+    "description": "Default notification title for triggering a fileless import."
+  },
+  "lpFilelessImport": {
+    "message": "Protect your LastPass data and import to Bitwarden?",
+    "description": "LastPass specific notification title for triggering a fileless import."
+  },
+  "lpCancelFilelessImport": {
+    "message": "Save as unencrypted file",
+    "description": "LastPass specific notification button text for cancelling a fileless import."
+  },
+  "startFilelessImport": {
+    "message": "Import to Bitwarden",
+    "description": "Notification button text for starting a fileless import."
+  },
+  "importing": {
+    "message": "Importing...",
+    "description": "Notification message for when an import is in progress."
+  },
+  "dataSuccessfullyImported": {
+    "message": "Data successfully imported!",
+    "description": "Notification message for when an import has completed successfully."
+  },
+  "dataImportFailed": {
+    "message": "Error importing. Check console for details.",
+    "description": "Notification message for when an import has failed."
+  },
+  "importNetworkError": {
+    "message": "Network error encountered during import.",
+    "description": "Notification message for when an import has failed due to a network error."
+  },
   "aliasDomain": {
     "message": "Domaine de l'alias"
   },
@@ -2831,7 +2863,7 @@
     "message": "Always for this site"
   },
   "domainAddedToExcludedDomains": {
-    "message": "$DOMAIN$ added to excluded domains.",
+    "message": "$DOMAIN$ a été ajouté à la liste des domaines exclus.",
     "placeholders": {
       "domain": {
         "content": "$1",

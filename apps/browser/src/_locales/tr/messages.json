@@ -2497,6 +2497,38 @@
     "message": "Daraltmayı aç/kapat",
     "description": "Toggling an expand/collapse state."
   },
+  "filelessImport": {
+    "message": "Verileriniz Bitwarden'a aktarılsın mı?",
+    "description": "Default notification title for triggering a fileless import."
+  },
+  "lpFilelessImport": {
+    "message": "LastPass verileriniz korunsun ve Bitwarden'a aktarılsın mı?",
+    "description": "LastPass specific notification title for triggering a fileless import."
+  },
+  "lpCancelFilelessImport": {
+    "message": "Şifrelenmemiş dosya olarak kaydet",
+    "description": "LastPass specific notification button text for cancelling a fileless import."
+  },
+  "startFilelessImport": {
+    "message": "Bitwarden'a aktar",
+    "description": "Notification button text for starting a fileless import."
+  },
+  "importing": {
+    "message": "İçe aktarılıyor...",
+    "description": "Notification message for when an import is in progress."
+  },
+  "dataSuccessfullyImported": {
+    "message": "Veriler başarıyla içe aktarıldı!",
+    "description": "Notification message for when an import has completed successfully."
+  },
+  "dataImportFailed": {
+    "message": "İçe aktarma hatası. Ayrıntılar için konsolu kontrol edin.",
+    "description": "Notification message for when an import has failed."
+  },
+  "importNetworkError": {
+    "message": "İçe aktarma sırasında ağ hatasıyla karşılaşıldı.",
+    "description": "Notification message for when an import has failed due to a network error."
+  },
   "aliasDomain": {
     "message": "Alias alan adı"
   },

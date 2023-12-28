@@ -2497,6 +2497,38 @@
     "message": "Redueix/Amplia",
     "description": "Toggling an expand/collapse state."
   },
+  "filelessImport": {
+    "message": "Voleu importar les vostres dades a Bitwarden?",
+    "description": "Default notification title for triggering a fileless import."
+  },
+  "lpFilelessImport": {
+    "message": "Protegiu les vostres dades de LastPass i importeu-les a Bitwarden?",
+    "description": "LastPass specific notification title for triggering a fileless import."
+  },
+  "lpCancelFilelessImport": {
+    "message": "Guarda com a fitxer sense xifrar",
+    "description": "LastPass specific notification button text for cancelling a fileless import."
+  },
+  "startFilelessImport": {
+    "message": "Importa a Bitwarden",
+    "description": "Notification button text for starting a fileless import."
+  },
+  "importing": {
+    "message": "S'està important...",
+    "description": "Notification message for when an import is in progress."
+  },
+  "dataSuccessfullyImported": {
+    "message": "Les dades s'han importat correctament!",
+    "description": "Notification message for when an import has completed successfully."
+  },
+  "dataImportFailed": {
+    "message": "S'ha produït un error en importar. Consulteu la consola per obtenir més informació.",
+    "description": "Notification message for when an import has failed."
+  },
+  "importNetworkError": {
+    "message": "S'ha trobat un error de xarxa durant la importació.",
+    "description": "Notification message for when an import has failed due to a network error."
+  },
   "aliasDomain": {
     "message": "Alies de domini"
   },

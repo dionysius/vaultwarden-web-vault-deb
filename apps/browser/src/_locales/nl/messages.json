@@ -2497,6 +2497,38 @@
     "message": "In-/Uitklappen",
     "description": "Toggling an expand/collapse state."
   },
+  "filelessImport": {
+    "message": "Gegevens importeren naar Bitwarden?",
+    "description": "Default notification title for triggering a fileless import."
+  },
+  "lpFilelessImport": {
+    "message": "Je LastPass-gegevens beschermen en naar Bitwarden importeren?",
+    "description": "LastPass specific notification title for triggering a fileless import."
+  },
+  "lpCancelFilelessImport": {
+    "message": "Als niet-versleuteld bestand opslaan",
+    "description": "LastPass specific notification button text for cancelling a fileless import."
+  },
+  "startFilelessImport": {
+    "message": "Naar Bitwarden importeren",
+    "description": "Notification button text for starting a fileless import."
+  },
+  "importing": {
+    "message": "Importeren...",
+    "description": "Notification message for when an import is in progress."
+  },
+  "dataSuccessfullyImported": {
+    "message": "Gegevens succesvol geïmporteerd!",
+    "description": "Notification message for when an import has completed successfully."
+  },
+  "dataImportFailed": {
+    "message": "Fout bij importeren. Controleer console voor meer informatie.",
+    "description": "Notification message for when an import has failed."
+  },
+  "importNetworkError": {
+    "message": "Netwerkfout opgetreden tijdens het importeren.",
+    "description": "Notification message for when an import has failed due to a network error."
+  },
   "aliasDomain": {
     "message": "Aliasdomein"
   },

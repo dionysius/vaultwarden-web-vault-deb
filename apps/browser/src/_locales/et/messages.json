@@ -269,7 +269,7 @@
     "message": "Pikkus"
   },
   "passwordMinLength": {
-    "message": "Minimum password length"
+    "message": "Lühim lubatud parooli pikkus"
   },
   "uppercase": {
     "message": "Suurtäht (A-Z) "
@@ -2496,6 +2496,38 @@
   "toggleCollapse": {
     "message": "Peida",
     "description": "Toggling an expand/collapse state."
+  },
+  "filelessImport": {
+    "message": "Impordin andmed Bitwardenisse?",
+    "description": "Default notification title for triggering a fileless import."
+  },
+  "lpFilelessImport": {
+    "message": "Kaitse oma LastPassi andmeid ja impordi need Bitwardenisse?",
+    "description": "LastPass specific notification title for triggering a fileless import."
+  },
+  "lpCancelFilelessImport": {
+    "message": "Salvesta ilma krüpteeringuta failina",
+    "description": "LastPass specific notification button text for cancelling a fileless import."
+  },
+  "startFilelessImport": {
+    "message": "Impordi Bitwardenisse",
+    "description": "Notification button text for starting a fileless import."
+  },
+  "importing": {
+    "message": "Importimine...",
+    "description": "Notification message for when an import is in progress."
+  },
+  "dataSuccessfullyImported": {
+    "message": "Andmed on edukalt imporditud!",
+    "description": "Notification message for when an import has completed successfully."
+  },
+  "dataImportFailed": {
+    "message": "Ilmnes viga. Vaata täpsemaid andmeid konsoolist.",
+    "description": "Notification message for when an import has failed."
+  },
+  "importNetworkError": {
+    "message": "Importimisel ilmnes võrgu viga.",
+    "description": "Notification message for when an import has failed due to a network error."
   },
   "aliasDomain": {
     "message": "Alias domeen"
