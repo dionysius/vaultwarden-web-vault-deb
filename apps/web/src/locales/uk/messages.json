@@ -3548,12 +3548,12 @@
       }
     }
   },
-  "subscriptionFamiliesPlan": {
-    "message": "Ви не можете запросити більш як $COUNT$ учасників, не підвищивши свій тарифний план. Будь ласка, зверніться до служби підтримки для оновлення.",
+  "subscriptionUpgrade": {
+    "message": "Ви не можете запросити більш як $COUNT$ учасників, не підвищивши свій тарифний план.",
     "placeholders": {
       "count": {
         "content": "$1",
-        "example": "6"
+        "example": "2"
       }
     }
   },
@@ -6668,7 +6668,7 @@
     }
   },
   "teamsStarterPlanInvLimitReachedManageBilling": {
-    "message": "Плани Teams Starter можуть мати до $SEATCOUNT$ учасників. Зверніться до служби підтримки, щоб підвищити рівень тарифного плану та запросити більше учасників.",
+    "message": "Плани Teams Starter можуть мати до $SEATCOUNT$ учасників. Передплатіть тарифний план вищого рівня, щоб запросити більше учасників.",
     "placeholders": {
       "seatcount": {
         "content": "$1",

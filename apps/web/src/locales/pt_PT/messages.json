@@ -3548,12 +3548,12 @@
       }
     }
   },
-  "subscriptionFamiliesPlan": {
-    "message": "Não pode convidar mais do que $COUNT$ membros sem atualizar o seu plano. Contacte o Apoio ao cliente para atualizar.",
+  "subscriptionUpgrade": {
+    "message": "Não pode convidar mais do que $COUNT$ membros sem atualizar o seu plano.",
     "placeholders": {
       "count": {
         "content": "$1",
-        "example": "6"
+        "example": "2"
       }
     }
   },
@@ -6668,7 +6668,7 @@
     }
   },
   "teamsStarterPlanInvLimitReachedManageBilling": {
-    "message": "Os planos Teams Starter podem ter até $SEATCOUNT$ membros. Contacte o Apoio ao Cliente para atualizar o seu plano e convidar mais membros.",
+    "message": "Os planos Teams Starter podem ter até $SEATCOUNT$ membros. Atualize o seu plano para convidar mais membros.",
     "placeholders": {
       "seatcount": {
         "content": "$1",

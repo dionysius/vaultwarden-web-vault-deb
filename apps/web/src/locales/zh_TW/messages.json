@@ -612,22 +612,22 @@
     "message": "使用主密碼登入"
   },
   "readingPasskeyLoading": {
-    "message": "Reading passkey..."
+    "message": "正在讀取密碼金輪..."
   },
   "readingPasskeyLoadingInfo": {
     "message": "保持此視窗打開，然後按照瀏覽器的提示進行操作。"
   },
   "useADifferentLogInMethod": {
-    "message": "Use a different log in method"
+    "message": "使用不同的登入方法"
   },
   "loginWithPasskey": {
     "message": "使用密碼金鑰登入"
   },
   "invalidPasskeyPleaseTryAgain": {
-    "message": "Invalid Passkey. Please try again."
+    "message": "無效的密碼金鑰，請再試一次。"
   },
   "twoFactorForPasskeysNotSupportedOnClientUpdateToLogIn": {
-    "message": "2FA for passkeys is not supported. Update the app to log in."
+    "message": "不支援的密碼金鑰的 2FA 兩階段認證。更新 app 以登入"
   },
   "loginWithPasskeyInfo": {
     "message": "使用已產生的密碼金輪，無需密碼即可自動登入。生物特徵辨識（例如面部識別或指紋）或其他 FIDO2 安全方式將用於確認您的身分。"
@@ -663,22 +663,22 @@
     "message": "命名您的密碼金輪以方便您辨識它。"
   },
   "useForVaultEncryption": {
-    "message": "Use for vault encryption"
+    "message": "用於密碼庫加密"
   },
   "useForVaultEncryptionInfo": {
-    "message": "Log in and unlock on supported devices without your master password. Follow the prompts from your browser to finalize setup."
+    "message": "於支援的裝置不使用主密碼登入與解鎖。依循後續於瀏覽器的指令以完成最終設定。\nLog in and unlock on supported devices without your master password. Follow the prompts from your browser to finalize setup."
   },
   "useForVaultEncryptionErrorReadingPasskey": {
-    "message": "Error reading passkey. Try again or uncheck this option."
+    "message": "密碼金鑰讀取錯誤。再試一次或者取消勾選此選項。"
   },
   "encryptionNotSupported": {
-    "message": "加密不支援"
+    "message": "不支援的加密"
   },
   "enablePasskeyEncryption": {
-    "message": "Set up encryption"
+    "message": "設定加密"
   },
   "usedForEncryption": {
-    "message": "Used for encryption"
+    "message": "使用加密"
   },
   "loginWithPasskeyEnabled": {
     "message": "密碼金鑰登入已開啓"
@@ -1075,7 +1075,7 @@
     "message": "匯出"
   },
   "exportFrom": {
-    "message": "Export from"
+    "message": "匯出自"
   },
   "exportVault": {
     "message": "匯出密碼庫"
@@ -1114,7 +1114,7 @@
     "message": "匯出類型"
   },
   "accountRestricted": {
-    "message": "帳戶已限制"
+    "message": "帳號已受限制"
   },
   "passwordProtected": {
     "message": "密碼保護"
@@ -1154,7 +1154,7 @@
     "message": "長度"
   },
   "passwordMinLength": {
-    "message": "Minimum password length"
+    "message": "最小密碼長度"
   },
   "uppercase": {
     "message": "大寫 (A-Z)",
@@ -2784,7 +2784,7 @@
     "message": "網頁版密碼庫"
   },
   "cli": {
-    "message": "CLI"
+    "message": "CLI 命令列介面"
   },
   "bitWebVault": {
     "message": "Bitwarden 網頁密碼庫"
@@ -2826,7 +2826,7 @@
     "message": "已匯出組織密碼庫。"
   },
   "editedOrgSettings": {
-    "message": "編輯了組織設定。"
+    "message": "編輯組織設定。"
   },
   "createdItemId": {
     "message": "已建立項目 $ID$。",
@@ -3548,12 +3548,12 @@
       }
     }
   },
-  "subscriptionFamiliesPlan": {
-    "message": "除非升級方案，否則您最多只能邀請 $COUNT$ 位成員。請聯絡客戶支援進行升級。",
+  "subscriptionUpgrade": {
+    "message": "在您升級您的方案前，您不能邀請超過 $COUNT$ 成員。",
     "placeholders": {
       "count": {
         "content": "$1",
-        "example": "6"
+        "example": "2"
       }
     }
   },
@@ -4240,7 +4240,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "downloadAttachments": {
-    "message": "Download attachments"
+    "message": "下載附件"
   },
   "sendAccessUnavailable": {
     "message": "您嘗試存取的 Send 不存在或無法再使用。",
@@ -6668,7 +6668,7 @@
     }
   },
   "teamsStarterPlanInvLimitReachedManageBilling": {
-    "message": "Teams Starter plans may have up to $SEATCOUNT$ members. Contact Customer Support to upgrade your plan and invite more members.",
+    "message": "Teams Starter plans may have up to $SEATCOUNT$ members. Upgrade to your plan to invite more members.",
     "placeholders": {
       "seatcount": {
         "content": "$1",
@@ -7396,7 +7396,7 @@
     "message": "已經有一個帳戶了嗎？"
   },
   "skipToContent": {
-    "message": "Skip to content"
+    "message": "跳過道內容"
   },
   "customBillingStart": {
     "message": "Custom billing is not reflected. Visit the "

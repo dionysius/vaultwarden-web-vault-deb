@@ -3548,12 +3548,12 @@
       }
     }
   },
-  "subscriptionFamiliesPlan": {
-    "message": "بدون ارتقای طرح خود نمی‌توانید بیش از $COUNT$ عضو دعوت کنید. لطفاً برای ارتقاء با پشتیبانی مشتری تماس بگیرید.",
+  "subscriptionUpgrade": {
+    "message": "You cannot invite more than $COUNT$ members without upgrading your plan.",
     "placeholders": {
       "count": {
         "content": "$1",
-        "example": "6"
+        "example": "2"
       }
     }
   },
@@ -6668,7 +6668,7 @@
     }
   },
   "teamsStarterPlanInvLimitReachedManageBilling": {
-    "message": "Teams Starter plans may have up to $SEATCOUNT$ members. Contact Customer Support to upgrade your plan and invite more members.",
+    "message": "Teams Starter plans may have up to $SEATCOUNT$ members. Upgrade to your plan to invite more members.",
     "placeholders": {
       "seatcount": {
         "content": "$1",

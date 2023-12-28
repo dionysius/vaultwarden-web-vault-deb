@@ -3548,12 +3548,12 @@
       }
     }
   },
-  "subscriptionFamiliesPlan": {
-    "message": "Nemôžete pozvať viac ako $COUNT$ používateľov bez navýšenia vášho plánu. Pre navýšenie plánu kontaktujte zákaznícku podporu.",
+  "subscriptionUpgrade": {
+    "message": "You cannot invite more than $COUNT$ members without upgrading your plan.",
     "placeholders": {
       "count": {
         "content": "$1",
-        "example": "6"
+        "example": "2"
       }
     }
   },
@@ -6668,7 +6668,7 @@
     }
   },
   "teamsStarterPlanInvLimitReachedManageBilling": {
-    "message": "Plány Teams Starters môžu mať maximálne $SEATCOUNT$ členov. Kontaktujte zákaznícku podporu pre navýšenie predplatného a pozvite ďalších členov.",
+    "message": "Teams Starter plans may have up to $SEATCOUNT$ members. Upgrade to your plan to invite more members.",
     "placeholders": {
       "seatcount": {
         "content": "$1",

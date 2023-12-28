@@ -3548,12 +3548,12 @@
       }
     }
   },
-  "subscriptionFamiliesPlan": {
-    "message": "Вы не можете пригласить более $COUNT$ пользователей без обновления вашего плана. Для обновления обратитесь в службу поддержки клиентов.",
+  "subscriptionUpgrade": {
+    "message": "Вы не можете пригласить более $COUNT$ пользователей без обновления вашего плана.",
     "placeholders": {
       "count": {
         "content": "$1",
-        "example": "6"
+        "example": "2"
       }
     }
   },
@@ -6668,7 +6668,7 @@
     }
   },
   "teamsStarterPlanInvLimitReachedManageBilling": {
-    "message": "На тарифных планах Teams Starter может быть до $SEATCOUNT$ участников. Обратитесь в службу поддержки клиентов, чтобы перейти на новый тарифный план и пригласить больше участников.",
+    "message": "Teams Starter plans may have up to $SEATCOUNT$ members. Upgrade to your plan to invite more members.",
     "placeholders": {
       "seatcount": {
         "content": "$1",

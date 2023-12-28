@@ -3548,12 +3548,12 @@
       }
     }
   },
-  "subscriptionFamiliesPlan": {
-    "message": "Nevar uzaicināt vairāk kā $COUNT$ lietotāju(s) bez plāna paaugstināšanas. Lūgums sazināties ar klientu atbalstu, lai to izdarītu.",
+  "subscriptionUpgrade": {
+    "message": "Nevar uzaicināt vairāk kā $COUNT$ dalībnieku(s) bez plāna paaugstināšanas.",
     "placeholders": {
       "count": {
         "content": "$1",
-        "example": "6"
+        "example": "2"
       }
     }
   },
@@ -6668,7 +6668,7 @@
     }
   },
   "teamsStarterPlanInvLimitReachedManageBilling": {
-    "message": "Teams Starter plānā var būt līdz $SEATCOUNT$ dalībnieku. Jāsazinās ar klientu atbalstu, lai uzlabotu savu plānu un uzaicinātu vairāk dalībnieku.",
+    "message": "Teams Starter plans may have up to $SEATCOUNT$ members. Upgrade to your plan to invite more members.",
     "placeholders": {
       "seatcount": {
         "content": "$1",

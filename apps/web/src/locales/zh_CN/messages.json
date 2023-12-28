@@ -3548,12 +3548,12 @@
       }
     }
   },
-  "subscriptionFamiliesPlan": {
-    "message": "如果不升级您的计划，您最多只能邀请 $COUNT$ 位成员。请联系客户支持进行升级。",
+  "subscriptionUpgrade": {
+    "message": "如果不升级您的计划，您最多只能邀请 $COUNT$ 位成员。",
     "placeholders": {
       "count": {
         "content": "$1",
-        "example": "6"
+        "example": "2"
       }
     }
   },
@@ -6668,7 +6668,7 @@
     }
   },
   "teamsStarterPlanInvLimitReachedManageBilling": {
-    "message": "团队入门版计划最多拥有 $SEATCOUNT$ 个成员。请联系客户支持升级您的计划并邀请更多成员。",
+    "message": "Teams Starter plans may have up to $SEATCOUNT$ members. Upgrade to your plan to invite more members.",
     "placeholders": {
       "seatcount": {
         "content": "$1",

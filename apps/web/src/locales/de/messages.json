@@ -675,7 +675,7 @@
     "message": "Verschlüsselung nicht unterstützt"
   },
   "enablePasskeyEncryption": {
-    "message": "Set up encryption"
+    "message": "Verschlüsselung einrichten"
   },
   "usedForEncryption": {
     "message": "Wird für die Verschlüsselung verwendet"
@@ -1075,7 +1075,7 @@
     "message": "Exportieren"
   },
   "exportFrom": {
-    "message": "Export from"
+    "message": "Exportieren ab"
   },
   "exportVault": {
     "message": "Tresor exportieren"
@@ -1582,7 +1582,7 @@
     "message": "Verwalten"
   },
   "canManage": {
-    "message": "Can manage"
+    "message": "Darf verwalten"
   },
   "disable": {
     "message": "Deaktivieren"
@@ -2317,7 +2317,7 @@
     "message": "Kundensupport kontaktieren"
   },
   "contactSupportShort": {
-    "message": "Contact Support"
+    "message": "Support kontaktieren"
   },
   "updatedPaymentMethod": {
     "message": "Zahlungsart aktualisiert."
@@ -3531,7 +3531,7 @@
     }
   },
   "subscriptionUserSeatsWithoutAdditionalSeatsOption": {
-    "message": "You can invite up to $COUNT$ members for no additional charge. Contact Customer Support to upgrade your plan and invite more members.",
+    "message": "Du kannst bis zu $COUNT$ Mitglieder ohne zusätzliche Kosten einladen. Wende dich an den Kundensupport, um dein Abonnement zu erweitern und mehr Mitglieder einzuladen.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3548,12 +3548,12 @@
       }
     }
   },
-  "subscriptionFamiliesPlan": {
-    "message": "Du kannst nicht mehr als $COUNT$ Benutzer einladen ohne dein Abonnement zu upgraden. Bitte kontaktiere dafür den Kundensupport.",
+  "subscriptionUpgrade": {
+    "message": "Du kannst nicht mehr als $COUNT$ Mitglieder einladen ohne dein Abonnement upzugraden.",
     "placeholders": {
       "count": {
         "content": "$1",
-        "example": "6"
+        "example": "2"
       }
     }
   },
@@ -4038,13 +4038,13 @@
     "message": "Alle Teams-Funktionen, plus:"
   },
   "includeAllTeamsStarterFeatures": {
-    "message": "All Teams Starter features, plus:"
+    "message": "Alle Teams Starter-Funktionen, plus:"
   },
   "chooseMonthlyOrAnnualBilling": {
     "message": "Monatliche oder jährliche Abrechnung wählen"
   },
   "abilityToAddMoreThanNMembers": {
-    "message": "Ability to add more than $COUNT$ members",
+    "message": "Möglichkeit mehr als $COUNT$ Mitglieder hinzuzufügen",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -6668,7 +6668,7 @@
     }
   },
   "teamsStarterPlanInvLimitReachedManageBilling": {
-    "message": "Teams Starter plans may have up to $SEATCOUNT$ members. Contact Customer Support to upgrade your plan and invite more members.",
+    "message": "Teams Starter plans may have up to $SEATCOUNT$ members. Upgrade to your plan to invite more members.",
     "placeholders": {
       "seatcount": {
         "content": "$1",
@@ -6677,7 +6677,7 @@
     }
   },
   "teamsStarterPlanInvLimitReachedNoManageBilling": {
-    "message": "Teams Starter plans may have up to $SEATCOUNT$ members. Contact your organization owner to upgrade your plan and invite more members.",
+    "message": "Teams Starter-Abonnements können bis zu $SEATCOUNT$ Mitglieder haben. Kontaktiere deinen Organisationseigentümer, um dein Abonnement zu aktualisieren und mehr Mitglieder einzuladen.",
     "placeholders": {
       "seatcount": {
         "content": "$1",
@@ -7257,7 +7257,7 @@
     "message": "Für Entwicklungs- und DevOps-Teams zur Verwaltung von Geheimnissen während des gesamten Softwareentwicklungszyklus."
   },
   "free2PersonOrganization": {
-    "message": "Free 2-person Organizations"
+    "message": "Kostenlose Organisationen mit 2 Personen"
   },
   "unlimitedSecrets": {
     "message": "Unbegrenzte Geheimnisse"
@@ -7320,19 +7320,19 @@
     }
   },
   "collectionManagement": {
-    "message": "Collection management"
+    "message": "Verwaltung der Sammlungen"
   },
   "collectionManagementDesc": {
-    "message": "Manage the collection behavior for the organization"
+    "message": "Verwalte das Sammlungsverhalten für die Organisation"
   },
   "limitCollectionCreationDeletionDesc": {
     "message": "Sammlungserstellung und -löschung auf Eigentümer und Administratoren beschränken"
   },
   "allowAdminAccessToAllCollectionItemsDesc": {
-    "message": "Owners and admins can manage all collections and items"
+    "message": "Besitzer und Administratoren können alle Sammlungen und Einträge verwalten"
   },
   "collectionManagementUpdated": {
-    "message": "Collection management behavior saved"
+    "message": "Verhalten der Sammlungsverwaltung gespeichert"
   },
   "passwordManagerPlanPrice": {
     "message": "Passwort-Manager Abonnementpreis"
@@ -7344,7 +7344,7 @@
     "message": "Passwort-Manager"
   },
   "freeOrganization": {
-    "message": "Free Organization"
+    "message": "Kostenlose Organisation"
   },
   "limitServiceAccounts": {
     "message": "Dienstkonten beschränken (optional)"
@@ -7396,16 +7396,16 @@
     "message": "Hast du bereits ein Konto?"
   },
   "skipToContent": {
-    "message": "Skip to content"
+    "message": "Zum Inhalt wechseln"
   },
   "customBillingStart": {
-    "message": "Custom billing is not reflected. Visit the "
+    "message": "Eine individuelle Abrechnung wird nicht berücksichtigt. Besuche die "
   },
   "customBillingEnd": {
-    "message": " page for latest invoicing."
+    "message": " Seite für die aktuelle Rechnung."
   },
   "managePermissionRequired": {
-    "message": "At least one member or group must have can manage permission."
+    "message": "Mindestens ein Mitglied oder eine Gruppe muss die \"Darf verwalten\"-Berechtigung besitzen."
   },
   "typePasskey": {
     "message": "Passkey"
@@ -7417,7 +7417,7 @@
     "message": "Der Passkey wird nicht in den duplizierten Eintrag kopiert. Möchtest du mit dem Duplizieren dieses Eintrags fortfahren?"
   },
   "modifiedCollectionManagement": {
-    "message": "Modified collection management setting $ID$.",
+    "message": "Sammlungsverwaltungs-Einstellung bearbeitet $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",

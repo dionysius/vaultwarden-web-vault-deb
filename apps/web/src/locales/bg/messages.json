@@ -3548,12 +3548,12 @@
       }
     }
   },
-  "subscriptionFamiliesPlan": {
-    "message": "Не можете да поканите повече от $COUNT$ потребители без да надградите плана си. Свържете се с поддръжката за надграждане.",
+  "subscriptionUpgrade": {
+    "message": "You cannot invite more than $COUNT$ members without upgrading your plan.",
     "placeholders": {
       "count": {
         "content": "$1",
-        "example": "6"
+        "example": "2"
       }
     }
   },
@@ -6668,7 +6668,7 @@
     }
   },
   "teamsStarterPlanInvLimitReachedManageBilling": {
-    "message": "Стартовите екипни планове може да имат не повече от $SEATCOUNT$ членове. Свържете се с поддръжката, ако искате да надградите плана си и да каните повече членове.",
+    "message": "Teams Starter plans may have up to $SEATCOUNT$ members. Upgrade to your plan to invite more members.",
     "placeholders": {
       "seatcount": {
         "content": "$1",

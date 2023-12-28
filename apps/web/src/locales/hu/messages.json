@@ -3548,12 +3548,12 @@
       }
     }
   },
-  "subscriptionFamiliesPlan": {
-    "message": "$COUNT$ felhasználónál több nem hívható meg magasabb szintű előfizetés nélkül. Az áttéréshez vegyük fel a kapcsolatot a vevőszolgálattal.",
+  "subscriptionUpgrade": {
+    "message": "$COUNT$ tagnál több nem hívható meg a magasabb szintű csomag nélkül.",
     "placeholders": {
       "count": {
         "content": "$1",
-        "example": "6"
+        "example": "2"
       }
     }
   },
@@ -6668,7 +6668,7 @@
     }
   },
   "teamsStarterPlanInvLimitReachedManageBilling": {
-    "message": "A Teams Starter csomagok legfeljebb $SEATCOUNT$ tagot tartalmazhatnak. Lépjünk kapcsolatba az ügyfélszolgálattal a csomag frissítéséhez és további tagok meghívásához.",
+    "message": "Teams Starter plans may have up to $SEATCOUNT$ members. Upgrade to your plan to invite more members.",
     "placeholders": {
       "seatcount": {
         "content": "$1",

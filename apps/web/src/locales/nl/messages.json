@@ -3548,12 +3548,12 @@
       }
     }
   },
-  "subscriptionFamiliesPlan": {
-    "message": "U kunt niet meer dan $COUNT$ leden uitnodigen zonder uw abonnement te upgraden. Neem contact op met Customer Support om te upgraden.",
+  "subscriptionUpgrade": {
+    "message": "Je kunt niet meer dan $COUNT$ gebruikers uitnodigen zonder je abonnement te upgraden.",
     "placeholders": {
       "count": {
         "content": "$1",
-        "example": "6"
+        "example": "2"
       }
     }
   },
@@ -6668,7 +6668,7 @@
     }
   },
   "teamsStarterPlanInvLimitReachedManageBilling": {
-    "message": "Teams Starter-plannen gaan tot $SEATCOUNT$ leden. Neem contact op met de klantenondersteuning voor het uitbreiden van je abonnement voor het uitnodigen van meer leden.",
+    "message": "Teams Starter plans may have up to $SEATCOUNT$ members. Upgrade to your plan to invite more members.",
     "placeholders": {
       "seatcount": {
         "content": "$1",
