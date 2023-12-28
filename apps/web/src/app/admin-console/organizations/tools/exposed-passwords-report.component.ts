@@ -10,11 +10,11 @@ import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { PasswordRepromptService } from "@bitwarden/vault";
 
 // eslint-disable-next-line no-restricted-imports
-import { ExposedPasswordsReportComponent as BaseExposedPasswordsReportComponent } from "../../../reports/pages/exposed-passwords-report.component";
+import { ExposedPasswordsReportComponent as BaseExposedPasswordsReportComponent } from "../../../tools/reports/pages/exposed-passwords-report.component";
 
 @Component({
   selector: "app-org-exposed-passwords-report",
-  templateUrl: "../../../reports/pages/exposed-passwords-report.component.html",
+  templateUrl: "../../../tools/reports/pages/exposed-passwords-report.component.html",
 })
 // eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class ExposedPasswordsReportComponent extends BaseExposedPasswordsReportComponent {

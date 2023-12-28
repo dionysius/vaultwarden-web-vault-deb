@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 
-import { ReportsSharedModule } from "../../../reports";
 import { SharedModule } from "../../../shared/shared.module";
+import { ReportsSharedModule } from "../../../tools/reports";
 
 import { OrganizationReportingRoutingModule } from "./organization-reporting-routing.module";
 import { ReportingComponent } from "./reporting.component";

@@ -9,11 +9,11 @@ import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { PasswordRepromptService } from "@bitwarden/vault";
 
 // eslint-disable-next-line no-restricted-imports
-import { ReusedPasswordsReportComponent as BaseReusedPasswordsReportComponent } from "../../../reports/pages/reused-passwords-report.component";
+import { ReusedPasswordsReportComponent as BaseReusedPasswordsReportComponent } from "../../../tools/reports/pages/reused-passwords-report.component";
 
 @Component({
   selector: "app-reused-passwords-report",
-  templateUrl: "../../../reports/pages/reused-passwords-report.component.html",
+  templateUrl: "../../../tools/reports/pages/reused-passwords-report.component.html",
 })
 // eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class ReusedPasswordsReportComponent extends BaseReusedPasswordsReportComponent {

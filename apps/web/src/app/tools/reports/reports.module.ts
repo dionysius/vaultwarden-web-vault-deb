@@ -1,9 +1,9 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 
-import { SharedModule } from "../shared";
-import { OrganizationBadgeModule } from "../vault/individual-vault/organization-badge/organization-badge.module";
-import { PipesModule } from "../vault/individual-vault/pipes/pipes.module";
+import { SharedModule } from "../../shared";
+import { OrganizationBadgeModule } from "../../vault/individual-vault/organization-badge/organization-badge.module";
+import { PipesModule } from "../../vault/individual-vault/pipes/pipes.module";
 
 import { BreachReportComponent } from "./pages/breach-report.component";
 import { ExposedPasswordsReportComponent } from "./pages/exposed-passwords-report.component";
