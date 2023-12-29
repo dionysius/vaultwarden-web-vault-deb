@@ -2958,7 +2958,7 @@
     }
   },
   "autofilledItemId": {
-    "message": "$ID$ elementua auto-betea.",
+    "message": "$ID$ elementua automatikoki bete da.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -5093,7 +5093,7 @@
     "message": "Erakundeko politika batek edo gehiagok kutxa gotorra esportatzea galarazten dute."
   },
   "activateAutofill": {
-    "message": "Activate auto-fill"
+    "message": "Gaitu betetze automatikoa"
   },
   "activateAutofillPolicyDesc": {
     "message": "Activate the auto-fill on page load setting on the browser extension for all existing and new members."
@@ -5102,7 +5102,7 @@
     "message": "Compromised or untrusted websites can exploit auto-fill on page load."
   },
   "learnMoreAboutAutofill": {
-    "message": "Learn more about auto-fill"
+    "message": "Automatikoki betetzeari buruzko informazio gehiago"
   },
   "selectType": {
     "message": "Aukeratu SSO mota"

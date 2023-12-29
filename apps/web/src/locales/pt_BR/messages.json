@@ -3549,7 +3549,7 @@
     }
   },
   "subscriptionUpgrade": {
-    "message": "You cannot invite more than $COUNT$ members without upgrading your plan.",
+    "message": "Você não pode convidar mais de $COUNT$ membros sem atualizar seu plano.",
     "placeholders": {
       "count": {
         "content": "$1",
