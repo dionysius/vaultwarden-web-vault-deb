@@ -688,7 +688,7 @@
     "message": "Zobrazit volby v kontextovém menu"
   },
   "contextMenuItemDesc": {
-    "message": "Použijte pravé tlačítko pro přístup k vytvoření hesla a odpovídajícímu přihlášení pro tuto stránku. "
+    "message": "Použijte pravé tlačítko pro přístup k vytvoření hesla a odpovídajícímu přihlášení pro tuto stránku."
   },
   "contextMenuItemDescAlt": {
     "message": "Použije pravé tlačítko pro přístup k vytvoření hesla a odpovídajícímu přihlášení pro tuto stránku. Platí pro všechny přihlášené účty."
@@ -2282,7 +2282,7 @@
     "message": "Jak na automatické vyplňování"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Select an item from this screen, use the shortcut $COMMAND$, or explore other options in settings.",
+    "message": "Vyberte položku z této obrazovky, použijte zkratku $COMMAND$ nebo prozkoumejte další volby v nastavení.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2291,7 +2291,7 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "Select an item from this screen, or explore other options in settings."
+    "message": "Vyberte položku z této obrazovky nebo prozkoumejte další volby v nastavení."
   },
   "gotIt": {
     "message": "Rozumím"
