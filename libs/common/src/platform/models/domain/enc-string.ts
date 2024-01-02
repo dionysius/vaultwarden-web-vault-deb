@@ -40,7 +40,7 @@ export class EncString implements Encrypted {
   }
 
   toJSON() {
-    return this.encryptedString;
+    return this.encryptedString as string;
   }
 
   static fromJSON(obj: Jsonify<EncString>): EncString {

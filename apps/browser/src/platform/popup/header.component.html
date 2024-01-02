@@ -5,7 +5,7 @@
     <ng-content select=".center"></ng-content>
     <div class="right">
       <ng-content select=".right"></ng-content>
-      <ng-container *ngIf="authedAccounts$ | async">
+      <ng-container *ngIf="(authedAccounts$ | async) && !hideAccountSwitcher">
         <app-current-account></app-current-account>
       </ng-container>
     </div>

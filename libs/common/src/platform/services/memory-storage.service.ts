@@ -31,8 +31,8 @@ export class MemoryStorageService extends AbstractMemoryStorageService {
     }
     // TODO: Remove once foreground/background contexts are separated in browser
     // Needed to ensure ownership of all memory by the context running the storage service
-    obj = structuredClone(obj);
-    this.store.set(key, obj);
+    const toStore = structuredClone(obj);
+    this.store.set(key, toStore);
     this.updatesSubject.next({ key, updateType: "save" });
     return Promise.resolve();
   }

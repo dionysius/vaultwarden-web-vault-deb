@@ -1,4 +1,4 @@
-<app-header>
+<app-header [hideAccountSwitcher]="comingFromAddEdit">
   <div class="left">
     <app-pop-out [show]="!comingFromAddEdit"></app-pop-out>
     <button type="button" (click)="close()" *ngIf="comingFromAddEdit">

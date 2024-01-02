@@ -27,6 +27,7 @@ import { CollectionData } from "../../../vault/models/data/collection.data";
 import { FolderData } from "../../../vault/models/data/folder.data";
 import { CipherView } from "../../../vault/models/view/cipher.view";
 import { CollectionView } from "../../../vault/models/view/collection.view";
+import { AddEditCipherInfo } from "../../../vault/types/add-edit-cipher-info";
 import { KdfType } from "../../enums";
 import { Utils } from "../../misc/utils";
 import { ServerConfigData } from "../../models/data/server-config.data";
@@ -101,10 +102,23 @@ export class AccountData {
     GeneratedPasswordHistory[],
     GeneratedPasswordHistory[]
   > = new EncryptionPair<GeneratedPasswordHistory[], GeneratedPasswordHistory[]>();
-  addEditCipherInfo?: any;
+  addEditCipherInfo?: AddEditCipherInfo;
   eventCollection?: EventData[];
   organizations?: { [id: string]: OrganizationData };
   providers?: { [id: string]: ProviderData };
+
+  static fromJSON(obj: DeepJsonify<AccountData>): AccountData {
+    if (obj == null) {
+      return null;
+    }
+
+    return Object.assign(new AccountData(), obj, {
+      addEditCipherInfo: {
+        cipher: CipherView.fromJSON(obj?.addEditCipherInfo?.cipher),
+        collectionIds: obj?.addEditCipherInfo?.collectionIds,
+      },
+    });
+  }
 }
 
 export class AccountKeys {
@@ -152,7 +166,7 @@ export class AccountKeys {
     if (obj == null) {
       return null;
     }
-    return Object.assign(new AccountKeys(), {
+    return Object.assign(new AccountKeys(), obj, {
       userKey: SymmetricCryptoKey.fromJSON(obj?.userKey),
       masterKey: SymmetricCryptoKey.fromJSON(obj?.masterKey),
       deviceKey: obj?.deviceKey,
@@ -451,6 +465,7 @@ export class Account {
 
     return Object.assign(new Account({}), json, {
       keys: AccountKeys.fromJSON(json?.keys),
+      data: AccountData.fromJSON(json?.data),
       profile: AccountProfile.fromJSON(json?.profile),
       settings: AccountSettings.fromJSON(json?.settings),
       tokens: AccountTokens.fromJSON(json?.tokens),

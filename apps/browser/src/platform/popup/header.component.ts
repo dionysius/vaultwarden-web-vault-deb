@@ -12,6 +12,7 @@ import { flagEnabled } from "../flags";
 })
 export class HeaderComponent {
   @Input() noTheme = false;
+  @Input() hideAccountSwitcher = false;
   authedAccounts$: Observable<boolean>;
   constructor(accountService: AccountService) {
     this.authedAccounts$ = accountService.accounts$.pipe(
