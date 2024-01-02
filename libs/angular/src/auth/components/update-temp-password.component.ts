@@ -54,7 +54,7 @@ export class UpdateTempPasswordComponent extends BaseChangePasswordComponent {
     private syncService: SyncService,
     private logService: LogService,
     private userVerificationService: UserVerificationService,
-    private router: Router,
+    protected router: Router,
     dialogService: DialogService,
   ) {
     super(
