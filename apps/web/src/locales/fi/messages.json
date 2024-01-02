@@ -2421,7 +2421,7 @@
     "message": "Yrityksille ja muille pienille ryhmäorganisaatioille."
   },
   "planNameTeamsStarter": {
-    "message": "Tiimeille-aloitus"
+    "message": "Teams Starter"
   },
   "planNameEnterprise": {
     "message": "Yrityksille"
@@ -2958,7 +2958,7 @@
     }
   },
   "autofilledItemId": {
-    "message": " Automaattitäytettiin $ID$.",
+    "message": "Täytti kohteen $ID$ automaattisesti.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -6668,7 +6668,7 @@
     }
   },
   "teamsStarterPlanInvLimitReachedManageBilling": {
-    "message": "Teams Starter plans may have up to $SEATCOUNT$ members. Upgrade to your plan to invite more members.",
+    "message": "Teams Starter -tilauksilla voi olla enintään $SEATCOUNT$ jäsentä. Päivitä tilauksesi kutsuaksesi lisää jäseniä.",
     "placeholders": {
       "seatcount": {
         "content": "$1",

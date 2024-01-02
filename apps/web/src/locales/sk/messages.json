@@ -3549,7 +3549,7 @@
     }
   },
   "subscriptionUpgrade": {
-    "message": "You cannot invite more than $COUNT$ members without upgrading your plan.",
+    "message": "Nemôžete pozvať viac ako $COUNT$ používateľov bez navýšenia vášho plánu.",
     "placeholders": {
       "count": {
         "content": "$1",

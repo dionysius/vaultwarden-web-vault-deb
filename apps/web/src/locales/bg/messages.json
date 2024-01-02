@@ -3549,7 +3549,7 @@
     }
   },
   "subscriptionUpgrade": {
-    "message": "You cannot invite more than $COUNT$ members without upgrading your plan.",
+    "message": "Не можете да поканите повече от $COUNT$ членове без да надградите плана си.",
     "placeholders": {
       "count": {
         "content": "$1",
