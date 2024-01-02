@@ -160,6 +160,7 @@ export class ServeCommand {
     this.sendRemovePasswordCommand = new SendRemovePasswordCommand(
       this.main.sendService,
       this.main.sendApiService,
+      this.main.environmentService,
     );
   }
 

@@ -1,3 +1,4 @@
+import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { SendService } from "@bitwarden/common/tools/send/services//send.service.abstraction";
 import { SendApiService } from "@bitwarden/common/tools/send/services/send-api.service.abstraction";
 
@@ -8,6 +9,7 @@ export class SendRemovePasswordCommand {
   constructor(
     private sendService: SendService,
     private sendApiService: SendApiService,
+    private environmentService: EnvironmentService,
   ) {}
 
   async run(id: string) {
@@ -16,7 +18,8 @@ export class SendRemovePasswordCommand {
 
       const updatedSend = await this.sendService.get(id);
       const decSend = await updatedSend.decrypt();
-      const res = new SendResponse(decSend);
+      const webVaultUrl = this.environmentService.getWebVaultUrl();
+      const res = new SendResponse(decSend, webVaultUrl);
       return Response.success(res);
     } catch (e) {
       return Response.error(e);

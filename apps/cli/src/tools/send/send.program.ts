@@ -297,7 +297,11 @@ export class SendProgram extends Program {
       })
       .action(async (id: string) => {
         await this.exitIfLocked();
-        const cmd = new SendRemovePasswordCommand(this.main.sendService, this.main.sendApiService);
+        const cmd = new SendRemovePasswordCommand(
+          this.main.sendService,
+          this.main.sendApiService,
+          this.main.environmentService,
+        );
         const response = await cmd.run(id);
         this.processResponse(response);
       });
