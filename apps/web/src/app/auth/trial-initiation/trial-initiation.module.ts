@@ -21,9 +21,11 @@ import { DefaultContentComponent } from "./content/default-content.component";
 import { EnterpriseContentComponent } from "./content/enterprise-content.component";
 import { Enterprise1ContentComponent } from "./content/enterprise1-content.component";
 import { Enterprise2ContentComponent } from "./content/enterprise2-content.component";
+import { LogoCnet5StarsComponent } from "./content/logo-cnet-5-stars.component";
 import { LogoCnetComponent } from "./content/logo-cnet.component";
 import { LogoForbesComponent } from "./content/logo-forbes.component";
 import { LogoUSNewsComponent } from "./content/logo-us-news.component";
+import { ReviewLogoComponent } from "./content/review-logo.component";
 import { TeamsContentComponent } from "./content/teams-content.component";
 import { Teams1ContentComponent } from "./content/teams1-content.component";
 import { Teams2ContentComponent } from "./content/teams2-content.component";
@@ -62,9 +64,11 @@ import { VerticalStepperModule } from "./vertical-stepper/vertical-stepper.modul
     CnetTeamsContentComponent,
     AbmEnterpriseContentComponent,
     AbmTeamsContentComponent,
+    LogoCnet5StarsComponent,
     LogoCnetComponent,
     LogoForbesComponent,
     LogoUSNewsComponent,
+    ReviewLogoComponent,
   ],
   exports: [TrialInitiationComponent],
   providers: [TitleCasePipe],
