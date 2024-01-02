@@ -545,7 +545,7 @@
     "message": "Vyžaduje sa opätovné zadanie hlavného hesla."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Hlavné heslo musí mať aspoň $VALUE$ znakov.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
