@@ -89,16 +89,16 @@
     "message": "Kopioi turvakoodi"
   },
   "autoFill": {
-    "message": "Automaattinen täyttö"
+    "message": "Automaattitäyttö"
   },
   "autoFillLogin": {
-    "message": "Täytä kirjautumistieto automaattisesti"
+    "message": "Automaattitäytä kirjautumistieto"
   },
   "autoFillCard": {
-    "message": "Täytä kortti automaattisesti"
+    "message": "Automaattitäytä kortti"
   },
   "autoFillIdentity": {
-    "message": "Täytä identiteetti automaattisesti"
+    "message": "Automaattitäytä identiteetti"
   },
   "generatePasswordCopied": {
     "message": "Luo salasana (leikepöydälle)"
@@ -641,7 +641,7 @@
     "message": "Näytä henkilöllisyydet välilehtiosiossa"
   },
   "showIdentitiesCurrentTabDesc": {
-    "message": "Henkilöllisyydet näytetään laajennuksen välilehtisivulla niiden automaattisen täytön helpottamiseksi."
+    "message": "Henkilöllisyydet näytetään laajennuksen Välilehti-sivulla niiden automaattisen täytön helpottamiseksi."
   },
   "clearClipboard": {
     "message": "Tyhjennä leikepöytä",
@@ -670,7 +670,7 @@
     "message": "Tarjoa salausavainten tallennusta ja käyttöä"
   },
   "usePasskeysDesc": {
-    "message": "Tarjoa uusien salausavainten tallennusta tai kirjautumista holvissasi olevilla salausavaimilla. Koskee kaikkia kirjautuneita tilejä."
+    "message": "Tarjoa tallennusta uusille salausavaimille tai kirjautumista holvissasi olevilla salausavaimilla. Koskee kaikkia kirjautuneita tilejä."
   },
   "notificationChangeDesc": {
     "message": "Haluatko päivittää salasanan Bitwardeniin?"
@@ -698,7 +698,7 @@
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
-    "message": "Valitse kirjautumistietojen URI:en oletusarvoinen tunnistustapa suoritettaessa automaattitäytön kaltaisia toimintoja."
+    "message": "Valitse kirjautumistietojen URI:en oletusarvoinen tunnistustapa suoritettaessa automaattisen täytön kaltaisia toimintoja."
   },
   "theme": {
     "message": "Teema"
@@ -1047,42 +1047,42 @@
     "description": "Overlay setting select option for disabling autofill overlay"
   },
   "autofillOverlayVisibilityOnFieldFocus": {
-    "message": "Kun kenttä on valittu (kohdistettu)",
+    "message": "Kun kenttä valitaan (kohdistetaan)",
     "description": "Overlay appearance select option for showing the field on focus of the input element"
   },
   "autofillOverlayVisibilityOnButtonClick": {
-    "message": "Kun automaattitäytön kuvake valitaan",
+    "message": "Kun automaattitäytön kuvaketta painetaan",
     "description": "Overlay appearance select option for showing the field on click of the overlay icon"
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Automaattinen täyttö sivun avautuessa"
+    "message": "Automaattitäyttö sivun avautuessa"
   },
   "enableAutoFillOnPageLoadDesc": {
-    "message": "Jos havaitaan kirjautumislomake, suorita automaattinen täyttö sivun avautuessa."
+    "message": "Automaattinen täyttö suoritetaan sivun avautuessa, jos sivulla havaitaan kirjautumislomake."
   },
   "experimentalFeature": {
     "message": "Vaarantuneet tai epäluotettavat sivustot voivat väärinkäyttää sivun avautuessa suoritettavaa automaattista täyttöä."
   },
   "learnMoreAboutAutofill": {
-    "message": "Lisätietoja automaattisesta täytöstä"
+    "message": "Lisätietoja automaattitäytöstä"
   },
   "defaultAutoFillOnPageLoad": {
-    "message": "Automaattisen täytön oletusasetus kirjautumistiedoille"
+    "message": "Automaattitäytön oletusasetus kirjautumistiedoille"
   },
   "defaultAutoFillOnPageLoadDesc": {
-    "message": "Voit ottaa automaattisen täytön käyttöön tai poistaa sen käytöstä kirjautumistietokohtaisesti muokkaamalla kirjautumistetoa."
+    "message": "Automaattinen täyttö on mahdollista ottaa käyttöön tai poistaa käytöstä kirjautumistietokohtaisesti kirjautumistetoa muokkaamalla."
   },
   "itemAutoFillOnPageLoad": {
-    "message": "Automaattinen täyttö sivun avautuessa (jos määritetty asetuksista)"
+    "message": "Automaattitäyttö sivun avautuessa (jos määritetty asetuksista)"
   },
   "autoFillOnPageLoadUseDefault": {
     "message": "Käytä oletusasetusta"
   },
   "autoFillOnPageLoadYes": {
-    "message": "Täytä automaattisesti sivun avautuessa"
+    "message": "Automaattitäyttö sivun avautuessa"
   },
   "autoFillOnPageLoadNo": {
-    "message": "Älä täytä automaattisesti sivun avautuessa"
+    "message": "Ei automaattitäyttöä sivun avautuessa"
   },
   "commandOpenPopup": {
     "message": "Avaa holvin ponnahdusikkuna"
@@ -1091,7 +1091,7 @@
     "message": "Avaa holvi sivupalkissa"
   },
   "commandAutofillDesc": {
-    "message": "Täytä automaattisesti viimeisin nykyisellä sivustolla käytetty kirjautumistieto"
+    "message": "Täytä edellinen nykyisellä sivustolla käytetty kirjautumistieto automaattisesti."
   },
   "commandGeneratePasswordDesc": {
     "message": "Luo uusi satunnainen salasana ja kopioi se leikepöydälle."
@@ -1538,7 +1538,7 @@
     "message": "Aikakatkaisutoiminnon vahvistus"
   },
   "autoFillAndSave": {
-    "message": "Täytä automaattisesti ja tallenna"
+    "message": "Automaattitäytä ja tallenna"
   },
   "autoFillSuccessAndSavedUri": {
     "message": "Kohde täytettiin automaattisesti ja URI tallennettiin"
@@ -1553,7 +1553,7 @@
     "message": "Haluatko silti täyttää kirjautumistiedot?"
   },
   "autofillIframeWarning": {
-    "message": "Lomakkeen URI-osoite poikkeaa kirjautumistietoon tallennetusta osoitteesta. Täytä se siitä huolimatta valitsemalla OK tai peru täyttö valitsemalla Peruuta."
+    "message": "Lomakkeen URI-osoite poikkeaa kirjautumistietoon tallennetusta osoitteesta. Salli sen automaattinen täyttö siitä huolimatta valitsemalla OK tai estä se valitsemalla Peruuta."
   },
   "autofillIframeWarningTip": {
     "message": "Välttyäksesi varoitukselta jatkossa, tallenna URI $HOSTNAME$ sivustolle tallennettuun Bitwarden-kirjautumistietoosi.",
@@ -2276,10 +2276,10 @@
     }
   },
   "autofillPageLoadPolicyActivated": {
-    "message": "Organisaatiokäytännöt ovat poistaneet käytöstä automaattisen täytön sivun avautuessa."
+    "message": "Organisaatiokäytännöt ovat poistaneet käytöstä avautuessa suoritettavan automaattisen täytön."
   },
   "howToAutofill": {
-    "message": "Miten täytetään automaattisesti"
+    "message": "Miten automaattitäyttöä käytetään"
   },
   "autofillSelectInfoWithCommand": {
     "message": "Valitse kohde tästä ruudusta, käytä pikanäppäintä $COMMAND$ tai tutustu muihin vaihtoehtoihin asetuksissa.",
@@ -2297,10 +2297,10 @@
     "message": "Selvä"
   },
   "autofillSettings": {
-    "message": "Täytön asetukset"
+    "message": "Automaattitäytön asetukset"
   },
   "autofillShortcut": {
-    "message": "Automaattisen täytön pikanäppäin"
+    "message": "Automaattitäytön pikanäppäin"
   },
   "autofillShortcutNotSet": {
     "message": "Automaattisen täytön pikanäppäintä ei ole määritetty. Määritä se selaimen asetuksista."
@@ -2530,14 +2530,14 @@
     "description": "Notification message for when an import has failed due to a network error."
   },
   "aliasDomain": {
-    "message": "Alias-verkkotunnus"
+    "message": "Aliaksen verkkotunnus"
   },
   "passwordRepromptDisabledAutofillOnPageLoad": {
-    "message": "Kohteita, joille pääsalasanan uudelleenkysely on käytössä, ei voida täyttää automaattisesti sivujen avautuessa. Automaattinen täyttö sivujen avautuessa poistettiin käytöstä.",
+    "message": "Kohteille, joille on määritetty pääsalasanan uudelleenkysely, ei voida suorittaa automaattista täyttöä sivun avautuessa. Automaattitäyttö sivun avautuessa poistettiin käytöstä. avautuessa suoritettavan",
     "description": "Toast message for describing that master password re-prompt cannot be auto-filled on page load."
   },
   "autofillOnPageLoadSetToDefault": {
-    "message": "Automaattinen täyttö sivun avautuessa käyttää oletusasetusta.",
+    "message": "Automaattitäyttö sivun avautuessa käyttää oletusasetusta.",
     "description": "Toast message for informing the user that auto-fill on page load has been set to the default setting."
   },
   "turnOffMasterPasswordPromptToEditField": {
@@ -2588,7 +2588,7 @@
     "description": "Screen reader text (aria-label) for new item button in overlay"
   },
   "bitwardenOverlayMenuAvailable": {
-    "message": "Bitwardenin automaattitäytön valikko on käytettävissä. Valitse painamalla alas-nuolinäppäintä.",
+    "message": "Bitwardenin automaattisen täytön valikko on käytettävissä. Valitse painamalla alas-nuolinäppäintä.",
     "description": "Screen reader text for announcing when the overlay opens on the page"
   },
   "turnOn": {
@@ -2834,6 +2834,9 @@
   },
   "activeAccount": {
     "message": "Aktiivinen tili"
+  },
+  "availableAccounts": {
+    "message": "Available accounts"
   },
   "accountLimitReached": {
     "message": "Tilien enimmäismäärä on saavutettu. Kirjaa jokin niistä ulos lisätäksesi tilin."

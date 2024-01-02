@@ -664,13 +664,13 @@
     "message": "Solicitar la actualización de los datos de inicio de sesión existentes cuando se detecte un cambio en un sitio web."
   },
   "changedPasswordNotificationDescAlt": {
-    "message": "Ask to update a login's password when a change is detected on a website. Applies to all logged in accounts."
+    "message": "Solicitar actualizar la contraseña de una cuenta cuando se detecta un cambio en un sitio web. Se aplica a todas las cuentas accedidas."
   },
   "enableUsePasskeys": {
     "message": "Solicitar guardar y usar claves de acceso"
   },
   "usePasskeysDesc": {
-    "message": "Ask to save new passkeys or log in with passkeys stored in your vault. Applies to all logged in accounts."
+    "message": "Solicitar guardar claves de paso nuevas o acceder con claves de paso almacenadas en su caja fuerte. Se aplica a todas las cuentas accedidas."
   },
   "notificationChangeDesc": {
     "message": "¿Desea actualizar esta contraseña en Bitwarden?"
@@ -691,7 +691,7 @@
     "message": "Haga clic con el botón secundario para acceder a la generación de contraseñas y a los inicios de sesión correspondientes al sitio web. "
   },
   "contextMenuItemDescAlt": {
-    "message": "Use a secondary click to access password generation and matching logins for the website. Applies to all logged in accounts."
+    "message": "Usar pulsación secundaria para acceder a la generación de contraseñas y cuentas coincidentes a los sitios web. Se aplica a todas las cuentas accedidas."
   },
   "defaultUriMatchDetection": {
     "message": "Detección por defecto de coincidencia de URI",
@@ -707,7 +707,7 @@
     "message": "Cambiar el tema de la aplicación."
   },
   "themeDescAlt": {
-    "message": "Change the application's color theme. Applies to all logged in accounts."
+    "message": "Cambiar el tema de colores de la aplicación. Se aplica a todas las cuentas accedidas."
   },
   "dark": {
     "message": "Oscuro",
@@ -1037,21 +1037,21 @@
     "message": "Se aplica a todas las cuentas que hayan iniciado sesión."
   },
   "turnOffBrowserBuiltInPasswordManagerSettings": {
-    "message": "Turn off your browser’s built in password manager settings to avoid conflicts."
+    "message": "Desactive la configuración del gestor de contraseñas del navegador para evitar conflictos."
   },
   "turnOffBrowserBuiltInPasswordManagerSettingsLink": {
-    "message": "Edit browser settings."
+    "message": "Editar ajustes del navegador."
   },
   "autofillOverlayVisibilityOff": {
-    "message": "Off",
+    "message": "Desactivado",
     "description": "Overlay setting select option for disabling autofill overlay"
   },
   "autofillOverlayVisibilityOnFieldFocus": {
-    "message": "When field is selected (on focus)",
+    "message": "Cuando el campo esté seleccionado (en foco)",
     "description": "Overlay appearance select option for showing the field on focus of the input element"
   },
   "autofillOverlayVisibilityOnButtonClick": {
-    "message": "When auto-fill icon is selected",
+    "message": "Cuando se seleccione el icono de relleno automático",
     "description": "Overlay appearance select option for showing the field on click of the overlay icon"
   },
   "enableAutoFillOnPageLoad": {
@@ -1147,7 +1147,7 @@
     "message": "Mostrar una imagen reconocible junto a cada inicio de sesión."
   },
   "faviconDescAlt": {
-    "message": "Show a recognizable image next to each login. Applies to all logged in accounts."
+    "message": "Mostrar una imagen reconocible junto a cada inicio de sesión. Se aplica a todas las cuentas conectadas."
   },
   "enableBadgeCounter": {
     "message": "Mostrar el contador numérico"
@@ -1718,7 +1718,7 @@
     "message": "Bitwarden no pedirá que se guarden los datos de acceso para estos dominios. Debe actualizar la página para que los cambios surtan efecto."
   },
   "excludedDomainsDescAlt": {
-    "message": "Bitwarden will not ask to save login details for these domains for all logged in accounts. You must refresh the page for changes to take effect."
+    "message": "Bitwarden no pedirá que se guarden los datos de acceso para estos dominios en todas las sesiones iniciadas. Debe actualizar la página para que los cambios surtan efecto."
   },
   "excludedDomainsInvalidDomain": {
     "message": "$DOMAIN$ no es un dominio válido",
@@ -2282,7 +2282,7 @@
     "message": "Cómo autorellenar"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Select an item from this screen, use the shortcut $COMMAND$, or explore other options in settings.",
+    "message": "Selecciona un elemento de esta pantalla, usa el acceso directo $COMMAND$ o explora otras opciones en ajustes.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2291,7 +2291,7 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "Select an item from this screen, or explore other options in settings."
+    "message": "Seleccione un elemento de esta pantalla, o explore otras opciones en ajustes."
   },
   "gotIt": {
     "message": "Entendido"
@@ -2482,7 +2482,7 @@
     "message": "Borrar todo"
   },
   "plusNMore": {
-    "message": "+ $QUANTITY$ more",
+    "message": "+ $QUANTITY$ más",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -2541,61 +2541,61 @@
     "description": "Toast message for informing the user that auto-fill on page load has been set to the default setting."
   },
   "turnOffMasterPasswordPromptToEditField": {
-    "message": "Turn off master password re-prompt to edit this field",
+    "message": "Desactiva la solicitud de contraseña maestra para editar este campo",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
   "skipToContent": {
-    "message": "Skip to content"
+    "message": "Ir al contenido"
   },
   "bitwardenOverlayButton": {
-    "message": "Bitwarden auto-fill menu button",
+    "message": "Botón de menú de autocompletar de Bitwarden",
     "description": "Page title for the iframe containing the overlay button"
   },
   "toggleBitwardenVaultOverlay": {
-    "message": "Toggle Bitwarden auto-fill menu",
+    "message": "Alternar menú de autocompletar de bitwarden",
     "description": "Screen reader and tool tip label for the overlay button"
   },
   "bitwardenVault": {
-    "message": "Bitwarden auto-fill menu",
+    "message": "Menú de autocompletar de Bitwarden",
     "description": "Page title in overlay"
   },
   "unlockYourAccountToViewMatchingLogins": {
-    "message": "Unlock your account to view matching logins",
+    "message": "Desbloquea tu cuenta para ver las entradas coincidentes",
     "description": "Text to display in overlay when the account is locked."
   },
   "unlockAccount": {
-    "message": "Unlock account",
+    "message": "Desbloquear la cuenta",
     "description": "Button text to display in overlay when the account is locked."
   },
   "fillCredentialsFor": {
-    "message": "Fill credentials for",
+    "message": "Rellenar credenciales para",
     "description": "Screen reader text for when overlay item is in focused"
   },
   "partialUsername": {
-    "message": "Partial username",
+    "message": "Nombre de usuario parcial",
     "description": "Screen reader text for when a login item is focused where a partial username is displayed. SR will announce this phrase before reading the text of the partial username"
   },
   "noItemsToShow": {
-    "message": "No items to show",
+    "message": "No hay ningún elemento que mostrar",
     "description": "Text to show in overlay if there are no matching items"
   },
   "newItem": {
-    "message": "New item",
+    "message": "Nuevo elemento",
     "description": "Button text to display in overlay when there are no matching items"
   },
   "addNewVaultItem": {
-    "message": "Add new vault item",
+    "message": "Añadir elemento de caja fuerte nuevo",
     "description": "Screen reader text (aria-label) for new item button in overlay"
   },
   "bitwardenOverlayMenuAvailable": {
-    "message": "Bitwarden auto-fill menu available. Press the down arrow key to select.",
+    "message": "Menú de relleno automático de Bitwarden disponible. Presione ↓ para seleccionar.",
     "description": "Screen reader text for announcing when the overlay opens on the page"
   },
   "turnOn": {
-    "message": "Turn on"
+    "message": "Activar"
   },
   "ignore": {
-    "message": "Ignore"
+    "message": "Ignorar"
   },
   "importData": {
     "message": "Importar datos",
@@ -2709,7 +2709,7 @@
     "message": "Confirmar contraseña del archivo"
   },
   "typePasskey": {
-    "message": "Passkey"
+    "message": "Clave de acceso"
   },
   "passkeyNotCopied": {
     "message": "La clave de acceso no se copiará"
@@ -2733,7 +2733,7 @@
     "message": "No tiene un inicio de sesión que coincida para este sitio."
   },
   "confirm": {
-    "message": "Confirme"
+    "message": "Confirmar"
   },
   "savePasskey": {
     "message": "Guardar clave"
@@ -2745,7 +2745,7 @@
     "message": "Elija un inicio de sesión para guardar esta clave de acceso"
   },
   "passkeyItem": {
-    "message": "Passkey Item"
+    "message": "Elemento de clave de acceso"
   },
   "overwritePasskey": {
     "message": "¿Sobrescribir contraseña?"
@@ -2821,49 +2821,52 @@
     "message": "Colección"
   },
   "lastPassYubikeyDesc": {
-    "message": "Insert the YubiKey associated with your LastPass account into your computer's USB port, then touch its button."
+    "message": "Inserte la YubiKey asociada con su cuenta de LastPass en el puerto USB del equipo y, a continuación, pulse su botón."
   },
   "switchAccount": {
-    "message": "Switch account"
+    "message": "Cambiar de cuenta"
   },
   "switchAccounts": {
-    "message": "Switch accounts"
+    "message": "Cambiar de cuenta"
   },
   "switchToAccount": {
-    "message": "Switch to account"
+    "message": "Cambiar a cuenta"
   },
   "activeAccount": {
-    "message": "Active account"
+    "message": "Cuenta activa"
+  },
+  "availableAccounts": {
+    "message": "Cuentas disponibles"
   },
   "accountLimitReached": {
-    "message": "Account limit reached. Log out of an account to add another."
+    "message": "Se alcanzó el límite de cuentas. Salga de una cuenta para añadir otra."
   },
   "active": {
-    "message": "active"
+    "message": "activa"
   },
   "locked": {
-    "message": "locked"
+    "message": "bloqueada"
   },
   "unlocked": {
-    "message": "unlocked"
+    "message": "desbloqueada"
   },
   "server": {
-    "message": "server"
+    "message": "servidor"
   },
   "hostedAt": {
-    "message": "hosted at"
+    "message": "alojado en"
   },
   "useDeviceOrHardwareKey": {
-    "message": "Use your device or hardware key"
+    "message": "Utilice su dispositivo o su llave de hardware"
   },
   "justOnce": {
-    "message": "Just once"
+    "message": "Sólo una vez"
   },
   "alwaysForThisSite": {
-    "message": "Always for this site"
+    "message": "Siempre para este sitio"
   },
   "domainAddedToExcludedDomains": {
-    "message": "$DOMAIN$ added to excluded domains.",
+    "message": "Se añadió $DOMAIN$ a los dominios excluidos.",
     "placeholders": {
       "domain": {
         "content": "$1",
