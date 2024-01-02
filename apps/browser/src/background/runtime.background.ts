@@ -264,7 +264,7 @@ export default class RuntimeBackground {
         this.abortManager.abort(msg.abortedRequestId);
         break;
       case "checkFido2FeatureEnabled":
-        return await this.main.fido2ClientService.isFido2FeatureEnabled();
+        return await this.main.fido2ClientService.isFido2FeatureEnabled(msg.hostname, msg.origin);
       case "fido2RegisterCredentialRequest":
         return await this.abortManager.runWithAbortController(
           msg.requestId,

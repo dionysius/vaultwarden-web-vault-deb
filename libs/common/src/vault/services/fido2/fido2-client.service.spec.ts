@@ -1,4 +1,5 @@
 import { mock, MockProxy } from "jest-mock-extended";
+import { of } from "rxjs";
 
 import { AuthService } from "../../../auth/abstractions/auth.service";
 import { AuthenticationStatus } from "../../../auth/enums/authentication-status";
@@ -23,6 +24,8 @@ import { Fido2Utils } from "./fido2-utils";
 import { guidToRawFormat } from "./guid-utils";
 
 const RpId = "bitwarden.com";
+const Origin = "https://bitwarden.com";
+const VaultUrl = "https://vault.bitwarden.com";
 
 describe("FidoAuthenticatorService", () => {
   let authenticator!: MockProxy<Fido2AuthenticatorService>;
@@ -40,7 +43,9 @@ describe("FidoAuthenticatorService", () => {
 
     client = new Fido2ClientService(authenticator, configService, authService, stateService);
     configService.getFeatureFlag.mockResolvedValue(true);
+    configService.serverConfig$ = of({ environment: { vault: VaultUrl } } as any);
     stateService.getEnablePasskeys.mockResolvedValue(true);
+    authService.getAuthStatus.mockResolvedValue(AuthenticationStatus.Unlocked);
     tab = { id: 123, windowId: 456 } as chrome.tabs.Tab;
   });
 
@@ -249,6 +254,15 @@ describe("FidoAuthenticatorService", () => {
         const rejects = expect(result).rejects;
         await rejects.toThrow(FallbackRequestedError);
       });
+
+      it("should throw FallbackRequestedError if origin equals the bitwarden vault", async () => {
+        const params = createParams({ origin: VaultUrl });
+
+        const result = async () => await client.createCredential(params, tab);
+
+        const rejects = expect(result).rejects;
+        await rejects.toThrow(FallbackRequestedError);
+      });
     });
 
     function createParams(params: Partial<CreateCredentialParams> = {}): CreateCredentialParams {
@@ -420,6 +434,15 @@ describe("FidoAuthenticatorService", () => {
         const rejects = expect(result).rejects;
         await rejects.toThrow(FallbackRequestedError);
       });
+
+      it("should throw FallbackRequestedError if origin equals the bitwarden vault", async () => {
+        const params = createParams({ origin: VaultUrl });
+
+        const result = async () => await client.assertCredential(params, tab);
+
+        const rejects = expect(result).rejects;
+        await rejects.toThrow(FallbackRequestedError);
+      });
     });
 
     describe("assert non-discoverable credential", () => {
@@ -485,7 +508,7 @@ describe("FidoAuthenticatorService", () => {
       return {
         allowedCredentialIds: params.allowedCredentialIds ?? [],
         challenge: params.challenge ?? Fido2Utils.bufferToString(randomBytes(16)),
-        origin: params.origin ?? "https://bitwarden.com",
+        origin: params.origin ?? Origin,
         rpId: params.rpId ?? RpId,
         timeout: params.timeout,
         userVerification: params.userVerification,

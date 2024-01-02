@@ -9,44 +9,14 @@ import { Messenger } from "./messaging/messenger";
 function isFido2FeatureEnabled(): Promise<boolean> {
   return new Promise((resolve) => {
     chrome.runtime.sendMessage(
-      { command: "checkFido2FeatureEnabled" },
+      {
+        command: "checkFido2FeatureEnabled",
+        hostname: window.location.hostname,
+        origin: window.location.origin,
+      },
       (response: { result?: boolean }) => resolve(response.result),
     );
   });
-}
-
-async function getFromLocalStorage(keys: string | string[]): Promise<Record<string, any>> {
-  return new Promise((resolve) => {
-    chrome.storage.local.get(keys, (storage: Record<string, any>) => resolve(storage));
-  });
-}
-
-async function getActiveUserSettings() {
-  // TODO: This is code copied from `notification-bar.tsx`. We should refactor this into a shared function.
-  // Look up the active user id from storage
-  const activeUserIdKey = "activeUserId";
-  let activeUserId: string;
-
-  const activeUserStorageValue = await getFromLocalStorage(activeUserIdKey);
-  if (activeUserStorageValue[activeUserIdKey]) {
-    activeUserId = activeUserStorageValue[activeUserIdKey];
-  }
-
-  const settingsStorage = await getFromLocalStorage(activeUserId);
-
-  // Look up the user's settings from storage
-  return settingsStorage?.[activeUserId]?.settings;
-}
-
-async function isDomainExcluded(activeUserSettings: Record<string, any>) {
-  const excludedDomains = activeUserSettings?.neverDomains;
-  return excludedDomains && window.location.hostname in excludedDomains;
-}
-
-async function hasActiveUser() {
-  const activeUserIdKey = "activeUserId";
-  const activeUserStorageValue = await getFromLocalStorage(activeUserIdKey);
-  return activeUserStorageValue[activeUserIdKey] !== undefined;
 }
 
 function isSameOriginWithAncestors() {
@@ -56,11 +26,6 @@ function isSameOriginWithAncestors() {
     return false;
   }
 }
-
-async function isLocationBitwardenVault(activeUserSettings: Record<string, any>) {
-  return window.location.origin === activeUserSettings.serverConfig.environment.vault;
-}
-
 const messenger = Messenger.forDOMCommunication(window);
 
 function injectPageScript() {
@@ -156,17 +121,7 @@ function initializeFido2ContentScript() {
 }
 
 async function run() {
-  if (!(await hasActiveUser())) {
-    return;
-  }
-
-  const activeUserSettings = await getActiveUserSettings();
-  if (
-    activeUserSettings == null ||
-    !(await isFido2FeatureEnabled()) ||
-    (await isDomainExcluded(activeUserSettings)) ||
-    (await isLocationBitwardenVault(activeUserSettings))
-  ) {
+  if (!(await isFido2FeatureEnabled())) {
     return;
   }
 
