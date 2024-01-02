@@ -15,7 +15,6 @@ import { DialogService } from "@bitwarden/components";
 
 export interface BulkDeleteDialogParams {
   cipherIds?: string[];
-  collectionIds?: string[];
   permanent?: boolean;
   organization?: Organization;
   organizations?: Organization[];
@@ -47,7 +46,6 @@ export const openBulkDeleteDialog = (
 })
 export class BulkDeleteDialogComponent {
   cipherIds: string[];
-  collectionIds: string[];
   permanent = false;
   organization: Organization;
   organizations: Organization[];
@@ -64,7 +62,6 @@ export class BulkDeleteDialogComponent {
     private configService: ConfigServiceAbstraction,
   ) {
     this.cipherIds = params.cipherIds ?? [];
-    this.collectionIds = params.collectionIds ?? [];
     this.permanent = params.permanent;
     this.organization = params.organization;
     this.organizations = params.organizations;
@@ -85,7 +82,7 @@ export class BulkDeleteDialogComponent {
       }
     }
 
-    if (this.collectionIds.length) {
+    if (this.collections.length) {
       deletePromises.push(this.deleteCollections());
     }
 
@@ -98,8 +95,8 @@ export class BulkDeleteDialogComponent {
         this.i18nService.t(this.permanent ? "permanentlyDeletedItems" : "deletedItems"),
       );
     }
-    if (this.collectionIds.length) {
-      await this.collectionService.delete(this.collectionIds);
+    if (this.collections.length) {
+      await this.collectionService.delete(this.collections.map((c) => c.id));
       this.platformUtilsService.showToast(
         "success",
         null,
@@ -144,7 +141,10 @@ export class BulkDeleteDialogComponent {
         );
         return;
       }
-      return await this.apiService.deleteManyCollections(this.organization.id, this.collectionIds);
+      return await this.apiService.deleteManyCollections(
+        this.organization.id,
+        this.collections.map((c) => c.id),
+      );
       // From individual vault, so there can be multiple organizations
     } else if (this.organizations && this.collections) {
       const deletePromises: Promise<any>[] = [];
@@ -160,7 +160,7 @@ export class BulkDeleteDialogComponent {
         }
         const orgCollectionIds = orgCollections.map((c) => c.id);
         deletePromises.push(
-          this.apiService.deleteManyCollections(this.organization.id, orgCollectionIds),
+          this.apiService.deleteManyCollections(organization.id, orgCollectionIds),
         );
       }
       return await Promise.all(deletePromises);
