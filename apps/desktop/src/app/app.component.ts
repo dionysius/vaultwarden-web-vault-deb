@@ -113,6 +113,8 @@ export class AppComponent implements OnInit, OnDestroy {
 
   private destroy$ = new Subject<void>();
 
+  private accountCleanUpInProgress: { [userId: string]: boolean } = {};
+
   constructor(
     private broadcasterService: BroadcasterService,
     private folderService: InternalFolderService,
@@ -495,7 +497,11 @@ export class AppComponent implements OnInit, OnDestroy {
     } else {
       const accounts: { [userId: string]: MenuAccount } = {};
       for (const i in stateAccounts) {
-        if (i != null && stateAccounts[i]?.profile?.userId != null) {
+        if (
+          i != null &&
+          stateAccounts[i]?.profile?.userId != null &&
+          !this.isAccountCleanUpInProgress(stateAccounts[i].profile.userId) // skip accounts that are being cleaned up
+        ) {
           const userId = stateAccounts[i].profile.userId;
           const availableTimeoutActions = await firstValueFrom(
             this.vaultTimeoutSettingsService.availableVaultTimeoutActions$(userId),
@@ -525,22 +531,31 @@ export class AppComponent implements OnInit, OnDestroy {
 
   private async logOut(expired: boolean, userId?: string) {
     const userBeingLoggedOut = await this.stateService.getUserId({ userId: userId });
-    await Promise.all([
-      this.eventUploadService.uploadEvents(userBeingLoggedOut),
-      this.syncService.setLastSync(new Date(0), userBeingLoggedOut),
-      this.cryptoService.clearKeys(userBeingLoggedOut),
-      this.settingsService.clear(userBeingLoggedOut),
-      this.cipherService.clear(userBeingLoggedOut),
-      this.folderService.clear(userBeingLoggedOut),
-      this.collectionService.clear(userBeingLoggedOut),
-      this.passwordGenerationService.clear(userBeingLoggedOut),
-      this.vaultTimeoutSettingsService.clear(userBeingLoggedOut),
-      this.policyService.clear(userBeingLoggedOut),
-      this.keyConnectorService.clear(),
-    ]);
 
-    const preLogoutActiveUserId = this.activeUserId;
-    await this.stateService.clean({ userId: userBeingLoggedOut });
+    // Mark account as being cleaned up so that the updateAppMenu logic (executed on syncCompleted)
+    // doesn't attempt to update a user that is being logged out as we will manually
+    // call updateAppMenu when the logout is complete.
+    this.startAccountCleanUp(userBeingLoggedOut);
+
+    let preLogoutActiveUserId;
+    try {
+      await this.eventUploadService.uploadEvents(userBeingLoggedOut);
+      await this.syncService.setLastSync(new Date(0), userBeingLoggedOut);
+      await this.cryptoService.clearKeys(userBeingLoggedOut);
+      await this.settingsService.clear(userBeingLoggedOut);
+      await this.cipherService.clear(userBeingLoggedOut);
+      await this.folderService.clear(userBeingLoggedOut);
+      await this.collectionService.clear(userBeingLoggedOut);
+      await this.passwordGenerationService.clear(userBeingLoggedOut);
+      await this.vaultTimeoutSettingsService.clear(userBeingLoggedOut);
+      await this.policyService.clear(userBeingLoggedOut);
+      await this.keyConnectorService.clear();
+
+      preLogoutActiveUserId = this.activeUserId;
+      await this.stateService.clean({ userId: userBeingLoggedOut });
+    } finally {
+      this.finishAccountCleanUp(userBeingLoggedOut);
+    }
 
     if (this.activeUserId == null) {
       this.router.navigate(["login"]);
@@ -674,5 +689,20 @@ export class AppComponent implements OnInit, OnDestroy {
     const timeout = await this.stateService.getVaultTimeout({ userId: userId });
     const action = await this.stateService.getVaultTimeoutAction({ userId: userId });
     return [timeout, action];
+  }
+
+  // Mark an account's clean up as started
+  private startAccountCleanUp(userId: string): void {
+    this.accountCleanUpInProgress[userId] = true;
+  }
+
+  // Mark an account's clean up as finished
+  private finishAccountCleanUp(userId: string): void {
+    this.accountCleanUpInProgress[userId] = false;
+  }
+
+  // Check if an account's clean up is in progress
+  private isAccountCleanUpInProgress(userId: string): boolean {
+    return this.accountCleanUpInProgress[userId] === true;
   }
 }
