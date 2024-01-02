@@ -77,11 +77,21 @@ export class AccountSwitcherService {
           options.push({
             name: "Add account",
             id: this.SPECIAL_ADD_ACCOUNT_ID,
-            isActive: activeAccount?.id == null,
+            isActive: false,
           });
         }
 
-        return options;
+        return options.sort((a, b) => {
+          // Active account is always first
+          if (a.isActive) {
+            return -1;
+          }
+
+          // "Add Account" button is always last
+          if (a.id === this.SPECIAL_ADD_ACCOUNT_ID) {
+            return 1;
+          }
+        });
       }),
     );
 

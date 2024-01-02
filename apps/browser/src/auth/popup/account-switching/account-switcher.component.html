@@ -15,9 +15,20 @@
   <div class="tw-p-2">
     <div *ngIf="availableAccounts$ | async as availableAccounts">
       <ul class="tw-grid tw-list-none tw-gap-2" role="listbox">
-        <li *ngFor="let availableAccount of availableAccounts" role="option">
-          <auth-account [account]="availableAccount" (loading)="loading = $event"></auth-account>
-        </li>
+        <ng-container
+          *ngFor="let availableAccount of availableAccounts; first as isFirst"
+          role="option"
+        >
+          <li *ngIf="availableAccount.isActive" class="tw-mb-4">
+            <auth-account [account]="availableAccount" (loading)="loading = $event"></auth-account>
+          </li>
+          <div *ngIf="isFirst" class="tw-uppercase tw-text-muted">
+            {{ "availableAccounts" | i18n }}
+          </div>
+          <li *ngIf="!availableAccount.isActive">
+            <auth-account [account]="availableAccount" (loading)="loading = $event"></auth-account>
+          </li>
+        </ng-container>
       </ul>
       <!--
         If the user has not reached the account limit, the last 'availableAccount' will have an 'id' of
@@ -58,7 +69,7 @@
         </button>
         <button
           type="button"
-          class="account-switcher-row tw-mt-2 tw-flex tw-w-full tw-items-center tw-gap-3 tw-rounded-md tw-p-3"
+          class="account-switcher-row tw-flex tw-w-full tw-items-center tw-gap-3 tw-rounded-md tw-p-3"
           (click)="lockAll()"
         >
           <i class="bwi bwi-lock tw-text-2xl" aria-hidden="true"></i>
