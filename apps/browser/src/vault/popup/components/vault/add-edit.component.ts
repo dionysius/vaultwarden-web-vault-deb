@@ -355,14 +355,14 @@ export class AddEditComponent extends BaseAddEditComponent {
         this.platformUtilsService.showToast(
           "success",
           null,
-          this.i18nService.t("totpCaptureSuccess")
+          this.i18nService.t("totpCaptureSuccess"),
         );
       }
     } catch (e) {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
-        this.i18nService.t("totpCaptureError")
+        this.i18nService.t("totpCaptureError"),
       );
     }
   }
