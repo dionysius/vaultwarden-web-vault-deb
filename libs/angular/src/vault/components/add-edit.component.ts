@@ -111,6 +111,7 @@ export class AddEditComponent implements OnInit, OnDestroy {
     private organizationService: OrganizationService,
     protected sendApiService: SendApiService,
     protected dialogService: DialogService,
+    protected win: Window,
     protected datePipe: DatePipe,
   ) {
     this.typeOptions = [
@@ -652,5 +653,29 @@ export class AddEditComponent implements OnInit, OnDestroy {
     await this.stateService.setAddEditCipherInfo(null);
 
     return loadedSavedInfo;
+  }
+
+  async copy(value: string, typeI18nKey: string, aType: string): Promise<boolean> {
+    if (value == null) {
+      return false;
+    }
+
+    const copyOptions = this.win != null ? { window: this.win } : null;
+    this.platformUtilsService.copyToClipboard(value, copyOptions);
+    this.platformUtilsService.showToast(
+      "info",
+      null,
+      this.i18nService.t("valueCopied", this.i18nService.t(typeI18nKey))
+    );
+
+    if (typeI18nKey === "password") {
+      this.eventCollectionService.collect(EventType.Cipher_ClientCopiedPassword, this.cipherId);
+    } else if (typeI18nKey === "securityCode") {
+      this.eventCollectionService.collect(EventType.Cipher_ClientCopiedCardCode, this.cipherId);
+    } else if (aType === "H_Field") {
+      this.eventCollectionService.collect(EventType.Cipher_ClientCopiedHiddenField, this.cipherId);
+    }
+
+    return true;
   }
 }

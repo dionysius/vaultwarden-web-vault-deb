@@ -146,20 +146,45 @@
             </div>
           </div>
 
-          <div class="box-content-row" appBoxRow>
-            <label for="loginTotp">{{ "authenticatorKeyTotp" | i18n }}</label>
-            <input
-              id="loginTotp"
-              type="{{ cipher.viewPassword ? 'text' : 'password' }}"
-              name="Login.Totp"
-              class="monospaced"
-              [(ngModel)]="cipher.login.totp"
-              appInputVerbatim
-              [disabled]="!cipher.viewPassword"
-              [readonly]="!cipher.edit && editMode"
-            />
+          <div class="box-content-row box-content-row-flex" appBoxRow>
+            <div class="row-main">
+              <label for="loginTotp">{{ "authenticatorKeyTotp" | i18n }}</label>
+              <input
+                id="loginTotp"
+                type="{{ cipher.viewPassword ? 'text' : 'password' }}"
+                name="Login.Totp"
+                class="monospaced"
+                [(ngModel)]="cipher.login.totp"
+                appInputVerbatim
+                [disabled]="!cipher.viewPassword"
+                [readonly]="!cipher.edit && editMode"
+              />
+            </div>
+            <div class="action-buttons">
+              <button
+                type="button"
+                class="row-btn"
+                appStopClick
+                appA11yTitle="{{ 'copyTOTP' | i18n }}"
+                (click)="copy(cipher.login.totp, 'totp', 'TOTP')"
+                *ngIf="cipher.viewPassword"
+              >
+                <i class="bwi bwi-lg bwi-clone" aria-hidden="true"></i>
+              </button>
+              <button
+                type="button"
+                class="row-btn"
+                appStopClick
+                appA11yTitle="{{ 'totpCapture' | i18n }}"
+                (click)="captureTOTPFromTab()"
+                *ngIf="!(!cipher.edit && editMode)"
+              >
+                <i class="bwi bwi-lg bwi-camera" aria-hidden="true"></i>
+              </button>
+            </div>
           </div>
         </div>
+
         <!-- Card -->
         <div *ngIf="cipher.type === cipherType.Card">
           <div class="box-content-row" appBoxRow>

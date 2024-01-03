@@ -47,6 +47,7 @@ export class AddEditComponent extends BaseAddEditComponent implements OnChanges,
     organizationService: OrganizationService,
     sendApiService: SendApiService,
     dialogService: DialogService,
+    window: Window,
     datePipe: DatePipe,
   ) {
     super(
@@ -65,6 +66,7 @@ export class AddEditComponent extends BaseAddEditComponent implements OnChanges,
       organizationService,
       sendApiService,
       dialogService,
+      window,
       datePipe,
     );
   }

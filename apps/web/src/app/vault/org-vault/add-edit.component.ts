@@ -51,6 +51,7 @@ export class AddEditComponent extends BaseAddEditComponent {
     organizationService: OrganizationService,
     sendApiService: SendApiService,
     dialogService: DialogService,
+    window: Window,
     datePipe: DatePipe,
   ) {
     super(
@@ -71,6 +72,7 @@ export class AddEditComponent extends BaseAddEditComponent {
       passwordRepromptService,
       sendApiService,
       dialogService,
+      window,
       datePipe,
     );
   }

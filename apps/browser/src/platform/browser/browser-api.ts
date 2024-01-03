@@ -413,6 +413,12 @@ export class BrowserApi {
     return win.opr?.sidebarAction || browser.sidebarAction;
   }
 
+  static captureVisibleTab(): Promise<string> {
+    return new Promise((resolve) => {
+      chrome.tabs.captureVisibleTab(null, { format: "png" }, resolve);
+    });
+  }
+
   /**
    * Extension API helper method used to execute a script in a tab.
    * @see https://developer.chrome.com/docs/extensions/reference/tabs/#method-executeScript
