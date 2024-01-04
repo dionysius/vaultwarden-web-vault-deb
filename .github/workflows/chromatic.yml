@@ -3,6 +3,8 @@ name: Chromatic
 
 on:
   push:
+    branches-ignore:
+      - 'renovate/**'
     paths-ignore:
       - '.github/workflows/**'
 
