@@ -61,7 +61,6 @@ export class AddEditComponent extends BaseAddEditComponent implements OnInit, On
     passwordRepromptService: PasswordRepromptService,
     sendApiService: SendApiService,
     dialogService: DialogService,
-    window: Window,
     datePipe: DatePipe,
   ) {
     super(
