@@ -1,23 +1,57 @@
-import { Observable, switchMap } from "rxjs";
+import { Observable, ReplaySubject, Subject, concatMap, merge, share, timer } from "rxjs";
 
-import { EncryptService } from "../../abstractions/encrypt.service";
-import { DerivedUserState } from "../derived-user-state";
-import { Converter, DeriveContext, UserState } from "../user-state";
+import { ShapeToInstances, DerivedStateDependencies } from "../../../types/state";
+import {
+  AbstractStorageService,
+  ObservableStorageService,
+} from "../../abstractions/storage.service";
+import { DeriveDefinition } from "../derive-definition";
+import { DerivedState } from "../derived-state";
 
-export class DefaultDerivedUserState<TFrom, TTo> implements DerivedUserState<TTo> {
+/**
+ * Default derived state
+ */
+export class DefaultDerivedState<TFrom, TTo, TDeps extends DerivedStateDependencies>
+  implements DerivedState<TTo>
+{
+  private readonly storageKey: string;
+  private forcedValueSubject = new Subject<TTo>();
+
   state$: Observable<TTo>;
 
   constructor(
-    private converter: Converter<TFrom, TTo>,
-    private encryptService: EncryptService,
-    private userState: UserState<TFrom>,
+    private parentState$: Observable<TFrom>,
+    protected deriveDefinition: DeriveDefinition<TFrom, TTo, TDeps>,
+    private memoryStorage: AbstractStorageService & ObservableStorageService,
+    private dependencies: ShapeToInstances<TDeps>,
   ) {
-    this.state$ = userState.state$.pipe(
-      switchMap(async (from) => {
-        // TODO: How do I get the key?
-        const convertedData = await this.converter(from, new DeriveContext(null, encryptService));
-        return convertedData;
+    this.storageKey = deriveDefinition.storageKey;
+
+    const derivedState$ = this.parentState$.pipe(
+      concatMap(async (state) => {
+        let derivedStateOrPromise = this.deriveDefinition.derive(state, this.dependencies);
+        if (derivedStateOrPromise instanceof Promise) {
+          derivedStateOrPromise = await derivedStateOrPromise;
+        }
+        const derivedState = derivedStateOrPromise;
+        await this.memoryStorage.save(this.storageKey, derivedState);
+        return derivedState;
       }),
     );
+
+    this.state$ = merge(this.forcedValueSubject, derivedState$).pipe(
+      share({
+        connector: () => {
+          return new ReplaySubject<TTo>(1);
+        },
+        resetOnRefCountZero: () => timer(this.deriveDefinition.cleanupDelayMs),
+      }),
+    );
+  }
+
+  async forceValue(value: TTo) {
+    await this.memoryStorage.save(this.storageKey, value);
+    this.forcedValueSubject.next(value);
+    return value;
   }
 }

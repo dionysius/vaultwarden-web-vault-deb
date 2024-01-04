@@ -112,9 +112,11 @@ import {
   GlobalStateProvider,
   SingleUserStateProvider,
   StateProvider,
+  DerivedStateProvider,
 } from "@bitwarden/common/platform/state";
 /* eslint-disable import/no-restricted-paths -- We need the implementations to inject, but generally these should not be accessed */
 import { DefaultActiveUserStateProvider } from "@bitwarden/common/platform/state/implementations/default-active-user-state.provider";
+import { DefaultDerivedStateProvider } from "@bitwarden/common/platform/state/implementations/default-derived-state.provider";
 import { DefaultGlobalStateProvider } from "@bitwarden/common/platform/state/implementations/default-global-state.provider";
 import { DefaultSingleUserStateProvider } from "@bitwarden/common/platform/state/implementations/default-single-user-state.provider";
 import { DefaultStateProvider } from "@bitwarden/common/platform/state/implementations/default-state.provider";
@@ -811,9 +813,19 @@ import { ModalService } from "./modal.service";
       deps: [EncryptService, OBSERVABLE_MEMORY_STORAGE, OBSERVABLE_DISK_STORAGE],
     },
     {
+      provide: DerivedStateProvider,
+      useClass: DefaultDerivedStateProvider,
+      deps: [OBSERVABLE_MEMORY_STORAGE],
+    },
+    {
       provide: StateProvider,
       useClass: DefaultStateProvider,
-      deps: [ActiveUserStateProvider, SingleUserStateProvider, GlobalStateProvider],
+      deps: [
+        ActiveUserStateProvider,
+        SingleUserStateProvider,
+        GlobalStateProvider,
+        DerivedStateProvider,
+      ],
     },
   ],
 })

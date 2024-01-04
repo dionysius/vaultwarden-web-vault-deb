@@ -18,12 +18,10 @@ import {
   AbstractStorageService,
   ObservableStorageService,
 } from "../../abstractions/storage.service";
-import { DerivedUserState } from "../derived-user-state";
 import { KeyDefinition, userKeyBuilder } from "../key-definition";
 import { StateUpdateOptions, populateOptionsWithDefault } from "../state-update-options";
-import { Converter, ActiveUserState, activeMarker } from "../user-state";
+import { ActiveUserState, activeMarker } from "../user-state";
 
-import { DefaultDerivedUserState } from "./default-derived-state";
 import { getStoredValue } from "./util";
 
 const FAKE_DEFAULT = Symbol("fakeDefault");
@@ -89,10 +87,6 @@ export class DefaultActiveUserState<T> implements ActiveUserState<T> {
   async getFromState(): Promise<T> {
     const key = await this.createKey();
     return await getStoredValue(key, this.chosenStorageLocation, this.keyDefinition.deserializer);
-  }
-
-  createDerived<TTo>(converter: Converter<T, TTo>): DerivedUserState<TTo> {
-    return new DefaultDerivedUserState<T, TTo>(converter, this.encryptService, this);
   }
 
   private async internalUpdate<TCombine>(

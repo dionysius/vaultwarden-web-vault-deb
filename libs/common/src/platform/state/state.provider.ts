@@ -1,5 +1,10 @@
-import { UserId } from "../../types/guid";
+import { Observable } from "rxjs";
 
+import { UserId } from "../../types/guid";
+import { ShapeToInstances, DerivedStateDependencies } from "../../types/state";
+
+import { DeriveDefinition } from "./derive-definition";
+import { DerivedState } from "./derived-state";
 import { GlobalState } from "./global-state";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars -- used in docs
 import { GlobalStateProvider } from "./global-state.provider";
@@ -18,4 +23,9 @@ export abstract class StateProvider {
   getUser: <T>(userId: UserId, keyDefinition: KeyDefinition<T>) => SingleUserState<T>;
   /** @see{@link GlobalStateProvider.get} */
   getGlobal: <T>(keyDefinition: KeyDefinition<T>) => GlobalState<T>;
+  getDerived: <TFrom, TTo, TDeps extends DerivedStateDependencies>(
+    parentState$: Observable<TFrom>,
+    deriveDefinition: DeriveDefinition<unknown, TTo, TDeps>,
+    dependencies: ShapeToInstances<TDeps>,
+  ) => DerivedState<TTo>;
 }

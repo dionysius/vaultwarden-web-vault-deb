@@ -67,6 +67,7 @@ import { GlobalState } from "@bitwarden/common/platform/models/domain/global-sta
 import { ConfigService } from "@bitwarden/common/platform/services/config/config.service";
 import { ConsoleLogService } from "@bitwarden/common/platform/services/console-log.service";
 import { ContainerService } from "@bitwarden/common/platform/services/container.service";
+import { DerivedStateProvider } from "@bitwarden/common/platform/state";
 import { SearchService } from "@bitwarden/common/services/search.service";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 import { UsernameGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/username";
@@ -109,6 +110,7 @@ import BrowserLocalStorageService from "../../platform/services/browser-local-st
 import BrowserMessagingPrivateModePopupService from "../../platform/services/browser-messaging-private-mode-popup.service";
 import BrowserMessagingService from "../../platform/services/browser-messaging.service";
 import { BrowserStateService } from "../../platform/services/browser-state.service";
+import { ForegroundDerivedStateProvider } from "../../platform/state/foreground-derived-state.provider";
 import { ForegroundMemoryStorageService } from "../../platform/storage/foreground-memory-storage.service";
 import { BrowserSendService } from "../../services/browser-send.service";
 import { BrowserSettingsService } from "../../services/browser-settings.service";
@@ -551,6 +553,11 @@ function getBgService<T>(service: keyof MainBackground) {
         return new FilePopoutUtilsService(platformUtilsService);
       },
       deps: [PlatformUtilsService],
+    },
+    {
+      provide: DerivedStateProvider,
+      useClass: ForegroundDerivedStateProvider,
+      deps: [OBSERVABLE_MEMORY_STORAGE],
     },
   ],
 })

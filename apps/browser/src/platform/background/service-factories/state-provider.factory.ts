@@ -6,6 +6,10 @@ import {
   ActiveUserStateProviderInitOptions,
   activeUserStateProviderFactory,
 } from "./active-user-state-provider.factory";
+import {
+  DerivedStateProviderInitOptions,
+  derivedStateProviderFactory,
+} from "./derived-state-provider.factory";
 import { CachedServices, FactoryOptions, factory } from "./factory-options";
 import {
   GlobalStateProviderInitOptions,
@@ -21,7 +25,8 @@ type StateProviderFactoryOptions = FactoryOptions;
 export type StateProviderInitOptions = StateProviderFactoryOptions &
   GlobalStateProviderInitOptions &
   ActiveUserStateProviderInitOptions &
-  SingleUserStateProviderInitOptions;
+  SingleUserStateProviderInitOptions &
+  DerivedStateProviderInitOptions;
 
 export async function stateProviderFactory(
   cache: { stateProvider?: StateProvider } & CachedServices,
@@ -36,6 +41,7 @@ export async function stateProviderFactory(
         await activeUserStateProviderFactory(cache, opts),
         await singleUserStateProviderFactory(cache, opts),
         await globalStateProviderFactory(cache, opts),
+        await derivedStateProviderFactory(cache, opts),
       ),
   );
 }

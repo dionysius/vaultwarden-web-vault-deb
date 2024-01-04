@@ -5,9 +5,10 @@
 
 import { trackEmissions } from "@bitwarden/common/../spec/utils";
 
+import { mockPorts } from "../../../spec/mock-port.spec-util";
+
 import { BackgroundMemoryStorageService } from "./background-memory-storage.service";
 import { ForegroundMemoryStorageService } from "./foreground-memory-storage.service";
-import { mockPorts } from "./mock-ports.spec-util";
 
 describe("foreground background memory storage interaction", () => {
   let foreground: ForegroundMemoryStorageService;

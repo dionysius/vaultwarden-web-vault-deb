@@ -1,11 +1,6 @@
 import { ReplaySubject, firstValueFrom, timeout } from "rxjs";
 
-import {
-  DerivedUserState,
-  GlobalState,
-  SingleUserState,
-  ActiveUserState,
-} from "../src/platform/state";
+import { DerivedState, GlobalState, SingleUserState, ActiveUserState } from "../src/platform/state";
 // eslint-disable-next-line import/no-restricted-paths -- using unexposed options for clean typing in test class
 import { StateUpdateOptions } from "../src/platform/state/state-update-options";
 // eslint-disable-next-line import/no-restricted-paths -- using unexposed options for clean typing in test class
@@ -92,10 +87,6 @@ export class FakeUserState<T> implements UserState<T> {
     options?: StateUpdateOptions<T, TCombine>,
   ) => Promise<T> = jest.fn();
 
-  createDerived: <TTo>(
-    converter: (data: T, context: any) => Promise<TTo>,
-  ) => DerivedUserState<TTo> = jest.fn();
-
   getFromState: () => Promise<T> = jest.fn(async () => {
     return await firstValueFrom(this.state$.pipe(timeout(10)));
   });
@@ -112,4 +103,19 @@ export class FakeSingleUserState<T> extends FakeUserState<T> implements SingleUs
 }
 export class FakeActiveUserState<T> extends FakeUserState<T> implements ActiveUserState<T> {
   [activeMarker]: true;
+}
+
+export class FakeDerivedState<T> implements DerivedState<T> {
+  // eslint-disable-next-line rxjs/no-exposed-subjects -- exposed for testing setup
+  stateSubject = new ReplaySubject<T>(1);
+
+  forceValue(value: T): Promise<T> {
+    this.stateSubject.next(value);
+    return Promise.resolve(value);
+  }
+  forceValueMock = this.forceValue as jest.MockedFunction<typeof this.forceValue>;
+
+  get state$() {
+    return this.stateSubject.asObservable();
+  }
 }
