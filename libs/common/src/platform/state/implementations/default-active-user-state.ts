@@ -1,69 +1,120 @@
 import {
   Observable,
-  BehaviorSubject,
   map,
-  shareReplay,
   switchMap,
   firstValueFrom,
-  combineLatestWith,
   filter,
   timeout,
-  Subscription,
+  merge,
+  share,
+  ReplaySubject,
+  timer,
   tap,
+  throwError,
+  distinctUntilChanged,
+  withLatestFrom,
 } from "rxjs";
 
 import { AccountService } from "../../../auth/abstractions/account.service";
-import { EncryptService } from "../../abstractions/encrypt.service";
+import { UserId } from "../../../types/guid";
 import {
   AbstractStorageService,
   ObservableStorageService,
 } from "../../abstractions/storage.service";
 import { KeyDefinition, userKeyBuilder } from "../key-definition";
 import { StateUpdateOptions, populateOptionsWithDefault } from "../state-update-options";
-import { ActiveUserState, activeMarker } from "../user-state";
+import { ActiveUserState, CombinedState, activeMarker } from "../user-state";
 
 import { getStoredValue } from "./util";
 
-const FAKE_DEFAULT = Symbol("fakeDefault");
+const FAKE = Symbol("fake");
 
 export class DefaultActiveUserState<T> implements ActiveUserState<T> {
   [activeMarker]: true;
-  private formattedKey$: Observable<string>;
   private updatePromise: Promise<T> | null = null;
-  private storageUpdateSubscription: Subscription;
-  private activeAccountUpdateSubscription: Subscription;
-  private subscriberCount = new BehaviorSubject<number>(0);
-  private stateObservable: Observable<T>;
-  private reinitialize = false;
 
-  protected stateSubject: BehaviorSubject<T | typeof FAKE_DEFAULT> = new BehaviorSubject<
-    T | typeof FAKE_DEFAULT
-  >(FAKE_DEFAULT);
-  private stateSubject$ = this.stateSubject.asObservable();
+  private activeUserId$: Observable<UserId | null>;
 
-  get state$() {
-    this.stateObservable = this.stateObservable ?? this.initializeObservable();
-    return this.stateObservable;
-  }
+  combinedState$: Observable<CombinedState<T>>;
+  state$: Observable<T>;
 
   constructor(
     protected keyDefinition: KeyDefinition<T>,
     private accountService: AccountService,
-    private encryptService: EncryptService,
     private chosenStorageLocation: AbstractStorageService & ObservableStorageService,
   ) {
-    this.formattedKey$ = this.accountService.activeAccount$.pipe(
-      map((account) =>
-        account != null && account.id != null
-          ? userKeyBuilder(account.id, this.keyDefinition)
-          : null,
-      ),
-      tap(() => {
-        // We have a new key, so we should forget about previous update promises
-        this.updatePromise = null;
-      }),
-      shareReplay({ bufferSize: 1, refCount: false }),
+    this.activeUserId$ = this.accountService.activeAccount$.pipe(
+      // We only care about the UserId but we do want to know about no user as well.
+      map((a) => a?.id),
+      // To avoid going to storage when we don't need to, only get updates when there is a true change.
+      distinctUntilChanged(),
     );
+
+    const userChangeAndInitial$ = this.activeUserId$.pipe(
+      // If the user has changed, we no longer need to lock an update call
+      // since that call will be for a user that is no longer active.
+      tap(() => (this.updatePromise = null)),
+      switchMap(async (userId) => {
+        // We've switched or started off with no active user. So,
+        // emit a fake value so that we can fill our share buffer.
+        if (userId == null) {
+          return FAKE;
+        }
+
+        const fullKey = userKeyBuilder(userId, this.keyDefinition);
+        const data = await getStoredValue(
+          fullKey,
+          this.chosenStorageLocation,
+          this.keyDefinition.deserializer,
+        );
+        return [userId, data] as CombinedState<T>;
+      }),
+    );
+
+    const latestStorage$ = this.chosenStorageLocation.updates$.pipe(
+      // Use withLatestFrom so that we do NOT emit when activeUserId changes because that
+      // is taken care of above, but we do want to have the latest user id
+      // when we get a storage update so we can filter the full key
+      withLatestFrom(
+        this.activeUserId$.pipe(
+          // Null userId is already taken care of through the userChange observable above
+          filter((u) => u != null),
+          // Take the userId and build the fullKey that we can now create
+          map((userId) => [userId, userKeyBuilder(userId, this.keyDefinition)] as const),
+        ),
+      ),
+      // Filter to only storage updates that pertain to our key
+      filter(([storageUpdate, [_userId, fullKey]]) => storageUpdate.key === fullKey),
+      switchMap(async ([storageUpdate, [userId, fullKey]]) => {
+        // We can shortcut on updateType of "remove"
+        // and just emit null.
+        if (storageUpdate.updateType === "remove") {
+          return [userId, null] as CombinedState<T>;
+        }
+
+        return [
+          userId,
+          await getStoredValue(
+            fullKey,
+            this.chosenStorageLocation,
+            this.keyDefinition.deserializer,
+          ),
+        ] as CombinedState<T>;
+      }),
+    );
+
+    this.combinedState$ = merge(userChangeAndInitial$, latestStorage$).pipe(
+      share({
+        connector: () => new ReplaySubject<CombinedState<T> | typeof FAKE>(1),
+        resetOnRefCountZero: () => timer(this.keyDefinition.cleanupDelayMs),
+      }),
+      // Filter out FAKE AFTER the share so that we can fill the ReplaySubjects
+      // buffer with something and avoid emitting when there is no active user.
+      filter<CombinedState<T>>((d) => d !== (FAKE as unknown)),
+    );
+
+    // State should just be combined state without the user id
+    this.state$ = this.combinedState$.pipe(map(([_userId, state]) => state));
   }
 
   async update<TCombine>(
@@ -83,18 +134,11 @@ export class DefaultActiveUserState<T> implements ActiveUserState<T> {
     }
   }
 
-  // TODO: this should be removed
-  async getFromState(): Promise<T> {
-    const key = await this.createKey();
-    return await getStoredValue(key, this.chosenStorageLocation, this.keyDefinition.deserializer);
-  }
-
   private async internalUpdate<TCombine>(
     configureState: (state: T, dependency: TCombine) => T,
     options: StateUpdateOptions<T, TCombine>,
   ) {
-    const key = await this.createKey();
-    const currentState = await this.getStateForUpdate(key);
+    const [key, currentState] = await this.getStateForUpdate();
     const combinedDependencies =
       options.combineLatestWith != null
         ? await firstValueFrom(options.combineLatestWith.pipe(timeout(options.msTimeout)))
@@ -109,110 +153,22 @@ export class DefaultActiveUserState<T> implements ActiveUserState<T> {
     return newState;
   }
 
-  private initializeObservable() {
-    this.storageUpdateSubscription = this.chosenStorageLocation.updates$
-      .pipe(
-        combineLatestWith(this.formattedKey$),
-        filter(([update, key]) => key !== null && update.key === key),
-        switchMap(async ([update, key]) => {
-          if (update.updateType === "remove") {
-            return null;
-          }
-          return await this.getState(key);
-        }),
-      )
-      .subscribe((v) => this.stateSubject.next(v));
-
-    this.activeAccountUpdateSubscription = this.formattedKey$
-      .pipe(
-        switchMap(async (key) => {
-          if (key == null) {
-            return FAKE_DEFAULT;
-          }
-          return await this.getState(key);
-        }),
-      )
-      .subscribe((v) => this.stateSubject.next(v));
-
-    this.subscriberCount.subscribe((count) => {
-      if (count === 0 && this.stateObservable != null) {
-        this.triggerCleanup();
-      }
-    });
-
-    return new Observable<T>((subscriber) => {
-      this.incrementSubscribers();
-
-      // reinitialize listeners after cleanup
-      if (this.reinitialize) {
-        this.reinitialize = false;
-        this.initializeObservable();
-      }
-
-      const prevUnsubscribe = subscriber.unsubscribe.bind(subscriber);
-      subscriber.unsubscribe = () => {
-        this.decrementSubscribers();
-        prevUnsubscribe();
-      };
-
-      return this.stateSubject
-        .pipe(
-          // Filter out fake default, which is used to indicate that state is not ready to be emitted yet.
-          filter((i) => i !== FAKE_DEFAULT),
-        )
-        .subscribe(subscriber);
-    });
-  }
-
-  protected async createKey(): Promise<string> {
-    const formattedKey = await firstValueFrom(this.formattedKey$);
-    if (formattedKey == null) {
-      throw new Error("Cannot create a key while there is no active user.");
-    }
-    return formattedKey;
-  }
-
   /** For use in update methods, does not wait for update to complete before yielding state.
    * The expectation is that that await is already done
    */
-  protected async getStateForUpdate(key: string) {
-    const currentValue = this.stateSubject.getValue();
-    return currentValue === FAKE_DEFAULT
-      ? await getStoredValue(key, this.chosenStorageLocation, this.keyDefinition.deserializer)
-      : currentValue;
-  }
-
-  /** To be used in observables. Awaits updates to ensure they are complete */
-  private async getState(key: string): Promise<T> {
-    if (this.updatePromise != null) {
-      await this.updatePromise;
-    }
-    return await getStoredValue(key, this.chosenStorageLocation, this.keyDefinition.deserializer);
+  protected async getStateForUpdate() {
+    const [userId, data] = await firstValueFrom(
+      this.combinedState$.pipe(
+        timeout({
+          first: 1000,
+          with: () => throwError(() => new Error("No active user at this time.")),
+        }),
+      ),
+    );
+    return [userKeyBuilder(userId, this.keyDefinition), data] as const;
   }
 
   protected saveToStorage(key: string, data: T): Promise<void> {
     return this.chosenStorageLocation.save(key, data);
-  }
-
-  private incrementSubscribers() {
-    this.subscriberCount.next(this.subscriberCount.value + 1);
-  }
-
-  private decrementSubscribers() {
-    this.subscriberCount.next(this.subscriberCount.value - 1);
-  }
-
-  private triggerCleanup() {
-    setTimeout(() => {
-      if (this.subscriberCount.value === 0) {
-        this.updatePromise = null;
-        this.storageUpdateSubscription?.unsubscribe();
-        this.activeAccountUpdateSubscription?.unsubscribe();
-        this.subscriberCount.complete();
-        this.subscriberCount = new BehaviorSubject<number>(0);
-        this.stateSubject.next(FAKE_DEFAULT);
-        this.reinitialize = true;
-      }
-    }, this.keyDefinition.cleanupDelayMs);
   }
 }

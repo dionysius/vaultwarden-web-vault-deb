@@ -4,12 +4,22 @@ import { UserId } from "../../types/guid";
 
 import { StateUpdateOptions } from "./state-update-options";
 
+export type CombinedState<T> = readonly [userId: UserId, state: T];
+
 /**
  * A helper object for interacting with state that is scoped to a specific user.
  */
 export interface UserState<T> {
+  /**
+   * Emits a stream of data.
+   */
   readonly state$: Observable<T>;
-  readonly getFromState: () => Promise<T>;
+
+  /**
+   * Emits a stream of data alongside the user id the data corresponds to.
+   */
+  readonly combinedState$: Observable<CombinedState<T>>;
+
   /**
    * Updates backing stores for the active user.
    * @param configureState function that takes the current state and returns the new state

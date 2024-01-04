@@ -1,5 +1,4 @@
 import { AccountService } from "../../../auth/abstractions/account.service";
-import { EncryptService } from "../../abstractions/encrypt.service";
 import {
   AbstractMemoryStorageService,
   AbstractStorageService,
@@ -17,7 +16,6 @@ export class DefaultActiveUserStateProvider implements ActiveUserStateProvider {
 
   constructor(
     protected accountService: AccountService,
-    protected encryptService: EncryptService,
     protected memoryStorage: AbstractMemoryStorageService & ObservableStorageService,
     protected diskStorage: AbstractStorageService & ObservableStorageService,
   ) {}
@@ -40,7 +38,6 @@ export class DefaultActiveUserStateProvider implements ActiveUserStateProvider {
     return new DefaultActiveUserState<T>(
       keyDefinition,
       this.accountService,
-      this.encryptService,
       this.getLocation(keyDefinition.stateDefinition.storageLocation),
     );
   }

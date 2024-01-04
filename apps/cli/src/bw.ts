@@ -226,7 +226,6 @@ export class Main {
     );
 
     this.singleUserStateProvider = new DefaultSingleUserStateProvider(
-      this.encryptService,
       this.memoryStorageService,
       this.storageService,
     );
@@ -241,7 +240,6 @@ export class Main {
 
     this.activeUserStateProvider = new DefaultActiveUserStateProvider(
       this.accountService,
-      this.encryptService,
       this.memoryStorageService,
       this.storageService,
     );

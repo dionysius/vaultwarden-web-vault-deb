@@ -1,5 +1,4 @@
 import { UserId } from "../../../types/guid";
-import { EncryptService } from "../../abstractions/encrypt.service";
 import {
   AbstractMemoryStorageService,
   AbstractStorageService,
@@ -16,7 +15,6 @@ export class DefaultSingleUserStateProvider implements SingleUserStateProvider {
   private cache: Record<string, SingleUserState<unknown>> = {};
 
   constructor(
-    protected encryptService: EncryptService,
     protected memoryStorage: AbstractMemoryStorageService & ObservableStorageService,
     protected diskStorage: AbstractStorageService & ObservableStorageService,
   ) {}
@@ -42,7 +40,6 @@ export class DefaultSingleUserStateProvider implements SingleUserStateProvider {
     return new DefaultSingleUserState<T>(
       userId,
       keyDefinition,
-      this.encryptService,
       this.getLocation(keyDefinition.stateDefinition.storageLocation),
     );
   }

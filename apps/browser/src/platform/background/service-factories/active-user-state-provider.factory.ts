@@ -7,7 +7,6 @@ import {
   accountServiceFactory,
 } from "../../../auth/background/service-factories/account-service.factory";
 
-import { EncryptServiceInitOptions, encryptServiceFactory } from "./encrypt-service.factory";
 import { CachedServices, FactoryOptions, factory } from "./factory-options";
 import {
   DiskStorageServiceInitOptions,
@@ -20,7 +19,6 @@ type ActiveUserStateProviderFactory = FactoryOptions;
 
 export type ActiveUserStateProviderInitOptions = ActiveUserStateProviderFactory &
   AccountServiceInitOptions &
-  EncryptServiceInitOptions &
   MemoryStorageServiceInitOptions &
   DiskStorageServiceInitOptions;
 
@@ -35,7 +33,6 @@ export async function activeUserStateProviderFactory(
     async () =>
       new DefaultActiveUserStateProvider(
         await accountServiceFactory(cache, opts),
-        await encryptServiceFactory(cache, opts),
         await observableMemoryStorageServiceFactory(cache, opts),
         await observableDiskStorageServiceFactory(cache, opts),
       ),
