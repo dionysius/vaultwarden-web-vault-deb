@@ -44,7 +44,7 @@ export class CreateCredentialDialogComponent implements OnInit {
     }),
     credentialNaming: this.formBuilder.group({
       name: ["", Validators.maxLength(50)],
-      useForEncryption: [false],
+      useForEncryption: [true],
     }),
   });
 
@@ -137,7 +137,10 @@ export class CreateCredentialDialogComponent implements OnInit {
     }
 
     let keySet: PrfKeySet | undefined;
-    if (this.formGroup.value.credentialNaming.useForEncryption) {
+    if (
+      this.pendingCredential.supportsPrf &&
+      this.formGroup.value.credentialNaming.useForEncryption
+    ) {
       keySet = await this.webauthnService.createKeySet(this.pendingCredential);
 
       if (keySet === undefined) {
