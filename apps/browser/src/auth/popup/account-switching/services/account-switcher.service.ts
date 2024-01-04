@@ -82,15 +82,25 @@ export class AccountSwitcherService {
         }
 
         return options.sort((a, b) => {
-          // Active account is always first
+          /**
+           * Make sure the compare function is "well-formed" to account for browser inconsistencies.
+           *
+           * For specifics, see the sections "Description" and "Sorting with a non-well-formed comparator"
+           * on this page:
+           * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+           */
+
+          // Active account (if one exists) is always first
           if (a.isActive) {
             return -1;
           }
 
-          // "Add Account" button is always last
-          if (a.id === this.SPECIAL_ADD_ACCOUNT_ID) {
-            return 1;
+          // If account "b" is the 'Add account' button, keep original order of "a" and "b"
+          if (b.id === this.SPECIAL_ADD_ACCOUNT_ID) {
+            return 0;
           }
+
+          return 1;
         });
       }),
     );

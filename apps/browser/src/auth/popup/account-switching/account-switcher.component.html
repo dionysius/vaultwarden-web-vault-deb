@@ -15,17 +15,14 @@
   <div class="tw-p-2">
     <div *ngIf="availableAccounts$ | async as availableAccounts">
       <ul class="tw-grid tw-list-none tw-gap-2" role="listbox">
-        <ng-container
-          *ngFor="let availableAccount of availableAccounts; first as isFirst"
-          role="option"
-        >
-          <li *ngIf="availableAccount.isActive" class="tw-mb-4">
+        <ng-container *ngFor="let availableAccount of availableAccounts; first as isFirst">
+          <li *ngIf="availableAccount.isActive" class="tw-mb-4" role="option">
             <auth-account [account]="availableAccount" (loading)="loading = $event"></auth-account>
           </li>
           <div *ngIf="isFirst" class="tw-uppercase tw-text-muted">
             {{ "availableAccounts" | i18n }}
           </div>
-          <li *ngIf="!availableAccount.isActive">
+          <li *ngIf="!availableAccount.isActive" role="option">
             <auth-account [account]="availableAccount" (loading)="loading = $event"></auth-account>
           </li>
         </ng-container>
