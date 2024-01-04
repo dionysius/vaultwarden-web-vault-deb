@@ -10,7 +10,6 @@ import { Subject, firstValueFrom } from "rxjs";
 import { DeriveDefinition } from "@bitwarden/common/platform/state";
 // eslint-disable-next-line import/no-restricted-paths -- needed to define a derive definition
 import { StateDefinition } from "@bitwarden/common/platform/state/state-definition";
-import { Type } from "@bitwarden/common/types/state";
 
 import { mockPorts } from "../../../spec/mock-port.spec-util";
 
@@ -25,7 +24,7 @@ const deriveDefinition = new DeriveDefinition(stateDefinition, "test", {
 
 describe("foreground background derived state interactions", () => {
   let foreground: ForegroundDerivedState<Date>;
-  let background: BackgroundDerivedState<string, Date, Record<string, Type<unknown>>>;
+  let background: BackgroundDerivedState<string, Date, Record<string, unknown>>;
   let parentState$: Subject<string>;
   let memoryStorage: FakeStorageService;
   const initialParent = "2020-01-01";

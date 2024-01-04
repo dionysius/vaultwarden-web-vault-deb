@@ -1,6 +1,6 @@
 import { Observable } from "rxjs";
 
-import { DerivedStateDependencies, ShapeToInstances } from "../../../types/state";
+import { DerivedStateDependencies } from "../../../types/state";
 import {
   AbstractStorageService,
   ObservableStorageService,
@@ -19,7 +19,7 @@ export class DefaultDerivedStateProvider implements DerivedStateProvider {
   get<TFrom, TTo, TDeps extends DerivedStateDependencies>(
     parentState$: Observable<TFrom>,
     deriveDefinition: DeriveDefinition<TFrom, TTo, TDeps>,
-    dependencies: ShapeToInstances<TDeps>,
+    dependencies: TDeps,
   ): DerivedState<TTo> {
     const cacheKey = deriveDefinition.buildCacheKey();
     const existingDerivedState = this.cache[cacheKey];
@@ -37,7 +37,7 @@ export class DefaultDerivedStateProvider implements DerivedStateProvider {
   protected buildDerivedState<TFrom, TTo, TDeps extends DerivedStateDependencies>(
     parentState$: Observable<TFrom>,
     deriveDefinition: DeriveDefinition<TFrom, TTo, TDeps>,
-    dependencies: ShapeToInstances<TDeps>,
+    dependencies: TDeps,
   ): DerivedState<TTo> {
     return new DefaultDerivedState<TFrom, TTo, TDeps>(
       parentState$,

@@ -12,7 +12,7 @@ import {
 
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { DeriveDefinition, DerivedState } from "@bitwarden/common/platform/state";
-import { Type } from "@bitwarden/common/types/state";
+import { DerivedStateDependencies } from "@bitwarden/common/types/state";
 
 import { fromChromeEvent } from "../browser/from-chrome-event";
 
@@ -23,9 +23,7 @@ export class ForegroundDerivedState<TTo> implements DerivedState<TTo> {
   private backgroundResponses$: Observable<DerivedStateMessage>;
   state$: Observable<TTo>;
 
-  constructor(
-    private deriveDefinition: DeriveDefinition<unknown, TTo, Record<string, Type<unknown>>>,
-  ) {
+  constructor(private deriveDefinition: DeriveDefinition<unknown, TTo, DerivedStateDependencies>) {
     this.state$ = defer(() => this.initializePort()).pipe(
       filter((message) => message.action === "nextState"),
       map((message) => this.hydrateNext(message.data)),

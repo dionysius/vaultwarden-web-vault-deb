@@ -1,6 +1,6 @@
 import { Observable, ReplaySubject, Subject, concatMap, merge, share, timer } from "rxjs";
 
-import { ShapeToInstances, DerivedStateDependencies } from "../../../types/state";
+import { DerivedStateDependencies } from "../../../types/state";
 import {
   AbstractStorageService,
   ObservableStorageService,
@@ -23,7 +23,7 @@ export class DefaultDerivedState<TFrom, TTo, TDeps extends DerivedStateDependenc
     private parentState$: Observable<TFrom>,
     protected deriveDefinition: DeriveDefinition<TFrom, TTo, TDeps>,
     private memoryStorage: AbstractStorageService & ObservableStorageService,
-    private dependencies: ShapeToInstances<TDeps>,
+    private dependencies: TDeps,
   ) {
     this.storageKey = deriveDefinition.storageKey;
 

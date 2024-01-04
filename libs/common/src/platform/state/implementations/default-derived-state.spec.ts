@@ -14,7 +14,7 @@ import { DefaultDerivedState } from "./default-derived-state";
 let callCount = 0;
 const cleanupDelayMs = 10;
 const stateDefinition = new StateDefinition("test", "memory");
-const deriveDefinition = new DeriveDefinition<string, Date, { date: typeof Date }>(
+const deriveDefinition = new DeriveDefinition<string, Date, { date: Date }>(
   stateDefinition,
   "test",
   {
@@ -30,7 +30,7 @@ const deriveDefinition = new DeriveDefinition<string, Date, { date: typeof Date 
 describe("DefaultDerivedState", () => {
   let parentState$: Subject<string>;
   let memoryStorage: FakeStorageService;
-  let sut: DefaultDerivedState<string, Date, { date: typeof Date }>;
+  let sut: DefaultDerivedState<string, Date, { date: Date }>;
   const deps = {
     date: new Date(),
   };

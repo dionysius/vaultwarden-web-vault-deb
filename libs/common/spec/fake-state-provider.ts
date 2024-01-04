@@ -14,7 +14,7 @@ import {
   DerivedStateProvider,
 } from "../src/platform/state";
 import { UserId } from "../src/types/guid";
-import { ShapeToInstances, DerivedStateDependencies } from "../src/types/state";
+import { DerivedStateDependencies } from "../src/types/state";
 
 import {
   FakeActiveUserState,
@@ -92,7 +92,7 @@ export class FakeStateProvider implements StateProvider {
   getDerived<TFrom, TTo, TDeps extends DerivedStateDependencies>(
     parentState$: Observable<TFrom>,
     deriveDefinition: DeriveDefinition<unknown, TTo, TDeps>,
-    dependencies: ShapeToInstances<TDeps>,
+    dependencies: TDeps,
   ): DerivedState<TTo> {
     return this.derived.get(parentState$, deriveDefinition, dependencies);
   }
@@ -108,7 +108,7 @@ export class FakeDerivedStateProvider implements DerivedStateProvider {
   get<TFrom, TTo, TDeps extends DerivedStateDependencies>(
     parentState$: Observable<TFrom>,
     deriveDefinition: DeriveDefinition<TFrom, TTo, TDeps>,
-    dependencies: ShapeToInstances<TDeps>,
+    dependencies: TDeps,
   ): DerivedState<TTo> {
     let result = this.states.get(deriveDefinition.buildCacheKey()) as DerivedState<TTo>;
 

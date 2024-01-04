@@ -1,6 +1,6 @@
 import { Jsonify } from "type-fest";
 
-import { DerivedStateDependencies, ShapeToInstances, StorageKey } from "../../types/state";
+import { DerivedStateDependencies, StorageKey } from "../../types/state";
 
 import { KeyDefinition } from "./key-definition";
 import { StateDefinition } from "./state-definition";
@@ -19,7 +19,7 @@ type DeriveDefinitionOptions<TFrom, TTo, TDeps extends DerivedStateDependencies 
    * These are constant for the lifetime of the derived state.
    * @returns  The derived state value or a Promise that resolves to the derived state value.
    */
-  derive: (from: TFrom, deps: ShapeToInstances<TDeps>) => TTo | Promise<TTo>;
+  derive: (from: TFrom, deps: TDeps) => TTo | Promise<TTo>;
   /**
    * A function to use to safely convert your type from json to your expected type.
    *

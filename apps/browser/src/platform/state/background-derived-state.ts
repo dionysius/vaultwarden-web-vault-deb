@@ -9,14 +9,14 @@ import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { DeriveDefinition } from "@bitwarden/common/platform/state";
 // eslint-disable-next-line import/no-restricted-paths -- extending this class for this client
 import { DefaultDerivedState } from "@bitwarden/common/platform/state/implementations/default-derived-state";
-import { ShapeToInstances, Type } from "@bitwarden/common/types/state";
+import { DerivedStateDependencies } from "@bitwarden/common/types/state";
 
 import { BrowserApi } from "../browser/browser-api";
 
 export class BackgroundDerivedState<
   TFrom,
   TTo,
-  TDeps extends Record<string, Type<unknown>>,
+  TDeps extends DerivedStateDependencies,
 > extends DefaultDerivedState<TFrom, TTo, TDeps> {
   private portSubscriptions: Map<
     chrome.runtime.Port,
@@ -27,7 +27,7 @@ export class BackgroundDerivedState<
     parentState$: Observable<TFrom>,
     deriveDefinition: DeriveDefinition<TFrom, TTo, TDeps>,
     memoryStorage: AbstractStorageService & ObservableStorageService,
-    dependencies: ShapeToInstances<TDeps>,
+    dependencies: TDeps,
   ) {
     super(parentState$, deriveDefinition, memoryStorage, dependencies);
     const portName = deriveDefinition.buildCacheKey();

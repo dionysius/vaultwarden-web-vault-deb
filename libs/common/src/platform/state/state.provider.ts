@@ -1,7 +1,7 @@
 import { Observable } from "rxjs";
 
 import { UserId } from "../../types/guid";
-import { ShapeToInstances, DerivedStateDependencies } from "../../types/state";
+import { DerivedStateDependencies } from "../../types/state";
 
 import { DeriveDefinition } from "./derive-definition";
 import { DerivedState } from "./derived-state";
@@ -26,6 +26,6 @@ export abstract class StateProvider {
   getDerived: <TFrom, TTo, TDeps extends DerivedStateDependencies>(
     parentState$: Observable<TFrom>,
     deriveDefinition: DeriveDefinition<unknown, TTo, TDeps>,
-    dependencies: ShapeToInstances<TDeps>,
+    dependencies: TDeps,
   ) => DerivedState<TTo>;
 }
