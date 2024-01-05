@@ -399,7 +399,11 @@ export class AppComponent implements OnInit, OnDestroy {
             break;
           case "openLoginApproval":
             if (message.notificationId != null) {
-              await this.openLoginApproval(message.notificationId);
+              this.dialogService.closeAll();
+              const dialogRef = LoginApprovalComponent.open(this.dialogService, {
+                notificationId: message.notificationId,
+              });
+              await firstValueFrom(dialogRef.closed);
             }
             break;
           case "redrawMenu":
@@ -466,19 +470,6 @@ export class AppComponent implements OnInit, OnDestroy {
       this.generatorModalRef,
       (comp) => (comp.comingFromAddEdit = false),
     );
-
-    // eslint-disable-next-line rxjs-angular/prefer-takeuntil
-    this.modal.onClosed.subscribe(() => {
-      this.modal = null;
-    });
-  }
-
-  async openLoginApproval(notificationId: string) {
-    this.modalService.closeAll();
-
-    this.modal = await this.modalService.open(LoginApprovalComponent, {
-      data: { notificationId: notificationId },
-    });
 
     // eslint-disable-next-line rxjs-angular/prefer-takeuntil
     this.modal.onClosed.subscribe(() => {
