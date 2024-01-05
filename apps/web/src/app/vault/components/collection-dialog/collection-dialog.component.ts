@@ -3,7 +3,6 @@ import { ChangeDetectorRef, Component, Inject, OnDestroy, OnInit } from "@angula
 import { AbstractControl, FormBuilder, Validators } from "@angular/forms";
 import {
   combineLatest,
-  firstValueFrom,
   from,
   map,
   Observable,
@@ -75,6 +74,11 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
     false,
   );
 
+  protected flexibleCollectionsV1Enabled$ = this.configService.getFeatureFlag$(
+    FeatureFlag.FlexibleCollectionsV1,
+    false,
+  );
+
   private destroy$ = new Subject<void>();
   protected organizations$: Observable<Organization[]>;
 
@@ -134,10 +138,6 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
       this.formGroup.patchValue({ selectedOrg: this.params.organizationId });
       await this.loadOrg(this.params.organizationId, this.params.collectionIds);
     }
-
-    if (await firstValueFrom(this.flexibleCollectionsEnabled$)) {
-      this.formGroup.controls.access.addValidators(validateCanManagePermission);
-    }
   }
 
   async loadOrg(orgId: string, collectionIds: string[]) {
@@ -162,10 +162,19 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
       groups: groups$,
       users: this.organizationUserService.getAllUsers(orgId),
       flexibleCollections: this.flexibleCollectionsEnabled$,
+      flexibleCollectionsV1: this.flexibleCollectionsV1Enabled$,
     })
       .pipe(takeUntil(this.formGroup.controls.selectedOrg.valueChanges), takeUntil(this.destroy$))
       .subscribe(
-        ({ organization, collections, collectionDetails, groups, users, flexibleCollections }) => {
+        ({
+          organization,
+          collections,
+          collectionDetails,
+          groups,
+          users,
+          flexibleCollections,
+          flexibleCollectionsV1,
+        }) => {
           this.organization = organization;
           this.accessItems = [].concat(
             groups.map(mapGroupToAccessItemView),
@@ -222,6 +231,13 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
               access: initialSelection,
             });
           }
+
+          if (flexibleCollectionsV1 && !organization.allowAdminAccessToAllCollectionItems) {
+            this.formGroup.controls.access.addValidators(validateCanManagePermission);
+          } else {
+            this.formGroup.controls.access.removeValidators(validateCanManagePermission);
+          }
+          this.formGroup.controls.access.updateValueAndValidity();
 
           this.loading = false;
         },

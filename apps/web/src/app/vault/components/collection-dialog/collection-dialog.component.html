@@ -64,6 +64,12 @@
           </bit-form-field>
         </bit-tab>
         <bit-tab label="{{ 'access' | i18n }}">
+          <div class="tw-mb-3" *ngIf="flexibleCollectionsV1Enabled$ | async">
+            {{ "grantCollectionAccess" | i18n }}
+            <span *ngIf="organization.allowAdminAccessToAllCollectionItems">{{
+              " " + ("adminCollectionAccess" | i18n)
+            }}</span>
+          </div>
           <div
             class="tw-mb-3 tw-text-danger"
             *ngIf="formGroup.controls.access.hasError('managePermissionRequired')"
