@@ -326,6 +326,9 @@
   "password": {
     "message": "Wachtwoord"
   },
+  "totp": {
+    "message": "Authenticatie-geheim"
+  },
   "passphrase": {
     "message": "Wachtwoordzin"
   },
@@ -511,6 +514,18 @@
   },
   "autofillError": {
     "message": "Automatisch invullen mislukt; kopieer en plak je inloggegevens handmatig."
+  },
+  "totpCaptureError": {
+    "message": "Kan de QR-code van de huidige webpagina niet scannen"
+  },
+  "totpCaptureSuccess": {
+    "message": "Authenticatie-sleutel toegevoegd"
+  },
+  "totpCapture": {
+    "message": "Scan de authenticatie-QR-code van de huidige webpagina"
+  },
+  "copyTOTP": {
+    "message": "Authenticatie-sleutel (TOTP) kopiëren"
   },
   "loggedOut": {
     "message": "Uitgelogd"

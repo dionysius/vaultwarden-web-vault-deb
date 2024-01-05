@@ -326,6 +326,9 @@
   "password": {
     "message": "Geslo"
   },
+  "totp": {
+    "message": "Authenticator secret"
+  },
   "passphrase": {
     "message": "Večbesedno geslo"
   },
@@ -511,6 +514,18 @@
   },
   "autofillError": {
     "message": "Izbrane prijave na tej strani ni mogoče samodejno izpolniti. Namesto tega podatke kopirajte in prilepite."
+  },
+  "totpCaptureError": {
+    "message": "Unable to scan QR code from the current webpage"
+  },
+  "totpCaptureSuccess": {
+    "message": "Authenticator key added"
+  },
+  "totpCapture": {
+    "message": "Scan authenticator QR code from current webpage"
+  },
+  "copyTOTP": {
+    "message": "Copy Authenticator key (TOTP)"
   },
   "loggedOut": {
     "message": "Odjavljen"

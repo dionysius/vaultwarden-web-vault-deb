@@ -326,6 +326,9 @@
   "password": {
     "message": "මුරපදය"
   },
+  "totp": {
+    "message": "Authenticator secret"
+  },
   "passphrase": {
     "message": "පැස්ප්රස්"
   },
@@ -511,6 +514,18 @@
   },
   "autofillError": {
     "message": "මෙම පිටුවේ තෝරාගත් අයිතමය ස්වයංක්රීයව පිරවිය නොහැක. ඒ වෙනුවට තොරතුරු පිටපත් කර අලවන්න."
+  },
+  "totpCaptureError": {
+    "message": "Unable to scan QR code from the current webpage"
+  },
+  "totpCaptureSuccess": {
+    "message": "Authenticator key added"
+  },
+  "totpCapture": {
+    "message": "Scan authenticator QR code from current webpage"
+  },
+  "copyTOTP": {
+    "message": "Copy Authenticator key (TOTP)"
   },
   "loggedOut": {
     "message": "ලොගින් වී"

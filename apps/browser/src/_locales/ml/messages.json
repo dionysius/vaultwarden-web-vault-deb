@@ -326,6 +326,9 @@
   "password": {
     "message": "പാസ്സ്‌വേഡ്‌"
   },
+  "totp": {
+    "message": "Authenticator secret"
+  },
   "passphrase": {
     "message": "രഹസ്യ വാചകം"
   },
@@ -511,6 +514,18 @@
   },
   "autofillError": {
     "message": "ഈ പേജിൽ തിരഞ്ഞെടുത്ത ഇനം യാന്ത്രികമായി പൂരിപ്പിക്കാൻ കഴിയില്ല. പകരം വിവരങ്ങൾ പകർത്തി ഒട്ടിക്കുക."
+  },
+  "totpCaptureError": {
+    "message": "Unable to scan QR code from the current webpage"
+  },
+  "totpCaptureSuccess": {
+    "message": "Authenticator key added"
+  },
+  "totpCapture": {
+    "message": "Scan authenticator QR code from current webpage"
+  },
+  "copyTOTP": {
+    "message": "Copy Authenticator key (TOTP)"
   },
   "loggedOut": {
     "message": "ലോഗേഡ് ഔട്ട്"

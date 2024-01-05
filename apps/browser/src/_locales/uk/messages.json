@@ -326,6 +326,9 @@
   "password": {
     "message": "Пароль"
   },
+  "totp": {
+    "message": "Секретний ключ автентифікації"
+  },
   "passphrase": {
     "message": "Парольна фраза"
   },
@@ -511,6 +514,18 @@
   },
   "autofillError": {
     "message": "Не вдається заповнити пароль на цій сторінці. Скопіюйте і вставте ім'я користувача та/або пароль."
+  },
+  "totpCaptureError": {
+    "message": "Неможливо сканувати QR-код з поточної сторінки"
+  },
+  "totpCaptureSuccess": {
+    "message": "Ключ автентифікації додано"
+  },
+  "totpCapture": {
+    "message": "Скануйте QR-код програмою автентифікації"
+  },
+  "copyTOTP": {
+    "message": "Скопіюйте одноразовий код (TOTP)"
   },
   "loggedOut": {
     "message": "Ви вийшли"
@@ -2836,7 +2851,7 @@
     "message": "Активний обліковий запис"
   },
   "availableAccounts": {
-    "message": "Available accounts"
+    "message": "Доступні облікові записи"
   },
   "accountLimitReached": {
     "message": "Досягнуто обмеження облікового запису. Вийдіть, щоб додати інший обліковий запис."

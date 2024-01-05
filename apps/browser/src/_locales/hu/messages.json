@@ -326,6 +326,9 @@
   "password": {
     "message": "Jelszó"
   },
+  "totp": {
+    "message": "Hitelesítő titkos kulcs"
+  },
   "passphrase": {
     "message": "Kulcskifejezés"
   },
@@ -511,6 +514,18 @@
   },
   "autofillError": {
     "message": "Nem sikerült automatikusan kitölteni a bejelentkezést ezen a weboldalon. Helyette másold/illeszt be a felhasználóneved és/vagy a jelszavadat."
+  },
+  "totpCaptureError": {
+    "message": "Az aktuális weboldalól nem lehet szkennelni a QR kódot."
+  },
+  "totpCaptureSuccess": {
+    "message": "A hitelesítő kulcs hozzáadásra került."
+  },
+  "totpCapture": {
+    "message": "Hitelesítő QR kód szkennelése az aktuális weboldalról"
+  },
+  "copyTOTP": {
+    "message": "Hitelesítő kód másolása (TOTP)"
   },
   "loggedOut": {
     "message": "Kijelentkezett"

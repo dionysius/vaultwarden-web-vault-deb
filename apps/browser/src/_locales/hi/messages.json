@@ -326,6 +326,9 @@
   "password": {
     "message": "पासवर्ड"
   },
+  "totp": {
+    "message": "Authenticator secret"
+  },
   "passphrase": {
     "message": "पासफ़्रेज़"
   },
@@ -511,6 +514,18 @@
   },
   "autofillError": {
     "message": "Unable to auto-fill the selected login on this page. Copy/paste your username and/or password instead."
+  },
+  "totpCaptureError": {
+    "message": "Unable to scan QR code from the current webpage"
+  },
+  "totpCaptureSuccess": {
+    "message": "Authenticator key added"
+  },
+  "totpCapture": {
+    "message": "Scan authenticator QR code from current webpage"
+  },
+  "copyTOTP": {
+    "message": "Copy Authenticator key (TOTP)"
   },
   "loggedOut": {
     "message": "लॉग आउट"

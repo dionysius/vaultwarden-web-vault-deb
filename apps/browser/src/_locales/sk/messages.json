@@ -326,6 +326,9 @@
   "password": {
     "message": "Heslo"
   },
+  "totp": {
+    "message": "Kľúč z aplikácie Authenticator"
+  },
   "passphrase": {
     "message": "Prístupová fráza"
   },
@@ -511,6 +514,18 @@
   },
   "autofillError": {
     "message": "Na tejto stránke sa nedajú automaticky vyplniť prihlasovacie údaje. Namiesto toho skopírujte/vložte prihlasovacie údaje manuálne."
+  },
+  "totpCaptureError": {
+    "message": "Nie je možné naskenovať QR kód z aktuálnej webovej stránky"
+  },
+  "totpCaptureSuccess": {
+    "message": "Kľúč overovateľa pridaný"
+  },
+  "totpCapture": {
+    "message": "Naskenovať QR kód overovateľa z aktuálnej webovej stránky"
+  },
+  "copyTOTP": {
+    "message": "Kopírovať kľúč overovateľa (TOTP)"
   },
   "loggedOut": {
     "message": "Odhlásený"

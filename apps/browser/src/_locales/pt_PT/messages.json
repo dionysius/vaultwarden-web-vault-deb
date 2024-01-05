@@ -326,6 +326,9 @@
   "password": {
     "message": "Palavra-passe"
   },
+  "totp": {
+    "message": "Segredo de autenticação"
+  },
   "passphrase": {
     "message": "Frase de acesso"
   },
@@ -511,6 +514,18 @@
   },
   "autofillError": {
     "message": "Não é possível preencher automaticamente o item selecionado nesta página. Em vez disso, copie e cole as informações."
+  },
+  "totpCaptureError": {
+    "message": "Não é possível digitalizar o código QR a partir da página Web atual"
+  },
+  "totpCaptureSuccess": {
+    "message": "Chave de autenticação adicionada"
+  },
+  "totpCapture": {
+    "message": "Digitalize o código QR do autenticador a partir da página Web atual"
+  },
+  "copyTOTP": {
+    "message": "Copiar Chave de autenticação (TOTP)"
   },
   "loggedOut": {
     "message": "Sessão terminada"

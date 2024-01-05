@@ -326,6 +326,9 @@
   "password": {
     "message": "密码"
   },
+  "totp": {
+    "message": "验证器机密"
+  },
   "passphrase": {
     "message": "密码短语"
   },
@@ -511,6 +514,18 @@
   },
   "autofillError": {
     "message": "无法在此页面上自动填充所选项目。请改为手工复制并粘贴。"
+  },
+  "totpCaptureError": {
+    "message": "无法从当前网页扫描二维码"
+  },
+  "totpCaptureSuccess": {
+    "message": "已添加验证器密钥"
+  },
+  "totpCapture": {
+    "message": "从当前网页扫描验证器二维码"
+  },
+  "copyTOTP": {
+    "message": "复制验证器密钥 (TOTP)"
   },
   "loggedOut": {
     "message": "已注销"
@@ -967,7 +982,7 @@
     "message": "验证器 App"
   },
   "authenticatorAppDesc": {
-    "message": "使用验证器应用（例如 Authy 或 Google Authenticator）来生成基于时间的验证码。",
+    "message": "使用验证器 App（例如 Authy 或 Google Authenticator）来生成基于时间的验证码。",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {

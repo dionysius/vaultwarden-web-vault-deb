@@ -326,6 +326,9 @@
   "password": {
     "message": "Contraseña"
   },
+  "totp": {
+    "message": "Secreto de autenticador"
+  },
   "passphrase": {
     "message": "Frase de contraseña"
   },
@@ -511,6 +514,18 @@
   },
   "autofillError": {
     "message": "No se ha podido autorellenar la entrada seleccionada en esta página. Copia/pega tu usuario y/o contraseña."
+  },
+  "totpCaptureError": {
+    "message": "No se puede escanear el código QR desde la página web actual"
+  },
+  "totpCaptureSuccess": {
+    "message": "Clave de autenticador añadida"
+  },
+  "totpCapture": {
+    "message": "Escanee el código QR del autenticador desde la página web actual"
+  },
+  "copyTOTP": {
+    "message": "Copiar clave de autenticador (TOTP)"
   },
   "loggedOut": {
     "message": "Sesión terminada"

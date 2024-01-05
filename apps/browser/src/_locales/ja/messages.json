@@ -326,6 +326,9 @@
   "password": {
     "message": "パスワード"
   },
+  "totp": {
+    "message": "認証シークレット"
+  },
   "passphrase": {
     "message": "パスフレーズ"
   },
@@ -511,6 +514,18 @@
   },
   "autofillError": {
     "message": "選択したアイテムをこのページで自動入力できませんでした。コピーして貼り付けてください。"
+  },
+  "totpCaptureError": {
+    "message": "現在のウェブページから QR コードをスキャンできません"
+  },
+  "totpCaptureSuccess": {
+    "message": "認証キーを追加しました"
+  },
+  "totpCapture": {
+    "message": "現在のウェブページから認証 QR コードをスキャンする"
+  },
+  "copyTOTP": {
+    "message": "認証キーのコピー (TOTP)"
   },
   "loggedOut": {
     "message": "ログアウトしました"
@@ -2282,7 +2297,7 @@
     "message": "自動入力する方法"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Select an item from this screen, use the shortcut $COMMAND$, or explore other options in settings.",
+    "message": "この画面からアイテムを選択するか、ショートカット $COMMAND$を使用するか、設定で他のオプションを確認してください。",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2291,7 +2306,7 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "Select an item from this screen, or explore other options in settings."
+    "message": "この画面からアイテムを選択するか、設定で他のオプションを確認してください。"
   },
   "gotIt": {
     "message": "了解"

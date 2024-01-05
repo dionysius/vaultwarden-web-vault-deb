@@ -326,6 +326,9 @@
   "password": {
     "message": "Password"
   },
+  "totp": {
+    "message": "Authenticator secret"
+  },
   "passphrase": {
     "message": "Frase segreta"
   },
@@ -511,6 +514,18 @@
   },
   "autofillError": {
     "message": "Impossibile riempire automaticamente questo elemento nella pagina. Copia e incolla le credenziali."
+  },
+  "totpCaptureError": {
+    "message": "Impossibile scansionare il codice QR dalla pagina web corrente"
+  },
+  "totpCaptureSuccess": {
+    "message": "Chiave dell'autenticatore aggiunta"
+  },
+  "totpCapture": {
+    "message": "Scansiona il codice QR dell'autenticatore dalla pagina web corrente"
+  },
+  "copyTOTP": {
+    "message": "Copia la chiave dell'Autenticatore (TOTP)"
   },
   "loggedOut": {
     "message": "Disconnesso"
@@ -2836,7 +2851,7 @@
     "message": "Account attivo"
   },
   "availableAccounts": {
-    "message": "Available accounts"
+    "message": "Account disponibili"
   },
   "accountLimitReached": {
     "message": "Limite di account raggiunto. Esci da un account per aggiungerne un altro."

@@ -98,7 +98,7 @@
     "message": "Autofyll kort"
   },
   "autoFillIdentity": {
-    "message": "Auto-fill identity"
+    "message": "Autofyll identitet"
   },
   "generatePasswordCopied": {
     "message": "Skapa lösenord (kopierad)"
@@ -326,6 +326,9 @@
   "password": {
     "message": "Lösenord"
   },
+  "totp": {
+    "message": "Authenticator secret"
+  },
   "passphrase": {
     "message": "Lösenordsfras"
   },
@@ -512,6 +515,18 @@
   "autofillError": {
     "message": "Kunde inte automatiskt fylla i det valda objektet på den här webbsidan. Klipp/klistra informationen istället."
   },
+  "totpCaptureError": {
+    "message": "Unable to scan QR code from the current webpage"
+  },
+  "totpCaptureSuccess": {
+    "message": "Authenticator key added"
+  },
+  "totpCapture": {
+    "message": "Scan authenticator QR code from current webpage"
+  },
+  "copyTOTP": {
+    "message": "Copy Authenticator key (TOTP)"
+  },
   "loggedOut": {
     "message": "Utloggad"
   },
@@ -667,10 +682,10 @@
     "message": "Ask to update a login's password when a change is detected on a website. Applies to all logged in accounts."
   },
   "enableUsePasskeys": {
-    "message": "Ask to save and use passkeys"
+    "message": "Be om att spara och använda nycklar"
   },
   "usePasskeysDesc": {
-    "message": "Ask to save new passkeys or log in with passkeys stored in your vault. Applies to all logged in accounts."
+    "message": "Be om att spara nya nycklar eller logga in med nycklar som lagras i ditt valv. Gäller för alla inloggade konton."
   },
   "notificationChangeDesc": {
     "message": "Vill du uppdatera det här lösenordet i Bitwarden?"
@@ -1030,7 +1045,7 @@
     "message": "Miljö-URL:erna har sparats"
   },
   "showAutoFillMenuOnFormFields": {
-    "message": "Show auto-fill menu on form fields",
+    "message": "Visa menyn för automatisk ifyllnad på formulärfält",
     "description": "Represents the message for allowing the user to enable the auto-fill overlay"
   },
   "showAutoFillMenuOnFormFieldsDescAlt": {
@@ -1043,7 +1058,7 @@
     "message": "Edit browser settings."
   },
   "autofillOverlayVisibilityOff": {
-    "message": "Off",
+    "message": "Av",
     "description": "Overlay setting select option for disabling autofill overlay"
   },
   "autofillOverlayVisibilityOnFieldFocus": {
@@ -1051,7 +1066,7 @@
     "description": "Overlay appearance select option for showing the field on focus of the input element"
   },
   "autofillOverlayVisibilityOnButtonClick": {
-    "message": "When auto-fill icon is selected",
+    "message": "När ikonen för automatisk ifyllnad är vald",
     "description": "Overlay appearance select option for showing the field on click of the overlay icon"
   },
   "enableAutoFillOnPageLoad": {
@@ -1553,7 +1568,7 @@
     "message": "Vill du fortfarande fylla i denna inloggning?"
   },
   "autofillIframeWarning": {
-    "message": "The form is hosted by a different domain than the URI of your saved login. Choose OK to auto-fill anyway, or Cancel to stop."
+    "message": "Formuläret kommer från en annan domän än den URI för din sparade inloggning. Välj OK att automatiskt fylla i ändå, eller Avbryt för att stoppa."
   },
   "autofillIframeWarningTip": {
     "message": "För att förhindra denna varning i framtiden, spara denna URI, $HOSTNAME$, till ditt Bitwarden inloggningsobjekt för denna webbplats.",
@@ -1685,10 +1700,10 @@
     "message": "Biometri i webbläsaren stöds inte på den här enheten."
   },
   "biometricsFailedTitle": {
-    "message": "Biometrics failed"
+    "message": "Biometri misslyckades"
   },
   "biometricsFailedDesc": {
-    "message": "Biometrics cannot be completed, consider using a master password or logging out. If this persists, please contact Bitwarden support."
+    "message": "Biometri kan inte slutföras, överväg att använda ett huvudlösenord eller logga ut. Om detta kvarstår, kontakta Bitwardens support."
   },
   "nativeMessaginPermissionErrorTitle": {
     "message": "Behörighet ej beviljad"
@@ -2364,7 +2379,7 @@
     "message": "Access denied. You do not have permission to view this page."
   },
   "general": {
-    "message": "General"
+    "message": "Allmänt"
   },
   "display": {
     "message": "Display"
@@ -2533,30 +2548,30 @@
     "message": "Aliasdomän"
   },
   "passwordRepromptDisabledAutofillOnPageLoad": {
-    "message": "Items with master password re-prompt cannot be auto-filled on page load. Auto-fill on page load turned off.",
+    "message": "Objekt med \"Återupprepa huvudlösenord\" kan inte fyllas i automatiskt vid sidladdning. Automatisk ifyllning vid sidladdning avstängd.",
     "description": "Toast message for describing that master password re-prompt cannot be auto-filled on page load."
   },
   "autofillOnPageLoadSetToDefault": {
-    "message": "Auto-fill on page load set to use default setting.",
+    "message": "Aktivera automatisk ifyllnad vid sidhämtning sattes till att använda standardinställningen.",
     "description": "Toast message for informing the user that auto-fill on page load has been set to the default setting."
   },
   "turnOffMasterPasswordPromptToEditField": {
-    "message": "Turn off master password re-prompt to edit this field",
+    "message": "Stäng av \"återupprepa huvudlösenord\" för att redigera detta fält",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
   "skipToContent": {
     "message": "Skip to content"
   },
   "bitwardenOverlayButton": {
-    "message": "Bitwarden auto-fill menu button",
+    "message": "Bitwarden automatisk ifyllnadsmenyknapp",
     "description": "Page title for the iframe containing the overlay button"
   },
   "toggleBitwardenVaultOverlay": {
-    "message": "Toggle Bitwarden auto-fill menu",
+    "message": "Växla Bitwarden automatisk ifyllnadsmeny",
     "description": "Screen reader and tool tip label for the overlay button"
   },
   "bitwardenVault": {
-    "message": "Bitwarden auto-fill menu",
+    "message": "Bitwarden automatisk ifyllnadsmeny",
     "description": "Page title in overlay"
   },
   "unlockYourAccountToViewMatchingLogins": {
@@ -2576,7 +2591,7 @@
     "description": "Screen reader text for when a login item is focused where a partial username is displayed. SR will announce this phrase before reading the text of the partial username"
   },
   "noItemsToShow": {
-    "message": "No items to show",
+    "message": "Inga objekt att visa",
     "description": "Text to show in overlay if there are no matching items"
   },
   "newItem": {
@@ -2588,7 +2603,7 @@
     "description": "Screen reader text (aria-label) for new item button in overlay"
   },
   "bitwardenOverlayMenuAvailable": {
-    "message": "Bitwarden auto-fill menu available. Press the down arrow key to select.",
+    "message": "Bitwarden automatisk ifyllnadsmeny är tillgänglig. Tryck på nedåtpilen för att välja.",
     "description": "Screen reader text for announcing when the overlay opens on the page"
   },
   "turnOn": {
@@ -2709,61 +2724,61 @@
     "message": "Confirm file password"
   },
   "typePasskey": {
-    "message": "Passkey"
+    "message": "Nyckel"
   },
   "passkeyNotCopied": {
-    "message": "Passkey will not be copied"
+    "message": "Nyckeln kommer inte kopieras"
   },
   "passkeyNotCopiedAlert": {
-    "message": "The passkey will not be copied to the cloned item. Do you want to continue cloning this item?"
+    "message": "Nyckeln kommer inte att kopieras till det klonade objektet. Vill du fortsätta klona det här objektet?"
   },
   "passkeyFeatureIsNotImplementedForAccountsWithoutMasterPassword": {
-    "message": "Verification required by the initiating site. This feature is not yet implemented for accounts without master password."
+    "message": "Verifiering krävs av den initierande webbplatsen. Denna funktion är ännu inte implementerad för konton utan huvudlösenord."
   },
   "logInWithPasskey": {
-    "message": "Log in with passkey?"
+    "message": "Logga in med nyckel?"
   },
   "passkeyAlreadyExists": {
-    "message": "A passkey already exists for this application."
+    "message": "En nyckel finns redan för detta program."
   },
   "noPasskeysFoundForThisApplication": {
-    "message": "No passkeys found for this application."
+    "message": "Inga nycklar hittades för detta program."
   },
   "noMatchingPasskeyLogin": {
-    "message": "You do not have a matching login for this site."
+    "message": "Du har inte en matchande inloggning för denna webbplats."
   },
   "confirm": {
     "message": "Bekräfta"
   },
   "savePasskey": {
-    "message": "Save passkey"
+    "message": "Spara nyckel"
   },
   "savePasskeyNewLogin": {
-    "message": "Save passkey as new login"
+    "message": "Spara nyckel som ny inloggning"
   },
   "choosePasskey": {
-    "message": "Choose a login to save this passkey to"
+    "message": "Välj en inloggning för att spara denna nyckel till"
   },
   "passkeyItem": {
-    "message": "Passkey Item"
+    "message": "Nyckelobjekt"
   },
   "overwritePasskey": {
-    "message": "Overwrite passkey?"
+    "message": "Skriv över nyckel?"
   },
   "overwritePasskeyAlert": {
-    "message": "This item already contains a passkey. Are you sure you want to overwrite the current passkey?"
+    "message": "Detta objekt innehåller redan en nyckel. Är du säker på att du vill skriva över nuvarande nyckeln?"
   },
   "featureNotSupported": {
     "message": "Feature not yet supported"
   },
   "yourPasskeyIsLocked": {
-    "message": "Authentication required to use passkey. Verify your identity to continue."
+    "message": "Autentisering krävs för att använda nyckel. Verifiera din identitet för att fortsätta."
   },
   "multifactorAuthenticationCancelled": {
     "message": "Multifactor authentication cancelled"
   },
   "noLastPassDataFound": {
-    "message": "No LastPass data found"
+    "message": "Inga LastPass-data hittades"
   },
   "incorrectUsernameOrPassword": {
     "message": "Felaktigt användarnamn eller lösenord"
@@ -2775,7 +2790,7 @@
     "message": "Inkludera delade mappar"
   },
   "lastPassEmail": {
-    "message": "LastPass Email"
+    "message": "LastPass E-post"
   },
   "importingYourAccount": {
     "message": "Importerar ditt konto..."
@@ -2793,7 +2808,7 @@
     "message": "Passcode"
   },
   "lastPassMasterPassword": {
-    "message": "LastPass master password"
+    "message": "LastPass Huvudlösenord"
   },
   "lastPassAuthRequired": {
     "message": "LastPass authentication required"
@@ -2836,7 +2851,7 @@
     "message": "Active account"
   },
   "availableAccounts": {
-    "message": "Available accounts"
+    "message": "Tillgängliga konton"
   },
   "accountLimitReached": {
     "message": "Account limit reached. Log out of an account to add another."

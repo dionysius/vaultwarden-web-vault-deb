@@ -326,6 +326,9 @@
   "password": {
     "message": "Passord"
   },
+  "totp": {
+    "message": "Authenticator secret"
+  },
   "passphrase": {
     "message": "Passfrase"
   },
@@ -511,6 +514,18 @@
   },
   "autofillError": {
     "message": "Klarte ikke å auto-utfylle den valgte gjenstanden på denne siden. Kopier og lim inn informasjonen i stedet."
+  },
+  "totpCaptureError": {
+    "message": "Unable to scan QR code from the current webpage"
+  },
+  "totpCaptureSuccess": {
+    "message": "Authenticator key added"
+  },
+  "totpCapture": {
+    "message": "Scan authenticator QR code from current webpage"
+  },
+  "copyTOTP": {
+    "message": "Copy Authenticator key (TOTP)"
   },
   "loggedOut": {
     "message": "Logget av"

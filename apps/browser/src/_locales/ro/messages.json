@@ -326,6 +326,9 @@
   "password": {
     "message": "Parolă"
   },
+  "totp": {
+    "message": "Authenticator secret"
+  },
   "passphrase": {
     "message": "Frază de acces"
   },
@@ -511,6 +514,18 @@
   },
   "autofillError": {
     "message": "Nu se pot auto-completa datele de conectare pentru această pagină. În schimb, puteți copia și lipi aceste date."
+  },
+  "totpCaptureError": {
+    "message": "Unable to scan QR code from the current webpage"
+  },
+  "totpCaptureSuccess": {
+    "message": "Authenticator key added"
+  },
+  "totpCapture": {
+    "message": "Scan authenticator QR code from current webpage"
+  },
+  "copyTOTP": {
+    "message": "Copy Authenticator key (TOTP)"
   },
   "loggedOut": {
     "message": "Deconectat"

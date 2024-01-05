@@ -326,6 +326,9 @@
   "password": {
     "message": "Adgangskode"
   },
+  "totp": {
+    "message": "Godkendelseshemmelighed"
+  },
   "passphrase": {
     "message": "Adgangssætning"
   },
@@ -511,6 +514,18 @@
   },
   "autofillError": {
     "message": "Ikke i stand til at auto-udfylde det valgte element på denne side. Kopiér og indsæt dataene i stedet for."
+  },
+  "totpCaptureError": {
+    "message": "Kan ikke skanne QR-koden fra den aktuelle webside"
+  },
+  "totpCaptureSuccess": {
+    "message": "Godkendelsesnøgle tilføjet"
+  },
+  "totpCapture": {
+    "message": "Skan godkendelses QR-kode fra den aktuelle webside"
+  },
+  "copyTOTP": {
+    "message": "Kopiér godkendelsesnøgle (TOTP)"
   },
   "loggedOut": {
     "message": "Logget ud"
@@ -2836,7 +2851,7 @@
     "message": "Aktiv konto"
   },
   "availableAccounts": {
-    "message": "Available accounts"
+    "message": "Tilgængelige konti"
   },
   "accountLimitReached": {
     "message": "Kontokvote nået. Log ud af en konto for at tilføje en anden."

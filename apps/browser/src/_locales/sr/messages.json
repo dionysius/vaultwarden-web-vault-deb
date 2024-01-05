@@ -326,6 +326,9 @@
   "password": {
     "message": "Лозинка"
   },
+  "totp": {
+    "message": "Authenticator secret"
+  },
   "passphrase": {
     "message": "Фраза лозинке"
   },
@@ -511,6 +514,18 @@
   },
   "autofillError": {
     "message": "Није могуће аутоматско допуњавање одабране ставке на овој страници. Уместо тога копирајте и налепите информације."
+  },
+  "totpCaptureError": {
+    "message": "Unable to scan QR code from the current webpage"
+  },
+  "totpCaptureSuccess": {
+    "message": "Authenticator key added"
+  },
+  "totpCapture": {
+    "message": "Scan authenticator QR code from current webpage"
+  },
+  "copyTOTP": {
+    "message": "Copy Authenticator key (TOTP)"
   },
   "loggedOut": {
     "message": "Одјављено"

@@ -326,6 +326,9 @@
   "password": {
     "message": "סיסמה"
   },
+  "totp": {
+    "message": "Authenticator secret"
+  },
   "passphrase": {
     "message": "משפט סיסמה"
   },
@@ -511,6 +514,18 @@
   },
   "autofillError": {
     "message": "לא הצלחנו לבצע פעולת השלמה האוטומטית בעמוד זה. אנא העתק והדבק את המידע הנחוץ בצורה ידנית."
+  },
+  "totpCaptureError": {
+    "message": "Unable to scan QR code from the current webpage"
+  },
+  "totpCaptureSuccess": {
+    "message": "Authenticator key added"
+  },
+  "totpCapture": {
+    "message": "Scan authenticator QR code from current webpage"
+  },
+  "copyTOTP": {
+    "message": "Copy Authenticator key (TOTP)"
   },
   "loggedOut": {
     "message": "בוצעה יציאה"

@@ -326,6 +326,9 @@
   "password": {
     "message": "Parol"
   },
+  "totp": {
+    "message": "Kimlik doğrulayıcı sirri"
+  },
   "passphrase": {
     "message": "Parol ifadəsi"
   },
@@ -511,6 +514,18 @@
   },
   "autofillError": {
     "message": "Bu səhifədə seçilmiş element avto-doldurulmur. Əvəzində məlumatları kopyalayıb yapışdırın."
+  },
+  "totpCaptureError": {
+    "message": "Hazırkı veb səhifədən QR kodu skan edilə bilmir"
+  },
+  "totpCaptureSuccess": {
+    "message": "Kimlik doğrulayıcı açarı əlavə edildi"
+  },
+  "totpCapture": {
+    "message": "Hazırkı veb sahifədən kimlik doğrulayıcı QR kodunu skan et"
+  },
+  "copyTOTP": {
+    "message": "Kimlik doğrulayıcı açarını kopyala (TOTP)"
   },
   "loggedOut": {
     "message": "Çıxış edildi"
@@ -2836,7 +2851,7 @@
     "message": "Aktiv hesab"
   },
   "availableAccounts": {
-    "message": "Available accounts"
+    "message": "Mövcud hesablar"
   },
   "accountLimitReached": {
     "message": "Hesab limiti keçildi. Başqa bir hesab əlavə etmək üçün bir hesabdan çıxış edin."

@@ -326,6 +326,9 @@
   "password": {
     "message": "Parola"
   },
+  "totp": {
+    "message": "Authenticator secret"
+  },
   "passphrase": {
     "message": "Uzun söz"
   },
@@ -511,6 +514,18 @@
   },
   "autofillError": {
     "message": "Seçilen hesap bu sayfada otomatik olarak doldurulamadı. Lütfen bilgileri elle kopyalayıp yapıştırın."
+  },
+  "totpCaptureError": {
+    "message": "Mevcut web sayfasından QR kodu taranamıyor"
+  },
+  "totpCaptureSuccess": {
+    "message": "Kimlik doğrulama anahtarı eklendi"
+  },
+  "totpCapture": {
+    "message": "Mevcut web sayfasından kimlik doğrulayıcı QR kodunu tarayın"
+  },
+  "copyTOTP": {
+    "message": "Kimlik Doğrulayıcı anahtarını kopyala (TOTP)"
   },
   "loggedOut": {
     "message": "Çıkış yapıldı"
@@ -2836,7 +2851,7 @@
     "message": "Aktif hesap"
   },
   "availableAccounts": {
-    "message": "Available accounts"
+    "message": "Mevcut hesaplar"
   },
   "accountLimitReached": {
     "message": "Hesap sınırına ulaştınız. Yeni hesap eklemek için hesaplardan birinden çıkış yapın."

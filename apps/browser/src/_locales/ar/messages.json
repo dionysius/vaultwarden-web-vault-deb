@@ -326,6 +326,9 @@
   "password": {
     "message": "كلمة المرور"
   },
+  "totp": {
+    "message": "Authenticator secret"
+  },
   "passphrase": {
     "message": "العبارة السرية"
   },
@@ -511,6 +514,18 @@
   },
   "autofillError": {
     "message": "غير قادر على ملء العنصر المحدد تلقائياً في هذه الصفحة. يرجى نسخ ولصق المعلومات يدوياً."
+  },
+  "totpCaptureError": {
+    "message": "Unable to scan QR code from the current webpage"
+  },
+  "totpCaptureSuccess": {
+    "message": "Authenticator key added"
+  },
+  "totpCapture": {
+    "message": "Scan authenticator QR code from current webpage"
+  },
+  "copyTOTP": {
+    "message": "Copy Authenticator key (TOTP)"
   },
   "loggedOut": {
     "message": "تم تسجيل الخروج"

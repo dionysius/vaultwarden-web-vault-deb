@@ -326,6 +326,9 @@
   "password": {
     "message": "Slaptažodis"
   },
+  "totp": {
+    "message": "Authenticator secret"
+  },
   "passphrase": {
     "message": "Slaptafrazė"
   },
@@ -511,6 +514,18 @@
   },
   "autofillError": {
     "message": "Nepavyko automatiškai užpildyti pasirinkto elemento šiame puslapyje. Nukopijuokite ir įklijuokite informaciją."
+  },
+  "totpCaptureError": {
+    "message": "Unable to scan QR code from the current webpage"
+  },
+  "totpCaptureSuccess": {
+    "message": "Authenticator key added"
+  },
+  "totpCapture": {
+    "message": "Scan authenticator QR code from current webpage"
+  },
+  "copyTOTP": {
+    "message": "Copy Authenticator key (TOTP)"
   },
   "loggedOut": {
     "message": "Atsijungta"
@@ -2836,7 +2851,7 @@
     "message": "Active account"
   },
   "availableAccounts": {
-    "message": "Available accounts"
+    "message": "Pasiekiamos paskyros"
   },
   "accountLimitReached": {
     "message": "Account limit reached. Log out of an account to add another."

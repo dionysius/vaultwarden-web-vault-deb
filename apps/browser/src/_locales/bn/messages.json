@@ -326,6 +326,9 @@
   "password": {
     "message": "পাসওয়ার্ড"
   },
+  "totp": {
+    "message": "Authenticator secret"
+  },
   "passphrase": {
     "message": "পাসফ্রেজ"
   },
@@ -511,6 +514,18 @@
   },
   "autofillError": {
     "message": "এই পৃষ্ঠায় নির্বাচিত বস্তুটি স্বতঃপূর্ণে অক্ষম। পরিবর্তে তথ্যটি অনুলিপিত করুন এবং আটকান।"
+  },
+  "totpCaptureError": {
+    "message": "Unable to scan QR code from the current webpage"
+  },
+  "totpCaptureSuccess": {
+    "message": "Authenticator key added"
+  },
+  "totpCapture": {
+    "message": "Scan authenticator QR code from current webpage"
+  },
+  "copyTOTP": {
+    "message": "Copy Authenticator key (TOTP)"
   },
   "loggedOut": {
     "message": "প্রস্থানকৃত"

@@ -326,6 +326,9 @@
   "password": {
     "message": "Mot de passe"
   },
+  "totp": {
+    "message": "Authenticator secret"
+  },
   "passphrase": {
     "message": "Phrase de passe"
   },
@@ -511,6 +514,18 @@
   },
   "autofillError": {
     "message": "Impossible de saisir automatiquement l'élément sélectionné sur cette page. Copiez-collez plutôt l'information."
+  },
+  "totpCaptureError": {
+    "message": "Unable to scan QR code from the current webpage"
+  },
+  "totpCaptureSuccess": {
+    "message": "Authenticator key added"
+  },
+  "totpCapture": {
+    "message": "Scan authenticator QR code from current webpage"
+  },
+  "copyTOTP": {
+    "message": "Copy Authenticator key (TOTP)"
   },
   "loggedOut": {
     "message": "Déconnecté"
@@ -1037,7 +1052,7 @@
     "message": "Appliquer à tous les comptes connectés."
   },
   "turnOffBrowserBuiltInPasswordManagerSettings": {
-    "message": "Turn off your browser’s built in password manager settings to avoid conflicts."
+    "message": "Désactivez les paramètres du gestionnaire de mots de passe intégré à votre navigateur pour éviter les conflits."
   },
   "turnOffBrowserBuiltInPasswordManagerSettingsLink": {
     "message": "Éditer les paramètres du navigateur."
@@ -1709,7 +1724,7 @@
     "message": "Une politique d'organisation affecte vos options de propriété."
   },
   "personalOwnershipPolicyInEffectImports": {
-    "message": "An organization policy has blocked importing items into your individual vault."
+    "message": "Une politique d'organisation a bloqué l'import d'éléments dans votre coffre personel."
   },
   "excludedDomains": {
     "message": "Domaines exclus"
@@ -1981,11 +1996,11 @@
     "message": "Sélectionnez un dossier..."
   },
   "orgPermissionsUpdatedMustSetPassword": {
-    "message": "Your organization permissions were updated, requiring you to set a master password.",
+    "message": "Les autorisations de votre organisation ont été mises à jour, vous obligeant à définir un mot de passe principal.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "orgRequiresYouToSetPassword": {
-    "message": "Your organization requires you to set a master password.",
+    "message": "Votre organisation exige que vous définissiez un mot de passe principal.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "hours": {
@@ -2506,19 +2521,19 @@
     "description": "LastPass specific notification title for triggering a fileless import."
   },
   "lpCancelFilelessImport": {
-    "message": "Save as unencrypted file",
+    "message": "Enregistrer en tant que fichier non chiffré",
     "description": "LastPass specific notification button text for cancelling a fileless import."
   },
   "startFilelessImport": {
-    "message": "Import to Bitwarden",
+    "message": "Importer vers Bitwarden",
     "description": "Notification button text for starting a fileless import."
   },
   "importing": {
-    "message": "Importing...",
+    "message": "Importation en cours...",
     "description": "Notification message for when an import is in progress."
   },
   "dataSuccessfullyImported": {
-    "message": "Data successfully imported!",
+    "message": "Données importées avec succès !",
     "description": "Notification message for when an import has completed successfully."
   },
   "dataImportFailed": {
@@ -2860,10 +2875,10 @@
     "message": "Use your device or hardware key"
   },
   "justOnce": {
-    "message": "Just once"
+    "message": "Une seule fois"
   },
   "alwaysForThisSite": {
-    "message": "Always for this site"
+    "message": "Toujours pour ce site"
   },
   "domainAddedToExcludedDomains": {
     "message": "$DOMAIN$ a été ajouté à la liste des domaines exclus.",

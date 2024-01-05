@@ -269,7 +269,7 @@
     "message": "Duljina"
   },
   "passwordMinLength": {
-    "message": "Minimum password length"
+    "message": "Minimalna duljina lozinke"
   },
   "uppercase": {
     "message": "Velika slova (A - Z)"
@@ -326,6 +326,9 @@
   "password": {
     "message": "Lozinka"
   },
+  "totp": {
+    "message": "Tajna autentifikatora"
+  },
   "passphrase": {
     "message": "Frazna lozinka"
   },
@@ -369,7 +372,7 @@
     "message": "Za promjenu vremena isteka trezora, odredi način otključavanja."
   },
   "unlockMethodNeeded": {
-    "message": "Set up an unlock method in Settings"
+    "message": "Postavi način otključavanja u Postavkama"
   },
   "rateExtension": {
     "message": "Ocijeni proširenje"
@@ -412,7 +415,7 @@
     "message": "Zaključaj sada"
   },
   "lockAll": {
-    "message": "Lock all"
+    "message": "Zaključaj sve"
   },
   "immediately": {
     "message": "Odmah"
@@ -511,6 +514,18 @@
   },
   "autofillError": {
     "message": "Nije moguće auto-ispuniti odabranu prijavu na ovoj stranici. Umjesto toga kopiraj/zalijepi podatke."
+  },
+  "totpCaptureError": {
+    "message": "Nije moguće skenirati QR kod s trenutne web stranice"
+  },
+  "totpCaptureSuccess": {
+    "message": "Ključ autentifikatora je dodan"
+  },
+  "totpCapture": {
+    "message": "Skenirajte QR kod autentifikatora s trenutne web stranice"
+  },
+  "copyTOTP": {
+    "message": "Kopiraj ključ autentifikatora (TOTP)"
   },
   "loggedOut": {
     "message": "Odjavljen"
@@ -1037,10 +1052,10 @@
     "message": "Primjenjuje se na sve prijavljene račune."
   },
   "turnOffBrowserBuiltInPasswordManagerSettings": {
-    "message": "Turn off your browser’s built in password manager settings to avoid conflicts."
+    "message": "Isključite postavke upravitelja zaporki ugrađene u preglednik kako biste izbjegli sukobe."
   },
   "turnOffBrowserBuiltInPasswordManagerSettingsLink": {
-    "message": "Edit browser settings."
+    "message": "Uredi postavke preglednika."
   },
   "autofillOverlayVisibilityOff": {
     "message": "Isključeno",
@@ -1147,7 +1162,7 @@
     "message": "Prikaži prepoznatljivu sliku pored svake prijave."
   },
   "faviconDescAlt": {
-    "message": "Show a recognizable image next to each login. Applies to all logged in accounts."
+    "message": "Prikaži prepoznatljivu sliku pokraj svake prijave. Primjenjuje se na sve prijavljene račune."
   },
   "enableBadgeCounter": {
     "message": "Prikaži značku brojača"
@@ -2498,35 +2513,35 @@
     "description": "Toggling an expand/collapse state."
   },
   "filelessImport": {
-    "message": "Import your data to Bitwarden?",
+    "message": "Uvesti svoje podatke u Bitwarden?",
     "description": "Default notification title for triggering a fileless import."
   },
   "lpFilelessImport": {
-    "message": "Protect your LastPass data and import to Bitwarden?",
+    "message": "Zaštititi svoje LastPass podatke i uvesti ih u Bitwarden?",
     "description": "LastPass specific notification title for triggering a fileless import."
   },
   "lpCancelFilelessImport": {
-    "message": "Save as unencrypted file",
+    "message": "Spremi kao nekriptiranu datoteku",
     "description": "LastPass specific notification button text for cancelling a fileless import."
   },
   "startFilelessImport": {
-    "message": "Import to Bitwarden",
+    "message": "Uvezi u Bitwarden",
     "description": "Notification button text for starting a fileless import."
   },
   "importing": {
-    "message": "Importing...",
+    "message": "Uvoženje...",
     "description": "Notification message for when an import is in progress."
   },
   "dataSuccessfullyImported": {
-    "message": "Data successfully imported!",
+    "message": "Podaci su uspješno uvezeni!",
     "description": "Notification message for when an import has completed successfully."
   },
   "dataImportFailed": {
-    "message": "Error importing. Check console for details.",
+    "message": "Greška pri uvozu. Provjerite konzolu za detalje.",
     "description": "Notification message for when an import has failed."
   },
   "importNetworkError": {
-    "message": "Network error encountered during import.",
+    "message": "Došlo je do mrežne greške tijekom uvoza.",
     "description": "Notification message for when an import has failed due to a network error."
   },
   "aliasDomain": {
@@ -2545,7 +2560,7 @@
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
   "skipToContent": {
-    "message": "Skip to content"
+    "message": "Skoči na sadržaj"
   },
   "bitwardenOverlayButton": {
     "message": "Tipka izbornika Bitwarden auto-ispune",
@@ -2790,7 +2805,7 @@
     "message": "Odobri svoj zahtjev za prijavu u svojoj aplikaciji za autentifikaciju ili unesi jednokratni kôd."
   },
   "passcode": {
-    "message": "Passcode"
+    "message": "Šifra"
   },
   "lastPassMasterPassword": {
     "message": "LastPass glavna lozinka"
@@ -2824,49 +2839,49 @@
     "message": "Umetni YubiKey pridružen svojem LastPass računu u USB priključak račuanala, a zatim dodirni njegovu tipku."
   },
   "switchAccount": {
-    "message": "Switch account"
+    "message": "Promijeni račun"
   },
   "switchAccounts": {
-    "message": "Switch accounts"
+    "message": "Promijeni račune"
   },
   "switchToAccount": {
-    "message": "Switch to account"
+    "message": "Promijeni na račun"
   },
   "activeAccount": {
-    "message": "Active account"
+    "message": "Aktivni račun"
   },
   "availableAccounts": {
-    "message": "Available accounts"
+    "message": "Dostupni računi"
   },
   "accountLimitReached": {
-    "message": "Account limit reached. Log out of an account to add another."
+    "message": "Dosegnuto je ograničenje računa. Odjavite se s računa da biste dodali drugi."
   },
   "active": {
-    "message": "active"
+    "message": "Aktivan"
   },
   "locked": {
-    "message": "locked"
+    "message": "Zaključan"
   },
   "unlocked": {
-    "message": "unlocked"
+    "message": "Otključan"
   },
   "server": {
-    "message": "server"
+    "message": "Poslužitelj"
   },
   "hostedAt": {
-    "message": "hosted at"
+    "message": "domaćin na"
   },
   "useDeviceOrHardwareKey": {
-    "message": "Use your device or hardware key"
+    "message": "Koristite svoj uređaj ili hardverski ključ"
   },
   "justOnce": {
-    "message": "Just once"
+    "message": "Samo jednom"
   },
   "alwaysForThisSite": {
-    "message": "Always for this site"
+    "message": "Uvijek za ovu stranicu"
   },
   "domainAddedToExcludedDomains": {
-    "message": "$DOMAIN$ added to excluded domains.",
+    "message": "$DOMAIN$ dodano u izuzete domene.",
     "placeholders": {
       "domain": {
         "content": "$1",

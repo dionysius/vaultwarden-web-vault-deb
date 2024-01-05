@@ -326,6 +326,9 @@
   "password": {
     "message": "Pasahitza"
   },
+  "totp": {
+    "message": "Authenticator secret"
+  },
   "passphrase": {
     "message": "Pasaesaldia"
   },
@@ -511,6 +514,18 @@
   },
   "autofillError": {
     "message": "Ezin izan da orri honetan hautatutako elementua auto-bete. Kopiatu eta itsatsi informazioa dagokion tokian."
+  },
+  "totpCaptureError": {
+    "message": "Unable to scan QR code from the current webpage"
+  },
+  "totpCaptureSuccess": {
+    "message": "Authenticator key added"
+  },
+  "totpCapture": {
+    "message": "Scan authenticator QR code from current webpage"
+  },
+  "copyTOTP": {
+    "message": "Copy Authenticator key (TOTP)"
   },
   "loggedOut": {
     "message": "Saioa itxita"

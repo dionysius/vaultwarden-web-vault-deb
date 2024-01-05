@@ -326,6 +326,9 @@
   "password": {
     "message": "비밀번호"
   },
+  "totp": {
+    "message": "Authenticator secret"
+  },
   "passphrase": {
     "message": "패스프레이즈"
   },
@@ -511,6 +514,18 @@
   },
   "autofillError": {
     "message": "선택한 항목을 이 페이지에서 자동 완성할 수 없습니다. 대신 정보를 직접 복사 / 붙여넣기하여 사용하십시오."
+  },
+  "totpCaptureError": {
+    "message": "Unable to scan QR code from the current webpage"
+  },
+  "totpCaptureSuccess": {
+    "message": "Authenticator key added"
+  },
+  "totpCapture": {
+    "message": "Scan authenticator QR code from current webpage"
+  },
+  "copyTOTP": {
+    "message": "Copy Authenticator key (TOTP)"
   },
   "loggedOut": {
     "message": "로그아웃됨"

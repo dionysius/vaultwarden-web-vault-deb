@@ -326,6 +326,9 @@
   "password": {
     "message": "Heslo"
   },
+  "totp": {
+    "message": "Tajný klíč autentizace"
+  },
   "passphrase": {
     "message": "Heslová fráze"
   },
@@ -511,6 +514,18 @@
   },
   "autofillError": {
     "message": "Vybrané přihlašovací údaje nelze na této stránce automaticky vyplnit. Zkopírujte a vložte své přihlašovací údaje ručně."
+  },
+  "totpCaptureError": {
+    "message": "Nelze naskenovat QR kód z aktuální webové stránky"
+  },
+  "totpCaptureSuccess": {
+    "message": "Byl přidán autentizační klíč"
+  },
+  "totpCapture": {
+    "message": "Naskenovat QR kód z aktuální webové stránky"
+  },
+  "copyTOTP": {
+    "message": "Kopírovat autentizační klíč (TOTP)"
   },
   "loggedOut": {
     "message": "Odhlášení"

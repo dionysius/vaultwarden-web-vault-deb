@@ -326,6 +326,9 @@
   "password": {
     "message": "Κωδικός"
   },
+  "totp": {
+    "message": "Authenticator secret"
+  },
   "passphrase": {
     "message": "Συνθηματικό"
   },
@@ -511,6 +514,18 @@
   },
   "autofillError": {
     "message": "Δεν είναι δυνατή η αυτόματη συμπλήρωση του επιλεγμένου στοιχείου σε αυτήν τη σελίδα. Αντιγράψτε και επικολλήστε τις πληροφορίες."
+  },
+  "totpCaptureError": {
+    "message": "Unable to scan QR code from the current webpage"
+  },
+  "totpCaptureSuccess": {
+    "message": "Authenticator key added"
+  },
+  "totpCapture": {
+    "message": "Scan authenticator QR code from current webpage"
+  },
+  "copyTOTP": {
+    "message": "Copy Authenticator key (TOTP)"
   },
   "loggedOut": {
     "message": "Αποσυνδεθήκατε"

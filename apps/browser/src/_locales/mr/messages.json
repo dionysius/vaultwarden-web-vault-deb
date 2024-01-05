@@ -326,6 +326,9 @@
   "password": {
     "message": "Password"
   },
+  "totp": {
+    "message": "Authenticator secret"
+  },
   "passphrase": {
     "message": "वाक्यांश"
   },
@@ -511,6 +514,18 @@
   },
   "autofillError": {
     "message": "Unable to auto-fill the selected item on this page. Copy and paste the information instead."
+  },
+  "totpCaptureError": {
+    "message": "Unable to scan QR code from the current webpage"
+  },
+  "totpCaptureSuccess": {
+    "message": "Authenticator key added"
+  },
+  "totpCapture": {
+    "message": "Scan authenticator QR code from current webpage"
+  },
+  "copyTOTP": {
+    "message": "Copy Authenticator key (TOTP)"
   },
   "loggedOut": {
     "message": "Logged out"

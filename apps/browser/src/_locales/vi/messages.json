@@ -326,6 +326,9 @@
   "password": {
     "message": "Mật khẩu"
   },
+  "totp": {
+    "message": "Authenticator secret"
+  },
   "passphrase": {
     "message": "Cụm từ mật khẩu"
   },
@@ -511,6 +514,18 @@
   },
   "autofillError": {
     "message": "Không thể tự động điền mục đã chọn trên trang này. Hãy thực hiện sao chép và dán thông tin một cách thủ công."
+  },
+  "totpCaptureError": {
+    "message": "Unable to scan QR code from the current webpage"
+  },
+  "totpCaptureSuccess": {
+    "message": "Authenticator key added"
+  },
+  "totpCapture": {
+    "message": "Scan authenticator QR code from current webpage"
+  },
+  "copyTOTP": {
+    "message": "Copy Authenticator key (TOTP)"
   },
   "loggedOut": {
     "message": "Đã đăng xuất"

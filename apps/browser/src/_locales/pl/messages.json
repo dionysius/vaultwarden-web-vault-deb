@@ -326,6 +326,9 @@
   "password": {
     "message": "Hasło"
   },
+  "totp": {
+    "message": "Sekret uwierzytelniania"
+  },
   "passphrase": {
     "message": "Hasło wyrazowe"
   },
@@ -511,6 +514,18 @@
   },
   "autofillError": {
     "message": "Nie można zastosować autouzupełnienia na tej stronie. Skopiuj i wklej informacje ręcznie."
+  },
+  "totpCaptureError": {
+    "message": "Nie można zeskanować kodu QR z bieżącej strony"
+  },
+  "totpCaptureSuccess": {
+    "message": "Klucz uwierzytelniający został dodany"
+  },
+  "totpCapture": {
+    "message": "Zeskanuj kod QR z bieżącej strony"
+  },
+  "copyTOTP": {
+    "message": "Kopiuj klucz uwierzytelniający (TOTP)"
   },
   "loggedOut": {
     "message": "Wylogowano"

@@ -326,6 +326,9 @@
   "password": {
     "message": "ಪಾಸ್ವರ್ಡ್"
   },
+  "totp": {
+    "message": "Authenticator secret"
+  },
   "passphrase": {
     "message": "ಪಾಸ್ಫ್ರೇಸ್"
   },
@@ -511,6 +514,18 @@
   },
   "autofillError": {
     "message": "ಈ ಪುಟದಲ್ಲಿ ಆಯ್ದ ಐಟಂ ಅನ್ನು ಸ್ವಯಂ ಭರ್ತಿ ಮಾಡಲು ಸಾಧ್ಯವಿಲ್ಲ. ಬದಲಿಗೆ ಮಾಹಿತಿಯನ್ನು ನಕಲಿಸಿ ಮತ್ತು ಅಂಟಿಸಿ."
+  },
+  "totpCaptureError": {
+    "message": "Unable to scan QR code from the current webpage"
+  },
+  "totpCaptureSuccess": {
+    "message": "Authenticator key added"
+  },
+  "totpCapture": {
+    "message": "Scan authenticator QR code from current webpage"
+  },
+  "copyTOTP": {
+    "message": "Copy Authenticator key (TOTP)"
   },
   "loggedOut": {
     "message": "ಲಾಗ್ ಔಟ್"
