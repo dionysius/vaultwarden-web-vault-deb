@@ -322,7 +322,7 @@ jobs:
               ref: 'main',
               inputs: {
                 environment: 'USDEV',
-                tag: 'main'
+                branch-or-tag: 'main'
               }
             })
 
