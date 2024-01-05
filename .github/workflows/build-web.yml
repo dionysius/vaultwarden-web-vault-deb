@@ -321,8 +321,8 @@ jobs:
               workflow_id: 'deploy-web.yml',
               ref: 'main',
               inputs: {
-                environment: 'USDEV',
-                branch-or-tag: 'main'
+                'environment': 'USDEV',
+                'branch-or-tag': 'main'
               }
             })
 
