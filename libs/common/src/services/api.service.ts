@@ -1619,7 +1619,7 @@ export class ApiService implements ApiServiceAbstraction {
       headers.set("User-Agent", this.customUserAgent);
     }
 
-    const path = `/account/prevalidate?domainHint=${encodeURIComponent(identifier)}`;
+    const path = `/sso/prevalidate?domainHint=${encodeURIComponent(identifier)}`;
     const response = await this.fetch(
       new Request(this.environmentService.getIdentityUrl() + path, {
         cache: "no-store",
