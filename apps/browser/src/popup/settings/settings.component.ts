@@ -44,7 +44,7 @@ import { AwaitDesktopDialogComponent } from "./await-desktop-dialog.component";
 
 const RateUrls = {
   [DeviceType.ChromeExtension]:
-    "https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb/reviews",
+    "https://chromewebstore.google.com/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb/reviews",
   [DeviceType.FirefoxExtension]:
     "https://addons.mozilla.org/en-US/firefox/addon/bitwarden-password-manager/#reviews",
   [DeviceType.OperaExtension]:
@@ -52,7 +52,7 @@ const RateUrls = {
   [DeviceType.EdgeExtension]:
     "https://microsoftedge.microsoft.com/addons/detail/jbkfoedolllekgbhcbcoahefnbanhhlh",
   [DeviceType.VivaldiExtension]:
-    "https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb/reviews",
+    "https://chromewebstore.google.com/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb/reviews",
   [DeviceType.SafariExtension]: "https://apps.apple.com/app/bitwarden/id1352778147",
 };
 

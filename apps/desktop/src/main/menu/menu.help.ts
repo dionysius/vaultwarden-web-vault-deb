@@ -183,7 +183,7 @@ export class HelpMenu implements IMenubarMenu {
         label: "Chrome",
         click: () => {
           shell.openExternal(
-            "https://chrome.google.com/webstore/detail/" +
+            "https://chromewebstore.google.com/detail/" +
               "bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb",
           );
         },
