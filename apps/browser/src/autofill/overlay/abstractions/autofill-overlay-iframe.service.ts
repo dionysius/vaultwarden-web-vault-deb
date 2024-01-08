@@ -7,6 +7,7 @@ type AutofillOverlayIframeExtensionMessage = {
 type AutofillOverlayIframeWindowMessageHandlers = {
   [key: string]: CallableFunction;
   updateAutofillOverlayListHeight: (message: AutofillOverlayIframeExtensionMessage) => void;
+  getPageColorScheme: () => void;
 };
 
 type AutofillOverlayIframeExtensionMessageParam = {

@@ -1,6 +1,6 @@
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 
-type OverlayButtonMessage = { command: string };
+type OverlayButtonMessage = { command: string; colorScheme?: string };
 
 type UpdateAuthStatusMessage = OverlayButtonMessage & { authStatus: AuthenticationStatus };
 
@@ -18,10 +18,12 @@ type OverlayButtonWindowMessageHandlers = {
   }: {
     message: UpdateAuthStatusMessage;
   }) => void;
+  updateOverlayPageColorScheme: ({ message }: { message: OverlayButtonMessage }) => void;
 };
 
 export {
   UpdateAuthStatusMessage,
+  OverlayButtonMessage,
   InitAutofillOverlayButtonMessage,
   OverlayButtonWindowMessageHandlers,
 };

@@ -385,6 +385,46 @@ describe("AutofillOverlayIframeService", () => {
 
         expect(autofillOverlayIframeService["iframe"].style.height).toBe("300px");
       });
+
+      describe("getPageColorScheme window message", () => {
+        afterEach(() => {
+          globalThis.document.head.innerHTML = "";
+        });
+
+        it("gets and updates the overlay page color scheme", () => {
+          const colorSchemeMetaTag = globalThis.document.createElement("meta");
+          colorSchemeMetaTag.setAttribute("name", "color-scheme");
+          colorSchemeMetaTag.setAttribute("content", "dark");
+          globalThis.document.head.append(colorSchemeMetaTag);
+          globalThis.dispatchEvent(
+            new MessageEvent("message", {
+              data: { command: "getPageColorScheme" },
+              source: autofillOverlayIframeService["iframe"].contentWindow,
+              origin: "chrome-extension://id",
+            }),
+          );
+
+          expect(autofillOverlayIframeService["iframe"].contentWindow.postMessage).toBeCalledWith(
+            { command: "updateOverlayPageColorScheme", colorScheme: "dark" },
+            "*",
+          );
+        });
+
+        it("sends a normal color scheme if the color scheme meta tag is not present", () => {
+          globalThis.dispatchEvent(
+            new MessageEvent("message", {
+              data: { command: "getPageColorScheme" },
+              source: autofillOverlayIframeService["iframe"].contentWindow,
+              origin: "chrome-extension://id",
+            }),
+          );
+
+          expect(autofillOverlayIframeService["iframe"].contentWindow.postMessage).toBeCalledWith(
+            { command: "updateOverlayPageColorScheme", colorScheme: "normal" },
+            "*",
+          );
+        });
+      });
     });
   });
 

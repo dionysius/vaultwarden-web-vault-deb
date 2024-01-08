@@ -64,7 +64,9 @@ describe("AutofillOverlayButton", () => {
 
       postWindowMessage({ command: "checkAutofillOverlayButtonFocused" });
 
-      expect(globalThis.parent.postMessage).not.toHaveBeenCalled();
+      expect(globalThis.parent.postMessage).not.toHaveBeenCalledWith({
+        command: "closeAutofillOverlay",
+      });
     });
 
     it("posts a message to close the autofill overlay if the element is not focused during the focus check", () => {
@@ -87,6 +89,20 @@ describe("AutofillOverlayButton", () => {
       });
 
       expect(autofillOverlayButton["authStatus"]).toBe(AuthenticationStatus.Unlocked);
+    });
+
+    it("updates the page color scheme meta tag", () => {
+      const colorSchemeMetaTag = globalThis.document.createElement("meta");
+      colorSchemeMetaTag.setAttribute("name", "color-scheme");
+      colorSchemeMetaTag.setAttribute("content", "light");
+      globalThis.document.head.append(colorSchemeMetaTag);
+
+      postWindowMessage({
+        command: "updateOverlayPageColorScheme",
+        colorScheme: "dark",
+      });
+
+      expect(colorSchemeMetaTag.getAttribute("content")).toBe("dark");
     });
   });
 });

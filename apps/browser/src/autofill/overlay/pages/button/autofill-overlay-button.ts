@@ -7,6 +7,7 @@ import { buildSvgDomElement } from "../../../utils";
 import { logoIcon, logoLockedIcon } from "../../../utils/svg-icons";
 import {
   InitAutofillOverlayButtonMessage,
+  OverlayButtonMessage,
   OverlayButtonWindowMessageHandlers,
 } from "../../abstractions/autofill-overlay-button";
 import AutofillOverlayPageElement from "../shared/autofill-overlay-page-element";
@@ -21,6 +22,7 @@ class AutofillOverlayButton extends AutofillOverlayPageElement {
     checkAutofillOverlayButtonFocused: () => this.checkButtonFocused(),
     updateAutofillOverlayButtonAuthStatus: ({ message }) =>
       this.updateAuthStatus(message.authStatus),
+    updateOverlayPageColorScheme: ({ message }) => this.updatePageColorScheme(message),
   };
 
   constructor() {
@@ -61,6 +63,7 @@ class AutofillOverlayButton extends AutofillOverlayPageElement {
       this.getTranslation("toggleBitwardenVaultOverlay"),
     );
     this.buttonElement.addEventListener(EVENTS.CLICK, this.handleButtonElementClick);
+    this.postMessageToParent({ command: "getPageColorScheme" });
 
     this.updateAuthStatus(authStatus);
 
@@ -82,6 +85,17 @@ class AutofillOverlayButton extends AutofillOverlayPageElement {
         ? this.logoIconElement
         : this.logoLockedIconElement;
     this.buttonElement.append(iconElement);
+  }
+
+  /**
+   * Handles updating the page color scheme meta tag. Ensures that the button
+   * does not present with a non-transparent background on dark mode pages.
+   *
+   * @param colorScheme - The color scheme of the iframe's parent page
+   */
+  private updatePageColorScheme({ colorScheme }: OverlayButtonMessage) {
+    const colorSchemeMetaTag = globalThis.document.querySelector("meta[name='color-scheme']");
+    colorSchemeMetaTag?.setAttribute("content", colorScheme);
   }
 
   /**
