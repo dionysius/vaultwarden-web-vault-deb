@@ -6,6 +6,7 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 
 import { SharedModule } from "../../shared";
 import { UserKeyRotationModule } from "../key-rotation/user-key-rotation.module";
@@ -30,6 +31,7 @@ export class MigrateFromLegacyEncryptionComponent {
     private cryptoService: CryptoService,
     private messagingService: MessagingService,
     private logService: LogService,
+    private syncService: SyncService,
   ) {}
 
   submit = async () => {
@@ -48,6 +50,8 @@ export class MigrateFromLegacyEncryptionComponent {
     const masterPassword = this.formGroup.value.masterPassword;
 
     try {
+      await this.syncService.fullSync(false, true);
+
       await this.keyRotationService.rotateUserKeyAndEncryptedData(masterPassword);
 
       this.platformUtilsService.showToast(
