@@ -22,7 +22,7 @@ pub fn get_password<'a>(service: &str, account: &str) -> Result<String> {
     let result = unsafe {
         CredReadW(
             PCWSTR(target_name.as_ptr()),
-            CRED_TYPE_GENERIC.0,
+            CRED_TYPE_GENERIC,
             CRED_FLAGS_NONE,
             credential_ptr,
         )
@@ -55,7 +55,7 @@ pub fn get_password_keytar<'a>(service: &str, account: &str) -> Result<String> {
     let result = unsafe {
         CredReadW(
             PCWSTR(target_name.as_ptr()),
-            CRED_TYPE_GENERIC.0,
+            CRED_TYPE_GENERIC,
             CRED_FLAGS_NONE,
             credential_ptr,
         )
@@ -114,7 +114,7 @@ pub fn delete_password(service: &str, account: &str) -> Result<()> {
     unsafe {
         CredDeleteW(
             PCWSTR(target_name.as_ptr()),
-            CRED_TYPE_GENERIC.0,
+            CRED_TYPE_GENERIC,
             CRED_FLAGS_NONE,
         )?
     };

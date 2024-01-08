@@ -33,7 +33,7 @@ napi-build = "=2.0.1"
 
 [target.'cfg(windows)'.dependencies]
 widestring = "=1.0.2"
-windows = { version = "=0.51.1", features = [
+windows = { version = "=0.52.0", features = [
   "Foundation",
   "Security_Credentials_UI",
   "Security_Cryptography",
