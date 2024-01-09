@@ -84,10 +84,9 @@ export class ProjectsComponent implements OnInit {
   }
 
   async openDeleteProjectDialog(projects: ProjectListView[]) {
-    if (projects.some((project) => project.write == false)) {
-      const readOnlyProjects = projects.filter((project) => project.write == false);
-      const writeProjects = projects.filter((project) => project.write);
-
+    let projectsToDelete = projects;
+    const readOnlyProjects = projects.filter((project) => project.write == false);
+    if (readOnlyProjects.length > 0) {
       const dialogRef = this.dialogService.open<unknown, BulkConfirmationDetails>(
         BulkConfirmationDialogComponent,
         {
@@ -102,20 +101,17 @@ export class ProjectsComponent implements OnInit {
 
       const result = await lastValueFrom(dialogRef.closed);
 
-      if (result == BulkConfirmationResult.Continue) {
-        this.dialogService.open<unknown, ProjectDeleteOperation>(ProjectDeleteDialogComponent, {
-          data: {
-            projects: writeProjects,
-          },
-        });
+      if (result !== BulkConfirmationResult.Continue) {
+        return;
       }
-    } else {
-      this.dialogService.open<unknown, ProjectDeleteOperation>(ProjectDeleteDialogComponent, {
-        data: {
-          projects,
-        },
-      });
+      projectsToDelete = projects.filter((project) => project.write);
     }
+
+    this.dialogService.open<unknown, ProjectDeleteOperation>(ProjectDeleteDialogComponent, {
+      data: {
+        projects: projectsToDelete,
+      },
+    });
   }
 
   private getBulkConfirmationDetails(projects: ProjectListView[]): BulkConfirmationStatus[] {
