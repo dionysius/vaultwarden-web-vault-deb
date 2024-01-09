@@ -42,7 +42,6 @@ describe("FidoAuthenticatorService", () => {
     stateService = mock<StateService>();
 
     client = new Fido2ClientService(authenticator, configService, authService, stateService);
-    configService.getFeatureFlag.mockResolvedValue(true);
     configService.serverConfig$ = of({ environment: { vault: VaultUrl } } as any);
     stateService.getEnablePasskeys.mockResolvedValue(true);
     authService.getAuthStatus.mockResolvedValue(AuthenticationStatus.Unlocked);
@@ -225,16 +224,6 @@ describe("FidoAuthenticatorService", () => {
         await rejects.toBeInstanceOf(DOMException);
       });
 
-      it("should throw FallbackRequestedError if feature flag is not enabled", async () => {
-        const params = createParams();
-        configService.getFeatureFlag.mockResolvedValue(false);
-
-        const result = async () => await client.createCredential(params, tab);
-
-        const rejects = expect(result).rejects;
-        await rejects.toThrow(FallbackRequestedError);
-      });
-
       it("should throw FallbackRequestedError if passkeys state is not enabled", async () => {
         const params = createParams();
         stateService.getEnablePasskeys.mockResolvedValue(false);
@@ -403,16 +392,6 @@ describe("FidoAuthenticatorService", () => {
         const rejects = expect(result).rejects;
         await rejects.toMatchObject({ name: "NotAllowedError" });
         await rejects.toBeInstanceOf(DOMException);
-      });
-
-      it("should throw FallbackRequestedError if feature flag is not enabled", async () => {
-        const params = createParams();
-        configService.getFeatureFlag.mockResolvedValue(false);
-
-        const result = async () => await client.assertCredential(params, tab);
-
-        const rejects = expect(result).rejects;
-        await rejects.toThrow(FallbackRequestedError);
       });
 
       it("should throw FallbackRequestedError if passkeys state is not enabled", async () => {

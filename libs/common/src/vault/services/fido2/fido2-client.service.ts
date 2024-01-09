@@ -3,7 +3,6 @@ import { parse } from "tldts";
 
 import { AuthService } from "../../../auth/abstractions/auth.service";
 import { AuthenticationStatus } from "../../../auth/enums/authentication-status";
-import { FeatureFlag } from "../../../enums/feature-flag.enum";
 import { ConfigServiceAbstraction } from "../../../platform/abstractions/config/config.service.abstraction";
 import { LogService } from "../../../platform/abstractions/log.service";
 import { StateService } from "../../../platform/abstractions/state.service";
@@ -57,20 +56,9 @@ export class Fido2ClientService implements Fido2ClientServiceAbstraction {
     const serverConfig = await firstValueFrom(this.configService.serverConfig$);
     const isOriginEqualBitwardenVault = origin === serverConfig.environment?.vault;
 
-    if (
-      !userEnabledPasskeys ||
-      !isUserLoggedIn ||
-      isExcludedDomain ||
-      isOriginEqualBitwardenVault
-    ) {
-      return false;
-    }
-
-    const featureFlagEnabled = await this.configService.getFeatureFlag<boolean>(
-      FeatureFlag.Fido2VaultCredentials,
+    return (
+      userEnabledPasskeys && isUserLoggedIn && !isExcludedDomain && !isOriginEqualBitwardenVault
     );
-
-    return featureFlagEnabled;
   }
 
   async createCredential(
