@@ -728,6 +728,7 @@ export default class MainBackground {
       this.settingsService,
       this.stateService,
       this.i18nService,
+      this.platformUtilsService,
     );
     this.filelessImporterBackground = new FilelessImporterBackground(
       this.configService,

@@ -3,6 +3,7 @@ import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
+import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { ThemeType } from "@bitwarden/common/platform/enums";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
@@ -91,6 +92,7 @@ class OverlayBackground implements OverlayBackgroundInterface {
     private settingsService: SettingsService,
     private stateService: StateService,
     private i18nService: I18nService,
+    private platformUtilsService: PlatformUtilsService,
   ) {
     this.iconsServerUrl = this.environmentService.getIconsUrl();
   }
@@ -227,13 +229,17 @@ class OverlayBackground implements OverlayBackgroundInterface {
     if (await this.autofillService.isPasswordRepromptRequired(cipher, sender.tab)) {
       return;
     }
-    await this.autofillService.doAutoFill({
+    const totpCode = await this.autofillService.doAutoFill({
       tab: sender.tab,
       cipher: cipher,
       pageDetails: this.pageDetailsForTab[sender.tab.id],
       fillNewPassword: true,
       allowTotpAutofill: true,
     });
+
+    if (totpCode) {
+      this.platformUtilsService.copyToClipboard(totpCode, { window });
+    }
 
     this.overlayLoginCiphers = new Map([[overlayCipherId, cipher], ...this.overlayLoginCiphers]);
   }
