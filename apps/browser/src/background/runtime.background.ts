@@ -212,6 +212,7 @@ export default class RuntimeBackground {
         }
         break;
       case "authResult": {
+        this.logService.debug("Handling authResult message");
         const vaultUrl = this.environmentService.getWebVaultUrl();
 
         if (msg.referrer == null || Utils.getHostname(vaultUrl) !== msg.referrer) {

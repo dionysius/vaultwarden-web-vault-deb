@@ -130,14 +130,17 @@ class BrowserPopupUtils {
       url: BrowserPopupUtils.buildPopoutUrl(extensionUrlPath, singleActionKey),
     };
 
-    if (
-      (await BrowserPopupUtils.isSingleActionPopoutOpen(
-        singleActionKey,
-        popoutWindowOptions,
-        forceCloseExistingWindows,
-      )) &&
-      !forceCloseExistingWindows
-    ) {
+    const isSingleActionPopoutOpen = await BrowserPopupUtils.isSingleActionPopoutOpen(
+      singleActionKey,
+      popoutWindowOptions,
+      forceCloseExistingWindows,
+    );
+    // eslint-disable-next-line no-console -- Laziness, static method that doesn't easily have access to LogService
+    console.debug("isSingleActionPopoutOpen", isSingleActionPopoutOpen);
+
+    if (isSingleActionPopoutOpen && !forceCloseExistingWindows) {
+      // eslint-disable-next-line no-console -- Laziness, static method that doesn't easily have access to LogService
+      console.debug("Skipping creation of popout window.");
       return;
     }
 

@@ -65,6 +65,7 @@ export class SsoComponent {
   async ngOnInit() {
     // eslint-disable-next-line rxjs/no-async-subscribe
     this.route.queryParams.pipe(first()).subscribe(async (qParams) => {
+      this.logService.info("Handling sso params");
       if (qParams.code != null && qParams.state != null) {
         const codeVerifier = await this.stateService.getSsoCodeVerifier();
         const state = await this.stateService.getSsoState();

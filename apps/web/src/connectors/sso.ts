@@ -1,4 +1,4 @@
-﻿import { getQsParam } from "./common";
+import { getQsParam } from "./common";
 
 require("./sso.scss");
 
@@ -24,6 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function initiateBrowserSso(code: string, state: string, lastpass: boolean) {
+  // eslint-disable-next-line no-console -- In connector
+  console.debug("sending authResult message");
   window.postMessage({ command: "authResult", code: code, state: state, lastpass: lastpass }, "*");
   const handOffMessage = ("; " + document.cookie)
     .split("; ssoHandOffMessage=")
