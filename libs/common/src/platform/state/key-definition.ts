@@ -151,8 +151,8 @@ export class KeyDefinition<T> {
       throw new Error("You must provide a userId when building a user scoped cache key.");
     }
     return userId === null
-      ? `${scope}_${userId}_${this.stateDefinition.name}_${this.key}`
-      : `${scope}_${this.stateDefinition.name}_${this.key}`;
+      ? `${this.stateDefinition.storageLocation}_${scope}_${userId}_${this.stateDefinition.name}_${this.key}`
+      : `${this.stateDefinition.storageLocation}_${scope}_${this.stateDefinition.name}_${this.key}`;
   }
 
   private get errorKeyName() {

@@ -1,5 +1,6 @@
 import { of } from "rxjs";
 
+import { FakeAccountService, mockAccountServiceWith } from "../../../../spec/fake-account-service";
 import {
   FakeActiveUserStateProvider,
   FakeDerivedStateProvider,
@@ -19,9 +20,11 @@ describe("DefaultStateProvider", () => {
   let singleUserStateProvider: FakeSingleUserStateProvider;
   let globalStateProvider: FakeGlobalStateProvider;
   let derivedStateProvider: FakeDerivedStateProvider;
+  let accountService: FakeAccountService;
 
   beforeEach(() => {
-    activeUserStateProvider = new FakeActiveUserStateProvider();
+    accountService = mockAccountServiceWith("fakeUserId" as UserId);
+    activeUserStateProvider = new FakeActiveUserStateProvider(accountService);
     singleUserStateProvider = new FakeSingleUserStateProvider();
     globalStateProvider = new FakeGlobalStateProvider();
     derivedStateProvider = new FakeDerivedStateProvider();

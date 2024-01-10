@@ -36,8 +36,6 @@ describe("accountService", () => {
     sut = new AccountServiceImplementation(messagingService, logService, globalStateProvider);
 
     accountsState = globalStateProvider.getFake(ACCOUNT_ACCOUNTS);
-    // initialize to empty
-    accountsState.stateSubject.next({});
     activeAccountIdState = globalStateProvider.getFake(ACCOUNT_ACTIVE_ACCOUNT_ID);
   });
 
@@ -57,7 +55,10 @@ describe("accountService", () => {
       accountsState.stateSubject.next({ [userId]: userInfo(AuthenticationStatus.Unlocked) });
       activeAccountIdState.stateSubject.next(userId);
 
-      expect(emissions).toEqual([{ id: userId, ...userInfo(AuthenticationStatus.Unlocked) }]);
+      expect(emissions).toEqual([
+        undefined, // initial value
+        { id: userId, ...userInfo(AuthenticationStatus.Unlocked) },
+      ]);
     });
 
     it("should update the status if the account status changes", async () => {
