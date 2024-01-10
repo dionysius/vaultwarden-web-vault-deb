@@ -20,6 +20,9 @@
         <th bitCell class="tw-w-2/5" *ngIf="showOwner">{{ "owner" | i18n }}</th>
         <th bitCell class="tw-w-2/5" *ngIf="showCollections">{{ "collections" | i18n }}</th>
         <th bitCell class="tw-w-2/5" *ngIf="showGroups">{{ "groups" | i18n }}</th>
+        <th bitCell class="tw-w-2/5" *ngIf="showPermissionsColumn">
+          {{ "permission" | i18n }}
+        </th>
         <th bitCell class="tw-w-12 tw-text-right">
           <button
             [disabled]="disabled || isEmpty"
@@ -79,10 +82,12 @@
           [showCollections]="showCollections"
           [showGroups]="showGroups"
           [organizations]="allOrganizations"
+          [showPermissionsColumn]="showPermissionsColumn"
           [groups]="allGroups"
           [canDeleteCollection]="canDeleteCollection(item.collection)"
           [canEditCollection]="canEditCollection(item.collection)"
           [checked]="selection.isSelected(item)"
+          [flexibleCollectionsEnabled]="flexibleCollectionsEnabled"
           (checkedToggled)="selection.toggle(item)"
           (onEvent)="event($event)"
         ></tr>

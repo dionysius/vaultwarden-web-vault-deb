@@ -76,6 +76,10 @@ export class VaultHeaderComponent {
   }
 
   get title() {
+    const headerType = this.flexibleCollectionsEnabled
+      ? this.i18nService.t("collections").toLowerCase()
+      : this.i18nService.t("vault").toLowerCase();
+
     if (this.collection !== undefined) {
       return this.collection.node.name;
     }
@@ -84,7 +88,7 @@ export class VaultHeaderComponent {
       return this.i18nService.t("unassigned");
     }
 
-    return `${this.organization.name} ${this.i18nService.t("vault").toLowerCase()}`;
+    return `${this.organization.name} ${headerType}`;
   }
 
   protected get showBreadcrumbs() {

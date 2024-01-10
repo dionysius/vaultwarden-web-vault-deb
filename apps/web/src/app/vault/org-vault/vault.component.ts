@@ -46,6 +46,7 @@ import { MessagingService } from "@bitwarden/common/platform/abstractions/messag
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
+import { CollectionService } from "@bitwarden/common/vault/abstractions/collection.service";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 import { TotpService } from "@bitwarden/common/vault/abstractions/totp.service";
 import { CipherRepromptType } from "@bitwarden/common/vault/enums/cipher-reprompt-type";
@@ -164,6 +165,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     private eventCollectionService: EventCollectionService,
     private totpService: TotpService,
     private apiService: ApiService,
+    private collectionService: CollectionService,
     protected configService: ConfigServiceAbstraction,
   ) {}
 
@@ -232,8 +234,26 @@ export class VaultComponent implements OnInit, OnDestroy {
 
     this.currentSearchText$ = this.route.queryParams.pipe(map((queryParams) => queryParams.search));
 
-    const allCollectionsWithoutUnassigned$ = organizationId$.pipe(
-      switchMap((orgId) => this.collectionAdminService.getAll(orgId)),
+    const allCollectionsWithoutUnassigned$ = combineLatest([
+      organizationId$.pipe(switchMap((orgId) => this.collectionAdminService.getAll(orgId))),
+      this.collectionService.getAllDecrypted(),
+    ]).pipe(
+      map(([adminCollections, syncCollections]) => {
+        const syncCollectionDict = Object.fromEntries(syncCollections.map((c) => [c.id, c]));
+
+        return adminCollections.map((collection) => {
+          const currentId: any = collection.id;
+
+          const match = syncCollectionDict[currentId];
+
+          if (match) {
+            collection.manage = match.manage;
+            collection.readOnly = match.readOnly;
+            collection.hidePasswords = match.hidePasswords;
+          }
+          return collection;
+        });
+      }),
       shareReplay({ refCount: true, bufferSize: 1 }),
     );
 
@@ -454,7 +474,6 @@ export class VaultComponent implements OnInit, OnDestroy {
           this.collections = collections;
           this.selectedCollection = selectedCollection;
           this.showMissingCollectionPermissionMessage = showMissingCollectionPermissionMessage;
-
           this.isEmpty = collections?.length === 0 && ciphers?.length === 0;
 
           // This is a temporary fix to avoid double fetching collections.

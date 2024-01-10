@@ -7,9 +7,19 @@
         [activeOrganization]="organization"
       ></app-organization-switcher>
       <bit-tab-nav-bar class="-tw-mb-px">
-        <bit-tab-link *ngIf="canShowVaultTab(organization)" route="vault">{{
-          "vault" | i18n
-        }}</bit-tab-link>
+        <bit-tab-link
+          *ngIf="
+            canShowVaultTab(organization) && (flexibleCollectionsEnabled$ | async);
+            else vaultTab
+          "
+          route="vault"
+          >{{ "collections" | i18n }}</bit-tab-link
+        >
+        <ng-template #vaultTab>
+          <bit-tab-link *ngIf="canShowVaultTab(organization)" route="vault">{{
+            "vault" | i18n
+          }}</bit-tab-link>
+        </ng-template>
         <bit-tab-link *ngIf="canShowMembersTab(organization)" route="members">{{
           "members" | i18n
         }}</bit-tab-link>

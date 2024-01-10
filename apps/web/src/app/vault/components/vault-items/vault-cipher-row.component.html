@@ -65,6 +65,7 @@
   ></app-collection-badge>
 </td>
 <td bitCell [ngClass]="RowHeightClass" *ngIf="showGroups"></td>
+<td bitCell [ngClass]="RowHeightClass" *ngIf="!showCollections"></td>
 <td bitCell [ngClass]="RowHeightClass" class="tw-text-right">
   <button
     [disabled]="disabled"
