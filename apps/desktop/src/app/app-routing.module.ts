@@ -7,8 +7,6 @@ import {
   redirectGuard,
   tdeDecryptionRequiredGuard,
 } from "@bitwarden/angular/auth/guards";
-import { canAccessFeature } from "@bitwarden/angular/platform/guard/feature-flag.guard";
-import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 
 import { AccessibilityCookieComponent } from "../auth/accessibility-cookie.component";
 import { LoginGuard } from "../auth/guards/login.guard";
@@ -56,10 +54,7 @@ const routes: Routes = [
   {
     path: "login-initiated",
     component: LoginDecryptionOptionsComponent,
-    canActivate: [
-      tdeDecryptionRequiredGuard(),
-      canAccessFeature(FeatureFlag.TrustedDeviceEncryption),
-    ],
+    canActivate: [tdeDecryptionRequiredGuard()],
   },
   { path: "register", component: RegisterComponent },
   {

@@ -2,10 +2,8 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
 import { AuthGuard } from "@bitwarden/angular/auth/guards";
-import { canAccessFeature } from "@bitwarden/angular/platform/guard/feature-flag.guard";
 import { canAccessSettingsTab } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
-import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { OrganizationPermissionsGuard } from "@bitwarden/web-vault/app/admin-console/organizations/guards/org-permissions.guard";
 import { OrganizationLayoutComponent } from "@bitwarden/web-vault/app/admin-console/organizations/layouts/organization-layout.component";
 import { SettingsComponent } from "@bitwarden/web-vault/app/admin-console/organizations/settings/settings.component";
@@ -57,10 +55,7 @@ const routes: Routes = [
           {
             path: "device-approvals",
             component: DeviceApprovalsComponent,
-            canActivate: [
-              OrganizationPermissionsGuard,
-              canAccessFeature(FeatureFlag.TrustedDeviceEncryption),
-            ],
+            canActivate: [OrganizationPermissionsGuard],
             data: {
               organizationPermissions: (org: Organization) => org.canManageDeviceApprovals,
               titleId: "deviceApprovals",

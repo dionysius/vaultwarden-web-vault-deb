@@ -1,5 +1,4 @@
 export enum FeatureFlag {
-  TrustedDeviceEncryption = "trusted-device-encryption",
   PasswordlessLogin = "passwordless-login",
   AutofillV2 = "autofill-v2",
   AutofillOverlay = "autofill-overlay",

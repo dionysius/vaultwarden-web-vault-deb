@@ -17,7 +17,6 @@ import { TokenTwoFactorRequest } from "@bitwarden/common/auth/models/request/ide
 import { TwoFactorEmailRequest } from "@bitwarden/common/auth/models/request/two-factor-email.request";
 import { TwoFactorProviders } from "@bitwarden/common/auth/services/two-factor.service";
 import { WebAuthnIFrame } from "@bitwarden/common/auth/webauthn-iframe";
-import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { AppIdService } from "@bitwarden/common/platform/abstractions/app-id.service";
 import { ConfigServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config.service.abstraction";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
@@ -275,15 +274,8 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
     trustedDeviceOption: TrustedDeviceUserDecryptionOption,
   ): Promise<boolean> {
     const ssoTo2faFlowActive = this.route.snapshot.queryParamMap.get("sso") === "true";
-    const trustedDeviceEncryptionFeatureActive = await this.configService.getFeatureFlag<boolean>(
-      FeatureFlag.TrustedDeviceEncryption,
-    );
 
-    return (
-      ssoTo2faFlowActive &&
-      trustedDeviceEncryptionFeatureActive &&
-      trustedDeviceOption !== undefined
-    );
+    return ssoTo2faFlowActive && trustedDeviceOption !== undefined;
   }
 
   private async handleTrustedDeviceEncryptionEnabled(
