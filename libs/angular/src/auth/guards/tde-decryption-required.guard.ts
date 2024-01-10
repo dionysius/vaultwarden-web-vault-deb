@@ -5,6 +5,7 @@ import {
   RouterStateSnapshot,
   CanActivateFn,
 } from "@angular/router";
+import { firstValueFrom } from "rxjs";
 
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { DeviceTrustCryptoServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust-crypto.service.abstraction";
@@ -14,6 +15,8 @@ import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.se
 /**
  * Only allow access to this route if the vault is locked and has never been decrypted.
  * Otherwise redirect to root.
+ *
+ * TODO: This should return Observable<boolean | UrlTree> once we can get rid of all the promises
  */
 export function tdeDecryptionRequiredGuard(): CanActivateFn {
   return async (_: ActivatedRouteSnapshot, state: RouterStateSnapshot) => {
@@ -24,7 +27,7 @@ export function tdeDecryptionRequiredGuard(): CanActivateFn {
 
     const authStatus = await authService.getAuthStatus();
     const tdeEnabled = await deviceTrustCryptoService.supportsDeviceTrust();
-    const everHadUserKey = await cryptoService.getEverHadUserKey();
+    const everHadUserKey = await firstValueFrom(cryptoService.everHadUserKey$);
     if (authStatus !== AuthenticationStatus.Locked || !tdeEnabled || everHadUserKey) {
       return router.createUrlTree(["/"]);
     }

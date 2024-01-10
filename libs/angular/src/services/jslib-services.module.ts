@@ -396,8 +396,8 @@ import { ModalService } from "./modal.service";
         PlatformUtilsServiceAbstraction,
         LogService,
         StateServiceAbstraction,
-        AppIdServiceAbstraction,
-        DevicesApiServiceAbstraction,
+        AccountServiceAbstraction,
+        StateProvider,
       ],
     },
     {

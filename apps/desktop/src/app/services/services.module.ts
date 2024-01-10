@@ -37,6 +37,7 @@ import { StateFactory } from "@bitwarden/common/platform/factories/state-factory
 import { GlobalState } from "@bitwarden/common/platform/models/domain/global-state";
 import { MemoryStorageService } from "@bitwarden/common/platform/services/memory-storage.service";
 import { SystemService } from "@bitwarden/common/platform/services/system.service";
+import { StateProvider } from "@bitwarden/common/platform/state";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 import { CipherService as CipherServiceAbstraction } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { DialogService } from "@bitwarden/components";
@@ -180,6 +181,8 @@ const RELOAD_CALLBACK = new InjectionToken<() => any>("RELOAD_CALLBACK");
         PlatformUtilsServiceAbstraction,
         LogService,
         StateServiceAbstraction,
+        AccountServiceAbstraction,
+        StateProvider,
       ],
     },
   ],
