@@ -69,18 +69,6 @@ export class UserSubscriptionComponent implements OnInit {
       return;
     }
 
-    if (this.usingInAppPurchase) {
-      this.dialogService.openSimpleDialog({
-        title: { key: "cancelSubscription" },
-        content: { key: "manageSubscriptionFromStore" },
-        acceptButtonText: { key: "ok" },
-        cancelButtonText: null,
-        type: "warning",
-      });
-
-      return;
-    }
-
     const confirmed = await this.dialogService.openSimpleDialog({
       title: { key: "reinstateSubscription" },
       content: { key: "reinstateConfirmation" },
@@ -103,18 +91,6 @@ export class UserSubscriptionComponent implements OnInit {
 
   async cancel() {
     if (this.loading) {
-      return;
-    }
-
-    if (this.usingInAppPurchase) {
-      this.dialogService.openSimpleDialog({
-        title: { key: "cancelSubscription" },
-        content: { key: "manageSubscriptionFromStore" },
-        acceptButtonText: { key: "ok" },
-        cancelButtonText: null,
-        type: "warning",
-      });
-
       return;
     }
 
@@ -169,17 +145,6 @@ export class UserSubscriptionComponent implements OnInit {
   }
 
   adjustStorage(add: boolean) {
-    if (this.usingInAppPurchase) {
-      this.dialogService.openSimpleDialog({
-        title: { key: add ? "addStorage" : "removeStorage" },
-        content: { key: "cannotPerformInAppPurchase" },
-        acceptButtonText: { key: "ok" },
-        cancelButtonText: null,
-        type: "warning",
-      });
-
-      return;
-    }
     this.adjustStorageAdd = add;
     this.showAdjustStorage = true;
   }
@@ -213,10 +178,6 @@ export class UserSubscriptionComponent implements OnInit {
 
   get storageProgressWidth() {
     return this.storagePercentage < 5 ? 5 : 0;
-  }
-
-  get usingInAppPurchase() {
-    return this.sub != null ? this.sub.usingInAppPurchase : false;
   }
 
   get title(): string {

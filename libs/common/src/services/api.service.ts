@@ -96,7 +96,6 @@ import { DeviceType } from "../enums";
 import { CollectionBulkDeleteRequest } from "../models/request/collection-bulk-delete.request";
 import { DeleteRecoverRequest } from "../models/request/delete-recover.request";
 import { EventRequest } from "../models/request/event.request";
-import { IapCheckRequest } from "../models/request/iap-check.request";
 import { KdfRequest } from "../models/request/kdf.request";
 import { KeysRequest } from "../models/request/keys.request";
 import { OrganizationImportRequest } from "../models/request/organization-import.request";
@@ -380,10 +379,6 @@ export class ApiService implements ApiServiceAbstraction {
   async postPremium(data: FormData): Promise<PaymentResponse> {
     const r = await this.send("POST", "/accounts/premium", data, true, true);
     return new PaymentResponse(r);
-  }
-
-  async postIapCheck(request: IapCheckRequest): Promise<any> {
-    return this.send("POST", "/accounts/iap-check", request, true, false);
   }
 
   postReinstatePremium(): Promise<any> {
