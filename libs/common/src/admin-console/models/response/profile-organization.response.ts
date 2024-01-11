@@ -50,6 +50,7 @@ export class ProfileOrganizationResponse extends BaseResponse {
   accessSecretsManager: boolean;
   limitCollectionCreationDeletion: boolean;
   allowAdminAccessToAllCollectionItems: boolean;
+  flexibleCollections: boolean;
 
   constructor(response: any) {
     super(response);
@@ -113,5 +114,6 @@ export class ProfileOrganizationResponse extends BaseResponse {
     this.allowAdminAccessToAllCollectionItems = this.getResponseProperty(
       "AllowAdminAccessToAllCollectionItems",
     );
+    this.flexibleCollections = this.getResponseProperty("FlexibleCollections");
   }
 }
