@@ -108,24 +108,32 @@ describe("DefaultActiveUserState", () => {
     // #3 switched state to initial state for user2
     expect(emissions).toEqual([state1, updatedState, state2]);
 
-    // Should be called three time to get state, once for each user and once for the update
-    expect(diskStorageService.mock.get).toHaveBeenCalledTimes(3);
+    // Should be called 4 time to get state, update state for user, emitting update, and switching users
+    expect(diskStorageService.mock.get).toHaveBeenCalledTimes(4);
+    // Initial subscribe to state$
     expect(diskStorageService.mock.get).toHaveBeenNthCalledWith(
       1,
       "user_00000000-0000-1000-a000-000000000001_fake_fake",
       any(), // options
     );
+    // The updating of state for user1
     expect(diskStorageService.mock.get).toHaveBeenNthCalledWith(
       2,
       "user_00000000-0000-1000-a000-000000000001_fake_fake",
       any(), // options
     );
+    // The emission from being actively subscribed to user1
     expect(diskStorageService.mock.get).toHaveBeenNthCalledWith(
       3,
+      "user_00000000-0000-1000-a000-000000000001_fake_fake",
+      any(), // options
+    );
+    // Switch to user2
+    expect(diskStorageService.mock.get).toHaveBeenNthCalledWith(
+      4,
       "user_00000000-0000-1000-a000-000000000002_fake_fake",
       any(), // options
     );
-
     // Should only have saved data for the first user
     expect(diskStorageService.mock.save).toHaveBeenCalledTimes(1);
     expect(diskStorageService.mock.save).toHaveBeenNthCalledWith(

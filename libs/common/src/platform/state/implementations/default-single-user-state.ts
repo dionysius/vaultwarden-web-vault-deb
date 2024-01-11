@@ -28,8 +28,8 @@ export class DefaultSingleUserState<T> implements SingleUserState<T> {
   private storageKey: string;
   private updatePromise: Promise<T> | null = null;
 
-  state$: Observable<T>;
-  combinedState$: Observable<CombinedState<T>>;
+  readonly state$: Observable<T>;
+  readonly combinedState$: Observable<CombinedState<T>>;
 
   constructor(
     readonly userId: UserId,
@@ -107,6 +107,10 @@ export class DefaultSingleUserState<T> implements SingleUserState<T> {
    * The expectation is that that await is already done
    */
   private async getStateForUpdate() {
-    return await firstValueFrom(this.state$);
+    return await getStoredValue(
+      this.storageKey,
+      this.chosenLocation,
+      this.keyDefinition.deserializer,
+    );
   }
 }

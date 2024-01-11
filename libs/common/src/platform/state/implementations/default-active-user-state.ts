@@ -47,7 +47,7 @@ export class DefaultActiveUserState<T> implements ActiveUserState<T> {
       // We only care about the UserId but we do want to know about no user as well.
       map((a) => a?.id),
       // To avoid going to storage when we don't need to, only get updates when there is a true change.
-      distinctUntilChanged(),
+      distinctUntilChanged((a, b) => (a == null || b == null ? a == b : a === b)), // Treat null and undefined as equal
     );
 
     const userChangeAndInitial$ = this.activeUserId$.pipe(
@@ -157,15 +157,22 @@ export class DefaultActiveUserState<T> implements ActiveUserState<T> {
    * The expectation is that that await is already done
    */
   protected async getStateForUpdate() {
-    const [userId, data] = await firstValueFrom(
-      this.combinedState$.pipe(
+    const userId = await firstValueFrom(
+      this.activeUserId$.pipe(
         timeout({
           first: 1000,
-          with: () => throwError(() => new Error("No active user at this time.")),
+          with: () => throwError(() => new Error("Timeout while retrieving active user.")),
         }),
       ),
     );
-    return [userKeyBuilder(userId, this.keyDefinition), data] as const;
+    if (userId == null) {
+      throw new Error("No active user at this time.");
+    }
+    const fullKey = userKeyBuilder(userId, this.keyDefinition);
+    return [
+      fullKey,
+      await getStoredValue(fullKey, this.chosenStorageLocation, this.keyDefinition.deserializer),
+    ] as const;
   }
 
   protected saveToStorage(key: string, data: T): Promise<void> {
