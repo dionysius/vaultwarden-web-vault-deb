@@ -422,13 +422,8 @@ export class ImportComponent implements OnInit, OnDestroy {
   }
 
   protected setImportOptions() {
-    this.featuredImportOptions = [
-      {
-        id: null,
-        name: "-- " + this.i18nService.t("select") + " --",
-      },
-      ...this.importService.featuredImportOptions,
-    ];
+    this.featuredImportOptions = [...this.importService.featuredImportOptions];
+
     this.importOptions = [...this.importService.regularImportOptions].sort((a, b) => {
       if (a.name == null && b.name != null) {
         return -1;

@@ -61,9 +61,16 @@
   <bit-form-field class="tw-w-1/2">
     <bit-label>{{ "fileFormat" | i18n }}</bit-label>
     <bit-select formControlName="format">
+      <bit-option value="" label="-- {{ 'select' | i18n }} --" />
+      <bit-option
+        class="tw-font-bold tw-text-muted tw-text-xs"
+        value="-"
+        label="{{ 'commonImportFormats' | i18n }}"
+        disabled
+      />
       <bit-option *ngFor="let o of featuredImportOptions" [value]="o.id" [label]="o.name" />
       <ng-container *ngIf="importOptions && importOptions.length">
-        <bit-option value="-" disabled />
+        <bit-option value="-" label="--------------------------------------" disabled />
         <bit-option *ngFor="let o of importOptions" [value]="o.id" [label]="o.name" />
       </ng-container>
     </bit-select>
