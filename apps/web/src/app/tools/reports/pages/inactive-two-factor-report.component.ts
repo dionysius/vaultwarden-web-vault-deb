@@ -67,7 +67,10 @@ export class InactiveTwoFactorReportComponent extends CipherReportComponent impl
               if (this.services.get(domain) != null) {
                 docs.set(id, this.services.get(domain));
               }
+              // If the uri is in the 2fa list. Add the cipher to the inactive
+              // collection. No need to check any additional uris for the cipher.
               inactive2faCiphers.push(ciph);
+              return;
             }
           }
         }
