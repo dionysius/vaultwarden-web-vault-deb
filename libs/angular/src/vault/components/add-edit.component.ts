@@ -330,7 +330,7 @@ export class AddEditComponent implements OnInit, OnDestroy {
       this.cipher.login.uris.length === 1 &&
       (this.cipher.login.uris[0].uri == null || this.cipher.login.uris[0].uri === "")
     ) {
-      this.cipher.login.uris = null;
+      this.cipher.login.uris = [];
     }
 
     // Allows saving of selected collections during "Add" and "Clone" flows

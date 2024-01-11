@@ -46,7 +46,13 @@ export class CipherRequest {
     switch (this.type) {
       case CipherType.Login:
         this.login = new LoginApi();
-        this.login.uris = null;
+        this.login.uris =
+          cipher.login.uris?.map((u) => {
+            const uri = new LoginUriApi();
+            uri.uri = u.uri != null ? u.uri.encryptedString : null;
+            uri.match = u.match != null ? u.match : null;
+            return uri;
+          }) ?? [];
         this.login.username = cipher.login.username ? cipher.login.username.encryptedString : null;
         this.login.password = cipher.login.password ? cipher.login.password.encryptedString : null;
         this.login.passwordRevisionDate =
@@ -55,15 +61,6 @@ export class CipherRequest {
             : null;
         this.login.totp = cipher.login.totp ? cipher.login.totp.encryptedString : null;
         this.login.autofillOnPageLoad = cipher.login.autofillOnPageLoad;
-
-        if (cipher.login.uris != null) {
-          this.login.uris = cipher.login.uris.map((u) => {
-            const uri = new LoginUriApi();
-            uri.uri = u.uri != null ? u.uri.encryptedString : null;
-            uri.match = u.match != null ? u.match : null;
-            return uri;
-          });
-        }
 
         if (cipher.login.fido2Credentials != null) {
           this.login.fido2Credentials = cipher.login.fido2Credentials.map((key) => {

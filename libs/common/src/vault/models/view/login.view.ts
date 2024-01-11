@@ -61,7 +61,7 @@ export class LoginView extends ItemView {
   }
 
   get hasUris(): boolean {
-    return this.uris.length > 0;
+    return this.uris != null && this.uris.length > 0;
   }
 
   get hasFido2Credentials(): boolean {
