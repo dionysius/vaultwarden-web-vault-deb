@@ -5,7 +5,6 @@ import {
   InternalOrganizationServiceAbstraction,
   isMember,
 } from "../../abstractions/organization/organization.service.abstraction";
-import { OrganizationUserType } from "../../enums";
 import { OrganizationData } from "../../models/data/organization.data";
 import { Organization } from "../../models/domain/organization";
 
@@ -52,7 +51,7 @@ export class OrganizationService implements InternalOrganizationServiceAbstracti
     return organizations.length > 0;
   }
 
-  async upsert(organization: OrganizationData, flexibleCollectionsEnabled: boolean): Promise<void> {
+  async upsert(organization: OrganizationData): Promise<void> {
     let organizations = await this.stateService.getOrganizations();
     if (organizations == null) {
       organizations = {};
@@ -60,10 +59,10 @@ export class OrganizationService implements InternalOrganizationServiceAbstracti
 
     organizations[organization.id] = organization;
 
-    await this.replace(organizations, flexibleCollectionsEnabled);
+    await this.replace(organizations);
   }
 
-  async delete(id: string, flexibleCollectionsEnabled: boolean): Promise<void> {
+  async delete(id: string): Promise<void> {
     const organizations = await this.stateService.getOrganizations();
     if (organizations == null) {
       return;
@@ -74,7 +73,7 @@ export class OrganizationService implements InternalOrganizationServiceAbstracti
     }
 
     delete organizations[id];
-    await this.replace(organizations, flexibleCollectionsEnabled);
+    await this.replace(organizations);
   }
 
   get(id: string): Organization {
@@ -103,24 +102,7 @@ export class OrganizationService implements InternalOrganizationServiceAbstracti
     return organizations.find((organization) => organization.identifier === identifier);
   }
 
-  async replace(
-    organizations: { [id: string]: OrganizationData },
-    flexibleCollectionsEnabled: boolean,
-  ) {
-    // If Flexible Collections is enabled, treat Managers as Users and ignore deprecated permissions
-    if (flexibleCollectionsEnabled) {
-      Object.values(organizations).forEach((o) => {
-        if (o.type === OrganizationUserType.Manager) {
-          o.type = OrganizationUserType.User;
-        }
-
-        if (o.permissions != null) {
-          o.permissions.editAssignedCollections = false;
-          o.permissions.deleteAssignedCollections = false;
-        }
-      });
-    }
-
+  async replace(organizations: { [id: string]: OrganizationData }) {
     await this.stateService.setOrganizations(organizations);
     this.updateObservables(organizations);
   }

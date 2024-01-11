@@ -461,7 +461,6 @@ import { ModalService } from "./modal.service";
         FolderApiServiceAbstraction,
         OrganizationServiceAbstraction,
         SendApiServiceAbstraction,
-        ConfigServiceAbstraction,
         LOGOUT_CALLBACK,
       ],
     },
