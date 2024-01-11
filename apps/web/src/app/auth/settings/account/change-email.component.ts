@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { FormBuilder, Validators } from "@angular/forms";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { TwoFactorProviderType } from "@bitwarden/common/auth/enums/two-factor-provider-type";
@@ -16,13 +17,16 @@ import { StateService } from "@bitwarden/common/platform/abstractions/state.serv
   templateUrl: "change-email.component.html",
 })
 export class ChangeEmailComponent implements OnInit {
-  masterPassword: string;
-  newEmail: string;
-  token: string;
   tokenSent = false;
   showTwoFactorEmailWarning = false;
 
-  formPromise: Promise<any>;
+  protected formGroup = this.formBuilder.group({
+    step1: this.formBuilder.group({
+      masterPassword: ["", [Validators.required]],
+      newEmail: ["", [Validators.required, Validators.email]],
+    }),
+    token: [{ value: "", disabled: true }, [Validators.required]],
+  });
 
   constructor(
     private apiService: ApiService,
@@ -32,6 +36,7 @@ export class ChangeEmailComponent implements OnInit {
     private messagingService: MessagingService,
     private logService: LogService,
     private stateService: StateService,
+    private formBuilder: FormBuilder,
   ) {}
 
   async ngOnInit() {
@@ -41,47 +46,59 @@ export class ChangeEmailComponent implements OnInit {
     );
   }
 
-  async submit() {
-    this.newEmail = this.newEmail.trim().toLowerCase();
+  protected submit = async () => {
+    // This form has multiple steps, so we need to mark all the groups as touched.
+    this.formGroup.controls.step1.markAllAsTouched();
+
+    if (this.tokenSent) {
+      this.formGroup.controls.token.markAllAsTouched();
+    }
+
+    // Exit if the form is invalid.
+    if (this.formGroup.invalid) {
+      return;
+    }
+
+    const step1Value = this.formGroup.controls.step1.value;
+    const newEmail = step1Value.newEmail.trim().toLowerCase();
+
     if (!this.tokenSent) {
       const request = new EmailTokenRequest();
-      request.newEmail = this.newEmail;
+      request.newEmail = newEmail;
       request.masterPasswordHash = await this.cryptoService.hashMasterKey(
-        this.masterPassword,
-        await this.cryptoService.getOrDeriveMasterKey(this.masterPassword),
+        step1Value.masterPassword,
+        await this.cryptoService.getOrDeriveMasterKey(step1Value.masterPassword),
       );
       try {
-        this.formPromise = this.apiService.postEmailToken(request);
-        await this.formPromise;
-        this.tokenSent = true;
+        await this.apiService.postEmailToken(request);
+        this.activateStep2();
       } catch (e) {
         this.logService.error(e);
       }
     } else {
       const request = new EmailRequest();
-      request.token = this.token;
-      request.newEmail = this.newEmail;
+      request.token = this.formGroup.value.token;
+      request.newEmail = newEmail;
       request.masterPasswordHash = await this.cryptoService.hashMasterKey(
-        this.masterPassword,
-        await this.cryptoService.getOrDeriveMasterKey(this.masterPassword),
+        step1Value.masterPassword,
+        await this.cryptoService.getOrDeriveMasterKey(step1Value.masterPassword),
       );
       const kdf = await this.stateService.getKdfType();
       const kdfConfig = await this.stateService.getKdfConfig();
       const newMasterKey = await this.cryptoService.makeMasterKey(
-        this.masterPassword,
-        this.newEmail,
+        step1Value.masterPassword,
+        newEmail,
         kdf,
         kdfConfig,
       );
       request.newMasterPasswordHash = await this.cryptoService.hashMasterKey(
-        this.masterPassword,
+        step1Value.masterPassword,
         newMasterKey,
       );
       const newUserKey = await this.cryptoService.encryptUserKeyWithMasterKey(newMasterKey);
       request.key = newUserKey[1].encryptedString;
       try {
-        this.formPromise = this.apiService.postEmail(request);
-        await this.formPromise;
+        await this.apiService.postEmail(request);
         this.reset();
         this.platformUtilsService.showToast(
           "success",
@@ -93,10 +110,22 @@ export class ChangeEmailComponent implements OnInit {
         this.logService.error(e);
       }
     }
+  };
+
+  // Disable step1 and enable token
+  activateStep2() {
+    this.formGroup.controls.step1.disable();
+    this.formGroup.controls.token.enable();
+
+    this.tokenSent = true;
   }
 
+  // Reset form and re-enable step1
   reset() {
-    this.token = this.newEmail = this.masterPassword = null;
+    this.formGroup.reset();
+    this.formGroup.controls.step1.enable();
+    this.formGroup.controls.token.disable();
+
     this.tokenSent = false;
   }
 }
