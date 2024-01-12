@@ -627,13 +627,13 @@
     "message": "مفتاح المرور غير صالح. الرجاء المحاولة مرة أخرى."
   },
   "twoFactorForPasskeysNotSupportedOnClientUpdateToLogIn": {
-    "message": "2FA for passkeys is not supported. Update the app to log in."
+    "message": "2FA لمفاتيح المرور غير مدعومة. قم بتحديث التطبيق لتسجيل الدخول."
   },
   "loginWithPasskeyInfo": {
-    "message": "Use a generated passkey that will automatically log you in without a password. Biometrics, like facial recognition or fingerprint, or another FIDO2 security method will verify your identity."
+    "message": "استخدم مفتاح المرور الذي تم إنشاؤه والذي سيقوم تلقائياً بتسجيل الدخول بدون كلمة مرور. القياسات الحيوية، مثل التعرف على الوجه أو بصمة الأصابع، أو طريقة أمان FIDO2 أخرى للتحقق من هويتك."
   },
   "newPasskey": {
-    "message": "New passkey"
+    "message": "مفتاح مرور جديد"
   },
   "learnMoreAboutPasswordless": {
     "message": "Learn more about passwordless"
@@ -3827,15 +3827,6 @@
   },
   "couldNotChargeCardPayInvoice": {
     "message": "We were not able to charge your card. Please view and pay the unpaid invoice listed below."
-  },
-  "inAppPurchase": {
-    "message": "In-app purchase"
-  },
-  "cannotPerformInAppPurchase": {
-    "message": "You cannot perform this action while using an in-app purchase payment method."
-  },
-  "manageSubscriptionFromStore": {
-    "message": "You must manage your subscription from the store where your in-app purchase was made."
   },
   "minLength": {
     "message": "Minimum length"
@@ -7447,7 +7438,17 @@
   "collectionAccessRestricted": {
     "message": "Collection access is restricted"
   },
+  "grantCollectionAccess": {
+    "message": "Grant groups or members access to this collection."
+  },
+  "adminCollectionAccess": {
+    "message": "Administrators can access and manage collections."
+  },
   "serviceAccountAccessUpdated": {
     "message": "Service account access updated"
+  },
+  "commonImportFormats": {
+    "message": "Common formats",
+    "description": "Label indicating the most common import formats"
   }
 }

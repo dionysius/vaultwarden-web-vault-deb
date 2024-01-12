@@ -666,10 +666,10 @@
     "message": "Użyj do szyfrowania sejfu"
   },
   "useForVaultEncryptionInfo": {
-    "message": "Log in and unlock on supported devices without your master password. Follow the prompts from your browser to finalize setup."
+    "message": "Zaloguj się i odblokuj na obsługiwanych urządzeniach jeśli nie chcesz użyć hasła głównego. Postępuj zgodnie z instrukcjami swojej przeglądarki, aby sfinalizować konfigurację."
   },
   "useForVaultEncryptionErrorReadingPasskey": {
-    "message": "Error reading passkey. Try again or uncheck this option."
+    "message": "Błąd odczytu paaskey. Spróbuj ponownie lub odznacz tę opcję."
   },
   "encryptionNotSupported": {
     "message": "Szyfrowanie nie jest obsługiwane"
@@ -678,7 +678,7 @@
     "message": "Skonfiguruj szyfrowanie"
   },
   "usedForEncryption": {
-    "message": "Used for encryption"
+    "message": "Używane do szyfrowania"
   },
   "loginWithPasskeyEnabled": {
     "message": "Logowanie za pomocą passkey zostało włączone"
@@ -3828,15 +3828,6 @@
   "couldNotChargeCardPayInvoice": {
     "message": "Nie byliśmy w stanie obciążyć karty. Sprawdź i opłać niezapłacone faktury wymienione poniżej."
   },
-  "inAppPurchase": {
-    "message": "Zakupy w aplikacji"
-  },
-  "cannotPerformInAppPurchase": {
-    "message": "Nie możesz tego zrobić, kiedy używasz płatności w aplikacji."
-  },
-  "manageSubscriptionFromStore": {
-    "message": "Musisz zarządzać swoją subskrypcją ze sklepu, w którym były dokonane zakupy w aplikacji."
-  },
   "minLength": {
     "message": "Minimalna długość"
   },
@@ -4068,7 +4059,7 @@
     "message": "Identyfikator SSO"
   },
   "ssoIdentifierHintPartOne": {
-    "message": "Provide this ID to your members to login with SSO. To bypass this step, set up ",
+    "message": "Podaj ten identyfikator swoim użytkownikom, aby zalogować się za pomocą SSO. Aby pominąć ten krok, ustaw ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Provide this ID to your members to login with SSO. To bypass this step, set up Domain verification'"
   },
   "unlinkSso": {
@@ -7430,24 +7421,34 @@
     "description": "This is followed a by a hyperlink to the help website."
   },
   "projectAccessUpdated": {
-    "message": "Project access updated"
+    "message": "Dostęp do projektu zaktualizowany"
   },
   "unexpectedErrorSend": {
-    "message": "An unexpected error has occurred while loading this Send. Try again later."
+    "message": "Wystąpił nieoczekiwany błąd podczas ładowania tego wysłania. Spróbuj ponownie później."
   },
   "seatLimitReached": {
-    "message": "Seat limit has been reached"
+    "message": "Osiągnięto limit miejsc"
   },
   "contactYourProvider": {
-    "message": "Contact your provider to purchase additional seats."
+    "message": "Skontaktuj się z dostawcą w celu zakupu dodatkowych miejsc."
   },
   "seatLimitReachedContactYourProvider": {
-    "message": "Seat limit has been reached. Contact your provider to purchase additional seats."
+    "message": "Osiągnięto limit miejsc. Skontaktuj się z dostawcą w celu zakupu dodatkowych miejsc."
   },
   "collectionAccessRestricted": {
     "message": "Dostęp do kolekcji jest ograniczony"
   },
+  "grantCollectionAccess": {
+    "message": "Przyznaj grupom lub członkom dostęp do tej kolekcji."
+  },
+  "adminCollectionAccess": {
+    "message": "Administratorzy mogą mieć dostęp do kolekcji i zarządzać nimi."
+  },
   "serviceAccountAccessUpdated": {
     "message": "Zaktualizowano dostęp do konta serwisowego"
+  },
+  "commonImportFormats": {
+    "message": "Popularne formaty",
+    "description": "Label indicating the most common import formats"
   }
 }

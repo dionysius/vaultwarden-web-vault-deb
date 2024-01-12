@@ -3828,15 +3828,6 @@
   "couldNotChargeCardPayInvoice": {
     "message": "Dit betalingskort kunne ikke debiteres. Se og betal den ubetalte faktura vist nedenfor."
   },
-  "inAppPurchase": {
-    "message": "In-app køb"
-  },
-  "cannotPerformInAppPurchase": {
-    "message": "Denne handling kan ikke udføres under brug af 'in-app' betalingsmetoden."
-  },
-  "manageSubscriptionFromStore": {
-    "message": "Dit abonnement skal håndteres fra den butik, hvori in-app købet blev foretaget."
-  },
   "minLength": {
     "message": "Minimumslængde"
   },
@@ -7447,7 +7438,17 @@
   "collectionAccessRestricted": {
     "message": "Adgang til samling er begrænset"
   },
+  "grantCollectionAccess": {
+    "message": "Tildel grupper eller medlemmer adgang til denne samling."
+  },
+  "adminCollectionAccess": {
+    "message": "Administratorer kan tilgå og håndtere samlinger."
+  },
   "serviceAccountAccessUpdated": {
     "message": "Tjenestekontoadgang opdateret"
+  },
+  "commonImportFormats": {
+    "message": "Almindelige formater",
+    "description": "Label indicating the most common import formats"
   }
 }

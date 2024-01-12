@@ -3828,15 +3828,6 @@
   "couldNotChargeCardPayInvoice": {
     "message": "לא הצלחנו לחייב את הכרטיס שלך. אנא בדוק ושלם את הקבלות המופיעות להלן."
   },
-  "inAppPurchase": {
-    "message": "רכישות פנימיות"
-  },
-  "cannotPerformInAppPurchase": {
-    "message": "אין באפשרותך לבצע פעולה זו כשמשתמשים בשיטת התשלום 'רכישות פנימיות'."
-  },
-  "manageSubscriptionFromStore": {
-    "message": "עליך לנהל את המנוי מתוך החנות שבה ביצעת את הרכישות הפנימיות."
-  },
   "minLength": {
     "message": "אורך מינימלי"
   },
@@ -7447,7 +7438,17 @@
   "collectionAccessRestricted": {
     "message": "Collection access is restricted"
   },
+  "grantCollectionAccess": {
+    "message": "Grant groups or members access to this collection."
+  },
+  "adminCollectionAccess": {
+    "message": "Administrators can access and manage collections."
+  },
   "serviceAccountAccessUpdated": {
     "message": "Service account access updated"
+  },
+  "commonImportFormats": {
+    "message": "Common formats",
+    "description": "Label indicating the most common import formats"
   }
 }

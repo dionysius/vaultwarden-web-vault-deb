@@ -3828,15 +3828,6 @@
   "couldNotChargeCardPayInvoice": {
     "message": "Hindi namin nagawang singilin ang iyong card. Mangyaring tingnan at bayaran ang hindi bayad na invoice na nakalista sa ibaba."
   },
-  "inAppPurchase": {
-    "message": "Pagbili sa in app"
-  },
-  "cannotPerformInAppPurchase": {
-    "message": "Hindi mo maaaring isagawa ang aksyong ito habang gumagamit ng isang in app na paraan ng pagbabayad ng pagbili."
-  },
-  "manageSubscriptionFromStore": {
-    "message": "Kailangan mong pamahalaan ang iyong subscription mula sa tindahan kung saan ginawa ang iyong in app na pagbili."
-  },
   "minLength": {
     "message": "Minimum na haba"
   },
@@ -7447,7 +7438,17 @@
   "collectionAccessRestricted": {
     "message": "Collection access is restricted"
   },
+  "grantCollectionAccess": {
+    "message": "Grant groups or members access to this collection."
+  },
+  "adminCollectionAccess": {
+    "message": "Administrators can access and manage collections."
+  },
   "serviceAccountAccessUpdated": {
     "message": "Service account access updated"
+  },
+  "commonImportFormats": {
+    "message": "Common formats",
+    "description": "Label indicating the most common import formats"
   }
 }

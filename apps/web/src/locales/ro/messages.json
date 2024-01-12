@@ -3828,15 +3828,6 @@
   "couldNotChargeCardPayInvoice": {
     "message": "Nu am putut procesa plata cu cardul dvs. Vă rugăm să vizualizați și să plătiți factura neplătită de mai jos."
   },
-  "inAppPurchase": {
-    "message": "Achiziție in aplicație"
-  },
-  "cannotPerformInAppPurchase": {
-    "message": "Nu puteți efectua această acțiune în timp ce utilizați ca metodă de plată achiziția în aplicație."
-  },
-  "manageSubscriptionFromStore": {
-    "message": "Trebuie să vă gestionați abonamentul din magazinul în care a fost efectuată achiziția în aplicație."
-  },
   "minLength": {
     "message": "Lungime minimă"
   },
@@ -7447,7 +7438,17 @@
   "collectionAccessRestricted": {
     "message": "Collection access is restricted"
   },
+  "grantCollectionAccess": {
+    "message": "Grant groups or members access to this collection."
+  },
+  "adminCollectionAccess": {
+    "message": "Administrators can access and manage collections."
+  },
   "serviceAccountAccessUpdated": {
     "message": "Service account access updated"
+  },
+  "commonImportFormats": {
+    "message": "Common formats",
+    "description": "Label indicating the most common import formats"
   }
 }

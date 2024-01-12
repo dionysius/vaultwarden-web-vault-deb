@@ -3828,15 +3828,6 @@
   "couldNotChargeCardPayInvoice": {
     "message": "No hem pogut carregar la vostra targeta. Consulteu i pagueu la factura pendent que es mostra a continuació."
   },
-  "inAppPurchase": {
-    "message": "Compra integrada a l'aplicació"
-  },
-  "cannotPerformInAppPurchase": {
-    "message": "No podeu realitzar aquesta acció mentre feu servir un mètode de pagament de compra a l’aplicació."
-  },
-  "manageSubscriptionFromStore": {
-    "message": "Heu de gestionar la vostra subscripció des de la botiga on s’ha realitzat la compra a l’aplicació."
-  },
   "minLength": {
     "message": "Longitud mínima"
   },
@@ -7447,7 +7438,17 @@
   "collectionAccessRestricted": {
     "message": "L'accés a la col·lecció està restringit"
   },
+  "grantCollectionAccess": {
+    "message": "Concedeix als grups o membres l'accés a aquesta col·lecció."
+  },
+  "adminCollectionAccess": {
+    "message": "Els administradors poden accedir i gestionar les col·leccions."
+  },
   "serviceAccountAccessUpdated": {
     "message": "Accés al compte del servei actualitzat"
+  },
+  "commonImportFormats": {
+    "message": "Formats comuns",
+    "description": "Label indicating the most common import formats"
   }
 }

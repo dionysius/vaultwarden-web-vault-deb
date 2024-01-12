@@ -3828,15 +3828,6 @@
   "couldNotChargeCardPayInvoice": {
     "message": "我们无法从您的支付卡中扣款。请查看并支付下面列出的待支付账单。"
   },
-  "inAppPurchase": {
-    "message": "应用内购买"
-  },
-  "cannotPerformInAppPurchase": {
-    "message": "使用应用内购买这种付款方式时，您不能执行此操作。"
-  },
-  "manageSubscriptionFromStore": {
-    "message": "您必须在进行应用内购买的商店中管理订阅。"
-  },
   "minLength": {
     "message": "最小长度"
   },
@@ -7447,7 +7438,17 @@
   "collectionAccessRestricted": {
     "message": "集合访问权限受限"
   },
+  "grantCollectionAccess": {
+    "message": "授予群组或成员对此集合的访问权限。"
+  },
+  "adminCollectionAccess": {
+    "message": "管理员可以访问和管理集合。"
+  },
   "serviceAccountAccessUpdated": {
     "message": "服务账户访问权限已更新"
+  },
+  "commonImportFormats": {
+    "message": "Common formats",
+    "description": "Label indicating the most common import formats"
   }
 }

@@ -3828,15 +3828,6 @@
   "couldNotChargeCardPayInvoice": {
     "message": "Мы не смогли списать деньги с вашей карты. Пожалуйста, просмотрите и оплатите неоплаченный счет, указанный ниже."
   },
-  "inAppPurchase": {
-    "message": "Покупка в приложении"
-  },
-  "cannotPerformInAppPurchase": {
-    "message": "Вы не можете выполнить это действие при использовании оплаты из приложения."
-  },
-  "manageSubscriptionFromStore": {
-    "message": "Вы должны управлять своей подпиской в том ​​магазине, в котором была совершена покупка в приложении."
-  },
   "minLength": {
     "message": "Минимальная длина"
   },
@@ -6668,7 +6659,7 @@
     }
   },
   "teamsStarterPlanInvLimitReachedManageBilling": {
-    "message": "Teams Starter plans may have up to $SEATCOUNT$ members. Upgrade to your plan to invite more members.",
+    "message": "На тарифных планах Teams Starter может быть до $SEATCOUNT$ участников. Перейдите на новый тарифный план, чтобы пригласить больше участников.",
     "placeholders": {
       "seatcount": {
         "content": "$1",
@@ -7447,7 +7438,17 @@
   "collectionAccessRestricted": {
     "message": "Доступ к коллекции ограничен"
   },
+  "grantCollectionAccess": {
+    "message": "Предоставить группам или участникам доступ к этой коллекции."
+  },
+  "adminCollectionAccess": {
+    "message": "Администраторы могут получать доступ к коллекциям и управлять ими."
+  },
   "serviceAccountAccessUpdated": {
     "message": "Доступ сервисного аккаунта изменен"
+  },
+  "commonImportFormats": {
+    "message": "Основные форматы",
+    "description": "Label indicating the most common import formats"
   }
 }

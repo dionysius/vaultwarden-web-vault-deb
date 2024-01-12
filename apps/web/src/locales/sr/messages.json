@@ -3828,15 +3828,6 @@
   "couldNotChargeCardPayInvoice": {
     "message": "Нисмо могли да наплатимо вашу картицу. Молимо погледајте и платите наведену неплаћену фактуру."
   },
-  "inAppPurchase": {
-    "message": "Куповина Унутар Апликације"
-  },
-  "cannotPerformInAppPurchase": {
-    "message": "Не можете да извршите ову радњу док користите начин плаћања за куповину у апликацији."
-  },
-  "manageSubscriptionFromStore": {
-    "message": "Морате управљати претплатом из продавнице у којој је обављена куповина у апликацији."
-  },
   "minLength": {
     "message": "Минимална Дужина"
   },
@@ -7447,7 +7438,17 @@
   "collectionAccessRestricted": {
     "message": "Приступ колекцији је ограничен"
   },
+  "grantCollectionAccess": {
+    "message": "Grant groups or members access to this collection."
+  },
+  "adminCollectionAccess": {
+    "message": "Administrators can access and manage collections."
+  },
   "serviceAccountAccessUpdated": {
     "message": "Приступ услужног налога ажуриран"
+  },
+  "commonImportFormats": {
+    "message": "Common formats",
+    "description": "Label indicating the most common import formats"
   }
 }

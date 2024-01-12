@@ -3828,15 +3828,6 @@
   "couldNotChargeCardPayInvoice": {
     "message": "We were not able to charge your card. Please view and pay the unpaid invoice listed below."
   },
-  "inAppPurchase": {
-    "message": "In-app purchase"
-  },
-  "cannotPerformInAppPurchase": {
-    "message": "You cannot perform this action while using an in-app purchase payment method."
-  },
-  "manageSubscriptionFromStore": {
-    "message": "Bạn chỉ có thể quản lý gói của mình từ cửa hàng ứng dụng mà bạn đã thanh toán."
-  },
   "minLength": {
     "message": "Minimum length"
   },
@@ -7447,7 +7438,17 @@
   "collectionAccessRestricted": {
     "message": "Collection access is restricted"
   },
+  "grantCollectionAccess": {
+    "message": "Grant groups or members access to this collection."
+  },
+  "adminCollectionAccess": {
+    "message": "Administrators can access and manage collections."
+  },
   "serviceAccountAccessUpdated": {
     "message": "Service account access updated"
+  },
+  "commonImportFormats": {
+    "message": "Common formats",
+    "description": "Label indicating the most common import formats"
   }
 }

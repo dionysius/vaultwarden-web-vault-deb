@@ -3828,15 +3828,6 @@
   "couldNotChargeCardPayInvoice": {
     "message": "ನಿಮ್ಮ ಕಾರ್ಡ್ ಅನ್ನು ಚಾರ್ಜ್ ಮಾಡಲು ನಮಗೆ ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ದಯವಿಟ್ಟು ಕೆಳಗೆ ಪಟ್ಟಿ ಮಾಡಲಾದ ಪಾವತಿಸದ ಸರಕುಪಟ್ಟಿ ವೀಕ್ಷಿಸಿ ಮತ್ತು ಪಾವತಿಸಿ."
   },
-  "inAppPurchase": {
-    "message": "ಅಪ್ಲಿಕೇಶನ್‌ನಲ್ಲಿ ಖರೀದಿ"
-  },
-  "cannotPerformInAppPurchase": {
-    "message": "ಅಪ್ಲಿಕೇಶನ್‌ನಲ್ಲಿ ಖರೀದಿ ಪಾವತಿ ವಿಧಾನವನ್ನು ಬಳಸುವಾಗ ನೀವು ಈ ಕ್ರಿಯೆಯನ್ನು ಮಾಡಲು ಸಾಧ್ಯವಿಲ್ಲ."
-  },
-  "manageSubscriptionFromStore": {
-    "message": "ನಿಮ್ಮ ಅಪ್ಲಿಕೇಶನ್‌ನಲ್ಲಿ ಖರೀದಿಸಿದ ಅಂಗಡಿಯಿಂದ ನಿಮ್ಮ ಚಂದಾದಾರಿಕೆಯನ್ನು ನೀವು ನಿರ್ವಹಿಸಬೇಕು."
-  },
   "minLength": {
     "message": "ಕನಿಷ್ಠ ಉದ್ದ"
   },
@@ -7447,7 +7438,17 @@
   "collectionAccessRestricted": {
     "message": "Collection access is restricted"
   },
+  "grantCollectionAccess": {
+    "message": "Grant groups or members access to this collection."
+  },
+  "adminCollectionAccess": {
+    "message": "Administrators can access and manage collections."
+  },
   "serviceAccountAccessUpdated": {
     "message": "Service account access updated"
+  },
+  "commonImportFormats": {
+    "message": "Common formats",
+    "description": "Label indicating the most common import formats"
   }
 }

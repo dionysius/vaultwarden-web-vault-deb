@@ -3828,15 +3828,6 @@
   "couldNotChargeCardPayInvoice": {
     "message": "Nebija iespējams veikt apmaksu ar norādīto karti. Lūgums apskatīt un apmaksāt zemāk norādīto rēķinu."
   },
-  "inAppPurchase": {
-    "message": "Pirkšana lietotnē"
-  },
-  "cannotPerformInAppPurchase": {
-    "message": "Šī darbība nevar tikt veikta, izmantojot pirkšana lietotnē apmaksas veidu."
-  },
-  "manageSubscriptionFromStore": {
-    "message": "Abonements ir jāpārvalda veikalā, kurā tika veikts pirkums lietotnē."
-  },
   "minLength": {
     "message": "Mazākais pieļaujamais garums"
   },
@@ -7447,7 +7438,17 @@
   "collectionAccessRestricted": {
     "message": "Piekļuve krājumam ir ierobežota"
   },
+  "grantCollectionAccess": {
+    "message": "Piešķirt kopām vai dalībniekiem piekļuvi šim krājumam."
+  },
+  "adminCollectionAccess": {
+    "message": "Pārvaldnieki var piekļūt krājumiem un pārvaldīt tos."
+  },
   "serviceAccountAccessUpdated": {
     "message": "Pakalpojuma konta piekļuve ir atjaunināta"
+  },
+  "commonImportFormats": {
+    "message": "Common formats",
+    "description": "Label indicating the most common import formats"
   }
 }

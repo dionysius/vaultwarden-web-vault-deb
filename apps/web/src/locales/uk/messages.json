@@ -136,7 +136,7 @@
     "message": "Рік завершення"
   },
   "authenticatorKeyTotp": {
-    "message": "Ключ авторизації (TOTP)"
+    "message": "Ключ автентифікації (TOTP)"
   },
   "folder": {
     "message": "Тека"
@@ -881,7 +881,7 @@
     }
   },
   "enterVerificationCodeApp": {
-    "message": "Введіть 6-значний код підтвердження з програми авторизації."
+    "message": "Введіть 6-значний код підтвердження з програми автентифікації."
   },
   "enterVerificationCodeEmail": {
     "message": "Введіть 6-значний код підтвердження, надісланий на $EMAIL$.",
@@ -923,7 +923,7 @@
     "message": "Для цього облікового запису увімкнено двоетапну перевірку. Однак, жоден із налаштованих провайдерів не підтримується цим браузером."
   },
   "noTwoStepProviders2": {
-    "message": "Будь ласка, скористайтеся підтримуваним браузером (наприклад, Chrome) та/або іншими провайдерами, що краще підтримуються браузерами (наприклад, програма авторизації)."
+    "message": "Будь ласка, скористайтеся підтримуваним браузером (наприклад, Chrome) та/або іншими провайдерами, що краще підтримуються браузерами (як-от програма автентифікації)."
   },
   "twoStepOptions": {
     "message": "Налаштування двоетапної перевірки"
@@ -935,10 +935,10 @@
     "message": "Код відновлення"
   },
   "authenticatorAppTitle": {
-    "message": "Програма авторизації"
+    "message": "Програма автентифікації"
   },
   "authenticatorAppDesc": {
-    "message": "Використовуйте програму авторизації (наприклад, Authy або Google Authenticator), щоб генерувати тимчасові коди підтвердження.",
+    "message": "Використовуйте програму автентифікації (наприклад, Authy або Google Authenticator), щоб генерувати тимчасові коди підтвердження.",
     "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
   },
   "yubiKeyTitle": {
@@ -1597,13 +1597,13 @@
     "message": "Введіть головний пароль, щоб змінити налаштування двоетапної перевірки."
   },
   "twoStepAuthenticatorDesc": {
-    "message": "Дотримуйтесь цих кроків, щоб встановити двоетапну перевірку за допомогою програми:"
+    "message": "Налаштуйте двоетапну перевірку за допомогою програми автентифікації:"
   },
   "twoStepAuthenticatorDownloadApp": {
-    "message": "Завантажте програму для двоетапної перевірки"
+    "message": "Завантажте програму автентифікації для двоетапної перевірки"
   },
   "twoStepAuthenticatorNeedApp": {
-    "message": "Необхідна програма для двоетапної перевірки? Завантажте одну з таких"
+    "message": "Необхідна програма автентифікації для двоетапної перевірки? Завантажте одну з таких"
   },
   "iosDevices": {
     "message": "Пристрої iOS"
@@ -1615,19 +1615,19 @@
     "message": "Пристрої Windows"
   },
   "twoStepAuthenticatorAppsRecommended": {
-    "message": "Ці програми є рекомендованими, однак, інші програми авторизації також працюватимуть."
+    "message": "Ці програми є рекомендованими, однак ви можете використовувати й інші."
   },
   "twoStepAuthenticatorScanCode": {
-    "message": "Скануйте цей QR-код за допомогою програми авторизації"
+    "message": "Скануйте цей QR-код за допомогою програми автентифікації"
   },
   "key": {
     "message": "Ключ"
   },
   "twoStepAuthenticatorEnterCode": {
-    "message": "Введіть отриманий в програмі 6-значний код авторизації"
+    "message": "Введіть отриманий в програмі 6-значний код підтвердження"
   },
   "twoStepAuthenticatorReaddDesc": {
-    "message": "Якщо вам необхідно додати його на іншому пристрої, внизу знаходиться QR-код (або код) для вашої програми авторизації."
+    "message": "Якщо вам необхідно додати інший пристрій, скануйте зазначений нижче QR-код (або введіть ключ) для вашої програми автентифікації."
   },
   "twoStepDisableDesc": {
     "message": "Ви справді хочете вимкнути цього провайдера двоетапної перевірки?"
@@ -3798,7 +3798,7 @@
     "message": "Ключ API"
   },
   "apiKeyDesc": {
-    "message": "Ваш ключ API може бути використаний для авторизації публічного API Bitwarden."
+    "message": "Ваш ключ API можна використовувати для автентифікації відкритого API Bitwarden."
   },
   "apiKeyRotateDesc": {
     "message": "Оновлення ключа API спричинить анулювання попереднього ключа. Ви можете оновити свій ключ API, якщо вважаєте, що поточний ключ більше не є безпечним для використання."
@@ -3807,10 +3807,10 @@
     "message": "Ваш ключ API має повний доступ до організації. Його необхідно надійно зберігати."
   },
   "userApiKeyDesc": {
-    "message": "Ваш ключ API може бути використаний для авторизації в Bitwarden CLI."
+    "message": "Ваш ключ API можна використовувати для автентифікації у Bitwarden CLI."
   },
   "userApiKeyWarning": {
-    "message": "Ваш ключ API є альтернативним засобом перевірки. Його слід зберігати в таємниці."
+    "message": "Ваш ключ API є альтернативним засобом автентифікації. Його слід зберігати в таємниці."
   },
   "oauth2ClientCredentials": {
     "message": "Облікові дані клієнта OAuth 2.0",
@@ -3827,15 +3827,6 @@
   },
   "couldNotChargeCardPayInvoice": {
     "message": "Нам не вдалося виконати оплату з вашої картки. Будь ласка, перегляньте і проведіть оплату за рахунком, вказаним внизу."
-  },
-  "inAppPurchase": {
-    "message": "Покупка в програмі"
-  },
-  "cannotPerformInAppPurchase": {
-    "message": "Ви не можете виконати цю дію під час використання способу оплати покупки в додатку."
-  },
-  "manageSubscriptionFromStore": {
-    "message": "Керувати своєю передплатою потрібно з магазину, в якому ви виконали покупку в додатку."
   },
   "minLength": {
     "message": "Мінімальна довжина"
@@ -3925,7 +3916,7 @@
     "message": "Щоб відновити доступ до сховища, необхідно ввести головний пароль або скористатись іншим способом розблокування."
   },
   "vaultTimeoutActionLogOutDesc": {
-    "message": "Щоб відновити доступ до сховища, необхідно повторно авторизуватись."
+    "message": "Щоб відновити доступ до сховища, необхідно пройти повторну автентифікацію."
   },
   "lock": {
     "message": "Блокувати",
@@ -3996,7 +3987,7 @@
     }
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Вихід скасує всі права доступу до вашого сховища і вимагатиме авторизації після завершення часу очікування. Ви дійсно хочете використати цей параметр?"
+    "message": "Вихід скасує всі права доступу до вашого сховища і вимагатиме автентифікацію після завершення часу очікування. Ви дійсно хочете використати цей параметр?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
     "message": "Підтвердження дії часу очікування"
@@ -4093,7 +4084,7 @@
     "message": "Учасники організації, які не є власниками чи адміністраторами, але вже є учасниками іншої організації, будуть вилучені з вашої організації."
   },
   "requireSso": {
-    "message": "Вимагати авторизацію через єдиний вхід (SSO)"
+    "message": "Вимагати автентифікацію з використанням єдиного входу (SSO)"
   },
   "requireSsoPolicyDesc": {
     "message": "Зобов'язувати учасників входити в систему через єдиний корпоративний вхід (SSO)."
@@ -4662,7 +4653,7 @@
     "message": "Щоб засвідчити ваш 2FA, натисніть кнопку внизу."
   },
   "webAuthnAuthenticate": {
-    "message": "Авторизація WebAuthn"
+    "message": "Автентифікація WebAuthn"
   },
   "webAuthnNotSupported": {
     "message": "WebAuthn не підтримується в цьому браузері."
@@ -5207,13 +5198,13 @@
     "message": "Алгоритм вихідного підпису"
   },
   "idpAllowUnsolicitedAuthnResponse": {
-    "message": "Дозволити небажану відповідь авторизації"
+    "message": "Дозволити небажану відповідь автентифікації"
   },
   "idpAllowOutboundLogoutRequests": {
     "message": "Дозволити вихідні запити для виходу"
   },
   "idpSignAuthenticationRequests": {
-    "message": "Підписувати запити авторизації"
+    "message": "Підписувати запити автентифікації"
   },
   "ssoSettingsSaved": {
     "message": "Конфігурацію єдиного входу збережено"
@@ -5378,17 +5369,17 @@
     "message": "Головний пароль вилучено"
   },
   "allowSso": {
-    "message": "Дозволити авторизацію SSO"
+    "message": "Дозволити автентифікацію SSO"
   },
   "allowSsoDesc": {
-    "message": "Після налаштування вашу конфігурацію буде збережено та учасники зможуть авторизуватися з використанням облікових даних їхнього постачальника."
+    "message": "Після налаштування вашу конфігурацію буде збережено та учасники зможуть проходити автентифікацію з використанням облікових даних їхнього провайдера."
   },
   "ssoPolicyHelpStart": {
     "message": "Використовувати",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpAnchor": {
-    "message": "обов'язкову політику єдиного входу (SSO)",
+    "message": "обов'язкову політику автентифікації єдиного входу (SSO)",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "ssoPolicyHelpEnd": {
@@ -5399,13 +5390,13 @@
     "message": "Налаштування розшифрування учасників"
   },
   "memberDecryptionPassDesc": {
-    "message": "Після авторизації учасники розшифровуватимуть дані сховища з використанням їх головного пароля."
+    "message": "Після автентифікації учасники розшифровуватимуть дані сховища з використанням головного пароля."
   },
   "keyConnector": {
     "message": "Key Connector"
   },
   "memberDecryptionKeyConnectorDescStart": {
-    "message": "Під'єднайте вхід з SSO до свого власного сервера ключів розшифрування. Скориставшись цією можливістю, учасникам не потрібен буде головний пароль для розшифрування даних сховища.",
+    "message": "Під'єднайте вхід з SSO до власного сервера ключів розшифрування. Скориставшись цією можливістю, учасникам не потрібен буде головний пароль для розшифрування даних сховища.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescLink": {
@@ -7048,7 +7039,7 @@
     "message": "Довірені пристрої"
   },
   "memberDecryptionOptionTdeDescriptionPartOne": {
-    "message": "Після авторизації учасники розшифровуватимуть дані сховища з використанням ключа, збереженого на їхньому пристрої.",
+    "message": "Після автентифікації учасники розшифровуватимуть дані сховища з використанням ключа, збереженого на їхньому пристрої.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO Required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionOptionTdeDescriptionLinkOne": {
@@ -7447,7 +7438,17 @@
   "collectionAccessRestricted": {
     "message": "Доступ до збірки обмежено"
   },
+  "grantCollectionAccess": {
+    "message": "Надайте групам або учасникам доступ до цієї збірки."
+  },
+  "adminCollectionAccess": {
+    "message": "Адміністратори мають доступ і можливість керування збірками."
+  },
   "serviceAccountAccessUpdated": {
     "message": "Доступ до службового облікового запису оновлено"
+  },
+  "commonImportFormats": {
+    "message": "Поширені формати",
+    "description": "Label indicating the most common import formats"
   }
 }

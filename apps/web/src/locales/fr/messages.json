@@ -3828,15 +3828,6 @@
   "couldNotChargeCardPayInvoice": {
     "message": "Nous n'avons pas pu compléter le paiement sur votre carte. Veuillez consulter et payer la facture impayée ci-dessous."
   },
-  "inAppPurchase": {
-    "message": "Achat intégré"
-  },
-  "cannotPerformInAppPurchase": {
-    "message": "Vous ne pouvez pas effectuer cette action tant que vous utilisez les achats intégrés comme méthode de paiement."
-  },
-  "manageSubscriptionFromStore": {
-    "message": "Vous devez gérer votre abonnement à partir du magasin d’applications où votre achat intégré a été souscrit."
-  },
   "minLength": {
     "message": "Longueur minimale"
   },
@@ -6668,7 +6659,7 @@
     }
   },
   "teamsStarterPlanInvLimitReachedManageBilling": {
-    "message": "Teams Starter plans may have up to $SEATCOUNT$ members. Upgrade to your plan to invite more members.",
+    "message": "Les abonnements Teams Starter peuvent compter jusqu'à $SEATCOUNT$ membres. Passez à une offre payante pour inviter plus de membres.",
     "placeholders": {
       "seatcount": {
         "content": "$1",
@@ -7447,7 +7438,17 @@
   "collectionAccessRestricted": {
     "message": "L'accès à la collection est restreint"
   },
+  "grantCollectionAccess": {
+    "message": "Accorder l'accès à cette collection aux groupes ou aux membres."
+  },
+  "adminCollectionAccess": {
+    "message": "Les administrateurs peuvent accéder et gérer les collections."
+  },
   "serviceAccountAccessUpdated": {
     "message": "Accès au compte de service mis à jour"
+  },
+  "commonImportFormats": {
+    "message": "Formats communs",
+    "description": "Label indicating the most common import formats"
   }
 }

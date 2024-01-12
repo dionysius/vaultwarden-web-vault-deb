@@ -612,73 +612,73 @@
     "message": "Iniciar sesión con contraseña maestra"
   },
   "readingPasskeyLoading": {
-    "message": "Reading passkey..."
+    "message": "Leyendo clave de acceso..."
   },
   "readingPasskeyLoadingInfo": {
-    "message": "Keep this window open and follow prompts from your browser."
+    "message": "Mantenga esta ventana abierta y siga las instrucciones de su navegador."
   },
   "useADifferentLogInMethod": {
-    "message": "Use a different log in method"
+    "message": "Utilizar otro método de inicio de sesión"
   },
   "loginWithPasskey": {
-    "message": "Log in with passkey"
+    "message": "Iniciar sesión con la clave de acceso"
   },
   "invalidPasskeyPleaseTryAgain": {
-    "message": "Invalid Passkey. Please try again."
+    "message": "Clave inválida. Por favor, inténtelo de nuevo."
   },
   "twoFactorForPasskeysNotSupportedOnClientUpdateToLogIn": {
-    "message": "2FA for passkeys is not supported. Update the app to log in."
+    "message": "No se admite 2FA para claves de acceso. Actualice la aplicación para iniciar sesión."
   },
   "loginWithPasskeyInfo": {
-    "message": "Use a generated passkey that will automatically log you in without a password. Biometrics, like facial recognition or fingerprint, or another FIDO2 security method will verify your identity."
+    "message": "Utilice una clave de acceso generada que le identifique automáticamente sin necesidad de contraseña. La biometría, como el reconocimiento facial o la huella dactilar, u otro método de seguridad FIDO2 verificará su identidad."
   },
   "newPasskey": {
-    "message": "New passkey"
+    "message": "Nueva clave de acceso"
   },
   "learnMoreAboutPasswordless": {
-    "message": "Learn more about passwordless"
+    "message": "Más información sobre la ausencia de contraseña"
   },
   "passkeyEnterMasterPassword": {
-    "message": "Enter your master password to modify log in with passkey settings."
+    "message": "Introduzca su contraseña maestra para modificar la configuración de inicio de sesión con clave de acceso."
   },
   "creatingPasskeyLoading": {
-    "message": "Creating passkey..."
+    "message": "Creando clave de acceso..."
   },
   "creatingPasskeyLoadingInfo": {
-    "message": "Keep this window open and follow prompts from your browser."
+    "message": "Mantenga esta ventana abierta y siga las instrucciones de su navegador."
   },
   "errorCreatingPasskey": {
-    "message": "Error creating passkey"
+    "message": "Error al crear la clave de acceso"
   },
   "errorCreatingPasskeyInfo": {
-    "message": "There was a problem creating your passkey."
+    "message": "Hubo un problema al crear su clave de acceso."
   },
   "passkeySuccessfullyCreated": {
-    "message": "Passkey successfully created!"
+    "message": "¡Clave de acceso creada correctamente!"
   },
   "customName": {
-    "message": "Custom name"
+    "message": "Nombre personalizado"
   },
   "customPasskeyNameInfo": {
-    "message": "Name your passkey to help you identify it."
+    "message": "Asigne un nombre a su clave para poder identificarla."
   },
   "useForVaultEncryption": {
-    "message": "Use for vault encryption"
+    "message": "Uso para el cifrado de bóvedas"
   },
   "useForVaultEncryptionInfo": {
-    "message": "Log in and unlock on supported devices without your master password. Follow the prompts from your browser to finalize setup."
+    "message": "Inicie sesión y desbloquee en los dispositivos compatibles sin su contraseña maestra. Siga las instrucciones de su navegador para finalizar la configuración."
   },
   "useForVaultEncryptionErrorReadingPasskey": {
-    "message": "Error reading passkey. Try again or uncheck this option."
+    "message": "Error al leer la contraseña. Inténtelo de nuevo o desmarque esta opción."
   },
   "encryptionNotSupported": {
-    "message": "Encryption not supported"
+    "message": "No se admite el cifrado"
   },
   "enablePasskeyEncryption": {
-    "message": "Set up encryption"
+    "message": "Configurar la encriptación"
   },
   "usedForEncryption": {
-    "message": "Used for encryption"
+    "message": "Se utiliza para el cifrado"
   },
   "loginWithPasskeyEnabled": {
     "message": "Log in with passkey turned on"
@@ -3827,15 +3827,6 @@
   },
   "couldNotChargeCardPayInvoice": {
     "message": "No pudimos realizar el cobro a su tarjeta de crédito. Por favor, vea y pague la factura no pagada que se indica a continuación."
-  },
-  "inAppPurchase": {
-    "message": "Compra desde la aplicación"
-  },
-  "cannotPerformInAppPurchase": {
-    "message": "No puedes realizar esta acción mientras usas un método de pago de compra en la aplicación."
-  },
-  "manageSubscriptionFromStore": {
-    "message": "Debes administrar tu suscripción desde la tienda donde se hizo tu compra en la aplicación."
   },
   "minLength": {
     "message": "Longitud mínima"
@@ -7447,7 +7438,17 @@
   "collectionAccessRestricted": {
     "message": "Collection access is restricted"
   },
+  "grantCollectionAccess": {
+    "message": "Grant groups or members access to this collection."
+  },
+  "adminCollectionAccess": {
+    "message": "Administrators can access and manage collections."
+  },
   "serviceAccountAccessUpdated": {
     "message": "Service account access updated"
+  },
+  "commonImportFormats": {
+    "message": "Common formats",
+    "description": "Label indicating the most common import formats"
   }
 }

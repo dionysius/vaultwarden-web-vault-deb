@@ -3828,15 +3828,6 @@
   "couldNotChargeCardPayInvoice": {
     "message": "Nepodařilo se nám strhnout platbu z Vaší karty. Prohlédněte si a zaplaťte nezaplacenou fakturu uvedenou níže."
   },
-  "inAppPurchase": {
-    "message": "Nákup v aplikaci"
-  },
-  "cannotPerformInAppPurchase": {
-    "message": "Tuto akci nelze provést při použití platební metody \"Nákup v aplikaci\"."
-  },
-  "manageSubscriptionFromStore": {
-    "message": "Své předplatné musíte spravovat z obchodu, pomocí kterého byl nákup v aplikaci proveden."
-  },
   "minLength": {
     "message": "Minimální délka"
   },
@@ -4403,7 +4394,7 @@
     "message": "Bude vyžadovat, aby členové ukládali položky do organizace tím, že odeberete možnost osobního trezoru."
   },
   "personalOwnershipExemption": {
-    "message": "Majitelé a administrátoři organizací jsou od prosazování těchto zásad osvobozeni."
+    "message": "Majitelé a správci organizací jsou od prosazování těchto zásad osvobozeni."
   },
   "personalOwnershipSubmitError": {
     "message": "Z důvodu podnikových zásad nemůžete ukládat položky do svého osobního trezoru. Změňte vlastnictví položky na organizaci a poté si vyberte z dostupných kolekcí."
@@ -4776,7 +4767,7 @@
     "message": "Automaticky zaregistrovat nové uživatele"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "Tato organizace má podnikové zásady, které Vás automaticky zaregistrují k obnovení hesla. Registrace umožní administrátorům organizace změnit Vaše hlavní heslo."
+    "message": "Tato organizace má podnikové zásady, které Vás automaticky zaregistrují k obnovení hesla. Registrace umožní správcům organizace změnit Vaše hlavní heslo."
   },
   "resetPasswordOrgKeysError": {
     "message": "Odpověď klíčů organizace je prázdná"
@@ -4921,7 +4912,7 @@
     "message": "Nelze přijmout pozvánku. Požádejte administrátora poskytovatele o zaslání nové pozvánky."
   },
   "providerInviteAcceptedDesc": {
-    "message": "K tomuto poskytovateli můžete přistupovat jakmile administrátor potvrdí Vaše členství. Až se tak stane, pošleme Vám e-mail."
+    "message": "K tomuto poskytovateli můžete přistupovat jakmile správce potvrdí Vaše členství. Až se tak stane, pošleme Vám e-mail."
   },
   "providerUsersNeedConfirmed": {
     "message": "Někteří uživatelé přijali pozvánku, ale nejdříve musí být potvrzeni. Dokud nedojde k potvrzení, nebudou mít tito uživatelé přístup k poskytovateli."
@@ -5003,7 +4994,7 @@
     "message": "Aktualizovat hlavní heslo"
   },
   "updateMasterPasswordWarning": {
-    "message": "Administrátor v organizaci nedávno změnil Vaše hlavní heslo. Pro přístup k trezoru jej nyní musíte změnit. Pokračování Vás odhlásí z Vaší aktuální relace a bude nutné se znovu přihlásit. Aktivní relace na jiných zařízeních mohou zůstat aktivní až po dobu jedné hodiny."
+    "message": "Správce v organizaci nedávno změnil Vaše hlavní heslo. Pro přístup k trezoru jej nyní musíte změnit. Pokračování Vás odhlásí z Vaší aktuální relace a bude nutné se znovu přihlásit. Aktivní relace na jiných zařízeních mohou zůstat aktivní až po dobu jedné hodiny."
   },
   "masterPasswordInvalidWarning": {
     "message": "Vaše hlavní heslo nesplňuje zásady Vaší organizace. Pro přístup k organizaci musíte nyní aktualizovat své hlavní heslo. Pokračování Vás odhlásí z Vaší aktuální relace a bude nutné se přihlásit. Aktivní relace na jiných zařízeních mohou zůstat aktivní až po dobu jedné hodiny."
@@ -7447,7 +7438,17 @@
   "collectionAccessRestricted": {
     "message": "Přístup ke kolekci je omezen"
   },
+  "grantCollectionAccess": {
+    "message": "Udělí skupinám nebo členům přístup k této kolekci."
+  },
+  "adminCollectionAccess": {
+    "message": "Správci mohou přistupovat ke kolekcím a spravovat je."
+  },
   "serviceAccountAccessUpdated": {
     "message": "Přístup účtu služby byl aktualizován"
+  },
+  "commonImportFormats": {
+    "message": "Společné formáty",
+    "description": "Label indicating the most common import formats"
   }
 }

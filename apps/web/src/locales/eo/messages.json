@@ -3828,15 +3828,6 @@
   "couldNotChargeCardPayInvoice": {
     "message": "Ni ne povis ŝargi vian karton. Bonvolu vidi kaj pagi la senpagitan fakturon listigitan sube."
   },
-  "inAppPurchase": {
-    "message": "En-aĉeta aĉeto"
-  },
-  "cannotPerformInAppPurchase": {
-    "message": "Vi ne povas plenumi ĉi tiun agon dum vi uzas en-programan aĉetan pagmanieron."
-  },
-  "manageSubscriptionFromStore": {
-    "message": "Vi devas administri vian abonon de la butiko, kie via aĉeta aĉeto estis farita."
-  },
   "minLength": {
     "message": "Minimuma longeco"
   },
@@ -7447,7 +7438,17 @@
   "collectionAccessRestricted": {
     "message": "Collection access is restricted"
   },
+  "grantCollectionAccess": {
+    "message": "Grant groups or members access to this collection."
+  },
+  "adminCollectionAccess": {
+    "message": "Administrators can access and manage collections."
+  },
   "serviceAccountAccessUpdated": {
     "message": "Service account access updated"
+  },
+  "commonImportFormats": {
+    "message": "Common formats",
+    "description": "Label indicating the most common import formats"
   }
 }

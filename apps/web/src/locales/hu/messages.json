@@ -3828,15 +3828,6 @@
   "couldNotChargeCardPayInvoice": {
     "message": "Nem lehet megterhelni a kártyát.  Nézzük át és fizessük ki az alább felsorolt kifizetés nélküli számlát."
   },
-  "inAppPurchase": {
-    "message": "Alkalmazáson belüli vásárlás"
-  },
-  "cannotPerformInAppPurchase": {
-    "message": "Nem hajtható végre ez a művelet az alkalmazáson belüli vásárlás fizetési módjának használatával."
-  },
-  "manageSubscriptionFromStore": {
-    "message": "Az előfizetés annál az üzletnél kell kezelni, ahol az alkalmazáson belüli vásárlás történt."
-  },
   "minLength": {
     "message": "Minimális hossz"
   },
@@ -7447,7 +7438,17 @@
   "collectionAccessRestricted": {
     "message": "A gyűjtemény elérése korlátozott."
   },
+  "grantCollectionAccess": {
+    "message": "Adjunk hozzáférést csoportoknak vagy személyeknek eennél a gyűjteménynél."
+  },
+  "adminCollectionAccess": {
+    "message": "Az adminisztrátorok elérhetik és kezelhetik a gyűjteményeket."
+  },
   "serviceAccountAccessUpdated": {
     "message": "A szolgáltatás fiók elérése frissítésre került."
+  },
+  "commonImportFormats": {
+    "message": "Általános formátumok",
+    "description": "Label indicating the most common import formats"
   }
 }

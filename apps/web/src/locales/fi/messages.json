@@ -136,7 +136,7 @@
     "message": "Erääntymisvuosi"
   },
   "authenticatorKeyTotp": {
-    "message": "2FA-todentajan avain (TOTP)"
+    "message": "Todennusavain (TOTP)"
   },
   "folder": {
     "message": "Kansio"
@@ -1624,7 +1624,7 @@
     "message": "Avain"
   },
   "twoStepAuthenticatorEnterCode": {
-    "message": "Syötä 6-numeroinen todennuskoodi todennussovelluksesta"
+    "message": "Syötä 6-numeroinen todennuskoodi todennussovelluksestasi"
   },
   "twoStepAuthenticatorReaddDesc": {
     "message": "Jos sinun on lisättävä tai siirrettävä todennus toiseen laitteeseen, löydät alta todennussovelluksesi tarvitseman QR-koodin (tai avaimen)."
@@ -2070,7 +2070,7 @@
     }
   },
   "bitwardenFamiliesPlan": {
-    "message": "Bitwarden Perheille -tilauksella."
+    "message": "Bitwarden Families -tilauksella."
   },
   "addons": {
     "message": "Laajennukset"
@@ -2409,13 +2409,13 @@
     }
   },
   "planNameFamilies": {
-    "message": "Perheille"
+    "message": "Families"
   },
   "planDescFamilies": {
     "message": "Henkilökohtaiseen käyttöön, jaettavaksi perheelle ja kavereille."
   },
   "planNameTeams": {
-    "message": "Tiimeille"
+    "message": "Teams"
   },
   "planDescTeams": {
     "message": "Yrityksille ja muille pienille ryhmäorganisaatioille."
@@ -2424,7 +2424,7 @@
     "message": "Teams Starter"
   },
   "planNameEnterprise": {
-    "message": "Yrityksille"
+    "message": "Enterprise"
   },
   "planDescEnterprise": {
     "message": "Yrityksille ja muille suurille organisaatioille."
@@ -3828,15 +3828,6 @@
   "couldNotChargeCardPayInvoice": {
     "message": "Emme voineet veloittaa korttiasi. Tarkasta ja maksa alla oleva maksamaton lasku, kiitos."
   },
-  "inAppPurchase": {
-    "message": "Sovelluksen sisäinen osto"
-  },
-  "cannotPerformInAppPurchase": {
-    "message": "Et voi suorittaa tätä toimintoa kun käytössä oleva maksutapa on sovelluksen sisäinen osto."
-  },
-  "manageSubscriptionFromStore": {
-    "message": "Sinun on hallittava tilaustasi sen kaupan kautta, jossa sovelluksen sisäinen ostos tehtiin."
-  },
   "minLength": {
     "message": "Vähimmäispituus"
   },
@@ -4035,10 +4026,10 @@
     "message": "Voit nyt sulkea tämän välilehden ja jatkaa laajennuksessa."
   },
   "includeAllTeamsFeatures": {
-    "message": "Kaikki Tiimeille-tilauksen ominaisuudet, sekä:"
+    "message": "Kaikki Teams-ominaisuudet, sekä:"
   },
   "includeAllTeamsStarterFeatures": {
-    "message": "Kaikki Tiimeille-aloitus-tilauksen ominaisuudet, sekä:"
+    "message": "Kaikki Teams Starter -tilauksen ominaisuudet, sekä:"
   },
   "chooseMonthlyOrAnnualBilling": {
     "message": "Valitse kuukausi- tai vuosilaskutus"
@@ -4102,7 +4093,7 @@
     "message": "Edellytys"
   },
   "requireSsoPolicyReq": {
-    "message": "\"Yksittäinen organisaatio\" -käytäntö on otettava käyttöön ennen tämän käytännön käyttöönottoa."
+    "message": "\"Yksittäinen organisaatio\" -yrityskäytäntö on otettava käyttöön ennen tämän käyttöönottoa."
   },
   "requireSsoPolicyReqError": {
     "message": "\"Yksittäinen organisaatio\" -käytäntöä ei ole määritetty."
@@ -4406,7 +4397,7 @@
     "message": "Organisaation omistajat ja ylläpitäjät on vapautettu tämän käytännön piiristä."
   },
   "personalOwnershipSubmitError": {
-    "message": "Yrityskäytännön johdosta kohteiden tallennus yksityinen holviisi ei ole mahdollista. Muuta omistusasetus organisaatiolle ja valitse käytettävissä olevista kokoelmista."
+    "message": "Yrityskäytännön johdosta kohteiden tallennus yksityiseen holviin ei ole mahdollista. Muuta omistusasetus organisaatiolle ja valitse käytettävissä olevista kokoelmista."
   },
   "disableSend": {
     "message": "Poista Send"
@@ -4482,7 +4473,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Custom roles is an enterprise feature. Contact our support team to upgrade your subscription'"
   },
   "customNonEnterpriseError": {
-    "message": "Mukautetut käyttöoikeudet edellyttävät, että organisaatiolla on Yrityksille 2020 -tilaus."
+    "message": "Mukautetut käyttöoikeudet edellyttävät, että organisaatiolla on Enterprise 2020 -tilaus."
   },
   "permissions": {
     "message": "Käyttöoikeudet"
@@ -4767,7 +4758,7 @@
     "message": "Olemassa olevat tilit, joille on määritetty pääsalasanat, edellyttävät jäsenten omatoimista liittymistä ennen kuin järjestelmänvalvojat voivat palauttaa heidän tilejään. Automaattinen liitos kytkee myös tilin palautuksen käyttöön uusille jäsenille."
   },
   "accountRecoverySingleOrgRequirementDesc": {
-    "message": "\"Yksittäinen organisaatio\" -käytäntö on otettava käyttöön ennen tämän käytännön käyttöönottoa."
+    "message": "\"Yksittäinen organisaatio\" -yrityskäytäntö on otettava käyttöön ennen tämän käyttöönottoa."
   },
   "resetPasswordPolicyAutoEnroll": {
     "message": "Automaattinen liitos"
@@ -4776,7 +4767,7 @@
     "message": "Vaadi uusien jäsenten automaattinen liitos"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "Organisaatiolla on käytäntö, joka liittää tilisi automaattisesti salasanan palautusapuun. Liitos sallii organisaation ylläpitäjien vaihtaa pääsalasanasi."
+    "message": "Organisaatiolla on yrityskäytäntö, joka liittää tilisi automaattisesti salasanan palautusapuun. Liitos sallii organisaation ylläpitäjien vaihtaa pääsalasanasi."
   },
   "resetPasswordOrgKeysError": {
     "message": "Organisaatioavainten vastaus on tyhjä"
@@ -5219,16 +5210,16 @@
     "message": "Kertakirjautumisen määritykset tallennettiin."
   },
   "sponsoredFamilies": {
-    "message": "Ilmainen Bitwarden Perheille"
+    "message": "Ilmainen Bitwarden Families"
   },
   "sponsoredFamiliesEligible": {
-    "message": "Sinä ja perheesi olette oikeutettuja ilmaiseen Bitwarden Perheille -tilaukseen. Lunasta tarjous henkilökohtaisella sähköpostiosoitteellasi suojataksesi tietosi myös töiden ulkopuolella."
+    "message": "Sinä ja perheesi olette oikeutettuja ilmaiseen Bitwarden Families -tilaukseen. Lunasta tarjous henkilökohtaisella sähköpostiosoitteellasi suojataksesi tietosi myös töiden ulkopuolella."
   },
   "sponsoredFamiliesEligibleCard": {
-    "message": "Lunasta ilmainen Bitwarden Perheille -tilauksesi tänään suojataksesi tietosi myös töiden ulkopuolella."
+    "message": "Lunasta ilmainen Bitwarden Families -tilauksesi tänään suojataksesi tietosi myös töiden ulkopuolella."
   },
   "sponsoredFamiliesInclude": {
-    "message": "Bitwarden Perheille -tilaus sisältää"
+    "message": "Bitwarden Families -tilaus sisältää"
   },
   "sponsoredFamiliesPremiumAccess": {
     "message": "Premium-käyttöoikeudet 6 käyttäjälle"
@@ -5249,19 +5240,19 @@
     "message": "Valitse organisaatio, jota haluat sponsoroida"
   },
   "familiesSponsoringOrgSelect": {
-    "message": "Minkä ilmaisen Perheille-tilauksen tarjouksen haluaisit lunastaa?"
+    "message": "Minkä ilmaisen Families-tarjouksen haluaisit lunastaa?"
   },
   "sponsoredFamiliesEmail": {
-    "message": "Syötä henkilökohtainen sähköpostiosoitteesi lunastaaksesi Bitwarden Perheille -tilauksen"
+    "message": "Syötä henkilökohtainen sähköpostiosoitteesi lunastaaksesi Bitwarden Families -tilauksen"
   },
   "sponsoredFamiliesLeaveCopy": {
-    "message": "Jos poistat tarjouksen tai sinut poistetaan sponsoroivasta organisaatiosta, päättyy Perheille-sponsorointisi seuraavana uudistusajankohtana."
+    "message": "Jos poistat tarjouksen tai sinut poistetaan sponsoroivasta organisaatiosta, päättyy Families-sponsorointisi seuraavana uudistusajankohtana."
   },
   "acceptBitwardenFamiliesHelp": {
-    "message": "Hyväksy tarjous olemassa olevalla organisaatiolla tai luo uusi Perheille-organisaatio."
+    "message": "Hyväksy tarjous olemassa olevalla organisaatiolla tai luo uusi Families-organisaatio."
   },
   "setupSponsoredFamiliesLoginDesc": {
-    "message": "Sinulle on tarjottu ilmaista Bitwarden Perheille -organisaatiota. Jatka kirjautumalla tarjouksen saaneelle tilille."
+    "message": "Sinulle on tarjottu ilmaista Bitwarden Families -organisaatiota. Jatka kirjautumalla tarjouksen saaneelle tilille."
   },
   "sponsoredFamiliesAcceptFailed": {
     "message": "Tarjousta ei voitu hyväksyä. Lähetä tarjoussähköposti yritystililtäsi uudestaan ja yritä sitten uudelleen."
@@ -5276,10 +5267,10 @@
     }
   },
   "sponsoredFamiliesOffer": {
-    "message": "Hyväksy ilmainen Bitwarden Perheille"
+    "message": "Hyväksy ilmainen Bitwarden Families"
   },
   "sponsoredFamiliesOfferRedeemed": {
-    "message": "Ilmaisen Bitwarden Perheille -tarjouksen lunastus onnistui"
+    "message": "Ilmainen Bitwarden Families -tarjous on lunastettu"
   },
   "redeemed": {
     "message": "Lunastettu"
@@ -5306,7 +5297,7 @@
     }
   },
   "freeFamiliesPlan": {
-    "message": "Ilmainen Perheille-tilaus"
+    "message": "Ilmainen Families-tilaus"
   },
   "redeemNow": {
     "message": "Lunasta nyt"
@@ -5327,7 +5318,7 @@
     "message": "Sähköposti lähetettiin"
   },
   "revokeSponsorshipConfirmation": {
-    "message": "Tilin poiston jälkeen Perheille-tilauksen sponsorointi päättyy kuluvan laskutusjakson lopussa. Et voi lunastaa uuttaa sponsorointitarjousta ennen nykyisen päättymistä. Haluatko varmasti jatkaa?"
+    "message": "Tilin poiston jälkeen Families-tilauksen sponsorointi päättyy kuluvan laskutusjakson lopussa. Et voi lunastaa uuttaa sponsorointitarjousta ennen nykyisen päättymistä. Haluatko varmasti jatkaa?"
   },
   "removeSponsorshipSuccess": {
     "message": "Sponsorointi poistettiin"
@@ -5444,7 +5435,7 @@
     "message": "Sponsorointitarjous on päättynyt. Voit poistaa luomasi organisaation välttääksesi veloituksen 7 päivän kokeilujaksosi päättyessä. Muussa tapauksessa voit sulkea ilmoituksen, jolloin organisaatio säilyy sinulla ja vastaat jatkossa siihen liittyvistä laskuista."
   },
   "newFamiliesOrganization": {
-    "message": "Uusi Perheille-organisaatio"
+    "message": "Uusi Families-organisaatio"
   },
   "acceptOffer": {
     "message": "Hyväksy tarjous"
@@ -5501,13 +5492,13 @@
     "message": "Itse ylläpidetty"
   },
   "selfHostingEnterpriseOrganizationSectionCopy": {
-    "message": "Määrittääksesi organisaation omalle palvelimellesi, on lisenssitiedosto tallennettava sinne. Sinun on määritettävä laskutuksen synkronointi, jotta ilmaiset Perheille-tilaukset ja edistyneet laskutusominaisuudet ovat itse ylläpitämäsi organisaation käytettävissä."
+    "message": "Määrittääksesi organisaation omalle palvelimellesi, on lisenssitiedosto tallennettava sinne. Sinun on määritettävä laskutuksen synkronointi, jotta ilmaiset Families-tilaukset ja edistyneet laskutusominaisuudet ovat itse ylläpitämäsi organisaation käytettävissä."
   },
   "billingSyncApiKeyRotated": {
     "message": "Tunniste uudistettiin"
   },
   "billingSyncDesc": {
-    "message": "Laskutuksen synkronointi avaa palvelimellesi Perheille-sponsoroinnin ja automaattisen lisenssin synkronoinnin. Tehtyäsi muutokset Bitwardenin pilvipalvelimelle, ota ne käyttöön valitsemalla \"Synkronoi lisenssi\"."
+    "message": "Laskutuksen synkronointi avaa palvelimellesi Families-sponsoroinnin ja automaattisen lisenssin synkronoinnin. Tehtyäsi muutokset Bitwardenin pilvipalvelimelle, ota ne käyttöön valitsemalla \"Synkronoi lisenssi\"."
   },
   "billingSyncKeyDesc": {
     "message": "Lomakkeen täyttöön tarvitaan laskutuksen synkronointitunniste pilviorganisaatiosi tilausasetuksista."
@@ -6668,7 +6659,7 @@
     }
   },
   "teamsStarterPlanInvLimitReachedManageBilling": {
-    "message": "Teams Starter -tilauksilla voi olla enintään $SEATCOUNT$ jäsentä. Päivitä tilauksesi kutsuaksesi lisää jäseniä.",
+    "message": "Teams Starter -tilaukset voivat sisältää enintään $SEATCOUNT$ jäsentä. Kutsu lisää jäseniä päivittämällä tilauksesi.",
     "placeholders": {
       "seatcount": {
         "content": "$1",
@@ -6677,7 +6668,7 @@
     }
   },
   "teamsStarterPlanInvLimitReachedNoManageBilling": {
-    "message": "Teams Starter -tilauksessa voi olla enintään $SEATCOUNT$ jäsentä. Päivitä tilauksesi ja kutsu lisää jäseniä ottamalla yhteyttä organisaatiosi omistajaan.",
+    "message": "Teams Starter -tilaukset voivat sisältää enintään $SEATCOUNT$ jäsentä. Ole tilauspäivityksestä ja jäsenten lisäöysksestä yhteydessä organisaatiosi omistajaan.",
     "placeholders": {
       "seatcount": {
         "content": "$1",
@@ -7447,7 +7438,17 @@
   "collectionAccessRestricted": {
     "message": "Kokoelman käyttöä on rajoitettu"
   },
+  "grantCollectionAccess": {
+    "message": "Myönnä ryhmille tai henkilöille kokoelman käyttöoikeus."
+  },
+  "adminCollectionAccess": {
+    "message": "Ylläpitäjät voivat käyttää ja hallinnoida kokoelmia."
+  },
   "serviceAccountAccessUpdated": {
     "message": "Palvelutilin oikeuksia muutettiin"
+  },
+  "commonImportFormats": {
+    "message": "Yleiset muodot",
+    "description": "Label indicating the most common import formats"
   }
 }

@@ -3828,15 +3828,6 @@
   "couldNotChargeCardPayInvoice": {
     "message": "我們無法從您的支付卡扣款。請檢視並支付以下尚未付清的款項。"
   },
-  "inAppPurchase": {
-    "message": "應用程式內購買"
-  },
-  "cannotPerformInAppPurchase": {
-    "message": "使用程式內購買這種付款方式時，無法執行這個動作。"
-  },
-  "manageSubscriptionFromStore": {
-    "message": "您必須在進行應用程式內購買的商店中管理訂閱。"
-  },
   "minLength": {
     "message": "最小長度"
   },
@@ -7447,7 +7438,17 @@
   "collectionAccessRestricted": {
     "message": "Collection access is restricted"
   },
+  "grantCollectionAccess": {
+    "message": "Grant groups or members access to this collection."
+  },
+  "adminCollectionAccess": {
+    "message": "Administrators can access and manage collections."
+  },
   "serviceAccountAccessUpdated": {
     "message": "Service account access updated"
+  },
+  "commonImportFormats": {
+    "message": "Common formats",
+    "description": "Label indicating the most common import formats"
   }
 }

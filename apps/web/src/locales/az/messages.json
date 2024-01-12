@@ -202,11 +202,11 @@
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Uyğunluq aşkarlaması",
+    "message": "Uyuşmanı aşkarlama",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "İlkin uyğunluq aşkarlaması",
+    "message": "İlkin uyuşma aşkarlaması",
     "description": "Default URI match detection for auto-fill."
   },
   "never": {
@@ -790,7 +790,7 @@
     }
   },
   "masterPassDoesntMatch": {
-    "message": "Ana parolun təsdiqi uyğun gəlmir."
+    "message": "Ana parolun təsdiqi uyuşmur."
   },
   "newAccountCreated": {
     "message": "Yeni hesabınız yaradıldı! İndi giriş edə bilərsiniz."
@@ -1120,7 +1120,7 @@
     "message": "Parolla qorunur"
   },
   "filePasswordAndConfirmFilePasswordDoNotMatch": {
-    "message": "\"Fayl parolu\" və \"Fayl parolunu təsdiqlə\" uyğunlaşmır."
+    "message": "\"Fayl parolu\" və \"Fayl parolunu təsdiqlə\" uyuşmur."
   },
   "confirmVaultImport": {
     "message": "Anbarın daxilə köçürülməsini təsdiqlə"
@@ -1390,7 +1390,7 @@
     "message": "Heç nə idxal edilmədi."
   },
   "importEncKeyError": {
-    "message": "İxrac edilən faylın parolu açılarkən xəta baş verdi. Şifrələmə açarınız, verilənlərin ixracında istifadə olunan şifrələmə açarı ilə uyğunlaşmır."
+    "message": "Xaricə köçürülən faylın şifrəsi açılarkən xəta baş verdi. Şifrələmə açarınız, datanı xaricə köçürmək üçün istifadə edilən şifrələmə açarı ilə uyuşmur."
   },
   "importDestination": {
     "message": "Hədəfi daxilə köçür"
@@ -2646,7 +2646,7 @@
     "message": "Xarici kimlik, referans olaraq və ya bu mənbəni istifadəçi kataloqu kimi xarici bir sistemə bağlamaq üçün istifadə edilir."
   },
   "nestCollectionUnder": {
-    "message": "Nest collection under"
+    "message": "Kolleksiyanı bunun altında yerləşdir"
   },
   "accessControl": {
     "message": "Müraciət nəzarəti"
@@ -3781,7 +3781,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "fingerprintMatchInfo": {
-    "message": "Lütfən anbarınızın kilidinin açıq olduğuna və Barmaq izi ifadəsinin digər cihazla uyğunlaşdığına əmin olun."
+    "message": "Lütfən anbarınızın kilidinin açıq olduğuna və Barmaq izi ifadəsinin digər cihazla uyuşduğuna əmin olun."
   },
   "fingerprintPhraseHeader": {
     "message": "Barmaq izi ifadəsi"
@@ -3827,15 +3827,6 @@
   },
   "couldNotChargeCardPayInvoice": {
     "message": "Kartınızdan ödənişi ala bilmədik. Lütfən aşağıda sadalanan ödənilməmiş fakturanı göstərin və ödəyin."
-  },
-  "inAppPurchase": {
-    "message": "Tətbiq daxili satın alma"
-  },
-  "cannotPerformInAppPurchase": {
-    "message": "Tətbiq daxili satın alma metodunu istifadə edərkən bu əməliyyatı icra edə bilməzsiniz."
-  },
-  "manageSubscriptionFromStore": {
-    "message": "Abunəliyinizi tətbiq daxili satın almanı etdiyiniz mağazadan idarə etməlisiniz."
   },
   "minLength": {
     "message": "Minimal uzunluq"
@@ -6668,7 +6659,7 @@
     }
   },
   "teamsStarterPlanInvLimitReachedManageBilling": {
-    "message": "Teams Starter plans may have up to $SEATCOUNT$ members. Upgrade to your plan to invite more members.",
+    "message": "Teams Starter planlarında ən çox $SEATCOUNT$ üzv ola bilər. Daha çox üzv dəvət etmək üçün planınızı yüksəldin.",
     "placeholders": {
       "seatcount": {
         "content": "$1",
@@ -7447,7 +7438,17 @@
   "collectionAccessRestricted": {
     "message": "Kolleksiya müraciəti məhdudlaşdırıldı"
   },
+  "grantCollectionAccess": {
+    "message": "Qrup və ya üzvlərin bu kolleksiyaya müraciətinə icazə verin."
+  },
+  "adminCollectionAccess": {
+    "message": "Administratorlar kolleksiyalara müraciət edə və onları idarə edə bilər."
+  },
   "serviceAccountAccessUpdated": {
     "message": "Xidmət hesabına müraciət güncəlləndi"
+  },
+  "commonImportFormats": {
+    "message": "Ortaq formatlar",
+    "description": "Label indicating the most common import formats"
   }
 }

@@ -675,7 +675,7 @@
     "message": "Šifriranje nije podržano"
   },
   "enablePasskeyEncryption": {
-    "message": "Set up encryption"
+    "message": "Postavi enkripciju"
   },
   "usedForEncryption": {
     "message": "Koristi se za šifriranje"
@@ -1057,7 +1057,7 @@
     "message": "Potvrdi izvoz trezora"
   },
   "confirmSecretsExport": {
-    "message": "Confirm secrets export"
+    "message": "Potvrdi export trezora"
   },
   "exportWarningDesc": {
     "message": "Ovaj izvoz sadrži podatke trezora u nešifriranom obliku! Izvezenu datoteku se ne bi smjelo pohranjivati ili slati putem nesigurnih kanala (npr. e-poštom). Izbriši ju odmah nakon završetka korištenja."
@@ -1075,7 +1075,7 @@
     "message": "Izvoz"
   },
   "exportFrom": {
-    "message": "Export from"
+    "message": "Izvezi iz"
   },
   "exportVault": {
     "message": "Izvezi trezor"
@@ -1154,7 +1154,7 @@
     "message": "Duljina"
   },
   "passwordMinLength": {
-    "message": "Minimum password length"
+    "message": "Minimalna duljina lozinke"
   },
   "uppercase": {
     "message": "Velika slova (A - Z)",
@@ -2317,7 +2317,7 @@
     "message": "Kontaktiraj službu za korisnike"
   },
   "contactSupportShort": {
-    "message": "Contact Support"
+    "message": "Kontaktirajte podršku"
   },
   "updatedPaymentMethod": {
     "message": "Ažurirani način plaćanja."
@@ -3531,7 +3531,7 @@
     }
   },
   "subscriptionUserSeatsWithoutAdditionalSeatsOption": {
-    "message": "You can invite up to $COUNT$ members for no additional charge. Contact Customer Support to upgrade your plan and invite more members.",
+    "message": "Možeš pozvati do $COUNT$ članova bez dodatnih troškova. Kontaktiraj korisničku podršku kako bi nadogradio plan i pozvao više članova.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3549,7 +3549,7 @@
     }
   },
   "subscriptionUpgrade": {
-    "message": "You cannot invite more than $COUNT$ members without upgrading your plan.",
+    "message": "Nije moguće pozvati više od $COUNT$ korisnika bez nadogradnje plana.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3828,15 +3828,6 @@
   "couldNotChargeCardPayInvoice": {
     "message": "Nismo uspjeli teretiti karticu. Molimo, pogledaj i plati sljedeću neplaćenu fakturu."
   },
-  "inAppPurchase": {
-    "message": "Kupnja putem aplikacije"
-  },
-  "cannotPerformInAppPurchase": {
-    "message": "Nije moguće izvršiti ovu radnju dok se koristi način plaćanja putem aplikcaije."
-  },
-  "manageSubscriptionFromStore": {
-    "message": "Upravljanje pretplatom moguće je samo iz dućana u kojem je napravljena kupnja iz aplikacije."
-  },
   "minLength": {
     "message": "Najmanja duljina"
   },
@@ -4044,7 +4035,7 @@
     "message": "Choose monthly or annual billing"
   },
   "abilityToAddMoreThanNMembers": {
-    "message": "Ability to add more than $COUNT$ members",
+    "message": "Mogućnost dodavanja više od $COUNT$ članova",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -4240,7 +4231,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "downloadAttachments": {
-    "message": "Download attachments"
+    "message": "Preuzmi privitke"
   },
   "sendAccessUnavailable": {
     "message": "Send kojem pokušavaš pristupiti više ne postoji ili više nije dostupan.",
@@ -4631,7 +4622,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or sign up to **try it today.**'"
   },
   "sendAccessCreatorIdentifier": {
-    "message": "Bitwarden member $USER_IDENTIFIER$ shared the following with you",
+    "message": "Bitwarden korisnik $USER_IDENTIFIER$ je s tobom podijelio",
     "placeholders": {
       "user_identifier": {
         "content": "$1",
@@ -4761,7 +4752,7 @@
     "message": "Administracija oporavka računa"
   },
   "accountRecoveryPolicyDesc": {
-    "message": "Based on the encryption method, recover accounts when master passwords or trusted devices are forgotten or lost."
+    "message": "Na temelju metode šifriranja, oporavi račun ako glavna lozinka ili pouzdani uređaji budu zaboravljeni ili izgubljeni."
   },
   "accountRecoveryPolicyWarning": {
     "message": "Existing accounts with master passwords will require members to self-enroll before administrators can recover their accounts. Automatic enrollment will turn on account recovery for new members."
@@ -7048,7 +7039,7 @@
     "message": "Pouzdani uređaji"
   },
   "memberDecryptionOptionTdeDescriptionPartOne": {
-    "message": "Once authenticated, members will decrypt vault data using a key stored on their device. The",
+    "message": "Jednom autentificirani, korisnici će moći dešifrirati podatke u trezoru koristeći svoju glavnu lozinku",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO Required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionOptionTdeDescriptionLinkOne": {
@@ -7447,7 +7438,17 @@
   "collectionAccessRestricted": {
     "message": "Collection access is restricted"
   },
+  "grantCollectionAccess": {
+    "message": "Grant groups or members access to this collection."
+  },
+  "adminCollectionAccess": {
+    "message": "Administrators can access and manage collections."
+  },
   "serviceAccountAccessUpdated": {
     "message": "Service account access updated"
+  },
+  "commonImportFormats": {
+    "message": "Common formats",
+    "description": "Label indicating the most common import formats"
   }
 }

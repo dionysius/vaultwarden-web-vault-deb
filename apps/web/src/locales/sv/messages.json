@@ -1075,7 +1075,7 @@
     "message": "Exportera"
   },
   "exportFrom": {
-    "message": "Export from"
+    "message": "Exportera från"
   },
   "exportVault": {
     "message": "Exportera valv"
@@ -3828,15 +3828,6 @@
   "couldNotChargeCardPayInvoice": {
     "message": "Det gick inte att debitera ditt kort. Vänligen granska och betala den obetalda fakturan som visas nedan."
   },
-  "inAppPurchase": {
-    "message": "Köp i appen"
-  },
-  "cannotPerformInAppPurchase": {
-    "message": "Du kan inte utföra denna åtgärd när du använder köp i appen som betalningsmetod."
-  },
-  "manageSubscriptionFromStore": {
-    "message": "Du måste hantera ditt abonnemang från butiken där ditt köp i appen gjordes."
-  },
   "minLength": {
     "message": "Minsta längd"
   },
@@ -4527,7 +4518,7 @@
     "message": "Redigera tilldelade samlingar"
   },
   "deleteAssignedCollections": {
-    "message": "Ta bort tilldelade samlingar"
+    "message": "Radera tilldelade samlingar"
   },
   "manageGroups": {
     "message": "Hantera grupper"
@@ -6773,7 +6764,7 @@
     }
   },
   "uploadLicense": {
-    "message": "Upload license"
+    "message": "Ladda upp licens"
   },
   "projectPeopleDescription": {
     "message": "Grant groups or people access to this project."
@@ -7293,7 +7284,7 @@
     }
   },
   "subscribeToSecretsManager": {
-    "message": "Subscribe to Secrets Manager"
+    "message": "Prenumerera på Secrets Manager"
   },
   "addSecretsManagerUpgradeDesc": {
     "message": "Add Secrets Manager to your upgraded plan to maintain access to any secrets created with your previous plan."
@@ -7447,7 +7438,17 @@
   "collectionAccessRestricted": {
     "message": "Collection access is restricted"
   },
+  "grantCollectionAccess": {
+    "message": "Ge grupper eller medlemmar tillgång till denna samling."
+  },
+  "adminCollectionAccess": {
+    "message": "Administratörer kan komma åt och hantera samlingar."
+  },
   "serviceAccountAccessUpdated": {
     "message": "Service account access updated"
+  },
+  "commonImportFormats": {
+    "message": "Common formats",
+    "description": "Label indicating the most common import formats"
   }
 }

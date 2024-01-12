@@ -3828,15 +3828,6 @@
   "couldNotChargeCardPayInvoice": {
     "message": "Δεν ήταν δυνατή η χρέωση της κάρτας σας. Παρακαλούμε δείτε και πληρώστε το μη πληρωθέν παραστατικό που παρατίθεται παρακάτω."
   },
-  "inAppPurchase": {
-    "message": "Αγορές εντός εφαρμογής"
-  },
-  "cannotPerformInAppPurchase": {
-    "message": "Δεν μπορείτε να εκτελέσετε αυτήν την ενέργεια κατά τη χρήση μεθόδου αγοράς και πληρωμής μέσω εφαρμογής."
-  },
-  "manageSubscriptionFromStore": {
-    "message": "Πρέπει να διαχειριστείτε τη συνδρομή σας από το κατάστημα όπου έγινε η αγορά σας μέσω εφαρμογής."
-  },
   "minLength": {
     "message": "Ελάχιστο Μήκος"
   },
@@ -7447,7 +7438,17 @@
   "collectionAccessRestricted": {
     "message": "Collection access is restricted"
   },
+  "grantCollectionAccess": {
+    "message": "Grant groups or members access to this collection."
+  },
+  "adminCollectionAccess": {
+    "message": "Administrators can access and manage collections."
+  },
   "serviceAccountAccessUpdated": {
     "message": "Service account access updated"
+  },
+  "commonImportFormats": {
+    "message": "Common formats",
+    "description": "Label indicating the most common import formats"
   }
 }

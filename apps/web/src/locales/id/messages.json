@@ -3828,15 +3828,6 @@
   "couldNotChargeCardPayInvoice": {
     "message": "Kami tidak dapat menagih kartu Anda. Harap lihat dan bayar faktur yang belum dibayar yang tercantum di bawah."
   },
-  "inAppPurchase": {
-    "message": "Pembelian dalam Aplikasi"
-  },
-  "cannotPerformInAppPurchase": {
-    "message": "Anda tidak dapat melakukan tindakan ini saat menggunakan metode pembayaran pembelian dalam aplikasi."
-  },
-  "manageSubscriptionFromStore": {
-    "message": "Anda harus mengelola langganan Anda dari toko tempat pembelian dalam aplikasi Anda dilakukan."
-  },
   "minLength": {
     "message": "Panjang Minimum"
   },
@@ -7447,7 +7438,17 @@
   "collectionAccessRestricted": {
     "message": "Collection access is restricted"
   },
+  "grantCollectionAccess": {
+    "message": "Grant groups or members access to this collection."
+  },
+  "adminCollectionAccess": {
+    "message": "Administrators can access and manage collections."
+  },
   "serviceAccountAccessUpdated": {
     "message": "Service account access updated"
+  },
+  "commonImportFormats": {
+    "message": "Common formats",
+    "description": "Label indicating the most common import formats"
   }
 }

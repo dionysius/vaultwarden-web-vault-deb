@@ -3828,15 +3828,6 @@
   "couldNotChargeCardPayInvoice": {
     "message": "카드에 청구할 수 없습니다. 아래 목록에서 결제되지 않은 인보이스를 확인하고 결제해주세요."
   },
-  "inAppPurchase": {
-    "message": "애플리케이션 내 구매"
-  },
-  "cannotPerformInAppPurchase": {
-    "message": "인 앱 결제 수단을 사용하고 있을 때에는 이 행동을 수행할 수 없습니다."
-  },
-  "manageSubscriptionFromStore": {
-    "message": "인 앱 결제가 이루어진 스토어에서 구독을 관리해야 합니다."
-  },
   "minLength": {
     "message": "최소 길이"
   },
@@ -7447,7 +7438,17 @@
   "collectionAccessRestricted": {
     "message": "Collection access is restricted"
   },
+  "grantCollectionAccess": {
+    "message": "Grant groups or members access to this collection."
+  },
+  "adminCollectionAccess": {
+    "message": "Administrators can access and manage collections."
+  },
   "serviceAccountAccessUpdated": {
     "message": "Service account access updated"
+  },
+  "commonImportFormats": {
+    "message": "Common formats",
+    "description": "Label indicating the most common import formats"
   }
 }

@@ -2057,7 +2057,7 @@
     }
   },
   "premiumPriceWithFamilyPlan": {
-    "message": "Passa a Premium per solo $PRICE$/anno, o condividi Premium con $FAMILYPLANUSERCOUNT$ utenti e ottieni condivisione in famiglia illimitata con il ",
+    "message": "Passa a Premium per soli $PRICE$ /anno o ottieni un account Premium per $FAMILYPLANUSERCOUNT$ utenti e condivisione in famiglia senza limiti con il ",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -3827,15 +3827,6 @@
   },
   "couldNotChargeCardPayInvoice": {
     "message": "Non siamo riusciti ad addebitare la tua carta. Visualizza e paga la fattura non pagata qui sotto."
-  },
-  "inAppPurchase": {
-    "message": "Acquisto in-app"
-  },
-  "cannotPerformInAppPurchase": {
-    "message": "Non puoi eseguire questa azione usando un metodo di acquisto in-app."
-  },
-  "manageSubscriptionFromStore": {
-    "message": "Devi gestire il tuo abbonamento dall'app dove hai effettuato l'acquisto in-app."
   },
   "minLength": {
     "message": "Lunghezza minima"
@@ -7447,7 +7438,17 @@
   "collectionAccessRestricted": {
     "message": "L'accesso alla raccolta è limitato"
   },
+  "grantCollectionAccess": {
+    "message": "Consenti a gruppi o membri di accedere a questa raccolta."
+  },
+  "adminCollectionAccess": {
+    "message": "Gli amministratori possono accedere e gestire le raccolte."
+  },
   "serviceAccountAccessUpdated": {
     "message": "Accesso all'account di servizio aggiornato"
+  },
+  "commonImportFormats": {
+    "message": "Formati comuni",
+    "description": "Label indicating the most common import formats"
   }
 }

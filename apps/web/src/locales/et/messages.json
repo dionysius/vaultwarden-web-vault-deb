@@ -3828,15 +3828,6 @@
   "couldNotChargeCardPayInvoice": {
     "message": "Meil ei õnnestunud kaardil olevat raha kasutada. Palun vaata all olevat arvet ja maksa see käsitsi."
   },
-  "inAppPurchase": {
-    "message": "Äpi sisene maksmine"
-  },
-  "cannotPerformInAppPurchase": {
-    "message": "Seda tegevust ei saa sooritada, sest kasutad äpi sisest maksemeetodit."
-  },
-  "manageSubscriptionFromStore": {
-    "message": "Saad oma tellimust hallata poest, kust äpi sisese ostu sooritasid."
-  },
   "minLength": {
     "message": "Minimaalne pikkus"
   },
@@ -7447,7 +7438,17 @@
   "collectionAccessRestricted": {
     "message": "Collection access is restricted"
   },
+  "grantCollectionAccess": {
+    "message": "Grant groups or members access to this collection."
+  },
+  "adminCollectionAccess": {
+    "message": "Administrators can access and manage collections."
+  },
   "serviceAccountAccessUpdated": {
     "message": "Service account access updated"
+  },
+  "commonImportFormats": {
+    "message": "Common formats",
+    "description": "Label indicating the most common import formats"
   }
 }

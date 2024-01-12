@@ -3828,15 +3828,6 @@
   "couldNotChargeCardPayInvoice": {
     "message": "あなたのカードで決済することができませんでした。以下の未払いの請求書をご確認いただき、お支払いください。"
   },
-  "inAppPurchase": {
-    "message": "アプリ内購入"
-  },
-  "cannotPerformInAppPurchase": {
-    "message": "アプリ内購入を使用している間はこのアクションはできません。"
-  },
-  "manageSubscriptionFromStore": {
-    "message": "アプリ内購入したストアでサブスクリプションを管理してください。"
-  },
   "minLength": {
     "message": "最小文字数"
   },
@@ -7447,7 +7438,17 @@
   "collectionAccessRestricted": {
     "message": "コレクションへのアクセスが制限されています"
   },
+  "grantCollectionAccess": {
+    "message": "グループまたはメンバーにこのコレクションへのアクセスを許可します。"
+  },
+  "adminCollectionAccess": {
+    "message": "管理者はコレクションにアクセスし、管理することができます。"
+  },
   "serviceAccountAccessUpdated": {
     "message": "サービスアカウントへのアクセスが更新されました"
+  },
+  "commonImportFormats": {
+    "message": "一般的な形式",
+    "description": "Label indicating the most common import formats"
   }
 }

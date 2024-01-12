@@ -3828,15 +3828,6 @@
   "couldNotChargeCardPayInvoice": {
     "message": "Nepodarilo sa nám vykonať platbu pomocou vašej karty. Prosím pozrite si a zaplaťte neuhradenú faktúru nižšie."
   },
-  "inAppPurchase": {
-    "message": "Nákupy v aplikácii"
-  },
-  "cannotPerformInAppPurchase": {
-    "message": "Tato akcia sa nedá vykonať ak používate platbu pomocou nákupu v aplikácii."
-  },
-  "manageSubscriptionFromStore": {
-    "message": "Predplatné musíte spravovať v obchode kde ste vykonali nákup cez aplikáciu."
-  },
   "minLength": {
     "message": "Minimálna dĺžka"
   },
@@ -7447,7 +7438,17 @@
   "collectionAccessRestricted": {
     "message": "Collection access is restricted"
   },
+  "grantCollectionAccess": {
+    "message": "Povoľte skupinám, alebo jednotlivcom prístup k tejto zbierke."
+  },
+  "adminCollectionAccess": {
+    "message": "Správcovia môžu pristupovať k a spravovať zbierky."
+  },
   "serviceAccountAccessUpdated": {
     "message": "Prístup služobného konta aktualizovaný"
+  },
+  "commonImportFormats": {
+    "message": "Common formats",
+    "description": "Label indicating the most common import formats"
   }
 }
