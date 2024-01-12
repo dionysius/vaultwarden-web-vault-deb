@@ -2297,7 +2297,7 @@
     "message": "Jak autouzupełniać"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Select an item from this screen, use the shortcut $COMMAND$, or explore other options in settings.",
+    "message": "Wybierz element z tego ekranu, użyj skrótu $COMMAND$ lub zobacz inne opcje w ustawieniach.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2306,7 +2306,7 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "Select an item from this screen, or explore other options in settings."
+    "message": "Wybierz element z tego ekranu lub zobacz inne opcje w ustawieniach."
   },
   "gotIt": {
     "message": "Rozumiem"
@@ -2888,5 +2888,9 @@
         "example": "google.com"
       }
     }
+  },
+  "commonImportFormats": {
+    "message": "Popularne formaty",
+    "description": "Label indicating the most common import formats"
   }
 }

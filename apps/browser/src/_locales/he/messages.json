@@ -59,7 +59,7 @@
     "message": "הכספת שלי"
   },
   "allVaults": {
-    "message": "All vaults"
+    "message": "כל הכספות"
   },
   "tools": {
     "message": "כלים"
@@ -92,37 +92,37 @@
     "message": "השלמה אוטומטית"
   },
   "autoFillLogin": {
-    "message": "Auto-fill login"
+    "message": "מילוי פרטי כניסה אוטומטית"
   },
   "autoFillCard": {
-    "message": "Auto-fill card"
+    "message": "מילוי פרטי כרטיס אוטומטית"
   },
   "autoFillIdentity": {
-    "message": "Auto-fill identity"
+    "message": "מילוי פרטי זיהוי אוטומטית"
   },
   "generatePasswordCopied": {
     "message": "צור סיסמה (העתק)"
   },
   "copyElementIdentifier": {
-    "message": "Copy custom field name"
+    "message": "העתקת שם שדה מותאם אישית"
   },
   "noMatchingLogins": {
     "message": "לא נמצאו פרטי כניסה תואמים."
   },
   "noCards": {
-    "message": "No cards"
+    "message": "אין כרטיסים"
   },
   "noIdentities": {
-    "message": "No identities"
+    "message": "אין זהויות"
   },
   "addLoginMenu": {
-    "message": "Add login"
+    "message": "הוספת פרטי כניסה"
   },
   "addCardMenu": {
-    "message": "Add card"
+    "message": "הוספת כרטיס"
   },
   "addIdentityMenu": {
-    "message": "Add identity"
+    "message": "הוספת זהות"
   },
   "unlockVaultMenu": {
     "message": "שחרור הכספת שלך"
@@ -196,7 +196,7 @@
     "message": "שמור"
   },
   "move": {
-    "message": "Move"
+    "message": "העברה"
   },
   "addFolder": {
     "message": "הוסף תיקייה"
@@ -220,7 +220,7 @@
     "message": "עזרה ומשוב"
   },
   "helpCenter": {
-    "message": "Bitwarden Help center"
+    "message": "מרכז העזרה של Bitwarden"
   },
   "communityForums": {
     "message": "Explore Bitwarden community forums"
@@ -2888,5 +2888,9 @@
         "example": "google.com"
       }
     }
+  },
+  "commonImportFormats": {
+    "message": "תסדירים נפוצים",
+    "description": "Label indicating the most common import formats"
   }
 }

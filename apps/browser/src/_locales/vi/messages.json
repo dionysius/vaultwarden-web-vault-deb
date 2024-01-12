@@ -92,13 +92,13 @@
     "message": "Tự động điền"
   },
   "autoFillLogin": {
-    "message": "Auto-fill login"
+    "message": "Tự động điền thông tin đăng nhập"
   },
   "autoFillCard": {
-    "message": "Auto-fill card"
+    "message": "Tự động điền thẻ"
   },
   "autoFillIdentity": {
-    "message": "Auto-fill identity"
+    "message": "Tự động điền danh tính"
   },
   "generatePasswordCopied": {
     "message": "Tạo mật khẩu (đã sao chép)"
@@ -110,19 +110,19 @@
     "message": "Không có thông tin đăng nhập phù hợp."
   },
   "noCards": {
-    "message": "No cards"
+    "message": "Không có thẻ"
   },
   "noIdentities": {
-    "message": "No identities"
+    "message": "Không có danh tính"
   },
   "addLoginMenu": {
-    "message": "Add login"
+    "message": "Thêm thông tin đăng nhập"
   },
   "addCardMenu": {
-    "message": "Add card"
+    "message": "Thêm thẻ"
   },
   "addIdentityMenu": {
-    "message": "Add identity"
+    "message": "Thêm danh tính"
   },
   "unlockVaultMenu": {
     "message": "Mở khoá kho lưu trữ của bạn"
@@ -269,7 +269,7 @@
     "message": "Độ dài"
   },
   "passwordMinLength": {
-    "message": "Minimum password length"
+    "message": "Độ dài mật khẩu tối thiểu"
   },
   "uppercase": {
     "message": "Chữ in hoa (A-Z)"
@@ -327,7 +327,7 @@
     "message": "Mật khẩu"
   },
   "totp": {
-    "message": "Authenticator secret"
+    "message": "Khóa xác thực"
   },
   "passphrase": {
     "message": "Cụm từ mật khẩu"
@@ -369,10 +369,10 @@
     "message": "Khác"
   },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
-    "message": "Set up an unlock method to change your vault timeout action."
+    "message": "Thiết lập phương thức mở khóa để thay đổi hành động hết thời gian chờ của vault."
   },
   "unlockMethodNeeded": {
-    "message": "Set up an unlock method in Settings"
+    "message": "Thiết lập phương pháp mở khóa trong Cài đặt"
   },
   "rateExtension": {
     "message": "Đánh giá tiện ích mở rộng"
@@ -1045,14 +1045,14 @@
     "message": "Địa chỉ môi trường đã được lưu."
   },
   "showAutoFillMenuOnFormFields": {
-    "message": "Show auto-fill menu on form fields",
+    "message": "Hiển thị menu tự động điền trên các trường biểu mẫu",
     "description": "Represents the message for allowing the user to enable the auto-fill overlay"
   },
   "showAutoFillMenuOnFormFieldsDescAlt": {
-    "message": "Applies to all logged in accounts."
+    "message": "Áp dụng cho tất cả tài khoản đã đăng nhập."
   },
   "turnOffBrowserBuiltInPasswordManagerSettings": {
-    "message": "Turn off your browser’s built in password manager settings to avoid conflicts."
+    "message": "Tắt cài đặt trình quản lý mật khẩu tích hợp trong trình duyệt của bạn để tránh xung đột."
   },
   "turnOffBrowserBuiltInPasswordManagerSettingsLink": {
     "message": "Edit browser settings."
@@ -1066,7 +1066,7 @@
     "description": "Overlay appearance select option for showing the field on focus of the input element"
   },
   "autofillOverlayVisibilityOnButtonClick": {
-    "message": "When auto-fill icon is selected",
+    "message": "Khi chọn biểu tượng tự động điền",
     "description": "Overlay appearance select option for showing the field on click of the overlay icon"
   },
   "enableAutoFillOnPageLoad": {
@@ -2888,5 +2888,9 @@
         "example": "google.com"
       }
     }
+  },
+  "commonImportFormats": {
+    "message": "Common formats",
+    "description": "Label indicating the most common import formats"
   }
 }

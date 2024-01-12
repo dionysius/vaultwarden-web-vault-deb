@@ -327,7 +327,7 @@
     "message": "Salasana"
   },
   "totp": {
-    "message": "Authenticator secret"
+    "message": "Todennuksen salaisuus"
   },
   "passphrase": {
     "message": "Salauslauseke"
@@ -519,13 +519,13 @@
     "message": "Unable to scan QR code from the current webpage"
   },
   "totpCaptureSuccess": {
-    "message": "Authenticator key added"
+    "message": "Todennusavain on lisätty"
   },
   "totpCapture": {
-    "message": "Scan authenticator QR code from current webpage"
+    "message": "Skannaa todennusavaimen QR-koodi nykyiseltä verkkosivulta"
   },
   "copyTOTP": {
-    "message": "Copy Authenticator key (TOTP)"
+    "message": "Kopioi todennusavain (TOTP)"
   },
   "loggedOut": {
     "message": "Kirjauduttu ulos"
@@ -796,7 +796,7 @@
     "message": "Lue lisää"
   },
   "authenticatorKeyTotp": {
-    "message": "Todennusmenetelmän avain (TOTP)"
+    "message": "Todennusaavain (TOTP)"
   },
   "verificationCodeTotp": {
     "message": "Todennuskoodi (TOTP)"
@@ -904,7 +904,7 @@
     "message": "Kopioi TOTP-koodi automaattisesti"
   },
   "disableAutoTotpCopyDesc": {
-    "message": "Jos kirjautumistieto sisältää kaksivaiheisen todennusmenetelmän avaimen, kopioidaan TOTP-todennuskoodi leikepöydälle kohteen automaattisen täytön yhteydessä."
+    "message": "Jos kirjautumistieto sisältää kaksivaiheisen todennuksen avaimen, kopioidaan TOTP-todennuskoodi leikepöydälle kohteen automaattisen täytön yhteydessä."
   },
   "enableAutoBiometricsPrompt": {
     "message": "Pyydä Biometristä todennusta käynnistettäessä"
@@ -1718,7 +1718,7 @@
     "message": "Toimintoa ei voi suorittaa sivupalkissa, yritä toimintoa uudelleen ponnahdusvalikossa tai ponnahdusikkunassa."
   },
   "personalOwnershipSubmitError": {
-    "message": "Yrityskäytännön johdosta kohteiden tallennus henkilökohtaiseen holviin ei ole mahdollista. Muuta omistusasetus organisaatiolle ja valitse käytettävissä olevista kokoelmista."
+    "message": "Yrityskäytännön vuoksi kohteiden tallennus henkilökohtaiseen holviin ei ole mahdollista. Muuta omistusasetus organisaatiolle ja valitse käytettävissä olevista kokoelmista."
   },
   "personalOwnershipPolicyInEffect": {
     "message": "Organisaatiokäytäntö vaikuttaa omistajuusvalintoihisi."
@@ -1990,7 +1990,7 @@
     "message": "Automaattinen liitos"
   },
   "resetPasswordAutoEnrollInviteWarning": {
-    "message": "Organisaatiolla on käytäntö, joka liittää tilisi automaattisesti salasanan palautusapuun. Liitos sallii organisaation ylläpitäjien vaihtaa pääsalasanasi."
+    "message": "Organisaatiolla on yrityskäytäntö, joka liittää tilisi automaattisesti salasanan palautusapuun. Liitos sallii organisaation ylläpitäjien vaihtaa pääsalasanasi."
   },
   "selectFolder": {
     "message": "Valitse kansio..."
@@ -2888,5 +2888,9 @@
         "example": "google.com"
       }
     }
+  },
+  "commonImportFormats": {
+    "message": "Yleiset muodot",
+    "description": "Label indicating the most common import formats"
   }
 }

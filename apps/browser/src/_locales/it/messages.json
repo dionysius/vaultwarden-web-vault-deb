@@ -327,7 +327,7 @@
     "message": "Password"
   },
   "totp": {
-    "message": "Authenticator secret"
+    "message": "Segreto di autenticazione"
   },
   "passphrase": {
     "message": "Frase segreta"
@@ -516,16 +516,16 @@
     "message": "Impossibile riempire automaticamente questo elemento nella pagina. Copia e incolla le credenziali."
   },
   "totpCaptureError": {
-    "message": "Impossibile scansionare il codice QR dalla pagina web corrente"
+    "message": "Impossibile scansionare il codice QR da questa pagina web"
   },
   "totpCaptureSuccess": {
-    "message": "Chiave dell'autenticatore aggiunta"
+    "message": "Chiave di autenticazione aggiunta"
   },
   "totpCapture": {
-    "message": "Scansiona il codice QR dell'autenticatore dalla pagina web corrente"
+    "message": "Scansiona il codice QR dell'autenticatore da questa pagina web"
   },
   "copyTOTP": {
-    "message": "Copia la chiave dell'Autenticatore (TOTP)"
+    "message": "Copia la chiave di autenticazione (TOTP)"
   },
   "loggedOut": {
     "message": "Disconnesso"
@@ -2888,5 +2888,9 @@
         "example": "google.com"
       }
     }
+  },
+  "commonImportFormats": {
+    "message": "Formati comuni",
+    "description": "Label indicating the most common import formats"
   }
 }

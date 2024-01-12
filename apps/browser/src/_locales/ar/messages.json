@@ -327,7 +327,7 @@
     "message": "كلمة المرور"
   },
   "totp": {
-    "message": "Authenticator secret"
+    "message": "سر المصادقة"
   },
   "passphrase": {
     "message": "العبارة السرية"
@@ -516,16 +516,16 @@
     "message": "غير قادر على ملء العنصر المحدد تلقائياً في هذه الصفحة. يرجى نسخ ولصق المعلومات يدوياً."
   },
   "totpCaptureError": {
-    "message": "Unable to scan QR code from the current webpage"
+    "message": "غير قادر على مسح رمز QR من صفحة الويب الحالية"
   },
   "totpCaptureSuccess": {
-    "message": "Authenticator key added"
+    "message": "تم إضافة مفتاح المصادقة"
   },
   "totpCapture": {
-    "message": "Scan authenticator QR code from current webpage"
+    "message": "مسح رمز QR للمصادقة من صفحة الويب الحالية"
   },
   "copyTOTP": {
-    "message": "Copy Authenticator key (TOTP)"
+    "message": "نسخ مفتاح المصادقة (TOTP)"
   },
   "loggedOut": {
     "message": "تم تسجيل الخروج"
@@ -1162,7 +1162,7 @@
     "message": "إظهار صورة قابلة للتعرف بجانب كل تسجيل دخول."
   },
   "faviconDescAlt": {
-    "message": "Show a recognizable image next to each login. Applies to all logged in accounts."
+    "message": "إظهار صورة قابلة للتعرف بجانب كل تسجيل دخول. تنطبق على جميع حسابات تسجيل الدخول."
   },
   "enableBadgeCounter": {
     "message": "إظهار عداد الشارات"
@@ -1637,43 +1637,43 @@
     "message": "من خلال تحديد هذا المربع فإنك توافق على ما يلي:"
   },
   "acceptPoliciesRequired": {
-    "message": "Terms of Service and Privacy Policy have not been acknowledged."
+    "message": "لم يتم الاعتراف بشروط الخدمة وسياسة الخصوصية."
   },
   "termsOfService": {
-    "message": "Terms of Service"
+    "message": "شروط الخدمة"
   },
   "privacyPolicy": {
     "message": "سياسة الخصوصية"
   },
   "hintEqualsPassword": {
-    "message": "Your password hint cannot be the same as your password."
+    "message": "لا يمكن أن يكون تلميح كلمة المرور نفس كلمة المرور الخاصة بك."
   },
   "ok": {
     "message": "موافق"
   },
   "desktopSyncVerificationTitle": {
-    "message": "Desktop sync verification"
+    "message": "التحقق من مزامنة سطح المكتب"
   },
   "desktopIntegrationVerificationText": {
-    "message": "Please verify that the desktop application shows this fingerprint: "
+    "message": "الرجاء التحقق من أن تطبيق سطح المكتب يظهر بصمة الإصبع هذه: "
   },
   "desktopIntegrationDisabledTitle": {
-    "message": "Browser integration is not set up"
+    "message": "لم يتم إعداد تكامل المتصفح"
   },
   "desktopIntegrationDisabledDesc": {
-    "message": "Browser integration is not set up in the Bitwarden desktop application. Please set it up in the settings within the desktop application."
+    "message": "لم يتم إعداد تكامل المتصفح في تطبيق سطح المكتب Bitwarden. الرجاء إعداده في الإعدادات داخل تطبيق سطح المكتب."
   },
   "startDesktopTitle": {
-    "message": "Start the Bitwarden desktop application"
+    "message": "بدء تشغيل تطبيق سطح المكتب Bitwarden"
   },
   "startDesktopDesc": {
-    "message": "The Bitwarden desktop application needs to be started before unlock with biometrics can be used."
+    "message": "يجب أن يبدأ تطبيق سطح المكتب Bitwarden قبل أن يمكن فتح القفل باستخدام القياسات الحيوية."
   },
   "errorEnableBiometricTitle": {
-    "message": "Unable to set up biometrics"
+    "message": "غير قادر على إعداد القياسات الحيوية"
   },
   "errorEnableBiometricDesc": {
-    "message": "Action was canceled by the desktop application"
+    "message": "تم إلغاء الإجراء بواسطة تطبيق سطح المكتب"
   },
   "nativeMessagingInvalidEncryptionDesc": {
     "message": "Desktop application invalidated the secure communication channel. Please retry this operation"
@@ -2888,5 +2888,9 @@
         "example": "google.com"
       }
     }
+  },
+  "commonImportFormats": {
+    "message": "Common formats",
+    "description": "Label indicating the most common import formats"
   }
 }

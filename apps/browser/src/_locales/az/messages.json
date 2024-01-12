@@ -107,7 +107,7 @@
     "message": "Özəl sahə adını kopyala"
   },
   "noMatchingLogins": {
-    "message": "Uyğun gələn hesab yoxdur."
+    "message": "Uyuşan giriş məlumatları yoxdur"
   },
   "noCards": {
     "message": "Kart yoxdur"
@@ -488,7 +488,7 @@
     }
   },
   "masterPassDoesntMatch": {
-    "message": "Ana parolun təsdiqi uyğun gəlmir."
+    "message": "Ana parolun təsdiqi uyuşmur."
   },
   "newAccountCreated": {
     "message": "Yeni hesabınız yaradıldı! İndi giriş edə bilərsiniz."
@@ -703,17 +703,17 @@
     "message": "Konteks menyu seçimlərini göstər"
   },
   "contextMenuItemDesc": {
-    "message": "Veb sayt üçün parol yaratmaq və uyğunlaşan giriş məlumatlarına müraciət etmək üçün ikinci klikləməni istifadə edin. "
+    "message": "Veb sayt üçün parol yaratmaq və uyuşan giriş məlumatlarına müraciət etmək üçün sağ klikləməni istifadə edin."
   },
   "contextMenuItemDescAlt": {
-    "message": "Veb sayt üçün parol yaratmaq və uyğunlaşan giriş məlumatlarına müraciət etmək üçün ikinci klikləməni istifadə edin. Giriş etmiş bütün hesablara aiddir."
+    "message": "Veb sayt üçün parol yaratmaq və uyuşan giriş məlumatlarına müraciət etmək üçün sağ klikləməni istifadə edin. Giriş etmiş bütün hesablara aiddir."
   },
   "defaultUriMatchDetection": {
-    "message": "İlkin URI uyğunluq aşkarlaması",
+    "message": "İlkin URI uyuşma aşkarlaması",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
-    "message": "Avto-doldurma kimi əməliyyatları icra edərkən giriş etmə prosesi üçün URI uyğunluq aşkarlamasının ilkin yolunu seçin."
+    "message": "Avto-doldurma kimi əməliyyatları icra edərkən giriş etmə prosesi üçün URI uyuşma aşkarlamasının idarə edliəcəyi ilkin yolu seçin."
   },
   "theme": {
     "message": "Tema"
@@ -1395,11 +1395,11 @@
     "description": "A programming term, also known as 'RegEx'."
   },
   "matchDetection": {
-    "message": "Uyğunluq aşkarlaması",
+    "message": "Uyuşmanı aşkarlama",
     "description": "URI match detection for auto-fill."
   },
   "defaultMatchDetection": {
-    "message": "İlkin uyğunluq aşkarlaması",
+    "message": "İlkin uyuşma aşkarlaması",
     "description": "Default URI match detection for auto-fill."
   },
   "toggleOptions": {
@@ -1685,7 +1685,7 @@
     "message": "Masaüstü tətbiqdə fərqli bir hesaba giriş edilib. Lütfən hər iki tətbiqin eyni hesaba giriş etdiyinə əmin olun."
   },
   "nativeMessagingWrongUserTitle": {
-    "message": "Hesablar uyğunlaşmır"
+    "message": "Hesablar uyuşmur"
   },
   "biometricsNotEnabledTitle": {
     "message": "Biometriklər qurulmayıb"
@@ -2246,7 +2246,7 @@
     "message": "Barmaq izi ifadəsi"
   },
   "fingerprintMatchInfo": {
-    "message": "Lütfən anbarınızın kilidinin açıq olduğuna və Barmaq izi ifadəsinin digər cihazda uyğun gəldiyinə əmin olun."
+    "message": "Lütfən anbarınızın kilidinin açıq olduğuna və Barmaq izi ifadəsinin digər cihazla uyuşduğuna əmin olun."
   },
   "resendNotification": {
     "message": "Bildirişi təkrar göndər"
@@ -2575,7 +2575,7 @@
     "description": "Page title in overlay"
   },
   "unlockYourAccountToViewMatchingLogins": {
-    "message": "Uyğunlaşan giriş məlumatlarına baxmaq üçün hesabınızın kilidini açın",
+    "message": "Uyuşan giriş məlumatlarına baxmaq üçün hesabınızın kilidini açın",
     "description": "Text to display in overlay when the account is locked."
   },
   "unlockAccount": {
@@ -2659,7 +2659,7 @@
     "message": "Heç nə daxilə köçürülmədi."
   },
   "importEncKeyError": {
-    "message": "Xaricə köçürülən faylın şifrəsi açılarkən xəta baş verdi. Şifrələmə açarınız, datanı xaricə köçürmək üçün istifadə edilən şifrələmə açarı ilə uyğunlaşmır."
+    "message": "Xaricə köçürülən faylın şifrəsi açılarkən xəta baş verdi. Şifrələmə açarınız, datanı xaricə köçürmək üçün istifadə edilən şifrələmə açarı ilə uyuşmur."
   },
   "invalidFilePassword": {
     "message": "Yararsız fayl parolu, lütfən xaricə köçürmə faylını yaradarkən daxil etdiyiniz parolu istifadə edin."
@@ -2745,7 +2745,7 @@
     "message": "Bu tətbiq üçün heç bir keçid açarı tapılmadı."
   },
   "noMatchingPasskeyLogin": {
-    "message": "Bu sayt üçün uyğunlaşan bir giriş məlumatınız yoxdur."
+    "message": "Bu sayt üçün uyuşan bir giriş məlumatınız yoxdur."
   },
   "confirm": {
     "message": "Təsdiqlə"
@@ -2888,5 +2888,9 @@
         "example": "google.com"
       }
     }
+  },
+  "commonImportFormats": {
+    "message": "Ortaq formatlar",
+    "description": "Label indicating the most common import formats"
   }
 }
