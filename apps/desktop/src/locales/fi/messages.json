@@ -311,7 +311,7 @@
     "message": "Muokkaa"
   },
   "authenticatorKeyTotp": {
-    "message": "Todennusmenetelmän avain (TOTP)"
+    "message": "Todennusavain (TOTP)"
   },
   "folder": {
     "message": "Kansio"
@@ -1081,7 +1081,7 @@
     "message": "1 Gt salattua tallennustilaa tiedostoliitteille."
   },
   "premiumSignUpTwoStepOptions": {
-    "message": "Omisteiset kaksivaiheisen kirjautumisen vaihtoehdot, kuten YubiKey ja Duo."
+    "message": "Kaksivaiheisen kirjautumisen erikoisvaihtoehdot, kuten YubiKey ja Duo."
   },
   "premiumSignUpReports": {
     "message": "Salasanahygienian, tilin terveyden ja tietovuotojen raportointitoiminnot pitävät holvisi turvassa."
@@ -1099,7 +1099,7 @@
     "message": "Osta Premium"
   },
   "premiumPurchaseAlert": {
-    "message": "Voit ostaa Premium-jäsenyyden bitwarden.com-verkkoholvissa. Haluatko käydä sivustolla nyt?"
+    "message": "Voit ostaa Premium-jäsenyyden bitwarden.com-verkkoholvista. Haluatko käydä sivustolla nyt?"
   },
   "premiumCurrentMember": {
     "message": "Olet Premium-jäsen!"
@@ -1462,7 +1462,7 @@
     "message": "Palauta"
   },
   "premiumManageAlertAppStore": {
-    "message": "Voit hallita tilaustasi App Storessa. Haluatko siirtyä App Storeen nyt?"
+    "message": "Voit hallita tilaustasi App Storessa. Haluatko avata sen nyt?"
   },
   "legal": {
     "message": "Oikeudelliset tiedot",
@@ -2616,5 +2616,9 @@
   },
   "lastPassYubikeyDesc": {
     "message": "Kytke LastPass-tiliisi liitetty YubiKey tietokoneen USB-porttiin ja kosketa sen painiketta."
+  },
+  "commonImportFormats": {
+    "message": "Yleiset muodot",
+    "description": "Label indicating the most common import formats"
   }
 }

@@ -2616,5 +2616,9 @@
   },
   "lastPassYubikeyDesc": {
     "message": "Inseriu la YubiKey associada al compte del LastPass al port USB de l'ordinador i, després, toqueu-ne el botó."
+  },
+  "commonImportFormats": {
+    "message": "Formats comuns",
+    "description": "Label indicating the most common import formats"
   }
 }

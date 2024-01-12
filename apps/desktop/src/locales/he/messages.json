@@ -404,7 +404,7 @@
     "message": "אורך"
   },
   "passwordMinLength": {
-    "message": "Minimum password length"
+    "message": "אורך סיסמה מזערי"
   },
   "uppercase": {
     "message": "אותיות גדולות (A-Z)"
@@ -479,7 +479,7 @@
     "message": "גודל הקובץ המירבי הוא 500 מגה."
   },
   "encryptionKeyMigrationRequired": {
-    "message": "Encryption key migration required. Please login through the web vault to update your encryption key."
+    "message": "נדרשת הסבת מפתח הצפנה. נא להיכנס דרך הכספת לאתרים כדי לעדכן את מפתח ההצפנה שלך."
   },
   "editedFolder": {
     "message": "תיקייה שנשמרה"
@@ -1405,7 +1405,7 @@
     "message": "שחרור נעילה עם Touch ID"
   },
   "additionalTouchIdSettings": {
-    "message": "Additional Touch ID settings"
+    "message": "הגדרות Touch ID נוספות"
   },
   "touchIdConsentMessage": {
     "message": "פתח את הכספת שלך"
@@ -1417,10 +1417,10 @@
     "message": "הצג בקשה של Touch ID בפתיחת האפליקציה"
   },
   "requirePasswordOnStart": {
-    "message": "Require password or PIN on app start"
+    "message": "לדרוש סיסמה או קוד אישי עם הפעלת היישום"
   },
   "recommendedForSecurity": {
-    "message": "Recommended for security."
+    "message": "מומלץ לשיפור אבטחת מידע."
   },
   "lockWithMasterPassOnRestart": {
     "message": "נעל בעזרת הסיסמה הראשית בהפעלה מחדש"
@@ -2616,5 +2616,9 @@
   },
   "lastPassYubikeyDesc": {
     "message": "Insert the YubiKey associated with your LastPass account into your computer's USB port, then touch its button."
+  },
+  "commonImportFormats": {
+    "message": "תסדירים נפוצים",
+    "description": "Label indicating the most common import formats"
   }
 }

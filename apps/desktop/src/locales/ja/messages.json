@@ -2616,5 +2616,9 @@
   },
   "lastPassYubikeyDesc": {
     "message": "LastPass アカウントに関連付けられた YubiKey を USB ポートに挿入し、ボタンをタッチしてください。"
+  },
+  "commonImportFormats": {
+    "message": "一般的な形式",
+    "description": "Label indicating the most common import formats"
   }
 }

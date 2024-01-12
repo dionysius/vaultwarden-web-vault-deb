@@ -404,7 +404,7 @@
     "message": "الطول"
   },
   "passwordMinLength": {
-    "message": "Minimum password length"
+    "message": "الحد الأدنى لطول كلمة المرور"
   },
   "uppercase": {
     "message": "أحرف كبيرة (A-Z)"
@@ -2428,7 +2428,7 @@
     "message": "قائمة فرعية"
   },
   "skipToContent": {
-    "message": "Skip to content"
+    "message": "تخطي إلى المحتوى"
   },
   "typePasskey": {
     "message": "مفتاح المرور"
@@ -2616,5 +2616,9 @@
   },
   "lastPassYubikeyDesc": {
     "message": "أدخل YubiKey المرتبط بحسابك LastPass في منفذ USB الخاص بك، ثم المس الزر."
+  },
+  "commonImportFormats": {
+    "message": "Common formats",
+    "description": "Label indicating the most common import formats"
   }
 }
