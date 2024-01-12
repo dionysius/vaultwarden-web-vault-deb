@@ -264,7 +264,8 @@
         "node-fetch",
         "open",
         "pkg",
-        "proper-lockfile"
+        "proper-lockfile",
+        "qrcode-parser"
       ],
       "description": "Vault owned dependencies",
       "commitMessagePrefix": "[deps] Vault:",
