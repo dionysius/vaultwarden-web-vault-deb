@@ -26,6 +26,7 @@ export class VaultCipherRowComponent {
   @Input() cloneable: boolean;
   @Input() organizations: Organization[];
   @Input() collections: CollectionView[];
+  @Input() viewingOrgVault: boolean;
 
   @Output() onEvent = new EventEmitter<VaultItemEvent>();
 
