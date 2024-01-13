@@ -70,15 +70,18 @@
             <div class="row-main">
               <label for="loginPassword">{{ "password" | i18n }}</label>
               <input
+                *ngIf="showPassword"
                 id="loginPassword"
                 class="monospaced"
-                type="{{ showPassword ? 'text' : 'password' }}"
+                type="text"
                 name="Login.Password"
                 [(ngModel)]="cipher.login.password"
                 appInputVerbatim
-                [disabled]="!cipher.viewPassword"
                 [readonly]="!cipher.edit && editMode"
               />
+              <div *ngIf="!showPassword" class="monospaced">
+                {{ cipher.login.maskedPassword || "••••••••" }}
+              </div>
             </div>
             <div class="action-buttons">
               <button
@@ -108,7 +111,7 @@
                 appStopClick
                 appA11yTitle="{{ 'toggleVisibility' | i18n }}"
                 (click)="togglePassword()"
-                *ngIf="cipher.viewPassword"
+                *ngIf="cipher.viewPassword && cipher.login.password"
                 [attr.aria-pressed]="showPassword"
               >
                 <i
@@ -150,17 +153,35 @@
             <div class="row-main">
               <label for="loginTotp">{{ "authenticatorKeyTotp" | i18n }}</label>
               <input
+                *ngIf="showTotpSeed"
                 id="loginTotp"
-                type="{{ cipher.viewPassword ? 'text' : 'password' }}"
+                type="text"
                 name="Login.Totp"
                 class="monospaced"
                 [(ngModel)]="cipher.login.totp"
                 appInputVerbatim
-                [disabled]="!cipher.viewPassword"
                 [readonly]="!cipher.edit && editMode"
               />
+              <div *ngIf="!showTotpSeed" class="monospaced">
+                {{ cipher.login.maskedPassword || "••••••••" }}
+              </div>
             </div>
             <div class="action-buttons">
+              <button
+                type="button"
+                class="row-btn"
+                appStopClick
+                appA11yTitle="{{ 'toggleVisibility' | i18n }}"
+                (click)="toggleTotpSeed()"
+                *ngIf="cipher.viewPassword && cipher.login.totp"
+                [attr.aria-pressed]="showTotpSeed"
+              >
+                <i
+                  class="bwi bwi-lg"
+                  aria-hidden="true"
+                  [ngClass]="{ 'bwi-eye': !showTotpSeed, 'bwi-eye-slash': showTotpSeed }"
+                ></i>
+              </button>
               <button
                 type="button"
                 class="row-btn"
