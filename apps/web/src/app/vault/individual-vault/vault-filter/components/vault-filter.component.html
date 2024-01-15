@@ -16,16 +16,16 @@
       </a>
     </div>
     <div class="card-body">
-      <input
-        type="search"
-        placeholder="{{ searchPlaceholder | i18n }}"
-        id="search"
-        class="form-control"
-        [ngModel]="searchText"
-        (ngModelChange)="onSearchTextChanged($event)"
-        autocomplete="off"
-        appAutofocus
-      />
+      <div class="tw-mb-4">
+        <bit-search
+          id="search"
+          placeholder="{{ searchPlaceholder | i18n }}"
+          [(ngModel)]="searchText"
+          (ngModelChange)="onSearchTextChanged($event)"
+          autocomplete="off"
+          appAutofocus
+        />
+      </div>
       <ng-container *ngFor="let f of filtersList">
         <div class="filter">
           <app-filter-section [activeFilter]="activeFilter" [section]="f"> </app-filter-section>
