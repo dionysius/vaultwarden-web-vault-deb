@@ -2,7 +2,7 @@
 
 require("./sso.scss");
 
-document.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("load", () => {
   const code = getQsParam("code");
   const state = getQsParam("state");
   const lastpass = getQsParam("lp");
