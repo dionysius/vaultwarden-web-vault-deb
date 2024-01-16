@@ -1,6 +1,6 @@
 import { inject, Injectable } from "@angular/core";
 
-import { RotateableKeySet } from "@bitwarden/auth";
+import { RotateableKeySet } from "@bitwarden/auth/common";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";

@@ -4,7 +4,7 @@ import { FormBuilder, ReactiveFormsModule } from "@angular/forms";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { AccountApiService } from "@bitwarden/common/auth/abstractions/account-api.service";
-import { Verification } from "@bitwarden/common/auth/types/verification";
+import { VerificationWithSecret } from "@bitwarden/common/auth/types/verification";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import {
@@ -33,7 +33,7 @@ import { UserVerificationComponent } from "../app/components/user-verification.c
 })
 export class DeleteAccountComponent {
   deleteForm = this.formBuilder.group({
-    verification: undefined as Verification | undefined,
+    verification: undefined as VerificationWithSecret | undefined,
   });
 
   constructor(

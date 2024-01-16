@@ -15,10 +15,15 @@ import {
   i18nServiceFactory,
 } from "../../../platform/background/service-factories/i18n-service.factory";
 import {
+  LogServiceInitOptions,
+  logServiceFactory,
+} from "../../../platform/background/service-factories/log-service.factory";
+import {
   StateServiceInitOptions,
   stateServiceFactory,
 } from "../../../platform/background/service-factories/state-service.factory";
 
+import { PinCryptoServiceInitOptions, pinCryptoServiceFactory } from "./pin-crypto-service.factory";
 import {
   UserVerificationApiServiceInitOptions,
   userVerificationApiServiceFactory,
@@ -30,7 +35,9 @@ export type UserVerificationServiceInitOptions = UserVerificationServiceFactoryO
   StateServiceInitOptions &
   CryptoServiceInitOptions &
   I18nServiceInitOptions &
-  UserVerificationApiServiceInitOptions;
+  UserVerificationApiServiceInitOptions &
+  PinCryptoServiceInitOptions &
+  LogServiceInitOptions;
 
 export function userVerificationServiceFactory(
   cache: { userVerificationService?: AbstractUserVerificationService } & CachedServices,
@@ -46,6 +53,8 @@ export function userVerificationServiceFactory(
         await cryptoServiceFactory(cache, opts),
         await i18nServiceFactory(cache, opts),
         await userVerificationApiServiceFactory(cache, opts),
+        await pinCryptoServiceFactory(cache, opts),
+        await logServiceFactory(cache, opts),
       ),
   );
 }

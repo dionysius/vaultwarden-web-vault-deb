@@ -13,6 +13,8 @@
     "baseUrl": ".",
     "paths": {
       "@bitwarden/common/spec": ["../../libs/common/spec"],
+      "@bitwarden/auth/common": ["../../libs/auth/src/common"],
+      "@bitwarden/auth/angular": ["../../libs/auth/src/angular"],
       "@bitwarden/common/*": ["../../libs/common/src/*"],
       "@bitwarden/importer/core": ["../../libs/importer/src"],
       "@bitwarden/exporter/*": ["../../libs/exporter/src/*"],

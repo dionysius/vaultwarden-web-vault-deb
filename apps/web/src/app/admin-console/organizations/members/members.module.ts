@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 
-import { PasswordCalloutComponent } from "@bitwarden/auth";
+import { PasswordCalloutComponent } from "@bitwarden/auth/angular";
 
 import { LooseComponentsModule } from "../../../shared";
 import { SharedOrganizationModule } from "../shared";

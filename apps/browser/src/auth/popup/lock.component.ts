@@ -2,6 +2,7 @@ import { Component, NgZone } from "@angular/core";
 import { Router } from "@angular/router";
 
 import { LockComponent as BaseLockComponent } from "@bitwarden/angular/auth/components/lock.component";
+import { PinCryptoServiceAbstraction } from "@bitwarden/auth/common";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout-settings.service";
 import { VaultTimeoutService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout.service";
@@ -56,6 +57,7 @@ export class LockComponent extends BaseLockComponent {
     dialogService: DialogService,
     deviceTrustCryptoService: DeviceTrustCryptoServiceAbstraction,
     userVerificationService: UserVerificationService,
+    pinCryptoService: PinCryptoServiceAbstraction,
     private routerService: BrowserRouterService,
   ) {
     super(
@@ -77,6 +79,7 @@ export class LockComponent extends BaseLockComponent {
       dialogService,
       deviceTrustCryptoService,
       userVerificationService,
+      pinCryptoService,
     );
     this.successRoute = "/tabs/current";
     this.isInitialLockScreen = (window as any).previousPopupUrl == null;

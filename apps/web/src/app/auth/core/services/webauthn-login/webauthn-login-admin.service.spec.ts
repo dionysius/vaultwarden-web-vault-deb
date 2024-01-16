@@ -2,7 +2,7 @@ import { randomBytes } from "crypto";
 
 import { mock, MockProxy } from "jest-mock-extended";
 
-import { RotateableKeySet } from "@bitwarden/auth";
+import { RotateableKeySet } from "@bitwarden/auth/common";
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { WebAuthnLoginPrfCryptoServiceAbstraction } from "@bitwarden/common/auth/abstractions/webauthn/webauthn-login-prf-crypto.service.abstraction";
 import { WebAuthnLoginCredentialAssertionView } from "@bitwarden/common/auth/models/view/webauthn-login/webauthn-login-credential-assertion.view";

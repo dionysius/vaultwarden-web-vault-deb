@@ -17,7 +17,8 @@
     "paths": {
       "@bitwarden/admin-console": ["./libs/admin-console/src"],
       "@bitwarden/angular/*": ["./libs/angular/src/*"],
-      "@bitwarden/auth": ["./libs/auth/src"],
+      "@bitwarden/auth/common": ["./libs/auth/src/common"],
+      "@bitwarden/auth/angular": ["./libs/auth/src/angular"],
       "@bitwarden/billing": ["./libs/billing/src"],
       "@bitwarden/common/*": ["./libs/common/src/*"],
       "@bitwarden/components": ["./libs/components/src"],

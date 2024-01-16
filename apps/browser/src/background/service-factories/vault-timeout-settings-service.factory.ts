@@ -10,10 +10,6 @@ import {
   TokenServiceInitOptions,
 } from "../../auth/background/service-factories/token-service.factory";
 import {
-  userVerificationServiceFactory,
-  UserVerificationServiceInitOptions,
-} from "../../auth/background/service-factories/user-verification-service.factory";
-import {
   CryptoServiceInitOptions,
   cryptoServiceFactory,
 } from "../../platform/background/service-factories/crypto-service.factory";
@@ -33,8 +29,7 @@ export type VaultTimeoutSettingsServiceInitOptions = VaultTimeoutSettingsService
   CryptoServiceInitOptions &
   TokenServiceInitOptions &
   PolicyServiceInitOptions &
-  StateServiceInitOptions &
-  UserVerificationServiceInitOptions;
+  StateServiceInitOptions;
 
 export function vaultTimeoutSettingsServiceFactory(
   cache: { vaultTimeoutSettingsService?: AbstractVaultTimeoutSettingsService } & CachedServices,
@@ -50,7 +45,6 @@ export function vaultTimeoutSettingsServiceFactory(
         await tokenServiceFactory(cache, opts),
         await policyServiceFactory(cache, opts),
         await stateServiceFactory(cache, opts),
-        await userVerificationServiceFactory(cache, opts),
       ),
   );
 }

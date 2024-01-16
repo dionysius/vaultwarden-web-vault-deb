@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 
-import { PasswordCalloutComponent } from "@bitwarden/auth";
+import { PasswordCalloutComponent } from "@bitwarden/auth/angular";
 
 import { OrganizationSwitcherComponent } from "../admin-console/components/organization-switcher.component";
 import { OrganizationLayoutComponent } from "../admin-console/organizations/layouts/organization-layout.component";
