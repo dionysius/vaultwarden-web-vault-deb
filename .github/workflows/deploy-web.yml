@@ -114,7 +114,7 @@ jobs:
       - name: Get Branch or Tag SHA
         id: get-branch-or-tag-sha
         run: |
-          echo "sha=$(git rev-parse origin/${{ inputs.branch-or-tag }}" >> $GITHUB_OUTPUT
+          echo "sha=$(git rev-parse origin/${{ inputs.branch-or-tag }})" >> $GITHUB_OUTPUT
 
   notify-start:
     name: Notify Slack with start message
