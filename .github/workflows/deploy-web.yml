@@ -99,11 +99,29 @@ jobs:
       - name: Success Code
         run: exit 0
 
+  get-branch-or-tag-sha:
+    name: Get Branch or Tag SHA
+    runs-on: ubuntu-22.04
+    outputs:
+      branch-or-tag-sha: ${{ steps.get-branch-or-tag-sha.outputs.sha }}
+    steps:
+      - name: Checkout Branch
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          ref: ${{ inputs.branch-or-tag }}
+          fetch-depth: 0
+
+      - name: Get Branch or Tag SHA
+        id: get-branch-or-tag-sha
+        run: |
+          echo "sha=$(git rev-parse origin/${{ inputs.branch-or-tag }}" >> $GITHUB_OUTPUT
+
   notify-start:
     name: Notify Slack with start message
     needs:
       - approval
       - setup
+      - get-branch-or-tag-sha
     runs-on: ubuntu-22.04
     if: ${{ always() && contains( inputs.environment , 'QA' ) }}
     outputs:
@@ -118,6 +136,7 @@ jobs:
           tag: ${{ inputs.branch-or-tag }}
           slack-channel: team-eng-qa-devops
           event: 'start'
+          commit-sha: ${{ needs.get-branch-or-tag-sha.outputs.branch-or-tag-sha }}
           url: https://github.com/bitwarden/clients/actions/runs/${{ github.run_id }}
           AZURE_KV_CI_SERVICE_PRINCIPAL: ${{ secrets.AZURE_KV_CI_SERVICE_PRINCIPAL }}
 
@@ -256,6 +275,7 @@ jobs:
       - notify-start
       - azure-deploy
       - setup
+      - get-branch-or-tag-sha
     steps:
       - uses: bitwarden/gh-actions/report-deployment-status-to-slack@main
         with:
@@ -265,5 +285,6 @@ jobs:
           slack-channel: ${{ needs.notify-start.outputs.channel_id }}
           event: ${{ needs.azure-deploy.result }}
           url: https://github.com/bitwarden/clients/actions/runs/${{ github.run_id }}
+          commit-sha: ${{ needs.get-branch-or-tag-sha.outputs.branch-or-tag-sha }}
           update-ts: ${{ needs.notify-start.outputs.ts }}
           AZURE_KV_CI_SERVICE_PRINCIPAL: ${{ secrets.AZURE_KV_CI_SERVICE_PRINCIPAL }}
