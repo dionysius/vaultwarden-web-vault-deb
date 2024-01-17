@@ -212,8 +212,9 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
           } else {
             this.nestOptions = collections;
             const parent = collections.find((c) => c.id === this.params.parentCollectionId);
-            const currentOrgUserId = users.data.find((u) => u.userId === this.organization?.userId)
-              ?.id;
+            const currentOrgUserId = users.data.find(
+              (u) => u.userId === this.organization?.userId,
+            )?.id;
             const initialSelection: AccessItemValue[] =
               currentOrgUserId !== undefined && flexibleCollections
                 ? [

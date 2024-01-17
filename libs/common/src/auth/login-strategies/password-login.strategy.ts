@@ -183,8 +183,10 @@ export class PasswordLoginStrategy extends LoginStrategy {
     { masterPassword, email }: PasswordLoginCredentials,
     options: MasterPasswordPolicyOptions,
   ): boolean {
-    const passwordStrength = this.passwordStrengthService.getPasswordStrength(masterPassword, email)
-      ?.score;
+    const passwordStrength = this.passwordStrengthService.getPasswordStrength(
+      masterPassword,
+      email,
+    )?.score;
 
     return this.policyService.evaluateMasterPassword(passwordStrength, masterPassword, options);
   }
