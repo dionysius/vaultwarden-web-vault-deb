@@ -1,4 +1,4 @@
-import { PrfKey } from "../../../platform/models/domain/symmetric-crypto-key";
+import { PrfKey } from "../../../types/key";
 
 /**
  * Contains methods for all crypto operations specific to the WebAuthn login flow.

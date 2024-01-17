@@ -1,8 +1,5 @@
-import {
-  MasterKey,
-  UserKey,
-  SymmetricCryptoKey,
-} from "../../../platform/models/domain/symmetric-crypto-key";
+import { SymmetricCryptoKey } from "../../../platform/models/domain/symmetric-crypto-key";
+import { UserKey, MasterKey } from "../../../types/key";
 import { AuthenticationType } from "../../enums/authentication-type";
 import { WebAuthnLoginAssertionResponseRequest } from "../../services/webauthn-login/request/webauthn-login-assertion-response.request";
 import { TokenTwoFactorRequest } from "../request/identity-token/token-two-factor.request";

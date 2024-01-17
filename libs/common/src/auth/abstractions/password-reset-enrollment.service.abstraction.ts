@@ -1,4 +1,4 @@
-import { UserKey } from "../../platform/models/domain/symmetric-crypto-key";
+import { UserKey } from "../../types/key";
 
 export abstract class PasswordResetEnrollmentServiceAbstraction {
   /*

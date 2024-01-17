@@ -12,8 +12,8 @@ import { StateService } from "@bitwarden/common/platform/abstractions/state.serv
 import { KdfType } from "@bitwarden/common/platform/enums";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
-import { MasterKey, UserKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
+import { UserKey, MasterKey } from "@bitwarden/common/types/key";
 import { DialogService } from "@bitwarden/components";
 
 import { PasswordColorText } from "../../tools/password-strength/password-strength.component";

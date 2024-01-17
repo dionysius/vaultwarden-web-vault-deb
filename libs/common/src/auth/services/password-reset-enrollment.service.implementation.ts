@@ -5,7 +5,7 @@ import { CryptoService } from "../../platform/abstractions/crypto.service";
 import { I18nService } from "../../platform/abstractions/i18n.service";
 import { StateService } from "../../platform/abstractions/state.service";
 import { Utils } from "../../platform/misc/utils";
-import { UserKey } from "../../platform/models/domain/symmetric-crypto-key";
+import { UserKey } from "../../types/key";
 import { PasswordResetEnrollmentServiceAbstraction } from "../abstractions/password-reset-enrollment.service.abstraction";
 
 export class PasswordResetEnrollmentServiceImplementation

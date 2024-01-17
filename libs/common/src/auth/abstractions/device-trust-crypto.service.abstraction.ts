@@ -1,5 +1,5 @@
 import { EncString } from "../../platform/models/domain/enc-string";
-import { DeviceKey, UserKey } from "../../platform/models/domain/symmetric-crypto-key";
+import { DeviceKey, UserKey } from "../../types/key";
 import { DeviceResponse } from "../abstractions/devices/responses/device.response";
 
 export abstract class DeviceTrustCryptoServiceAbstraction {

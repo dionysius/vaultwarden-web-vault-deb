@@ -1,8 +1,6 @@
 import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
-import {
-  PrfKey,
-  SymmetricCryptoKey,
-} from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
+import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
+import { PrfKey } from "@bitwarden/common/types/key";
 
 declare const tag: unique symbol;
 

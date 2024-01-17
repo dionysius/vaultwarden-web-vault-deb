@@ -1,4 +1,4 @@
-import { UserKey, MasterKey } from "../../platform/models/domain/symmetric-crypto-key";
+import { UserKey, MasterKey } from "../../types/key";
 import { AuthRequestResponse } from "../models/response/auth-request.response";
 
 export abstract class AuthRequestCryptoServiceAbstraction {

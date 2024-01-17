@@ -5,14 +5,12 @@ import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.se
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
-import {
-  SymmetricCryptoKey,
-  UserKey,
-} from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
+import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
 import {
   VaultTimeoutSettingsService,
   PinLockType,
 } from "@bitwarden/common/services/vault-timeout/vault-timeout-settings.service";
+import { UserKey } from "@bitwarden/common/types/key";
 
 import { PinCryptoService } from "./pin-crypto.service.implementation";
 describe("PinCryptoService", () => {

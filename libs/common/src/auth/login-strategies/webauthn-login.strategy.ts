@@ -1,4 +1,5 @@
-import { SymmetricCryptoKey, UserKey } from "../../platform/models/domain/symmetric-crypto-key";
+import { SymmetricCryptoKey } from "../../platform/models/domain/symmetric-crypto-key";
+import { UserKey } from "../../types/key";
 import { AuthResult } from "../models/domain/auth-result";
 import { WebAuthnLoginCredentials } from "../models/domain/login-credentials";
 import { WebAuthnLoginTokenRequest } from "../models/request/identity-token/webauthn-login-token.request";

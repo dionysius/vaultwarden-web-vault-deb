@@ -4,12 +4,9 @@ import { makeStaticByteArray, mockEnc, mockFromJson } from "../../../../spec";
 import { CryptoService } from "../../../platform/abstractions/crypto.service";
 import { EncryptService } from "../../../platform/abstractions/encrypt.service";
 import { EncryptedString, EncString } from "../../../platform/models/domain/enc-string";
-import {
-  OrgKey,
-  SymmetricCryptoKey,
-  UserKey,
-} from "../../../platform/models/domain/symmetric-crypto-key";
+import { SymmetricCryptoKey } from "../../../platform/models/domain/symmetric-crypto-key";
 import { ContainerService } from "../../../platform/services/container.service";
+import { OrgKey, UserKey } from "../../../types/key";
 import { AttachmentData } from "../../models/data/attachment.data";
 import { Attachment } from "../../models/domain/attachment";
 

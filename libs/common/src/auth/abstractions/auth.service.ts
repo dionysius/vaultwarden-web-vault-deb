@@ -1,7 +1,7 @@
 import { Observable } from "rxjs";
 
 import { AuthRequestPushNotification } from "../../models/response/notification.response";
-import { MasterKey } from "../../platform/models/domain/symmetric-crypto-key";
+import { MasterKey } from "../../types/key";
 import { AuthenticationStatus } from "../enums/authentication-status";
 import { AuthResult } from "../models/domain/auth-result";
 import {

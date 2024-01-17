@@ -6,6 +6,7 @@ import { FakeActiveUserState, FakeSingleUserState } from "../../../spec/fake-sta
 import { FakeStateProvider } from "../../../spec/fake-state-provider";
 import { CsprngArray } from "../../types/csprng";
 import { UserId } from "../../types/guid";
+import { UserKey, MasterKey, PinKey } from "../../types/key";
 import { CryptoFunctionService } from "../abstractions/crypto-function.service";
 import { EncryptService } from "../abstractions/encrypt.service";
 import { LogService } from "../abstractions/log.service";
@@ -13,12 +14,7 @@ import { PlatformUtilsService } from "../abstractions/platform-utils.service";
 import { StateService } from "../abstractions/state.service";
 import { Utils } from "../misc/utils";
 import { EncString } from "../models/domain/enc-string";
-import {
-  MasterKey,
-  PinKey,
-  SymmetricCryptoKey,
-  UserKey,
-} from "../models/domain/symmetric-crypto-key";
+import { SymmetricCryptoKey } from "../models/domain/symmetric-crypto-key";
 import { CryptoService, USER_EVER_HAD_USER_KEY } from "../services/crypto.service";
 
 describe("cryptoService", () => {

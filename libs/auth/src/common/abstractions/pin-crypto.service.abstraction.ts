@@ -1,4 +1,5 @@
-import { UserKey } from "../../../../common/src/platform/models/domain/symmetric-crypto-key";
+import { UserKey } from "@bitwarden/common/types/key";
+
 export abstract class PinCryptoServiceAbstraction {
   decryptUserKeyWithPin: (pin: string) => Promise<UserKey | null>;
 }

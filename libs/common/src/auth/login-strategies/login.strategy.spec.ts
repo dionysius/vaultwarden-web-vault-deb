@@ -17,17 +17,13 @@ import {
   AccountTokens,
 } from "../../platform/models/domain/account";
 import { EncString } from "../../platform/models/domain/enc-string";
-import {
-  DeviceKey,
-  MasterKey,
-  SymmetricCryptoKey,
-  UserKey,
-} from "../../platform/models/domain/symmetric-crypto-key";
+import { SymmetricCryptoKey } from "../../platform/models/domain/symmetric-crypto-key";
 import {
   PasswordStrengthService,
   PasswordStrengthServiceAbstraction,
 } from "../../tools/password-strength";
 import { CsprngArray } from "../../types/csprng";
+import { UserKey, MasterKey, DeviceKey } from "../../types/key";
 import { AuthService } from "../abstractions/auth.service";
 import { TokenService } from "../abstractions/token.service";
 import { TwoFactorService } from "../abstractions/two-factor.service";
