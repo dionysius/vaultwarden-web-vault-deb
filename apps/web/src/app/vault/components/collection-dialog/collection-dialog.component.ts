@@ -69,10 +69,9 @@ export enum CollectionDialogAction {
   templateUrl: "collection-dialog.component.html",
 })
 export class CollectionDialogComponent implements OnInit, OnDestroy {
-  protected flexibleCollectionsEnabled$ = this.configService.getFeatureFlag$(
-    FeatureFlag.FlexibleCollections,
-    false,
-  );
+  protected flexibleCollectionsEnabled$ = this.organizationService
+    .get$(this.params.organizationId)
+    .pipe(map((o) => o?.flexibleCollections));
 
   protected flexibleCollectionsV1Enabled$ = this.configService.getFeatureFlag$(
     FeatureFlag.FlexibleCollectionsV1,
@@ -110,9 +109,9 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
     private organizationUserService: OrganizationUserService,
+    private configService: ConfigServiceAbstraction,
     private dialogService: DialogService,
     private changeDetectorRef: ChangeDetectorRef,
-    private configService: ConfigServiceAbstraction,
   ) {
     this.tabIndex = params.initialTab ?? CollectionDialogTabType.Info;
   }
@@ -209,7 +208,7 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
               access: accessSelections,
             });
 
-            this.showDeleteButton = this.collection.canDelete(organization, flexibleCollections);
+            this.showDeleteButton = this.collection.canDelete(organization);
           } else {
             this.nestOptions = collections;
             const parent = collections.find((c) => c.id === this.params.parentCollectionId);

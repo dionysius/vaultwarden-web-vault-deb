@@ -14,8 +14,7 @@ export class OrganizationUserView {
   status: OrganizationUserStatusType;
   /**
    * @deprecated
-   * To be removed alongside `FeatureFlag.FlexibleCollections`.
-   *
+   * To be removed after Flexible Collections.
    * This will always return `false` if Flexible Collections is enabled.
    **/
   accessAll: boolean;

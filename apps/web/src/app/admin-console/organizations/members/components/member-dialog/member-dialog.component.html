@@ -60,10 +60,7 @@
                 </div>
               </label>
             </div>
-            <div
-              *ngIf="!(flexibleCollectionsEnabled$ | async)"
-              class="tw-mb-2 tw-flex tw-items-baseline"
-            >
+            <div *ngIf="!flexibleCollectionsEnabled" class="tw-mb-2 tw-flex tw-items-baseline">
               <input
                 type="radio"
                 id="userTypeManager"
@@ -141,7 +138,7 @@
             </div>
           </fieldset>
           <ng-container *ngIf="customUserTypeSelected">
-            <ng-container *ngIf="!(flexibleCollectionsEnabled$ | async); else customPermissionsFC">
+            <ng-container *ngIf="!flexibleCollectionsEnabled; else customPermissionsFC">
               <h3 class="mt-4 d-flex tw-font-semibold">
                 {{ "permissions" | i18n }}
               </h3>
@@ -404,14 +401,14 @@
             [columnHeader]="'groups' | i18n"
             [selectorLabelText]="'selectGroups' | i18n"
             [emptySelectionText]="'noGroupsAdded' | i18n"
-            [flexibleCollectionsEnabled]="flexibleCollectionsEnabled$ | async"
+            [flexibleCollectionsEnabled]="flexibleCollectionsEnabled"
           ></bit-access-selector>
         </bit-tab>
         <bit-tab [label]="'collections' | i18n">
           <div *ngIf="organization.useGroups" class="tw-mb-6">
             {{ "userPermissionOverrideHelper" | i18n }}
           </div>
-          <div *ngIf="!(flexibleCollectionsEnabled$ | async)" class="tw-mb-6">
+          <div *ngIf="!flexibleCollectionsEnabled" class="tw-mb-6">
             <bit-form-control>
               <input type="checkbox" bitCheckbox formControlName="accessAllCollections" />
               <bit-label>
@@ -437,7 +434,7 @@
             [columnHeader]="'collection' | i18n"
             [selectorLabelText]="'selectCollections' | i18n"
             [emptySelectionText]="'noCollectionsAdded' | i18n"
-            [flexibleCollectionsEnabled]="flexibleCollectionsEnabled$ | async"
+            [flexibleCollectionsEnabled]="flexibleCollectionsEnabled"
           ></bit-access-selector
         ></bit-tab>
       </bit-tab-group>

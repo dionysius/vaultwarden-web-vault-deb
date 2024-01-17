@@ -1,12 +1,4 @@
-import {
-  Component,
-  EventEmitter,
-  HostBinding,
-  HostListener,
-  Input,
-  OnInit,
-  Output,
-} from "@angular/core";
+import { Component, EventEmitter, HostBinding, HostListener, Input, Output } from "@angular/core";
 import { Router } from "@angular/router";
 
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
@@ -19,7 +11,6 @@ import { CollectionAdminView } from "../../core/views/collection-admin.view";
 import {
   convertToPermission,
   getPermissionList,
-  Permission,
 } from "./../../../admin-console/organizations/shared/components/access-selector/access-selector.models";
 import { VaultItemEvent } from "./vault-item-event";
 import { RowHeightClass } from "./vault-items.component";
@@ -28,7 +19,7 @@ import { RowHeightClass } from "./vault-items.component";
   selector: "tr[appVaultCollectionRow]",
   templateUrl: "vault-collection-row.component.html",
 })
-export class VaultCollectionRowComponent implements OnInit {
+export class VaultCollectionRowComponent {
   protected RowHeightClass = RowHeightClass;
 
   @Input() disabled: boolean;
@@ -41,23 +32,16 @@ export class VaultCollectionRowComponent implements OnInit {
   @Input() organizations: Organization[];
   @Input() groups: GroupView[];
   @Input() showPermissionsColumn: boolean;
-  @Input() flexibleCollectionsEnabled: boolean;
 
   @Output() onEvent = new EventEmitter<VaultItemEvent>();
 
   @Input() checked: boolean;
   @Output() checkedToggled = new EventEmitter<void>();
 
-  private permissionList: Permission[];
-
   constructor(
     private router: Router,
     private i18nService: I18nService,
   ) {}
-
-  ngOnInit() {
-    this.permissionList = getPermissionList(this.flexibleCollectionsEnabled);
-  }
 
   @HostBinding("class")
   get classes() {
@@ -80,8 +64,9 @@ export class VaultCollectionRowComponent implements OnInit {
     if (!(this.collection as CollectionAdminView).assigned) {
       return "-";
     } else {
+      const permissionList = getPermissionList(this.organization?.flexibleCollections);
       return this.i18nService.t(
-        this.permissionList.find((p) => p.perm === convertToPermission(this.collection))?.labelId,
+        permissionList.find((p) => p.perm === convertToPermission(this.collection))?.labelId,
       );
     }
   }

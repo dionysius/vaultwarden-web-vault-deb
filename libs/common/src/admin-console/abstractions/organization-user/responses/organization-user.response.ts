@@ -12,7 +12,7 @@ export class OrganizationUserResponse extends BaseResponse {
   externalId: string;
   /**
    * @deprecated
-   * To be removed alongside `FeatureFlag.FlexibleCollections`.
+   * To be removed after Flexible Collections.
    **/
   accessAll: boolean;
   accessSecretsManager: boolean;

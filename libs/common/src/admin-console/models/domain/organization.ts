@@ -177,11 +177,15 @@ export class Organization {
   }
 
   get canCreateNewCollections() {
-    return (
-      !this.limitCollectionCreationDeletion ||
-      this.isManager ||
-      this.permissions.createNewCollections
-    );
+    if (this.flexibleCollections) {
+      return (
+        !this.limitCollectionCreationDeletion ||
+        this.isAdmin ||
+        this.permissions.createNewCollections
+      );
+    }
+
+    return this.isManager || this.permissions.createNewCollections;
   }
 
   get canEditAnyCollection() {

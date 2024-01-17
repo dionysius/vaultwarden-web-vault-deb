@@ -8,10 +8,7 @@
       ></app-organization-switcher>
       <bit-tab-nav-bar class="-tw-mb-px">
         <bit-tab-link
-          *ngIf="
-            canShowVaultTab(organization) && (flexibleCollectionsEnabled$ | async);
-            else vaultTab
-          "
+          *ngIf="canShowVaultTab(organization) && organization.flexibleCollections; else vaultTab"
           route="vault"
           >{{ "collections" | i18n }}</bit-tab-link
         >

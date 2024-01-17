@@ -7,7 +7,7 @@ export class GroupResponse extends BaseResponse {
   name: string;
   /**
    * @deprecated
-   * To be removed alongside `FeatureFlag.FlexibleCollections`.
+   * To be removed after Flexible Collections.
    **/
   accessAll: boolean;
   externalId: string;
