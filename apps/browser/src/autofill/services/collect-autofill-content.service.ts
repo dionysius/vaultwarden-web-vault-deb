@@ -1029,19 +1029,14 @@ class CollectAutofillContentService implements CollectAutofillContentServiceInte
         continue;
       }
 
-      if (node instanceof HTMLFormElement || this.isNodeFormFieldElement(node)) {
-        isElementMutated = true;
-        mutatedElements.push(node);
-        continue;
-      }
-
-      const childNodes = this.queryAllTreeWalkerNodes(
+      const autofillElementNodes = this.queryAllTreeWalkerNodes(
         node,
         (node: Node) => node instanceof HTMLFormElement || this.isNodeFormFieldElement(node),
       ) as HTMLElement[];
-      if (childNodes.length) {
+
+      if (autofillElementNodes.length) {
         isElementMutated = true;
-        mutatedElements.push(...childNodes);
+        mutatedElements.push(...autofillElementNodes);
       }
     }
 
@@ -1182,7 +1177,9 @@ class CollectAutofillContentService implements CollectAutofillContentServiceInte
     }
 
     updateActions[attributeName]();
-    this.autofillFormElements.set(element, dataTarget);
+    if (this.autofillFormElements.has(element)) {
+      this.autofillFormElements.set(element, dataTarget);
+    }
   }
 
   /**
@@ -1233,15 +1230,9 @@ class CollectAutofillContentService implements CollectAutofillContentServiceInte
 
     updateActions[attributeName]();
 
-    const visibilityAttributesSet = new Set(["class", "style"]);
-    if (
-      visibilityAttributesSet.has(attributeName) &&
-      !dataTarget.htmlClass?.includes("com-bitwarden-browser-animated-fill")
-    ) {
-      dataTarget.viewable = await this.domElementVisibilityService.isFormFieldViewable(element);
+    if (this.autofillFieldElements.has(element)) {
+      this.autofillFieldElements.set(element, dataTarget);
     }
-
-    this.autofillFieldElements.set(element, dataTarget);
   }
 
   /**

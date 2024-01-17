@@ -7,11 +7,23 @@ import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 
 import { OverlayCipherData } from "../background/abstractions/overlay.background";
 import AutofillField from "../models/autofill-field";
+import AutofillForm from "../models/autofill-form";
 import AutofillPageDetails from "../models/autofill-page-details";
 import AutofillScript, { FillScript } from "../models/autofill-script";
 import { InitAutofillOverlayButtonMessage } from "../overlay/abstractions/autofill-overlay-button";
 import { InitAutofillOverlayListMessage } from "../overlay/abstractions/autofill-overlay-list";
 import { GenerateFillScriptOptions, PageDetail } from "../services/abstractions/autofill.service";
+
+function createAutofillFormMock(customFields = {}): AutofillForm {
+  return {
+    opid: "default-form-opid",
+    htmlID: "default-htmlID",
+    htmlAction: "default-htmlAction",
+    htmlMethod: "default-htmlMethod",
+    htmlName: "default-htmlName",
+    ...customFields,
+  };
+}
 
 function createAutofillFieldMock(customFields = {}): AutofillField {
   return {
@@ -258,6 +270,7 @@ function createPortSpyMock(name: string) {
 }
 
 export {
+  createAutofillFormMock,
   createAutofillFieldMock,
   createPageDetailMock,
   createAutofillPageDetailsMock,

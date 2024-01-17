@@ -1,5 +1,6 @@
 import { mock } from "jest-mock-extended";
 
+import { createAutofillFieldMock, createAutofillFormMock } from "../jest/autofill-mocks";
 import AutofillField from "../models/autofill-field";
 import AutofillForm from "../models/autofill-form";
 import {
@@ -2079,6 +2080,42 @@ describe("CollectAutofillContentService", () => {
       );
     });
 
+    it("removes cached autofill elements that are nested within a removed node", () => {
+      const form = document.createElement("form") as ElementWithOpId<HTMLFormElement>;
+      const usernameInput = document.createElement("input") as ElementWithOpId<FormFieldElement>;
+      usernameInput.setAttribute("type", "text");
+      usernameInput.setAttribute("name", "username");
+      form.appendChild(usernameInput);
+      document.body.appendChild(form);
+      const removedNodes = document.querySelectorAll("form");
+      const autofillForm: AutofillForm = createAutofillFormMock({});
+      const autofillField: AutofillField = createAutofillFieldMock({});
+      collectAutofillContentService["autofillFormElements"] = new Map([[form, autofillForm]]);
+      collectAutofillContentService["autofillFieldElements"] = new Map([
+        [usernameInput, autofillField],
+      ]);
+      collectAutofillContentService["domRecentlyMutated"] = false;
+      collectAutofillContentService["noFieldsFound"] = true;
+      collectAutofillContentService["currentLocationHref"] = window.location.href;
+
+      collectAutofillContentService["handleMutationObserverMutation"]([
+        {
+          type: "childList",
+          addedNodes: null,
+          attributeName: null,
+          attributeNamespace: null,
+          nextSibling: null,
+          oldValue: null,
+          previousSibling: null,
+          removedNodes: removedNodes,
+          target: document.body,
+        },
+      ]);
+
+      expect(collectAutofillContentService["autofillFormElements"].size).toEqual(0);
+      expect(collectAutofillContentService["autofillFieldElements"].size).toEqual(0);
+    });
+
     it("will handle updating the autofill element if any attribute mutations are encountered", () => {
       const mutationRecord: MutationRecord = {
         type: "attributes",
@@ -2389,6 +2426,12 @@ describe("CollectAutofillContentService", () => {
     };
     const updatedAttributes = ["action", "name", "id", "method"];
 
+    beforeEach(() => {
+      collectAutofillContentService["autofillFormElements"] = new Map([
+        [formElement, autofillForm],
+      ]);
+    });
+
     updatedAttributes.forEach((attribute) => {
       it(`will update the ${attribute} value for the form element`, () => {
         jest.spyOn(collectAutofillContentService["autofillFormElements"], "set");
@@ -2454,6 +2497,12 @@ describe("CollectAutofillContentService", () => {
       "data-stripe",
     ];
 
+    beforeEach(() => {
+      collectAutofillContentService["autofillFieldElements"] = new Map([
+        [fieldElement, autofillField],
+      ]);
+    });
+
     updatedAttributes.forEach((attribute) => {
       it(`will update the ${attribute} value for the field element`, async () => {
         jest.spyOn(collectAutofillContentService["autofillFieldElements"], "set");
@@ -2469,26 +2518,6 @@ describe("CollectAutofillContentService", () => {
           autofillField,
         );
       });
-    });
-
-    it("will check the dom element's visibility if the `style` or `class` attribute has updated ", async () => {
-      jest.spyOn(
-        collectAutofillContentService["domElementVisibilityService"],
-        "isFormFieldViewable",
-      );
-      const attributes = ["class", "style"];
-
-      for (const attribute of attributes) {
-        await collectAutofillContentService["updateAutofillFieldElementData"](
-          attribute,
-          fieldElement,
-          autofillField,
-        );
-
-        expect(
-          collectAutofillContentService["domElementVisibilityService"].isFormFieldViewable,
-        ).toBeCalledWith(fieldElement);
-      }
     });
 
     it("will not update an attribute value if it is not present in the updateActions object", async () => {
