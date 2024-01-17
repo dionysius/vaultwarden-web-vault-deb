@@ -9,7 +9,7 @@ import { StateService } from "@bitwarden/common/platform/abstractions/state.serv
 import { UriMatchType } from "@bitwarden/common/vault/enums";
 
 import { BrowserApi } from "../../../platform/browser/browser-api";
-import { flagEnabled } from "../../../platform/flags";
+import { enableAccountSwitching } from "../../../platform/flags";
 import { AutofillService } from "../../services/abstractions/autofill.service";
 import { AutofillOverlayVisibility } from "../../utils/autofill-overlay.enum";
 
@@ -65,7 +65,7 @@ export class AutofillComponent implements OnInit {
       { name: i18nService.t("never"), value: UriMatchType.Never },
     ];
 
-    this.accountSwitcherEnabled = flagEnabled("accountSwitching");
+    this.accountSwitcherEnabled = enableAccountSwitching();
     this.disablePasswordManagerLink = this.getDisablePasswordManagerLink();
   }
 

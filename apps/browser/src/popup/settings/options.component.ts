@@ -9,7 +9,7 @@ import { ThemeType } from "@bitwarden/common/platform/enums";
 import { TotpService } from "@bitwarden/common/vault/abstractions/totp.service";
 import { UriMatchType } from "@bitwarden/common/vault/enums";
 
-import { flagEnabled } from "../../platform/flags";
+import { enableAccountSwitching } from "../../platform/flags";
 
 @Component({
   selector: "app-options",
@@ -77,7 +77,7 @@ export class OptionsComponent implements OnInit {
       { name: i18nService.t("autoFillOnPageLoadNo"), value: false },
     ];
 
-    this.accountSwitcherEnabled = flagEnabled("accountSwitching");
+    this.accountSwitcherEnabled = enableAccountSwitching();
   }
 
   async ngOnInit() {
