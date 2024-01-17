@@ -100,7 +100,7 @@ export class AppComponent implements OnInit, OnDestroy {
         this.router.navigate(["home"]);
       } else if (
         msg.command === "locked" &&
-        (msg.userId === null || msg.userId == this.activeUserId)
+        (msg.userId == null || msg.userId == this.activeUserId)
       ) {
         this.router.navigate(["lock"]);
       } else if (msg.command === "showDialog") {
