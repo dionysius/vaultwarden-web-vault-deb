@@ -104,6 +104,7 @@ export class SsoComponent implements OnInit, OnDestroy {
   callbackPath: string;
   signedOutCallbackPath: string;
   spEntityId: string;
+  spEntityIdStatic: string;
   spMetadataUrl: string;
   spAcsUrl: string;
 
@@ -132,6 +133,7 @@ export class SsoComponent implements OnInit, OnDestroy {
 
   protected samlForm = this.formBuilder.group<ControlsOf<SsoConfigView["saml"]>>(
     {
+      spUniqueEntityId: new FormControl(true, { updateOn: "change" }),
       spNameIdFormat: new FormControl(Saml2NameIdFormat.NotConfigured),
       spOutboundSigningAlgorithm: new FormControl(defaultSigningAlgorithm),
       spSigningBehavior: new FormControl(Saml2SigningBehavior.IfIdpWantAuthnRequestsSigned),
@@ -250,6 +252,7 @@ export class SsoComponent implements OnInit, OnDestroy {
     this.callbackPath = ssoSettings.urls.callbackPath;
     this.signedOutCallbackPath = ssoSettings.urls.signedOutCallbackPath;
     this.spEntityId = ssoSettings.urls.spEntityId;
+    this.spEntityIdStatic = ssoSettings.urls.spEntityIdStatic;
     this.spMetadataUrl = ssoSettings.urls.spMetadataUrl;
     this.spAcsUrl = ssoSettings.urls.spAcsUrl;
 

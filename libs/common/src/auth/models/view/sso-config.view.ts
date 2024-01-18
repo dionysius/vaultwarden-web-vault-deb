@@ -34,6 +34,7 @@ export class SsoConfigView extends View {
   };
 
   saml: {
+    spUniqueEntityId: boolean;
     spNameIdFormat: Saml2NameIdFormat;
     spOutboundSigningAlgorithm: string;
     spSigningBehavior: Saml2SigningBehavior;
@@ -88,6 +89,7 @@ export class SsoConfigView extends View {
       };
     } else if (this.configType === SsoType.Saml2) {
       this.saml = {
+        spUniqueEntityId: orgSsoResponse.data.spUniqueEntityId,
         spNameIdFormat: orgSsoResponse.data.spNameIdFormat,
         spOutboundSigningAlgorithm: orgSsoResponse.data.spOutboundSigningAlgorithm,
         spSigningBehavior: orgSsoResponse.data.spSigningBehavior,

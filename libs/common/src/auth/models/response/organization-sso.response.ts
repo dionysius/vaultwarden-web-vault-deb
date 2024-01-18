@@ -23,6 +23,7 @@ class SsoUrls extends BaseResponse {
   callbackPath: string;
   signedOutCallbackPath: string;
   spEntityId: string;
+  spEntityIdStatic: string;
   spMetadataUrl: string;
   spAcsUrl: string;
 
@@ -31,6 +32,7 @@ class SsoUrls extends BaseResponse {
     this.callbackPath = this.getResponseProperty("CallbackPath");
     this.signedOutCallbackPath = this.getResponseProperty("SignedOutCallbackPath");
     this.spEntityId = this.getResponseProperty("SpEntityId");
+    this.spEntityIdStatic = this.getResponseProperty("SpEntityIdStatic");
     this.spMetadataUrl = this.getResponseProperty("SpMetadataUrl");
     this.spAcsUrl = this.getResponseProperty("SpAcsUrl");
   }
