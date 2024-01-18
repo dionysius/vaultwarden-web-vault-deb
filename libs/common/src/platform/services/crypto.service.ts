@@ -62,7 +62,7 @@ export class CryptoService implements CryptoServiceAbstraction {
     userId ??= (await firstValueFrom(this.accountService.activeAccount$))?.id;
     if (key != null) {
       // Key should never be null anyway
-      this.stateProvider.getUser(userId, USER_EVER_HAD_USER_KEY).update(() => true);
+      await this.stateProvider.getUser(userId, USER_EVER_HAD_USER_KEY).update(() => true);
     }
     await this.stateService.setUserKey(key, { userId: userId });
     await this.storeAdditionalKeys(key, userId);

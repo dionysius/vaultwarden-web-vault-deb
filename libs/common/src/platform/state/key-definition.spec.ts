@@ -1,5 +1,7 @@
 import { Opaque } from "type-fest";
 
+import { UserId } from "../../types/guid";
+
 import { KeyDefinition } from "./key-definition";
 import { StateDefinition } from "./state-definition";
 
@@ -107,6 +109,26 @@ describe("KeyDefinition", () => {
       expect(deserializedValue).toHaveLength(2);
       expect(deserializedValue[0]).toBeTruthy();
       expect(deserializedValue[1]).toBeFalsy();
+    });
+  });
+
+  describe("buildCacheKey", () => {
+    const keyDefinition = new KeyDefinition(fakeStateDefinition, "fake", {
+      deserializer: (s) => s,
+    });
+
+    it("builds unique cache key for each user", () => {
+      const cacheKeys: string[] = [];
+
+      // single user keys
+      cacheKeys.push(keyDefinition.buildCacheKey("user", "1" as UserId));
+      cacheKeys.push(keyDefinition.buildCacheKey("user", "2" as UserId));
+
+      expect(new Set(cacheKeys).size).toBe(cacheKeys.length);
+    });
+
+    it("throws with bad usage", () => {
+      expect(() => keyDefinition.buildCacheKey("user", null)).toThrow();
     });
   });
 });
