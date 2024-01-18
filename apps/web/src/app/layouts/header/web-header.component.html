@@ -9,11 +9,7 @@
   <div class="tw-flex">
     <div class="tw-flex tw-min-w-0 tw-flex-1 tw-flex-col tw-gap-2">
       <ng-content select="[slot=breadcrumbs]"></ng-content>
-      <div #titleContainer [ngClass]="{ 'tw-hidden': titleContainer.childElementCount === 0 }">
-        <ng-content select="[slot=title]"></ng-content>
-      </div>
       <h1
-        *ngIf="titleContainer.childElementCount === 0"
         bitTypography="h1"
         noMargin
         class="tw-m-0 tw-mr-2 tw-truncate tw-leading-10"
@@ -21,6 +17,7 @@
       >
         <i *ngIf="icon" class="bwi {{ icon }}" aria-hidden="true"></i>
         {{ title || (routeData.titleId | i18n) }}
+        <ng-content select="[slot=title-suffix]"></ng-content>
       </h1>
     </div>
     <div class="tw-ml-auto tw-flex tw-flex-col tw-gap-4">

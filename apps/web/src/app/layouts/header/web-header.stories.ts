@@ -209,11 +209,11 @@ export const WithTabs: Story = (args) => ({
   `,
 });
 
-export const WithCustomTitleComponent: Story = (args) => ({
+export const WithTitleSuffixComponent: Story = (args) => ({
   props: args,
   template: `
     <app-header title="Foobar" icon="bwi-bug" class="tw-text-main">
-      <h1 slot="title" class="tw-text-3xl tw-font-semibold" style="font-family: 'Comic Sans MS'">Bitwarden</h1>
+      <ng-container slot="title-suffix"><i class="bwi bwi-spinner bwi-spin"></i></ng-container>
     </app-header>
   `,
 });
