@@ -50,7 +50,9 @@ export class PremiumComponent implements OnInit {
     });
 
     if (confirmed) {
-      this.platformUtilsService.launchUri(`${this.cloudWebVaultUrl}/#/?premium=purchase`);
+      this.platformUtilsService.launchUri(
+        `${this.cloudWebVaultUrl}/#/settings/subscription/premium`,
+      );
     }
   }
 
@@ -62,7 +64,9 @@ export class PremiumComponent implements OnInit {
     });
 
     if (confirmed) {
-      this.platformUtilsService.launchUri(`${this.cloudWebVaultUrl}/#/?premium=manage`);
+      this.platformUtilsService.launchUri(
+        `${this.cloudWebVaultUrl}/#/settings/subscription/premium`,
+      );
     }
   }
 }

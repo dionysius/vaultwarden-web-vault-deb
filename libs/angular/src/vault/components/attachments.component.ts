@@ -197,7 +197,9 @@ export class AttachmentsComponent implements OnInit {
       });
 
       if (confirmed) {
-        this.platformUtilsService.launchUri("https://vault.bitwarden.com/#/?premium=purchase");
+        this.platformUtilsService.launchUri(
+          "https://vault.bitwarden.com/#/settings/subscription/premium",
+        );
       }
     }
   }

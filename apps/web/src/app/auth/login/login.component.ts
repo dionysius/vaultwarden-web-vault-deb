@@ -95,9 +95,7 @@ export class LoginComponent extends BaseLoginComponent implements OnInit {
   async ngOnInit() {
     // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.queryParams.pipe(first()).subscribe(async (qParams) => {
-      if (qParams.premium != null) {
-        this.routerService.setPreviousUrl("/settings/premium");
-      } else if (qParams.org != null) {
+      if (qParams.org != null) {
         const route = this.router.createUrlTree(["create-organization"], {
           queryParams: { plan: qParams.org },
         });
