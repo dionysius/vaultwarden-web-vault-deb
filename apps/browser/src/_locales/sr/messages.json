@@ -327,7 +327,7 @@
     "message": "Лозинка"
   },
   "totp": {
-    "message": "Authenticator secret"
+    "message": "Тајна аутентификатора"
   },
   "passphrase": {
     "message": "Фраза лозинке"
@@ -516,16 +516,16 @@
     "message": "Није могуће аутоматско допуњавање одабране ставке на овој страници. Уместо тога копирајте и налепите информације."
   },
   "totpCaptureError": {
-    "message": "Unable to scan QR code from the current webpage"
+    "message": "Није могуће скенирати QR кôд са тренутне веб странице"
   },
   "totpCaptureSuccess": {
-    "message": "Authenticator key added"
+    "message": "Верификациони кôд додат"
   },
   "totpCapture": {
-    "message": "Scan authenticator QR code from current webpage"
+    "message": "Скенирајте QR кôд аутентификатора са тренутне веб странице"
   },
   "copyTOTP": {
-    "message": "Copy Authenticator key (TOTP)"
+    "message": "Копирати једнократни кôд (TOTP)"
   },
   "loggedOut": {
     "message": "Одјављено"
@@ -1492,6 +1492,9 @@
   },
   "invalidPin": {
     "message": "Погрешан ПИН код."
+  },
+  "tooManyInvalidPinEntryAttemptsLoggingOut": {
+    "message": "Too many invalid PIN entry attempts. Logging out."
   },
   "unlockWithBiometrics": {
     "message": "Откључавајте помоћу биометрије"
@@ -2851,7 +2854,7 @@
     "message": "Активан налог"
   },
   "availableAccounts": {
-    "message": "Available accounts"
+    "message": "Доступни налози"
   },
   "accountLimitReached": {
     "message": "Граница налога достигнута. Одјавите се од једног налога да би додали други."
@@ -2890,7 +2893,7 @@
     }
   },
   "commonImportFormats": {
-    "message": "Common formats",
+    "message": "Уобичајени формати",
     "description": "Label indicating the most common import formats"
   }
 }

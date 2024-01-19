@@ -372,7 +372,7 @@
     "message": "Set up an unlock method to change your vault timeout action."
   },
   "unlockMethodNeeded": {
-    "message": "Set up an unlock method in Settings"
+    "message": "Ställ in en upplåsningsmetod i Inställningar"
   },
   "rateExtension": {
     "message": "Betygsätt tillägget"
@@ -525,7 +525,7 @@
     "message": "Scan authenticator QR code from current webpage"
   },
   "copyTOTP": {
-    "message": "Copy Authenticator key (TOTP)"
+    "message": "Kopiera autentiseringsnyckel (TOTP)"
   },
   "loggedOut": {
     "message": "Utloggad"
@@ -1049,7 +1049,7 @@
     "description": "Represents the message for allowing the user to enable the auto-fill overlay"
   },
   "showAutoFillMenuOnFormFieldsDescAlt": {
-    "message": "Applies to all logged in accounts."
+    "message": "Gäller för alla inloggade konton."
   },
   "turnOffBrowserBuiltInPasswordManagerSettings": {
     "message": "Turn off your browser’s built in password manager settings to avoid conflicts."
@@ -1492,6 +1492,9 @@
   },
   "invalidPin": {
     "message": "Ogiltig PIN-kod."
+  },
+  "tooManyInvalidPinEntryAttemptsLoggingOut": {
+    "message": "Too many invalid PIN entry attempts. Logging out."
   },
   "unlockWithBiometrics": {
     "message": "Lås upp med biometri"
@@ -2513,7 +2516,7 @@
     "description": "Toggling an expand/collapse state."
   },
   "filelessImport": {
-    "message": "Import your data to Bitwarden?",
+    "message": "Importera din data till Bitwarden?",
     "description": "Default notification title for triggering a fileless import."
   },
   "lpFilelessImport": {
@@ -2665,10 +2668,10 @@
     "message": "Invalid file password, please use the password you entered when you created the export file."
   },
   "importDestination": {
-    "message": "Import destination"
+    "message": "Importdestination"
   },
   "learnAboutImportOptions": {
-    "message": "Learn about your import options"
+    "message": "Läs mer om dina importalternativ"
   },
   "selectImportFolder": {
     "message": "Välj en mapp"
@@ -2778,7 +2781,7 @@
     "message": "Multifactor authentication cancelled"
   },
   "noLastPassDataFound": {
-    "message": "Inga LastPass-data hittades"
+    "message": "Ingen LastPass-data hittades"
   },
   "incorrectUsernameOrPassword": {
     "message": "Felaktigt användarnamn eller lösenord"
@@ -2802,7 +2805,7 @@
     "message": "Ange din engångskod från din autentiseringsapp"
   },
   "lastPassOOBDesc": {
-    "message": "Approve the login request in your authentication app or enter a one-time passcode."
+    "message": "Godkänn inloggningsbegäran i din autentiseringsapp eller ange en engångskod."
   },
   "passcode": {
     "message": "Passcode"

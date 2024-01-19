@@ -516,7 +516,7 @@
     "message": "Impossible de saisir automatiquement l'élément sélectionné sur cette page. Copiez-collez plutôt l'information."
   },
   "totpCaptureError": {
-    "message": "Unable to scan QR code from the current webpage"
+    "message": "Impossible de scanner le code QR à partir de la page web actuelle"
   },
   "totpCaptureSuccess": {
     "message": "Authenticator key added"
@@ -525,7 +525,7 @@
     "message": "Scan authenticator QR code from current webpage"
   },
   "copyTOTP": {
-    "message": "Copy Authenticator key (TOTP)"
+    "message": "Copier la clé TOTP"
   },
   "loggedOut": {
     "message": "Déconnecté"
@@ -679,13 +679,13 @@
     "message": "Demander à mettre à jour le mot de passe d'un identifiant lorsqu'un changement est détecté sur un site Web."
   },
   "changedPasswordNotificationDescAlt": {
-    "message": "Ask to update a login's password when a change is detected on a website. Applies to all logged in accounts."
+    "message": "Proposer de mettre à jour le mot de passe quand un changement est détecté sur un site web. S'appliquer à tous les comptes connectés."
   },
   "enableUsePasskeys": {
     "message": "Demander à enregistrer et utiliser les mots de passe"
   },
   "usePasskeysDesc": {
-    "message": "Ask to save new passkeys or log in with passkeys stored in your vault. Applies to all logged in accounts."
+    "message": "Proposer d'enregistrer de nouvelles clés d'accès ou bien de se connecter à l'aide de clés déjà stockées dans votre coffre-fort. S'applique à tous les comptes connectés."
   },
   "notificationChangeDesc": {
     "message": "Souhaitez-vous mettre à jour ce mot de passe dans Bitwarden ?"
@@ -706,7 +706,7 @@
     "message": "Utilisez un clic secondaire pour accéder à la génération de mots de passe et les identifiants correspondants pour le site Web. "
   },
   "contextMenuItemDescAlt": {
-    "message": "Use a secondary click to access password generation and matching logins for the website. Applies to all logged in accounts."
+    "message": "Utilisez un clic secondaire pour accéder à la génération de mot de passe et aux identifiants correspondants au site Web. S'applique à tous les comptes connectés."
   },
   "defaultUriMatchDetection": {
     "message": "Détection de correspondance URI par défaut",
@@ -1062,7 +1062,7 @@
     "description": "Overlay setting select option for disabling autofill overlay"
   },
   "autofillOverlayVisibilityOnFieldFocus": {
-    "message": "When field is selected (on focus)",
+    "message": "Quand le champ est sélectionné (a le focus)",
     "description": "Overlay appearance select option for showing the field on focus of the input element"
   },
   "autofillOverlayVisibilityOnButtonClick": {
@@ -1162,7 +1162,7 @@
     "message": "Afficher une image reconnaissable à côté de chaque identifiant."
   },
   "faviconDescAlt": {
-    "message": "Show a recognizable image next to each login. Applies to all logged in accounts."
+    "message": "Afficher une image reconnaissable à côté de chaque identifiant. S'applique à tous les comptes connectés."
   },
   "enableBadgeCounter": {
     "message": "Afficher le compteur de badge"
@@ -1493,6 +1493,9 @@
   "invalidPin": {
     "message": "Code PIN invalide."
   },
+  "tooManyInvalidPinEntryAttemptsLoggingOut": {
+    "message": "Too many invalid PIN entry attempts. Logging out."
+  },
   "unlockWithBiometrics": {
     "message": "Déverrouiller par biométrie"
   },
@@ -1733,7 +1736,7 @@
     "message": "Bitwarden ne proposera pas d'enregistrer les informations de connexion pour ces domaines. Vous devez actualiser la page pour que les modifications prennent effet."
   },
   "excludedDomainsDescAlt": {
-    "message": "Bitwarden will not ask to save login details for these domains for all logged in accounts. You must refresh the page for changes to take effect."
+    "message": "Bitwarden ne proposera pas d'enregistrer les informations de connexion pour ces domaines pour tous les comptes connectés. Vous devez rafraîchir la page pour appliquer les changements."
   },
   "excludedDomainsInvalidDomain": {
     "message": "$DOMAIN$ n'est pas un domaine valide",
@@ -2297,7 +2300,7 @@
     "message": "Comment saisir automatiquement"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Select an item from this screen, use the shortcut $COMMAND$, or explore other options in settings.",
+    "message": "Sélectionnez un élément à partir de cet écran, utilisez le raccourci $COMMAND$ ou explorez d'autres options dans les paramètres.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2306,7 +2309,7 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "Select an item from this screen, or explore other options in settings."
+    "message": "Sélectionnez un élément à partir de cet écran ou explorez d'autres options dans les paramètres."
   },
   "gotIt": {
     "message": "Compris"
@@ -2513,11 +2516,11 @@
     "description": "Toggling an expand/collapse state."
   },
   "filelessImport": {
-    "message": "Import your data to Bitwarden?",
+    "message": "Importer vos données dans Bitwarden ?",
     "description": "Default notification title for triggering a fileless import."
   },
   "lpFilelessImport": {
-    "message": "Protect your LastPass data and import to Bitwarden?",
+    "message": "Protéger vos données LastPass et importer dans Bitwarden ?",
     "description": "LastPass specific notification title for triggering a fileless import."
   },
   "lpCancelFilelessImport": {
@@ -2537,11 +2540,11 @@
     "description": "Notification message for when an import has completed successfully."
   },
   "dataImportFailed": {
-    "message": "Error importing. Check console for details.",
+    "message": "Erreur lors de l'importation. Consultez la console pour plus de détails.",
     "description": "Notification message for when an import has failed."
   },
   "importNetworkError": {
-    "message": "Network error encountered during import.",
+    "message": "Une erreur réseau s'est produite lors de l'importation.",
     "description": "Notification message for when an import has failed due to a network error."
   },
   "aliasDomain": {
@@ -2567,7 +2570,7 @@
     "description": "Page title for the iframe containing the overlay button"
   },
   "toggleBitwardenVaultOverlay": {
-    "message": "Toggle Bitwarden auto-fill menu",
+    "message": "(Dés)activer le menu de saisie automatique de Bitwarden",
     "description": "Screen reader and tool tip label for the overlay button"
   },
   "bitwardenVault": {
@@ -2575,7 +2578,7 @@
     "description": "Page title in overlay"
   },
   "unlockYourAccountToViewMatchingLogins": {
-    "message": "Unlock your account to view matching logins",
+    "message": "Déverrouillez votre compte pour afficher les identifiants correspondants",
     "description": "Text to display in overlay when the account is locked."
   },
   "unlockAccount": {
@@ -2603,7 +2606,7 @@
     "description": "Screen reader text (aria-label) for new item button in overlay"
   },
   "bitwardenOverlayMenuAvailable": {
-    "message": "Bitwarden auto-fill menu available. Press the down arrow key to select.",
+    "message": "Menu de saisie automatique de Bitwarden disponible. Appuyez sur la touche Flèche bas pour sélectionner.",
     "description": "Screen reader text for announcing when the overlay opens on the page"
   },
   "turnOn": {
@@ -2613,7 +2616,7 @@
     "message": "Ignorer"
   },
   "importData": {
-    "message": "Import data",
+    "message": "Importer des données",
     "description": "Used for the header of the import dialog, the import button and within the file-password-prompt"
   },
   "importError": {
@@ -2659,7 +2662,7 @@
     "message": "Rien n'a été importé."
   },
   "importEncKeyError": {
-    "message": "Error decrypting the exported file. Your encryption key does not match the encryption key used export the data."
+    "message": "Erreur lors du déchiffrement du fichier exporté. Votre clé de chiffrement ne correspond pas à la clé utilisée pour exporter les données."
   },
   "invalidFilePassword": {
     "message": "Mot de passe du fichier incorrect, veuillez utiliser le mot de passe saisi lors de l'exportation du fichier."
@@ -2872,7 +2875,7 @@
     "message": "hébergé sur"
   },
   "useDeviceOrHardwareKey": {
-    "message": "Use your device or hardware key"
+    "message": "Utilisez votre appareil ou votre clé matérielle"
   },
   "justOnce": {
     "message": "Une seule fois"

@@ -107,7 +107,7 @@
     "message": "Copiar Nombre del campo personalizado"
   },
   "noMatchingLogins": {
-    "message": "Sin entradas coincidentes."
+    "message": "Sin entradas coincidentes"
   },
   "noCards": {
     "message": "No hay tarjetas"
@@ -1492,6 +1492,9 @@
   },
   "invalidPin": {
     "message": "Código PIN inválido."
+  },
+  "tooManyInvalidPinEntryAttemptsLoggingOut": {
+    "message": "Demasiados intentos de entrada de PIN no válidos. Cerrando sesión."
   },
   "unlockWithBiometrics": {
     "message": "Desbloquear con biométricos"
@@ -2890,7 +2893,7 @@
     }
   },
   "commonImportFormats": {
-    "message": "Common formats",
+    "message": "Formatos comunes",
     "description": "Label indicating the most common import formats"
   }
 }

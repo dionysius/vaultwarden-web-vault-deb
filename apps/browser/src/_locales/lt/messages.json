@@ -1493,6 +1493,9 @@
   "invalidPin": {
     "message": "Neteisingas PIN kodas."
   },
+  "tooManyInvalidPinEntryAttemptsLoggingOut": {
+    "message": "Per daug netinkamų PIN kodo įvedimo bandymų. Atsijungima."
+  },
   "unlockWithBiometrics": {
     "message": "Atrakinti naudojant biometrinius duomenis"
   },

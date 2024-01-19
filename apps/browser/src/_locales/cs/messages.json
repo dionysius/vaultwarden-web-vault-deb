@@ -1493,6 +1493,9 @@
   "invalidPin": {
     "message": "Neplatný PIN kód."
   },
+  "tooManyInvalidPinEntryAttemptsLoggingOut": {
+    "message": "Příliš mnoho neplatných pokusů o zadání PINu. Odhlášeno."
+  },
   "unlockWithBiometrics": {
     "message": "Odemknout pomocí biometrie"
   },

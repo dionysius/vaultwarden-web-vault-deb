@@ -1493,6 +1493,9 @@
   "invalidPin": {
     "message": "Ungültiger PIN-Code."
   },
+  "tooManyInvalidPinEntryAttemptsLoggingOut": {
+    "message": "Zu viele ungültige PIN Eingabeversuche. Wird abgemeldet."
+  },
   "unlockWithBiometrics": {
     "message": "Mit Biometrie entsperren"
   },

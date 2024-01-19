@@ -269,7 +269,7 @@
     "message": "長度"
   },
   "passwordMinLength": {
-    "message": "Minimum password length"
+    "message": "最小密碼長度"
   },
   "uppercase": {
     "message": "大寫 (A-Z)"
@@ -415,7 +415,7 @@
     "message": "立即鎖定"
   },
   "lockAll": {
-    "message": "Lock all"
+    "message": "鎖定全部"
   },
   "immediately": {
     "message": "立即"
@@ -519,13 +519,13 @@
     "message": "Unable to scan QR code from the current webpage"
   },
   "totpCaptureSuccess": {
-    "message": "Authenticator key added"
+    "message": "已新增驗證器金鑰。"
   },
   "totpCapture": {
     "message": "Scan authenticator QR code from current webpage"
   },
   "copyTOTP": {
-    "message": "Copy Authenticator key (TOTP)"
+    "message": "複製驗證器金鑰 (TOTP)"
   },
   "loggedOut": {
     "message": "已登出"
@@ -1492,6 +1492,9 @@
   },
   "invalidPin": {
     "message": "無效的 PIN 碼。"
+  },
+  "tooManyInvalidPinEntryAttemptsLoggingOut": {
+    "message": "Too many invalid PIN entry attempts. Logging out."
   },
   "unlockWithBiometrics": {
     "message": "使用生物特徵辨識解鎖"
@@ -2525,15 +2528,15 @@
     "description": "LastPass specific notification button text for cancelling a fileless import."
   },
   "startFilelessImport": {
-    "message": "Import to Bitwarden",
+    "message": "匯入至 Bitwarden",
     "description": "Notification button text for starting a fileless import."
   },
   "importing": {
-    "message": "Importing...",
+    "message": "匯入中……",
     "description": "Notification message for when an import is in progress."
   },
   "dataSuccessfullyImported": {
-    "message": "Data successfully imported!",
+    "message": "資料匯入成功！",
     "description": "Notification message for when an import has completed successfully."
   },
   "dataImportFailed": {
@@ -2560,7 +2563,7 @@
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
   "skipToContent": {
-    "message": "Skip to content"
+    "message": "跳至內容"
   },
   "bitwardenOverlayButton": {
     "message": "Bitwarden 自動填入選單按鈕",
@@ -2591,7 +2594,7 @@
     "description": "Screen reader text for when a login item is focused where a partial username is displayed. SR will announce this phrase before reading the text of the partial username"
   },
   "noItemsToShow": {
-    "message": "沒有項目可以顯示",
+    "message": "無可顯示的項目",
     "description": "Text to show in overlay if there are no matching items"
   },
   "newItem": {
@@ -2724,13 +2727,13 @@
     "message": "確認檔案密碼"
   },
   "typePasskey": {
-    "message": "Passkey"
+    "message": "密碼金鑰"
   },
   "passkeyNotCopied": {
     "message": "密碼金鑰不會被複製"
   },
   "passkeyNotCopiedAlert": {
-    "message": "密碼金鑰不會被複製到複製的項目。 您想繼續複製該項目嗎？"
+    "message": "密碼金鑰不會被複製到新複製的項目。 您想繼續複製此項目嗎？"
   },
   "passkeyFeatureIsNotImplementedForAccountsWithoutMasterPassword": {
     "message": "發起站點需要驗證。對於沒有主密碼的帳戶，此功能尚未實現。"
@@ -2745,7 +2748,7 @@
     "message": "未發現用於這個應用程式的密碼金鑰。"
   },
   "noMatchingPasskeyLogin": {
-    "message": "您還沒有與該網站一致的登入項目。"
+    "message": "您沒有適用於此網站的登入項目。"
   },
   "confirm": {
     "message": "確認"
@@ -2754,7 +2757,7 @@
     "message": "儲存密碼金鑰"
   },
   "savePasskeyNewLogin": {
-    "message": "儲存密碼金鑰作為新的登入"
+    "message": "儲存密碼金鑰為新登入項目"
   },
   "choosePasskey": {
     "message": "選擇一個用於儲存此密碼金鑰的登入項目"
@@ -2763,7 +2766,7 @@
     "message": "密碼金鑰項目"
   },
   "overwritePasskey": {
-    "message": "覆寫密碼金輪嗎？"
+    "message": "覆寫密碼金鑰嗎？"
   },
   "overwritePasskeyAlert": {
     "message": "該項目已包含密碼金鑰。您確定要覆寫目前的密碼金鑰嗎？"
@@ -2833,40 +2836,40 @@
     "message": "請再嘗試一次，或檢查您的電子郵件以確認 LastPass 的驗證信。"
   },
   "collection": {
-    "message": "集合"
+    "message": "收藏"
   },
   "lastPassYubikeyDesc": {
     "message": "將與您的 LastPass 帳戶關聯的 YubiKey 插入電腦的 USB 連接埠，然後觸摸其按鈕。"
   },
   "switchAccount": {
-    "message": "Switch account"
+    "message": "切換帳戶"
   },
   "switchAccounts": {
     "message": "Switch accounts"
   },
   "switchToAccount": {
-    "message": "Switch to account"
+    "message": "切換帳戶"
   },
   "activeAccount": {
-    "message": "Active account"
+    "message": "目前帳戶"
   },
   "availableAccounts": {
-    "message": "Available accounts"
+    "message": "可用帳戶"
   },
   "accountLimitReached": {
-    "message": "Account limit reached. Log out of an account to add another."
+    "message": "已達帳戶數量上限。登出一個帳戶後再加入其他的帳戶。"
   },
   "active": {
-    "message": "active"
+    "message": "生效中"
   },
   "locked": {
-    "message": "locked"
+    "message": "已鎖"
   },
   "unlocked": {
-    "message": "unlocked"
+    "message": "已解鎖"
   },
   "server": {
-    "message": "server"
+    "message": "伺服器"
   },
   "hostedAt": {
     "message": "hosted at"
@@ -2875,7 +2878,7 @@
     "message": "Use your device or hardware key"
   },
   "justOnce": {
-    "message": "Just once"
+    "message": "僅此一次"
   },
   "alwaysForThisSite": {
     "message": "Always for this site"

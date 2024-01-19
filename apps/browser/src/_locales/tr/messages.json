@@ -1493,6 +1493,9 @@
   "invalidPin": {
     "message": "PIN kodu geçersiz."
   },
+  "tooManyInvalidPinEntryAttemptsLoggingOut": {
+    "message": "Çok fazla geçersiz PIN girişi denemesi. Oturum kapatılıyor."
+  },
   "unlockWithBiometrics": {
     "message": "Kilidi biyometri ile aç"
   },

@@ -1493,6 +1493,9 @@
   "invalidPin": {
     "message": "Código PIN inválido."
   },
+  "tooManyInvalidPinEntryAttemptsLoggingOut": {
+    "message": "Demasiadas tentativas de introdução de PINs inválidos. A terminar a sessão."
+  },
   "unlockWithBiometrics": {
     "message": "Desbloquear com biometria"
   },

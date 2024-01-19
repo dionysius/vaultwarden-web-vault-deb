@@ -516,7 +516,7 @@
     "message": "Valittua kohdetta ei voitu täyttää tälle sivulle automaattisesti. Kopioi ja liitä tiedot itse."
   },
   "totpCaptureError": {
-    "message": "Unable to scan QR code from the current webpage"
+    "message": "QR-koodin skannaus nykyiseltä sivulta ei onnistu."
   },
   "totpCaptureSuccess": {
     "message": "Todennusavain on lisätty"
@@ -1492,6 +1492,9 @@
   },
   "invalidPin": {
     "message": "Virheellinen PIN-koodi."
+  },
+  "tooManyInvalidPinEntryAttemptsLoggingOut": {
+    "message": "Liian monta epäonnistunutta PIN-yritystä. Kirjaudutaan ulos."
   },
   "unlockWithBiometrics": {
     "message": "Avaa biometrialla"
@@ -2851,7 +2854,7 @@
     "message": "Aktiivinen tili"
   },
   "availableAccounts": {
-    "message": "Available accounts"
+    "message": "Käytettävissä olevat tilit"
   },
   "accountLimitReached": {
     "message": "Tilien enimmäismäärä on saavutettu. Kirjaa jokin niistä ulos lisätäksesi tilin."

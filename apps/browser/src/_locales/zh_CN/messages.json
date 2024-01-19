@@ -1493,6 +1493,9 @@
   "invalidPin": {
     "message": "无效 PIN 码。"
   },
+  "tooManyInvalidPinEntryAttemptsLoggingOut": {
+    "message": "无效的 PIN 输入尝试次数过多，正在注销。"
+  },
   "unlockWithBiometrics": {
     "message": "使用生物识别解锁"
   },
@@ -2560,7 +2563,7 @@
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
   "skipToContent": {
-    "message": "跳转到内容"
+    "message": "跳转到正文"
   },
   "bitwardenOverlayButton": {
     "message": "Bitwarden 自动填充菜单按钮",
@@ -2890,7 +2893,7 @@
     }
   },
   "commonImportFormats": {
-    "message": "Common formats",
+    "message": "通用格式",
     "description": "Label indicating the most common import formats"
   }
 }

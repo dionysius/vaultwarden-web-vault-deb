@@ -1493,6 +1493,9 @@
   "invalidPin": {
     "message": "PIN ไม่ถูกต้อง"
   },
+  "tooManyInvalidPinEntryAttemptsLoggingOut": {
+    "message": "Too many invalid PIN entry attempts. Logging out."
+  },
   "unlockWithBiometrics": {
     "message": "ปลดล็อกด้วยไบโอเมตริก"
   },

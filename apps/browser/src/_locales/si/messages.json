@@ -1493,6 +1493,9 @@
   "invalidPin": {
     "message": "වලංගු නොවන PIN කේතය."
   },
+  "tooManyInvalidPinEntryAttemptsLoggingOut": {
+    "message": "Too many invalid PIN entry attempts. Logging out."
+  },
   "unlockWithBiometrics": {
     "message": "ජෛව විද්යාව සමඟ අගුළු ඇරීම"
   },

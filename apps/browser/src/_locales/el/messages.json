@@ -1493,6 +1493,9 @@
   "invalidPin": {
     "message": "Μη έγκυρος κωδικός PIN."
   },
+  "tooManyInvalidPinEntryAttemptsLoggingOut": {
+    "message": "Too many invalid PIN entry attempts. Logging out."
+  },
   "unlockWithBiometrics": {
     "message": "Ξεκλείδωμα με βιομετρικά στοιχεία"
   },

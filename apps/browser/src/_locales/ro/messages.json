@@ -1493,6 +1493,9 @@
   "invalidPin": {
     "message": "Codul PIN este invalid."
   },
+  "tooManyInvalidPinEntryAttemptsLoggingOut": {
+    "message": "Too many invalid PIN entry attempts. Logging out."
+  },
   "unlockWithBiometrics": {
     "message": "Deblocare folosind biometria"
   },
