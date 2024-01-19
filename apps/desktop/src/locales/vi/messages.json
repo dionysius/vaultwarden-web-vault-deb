@@ -1392,6 +1392,9 @@
   "invalidPin": {
     "message": "Mã PIN không hợp lệ."
   },
+  "tooManyInvalidPinEntryAttemptsLoggingOut": {
+    "message": "Too many invalid PIN entry attempts. Logging out."
+  },
   "unlockWithWindowsHello": {
     "message": "Mở khóa với Windows Hello"
   },

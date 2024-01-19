@@ -1392,6 +1392,9 @@
   "invalidPin": {
     "message": "Погрешан ПИН код."
   },
+  "tooManyInvalidPinEntryAttemptsLoggingOut": {
+    "message": "Too many invalid PIN entry attempts. Logging out."
+  },
   "unlockWithWindowsHello": {
     "message": "Откључај са Windows Hello"
   },
@@ -2618,7 +2621,7 @@
     "message": "Унети YubiKey који је асоциран са LastPass налогом у УСБ порт вашег рачунара, и затим додирните његово дугме."
   },
   "commonImportFormats": {
-    "message": "Common formats",
+    "message": "Уобичајени формати",
     "description": "Label indicating the most common import formats"
   }
 }

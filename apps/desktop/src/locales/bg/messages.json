@@ -1392,6 +1392,9 @@
   "invalidPin": {
     "message": "Неправилен ПИН."
   },
+  "tooManyInvalidPinEntryAttemptsLoggingOut": {
+    "message": "Направили сте твърде много опити с неправилен ПИН код. Отписване…"
+  },
   "unlockWithWindowsHello": {
     "message": "Отключване с Windows Hello"
   },
@@ -2618,7 +2621,7 @@
     "message": "Поставете устройството на YubiKey, което е свързано с регистрацията Ви в LastPass, в USB порт и натиснете бутона на устройството."
   },
   "commonImportFormats": {
-    "message": "Common formats",
+    "message": "Често използвани формати",
     "description": "Label indicating the most common import formats"
   }
 }

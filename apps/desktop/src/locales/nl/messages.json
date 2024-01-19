@@ -1392,6 +1392,9 @@
   "invalidPin": {
     "message": "Ongeldige PIN-code."
   },
+  "tooManyInvalidPinEntryAttemptsLoggingOut": {
+    "message": "PIN te vaak verkeerd ingevuld. Bezig met uitloggen."
+  },
   "unlockWithWindowsHello": {
     "message": "Ontgrendelen met Windows Hello"
   },

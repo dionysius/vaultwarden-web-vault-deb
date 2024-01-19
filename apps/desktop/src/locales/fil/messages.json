@@ -1392,6 +1392,9 @@
   "invalidPin": {
     "message": "Imbalidong PIN code."
   },
+  "tooManyInvalidPinEntryAttemptsLoggingOut": {
+    "message": "Too many invalid PIN entry attempts. Logging out."
+  },
   "unlockWithWindowsHello": {
     "message": "I-unlock gamit ang Windows Hello"
   },

@@ -1392,6 +1392,9 @@
   "invalidPin": {
     "message": "Ugyldig PIN-kode."
   },
+  "tooManyInvalidPinEntryAttemptsLoggingOut": {
+    "message": "For mange ugyldige PIN-kodeforsøg. Logger ud."
+  },
   "unlockWithWindowsHello": {
     "message": "Oplås med Windows Hello"
   },

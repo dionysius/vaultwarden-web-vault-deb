@@ -1392,6 +1392,9 @@
   "invalidPin": {
     "message": "A pinkód érvénytelen."
   },
+  "tooManyInvalidPinEntryAttemptsLoggingOut": {
+    "message": "Túl sok az érvénytelen PIN beviteli kísérlet. Kijelentkezés történik."
+  },
   "unlockWithWindowsHello": {
     "message": "Feloldás Windows Hello segítségével"
   },

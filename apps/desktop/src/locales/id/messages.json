@@ -1392,6 +1392,9 @@
   "invalidPin": {
     "message": "Kode PIN tidak valid."
   },
+  "tooManyInvalidPinEntryAttemptsLoggingOut": {
+    "message": "Too many invalid PIN entry attempts. Logging out."
+  },
   "unlockWithWindowsHello": {
     "message": "Buka dengan Windows Hello"
   },

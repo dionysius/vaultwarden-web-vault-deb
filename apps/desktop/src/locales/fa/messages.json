@@ -1392,6 +1392,9 @@
   "invalidPin": {
     "message": "کد پین غیر معتبر است."
   },
+  "tooManyInvalidPinEntryAttemptsLoggingOut": {
+    "message": "Too many invalid PIN entry attempts. Logging out."
+  },
   "unlockWithWindowsHello": {
     "message": "باز کردن با Windows Hello"
   },

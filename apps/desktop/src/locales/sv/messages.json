@@ -1392,6 +1392,9 @@
   "invalidPin": {
     "message": "Ogiltig PIN-kod."
   },
+  "tooManyInvalidPinEntryAttemptsLoggingOut": {
+    "message": "Too many invalid PIN entry attempts. Logging out."
+  },
   "unlockWithWindowsHello": {
     "message": "Lås upp med Windows Hello"
   },
@@ -2495,7 +2498,7 @@
     "message": "Invalid file password, please use the password you entered when you created the export file."
   },
   "importDestination": {
-    "message": "Import destination"
+    "message": "Importdestination"
   },
   "learnAboutImportOptions": {
     "message": "Learn about your import options"

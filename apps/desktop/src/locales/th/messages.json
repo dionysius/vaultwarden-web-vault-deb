@@ -1392,6 +1392,9 @@
   "invalidPin": {
     "message": "PIN ไม่ถูกต้อง"
   },
+  "tooManyInvalidPinEntryAttemptsLoggingOut": {
+    "message": "Too many invalid PIN entry attempts. Logging out."
+  },
   "unlockWithWindowsHello": {
     "message": "ปลดล็อก ด้วย Windows Hello"
   },

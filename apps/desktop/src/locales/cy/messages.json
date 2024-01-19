@@ -18,7 +18,7 @@
     "message": "Login"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "Cerdyn"
   },
   "typeIdentity": {
     "message": "Identity"
@@ -107,7 +107,7 @@
     "message": "Verification code (TOTP)"
   },
   "website": {
-    "message": "Website"
+    "message": "Gwefan"
   },
   "notes": {
     "message": "Notes"
@@ -1391,6 +1391,9 @@
   },
   "invalidPin": {
     "message": "Invalid PIN code."
+  },
+  "tooManyInvalidPinEntryAttemptsLoggingOut": {
+    "message": "Too many invalid PIN entry attempts. Logging out."
   },
   "unlockWithWindowsHello": {
     "message": "Unlock with Windows Hello"

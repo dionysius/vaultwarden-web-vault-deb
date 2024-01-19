@@ -1392,6 +1392,9 @@
   "invalidPin": {
     "message": "Памылковы PIN-код."
   },
+  "tooManyInvalidPinEntryAttemptsLoggingOut": {
+    "message": "Too many invalid PIN entry attempts. Logging out."
+  },
   "unlockWithWindowsHello": {
     "message": "Разблакіраваць з Windows Hello"
   },

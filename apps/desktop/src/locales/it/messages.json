@@ -1392,6 +1392,9 @@
   "invalidPin": {
     "message": "Codice PIN non valido."
   },
+  "tooManyInvalidPinEntryAttemptsLoggingOut": {
+    "message": "Troppi tentativi di inserimento del PIN falliti. Uscendo dall'account..."
+  },
   "unlockWithWindowsHello": {
     "message": "Sblocca con Windows Hello"
   },

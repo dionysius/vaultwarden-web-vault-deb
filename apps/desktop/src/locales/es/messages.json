@@ -404,7 +404,7 @@
     "message": "Longitud"
   },
   "passwordMinLength": {
-    "message": "Minimum password length"
+    "message": "Longitud mínima de la contraseña"
   },
   "uppercase": {
     "message": "Mayúsculas (A-Z)"
@@ -1391,6 +1391,9 @@
   },
   "invalidPin": {
     "message": "Código PIN inválido."
+  },
+  "tooManyInvalidPinEntryAttemptsLoggingOut": {
+    "message": "Too many invalid PIN entry attempts. Logging out."
   },
   "unlockWithWindowsHello": {
     "message": "Desbloquear con Windows Hello"

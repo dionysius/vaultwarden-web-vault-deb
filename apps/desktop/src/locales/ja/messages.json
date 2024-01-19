@@ -1392,6 +1392,9 @@
   "invalidPin": {
     "message": "PIN コードが間違っています。"
   },
+  "tooManyInvalidPinEntryAttemptsLoggingOut": {
+    "message": "無効な PIN 入力の試行回数が多すぎます。ログアウトします。"
+  },
   "unlockWithWindowsHello": {
     "message": "Windows Hello でロック解除"
   },

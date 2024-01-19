@@ -1392,6 +1392,9 @@
   "invalidPin": {
     "message": "Vale PIN kood."
   },
+  "tooManyInvalidPinEntryAttemptsLoggingOut": {
+    "message": "Too many invalid PIN entry attempts. Logging out."
+  },
   "unlockWithWindowsHello": {
     "message": "Lukusta lahti Windows Helloga"
   },

@@ -1392,6 +1392,9 @@
   "invalidPin": {
     "message": "Yararsız PIN kod."
   },
+  "tooManyInvalidPinEntryAttemptsLoggingOut": {
+    "message": "Həddən artıq yararsız PIN giriş cəhdi. Çıxış edilir."
+  },
   "unlockWithWindowsHello": {
     "message": "Windows Hello ilə kilidi aç"
   },

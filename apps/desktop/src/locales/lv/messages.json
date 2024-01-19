@@ -1392,6 +1392,9 @@
   "invalidPin": {
     "message": "Nederīgs PIN kods."
   },
+  "tooManyInvalidPinEntryAttemptsLoggingOut": {
+    "message": "Pārāk daudz nederīgu PIN ievadīšanas mēģinājumu. Atsakās."
+  },
   "unlockWithWindowsHello": {
     "message": "Atslēgt ar Windows Hello"
   },
@@ -2618,7 +2621,7 @@
     "message": "Jāievieto ar LastPass kontu sasaistītā YubiKey datora USB ligzdā, tad jāpieskaras tās pogai."
   },
   "commonImportFormats": {
-    "message": "Common formats",
+    "message": "Izplatīti veidoli",
     "description": "Label indicating the most common import formats"
   }
 }

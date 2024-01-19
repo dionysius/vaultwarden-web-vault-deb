@@ -1392,6 +1392,9 @@
   "invalidPin": {
     "message": "잘못된 PIN 코드입니다."
   },
+  "tooManyInvalidPinEntryAttemptsLoggingOut": {
+    "message": "Too many invalid PIN entry attempts. Logging out."
+  },
   "unlockWithWindowsHello": {
     "message": "Windows Hello를 사용하여 잠금 해제"
   },
