@@ -656,9 +656,6 @@
   "passkeySuccessfullyCreated": {
     "message": "Ключ доступу успішно створено!"
   },
-  "customName": {
-    "message": "Власна назва"
-  },
   "customPasskeyNameInfo": {
     "message": "Назвіть свій ключ доступу для полегшення розпізнавання."
   },
@@ -5178,6 +5175,12 @@
   },
   "spValidateCertificates": {
     "message": "Перевірка сертифікатів"
+  },
+  "spUniqueEntityId": {
+    "message": "Set a unique SP entity ID"
+  },
+  "spUniqueEntityIdDesc": {
+    "message": "Generate an identifier that is unique to your organization"
   },
   "idpEntityId": {
     "message": "ID об'єкта"

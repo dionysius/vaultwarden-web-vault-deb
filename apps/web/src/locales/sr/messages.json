@@ -656,9 +656,6 @@
   "passkeySuccessfullyCreated": {
     "message": "Приступачни кључ је успешно креиран!"
   },
-  "customName": {
-    "message": "Прилагоди име"
-  },
   "customPasskeyNameInfo": {
     "message": "Именујте Ваш приступачни кључ за лакшу идентификацију."
   },
@@ -5179,6 +5176,12 @@
   "spValidateCertificates": {
     "message": "Проверити цертификате"
   },
+  "spUniqueEntityId": {
+    "message": "Set a unique SP entity ID"
+  },
+  "spUniqueEntityIdDesc": {
+    "message": "Generate an identifier that is unique to your organization"
+  },
   "idpEntityId": {
     "message": "Id ентитета"
   },
@@ -7439,16 +7442,16 @@
     "message": "Приступ колекцији је ограничен"
   },
   "grantCollectionAccess": {
-    "message": "Grant groups or members access to this collection."
+    "message": "Одобрите групама или члановима приступ овој колекцији."
   },
   "adminCollectionAccess": {
-    "message": "Administrators can access and manage collections."
+    "message": "Администратори могу да приступе и управљају колекцијама."
   },
   "serviceAccountAccessUpdated": {
     "message": "Приступ услужног налога ажуриран"
   },
   "commonImportFormats": {
-    "message": "Common formats",
+    "message": "Уобичајени формати",
     "description": "Label indicating the most common import formats"
   }
 }

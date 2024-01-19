@@ -656,9 +656,6 @@
   "passkeySuccessfullyCreated": {
     "message": "Секретният ключ е създаден успешно!"
   },
-  "customName": {
-    "message": "Персонализирано име"
-  },
   "customPasskeyNameInfo": {
     "message": "Изберете име за секретния си ключ, за да го разпознавате по-лесно."
   },
@@ -5179,6 +5176,12 @@
   "spValidateCertificates": {
     "message": "Проверка на сертификатите"
   },
+  "spUniqueEntityId": {
+    "message": "Set a unique SP entity ID"
+  },
+  "spUniqueEntityIdDesc": {
+    "message": "Generate an identifier that is unique to your organization"
+  },
   "idpEntityId": {
     "message": "Entity ID"
   },
@@ -7448,7 +7451,7 @@
     "message": "Достъпът на сервизния акаунт е променен"
   },
   "commonImportFormats": {
-    "message": "Common formats",
+    "message": "Често използвани формати",
     "description": "Label indicating the most common import formats"
   }
 }

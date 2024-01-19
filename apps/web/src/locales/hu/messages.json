@@ -656,9 +656,6 @@
   "passkeySuccessfullyCreated": {
     "message": "A jelszó sikeresen létrehozásra került!"
   },
-  "customName": {
-    "message": "Egyedi név"
-  },
   "customPasskeyNameInfo": {
     "message": "Nevezzük el a jelszót a könnyebb azonosítshoz."
   },
@@ -5178,6 +5175,12 @@
   },
   "spValidateCertificates": {
     "message": "Tanúsítványok ellenőrzése"
+  },
+  "spUniqueEntityId": {
+    "message": "Set a unique SP entity ID"
+  },
+  "spUniqueEntityIdDesc": {
+    "message": "Generate an identifier that is unique to your organization"
   },
   "idpEntityId": {
     "message": "Szervezeti ID"

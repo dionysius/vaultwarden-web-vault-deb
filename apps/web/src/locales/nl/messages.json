@@ -656,9 +656,6 @@
   "passkeySuccessfullyCreated": {
     "message": "Passkey succesvol aangemaakt!"
   },
-  "customName": {
-    "message": "Aangepaste naam"
-  },
   "customPasskeyNameInfo": {
     "message": "Geef je passkey een naam om deze later te herkennen."
   },
@@ -5178,6 +5175,12 @@
   },
   "spValidateCertificates": {
     "message": "Validate Certificates"
+  },
+  "spUniqueEntityId": {
+    "message": "Een unieke SP-entiteit-ID instellen"
+  },
+  "spUniqueEntityIdDesc": {
+    "message": "Identificatie die uniek is voor je organisatie genereren"
   },
   "idpEntityId": {
     "message": "Entity ID"

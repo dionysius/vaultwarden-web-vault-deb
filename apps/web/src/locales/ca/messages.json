@@ -656,9 +656,6 @@
   "passkeySuccessfullyCreated": {
     "message": "Clau de pas creada correctament!"
   },
-  "customName": {
-    "message": "Nom personalitzat"
-  },
   "customPasskeyNameInfo": {
     "message": "Poseu un nom a la vostra clau per ajudar-vos a identificar-la."
   },
@@ -5178,6 +5175,12 @@
   },
   "spValidateCertificates": {
     "message": "Valida certificats"
+  },
+  "spUniqueEntityId": {
+    "message": "Set a unique SP entity ID"
+  },
+  "spUniqueEntityIdDesc": {
+    "message": "Generate an identifier that is unique to your organization"
   },
   "idpEntityId": {
     "message": "Identificador de l'entitat"

@@ -656,9 +656,6 @@
   "passkeySuccessfullyCreated": {
     "message": "Pristupni ključ je uspješno stvoren!"
   },
-  "customName": {
-    "message": "Naziv"
-  },
   "customPasskeyNameInfo": {
     "message": "Za lakše prepoznavanje, imenuj svoj pristupni ključ."
   },
@@ -5178,6 +5175,12 @@
   },
   "spValidateCertificates": {
     "message": "Provjeri certifikate"
+  },
+  "spUniqueEntityId": {
+    "message": "Set a unique SP entity ID"
+  },
+  "spUniqueEntityIdDesc": {
+    "message": "Generate an identifier that is unique to your organization"
   },
   "idpEntityId": {
     "message": "ID entiteta"

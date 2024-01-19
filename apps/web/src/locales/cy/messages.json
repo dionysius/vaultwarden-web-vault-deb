@@ -3,7 +3,7 @@
     "message": "What type of item is this?"
   },
   "name": {
-    "message": "Name"
+    "message": "Enw"
   },
   "uri": {
     "message": "URI"
@@ -25,25 +25,25 @@
     "message": "Username"
   },
   "password": {
-    "message": "Password"
+    "message": "Cyfrinair"
   },
   "newPassword": {
-    "message": "New password"
+    "message": "Cyfrinair Newydd"
   },
   "passphrase": {
     "message": "Passphrase"
   },
   "notes": {
-    "message": "Notes"
+    "message": "Nodiadau"
   },
   "customFields": {
     "message": "Custom fields"
   },
   "cardholderName": {
-    "message": "Cardholder name"
+    "message": "Enw ar y cerdyn"
   },
   "number": {
-    "message": "Number"
+    "message": "Rhif"
   },
   "brand": {
     "message": "Brand"
@@ -58,7 +58,7 @@
     "message": "Identity name"
   },
   "company": {
-    "message": "Company"
+    "message": "Cwmni"
   },
   "ssn": {
     "message": "Social Security number"
@@ -70,49 +70,49 @@
     "message": "License number"
   },
   "email": {
-    "message": "Email"
+    "message": "Ebost"
   },
   "phone": {
-    "message": "Phone"
+    "message": "Ffôn"
   },
   "january": {
-    "message": "January"
+    "message": "Ionawr"
   },
   "february": {
-    "message": "February"
+    "message": "Chwefror"
   },
   "march": {
-    "message": "March"
+    "message": "Mawrth"
   },
   "april": {
-    "message": "April"
+    "message": "Ebrill"
   },
   "may": {
-    "message": "May"
+    "message": "Mai"
   },
   "june": {
-    "message": "June"
+    "message": "Mehefin"
   },
   "july": {
-    "message": "July"
+    "message": "Gorffennaf"
   },
   "august": {
-    "message": "August"
+    "message": "Awst"
   },
   "september": {
-    "message": "September"
+    "message": "Medi"
   },
   "october": {
-    "message": "October"
+    "message": "Hydref"
   },
   "november": {
-    "message": "November"
+    "message": "Tachwedd"
   },
   "december": {
-    "message": "December"
+    "message": "Rhagfyr"
   },
   "title": {
-    "message": "Title"
+    "message": "Teitl"
   },
   "mr": {
     "message": "Mr"
@@ -139,7 +139,7 @@
     "message": "Authenticator key (TOTP)"
   },
   "folder": {
-    "message": "Folder"
+    "message": "Ffolder"
   },
   "newCustomField": {
     "message": "New custom field"
@@ -655,9 +655,6 @@
   },
   "passkeySuccessfullyCreated": {
     "message": "Passkey successfully created!"
-  },
-  "customName": {
-    "message": "Custom name"
   },
   "customPasskeyNameInfo": {
     "message": "Name your passkey to help you identify it."
@@ -5178,6 +5175,12 @@
   },
   "spValidateCertificates": {
     "message": "Validate certificates"
+  },
+  "spUniqueEntityId": {
+    "message": "Set a unique SP entity ID"
+  },
+  "spUniqueEntityIdDesc": {
+    "message": "Generate an identifier that is unique to your organization"
   },
   "idpEntityId": {
     "message": "Entity ID"

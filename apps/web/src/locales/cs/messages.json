@@ -656,9 +656,6 @@
   "passkeySuccessfullyCreated": {
     "message": "Přístupový klíč byl úspěšně vytvořen!"
   },
-  "customName": {
-    "message": "Vlastní název"
-  },
   "customPasskeyNameInfo": {
     "message": "Pojmenujte Váš přístupový klíč, abyste jej mohli snáze identifikovat."
   },
@@ -5178,6 +5175,12 @@
   },
   "spValidateCertificates": {
     "message": "Ověřit certifikáty"
+  },
+  "spUniqueEntityId": {
+    "message": "Set a unique SP entity ID"
+  },
+  "spUniqueEntityIdDesc": {
+    "message": "Generate an identifier that is unique to your organization"
   },
   "idpEntityId": {
     "message": "ID entity"

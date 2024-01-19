@@ -656,9 +656,6 @@
   "passkeySuccessfullyCreated": {
     "message": "密碼金鑰已成功建立！"
   },
-  "customName": {
-    "message": "自訂名稱"
-  },
   "customPasskeyNameInfo": {
     "message": "命名您的密碼金輪以方便您辨識它。"
   },
@@ -5178,6 +5175,12 @@
   },
   "spValidateCertificates": {
     "message": "驗證憑證"
+  },
+  "spUniqueEntityId": {
+    "message": "Set a unique SP entity ID"
+  },
+  "spUniqueEntityIdDesc": {
+    "message": "Generate an identifier that is unique to your organization"
   },
   "idpEntityId": {
     "message": "實體 ID"

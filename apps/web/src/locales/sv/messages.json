@@ -656,9 +656,6 @@
   "passkeySuccessfullyCreated": {
     "message": "Nyckeln har skapats!"
   },
-  "customName": {
-    "message": "Anpassat namn"
-  },
   "customPasskeyNameInfo": {
     "message": "Namnge din nyckel för att hjälpa dig att identifiera den."
   },
@@ -675,7 +672,7 @@
     "message": "Kryptering stöds inte"
   },
   "enablePasskeyEncryption": {
-    "message": "Set up encryption"
+    "message": "Ställ in kryptering"
   },
   "usedForEncryption": {
     "message": "Används för kryptering"
@@ -5178,6 +5175,12 @@
   },
   "spValidateCertificates": {
     "message": "Validate certificates"
+  },
+  "spUniqueEntityId": {
+    "message": "Set a unique SP entity ID"
+  },
+  "spUniqueEntityIdDesc": {
+    "message": "Generate an identifier that is unique to your organization"
   },
   "idpEntityId": {
     "message": "Entity ID"

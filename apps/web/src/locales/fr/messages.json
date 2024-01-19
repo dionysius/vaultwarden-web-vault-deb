@@ -656,9 +656,6 @@
   "passkeySuccessfullyCreated": {
     "message": "Clé d'accès créée avec succès!"
   },
-  "customName": {
-    "message": "Nom personnalisé"
-  },
   "customPasskeyNameInfo": {
     "message": "Nommez votre clé d'accès pour vous aider à l'identifier."
   },
@@ -5178,6 +5175,12 @@
   },
   "spValidateCertificates": {
     "message": "Vérifier les certificats"
+  },
+  "spUniqueEntityId": {
+    "message": "Définir une ID unique à l'entité SP"
+  },
+  "spUniqueEntityIdDesc": {
+    "message": "Générer un identifiant qui est unique à votre organisation"
   },
   "idpEntityId": {
     "message": "ID de l'entité"

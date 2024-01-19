@@ -656,9 +656,6 @@
   "passkeySuccessfullyCreated": {
     "message": "Geçiş anahtarı başarıyla oluşturuldu."
   },
-  "customName": {
-    "message": "Özel ad"
-  },
   "customPasskeyNameInfo": {
     "message": "Name your passkey to help you identify it."
   },
@@ -5178,6 +5175,12 @@
   },
   "spValidateCertificates": {
     "message": "Sertifikaları doğrula"
+  },
+  "spUniqueEntityId": {
+    "message": "Set a unique SP entity ID"
+  },
+  "spUniqueEntityIdDesc": {
+    "message": "Generate an identifier that is unique to your organization"
   },
   "idpEntityId": {
     "message": "Varlık kimliği"

@@ -656,9 +656,6 @@
   "passkeySuccessfullyCreated": {
     "message": "Passkey successfully created!"
   },
-  "customName": {
-    "message": "Custom name"
-  },
   "customPasskeyNameInfo": {
     "message": "Name your passkey to help you identify it."
   },
@@ -5178,6 +5175,12 @@
   },
   "spValidateCertificates": {
     "message": "Праверка сертыфікатаў"
+  },
+  "spUniqueEntityId": {
+    "message": "Set a unique SP entity ID"
+  },
+  "spUniqueEntityIdDesc": {
+    "message": "Generate an identifier that is unique to your organization"
   },
   "idpEntityId": {
     "message": "Ідэнтыфікатар аб'екта"

@@ -656,9 +656,6 @@
   "passkeySuccessfullyCreated": {
     "message": "Suojausavain on luotu"
   },
-  "customName": {
-    "message": "Oma nimi"
-  },
   "customPasskeyNameInfo": {
     "message": "Anna suojausavaimellesi nimi, jolla tunnistat sen."
   },
@@ -5178,6 +5175,12 @@
   },
   "spValidateCertificates": {
     "message": "Vahvista varmenteet"
+  },
+  "spUniqueEntityId": {
+    "message": "Set a unique SP entity ID"
+  },
+  "spUniqueEntityIdDesc": {
+    "message": "Generate an identifier that is unique to your organization"
   },
   "idpEntityId": {
     "message": "Entity ID"
