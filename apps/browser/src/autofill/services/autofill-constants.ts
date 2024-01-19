@@ -44,11 +44,11 @@ export class AutoFillConstants {
 
   static readonly SearchFieldNames: string[] = ["search", "query", "find", "go"];
 
-  static readonly PasswordFieldIgnoreList: string[] = [
+  static readonly FieldIgnoreList: string[] = ["captcha", "findanything", "forgot"];
+
+  static readonly PasswordFieldExcludeList: string[] = [
+    ...AutoFillConstants.FieldIgnoreList,
     "onetimepassword",
-    "captcha",
-    "findanything",
-    "forgot",
   ];
 
   static readonly ExcludedAutofillLoginTypes: string[] = [
