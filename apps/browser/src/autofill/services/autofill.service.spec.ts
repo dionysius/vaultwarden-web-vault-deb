@@ -909,6 +909,28 @@ describe("AutofillService", () => {
         expect(autofillService.doAutoFill).not.toHaveBeenCalled();
         expect(result).toBeNull();
       });
+
+      it("skips autofill and does not launch the password reprompt window if the password reprompt is currently debouncing", async () => {
+        cipher.reprompt = CipherRepromptType.Password;
+        jest.spyOn(autofillService, "doAutoFill");
+        jest.spyOn(cipherService, "getNextCipherForUrl").mockResolvedValueOnce(cipher);
+        jest
+          .spyOn(userVerificationService, "hasMasterPasswordAndMasterKeyHash")
+          .mockResolvedValueOnce(true);
+        jest
+          .spyOn(autofillService as any, "openVaultItemPasswordRepromptPopout")
+          .mockImplementation();
+        jest
+          .spyOn(autofillService as any, "isDebouncingPasswordRepromptPopout")
+          .mockReturnValueOnce(true);
+
+        const result = await autofillService.doAutoFillOnTab(pageDetails, tab, true);
+
+        expect(cipherService.getNextCipherForUrl).toHaveBeenCalledWith(tab.url);
+        expect(autofillService["openVaultItemPasswordRepromptPopout"]).not.toHaveBeenCalled();
+        expect(autofillService.doAutoFill).not.toHaveBeenCalled();
+        expect(result).toBeNull();
+      });
     });
   });
 

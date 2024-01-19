@@ -332,10 +332,7 @@ export default class AutofillService implements AutofillServiceInterface {
       return null;
     }
 
-    if (
-      (await this.isPasswordRepromptRequired(cipher, tab)) &&
-      !this.isDebouncingPasswordRepromptPopout()
-    ) {
+    if (await this.isPasswordRepromptRequired(cipher, tab)) {
       if (fromCommand) {
         this.cipherService.updateLastUsedIndexForUrl(tab.url);
       }
@@ -368,10 +365,12 @@ export default class AutofillService implements AutofillServiceInterface {
     const userHasMasterPasswordAndKeyHash =
       await this.userVerificationService.hasMasterPasswordAndMasterKeyHash();
     if (cipher.reprompt === CipherRepromptType.Password && userHasMasterPasswordAndKeyHash) {
-      await this.openVaultItemPasswordRepromptPopout(tab, {
-        cipherId: cipher.id,
-        action: "autofill",
-      });
+      if (!this.isDebouncingPasswordRepromptPopout()) {
+        await this.openVaultItemPasswordRepromptPopout(tab, {
+          cipherId: cipher.id,
+          action: "autofill",
+        });
+      }
 
       return true;
     }
