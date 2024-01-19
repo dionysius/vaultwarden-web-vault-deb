@@ -89,6 +89,8 @@ export class WindowMain {
         // This method will be called when Electron is shutting
         // down the application.
         app.on("before-quit", () => {
+          // Allow biometric to auto-prompt on reload
+          this.stateService.setBiometricPromptCancelled(false);
           this.isQuitting = true;
         });
 

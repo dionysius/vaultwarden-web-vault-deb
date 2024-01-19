@@ -136,6 +136,10 @@ export class LockComponent extends BaseLockComponent {
       return;
     }
 
+    if (await this.stateService.getBiometricPromptCancelled()) {
+      return;
+    }
+
     this.biometricAsked = true;
     if (await ipc.platform.isWindowVisible()) {
       this.unlockBiometric();
