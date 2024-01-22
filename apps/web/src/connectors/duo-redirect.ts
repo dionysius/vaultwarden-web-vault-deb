@@ -6,7 +6,7 @@ const mobileDesktopCallback = "bitwarden://duo-callback";
 
 window.addEventListener("load", () => {
   const client = getQsParam("client");
-  const code = getQsParam("duo_code");
+  const code = getQsParam("code");
 
   if (client === "browser" || client === "web") {
     const channel = new BroadcastChannel("duoResult");
