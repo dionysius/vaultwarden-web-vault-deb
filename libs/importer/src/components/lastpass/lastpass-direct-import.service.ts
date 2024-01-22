@@ -8,6 +8,7 @@ import { AppIdService } from "@bitwarden/common/platform/abstractions/app-id.ser
 import { BroadcasterService } from "@bitwarden/common/platform/abstractions/broadcaster.service";
 import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/crypto-function.service";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
+import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
@@ -16,7 +17,6 @@ import { DialogService } from "../../../../components/src/dialog";
 import { ClientInfo, Vault } from "../../importers/lastpass/access";
 import { FederatedUserContext } from "../../importers/lastpass/access/models";
 
-import { LastPassAwaitSSODialogComponent } from "./dialog/lastpass-await-sso-dialog.component";
 import { LastPassPasswordPromptComponent } from "./dialog/lastpass-password-prompt.component";
 import { LastPassDirectImportUIService } from "./lastpass-direct-import-ui.service";
 
@@ -42,6 +42,7 @@ export class LastPassDirectImportService {
     private broadcasterService: BroadcasterService,
     private ngZone: NgZone,
     private dialogService: DialogService,
+    private i18nService: I18nService,
   ) {
     this.vault = new Vault(this.cryptoFunctionService, this.tokenService);
 
@@ -96,7 +97,14 @@ export class LastPassDirectImportService {
     const request = await this.createOidcSigninRequest(email);
     this.platformUtilsService.launchUri(request.url);
 
-    const cancelDialogRef = LastPassAwaitSSODialogComponent.open(this.dialogService);
+    const cancelDialogRef = this.dialogService.openSimpleDialogRef({
+      title: this.i18nService.t("awaitingSSO"),
+      content: this.i18nService.t("awaitingSSODesc"),
+      type: "warning",
+      icon: "bwi-key",
+      acceptButtonText: this.i18nService.t("cancel"),
+      cancelButtonText: null,
+    });
     const cancelled = firstValueFrom(cancelDialogRef.closed).then((_didCancel) => {
       throw Error("SSO auth cancelled");
     });
