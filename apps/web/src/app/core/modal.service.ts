@@ -1,4 +1,4 @@
-import { ApplicationRef, ComponentFactoryResolver, Injectable, Injector } from "@angular/core";
+import { Injectable, Injector } from "@angular/core";
 import * as jq from "jquery";
 import { first } from "rxjs/operators";
 
@@ -13,12 +13,10 @@ export class ModalService extends BaseModalService {
   modalOpen = false;
 
   constructor(
-    componentFactoryResolver: ComponentFactoryResolver,
-    applicationRef: ApplicationRef,
     injector: Injector,
     private messagingService: MessagingService,
   ) {
-    super(componentFactoryResolver, applicationRef, injector);
+    super(injector);
   }
 
   protected setupHandlers(modalRef: ModalRef) {

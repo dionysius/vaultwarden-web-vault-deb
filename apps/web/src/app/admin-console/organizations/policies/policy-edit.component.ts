@@ -1,7 +1,6 @@
 import {
   ChangeDetectorRef,
   Component,
-  ComponentFactoryResolver,
   EventEmitter,
   Input,
   Output,
@@ -45,7 +44,6 @@ export class PolicyEditComponent {
     private policyApiService: PolicyApiServiceAbstraction,
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
-    private componentFactoryResolver: ComponentFactoryResolver,
     private cdr: ChangeDetectorRef,
     private logService: LogService,
   ) {}
@@ -54,8 +52,7 @@ export class PolicyEditComponent {
     await this.load();
     this.loading = false;
 
-    const factory = this.componentFactoryResolver.resolveComponentFactory(this.policy.component);
-    this.policyComponent = this.policyFormRef.createComponent(factory)
+    this.policyComponent = this.policyFormRef.createComponent(this.policy.component)
       .instance as BasePolicyComponent;
     this.policyComponent.policy = this.policy;
     this.policyComponent.policyResponse = this.policyResponse;

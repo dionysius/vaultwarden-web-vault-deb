@@ -7,16 +7,21 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 
 import { ModalRef } from "../../components/modal/modal.ref";
-import { ModalConfig } from "../../services/modal.service";
+
+export interface UserVerificationPromptParams {
+  confirmDescription: string;
+  confirmButtonText: string;
+  modalTitle: string;
+}
 
 /**
  * Used to verify the user's identity (using their master password or email-based OTP for Key Connector users). You can customize all of the text in the modal.
  */
 @Directive()
 export class UserVerificationPromptComponent {
-  confirmDescription = this.config.data.confirmDescription;
-  confirmButtonText = this.config.data.confirmButtonText;
-  modalTitle = this.config.data.modalTitle;
+  confirmDescription = this.config.confirmDescription;
+  confirmButtonText = this.config.confirmButtonText;
+  modalTitle = this.config.modalTitle;
 
   formGroup = this.formBuilder.group({
     secret: this.formBuilder.control<Verification | null>(null),
@@ -26,7 +31,7 @@ export class UserVerificationPromptComponent {
 
   constructor(
     private modalRef: ModalRef,
-    protected config: ModalConfig,
+    protected config: UserVerificationPromptParams,
     protected userVerificationService: UserVerificationService,
     private formBuilder: FormBuilder,
     private platformUtilsService: PlatformUtilsService,

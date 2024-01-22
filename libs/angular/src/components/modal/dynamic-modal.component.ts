@@ -11,8 +11,6 @@ import {
   ViewContainerRef,
 } from "@angular/core";
 
-import { ModalService } from "../../services/modal.service";
-
 import { ModalRef } from "./modal.ref";
 
 @Component({
@@ -31,7 +29,6 @@ export class DynamicModalComponent implements AfterViewInit, OnDestroy {
   private focusTrap: ConfigurableFocusTrap;
 
   constructor(
-    private modalService: ModalService,
     private cd: ChangeDetectorRef,
     private el: ElementRef<HTMLElement>,
     private focusTrapFactory: ConfigurableFocusTrapFactory,
@@ -55,10 +52,8 @@ export class DynamicModalComponent implements AfterViewInit, OnDestroy {
   }
 
   loadChildComponent(componentType: Type<any>) {
-    const componentFactory = this.modalService.resolveComponentFactory(componentType);
-
     this.modalContentRef.clear();
-    this.componentRef = this.modalContentRef.createComponent(componentFactory);
+    this.componentRef = this.modalContentRef.createComponent(componentType);
   }
 
   ngOnDestroy() {
