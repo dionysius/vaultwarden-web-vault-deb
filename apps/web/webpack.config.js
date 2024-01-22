@@ -270,6 +270,7 @@ const devServer =
                   https://*.duosecurity.com
                 ;connect-src
                   'self'
+                  ${envConfig.dev.wsConnectSrc ?? ""}
                   wss://notifications.bitwarden.com
                   https://notifications.bitwarden.com
                   https://cdn.bitwarden.net
