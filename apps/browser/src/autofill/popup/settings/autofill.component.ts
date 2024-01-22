@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 
 import { SettingsService } from "@bitwarden/common/abstractions/settings.service";
-import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { ConfigServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config.service.abstraction";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
@@ -18,7 +17,6 @@ import { AutofillOverlayVisibility } from "../../utils/autofill-overlay.enum";
   templateUrl: "autofill.component.html",
 })
 export class AutofillComponent implements OnInit {
-  protected isAutoFillOverlayFlagEnabled = false;
   protected autoFillOverlayVisibility: number;
   protected autoFillOverlayVisibilityOptions: any[];
   protected disablePasswordManagerLink: string;
@@ -70,9 +68,6 @@ export class AutofillComponent implements OnInit {
   }
 
   async ngOnInit() {
-    this.isAutoFillOverlayFlagEnabled = await this.configService.getFeatureFlag<boolean>(
-      FeatureFlag.AutofillOverlay,
-    );
     this.autoFillOverlayVisibility =
       (await this.settingsService.getAutoFillOverlayVisibility()) || AutofillOverlayVisibility.Off;
 

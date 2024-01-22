@@ -12,7 +12,6 @@ storybook-static
 
 apps/browser/config/config.js
 apps/browser/src/auth/scripts/duo.js
-apps/browser/src/autofill/content/autofill.js
 
 apps/desktop/desktop_native
 apps/desktop/src/auth/scripts/duo.js

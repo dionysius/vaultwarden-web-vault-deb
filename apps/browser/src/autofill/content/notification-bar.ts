@@ -363,9 +363,9 @@ async function loadNotificationBar() {
    * `main.background.ts : collectPageDetailsForContentScript`
    *
    * (3) `main.background.ts : collectPageDetailsForContentScript`
-   * sends a message with command `collectPageDetails` to the `autofill.js` content script
+   * sends a message with command `collectPageDetails` to the `autofill-init.js` content script
    *
-   * (4) `autofill.js` content script runs a `collect(document)` method.
+   * (4) `autofill-init.js` content script runs a `collect(document)` method.
    * The result is sent via message with command `collectPageDetailsResponse` to `notification.background.ts : processMessage(...)`
    *
    * (5) `notification.background.ts : processMessage(...)` gathers forms with password fields and passes them and the page details
@@ -410,7 +410,7 @@ async function loadNotificationBar() {
       // If the form could not be retrieved by its HTML ID, retrieve it by its index pulled from the opid
       if (formEl == null) {
         // opid stands for OnePassword ID - uniquely ID's an element on a page
-        // and is generated in `autofill.js`
+        // and is generated in `autofill-init.js`
         // Each form has an opid and each element has an opid and its parent form opid
         const index = parseInt(f.form.opid.split("__")[2], null);
         formEl = document.getElementsByTagName("form")[index];
@@ -972,8 +972,8 @@ async function loadNotificationBar() {
    * @param {HTMLElement} el
    * @returns {boolean} Returns `true` if the element is visible and `false` otherwise
    *
-   * Copied from autofill.js and converted to TypeScript;
-   * TODO: could be refactored to be in a shared location if autofill.js is converted to TS
+   * Copied from autofill-init.js and converted to TypeScript;
+   * TODO: could be refactored to be in a shared location if autofill-init.js is converted to TS
    */
   function isElementVisible(el: HTMLElement): boolean {
     let theEl: Node | null = el;
