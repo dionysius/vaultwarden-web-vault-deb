@@ -106,6 +106,10 @@ export class VaultFilterService implements VaultFilterServiceAbstraction {
     return nodes;
   }
 
+  getOrganizationFilter() {
+    return this._organizationFilter;
+  }
+
   setOrganizationFilter(organization: Organization) {
     if (organization?.id != "AllVaults") {
       this._organizationFilter.next(organization);

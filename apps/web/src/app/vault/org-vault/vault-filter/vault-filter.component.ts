@@ -1,9 +1,8 @@
-import { Component, Input, OnDestroy, OnInit } from "@angular/core";
+import { Component, Input, OnDestroy, OnInit, SimpleChanges } from "@angular/core";
 import { firstValueFrom, Subject } from "rxjs";
 
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
-import { ConfigServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config.service.abstraction";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { TreeNode } from "@bitwarden/common/vault/models/domain/tree-node";
@@ -36,7 +35,6 @@ export class VaultFilterComponent extends BaseVaultFilterComponent implements On
     protected policyService: PolicyService,
     protected i18nService: I18nService,
     protected platformUtilsService: PlatformUtilsService,
-    protected configService: ConfigServiceAbstraction,
   ) {
     super(vaultFilterService, policyService, i18nService, platformUtilsService);
   }
@@ -49,6 +47,12 @@ export class VaultFilterComponent extends BaseVaultFilterComponent implements On
         (await this.getDefaultFilter()) as TreeNode<CollectionFilter>;
     }
     this.isLoaded = true;
+  }
+
+  async ngOnChanges(changes: SimpleChanges) {
+    if (changes.organization) {
+      this.filters = await this.buildAllFilters();
+    }
   }
 
   ngOnDestroy() {
@@ -97,7 +101,7 @@ export class VaultFilterComponent extends BaseVaultFilterComponent implements On
   async buildAllFilters(): Promise<VaultFilterList> {
     const builderFilter = {} as VaultFilterList;
     builderFilter.typeFilter = await this.addTypeFilter(["favorites"]);
-    if (this.organization?.flexibleCollections) {
+    if (this._organization?.flexibleCollections) {
       builderFilter.collectionFilter = await this.addCollectionFilter();
     } else {
       builderFilter.collectionFilter = await super.addCollectionFilter();

@@ -144,6 +144,13 @@ describe("vault filter service", () => {
           createFolderView("folder test id", "test"),
         ]);
       });
+
+      it("returns current organization", () => {
+        vaultFilterService.getOrganizationFilter().subscribe((org) => {
+          expect(org.id).toEqual("org test id");
+          expect(org.identifier).toEqual("Test Org");
+        });
+      });
     });
 
     describe("folder tree", () => {

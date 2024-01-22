@@ -15,6 +15,7 @@ import { VaultFilter } from "../models/vault-filter.model";
 })
 export class VaultFilterSectionComponent implements OnInit, OnDestroy {
   private destroy$ = new Subject<void>();
+  protected flexibleCollectionsEnabled: boolean;
 
   @Input() activeFilter: VaultFilter;
   @Input() section: VaultFilterSection;
@@ -35,10 +36,16 @@ export class VaultFilterSectionComponent implements OnInit, OnDestroy {
       });
   }
 
-  ngOnInit() {
+  async ngOnInit() {
     this.section?.data$?.pipe(takeUntil(this.destroy$)).subscribe((data) => {
       this.data = data;
     });
+    this.vaultFilterService
+      .getOrganizationFilter()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((org) => {
+        this.flexibleCollectionsEnabled = org != null ? org.flexibleCollections : false;
+      });
   }
 
   ngOnDestroy() {
@@ -67,11 +74,19 @@ export class VaultFilterSectionComponent implements OnInit, OnDestroy {
   }
 
   isNodeSelected(filterNode: TreeNode<VaultFilterType>) {
+    const { organizationId, cipherTypeId, folderId, collectionId, isCollectionSelected } =
+      this.activeFilter;
+
+    const collectionStatus = this.flexibleCollectionsEnabled
+      ? filterNode?.node.id === "AllCollections" &&
+        (isCollectionSelected || collectionId === "AllCollections")
+      : collectionId === filterNode?.node.id;
+
     return (
-      this.activeFilter.organizationId === filterNode?.node.id ||
-      this.activeFilter.cipherTypeId === filterNode?.node.id ||
-      this.activeFilter.folderId === filterNode?.node.id ||
-      this.activeFilter.collectionId === filterNode?.node.id
+      organizationId === filterNode?.node.id ||
+      cipherTypeId === filterNode?.node.id ||
+      folderId === filterNode?.node.id ||
+      collectionStatus
     );
   }
 
