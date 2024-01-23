@@ -1,6 +1,7 @@
-import { PasswordGeneratorPolicyOptions } from "../../../admin-console/models/domain/password-generator-policy-options";
+import { PolicyEvaluator } from "../abstractions/policy-evaluator.abstraction";
 
-import { PasswordGenerationOptions } from "./password-generator-options";
+import { PasswordGenerationOptions } from "./password-generation-options";
+import { PasswordGeneratorPolicy } from "./password-generator-policy";
 
 function initializeBoundaries() {
   const length = Object.freeze({
@@ -37,7 +38,9 @@ type Boundary = {
 
 /** Enforces policy for password generation.
  */
-export class PasswordGeneratorOptionsEvaluator {
+export class PasswordGeneratorOptionsEvaluator
+  implements PolicyEvaluator<PasswordGeneratorPolicy, PasswordGenerationOptions>
+{
   // This design is not ideal, but it is a step towards a more robust password
   // generator. Ideally, `sanitize` would be implemented on an options class,
   // and `applyPolicy` would be implemented on a policy class, "mise en place".
@@ -62,13 +65,13 @@ export class PasswordGeneratorOptionsEvaluator {
 
   /** Policy applied by the evaluator.
    */
-  readonly policy: PasswordGeneratorPolicyOptions;
+  readonly policy: PasswordGeneratorPolicy;
 
   /** Instantiates the evaluator.
    * @param policy The policy applied by the evaluator. When this conflicts with
    *               the defaults, the policy takes precedence.
    */
-  constructor(policy: PasswordGeneratorPolicyOptions) {
+  constructor(policy: PasswordGeneratorPolicy) {
     function createBoundary(value: number, defaultBoundary: Boundary): Boundary {
       const boundary = {
         min: Math.max(defaultBoundary.min, value),
@@ -78,7 +81,7 @@ export class PasswordGeneratorOptionsEvaluator {
       return boundary;
     }
 
-    this.policy = policy.clone();
+    this.policy = structuredClone(policy);
     this.minDigits = createBoundary(policy.numberCount, DefaultBoundaries.minDigits);
     this.minSpecialCharacters = createBoundary(
       policy.specialCount,
@@ -96,12 +99,22 @@ export class PasswordGeneratorOptionsEvaluator {
     };
   }
 
-  /** Apply policy to a set of options.
-   *  @param options The options to build from. These options are not altered.
-   *  @returns A complete password generation request with policy applied.
-   *  @remarks This method only applies policy overrides.
-   *           Pass the result to `sanitize` to ensure consistency.
-   */
+  /** {@link PolicyEvaluator.policyInEffect} */
+  get policyInEffect(): boolean {
+    const policies = [
+      this.policy.useUppercase,
+      this.policy.useLowercase,
+      this.policy.useNumbers,
+      this.policy.useSpecial,
+      this.policy.minLength > DefaultBoundaries.length.min,
+      this.policy.numberCount > DefaultBoundaries.minDigits.min,
+      this.policy.specialCount > DefaultBoundaries.minSpecialCharacters.min,
+    ];
+
+    return policies.includes(true);
+  }
+
+  /** {@link PolicyEvaluator.applyPolicy} */
   applyPolicy(options: PasswordGenerationOptions): PasswordGenerationOptions {
     function fitToBounds(value: number, boundaries: Boundary) {
       const { min, max } = boundaries;
@@ -137,13 +150,7 @@ export class PasswordGeneratorOptionsEvaluator {
     };
   }
 
-  /** Ensures internal options consistency.
-   *  @param options The options to cascade. These options are not altered.
-   *  @returns A new password generation request with cascade applied.
-   *  @remarks  This method fills null and undefined values by looking at
-   *  pairs of flags and values (e.g. `number` and `minNumber`). If the flag
-   *  and value are inconsistent, the flag cascades to the value.
-   */
+  /** {@link PolicyEvaluator.sanitize} */
   sanitize(options: PasswordGenerationOptions): PasswordGenerationOptions {
     function cascade(enabled: boolean, value: number): [boolean, number] {
       const enabledResult = enabled ?? value > 0;
