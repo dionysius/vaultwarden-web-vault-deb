@@ -1,6 +1,7 @@
 import { CryptoService } from "../../../platform/abstractions/crypto.service";
 import { EncString } from "../../../platform/models/domain/enc-string";
 import { SymmetricCryptoKey } from "../../../platform/models/domain/symmetric-crypto-key";
+import { OrgKey } from "../../../types/key";
 import { EncryptedOrganizationKeyData } from "../data/encrypted-organization-key.data";
 
 export abstract class BaseEncryptedOrganizationKey {
@@ -25,7 +26,7 @@ export class EncryptedOrganizationKey implements BaseEncryptedOrganizationKey {
 
   async decrypt(cryptoService: CryptoService) {
     const decValue = await cryptoService.rsaDecrypt(this.key);
-    return new SymmetricCryptoKey(decValue);
+    return new SymmetricCryptoKey(decValue) as OrgKey;
   }
 
   toData(): EncryptedOrganizationKeyData {
@@ -45,7 +46,7 @@ export class ProviderEncryptedOrganizationKey implements BaseEncryptedOrganizati
   async decrypt(cryptoService: CryptoService) {
     const providerKey = await cryptoService.getProviderKey(this.providerId);
     const decValue = await cryptoService.decryptToBytes(new EncString(this.key), providerKey);
-    return new SymmetricCryptoKey(decValue);
+    return new SymmetricCryptoKey(decValue) as OrgKey;
   }
 
   toData(): EncryptedOrganizationKeyData {

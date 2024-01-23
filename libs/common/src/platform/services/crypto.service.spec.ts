@@ -15,7 +15,9 @@ import { StateService } from "../abstractions/state.service";
 import { Utils } from "../misc/utils";
 import { EncString } from "../models/domain/enc-string";
 import { SymmetricCryptoKey } from "../models/domain/symmetric-crypto-key";
-import { CryptoService, USER_EVER_HAD_USER_KEY } from "../services/crypto.service";
+import { CryptoService } from "../services/crypto.service";
+
+import { USER_EVER_HAD_USER_KEY } from "./key-state/user-key.state";
 
 describe("cryptoService", () => {
   let cryptoService: CryptoService;

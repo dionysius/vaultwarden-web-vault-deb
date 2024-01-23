@@ -1,6 +1,5 @@
 import { Observable } from "rxjs";
 
-import { EncryptedOrganizationKeyData } from "../../admin-console/models/data/encrypted-organization-key.data";
 import { OrganizationData } from "../../admin-console/models/data/organization.data";
 import { PolicyData } from "../../admin-console/models/data/policy.data";
 import { ProviderData } from "../../admin-console/models/data/provider.data";
@@ -193,13 +192,6 @@ export abstract class StateService<T extends Account = Account> {
   setDecryptedCiphers: (value: CipherView[], options?: StorageOptions) => Promise<void>;
   getDecryptedCollections: (options?: StorageOptions) => Promise<CollectionView[]>;
   setDecryptedCollections: (value: CollectionView[], options?: StorageOptions) => Promise<void>;
-  getDecryptedOrganizationKeys: (
-    options?: StorageOptions,
-  ) => Promise<Map<string, SymmetricCryptoKey>>;
-  setDecryptedOrganizationKeys: (
-    value: Map<string, SymmetricCryptoKey>,
-    options?: StorageOptions,
-  ) => Promise<void>;
   getDecryptedPasswordGenerationHistory: (
     options?: StorageOptions,
   ) => Promise<GeneratedPasswordHistory[]>;
@@ -342,13 +334,6 @@ export abstract class StateService<T extends Account = Account> {
    */
   setEncryptedFolders: (
     value: { [id: string]: FolderData },
-    options?: StorageOptions,
-  ) => Promise<void>;
-  getEncryptedOrganizationKeys: (
-    options?: StorageOptions,
-  ) => Promise<{ [orgId: string]: EncryptedOrganizationKeyData }>;
-  setEncryptedOrganizationKeys: (
-    value: { [orgId: string]: EncryptedOrganizationKeyData },
     options?: StorageOptions,
   ) => Promise<void>;
   getEncryptedPasswordGenerationHistory: (

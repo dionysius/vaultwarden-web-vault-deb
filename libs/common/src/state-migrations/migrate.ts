@@ -6,6 +6,7 @@ import { AbstractStorageService } from "../platform/abstractions/storage.service
 import { MigrationBuilder } from "./migration-builder";
 import { MigrationHelper } from "./migration-helper";
 import { EverHadUserKeyMigrator } from "./migrations/10-move-ever-had-user-key-to-state-providers";
+import { OrganizationKeyMigrator } from "./migrations/11-move-org-keys-to-state-providers";
 import { FixPremiumMigrator } from "./migrations/3-fix-premium";
 import { RemoveEverBeenUnlockedMigrator } from "./migrations/4-remove-ever-been-unlocked";
 import { AddKeyTypeToOrgKeysMigrator } from "./migrations/5-add-key-type-to-org-keys";
@@ -16,7 +17,7 @@ import { MoveBrowserSettingsToGlobal } from "./migrations/9-move-browser-setting
 import { MinVersionMigrator } from "./migrations/min-version";
 
 export const MIN_VERSION = 2;
-export const CURRENT_VERSION = 10;
+export const CURRENT_VERSION = 11;
 export type MinVersion = typeof MIN_VERSION;
 
 export async function migrate(
@@ -42,7 +43,9 @@ export async function migrate(
     .with(MoveBiometricAutoPromptToAccount, 6, 7)
     .with(MoveStateVersionMigrator, 7, 8)
     .with(MoveBrowserSettingsToGlobal, 8, 9)
-    .with(EverHadUserKeyMigrator, 9, CURRENT_VERSION)
+    .with(EverHadUserKeyMigrator, 9, 10)
+    .with(OrganizationKeyMigrator, 10, CURRENT_VERSION)
+
     .migrate(migrationHelper);
 }
 
