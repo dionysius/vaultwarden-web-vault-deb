@@ -195,8 +195,8 @@ describe("AutofillOverlayContentService", () => {
         expect(autofillFieldElement.addEventListener).not.toHaveBeenCalled();
       });
 
-      it("ignores fields that are part of the ExcludedAutofillTypes", () => {
-        AutoFillConstants.ExcludedAutofillTypes.forEach((excludedType) => {
+      it("ignores fields that are part of the ExcludedOverlayTypes", () => {
+        AutoFillConstants.ExcludedOverlayTypes.forEach((excludedType) => {
           autofillFieldData.type = excludedType;
 
           autofillOverlayContentService.setupAutofillOverlayListenerOnField(

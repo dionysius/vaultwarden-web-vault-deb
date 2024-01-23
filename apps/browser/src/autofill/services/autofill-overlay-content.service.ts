@@ -32,6 +32,7 @@ class AutofillOverlayContentService implements AutofillOverlayContentServiceInte
   private readonly findTabs = tabbable;
   private readonly sendExtensionMessage = sendExtensionMessage;
   private formFieldElements: Set<ElementWithOpId<FormFieldElement>> = new Set([]);
+  private ignoredFieldTypes: Set<string> = new Set(AutoFillConstants.ExcludedOverlayTypes);
   private userFilledFields: Record<string, FillableFormFieldElement> = {};
   private authStatus: AuthenticationStatus;
   private focusableElements: FocusableElement[] = [];
@@ -715,12 +716,11 @@ class AutofillOverlayContentService implements AutofillOverlayContentServiceInte
    * @param autofillFieldData - Autofill field data captured from the form field element.
    */
   private isIgnoredField(autofillFieldData: AutofillField): boolean {
-    const ignoredFieldTypes = new Set(AutoFillConstants.ExcludedAutofillTypes);
     if (
       autofillFieldData.readonly ||
       autofillFieldData.disabled ||
       !autofillFieldData.viewable ||
-      ignoredFieldTypes.has(autofillFieldData.type) ||
+      this.ignoredFieldTypes.has(autofillFieldData.type) ||
       this.keywordsFoundInFieldData(autofillFieldData, ["search", "captcha"])
     ) {
       return true;

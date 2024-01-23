@@ -65,6 +65,11 @@ export class AutoFillConstants {
     "checkbox",
     ...AutoFillConstants.ExcludedAutofillLoginTypes,
   ];
+
+  static readonly ExcludedOverlayTypes: string[] = [
+    "textarea",
+    ...AutoFillConstants.ExcludedAutofillTypes,
+  ];
 }
 
 export class CreditCardAutoFillConstants {
