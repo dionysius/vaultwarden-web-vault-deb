@@ -60,6 +60,7 @@ import { UpdateTempPasswordComponent } from "../auth/update-temp-password.compon
 import { VerifyEmailTokenComponent } from "../auth/verify-email-token.component";
 import { VerifyRecoverDeleteComponent } from "../auth/verify-recover-delete.component";
 import { DynamicAvatarComponent } from "../components/dynamic-avatar.component";
+import { PaymentMethodBannersComponent } from "../components/payment-method-banners/payment-method-banners.component";
 import { SelectableAvatarComponent } from "../components/selectable-avatar.component";
 import { FooterComponent } from "../layouts/footer.component";
 import { FrontendLayoutComponent } from "../layouts/frontend-layout.component";
@@ -109,6 +110,7 @@ import { SharedModule } from "./shared.module";
     PipesModule,
     PasswordCalloutComponent,
     DangerZoneComponent,
+    PaymentMethodBannersComponent,
   ],
   declarations: [
     AcceptFamilySponsorshipComponent,

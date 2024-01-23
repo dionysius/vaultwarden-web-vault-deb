@@ -38,7 +38,7 @@ import {
   ],
 })
 export class Fido2UseBrowserLinkComponent {
-  showOverlay: boolean = false;
+  showOverlay = false;
   isOpen = false;
   overlayPosition: ConnectedPosition[] = [
     {
