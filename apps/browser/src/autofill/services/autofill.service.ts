@@ -2,7 +2,6 @@ import { EventCollectionService } from "@bitwarden/common/abstractions/event/eve
 import { SettingsService } from "@bitwarden/common/abstractions/settings.service";
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { EventType } from "@bitwarden/common/enums";
-import { ConfigServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config.service.abstraction";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { TotpService } from "@bitwarden/common/vault/abstractions/totp.service";
@@ -47,7 +46,6 @@ export default class AutofillService implements AutofillServiceInterface {
     private logService: LogService,
     private settingsService: SettingsService,
     private userVerificationService: UserVerificationService,
-    private configService: ConfigServiceAbstraction,
   ) {}
 
   /**

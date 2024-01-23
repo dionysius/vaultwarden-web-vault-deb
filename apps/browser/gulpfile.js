@@ -62,6 +62,9 @@ function distFirefox() {
   return dist("firefox", (manifest) => {
     delete manifest.storage;
     delete manifest.sandbox;
+    manifest.optional_permissions = manifest.optional_permissions.filter(
+      (permission) => permission !== "privacy",
+    );
     return manifest;
   });
 }

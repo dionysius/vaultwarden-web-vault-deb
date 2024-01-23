@@ -136,4 +136,82 @@ describe("BrowserApi", () => {
       expect(result).toEqual(executeScriptResult);
     });
   });
+
+  describe("browserAutofillSettingsOverridden", () => {
+    it("returns true if the browser autofill settings are overridden", async () => {
+      const expectedDetails = {
+        value: false,
+        levelOfControl: "controlled_by_this_extension",
+      } as chrome.types.ChromeSettingGetResultDetails;
+      chrome.privacy.services.autofillAddressEnabled.get = jest.fn((details, callback) =>
+        callback(expectedDetails),
+      );
+      chrome.privacy.services.autofillCreditCardEnabled.get = jest.fn((details, callback) =>
+        callback(expectedDetails),
+      );
+      chrome.privacy.services.passwordSavingEnabled.get = jest.fn((details, callback) =>
+        callback(expectedDetails),
+      );
+
+      const result = await BrowserApi.browserAutofillSettingsOverridden();
+
+      expect(result).toBe(true);
+    });
+
+    it("returns false if the browser autofill settings are not overridden", async () => {
+      const expectedDetails = {
+        value: true,
+        levelOfControl: "controlled_by_this_extension",
+      } as chrome.types.ChromeSettingGetResultDetails;
+      chrome.privacy.services.autofillAddressEnabled.get = jest.fn((details, callback) =>
+        callback(expectedDetails),
+      );
+      chrome.privacy.services.autofillCreditCardEnabled.get = jest.fn((details, callback) =>
+        callback(expectedDetails),
+      );
+      chrome.privacy.services.passwordSavingEnabled.get = jest.fn((details, callback) =>
+        callback(expectedDetails),
+      );
+
+      const result = await BrowserApi.browserAutofillSettingsOverridden();
+
+      expect(result).toBe(false);
+    });
+
+    it("returns false if the browser autofill settings are not controlled by the extension", async () => {
+      const expectedDetails = {
+        value: false,
+        levelOfControl: "controlled_by_other_extensions",
+      } as chrome.types.ChromeSettingGetResultDetails;
+      chrome.privacy.services.autofillAddressEnabled.get = jest.fn((details, callback) =>
+        callback(expectedDetails),
+      );
+      chrome.privacy.services.autofillCreditCardEnabled.get = jest.fn((details, callback) =>
+        callback(expectedDetails),
+      );
+      chrome.privacy.services.passwordSavingEnabled.get = jest.fn((details, callback) =>
+        callback(expectedDetails),
+      );
+
+      const result = await BrowserApi.browserAutofillSettingsOverridden();
+
+      expect(result).toBe(false);
+    });
+  });
+
+  describe("updateDefaultBrowserAutofillSettings", () => {
+    it("updates the default browser autofill settings", async () => {
+      await BrowserApi.updateDefaultBrowserAutofillSettings(false);
+
+      expect(chrome.privacy.services.autofillAddressEnabled.set).toHaveBeenCalledWith({
+        value: false,
+      });
+      expect(chrome.privacy.services.autofillCreditCardEnabled.set).toHaveBeenCalledWith({
+        value: false,
+      });
+      expect(chrome.privacy.services.passwordSavingEnabled.set).toHaveBeenCalledWith({
+        value: false,
+      });
+    });
+  });
 });

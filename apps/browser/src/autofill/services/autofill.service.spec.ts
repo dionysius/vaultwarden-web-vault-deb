@@ -3,7 +3,6 @@ import { mock, mockReset } from "jest-mock-extended";
 import { UserVerificationService } from "@bitwarden/common/auth/services/user-verification/user-verification.service";
 import { EventType } from "@bitwarden/common/enums";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
-import { ConfigService } from "@bitwarden/common/platform/services/config/config.service";
 import { EventCollectionService } from "@bitwarden/common/services/event/event-collection.service";
 import { SettingsService } from "@bitwarden/common/services/settings.service";
 import {
@@ -56,7 +55,6 @@ describe("AutofillService", () => {
   const logService = mock<LogService>();
   const settingsService = mock<SettingsService>();
   const userVerificationService = mock<UserVerificationService>();
-  const configService = mock<ConfigService>();
 
   beforeEach(() => {
     autofillService = new AutofillService(
@@ -67,7 +65,6 @@ describe("AutofillService", () => {
       logService,
       settingsService,
       userVerificationService,
-      configService,
     );
   });
 

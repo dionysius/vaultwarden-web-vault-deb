@@ -41,20 +41,36 @@
           </option>
         </select>
       </div>
-      <div class="box-footer" *ngIf="accountSwitcherEnabled">
+      <div class="box-footer" *ngIf="accountSwitcherEnabled && canOverrideBrowserAutofillSetting">
         {{ "showAutoFillMenuOnFormFieldsDescAlt" | i18n }}
       </div>
-      <div class="box-footer">
-        {{ "turnOffBrowserBuiltInPasswordManagerSettings" | i18n }}
-        <a
-          [attr.href]="disablePasswordManagerLink"
-          (click)="openDisablePasswordManagerLink($event)"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {{ "turnOffBrowserBuiltInPasswordManagerSettingsLink" | i18n }}
-        </a>
+    </div>
+  </div>
+  <div class="box">
+    <div class="box-content" *ngIf="canOverrideBrowserAutofillSetting">
+      <div class="box-content-row box-content-row-checkbox" appBoxRow>
+        <label for="overrideBrowserAutofill" class="!tw-mr-0">{{
+          "overrideDefaultBrowserAutoFillSettings" | i18n
+        }}</label>
+        <input
+          id="overrideBrowserAutofill"
+          type="checkbox"
+          (change)="updateDefaultBrowserAutofillDisabled()"
+          [(ngModel)]="defaultBrowserAutofillDisabled"
+        />
       </div>
+    </div>
+    <div class="box-footer">
+      <span *ngIf="accountSwitcherEnabled">{{ "showAutoFillMenuOnFormFieldsDescAlt" | i18n }}</span>
+      {{ "turnOffBrowserBuiltInPasswordManagerSettings" | i18n }}
+      <a
+        [attr.href]="disablePasswordManagerLink"
+        (click)="openDisablePasswordManagerLink($event)"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {{ "turnOffBrowserBuiltInPasswordManagerSettingsLink" | i18n }}
+      </a>
     </div>
   </div>
   <div class="box tw-mt-4">
