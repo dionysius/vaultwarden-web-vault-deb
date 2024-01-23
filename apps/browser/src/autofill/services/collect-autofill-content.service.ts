@@ -28,6 +28,14 @@ class CollectAutofillContentService implements CollectAutofillContentServiceInte
   private mutationObserver: MutationObserver;
   private updateAutofillElementsAfterMutationTimeout: NodeJS.Timeout;
   private readonly updateAfterMutationTimeoutDelay = 1000;
+  private readonly ignoredInputTypes = new Set([
+    "hidden",
+    "submit",
+    "reset",
+    "button",
+    "image",
+    "file",
+  ]);
 
   constructor(
     domElementVisibilityService: DomElementVisibilityService,
@@ -339,7 +347,7 @@ class CollectAutofillContentService implements CollectAutofillContentServiceInte
       tagName: this.getAttributeLowerCase(element, "tagName"),
     };
 
-    if (element instanceof HTMLSpanElement) {
+    if (element.tagName.toLowerCase() === "span") {
       this.cacheAutofillFieldElement(index, element, autofillFieldBase);
       this.autofillOverlayContentService?.setupAutofillOverlayListenerOnField(
         element,
@@ -352,7 +360,7 @@ class CollectAutofillContentService implements CollectAutofillContentServiceInte
     const elementType = this.getAttributeLowerCase(element, "type");
     if (elementType !== "hidden") {
       autofillFieldLabels = {
-        "label-tag": this.createAutofillFieldLabelTag(element),
+        "label-tag": this.createAutofillFieldLabelTag(element as FillableFormFieldElement),
         "label-data": this.getPropertyOrAttribute(element, "data-label"),
         "label-aria": this.getPropertyOrAttribute(element, "aria-label"),
         "label-top": this.createAutofillFieldTopLabel(element),
@@ -362,6 +370,7 @@ class CollectAutofillContentService implements CollectAutofillContentServiceInte
       };
     }
 
+    const fieldFormElement = (element as ElementWithOpId<FillableFormFieldElement>).form;
     const autofillField = {
       ...autofillFieldBase,
       ...autofillFieldLabels,
@@ -373,8 +382,10 @@ class CollectAutofillContentService implements CollectAutofillContentServiceInte
       disabled: this.getAttributeBoolean(element, "disabled"),
       readonly: this.getAttributeBoolean(element, "readonly"),
       selectInfo:
-        element instanceof HTMLSelectElement ? this.getSelectElementOptions(element) : null,
-      form: element.form ? this.getPropertyOrAttribute(element.form, "opid") : null,
+        element.tagName.toLowerCase() === "select"
+          ? this.getSelectElementOptions(element as HTMLSelectElement)
+          : null,
+      form: fieldFormElement ? this.getPropertyOrAttribute(fieldFormElement, "opid") : null,
       "aria-hidden": this.getAttributeBoolean(element, "aria-hidden", true),
       "aria-disabled": this.getAttributeBoolean(element, "aria-disabled", true),
       "aria-haspopup": this.getAttributeBoolean(element, "aria-haspopup", true),
@@ -487,7 +498,7 @@ class CollectAutofillContentService implements CollectAutofillContentServiceInte
 
     let currentElement: HTMLElement | null = element;
     while (currentElement && currentElement !== document.documentElement) {
-      if (currentElement instanceof HTMLLabelElement) {
+      if (currentElement.tagName.toLowerCase() === "label") {
         labelElementsSet.add(currentElement);
       }
 
@@ -562,10 +573,13 @@ class CollectAutofillContentService implements CollectAutofillContentServiceInte
    * @private
    */
   private getAutofillFieldMaxLength(element: FormFieldElement): number | null {
-    const elementHasMaxLengthProperty =
-      element instanceof HTMLInputElement || element instanceof HTMLTextAreaElement;
+    const elementTagName = element.tagName.toLowerCase();
+    const elementHasMaxLengthProperty = elementTagName === "input" || elementTagName === "textarea";
     const elementMaxLength =
-      elementHasMaxLengthProperty && element.maxLength > -1 ? element.maxLength : 999;
+      elementHasMaxLengthProperty &&
+      (element as HTMLInputElement | HTMLTextAreaElement).maxLength > -1
+        ? (element as HTMLInputElement | HTMLTextAreaElement).maxLength
+        : 999;
 
     return elementHasMaxLengthProperty ? Math.min(elementMaxLength, 999) : null;
   }
@@ -775,13 +789,13 @@ class CollectAutofillContentService implements CollectAutofillContentServiceInte
    * @private
    */
   private getElementValue(element: FormFieldElement): string {
-    if (element instanceof HTMLSpanElement) {
+    if (element.tagName.toLowerCase() === "span") {
       const spanTextContent = element.textContent || element.innerText;
       return spanTextContent || "";
     }
 
-    const elementValue = element.value || "";
-    const elementType = String(element.type).toLowerCase();
+    const elementValue = (element as FillableFormFieldElement).value || "";
+    const elementType = String((element as FillableFormFieldElement).type).toLowerCase();
     if ("checked" in element && elementType === "checkbox") {
       return element.checked ? "✓" : "";
     }
@@ -832,7 +846,7 @@ class CollectAutofillContentService implements CollectAutofillContentServiceInte
     const formElements: Node[] = [];
     const formFieldElements: Node[] = [];
     this.queryAllTreeWalkerNodes(document.documentElement, (node: Node) => {
-      if (node instanceof HTMLFormElement) {
+      if ((node as HTMLFormElement).tagName?.toLowerCase() === "form") {
         formElements.push(node);
         return true;
       }
@@ -855,40 +869,49 @@ class CollectAutofillContentService implements CollectAutofillContentServiceInte
    * @private
    */
   private isNodeFormFieldElement(node: Node): boolean {
+    if (!(node instanceof HTMLElement)) {
+      return false;
+    }
+
+    const nodeTagName = node.tagName.toLowerCase();
+
     const nodeIsSpanElementWithAutofillAttribute =
-      node instanceof HTMLSpanElement && node.hasAttribute("data-bwautofill");
+      nodeTagName === "span" && node.hasAttribute("data-bwautofill");
+    if (nodeIsSpanElementWithAutofillAttribute) {
+      return true;
+    }
 
-    const ignoredInputTypes = new Set(["hidden", "submit", "reset", "button", "image", "file"]);
+    const nodeHasBwIgnoreAttribute = node.hasAttribute("data-bwignore");
     const nodeIsValidInputElement =
-      node instanceof HTMLInputElement && !ignoredInputTypes.has(node.type);
+      nodeTagName === "input" && !this.ignoredInputTypes.has((node as HTMLInputElement).type);
+    if (nodeIsValidInputElement && !nodeHasBwIgnoreAttribute) {
+      return true;
+    }
 
-    const nodeIsTextAreaOrSelectElement =
-      node instanceof HTMLTextAreaElement || node instanceof HTMLSelectElement;
-
-    const nodeIsNonIgnoredFillableControlElement =
-      (nodeIsTextAreaOrSelectElement || nodeIsValidInputElement) &&
-      !node.hasAttribute("data-bwignore");
-
-    return nodeIsSpanElementWithAutofillAttribute || nodeIsNonIgnoredFillableControlElement;
+    return ["textarea", "select"].includes(nodeTagName) && !nodeHasBwIgnoreAttribute;
   }
 
   /**
    * Attempts to get the ShadowRoot of the passed node. If support for the
    * extension based openOrClosedShadowRoot API is available, it will be used.
+   * Will return null if the node is not an HTMLElement or if the node has
+   * child nodes.
+   *
    * @param {Node} node
-   * @returns {ShadowRoot | null}
-   * @private
    */
   private getShadowRoot(node: Node): ShadowRoot | null {
-    if (!(node instanceof HTMLElement)) {
+    if (!(node instanceof HTMLElement) || node.childNodes.length !== 0) {
       return null;
+    }
+    if (node.shadowRoot) {
+      return node.shadowRoot;
     }
 
     if ((chrome as any).dom?.openOrClosedShadowRoot) {
       return (chrome as any).dom.openOrClosedShadowRoot(node);
     }
 
-    return (node as any).openOrClosedShadowRoot || node.shadowRoot;
+    return (node as any).openOrClosedShadowRoot;
   }
 
   /**
@@ -1031,7 +1054,9 @@ class CollectAutofillContentService implements CollectAutofillContentServiceInte
 
       const autofillElementNodes = this.queryAllTreeWalkerNodes(
         node,
-        (node: Node) => node instanceof HTMLFormElement || this.isNodeFormFieldElement(node),
+        (walkerNode: Node) =>
+          (walkerNode as HTMLElement).tagName?.toLowerCase() === "form" ||
+          this.isNodeFormFieldElement(walkerNode),
       ) as HTMLElement[];
 
       if (autofillElementNodes.length) {
@@ -1084,8 +1109,11 @@ class CollectAutofillContentService implements CollectAutofillContentServiceInte
   private deleteCachedAutofillElement(
     element: ElementWithOpId<HTMLFormElement> | ElementWithOpId<FormFieldElement>,
   ) {
-    if (element instanceof HTMLFormElement && this.autofillFormElements.has(element)) {
-      this.autofillFormElements.delete(element);
+    if (
+      element.tagName.toLowerCase() === "form" &&
+      this.autofillFormElements.has(element as ElementWithOpId<HTMLFormElement>)
+    ) {
+      this.autofillFormElements.delete(element as ElementWithOpId<HTMLFormElement>);
       return;
     }
 

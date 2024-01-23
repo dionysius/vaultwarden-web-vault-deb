@@ -1967,6 +1967,14 @@ describe("CollectAutofillContentService", () => {
   });
 
   describe("getShadowRoot", () => {
+    beforeEach(() => {
+      // eslint-disable-next-line
+      // @ts-ignore
+      globalThis.chrome.dom = {
+        openOrClosedShadowRoot: jest.fn(),
+      };
+    });
+
     it("returns null if the passed node is not an HTMLElement instance", () => {
       const textNode = document.createTextNode("Hello, world!");
       const shadowRoot = collectAutofillContentService["getShadowRoot"](textNode);
@@ -1974,12 +1982,27 @@ describe("CollectAutofillContentService", () => {
       expect(shadowRoot).toEqual(null);
     });
 
-    it("returns a value provided by Chrome's openOrClosedShadowRoot API", () => {
+    it("returns null if the passed node contains children elements", () => {
+      const element = document.createElement("div");
+      element.innerHTML = "<p>Hello, world!</p>";
+      const shadowRoot = collectAutofillContentService["getShadowRoot"](element);
+
       // eslint-disable-next-line
       // @ts-ignore
-      globalThis.chrome.dom = {
-        openOrClosedShadowRoot: jest.fn(),
-      };
+      expect(chrome.dom.openOrClosedShadowRoot).not.toBeCalled();
+      expect(shadowRoot).toEqual(null);
+    });
+
+    it("returns an open shadow root if the passed node has a shadowDOM element", () => {
+      const element = document.createElement("div");
+      element.attachShadow({ mode: "open" });
+
+      const shadowRoot = collectAutofillContentService["getShadowRoot"](element);
+
+      expect(shadowRoot).toBeInstanceOf(ShadowRoot);
+    });
+
+    it("returns a value provided by Chrome's openOrClosedShadowRoot API", () => {
       const element = document.createElement("div");
       collectAutofillContentService["getShadowRoot"](element);
 
