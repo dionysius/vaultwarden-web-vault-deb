@@ -40,7 +40,14 @@ export class Vault {
     ui: Ui,
     parserOptions: ParserOptions = ParserOptions.default,
   ): Promise<void> {
-    this.accounts = await this.client.openVault(username, password, clientInfo, ui, parserOptions);
+    this.accounts = await this.client.openVault(
+      username,
+      password,
+      null,
+      clientInfo,
+      ui,
+      parserOptions,
+    );
   }
 
   async openFederated(
@@ -53,13 +60,20 @@ export class Vault {
       throw new Error("Federated user context is not set.");
     }
     const k1 = await this.getK1(federatedUser);
-    const k2 = await this.getK2(federatedUser);
+    const [k2, fragmentId] = await this.getK2FragmentId(federatedUser);
     const hiddenPasswordArr = await this.cryptoFunctionService.hash(
       this.cryptoUtils.ExclusiveOr(k1, k2),
       "sha256",
     );
     const hiddenPassword = Utils.fromBufferToB64(hiddenPasswordArr);
-    await this.open(federatedUser.username, hiddenPassword, clientInfo, ui, parserOptions);
+    this.accounts = await this.client.openVault(
+      federatedUser.username,
+      hiddenPassword,
+      fragmentId,
+      clientInfo,
+      ui,
+      parserOptions,
+    );
   }
 
   async setUserTypeContext(username: string) {
@@ -80,6 +94,18 @@ export class Vault {
       this.userType.pkceEnabled = json.PkceEnabled;
       this.userType.provider = json.Provider;
       this.userType.type = json.type;
+
+      if (this.userType.provider === IdpProvider.Azure) {
+        // Sometimes customers have malformed OIDC authority URLs. Try to fix them.
+        const appQueryIndex = this.userType.openIDConnectAuthority.indexOf("?app");
+        if (appQueryIndex > -1) {
+          this.userType.openIDConnectAuthority = this.userType.openIDConnectAuthority.substring(
+            0,
+            appQueryIndex,
+          );
+        }
+      }
+
       return;
     }
     throw new Error("Cannot determine LastPass user type.");
@@ -194,7 +220,9 @@ export class Vault {
     return null;
   }
 
-  private async getK2(federatedUser: FederatedUserContext): Promise<Uint8Array> {
+  private async getK2FragmentId(
+    federatedUser: FederatedUserContext,
+  ): Promise<[Uint8Array, string]> {
     if (this.userType == null) {
       throw new Error("User type is not set.");
     }
@@ -212,10 +240,11 @@ export class Vault {
     if (response.status === HttpStatusCode.Ok) {
       const json = await response.json();
       const k2 = json?.k2 as string;
-      if (k2 != null) {
-        return Utils.fromB64ToArray(k2);
+      const fragmentId = json?.fragment_id as string;
+      if (k2 != null && fragmentId != null) {
+        return [Utils.fromB64ToArray(k2), fragmentId];
       }
     }
-    throw new Error("Cannot get k2.");
+    throw new Error("Cannot get k2 and/or fragment ID.");
   }
 }

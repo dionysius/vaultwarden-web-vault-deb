@@ -39,12 +39,19 @@ export class Client {
   async openVault(
     username: string,
     password: string,
+    fragmentId: string,
     clientInfo: ClientInfo,
     ui: Ui,
     options: ParserOptions,
   ): Promise<Account[]> {
     const lowercaseUsername = username.toLowerCase();
-    const [session, rest] = await this.login(lowercaseUsername, password, clientInfo, ui);
+    const [session, rest] = await this.login(
+      lowercaseUsername,
+      password,
+      fragmentId,
+      clientInfo,
+      ui,
+    );
     try {
       const blob = await this.downloadVault(session, rest);
       const key = await this.cryptoUtils.deriveKey(
@@ -111,6 +118,7 @@ export class Client {
   private async login(
     username: string,
     password: string,
+    fragmentId: string,
     clientInfo: ClientInfo,
     ui: Ui,
   ): Promise<[Session, RestClient]> {
@@ -142,6 +150,7 @@ export class Client {
       response = await this.performSingleLoginRequest(
         username,
         password,
+        fragmentId,
         keyIterationCount,
         new Map<string, any>(),
         clientInfo,
@@ -191,6 +200,7 @@ export class Client {
       session = await this.loginWithOtp(
         username,
         password,
+        fragmentId,
         keyIterationCount,
         optMethod,
         clientInfo,
@@ -203,6 +213,7 @@ export class Client {
       session = await this.loginWithOob(
         username,
         password,
+        fragmentId,
         keyIterationCount,
         this.getAllErrorAttributes(response),
         clientInfo,
@@ -223,6 +234,7 @@ export class Client {
   private async loginWithOtp(
     username: string,
     password: string,
+    fragmentId: string,
     keyIterationCount: number,
     method: OtpMethod,
     clientInfo: ClientInfo,
@@ -251,6 +263,7 @@ export class Client {
     const response = await this.performSingleLoginRequest(
       username,
       password,
+      fragmentId,
       keyIterationCount,
       new Map<string, string>([["otp", passcode.passcode]]),
       clientInfo,
@@ -270,6 +283,7 @@ export class Client {
   private async loginWithOob(
     username: string,
     password: string,
+    fragmentId: string,
     keyIterationCount: number,
     parameters: Map<string, string>,
     clientInfo: ClientInfo,
@@ -282,6 +296,7 @@ export class Client {
       const response = await this.performSingleLoginRequest(
         username,
         password,
+        fragmentId,
         keyIterationCount,
         extraParameters,
         clientInfo,
@@ -494,6 +509,7 @@ export class Client {
   private async performSingleLoginRequest(
     username: string,
     password: string,
+    fragmentId: string,
     keyIterationCount: number,
     extraParameters: Map<string, any>,
     clientInfo: ClientInfo,
@@ -513,6 +529,10 @@ export class Client {
       // TODO: Test against the real server if it's ok to send this every time!
       ["trustlabel", clientInfo.description],
     ]);
+    if (fragmentId != null) {
+      parameters.set("alpfragmentid", fragmentId);
+      parameters.set("calculatedfragmentid", fragmentId);
+    }
     for (const [key, value] of extraParameters) {
       parameters.set(key, value);
     }

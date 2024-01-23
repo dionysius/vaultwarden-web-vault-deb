@@ -55,7 +55,7 @@ export class Parser {
 
     // 3: url
     let url = Utils.fromBufferToUtf8(
-      Utils.fromHexToArray(Utils.fromBufferToUtf8(this.readItem(reader))),
+      this.decodeHexLoose(Utils.fromBufferToUtf8(this.readItem(reader))),
     );
 
     // Ignore "group" accounts. They have no credentials.
@@ -353,5 +353,10 @@ export class Parser {
 
   private readPayload(reader: BinaryReader, size: number): Uint8Array {
     return reader.readBytes(size);
+  }
+
+  private decodeHexLoose(s: string): Uint8Array {
+    // This is a forgiving version that pads the input with a '0' when the length is odd
+    return Utils.fromHexToArray(s.length % 2 == 0 ? s : "0" + s);
   }
 }
