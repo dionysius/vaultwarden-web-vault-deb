@@ -508,8 +508,8 @@ export class AddEditComponent implements OnInit, OnDestroy {
 
   resetMaskState() {
     // toggle masks off for maskable login properties with no value on init/load
-    this.showTotpSeed = !this.cipher.login?.totp;
-    this.showPassword = !this.cipher.login?.password;
+    this.showTotpSeed = !this.cipher?.login?.totp;
+    this.showPassword = !this.cipher?.login?.password;
   }
 
   togglePassword() {
