@@ -350,7 +350,11 @@ export abstract class BaseImporter {
     }
   }
 
-  protected processFolder(result: ImportResult, folderName: string) {
+  protected processFolder(
+    result: ImportResult,
+    folderName: string,
+    addRelationship: boolean = true,
+  ) {
     if (this.isNullOrWhitespace(folderName)) {
       return;
     }
@@ -374,7 +378,10 @@ export abstract class BaseImporter {
       result.folders.push(f);
     }
 
-    result.folderRelationships.push([result.ciphers.length, folderIndex]);
+    //Some folders can have sub-folders but no ciphers directly, we should not add to the folderRelationships array
+    if (addRelationship) {
+      result.folderRelationships.push([result.ciphers.length, folderIndex]);
+    }
   }
 
   protected convertToNoteIfNeeded(cipher: CipherView) {

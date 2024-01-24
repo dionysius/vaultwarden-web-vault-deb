@@ -1,3 +1,4 @@
+import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { FieldType, SecureNoteType, CipherType } from "@bitwarden/common/vault/enums";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { SecureNoteView } from "@bitwarden/common/vault/models/view/secure-note.view";
@@ -39,17 +40,28 @@ export class PsonoJsonImporter extends BaseImporter implements Importer {
     return Promise.resolve(result);
   }
 
-  private parseFolders(result: ImportResult, folders: FoldersEntity[]) {
+  private parseFolders(result: ImportResult, folders: FoldersEntity[], parentName?: string) {
     if (folders == null || folders.length === 0) {
       return;
     }
 
     folders.forEach((folder) => {
-      if (folder.items == null || folder.items.length == 0) {
+      const folderHasItems = folder.items != null && folder.items.length > 0;
+      const folderHasSubfolders = folder.folders != null && folder.folders.length > 0;
+
+      if (!folderHasItems && !folderHasSubfolders) {
         return;
       }
 
-      this.processFolder(result, folder.name);
+      if (!Utils.isNullOrWhitespace(parentName)) {
+        folder.name = parentName + "/" + folder.name;
+      }
+
+      if (folderHasSubfolders) {
+        this.parseFolders(result, folder.folders, folder.name);
+      }
+
+      this.processFolder(result, folder.name, folderHasItems);
 
       this.handleItemParsing(result, folder.items);
     });

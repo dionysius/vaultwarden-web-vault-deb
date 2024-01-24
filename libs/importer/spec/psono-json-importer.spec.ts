@@ -11,6 +11,7 @@ import { FoldersTestData } from "./test-data/psono-json/folders";
 import { GPGData } from "./test-data/psono-json/gpg";
 import { NotesData } from "./test-data/psono-json/notes";
 import { ReducedWebsiteLoginsData } from "./test-data/psono-json/reduced-website-logins";
+import { SubFoldersTestData } from "./test-data/psono-json/subfolders";
 import { TOTPData } from "./test-data/psono-json/totp";
 import { WebsiteLoginsData } from "./test-data/psono-json/website-logins";
 
@@ -37,6 +38,7 @@ describe("PSONO JSON Importer", () => {
   const TOTPDataJson = JSON.stringify(TOTPData);
   const EmptyTestFolderDataJson = JSON.stringify(EmptyTestFolderData);
   const FoldersTestDataJson = JSON.stringify(FoldersTestData);
+  const SubFoldersTestDataJson = JSON.stringify(SubFoldersTestData);
   const GPGDataJson = JSON.stringify(GPGData);
   const EnvVariablesDataJson = JSON.stringify(EnvVariablesData);
   const ReducedWebsiteLoginsDataJson = JSON.stringify(ReducedWebsiteLoginsData);
@@ -244,5 +246,40 @@ describe("PSONO JSON Importer", () => {
     expect(collections.length).toBe(2);
     expect(collections[0].name).toBe("TestFolder");
     expect(collections[1].name).toBe("TestFolder2");
+  });
+
+  it("should create sub folders on folders with no items", async () => {
+    const importer = new PsonoJsonImporter();
+    const result = await importer.parse(SubFoldersTestDataJson);
+    expect(result != null).toBe(true);
+
+    const folders = result.folders;
+    expect(folders.length).toBe(4);
+    expect(folders[0].name).toBe("TestFolder/SubFolder1/SubSubFolder1");
+    expect(folders[1].name).toBe("TestFolder/SubFolder1");
+    expect(folders[2].name).toBe("TestFolder");
+    expect(folders[3].name).toBe("TestFolder2");
+  });
+
+  it("should assign entries to subfolders", async () => {
+    const importer = new PsonoJsonImporter();
+    const result = await importer.parse(SubFoldersTestDataJson);
+    expect(result != null).toBe(true);
+
+    const folders = result.folders;
+    const relationship1 = result.folderRelationships[0];
+    const relationship2 = result.folderRelationships[1];
+    const relationship3 = result.folderRelationships[2];
+    // // Check that ciphers have a folder assigned to them
+    expect(result.folderRelationships.length).toBe(result.ciphers.length);
+
+    expect(result.ciphers[relationship1[0]] == result.ciphers[0]);
+    expect(result.ciphers[relationship1[1]] == folders[0]);
+
+    expect(result.ciphers[relationship2[0]] == result.ciphers[1]);
+    expect(result.ciphers[relationship2[1]] == folders[2]);
+
+    expect(result.ciphers[relationship3[0]] == result.ciphers[2]);
+    expect(result.ciphers[relationship3[1]] == folders[3]);
   });
 });
