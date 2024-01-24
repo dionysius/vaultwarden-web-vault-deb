@@ -255,6 +255,8 @@ export class Main {
       this.derivedStateProvider,
     );
 
+    this.environmentService = new EnvironmentService(this.stateProvider, this.accountService);
+
     this.stateService = new StateService(
       this.storageService,
       this.secureStorageService,
@@ -262,6 +264,7 @@ export class Main {
       this.logService,
       new StateFactory(GlobalState, Account),
       this.accountService,
+      this.environmentService,
     );
 
     this.cryptoService = new CryptoService(
@@ -276,7 +279,6 @@ export class Main {
 
     this.appIdService = new AppIdService(this.storageService);
     this.tokenService = new TokenService(this.stateService);
-    this.environmentService = new EnvironmentService(this.stateService);
 
     const customUserAgent =
       "Bitwarden_CLI/" +

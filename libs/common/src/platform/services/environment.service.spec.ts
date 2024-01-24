@@ -1,17 +1,22 @@
-import { mock } from "jest-mock-extended";
 import { firstValueFrom, timeout } from "rxjs";
 
 import { awaitAsync } from "../../../spec";
+import { FakeAccountService, mockAccountServiceWith } from "../../../spec/fake-account-service";
 import { FakeStorageService } from "../../../spec/fake-storage.service";
+import { AuthenticationStatus } from "../../auth/enums/authentication-status";
 import { EnvironmentUrls } from "../../auth/models/domain/environment-urls";
 import { UserId } from "../../types/guid";
 import { Region } from "../abstractions/environment.service";
-import { StateFactory } from "../factories/state-factory";
-import { Account } from "../models/domain/account";
-import { GlobalState } from "../models/domain/global-state";
+import { StateProvider } from "../state";
+/* eslint-disable import/no-restricted-paths -- Rare testing need */
+import { DefaultActiveUserStateProvider } from "../state/implementations/default-active-user-state.provider";
+import { DefaultDerivedStateProvider } from "../state/implementations/default-derived-state.provider";
+import { DefaultGlobalStateProvider } from "../state/implementations/default-global-state.provider";
+import { DefaultSingleUserStateProvider } from "../state/implementations/default-single-user-state.provider";
+import { DefaultStateProvider } from "../state/implementations/default-state.provider";
+/* eslint-disable import/no-restricted-paths */
 
 import { EnvironmentService } from "./environment.service";
-import { StateService } from "./state.service";
 
 // There are a few main states EnvironmentService could be in when first used
 // 1. Not initialized, no active user. Hopefully not to likely but possible
@@ -21,51 +26,55 @@ import { StateService } from "./state.service";
 describe("EnvironmentService", () => {
   let diskStorageService: FakeStorageService;
   let memoryStorageService: FakeStorageService;
-  let stateService: StateService;
+  let accountService: FakeAccountService;
+  let stateProvider: StateProvider;
 
   let sut: EnvironmentService;
 
-  const testUser = "testUser1" as UserId;
+  const testUser = "00000000-0000-1000-a000-000000000001" as UserId;
+  const alternateTestUser = "00000000-0000-1000-a000-000000000002" as UserId;
 
-  // START: CAN CHANGE - When implementing new storage locations, the following code can change. But not tests
   beforeEach(async () => {
     diskStorageService = new FakeStorageService();
     memoryStorageService = new FakeStorageService();
-    stateService = new StateService(
-      diskStorageService,
-      null,
-      memoryStorageService as any,
-      mock(),
-      new StateFactory<GlobalState, Account>(GlobalState, Account),
-      mock(),
-      false,
+
+    accountService = mockAccountServiceWith(undefined);
+    stateProvider = new DefaultStateProvider(
+      new DefaultActiveUserStateProvider(
+        accountService,
+        memoryStorageService as any,
+        diskStorageService,
+      ),
+      new DefaultSingleUserStateProvider(memoryStorageService as any, diskStorageService),
+      new DefaultGlobalStateProvider(memoryStorageService as any, diskStorageService),
+      new DefaultDerivedStateProvider(memoryStorageService),
     );
 
-    sut = new EnvironmentService(stateService);
+    sut = new EnvironmentService(stateProvider, accountService);
   });
 
   const switchUser = async (userId: UserId) => {
-    await stateService.setActiveUser(userId);
+    accountService.activeAccountSubject.next({
+      id: userId,
+      email: "test@example.com",
+      name: `Test Name ${userId}`,
+      status: AuthenticationStatus.Unlocked,
+    });
     await awaitAsync();
   };
 
   const setGlobalData = (region: Region, environmentUrls: EnvironmentUrls) => {
-    diskStorageService.internalUpdateStore({
-      ...diskStorageService.internalStore,
-      global: {
-        region: region,
-        environmentUrls: environmentUrls,
-      },
-    });
+    const data = diskStorageService.internalStore;
+    data["global_environment_region"] = region;
+    data["global_environment_urls"] = environmentUrls;
+    diskStorageService.internalUpdateStore(data);
   };
 
   const getGlobalData = () => {
-    const storage = diskStorageService.internalStore as {
-      global?: { region?: Region; environmentUrls?: EnvironmentUrls };
-    };
+    const storage = diskStorageService.internalStore;
     return {
-      region: storage?.global?.region,
-      urls: storage?.global?.environmentUrls,
+      region: storage?.["global_environment_region"],
+      urls: storage?.["global_environment_urls"],
     };
   };
 
@@ -74,22 +83,15 @@ describe("EnvironmentService", () => {
     environmentUrls: EnvironmentUrls,
     userId: UserId = testUser,
   ) => {
-    const data = { ...diskStorageService.internalStore };
-    const userData = {
-      settings: {
-        region: region,
-        environmentUrls: environmentUrls,
-      },
-    };
-    data[userId] = userData;
+    const data = diskStorageService.internalStore;
+    data[`user_${userId}_environment_region`] = region;
+    data[`user_${userId}_environment_urls`] = environmentUrls;
 
     diskStorageService.internalUpdateStore(data);
   };
   // END: CAN CHANGE
 
   const initialize = async (options: { switchUser: boolean }) => {
-    // This emulates the way EnvironmentService is initialized in each of our clients
-    await stateService.init();
     await sut.setUrlsFromStorage();
     sut.initialized = true;
 
@@ -292,7 +294,7 @@ describe("EnvironmentService", () => {
       });
 
       const globalData = getGlobalData();
-      expect(globalData.region).toBe("Self-hosted");
+      expect(globalData.region).toBe(Region.SelfHosted);
       expect(globalData.urls).toEqual({
         base: "https://base.example.com",
         api: null,
@@ -321,7 +323,7 @@ describe("EnvironmentService", () => {
       });
 
       const globalData = getGlobalData();
-      expect(globalData.region).toBe("Self-hosted");
+      expect(globalData.region).toBe(Region.SelfHosted);
       expect(globalData.urls).toEqual({
         base: "https://base.example.com",
         api: "https://api.example.com",
@@ -399,15 +401,13 @@ describe("EnvironmentService", () => {
     ])(
       "gets it from the passed in userId if there is any active user: %s",
       async ({ region, expectedHost }) => {
-        const otherUser = "testUser2" as UserId;
-
         setGlobalData(Region.US, new EnvironmentUrls());
         setUserData(Region.US, new EnvironmentUrls());
-        setUserData(region, new EnvironmentUrls(), otherUser);
+        setUserData(region, new EnvironmentUrls(), alternateTestUser);
 
         await initialize({ switchUser: true });
 
-        const host = await sut.getHost(otherUser);
+        const host = await sut.getHost(alternateTestUser);
         expect(host).toBe(expectedHost);
       },
     );
@@ -438,17 +438,16 @@ describe("EnvironmentService", () => {
     });
 
     it("gets it from saved self host config from passed in user when there is an active user", async () => {
-      const otherUser = "testUser2" as UserId;
       setGlobalData(Region.US, new EnvironmentUrls());
       setUserData(Region.EU, new EnvironmentUrls());
 
       const selfHostUserUrls = new EnvironmentUrls();
       selfHostUserUrls.base = "https://base.example.com";
-      setUserData(Region.SelfHosted, selfHostUserUrls, otherUser);
+      setUserData(Region.SelfHosted, selfHostUserUrls, alternateTestUser);
 
       await initialize({ switchUser: true });
 
-      const host = await sut.getHost(otherUser);
+      const host = await sut.getHost(alternateTestUser);
       expect(host).toBe("base.example.com");
     });
   });
@@ -498,7 +497,6 @@ describe("EnvironmentService", () => {
     });
 
     it("will get urls from signed in user", async () => {
-      await stateService.init();
       await switchUser(testUser);
 
       const userUrls = new EnvironmentUrls();

@@ -1,5 +1,7 @@
 import { Observable } from "rxjs";
 
+import { UserId } from "../../types/guid";
+
 export type Urls = {
   base?: string;
   webVault?: string;
@@ -52,6 +54,12 @@ export abstract class EnvironmentService {
    * @param {Region} region - The region of the cloud web vault app.
    */
   setCloudWebVaultUrl: (region: Region) => void;
+
+  /**
+   * Seed the environment for a given user based on the globally set defaults.
+   */
+  seedUserEnvironment: (userId: UserId) => Promise<void>;
+
   getSendUrl: () => string;
   getIconsUrl: () => string;
   getApiUrl: () => string;

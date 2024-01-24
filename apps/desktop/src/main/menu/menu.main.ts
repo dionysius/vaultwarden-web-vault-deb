@@ -1,8 +1,8 @@
 import { app, Menu } from "electron";
 
+import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
-import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 
 import { UpdaterMain } from "../updater.main";
 import { WindowMain } from "../window.main";
@@ -16,7 +16,7 @@ export class MenuMain {
   constructor(
     private i18nService: I18nService,
     private messagingService: MessagingService,
-    private stateService: StateService,
+    private environmentService: EnvironmentService,
     private windowMain: WindowMain,
     private updaterMain: UpdaterMain,
   ) {}
@@ -45,16 +45,7 @@ export class MenuMain {
   }
 
   private async getWebVaultUrl() {
-    let webVaultUrl = cloudWebVaultUrl;
-    const urlsObj = await this.stateService.getEnvironmentUrls();
-    if (urlsObj != null) {
-      if (urlsObj.base != null) {
-        webVaultUrl = urlsObj.base;
-      } else if (urlsObj.webVault != null) {
-        webVaultUrl = urlsObj.webVault;
-      }
-    }
-    return webVaultUrl;
+    return this.environmentService.getWebVaultUrl() ?? cloudWebVaultUrl;
   }
 
   private initContextMenu() {

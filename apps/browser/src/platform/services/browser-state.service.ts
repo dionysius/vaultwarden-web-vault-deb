@@ -1,6 +1,7 @@
 import { BehaviorSubject } from "rxjs";
 
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
+import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import {
   AbstractStorageService,
@@ -44,6 +45,7 @@ export class BrowserStateService
     logService: LogService,
     stateFactory: StateFactory<GlobalState, Account>,
     accountService: AccountService,
+    environmentService: EnvironmentService,
     useAccountCache = true,
   ) {
     super(
@@ -53,6 +55,7 @@ export class BrowserStateService
       logService,
       stateFactory,
       accountService,
+      environmentService,
       useAccountCache,
     );
 
