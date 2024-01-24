@@ -75,7 +75,9 @@ describe("Cipher DTO", () => {
         reprompt: CipherRepromptType.None,
         key: "EncryptedString",
         login: {
-          uris: [{ uri: "EncryptedString", match: UriMatchType.Domain }],
+          uris: [
+            { uri: "EncryptedString", uriChecksum: "EncryptedString", match: UriMatchType.Domain },
+          ],
           username: "EncryptedString",
           password: "EncryptedString",
           passwordRevisionDate: "2022-01-31T12:00:00.000Z",
@@ -148,7 +150,13 @@ describe("Cipher DTO", () => {
           username: { encryptedString: "EncryptedString", encryptionType: 0 },
           password: { encryptedString: "EncryptedString", encryptionType: 0 },
           totp: { encryptedString: "EncryptedString", encryptionType: 0 },
-          uris: [{ match: 0, uri: { encryptedString: "EncryptedString", encryptionType: 0 } }],
+          uris: [
+            {
+              match: 0,
+              uri: { encryptedString: "EncryptedString", encryptionType: 0 },
+              uriChecksum: { encryptedString: "EncryptedString", encryptionType: 0 },
+            },
+          ],
         },
         attachments: [
           {

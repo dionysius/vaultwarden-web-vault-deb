@@ -18,4 +18,10 @@ export abstract class EncryptService {
     items: Decryptable<T>[],
     key: SymmetricCryptoKey,
   ) => Promise<T[]>;
+  /**
+   * Generates a base64-encoded hash of the given value
+   * @param value The value to hash
+   * @param algorithm The hashing algorithm to use
+   */
+  hash: (value: string | Uint8Array, algorithm: "sha1" | "sha256" | "sha512") => Promise<string>;
 }

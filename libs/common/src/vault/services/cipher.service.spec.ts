@@ -1,4 +1,4 @@
-import { mock, mockReset } from "jest-mock-extended";
+import { mock } from "jest-mock-extended";
 import { of } from "rxjs";
 
 import { makeStaticByteArray } from "../../../spec/utils";
@@ -25,10 +25,14 @@ import { CipherCreateRequest } from "../models/request/cipher-create.request";
 import { CipherPartialRequest } from "../models/request/cipher-partial.request";
 import { CipherRequest } from "../models/request/cipher.request";
 import { CipherView } from "../models/view/cipher.view";
+import { LoginUriView } from "../models/view/login-uri.view";
 
 import { CipherService } from "./cipher.service";
 
 const ENCRYPTED_TEXT = "This data has been encrypted";
+function encryptText(clearText: string | Uint8Array) {
+  return Promise.resolve(new EncString(`${clearText} has been encrypted`));
+}
 const ENCRYPTED_BYTES = mock<EncArrayBuffer>();
 
 const cipherData: CipherData = {
@@ -48,7 +52,7 @@ const cipherData: CipherData = {
   key: "EncKey",
   reprompt: CipherRepromptType.None,
   login: {
-    uris: [{ uri: "EncryptedString", match: UriMatchType.Domain }],
+    uris: [{ uri: "EncryptedString", uriChecksum: "EncryptedString", match: UriMatchType.Domain }],
     username: "EncryptedString",
     password: "EncryptedString",
     passwordRevisionDate: "2022-01-31T12:00:00.000Z",
@@ -105,16 +109,6 @@ describe("Cipher Service", () => {
   let cipherObj: Cipher;
 
   beforeEach(() => {
-    mockReset(apiService);
-    mockReset(cryptoService);
-    mockReset(stateService);
-    mockReset(settingsService);
-    mockReset(cipherFileUploadService);
-    mockReset(i18nService);
-    mockReset(searchService);
-    mockReset(encryptService);
-    mockReset(configService);
-
     encryptService.encryptToBytes.mockReturnValue(Promise.resolve(ENCRYPTED_BYTES));
     encryptService.encrypt.mockReturnValue(Promise.resolve(new EncString(ENCRYPTED_TEXT)));
 
@@ -134,6 +128,11 @@ describe("Cipher Service", () => {
 
     cipherObj = new Cipher(cipherData);
   });
+
+  afterEach(() => {
+    jest.resetAllMocks();
+  });
+
   describe("saveAttachmentRawWithServer()", () => {
     it("should upload encrypted file contents with save attachments", async () => {
       const fileName = "filename";
@@ -252,7 +251,26 @@ describe("Cipher Service", () => {
       cryptoService.makeCipherKey.mockReturnValue(
         Promise.resolve(new SymmetricCryptoKey(makeStaticByteArray(64)) as CipherKey),
       );
-      cryptoService.encrypt.mockReturnValue(Promise.resolve(new EncString(ENCRYPTED_TEXT)));
+      cryptoService.encrypt.mockImplementation(encryptText);
+    });
+
+    describe("login encryption", () => {
+      it("should add a uri hash to login uris", async () => {
+        encryptService.hash.mockImplementation((value) => Promise.resolve(`${value} hash`));
+        cipherView.login.uris = [
+          { uri: "uri", match: UriMatchType.RegularExpression } as LoginUriView,
+        ];
+
+        const domain = await cipherService.encrypt(cipherView);
+
+        expect(domain.login.uris).toEqual([
+          {
+            uri: new EncString("uri has been encrypted"),
+            uriChecksum: new EncString("uri hash has been encrypted"),
+            match: UriMatchType.RegularExpression,
+          },
+        ]);
+      });
     });
 
     describe("cipher.key", () => {

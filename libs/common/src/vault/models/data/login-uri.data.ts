@@ -3,6 +3,7 @@ import { LoginUriApi } from "../api/login-uri.api";
 
 export class LoginUriData {
   uri: string;
+  uriChecksum: string;
   match: UriMatchType = null;
 
   constructor(data?: LoginUriApi) {
@@ -10,6 +11,7 @@ export class LoginUriData {
       return;
     }
     this.uri = data.uri;
+    this.uriChecksum = data.uriChecksum;
     this.match = data.match;
   }
 }

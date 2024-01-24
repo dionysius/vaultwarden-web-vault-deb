@@ -125,10 +125,12 @@ export class Cipher extends Domain implements Decryptable<CipherView> {
   // We will refactor the EncString.decrypt() in https://bitwarden.atlassian.net/browse/PM-3762 to remove the dependency on the organizationId.
   async decrypt(encKey: SymmetricCryptoKey): Promise<CipherView> {
     const model = new CipherView(this);
+    let bypassValidation = true;
 
     if (this.key != null) {
       const encryptService = Utils.getContainerService().getEncryptService();
       encKey = new SymmetricCryptoKey(await encryptService.decryptToBytes(this.key, encKey));
+      bypassValidation = false;
     }
 
     await this.decryptObj(
@@ -143,7 +145,7 @@ export class Cipher extends Domain implements Decryptable<CipherView> {
 
     switch (this.type) {
       case CipherType.Login:
-        model.login = await this.login.decrypt(this.organizationId, encKey);
+        model.login = await this.login.decrypt(this.organizationId, bypassValidation, encKey);
         break;
       case CipherType.SecureNote:
         model.secureNote = await this.secureNote.decrypt(this.organizationId, encKey);
