@@ -156,7 +156,7 @@ export class EncryptServiceImplementation implements EncryptService {
     }
 
     // don't use promise.all because this task is not io bound
-    let results = [];
+    const results = [];
     for (let i = 0; i < items.length; i++) {
       results.push(await items[i].decrypt(key));
     }
