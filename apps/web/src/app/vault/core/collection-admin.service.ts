@@ -91,7 +91,7 @@ export class CollectionAdminService {
 
     await this.apiService.send(
       "POST",
-      `organizations/${organizationId}/collections/bulk-access`,
+      `/organizations/${organizationId}/collections/bulk-access`,
       request,
       true,
       false,
