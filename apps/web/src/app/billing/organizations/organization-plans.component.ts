@@ -201,7 +201,10 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
         this.singleOrgPolicyAppliesToActiveUser = policyAppliesToActiveUser;
       });
 
-    this.changedProduct();
+    if (!this.selfHosted) {
+      this.changedProduct();
+    }
+
     this.loading = false;
   }
 
