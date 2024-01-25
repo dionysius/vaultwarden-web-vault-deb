@@ -142,19 +142,8 @@ export class KeyDefinition<T> {
     });
   }
 
-  /**
-   * Create a string that should be unique across the entire application.
-   * @returns A string that can be used to cache instances created via this key.
-   */
-  buildCacheKey(scope: "user" | "global", userId?: "active" | UserId): string {
-    if (scope === "user" && userId == null) {
-      throw new Error(
-        "You must provide a userId or 'active' when building a user scoped cache key.",
-      );
-    }
-    return userId === null
-      ? `${this.stateDefinition.storageLocation}_${scope}_${this.stateDefinition.name}_${this.key}`
-      : `${this.stateDefinition.storageLocation}_${scope}_${userId}_${this.stateDefinition.name}_${this.key}`;
+  get fullName() {
+    return `${this.stateDefinition.name}_${this.key}`;
   }
 
   private get errorKeyName() {

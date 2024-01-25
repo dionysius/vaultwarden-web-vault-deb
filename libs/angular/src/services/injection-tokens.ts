@@ -14,6 +14,9 @@ export const OBSERVABLE_MEMORY_STORAGE = new InjectionToken<
 export const OBSERVABLE_DISK_STORAGE = new InjectionToken<
   AbstractStorageService & ObservableStorageService
 >("OBSERVABLE_DISK_STORAGE");
+export const OBSERVABLE_DISK_LOCAL_STORAGE = new InjectionToken<
+  AbstractStorageService & ObservableStorageService
+>("OBSERVABLE_DISK_LOCAL_STORAGE");
 export const MEMORY_STORAGE = new InjectionToken<AbstractMemoryStorageService>("MEMORY_STORAGE");
 export const SECURE_STORAGE = new InjectionToken<AbstractStorageService>("SECURE_STORAGE");
 export const STATE_FACTORY = new InjectionToken<StateFactory>("STATE_FACTORY");

@@ -10,9 +10,11 @@ import {
   MEMORY_STORAGE,
   OBSERVABLE_MEMORY_STORAGE,
   OBSERVABLE_DISK_STORAGE,
+  OBSERVABLE_DISK_LOCAL_STORAGE,
 } from "@bitwarden/angular/services/injection-tokens";
 import { JslibServicesModule } from "@bitwarden/angular/services/jslib-services.module";
 import { ModalService as ModalServiceAbstraction } from "@bitwarden/angular/services/modal.service";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { LoginService as LoginServiceAbstraction } from "@bitwarden/common/auth/abstractions/login.service";
 import { LoginService } from "@bitwarden/common/auth/services/login.service";
 import { FileDownloadService } from "@bitwarden/common/platform/abstractions/file-download/file-download.service";
@@ -23,10 +25,19 @@ import { StateService as BaseStateServiceAbstraction } from "@bitwarden/common/p
 import { AbstractStorageService } from "@bitwarden/common/platform/abstractions/storage.service";
 import { StateFactory } from "@bitwarden/common/platform/factories/state-factory";
 import { MemoryStorageService } from "@bitwarden/common/platform/services/memory-storage.service";
+import {
+  ActiveUserStateProvider,
+  GlobalStateProvider,
+  SingleUserStateProvider,
+} from "@bitwarden/common/platform/state";
 
 import { PolicyListService } from "../admin-console/core/policy-list.service";
 import { HtmlStorageService } from "../core/html-storage.service";
 import { I18nService } from "../core/i18n.service";
+import { WebActiveUserStateProvider } from "../platform/web-active-user-state.provider";
+import { WebGlobalStateProvider } from "../platform/web-global-state.provider";
+import { WebSingleUserStateProvider } from "../platform/web-single-user-state.provider";
+import { WindowStorageService } from "../platform/window-storage.service";
 import { CollectionAdminService } from "../vault/core/collection-admin.service";
 
 import { BroadcasterMessagingService } from "./broadcaster-messaging.service";
@@ -77,7 +88,10 @@ import { WebPlatformUtilsService } from "./web-platform-utils.service";
       useClass: MemoryStorageService,
     },
     { provide: OBSERVABLE_MEMORY_STORAGE, useExisting: MEMORY_STORAGE },
-    { provide: OBSERVABLE_DISK_STORAGE, useExisting: AbstractStorageService },
+    {
+      provide: OBSERVABLE_DISK_STORAGE,
+      useFactory: () => new WindowStorageService(window.sessionStorage),
+    },
     {
       provide: PlatformUtilsServiceAbstraction,
       useClass: WebPlatformUtilsService,
@@ -99,6 +113,30 @@ import { WebPlatformUtilsService } from "./web-platform-utils.service";
       deps: [StateService],
     },
     CollectionAdminService,
+    {
+      provide: OBSERVABLE_DISK_LOCAL_STORAGE,
+      useFactory: () => new WindowStorageService(window.localStorage),
+    },
+    {
+      provide: SingleUserStateProvider,
+      useClass: WebSingleUserStateProvider,
+      deps: [MEMORY_STORAGE, OBSERVABLE_DISK_STORAGE, OBSERVABLE_DISK_LOCAL_STORAGE],
+    },
+    {
+      provide: ActiveUserStateProvider,
+      useClass: WebActiveUserStateProvider,
+      deps: [
+        AccountService,
+        MEMORY_STORAGE,
+        OBSERVABLE_DISK_STORAGE,
+        OBSERVABLE_DISK_LOCAL_STORAGE,
+      ],
+    },
+    {
+      provide: GlobalStateProvider,
+      useClass: WebGlobalStateProvider,
+      deps: [MEMORY_STORAGE, OBSERVABLE_DISK_STORAGE, OBSERVABLE_DISK_LOCAL_STORAGE],
+    },
   ],
 })
 export class CoreModule {

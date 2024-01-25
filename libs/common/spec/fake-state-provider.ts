@@ -31,7 +31,7 @@ export class FakeGlobalStateProvider implements GlobalStateProvider {
   states: Map<string, GlobalState<unknown>> = new Map();
   get<T>(keyDefinition: KeyDefinition<T>): GlobalState<T> {
     this.mock.get(keyDefinition);
-    let result = this.states.get(keyDefinition.buildCacheKey("global"));
+    let result = this.states.get(keyDefinition.fullName);
 
     if (result == null) {
       let fake: FakeGlobalState<T>;
@@ -43,10 +43,10 @@ export class FakeGlobalStateProvider implements GlobalStateProvider {
       }
       fake.keyDefinition = keyDefinition;
       result = fake;
-      this.states.set(keyDefinition.buildCacheKey("global"), result);
+      this.states.set(keyDefinition.fullName, result);
 
       result = new FakeGlobalState<T>();
-      this.states.set(keyDefinition.buildCacheKey("global"), result);
+      this.states.set(keyDefinition.fullName, result);
     }
     return result as GlobalState<T>;
   }
@@ -69,7 +69,7 @@ export class FakeSingleUserStateProvider implements SingleUserStateProvider {
   states: Map<string, SingleUserState<unknown>> = new Map();
   get<T>(userId: UserId, keyDefinition: KeyDefinition<T>): SingleUserState<T> {
     this.mock.get(userId, keyDefinition);
-    let result = this.states.get(keyDefinition.buildCacheKey("user", userId));
+    let result = this.states.get(`${keyDefinition.fullName}_${userId}`);
 
     if (result == null) {
       let fake: FakeSingleUserState<T>;
@@ -81,7 +81,7 @@ export class FakeSingleUserStateProvider implements SingleUserStateProvider {
       }
       fake.keyDefinition = keyDefinition;
       result = fake;
-      this.states.set(keyDefinition.buildCacheKey("user", userId), result);
+      this.states.set(`${keyDefinition.fullName}_${userId}`, result);
     }
     return result as SingleUserState<T>;
   }
@@ -106,7 +106,7 @@ export class FakeActiveUserStateProvider implements ActiveUserStateProvider {
   constructor(public accountService: FakeAccountService) {}
 
   get<T>(keyDefinition: KeyDefinition<T>): ActiveUserState<T> {
-    let result = this.states.get(keyDefinition.buildCacheKey("user", "active"));
+    let result = this.states.get(keyDefinition.fullName);
 
     if (result == null) {
       // Look for established mock
@@ -116,7 +116,7 @@ export class FakeActiveUserStateProvider implements ActiveUserStateProvider {
         result = new FakeActiveUserState<T>(this.accountService);
       }
       result.keyDefinition = keyDefinition;
-      this.states.set(keyDefinition.buildCacheKey("user", "active"), result);
+      this.states.set(keyDefinition.fullName, result);
     }
     return result as ActiveUserState<T>;
   }
