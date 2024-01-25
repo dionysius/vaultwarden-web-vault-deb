@@ -80,4 +80,5 @@ export class OrganizationApiServiceAbstraction {
     request: OrganizationCollectionManagementUpdateRequest,
   ) => Promise<OrganizationResponse>;
   risksSubscriptionFailure: (id: string) => Promise<OrganizationRisksSubscriptionFailureResponse>;
+  enableCollectionEnhancements: (id: string) => Promise<void>;
 }

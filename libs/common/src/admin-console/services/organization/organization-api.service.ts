@@ -357,4 +357,15 @@ export class OrganizationApiService implements OrganizationApiServiceAbstraction
 
     return new OrganizationRisksSubscriptionFailureResponse(r);
   }
+
+  async enableCollectionEnhancements(id: string): Promise<void> {
+    await this.apiService.send(
+      "POST",
+      "/organizations/" + id + "/enable-collection-enhancements",
+      null,
+      true,
+      false,
+    );
+    await this.syncService.fullSync(true);
+  }
 }

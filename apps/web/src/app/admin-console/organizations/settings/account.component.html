@@ -53,6 +53,25 @@
   </button>
 </ng-container>
 <form
+  *ngIf="
+    org && !loading && !org.flexibleCollections && (flexibleCollectionsMigrationEnabled$ | async)
+  "
+>
+  <h1 bitTypography="h1" class="tw-mt-16 tw-pb-2.5">
+    {{ "collectionManagement" | i18n }}
+    <span bitBadge variant="warning" class="!tw-align-middle">{{ "beta" | i18n }}</span>
+  </h1>
+  <p>
+    {{ "collectionEnhancementsDesc" | i18n }}
+    <a href="https://bitwarden.com/help/collection-management" target="_blank" rel="noopener">
+      {{ "collectionEnhancementsLearnMore" | i18n }}
+    </a>
+  </p>
+  <button type="button" bitButton buttonType="primary" [bitAction]="enableCollectionEnhancements">
+    {{ "enable" | i18n }}
+  </button>
+</form>
+<form
   *ngIf="org && !loading && org.flexibleCollections"
   [bitSubmit]="submitCollectionManagement"
   [formGroup]="collectionManagementFormGroup"
