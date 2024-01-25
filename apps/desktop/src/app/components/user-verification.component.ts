@@ -7,6 +7,10 @@ import { UserVerificationComponent as BaseComponent } from "@bitwarden/angular/a
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { FormFieldModule } from "@bitwarden/components";
 
+/**
+ * @deprecated Jan 24, 2024: Use new libs/auth UserVerificationDialogComponent or UserVerificationFormInputComponent instead.
+ * Each client specific component should eventually be converted over to use one of these new components.
+ */
 @Component({
   selector: "app-user-verification",
   standalone: true,

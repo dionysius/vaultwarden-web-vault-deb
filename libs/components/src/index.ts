@@ -5,6 +5,7 @@ export * from "./badge";
 export * from "./banner";
 export * from "./breadcrumbs";
 export * from "./button";
+export { ButtonType } from "./shared/button-like.abstraction";
 export * from "./callout";
 export * from "./checkbox";
 export * from "./color-password";

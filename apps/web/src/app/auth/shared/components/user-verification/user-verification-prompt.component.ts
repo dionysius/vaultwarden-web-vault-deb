@@ -11,6 +11,9 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { DialogService } from "@bitwarden/components";
 
+/**
+ * @deprecated Jan 24, 2024: Use new libs/auth UserVerificationDialogComponent instead.
+ */
 @Component({
   templateUrl: "user-verification-prompt.component.html",
 })

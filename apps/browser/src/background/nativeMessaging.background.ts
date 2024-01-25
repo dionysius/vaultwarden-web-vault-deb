@@ -306,8 +306,11 @@ export class NativeMessagingBackground {
             type: "danger",
           });
           break;
+        } else if (message.response === "canceled") {
+          break;
         }
 
+        // Check for initial setup of biometric unlock
         const enabled = await this.stateService.getBiometricUnlock();
         if (enabled === null || enabled === false) {
           if (message.response === "unlocked") {

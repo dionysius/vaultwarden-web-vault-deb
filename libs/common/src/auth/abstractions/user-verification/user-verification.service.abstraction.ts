@@ -1,4 +1,5 @@
 import { SecretVerificationRequest } from "../../models/request/secret-verification.request";
+import { UserVerificationOptions } from "../../types/user-verification-options";
 import { Verification } from "../../types/verification";
 
 export abstract class UserVerificationService {
@@ -21,4 +22,8 @@ export abstract class UserVerificationService {
    * @returns True if the user has a master password and has used it in the current session
    */
   hasMasterPasswordAndMasterKeyHash: (userId?: string) => Promise<boolean>;
+
+  getAvailableVerificationOptions: (
+    verificationType: keyof UserVerificationOptions,
+  ) => Promise<UserVerificationOptions>;
 }

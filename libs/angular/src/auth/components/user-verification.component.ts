@@ -14,6 +14,9 @@ import { Utils } from "@bitwarden/common/platform/misc/utils";
  * Collects the user's master password, or if they are not using a password, prompts for an OTP via email.
  * This is exposed to the parent component via the ControlValueAccessor interface (e.g. bind it to a FormControl).
  * Use UserVerificationService to verify the user's input.
+ *
+ * @deprecated Jan 24, 2024: Use new libs/auth UserVerificationDialogComponent or UserVerificationFormInputComponent instead.
+ * Each client specific component should eventually be converted over to use one of these new components.
  */
 @Directive({
   selector: "app-user-verification",

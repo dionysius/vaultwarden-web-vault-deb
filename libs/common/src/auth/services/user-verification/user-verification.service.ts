@@ -1,7 +1,9 @@
 import { PinCryptoServiceAbstraction } from "../../../../../auth/src/common/abstractions/pin-crypto.service.abstraction";
+import { VaultTimeoutSettingsService as VaultTimeoutSettingsServiceAbstraction } from "../../../abstractions/vault-timeout/vault-timeout-settings.service";
 import { CryptoService } from "../../../platform/abstractions/crypto.service";
 import { I18nService } from "../../../platform/abstractions/i18n.service";
 import { LogService } from "../../../platform/abstractions/log.service";
+import { PlatformUtilsService } from "../../../platform/abstractions/platform-utils.service";
 import { StateService } from "../../../platform/abstractions/state.service";
 import { KeySuffixOptions } from "../../../platform/enums/key-suffix-options.enum";
 import { UserKey } from "../../../types/key";
@@ -10,6 +12,7 @@ import { UserVerificationService as UserVerificationServiceAbstraction } from ".
 import { VerificationType } from "../../enums/verification-type";
 import { SecretVerificationRequest } from "../../models/request/secret-verification.request";
 import { VerifyOTPRequest } from "../../models/request/verify-otp.request";
+import { UserVerificationOptions } from "../../types/user-verification-options";
 import {
   MasterPasswordVerification,
   OtpVerification,
@@ -32,7 +35,53 @@ export class UserVerificationService implements UserVerificationServiceAbstracti
     private userVerificationApiService: UserVerificationApiServiceAbstraction,
     private pinCryptoService: PinCryptoServiceAbstraction,
     private logService: LogService,
+    private vaultTimeoutSettingsService: VaultTimeoutSettingsServiceAbstraction,
+    private platformUtilsService: PlatformUtilsService,
   ) {}
+
+  async getAvailableVerificationOptions(
+    verificationType: keyof UserVerificationOptions,
+  ): Promise<UserVerificationOptions> {
+    if (verificationType === "client") {
+      const [userHasMasterPassword, pinLockType, biometricsLockSet, biometricsUserKeyStored] =
+        await Promise.all([
+          this.hasMasterPasswordAndMasterKeyHash(),
+          this.vaultTimeoutSettingsService.isPinLockSet(),
+          this.vaultTimeoutSettingsService.isBiometricLockSet(),
+          this.cryptoService.hasUserKeyStored(KeySuffixOptions.Biometric),
+        ]);
+
+      // note: we do not need to check this.platformUtilsService.supportsBiometric() because
+      // we can just use the logic below which works for both desktop & the browser extension.
+
+      return {
+        client: {
+          masterPassword: userHasMasterPassword,
+          pin: pinLockType !== "DISABLED",
+          biometrics:
+            biometricsLockSet &&
+            (biometricsUserKeyStored || !this.platformUtilsService.supportsSecureStorage()),
+        },
+        server: {
+          masterPassword: false,
+          otp: false,
+        },
+      };
+    } else {
+      // server
+      // Don't check if have MP hash locally, because we are going to send the secret to the server to be verified.
+      const userHasMasterPassword = await this.hasMasterPassword();
+
+      return {
+        client: {
+          masterPassword: false,
+          pin: false,
+          biometrics: false,
+        },
+        server: { masterPassword: userHasMasterPassword, otp: !userHasMasterPassword },
+      };
+    }
+  }
 
   /**
    * Create a new request model to be used for server-side verification
