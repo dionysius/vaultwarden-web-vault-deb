@@ -59,14 +59,14 @@
             ></textarea>
           </div>
         </div>
-        <div id="fileHelp" class="box-footer" *ngIf="!editMode && send.type === sendType.File">
+        <div id="fileHelp" class="box-footer" *ngIf="!editMode && type === sendType.File">
           {{ "sendFileDesc" | i18n }} {{ "maxFileSize" | i18n }}
         </div>
-        <div id="textHelp" class="box-footer" *ngIf="send.type === sendType.Text">
+        <div id="textHelp" class="box-footer" *ngIf="type === sendType.Text">
           {{ "sendTextDesc" | i18n }}
         </div>
       </div>
-      <div class="box" *ngIf="send.type === sendType.Text">
+      <div class="box" *ngIf="type === sendType.Text">
         <div class="box-content">
           <div class="box-content-row box-content-row-checkbox" appBoxRow>
             <label for="hideText">{{ "textHiddenByDefault" | i18n }}</label>
