@@ -2816,6 +2816,9 @@
   "incorrectCode": {
     "message": "Codi incorrecte"
   },
+  "incorrectPin": {
+    "message": "Incorrect PIN"
+  },
   "exportedVault": {
     "message": "S'ha exportat la caixa forta"
   },
@@ -5177,10 +5180,10 @@
     "message": "Valida certificats"
   },
   "spUniqueEntityId": {
-    "message": "Set a unique SP entity ID"
+    "message": "Estableix un ID d'entitat SP únic"
   },
   "spUniqueEntityIdDesc": {
-    "message": "Generate an identifier that is unique to your organization"
+    "message": "Genereu un identificador únic per a la vostra organització"
   },
   "idpEntityId": {
     "message": "Identificador de l'entitat"
@@ -6604,6 +6607,39 @@
       }
     }
   },
+  "verificationRequiredForActionSetPinToContinue": {
+    "message": "Verification required for this action. Set a PIN to continue."
+  },
+  "setPin": {
+    "message": "Set PIN"
+  },
+  "verifyWithBiometrics": {
+    "message": "Verify with biometrics"
+  },
+  "awaitingConfirmation": {
+    "message": "Awaiting confirmation"
+  },
+  "couldNotCompleteBiometrics": {
+    "message": "Could not complete biometrics."
+  },
+  "needADifferentMethod": {
+    "message": "Need a different method?"
+  },
+  "useMasterPassword": {
+    "message": "Use master password"
+  },
+  "usePin": {
+    "message": "Use PIN"
+  },
+  "useBiometrics": {
+    "message": "Use biometrics"
+  },
+  "enterVerificationCodeSentToEmail": {
+    "message": "Enter the verification code that was sent to your email."
+  },
+  "resendCode": {
+    "message": "Resend code"
+  },
   "membersColumnHeader": {
     "message": "Membre/grup"
   },
@@ -7086,6 +7122,10 @@
       }
     }
   },
+  "verificationRequired": {
+    "message": "Verification required",
+    "description": "Default title for the user verification dialog."
+  },
   "recoverAccount": {
     "message": "Recupera el compte"
   },
@@ -7325,8 +7365,8 @@
   "allowAdminAccessToAllCollectionItemsDesc": {
     "message": "Els propietaris i els administradors poden gestionar totes les col·leccions i articles"
   },
-  "collectionManagementUpdated": {
-    "message": "S'ha guardat el comportament d'administració de la col·lecció"
+  "updatedCollectionManagement": {
+    "message": "S'ha actualitzat la configuració de gestió de col·leccions"
   },
   "passwordManagerPlanPrice": {
     "message": "Preu del pla Administrador de contrasenyes"
@@ -7392,12 +7432,6 @@
   "skipToContent": {
     "message": "Vés al contingut"
   },
-  "customBillingStart": {
-    "message": "La facturació personalitzada no es reflecteix. Visita la "
-  },
-  "customBillingEnd": {
-    "message": " pàgina per a la facturació més recent."
-  },
   "managePermissionRequired": {
     "message": "Com a mínim un membre o grup ha de tindre permís de gestió."
   },
@@ -7453,5 +7487,26 @@
   "commonImportFormats": {
     "message": "Formats comuns",
     "description": "Label indicating the most common import formats"
+  },
+  "maintainYourSubscription": {
+    "message": "Per mantenir la teua subscripció per $ORG$, ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Example Inc."
+      }
+    }
+  },
+  "addAPaymentMethod": {
+    "message": "afig mètode de pagament",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
+  },
+  "collectionEnhancementsDesc": {
+    "message": "Afegiu nous paràmetres i permisos per obtenir més flexibilitat. Substituïu la funció de gestor pel permís \"pot gestionar\" i introduïu opcions per permetre als usuaris crear col·leccions i restringir l'accés administratiu a les col·leccions.",
+    "description": "This describes new features and improvements for user roles and collections"
+  },
+  "collectionEnhancementsLearnMore": {
+    "message": "Més informació sobre gestió de col·leccions"
   }
 }

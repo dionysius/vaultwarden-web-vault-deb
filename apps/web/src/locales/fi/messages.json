@@ -600,7 +600,7 @@
     "message": "Ei"
   },
   "loginOrCreateNewAccount": {
-    "message": "Käytä salattua holviasi kirjautumalla tilillesi tai luomalla uusi."
+    "message": "Käytä salattua holviasi kirjautumalla sisään tai tai luo uusi tili."
   },
   "loginWithDevice": {
     "message": "Laitteella kirjautuminen"
@@ -2815,6 +2815,9 @@
   },
   "incorrectCode": {
     "message": "Virheellinen koodi"
+  },
+  "incorrectPin": {
+    "message": "Incorrect PIN"
   },
   "exportedVault": {
     "message": "Holvi vietiin"
@@ -5177,10 +5180,10 @@
     "message": "Vahvista varmenteet"
   },
   "spUniqueEntityId": {
-    "message": "Set a unique SP entity ID"
+    "message": "Aseta yksilöllinen SP entity ID"
   },
   "spUniqueEntityIdDesc": {
-    "message": "Generate an identifier that is unique to your organization"
+    "message": "Luo yksilöllinen tunniste organisaatiollesi."
   },
   "idpEntityId": {
     "message": "Entity ID"
@@ -6604,6 +6607,39 @@
       }
     }
   },
+  "verificationRequiredForActionSetPinToContinue": {
+    "message": "Verification required for this action. Set a PIN to continue."
+  },
+  "setPin": {
+    "message": "Set PIN"
+  },
+  "verifyWithBiometrics": {
+    "message": "Verify with biometrics"
+  },
+  "awaitingConfirmation": {
+    "message": "Awaiting confirmation"
+  },
+  "couldNotCompleteBiometrics": {
+    "message": "Could not complete biometrics."
+  },
+  "needADifferentMethod": {
+    "message": "Need a different method?"
+  },
+  "useMasterPassword": {
+    "message": "Use master password"
+  },
+  "usePin": {
+    "message": "Use PIN"
+  },
+  "useBiometrics": {
+    "message": "Use biometrics"
+  },
+  "enterVerificationCodeSentToEmail": {
+    "message": "Enter the verification code that was sent to your email."
+  },
+  "resendCode": {
+    "message": "Resend code"
+  },
   "membersColumnHeader": {
     "message": "Jäsen/ryhmä"
   },
@@ -7086,6 +7122,10 @@
       }
     }
   },
+  "verificationRequired": {
+    "message": "Verification required",
+    "description": "Default title for the user verification dialog."
+  },
   "recoverAccount": {
     "message": "Palauta tili"
   },
@@ -7325,8 +7365,8 @@
   "allowAdminAccessToAllCollectionItemsDesc": {
     "message": "Omistajat ja ylläpitäjät voivat hallita kaikkia kokoelmia ja kohteita."
   },
-  "collectionManagementUpdated": {
-    "message": "Kokoelmien hallinnan määritykset tallennettiin"
+  "updatedCollectionManagement": {
+    "message": "Muokkasi kokoelman hallinta-asetusta $ID$."
   },
   "passwordManagerPlanPrice": {
     "message": "Salasanahallinnan tilauksen hinta"
@@ -7392,12 +7432,6 @@
   "skipToContent": {
     "message": "Siirry sisältöön"
   },
-  "customBillingStart": {
-    "message": "Mukautettua laskutusta ei ole huomioitu. Löydät viimeisimmän laskutuksen "
-  },
-  "customBillingEnd": {
-    "message": " -sivulta."
-  },
   "managePermissionRequired": {
     "message": "Ainakin yhdellä jäsenellä tai ryhmällä on oltava hallintaoikeus."
   },
@@ -7453,5 +7487,26 @@
   "commonImportFormats": {
     "message": "Yleiset muodot",
     "description": "Label indicating the most common import formats"
+  },
+  "maintainYourSubscription": {
+    "message": "Ylläpitääksesi organisaation $ORG$ tilausta, ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Example Inc."
+      }
+    }
+  },
+  "addAPaymentMethod": {
+    "message": "lisää maksutapa",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
+  },
+  "collectionEnhancementsDesc": {
+    "message": "Paranna joustavuutta lisäämällä uusia asetuksia ja käyttöoikeuksia. Korvaa Valvoja-rooli \"voi hallita\" -käyttöoikeudella ja tarjoa valintoja, joilla käyttäjät voivat luoda kokoelmia ja joiden avulla voidaan rajoittaa kokoelmien hallintaoikeuksia.",
+    "description": "This describes new features and improvements for user roles and collections"
+  },
+  "collectionEnhancementsLearnMore": {
+    "message": "Lisätietoja kokoelmien hallinnasta"
   }
 }

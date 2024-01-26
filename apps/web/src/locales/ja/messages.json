@@ -2816,6 +2816,9 @@
   "incorrectCode": {
     "message": "コードが違います"
   },
+  "incorrectPin": {
+    "message": "PIN が正しくありません"
+  },
   "exportedVault": {
     "message": "保管庫をエクスポートしました。"
   },
@@ -6431,7 +6434,7 @@
     "message": "コレクションを選択"
   },
   "role": {
-    "message": "役割"
+    "message": "ロール"
   },
   "removeMember": {
     "message": "メンバーを削除"
@@ -6604,6 +6607,39 @@
       }
     }
   },
+  "verificationRequiredForActionSetPinToContinue": {
+    "message": "この操作には認証が必要です。続行するには PIN を設定してください。"
+  },
+  "setPin": {
+    "message": "PIN を設定"
+  },
+  "verifyWithBiometrics": {
+    "message": "生体認証による確認"
+  },
+  "awaitingConfirmation": {
+    "message": "確認中"
+  },
+  "couldNotCompleteBiometrics": {
+    "message": "生体認証を完了できませんでした。"
+  },
+  "needADifferentMethod": {
+    "message": "別の方法が必要ですか？"
+  },
+  "useMasterPassword": {
+    "message": "マスターパスワードを使用"
+  },
+  "usePin": {
+    "message": "PIN を使用"
+  },
+  "useBiometrics": {
+    "message": "生体認証を使用"
+  },
+  "enterVerificationCodeSentToEmail": {
+    "message": "メールアドレスに送信された認証コードを入力してください。"
+  },
+  "resendCode": {
+    "message": "コードを再送信する"
+  },
   "membersColumnHeader": {
     "message": "メンバー/グループ"
   },
@@ -6662,7 +6698,7 @@
     }
   },
   "teamsStarterPlanInvLimitReachedManageBilling": {
-    "message": "Teams Starter plans may have up to $SEATCOUNT$ members. Upgrade to your plan to invite more members.",
+    "message": "Teams Starter プランで登録できるのは $SEATCOUNT$ メンバーまでです。より多くのメンバーを招待するには、プランをアップグレードしてください。",
     "placeholders": {
       "seatcount": {
         "content": "$1",
@@ -7086,6 +7122,10 @@
       }
     }
   },
+  "verificationRequired": {
+    "message": "認証が必要です",
+    "description": "Default title for the user verification dialog."
+  },
   "recoverAccount": {
     "message": "アカウント回復"
   },
@@ -7100,7 +7140,7 @@
     "message": "アクセスを有効化"
   },
   "bulkEnableSecretsManagerDescription": {
-    "message": "次のメンバーへシークレットマネージャーへのアクセスを許可します。パスワードマネージャーに与えられた役割はシークレットマネージャーに適用されます。",
+    "message": "次のメンバーへシークレットマネージャーへのアクセスを許可します。パスワードマネージャーに与えられたロールはシークレットマネージャーに適用されます。",
     "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
   },
   "activateSecretsManager": {
@@ -7325,8 +7365,8 @@
   "allowAdminAccessToAllCollectionItemsDesc": {
     "message": "所有者と管理者はすべてのコレクションとアイテムを管理できます"
   },
-  "collectionManagementUpdated": {
-    "message": "コレクション管理の挙動を保存しました"
+  "updatedCollectionManagement": {
+    "message": "コレクション管理設定を更新しました"
   },
   "passwordManagerPlanPrice": {
     "message": "パスワードマネージャーのプラン価格"
@@ -7392,12 +7432,6 @@
   "skipToContent": {
     "message": "コンテンツへ移動"
   },
-  "customBillingStart": {
-    "message": "カスタム請求は反映されていません。"
-  },
-  "customBillingEnd": {
-    "message": "のページで最新の請求書をご覧いただけます。"
-  },
   "managePermissionRequired": {
     "message": "少なくとも1人のメンバーまたはグループに「管理可能」権限を与えてください。"
   },
@@ -7453,5 +7487,26 @@
   "commonImportFormats": {
     "message": "一般的な形式",
     "description": "Label indicating the most common import formats"
+  },
+  "maintainYourSubscription": {
+    "message": "$ORG$のサブスクリプションを維持するには、 ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Example Inc."
+      }
+    }
+  },
+  "addAPaymentMethod": {
+    "message": "支払い方法を追加してください",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
+  },
+  "collectionEnhancementsDesc": {
+    "message": "柔軟性を高めるために、新しい設定と権限を追加します。 マネージャーのロールを「管理可能」権限に置き換えます。 そして、ユーザーがコレクションを作成できるようにするオプションを導入し、コレクションへの管理者のアクセスを制限します。",
+    "description": "This describes new features and improvements for user roles and collections"
+  },
+  "collectionEnhancementsLearnMore": {
+    "message": "コレクション管理の詳細はこちら"
   }
 }

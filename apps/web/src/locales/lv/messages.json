@@ -2742,7 +2742,7 @@
     "message": "Parasts lietotājs ar piekļuvi piešķirtajiem apvienības krājumiem."
   },
   "manager": {
-    "message": "Vadītājs"
+    "message": "Pārvaldnieks"
   },
   "managerDesc": {
     "message": "Vadītāji var piekļūt un pārvaldīt piešķirtos apvienības krājumus."
@@ -2815,6 +2815,9 @@
   },
   "incorrectCode": {
     "message": "Nepareizs kods"
+  },
+  "incorrectPin": {
+    "message": "Incorrect PIN"
   },
   "exportedVault": {
     "message": "Glabātavas saturs izgūts."
@@ -5177,10 +5180,10 @@
     "message": "Pārbaudīt sertifikātus"
   },
   "spUniqueEntityId": {
-    "message": "Set a unique SP entity ID"
+    "message": "Iestatīt neatkārtojamu SP vienuma Id"
   },
   "spUniqueEntityIdDesc": {
-    "message": "Generate an identifier that is unique to your organization"
+    "message": "Izveidot identifikatoru, kas ir neatkārtojams apvienībai"
   },
   "idpEntityId": {
     "message": "Vienības Id"
@@ -6604,6 +6607,39 @@
       }
     }
   },
+  "verificationRequiredForActionSetPinToContinue": {
+    "message": "Verification required for this action. Set a PIN to continue."
+  },
+  "setPin": {
+    "message": "Set PIN"
+  },
+  "verifyWithBiometrics": {
+    "message": "Verify with biometrics"
+  },
+  "awaitingConfirmation": {
+    "message": "Awaiting confirmation"
+  },
+  "couldNotCompleteBiometrics": {
+    "message": "Could not complete biometrics."
+  },
+  "needADifferentMethod": {
+    "message": "Need a different method?"
+  },
+  "useMasterPassword": {
+    "message": "Use master password"
+  },
+  "usePin": {
+    "message": "Use PIN"
+  },
+  "useBiometrics": {
+    "message": "Use biometrics"
+  },
+  "enterVerificationCodeSentToEmail": {
+    "message": "Enter the verification code that was sent to your email."
+  },
+  "resendCode": {
+    "message": "Resend code"
+  },
   "membersColumnHeader": {
     "message": "Dalībnieks/Grupa"
   },
@@ -6662,7 +6698,7 @@
     }
   },
   "teamsStarterPlanInvLimitReachedManageBilling": {
-    "message": "Teams Starter plans may have up to $SEATCOUNT$ members. Upgrade to your plan to invite more members.",
+    "message": "Teams Starter plānā var būt līdz $SEATCOUNT$ dalībniekiem. Jāuzlabo savs plāns, lai uzaicinātu vairāk dalībnieku.",
     "placeholders": {
       "seatcount": {
         "content": "$1",
@@ -7086,6 +7122,10 @@
       }
     }
   },
+  "verificationRequired": {
+    "message": "Verification required",
+    "description": "Default title for the user verification dialog."
+  },
   "recoverAccount": {
     "message": "Atkopt kontu"
   },
@@ -7325,8 +7365,8 @@
   "allowAdminAccessToAllCollectionItemsDesc": {
     "message": "Īpašnieki un pārvaldnieki var pārvaldīt visus krājumus un vienumus"
   },
-  "collectionManagementUpdated": {
-    "message": "Krājumu pārvaldības uzvedība saglabāta"
+  "updatedCollectionManagement": {
+    "message": "Atjaunināts krājumu pārvaldības iestatījums"
   },
   "passwordManagerPlanPrice": {
     "message": "Paroļu pārvaldnieka plāna cena"
@@ -7392,12 +7432,6 @@
   "skipToContent": {
     "message": "Pāriet uz saturu"
   },
-  "customBillingStart": {
-    "message": "Pielāgotie norēķini nav atspoguļoti. Jāapmeklē "
-  },
-  "customBillingEnd": {
-    "message": " sadaļu, lai gūtu ieskatu par jaunākajiem rēķiniem."
-  },
   "managePermissionRequired": {
     "message": "Vismaz vienam dalībniekam vai grupai ir jābūt atļaujai \"var pārvaldīt\"."
   },
@@ -7453,5 +7487,26 @@
   "commonImportFormats": {
     "message": "Izplatīti veidoli",
     "description": "Label indicating the most common import formats"
+  },
+  "maintainYourSubscription": {
+    "message": "Lai uzturētu savu abonementu $ORG$, ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Example Inc."
+      }
+    }
+  },
+  "addAPaymentMethod": {
+    "message": "jāpievieno maksājuma veids",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
+  },
+  "collectionEnhancementsDesc": {
+    "message": "Ir pievienojami jauni iestatījumi un atļaujas papildu pielāgojamībai. Pārvaldnieka loma ir aizvietojama ar \"var pārvaldīt\" atļauju, un var ieviest iespējas, lai ļautu lietotājiem izveidot krājumus, kā arī ierobežot pārvaldības piekļuvi krājumiem.",
+    "description": "This describes new features and improvements for user roles and collections"
+  },
+  "collectionEnhancementsLearnMore": {
+    "message": "Uzzināt vairāk par krājumu pārvaldību"
   }
 }

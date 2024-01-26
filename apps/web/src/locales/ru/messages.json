@@ -2816,6 +2816,9 @@
   "incorrectCode": {
     "message": "Неверный код"
   },
+  "incorrectPin": {
+    "message": "Incorrect PIN"
+  },
   "exportedVault": {
     "message": "Хранилище экспортировано."
   },
@@ -5177,10 +5180,10 @@
     "message": "Проверка сертификатов"
   },
   "spUniqueEntityId": {
-    "message": "Set a unique SP entity ID"
+    "message": "Установить уникальный идентификатор объекта SP"
   },
   "spUniqueEntityIdDesc": {
-    "message": "Generate an identifier that is unique to your organization"
+    "message": "Создать уникальный для вашей организации идентификатор"
   },
   "idpEntityId": {
     "message": "ID субъекта"
@@ -6604,6 +6607,39 @@
       }
     }
   },
+  "verificationRequiredForActionSetPinToContinue": {
+    "message": "Verification required for this action. Set a PIN to continue."
+  },
+  "setPin": {
+    "message": "Set PIN"
+  },
+  "verifyWithBiometrics": {
+    "message": "Verify with biometrics"
+  },
+  "awaitingConfirmation": {
+    "message": "Awaiting confirmation"
+  },
+  "couldNotCompleteBiometrics": {
+    "message": "Could not complete biometrics."
+  },
+  "needADifferentMethod": {
+    "message": "Need a different method?"
+  },
+  "useMasterPassword": {
+    "message": "Use master password"
+  },
+  "usePin": {
+    "message": "Use PIN"
+  },
+  "useBiometrics": {
+    "message": "Use biometrics"
+  },
+  "enterVerificationCodeSentToEmail": {
+    "message": "Enter the verification code that was sent to your email."
+  },
+  "resendCode": {
+    "message": "Resend code"
+  },
   "membersColumnHeader": {
     "message": "Участник/Группа"
   },
@@ -7086,6 +7122,10 @@
       }
     }
   },
+  "verificationRequired": {
+    "message": "Verification required",
+    "description": "Default title for the user verification dialog."
+  },
   "recoverAccount": {
     "message": "Восстановить аккаунт"
   },
@@ -7325,8 +7365,8 @@
   "allowAdminAccessToAllCollectionItemsDesc": {
     "message": "Владельцы и администраторы могут управлять всеми коллекциями и элементами"
   },
-  "collectionManagementUpdated": {
-    "message": "Настройки управления коллекциями сохранены"
+  "updatedCollectionManagement": {
+    "message": "Настройки управления коллекцией обновлены"
   },
   "passwordManagerPlanPrice": {
     "message": "Стоимость плана Менеджер паролей"
@@ -7392,12 +7432,6 @@
   "skipToContent": {
     "message": "Перейти к содержимому"
   },
-  "customBillingStart": {
-    "message": "Пользовательские счета не отображаются. Посетите страницу "
-  },
-  "customBillingEnd": {
-    "message": " для получения последней информации о выставлении счетов."
-  },
   "managePermissionRequired": {
     "message": "Как минимум один участник или группа должны иметь разрешение 'Может управлять'."
   },
@@ -7453,5 +7487,26 @@
   "commonImportFormats": {
     "message": "Основные форматы",
     "description": "Label indicating the most common import formats"
+  },
+  "maintainYourSubscription": {
+    "message": "Для сохранения подписки на $ORG$ ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Example Inc."
+      }
+    }
+  },
+  "addAPaymentMethod": {
+    "message": "добавьте способ оплаты",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
+  },
+  "collectionEnhancementsDesc": {
+    "message": "Добавьте новые настройки и разрешения для обеспечения дополнительной гибкости. Замените роль менеджера разрешением \"может управлять\" и введите опции, позволяющие пользователям создавать коллекции, а также ограничивающие административный доступ к коллекциям.",
+    "description": "This describes new features and improvements for user roles and collections"
+  },
+  "collectionEnhancementsLearnMore": {
+    "message": "Узнайте больше об управлении коллекциями"
   }
 }

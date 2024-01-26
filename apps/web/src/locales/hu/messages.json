@@ -2816,6 +2816,9 @@
   "incorrectCode": {
     "message": "Helytelen kód"
   },
+  "incorrectPin": {
+    "message": "Incorrect PIN"
+  },
   "exportedVault": {
     "message": "A széf exportálásra került."
   },
@@ -5177,10 +5180,10 @@
     "message": "Tanúsítványok ellenőrzése"
   },
   "spUniqueEntityId": {
-    "message": "Set a unique SP entity ID"
+    "message": "Egyedi SP entitás azonosító beállítása"
   },
   "spUniqueEntityIdDesc": {
-    "message": "Generate an identifier that is unique to your organization"
+    "message": "Egyedi azonosító létrehozása a szervezetre vonatkozóan"
   },
   "idpEntityId": {
     "message": "Szervezeti ID"
@@ -6604,6 +6607,39 @@
       }
     }
   },
+  "verificationRequiredForActionSetPinToContinue": {
+    "message": "Verification required for this action. Set a PIN to continue."
+  },
+  "setPin": {
+    "message": "Set PIN"
+  },
+  "verifyWithBiometrics": {
+    "message": "Verify with biometrics"
+  },
+  "awaitingConfirmation": {
+    "message": "Awaiting confirmation"
+  },
+  "couldNotCompleteBiometrics": {
+    "message": "Could not complete biometrics."
+  },
+  "needADifferentMethod": {
+    "message": "Need a different method?"
+  },
+  "useMasterPassword": {
+    "message": "Use master password"
+  },
+  "usePin": {
+    "message": "Use PIN"
+  },
+  "useBiometrics": {
+    "message": "Use biometrics"
+  },
+  "enterVerificationCodeSentToEmail": {
+    "message": "Enter the verification code that was sent to your email."
+  },
+  "resendCode": {
+    "message": "Resend code"
+  },
   "membersColumnHeader": {
     "message": "Tag/Csoport"
   },
@@ -7086,6 +7122,10 @@
       }
     }
   },
+  "verificationRequired": {
+    "message": "Verification required",
+    "description": "Default title for the user verification dialog."
+  },
   "recoverAccount": {
     "message": "Fiók helyreállítás"
   },
@@ -7325,8 +7365,8 @@
   "allowAdminAccessToAllCollectionItemsDesc": {
     "message": "Owners and admins can manage all collections and items"
   },
-  "collectionManagementUpdated": {
-    "message": "A gyűjtemény kezelési viselkedés mentésre került."
+  "updatedCollectionManagement": {
+    "message": "Frissített gyűjteménykezelési beállítás"
   },
   "passwordManagerPlanPrice": {
     "message": "Jelszókezelő csomag ár"
@@ -7392,12 +7432,6 @@
   "skipToContent": {
     "message": "Ugrás a tartalomra"
   },
-  "customBillingStart": {
-    "message": "Az egyedi számlázás nem jelenik meg. Keressük fel "
-  },
-  "customBillingEnd": {
-    "message": " oldalt a legújabb számlázásért."
-  },
   "managePermissionRequired": {
     "message": "Legalább egy tagnak vagy csoportnak rendelkeznie kell kezelési engedéllyel."
   },
@@ -7453,5 +7487,26 @@
   "commonImportFormats": {
     "message": "Általános formátumok",
     "description": "Label indicating the most common import formats"
+  },
+  "maintainYourSubscription": {
+    "message": "$ORG$ előfizetés fenntartásához, ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Example Inc."
+      }
+    }
+  },
+  "addAPaymentMethod": {
+    "message": "fitetési metódus hozzáadása",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
+  },
+  "collectionEnhancementsDesc": {
+    "message": "Adjunk hozzá új beállításokat és jogosultságokat a nagyobb rugalmasság érdekében. Cseréljük le a Kezelő szerepet a \"kezelheti\" jogosultsággal és vezessünk be olyan opciókat, amelyek lehetővé teszik a felhasználók számára gyűjtemények létrehozását, valamint a gyűjtemények adminisztrátori hozzáférésének korlátozását.",
+    "description": "This describes new features and improvements for user roles and collections"
+  },
+  "collectionEnhancementsLearnMore": {
+    "message": "További információ a gyűjteménykezelésről"
   }
 }

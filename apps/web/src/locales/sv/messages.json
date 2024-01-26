@@ -287,7 +287,7 @@
     "description": "Search Secure Note type"
   },
   "searchVault": {
-    "message": "Sök i valvet"
+    "message": "Sök i valv"
   },
   "searchMyVault": {
     "message": "Sök i mitt valv"
@@ -2816,6 +2816,9 @@
   "incorrectCode": {
     "message": "Felaktig kod"
   },
+  "incorrectPin": {
+    "message": "Incorrect PIN"
+  },
   "exportedVault": {
     "message": "Exporterade valv"
   },
@@ -4500,7 +4503,7 @@
     "message": "Hantera alla samlingar"
   },
   "createNewCollections": {
-    "message": "Skapa ny samling"
+    "message": "Skapa nya samlingar"
   },
   "editAnyCollection": {
     "message": "Redigera samling"
@@ -5634,7 +5637,7 @@
     "message": "Organization picker"
   },
   "currentOrganization": {
-    "message": "Current organization",
+    "message": "Nuvarande organisation",
     "description": "This is used by screen readers to indicate the organization that is currently being shown to the user."
   },
   "accountLoggedInAsName": {
@@ -6386,7 +6389,7 @@
     "description": "Toast error message after trying to delete access tokens but not selecting any access tokens."
   },
   "submenu": {
-    "message": "Submenu"
+    "message": "Undermeny"
   },
   "from": {
     "message": "Från"
@@ -6603,6 +6606,39 @@
         "example": "bitwarden.com"
       }
     }
+  },
+  "verificationRequiredForActionSetPinToContinue": {
+    "message": "Verification required for this action. Set a PIN to continue."
+  },
+  "setPin": {
+    "message": "Set PIN"
+  },
+  "verifyWithBiometrics": {
+    "message": "Verify with biometrics"
+  },
+  "awaitingConfirmation": {
+    "message": "Awaiting confirmation"
+  },
+  "couldNotCompleteBiometrics": {
+    "message": "Could not complete biometrics."
+  },
+  "needADifferentMethod": {
+    "message": "Need a different method?"
+  },
+  "useMasterPassword": {
+    "message": "Använd huvudlösenord"
+  },
+  "usePin": {
+    "message": "Use PIN"
+  },
+  "useBiometrics": {
+    "message": "Använd biometri"
+  },
+  "enterVerificationCodeSentToEmail": {
+    "message": "Enter the verification code that was sent to your email."
+  },
+  "resendCode": {
+    "message": "Resend code"
   },
   "membersColumnHeader": {
     "message": "Medlem/Grupp"
@@ -7086,6 +7122,10 @@
       }
     }
   },
+  "verificationRequired": {
+    "message": "Verification required",
+    "description": "Default title for the user verification dialog."
+  },
   "recoverAccount": {
     "message": "Recover account"
   },
@@ -7159,7 +7199,7 @@
     }
   },
   "noMasterPassword": {
-    "message": "No master password"
+    "message": "Inget huvudlösenord"
   },
   "removeMembersWithoutMasterPasswordWarning": {
     "message": "Removing members who do not have master passwords without setting one for them may restrict access to their full account."
@@ -7325,8 +7365,8 @@
   "allowAdminAccessToAllCollectionItemsDesc": {
     "message": "Ägare och administratörer kan hantera alla samlingar och objekt"
   },
-  "collectionManagementUpdated": {
-    "message": "Collection management behavior saved"
+  "updatedCollectionManagement": {
+    "message": "Updated collection management setting"
   },
   "passwordManagerPlanPrice": {
     "message": "Password Manager plan price"
@@ -7392,12 +7432,6 @@
   "skipToContent": {
     "message": "Skip to content"
   },
-  "customBillingStart": {
-    "message": "Custom billing is not reflected. Visit the "
-  },
-  "customBillingEnd": {
-    "message": " page for latest invoicing."
-  },
   "managePermissionRequired": {
     "message": "At least one member or group must have can manage permission."
   },
@@ -7453,5 +7487,26 @@
   "commonImportFormats": {
     "message": "Common formats",
     "description": "Label indicating the most common import formats"
+  },
+  "maintainYourSubscription": {
+    "message": "För att behålla din prenumeration på $ORG$, ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Example Inc."
+      }
+    }
+  },
+  "addAPaymentMethod": {
+    "message": "lägg till en betalningsmetod",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
+  },
+  "collectionEnhancementsDesc": {
+    "message": "Add new settings and permissions for additional flexibility. Replace the Manager role with the \"can manage\" permission, and introduce options to allow users to create collections as well as restrict administrative access to collections.",
+    "description": "This describes new features and improvements for user roles and collections"
+  },
+  "collectionEnhancementsLearnMore": {
+    "message": "Learn more about collection management"
   }
 }

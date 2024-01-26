@@ -2816,6 +2816,9 @@
   "incorrectCode": {
     "message": "Неправилен код"
   },
+  "incorrectPin": {
+    "message": "Incorrect PIN"
+  },
   "exportedVault": {
     "message": "Трезорът е изнесен."
   },
@@ -5180,7 +5183,7 @@
     "message": "Set a unique SP entity ID"
   },
   "spUniqueEntityIdDesc": {
-    "message": "Generate an identifier that is unique to your organization"
+    "message": "Създаване на идентификатор, който е уникален за Вашата организация"
   },
   "idpEntityId": {
     "message": "Entity ID"
@@ -6604,6 +6607,39 @@
       }
     }
   },
+  "verificationRequiredForActionSetPinToContinue": {
+    "message": "Verification required for this action. Set a PIN to continue."
+  },
+  "setPin": {
+    "message": "Set PIN"
+  },
+  "verifyWithBiometrics": {
+    "message": "Verify with biometrics"
+  },
+  "awaitingConfirmation": {
+    "message": "Awaiting confirmation"
+  },
+  "couldNotCompleteBiometrics": {
+    "message": "Could not complete biometrics."
+  },
+  "needADifferentMethod": {
+    "message": "Need a different method?"
+  },
+  "useMasterPassword": {
+    "message": "Use master password"
+  },
+  "usePin": {
+    "message": "Use PIN"
+  },
+  "useBiometrics": {
+    "message": "Use biometrics"
+  },
+  "enterVerificationCodeSentToEmail": {
+    "message": "Enter the verification code that was sent to your email."
+  },
+  "resendCode": {
+    "message": "Resend code"
+  },
   "membersColumnHeader": {
     "message": "Член/група"
   },
@@ -7086,6 +7122,10 @@
       }
     }
   },
+  "verificationRequired": {
+    "message": "Verification required",
+    "description": "Default title for the user verification dialog."
+  },
   "recoverAccount": {
     "message": "Възстановяване на профила"
   },
@@ -7325,8 +7365,8 @@
   "allowAdminAccessToAllCollectionItemsDesc": {
     "message": "Собствениците и администраторите могат да управляват всички колекции и елементи"
   },
-  "collectionManagementUpdated": {
-    "message": "Поведението за управлението на колекциите е запазено"
+  "updatedCollectionManagement": {
+    "message": "Настройката за управление на колекции е променена"
   },
   "passwordManagerPlanPrice": {
     "message": "Цена на плана за Управителя на пароли"
@@ -7392,12 +7432,6 @@
   "skipToContent": {
     "message": "Прескачане към съдържанието"
   },
-  "customBillingStart": {
-    "message": "Персонализираното таксуване не е отразено. Посетете страницата за "
-  },
-  "customBillingEnd": {
-    "message": " за последните фактури."
-  },
   "managePermissionRequired": {
     "message": "Поне един член или група трябва да има правото за управление."
   },
@@ -7453,5 +7487,26 @@
   "commonImportFormats": {
     "message": "Често използвани формати",
     "description": "Label indicating the most common import formats"
+  },
+  "maintainYourSubscription": {
+    "message": "За да продължите абонамента си за $ORG$, ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Example Inc."
+      }
+    }
+  },
+  "addAPaymentMethod": {
+    "message": "добавете разплащателен метод",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
+  },
+  "collectionEnhancementsDesc": {
+    "message": "Можете да добавяте нови настройки и права, за допълнителна персонализация. Заменете ролята на управителя с правото „може да управлява“, или добавете опции, които позволяват на потребителите да създават колекции, както и да ограничават администраторския достъп до колекциите.",
+    "description": "This describes new features and improvements for user roles and collections"
+  },
+  "collectionEnhancementsLearnMore": {
+    "message": "Научете повече за управлението на колекции"
   }
 }

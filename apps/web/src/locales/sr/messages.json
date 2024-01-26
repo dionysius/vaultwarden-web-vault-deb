@@ -2816,6 +2816,9 @@
   "incorrectCode": {
     "message": "Погрешан код"
   },
+  "incorrectPin": {
+    "message": "Incorrect PIN"
+  },
   "exportedVault": {
     "message": "Сеф извежен."
   },
@@ -5180,7 +5183,7 @@
     "message": "Set a unique SP entity ID"
   },
   "spUniqueEntityIdDesc": {
-    "message": "Generate an identifier that is unique to your organization"
+    "message": "Генерише идентификатор који је јединствен за вашу организацију"
   },
   "idpEntityId": {
     "message": "Id ентитета"
@@ -6604,6 +6607,39 @@
       }
     }
   },
+  "verificationRequiredForActionSetPinToContinue": {
+    "message": "Verification required for this action. Set a PIN to continue."
+  },
+  "setPin": {
+    "message": "Set PIN"
+  },
+  "verifyWithBiometrics": {
+    "message": "Verify with biometrics"
+  },
+  "awaitingConfirmation": {
+    "message": "Awaiting confirmation"
+  },
+  "couldNotCompleteBiometrics": {
+    "message": "Could not complete biometrics."
+  },
+  "needADifferentMethod": {
+    "message": "Need a different method?"
+  },
+  "useMasterPassword": {
+    "message": "Use master password"
+  },
+  "usePin": {
+    "message": "Use PIN"
+  },
+  "useBiometrics": {
+    "message": "Use biometrics"
+  },
+  "enterVerificationCodeSentToEmail": {
+    "message": "Enter the verification code that was sent to your email."
+  },
+  "resendCode": {
+    "message": "Resend code"
+  },
   "membersColumnHeader": {
     "message": "Члан/Група"
   },
@@ -7086,6 +7122,10 @@
       }
     }
   },
+  "verificationRequired": {
+    "message": "Verification required",
+    "description": "Default title for the user verification dialog."
+  },
   "recoverAccount": {
     "message": "Опоравак налога"
   },
@@ -7325,8 +7365,8 @@
   "allowAdminAccessToAllCollectionItemsDesc": {
     "message": "Власници и администратори могу да управљају свим колекцијама и ставкама"
   },
-  "collectionManagementUpdated": {
-    "message": "Понашање управљања збирке је сачувано"
+  "updatedCollectionManagement": {
+    "message": "Ажурирано подешавање управљања колекцијом"
   },
   "passwordManagerPlanPrice": {
     "message": "Цена плана менаџера лозинки"
@@ -7392,12 +7432,6 @@
   "skipToContent": {
     "message": "Прескочи на садржај"
   },
-  "customBillingStart": {
-    "message": "Прилагођени обрачун се не одражава. Посетите "
-  },
-  "customBillingEnd": {
-    "message": " страницу за најновије фактуре."
-  },
   "managePermissionRequired": {
     "message": "Најмање један члан или група мора имати могућност управљања дозволом."
   },
@@ -7453,5 +7487,26 @@
   "commonImportFormats": {
     "message": "Уобичајени формати",
     "description": "Label indicating the most common import formats"
+  },
+  "maintainYourSubscription": {
+    "message": "Да бисте одржали своју претплату за $ORG$, ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Example Inc."
+      }
+    }
+  },
+  "addAPaymentMethod": {
+    "message": "додајте начин плаћања",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
+  },
+  "collectionEnhancementsDesc": {
+    "message": "Додајте нова подешавања и дозволе за додатну флексибилност. Замените улогу менаџера са дозволом „може да управља“ и уведите опције које омогућавају корисницима да креирају колекције, као и ограничавање административног приступа збиркама.",
+    "description": "This describes new features and improvements for user roles and collections"
+  },
+  "collectionEnhancementsLearnMore": {
+    "message": "Сазнајте више о управљању колекцијом"
   }
 }

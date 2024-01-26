@@ -2816,6 +2816,9 @@
   "incorrectCode": {
     "message": "验证码不正确"
   },
+  "incorrectPin": {
+    "message": "PIN 码不正确"
+  },
   "exportedVault": {
     "message": "导出了密码库"
   },
@@ -5177,7 +5180,7 @@
     "message": "验证证书"
   },
   "spUniqueEntityId": {
-    "message": "Set a unique SP entity ID"
+    "message": "设置一个唯一的 SP 实体 ID"
   },
   "spUniqueEntityIdDesc": {
     "message": "Generate an identifier that is unique to your organization"
@@ -6604,6 +6607,39 @@
       }
     }
   },
+  "verificationRequiredForActionSetPinToContinue": {
+    "message": "此操作需要验证。设置一个 PIN 码以继续。"
+  },
+  "setPin": {
+    "message": "设置 PIN 码"
+  },
+  "verifyWithBiometrics": {
+    "message": "使用生物识别验证"
+  },
+  "awaitingConfirmation": {
+    "message": "等待确认"
+  },
+  "couldNotCompleteBiometrics": {
+    "message": "无法完成生物识别。"
+  },
+  "needADifferentMethod": {
+    "message": "Need a different method?"
+  },
+  "useMasterPassword": {
+    "message": "使用主密码"
+  },
+  "usePin": {
+    "message": "使用 PIN 码"
+  },
+  "useBiometrics": {
+    "message": "使用生物识别"
+  },
+  "enterVerificationCodeSentToEmail": {
+    "message": "输入发送到您电子邮箱的验证码。"
+  },
+  "resendCode": {
+    "message": "重新发送代码"
+  },
   "membersColumnHeader": {
     "message": "成员/群组"
   },
@@ -7086,6 +7122,10 @@
       }
     }
   },
+  "verificationRequired": {
+    "message": "需要验证",
+    "description": "Default title for the user verification dialog."
+  },
   "recoverAccount": {
     "message": "恢复账户"
   },
@@ -7325,8 +7365,8 @@
   "allowAdminAccessToAllCollectionItemsDesc": {
     "message": "所有者和管理员可以管理所有集合和项目"
   },
-  "collectionManagementUpdated": {
-    "message": "集合管理行为已保存"
+  "updatedCollectionManagement": {
+    "message": "更新了集合管理设置"
   },
   "passwordManagerPlanPrice": {
     "message": "密码管理器计划价格"
@@ -7392,12 +7432,6 @@
   "skipToContent": {
     "message": "跳转到内容"
   },
-  "customBillingStart": {
-    "message": "Custom billing is not reflected. Visit the "
-  },
-  "customBillingEnd": {
-    "message": " page for latest invoicing."
-  },
   "managePermissionRequired": {
     "message": "必须至少有一个成员或群组拥有「可以管理」的权限。"
   },
@@ -7453,5 +7487,26 @@
   "commonImportFormats": {
     "message": "通用格式",
     "description": "Label indicating the most common import formats"
+  },
+  "maintainYourSubscription": {
+    "message": "要维护 $ORG$ 的订阅，",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Example Inc."
+      }
+    }
+  },
+  "addAPaymentMethod": {
+    "message": "请添加一个付款方式。",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
+  },
+  "collectionEnhancementsDesc": {
+    "message": "为额外的灵活性添加新的设置和权限。 将管理员角色替换为“可以管理”权限。 并引入选项以允许用户创建集合，并限制对集合的管理访问。",
+    "description": "This describes new features and improvements for user roles and collections"
+  },
+  "collectionEnhancementsLearnMore": {
+    "message": "了解集合管理"
   }
 }

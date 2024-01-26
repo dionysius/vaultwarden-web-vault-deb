@@ -2816,6 +2816,9 @@
   "incorrectCode": {
     "message": "Неправильний код"
   },
+  "incorrectPin": {
+    "message": "Неправильний PIN-код"
+  },
   "exportedVault": {
     "message": "Сховище експортовано"
   },
@@ -5177,10 +5180,10 @@
     "message": "Перевірка сертифікатів"
   },
   "spUniqueEntityId": {
-    "message": "Set a unique SP entity ID"
+    "message": "Встановити унікальний ID об'єкта SP"
   },
   "spUniqueEntityIdDesc": {
-    "message": "Generate an identifier that is unique to your organization"
+    "message": "Згенеруйте ідентифікатор, унікальний для вашої організації"
   },
   "idpEntityId": {
     "message": "ID об'єкта"
@@ -6604,6 +6607,39 @@
       }
     }
   },
+  "verificationRequiredForActionSetPinToContinue": {
+    "message": "Ця дія потребує підтвердження. Встановіть PIN-код, щоб продовжити."
+  },
+  "setPin": {
+    "message": "Встановити PIN-код"
+  },
+  "verifyWithBiometrics": {
+    "message": "Підтвердити з біометрією"
+  },
+  "awaitingConfirmation": {
+    "message": "Очікується підтвердження"
+  },
+  "couldNotCompleteBiometrics": {
+    "message": "Не вдалося виконати біометричну перевірку."
+  },
+  "needADifferentMethod": {
+    "message": "Потрібен інший спосіб?"
+  },
+  "useMasterPassword": {
+    "message": "Використати головний пароль"
+  },
+  "usePin": {
+    "message": "Використати PIN-код"
+  },
+  "useBiometrics": {
+    "message": "Використати біометрію"
+  },
+  "enterVerificationCodeSentToEmail": {
+    "message": "Введіть код підтвердження, надісланий на вашу електронну пошту."
+  },
+  "resendCode": {
+    "message": "Надіслати новий код"
+  },
   "membersColumnHeader": {
     "message": "Учасник/Група"
   },
@@ -7086,6 +7122,10 @@
       }
     }
   },
+  "verificationRequired": {
+    "message": "Потрібне підтвердження",
+    "description": "Default title for the user verification dialog."
+  },
   "recoverAccount": {
     "message": "Відновити обліковий запис"
   },
@@ -7325,8 +7365,8 @@
   "allowAdminAccessToAllCollectionItemsDesc": {
     "message": "Власники та адміністратори можуть керувати всіма збірками та записами"
   },
-  "collectionManagementUpdated": {
-    "message": "Налаштування керування збірками збережено"
+  "updatedCollectionManagement": {
+    "message": "Оновлено налаштування керування збірками"
   },
   "passwordManagerPlanPrice": {
     "message": "Ціна плану менеджера паролів"
@@ -7392,12 +7432,6 @@
   "skipToContent": {
     "message": "Перейти до вмісту"
   },
-  "customBillingStart": {
-    "message": "Власний рахунок не відображений. Відвідайте "
-  },
-  "customBillingEnd": {
-    "message": " для отримання останнього рахунку."
-  },
   "managePermissionRequired": {
     "message": "Принаймні один учасник або група повинні мати можливість керувати дозволами."
   },
@@ -7453,5 +7487,26 @@
   "commonImportFormats": {
     "message": "Поширені формати",
     "description": "Label indicating the most common import formats"
+  },
+  "maintainYourSubscription": {
+    "message": "Щоб зберегти свою передплату на $ORG$, ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Example Inc."
+      }
+    }
+  },
+  "addAPaymentMethod": {
+    "message": "додайте спосіб оплати",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
+  },
+  "collectionEnhancementsDesc": {
+    "message": "Додано нові налаштування та дозволи для додаткової гнучкості. Замінено роль менеджера на дозвіл \"може керувати\" та впроваджено можливість створювати колекції користувачам, а також обмежувати адміністративний доступ до збірок.",
+    "description": "This describes new features and improvements for user roles and collections"
+  },
+  "collectionEnhancementsLearnMore": {
+    "message": "Докладніше про керування збірками"
   }
 }

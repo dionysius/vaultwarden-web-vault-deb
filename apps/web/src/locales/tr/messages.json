@@ -657,7 +657,7 @@
     "message": "Geçiş anahtarı başarıyla oluşturuldu."
   },
   "customPasskeyNameInfo": {
-    "message": "Name your passkey to help you identify it."
+    "message": "Tanımlamanıza yardımcı olması için Passkey'inize bir isim verin."
   },
   "useForVaultEncryption": {
     "message": "Kasa şifrelemesinde kullan"
@@ -678,7 +678,7 @@
     "message": "Şifreleme için kullanılır"
   },
   "loginWithPasskeyEnabled": {
-    "message": "Log in with passkey turned on"
+    "message": "Passkey ile giriş yap"
   },
   "passkeySaved": {
     "message": "$NAME$ kaydedildi",
@@ -696,10 +696,10 @@
     "message": "Geçiş anahtarını kaldır"
   },
   "removePasskeyInfo": {
-    "message": "If all passkeys are removed, you will be unable to log into new devices without your master password."
+    "message": "Tüm Passkey'ler kaldırılırsa, ana parolanız olmadan yeni cihazlara giriş yapamazsınız."
   },
   "passkeyLimitReachedInfo": {
-    "message": "Passkey limit reached. Remove a passkey to add another."
+    "message": "Passkey sınırına ulaşıldı. Başka bir Passkey eklemek için bir Passley'i kaldırın."
   },
   "tryAgain": {
     "message": "Yeniden dene"
@@ -802,7 +802,7 @@
     "message": "Beklenmedik bir hata oluştu."
   },
   "expirationDateError": {
-    "message": "Please select an expiration date that is in the future."
+    "message": "Lütfen gelecekte olan bir son kullanma tarihi seçin."
   },
   "emailAddress": {
     "message": "E-posta adresi"
@@ -1402,7 +1402,7 @@
     "message": "Bir koleksiyon seçin"
   },
   "importTargetHint": {
-    "message": "Select this option if you want the imported file contents moved to a $DESTINATION$",
+    "message": "İçe aktarılan dosya içeriğinin $DESTINATION$ konumuna taşınmasını istiyorsanız bu seçeneği seçin",
     "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
     "placeholders": {
       "destination": {
@@ -2143,7 +2143,7 @@
     }
   },
   "paymentChargedWithUnpaidSubscription": {
-    "message": "Your payment method will be charged for any unpaid subscriptions."
+    "message": "Ödenmemiş abonelikler için ödeme yönteminizden ücret alınacaktır."
   },
   "paymentChargedWithTrial": {
     "message": "Paketiniz 7 günlük ücretsiz deneme süresiyle geliyor. Deneme süresi bitene kadar sizden ücret alınmayacak. İstediğiniz zaman aboneliğinizi iptal edebilirsiniz."
@@ -2418,7 +2418,7 @@
     "message": "İşletmeler ve diğer ekipler için."
   },
   "planNameTeamsStarter": {
-    "message": "Teams Starter"
+    "message": "Başlangıç Ekipleri"
   },
   "planNameEnterprise": {
     "message": "Kurumsal"
@@ -2815,6 +2815,9 @@
   },
   "incorrectCode": {
     "message": "Yanlış kod"
+  },
+  "incorrectPin": {
+    "message": "Yanlış PIN"
   },
   "exportedVault": {
     "message": "Kasa dışa aktarıldı"
@@ -3468,7 +3471,7 @@
     "message": "Aboneliğiniz için kullanıcı sayısı sınırı. Bu sınıra ulaşıldıktan sonra yeni üye davet edemezsiniz."
   },
   "limitSmSubscriptionDesc": {
-    "message": "Set a seat limit for your Secrets Manger subscription. Once this limit is reached, you will not be able to invite new members."
+    "message": "Aboneliğiniz için kullanıcı sayısı sınırı. Bu sınıra ulaşıldıktan sonra yeni üye davet edemezsiniz."
   },
   "maxSeatLimit": {
     "message": "Maksimum kullanıcı sayısı (isteğe bağlı)",
@@ -3528,7 +3531,7 @@
     }
   },
   "subscriptionUserSeatsWithoutAdditionalSeatsOption": {
-    "message": "You can invite up to $COUNT$ members for no additional charge. Contact Customer Support to upgrade your plan and invite more members.",
+    "message": "Ek ücret ödemeden $COUNT$ kadar üye davet edebilirsiniz. Planınızı yükseltmek ve daha fazla üye davet etmek için Müşteri Desteği ile iletişime geçin.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3657,7 +3660,7 @@
     "message": "Kasa zaman aşımı eyleminin ne zaman gerçekleştirileceğini seçin."
   },
   "vaultTimeoutLogoutDesc": {
-    "message": "Choose when your vault will be logged out."
+    "message": "Kasanızın oturumundan ne zaman çıkış yapılacağını seçin."
   },
   "oneMinute": {
     "message": "1 dakika"
@@ -4026,7 +4029,7 @@
     "message": "Ekip paketi özelliklerinin yanı sıra:"
   },
   "includeAllTeamsStarterFeatures": {
-    "message": "All Teams Starter features, plus:"
+    "message": "Ekip paketi özelliklerinin yanı sıra:"
   },
   "chooseMonthlyOrAnnualBilling": {
     "message": "Aylık veya yıllık faturalandırmayı seçin"
@@ -4749,10 +4752,10 @@
     "message": "Hesap kurtarma yönetimi"
   },
   "accountRecoveryPolicyDesc": {
-    "message": "Based on the encryption method, recover accounts when master passwords or trusted devices are forgotten or lost."
+    "message": "Şifreleme yöntemine bağlı olarak, ana parolalar veya güvenilir cihazlar unutulduğunda veya kaybolduğunda hesapları kurtarın."
   },
   "accountRecoveryPolicyWarning": {
-    "message": "Existing accounts with master passwords will require members to self-enroll before administrators can recover their accounts. Automatic enrollment will turn on account recovery for new members."
+    "message": "Ana parolaları olan mevcut hesaplar, yöneticilerin hesaplarını kurtarabilmesi için üyelerin kendi kendilerine kaydolmalarını gerektirecektir. Otomatik kayıt, yeni üyeler için hesap kurtarmayı açacaktır."
   },
   "accountRecoverySingleOrgRequirementDesc": {
     "message": "The single organization Enterprise policy must be turned on before activating this policy."
@@ -5177,10 +5180,10 @@
     "message": "Sertifikaları doğrula"
   },
   "spUniqueEntityId": {
-    "message": "Set a unique SP entity ID"
+    "message": "Benzersiz bir SP varlık kimliği belirleyin"
   },
   "spUniqueEntityIdDesc": {
-    "message": "Generate an identifier that is unique to your organization"
+    "message": "Kuruluşunuza özgü bir tanımlayıcı oluşturun"
   },
   "idpEntityId": {
     "message": "Varlık kimliği"
@@ -6604,6 +6607,39 @@
       }
     }
   },
+  "verificationRequiredForActionSetPinToContinue": {
+    "message": "Verification required for this action. Set a PIN to continue."
+  },
+  "setPin": {
+    "message": "Set PIN"
+  },
+  "verifyWithBiometrics": {
+    "message": "Verify with biometrics"
+  },
+  "awaitingConfirmation": {
+    "message": "Awaiting confirmation"
+  },
+  "couldNotCompleteBiometrics": {
+    "message": "Could not complete biometrics."
+  },
+  "needADifferentMethod": {
+    "message": "Need a different method?"
+  },
+  "useMasterPassword": {
+    "message": "Use master password"
+  },
+  "usePin": {
+    "message": "Use PIN"
+  },
+  "useBiometrics": {
+    "message": "Use biometrics"
+  },
+  "enterVerificationCodeSentToEmail": {
+    "message": "Enter the verification code that was sent to your email."
+  },
+  "resendCode": {
+    "message": "Resend code"
+  },
   "membersColumnHeader": {
     "message": "Üye/Grup"
   },
@@ -7086,6 +7122,10 @@
       }
     }
   },
+  "verificationRequired": {
+    "message": "Verification required",
+    "description": "Default title for the user verification dialog."
+  },
   "recoverAccount": {
     "message": "Hesabı kurtar"
   },
@@ -7325,8 +7365,8 @@
   "allowAdminAccessToAllCollectionItemsDesc": {
     "message": "Sahipler ve yöneticiler tüm koleksiyonları ve öğeleri yönetebilir"
   },
-  "collectionManagementUpdated": {
-    "message": "Collection management behavior saved"
+  "updatedCollectionManagement": {
+    "message": "Updated collection management setting"
   },
   "passwordManagerPlanPrice": {
     "message": "Password Manager plan price"
@@ -7392,12 +7432,6 @@
   "skipToContent": {
     "message": "İçeriğe geç"
   },
-  "customBillingStart": {
-    "message": "Özel faturalandırma yansıtılmıyor. Ziyaret edin "
-  },
-  "customBillingEnd": {
-    "message": " en son faturalandırma sayfası."
-  },
   "managePermissionRequired": {
     "message": "En az bir üyenin veya grubun yönetebilme iznine sahip olması gerekir."
   },
@@ -7453,5 +7487,26 @@
   "commonImportFormats": {
     "message": "Common formats",
     "description": "Label indicating the most common import formats"
+  },
+  "maintainYourSubscription": {
+    "message": "$ORG$ aboneliğinizi sürdürmek için, ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Example Inc."
+      }
+    }
+  },
+  "addAPaymentMethod": {
+    "message": "bir ödeme yöntemi ekle",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
+  },
+  "collectionEnhancementsDesc": {
+    "message": "Add new settings and permissions for additional flexibility. Replace the Manager role with the \"can manage\" permission, and introduce options to allow users to create collections as well as restrict administrative access to collections.",
+    "description": "This describes new features and improvements for user roles and collections"
+  },
+  "collectionEnhancementsLearnMore": {
+    "message": "Learn more about collection management"
   }
 }

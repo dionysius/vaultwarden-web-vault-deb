@@ -2816,6 +2816,9 @@
   "incorrectCode": {
     "message": "Nesprávny kód"
   },
+  "incorrectPin": {
+    "message": "Incorrect PIN"
+  },
   "exportedVault": {
     "message": "Trezor exportovaný."
   },
@@ -5177,10 +5180,10 @@
     "message": "Overiť certifikáty"
   },
   "spUniqueEntityId": {
-    "message": "Set a unique SP entity ID"
+    "message": "Nastaviť unikátne ID poskytovateľa služby"
   },
   "spUniqueEntityIdDesc": {
-    "message": "Generate an identifier that is unique to your organization"
+    "message": "Vygeneruj identifikátor, ktorý bude unikátny pre vašu organizáciu"
   },
   "idpEntityId": {
     "message": "ID subjektu"
@@ -6604,6 +6607,39 @@
       }
     }
   },
+  "verificationRequiredForActionSetPinToContinue": {
+    "message": "Verification required for this action. Set a PIN to continue."
+  },
+  "setPin": {
+    "message": "Set PIN"
+  },
+  "verifyWithBiometrics": {
+    "message": "Verify with biometrics"
+  },
+  "awaitingConfirmation": {
+    "message": "Awaiting confirmation"
+  },
+  "couldNotCompleteBiometrics": {
+    "message": "Could not complete biometrics."
+  },
+  "needADifferentMethod": {
+    "message": "Need a different method?"
+  },
+  "useMasterPassword": {
+    "message": "Use master password"
+  },
+  "usePin": {
+    "message": "Use PIN"
+  },
+  "useBiometrics": {
+    "message": "Use biometrics"
+  },
+  "enterVerificationCodeSentToEmail": {
+    "message": "Enter the verification code that was sent to your email."
+  },
+  "resendCode": {
+    "message": "Resend code"
+  },
   "membersColumnHeader": {
     "message": "Člen/Skupina"
   },
@@ -7086,6 +7122,10 @@
       }
     }
   },
+  "verificationRequired": {
+    "message": "Verification required",
+    "description": "Default title for the user verification dialog."
+  },
   "recoverAccount": {
     "message": "Obnoviť účet"
   },
@@ -7325,8 +7365,8 @@
   "allowAdminAccessToAllCollectionItemsDesc": {
     "message": "Vlastníci a správcovia môžu spravovať všetky zbierky a položky"
   },
-  "collectionManagementUpdated": {
-    "message": "Nastavenie správy zbierky uložené"
+  "updatedCollectionManagement": {
+    "message": "Aktualizované nastavenia zbierky"
   },
   "passwordManagerPlanPrice": {
     "message": "Cena plánu Správcu Hesiel"
@@ -7392,12 +7432,6 @@
   "skipToContent": {
     "message": "Preskočiť na obsah"
   },
-  "customBillingStart": {
-    "message": "Vlastná fakturácia sa nezohľadňuje. Navštívte "
-  },
-  "customBillingEnd": {
-    "message": " stránku pre posledné faktúry."
-  },
   "managePermissionRequired": {
     "message": "Aspoň jeden člen alebo skupina musí mať povolenie pre správu."
   },
@@ -7453,5 +7487,26 @@
   "commonImportFormats": {
     "message": "Bežné formáty",
     "description": "Label indicating the most common import formats"
+  },
+  "maintainYourSubscription": {
+    "message": "Aby ste udržali predplatné pre $ORG$, ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Example Inc."
+      }
+    }
+  },
+  "addAPaymentMethod": {
+    "message": "pridajte spôsob platby",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
+  },
+  "collectionEnhancementsDesc": {
+    "message": "Pridajte nové nastavenia a oprávnenia pre väčšiu flexibilitu. Nahraďte rolu Správca oprávnením \"môže spravovať\" a umožnite používateľom vytvárať zbierky, alebo obmedzte administratívny prístup k zbierkam.",
+    "description": "This describes new features and improvements for user roles and collections"
+  },
+  "collectionEnhancementsLearnMore": {
+    "message": "Naučiť sa viac o spravovaní zbierky"
   }
 }

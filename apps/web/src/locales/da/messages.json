@@ -2816,6 +2816,9 @@
   "incorrectCode": {
     "message": "Forkert kode"
   },
+  "incorrectPin": {
+    "message": "Incorrect PIN"
+  },
   "exportedVault": {
     "message": "Boks eksporteret"
   },
@@ -5177,10 +5180,10 @@
     "message": "Validér certifikater"
   },
   "spUniqueEntityId": {
-    "message": "Set a unique SP entity ID"
+    "message": "Opsæt et unikt SP enheds-ID"
   },
   "spUniqueEntityIdDesc": {
-    "message": "Generate an identifier that is unique to your organization"
+    "message": "Generér en for organisationen unik identifikator"
   },
   "idpEntityId": {
     "message": "Enheds-ID"
@@ -6604,6 +6607,39 @@
       }
     }
   },
+  "verificationRequiredForActionSetPinToContinue": {
+    "message": "Verification required for this action. Set a PIN to continue."
+  },
+  "setPin": {
+    "message": "Set PIN"
+  },
+  "verifyWithBiometrics": {
+    "message": "Verify with biometrics"
+  },
+  "awaitingConfirmation": {
+    "message": "Awaiting confirmation"
+  },
+  "couldNotCompleteBiometrics": {
+    "message": "Could not complete biometrics."
+  },
+  "needADifferentMethod": {
+    "message": "Need a different method?"
+  },
+  "useMasterPassword": {
+    "message": "Use master password"
+  },
+  "usePin": {
+    "message": "Use PIN"
+  },
+  "useBiometrics": {
+    "message": "Use biometrics"
+  },
+  "enterVerificationCodeSentToEmail": {
+    "message": "Enter the verification code that was sent to your email."
+  },
+  "resendCode": {
+    "message": "Resend code"
+  },
   "membersColumnHeader": {
     "message": "Medlem/Gruppe"
   },
@@ -7086,6 +7122,10 @@
       }
     }
   },
+  "verificationRequired": {
+    "message": "Verification required",
+    "description": "Default title for the user verification dialog."
+  },
   "recoverAccount": {
     "message": "Gendan konto"
   },
@@ -7325,8 +7365,8 @@
   "allowAdminAccessToAllCollectionItemsDesc": {
     "message": "Ejere og admins kan håndtere alle samlinger og emner"
   },
-  "collectionManagementUpdated": {
-    "message": "Samlingshåndteringsadfærd gemt"
+  "updatedCollectionManagement": {
+    "message": "Opdateret samlingshåndtering"
   },
   "passwordManagerPlanPrice": {
     "message": "Password Manager-abonnementspris"
@@ -7392,12 +7432,6 @@
   "skipToContent": {
     "message": "Spring til indhold"
   },
-  "customBillingStart": {
-    "message": "Tilpasset fakturering afspejles ikke. Besøg "
-  },
-  "customBillingEnd": {
-    "message": " siden for seneste fakturering."
-  },
   "managePermissionRequired": {
     "message": "Mindst ét medlem eller én gruppe skal have håndteringstilladelser."
   },
@@ -7453,5 +7487,26 @@
   "commonImportFormats": {
     "message": "Almindelige formater",
     "description": "Label indicating the most common import formats"
+  },
+  "maintainYourSubscription": {
+    "message": "For at bibeholde abonnementet på $ORG$, ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Example Inc."
+      }
+    }
+  },
+  "addAPaymentMethod": {
+    "message": "tilføj en betalingsmetode",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
+  },
+  "collectionEnhancementsDesc": {
+    "message": "Tilføj nye indstillinger og tilladelser for ekstra fleksibilitet. Erstat Manager-rollen med tilladelsen \"kan håndtere\", og indfør muligheder for brugerne til at oprette samlinger samt begrænse administrativ adgang til samlinger.",
+    "description": "This describes new features and improvements for user roles and collections"
+  },
+  "collectionEnhancementsLearnMore": {
+    "message": "Læs mere om samlingshåndtering"
   }
 }

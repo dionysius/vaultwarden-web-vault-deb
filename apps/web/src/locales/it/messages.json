@@ -2816,6 +2816,9 @@
   "incorrectCode": {
     "message": "Codice errato"
   },
+  "incorrectPin": {
+    "message": "Incorrect PIN"
+  },
   "exportedVault": {
     "message": "Cassaforte esportata"
   },
@@ -5177,10 +5180,10 @@
     "message": "Convalida certificati"
   },
   "spUniqueEntityId": {
-    "message": "Set a unique SP entity ID"
+    "message": "Imposta un ID entità SP univoco"
   },
   "spUniqueEntityIdDesc": {
-    "message": "Generate an identifier that is unique to your organization"
+    "message": "Genera un identificatore univoco per la tua organizzazione"
   },
   "idpEntityId": {
     "message": "ID entità"
@@ -6604,6 +6607,39 @@
       }
     }
   },
+  "verificationRequiredForActionSetPinToContinue": {
+    "message": "Verification required for this action. Set a PIN to continue."
+  },
+  "setPin": {
+    "message": "Set PIN"
+  },
+  "verifyWithBiometrics": {
+    "message": "Verify with biometrics"
+  },
+  "awaitingConfirmation": {
+    "message": "Awaiting confirmation"
+  },
+  "couldNotCompleteBiometrics": {
+    "message": "Could not complete biometrics."
+  },
+  "needADifferentMethod": {
+    "message": "Need a different method?"
+  },
+  "useMasterPassword": {
+    "message": "Use master password"
+  },
+  "usePin": {
+    "message": "Use PIN"
+  },
+  "useBiometrics": {
+    "message": "Use biometrics"
+  },
+  "enterVerificationCodeSentToEmail": {
+    "message": "Enter the verification code that was sent to your email."
+  },
+  "resendCode": {
+    "message": "Resend code"
+  },
   "membersColumnHeader": {
     "message": "Membro/gruppo"
   },
@@ -6662,7 +6698,7 @@
     }
   },
   "teamsStarterPlanInvLimitReachedManageBilling": {
-    "message": "I piani Teams Starter possono avere fino a $SEATCOUNT$ members. Aggiorna il tuo piano per invitare più membri.",
+    "message": "I piani Teams Starter possono avere fino a $SEATCOUNT$ membri. Aggiorna il tuo piano per invitare più membri.",
     "placeholders": {
       "seatcount": {
         "content": "$1",
@@ -7086,6 +7122,10 @@
       }
     }
   },
+  "verificationRequired": {
+    "message": "Verification required",
+    "description": "Default title for the user verification dialog."
+  },
   "recoverAccount": {
     "message": "Recupera account"
   },
@@ -7323,10 +7363,10 @@
     "message": "Limita la creazione e l'eliminazione delle raccolte a proprietari e amministratori"
   },
   "allowAdminAccessToAllCollectionItemsDesc": {
-    "message": "Proprietari e amministratori possono gestire tutte le collezioni e gli oggetti"
+    "message": "Proprietari e amministratori possono gestire tutte le raccolte e gli elementi"
   },
-  "collectionManagementUpdated": {
-    "message": "Gestione del comportamento delle raccolte salvato"
+  "updatedCollectionManagement": {
+    "message": "Impostazione di gestione della raccolta aggiornata"
   },
   "passwordManagerPlanPrice": {
     "message": "Prezzo del piano del Password Manager"
@@ -7392,12 +7432,6 @@
   "skipToContent": {
     "message": "Vai al contenuto"
   },
-  "customBillingStart": {
-    "message": "La fatturazione personalizzata non è contabilizzata. Visita la "
-  },
-  "customBillingEnd": {
-    "message": " pagina per l'ultima fatturazione."
-  },
   "managePermissionRequired": {
     "message": "Almeno un membro o gruppo deve avere l'autorizzazione \"può gestire\"."
   },
@@ -7453,5 +7487,26 @@
   "commonImportFormats": {
     "message": "Formati comuni",
     "description": "Label indicating the most common import formats"
+  },
+  "maintainYourSubscription": {
+    "message": "Per mantenere il tuo abbonamento a $ORG$, ",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Example Inc."
+      }
+    }
+  },
+  "addAPaymentMethod": {
+    "message": "aggiungi un metodo di pagamento",
+    "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
+  },
+  "collectionEnhancementsDesc": {
+    "message": "Aggiungi nuove impostazioni e autorizzazioni per una maggiore flessibilità. Sostituisci il ruolo di Manager con l'autorizzazione \"può gestire\" e introduci opzioni per consentire agli utenti di creare raccolte e limitare l'accesso alle raccolte agli amministratori.",
+    "description": "This describes new features and improvements for user roles and collections"
+  },
+  "collectionEnhancementsLearnMore": {
+    "message": "Ulteriori informazioni sulla gestione delle raccolte"
   }
 }
