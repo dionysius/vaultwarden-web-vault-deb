@@ -2006,6 +2006,10 @@
     "message": "Your organization requires you to set a master password.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
+  "verificationRequired": {
+    "message": "Reikalingas patikrinimas",
+    "description": "Default title for the user verification dialog."
+  },
   "hours": {
     "message": "Hours"
   },
@@ -2643,6 +2647,42 @@
       }
     }
   },
+  "tryAgain": {
+    "message": "Bandyti dar kartą"
+  },
+  "verificationRequiredForActionSetPinToContinue": {
+    "message": "Šiam veiksmui reikalingas patikrinimas. Norėdamas (-a) tęsti, nustatyk PIN."
+  },
+  "setPin": {
+    "message": "Nustatyti PIN"
+  },
+  "verifyWithBiometrics": {
+    "message": "Patikrininti su biometrinius duomenis"
+  },
+  "awaitingConfirmation": {
+    "message": "Laukiama patvirtinimo"
+  },
+  "couldNotCompleteBiometrics": {
+    "message": "Nepavyko atlikti biometrinių duomenų."
+  },
+  "needADifferentMethod": {
+    "message": "Reikia kito metodo?"
+  },
+  "useMasterPassword": {
+    "message": "Naudoti pagrindinį slaptažodį"
+  },
+  "usePin": {
+    "message": "Naudoti PIN"
+  },
+  "useBiometrics": {
+    "message": "Naudoti biometrinius duomenis"
+  },
+  "enterVerificationCodeSentToEmail": {
+    "message": "Įvesk į el. paštą atsiųstą patikrinimo kodą."
+  },
+  "resendCode": {
+    "message": "Siųsti kodą dar kartą"
+  },
   "total": {
     "message": "Total"
   },
@@ -2786,6 +2826,15 @@
   "incorrectUsernameOrPassword": {
     "message": "Incorrect username or password"
   },
+  "incorrectPassword": {
+    "message": "Neteisingas slaptažodis"
+  },
+  "incorrectCode": {
+    "message": "Neteisingas kodas"
+  },
+  "incorrectPin": {
+    "message": "Neteisingas PIN"
+  },
   "multifactorAuthenticationFailed": {
     "message": "Multifactor authentication failed"
   },
@@ -2895,5 +2944,33 @@
   "commonImportFormats": {
     "message": "Common formats",
     "description": "Label indicating the most common import formats"
+  },
+  "overrideDefaultBrowserAutofillTitle": {
+    "message": "Padaryti Bitwarden savo numatytuoju slaptažodžių tvarkytuvu?",
+    "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "overrideDefaultBrowserAutofillDescription": {
+    "message": "Ignoruojant šią parinktį, gali kilti konfliktų tarp Bitwarden automatinio užpildymo meniu ir naršyklės.",
+    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "overrideDefaultBrowserAutofillPrivacyRequiredDescription": {
+    "message": "Šis veiksmas iš naujo paleis Bitwarden plėtinį.\nIgnoruojant šią parinktį, gali kilti konfliktų tarp Bitwarden automatinio užpildymo meniu ir naršyklės.",
+    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "overrideDefaultBrowserAutoFillSettings": {
+    "message": "Padaryti Bitwarden savo numatytuoju slaptažodžių tvarkytuvu",
+    "description": "Label for the setting that allows overriding the default browser autofill settings"
+  },
+  "privacyPermissionAdditionNotGrantedTitle": {
+    "message": "Nepavyksta nustatyti Bitwarden kaip numatytosios slaptažodžių tvarkyklės",
+    "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
+  },
+  "privacyPermissionAdditionNotGrantedDescription": {
+    "message": "Norėdamas (-a) nustatyti Bitwarden kaip numatytąją slaptažodžių tvarkyklę, turi suteikti Bitwarden naršyklės privatumo leidimus.",
+    "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
+  },
+  "makeDefault": {
+    "message": "Padaryti numatytuoju",
+    "description": "Button text for the setting that allows overriding the default browser autofill settings"
   }
 }

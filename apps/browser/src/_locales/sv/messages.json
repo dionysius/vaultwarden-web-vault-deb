@@ -269,7 +269,7 @@
     "message": "Längd"
   },
   "passwordMinLength": {
-    "message": "Minimum password length"
+    "message": "Minsta tillåtna lösenordslängd"
   },
   "uppercase": {
     "message": "Versaler (A-Ö)"
@@ -585,7 +585,7 @@
     "message": "Lösenord kopierat"
   },
   "uri": {
-    "message": "URI (länk)"
+    "message": "URI"
   },
   "uriPosition": {
     "message": "URI $POSITION$",
@@ -1494,7 +1494,7 @@
     "message": "Ogiltig PIN-kod."
   },
   "tooManyInvalidPinEntryAttemptsLoggingOut": {
-    "message": "Too many invalid PIN entry attempts. Logging out."
+    "message": "För många ogiltiga PIN-inmatningsförsök. Loggar ut."
   },
   "unlockWithBiometrics": {
     "message": "Lås upp med biometri"
@@ -2006,6 +2006,10 @@
     "message": "Your organization requires you to set a master password.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
+  "verificationRequired": {
+    "message": "Verifiering krävs",
+    "description": "Default title for the user verification dialog."
+  },
   "hours": {
     "message": "Timmar"
   },
@@ -2360,7 +2364,7 @@
     "message": "Approve from your other device"
   },
   "requestAdminApproval": {
-    "message": "Request admin approval"
+    "message": "Be om godkännande från administratör"
   },
   "approveWithMasterPassword": {
     "message": "Godkänn med huvudlösenord"
@@ -2394,7 +2398,7 @@
     "message": "Admin approval requested"
   },
   "adminApprovalRequestSentToAdmins": {
-    "message": "Your request has been sent to your admin."
+    "message": "Din begäran har skickats till din administratör."
   },
   "youWillBeNotifiedOnceApproved": {
     "message": "Du kommer att meddelas vid godkännande."
@@ -2403,7 +2407,7 @@
     "message": "Problem med att logga in?"
   },
   "loginApproved": {
-    "message": "Login approved"
+    "message": "Inloggning godkänd"
   },
   "userEmailMissing": {
     "message": "User email missing"
@@ -2544,7 +2548,7 @@
     "description": "Notification message for when an import has failed."
   },
   "importNetworkError": {
-    "message": "Network error encountered during import.",
+    "message": "Nätverksfel uppstod vid import.",
     "description": "Notification message for when an import has failed due to a network error."
   },
   "aliasDomain": {
@@ -2642,6 +2646,42 @@
         "example": "2"
       }
     }
+  },
+  "tryAgain": {
+    "message": "Försök igen"
+  },
+  "verificationRequiredForActionSetPinToContinue": {
+    "message": "Verification required for this action. Set a PIN to continue."
+  },
+  "setPin": {
+    "message": "Set PIN"
+  },
+  "verifyWithBiometrics": {
+    "message": "Verify with biometrics"
+  },
+  "awaitingConfirmation": {
+    "message": "Awaiting confirmation"
+  },
+  "couldNotCompleteBiometrics": {
+    "message": "Could not complete biometrics."
+  },
+  "needADifferentMethod": {
+    "message": "Need a different method?"
+  },
+  "useMasterPassword": {
+    "message": "Använd huvudlösenord"
+  },
+  "usePin": {
+    "message": "Use PIN"
+  },
+  "useBiometrics": {
+    "message": "Använd biometri"
+  },
+  "enterVerificationCodeSentToEmail": {
+    "message": "Enter the verification code that was sent to your email."
+  },
+  "resendCode": {
+    "message": "Resend code"
   },
   "total": {
     "message": "Total"
@@ -2748,7 +2788,7 @@
     "message": "Inga nycklar hittades för detta program."
   },
   "noMatchingPasskeyLogin": {
-    "message": "Du har inte en matchande inloggning för denna webbplats."
+    "message": "Det finns ingen matchande inloggning för denna webbplats."
   },
   "confirm": {
     "message": "Bekräfta"
@@ -2785,6 +2825,15 @@
   },
   "incorrectUsernameOrPassword": {
     "message": "Felaktigt användarnamn eller lösenord"
+  },
+  "incorrectPassword": {
+    "message": "Felaktigt lösenord"
+  },
+  "incorrectCode": {
+    "message": "Felaktig kod"
+  },
+  "incorrectPin": {
+    "message": "Incorrect PIN"
   },
   "multifactorAuthenticationFailed": {
     "message": "Multifactor authentication failed"
@@ -2895,5 +2944,33 @@
   "commonImportFormats": {
     "message": "Common formats",
     "description": "Label indicating the most common import formats"
+  },
+  "overrideDefaultBrowserAutofillTitle": {
+    "message": "Låt Bitwarden hantera lösenord som standard?",
+    "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "overrideDefaultBrowserAutofillDescription": {
+    "message": "Ignoring this option may cause conflicts between the Bitwarden auto-fill menu and your browser's.",
+    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "overrideDefaultBrowserAutofillPrivacyRequiredDescription": {
+    "message": "This action will restart the Bitwarden extension. Ignoring this option may cause conflicts between the Bitwarden auto-fill menu and your browser's.",
+    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "overrideDefaultBrowserAutoFillSettings": {
+    "message": "Låt Bitwarden hantera lösenord som standard",
+    "description": "Label for the setting that allows overriding the default browser autofill settings"
+  },
+  "privacyPermissionAdditionNotGrantedTitle": {
+    "message": "Unable to set Bitwarden as the default password manager",
+    "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
+  },
+  "privacyPermissionAdditionNotGrantedDescription": {
+    "message": "You must grant browser privacy permissions to Bitwarden to set it as the default password manager.",
+    "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
+  },
+  "makeDefault": {
+    "message": "Make default",
+    "description": "Button text for the setting that allows overriding the default browser autofill settings"
   }
 }

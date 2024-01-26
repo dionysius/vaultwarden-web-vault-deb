@@ -11,7 +11,7 @@
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
-    "message": "Kirjaudu tai luo uusi tili käyttääksesi salattua holviasi."
+    "message": "Käytä salattua holviasi kirjautumalla sisään tai tai luo uusi tili."
   },
   "createAccount": {
     "message": "Luo tili"
@@ -2006,6 +2006,10 @@
     "message": "Organisaatiosi edellyttää, että asetat pääsalasanan.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
+  "verificationRequired": {
+    "message": "Verification required",
+    "description": "Default title for the user verification dialog."
+  },
   "hours": {
     "message": "Tuntia"
   },
@@ -2516,7 +2520,7 @@
     "description": "Toggling an expand/collapse state."
   },
   "filelessImport": {
-    "message": "Haluatko tuoda tietosi Bitwardeniin?",
+    "message": "Tuodaanko tiedot Bitwardeniin?",
     "description": "Default notification title for triggering a fileless import."
   },
   "lpFilelessImport": {
@@ -2642,6 +2646,42 @@
         "example": "2"
       }
     }
+  },
+  "tryAgain": {
+    "message": "Try again"
+  },
+  "verificationRequiredForActionSetPinToContinue": {
+    "message": "Verification required for this action. Set a PIN to continue."
+  },
+  "setPin": {
+    "message": "Set PIN"
+  },
+  "verifyWithBiometrics": {
+    "message": "Verify with biometrics"
+  },
+  "awaitingConfirmation": {
+    "message": "Awaiting confirmation"
+  },
+  "couldNotCompleteBiometrics": {
+    "message": "Could not complete biometrics."
+  },
+  "needADifferentMethod": {
+    "message": "Need a different method?"
+  },
+  "useMasterPassword": {
+    "message": "Use master password"
+  },
+  "usePin": {
+    "message": "Use PIN"
+  },
+  "useBiometrics": {
+    "message": "Use biometrics"
+  },
+  "enterVerificationCodeSentToEmail": {
+    "message": "Enter the verification code that was sent to your email."
+  },
+  "resendCode": {
+    "message": "Resend code"
   },
   "total": {
     "message": "Yhteensä"
@@ -2786,6 +2826,15 @@
   "incorrectUsernameOrPassword": {
     "message": "Virheellinen käyttäjätunnus tai salasana"
   },
+  "incorrectPassword": {
+    "message": "Incorrect password"
+  },
+  "incorrectCode": {
+    "message": "Incorrect code"
+  },
+  "incorrectPin": {
+    "message": "Incorrect PIN"
+  },
   "multifactorAuthenticationFailed": {
     "message": "Monivaiheinen todennus epäonnistui"
   },
@@ -2845,7 +2894,7 @@
     "message": "Vaihda tiliä"
   },
   "switchAccounts": {
-    "message": "Vaihda tilejä"
+    "message": "Vaihda tiliä"
   },
   "switchToAccount": {
     "message": "Vaihda tiliin"
@@ -2884,7 +2933,7 @@
     "message": "Aina tällä sivustolla"
   },
   "domainAddedToExcludedDomains": {
-    "message": "$DOMAIN$ lisättiin verkkotunnuspoikkeuksiin.",
+    "message": "$DOMAIN$ lisättiin ohitettaviin verkkotunnuksiin.",
     "placeholders": {
       "domain": {
         "content": "$1",
@@ -2895,5 +2944,33 @@
   "commonImportFormats": {
     "message": "Yleiset muodot",
     "description": "Label indicating the most common import formats"
+  },
+  "overrideDefaultBrowserAutofillTitle": {
+    "message": "Määritetäänkö Bitwarden oletusarvoiseksi salasanahallinnaksi?",
+    "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "overrideDefaultBrowserAutofillDescription": {
+    "message": "Tämän huomiotta jättäminen voi aiheuttaa ongelmia Bitwardenin automaattitäytön valikon ja selaimen välisessä toiminnassa.",
+    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "overrideDefaultBrowserAutofillPrivacyRequiredDescription": {
+    "message": "Tämä toiminto käynnistää Bitwarden-laajennuksen uudelleen ja sen huomiotta jättäminen voi aiheuttaa ongelmia Bitwardenin automaattitäytön valikon ja selaimen välisessä toiminnassa.",
+    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "overrideDefaultBrowserAutoFillSettings": {
+    "message": "Määritä Bitwarden oletusarvoiseksi salasanahallinnaksi",
+    "description": "Label for the setting that allows overriding the default browser autofill settings"
+  },
+  "privacyPermissionAdditionNotGrantedTitle": {
+    "message": "Bitwardenia ei voida määrittää oletusarvoiseksi salasanahallinnaksi",
+    "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
+  },
+  "privacyPermissionAdditionNotGrantedDescription": {
+    "message": "Jotta Bitwarden voidaan määrittää oletusarvoiseksi salasanahallinnaksi, on sille myönettävä oikeus käsitellä yksityisiä tietoja selaimessa.",
+    "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
+  },
+  "makeDefault": {
+    "message": "Määritä oletukseksi",
+    "description": "Button text for the setting that allows overriding the default browser autofill settings"
   }
 }

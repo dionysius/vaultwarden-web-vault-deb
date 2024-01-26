@@ -607,7 +607,7 @@
     "message": "Elemento editado"
   },
   "deleteItemConfirmation": {
-    "message": "¿Estás seguro de que quieres eliminar este elemento?"
+    "message": "¿Seguro que quieres enviarlo a la papelera?"
   },
   "deletedItem": {
     "message": "Elemento enviado a la papelera"
@@ -2006,6 +2006,10 @@
     "message": "Su organización requiere que establezca una contraseña maestra.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
+  "verificationRequired": {
+    "message": "Verification required",
+    "description": "Default title for the user verification dialog."
+  },
   "hours": {
     "message": "Horas"
   },
@@ -2643,6 +2647,42 @@
       }
     }
   },
+  "tryAgain": {
+    "message": "Try again"
+  },
+  "verificationRequiredForActionSetPinToContinue": {
+    "message": "Verification required for this action. Set a PIN to continue."
+  },
+  "setPin": {
+    "message": "Set PIN"
+  },
+  "verifyWithBiometrics": {
+    "message": "Verify with biometrics"
+  },
+  "awaitingConfirmation": {
+    "message": "Awaiting confirmation"
+  },
+  "couldNotCompleteBiometrics": {
+    "message": "Could not complete biometrics."
+  },
+  "needADifferentMethod": {
+    "message": "Need a different method?"
+  },
+  "useMasterPassword": {
+    "message": "Use master password"
+  },
+  "usePin": {
+    "message": "Use PIN"
+  },
+  "useBiometrics": {
+    "message": "Use biometrics"
+  },
+  "enterVerificationCodeSentToEmail": {
+    "message": "Enter the verification code that was sent to your email."
+  },
+  "resendCode": {
+    "message": "Resend code"
+  },
   "total": {
     "message": "Total"
   },
@@ -2786,6 +2826,15 @@
   "incorrectUsernameOrPassword": {
     "message": "El nombre de usuario o la contraseña no son correctos"
   },
+  "incorrectPassword": {
+    "message": "Incorrect password"
+  },
+  "incorrectCode": {
+    "message": "Incorrect code"
+  },
+  "incorrectPin": {
+    "message": "Incorrect PIN"
+  },
   "multifactorAuthenticationFailed": {
     "message": "Falló la autenticación multifactor"
   },
@@ -2895,5 +2944,33 @@
   "commonImportFormats": {
     "message": "Formatos comunes",
     "description": "Label indicating the most common import formats"
+  },
+  "overrideDefaultBrowserAutofillTitle": {
+    "message": "¿Quiere hacer de Bitwarden su gestor de contraseñas predeterminado?",
+    "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "overrideDefaultBrowserAutofillDescription": {
+    "message": "Pasar por alto esta opción puede causar conflictos entre el menú de relleno automático de Bitwarden y el del navegador.",
+    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "overrideDefaultBrowserAutofillPrivacyRequiredDescription": {
+    "message": "Esta acción reiniciará la extensión Bitwarden. Pasar por alto esta opción puede causar conflictos entre el menú de relleno automático de Bitwarden y el del navegador.",
+    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "overrideDefaultBrowserAutoFillSettings": {
+    "message": "Hacer de Bitwarden su gestor de contraseñas predeterminado",
+    "description": "Label for the setting that allows overriding the default browser autofill settings"
+  },
+  "privacyPermissionAdditionNotGrantedTitle": {
+    "message": "No se pudo establecer Bitwarden como el gestor de contraseñas predeterminado",
+    "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
+  },
+  "privacyPermissionAdditionNotGrantedDescription": {
+    "message": "Debe otorgar los permisos de privacidad del navegador a Bitwarden para establecerlo como gestor de contraseñas predeterminado.",
+    "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
+  },
+  "makeDefault": {
+    "message": "Predeterminar",
+    "description": "Button text for the setting that allows overriding the default browser autofill settings"
   }
 }

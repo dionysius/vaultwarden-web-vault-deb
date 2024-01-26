@@ -644,7 +644,7 @@
     "message": "Chiedi di aggiungere un nuovo elemento se non ce n'è uno nella tua cassaforte."
   },
   "addLoginNotificationDescAlt": {
-    "message": "Chiedi di aggiungere un elemento se non è stato trovato nella tua cassaforte. Si applica a tutti i profili connessi."
+    "message": "Chiedi di creare un nuovo elemento se non ce n'è uno nella tua cassaforte. Si applica a tutti gli account sul dispositivo."
   },
   "showCardsCurrentTab": {
     "message": "Mostra le carte nella sezione Scheda"
@@ -679,7 +679,7 @@
     "message": "Chiedi di aggiornare la password di un login quando rileviamo che è cambiata su un sito web."
   },
   "changedPasswordNotificationDescAlt": {
-    "message": "Chiedi di aggiornare la password di un accesso quando una modifica è rilevata su un sito web. Si applica a tutti i profili connessi."
+    "message": "Chiedi di aggiornare la password salvata quando viene modificata su un sito web. Si applica a tutti gli account sul dispositivo."
   },
   "enableUsePasskeys": {
     "message": "Chiedi di salvare e usare le passkey"
@@ -703,10 +703,10 @@
     "message": "Mostra opzioni nel menu contestuale"
   },
   "contextMenuItemDesc": {
-    "message": "Utilizza un secondo clic per accedere alla generazione di password e login corrispondenti per il sito web. "
+    "message": "Usa un clic secondario per generare nuove password e riempire automaticamente i login nei siti web."
   },
   "contextMenuItemDescAlt": {
-    "message": "Utilizza un click secondario per accedere alla generazione della password e agli accessi corrispondenti per il sito web. Si applica a tutti i profili connessi."
+    "message": "Chiedi di aggiornare la password salvata quando viene modificata su un sito web. Si applica a tutti gli account sul dispositivo. Si applica a tutti gli account sul dispositivo."
   },
   "defaultUriMatchDetection": {
     "message": "Rilevamento corrispondenza URI predefinito",
@@ -722,7 +722,7 @@
     "message": "Cambia lo schema di colori dell'app."
   },
   "themeDescAlt": {
-    "message": "Modifica il tema del colore dell'applicazione. Si applica a tutti i profili connessi."
+    "message": "Cambia il colore del tema dell'estensione. Si applica a tutti gli account sul dispositivo."
   },
   "dark": {
     "message": "Scuro",
@@ -1049,7 +1049,7 @@
     "description": "Represents the message for allowing the user to enable the auto-fill overlay"
   },
   "showAutoFillMenuOnFormFieldsDescAlt": {
-    "message": "Si applica a tutti i profili connessi."
+    "message": "Si applica a tutti gli account sul dispositivo."
   },
   "turnOffBrowserBuiltInPasswordManagerSettings": {
     "message": "Disattiva il password manager del tuo browser per evitare conflitti con Bitwarden."
@@ -1736,7 +1736,7 @@
     "message": "Bitwarden non ti chiederà di aggiungere nuovi login per questi domini. Ricorda di ricaricare la pagina perché le modifiche abbiano effetto."
   },
   "excludedDomainsDescAlt": {
-    "message": "Bitwarden non chiederà di salvare i dettagli di accesso per questi domini per tutti i profili connessi. Devi aggiornare la pagina perché le modifiche diventino effettive."
+    "message": "Bitwarden non chiederà di salvare le credenziali di accesso per questi domini per tutti gli account sul dispositivo. Ricarica la pagina affinché le modifiche abbiano effetto."
   },
   "excludedDomainsInvalidDomain": {
     "message": "$DOMAIN$ non è un dominio valido",
@@ -2005,6 +2005,10 @@
   "orgRequiresYouToSetPassword": {
     "message": "La tua organizzazione ti obbliga di impostare di una password principale.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "verificationRequired": {
+    "message": "Verification required",
+    "description": "Default title for the user verification dialog."
   },
   "hours": {
     "message": "Ore"
@@ -2300,7 +2304,7 @@
     "message": "Come riempire automaticamente"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Seleziona un elemento da questa schermata, utilizza la scorciatoia $COMMAND$ o esplora altre opzioni nelle impostazioni.",
+    "message": "Seleziona un elemento da questa schermata, usa la scorciatoia $COMMAND$, o esplora altre opzioni nelle impostazioni.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2309,7 +2313,7 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "Seleziona un elemento da questa schermata, o esplora altre opzioni nelle impostazioni."
+    "message": "Seleziona un elemento da questa schermata o esplora altre opzioni nelle impostazioni."
   },
   "gotIt": {
     "message": "Ok"
@@ -2643,6 +2647,42 @@
       }
     }
   },
+  "tryAgain": {
+    "message": "Try again"
+  },
+  "verificationRequiredForActionSetPinToContinue": {
+    "message": "Verification required for this action. Set a PIN to continue."
+  },
+  "setPin": {
+    "message": "Set PIN"
+  },
+  "verifyWithBiometrics": {
+    "message": "Verify with biometrics"
+  },
+  "awaitingConfirmation": {
+    "message": "Awaiting confirmation"
+  },
+  "couldNotCompleteBiometrics": {
+    "message": "Could not complete biometrics."
+  },
+  "needADifferentMethod": {
+    "message": "Need a different method?"
+  },
+  "useMasterPassword": {
+    "message": "Use master password"
+  },
+  "usePin": {
+    "message": "Use PIN"
+  },
+  "useBiometrics": {
+    "message": "Use biometrics"
+  },
+  "enterVerificationCodeSentToEmail": {
+    "message": "Enter the verification code that was sent to your email."
+  },
+  "resendCode": {
+    "message": "Resend code"
+  },
   "total": {
     "message": "Totale"
   },
@@ -2786,6 +2826,15 @@
   "incorrectUsernameOrPassword": {
     "message": "Nome utente o password errati"
   },
+  "incorrectPassword": {
+    "message": "Incorrect password"
+  },
+  "incorrectCode": {
+    "message": "Incorrect code"
+  },
+  "incorrectPin": {
+    "message": "Incorrect PIN"
+  },
   "multifactorAuthenticationFailed": {
     "message": "Verifica in due passaggi non riuscita"
   },
@@ -2895,5 +2944,33 @@
   "commonImportFormats": {
     "message": "Formati comuni",
     "description": "Label indicating the most common import formats"
+  },
+  "overrideDefaultBrowserAutofillTitle": {
+    "message": "Rendere Bitwarden il tuo password manager predefinito?",
+    "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "overrideDefaultBrowserAutofillDescription": {
+    "message": "Se questa opzione è disattivata potrebbe causare conflitti tra il menu di riempimento automatico di Bitwarden e quello del tuo browser.",
+    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "overrideDefaultBrowserAutofillPrivacyRequiredDescription": {
+    "message": "Questa azione riavvierà l'estensione di Bitwarden. Se questa opzione è disattivata potrebbe causare conflitti tra il menu di riempimento automatico di Bitwarden e quello del tuo browser.",
+    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
+  },
+  "overrideDefaultBrowserAutoFillSettings": {
+    "message": "Rendi Bitwarden il tuo password manager predefinito",
+    "description": "Label for the setting that allows overriding the default browser autofill settings"
+  },
+  "privacyPermissionAdditionNotGrantedTitle": {
+    "message": "Impossibile impostare Bitwarden come password manager predefinito",
+    "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
+  },
+  "privacyPermissionAdditionNotGrantedDescription": {
+    "message": "Concedi le autorizzazioni sulla privacy del browser a Bitwarden per impostarlo come password manager predefinito.",
+    "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
+  },
+  "makeDefault": {
+    "message": "Rendi predefinito",
+    "description": "Button text for the setting that allows overriding the default browser autofill settings"
   }
 }
