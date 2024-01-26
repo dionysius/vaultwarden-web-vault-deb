@@ -39,7 +39,9 @@
     <!-- Main content of `NavItem` -->
     <ng-template #anchorAndButtonContent>
       <i class="bwi bwi-fw tw-text-alt2 tw-mx-1 {{ icon }}"></i
-      ><span [ngClass]="showActiveStyles ? 'tw-font-bold' : 'tw-font-semibold'">{{ text }}</span>
+      ><span [title]="text" [ngClass]="showActiveStyles ? 'tw-font-bold' : 'tw-font-semibold'">{{
+        text
+      }}</span>
     </ng-template>
 
     <!-- Show if a value was passed to `this.to` -->
