@@ -1547,6 +1547,10 @@
     "message": "あなたの組織では、マスターパスワードの設定を義務付けています。",
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
+  "verificationRequired": {
+    "message": "認証が必要です",
+    "description": "Default title for the user verification dialog."
+  },
   "currentMasterPass": {
     "message": "現在のマスターパスワード"
   },
@@ -1871,6 +1875,42 @@
   },
   "updateWeakMasterPasswordWarning": {
     "message": "マスターパスワードが組織のポリシーに適合していません。保管庫にアクセスするには、今すぐマスターパスワードを更新しなければなりません。続行すると現在のセッションからログアウトし、再度ログインする必要があります。 他のデバイス上のアクティブなセッションは、最大1時間アクティブであり続けることがあります。"
+  },
+  "tryAgain": {
+    "message": "再試行"
+  },
+  "verificationRequiredForActionSetPinToContinue": {
+    "message": "この操作には認証が必要です。続行するには PIN を設定してください。"
+  },
+  "setPin": {
+    "message": "PIN を設定"
+  },
+  "verifyWithBiometrics": {
+    "message": "生体認証による確認"
+  },
+  "awaitingConfirmation": {
+    "message": "確認中"
+  },
+  "couldNotCompleteBiometrics": {
+    "message": "生体認証を完了できませんでした。"
+  },
+  "needADifferentMethod": {
+    "message": "別の方法が必要ですか？"
+  },
+  "useMasterPassword": {
+    "message": "マスターパスワードを使用"
+  },
+  "usePin": {
+    "message": "PIN を使用"
+  },
+  "useBiometrics": {
+    "message": "生体認証を使用"
+  },
+  "enterVerificationCodeSentToEmail": {
+    "message": "メールアドレスに送信された認証コードを入力してください。"
+  },
+  "resendCode": {
+    "message": "コードを再送信する"
   },
   "hours": {
     "message": "時間"
@@ -2564,6 +2604,15 @@
   },
   "incorrectUsernameOrPassword": {
     "message": "ユーザー名またはパスワードが間違っています"
+  },
+  "incorrectPassword": {
+    "message": "パスワードが違います"
+  },
+  "incorrectCode": {
+    "message": "コードが違います"
+  },
+  "incorrectPin": {
+    "message": "PIN が正しくありません"
   },
   "multifactorAuthenticationFailed": {
     "message": "多要素認証に失敗しました"

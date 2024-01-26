@@ -1393,7 +1393,7 @@
     "message": "Code PIN invalide."
   },
   "tooManyInvalidPinEntryAttemptsLoggingOut": {
-    "message": "Too many invalid PIN entry attempts. Logging out."
+    "message": "Trop de tentatives de saisie du code PIN incorrectes. Déconnexion."
   },
   "unlockWithWindowsHello": {
     "message": "Déverrouiller avec Windows Hello"
@@ -1546,6 +1546,10 @@
   "orgRequiresYouToSetPassword": {
     "message": "Votre organisation exige que vous définissiez un mot de passe principal.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
+  },
+  "verificationRequired": {
+    "message": "Vérification requise",
+    "description": "Default title for the user verification dialog."
   },
   "currentMasterPass": {
     "message": "Mot de passe principal actuel"
@@ -1871,6 +1875,42 @@
   },
   "updateWeakMasterPasswordWarning": {
     "message": "Votre mot de passe principal ne répond pas aux exigences de politique de sécurité de cette organisation. Pour pouvoir accéder au coffre, vous devez mettre à jour votre mot de passe principal dès maintenant. En poursuivant, vous serez déconnecté de votre session actuelle et vous devrez vous reconnecter. Les sessions actives sur d'autres appareils peuver rester actives pendant encore une heure."
+  },
+  "tryAgain": {
+    "message": "Essayez de nouveau"
+  },
+  "verificationRequiredForActionSetPinToContinue": {
+    "message": "Vérification requise pour cette action. Définissez un code PIN pour continuer."
+  },
+  "setPin": {
+    "message": "Définir un code PIN"
+  },
+  "verifyWithBiometrics": {
+    "message": "Vérifier par biométrie"
+  },
+  "awaitingConfirmation": {
+    "message": "En attente de confirmation"
+  },
+  "couldNotCompleteBiometrics": {
+    "message": "Could not complete biometrics."
+  },
+  "needADifferentMethod": {
+    "message": "Besoin d'une méthode différente ?"
+  },
+  "useMasterPassword": {
+    "message": "Utiliser le mot de passe principal"
+  },
+  "usePin": {
+    "message": "Utiliser le code PIN"
+  },
+  "useBiometrics": {
+    "message": "Utiliser la biométrie"
+  },
+  "enterVerificationCodeSentToEmail": {
+    "message": "Saisissez le code de vérification qui vous a été envoyé par courriel."
+  },
+  "resendCode": {
+    "message": "Renvoyer le code"
   },
   "hours": {
     "message": "Heures"
@@ -2564,6 +2604,15 @@
   },
   "incorrectUsernameOrPassword": {
     "message": "Nom d'utilisateur ou mot de passe incorrect"
+  },
+  "incorrectPassword": {
+    "message": "Mot de passe incorrect"
+  },
+  "incorrectCode": {
+    "message": "Code incorrect"
+  },
+  "incorrectPin": {
+    "message": "Code PIN incorrect"
   },
   "multifactorAuthenticationFailed": {
     "message": "Authentification multifacteur échouée"

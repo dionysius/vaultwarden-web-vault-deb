@@ -1547,6 +1547,10 @@
     "message": "Twoja organizacja wymaga ustawienia hasła głównego.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
+  "verificationRequired": {
+    "message": "Wymagana weryfikacja",
+    "description": "Default title for the user verification dialog."
+  },
   "currentMasterPass": {
     "message": "Aktualne hasło główne"
   },
@@ -1871,6 +1875,42 @@
   },
   "updateWeakMasterPasswordWarning": {
     "message": "Twoje hasło główne nie spełnia jednej lub kilku zasad organizacji. Aby uzyskać dostęp do sejfu, musisz teraz zaktualizować swoje hasło główne. Kontynuacja wyloguje Cię z bieżącej sesji, wymagając zalogowania się ponownie. Aktywne sesje na innych urządzeniach mogą pozostać aktywne przez maksymalnie jedną godzinę."
+  },
+  "tryAgain": {
+    "message": "Spróbuj ponownie"
+  },
+  "verificationRequiredForActionSetPinToContinue": {
+    "message": "Weryfikacja dla tej akcji jest wymagana. Ustaw kod PIN, aby kontynuować."
+  },
+  "setPin": {
+    "message": "Ustaw PIN"
+  },
+  "verifyWithBiometrics": {
+    "message": "Weryfikuj za pomocą biometrii"
+  },
+  "awaitingConfirmation": {
+    "message": "Oczekiwanie na potwierdzenie"
+  },
+  "couldNotCompleteBiometrics": {
+    "message": "Nie można ukończyć z użyciem biometrii."
+  },
+  "needADifferentMethod": {
+    "message": "Potrzebujesz innej metody?"
+  },
+  "useMasterPassword": {
+    "message": "Użyj hasła głównego"
+  },
+  "usePin": {
+    "message": "Użyj PINu"
+  },
+  "useBiometrics": {
+    "message": "Użyj biometrii"
+  },
+  "enterVerificationCodeSentToEmail": {
+    "message": "Wpisz kod weryfikacyjny, który został wysłany na adres e-mail."
+  },
+  "resendCode": {
+    "message": "Wysłać kod ponownie"
   },
   "hours": {
     "message": "Godziny"
@@ -2564,6 +2604,15 @@
   },
   "incorrectUsernameOrPassword": {
     "message": "Nieprawidłowa nazwa użytkownika lub hasło"
+  },
+  "incorrectPassword": {
+    "message": "Błędne hasło"
+  },
+  "incorrectCode": {
+    "message": "Błędny kod"
+  },
+  "incorrectPin": {
+    "message": "Niepoprawny PIN"
   },
   "multifactorAuthenticationFailed": {
     "message": "Uwierzytelnianie wieloskładnikowe nie powiodło się"
