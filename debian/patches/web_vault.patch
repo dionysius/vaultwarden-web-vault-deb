@@ -420,7 +420,7 @@ index baff9d1b68..25f99cb40a 100644
      </div>
    </div>
 diff --git a/apps/web/src/app/vault/individual-vault/vault.component.ts b/apps/web/src/app/vault/individual-vault/vault.component.ts
-index 964debb536..12b23f8888 100644
+index 5ca857dae6..bc7568f5f4 100644
 --- a/apps/web/src/app/vault/individual-vault/vault.component.ts
 +++ b/apps/web/src/app/vault/individual-vault/vault.component.ts
 @@ -188,11 +188,7 @@ export class VaultComponent implements OnInit, OnDestroy {
@@ -436,24 +436,11 @@ index 964debb536..12b23f8888 100644
  
      const firstSetup$ = this.route.queryParams.pipe(
        first(),
-diff --git a/apps/web/src/app/vault/org-vault/vault-header/vault-header.component.ts b/apps/web/src/app/vault/org-vault/vault-header/vault-header.component.ts
-index 9740705ae9..e000d3f10c 100644
---- a/apps/web/src/app/vault/org-vault/vault-header/vault-header.component.ts
-+++ b/apps/web/src/app/vault/org-vault/vault-header/vault-header.component.ts
-@@ -160,7 +160,7 @@ export class VaultHeaderComponent {
-   }
- 
-   async addCollection() {
--    if (this.organization.planProductType === ProductType.Free) {
-+    if (this.organization.planProductType !== ProductType.Free) {
-       const collections = await this.collectionAdminService.getAll(this.organization.id);
-       if (collections.length === this.organization.maxCollections) {
-         this.showFreeOrgUpgradeDialog();
 diff --git a/apps/web/src/app/vault/org-vault/vault.component.ts b/apps/web/src/app/vault/org-vault/vault.component.ts
-index 4dd05b67c1..e6d9344261 100644
+index 91c5f8fdf8..90a4d54a3a 100644
 --- a/apps/web/src/app/vault/org-vault/vault.component.ts
 +++ b/apps/web/src/app/vault/org-vault/vault.component.ts
-@@ -168,11 +168,7 @@ export class VaultComponent implements OnInit, OnDestroy {
+@@ -170,11 +170,7 @@ export class VaultComponent implements OnInit, OnDestroy {
    ) {}
  
    async ngOnInit() {
@@ -671,16 +658,3 @@ index 4293eb9966..7a8e861e8d 100644
      this.onRecoverSelected.emit();
    }
  }
-diff --git a/libs/components/src/menu/menu.component.html b/libs/components/src/menu/menu.component.html
-index d175a3fe3b..ca3c420b73 100644
---- a/libs/components/src/menu/menu.component.html
-+++ b/libs/components/src/menu/menu.component.html
-@@ -1,7 +1,7 @@
- <ng-template>
-   <div
-     (click)="closed.emit()"
--    class="tw-flex tw-shrink-0 tw-flex-col tw-rounded tw-border tw-border-solid tw-border-secondary-500 tw-bg-background tw-bg-clip-padding tw-py-2"
-+    class="tw-flex tw-shrink-0 tw-flex-col tw-overflow-x-auto tw-rounded tw-border tw-border-solid tw-border-secondary-500 tw-bg-background tw-bg-clip-padding tw-py-2"
-     [attr.role]="ariaRole"
-     [attr.aria-label]="ariaLabel"
-     cdkTrapFocus
