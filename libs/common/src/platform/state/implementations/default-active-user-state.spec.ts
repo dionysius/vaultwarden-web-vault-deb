@@ -189,7 +189,7 @@ describe("DefaultActiveUserState", () => {
 
     expect(resolvedValue).toBeTruthy();
     expect(resolvedValue.array).toHaveLength(1);
-    expect(resolvedValue.date.getUTCFullYear()).toBe(2020);
+    expect(resolvedValue.date.getFullYear()).toBe(2020);
     expect(rejectedError).toBeFalsy();
   });
 
