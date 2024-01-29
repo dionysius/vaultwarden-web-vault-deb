@@ -147,6 +147,44 @@ export class EncryptServiceImplementation implements EncryptService {
     return result ?? null;
   }
 
+  async rsaEncrypt(data: Uint8Array, publicKey: Uint8Array): Promise<EncString> {
+    if (data == null) {
+      throw new Error("No data provided for encryption.");
+    }
+
+    if (publicKey == null) {
+      throw new Error("No public key provided for encryption.");
+    }
+    const encrypted = await this.cryptoFunctionService.rsaEncrypt(data, publicKey, "sha1");
+    return new EncString(EncryptionType.Rsa2048_OaepSha1_B64, Utils.fromBufferToB64(encrypted));
+  }
+
+  async rsaDecrypt(data: EncString, privateKey: Uint8Array): Promise<Uint8Array> {
+    if (data == null) {
+      throw new Error("No data provided for decryption.");
+    }
+
+    let algorithm: "sha1" | "sha256";
+    switch (data.encryptionType) {
+      case EncryptionType.Rsa2048_OaepSha1_B64:
+      case EncryptionType.Rsa2048_OaepSha1_HmacSha256_B64:
+        algorithm = "sha1";
+        break;
+      case EncryptionType.Rsa2048_OaepSha256_B64:
+      case EncryptionType.Rsa2048_OaepSha256_HmacSha256_B64:
+        algorithm = "sha256";
+        break;
+      default:
+        throw new Error("Invalid encryption type.");
+    }
+
+    if (privateKey == null) {
+      throw new Error("No private key provided for decryption.");
+    }
+
+    return this.cryptoFunctionService.rsaDecrypt(data.dataBytes, privateKey, algorithm);
+  }
+
   async decryptItems<T extends InitializerMetadata>(
     items: Decryptable<T>[],
     key: SymmetricCryptoKey,

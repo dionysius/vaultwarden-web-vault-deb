@@ -1072,29 +1072,6 @@ export class StateService<
     );
   }
 
-  async getDecryptedProviderKeys(
-    options?: StorageOptions,
-  ): Promise<Map<string, SymmetricCryptoKey>> {
-    const account = await this.getAccount(
-      this.reconcileOptions(options, await this.defaultInMemoryOptions()),
-    );
-    return Utils.recordToMap(account?.keys?.providerKeys?.decrypted);
-  }
-
-  async setDecryptedProviderKeys(
-    value: Map<string, SymmetricCryptoKey>,
-    options?: StorageOptions,
-  ): Promise<void> {
-    const account = await this.getAccount(
-      this.reconcileOptions(options, await this.defaultInMemoryOptions()),
-    );
-    account.keys.providerKeys.decrypted = Utils.mapToRecord(value);
-    await this.saveAccount(
-      account,
-      this.reconcileOptions(options, await this.defaultInMemoryOptions()),
-    );
-  }
-
   @withPrototypeForArrayMembers(SendView)
   async getDecryptedSends(options?: StorageOptions): Promise<SendView[]> {
     return (
@@ -1906,23 +1883,6 @@ export class StateService<
       this.reconcileOptions(options, await this.defaultOnDiskOptions()),
     );
     account.keys.privateKey.encrypted = value;
-    await this.saveAccount(
-      account,
-      this.reconcileOptions(options, await this.defaultOnDiskOptions()),
-    );
-  }
-
-  async getEncryptedProviderKeys(options?: StorageOptions): Promise<any> {
-    return (
-      await this.getAccount(this.reconcileOptions(options, await this.defaultOnDiskOptions()))
-    )?.keys?.providerKeys?.encrypted;
-  }
-
-  async setEncryptedProviderKeys(value: any, options?: StorageOptions): Promise<void> {
-    const account = await this.getAccount(
-      this.reconcileOptions(options, await this.defaultOnDiskOptions()),
-    );
-    account.keys.providerKeys.encrypted = value;
     await this.saveAccount(
       account,
       this.reconcileOptions(options, await this.defaultOnDiskOptions()),

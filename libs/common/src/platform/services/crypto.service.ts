@@ -8,8 +8,8 @@ import { ProfileProviderResponse } from "../../admin-console/models/response/pro
 import { AccountService } from "../../auth/abstractions/account.service";
 import { KdfConfig } from "../../auth/models/domain/kdf-config";
 import { Utils } from "../../platform/misc/utils";
-import { OrganizationId, UserId } from "../../types/guid";
-import { UserKey, MasterKey, OrgKey, ProviderKey, PinKey, CipherKey } from "../../types/key";
+import { OrganizationId, ProviderId, UserId } from "../../types/guid";
+import { OrgKey, UserKey, MasterKey, ProviderKey, PinKey, CipherKey } from "../../types/key";
 import { CryptoFunctionService } from "../abstractions/crypto-function.service";
 import { CryptoService as CryptoServiceAbstraction } from "../abstractions/crypto.service";
 import { EncryptService } from "../abstractions/encrypt.service";
@@ -29,7 +29,7 @@ import {
 import { sequentialize } from "../misc/sequentialize";
 import { EFFLongWordList } from "../misc/wordlist";
 import { EncArrayBuffer } from "../models/domain/enc-array-buffer";
-import { EncString } from "../models/domain/enc-string";
+import { EncString, EncryptedString } from "../models/domain/enc-string";
 import { SymmetricCryptoKey } from "../models/domain/symmetric-crypto-key";
 import { ActiveUserState, DerivedState, StateProvider } from "../state";
 
@@ -37,6 +37,7 @@ import {
   USER_ENCRYPTED_ORGANIZATION_KEYS,
   USER_ORGANIZATION_KEYS,
 } from "./key-state/org-keys.state";
+import { USER_ENCRYPTED_PROVIDER_KEYS, USER_PROVIDER_KEYS } from "./key-state/provider-keys.state";
 import { USER_EVER_HAD_USER_KEY } from "./key-state/user-key.state";
 
 export class CryptoService implements CryptoServiceAbstraction {
@@ -45,8 +46,13 @@ export class CryptoService implements CryptoServiceAbstraction {
     Record<OrganizationId, EncryptedOrganizationKeyData>
   >;
   private readonly activeUserOrgKeysState: DerivedState<Record<OrganizationId, OrgKey>>;
+  private readonly activeUserEncryptedProviderKeysState: ActiveUserState<
+    Record<ProviderId, EncryptedString>
+  >;
+  private readonly activeUserProviderKeysState: DerivedState<Record<OrganizationId, ProviderKey>>;
 
   readonly activeUserOrgKeys$: Observable<Record<OrganizationId, OrgKey>>;
+  readonly activeUserProviderKeys$: Observable<Record<ProviderId, ProviderKey>>;
 
   readonly everHadUserKey$;
 
@@ -68,9 +74,18 @@ export class CryptoService implements CryptoServiceAbstraction {
       USER_ORGANIZATION_KEYS,
       { cryptoService: this },
     );
+    this.activeUserEncryptedProviderKeysState = stateProvider.getActive(
+      USER_ENCRYPTED_PROVIDER_KEYS,
+    );
+    this.activeUserProviderKeysState = stateProvider.getDerived(
+      this.activeUserEncryptedProviderKeysState.state$,
+      USER_PROVIDER_KEYS,
+      { encryptService: this.encryptService, cryptoService: this },
+    );
 
     this.everHadUserKey$ = this.activeUserEverHadUserKey.state$.pipe(map((x) => x ?? false));
     this.activeUserOrgKeys$ = this.activeUserOrgKeysState.state$; // null handled by `derive` function
+    this.activeUserProviderKeys$ = this.activeUserProviderKeysState.state$; // null handled by `derive` function
   }
 
   async setUserKey(key: UserKey, userId?: UserId): Promise<void> {
@@ -396,65 +411,44 @@ export class CryptoService implements CryptoServiceAbstraction {
   }
 
   async setProviderKeys(providers: ProfileProviderResponse[]): Promise<void> {
-    const providerKeys: any = {};
-    providers.forEach((provider) => {
-      providerKeys[provider.id] = provider.key;
-    });
+    this.activeUserEncryptedProviderKeysState.update((_) => {
+      const encProviderKeys: { [providerId: ProviderId]: EncryptedString } = {};
 
-    await this.stateService.setDecryptedProviderKeys(null);
-    return await this.stateService.setEncryptedProviderKeys(providerKeys);
+      providers.forEach((provider) => {
+        encProviderKeys[provider.id as ProviderId] = provider.key as EncryptedString;
+      });
+
+      return encProviderKeys;
+    });
   }
 
-  async getProviderKey(providerId: string): Promise<ProviderKey> {
+  async getProviderKey(providerId: ProviderId): Promise<ProviderKey> {
     if (providerId == null) {
       return null;
     }
 
-    const providerKeys = await this.getProviderKeys();
-    if (providerKeys == null || !providerKeys.has(providerId)) {
-      return null;
-    }
-
-    return providerKeys.get(providerId);
+    return (await firstValueFrom(this.activeUserProviderKeys$))[providerId] ?? null;
   }
 
   @sequentialize(() => "getProviderKeys")
-  async getProviderKeys(): Promise<Map<string, ProviderKey>> {
-    const providerKeys: Map<string, ProviderKey> = new Map<string, ProviderKey>();
-    const decryptedProviderKeys = await this.stateService.getDecryptedProviderKeys();
-    if (decryptedProviderKeys != null && decryptedProviderKeys.size > 0) {
-      return decryptedProviderKeys as Map<string, ProviderKey>;
-    }
-
-    const encProviderKeys = await this.stateService.getEncryptedProviderKeys();
-    if (encProviderKeys == null) {
-      return null;
-    }
-
-    let setKey = false;
-
-    for (const orgId in encProviderKeys) {
-      // eslint-disable-next-line
-      if (!encProviderKeys.hasOwnProperty(orgId)) {
-        continue;
-      }
-
-      const decValue = await this.rsaDecrypt(encProviderKeys[orgId]);
-      providerKeys.set(orgId, new SymmetricCryptoKey(decValue) as ProviderKey);
-      setKey = true;
-    }
-
-    if (setKey) {
-      await this.stateService.setDecryptedProviderKeys(providerKeys);
-    }
-
-    return providerKeys;
+  async getProviderKeys(): Promise<Record<ProviderId, ProviderKey>> {
+    return await firstValueFrom(this.activeUserProviderKeys$);
   }
 
   async clearProviderKeys(memoryOnly?: boolean, userId?: UserId): Promise<void> {
-    await this.stateService.setDecryptedProviderKeys(null, { userId: userId });
-    if (!memoryOnly) {
-      await this.stateService.setEncryptedProviderKeys(null, { userId: userId });
+    const activeUserId = (await firstValueFrom(this.accountService.activeAccount$))?.id;
+    const userIdIsActive = userId == null || userId === activeUserId;
+    if (memoryOnly && userIdIsActive) {
+      // provider keys are only cached for active users
+      await this.activeUserProviderKeysState.forceValue({});
+    } else {
+      if (userId == null && activeUserId == null) {
+        // nothing to do
+        return;
+      }
+      await this.stateProvider
+        .getUser(userId ?? activeUserId, USER_ENCRYPTED_PROVIDER_KEYS)
+        .update(() => null);
     }
   }
 

@@ -11,3 +11,6 @@ export type PinKey = Opaque<SymmetricCryptoKey, "PinKey">;
 export type OrgKey = Opaque<SymmetricCryptoKey, "OrgKey">;
 export type ProviderKey = Opaque<SymmetricCryptoKey, "ProviderKey">;
 export type CipherKey = Opaque<SymmetricCryptoKey, "CipherKey">;
+
+// asymmetric keys
+export type UserPrivateKey = Opaque<Uint8Array, "UserPrivateKey">;

@@ -57,18 +57,6 @@ describe("AccountKeys", () => {
       expect(spy).toHaveBeenCalled();
     });
 
-    it("should deserialize organizationKeys", () => {
-      const spy = jest.spyOn(SymmetricCryptoKey, "fromJSON");
-      AccountKeys.fromJSON({ organizationKeys: [{ orgId: "keyJSON" }] } as any);
-      expect(spy).toHaveBeenCalled();
-    });
-
-    it("should deserialize providerKeys", () => {
-      const spy = jest.spyOn(SymmetricCryptoKey, "fromJSON");
-      AccountKeys.fromJSON({ providerKeys: [{ providerId: "keyJSON" }] } as any);
-      expect(spy).toHaveBeenCalled();
-    });
-
     it("should deserialize privateKey", () => {
       const spy = jest.spyOn(EncryptionPair, "fromJSON");
       AccountKeys.fromJSON({

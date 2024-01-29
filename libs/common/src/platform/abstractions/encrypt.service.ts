@@ -13,6 +13,8 @@ export abstract class EncryptService {
   ) => Promise<EncArrayBuffer>;
   abstract decryptToUtf8: (encString: EncString, key: SymmetricCryptoKey) => Promise<string>;
   abstract decryptToBytes: (encThing: Encrypted, key: SymmetricCryptoKey) => Promise<Uint8Array>;
+  abstract rsaEncrypt: (data: Uint8Array, publicKey: Uint8Array) => Promise<EncString>;
+  abstract rsaDecrypt: (data: EncString, privateKey: Uint8Array) => Promise<Uint8Array>;
   abstract resolveLegacyKey: (key: SymmetricCryptoKey, encThing: Encrypted) => SymmetricCryptoKey;
   abstract decryptItems: <T extends InitializerMetadata>(
     items: Decryptable<T>[],
