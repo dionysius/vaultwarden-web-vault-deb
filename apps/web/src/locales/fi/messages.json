@@ -2817,7 +2817,7 @@
     "message": "Virheellinen koodi"
   },
   "incorrectPin": {
-    "message": "Incorrect PIN"
+    "message": "Virheellinen PIN-koodi"
   },
   "exportedVault": {
     "message": "Holvi vietiin"
@@ -6608,37 +6608,37 @@
     }
   },
   "verificationRequiredForActionSetPinToContinue": {
-    "message": "Verification required for this action. Set a PIN to continue."
+    "message": "Toiminto vaatii vahvistuksen. Jatka asettamalla PIN-koodi."
   },
   "setPin": {
-    "message": "Set PIN"
+    "message": "Aseta PIN-koodi"
   },
   "verifyWithBiometrics": {
-    "message": "Verify with biometrics"
+    "message": "Vahvista biometrialla"
   },
   "awaitingConfirmation": {
-    "message": "Awaiting confirmation"
+    "message": "Odottaa vahvistusta"
   },
   "couldNotCompleteBiometrics": {
-    "message": "Could not complete biometrics."
+    "message": "Biometrinen todennus ei onnistunut."
   },
   "needADifferentMethod": {
-    "message": "Need a different method?"
+    "message": "Tarvitsetko eri menetelmän?"
   },
   "useMasterPassword": {
-    "message": "Use master password"
+    "message": "Käytä pääsalasanaa"
   },
   "usePin": {
-    "message": "Use PIN"
+    "message": "Käytä PIN-koodia"
   },
   "useBiometrics": {
-    "message": "Use biometrics"
+    "message": "Käytä biometriaa"
   },
   "enterVerificationCodeSentToEmail": {
-    "message": "Enter the verification code that was sent to your email."
+    "message": "Syötä sähköpostiosoitteeseesi lähetetty vahvistuskoodi."
   },
   "resendCode": {
-    "message": "Resend code"
+    "message": "Lähetä koodi uudelleen"
   },
   "membersColumnHeader": {
     "message": "Jäsen/ryhmä"
@@ -7123,7 +7123,7 @@
     }
   },
   "verificationRequired": {
-    "message": "Verification required",
+    "message": "Vahvistus vaaditaan",
     "description": "Default title for the user verification dialog."
   },
   "recoverAccount": {

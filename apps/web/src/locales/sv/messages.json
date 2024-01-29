@@ -2817,7 +2817,7 @@
     "message": "Felaktig kod"
   },
   "incorrectPin": {
-    "message": "Incorrect PIN"
+    "message": "Felaktig PIN-kod"
   },
   "exportedVault": {
     "message": "Exporterade valv"
@@ -6608,13 +6608,13 @@
     }
   },
   "verificationRequiredForActionSetPinToContinue": {
-    "message": "Verification required for this action. Set a PIN to continue."
+    "message": "Verifiering krävs för denna åtgärd. Ange en PIN-kod för att fortsätta."
   },
   "setPin": {
-    "message": "Set PIN"
+    "message": "Ställ in PIN-kod"
   },
   "verifyWithBiometrics": {
-    "message": "Verify with biometrics"
+    "message": "Verifiera med biometri"
   },
   "awaitingConfirmation": {
     "message": "Awaiting confirmation"
@@ -6623,13 +6623,13 @@
     "message": "Could not complete biometrics."
   },
   "needADifferentMethod": {
-    "message": "Need a different method?"
+    "message": "Behöver du en annan metod?"
   },
   "useMasterPassword": {
     "message": "Använd huvudlösenord"
   },
   "usePin": {
-    "message": "Use PIN"
+    "message": "Använd PIN-kod"
   },
   "useBiometrics": {
     "message": "Använd biometri"
@@ -6638,7 +6638,7 @@
     "message": "Enter the verification code that was sent to your email."
   },
   "resendCode": {
-    "message": "Resend code"
+    "message": "Skicka kod igen"
   },
   "membersColumnHeader": {
     "message": "Medlem/Grupp"
@@ -7123,7 +7123,7 @@
     }
   },
   "verificationRequired": {
-    "message": "Verification required",
+    "message": "Verifiering krävs",
     "description": "Default title for the user verification dialog."
   },
   "recoverAccount": {

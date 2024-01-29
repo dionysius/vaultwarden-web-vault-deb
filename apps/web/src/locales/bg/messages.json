@@ -2817,7 +2817,7 @@
     "message": "Неправилен код"
   },
   "incorrectPin": {
-    "message": "Incorrect PIN"
+    "message": "Неправилен ПИН"
   },
   "exportedVault": {
     "message": "Трезорът е изнесен."
@@ -6608,37 +6608,37 @@
     }
   },
   "verificationRequiredForActionSetPinToContinue": {
-    "message": "Verification required for this action. Set a PIN to continue."
+    "message": "Това действие изисква потвърждаване. Задайте ПИН, за да продължите."
   },
   "setPin": {
-    "message": "Set PIN"
+    "message": "Задаване на ПИН"
   },
   "verifyWithBiometrics": {
-    "message": "Verify with biometrics"
+    "message": "Потвърждаване с биометрични данни"
   },
   "awaitingConfirmation": {
-    "message": "Awaiting confirmation"
+    "message": "Изчаква се потвърждение"
   },
   "couldNotCompleteBiometrics": {
-    "message": "Could not complete biometrics."
+    "message": "Действието с биометрични данни не може да бъде завършено."
   },
   "needADifferentMethod": {
-    "message": "Need a different method?"
+    "message": "Искате ли да опитате друг метод?"
   },
   "useMasterPassword": {
-    "message": "Use master password"
+    "message": "Използване на главната парола"
   },
   "usePin": {
-    "message": "Use PIN"
+    "message": "Използване на ПИН"
   },
   "useBiometrics": {
-    "message": "Use biometrics"
+    "message": "Използване на биометрични данни"
   },
   "enterVerificationCodeSentToEmail": {
-    "message": "Enter the verification code that was sent to your email."
+    "message": "Въведете кода за потвърждаване, който беше изпратен на Вашата е-поща."
   },
   "resendCode": {
-    "message": "Resend code"
+    "message": "Повторно изпращане на кода"
   },
   "membersColumnHeader": {
     "message": "Член/група"
@@ -7123,7 +7123,7 @@
     }
   },
   "verificationRequired": {
-    "message": "Verification required",
+    "message": "Изисква се потвърждение",
     "description": "Default title for the user verification dialog."
   },
   "recoverAccount": {

@@ -2817,7 +2817,7 @@
     "message": "Codi incorrecte"
   },
   "incorrectPin": {
-    "message": "Incorrect PIN"
+    "message": "PIN incorrecte"
   },
   "exportedVault": {
     "message": "S'ha exportat la caixa forta"
@@ -6608,37 +6608,37 @@
     }
   },
   "verificationRequiredForActionSetPinToContinue": {
-    "message": "Verification required for this action. Set a PIN to continue."
+    "message": "Es requereix verificació per a aquesta acció. Estableix un PIN per continuar."
   },
   "setPin": {
-    "message": "Set PIN"
+    "message": "Estableix el PIN"
   },
   "verifyWithBiometrics": {
-    "message": "Verify with biometrics"
+    "message": "Verifica amb biomètrica"
   },
   "awaitingConfirmation": {
-    "message": "Awaiting confirmation"
+    "message": "S'està esperant la confirmació"
   },
   "couldNotCompleteBiometrics": {
-    "message": "Could not complete biometrics."
+    "message": "No s'ha pogut completar la biomètrica."
   },
   "needADifferentMethod": {
-    "message": "Need a different method?"
+    "message": "Necessita un mètode diferent?"
   },
   "useMasterPassword": {
-    "message": "Use master password"
+    "message": "Utilitza contrasenya mestra"
   },
   "usePin": {
-    "message": "Use PIN"
+    "message": "Utilitza el PIN"
   },
   "useBiometrics": {
-    "message": "Use biometrics"
+    "message": "Utilitza la biometria"
   },
   "enterVerificationCodeSentToEmail": {
-    "message": "Enter the verification code that was sent to your email."
+    "message": "Introduïu el codi de verificació que s’ha enviat al vostre correu electrònic."
   },
   "resendCode": {
-    "message": "Resend code"
+    "message": "Reenvia el codi"
   },
   "membersColumnHeader": {
     "message": "Membre/grup"
@@ -7123,7 +7123,7 @@
     }
   },
   "verificationRequired": {
-    "message": "Verification required",
+    "message": "Es requereix verificació",
     "description": "Default title for the user verification dialog."
   },
   "recoverAccount": {

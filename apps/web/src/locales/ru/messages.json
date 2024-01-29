@@ -2817,7 +2817,7 @@
     "message": "Неверный код"
   },
   "incorrectPin": {
-    "message": "Incorrect PIN"
+    "message": "Неверный PIN-код"
   },
   "exportedVault": {
     "message": "Хранилище экспортировано."
@@ -5180,7 +5180,7 @@
     "message": "Проверка сертификатов"
   },
   "spUniqueEntityId": {
-    "message": "Установить уникальный идентификатор объекта SP"
+    "message": "Установить уникальный ID объекта SP"
   },
   "spUniqueEntityIdDesc": {
     "message": "Создать уникальный для вашей организации идентификатор"
@@ -6608,37 +6608,37 @@
     }
   },
   "verificationRequiredForActionSetPinToContinue": {
-    "message": "Verification required for this action. Set a PIN to continue."
+    "message": "Для этого действия требуется верификация. Для продолжения введите PIN-код."
   },
   "setPin": {
-    "message": "Set PIN"
+    "message": "Задать PIN-код"
   },
   "verifyWithBiometrics": {
-    "message": "Verify with biometrics"
+    "message": "Верифицировать с помощью биометрии"
   },
   "awaitingConfirmation": {
-    "message": "Awaiting confirmation"
+    "message": "Ожидание подтверждения"
   },
   "couldNotCompleteBiometrics": {
-    "message": "Could not complete biometrics."
+    "message": "Не удалось выполнить верификацию биометрией."
   },
   "needADifferentMethod": {
-    "message": "Need a different method?"
+    "message": "Нужен другой метод?"
   },
   "useMasterPassword": {
-    "message": "Use master password"
+    "message": "Использовать мастер-пароль"
   },
   "usePin": {
-    "message": "Use PIN"
+    "message": "Использовать PIN-код"
   },
   "useBiometrics": {
-    "message": "Use biometrics"
+    "message": "Использовать биометрию"
   },
   "enterVerificationCodeSentToEmail": {
-    "message": "Enter the verification code that was sent to your email."
+    "message": "Введите код подтверждения, отправленный вам на почту."
   },
   "resendCode": {
-    "message": "Resend code"
+    "message": "Отправить код повторно"
   },
   "membersColumnHeader": {
     "message": "Участник/Группа"
@@ -7123,7 +7123,7 @@
     }
   },
   "verificationRequired": {
-    "message": "Verification required",
+    "message": "Требуется верификация",
     "description": "Default title for the user verification dialog."
   },
   "recoverAccount": {

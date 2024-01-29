@@ -2817,7 +2817,7 @@
     "message": "Helytelen kód"
   },
   "incorrectPin": {
-    "message": "Incorrect PIN"
+    "message": "Helytelen PIN kód"
   },
   "exportedVault": {
     "message": "A széf exportálásra került."
@@ -6608,37 +6608,37 @@
     }
   },
   "verificationRequiredForActionSetPinToContinue": {
-    "message": "Verification required for this action. Set a PIN to continue."
+    "message": "Ehhez a művelethez ellenőrzés szükséges. A folytatáshoz állítsunk be egy PIN kódot."
   },
   "setPin": {
-    "message": "Set PIN"
+    "message": "PIN kód beállítása"
   },
   "verifyWithBiometrics": {
-    "message": "Verify with biometrics"
+    "message": "Ellenőrzés biometrikusan"
   },
   "awaitingConfirmation": {
-    "message": "Awaiting confirmation"
+    "message": "Várakozás megerősítésre"
   },
   "couldNotCompleteBiometrics": {
-    "message": "Could not complete biometrics."
+    "message": "Nem sikerült kitölteni a biometrikus adatokat."
   },
   "needADifferentMethod": {
-    "message": "Need a different method?"
+    "message": "Más módszerre van szükség?"
   },
   "useMasterPassword": {
-    "message": "Use master password"
+    "message": "Mesterjelszó használata"
   },
   "usePin": {
-    "message": "Use PIN"
+    "message": "PIN kód használata"
   },
   "useBiometrics": {
-    "message": "Use biometrics"
+    "message": "Biometria használata"
   },
   "enterVerificationCodeSentToEmail": {
-    "message": "Enter the verification code that was sent to your email."
+    "message": "Az emailben elküldött ellenőrző kód megadása."
   },
   "resendCode": {
-    "message": "Resend code"
+    "message": "Kód újraküldése"
   },
   "membersColumnHeader": {
     "message": "Tag/Csoport"
@@ -7123,7 +7123,7 @@
     }
   },
   "verificationRequired": {
-    "message": "Verification required",
+    "message": "Ellenőrzés szükséges",
     "description": "Default title for the user verification dialog."
   },
   "recoverAccount": {

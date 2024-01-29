@@ -2817,7 +2817,7 @@
     "message": "Nesprávny kód"
   },
   "incorrectPin": {
-    "message": "Incorrect PIN"
+    "message": "Nesprávny PIN"
   },
   "exportedVault": {
     "message": "Trezor exportovaný."
@@ -6608,37 +6608,37 @@
     }
   },
   "verificationRequiredForActionSetPinToContinue": {
-    "message": "Verification required for this action. Set a PIN to continue."
+    "message": "Pre túto akciu sa vyžaduje overenie. Ak chcete pokračovať, nastavte PIN kód."
   },
   "setPin": {
-    "message": "Set PIN"
+    "message": "Nastaviť PIN"
   },
   "verifyWithBiometrics": {
-    "message": "Verify with biometrics"
+    "message": "Overiť pomocou biometrie"
   },
   "awaitingConfirmation": {
-    "message": "Awaiting confirmation"
+    "message": "Čaká sa na potvrdenie"
   },
   "couldNotCompleteBiometrics": {
-    "message": "Could not complete biometrics."
+    "message": "Overenie pomocou biometrie zlyhalo."
   },
   "needADifferentMethod": {
-    "message": "Need a different method?"
+    "message": "Potrebujete inú metódu?"
   },
   "useMasterPassword": {
-    "message": "Use master password"
+    "message": "Použiť hlavné heslo"
   },
   "usePin": {
-    "message": "Use PIN"
+    "message": "Použiť PIN"
   },
   "useBiometrics": {
-    "message": "Use biometrics"
+    "message": "Použiť biometrické údaje"
   },
   "enterVerificationCodeSentToEmail": {
-    "message": "Enter the verification code that was sent to your email."
+    "message": "Zadajte overovací kód, ktorý vám bol zaslaný na e-mail."
   },
   "resendCode": {
-    "message": "Resend code"
+    "message": "Znova odoslať kód"
   },
   "membersColumnHeader": {
     "message": "Člen/Skupina"
@@ -7123,7 +7123,7 @@
     }
   },
   "verificationRequired": {
-    "message": "Verification required",
+    "message": "Vyžaduje sa overenie",
     "description": "Default title for the user verification dialog."
   },
   "recoverAccount": {

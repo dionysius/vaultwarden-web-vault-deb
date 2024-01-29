@@ -2817,7 +2817,7 @@
     "message": "Onjuiste code"
   },
   "incorrectPin": {
-    "message": "Incorrect PIN"
+    "message": "Pincode onjuist"
   },
   "exportedVault": {
     "message": "Kluis geëxporteerd."
@@ -6608,37 +6608,37 @@
     }
   },
   "verificationRequiredForActionSetPinToContinue": {
-    "message": "Verification required for this action. Set a PIN to continue."
+    "message": "Deze actie vereist verificatie actie. Stel een pincode in om door te gaan."
   },
   "setPin": {
-    "message": "Set PIN"
+    "message": "Pincode instellen"
   },
   "verifyWithBiometrics": {
-    "message": "Verify with biometrics"
+    "message": "Biometrisch ontgrendelen"
   },
   "awaitingConfirmation": {
-    "message": "Awaiting confirmation"
+    "message": "Wacht op bevestiging"
   },
   "couldNotCompleteBiometrics": {
-    "message": "Could not complete biometrics."
+    "message": "Kon biometrie niet afronden."
   },
   "needADifferentMethod": {
-    "message": "Need a different method?"
+    "message": "Een andere methode proberen?"
   },
   "useMasterPassword": {
-    "message": "Use master password"
+    "message": "Hoofdwachtwoord gebruiken"
   },
   "usePin": {
-    "message": "Use PIN"
+    "message": "Pincode gebruiken"
   },
   "useBiometrics": {
-    "message": "Use biometrics"
+    "message": "Biometrie gebruiken"
   },
   "enterVerificationCodeSentToEmail": {
-    "message": "Enter the verification code that was sent to your email."
+    "message": "Voer de verificatiecode in die naar je e-mail is gestuurd."
   },
   "resendCode": {
-    "message": "Resend code"
+    "message": "Code opnieuw sturen"
   },
   "membersColumnHeader": {
     "message": "Lid/Groep"
@@ -7123,7 +7123,7 @@
     }
   },
   "verificationRequired": {
-    "message": "Verification required",
+    "message": "Verificatie vereist",
     "description": "Default title for the user verification dialog."
   },
   "recoverAccount": {

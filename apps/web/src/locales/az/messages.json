@@ -2817,7 +2817,7 @@
     "message": "Yanlış kod"
   },
   "incorrectPin": {
-    "message": "Incorrect PIN"
+    "message": "Yanlış PIN"
   },
   "exportedVault": {
     "message": "Anbar ixrac edildi."
@@ -6608,37 +6608,37 @@
     }
   },
   "verificationRequiredForActionSetPinToContinue": {
-    "message": "Verification required for this action. Set a PIN to continue."
+    "message": "Bu əməliyyat üçün doğrulama tələb olunur. Davam etmək üçün bir PIN təyin edin."
   },
   "setPin": {
-    "message": "Set PIN"
+    "message": "PIN təyin et"
   },
   "verifyWithBiometrics": {
-    "message": "Verify with biometrics"
+    "message": "Biometriklə doğrula"
   },
   "awaitingConfirmation": {
-    "message": "Awaiting confirmation"
+    "message": "Təsdiq gözlənilir"
   },
   "couldNotCompleteBiometrics": {
-    "message": "Could not complete biometrics."
+    "message": "Biometrik tamamlana bilmədi."
   },
   "needADifferentMethod": {
-    "message": "Need a different method?"
+    "message": "Fərqli bir üsul lazımdır?"
   },
   "useMasterPassword": {
-    "message": "Use master password"
+    "message": "Ana parolu istifadə et"
   },
   "usePin": {
-    "message": "Use PIN"
+    "message": "PIN-i istifadə et"
   },
   "useBiometrics": {
-    "message": "Use biometrics"
+    "message": "Biometrik istifadə et"
   },
   "enterVerificationCodeSentToEmail": {
-    "message": "Enter the verification code that was sent to your email."
+    "message": "E-poçtunuza göndərilmiş doğrulama kodunu daxil edin."
   },
   "resendCode": {
-    "message": "Resend code"
+    "message": "Kodu təkrar göndər"
   },
   "membersColumnHeader": {
     "message": "Üzv/Qrup"
@@ -7123,7 +7123,7 @@
     }
   },
   "verificationRequired": {
-    "message": "Verification required",
+    "message": "Doğrulama tələb olunur",
     "description": "Default title for the user verification dialog."
   },
   "recoverAccount": {
