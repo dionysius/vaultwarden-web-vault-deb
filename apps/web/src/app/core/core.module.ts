@@ -122,14 +122,14 @@ import { WebPlatformUtilsService } from "./web-platform-utils.service";
     {
       provide: SingleUserStateProvider,
       useClass: WebSingleUserStateProvider,
-      deps: [MEMORY_STORAGE, OBSERVABLE_DISK_STORAGE, OBSERVABLE_DISK_LOCAL_STORAGE],
+      deps: [OBSERVABLE_MEMORY_STORAGE, OBSERVABLE_DISK_STORAGE, OBSERVABLE_DISK_LOCAL_STORAGE],
     },
     {
       provide: ActiveUserStateProvider,
       useClass: WebActiveUserStateProvider,
       deps: [
         AccountService,
-        MEMORY_STORAGE,
+        OBSERVABLE_MEMORY_STORAGE,
         OBSERVABLE_DISK_STORAGE,
         OBSERVABLE_DISK_LOCAL_STORAGE,
       ],
@@ -137,7 +137,7 @@ import { WebPlatformUtilsService } from "./web-platform-utils.service";
     {
       provide: GlobalStateProvider,
       useClass: WebGlobalStateProvider,
-      deps: [MEMORY_STORAGE, OBSERVABLE_DISK_STORAGE, OBSERVABLE_DISK_LOCAL_STORAGE],
+      deps: [OBSERVABLE_MEMORY_STORAGE, OBSERVABLE_DISK_STORAGE, OBSERVABLE_DISK_LOCAL_STORAGE],
     },
   ],
 })
