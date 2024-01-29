@@ -15,18 +15,20 @@
     *ngIf="!disabledByPolicy"
   ></app-export-scope-callout>
 
-  <bit-form-field *ngIf="flexibleCollectionsEnabled$ | async">
-    <bit-label>{{ "exportFrom" | i18n }}</bit-label>
-    <bit-select formControlName="vaultSelector">
-      <bit-option [label]="'myVault' | i18n" value="myVault" icon="bwi-user" />
-      <bit-option
-        *ngFor="let o of organizations$ | async"
-        [value]="o.id"
-        [label]="o.name"
-        icon="bwi-business"
-      />
-    </bit-select>
-  </bit-form-field>
+  <ng-container *ngIf="organizations$ | async as organizations">
+    <bit-form-field *ngIf="organizations.length > 0">
+      <bit-label>{{ "exportFrom" | i18n }}</bit-label>
+      <bit-select formControlName="vaultSelector">
+        <bit-option [label]="'myVault' | i18n" value="myVault" icon="bwi-user" />
+        <bit-option
+          *ngFor="let o of organizations$ | async"
+          [value]="o.id"
+          [label]="o.name"
+          icon="bwi-business"
+        />
+      </bit-select>
+    </bit-form-field>
+  </ng-container>
 
   <bit-form-field>
     <bit-label>{{ "fileFormat" | i18n }}</bit-label>

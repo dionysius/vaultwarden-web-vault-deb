@@ -1,12 +1,9 @@
 import { Directive, EventEmitter, OnDestroy, OnInit, Output, ViewChild } from "@angular/core";
 import { UntypedFormBuilder, Validators } from "@angular/forms";
-import { concat, map, merge, Observable, startWith, Subject, takeUntil } from "rxjs";
+import { map, merge, Observable, startWith, Subject, takeUntil } from "rxjs";
 
 import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
-import {
-  OrganizationService,
-  canAccessImportExport,
-} from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
+import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
@@ -31,6 +28,7 @@ export class ExportComponent implements OnInit, OnDestroy {
   filePasswordValue: string = null;
   formPromise: Promise<string>;
   private _disabledByPolicy = false;
+
   protected organizationId: string = null;
   organizations$: Observable<Organization[]>;
 
@@ -76,13 +74,6 @@ export class ExportComponent implements OnInit, OnDestroy {
   ) {}
 
   async ngOnInit() {
-    this.organizations$ = concat(
-      this.organizationService.memberOrganizations$.pipe(
-        canAccessImportExport(this.i18nService),
-        map((orgs) => orgs.sort(Utils.getSortFunction(this.i18nService, "name"))),
-      ),
-    );
-
     this.policyService
       .policyAppliesToActiveUser$(PolicyType.DisablePersonalVaultExport)
       .pipe(takeUntil(this.destroy$))
@@ -93,19 +84,6 @@ export class ExportComponent implements OnInit, OnDestroy {
         }
       });
 
-    if (this.organizationId) {
-      this.exportForm.controls.vaultSelector.patchValue(this.organizationId);
-      this.exportForm.controls.vaultSelector.disable();
-    } else {
-      this.exportForm.controls.vaultSelector.valueChanges
-        .pipe(takeUntil(this.destroy$))
-        .subscribe((value) => {
-          this.organizationId = value != "myVault" ? value : undefined;
-        });
-
-      this.exportForm.controls.vaultSelector.setValue("myVault");
-    }
-
     merge(
       this.exportForm.get("format").valueChanges,
       this.exportForm.get("fileEncryptionType").valueChanges,
@@ -113,6 +91,31 @@ export class ExportComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.destroy$))
       .pipe(startWith(0))
       .subscribe(() => this.adjustValidators());
+
+    if (this.organizationId) {
+      this.organizations$ = this.organizationService.memberOrganizations$.pipe(
+        map((orgs) => orgs.filter((org) => org.id == this.organizationId)),
+      );
+      this.exportForm.controls.vaultSelector.patchValue(this.organizationId);
+      this.exportForm.controls.vaultSelector.disable();
+      return;
+    }
+
+    this.organizations$ = this.organizationService.memberOrganizations$.pipe(
+      map((orgs) =>
+        orgs
+          .filter((org) => org.flexibleCollections)
+          .sort(Utils.getSortFunction(this.i18nService, "name")),
+      ),
+    );
+
+    this.exportForm.controls.vaultSelector.valueChanges
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((value) => {
+        this.organizationId = value != "myVault" ? value : undefined;
+      });
+
+    this.exportForm.controls.vaultSelector.setValue("myVault");
   }
 
   ngOnDestroy(): void {
@@ -188,15 +191,15 @@ export class ExportComponent implements OnInit, OnDestroy {
     this.onSaved.emit();
   }
 
-  protected getExportData() {
-    if (
-      this.format === "encrypted_json" &&
-      this.fileEncryptionType === EncryptedExportType.FileEncrypted
-    ) {
-      return this.exportService.getPasswordProtectedExport(this.filePassword);
-    } else {
-      return this.exportService.getExport(this.format, null);
-    }
+  protected async getExportData(): Promise<string> {
+    return Utils.isNullOrWhitespace(this.organizationId)
+      ? this.exportService.getExport(this.format, this.filePassword)
+      : this.exportService.getOrganizationExport(
+          this.organizationId,
+          this.format,
+          this.filePassword,
+          true,
+        );
   }
 
   protected getFileName(prefix?: string) {

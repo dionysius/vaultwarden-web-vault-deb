@@ -1,6 +1,5 @@
 import { mock, MockProxy } from "jest-mock-extended";
 
-import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { KdfConfig } from "@bitwarden/common/auth/models/domain/kdf-config";
 import { CipherWithIdExport } from "@bitwarden/common/models/export/cipher-with-ids.export";
 import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/crypto-function.service";
@@ -21,7 +20,7 @@ import { LoginView } from "@bitwarden/common/vault/models/view/login.view";
 
 import { BuildTestObject, GetUniqueString } from "../../../../common/spec";
 
-import { VaultExportService } from "./vault-export.service";
+import { IndividualVaultExportService } from "./individual-vault-export.service";
 
 const UserCipherViews = [
   generateCipherView(false),
@@ -140,8 +139,7 @@ function expectEqualFolders(folders: Folder[], jsonResult: string) {
 }
 
 describe("VaultExportService", () => {
-  let exportService: VaultExportService;
-  let apiService: MockProxy<ApiService>;
+  let exportService: IndividualVaultExportService;
   let cryptoFunctionService: MockProxy<CryptoFunctionService>;
   let cipherService: MockProxy<CipherService>;
   let folderService: MockProxy<FolderService>;
@@ -149,7 +147,6 @@ describe("VaultExportService", () => {
   let stateService: MockProxy<StateService>;
 
   beforeEach(() => {
-    apiService = mock<ApiService>();
     cryptoFunctionService = mock<CryptoFunctionService>();
     cipherService = mock<CipherService>();
     folderService = mock<FolderService>();
@@ -162,10 +159,9 @@ describe("VaultExportService", () => {
     stateService.getKdfConfig.mockResolvedValue(new KdfConfig(PBKDF2_ITERATIONS.defaultValue));
     cryptoService.encrypt.mockResolvedValue(new EncString("encrypted"));
 
-    exportService = new VaultExportService(
+    exportService = new IndividualVaultExportService(
       folderService,
       cipherService,
-      apiService,
       cryptoService,
       cryptoFunctionService,
       stateService,
