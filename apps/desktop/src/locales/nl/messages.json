@@ -1548,7 +1548,7 @@
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "verificationRequired": {
-    "message": "Verification required",
+    "message": "Verificatie vereist",
     "description": "Default title for the user verification dialog."
   },
   "currentMasterPass": {
@@ -1877,40 +1877,40 @@
     "message": "Je hoofdwachtwoord voldoet niet aan en of meerdere oganisatiebeleidsonderdelen. Om toegang te krijgen tot de kluis, moet je je hoofdwachtwoord nu bijwerken. Doorgaan zal je huidige sessie uitloggen, waarna je opnieuw moet inloggen. Actieve sessies op andere apparaten blijven mogelijk nog een uur actief."
   },
   "tryAgain": {
-    "message": "Try again"
+    "message": "Opnieuw proberen"
   },
   "verificationRequiredForActionSetPinToContinue": {
-    "message": "Verification required for this action. Set a PIN to continue."
+    "message": "Deze actie vereist verificatie actie. Stel een pincode in om door te gaan."
   },
   "setPin": {
-    "message": "Set PIN"
+    "message": "Pincode instellen"
   },
   "verifyWithBiometrics": {
-    "message": "Verify with biometrics"
+    "message": "Biometrisch ontgrendelen"
   },
   "awaitingConfirmation": {
-    "message": "Awaiting confirmation"
+    "message": "Wacht op bevestiging"
   },
   "couldNotCompleteBiometrics": {
-    "message": "Could not complete biometrics."
+    "message": "Kon biometrie niet afronden."
   },
   "needADifferentMethod": {
-    "message": "Need a different method?"
+    "message": "Een andere methode proberen?"
   },
   "useMasterPassword": {
-    "message": "Use master password"
+    "message": "Hoofdwachtwoord gebruiken"
   },
   "usePin": {
-    "message": "Use PIN"
+    "message": "Pincode gebruiken"
   },
   "useBiometrics": {
-    "message": "Use biometrics"
+    "message": "Biometrie gebruiken"
   },
   "enterVerificationCodeSentToEmail": {
-    "message": "Enter the verification code that was sent to your email."
+    "message": "Voer de verificatiecode in die naar je e-mail is gestuurd."
   },
   "resendCode": {
-    "message": "Resend code"
+    "message": "Code opnieuw sturen"
   },
   "hours": {
     "message": "Uren"
@@ -2606,13 +2606,13 @@
     "message": "Onjuiste gebruikersnaam of wachtwoord"
   },
   "incorrectPassword": {
-    "message": "Incorrect password"
+    "message": "Wachtwoord onjuist"
   },
   "incorrectCode": {
-    "message": "Incorrect code"
+    "message": "Code onjuist"
   },
   "incorrectPin": {
-    "message": "Incorrect PIN"
+    "message": "Pincode onjuist"
   },
   "multifactorAuthenticationFailed": {
     "message": "Multifactor-authenticatie mislukt"

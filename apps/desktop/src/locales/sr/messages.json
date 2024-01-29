@@ -61,7 +61,7 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Изаберите организацију у коју желите да преместите овај предмет. Прелазак на организацију преноси власништво над ставком у ту организацију. Више нећете бити директни власник ове ставке након што је премештена."
+    "message": "Изаберите организацију у коју желите да преместите ову ставку. Пребацивање у организацију преноси власништво над ставком тој организацији. Више нећете бити директни власник ове ставке када буде премештена."
   },
   "attachments": {
     "message": "Прилози"
@@ -126,7 +126,7 @@
     "message": "Минимизирај приликом копирања у привремену меморију"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "Минимизирај при копиранју података ставке у привремену меморију."
+    "message": "Минимизирај при копирању података ставке у привремену меморију."
   },
   "toggleVisibility": {
     "message": "Промени видљивост"
@@ -821,7 +821,7 @@
     "message": "Синхронизација није успела"
   },
   "yourVaultIsLocked": {
-    "message": "Сеф је заклјучан. Унесите главну лозинку за наставак."
+    "message": "Сеф је закљчан. Унесите главну лозинку за наставак."
   },
   "unlock": {
     "message": "Откључај"
@@ -891,7 +891,7 @@
     "message": "На мировање система"
   },
   "onSleep": {
-    "message": "Након спаванја система"
+    "message": "Након спавања система"
   },
   "onLocked": {
     "message": "На закључавање система"
@@ -932,7 +932,7 @@
     "message": "Када минимизујете прозор, покажи икону у траци менија."
   },
   "enableCloseToTray": {
-    "message": "Затваранје оставлја иконицу у системској траци"
+    "message": "Затварање оставља иконицу у системској траци"
   },
   "enableCloseToTrayDesc": {
     "message": "Када затворите прозор, уместо тога покажите икону у системској траци."
@@ -1548,7 +1548,7 @@
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "verificationRequired": {
-    "message": "Verification required",
+    "message": "Потребдна верификација",
     "description": "Default title for the user verification dialog."
   },
   "currentMasterPass": {
@@ -1877,40 +1877,40 @@
     "message": "Ваша главна лозинка не испуњава једну или више смерница ваше организације. Да бисте приступили сефу, морате одмах да ажурирате главну лозинку. Ако наставите, одјавићете се са ваше тренутне сесије, што захтева да се поново пријавите. Активне сесије на другим уређајима могу да остану активне до један сат."
   },
   "tryAgain": {
-    "message": "Try again"
+    "message": "Покушајте поново"
   },
   "verificationRequiredForActionSetPinToContinue": {
-    "message": "Verification required for this action. Set a PIN to continue."
+    "message": "За ову радњу је потребна верификација. Подесите ПИН да бисте наставили."
   },
   "setPin": {
-    "message": "Set PIN"
+    "message": "Поставите PIN"
   },
   "verifyWithBiometrics": {
-    "message": "Verify with biometrics"
+    "message": "Верификујте помоћу биометрије"
   },
   "awaitingConfirmation": {
-    "message": "Awaiting confirmation"
+    "message": "Чека се потврда"
   },
   "couldNotCompleteBiometrics": {
-    "message": "Could not complete biometrics."
+    "message": "Није могуће завршити биометрију."
   },
   "needADifferentMethod": {
-    "message": "Need a different method?"
+    "message": "Потребан вам је други начин?"
   },
   "useMasterPassword": {
-    "message": "Use master password"
+    "message": "Користите главну лозинку"
   },
   "usePin": {
-    "message": "Use PIN"
+    "message": "Користите ПИН"
   },
   "useBiometrics": {
-    "message": "Use biometrics"
+    "message": "Користите биометрију"
   },
   "enterVerificationCodeSentToEmail": {
-    "message": "Enter the verification code that was sent to your email."
+    "message": "Унесите верификациони кôд који је послат на Вашу е-адресу."
   },
   "resendCode": {
-    "message": "Resend code"
+    "message": "Поново пошаљите код"
   },
   "hours": {
     "message": "Сата"
@@ -2606,13 +2606,13 @@
     "message": "Неважеће корисничко име или лозинка"
   },
   "incorrectPassword": {
-    "message": "Incorrect password"
+    "message": "Погрешна лозинка"
   },
   "incorrectCode": {
-    "message": "Incorrect code"
+    "message": "Погрешан код"
   },
   "incorrectPin": {
-    "message": "Incorrect PIN"
+    "message": "Нетачан PIN"
   },
   "multifactorAuthenticationFailed": {
     "message": "Вишефакторска аутентификација је неуспешна"

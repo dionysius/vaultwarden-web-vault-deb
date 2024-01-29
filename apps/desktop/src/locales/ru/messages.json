@@ -1548,7 +1548,7 @@
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "verificationRequired": {
-    "message": "Verification required",
+    "message": "Требуется верификация",
     "description": "Default title for the user verification dialog."
   },
   "currentMasterPass": {
@@ -1877,40 +1877,40 @@
     "message": "Ваш мастер-пароль не соответствует требованиям политики вашей организации. Для доступа к хранилищу вы должны обновить свой мастер-пароль прямо сейчас. При этом текущий сеанс будет завершен и потребуется повторная авторизация. Сеансы на других устройствах могут оставаться активными в течение часа."
   },
   "tryAgain": {
-    "message": "Try again"
+    "message": "Попробуйте снова"
   },
   "verificationRequiredForActionSetPinToContinue": {
-    "message": "Verification required for this action. Set a PIN to continue."
+    "message": "Для этого действия требуется верификация. Для продолжения введите PIN-код."
   },
   "setPin": {
-    "message": "Set PIN"
+    "message": "Задать PIN-код"
   },
   "verifyWithBiometrics": {
-    "message": "Verify with biometrics"
+    "message": "Верифицировать с помощью биометрии"
   },
   "awaitingConfirmation": {
-    "message": "Awaiting confirmation"
+    "message": "Ожидание подтверждения"
   },
   "couldNotCompleteBiometrics": {
-    "message": "Could not complete biometrics."
+    "message": "Не удалось выполнить верификацию биометрией."
   },
   "needADifferentMethod": {
-    "message": "Need a different method?"
+    "message": "Нужен другой метод?"
   },
   "useMasterPassword": {
-    "message": "Use master password"
+    "message": "Использовать мастер-пароль"
   },
   "usePin": {
-    "message": "Use PIN"
+    "message": "Использовать PIN-код"
   },
   "useBiometrics": {
-    "message": "Use biometrics"
+    "message": "Использовать биометрию"
   },
   "enterVerificationCodeSentToEmail": {
-    "message": "Enter the verification code that was sent to your email."
+    "message": "Введите код подтверждения, отправленный вам на почту."
   },
   "resendCode": {
-    "message": "Resend code"
+    "message": "Отправить код повторно"
   },
   "hours": {
     "message": "Час."
@@ -2606,13 +2606,13 @@
     "message": "Неверное имя пользователя или пароль"
   },
   "incorrectPassword": {
-    "message": "Incorrect password"
+    "message": "Неверный пароль"
   },
   "incorrectCode": {
-    "message": "Incorrect code"
+    "message": "Неверный код"
   },
   "incorrectPin": {
-    "message": "Incorrect PIN"
+    "message": "Неверный PIN-код"
   },
   "multifactorAuthenticationFailed": {
     "message": "Сбой многофакторной аутентификации"

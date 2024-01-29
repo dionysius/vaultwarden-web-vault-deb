@@ -1548,7 +1548,7 @@
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "verificationRequired": {
-    "message": "Verification required",
+    "message": "Vahvistus vaaditaan",
     "description": "Default title for the user verification dialog."
   },
   "currentMasterPass": {
@@ -1877,40 +1877,40 @@
     "message": "Pääsalasanasi ei täytä yhden tai useamman organisaatiokäytännön vaatimuksia ja holvin käyttämiseksi sinun on vaihdettava se nyt. Tämä uloskirjaa kaikki nykyiset istunnot pakottaen uudelleenkirjautumisen. Muiden laitteiden aktiiviset istunnot saattavat toimia vielä tunnin ajan."
   },
   "tryAgain": {
-    "message": "Try again"
+    "message": "Yritä uudelleen"
   },
   "verificationRequiredForActionSetPinToContinue": {
-    "message": "Verification required for this action. Set a PIN to continue."
+    "message": "Toiminto vaatii vahvistuksen. Jatka asettamalla PIN-koodi."
   },
   "setPin": {
-    "message": "Set PIN"
+    "message": "Aseta PIN-koodi"
   },
   "verifyWithBiometrics": {
-    "message": "Verify with biometrics"
+    "message": "Vahvista biometrialla"
   },
   "awaitingConfirmation": {
-    "message": "Awaiting confirmation"
+    "message": "Odottaa vahvistusta"
   },
   "couldNotCompleteBiometrics": {
-    "message": "Could not complete biometrics."
+    "message": "Biometrinen todennus ei onnistunut."
   },
   "needADifferentMethod": {
-    "message": "Need a different method?"
+    "message": "Tarvitsetko eri menetelmän?"
   },
   "useMasterPassword": {
-    "message": "Use master password"
+    "message": "Käytä pääsalasanaa"
   },
   "usePin": {
-    "message": "Use PIN"
+    "message": "Käytä PIN-koodia"
   },
   "useBiometrics": {
-    "message": "Use biometrics"
+    "message": "Käytä biometriaa"
   },
   "enterVerificationCodeSentToEmail": {
-    "message": "Enter the verification code that was sent to your email."
+    "message": "Syötä sähköpostiosoitteeseesi lähetetty vahvistuskoodi."
   },
   "resendCode": {
-    "message": "Resend code"
+    "message": "Lähetä koodi uudelleen"
   },
   "hours": {
     "message": "Tuntia"
@@ -2606,13 +2606,13 @@
     "message": "Virheellinen käyttäjätunnus tai salasana"
   },
   "incorrectPassword": {
-    "message": "Incorrect password"
+    "message": "Virheellinen salasana"
   },
   "incorrectCode": {
-    "message": "Incorrect code"
+    "message": "Virheellinen koodi"
   },
   "incorrectPin": {
-    "message": "Incorrect PIN"
+    "message": "Virheellinen PIN-koodi"
   },
   "multifactorAuthenticationFailed": {
     "message": "Monivaiheinen todennus epäonnistui"
