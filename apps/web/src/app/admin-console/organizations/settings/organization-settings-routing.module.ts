@@ -49,8 +49,8 @@ const routes: Routes = [
           {
             path: "import",
             loadComponent: () =>
-              import("../../../tools/import/import-web.component").then(
-                (mod) => mod.ImportWebComponent,
+              import("../../../tools/import/admin-import.component").then(
+                (mod) => mod.AdminImportComponent,
               ),
             canActivate: [OrganizationPermissionsGuard],
             data: {
