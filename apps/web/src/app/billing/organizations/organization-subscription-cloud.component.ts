@@ -140,7 +140,7 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
   get subscriptionLineItems() {
     return this.lineItems.map((lineItem: BillingSubscriptionItemResponse) => ({
       name: lineItem.name,
-      amount: this.discountPrice(lineItem.amount),
+      amount: this.discountPrice(lineItem.amount, lineItem.productId),
       quantity: lineItem.quantity,
       interval: lineItem.interval,
       sponsoredSubscriptionItem: lineItem.sponsoredSubscriptionItem,
@@ -183,7 +183,7 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
   }
 
   get storageGbPrice() {
-    return this.discountPrice(this.sub.plan.PasswordManager.additionalStoragePricePerGb);
+    return this.sub.plan.PasswordManager.additionalStoragePricePerGb;
   }
 
   get seatPrice() {
@@ -198,14 +198,12 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
     return {
       seatCount: this.sub.smSeats,
       maxAutoscaleSeats: this.sub.maxAutoscaleSmSeats,
-      seatPrice: this.discountPrice(this.sub.plan.SecretsManager.seatPrice),
+      seatPrice: this.sub.plan.SecretsManager.seatPrice,
       maxAutoscaleServiceAccounts: this.sub.maxAutoscaleSmServiceAccounts,
       additionalServiceAccounts:
         this.sub.smServiceAccounts - this.sub.plan.SecretsManager.baseServiceAccount,
       interval: this.sub.plan.isAnnual ? "year" : "month",
-      additionalServiceAccountPrice: this.discountPrice(
-        this.sub.plan.SecretsManager.additionalPricePerServiceAccount,
-      ),
+      additionalServiceAccountPrice: this.sub.plan.SecretsManager.additionalPricePerServiceAccount,
       baseServiceAccountCount: this.sub.plan.SecretsManager.baseServiceAccount,
     };
   }
@@ -404,9 +402,12 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
     }
   };
 
-  discountPrice = (price: number) => {
+  discountPrice = (price: number, productId: string = null) => {
     const discount =
-      !!this.customerDiscount && this.customerDiscount.active
+      this.customerDiscount?.active &&
+      (!productId ||
+        !this.customerDiscount.appliesTo.length ||
+        this.customerDiscount.appliesTo.includes(productId))
         ? price * (this.customerDiscount.percentOff / 100)
         : 0;
 

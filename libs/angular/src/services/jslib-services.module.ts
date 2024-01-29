@@ -76,7 +76,9 @@ import { WebAuthnLoginApiService } from "@bitwarden/common/auth/services/webauth
 import { WebAuthnLoginPrfCryptoService } from "@bitwarden/common/auth/services/webauthn-login/webauthn-login-prf-crypto.service";
 import { WebAuthnLoginService } from "@bitwarden/common/auth/services/webauthn-login/webauthn-login.service";
 import { BillingBannerServiceAbstraction } from "@bitwarden/common/billing/abstractions/billing-banner.service.abstraction";
+import { OrganizationBillingServiceAbstraction } from "@bitwarden/common/billing/abstractions/organization-billing.service";
 import { BillingBannerService } from "@bitwarden/common/billing/services/billing-banner.service";
+import { OrganizationBillingService } from "@bitwarden/common/billing/services/organization-billing.service";
 import { AppIdService as AppIdServiceAbstraction } from "@bitwarden/common/platform/abstractions/app-id.service";
 import { BroadcasterService as BroadcasterServiceAbstraction } from "@bitwarden/common/platform/abstractions/broadcaster.service";
 import { ConfigApiServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config-api.service.abstraction";
@@ -863,6 +865,16 @@ import { ModalService } from "./modal.service";
       provide: BillingBannerServiceAbstraction,
       useClass: BillingBannerService,
       deps: [StateProvider],
+    },
+    {
+      provide: OrganizationBillingServiceAbstraction,
+      useClass: OrganizationBillingService,
+      deps: [
+        CryptoServiceAbstraction,
+        EncryptService,
+        I18nServiceAbstraction,
+        OrganizationApiServiceAbstraction,
+      ],
     },
   ],
 })

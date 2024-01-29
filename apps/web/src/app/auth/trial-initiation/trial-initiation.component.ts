@@ -18,6 +18,7 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 
 import { RouterService } from "./../../core/router.service";
+import { SubscriptionType } from "./secrets-manager/secrets-manager-trial-billing-step.component";
 import { VerticalStepperComponent } from "./vertical-stepper/vertical-stepper.component";
 
 enum ValidOrgParams {
@@ -44,6 +45,7 @@ enum ValidLayoutParams {
   cnetcmpgnteams = "cnetcmpgnteams",
   abmenterprise = "abmenterprise",
   abmteams = "abmteams",
+  secretsManager = "secretsManager",
 }
 
 @Component({
@@ -77,6 +79,7 @@ export class TrialInitiationComponent implements OnInit, OnDestroy {
     ValidOrgParams.individual,
   ];
   layouts = ValidLayoutParams;
+  orgTypes = ValidOrgParams;
   referenceData: ReferenceEventRequest;
   @ViewChild("stepper", { static: false }) verticalStepper: VerticalStepperComponent;
 
@@ -258,6 +261,15 @@ export class TrialInitiationComponent implements OnInit, OnDestroy {
     return this.org;
   }
 
+  get freeTrialText() {
+    const translationKey =
+      this.layout === this.layouts.secretsManager
+        ? "startYour7DayFreeTrialOfBitwardenSecretsManagerFor"
+        : "startYour7DayFreeTrialOfBitwardenFor";
+
+    return this.i18nService.t(translationKey, this.org);
+  }
+
   private setupFamilySponsorship(sponsorshipToken: string) {
     if (sponsorshipToken != null) {
       const route = this.router.createUrlTree(["setup/families-for-enterprise"], {
@@ -266,4 +278,6 @@ export class TrialInitiationComponent implements OnInit, OnDestroy {
       this.routerService.setPreviousUrl(route.toString());
     }
   }
+
+  protected readonly SubscriptionType = SubscriptionType;
 }

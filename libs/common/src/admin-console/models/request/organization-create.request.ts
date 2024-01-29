@@ -27,4 +27,5 @@ export class OrganizationCreateRequest {
   useSecretsManager: boolean;
   additionalSmSeats: number;
   additionalServiceAccounts: number;
+  isFromSecretsManagerTrial: boolean;
 }

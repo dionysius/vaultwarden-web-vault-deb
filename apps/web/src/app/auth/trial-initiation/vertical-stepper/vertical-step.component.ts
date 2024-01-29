@@ -9,4 +9,5 @@ import { Component, Input } from "@angular/core";
 export class VerticalStep extends CdkStep {
   @Input() subLabel = "";
   @Input() applyBorder = true;
+  @Input() addSubLabelSpacing = false;
 }
