@@ -327,7 +327,7 @@
     "message": "Mot de passe"
   },
   "totp": {
-    "message": "Authenticator secret"
+    "message": "Application d'authentification"
   },
   "passphrase": {
     "message": "Phrase de passe"
@@ -1494,7 +1494,7 @@
     "message": "Code PIN invalide."
   },
   "tooManyInvalidPinEntryAttemptsLoggingOut": {
-    "message": "Too many invalid PIN entry attempts. Logging out."
+    "message": "Trop de tentatives de saisie du code PIN incorrectes. Déconnexion."
   },
   "unlockWithBiometrics": {
     "message": "Déverrouiller par biométrie"
@@ -2007,7 +2007,7 @@
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "verificationRequired": {
-    "message": "Verification required",
+    "message": "Vérification requise",
     "description": "Default title for the user verification dialog."
   },
   "hours": {
@@ -2648,40 +2648,40 @@
     }
   },
   "tryAgain": {
-    "message": "Try again"
+    "message": "Essayez de nouveau"
   },
   "verificationRequiredForActionSetPinToContinue": {
-    "message": "Verification required for this action. Set a PIN to continue."
+    "message": "Vérification requise pour cette action. Définissez un code PIN pour continuer."
   },
   "setPin": {
-    "message": "Set PIN"
+    "message": "Définir le code PIN"
   },
   "verifyWithBiometrics": {
-    "message": "Verify with biometrics"
+    "message": "Vérifier par biométrie"
   },
   "awaitingConfirmation": {
-    "message": "Awaiting confirmation"
+    "message": "En attente de confirmation"
   },
   "couldNotCompleteBiometrics": {
-    "message": "Could not complete biometrics."
+    "message": "Impossible de compléter la biométrie."
   },
   "needADifferentMethod": {
-    "message": "Need a different method?"
+    "message": "Besoin d'une méthode différente ?"
   },
   "useMasterPassword": {
-    "message": "Use master password"
+    "message": "Utiliser le mot de passe principal"
   },
   "usePin": {
-    "message": "Use PIN"
+    "message": "Utiliser le code PIN"
   },
   "useBiometrics": {
-    "message": "Use biometrics"
+    "message": "Utiliser la biométrie"
   },
   "enterVerificationCodeSentToEmail": {
-    "message": "Enter the verification code that was sent to your email."
+    "message": "Entrez le code de vérification qui a été envoyé à votre adresse courriel."
   },
   "resendCode": {
-    "message": "Resend code"
+    "message": "Renvoyer le code"
   },
   "total": {
     "message": "Total"
@@ -2827,13 +2827,13 @@
     "message": "Nom d'utilisateur ou mot de passe incorrect"
   },
   "incorrectPassword": {
-    "message": "Incorrect password"
+    "message": "Mot de passe incorrect"
   },
   "incorrectCode": {
-    "message": "Incorrect code"
+    "message": "Code incorrect"
   },
   "incorrectPin": {
-    "message": "Incorrect PIN"
+    "message": "Code PIN incorrect"
   },
   "multifactorAuthenticationFailed": {
     "message": "Authentification multifacteur échouée"
@@ -2950,11 +2950,11 @@
     "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutofillDescription": {
-    "message": "Ignoring this option may cause conflicts between the Bitwarden auto-fill menu and your browser's.",
+    "message": "Ignorer cette option peut causer des conflits entre le menu de saisie automatique de Bitwarden et celui de votre navigateur.",
     "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutofillPrivacyRequiredDescription": {
-    "message": "This action will restart the Bitwarden extension. Ignoring this option may cause conflicts between the Bitwarden auto-fill menu and your browser's.",
+    "message": "Cette action va redémarrer l'extension Bitwarden. Ignorer cette option peut causer des conflits entre le menu de saisie automatique de Bitwarden et celui de votre navigateur.",
     "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutoFillSettings": {
@@ -2962,15 +2962,15 @@
     "description": "Label for the setting that allows overriding the default browser autofill settings"
   },
   "privacyPermissionAdditionNotGrantedTitle": {
-    "message": "Unable to set Bitwarden as the default password manager",
+    "message": "Impossible de définir Bitwarden comme gestionnaire de mots de passe par défaut",
     "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "privacyPermissionAdditionNotGrantedDescription": {
-    "message": "You must grant browser privacy permissions to Bitwarden to set it as the default password manager.",
+    "message": "Vous devez accorder les autorisations de confidentialité du navigateur à Bitwarden pour le définir comme gestionnaire de mots de passe par défaut.",
     "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "makeDefault": {
-    "message": "Make default",
+    "message": "Définir par défaut",
     "description": "Button text for the setting that allows overriding the default browser autofill settings"
   }
 }

@@ -2007,7 +2007,7 @@
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "verificationRequired": {
-    "message": "Verification required",
+    "message": "Потрібне підтвердження",
     "description": "Default title for the user verification dialog."
   },
   "hours": {
@@ -2648,40 +2648,40 @@
     }
   },
   "tryAgain": {
-    "message": "Try again"
+    "message": "Спробуйте знову"
   },
   "verificationRequiredForActionSetPinToContinue": {
-    "message": "Verification required for this action. Set a PIN to continue."
+    "message": "Ця дія потребує підтвердження. Встановіть PIN-код, щоб продовжити."
   },
   "setPin": {
-    "message": "Set PIN"
+    "message": "Встановити PIN-код"
   },
   "verifyWithBiometrics": {
-    "message": "Verify with biometrics"
+    "message": "Підтвердити з біометрією"
   },
   "awaitingConfirmation": {
-    "message": "Awaiting confirmation"
+    "message": "Очікується підтвердження"
   },
   "couldNotCompleteBiometrics": {
-    "message": "Could not complete biometrics."
+    "message": "Не вдалося виконати біометричну перевірку."
   },
   "needADifferentMethod": {
-    "message": "Need a different method?"
+    "message": "Потрібен інший спосіб?"
   },
   "useMasterPassword": {
-    "message": "Use master password"
+    "message": "Використати головний пароль"
   },
   "usePin": {
-    "message": "Use PIN"
+    "message": "Використати PIN-код"
   },
   "useBiometrics": {
-    "message": "Use biometrics"
+    "message": "Використати біометрію"
   },
   "enterVerificationCodeSentToEmail": {
-    "message": "Enter the verification code that was sent to your email."
+    "message": "Введіть код підтвердження, надісланий на вашу електронну пошту."
   },
   "resendCode": {
-    "message": "Resend code"
+    "message": "Надіслати новий код"
   },
   "total": {
     "message": "Всього"
@@ -2827,13 +2827,13 @@
     "message": "Неправильне ім'я користувача або пароль"
   },
   "incorrectPassword": {
-    "message": "Incorrect password"
+    "message": "Неправильний пароль"
   },
   "incorrectCode": {
-    "message": "Incorrect code"
+    "message": "Неправильний код"
   },
   "incorrectPin": {
-    "message": "Incorrect PIN"
+    "message": "Неправильний PIN-код"
   },
   "multifactorAuthenticationFailed": {
     "message": "Збій багатофакторної автентифікації"

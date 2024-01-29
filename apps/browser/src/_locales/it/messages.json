@@ -2007,7 +2007,7 @@
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "verificationRequired": {
-    "message": "Verification required",
+    "message": "Verifica necessaria",
     "description": "Default title for the user verification dialog."
   },
   "hours": {
@@ -2648,40 +2648,40 @@
     }
   },
   "tryAgain": {
-    "message": "Try again"
+    "message": "Riprova"
   },
   "verificationRequiredForActionSetPinToContinue": {
-    "message": "Verification required for this action. Set a PIN to continue."
+    "message": "Verifica necessaria per questa azione. Imposta un PIN per continuare."
   },
   "setPin": {
-    "message": "Set PIN"
+    "message": "Imposta PIN"
   },
   "verifyWithBiometrics": {
-    "message": "Verify with biometrics"
+    "message": "Verifica con i dati biometrici"
   },
   "awaitingConfirmation": {
-    "message": "Awaiting confirmation"
+    "message": "In attesa di conferma"
   },
   "couldNotCompleteBiometrics": {
-    "message": "Could not complete biometrics."
+    "message": "Impossibile completare i dati biometrici."
   },
   "needADifferentMethod": {
-    "message": "Need a different method?"
+    "message": "Usa un altro metodo?"
   },
   "useMasterPassword": {
-    "message": "Use master password"
+    "message": "Usa password principale"
   },
   "usePin": {
-    "message": "Use PIN"
+    "message": "Usa PIN"
   },
   "useBiometrics": {
-    "message": "Use biometrics"
+    "message": "Usa dati biometrici"
   },
   "enterVerificationCodeSentToEmail": {
-    "message": "Enter the verification code that was sent to your email."
+    "message": "Inserisci il codice di verifica che è stato inviato alla tua email."
   },
   "resendCode": {
-    "message": "Resend code"
+    "message": "Invia codice di nuovo"
   },
   "total": {
     "message": "Totale"
@@ -2827,13 +2827,13 @@
     "message": "Nome utente o password errati"
   },
   "incorrectPassword": {
-    "message": "Incorrect password"
+    "message": "Password errata"
   },
   "incorrectCode": {
-    "message": "Incorrect code"
+    "message": "Codice errato"
   },
   "incorrectPin": {
-    "message": "Incorrect PIN"
+    "message": "PIN errato"
   },
   "multifactorAuthenticationFailed": {
     "message": "Verifica in due passaggi non riuscita"
