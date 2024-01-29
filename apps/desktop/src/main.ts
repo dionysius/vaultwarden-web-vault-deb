@@ -14,6 +14,7 @@ import { DefaultDerivedStateProvider } from "@bitwarden/common/platform/state/im
 import { DefaultGlobalStateProvider } from "@bitwarden/common/platform/state/implementations/default-global-state.provider";
 import { DefaultSingleUserStateProvider } from "@bitwarden/common/platform/state/implementations/default-single-user-state.provider";
 import { DefaultStateProvider } from "@bitwarden/common/platform/state/implementations/default-state.provider";
+import { MemoryStorageService as MemoryStorageServiceForStateProviders } from "@bitwarden/common/platform/state/storage/memory-storage.service";
 /*/ eslint-enable import/no-restricted-paths */
 
 import { MenuMain } from "./main/menu/menu.main";
@@ -38,6 +39,7 @@ export class Main {
   i18nService: I18nMainService;
   storageService: ElectronStorageService;
   memoryStorageService: MemoryStorageService;
+  memoryStorageForStateProviders: MemoryStorageServiceForStateProviders;
   messagingService: ElectronMainMessagingService;
   stateService: ElectronStateService;
   environmentService: EnvironmentService;
@@ -95,8 +97,9 @@ export class Main {
     storageDefaults["global.vaultTimeoutAction"] = "lock";
     this.storageService = new ElectronStorageService(app.getPath("userData"), storageDefaults);
     this.memoryStorageService = new MemoryStorageService();
+    this.memoryStorageForStateProviders = new MemoryStorageServiceForStateProviders();
     const globalStateProvider = new DefaultGlobalStateProvider(
-      this.memoryStorageService,
+      this.memoryStorageForStateProviders,
       this.storageService,
     );
 
@@ -109,12 +112,12 @@ export class Main {
     const stateProvider = new DefaultStateProvider(
       new DefaultActiveUserStateProvider(
         accountService,
-        this.memoryStorageService,
+        this.memoryStorageForStateProviders,
         this.storageService,
       ),
-      new DefaultSingleUserStateProvider(this.memoryStorageService, this.storageService),
+      new DefaultSingleUserStateProvider(this.memoryStorageForStateProviders, this.storageService),
       globalStateProvider,
-      new DefaultDerivedStateProvider(this.memoryStorageService),
+      new DefaultDerivedStateProvider(this.memoryStorageForStateProviders),
     );
 
     this.environmentService = new EnvironmentService(stateProvider, accountService);

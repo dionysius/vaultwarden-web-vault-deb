@@ -60,6 +60,7 @@ import { DefaultDerivedStateProvider } from "@bitwarden/common/platform/state/im
 import { DefaultGlobalStateProvider } from "@bitwarden/common/platform/state/implementations/default-global-state.provider";
 import { DefaultSingleUserStateProvider } from "@bitwarden/common/platform/state/implementations/default-single-user-state.provider";
 import { DefaultStateProvider } from "@bitwarden/common/platform/state/implementations/default-state.provider";
+import { MemoryStorageService as MemoryStorageServiceForStateProviders } from "@bitwarden/common/platform/state/storage/memory-storage.service";
 /* eslint-enable import/no-restricted-paths */
 import { AuditService } from "@bitwarden/common/services/audit.service";
 import { EventCollectionService } from "@bitwarden/common/services/event/event-collection.service";
@@ -125,6 +126,7 @@ export class Main {
   storageService: LowdbStorageService;
   secureStorageService: NodeEnvSecureStorageService;
   memoryStorageService: MemoryStorageService;
+  memoryStorageForStateProviders: MemoryStorageServiceForStateProviders;
   i18nService: I18nService;
   platformUtilsService: CliPlatformUtilsService;
   cryptoService: CryptoService;
@@ -227,14 +229,15 @@ export class Main {
     );
 
     this.memoryStorageService = new MemoryStorageService();
+    this.memoryStorageForStateProviders = new MemoryStorageServiceForStateProviders();
 
     this.globalStateProvider = new DefaultGlobalStateProvider(
-      this.memoryStorageService,
+      this.memoryStorageForStateProviders,
       this.storageService,
     );
 
     this.singleUserStateProvider = new DefaultSingleUserStateProvider(
-      this.memoryStorageService,
+      this.memoryStorageForStateProviders,
       this.storageService,
     );
 
@@ -248,11 +251,13 @@ export class Main {
 
     this.activeUserStateProvider = new DefaultActiveUserStateProvider(
       this.accountService,
-      this.memoryStorageService,
+      this.memoryStorageForStateProviders,
       this.storageService,
     );
 
-    this.derivedStateProvider = new DefaultDerivedStateProvider(this.memoryStorageService);
+    this.derivedStateProvider = new DefaultDerivedStateProvider(
+      this.memoryStorageForStateProviders,
+    );
 
     this.stateProvider = new DefaultStateProvider(
       this.activeUserStateProvider,

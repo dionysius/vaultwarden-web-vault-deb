@@ -3,11 +3,12 @@ import { Subject } from "rxjs";
 
 import {
   AbstractStorageService,
+  ObservableStorageService,
   StorageUpdate,
 } from "../src/platform/abstractions/storage.service";
 import { StorageOptions } from "../src/platform/models/domain/storage-options";
 
-export class FakeStorageService implements AbstractStorageService {
+export class FakeStorageService implements AbstractStorageService, ObservableStorageService {
   private store: Record<string, unknown>;
   private updatesSubject = new Subject<StorageUpdate>();
   private _valuesRequireDeserialization = false;

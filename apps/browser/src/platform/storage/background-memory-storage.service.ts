@@ -1,4 +1,5 @@
-import { MemoryStorageService } from "@bitwarden/common/platform/services/memory-storage.service";
+// eslint-disable-next-line import/no-restricted-paths -- Implementation for memory storage specifically for browser backgrounds
+import { MemoryStorageService } from "@bitwarden/common/platform/state/storage/memory-storage.service";
 
 import { BrowserApi } from "../browser/browser-api";
 
@@ -27,7 +28,7 @@ export class BackgroundMemoryStorageService extends MemoryStorageService {
       // Initialize the new memory storage service with existing data
       this.sendMessageTo(port, {
         action: "initialization",
-        data: Array.from(this.store.keys()),
+        data: Array.from(Object.keys(this.store)),
       });
     });
     this.updates$.subscribe((update) => {

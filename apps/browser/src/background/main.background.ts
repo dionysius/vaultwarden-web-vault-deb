@@ -51,6 +51,7 @@ import { PlatformUtilsService as PlatformUtilsServiceAbstraction } from "@bitwar
 import {
   AbstractMemoryStorageService,
   AbstractStorageService,
+  ObservableStorageService,
 } from "@bitwarden/common/platform/abstractions/storage.service";
 import { SystemService as SystemServiceAbstraction } from "@bitwarden/common/platform/abstractions/system.service";
 import { StateFactory } from "@bitwarden/common/platform/factories/state-factory";
@@ -62,6 +63,7 @@ import { ContainerService } from "@bitwarden/common/platform/services/container.
 import { EncryptServiceImplementation } from "@bitwarden/common/platform/services/cryptography/encrypt.service.implementation";
 import { MultithreadEncryptServiceImplementation } from "@bitwarden/common/platform/services/cryptography/multithread-encrypt.service.implementation";
 import { FileUploadService } from "@bitwarden/common/platform/services/file-upload/file-upload.service";
+import { MemoryStorageService } from "@bitwarden/common/platform/services/memory-storage.service";
 import { SystemService } from "@bitwarden/common/platform/services/system.service";
 import { WebCryptoFunctionService } from "@bitwarden/common/platform/services/web-crypto-function.service";
 import {
@@ -188,6 +190,7 @@ export default class MainBackground {
   storageService: AbstractStorageService;
   secureStorageService: AbstractStorageService;
   memoryStorageService: AbstractMemoryStorageService;
+  memoryStorageForStateProviders: AbstractMemoryStorageService & ObservableStorageService;
   i18nService: I18nServiceAbstraction;
   platformUtilsService: PlatformUtilsServiceAbstraction;
   logService: LogServiceAbstraction;
@@ -314,9 +317,16 @@ export default class MainBackground {
             new EncryptServiceImplementation(this.cryptoFunctionService, this.logService, false),
             new KeyGenerationService(this.cryptoFunctionService),
           )
+        : new MemoryStorageService();
+    this.memoryStorageForStateProviders =
+      BrowserApi.manifestVersion === 3
+        ? new LocalBackedSessionStorageService(
+            new EncryptServiceImplementation(this.cryptoFunctionService, this.logService, false),
+            new KeyGenerationService(this.cryptoFunctionService),
+          )
         : new BackgroundMemoryStorageService();
     this.globalStateProvider = new DefaultGlobalStateProvider(
-      this.memoryStorageService as BackgroundMemoryStorageService,
+      this.memoryStorageForStateProviders,
       this.storageService as BrowserLocalStorageService,
     );
     this.encryptService = flagEnabled("multithreadDecryption")
@@ -328,7 +338,7 @@ export default class MainBackground {
       : new EncryptServiceImplementation(this.cryptoFunctionService, this.logService, true);
 
     this.singleUserStateProvider = new DefaultSingleUserStateProvider(
-      this.memoryStorageService as BackgroundMemoryStorageService,
+      this.memoryStorageForStateProviders,
       this.storageService as BrowserLocalStorageService,
     );
     this.accountService = new AccountServiceImplementation(
@@ -338,11 +348,11 @@ export default class MainBackground {
     );
     this.activeUserStateProvider = new DefaultActiveUserStateProvider(
       this.accountService,
-      this.memoryStorageService as BackgroundMemoryStorageService,
+      this.memoryStorageForStateProviders,
       this.storageService as BrowserLocalStorageService,
     );
     this.derivedStateProvider = new BackgroundDerivedStateProvider(
-      this.memoryStorageService as BackgroundMemoryStorageService,
+      this.memoryStorageForStateProviders,
     );
     this.stateProvider = new DefaultStateProvider(
       this.activeUserStateProvider,
