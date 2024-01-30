@@ -51,6 +51,6 @@ export function deepLinkGuard(): CanActivateFn {
   };
 
   function isValidUrl(url: string | null | undefined): boolean {
-    return !Utils.isNullOrEmpty(url) && !url?.toLocaleLowerCase().includes("lock");
+    return !Utils.isNullOrEmpty(url) && !url?.toLocaleLowerCase().includes("/lock");
   }
 }
