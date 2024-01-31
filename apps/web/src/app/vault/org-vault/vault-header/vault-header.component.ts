@@ -77,7 +77,7 @@ export class VaultHeaderComponent {
       return this.i18nService.t("unassigned");
     }
 
-    return `${this.organization.name} ${headerType}`;
+    return `${this.organization?.name} ${headerType}`;
   }
 
   protected get showBreadcrumbs() {
