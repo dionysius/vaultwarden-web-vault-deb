@@ -1,4 +1,4 @@
-import * as program from "commander";
+import { OptionValues } from "commander";
 
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
@@ -21,7 +21,7 @@ export class SendGetCommand extends DownloadCommand {
     super(cryptoService);
   }
 
-  async run(id: string, options: program.OptionValues) {
+  async run(id: string, options: OptionValues) {
     const serveCommand = process.env.BW_SERVE === "true";
     if (serveCommand && !Utils.isGuid(id)) {
       return Response.badRequest("`" + id + "` is not a GUID.");

@@ -1,4 +1,4 @@
-import * as program from "commander";
+import { OptionValues } from "commander";
 import * as inquirer from "inquirer";
 
 import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
@@ -22,7 +22,7 @@ export class ExportCommand {
     private eventCollectionService: EventCollectionService,
   ) {}
 
-  async run(options: program.OptionValues): Promise<Response> {
+  async run(options: OptionValues): Promise<Response> {
     if (
       options.organizationid == null &&
       (await this.policyService.policyAppliesToUser(PolicyType.DisablePersonalVaultExport))
@@ -79,7 +79,7 @@ export class ExportCommand {
 
   private async saveFile(
     exportContent: string,
-    options: program.OptionValues,
+    options: OptionValues,
     format: ExportFormat,
   ): Promise<Response> {
     try {

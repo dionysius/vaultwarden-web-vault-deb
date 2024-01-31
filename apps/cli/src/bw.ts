@@ -1,7 +1,7 @@
 import * as fs from "fs";
 import * as path from "path";
 
-import * as program from "commander";
+import { program } from "commander";
 import * as jsdom from "jsdom";
 
 import { PinCryptoServiceAbstraction, PinCryptoService } from "@bitwarden/auth/common";

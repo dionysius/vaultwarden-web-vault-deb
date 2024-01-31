@@ -1,4 +1,4 @@
-import * as program from "commander";
+import { OptionValues } from "commander";
 
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 
@@ -9,7 +9,7 @@ import { StringResponse } from "../models/response/string.response";
 export class ConfigCommand {
   constructor(private environmentService: EnvironmentService) {}
 
-  async run(setting: string, value: string, options: program.OptionValues): Promise<Response> {
+  async run(setting: string, value: string, options: OptionValues): Promise<Response> {
     setting = setting.toLowerCase();
     switch (setting) {
       case "server":
@@ -19,7 +19,7 @@ export class ConfigCommand {
     }
   }
 
-  private async getOrSetServer(url: string, options: program.OptionValues): Promise<Response> {
+  private async getOrSetServer(url: string, options: OptionValues): Promise<Response> {
     if (
       (url == null || url.trim() === "") &&
       !options.webVault &&

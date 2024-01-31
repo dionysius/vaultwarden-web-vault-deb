@@ -1,4 +1,4 @@
-import * as program from "commander";
+import { OptionValues } from "commander";
 import * as inquirer from "inquirer";
 
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
@@ -16,11 +16,7 @@ export class ImportCommand {
     private syncService: SyncService,
   ) {}
 
-  async run(
-    format: ImportType,
-    filepath: string,
-    options: program.OptionValues,
-  ): Promise<Response> {
+  async run(format: ImportType, filepath: string, options: OptionValues): Promise<Response> {
     const organizationId = options.organizationid;
     if (organizationId != null) {
       const organization = await this.organizationService.getFromState(organizationId);

@@ -1,4 +1,4 @@
-import * as program from "commander";
+import { OptionValues } from "commander";
 import * as inquirer from "inquirer";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
@@ -36,7 +36,7 @@ export class SendReceiveCommand extends DownloadCommand {
     super(cryptoService);
   }
 
-  async run(url: string, options: program.OptionValues): Promise<Response> {
+  async run(url: string, options: OptionValues): Promise<Response> {
     this.canInteract = process.env.BW_NOINTERACTION !== "true";
 
     let urlObject: URL;
