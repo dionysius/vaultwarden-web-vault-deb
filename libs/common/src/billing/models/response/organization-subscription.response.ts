@@ -14,7 +14,6 @@ export class OrganizationSubscriptionResponse extends OrganizationResponse {
   customerDiscount: BillingCustomerDiscount;
   expiration: string;
   expirationWithoutGracePeriod: string;
-  secretsManagerBeta: boolean;
 
   constructor(response: any) {
     super(response);
@@ -32,7 +31,6 @@ export class OrganizationSubscriptionResponse extends OrganizationResponse {
       customerDiscount == null ? null : new BillingCustomerDiscount(customerDiscount);
     this.expiration = this.getResponseProperty("Expiration");
     this.expirationWithoutGracePeriod = this.getResponseProperty("ExpirationWithoutGracePeriod");
-    this.secretsManagerBeta = this.getResponseProperty("SecretsManagerBeta");
   }
 }
 
