@@ -27,6 +27,11 @@ export class NavGroupComponent extends NavBaseComponent implements AfterContentI
   })
   nestedItems!: QueryList<NavItemComponent>;
 
+  /** The parent nav item should not show active styles when open. */
+  protected get parentHideActiveStyles(): boolean {
+    return this.hideActiveStyles || this.open;
+  }
+
   /**
    * UID for `[attr.aria-controls]`
    */
