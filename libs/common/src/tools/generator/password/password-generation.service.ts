@@ -5,9 +5,9 @@ import { CryptoService } from "../../../platform/abstractions/crypto.service";
 import { StateService } from "../../../platform/abstractions/state.service";
 import { EFFLongWordList } from "../../../platform/misc/wordlist";
 import { EncString } from "../../../platform/models/domain/enc-string";
+import { PassphraseGeneratorOptionsEvaluator } from "../passphrase/passphrase-generator-options-evaluator";
 
 import { GeneratedPasswordHistory } from "./generated-password-history";
-import { PassphraseGeneratorOptionsEvaluator } from "./passphrase-generator-options-evaluator";
 import { PasswordGenerationServiceAbstraction } from "./password-generation.service.abstraction";
 import { PasswordGeneratorOptions } from "./password-generator-options";
 import { PasswordGeneratorOptionsEvaluator } from "./password-generator-options-evaluator";

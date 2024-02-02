@@ -1,6 +1,7 @@
-import { PasswordGeneratorPolicyOptions } from "../../../admin-console/models/domain/password-generator-policy-options";
+import { PolicyEvaluator } from "../abstractions/policy-evaluator.abstraction";
 
-import { PassphraseGenerationOptions } from "./password-generator-options";
+import { PassphraseGenerationOptions } from "./passphrase-generation-options";
+import { PassphraseGeneratorPolicy } from "./passphrase-generator-policy";
 
 type Boundary = {
   readonly min: number;
@@ -25,7 +26,9 @@ export const DefaultBoundaries = initializeBoundaries();
 
 /** Enforces policy for passphrase generation options.
  */
-export class PassphraseGeneratorOptionsEvaluator {
+export class PassphraseGeneratorOptionsEvaluator
+  implements PolicyEvaluator<PassphraseGeneratorPolicy, PassphraseGenerationOptions>
+{
   // This design is not ideal, but it is a step towards a more robust passphrase
   // generator. Ideally, `sanitize` would be implemented on an options class,
   // and `applyPolicy` would be implemented on a policy class, "mise en place".
@@ -36,7 +39,7 @@ export class PassphraseGeneratorOptionsEvaluator {
 
   /** Policy applied by the evaluator.
    */
-  readonly policy: PasswordGeneratorPolicyOptions;
+  readonly policy: PassphraseGeneratorPolicy;
 
   /** Boundaries for the number of words allowed in the password.
    */
@@ -46,7 +49,7 @@ export class PassphraseGeneratorOptionsEvaluator {
    * @param policy The policy applied by the evaluator. When this conflicts with
    *               the defaults, the policy takes precedence.
    */
-  constructor(policy: PasswordGeneratorPolicyOptions) {
+  constructor(policy: PassphraseGeneratorPolicy) {
     function createBoundary(value: number, defaultBoundary: Boundary): Boundary {
       const boundary = {
         min: Math.max(defaultBoundary.min, value),
@@ -56,8 +59,19 @@ export class PassphraseGeneratorOptionsEvaluator {
       return boundary;
     }
 
-    this.policy = policy.clone();
+    this.policy = structuredClone(policy);
     this.numWords = createBoundary(policy.minNumberWords, DefaultBoundaries.numWords);
+  }
+
+  /** {@link PolicyEvaluator.policyInEffect} */
+  get policyInEffect(): boolean {
+    const policies = [
+      this.policy.capitalize,
+      this.policy.includeNumber,
+      this.policy.minNumberWords > DefaultBoundaries.numWords.min,
+    ];
+
+    return policies.includes(true);
   }
 
   /** Apply policy to the input options.
