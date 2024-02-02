@@ -2531,6 +2531,15 @@
       }
     }
   },
+  "trialSecretsManagerThankYou": {
+    "message": "Thanks for signing up for Bitwarden Secrets Manager for $PLAN$!",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
   "trialPaidInfoMessage": {
     "message": "您的 $PLAN$ 7 天免费试用将在 7 天后转换成付费订阅。",
     "placeholders": {
@@ -6850,9 +6859,6 @@
   "secretsManager": {
     "message": "机密管理器"
   },
-  "secretsManagerBeta": {
-    "message": "机密管理器 Beta 版"
-  },
   "secretsManagerAccessDescription": {
     "message": "激活用户对机密管理器的访问权限。"
   },
@@ -6955,12 +6961,6 @@
   },
   "selectionIsRequired": {
     "message": "必须选择。"
-  },
-  "secretsManagerSubscriptionDesc": {
-    "message": "在 Beta 计划期间，开启组织对机密管理器的访问是免费的。成员中的用户会被授予对 Beta 版的访问权限。"
-  },
-  "secretsManagerEnable": {
-    "message": "启用机密管理器 Beta 版"
   },
   "saPeopleWarningTitle": {
     "message": "访问令牌仍然可用"
@@ -7234,6 +7234,15 @@
       }
     }
   },
+  "startYour7DayFreeTrialOfBitwardenSecretsManagerFor": {
+    "message": "Start your 7-Day free trial of Bitwarden Secrets Manager for $ORG$",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Organization name"
+      }
+    }
+  },
   "next": {
     "message": "下一步"
   },
@@ -7395,22 +7404,6 @@
   "loggedInExclamation": {
     "message": "已登录！"
   },
-  "smBetaEndedDesc": {
-    "message": "机密管理器 Beta 版将于 $BETA_ENDING_DATE$ 结束。您还剩余 $DAYS$ 天时间将机密管理器添加到您的付费订阅中，以保持对其数据的访问权限。联系客户成功团队将机密管理器添加到您的订阅中。",
-    "placeholders": {
-      "beta_ending_date": {
-        "content": "$1",
-        "example": "August 1, 2023"
-      },
-      "days": {
-        "content": "$2",
-        "example": "11"
-      }
-    }
-  },
-  "betaEnding": {
-    "message": "Beta 版即将结束"
-  },
   "beta": {
     "message": "Beta"
   },
@@ -7508,5 +7501,17 @@
   },
   "collectionEnhancementsLearnMore": {
     "message": "了解集合管理"
+  },
+  "organizationInformation": {
+    "message": "Organization information"
+  },
+  "confirmationDetails": {
+    "message": "Confirmation details"
+  },
+  "smFreeTrialThankYou": {
+    "message": "Thank you for signing up for Bitwarden Secrets Manager!"
+  },
+  "smFreeTrialConfirmationEmail": {
+    "message": "We've sent a confirmation email to your email at "
   }
 }

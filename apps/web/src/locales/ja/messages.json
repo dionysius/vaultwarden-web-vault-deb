@@ -2531,6 +2531,15 @@
       }
     }
   },
+  "trialSecretsManagerThankYou": {
+    "message": "$PLAN$ の Bitwarden シークレットマネージャーに登録していただきありがとうございます！",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
   "trialPaidInfoMessage": {
     "message": "$PLAN$ の7日間の無料トライアルは、7日後に有料サブスクリプションに変換されます。",
     "placeholders": {
@@ -6850,9 +6859,6 @@
   "secretsManager": {
     "message": "シークレットマネージャー"
   },
-  "secretsManagerBeta": {
-    "message": "ベータ版シークレットマネージャー"
-  },
   "secretsManagerAccessDescription": {
     "message": "シークレットマネージャーへのユーザーのアクセスを有効にします。"
   },
@@ -6955,12 +6961,6 @@
   },
   "selectionIsRequired": {
     "message": "選択が必要です。"
-  },
-  "secretsManagerSubscriptionDesc": {
-    "message": "ベータプログラム中はシークレットマネージャーへの組織アクセスを無償で有効にします。ユーザーはメンバーのベータ版へのアクセスを許可できます。"
-  },
-  "secretsManagerEnable": {
-    "message": "ベータ版のシークレットマネージャーを有効化"
   },
   "saPeopleWarningTitle": {
     "message": "アクセストークンはまだ利用可能です"
@@ -7234,6 +7234,15 @@
       }
     }
   },
+  "startYour7DayFreeTrialOfBitwardenSecretsManagerFor": {
+    "message": "$ORG$ での Bitwarden シークレットマネージャーの 7 日間無料トライアルを開始",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Organization name"
+      }
+    }
+  },
   "next": {
     "message": "次へ"
   },
@@ -7395,22 +7404,6 @@
   "loggedInExclamation": {
     "message": "ログインしました!"
   },
-  "smBetaEndedDesc": {
-    "message": "シークレットマネージャーベータは$BETA_ENDING_DATE$で終了しました。シークレットマネージャーを有料サブスクリプションに追加し、シークレットマネージャーのデータへのアクセスを維持するには、$DAYS$日間の猶予があります。シークレットマネージャーをサブスクリプションに追加するには、カスタマーサクセスまでお問い合わせください。",
-    "placeholders": {
-      "beta_ending_date": {
-        "content": "$1",
-        "example": "August 1, 2023"
-      },
-      "days": {
-        "content": "$2",
-        "example": "11"
-      }
-    }
-  },
-  "betaEnding": {
-    "message": "ベータ終了"
-  },
   "beta": {
     "message": "ベータ"
   },
@@ -7508,5 +7501,17 @@
   },
   "collectionEnhancementsLearnMore": {
     "message": "コレクション管理の詳細はこちら"
+  },
+  "organizationInformation": {
+    "message": "組織情報"
+  },
+  "confirmationDetails": {
+    "message": "詳細の確認"
+  },
+  "smFreeTrialThankYou": {
+    "message": "Bitwarden シークレットマネージャーに登録していただきありがとうございます！"
+  },
+  "smFreeTrialConfirmationEmail": {
+    "message": "あなたのメールアドレスに確認メールを送信しました："
   }
 }

@@ -2531,6 +2531,15 @@
       }
     }
   },
+  "trialSecretsManagerThankYou": {
+    "message": "Дякуємо за реєстрацію в менеджері секретів Bitwarden для $PLAN$!",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
   "trialPaidInfoMessage": {
     "message": "Через 7 днів пробного періоду $PLAN$ вас буде переведено на платний тарифний план.",
     "placeholders": {
@@ -3471,7 +3480,7 @@
     "message": "Встановіть обмеження кількості місць для вашої передплати. Після досягнення цього обмеження ви не зможете запросити нових користувачів."
   },
   "limitSmSubscriptionDesc": {
-    "message": "Встановіть обмеження кількості місць для вашої передплати Менеджера секретів. Після досягнення цього обмеження ви не зможете запросити нових користувачів."
+    "message": "Встановіть обмеження кількості місць для вашої передплати менеджера секретів. Після досягнення цього обмеження ви не зможете запросити нових користувачів."
   },
   "maxSeatLimit": {
     "message": "Обмеження кількості місць (необов'язково)",
@@ -6850,9 +6859,6 @@
   "secretsManager": {
     "message": "Менеджер секретів"
   },
-  "secretsManagerBeta": {
-    "message": "Менеджер секретів (бета-версія)"
-  },
   "secretsManagerAccessDescription": {
     "message": "Активувати доступ користувача до менеджера секретів."
   },
@@ -6955,12 +6961,6 @@
   },
   "selectionIsRequired": {
     "message": "Потрібен вибір."
-  },
-  "secretsManagerSubscriptionDesc": {
-    "message": "Увімкніть доступ організації до менеджера секретів безплатно впродовж періоду бета-тестування. Користувачам можна надати доступ в бета-версії в меню учасників."
-  },
-  "secretsManagerEnable": {
-    "message": "Увімкнути менеджер секретів (бета-версія)"
   },
   "saPeopleWarningTitle": {
     "message": "Токени доступу все ще доступні"
@@ -7234,6 +7234,15 @@
       }
     }
   },
+  "startYour7DayFreeTrialOfBitwardenSecretsManagerFor": {
+    "message": "Розпочніть безплатний 7-денний пробний період менеджера секретів Bitwarden для $ORG$",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Organization name"
+      }
+    }
+  },
   "next": {
     "message": "Далі"
   },
@@ -7395,22 +7404,6 @@
   "loggedInExclamation": {
     "message": "Ви увійшли!"
   },
-  "smBetaEndedDesc": {
-    "message": "Бета-тестування менеджера секретів завершилося $BETA_ENDING_DATE$. У вас лишилося $DAYS$ днів, щоб додати менеджер секретів до свого тарифного плану та керувати доступом до даних. Зверніться до команди підтримки клієнтів, щоб додати менеджер секретів до своєї передплати.",
-    "placeholders": {
-      "beta_ending_date": {
-        "content": "$1",
-        "example": "August 1, 2023"
-      },
-      "days": {
-        "content": "$2",
-        "example": "11"
-      }
-    }
-  },
-  "betaEnding": {
-    "message": "Бета-тестування завершилося"
-  },
   "beta": {
     "message": "Бета"
   },
@@ -7508,5 +7501,17 @@
   },
   "collectionEnhancementsLearnMore": {
     "message": "Докладніше про керування збірками"
+  },
+  "organizationInformation": {
+    "message": "Інформація про організацію"
+  },
+  "confirmationDetails": {
+    "message": "Подробиці підтвердження"
+  },
+  "smFreeTrialThankYou": {
+    "message": "Дякуємо за реєстрацію в менеджері секретів Bitwarden!"
+  },
+  "smFreeTrialConfirmationEmail": {
+    "message": "Ми надіслали лист з підтвердженням на вашу електронну пошту "
   }
 }

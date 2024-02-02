@@ -2531,6 +2531,15 @@
       }
     }
   },
+  "trialSecretsManagerThankYou": {
+    "message": "Ďakujeme vám, že ste si predplatili Bitwarden Secrets Manager predplatné $PLAN$!",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
   "trialPaidInfoMessage": {
     "message": "Vaša 7-dňová bezplatná skúšobná verzia $PLAN$ bude po 7 dňoch prevedená na platené predplatné.",
     "placeholders": {
@@ -6850,9 +6859,6 @@
   "secretsManager": {
     "message": "Secrets Manager"
   },
-  "secretsManagerBeta": {
-    "message": "Beta verzia Secrets Manager"
-  },
   "secretsManagerAccessDescription": {
     "message": "Aktivovať používateľovi prístup k Secrets Manager."
   },
@@ -6955,12 +6961,6 @@
   },
   "selectionIsRequired": {
     "message": "Vyžaduje sa výber."
-  },
-  "secretsManagerSubscriptionDesc": {
-    "message": "Turn on organization access to the Secrets Manager at no charge during the Beta program. Users can be granted access to the Beta in Members."
-  },
-  "secretsManagerEnable": {
-    "message": "Enable Secrets Manager Beta"
   },
   "saPeopleWarningTitle": {
     "message": "Prístupové tokeny sú naďalej dostupné"
@@ -7234,6 +7234,15 @@
       }
     }
   },
+  "startYour7DayFreeTrialOfBitwardenSecretsManagerFor": {
+    "message": "Začnite 7-dňovú skúšobnú dobu Bitwarden Secrets Manager zadarmo pre $ORG$",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Organization name"
+      }
+    }
+  },
   "next": {
     "message": "Ďalej"
   },
@@ -7395,22 +7404,6 @@
   "loggedInExclamation": {
     "message": "Prihlásený!"
   },
-  "smBetaEndedDesc": {
-    "message": "The Secrets Manager Beta ended $BETA_ENDING_DATE$. You have $DAYS$ days left to add Secrets Manager to your paid subscription and maintain access to Secrets Manager data. Contact Customer Success to add Secrets Manager to your subscription.",
-    "placeholders": {
-      "beta_ending_date": {
-        "content": "$1",
-        "example": "August 1, 2023"
-      },
-      "days": {
-        "content": "$2",
-        "example": "11"
-      }
-    }
-  },
-  "betaEnding": {
-    "message": "Beta Ending"
-  },
   "beta": {
     "message": "Beta"
   },
@@ -7508,5 +7501,17 @@
   },
   "collectionEnhancementsLearnMore": {
     "message": "Naučiť sa viac o spravovaní zbierky"
+  },
+  "organizationInformation": {
+    "message": "Informácie o organizácii"
+  },
+  "confirmationDetails": {
+    "message": "Detaily potvrdenia"
+  },
+  "smFreeTrialThankYou": {
+    "message": "Ďakujeme vám, že ste si predplatili Bitwarden Secrets Manager!"
+  },
+  "smFreeTrialConfirmationEmail": {
+    "message": "Poslali sme potvrdzujúci e-mail na adresu "
   }
 }

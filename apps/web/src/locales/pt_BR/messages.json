@@ -2531,6 +2531,15 @@
       }
     }
   },
+  "trialSecretsManagerThankYou": {
+    "message": "Thanks for signing up for Bitwarden Secrets Manager for $PLAN$!",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
   "trialPaidInfoMessage": {
     "message": "Seu $PLAN$ de 7 dias será convertido em uma assinatura paga após 7 dias.",
     "placeholders": {
@@ -3471,7 +3480,7 @@
     "message": "Defina um limite de vagas para sua assinatura. Quando esse limite for atingido, você não poderá convidar novos usuários."
   },
   "limitSmSubscriptionDesc": {
-    "message": "Set a seat limit for your Secrets Manger subscription. Once this limit is reached, you will not be able to invite new members."
+    "message": "Set a seat limit for your Secrets Manager subscription. Once this limit is reached, you will not be able to invite new members."
   },
   "maxSeatLimit": {
     "message": "Limite Máximo de Vaga (opcional)",
@@ -6850,9 +6859,6 @@
   "secretsManager": {
     "message": "Gerenciador de Segredos"
   },
-  "secretsManagerBeta": {
-    "message": "Gerenciador de Segredos Beta"
-  },
   "secretsManagerAccessDescription": {
     "message": "Ative o acesso do usuário ao Gerenciador Secretos."
   },
@@ -6955,12 +6961,6 @@
   },
   "selectionIsRequired": {
     "message": "Seleção é necessária."
-  },
-  "secretsManagerSubscriptionDesc": {
-    "message": "Ative o acesso da organização ao Gerenciador de Segredos sem custos durante o programa Beta. Os usuários podem ter acesso ao Beta em Membros."
-  },
-  "secretsManagerEnable": {
-    "message": "Habilitar Gerenciador de Segredos Beta"
   },
   "saPeopleWarningTitle": {
     "message": "Access tokens still available"
@@ -7234,6 +7234,15 @@
       }
     }
   },
+  "startYour7DayFreeTrialOfBitwardenSecretsManagerFor": {
+    "message": "Start your 7-Day free trial of Bitwarden Secrets Manager for $ORG$",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Organization name"
+      }
+    }
+  },
   "next": {
     "message": "Avançar"
   },
@@ -7395,22 +7404,6 @@
   "loggedInExclamation": {
     "message": "Logged in!"
   },
-  "smBetaEndedDesc": {
-    "message": "O Gerenciador de Segredos Beta terminou em $BETA_ENDING_DATE$. Você tem $DAYS$ dias para adicionar o Gerenciador de Segredos à sua assinatura paga e manter o acesso aos dados do Gerenciador Secretos. Contate o setor de Sucesso do Cliente para adicionar o Gerenciador de Segredos à sua assinatura.",
-    "placeholders": {
-      "beta_ending_date": {
-        "content": "$1",
-        "example": "August 1, 2023"
-      },
-      "days": {
-        "content": "$2",
-        "example": "11"
-      }
-    }
-  },
-  "betaEnding": {
-    "message": "Final da versão Beta"
-  },
   "beta": {
     "message": "Beta"
   },
@@ -7508,5 +7501,17 @@
   },
   "collectionEnhancementsLearnMore": {
     "message": "Saiba mais sobre o gerenciamento de coleção"
+  },
+  "organizationInformation": {
+    "message": "Organization information"
+  },
+  "confirmationDetails": {
+    "message": "Confirmation details"
+  },
+  "smFreeTrialThankYou": {
+    "message": "Thank you for signing up for Bitwarden Secrets Manager!"
+  },
+  "smFreeTrialConfirmationEmail": {
+    "message": "We've sent a confirmation email to your email at "
   }
 }

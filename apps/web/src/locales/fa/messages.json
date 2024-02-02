@@ -2531,6 +2531,15 @@
       }
     }
   },
+  "trialSecretsManagerThankYou": {
+    "message": "Thanks for signing up for Bitwarden Secrets Manager for $PLAN$!",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
   "trialPaidInfoMessage": {
     "message": "نسخه آزمایشی رایگان ۷ روزه $PLAN$ شما پس از ۷ روز به اشتراک پولی تبدیل می‌شود.",
     "placeholders": {
@@ -6850,9 +6859,6 @@
   "secretsManager": {
     "message": "مدیر رازها"
   },
-  "secretsManagerBeta": {
-    "message": "بتا مدیر اسرار"
-  },
   "secretsManagerAccessDescription": {
     "message": "دسترسی کاربر به مدیر رازها را فعال کنید."
   },
@@ -6955,12 +6961,6 @@
   },
   "selectionIsRequired": {
     "message": "انتخاب الزامی است."
-  },
-  "secretsManagerSubscriptionDesc": {
-    "message": "در طول برنامه بتا، دسترسی سازمان به مدیر رازها را بدون هزینه فعال کنید. کاربران می‌توانند به نسخه بتا در اعضا دسترسی داشته باشند."
-  },
-  "secretsManagerEnable": {
-    "message": "بتا مدیر رازها را فعال کنید"
   },
   "saPeopleWarningTitle": {
     "message": "توکن‌های دسترسی هنوز در دسترس هستند"
@@ -7234,6 +7234,15 @@
       }
     }
   },
+  "startYour7DayFreeTrialOfBitwardenSecretsManagerFor": {
+    "message": "Start your 7-Day free trial of Bitwarden Secrets Manager for $ORG$",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Organization name"
+      }
+    }
+  },
   "next": {
     "message": "بعدی"
   },
@@ -7395,22 +7404,6 @@
   "loggedInExclamation": {
     "message": "وارد شده!"
   },
-  "smBetaEndedDesc": {
-    "message": "بتای مدیر اسرار $BETA_ENDING_DATE$ به پایان رسید. $DAYS$ روز فرصت دارید تا بتا مدیر اسرار را به اشتراک پولی خود اضافه کنید و دسترسی به داده‌های مدیر اسرار را حفظ کنید. برای افزودن مدیر اسرار به اشتراک خود، با پشتیبانی مشتری تماس بگیرید.",
-    "placeholders": {
-      "beta_ending_date": {
-        "content": "$1",
-        "example": "August 1, 2023"
-      },
-      "days": {
-        "content": "$2",
-        "example": "11"
-      }
-    }
-  },
-  "betaEnding": {
-    "message": "آزمایشی در حال اتمام است"
-  },
   "beta": {
     "message": "آزمایشی"
   },
@@ -7508,5 +7501,17 @@
   },
   "collectionEnhancementsLearnMore": {
     "message": "Learn more about collection management"
+  },
+  "organizationInformation": {
+    "message": "Organization information"
+  },
+  "confirmationDetails": {
+    "message": "Confirmation details"
+  },
+  "smFreeTrialThankYou": {
+    "message": "Thank you for signing up for Bitwarden Secrets Manager!"
+  },
+  "smFreeTrialConfirmationEmail": {
+    "message": "We've sent a confirmation email to your email at "
   }
 }

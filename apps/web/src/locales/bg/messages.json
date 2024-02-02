@@ -2531,6 +2531,15 @@
       }
     }
   },
+  "trialSecretsManagerThankYou": {
+    "message": "Благодарим Ви, че се регистрирахте в Управителя на пароли на Битуорден и избрахте плана $PLAN$!",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
   "trialPaidInfoMessage": {
     "message": "След като Вашият 7-дневен безплатен пробен период на плана $PLAN$ изтече, той ще бъде превърнат в платен абонамент.",
     "placeholders": {
@@ -5180,7 +5189,7 @@
     "message": "Проверка на сертификатите"
   },
   "spUniqueEntityId": {
-    "message": "Set a unique SP entity ID"
+    "message": "Задайте уникален идентификатор за доставчика на услугата"
   },
   "spUniqueEntityIdDesc": {
     "message": "Създаване на идентификатор, който е уникален за Вашата организация"
@@ -6850,9 +6859,6 @@
   "secretsManager": {
     "message": "Управление на тайни"
   },
-  "secretsManagerBeta": {
-    "message": "Управление на тайни (Бета)"
-  },
   "secretsManagerAccessDescription": {
     "message": "Включване на достъпа на потребителите до Управлението на тайни."
   },
@@ -6955,12 +6961,6 @@
   },
   "selectionIsRequired": {
     "message": "Изборът е задължителен."
-  },
-  "secretsManagerSubscriptionDesc": {
-    "message": "Включете достъпа на организацията до Управлението на пароли, безплатно по време на периода на бета-версията. Потребителите могат да получат достъп до бета-версията в настройките за Членовете."
-  },
-  "secretsManagerEnable": {
-    "message": "Включване на управлението на тайни (Бета)"
   },
   "saPeopleWarningTitle": {
     "message": "Идентификаторите за достъп все още са налични"
@@ -7234,6 +7234,15 @@
       }
     }
   },
+  "startYour7DayFreeTrialOfBitwardenSecretsManagerFor": {
+    "message": "Започнете безплатен 7-дневен пробен период на Управителя на пароли на Битуорден за $ORG$",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Organization name"
+      }
+    }
+  },
   "next": {
     "message": "Next"
   },
@@ -7395,22 +7404,6 @@
   "loggedInExclamation": {
     "message": "Вписахте се!"
   },
-  "smBetaEndedDesc": {
-    "message": "Бета-версията на Управлението на тайни приключи на $BETA_ENDING_DATE$. Остават $DAYS$ дни да добавите Управлението на тайни към своя платен абонамент, за да запазите достъпа си до създадените данни. Свържете се с поддръжката, ако искате да добавите Управлението на тайни към абонамента си.",
-    "placeholders": {
-      "beta_ending_date": {
-        "content": "$1",
-        "example": "August 1, 2023"
-      },
-      "days": {
-        "content": "$2",
-        "example": "11"
-      }
-    }
-  },
-  "betaEnding": {
-    "message": "Бета-версията приключва"
-  },
   "beta": {
     "message": "Бета"
   },
@@ -7508,5 +7501,17 @@
   },
   "collectionEnhancementsLearnMore": {
     "message": "Научете повече за управлението на колекции"
+  },
+  "organizationInformation": {
+    "message": "Информация за организацията"
+  },
+  "confirmationDetails": {
+    "message": "Подробности за потвърждението"
+  },
+  "smFreeTrialThankYou": {
+    "message": "Благодарим Ви, че се регистрирахте в Управителя на пароли на Битуорден!"
+  },
+  "smFreeTrialConfirmationEmail": {
+    "message": "Изпратихме Ви е-писмо за потвърждение до е-пощата Ви, на адрес: "
   }
 }

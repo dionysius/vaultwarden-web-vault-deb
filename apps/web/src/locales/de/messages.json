@@ -2531,6 +2531,15 @@
       }
     }
   },
+  "trialSecretsManagerThankYou": {
+    "message": "Danke für die Anmeldung beim Bitwarden Secrets Manager für $PLAN$!",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
   "trialPaidInfoMessage": {
     "message": "Deine kostenlose 7-tägige $PLAN$ Testversion wird nach 7 Tagen in ein kostenpflichtiges Abonnement umgewandelt.",
     "placeholders": {
@@ -5180,10 +5189,10 @@
     "message": "Zertifikate validieren"
   },
   "spUniqueEntityId": {
-    "message": "Set a unique SP entity ID"
+    "message": "Lege eine eindeutige SP-Entitäts-ID fest"
   },
   "spUniqueEntityIdDesc": {
-    "message": "Generate an identifier that is unique to your organization"
+    "message": "Generiere eine Kennung, die eindeutig für deine Organisation ist"
   },
   "idpEntityId": {
     "message": "Entitäts-ID"
@@ -6850,9 +6859,6 @@
   "secretsManager": {
     "message": "Secrets Manager"
   },
-  "secretsManagerBeta": {
-    "message": "Secrets Manager Beta"
-  },
   "secretsManagerAccessDescription": {
     "message": "Benutzerzugriff zum Secrets Manager aktivieren"
   },
@@ -6955,12 +6961,6 @@
   },
   "selectionIsRequired": {
     "message": "Auswahl ist erforderlich."
-  },
-  "secretsManagerSubscriptionDesc": {
-    "message": "Aktiviere den Organisationszugriff auf den Secrets Manager kostenlos während des Beta-Programms. Benutzer können in \"Mitglieder\" Zugriff auf die Beta erhalten."
-  },
-  "secretsManagerEnable": {
-    "message": "Secrets Manager Beta aktivieren"
   },
   "saPeopleWarningTitle": {
     "message": "Zugriffstoken weiterhin verfügbar"
@@ -7234,6 +7234,15 @@
       }
     }
   },
+  "startYour7DayFreeTrialOfBitwardenSecretsManagerFor": {
+    "message": "Starte deine 7-tägige kostenlose Testversion des Bitwarden Secrets Managers für $ORG$",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Organization name"
+      }
+    }
+  },
   "next": {
     "message": "Weiter"
   },
@@ -7366,7 +7375,7 @@
     "message": "Besitzer und Administratoren können alle Sammlungen und Einträge verwalten"
   },
   "updatedCollectionManagement": {
-    "message": "Updated collection management setting"
+    "message": "Einstellung für die Verwaltung der Sammlungen aktualisiert"
   },
   "passwordManagerPlanPrice": {
     "message": "Passwort-Manager Abonnementpreis"
@@ -7394,22 +7403,6 @@
   },
   "loggedInExclamation": {
     "message": "Angemeldet!"
-  },
-  "smBetaEndedDesc": {
-    "message": "Die Secrets Manager Beta endete am $BETA_ENDING_DATE$. Du hast $DAYS$ Tage Zeit, um den Secrets Manager zu deinem kostenpflichtigen Abonnement hinzuzufügen und den Zugriff auf die Daten des Secrets Manager zu erhalten. Kontaktiere den Kundensupport, um den Secrets Manager zu deinem Abonnement hinzuzufügen.",
-    "placeholders": {
-      "beta_ending_date": {
-        "content": "$1",
-        "example": "August 1, 2023"
-      },
-      "days": {
-        "content": "$2",
-        "example": "11"
-      }
-    }
-  },
-  "betaEnding": {
-    "message": "Beta-Ende"
   },
   "beta": {
     "message": "Beta"
@@ -7476,10 +7469,10 @@
     "message": "Zugriff auf Sammlungen ist eingeschränkt"
   },
   "grantCollectionAccess": {
-    "message": "Grant groups or members access to this collection."
+    "message": "Gewähre Gruppen oder Mitgliedern Zugriff auf diese Sammlung."
   },
   "adminCollectionAccess": {
-    "message": "Administrators can access and manage collections."
+    "message": "Administratoren können auf Sammlungen zugreifen und diese verwalten."
   },
   "serviceAccountAccessUpdated": {
     "message": "Zugriff zum Dienstkonto aktualisiert"
@@ -7489,7 +7482,7 @@
     "description": "Label indicating the most common import formats"
   },
   "maintainYourSubscription": {
-    "message": "To maintain your subscription for $ORG$, ",
+    "message": "Um dein Abonnement für $ORG$ zu erhalten, ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'",
     "placeholders": {
       "org": {
@@ -7499,14 +7492,26 @@
     }
   },
   "addAPaymentMethod": {
-    "message": "add a payment method",
+    "message": "füge eine Zahlungsmethode hinzu",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
   },
   "collectionEnhancementsDesc": {
-    "message": "Add new settings and permissions for additional flexibility. Replace the Manager role with the \"can manage\" permission, and introduce options to allow users to create collections as well as restrict administrative access to collections.",
+    "message": "Füge neue Einstellungen und Berechtigungen für zusätzliche Flexibilität hinzu. Ersetze die Rolle des Managers durch die Berechtigung \"kann verwalten\" und führe Optionen ein, die es Benutzern ermöglichen, Sammlungen zu erstellen sowie den administrativen Zugriff auf Sammlungen zu beschränken.",
     "description": "This describes new features and improvements for user roles and collections"
   },
   "collectionEnhancementsLearnMore": {
-    "message": "Learn more about collection management"
+    "message": "Erfahre mehr über die Verwaltung der Sammlungen"
+  },
+  "organizationInformation": {
+    "message": "Organisationsinformationen"
+  },
+  "confirmationDetails": {
+    "message": "Details zur Bestätigung"
+  },
+  "smFreeTrialThankYou": {
+    "message": "Vielen Dank, dass du dich für den Bitwarden Secrets Manager angemeldet hast!"
+  },
+  "smFreeTrialConfirmationEmail": {
+    "message": "Wir haben eine Bestätigungs-E-Mail an deine E-Mail-Adresse gesendet an "
   }
 }

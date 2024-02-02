@@ -2531,6 +2531,15 @@
       }
     }
   },
+  "trialSecretsManagerThankYou": {
+    "message": "Хвала што сте се пријавили за Bitwarden Secrets Manager за $PLAN$!",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
   "trialPaidInfoMessage": {
     "message": "Када се заврши бесплатни период плана $PLAN$ (7 дана), биће претворен у плаћеном плану.",
     "placeholders": {
@@ -2817,7 +2826,7 @@
     "message": "Погрешан код"
   },
   "incorrectPin": {
-    "message": "Incorrect PIN"
+    "message": "Нетачан PIN"
   },
   "exportedVault": {
     "message": "Сеф извежен."
@@ -5180,7 +5189,7 @@
     "message": "Проверити цертификате"
   },
   "spUniqueEntityId": {
-    "message": "Set a unique SP entity ID"
+    "message": "Постави уникатни ИД провајдера сервиса"
   },
   "spUniqueEntityIdDesc": {
     "message": "Генерише идентификатор који је јединствен за вашу организацију"
@@ -6608,37 +6617,37 @@
     }
   },
   "verificationRequiredForActionSetPinToContinue": {
-    "message": "Verification required for this action. Set a PIN to continue."
+    "message": "За ову радњу је потребна верификација. Подесите ПИН да бисте наставили."
   },
   "setPin": {
-    "message": "Set PIN"
+    "message": "Поставите PIN"
   },
   "verifyWithBiometrics": {
-    "message": "Verify with biometrics"
+    "message": "Верификујте помоћу биометрије"
   },
   "awaitingConfirmation": {
-    "message": "Awaiting confirmation"
+    "message": "Чека се потврда"
   },
   "couldNotCompleteBiometrics": {
-    "message": "Could not complete biometrics."
+    "message": "Није могуће завршити биометрију."
   },
   "needADifferentMethod": {
-    "message": "Need a different method?"
+    "message": "Потребан вам је други начин?"
   },
   "useMasterPassword": {
-    "message": "Use master password"
+    "message": "Користите главну лозинку"
   },
   "usePin": {
-    "message": "Use PIN"
+    "message": "Користите ПИН"
   },
   "useBiometrics": {
-    "message": "Use biometrics"
+    "message": "Користите биометрију"
   },
   "enterVerificationCodeSentToEmail": {
-    "message": "Enter the verification code that was sent to your email."
+    "message": "Унесите верификациони кôд који је послат на Вашу е-адресу."
   },
   "resendCode": {
-    "message": "Resend code"
+    "message": "Поново послати кôд"
   },
   "membersColumnHeader": {
     "message": "Члан/Група"
@@ -6850,9 +6859,6 @@
   "secretsManager": {
     "message": "Менаџер тајни"
   },
-  "secretsManagerBeta": {
-    "message": "Secrets Manager Beta"
-  },
   "secretsManagerAccessDescription": {
     "message": "Activate user access to Secrets Manager."
   },
@@ -6955,12 +6961,6 @@
   },
   "selectionIsRequired": {
     "message": "Потребно је да изаберете нешто."
-  },
-  "secretsManagerSubscriptionDesc": {
-    "message": "Укључите приступ организације за Secrets Manager бесплатно током Бета програма. Корисницима се може одобрити приступ Бета у Члановима."
-  },
-  "secretsManagerEnable": {
-    "message": "Омогућити Secrets Manager Бета"
   },
   "saPeopleWarningTitle": {
     "message": "Приступни токени су и даље доступни"
@@ -7123,7 +7123,7 @@
     }
   },
   "verificationRequired": {
-    "message": "Verification required",
+    "message": "Потребдна верификација",
     "description": "Default title for the user verification dialog."
   },
   "recoverAccount": {
@@ -7227,6 +7227,15 @@
   },
   "startYour7DayFreeTrialOfBitwardenFor": {
     "message": "Започните своју 7-дневну бесплатну пробну Bitwarden-а за $ORG$",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Organization name"
+      }
+    }
+  },
+  "startYour7DayFreeTrialOfBitwardenSecretsManagerFor": {
+    "message": "Започните своју 7-дневну бесплатну пробну Bitwarden Secrets Manager за $ORG$",
     "placeholders": {
       "org": {
         "content": "$1",
@@ -7395,22 +7404,6 @@
   "loggedInExclamation": {
     "message": "Пријављено!"
   },
-  "smBetaEndedDesc": {
-    "message": "Бета менаџера тајни се завршио $BETA_ENDING_DATE$. Остало вам је $DAYS$ дана да додате Менаџер тајни у вашу претплату и да задржите приступ подацима Манагера тајни. Контактирајте подршку да додате Менаџер тајни у своју претплату.",
-    "placeholders": {
-      "beta_ending_date": {
-        "content": "$1",
-        "example": "August 1, 2023"
-      },
-      "days": {
-        "content": "$2",
-        "example": "11"
-      }
-    }
-  },
-  "betaEnding": {
-    "message": "Крај бета"
-  },
   "beta": {
     "message": "Бета"
   },
@@ -7508,5 +7501,17 @@
   },
   "collectionEnhancementsLearnMore": {
     "message": "Сазнајте више о управљању колекцијом"
+  },
+  "organizationInformation": {
+    "message": "Информације о организацији"
+  },
+  "confirmationDetails": {
+    "message": "Детаљи потврде"
+  },
+  "smFreeTrialThankYou": {
+    "message": "Хвала што сте се пријавили за Bitwarden Secrets Manager!"
+  },
+  "smFreeTrialConfirmationEmail": {
+    "message": "Послали смо е-поруку са потврдом на ваш имејл на "
   }
 }

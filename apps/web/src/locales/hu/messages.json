@@ -2531,6 +2531,15 @@
       }
     }
   },
+  "trialSecretsManagerThankYou": {
+    "message": "Köszönet a regisztrációért a Bitwarden Titkos Kód Kezelő $PLAN$ csomagjára!",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
   "trialPaidInfoMessage": {
     "message": "$PLAN$ csomag 7 napos ingyenes próbaverziója fizetős feliratkozássá válik 7 nap után.",
     "placeholders": {
@@ -6850,9 +6859,6 @@
   "secretsManager": {
     "message": "Titkos kód kezelő"
   },
-  "secretsManagerBeta": {
-    "message": "Titkos kód kezelő béta"
-  },
   "secretsManagerAccessDescription": {
     "message": "A felhasználói hozzáférés bekapcsolása a Titkos kód kezelőhöz."
   },
@@ -6955,12 +6961,6 @@
   },
   "selectionIsRequired": {
     "message": "A kiválasztás szükséges."
-  },
-  "secretsManagerSubscriptionDesc": {
-    "message": "A bétaprogram alatt díjmentesen engedélyezzük a szervezeti hozzáférést a Titkos kód kezelőhöz. A felhasználók hozzáférést kaphatnak a bétá verzióhoz a Tagok részben."
-  },
-  "secretsManagerEnable": {
-    "message": "A Titkos kód kezelő engedélyezése"
   },
   "saPeopleWarningTitle": {
     "message": "Az eléréi vezérjel még minig elérhető."
@@ -7234,6 +7234,15 @@
       }
     }
   },
+  "startYour7DayFreeTrialOfBitwardenSecretsManagerFor": {
+    "message": "Kezdjük el a Bitwarden Titkos Kód Kezelő $ORG$ 7 napos ingyenes próbaverzió használatát",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Organization name"
+      }
+    }
+  },
   "next": {
     "message": "Következő"
   },
@@ -7395,22 +7404,6 @@
   "loggedInExclamation": {
     "message": "Megtörtént a bejelentkezés."
   },
-  "smBetaEndedDesc": {
-    "message": "A Titkós kód kezelő bétaverziója $BETA_ENDING_DATE$ időpontban befejeződött. Még $DAYS$ napig lehetőség van a Titkos kód kezelő szolgáltatás hozzáadásához a fizetett előfizetéshez és a hozzáférés fenntartásához a Titkos kód kezelő adataihoz. Lépjünk kapcsolatba az Ügyfél szolgálattal aTitkos kód kezelő hozzáadásához az előfizetéshez.",
-    "placeholders": {
-      "beta_ending_date": {
-        "content": "$1",
-        "example": "August 1, 2023"
-      },
-      "days": {
-        "content": "$2",
-        "example": "11"
-      }
-    }
-  },
-  "betaEnding": {
-    "message": "Béta vezió befejezés"
-  },
   "beta": {
     "message": "Béta"
   },
@@ -7508,5 +7501,17 @@
   },
   "collectionEnhancementsLearnMore": {
     "message": "További információ a gyűjteménykezelésről"
+  },
+  "organizationInformation": {
+    "message": "Szervezeti információ"
+  },
+  "confirmationDetails": {
+    "message": "Megerősítő adatok"
+  },
+  "smFreeTrialThankYou": {
+    "message": "Köszönet a Bitwarden Titkos Kód Kezelő regisztrációért!"
+  },
+  "smFreeTrialConfirmationEmail": {
+    "message": "A megerősítő email elküldésre került az email címre:"
   }
 }

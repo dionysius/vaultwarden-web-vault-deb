@@ -2531,6 +2531,15 @@
       }
     }
   },
+  "trialSecretsManagerThankYou": {
+    "message": "Thanks for signing up for Bitwarden Secrets Manager for $PLAN$!",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
   "trialPaidInfoMessage": {
     "message": "7 gün ödənişsiz sınaq $PLAN$, 7 gün sonra ödənişli abunəliyə çevriləcək.",
     "placeholders": {
@@ -6850,9 +6859,6 @@
   "secretsManager": {
     "message": "Sirr Meneceri"
   },
-  "secretsManagerBeta": {
-    "message": "Sirr Meneceri Beta"
-  },
   "secretsManagerAccessDescription": {
     "message": "\"Sirr Meneceri\"nə istifadəçi müraciətini aktivləşdir."
   },
@@ -6955,12 +6961,6 @@
   },
   "selectionIsRequired": {
     "message": "Seçim tələb olunur."
-  },
-  "secretsManagerSubscriptionDesc": {
-    "message": "Beta proqramı zamanı təşkilatın \"Sirr Meneceri\"nə müraciətini ödənişsiz olaraq işə salın. İstifadəçilərə, Üzvlərdə Betaya müraciət icazəsi verilə bilər."
-  },
-  "secretsManagerEnable": {
-    "message": "\"Sirr Meneceri Beta\"nı fəallaşdır"
   },
   "saPeopleWarningTitle": {
     "message": "Müraciət tokenləri hələ də əlçatandır"
@@ -7234,6 +7234,15 @@
       }
     }
   },
+  "startYour7DayFreeTrialOfBitwardenSecretsManagerFor": {
+    "message": "Start your 7-Day free trial of Bitwarden Secrets Manager for $ORG$",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Organization name"
+      }
+    }
+  },
   "next": {
     "message": "Növbəti"
   },
@@ -7395,22 +7404,6 @@
   "loggedInExclamation": {
     "message": "Giriş edildi!"
   },
-  "smBetaEndedDesc": {
-    "message": "Sirr Meneceri Beta $BETA_ENDING_DATE$ tarixində bitir. \"Sirr Meneceri\"ni ödənişli abunəliyinizə əlavə etmək və Sirr Meneceri datalarına müraciəti davam etdirmək üçün $DAYS$ gününüz qaldı. \"Sirr Meneceri\"ni abunəliyinizə əlavə etmək üçün Müştəri Uğuru ilə əlaqə saxlayın.",
-    "placeholders": {
-      "beta_ending_date": {
-        "content": "$1",
-        "example": "August 1, 2023"
-      },
-      "days": {
-        "content": "$2",
-        "example": "11"
-      }
-    }
-  },
-  "betaEnding": {
-    "message": "Beta bitir"
-  },
   "beta": {
     "message": "Beta"
   },
@@ -7508,5 +7501,17 @@
   },
   "collectionEnhancementsLearnMore": {
     "message": "Kolleksiya idarəsi haqqında daha ətraflı"
+  },
+  "organizationInformation": {
+    "message": "Organization information"
+  },
+  "confirmationDetails": {
+    "message": "Confirmation details"
+  },
+  "smFreeTrialThankYou": {
+    "message": "Thank you for signing up for Bitwarden Secrets Manager!"
+  },
+  "smFreeTrialConfirmationEmail": {
+    "message": "We've sent a confirmation email to your email at "
   }
 }

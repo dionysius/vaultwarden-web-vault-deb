@@ -2531,6 +2531,15 @@
       }
     }
   },
+  "trialSecretsManagerThankYou": {
+    "message": "Thanks for signing up for Bitwarden Secrets Manager for $PLAN$!",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
   "trialPaidInfoMessage": {
     "message": "Ang iyong $PLAN$ 7 araw na libreng pagsubok ay ipapalit sa isang bayad na subscription pagkatapos ng 7 araw.",
     "placeholders": {
@@ -3471,7 +3480,7 @@
     "message": "Magtakda ng limitasyon ng upuan para sa iyong subscription. Kapag naabot na ang limitasyong ito, hindi ka na makakapag imbita ng mga bagong miyembro."
   },
   "limitSmSubscriptionDesc": {
-    "message": "Set a seat limit for your Secrets Manger subscription. Once this limit is reached, you will not be able to invite new members."
+    "message": "Set a seat limit for your Secrets Manager subscription. Once this limit is reached, you will not be able to invite new members."
   },
   "maxSeatLimit": {
     "message": "Limitasyon ng Upuan (opsyonal)",
@@ -6850,9 +6859,6 @@
   "secretsManager": {
     "message": "Secrets Manager"
   },
-  "secretsManagerBeta": {
-    "message": "Secrets Manager Beta"
-  },
   "secretsManagerAccessDescription": {
     "message": "Activate user access to Secrets Manager."
   },
@@ -6955,12 +6961,6 @@
   },
   "selectionIsRequired": {
     "message": "Kinakailangan ang pagpili."
-  },
-  "secretsManagerSubscriptionDesc": {
-    "message": "I-on ang access sa Organisasyon sa Secrets Manager nang walang bayad sa loob ng Beta program. Mga user ay maaaring granted access sa Beta sa Members."
-  },
-  "secretsManagerEnable": {
-    "message": "Paganahin ang Secrets Manager Beta"
   },
   "saPeopleWarningTitle": {
     "message": "Mga access tokens pa rin ang magagamit"
@@ -7234,6 +7234,15 @@
       }
     }
   },
+  "startYour7DayFreeTrialOfBitwardenSecretsManagerFor": {
+    "message": "Start your 7-Day free trial of Bitwarden Secrets Manager for $ORG$",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Organization name"
+      }
+    }
+  },
   "next": {
     "message": "Next"
   },
@@ -7395,22 +7404,6 @@
   "loggedInExclamation": {
     "message": "Logged in!"
   },
-  "smBetaEndedDesc": {
-    "message": "The Secrets Manager Beta ended $BETA_ENDING_DATE$. You have $DAYS$ days left to add Secrets Manager to your paid subscription and maintain access to Secrets Manager data. Contact Customer Success to add Secrets Manager to your subscription.",
-    "placeholders": {
-      "beta_ending_date": {
-        "content": "$1",
-        "example": "August 1, 2023"
-      },
-      "days": {
-        "content": "$2",
-        "example": "11"
-      }
-    }
-  },
-  "betaEnding": {
-    "message": "Beta Ending"
-  },
   "beta": {
     "message": "Beta"
   },
@@ -7508,5 +7501,17 @@
   },
   "collectionEnhancementsLearnMore": {
     "message": "Learn more about collection management"
+  },
+  "organizationInformation": {
+    "message": "Organization information"
+  },
+  "confirmationDetails": {
+    "message": "Confirmation details"
+  },
+  "smFreeTrialThankYou": {
+    "message": "Thank you for signing up for Bitwarden Secrets Manager!"
+  },
+  "smFreeTrialConfirmationEmail": {
+    "message": "We've sent a confirmation email to your email at "
   }
 }

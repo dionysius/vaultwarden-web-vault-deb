@@ -2531,6 +2531,15 @@
       }
     }
   },
+  "trialSecretsManagerThankYou": {
+    "message": "Thanks for signing up for Bitwarden Secrets Manager for $PLAN$!",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
   "trialPaidInfoMessage": {
     "message": "$PLAN$ 7 dienu izmēģinājums tiks pārveidots par maksas abonementu pēc 7 dienām.",
     "placeholders": {
@@ -6850,9 +6859,6 @@
   "secretsManager": {
     "message": "Noslēpumu pārvaldnieks"
   },
-  "secretsManagerBeta": {
-    "message": "Noslēpumu pārvaldnieks Beta"
-  },
   "secretsManagerAccessDescription": {
     "message": "Ieslēgt lietotāju piekļuvi Noslēpumu pārvaldniekam."
   },
@@ -6955,12 +6961,6 @@
   },
   "selectionIsRequired": {
     "message": "Nepieciešams veikt atlasi."
-  },
-  "secretsManagerSubscriptionDesc": {
-    "message": "Ieslēgt apvienības piekļuvi Noslēpumu pārvaldniekam bez papildu maksas Beta programmas laikā. Lietotājiem Bet piekļuvi var nodrošināt sadaļā \"Dalībnieki\"."
-  },
-  "secretsManagerEnable": {
-    "message": "Iespējot Noslēpumu pārvaldnieks Beta"
   },
   "saPeopleWarningTitle": {
     "message": "Piekļuves pilnvaras joprojām ir pieejamas"
@@ -7234,6 +7234,15 @@
       }
     }
   },
+  "startYour7DayFreeTrialOfBitwardenSecretsManagerFor": {
+    "message": "Start your 7-Day free trial of Bitwarden Secrets Manager for $ORG$",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Organization name"
+      }
+    }
+  },
   "next": {
     "message": "Turpināt"
   },
@@ -7395,22 +7404,6 @@
   "loggedInExclamation": {
     "message": "Pieteicies."
   },
-  "smBetaEndedDesc": {
-    "message": "Noslēpumu pārvaldnieka beta beidzās $BETA_ENDING_DATE$. Ir atlikušas $DAYS$ dienas, lai pievienotu Noslēpumu pārvaldnieku apmaksātajam abonementam un saglabātu piekļuvu Noslēpumu pārvaldnieka datiem. Jāsazināš ar klientu atbalstu, lai abonementam pievienotu Noslēpumu pārvaldnieku.",
-    "placeholders": {
-      "beta_ending_date": {
-        "content": "$1",
-        "example": "August 1, 2023"
-      },
-      "days": {
-        "content": "$2",
-        "example": "11"
-      }
-    }
-  },
-  "betaEnding": {
-    "message": "Beta ir beidzies"
-  },
   "beta": {
     "message": "Beta"
   },
@@ -7508,5 +7501,17 @@
   },
   "collectionEnhancementsLearnMore": {
     "message": "Uzzināt vairāk par krājumu pārvaldību"
+  },
+  "organizationInformation": {
+    "message": "Organization information"
+  },
+  "confirmationDetails": {
+    "message": "Confirmation details"
+  },
+  "smFreeTrialThankYou": {
+    "message": "Thank you for signing up for Bitwarden Secrets Manager!"
+  },
+  "smFreeTrialConfirmationEmail": {
+    "message": "We've sent a confirmation email to your email at "
   }
 }

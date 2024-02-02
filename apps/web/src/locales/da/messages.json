@@ -2531,6 +2531,15 @@
       }
     }
   },
+  "trialSecretsManagerThankYou": {
+    "message": "Tak for tilmeldingen til Bitwarden Secrets Manager for $PLAN$!",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
   "trialPaidInfoMessage": {
     "message": "Når den 7-dages gratis prøveperiode på $PLAN$ udløber, konverteres den til et betalt abonnement.",
     "placeholders": {
@@ -6850,9 +6859,6 @@
   "secretsManager": {
     "message": "Hemmelighedshåndtering"
   },
-  "secretsManagerBeta": {
-    "message": "Secrets Manager Beta"
-  },
   "secretsManagerAccessDescription": {
     "message": "Aktivér brugeradgang til Hemmelighedshåndtering."
   },
@@ -6955,12 +6961,6 @@
   },
   "selectionIsRequired": {
     "message": "Valg er obligatorisk."
-  },
-  "secretsManagerSubscriptionDesc": {
-    "message": "Slå organisationsadgang til Secrets Manager til uden beregning under Beta-programmet. Brugere kan få adgang til Beta under Medlemmer."
-  },
-  "secretsManagerEnable": {
-    "message": "Aktivér Secrets Manager Beta"
   },
   "saPeopleWarningTitle": {
     "message": "Adgangstokener stadig tilgængelige"
@@ -7234,6 +7234,15 @@
       }
     }
   },
+  "startYour7DayFreeTrialOfBitwardenSecretsManagerFor": {
+    "message": "Start den 7-dages gratis prøveperiode af Bitwarden Secrets Manager til $ORG$",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Organization name"
+      }
+    }
+  },
   "next": {
     "message": "Næste"
   },
@@ -7395,22 +7404,6 @@
   "loggedInExclamation": {
     "message": "Indlogget!"
   },
-  "smBetaEndedDesc": {
-    "message": "Secrets Manager Beta ophørte $BETA_ENDING_DATE$. Der er $DAYS$ dage tilbage til at føje Secrets Manager til dit betalte abonnement og bevare adgangen til Secrets Manager-data. Kontakt Customer Success for at føje Secrets Manager til abonnementet.",
-    "placeholders": {
-      "beta_ending_date": {
-        "content": "$1",
-        "example": "August 1, 2023"
-      },
-      "days": {
-        "content": "$2",
-        "example": "11"
-      }
-    }
-  },
-  "betaEnding": {
-    "message": "Beta ophører"
-  },
   "beta": {
     "message": "Beta"
   },
@@ -7508,5 +7501,17 @@
   },
   "collectionEnhancementsLearnMore": {
     "message": "Læs mere om samlingshåndtering"
+  },
+  "organizationInformation": {
+    "message": "Organisationsoplysninger"
+  },
+  "confirmationDetails": {
+    "message": "Bekræftelsesoplysninger"
+  },
+  "smFreeTrialThankYou": {
+    "message": "Tak for tilmeldingen til Bitwarden Secrets Manager!"
+  },
+  "smFreeTrialConfirmationEmail": {
+    "message": "Vi har sendt bekræftelsesmail til dig via "
   }
 }

@@ -2531,6 +2531,15 @@
       }
     }
   },
+  "trialSecretsManagerThankYou": {
+    "message": "Obrigado por se inscrever no Gestor de Segredos Bitwarden para o plano $PLAN$!",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
   "trialPaidInfoMessage": {
     "message": "O seu teste gratuito de 7 dias de $PLAN$ será convertido numa subscrição paga após 7 dias.",
     "placeholders": {
@@ -6850,9 +6859,6 @@
   "secretsManager": {
     "message": "Gestor de Segredos"
   },
-  "secretsManagerBeta": {
-    "message": "Gestor de Segredos Beta"
-  },
   "secretsManagerAccessDescription": {
     "message": "Ativar o acesso do utilizador ao Gestor de Segredos."
   },
@@ -6955,12 +6961,6 @@
   },
   "selectionIsRequired": {
     "message": "É necessária uma seleção."
-  },
-  "secretsManagerSubscriptionDesc": {
-    "message": "Ativar o acesso da organização ao Gestor de Segredos sem custos durante o programa Beta. Os utilizadores podem ter acesso ao Beta em Membros."
-  },
-  "secretsManagerEnable": {
-    "message": "Ativar o Gestor de Segredos Beta"
   },
   "saPeopleWarningTitle": {
     "message": "Tokens de acesso ainda disponíveis"
@@ -7234,6 +7234,15 @@
       }
     }
   },
+  "startYour7DayFreeTrialOfBitwardenSecretsManagerFor": {
+    "message": "Inicie a sua avaliação gratuita de 7 dias do Gestor de Segredos Bitwarden para $ORG$",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Organization name"
+      }
+    }
+  },
   "next": {
     "message": "Avançar"
   },
@@ -7395,22 +7404,6 @@
   "loggedInExclamation": {
     "message": "Sessão iniciada!"
   },
-  "smBetaEndedDesc": {
-    "message": "O Gestor de Segredos Beta terminou a $BETA_ENDING_DATE$. Restam-lhe $DAYS$ dias para adicionar o Gestor de Segredos à sua subscrição paga e manter o acesso aos dados do Gestor de Segredos. Contacte o Serviço de Apoio ao Cliente para adicionar o Gestor de Segredos à sua subscrição.",
-    "placeholders": {
-      "beta_ending_date": {
-        "content": "$1",
-        "example": "August 1, 2023"
-      },
-      "days": {
-        "content": "$2",
-        "example": "11"
-      }
-    }
-  },
-  "betaEnding": {
-    "message": "Fim da versão Beta"
-  },
   "beta": {
     "message": "Beta"
   },
@@ -7508,5 +7501,17 @@
   },
   "collectionEnhancementsLearnMore": {
     "message": "Saiba mais sobre a gestão de coleções"
+  },
+  "organizationInformation": {
+    "message": "Informações sobre a organização"
+  },
+  "confirmationDetails": {
+    "message": "Detalhes da confirmação"
+  },
+  "smFreeTrialThankYou": {
+    "message": "Obrigado por se inscrever no Gestor de Segredos Bitwarden!"
+  },
+  "smFreeTrialConfirmationEmail": {
+    "message": "Enviámos um e-mail de confirmação para o seu e-mail:"
   }
 }

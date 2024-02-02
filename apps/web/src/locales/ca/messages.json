@@ -2531,6 +2531,15 @@
       }
     }
   },
+  "trialSecretsManagerThankYou": {
+    "message": "Gràcies per registrar-vos a Bitwarden Secrets Manager per $PLAN$!",
+    "placeholders": {
+      "plan": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
   "trialPaidInfoMessage": {
     "message": "La vostra prova gratuïta de $PLAN$ de 7 dies es convertirà en una subscripció de pagament al cap de 7 dies.",
     "placeholders": {
@@ -6850,9 +6859,6 @@
   "secretsManager": {
     "message": "Administrador de secrets"
   },
-  "secretsManagerBeta": {
-    "message": "Administrador de secrets Beta"
-  },
   "secretsManagerAccessDescription": {
     "message": "Activa l'accés dels usuaris a l'administrador de secrets."
   },
@@ -6955,12 +6961,6 @@
   },
   "selectionIsRequired": {
     "message": "La selecció és necessària."
-  },
-  "secretsManagerSubscriptionDesc": {
-    "message": "Activeu l’accés a l’organització al Gestor de secrets sense cap càrrec durant el programa beta. Els usuaris poden rebre accés a la beta en membres."
-  },
-  "secretsManagerEnable": {
-    "message": "Habilita l'administrador de secrets Beta"
   },
   "saPeopleWarningTitle": {
     "message": "Els tokens d'accés encara estan disponibles"
@@ -7234,6 +7234,15 @@
       }
     }
   },
+  "startYour7DayFreeTrialOfBitwardenSecretsManagerFor": {
+    "message": "Inicieu la vostra prova gratuïta de 7 dies de Bitwarden Secrets Manager per a $ORG$",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Organization name"
+      }
+    }
+  },
   "next": {
     "message": "Següent"
   },
@@ -7395,22 +7404,6 @@
   "loggedInExclamation": {
     "message": "Connectat!"
   },
-  "smBetaEndedDesc": {
-    "message": "La beta de l'administrador de secrets va finalitzar el dia $BETA_ENDING_DATE$. Et queden $DAYS$ dies per afegir l'administrador de secrets a la teua subscripció de pagament i mantindre l'accés a les dades de l'administrador de secrets. Contacteu amb Customer Success per afegir l'administrador de secrets a la vostra subscripció.",
-    "placeholders": {
-      "beta_ending_date": {
-        "content": "$1",
-        "example": "August 1, 2023"
-      },
-      "days": {
-        "content": "$2",
-        "example": "11"
-      }
-    }
-  },
-  "betaEnding": {
-    "message": "Beta final"
-  },
   "beta": {
     "message": "Beta"
   },
@@ -7508,5 +7501,17 @@
   },
   "collectionEnhancementsLearnMore": {
     "message": "Més informació sobre gestió de col·leccions"
+  },
+  "organizationInformation": {
+    "message": "Informació de l'organització"
+  },
+  "confirmationDetails": {
+    "message": "Detall de confirmació"
+  },
+  "smFreeTrialThankYou": {
+    "message": "Gràcies per registrar-vos a Bitwarden Secrets Manager!"
+  },
+  "smFreeTrialConfirmationEmail": {
+    "message": "Hem enviat un correu electrònic de confirmació al vostre correu electrònic a "
   }
 }
