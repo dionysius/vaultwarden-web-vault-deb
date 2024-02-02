@@ -8,9 +8,9 @@ window.addEventListener("load", () => {
   const lastpass = getQsParam("lp");
 
   if (lastpass === "1") {
-    initiateBrowserSso(code, state, true);
+    initiateBrowserSsoIfDocumentReady(code, state, true);
   } else if (state != null && state.includes(":clientId=browser")) {
-    initiateBrowserSso(code, state, false);
+    initiateBrowserSsoIfDocumentReady(code, state, false);
   } else {
     window.location.href = window.location.origin + "/#/sso?code=" + code + "&state=" + state;
     // Match any characters between "_returnUri='" and the next "'"
@@ -22,6 +22,20 @@ window.addEventListener("load", () => {
     }
   }
 });
+
+function initiateBrowserSsoIfDocumentReady(code: string, state: string, lastpass: boolean) {
+  if (document.readyState === "complete") {
+    initiateBrowserSso(code, state, lastpass);
+    return;
+  }
+
+  const interval = setInterval(() => {
+    if (document.readyState === "complete") {
+      clearInterval(interval);
+      initiateBrowserSso(code, state, lastpass);
+    }
+  }, 50);
+}
 
 function initiateBrowserSso(code: string, state: string, lastpass: boolean) {
   window.postMessage({ command: "authResult", code: code, state: state, lastpass: lastpass }, "*");
