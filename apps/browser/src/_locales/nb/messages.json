@@ -92,13 +92,13 @@
     "message": "Auto-utfylling"
   },
   "autoFillLogin": {
-    "message": "Auto-fill login"
+    "message": "Auto-utfyll pålogging"
   },
   "autoFillCard": {
-    "message": "Auto-fill card"
+    "message": "Auto-utfyll kort"
   },
   "autoFillIdentity": {
-    "message": "Auto-fill identity"
+    "message": "Auto-utfyll identitet"
   },
   "generatePasswordCopied": {
     "message": "Generer et passord (kopiert)"
@@ -110,19 +110,19 @@
     "message": "Ingen samsvarende innlogginger."
   },
   "noCards": {
-    "message": "No cards"
+    "message": "Ingen kort"
   },
   "noIdentities": {
-    "message": "No identities"
+    "message": "Ingen identiteter"
   },
   "addLoginMenu": {
-    "message": "Add login"
+    "message": "Legg til pålogging"
   },
   "addCardMenu": {
-    "message": "Add card"
+    "message": "Legg til kort"
   },
   "addIdentityMenu": {
-    "message": "Add identity"
+    "message": "Legg til identitet"
   },
   "unlockVaultMenu": {
     "message": "Lås opp hvelvet ditt"
@@ -269,7 +269,7 @@
     "message": "Lengde"
   },
   "passwordMinLength": {
-    "message": "Minimum password length"
+    "message": "﻿Minimum passordlengde"
   },
   "uppercase": {
     "message": "Store bokstaver (A–Å)"
@@ -415,7 +415,7 @@
     "message": "Lås nå"
   },
   "lockAll": {
-    "message": "Lock all"
+    "message": "Lås alle"
   },
   "immediately": {
     "message": "Umiddelbart"
@@ -519,7 +519,7 @@
     "message": "Unable to scan QR code from the current webpage"
   },
   "totpCaptureSuccess": {
-    "message": "Authenticator key added"
+    "message": "Autentiseringsnøkkel ble lagt til"
   },
   "totpCapture": {
     "message": "Scan authenticator QR code from current webpage"
@@ -697,7 +697,7 @@
     "message": "Unlock your Bitwarden vault to complete the auto-fill request."
   },
   "notificationUnlock": {
-    "message": "Unlock"
+    "message": "Lås opp"
   },
   "enableContextMenuItem": {
     "message": "Vis alternativer for kontekstmeny"
@@ -1055,10 +1055,10 @@
     "message": "Turn off your browser’s built in password manager settings to avoid conflicts."
   },
   "turnOffBrowserBuiltInPasswordManagerSettingsLink": {
-    "message": "Edit browser settings."
+    "message": "Rediger nettleserinnstillingene."
   },
   "autofillOverlayVisibilityOff": {
-    "message": "Off",
+    "message": "Av",
     "description": "Overlay setting select option for disabling autofill overlay"
   },
   "autofillOverlayVisibilityOnFieldFocus": {
@@ -1568,7 +1568,7 @@
     "message": "Warning: This is an unsecured HTTP page, and any information you submit can potentially be seen and changed by others. This Login was originally saved on a secure (HTTPS) page."
   },
   "insecurePageWarningFillPrompt": {
-    "message": "Do you still wish to fill this login?"
+    "message": "Ønsker du likevel å fylle ut denne innloggingen?"
   },
   "autofillIframeWarning": {
     "message": "The form is hosted by a different domain than the URI of your saved login. Choose OK to auto-fill anyway, or Cancel to stop."
@@ -1586,13 +1586,13 @@
     "message": "Angi hovedpassord"
   },
   "currentMasterPass": {
-    "message": "Current master password"
+    "message": "Gjeldende hovedpassord"
   },
   "newMasterPass": {
-    "message": "New master password"
+    "message": "Nytt hovedpassord"
   },
   "confirmNewMasterPass": {
-    "message": "Confirm new master password"
+    "message": "Bekreft det nye hovedpassordet"
   },
   "masterPasswordPolicyInEffect": {
     "message": "En eller flere av virksomhetens regler krever at hovedpassordet oppfyller følgende krav:"
@@ -1703,7 +1703,7 @@
     "message": "Biometri i nettleseren støttes ikke på denne enheten."
   },
   "biometricsFailedTitle": {
-    "message": "Biometrics failed"
+    "message": "Biometri mislyktes"
   },
   "biometricsFailedDesc": {
     "message": "Biometrics cannot be completed, consider using a master password or logging out. If this persists, please contact Bitwarden support."
@@ -2007,7 +2007,7 @@
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "verificationRequired": {
-    "message": "Verification required",
+    "message": "Verifisering kreves",
     "description": "Default title for the user verification dialog."
   },
   "hours": {
@@ -2205,7 +2205,7 @@
     "message": "Server Versjon"
   },
   "selfHostedServer": {
-    "message": "self-hosted"
+    "message": "selvbetjent"
   },
   "thirdParty": {
     "message": "Tredjepart"
@@ -2304,7 +2304,7 @@
     "message": "Hvordan bruke auto-utfylling"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Select an item from this screen, use the shortcut $COMMAND$, or explore other options in settings.",
+    "message": "Velg en gjenstand fra denne skjermen, bruk snarveien $COMMAND$, eller utforsk andre alternativer i innstillingene.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2313,7 +2313,7 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "Select an item from this screen, or explore other options in settings."
+    "message": "Velg en gjenstand fra denne skjermen, eller utforsk andre alternativer i innstillingene."
   },
   "gotIt": {
     "message": "Skjønner"
@@ -2346,16 +2346,16 @@
     }
   },
   "loggingInOn": {
-    "message": "Logging in on"
+    "message": "Logger inn på"
   },
   "opensInANewWindow": {
-    "message": "Opens in a new window"
+    "message": "Åpnes i et nytt vindu"
   },
   "deviceApprovalRequired": {
     "message": "Device approval required. Select an approval option below:"
   },
   "rememberThisDevice": {
-    "message": "Remember this device"
+    "message": "Husk denne enheten"
   },
   "uncheckIfPublicDevice": {
     "message": "Uncheck if using a public device"
@@ -2367,7 +2367,7 @@
     "message": "Request admin approval"
   },
   "approveWithMasterPassword": {
-    "message": "Approve with master password"
+    "message": "Godkjenn med hovedpassord"
   },
   "ssoIdentifierRequired": {
     "message": "Organization SSO identifier is required."
@@ -2386,7 +2386,7 @@
     "message": "Access denied. You do not have permission to view this page."
   },
   "general": {
-    "message": "General"
+    "message": "Generelt"
   },
   "display": {
     "message": "Display"
@@ -2398,16 +2398,16 @@
     "message": "Admin approval requested"
   },
   "adminApprovalRequestSentToAdmins": {
-    "message": "Your request has been sent to your admin."
+    "message": "Forespørselen din har blitt sendt til administratoren din."
   },
   "youWillBeNotifiedOnceApproved": {
-    "message": "You will be notified once approved."
+    "message": "Du vil bli varslet når det er godkjent."
   },
   "troubleLoggingIn": {
     "message": "Trouble logging in?"
   },
   "loginApproved": {
-    "message": "Login approved"
+    "message": "Innlogging godkjent"
   },
   "userEmailMissing": {
     "message": "User email missing"
@@ -2416,16 +2416,16 @@
     "message": "Device trusted"
   },
   "inputRequired": {
-    "message": "Input is required."
+    "message": "Inndata er påkrevd."
   },
   "required": {
-    "message": "required"
+    "message": "påkrevd"
   },
   "search": {
-    "message": "Search"
+    "message": "Søk"
   },
   "inputMinLength": {
-    "message": "Input must be at least $COUNT$ characters long.",
+    "message": "Inndataen må være minst $COUNT$ tegn.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2434,7 +2434,7 @@
     }
   },
   "inputMaxLength": {
-    "message": "Input must not exceed $COUNT$ characters in length.",
+    "message": "Inndataen kan ikke ha mer enn $COUNT$ tegn.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2452,7 +2452,7 @@
     }
   },
   "inputMinValue": {
-    "message": "Input value must be at least $MIN$.",
+    "message": "Inndataverdien må være minst $MIN$.",
     "placeholders": {
       "min": {
         "content": "$1",
@@ -2461,7 +2461,7 @@
     }
   },
   "inputMaxValue": {
-    "message": "Input value must not exceed $MAX$.",
+    "message": "Inndataverdien kan ikke være mer enn $MAX$.",
     "placeholders": {
       "max": {
         "content": "$1",
@@ -2477,7 +2477,7 @@
     "description": "Notification to inform the user that a form's input can't contain only whitespace."
   },
   "inputEmail": {
-    "message": "Input is not an email address."
+    "message": "Inndataen er ikke en E-postadresse."
   },
   "fieldsNeedAttention": {
     "message": "$COUNT$ field(s) above need your attention.",
@@ -2489,22 +2489,22 @@
     }
   },
   "selectPlaceholder": {
-    "message": "-- Select --"
+    "message": "-- Velg --"
   },
   "multiSelectPlaceholder": {
-    "message": "-- Type to filter --"
+    "message": "— Skriv for å filtrere —"
   },
   "multiSelectLoading": {
     "message": "Retrieving options..."
   },
   "multiSelectNotFound": {
-    "message": "No items found"
+    "message": "Ingen gjenstander funnet"
   },
   "multiSelectClearAll": {
-    "message": "Clear all"
+    "message": "Tøm alle"
   },
   "plusNMore": {
-    "message": "+ $QUANTITY$ more",
+    "message": "+ $QUANTITY$ til",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -2513,14 +2513,14 @@
     }
   },
   "submenu": {
-    "message": "Submenu"
+    "message": "Undermeny"
   },
   "toggleCollapse": {
     "message": "Toggle collapse",
     "description": "Toggling an expand/collapse state."
   },
   "filelessImport": {
-    "message": "Import your data to Bitwarden?",
+    "message": "Vil du importere dataene dine til Bitwarden?",
     "description": "Default notification title for triggering a fileless import."
   },
   "lpFilelessImport": {
@@ -2528,19 +2528,19 @@
     "description": "LastPass specific notification title for triggering a fileless import."
   },
   "lpCancelFilelessImport": {
-    "message": "Save as unencrypted file",
+    "message": "Lagre som ukryptert fil",
     "description": "LastPass specific notification button text for cancelling a fileless import."
   },
   "startFilelessImport": {
-    "message": "Import to Bitwarden",
+    "message": "Importer til Bitwarden",
     "description": "Notification button text for starting a fileless import."
   },
   "importing": {
-    "message": "Importing...",
+    "message": "Importerer …",
     "description": "Notification message for when an import is in progress."
   },
   "dataSuccessfullyImported": {
-    "message": "Data successfully imported!",
+    "message": "Dataene ble vellykket importert!",
     "description": "Notification message for when an import has completed successfully."
   },
   "dataImportFailed": {
@@ -2552,7 +2552,7 @@
     "description": "Notification message for when an import has failed due to a network error."
   },
   "aliasDomain": {
-    "message": "Alias domain"
+    "message": "Alias-domene"
   },
   "passwordRepromptDisabledAutofillOnPageLoad": {
     "message": "Items with master password re-prompt cannot be auto-filled on page load. Auto-fill on page load turned off.",
@@ -2567,7 +2567,7 @@
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
   "skipToContent": {
-    "message": "Skip to content"
+    "message": "Hopp frem til innholdet"
   },
   "bitwardenOverlayButton": {
     "message": "Bitwarden auto-fill menu button",
@@ -2586,7 +2586,7 @@
     "description": "Text to display in overlay when the account is locked."
   },
   "unlockAccount": {
-    "message": "Unlock account",
+    "message": "Lås opp kontoen",
     "description": "Button text to display in overlay when the account is locked."
   },
   "fillCredentialsFor": {
@@ -2594,19 +2594,19 @@
     "description": "Screen reader text for when overlay item is in focused"
   },
   "partialUsername": {
-    "message": "Partial username",
+    "message": "Delvis brukernavn",
     "description": "Screen reader text for when a login item is focused where a partial username is displayed. SR will announce this phrase before reading the text of the partial username"
   },
   "noItemsToShow": {
-    "message": "No items to show",
+    "message": "Ingen gjenstander å vise",
     "description": "Text to show in overlay if there are no matching items"
   },
   "newItem": {
-    "message": "New item",
+    "message": "Nytt objekt",
     "description": "Button text to display in overlay when there are no matching items"
   },
   "addNewVaultItem": {
-    "message": "Add new vault item",
+    "message": "Legg til nytt hvelvobjekt",
     "description": "Screen reader text (aria-label) for new item button in overlay"
   },
   "bitwardenOverlayMenuAvailable": {
@@ -2614,13 +2614,13 @@
     "description": "Screen reader text for announcing when the overlay opens on the page"
   },
   "turnOn": {
-    "message": "Turn on"
+    "message": "Skru på"
   },
   "ignore": {
-    "message": "Ignore"
+    "message": "Ignorer"
   },
   "importData": {
-    "message": "Import data",
+    "message": "Importer data",
     "description": "Used for the header of the import dialog, the import button and within the file-password-prompt"
   },
   "importError": {
@@ -2630,16 +2630,16 @@
     "message": "There was a problem with the data you tried to import. Please resolve the errors listed below in your source file and try again."
   },
   "resolveTheErrorsBelowAndTryAgain": {
-    "message": "Resolve the errors below and try again."
+    "message": "Fiks feilene nedenfor og prøv igjen."
   },
   "description": {
-    "message": "Description"
+    "message": "Beskrivelse"
   },
   "importSuccess": {
     "message": "Data successfully imported"
   },
   "importSuccessNumberOfItems": {
-    "message": "A total of $AMOUNT$ items were imported.",
+    "message": "$AMOUNT$ gjenstander totalt ble importert.",
     "placeholders": {
       "amount": {
         "content": "$1",
@@ -2648,40 +2648,40 @@
     }
   },
   "tryAgain": {
-    "message": "Try again"
+    "message": "Prøv igjen"
   },
   "verificationRequiredForActionSetPinToContinue": {
     "message": "Verification required for this action. Set a PIN to continue."
   },
   "setPin": {
-    "message": "Set PIN"
+    "message": "Velg PIN"
   },
   "verifyWithBiometrics": {
-    "message": "Verify with biometrics"
+    "message": "Bekreft med biometri"
   },
   "awaitingConfirmation": {
-    "message": "Awaiting confirmation"
+    "message": "Avventer bekreftelse"
   },
   "couldNotCompleteBiometrics": {
-    "message": "Could not complete biometrics."
+    "message": "Kunne ikke fullføre biometri."
   },
   "needADifferentMethod": {
-    "message": "Need a different method?"
+    "message": "Trenger du en annen metode?"
   },
   "useMasterPassword": {
-    "message": "Use master password"
+    "message": "Bruk hovedpassord"
   },
   "usePin": {
-    "message": "Use PIN"
+    "message": "Bruk PIN-kode"
   },
   "useBiometrics": {
-    "message": "Use biometrics"
+    "message": "Bruk biometri"
   },
   "enterVerificationCodeSentToEmail": {
-    "message": "Enter the verification code that was sent to your email."
+    "message": "Skriv inn bekreftelseskoden som ble sendt til e-postadressen din."
   },
   "resendCode": {
-    "message": "Resend code"
+    "message": "Send koden på nytt"
   },
   "total": {
     "message": "Total"
@@ -2699,7 +2699,7 @@
     "message": "Data is not formatted correctly. Please check your import file and try again."
   },
   "importNothingError": {
-    "message": "Nothing was imported."
+    "message": "Ingenting ble importert."
   },
   "importEncKeyError": {
     "message": "Error decrypting the exported file. Your encryption key does not match the encryption key used export the data."
@@ -2711,13 +2711,13 @@
     "message": "Import destination"
   },
   "learnAboutImportOptions": {
-    "message": "Learn about your import options"
+    "message": "Lær mer om importalternativene dine"
   },
   "selectImportFolder": {
-    "message": "Select a folder"
+    "message": "Velg en mappe"
   },
   "selectImportCollection": {
-    "message": "Select a collection"
+    "message": "Velg en samling"
   },
   "importTargetHint": {
     "message": "Select this option if you want the imported file contents moved to a $DESTINATION$",
@@ -2730,25 +2730,25 @@
     }
   },
   "importUnassignedItemsError": {
-    "message": "File contains unassigned items."
+    "message": "Filen inneholder utildelte elementer."
   },
   "selectFormat": {
-    "message": "Select the format of the import file"
+    "message": "Velg formatet til importfilen"
   },
   "selectImportFile": {
-    "message": "Select the import file"
+    "message": "Velg importfilen"
   },
   "chooseFile": {
-    "message": "Choose File"
+    "message": "Velg fil"
   },
   "noFileChosen": {
-    "message": "No file chosen"
+    "message": "Ingen fil er valgt"
   },
   "orCopyPasteFileContents": {
     "message": "or copy/paste the import file contents"
   },
   "instructionsFor": {
-    "message": "$NAME$ Instructions",
+    "message": "$NAME$-instruksjoner",
     "description": "The title for the import tool instructions.",
     "placeholders": {
       "name": {
@@ -2758,13 +2758,13 @@
     }
   },
   "confirmVaultImport": {
-    "message": "Confirm vault import"
+    "message": "Bekreft hvelvimportering"
   },
   "confirmVaultImportDesc": {
     "message": "This file is password-protected. Please enter the file password to import data."
   },
   "confirmFilePassword": {
-    "message": "Confirm file password"
+    "message": "Bekreft filpassord"
   },
   "typePasskey": {
     "message": "Passkey"
@@ -2788,10 +2788,10 @@
     "message": "No passkeys found for this application."
   },
   "noMatchingPasskeyLogin": {
-    "message": "You do not have a matching login for this site."
+    "message": "Du har ikke en samsvarende innlogging for dette nettstedet."
   },
   "confirm": {
-    "message": "Confirm"
+    "message": "Bekreft"
   },
   "savePasskey": {
     "message": "Save passkey"
@@ -2812,40 +2812,40 @@
     "message": "This item already contains a passkey. Are you sure you want to overwrite the current passkey?"
   },
   "featureNotSupported": {
-    "message": "Feature not yet supported"
+    "message": "Funksjonen støttes ikke ennå"
   },
   "yourPasskeyIsLocked": {
     "message": "Authentication required to use passkey. Verify your identity to continue."
   },
   "multifactorAuthenticationCancelled": {
-    "message": "Multifactor authentication cancelled"
+    "message": "Multifaktorautentisering ble avbrutt"
   },
   "noLastPassDataFound": {
     "message": "No LastPass data found"
   },
   "incorrectUsernameOrPassword": {
-    "message": "Incorrect username or password"
+    "message": "Feil brukernavn eller passord"
   },
   "incorrectPassword": {
-    "message": "Incorrect password"
+    "message": "Feil passord"
   },
   "incorrectCode": {
-    "message": "Incorrect code"
+    "message": "Feil kode"
   },
   "incorrectPin": {
-    "message": "Incorrect PIN"
+    "message": "Feil PIN-kode"
   },
   "multifactorAuthenticationFailed": {
-    "message": "Multifactor authentication failed"
+    "message": "Multifaktorautentisering mislyktes"
   },
   "includeSharedFolders": {
-    "message": "Include shared folders"
+    "message": "Inkluder delte mapper"
   },
   "lastPassEmail": {
-    "message": "LastPass Email"
+    "message": "LastPass-E-postadresse"
   },
   "importingYourAccount": {
-    "message": "Importing your account..."
+    "message": "Importerer kontoen din…"
   },
   "lastPassMFARequired": {
     "message": "LastPass multifactor authentication required"
@@ -2860,80 +2860,80 @@
     "message": "Passcode"
   },
   "lastPassMasterPassword": {
-    "message": "LastPass master password"
+    "message": "LastPass-hovedpassord"
   },
   "lastPassAuthRequired": {
-    "message": "LastPass authentication required"
+    "message": "LastPass-autentisering kreves"
   },
   "awaitingSSO": {
-    "message": "Awaiting SSO authentication"
+    "message": "Avventer SSO-autentisering"
   },
   "awaitingSSODesc": {
     "message": "Please continue to log in using your company credentials."
   },
   "seeDetailedInstructions": {
-    "message": "See detailed instructions on our help site at",
+    "message": "Se detaljerte instruksjoner på hjelpesidene våre på",
     "description": "This is followed a by a hyperlink to the help website."
   },
   "importDirectlyFromLastPass": {
-    "message": "Import directly from LastPass"
+    "message": "Importer direkte fra LastPass"
   },
   "importFromCSV": {
-    "message": "Import from CSV"
+    "message": "Importer fra CSV"
   },
   "lastPassTryAgainCheckEmail": {
     "message": "Try again or look for an email from LastPass to verify it's you."
   },
   "collection": {
-    "message": "Collection"
+    "message": "Samling"
   },
   "lastPassYubikeyDesc": {
     "message": "Insert the YubiKey associated with your LastPass account into your computer's USB port, then touch its button."
   },
   "switchAccount": {
-    "message": "Switch account"
+    "message": "Bytt konto"
   },
   "switchAccounts": {
-    "message": "Switch accounts"
+    "message": "Bytt kontoer"
   },
   "switchToAccount": {
     "message": "Switch to account"
   },
   "activeAccount": {
-    "message": "Active account"
+    "message": "Aktiv konto"
   },
   "availableAccounts": {
-    "message": "Available accounts"
+    "message": "Tilgjengelige kontoer"
   },
   "accountLimitReached": {
-    "message": "Account limit reached. Log out of an account to add another."
+    "message": "Kontogrense nådd. Logg ut av en konto for å legge til en annen en."
   },
   "active": {
-    "message": "active"
+    "message": "aktiv"
   },
   "locked": {
-    "message": "locked"
+    "message": "låst"
   },
   "unlocked": {
-    "message": "unlocked"
+    "message": "låst opp"
   },
   "server": {
     "message": "server"
   },
   "hostedAt": {
-    "message": "hosted at"
+    "message": "betjent hos"
   },
   "useDeviceOrHardwareKey": {
     "message": "Use your device or hardware key"
   },
   "justOnce": {
-    "message": "Just once"
+    "message": "Kun én gang"
   },
   "alwaysForThisSite": {
-    "message": "Always for this site"
+    "message": "Alltid for dette nettstedet"
   },
   "domainAddedToExcludedDomains": {
-    "message": "$DOMAIN$ added to excluded domains.",
+    "message": "$DOMAIN$ ble lagt til i de ekskluderte domenene.",
     "placeholders": {
       "domain": {
         "content": "$1",
@@ -2942,7 +2942,7 @@
     }
   },
   "commonImportFormats": {
-    "message": "Common formats",
+    "message": "Vanlige formater",
     "description": "Label indicating the most common import formats"
   },
   "overrideDefaultBrowserAutofillTitle": {
@@ -2958,7 +2958,7 @@
     "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutoFillSettings": {
-    "message": "Make Bitwarden your default password manager",
+    "message": "Gjør Bitwarden til din standard passordbehandler",
     "description": "Label for the setting that allows overriding the default browser autofill settings"
   },
   "privacyPermissionAdditionNotGrantedTitle": {

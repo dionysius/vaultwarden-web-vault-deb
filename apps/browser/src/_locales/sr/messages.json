@@ -2007,7 +2007,7 @@
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "verificationRequired": {
-    "message": "Verification required",
+    "message": "Потребдна верификација",
     "description": "Default title for the user verification dialog."
   },
   "hours": {
@@ -2648,40 +2648,40 @@
     }
   },
   "tryAgain": {
-    "message": "Try again"
+    "message": "Покушајте поново"
   },
   "verificationRequiredForActionSetPinToContinue": {
-    "message": "Verification required for this action. Set a PIN to continue."
+    "message": "За ову радњу је потребна верификација. Подесите ПИН да бисте наставили."
   },
   "setPin": {
-    "message": "Set PIN"
+    "message": "Поставите PIN"
   },
   "verifyWithBiometrics": {
-    "message": "Verify with biometrics"
+    "message": "Верификујте помоћу биометрије"
   },
   "awaitingConfirmation": {
-    "message": "Awaiting confirmation"
+    "message": "Чека се потврда"
   },
   "couldNotCompleteBiometrics": {
-    "message": "Could not complete biometrics."
+    "message": "Није могуће завршити биометрију."
   },
   "needADifferentMethod": {
-    "message": "Need a different method?"
+    "message": "Потребан вам је други начин?"
   },
   "useMasterPassword": {
-    "message": "Use master password"
+    "message": "Користите главну лозинку"
   },
   "usePin": {
-    "message": "Use PIN"
+    "message": "Користите ПИН"
   },
   "useBiometrics": {
-    "message": "Use biometrics"
+    "message": "Користите биометрију"
   },
   "enterVerificationCodeSentToEmail": {
-    "message": "Enter the verification code that was sent to your email."
+    "message": "Унесите верификациони кôд који је послат на Вашу е-адресу."
   },
   "resendCode": {
-    "message": "Resend code"
+    "message": "Поново пошаљите кôд"
   },
   "total": {
     "message": "Збир"
@@ -2827,13 +2827,13 @@
     "message": "Неважеће корисничко име или лозинка"
   },
   "incorrectPassword": {
-    "message": "Incorrect password"
+    "message": "Погрешна лозинка"
   },
   "incorrectCode": {
-    "message": "Incorrect code"
+    "message": "Погрешан кôд"
   },
   "incorrectPin": {
-    "message": "Incorrect PIN"
+    "message": "Нетачан PIN"
   },
   "multifactorAuthenticationFailed": {
     "message": "Вишефакторска аутентификација је неуспешна"
