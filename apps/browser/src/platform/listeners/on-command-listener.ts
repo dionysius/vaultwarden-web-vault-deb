@@ -100,5 +100,7 @@ const doGeneratePasswordToClipboard = async (tab: chrome.tabs.Tab): Promise<void
     await passwordGenerationServiceFactory(cache, options),
     await stateServiceFactory(cache, options),
   );
+  // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+  // eslint-disable-next-line @typescript-eslint/no-floating-promises
   command.generatePasswordToClipboard(tab);
 };

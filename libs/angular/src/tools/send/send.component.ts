@@ -149,6 +149,8 @@ export class SendComponent implements OnInit, OnDestroy {
       this.actionPromise = this.sendApiService.removePassword(s.id);
       await this.actionPromise;
       if (this.onSuccessfulRemovePassword != null) {
+        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
         this.onSuccessfulRemovePassword();
       } else {
         // Default actions
@@ -181,6 +183,8 @@ export class SendComponent implements OnInit, OnDestroy {
       await this.actionPromise;
 
       if (this.onSuccessfulDelete != null) {
+        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
         this.onSuccessfulDelete();
       } else {
         // Default actions
@@ -206,18 +210,24 @@ export class SendComponent implements OnInit, OnDestroy {
   }
 
   searchTextChanged() {
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.search(200);
   }
 
   selectAll() {
     this.clearSelections();
     this.selectedAll = true;
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.applyFilter(null);
   }
 
   selectType(type: SendType) {
     this.clearSelections();
     this.selectedType = type;
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.applyFilter((s) => s.type === type);
   }
 

@@ -72,6 +72,8 @@ describe("foreground background derived state interactions", () => {
       const dateString = "2020-12-12";
       const emissions = trackEmissions(background.state$);
 
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       foreground.forceValue(new Date(dateString));
       await awaitAsync();
 
@@ -87,6 +89,8 @@ describe("foreground background derived state interactions", () => {
 
       expect(foreground["port"]).toBeDefined();
       const newDate = new Date();
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       foreground.forceValue(newDate);
       await awaitAsync();
 
@@ -100,6 +104,8 @@ describe("foreground background derived state interactions", () => {
 
       expect(foreground["port"]).toBeUndefined();
       const newDate = new Date();
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       foreground.forceValue(newDate);
       await awaitAsync();
 

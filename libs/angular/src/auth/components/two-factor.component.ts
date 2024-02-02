@@ -79,6 +79,8 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
 
   async ngOnInit() {
     if (!this.authing || this.twoFactorService.getProviders() == null) {
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.router.navigate([this.loginRoute]);
       return;
     }
@@ -103,6 +105,8 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
         this.i18nService,
         (token: string) => {
           this.token = token;
+          // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+          // eslint-disable-next-line @typescript-eslint/no-floating-promises
           this.submit();
         },
         (error: string) => {
@@ -299,9 +303,13 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
     if (this.onSuccessfulLoginTde != null) {
       // Note: awaiting this will currently cause a hang on desktop & browser as they will wait for a full sync to complete
       // before navigating to the success route.
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.onSuccessfulLoginTde();
     }
 
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.navigateViaCallbackOrRoute(
       this.onSuccessfulLoginTdeNavigate,
       // Navigate to TDE page (if user was on trusted device and TDE has decrypted
@@ -338,6 +346,8 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
   }
 
   private async handleForcePasswordReset(orgIdentifier: string) {
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.router.navigate([this.forcePasswordResetRoute], {
       queryParams: {
         identifier: orgIdentifier,
@@ -349,6 +359,8 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
     if (this.onSuccessfulLogin != null) {
       // Note: awaiting this will currently cause a hang on desktop & browser as they will wait for a full sync to complete
       // before navigating to the success route.
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.onSuccessfulLogin();
     }
     await this.navigateViaCallbackOrRoute(this.onSuccessfulLoginNavigate, [this.successRoute]);

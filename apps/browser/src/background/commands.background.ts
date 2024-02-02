@@ -28,6 +28,8 @@ export default class CommandsBackground {
   async init() {
     BrowserApi.messageListener("commands.background", (msg: any) => {
       if (msg.command === "unlockCompleted" && msg.data.target === "commands.background") {
+        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
         this.processCommand(msg.data.commandToRetry.msg.command, msg.data.commandToRetry.sender);
       }
     });
@@ -62,6 +64,8 @@ export default class CommandsBackground {
     const options = (await this.passwordGenerationService.getOptions())?.[0] ?? {};
     const password = await this.passwordGenerationService.generatePassword(options);
     this.platformUtilsService.copyToClipboard(password, { window: window });
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.passwordGenerationService.addHistory(password);
   }
 
@@ -101,6 +105,8 @@ export default class CommandsBackground {
       return;
     }
 
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.main.openPopup();
   }
 }

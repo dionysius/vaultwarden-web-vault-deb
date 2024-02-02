@@ -37,11 +37,15 @@ class ContentMessageHandler implements ContentMessageHandlerInterface {
 
     if (command === "authResult") {
       const { lastpass, code, state } = data;
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       chrome.runtime.sendMessage({ command, code, state, lastpass, referrer });
     }
 
     if (command === "webAuthnResult") {
       const { remember } = data;
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       chrome.runtime.sendMessage({ command, data: data.data, remember, referrer });
     }
   };
@@ -56,6 +60,8 @@ class ContentMessageHandler implements ContentMessageHandlerInterface {
    */
   private handleExtensionMessage = (message: any) => {
     if (this.forwardCommands.includes(message.command)) {
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       chrome.runtime.sendMessage(message);
     }
   };

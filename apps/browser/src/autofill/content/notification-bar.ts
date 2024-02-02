@@ -31,6 +31,8 @@ interface HTMLElementWithFormOpId extends HTMLElement {
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", loadNotificationBar);
 } else {
+  // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+  // eslint-disable-next-line @typescript-eslint/no-floating-promises
   loadNotificationBar();
 }
 
@@ -942,6 +944,8 @@ async function loadNotificationBar() {
 
   // Helper Functions
   function sendPlatformMessage(msg: any) {
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     chrome.runtime.sendMessage(msg);
   }
 

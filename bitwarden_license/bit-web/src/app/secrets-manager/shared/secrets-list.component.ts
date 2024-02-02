@@ -141,6 +141,8 @@ export class SecretsListComponent implements OnDestroy {
     secretService: SecretService,
   ) {
     const value = secretService.getBySecretId(id).then((secret) => secret.value);
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     SecretsListComponent.copyToClipboardAsync(value, platformUtilsService).then(() => {
       platformUtilsService.showToast(
         "success",

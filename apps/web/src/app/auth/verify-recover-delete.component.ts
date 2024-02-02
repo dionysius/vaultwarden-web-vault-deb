@@ -37,6 +37,8 @@ export class VerifyRecoverDeleteComponent implements OnInit {
         this.token = qParams.token;
         this.email = qParams.email;
       } else {
+        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
         this.router.navigate(["/"]);
       }
     });
@@ -52,6 +54,8 @@ export class VerifyRecoverDeleteComponent implements OnInit {
         this.i18nService.t("accountDeleted"),
         this.i18nService.t("accountDeletedDesc"),
       );
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.router.navigate(["/"]);
     } catch (e) {
       this.logService.error(e);

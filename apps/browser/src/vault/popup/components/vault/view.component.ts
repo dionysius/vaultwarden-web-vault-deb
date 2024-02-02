@@ -136,6 +136,8 @@ export class ViewComponent extends BaseViewComponent {
       if (params.cipherId) {
         this.cipherId = params.cipherId;
       } else {
+        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
         this.close();
       }
 
@@ -145,6 +147,8 @@ export class ViewComponent extends BaseViewComponent {
     super.ngOnInit();
 
     this.broadcasterService.subscribe(BroadcasterSubscriptionId, (message: any) => {
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.ngZone.run(async () => {
         switch (message.command) {
           case "collectPageDetailsResponse":
@@ -191,6 +195,8 @@ export class ViewComponent extends BaseViewComponent {
       return false;
     }
 
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.router.navigate(["/edit-cipher"], { queryParams: { cipherId: this.cipher.id } });
     return true;
   }
@@ -204,6 +210,8 @@ export class ViewComponent extends BaseViewComponent {
       return false;
     }
 
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.router.navigate(["/clone-cipher"], {
       queryParams: {
         cloneMode: true,
@@ -219,6 +227,8 @@ export class ViewComponent extends BaseViewComponent {
     }
 
     if (this.cipher.organizationId == null) {
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.router.navigate(["/share-cipher"], {
         replaceUrl: true,
         queryParams: { cipherId: this.cipher.id },
@@ -281,6 +291,8 @@ export class ViewComponent extends BaseViewComponent {
       return false;
     }
     if (await super.restore()) {
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.close();
       return true;
     }
@@ -290,6 +302,8 @@ export class ViewComponent extends BaseViewComponent {
   async delete() {
     if (await super.delete()) {
       this.messagingService.send("deletedCipher");
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.close();
       return true;
     }
@@ -307,7 +321,11 @@ export class ViewComponent extends BaseViewComponent {
       BrowserPopupUtils.inSingleActionPopout(window, VaultPopoutType.viewVaultItem) &&
       this.senderTabId
     ) {
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       BrowserApi.focusTab(this.senderTabId);
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       closeViewVaultItemPopout(`${VaultPopoutType.viewVaultItem}_${this.cipher.id}`);
       return;
     }
@@ -325,6 +343,8 @@ export class ViewComponent extends BaseViewComponent {
       return;
     }
 
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     BrowserApi.tabSendMessage(this.tab, {
       command: "collectPageDetails",
       tab: this.tab,

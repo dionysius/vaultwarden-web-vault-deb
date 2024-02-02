@@ -57,6 +57,8 @@ export class ProjectComponent implements OnInit, OnDestroy {
     this.project$ = combineLatest([this.route.params, currentProjectEdited]).pipe(
       switchMap(([params, _]) => this.projectService.getByProjectId(params.projectId)),
       catchError(() => {
+        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
         this.router.navigate(["/sm", this.organizationId, "projects"]).then(() => {
           this.platformUtilsService.showToast(
             "error",

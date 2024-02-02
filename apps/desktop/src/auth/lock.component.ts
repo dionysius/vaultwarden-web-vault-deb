@@ -89,6 +89,8 @@ export class LockComponent extends BaseLockComponent {
 
     await this.displayBiometricUpdateWarning();
 
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.delayedAskForBiometric(500);
     this.route.queryParams.pipe(switchMap((params) => this.delayedAskForBiometric(500, params)));
 
@@ -142,6 +144,8 @@ export class LockComponent extends BaseLockComponent {
 
     this.biometricAsked = true;
     if (await ipc.platform.isWindowVisible()) {
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.unlockBiometric();
     }
   }

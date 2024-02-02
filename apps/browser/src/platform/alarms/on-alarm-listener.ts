@@ -18,6 +18,8 @@ export const onAlarmListener = async (alarm: chrome.alarms.Alarm) => {
 
     switch (key) {
       case clearClipboardAlarmName:
+        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
         ClearClipboard.run();
         break;
       default:

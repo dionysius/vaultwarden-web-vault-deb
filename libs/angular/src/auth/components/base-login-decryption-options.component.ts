@@ -112,6 +112,8 @@ export class BaseLoginDecryptionOptionsComponent implements OnInit, OnDestroy {
         //  - User does not have admin approval (i.e. has not enrolled into admin reset)
         //  - AND does not have a master password
 
+        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
         this.loadNewUserData();
       } else {
         this.loadUntrustedDeviceData(accountDecryptionOptions);
@@ -237,15 +239,21 @@ export class BaseLoginDecryptionOptionsComponent implements OnInit, OnDestroy {
     }
 
     this.loginService.setEmail(this.data.userEmail);
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.router.navigate(["/login-with-device"]);
   }
 
   async requestAdminApproval() {
     this.loginService.setEmail(this.data.userEmail);
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.router.navigate(["/admin-approval-requested"]);
   }
 
   async approveWithMasterPassword() {
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.router.navigate(["/lock"], { queryParams: { from: "login-initiated" } });
   }
 

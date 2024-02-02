@@ -94,6 +94,8 @@ export class PeopleComponent
       const provider = await this.providerService.get(this.providerId);
 
       if (!provider.canManageUsers) {
+        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
         this.router.navigate(["../"], { relativeTo: this.route });
         return;
       }
@@ -108,6 +110,8 @@ export class PeopleComponent
         if (qParams.viewEvents != null) {
           const user = this.users.filter((u) => u.id === qParams.viewEvents);
           if (user.length > 0 && user[0].status === ProviderUserStatusType.Confirmed) {
+            // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+            // eslint-disable-next-line @typescript-eslint/no-floating-promises
             this.events(user[0]);
           }
         }
@@ -215,6 +219,8 @@ export class PeopleComponent
     try {
       const request = new ProviderUserBulkRequest(filteredUsers.map((user) => user.id));
       const response = this.apiService.postManyProviderUserReinvite(this.providerId, request);
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.showBulkStatus(
         users,
         filteredUsers,

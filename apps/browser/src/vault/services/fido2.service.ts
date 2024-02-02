@@ -7,6 +7,8 @@ export default class Fido2Service implements Fido2ServiceInterface {
     const tabs = await BrowserApi.tabsQuery({});
     tabs.forEach((tab) => {
       if (tab.url?.startsWith("https")) {
+        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
         this.injectFido2ContentScripts({ tab } as chrome.runtime.MessageSender);
       }
     });

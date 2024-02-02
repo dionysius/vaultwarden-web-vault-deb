@@ -101,6 +101,8 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
   }
 
   async ngOnInit() {
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.setupCaptcha();
   }
 
@@ -141,6 +143,8 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
           null,
           this.i18nService.t("newAccountCreated"),
         );
+        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
         this.router.navigate([this.successRoute], { queryParams: { email: email } });
       }
     } catch (e) {

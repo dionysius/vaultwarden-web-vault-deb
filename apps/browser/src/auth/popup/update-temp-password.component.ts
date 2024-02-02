@@ -21,6 +21,8 @@ export class UpdateTempPasswordComponent extends BaseUpdateTempPasswordComponent
 
     // doneLoggingOut already has a message handler that will navigate us
     if (command === "switchAccountFinish") {
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.router.navigate(["/"]);
     }
   }

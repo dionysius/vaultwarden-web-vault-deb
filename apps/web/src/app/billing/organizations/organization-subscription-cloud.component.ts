@@ -56,6 +56,8 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
 
   async ngOnInit() {
     if (this.route.snapshot.queryParamMap.get("upgrade")) {
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.changePlan();
     }
 
@@ -290,6 +292,8 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
         null,
         this.i18nService.t("canceledSubscription"),
       );
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.load();
     } catch (e) {
       this.logService.error(e);
@@ -314,6 +318,8 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
     try {
       await this.organizationApiService.reinstate(this.organizationId);
       this.platformUtilsService.showToast("success", null, this.i18nService.t("reinstated"));
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.load();
     } catch (e) {
       this.logService.error(e);
@@ -339,6 +345,8 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
     });
 
     await firstValueFrom(dialogRef.closed);
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.load();
   }
 
@@ -347,6 +355,8 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
   }
 
   subscriptionAdjusted() {
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.load();
   }
 
@@ -358,6 +368,8 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
   closeStorage(load: boolean) {
     this.showAdjustStorage = false;
     if (load) {
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.load();
     }
   }

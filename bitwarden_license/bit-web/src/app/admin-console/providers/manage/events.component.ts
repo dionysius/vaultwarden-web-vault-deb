@@ -54,6 +54,8 @@ export class EventsComponent extends BaseEventsComponent implements OnInit {
       this.providerId = params.providerId;
       const provider = await this.providerService.get(this.providerId);
       if (provider == null || !provider.useEvents) {
+        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
         this.router.navigate(["/providers", this.providerId]);
         return;
       }

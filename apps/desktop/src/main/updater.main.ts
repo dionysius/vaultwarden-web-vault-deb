@@ -58,6 +58,8 @@ export class UpdaterMain {
         });
 
         if (result.response === 0) {
+          // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+          // eslint-disable-next-line @typescript-eslint/no-floating-promises
           autoUpdater.downloadUpdate();
         } else {
           this.reset();
@@ -67,6 +69,8 @@ export class UpdaterMain {
 
     autoUpdater.on("update-not-available", () => {
       if (this.doingUpdateCheckWithFeedback && this.windowMain.win != null) {
+        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
         dialog.showMessageBox(this.windowMain.win, {
           message: this.i18nService.t("noUpdatesAvailable"),
           buttons: [this.i18nService.t("ok")],
@@ -120,6 +124,8 @@ export class UpdaterMain {
 
     if (!this.canUpdate) {
       if (withFeedback) {
+        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
         shell.openExternal("https://github.com/bitwarden/clients/releases");
       }
 

@@ -73,12 +73,16 @@ export class ChangeAvatarComponent implements OnInit, OnDestroy {
         this.currentSelection = color;
       });
 
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.setSelection(await this.accountUpdateService.loadColorFromState());
   }
 
   async showCustomPicker() {
     this.customColorSelected = true;
     this.colorPickerElement.nativeElement.click();
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.setSelection(this.customColor$.value);
   }
 

@@ -19,6 +19,8 @@ export class BrowserFileDownloadService implements FileDownloadService {
       } else {
         data = Utils.fromBufferToB64(request.blobData as ArrayBuffer);
       }
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       SafariApp.sendMessageToApp(
         "downloadFile",
         JSON.stringify({

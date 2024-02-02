@@ -58,6 +58,8 @@ export class PoliciesComponent implements OnInit {
             if (orgPolicy.id === policyIdFromEvents) {
               for (let i = 0; i < this.policies.length; i++) {
                 if (this.policies[i].type === orgPolicy.type) {
+                  // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+                  // eslint-disable-next-line @typescript-eslint/no-floating-promises
                   this.edit(this.policies[i]);
                   break;
                 }
@@ -91,6 +93,8 @@ export class PoliciesComponent implements OnInit {
         // eslint-disable-next-line rxjs-angular/prefer-takeuntil
         comp.onSavedPolicy.subscribe(() => {
           modal.close();
+          // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+          // eslint-disable-next-line @typescript-eslint/no-floating-promises
           this.load();
         });
       },

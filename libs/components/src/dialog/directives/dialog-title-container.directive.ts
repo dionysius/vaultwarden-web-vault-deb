@@ -18,6 +18,8 @@ export class DialogTitleContainerDirective implements OnInit {
     // Based on angular/components, licensed under MIT
     // https://github.com/angular/components/blob/14.2.0/src/material/dialog/dialog-content-directives.ts#L121-L128
     if (this.dialogRef) {
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       Promise.resolve().then(() => {
         const container = this.dialogRef.containerInstance as CdkDialogContainer;
 

@@ -11,6 +11,8 @@ describe("BrowserApi", () => {
 
   describe("getWindow", () => {
     it("will get the current window if a window id is not provided", () => {
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       BrowserApi.getWindow();
 
       expect(chrome.windows.getCurrent).toHaveBeenCalledWith({ populate: true }, expect.anything());
@@ -19,6 +21,8 @@ describe("BrowserApi", () => {
     it("will get the window with the provided id if one is provided", () => {
       const windowId = 1;
 
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       BrowserApi.getWindow(windowId);
 
       expect(chrome.windows.get).toHaveBeenCalledWith(
@@ -31,6 +35,8 @@ describe("BrowserApi", () => {
 
   describe("getCurrentWindow", () => {
     it("will get the current window", () => {
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       BrowserApi.getCurrentWindow();
 
       expect(chrome.windows.getCurrent).toHaveBeenCalledWith({ populate: true }, expect.anything());
@@ -41,6 +47,8 @@ describe("BrowserApi", () => {
     it("will get the window associated with the passed window id", () => {
       const windowId = 1;
 
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       BrowserApi.getWindowById(windowId);
 
       expect(chrome.windows.get).toHaveBeenCalledWith(
@@ -55,6 +63,8 @@ describe("BrowserApi", () => {
     it("removes the window based on the passed window id", () => {
       const windowId = 10;
 
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       BrowserApi.removeWindow(windowId);
 
       expect(chrome.windows.remove).toHaveBeenCalledWith(windowId, expect.anything());
@@ -68,6 +78,8 @@ describe("BrowserApi", () => {
         focused: true,
       };
 
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       BrowserApi.updateWindowProperties(windowId, windowOptions);
 
       expect(chrome.windows.update).toHaveBeenCalledWith(
@@ -82,6 +94,8 @@ describe("BrowserApi", () => {
     it("will focus the window with the provided window id", () => {
       const windowId = 1;
 
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       BrowserApi.focusWindow(windowId);
 
       expect(chrome.windows.update).toHaveBeenCalledWith(

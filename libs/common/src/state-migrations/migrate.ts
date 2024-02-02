@@ -36,6 +36,7 @@ export async function migrate(
     await storageService.save("stateVersion", CURRENT_VERSION);
     return;
   }
+
   await MigrationBuilder.create()
     .with(MinVersionMigrator)
     .with(FixPremiumMigrator, 2, 3)

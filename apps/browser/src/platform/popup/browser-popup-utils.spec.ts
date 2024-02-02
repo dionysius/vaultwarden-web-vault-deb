@@ -196,6 +196,8 @@ describe("BrowserPopupUtils", () => {
       jest.spyOn(BrowserPopupUtils as any, "isSingleActionPopoutOpen").mockResolvedValueOnce(false);
       jest.spyOn(BrowserPopupUtils as any, "buildPopoutUrl");
 
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       BrowserPopupUtils.openPopout(url);
 
       expect(BrowserPopupUtils["buildPopoutUrl"]).not.toHaveBeenCalled();

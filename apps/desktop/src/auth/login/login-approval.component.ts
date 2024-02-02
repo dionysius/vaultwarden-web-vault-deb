@@ -62,6 +62,8 @@ export class LoginApprovalComponent implements OnInit, OnDestroy {
     clearInterval(this.interval);
     const closedWithButton = await firstValueFrom(this.dialogRef.closed);
     if (!closedWithButton) {
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.retrieveAuthRequestAndRespond(false);
     }
     this.destroy$.next();

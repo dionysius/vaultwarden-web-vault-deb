@@ -4,8 +4,12 @@ import { SafariApp } from "../../browser/safariApp";
 
 export default class VaultTimeoutService extends BaseVaultTimeoutService {
   startCheck() {
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.checkVaultTimeout();
     if (this.platformUtilsService.isSafari()) {
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.checkSafari();
     } else {
       setInterval(() => this.checkVaultTimeout(), 10 * 1000); // check every 10 seconds
@@ -20,6 +24,8 @@ export default class VaultTimeoutService extends BaseVaultTimeoutService {
     while (true) {
       try {
         await SafariApp.sendMessageToApp("sleep");
+        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
         this.checkVaultTimeout();
       } catch (e) {
         // eslint-disable-next-line

@@ -149,6 +149,8 @@ export class HelpMenu implements IMenubarMenu {
         id: "iOS",
         label: "iOS",
         click: () => {
+          // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+          // eslint-disable-next-line @typescript-eslint/no-floating-promises
           shell.openExternal(
             "https://itunes.apple.com/app/" + "bitwarden-free-password-manager/id1137397744?mt=8",
           );
@@ -159,6 +161,8 @@ export class HelpMenu implements IMenubarMenu {
         label: "Android",
         visible: !isMacAppStore(), // Apple Guideline 2.3.10 - Accurate Metadata
         click: () => {
+          // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+          // eslint-disable-next-line @typescript-eslint/no-floating-promises
           shell.openExternal(
             "https://play.google.com/store/apps/" + "details?id=com.x8bit.bitwarden",
           );
@@ -182,6 +186,8 @@ export class HelpMenu implements IMenubarMenu {
         id: "chrome",
         label: "Chrome",
         click: () => {
+          // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+          // eslint-disable-next-line @typescript-eslint/no-floating-promises
           shell.openExternal(
             "https://chromewebstore.google.com/detail/" +
               "bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb",
@@ -192,6 +198,8 @@ export class HelpMenu implements IMenubarMenu {
         id: "firefox",
         label: "Firefox",
         click: () => {
+          // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+          // eslint-disable-next-line @typescript-eslint/no-floating-promises
           shell.openExternal(
             "https://addons.mozilla.org/firefox/addon/" + "bitwarden-password-manager/",
           );
@@ -201,6 +209,8 @@ export class HelpMenu implements IMenubarMenu {
         id: "firefox",
         label: "Opera",
         click: () => {
+          // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+          // eslint-disable-next-line @typescript-eslint/no-floating-promises
           shell.openExternal(
             "https://addons.opera.com/extensions/details/" + "bitwarden-free-password-manager/",
           );
@@ -210,6 +220,8 @@ export class HelpMenu implements IMenubarMenu {
         id: "firefox",
         label: "Edge",
         click: () => {
+          // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+          // eslint-disable-next-line @typescript-eslint/no-floating-promises
           shell.openExternal(
             "https://microsoftedge.microsoft.com/addons/" +
               "detail/jbkfoedolllekgbhcbcoahefnbanhhlh",
@@ -220,6 +232,8 @@ export class HelpMenu implements IMenubarMenu {
         id: "safari",
         label: "Safari",
         click: () => {
+          // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+          // eslint-disable-next-line @typescript-eslint/no-floating-promises
           shell.openExternal("https://bitwarden.com/download/");
         },
       },

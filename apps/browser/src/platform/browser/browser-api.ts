@@ -321,6 +321,8 @@ export class BrowserApi {
   }
 
   static async focusTab(tabId: number) {
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     chrome.tabs.update(tabId, { active: true, highlighted: true });
   }
 
@@ -329,6 +331,8 @@ export class BrowserApi {
       // Reactivating the active tab dismisses the popup tab. The promise final
       // condition is only called if the popup wasn't already dismissed (future proofing).
       // ref: https://bugzilla.mozilla.org/show_bug.cgi?id=1433604
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       browser.tabs.update({ active: true }).finally(win.close);
     } else {
       win.close();

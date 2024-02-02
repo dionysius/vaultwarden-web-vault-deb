@@ -23,6 +23,8 @@ function alarmsToBeCreated(numberOfAlarms: number): void {
   let calculatedWhen: number = Date.now() + offset;
 
   for (let index = 0; index < numberOfAlarms; index++) {
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     chrome.alarms.create(`bw_alarm${index}`, { periodInMinutes: 1, when: calculatedWhen });
     calculatedWhen += offset;
   }

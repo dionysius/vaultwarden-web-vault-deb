@@ -18,6 +18,8 @@ const argv: any = yargs(hideBin(process.argv)).option("uri", {
 
 const { uri } = argv;
 
+// FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+// eslint-disable-next-line @typescript-eslint/no-floating-promises
 (async () => {
   const nativeMessageService = new NativeMessageService(NativeMessagingVersion.One);
   // Handshake

@@ -27,11 +27,15 @@ export class BaseLoginViaWebAuthnComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.authenticate();
   }
 
   protected retry() {
     this.currentState = "assert";
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.authenticate();
   }
 

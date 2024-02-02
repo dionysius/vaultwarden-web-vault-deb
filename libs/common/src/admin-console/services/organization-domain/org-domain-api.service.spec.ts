@@ -105,16 +105,22 @@ describe("Org Domain API Service", () => {
   it("getAllByOrgId retrieves all org domains and calls orgDomainSvc replace", () => {
     apiService.send.mockResolvedValue(mockedGetAllByOrgIdResponse);
 
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     expect(lastValueFrom(orgDomainService.orgDomains$)).resolves.toHaveLength(0);
 
     const orgDomainSvcReplaceSpy = jest.spyOn(orgDomainService, "replace");
 
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     orgDomainApiService
       .getAllByOrgId("fakeOrgId")
       .then((orgDomainResponses: Array<OrganizationDomainResponse>) => {
         expect(orgDomainResponses).toHaveLength(3);
 
         expect(orgDomainSvcReplaceSpy).toHaveBeenCalled();
+        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
         expect(lastValueFrom(orgDomainService.orgDomains$)).resolves.toHaveLength(3);
       });
   });
@@ -122,16 +128,22 @@ describe("Org Domain API Service", () => {
   it("getByOrgIdAndOrgDomainId retrieves single org domain and calls orgDomainSvc upsert", () => {
     apiService.send.mockResolvedValue(mockedOrgDomainServerResponse);
 
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     expect(lastValueFrom(orgDomainService.orgDomains$)).resolves.toHaveLength(0);
 
     const orgDomainSvcUpsertSpy = jest.spyOn(orgDomainService, "upsert");
 
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     orgDomainApiService
       .getByOrgIdAndOrgDomainId("fakeOrgId", "fakeDomainId")
       .then((orgDomain: OrganizationDomainResponse) => {
         expect(orgDomain.id).toEqual(mockedOrgDomainServerResponse.id);
 
         expect(orgDomainSvcUpsertSpy).toHaveBeenCalled();
+        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
         expect(lastValueFrom(orgDomainService.orgDomains$)).resolves.toHaveLength(1);
       });
   });
@@ -139,16 +151,22 @@ describe("Org Domain API Service", () => {
   it("post success should call orgDomainSvc upsert", () => {
     apiService.send.mockResolvedValue(mockedOrgDomainServerResponse);
 
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     expect(lastValueFrom(orgDomainService.orgDomains$)).resolves.toHaveLength(0);
 
     const orgDomainSvcUpsertSpy = jest.spyOn(orgDomainService, "upsert");
 
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     orgDomainApiService
       .post("fakeOrgId", mockedOrgDomainResponse)
       .then((orgDomain: OrganizationDomainResponse) => {
         expect(orgDomain.id).toEqual(mockedOrgDomainServerResponse.id);
 
         expect(orgDomainSvcUpsertSpy).toHaveBeenCalled();
+        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
         expect(lastValueFrom(orgDomainService.orgDomains$)).resolves.toHaveLength(1);
       });
   });
@@ -156,16 +174,22 @@ describe("Org Domain API Service", () => {
   it("verify success should call orgDomainSvc upsert", () => {
     apiService.send.mockResolvedValue(mockedOrgDomainServerResponse);
 
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     expect(lastValueFrom(orgDomainService.orgDomains$)).resolves.toHaveLength(0);
 
     const orgDomainSvcUpsertSpy = jest.spyOn(orgDomainService, "upsert");
 
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     orgDomainApiService
       .verify("fakeOrgId", "fakeOrgId")
       .then((orgDomain: OrganizationDomainResponse) => {
         expect(orgDomain.id).toEqual(mockedOrgDomainServerResponse.id);
 
         expect(orgDomainSvcUpsertSpy).toHaveBeenCalled();
+        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
         expect(lastValueFrom(orgDomainService.orgDomains$)).resolves.toHaveLength(1);
       });
   });
@@ -173,12 +197,18 @@ describe("Org Domain API Service", () => {
   it("delete success should call orgDomainSvc delete", () => {
     apiService.send.mockResolvedValue(true);
     orgDomainService.upsert([mockedOrgDomainResponse]);
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     expect(lastValueFrom(orgDomainService.orgDomains$)).resolves.toHaveLength(1);
 
     const orgDomainSvcDeleteSpy = jest.spyOn(orgDomainService, "delete");
 
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     orgDomainApiService.delete("fakeOrgId", "fakeOrgId").then(() => {
       expect(orgDomainSvcDeleteSpy).toHaveBeenCalled();
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       expect(lastValueFrom(orgDomainService.orgDomains$)).resolves.toHaveLength(0);
     });
   });

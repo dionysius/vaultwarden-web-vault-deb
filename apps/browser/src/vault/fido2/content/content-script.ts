@@ -43,6 +43,8 @@ function injectPageScript() {
   }
 
   // If the page-script already exists, send a reconnect message to the page-script
+  // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+  // eslint-disable-next-line @typescript-eslint/no-floating-promises
   messenger.sendReconnectCommand();
 }
 
@@ -130,8 +132,12 @@ async function run() {
   const port = chrome.runtime.connect({ name: "fido2ContentScriptReady" });
   port.onDisconnect.addListener(() => {
     // Cleanup the messenger and remove the event listener
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     messenger.destroy();
   });
 }
 
+// FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+// eslint-disable-next-line @typescript-eslint/no-floating-promises
 run();

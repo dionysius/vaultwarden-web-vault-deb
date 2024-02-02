@@ -58,6 +58,8 @@ export class VaultCipherRowComponent {
 
   @HostListener("click")
   protected click() {
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.router.navigate([], {
       queryParams: { itemId: this.cipher.id },
       queryParamsHandling: "merge",

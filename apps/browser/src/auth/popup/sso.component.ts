@@ -60,6 +60,8 @@ export class SsoComponent extends BaseSsoComponent {
     this.clientId = "browser";
 
     super.onSuccessfulLogin = async () => {
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       syncService.fullSync(true);
 
       // If the vault is unlocked then this will clear keys from memory, which we don't want to do
@@ -71,6 +73,8 @@ export class SsoComponent extends BaseSsoComponent {
     };
 
     super.onSuccessfulLoginTde = async () => {
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       syncService.fullSync(true);
     };
 

@@ -39,8 +39,12 @@ export class TwoFactorOptionsComponent extends BaseTwoFactorOptionsComponent {
       // Persist SSO flag back to the 2FA comp if it exists
       // in order for successful login logic to work properly for
       // SSO + 2FA in browser extension
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.router.navigate(["2fa"], { queryParams: { sso: true } });
     } else {
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.router.navigate(["2fa"]);
     }
   }

@@ -39,12 +39,16 @@ export class AnonymousHubService implements AnonymousHubServiceAbstraction {
     this.anonHubConnection.start().catch((error) => this.logService.error(error));
 
     this.anonHubConnection.on("AuthRequestResponseRecieved", (data: any) => {
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.ProcessNotification(new NotificationResponse(data));
     });
   }
 
   stopHubConnection() {
     if (this.anonHubConnection) {
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.anonHubConnection.stop();
     }
   }

@@ -192,6 +192,8 @@ export class PaymentComponent implements OnInit, OnDestroy {
         this.method === PaymentMethodType.BankAccount
       ) {
         if (this.method === PaymentMethodType.Card) {
+          // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+          // eslint-disable-next-line @typescript-eslint/no-floating-promises
           this.apiService
             .postSetupPayment()
             .then((clientSecret) =>

@@ -47,10 +47,16 @@ export class ElectronCryptoService extends CryptoService {
 
   override async clearStoredUserKey(keySuffix: KeySuffixOptions, userId?: UserId): Promise<void> {
     if (keySuffix === KeySuffixOptions.Biometric) {
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.stateService.setUserKeyBiometric(null, { userId: userId });
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.clearDeprecatedKeys(KeySuffixOptions.Biometric, userId);
       return;
     }
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     super.clearStoredUserKey(keySuffix, userId);
   }
 
@@ -100,6 +106,8 @@ export class ElectronCryptoService extends CryptoService {
 
   protected override async clearAllStoredUserKeys(userId?: UserId): Promise<void> {
     await this.stateService.setUserKeyBiometric(null, { userId: userId });
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     super.clearAllStoredUserKeys(userId);
   }
 
@@ -133,6 +141,8 @@ export class ElectronCryptoService extends CryptoService {
       await this.stateService.setCryptoMasterKeyBiometric(null, { userId: userId });
     }
 
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     super.clearDeprecatedKeys(keySuffix, userId);
   }
 

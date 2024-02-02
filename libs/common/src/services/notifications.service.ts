@@ -43,6 +43,8 @@ export class NotificationsService implements NotificationsServiceAbstraction {
         return;
       }
 
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.init();
     });
   }
@@ -84,6 +86,8 @@ export class NotificationsService implements NotificationsServiceAbstraction {
     });
     this.signalrConnection.onclose(() => {
       this.connected = false;
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.reconnect(true);
     });
     this.inited = true;
@@ -172,6 +176,8 @@ export class NotificationsService implements NotificationsServiceAbstraction {
         break;
       case NotificationType.LogOut:
         if (isAuthenticated) {
+          // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+          // eslint-disable-next-line @typescript-eslint/no-floating-promises
           this.logoutCallback(true);
         }
         break;

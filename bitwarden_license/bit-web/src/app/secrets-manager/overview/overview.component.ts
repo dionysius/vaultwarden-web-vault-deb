@@ -196,6 +196,8 @@ export class OverviewComponent implements OnInit, OnDestroy {
       ...prevTasks[organizationId],
       ...newlyCompletedOrgTasks,
     };
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.stateService.setSMOnboardingTasks({
       ...prevTasks,
       [organizationId]: nextOrgTasks,
@@ -304,6 +306,8 @@ export class OverviewComponent implements OnInit, OnDestroy {
 
   protected hideOnboarding() {
     this.showOnboarding = false;
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.saveCompletedTasks(this.organizationId, {
       importSecrets: true,
       createSecret: true,

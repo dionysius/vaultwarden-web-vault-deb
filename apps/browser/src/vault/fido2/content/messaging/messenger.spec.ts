@@ -31,6 +31,8 @@ describe("Messenger", () => {
 
   it("should deliver message to B when sending request from A", () => {
     const request = createRequest();
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     messengerA.request(request);
 
     const received = handlerB.receive();
@@ -64,6 +66,8 @@ describe("Messenger", () => {
 
   it("should deliver abort signal to B when requesting abort", () => {
     const abortController = new AbortController();
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     messengerA.request(createRequest(), abortController);
     abortController.abort();
 
@@ -99,9 +103,13 @@ describe("Messenger", () => {
 
     it("should dispatch the destroy event on messenger destruction", async () => {
       const request = createRequest();
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       messengerA.request(request);
 
       const dispatchEventSpy = jest.spyOn((messengerA as any).onDestroy, "dispatchEvent");
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       messengerA.destroy();
 
       expect(dispatchEventSpy).toHaveBeenCalledWith(expect.any(Event));
@@ -109,10 +117,14 @@ describe("Messenger", () => {
 
     it("should trigger onDestroyListener when the destroy event is dispatched", async () => {
       const request = createRequest();
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       messengerA.request(request);
 
       const onDestroyListener = jest.fn();
       (messengerA as any).onDestroy.addEventListener("destroy", onDestroyListener);
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       messengerA.destroy();
 
       expect(onDestroyListener).toHaveBeenCalled();

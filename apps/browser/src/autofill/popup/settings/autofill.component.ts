@@ -124,14 +124,24 @@ export class AutofillComponent implements OnInit {
 
   async commandSettings() {
     if (this.platformUtilsService.isChrome()) {
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       BrowserApi.createNewTab("chrome://extensions/shortcuts");
     } else if (this.platformUtilsService.isOpera()) {
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       BrowserApi.createNewTab("opera://extensions/shortcuts");
     } else if (this.platformUtilsService.isEdge()) {
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       BrowserApi.createNewTab("edge://extensions/shortcuts");
     } else if (this.platformUtilsService.isVivaldi()) {
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       BrowserApi.createNewTab("vivaldi://extensions/shortcuts");
     } else {
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       BrowserApi.createNewTab("https://bitwarden.com/help/keyboard-shortcuts");
     }
   }
@@ -155,6 +165,8 @@ export class AutofillComponent implements OnInit {
 
   protected openDisablePasswordManagerLink(event: Event) {
     event.preventDefault();
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     BrowserApi.createNewTab(this.disablePasswordManagerLink);
   }
 

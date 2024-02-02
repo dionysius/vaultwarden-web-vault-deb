@@ -36,10 +36,16 @@ export class PurgeVaultComponent {
         .then((request) => this.apiService.postPurgeCiphers(request, this.organizationId));
       await this.formPromise;
       this.platformUtilsService.showToast("success", null, this.i18nService.t("vaultPurged"));
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.syncService.fullSync(true);
       if (this.organizationId != null) {
+        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
         this.router.navigate(["organizations", this.organizationId, "vault"]);
       } else {
+        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
         this.router.navigate(["vault"]);
       }
     } catch (e) {

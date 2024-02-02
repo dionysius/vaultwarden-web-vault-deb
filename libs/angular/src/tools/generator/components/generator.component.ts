@@ -90,6 +90,8 @@ export class GeneratorComponent implements OnInit {
     ];
     this.subaddressOptions = [{ name: i18nService.t("random"), value: "random" }];
     this.catchallOptions = [{ name: i18nService.t("random"), value: "random" }];
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.initForwardOptions();
   }
 
@@ -152,6 +154,8 @@ export class GeneratorComponent implements OnInit {
   }
 
   async sliderChanged() {
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.savePasswordOptions(false);
     await this.passwordGenerationService.addHistory(this.password);
   }

@@ -152,6 +152,8 @@ export class VaultItemsComponent extends BaseVaultItemsComponent implements OnIn
       }
 
       if (this.applySavedState && this.state != null) {
+        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
         BrowserPopupUtils.setContentScrollY(window, this.state.scrollY, {
           delay: 0,
           containerSelector: this.scrollingContainer,
@@ -161,11 +163,15 @@ export class VaultItemsComponent extends BaseVaultItemsComponent implements OnIn
     });
 
     this.broadcasterService.subscribe(ComponentId, (message: any) => {
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.ngZone.run(async () => {
         switch (message.command) {
           case "syncCompleted":
             if (message.successfully) {
               window.setTimeout(() => {
+                // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+                // eslint-disable-next-line @typescript-eslint/no-floating-promises
                 this.refresh();
               }, 500);
             }
@@ -180,6 +186,8 @@ export class VaultItemsComponent extends BaseVaultItemsComponent implements OnIn
   }
 
   ngOnDestroy() {
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.saveState();
     this.broadcasterService.unsubscribe(ComponentId);
   }
@@ -188,6 +196,8 @@ export class VaultItemsComponent extends BaseVaultItemsComponent implements OnIn
     this.selectedTimeout = window.setTimeout(() => {
       if (!this.preventSelected) {
         super.selectCipher(cipher);
+        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
         this.router.navigate(["/view-cipher"], { queryParams: { cipherId: cipher.id } });
       }
       this.preventSelected = false;
@@ -196,11 +206,15 @@ export class VaultItemsComponent extends BaseVaultItemsComponent implements OnIn
 
   selectFolder(folder: FolderView) {
     if (folder.id != null) {
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.router.navigate(["/ciphers"], { queryParams: { folderId: folder.id } });
     }
   }
 
   selectCollection(collection: CollectionView) {
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.router.navigate(["/ciphers"], { queryParams: { collectionId: collection.id } });
   }
 
@@ -214,6 +228,8 @@ export class VaultItemsComponent extends BaseVaultItemsComponent implements OnIn
     }
     this.preventSelected = true;
     await this.cipherService.updateLastLaunchedDate(cipher.id);
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     BrowserApi.createNewTab(cipher.login.launchUri);
     if (BrowserPopupUtils.inPopup(window)) {
       BrowserApi.closePopup(window);
@@ -225,6 +241,8 @@ export class VaultItemsComponent extends BaseVaultItemsComponent implements OnIn
       return false;
     }
     super.addCipher();
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.router.navigate(["/add-cipher"], {
       queryParams: {
         folderId: this.folderId,

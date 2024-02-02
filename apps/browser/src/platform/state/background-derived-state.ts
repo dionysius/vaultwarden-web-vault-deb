@@ -55,6 +55,8 @@ export class BackgroundDerivedState<
       const stateSubscription = this.state$.subscribe((state) => {
         // delay to allow the foreground to connect. This may just be needed for testing
         setTimeout(() => {
+          // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+          // eslint-disable-next-line @typescript-eslint/no-floating-promises
           this.sendNewMessage(
             {
               action: "nextState",
@@ -96,6 +98,8 @@ export class BackgroundDerivedState<
     port: chrome.runtime.Port,
   ) {
     const id = Utils.newGuid();
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.sendMessage(
       {
         ...message,
@@ -110,6 +114,8 @@ export class BackgroundDerivedState<
     response: Omit<DerivedStateMessage, "originator" | "id">,
     port: chrome.runtime.Port,
   ) {
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.sendMessage(
       {
         ...response,

@@ -122,6 +122,8 @@ describe("AutofillService", () => {
       });
       autofillService["autofillScriptPortsSet"] = new Set([port1, port2]);
 
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       autofillService.reloadAutofillScripts();
 
       expect(port1.disconnect).toHaveBeenCalled();
@@ -133,6 +135,8 @@ describe("AutofillService", () => {
       autofillService["autofillScriptPortsSet"] = new Set([mock<chrome.runtime.Port>()]);
       jest.spyOn(autofillService as any, "injectAutofillScriptsInAllTabs");
 
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       autofillService.reloadAutofillScripts();
 
       expect(autofillService["injectAutofillScriptsInAllTabs"]).toHaveBeenCalled();

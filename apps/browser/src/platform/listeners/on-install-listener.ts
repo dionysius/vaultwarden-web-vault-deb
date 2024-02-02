@@ -28,6 +28,8 @@ export async function onInstallListener(details: chrome.runtime.InstalledDetails
 
   setTimeout(async () => {
     if (details.reason != null && details.reason === chrome.runtime.OnInstalledReason.INSTALL) {
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       BrowserApi.createNewTab("https://bitwarden.com/browser-start/");
 
       if (await environmentService.hasManagedEnvironment()) {

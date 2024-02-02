@@ -200,6 +200,8 @@ export class PeopleComponent
           if (qParams.viewEvents != null) {
             const user = this.users.filter((u) => u.id === qParams.viewEvents);
             if (user.length > 0 && user[0].status === OrganizationUserStatusType.Confirmed) {
+              // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+              // eslint-disable-next-line @typescript-eslint/no-floating-promises
               this.events(user[0]);
             }
           }
@@ -415,6 +417,8 @@ export class PeopleComponent
     }
 
     const simpleDialog = this.dialogService.openSimpleDialogRef(orgUpgradeSimpleDialogOpts);
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     firstValueFrom(simpleDialog.closed).then(this.handleDialogClose.bind(this));
   }
 
@@ -463,6 +467,8 @@ export class PeopleComponent
       case MemberDialogResult.Saved:
       case MemberDialogResult.Revoked:
       case MemberDialogResult.Restored:
+        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
         this.load();
         break;
     }
@@ -531,6 +537,8 @@ export class PeopleComponent
         this.organization.id,
         filteredUsers.map((user) => user.id),
       );
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.showBulkStatus(
         users,
         filteredUsers,
@@ -606,6 +614,8 @@ export class PeopleComponent
         // eslint-disable-next-line rxjs-angular/prefer-takeuntil
         comp.onPasswordReset.subscribe(() => {
           modal.close();
+          // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+          // eslint-disable-next-line @typescript-eslint/no-floating-promises
           this.load();
         });
       },

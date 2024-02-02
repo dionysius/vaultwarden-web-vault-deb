@@ -93,20 +93,30 @@ export class AppComponent implements OnInit, OnDestroy {
             });
           }
 
+          // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+          // eslint-disable-next-line @typescript-eslint/no-floating-promises
           this.router.navigate(["home"]);
         });
         this.changeDetectorRef.detectChanges();
       } else if (msg.command === "authBlocked") {
+        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
         this.router.navigate(["home"]);
       } else if (
         msg.command === "locked" &&
         (msg.userId == null || msg.userId == this.activeUserId)
       ) {
+        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
         this.router.navigate(["lock"]);
       } else if (msg.command === "showDialog") {
+        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
         this.showDialog(msg);
       } else if (msg.command === "showNativeMessagingFinterprintDialog") {
         // TODO: Should be refactored to live in another service.
+        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
         this.showNativeMessagingFingerprintDialog(msg);
       } else if (msg.command === "showToast") {
         this.showToast(msg);
@@ -121,13 +131,19 @@ export class AppComponent implements OnInit, OnDestroy {
           2000,
         );
       } else if (msg.command === "reloadPopup") {
+        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
         this.router.navigate(["/"]);
       } else if (msg.command === "convertAccountToKeyConnector") {
+        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
         this.router.navigate(["/remove-password"]);
       } else if (msg.command === "switchAccountFinish") {
         // TODO: unset loading?
         // this.loading = false;
       } else if (msg.command == "update-temp-password") {
+        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+        // eslint-disable-next-line @typescript-eslint/no-floating-promises
         this.router.navigate(["/update-temp-password"]);
       } else {
         msg.webExtSender = sender;

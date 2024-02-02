@@ -79,6 +79,8 @@ export class AcceptOrganizationComponent extends BaseAcceptComponent {
         : this.i18nService.t("inviteAcceptedDesc"),
       { timeout: 10000 },
     );
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.router.navigate(["/vault"]);
   }
 
@@ -203,6 +205,8 @@ export class AcceptOrganizationComponent extends BaseAcceptComponent {
 
     // if user exists, send user to login
     if (orgUserHasExistingUser) {
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.router.navigate(["/login"], {
         queryParams: { email: qParams.email },
       });
@@ -213,6 +217,8 @@ export class AcceptOrganizationComponent extends BaseAcceptComponent {
 
     if (orgSsoIdentifier) {
       // We only send sso org identifier if the org has SSO enabled and the SSO policy required.
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.router.navigate(["/sso"], {
         queryParams: { email: qParams.email, identifier: orgSsoIdentifier },
       });
@@ -221,6 +227,8 @@ export class AcceptOrganizationComponent extends BaseAcceptComponent {
 
     // if SSO is disabled OR if sso is enabled but the SSO login required policy is not enabled
     // then send user to create account
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.router.navigate(["/register"], {
       queryParams: { email: qParams.email, fromOrgInvite: true },
     });

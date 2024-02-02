@@ -272,6 +272,8 @@ export class Fido2Component implements OnInit, OnDestroy {
   }
 
   viewPasskey() {
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.router.navigate(["/view-cipher"], {
       queryParams: {
         cipherId: this.cipher.id,
@@ -290,6 +292,8 @@ export class Fido2Component implements OnInit, OnDestroy {
       return;
     }
 
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.router.navigate(["/add-cipher"], {
       queryParams: {
         name: Utils.getHostname(this.url),

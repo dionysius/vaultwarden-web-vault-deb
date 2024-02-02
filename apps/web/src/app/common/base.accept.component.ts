@@ -62,6 +62,8 @@ export abstract class BaseAcceptComponent implements OnInit {
                 ? this.i18nService.t(this.failedShortMessage, errorMessage)
                 : this.i18nService.t(this.failedMessage);
             this.platformUtilService.showToast("error", null, message, { timeout: 10000 });
+            // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+            // eslint-disable-next-line @typescript-eslint/no-floating-promises
             this.router.navigate(["/"]);
           }
 

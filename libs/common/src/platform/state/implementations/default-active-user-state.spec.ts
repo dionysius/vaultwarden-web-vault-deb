@@ -382,6 +382,8 @@ describe("DefaultActiveUserState", () => {
       await changeActiveUser(undefined);
       // Act
 
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       expect(async () => await userState.update(() => null)).rejects.toThrow(
         "No active user at this time.",
       );
@@ -619,6 +621,8 @@ describe("DefaultActiveUserState", () => {
       expect(diskStorageService["updatesSubject"]["observers"]).toHaveLength(1);
 
       // Still be listening to storage updates
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       diskStorageService.save(userKey, newData);
       await awaitAsync(); // storage updates are behind a promise
       expect(sub2Emissions).toEqual([null, newData]);

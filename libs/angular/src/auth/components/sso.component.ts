@@ -283,9 +283,13 @@ export class SsoComponent {
 
     if (this.onSuccessfulLoginTde != null) {
       // Don't await b/c causes hang on desktop & browser
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.onSuccessfulLoginTde();
     }
 
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.navigateViaCallbackOrRoute(
       this.onSuccessfulLoginTdeNavigate,
       // Navigate to TDE page (if user was on trusted device and TDE has decrypted
@@ -321,6 +325,8 @@ export class SsoComponent {
   private async handleSuccessfulLogin() {
     if (this.onSuccessfulLogin != null) {
       // Don't await b/c causes hang on desktop & browser
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.onSuccessfulLogin();
     }
 

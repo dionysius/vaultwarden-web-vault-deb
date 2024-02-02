@@ -19,6 +19,8 @@ export class EventUploadService implements EventUploadServiceAbstraction {
 
     this.inited = true;
     if (checkOnInterval) {
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.uploadEvents();
       setInterval(() => this.uploadEvents(), 60 * 1000); // check every 60 seconds
     }
@@ -43,6 +45,8 @@ export class EventUploadService implements EventUploadServiceAbstraction {
     });
     try {
       await this.apiService.postEventsCollect(request);
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.clearEvents(userId);
     } catch (e) {
       this.logService.error(e);

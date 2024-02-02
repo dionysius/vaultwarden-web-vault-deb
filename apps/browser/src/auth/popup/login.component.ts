@@ -75,11 +75,15 @@ export class LoginComponent extends BaseLoginComponent {
     if (this.showPasswordless) {
       this.formGroup.controls.email.setValue(this.loginService.getEmail());
       this.formGroup.controls.rememberEmail.setValue(this.loginService.getRememberEmail());
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.validateEmail();
     }
   }
 
   settings() {
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.router.navigate(["environment"]);
   }
 

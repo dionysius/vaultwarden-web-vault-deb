@@ -52,11 +52,15 @@ describe("OverlayBackground", () => {
   const initOverlayElementPorts = (options = { initList: true, initButton: true }) => {
     const { initList, initButton } = options;
     if (initButton) {
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       overlayBackground["handlePortOnConnect"](createPortSpyMock(AutofillOverlayPort.Button));
       buttonPortSpy = overlayBackground["overlayButtonPort"];
     }
 
     if (initList) {
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       overlayBackground["handlePortOnConnect"](createPortSpyMock(AutofillOverlayPort.List));
       listPortSpy = overlayBackground["overlayListPort"];
     }
@@ -75,6 +79,8 @@ describe("OverlayBackground", () => {
       i18nService,
       platformUtilsService,
     );
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     overlayBackground.init();
   });
 
@@ -698,8 +704,12 @@ describe("OverlayBackground", () => {
 
       describe("updateAutofillOverlayPosition message handler", () => {
         beforeEach(() => {
+          // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+          // eslint-disable-next-line @typescript-eslint/no-floating-promises
           overlayBackground["handlePortOnConnect"](createPortSpyMock(AutofillOverlayPort.List));
           listPortSpy = overlayBackground["overlayListPort"];
+          // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+          // eslint-disable-next-line @typescript-eslint/no-floating-promises
           overlayBackground["handlePortOnConnect"](createPortSpyMock(AutofillOverlayPort.Button));
           buttonPortSpy = overlayBackground["overlayButtonPort"];
         });
@@ -977,6 +987,8 @@ describe("OverlayBackground", () => {
     it("skips setting up the overlay port if the port connection is not for an overlay element", () => {
       const port = createPortSpyMock("not-an-overlay-element");
 
+      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       overlayBackground["handlePortOnConnect"](port);
 
       expect(port.onMessage.addListener).not.toHaveBeenCalled();
