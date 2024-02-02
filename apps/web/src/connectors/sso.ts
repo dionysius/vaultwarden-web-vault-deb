@@ -24,17 +24,30 @@ window.addEventListener("load", () => {
 });
 
 function initiateBrowserSsoIfDocumentReady(code: string, state: string, lastpass: boolean) {
-  if (document.readyState === "complete") {
-    initiateBrowserSso(code, state, lastpass);
-    return;
-  }
+  const MAX_ATTEMPTS = 200;
+  const TIMEOUT_MS = 50;
+  let attempts = 0;
 
-  const interval = setInterval(() => {
-    if (document.readyState === "complete") {
-      clearInterval(interval);
+  const pingInterval = setInterval(() => {
+    if (attempts >= MAX_ATTEMPTS) {
+      clearInterval(pingInterval);
+      throw new Error("Failed to initiate browser SSO");
+    }
+
+    attempts++;
+    window.postMessage({ command: "checkIfReadyForAuthResult" }, "*");
+  }, TIMEOUT_MS);
+
+  const handleWindowMessage = (event: MessageEvent) => {
+    if (event.source === window && event.data?.command === "readyToReceiveAuthResult") {
+      clearInterval(pingInterval);
+      window.removeEventListener("message", handleWindowMessage);
+
       initiateBrowserSso(code, state, lastpass);
     }
-  }, 50);
+  };
+
+  window.addEventListener("message", handleWindowMessage);
 }
 
 function initiateBrowserSso(code: string, state: string, lastpass: boolean) {
