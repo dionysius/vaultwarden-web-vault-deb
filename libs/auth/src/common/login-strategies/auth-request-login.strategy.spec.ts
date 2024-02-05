@@ -1,21 +1,22 @@
 import { mock, MockProxy } from "jest-mock-extended";
 
-import { ApiService } from "../../abstractions/api.service";
-import { AppIdService } from "../../platform/abstractions/app-id.service";
-import { CryptoService } from "../../platform/abstractions/crypto.service";
-import { LogService } from "../../platform/abstractions/log.service";
-import { MessagingService } from "../../platform/abstractions/messaging.service";
-import { PlatformUtilsService } from "../../platform/abstractions/platform-utils.service";
-import { StateService } from "../../platform/abstractions/state.service";
-import { Utils } from "../../platform/misc/utils";
-import { SymmetricCryptoKey } from "../../platform/models/domain/symmetric-crypto-key";
-import { CsprngArray } from "../../types/csprng";
-import { MasterKey, UserKey } from "../../types/key";
-import { DeviceTrustCryptoServiceAbstraction } from "../abstractions/device-trust-crypto.service.abstraction";
-import { TokenService } from "../abstractions/token.service";
-import { TwoFactorService } from "../abstractions/two-factor.service";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { DeviceTrustCryptoServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust-crypto.service.abstraction";
+import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
+import { TwoFactorService } from "@bitwarden/common/auth/abstractions/two-factor.service";
+import { IdentityTokenResponse } from "@bitwarden/common/auth/models/response/identity-token.response";
+import { AppIdService } from "@bitwarden/common/platform/abstractions/app-id.service";
+import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
+import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
+import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
+import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
+import { Utils } from "@bitwarden/common/platform/misc/utils";
+import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
+import { CsprngArray } from "@bitwarden/common/types/csprng";
+import { MasterKey, UserKey } from "@bitwarden/common/types/key";
+
 import { AuthRequestLoginCredentials } from "../models/domain/login-credentials";
-import { IdentityTokenResponse } from "../models/response/identity-token.response";
 
 import { AuthRequestLoginStrategy } from "./auth-request-login.strategy";
 import { identityTokenResponseFactory } from "./login.strategy.spec";

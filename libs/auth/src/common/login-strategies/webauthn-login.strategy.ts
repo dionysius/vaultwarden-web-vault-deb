@@ -1,9 +1,10 @@
-import { SymmetricCryptoKey } from "../../platform/models/domain/symmetric-crypto-key";
-import { UserKey } from "../../types/key";
-import { AuthResult } from "../models/domain/auth-result";
+import { AuthResult } from "@bitwarden/common/auth/models/domain/auth-result";
+import { WebAuthnLoginTokenRequest } from "@bitwarden/common/auth/models/request/identity-token/webauthn-login-token.request";
+import { IdentityTokenResponse } from "@bitwarden/common/auth/models/response/identity-token.response";
+import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
+import { UserKey } from "@bitwarden/common/types/key";
+
 import { WebAuthnLoginCredentials } from "../models/domain/login-credentials";
-import { WebAuthnLoginTokenRequest } from "../models/request/identity-token/webauthn-login-token.request";
-import { IdentityTokenResponse } from "../models/response/identity-token.response";
 
 import { LoginStrategy } from "./login.strategy";
 

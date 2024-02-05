@@ -139,6 +139,7 @@ export class Program {
         if (!options.check) {
           await this.exitIfAuthed();
           const command = new LoginCommand(
+            this.main.loginStrategyService,
             this.main.authService,
             this.main.apiService,
             this.main.cryptoFunctionService,

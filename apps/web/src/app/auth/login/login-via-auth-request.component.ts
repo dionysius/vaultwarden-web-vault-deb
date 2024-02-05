@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
 import { LoginViaAuthRequestComponent as BaseLoginWithDeviceComponent } from "@bitwarden/angular/auth/components/login-via-auth-request.component";
+import { LoginStrategyServiceAbstraction } from "@bitwarden/auth/common";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AnonymousHubService } from "@bitwarden/common/auth/abstractions/anonymous-hub.service";
 import { AuthRequestCryptoServiceAbstraction } from "@bitwarden/common/auth/abstractions/auth-request-crypto.service.abstraction";
@@ -46,6 +47,7 @@ export class LoginViaAuthRequestComponent
     loginService: LoginService,
     deviceTrustCryptoService: DeviceTrustCryptoServiceAbstraction,
     authReqCryptoService: AuthRequestCryptoServiceAbstraction,
+    loginStrategyService: LoginStrategyServiceAbstraction,
   ) {
     super(
       router,
@@ -65,6 +67,7 @@ export class LoginViaAuthRequestComponent
       loginService,
       deviceTrustCryptoService,
       authReqCryptoService,
+      loginStrategyService,
     );
   }
 }

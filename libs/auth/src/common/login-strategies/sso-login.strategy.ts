@@ -1,23 +1,24 @@
-import { ApiService } from "../../abstractions/api.service";
-import { AuthRequestResponse } from "../../auth/models/response/auth-request.response";
-import { HttpStatusCode } from "../../enums";
-import { ErrorResponse } from "../../models/response/error.response";
-import { AppIdService } from "../../platform/abstractions/app-id.service";
-import { CryptoService } from "../../platform/abstractions/crypto.service";
-import { I18nService } from "../../platform/abstractions/i18n.service";
-import { LogService } from "../../platform/abstractions/log.service";
-import { MessagingService } from "../../platform/abstractions/messaging.service";
-import { PlatformUtilsService } from "../../platform/abstractions/platform-utils.service";
-import { StateService } from "../../platform/abstractions/state.service";
-import { AuthRequestCryptoServiceAbstraction } from "../abstractions/auth-request-crypto.service.abstraction";
-import { DeviceTrustCryptoServiceAbstraction } from "../abstractions/device-trust-crypto.service.abstraction";
-import { KeyConnectorService } from "../abstractions/key-connector.service";
-import { TokenService } from "../abstractions/token.service";
-import { TwoFactorService } from "../abstractions/two-factor.service";
-import { ForceSetPasswordReason } from "../models/domain/force-set-password-reason";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { AuthRequestCryptoServiceAbstraction } from "@bitwarden/common/auth/abstractions/auth-request-crypto.service.abstraction";
+import { DeviceTrustCryptoServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust-crypto.service.abstraction";
+import { KeyConnectorService } from "@bitwarden/common/auth/abstractions/key-connector.service";
+import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
+import { TwoFactorService } from "@bitwarden/common/auth/abstractions/two-factor.service";
+import { ForceSetPasswordReason } from "@bitwarden/common/auth/models/domain/force-set-password-reason";
+import { SsoTokenRequest } from "@bitwarden/common/auth/models/request/identity-token/sso-token.request";
+import { AuthRequestResponse } from "@bitwarden/common/auth/models/response/auth-request.response";
+import { IdentityTokenResponse } from "@bitwarden/common/auth/models/response/identity-token.response";
+import { HttpStatusCode } from "@bitwarden/common/enums";
+import { ErrorResponse } from "@bitwarden/common/models/response/error.response";
+import { AppIdService } from "@bitwarden/common/platform/abstractions/app-id.service";
+import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
+import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
+import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
+import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
+
 import { SsoLoginCredentials } from "../models/domain/login-credentials";
-import { SsoTokenRequest } from "../models/request/identity-token/sso-token.request";
-import { IdentityTokenResponse } from "../models/response/identity-token.response";
 
 import { LoginStrategy } from "./login.strategy";
 

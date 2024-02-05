@@ -1,43 +1,44 @@
 import { mock, MockProxy } from "jest-mock-extended";
 
-import { ApiService } from "../../abstractions/api.service";
-import { PolicyService } from "../../admin-console/abstractions/policy/policy.service.abstraction";
-import { AppIdService } from "../../platform/abstractions/app-id.service";
-import { CryptoService } from "../../platform/abstractions/crypto.service";
-import { LogService } from "../../platform/abstractions/log.service";
-import { MessagingService } from "../../platform/abstractions/messaging.service";
-import { PlatformUtilsService } from "../../platform/abstractions/platform-utils.service";
-import { StateService } from "../../platform/abstractions/state.service";
-import { Utils } from "../../platform/misc/utils";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
+import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
+import { TwoFactorService } from "@bitwarden/common/auth/abstractions/two-factor.service";
+import { TwoFactorProviderType } from "@bitwarden/common/auth/enums/two-factor-provider-type";
+import { AuthResult } from "@bitwarden/common/auth/models/domain/auth-result";
+import { ForceSetPasswordReason } from "@bitwarden/common/auth/models/domain/force-set-password-reason";
+import { PasswordTokenRequest } from "@bitwarden/common/auth/models/request/identity-token/password-token.request";
+import { TokenTwoFactorRequest } from "@bitwarden/common/auth/models/request/identity-token/token-two-factor.request";
+import { IdentityCaptchaResponse } from "@bitwarden/common/auth/models/response/identity-captcha.response";
+import { IdentityTokenResponse } from "@bitwarden/common/auth/models/response/identity-token.response";
+import { IdentityTwoFactorResponse } from "@bitwarden/common/auth/models/response/identity-two-factor.response";
+import { MasterPasswordPolicyResponse } from "@bitwarden/common/auth/models/response/master-password-policy.response";
+import { IUserDecryptionOptionsServerResponse } from "@bitwarden/common/auth/models/response/user-decryption-options/user-decryption-options.response";
+import { AppIdService } from "@bitwarden/common/platform/abstractions/app-id.service";
+import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
+import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
+import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
+import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
+import { Utils } from "@bitwarden/common/platform/misc/utils";
 import {
   Account,
-  AccountDecryptionOptions,
-  AccountKeys,
   AccountProfile,
   AccountTokens,
-} from "../../platform/models/domain/account";
-import { EncString } from "../../platform/models/domain/enc-string";
-import { SymmetricCryptoKey } from "../../platform/models/domain/symmetric-crypto-key";
+  AccountKeys,
+  AccountDecryptionOptions,
+} from "@bitwarden/common/platform/models/domain/account";
+import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
+import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
 import {
-  PasswordStrengthService,
   PasswordStrengthServiceAbstraction,
-} from "../../tools/password-strength";
-import { CsprngArray } from "../../types/csprng";
-import { UserKey, MasterKey, DeviceKey } from "../../types/key";
-import { AuthService } from "../abstractions/auth.service";
-import { TokenService } from "../abstractions/token.service";
-import { TwoFactorService } from "../abstractions/two-factor.service";
-import { TwoFactorProviderType } from "../enums/two-factor-provider-type";
-import { AuthResult } from "../models/domain/auth-result";
-import { ForceSetPasswordReason } from "../models/domain/force-set-password-reason";
+  PasswordStrengthService,
+} from "@bitwarden/common/tools/password-strength";
+import { CsprngArray } from "@bitwarden/common/types/csprng";
+import { UserKey, MasterKey, DeviceKey } from "@bitwarden/common/types/key";
+
+import { LoginStrategyServiceAbstraction } from "../abstractions/login-strategy.service";
 import { PasswordLoginCredentials } from "../models/domain/login-credentials";
-import { PasswordTokenRequest } from "../models/request/identity-token/password-token.request";
-import { TokenTwoFactorRequest } from "../models/request/identity-token/token-two-factor.request";
-import { IdentityCaptchaResponse } from "../models/response/identity-captcha.response";
-import { IdentityTokenResponse } from "../models/response/identity-token.response";
-import { IdentityTwoFactorResponse } from "../models/response/identity-two-factor.response";
-import { MasterPasswordPolicyResponse } from "../models/response/master-password-policy.response";
-import { IUserDecryptionOptionsServerResponse } from "../models/response/user-decryption-options/user-decryption-options.response";
 
 import { PasswordLoginStrategy } from "./password-login.strategy";
 
@@ -93,6 +94,7 @@ export function identityTokenResponseFactory(
 
 // TODO: add tests for latest changes to base class for TDE
 describe("LoginStrategy", () => {
+  let loginStrategyService: MockProxy<LoginStrategyServiceAbstraction>;
   let cryptoService: MockProxy<CryptoService>;
   let apiService: MockProxy<ApiService>;
   let tokenService: MockProxy<TokenService>;
@@ -102,7 +104,6 @@ describe("LoginStrategy", () => {
   let logService: MockProxy<LogService>;
   let stateService: MockProxy<StateService>;
   let twoFactorService: MockProxy<TwoFactorService>;
-  let authService: MockProxy<AuthService>;
   let policyService: MockProxy<PolicyService>;
   let passwordStrengthService: MockProxy<PasswordStrengthServiceAbstraction>;
 
@@ -110,6 +111,7 @@ describe("LoginStrategy", () => {
   let credentials: PasswordLoginCredentials;
 
   beforeEach(async () => {
+    loginStrategyService = mock<LoginStrategyServiceAbstraction>();
     cryptoService = mock<CryptoService>();
     apiService = mock<ApiService>();
     tokenService = mock<TokenService>();
@@ -119,7 +121,6 @@ describe("LoginStrategy", () => {
     logService = mock<LogService>();
     stateService = mock<StateService>();
     twoFactorService = mock<TwoFactorService>();
-    authService = mock<AuthService>();
     policyService = mock<PolicyService>();
     passwordStrengthService = mock<PasswordStrengthService>();
 
@@ -139,7 +140,7 @@ describe("LoginStrategy", () => {
       twoFactorService,
       passwordStrengthService,
       policyService,
-      authService,
+      loginStrategyService,
     );
     credentials = new PasswordLoginCredentials(email, masterPassword);
   });

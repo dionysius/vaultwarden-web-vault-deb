@@ -1,26 +1,27 @@
-import { ApiService } from "../../abstractions/api.service";
-import { PolicyService } from "../../admin-console/abstractions/policy/policy.service.abstraction";
-import { MasterPasswordPolicyOptions } from "../../admin-console/models/domain/master-password-policy-options";
-import { AppIdService } from "../../platform/abstractions/app-id.service";
-import { CryptoService } from "../../platform/abstractions/crypto.service";
-import { LogService } from "../../platform/abstractions/log.service";
-import { MessagingService } from "../../platform/abstractions/messaging.service";
-import { PlatformUtilsService } from "../../platform/abstractions/platform-utils.service";
-import { StateService } from "../../platform/abstractions/state.service";
-import { HashPurpose } from "../../platform/enums";
-import { PasswordStrengthServiceAbstraction } from "../../tools/password-strength";
-import { MasterKey } from "../../types/key";
-import { AuthService } from "../abstractions/auth.service";
-import { TokenService } from "../abstractions/token.service";
-import { TwoFactorService } from "../abstractions/two-factor.service";
-import { AuthResult } from "../models/domain/auth-result";
-import { ForceSetPasswordReason } from "../models/domain/force-set-password-reason";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
+import { MasterPasswordPolicyOptions } from "@bitwarden/common/admin-console/models/domain/master-password-policy-options";
+import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
+import { TwoFactorService } from "@bitwarden/common/auth/abstractions/two-factor.service";
+import { AuthResult } from "@bitwarden/common/auth/models/domain/auth-result";
+import { ForceSetPasswordReason } from "@bitwarden/common/auth/models/domain/force-set-password-reason";
+import { PasswordTokenRequest } from "@bitwarden/common/auth/models/request/identity-token/password-token.request";
+import { TokenTwoFactorRequest } from "@bitwarden/common/auth/models/request/identity-token/token-two-factor.request";
+import { IdentityCaptchaResponse } from "@bitwarden/common/auth/models/response/identity-captcha.response";
+import { IdentityTokenResponse } from "@bitwarden/common/auth/models/response/identity-token.response";
+import { IdentityTwoFactorResponse } from "@bitwarden/common/auth/models/response/identity-two-factor.response";
+import { AppIdService } from "@bitwarden/common/platform/abstractions/app-id.service";
+import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
+import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
+import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
+import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
+import { HashPurpose } from "@bitwarden/common/platform/enums";
+import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/password-strength";
+import { MasterKey } from "@bitwarden/common/types/key";
+
+import { LoginStrategyServiceAbstraction } from "../abstractions";
 import { PasswordLoginCredentials } from "../models/domain/login-credentials";
-import { PasswordTokenRequest } from "../models/request/identity-token/password-token.request";
-import { TokenTwoFactorRequest } from "../models/request/identity-token/token-two-factor.request";
-import { IdentityCaptchaResponse } from "../models/response/identity-captcha.response";
-import { IdentityTokenResponse } from "../models/response/identity-token.response";
-import { IdentityTwoFactorResponse } from "../models/response/identity-two-factor.response";
 
 import { LoginStrategy } from "./login.strategy";
 
@@ -56,7 +57,7 @@ export class PasswordLoginStrategy extends LoginStrategy {
     twoFactorService: TwoFactorService,
     private passwordStrengthService: PasswordStrengthServiceAbstraction,
     private policyService: PolicyService,
-    private authService: AuthService,
+    private loginStrategyService: LoginStrategyServiceAbstraction,
   ) {
     super(
       cryptoService,
@@ -94,7 +95,7 @@ export class PasswordLoginStrategy extends LoginStrategy {
   override async logIn(credentials: PasswordLoginCredentials) {
     const { email, masterPassword, captchaToken, twoFactor } = credentials;
 
-    this.masterKey = await this.authService.makePreloginKey(masterPassword, email);
+    this.masterKey = await this.loginStrategyService.makePreloginKey(masterPassword, email);
 
     // Hash the password early (before authentication) so we don't persist it in memory in plaintext
     this.localMasterKeyHash = await this.cryptoService.hashMasterKey(

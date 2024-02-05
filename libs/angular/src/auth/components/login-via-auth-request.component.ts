@@ -2,6 +2,10 @@ import { Directive, OnDestroy, OnInit } from "@angular/core";
 import { IsActiveMatchOptions, Router } from "@angular/router";
 import { Subject, takeUntil } from "rxjs";
 
+import {
+  AuthRequestLoginCredentials,
+  LoginStrategyServiceAbstraction,
+} from "@bitwarden/auth/common";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AnonymousHubService } from "@bitwarden/common/auth/abstractions/anonymous-hub.service";
 import { AuthRequestCryptoServiceAbstraction } from "@bitwarden/common/auth/abstractions/auth-request-crypto.service.abstraction";
@@ -13,7 +17,6 @@ import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authenticatio
 import { AdminAuthRequestStorable } from "@bitwarden/common/auth/models/domain/admin-auth-req-storable";
 import { AuthResult } from "@bitwarden/common/auth/models/domain/auth-result";
 import { ForceSetPasswordReason } from "@bitwarden/common/auth/models/domain/force-set-password-reason";
-import { AuthRequestLoginCredentials } from "@bitwarden/common/auth/models/domain/login-credentials";
 import { CreateAuthRequest } from "@bitwarden/common/auth/models/request/create-auth.request";
 import { AuthRequestResponse } from "@bitwarden/common/auth/models/response/auth-request.response";
 import { HttpStatusCode } from "@bitwarden/common/enums/http-status-code.enum";
@@ -84,6 +87,7 @@ export class LoginViaAuthRequestComponent
     private loginService: LoginService,
     private deviceTrustCryptoService: DeviceTrustCryptoServiceAbstraction,
     private authReqCryptoService: AuthRequestCryptoServiceAbstraction,
+    private loginStrategyService: LoginStrategyServiceAbstraction,
   ) {
     super(environmentService, i18nService, platformUtilsService);
 
@@ -95,7 +99,7 @@ export class LoginViaAuthRequestComponent
     }
 
     //gets signalR push notification
-    this.authService
+    this.loginStrategyService
       .getPushNotificationObs$()
       .pipe(takeUntil(this.destroy$))
       .subscribe((id) => {
@@ -438,7 +442,7 @@ export class LoginViaAuthRequestComponent
     const credentials = await this.buildAuthRequestLoginCredentials(requestId, authReqResponse);
 
     // Note: keys are set by AuthRequestLoginStrategy success handling
-    return await this.authService.logIn(credentials);
+    return await this.loginStrategyService.logIn(credentials);
   }
 
   // Routing logic

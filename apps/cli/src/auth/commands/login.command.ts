@@ -5,6 +5,12 @@ import * as inquirer from "inquirer";
 import Separator from "inquirer/lib/objects/separator";
 import { firstValueFrom } from "rxjs";
 
+import {
+  LoginStrategyServiceAbstraction,
+  PasswordLoginCredentials,
+  SsoLoginCredentials,
+  UserApiLoginCredentials,
+} from "@bitwarden/auth/common";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { PolicyApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/policy/policy-api.service.abstraction";
@@ -15,11 +21,6 @@ import { TwoFactorService } from "@bitwarden/common/auth/abstractions/two-factor
 import { TwoFactorProviderType } from "@bitwarden/common/auth/enums/two-factor-provider-type";
 import { AuthResult } from "@bitwarden/common/auth/models/domain/auth-result";
 import { ForceSetPasswordReason } from "@bitwarden/common/auth/models/domain/force-set-password-reason";
-import {
-  PasswordLoginCredentials,
-  SsoLoginCredentials,
-  UserApiLoginCredentials,
-} from "@bitwarden/common/auth/models/domain/login-credentials";
 import { TokenTwoFactorRequest } from "@bitwarden/common/auth/models/request/identity-token/token-two-factor.request";
 import { PasswordRequest } from "@bitwarden/common/auth/models/request/password.request";
 import { TwoFactorEmailRequest } from "@bitwarden/common/auth/models/request/two-factor-email.request";
@@ -50,6 +51,7 @@ export class LoginCommand {
   private options: OptionValues;
 
   constructor(
+    protected loginStrategyService: LoginStrategyServiceAbstraction,
     protected authService: AuthService,
     protected apiService: ApiService,
     protected cryptoFunctionService: CryptoFunctionService,
@@ -178,7 +180,7 @@ export class LoginCommand {
           return Response.error("Invalid API Key; Organization API Key currently not supported");
         }
         try {
-          response = await this.authService.logIn(
+          response = await this.loginStrategyService.logIn(
             new UserApiLoginCredentials(clientId, clientSecret),
           );
         } catch (e) {
@@ -195,7 +197,7 @@ export class LoginCommand {
           throw e;
         }
       } else if (ssoCode != null && ssoCodeVerifier != null) {
-        response = await this.authService.logIn(
+        response = await this.loginStrategyService.logIn(
           new SsoLoginCredentials(
             ssoCode,
             ssoCodeVerifier,
@@ -205,7 +207,7 @@ export class LoginCommand {
           ),
         );
       } else {
-        response = await this.authService.logIn(
+        response = await this.loginStrategyService.logIn(
           new PasswordLoginCredentials(email, password, null, twoFactor),
         );
       }
@@ -271,8 +273,8 @@ export class LoginCommand {
           selectedProvider.type === TwoFactorProviderType.Email
         ) {
           const emailReq = new TwoFactorEmailRequest();
-          emailReq.email = this.authService.email;
-          emailReq.masterPasswordHash = this.authService.masterPasswordHash;
+          emailReq.email = this.loginStrategyService.email;
+          emailReq.masterPasswordHash = this.loginStrategyService.masterPasswordHash;
           await this.apiService.postTwoFactorEmail(emailReq);
         }
 
@@ -292,7 +294,7 @@ export class LoginCommand {
           }
         }
 
-        response = await this.authService.logInTwoFactor(
+        response = await this.loginStrategyService.logInTwoFactor(
           new TokenTwoFactorRequest(selectedProvider.type, twoFactorToken),
           null,
         );
@@ -604,9 +606,9 @@ export class LoginCommand {
       if (credentials != null) {
         credentials.captchaToken = captchaClientSecret;
         credentials.twoFactor = twoFactorRequest;
-        authResultResponse = await this.authService.logIn(credentials);
+        authResultResponse = await this.loginStrategyService.logIn(credentials);
       } else {
-        authResultResponse = await this.authService.logInTwoFactor(
+        authResultResponse = await this.loginStrategyService.logInTwoFactor(
           twoFactorRequest,
           captchaClientSecret,
         );

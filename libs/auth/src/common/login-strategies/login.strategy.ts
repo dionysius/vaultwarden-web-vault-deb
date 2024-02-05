@@ -1,40 +1,41 @@
-import { ApiService } from "../../abstractions/api.service";
-import { ClientType } from "../../enums";
-import { KeysRequest } from "../../models/request/keys.request";
-import { AppIdService } from "../../platform/abstractions/app-id.service";
-import { CryptoService } from "../../platform/abstractions/crypto.service";
-import { LogService } from "../../platform/abstractions/log.service";
-import { MessagingService } from "../../platform/abstractions/messaging.service";
-import { PlatformUtilsService } from "../../platform/abstractions/platform-utils.service";
-import { StateService } from "../../platform/abstractions/state.service";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
+import { TwoFactorService } from "@bitwarden/common/auth/abstractions/two-factor.service";
+import { TwoFactorProviderType } from "@bitwarden/common/auth/enums/two-factor-provider-type";
+import { AuthResult } from "@bitwarden/common/auth/models/domain/auth-result";
+import { ForceSetPasswordReason } from "@bitwarden/common/auth/models/domain/force-set-password-reason";
+import { DeviceRequest } from "@bitwarden/common/auth/models/request/identity-token/device.request";
+import { PasswordTokenRequest } from "@bitwarden/common/auth/models/request/identity-token/password-token.request";
+import { SsoTokenRequest } from "@bitwarden/common/auth/models/request/identity-token/sso-token.request";
+import { TokenTwoFactorRequest } from "@bitwarden/common/auth/models/request/identity-token/token-two-factor.request";
+import { UserApiTokenRequest } from "@bitwarden/common/auth/models/request/identity-token/user-api-token.request";
+import { WebAuthnLoginTokenRequest } from "@bitwarden/common/auth/models/request/identity-token/webauthn-login-token.request";
+import { IdentityCaptchaResponse } from "@bitwarden/common/auth/models/response/identity-captcha.response";
+import { IdentityTokenResponse } from "@bitwarden/common/auth/models/response/identity-token.response";
+import { IdentityTwoFactorResponse } from "@bitwarden/common/auth/models/response/identity-two-factor.response";
+import { ClientType } from "@bitwarden/common/enums";
+import { KeysRequest } from "@bitwarden/common/models/request/keys.request";
+import { AppIdService } from "@bitwarden/common/platform/abstractions/app-id.service";
+import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
+import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
+import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
+import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import {
-  Account,
-  AccountDecryptionOptions,
   AccountKeys,
+  Account,
   AccountProfile,
   AccountTokens,
-} from "../../platform/models/domain/account";
-import { TokenService } from "../abstractions/token.service";
-import { TwoFactorService } from "../abstractions/two-factor.service";
-import { TwoFactorProviderType } from "../enums/two-factor-provider-type";
-import { AuthResult } from "../models/domain/auth-result";
-import { ForceSetPasswordReason } from "../models/domain/force-set-password-reason";
+  AccountDecryptionOptions,
+} from "@bitwarden/common/platform/models/domain/account";
+
 import {
-  AuthRequestLoginCredentials,
+  UserApiLoginCredentials,
   PasswordLoginCredentials,
   SsoLoginCredentials,
-  UserApiLoginCredentials,
+  AuthRequestLoginCredentials,
   WebAuthnLoginCredentials,
 } from "../models/domain/login-credentials";
-import { DeviceRequest } from "../models/request/identity-token/device.request";
-import { PasswordTokenRequest } from "../models/request/identity-token/password-token.request";
-import { SsoTokenRequest } from "../models/request/identity-token/sso-token.request";
-import { TokenTwoFactorRequest } from "../models/request/identity-token/token-two-factor.request";
-import { UserApiTokenRequest } from "../models/request/identity-token/user-api-token.request";
-import { WebAuthnLoginTokenRequest } from "../models/request/identity-token/webauthn-login-token.request";
-import { IdentityCaptchaResponse } from "../models/response/identity-captcha.response";
-import { IdentityTokenResponse } from "../models/response/identity-token.response";
-import { IdentityTwoFactorResponse } from "../models/response/identity-two-factor.response";
 
 type IdentityResponse = IdentityTokenResponse | IdentityTwoFactorResponse | IdentityCaptchaResponse;
 

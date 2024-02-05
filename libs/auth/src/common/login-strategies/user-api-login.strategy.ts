@@ -1,17 +1,18 @@
-import { ApiService } from "../../abstractions/api.service";
-import { TokenService } from "../../auth/abstractions/token.service";
-import { TwoFactorService } from "../../auth/abstractions/two-factor.service";
-import { AppIdService } from "../../platform/abstractions/app-id.service";
-import { CryptoService } from "../../platform/abstractions/crypto.service";
-import { EnvironmentService } from "../../platform/abstractions/environment.service";
-import { LogService } from "../../platform/abstractions/log.service";
-import { MessagingService } from "../../platform/abstractions/messaging.service";
-import { PlatformUtilsService } from "../../platform/abstractions/platform-utils.service";
-import { StateService } from "../../platform/abstractions/state.service";
-import { KeyConnectorService } from "../abstractions/key-connector.service";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { KeyConnectorService } from "@bitwarden/common/auth/abstractions/key-connector.service";
+import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
+import { TwoFactorService } from "@bitwarden/common/auth/abstractions/two-factor.service";
+import { UserApiTokenRequest } from "@bitwarden/common/auth/models/request/identity-token/user-api-token.request";
+import { IdentityTokenResponse } from "@bitwarden/common/auth/models/response/identity-token.response";
+import { AppIdService } from "@bitwarden/common/platform/abstractions/app-id.service";
+import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
+import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
+import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
+import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
+import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
+
 import { UserApiLoginCredentials } from "../models/domain/login-credentials";
-import { UserApiTokenRequest } from "../models/request/identity-token/user-api-token.request";
-import { IdentityTokenResponse } from "../models/response/identity-token.response";
 
 import { LoginStrategy } from "./login.strategy";
 

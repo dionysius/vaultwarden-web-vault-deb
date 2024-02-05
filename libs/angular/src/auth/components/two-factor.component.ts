@@ -5,8 +5,8 @@ import { first } from "rxjs/operators";
 
 // eslint-disable-next-line no-restricted-imports
 import { WINDOW } from "@bitwarden/angular/services/injection-tokens";
+import { LoginStrategyServiceAbstraction } from "@bitwarden/auth/common";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
-import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { LoginService } from "@bitwarden/common/auth/abstractions/login.service";
 import { TwoFactorService } from "@bitwarden/common/auth/abstractions/two-factor.service";
 import { TwoFactorProviderType } from "@bitwarden/common/auth/enums/two-factor-provider-type";
@@ -70,7 +70,7 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
   }
 
   constructor(
-    protected authService: AuthService,
+    protected loginStrategyService: LoginStrategyServiceAbstraction,
     protected router: Router,
     protected i18nService: I18nService,
     protected apiService: ApiService,
@@ -243,7 +243,7 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
   }
 
   async doSubmit() {
-    this.formPromise = this.authService.logInTwoFactor(
+    this.formPromise = this.loginStrategyService.logInTwoFactor(
       new TokenTwoFactorRequest(this.selectedProviderType, this.token, this.remember),
       this.captchaToken,
     );
@@ -424,7 +424,7 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
       return;
     }
 
-    if (this.authService.email == null) {
+    if (this.loginStrategyService.email == null) {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),
@@ -435,12 +435,12 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
 
     try {
       const request = new TwoFactorEmailRequest();
-      request.email = this.authService.email;
-      request.masterPasswordHash = this.authService.masterPasswordHash;
-      request.ssoEmail2FaSessionToken = this.authService.ssoEmail2FaSessionToken;
+      request.email = this.loginStrategyService.email;
+      request.masterPasswordHash = this.loginStrategyService.masterPasswordHash;
+      request.ssoEmail2FaSessionToken = this.loginStrategyService.ssoEmail2FaSessionToken;
       request.deviceIdentifier = await this.appIdService.getAppId();
-      request.authRequestAccessCode = this.authService.accessCode;
-      request.authRequestId = this.authService.authRequestId;
+      request.authRequestAccessCode = this.loginStrategyService.accessCode;
+      request.authRequestId = this.loginStrategyService.authRequestId;
       this.emailPromise = this.apiService.postTwoFactorEmail(request);
       await this.emailPromise;
       if (doToast) {
@@ -476,15 +476,18 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
 
   get authing(): boolean {
     return (
-      this.authService.authingWithPassword() ||
-      this.authService.authingWithSso() ||
-      this.authService.authingWithUserApiKey() ||
-      this.authService.authingWithPasswordless()
+      this.loginStrategyService.authingWithPassword() ||
+      this.loginStrategyService.authingWithSso() ||
+      this.loginStrategyService.authingWithUserApiKey() ||
+      this.loginStrategyService.authingWithPasswordless()
     );
   }
 
   get needsLock(): boolean {
-    return this.authService.authingWithSso() || this.authService.authingWithUserApiKey();
+    return (
+      this.loginStrategyService.authingWithSso() ||
+      this.loginStrategyService.authingWithUserApiKey()
+    );
   }
 
   launchDuoFrameless() {
