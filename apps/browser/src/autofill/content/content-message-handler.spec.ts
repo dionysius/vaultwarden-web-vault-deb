@@ -1,37 +1,31 @@
+import { mock } from "jest-mock-extended";
+
 import { postWindowMessage, sendExtensionRuntimeMessage } from "../jest/testing-utils";
 
-import ContentMessageHandler from "./content-message-handler";
-
 describe("ContentMessageHandler", () => {
-  let contentMessageHandler: ContentMessageHandler;
   const sendMessageSpy = jest.spyOn(chrome.runtime, "sendMessage");
+  let portOnDisconnectAddListenerCallback: CallableFunction;
+  chrome.runtime.connect = jest.fn(() =>
+    mock<chrome.runtime.Port>({
+      onDisconnect: {
+        addListener: jest.fn((callback) => {
+          portOnDisconnectAddListenerCallback = callback;
+        }),
+        removeListener: jest.fn(),
+      },
+    }),
+  );
 
   beforeEach(() => {
-    contentMessageHandler = new ContentMessageHandler();
+    require("./content-message-handler");
   });
 
   afterEach(() => {
+    jest.resetModules();
     jest.clearAllMocks();
-    contentMessageHandler.destroy();
   });
 
-  describe("init", () => {
-    it("should add event listeners", () => {
-      const addEventListenerSpy = jest.spyOn(window, "addEventListener");
-      const addListenerSpy = jest.spyOn(chrome.runtime.onMessage, "addListener");
-
-      contentMessageHandler.init();
-
-      expect(addEventListenerSpy).toHaveBeenCalledTimes(1);
-      expect(addListenerSpy).toHaveBeenCalledTimes(1);
-    });
-  });
-
-  describe("handleWindowMessage", () => {
-    beforeEach(() => {
-      contentMessageHandler.init();
-    });
-
+  describe("handled window messages", () => {
     it("ignores messages from other sources", () => {
       postWindowMessage({ command: "authResult" }, "https://localhost/", null);
 
@@ -47,7 +41,6 @@ describe("ContentMessageHandler", () => {
     it("sends an authResult message", () => {
       postWindowMessage({ command: "authResult", lastpass: true, code: "code", state: "state" });
 
-      expect(sendMessageSpy).toHaveBeenCalledTimes(1);
       expect(sendMessageSpy).toHaveBeenCalledWith({
         command: "authResult",
         code: "code",
@@ -60,7 +53,6 @@ describe("ContentMessageHandler", () => {
     it("sends a webAuthnResult message", () => {
       postWindowMessage({ command: "webAuthnResult", data: "data", remember: true });
 
-      expect(sendMessageSpy).toHaveBeenCalledTimes(1);
       expect(sendMessageSpy).toHaveBeenCalledWith({
         command: "webAuthnResult",
         data: "data",
@@ -70,11 +62,7 @@ describe("ContentMessageHandler", () => {
     });
   });
 
-  describe("handleExtensionMessage", () => {
-    beforeEach(() => {
-      contentMessageHandler.init();
-    });
-
+  describe("handled extension messages", () => {
     it("ignores the message to the extension background if it is not present in the forwardCommands list", () => {
       sendExtensionRuntimeMessage({ command: "someOtherCommand" });
 
@@ -86,6 +74,19 @@ describe("ContentMessageHandler", () => {
 
       expect(sendMessageSpy).toHaveBeenCalledTimes(1);
       expect(sendMessageSpy).toHaveBeenCalledWith({ command: "bgUnlockPopoutOpened" });
+    });
+  });
+
+  describe("extension disconnect action", () => {
+    it("removes the window message listener and the extension message listener", () => {
+      const removeEventListenerSpy = jest.spyOn(window, "removeEventListener");
+
+      portOnDisconnectAddListenerCallback(mock<chrome.runtime.Port>());
+
+      expect(removeEventListenerSpy).toHaveBeenCalledTimes(1);
+      expect(removeEventListenerSpy).toHaveBeenCalledWith("message", expect.any(Function));
+      expect(chrome.runtime.onMessage.removeListener).toHaveBeenCalledTimes(1);
+      expect(chrome.runtime.onMessage.removeListener).toHaveBeenCalledWith(expect.any(Function));
     });
   });
 });

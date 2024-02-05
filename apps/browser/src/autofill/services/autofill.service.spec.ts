@@ -207,11 +207,11 @@ describe("AutofillService", () => {
       });
     });
 
-    it("injects the bootstrap-content-message-handler script if not injecting on page load", async () => {
+    it("injects the content-message-handler script if not injecting on page load", async () => {
       await autofillService.injectAutofillScripts(sender.tab, sender.frameId, false);
 
       expect(BrowserApi.executeScriptInTab).toHaveBeenCalledWith(tabMock.id, {
-        file: "content/bootstrap-content-message-handler.js",
+        file: "content/content-message-handler.js",
         ...defaultExecuteScriptOptions,
       });
     });

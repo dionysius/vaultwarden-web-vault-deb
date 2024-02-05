@@ -17,14 +17,14 @@
   },
   "content_scripts": [
     {
-      "all_frames": true,
-      "js": ["content/trigger-autofill-script-injection.js"],
+      "all_frames": false,
+      "js": ["content/content-message-handler.js"],
       "matches": ["http://*/*", "https://*/*", "file:///*"],
       "run_at": "document_start"
     },
     {
-      "all_frames": false,
-      "js": ["content/bootstrap-content-message-handler.js"],
+      "all_frames": true,
+      "js": ["content/trigger-autofill-script-injection.js"],
       "matches": ["http://*/*", "https://*/*", "file:///*"],
       "run_at": "document_start"
     },

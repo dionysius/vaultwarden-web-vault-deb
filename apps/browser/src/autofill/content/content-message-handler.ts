@@ -1,84 +1,110 @@
-import { ContentMessageHandler as ContentMessageHandlerInterface } from "./abstractions/content-message-handler";
+import {
+  ContentMessageWindowData,
+  ContentMessageWindowEventHandlers,
+} from "./abstractions/content-message-handler";
 
-class ContentMessageHandler implements ContentMessageHandlerInterface {
-  private forwardCommands = [
-    "bgUnlockPopoutOpened",
-    "addToLockedVaultPendingNotifications",
-    "unlockCompleted",
-    "addedCipher",
-  ];
+/**
+ * IMPORTANT: Safari seems to have a bug where it doesn't properly handle
+ * window message events from content scripts when the listener these events
+ * is registered within a class. This is why these listeners are registered
+ * at the top level of this file.
+ */
+window.addEventListener("message", handleWindowMessageEvent, false);
+chrome.runtime.onMessage.addListener(handleExtensionMessage);
+setupExtensionDisconnectAction(() => {
+  window.removeEventListener("message", handleWindowMessageEvent);
+  chrome.runtime.onMessage.removeListener(handleExtensionMessage);
+});
 
-  /**
-   * Initialize the content message handler. Sets up
-   * a window message listener and a chrome runtime
-   * message listener.
-   */
-  init() {
-    window.addEventListener("message", this.handleWindowMessage, false);
-    chrome.runtime.onMessage.addListener(this.handleExtensionMessage);
-  }
+/**
+ * Handlers for window messages from the content script.
+ */
+const windowMessageHandlers: ContentMessageWindowEventHandlers = {
+  authResult: ({ data, referrer }: { data: any; referrer: string }) =>
+    handleAuthResultMessage(data, referrer),
+  webAuthnResult: ({ data, referrer }: { data: any; referrer: string }) =>
+    handleWebAuthnResultMessage(data, referrer),
+};
 
-  /**
-   * Handle a message from the window. This implementation
-   * specifically handles the authResult and webAuthnResult
-   * commands. This facilitates single sign-on.
-   *
-   * @param event - The message event.
-   */
-  private handleWindowMessage = (event: MessageEvent) => {
-    const { source, data } = event;
-
-    if (source !== window || !data?.command) {
-      return;
-    }
-
-    const { command } = data;
-    const referrer = source.location.hostname;
-
-    if (command === "checkIfReadyForAuthResult") {
-      window.postMessage({ command: "readyToReceiveAuthResult" }, "*");
-    }
-
-    if (command === "authResult") {
-      const { lastpass, code, state } = data;
-      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-      // eslint-disable-next-line @typescript-eslint/no-floating-promises
-      chrome.runtime.sendMessage({ command, code, state, lastpass, referrer });
-    }
-
-    if (command === "webAuthnResult") {
-      const { remember } = data;
-      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-      // eslint-disable-next-line @typescript-eslint/no-floating-promises
-      chrome.runtime.sendMessage({ command, data: data.data, remember, referrer });
-    }
-  };
-
-  /**
-   * Handle a message from the extension. This
-   * implementation forwards the message to the
-   * extension background so that it can  be received
-   * in other contexts of the background script.
-   *
-   * @param message - The message from the extension.
-   */
-  private handleExtensionMessage = (message: any) => {
-    if (this.forwardCommands.includes(message.command)) {
-      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-      // eslint-disable-next-line @typescript-eslint/no-floating-promises
-      chrome.runtime.sendMessage(message);
-    }
-  };
-
-  /**
-   * Destroy the content message handler. Removes
-   * the window message listener and the chrome
-   * runtime message listener.
-   */
-  destroy = () => {
-    window.removeEventListener("message", this.handleWindowMessage);
-    chrome.runtime.onMessage.removeListener(this.handleExtensionMessage);
-  };
+/**
+ * Handles the auth result message from the window.
+ *
+ * @param data - Data from the window message
+ * @param referrer - The referrer of the window
+ */
+async function handleAuthResultMessage(data: ContentMessageWindowData, referrer: string) {
+  const { command, lastpass, code, state } = data;
+  await chrome.runtime.sendMessage({ command, code, state, lastpass, referrer });
 }
 
-export default ContentMessageHandler;
+/**
+ * Handles the webauthn result message from the window.
+ *
+ * @param data - Data from the window message
+ * @param referrer - The referrer of the window
+ */
+async function handleWebAuthnResultMessage(data: ContentMessageWindowData, referrer: string) {
+  const { command, remember } = data;
+  await chrome.runtime.sendMessage({ command, data: data.data, remember, referrer });
+}
+
+/**
+ * Handles the window message event.
+ *
+ * @param event - The window message event
+ */
+function handleWindowMessageEvent(event: MessageEvent) {
+  const { source, data } = event;
+  if (source !== window || !data?.command) {
+    return;
+  }
+
+  const referrer = source.location.hostname;
+  const handler = windowMessageHandlers[data.command];
+  if (handler) {
+    handler({ data, referrer });
+  }
+}
+
+/**
+ * Commands to forward from this script to the extension background.
+ */
+const forwardCommands = new Set([
+  "bgUnlockPopoutOpened",
+  "addToLockedVaultPendingNotifications",
+  "unlockCompleted",
+  "addedCipher",
+]);
+
+/**
+ * Handles messages from the extension. Currently, this is
+ * used to forward messages from the background context to
+ * other scripts within the extension.
+ *
+ * @param message - The message from the extension
+ */
+async function handleExtensionMessage(message: any) {
+  if (forwardCommands.has(message.command)) {
+    await chrome.runtime.sendMessage(message);
+  }
+}
+
+/**
+ * Duplicate implementation of the same named method within `apps/browser/src/autofill/utils/index.ts`.
+ * This is done due to some strange observed compilation behavior present when importing the method from
+ * the utils file.
+ *
+ * TODO: Investigate why webpack tree shaking is not removing other methods when importing from the utils file.
+ * Possible cause can be seen below:
+ * @see https://stackoverflow.com/questions/71679366/webpack5-does-not-seem-to-tree-shake-unused-exports
+ *
+ * @param callback - Callback function to run when the extension disconnects
+ */
+function setupExtensionDisconnectAction(callback: (port: chrome.runtime.Port) => void) {
+  const port = chrome.runtime.connect({ name: "autofill-injected-script-port" });
+  const onDisconnectCallback = (disconnectedPort: chrome.runtime.Port) => {
+    callback(disconnectedPort);
+    port.onDisconnect.removeListener(onDisconnectCallback);
+  };
+  port.onDisconnect.addListener(onDisconnectCallback);
+}

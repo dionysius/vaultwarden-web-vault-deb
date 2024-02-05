@@ -1,6 +1,24 @@
-interface ContentMessageHandler {
-  init(): void;
-  destroy(): void;
-}
+type ContentMessageWindowData = {
+  command: string;
+  lastpass?: boolean;
+  code?: string;
+  state?: string;
+  data?: string;
+  remember?: boolean;
+};
+type ContentMessageWindowEventParams = {
+  data: ContentMessageWindowData;
+  referrer: string;
+};
 
-export { ContentMessageHandler };
+type ContentMessageWindowEventHandlers = {
+  [key: string]: ({ data, referrer }: ContentMessageWindowEventParams) => void;
+  authResult: ({ data, referrer }: ContentMessageWindowEventParams) => void;
+  webAuthnResult: ({ data, referrer }: ContentMessageWindowEventParams) => void;
+};
+
+export {
+  ContentMessageWindowData,
+  ContentMessageWindowEventParams,
+  ContentMessageWindowEventHandlers,
+};

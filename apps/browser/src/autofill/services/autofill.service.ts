@@ -105,7 +105,7 @@ export default class AutofillService implements AutofillServiceInterface {
       injectedScripts.push("autofiller.js");
     } else {
       await BrowserApi.executeScriptInTab(tab.id, {
-        file: "content/bootstrap-content-message-handler.js",
+        file: "content/content-message-handler.js",
         runAt: "document_start",
       });
     }
