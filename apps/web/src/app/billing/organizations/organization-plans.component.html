@@ -6,17 +6,12 @@
   ></i>
   <span class="tw-sr-only">{{ "loading" | i18n }}</span>
 </ng-container>
-<ng-container *ngIf="createOrganization && selfHosted">
+<ng-container *ngIf="createOrganization && false">
   <organization-self-hosting-license-uploader
     (onLicenseFileUploaded)="onLicenseFileUploaded($event)"
   />
 </ng-container>
-<form
-  [formGroup]="formGroup"
-  [bitSubmit]="submit"
-  *ngIf="!loading && !selfHosted && this.passwordManagerPlans && this.secretsManagerPlans"
-  class="tw-pt-6"
->
+<form [formGroup]="formGroup" [bitSubmit]="submit" *ngIf="!loading" class="tw-pt-6">
   <bit-section [ngClass]="{ 'tw-hidden': !createOrganization }">
     <app-org-info
       (changedBusinessOwned)="changedOwnedBusiness()"
