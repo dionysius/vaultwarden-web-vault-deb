@@ -21,9 +21,11 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { BiometricStateService } from "@bitwarden/common/platform/biometrics/biometric-state.service";
 import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/password-strength";
 import { DialogService } from "@bitwarden/components";
 
+import { ElectronCryptoService } from "../platform/services/electron-crypto.service";
 import { ElectronStateService } from "../platform/services/electron-state.service.abstraction";
 
 import { LockComponent } from "./lock.component";
@@ -78,7 +80,11 @@ describe("LockComponent", () => {
         },
         {
           provide: CryptoService,
-          useValue: mock<CryptoService>(),
+          useExisting: ElectronCryptoService,
+        },
+        {
+          provide: ElectronCryptoService,
+          useValue: mock<ElectronCryptoService>(),
         },
         {
           provide: VaultTimeoutService,
@@ -139,6 +145,10 @@ describe("LockComponent", () => {
         {
           provide: PinCryptoServiceAbstraction,
           useValue: mock<PinCryptoServiceAbstraction>(),
+        },
+        {
+          provide: BiometricStateService,
+          useValue: mock<BiometricStateService>(),
         },
       ],
       schemas: [NO_ERRORS_SCHEMA],

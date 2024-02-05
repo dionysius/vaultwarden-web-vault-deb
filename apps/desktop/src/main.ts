@@ -3,6 +3,7 @@ import * as path from "path";
 import { app } from "electron";
 
 import { AccountServiceImplementation } from "@bitwarden/common/auth/services/account.service";
+import { DefaultBiometricStateService } from "@bitwarden/common/platform/biometrics/biometric-state.service";
 import { StateFactory } from "@bitwarden/common/platform/factories/state-factory";
 import { GlobalState } from "@bitwarden/common/platform/models/domain/global-state";
 import { EnvironmentService } from "@bitwarden/common/platform/services/environment.service";
@@ -159,6 +160,8 @@ export class Main {
       this.updaterMain,
     );
 
+    const biometricStateService = new DefaultBiometricStateService(stateProvider);
+
     this.biometricsService = new BiometricsService(
       this.i18nService,
       this.windowMain,
@@ -166,6 +169,7 @@ export class Main {
       this.logService,
       this.messagingService,
       process.platform,
+      biometricStateService,
     );
 
     this.desktopCredentialStorageListener = new DesktopCredentialStorageListener(

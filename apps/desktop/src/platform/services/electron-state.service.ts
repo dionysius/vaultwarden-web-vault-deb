@@ -1,5 +1,4 @@
 import { Utils } from "@bitwarden/common/platform/misc/utils";
-import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 import { GlobalState } from "@bitwarden/common/platform/models/domain/global-state";
 import { StorageOptions } from "@bitwarden/common/platform/models/domain/storage-options";
 import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
@@ -22,49 +21,6 @@ export class ElectronStateService
     // Apply desktop overides to default account values
     account = new Account(account);
     await super.addAccount(account);
-  }
-
-  async getBiometricEncryptionClientKeyHalf(options?: StorageOptions): Promise<EncString> {
-    const account = await this.getAccount(
-      this.reconcileOptions(options, await this.defaultOnDiskOptions()),
-    );
-    const key = account?.keys?.biometricEncryptionClientKeyHalf;
-    return key == null ? null : new EncString(key);
-  }
-
-  async setBiometricEncryptionClientKeyHalf(
-    value: EncString,
-    options?: StorageOptions,
-  ): Promise<void> {
-    const account = await this.getAccount(
-      this.reconcileOptions(options, await this.defaultOnDiskOptions()),
-    );
-    account.keys.biometricEncryptionClientKeyHalf = value?.encryptedString;
-    await this.saveAccount(
-      account,
-      this.reconcileOptions(options, await this.defaultOnDiskOptions()),
-    );
-  }
-
-  async getBiometricRequirePasswordOnStart(options?: StorageOptions): Promise<boolean> {
-    const account = await this.getAccount(
-      this.reconcileOptions(options, await this.defaultOnDiskOptions()),
-    );
-    return account?.settings?.requirePasswordOnStart;
-  }
-
-  async setBiometricRequirePasswordOnStart(
-    value: boolean,
-    options?: StorageOptions,
-  ): Promise<void> {
-    const account = await this.getAccount(
-      this.reconcileOptions(options, await this.defaultOnDiskOptions()),
-    );
-    account.settings.requirePasswordOnStart = value;
-    await this.saveAccount(
-      account,
-      this.reconcileOptions(options, await this.defaultOnDiskOptions()),
-    );
   }
 
   async getDismissedBiometricRequirePasswordOnStart(options?: StorageOptions): Promise<boolean> {

@@ -1,6 +1,8 @@
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
+import { BiometricStateService } from "@bitwarden/common/platform/biometrics/biometric-state.service";
+import { UserId } from "@bitwarden/common/types/guid";
 
 import { WindowMain } from "../../../main/window.main";
 import { ElectronStateService } from "../../services/electron-state.service.abstraction";
@@ -18,6 +20,7 @@ export class BiometricsService implements BiometricsServiceAbstraction {
     private logService: LogService,
     private messagingService: MessagingService,
     private platform: NodeJS.Platform,
+    private biometricStateService: BiometricStateService,
   ) {
     this.loadPlatformSpecificService(this.platform);
   }
@@ -70,11 +73,9 @@ export class BiometricsService implements BiometricsServiceAbstraction {
   }: {
     service: string;
     key: string;
-    userId: string;
+    userId: UserId;
   }): Promise<boolean> {
-    const requireClientKeyHalf = await this.stateService.getBiometricRequirePasswordOnStart({
-      userId,
-    });
+    const requireClientKeyHalf = await this.biometricStateService.getRequirePasswordOnStart(userId);
     const clientKeyHalfB64 = this.getClientKeyHalf(service, key);
     const clientKeyHalfSatisfied = !requireClientKeyHalf || !!clientKeyHalfB64;
     return clientKeyHalfSatisfied && (await this.osSupportsBiometric());
@@ -171,7 +172,13 @@ export class BiometricsService implements BiometricsServiceAbstraction {
   }
 
   private async enforceClientKeyHalf(service: string, storageKey: string): Promise<void> {
-    const requireClientKeyHalf = await this.stateService.getBiometricRequirePasswordOnStart();
+    // The first half of the storageKey is the userId, separated by `_`
+    // We need to extract from the service because the active user isn't properly synced to the main process,
+    // So we can't use the observables on `biometricStateService`
+    const [userId] = storageKey.split("_");
+    const requireClientKeyHalf = await this.biometricStateService.getRequirePasswordOnStart(
+      userId as UserId,
+    );
     const clientKeyHalfB64 = this.getClientKeyHalf(service, storageKey);
 
     if (requireClientKeyHalf && !clientKeyHalfB64) {

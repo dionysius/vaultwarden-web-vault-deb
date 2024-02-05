@@ -95,6 +95,10 @@ import { PlatformUtilsService as PlatformUtilsServiceAbstraction } from "@bitwar
 import { StateService as StateServiceAbstraction } from "@bitwarden/common/platform/abstractions/state.service";
 import { AbstractStorageService } from "@bitwarden/common/platform/abstractions/storage.service";
 import { ValidationService as ValidationServiceAbstraction } from "@bitwarden/common/platform/abstractions/validation.service";
+import {
+  BiometricStateService,
+  DefaultBiometricStateService,
+} from "@bitwarden/common/platform/biometrics/biometric-state.service";
 import { StateFactory } from "@bitwarden/common/platform/factories/state-factory";
 import { devFlagEnabled, flagEnabled } from "@bitwarden/common/platform/misc/flags";
 import { Account } from "@bitwarden/common/platform/models/domain/account";
@@ -875,6 +879,11 @@ import { ModalService } from "./modal.service";
         I18nServiceAbstraction,
         OrganizationApiServiceAbstraction,
       ],
+    },
+    {
+      provide: BiometricStateService,
+      useClass: DefaultBiometricStateService,
+      deps: [StateProvider],
     },
   ],
 })

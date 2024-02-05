@@ -34,6 +34,7 @@ import { PlatformUtilsService as PlatformUtilsServiceAbstraction } from "@bitwar
 import { StateService as StateServiceAbstraction } from "@bitwarden/common/platform/abstractions/state.service";
 import { AbstractStorageService } from "@bitwarden/common/platform/abstractions/storage.service";
 import { SystemService as SystemServiceAbstraction } from "@bitwarden/common/platform/abstractions/system.service";
+import { BiometricStateService } from "@bitwarden/common/platform/biometrics/biometric-state.service";
 import { StateFactory } from "@bitwarden/common/platform/factories/state-factory";
 import { GlobalState } from "@bitwarden/common/platform/models/domain/global-state";
 import { MemoryStorageService } from "@bitwarden/common/platform/services/memory-storage.service";
@@ -47,7 +48,10 @@ import { DialogService } from "@bitwarden/components";
 
 import { LoginGuard } from "../../auth/guards/login.guard";
 import { Account } from "../../models/account";
-import { ElectronCryptoService } from "../../platform/services/electron-crypto.service";
+import {
+  DefaultElectronCryptoService,
+  ElectronCryptoService,
+} from "../../platform/services/electron-crypto.service";
 import { ElectronLogService } from "../../platform/services/electron-log.service";
 import { ElectronPlatformUtilsService } from "../../platform/services/electron-platform-utils.service";
 import { ElectronRendererMessagingService } from "../../platform/services/electron-renderer-messaging.service";
@@ -178,7 +182,11 @@ const RELOAD_CALLBACK = new InjectionToken<() => any>("RELOAD_CALLBACK");
     },
     {
       provide: CryptoServiceAbstraction,
-      useClass: ElectronCryptoService,
+      useExisting: ElectronCryptoService,
+    },
+    {
+      provide: ElectronCryptoService,
+      useClass: DefaultElectronCryptoService,
       deps: [
         CryptoFunctionServiceAbstraction,
         EncryptService,
@@ -187,6 +195,7 @@ const RELOAD_CALLBACK = new InjectionToken<() => any>("RELOAD_CALLBACK");
         StateServiceAbstraction,
         AccountServiceAbstraction,
         StateProvider,
+        BiometricStateService,
       ],
     },
   ],

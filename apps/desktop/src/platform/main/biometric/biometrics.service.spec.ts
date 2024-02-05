@@ -3,6 +3,8 @@ import { mock, MockProxy } from "jest-mock-extended";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
+import { BiometricStateService } from "@bitwarden/common/platform/biometrics/biometric-state.service";
+import { UserId } from "@bitwarden/common/types/guid";
 
 import { WindowMain } from "../../../main/window.main";
 import { ElectronStateService } from "../../services/electron-state.service.abstraction";
@@ -25,8 +27,10 @@ describe("biometrics tests", function () {
   const stateService = mock<ElectronStateService>();
   const logService = mock<LogService>();
   const messagingService = mock<MessagingService>();
+  const biometricStateService = mock<BiometricStateService>();
 
   it("Should call the platformspecific methods", async () => {
+    const userId = "userId-1" as UserId;
     const sut = new BiometricsService(
       i18nService,
       windowMain,
@@ -34,6 +38,7 @@ describe("biometrics tests", function () {
       logService,
       messagingService,
       process.platform,
+      biometricStateService,
     );
 
     const mockService = mock<OsBiometricService>();
@@ -46,7 +51,7 @@ describe("biometrics tests", function () {
     sut.setEncryptionKeyHalf({ service: "test", key: "test", value: "test" });
     expect(mockService.init).toBeCalled();
 
-    await sut.canAuthBiometric({ service: "test", key: "test", userId: "test" });
+    await sut.canAuthBiometric({ service: "test", key: "test", userId });
     expect(mockService.osSupportsBiometric).toBeCalled();
 
     // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
@@ -64,6 +69,7 @@ describe("biometrics tests", function () {
         logService,
         messagingService,
         "win32",
+        biometricStateService,
       );
 
       const internalService = (sut as any).platformSpecificService;
@@ -79,6 +85,7 @@ describe("biometrics tests", function () {
         logService,
         messagingService,
         "darwin",
+        biometricStateService,
       );
       const internalService = (sut as any).platformSpecificService;
       expect(internalService).not.toBeNull();
@@ -89,6 +96,7 @@ describe("biometrics tests", function () {
   describe("can auth biometric", () => {
     let sut: BiometricsService;
     let innerService: MockProxy<OsBiometricService>;
+    const userId = "userId-1" as UserId;
 
     beforeEach(() => {
       sut = new BiometricsService(
@@ -98,6 +106,7 @@ describe("biometrics tests", function () {
         logService,
         messagingService,
         process.platform,
+        biometricStateService,
       );
 
       innerService = mock();
@@ -108,9 +117,9 @@ describe("biometrics tests", function () {
     });
 
     it("should return false if client key half is required and not provided", async () => {
-      stateService.getBiometricRequirePasswordOnStart.mockResolvedValue(true);
+      biometricStateService.getRequirePasswordOnStart.mockResolvedValue(true);
 
-      const result = await sut.canAuthBiometric({ service: "test", key: "test", userId: "test" });
+      const result = await sut.canAuthBiometric({ service: "test", key: "test", userId });
 
       expect(result).toBe(false);
     });
@@ -121,18 +130,18 @@ describe("biometrics tests", function () {
       sut.setEncryptionKeyHalf({ service: "test", key: "test", value: "test" });
       expect(innerService.init).toBeCalled();
 
-      await sut.canAuthBiometric({ service: "test", key: "test", userId: "test" });
+      await sut.canAuthBiometric({ service: "test", key: "test", userId });
       expect(innerService.osSupportsBiometric).toBeCalled();
     });
 
     it("should call osSupportBiometric if client key half is not required", async () => {
-      stateService.getBiometricRequirePasswordOnStart.mockResolvedValue(false);
+      biometricStateService.getRequirePasswordOnStart.mockResolvedValue(false);
       innerService.osSupportsBiometric.mockResolvedValue(true);
 
-      const result = await sut.canAuthBiometric({ service: "test", key: "test", userId: "test" });
+      const result = await sut.canAuthBiometric({ service: "test", key: "test", userId });
 
       expect(result).toBe(true);
-      expect(innerService.osSupportsBiometric).toBeCalled();
+      expect(innerService.osSupportsBiometric).toHaveBeenCalled();
     });
   });
 });

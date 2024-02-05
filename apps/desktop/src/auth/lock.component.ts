@@ -13,7 +13,6 @@ import { DeviceTrustCryptoServiceAbstraction } from "@bitwarden/common/auth/abst
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { DeviceType } from "@bitwarden/common/enums";
 import { BroadcasterService } from "@bitwarden/common/platform/abstractions/broadcaster.service";
-import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
@@ -22,6 +21,7 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
 import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/password-strength";
 import { DialogService } from "@bitwarden/components";
 
+import { ElectronCryptoService } from "../platform/services/electron-crypto.service";
 import { ElectronStateService } from "../platform/services/electron-state.service.abstraction";
 
 const BroadcasterSubscriptionId = "LockComponent";
@@ -41,7 +41,7 @@ export class LockComponent extends BaseLockComponent {
     i18nService: I18nService,
     platformUtilsService: PlatformUtilsService,
     messagingService: MessagingService,
-    cryptoService: CryptoService,
+    protected override cryptoService: ElectronCryptoService,
     vaultTimeoutService: VaultTimeoutService,
     vaultTimeoutSettingsService: VaultTimeoutSettingsService,
     environmentService: EnvironmentService,
@@ -175,8 +175,8 @@ export class LockComponent extends BaseLockComponent {
         type: "warning",
       });
 
-      await this.stateService.setBiometricRequirePasswordOnStart(response);
       if (response) {
+        await this.cryptoService.setBiometricClientKeyHalf();
         await this.stateService.setDisableAutoBiometricsPrompt(true);
       }
       this.supportsBiometric = await this.canUseBiometric();

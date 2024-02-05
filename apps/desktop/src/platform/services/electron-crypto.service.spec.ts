@@ -5,7 +5,10 @@ import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/c
 import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { BiometricStateService } from "@bitwarden/common/platform/biometrics/biometric-state.service";
+import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
+import { makeEncString, makeStaticByteArray } from "@bitwarden/common/spec";
 import { CsprngArray } from "@bitwarden/common/types/csprng";
 import { UserId } from "@bitwarden/common/types/guid";
 import { UserKey } from "@bitwarden/common/types/key";
@@ -15,11 +18,11 @@ import {
   mockAccountServiceWith,
 } from "../../../../../libs/common/spec/fake-account-service";
 
-import { ElectronCryptoService } from "./electron-crypto.service";
+import { DefaultElectronCryptoService } from "./electron-crypto.service";
 import { ElectronStateService } from "./electron-state.service.abstraction";
 
 describe("electronCryptoService", () => {
-  let electronCryptoService: ElectronCryptoService;
+  let sut: DefaultElectronCryptoService;
 
   const cryptoFunctionService = mock<CryptoFunctionService>();
   const encryptService = mock<EncryptService>();
@@ -28,6 +31,7 @@ describe("electronCryptoService", () => {
   const stateService = mock<ElectronStateService>();
   let accountService: FakeAccountService;
   let stateProvider: FakeStateProvider;
+  const biometricStateService = mock<BiometricStateService>();
 
   const mockUserId = "mock user id" as UserId;
 
@@ -35,7 +39,7 @@ describe("electronCryptoService", () => {
     accountService = mockAccountServiceWith("userId" as UserId);
     stateProvider = new FakeStateProvider(accountService);
 
-    electronCryptoService = new ElectronCryptoService(
+    sut = new DefaultElectronCryptoService(
       cryptoFunctionService,
       encryptService,
       platformUtilService,
@@ -43,6 +47,7 @@ describe("electronCryptoService", () => {
       stateService,
       accountService,
       stateProvider,
+      biometricStateService,
     );
   });
 
@@ -50,8 +55,42 @@ describe("electronCryptoService", () => {
     jest.resetAllMocks();
   });
 
-  it("instantiates", () => {
-    expect(electronCryptoService).not.toBeFalsy();
+  describe("setBiometricClientKeyHalf", () => {
+    const userKey = new SymmetricCryptoKey(makeStaticByteArray(64, 1)) as UserKey;
+    const keyBytes = makeStaticByteArray(32, 2) as CsprngArray;
+    const encKeyHalf = makeEncString(Utils.fromBufferToUtf8(keyBytes));
+
+    beforeEach(() => {
+      sut.getUserKey = jest.fn().mockResolvedValue(userKey);
+      cryptoFunctionService.randomBytes.mockResolvedValue(keyBytes);
+      encryptService.encrypt.mockResolvedValue(encKeyHalf);
+    });
+
+    it("sets a biometric client key half for the currently active user", async () => {
+      await sut.setBiometricClientKeyHalf();
+
+      expect(biometricStateService.setEncryptedClientKeyHalf).toHaveBeenCalledWith(encKeyHalf);
+    });
+
+    it("should create the key from csprng bytes", async () => {
+      await sut.setBiometricClientKeyHalf();
+
+      expect(cryptoFunctionService.randomBytes).toHaveBeenCalledWith(32);
+    });
+
+    it("should encrypt the key half with the user key", async () => {
+      await sut.setBiometricClientKeyHalf();
+
+      expect(encryptService.encrypt).toHaveBeenCalledWith(expect.any(String), userKey);
+    });
+  });
+
+  describe("removeBiometricClientKeyHalf", () => {
+    it("removes the biometric client key half for the currently active user", async () => {
+      await sut.removeBiometricClientKeyHalf();
+
+      expect(biometricStateService.setEncryptedClientKeyHalf).toHaveBeenCalledWith(null);
+    });
   });
 
   describe("setUserKey", () => {
@@ -66,9 +105,9 @@ describe("electronCryptoService", () => {
       it("sets an Biometric key if getBiometricUnlock is true and the platform supports secure storage", async () => {
         stateService.getBiometricUnlock.mockResolvedValue(true);
         platformUtilService.supportsSecureStorage.mockReturnValue(true);
-        stateService.getBiometricRequirePasswordOnStart.mockResolvedValue(false);
+        biometricStateService.getRequirePasswordOnStart.mockResolvedValue(true);
 
-        await electronCryptoService.setUserKey(mockUserKey, mockUserId);
+        await sut.setUserKey(mockUserKey, mockUserId);
 
         expect(stateService.setUserKeyBiometric).toHaveBeenCalledWith(
           expect.objectContaining({ key: expect.any(String), clientEncKeyHalf: null }),
@@ -82,7 +121,7 @@ describe("electronCryptoService", () => {
         stateService.getBiometricUnlock.mockResolvedValue(true);
         platformUtilService.supportsSecureStorage.mockReturnValue(false);
 
-        await electronCryptoService.setUserKey(mockUserKey, mockUserId);
+        await sut.setUserKey(mockUserKey, mockUserId);
 
         expect(stateService.setUserKeyBiometric).toHaveBeenCalledWith(null, {
           userId: mockUserId,
@@ -90,7 +129,7 @@ describe("electronCryptoService", () => {
       });
 
       it("clears the old deprecated Biometric key whenever a User Key is set", async () => {
-        await electronCryptoService.setUserKey(mockUserKey, mockUserId);
+        await sut.setUserKey(mockUserKey, mockUserId);
 
         expect(stateService.setCryptoMasterKeyBiometric).toHaveBeenCalledWith(null, {
           userId: mockUserId,

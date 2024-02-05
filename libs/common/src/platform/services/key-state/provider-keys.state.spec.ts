@@ -1,21 +1,14 @@
 import { mock } from "jest-mock-extended";
 
-import { makeStaticByteArray } from "../../../../spec";
+import { makeEncString, makeStaticByteArray } from "../../../../spec";
 import { ProviderId } from "../../../types/guid";
 import { ProviderKey, UserPrivateKey } from "../../../types/key";
 import { EncryptService } from "../../abstractions/encrypt.service";
-import { EncryptionType } from "../../enums";
-import { Utils } from "../../misc/utils";
-import { EncString, EncryptedString } from "../../models/domain/enc-string";
+import { EncryptedString } from "../../models/domain/enc-string";
 import { SymmetricCryptoKey } from "../../models/domain/symmetric-crypto-key";
 import { CryptoService } from "../crypto.service";
 
 import { USER_ENCRYPTED_PROVIDER_KEYS, USER_PROVIDER_KEYS } from "./provider-keys.state";
-
-function makeEncString(data?: string) {
-  data ??= Utils.newGuid();
-  return new EncString(EncryptionType.AesCbc256_HmacSha256_B64, data, "test", "test");
-}
 
 describe("encrypted provider keys", () => {
   const sut = USER_ENCRYPTED_PROVIDER_KEYS;

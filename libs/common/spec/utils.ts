@@ -3,6 +3,9 @@ import { Observable } from "rxjs";
 
 import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 
+import { EncryptionType } from "../src/platform/enums";
+import { Utils } from "../src/platform/misc/utils";
+
 function newGuid() {
   return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
     const r = (Math.random() * 16) | 0;
@@ -27,6 +30,11 @@ export function mockEnc(s: string): MockProxy<EncString> {
   mocked.decrypt.mockResolvedValue(s);
 
   return mocked;
+}
+
+export function makeEncString(data?: string) {
+  data ??= Utils.newGuid();
+  return new EncString(EncryptionType.AesCbc256_HmacSha256_B64, data, "test", "test");
 }
 
 export function makeStaticByteArray(length: number, start = 0) {

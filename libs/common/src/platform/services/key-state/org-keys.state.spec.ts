@@ -1,21 +1,11 @@
 import { mock } from "jest-mock-extended";
 
-import { makeStaticByteArray } from "../../../../spec";
-import { ProviderEncryptedOrganizationKey } from "../../../admin-console/models/domain/encrypted-organization-key";
+import { makeEncString, makeStaticByteArray } from "../../../../spec";
 import { OrgKey } from "../../../types/key";
 import { CryptoService } from "../../abstractions/crypto.service";
-import { EncryptionType } from "../../enums";
-import { Utils } from "../../misc/utils";
-import { EncString } from "../../models/domain/enc-string";
 import { SymmetricCryptoKey } from "../../models/domain/symmetric-crypto-key";
 
 import { USER_ENCRYPTED_ORGANIZATION_KEYS, USER_ORGANIZATION_KEYS } from "./org-keys.state";
-
-function makeEncString(data?: string) {
-  data ??= Utils.newGuid();
-  return new EncString(EncryptionType.AesCbc256_HmacSha256_B64, data, "test", "test");
-}
-ProviderEncryptedOrganizationKey;
 
 describe("encrypted org keys", () => {
   const sut = USER_ENCRYPTED_ORGANIZATION_KEYS;
