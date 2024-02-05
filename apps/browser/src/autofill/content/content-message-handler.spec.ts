@@ -60,6 +60,19 @@ describe("ContentMessageHandler", () => {
         referrer: "localhost",
       });
     });
+
+    it("sends a duoResult message", () => {
+      const mockCode = "mockCode";
+      const command = "duoResult";
+
+      postWindowMessage({ command: command, code: mockCode });
+
+      expect(sendMessageSpy).toHaveBeenCalledWith({
+        command: command,
+        code: mockCode,
+        referrer: "localhost",
+      });
+    });
   });
 
   describe("handled extension messages", () => {

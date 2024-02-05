@@ -44,6 +44,11 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
   formPromise: Promise<any>;
   emailPromise: Promise<any>;
   orgIdentifier: string = null;
+
+  duoFrameless = false;
+  duoFramelessUrl: string = null;
+  duoResultListenerInitialized = false;
+
   onSuccessfulLogin: () => Promise<void>;
   onSuccessfulLoginNavigate: () => Promise<void>;
 
@@ -56,6 +61,13 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
   protected changePasswordRoute = "set-password";
   protected forcePasswordResetRoute = "update-temp-password";
   protected successRoute = "vault";
+
+  get isDuoProvider(): boolean {
+    return (
+      this.selectedProviderType === TwoFactorProviderType.Duo ||
+      this.selectedProviderType === TwoFactorProviderType.OrganizationDuo
+    );
+  }
 
   constructor(
     protected authService: AuthService,
@@ -148,20 +160,42 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
         break;
       case TwoFactorProviderType.Duo:
       case TwoFactorProviderType.OrganizationDuo:
-        setTimeout(() => {
-          DuoWebSDK.init({
-            iframe: undefined,
-            host: providerData.Host,
-            sig_request: providerData.Signature,
-            submit_callback: async (f: HTMLFormElement) => {
-              const sig = f.querySelector('input[name="sig_response"]') as HTMLInputElement;
-              if (sig != null) {
-                this.token = sig.value;
-                await this.submit();
-              }
-            },
-          });
-        }, 0);
+        // 2 Duo 2FA flows available
+        // 1. Duo Web SDK (iframe) - existing, to be deprecated
+        // 2. Duo Frameless (new tab) - new
+
+        // AuthUrl only exists for new Duo Frameless flow
+        if (providerData.AuthUrl) {
+          this.duoFrameless = true;
+          // Setup listener for duo-redirect.ts connector to send back the code
+
+          if (!this.duoResultListenerInitialized) {
+            // setup client specific duo result listener
+            this.setupDuoResultListener();
+            this.duoResultListenerInitialized = true;
+          }
+
+          // flow must be launched by user so they can choose to remember the device or not.
+          this.duoFramelessUrl = providerData.AuthUrl;
+        } else {
+          // Duo Web SDK (iframe) flow
+          // TODO: remove when we remove the "duo-redirect" feature flag
+          setTimeout(() => {
+            DuoWebSDK.init({
+              iframe: undefined,
+              host: providerData.Host,
+              sig_request: providerData.Signature,
+              submit_callback: async (f: HTMLFormElement) => {
+                const sig = f.querySelector('input[name="sig_response"]') as HTMLInputElement;
+                if (sig != null) {
+                  this.token = sig.value;
+                  await this.submit();
+                }
+              },
+            });
+          }, 0);
+        }
+
         break;
       case TwoFactorProviderType.Email:
         this.twoFactorEmail = providerData.Email;
@@ -230,6 +264,9 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
     );
     return true;
   }
+
+  // Each client will have own implementation
+  protected setupDuoResultListener(): void {}
 
   private async handleLoginResponse(authResult: AuthResult) {
     if (this.handleCaptchaRequired(authResult)) {
@@ -448,5 +485,10 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
 
   get needsLock(): boolean {
     return this.authService.authingWithSso() || this.authService.authingWithUserApiKey();
+  }
+
+  launchDuoFrameless() {
+    // Launch Duo Frameless flow in new tab
+    this.platformUtilsService.launchUri(this.duoFramelessUrl);
   }
 }

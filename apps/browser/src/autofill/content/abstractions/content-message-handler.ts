@@ -15,6 +15,7 @@ type ContentMessageWindowEventHandlers = {
   [key: string]: ({ data, referrer }: ContentMessageWindowEventParams) => void;
   authResult: ({ data, referrer }: ContentMessageWindowEventParams) => void;
   webAuthnResult: ({ data, referrer }: ContentMessageWindowEventParams) => void;
+  duoResult: ({ data, referrer }: ContentMessageWindowEventParams) => void;
 };
 
 export {

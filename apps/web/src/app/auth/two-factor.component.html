@@ -10,9 +10,7 @@
     <div
       class="col-5"
       [ngClass]="{
-        'col-9':
-          selectedProviderType === providerType.Duo ||
-          selectedProviderType === providerType.OrganizationDuo
+        'col-9': !duoFrameless && isDuoProvider
       }"
     >
       <p class="lead text-center mb-4">{{ title }}</p>
@@ -83,18 +81,23 @@
               <iframe id="webauthn_iframe" sandbox="allow-scripts allow-same-origin"></iframe>
             </div>
           </ng-container>
-          <ng-container
-            *ngIf="
-              selectedProviderType === providerType.Duo ||
-              selectedProviderType === providerType.OrganizationDuo
-            "
-          >
-            <div id="duo-frame" class="mb-3">
-              <iframe
-                id="duo_iframe"
-                sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox"
-              ></iframe>
-            </div>
+          <!-- Duo -->
+          <ng-container *ngIf="isDuoProvider">
+            <ng-container *ngIf="duoFrameless">
+              <p *ngIf="selectedProviderType === providerType.OrganizationDuo" class="tw-mb-0">
+                {{ "duoRequiredByOrgForAccount" | i18n }}
+              </p>
+              <p>{{ "launchDuoAndFollowStepsToFinishLoggingIn" | i18n }}</p>
+            </ng-container>
+
+            <ng-container *ngIf="!duoFrameless">
+              <div id="duo-frame" class="mb-3">
+                <iframe
+                  id="duo_iframe"
+                  sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+                ></iframe>
+              </div>
+            </ng-container>
           </ng-container>
           <i
             class="bwi bwi-spinner text-muted bwi-spin pull-right"
@@ -124,15 +127,15 @@
               sandbox="allow-scripts allow-same-origin"
             ></iframe>
           </div>
-          <div class="d-flex mb-3">
+          <!-- Buttons -->
+          <div class="tw-flex tw-flex-col tw-mb-3">
             <button
               type="submit"
               class="btn btn-primary btn-block btn-submit"
               [disabled]="form.loading"
               *ngIf="
                 selectedProviderType != null &&
-                selectedProviderType !== providerType.Duo &&
-                selectedProviderType !== providerType.OrganizationDuo &&
+                !isDuoProvider &&
                 selectedProviderType !== providerType.WebAuthn
               "
             >
@@ -145,7 +148,16 @@
                 aria-hidden="true"
               ></i>
             </button>
-            <a routerLink="/login" class="btn btn-outline-secondary btn-block ml-2 mt-0">
+            <button
+              (click)="launchDuoFrameless()"
+              type="button"
+              class="btn btn-primary btn-block"
+              [disabled]="form.loading"
+              *ngIf="duoFrameless && isDuoProvider"
+            >
+              <span> {{ "launchDuo" | i18n }} </span>
+            </button>
+            <a routerLink="/login" class="btn btn-outline-secondary btn-block">
               {{ "cancel" | i18n }}
             </a>
           </div>

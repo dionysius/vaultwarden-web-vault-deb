@@ -24,6 +24,8 @@ const windowMessageHandlers: ContentMessageWindowEventHandlers = {
     handleAuthResultMessage(data, referrer),
   webAuthnResult: ({ data, referrer }: { data: any; referrer: string }) =>
     handleWebAuthnResultMessage(data, referrer),
+  duoResult: ({ data, referrer }: { data: any; referrer: string }) =>
+    handleDuoResultMessage(data, referrer),
 };
 
 /**
@@ -35,6 +37,17 @@ const windowMessageHandlers: ContentMessageWindowEventHandlers = {
 async function handleAuthResultMessage(data: ContentMessageWindowData, referrer: string) {
   const { command, lastpass, code, state } = data;
   await chrome.runtime.sendMessage({ command, code, state, lastpass, referrer });
+}
+
+/**
+ * Handles the Duo 2FA result message from the window.
+ *
+ * @param data - Data from the window message
+ * @param referrer - The referrer of the window
+ */
+async function handleDuoResultMessage(data: ContentMessageWindowData, referrer: string) {
+  const { command, code } = data;
+  await chrome.runtime.sendMessage({ command, code: code, referrer });
 }
 
 /**
