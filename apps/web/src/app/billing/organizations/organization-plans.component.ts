@@ -196,13 +196,12 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
           .organizations$(userId)
           .pipe(getOrganizationById(this.organizationId)),
       );
-      this.billing = await this.organizationApiService.getBilling(this.organizationId);
-      this.sub = await this.organizationApiService.getSubscription(this.organizationId);
-      this.taxInformation = await this.organizationApiService.getTaxInfo(this.organizationId);
-    } else if (!this.selfHosted) {
-      this.taxInformation = await this.apiService.getTaxInfo();
+      this.billing = null; // no billing in Vaultwarden
+      this.sub = null; // no subscriptions in Vaultwarden;
+      this.taxInformation = null; // no taxes in Vaultwarden;
     }
 
+    /* no need to ask /api/plans because Vaultwarden only supports the free plan
     if (!this.selfHosted) {
       const plans = await this.apiService.getPlans();
       this.passwordManagerPlans = plans.data.filter((plan) => !!plan.PasswordManager);
@@ -238,6 +237,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
       this.plan = providerDefaultPlan.type;
       this.productTier = providerDefaultPlan.productTier;
     }
+    end of asking /api/plans in Vaultwarden */
 
     if (!this.createOrganization) {
       this.upgradeFlowPrefillForm();
@@ -300,6 +300,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
   }
 
   get upgradeRequiresPaymentMethod() {
+    return false; // Vaultwarden is always free
     return (
       this.organization?.productTierType === ProductTierType.Free &&
       !this.showFree &&
@@ -335,6 +336,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
   }
 
   get selectableProducts() {
+    return null; // there are no products to select in Vaultwarden
     if (this.acceptingSponsorship) {
       const familyPlan = this.passwordManagerPlans.find(
         (plan) => plan.type === PlanType.FamiliesAnnually,
@@ -366,6 +368,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
   }
 
   get selectablePlans() {
+    return null; // no plans to select in Vaultwarden
     const selectedProductTierType = this.formGroup.controls.productTier.value;
     const result =
       this.passwordManagerPlans?.filter(
@@ -496,6 +499,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
   }
 
   get planOffersSecretsManager() {
+    return false; // no support for secrets manager in Vaultwarden
     return this.selectedSecretsManagerPlan != null;
   }
 
@@ -504,6 +508,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
   }
 
   changedProduct() {
+    return; // no choice of products in Vaultwarden
     const selectedPlan = this.selectablePlans[0];
 
     this.setPlanType(selectedPlan.type);
@@ -632,9 +637,8 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
         const collectionCt = collection.encryptedString;
         const orgKeys = await this.keyService.makeKeyPair(orgKey[1]);
 
-        orgId = this.selfHosted
-          ? await this.createSelfHosted(key, collectionCt, orgKeys)
-          : await this.createCloudHosted(key, collectionCt, orgKeys, orgKey[1]);
+        // always use createCloudHosted() to disable license file upload
+        orgId = await this.createCloudHosted(key, collectionCt, orgKeys, orgKey[1]);
 
         this.toastService.showToast({
           variant: "success",
@@ -778,7 +782,9 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
     request.billingEmail = this.formGroup.controls.billingEmail.value;
     request.initiationPath = "New organization creation in-product";
     request.keys = new OrganizationKeysRequest(orgKeys[0], orgKeys[1].encryptedString);
+    request.planType = PlanType.Free; // always select the free plan in Vaultwarden
 
+    /* there is no plan to select in Vaultwarden
     if (this.selectedPlan.type === PlanType.Free) {
       request.planType = PlanType.Free;
     } else {
@@ -803,6 +809,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
 
     // Secrets Manager
     this.buildSecretsManagerRequest(request);
+    end plan selection and no support for secret manager in Vaultwarden */
 
     if (this.hasProvider) {
       const providerRequest = new ProviderOrganizationCreateRequest(
@@ -864,6 +871,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
   private buildSecretsManagerRequest(
     request: OrganizationCreateRequest | OrganizationUpgradeRequest,
   ): void {
+    return; // Vaultwarden does not support SecretsManager
     const formValues = this.secretsManagerForm.value;
 
     request.useSecretsManager = this.planOffersSecretsManager && formValues.enabled;
@@ -882,6 +890,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
   }
 
   private upgradeFlowPrefillForm() {
+    return; // Vaultwarden only supports free plan
     if (this.acceptingSponsorship) {
       this.formGroup.controls.productTier.setValue(ProductTierType.Families);
       this.changedProduct();
