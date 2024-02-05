@@ -150,7 +150,7 @@ export class DeviceTrustCryptoService implements DeviceTrustCryptoServiceAbstrac
     trustRequest.currentDevice = currentDeviceUpdateRequest;
     trustRequest.otherDevices = [];
 
-    await this.devicesApiService.updateTrust(trustRequest);
+    await this.devicesApiService.updateTrust(trustRequest, deviceIdentifier);
   }
 
   async getDeviceKey(): Promise<DeviceKey> {

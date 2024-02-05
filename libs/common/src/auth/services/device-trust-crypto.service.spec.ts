@@ -502,7 +502,7 @@ describe("deviceTrustCryptoService", () => {
 
         await deviceTrustCryptoService.rotateDevicesTrust(fakeNewUserKey, "");
 
-        expect(devicesApiService.updateTrust).not.toBeCalled();
+        expect(devicesApiService.updateTrust).not.toHaveBeenCalled();
       });
 
       describe("is on a trusted device", () => {
@@ -579,7 +579,7 @@ describe("deviceTrustCryptoService", () => {
 
           await deviceTrustCryptoService.rotateDevicesTrust(fakeNewUserKey, "my_password_hash");
 
-          expect(devicesApiService.updateTrust).toBeCalledWith(
+          expect(devicesApiService.updateTrust).toHaveBeenCalledWith(
             matches((updateTrustModel: UpdateDevicesTrustRequest) => {
               return (
                 updateTrustModel.currentDevice.encryptedPublicKey ===
@@ -587,6 +587,7 @@ describe("deviceTrustCryptoService", () => {
                 updateTrustModel.currentDevice.encryptedUserKey === "4.ZW5jcnlwdGVkdXNlcg=="
               );
             }),
+            expect.stringMatching("test_device_identifier"),
           );
         });
       });

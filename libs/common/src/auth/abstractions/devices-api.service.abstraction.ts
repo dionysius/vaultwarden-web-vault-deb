@@ -18,7 +18,10 @@ export abstract class DevicesApiServiceAbstraction {
     deviceKeyEncryptedDevicePrivateKey: string,
   ) => Promise<DeviceResponse>;
 
-  updateTrust: (updateDevicesTrustRequestModel: UpdateDevicesTrustRequest) => Promise<void>;
+  updateTrust: (
+    updateDevicesTrustRequestModel: UpdateDevicesTrustRequest,
+    deviceIdentifier: string,
+  ) => Promise<void>;
 
   getDeviceKeys: (
     deviceIdentifier: string,
