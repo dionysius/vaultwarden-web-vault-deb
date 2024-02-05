@@ -181,7 +181,7 @@
       ],
       "description": "Component library owned dependencies",
       "commitMessagePrefix": "[deps] Platform (CL):",
-      "reviewers": ["team:team-platform-dev"]
+      "reviewers": ["team:team-component-library"]
     },
     {
       "matchPackageNames": [
