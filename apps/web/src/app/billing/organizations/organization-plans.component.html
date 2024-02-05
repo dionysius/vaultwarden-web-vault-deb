@@ -14,14 +14,14 @@
     <span class="tw-sr-only">{{ "loading" | i18n }}</span>
   </ng-container>
 }
-@if (createOrganization() && selfHosted) {
+@if (false) {
   <ng-container>
     <organization-self-hosting-license-uploader
       (onLicenseFileUploaded)="onLicenseFileUploaded($event)"
     />
   </ng-container>
 }
-@if (!isLoading && !selfHosted && passwordManagerPlans && secretsManagerPlans) {
+@if (!isLoading) {
   <form [formGroup]="formGroup" [bitSubmit]="submit" class="tw-pt-6">
     <bit-section [ngClass]="{ 'tw-hidden': !createOrganization() }">
       <app-org-info
