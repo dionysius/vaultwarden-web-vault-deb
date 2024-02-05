@@ -168,6 +168,7 @@ export class OrganizationLayoutComponent implements OnInit {
   }
 
   canShowBillingTab(organization: Organization): boolean {
+    return false; // disable billing tab in Vaultwarden
     return canAccessBillingTab(organization);
   }
 

@@ -38,7 +38,7 @@ export function canAccessReportingTab(org: Organization): boolean {
 }
 
 export function canAccessBillingTab(org: Organization): boolean {
-  return org.isOwner;
+  return false;
 }
 
 /**
