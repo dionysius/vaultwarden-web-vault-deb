@@ -83,7 +83,7 @@ export class DevicesApiServiceImplementation implements DevicesApiServiceAbstrac
       false,
       null,
       (headers) => {
-        headers.set("X-Device-Identifier", deviceIdentifier);
+        headers.set("Device-Identifier", deviceIdentifier);
       },
     );
   }
