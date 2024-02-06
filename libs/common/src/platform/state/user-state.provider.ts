@@ -1,3 +1,5 @@
+import { Observable } from "rxjs";
+
 import { UserId } from "../../types/guid";
 
 import { KeyDefinition } from "./key-definition";
@@ -18,6 +20,10 @@ export abstract class SingleUserStateProvider {
  * to the currently active user
  */
 export abstract class ActiveUserStateProvider {
+  /**
+   * Convenience re-emission of active user ID from {@link AccountService.activeAccount$}
+   */
+  activeUserId$: Observable<UserId | undefined>;
   /**
    * Gets a {@link ActiveUserState} scoped to the given {@link KeyDefinition}, but updates when active user changes such
    * that the emitted values always represents the state for the currently active user.

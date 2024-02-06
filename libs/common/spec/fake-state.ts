@@ -182,13 +182,13 @@ export class FakeActiveUserState<T> implements ActiveUserState<T> {
     }
     const newState = configureState(current, combinedDependencies);
     this.stateSubject.next([this.userId, newState]);
-    this.nextMock(this.userId, newState);
+    this.nextMock([this.userId, newState]);
     return newState;
   }
 
   updateMock = this.update as jest.MockedFunction<typeof this.update>;
 
-  nextMock = jest.fn<void, [UserId, T]>();
+  nextMock = jest.fn<void, [[UserId, T]]>();
 
   private _keyDefinition: KeyDefinition<T> | null = null;
   get keyDefinition() {

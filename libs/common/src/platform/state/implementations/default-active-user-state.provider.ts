@@ -1,4 +1,7 @@
+import { Observable, map } from "rxjs";
+
 import { AccountService } from "../../../auth/abstractions/account.service";
+import { UserId } from "../../../types/guid";
 import {
   AbstractMemoryStorageService,
   AbstractStorageService,
@@ -14,11 +17,15 @@ import { DefaultActiveUserState } from "./default-active-user-state";
 export class DefaultActiveUserStateProvider implements ActiveUserStateProvider {
   private cache: Record<string, ActiveUserState<unknown>> = {};
 
+  activeUserId$: Observable<UserId | undefined>;
+
   constructor(
     protected readonly accountService: AccountService,
     protected readonly memoryStorage: AbstractMemoryStorageService & ObservableStorageService,
     protected readonly diskStorage: AbstractStorageService & ObservableStorageService,
-  ) {}
+  ) {
+    this.activeUserId$ = this.accountService.activeAccount$.pipe(map((account) => account?.id));
+  }
 
   get<T>(keyDefinition: KeyDefinition<T>): ActiveUserState<T> {
     const cacheKey = this.buildCacheKey(keyDefinition);

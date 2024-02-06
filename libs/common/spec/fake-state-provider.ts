@@ -1,5 +1,5 @@
 import { mock } from "jest-mock-extended";
-import { Observable } from "rxjs";
+import { Observable, map } from "rxjs";
 
 import {
   GlobalState,
@@ -99,11 +99,14 @@ export class FakeSingleUserStateProvider implements SingleUserStateProvider {
 }
 
 export class FakeActiveUserStateProvider implements ActiveUserStateProvider {
+  activeUserId$: Observable<UserId>;
   establishedMocks: Map<string, FakeActiveUserState<unknown>> = new Map();
 
   states: Map<string, FakeActiveUserState<unknown>> = new Map();
 
-  constructor(public accountService: FakeAccountService) {}
+  constructor(public accountService: FakeAccountService) {
+    this.activeUserId$ = accountService.activeAccountSubject.asObservable().pipe(map((a) => a.id));
+  }
 
   get<T>(keyDefinition: KeyDefinition<T>): ActiveUserState<T> {
     let result = this.states.get(keyDefinition.fullName);
@@ -137,6 +140,21 @@ export class FakeActiveUserStateProvider implements ActiveUserStateProvider {
 }
 
 export class FakeStateProvider implements StateProvider {
+  getUserState$<T>(keyDefinition: KeyDefinition<T>, userId?: UserId): Observable<T> {
+    if (userId) {
+      return this.getUser<T>(userId, keyDefinition).state$;
+    }
+    return this.getActive<T>(keyDefinition).state$;
+  }
+
+  async setUserState<T>(keyDefinition: KeyDefinition<T>, value: T, userId?: UserId): Promise<void> {
+    if (userId) {
+      await this.getUser(userId, keyDefinition).update(() => value);
+    } else {
+      await this.getActive(keyDefinition).update(() => value);
+    }
+  }
+
   getActive<T>(keyDefinition: KeyDefinition<T>): ActiveUserState<T> {
     return this.activeUser.get(keyDefinition);
   }
@@ -163,6 +181,7 @@ export class FakeStateProvider implements StateProvider {
   singleUser: FakeSingleUserStateProvider = new FakeSingleUserStateProvider();
   activeUser: FakeActiveUserStateProvider = new FakeActiveUserStateProvider(this.accountService);
   derived: FakeDerivedStateProvider = new FakeDerivedStateProvider();
+  activeUserId$: Observable<UserId> = this.activeUser.activeUserId$;
 }
 
 export class FakeDerivedStateProvider implements DerivedStateProvider {
