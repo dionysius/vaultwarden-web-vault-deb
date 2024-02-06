@@ -20,7 +20,6 @@ import { UserKey, MasterKey, DeviceKey } from "../../types/key";
 import { UriMatchType } from "../../vault/enums";
 import { CipherData } from "../../vault/models/data/cipher.data";
 import { CollectionData } from "../../vault/models/data/collection.data";
-import { FolderData } from "../../vault/models/data/folder.data";
 import { LocalData } from "../../vault/models/data/local.data";
 import { CipherView } from "../../vault/models/view/cipher.view";
 import { CollectionView } from "../../vault/models/view/collection.view";
@@ -331,17 +330,6 @@ export abstract class StateService<T extends Account = Account> {
   getEncryptedCollections: (options?: StorageOptions) => Promise<{ [id: string]: CollectionData }>;
   setEncryptedCollections: (
     value: { [id: string]: CollectionData },
-    options?: StorageOptions,
-  ) => Promise<void>;
-  /**
-   * @deprecated Do not call this directly, use FolderService
-   */
-  getEncryptedFolders: (options?: StorageOptions) => Promise<{ [id: string]: FolderData }>;
-  /**
-   * @deprecated Do not call this directly, use FolderService
-   */
-  setEncryptedFolders: (
-    value: { [id: string]: FolderData },
     options?: StorageOptions,
   ) => Promise<void>;
   getEncryptedPasswordGenerationHistory: (

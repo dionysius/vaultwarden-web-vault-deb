@@ -27,7 +27,6 @@ import { UserKey, MasterKey, DeviceKey } from "../../types/key";
 import { UriMatchType } from "../../vault/enums";
 import { CipherData } from "../../vault/models/data/cipher.data";
 import { CollectionData } from "../../vault/models/data/collection.data";
-import { FolderData } from "../../vault/models/data/folder.data";
 import { LocalData } from "../../vault/models/data/local.data";
 import { CipherView } from "../../vault/models/view/cipher.view";
 import { CollectionView } from "../../vault/models/view/collection.view";
@@ -1798,27 +1797,6 @@ export class StateService<
     await this.saveAccount(
       account,
       this.reconcileOptions(options, await this.defaultOnDiskOptions()),
-    );
-  }
-
-  @withPrototypeForObjectValues(FolderData)
-  async getEncryptedFolders(options?: StorageOptions): Promise<{ [id: string]: FolderData }> {
-    return (
-      await this.getAccount(this.reconcileOptions(options, await this.defaultOnDiskMemoryOptions()))
-    )?.data?.folders?.encrypted;
-  }
-
-  async setEncryptedFolders(
-    value: { [id: string]: FolderData },
-    options?: StorageOptions,
-  ): Promise<void> {
-    const account = await this.getAccount(
-      this.reconcileOptions(options, await this.defaultOnDiskMemoryOptions()),
-    );
-    account.data.folders.encrypted = value;
-    await this.saveAccount(
-      account,
-      this.reconcileOptions(options, await this.defaultOnDiskMemoryOptions()),
     );
   }
 
