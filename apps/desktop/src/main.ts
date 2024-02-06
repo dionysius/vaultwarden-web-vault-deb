@@ -16,7 +16,8 @@ import { DefaultGlobalStateProvider } from "@bitwarden/common/platform/state/imp
 import { DefaultSingleUserStateProvider } from "@bitwarden/common/platform/state/implementations/default-single-user-state.provider";
 import { DefaultStateProvider } from "@bitwarden/common/platform/state/implementations/default-state.provider";
 import { MemoryStorageService as MemoryStorageServiceForStateProviders } from "@bitwarden/common/platform/state/storage/memory-storage.service";
-/*/ eslint-enable import/no-restricted-paths */
+/* eslint-enable import/no-restricted-paths */
+import { migrate } from "@bitwarden/common/state-migrations";
 
 import { MenuMain } from "./main/menu/menu.main";
 import { MessagingMain } from "./main/messaging.main";
@@ -191,8 +192,10 @@ export class Main {
 
   bootstrap() {
     this.desktopCredentialStorageListener.init();
-    this.windowMain.init().then(
+    // Run migrations first, then other things
+    migrate(this.storageService, this.logService).then(
       async () => {
+        await this.windowMain.init();
         const locale = await this.stateService.getLocale();
         await this.i18nService.init(locale != null ? locale : app.getLocale());
         this.messagingMain.init();

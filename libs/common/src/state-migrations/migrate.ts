@@ -71,3 +71,46 @@ export async function currentVersion(
   logService.info(`State version: ${state}`);
   return state;
 }
+
+/**
+ * Waits for migrations to have a chance to run and will resolve the promise once they are.
+ *
+ * @param storageService Disk storage where the `stateVersion` will or is already saved in.
+ * @param logService Log service
+ */
+export async function waitForMigrations(
+  storageService: AbstractStorageService,
+  logService: LogService,
+) {
+  const isReady = async () => {
+    const version = await currentVersion(storageService, logService);
+    // The saved version is what we consider the latest
+    // migrations should be complete
+    return version === CURRENT_VERSION;
+  };
+
+  const wait = async (time: number) => {
+    // Wait exponentially
+    const nextTime = time * 2;
+    if (nextTime > 8192) {
+      // Don't wait longer than ~8 seconds in a single wait,
+      // if the migrations still haven't happened. They aren't
+      // likely to.
+      return;
+    }
+    return new Promise<void>((resolve) => {
+      setTimeout(async () => {
+        if (!(await isReady())) {
+          logService.info(`Waiting for migrations to finish, waiting for ${nextTime}ms`);
+          await wait(nextTime);
+        }
+        resolve();
+      }, time);
+    });
+  };
+
+  if (!(await isReady())) {
+    // Wait for 2ms to start with
+    await wait(2);
+  }
+}

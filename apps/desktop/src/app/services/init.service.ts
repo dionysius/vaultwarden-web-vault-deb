@@ -43,7 +43,7 @@ export class InitService {
   init() {
     return async () => {
       this.nativeMessagingService.init();
-      await this.stateService.init();
+      await this.stateService.init({ runMigrations: false }); // Desktop will run them in main process
       await this.environmentService.setUrlsFromStorage();
       // Workaround to ignore stateService.activeAccount until URLs are set
       // TODO: Remove this when implementing ticket PM-2637
