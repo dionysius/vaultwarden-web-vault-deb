@@ -1,4 +1,4 @@
-import { MockProxy, any } from "jest-mock-extended";
+import { any, MockProxy } from "jest-mock-extended";
 
 import { MigrationHelper } from "../migration-helper";
 import { mockMigrationHelper } from "../migration-helper.spec";

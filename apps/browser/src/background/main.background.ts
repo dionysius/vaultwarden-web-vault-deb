@@ -139,10 +139,10 @@ import {
   VaultExportServiceAbstraction,
 } from "@bitwarden/exporter/vault-export";
 import {
-  ImportApiServiceAbstraction,
   ImportApiService,
-  ImportServiceAbstraction,
+  ImportApiServiceAbstraction,
   ImportService,
+  ImportServiceAbstraction,
 } from "@bitwarden/importer/core";
 
 import { BrowserOrganizationService } from "../admin-console/services/browser-organization.service";
@@ -634,6 +634,7 @@ export default class MainBackground {
       this.folderApiService,
       this.organizationService,
       this.sendApiService,
+      this.stateProvider,
       logoutCallback,
     );
     this.eventUploadService = new EventUploadService(
@@ -1009,7 +1010,7 @@ export default class MainBackground {
     await this.eventUploadService.uploadEvents(userId);
 
     await Promise.all([
-      this.syncService.setLastSync(new Date(0), userId),
+      this.syncService.setLastSync(new Date(0), userId as UserId),
       this.cryptoService.clearKeys(userId),
       this.settingsService.clear(userId),
       this.cipherService.clear(userId),

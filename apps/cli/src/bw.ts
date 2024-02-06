@@ -519,6 +519,7 @@ export class Main {
       this.folderApiService,
       this.organizationService,
       this.sendApiService,
+      this.stateProvider,
       async (expired: boolean) => await this.logout(),
     );
 

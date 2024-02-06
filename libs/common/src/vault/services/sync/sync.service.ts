@@ -1,3 +1,5 @@
+import { firstValueFrom, map } from "rxjs";
+
 import { ApiService } from "../../../abstractions/api.service";
 import { SettingsService } from "../../../abstractions/settings.service";
 import { InternalOrganizationServiceAbstraction } from "../../../admin-console/abstractions/organization/organization.service.abstraction";
@@ -23,10 +25,12 @@ import { MessagingService } from "../../../platform/abstractions/messaging.servi
 import { StateService } from "../../../platform/abstractions/state.service";
 import { sequentialize } from "../../../platform/misc/sequentialize";
 import { AccountDecryptionOptions } from "../../../platform/models/domain/account";
+import { KeyDefinition, StateProvider, SYNC_STATE } from "../../../platform/state";
 import { SendData } from "../../../tools/send/models/data/send.data";
 import { SendResponse } from "../../../tools/send/models/response/send.response";
 import { SendApiService } from "../../../tools/send/services/send-api.service.abstraction";
 import { InternalSendService } from "../../../tools/send/services/send.service.abstraction";
+import { UserId } from "../../../types/guid";
 import { CipherService } from "../../../vault/abstractions/cipher.service";
 import { FolderApiServiceAbstraction } from "../../../vault/abstractions/folder/folder-api.service.abstraction";
 import { InternalFolderService } from "../../../vault/abstractions/folder/folder.service.abstraction";
@@ -39,8 +43,22 @@ import { CollectionService } from "../../abstractions/collection.service";
 import { CollectionData } from "../../models/data/collection.data";
 import { CollectionDetailsResponse } from "../../models/response/collection.response";
 
+const LAST_SYNC_KEY = new KeyDefinition<string | null>(SYNC_STATE, "lastSync", {
+  deserializer: (value) => value,
+});
+
 export class SyncService implements SyncServiceAbstraction {
+  private lastSyncState = this.stateProvider.getActive(LAST_SYNC_KEY);
+
   syncInProgress = false;
+  lastSync$ = this.lastSyncState.state$.pipe(
+    map((value) => {
+      if (value == null) {
+        return null;
+      }
+      return new Date(value);
+    }),
+  );
 
   constructor(
     private apiService: ApiService,
@@ -59,24 +77,20 @@ export class SyncService implements SyncServiceAbstraction {
     private folderApiService: FolderApiServiceAbstraction,
     private organizationService: InternalOrganizationServiceAbstraction,
     private sendApiService: SendApiService,
+    private stateProvider: StateProvider,
     private logoutCallback: (expired: boolean) => Promise<void>,
   ) {}
 
-  async getLastSync(): Promise<Date> {
-    if ((await this.stateService.getUserId()) == null) {
-      return null;
-    }
-
-    const lastSync = await this.stateService.getLastSync();
-    if (lastSync) {
-      return new Date(lastSync);
-    }
-
-    return null;
+  async getLastSync(): Promise<Date | null> {
+    return await firstValueFrom(this.lastSync$);
   }
 
-  async setLastSync(date: Date, userId?: string): Promise<any> {
-    await this.stateService.setLastSync(date.toJSON(), { userId: userId });
+  async setLastSync(date: Date, userId?: UserId): Promise<any> {
+    if (userId !== undefined) {
+      await this.stateProvider.getUser(userId, LAST_SYNC_KEY).update(() => date.toJSON());
+    } else {
+      await this.lastSyncState.update(() => date.toJSON());
+    }
   }
 
   @sequentialize(() => "fullSync")
