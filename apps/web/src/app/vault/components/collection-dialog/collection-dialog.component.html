@@ -64,11 +64,15 @@
           </bit-form-field>
         </bit-tab>
         <bit-tab label="{{ 'access' | i18n }}">
-          <div class="tw-mb-3" *ngIf="flexibleCollectionsV1Enabled$ | async">
+          <div class="tw-mb-3" *ngIf="organization.flexibleCollections">
             {{ "grantCollectionAccess" | i18n }}
-            <span *ngIf="organization.allowAdminAccessToAllCollectionItems">{{
-              " " + ("adminCollectionAccess" | i18n)
-            }}</span>
+            <span
+              *ngIf="
+                (flexibleCollectionsV1Enabled$ | async) &&
+                organization.allowAdminAccessToAllCollectionItems
+              "
+              >{{ " " + ("adminCollectionAccess" | i18n) }}</span
+            >
           </div>
           <div
             class="tw-mb-3 tw-text-danger"
