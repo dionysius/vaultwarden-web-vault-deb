@@ -8,10 +8,8 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 
-import {
-  BrowserFido2UserInterfaceSession,
-  fido2PopoutSessionData$,
-} from "../../../fido2/browser-fido2-user-interface.service";
+import { BrowserFido2UserInterfaceSession } from "../../../fido2/browser-fido2-user-interface.service";
+import { fido2PopoutSessionData$ } from "../../utils/fido2-popout-session-data";
 
 @Component({
   selector: "app-fido2-use-browser-link",

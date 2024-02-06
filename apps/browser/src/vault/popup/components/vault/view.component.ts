@@ -29,10 +29,8 @@ import { PasswordRepromptService } from "@bitwarden/vault";
 import { AutofillService } from "../../../../autofill/services/abstractions/autofill.service";
 import { BrowserApi } from "../../../../platform/browser/browser-api";
 import BrowserPopupUtils from "../../../../platform/popup/browser-popup-utils";
-import {
-  BrowserFido2UserInterfaceSession,
-  fido2PopoutSessionData$,
-} from "../../../fido2/browser-fido2-user-interface.service";
+import { BrowserFido2UserInterfaceSession } from "../../../fido2/browser-fido2-user-interface.service";
+import { fido2PopoutSessionData$ } from "../../utils/fido2-popout-session-data";
 import { closeViewVaultItemPopout, VaultPopoutType } from "../../utils/vault-popout-window";
 
 const BroadcasterSubscriptionId = "ChildViewComponent";

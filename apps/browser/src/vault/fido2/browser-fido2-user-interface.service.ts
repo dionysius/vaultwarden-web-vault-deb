@@ -1,5 +1,3 @@
-import { inject } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
 import {
   BehaviorSubject,
   EmptyError,
@@ -7,7 +5,6 @@ import {
   firstValueFrom,
   fromEvent,
   fromEventPattern,
-  map,
   merge,
   Observable,
   Subject,
@@ -32,24 +29,6 @@ import { BrowserApi } from "../../platform/browser/browser-api";
 import { closeFido2Popout, openFido2Popout } from "../popup/utils/vault-popout-window";
 
 const BrowserFido2MessageName = "BrowserFido2UserInterfaceServiceMessage";
-
-/**
- * Function to retrieve FIDO2 session data from query parameters.
- * Expected to be used within components tied to routes with these query parameters.
- */
-export function fido2PopoutSessionData$() {
-  const route = inject(ActivatedRoute);
-
-  return route.queryParams.pipe(
-    map((queryParams) => ({
-      isFido2Session: queryParams.sessionId != null,
-      sessionId: queryParams.sessionId as string,
-      fallbackSupported: queryParams.fallbackSupported === "true",
-      userVerification: queryParams.userVerification === "true",
-      senderUrl: queryParams.senderUrl as string,
-    })),
-  );
-}
 
 export class SessionClosedError extends Error {
   constructor() {

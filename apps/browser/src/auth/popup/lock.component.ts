@@ -24,7 +24,7 @@ import { DialogService } from "@bitwarden/components";
 
 import { BiometricErrors, BiometricErrorTypes } from "../../models/biometricErrors";
 import { BrowserRouterService } from "../../platform/popup/services/browser-router.service";
-import { fido2PopoutSessionData$ } from "../../vault/fido2/browser-fido2-user-interface.service";
+import { fido2PopoutSessionData$ } from "../../vault/popup/utils/fido2-popout-session-data";
 
 @Component({
   selector: "app-lock",
