@@ -119,6 +119,7 @@ import { InternalFolderService as InternalFolderServiceAbstraction } from "@bitw
 import { SyncNotifierService as SyncNotifierServiceAbstraction } from "@bitwarden/common/vault/abstractions/sync/sync-notifier.service.abstraction";
 import { SyncService as SyncServiceAbstraction } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 import { TotpService as TotpServiceAbstraction } from "@bitwarden/common/vault/abstractions/totp.service";
+import { VaultSettingsService as VaultSettingsServiceAbstraction } from "@bitwarden/common/vault/abstractions/vault-settings/vault-settings.service";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { CipherService } from "@bitwarden/common/vault/services/cipher.service";
 import { CollectionService } from "@bitwarden/common/vault/services/collection.service";
@@ -130,6 +131,7 @@ import { FolderService } from "@bitwarden/common/vault/services/folder/folder.se
 import { SyncNotifierService } from "@bitwarden/common/vault/services/sync/sync-notifier.service";
 import { SyncService } from "@bitwarden/common/vault/services/sync/sync.service";
 import { TotpService } from "@bitwarden/common/vault/services/totp.service";
+import { VaultSettingsService } from "@bitwarden/common/vault/services/vault-settings/vault-settings.service";
 import {
   IndividualVaultExportService,
   IndividualVaultExportServiceAbstraction,
@@ -268,6 +270,7 @@ export default class MainBackground {
   fido2Service: Fido2ServiceAbstraction;
   individualVaultExportService: IndividualVaultExportServiceAbstraction;
   organizationVaultExportService: OrganizationVaultExportServiceAbstraction;
+  vaultSettingsService: VaultSettingsServiceAbstraction;
 
   // Passed to the popup for Safari to workaround issues with theming, downloading, etc.
   backgroundWindow = window;
@@ -590,6 +593,8 @@ export default class MainBackground {
       this.accountService,
     );
 
+    this.vaultSettingsService = new VaultSettingsService(this.stateProvider);
+
     this.vaultTimeoutService = new VaultTimeoutService(
       this.cipherService,
       this.folderService,
@@ -719,6 +724,7 @@ export default class MainBackground {
       this.configService,
       this.authService,
       this.stateService,
+      this.vaultSettingsService,
       this.logService,
     );
 

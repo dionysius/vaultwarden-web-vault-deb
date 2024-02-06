@@ -26,6 +26,7 @@ import {
   UserRequestedFallbackAbortReason,
   UserVerification,
 } from "../../abstractions/fido2/fido2-client.service.abstraction";
+import { VaultSettingsService } from "../../abstractions/vault-settings/vault-settings.service";
 
 import { isValidRpId } from "./domain-utils";
 import { Fido2Utils } from "./fido2-utils";
@@ -42,11 +43,12 @@ export class Fido2ClientService implements Fido2ClientServiceAbstraction {
     private configService: ConfigServiceAbstraction,
     private authService: AuthService,
     private stateService: StateService,
+    private vaultSettingsService: VaultSettingsService,
     private logService?: LogService,
   ) {}
 
   async isFido2FeatureEnabled(hostname: string, origin: string): Promise<boolean> {
-    const userEnabledPasskeys = await this.stateService.getEnablePasskeys();
+    const userEnabledPasskeys = await firstValueFrom(this.vaultSettingsService.enablePasskeys$);
     const isUserLoggedIn =
       (await this.authService.getAuthStatus()) !== AuthenticationStatus.LoggedOut;
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { firstValueFrom } from "rxjs";
 
 import { AbstractThemingService } from "@bitwarden/angular/platform/services/theming/theming.service.abstraction";
 import { SettingsService } from "@bitwarden/common/abstractions/settings.service";
@@ -7,6 +8,7 @@ import { MessagingService } from "@bitwarden/common/platform/abstractions/messag
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { ThemeType } from "@bitwarden/common/platform/enums";
 import { TotpService } from "@bitwarden/common/vault/abstractions/totp.service";
+import { VaultSettingsService } from "@bitwarden/common/vault/abstractions/vault-settings/vault-settings.service";
 import { UriMatchType } from "@bitwarden/common/vault/enums";
 
 import { enableAccountSwitching } from "../../platform/flags";
@@ -47,6 +49,7 @@ export class OptionsComponent implements OnInit {
     i18nService: I18nService,
     private themingService: AbstractThemingService,
     private settingsService: SettingsService,
+    private vaultSettingsService: VaultSettingsService,
   ) {
     this.themeOptions = [
       { name: i18nService.t("default"), value: ThemeType.System },
@@ -102,7 +105,7 @@ export class OptionsComponent implements OnInit {
 
     this.enableBadgeCounter = !(await this.stateService.getDisableBadgeCounter());
 
-    this.enablePasskeys = await this.stateService.getEnablePasskeys();
+    this.enablePasskeys = await firstValueFrom(this.vaultSettingsService.enablePasskeys$);
 
     this.theme = await this.stateService.getTheme();
 
@@ -123,7 +126,7 @@ export class OptionsComponent implements OnInit {
   }
 
   async updateEnablePasskeys() {
-    await this.stateService.setEnablePasskeys(this.enablePasskeys);
+    await this.vaultSettingsService.setEnablePasskeys(this.enablePasskeys);
   }
 
   async updateContextMenuItem() {

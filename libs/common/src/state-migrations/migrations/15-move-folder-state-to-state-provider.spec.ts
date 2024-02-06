@@ -120,7 +120,7 @@ describe("FolderMigrator", () => {
 
   describe("rollback", () => {
     beforeEach(() => {
-      helper = mockMigrationHelper(rollbackJSON(), 14);
+      helper = mockMigrationHelper(rollbackJSON(), 15);
       sut = new FolderMigrator(14, 15);
     });
 
