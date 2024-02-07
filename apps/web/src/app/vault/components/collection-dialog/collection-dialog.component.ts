@@ -12,6 +12,7 @@ import {
   switchMap,
   takeUntil,
 } from "rxjs";
+import { first } from "rxjs/operators";
 
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { OrganizationUserService } from "@bitwarden/common/admin-console/abstractions/organization-user/organization-user.service";
@@ -70,14 +71,9 @@ export enum CollectionDialogAction {
   templateUrl: "collection-dialog.component.html",
 })
 export class CollectionDialogComponent implements OnInit, OnDestroy {
-  protected flexibleCollectionsEnabled$ = this.organizationService
-    .get$(this.params.organizationId)
-    .pipe(map((o) => o?.flexibleCollections));
-
-  protected flexibleCollectionsV1Enabled$ = this.configService.getFeatureFlag$(
-    FeatureFlag.FlexibleCollectionsV1,
-    false,
-  );
+  protected flexibleCollectionsV1Enabled$ = this.configService
+    .getFeatureFlag$(FeatureFlag.FlexibleCollectionsV1, false)
+    .pipe(first());
 
   private destroy$ = new Subject<void>();
   protected organizations$: Observable<Organization[]>;
@@ -126,6 +122,7 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
         .pipe(takeUntil(this.destroy$))
         .subscribe((id) => this.loadOrg(id, this.params.collectionIds));
       this.organizations$ = this.organizationService.organizations$.pipe(
+        first(),
         map((orgs) =>
           orgs
             .filter((o) => o.canCreateNewCollections && !o.isProviderUser)
@@ -165,7 +162,6 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
       collection: this.params.collectionId
         ? this.collectionService.get(this.params.collectionId)
         : of(null),
-      flexibleCollections: this.flexibleCollectionsEnabled$,
       flexibleCollectionsV1: this.flexibleCollectionsV1Enabled$,
     })
       .pipe(takeUntil(this.formGroup.controls.selectedOrg.valueChanges), takeUntil(this.destroy$))
@@ -177,7 +173,6 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
           groups,
           users,
           collection,
-          flexibleCollections,
           flexibleCollectionsV1,
         }) => {
           this.organization = organization;
@@ -222,7 +217,7 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
               (u) => u.userId === this.organization?.userId,
             )?.id;
             const initialSelection: AccessItemValue[] =
-              currentOrgUserId !== undefined && flexibleCollections
+              currentOrgUserId !== undefined && organization.flexibleCollections
                 ? [
                     {
                       id: currentOrgUserId,
@@ -238,7 +233,11 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
             });
           }
 
-          if (flexibleCollectionsV1 && !organization.allowAdminAccessToAllCollectionItems) {
+          if (
+            organization.flexibleCollections &&
+            flexibleCollectionsV1 &&
+            !organization.allowAdminAccessToAllCollectionItems
+          ) {
             this.formGroup.controls.access.addValidators(validateCanManagePermission);
           } else {
             this.formGroup.controls.access.removeValidators(validateCanManagePermission);
