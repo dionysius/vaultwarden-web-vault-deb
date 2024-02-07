@@ -15,7 +15,7 @@ export class VaultSettingsService implements VaultSettingsServiceAbstraction {
    * {@link VaultSettingsServiceAbstraction.enablePasskeys$}
    */
   readonly enablePasskeys$: Observable<boolean> = this.enablePasskeysState.state$.pipe(
-    map((x) => x ?? false),
+    map((x) => x ?? true),
   );
 
   constructor(private stateProvider: StateProvider) {}
