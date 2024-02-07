@@ -442,7 +442,10 @@ export default class MainBackground {
       this.stateService,
     );
     this.syncNotifierService = new SyncNotifierService();
-    this.organizationService = new BrowserOrganizationService(this.stateService);
+    this.organizationService = new BrowserOrganizationService(
+      this.stateService,
+      this.stateProvider,
+    );
     this.policyService = new BrowserPolicyService(this.stateService, this.organizationService);
     this.policyApiService = new PolicyApiService(
       this.policyService,

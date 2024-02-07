@@ -5,6 +5,7 @@ import {
   CachedServices,
   factory,
 } from "../../../platform/background/service-factories/factory-options";
+import { stateProviderFactory } from "../../../platform/background/service-factories/state-provider.factory";
 import {
   stateServiceFactory,
   StateServiceInitOptions,
@@ -24,6 +25,10 @@ export function organizationServiceFactory(
     cache,
     "organizationService",
     opts,
-    async () => new BrowserOrganizationService(await stateServiceFactory(cache, opts)),
+    async () =>
+      new BrowserOrganizationService(
+        await stateServiceFactory(cache, opts),
+        await stateProviderFactory(cache, opts),
+      ),
   );
 }

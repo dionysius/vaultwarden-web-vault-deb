@@ -1,10 +1,14 @@
 import { MockProxy, mock, any, mockClear } from "jest-mock-extended";
 import { BehaviorSubject, firstValueFrom } from "rxjs";
 
+import { FakeAccountService, FakeStateProvider, mockAccountServiceWith } from "../../../../spec";
+import { FakeActiveUserState } from "../../../../spec/fake-state";
 import { StateService } from "../../../platform/abstractions/state.service";
+import { Utils } from "../../../platform/misc/utils";
+import { UserId } from "../../../types/guid";
 import { OrganizationData } from "../../models/data/organization.data";
 
-import { OrganizationService } from "./organization.service";
+import { OrganizationService, ORGANIZATIONS } from "./organization.service";
 
 describe("Organization Service", () => {
   let organizationService: OrganizationService;
@@ -12,6 +16,11 @@ describe("Organization Service", () => {
   let stateService: MockProxy<StateService>;
   let activeAccount: BehaviorSubject<string>;
   let activeAccountUnlocked: BehaviorSubject<boolean>;
+
+  const mockUserId = Utils.newGuid() as UserId;
+  let accountService: FakeAccountService;
+  let stateProvider: FakeStateProvider;
+  let activeUserOrganizationsState: FakeActiveUserState<Record<string, OrganizationData>>;
 
   const resetStateService = async (
     customizeStateService: (stateService: MockProxy<StateService>) => void,
@@ -21,9 +30,19 @@ describe("Organization Service", () => {
     stateService.activeAccount$ = activeAccount;
     stateService.activeAccountUnlocked$ = activeAccountUnlocked;
     customizeStateService(stateService);
-    organizationService = new OrganizationService(stateService);
+    organizationService = new OrganizationService(stateService, stateProvider);
     await new Promise((r) => setTimeout(r, 50));
   };
+
+  function prepareStateProvider(): void {
+    accountService = mockAccountServiceWith(mockUserId);
+    stateProvider = new FakeStateProvider(accountService);
+  }
+
+  function seedTestData(): void {
+    activeUserOrganizationsState = stateProvider.activeUser.getFake(ORGANIZATIONS);
+    activeUserOrganizationsState.nextState({ "1": organizationData("1", "Test Org") });
+  }
 
   beforeEach(() => {
     activeAccount = new BehaviorSubject("123");
@@ -37,7 +56,11 @@ describe("Organization Service", () => {
       "1": organizationData("1", "Test Org"),
     });
 
-    organizationService = new OrganizationService(stateService);
+    prepareStateProvider();
+
+    organizationService = new OrganizationService(stateService, stateProvider);
+
+    seedTestData();
   });
 
   afterEach(() => {
