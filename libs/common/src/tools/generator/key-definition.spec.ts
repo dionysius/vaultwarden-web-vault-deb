@@ -1,9 +1,8 @@
 import {
   ENCRYPTED_HISTORY,
-  ENCRYPTED_USERNAME_SETTINGS,
+  EFF_USERNAME_SETTINGS,
   PASSPHRASE_SETTINGS,
   PASSWORD_SETTINGS,
-  PLAINTEXT_USERNAME_SETTINGS,
 } from "./key-definitions";
 
 describe("Key definitions", () => {
@@ -23,18 +22,10 @@ describe("Key definitions", () => {
     });
   });
 
-  describe("ENCRYPTED_USERNAME_SETTINGS", () => {
+  describe("BASIC_LATIN_SETTINGS", () => {
     it("should pass through deserialization", () => {
       const value = {};
-      const result = ENCRYPTED_USERNAME_SETTINGS.deserializer(value);
-      expect(result).toBe(value);
-    });
-  });
-
-  describe("PLAINTEXT_USERNAME_SETTINGS", () => {
-    it("should pass through deserialization", () => {
-      const value = {};
-      const result = PLAINTEXT_USERNAME_SETTINGS.deserializer(value);
+      const result = EFF_USERNAME_SETTINGS.deserializer(value);
       expect(result).toBe(value);
     });
   });
