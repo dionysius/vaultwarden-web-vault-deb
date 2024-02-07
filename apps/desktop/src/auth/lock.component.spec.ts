@@ -25,7 +25,6 @@ import { BiometricStateService } from "@bitwarden/common/platform/biometrics/bio
 import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/password-strength";
 import { DialogService } from "@bitwarden/components";
 
-import { ElectronCryptoService } from "../platform/services/electron-crypto.service";
 import { ElectronStateService } from "../platform/services/electron-state.service.abstraction";
 
 import { LockComponent } from "./lock.component";
@@ -80,11 +79,7 @@ describe("LockComponent", () => {
         },
         {
           provide: CryptoService,
-          useExisting: ElectronCryptoService,
-        },
-        {
-          provide: ElectronCryptoService,
-          useValue: mock<ElectronCryptoService>(),
+          useValue: mock<CryptoService>(),
         },
         {
           provide: VaultTimeoutService,
