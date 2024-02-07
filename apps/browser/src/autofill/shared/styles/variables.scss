@@ -57,7 +57,7 @@ $themes: (
     inputBorderColor: #4c525f,
     inputBackgroundColor: #2f343d,
     borderColor: #4c525f,
-    focusOutlineColor: $focus-outline-color,
+    focusOutlineColor: lighten($focus-outline-color, 25%),
     successColor: $success-color-dark,
     errorColor: $error-color-dark,
   ),
@@ -72,7 +72,7 @@ $themes: (
     inputBorderColor: $nord0,
     inputBackgroundColor: $nord2,
     borderColor: $nord0,
-    focusOutlineColor: $focus-outline-color,
+    focusOutlineColor: lighten($focus-outline-color, 25%),
     successColor: $success-color-dark,
   ),
   solarizedDark: (
@@ -87,7 +87,7 @@ $themes: (
     inputBorderColor: rgba($solarizedDarkBase2, 0.2),
     inputBackgroundColor: $solarizedDarkBase01,
     borderColor: $solarizedDarkBase2,
-    focusOutlineColor: $focus-outline-color,
+    focusOutlineColor: lighten($focus-outline-color, 15%),
     successColor: $success-color-dark,
   ),
 );

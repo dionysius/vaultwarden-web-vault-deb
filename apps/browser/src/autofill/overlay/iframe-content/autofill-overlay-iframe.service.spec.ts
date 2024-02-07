@@ -1,3 +1,7 @@
+import { mock } from "jest-mock-extended";
+
+import { ThemeType } from "@bitwarden/common/platform/enums";
+
 import { EVENTS } from "../../constants";
 import { createPortSpyMock } from "../../jest/autofill-mocks";
 import {
@@ -208,10 +212,10 @@ describe("AutofillOverlayIframeService", () => {
           );
         });
 
-        it("passed the message on to the iframe element", () => {
+        it("passes the message on to the iframe element", () => {
           const message = {
             command: "initAutofillOverlayList",
-            theme: "theme_light",
+            theme: ThemeType.Light,
           };
 
           sendPortMessage(portSpy, message);
@@ -223,10 +227,48 @@ describe("AutofillOverlayIframeService", () => {
           );
         });
 
+        it("sets a light theme based on the user's system preferences", () => {
+          window.matchMedia = jest.fn(() => mock<MediaQueryList>({ matches: false }));
+          const message = {
+            command: "initAutofillOverlayList",
+            theme: ThemeType.System,
+          };
+
+          sendPortMessage(portSpy, message);
+
+          expect(window.matchMedia).toHaveBeenCalledWith("(prefers-color-scheme: dark)");
+          expect(autofillOverlayIframeService["iframe"].contentWindow.postMessage).toBeCalledWith(
+            {
+              command: "initAutofillOverlayList",
+              theme: ThemeType.Light,
+            },
+            "*",
+          );
+        });
+
+        it("sets a dark theme based on the user's system preferences", () => {
+          window.matchMedia = jest.fn(() => mock<MediaQueryList>({ matches: true }));
+          const message = {
+            command: "initAutofillOverlayList",
+            theme: ThemeType.System,
+          };
+
+          sendPortMessage(portSpy, message);
+
+          expect(window.matchMedia).toHaveBeenCalledWith("(prefers-color-scheme: dark)");
+          expect(autofillOverlayIframeService["iframe"].contentWindow.postMessage).toBeCalledWith(
+            {
+              command: "initAutofillOverlayList",
+              theme: ThemeType.Dark,
+            },
+            "*",
+          );
+        });
+
         it("updates the border to match the `dark` theme", () => {
           const message = {
             command: "initAutofillOverlayList",
-            theme: "theme_dark",
+            theme: ThemeType.Dark,
           };
 
           sendPortMessage(portSpy, message);
@@ -239,7 +281,7 @@ describe("AutofillOverlayIframeService", () => {
         it("updates the border to match the `nord` theme", () => {
           const message = {
             command: "initAutofillOverlayList",
-            theme: "theme_nord",
+            theme: ThemeType.Nord,
           };
 
           sendPortMessage(portSpy, message);
@@ -252,7 +294,7 @@ describe("AutofillOverlayIframeService", () => {
         it("updates the border to match the `solarizedDark` theme", () => {
           const message = {
             command: "initAutofillOverlayList",
-            theme: "theme_solarizedDark",
+            theme: ThemeType.SolarizedDark,
           };
 
           sendPortMessage(portSpy, message);

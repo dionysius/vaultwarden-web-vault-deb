@@ -1,6 +1,7 @@
 import { mock } from "jest-mock-extended";
 
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
+import { ThemeType } from "@bitwarden/common/platform/enums";
 import { UriMatchType, CipherType } from "@bitwarden/common/vault/enums";
 import { CipherRepromptType } from "@bitwarden/common/vault/enums/cipher-reprompt-type";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
@@ -199,7 +200,7 @@ function createInitAutofillOverlayListMessageMock(
     command: "initAutofillOverlayList",
     translations: overlayPagesTranslations,
     styleSheetUrl: "https://jest-testing-website.com",
-    theme: "light",
+    theme: ThemeType.Light,
     authStatus: AuthenticationStatus.Unlocked,
     ciphers: [
       createAutofillOverlayCipherDataMock(1, {

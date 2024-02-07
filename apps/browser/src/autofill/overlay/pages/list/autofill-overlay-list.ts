@@ -54,10 +54,11 @@ class AutofillOverlayList extends AutofillOverlayPageElement {
   }: InitAutofillOverlayListMessage) {
     const linkElement = this.initOverlayPage("button", styleSheetUrl, translations);
 
-    globalThis.document.documentElement.classList.add(theme);
+    const themeClass = `theme_${theme}`;
+    globalThis.document.documentElement.classList.add(themeClass);
 
     this.overlayListContainer = globalThis.document.createElement("div");
-    this.overlayListContainer.classList.add("overlay-list-container", theme);
+    this.overlayListContainer.classList.add("overlay-list-container", themeClass);
     this.overlayListContainer.setAttribute("role", "dialog");
     this.overlayListContainer.setAttribute("aria-modal", "true");
     this.resizeObserver.observe(this.overlayListContainer);

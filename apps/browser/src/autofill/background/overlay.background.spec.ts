@@ -1028,12 +1028,13 @@ describe("OverlayBackground", () => {
 
     it("gets the system theme", async () => {
       jest.spyOn(overlayBackground["stateService"], "getTheme").mockResolvedValue(ThemeType.System);
-      window.matchMedia = jest.fn(() => mock<MediaQueryList>({ matches: true }));
 
       initOverlayElementPorts({ initList: true, initButton: false });
       await flushPromises();
 
-      expect(window.matchMedia).toHaveBeenCalledWith("(prefers-color-scheme: dark)");
+      expect(listPortSpy.postMessage).toHaveBeenCalledWith(
+        expect.objectContaining({ theme: ThemeType.System }),
+      );
     });
   });
 
