@@ -33,13 +33,13 @@ export class CollectionAdminView extends CollectionView {
 
   override canEdit(org: Organization): boolean {
     return org?.flexibleCollections
-      ? org?.canEditAnyCollection
+      ? org?.canEditAnyCollection || this.manage
       : org?.canEditAnyCollection || (org?.canEditAssignedCollections && this.assigned);
   }
 
   override canDelete(org: Organization): boolean {
     return org?.flexibleCollections
-      ? org?.canDeleteAnyCollection
+      ? org?.canDeleteAnyCollection || (!org?.limitCollectionCreationDeletion && this.manage)
       : org?.canDeleteAnyCollection || (org?.canDeleteAssignedCollections && this.assigned);
   }
 }
