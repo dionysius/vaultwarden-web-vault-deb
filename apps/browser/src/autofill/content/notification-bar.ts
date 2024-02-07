@@ -870,7 +870,7 @@ async function loadNotificationBar() {
       return;
     }
 
-    const barPageUrl: string = chrome.extension.getURL(barPage);
+    const barPageUrl: string = chrome.runtime.getURL(barPage);
 
     const iframe = document.createElement("iframe");
     iframe.style.cssText = "height: 42px; width: 100%; border: 0; min-height: initial;";

@@ -160,12 +160,12 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
     }
 
     // Opera has "sidebar_panel" as a ViewType but doesn't currently work
-    if (this.isFirefox() && chrome.extension.getViews({ type: "sidebar" }).length > 0) {
+    if (this.isFirefox() && BrowserApi.getExtensionViews({ type: "sidebar" }).length > 0) {
       return true;
     }
 
     // Opera sidebar has type of "tab" (will stick around for a while after closing sidebar)
-    const tabOpen = chrome.extension.getViews({ type: "tab" }).length > 0;
+    const tabOpen = BrowserApi.getExtensionViews({ type: "tab" }).length > 0;
     return tabOpen;
   }
 

@@ -105,6 +105,11 @@ const privacy = {
   },
 };
 
+const extension = {
+  getBackgroundPage: jest.fn(),
+  getViews: jest.fn(),
+};
+
 // set chrome
 global.chrome = {
   i18n,
@@ -116,4 +121,5 @@ global.chrome = {
   windows,
   port,
   privacy,
+  extension,
 } as any;
