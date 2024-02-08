@@ -5,6 +5,7 @@ import { SsoComponent } from "@bitwarden/angular/auth/components/sso.component";
 import { LoginStrategyServiceAbstraction } from "@bitwarden/auth/common";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
+import { SsoLoginServiceAbstraction } from "@bitwarden/common/auth/abstractions/sso-login.service.abstraction";
 import { ConfigServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config.service.abstraction";
 import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/crypto-function.service";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
@@ -28,6 +29,7 @@ export class LinkSsoDirective extends SsoComponent implements AfterContentInit {
   }
 
   constructor(
+    ssoLoginService: SsoLoginServiceAbstraction,
     platformUtilsService: PlatformUtilsService,
     i18nService: I18nService,
     apiService: ApiService,
@@ -42,6 +44,7 @@ export class LinkSsoDirective extends SsoComponent implements AfterContentInit {
     configService: ConfigServiceAbstraction,
   ) {
     super(
+      ssoLoginService,
       loginStrategyService,
       router,
       i18nService,

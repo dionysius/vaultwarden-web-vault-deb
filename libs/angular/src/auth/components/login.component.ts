@@ -7,6 +7,7 @@ import { take, takeUntil } from "rxjs/operators";
 import { LoginStrategyServiceAbstraction, PasswordLoginCredentials } from "@bitwarden/auth/common";
 import { DevicesApiServiceAbstraction } from "@bitwarden/common/auth/abstractions/devices-api.service.abstraction";
 import { LoginService } from "@bitwarden/common/auth/abstractions/login.service";
+import { SsoLoginServiceAbstraction } from "@bitwarden/common/auth/abstractions/sso-login.service.abstraction";
 import { WebAuthnLoginServiceAbstraction } from "@bitwarden/common/auth/abstractions/webauthn/webauthn-login.service.abstraction";
 import { AuthResult } from "@bitwarden/common/auth/models/domain/auth-result";
 import { ForceSetPasswordReason } from "@bitwarden/common/auth/models/domain/force-set-password-reason";
@@ -78,6 +79,7 @@ export class LoginComponent extends CaptchaProtectedComponent implements OnInit,
     protected formValidationErrorService: FormValidationErrorsService,
     protected route: ActivatedRoute,
     protected loginService: LoginService,
+    protected ssoLoginService: SsoLoginServiceAbstraction,
     protected webAuthnLoginService: WebAuthnLoginServiceAbstraction,
   ) {
     super(environmentService, i18nService, platformUtilsService);
@@ -241,8 +243,8 @@ export class LoginComponent extends CaptchaProtectedComponent implements OnInit,
     const codeChallenge = Utils.fromBufferToUrlB64(codeVerifierHash);
 
     // Save sso params
-    await this.stateService.setSsoState(state);
-    await this.stateService.setSsoCodeVerifier(ssoCodeVerifier);
+    await this.ssoLoginService.setSsoState(state);
+    await this.ssoLoginService.setCodeVerifier(ssoCodeVerifier);
 
     // Build URI
     const webUrl = this.environmentService.getWebVaultUrl();

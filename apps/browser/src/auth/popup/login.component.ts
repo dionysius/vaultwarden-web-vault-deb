@@ -7,6 +7,7 @@ import { FormValidationErrorsService } from "@bitwarden/angular/platform/abstrac
 import { LoginStrategyServiceAbstraction } from "@bitwarden/auth/common";
 import { DevicesApiServiceAbstraction } from "@bitwarden/common/auth/abstractions/devices-api.service.abstraction";
 import { LoginService } from "@bitwarden/common/auth/abstractions/login.service";
+import { SsoLoginServiceAbstraction } from "@bitwarden/common/auth/abstractions/sso-login.service.abstraction";
 import { WebAuthnLoginServiceAbstraction } from "@bitwarden/common/auth/abstractions/webauthn/webauthn-login.service.abstraction";
 import { AppIdService } from "@bitwarden/common/platform/abstractions/app-id.service";
 import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/crypto-function.service";
@@ -45,6 +46,7 @@ export class LoginComponent extends BaseLoginComponent {
     formValidationErrorService: FormValidationErrorsService,
     route: ActivatedRoute,
     loginService: LoginService,
+    ssoLoginService: SsoLoginServiceAbstraction,
     webAuthnLoginService: WebAuthnLoginServiceAbstraction,
   ) {
     super(
@@ -64,6 +66,7 @@ export class LoginComponent extends BaseLoginComponent {
       formValidationErrorService,
       route,
       loginService,
+      ssoLoginService,
       webAuthnLoginService,
     );
     super.onSuccessfulLogin = async () => {
@@ -106,8 +109,8 @@ export class LoginComponent extends BaseLoginComponent {
     const codeVerifierHash = await this.cryptoFunctionService.hash(codeVerifier, "sha256");
     const codeChallenge = Utils.fromBufferToUrlB64(codeVerifierHash);
 
-    await this.stateService.setSsoCodeVerifier(codeVerifier);
-    await this.stateService.setSsoState(state);
+    await this.ssoLoginService.setCodeVerifier(codeVerifier);
+    await this.ssoLoginService.setSsoState(state);
 
     let url = this.environmentService.getWebVaultUrl();
     if (url == null) {

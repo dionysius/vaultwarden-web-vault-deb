@@ -460,17 +460,6 @@ export abstract class StateService<T extends Account = Account> {
    * @deprecated Do not call this directly, use SettingsService
    */
   setSettings: (value: AccountSettingsSettings, options?: StorageOptions) => Promise<void>;
-  getSsoCodeVerifier: (options?: StorageOptions) => Promise<string>;
-  setSsoCodeVerifier: (value: string, options?: StorageOptions) => Promise<void>;
-  getSsoOrgIdentifier: (options?: StorageOptions) => Promise<string>;
-  setSsoOrganizationIdentifier: (value: string, options?: StorageOptions) => Promise<void>;
-  getSsoState: (options?: StorageOptions) => Promise<string>;
-  setSsoState: (value: string, options?: StorageOptions) => Promise<void>;
-  getUserSsoOrganizationIdentifier: (options?: StorageOptions) => Promise<string>;
-  setUserSsoOrganizationIdentifier: (
-    value: string | null,
-    options?: StorageOptions,
-  ) => Promise<void>;
   getTheme: (options?: StorageOptions) => Promise<ThemeType>;
   setTheme: (value: ThemeType, options?: StorageOptions) => Promise<void>;
   getTwoFactorToken: (options?: StorageOptions) => Promise<string>;

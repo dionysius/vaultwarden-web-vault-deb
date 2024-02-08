@@ -10,6 +10,7 @@ import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { LoginStrategyServiceAbstraction } from "@bitwarden/auth/common";
 import { DevicesApiServiceAbstraction } from "@bitwarden/common/auth/abstractions/devices-api.service.abstraction";
 import { LoginService } from "@bitwarden/common/auth/abstractions/login.service";
+import { SsoLoginServiceAbstraction } from "@bitwarden/common/auth/abstractions/sso-login.service.abstraction";
 import { WebAuthnLoginServiceAbstraction } from "@bitwarden/common/auth/abstractions/webauthn/webauthn-login.service.abstraction";
 import { AppIdService } from "@bitwarden/common/platform/abstractions/app-id.service";
 import { BroadcasterService } from "@bitwarden/common/platform/abstractions/broadcaster.service";
@@ -73,6 +74,7 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
     formValidationErrorService: FormValidationErrorsService,
     route: ActivatedRoute,
     loginService: LoginService,
+    ssoLoginService: SsoLoginServiceAbstraction,
     webAuthnLoginService: WebAuthnLoginServiceAbstraction,
   ) {
     super(
@@ -92,6 +94,7 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
       formValidationErrorService,
       route,
       loginService,
+      ssoLoginService,
       webAuthnLoginService,
     );
     super.onSuccessfulLogin = () => {
