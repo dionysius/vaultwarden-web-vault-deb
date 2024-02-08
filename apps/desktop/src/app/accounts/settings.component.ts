@@ -584,7 +584,10 @@ export class SettingsComponent implements OnInit {
   }
 
   async saveBrowserIntegration() {
-    if (process.platform === "darwin" && !this.platformUtilsService.isMacAppStore()) {
+    if (
+      ipc.platform.deviceType === DeviceType.MacOsDesktop &&
+      !this.platformUtilsService.isMacAppStore()
+    ) {
       await this.dialogService.openSimpleDialog({
         title: { key: "browserIntegrationUnsupportedTitle" },
         content: { key: "browserIntegrationMasOnlyDesc" },
@@ -606,7 +609,7 @@ export class SettingsComponent implements OnInit {
 
       this.form.controls.enableBrowserIntegration.setValue(false);
       return;
-    } else if (process.platform == "linux") {
+    } else if (ipc.platform.deviceType === DeviceType.LinuxDesktop) {
       await this.dialogService.openSimpleDialog({
         title: { key: "browserIntegrationUnsupportedTitle" },
         content: { key: "browserIntegrationLinuxDesc" },

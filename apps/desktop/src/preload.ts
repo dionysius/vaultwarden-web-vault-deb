@@ -1,4 +1,5 @@
-// import { contextBridge } from "electron";
+import { contextBridge } from "electron";
+
 import auth from "./auth/preload";
 import platform from "./platform/preload";
 
@@ -18,4 +19,4 @@ export const ipc = {
   platform,
 };
 
-// contextBridge.exposeInMainWorld("ipc", ipc);
+contextBridge.exposeInMainWorld("ipc", ipc);

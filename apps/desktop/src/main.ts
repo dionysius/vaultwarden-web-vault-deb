@@ -30,14 +30,14 @@ import { Account } from "./models/account";
 import { BiometricsService, BiometricsServiceAbstraction } from "./platform/main/biometric/index";
 import { ClipboardMain } from "./platform/main/clipboard.main";
 import { DesktopCredentialStorageListener } from "./platform/main/desktop-credential-storage-listener";
-import { ElectronLogService } from "./platform/services/electron-log.service";
+import { ElectronLogMainService } from "./platform/services/electron-log.main.service";
 import { ElectronStateService } from "./platform/services/electron-state.service";
 import { ElectronStorageService } from "./platform/services/electron-storage.service";
 import { I18nMainService } from "./platform/services/i18n.main.service";
 import { ElectronMainMessagingService } from "./services/electron-main-messaging.service";
 
 export class Main {
-  logService: ElectronLogService;
+  logService: ElectronLogMainService;
   i18nService: I18nMainService;
   storageService: ElectronStorageService;
   memoryStorageService: MemoryStorageService;
@@ -89,8 +89,7 @@ export class Main {
       });
     }
 
-    this.logService = new ElectronLogService(null, app.getPath("userData"));
-    this.logService.init();
+    this.logService = new ElectronLogMainService(null, app.getPath("userData"));
     this.i18nService = new I18nMainService("en", "./locales/");
 
     const storageDefaults: any = {};
