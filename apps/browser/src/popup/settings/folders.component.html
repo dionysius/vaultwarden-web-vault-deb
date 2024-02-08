@@ -15,20 +15,24 @@
   </div>
 </header>
 <main tabindex="-1">
-  <div class="box list full-list" *ngIf="(folders$ | async)?.length">
-    <div class="box-content">
-      <button
-        type="button"
-        appStopClick
-        (click)="folderSelected(f)"
-        class="box-content-row padded"
-        *ngFor="let f of folders$ | async"
-      >
-        {{ f.name }}
-      </button>
+  <ng-container *ngIf="folders$ | async as folders">
+    <div class="box list full-list" *ngIf="folders.length; else noFoldersTemplate">
+      <div class="box-content">
+        <button
+          type="button"
+          appStopClick
+          (click)="folderSelected(f)"
+          class="box-content-row padded"
+          *ngFor="let f of folders"
+        >
+          {{ f.name }}
+        </button>
+      </div>
     </div>
-  </div>
-  <div class="no-items" *ngIf="!(folders$ | async)?.length">
-    <p>{{ "noFolders" | i18n }}</p>
-  </div>
+  </ng-container>
+  <ng-template #noFoldersTemplate>
+    <div class="no-items">
+      <p>{{ "noFolders" | i18n }}</p>
+    </div>
+  </ng-template>
 </main>
