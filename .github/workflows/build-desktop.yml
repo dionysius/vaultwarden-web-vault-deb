@@ -154,7 +154,7 @@ jobs:
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Set up Node
-        uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v3.8.2
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
         with:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
@@ -264,7 +264,7 @@ jobs:
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Set up Node
-        uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v3.8.2
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
         with:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
@@ -471,7 +471,7 @@ jobs:
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Set up Node
-        uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v3.8.2
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
         with:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
@@ -617,7 +617,7 @@ jobs:
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Set up Node
-        uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v3.8.2
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
         with:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
@@ -808,7 +808,7 @@ jobs:
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Set up Node
-        uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v3.8.2
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
         with:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
@@ -991,7 +991,7 @@ jobs:
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Set up Node
-        uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v3.8.2
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
         with:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'

@@ -130,7 +130,7 @@ jobs:
           ref: ${{ needs.setup.outputs.branch-name }}
 
       - name: Set up Node
-        uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v3.8.2
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
         with:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
@@ -220,7 +220,7 @@ jobs:
           ref: ${{ needs.setup.outputs.branch-name }}
 
       - name: Set up Node
-        uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v3.8.2
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
         with:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
@@ -409,7 +409,7 @@ jobs:
           ref: ${{ needs.setup.outputs.branch-name }}
 
       - name: Set up Node
-        uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v3.8.2
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
         with:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
@@ -532,7 +532,7 @@ jobs:
           ref: ${{ needs.setup.outputs.branch-name }}
 
       - name: Set up Node
-        uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v3.8.2
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
         with:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
@@ -728,7 +728,7 @@ jobs:
           ref: ${{ needs.setup.outputs.branch-name }}
 
       - name: Set up Node
-        uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v3.8.2
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
         with:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
