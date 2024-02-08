@@ -38,7 +38,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout repo
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Set up cloc
         run: |
@@ -53,7 +53,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout repo
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Verify
         run: |
@@ -82,7 +82,7 @@ jobs:
         working-directory: apps/desktop
     steps:
       - name: Checkout repo
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Get Package Version
         id: retrieve-version
@@ -151,7 +151,7 @@ jobs:
         working-directory: apps/desktop
     steps:
       - name: Checkout repo
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Set up Node
         uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v3.8.2
@@ -261,7 +261,7 @@ jobs:
       NODE_OPTIONS: --max_old_space_size=4096
     steps:
       - name: Checkout repo
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Set up Node
         uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v3.8.2
@@ -468,7 +468,7 @@ jobs:
         working-directory: apps/desktop
     steps:
       - name: Checkout repo
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Set up Node
         uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v3.8.2
@@ -614,7 +614,7 @@ jobs:
         working-directory: apps/desktop
     steps:
       - name: Checkout repo
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Set up Node
         uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v3.8.2
@@ -805,7 +805,7 @@ jobs:
         working-directory: apps/desktop
     steps:
       - name: Checkout repo
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Set up Node
         uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v3.8.2
@@ -988,7 +988,7 @@ jobs:
         working-directory: apps/desktop
     steps:
       - name: Checkout repo
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Set up Node
         uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v3.8.2
@@ -1151,7 +1151,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout repo
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Login to Azure
         uses: Azure/login@e15b166166a8746d1a47596803bd8c1b595455cf # v1.6.0

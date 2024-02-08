@@ -39,7 +39,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout repo
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Set up cloc
         run: |
@@ -59,7 +59,7 @@ jobs:
       node_version: ${{ steps.retrieve-node-version.outputs.node_version }}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Get Package Version
         id: gen_vars
@@ -89,7 +89,7 @@ jobs:
         working-directory: apps/browser
     steps:
       - name: Checkout repo
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Testing locales - extName length
         run: |
@@ -127,7 +127,7 @@ jobs:
       _NODE_VERSION: ${{ needs.setup.outputs.node_version }}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Set up Node
         uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v3.8.2
@@ -259,7 +259,7 @@ jobs:
       _NODE_VERSION: ${{ needs.setup.outputs.node_version }}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Set up Node
         uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v3.8.2
@@ -358,7 +358,7 @@ jobs:
       - build-safari
     steps:
       - name: Checkout repo
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Login to Azure
         uses: Azure/login@e15b166166a8746d1a47596803bd8c1b595455cf # v1.6.0

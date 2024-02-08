@@ -24,7 +24,7 @@ jobs:
       node_version: ${{ steps.retrieve-node-version.outputs.node_version }}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Branch check
         run: |
@@ -125,7 +125,7 @@ jobs:
         working-directory: apps/desktop
     steps:
       - name: Checkout repo
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
           ref: ${{ needs.setup.outputs.branch-name }}
 
@@ -215,7 +215,7 @@ jobs:
       NODE_OPTIONS: --max_old_space_size=4096
     steps:
       - name: Checkout repo
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
           ref: ${{ needs.setup.outputs.branch-name }}
 
@@ -404,7 +404,7 @@ jobs:
         working-directory: apps/desktop
     steps:
       - name: Checkout repo
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
           ref: ${{ needs.setup.outputs.branch-name }}
 
@@ -527,7 +527,7 @@ jobs:
         working-directory: apps/desktop
     steps:
       - name: Checkout repo
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
           ref: ${{ needs.setup.outputs.branch-name }}
 
@@ -723,7 +723,7 @@ jobs:
         working-directory: apps/desktop
     steps:
       - name: Checkout repo
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
           ref: ${{ needs.setup.outputs.branch-name }}
 
@@ -989,7 +989,7 @@ jobs:
       - release
     steps:
       - name: Checkout repo
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Setup git config
         run: |
