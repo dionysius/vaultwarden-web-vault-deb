@@ -1,23 +1,28 @@
-import { Component, HostListener, Input } from "@angular/core";
+import { Component, HostListener, Input, Optional } from "@angular/core";
 import { IsActiveMatchOptions } from "@angular/router";
 import { BehaviorSubject, map } from "rxjs";
 
 import { NavBaseComponent } from "./nav-base.component";
+import { NavGroupComponent } from "./nav-group.component";
 
 @Component({
   selector: "bit-nav-item",
   templateUrl: "./nav-item.component.html",
+  providers: [{ provide: NavBaseComponent, useExisting: NavItemComponent }],
 })
 export class NavItemComponent extends NavBaseComponent {
   /**
    * Is `true` if `to` matches the current route
    */
-  private _active = false;
-  protected setActive(isActive: boolean) {
-    this._active = isActive;
+  private _isActive = false;
+  protected setIsActive(isActive: boolean) {
+    this._isActive = isActive;
+    if (this._isActive && this.parentNavGroup) {
+      this.parentNavGroup.setOpen(true);
+    }
   }
   protected get showActiveStyles() {
-    return this._active && !this.hideActiveStyles;
+    return this._isActive && !this.hideActiveStyles;
   }
   protected rlaOptions: IsActiveMatchOptions = {
     paths: "subset",
@@ -53,5 +58,9 @@ export class NavItemComponent extends NavBaseComponent {
   @HostListener("focusout")
   onFocusOut() {
     this.focusVisibleWithin$.next(false);
+  }
+
+  constructor(@Optional() private parentNavGroup: NavGroupComponent) {
+    super();
   }
 }

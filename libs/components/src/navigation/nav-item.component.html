@@ -55,7 +55,7 @@
         routerLinkActive
         [routerLinkActiveOptions]="rlaOptions"
         [ariaCurrentWhenActive]="'page'"
-        (isActiveChange)="setActive($event)"
+        (isActiveChange)="setIsActive($event)"
         (click)="mainContentClicked.emit()"
       >
         <ng-container *ngTemplateOutlet="anchorAndButtonContent"></ng-container>
