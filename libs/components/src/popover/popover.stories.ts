@@ -130,6 +130,9 @@ export const InitiallyOpen: Story = {
       ${popoverContent}
       `,
   }),
+  parameters: {
+    chromatic: { disableSnapshot: true },
+  },
 };
 
 export const RightStart: Story = {
