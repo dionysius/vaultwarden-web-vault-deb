@@ -48,32 +48,24 @@ export class FakeAccountService implements AccountService {
   }
 
   async addAccount(userId: UserId, accountData: AccountInfo): Promise<void> {
-    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    this.mock.addAccount(userId, accountData);
+    const current = this.accountsSubject["_buffer"][0] ?? {};
+    this.accountsSubject.next({ ...current, [userId]: accountData });
+    await this.mock.addAccount(userId, accountData);
   }
 
   async setAccountName(userId: UserId, name: string): Promise<void> {
-    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    this.mock.setAccountName(userId, name);
+    await this.mock.setAccountName(userId, name);
   }
 
   async setAccountEmail(userId: UserId, email: string): Promise<void> {
-    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    this.mock.setAccountEmail(userId, email);
+    await this.mock.setAccountEmail(userId, email);
   }
 
   async setAccountStatus(userId: UserId, status: AuthenticationStatus): Promise<void> {
-    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    this.mock.setAccountStatus(userId, status);
+    await this.mock.setAccountStatus(userId, status);
   }
 
   async switchAccount(userId: UserId): Promise<void> {
-    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    this.mock.switchAccount(userId);
+    await this.mock.switchAccount(userId);
   }
 }

@@ -1,5 +1,10 @@
+/**
+ * need to update test environment so structuredClone works appropriately
+ * @jest-environment ../shared/test.environment.ts
+ */
 import { of } from "rxjs";
 
+import { trackEmissions } from "../../../../spec";
 import { FakeAccountService, mockAccountServiceWith } from "../../../../spec/fake-account-service";
 import {
   FakeActiveUserStateProvider,
@@ -7,6 +12,7 @@ import {
   FakeGlobalStateProvider,
   FakeSingleUserStateProvider,
 } from "../../../../spec/fake-state-provider";
+import { AuthenticationStatus } from "../../../auth/enums/authentication-status";
 import { UserId } from "../../../types/guid";
 import { DeriveDefinition } from "../derive-definition";
 import { KeyDefinition } from "../key-definition";
@@ -44,30 +50,46 @@ describe("DefaultStateProvider", () => {
   });
 
   describe("getUserState$", () => {
+    const accountInfo = { email: "email", name: "name", status: AuthenticationStatus.LoggedOut };
     const keyDefinition = new KeyDefinition<string>(new StateDefinition("test", "disk"), "test", {
       deserializer: (s) => s,
     });
 
-    it("should get the state for the active user if no userId is provided", () => {
-      const state = sut.getUserState$(keyDefinition);
-      expect(state).toBe(activeUserStateProvider.get(keyDefinition).state$);
+    it("should follow the specified user if userId is provided", async () => {
+      const state = singleUserStateProvider.getFake(userId, keyDefinition);
+      state.nextState("value");
+      const emissions = trackEmissions(sut.getUserState$(keyDefinition, userId));
+
+      state.nextState("value2");
+      state.nextState("value3");
+
+      expect(emissions).toEqual(["value", "value2", "value3"]);
     });
 
-    it("should not return state for a single user if no userId is provided", () => {
-      const state = sut.getUserState$(keyDefinition);
-      expect(state).not.toBe(singleUserStateProvider.get(userId, keyDefinition).state$);
+    it("should follow the current active user if no userId is provided", async () => {
+      accountService.activeAccountSubject.next({ id: userId, ...accountInfo });
+      const state = singleUserStateProvider.getFake(userId, keyDefinition);
+      state.nextState("value");
+      const emissions = trackEmissions(sut.getUserState$(keyDefinition));
+
+      state.nextState("value2");
+      state.nextState("value3");
+
+      expect(emissions).toEqual(["value", "value2", "value3"]);
     });
 
-    it("should get the state for the provided userId", () => {
-      const userId = "user" as UserId;
-      const state = sut.getUserState$(keyDefinition, userId);
-      expect(state).toBe(singleUserStateProvider.get(userId, keyDefinition).state$);
-    });
+    it("should continue to follow the state of the user that was active when called, even if active user changes", async () => {
+      const state = singleUserStateProvider.getFake(userId, keyDefinition);
+      state.nextState("value");
+      const emissions = trackEmissions(sut.getUserState$(keyDefinition));
 
-    it("should not get the active user state if userId is provided", () => {
-      const userId = "user" as UserId;
-      const state = sut.getUserState$(keyDefinition, userId);
-      expect(state).not.toBe(activeUserStateProvider.get(keyDefinition).state$);
+      accountService.activeAccountSubject.next({ id: "newUserId" as UserId, ...accountInfo });
+      const newUserEmissions = trackEmissions(sut.getUserState$(keyDefinition));
+      state.nextState("value2");
+      state.nextState("value3");
+
+      expect(emissions).toEqual(["value", "value2", "value3"]);
+      expect(newUserEmissions).toEqual([null]);
     });
   });
 

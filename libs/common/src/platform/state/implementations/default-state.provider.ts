@@ -1,4 +1,4 @@
-import { Observable } from "rxjs";
+import { Observable, switchMap, take } from "rxjs";
 
 import { UserId } from "../../../types/guid";
 import { DerivedStateDependencies } from "../../../types/state";
@@ -25,7 +25,10 @@ export class DefaultStateProvider implements StateProvider {
     if (userId) {
       return this.getUser<T>(userId, keyDefinition).state$;
     } else {
-      return this.getActive<T>(keyDefinition).state$;
+      return this.activeUserId$.pipe(
+        take(1),
+        switchMap((userId) => this.getUser<T>(userId, keyDefinition).state$),
+      );
     }
   }
 
