@@ -11,8 +11,8 @@ import { VaultFilterComponent as BaseVaultFilterComponent } from "../../individu
 import { VaultFilterService } from "../../individual-vault/vault-filter/services/abstractions/vault-filter.service";
 import {
   VaultFilterList,
-  VaultFilterType,
   VaultFilterSection,
+  VaultFilterType,
 } from "../../individual-vault/vault-filter/shared/models/vault-filter-section.type";
 import { CollectionFilter } from "../../individual-vault/vault-filter/shared/models/vault-filter.type";
 

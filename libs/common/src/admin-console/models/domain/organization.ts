@@ -196,6 +196,20 @@ export class Organization {
     return this.canEditAnyCollection;
   }
 
+  canEditAllCiphers(flexibleCollectionsV1Enabled: boolean) {
+    // Before Flexible Collections, anyone with editAnyCollection permission could edit all ciphers
+    if (!flexibleCollectionsV1Enabled) {
+      return this.canEditAnyCollection;
+    }
+    // Post Flexible Collections V1, the allowAdminAccessToAllCollectionItems flag can restrict admins
+    // Providers are not affected by allowAdminAccessToAllCollectionItems flag
+    // note: canEditAnyCollection may change in the V1 to also ignore the allowAdminAccessToAllCollectionItems flag
+    return (
+      this.isProviderUser ||
+      (this.allowAdminAccessToAllCollectionItems && this.canEditAnyCollection)
+    );
+  }
+
   get canDeleteAnyCollection() {
     return this.isAdmin || this.permissions.deleteAnyCollection;
   }

@@ -27,6 +27,11 @@ export abstract class CipherService {
     defaultMatch?: UriMatchType,
   ) => Promise<CipherView[]>;
   getAllFromApiForOrganization: (organizationId: string) => Promise<CipherView[]>;
+  /**
+   * Gets ciphers belonging to the specified organization that the user has explicit collection level access to.
+   * Ciphers that are not assigned to any collections are only included for users with admin access.
+   */
+  getManyFromApiForOrganization: (organizationId: string) => Promise<CipherView[]>;
   getLastUsedForUrl: (url: string, autofillOnPageLoad: boolean) => Promise<CipherView>;
   getLastLaunchedForUrl: (url: string, autofillOnPageLoad: boolean) => Promise<CipherView>;
   getNextCipherForUrl: (url: string) => Promise<CipherView>;

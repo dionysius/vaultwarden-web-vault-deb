@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 
 import { ButtonModule, NoItemsModule, svgIcon } from "@bitwarden/components";
 
@@ -13,9 +13,10 @@ const icon = svgIcon`<svg xmlns="http://www.w3.org/2000/svg" width="140" height=
   selector: "collection-access-restricted",
   standalone: true,
   imports: [SharedModule, ButtonModule, NoItemsModule],
-  template: `<bit-no-items [icon]="icon">
+  template: `<bit-no-items [icon]="icon" class="tw-mt-2 tw-block">
     <span slot="title" class="tw-mt-4 tw-block">{{ "collectionAccessRestricted" | i18n }}</span>
     <button
+      *ngIf="canEdit"
       slot="button"
       bitButton
       (click)="editInfoClicked.emit()"
@@ -28,6 +29,8 @@ const icon = svgIcon`<svg xmlns="http://www.w3.org/2000/svg" width="140" height=
 })
 export class CollectionAccessRestrictedComponent {
   protected icon = icon;
+
+  @Input() canEdit = false;
 
   @Output() editInfoClicked = new EventEmitter<void>();
 }
