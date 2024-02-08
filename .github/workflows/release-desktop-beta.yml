@@ -637,7 +637,7 @@ jobs:
 
       - name: Download artifact from hotfix-rc
         if: github.ref == 'refs/heads/hotfix-rc'
-        uses: dawidd6/action-download-artifact@268677152d06ba59fcec7a7f0b5d961b6ccd7e1e # v2.28.0
+        uses: dawidd6/action-download-artifact@e7466d1a7587ed14867642c2ca74b5bcc1e19a2d # v3.0.0
         with:
           workflow: build-browser.yml
           workflow_conclusion: success
@@ -646,7 +646,7 @@ jobs:
 
       - name: Download artifact from rc
         if: github.ref == 'refs/heads/rc'
-        uses: dawidd6/action-download-artifact@268677152d06ba59fcec7a7f0b5d961b6ccd7e1e # v2.28.0
+        uses: dawidd6/action-download-artifact@e7466d1a7587ed14867642c2ca74b5bcc1e19a2d # v3.0.0
         with:
           workflow: build-browser.yml
           workflow_conclusion: success
@@ -655,7 +655,7 @@ jobs:
 
       - name: Download artifacts from main
         if: ${{ github.ref != 'refs/heads/rc' && github.ref != 'refs/heads/hotfix-rc' }}
-        uses: dawidd6/action-download-artifact@268677152d06ba59fcec7a7f0b5d961b6ccd7e1e # v2.28.0
+        uses: dawidd6/action-download-artifact@e7466d1a7587ed14867642c2ca74b5bcc1e19a2d # v3.0.0
         with:
           workflow: build-browser.yml
           workflow_conclusion: success
@@ -833,7 +833,7 @@ jobs:
 
       - name: Download artifact from hotfix-rc
         if: github.ref == 'refs/heads/hotfix-rc'
-        uses: dawidd6/action-download-artifact@268677152d06ba59fcec7a7f0b5d961b6ccd7e1e # v2.28.0
+        uses: dawidd6/action-download-artifact@e7466d1a7587ed14867642c2ca74b5bcc1e19a2d # v3.0.0
         with:
           workflow: build-browser.yml
           workflow_conclusion: success
@@ -842,7 +842,7 @@ jobs:
 
       - name: Download artifact from rc
         if: github.ref == 'refs/heads/rc'
-        uses: dawidd6/action-download-artifact@268677152d06ba59fcec7a7f0b5d961b6ccd7e1e # v2.28.0
+        uses: dawidd6/action-download-artifact@e7466d1a7587ed14867642c2ca74b5bcc1e19a2d # v3.0.0
         with:
           workflow: build-browser.yml
           workflow_conclusion: success
@@ -851,7 +851,7 @@ jobs:
 
       - name: Download artifact from main
         if: ${{ github.ref != 'refs/heads/rc' && github.ref != 'refs/heads/hotfix-rc' }}
-        uses: dawidd6/action-download-artifact@268677152d06ba59fcec7a7f0b5d961b6ccd7e1e # v2.28.0
+        uses: dawidd6/action-download-artifact@e7466d1a7587ed14867642c2ca74b5bcc1e19a2d # v3.0.0
         with:
           workflow: build-browser.yml
           workflow_conclusion: success
