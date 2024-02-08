@@ -456,7 +456,7 @@ jobs:
 
   macos-build:
     name: MacOS Build
-    runs-on: macos-11
+    runs-on: macos-13
     needs:
       - setup
     env:
@@ -600,7 +600,7 @@ jobs:
 
   macos-package-github:
     name: MacOS Package GitHub Release Assets
-    runs-on: macos-11
+    runs-on: macos-13
     needs:
       - browser-build
       - macos-build
@@ -791,7 +791,7 @@ jobs:
 
   macos-package-mas:
     name: MacOS Package Prod Release Asset
-    runs-on: macos-11
+    runs-on: macos-13
     needs:
       - browser-build
       - macos-build
@@ -974,7 +974,7 @@ jobs:
   macos-package-dev:
     name: MacOS Package Dev Release Asset
     if: false  # We need to look into how code signing works for dev
-    runs-on: macos-11
+    runs-on: macos-13
     needs:
       - browser-build
       - macos-build
