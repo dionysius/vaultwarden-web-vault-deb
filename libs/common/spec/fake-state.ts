@@ -170,7 +170,7 @@ export class FakeActiveUserState<T> implements ActiveUserState<T> {
   async update<TCombine>(
     configureState: (state: T, dependency: TCombine) => T,
     options?: StateUpdateOptions<T, TCombine>,
-  ): Promise<T> {
+  ): Promise<[UserId, T]> {
     options = populateOptionsWithDefault(options);
     const current = await firstValueFrom(this.state$.pipe(timeout(options.msTimeout)));
     const combinedDependencies =
@@ -178,12 +178,12 @@ export class FakeActiveUserState<T> implements ActiveUserState<T> {
         ? await firstValueFrom(options.combineLatestWith.pipe(timeout(options.msTimeout)))
         : null;
     if (!options.shouldUpdate(current, combinedDependencies)) {
-      return current;
+      return [this.userId, current];
     }
     const newState = configureState(current, combinedDependencies);
     this.stateSubject.next([this.userId, newState]);
     this.nextMock([this.userId, newState]);
-    return newState;
+    return [this.userId, newState];
   }
 
   updateMock = this.update as jest.MockedFunction<typeof this.update>;

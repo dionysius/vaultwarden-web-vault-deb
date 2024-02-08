@@ -36,7 +36,11 @@ export abstract class StateProvider {
    * @param value - The value to set the state to.
    * @param userId - The userId for which you want to set the state for. If not provided, the state for the currently active user will be set.
    */
-  setUserState: <T>(keyDefinition: KeyDefinition<T>, value: T, userId?: UserId) => Promise<void>;
+  setUserState: <T>(
+    keyDefinition: KeyDefinition<T>,
+    value: T,
+    userId?: UserId,
+  ) => Promise<[UserId, T]>;
   /** @see{@link ActiveUserStateProvider.get} */
   getActive: <T>(keyDefinition: KeyDefinition<T>) => ActiveUserState<T>;
   /** @see{@link SingleUserStateProvider.get} */

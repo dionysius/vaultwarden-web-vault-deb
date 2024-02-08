@@ -31,7 +31,7 @@ const FAKE = Symbol("fake");
 
 export class DefaultActiveUserState<T> implements ActiveUserState<T> {
   [activeMarker]: true;
-  private updatePromise: Promise<T> | null = null;
+  private updatePromise: Promise<[UserId, T]> | null = null;
 
   private activeUserId$: Observable<UserId | null>;
 
@@ -120,15 +120,15 @@ export class DefaultActiveUserState<T> implements ActiveUserState<T> {
   async update<TCombine>(
     configureState: (state: T, dependency: TCombine) => T,
     options: StateUpdateOptions<T, TCombine> = {},
-  ): Promise<T> {
+  ): Promise<[UserId, T]> {
     options = populateOptionsWithDefault(options);
     try {
       if (this.updatePromise != null) {
         await this.updatePromise;
       }
       this.updatePromise = this.internalUpdate(configureState, options);
-      const newState = await this.updatePromise;
-      return newState;
+      const [userId, newState] = await this.updatePromise;
+      return [userId, newState];
     } finally {
       this.updatePromise = null;
     }
@@ -137,20 +137,20 @@ export class DefaultActiveUserState<T> implements ActiveUserState<T> {
   private async internalUpdate<TCombine>(
     configureState: (state: T, dependency: TCombine) => T,
     options: StateUpdateOptions<T, TCombine>,
-  ) {
-    const [key, currentState] = await this.getStateForUpdate();
+  ): Promise<[UserId, T]> {
+    const [userId, key, currentState] = await this.getStateForUpdate();
     const combinedDependencies =
       options.combineLatestWith != null
         ? await firstValueFrom(options.combineLatestWith.pipe(timeout(options.msTimeout)))
         : null;
 
     if (!options.shouldUpdate(currentState, combinedDependencies)) {
-      return currentState;
+      return [userId, currentState];
     }
 
     const newState = configureState(currentState, combinedDependencies);
     await this.saveToStorage(key, newState);
-    return newState;
+    return [userId, newState];
   }
 
   /** For use in update methods, does not wait for update to complete before yielding state.
@@ -170,6 +170,7 @@ export class DefaultActiveUserState<T> implements ActiveUserState<T> {
     }
     const fullKey = userKeyBuilder(userId, this.keyDefinition);
     return [
+      userId,
       fullKey,
       await getStoredValue(fullKey, this.chosenStorageLocation, this.keyDefinition.deserializer),
     ] as const;

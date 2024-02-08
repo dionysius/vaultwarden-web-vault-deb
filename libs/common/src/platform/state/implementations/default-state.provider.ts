@@ -32,11 +32,15 @@ export class DefaultStateProvider implements StateProvider {
     }
   }
 
-  async setUserState<T>(keyDefinition: KeyDefinition<T>, value: T, userId?: UserId): Promise<void> {
+  async setUserState<T>(
+    keyDefinition: KeyDefinition<T>,
+    value: T,
+    userId?: UserId,
+  ): Promise<[UserId, T]> {
     if (userId) {
-      await this.getUser<T>(userId, keyDefinition).update(() => value);
+      return [userId, await this.getUser<T>(userId, keyDefinition).update(() => value)];
     } else {
-      await this.getActive<T>(keyDefinition).update(() => value);
+      return await this.getActive<T>(keyDefinition).update(() => value);
     }
   }
 

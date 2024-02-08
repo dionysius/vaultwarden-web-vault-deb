@@ -266,12 +266,13 @@ describe("DefaultActiveUserState", () => {
     });
 
     it("should save on update", async () => {
-      const result = await userState.update((state, dependencies) => {
+      const [setUserId, result] = await userState.update((state, dependencies) => {
         return newData;
       });
 
       expect(diskStorageService.mock.save).toHaveBeenCalledTimes(1);
       expect(result).toEqual(newData);
+      expect(setUserId).toEqual("00000000-0000-1000-a000-000000000001");
     });
 
     it("should emit once per update", async () => {
@@ -316,7 +317,7 @@ describe("DefaultActiveUserState", () => {
       const emissions = trackEmissions(userState.state$);
       await awaitAsync(); // Need to await for the initial value to be emitted
 
-      const result = await userState.update(
+      const [userIdResult, result] = await userState.update(
         (state, dependencies) => {
           return newData;
         },
@@ -328,6 +329,7 @@ describe("DefaultActiveUserState", () => {
       await awaitAsync();
 
       expect(diskStorageService.mock.save).not.toHaveBeenCalled();
+      expect(userIdResult).toEqual("00000000-0000-1000-a000-000000000001");
       expect(result).toBeNull();
       expect(emissions).toEqual([null]);
     });
@@ -422,12 +424,13 @@ describe("DefaultActiveUserState", () => {
         await originalSave(key, obj);
       });
 
-      const val = await userState.update(() => {
+      const [userIdResult, val] = await userState.update(() => {
         return newData;
       });
 
       await awaitAsync(10);
 
+      expect(userIdResult).toEqual(userId);
       expect(val).toEqual(newData);
       expect(emissions).toEqual([initialData, newData]);
       expect(emissions2).toEqual([initialData, newData]);
@@ -447,7 +450,7 @@ describe("DefaultActiveUserState", () => {
       expect(emissions).toEqual([initialData]);
 
       let emissions2: TestState[];
-      const val = await userState.update(
+      const [userIdResult, val] = await userState.update(
         (state) => {
           return newData;
         },
@@ -461,6 +464,7 @@ describe("DefaultActiveUserState", () => {
 
       await awaitAsync();
 
+      expect(userIdResult).toEqual(userId);
       expect(val).toEqual(initialData);
       expect(emissions).toEqual([initialData]);
 
@@ -497,10 +501,11 @@ describe("DefaultActiveUserState", () => {
 
     test("updates with FAKE_DEFAULT initial value should resolve correctly", async () => {
       expect(diskStorageService["updatesSubject"]["observers"]).toHaveLength(0);
-      const val = await userState.update((state) => {
+      const [userIdResult, val] = await userState.update((state) => {
         return newData;
       });
 
+      expect(userIdResult).toEqual(userId);
       expect(val).toEqual(newData);
       const call = diskStorageService.mock.save.mock.calls[0];
       expect(call[0]).toEqual(`user_${userId}_fake_fake`);
