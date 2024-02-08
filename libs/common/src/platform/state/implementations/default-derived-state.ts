@@ -34,7 +34,7 @@ export class DefaultDerivedState<TFrom, TTo, TDeps extends DerivedStateDependenc
           derivedStateOrPromise = await derivedStateOrPromise;
         }
         const derivedState = derivedStateOrPromise;
-        await this.memoryStorage.save(this.storageKey, derivedState);
+        await this.storeValue(derivedState);
         return derivedState;
       }),
     );
@@ -58,8 +58,12 @@ export class DefaultDerivedState<TFrom, TTo, TDeps extends DerivedStateDependenc
   }
 
   async forceValue(value: TTo) {
-    await this.memoryStorage.save(this.storageKey, value);
+    await this.storeValue(value);
     this.forcedValueSubject.next(value);
     return value;
+  }
+
+  private storeValue(value: TTo) {
+    return this.memoryStorage.save(this.storageKey, { derived: true, value });
   }
 }

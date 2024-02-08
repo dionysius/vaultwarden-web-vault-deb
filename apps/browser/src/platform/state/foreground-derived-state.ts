@@ -1,3 +1,4 @@
+import { NgZone } from "@angular/core";
 import {
   Observable,
   ReplaySubject,
@@ -5,36 +6,67 @@ import {
   filter,
   firstValueFrom,
   map,
+  merge,
+  of,
   share,
+  switchMap,
   tap,
   timer,
 } from "rxjs";
+import { Jsonify, JsonObject } from "type-fest";
 
+import {
+  AbstractStorageService,
+  ObservableStorageService,
+} from "@bitwarden/common/platform/abstractions/storage.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { DeriveDefinition, DerivedState } from "@bitwarden/common/platform/state";
 import { DerivedStateDependencies } from "@bitwarden/common/types/state";
 
 import { fromChromeEvent } from "../browser/from-chrome-event";
+import { runInsideAngular } from "../browser/run-inside-angular.operator";
 
 export class ForegroundDerivedState<TTo> implements DerivedState<TTo> {
+  private storageKey: string;
   private port: chrome.runtime.Port;
-  // For testing purposes
-  private replaySubject: ReplaySubject<TTo>;
   private backgroundResponses$: Observable<DerivedStateMessage>;
   state$: Observable<TTo>;
 
-  constructor(private deriveDefinition: DeriveDefinition<unknown, TTo, DerivedStateDependencies>) {
-    this.state$ = defer(() => this.initializePort()).pipe(
-      filter((message) => message.action === "nextState"),
-      map((message) => this.hydrateNext(message.data)),
-      share({
-        connector: () => {
-          this.replaySubject = new ReplaySubject<TTo>(1);
-          return this.replaySubject;
-        },
-        resetOnRefCountZero: () =>
-          timer(this.deriveDefinition.cleanupDelayMs).pipe(tap(() => this.tearDown())),
+  constructor(
+    private deriveDefinition: DeriveDefinition<unknown, TTo, DerivedStateDependencies>,
+    private memoryStorage: AbstractStorageService & ObservableStorageService,
+    private ngZone: NgZone,
+  ) {
+    this.storageKey = deriveDefinition.storageKey;
+
+    const initialStorageGet$ = defer(() => {
+      return this.getStoredValue();
+    }).pipe(
+      filter((s) => s.derived),
+      map((s) => s.value),
+    );
+
+    const latestStorage$ = this.memoryStorage.updates$.pipe(
+      filter((s) => s.key === this.storageKey),
+      switchMap(async (storageUpdate) => {
+        if (storageUpdate.updateType === "remove") {
+          return null;
+        }
+
+        return await this.getStoredValue();
       }),
+      filter((s) => s.derived),
+      map((s) => s.value),
+    );
+
+    this.state$ = defer(() => of(this.initializePort())).pipe(
+      switchMap(() => merge(initialStorageGet$, latestStorage$)),
+      share({
+        connector: () => new ReplaySubject<TTo>(1),
+        resetOnRefCountZero: () =>
+          timer(this.deriveDefinition.cleanupDelayMs).pipe(tap(() => this.tearDownPort())),
+      }),
+      runInsideAngular(this.ngZone),
     );
   }
 
@@ -51,7 +83,7 @@ export class ForegroundDerivedState<TTo> implements DerivedState<TTo> {
     return value;
   }
 
-  private initializePort(): Observable<DerivedStateMessage> {
+  private initializePort() {
     if (this.port != null) {
       return;
     }
@@ -88,11 +120,6 @@ export class ForegroundDerivedState<TTo> implements DerivedState<TTo> {
     });
   }
 
-  private hydrateNext(value: string): TTo {
-    const jsonObj = JSON.parse(value);
-    return this.deriveDefinition.deserialize(jsonObj);
-  }
-
   private tearDownPort() {
     if (this.port == null) {
       return;
@@ -103,8 +130,27 @@ export class ForegroundDerivedState<TTo> implements DerivedState<TTo> {
     this.backgroundResponses$ = null;
   }
 
-  private tearDown() {
-    this.tearDownPort();
-    this.replaySubject.complete();
+  protected async getStoredValue(): Promise<{ derived: boolean; value: TTo | null }> {
+    if (this.memoryStorage.valuesRequireDeserialization) {
+      const storedJson = await this.memoryStorage.get<
+        Jsonify<{ derived: true; value: JsonObject }>
+      >(this.storageKey);
+
+      if (!storedJson?.derived) {
+        return { derived: false, value: null };
+      }
+
+      const value = this.deriveDefinition.deserialize(storedJson.value as any);
+
+      return { derived: true, value };
+    } else {
+      const stored = await this.memoryStorage.get<{ derived: true; value: TTo }>(this.storageKey);
+
+      if (!stored?.derived) {
+        return { derived: false, value: null };
+      }
+
+      return { derived: true, value: stored.value };
+    }
   }
 }

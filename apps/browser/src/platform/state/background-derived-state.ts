@@ -1,11 +1,10 @@
-import { Observable, Subject, Subscription } from "rxjs";
+import { Observable, Subscription } from "rxjs";
 import { Jsonify } from "type-fest";
 
 import {
   AbstractStorageService,
   ObservableStorageService,
 } from "@bitwarden/common/platform/abstractions/storage.service";
-import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { DeriveDefinition } from "@bitwarden/common/platform/state";
 // eslint-disable-next-line import/no-restricted-paths -- extending this class for this client
 import { DefaultDerivedState } from "@bitwarden/common/platform/state/implementations/default-derived-state";
@@ -18,10 +17,7 @@ export class BackgroundDerivedState<
   TTo,
   TDeps extends DerivedStateDependencies,
 > extends DefaultDerivedState<TFrom, TTo, TDeps> {
-  private portSubscriptions: Map<
-    chrome.runtime.Port,
-    { subscription: Subscription; delaySubject: Subject<void> }
-  > = new Map();
+  private portSubscriptions: Map<chrome.runtime.Port, Subscription> = new Map();
 
   constructor(
     parentState$: Observable<TFrom>,
@@ -40,34 +36,15 @@ export class BackgroundDerivedState<
 
       const listenerCallback = this.onMessageFromForeground.bind(this);
       port.onDisconnect.addListener(() => {
-        const { subscription, delaySubject } = this.portSubscriptions.get(port) ?? {
-          subscription: null,
-          delaySubject: null,
-        };
-        subscription?.unsubscribe();
-        delaySubject?.complete();
+        this.portSubscriptions.get(port)?.unsubscribe();
         this.portSubscriptions.delete(port);
         port.onMessage.removeListener(listenerCallback);
       });
       port.onMessage.addListener(listenerCallback);
 
-      const delaySubject = new Subject<void>();
-      const stateSubscription = this.state$.subscribe((state) => {
-        // delay to allow the foreground to connect. This may just be needed for testing
-        setTimeout(() => {
-          // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-          // eslint-disable-next-line @typescript-eslint/no-floating-promises
-          this.sendNewMessage(
-            {
-              action: "nextState",
-              data: JSON.stringify(state),
-            },
-            port,
-          );
-        }, 0);
-      });
+      const stateSubscription = this.state$.subscribe();
 
-      this.portSubscriptions.set(port, { subscription: stateSubscription, delaySubject });
+      this.portSubscriptions.set(port, stateSubscription);
     });
   }
 
@@ -91,22 +68,6 @@ export class BackgroundDerivedState<
         break;
       }
     }
-  }
-
-  private async sendNewMessage(
-    message: Omit<DerivedStateMessage, "originator" | "id">,
-    port: chrome.runtime.Port,
-  ) {
-    const id = Utils.newGuid();
-    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    this.sendMessage(
-      {
-        ...message,
-        id: id,
-      },
-      port,
-    );
   }
 
   private async sendResponse(
