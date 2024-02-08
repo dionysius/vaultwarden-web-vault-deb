@@ -424,14 +424,14 @@ jobs:
 
       - name: Cache Build
         id: build-cache
-        uses: actions/cache@e12d46a63a90f2fae62d114769bbf2a179198b5c # v3.3.3
+        uses: actions/cache@13aacd865c20de90d75de3b17ebe84f7a17d57d2 # v4.0.0
         with:
           path: apps/desktop/build
           key: ${{ runner.os }}-${{ github.run_id }}-build
 
       - name: Cache Safari
         id: safari-cache
-        uses: actions/cache@e12d46a63a90f2fae62d114769bbf2a179198b5c # v3.3.3
+        uses: actions/cache@13aacd865c20de90d75de3b17ebe84f7a17d57d2 # v4.0.0
         with:
           path: apps/browser/dist/Safari
           key: ${{ runner.os }}-${{ github.run_id }}-safari-extension
@@ -547,14 +547,14 @@ jobs:
 
       - name: Get Build Cache
         id: build-cache
-        uses: actions/cache@e12d46a63a90f2fae62d114769bbf2a179198b5c # v3.3.3
+        uses: actions/cache@13aacd865c20de90d75de3b17ebe84f7a17d57d2 # v4.0.0
         with:
           path: apps/desktop/build
           key: ${{ runner.os }}-${{ github.run_id }}-build
 
       - name: Setup Safari Cache
         id: safari-cache
-        uses: actions/cache@e12d46a63a90f2fae62d114769bbf2a179198b5c # v3.3.3
+        uses: actions/cache@13aacd865c20de90d75de3b17ebe84f7a17d57d2 # v4.0.0
         with:
           path: apps/browser/dist/Safari
           key: ${{ runner.os }}-${{ github.run_id }}-safari-extension
@@ -743,14 +743,14 @@ jobs:
 
       - name: Get Build Cache
         id: build-cache
-        uses: actions/cache@e12d46a63a90f2fae62d114769bbf2a179198b5c # v3.3.3
+        uses: actions/cache@13aacd865c20de90d75de3b17ebe84f7a17d57d2 # v4.0.0
         with:
           path: apps/desktop/build
           key: ${{ runner.os }}-${{ github.run_id }}-build
 
       - name: Setup Safari Cache
         id: safari-cache
-        uses: actions/cache@e12d46a63a90f2fae62d114769bbf2a179198b5c # v3.3.3
+        uses: actions/cache@13aacd865c20de90d75de3b17ebe84f7a17d57d2 # v4.0.0
         with:
           path: apps/browser/dist/Safari
           key: ${{ runner.os }}-${{ github.run_id }}-safari-extension
