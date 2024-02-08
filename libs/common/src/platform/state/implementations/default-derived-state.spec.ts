@@ -144,6 +144,42 @@ describe("DefaultDerivedState", () => {
       expect(parentState$.observed).toBe(false);
     });
 
+    it("should clear state after cleanup", async () => {
+      const subscription = sut.state$.subscribe();
+      parentState$.next(newDate);
+      await awaitAsync();
+
+      expect(memoryStorage.internalStore[deriveDefinition.buildCacheKey()]).toEqual(
+        new Date(newDate),
+      );
+
+      subscription.unsubscribe();
+      // Wait for cleanup
+      await awaitAsync(cleanupDelayMs * 2);
+
+      expect(memoryStorage.internalStore[deriveDefinition.buildCacheKey()]).toBeUndefined();
+    });
+
+    it("should not clear state after cleanup if clearOnCleanup is false", async () => {
+      deriveDefinition.options.clearOnCleanup = false;
+
+      const subscription = sut.state$.subscribe();
+      parentState$.next(newDate);
+      await awaitAsync();
+
+      expect(memoryStorage.internalStore[deriveDefinition.buildCacheKey()]).toEqual(
+        new Date(newDate),
+      );
+
+      subscription.unsubscribe();
+      // Wait for cleanup
+      await awaitAsync(cleanupDelayMs * 2);
+
+      expect(memoryStorage.internalStore[deriveDefinition.buildCacheKey()]).toEqual(
+        new Date(newDate),
+      );
+    });
+
     it("should not cleanup if there are still subscribers", async () => {
       const subscription1 = sut.state$.subscribe();
       const sub2Emissions: Date[] = [];

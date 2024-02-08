@@ -48,6 +48,10 @@ type DeriveDefinitionOptions<TFrom, TTo, TDeps extends DerivedStateDependencies 
    * Defaults to 1000ms.
    */
   cleanupDelayMs?: number;
+  /**
+   * Whether or not to clear the derived state when cleanup occurs. Defaults to true.
+   */
+  clearOnCleanup?: boolean;
 };
 
 /**
@@ -115,6 +119,10 @@ export class DeriveDefinition<TFrom, TTo, TDeps extends DerivedStateDependencies
 
   get cleanupDelayMs() {
     return this.options.cleanupDelayMs < 0 ? 0 : this.options.cleanupDelayMs ?? 1000;
+  }
+
+  get clearOnCleanup() {
+    return this.options.clearOnCleanup ?? true;
   }
 
   buildCacheKey(): string {
