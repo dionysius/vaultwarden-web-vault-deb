@@ -185,7 +185,7 @@ jobs:
         working-directory: browser-source/apps/browser
 
       - name: Upload Opera artifact
-        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32 # v3.1.3
+        uses: actions/upload-artifact@5d5d22a31266ced268874388b861e4b58bb5c2f3 # v4.3.1
         with:
           name: dist-opera-${{ env._BUILD_NUMBER }}.zip
           path: browser-source/apps/browser/dist/dist-opera.zip
@@ -199,7 +199,7 @@ jobs:
       #     if-no-files-found: error
 
       - name: Upload Chrome artifact
-        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32 # v3.1.3
+        uses: actions/upload-artifact@5d5d22a31266ced268874388b861e4b58bb5c2f3 # v4.3.1
         with:
           name: dist-chrome-${{ env._BUILD_NUMBER }}.zip
           path: browser-source/apps/browser/dist/dist-chrome.zip
@@ -213,14 +213,14 @@ jobs:
       #     if-no-files-found: error
 
       - name: Upload Firefox artifact
-        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32 # v3.1.3
+        uses: actions/upload-artifact@5d5d22a31266ced268874388b861e4b58bb5c2f3 # v4.3.1
         with:
           name: dist-firefox-${{ env._BUILD_NUMBER }}.zip
           path: browser-source/apps/browser/dist/dist-firefox.zip
           if-no-files-found: error
 
       - name: Upload Edge artifact
-        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32 # v3.1.3
+        uses: actions/upload-artifact@5d5d22a31266ced268874388b861e4b58bb5c2f3 # v4.3.1
         with:
           name: dist-edge-${{ env._BUILD_NUMBER }}.zip
           path: browser-source/apps/browser/dist/dist-edge.zip
@@ -234,7 +234,7 @@ jobs:
       #     if-no-files-found: error
 
       - name: Upload browser source
-        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32 # v3.1.3
+        uses: actions/upload-artifact@5d5d22a31266ced268874388b861e4b58bb5c2f3 # v4.3.1
         with:
           name: browser-source-${{ env._BUILD_NUMBER }}.zip
           path: browser-source.zip
@@ -242,7 +242,7 @@ jobs:
 
       - name: Upload coverage artifact
         if: false
-        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32 # v3.1.3
+        uses: actions/upload-artifact@5d5d22a31266ced268874388b861e4b58bb5c2f3 # v4.3.1
         with:
           name: coverage-${{ env._BUILD_NUMBER }}.zip
           path: browser-source/apps/browser/coverage/coverage-${{ env._BUILD_NUMBER }}.zip
@@ -343,7 +343,7 @@ jobs:
           ls -la
 
       - name: Upload Safari artifact
-        uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32 # v3.1.3
+        uses: actions/upload-artifact@5d5d22a31266ced268874388b861e4b58bb5c2f3 # v4.3.1
         with:
           name: dist-safari-${{ env._BUILD_NUMBER }}.zip
           path: apps/browser/dist/dist-safari.zip
