@@ -192,7 +192,12 @@ export class AccessSelectorComponent implements ControlValueAccessor, OnInit, On
   /**
    * Enable Flexible Collections changes (feature flag)
    */
-  @Input() flexibleCollectionsEnabled: boolean;
+  @Input() set flexibleCollectionsEnabled(value: boolean) {
+    this._flexibleCollectionsEnabled = value;
+    this.permissionList = getPermissionList(value);
+  }
+
+  private _flexibleCollectionsEnabled: boolean;
 
   constructor(
     private readonly formBuilder: FormBuilder,
@@ -257,7 +262,7 @@ export class AccessSelectorComponent implements ControlValueAccessor, OnInit, On
   }
 
   async ngOnInit() {
-    this.permissionList = getPermissionList(this.flexibleCollectionsEnabled);
+    this.permissionList = getPermissionList(this._flexibleCollectionsEnabled);
     // Watch the internal formArray for changes and propagate them
     this.selectionList.formArray.valueChanges.pipe(takeUntil(this.destroy$)).subscribe((v) => {
       if (!this.notifyOnChange || this.pauseChangeNotification) {
