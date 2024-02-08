@@ -160,7 +160,7 @@ jobs:
 
       - name: Login to Azure
         if: ${{ steps.download-artifacts.outcome == 'failure' }}
-        uses: Azure/login@92a5484dfaf04ca78a94597f4f19fea633851fa2 # v1.4.7
+        uses: Azure/login@e15b166166a8746d1a47596803bd8c1b595455cf # v1.6.0
         with:
           creds: ${{ secrets.AZURE_KV_CI_SERVICE_PRINCIPAL }}
 
@@ -197,7 +197,7 @@ jobs:
       _ENVIRONMENT_ARTIFACT: ${{ needs.setup.outputs.environment-artifact }}
     steps:
       - name: Create GitHub deployment
-        uses: chrnorm/deployment-action@d42cde7132fcec920de534fffc3be83794335c00 # v2.0.5
+        uses: chrnorm/deployment-action@55729fcebec3d284f60f5bcabbd8376437d696b1 # v2.0.7
         id: deployment
         with:
           token: '${{ secrets.GITHUB_TOKEN }}'
@@ -208,7 +208,7 @@ jobs:
           description: 'Deployment from branch/tag: ${{ inputs.branch-or-tag }}'
 
       - name: Login to Azure
-        uses: Azure/login@92a5484dfaf04ca78a94597f4f19fea633851fa2 # v1.4.7
+        uses: Azure/login@e15b166166a8746d1a47596803bd8c1b595455cf # v1.6.0
         with:
           creds: ${{ secrets[needs.setup.outputs.azure-login-creds] }}
 
