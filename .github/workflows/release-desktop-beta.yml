@@ -15,7 +15,7 @@ defaults:
 jobs:
   setup:
     name: Setup
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     outputs:
       release-version: ${{ steps.version.outputs.version }}
       release-channel: ${{ steps.release-channel.outputs.channel }}
@@ -114,7 +114,7 @@ jobs:
 
   linux:
     name: Linux Build
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     needs: setup
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.release-version }}
@@ -884,7 +884,7 @@ jobs:
 
   release:
     name: Release beta channel to S3
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     needs:
       - setup
       - linux
@@ -977,7 +977,7 @@ jobs:
 
   remove-branch:
     name: Remove branch
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     if: always()
     needs:
       - setup
