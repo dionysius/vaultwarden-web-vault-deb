@@ -25,6 +25,8 @@ on:
       - '!*.md'
       - '!*.txt'
       - '.github/workflows/build-web.yml'
+  release:
+    types: [published]
   workflow_dispatch:
     inputs:
       custom_tag_extension:
@@ -217,7 +219,7 @@ jobs:
           if [[ $(grep "pull" <<< "${GITHUB_REF}") ]]; then
             IMAGE_TAG=$(echo "${GITHUB_HEAD_REF}" | sed "s#/#-#g")
           else
-            IMAGE_TAG=$(echo "${GITHUB_REF:11}" | sed "s#/#-#g")
+            IMAGE_TAG=$(echo "${GITHUB_REF_NAME}" | sed "s#/#-#g")
           fi
 
           if [[ "$IMAGE_TAG" == "main" ]]; then
