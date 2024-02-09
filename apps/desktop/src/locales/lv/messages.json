@@ -107,7 +107,7 @@
     "message": "Apstiprinājuma kods (TOTP)"
   },
   "website": {
-    "message": "Tīmekļa vietne"
+    "message": "Tīmekļvietne"
   },
   "notes": {
     "message": "Piezīmes"
@@ -795,7 +795,7 @@
     "message": "Mainīt galveno paroli"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "Galveno paroli ir iespējams mainīt bitwarden.com tīmekļa glabātavā. Vai apmeklēt tīmekļa vietni?"
+    "message": "Galveno paroli ir iespējams mainīt bitwarden.com tīmekļa glabātavā. Vai tagad apmeklēt tīmekļvietni?"
   },
   "fingerprintPhrase": {
     "message": "Atpazīšanas vārdkopa",
@@ -843,7 +843,7 @@
     "message": "Nederīga galvenā parole"
   },
   "twoStepLoginConfirmation": {
-    "message": "Divpakāpju pieteikšanās padara kontu krietni drošāku, pieprasot apstiprināt pieteikšanos ar tādu citu ierīču vai pakalpojumu starpniecību kā drošības atslēga, autentificētāja lietotne, īsziņa, tālruņa zvans vai e-pasts. Divpakāpju pieteikšanos var iespējot bitwarden.com tīmekļa glabātavā. Vai apmeklēt tīmekļa vietni?"
+    "message": "Divpakāpju pieteikšanās padara kontu krietni drošāku, pieprasot apstiprināt pieteikšanos ar tādu citu ierīču vai pakalpojumu starpniecību kā drošības atslēga, autentificētāja lietotne, īsziņa, tālruņa zvans vai e-pasts. Divpakāpju pieteikšanos var iespējot bitwarden.com tīmekļa glabātavā. Vai tagad apmeklēt tīmekļvietni?"
   },
   "twoStepLogin": {
     "message": "Divpakāpju pieteikšanās"
@@ -914,7 +914,7 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "enableFavicon": {
-    "message": "Rādīt vietņu ikonas"
+    "message": "Rādīt tīmekļvietņu ikonas"
   },
   "faviconDesc": {
     "message": "Attēlot atpazīstamu attēlu pie katra pieteikšanās vienuma."
@@ -1066,7 +1066,7 @@
     "message": "Pārvaldīt dalību"
   },
   "premiumManageAlert": {
-    "message": "Dalību ir iespējams pārvaldīt bitwarden.com tīmekļa glabātavā. Vai apmeklēt tīmekļa vietni?"
+    "message": "Dalību ir iespējams pārvaldīt bitwarden.com tīmekļa glabātavā. Vai tagad apmeklēt tīmekļvietni?"
   },
   "premiumRefresh": {
     "message": "Atjaunot dalību"
@@ -1099,7 +1099,7 @@
     "message": "Iegādāties Premium"
   },
   "premiumPurchaseAlert": {
-    "message": "Premium dalību ir iespējams iegādāties bitwarden.com tīmekļa glabātavā. Vai apmeklēt tīmekļa vietni?"
+    "message": "Premium dalību ir iespējams iegādāties bitwarden.com tīmekļa glabātavā. Vai tagad apmeklēt tīmekļvietni?"
   },
   "premiumCurrentMember": {
     "message": "Jūs esat premium dalībnieks!"
@@ -1548,7 +1548,7 @@
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "verificationRequired": {
-    "message": "Verification required",
+    "message": "Nepieciešams apliecinājums",
     "description": "Default title for the user verification dialog."
   },
   "currentMasterPass": {
@@ -1877,40 +1877,40 @@
     "message": "Galvenā parole neatbilst vienam vai vairākiem apvienības nosacījumiem. Ir jāatjaunina galvenā parole, lai varētu piekļūt glabātavai. Turpinot notiks atteikšanās no pašreizējās sesijas, un būs nepieciešams pieteikties no jauna. Citās ierīcēs esošās sesijas var turpināt darboties līdz vienai stundai."
   },
   "tryAgain": {
-    "message": "Try again"
+    "message": "Jāmēģina vēlreiz"
   },
   "verificationRequiredForActionSetPinToContinue": {
-    "message": "Verification required for this action. Set a PIN to continue."
+    "message": "Šai darbībai ir nepieciešama apliecināšana. Jāiestata PIN, lai turpinātu."
   },
   "setPin": {
-    "message": "Set PIN"
+    "message": "Iestatīt PIN"
   },
   "verifyWithBiometrics": {
-    "message": "Verify with biometrics"
+    "message": "Apliecināt ar biometriju"
   },
   "awaitingConfirmation": {
-    "message": "Awaiting confirmation"
+    "message": "Gaida apstiprinājumu"
   },
   "couldNotCompleteBiometrics": {
-    "message": "Could not complete biometrics."
+    "message": "Nevarēja pabeigt biometriju."
   },
   "needADifferentMethod": {
-    "message": "Need a different method?"
+    "message": "Nepieciešams cits veids?"
   },
   "useMasterPassword": {
-    "message": "Use master password"
+    "message": "Izmantot galveno paroli"
   },
   "usePin": {
-    "message": "Use PIN"
+    "message": "Izmantot PIN"
   },
   "useBiometrics": {
-    "message": "Use biometrics"
+    "message": "Izmantot biometriju"
   },
   "enterVerificationCodeSentToEmail": {
-    "message": "Enter the verification code that was sent to your email."
+    "message": "Jāievada apliecinājuma kods, kas tika nosūtīts e-pastā."
   },
   "resendCode": {
-    "message": "Resend code"
+    "message": "Atkārtoti nosūtīt kodu"
   },
   "hours": {
     "message": "Stundas"
@@ -2091,7 +2091,7 @@
     "message": "Nejaušs vārds"
   },
   "websiteName": {
-    "message": "Tīmekļa vietnes nosaukums"
+    "message": "Tīmekļvietnes nosaukums"
   },
   "service": {
     "message": "Pakalpojums"
@@ -2606,13 +2606,13 @@
     "message": "Nepareizs lietotājvārds vai parole"
   },
   "incorrectPassword": {
-    "message": "Incorrect password"
+    "message": "Nepareiza parole"
   },
   "incorrectCode": {
-    "message": "Incorrect code"
+    "message": "Nepareizs kods"
   },
   "incorrectPin": {
-    "message": "Incorrect PIN"
+    "message": "Nepareizs PIN"
   },
   "multifactorAuthenticationFailed": {
     "message": "Daudzpakāpju pieteikšanās neizdevās"
