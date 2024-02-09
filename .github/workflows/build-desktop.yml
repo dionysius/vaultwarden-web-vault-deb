@@ -140,8 +140,7 @@ jobs:
   linux:
     name: Linux Build
     runs-on: ubuntu-22.04
-    needs:
-      - setup
+    needs: setup
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
       _NODE_VERSION: ${{ needs.setup.outputs.node_version }}
@@ -249,8 +248,7 @@ jobs:
   windows:
     name: Windows Build
     runs-on: windows-2022
-    needs:
-      - setup
+    needs: setup
     defaults:
       run:
         shell: pwsh
@@ -457,8 +455,7 @@ jobs:
   macos-build:
     name: MacOS Build
     runs-on: macos-13
-    needs:
-      - setup
+    needs: setup
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
       _NODE_VERSION: ${{ needs.setup.outputs.node_version }}
@@ -570,6 +567,7 @@ jobs:
           $package = Get-Content -Raw -Path electron-builder.json | ConvertFrom-Json
           $package | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER"
           $package | ConvertTo-Json -Depth 32 | Set-Content -Path electron-builder.json
+          "### MacOS build number: $env:BUILD_NUMBER" | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
 
       - name: Install Node dependencies
         run: npm ci
@@ -716,6 +714,7 @@ jobs:
           $package = Get-Content -Raw -Path electron-builder.json | ConvertFrom-Json
           $package | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER"
           $package | ConvertTo-Json -Depth 32 | Set-Content -Path electron-builder.json
+          "### MacOS GitHub build number: $env:BUILD_NUMBER" | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
 
       - name: Install Node dependencies
         run: npm ci
@@ -907,6 +906,7 @@ jobs:
           $package = Get-Content -Raw -Path electron-builder.json | ConvertFrom-Json
           $package | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER"
           $package | ConvertTo-Json -Depth 32 | Set-Content -Path electron-builder.json
+          "### MacOS App Store build number: $env:BUILD_NUMBER" | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
 
       - name: Install Node dependencies
         run: npm ci
@@ -1085,6 +1085,7 @@ jobs:
           $package = Get-Content -Raw -Path electron-builder.json | ConvertFrom-Json
           $package | Add-Member -MemberType NoteProperty -Name buildVersion -Value "$env:BUILD_NUMBER"
           $package | ConvertTo-Json -Depth 32 | Set-Content -Path electron-builder.json
+          "### MacOS Dev build number: $env:BUILD_NUMBER" | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
 
       - name: Install Node dependencies
         run: npm ci
