@@ -638,9 +638,6 @@
   "learnMoreAboutPasswordless": {
     "message": "Další informace o přihlášení bez hesla"
   },
-  "passkeyEnterMasterPassword": {
-    "message": "Zadejte Vaše hlavní heslo pro úpravu dvoufázového přihlášení."
-  },
   "creatingPasskeyLoading": {
     "message": "Vytváření přístupového klíče..."
   },
@@ -5917,6 +5914,15 @@
         "example": "4"
       }
     }
+  },
+  "launchDuoAndFollowStepsToFinishLoggingIn": {
+    "message": "Spusťte DUO a pro dokončení přihlášení postupujte podle kroků."
+  },
+  "duoRequiredByOrgForAccount": {
+    "message": "Pro Váš účet je vyžadováno dvoufázové přihlášení DUO."
+  },
+  "launchDuo": {
+    "message": "Spustit DUO"
   },
   "turnOn": {
     "message": "Zapnout"

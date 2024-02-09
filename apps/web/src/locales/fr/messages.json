@@ -638,9 +638,6 @@
   "learnMoreAboutPasswordless": {
     "message": "En savoir plus sur l'identification sans mots de passe"
   },
-  "passkeyEnterMasterPassword": {
-    "message": "Entrez votre mot de passe maître pour modifier la connexion avec les paramètres de clé d'accès."
-  },
   "creatingPasskeyLoading": {
     "message": "Création de la clé d'accès..."
   },
@@ -5917,6 +5914,15 @@
         "example": "4"
       }
     }
+  },
+  "launchDuoAndFollowStepsToFinishLoggingIn": {
+    "message": "Lancez DUO et suivez les étapes pour terminer la connexion."
+  },
+  "duoRequiredByOrgForAccount": {
+    "message": "L'authentification à double facteur DUO est requise pour votre compte."
+  },
+  "launchDuo": {
+    "message": "Lancer DUO"
   },
   "turnOn": {
     "message": "Activer"

@@ -638,9 +638,6 @@
   "learnMoreAboutPasswordless": {
     "message": "További információ a jelszó nélküli használatról"
   },
-  "passkeyEnterMasterPassword": {
-    "message": "Adjuk meg a mesterjelszót a belépési jelszó beállításainak módosításához."
-  },
   "creatingPasskeyLoading": {
     "message": "Jelszó létrehozása..."
   },
@@ -5917,6 +5914,15 @@
         "example": "4"
       }
     }
+  },
+  "launchDuoAndFollowStepsToFinishLoggingIn": {
+    "message": "Indítsuk el a DUO-t és kövessük a lépéseket a bejelentkezés befejezéséhez."
+  },
+  "duoRequiredByOrgForAccount": {
+    "message": "A fiókhoz kétlépcsős DUO bejelentkezés szükséges."
+  },
+  "launchDuo": {
+    "message": "DUO indítása"
   },
   "turnOn": {
     "message": "Bekapcsolás"

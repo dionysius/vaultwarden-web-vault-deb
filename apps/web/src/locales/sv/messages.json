@@ -638,9 +638,6 @@
   "learnMoreAboutPasswordless": {
     "message": "Läs mer om lösenordsfri inloggning"
   },
-  "passkeyEnterMasterPassword": {
-    "message": "Ange ditt huvudlösenord för att ändra inställningar för inloggning med nyckel."
-  },
   "creatingPasskeyLoading": {
     "message": "Skapar nyckel..."
   },
@@ -5917,6 +5914,15 @@
         "example": "4"
       }
     }
+  },
+  "launchDuoAndFollowStepsToFinishLoggingIn": {
+    "message": "Launch DUO and follow the steps to finish logging in."
+  },
+  "duoRequiredByOrgForAccount": {
+    "message": "DUO two-step login is required for your account."
+  },
+  "launchDuo": {
+    "message": "Launch DUO"
   },
   "turnOn": {
     "message": "Turn on"

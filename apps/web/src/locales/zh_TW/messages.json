@@ -638,9 +638,6 @@
   "learnMoreAboutPasswordless": {
     "message": "瞭解更多關於無密碼登入的資訊"
   },
-  "passkeyEnterMasterPassword": {
-    "message": "輸入您的主密碼以修改密碼金鑰登入設定。"
-  },
   "creatingPasskeyLoading": {
     "message": "正在建立密碼金輪..."
   },
@@ -5917,6 +5914,15 @@
         "example": "4"
       }
     }
+  },
+  "launchDuoAndFollowStepsToFinishLoggingIn": {
+    "message": "Launch DUO and follow the steps to finish logging in."
+  },
+  "duoRequiredByOrgForAccount": {
+    "message": "DUO two-step login is required for your account."
+  },
+  "launchDuo": {
+    "message": "Launch DUO"
   },
   "turnOn": {
     "message": "開啟"

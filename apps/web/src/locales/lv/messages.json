@@ -638,9 +638,6 @@
   "learnMoreAboutPasswordless": {
     "message": "Uzzināt vairāk par bezparoles pieteikšanos"
   },
-  "passkeyEnterMasterPassword": {
-    "message": "Jāievada galvenā parole, lai mainītu pieteikšanās ar piekļuves atslēgu iestatījumus."
-  },
   "creatingPasskeyLoading": {
     "message": "Izveido piekļuves atslēgu..."
   },
@@ -1458,7 +1455,7 @@
     "message": "Nomainīt tīmekļa glabātavā izmantoto valodu."
   },
   "enableFavicon": {
-    "message": "Rādīt vietņu ikonas"
+    "message": "Rādīt tīmekļvietņu ikonas"
   },
   "faviconDesc": {
     "message": "Attēlot atpazīstamu attēlu pie katra pieteikšanās vienuma."
@@ -1477,7 +1474,7 @@
     "message": "Domēnu nosacījumi"
   },
   "domainRulesDesc": {
-    "message": "Ja viens pieteikšanās vienums tiek izmantots dažādos tīmekļa vietņu domēnos, tīmekļa vietni var atzīmēt kā \"līdzvērtīgu\". \"Vispārējie\" domēni jau ir Bitwarden izveidoti."
+    "message": "Ja viens pieteikšanās vienums tiek izmantots dažādos tīmekļvietņu domēnos, tīmekļa vietni var atzīmēt kā \"līdzvērtīgu\". \"Vispārējie\" domēni jau ir Bitwarden izveidoti."
   },
   "globalEqDomains": {
     "message": "Vispārēji vienlīdzīgie domēni"
@@ -1498,7 +1495,7 @@
     "message": "Jauns pielāgotais domēns"
   },
   "newCustomDomainDesc": {
-    "message": "Jāievada ar komatiem atdalīts domēnu saraksts. Ir atļauti tikai \"pamata\" domēni. Neievadīt apakšdomēnus. Piemēram, ievadīt \"google.com\" \"www.google.com\" vietā. Ir iespējams ievadīt arī \"androidapp://package.name\", lai saistītu Android lietotni ar citiem tīmekļa vietņu domēniem."
+    "message": "Jāievada ar komatiem atdalīts domēnu saraksts. Ir atļauti tikai \"pamata\" domēni. Neievadīt apakšdomēnus. Piemēram, ievadīt \"google.com\" \"www.google.com\" vietā. Ir iespējams ievadīt arī \"androidapp://package.name\", lai saistītu Android lietotni ar citiem tīmekļvietņu domēniem."
   },
   "customDomainX": {
     "message": "Pielāgotais domēns $INDEX$",
@@ -1792,16 +1789,16 @@
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "unsecuredWebsitesReport": {
-    "message": "Nedrošas tīmekļa vietnes"
+    "message": "Nedrošas tīmekļvietnes"
   },
   "unsecuredWebsitesReportDesc": {
-    "message": "Tīmekļa vietnes, kuru adrese sākas ar http://, neizmanto labāko pieejamo šifrēšanu. Adresē ir ieteicams izmantot https:// drošākai pārlūkošanai."
+    "message": "Tīmekļvietnes, kuru adrese sākas ar http://, neizmanto labāko pieejamo šifrēšanu. Adresē ir ieteicams izmantot https:// drošākai pārlūkošanai."
   },
   "unsecuredWebsitesFound": {
-    "message": "Atrastas nedrošās tīmekļa vietnes"
+    "message": "Atrastas nedrošas tīmekļvietnes"
   },
   "unsecuredWebsitesFoundDesc": {
-    "message": "Glabātavā tika atrasts(i) $COUNT$ vienums(i) ar nedrošām adresēm. Ir ieteicams tās mainīt uz URI ar https://, ja tīmekļa vietne to nodrošina.",
+    "message": "Glabātavā tika atrasts(i) $COUNT$ vienums(i) ar nedrošām adresēm. Ir ieteicams tās mainīt uz URI ar https://, ja tīmekļvietne to nodrošina.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1822,7 +1819,7 @@
     "message": "Atrastie pieteikšanās vienumi bez 2FA"
   },
   "inactive2faFoundDesc": {
-    "message": "Glabātavā tika atrasta(s) $COUNT$ tīmekļa vietne(s), kurās nav uzstādīta divpakāpju pieteikšanās (vadoties pēc 2fa.directory). Lai labāk aizsargātu šos kontus, ir ieteicams uzstādīt divpakāpju pieteikšanos.",
+    "message": "Glabātavā tika atrasta(s) $COUNT$ tīmekļvietne(s), kurā(s) nav uzstādīta divpakāpju pieteikšanās (vadoties pēc 2fa.directory). Lai labāk aizsargātu šos kontus, ir ieteicams uzstādīt divpakāpju pieteikšanos.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1831,7 +1828,7 @@
     }
   },
   "noInactive2fa": {
-    "message": "Glabātavā netika atrasta neviena tīmekļa vietne bez uzstādītas divpakāpju pieteikšanās."
+    "message": "Glabātavā netika atrasta neviena tīmekļvietne bez uzstādītas divpakāpju pieteikšanās."
   },
   "instructions": {
     "message": "Norādes"
@@ -1965,7 +1962,7 @@
     "message": "Datu pārkāpumos iesaistītie dati"
   },
   "website": {
-    "message": "Tīmekļa vietne"
+    "message": "Tīmekļvietne"
   },
   "affectedUsers": {
     "message": "Ietekmētie lietotāji"
@@ -2532,7 +2529,7 @@
     }
   },
   "trialSecretsManagerThankYou": {
-    "message": "Thanks for signing up for Bitwarden Secrets Manager for $PLAN$!",
+    "message": "Paldies par pieteikšanos Bitwarden noslēpumu pārvaldnieka $PLAN$!",
     "placeholders": {
       "plan": {
         "content": "$1",
@@ -2826,7 +2823,7 @@
     "message": "Nepareizs kods"
   },
   "incorrectPin": {
-    "message": "Incorrect PIN"
+    "message": "Nepareizs PIN"
   },
   "exportedVault": {
     "message": "Glabātavas saturs izgūts."
@@ -5093,16 +5090,16 @@
     "message": "Viens vai vairāki apvienības nosacījumi neļauj izgūt privātās glabātavas saturu."
   },
   "activateAutofill": {
-    "message": "Iespējot automātisko aizpildīšanu"
+    "message": "Iespējot automātisko aizpildi"
   },
   "activateAutofillPolicyDesc": {
-    "message": "Pārlūka paplašinājumā iespējot automātisko aizpildīšanu lapas ielādes brīdī visiem esošajiem un jaunajiem dalībniekiem."
+    "message": "Pārlūka paplašinājumā iespējot automātisko aizpildi lapas ielādes brīdī visiem esošajiem un jaunajiem dalībniekiem."
   },
   "experimentalFeature": {
-    "message": "Pārveidotās vai neuzticamās vietnēs automātiskā aizpildīšana lapas ielādes laikā var tikt ļaunprātīgi izmantota."
+    "message": "Pārveidotās vai neuzticamās tīmekļvietnēs automātiskā aizpilde lapas ielādes laikā var tikt ļaunprātīgi izmantota."
   },
   "learnMoreAboutAutofill": {
-    "message": "Uzzināt vairāk par automātisko aizpildīšanu"
+    "message": "Uzzināt vairāk par automātisko aizpildi"
   },
   "selectType": {
     "message": "Atlasīt vienotās pieteikšanās veidu"
@@ -5918,6 +5915,15 @@
       }
     }
   },
+  "launchDuoAndFollowStepsToFinishLoggingIn": {
+    "message": "Jāpalaiž DUO un jāseko soļiem, lai pabeigtu pieteikšanos."
+  },
+  "duoRequiredByOrgForAccount": {
+    "message": "Kontam ir nepieciešama DUO divpakāpju pieteikšanās."
+  },
+  "launchDuo": {
+    "message": "Palaist DUO"
+  },
   "turnOn": {
     "message": "Ieslēgt"
   },
@@ -6617,37 +6623,37 @@
     }
   },
   "verificationRequiredForActionSetPinToContinue": {
-    "message": "Verification required for this action. Set a PIN to continue."
+    "message": "Šai darbībai ir nepieciešama apliecināšana. Jāiestata PIN, lai turpinātu."
   },
   "setPin": {
-    "message": "Set PIN"
+    "message": "Iestatīt PIN"
   },
   "verifyWithBiometrics": {
-    "message": "Verify with biometrics"
+    "message": "Apliecināt ar biometriju"
   },
   "awaitingConfirmation": {
-    "message": "Awaiting confirmation"
+    "message": "Gaida apstiprinājumu"
   },
   "couldNotCompleteBiometrics": {
-    "message": "Could not complete biometrics."
+    "message": "Nevarēja pabeigt biometriju."
   },
   "needADifferentMethod": {
-    "message": "Need a different method?"
+    "message": "Nepieciešams cits veids?"
   },
   "useMasterPassword": {
-    "message": "Use master password"
+    "message": "Izmantot galveno paroli"
   },
   "usePin": {
-    "message": "Use PIN"
+    "message": "Izmantot PIN"
   },
   "useBiometrics": {
-    "message": "Use biometrics"
+    "message": "Izmantot biometriju"
   },
   "enterVerificationCodeSentToEmail": {
-    "message": "Enter the verification code that was sent to your email."
+    "message": "Jāievada apliecinājuma kods, kas tika nosūtīts e-pastā."
   },
   "resendCode": {
-    "message": "Resend code"
+    "message": "Atkārtoti nosūtīt kodu"
   },
   "membersColumnHeader": {
     "message": "Dalībnieks/Grupa"
@@ -7123,7 +7129,7 @@
     }
   },
   "verificationRequired": {
-    "message": "Verification required",
+    "message": "Nepieciešams apliecinājums",
     "description": "Default title for the user verification dialog."
   },
   "recoverAccount": {
@@ -7235,7 +7241,7 @@
     }
   },
   "startYour7DayFreeTrialOfBitwardenSecretsManagerFor": {
-    "message": "Start your 7-Day free trial of Bitwarden Secrets Manager for $ORG$",
+    "message": "Uzsāc savu 7 dienu bezmaksas Bitwarden noslēpumu pārvaldnieka izmēģinājumu $ORG$",
     "placeholders": {
       "org": {
         "content": "$1",
@@ -7503,15 +7509,15 @@
     "message": "Uzzināt vairāk par krājumu pārvaldību"
   },
   "organizationInformation": {
-    "message": "Organization information"
+    "message": "Apvienības informācija"
   },
   "confirmationDetails": {
-    "message": "Confirmation details"
+    "message": "Apstiprinājuma izvērsums"
   },
   "smFreeTrialThankYou": {
-    "message": "Thank you for signing up for Bitwarden Secrets Manager!"
+    "message": "Paldies par pieteikšanos Bitwarden noslēpumu pārvaldniekā!"
   },
   "smFreeTrialConfirmationEmail": {
-    "message": "We've sent a confirmation email to your email at "
+    "message": "Mēs esam nosūtījuši apstiprinājuma e-pasta ziņojumu uz "
   }
 }

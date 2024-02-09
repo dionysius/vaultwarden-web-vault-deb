@@ -638,9 +638,6 @@
   "learnMoreAboutPasswordless": {
     "message": "Más información sobre la ausencia de contraseña"
   },
-  "passkeyEnterMasterPassword": {
-    "message": "Introduzca su contraseña maestra para modificar la configuración de inicio de sesión con clave de acceso."
-  },
   "creatingPasskeyLoading": {
     "message": "Creando clave de acceso..."
   },
@@ -5917,6 +5914,15 @@
         "example": "4"
       }
     }
+  },
+  "launchDuoAndFollowStepsToFinishLoggingIn": {
+    "message": "Launch DUO and follow the steps to finish logging in."
+  },
+  "duoRequiredByOrgForAccount": {
+    "message": "DUO two-step login is required for your account."
+  },
+  "launchDuo": {
+    "message": "Launch DUO"
   },
   "turnOn": {
     "message": "Activar"

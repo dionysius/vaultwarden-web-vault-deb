@@ -638,9 +638,6 @@
   "learnMoreAboutPasswordless": {
     "message": "Saiba mais sobre a ausência de palavra-passe"
   },
-  "passkeyEnterMasterPassword": {
-    "message": "Introduza a sua palavra-passe mestra para modificar as definições de início de sessão com chave de acesso."
-  },
   "creatingPasskeyLoading": {
     "message": "A criar chave de acesso..."
   },
@@ -3480,7 +3477,7 @@
     "message": "Defina um limite de lugares para a sua subscrição. Quando este limite for atingido, não será possível convidar novos membros."
   },
   "limitSmSubscriptionDesc": {
-    "message": "Defina um limite de lugares para o seu Gestor de Segredos. Quando este limite for atingido, não será possível convidar novos membros."
+    "message": "Defina um limite de lugares para a sua subscrição do Gestor dos Segredos. Quando este limite for atingido, não será possível convidar novos membros."
   },
   "maxSeatLimit": {
     "message": "Limite de lugares (opcional)",
@@ -5917,6 +5914,15 @@
         "example": "4"
       }
     }
+  },
+  "launchDuoAndFollowStepsToFinishLoggingIn": {
+    "message": "Inicie o DUO e siga os passos para concluir o início de sessão."
+  },
+  "duoRequiredByOrgForAccount": {
+    "message": "A verificação em dois passos DUO é necessária para a sua conta."
+  },
+  "launchDuo": {
+    "message": "Iniciar o DUO"
   },
   "turnOn": {
     "message": "Ligar"

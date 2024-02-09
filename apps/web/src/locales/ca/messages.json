@@ -638,9 +638,6 @@
   "learnMoreAboutPasswordless": {
     "message": "Més informació sobre sense contrasenyes"
   },
-  "passkeyEnterMasterPassword": {
-    "message": "Introduïu la vostra contrasenya mestra per modificar l'inici de sessió amb la configuració de la clau de pas."
-  },
   "creatingPasskeyLoading": {
     "message": "S'està creant la clau de pas..."
   },
@@ -5917,6 +5914,15 @@
         "example": "4"
       }
     }
+  },
+  "launchDuoAndFollowStepsToFinishLoggingIn": {
+    "message": "Inicieu DUO i seguiu els passos per finalitzar la sessió."
+  },
+  "duoRequiredByOrgForAccount": {
+    "message": "Es requereix l'inici de sessió en dos passos de DUO al vostre compte."
+  },
+  "launchDuo": {
+    "message": "Inicia DUO"
   },
   "turnOn": {
     "message": "Activa"

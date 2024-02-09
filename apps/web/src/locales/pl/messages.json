@@ -638,9 +638,6 @@
   "learnMoreAboutPasswordless": {
     "message": "Dowiedz się więcej o rozwiązaniach bezhasłowych"
   },
-  "passkeyEnterMasterPassword": {
-    "message": "Wprowadź hasło główne, aby zmodyfikować ustawienia logowania za pomocą passkey."
-  },
   "creatingPasskeyLoading": {
     "message": "Tworzenie passkey..."
   },
@@ -5917,6 +5914,15 @@
         "example": "4"
       }
     }
+  },
+  "launchDuoAndFollowStepsToFinishLoggingIn": {
+    "message": "Uruchom DUO i wykonaj kroki, aby zakończyć logowanie."
+  },
+  "duoRequiredByOrgForAccount": {
+    "message": "Dwustopniowe logowanie DUO jest wymagane dla Twojego konta."
+  },
+  "launchDuo": {
+    "message": "Uruchom DUO"
   },
   "turnOn": {
     "message": "Włącz"

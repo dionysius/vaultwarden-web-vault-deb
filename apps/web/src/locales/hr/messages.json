@@ -638,9 +638,6 @@
   "learnMoreAboutPasswordless": {
     "message": "Više o passwordless"
   },
-  "passkeyEnterMasterPassword": {
-    "message": "Unesi glavnu lozinku za promjenu postavki prijave pristupnim ključem."
-  },
   "creatingPasskeyLoading": {
     "message": "Stvaranje pristupnog ključa..."
   },
@@ -5917,6 +5914,15 @@
         "example": "4"
       }
     }
+  },
+  "launchDuoAndFollowStepsToFinishLoggingIn": {
+    "message": "Launch DUO and follow the steps to finish logging in."
+  },
+  "duoRequiredByOrgForAccount": {
+    "message": "DUO two-step login is required for your account."
+  },
+  "launchDuo": {
+    "message": "Launch DUO"
   },
   "turnOn": {
     "message": "Uključi"

@@ -638,9 +638,6 @@
   "learnMoreAboutPasswordless": {
     "message": "Læs mere om adgangskodefrihed"
   },
-  "passkeyEnterMasterPassword": {
-    "message": "Angiv hovedadgangskoden for at ændre loginindstillinger for adgangsnøgle."
-  },
   "creatingPasskeyLoading": {
     "message": "Opretter adgangsnøgle..."
   },
@@ -5917,6 +5914,15 @@
         "example": "4"
       }
     }
+  },
+  "launchDuoAndFollowStepsToFinishLoggingIn": {
+    "message": "Start DUO og følg trinene for at fuldføre indlogningen."
+  },
+  "duoRequiredByOrgForAccount": {
+    "message": "DUO totrins indlogning kræves for kontoen."
+  },
+  "launchDuo": {
+    "message": "Start DUO"
   },
   "turnOn": {
     "message": "Slå til"

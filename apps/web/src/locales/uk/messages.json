@@ -638,9 +638,6 @@
   "learnMoreAboutPasswordless": {
     "message": "Докладніше про безпарольну авторизацію"
   },
-  "passkeyEnterMasterPassword": {
-    "message": "Введіть головний пароль, щоб змінити налаштування входу з ключем доступу."
-  },
   "creatingPasskeyLoading": {
     "message": "Створення ключа доступу..."
   },
@@ -5917,6 +5914,15 @@
         "example": "4"
       }
     }
+  },
+  "launchDuoAndFollowStepsToFinishLoggingIn": {
+    "message": "Запустіть DUO і виконайте дії для завершення входу."
+  },
+  "duoRequiredByOrgForAccount": {
+    "message": "Для вашого облікового запису необхідна двоетапна перевірка з DUO."
+  },
+  "launchDuo": {
+    "message": "Запустити DUO"
   },
   "turnOn": {
     "message": "Увімкнути"

@@ -638,9 +638,6 @@
   "learnMoreAboutPasswordless": {
     "message": "تعرف على المزيد حول عدم كلمة المرور"
   },
-  "passkeyEnterMasterPassword": {
-    "message": "أدخل كلمة المرور الرئيسية لتعديل تسجيل الدخول مع إعدادات مفتاح المرور."
-  },
   "creatingPasskeyLoading": {
     "message": "إنشاء مفتاح المرور..."
   },
@@ -5917,6 +5914,15 @@
         "example": "4"
       }
     }
+  },
+  "launchDuoAndFollowStepsToFinishLoggingIn": {
+    "message": "Launch DUO and follow the steps to finish logging in."
+  },
+  "duoRequiredByOrgForAccount": {
+    "message": "DUO two-step login is required for your account."
+  },
+  "launchDuo": {
+    "message": "Launch DUO"
   },
   "turnOn": {
     "message": "Turn on"

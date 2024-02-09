@@ -638,9 +638,6 @@
   "learnMoreAboutPasswordless": {
     "message": "パスワードレスの詳細"
   },
-  "passkeyEnterMasterPassword": {
-    "message": "パスキー設定でのログインを変更するには、マスターパスワードを入力してください。"
-  },
   "creatingPasskeyLoading": {
     "message": "パスキーを作成中..."
   },
@@ -5917,6 +5914,15 @@
         "example": "4"
       }
     }
+  },
+  "launchDuoAndFollowStepsToFinishLoggingIn": {
+    "message": "ログインを完了するには DUO を起動し手順に従ってください。"
+  },
+  "duoRequiredByOrgForAccount": {
+    "message": "アカウントには DUO 二段階認証が必要です。"
+  },
+  "launchDuo": {
+    "message": "DUO を起動"
   },
   "turnOn": {
     "message": "オンにする"

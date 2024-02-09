@@ -638,9 +638,6 @@
   "learnMoreAboutPasswordless": {
     "message": "Meer lezen over wachtwoordloos"
   },
-  "passkeyEnterMasterPassword": {
-    "message": "Voer je hoofdwachtwoord in om je instellingen voor het inloggen met passkey te veranderen."
-  },
   "creatingPasskeyLoading": {
     "message": "Passkey aanmaken..."
   },
@@ -5917,6 +5914,15 @@
         "example": "4"
       }
     }
+  },
+  "launchDuoAndFollowStepsToFinishLoggingIn": {
+    "message": "Start DUO en volg de stappen om in te loggen."
+  },
+  "duoRequiredByOrgForAccount": {
+    "message": "DUO tweestapsaanmelding is vereist voor jouw account."
+  },
+  "launchDuo": {
+    "message": "DUO starten"
   },
   "turnOn": {
     "message": "Inschakelen"

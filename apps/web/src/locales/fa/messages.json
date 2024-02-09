@@ -638,9 +638,6 @@
   "learnMoreAboutPasswordless": {
     "message": "درباره بدون کلمه عبور بیشتر بدانید"
   },
-  "passkeyEnterMasterPassword": {
-    "message": "کلمه عبور اصلی خود را برای تغییر ورود با تنظیمات کلید عبور وارد کنید."
-  },
   "creatingPasskeyLoading": {
     "message": "ایجاد کلید عبور..."
   },
@@ -5917,6 +5914,15 @@
         "example": "4"
       }
     }
+  },
+  "launchDuoAndFollowStepsToFinishLoggingIn": {
+    "message": "Launch DUO and follow the steps to finish logging in."
+  },
+  "duoRequiredByOrgForAccount": {
+    "message": "DUO two-step login is required for your account."
+  },
+  "launchDuo": {
+    "message": "Launch DUO"
   },
   "turnOn": {
     "message": "روشن"

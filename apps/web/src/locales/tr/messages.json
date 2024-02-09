@@ -638,9 +638,6 @@
   "learnMoreAboutPasswordless": {
     "message": "Parolasız giriş hakkında bilgi alın"
   },
-  "passkeyEnterMasterPassword": {
-    "message": "Parola anahtarıyla giriş ayarlarını değiştirmek için ana parolanızı girin."
-  },
   "creatingPasskeyLoading": {
     "message": "Geçiş anahtarı oluşturuluyor..."
   },
@@ -5917,6 +5914,15 @@
         "example": "4"
       }
     }
+  },
+  "launchDuoAndFollowStepsToFinishLoggingIn": {
+    "message": "DUO'yu başlatın ve oturum açmayı tamamlamak için adımları izleyin."
+  },
+  "duoRequiredByOrgForAccount": {
+    "message": "Hesabınız için DUO iki adımlı giriş gereklidir."
+  },
+  "launchDuo": {
+    "message": "DUO'yu başlat"
   },
   "turnOn": {
     "message": "Aç"

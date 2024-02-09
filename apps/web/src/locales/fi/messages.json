@@ -638,9 +638,6 @@
   "learnMoreAboutPasswordless": {
     "message": "Lue lisää salasanattomasta kirjautumisesta"
   },
-  "passkeyEnterMasterPassword": {
-    "message": "Muokkaa suojausavainkirjautumisen asetuksia syöttämällä pääsalasanasi."
-  },
   "creatingPasskeyLoading": {
     "message": "Suojausavainta luodaan..."
   },
@@ -5917,6 +5914,15 @@
         "example": "4"
       }
     }
+  },
+  "launchDuoAndFollowStepsToFinishLoggingIn": {
+    "message": "Avaa DUO ja viimeistele kirjautuminen seuraamalla ohjeita."
+  },
+  "duoRequiredByOrgForAccount": {
+    "message": "Tilisi vaatii kaksivaiheisen DUO-kirjautumisen."
+  },
+  "launchDuo": {
+    "message": "Avaa DUO"
   },
   "turnOn": {
     "message": "Ota käyttöön"

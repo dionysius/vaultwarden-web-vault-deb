@@ -638,9 +638,6 @@
   "learnMoreAboutPasswordless": {
     "message": "Erfahre mehr über die passwortlose Anmeldung"
   },
-  "passkeyEnterMasterPassword": {
-    "message": "Gib dein Master-Passwort ein, um die Einstellungen für die Anmeldung mit Passkeys zu ändern."
-  },
   "creatingPasskeyLoading": {
     "message": "Passkey wird erstellt..."
   },
@@ -5917,6 +5914,15 @@
         "example": "4"
       }
     }
+  },
+  "launchDuoAndFollowStepsToFinishLoggingIn": {
+    "message": "Starte DUO und folge den Schritten, um die Anmeldung zu abzuschließen."
+  },
+  "duoRequiredByOrgForAccount": {
+    "message": "Für dein Konto ist die DUO Zwei-Faktor-Authentifizierung erforderlich."
+  },
+  "launchDuo": {
+    "message": "DUO starten"
   },
   "turnOn": {
     "message": "Einschalten"

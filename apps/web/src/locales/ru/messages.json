@@ -638,9 +638,6 @@
   "learnMoreAboutPasswordless": {
     "message": "Подробнее о беспарольном режиме"
   },
-  "passkeyEnterMasterPassword": {
-    "message": "Для изменения параметров авторизации ключом доступа введите мастер-пароль."
-  },
   "creatingPasskeyLoading": {
     "message": "Создание ключа доступа..."
   },
@@ -5917,6 +5914,15 @@
         "example": "4"
       }
     }
+  },
+  "launchDuoAndFollowStepsToFinishLoggingIn": {
+    "message": "Запустите DUO и следуйте шагам для завершения авторизации."
+  },
+  "duoRequiredByOrgForAccount": {
+    "message": "Для вашего аккаунта требуется двухэтапная аутентификация DUO."
+  },
+  "launchDuo": {
+    "message": "Запустить DUO"
   },
   "turnOn": {
     "message": "Включить"
