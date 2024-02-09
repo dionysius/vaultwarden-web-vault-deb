@@ -2695,6 +2695,21 @@
       }
     }
   },
+  "launchDuoAndFollowStepsToFinishLoggingIn": {
+    "message": "Launch DUO and follow the steps to finish logging in."
+  },
+  "duoRequiredByOrgForAccount": {
+    "message": "DUO two-step login is required for your account."
+  },
+  "openExtensionInNewWindowToCompleteLogin": {
+    "message": "Open the extension in a new window to complete login"
+  },
+  "popoutExtension": {
+    "message": "Popout extension"
+  },
+  "launchDuo": {
+    "message": "Launch DUO"
+  },
   "importFormatError": {
     "message": "Данните са в неправилен формат. Проверете файла за внасяне и пробвайте отново."
   },

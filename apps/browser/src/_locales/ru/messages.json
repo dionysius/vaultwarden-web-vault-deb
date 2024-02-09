@@ -2695,6 +2695,21 @@
       }
     }
   },
+  "launchDuoAndFollowStepsToFinishLoggingIn": {
+    "message": "Запустите DUO и следуйте шагам для завершения авторизации."
+  },
+  "duoRequiredByOrgForAccount": {
+    "message": "Для вашего аккаунта требуется двухэтапная аутентификация DUO."
+  },
+  "openExtensionInNewWindowToCompleteLogin": {
+    "message": "Откройте расширение в новом окне, чтобы завершить авторизацию"
+  },
+  "popoutExtension": {
+    "message": "Открепить расширение"
+  },
+  "launchDuo": {
+    "message": "Запустить DUO"
+  },
   "importFormatError": {
     "message": "Формат данных некорректен. Проверьте импортируемый файл и повторите попытку."
   },

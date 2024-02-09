@@ -89,7 +89,7 @@
     "message": "Ievietot drošības kodu starpliktuvē"
   },
   "autoFill": {
-    "message": "Automātiskā aizpildīšana"
+    "message": "Automātiskā aizpilde"
   },
   "autoFillLogin": {
     "message": "Automātiski aizpildīt pieteikšanos"
@@ -555,10 +555,10 @@
     "message": "Mainīt galveno paroli"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "Galveno paroli ir iespējams mainīt bitwarden.com tīmekļa glabātavā. Vai apmeklēt tīmekļa vietni?"
+    "message": "Galveno paroli ir iespējams mainīt bitwarden.com tīmekļa glabātavā. Vai tagad apmeklēt tīmekļvietni?"
   },
   "twoStepLoginConfirmation": {
-    "message": "Divpakāpju pieteikšanās padara kontu krietni drošāku, pieprasot apstiprināt pieteikšanos ar tādu citu ierīču vai pakalpojumu starpniecību kā drošības atslēga, autentificētāja lietotne, īsziņa, tālruņa zvans vai e-pasts. Divpakāpju pieteikšanos var iespējot bitwarden.com tīmekļa glabātavā. Vai apmeklēt tīmekļa vietni?"
+    "message": "Divpakāpju pieteikšanās padara kontu krietni drošāku, pieprasot apstiprināt pieteikšanos ar tādu citu ierīču vai pakalpojumu starpniecību kā drošības atslēga, autentificētāja lietotne, īsziņa, tālruņa zvans vai e-pasts. Divpakāpju pieteikšanos var iespējot bitwarden.com tīmekļa glabātavā. Vai tagad apmeklēt tīmekļvietni?"
   },
   "editedFolder": {
     "message": "Mape labota"
@@ -656,7 +656,7 @@
     "message": "Rādīt identitātes cilnes pārskatā"
   },
   "showIdentitiesCurrentTabDesc": {
-    "message": "Attēlot identitātes ciļņu lapā vieglākai aizpildīšanai."
+    "message": "Attēlot identitātes ciļņu lapā vieglākai aizpildei."
   },
   "clearClipboard": {
     "message": "Notīrīt starpliktuvi",
@@ -676,10 +676,10 @@
     "message": "Vaicāt atjaunināt esošu pieteikšanās vienumu"
   },
   "changedPasswordNotificationDesc": {
-    "message": "Vaicāt atjaunināt pieteikšanās vienuma paroli, ja vietnē ir noteiktas tās izmaiņas."
+    "message": "Vaicāt atjaunināt pieteikšanās vienuma paroli, ja tīmekļvietnē ir noteiktas tās izmaiņas."
   },
   "changedPasswordNotificationDescAlt": {
-    "message": "Vaicāt, vai atjaunināt pieteikšanās vienuma paroli, kad tīmekļa vietnē ir noteikta atšķirība. Attiecas uzvisiem pieslēgtajiem kontiem."
+    "message": "Vaicāt, vai atjaunināt pieteikšanās vienuma paroli, kad tīmekļvietnē ir noteikta atšķirība. Attiecas uzvisiem pieslēgtajiem kontiem."
   },
   "enableUsePasskeys": {
     "message": "Vaicāt, vai saglabāt un izmantot piekļuves atslēgas"
@@ -694,7 +694,7 @@
     "message": "Jā, atjaunināt"
   },
   "notificationUnlockDesc": {
-    "message": "Jāatslēdz Bitwarden glabātava, lai pabeigtu automātiskās aizpildīšanas pieprasījumu."
+    "message": "Jāatslēdz Bitwarden glabātava, lai pabeigtu automātiskās aizpildes pieprasījumu."
   },
   "notificationUnlock": {
     "message": "Atslēgt"
@@ -703,17 +703,17 @@
     "message": "Rādīt konteksta izvēlnes iespējas"
   },
   "contextMenuItemDesc": {
-    "message": "Izmantot orējo klikšķi, lai piekļūtu paroļu veidošanai un vietnei atbilstošajiem pieteikšanās vienumiem. "
+    "message": "Izmantot otrējo klikšķi, lai piekļūtu paroļu veidošanai un tīmekļvietnei atbilstošajiem pieteikšanās vienumiem."
   },
   "contextMenuItemDescAlt": {
-    "message": "Izmantot orējo klikšķi, lai piekļūtu paroļu veidošanai un tīmekļa vietnei atbilstošajiem pieteikšanās vienumiem. Attiecas uz visiem pieslēgtajiem kontiem."
+    "message": "Izmantot otrējo klikšķi, lai piekļūtu paroļu veidošanai un tīmekļvietnei atbilstošajiem pieteikšanās vienumiem. Attiecas uz visiem pieslēgtajiem kontiem."
   },
   "defaultUriMatchDetection": {
     "message": "Noklusējuma URI atbilstības noteikšana",
     "description": "Default URI match detection for auto-fill."
   },
   "defaultUriMatchDetectionDesc": {
-    "message": "Izvēlēties noklusējuma veidu, kādā tiek apstrādāta pieteikšan'ās vienumu URI atbilstības noteikšana, kad tiek veiktas tādas darbības kā automātiska aizpildīšana."
+    "message": "Izvēlēties noklusējuma veidu, kādā tiek apstrādāta pieteikšanās vienumu URI atbilstības noteikšana, kad tiek veiktas tādas darbības kā automātiska aizpilde."
   },
   "theme": {
     "message": "Izskats"
@@ -768,7 +768,7 @@
     "message": "Uzzināt par apvienībām"
   },
   "learnOrgConfirmation": {
-    "message": "Bitwarden nodrošina iespēju kopīgot glabātavas vienumus ar citiem, kad tiek izmantota apvienība. Vai apmeklēt bitwarden.com tīmekļa vietni, lai uzzinātu vairāk?"
+    "message": "Bitwarden nodrošina iespēju kopīgot glabātavas vienumus ar citiem, kad tiek izmantota apvienība. Vai apmeklēt bitwarden.com tīmekļvietni, lai uzzinātu vairāk?"
   },
   "moveToOrganization": {
     "message": "Pārvietot uz apvienību"
@@ -847,7 +847,7 @@
     "message": "Pārvaldīt dalību"
   },
   "premiumManageAlert": {
-    "message": "Dalību ir iespējams pārvaldīt bitwarden.com tīmekļa glabātavā. Vai apmeklēt tīmekļa vietni?"
+    "message": "Dalību ir iespējams pārvaldīt bitwarden.com tīmekļa glabātavā. Vai tagad apmeklēt tīmekļvietni?"
   },
   "premiumRefresh": {
     "message": "Atjaunot dalību"
@@ -880,7 +880,7 @@
     "message": "Iegādāties Premium"
   },
   "premiumPurchaseAlert": {
-    "message": "Premium dalību ir iespējams iegādāties bitwarden.com tīmekļa glabātavā. Vai apmeklēt tīmekļa vietni?"
+    "message": "Premium dalību ir iespējams iegādāties bitwarden.com tīmekļa glabātavā. Vai tagad apmeklēt tīmekļvietni?"
   },
   "premiumCurrentMember": {
     "message": "Tu esi Premium dalībnieks!"
@@ -1070,16 +1070,16 @@
     "description": "Overlay appearance select option for showing the field on click of the overlay icon"
   },
   "enableAutoFillOnPageLoad": {
-    "message": "Iespējot aizpildīšanu lapas ielādes brīdī"
+    "message": "Automātiski aizpildīt lapas ielādes brīdī"
   },
   "enableAutoFillOnPageLoadDesc": {
     "message": "Ja tiek noteikta pieteikšanās veidne, tā tiks aizpildīta lapas ielādes brīdī."
   },
   "experimentalFeature": {
-    "message": "Pārveidotās vai neuzticamās vietnēs automātiskā aizpildīšana lapas ielādes laikā var tikt ļaunprātīgi izmantota."
+    "message": "Pārveidotās vai neuzticamās tīmekļvietnēs automātiskā aizpilde lapas ielādes laikā var tikt ļaunprātīgi izmantota."
   },
   "learnMoreAboutAutofill": {
-    "message": "Uzzināt vairāk par automātisko aizpildīšanu"
+    "message": "Uzzināt vairāk par automātisko aizpildi"
   },
   "defaultAutoFillOnPageLoad": {
     "message": "Noklusējuma automātiskās aizpildes iestatījums pieteikšanās vienumiem"
@@ -1106,7 +1106,7 @@
     "message": "Atvērt glabātavu sānu joslā"
   },
   "commandAutofillDesc": {
-    "message": "Automātiski aizpildīt ar iepriekš izmantoto pieteikšanās vienumu pašreizējā tīmekļa vietnē"
+    "message": "Automātiski aizpildīt ar iepriekš izmantoto pieteikšanās vienumu pašreizējā tīmekļvietnē"
   },
   "commandGeneratePasswordDesc": {
     "message": "Izveidot jaunu nejaušu paroli un ievietot to starpliktuvē"
@@ -1156,7 +1156,7 @@
     "message": "Šis pārlūks nevar apstrādāt U2F pieprasījumus šajā uznirstošajā logā. Vai atvērt to atsevišķā logā, lai varētu pieteikties, izmantojot U2F?"
   },
   "enableFavicon": {
-    "message": "Rādīt vietņu ikonas"
+    "message": "Rādīt tīmekļvietņu ikonas"
   },
   "faviconDesc": {
     "message": "Attēlot atpazīstamu attēlu pie katra pieteikšanās vienuma."
@@ -2007,7 +2007,7 @@
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "verificationRequired": {
-    "message": "Verification required",
+    "message": "Nepieciešams apliecinājums",
     "description": "Default title for the user verification dialog."
   },
   "hours": {
@@ -2144,7 +2144,7 @@
     "message": "Nejaušs vārds"
   },
   "websiteName": {
-    "message": "Tīmekļa vietnes nosaukums"
+    "message": "Tīmekļvietnes nosaukums"
   },
   "whatWouldYouLikeToGenerate": {
     "message": "Ko ir nepieciešams izveidot?"
@@ -2298,7 +2298,7 @@
     }
   },
   "autofillPageLoadPolicyActivated": {
-    "message": "Tavas apvienības nosacījumos ir ieslēgta automātiskā aizpildīšana lapas ielādes brīdī."
+    "message": "Tavas apvienības nosacījumos ir ieslēgta automātiskā aizpilde lapas ielādes brīdī."
   },
   "howToAutofill": {
     "message": "Kā automātiski aizpildīt"
@@ -2648,40 +2648,40 @@
     }
   },
   "tryAgain": {
-    "message": "Try again"
+    "message": "Jāmēģina vēlreiz"
   },
   "verificationRequiredForActionSetPinToContinue": {
-    "message": "Verification required for this action. Set a PIN to continue."
+    "message": "Šai darbībai ir nepieciešama apliecināšana. Jāiestata PIN, lai turpinātu."
   },
   "setPin": {
-    "message": "Set PIN"
+    "message": "Iestatīt PIN"
   },
   "verifyWithBiometrics": {
-    "message": "Verify with biometrics"
+    "message": "Apliecināt ar biometriju"
   },
   "awaitingConfirmation": {
-    "message": "Awaiting confirmation"
+    "message": "Gaida apstiprinājumu"
   },
   "couldNotCompleteBiometrics": {
-    "message": "Could not complete biometrics."
+    "message": "Nevarēja pabeigt biometriju."
   },
   "needADifferentMethod": {
-    "message": "Need a different method?"
+    "message": "Nepieciešams cits veids?"
   },
   "useMasterPassword": {
-    "message": "Use master password"
+    "message": "Izmantot galveno paroli"
   },
   "usePin": {
-    "message": "Use PIN"
+    "message": "Izmantot PIN"
   },
   "useBiometrics": {
-    "message": "Use biometrics"
+    "message": "Izmantot biometriju"
   },
   "enterVerificationCodeSentToEmail": {
-    "message": "Enter the verification code that was sent to your email."
+    "message": "Jāievada apliecinājuma kods, kas tika nosūtīts e-pastā."
   },
   "resendCode": {
-    "message": "Resend code"
+    "message": "Atkārtoti nosūtīt kodu"
   },
   "total": {
     "message": "Kopā"
@@ -2694,6 +2694,21 @@
         "example": "My Org Name"
       }
     }
+  },
+  "launchDuoAndFollowStepsToFinishLoggingIn": {
+    "message": "Jāpalaiž DUO un jāseko soļiem, lai pabeigtu pieteikšanos."
+  },
+  "duoRequiredByOrgForAccount": {
+    "message": "Kontam ir nepieciešama DUO divpakāpju pieteikšanās."
+  },
+  "openExtensionInNewWindowToCompleteLogin": {
+    "message": "Paplašinājums jāatver jaunā logā, lai pabeigtu pieteikšanos"
+  },
+  "popoutExtension": {
+    "message": "Atvērt paplašinājumu atsevišķi"
+  },
+  "launchDuo": {
+    "message": "Palaist DUO"
   },
   "importFormatError": {
     "message": "Dati nav pareizi formatēti. Lūgums pārbaudīt ievietošanas datni un mēģināt vēlreiz."
@@ -2827,13 +2842,13 @@
     "message": "Nepareizs lietotājvārds vai parole"
   },
   "incorrectPassword": {
-    "message": "Incorrect password"
+    "message": "Nepareiza parole"
   },
   "incorrectCode": {
-    "message": "Incorrect code"
+    "message": "Nepareizs kods"
   },
   "incorrectPin": {
-    "message": "Incorrect PIN"
+    "message": "Nepareizs PIN"
   },
   "multifactorAuthenticationFailed": {
     "message": "Daudzpakāpju pieteikšanās neizdevās"

@@ -2695,6 +2695,21 @@
       }
     }
   },
+  "launchDuoAndFollowStepsToFinishLoggingIn": {
+    "message": "Запустіть DUO і виконайте дії для завершення входу."
+  },
+  "duoRequiredByOrgForAccount": {
+    "message": "Для вашого облікового запису необхідна двоетапна перевірка з DUO."
+  },
+  "openExtensionInNewWindowToCompleteLogin": {
+    "message": "Відкрийте розширення у новому вікні, щоб завершити вхід"
+  },
+  "popoutExtension": {
+    "message": "Відкріпити вікно розширення"
+  },
+  "launchDuo": {
+    "message": "Запустити DUO"
+  },
   "importFormatError": {
     "message": "Дані мають некоректне форматування. Перевірте файл імпорту і спробуйте знову."
   },

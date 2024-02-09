@@ -2695,6 +2695,21 @@
       }
     }
   },
+  "launchDuoAndFollowStepsToFinishLoggingIn": {
+    "message": "Paleisk DUO ir sek veiksmus, kad baigtum prisijungti."
+  },
+  "duoRequiredByOrgForAccount": {
+    "message": "Tavo paskyrai reikalingas DUO dviejų veiksmų prisijungimas."
+  },
+  "openExtensionInNewWindowToCompleteLogin": {
+    "message": "Atidaryk plėtinį naujame lange, kad užbaigtum prisijungimą."
+  },
+  "popoutExtension": {
+    "message": "Iššokantis plėtinys"
+  },
+  "launchDuo": {
+    "message": "Paleisti DUO"
+  },
   "importFormatError": {
     "message": "Data is not formatted correctly. Please check your import file and try again."
   },

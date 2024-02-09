@@ -2695,6 +2695,21 @@
       }
     }
   },
+  "launchDuoAndFollowStepsToFinishLoggingIn": {
+    "message": "ログインを完了するには DUO を起動し手順に従ってください。"
+  },
+  "duoRequiredByOrgForAccount": {
+    "message": "アカウントには DUO 二段階認証が必要です。"
+  },
+  "openExtensionInNewWindowToCompleteLogin": {
+    "message": "新しいウィンドウで拡張機能を開いてログインを完了してください"
+  },
+  "popoutExtension": {
+    "message": "拡張機能のポップアップ"
+  },
+  "launchDuo": {
+    "message": "DUO を起動"
+  },
   "importFormatError": {
     "message": "データが正しい形式ではありません。インポートするファイルを確認してやり直してください。"
   },

@@ -2695,6 +2695,21 @@
       }
     }
   },
+  "launchDuoAndFollowStepsToFinishLoggingIn": {
+    "message": "Avvia DUO e segui i passaggi per finire di accedere."
+  },
+  "duoRequiredByOrgForAccount": {
+    "message": "Per il tuo account è richiesta la verifica in due passaggi DUO."
+  },
+  "openExtensionInNewWindowToCompleteLogin": {
+    "message": "Apri l'estensione in una nuova finestra per completare l'accesso"
+  },
+  "popoutExtension": {
+    "message": "Estrai estensione"
+  },
+  "launchDuo": {
+    "message": "Avvia DUO"
+  },
   "importFormatError": {
     "message": "I dati non sono formattati correttamente. Controlla il file di importazione e riprova."
   },

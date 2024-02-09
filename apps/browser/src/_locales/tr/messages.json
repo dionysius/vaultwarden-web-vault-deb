@@ -2695,6 +2695,21 @@
       }
     }
   },
+  "launchDuoAndFollowStepsToFinishLoggingIn": {
+    "message": "DUO'yu başlatın ve oturum açmayı tamamlamak için adımları izleyin."
+  },
+  "duoRequiredByOrgForAccount": {
+    "message": "Hesabınız için DUO iki adımlı giriş gereklidir."
+  },
+  "openExtensionInNewWindowToCompleteLogin": {
+    "message": "Oturum açma işlemini tamamlamak için uzantıyı yeni bir pencerede açın"
+  },
+  "popoutExtension": {
+    "message": "Popout uzantısı"
+  },
+  "launchDuo": {
+    "message": "DUO'yu başlat"
+  },
   "importFormatError": {
     "message": "Veriler doğru biçimlendirilmemiş. Lütfen içe aktarma dosyanızı kontrol edin ve tekrar deneyin."
   },

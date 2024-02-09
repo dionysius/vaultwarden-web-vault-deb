@@ -2695,6 +2695,21 @@
       }
     }
   },
+  "launchDuoAndFollowStepsToFinishLoggingIn": {
+    "message": "Start DUO og følg trinene for at fuldføre indlogningen."
+  },
+  "duoRequiredByOrgForAccount": {
+    "message": "DUO totrins indlogning kræves for kontoen."
+  },
+  "openExtensionInNewWindowToCompleteLogin": {
+    "message": "Åbn udvidelsen i et nyt vindue for at fuldføre indlogning"
+  },
+  "popoutExtension": {
+    "message": "Popout extension"
+  },
+  "launchDuo": {
+    "message": "Start DUO"
+  },
   "importFormatError": {
     "message": "Data er ikke korrekt formateret. Tjek importfilen og forsøg igen."
   },

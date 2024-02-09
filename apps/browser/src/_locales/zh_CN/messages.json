@@ -2695,6 +2695,21 @@
       }
     }
   },
+  "launchDuoAndFollowStepsToFinishLoggingIn": {
+    "message": "启动 DUO 并按照步骤完成登录。"
+  },
+  "duoRequiredByOrgForAccount": {
+    "message": "您的账户需要 DUO 两步登录。"
+  },
+  "openExtensionInNewWindowToCompleteLogin": {
+    "message": "在新窗口中打开扩展以完成登录"
+  },
+  "popoutExtension": {
+    "message": "弹出扩展"
+  },
+  "launchDuo": {
+    "message": "启动 DUO"
+  },
   "importFormatError": {
     "message": "数据格式不正确。请检查您的导入文件然后重试。"
   },
