@@ -322,6 +322,7 @@ export class Program {
         writeLn("    bw generate -ul");
         writeLn("    bw generate -p --separator _");
         writeLn("    bw generate -p --words 5 --separator space");
+        writeLn("    bw generate -p --words 5 --separator empty");
         writeLn("", true);
       })
       .action(async (options) => {

@@ -239,6 +239,16 @@ describe("Password generator options builder", () => {
       expect(sanitizedOptions.wordSeparator).toEqual("-");
     });
 
+    it("should leave `wordSeparator` as the empty string '' when it is the empty string", () => {
+      const policy = Object.assign({}, DisabledPassphraseGeneratorPolicy);
+      const builder = new PassphraseGeneratorOptionsEvaluator(policy);
+      const options = Object.freeze({ wordSeparator: "" });
+
+      const sanitizedOptions = builder.sanitize(options);
+
+      expect(sanitizedOptions.wordSeparator).toEqual("");
+    });
+
     it("should preserve unknown properties", () => {
       const policy = Object.assign({}, DisabledPassphraseGeneratorPolicy);
       const builder = new PassphraseGeneratorOptionsEvaluator(policy);

@@ -1,4 +1,5 @@
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
+import { DefaultPassphraseGenerationOptions } from "@bitwarden/common/tools/generator/passphrase";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 import { PasswordGeneratorOptions } from "@bitwarden/common/tools/generator/password/password-generator-options";
 
@@ -65,8 +66,14 @@ class Options {
     this.ambiguous = CliUtils.convertBooleanOption(passedOptions?.ambiguous);
     this.length = CliUtils.convertNumberOption(passedOptions?.length, 14);
     this.type = passedOptions?.passphrase ? "passphrase" : "password";
-    this.separator = CliUtils.convertStringOption(passedOptions?.separator, "-");
-    this.words = CliUtils.convertNumberOption(passedOptions?.words, 3);
+    this.separator = CliUtils.convertStringOption(
+      passedOptions?.separator,
+      DefaultPassphraseGenerationOptions.wordSeparator,
+    );
+    this.words = CliUtils.convertNumberOption(
+      passedOptions?.words,
+      DefaultPassphraseGenerationOptions.numWords,
+    );
     this.minNumber = CliUtils.convertNumberOption(passedOptions?.minNumber, 1);
     this.minSpecial = CliUtils.convertNumberOption(passedOptions?.minSpecial, 1);
 
@@ -83,6 +90,8 @@ class Options {
     }
     if (this.separator === "space") {
       this.separator = " ";
+    } else if (this.separator === "empty") {
+      this.separator = "";
     } else if (this.separator != null && this.separator.length > 1) {
       this.separator = this.separator[0];
     }

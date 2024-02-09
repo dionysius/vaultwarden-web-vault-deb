@@ -147,9 +147,6 @@ export class PasswordGenerationService implements PasswordGenerationServiceAbstr
     if (o.numWords == null || o.numWords <= 2) {
       o.numWords = DefaultOptions.numWords;
     }
-    if (o.wordSeparator == null || o.wordSeparator.length === 0 || o.wordSeparator.length > 1) {
-      o.wordSeparator = " ";
-    }
     if (o.capitalize == null) {
       o.capitalize = false;
     }
