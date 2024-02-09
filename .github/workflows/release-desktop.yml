@@ -30,12 +30,12 @@ on:
         default: true
         type: boolean
       electron_publish:
-        description: 'Publish electron to S3 bucket'
+        description: 'Publish Electron to S3 bucket'
         required: true
         default: true
         type: boolean
       github_release:
-        description: 'Publish github release'
+        description: 'Publish GitHub release'
         required: true
         default: true
         type: boolean
