@@ -1,5 +1,5 @@
 ---
-name: Version Auto Bump
+name: Auto Bump Desktop Version
 
 on:
   push:
@@ -11,11 +11,9 @@ defaults:
     shell: bash
 
 jobs:
-  setup:
-    name: "Setup"
+  bump-version:
+    name: Bump Desktop Version
     runs-on: ubuntu-22.04
-    outputs:
-      version_number: ${{ steps.version.outputs.new-version }}
     steps:
       - name: Checkout Branch
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
@@ -36,13 +34,25 @@ jobs:
 
           NEW_VER=$CURR_MAJOR.$NEW_PATCH
           echo "New Version: $NEW_VER"
-          echo "new-version=$NEW_VER" >> $GITHUB_OUTPUT
+          echo "New Version: $NEW_VER" >> $GITHUB_STEP_SUMMARY
+          echo "new_version=$NEW_VER" >> $GITHUB_OUTPUT
 
-  trigger_version_bump:
-    name: Bump version to ${{ needs.setup.outputs.version_number }}
-    needs: setup
-    uses: ./.github/workflows/version-bump.yml
-    with:
-      version_number: ${{ needs.setup.outputs.version_number }}
-      bump_desktop: true
-    secrets: inherit
+      - name: Login to Azure - CI Subscription
+        uses: Azure/login@e15b166166a8746d1a47596803bd8c1b595455cf # v1.6.0
+        with:
+          creds: ${{ secrets.AZURE_KV_CI_SERVICE_PRINCIPAL }}
+
+      - name: Retrieve bot secrets
+        id: retrieve-bot-secrets
+        uses: bitwarden/gh-actions/get-keyvault-secrets@main
+        with:
+          keyvault: bitwarden-ci
+          secrets: "github-pat-bitwarden-devops-bot-repo-scope"
+
+      - name: "Bump version to ${{ steps.version.outputs.new_version }}"
+        env:
+          GH_TOKEN: ${{ steps.retrieve-bot-secrets.outputs.github-pat-bitwarden-devops-bot-repo-scope }}
+        run: |
+          echo '{"cut_rc_branch": "false", "version_number": "${{ steps.version.outputs.new_version }}",
+                 "bump_browser": "false", "bump_cli": "false", "bump_desktop": "true", "bump_web": "false"}' | \
+          gh workflow run version-bump.yml --json --repo bitwarden/clients
