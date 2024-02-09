@@ -1,4 +1,4 @@
-import { BehaviorSubject, concatMap } from "rxjs";
+import { BehaviorSubject, Observable, concatMap, distinctUntilChanged, map } from "rxjs";
 
 import { CryptoFunctionService } from "../../../platform/abstractions/crypto-function.service";
 import { CryptoService } from "../../../platform/abstractions/crypto.service";
@@ -114,6 +114,68 @@ export class SendService implements InternalSendServiceAbstraction {
   get(id: string): Send {
     const sends = this._sends.getValue();
     return sends.find((send) => send.id === id);
+  }
+
+  get$(id: string): Observable<Send | undefined> {
+    return this.sends$.pipe(
+      distinctUntilChanged((oldSends, newSends) => {
+        const oldSend = oldSends.find((oldSend) => oldSend.id === id);
+        const newSend = newSends.find((newSend) => newSend.id === id);
+        if (!oldSend || !newSend) {
+          // If either oldSend or newSend is not found, consider them different
+          return false;
+        }
+
+        // Compare each property of the old and new Send objects
+        const allPropertiesSame = Object.keys(newSend).every((key) => {
+          if (
+            (oldSend[key as keyof Send] != null && newSend[key as keyof Send] === null) ||
+            (oldSend[key as keyof Send] === null && newSend[key as keyof Send] != null)
+          ) {
+            // If a key from either old or new send is not found, and the key from the other send has a value, consider them different
+            return false;
+          }
+
+          switch (key) {
+            case "name":
+            case "notes":
+            case "key":
+              if (oldSend[key] === null && newSend[key] === null) {
+                return true;
+              }
+
+              return oldSend[key].encryptedString === newSend[key].encryptedString;
+            case "text":
+              if (oldSend[key].text == null && newSend[key].text == null) {
+                return true;
+              }
+              if (
+                (oldSend[key].text != null && newSend[key].text == null) ||
+                (oldSend[key].text == null && newSend[key].text != null)
+              ) {
+                return false;
+              }
+              return oldSend[key].text.encryptedString === newSend[key].text.encryptedString;
+            case "file":
+              //Files are never updated so never will be changed.
+              return true;
+            case "revisionDate":
+            case "expirationDate":
+            case "deletionDate":
+              if (oldSend[key] === null && newSend[key] === null) {
+                return true;
+              }
+              return oldSend[key].getTime() === newSend[key].getTime();
+            default:
+              // For other properties, compare directly
+              return oldSend[key as keyof Send] === newSend[key as keyof Send];
+          }
+        });
+
+        return allPropertiesSame;
+      }),
+      map((sends) => sends.find((o) => o.id === id)),
+    );
   }
 
   async getFromState(id: string): Promise<Send> {
