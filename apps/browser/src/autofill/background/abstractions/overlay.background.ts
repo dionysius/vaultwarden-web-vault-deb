@@ -3,6 +3,8 @@ import { CipherRepromptType } from "@bitwarden/common/vault/enums/cipher-repromp
 
 import AutofillPageDetails from "../../models/autofill-page-details";
 
+import { LockedVaultPendingNotificationsData } from "./notification.background";
+
 type WebsiteIconData = {
   imageEnabled: boolean;
   image: string;
@@ -27,13 +29,7 @@ type OverlayBackgroundExtensionMessage = {
   details?: AutofillPageDetails;
   overlayElement?: string;
   display?: string;
-  data?: {
-    commandToRetry?: {
-      msg?: {
-        command?: string;
-      };
-    };
-  };
+  data?: LockedVaultPendingNotificationsData;
 } & OverlayAddNewItemMessage;
 
 type OverlayPortMessage = {

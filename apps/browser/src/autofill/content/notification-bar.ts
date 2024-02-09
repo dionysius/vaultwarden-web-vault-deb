@@ -1,7 +1,9 @@
+import {
+  AddLoginMessageData,
+  ChangePasswordMessageData,
+} from "../background/abstractions/notification.background";
 import AutofillField from "../models/autofill-field";
 import { WatchedForm } from "../models/watched-form";
-import AddLoginRuntimeMessage from "../notification/models/add-login-runtime-message";
-import ChangePasswordRuntimeMessage from "../notification/models/change-password-runtime-message";
 import { FormData } from "../services/abstractions/autofill.service";
 import { GlobalSettings, UserSettings } from "../types";
 import { getFromLocalStorage, setupExtensionDisconnectAction } from "../utils";
@@ -611,7 +613,7 @@ async function loadNotificationBar() {
         watchedForms[i].passwordEl != null
       ) {
         // Create a login object from the form data
-        const login: AddLoginRuntimeMessage = {
+        const login: AddLoginMessageData = {
           username: watchedForms[i].usernameEl.value,
           password: watchedForms[i].passwordEl.value,
           url: document.URL,
@@ -624,7 +626,7 @@ async function loadNotificationBar() {
           processedForm(form);
           sendPlatformMessage({
             command: "bgAddLogin",
-            login: login,
+            login,
           });
           break;
         } else if (
@@ -694,15 +696,12 @@ async function loadNotificationBar() {
 
           // Send a message to the `notification.background.ts` background script to notify the user that their password has changed
           // which eventually calls the `processMessage(...)` method in this script with command `openNotificationBar`
-          const changePasswordRuntimeMessage: ChangePasswordRuntimeMessage = {
+          const data: ChangePasswordMessageData = {
             newPassword: newPass,
             currentPassword: curPass,
             url: document.URL,
           };
-          sendPlatformMessage({
-            command: "bgChangedPassword",
-            data: changePasswordRuntimeMessage,
-          });
+          sendPlatformMessage({ command: "bgChangedPassword", data });
           break;
         }
       }

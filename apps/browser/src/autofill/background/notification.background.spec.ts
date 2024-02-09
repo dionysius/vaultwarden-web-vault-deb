@@ -10,6 +10,7 @@ import { BrowserStateService } from "../../platform/services/browser-state.servi
 import { createChromeTabMock } from "../jest/autofill-mocks";
 import AutofillService from "../services/autofill.service";
 
+import { AddLoginQueueMessage } from "./abstractions/notification.background";
 import NotificationBackground from "./notification.background";
 
 describe("NotificationBackground", () => {
@@ -49,6 +50,62 @@ describe("NotificationBackground", () => {
 
       expect(notificationBackground["authService"].getAuthStatus).not.toHaveBeenCalled();
       expect(notificationBackground["pushUnlockVaultToQueue"]).not.toHaveBeenCalled();
+    });
+  });
+
+  describe("convertAddLoginQueueMessageToCipherView", () => {
+    it("returns a cipher view when passed an `AddLoginQueueMessage`", () => {
+      const message: AddLoginQueueMessage = {
+        type: "add",
+        username: "test",
+        password: "password",
+        uri: "https://example.com",
+        domain: "",
+        tab: createChromeTabMock(),
+        expires: new Date(),
+        wasVaultLocked: false,
+      };
+      const cipherView = notificationBackground["convertAddLoginQueueMessageToCipherView"](message);
+
+      expect(cipherView.name).toEqual("example.com");
+      expect(cipherView.login).toEqual({
+        autofillOnPageLoad: null,
+        fido2Credentials: null,
+        password: message.password,
+        passwordRevisionDate: null,
+        totp: null,
+        uris: [
+          {
+            _canLaunch: null,
+            _domain: null,
+            _host: null,
+            _hostname: null,
+            _uri: message.uri,
+            match: null,
+          },
+        ],
+        username: message.username,
+      });
+    });
+
+    it("returns a cipher view assigned to an existing folder id", () => {
+      const folderId = "folder-id";
+      const message: AddLoginQueueMessage = {
+        type: "add",
+        username: "test",
+        password: "password",
+        uri: "https://example.com",
+        domain: "example.com",
+        tab: createChromeTabMock(),
+        expires: new Date(),
+        wasVaultLocked: false,
+      };
+      const cipherView = notificationBackground["convertAddLoginQueueMessageToCipherView"](
+        message,
+        folderId,
+      );
+
+      expect(cipherView.folderId).toEqual(folderId);
     });
   });
 });

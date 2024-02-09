@@ -1,6 +1,7 @@
 import { BrowserApi } from "../../platform/browser/browser-api";
 import { ContextMenuClickedHandler } from "../browser/context-menu-clicked-handler";
-import LockedVaultPendingNotificationsItem from "../notification/models/locked-vault-pending-notifications-item";
+
+import { LockedVaultPendingNotificationsData } from "./abstractions/notification.background";
 
 export default class ContextMenusBackground {
   private contextMenus: typeof chrome.contextMenus;
@@ -21,14 +22,17 @@ export default class ContextMenusBackground {
     BrowserApi.messageListener(
       "contextmenus.background",
       (
-        msg: { command: string; data: LockedVaultPendingNotificationsItem },
+        msg: { command: string; data: LockedVaultPendingNotificationsData },
         sender: chrome.runtime.MessageSender,
       ) => {
         if (msg.command === "unlockCompleted" && msg.data.target === "contextmenus.background") {
           // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
           // eslint-disable-next-line @typescript-eslint/no-floating-promises
           this.contextMenuClickedHandler
-            .cipherAction(msg.data.commandToRetry.msg.data, msg.data.commandToRetry.sender.tab)
+            .cipherAction(
+              msg.data.commandToRetry.message.contextMenuOnClickData,
+              msg.data.commandToRetry.sender.tab,
+            )
             .then(() => {
               // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
               // eslint-disable-next-line @typescript-eslint/no-floating-promises

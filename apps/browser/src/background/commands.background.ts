@@ -5,7 +5,7 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 
 import { openUnlockPopout } from "../auth/popup/utils/auth-popout-window";
-import LockedVaultPendingNotificationsItem from "../autofill/notification/models/locked-vault-pending-notifications-item";
+import { LockedVaultPendingNotificationsData } from "../autofill/background/abstractions/notification.background";
 import { BrowserApi } from "../platform/browser/browser-api";
 
 import MainBackground from "./main.background";
@@ -28,9 +28,10 @@ export default class CommandsBackground {
   async init() {
     BrowserApi.messageListener("commands.background", (msg: any) => {
       if (msg.command === "unlockCompleted" && msg.data.target === "commands.background") {
-        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-        // eslint-disable-next-line @typescript-eslint/no-floating-promises
-        this.processCommand(msg.data.commandToRetry.msg.command, msg.data.commandToRetry.sender);
+        this.processCommand(
+          msg.data.commandToRetry.message.command,
+          msg.data.commandToRetry.sender,
+        ).catch((error) => this.main.logService.error(error));
       }
     });
 
@@ -64,9 +65,7 @@ export default class CommandsBackground {
     const options = (await this.passwordGenerationService.getOptions())?.[0] ?? {};
     const password = await this.passwordGenerationService.generatePassword(options);
     this.platformUtilsService.copyToClipboard(password, { window: window });
-    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    this.passwordGenerationService.addHistory(password);
+    await this.passwordGenerationService.addHistory(password);
   }
 
   private async autoFillLogin(tab?: chrome.tabs.Tab) {
@@ -79,9 +78,9 @@ export default class CommandsBackground {
     }
 
     if ((await this.authService.getAuthStatus()) < AuthenticationStatus.Unlocked) {
-      const retryMessage: LockedVaultPendingNotificationsItem = {
+      const retryMessage: LockedVaultPendingNotificationsData = {
         commandToRetry: {
-          msg: { command: "autofill_login" },
+          message: { command: "autofill_login" },
           sender: { tab: tab },
         },
         target: "commands.background",
@@ -105,8 +104,6 @@ export default class CommandsBackground {
       return;
     }
 
-    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    this.main.openPopup();
+    await this.main.openPopup();
   }
 }

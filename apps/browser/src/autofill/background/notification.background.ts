@@ -11,26 +11,27 @@ import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.servi
 import { FolderService } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
 import { CipherType } from "@bitwarden/common/vault/enums";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
+import { LoginUriView } from "@bitwarden/common/vault/models/view/login-uri.view";
+import { LoginView } from "@bitwarden/common/vault/models/view/login.view";
 
 import { openUnlockPopout } from "../../auth/popup/utils/auth-popout-window";
 import { BrowserApi } from "../../platform/browser/browser-api";
 import { BrowserStateService } from "../../platform/services/abstractions/browser-state.service";
 import { openAddEditVaultItemPopout } from "../../vault/popup/utils/vault-popout-window";
 import { NOTIFICATION_BAR_LIFESPAN_MS } from "../constants";
-import AddChangePasswordQueueMessage from "../notification/models/add-change-password-queue-message";
-import AddLoginQueueMessage from "../notification/models/add-login-queue-message";
-import AddLoginRuntimeMessage from "../notification/models/add-login-runtime-message";
-import AddRequestFilelessImportQueueMessage from "../notification/models/add-request-fileless-import-queue-message";
-import AddUnlockVaultQueueMessage from "../notification/models/add-unlock-vault-queue-message";
-import ChangePasswordRuntimeMessage from "../notification/models/change-password-runtime-message";
-import LockedVaultPendingNotificationsItem from "../notification/models/locked-vault-pending-notifications-item";
-import {
-  NotificationQueueMessageType,
-  NotificationTypes,
-} from "../notification/models/notification-queue-message-type";
+import { NotificationQueueMessageType } from "../enums/notification-queue-message-type.enum";
 import { AutofillService } from "../services/abstractions/autofill.service";
 
-import { NotificationQueueMessageItem } from "./abstractions/notification.background";
+import {
+  AddChangePasswordQueueMessage,
+  AddLoginQueueMessage,
+  AddRequestFilelessImportQueueMessage,
+  AddUnlockVaultQueueMessage,
+  ChangePasswordMessageData,
+  AddLoginMessageData,
+  NotificationQueueMessageItem,
+  LockedVaultPendingNotificationsData,
+} from "./abstractions/notification.background";
 
 export default class NotificationBackground {
   private notificationQueue: NotificationQueueMessageItem[] = [];
@@ -89,9 +90,9 @@ export default class NotificationBackground {
       case "bgAddSave":
       case "bgChangeSave":
         if ((await this.authService.getAuthStatus()) < AuthenticationStatus.Unlocked) {
-          const retryMessage: LockedVaultPendingNotificationsItem = {
+          const retryMessage: LockedVaultPendingNotificationsData = {
             commandToRetry: {
-              msg: {
+              message: {
                 command: msg,
               },
               sender: sender,
@@ -188,10 +189,7 @@ export default class NotificationBackground {
     notificationQueueMessage: NotificationQueueMessageItem,
   ) {
     const notificationType = notificationQueueMessage.type;
-    const webVaultURL =
-      notificationType !== NotificationQueueMessageType.UnlockVault
-        ? this.environmentService.getWebVaultUrl()
-        : null;
+    const webVaultURL = this.environmentService.getWebVaultUrl();
     const typeData: Record<string, any> = {
       isVaultLocked: notificationQueueMessage.wasVaultLocked,
       theme: await this.getCurrentTheme(),
@@ -210,7 +208,7 @@ export default class NotificationBackground {
     }
 
     await BrowserApi.tabSendMessageData(tab, "openNotificationBar", {
-      type: NotificationTypes[notificationType],
+      type: notificationType,
       typeData,
     });
   }
@@ -235,7 +233,7 @@ export default class NotificationBackground {
     }
   }
 
-  private async addLogin(loginInfo: AddLoginRuntimeMessage, tab: chrome.tabs.Tab) {
+  private async addLogin(loginInfo: AddLoginMessageData, tab: chrome.tabs.Tab) {
     const authStatus = await this.authService.getAuthStatus();
     if (authStatus === AuthenticationStatus.LoggedOut) {
       return;
@@ -292,7 +290,7 @@ export default class NotificationBackground {
 
   private async pushAddLoginToQueue(
     loginDomain: string,
-    loginInfo: AddLoginRuntimeMessage,
+    loginInfo: AddLoginMessageData,
     tab: chrome.tabs.Tab,
     isVaultLocked = false,
   ) {
@@ -312,7 +310,7 @@ export default class NotificationBackground {
     await this.checkNotificationQueue(tab);
   }
 
-  private async changedPassword(changeData: ChangePasswordRuntimeMessage, tab: chrome.tabs.Tab) {
+  private async changedPassword(changeData: ChangePasswordMessageData, tab: chrome.tabs.Tab) {
     const loginDomain = Utils.getDomain(changeData.url);
     if (loginDomain == null) {
       return;
@@ -458,7 +456,11 @@ export default class NotificationBackground {
   private async saveOrUpdateCredentials(tab: chrome.tabs.Tab, edit: boolean, folderId?: string) {
     for (let i = this.notificationQueue.length - 1; i >= 0; i--) {
       const queueMessage = this.notificationQueue[i];
-      if (queueMessage.tab.id !== tab.id || !(queueMessage.type in NotificationQueueMessageType)) {
+      if (
+        queueMessage.tab.id !== tab.id ||
+        (queueMessage.type !== NotificationQueueMessageType.AddLogin &&
+          queueMessage.type !== NotificationQueueMessageType.ChangePassword)
+      ) {
         continue;
       }
 
@@ -494,7 +496,7 @@ export default class NotificationBackground {
         }
 
         folderId = (await this.folderExists(folderId)) ? folderId : null;
-        const newCipher = AddLoginQueueMessage.toCipherView(queueMessage, folderId);
+        const newCipher = this.convertAddLoginQueueMessageToCipherView(queueMessage, folderId);
 
         if (edit) {
           await this.editItem(newCipher, tab);
@@ -599,10 +601,10 @@ export default class NotificationBackground {
   }
 
   private async handleUnlockCompleted(
-    messageData: LockedVaultPendingNotificationsItem,
+    messageData: LockedVaultPendingNotificationsData,
     sender: chrome.runtime.MessageSender,
   ): Promise<void> {
-    if (messageData.commandToRetry.msg.command === "autofill_login") {
+    if (messageData.commandToRetry.message.command === "autofill_login") {
       await BrowserApi.tabSendMessageData(sender.tab, "closeNotificationBar");
     }
 
@@ -611,8 +613,36 @@ export default class NotificationBackground {
     }
 
     await this.processMessage(
-      messageData.commandToRetry.msg.command,
+      messageData.commandToRetry.message.command,
       messageData.commandToRetry.sender,
     );
+  }
+
+  /**
+   * Accepts a login queue message and converts it into a
+   * login uri view, login view, and cipher view.
+   *
+   * @param message - The message to convert to a cipher view
+   * @param folderId - The folder to add the cipher to
+   */
+  private convertAddLoginQueueMessageToCipherView(
+    message: AddLoginQueueMessage,
+    folderId?: string,
+  ): CipherView {
+    const uriView = new LoginUriView();
+    uriView.uri = message.uri;
+
+    const loginView = new LoginView();
+    loginView.uris = [uriView];
+    loginView.username = message.username;
+    loginView.password = message.password;
+
+    const cipherView = new CipherView();
+    cipherView.name = (Utils.getHostname(message.uri) || message.domain).replace(/^www\./, "");
+    cipherView.folderId = folderId;
+    cipherView.type = CipherType.Login;
+    cipherView.login = loginView;
+
+    return cipherView;
   }
 }
