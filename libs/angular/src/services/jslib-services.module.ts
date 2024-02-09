@@ -82,8 +82,10 @@ import { UserVerificationService } from "@bitwarden/common/auth/services/user-ve
 import { WebAuthnLoginApiService } from "@bitwarden/common/auth/services/webauthn-login/webauthn-login-api.service";
 import { WebAuthnLoginPrfCryptoService } from "@bitwarden/common/auth/services/webauthn-login/webauthn-login-prf-crypto.service";
 import { WebAuthnLoginService } from "@bitwarden/common/auth/services/webauthn-login/webauthn-login.service";
+import { BillingApiServiceAbstraction } from "@bitwarden/common/billing/abstractions/billilng-api.service.abstraction";
 import { BillingBannerServiceAbstraction } from "@bitwarden/common/billing/abstractions/billing-banner.service.abstraction";
 import { OrganizationBillingServiceAbstraction } from "@bitwarden/common/billing/abstractions/organization-billing.service";
+import { BillingApiService } from "@bitwarden/common/billing/services/billing-api.service";
 import { BillingBannerService } from "@bitwarden/common/billing/services/billing-banner.service";
 import { OrganizationBillingService } from "@bitwarden/common/billing/services/organization-billing.service";
 import { AppIdService as AppIdServiceAbstraction } from "@bitwarden/common/platform/abstractions/app-id.service";
@@ -915,6 +917,11 @@ import { ModalService } from "./modal.service";
       provide: VaultSettingsServiceAbstraction,
       useClass: VaultSettingsService,
       deps: [StateProvider],
+    },
+    {
+      provide: BillingApiServiceAbstraction,
+      useClass: BillingApiService,
+      deps: [ApiServiceAbstraction],
     },
   ],
 })
