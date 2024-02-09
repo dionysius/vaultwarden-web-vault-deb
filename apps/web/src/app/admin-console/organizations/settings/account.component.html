@@ -67,7 +67,12 @@
       {{ "collectionEnhancementsLearnMore" | i18n }}
     </a>
   </p>
-  <button type="button" bitButton buttonType="primary" [bitAction]="enableCollectionEnhancements">
+  <button
+    type="button"
+    bitButton
+    buttonType="primary"
+    (click)="showConfirmCollectionEnhancementsDialog()"
+  >
     {{ "enable" | i18n }}
   </button>
 </form>
