@@ -3,6 +3,7 @@ import { GENERATOR_DISK, KeyDefinition } from "../../platform/state";
 import { PassphraseGenerationOptions } from "./passphrase/passphrase-generation-options";
 import { GeneratedPasswordHistory } from "./password/generated-password-history";
 import { PasswordGenerationOptions } from "./password/password-generation-options";
+import { CatchallGenerationOptions } from "./username/catchall-generator-options";
 import { EffUsernameGenerationOptions } from "./username/eff-username-generator-options";
 import { SubaddressGenerationOptions } from "./username/subaddress-generator-options";
 
@@ -28,6 +29,15 @@ export const PASSPHRASE_SETTINGS = new KeyDefinition<PassphraseGenerationOptions
 export const EFF_USERNAME_SETTINGS = new KeyDefinition<EffUsernameGenerationOptions>(
   GENERATOR_DISK,
   "effUsernameGeneratorSettings",
+  {
+    deserializer: (value) => value,
+  },
+);
+
+/** catchall email generation options */
+export const CATCHALL_SETTINGS = new KeyDefinition<CatchallGenerationOptions>(
+  GENERATOR_DISK,
+  "catchallGeneratorSettings",
   {
     deserializer: (value) => value,
   },
