@@ -1,6 +1,7 @@
 import { mock, mockReset } from "jest-mock-extended";
 
 import { UserVerificationService } from "@bitwarden/common/auth/services/user-verification/user-verification.service";
+import { AutofillSettingsService } from "@bitwarden/common/autofill/services/autofill-settings.service";
 import { EventType } from "@bitwarden/common/enums";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { EventCollectionService } from "@bitwarden/common/services/event/event-collection.service";
@@ -50,6 +51,7 @@ describe("AutofillService", () => {
   let autofillService: AutofillService;
   const cipherService = mock<CipherService>();
   const stateService = mock<BrowserStateService>();
+  const autofillSettingsService = mock<AutofillSettingsService>();
   const totpService = mock<TotpService>();
   const eventCollectionService = mock<EventCollectionService>();
   const logService = mock<LogService>();
@@ -60,6 +62,7 @@ describe("AutofillService", () => {
     autofillService = new AutofillService(
       cipherService,
       stateService,
+      autofillSettingsService,
       totpService,
       eventCollectionService,
       logService,
@@ -83,6 +86,10 @@ describe("AutofillService", () => {
       tab2 = createChromeTabMock({ id: 2, url: "http://some-url.com" });
       tab3 = createChromeTabMock({ id: 3, url: "chrome-extension://some-extension-route" });
       jest.spyOn(BrowserApi, "tabsQuery").mockResolvedValueOnce([tab1, tab2]);
+      jest
+        .spyOn(autofillService, "getOverlayVisibility")
+        .mockResolvedValue(AutofillOverlayVisibility.OnFieldFocus);
+      jest.spyOn(autofillService, "getAutofillOnPageLoad").mockResolvedValue(true);
     });
 
     it("queries all browser tabs and injects the autofill scripts into them", async () => {
@@ -134,6 +141,7 @@ describe("AutofillService", () => {
     it("re-injects the autofill scripts in all tabs", () => {
       autofillService["autofillScriptPortsSet"] = new Set([mock<chrome.runtime.Port>()]);
       jest.spyOn(autofillService as any, "injectAutofillScriptsInAllTabs");
+      jest.spyOn(autofillService, "getAutofillOnPageLoad").mockResolvedValue(true);
 
       // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
       // eslint-disable-next-line @typescript-eslint/no-floating-promises
@@ -155,9 +163,14 @@ describe("AutofillService", () => {
       tabMock = createChromeTabMock();
       sender = { tab: tabMock, frameId: 1 };
       jest.spyOn(BrowserApi, "executeScriptInTab").mockImplementation();
+      jest
+        .spyOn(autofillService, "getOverlayVisibility")
+        .mockResolvedValue(AutofillOverlayVisibility.OnFieldFocus);
     });
 
     it("accepts an extension message sender and injects the autofill scripts into the tab of the sender", async () => {
+      jest.spyOn(autofillService, "getAutofillOnPageLoad").mockResolvedValue(true);
+
       await autofillService.injectAutofillScripts(sender.tab, sender.frameId, true);
 
       [autofillOverlayBootstrapScript, ...defaultAutofillScripts].forEach((scriptName) => {
@@ -169,10 +182,23 @@ describe("AutofillService", () => {
       });
     });
 
+    it("skips injecting autofiller script when autofill on load setting is disabled", async () => {
+      jest.spyOn(autofillService, "getAutofillOnPageLoad").mockResolvedValue(false);
+
+      await autofillService.injectAutofillScripts(sender.tab, sender.frameId, true);
+
+      expect(BrowserApi.executeScriptInTab).not.toHaveBeenCalledWith(tabMock.id, {
+        file: "content/autofiller.js",
+        frameId: sender.frameId,
+        ...defaultExecuteScriptOptions,
+      });
+    });
+
     it("will inject the bootstrap-autofill-overlay script if the user has the autofill overlay enabled", async () => {
       jest
-        .spyOn(autofillService["settingsService"], "getAutoFillOverlayVisibility")
+        .spyOn(autofillService, "getOverlayVisibility")
         .mockResolvedValue(AutofillOverlayVisibility.OnFieldFocus);
+      jest.spyOn(autofillService, "getAutofillOnPageLoad").mockResolvedValue(true);
 
       await autofillService.injectAutofillScripts(sender.tab, sender.frameId);
 
@@ -190,8 +216,9 @@ describe("AutofillService", () => {
 
     it("will inject the bootstrap-autofill script if the user does not have the autofill overlay enabled", async () => {
       jest
-        .spyOn(autofillService["settingsService"], "getAutoFillOverlayVisibility")
+        .spyOn(autofillService, "getOverlayVisibility")
         .mockResolvedValue(AutofillOverlayVisibility.Off);
+      jest.spyOn(autofillService, "getAutofillOnPageLoad").mockResolvedValue(true);
 
       await autofillService.injectAutofillScripts(sender.tab, sender.frameId);
 
@@ -208,6 +235,8 @@ describe("AutofillService", () => {
     });
 
     it("injects the content-message-handler script if not injecting on page load", async () => {
+      jest.spyOn(autofillService, "getAutofillOnPageLoad").mockResolvedValue(true);
+
       await autofillService.injectAutofillScripts(sender.tab, sender.frameId, false);
 
       expect(BrowserApi.executeScriptInTab).toHaveBeenCalledWith(tabMock.id, {
@@ -622,12 +651,12 @@ describe("AutofillService", () => {
       const totpCode = "123456";
       autofillOptions.cipher.login.totp = "totp";
       jest.spyOn(stateService, "getCanAccessPremium").mockResolvedValue(true);
-      jest.spyOn(stateService, "getDisableAutoTotpCopy").mockResolvedValue(false);
+      jest.spyOn(autofillService, "getShouldAutoCopyTotp").mockResolvedValue(true);
       jest.spyOn(totpService, "getCode").mockResolvedValue(totpCode);
 
       const autofillResult = await autofillService.doAutoFill(autofillOptions);
 
-      expect(stateService.getDisableAutoTotpCopy).toHaveBeenCalled();
+      expect(autofillService.getShouldAutoCopyTotp).toHaveBeenCalled();
       expect(totpService.getCode).toHaveBeenCalledWith(autofillOptions.cipher.login.totp);
       expect(autofillResult).toBe(totpCode);
     });
@@ -635,11 +664,11 @@ describe("AutofillService", () => {
     it("does not return a TOTP value if the user does not have premium features", async () => {
       autofillOptions.cipher.login.totp = "totp";
       jest.spyOn(stateService, "getCanAccessPremium").mockResolvedValue(false);
-      jest.spyOn(stateService, "getDisableAutoTotpCopy").mockResolvedValue(false);
+      jest.spyOn(autofillService, "getShouldAutoCopyTotp").mockResolvedValue(true);
 
       const autofillResult = await autofillService.doAutoFill(autofillOptions);
 
-      expect(stateService.getDisableAutoTotpCopy).not.toHaveBeenCalled();
+      expect(autofillService.getShouldAutoCopyTotp).not.toHaveBeenCalled();
       expect(totpService.getCode).not.toHaveBeenCalled();
       expect(autofillResult).toBeNull();
     });
@@ -655,12 +684,12 @@ describe("AutofillService", () => {
 
     it("returns a null value if the login does not contain a TOTP value", async () => {
       autofillOptions.cipher.login.totp = undefined;
-      jest.spyOn(stateService, "getDisableAutoTotpCopy");
+      jest.spyOn(autofillService, "getShouldAutoCopyTotp");
       jest.spyOn(totpService, "getCode");
 
       const autofillResult = await autofillService.doAutoFill(autofillOptions);
 
-      expect(stateService.getDisableAutoTotpCopy).not.toHaveBeenCalled();
+      expect(autofillService.getShouldAutoCopyTotp).not.toHaveBeenCalled();
       expect(totpService.getCode).not.toHaveBeenCalled();
       expect(autofillResult).toBeNull();
     });
@@ -679,13 +708,13 @@ describe("AutofillService", () => {
       autofillOptions.cipher.login.totp = "totp";
       autofillOptions.cipher.organizationUseTotp = true;
       jest.spyOn(stateService, "getCanAccessPremium").mockResolvedValue(true);
-      jest.spyOn(stateService, "getDisableAutoTotpCopy").mockResolvedValue(true);
+      jest.spyOn(autofillService, "getShouldAutoCopyTotp").mockResolvedValue(false);
       jest.spyOn(totpService, "getCode");
 
       const autofillResult = await autofillService.doAutoFill(autofillOptions);
 
       expect(stateService.getCanAccessPremium).toHaveBeenCalled();
-      expect(stateService.getDisableAutoTotpCopy).toHaveBeenCalled();
+      expect(autofillService.getShouldAutoCopyTotp).toHaveBeenCalled();
       expect(totpService.getCode).not.toHaveBeenCalled();
       expect(autofillResult).toBeNull();
     });

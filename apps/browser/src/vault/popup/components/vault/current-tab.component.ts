@@ -1,10 +1,11 @@
 import { ChangeDetectorRef, Component, NgZone, OnDestroy, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { Subject } from "rxjs";
+import { Subject, firstValueFrom } from "rxjs";
 import { debounceTime, takeUntil } from "rxjs/operators";
 
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
+import { AutofillSettingsServiceAbstraction } from "@bitwarden/common/autofill/services/autofill-settings.service";
 import { BroadcasterService } from "@bitwarden/common/platform/abstractions/broadcaster.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
@@ -65,6 +66,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     private syncService: SyncService,
     private searchService: SearchService,
     private stateService: StateService,
+    private autofillSettingsService: AutofillSettingsServiceAbstraction,
     private passwordRepromptService: PasswordRepromptService,
     private organizationService: OrganizationService,
     private vaultFilterService: VaultFilterService,
@@ -122,9 +124,9 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
       .subscribe(() => this.searchVault());
 
     // activate autofill on page load if policy is set
-    if (await this.stateService.getActivateAutoFillOnPageLoadFromPolicy()) {
-      await this.stateService.setEnableAutoFillOnPageLoad(true);
-      await this.stateService.setActivateAutoFillOnPageLoadFromPolicy(false);
+    if (await this.getActivateAutofillOnPageLoadFromPolicy()) {
+      await this.autofillSettingsService.setAutofillOnPageLoad(true);
+      await this.autofillSettingsService.setActivateAutofillOnPageLoadFromPolicy(false);
       this.platformUtilsService.showToast(
         "info",
         null,
@@ -301,17 +303,25 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     this.router.navigate(["autofill"]);
   }
 
+  private async getActivateAutofillOnPageLoadFromPolicy(): Promise<boolean> {
+    return await firstValueFrom(this.autofillSettingsService.activateAutofillOnPageLoadFromPolicy$);
+  }
+
   async dismissCallout() {
-    await this.stateService.setDismissedAutofillCallout(true);
+    await this.autofillSettingsService.setAutofillOnPageLoadCalloutIsDismissed(true);
     this.showHowToAutofill = false;
   }
 
   private async setCallout() {
+    const inlineMenuVisibilityIsOff =
+      (await firstValueFrom(this.autofillSettingsService.inlineMenuVisibility$)) ===
+      AutofillOverlayVisibility.Off;
+
     this.showHowToAutofill =
       this.loginCiphers.length > 0 &&
-      (await this.stateService.getAutoFillOverlayVisibility()) === AutofillOverlayVisibility.Off &&
-      !(await this.stateService.getEnableAutoFillOnPageLoad()) &&
-      !(await this.stateService.getDismissedAutofillCallout());
+      inlineMenuVisibilityIsOff &&
+      !(await firstValueFrom(this.autofillSettingsService.autofillOnPageLoad$)) &&
+      !(await firstValueFrom(this.autofillSettingsService.autofillOnPageLoadCalloutIsDismissed$));
 
     if (this.showHowToAutofill) {
       const autofillCommand = await this.platformUtilsService.getAutofillKeyboardShortcut();

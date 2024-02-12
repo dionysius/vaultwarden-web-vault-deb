@@ -4,6 +4,7 @@ import { SemVer } from "semver";
 import { ApiService } from "../../abstractions/api.service";
 import { SearchService } from "../../abstractions/search.service";
 import { SettingsService } from "../../abstractions/settings.service";
+import { AutofillSettingsServiceAbstraction } from "../../autofill/services/autofill-settings.service";
 import { ErrorResponse } from "../../models/response/error.response";
 import { ListResponse } from "../../models/response/list.response";
 import { View } from "../../models/view/view";
@@ -65,6 +66,7 @@ export class CipherService implements CipherServiceAbstraction {
     private i18nService: I18nService,
     private searchService: SearchService,
     private stateService: StateService,
+    private autofillSettingsService: AutofillSettingsServiceAbstraction,
     private encryptService: EncryptService,
     private cipherFileUploadService: CipherFileUploadService,
     private configService: ConfigServiceAbstraction,
@@ -1250,6 +1252,10 @@ export class CipherService implements CipherServiceAbstraction {
     }
   }
 
+  private async getAutofillOnPageLoadDefault() {
+    return await firstValueFrom(this.autofillSettingsService.autofillOnPageLoadDefault$);
+  }
+
   private async getCipherForUrl(
     url: string,
     lastUsed: boolean,
@@ -1265,7 +1271,8 @@ export class CipherService implements CipherServiceAbstraction {
       }
 
       if (autofillOnPageLoad) {
-        const autofillOnPageLoadDefault = await this.stateService.getAutoFillOnPageLoadDefault();
+        const autofillOnPageLoadDefault = await this.getAutofillOnPageLoadDefault();
+
         ciphers = ciphers.filter(
           (cipher) =>
             cipher.login.autofillOnPageLoad ||

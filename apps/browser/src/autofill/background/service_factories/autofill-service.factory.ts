@@ -34,11 +34,17 @@ import {
 import { AutofillService as AbstractAutoFillService } from "../../services/abstractions/autofill.service";
 import AutofillService from "../../services/autofill.service";
 
+import {
+  AutofillSettingsServiceInitOptions,
+  autofillSettingsServiceFactory,
+} from "./autofill-settings-service.factory";
+
 type AutoFillServiceOptions = FactoryOptions;
 
 export type AutoFillServiceInitOptions = AutoFillServiceOptions &
   CipherServiceInitOptions &
   StateServiceInitOptions &
+  AutofillSettingsServiceInitOptions &
   TotpServiceInitOptions &
   EventCollectionServiceInitOptions &
   LogServiceInitOptions &
@@ -57,6 +63,7 @@ export function autofillServiceFactory(
       new AutofillService(
         await cipherServiceFactory(cache, opts),
         await stateServiceFactory(cache, opts),
+        await autofillSettingsServiceFactory(cache, opts),
         await totpServiceFactory(cache, opts),
         await eventCollectionServiceFactory(cache, opts),
         await logServiceFactory(cache, opts),

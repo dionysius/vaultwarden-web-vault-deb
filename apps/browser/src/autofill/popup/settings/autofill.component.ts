@@ -1,7 +1,8 @@
 import { Component, OnInit } from "@angular/core";
+import { firstValueFrom } from "rxjs";
 
 import { SettingsService } from "@bitwarden/common/abstractions/settings.service";
-import { ConfigServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config.service.abstraction";
+import { AutofillSettingsServiceAbstraction } from "@bitwarden/common/autofill/services/autofill-settings.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
@@ -11,7 +12,10 @@ import { DialogService } from "@bitwarden/components";
 import { BrowserApi } from "../../../platform/browser/browser-api";
 import { enableAccountSwitching } from "../../../platform/flags";
 import { AutofillService } from "../../services/abstractions/autofill.service";
-import { AutofillOverlayVisibility } from "../../utils/autofill-overlay.enum";
+import {
+  AutofillOverlayVisibility,
+  InlineMenuVisibilitySetting,
+} from "../../utils/autofill-overlay.enum";
 
 @Component({
   selector: "app-autofill",
@@ -20,7 +24,7 @@ import { AutofillOverlayVisibility } from "../../utils/autofill-overlay.enum";
 export class AutofillComponent implements OnInit {
   protected canOverrideBrowserAutofillSetting = false;
   protected defaultBrowserAutofillDisabled = false;
-  protected autoFillOverlayVisibility: number;
+  protected autoFillOverlayVisibility: InlineMenuVisibilitySetting;
   protected autoFillOverlayVisibilityOptions: any[];
   protected disablePasswordManagerLink: string;
   enableAutoFillOnPageLoad = false;
@@ -35,10 +39,10 @@ export class AutofillComponent implements OnInit {
     private stateService: StateService,
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
-    private configService: ConfigServiceAbstraction,
     private settingsService: SettingsService,
     private autofillService: AutofillService,
     private dialogService: DialogService,
+    private autofillSettingsService: AutofillSettingsServiceAbstraction,
   ) {
     this.autoFillOverlayVisibilityOptions = [
       {
@@ -80,12 +84,17 @@ export class AutofillComponent implements OnInit {
 
     this.defaultBrowserAutofillDisabled = await this.browserAutofillSettingCurrentlyOverridden();
 
-    this.autoFillOverlayVisibility =
-      (await this.settingsService.getAutoFillOverlayVisibility()) || AutofillOverlayVisibility.Off;
+    this.autoFillOverlayVisibility = await firstValueFrom(
+      this.autofillSettingsService.inlineMenuVisibility$,
+    );
 
-    this.enableAutoFillOnPageLoad = await this.stateService.getEnableAutoFillOnPageLoad();
-    this.autoFillOnPageLoadDefault =
-      (await this.stateService.getAutoFillOnPageLoadDefault()) ?? true;
+    this.enableAutoFillOnPageLoad = await firstValueFrom(
+      this.autofillSettingsService.autofillOnPageLoad$,
+    );
+
+    this.autoFillOnPageLoadDefault = await firstValueFrom(
+      this.autofillSettingsService.autofillOnPageLoadDefault$,
+    );
 
     const defaultUriMatch = await this.stateService.getDefaultUriMatch();
     this.defaultUriMatch = defaultUriMatch == null ? UriMatchType.Domain : defaultUriMatch;
@@ -95,19 +104,20 @@ export class AutofillComponent implements OnInit {
   }
 
   async updateAutoFillOverlayVisibility() {
-    const previousAutoFillOverlayVisibility =
-      await this.settingsService.getAutoFillOverlayVisibility();
-    await this.settingsService.setAutoFillOverlayVisibility(this.autoFillOverlayVisibility);
+    const previousAutoFillOverlayVisibility = await firstValueFrom(
+      this.autofillSettingsService.inlineMenuVisibility$,
+    );
+    await this.autofillSettingsService.setInlineMenuVisibility(this.autoFillOverlayVisibility);
     await this.handleUpdatingAutofillOverlayContentScripts(previousAutoFillOverlayVisibility);
     await this.requestPrivacyPermission();
   }
 
   async updateAutoFillOnPageLoad() {
-    await this.stateService.setEnableAutoFillOnPageLoad(this.enableAutoFillOnPageLoad);
+    await this.autofillSettingsService.setAutofillOnPageLoad(this.enableAutoFillOnPageLoad);
   }
 
   async updateAutoFillOnPageLoadDefault() {
-    await this.stateService.setAutoFillOnPageLoadDefault(this.autoFillOnPageLoadDefault);
+    await this.autofillSettingsService.setAutofillOnPageLoadDefault(this.autoFillOnPageLoadDefault);
   }
 
   async saveDefaultUriMatch() {

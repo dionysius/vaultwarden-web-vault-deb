@@ -1,22 +1,22 @@
 import { mock, MockProxy } from "jest-mock-extended";
 import { BehaviorSubject, firstValueFrom } from "rxjs";
 
-import { OrganizationService } from "../admin-console/abstractions/organization/organization.service.abstraction";
-import { OrganizationUserStatusType, PolicyType } from "../admin-console/enums";
-import { PermissionsApi } from "../admin-console/models/api/permissions.api";
-import { OrganizationData } from "../admin-console/models/data/organization.data";
-import { PolicyData } from "../admin-console/models/data/policy.data";
-import { MasterPasswordPolicyOptions } from "../admin-console/models/domain/master-password-policy-options";
-import { Organization } from "../admin-console/models/domain/organization";
-import { Policy } from "../admin-console/models/domain/policy";
-import { ResetPasswordPolicyOptions } from "../admin-console/models/domain/reset-password-policy-options";
-import { PolicyResponse } from "../admin-console/models/response/policy.response";
-import { PolicyService } from "../admin-console/services/policy/policy.service";
-import { ListResponse } from "../models/response/list.response";
-import { CryptoService } from "../platform/abstractions/crypto.service";
-import { EncryptService } from "../platform/abstractions/encrypt.service";
-import { ContainerService } from "../platform/services/container.service";
-import { StateService } from "../platform/services/state.service";
+import { OrganizationService } from "../../../admin-console/abstractions/organization/organization.service.abstraction";
+import { OrganizationUserStatusType, PolicyType } from "../../../admin-console/enums";
+import { PermissionsApi } from "../../../admin-console/models/api/permissions.api";
+import { OrganizationData } from "../../../admin-console/models/data/organization.data";
+import { PolicyData } from "../../../admin-console/models/data/policy.data";
+import { MasterPasswordPolicyOptions } from "../../../admin-console/models/domain/master-password-policy-options";
+import { Organization } from "../../../admin-console/models/domain/organization";
+import { Policy } from "../../../admin-console/models/domain/policy";
+import { ResetPasswordPolicyOptions } from "../../../admin-console/models/domain/reset-password-policy-options";
+import { PolicyResponse } from "../../../admin-console/models/response/policy.response";
+import { PolicyService } from "../../../admin-console/services/policy/policy.service";
+import { ListResponse } from "../../../models/response/list.response";
+import { CryptoService } from "../../../platform/abstractions/crypto.service";
+import { EncryptService } from "../../../platform/abstractions/encrypt.service";
+import { ContainerService } from "../../../platform/services/container.service";
+import { StateService } from "../../../platform/services/state.service";
 
 describe("PolicyService", () => {
   let policyService: PolicyService;

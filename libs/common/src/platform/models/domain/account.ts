@@ -216,20 +216,16 @@ export class AccountProfile {
 
 export class AccountSettings {
   autoConfirmFingerPrints?: boolean;
-  autoFillOnPageLoadDefault?: boolean;
   biometricUnlock?: boolean;
   clearClipboard?: number;
   collapsedGroupings?: string[];
   defaultUriMatch?: UriMatchType;
   disableAutoBiometricsPrompt?: boolean;
-  disableAutoTotpCopy?: boolean;
   disableBadgeCounter?: boolean;
   disableGa?: boolean;
-  dismissedAutoFillOnPageLoadCallout?: boolean;
   dontShowCardsCurrentTab?: boolean;
   dontShowIdentitiesCurrentTab?: boolean;
   enableAlwaysOnTop?: boolean;
-  enableAutoFillOnPageLoad?: boolean;
   enableBiometric?: boolean;
   enableFullWidth?: boolean;
   equivalentDomains?: any;
@@ -246,7 +242,6 @@ export class AccountSettings {
   serverConfig?: ServerConfigData;
   approveLoginRequests?: boolean;
   avatarColor?: string;
-  activateAutoFillOnPageLoadFromPolicy?: boolean;
   smOnboardingTasks?: Record<string, Record<string, boolean>>;
   trustDeviceChoiceForDecryption?: boolean;
   biometricPromptCancelled?: boolean;

@@ -3,11 +3,11 @@ import { firstValueFrom } from "rxjs";
 
 import { AbstractThemingService } from "@bitwarden/angular/platform/services/theming/theming.service.abstraction";
 import { SettingsService } from "@bitwarden/common/abstractions/settings.service";
+import { AutofillSettingsServiceAbstraction } from "@bitwarden/common/autofill/services/autofill-settings.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { ThemeType } from "@bitwarden/common/platform/enums";
-import { TotpService } from "@bitwarden/common/vault/abstractions/totp.service";
 import { VaultSettingsService } from "@bitwarden/common/vault/abstractions/vault-settings/vault-settings.service";
 import { UriMatchType } from "@bitwarden/common/vault/enums";
 
@@ -45,7 +45,7 @@ export class OptionsComponent implements OnInit {
   constructor(
     private messagingService: MessagingService,
     private stateService: StateService,
-    private totpService: TotpService,
+    private autofillSettingsService: AutofillSettingsServiceAbstraction,
     i18nService: I18nService,
     private themingService: AbstractThemingService,
     private settingsService: SettingsService,
@@ -84,10 +84,13 @@ export class OptionsComponent implements OnInit {
   }
 
   async ngOnInit() {
-    this.enableAutoFillOnPageLoad = await this.stateService.getEnableAutoFillOnPageLoad();
+    this.enableAutoFillOnPageLoad = await firstValueFrom(
+      this.autofillSettingsService.autofillOnPageLoad$,
+    );
 
-    this.autoFillOnPageLoadDefault =
-      (await this.stateService.getAutoFillOnPageLoadDefault()) ?? true;
+    this.autoFillOnPageLoadDefault = await firstValueFrom(
+      this.autofillSettingsService.autofillOnPageLoadDefault$,
+    );
 
     this.enableAddLoginNotification = !(await this.stateService.getDisableAddLoginNotification());
 
@@ -99,7 +102,7 @@ export class OptionsComponent implements OnInit {
     this.showCardsCurrentTab = !(await this.stateService.getDontShowCardsCurrentTab());
     this.showIdentitiesCurrentTab = !(await this.stateService.getDontShowIdentitiesCurrentTab());
 
-    this.enableAutoTotpCopy = !(await this.stateService.getDisableAutoTotpCopy());
+    this.enableAutoTotpCopy = await firstValueFrom(this.autofillSettingsService.autoCopyTotp$);
 
     this.enableFavicon = !this.settingsService.getDisableFavicon();
 
@@ -135,15 +138,15 @@ export class OptionsComponent implements OnInit {
   }
 
   async updateAutoTotpCopy() {
-    await this.stateService.setDisableAutoTotpCopy(!this.enableAutoTotpCopy);
+    await this.autofillSettingsService.setAutoCopyTotp(this.enableAutoTotpCopy);
   }
 
   async updateAutoFillOnPageLoad() {
-    await this.stateService.setEnableAutoFillOnPageLoad(this.enableAutoFillOnPageLoad);
+    await this.autofillSettingsService.setAutofillOnPageLoad(this.enableAutoFillOnPageLoad);
   }
 
   async updateAutoFillOnPageLoadDefault() {
-    await this.stateService.setAutoFillOnPageLoadDefault(this.autoFillOnPageLoadDefault);
+    await this.autofillSettingsService.setAutofillOnPageLoadDefault(this.autoFillOnPageLoadDefault);
   }
 
   async updateFavicon() {

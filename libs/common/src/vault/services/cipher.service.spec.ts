@@ -5,6 +5,7 @@ import { makeStaticByteArray } from "../../../spec/utils";
 import { ApiService } from "../../abstractions/api.service";
 import { SearchService } from "../../abstractions/search.service";
 import { SettingsService } from "../../abstractions/settings.service";
+import { AutofillSettingsService } from "../../autofill/services/autofill-settings.service";
 import { ConfigServiceAbstraction } from "../../platform/abstractions/config/config.service.abstraction";
 import { CryptoService } from "../../platform/abstractions/crypto.service";
 import { EncryptService } from "../../platform/abstractions/encrypt.service";
@@ -97,6 +98,7 @@ const cipherData: CipherData = {
 describe("Cipher Service", () => {
   const cryptoService = mock<CryptoService>();
   const stateService = mock<StateService>();
+  const autofillSettingsService = mock<AutofillSettingsService>();
   const settingsService = mock<SettingsService>();
   const apiService = mock<ApiService>();
   const cipherFileUploadService = mock<CipherFileUploadService>();
@@ -121,6 +123,7 @@ describe("Cipher Service", () => {
       i18nService,
       searchService,
       stateService,
+      autofillSettingsService,
       encryptService,
       cipherFileUploadService,
       configService,
@@ -266,6 +269,8 @@ describe("Cipher Service", () => {
         Promise.resolve(new SymmetricCryptoKey(makeStaticByteArray(64)) as CipherKey),
       );
       cryptoService.encrypt.mockImplementation(encryptText);
+
+      jest.spyOn(cipherService as any, "getAutofillOnPageLoadDefault").mockResolvedValue(true);
     });
 
     describe("login encryption", () => {

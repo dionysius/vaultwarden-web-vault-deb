@@ -40,6 +40,10 @@ import { TwoFactorService } from "@bitwarden/common/auth/abstractions/two-factor
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { AuthService } from "@bitwarden/common/auth/services/auth.service";
 import { LoginService } from "@bitwarden/common/auth/services/login.service";
+import {
+  AutofillSettingsService,
+  AutofillSettingsServiceAbstraction,
+} from "@bitwarden/common/autofill/services/autofill-settings.service";
 import { AppIdService } from "@bitwarden/common/platform/abstractions/app-id.service";
 import { ConfigApiServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config-api.service.abstraction";
 import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/crypto-function.service";
@@ -555,6 +559,11 @@ function getBgService<T>(service: keyof MainBackground) {
       provide: DerivedStateProvider,
       useClass: ForegroundDerivedStateProvider,
       deps: [OBSERVABLE_MEMORY_STORAGE, NgZone],
+    },
+    {
+      provide: AutofillSettingsServiceAbstraction,
+      useClass: AutofillSettingsService,
+      deps: [StateProvider, PolicyService],
     },
   ],
 })

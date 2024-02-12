@@ -2,6 +2,10 @@ import { CipherService as AbstractCipherService } from "@bitwarden/common/vault/
 import { CipherService } from "@bitwarden/common/vault/services/cipher.service";
 
 import {
+  AutofillSettingsServiceInitOptions,
+  autofillSettingsServiceFactory,
+} from "../../../autofill/background/service_factories/autofill-settings-service.factory";
+import {
   CipherFileUploadServiceInitOptions,
   cipherFileUploadServiceFactory,
 } from "../../../background/service-factories/cipher-file-upload-service.factory";
@@ -53,6 +57,7 @@ export type CipherServiceInitOptions = CipherServiceFactoryOptions &
   I18nServiceInitOptions &
   SearchServiceInitOptions &
   StateServiceInitOptions &
+  AutofillSettingsServiceInitOptions &
   EncryptServiceInitOptions &
   ConfigServiceInitOptions;
 
@@ -72,6 +77,7 @@ export function cipherServiceFactory(
         await i18nServiceFactory(cache, opts),
         await searchServiceFactory(cache, opts),
         await stateServiceFactory(cache, opts),
+        await autofillSettingsServiceFactory(cache, opts),
         await encryptServiceFactory(cache, opts),
         await cipherFileUploadServiceFactory(cache, opts),
         await configServiceFactory(cache, opts),

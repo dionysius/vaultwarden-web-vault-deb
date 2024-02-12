@@ -20,9 +20,13 @@ const AutofillOverlayVisibility = {
   OnFieldFocus: 2,
 } as const;
 
+type InlineMenuVisibilitySetting =
+  (typeof AutofillOverlayVisibility)[keyof typeof AutofillOverlayVisibility];
+
 export {
   AutofillOverlayElement,
   AutofillOverlayPort,
   RedirectFocusDirection,
   AutofillOverlayVisibility,
+  InlineMenuVisibilitySetting,
 };

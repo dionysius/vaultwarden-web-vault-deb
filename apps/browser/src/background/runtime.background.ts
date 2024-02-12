@@ -1,5 +1,5 @@
 import { NotificationsService } from "@bitwarden/common/abstractions/notifications.service";
-import { SettingsService } from "@bitwarden/common/abstractions/settings.service";
+import { AutofillSettingsServiceAbstraction } from "@bitwarden/common/autofill/services/autofill-settings.service";
 import { ConfigServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config.service.abstraction";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
@@ -39,13 +39,13 @@ export default class RuntimeBackground {
     private i18nService: I18nService,
     private notificationsService: NotificationsService,
     private stateService: BrowserStateService,
+    private autofillSettingsService: AutofillSettingsServiceAbstraction,
     private systemService: SystemService,
     private environmentService: BrowserEnvironmentService,
     private messagingService: MessagingService,
     private logService: LogService,
     private configService: ConfigServiceAbstraction,
     private fido2Service: Fido2Service,
-    private settingsService: SettingsService,
   ) {
     // onInstalled listener must be wired up before anything else, so we do it in the ctor
     chrome.runtime.onInstalled.addListener((details: any) => {
@@ -338,7 +338,7 @@ export default class RuntimeBackground {
           // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
           // eslint-disable-next-line @typescript-eslint/no-floating-promises
           BrowserApi.createNewTab("https://bitwarden.com/browser-start/");
-          await this.settingsService.setAutoFillOverlayVisibility(
+          await this.autofillSettingsService.setInlineMenuVisibility(
             AutofillOverlayVisibility.OnFieldFocus,
           );
 
