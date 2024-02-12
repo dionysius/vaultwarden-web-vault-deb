@@ -454,10 +454,10 @@
     "message": "On system lock"
   },
   "onRestart": {
-    "message": "On browser restart"
+    "message": "wrth ailgychwyn y porwr"
   },
   "never": {
-    "message": "byth"
+    "message": "Byth"
   },
   "security": {
     "message": "Diogelwch"
@@ -667,7 +667,7 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
-    "message": "Should Bitwarden remember this password for you?"
+    "message": "A ddylai Bitwarden gofio'r cyfrinair hwn i chi?"
   },
   "notificationAddSave": {
     "message": "Cadw"
@@ -1963,7 +1963,7 @@
     "message": "One or more organization policies are affecting your Send options."
   },
   "passwordPrompt": {
-    "message": "Master password re-prompt"
+    "message": "Ailofyn am y prif gyfrinair"
   },
   "passwordConfirmation": {
     "message": "Master password confirmation"
