@@ -1,6 +1,7 @@
 import {
   ENCRYPTED_HISTORY,
   EFF_USERNAME_SETTINGS,
+  SUBADDRESS_SETTINGS,
   PASSPHRASE_SETTINGS,
   PASSWORD_SETTINGS,
 } from "./key-definitions";
@@ -26,6 +27,14 @@ describe("Key definitions", () => {
     it("should pass through deserialization", () => {
       const value = {};
       const result = EFF_USERNAME_SETTINGS.deserializer(value);
+      expect(result).toBe(value);
+    });
+  });
+
+  describe("SUBADDRESS_SETTINGS", () => {
+    it("should pass through deserialization", () => {
+      const value = {};
+      const result = SUBADDRESS_SETTINGS.deserializer(value);
       expect(result).toBe(value);
     });
   });

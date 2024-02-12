@@ -4,6 +4,7 @@ import { PassphraseGenerationOptions } from "./passphrase/passphrase-generation-
 import { GeneratedPasswordHistory } from "./password/generated-password-history";
 import { PasswordGenerationOptions } from "./password/password-generation-options";
 import { EffUsernameGenerationOptions } from "./username/eff-username-generator-options";
+import { SubaddressGenerationOptions } from "./username/subaddress-generator-options";
 
 /** plaintext password generation options */
 export const PASSWORD_SETTINGS = new KeyDefinition<PasswordGenerationOptions>(
@@ -27,6 +28,15 @@ export const PASSPHRASE_SETTINGS = new KeyDefinition<PassphraseGenerationOptions
 export const EFF_USERNAME_SETTINGS = new KeyDefinition<EffUsernameGenerationOptions>(
   GENERATOR_DISK,
   "effUsernameGeneratorSettings",
+  {
+    deserializer: (value) => value,
+  },
+);
+
+/** email subaddress generation options */
+export const SUBADDRESS_SETTINGS = new KeyDefinition<SubaddressGenerationOptions>(
+  GENERATOR_DISK,
+  "subaddressGeneratorSettings",
   {
     deserializer: (value) => value,
   },
