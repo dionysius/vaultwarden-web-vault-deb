@@ -5916,13 +5916,13 @@
     }
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
-    "message": "Launch DUO and follow the steps to finish logging in."
+    "message": "Покренути DUO и пратите кораке да бисте завршили пријављивање."
   },
   "duoRequiredByOrgForAccount": {
-    "message": "DUO two-step login is required for your account."
+    "message": "DUO пријава у два корака је потребна за ваш налог."
   },
   "launchDuo": {
-    "message": "Launch DUO"
+    "message": "Покренути DUO"
   },
   "turnOn": {
     "message": "Укључи"
@@ -7519,5 +7519,43 @@
   },
   "smFreeTrialConfirmationEmail": {
     "message": "Послали смо е-поруку са потврдом на ваш имејл на "
+  },
+  "confirmCollectionEnhancementsDialogTitle": {
+    "message": "Ова радња је неповратна"
+  },
+  "confirmCollectionEnhancementsDialogContent": {
+    "message": "Turning on this feature will deprecate the manager role and replace it with a Can manage permission. This will take a few moments. Do not make any organization changes until it is complete. Are you sure you want to proceed?"
+  },
+  "sorryToSeeYouGo": {
+    "message": "Sorry to see you go! Help improve Bitwarden by sharing why you're canceling.",
+    "description": "A message shown to users as part of an offboarding survey asking them to provide more information on their subscription cancelation."
+  },
+  "selectCancellationReason": {
+    "message": "Select a reason for canceling",
+    "description": "Used as a form field label for a select input on the offboarding survey."
+  },
+  "anyOtherFeedback": {
+    "message": "Is there any other feedback you'd like to share?",
+    "description": "Used as a form field label for a textarea input on the offboarding survey."
+  },
+  "missingFeatures": {
+    "message": "Missing features",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "movingToAnotherTool": {
+    "message": "Moving to another tool",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "tooDifficultToUse": {
+    "message": "Too difficult to use",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "notUsingEnough": {
+    "message": "Not using enough",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "tooExpensive": {
+    "message": "Too expensive",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
   }
 }

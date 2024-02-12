@@ -3477,7 +3477,7 @@
     "message": "Aseta tilaukseesi sisältyvä jäsenpaikkojen määrä. Määrän täytyttyä et voi kutsua uusia jäseniä."
   },
   "limitSmSubscriptionDesc": {
-    "message": "Aseta Salaisuushallinnan tilaukseen sisältyvä jäsenpaikkojen määrä. Määrän täytyttyä et voi kutsua uusia jäseniä."
+    "message": "Aseta Salaisuushallinta-tilaukseesi sisältyvä jäsenpaikkojen määrä. Määrän täytyttyä et voi kutsua uusia jäseniä."
   },
   "maxSeatLimit": {
     "message": "Käyttäjäpaikkojen enimmäismäärä (valinnainen)",
@@ -7414,7 +7414,7 @@
     "message": "Beta"
   },
   "assignCollectionAccess": {
-    "message": "Määritä kokoelmien käyttöoikeus"
+    "message": "Määritä kokoelmien käyttöoikeudet"
   },
   "editedCollections": {
     "message": "Muokatut kokoelmat"
@@ -7502,7 +7502,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
   },
   "collectionEnhancementsDesc": {
-    "message": "Paranna joustavuutta lisäämällä uusia asetuksia ja käyttöoikeuksia. Korvaa Valvoja-rooli \"voi hallita\" -käyttöoikeudella ja tarjoa valintoja, joilla käyttäjät voivat luoda kokoelmia ja joiden avulla voidaan rajoittaa kokoelmien hallintaoikeuksia.",
+    "message": "Paranna joustavuutta lisäämällä uusia asetuksia ja käyttöoikeuksia. Korvaa \"Valvoja\"-rooli \"Voi hallita\" -käyttöoikeudella ja aktivoi ominaisuuksia, joilla käyttäjät voivat luoda kokoelmia ja rajoittaa kokoelmien hallintaoikeuksia.",
     "description": "This describes new features and improvements for user roles and collections"
   },
   "collectionEnhancementsLearnMore": {
@@ -7519,5 +7519,43 @@
   },
   "smFreeTrialConfirmationEmail": {
     "message": "Sähköpostivahvistus lähetettiin osoitteeseen "
+  },
+  "confirmCollectionEnhancementsDialogTitle": {
+    "message": "Toimintoa ei ole mahdollista kumota"
+  },
+  "confirmCollectionEnhancementsDialogContent": {
+    "message": "Ominaisuuden käyttöönotto korvaa \"Valvoja\"-roolin \"Voi hallita\" -käyttöoikeudella. Muutos kestää hetken ja ennen sen valmistumista organisaatioon ei tule tehdä mitään muutoksia. Haluatko varmasti jatkaa?"
+  },
+  "sorryToSeeYouGo": {
+    "message": "Harmillista, että päätit lopettaa tilauksesi! Auta meitä parantamaan Bitwardenia kertomalla miksi.",
+    "description": "A message shown to users as part of an offboarding survey asking them to provide more information on their subscription cancelation."
+  },
+  "selectCancellationReason": {
+    "message": "Valitse syy tilauksesi lopetukseen",
+    "description": "Used as a form field label for a select input on the offboarding survey."
+  },
+  "anyOtherFeedback": {
+    "message": "Haluaisitko antaa meille muuta palautetta?",
+    "description": "Used as a form field label for a textarea input on the offboarding survey."
+  },
+  "missingFeatures": {
+    "message": "Ominaisuuksia puuttuu",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "movingToAnotherTool": {
+    "message": "Vaihdan eri työkaluun",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "tooDifficultToUse": {
+    "message": "Liian vaikea käyttää",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "notUsingEnough": {
+    "message": "Käyttötarve on liian pieni",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "tooExpensive": {
+    "message": "Liian kallis",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
   }
 }

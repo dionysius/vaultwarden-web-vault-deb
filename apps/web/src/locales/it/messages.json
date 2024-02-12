@@ -7519,5 +7519,43 @@
   },
   "smFreeTrialConfirmationEmail": {
     "message": "Abbiamo inviato un'email di conferma al tuo indirizzo email: "
+  },
+  "confirmCollectionEnhancementsDialogTitle": {
+    "message": "Questa azione è irreversibile"
+  },
+  "confirmCollectionEnhancementsDialogContent": {
+    "message": "Attivando questa funzionalità, il ruolo di manager sarà sostituito dall'autorizzazione Può gestire. L'operazione richiederà alcuni istanti. Non apportare modifiche all'organizzazione fino a quando non è finita. Sei sicuro di voler procedere?"
+  },
+  "sorryToSeeYouGo": {
+    "message": "Siamo spiacenti di vederti andare! Aiutaci a migliorare Bitwarden condividendo il motivo per cui stai annullando.",
+    "description": "A message shown to users as part of an offboarding survey asking them to provide more information on their subscription cancelation."
+  },
+  "selectCancellationReason": {
+    "message": "Seleziona un motivo per l'annullamento",
+    "description": "Used as a form field label for a select input on the offboarding survey."
+  },
+  "anyOtherFeedback": {
+    "message": "C'è qualche altro feedback che vorresti condividere?",
+    "description": "Used as a form field label for a textarea input on the offboarding survey."
+  },
+  "missingFeatures": {
+    "message": "Funzionalità mancanti",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "movingToAnotherTool": {
+    "message": "Passo a un altro strumento",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "tooDifficultToUse": {
+    "message": "Troppo difficile da usare",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "notUsingEnough": {
+    "message": "Non lo uso abbastanza",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "tooExpensive": {
+    "message": "Troppo costoso",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
   }
 }

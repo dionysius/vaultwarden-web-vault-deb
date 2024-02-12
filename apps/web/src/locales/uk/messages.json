@@ -7519,5 +7519,43 @@
   },
   "smFreeTrialConfirmationEmail": {
     "message": "Ми надіслали лист з підтвердженням на вашу електронну пошту "
+  },
+  "confirmCollectionEnhancementsDialogTitle": {
+    "message": "Це незворотна дія"
+  },
+  "confirmCollectionEnhancementsDialogContent": {
+    "message": "Увімкнення цієї функції замінить роль менеджера на можливість керування дозволами. Цей процес триватиме кілька секунд. Не робіть жодних змін в організації доки процес не завершиться. Ви дійсно хочете продовжити?"
+  },
+  "sorryToSeeYouGo": {
+    "message": "Нам шкода, що ви нас покидаєте! Допоможіть вдосконалити Bitwarden, повідомивши причину.",
+    "description": "A message shown to users as part of an offboarding survey asking them to provide more information on their subscription cancelation."
+  },
+  "selectCancellationReason": {
+    "message": "Виберіть причину скасування",
+    "description": "Used as a form field label for a select input on the offboarding survey."
+  },
+  "anyOtherFeedback": {
+    "message": "Чи бажаєте поділитися своїм відгуком?",
+    "description": "Used as a form field label for a textarea input on the offboarding survey."
+  },
+  "missingFeatures": {
+    "message": "Відсутні функції",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "movingToAnotherTool": {
+    "message": "Переходжу на інший інструмент",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "tooDifficultToUse": {
+    "message": "Складний у користуванні",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "notUsingEnough": {
+    "message": "Майже не користуюся",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "tooExpensive": {
+    "message": "Висока ціна",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
   }
 }

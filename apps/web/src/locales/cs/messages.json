@@ -7519,5 +7519,43 @@
   },
   "smFreeTrialConfirmationEmail": {
     "message": "Potvrzovací e-mail byl odeslán na "
+  },
+  "confirmCollectionEnhancementsDialogTitle": {
+    "message": "Tato akce je nevratná"
+  },
+  "confirmCollectionEnhancementsDialogContent": {
+    "message": "Zapnutí této funkce zruší roli správce a nahradí ji oprávněním Can manage. Toto bude trvat několik okamžiků. Neprovádějte žádné změny organizace, dokud nebude akce dokončena. Opravdu chcete pokračovat?"
+  },
+  "sorryToSeeYouGo": {
+    "message": "Je nám líto, že odcházíte! Pomozte nám Bitwarden vylepšit a řekněte nám, co se Vám nelíbí.",
+    "description": "A message shown to users as part of an offboarding survey asking them to provide more information on their subscription cancelation."
+  },
+  "selectCancellationReason": {
+    "message": "Vyberte důvod pro zrušení",
+    "description": "Used as a form field label for a select input on the offboarding survey."
+  },
+  "anyOtherFeedback": {
+    "message": "Je ještě něco, co nám chcete říci?",
+    "description": "Used as a form field label for a textarea input on the offboarding survey."
+  },
+  "missingFeatures": {
+    "message": "Chybějící funkce",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "movingToAnotherTool": {
+    "message": "Přesouvám se k jiné aplikaci",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "tooDifficultToUse": {
+    "message": "Příliš složité ne používání",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "notUsingEnough": {
+    "message": "Příliš jsem nepoužíval(a)",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "tooExpensive": {
+    "message": "Příliš drahé",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
   }
 }

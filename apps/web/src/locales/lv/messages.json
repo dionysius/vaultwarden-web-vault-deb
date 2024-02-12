@@ -7519,5 +7519,43 @@
   },
   "smFreeTrialConfirmationEmail": {
     "message": "Mēs esam nosūtījuši apstiprinājuma e-pasta ziņojumu uz "
+  },
+  "confirmCollectionEnhancementsDialogTitle": {
+    "message": "Šī darbība ir neatgriezeniska"
+  },
+  "confirmCollectionEnhancementsDialogContent": {
+    "message": "Šīs iespējas ieslēgšana padarīs pārvaldnieka lomu par nevēlamu un aizstās to ar atļauju \"Var pārvaldīt\". Tas aizņems dažus mirkļus. Neveikt nekādas apvienību izmaiņas, līdz tas ir pabeigts. Vai tiešām turpināt?"
+  },
+  "sorryToSeeYouGo": {
+    "message": "Žēl redzēt Tevi aizejam. Palīdzi uzlabot Bitwarden, daloties ar atcelšanas iemeslu!",
+    "description": "A message shown to users as part of an offboarding survey asking them to provide more information on their subscription cancelation."
+  },
+  "selectCancellationReason": {
+    "message": "Jāatlasa atcelšanas iemesls",
+    "description": "Used as a form field label for a select input on the offboarding survey."
+  },
+  "anyOtherFeedback": {
+    "message": "Vai ir kāda atgriezeniskā saite, ar ko vēlētos padalīties?",
+    "description": "Used as a form field label for a textarea input on the offboarding survey."
+  },
+  "missingFeatures": {
+    "message": "Trūkstošas iespējas",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "movingToAnotherTool": {
+    "message": "Cita rīka izmantošana",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "tooDifficultToUse": {
+    "message": "Pārāk sarežģīti izmantot",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "notUsingEnough": {
+    "message": "Netiek pietiekami izmantots",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "tooExpensive": {
+    "message": "Pārāk dārgi",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
   }
 }

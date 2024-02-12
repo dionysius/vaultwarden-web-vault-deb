@@ -3516,7 +3516,7 @@
     "message": "Подписка обновлена"
   },
   "subscribedToSecretsManager": {
-    "message": "Подписка обновлена. Теперь у вас есть доступ к Менеджеру секретов."
+    "message": "Подписка обновлена. Теперь у вас есть доступ к менеджеру секретов."
   },
   "additionalOptions": {
     "message": "Дополнительные настройки"
@@ -7150,7 +7150,7 @@
     "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
   },
   "activateSecretsManager": {
-    "message": "Активировать Менеджер секретов"
+    "message": "Активировать менеджеру секретов"
   },
   "yourOrganizationsFingerprint": {
     "message": "Фраза отпечатка вашей организации",
@@ -7519,5 +7519,43 @@
   },
   "smFreeTrialConfirmationEmail": {
     "message": "Мы отправили письмо с подтверждением на "
+  },
+  "confirmCollectionEnhancementsDialogTitle": {
+    "message": "Это действие необратимо"
+  },
+  "confirmCollectionEnhancementsDialogContent": {
+    "message": "При включении этой опции роль менеджера будет аннулирована и заменена разрешением 'Может управлять'. Это займет несколько минут. Не вносите никаких изменений в организацию, пока операция не будет завершена. Готовы ли вы продолжить?"
+  },
+  "sorryToSeeYouGo": {
+    "message": "Жаль, что вы уходите! Помогите нам улучшить Bitwarden, поделившись информацией о причинах отмены.",
+    "description": "A message shown to users as part of an offboarding survey asking them to provide more information on their subscription cancelation."
+  },
+  "selectCancellationReason": {
+    "message": "Выберите причину отмены",
+    "description": "Used as a form field label for a select input on the offboarding survey."
+  },
+  "anyOtherFeedback": {
+    "message": "Есть ли еще какие-нибудь замечания, которыми вы хотели бы поделиться?",
+    "description": "Used as a form field label for a textarea input on the offboarding survey."
+  },
+  "missingFeatures": {
+    "message": "Отсутствие нужной возможности",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "movingToAnotherTool": {
+    "message": "Переход на другой инструмент",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "tooDifficultToUse": {
+    "message": "Слишком сложно использовать",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "notUsingEnough": {
+    "message": "Используется слишком мало",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "tooExpensive": {
+    "message": "Слишком дорого",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
   }
 }

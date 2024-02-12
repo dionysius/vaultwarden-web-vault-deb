@@ -7519,5 +7519,43 @@
   },
   "smFreeTrialConfirmationEmail": {
     "message": "Vi har sendt bekræftelsesmail til dig via "
+  },
+  "confirmCollectionEnhancementsDialogTitle": {
+    "message": "Denne handling er irreversibel"
+  },
+  "confirmCollectionEnhancementsDialogContent": {
+    "message": "Aktivering af denne funktion vil udfase manager-rollen og erstatte den med tilladelsen Kan administrere. Dette vil tage et øjeblik. Foretag ingen organisationsændringer før processen er færdig. Sikker på, at du vil fortsætte?"
+  },
+  "sorryToSeeYouGo": {
+    "message": "Vi er kede af, at du stopper! Hjælp os med at forbedre Bitwarden ved at dele årsagen til din opsigelse.",
+    "description": "A message shown to users as part of an offboarding survey asking them to provide more information on their subscription cancelation."
+  },
+  "selectCancellationReason": {
+    "message": "Vælg en opsigelsesårsag",
+    "description": "Used as a form field label for a select input on the offboarding survey."
+  },
+  "anyOtherFeedback": {
+    "message": "Er der anden feedback, du ønsker at dele?",
+    "description": "Used as a form field label for a textarea input on the offboarding survey."
+  },
+  "missingFeatures": {
+    "message": "Manglende funktioner",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "movingToAnotherTool": {
+    "message": "Flytter til andet værktøj",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "tooDifficultToUse": {
+    "message": "For svært at bruge",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "notUsingEnough": {
+    "message": "Bruger ikke nok",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "tooExpensive": {
+    "message": "For dyrt",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
   }
 }

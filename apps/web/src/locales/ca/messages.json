@@ -7519,5 +7519,43 @@
   },
   "smFreeTrialConfirmationEmail": {
     "message": "Hem enviat un correu electrònic de confirmació al vostre correu electrònic a "
+  },
+  "confirmCollectionEnhancementsDialogTitle": {
+    "message": "Aquesta acció és irreversible"
+  },
+  "confirmCollectionEnhancementsDialogContent": {
+    "message": "En activar aquesta característica, la funció de gestor quedarà obsoleta i se substituirà per Pot gestionar permís. Això tardarà un moment. No feu cap canvi a l'organització fins que no s'haja completat. Esteu segur que voleu continuar?"
+  },
+  "sorryToSeeYouGo": {
+    "message": "Sentim que te'n vages! Ajuda a millorar Bitwarden compartint per què estàs donant-te de baixa.",
+    "description": "A message shown to users as part of an offboarding survey asking them to provide more information on their subscription cancelation."
+  },
+  "selectCancellationReason": {
+    "message": "Seleccioneu un motiu per cancel·lar-lo",
+    "description": "Used as a form field label for a select input on the offboarding survey."
+  },
+  "anyOtherFeedback": {
+    "message": "Hi ha algun altre comentari que voldríeu compartir?",
+    "description": "Used as a form field label for a textarea input on the offboarding survey."
+  },
+  "missingFeatures": {
+    "message": "Característiques que falten",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "movingToAnotherTool": {
+    "message": "Passem a una altra eina",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "tooDifficultToUse": {
+    "message": "És difícil d'utilitzar",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "notUsingEnough": {
+    "message": "No l'utilitzem prou",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "tooExpensive": {
+    "message": "Massa car",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
   }
 }

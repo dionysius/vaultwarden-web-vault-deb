@@ -7519,5 +7519,43 @@
   },
   "smFreeTrialConfirmationEmail": {
     "message": "あなたのメールアドレスに確認メールを送信しました："
+  },
+  "confirmCollectionEnhancementsDialogTitle": {
+    "message": "この操作は元に戻せません"
+  },
+  "confirmCollectionEnhancementsDialogContent": {
+    "message": "この機能を有効にすると、管理者ロールを非推奨にし、管理可能権限に置き換えます。 しばらく時間がかかります。完了するまで組織設定を変更しないでください。続行してもよろしいですか？"
+  },
+  "sorryToSeeYouGo": {
+    "message": "お別れするのは残念です！キャンセルする理由を共有して、Bitwarden の改善にご協力ください。",
+    "description": "A message shown to users as part of an offboarding survey asking them to provide more information on their subscription cancelation."
+  },
+  "selectCancellationReason": {
+    "message": "キャンセルする理由を選択",
+    "description": "Used as a form field label for a select input on the offboarding survey."
+  },
+  "anyOtherFeedback": {
+    "message": "他のフィードバックはありますか?",
+    "description": "Used as a form field label for a textarea input on the offboarding survey."
+  },
+  "missingFeatures": {
+    "message": "機能が不足している",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "movingToAnotherTool": {
+    "message": "別のツールに移行する",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "tooDifficultToUse": {
+    "message": "使用方法が難しすぎる",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "notUsingEnough": {
+    "message": "あまり使っていない",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "tooExpensive": {
+    "message": "料金が高すぎる",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
   }
 }

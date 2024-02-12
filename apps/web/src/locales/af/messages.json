@@ -271,35 +271,35 @@
     "message": "Deursoek gunstelinge"
   },
   "searchLogin": {
-    "message": "Search logins",
+    "message": "Deursoek aantekeninge",
     "description": "Search Login type"
   },
   "searchCard": {
-    "message": "Search cards",
+    "message": "Deursoek kaarte",
     "description": "Search Card type"
   },
   "searchIdentity": {
-    "message": "Search identities",
+    "message": "Deursoek identiteite",
     "description": "Search Identity type"
   },
   "searchSecureNote": {
-    "message": "Search secure notes",
+    "message": "Deursoek beveiligde notas",
     "description": "Search Secure Note type"
   },
   "searchVault": {
     "message": "Deursoek kluis"
   },
   "searchMyVault": {
-    "message": "Search my vault"
+    "message": "Deursoek my kluis"
   },
   "searchOrganization": {
-    "message": "Search organization"
+    "message": "Deursoek organisasie"
   },
   "searchMembers": {
-    "message": "Search members"
+    "message": "Deursoek lede"
   },
   "searchGroups": {
-    "message": "Search groups"
+    "message": "Deursoek groepe"
   },
   "allItems": {
     "message": "Alle items"
@@ -699,7 +699,7 @@
     "message": "Passkey limit reached. Remove a passkey to add another."
   },
   "tryAgain": {
-    "message": "Try again"
+    "message": "Probeer weer"
   },
   "createAccount": {
     "message": "Skep rekening"
@@ -708,7 +708,7 @@
     "message": "Nuut hier rond?"
   },
   "startTrial": {
-    "message": "Start trial"
+    "message": "Begin proeftydperk"
   },
   "logIn": {
     "message": "Teken aan"
@@ -7509,15 +7509,53 @@
     "message": "Learn more about collection management"
   },
   "organizationInformation": {
-    "message": "Organization information"
+    "message": "Organisasie-inligting"
   },
   "confirmationDetails": {
-    "message": "Confirmation details"
+    "message": "Bevestigingdetail"
   },
   "smFreeTrialThankYou": {
-    "message": "Thank you for signing up for Bitwarden Secrets Manager!"
+    "message": "Dankie dat u vir Bitwarden Secrets Manager ingeteken het!"
   },
   "smFreeTrialConfirmationEmail": {
     "message": "We've sent a confirmation email to your email at "
+  },
+  "confirmCollectionEnhancementsDialogTitle": {
+    "message": "This action is irreversible"
+  },
+  "confirmCollectionEnhancementsDialogContent": {
+    "message": "Turning on this feature will deprecate the manager role and replace it with a Can manage permission. This will take a few moments. Do not make any organization changes until it is complete. Are you sure you want to proceed?"
+  },
+  "sorryToSeeYouGo": {
+    "message": "Sorry to see you go! Help improve Bitwarden by sharing why you're canceling.",
+    "description": "A message shown to users as part of an offboarding survey asking them to provide more information on their subscription cancelation."
+  },
+  "selectCancellationReason": {
+    "message": "Select a reason for canceling",
+    "description": "Used as a form field label for a select input on the offboarding survey."
+  },
+  "anyOtherFeedback": {
+    "message": "Is there any other feedback you'd like to share?",
+    "description": "Used as a form field label for a textarea input on the offboarding survey."
+  },
+  "missingFeatures": {
+    "message": "Missing features",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "movingToAnotherTool": {
+    "message": "Moving to another tool",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "tooDifficultToUse": {
+    "message": "Too difficult to use",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "notUsingEnough": {
+    "message": "Not using enough",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "tooExpensive": {
+    "message": "Too expensive",
+    "description": "An option for the offboarding survey shown when a user cancels their subscription."
   }
 }
