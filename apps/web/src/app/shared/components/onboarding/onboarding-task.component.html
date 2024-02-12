@@ -12,7 +12,7 @@
   <a bitLink *ngIf="route" [routerLink]="route">
     <ng-container *ngTemplateOutlet="content"></ng-container>
   </a>
-  <button type="button" bitLink *ngIf="!route">
+  <button type="button" bitLink *ngIf="!route" [disabled]="isDisabled">
     <ng-container *ngTemplateOutlet="content"></ng-container>
   </button>
   <div

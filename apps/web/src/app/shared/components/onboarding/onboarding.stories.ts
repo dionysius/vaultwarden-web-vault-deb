@@ -5,7 +5,8 @@ import { delay, of, startWith } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { LinkModule, IconModule, ProgressModule } from "@bitwarden/components";
-import { PreloadedEnglishI18nModule } from "@bitwarden/web-vault/app/core/tests";
+
+import { PreloadedEnglishI18nModule } from "../../../core/tests";
 
 import { OnboardingTaskComponent } from "./onboarding-task.component";
 import { OnboardingComponent } from "./onboarding.component";
@@ -36,8 +37,8 @@ const Template: Story = (args) => ({
     ...args,
   },
   template: `
-    <sm-onboarding title="Get started">
-      <sm-onboarding-task
+    <app-onboarding title="Get started">
+      <app-onboarding-task
         [title]="'createServiceAccount' | i18n"
         icon="bwi-cli"
         [completed]="createServiceAccount"
@@ -45,23 +46,23 @@ const Template: Story = (args) => ({
         <span>
           {{ "downloadThe" | i18n }} <a bitLink routerLink="">{{ "smCLI" | i18n }}</a>
         </span>
-      </sm-onboarding-task>
-      <sm-onboarding-task
+      </app-onboarding-task>
+      <app-onboarding-task
         [title]="'createProject' | i18n"
         icon="bwi-collection"
         [completed]="createProject"
-      ></sm-onboarding-task>
-      <sm-onboarding-task
+      ></app-onboarding-task>
+      <app-onboarding-task
         [title]="'importSecrets' | i18n"
         icon="bwi-download"
         [completed]="importSecrets$ | async"
-      ></sm-onboarding-task>
-      <sm-onboarding-task
+      ></app-onboarding-task>
+      <app-onboarding-task
         [title]="'createSecret' | i18n"
         icon="bwi-key"
         [completed]="createSecret"
-      ></sm-onboarding-task>
-    </sm-onboarding>
+      ></app-onboarding-task>
+    </app-onboarding>
   `,
 });
 

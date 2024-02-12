@@ -27,6 +27,10 @@ export const SSO_DISK = new StateDefinition("ssoLogin", "disk");
 
 export const ENVIRONMENT_DISK = new StateDefinition("environment", "disk");
 
+export const VAULT_ONBOARDING = new StateDefinition("vaultOnboarding", "disk", {
+  web: "disk-local",
+});
+
 export const GENERATOR_DISK = new StateDefinition("generator", "disk");
 export const GENERATOR_MEMORY = new StateDefinition("generator", "memory");
 

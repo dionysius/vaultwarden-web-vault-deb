@@ -1,7 +1,8 @@
 import { NgModule } from "@angular/core";
 
 import { ProgressModule } from "@bitwarden/components";
-import { SharedModule } from "@bitwarden/web-vault/app/shared";
+
+import { SharedModule } from "../../shared.module";
 
 import { OnboardingTaskComponent } from "./onboarding-task.component";
 import { OnboardingComponent } from "./onboarding.component";

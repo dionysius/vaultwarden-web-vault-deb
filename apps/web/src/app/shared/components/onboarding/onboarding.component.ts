@@ -3,7 +3,7 @@ import { Component, ContentChildren, EventEmitter, Input, Output, QueryList } fr
 import { OnboardingTaskComponent } from "./onboarding-task.component";
 
 @Component({
-  selector: "sm-onboarding",
+  selector: "app-onboarding",
   templateUrl: "./onboarding.component.html",
 })
 export class OnboardingComponent {
