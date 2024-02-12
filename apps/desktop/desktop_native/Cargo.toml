@@ -15,7 +15,7 @@ manual_test = []
 [dependencies]
 aes = "=0.8.3"
 anyhow = "=1.0.75"
-arboard = { version = "=3.3.0", default-features = false }
+arboard = { version = "=3.3.0", default-features = false, features = ["wayland-data-control"] }
 base64 = "=0.21.5"
 cbc = { version = "=0.1.2", features = ["alloc"] }
 napi = { version = "=2.13.3", features = ["async"] }
