@@ -1,4 +1,5 @@
 import { Directive, EventEmitter, Input, Output } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
 
 /**
  * Base class used in `NavGroupComponent` and `NavItemComponent`
@@ -24,6 +25,11 @@ export abstract class NavBaseComponent {
    * Route to be passed to internal `routerLink`
    */
   @Input() route: string | any[];
+
+  /**
+   * Passed to internal `routerLink`
+   */
+  @Input() relativeTo?: ActivatedRoute | null;
 
   /**
    * If this item is used within a tree, set `variant` to `"tree"`
