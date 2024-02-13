@@ -1,12 +1,11 @@
 version: 1
 
-# checkmarx-specific related configuration
-# every value in this section is optional
+# Checkmarx configuration file
+#
+# https://checkmarx.com/resource/documents/en/34965-68549-configuring-projects-using-config-as-code-files.html
 checkmarx:
-  # configure the checkmarx scan parameters for scanning this specific project
   scan:
-    # configure the checkmarx scan configurations for scanning this specific project
     configs:
-      # configure the SAST related configurations this specific project
       sast:
-        filter: "!*.spec.ts"
+        # Exclude spec files, and test specific files
+        filter: "!*.spec.ts,!**/spec/**,!/apps/desktop/native-messaging-test-runner/"
