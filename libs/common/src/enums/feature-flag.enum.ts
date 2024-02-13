@@ -1,5 +1,4 @@
 export enum FeatureFlag {
-  PasswordlessLogin = "passwordless-login",
   BrowserFilelessImport = "browser-fileless-import",
   ItemShare = "item-share",
   FlexibleCollectionsV1 = "flexible-collections-v-1", // v-1 is intentional

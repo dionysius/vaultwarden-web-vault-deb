@@ -864,7 +864,6 @@ import { ModalService } from "./modal.service";
       deps: [
         WebAuthnLoginApiServiceAbstraction,
         LoginStrategyServiceAbstraction,
-        ConfigServiceAbstraction,
         WebAuthnLoginPrfCryptoServiceAbstraction,
         WINDOW,
         LogService,
