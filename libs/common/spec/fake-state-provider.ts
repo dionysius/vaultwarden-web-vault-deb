@@ -198,7 +198,7 @@ export class FakeDerivedStateProvider implements DerivedStateProvider {
     let result = this.states.get(deriveDefinition.buildCacheKey()) as DerivedState<TTo>;
 
     if (result == null) {
-      result = new FakeDerivedState<TTo>();
+      result = new FakeDerivedState(parentState$, deriveDefinition, dependencies);
       this.states.set(deriveDefinition.buildCacheKey(), result);
     }
     return result;
