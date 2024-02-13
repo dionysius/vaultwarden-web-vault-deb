@@ -33,21 +33,6 @@ defaults:
     shell: bash
 
 jobs:
-  cloc:
-    name: CLOC
-    runs-on: ubuntu-22.04
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
-
-      - name: Set up cloc
-        run: |
-          sudo apt-get update
-          sudo apt-get -y install cloc
-
-      - name: Print lines of code
-        run: cloc --include-lang TypeScript,JavaScript,HTML,Sass,CSS --vcs git
-
   electron-verify:
     name: Verify Electron Version
     runs-on: ubuntu-22.04
@@ -1184,7 +1169,6 @@ jobs:
     if: always()
     runs-on: ubuntu-22.04
     needs:
-      - cloc
       - electron-verify
       - browser-build
       - setup
@@ -1198,7 +1182,6 @@ jobs:
       - name: Check if any job failed
         if: ${{ (github.ref == 'refs/heads/main') || (github.ref == 'refs/heads/rc') }}
         env:
-          CLOC_STATUS: ${{ needs.cloc.result }}
           ELECTRON_VERIFY_STATUS: ${{ needs.electron-verify.result }}
           BROWSER_BUILD_STATUS: ${{ needs.browser-build.result }}
           SETUP_STATUS: ${{ needs.setup.result }}
@@ -1209,9 +1192,7 @@ jobs:
           MACOS_PKG_MAS_STATUS: ${{ needs.macos-package-mas.result }}
           CROWDIN_PUSH_STATUS: ${{ needs.crowdin-push.result }}
         run: |
-          if [ "$CLOC_STATUS" = "failure" ]; then
-              exit 1
-          elif [ "$ELECTRON_VERIFY_STATUS" = "failure" ]; then
+          if [ "$ELECTRON_VERIFY_STATUS" = "failure" ]; then
               exit 1
           elif [ "$BROWSER_BUILD_STATUS" = "failure" ]; then
               exit 1

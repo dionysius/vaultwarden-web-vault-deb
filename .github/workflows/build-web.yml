@@ -37,23 +37,6 @@ env:
   _AZ_REGISTRY: bitwardenprod.azurecr.io
 
 jobs:
-  cloc:
-    name: CLOC
-    runs-on: ubuntu-22.04
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
-
-      - name: Set up cloc
-        run: |
-          sudo apt update
-          sudo apt -y install cloc
-
-      - name: Print lines of code
-        working-directory: apps/web
-        run: cloc --include-lang TypeScript,JavaScript,HTML,Sass,CSS --vcs git
-
-
   setup:
     name: Setup
     runs-on: ubuntu-22.04
@@ -333,7 +316,6 @@ jobs:
     if: always()
     runs-on: ubuntu-22.04
     needs:
-      - cloc
       - setup
       - build-artifacts
       - build-containers
@@ -343,16 +325,13 @@ jobs:
       - name: Check if any job failed
         if: ${{ (github.ref == 'refs/heads/main') || (github.ref == 'refs/heads/rc') }}
         env:
-          CLOC_STATUS: ${{ needs.cloc.result }}
           SETUP_STATUS: ${{ needs.setup.result }}
           ARTIFACT_STATUS: ${{ needs.build-artifacts.result }}
           BUILD_CONTAINERS_STATUS: ${{ needs.build-containers.result }}
           CROWDIN_PUSH_STATUS: ${{ needs.crowdin-push.result }}
           TRIGGER_WEB_VAULT_DEPLOY_STATUS: ${{ needs.trigger-web-vault-deploy.result }}
         run: |
-          if [ "$CLOC_STATUS" = "failure" ]; then
-              exit 1
-          elif [ "$SETUP_STATUS" = "failure" ]; then
+          if [ "$SETUP_STATUS" = "failure" ]; then
               exit 1
           elif [ "$ARTIFACT_STATUS" = "failure" ]; then
               exit 1

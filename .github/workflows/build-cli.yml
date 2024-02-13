@@ -33,22 +33,6 @@ defaults:
     working-directory: apps/cli
 
 jobs:
-  cloc:
-    name: CLOC
-    runs-on: ubuntu-22.04
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
-
-      - name: Set up cloc
-        run: |
-          sudo apt update
-          sudo apt -y install cloc
-
-      - name: Print lines of code
-        run: cloc --include-lang TypeScript,JavaScript --vcs git
-
-
   setup:
     name: Setup
     runs-on: ubuntu-22.04
@@ -371,7 +355,6 @@ jobs:
     if: always()
     runs-on: ubuntu-22.04
     needs:
-      - cloc
       - setup
       - cli
       - cli-windows
@@ -381,14 +364,11 @@ jobs:
         working-directory: ${{ github.workspace }}
         if: ${{ (github.ref == 'refs/heads/main') || (github.ref == 'refs/heads/rc') }}
         env:
-          CLOC_STATUS: ${{ needs.cloc.result }}
           SETUP_STATUS: ${{ needs.setup.result }}
           CLI_STATUS: ${{ needs.cli.result }}
           SNAP_STATUS: ${{ needs.snap.result }}
         run: |
-          if [ "$CLOC_STATUS" = "failure" ]; then
-              exit 1
-          elif [ "$SETUP_STATUS" = "failure" ]; then
+          if [ "$SETUP_STATUS" = "failure" ]; then
               exit 1
           elif [ "$CLI_STATUS" = "failure" ]; then
               exit 1
