@@ -1,0 +1,12 @@
+version: 1
+
+# checkmarx-specific related configuration
+# every value in this section is optional
+checkmarx:
+  # configure the checkmarx scan parameters for scanning this specific project
+  scan:
+    # configure the checkmarx scan configurations for scanning this specific project
+    configs:
+      # configure the SAST related configurations this specific project
+      sast:
+        filter: "!*.spec.ts"
