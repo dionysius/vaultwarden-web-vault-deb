@@ -20,12 +20,17 @@ export class CollectionDetailsResponse extends CollectionResponse {
   readOnly: boolean;
   manage: boolean;
   hidePasswords: boolean;
+  assigned: boolean;
 
   constructor(response: any) {
     super(response);
     this.readOnly = this.getResponseProperty("ReadOnly") || false;
     this.manage = this.getResponseProperty("Manage") || false;
     this.hidePasswords = this.getResponseProperty("HidePasswords") || false;
+
+    // Temporary until the API is updated to return this property in AC-2084
+    // For now, we can assume that if the object is 'collectionDetails' then the user is assigned
+    this.assigned = this.getResponseProperty("object") == "collectionDetails";
   }
 }
 

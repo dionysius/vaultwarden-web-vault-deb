@@ -11,6 +11,7 @@ import { ActivatedRoute, Params, Router } from "@angular/router";
 import {
   BehaviorSubject,
   combineLatest,
+  defer,
   firstValueFrom,
   lastValueFrom,
   Observable,
@@ -250,7 +251,7 @@ export class VaultComponent implements OnInit, OnDestroy {
 
     const allCollectionsWithoutUnassigned$ = combineLatest([
       organizationId$.pipe(switchMap((orgId) => this.collectionAdminService.getAll(orgId))),
-      this.collectionService.getAllDecrypted(),
+      defer(() => this.collectionService.getAllDecrypted()),
     ]).pipe(
       map(([adminCollections, syncCollections]) => {
         const syncCollectionDict = Object.fromEntries(syncCollections.map((c) => [c.id, c]));
