@@ -7,9 +7,7 @@ import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { CipherType } from "@bitwarden/common/vault/enums";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 
-import { BitwardenCsvExportType } from "../bitwarden-csv-export-type";
-import { BitwardenPasswordProtectedFileFormat } from "../bitwarden-json-export-types";
-
+import { BitwardenCsvExportType, BitwardenPasswordProtectedFileFormat } from "../types";
 export class BaseVaultExportService {
   constructor(
     protected cryptoService: CryptoService,

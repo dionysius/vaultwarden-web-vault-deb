@@ -1,7 +1,6 @@
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 
-import { ExportHelper } from "../../export-helper";
-
+import { ExportHelper } from "./export-helper";
 import { IndividualVaultExportServiceAbstraction } from "./individual-vault-export.service.abstraction";
 import { OrganizationVaultExportServiceAbstraction } from "./org-vault-export.service.abstraction";
 import { ExportFormat, VaultExportServiceAbstraction } from "./vault-export.service.abstraction";

@@ -17,11 +17,11 @@ import { CollectionDetailsResponse } from "@bitwarden/common/vault/models/respon
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { CollectionView } from "@bitwarden/common/vault/models/view/collection.view";
 
-import { BitwardenCsvOrgExportType } from "../bitwarden-csv-export-type";
 import {
+  BitwardenCsvOrgExportType,
   BitwardenEncryptedOrgJsonExport,
   BitwardenUnEncryptedOrgJsonExport,
-} from "../bitwarden-json-export-types";
+} from "../types";
 
 import { BaseVaultExportService } from "./base-vault-export.service";
 import { OrganizationVaultExportServiceAbstraction } from "./org-vault-export.service.abstraction";

@@ -13,11 +13,11 @@ import { Folder } from "@bitwarden/common/vault/models/domain/folder";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { FolderView } from "@bitwarden/common/vault/models/view/folder.view";
 
-import { BitwardenCsvIndividualExportType } from "../bitwarden-csv-export-type";
 import {
+  BitwardenCsvIndividualExportType,
   BitwardenEncryptedIndividualJsonExport,
   BitwardenUnEncryptedIndividualJsonExport,
-} from "../bitwarden-json-export-types";
+} from "../types";
 
 import { BaseVaultExportService } from "./base-vault-export.service";
 import { IndividualVaultExportServiceAbstraction } from "./individual-vault-export.service.abstraction";
