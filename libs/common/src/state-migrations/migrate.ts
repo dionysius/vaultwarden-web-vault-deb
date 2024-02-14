@@ -15,6 +15,7 @@ import { EnablePasskeysMigrator } from "./migrations/17-move-enable-passkeys-to-
 import { AutofillSettingsKeyMigrator } from "./migrations/18-move-autofill-settings-to-state-providers";
 import { RequirePasswordOnStartMigrator } from "./migrations/19-migrate-require-password-on-start";
 import { PrivateKeyMigrator } from "./migrations/20-move-private-key-to-state-providers";
+import { CollectionMigrator } from "./migrations/21-move-collections-state-to-state-provider";
 import { FixPremiumMigrator } from "./migrations/3-fix-premium";
 import { RemoveEverBeenUnlockedMigrator } from "./migrations/4-remove-ever-been-unlocked";
 import { AddKeyTypeToOrgKeysMigrator } from "./migrations/5-add-key-type-to-org-keys";
@@ -25,7 +26,7 @@ import { MoveBrowserSettingsToGlobal } from "./migrations/9-move-browser-setting
 import { MinVersionMigrator } from "./migrations/min-version";
 
 export const MIN_VERSION = 2;
-export const CURRENT_VERSION = 20;
+export const CURRENT_VERSION = 21;
 export type MinVersion = typeof MIN_VERSION;
 
 export function createMigrationBuilder() {
@@ -48,7 +49,8 @@ export function createMigrationBuilder() {
     .with(EnablePasskeysMigrator, 16, 17)
     .with(AutofillSettingsKeyMigrator, 17, 18)
     .with(RequirePasswordOnStartMigrator, 18, 19)
-    .with(PrivateKeyMigrator, 19, CURRENT_VERSION);
+    .with(PrivateKeyMigrator, 19, 20)
+    .with(CollectionMigrator, 20, CURRENT_VERSION);
 }
 
 export async function currentVersion(

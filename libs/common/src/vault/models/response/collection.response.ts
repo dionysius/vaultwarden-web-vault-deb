@@ -1,9 +1,10 @@
 import { SelectionReadOnlyResponse } from "../../../admin-console/models/response/selection-read-only.response";
 import { BaseResponse } from "../../../models/response/base.response";
+import { CollectionId, OrganizationId } from "../../../types/guid";
 
 export class CollectionResponse extends BaseResponse {
-  id: string;
-  organizationId: string;
+  id: CollectionId;
+  organizationId: OrganizationId;
   name: string;
   externalId: string;
 

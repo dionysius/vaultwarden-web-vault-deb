@@ -125,7 +125,7 @@ export class VaultHeaderComponent {
 
   get canEditCollection(): boolean {
     // Only edit collections if not editing "Unassigned"
-    if (this.collection === undefined) {
+    if (this.collection == null) {
       return false;
     }
 

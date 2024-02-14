@@ -28,7 +28,7 @@
         aria-hidden="true"
       ></i>
       <span>{{ title }}</span>
-      <ng-container *ngIf="collection !== undefined && (canEditCollection || canDeleteCollection)">
+      <ng-container *ngIf="collection != null && (canEditCollection || canDeleteCollection)">
         <button
           bitIconButton="bwi-angle-down"
           [bitMenuTriggerFor]="editCollectionMenu"

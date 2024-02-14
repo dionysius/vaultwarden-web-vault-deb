@@ -454,7 +454,7 @@ export default class MainBackground {
     this.collectionService = new CollectionService(
       this.cryptoService,
       this.i18nService,
-      this.stateService,
+      this.stateProvider,
     );
     this.syncNotifierService = new SyncNotifierService();
     this.organizationService = new BrowserOrganizationService(

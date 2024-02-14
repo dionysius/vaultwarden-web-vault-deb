@@ -22,10 +22,8 @@ import { DeepJsonify } from "../../../types/deep-jsonify";
 import { MasterKey, UserKey } from "../../../types/key";
 import { UriMatchType } from "../../../vault/enums";
 import { CipherData } from "../../../vault/models/data/cipher.data";
-import { CollectionData } from "../../../vault/models/data/collection.data";
 import { FolderData } from "../../../vault/models/data/folder.data";
 import { CipherView } from "../../../vault/models/view/cipher.view";
-import { CollectionView } from "../../../vault/models/view/collection.view";
 import { AddEditCipherInfo } from "../../../vault/types/add-edit-cipher-info";
 import { KdfType } from "../../enums";
 import { Utils } from "../../misc/utils";
@@ -73,7 +71,7 @@ export class EncryptionPair<TEncrypted, TDecrypted> {
 }
 
 export class DataEncryptionPair<TEncrypted, TDecrypted> {
-  encrypted?: { [id: string]: TEncrypted };
+  encrypted?: Record<string, TEncrypted>;
   decrypted?: TDecrypted[];
 }
 
@@ -92,10 +90,6 @@ export class AccountData {
   folders? = new TemporaryDataEncryption<FolderData>();
   localData?: any;
   sends?: DataEncryptionPair<SendData, SendView> = new DataEncryptionPair<SendData, SendView>();
-  collections?: DataEncryptionPair<CollectionData, CollectionView> = new DataEncryptionPair<
-    CollectionData,
-    CollectionView
-  >();
   policies?: DataEncryptionPair<PolicyData, Policy> = new DataEncryptionPair<PolicyData, Policy>();
   passwordGenerationHistory?: EncryptionPair<
     GeneratedPasswordHistory[],
