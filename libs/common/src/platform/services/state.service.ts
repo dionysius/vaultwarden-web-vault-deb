@@ -14,8 +14,6 @@ import { BiometricKey } from "../../auth/types/biometric-key";
 import { VaultTimeoutAction } from "../../enums/vault-timeout-action.enum";
 import { EventData } from "../../models/data/event.data";
 import { WindowState } from "../../models/domain/window-state";
-import { migrate } from "../../state-migrations";
-import { waitForMigrations } from "../../state-migrations/migrate";
 import { GeneratorOptions } from "../../tools/generator/generator-options";
 import { GeneratedPasswordHistory, PasswordGeneratorOptions } from "../../tools/generator/password";
 import { UsernameGeneratorOptions } from "../../tools/generator/username";
@@ -56,6 +54,8 @@ import { GlobalState } from "../models/domain/global-state";
 import { State } from "../models/domain/state";
 import { StorageOptions } from "../models/domain/storage-options";
 import { SymmetricCryptoKey } from "../models/domain/symmetric-crypto-key";
+
+import { MigrationRunner } from "./migration-runner";
 
 const keys = {
   state: "state",
@@ -108,6 +108,7 @@ export class StateService<
     protected stateFactory: StateFactory<TGlobalState, TAccount>,
     protected accountService: AccountService,
     protected environmentService: EnvironmentService,
+    private migrationRunner: MigrationRunner,
     protected useAccountCache: boolean = true,
   ) {
     // If the account gets changed, verify the new account is unlocked
@@ -136,11 +137,11 @@ export class StateService<
     }
 
     if (runMigrations) {
-      await migrate(this.storageService, this.logService);
+      await this.migrationRunner.run();
     } else {
       // It may have been requested to not run the migrations but we should defensively not
       // continue this method until migrations have a chance to be completed elsewhere.
-      await waitForMigrations(this.storageService, this.logService);
+      await this.migrationRunner.waitForCompletion();
     }
 
     await this.state().then(async (state) => {

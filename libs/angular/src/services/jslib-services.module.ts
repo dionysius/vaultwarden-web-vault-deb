@@ -125,6 +125,8 @@ import { EncryptServiceImplementation } from "@bitwarden/common/platform/service
 import { MultithreadEncryptServiceImplementation } from "@bitwarden/common/platform/services/cryptography/multithread-encrypt.service.implementation";
 import { EnvironmentService } from "@bitwarden/common/platform/services/environment.service";
 import { FileUploadService } from "@bitwarden/common/platform/services/file-upload/file-upload.service";
+import { MigrationBuilderService } from "@bitwarden/common/platform/services/migration-builder.service";
+import { MigrationRunner } from "@bitwarden/common/platform/services/migration-runner";
 import { NoopNotificationsService } from "@bitwarden/common/platform/services/noop-notifications.service";
 import { StateService } from "@bitwarden/common/platform/services/state.service";
 import { ValidationService } from "@bitwarden/common/platform/services/validation.service";
@@ -561,6 +563,7 @@ import { ModalService } from "./modal.service";
         STATE_FACTORY,
         AccountServiceAbstraction,
         EnvironmentServiceAbstraction,
+        MigrationRunner,
         STATE_SERVICE_USE_CACHE,
       ],
     },
@@ -928,6 +931,15 @@ import { ModalService } from "./modal.service";
       provide: VaultSettingsServiceAbstraction,
       useClass: VaultSettingsService,
       deps: [StateProvider],
+    },
+    {
+      provide: MigrationRunner,
+      useClass: MigrationRunner,
+      deps: [AbstractStorageService, LogService, MigrationBuilderService],
+    },
+    {
+      provide: MigrationBuilderService,
+      useClass: MigrationBuilderService,
     },
     {
       provide: BillingApiServiceAbstraction,

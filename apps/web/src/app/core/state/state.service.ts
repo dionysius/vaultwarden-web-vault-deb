@@ -15,6 +15,7 @@ import {
 } from "@bitwarden/common/platform/abstractions/storage.service";
 import { StateFactory } from "@bitwarden/common/platform/factories/state-factory";
 import { StorageOptions } from "@bitwarden/common/platform/models/domain/storage-options";
+import { MigrationRunner } from "@bitwarden/common/platform/services/migration-runner";
 import { StateService as BaseStateService } from "@bitwarden/common/platform/services/state.service";
 import { SendData } from "@bitwarden/common/tools/send/models/data/send.data";
 import { CipherData } from "@bitwarden/common/vault/models/data/cipher.data";
@@ -33,6 +34,7 @@ export class StateService extends BaseStateService<GlobalState, Account> {
     @Inject(STATE_FACTORY) stateFactory: StateFactory<GlobalState, Account>,
     accountService: AccountService,
     environmentService: EnvironmentService,
+    migrationRunner: MigrationRunner,
     @Inject(STATE_SERVICE_USE_CACHE) useAccountCache = true,
   ) {
     super(
@@ -43,6 +45,7 @@ export class StateService extends BaseStateService<GlobalState, Account> {
       stateFactory,
       accountService,
       environmentService,
+      migrationRunner,
       useAccountCache,
     );
   }

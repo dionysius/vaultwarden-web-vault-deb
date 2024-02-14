@@ -4,7 +4,6 @@ import { LogService } from "../platform/abstractions/log.service";
 import { AbstractStorageService } from "../platform/abstractions/storage.service";
 
 import { MigrationBuilder } from "./migration-builder";
-import { MigrationHelper } from "./migration-helper";
 import { EverHadUserKeyMigrator } from "./migrations/10-move-ever-had-user-key-to-state-providers";
 import { OrganizationKeyMigrator } from "./migrations/11-move-org-keys-to-state-providers";
 import { MoveEnvironmentStateToProviders } from "./migrations/12-move-environment-state-to-providers";
@@ -27,21 +26,8 @@ export const MIN_VERSION = 2;
 export const CURRENT_VERSION = 18;
 export type MinVersion = typeof MIN_VERSION;
 
-export async function migrate(
-  storageService: AbstractStorageService,
-  logService: LogService,
-): Promise<void> {
-  const migrationHelper = new MigrationHelper(
-    await currentVersion(storageService, logService),
-    storageService,
-    logService,
-  );
-  if (migrationHelper.currentVersion < 0) {
-    // Cannot determine state, assuming empty so we don't repeatedly apply a migration.
-    await storageService.save("stateVersion", CURRENT_VERSION);
-    return;
-  }
-  await MigrationBuilder.create()
+export function createMigrationBuilder() {
+  return MigrationBuilder.create()
     .with(MinVersionMigrator)
     .with(FixPremiumMigrator, 2, 3)
     .with(RemoveEverBeenUnlockedMigrator, 3, 4)
@@ -58,9 +44,7 @@ export async function migrate(
     .with(FolderMigrator, 14, 15)
     .with(LastSyncMigrator, 15, 16)
     .with(EnablePasskeysMigrator, 16, 17)
-    .with(AutofillSettingsKeyMigrator, 17, CURRENT_VERSION)
-
-    .migrate(migrationHelper);
+    .with(AutofillSettingsKeyMigrator, 17, CURRENT_VERSION);
 }
 
 export async function currentVersion(

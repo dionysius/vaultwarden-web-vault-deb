@@ -10,6 +10,7 @@ import {
 import { StateFactory } from "@bitwarden/common/platform/factories/state-factory";
 import { GlobalState } from "@bitwarden/common/platform/models/domain/global-state";
 import { StorageOptions } from "@bitwarden/common/platform/models/domain/storage-options";
+import { MigrationRunner } from "@bitwarden/common/platform/services/migration-runner";
 import { StateService as BaseStateService } from "@bitwarden/common/platform/services/state.service";
 
 import { Account } from "../../models/account";
@@ -46,6 +47,7 @@ export class BrowserStateService
     stateFactory: StateFactory<GlobalState, Account>,
     accountService: AccountService,
     environmentService: EnvironmentService,
+    migrationRunner: MigrationRunner,
     useAccountCache = true,
   ) {
     super(
@@ -56,6 +58,7 @@ export class BrowserStateService
       stateFactory,
       accountService,
       environmentService,
+      migrationRunner,
       useAccountCache,
     );
 

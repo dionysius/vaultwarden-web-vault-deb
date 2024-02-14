@@ -14,6 +14,7 @@ import {
 } from "./environment-service.factory";
 import { CachedServices, factory, FactoryOptions } from "./factory-options";
 import { logServiceFactory, LogServiceInitOptions } from "./log-service.factory";
+import { migrationRunnerFactory, MigrationRunnerInitOptions } from "./migration-runner.factory";
 import {
   diskStorageServiceFactory,
   secureStorageServiceFactory,
@@ -36,7 +37,8 @@ export type StateServiceInitOptions = StateServiceFactoryOptions &
   MemoryStorageServiceInitOptions &
   LogServiceInitOptions &
   AccountServiceInitOptions &
-  EnvironmentServiceInitOptions;
+  EnvironmentServiceInitOptions &
+  MigrationRunnerInitOptions;
 
 export async function stateServiceFactory(
   cache: { stateService?: BrowserStateService } & CachedServices,
@@ -55,11 +57,11 @@ export async function stateServiceFactory(
         opts.stateServiceOptions.stateFactory,
         await accountServiceFactory(cache, opts),
         await environmentServiceFactory(cache, opts),
+        await migrationRunnerFactory(cache, opts),
         opts.stateServiceOptions.useAccountCache,
       ),
   );
-  // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-  // eslint-disable-next-line @typescript-eslint/no-floating-promises
-  service.init();
+  // TODO: If we run migration through a chrome installed/updated event we can turn off running migrations
+  await service.init();
   return service;
 }
