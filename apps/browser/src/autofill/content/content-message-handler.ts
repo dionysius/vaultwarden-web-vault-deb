@@ -46,8 +46,8 @@ async function handleAuthResultMessage(data: ContentMessageWindowData, referrer:
  * @param referrer - The referrer of the window
  */
 async function handleDuoResultMessage(data: ContentMessageWindowData, referrer: string) {
-  const { command, code } = data;
-  await chrome.runtime.sendMessage({ command, code: code, referrer });
+  const { command, code, state } = data;
+  await chrome.runtime.sendMessage({ command, code, state, referrer });
 }
 
 /**

@@ -492,8 +492,6 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
     );
   }
 
-  launchDuoFrameless() {
-    // Launch Duo Frameless flow in new tab
-    this.platformUtilsService.launchUri(this.duoFramelessUrl);
-  }
+  // implemented in clients
+  launchDuoFrameless() {}
 }

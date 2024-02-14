@@ -127,13 +127,32 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
       this.broadcasterService.subscribe(BroadcasterSubscriptionId, async (message: any) => {
         await this.ngZone.run(async () => {
           if (message.command === "duoCallback") {
-            this.token = message.code;
+            this.token = message.code + "|" + message.state;
             await this.submit();
           }
         });
       });
       this.duoCallbackSubscriptionEnabled = true;
     }
+  }
+
+  override launchDuoFrameless() {
+    const duoHandOffMessage = {
+      title: this.i18nService.t("youSuccessfullyLoggedIn"),
+      message: this.i18nService.t("youMayCloseThisWindow"),
+      isCountdown: false,
+    };
+
+    // we're using the connector here as a way to set a cookie with translations
+    // before continuing to the duo frameless url
+    const launchUrl =
+      this.environmentService.getWebVaultUrl() +
+      "/duo-redirect-connector.html" +
+      "?duoFramelessUrl=" +
+      encodeURIComponent(this.duoFramelessUrl) +
+      "&handOffMessage=" +
+      encodeURIComponent(JSON.stringify(duoHandOffMessage));
+    this.platformUtilsService.launchUri(launchUrl);
   }
 
   ngOnDestroy(): void {

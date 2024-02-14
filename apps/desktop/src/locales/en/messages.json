@@ -560,6 +560,12 @@
   "newAccountCreated": {
     "message": "Your new account has been created! You may now log in."
   },
+  "youSuccessfullyLoggedIn": {
+    "message": "You successfully logged in"
+  },
+  "youMayCloseThisWindow": {
+    "message": "You may close this window"
+  },
   "masterPassSent": {
     "message": "We've sent you an email with your master password hint."
   },
@@ -2484,7 +2490,7 @@
   },
   "aliasDomain": {
     "message": "Alias domain"
-  },  
+  },
   "importData": {
     "message": "Import data",
     "description": "Used for the desktop menu item and the header of the import dialog"
