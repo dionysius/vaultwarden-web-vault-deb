@@ -343,10 +343,6 @@ export abstract class StateService<T extends Account = Account> {
    * @deprecated Do not call this directly, use SendService
    */
   setEncryptedSends: (value: { [id: string]: SendData }, options?: StorageOptions) => Promise<void>;
-  getEntityId: (options?: StorageOptions) => Promise<string>;
-  setEntityId: (value: string, options?: StorageOptions) => Promise<void>;
-  getEntityType: (options?: StorageOptions) => Promise<any>;
-  setEntityType: (value: string, options?: StorageOptions) => Promise<void>;
   getEquivalentDomains: (options?: StorageOptions) => Promise<string[][]>;
   setEquivalentDomains: (value: string, options?: StorageOptions) => Promise<void>;
   getEventCollection: (options?: StorageOptions) => Promise<EventData[]>;
