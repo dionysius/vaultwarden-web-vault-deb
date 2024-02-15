@@ -43,13 +43,7 @@ describe("biometrics tests", function () {
 
     const mockService = mock<OsBiometricService>();
     (sut as any).platformSpecificService = mockService;
-    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    sut.init();
-    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    sut.setEncryptionKeyHalf({ service: "test", key: "test", value: "test" });
-    expect(mockService.init).toBeCalled();
+    await sut.setEncryptionKeyHalf({ service: "test", key: "test", value: "test" });
 
     await sut.canAuthBiometric({ service: "test", key: "test", userId });
     expect(mockService.osSupportsBiometric).toBeCalled();
@@ -111,9 +105,6 @@ describe("biometrics tests", function () {
 
       innerService = mock();
       (sut as any).platformSpecificService = innerService;
-      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-      // eslint-disable-next-line @typescript-eslint/no-floating-promises
-      sut.init();
     });
 
     it("should return false if client key half is required and not provided", async () => {
@@ -128,7 +119,6 @@ describe("biometrics tests", function () {
       // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
       // eslint-disable-next-line @typescript-eslint/no-floating-promises
       sut.setEncryptionKeyHalf({ service: "test", key: "test", value: "test" });
-      expect(innerService.init).toBeCalled();
 
       await sut.canAuthBiometric({ service: "test", key: "test", userId });
       expect(innerService.osSupportsBiometric).toBeCalled();

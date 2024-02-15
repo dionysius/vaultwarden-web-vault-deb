@@ -296,8 +296,6 @@ export class NativeMessagingBackground {
 
     switch (message.command) {
       case "biometricUnlock": {
-        await this.stateService.setBiometricAwaitingAcceptance(null);
-
         if (message.response === "not enabled") {
           this.messagingService.send("showDialog", {
             title: { key: "biometricsNotEnabledTitle" },

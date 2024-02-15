@@ -24,6 +24,7 @@ import { DialogService } from "@bitwarden/components";
 import { SetPinComponent } from "../../auth/components/set-pin.component";
 import { flagEnabled } from "../../platform/flags";
 import { ElectronStateService } from "../../platform/services/electron-state.service.abstraction";
+
 @Component({
   selector: "app-settings",
   templateUrl: "settings.component.html",
@@ -39,9 +40,7 @@ export class SettingsComponent implements OnInit {
   themeOptions: any[];
   clearClipboardOptions: any[];
   supportsBiometric: boolean;
-  biometricText: string;
   additionalBiometricSettingsText: string;
-  autoPromptBiometricsText: string;
   showAlwaysShowDock = false;
   requireEnableTray = false;
   showDuckDuckGoIntegrationOption = false;
@@ -275,12 +274,10 @@ export class SettingsComponent implements OnInit {
     this.showMinToTray = this.platformUtilsService.getDevice() !== DeviceType.LinuxDesktop;
     this.showAlwaysShowDock = this.platformUtilsService.getDevice() === DeviceType.MacOsDesktop;
     this.supportsBiometric = await this.platformUtilsService.supportsBiometric();
-    this.biometricText = await this.stateService.getBiometricText();
     this.additionalBiometricSettingsText =
       this.biometricText === "unlockWithTouchId"
         ? "additionalTouchIdSettings"
         : "additionalWindowsHelloSettings";
-    this.autoPromptBiometricsText = await this.stateService.getNoAutoPromptBiometricsText();
     this.previousVaultTimeout = this.form.value.vaultTimeout;
 
     this.refreshTimeoutSettings$
@@ -666,5 +663,27 @@ export class SettingsComponent implements OnInit {
   ngOnDestroy() {
     this.destroy$.next();
     this.destroy$.complete();
+  }
+
+  get biometricText() {
+    switch (this.platformUtilsService.getDevice()) {
+      case DeviceType.MacOsDesktop:
+        return "unlockWithTouchId";
+      case DeviceType.WindowsDesktop:
+        return "unlockWithWindowsHello";
+      default:
+        throw new Error("Unsupported platform");
+    }
+  }
+
+  get autoPromptBiometricsText() {
+    switch (this.platformUtilsService.getDevice()) {
+      case DeviceType.MacOsDesktop:
+        return "autoPromptTouchId";
+      case DeviceType.WindowsDesktop:
+        return "autoPromptWindowsHello";
+      default:
+        throw new Error("Unsupported platform");
+    }
   }
 }

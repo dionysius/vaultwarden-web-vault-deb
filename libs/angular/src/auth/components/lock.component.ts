@@ -41,7 +41,6 @@ export class LockComponent implements OnInit, OnDestroy {
   formPromise: Promise<MasterPasswordPolicyResponse>;
   supportsBiometric: boolean;
   biometricLock: boolean;
-  biometricText: string;
 
   protected successRoute = "vault";
   protected forcePasswordResetRoute = "update-temp-password";
@@ -343,7 +342,6 @@ export class LockComponent implements OnInit, OnDestroy {
       (await this.vaultTimeoutSettingsService.isBiometricLockSet()) &&
       ((await this.cryptoService.hasUserKeyStored(KeySuffixOptions.Biometric)) ||
         !this.platformUtilsService.supportsSecureStorage());
-    this.biometricText = await this.stateService.getBiometricText();
     this.email = await this.stateService.getEmail();
 
     this.webVaultHostname = await this.environmentService.getHost();

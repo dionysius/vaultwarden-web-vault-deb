@@ -369,14 +369,12 @@ export class SettingsComponent implements OnInit {
       const awaitDesktopDialogRef = AwaitDesktopDialogComponent.open(this.dialogService);
       const awaitDesktopDialogClosed = firstValueFrom(awaitDesktopDialogRef.closed);
 
-      await this.stateService.setBiometricAwaitingAcceptance(true);
       await this.cryptoService.refreshAdditionalKeys();
 
       await Promise.race([
         awaitDesktopDialogClosed.then(async (result) => {
           if (result !== true) {
             this.form.controls.biometric.setValue(false);
-            await this.stateService.setBiometricAwaitingAcceptance(null);
           }
         }),
         this.platformUtilsService

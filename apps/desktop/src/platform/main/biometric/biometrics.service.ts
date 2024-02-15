@@ -58,10 +58,6 @@ export class BiometricsService implements BiometricsServiceAbstraction {
     this.platformSpecificService = new NoopBiometricsService();
   }
 
-  async init() {
-    return await this.platformSpecificService.init();
-  }
-
   async osSupportsBiometric() {
     return await this.platformSpecificService.osSupportsBiometric();
   }

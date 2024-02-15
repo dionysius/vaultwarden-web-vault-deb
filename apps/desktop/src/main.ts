@@ -225,9 +225,6 @@ export class Main {
         }
         this.powerMonitorMain.init();
         await this.updaterMain.init();
-        if (this.biometricsService != null) {
-          await this.biometricsService.init();
-        }
 
         if (
           (await this.stateService.getEnableBrowserIntegration()) ||

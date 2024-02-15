@@ -11,15 +11,11 @@ export class GlobalState {
   window?: WindowState = new WindowState();
   twoFactorToken?: string;
   disableFavicon?: boolean;
-  biometricAwaitingAcceptance?: boolean;
   biometricFingerprintValidated?: boolean;
   vaultTimeout?: number;
   vaultTimeoutAction?: string;
   loginRedirect?: any;
   mainWindowSize?: number;
-  enableBiometrics?: boolean;
-  biometricText?: string;
-  noAutoPromptBiometricsText?: string;
   enableTray?: boolean;
   enableMinimizeToTray?: boolean;
   enableCloseToTray?: boolean;

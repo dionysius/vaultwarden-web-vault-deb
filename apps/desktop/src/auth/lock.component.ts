@@ -185,4 +185,15 @@ export class LockComponent extends BaseLockComponent {
       await this.stateService.setDismissedBiometricRequirePasswordOnStart();
     }
   }
+
+  get biometricText() {
+    switch (this.platformUtilsService.getDevice()) {
+      case DeviceType.MacOsDesktop:
+        return "unlockWithTouchId";
+      case DeviceType.WindowsDesktop:
+        return "unlockWithWindowsHello";
+      default:
+        throw new Error("Unsupported platform");
+    }
+  }
 }
