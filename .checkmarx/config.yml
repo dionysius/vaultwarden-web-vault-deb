@@ -8,4 +8,4 @@ checkmarx:
     configs:
       sast:
         # Exclude spec files, and test specific files
-        filter: "!*.spec.ts,!**/spec/**,!/apps/desktop/native-messaging-test-runner/"
+        filter: "!*.spec.ts,!**/spec/**,!apps/desktop/native-messaging-test-runner/**"
