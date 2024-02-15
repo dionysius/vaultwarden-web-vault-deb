@@ -139,7 +139,7 @@ export class WebCryptoFunctionService implements CryptoFunctionService {
     algorithm: "sha1" | "sha256" | "sha512" | "md5",
   ): Promise<Uint8Array> {
     if (algorithm === "md5") {
-      const md = algorithm === "md5" ? forge.md.md5.create() : forge.md.sha1.create();
+      const md = forge.md.md5.create();
       const valueBytes = this.toByteString(value);
       md.update(valueBytes, "raw");
       return Utils.fromByteStringToArray(md.digest().data);
