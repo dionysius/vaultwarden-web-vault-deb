@@ -28,7 +28,9 @@ window.addEventListener("load", () => {
     window.postMessage({ command: "duoResult", code: code, state: state }, "*");
     processAndDisplayHandoffMessage();
   } else if (client === "mobile" || client === "desktop") {
-    processAndDisplayHandoffMessage();
+    if (client === "desktop") {
+      processAndDisplayHandoffMessage();
+    }
     document.location.replace(
       mobileDesktopCallback +
         "?code=" +
