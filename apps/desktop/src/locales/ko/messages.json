@@ -560,6 +560,12 @@
   "newAccountCreated": {
     "message": "계정 생성이 완료되었습니다! 이제 로그인하실 수 있습니다."
   },
+  "youSuccessfullyLoggedIn": {
+    "message": "You successfully logged in"
+  },
+  "youMayCloseThisWindow": {
+    "message": "You may close this window"
+  },
   "masterPassSent": {
     "message": "마스터 비밀번호 힌트가 담긴 이메일을 보냈습니다."
   },
@@ -2524,6 +2530,15 @@
         "example": "My Org Name"
       }
     }
+  },
+  "launchDuoAndFollowStepsToFinishLoggingIn": {
+    "message": "Launch Duo and follow the steps to finish logging in."
+  },
+  "duoRequiredByOrgForAccount": {
+    "message": "Duo two-step login is required for your account."
+  },
+  "launchDuo": {
+    "message": "Launch Duo in Browser"
   },
   "importFormatError": {
     "message": "Data is not formatted correctly. Please check your import file and try again."
