@@ -11,7 +11,7 @@ export class BillingApiService implements BillingApiServiceAbstraction {
   ): Promise<void> {
     return this.apiService.send(
       "POST",
-      "/organizations/" + organizationId + "/cancel",
+      "/organizations/" + organizationId + "/churn",
       request,
       true,
       false,
@@ -19,6 +19,6 @@ export class BillingApiService implements BillingApiServiceAbstraction {
   }
 
   cancelPremiumUserSubscription(request: SubscriptionCancellationRequest): Promise<void> {
-    return this.apiService.send("POST", "/accounts/cancel-premium", request, true, false);
+    return this.apiService.send("POST", "/accounts/churn-premium", request, true, false);
   }
 }
