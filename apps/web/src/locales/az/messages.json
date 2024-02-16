@@ -1347,6 +1347,18 @@
   "importData": {
     "message": "Verilənləri idxal et"
   },
+  "onboardingImportDataDetailsPartOne": {
+    "message": "Daxilə köçürüləcək datanız yoxdursa, əvəzində yeni element yarada bilərsiniz.",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+  },
+  "onboardingImportDataDetailsLink": {
+    "message": " ",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+  },
+  "onboardingImportDataDetailsPartTwo": {
+    "message": "Administratorunuz təşkilat üzvlüyünüzü təsdiqləyənə qədər gözləməli ola bilərsiniz.",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+  },
   "importError": {
     "message": "İdxal xətası"
   },
@@ -2529,7 +2541,7 @@
     }
   },
   "trialSecretsManagerThankYou": {
-    "message": "Thanks for signing up for Bitwarden Secrets Manager for $PLAN$!",
+    "message": "$PLAN$ qarşılığında Bitwarden Sirr Menecerində qeydiyyatdan keçdiyiniz üçün təşəkkürlər!",
     "placeholders": {
       "plan": {
         "content": "$1",
@@ -4030,6 +4042,12 @@
   },
   "ssoHandOff": {
     "message": "Bu vərəqi indi bağlayıb uzantıda davam edə bilərsiniz."
+  },
+  "youSuccessfullyLoggedIn": {
+    "message": "Uğurla giriş etdiniz"
+  },
+  "thisWindowWillCloseIn5Seconds": {
+    "message": "Bu pəncərə 5 saniyəyə avtomatik bağlanacaq"
   },
   "includeAllTeamsFeatures": {
     "message": "Bütün komanda özəllikləri, əlavə olaraq:"
@@ -5916,13 +5934,13 @@
     }
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
-    "message": "Launch DUO and follow the steps to finish logging in."
+    "message": "DUO-nu başladın və giriş prosesini tamamlamaq üçün addımları izləyin."
   },
   "duoRequiredByOrgForAccount": {
-    "message": "DUO two-step login is required for your account."
+    "message": "Hesabınız üçün DUO iki addımlı giriş tələb olunur."
   },
   "launchDuo": {
-    "message": "Launch DUO"
+    "message": "DUO-nu başlat"
   },
   "turnOn": {
     "message": "İşə sal"
@@ -6912,6 +6930,9 @@
     "message": "SDK",
     "description": "Software Development Kit"
   },
+  "createAnAccount": {
+    "message": "Bir hesab yarat"
+  },
   "createSecret": {
     "message": "Bir sirr yarat"
   },
@@ -7241,7 +7262,7 @@
     }
   },
   "startYour7DayFreeTrialOfBitwardenSecretsManagerFor": {
-    "message": "Start your 7-Day free trial of Bitwarden Secrets Manager for $ORG$",
+    "message": "$ORG$ üçün Bitwarden Sirr Meneceri üzrə 7 günlük ödənişsiz sınağı başladın",
     "placeholders": {
       "org": {
         "content": "$1",
@@ -7456,6 +7477,12 @@
     "message": "Kömək saytımızda detallı təlimatlara baxın",
     "description": "This is followed a by a hyperlink to the help website."
   },
+  "installBrowserExtension": {
+    "message": "Brauzer uzantısını quraşdır"
+  },
+  "installBrowserExtensionDetails": {
+    "message": "Veb tətbiqi açmadan giriş məlumatlarını cəld saxlamaq və formları avto-doldurmaq üçün uzantını istifadə edin."
+  },
   "projectAccessUpdated": {
     "message": "Layihə müraciəti güncəlləndi"
   },
@@ -7509,53 +7536,53 @@
     "message": "Kolleksiya idarəsi haqqında daha ətraflı"
   },
   "organizationInformation": {
-    "message": "Organization information"
+    "message": "Təşkilat məlumatları"
   },
   "confirmationDetails": {
-    "message": "Confirmation details"
+    "message": "Təsdiq detalları"
   },
   "smFreeTrialThankYou": {
-    "message": "Thank you for signing up for Bitwarden Secrets Manager!"
+    "message": "Bitwarden Sirr Menecerində qeydiyyatdan keçdiyiniz üçün təşəkkürlər!"
   },
   "smFreeTrialConfirmationEmail": {
-    "message": "We've sent a confirmation email to your email at "
+    "message": "E-poçtunuza bir təsdiq məktubu göndərdik "
   },
   "confirmCollectionEnhancementsDialogTitle": {
-    "message": "This action is irreversible"
+    "message": "Bu əməliyyatın geri dönüşü yoxdur"
   },
   "confirmCollectionEnhancementsDialogContent": {
-    "message": "Turning on this feature will deprecate the manager role and replace it with a Can manage permission. This will take a few moments. Do not make any organization changes until it is complete. Are you sure you want to proceed?"
+    "message": "Bu özəlliyin işə salınması, menecer rolunu ləğv edəcək və onu \"İdarə edə bilər\" icazəsi ilə əvəz edəcək. Bu bir neçə dəqiqə çəkəcək. Tamamlanana qədər heç bir təşkilat dəyişikliyi etməyin. Davam etmək istədiyinizə əminsiniz?"
   },
   "sorryToSeeYouGo": {
-    "message": "Sorry to see you go! Help improve Bitwarden by sharing why you're canceling.",
+    "message": "Getməyinizə məyus olduq! Nə üçün ləğv etdiyinizi paylaşmaqla Bitwarden-i təkmilləşdirməyə kömək edin.",
     "description": "A message shown to users as part of an offboarding survey asking them to provide more information on their subscription cancelation."
   },
   "selectCancellationReason": {
-    "message": "Select a reason for canceling",
+    "message": "Ləğv etmək üçün bir səbəb seçin",
     "description": "Used as a form field label for a select input on the offboarding survey."
   },
   "anyOtherFeedback": {
-    "message": "Is there any other feedback you'd like to share?",
+    "message": "Paylaşmaq istədiyiniz başqa nəsə var?",
     "description": "Used as a form field label for a textarea input on the offboarding survey."
   },
   "missingFeatures": {
-    "message": "Missing features",
+    "message": "Əskik özəlliklər",
     "description": "An option for the offboarding survey shown when a user cancels their subscription."
   },
   "movingToAnotherTool": {
-    "message": "Moving to another tool",
+    "message": "Başqa bir alətə keçirəm",
     "description": "An option for the offboarding survey shown when a user cancels their subscription."
   },
   "tooDifficultToUse": {
-    "message": "Too difficult to use",
+    "message": "İstifadəsi çətindir",
     "description": "An option for the offboarding survey shown when a user cancels their subscription."
   },
   "notUsingEnough": {
-    "message": "Not using enough",
+    "message": "Yetərincə istifadə etmədim",
     "description": "An option for the offboarding survey shown when a user cancels their subscription."
   },
   "tooExpensive": {
-    "message": "Too expensive",
+    "message": "Çox bahadır",
     "description": "An option for the offboarding survey shown when a user cancels their subscription."
   }
 }

@@ -1347,6 +1347,18 @@
   "importData": {
     "message": "Importar Dados"
   },
+  "onboardingImportDataDetailsPartOne": {
+    "message": "Se você não tem dados para importar, você pode criar uma ",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+  },
+  "onboardingImportDataDetailsLink": {
+    "message": "Novo Item",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+  },
+  "onboardingImportDataDetailsPartTwo": {
+    "message": " em vez disso, você pode precisar esperar até que o seu administrador confirme a sua associação à organização.",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+  },
   "importError": {
     "message": "Erro de Importação"
   },
@@ -4031,6 +4043,12 @@
   "ssoHandOff": {
     "message": "Agora você pode fechar esta aba e continuar na extensão."
   },
+  "youSuccessfullyLoggedIn": {
+    "message": "Você logou na sua conta com sucesso"
+  },
+  "thisWindowWillCloseIn5Seconds": {
+    "message": "Esta janela será fechada automaticamente em 5 segundos"
+  },
   "includeAllTeamsFeatures": {
     "message": "Recursos para Todas as Equipes, além de:"
   },
@@ -5916,13 +5934,13 @@
     }
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
-    "message": "Launch DUO and follow the steps to finish logging in."
+    "message": "Launch Duo and follow the steps to finish logging in."
   },
   "duoRequiredByOrgForAccount": {
-    "message": "DUO two-step login is required for your account."
+    "message": "Duo two-step login is required for your account."
   },
   "launchDuo": {
-    "message": "Launch DUO"
+    "message": "Launch Duo"
   },
   "turnOn": {
     "message": "Ligar"
@@ -6912,6 +6930,9 @@
     "message": "SDK",
     "description": "Software Development Kit"
   },
+  "createAnAccount": {
+    "message": "Criar uma conta"
+  },
   "createSecret": {
     "message": "Crie um segredo"
   },
@@ -7455,6 +7476,12 @@
   "seeDetailedInstructions": {
     "message": "Veja instruções detalhadas no nosso site de ajuda em",
     "description": "This is followed a by a hyperlink to the help website."
+  },
+  "installBrowserExtension": {
+    "message": "Instalar extensões de navegador"
+  },
+  "installBrowserExtensionDetails": {
+    "message": "Use a extensão para salvar rapidamente credenciais e formulários de autopreenchimento sem abrir o aplicativo web."
   },
   "projectAccessUpdated": {
     "message": "Project access updated"

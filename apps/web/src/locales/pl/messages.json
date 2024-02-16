@@ -1347,6 +1347,18 @@
   "importData": {
     "message": "Importuj dane"
   },
+  "onboardingImportDataDetailsPartOne": {
+    "message": "If you don't have any data to import, you can create a ",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+  },
+  "onboardingImportDataDetailsLink": {
+    "message": "new item",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+  },
+  "onboardingImportDataDetailsPartTwo": {
+    "message": " instead. You may need to wait until your administrator confirms your organization membership.",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+  },
   "importError": {
     "message": "Wystąpił błąd podczas importowania"
   },
@@ -4030,6 +4042,12 @@
   },
   "ssoHandOff": {
     "message": "Możesz teraz zamknąć tę kartę i kontynuować w rozszerzeniu."
+  },
+  "youSuccessfullyLoggedIn": {
+    "message": "Zalogowałeś się pomyślnie"
+  },
+  "thisWindowWillCloseIn5Seconds": {
+    "message": "To okno zostanie automatycznie zamknięte za 5 sekund"
   },
   "includeAllTeamsFeatures": {
     "message": "Wszystkie funkcje zespołów oraz:"
@@ -6912,6 +6930,9 @@
     "message": "SDK",
     "description": "Software Development Kit"
   },
+  "createAnAccount": {
+    "message": "Utwórz konto"
+  },
   "createSecret": {
     "message": "Utwórz sekret"
   },
@@ -7455,6 +7476,12 @@
   "seeDetailedInstructions": {
     "message": "Zobacz szczegółowe instrukcje na naszej stronie pomocy pod adresem",
     "description": "This is followed a by a hyperlink to the help website."
+  },
+  "installBrowserExtension": {
+    "message": "Zainstaluj rozszerzenie przeglądarki"
+  },
+  "installBrowserExtensionDetails": {
+    "message": "Użyj rozszerzenia, aby szybko zapisywać dane logowania i autouzupełniać formularze bez otwierania aplikacji internetowej."
   },
   "projectAccessUpdated": {
     "message": "Dostęp do projektu zaktualizowany"

@@ -1347,6 +1347,18 @@
   "importData": {
     "message": "Імпортувати дані"
   },
+  "onboardingImportDataDetailsPartOne": {
+    "message": "Якщо у вас немає даних для імпорту, можете створити ",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+  },
+  "onboardingImportDataDetailsLink": {
+    "message": "новий елемент",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+  },
+  "onboardingImportDataDetailsPartTwo": {
+    "message": " натомість. Можливо, доведеться зачекати доки адміністратор підтвердить вашу участь в організації.",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+  },
   "importError": {
     "message": "Помилка імпорту"
   },
@@ -4030,6 +4042,12 @@
   },
   "ssoHandOff": {
     "message": "Тепер ви можете закрити цю вкладку і продовжити в розширенні."
+  },
+  "youSuccessfullyLoggedIn": {
+    "message": "You successfully logged in"
+  },
+  "thisWindowWillCloseIn5Seconds": {
+    "message": "This window will automatically close in 5 seconds"
   },
   "includeAllTeamsFeatures": {
     "message": "Усі функції команд, плюс:"
@@ -6912,6 +6930,9 @@
     "message": "SDK",
     "description": "Software Development Kit"
   },
+  "createAnAccount": {
+    "message": "Створити обліковий запис"
+  },
   "createSecret": {
     "message": "Створити секрет"
   },
@@ -7455,6 +7476,12 @@
   "seeDetailedInstructions": {
     "message": "Перегляньте докладні інструкції на нашому довідковому сайті",
     "description": "This is followed a by a hyperlink to the help website."
+  },
+  "installBrowserExtension": {
+    "message": "Встановити розширення браузера"
+  },
+  "installBrowserExtensionDetails": {
+    "message": "Використовуйте розширення, щоб швидко зберігати паролі й автоматично заповнювати форми без відкриття вебверсії."
   },
   "projectAccessUpdated": {
     "message": "Доступ до проєкту оновлено"

@@ -1347,6 +1347,18 @@
   "importData": {
     "message": "Importovat data"
   },
+  "onboardingImportDataDetailsPartOne": {
+    "message": "Pokud nemáte žádná data k importu, můžete místo toho vytvořit ",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+  },
+  "onboardingImportDataDetailsLink": {
+    "message": "novou položku.",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+  },
+  "onboardingImportDataDetailsPartTwo": {
+    "message": " Možná budete muset počkat, než Váš správce potvrdí členství ve Vaší organizaci.",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+  },
   "importError": {
     "message": "Chyba importu"
   },
@@ -4030,6 +4042,12 @@
   },
   "ssoHandOff": {
     "message": "Nyní můžete zavřít tuto kartu a pokračovat v rozšíření."
+  },
+  "youSuccessfullyLoggedIn": {
+    "message": "Byli jste úspěšně přihlášeni"
+  },
+  "thisWindowWillCloseIn5Seconds": {
+    "message": "Toto okno se automaticky zavře za 5 sekund"
   },
   "includeAllTeamsFeatures": {
     "message": "Všechny funkce týmů, navíc:"
@@ -6912,6 +6930,9 @@
     "message": "SDK",
     "description": "Software Development Kit"
   },
+  "createAnAccount": {
+    "message": "Vytvořit účet"
+  },
   "createSecret": {
     "message": "Vytvořit tajný klíč"
   },
@@ -7455,6 +7476,12 @@
   "seeDetailedInstructions": {
     "message": "Podívejte se na podrobné pokyny na našem webu s nápovědou na",
     "description": "This is followed a by a hyperlink to the help website."
+  },
+  "installBrowserExtension": {
+    "message": "Nainstalovat rozšíření prohlížeče"
+  },
+  "installBrowserExtensionDetails": {
+    "message": "Použijte rozšíření pro rychlé ukládání přihlašovacích údajů a automatického vyplňování formulářů bez otevření webové aplikace."
   },
   "projectAccessUpdated": {
     "message": "Přístup k projektu byl aktualizován"

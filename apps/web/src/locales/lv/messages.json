@@ -796,7 +796,7 @@
     "message": "Mēs nosūtījām galvenās paroles norādi e-pastā."
   },
   "unexpectedError": {
-    "message": "Ir radusies neparedzēta kļūda."
+    "message": "Atgadījās neparedzēta kļūda."
   },
   "expirationDateError": {
     "message": "Lūgums atlasīt beigu datumu, kas ir nākotnē."
@@ -1346,6 +1346,18 @@
   },
   "importData": {
     "message": "Ievietot datus"
+  },
+  "onboardingImportDataDetailsPartOne": {
+    "message": "Ja nav nekādu ievietojamu datu, var izveidot ",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+  },
+  "onboardingImportDataDetailsLink": {
+    "message": "jaunu vienumu",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+  },
+  "onboardingImportDataDetailsPartTwo": {
+    "message": ". Var būt nepieciešams gaidīt, līdz pārvaldnieks apstiprina dalību apvienībā.",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
   },
   "importError": {
     "message": "Ievietošanas kļūda"
@@ -3210,7 +3222,7 @@
     "message": "Nederīgs datumu apgabals."
   },
   "errorOccurred": {
-    "message": "Radusies kļūda."
+    "message": "Atgadījās kļūda."
   },
   "userAccess": {
     "message": "Lietotāja piekļuve"
@@ -4030,6 +4042,12 @@
   },
   "ssoHandOff": {
     "message": "Šo cilni tagad var aizvērt un turpināt paplašinājumā."
+  },
+  "youSuccessfullyLoggedIn": {
+    "message": "Pieteikšanās bija veiksmīga"
+  },
+  "thisWindowWillCloseIn5Seconds": {
+    "message": "Šis logs tiks automātiski aizvērts 5 sekunžu laikā"
   },
   "includeAllTeamsFeatures": {
     "message": "Visas vienību iespējas, kā arī:"
@@ -6912,6 +6930,9 @@
     "message": "Izstrādātāja rīkkopa",
     "description": "Software Development Kit"
   },
+  "createAnAccount": {
+    "message": "Izveidot kontu"
+  },
   "createSecret": {
     "message": "Izveidot noslēpumu"
   },
@@ -7455,6 +7476,12 @@
   "seeDetailedInstructions": {
     "message": "Izvērstas norādes ir aplūkojamas mūsu palīdzības vietnē",
     "description": "This is followed a by a hyperlink to the help website."
+  },
+  "installBrowserExtension": {
+    "message": "Uzstādīt pārlūka paplašinājumu"
+  },
+  "installBrowserExtensionDetails": {
+    "message": "Paplašinājums ir izmantojams, lai veikli saglabātu pieteikšanās vienumus un automātiski aizpildītu veidlapas bez tīmekļa lietotnes atvēršanas."
   },
   "projectAccessUpdated": {
     "message": "Projekta piekļuve ir atjaunināta"

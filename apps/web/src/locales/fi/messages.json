@@ -1347,6 +1347,18 @@
   "importData": {
     "message": "Tuo tietoja"
   },
+  "onboardingImportDataDetailsPartOne": {
+    "message": "Jos sinulla ei ole tuotavia tietoja, voit tuonnin sijaan luoda ",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+  },
+  "onboardingImportDataDetailsLink": {
+    "message": "uuden kohteen",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+  },
+  "onboardingImportDataDetailsPartTwo": {
+    "message": ". Saatat joutua odottamaan, että organisaation ylläpito vahvistaa jäsenyytesi organisaatiossa.",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+  },
   "importError": {
     "message": "Tuontivirhe"
   },
@@ -4030,6 +4042,12 @@
   },
   "ssoHandOff": {
     "message": "Voit nyt sulkea tämän välilehden ja jatkaa laajennuksessa."
+  },
+  "youSuccessfullyLoggedIn": {
+    "message": "Kirjauduit sisään"
+  },
+  "thisWindowWillCloseIn5Seconds": {
+    "message": "Tämä ikkuna sulkeutuu automaattisesti 5 sekunnin kuluttua"
   },
   "includeAllTeamsFeatures": {
     "message": "Kaikki Teams-ominaisuudet, sekä:"
@@ -6912,6 +6930,9 @@
     "message": "SDK",
     "description": "Software Development Kit"
   },
+  "createAnAccount": {
+    "message": "Luo tili"
+  },
   "createSecret": {
     "message": "Luo salaisuus"
   },
@@ -7381,7 +7402,7 @@
     "message": "Omistajat ja ylläpitäjät voivat hallita kaikkia kokoelmia ja kohteita."
   },
   "updatedCollectionManagement": {
-    "message": "Muokkasi kokoelman hallinta-asetusta $ID$."
+    "message": "Muokkasi kokoelman hallinta-asetusta"
   },
   "passwordManagerPlanPrice": {
     "message": "Salasanahallinnan tilauksen hinta"
@@ -7455,6 +7476,12 @@
   "seeDetailedInstructions": {
     "message": "Katso tarkemmat ohjeet tukisivustoltamme osoitteesta",
     "description": "This is followed a by a hyperlink to the help website."
+  },
+  "installBrowserExtension": {
+    "message": "Asenna selainlaajennus"
+  },
+  "installBrowserExtensionDetails": {
+    "message": "Laajennuksella voit verkkosovellusta avaamatta tallentaa kirjautumistietoja ja automaattitäyttää lomakkeita."
   },
   "projectAccessUpdated": {
     "message": "Projektin käyttöoikeudet on muutettu"

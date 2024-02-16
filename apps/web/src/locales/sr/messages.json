@@ -1347,6 +1347,18 @@
   "importData": {
     "message": "Увези податке"
   },
+  "onboardingImportDataDetailsPartOne": {
+    "message": "Ако немате податке за увоз, можете креирати ",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+  },
+  "onboardingImportDataDetailsLink": {
+    "message": "нову ставку",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+  },
+  "onboardingImportDataDetailsPartTwo": {
+    "message": " Можда ћете морати да сачекате док администратор не потврди чланство.",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+  },
   "importError": {
     "message": "Грешка при увозу"
   },
@@ -4030,6 +4042,12 @@
   },
   "ssoHandOff": {
     "message": "Можете да затворите овај језичак и да наставите са додатком."
+  },
+  "youSuccessfullyLoggedIn": {
+    "message": "Успешно сте се пријавили"
+  },
+  "thisWindowWillCloseIn5Seconds": {
+    "message": "Овај прозор ће се аутоматски затворити за 5 секунди"
   },
   "includeAllTeamsFeatures": {
     "message": "Све функције тима, плус:"
@@ -6912,6 +6930,9 @@
     "message": "SDK",
     "description": "Software Development Kit"
   },
+  "createAnAccount": {
+    "message": "Креирај налог"
+  },
   "createSecret": {
     "message": "Креирати тајну"
   },
@@ -7456,6 +7477,12 @@
     "message": "Погледајте детаљна упутства на нашој веб локацији за помоћ на",
     "description": "This is followed a by a hyperlink to the help website."
   },
+  "installBrowserExtension": {
+    "message": "Инсталирајте додатак претраживача"
+  },
+  "installBrowserExtensionDetails": {
+    "message": "Користите додатак за брзо чување пријава и аутоматско попуњавање образаца без отварања веб апликације."
+  },
   "projectAccessUpdated": {
     "message": "Приступ пројекту је ажуриран"
   },
@@ -7527,35 +7554,35 @@
     "message": "Turning on this feature will deprecate the manager role and replace it with a Can manage permission. This will take a few moments. Do not make any organization changes until it is complete. Are you sure you want to proceed?"
   },
   "sorryToSeeYouGo": {
-    "message": "Sorry to see you go! Help improve Bitwarden by sharing why you're canceling.",
+    "message": "Жао нам је што идете Помозите да се побољша Bitwarden тако што ћете поделити зашто отказујете.",
     "description": "A message shown to users as part of an offboarding survey asking them to provide more information on their subscription cancelation."
   },
   "selectCancellationReason": {
-    "message": "Select a reason for canceling",
+    "message": "Изаберите разлог за отказивање",
     "description": "Used as a form field label for a select input on the offboarding survey."
   },
   "anyOtherFeedback": {
-    "message": "Is there any other feedback you'd like to share?",
+    "message": "Да ли бисте желели да поделите још неке информације?",
     "description": "Used as a form field label for a textarea input on the offboarding survey."
   },
   "missingFeatures": {
-    "message": "Missing features",
+    "message": "Недостају способности",
     "description": "An option for the offboarding survey shown when a user cancels their subscription."
   },
   "movingToAnotherTool": {
-    "message": "Moving to another tool",
+    "message": "Прелазак на други алат",
     "description": "An option for the offboarding survey shown when a user cancels their subscription."
   },
   "tooDifficultToUse": {
-    "message": "Too difficult to use",
+    "message": "Тешко је за коришћење",
     "description": "An option for the offboarding survey shown when a user cancels their subscription."
   },
   "notUsingEnough": {
-    "message": "Not using enough",
+    "message": "Не користим га довољно",
     "description": "An option for the offboarding survey shown when a user cancels their subscription."
   },
   "tooExpensive": {
-    "message": "Too expensive",
+    "message": "Превише скупо",
     "description": "An option for the offboarding survey shown when a user cancels their subscription."
   }
 }

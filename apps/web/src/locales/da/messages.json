@@ -1347,6 +1347,18 @@
   "importData": {
     "message": "Importér data"
   },
+  "onboardingImportDataDetailsPartOne": {
+    "message": "Har man igen data at importere, kan man oprette et ",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+  },
+  "onboardingImportDataDetailsLink": {
+    "message": "nyt emne",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+  },
+  "onboardingImportDataDetailsPartTwo": {
+    "message": " i stedet. Man skal muligvis afvente, at administratoren bekræfter organisationsmedlemskabet.",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+  },
   "importError": {
     "message": "Importfejl"
   },
@@ -4030,6 +4042,12 @@
   },
   "ssoHandOff": {
     "message": "Du kan nu lukke denne fane og fortsætte i udvidelsen."
+  },
+  "youSuccessfullyLoggedIn": {
+    "message": "Du er nu logget ind"
+  },
+  "thisWindowWillCloseIn5Seconds": {
+    "message": "Dette vindue lukkes automatisk om 5 sekunder"
   },
   "includeAllTeamsFeatures": {
     "message": "Alle teamfunktioner, plus:"
@@ -6912,6 +6930,9 @@
     "message": "SDK",
     "description": "Software Development Kit"
   },
+  "createAnAccount": {
+    "message": "Opret en konto"
+  },
   "createSecret": {
     "message": "Opret en hemmelighed"
   },
@@ -7455,6 +7476,12 @@
   "seeDetailedInstructions": {
     "message": "See detailed instructions on our help site at",
     "description": "This is followed a by a hyperlink to the help website."
+  },
+  "installBrowserExtension": {
+    "message": "Installér webbrowserudvidelser"
+  },
+  "installBrowserExtensionDetails": {
+    "message": "Brug udvidelsen til hurtigt at gemme logins og auto-udfylde formularer uden at åbne web-appen."
   },
   "projectAccessUpdated": {
     "message": "Projektadgang opdateret"
