@@ -33,7 +33,9 @@ export class WebauthnUtils {
         transports: credential.transports,
         type: credential.type,
       })),
-      extensions: undefined, // extensions not currently supported
+      extensions: {
+        credProps: keyOptions.extensions?.credProps,
+      },
       pubKeyCredParams: keyOptions.pubKeyCredParams.map((params) => ({
         alg: params.alg,
         type: params.type,
@@ -78,7 +80,9 @@ export class WebauthnUtils {
           return result.transports;
         },
       } as AuthenticatorAttestationResponse,
-      getClientExtensionResults: () => ({}),
+      getClientExtensionResults: () => ({
+        credProps: result.extensions.credProps,
+      }),
     } as PublicKeyCredential;
 
     // Modify prototype chains to fix `instanceof` calls.

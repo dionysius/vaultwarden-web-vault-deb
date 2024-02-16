@@ -207,6 +207,42 @@ describe("FidoAuthenticatorService", () => {
         );
       });
 
+      it("should return credProps.rk = true when creating a discoverable credential", async () => {
+        const params = createParams({
+          authenticatorSelection: { residentKey: "required", userVerification: "required" },
+          extensions: { credProps: true },
+        });
+        authenticator.makeCredential.mockResolvedValue(createAuthenticatorMakeResult());
+
+        const result = await client.createCredential(params, tab);
+
+        expect(result.extensions.credProps?.rk).toBe(true);
+      });
+
+      it("should return credProps.rk = false when creating a non-discoverable credential", async () => {
+        const params = createParams({
+          authenticatorSelection: { residentKey: "discouraged", userVerification: "required" },
+          extensions: { credProps: true },
+        });
+        authenticator.makeCredential.mockResolvedValue(createAuthenticatorMakeResult());
+
+        const result = await client.createCredential(params, tab);
+
+        expect(result.extensions.credProps?.rk).toBe(false);
+      });
+
+      it("should return credProps = undefiend when the extension is not requested", async () => {
+        const params = createParams({
+          authenticatorSelection: { residentKey: "required", userVerification: "required" },
+          extensions: {},
+        });
+        authenticator.makeCredential.mockResolvedValue(createAuthenticatorMakeResult());
+
+        const result = await client.createCredential(params, tab);
+
+        expect(result.extensions.credProps).toBeUndefined();
+      });
+
       // Spec: If any authenticator returns an error status equivalent to "InvalidStateError", Return a DOMException whose name is "InvalidStateError" and terminate this algorithm.
       it("should throw error if authenticator throws InvalidState", async () => {
         const params = createParams();

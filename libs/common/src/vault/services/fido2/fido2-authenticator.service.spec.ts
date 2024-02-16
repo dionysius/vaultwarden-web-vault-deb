@@ -362,7 +362,7 @@ describe("FidoAuthenticatorService", () => {
             0xd0, 0x5c, 0x3d, 0xc3,
           ]),
         );
-        expect(flags).toEqual(new Uint8Array([0b01000001])); // UP = true, AD = true
+        expect(flags).toEqual(new Uint8Array([0b01011001])); // UP = true, AT = true, BE = true, BS = true
         expect(counter).toEqual(new Uint8Array([0, 0, 0, 0])); // 0 because of new counter
         expect(aaguid).toEqual(AAGUID);
         expect(credentialIdLength).toEqual(new Uint8Array([0, 16])); // 16 bytes because we're using GUIDs
@@ -697,7 +697,7 @@ describe("FidoAuthenticatorService", () => {
             0xd0, 0x5c, 0x3d, 0xc3,
           ]),
         );
-        expect(flags).toEqual(new Uint8Array([0b00000001])); // UP = true
+        expect(flags).toEqual(new Uint8Array([0b00011001])); // UP = true, BE = true, BS = true
         expect(counter).toEqual(new Uint8Array([0, 0, 0x23, 0x29])); // 9001 in hex
 
         // Verify signature

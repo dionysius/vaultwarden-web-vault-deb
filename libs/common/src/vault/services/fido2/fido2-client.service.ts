@@ -192,6 +192,13 @@ export class Fido2ClientService implements Fido2ClientServiceAbstraction {
       throw new DOMException("The operation either timed out or was not allowed.", "AbortError");
     }
 
+    let credProps;
+    if (params.extensions?.credProps) {
+      credProps = {
+        rk: makeCredentialParams.requireResidentKey,
+      };
+    }
+
     clearTimeout(timeout);
     return {
       credentialId: Fido2Utils.bufferToString(makeCredentialResult.credentialId),
@@ -201,6 +208,7 @@ export class Fido2ClientService implements Fido2ClientServiceAbstraction {
       publicKey: Fido2Utils.bufferToString(makeCredentialResult.publicKey),
       publicKeyAlgorithm: makeCredentialResult.publicKeyAlgorithm,
       transports: params.rp.id === "google.com" ? ["internal", "usb"] : ["internal"],
+      extensions: { credProps },
     };
   }
 
