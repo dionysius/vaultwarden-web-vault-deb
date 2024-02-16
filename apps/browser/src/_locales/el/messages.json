@@ -493,6 +493,12 @@
   "newAccountCreated": {
     "message": "Ο λογαριασμός σας έχει δημιουργηθεί! Τώρα μπορείτε να συνδεθείτε."
   },
+  "youSuccessfullyLoggedIn": {
+    "message": "You successfully logged in"
+  },
+  "youMayCloseThisWindow": {
+    "message": "You may close this window"
+  },
   "masterPassSent": {
     "message": "Σας στείλαμε ένα email με την υπόδειξη του κύριου κωδικού."
   },
@@ -2696,10 +2702,10 @@
     }
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
-    "message": "Launch DUO and follow the steps to finish logging in."
+    "message": "Launch Duo and follow the steps to finish logging in."
   },
   "duoRequiredByOrgForAccount": {
-    "message": "DUO two-step login is required for your account."
+    "message": "Duo two-step login is required for your account."
   },
   "openExtensionInNewWindowToCompleteLogin": {
     "message": "Open the extension in a new window to complete login"
@@ -2708,7 +2714,7 @@
     "message": "Popout extension"
   },
   "launchDuo": {
-    "message": "Launch DUO"
+    "message": "Launch Duo"
   },
   "importFormatError": {
     "message": "Τα δεδομένα δεν έχουν διαμορφωθεί σωστά. Ελέγξτε το αρχείο εισαγωγής και δοκιμάστε ξανά."

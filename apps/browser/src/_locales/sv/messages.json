@@ -257,7 +257,7 @@
     "message": "Välj"
   },
   "generatePassword": {
-    "message": "Skapa lösenord"
+    "message": "Generera lösenord"
   },
   "regeneratePassword": {
     "message": "Återskapa lösenord"
@@ -492,6 +492,12 @@
   },
   "newAccountCreated": {
     "message": "Ditt nya konto har skapats! Du kan logga in nu."
+  },
+  "youSuccessfullyLoggedIn": {
+    "message": "You successfully logged in"
+  },
+  "youMayCloseThisWindow": {
+    "message": "Du kan stänga detta fönster"
   },
   "masterPassSent": {
     "message": "Vi har skickat ett e-postmeddelande till dig med din huvudlösenordsledtråd."
@@ -765,7 +771,7 @@
     "message": "Delad"
   },
   "learnOrg": {
-    "message": "Lär dig om organisationer"
+    "message": "Läs mer om organisationer"
   },
   "learnOrgConfirmation": {
     "message": "Bitwarden gör det möjligt för dig att dela objekt i valvet med andra genom att använda en organisation. Vill du besöka bitwarden.com för att lära dig mer?"
@@ -2119,7 +2125,7 @@
     "message": "Återskapa användarnamn"
   },
   "generateUsername": {
-    "message": "Skapa användarnamn"
+    "message": "Generera användarnamn"
   },
   "usernameType": {
     "message": "Typ av användarnamn"
@@ -2147,7 +2153,7 @@
     "message": "Webbplatsnamn"
   },
   "whatWouldYouLikeToGenerate": {
-    "message": "Vad vill du skapa?"
+    "message": "Vad skulle du vilja generera?"
   },
   "passwordType": {
     "message": "Typ av lösenord"
@@ -2696,10 +2702,10 @@
     }
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
-    "message": "Launch DUO and follow the steps to finish logging in."
+    "message": "Launch Duo and follow the steps to finish logging in."
   },
   "duoRequiredByOrgForAccount": {
-    "message": "DUO two-step login is required for your account."
+    "message": "Duo two-step login is required for your account."
   },
   "openExtensionInNewWindowToCompleteLogin": {
     "message": "Open the extension in a new window to complete login"
@@ -2708,7 +2714,7 @@
     "message": "Popout extension"
   },
   "launchDuo": {
-    "message": "Launch DUO"
+    "message": "Launch Duo"
   },
   "importFormatError": {
     "message": "Data is not formatted correctly. Please check your import file and try again."

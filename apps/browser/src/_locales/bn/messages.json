@@ -493,6 +493,12 @@
   "newAccountCreated": {
     "message": "আপনার নতুন অ্যাকাউন্ট তৈরি করা হয়েছে! আপনি এখন প্রবেশ করতে পারেন।"
   },
+  "youSuccessfullyLoggedIn": {
+    "message": "You successfully logged in"
+  },
+  "youMayCloseThisWindow": {
+    "message": "You may close this window"
+  },
   "masterPassSent": {
     "message": "আমরা আপনাকে আপনার মূল পাসওয়ার্ডের ইঙ্গিত সহ একটি ইমেল প্রেরণ করেছি।"
   },
@@ -2696,10 +2702,10 @@
     }
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
-    "message": "Launch DUO and follow the steps to finish logging in."
+    "message": "Launch Duo and follow the steps to finish logging in."
   },
   "duoRequiredByOrgForAccount": {
-    "message": "DUO two-step login is required for your account."
+    "message": "Duo two-step login is required for your account."
   },
   "openExtensionInNewWindowToCompleteLogin": {
     "message": "Open the extension in a new window to complete login"
@@ -2708,7 +2714,7 @@
     "message": "Popout extension"
   },
   "launchDuo": {
-    "message": "Launch DUO"
+    "message": "Launch Duo"
   },
   "importFormatError": {
     "message": "Data is not formatted correctly. Please check your import file and try again."

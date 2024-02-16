@@ -493,6 +493,12 @@
   "newAccountCreated": {
     "message": "¡Tu nueva cuenta ha sido creada! Ahora puedes acceder."
   },
+  "youSuccessfullyLoggedIn": {
+    "message": "Accedió correctamente a su cuenta"
+  },
+  "youMayCloseThisWindow": {
+    "message": "Puede cerrar esta ventana"
+  },
   "masterPassSent": {
     "message": "Te hemos enviado un correo electrónico con la pista de tu contraseña maestra."
   },
@@ -2007,7 +2013,7 @@
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "verificationRequired": {
-    "message": "Verification required",
+    "message": "Se requiere verificación",
     "description": "Default title for the user verification dialog."
   },
   "hours": {
@@ -2648,16 +2654,16 @@
     }
   },
   "tryAgain": {
-    "message": "Try again"
+    "message": "Intentar de nuevo"
   },
   "verificationRequiredForActionSetPinToContinue": {
-    "message": "Verification required for this action. Set a PIN to continue."
+    "message": "Se requiere verificación para efectuar esta acción. Establezca un NIP para continuar."
   },
   "setPin": {
-    "message": "Set PIN"
+    "message": "Establecer NIP"
   },
   "verifyWithBiometrics": {
-    "message": "Verify with biometrics"
+    "message": "Verificar biométricamente"
   },
   "awaitingConfirmation": {
     "message": "Awaiting confirmation"
@@ -2666,13 +2672,13 @@
     "message": "Could not complete biometrics."
   },
   "needADifferentMethod": {
-    "message": "Need a different method?"
+    "message": "¿Necesita un método distinto?"
   },
   "useMasterPassword": {
     "message": "Use master password"
   },
   "usePin": {
-    "message": "Use PIN"
+    "message": "Usar NIP"
   },
   "useBiometrics": {
     "message": "Use biometrics"
@@ -2681,7 +2687,7 @@
     "message": "Enter the verification code that was sent to your email."
   },
   "resendCode": {
-    "message": "Resend code"
+    "message": "Volver a enviar código"
   },
   "total": {
     "message": "Total"
@@ -2696,10 +2702,10 @@
     }
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
-    "message": "Launch DUO and follow the steps to finish logging in."
+    "message": "Launch Duo and follow the steps to finish logging in."
   },
   "duoRequiredByOrgForAccount": {
-    "message": "DUO two-step login is required for your account."
+    "message": "Duo two-step login is required for your account."
   },
   "openExtensionInNewWindowToCompleteLogin": {
     "message": "Open the extension in a new window to complete login"
@@ -2708,7 +2714,7 @@
     "message": "Popout extension"
   },
   "launchDuo": {
-    "message": "Launch DUO"
+    "message": "Launch Duo"
   },
   "importFormatError": {
     "message": "Los datos no están formateados correctamente. Por favor, comprueba tu archivo de importación e inténtalo de nuevo."
@@ -2842,13 +2848,13 @@
     "message": "El nombre de usuario o la contraseña no son correctos"
   },
   "incorrectPassword": {
-    "message": "Incorrect password"
+    "message": "Contraseña incorrecta"
   },
   "incorrectCode": {
-    "message": "Incorrect code"
+    "message": "Código incorrecto"
   },
   "incorrectPin": {
-    "message": "Incorrect PIN"
+    "message": "NIP incorrecto"
   },
   "multifactorAuthenticationFailed": {
     "message": "Falló la autenticación multifactor"
