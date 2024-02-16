@@ -22,7 +22,6 @@ import { DeepJsonify } from "../../../types/deep-jsonify";
 import { MasterKey, UserKey } from "../../../types/key";
 import { UriMatchType } from "../../../vault/enums";
 import { CipherData } from "../../../vault/models/data/cipher.data";
-import { FolderData } from "../../../vault/models/data/folder.data";
 import { CipherView } from "../../../vault/models/view/cipher.view";
 import { AddEditCipherInfo } from "../../../vault/types/add-edit-cipher-info";
 import { KdfType } from "../../enums";
@@ -87,7 +86,6 @@ export class AccountData {
     CipherData,
     CipherView
   >();
-  folders? = new TemporaryDataEncryption<FolderData>();
   localData?: any;
   sends?: DataEncryptionPair<SendData, SendView> = new DataEncryptionPair<SendData, SendView>();
   policies?: DataEncryptionPair<PolicyData, Policy> = new DataEncryptionPair<PolicyData, Policy>();
@@ -206,7 +204,6 @@ export class AccountSettings {
   autoConfirmFingerPrints?: boolean;
   biometricUnlock?: boolean;
   clearClipboard?: number;
-  collapsedGroupings?: string[];
   defaultUriMatch?: UriMatchType;
   disableAutoBiometricsPrompt?: boolean;
   disableBadgeCounter?: boolean;
