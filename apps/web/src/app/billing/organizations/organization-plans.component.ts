@@ -288,12 +288,13 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
 
   get selectablePlans() {
     const selectedProductType = this.formGroup.controls.product.value;
-    const result = this.passwordManagerPlans?.filter(
-      (plan) =>
-        plan.product === selectedProductType &&
-        ((!this.isProviderQualifiedFor2020Plan() && this.planIsEnabled(plan)) ||
-          (this.isProviderQualifiedFor2020Plan() && Allowed2020PlanTypes.includes(plan.type))),
-    );
+    const result =
+      this.passwordManagerPlans?.filter(
+        (plan) =>
+          plan.product === selectedProductType &&
+          ((!this.isProviderQualifiedFor2020Plan() && this.planIsEnabled(plan)) ||
+            (this.isProviderQualifiedFor2020Plan() && Allowed2020PlanTypes.includes(plan.type))),
+      ) || [];
 
     result.sort((planA, planB) => planA.displaySortOrder - planB.displaySortOrder);
     return result;
