@@ -13,10 +13,7 @@ export class OrgSwitcherComponent {
   protected organizations$: Observable<Organization[]> =
     this.organizationService.organizations$.pipe(
       map((orgs) =>
-        orgs
-          .filter((org) => this.filter(org))
-          .sort((a, b) => a.name.localeCompare(b.name))
-          .sort((a, b) => (a.enabled ? -1 : 1)),
+        orgs.filter((org) => this.filter(org)).sort((a, b) => a.name.localeCompare(b.name)),
       ),
     );
 
