@@ -7,6 +7,8 @@ module.exports = {
   reporters: ["default", "jest-junit"],
 
   collectCoverage: true,
+  // Ensure we collect coverage from files without tests
+  collectCoverageFrom: ["src/**/*.ts"],
   coverageReporters: ["html", "lcov"],
   coverageDirectory: "coverage",
 
