@@ -38,32 +38,127 @@ import {
   SEPARATOR_ID,
 } from "../constants";
 
-export class MainContextMenuHandler {
-  private initRunning = false;
+import { InitContextMenuItems } from "./abstractions/main-context-menu-handler";
 
-  create: (options: chrome.contextMenus.CreateProperties) => Promise<void>;
+export class MainContextMenuHandler {
+  initRunning = false;
+  private initContextMenuItems: InitContextMenuItems[] = [
+    {
+      id: ROOT_ID,
+      title: "Bitwarden",
+    },
+    {
+      id: AUTOFILL_ID,
+      parentId: ROOT_ID,
+      title: this.i18nService.t("autoFillLogin"),
+    },
+    {
+      id: COPY_USERNAME_ID,
+      parentId: ROOT_ID,
+      title: this.i18nService.t("copyUsername"),
+    },
+    {
+      id: COPY_PASSWORD_ID,
+      parentId: ROOT_ID,
+      title: this.i18nService.t("copyPassword"),
+    },
+    {
+      id: COPY_VERIFICATION_CODE_ID,
+      parentId: ROOT_ID,
+      title: this.i18nService.t("copyVerificationCode"),
+      checkPremiumAccess: true,
+    },
+    {
+      id: SEPARATOR_ID + 1,
+      type: "separator",
+      parentId: ROOT_ID,
+    },
+    {
+      id: AUTOFILL_IDENTITY_ID,
+      parentId: ROOT_ID,
+      title: this.i18nService.t("autoFillIdentity"),
+    },
+    {
+      id: AUTOFILL_CARD_ID,
+      parentId: ROOT_ID,
+      title: this.i18nService.t("autoFillCard"),
+    },
+    {
+      id: SEPARATOR_ID + 2,
+      type: "separator",
+      parentId: ROOT_ID,
+    },
+    {
+      id: GENERATE_PASSWORD_ID,
+      parentId: ROOT_ID,
+      title: this.i18nService.t("generatePasswordCopied"),
+    },
+    {
+      id: COPY_IDENTIFIER_ID,
+      parentId: ROOT_ID,
+      title: this.i18nService.t("copyElementIdentifier"),
+    },
+  ];
+  private noCardsContextMenuItems: chrome.contextMenus.CreateProperties[] = [
+    {
+      id: `${AUTOFILL_CARD_ID}_NOTICE`,
+      enabled: false,
+      parentId: AUTOFILL_CARD_ID,
+      title: this.i18nService.t("noCards"),
+      type: "normal",
+    },
+    {
+      id: `${AUTOFILL_CARD_ID}_${SEPARATOR_ID}`,
+      parentId: AUTOFILL_CARD_ID,
+      type: "separator",
+    },
+    {
+      id: `${AUTOFILL_CARD_ID}_${CREATE_CARD_ID}`,
+      parentId: AUTOFILL_CARD_ID,
+      title: this.i18nService.t("addCardMenu"),
+      type: "normal",
+    },
+  ];
+  private noIdentitiesContextMenuItems: chrome.contextMenus.CreateProperties[] = [
+    {
+      id: `${AUTOFILL_IDENTITY_ID}_NOTICE`,
+      enabled: false,
+      parentId: AUTOFILL_IDENTITY_ID,
+      title: this.i18nService.t("noIdentities"),
+      type: "normal",
+    },
+    {
+      id: `${AUTOFILL_IDENTITY_ID}_${SEPARATOR_ID}`,
+      parentId: AUTOFILL_IDENTITY_ID,
+      type: "separator",
+    },
+    {
+      id: `${AUTOFILL_IDENTITY_ID}_${CREATE_IDENTITY_ID}`,
+      parentId: AUTOFILL_IDENTITY_ID,
+      title: this.i18nService.t("addIdentityMenu"),
+      type: "normal",
+    },
+  ];
+  private noLoginsContextMenuItems: chrome.contextMenus.CreateProperties[] = [
+    {
+      id: `${AUTOFILL_ID}_NOTICE`,
+      enabled: false,
+      parentId: AUTOFILL_ID,
+      title: this.i18nService.t("noMatchingLogins"),
+      type: "normal",
+    },
+    {
+      id: `${AUTOFILL_ID}_${SEPARATOR_ID}1`,
+      parentId: AUTOFILL_ID,
+      type: "separator",
+    },
+  ];
 
   constructor(
     private stateService: BrowserStateService,
     private i18nService: I18nService,
     private logService: LogService,
-  ) {
-    if (chrome.contextMenus) {
-      this.create = (options) => {
-        return new Promise<void>((resolve, reject) => {
-          chrome.contextMenus.create(options, () => {
-            if (chrome.runtime.lastError) {
-              reject(chrome.runtime.lastError);
-              return;
-            }
-            resolve();
-          });
-        });
-      };
-    } else {
-      this.create = (_options) => Promise.resolve();
-    }
-  }
+  ) {}
 
   static async mv3Create(cachedServices: CachedServices) {
     const stateFactory = new StateFactory(GlobalState, Account);
@@ -110,76 +205,14 @@ export class MainContextMenuHandler {
     this.initRunning = true;
 
     try {
-      const create = async (options: Omit<chrome.contextMenus.CreateProperties, "contexts">) => {
-        await this.create({ ...options, contexts: ["all"] });
-      };
+      for (const options of this.initContextMenuItems) {
+        if (options.checkPremiumAccess && !(await this.stateService.getCanAccessPremium())) {
+          continue;
+        }
 
-      await create({
-        id: ROOT_ID,
-        title: "Bitwarden",
-      });
-
-      await create({
-        id: AUTOFILL_ID,
-        parentId: ROOT_ID,
-        title: this.i18nService.t("autoFillLogin"),
-      });
-
-      await create({
-        id: COPY_USERNAME_ID,
-        parentId: ROOT_ID,
-        title: this.i18nService.t("copyUsername"),
-      });
-
-      await create({
-        id: COPY_PASSWORD_ID,
-        parentId: ROOT_ID,
-        title: this.i18nService.t("copyPassword"),
-      });
-
-      if (await this.stateService.getCanAccessPremium()) {
-        await create({
-          id: COPY_VERIFICATION_CODE_ID,
-          parentId: ROOT_ID,
-          title: this.i18nService.t("copyVerificationCode"),
-        });
+        delete options.checkPremiumAccess;
+        await MainContextMenuHandler.create({ ...options, contexts: ["all"] });
       }
-
-      await create({
-        id: SEPARATOR_ID + 1,
-        type: "separator",
-        parentId: ROOT_ID,
-      });
-
-      await create({
-        id: AUTOFILL_IDENTITY_ID,
-        parentId: ROOT_ID,
-        title: this.i18nService.t("autoFillIdentity"),
-      });
-
-      await create({
-        id: AUTOFILL_CARD_ID,
-        parentId: ROOT_ID,
-        title: this.i18nService.t("autoFillCard"),
-      });
-
-      await create({
-        id: SEPARATOR_ID + 2,
-        type: "separator",
-        parentId: ROOT_ID,
-      });
-
-      await create({
-        id: GENERATE_PASSWORD_ID,
-        parentId: ROOT_ID,
-        title: this.i18nService.t("generatePasswordCopied"),
-      });
-
-      await create({
-        id: COPY_IDENTIFIER_ID,
-        parentId: ROOT_ID,
-        title: this.i18nService.t("copyElementIdentifier"),
-      });
     } catch (error) {
       this.logService.warning(error.message);
     } finally {
@@ -187,6 +220,26 @@ export class MainContextMenuHandler {
     }
     return true;
   }
+
+  /**
+   * Creates a context menu item
+   *
+   * @param options - the options for the context menu item
+   */
+  private static create = async (options: chrome.contextMenus.CreateProperties) => {
+    if (!chrome.contextMenus) {
+      return;
+    }
+
+    return new Promise<void>((resolve, reject) => {
+      chrome.contextMenus.create(options, () => {
+        if (chrome.runtime.lastError) {
+          return reject(chrome.runtime.lastError);
+        }
+        resolve();
+      });
+    });
+  };
 
   static async removeAll() {
     return new Promise<void>((resolve, reject) => {
@@ -221,7 +274,7 @@ export class MainContextMenuHandler {
       const createChildItem = async (parentId: string) => {
         const menuItemId = `${parentId}_${optionId}`;
 
-        return await this.create({
+        return await MainContextMenuHandler.create({
           type: "normal",
           id: menuItemId,
           parentId,
@@ -272,74 +325,42 @@ export class MainContextMenuHandler {
   async noAccess() {
     if (await this.init()) {
       const authed = await this.stateService.getIsAuthenticated();
-      await this.loadOptions(
+      this.loadOptions(
         this.i18nService.t(authed ? "unlockVaultMenu" : "loginToVaultMenu"),
         NOOP_COMMAND_SUFFIX,
-      );
+      ).catch((error) => this.logService.warning(error.message));
     }
   }
 
   async noCards() {
-    await this.create({
-      id: `${AUTOFILL_CARD_ID}_NOTICE`,
-      enabled: false,
-      parentId: AUTOFILL_CARD_ID,
-      title: this.i18nService.t("noCards"),
-      type: "normal",
-    });
-
-    await this.create({
-      id: `${AUTOFILL_CARD_ID}_${SEPARATOR_ID}`,
-      parentId: AUTOFILL_CARD_ID,
-      type: "separator",
-    });
-
-    await this.create({
-      id: `${AUTOFILL_CARD_ID}_${CREATE_CARD_ID}`,
-      parentId: AUTOFILL_CARD_ID,
-      title: this.i18nService.t("addCardMenu"),
-      type: "normal",
-    });
+    try {
+      for (const option of this.noCardsContextMenuItems) {
+        await MainContextMenuHandler.create(option);
+      }
+    } catch (error) {
+      this.logService.warning(error.message);
+    }
   }
 
   async noIdentities() {
-    await this.create({
-      id: `${AUTOFILL_IDENTITY_ID}_NOTICE`,
-      enabled: false,
-      parentId: AUTOFILL_IDENTITY_ID,
-      title: this.i18nService.t("noIdentities"),
-      type: "normal",
-    });
-
-    await this.create({
-      id: `${AUTOFILL_IDENTITY_ID}_${SEPARATOR_ID}`,
-      parentId: AUTOFILL_IDENTITY_ID,
-      type: "separator",
-    });
-
-    await this.create({
-      id: `${AUTOFILL_IDENTITY_ID}_${CREATE_IDENTITY_ID}`,
-      parentId: AUTOFILL_IDENTITY_ID,
-      title: this.i18nService.t("addIdentityMenu"),
-      type: "normal",
-    });
+    try {
+      for (const option of this.noIdentitiesContextMenuItems) {
+        await MainContextMenuHandler.create(option);
+      }
+    } catch (error) {
+      this.logService.warning(error.message);
+    }
   }
 
   async noLogins() {
-    await this.create({
-      id: `${AUTOFILL_ID}_NOTICE`,
-      enabled: false,
-      parentId: AUTOFILL_ID,
-      title: this.i18nService.t("noMatchingLogins"),
-      type: "normal",
-    });
+    try {
+      for (const option of this.noLoginsContextMenuItems) {
+        await MainContextMenuHandler.create(option);
+      }
 
-    await this.create({
-      id: `${AUTOFILL_ID}_${SEPARATOR_ID}` + 1,
-      parentId: AUTOFILL_ID,
-      type: "separator",
-    });
-
-    await this.loadOptions(this.i18nService.t("addLoginMenu"), CREATE_LOGIN_ID);
+      await this.loadOptions(this.i18nService.t("addLoginMenu"), CREATE_LOGIN_ID);
+    } catch (error) {
+      this.logService.warning(error.message);
+    }
   }
 }

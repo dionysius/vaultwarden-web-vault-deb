@@ -7,6 +7,7 @@ import { Cipher } from "@bitwarden/common/vault/models/domain/cipher";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 
 import { BrowserStateService } from "../../platform/services/abstractions/browser-state.service";
+import { NOOP_COMMAND_SUFFIX } from "../constants";
 
 import { MainContextMenuHandler } from "./main-context-menu-handler";
 
@@ -39,6 +40,7 @@ describe("context-menu", () => {
       return props.id;
     });
 
+    i18nService.t.mockImplementation((key) => key);
     sut = new MainContextMenuHandler(stateService, i18nService, logService);
   });
 
@@ -134,6 +136,77 @@ describe("context-menu", () => {
       await sut.loadOptions("TEST_TITLE", "NOOP");
 
       expect(createSpy).toHaveBeenCalledTimes(6);
+    });
+  });
+
+  describe("creating noAccess context menu items", () => {
+    let loadOptionsSpy: jest.SpyInstance;
+    beforeEach(() => {
+      loadOptionsSpy = jest.spyOn(sut, "loadOptions").mockResolvedValue();
+    });
+
+    it("Loads context menu items that ask the user to unlock their vault if they are authed", async () => {
+      stateService.getIsAuthenticated.mockResolvedValue(true);
+
+      await sut.noAccess();
+
+      expect(loadOptionsSpy).toHaveBeenCalledWith("unlockVaultMenu", NOOP_COMMAND_SUFFIX);
+    });
+
+    it("Loads context menu items that ask the user to login to their vault if they are not authed", async () => {
+      stateService.getIsAuthenticated.mockResolvedValue(false);
+
+      await sut.noAccess();
+
+      expect(loadOptionsSpy).toHaveBeenCalledWith("loginToVaultMenu", NOOP_COMMAND_SUFFIX);
+    });
+  });
+
+  describe("creating noCards context menu items", () => {
+    it("Loads a noCards context menu item and an addCardMenu context item", async () => {
+      const noCardsContextMenuItems = sut["noCardsContextMenuItems"];
+
+      await sut.noCards();
+
+      expect(createSpy).toHaveBeenCalledTimes(3);
+      expect(createSpy).toHaveBeenCalledWith(noCardsContextMenuItems[0], expect.any(Function));
+      expect(createSpy).toHaveBeenCalledWith(noCardsContextMenuItems[1], expect.any(Function));
+      expect(createSpy).toHaveBeenCalledWith(noCardsContextMenuItems[2], expect.any(Function));
+    });
+  });
+
+  describe("creating noIdentities context menu items", () => {
+    it("Loads a noIdentities context menu item and an addIdentityMenu context item", async () => {
+      const noIdentitiesContextMenuItems = sut["noIdentitiesContextMenuItems"];
+
+      await sut.noIdentities();
+
+      expect(createSpy).toHaveBeenCalledTimes(3);
+      expect(createSpy).toHaveBeenCalledWith(noIdentitiesContextMenuItems[0], expect.any(Function));
+      expect(createSpy).toHaveBeenCalledWith(noIdentitiesContextMenuItems[1], expect.any(Function));
+      expect(createSpy).toHaveBeenCalledWith(noIdentitiesContextMenuItems[2], expect.any(Function));
+    });
+  });
+
+  describe("creating noLogins context menu items", () => {
+    it("Loads a noLogins context menu item and an addLoginMenu context item", async () => {
+      const noLoginsContextMenuItems = sut["noLoginsContextMenuItems"];
+
+      await sut.noLogins();
+
+      expect(createSpy).toHaveBeenCalledTimes(5);
+      expect(createSpy).toHaveBeenCalledWith(noLoginsContextMenuItems[0], expect.any(Function));
+      expect(createSpy).toHaveBeenCalledWith(noLoginsContextMenuItems[1], expect.any(Function));
+      expect(createSpy).toHaveBeenCalledWith(
+        {
+          enabled: false,
+          id: "autofill_NOTICE",
+          parentId: "autofill",
+          title: "noMatchingLogins",
+          type: "normal",
+        },
+        expect.any(Function),
+      );
     });
   });
 });
