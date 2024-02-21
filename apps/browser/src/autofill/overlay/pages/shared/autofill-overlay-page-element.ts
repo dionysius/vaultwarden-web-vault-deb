@@ -93,6 +93,10 @@ class AutofillOverlayPageElement extends HTMLElement {
       this.messageOrigin = event.origin;
     }
 
+    if (event.origin !== this.messageOrigin) {
+      return;
+    }
+
     const message = event?.data;
     const handler = this.windowMessageHandlers[message?.command];
     if (!handler) {

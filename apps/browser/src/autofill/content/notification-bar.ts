@@ -30,6 +30,8 @@ interface HTMLElementWithFormOpId extends HTMLElement {
  * and async scripts to finish loading.
  * https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event
  */
+let notificationBarIframe: HTMLIFrameElement = null;
+
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", loadNotificationBar);
 } else {
@@ -871,10 +873,11 @@ async function loadNotificationBar() {
 
     const barPageUrl: string = chrome.runtime.getURL(barPage);
 
-    const iframe = document.createElement("iframe");
-    iframe.style.cssText = "height: 42px; width: 100%; border: 0; min-height: initial;";
-    iframe.id = "bit-notification-bar-iframe";
-    iframe.src = barPageUrl;
+    notificationBarIframe = document.createElement("iframe");
+    notificationBarIframe.style.cssText =
+      "height: 42px; width: 100%; border: 0; min-height: initial;";
+    notificationBarIframe.id = "bit-notification-bar-iframe";
+    notificationBarIframe.src = barPageUrl;
 
     const frameDiv = document.createElement("div");
     frameDiv.setAttribute("aria-live", "polite");
@@ -882,10 +885,10 @@ async function loadNotificationBar() {
     frameDiv.style.cssText =
       "height: 42px; width: 100%; top: 0; left: 0; padding: 0; position: fixed; " +
       "z-index: 2147483647; visibility: visible;";
-    frameDiv.appendChild(iframe);
+    frameDiv.appendChild(notificationBarIframe);
     document.body.appendChild(frameDiv);
 
-    (iframe.contentWindow.location as any) = barPageUrl;
+    (notificationBarIframe.contentWindow.location as any) = barPageUrl;
 
     const spacer = document.createElement("div");
     spacer.id = "bit-notification-bar-spacer";
@@ -897,6 +900,7 @@ async function loadNotificationBar() {
     const barEl = document.getElementById("bit-notification-bar");
     if (barEl != null) {
       barEl.parentElement.removeChild(barEl);
+      notificationBarIframe = null;
     }
 
     const spacerEl = document.getElementById("bit-notification-bar-spacer");
@@ -910,13 +914,9 @@ async function loadNotificationBar() {
 
     switch (barType) {
       case "add":
-        sendPlatformMessage({
-          command: "bgAddClose",
-        });
-        break;
       case "change":
         sendPlatformMessage({
-          command: "bgChangeClose",
+          command: "bgRemoveTabFromNotificationQueue",
         });
         break;
       default:

@@ -815,6 +815,7 @@ export default class MainBackground {
       this.folderService,
       this.stateService,
       this.environmentService,
+      this.logService,
     );
     this.overlayBackground = new OverlayBackground(
       this.cipherService,
