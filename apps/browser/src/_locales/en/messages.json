@@ -2974,10 +2974,6 @@
     "message": "Ignoring this option may cause conflicts between the Bitwarden auto-fill menu and your browser's.",
     "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
   },
-  "overrideDefaultBrowserAutofillPrivacyRequiredDescription": {
-    "message": "This action will restart the Bitwarden extension. Ignoring this option may cause conflicts between the Bitwarden auto-fill menu and your browser's.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
   "overrideDefaultBrowserAutoFillSettings": {
     "message": "Make Bitwarden your default password manager",
     "description": "Label for the setting that allows overriding the default browser autofill settings"

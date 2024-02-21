@@ -210,13 +210,9 @@ export class AutofillComponent implements OnInit {
       return;
     }
 
-    const permissionGranted = await this.privacyPermissionGranted();
-    const contentKey = permissionGranted
-      ? "overrideDefaultBrowserAutofillDescription"
-      : "overrideDefaultBrowserAutofillPrivacyRequiredDescription";
     await this.dialogService.openSimpleDialog({
       title: { key: "overrideDefaultBrowserAutofillTitle" },
-      content: { key: contentKey },
+      content: { key: "overrideDefaultBrowserAutofillDescription" },
       acceptButtonText: { key: "makeDefault" },
       acceptAction: async () => await this.handleOverrideDialogAccept(),
       cancelButtonText: { key: "ignore" },
