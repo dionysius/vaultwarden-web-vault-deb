@@ -8,12 +8,12 @@ import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.serv
 import { Importer, ImportResult, ImportServiceAbstraction } from "@bitwarden/importer/core";
 
 import NotificationBackground from "../../autofill/background/notification.background";
-import { createPortSpyMock } from "../../autofill/jest/autofill-mocks";
+import { createPortSpyMock } from "../../autofill/spec/autofill-mocks";
 import {
   flushPromises,
   sendPortMessage,
   triggerRuntimeOnConnectEvent,
-} from "../../autofill/jest/testing-utils";
+} from "../../autofill/spec/testing-utils";
 import { FilelessImportPort, FilelessImportType } from "../enums/fileless-import.enums";
 
 import FilelessImporterBackground from "./fileless-importer.background";

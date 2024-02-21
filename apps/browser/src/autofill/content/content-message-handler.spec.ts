@@ -1,6 +1,6 @@
 import { mock } from "jest-mock-extended";
 
-import { postWindowMessage, sendExtensionRuntimeMessage } from "../jest/testing-utils";
+import { postWindowMessage, sendExtensionRuntimeMessage } from "../spec/testing-utils";
 
 describe("ContentMessageHandler", () => {
   const sendMessageSpy = jest.spyOn(chrome.runtime, "sendMessage");

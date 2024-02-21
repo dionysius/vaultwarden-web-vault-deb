@@ -2,10 +2,10 @@ import { mock } from "jest-mock-extended";
 
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 
-import { flushPromises, sendExtensionRuntimeMessage } from "../jest/testing-utils";
 import AutofillPageDetails from "../models/autofill-page-details";
 import AutofillScript from "../models/autofill-script";
 import AutofillOverlayContentService from "../services/autofill-overlay-content.service";
+import { flushPromises, sendExtensionRuntimeMessage } from "../spec/testing-utils";
 import { AutofillOverlayVisibility, RedirectFocusDirection } from "../utils/autofill-overlay.enum";
 
 import { AutofillExtensionMessage } from "./abstractions/autofill-init";

@@ -3,9 +3,9 @@ import { mock } from "jest-mock-extended";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 
 import { EVENTS } from "../constants";
-import { createAutofillFieldMock } from "../jest/autofill-mocks";
-import { flushPromises } from "../jest/testing-utils";
 import AutofillField from "../models/autofill-field";
+import { createAutofillFieldMock } from "../spec/autofill-mocks";
+import { flushPromises } from "../spec/testing-utils";
 import { ElementWithOpId, FormFieldElement } from "../types";
 import {
   AutofillOverlayElement,

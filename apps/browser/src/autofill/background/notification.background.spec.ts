@@ -7,8 +7,8 @@ import { CipherService } from "@bitwarden/common/vault/services/cipher.service";
 import { FolderService } from "@bitwarden/common/vault/services/folder/folder.service";
 
 import { BrowserStateService } from "../../platform/services/browser-state.service";
-import { createChromeTabMock } from "../jest/autofill-mocks";
 import AutofillService from "../services/autofill.service";
+import { createChromeTabMock } from "../spec/autofill-mocks";
 
 import { AddLoginQueueMessage } from "./abstractions/notification.background";
 import NotificationBackground from "./notification.background";

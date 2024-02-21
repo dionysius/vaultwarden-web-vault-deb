@@ -26,17 +26,17 @@ import { TotpService } from "@bitwarden/common/vault/services/totp.service";
 import { BrowserApi } from "../../platform/browser/browser-api";
 import { BrowserStateService } from "../../platform/services/browser-state.service";
 import { AutofillPort } from "../enums/autofill-port.enums";
+import AutofillField from "../models/autofill-field";
+import AutofillPageDetails from "../models/autofill-page-details";
+import AutofillScript from "../models/autofill-script";
 import {
   createAutofillFieldMock,
   createAutofillPageDetailsMock,
   createAutofillScriptMock,
   createChromeTabMock,
   createGenerateFillScriptOptionsMock,
-} from "../jest/autofill-mocks";
-import { triggerTestFailure } from "../jest/testing-utils";
-import AutofillField from "../models/autofill-field";
-import AutofillPageDetails from "../models/autofill-page-details";
-import AutofillScript from "../models/autofill-script";
+} from "../spec/autofill-mocks";
+import { triggerTestFailure } from "../spec/testing-utils";
 import { AutofillOverlayVisibility } from "../utils/autofill-overlay.enum";
 
 import {

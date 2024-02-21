@@ -1,7 +1,7 @@
 import { mock } from "jest-mock-extended";
 
-import { createPortSpyMock } from "../../autofill/jest/autofill-mocks";
-import { sendPortMessage } from "../../autofill/jest/testing-utils";
+import { createPortSpyMock } from "../../autofill/spec/autofill-mocks";
+import { sendPortMessage } from "../../autofill/spec/testing-utils";
 import { FilelessImportPort } from "../enums/fileless-import.enums";
 
 import { LpFilelessImporter } from "./abstractions/lp-fileless-importer";

@@ -16,15 +16,15 @@ import { BrowserApi } from "../../platform/browser/browser-api";
 import BrowserPlatformUtilsService from "../../platform/services/browser-platform-utils.service";
 import { BrowserStateService } from "../../platform/services/browser-state.service";
 import { SHOW_AUTOFILL_BUTTON } from "../constants";
+import { AutofillService } from "../services/abstractions/autofill.service";
 import {
   createAutofillPageDetailsMock,
   createChromeTabMock,
   createFocusedFieldDataMock,
   createPageDetailMock,
   createPortSpyMock,
-} from "../jest/autofill-mocks";
-import { flushPromises, sendExtensionRuntimeMessage, sendPortMessage } from "../jest/testing-utils";
-import { AutofillService } from "../services/abstractions/autofill.service";
+} from "../spec/autofill-mocks";
+import { flushPromises, sendExtensionRuntimeMessage, sendPortMessage } from "../spec/testing-utils";
 import {
   AutofillOverlayElement,
   AutofillOverlayPort,
