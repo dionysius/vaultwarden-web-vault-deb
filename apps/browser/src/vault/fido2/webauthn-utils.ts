@@ -59,7 +59,7 @@ export class WebauthnUtils {
       id: result.credentialId,
       rawId: Fido2Utils.stringToBuffer(result.credentialId),
       type: "public-key",
-      authenticatorAttachment: "cross-platform",
+      authenticatorAttachment: "platform",
       response: {
         clientDataJSON: Fido2Utils.stringToBuffer(result.clientDataJSON),
         attestationObject: Fido2Utils.stringToBuffer(result.attestationObject),
@@ -127,7 +127,7 @@ export class WebauthnUtils {
         userHandle: Fido2Utils.stringToBuffer(result.userHandle),
       } as AuthenticatorAssertionResponse,
       getClientExtensionResults: () => ({}),
-      authenticatorAttachment: "cross-platform",
+      authenticatorAttachment: "platform",
     } as PublicKeyCredential;
 
     // Modify prototype chains to fix `instanceof` calls.
