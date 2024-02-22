@@ -87,8 +87,8 @@
           </button>
         </div>
       </ng-container>
-      <ng-container *ngIf="flexibleCollectionsV1Enabled && !performingInitialLoad">
-        <bit-no-items *ngIf="isEmpty && !showCollectionAccessRestricted">
+      <ng-container *ngIf="flexibleCollectionsV1Enabled && !performingInitialLoad && isEmpty">
+        <bit-no-items *ngIf="!showCollectionAccessRestricted">
           <span slot="title" class="tw-mt-4 tw-block">{{ "noItemsInList" | i18n }}</span>
           <button
             slot="button"
