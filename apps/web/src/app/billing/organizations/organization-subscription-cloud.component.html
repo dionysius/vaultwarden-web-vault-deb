@@ -76,7 +76,17 @@
                 {{ i.amount | currency: "$" }}
               </td>
               <td bitCell class="tw-text-right">
-                {{ i.quantity * i.amount | currency: "$" }} /{{ i.interval | i18n }}
+                <ng-container
+                  *ngIf="
+                    sub?.customerDiscount?.appliesTo?.includes(i.productId);
+                    else calculateElse
+                  "
+                >
+                  {{ "freeForOneYear" | i18n }}
+                </ng-container>
+                <ng-template #calculateElse>
+                  {{ i.quantity * i.amount | currency: "$" }} /{{ i.interval | i18n }}
+                </ng-template>
               </td>
             </tr>
           </ng-container>
