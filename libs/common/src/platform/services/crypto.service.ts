@@ -6,6 +6,7 @@ import { ProfileOrganizationResponse } from "../../admin-console/models/response
 import { ProfileProviderOrganizationResponse } from "../../admin-console/models/response/profile-provider-organization.response";
 import { ProfileProviderResponse } from "../../admin-console/models/response/profile-provider.response";
 import { AccountService } from "../../auth/abstractions/account.service";
+import { AuthenticationStatus } from "../../auth/enums/authentication-status";
 import { KdfConfig } from "../../auth/models/domain/kdf-config";
 import { Utils } from "../../platform/misc/utils";
 import { OrganizationId, ProviderId, UserId } from "../../types/guid";
@@ -52,9 +53,11 @@ import {
   USER_EVER_HAD_USER_KEY,
   USER_PRIVATE_KEY,
   USER_PUBLIC_KEY,
+  USER_KEY,
 } from "./key-state/user-key.state";
 
 export class CryptoService implements CryptoServiceAbstraction {
+  private readonly activeUserKeyState: ActiveUserState<UserKey>;
   private readonly activeUserEverHadUserKey: ActiveUserState<boolean>;
   private readonly activeUserEncryptedOrgKeysState: ActiveUserState<
     Record<OrganizationId, EncryptedOrganizationKeyData>
@@ -67,6 +70,8 @@ export class CryptoService implements CryptoServiceAbstraction {
   private readonly activeUserEncryptedPrivateKeyState: ActiveUserState<EncryptedString>;
   private readonly activeUserPrivateKeyState: DerivedState<UserPrivateKey>;
   private readonly activeUserPublicKeyState: DerivedState<UserPublicKey>;
+
+  readonly activeUserKey$: Observable<UserKey>;
 
   readonly activeUserOrgKeys$: Observable<Record<OrganizationId, OrgKey>>;
   readonly activeUserProviderKeys$: Observable<Record<ProviderId, ProviderKey>>;
@@ -84,6 +89,8 @@ export class CryptoService implements CryptoServiceAbstraction {
     protected stateProvider: StateProvider,
   ) {
     // User Key
+    this.activeUserKeyState = stateProvider.getActive(USER_KEY);
+    this.activeUserKey$ = this.activeUserKeyState.state$;
     this.activeUserEverHadUserKey = stateProvider.getActive(USER_EVER_HAD_USER_KEY);
     this.everHadUserKey$ = this.activeUserEverHadUserKey.state$.pipe(map((x) => x ?? false));
 
@@ -131,13 +138,15 @@ export class CryptoService implements CryptoServiceAbstraction {
   }
 
   async setUserKey(key: UserKey, userId?: UserId): Promise<void> {
-    // TODO: make this non-nullable in signature
-    userId ??= (await firstValueFrom(this.accountService.activeAccount$))?.id;
-    if (key != null) {
-      // Key should never be null anyway
-      await this.stateProvider.getUser(userId, USER_EVER_HAD_USER_KEY).update(() => true);
+    if (key == null) {
+      throw new Error("No key provided. Use ClearUserKey to clear the key");
     }
-    await this.stateService.setUserKey(key, { userId: userId });
+    // Set userId to ensure we have one for the account status update
+    [userId, key] = await this.stateProvider.setUserState(USER_KEY, key, userId);
+    await this.stateProvider.setUserState(USER_EVER_HAD_USER_KEY, true, userId);
+
+    await this.accountService.setAccountStatus(userId, AuthenticationStatus.Unlocked);
+
     await this.storeAdditionalKeys(key, userId);
   }
 
@@ -147,7 +156,7 @@ export class CryptoService implements CryptoServiceAbstraction {
   }
 
   async getUserKey(userId?: UserId): Promise<UserKey> {
-    let userKey = await this.stateService.getUserKey({ userId: userId });
+    let userKey = await firstValueFrom(this.stateProvider.getUserState$(USER_KEY, userId));
     if (userKey) {
       return userKey;
     }
@@ -197,7 +206,7 @@ export class CryptoService implements CryptoServiceAbstraction {
   }
 
   async hasUserKeyInMemory(userId?: UserId): Promise<boolean> {
-    return (await this.stateService.getUserKey({ userId: userId })) != null;
+    return (await firstValueFrom(this.stateProvider.getUserState$(USER_KEY, userId))) != null;
   }
 
   async hasUserKeyStored(keySuffix: KeySuffixOptions, userId?: UserId): Promise<boolean> {
@@ -215,7 +224,9 @@ export class CryptoService implements CryptoServiceAbstraction {
   }
 
   async clearUserKey(clearStoredKeys = true, userId?: UserId): Promise<void> {
-    await this.stateService.setUserKey(null, { userId: userId });
+    // Set userId to ensure we have one for the account status update
+    [userId] = await this.stateProvider.setUserState(USER_KEY, null, userId);
+    await this.accountService.setMaxAccountStatus(userId, AuthenticationStatus.Locked);
     if (clearStoredKeys) {
       await this.clearAllStoredUserKeys(userId);
     }

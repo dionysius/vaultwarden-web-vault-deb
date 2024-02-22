@@ -16,7 +16,7 @@ import { UsernameGeneratorOptions } from "../../tools/generator/username";
 import { SendData } from "../../tools/send/models/data/send.data";
 import { SendView } from "../../tools/send/models/view/send.view";
 import { UserId } from "../../types/guid";
-import { DeviceKey, MasterKey, UserKey } from "../../types/key";
+import { DeviceKey, MasterKey } from "../../types/key";
 import { UriMatchType } from "../../vault/enums";
 import { CipherData } from "../../vault/models/data/cipher.data";
 import { LocalData } from "../../vault/models/data/local.data";
@@ -50,6 +50,9 @@ export type InitOptions = {
 export abstract class StateService<T extends Account = Account> {
   accounts$: Observable<{ [userId: string]: T }>;
   activeAccount$: Observable<string>;
+  /**
+   * @deprecated use accountService.activeAccount$ instead
+   */
   activeAccountUnlocked$: Observable<boolean>;
 
   addAccount: (account: T) => Promise<void>;
@@ -82,14 +85,6 @@ export abstract class StateService<T extends Account = Account> {
   setClearClipboard: (value: number, options?: StorageOptions) => Promise<void>;
   getConvertAccountToKeyConnector: (options?: StorageOptions) => Promise<boolean>;
   setConvertAccountToKeyConnector: (value: boolean, options?: StorageOptions) => Promise<void>;
-  /**
-   * gets the user key
-   */
-  getUserKey: (options?: StorageOptions) => Promise<UserKey>;
-  /**
-   * Sets the user key
-   */
-  setUserKey: (value: UserKey, options?: StorageOptions) => Promise<void>;
   /**
    * Gets the user's master key
    */
@@ -150,10 +145,6 @@ export abstract class StateService<T extends Account = Account> {
    * @deprecated For migration purposes only, use getUserKeyMasterKey instead
    */
   getEncryptedCryptoSymmetricKey: (options?: StorageOptions) => Promise<string>;
-  /**
-   * @deprecated For migration purposes only, use setUserKeyMasterKey instead
-   */
-  setEncryptedCryptoSymmetricKey: (value: string, options?: StorageOptions) => Promise<void>;
   /**
    * @deprecated For legacy purposes only, use getMasterKey instead
    */

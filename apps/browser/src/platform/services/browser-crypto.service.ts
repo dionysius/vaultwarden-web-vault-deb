@@ -1,7 +1,8 @@
+import { firstValueFrom } from "rxjs";
+
 import { KeySuffixOptions } from "@bitwarden/common/platform/enums";
-import { Utils } from "@bitwarden/common/platform/misc/utils";
-import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
 import { CryptoService } from "@bitwarden/common/platform/services/crypto.service";
+import { USER_KEY } from "@bitwarden/common/platform/services/key-state/user-key.state";
 import { UserId } from "@bitwarden/common/types/guid";
 import { UserKey } from "@bitwarden/common/types/key";
 
@@ -29,9 +30,9 @@ export class BrowserCryptoService extends CryptoService {
         return null;
       }
 
-      const userKey = await this.stateService.getUserKey({ userId: userId });
+      const userKey = await firstValueFrom(this.stateProvider.getUserState$(USER_KEY, userId));
       if (userKey) {
-        return new SymmetricCryptoKey(Utils.fromB64ToArray(userKey.keyB64)) as UserKey;
+        return userKey;
       }
     }
 

@@ -1,4 +1,5 @@
 import { matches, mock } from "jest-mock-extended";
+import { of } from "rxjs";
 
 import { DeviceType } from "../../enums";
 import { AppIdService } from "../../platform/abstractions/app-id.service";
@@ -19,6 +20,7 @@ import { UpdateDevicesTrustRequest } from "../models/request/update-devices-trus
 import { ProtectedDeviceResponse } from "../models/response/protected-device.response";
 
 import { DeviceTrustCryptoService } from "./device-trust-crypto.service.implementation";
+
 describe("deviceTrustCryptoService", () => {
   let deviceTrustCryptoService: DeviceTrustCryptoService;
 
@@ -495,6 +497,7 @@ describe("deviceTrustCryptoService", () => {
         const fakeNewUserKeyData = new Uint8Array(64);
         fakeNewUserKeyData.fill(FakeNewUserKeyMarker, 0, 1);
         fakeNewUserKey = new SymmetricCryptoKey(fakeNewUserKeyData) as UserKey;
+        cryptoService.activeUserKey$ = of(fakeNewUserKey);
       });
 
       it("does an early exit when the current device is not a trusted device", async () => {
@@ -521,9 +524,7 @@ describe("deviceTrustCryptoService", () => {
           fakeOldUserKeyData.fill(FakeOldUserKeyMarker, 0, 1);
 
           // Mock the retrieval of a user key that differs from the new one passed into the method
-          stateService.getUserKey.mockResolvedValue(
-            new SymmetricCryptoKey(fakeOldUserKeyData) as UserKey,
-          );
+          cryptoService.activeUserKey$ = of(new SymmetricCryptoKey(fakeOldUserKeyData) as UserKey);
 
           appIdService.getAppId.mockResolvedValue("test_device_identifier");
 

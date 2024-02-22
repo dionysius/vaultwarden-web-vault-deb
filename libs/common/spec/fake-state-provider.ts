@@ -140,7 +140,9 @@ export class FakeActiveUserStateProvider implements ActiveUserStateProvider {
 }
 
 export class FakeStateProvider implements StateProvider {
+  mock = mock<StateProvider>();
   getUserState$<T>(keyDefinition: KeyDefinition<T>, userId?: UserId): Observable<T> {
+    this.mock.getUserState$(keyDefinition, userId);
     if (userId) {
       return this.getUser<T>(userId, keyDefinition).state$;
     }
@@ -152,6 +154,7 @@ export class FakeStateProvider implements StateProvider {
     value: T,
     userId?: UserId,
   ): Promise<[UserId, T]> {
+    await this.mock.setUserState(keyDefinition, value, userId);
     if (userId) {
       return [userId, await this.getUser(userId, keyDefinition).update(() => value)];
     } else {

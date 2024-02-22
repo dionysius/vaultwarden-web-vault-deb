@@ -1,3 +1,5 @@
+import { firstValueFrom } from "rxjs";
+
 import { AppIdService } from "../../platform/abstractions/app-id.service";
 import { CryptoFunctionService } from "../../platform/abstractions/crypto-function.service";
 import { CryptoService } from "../../platform/abstractions/crypto.service";
@@ -108,7 +110,7 @@ export class DeviceTrustCryptoService implements DeviceTrustCryptoServiceAbstrac
     }
 
     // At this point of rotating their keys, they should still have their old user key in state
-    const oldUserKey = await this.stateService.getUserKey();
+    const oldUserKey = await firstValueFrom(this.cryptoService.activeUserKey$);
 
     const deviceIdentifier = await this.appIdService.getAppId();
     const secretVerificationRequest = new SecretVerificationRequest();

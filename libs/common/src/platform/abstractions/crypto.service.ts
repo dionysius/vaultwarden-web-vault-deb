@@ -12,10 +12,13 @@ import { EncString } from "../models/domain/enc-string";
 import { SymmetricCryptoKey } from "../models/domain/symmetric-crypto-key";
 
 export abstract class CryptoService {
+  activeUserKey$: Observable<UserKey>;
   /**
    * Sets the provided user key and stores
    * any other necessary versions (such as auto, biometrics,
    * or pin)
+   *
+   * @throws when key is null. Use {@link clearUserKey} instead
    * @param key The user key to set
    * @param userId The desired user
    */

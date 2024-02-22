@@ -19,7 +19,7 @@ import { UsernameGeneratorOptions } from "../../../tools/generator/username/user
 import { SendData } from "../../../tools/send/models/data/send.data";
 import { SendView } from "../../../tools/send/models/view/send.view";
 import { DeepJsonify } from "../../../types/deep-jsonify";
-import { MasterKey, UserKey } from "../../../types/key";
+import { MasterKey } from "../../../types/key";
 import { UriMatchType } from "../../../vault/enums";
 import { CipherData } from "../../../vault/models/data/cipher.data";
 import { CipherView } from "../../../vault/models/view/cipher.view";
@@ -113,7 +113,6 @@ export class AccountData {
 }
 
 export class AccountKeys {
-  userKey?: UserKey;
   masterKey?: MasterKey;
   masterKeyEncryptedUserKey?: string;
   deviceKey?: ReturnType<SymmetricCryptoKey["toJSON"]>;
@@ -146,7 +145,6 @@ export class AccountKeys {
       return null;
     }
     return Object.assign(new AccountKeys(), obj, {
-      userKey: SymmetricCryptoKey.fromJSON(obj?.userKey),
       masterKey: SymmetricCryptoKey.fromJSON(obj?.masterKey),
       deviceKey: obj?.deviceKey,
       cryptoMasterKey: SymmetricCryptoKey.fromJSON(obj?.cryptoMasterKey),
