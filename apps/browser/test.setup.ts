@@ -30,6 +30,7 @@ const runtime = {
     addListener: jest.fn(),
     removeListener: jest.fn(),
   },
+  reload: jest.fn(),
 };
 
 const contextMenus = {

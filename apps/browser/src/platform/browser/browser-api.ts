@@ -381,12 +381,20 @@ export class BrowserApi {
     return chrome.i18n.getUILanguage();
   }
 
-  static reloadExtension(win: Window) {
-    if (win != null) {
-      return (win.location as any).reload(true);
-    } else {
-      return chrome.runtime.reload();
+  /**
+   * Handles reloading the extension, either by calling the window location
+   * to reload or by calling the extension's runtime to reload.
+   *
+   * @param globalContext - The global context to use for the reload.
+   */
+  static reloadExtension(globalContext: (Window & typeof globalThis) | null) {
+    // The passed globalContext might be a ServiceWorkerGlobalScope, as a result
+    // we need to check if the location object exists before calling reload on it.
+    if (typeof globalContext?.location?.reload === "function") {
+      return (globalContext as any).location.reload(true);
     }
+
+    return chrome.runtime.reload();
   }
 
   /**

@@ -757,7 +757,7 @@ export default class MainBackground {
         this.platformUtilsService.isSafari() ||
         this.platformUtilsService.isFirefox() ||
         this.platformUtilsService.isOpera();
-      BrowserApi.reloadExtension(forceWindowReload ? window : null);
+      BrowserApi.reloadExtension(forceWindowReload ? self : null);
       return Promise.resolve();
     };
 
