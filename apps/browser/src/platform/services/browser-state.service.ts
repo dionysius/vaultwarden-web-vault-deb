@@ -34,8 +34,6 @@ export class BrowserStateService
   protected accountsSubject: BehaviorSubject<{ [userId: string]: Account }>;
   @sessionSync({ initializer: (s: string) => s })
   protected activeAccountSubject: BehaviorSubject<string>;
-  @sessionSync({ initializer: (b: boolean) => b })
-  protected activeAccountUnlockedSubject: BehaviorSubject<boolean>;
 
   protected accountDeserializer = Account.fromJSON;
 
