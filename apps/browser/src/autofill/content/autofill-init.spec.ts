@@ -208,7 +208,19 @@ describe("AutofillInit", () => {
           );
         });
 
-        it("updates the isCurrentlyFilling properties of the overlay and focus the recent field after filling", async () => {
+        it("removes the overlay when filling the form", async () => {
+          const blurAndRemoveOverlaySpy = jest.spyOn(autofillInit as any, "blurAndRemoveOverlay");
+          sendExtensionRuntimeMessage({
+            command: "fillForm",
+            fillScript,
+            pageDetailsUrl: window.location.href,
+          });
+          await flushPromises();
+
+          expect(blurAndRemoveOverlaySpy).toHaveBeenCalled();
+        });
+
+        it("updates the isCurrentlyFilling property of the overlay to true after filling", async () => {
           jest.useFakeTimers();
           jest.spyOn(autofillInit as any, "updateOverlayIsCurrentlyFilling");
           jest
@@ -228,9 +240,6 @@ describe("AutofillInit", () => {
             fillScript,
           );
           expect(autofillInit["updateOverlayIsCurrentlyFilling"]).toHaveBeenNthCalledWith(2, false);
-          expect(
-            autofillInit["autofillOverlayContentService"].focusMostRecentOverlayField,
-          ).toHaveBeenCalled();
         });
 
         it("skips attempting to focus the most recent field if the autofillOverlayContentService is not present", async () => {

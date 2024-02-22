@@ -98,6 +98,7 @@ class AutofillInit implements AutofillInitInterface {
       return;
     }
 
+    this.blurAndRemoveOverlay();
     this.updateOverlayIsCurrentlyFilling(true);
     await this.insertAutofillContentService.fillForm(fillScript);
 
@@ -105,10 +106,7 @@ class AutofillInit implements AutofillInitInterface {
       return;
     }
 
-    setTimeout(() => {
-      this.updateOverlayIsCurrentlyFilling(false);
-      this.autofillOverlayContentService.focusMostRecentOverlayField();
-    }, 250);
+    setTimeout(() => this.updateOverlayIsCurrentlyFilling(false), 250);
   }
 
   /**
