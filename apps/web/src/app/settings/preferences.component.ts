@@ -42,7 +42,6 @@ export class PreferencesComponent implements OnInit {
     vaultTimeout: [null as number | null],
     vaultTimeoutAction: [VaultTimeoutAction.Lock],
     enableFavicons: true,
-    enableFullWidth: false,
     theme: [ThemeType.Light],
     locale: [null as string | null],
   });
@@ -142,7 +141,6 @@ export class PreferencesComponent implements OnInit {
         this.vaultTimeoutSettingsService.vaultTimeoutAction$(),
       ),
       enableFavicons: !(await this.settingsService.getDisableFavicon()),
-      enableFullWidth: await this.stateService.getEnableFullWidth(),
       theme: await this.stateService.getTheme(),
       locale: (await this.stateService.getLocale()) ?? null,
     };
@@ -167,8 +165,6 @@ export class PreferencesComponent implements OnInit {
       values.vaultTimeoutAction,
     );
     await this.settingsService.setDisableFavicon(!values.enableFavicons);
-    await this.stateService.setEnableFullWidth(values.enableFullWidth);
-    this.messagingService.send("setFullWidth");
     if (values.theme !== this.startingTheme) {
       await this.themingService.updateConfiguredTheme(values.theme);
       this.startingTheme = values.theme;

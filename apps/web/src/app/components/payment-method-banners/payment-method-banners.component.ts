@@ -3,8 +3,8 @@ import { combineLatest, Observable, switchMap } from "rxjs";
 
 import { OrganizationApiServiceAbstraction as OrganizationApiService } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
 import {
-  OrganizationService,
   canAccessAdmin,
+  OrganizationService,
 } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { BillingBannerServiceAbstraction } from "@bitwarden/common/billing/abstractions/billing-banner.service.abstraction";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";

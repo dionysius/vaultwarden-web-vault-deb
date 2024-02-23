@@ -88,9 +88,6 @@ export class LoginComponent extends BaseLoginComponent implements OnInit {
       ssoLoginService,
       webAuthnLoginService,
     );
-    this.onSuccessfulLogin = async () => {
-      this.messagingService.send("setFullWidth");
-    };
     this.onSuccessfulLoginNavigate = this.goAfterLogIn;
     this.showPasswordless = flagEnabled("showPasswordless");
   }

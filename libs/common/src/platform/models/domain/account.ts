@@ -209,7 +209,6 @@ export class AccountSettings {
   dontShowIdentitiesCurrentTab?: boolean;
   enableAlwaysOnTop?: boolean;
   enableBiometric?: boolean;
-  enableFullWidth?: boolean;
   equivalentDomains?: any;
   minimizeOnCopyToClipboard?: boolean;
   passwordGenerationOptions?: PasswordGeneratorOptions;

@@ -1,14 +1,14 @@
 import { CommonModule } from "@angular/common";
-import { Component, Injectable, importProvidersFrom } from "@angular/core";
+import { Component, importProvidersFrom, Injectable, Input } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import {
-  Meta,
-  Story,
-  moduleMetadata,
   applicationConfig,
   componentWrapperDecorator,
+  Meta,
+  moduleMetadata,
+  Story,
 } from "@storybook/angular";
-import { BehaviorSubject, combineLatest, map } from "rxjs";
+import { BehaviorSubject, combineLatest, map, of } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout-settings.service";
@@ -22,15 +22,18 @@ import {
   ButtonModule,
   IconButtonModule,
   IconModule,
+  InputModule,
   MenuModule,
   NavigationModule,
   TabsModule,
   TypographyModule,
-  InputModule,
 } from "@bitwarden/components";
 
+import { DynamicAvatarComponent } from "../../components/dynamic-avatar.component";
 import { PreloadedEnglishI18nModule } from "../../core/tests";
 import { WebHeaderComponent } from "../header/web-header.component";
+
+import { WebLayoutMigrationBannerService } from "./web-layout-migration-banner.service";
 
 @Injectable({
   providedIn: "root",
@@ -70,7 +73,7 @@ class MockProductSwitcher {}
   standalone: true,
   imports: [CommonModule, AvatarModule],
 })
-class MockDynamicAvatar {
+class MockDynamicAvatar implements Partial<DynamicAvatarComponent> {
   protected name$ = combineLatest([
     this.stateService.accounts$,
     this.stateService.activeAccount$,
@@ -79,6 +82,10 @@ class MockDynamicAvatar {
       ([accounts, activeAccount]) => accounts[activeAccount as keyof typeof accounts].profile.name,
     ),
   );
+
+  @Input()
+  text: string;
+
   constructor(private stateService: MockStateService) {}
 }
 
@@ -107,6 +114,12 @@ export default {
       declarations: [WebHeaderComponent, MockProductSwitcher],
       providers: [
         { provide: StateService, useClass: MockStateService },
+        {
+          provide: WebLayoutMigrationBannerService,
+          useValue: {
+            showBanner$: of(false),
+          } as Partial<WebLayoutMigrationBannerService>,
+        },
         { provide: PlatformUtilsService, useClass: MockPlatformUtilsService },
         { provide: VaultTimeoutSettingsService, useClass: MockVaultTimeoutService },
         {

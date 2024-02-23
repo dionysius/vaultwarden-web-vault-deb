@@ -332,14 +332,14 @@ export class SyncService implements SyncServiceAbstraction {
 
     await this.setForceSetPasswordReasonIfNeeded(response);
 
-    await this.syncProfileOrganizations(response);
-
     const providers: { [id: string]: ProviderData } = {};
     response.providers.forEach((p) => {
       providers[p.id] = new ProviderData(p);
     });
 
     await this.providerService.save(providers);
+
+    await this.syncProfileOrganizations(response);
 
     if (await this.keyConnectorService.userNeedsMigration()) {
       await this.keyConnectorService.setConvertAccountRequired(true);
