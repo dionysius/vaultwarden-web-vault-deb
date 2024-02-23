@@ -561,10 +561,10 @@
     "message": "Аккаунт создан! Теперь вы можете войти в систему."
   },
   "youSuccessfullyLoggedIn": {
-    "message": "You successfully logged in"
+    "message": "Вы успешно авторизовались"
   },
   "youMayCloseThisWindow": {
-    "message": "You may close this window"
+    "message": "Можете закрыть это окно"
   },
   "masterPassSent": {
     "message": "Мы отправили вам письмо с подсказкой к мастер-паролю."
@@ -2532,13 +2532,13 @@
     }
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
-    "message": "Launch Duo and follow the steps to finish logging in."
+    "message": "Запустите Duo и следуйте шагам для завершения авторизации."
   },
   "duoRequiredByOrgForAccount": {
-    "message": "Duo two-step login is required for your account."
+    "message": "Для вашего аккаунта требуется двухэтапная аутентификация Duo."
   },
   "launchDuo": {
-    "message": "Launch Duo in Browser"
+    "message": "Запустить Duo в браузере"
   },
   "importFormatError": {
     "message": "Формат данных некорректен. Проверьте импортируемый файл и повторите попытку."

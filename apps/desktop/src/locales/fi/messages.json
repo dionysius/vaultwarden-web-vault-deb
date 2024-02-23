@@ -561,10 +561,10 @@
     "message": "Uusi käyttäjätilisi on luotu! Voit nyt kirjautua sisään."
   },
   "youSuccessfullyLoggedIn": {
-    "message": "You successfully logged in"
+    "message": "Kirjautuminen onnistui"
   },
   "youMayCloseThisWindow": {
-    "message": "You may close this window"
+    "message": "Voit sulkea tämän ikkunan"
   },
   "masterPassSent": {
     "message": "Lähetimme pääsalasanasi vihjeen sinulle sähköpostitse."
@@ -2532,13 +2532,13 @@
     }
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
-    "message": "Launch Duo and follow the steps to finish logging in."
+    "message": "Avaa Duo ja viimeistele kirjautuminen seuraamalla ohjeita."
   },
   "duoRequiredByOrgForAccount": {
-    "message": "Duo two-step login is required for your account."
+    "message": "Tilillesi kirjautuminen vaatii Duo-vahvistuksen."
   },
   "launchDuo": {
-    "message": "Launch Duo in Browser"
+    "message": "Avaa Duo verkkoselaimessa"
   },
   "importFormatError": {
     "message": "Tietoja ei ole muotoiltu oikein. Tarkista tuotava tiedosto ja yritä uudelleen."

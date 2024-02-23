@@ -561,10 +561,10 @@
     "message": "A fiók létrehozásra került. Most már be lehet jelentkezni."
   },
   "youSuccessfullyLoggedIn": {
-    "message": "You successfully logged in"
+    "message": "A bejelentkezés sikeres volt."
   },
   "youMayCloseThisWindow": {
-    "message": "You may close this window"
+    "message": "Most már bezárható ez az ablak."
   },
   "masterPassSent": {
     "message": "Elküldtünk neked egy emailt a mesterjelszó emlékeztetővel."
@@ -2532,13 +2532,13 @@
     }
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
-    "message": "Launch Duo and follow the steps to finish logging in."
+    "message": "Indítsuk el a DUO-t és kövessük a lépéseket a bejelentkezés befejezéséhez."
   },
   "duoRequiredByOrgForAccount": {
-    "message": "Duo two-step login is required for your account."
+    "message": "A fiókhoz kétlépcsős DUO bejelentkezés szükséges."
   },
   "launchDuo": {
-    "message": "Launch Duo in Browser"
+    "message": "A Duo elindítása a böngészőben"
   },
   "importFormatError": {
     "message": "Az adatok nincsenek megfelelően formázva. Ellenőrizzük az importálás fájlt és próbáljuk újra."

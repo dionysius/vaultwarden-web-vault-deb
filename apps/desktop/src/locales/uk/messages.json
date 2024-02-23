@@ -561,10 +561,10 @@
     "message": "Ваш обліковий запис створений! Тепер ви можете увійти."
   },
   "youSuccessfullyLoggedIn": {
-    "message": "You successfully logged in"
+    "message": "Ви успішно увійшли в систему"
   },
   "youMayCloseThisWindow": {
-    "message": "You may close this window"
+    "message": "Можете закрити це вікно"
   },
   "masterPassSent": {
     "message": "Ми надіслали вам лист з підказкою для головного пароля."
@@ -2532,13 +2532,13 @@
     }
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
-    "message": "Launch Duo and follow the steps to finish logging in."
+    "message": "Запустіть Duo і виконайте дії для завершення входу."
   },
   "duoRequiredByOrgForAccount": {
-    "message": "Duo two-step login is required for your account."
+    "message": "Для вашого облікового запису необхідна двоетапна перевірка з Duo."
   },
   "launchDuo": {
-    "message": "Launch Duo in Browser"
+    "message": "Запустити Duo в браузері"
   },
   "importFormatError": {
     "message": "Дані мають некоректне форматування. Перевірте файл імпорту і спробуйте знову."

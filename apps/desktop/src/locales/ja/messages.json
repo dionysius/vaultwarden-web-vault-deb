@@ -561,10 +561,10 @@
     "message": "新しいアカウントを作成しました！今すぐログインできます。"
   },
   "youSuccessfullyLoggedIn": {
-    "message": "You successfully logged in"
+    "message": "ログインに成功しました"
   },
   "youMayCloseThisWindow": {
-    "message": "You may close this window"
+    "message": "ウィンドウを閉じて大丈夫です"
   },
   "masterPassSent": {
     "message": "あなたのマスターパスワードのヒントを記載したメールを送信しました。"
@@ -2532,13 +2532,13 @@
     }
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
-    "message": "Launch Duo and follow the steps to finish logging in."
+    "message": "ログインを完了するには Duo を起動し手順に従ってください。"
   },
   "duoRequiredByOrgForAccount": {
-    "message": "Duo two-step login is required for your account."
+    "message": "アカウントには Duo 二段階認証が必要です。"
   },
   "launchDuo": {
-    "message": "Launch Duo in Browser"
+    "message": "ブラウザで Duo を起動"
   },
   "importFormatError": {
     "message": "データが正しい形式ではありません。インポートするファイルを確認してやり直してください。"
