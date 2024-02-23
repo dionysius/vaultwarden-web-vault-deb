@@ -53,6 +53,7 @@ import { EnvironmentService } from "@bitwarden/common/platform/abstractions/envi
 import { FileDownloadService } from "@bitwarden/common/platform/abstractions/file-download/file-download.service";
 import { FileUploadService } from "@bitwarden/common/platform/abstractions/file-upload/file-upload.service";
 import { I18nService as I18nServiceAbstraction } from "@bitwarden/common/platform/abstractions/i18n.service";
+import { KeyGenerationService } from "@bitwarden/common/platform/abstractions/key-generation.service";
 import {
   LogService,
   LogService as LogServiceAbstraction,
@@ -358,13 +359,13 @@ function getBgService<T>(service: keyof MainBackground) {
       useFactory: (
         cryptoService: CryptoService,
         i18nService: I18nServiceAbstraction,
-        cryptoFunctionService: CryptoFunctionService,
+        keyGenerationService: KeyGenerationService,
         stateServiceAbstraction: StateServiceAbstraction,
       ) => {
         return new BrowserSendService(
           cryptoService,
           i18nService,
-          cryptoFunctionService,
+          keyGenerationService,
           stateServiceAbstraction,
         );
       },

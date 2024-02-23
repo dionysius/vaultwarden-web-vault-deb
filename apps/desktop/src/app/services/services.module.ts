@@ -25,6 +25,7 @@ import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { FileDownloadService } from "@bitwarden/common/platform/abstractions/file-download/file-download.service";
 import { I18nService as I18nServiceAbstraction } from "@bitwarden/common/platform/abstractions/i18n.service";
+import { KeyGenerationService as KeyGenerationServiceAbstraction } from "@bitwarden/common/platform/abstractions/key-generation.service";
 import {
   LogService,
   LogService as LogServiceAbstraction,
@@ -183,6 +184,7 @@ const RELOAD_CALLBACK = new InjectionToken<() => any>("RELOAD_CALLBACK");
       provide: CryptoServiceAbstraction,
       useClass: ElectronCryptoService,
       deps: [
+        KeyGenerationServiceAbstraction,
         CryptoFunctionServiceAbstraction,
         EncryptService,
         PlatformUtilsServiceAbstraction,

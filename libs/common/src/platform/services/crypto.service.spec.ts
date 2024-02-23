@@ -10,6 +10,7 @@ import { UserId } from "../../types/guid";
 import { UserKey, MasterKey, PinKey } from "../../types/key";
 import { CryptoFunctionService } from "../abstractions/crypto-function.service";
 import { EncryptService } from "../abstractions/encrypt.service";
+import { KeyGenerationService } from "../abstractions/key-generation.service";
 import { LogService } from "../abstractions/log.service";
 import { PlatformUtilsService } from "../abstractions/platform-utils.service";
 import { StateService } from "../abstractions/state.service";
@@ -23,6 +24,7 @@ import { USER_EVER_HAD_USER_KEY, USER_KEY } from "./key-state/user-key.state";
 describe("cryptoService", () => {
   let cryptoService: CryptoService;
 
+  const keyGenerationService = mock<KeyGenerationService>();
   const cryptoFunctionService = mock<CryptoFunctionService>();
   const encryptService = mock<EncryptService>();
   const platformUtilService = mock<PlatformUtilsService>();
@@ -38,6 +40,7 @@ describe("cryptoService", () => {
     stateProvider = new FakeStateProvider(accountService);
 
     cryptoService = new CryptoService(
+      keyGenerationService,
       cryptoFunctionService,
       encryptService,
       platformUtilService,

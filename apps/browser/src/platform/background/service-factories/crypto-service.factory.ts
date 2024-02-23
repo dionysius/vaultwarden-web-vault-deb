@@ -21,6 +21,10 @@ import {
 import { encryptServiceFactory, EncryptServiceInitOptions } from "./encrypt-service.factory";
 import { FactoryOptions, CachedServices, factory } from "./factory-options";
 import {
+  KeyGenerationServiceInitOptions,
+  keyGenerationServiceFactory,
+} from "./key-generation-service.factory";
+import {
   PlatformUtilsServiceInitOptions,
   platformUtilsServiceFactory,
 } from "./platform-utils-service.factory";
@@ -29,6 +33,7 @@ import { StateProviderInitOptions, stateProviderFactory } from "./state-provider
 type CryptoServiceFactoryOptions = FactoryOptions;
 
 export type CryptoServiceInitOptions = CryptoServiceFactoryOptions &
+  KeyGenerationServiceInitOptions &
   CryptoFunctionServiceInitOptions &
   EncryptServiceInitOptions &
   PlatformUtilsServiceInitOptions &
@@ -47,6 +52,7 @@ export function cryptoServiceFactory(
     opts,
     async () =>
       new BrowserCryptoService(
+        await keyGenerationServiceFactory(cache, opts),
         await cryptoFunctionServiceFactory(cache, opts),
         await encryptServiceFactory(cache, opts),
         await platformUtilsServiceFactory(cache, opts),
