@@ -444,6 +444,9 @@ export class AppComponent implements OnInit, OnDestroy {
           case "redrawMenu":
             await this.updateAppMenu();
             break;
+          case "deepLink":
+            this.processDeepLink(message.urlString);
+            break;
         }
       });
     });
@@ -743,5 +746,31 @@ export class AppComponent implements OnInit, OnDestroy {
   // Check if an account's clean up is in progress
   private isAccountCleanUpInProgress(userId: string): boolean {
     return this.accountCleanUpInProgress[userId] === true;
+  }
+
+  // Process the sso callback links
+  private processDeepLink(urlString: string) {
+    const url = new URL(urlString);
+    const code = url.searchParams.get("code");
+    const receivedState = url.searchParams.get("state");
+    let message = "";
+
+    if (code === null) {
+      return;
+    }
+
+    if (urlString.indexOf("bitwarden://duo-callback") === 0) {
+      message = "duoCallback";
+    } else if (receivedState === null) {
+      return;
+    }
+
+    if (urlString.indexOf("bitwarden://import-callback-lp") === 0) {
+      message = "importCallbackLastPass";
+    } else if (urlString.indexOf("bitwarden://sso-callback") === 0) {
+      message = "ssoCallback";
+    }
+
+    this.messagingService.send(message, { code: code, state: receivedState });
   }
 }

@@ -273,28 +273,7 @@ export class Main {
     argv
       .filter((s) => s.indexOf("bitwarden://") === 0)
       .forEach((s) => {
-        const url = new URL(s);
-        const code = url.searchParams.get("code");
-        const receivedState = url.searchParams.get("state");
-        let message = "";
-
-        if (code === null) {
-          return;
-        }
-
-        if (s.indexOf("bitwarden://duo-callback") === 0) {
-          message = "duoCallback";
-        } else if (receivedState === null) {
-          return;
-        }
-
-        if (s.indexOf("bitwarden://import-callback-lp") === 0) {
-          message = "importCallbackLastPass";
-        } else if (s.indexOf("bitwarden://sso-callback") === 0) {
-          message = "ssoCallback";
-        }
-
-        this.messagingService.send(message, { code: code, state: receivedState });
+        this.messagingService.send("deepLink", { urlString: s });
       });
   }
 }
