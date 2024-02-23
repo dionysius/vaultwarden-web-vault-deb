@@ -424,13 +424,6 @@ export abstract class StateService<T extends Account = Account> {
 
   getAvatarColor: (options?: StorageOptions) => Promise<string | null | undefined>;
   setAvatarColor: (value: string, options?: StorageOptions) => Promise<void>;
-  getSMOnboardingTasks: (
-    options?: StorageOptions,
-  ) => Promise<Record<string, Record<string, boolean>>>;
-  setSMOnboardingTasks: (
-    value: Record<string, Record<string, boolean>>,
-    options?: StorageOptions,
-  ) => Promise<void>;
   /**
    * fetches string value of URL user tried to navigate to while unauthenticated.
    * @param options Defines the storage options for the URL; Defaults to session Storage.

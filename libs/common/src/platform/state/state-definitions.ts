@@ -66,3 +66,8 @@ export const VAULT_FILTER_DISK = new StateDefinition("vaultFilter", "disk", {
 export const NEW_WEB_LAYOUT_BANNER_DISK = new StateDefinition("newWebLayoutBanner", "disk", {
   web: "disk-local",
 });
+
+// Secrets Manager
+export const SM_ONBOARDING_DISK = new StateDefinition("smOnboarding", "disk", {
+  web: "disk-local",
+});
