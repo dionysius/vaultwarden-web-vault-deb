@@ -23,6 +23,7 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
+import { BiometricStateService } from "@bitwarden/common/platform/biometrics/biometric-state.service";
 import { HashPurpose, KeySuffixOptions } from "@bitwarden/common/platform/enums";
 import { PinLockType } from "@bitwarden/common/services/vault-timeout/vault-timeout-settings.service";
 import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/password-strength";
@@ -73,6 +74,7 @@ export class LockComponent implements OnInit, OnDestroy {
     protected deviceTrustCryptoService: DeviceTrustCryptoServiceAbstraction,
     protected userVerificationService: UserVerificationService,
     protected pinCryptoService: PinCryptoServiceAbstraction,
+    protected biometricStateService: BiometricStateService,
   ) {}
 
   async ngOnInit() {
@@ -117,7 +119,7 @@ export class LockComponent implements OnInit, OnDestroy {
       return;
     }
 
-    await this.stateService.setBiometricPromptCancelled(true);
+    await this.biometricStateService.setPromptCancelled();
     const userKey = await this.cryptoService.getUserKeyFromStorage(KeySuffixOptions.Biometric);
 
     if (userKey) {
@@ -274,7 +276,7 @@ export class LockComponent implements OnInit, OnDestroy {
 
   private async doContinue(evaluatePasswordAfterUnlock: boolean) {
     await this.stateService.setEverBeenUnlocked(true);
-    await this.stateService.setBiometricPromptCancelled(false);
+    await this.biometricStateService.resetPromptCancelled();
     this.messagingService.send("unlocked");
 
     if (evaluatePasswordAfterUnlock) {

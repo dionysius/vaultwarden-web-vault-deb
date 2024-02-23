@@ -57,7 +57,6 @@ import { ElectronRendererMessagingService } from "../../platform/services/electr
 import { ElectronRendererSecureStorageService } from "../../platform/services/electron-renderer-secure-storage.service";
 import { ElectronRendererStorageService } from "../../platform/services/electron-renderer-storage.service";
 import { ElectronStateService } from "../../platform/services/electron-state.service";
-import { ElectronStateService as ElectronStateServiceAbstraction } from "../../platform/services/electron-state.service.abstraction";
 import { I18nRendererService } from "../../platform/services/i18n.renderer.service";
 import { EncryptedMessageHandlerService } from "../../services/encrypted-message-handler.service";
 import { NativeMessageHandlerService } from "../../services/native-message-handler.service";
@@ -139,10 +138,6 @@ const RELOAD_CALLBACK = new InjectionToken<() => any>("RELOAD_CALLBACK");
         MigrationRunner,
         STATE_SERVICE_USE_CACHE,
       ],
-    },
-    {
-      provide: ElectronStateServiceAbstraction,
-      useExisting: StateServiceAbstraction,
     },
     {
       provide: FileDownloadService,

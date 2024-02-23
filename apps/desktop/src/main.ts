@@ -3,6 +3,7 @@ import * as path from "path";
 import { app } from "electron";
 
 import { AccountServiceImplementation } from "@bitwarden/common/auth/services/account.service";
+import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { DefaultBiometricStateService } from "@bitwarden/common/platform/biometrics/biometric-state.service";
 import { StateFactory } from "@bitwarden/common/platform/factories/state-factory";
 import { GlobalState } from "@bitwarden/common/platform/models/domain/global-state";
@@ -44,7 +45,7 @@ export class Main {
   memoryStorageService: MemoryStorageService;
   memoryStorageForStateProviders: MemoryStorageServiceForStateProviders;
   messagingService: ElectronMainMessagingService;
-  stateService: ElectronStateService;
+  stateService: StateService;
   environmentService: EnvironmentService;
   desktopCredentialStorageListener: DesktopCredentialStorageListener;
   migrationRunner: MigrationRunner;
@@ -146,8 +147,11 @@ export class Main {
       false, // Do not use disk caching because this will get out of sync with the renderer service
     );
 
+    const biometricStateService = new DefaultBiometricStateService(stateProvider);
+
     this.windowMain = new WindowMain(
       this.stateService,
+      biometricStateService,
       this.logService,
       this.storageService,
       (arg) => this.processDeepLink(arg),
@@ -168,8 +172,6 @@ export class Main {
       this.windowMain,
       this.updaterMain,
     );
-
-    const biometricStateService = new DefaultBiometricStateService(stateProvider);
 
     this.biometricsService = new BiometricsService(
       this.i18nService,

@@ -775,24 +775,6 @@ export class StateService<
     await this.saveSecureStorageKey(partialKeys.biometricKey, value, options);
   }
 
-  async getBiometricPromptCancelled(options?: StorageOptions): Promise<boolean> {
-    const account = await this.getAccount(
-      this.reconcileOptions(options, await this.defaultOnDiskOptions()),
-    );
-    return account?.settings?.biometricPromptCancelled;
-  }
-
-  async setBiometricPromptCancelled(value: boolean, options?: StorageOptions): Promise<void> {
-    const account = await this.getAccount(
-      this.reconcileOptions(options, await this.defaultOnDiskOptions()),
-    );
-    account.settings.biometricPromptCancelled = value;
-    await this.saveAccount(
-      account,
-      this.reconcileOptions(options, await this.defaultOnDiskOptions()),
-    );
-  }
-
   @withPrototypeForArrayMembers(CipherView, CipherView.fromJSON)
   async getDecryptedCiphers(options?: StorageOptions): Promise<CipherView[]> {
     return (
@@ -924,24 +906,6 @@ export class StateService<
     globals.disableAddLoginNotification = value;
     await this.saveGlobals(
       globals,
-      this.reconcileOptions(options, await this.defaultOnDiskOptions()),
-    );
-  }
-
-  async getDisableAutoBiometricsPrompt(options?: StorageOptions): Promise<boolean> {
-    return (
-      (await this.getAccount(this.reconcileOptions(options, await this.defaultOnDiskOptions())))
-        ?.settings?.disableAutoBiometricsPrompt ?? false
-    );
-  }
-
-  async setDisableAutoBiometricsPrompt(value: boolean, options?: StorageOptions): Promise<void> {
-    const account = await this.getAccount(
-      this.reconcileOptions(options, await this.defaultOnDiskOptions()),
-    );
-    account.settings.disableAutoBiometricsPrompt = value;
-    await this.saveAccount(
-      account,
       this.reconcileOptions(options, await this.defaultOnDiskOptions()),
     );
   }

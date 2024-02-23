@@ -4,6 +4,7 @@ import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.
 import { KeyGenerationService } from "@bitwarden/common/platform/abstractions/key-generation.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { BiometricStateService } from "@bitwarden/common/platform/biometrics/biometric-state.service";
 import { KeySuffixOptions } from "@bitwarden/common/platform/enums";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
@@ -15,8 +16,6 @@ import { CsprngString } from "@bitwarden/common/types/csprng";
 import { UserId } from "@bitwarden/common/types/guid";
 import { UserKey, MasterKey } from "@bitwarden/common/types/key";
 
-import { ElectronStateService } from "./electron-state.service.abstraction";
-
 export class ElectronCryptoService extends CryptoService {
   constructor(
     keyGenerationService: KeyGenerationService,
@@ -24,7 +23,7 @@ export class ElectronCryptoService extends CryptoService {
     encryptService: EncryptService,
     platformUtilsService: PlatformUtilsService,
     logService: LogService,
-    protected override stateService: ElectronStateService,
+    stateService: StateService,
     accountService: AccountService,
     stateProvider: StateProvider,
     private biometricStateService: BiometricStateService,

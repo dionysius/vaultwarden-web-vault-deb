@@ -8,6 +8,7 @@ import { WindowState } from "@bitwarden/common/models/domain/window-state";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { AbstractStorageService } from "@bitwarden/common/platform/abstractions/storage.service";
+import { BiometricStateService } from "@bitwarden/common/platform/biometrics/biometric-state.service";
 
 import {
   cleanUserAgent,
@@ -36,6 +37,7 @@ export class WindowMain {
 
   constructor(
     private stateService: StateService,
+    private biometricStateService: BiometricStateService,
     private logService: LogService,
     private storageService: AbstractStorageService,
     private argvCallback: (argv: string[]) => void = null,
@@ -90,11 +92,9 @@ export class WindowMain {
 
         // This method will be called when Electron is shutting
         // down the application.
-        app.on("before-quit", () => {
+        app.on("before-quit", async () => {
           // Allow biometric to auto-prompt on reload
-          // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-          // eslint-disable-next-line @typescript-eslint/no-floating-promises
-          this.stateService.setBiometricPromptCancelled(false);
+          await this.biometricStateService.resetPromptCancelled();
           this.isQuitting = true;
         });
 

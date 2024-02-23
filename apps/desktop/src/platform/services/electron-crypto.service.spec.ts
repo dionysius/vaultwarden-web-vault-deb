@@ -6,6 +6,7 @@ import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.
 import { KeyGenerationService } from "@bitwarden/common/platform/abstractions/key-generation.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { BiometricStateService } from "@bitwarden/common/platform/biometrics/biometric-state.service";
 import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
 import { makeEncString } from "@bitwarden/common/spec";
@@ -19,7 +20,6 @@ import {
 } from "../../../../../libs/common/spec/fake-account-service";
 
 import { ElectronCryptoService } from "./electron-crypto.service";
-import { ElectronStateService } from "./electron-state.service.abstraction";
 
 describe("electronCryptoService", () => {
   let sut: ElectronCryptoService;
@@ -29,7 +29,7 @@ describe("electronCryptoService", () => {
   const encryptService = mock<EncryptService>();
   const platformUtilService = mock<PlatformUtilsService>();
   const logService = mock<LogService>();
-  const stateService = mock<ElectronStateService>();
+  const stateService = mock<StateService>();
   let accountService: FakeAccountService;
   let stateProvider: FakeStateProvider;
   const biometricStateService = mock<BiometricStateService>();
