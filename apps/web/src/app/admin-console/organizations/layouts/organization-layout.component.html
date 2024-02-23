@@ -1,13 +1,13 @@
 <bit-layout variant="secondary">
   <nav slot="sidebar" *ngIf="organization$ | async as organization">
-    <a routerLink="." class="tw-m-5 tw-mt-7 tw-block">
+    <a routerLink="." class="tw-m-5 tw-mt-7 tw-block" [appA11yTitle]="'adminConsole' | i18n">
       <bit-icon [icon]="logo"></bit-icon>
     </a>
     <org-switcher [filter]="orgFilter"></org-switcher>
 
     <bit-nav-item
       icon="bwi-collection"
-      [text]="organization.flexibleCollections ? 'collections' : ('vault' | i18n)"
+      [text]="(organization.flexibleCollections ? 'collections' : 'vault') | i18n"
       route="vault"
       *ngIf="canShowVaultTab(organization)"
     >

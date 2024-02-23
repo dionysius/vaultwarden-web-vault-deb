@@ -110,16 +110,16 @@ export class ProductSwitcherContentComponent {
       const bento: ProductSwitcherItem[] = [products.pm];
       const other: ProductSwitcherItem[] = [];
 
-      if (acOrg) {
-        bento.push(products.ac);
-      } else {
-        other.push(products.orgs);
-      }
-
       if (smOrg) {
         bento.push(products.sm);
       } else {
         other.push(products.sm);
+      }
+
+      if (acOrg) {
+        bento.push(products.ac);
+      } else {
+        other.push(products.orgs);
       }
 
       if (providers.length > 0) {
