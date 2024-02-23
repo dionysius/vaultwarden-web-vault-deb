@@ -4044,10 +4044,10 @@
     "message": "Теперь вы можете закрыть эту вкладку и продолжить в расширении."
   },
   "youSuccessfullyLoggedIn": {
-    "message": "You successfully logged in"
+    "message": "Вы успешно авторизовались"
   },
   "thisWindowWillCloseIn5Seconds": {
-    "message": "This window will automatically close in 5 seconds"
+    "message": "Это окно автоматически закроется через 5 секунд"
   },
   "includeAllTeamsFeatures": {
     "message": "Все возможности Teams, плюс:"
@@ -5934,13 +5934,13 @@
     }
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
-    "message": "Запустите DUO и следуйте шагам для завершения авторизации."
+    "message": "Запустите Duo и следуйте шагам для завершения авторизации."
   },
   "duoRequiredByOrgForAccount": {
-    "message": "Для вашего аккаунта требуется двухэтапная аутентификация DUO."
+    "message": "Для вашего аккаунта требуется двухэтапная аутентификация Duo."
   },
   "launchDuo": {
-    "message": "Запустить DUO"
+    "message": "Запустить Duo"
   },
   "turnOn": {
     "message": "Включить"
@@ -7584,5 +7584,8 @@
   "tooExpensive": {
     "message": "Слишком дорого",
     "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "freeForOneYear": {
+    "message": "Free for 1 year"
   }
 }

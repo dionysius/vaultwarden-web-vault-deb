@@ -6009,7 +6009,7 @@
     "message": "-- Vælg --"
   },
   "multiSelectPlaceholder": {
-    "message": "-- Skriv for at filtrere --"
+    "message": "-- Filtreringstype --"
   },
   "multiSelectLoading": {
     "message": "Henter indstillinger..."
@@ -7584,5 +7584,8 @@
   "tooExpensive": {
     "message": "For dyrt",
     "description": "An option for the offboarding survey shown when a user cancels their subscription."
+  },
+  "freeForOneYear": {
+    "message": "Free for 1 year"
   }
 }
