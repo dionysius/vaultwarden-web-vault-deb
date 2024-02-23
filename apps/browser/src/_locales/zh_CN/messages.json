@@ -494,10 +494,10 @@
     "message": "您的新账户已创建！您现在可以登录了。"
   },
   "youSuccessfullyLoggedIn": {
-    "message": "You successfully logged in"
+    "message": "您已成功登录"
   },
   "youMayCloseThisWindow": {
-    "message": "You may close this window"
+    "message": "您可以关闭此窗口"
   },
   "masterPassSent": {
     "message": "我们已经为您发送了包含主密码提示的邮件。"
@@ -2004,6 +2004,10 @@
   "selectFolder": {
     "message": "选择文件夹..."
   },
+  "noFoldersFound": {
+    "message": "找不到文件夹",
+    "description": "Used as a message within the notification bar when no folders are found"
+  },
   "orgPermissionsUpdatedMustSetPassword": {
     "message": "您的组织权限已更新，要求您设置主密码。",
     "description": "Used as a card title description on the set password page to explain why the user is there"
@@ -2704,11 +2708,11 @@
   "launchDuoAndFollowStepsToFinishLoggingIn": {
     "message": "启动 DUO 并按照步骤完成登录。"
   },
-  "duoRequiredByOrgForAccount": {
-    "message": "您的账户需要 DUO 两步登录。"
+  "duoRequiredForAccount": {
+    "message": "Duo two-step login is required for your account."
   },
-  "openExtensionInNewWindowToCompleteLogin": {
-    "message": "在新窗口中打开扩展以完成登录"
+  "popoutTheExtensionToCompleteLogin": {
+    "message": "Popout the extension to complete login."
   },
   "popoutExtension": {
     "message": "弹出扩展"
@@ -2972,10 +2976,6 @@
   },
   "overrideDefaultBrowserAutofillDescription": {
     "message": "忽略此设置可能会导致 Bitwarden 自动填充菜单与浏览器自带功能产生冲突。",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideDefaultBrowserAutofillPrivacyRequiredDescription": {
-    "message": "此操作将重启 Bitwarden 扩展。忽略此选项可能会在 Bitwarden 自动填充菜单和您的浏览器自带功能之间产生冲突。",
     "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutoFillSettings": {

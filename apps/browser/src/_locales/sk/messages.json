@@ -2004,6 +2004,10 @@
   "selectFolder": {
     "message": "Vybrať priečinok..."
   },
+  "noFoldersFound": {
+    "message": "Nenašli sa žiadne priečinky",
+    "description": "Used as a message within the notification bar when no folders are found"
+  },
   "orgPermissionsUpdatedMustSetPassword": {
     "message": "Povolenia vašej organizácie boli aktualizované, čo si vyžaduje nastavenie hlavného hesla.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
@@ -2704,11 +2708,11 @@
   "launchDuoAndFollowStepsToFinishLoggingIn": {
     "message": "Spustite DUO a postupujte podľa pokynov na dokončenie prihlásenia."
   },
-  "duoRequiredByOrgForAccount": {
-    "message": "Pre váš účet je potrebné dvojstupňové prihlásenie DUO."
+  "duoRequiredForAccount": {
+    "message": "Duo two-step login is required for your account."
   },
-  "openExtensionInNewWindowToCompleteLogin": {
-    "message": "Na dokončenie prihlásenia otvorte rozšírenie v novom okne"
+  "popoutTheExtensionToCompleteLogin": {
+    "message": "Popout the extension to complete login."
   },
   "popoutExtension": {
     "message": "Zobraziť rozšírenie v novom okne"
@@ -2972,10 +2976,6 @@
   },
   "overrideDefaultBrowserAutofillDescription": {
     "message": "Ak nenastavíte túto možnosť, môže to spôsobiť konflikty medzi ponukou automatického vypĺňania Bitwardenu a ponukou vášho prehliadača.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideDefaultBrowserAutofillPrivacyRequiredDescription": {
-    "message": "Táto akcia reštartuje rozšírenie Bitwarden. Ignorovanie tejto možnosti môže spôsobiť konflikty medzi ponukou automatického vypĺňania Bitwarden a ponukou prehliadača.",
     "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutoFillSettings": {

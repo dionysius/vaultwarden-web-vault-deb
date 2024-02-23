@@ -494,10 +494,10 @@
     "message": "Абонаментът ви бе създаден. Вече можете да се впишете."
   },
   "youSuccessfullyLoggedIn": {
-    "message": "You successfully logged in"
+    "message": "Вписахте се успешно"
   },
   "youMayCloseThisWindow": {
-    "message": "You may close this window"
+    "message": "Може да затворите този прозорец"
   },
   "masterPassSent": {
     "message": "Изпратихме ви писмо с подсказка за главната ви парола."
@@ -2004,6 +2004,10 @@
   "selectFolder": {
     "message": "Избиране на папка..."
   },
+  "noFoldersFound": {
+    "message": "Няма намерени папки",
+    "description": "Used as a message within the notification bar when no folders are found"
+  },
   "orgPermissionsUpdatedMustSetPassword": {
     "message": "Правата Ви в организацията бяха променени, необходимо е да зададете главна парола.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
@@ -2704,11 +2708,11 @@
   "launchDuoAndFollowStepsToFinishLoggingIn": {
     "message": "Стартирайте DUO и следвайте инструкциите, за да завършите вписването."
   },
-  "duoRequiredByOrgForAccount": {
-    "message": "Вашата регистрация изисква двустепенно удостоверяване чрез DUO."
+  "duoRequiredForAccount": {
+    "message": "Duo two-step login is required for your account."
   },
-  "openExtensionInNewWindowToCompleteLogin": {
-    "message": "Отворете разширението в нов прозорец, за да завършите вписването"
+  "popoutTheExtensionToCompleteLogin": {
+    "message": "Popout the extension to complete login."
   },
   "popoutExtension": {
     "message": "Отваряне на разширението в нов прозорец"
@@ -2972,10 +2976,6 @@
   },
   "overrideDefaultBrowserAutofillDescription": {
     "message": "Ако пренебрегнете тази настройка, може да има конфликт между менюто за автоматично попълване на Битуорден и това на браузъра.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideDefaultBrowserAutofillPrivacyRequiredDescription": {
-    "message": "Това действие ще рестартира добавката на Битуорден. Ако пренебрегнете тази настройка, може да има конфликт между менюто за автоматично попълване на Битуорден и това на браузъра.",
     "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutoFillSettings": {

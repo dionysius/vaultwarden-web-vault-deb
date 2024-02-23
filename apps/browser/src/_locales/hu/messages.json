@@ -494,10 +494,10 @@
     "message": "Felhasználódat létrehoztuk. Most már be tudsz jelentkezni."
   },
   "youSuccessfullyLoggedIn": {
-    "message": "You successfully logged in"
+    "message": "A bejelentkezés sikeres volt."
   },
   "youMayCloseThisWindow": {
-    "message": "You may close this window"
+    "message": "Most már bezárható ez az ablak."
   },
   "masterPassSent": {
     "message": "Elküldtünk neked egy mesterjelszó emlékeztetődet tartalmazó E-mailt."
@@ -2004,6 +2004,10 @@
   "selectFolder": {
     "message": "Mappa választása..."
   },
+  "noFoldersFound": {
+    "message": "Nem találhatók mappák.",
+    "description": "Used as a message within the notification bar when no folders are found"
+  },
   "orgPermissionsUpdatedMustSetPassword": {
     "message": "A szervezeti engedélyek frissítésre kerültek, ezért be kell állítani egy mesterjelszót.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
@@ -2704,11 +2708,11 @@
   "launchDuoAndFollowStepsToFinishLoggingIn": {
     "message": "Indítsuk el a DUO-t és kövessük a lépéseket a bejelentkezés befejezéséhez."
   },
-  "duoRequiredByOrgForAccount": {
-    "message": "A fiókhoz kétlépcsős DUO bejelentkezés szükséges."
+  "duoRequiredForAccount": {
+    "message": "Duo two-step login is required for your account."
   },
-  "openExtensionInNewWindowToCompleteLogin": {
-    "message": "A bejelentkezés befejezéséhez nyissuk meg a bővítményt egy új ablakban."
+  "popoutTheExtensionToCompleteLogin": {
+    "message": "Popout the extension to complete login."
   },
   "popoutExtension": {
     "message": "Felugró bővítmény"
@@ -2972,10 +2976,6 @@
   },
   "overrideDefaultBrowserAutofillDescription": {
     "message": "Ennek az opciónak a figyelmen kívül hagyása ütközést okozhat a Bitwarden automatikus kitöltési menü és a böngésző között.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideDefaultBrowserAutofillPrivacyRequiredDescription": {
-    "message": "Ez a művelet újraindítja a Bitwarden bővítményt. Ennek az opciónak a figyelmen kívül hagyása ütközést okozhat a Bitwarden automatikus kitöltési menü és a böngésző között.",
     "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutoFillSettings": {

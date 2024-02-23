@@ -561,10 +561,10 @@
     "message": "Keisti pagrindinį slaptažodį"
   },
   "changeMasterPasswordConfirmation": {
-    "message": "Pagrindinį slaptažodį galite pakeisti bitwarden.com žiniatinklio saugykloje. Ar norite dabar apsilankyti svetainėje?"
+    "message": "Pagrindinį slaptažodį galite pakeisti „bitwarden.com“ žiniatinklio saugykloje. Ar norite dabar apsilankyti svetainėje?"
   },
   "twoStepLoginConfirmation": {
-    "message": "Prisijungus dviem veiksmais, jūsų paskyra tampa saugesnė, reikalaujant patvirtinti prisijungimą naudojant kitą įrenginį, pvz., Saugos raktą, autentifikavimo programą, SMS, telefono skambutį ar el. Paštą. Dviejų žingsnių prisijungimą galima įjungti „bitwarden.com“ interneto saugykloje. Ar norite dabar apsilankyti svetainėje?"
+    "message": "Prisijungus dviem veiksmais, jūsų paskyra tampa saugesnė, reikalaujant patvirtinti prisijungimą naudojant kitą įrenginį, pvz., saugos raktą, autentifikavimo programėlę, SMS, telefono skambutį ar el. paštą. Dviejų žingsnių prisijungimą galima įjungti „bitwarden.com“ interneto saugykloje. Ar norite dabar apsilankyti svetainėje?"
   },
   "editedFolder": {
     "message": "Katalogas atnaujintas"
@@ -673,7 +673,7 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
-    "message": "Ar Bitwarden turėtų įsiminti šį slaptažodį už tave?"
+    "message": "Ar „Bitwarden“ turėtų įsiminti šį slaptažodį už Jus?"
   },
   "notificationAddSave": {
     "message": "Išsaugoti"
@@ -694,13 +694,13 @@
     "message": "Paprašykite išsaugoti naujus prieigos raktus arba prisijungti naudodant saugykloje saugomus prieigos raktus. Taikoma visoms prisijungusioms paskyroms."
   },
   "notificationChangeDesc": {
-    "message": "Ar nori atnaujinti šį slaptažodį Bitwarden?"
+    "message": "Ar nori atnaujinti šį slaptažodį „Bitwarden“ programėlėje?"
   },
   "notificationChangeSave": {
     "message": "Atnaujinti"
   },
   "notificationUnlockDesc": {
-    "message": "Atrakink savo Bitwarden saugyklą, kad užpildytum automatinio užpildymo užklausą."
+    "message": "Atrakinkite savo „Bitwarden“ saugyklą, kad užbaigtumėte automatinio užpildymo užklausą."
   },
   "notificationUnlock": {
     "message": "Atrakinti"
@@ -762,7 +762,7 @@
     "message": "Šis duomenų exportavimas užšifruoja jūsų duomenis naudodamas jūsų prieigos kodų raktu. Jei jūs kada nuspręsite pakeisti prieigos kodų raktą, jūs turėtumėte per naują eksportuoti duomenis, nes kitaip, jūs negalėsite iššifruoti išeksportuotų duomenų."
   },
   "encExportAccountWarningDesc": {
-    "message": "Prieigos kodų raktai yra unikalūs kiekvienai Bitwarden vartotojo paskyrai, taigi jums nepavyktų importuoti užkoduotų eksportuotų duomenų į kitą prieigą."
+    "message": "Paskyros šifravimo raktai yra unikalūs kiekvienai „Bitwarden“ vartotojo paskyrai, todėl negalite importuoti užšifruoto eksportavimo į kitą paskyrą."
   },
   "exportMasterPassword": {
     "message": "Įveskite pagrindinį slaptažodį norint išsinešti saugyklos duomenis."
@@ -774,7 +774,7 @@
     "message": "Sužinoti apie organizacijas"
   },
   "learnOrgConfirmation": {
-    "message": "Bitwarden leidžia jums dalintis savo saugyklos elementais su kitais vartotojais organizacijoje. Ar jūs norėtumėte apsilankyti bitwarden.com puslapyje, kad sužinoti daugiau?"
+    "message": "„Bitwarden“ leidžia dalytis saugyklos elementais su kitais naudojantis organizacija. Ar norėtumėte apsilankyti „bitwarden.com“ svetainėje ir sužinoti daugiau?"
   },
   "moveToOrganization": {
     "message": "Perkelti į organizaciją"
@@ -853,7 +853,7 @@
     "message": "Tvarkyti narystę"
   },
   "premiumManageAlert": {
-    "message": "Galite tvarkyti savo narystę internete per bitwarden.com. Ar norite aplankyti šį puslapį dabar?"
+    "message": "Savo narystę galite tvarkyti „bitwarden.com“ žiniatinklio saugykloje. Ar norite apsilankyti svetainėje dabar?"
   },
   "premiumRefresh": {
     "message": "Atnaujinti narystę"
@@ -886,13 +886,13 @@
     "message": "Įsigyti Premium"
   },
   "premiumPurchaseAlert": {
-    "message": "Gali įsigyti Premium narystę bitwarden.com interneto saugykloje. Ar nori aplankyti svetainėje dabar?"
+    "message": "Galite įsigyti „Premium“ narystę „bitwarden.com“ žiniatinklio saugykloje. Ar norite apsilankyti svetainėje dabar?"
   },
   "premiumCurrentMember": {
     "message": "Tu esi Premium narys!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Dėkojame, kad remiate Bitwarden."
+    "message": "Dėkojame, kad palaikote „Bitwarden“."
   },
   "premiumPrice": {
     "message": "Visa tai tik už $PRICE$ / metus!",
@@ -1021,7 +1021,7 @@
     "message": "Savarankiškai sukurta aplinka"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Nurodyk pagrindinį URL adresą savo patalpose esančio Bitwarden diegimo."
+    "message": "Nurodykite vietinio priglobto „Bitwarden“ diegimo bazinį URL."
   },
   "customEnvironment": {
     "message": "Individualizuota aplinka"
@@ -1481,7 +1481,7 @@
     "message": "Silpnas pagrindinis slaptažodis"
   },
   "weakMasterPasswordDesc": {
-    "message": "Jūsų pasirinktas pagrindinis slaptažodis yra silpnas. Turėtumėte naudoti stiprų pagrindinį slaptažodį (arba slaptafrazę), kad tinkamai apsaugotumėte savo Bitwarden paskyrą. Ar tikrai norite naudoti šį pagrindinį slaptažodį?"
+    "message": "Jūsų pasirinktas pagrindinis slaptažodis yra silpnas. Turėtumėte naudoti stiprų pagrindinį slaptažodį (arba slaptafrazę), kad tinkamai apsaugotumėte savo „Bitwarden“ paskyrą. Ar tikrai norite naudoti šį pagrindinį slaptažodį?"
   },
   "pin": {
     "message": "PIN",
@@ -1509,7 +1509,7 @@
     "message": "Laukiama patvirtinimo iš darbalaukio"
   },
   "awaitDesktopDesc": {
-    "message": "Patvirtinkite naudodami biometrinius duomenis Bitwarden darbalaukio programoje, kad nustatytumėte naršyklės biometrinius duomenis."
+    "message": "Patvirtinkite naudodami biometrinius duomenis „Bitwarden“ darbalaukio programoje, kad nustatytumėte naršyklės biometrinius duomenis."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Užrakinkite pagrindiniu slaptažodžiu paleidus naršyklę iš naujo"
@@ -2004,6 +2004,10 @@
   "selectFolder": {
     "message": "Pasirinkti aplankalą..."
   },
+  "noFoldersFound": {
+    "message": "No folders found",
+    "description": "Used as a message within the notification bar when no folders are found"
+  },
   "orgPermissionsUpdatedMustSetPassword": {
     "message": "Dėl organizacijos leidimų atnaujinimo, Jums reikia nustatyti pagrindinį slaptažodį.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
@@ -2168,17 +2172,17 @@
     "message": "Sugeneruoti el. pašto slapyvardį su išorine persiuntimo paslauga."
   },
   "hostname": {
-    "message": "Hostname",
+    "message": "Pagrindinio kompiuterio vardas",
     "description": "Part of a URL."
   },
   "apiAccessToken": {
-    "message": "API Access Token"
+    "message": "API Prieigos Raktas"
   },
   "apiKey": {
     "message": "API raktas"
   },
   "ssoKeyConnectorError": {
-    "message": "Key connector error: make sure key connector is available and working correctly."
+    "message": "Rakto jungties klaida: įsitikinkite, kad rakto jungtis yra prieinama ir veikia tinkamai."
   },
   "premiumSubcriptionRequired": {
     "message": "Reikalingas Premium abonementas"
@@ -2187,10 +2191,10 @@
     "message": "Organizacija suspenduota."
   },
   "disabledOrganizationFilterError": {
-    "message": "Items in suspended Organizations cannot be accessed. Contact your Organization owner for assistance."
+    "message": "Elementai esantys suspenduotose Organizacijose yra neprieinami. Susisiekite su savo Organizacijos savininku."
   },
   "loggingInTo": {
-    "message": "Logging in to $DOMAIN$",
+    "message": "Prisijungiama prie $DOMAIN$",
     "placeholders": {
       "domain": {
         "content": "$1",
@@ -2199,25 +2203,25 @@
     }
   },
   "settingsEdited": {
-    "message": "Settings have been edited"
+    "message": "Nustatymai buvo paredaguoti"
   },
   "environmentEditedClick": {
     "message": "Spauskite čia"
   },
   "environmentEditedReset": {
-    "message": "to reset to pre-configured settings"
+    "message": "iš naujo nustatyti iš anksto sukonfigūruotus nustatymus"
   },
   "serverVersion": {
-    "message": "Server version"
+    "message": "Serverio versija"
   },
   "selfHostedServer": {
-    "message": "self-hosted"
+    "message": "savarankiškai sukurtas"
   },
   "thirdParty": {
     "message": "Trečioji šalis"
   },
   "thirdPartyServerMessage": {
-    "message": "Connected to third-party server implementation, $SERVERNAME$. Please verify bugs using the official server, or report them to the third-party server.",
+    "message": "Prisijungta prie trečiosios šalies serverio diegimo $SERVERNAME$. Patikrinkite klaidas naudodami oficialų serverį arba praneškite apie jas trečiosios šalies serveriui.",
     "placeholders": {
       "servername": {
         "content": "$1",
@@ -2226,7 +2230,7 @@
     }
   },
   "lastSeenOn": {
-    "message": "last seen on: $DATE$",
+    "message": "paskutinį kartą matytas: $DATE$",
     "placeholders": {
       "date": {
         "content": "$1",
@@ -2256,7 +2260,7 @@
     "message": "Prisijungti su įrenginiu turi būti nustatyta Bitwarden aplikacijos nustatymuose. Reikia kito pasirinkimo?"
   },
   "fingerprintPhraseHeader": {
-    "message": "Fingerprint phrase"
+    "message": "Pirštų atspaudų frazė"
   },
   "fingerprintMatchInfo": {
     "message": "Please make sure your vault is unlocked and the Fingerprint phrase matches on the other device."
@@ -2704,11 +2708,11 @@
   "launchDuoAndFollowStepsToFinishLoggingIn": {
     "message": "Paleisk DUO ir sek veiksmus, kad baigtum prisijungti."
   },
-  "duoRequiredByOrgForAccount": {
-    "message": "Tavo paskyrai reikalingas DUO dviejų veiksmų prisijungimas."
+  "duoRequiredForAccount": {
+    "message": "Duo two-step login is required for your account."
   },
-  "openExtensionInNewWindowToCompleteLogin": {
-    "message": "Atidaryk plėtinį naujame lange, kad užbaigtum prisijungimą."
+  "popoutTheExtensionToCompleteLogin": {
+    "message": "Popout the extension to complete login."
   },
   "popoutExtension": {
     "message": "Iššokantis plėtinys"
@@ -2972,10 +2976,6 @@
   },
   "overrideDefaultBrowserAutofillDescription": {
     "message": "Ignoruojant šią parinktį, gali kilti konfliktų tarp Bitwarden automatinio užpildymo meniu ir naršyklės.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideDefaultBrowserAutofillPrivacyRequiredDescription": {
-    "message": "Šis veiksmas iš naujo paleis Bitwarden plėtinį.\nIgnoruojant šią parinktį, gali kilti konfliktų tarp Bitwarden automatinio užpildymo meniu ir naršyklės.",
     "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutoFillSettings": {

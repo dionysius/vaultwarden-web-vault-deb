@@ -494,10 +494,10 @@
     "message": "Din nye konto er oprettet! Du kan nu logge ind."
   },
   "youSuccessfullyLoggedIn": {
-    "message": "You successfully logged in"
+    "message": "Du er nu logget ind"
   },
   "youMayCloseThisWindow": {
-    "message": "You may close this window"
+    "message": "Dette vindue kan nu lukkes"
   },
   "masterPassSent": {
     "message": "Vi har sendt dig en e-mail med dit hovedadgangskodetip."
@@ -2004,6 +2004,10 @@
   "selectFolder": {
     "message": "Vælg mappe..."
   },
+  "noFoldersFound": {
+    "message": "Ingen mapper fundet",
+    "description": "Used as a message within the notification bar when no folders are found"
+  },
   "orgPermissionsUpdatedMustSetPassword": {
     "message": "Organisationstilladelserne er blevet opdateret, og der kræves nu oprettelse af en hovedadgangskode.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
@@ -2704,14 +2708,14 @@
   "launchDuoAndFollowStepsToFinishLoggingIn": {
     "message": "Start DUO og følg trinene for at fuldføre indlogningen."
   },
-  "duoRequiredByOrgForAccount": {
-    "message": "DUO totrins indlogning kræves for kontoen."
+  "duoRequiredForAccount": {
+    "message": "Duo two-step login is required for your account."
   },
-  "openExtensionInNewWindowToCompleteLogin": {
-    "message": "Åbn udvidelsen i et nyt vindue for at fuldføre indlogning"
+  "popoutTheExtensionToCompleteLogin": {
+    "message": "Popout the extension to complete login."
   },
   "popoutExtension": {
-    "message": "Popout extension"
+    "message": "Pop ud-udvidelse"
   },
   "launchDuo": {
     "message": "Start DUO"
@@ -2972,10 +2976,6 @@
   },
   "overrideDefaultBrowserAutofillDescription": {
     "message": "Ignoreres denne indstilling, kan det forårsage konflikter mellem Bitwardens autoudfyld-menu og webbrowsere.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideDefaultBrowserAutofillPrivacyRequiredDescription": {
-    "message": "Denne handling vil genstarte Bitwarden-udvidelsen. Ignoreres denne indstilling, kan det forårsage konflikter mellem Bitwardens autoudfyld-menu og webbrowsere.",
     "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutoFillSettings": {

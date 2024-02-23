@@ -1180,7 +1180,7 @@
     "message": "Naam kaarthouder"
   },
   "number": {
-    "message": "Kaartummer"
+    "message": "Kaartnummer"
   },
   "brand": {
     "message": "Merk"
@@ -2004,6 +2004,10 @@
   "selectFolder": {
     "message": "Map selecteren..."
   },
+  "noFoldersFound": {
+    "message": "Geen mappen gevonden",
+    "description": "Used as a message within the notification bar when no folders are found"
+  },
   "orgPermissionsUpdatedMustSetPassword": {
     "message": "Your organization permissions were updated, requiring you to set a master password.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
@@ -2704,11 +2708,11 @@
   "launchDuoAndFollowStepsToFinishLoggingIn": {
     "message": "Launch Duo and follow the steps to finish logging in."
   },
-  "duoRequiredByOrgForAccount": {
-    "message": "Duo two-step login is required for your account."
+  "duoRequiredForAccount": {
+    "message": "Jouw account vereist Duo-tweestapsaanmelding."
   },
-  "openExtensionInNewWindowToCompleteLogin": {
-    "message": "Open the extension in a new window to complete login"
+  "popoutTheExtensionToCompleteLogin": {
+    "message": "Open de extensie om in te loggen."
   },
   "popoutExtension": {
     "message": "Popout extension"
@@ -2972,10 +2976,6 @@
   },
   "overrideDefaultBrowserAutofillDescription": {
     "message": "Deze optie negeren kan tot conflicten leiden tussen het automatisch invullen van Bitwarden en dat van je browser.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideDefaultBrowserAutofillPrivacyRequiredDescription": {
-    "message": "Deze actie herstart de Bitwarden-extensie. Deze optie negeren kan tot conflicten leiden tussen het automatisch invullen van Bitwarden en dat van je browser.",
     "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutoFillSettings": {

@@ -2004,6 +2004,10 @@
   "selectFolder": {
     "message": "Izvēlēties mapi..."
   },
+  "noFoldersFound": {
+    "message": "Nav atrasta neviena mape",
+    "description": "Used as a message within the notification bar when no folders are found"
+  },
   "orgPermissionsUpdatedMustSetPassword": {
     "message": "Apvienības atļaujas tika atjauninātas, un tās pieprasa iestatīt galveno paroli.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
@@ -2704,11 +2708,11 @@
   "launchDuoAndFollowStepsToFinishLoggingIn": {
     "message": "Jāpalaiž DUO un jāseko soļiem, lai pabeigtu pieteikšanos."
   },
-  "duoRequiredByOrgForAccount": {
-    "message": "Kontam ir nepieciešama DUO divpakāpju pieteikšanās."
+  "duoRequiredForAccount": {
+    "message": "Duo two-step login is required for your account."
   },
-  "openExtensionInNewWindowToCompleteLogin": {
-    "message": "Paplašinājums jāatver jaunā logā, lai pabeigtu pieteikšanos"
+  "popoutTheExtensionToCompleteLogin": {
+    "message": "Popout the extension to complete login."
   },
   "popoutExtension": {
     "message": "Atvērt paplašinājumu atsevišķi"
@@ -2972,10 +2976,6 @@
   },
   "overrideDefaultBrowserAutofillDescription": {
     "message": "Šīs iespējas neņemšana vērā var radīt nesaderības starp Bitwarden automātiskās aizpildes izvēlni un pārlūka.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideDefaultBrowserAutofillPrivacyRequiredDescription": {
-    "message": "Šī darbība pārsāknēs Bitwarden paplašinājumu. Šīs iespējas neņemšana vērā var radīt nesaderības starp Bitwarden automātiskās aizpildes izvēlni un pārlūka.",
     "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutoFillSettings": {

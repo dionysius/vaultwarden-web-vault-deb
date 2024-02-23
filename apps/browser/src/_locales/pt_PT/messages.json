@@ -2004,6 +2004,10 @@
   "selectFolder": {
     "message": "Selecionar pasta..."
   },
+  "noFoldersFound": {
+    "message": "Nenhuma pasta encontrada",
+    "description": "Used as a message within the notification bar when no folders are found"
+  },
   "orgPermissionsUpdatedMustSetPassword": {
     "message": "As permissões da sua organização foram atualizadas, exigindo a definição de uma palavra-passe mestra.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
@@ -2702,19 +2706,19 @@
     }
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
-    "message": "Inicie o DUO e siga os passos para concluir o início de sessão."
+    "message": "Inicie o Duo e siga os passos para concluir o início de sessão."
   },
-  "duoRequiredByOrgForAccount": {
-    "message": "A verificação em dois passos DUO é necessária para a sua conta."
+  "duoRequiredForAccount": {
+    "message": "Duo two-step login is required for your account."
   },
-  "openExtensionInNewWindowToCompleteLogin": {
-    "message": "Abra a extensão numa nova janela para concluir o início de sessão"
+  "popoutTheExtensionToCompleteLogin": {
+    "message": "Popout the extension to complete login."
   },
   "popoutExtension": {
     "message": "Extensão popout"
   },
   "launchDuo": {
-    "message": "Iniciar o DUO"
+    "message": "Iniciar o Duo"
   },
   "importFormatError": {
     "message": "Os dados não estão formatados corretamente. Por favor, verifique o seu ficheiro de importação e tente novamente."
@@ -2972,10 +2976,6 @@
   },
   "overrideDefaultBrowserAutofillDescription": {
     "message": "Ignorar esta opção pode causar conflitos entre o menu de preenchimento automático do Bitwarden e o do seu navegador.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideDefaultBrowserAutofillPrivacyRequiredDescription": {
-    "message": "Esta ação reiniciará a extensão Bitwarden. Ignorar esta opção pode causar conflitos entre o menu de preenchimento automático do Bitwarden e o do seu navegador.",
     "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutoFillSettings": {

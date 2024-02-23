@@ -1082,7 +1082,7 @@
     "message": "If a login form is detected, auto-fill when the web page loads."
   },
   "experimentalFeature": {
-    "message": "Compromised or untrusted websites can exploit autofill on page load."
+    "message": "Compromised or untrusted websites can exploit auto-fill on page load."
   },
   "learnMoreAboutAutofill": {
     "message": "Learn more about auto-fill"
@@ -2004,6 +2004,10 @@
   "selectFolder": {
     "message": "Select folder..."
   },
+  "noFoldersFound": {
+    "message": "No folders found",
+    "description": "Used as a message within the notification bar when no folders are found"
+  },
   "orgPermissionsUpdatedMustSetPassword": {
     "message": "Your organisation permissions were updated, requiring you to set a master password.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
@@ -2304,7 +2308,7 @@
     }
   },
   "autofillPageLoadPolicyActivated": {
-    "message": "Your organization policies have turned on auto-fill on page load."
+    "message": "Your organisation policies have turned on auto-fill on page load."
   },
   "howToAutofill": {
     "message": "How to auto-fill"
@@ -2702,19 +2706,19 @@
     }
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
-    "message": "Launch DUO and follow the steps to finish logging in."
+    "message": "Launch Duo and follow the steps to finish logging in."
   },
-  "duoRequiredByOrgForAccount": {
-    "message": "DUO two-step login is required for your account."
+  "duoRequiredForAccount": {
+    "message": "Duo two-step login is required for your account."
   },
-  "openExtensionInNewWindowToCompleteLogin": {
-    "message": "Open the extension in a new window to complete login"
+  "popoutTheExtensionToCompleteLogin": {
+    "message": "Popout the extension to complete login."
   },
   "popoutExtension": {
     "message": "Popout extension"
   },
   "launchDuo": {
-    "message": "Launch DUO"
+    "message": "Launch Duo"
   },
   "importFormatError": {
     "message": "Data is not formatted correctly. Please check your import file and try again."
@@ -2972,10 +2976,6 @@
   },
   "overrideDefaultBrowserAutofillDescription": {
     "message": "Ignoring this option may cause conflicts between the Bitwarden auto-fill menu and your browser's.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideDefaultBrowserAutofillPrivacyRequiredDescription": {
-    "message": "This action will restart the Bitwarden extension. Ignoring this option may cause conflicts between the Bitwarden auto-fill menu and your browser's.",
     "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutoFillSettings": {

@@ -2004,6 +2004,10 @@
   "selectFolder": {
     "message": "Klasör seç..."
   },
+  "noFoldersFound": {
+    "message": "Herhangi bir klasör bulunamadı",
+    "description": "Used as a message within the notification bar when no folders are found"
+  },
   "orgPermissionsUpdatedMustSetPassword": {
     "message": "Kuruluş izinleriniz güncellendi ve bir ana parola belirlemeniz gerekiyor.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
@@ -2704,11 +2708,11 @@
   "launchDuoAndFollowStepsToFinishLoggingIn": {
     "message": "DUO'yu başlatın ve oturum açmayı tamamlamak için adımları izleyin."
   },
-  "duoRequiredByOrgForAccount": {
-    "message": "Hesabınız için DUO iki adımlı giriş gereklidir."
+  "duoRequiredForAccount": {
+    "message": "Duo two-step login is required for your account."
   },
-  "openExtensionInNewWindowToCompleteLogin": {
-    "message": "Oturum açma işlemini tamamlamak için uzantıyı yeni bir pencerede açın"
+  "popoutTheExtensionToCompleteLogin": {
+    "message": "Popout the extension to complete login."
   },
   "popoutExtension": {
     "message": "Popout uzantısı"
@@ -2972,10 +2976,6 @@
   },
   "overrideDefaultBrowserAutofillDescription": {
     "message": "Bu seçeneğin göz ardı edilmesi, Bitwarden otomatik doldurma menüsü ile tarayıcınızınki arasında çakışmalara neden olabilir.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideDefaultBrowserAutofillPrivacyRequiredDescription": {
-    "message": "Bu eylem Bitwarden uzantısını yeniden başlatacaktır. Bu seçeneğin göz ardı edilmesi, Bitwarden otomatik doldurma menüsü ile tarayıcınızın arasında çakışmalara neden olabilir.",
     "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutoFillSettings": {

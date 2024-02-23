@@ -2004,6 +2004,10 @@
   "selectFolder": {
     "message": "Seleccioneu la carpeta..."
   },
+  "noFoldersFound": {
+    "message": "No s'ha trobat cap carpeta",
+    "description": "Used as a message within the notification bar when no folders are found"
+  },
   "orgPermissionsUpdatedMustSetPassword": {
     "message": "Els permisos de la vostra organització s'han actualitzat, cal que establiu una contrasenya mestra.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
@@ -2704,11 +2708,11 @@
   "launchDuoAndFollowStepsToFinishLoggingIn": {
     "message": "Inicieu DUO i seguiu els passos per finalitzar la sessió."
   },
-  "duoRequiredByOrgForAccount": {
-    "message": "Es requereix l'inici de sessió en dos passos de DUO al vostre compte."
+  "duoRequiredForAccount": {
+    "message": "Duo two-step login is required for your account."
   },
-  "openExtensionInNewWindowToCompleteLogin": {
-    "message": "Obriu l'extensió en una finestra nova per completar l'inici de sessió"
+  "popoutTheExtensionToCompleteLogin": {
+    "message": "Popout the extension to complete login."
   },
   "popoutExtension": {
     "message": "Extensió emergent"
@@ -2972,10 +2976,6 @@
   },
   "overrideDefaultBrowserAutofillDescription": {
     "message": "Si ignoreu aquesta opció pot provocar conflictes entre el menú d'emplenament automàtic de Bitwarden i el del navegador.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideDefaultBrowserAutofillPrivacyRequiredDescription": {
-    "message": "Aquesta acció reiniciarà l'extensió Bitwarden. Si ignoreu aquesta opció pot provocar conflictes entre el menú d'emplenament automàtic de Bitwarden i el del vostre navegador.",
     "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutoFillSettings": {

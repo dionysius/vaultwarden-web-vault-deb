@@ -494,10 +494,10 @@
     "message": "Ваш налог је креиран! Сада се можете пријавити."
   },
   "youSuccessfullyLoggedIn": {
-    "message": "You successfully logged in"
+    "message": "Успешно сте се пријавили"
   },
   "youMayCloseThisWindow": {
-    "message": "You may close this window"
+    "message": "Можете затворити овај прозор"
   },
   "masterPassSent": {
     "message": "Послали смо Вам поруку са саветом главне лозинке."
@@ -2004,6 +2004,10 @@
   "selectFolder": {
     "message": "Изаберите фасциклу..."
   },
+  "noFoldersFound": {
+    "message": "Нису пронађене фасцикле",
+    "description": "Used as a message within the notification bar when no folders are found"
+  },
   "orgPermissionsUpdatedMustSetPassword": {
     "message": "Дозволе за вашу организацију су ажуриране, што захтева да поставите главну лозинку.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
@@ -2704,11 +2708,11 @@
   "launchDuoAndFollowStepsToFinishLoggingIn": {
     "message": "Покренути DUO и пратите кораке да бисте завршили пријављивање."
   },
-  "duoRequiredByOrgForAccount": {
-    "message": "DUO пријава у два корака је потребна за ваш налог."
+  "duoRequiredForAccount": {
+    "message": "Duo two-step login is required for your account."
   },
-  "openExtensionInNewWindowToCompleteLogin": {
-    "message": "Отворите екстензију у новом прозору да бисте завршили пријаву"
+  "popoutTheExtensionToCompleteLogin": {
+    "message": "Popout the extension to complete login."
   },
   "popoutExtension": {
     "message": "Popout extension"
@@ -2972,10 +2976,6 @@
   },
   "overrideDefaultBrowserAutofillDescription": {
     "message": "Игнорисање ове опције може довести до сукоба између љутопуњења Bitwarden-а и вашег прегледача.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideDefaultBrowserAutofillPrivacyRequiredDescription": {
-    "message": "Ова акција ће поново покренути ектензију Bitwarden-а. Игнорисање ове опције може довести до сукоба између љутопуњења Bitwarden-а и вашег прегледача.",
     "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutoFillSettings": {

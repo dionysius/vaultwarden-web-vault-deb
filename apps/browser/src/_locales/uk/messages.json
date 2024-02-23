@@ -2004,6 +2004,10 @@
   "selectFolder": {
     "message": "Обрати теку..."
   },
+  "noFoldersFound": {
+    "message": "Тек не знайдено",
+    "description": "Used as a message within the notification bar when no folders are found"
+  },
   "orgPermissionsUpdatedMustSetPassword": {
     "message": "Оновлено дозволи вашої організації – вимагається встановлення головного пароля.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
@@ -2704,11 +2708,11 @@
   "launchDuoAndFollowStepsToFinishLoggingIn": {
     "message": "Запустіть Duo і виконайте дії для завершення входу."
   },
-  "duoRequiredByOrgForAccount": {
-    "message": "Для вашого облікового запису необхідна двоетапна перевірка з Duo."
+  "duoRequiredForAccount": {
+    "message": "Duo two-step login is required for your account."
   },
-  "openExtensionInNewWindowToCompleteLogin": {
-    "message": "Відкрийте розширення у новому вікні, щоб завершити вхід"
+  "popoutTheExtensionToCompleteLogin": {
+    "message": "Popout the extension to complete login."
   },
   "popoutExtension": {
     "message": "Відкріпити вікно розширення"
@@ -2972,10 +2976,6 @@
   },
   "overrideDefaultBrowserAutofillDescription": {
     "message": "Якщо ігнорувати цей параметр, можуть виникнути конфлікти автозаповнення між Bitwarden і браузером.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideDefaultBrowserAutofillPrivacyRequiredDescription": {
-    "message": "Ця дія призведе до перезапуску розширення Bitwarden. Якщо ігнорувати цей параметр, можуть виникнути конфлікти автозаповнення між Bitwarden і браузером.",
     "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutoFillSettings": {

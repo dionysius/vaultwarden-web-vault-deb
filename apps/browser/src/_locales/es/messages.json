@@ -2004,6 +2004,10 @@
   "selectFolder": {
     "message": "Seleccione carpeta..."
   },
+  "noFoldersFound": {
+    "message": "No folders found",
+    "description": "Used as a message within the notification bar when no folders are found"
+  },
   "orgPermissionsUpdatedMustSetPassword": {
     "message": "Los permisos de la organización se han actualizado y se requiere el establecimiento de una contraseña maestra.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
@@ -2704,11 +2708,11 @@
   "launchDuoAndFollowStepsToFinishLoggingIn": {
     "message": "Launch Duo and follow the steps to finish logging in."
   },
-  "duoRequiredByOrgForAccount": {
+  "duoRequiredForAccount": {
     "message": "Duo two-step login is required for your account."
   },
-  "openExtensionInNewWindowToCompleteLogin": {
-    "message": "Open the extension in a new window to complete login"
+  "popoutTheExtensionToCompleteLogin": {
+    "message": "Popout the extension to complete login."
   },
   "popoutExtension": {
     "message": "Popout extension"
@@ -2972,10 +2976,6 @@
   },
   "overrideDefaultBrowserAutofillDescription": {
     "message": "Pasar por alto esta opción puede causar conflictos entre el menú de relleno automático de Bitwarden y el del navegador.",
-    "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
-  },
-  "overrideDefaultBrowserAutofillPrivacyRequiredDescription": {
-    "message": "Esta acción reiniciará la extensión Bitwarden. Pasar por alto esta opción puede causar conflictos entre el menú de relleno automático de Bitwarden y el del navegador.",
     "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutoFillSettings": {
