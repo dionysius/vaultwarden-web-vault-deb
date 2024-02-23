@@ -226,8 +226,6 @@ export class AddEditComponent implements OnInit, OnDestroy {
     if (!this.allowPersonal && this.organizationId == undefined) {
       this.organizationId = this.defaultOwnerId;
     }
-
-    this.resetMaskState();
   }
 
   async load() {
@@ -274,8 +272,6 @@ export class AddEditComponent implements OnInit, OnDestroy {
         this.cipher.secureNote.type = SecureNoteType.Generic;
         this.cipher.reprompt = CipherRepromptType.None;
       }
-
-      this.resetMaskState();
     }
 
     if (this.cipher != null && (!this.editMode || loadedAddEditCipherInfo || this.cloneMode)) {
@@ -515,12 +511,6 @@ export class AddEditComponent implements OnInit, OnDestroy {
 
     this.onGeneratePassword.emit();
     return true;
-  }
-
-  resetMaskState() {
-    // toggle masks off for maskable login properties with no value on init/load
-    this.showTotpSeed = !this.cipher?.login?.totp;
-    this.showPassword = !this.cipher?.login?.password;
   }
 
   togglePassword() {
