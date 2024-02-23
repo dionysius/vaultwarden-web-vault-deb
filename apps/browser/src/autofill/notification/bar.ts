@@ -2,11 +2,23 @@ import { ConsoleLogService } from "@bitwarden/common/platform/services/console-l
 import type { FolderView } from "@bitwarden/common/vault/models/view/folder.view";
 
 import { FilelessImportPort, FilelessImportType } from "../../tools/enums/fileless-import.enums";
-import { AdjustNotificationBarMessageData } from "../background/abstractions/notification.background";
+import {
+  AdjustNotificationBarMessageData,
+  SaveOrUpdateCipherResult,
+} from "../background/abstractions/notification.background";
+
+import {
+  NotificationBarWindowMessageHandlers,
+  NotificationBarWindowMessage,
+} from "./abstractions/notification-bar";
 
 require("./bar.scss");
 
 const logService = new ConsoleLogService(false);
+let windowMessageOrigin: string;
+const notificationBarWindowMessageHandlers: NotificationBarWindowMessageHandlers = {
+  saveCipherAttemptCompleted: ({ message }) => handleSaveCipherAttemptCompletedMessage(message),
+};
 
 document.addEventListener("DOMContentLoaded", () => {
   // delay 50ms so that we get proper body dimensions
@@ -14,6 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function load() {
+  setupWindowMessageListener();
+
   const theme = getQueryVariable("theme");
   document.documentElement.classList.add("theme_" + theme);
 
@@ -205,6 +219,30 @@ function sendSaveCipherMessage(edit: boolean, folder?: string) {
   });
 }
 
+function handleSaveCipherAttemptCompletedMessage(message: SaveOrUpdateCipherResult) {
+  const addSaveButtonContainers = document.querySelectorAll(".add-change-cipher-buttons");
+  const notificationBarOuterWrapper = document.getElementById("notification-bar-outer-wrapper");
+  if (message?.error) {
+    addSaveButtonContainers.forEach((element) => {
+      element.textContent = chrome.i18n.getMessage("saveCipherAttemptFailed");
+      element.classList.add("error-message");
+      notificationBarOuterWrapper.classList.add("error-event");
+    });
+
+    logService.error(`Error encountered when saving credentials: ${message.error}`);
+    return;
+  }
+  const messageName =
+    getQueryVariable("type") === "add" ? "saveCipherAttemptSuccess" : "updateCipherAttemptSuccess";
+
+  addSaveButtonContainers.forEach((element) => {
+    element.textContent = chrome.i18n.getMessage(messageName);
+    element.classList.add("success-message");
+    notificationBarOuterWrapper.classList.add("success-event");
+  });
+  setTimeout(() => sendPlatformMessage({ command: "bgCloseNotificationBar" }), 1250);
+}
+
 function handleTypeUnlock() {
   setContent(document.getElementById("template-unlock") as HTMLTemplateElement);
 
@@ -248,17 +286,19 @@ function handleTypeFilelessImport() {
 
     port.disconnect();
 
+    const filelessImportButtons = document.getElementById("fileless-import-buttons");
+    const notificationBarOuterWrapper = document.getElementById("notification-bar-outer-wrapper");
+
     if (msg.command === "filelessImportCompleted") {
-      document.getElementById("fileless-import-buttons").textContent = chrome.i18n.getMessage(
-        "dataSuccessfullyImported",
-      );
-      document.getElementById("fileless-import-buttons").classList.add("success-message");
+      filelessImportButtons.textContent = chrome.i18n.getMessage("dataSuccessfullyImported");
+      filelessImportButtons.classList.add("success-message");
+      notificationBarOuterWrapper.classList.add("success-event");
       return;
     }
 
-    document.getElementById("fileless-import-buttons").textContent =
-      chrome.i18n.getMessage("dataImportFailed");
-    document.getElementById("fileless-import-buttons").classList.add("error-message");
+    filelessImportButtons.textContent = chrome.i18n.getMessage("dataImportFailed");
+    filelessImportButtons.classList.add("error-message");
+    notificationBarOuterWrapper.classList.add("error-event");
     logService.error(`Error Encountered During Import: ${msg.importErrorMessage}`);
   };
   port.onMessage.addListener(handlePortMessage);
@@ -320,4 +360,26 @@ function adjustHeight() {
     command: "bgAdjustNotificationBar",
     data,
   });
+}
+
+function setupWindowMessageListener() {
+  globalThis.addEventListener("message", handleWindowMessage);
+}
+
+function handleWindowMessage(event: MessageEvent) {
+  if (!windowMessageOrigin) {
+    windowMessageOrigin = event.origin;
+  }
+
+  if (event.origin !== windowMessageOrigin) {
+    return;
+  }
+
+  const message = event.data as NotificationBarWindowMessage;
+  const handler = notificationBarWindowMessageHandlers[message.command];
+  if (!handler) {
+    return;
+  }
+
+  handler({ message });
 }

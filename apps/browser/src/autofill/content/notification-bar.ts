@@ -194,6 +194,18 @@ async function loadNotificationBar() {
       watchForms(msg.data.forms);
       sendResponse();
       return true;
+    } else if (msg.command === "saveCipherAttemptCompleted") {
+      if (!notificationBarIframe) {
+        return;
+      }
+
+      notificationBarIframe.contentWindow?.postMessage(
+        {
+          command: "saveCipherAttemptCompleted",
+          error: msg.data?.error,
+        },
+        "*",
+      );
     }
   }
   // End Message Processing
