@@ -285,6 +285,7 @@ function getBgService<T>(service: keyof MainBackground) {
         return cryptoService;
       },
       deps: [
+        KeyGenerationService,
         CryptoFunctionService,
         EncryptService,
         PlatformUtilsService,
