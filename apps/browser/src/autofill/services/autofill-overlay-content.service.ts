@@ -10,7 +10,12 @@ import AutofillField from "../models/autofill-field";
 import AutofillOverlayButtonIframe from "../overlay/iframe-content/autofill-overlay-button-iframe";
 import AutofillOverlayListIframe from "../overlay/iframe-content/autofill-overlay-list-iframe";
 import { ElementWithOpId, FillableFormFieldElement, FormFieldElement } from "../types";
-import { generateRandomCustomElementName, sendExtensionMessage, setElementStyles } from "../utils";
+import {
+  elementIsFillableFormField,
+  generateRandomCustomElementName,
+  sendExtensionMessage,
+  setElementStyles,
+} from "../utils";
 import {
   AutofillOverlayElement,
   RedirectFocusDirection,
@@ -408,7 +413,7 @@ class AutofillOverlayContentService implements AutofillOverlayContentServiceInte
    * @param formFieldElement - The form field element that triggered the input event.
    */
   private triggerFormFieldInput(formFieldElement: ElementWithOpId<FormFieldElement>) {
-    if (formFieldElement instanceof HTMLSpanElement) {
+    if (!elementIsFillableFormField(formFieldElement)) {
       return;
     }
 
