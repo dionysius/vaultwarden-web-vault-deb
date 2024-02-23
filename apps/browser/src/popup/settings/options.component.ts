@@ -11,6 +11,7 @@ import { ThemeType } from "@bitwarden/common/platform/enums";
 import { VaultSettingsService } from "@bitwarden/common/vault/abstractions/vault-settings/vault-settings.service";
 import { UriMatchType } from "@bitwarden/common/vault/enums";
 
+import { ClearClipboardDelaySetting } from "../../../../../apps/browser/src/autofill/constants";
 import { enableAccountSwitching } from "../../platform/flags";
 
 @Component({
@@ -35,7 +36,7 @@ export class OptionsComponent implements OnInit {
   themeOptions: any[];
   defaultUriMatch = UriMatchType.Domain;
   uriMatchOptions: any[];
-  clearClipboard: number;
+  clearClipboard: ClearClipboardDelaySetting;
   clearClipboardOptions: any[];
   showGeneral = true;
   showAutofill = true;
@@ -115,7 +116,7 @@ export class OptionsComponent implements OnInit {
     const defaultUriMatch = await this.stateService.getDefaultUriMatch();
     this.defaultUriMatch = defaultUriMatch == null ? UriMatchType.Domain : defaultUriMatch;
 
-    this.clearClipboard = await this.stateService.getClearClipboard();
+    this.clearClipboard = await firstValueFrom(this.autofillSettingsService.clearClipboardDelay$);
   }
 
   async updateAddLoginNotification() {
@@ -175,6 +176,6 @@ export class OptionsComponent implements OnInit {
   }
 
   async saveClearClipboard() {
-    await this.stateService.setClearClipboard(this.clearClipboard);
+    await this.autofillSettingsService.setClearClipboardDelay(this.clearClipboard);
   }
 }

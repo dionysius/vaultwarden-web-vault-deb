@@ -81,8 +81,6 @@ export abstract class StateService<T extends Account = Account> {
   setHasPremiumPersonally: (value: boolean, options?: StorageOptions) => Promise<void>;
   setHasPremiumFromOrganization: (value: boolean, options?: StorageOptions) => Promise<void>;
   getHasPremiumFromOrganization: (options?: StorageOptions) => Promise<boolean>;
-  getClearClipboard: (options?: StorageOptions) => Promise<number>;
-  setClearClipboard: (value: number, options?: StorageOptions) => Promise<void>;
   getConvertAccountToKeyConnector: (options?: StorageOptions) => Promise<boolean>;
   setConvertAccountToKeyConnector: (value: boolean, options?: StorageOptions) => Promise<void>;
   /**

@@ -1,6 +1,10 @@
 import { filter, switchMap, tap, firstValueFrom, map, Observable } from "rxjs";
 
 import {
+  ClearClipboardDelaySetting,
+  ClearClipboardDelay,
+} from "../../../../../apps/browser/src/autofill/constants";
+import {
   AutofillOverlayVisibility,
   InlineMenuVisibilitySetting,
 } from "../../../../../apps/browser/src/autofill/utils/autofill-overlay.enum";
@@ -56,6 +60,14 @@ const INLINE_MENU_VISIBILITY = new KeyDefinition(
   },
 );
 
+const CLEAR_CLIPBOARD_DELAY = new KeyDefinition(
+  AUTOFILL_SETTINGS_DISK_LOCAL,
+  "clearClipboardDelay",
+  {
+    deserializer: (value: ClearClipboardDelaySetting) => value ?? ClearClipboardDelay.Never,
+  },
+);
+
 export abstract class AutofillSettingsServiceAbstraction {
   autofillOnPageLoad$: Observable<boolean>;
   setAutofillOnPageLoad: (newValue: boolean) => Promise<void>;
@@ -69,6 +81,8 @@ export abstract class AutofillSettingsServiceAbstraction {
   setActivateAutofillOnPageLoadFromPolicy: (newValue: boolean) => Promise<void>;
   inlineMenuVisibility$: Observable<InlineMenuVisibilitySetting>;
   setInlineMenuVisibility: (newValue: InlineMenuVisibilitySetting) => Promise<void>;
+  clearClipboardDelay$: Observable<ClearClipboardDelaySetting>;
+  setClearClipboardDelay: (newValue: ClearClipboardDelaySetting) => Promise<void>;
   handleActivateAutofillPolicy: (policies: Observable<Policy[]>) => Observable<boolean[]>;
 }
 
@@ -90,6 +104,9 @@ export class AutofillSettingsService implements AutofillSettingsServiceAbstracti
 
   private inlineMenuVisibilityState: GlobalState<InlineMenuVisibilitySetting>;
   readonly inlineMenuVisibility$: Observable<InlineMenuVisibilitySetting>;
+
+  private clearClipboardDelayState: ActiveUserState<ClearClipboardDelaySetting>;
+  readonly clearClipboardDelay$: Observable<ClearClipboardDelaySetting>;
 
   constructor(
     private stateProvider: StateProvider,
@@ -125,6 +142,11 @@ export class AutofillSettingsService implements AutofillSettingsServiceAbstracti
       map((x) => x ?? AutofillOverlayVisibility.Off),
     );
 
+    this.clearClipboardDelayState = this.stateProvider.getActive(CLEAR_CLIPBOARD_DELAY);
+    this.clearClipboardDelay$ = this.clearClipboardDelayState.state$.pipe(
+      map((x) => x ?? ClearClipboardDelay.Never),
+    );
+
     policyService.policies$.pipe(this.handleActivateAutofillPolicy.bind(this)).subscribe();
   }
 
@@ -150,6 +172,10 @@ export class AutofillSettingsService implements AutofillSettingsServiceAbstracti
 
   async setInlineMenuVisibility(newValue: InlineMenuVisibilitySetting): Promise<void> {
     await this.inlineMenuVisibilityState.update(() => newValue);
+  }
+
+  async setClearClipboardDelay(newValue: ClearClipboardDelaySetting): Promise<void> {
+    await this.clearClipboardDelayState.update(() => newValue);
   }
 
   /**

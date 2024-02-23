@@ -22,6 +22,19 @@ export const EVENTS = {
   FOCUSOUT: "focusout",
 } as const;
 
+export const ClearClipboardDelay = {
+  Never: null as null,
+  TenSeconds: 10,
+  TwentySeconds: 20,
+  ThirtySeconds: 30,
+  OneMinute: 60,
+  TwoMinutes: 120,
+  FiveMinutes: 300,
+} as const;
+
+export type ClearClipboardDelaySetting =
+  (typeof ClearClipboardDelay)[keyof typeof ClearClipboardDelay];
+
 /* Context Menu item Ids */
 export const AUTOFILL_CARD_ID = "autofill-card";
 export const AUTOFILL_ID = "autofill";

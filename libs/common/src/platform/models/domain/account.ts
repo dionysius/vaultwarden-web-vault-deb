@@ -201,7 +201,6 @@ export class AccountProfile {
 export class AccountSettings {
   autoConfirmFingerPrints?: boolean;
   biometricUnlock?: boolean;
-  clearClipboard?: number;
   defaultUriMatch?: UriMatchType;
   disableBadgeCounter?: boolean;
   disableGa?: boolean;

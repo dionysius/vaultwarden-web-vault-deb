@@ -10,6 +10,7 @@ import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vaul
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { UserVerificationService as UserVerificationServiceAbstraction } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
+import { AutofillSettingsServiceAbstraction } from "@bitwarden/common/autofill/services/autofill-settings.service";
 import { DeviceType } from "@bitwarden/common/enums";
 import { VaultTimeoutAction } from "@bitwarden/common/enums/vault-timeout-action.enum";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
@@ -81,7 +82,7 @@ export class SettingsComponent implements OnInit {
     requirePasswordOnStart: false,
     approveLoginRequests: false,
     // Account Preferences
-    clearClipboard: [null as number | null],
+    clearClipboard: [null],
     minimizeOnCopyToClipboard: false,
     enableFavicons: false,
     // App Settings
@@ -111,6 +112,7 @@ export class SettingsComponent implements OnInit {
     private platformUtilsService: PlatformUtilsService,
     private vaultTimeoutSettingsService: VaultTimeoutSettingsService,
     private stateService: StateService,
+    private autofillSettingsService: AutofillSettingsServiceAbstraction,
     private messagingService: MessagingService,
     private cryptoService: CryptoService,
     private modalService: ModalService,
@@ -247,7 +249,7 @@ export class SettingsComponent implements OnInit {
         this.biometricStateService.requirePasswordOnStart$,
       ),
       approveLoginRequests: (await this.stateService.getApproveLoginRequests()) ?? false,
-      clearClipboard: await this.stateService.getClearClipboard(),
+      clearClipboard: await firstValueFrom(this.autofillSettingsService.clearClipboardDelay$),
       minimizeOnCopyToClipboard: await this.stateService.getMinimizeOnCopyToClipboard(),
       enableFavicons: !(await this.stateService.getDisableFavicon()),
       enableTray: await this.stateService.getEnableTray(),
@@ -563,7 +565,7 @@ export class SettingsComponent implements OnInit {
   }
 
   async saveClearClipboard() {
-    await this.stateService.setClearClipboard(this.form.value.clearClipboard);
+    await this.autofillSettingsService.setClearClipboardDelay(this.form.value.clearClipboard);
   }
 
   async saveAlwaysShowDock() {

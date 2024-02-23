@@ -3,6 +3,7 @@ import { firstValueFrom, timeout } from "rxjs";
 import { VaultTimeoutSettingsService } from "../../abstractions/vault-timeout/vault-timeout-settings.service";
 import { AuthService } from "../../auth/abstractions/auth.service";
 import { AuthenticationStatus } from "../../auth/enums/authentication-status";
+import { AutofillSettingsServiceAbstraction } from "../../autofill/services/autofill-settings.service";
 import { VaultTimeoutAction } from "../../enums/vault-timeout-action.enum";
 import { MessagingService } from "../abstractions/messaging.service";
 import { PlatformUtilsService } from "../abstractions/platform-utils.service";
@@ -20,6 +21,7 @@ export class SystemService implements SystemServiceAbstraction {
     private platformUtilsService: PlatformUtilsService,
     private reloadCallback: () => Promise<void> = null,
     private stateService: StateService,
+    private autofillSettingsService: AutofillSettingsServiceAbstraction,
     private vaultTimeoutSettingsService: VaultTimeoutSettingsService,
   ) {}
 
@@ -93,26 +95,33 @@ export class SystemService implements SystemServiceAbstraction {
       clearTimeout(this.clearClipboardTimeout);
       this.clearClipboardTimeout = null;
     }
+
     if (Utils.isNullOrWhitespace(clipboardValue)) {
       return;
     }
-    await this.stateService.getClearClipboard().then((clearSeconds) => {
-      if (clearSeconds == null) {
-        return;
+
+    const clearClipboardDelay = await firstValueFrom(
+      this.autofillSettingsService.clearClipboardDelay$,
+    );
+
+    if (clearClipboardDelay == null) {
+      return;
+    }
+
+    if (timeoutMs == null) {
+      timeoutMs = clearClipboardDelay * 1000;
+    }
+
+    this.clearClipboardTimeoutFunction = async () => {
+      const clipboardValueNow = await this.platformUtilsService.readFromClipboard();
+      if (clipboardValue === clipboardValueNow) {
+        this.platformUtilsService.copyToClipboard("", { clearing: true });
       }
-      if (timeoutMs == null) {
-        timeoutMs = clearSeconds * 1000;
-      }
-      this.clearClipboardTimeoutFunction = async () => {
-        const clipboardValueNow = await this.platformUtilsService.readFromClipboard();
-        if (clipboardValue === clipboardValueNow) {
-          this.platformUtilsService.copyToClipboard("", { clearing: true });
-        }
-      };
-      this.clearClipboardTimeout = setTimeout(async () => {
-        await this.clearPendingClipboard();
-      }, timeoutMs);
-    });
+    };
+
+    this.clearClipboardTimeout = setTimeout(async () => {
+      await this.clearPendingClipboard();
+    }, timeoutMs);
   }
 
   async clearPendingClipboard() {

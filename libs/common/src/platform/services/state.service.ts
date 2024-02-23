@@ -462,27 +462,6 @@ export class StateService<
     );
   }
 
-  async getClearClipboard(options?: StorageOptions): Promise<number> {
-    return (
-      (
-        await this.getAccount(
-          this.reconcileOptions(options, await this.defaultOnDiskLocalOptions()),
-        )
-      )?.settings?.clearClipboard ?? null
-    );
-  }
-
-  async setClearClipboard(value: number, options?: StorageOptions): Promise<void> {
-    const account = await this.getAccount(
-      this.reconcileOptions(options, await this.defaultOnDiskLocalOptions()),
-    );
-    account.settings.clearClipboard = value;
-    await this.saveAccount(
-      account,
-      this.reconcileOptions(options, await this.defaultOnDiskLocalOptions()),
-    );
-  }
-
   async getConvertAccountToKeyConnector(options?: StorageOptions): Promise<boolean> {
     return (
       await this.getAccount(this.reconcileOptions(options, await this.defaultOnDiskOptions()))

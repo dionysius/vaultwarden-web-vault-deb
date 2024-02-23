@@ -18,6 +18,7 @@ import {
 } from "../../auth/background/service-factories/auth-service.factory";
 import { userVerificationServiceFactory } from "../../auth/background/service-factories/user-verification-service.factory";
 import { openUnlockPopout } from "../../auth/popup/utils/auth-popout-window";
+import { autofillSettingsServiceFactory } from "../../autofill/background/service_factories/autofill-settings-service.factory";
 import { eventCollectionServiceFactory } from "../../background/service-factories/event-collection-service.factory";
 import { Account } from "../../models/account";
 import { CachedServices } from "../../platform/background/service-factories/factory-options";
@@ -104,11 +105,14 @@ export class ContextMenuClickedHandler {
       stateServiceOptions: {
         stateFactory: stateFactory,
       },
+      autofillSettingsServiceOptions: {
+        stateFactory: autofillSettingsServiceFactory,
+      },
     };
 
     const generatePasswordToClipboardCommand = new GeneratePasswordToClipboardCommand(
       await passwordGenerationServiceFactory(cachedServices, serviceOptions),
-      await stateServiceFactory(cachedServices, serviceOptions),
+      await autofillSettingsServiceFactory(cachedServices, serviceOptions),
     );
 
     const autofillCommand = new AutofillTabCommand(
