@@ -150,23 +150,13 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
     return false;
   }
 
+  /**
+   * Identifies if the vault popup is currently open. This is done by sending a
+   * message to the popup and waiting for a response. If a response is received,
+   * the view is open.
+   */
   async isViewOpen(): Promise<boolean> {
-    if (await BrowserApi.isPopupOpen()) {
-      return true;
-    }
-
-    if (this.isSafari()) {
-      return false;
-    }
-
-    // Opera has "sidebar_panel" as a ViewType but doesn't currently work
-    if (this.isFirefox() && BrowserApi.getExtensionViews({ type: "sidebar" }).length > 0) {
-      return true;
-    }
-
-    // Opera sidebar has type of "tab" (will stick around for a while after closing sidebar)
-    const tabOpen = BrowserApi.getExtensionViews({ type: "tab" }).length > 0;
-    return tabOpen;
+    return Boolean(await BrowserApi.sendMessageWithResponse("checkVaultPopupHeartbeat"));
   }
 
   lockTimeout(): number {

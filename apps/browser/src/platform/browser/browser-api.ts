@@ -404,8 +404,12 @@ export class BrowserApi {
    * @param exemptCurrentHref - Whether to exempt the current window location from the reload.
    */
   static reloadOpenWindows(exemptCurrentHref = false) {
-    const currentHref = window?.location.href;
     const views = BrowserApi.getExtensionViews();
+    if (!views.length) {
+      return;
+    }
+
+    const currentHref = window.location.href;
     views
       .filter((w) => w.location.href != null && !w.location.href.includes("background.html"))
       .filter((w) => !exemptCurrentHref || w.location.href !== currentHref)

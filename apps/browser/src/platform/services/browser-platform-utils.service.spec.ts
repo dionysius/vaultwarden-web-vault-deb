@@ -1,5 +1,7 @@
 import { DeviceType } from "@bitwarden/common/enums";
 
+import { BrowserApi } from "../browser/browser-api";
+
 import BrowserPlatformUtilsService from "./browser-platform-utils.service";
 
 describe("Browser Utils Service", () => {
@@ -91,41 +93,24 @@ describe("Browser Utils Service", () => {
   });
 
   describe("isViewOpen", () => {
-    beforeEach(() => {
-      globalThis.chrome = {
-        // eslint-disable-next-line
-        // @ts-ignore
-        extension: {
-          getViews: jest.fn(),
-        },
-      };
+    it("returns false if a heartbeat response is not received", async () => {
+      BrowserApi.sendMessageWithResponse = jest.fn().mockResolvedValueOnce(undefined);
+
+      const isViewOpen = await browserPlatformUtilsService.isViewOpen();
+
+      expect(isViewOpen).toBe(false);
     });
 
-    it("returns true if the user is on Firefox and the sidebar is open", async () => {
-      chrome.extension.getViews = jest.fn().mockReturnValueOnce([window]);
-      jest
-        .spyOn(browserPlatformUtilsService, "getDevice")
-        .mockReturnValueOnce(DeviceType.FirefoxExtension);
+    it("returns true if a heartbeat response is received", async () => {
+      BrowserApi.sendMessageWithResponse = jest
+        .fn()
+        .mockImplementationOnce((subscriber) =>
+          Promise.resolve((subscriber === "checkVaultPopupHeartbeat") as any),
+        );
 
-      const result = await browserPlatformUtilsService.isViewOpen();
+      const isViewOpen = await browserPlatformUtilsService.isViewOpen();
 
-      expect(result).toBe(true);
-    });
-
-    it("returns true if a extension view is open as a tab", async () => {
-      chrome.extension.getViews = jest.fn().mockReturnValueOnce([window]);
-
-      const result = await browserPlatformUtilsService.isViewOpen();
-
-      expect(result).toBe(true);
-    });
-
-    it("returns false if no extension view is open", async () => {
-      chrome.extension.getViews = jest.fn().mockReturnValue([]);
-
-      const result = await browserPlatformUtilsService.isViewOpen();
-
-      expect(result).toBe(false);
+      expect(isViewOpen).toBe(true);
     });
   });
 });

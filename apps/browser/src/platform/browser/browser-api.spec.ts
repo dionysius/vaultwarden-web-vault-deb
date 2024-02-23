@@ -219,6 +219,18 @@ describe("BrowserApi", () => {
       window.location.reload = reload;
     });
 
+    it("skips reloading any windows if no views can be found", () => {
+      Object.defineProperty(window, "location", {
+        value: { reload: jest.fn(), href: "chrome-extension://id-value/background.html" },
+        writable: true,
+      });
+      chrome.extension.getViews = jest.fn().mockReturnValue([]);
+
+      BrowserApi.reloadOpenWindows();
+
+      expect(window.location.reload).not.toHaveBeenCalled();
+    });
+
     it("reloads all open windows", () => {
       Object.defineProperty(window, "location", {
         value: { reload: jest.fn(), href: "chrome-extension://id-value/index.html" },
