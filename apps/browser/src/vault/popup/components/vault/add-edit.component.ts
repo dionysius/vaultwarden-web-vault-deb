@@ -43,7 +43,6 @@ export class AddEditComponent extends BaseAddEditComponent {
   showAttachments = true;
   openAttachmentsInPopup: boolean;
   showAutoFillOnPageLoadOptions: boolean;
-  private singleActionKey: string;
 
   private fido2PopoutSessionData$ = fido2PopoutSessionData$();
 
@@ -123,9 +122,7 @@ export class AddEditComponent extends BaseAddEditComponent {
       if (params.selectedVault) {
         this.organizationId = params.selectedVault;
       }
-      if (params.singleActionKey) {
-        this.singleActionKey = params.singleActionKey;
-      }
+
       await this.load();
 
       if (!this.editMode || this.cloneMode) {
@@ -141,6 +138,10 @@ export class AddEditComponent extends BaseAddEditComponent {
       }
 
       this.openAttachmentsInPopup = BrowserPopupUtils.inPopup(window);
+
+      if (this.inAddEditPopoutWindow()) {
+        BrowserApi.messageListener("add-edit-popout", this.handleExtensionMessage.bind(this));
+      }
     });
 
     if (!this.editMode) {
@@ -358,10 +359,7 @@ export class AddEditComponent extends BaseAddEditComponent {
   }
 
   private inAddEditPopoutWindow() {
-    return BrowserPopupUtils.inSingleActionPopout(
-      window,
-      this.singleActionKey || VaultPopoutType.addEditVaultItem,
-    );
+    return BrowserPopupUtils.inSingleActionPopout(window, VaultPopoutType.addEditVaultItem);
   }
 
   async captureTOTPFromTab() {
@@ -383,6 +381,12 @@ export class AddEditComponent extends BaseAddEditComponent {
         this.i18nService.t("errorOccurred"),
         this.i18nService.t("totpCaptureError"),
       );
+    }
+  }
+
+  private handleExtensionMessage(message: { [key: string]: any; command: string }) {
+    if (message.command === "inlineAutofillMenuRefreshAddEditCipher") {
+      this.load().catch((error) => this.logService.error(error));
     }
   }
 }

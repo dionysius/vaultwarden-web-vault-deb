@@ -111,7 +111,7 @@ export class AddEditComponent implements OnInit, OnDestroy {
     protected messagingService: MessagingService,
     protected eventCollectionService: EventCollectionService,
     protected policyService: PolicyService,
-    private logService: LogService,
+    protected logService: LogService,
     protected passwordRepromptService: PasswordRepromptService,
     private organizationService: OrganizationService,
     protected sendApiService: SendApiService,
