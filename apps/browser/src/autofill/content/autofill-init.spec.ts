@@ -14,6 +14,7 @@ import AutofillInit from "./autofill-init";
 describe("AutofillInit", () => {
   let autofillInit: AutofillInit;
   const autofillOverlayContentService = mock<AutofillOverlayContentService>();
+  const originalDocumentReadyState = document.readyState;
 
   beforeEach(() => {
     chrome.runtime.connect = jest.fn().mockReturnValue({
@@ -27,6 +28,10 @@ describe("AutofillInit", () => {
   afterEach(() => {
     jest.resetModules();
     jest.clearAllMocks();
+    Object.defineProperty(document, "readyState", {
+      value: originalDocumentReadyState,
+      writable: true,
+    });
   });
 
   describe("init", () => {
@@ -36,6 +41,31 @@ describe("AutofillInit", () => {
       autofillInit.init();
 
       expect(autofillInit["setupExtensionMessageListeners"]).toHaveBeenCalled();
+    });
+
+    it("triggers a collection of page details if the document is in a `complete` ready state", () => {
+      jest.useFakeTimers();
+      Object.defineProperty(document, "readyState", { value: "complete", writable: true });
+
+      autofillInit.init();
+      jest.advanceTimersByTime(250);
+
+      expect(chrome.runtime.sendMessage).toHaveBeenCalledWith(
+        {
+          command: "bgCollectPageDetails",
+          sender: "autofillInit",
+        },
+        expect.any(Function),
+      );
+    });
+
+    it("registers a window load listener to collect the page details if the document is not in a `complete` ready state", () => {
+      jest.spyOn(window, "addEventListener");
+      Object.defineProperty(document, "readyState", { value: "loading", writable: true });
+
+      autofillInit.init();
+
+      expect(window.addEventListener).toHaveBeenCalledWith("load", expect.any(Function));
     });
   });
 

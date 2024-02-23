@@ -3,6 +3,7 @@ import { AutofillOverlayContentService } from "../services/abstractions/autofill
 import CollectAutofillContentService from "../services/collect-autofill-content.service";
 import DomElementVisibilityService from "../services/dom-element-visibility.service";
 import InsertAutofillContentService from "../services/insert-autofill-content.service";
+import { sendExtensionMessage } from "../utils";
 
 import {
   AutofillExtensionMessage,
@@ -56,6 +57,26 @@ class AutofillInit implements AutofillInitInterface {
   init() {
     this.setupExtensionMessageListeners();
     this.autofillOverlayContentService?.init();
+    this.collectPageDetailsOnLoad();
+  }
+
+  /**
+   * Triggers a collection of the page details from the
+   * background script, ensuring that autofill is ready
+   * to act on the page.
+   */
+  private collectPageDetailsOnLoad() {
+    const sendCollectDetailsMessage = () =>
+      setTimeout(
+        () => sendExtensionMessage("bgCollectPageDetails", { sender: "autofillInit" }),
+        250,
+      );
+
+    if (document.readyState === "complete") {
+      sendCollectDetailsMessage();
+    }
+
+    window.addEventListener("load", sendCollectDetailsMessage);
   }
 
   /**
