@@ -179,10 +179,7 @@ class OverlayBackground implements OverlayBackgroundInterface {
           cipher.type === CipherType.Login
             ? loginCipherIcon
             : buildCipherIcon(this.iconsServerUrl, cipher, isFaviconDisabled),
-        login:
-          cipher.type === CipherType.Login
-            ? { username: this.obscureName(cipher.login.username) }
-            : null,
+        login: cipher.type === CipherType.Login ? { username: cipher.login.username } : null,
         card: cipher.type === CipherType.Card ? cipher.card.subTitle : null,
       });
     }
@@ -424,39 +421,6 @@ class OverlayBackground implements OverlayBackgroundInterface {
       isOpeningFullOverlay,
       authStatus: await this.getAuthStatus(),
     });
-  }
-
-  /**
-   * Obscures the username by replacing all but the first and last characters with asterisks.
-   * If the username is less than 4 characters, only the first character will be shown.
-   * If the username is 6 or more characters, the first and last characters will be shown.
-   * The domain will not be obscured.
-   *
-   * @param name - The username to obscure
-   */
-  private obscureName(name: string): string {
-    if (!name) {
-      return "";
-    }
-
-    const [username, domain] = name.split("@");
-    const usernameLength = username?.length;
-    if (!usernameLength) {
-      return name;
-    }
-
-    const startingCharacters = username.slice(0, usernameLength > 4 ? 2 : 1);
-    let numberStars = usernameLength;
-    if (usernameLength > 4) {
-      numberStars = usernameLength < 6 ? numberStars - 1 : numberStars - 2;
-    }
-
-    let obscureName = `${startingCharacters}${new Array(numberStars).join("*")}`;
-    if (usernameLength >= 6) {
-      obscureName = `${obscureName}${username.slice(-1)}`;
-    }
-
-    return domain ? `${obscureName}@${domain}` : obscureName;
   }
 
   /**

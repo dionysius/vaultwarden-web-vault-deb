@@ -202,7 +202,7 @@ describe("OverlayBackground", () => {
             },
             id: "overlay-cipher-0",
             login: {
-              username: "us*******2",
+              username: "username-2",
             },
             name: "name-2",
             reprompt: cipher2.reprompt,
@@ -219,7 +219,7 @@ describe("OverlayBackground", () => {
             },
             id: "overlay-cipher-1",
             login: {
-              username: "us*******1",
+              username: "username-1",
             },
             name: "name-1",
             reprompt: cipher1.reprompt,
@@ -288,7 +288,7 @@ describe("OverlayBackground", () => {
           },
           id: "overlay-cipher-0",
           login: {
-            username: "us*******2",
+            username: "username-2",
           },
           name: "name-2",
           reprompt: cipher2.reprompt,
@@ -305,7 +305,7 @@ describe("OverlayBackground", () => {
           },
           id: "overlay-cipher-1",
           login: {
-            username: "us*******1",
+            username: "username-1",
           },
           name: "name-1",
           reprompt: cipher1.reprompt,
@@ -342,48 +342,6 @@ describe("OverlayBackground", () => {
           type: 3,
         },
       ]);
-    });
-  });
-
-  describe("obscureName", () => {
-    it("returns an empty string if the name is falsy", () => {
-      const name: string = undefined;
-
-      const obscureName = overlayBackground["obscureName"](name);
-
-      expect(obscureName).toBe("");
-    });
-
-    it("will not attempt to obscure a username that is only a domain", () => {
-      const name = "@domain.com";
-
-      const obscureName = overlayBackground["obscureName"](name);
-
-      expect(obscureName).toBe(name);
-    });
-
-    it("will obscure all characters of a name that is less than 5 characters expect for the first character", () => {
-      const name = "name@domain.com";
-
-      const obscureName = overlayBackground["obscureName"](name);
-
-      expect(obscureName).toBe("n***@domain.com");
-    });
-
-    it("will obscure all characters of a name that is greater than 4 characters by less than 6 ", () => {
-      const name = "name1@domain.com";
-
-      const obscureName = overlayBackground["obscureName"](name);
-
-      expect(obscureName).toBe("na***@domain.com");
-    });
-
-    it("will obscure all characters of a name that is greater than 5 characters except for the first two characters and the last character", () => {
-      const name = "name12@domain.com";
-
-      const obscureName = overlayBackground["obscureName"](name);
-
-      expect(obscureName).toBe("na***2@domain.com");
     });
   });
 
