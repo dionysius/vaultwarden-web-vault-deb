@@ -54,6 +54,7 @@
       [showBulkEditCollectionAccess]="
         (showBulkEditCollectionAccess$ | async) && organization?.flexibleCollections
       "
+      [viewingOrgVault]="true"
     >
     </app-vault-items>
     <ng-container *ngIf="!flexibleCollectionsV1Enabled">
