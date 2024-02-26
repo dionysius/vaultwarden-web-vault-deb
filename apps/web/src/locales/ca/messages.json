@@ -1472,13 +1472,6 @@
   "faviconDesc": {
     "message": "Mostra una imatge reconeixible al costat de cada inici de sessió."
   },
-  "enableFullWidth": {
-    "message": "Habilita la disposició de l'amplada completa",
-    "description": "Allows scaling the web vault UI's width"
-  },
-  "enableFullWidthDesc": {
-    "message": "Permet que la caixa forta web s'expandisca a tot l'ample de la finestra del navegador."
-  },
   "default": {
     "message": "Per defecte"
   },
@@ -4950,6 +4943,9 @@
   "newClientOrganizationDesc": {
     "message": "Creeu una nova organització client que s'associarà amb vosaltres com a proveïdor. Podreu accedir i gestionar aquesta organització."
   },
+  "newClient": {
+    "message": "Client nou"
+  },
   "addExistingOrganization": {
     "message": "Afig organització existent"
   },
@@ -7586,6 +7582,18 @@
     "description": "An option for the offboarding survey shown when a user cancels their subscription."
   },
   "freeForOneYear": {
-    "message": "Free for 1 year"
+    "message": "Gratuït durant 1 any"
+  },
+  "newWebApp": {
+    "message": "Benvingut a l'aplicació web nova i millorada. Obteniu més informació sobre el que ha canviat."
+  },
+  "releaseBlog": {
+    "message": "Llegiu el bloc de publicacions"
+  },
+  "adminConsole": {
+    "message": "Consola d'administració"
+  },
+  "providerPortal": {
+    "message": "Portal del proveïdor"
   }
 }

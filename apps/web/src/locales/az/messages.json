@@ -1472,13 +1472,6 @@
   "faviconDesc": {
     "message": "Hər girişin yanında tanına bilən təsvir göstər."
   },
-  "enableFullWidth": {
-    "message": "Tam en görünüşünü fəallaşdır",
-    "description": "Allows scaling the web vault UI's width"
-  },
-  "enableFullWidthDesc": {
-    "message": "Veb anbara, brauzer pəncərəsinin eninin tamamını istifadə etməsinə icazə ver."
-  },
   "default": {
     "message": "İlkin"
   },
@@ -4950,6 +4943,9 @@
   "newClientOrganizationDesc": {
     "message": "Provayder kimi sizinlə əlaqə yaradılacaq yeni bir müştəri təşkilatı yaradın. Bu təşkilata müraciət edə və onu idarə edə biləcəksiniz."
   },
+  "newClient": {
+    "message": "Yeni müştəri"
+  },
   "addExistingOrganization": {
     "message": "Mövcud təşkilatı əlavə et"
   },
@@ -7586,6 +7582,18 @@
     "description": "An option for the offboarding survey shown when a user cancels their subscription."
   },
   "freeForOneYear": {
-    "message": "Free for 1 year"
+    "message": "1 illik ödənişsiz"
+  },
+  "newWebApp": {
+    "message": "Yeni və təkmilləşdirilmiş veb tətbiqinə xoş gəlmisiniz. Nələr dəyişdiyi haqqqında daha ətraflı öyrənin."
+  },
+  "releaseBlog": {
+    "message": "Buraxılış bloqunu oxuyun"
+  },
+  "adminConsole": {
+    "message": "Admin Console"
+  },
+  "providerPortal": {
+    "message": "Provider Portal"
   }
 }

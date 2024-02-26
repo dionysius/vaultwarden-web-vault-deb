@@ -1472,13 +1472,6 @@
   "faviconDesc": {
     "message": "Hesapların yanında tanıdık görseller göster."
   },
-  "enableFullWidth": {
-    "message": "Tam genişlik düzeninde göster",
-    "description": "Allows scaling the web vault UI's width"
-  },
-  "enableFullWidthDesc": {
-    "message": "Web kasasının tarayıcı penceresi genişliğinin tamamını kullanmasına izin ver."
-  },
   "default": {
     "message": "Varsayılan"
   },
@@ -4950,6 +4943,9 @@
   "newClientOrganizationDesc": {
     "message": "Sağlayıcı olarak sizinle ilişkilendirilecek yeni bir müşteri kuruluşu oluşturun. Bu kuruluşa erişebilecek ve onu yönetebileceksiniz."
   },
+  "newClient": {
+    "message": "Yeni müşteri"
+  },
   "addExistingOrganization": {
     "message": "Mevcut kuruluşu ekle"
   },
@@ -7586,6 +7582,18 @@
     "description": "An option for the offboarding survey shown when a user cancels their subscription."
   },
   "freeForOneYear": {
-    "message": "Free for 1 year"
+    "message": "1 yıl boyunca ücretsiz"
+  },
+  "newWebApp": {
+    "message": "Yeni ve geliştirilmiş web uygulamasına hoş geldiniz. Nelerin değiştiği hakkında daha fazla bilgi edinin."
+  },
+  "releaseBlog": {
+    "message": "Sürüm blogunu okuyun"
+  },
+  "adminConsole": {
+    "message": "Yönetici Konsolu"
+  },
+  "providerPortal": {
+    "message": "Sağlayıcı Portalı"
   }
 }

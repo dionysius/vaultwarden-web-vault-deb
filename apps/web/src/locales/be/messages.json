@@ -1472,13 +1472,6 @@
   "faviconDesc": {
     "message": "Паказваць распазнавальны відарыс побач з кожным лагінам."
   },
-  "enableFullWidth": {
-    "message": "Адлюстроўваць на ўсю шырыню макета",
-    "description": "Allows scaling the web vault UI's width"
-  },
-  "enableFullWidthDesc": {
-    "message": "Дазволіць вэб-сховішчу выкарыстоўваць усю шырыню акна браўзера."
-  },
   "default": {
     "message": "Прадвызначана"
   },
@@ -4950,6 +4943,9 @@
   "newClientOrganizationDesc": {
     "message": "Стварыць новую арганізацыю кліента, які будзе звязаны з вамі, як з пастаўшчыком. У вас будзе магчымасць атрымаць доступ і кіраваць гэтай арганізацыяй."
   },
+  "newClient": {
+    "message": "New client"
+  },
   "addExistingOrganization": {
     "message": "Дадаць існуючую арганізацыю"
   },
@@ -7587,5 +7583,17 @@
   },
   "freeForOneYear": {
     "message": "Free for 1 year"
+  },
+  "newWebApp": {
+    "message": "Welcome to the new and improved web app. Learn more about what’s changed."
+  },
+  "releaseBlog": {
+    "message": "Read release blog"
+  },
+  "adminConsole": {
+    "message": "Admin Console"
+  },
+  "providerPortal": {
+    "message": "Provider Portal"
   }
 }

@@ -1472,13 +1472,6 @@
   "faviconDesc": {
     "message": "Visa en igenkännbar bild bredvid varje inloggning."
   },
-  "enableFullWidth": {
-    "message": "Aktivera layout med full bredd",
-    "description": "Allows scaling the web vault UI's width"
-  },
-  "enableFullWidthDesc": {
-    "message": "Tillåt webbvalvet att utökas till webbläsarfönstrets fulla bredd."
-  },
   "default": {
     "message": "Standard"
   },
@@ -4950,6 +4943,9 @@
   "newClientOrganizationDesc": {
     "message": "Create a new client organization that will be associated with you as the Provider. You will be able to access and manage this organization."
   },
+  "newClient": {
+    "message": "Ny klient"
+  },
   "addExistingOrganization": {
     "message": "Lägg till befintlig organisation"
   },
@@ -7587,5 +7583,17 @@
   },
   "freeForOneYear": {
     "message": "Gratis i 1 år"
+  },
+  "newWebApp": {
+    "message": "Välkommen till den nya och förbättrade webbappen. Läs mer om vad som har förändrats."
+  },
+  "releaseBlog": {
+    "message": "Read release blog"
+  },
+  "adminConsole": {
+    "message": "Admin Console"
+  },
+  "providerPortal": {
+    "message": "Provider Portal"
   }
 }

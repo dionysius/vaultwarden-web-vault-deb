@@ -1472,13 +1472,6 @@
   "faviconDesc": {
     "message": "Mostrar uma imagem reconhecível ao lado de cada login."
   },
-  "enableFullWidth": {
-    "message": "Habilitar Esquema de Largura Total",
-    "description": "Allows scaling the web vault UI's width"
-  },
-  "enableFullWidthDesc": {
-    "message": "Permitir que o cofre web expanda a largura total da janela do navegador."
-  },
   "default": {
     "message": "Padrão"
   },
@@ -4950,6 +4943,9 @@
   "newClientOrganizationDesc": {
     "message": "Crie uma nova organização de cliente que será associada a você como o provedor. Você poderá acessar e gerenciar esta organização."
   },
+  "newClient": {
+    "message": "New client"
+  },
   "addExistingOrganization": {
     "message": "Adicionar Organização Existente"
   },
@@ -7586,6 +7582,18 @@
     "description": "An option for the offboarding survey shown when a user cancels their subscription."
   },
   "freeForOneYear": {
-    "message": "Free for 1 year"
+    "message": "Grátis por 1 ano"
+  },
+  "newWebApp": {
+    "message": "Welcome to the new and improved web app. Learn more about what’s changed."
+  },
+  "releaseBlog": {
+    "message": "Read release blog"
+  },
+  "adminConsole": {
+    "message": "Admin Console"
+  },
+  "providerPortal": {
+    "message": "Provider Portal"
   }
 }

@@ -1472,13 +1472,6 @@
   "faviconDesc": {
     "message": "Näytä tunnistettava kuvake jokaiselle kirjautumistiedolle."
   },
-  "enableFullWidth": {
-    "message": "Käytä täyden leveyden asettelua",
-    "description": "Allows scaling the web vault UI's width"
-  },
-  "enableFullWidthDesc": {
-    "message": "Salli verkkoholvin laajentua selainikkunan koko leveydelle."
-  },
   "default": {
     "message": "Oletus"
   },
@@ -4950,6 +4943,9 @@
   "newClientOrganizationDesc": {
     "message": "Luo uusi asiakasorganisaatio, joka liitetään sinuun toimittajana. Voit käyttää ja hallita tätä organisaatiota."
   },
+  "newClient": {
+    "message": "Uusi asiakas"
+  },
   "addExistingOrganization": {
     "message": "Lisää olemassa oleva organisaatio"
   },
@@ -7586,6 +7582,18 @@
     "description": "An option for the offboarding survey shown when a user cancels their subscription."
   },
   "freeForOneYear": {
-    "message": "Free for 1 year"
+    "message": "Ilmainen 1 vuoden ajan"
+  },
+  "newWebApp": {
+    "message": "Tervetuloa uuteen, entistä parempaan verkkosovellukseen. Lue lisää siitä, mikä on muuttunut."
+  },
+  "releaseBlog": {
+    "message": "Lue julkaisublogia"
+  },
+  "adminConsole": {
+    "message": "Hallintapaneeli"
+  },
+  "providerPortal": {
+    "message": "Toimittajaportaali"
   }
 }

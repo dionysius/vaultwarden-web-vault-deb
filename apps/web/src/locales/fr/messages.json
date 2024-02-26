@@ -1472,13 +1472,6 @@
   "faviconDesc": {
     "message": "Affichez une image reconnaissable à côté de chaque identifiant."
   },
-  "enableFullWidth": {
-    "message": "Afficher la mise en page en pleine largeur",
-    "description": "Allows scaling the web vault UI's width"
-  },
-  "enableFullWidthDesc": {
-    "message": "Permettez au coffre web de s'étendre sur toute la largeur de la fenêtre du navigateur."
-  },
   "default": {
     "message": "Par défaut"
   },
@@ -4950,6 +4943,9 @@
   "newClientOrganizationDesc": {
     "message": "Créez une nouvelle organisation cliente qui sera associée avec vous en tant que fournisseur. Vous pourrez accéder à cette organisation et la gérer."
   },
+  "newClient": {
+    "message": "Nouveau client"
+  },
   "addExistingOrganization": {
     "message": "Ajouter une organisation existante"
   },
@@ -7587,5 +7583,17 @@
   },
   "freeForOneYear": {
     "message": "Gratuit pour 1 an"
+  },
+  "newWebApp": {
+    "message": "Bienvenue dans la nouvelle application web améliorée. En savoir plus sur ce qui a changé."
+  },
+  "releaseBlog": {
+    "message": "Lire le blog de la version"
+  },
+  "adminConsole": {
+    "message": "Console Admin"
+  },
+  "providerPortal": {
+    "message": "Portail fournisseur"
   }
 }

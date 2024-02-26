@@ -1472,13 +1472,6 @@
   "faviconDesc": {
     "message": "Отображать узнаваемое изображение рядом с каждым логином."
   },
-  "enableFullWidth": {
-    "message": "Активировать отображение на всю ширину",
-    "description": "Allows scaling the web vault UI's width"
-  },
-  "enableFullWidthDesc": {
-    "message": "Разрешить веб-хранилищу использовать всю ширину окна браузера."
-  },
   "default": {
     "message": "По умолчанию"
   },
@@ -4950,6 +4943,9 @@
   "newClientOrganizationDesc": {
     "message": "Создайте новую организацию клиента, которая будет связана с вами как с поставщиком. Вы сможете получить доступ к этой организации и управлять ею."
   },
+  "newClient": {
+    "message": "Новый клиент"
+  },
   "addExistingOrganization": {
     "message": "Добавить существующую организацию"
   },
@@ -7586,6 +7582,18 @@
     "description": "An option for the offboarding survey shown when a user cancels their subscription."
   },
   "freeForOneYear": {
-    "message": "Free for 1 year"
+    "message": "Бесплатно на 1 год"
+  },
+  "newWebApp": {
+    "message": "Добро пожаловать в новое и улучшенное веб-приложение. Узнайте больше о том, что изменилось."
+  },
+  "releaseBlog": {
+    "message": "Прочитать блог о релизе"
+  },
+  "adminConsole": {
+    "message": "Консоль администратора"
+  },
+  "providerPortal": {
+    "message": "Портал провайдера"
   }
 }

@@ -1472,13 +1472,6 @@
   "faviconDesc": {
     "message": "Ein wiedererkennbares Bild neben jeden Zugangsdaten anzeigen."
   },
-  "enableFullWidth": {
-    "message": "Darstellung in voller Breite aktivieren",
-    "description": "Allows scaling the web vault UI's width"
-  },
-  "enableFullWidthDesc": {
-    "message": "Dem Web-Tresor erlauben, die volle Breite des Browserfensters zu benutzen."
-  },
   "default": {
     "message": "Standard"
   },
@@ -4950,6 +4943,9 @@
   "newClientOrganizationDesc": {
     "message": "Erstelle eine neue Kunden-Organisation, die dir als Anbieter zugeordnet wird. Du kannst auf diese Organisation zugreifen und diese verwalten."
   },
+  "newClient": {
+    "message": "New client"
+  },
   "addExistingOrganization": {
     "message": "Bestehende Organisation hinzufügen"
   },
@@ -7587,5 +7583,17 @@
   },
   "freeForOneYear": {
     "message": "Free for 1 year"
+  },
+  "newWebApp": {
+    "message": "Welcome to the new and improved web app. Learn more about what’s changed."
+  },
+  "releaseBlog": {
+    "message": "Read release blog"
+  },
+  "adminConsole": {
+    "message": "Administrator-Konsole"
+  },
+  "providerPortal": {
+    "message": "Anbieterportal"
   }
 }

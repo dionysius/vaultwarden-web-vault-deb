@@ -1472,13 +1472,6 @@
   "faviconDesc": {
     "message": "Vis et genkendeligt billede ud for hvert login."
   },
-  "enableFullWidth": {
-    "message": "Vis layout i fuld bredde",
-    "description": "Allows scaling the web vault UI's width"
-  },
-  "enableFullWidthDesc": {
-    "message": "Lad web-boksen udnytte browservinduets fulde bredde."
-  },
   "default": {
     "message": "Standard"
   },
@@ -4950,6 +4943,9 @@
   "newClientOrganizationDesc": {
     "message": "Opret en ny klientorganisation, der tilknyttes dig som udbyderen. Du vil kunne tilgå og håndtere denne organisation."
   },
+  "newClient": {
+    "message": "Ny klient"
+  },
   "addExistingOrganization": {
     "message": "Tilføj eksisterende organisation"
   },
@@ -7586,6 +7582,18 @@
     "description": "An option for the offboarding survey shown when a user cancels their subscription."
   },
   "freeForOneYear": {
-    "message": "Free for 1 year"
+    "message": "Gratis i 1 år"
+  },
+  "newWebApp": {
+    "message": "Velkommen til den nye og forbedrede web-app. Læs mere om, hvad der er ændret."
+  },
+  "releaseBlog": {
+    "message": "Læs udgivelsesblog"
+  },
+  "adminConsole": {
+    "message": "Admin-konsol"
+  },
+  "providerPortal": {
+    "message": "Udbyderportal"
   }
 }

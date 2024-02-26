@@ -1472,13 +1472,6 @@
   "faviconDesc": {
     "message": "Показване на разпознаваемо изображение до всеки запис."
   },
-  "enableFullWidth": {
-    "message": "Извеждане на цяла широчина",
-    "description": "Allows scaling the web vault UI's width"
-  },
-  "enableFullWidthDesc": {
-    "message": "Трезорът по уеб да заема цялата широчина на прозореца на браузъра."
-  },
   "default": {
     "message": "Стандартно"
   },
@@ -4950,6 +4943,9 @@
   "newClientOrganizationDesc": {
     "message": "Създаване на нова клиентска организация, за която ще играете ролята на доставчик. Вие ще имате достъп до тази организация и ще можете да я управлявате."
   },
+  "newClient": {
+    "message": "Нов клиент"
+  },
   "addExistingOrganization": {
     "message": "Добавяне на съществуваща организация"
   },
@@ -7586,6 +7582,18 @@
     "description": "An option for the offboarding survey shown when a user cancels their subscription."
   },
   "freeForOneYear": {
-    "message": "Free for 1 year"
+    "message": "Безплатно за 1 година"
+  },
+  "newWebApp": {
+    "message": "Добре дошли в новото и подобрено уеб приложение. Научете повече за това какво се е променило."
+  },
+  "releaseBlog": {
+    "message": "Прочетете публикацията за изданието в блога"
+  },
+  "adminConsole": {
+    "message": "Административна конзола"
+  },
+  "providerPortal": {
+    "message": "Портал за доставчици"
   }
 }
