@@ -1,7 +1,6 @@
 import { mock, MockProxy } from "jest-mock-extended";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
-import { AuthRequestCryptoServiceAbstraction } from "@bitwarden/common/auth/abstractions/auth-request-crypto.service.abstraction";
 import { DeviceTrustCryptoServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust-crypto.service.abstraction";
 import { KeyConnectorService } from "@bitwarden/common/auth/abstractions/key-connector.service";
 import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
@@ -20,6 +19,7 @@ import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/sym
 import { CsprngArray } from "@bitwarden/common/types/csprng";
 import { DeviceKey, UserKey, MasterKey } from "@bitwarden/common/types/key";
 
+import { AuthRequestServiceAbstraction } from "../abstractions";
 import { SsoLoginCredentials } from "../models/domain/login-credentials";
 
 import { identityTokenResponseFactory } from "./login.strategy.spec";
@@ -40,7 +40,7 @@ describe("SsoLoginStrategy", () => {
   let twoFactorService: MockProxy<TwoFactorService>;
   let keyConnectorService: MockProxy<KeyConnectorService>;
   let deviceTrustCryptoService: MockProxy<DeviceTrustCryptoServiceAbstraction>;
-  let authRequestCryptoService: MockProxy<AuthRequestCryptoServiceAbstraction>;
+  let authRequestService: MockProxy<AuthRequestServiceAbstraction>;
   let i18nService: MockProxy<I18nService>;
 
   let ssoLoginStrategy: SsoLoginStrategy;
@@ -66,7 +66,7 @@ describe("SsoLoginStrategy", () => {
     twoFactorService = mock<TwoFactorService>();
     keyConnectorService = mock<KeyConnectorService>();
     deviceTrustCryptoService = mock<DeviceTrustCryptoServiceAbstraction>();
-    authRequestCryptoService = mock<AuthRequestCryptoServiceAbstraction>();
+    authRequestService = mock<AuthRequestServiceAbstraction>();
     i18nService = mock<I18nService>();
 
     tokenService.getTwoFactorToken.mockResolvedValue(null);
@@ -85,7 +85,7 @@ describe("SsoLoginStrategy", () => {
       twoFactorService,
       keyConnectorService,
       deviceTrustCryptoService,
-      authRequestCryptoService,
+      authRequestService,
       i18nService,
     );
     credentials = new SsoLoginCredentials(ssoCode, ssoCodeVerifier, ssoRedirectUrl, ssoOrgId);

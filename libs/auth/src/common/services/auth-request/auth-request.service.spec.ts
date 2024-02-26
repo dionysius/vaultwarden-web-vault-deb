@@ -1,32 +1,71 @@
 import { mock } from "jest-mock-extended";
 
-import { CryptoService } from "../../platform/abstractions/crypto.service";
-import { Utils } from "../../platform/misc/utils";
-import { SymmetricCryptoKey } from "../../platform/models/domain/symmetric-crypto-key";
-import { UserKey, MasterKey } from "../../types/key";
-import { AuthRequestCryptoServiceAbstraction } from "../abstractions/auth-request-crypto.service.abstraction";
-import { AuthRequestResponse } from "../models/response/auth-request.response";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { AuthRequestResponse } from "@bitwarden/common/auth/models/response/auth-request.response";
+import { AppIdService } from "@bitwarden/common/platform/abstractions/app-id.service";
+import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
+import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
+import { Utils } from "@bitwarden/common/platform/misc/utils";
+import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
+import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
+import { MasterKey, UserKey } from "@bitwarden/common/types/key";
 
-import { AuthRequestCryptoServiceImplementation } from "./auth-request-crypto.service.implementation";
+import { AuthRequestService } from "./auth-request.service";
 
-describe("AuthRequestCryptoService", () => {
-  let authReqCryptoService: AuthRequestCryptoServiceAbstraction;
+describe("AuthRequestService", () => {
+  let sut: AuthRequestService;
+
+  const appIdService = mock<AppIdService>();
   const cryptoService = mock<CryptoService>();
+  const apiService = mock<ApiService>();
+  const stateService = mock<StateService>();
+
   let mockPrivateKey: Uint8Array;
 
   beforeEach(() => {
     jest.clearAllMocks();
-    jest.resetAllMocks();
 
-    authReqCryptoService = new AuthRequestCryptoServiceImplementation(cryptoService);
+    sut = new AuthRequestService(appIdService, cryptoService, apiService, stateService);
 
     mockPrivateKey = new Uint8Array(64);
   });
 
-  it("instantiates", () => {
-    expect(authReqCryptoService).not.toBeFalsy();
-  });
+  describe("approveOrDenyAuthRequest", () => {
+    beforeEach(() => {
+      cryptoService.rsaEncrypt.mockResolvedValue({
+        encryptedString: "ENCRYPTED_STRING",
+      } as EncString);
+      appIdService.getAppId.mockResolvedValue("APP_ID");
+    });
+    it("should throw if auth request is missing id or key", async () => {
+      const authRequestNoId = new AuthRequestResponse({ id: "", key: "KEY" });
+      const authRequestNoKey = new AuthRequestResponse({ id: "123", key: "" });
 
+      await expect(sut.approveOrDenyAuthRequest(true, authRequestNoId)).rejects.toThrow(
+        "Auth request has no id",
+      );
+      await expect(sut.approveOrDenyAuthRequest(true, authRequestNoKey)).rejects.toThrow(
+        "Auth request has no public key",
+      );
+    });
+
+    it("should use the master key and hash if they exist", async () => {
+      cryptoService.getMasterKey.mockResolvedValueOnce({ encKey: new Uint8Array(64) } as MasterKey);
+      stateService.getKeyHash.mockResolvedValueOnce("KEY_HASH");
+
+      await sut.approveOrDenyAuthRequest(true, new AuthRequestResponse({ id: "123", key: "KEY" }));
+
+      expect(cryptoService.rsaEncrypt).toHaveBeenCalledWith(new Uint8Array(64), expect.anything());
+    });
+
+    it("should use the user key if the master key and hash do not exist", async () => {
+      cryptoService.getUserKey.mockResolvedValueOnce({ key: new Uint8Array(64) } as UserKey);
+
+      await sut.approveOrDenyAuthRequest(true, new AuthRequestResponse({ id: "123", key: "KEY" }));
+
+      expect(cryptoService.rsaEncrypt).toHaveBeenCalledWith(new Uint8Array(64), expect.anything());
+    });
+  });
   describe("setUserKeyAfterDecryptingSharedUserKey", () => {
     it("decrypts and sets user key when given valid auth request response and private key", async () => {
       // Arrange
@@ -35,20 +74,15 @@ describe("AuthRequestCryptoService", () => {
       } as AuthRequestResponse;
 
       const mockDecryptedUserKey = {} as UserKey;
-      jest
-        .spyOn(authReqCryptoService, "decryptPubKeyEncryptedUserKey")
-        .mockResolvedValueOnce(mockDecryptedUserKey);
+      jest.spyOn(sut, "decryptPubKeyEncryptedUserKey").mockResolvedValueOnce(mockDecryptedUserKey);
 
       cryptoService.setUserKey.mockResolvedValueOnce(undefined);
 
       // Act
-      await authReqCryptoService.setUserKeyAfterDecryptingSharedUserKey(
-        mockAuthReqResponse,
-        mockPrivateKey,
-      );
+      await sut.setUserKeyAfterDecryptingSharedUserKey(mockAuthReqResponse, mockPrivateKey);
 
       // Assert
-      expect(authReqCryptoService.decryptPubKeyEncryptedUserKey).toBeCalledWith(
+      expect(sut.decryptPubKeyEncryptedUserKey).toBeCalledWith(
         mockAuthReqResponse.key,
         mockPrivateKey,
       );
@@ -68,12 +102,10 @@ describe("AuthRequestCryptoService", () => {
       const mockDecryptedMasterKeyHash = "mockDecryptedMasterKeyHash";
       const mockDecryptedUserKey = {} as UserKey;
 
-      jest
-        .spyOn(authReqCryptoService, "decryptPubKeyEncryptedMasterKeyAndHash")
-        .mockResolvedValueOnce({
-          masterKey: mockDecryptedMasterKey,
-          masterKeyHash: mockDecryptedMasterKeyHash,
-        });
+      jest.spyOn(sut, "decryptPubKeyEncryptedMasterKeyAndHash").mockResolvedValueOnce({
+        masterKey: mockDecryptedMasterKey,
+        masterKeyHash: mockDecryptedMasterKeyHash,
+      });
 
       cryptoService.setMasterKey.mockResolvedValueOnce(undefined);
       cryptoService.setMasterKeyHash.mockResolvedValueOnce(undefined);
@@ -81,13 +113,10 @@ describe("AuthRequestCryptoService", () => {
       cryptoService.setUserKey.mockResolvedValueOnce(undefined);
 
       // Act
-      await authReqCryptoService.setKeysAfterDecryptingSharedMasterKeyAndHash(
-        mockAuthReqResponse,
-        mockPrivateKey,
-      );
+      await sut.setKeysAfterDecryptingSharedMasterKeyAndHash(mockAuthReqResponse, mockPrivateKey);
 
       // Assert
-      expect(authReqCryptoService.decryptPubKeyEncryptedMasterKeyAndHash).toBeCalledWith(
+      expect(sut.decryptPubKeyEncryptedMasterKeyAndHash).toBeCalledWith(
         mockAuthReqResponse.key,
         mockAuthReqResponse.masterPasswordHash,
         mockPrivateKey,
@@ -109,7 +138,7 @@ describe("AuthRequestCryptoService", () => {
       cryptoService.rsaDecrypt.mockResolvedValueOnce(mockDecryptedUserKeyBytes);
 
       // Act
-      const result = await authReqCryptoService.decryptPubKeyEncryptedUserKey(
+      const result = await sut.decryptPubKeyEncryptedUserKey(
         mockPubKeyEncryptedUserKey,
         mockPrivateKey,
       );
@@ -138,7 +167,7 @@ describe("AuthRequestCryptoService", () => {
         .mockResolvedValueOnce(mockDecryptedMasterKeyHashBytes);
 
       // Act
-      const result = await authReqCryptoService.decryptPubKeyEncryptedMasterKeyAndHash(
+      const result = await sut.decryptPubKeyEncryptedMasterKeyAndHash(
         mockPubKeyEncryptedMasterKey,
         mockPubKeyEncryptedMasterKeyHash,
         mockPrivateKey,

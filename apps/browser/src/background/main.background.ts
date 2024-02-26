@@ -5,6 +5,8 @@ import {
   PinCryptoService,
   LoginStrategyServiceAbstraction,
   LoginStrategyService,
+  AuthRequestServiceAbstraction,
+  AuthRequestService,
 } from "@bitwarden/auth/common";
 import { AvatarUpdateService as AvatarUpdateServiceAbstraction } from "@bitwarden/common/abstractions/account/avatar-update.service";
 import { ApiService as ApiServiceAbstraction } from "@bitwarden/common/abstractions/api.service";
@@ -22,7 +24,6 @@ import { ProviderService as ProviderServiceAbstraction } from "@bitwarden/common
 import { PolicyApiService } from "@bitwarden/common/admin-console/services/policy/policy-api.service";
 import { ProviderService } from "@bitwarden/common/admin-console/services/provider.service";
 import { AccountService as AccountServiceAbstraction } from "@bitwarden/common/auth/abstractions/account.service";
-import { AuthRequestCryptoServiceAbstraction } from "@bitwarden/common/auth/abstractions/auth-request-crypto.service.abstraction";
 import { AuthService as AuthServiceAbstraction } from "@bitwarden/common/auth/abstractions/auth.service";
 import { DeviceTrustCryptoServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust-crypto.service.abstraction";
 import { DevicesServiceAbstraction } from "@bitwarden/common/auth/abstractions/devices/devices.service.abstraction";
@@ -35,7 +36,6 @@ import { UserVerificationService as UserVerificationServiceAbstraction } from "@
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 import { ForceSetPasswordReason } from "@bitwarden/common/auth/models/domain/force-set-password-reason";
 import { AccountServiceImplementation } from "@bitwarden/common/auth/services/account.service";
-import { AuthRequestCryptoServiceImplementation } from "@bitwarden/common/auth/services/auth-request-crypto.service.implementation";
 import { AuthService } from "@bitwarden/common/auth/services/auth.service";
 import { DeviceTrustCryptoService } from "@bitwarden/common/auth/services/device-trust-crypto.service.implementation";
 import { DevicesServiceImplementation } from "@bitwarden/common/auth/services/devices/devices.service.implementation";
@@ -274,7 +274,7 @@ export default class MainBackground {
   devicesApiService: DevicesApiServiceAbstraction;
   devicesService: DevicesServiceAbstraction;
   deviceTrustCryptoService: DeviceTrustCryptoServiceAbstraction;
-  authRequestCryptoService: AuthRequestCryptoServiceAbstraction;
+  authRequestService: AuthRequestServiceAbstraction;
   accountService: AccountServiceAbstraction;
   globalStateProvider: GlobalStateProvider;
   pinCryptoService: PinCryptoServiceAbstraction;
@@ -531,7 +531,12 @@ export default class MainBackground {
 
     this.devicesService = new DevicesServiceImplementation(this.devicesApiService);
 
-    this.authRequestCryptoService = new AuthRequestCryptoServiceImplementation(this.cryptoService);
+    this.authRequestService = new AuthRequestService(
+      this.appIdService,
+      this.cryptoService,
+      this.apiService,
+      this.stateService,
+    );
 
     this.authService = new AuthService(
       backgroundMessagingService,
@@ -557,7 +562,7 @@ export default class MainBackground {
       this.passwordStrengthService,
       this.policyService,
       this.deviceTrustCryptoService,
-      this.authRequestCryptoService,
+      this.authRequestService,
     );
 
     this.userVerificationApiService = new UserVerificationApiService(this.apiService);
