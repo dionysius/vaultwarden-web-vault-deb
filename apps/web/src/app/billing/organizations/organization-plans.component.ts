@@ -642,6 +642,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
     request.collectionName = collectionCt;
     request.name = this.formGroup.controls.name.value;
     request.billingEmail = this.formGroup.controls.billingEmail.value;
+    request.initiationPath = "New organization creation in-product";
     request.keys = new OrganizationKeysRequest(orgKeys[0], orgKeys[1].encryptedString);
 
     if (this.selectedPlan.type === PlanType.Free) {
