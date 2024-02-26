@@ -2709,10 +2709,10 @@
     "message": "DUO'yu başlatın ve oturum açmayı tamamlamak için adımları izleyin."
   },
   "duoRequiredForAccount": {
-    "message": "Duo two-step login is required for your account."
+    "message": "Hesabınız için Duo'ya iki adımlı giriş yapmanız gerekiyor."
   },
   "popoutTheExtensionToCompleteLogin": {
-    "message": "Popout the extension to complete login."
+    "message": "Oturum açma işlemini tamamlamak için uzantıyı açın."
   },
   "popoutExtension": {
     "message": "Popout uzantısı"
@@ -2993,5 +2993,17 @@
   "makeDefault": {
     "message": "Varsayılan yap",
     "description": "Button text for the setting that allows overriding the default browser autofill settings"
+  },
+  "saveCipherAttemptSuccess": {
+    "message": "Kimlik bilgileri başarıyla kaydedildi!",
+    "description": "Notification message for when saving credentials has succeeded."
+  },
+  "updateCipherAttemptSuccess": {
+    "message": "Kimlik bilgileri başarıyla güncellendi!",
+    "description": "Notification message for when updating credentials has succeeded."
+  },
+  "saveCipherAttemptFailed": {
+    "message": "Kimlik bilgileri kaydedilirken hata oluştu. Ayrıntılar için konsolu kontrol edin.",
+    "description": "Notification message for when saving credentials has failed."
   }
 }

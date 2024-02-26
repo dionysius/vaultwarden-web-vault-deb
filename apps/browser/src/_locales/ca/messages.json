@@ -2709,10 +2709,10 @@
     "message": "Inicieu DUO i seguiu els passos per finalitzar la sessió."
   },
   "duoRequiredForAccount": {
-    "message": "Duo two-step login is required for your account."
+    "message": "Es requereix l'inici de sessió en dos passos de DUO al vostre compte."
   },
   "popoutTheExtensionToCompleteLogin": {
-    "message": "Popout the extension to complete login."
+    "message": "Desplega l'extensió per completar l'inici de sessió."
   },
   "popoutExtension": {
     "message": "Extensió emergent"
@@ -2993,5 +2993,17 @@
   "makeDefault": {
     "message": "Estableix per defecte",
     "description": "Button text for the setting that allows overriding the default browser autofill settings"
+  },
+  "saveCipherAttemptSuccess": {
+    "message": "Les credencials s'han guardat correctament!",
+    "description": "Notification message for when saving credentials has succeeded."
+  },
+  "updateCipherAttemptSuccess": {
+    "message": "Les credencials s'han actualitzat correctament!",
+    "description": "Notification message for when updating credentials has succeeded."
+  },
+  "saveCipherAttemptFailed": {
+    "message": "S'ha produït un error en guardar les credencials. Consulteu la consola per obtenir més informació.",
+    "description": "Notification message for when saving credentials has failed."
   }
 }

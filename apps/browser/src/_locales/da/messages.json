@@ -2709,10 +2709,10 @@
     "message": "Start DUO og følg trinene for at fuldføre indlogningen."
   },
   "duoRequiredForAccount": {
-    "message": "Duo two-step login is required for your account."
+    "message": "Duo-totrinsindlogning kræves for kontoen."
   },
   "popoutTheExtensionToCompleteLogin": {
-    "message": "Popout the extension to complete login."
+    "message": "Pop udvidelsen ud for at fuldføre indlogning."
   },
   "popoutExtension": {
     "message": "Pop ud-udvidelse"
@@ -2993,5 +2993,17 @@
   "makeDefault": {
     "message": "Gør til standard",
     "description": "Button text for the setting that allows overriding the default browser autofill settings"
+  },
+  "saveCipherAttemptSuccess": {
+    "message": "Legitimationsoplysninger er gemt!",
+    "description": "Notification message for when saving credentials has succeeded."
+  },
+  "updateCipherAttemptSuccess": {
+    "message": "Legitimationsoplysninger er opdateret!",
+    "description": "Notification message for when updating credentials has succeeded."
+  },
+  "saveCipherAttemptFailed": {
+    "message": "Fejl under import. Tjek konsollen for detaljer.",
+    "description": "Notification message for when saving credentials has failed."
   }
 }

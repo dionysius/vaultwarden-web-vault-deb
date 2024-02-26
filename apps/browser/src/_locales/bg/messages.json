@@ -2709,10 +2709,10 @@
     "message": "Стартирайте DUO и следвайте инструкциите, за да завършите вписването."
   },
   "duoRequiredForAccount": {
-    "message": "Duo two-step login is required for your account."
+    "message": "Вашата регистрация изисква двустепенно удостоверяване чрез Duo."
   },
   "popoutTheExtensionToCompleteLogin": {
-    "message": "Popout the extension to complete login."
+    "message": "Отворете разширението в изскачащ прозорец, за да завършите вписването."
   },
   "popoutExtension": {
     "message": "Отваряне на разширението в нов прозорец"
@@ -2993,5 +2993,17 @@
   "makeDefault": {
     "message": "Задаване по подразбиране",
     "description": "Button text for the setting that allows overriding the default browser autofill settings"
+  },
+  "saveCipherAttemptSuccess": {
+    "message": "Идентификационните данни са запазени успешно!",
+    "description": "Notification message for when saving credentials has succeeded."
+  },
+  "updateCipherAttemptSuccess": {
+    "message": "Идентификационните данни са променени успешно!",
+    "description": "Notification message for when updating credentials has succeeded."
+  },
+  "saveCipherAttemptFailed": {
+    "message": "Грешка при запазването на идентификационните данни. Вижте конзолата за подробности.",
+    "description": "Notification message for when saving credentials has failed."
   }
 }

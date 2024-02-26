@@ -2005,7 +2005,7 @@
     "message": "Pasirinkti aplankalą..."
   },
   "noFoldersFound": {
-    "message": "No folders found",
+    "message": "Nerasta aplankų.",
     "description": "Used as a message within the notification bar when no folders are found"
   },
   "orgPermissionsUpdatedMustSetPassword": {
@@ -2709,10 +2709,10 @@
     "message": "Paleisk DUO ir sek veiksmus, kad baigtum prisijungti."
   },
   "duoRequiredForAccount": {
-    "message": "Duo two-step login is required for your account."
+    "message": "Tavo paskyrai reikalingas Duo dviejų veiksmų prisijungimas."
   },
   "popoutTheExtensionToCompleteLogin": {
-    "message": "Popout the extension to complete login."
+    "message": "Išskleisk plėtinį, kad užbaigtum prisijungimą."
   },
   "popoutExtension": {
     "message": "Iššokantis plėtinys"
@@ -2993,5 +2993,17 @@
   "makeDefault": {
     "message": "Padaryti numatytuoju",
     "description": "Button text for the setting that allows overriding the default browser autofill settings"
+  },
+  "saveCipherAttemptSuccess": {
+    "message": "Kredencialai išsaugoti sėkmingai.",
+    "description": "Notification message for when saving credentials has succeeded."
+  },
+  "updateCipherAttemptSuccess": {
+    "message": "Kredencialai atnaujinti sėkmingai.",
+    "description": "Notification message for when updating credentials has succeeded."
+  },
+  "saveCipherAttemptFailed": {
+    "message": "Klaida išsaugant kredencialus. Išsamesnės informacijos patikrink konsolėje.",
+    "description": "Notification message for when saving credentials has failed."
   }
 }

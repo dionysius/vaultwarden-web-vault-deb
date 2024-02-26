@@ -2709,10 +2709,10 @@
     "message": "Spustite DUO a postupujte podľa pokynov na dokončenie prihlásenia."
   },
   "duoRequiredForAccount": {
-    "message": "Duo two-step login is required for your account."
+    "message": "Pre váš účet je potrebné dvojstupňové prihlásenie Duo."
   },
   "popoutTheExtensionToCompleteLogin": {
-    "message": "Popout the extension to complete login."
+    "message": "Ak chcete dokončiť prihlásenie, otvorte rozšírenie."
   },
   "popoutExtension": {
     "message": "Zobraziť rozšírenie v novom okne"
@@ -2993,5 +2993,17 @@
   "makeDefault": {
     "message": "Nastaviť ako predvolený",
     "description": "Button text for the setting that allows overriding the default browser autofill settings"
+  },
+  "saveCipherAttemptSuccess": {
+    "message": "Prihlasovacie údaje boli úspešne uložené!",
+    "description": "Notification message for when saving credentials has succeeded."
+  },
+  "updateCipherAttemptSuccess": {
+    "message": "Prihlasovacie údaje boli úspešne aktualizované!",
+    "description": "Notification message for when updating credentials has succeeded."
+  },
+  "saveCipherAttemptFailed": {
+    "message": "Chyba pri ukladaní prihlasovacích údajov. Viac informácii nájdete v konzole.",
+    "description": "Notification message for when saving credentials has failed."
   }
 }

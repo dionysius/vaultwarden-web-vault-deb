@@ -2709,10 +2709,10 @@
     "message": "Avaa Duo ja viimeistele kirjautuminen seuraamalla ohjeita."
   },
   "duoRequiredForAccount": {
-    "message": "Duo two-step login is required for your account."
+    "message": "Tilillesi kirjautuminen vaatii Duo-vahvistuksen."
   },
   "popoutTheExtensionToCompleteLogin": {
-    "message": "Popout the extension to complete login."
+    "message": "Viimeistele kirjautuminen avaamalla laajennus erilliseen ikkunaan."
   },
   "popoutExtension": {
     "message": "Irrota laajennus"
@@ -2993,5 +2993,17 @@
   "makeDefault": {
     "message": "Määritä oletukseksi",
     "description": "Button text for the setting that allows overriding the default browser autofill settings"
+  },
+  "saveCipherAttemptSuccess": {
+    "message": "Käyttäjätiedot on tallennettu!",
+    "description": "Notification message for when saving credentials has succeeded."
+  },
+  "updateCipherAttemptSuccess": {
+    "message": "Käyttäjätiedot on päivitetty!",
+    "description": "Notification message for when updating credentials has succeeded."
+  },
+  "saveCipherAttemptFailed": {
+    "message": "Virhe tallennettaessa käyttäjätietoja. Näet isätietoja hallinnasta.",
+    "description": "Notification message for when saving credentials has failed."
   }
 }

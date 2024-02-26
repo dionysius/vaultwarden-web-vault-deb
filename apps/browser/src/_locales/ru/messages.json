@@ -2709,10 +2709,10 @@
     "message": "Запустите Duo и следуйте шагам для завершения авторизации."
   },
   "duoRequiredForAccount": {
-    "message": "Duo two-step login is required for your account."
+    "message": "Для вашего аккаунта требуется двухэтапная аутентификация Duo."
   },
   "popoutTheExtensionToCompleteLogin": {
-    "message": "Popout the extension to complete login."
+    "message": "Запустите расширение для завершения авторизации."
   },
   "popoutExtension": {
     "message": "Открепить расширение"
@@ -2993,5 +2993,17 @@
   "makeDefault": {
     "message": "Установить по умолчанию",
     "description": "Button text for the setting that allows overriding the default browser autofill settings"
+  },
+  "saveCipherAttemptSuccess": {
+    "message": "Учетные данные успешно сохранены!",
+    "description": "Notification message for when saving credentials has succeeded."
+  },
+  "updateCipherAttemptSuccess": {
+    "message": "Учетные данные успешно обновлены!",
+    "description": "Notification message for when updating credentials has succeeded."
+  },
+  "saveCipherAttemptFailed": {
+    "message": "Ошибка сохранения учетных данных. Проверьте консоль для получения подробной информации.",
+    "description": "Notification message for when saving credentials has failed."
   }
 }

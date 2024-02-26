@@ -2709,10 +2709,10 @@
     "message": "Avvia DUO e segui i passaggi per finire di accedere."
   },
   "duoRequiredForAccount": {
-    "message": "Duo two-step login is required for your account."
+    "message": "Per il tuo account è richiesta la verifica in due passaggi DUO."
   },
   "popoutTheExtensionToCompleteLogin": {
-    "message": "Popout the extension to complete login."
+    "message": "Apri l'estensione in un popup per completare l'accesso."
   },
   "popoutExtension": {
     "message": "Estrai estensione"
@@ -2993,5 +2993,17 @@
   "makeDefault": {
     "message": "Rendi predefinito",
     "description": "Button text for the setting that allows overriding the default browser autofill settings"
+  },
+  "saveCipherAttemptSuccess": {
+    "message": "Credenziali salvate!",
+    "description": "Notification message for when saving credentials has succeeded."
+  },
+  "updateCipherAttemptSuccess": {
+    "message": "Credenziali aggiornate!",
+    "description": "Notification message for when updating credentials has succeeded."
+  },
+  "saveCipherAttemptFailed": {
+    "message": "Errore durante il salvataggio delle credenziali. Controlla la console per più dettagli.",
+    "description": "Notification message for when saving credentials has failed."
   }
 }

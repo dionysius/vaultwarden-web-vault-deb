@@ -2709,10 +2709,10 @@
     "message": "Spusťte DUO a pro dokončení přihlášení postupujte podle kroků."
   },
   "duoRequiredForAccount": {
-    "message": "Duo two-step login is required for your account."
+    "message": "Pro Váš účet je vyžadováno dvoufázové přihlášení DUO."
   },
   "popoutTheExtensionToCompleteLogin": {
-    "message": "Popout the extension to complete login."
+    "message": "Pro dokončení přihlášení použijte vyskakovací okno rozšíření."
   },
   "popoutExtension": {
     "message": "Zobrazit okno s doplňkem"
@@ -2993,5 +2993,17 @@
   "makeDefault": {
     "message": "Nastavit jako výchozí",
     "description": "Button text for the setting that allows overriding the default browser autofill settings"
+  },
+  "saveCipherAttemptSuccess": {
+    "message": "Pověření byla úspěšně uložena!",
+    "description": "Notification message for when saving credentials has succeeded."
+  },
+  "updateCipherAttemptSuccess": {
+    "message": "Pověření byla úspěšně aktualizována!",
+    "description": "Notification message for when updating credentials has succeeded."
+  },
+  "saveCipherAttemptFailed": {
+    "message": "Chyba při ukládání přihlašovacích údajů. Podrobnosti naleznete v konzoli.",
+    "description": "Notification message for when saving credentials has failed."
   }
 }
