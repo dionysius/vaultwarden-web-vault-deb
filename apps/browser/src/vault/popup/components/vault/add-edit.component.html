@@ -62,7 +62,7 @@
                 (click)="generateUsername()"
                 *ngIf="!(!cipher.edit && editMode)"
               >
-                <i class="bwi bwi-lg bwi-generate" aria-hidden="true"></i>
+                <i class="bwi bwi-fw bwi-lg bwi-generate" aria-hidden="true"></i>
               </button>
             </div>
           </div>
@@ -92,12 +92,12 @@
                 *ngIf="cipher.viewPassword"
               >
                 <i
-                  class="bwi bwi-lg bwi-check-circle"
+                  class="bwi bwi-fw bwi-lg bwi-check-circle"
                   [hidden]="$any(checkPasswordBtn).loading"
                   aria-hidden="true"
                 ></i>
                 <i
-                  class="bwi bwi-lg bwi-spinner bwi-spin"
+                  class="bwi bwi-fw bwi-lg bwi-spinner bwi-spin"
                   [hidden]="!$any(checkPasswordBtn).loading"
                   aria-hidden="true"
                 ></i>
@@ -112,7 +112,7 @@
                 [attr.aria-pressed]="showPassword"
               >
                 <i
-                  class="bwi bwi-lg"
+                  class="bwi bwi-fw bwi-lg"
                   aria-hidden="true"
                   [ngClass]="{ 'bwi-eye': !showPassword, 'bwi-eye-slash': showPassword }"
                 ></i>
@@ -125,7 +125,7 @@
                 (click)="generatePassword()"
                 *ngIf="cipher.viewPassword && !(!cipher.edit && editMode)"
               >
-                <i class="bwi bwi-lg bwi-generate" aria-hidden="true"></i>
+                <i class="bwi bwi-fw bwi-lg bwi-generate" aria-hidden="true"></i>
               </button>
             </div>
           </div>
@@ -171,7 +171,7 @@
                 [attr.aria-pressed]="showTotpSeed"
               >
                 <i
-                  class="bwi bwi-lg"
+                  class="bwi bwi-fw bwi-lg"
                   aria-hidden="true"
                   [ngClass]="{ 'bwi-eye': !showTotpSeed, 'bwi-eye-slash': showTotpSeed }"
                 ></i>
@@ -184,7 +184,7 @@
                 (click)="copy(cipher.login.totp, 'totp', 'TOTP')"
                 *ngIf="cipher.viewPassword"
               >
-                <i class="bwi bwi-lg bwi-clone" aria-hidden="true"></i>
+                <i class="bwi bwi-fw bwi-lg bwi-clone" aria-hidden="true"></i>
               </button>
               <button
                 type="button"
@@ -194,7 +194,7 @@
                 (click)="captureTOTPFromTab()"
                 *ngIf="!(!cipher.edit && editMode)"
               >
-                <i class="bwi bwi-lg bwi-camera" aria-hidden="true"></i>
+                <i class="bwi bwi-fw bwi-lg bwi-camera" aria-hidden="true"></i>
               </button>
             </div>
           </div>
@@ -236,7 +236,7 @@
                 [attr.aria-pressed]="showCardNumber"
               >
                 <i
-                  class="bwi bwi-lg"
+                  class="bwi bwi-fw bwi-lg"
                   aria-hidden="true"
                   [ngClass]="{ 'bwi-eye': !showCardNumber, 'bwi-eye-slash': showCardNumber }"
                 ></i>
@@ -313,7 +313,7 @@
                 [attr.aria-pressed]="showCardCode"
               >
                 <i
-                  class="bwi bwi-lg"
+                  class="bwi bwi-fw bwi-lg"
                   aria-hidden="true"
                   [ngClass]="{ 'bwi-eye': !showCardCode, 'bwi-eye-slash': showCardCode }"
                 ></i>
@@ -536,7 +536,7 @@
               (click)="removeUri(u)"
               appA11yTitle="{{ 'remove' | i18n }}"
             >
-              <i class="bwi bwi-minus-circle bwi-lg" aria-hidden="true"></i>
+              <i class="bwi bwi-fw bwi-minus-circle bwi-lg" aria-hidden="true"></i>
             </button>
             <div class="row-main">
               <label for="loginUri{{ i }}">{{ "uriPosition" | i18n: i + 1 }}</label>
@@ -588,7 +588,7 @@
                 (click)="toggleUriInput(u)"
                 [attr.aria-pressed]="$any(u).showCurrentUris === true"
               >
-                <i aria-hidden="true" class="bwi bwi-lg bwi-list"></i>
+                <i aria-hidden="true" class="bwi bwi-fw bwi-lg bwi-list"></i>
               </button>
               <button
                 type="button"
@@ -598,7 +598,7 @@
                 (click)="toggleUriOptions(u)"
                 [attr.aria-pressed]="$any(u).showOptions === true"
               >
-                <i class="bwi bwi-lg bwi-cog" aria-hidden="true"></i>
+                <i class="bwi bwi-fw bwi-lg bwi-cog" aria-hidden="true"></i>
               </button>
             </div>
           </div>
