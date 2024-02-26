@@ -3,7 +3,7 @@ import {
   AbstractStorageService,
   ObservableStorageService,
 } from "@bitwarden/common/platform/abstractions/storage.service";
-import { KeyDefinition } from "@bitwarden/common/platform/state";
+import { UserKeyDefinition } from "@bitwarden/common/platform/state";
 /* eslint-disable import/no-restricted-paths -- Needed to extend service & and in platform owned file */
 import { DefaultSingleUserStateProvider } from "@bitwarden/common/platform/state/implementations/default-single-user-state.provider";
 import { StateDefinition } from "@bitwarden/common/platform/state/state-definition";
@@ -18,7 +18,7 @@ export class WebSingleUserStateProvider extends DefaultSingleUserStateProvider {
     super(memoryStorageService, sessionStorageService);
   }
 
-  protected override getLocationString(keyDefinition: KeyDefinition<unknown>): string {
+  protected override getLocationString(keyDefinition: UserKeyDefinition<unknown>): string {
     return (
       keyDefinition.stateDefinition.storageLocationOverrides["web"] ??
       keyDefinition.stateDefinition.defaultStorageLocation

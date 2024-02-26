@@ -6,6 +6,7 @@ import {
 } from "../../abstractions/storage.service";
 import { KeyDefinition } from "../key-definition";
 import { StateDefinition } from "../state-definition";
+import { UserKeyDefinition, isUserKeyDefinition } from "../user-key-definition";
 import { SingleUserState } from "../user-state";
 import { SingleUserStateProvider } from "../user-state.provider";
 
@@ -19,7 +20,13 @@ export class DefaultSingleUserStateProvider implements SingleUserStateProvider {
     protected readonly diskStorage: AbstractStorageService & ObservableStorageService,
   ) {}
 
-  get<T>(userId: UserId, keyDefinition: KeyDefinition<T>): SingleUserState<T> {
+  get<T>(
+    userId: UserId,
+    keyDefinition: KeyDefinition<T> | UserKeyDefinition<T>,
+  ): SingleUserState<T> {
+    if (!isUserKeyDefinition(keyDefinition)) {
+      keyDefinition = UserKeyDefinition.fromBaseKeyDefinition(keyDefinition);
+    }
     const cacheKey = this.buildCacheKey(userId, keyDefinition);
     const existingUserState = this.cache[cacheKey];
     if (existingUserState != null) {
@@ -33,13 +40,13 @@ export class DefaultSingleUserStateProvider implements SingleUserStateProvider {
     return newUserState;
   }
 
-  private buildCacheKey(userId: UserId, keyDefinition: KeyDefinition<unknown>) {
+  private buildCacheKey(userId: UserId, keyDefinition: UserKeyDefinition<unknown>) {
     return `${this.getLocationString(keyDefinition)}_${keyDefinition.fullName}_${userId}`;
   }
 
   protected buildSingleUserState<T>(
     userId: UserId,
-    keyDefinition: KeyDefinition<T>,
+    keyDefinition: UserKeyDefinition<T>,
   ): SingleUserState<T> {
     return new DefaultSingleUserState<T>(
       userId,
@@ -48,7 +55,7 @@ export class DefaultSingleUserStateProvider implements SingleUserStateProvider {
     );
   }
 
-  protected getLocationString(keyDefinition: KeyDefinition<unknown>): string {
+  protected getLocationString(keyDefinition: UserKeyDefinition<unknown>): string {
     return keyDefinition.stateDefinition.defaultStorageLocation;
   }
 

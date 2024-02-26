@@ -21,8 +21,8 @@ import {
   AbstractStorageService,
   ObservableStorageService,
 } from "../../abstractions/storage.service";
-import { KeyDefinition, userKeyBuilder } from "../key-definition";
 import { StateUpdateOptions, populateOptionsWithDefault } from "../state-update-options";
+import { UserKeyDefinition } from "../user-key-definition";
 import { ActiveUserState, CombinedState, activeMarker } from "../user-state";
 
 import { getStoredValue } from "./util";
@@ -39,7 +39,7 @@ export class DefaultActiveUserState<T> implements ActiveUserState<T> {
   state$: Observable<T>;
 
   constructor(
-    protected keyDefinition: KeyDefinition<T>,
+    protected keyDefinition: UserKeyDefinition<T>,
     private accountService: AccountService,
     private chosenStorageLocation: AbstractStorageService & ObservableStorageService,
   ) {
@@ -61,7 +61,7 @@ export class DefaultActiveUserState<T> implements ActiveUserState<T> {
           return FAKE;
         }
 
-        const fullKey = userKeyBuilder(userId, this.keyDefinition);
+        const fullKey = this.keyDefinition.buildKey(userId);
         const data = await getStoredValue(
           fullKey,
           this.chosenStorageLocation,
@@ -80,7 +80,7 @@ export class DefaultActiveUserState<T> implements ActiveUserState<T> {
           // Null userId is already taken care of through the userChange observable above
           filter((u) => u != null),
           // Take the userId and build the fullKey that we can now create
-          map((userId) => [userId, userKeyBuilder(userId, this.keyDefinition)] as const),
+          map((userId) => [userId, this.keyDefinition.buildKey(userId)] as const),
         ),
       ),
       // Filter to only storage updates that pertain to our key
@@ -168,7 +168,7 @@ export class DefaultActiveUserState<T> implements ActiveUserState<T> {
     if (userId == null) {
       throw new Error("No active user at this time.");
     }
-    const fullKey = userKeyBuilder(userId, this.keyDefinition);
+    const fullKey = this.keyDefinition.buildKey(userId);
     return [
       userId,
       fullKey,

@@ -18,8 +18,8 @@ import {
   AbstractStorageService,
   ObservableStorageService,
 } from "../../abstractions/storage.service";
-import { KeyDefinition, userKeyBuilder } from "../key-definition";
 import { StateUpdateOptions, populateOptionsWithDefault } from "../state-update-options";
+import { UserKeyDefinition } from "../user-key-definition";
 import { CombinedState, SingleUserState } from "../user-state";
 
 import { getStoredValue } from "./util";
@@ -33,10 +33,10 @@ export class DefaultSingleUserState<T> implements SingleUserState<T> {
 
   constructor(
     readonly userId: UserId,
-    private keyDefinition: KeyDefinition<T>,
+    private keyDefinition: UserKeyDefinition<T>,
     private chosenLocation: AbstractStorageService & ObservableStorageService,
   ) {
-    this.storageKey = userKeyBuilder(this.userId, this.keyDefinition);
+    this.storageKey = this.keyDefinition.buildKey(this.userId);
     const initialStorageGet$ = defer(() => {
       return getStoredValue(this.storageKey, this.chosenLocation, this.keyDefinition.deserializer);
     });

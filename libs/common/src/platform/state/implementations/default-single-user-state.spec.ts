@@ -10,8 +10,8 @@ import { trackEmissions, awaitAsync } from "../../../../spec";
 import { FakeStorageService } from "../../../../spec/fake-storage.service";
 import { UserId } from "../../../types/guid";
 import { Utils } from "../../misc/utils";
-import { KeyDefinition, userKeyBuilder } from "../key-definition";
 import { StateDefinition } from "../state-definition";
+import { UserKeyDefinition } from "../user-key-definition";
 
 import { DefaultSingleUserState } from "./default-single-user-state";
 
@@ -31,12 +31,13 @@ class TestState {
 
 const testStateDefinition = new StateDefinition("fake", "disk");
 const cleanupDelayMs = 10;
-const testKeyDefinition = new KeyDefinition<TestState>(testStateDefinition, "fake", {
+const testKeyDefinition = new UserKeyDefinition<TestState>(testStateDefinition, "fake", {
   deserializer: TestState.fromJSON,
   cleanupDelayMs,
+  clearOn: [],
 });
 const userId = Utils.newGuid() as UserId;
-const userKey = userKeyBuilder(userId, testKeyDefinition);
+const userKey = testKeyDefinition.buildKey(userId);
 
 describe("DefaultSingleUserState", () => {
   let diskStorageService: FakeStorageService;
