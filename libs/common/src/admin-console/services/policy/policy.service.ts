@@ -1,11 +1,13 @@
-import { BehaviorSubject, concatMap, map, Observable, of } from "rxjs";
+import { BehaviorSubject, combineLatest, concatMap, map, Observable, of } from "rxjs";
 
 import { ListResponse } from "../../../models/response/list.response";
 import { StateService } from "../../../platform/abstractions/state.service";
 import { Utils } from "../../../platform/misc/utils";
+import { KeyDefinition, POLICIES_DISK, StateProvider } from "../../../platform/state";
+import { PolicyId, UserId } from "../../../types/guid";
 import { OrganizationService } from "../../abstractions/organization/organization.service.abstraction";
 import { InternalPolicyService as InternalPolicyServiceAbstraction } from "../../abstractions/policy/policy.service.abstraction";
-import { OrganizationUserStatusType, OrganizationUserType, PolicyType } from "../../enums";
+import { OrganizationUserStatusType, PolicyType } from "../../enums";
 import { PolicyData } from "../../models/data/policy.data";
 import { MasterPasswordPolicyOptions } from "../../models/domain/master-password-policy-options";
 import { Organization } from "../../models/domain/organization";
@@ -13,13 +15,26 @@ import { Policy } from "../../models/domain/policy";
 import { ResetPasswordPolicyOptions } from "../../models/domain/reset-password-policy-options";
 import { PolicyResponse } from "../../models/response/policy.response";
 
+const policyRecordToArray = (policiesMap: { [id: string]: PolicyData }) =>
+  Object.values(policiesMap || {}).map((f) => new Policy(f));
+
+export const POLICIES = KeyDefinition.record<PolicyData, PolicyId>(POLICIES_DISK, "policies", {
+  deserializer: (policyData) => policyData,
+});
+
 export class PolicyService implements InternalPolicyServiceAbstraction {
   protected _policies: BehaviorSubject<Policy[]> = new BehaviorSubject([]);
 
   policies$ = this._policies.asObservable();
 
+  private activeUserPolicyState = this.stateProvider.getActive(POLICIES);
+  activeUserPolicies$ = this.activeUserPolicyState.state$.pipe(
+    map((policyData) => policyRecordToArray(policyData)),
+  );
+
   constructor(
     protected stateService: StateService,
+    private stateProvider: StateProvider,
     private organizationService: OrganizationService,
   ) {
     this.stateService.activeAccountUnlocked$
@@ -41,6 +56,56 @@ export class PolicyService implements InternalPolicyServiceAbstraction {
       )
       .subscribe();
   }
+
+  // --- StateProvider methods - not yet wired up
+  get_vNext$(policyType: PolicyType) {
+    const filteredPolicies$ = this.activeUserPolicies$.pipe(
+      map((policies) => policies.filter((p) => p.type === policyType)),
+    );
+
+    return combineLatest([filteredPolicies$, this.organizationService.organizations$]).pipe(
+      map(
+        ([policies, organizations]) =>
+          this.enforcedPolicyFilter(policies, organizations)?.at(0) ?? null,
+      ),
+    );
+  }
+
+  getAll_vNext$(policyType: PolicyType, userId?: UserId) {
+    const filteredPolicies$ = this.stateProvider.getUserState$(POLICIES, userId).pipe(
+      map((policyData) => policyRecordToArray(policyData)),
+      map((policies) => policies.filter((p) => p.type === policyType)),
+    );
+
+    return combineLatest([filteredPolicies$, this.organizationService.organizations$]).pipe(
+      map(([policies, organizations]) => this.enforcedPolicyFilter(policies, organizations)),
+    );
+  }
+
+  policyAppliesToActiveUser_vNext$(policyType: PolicyType) {
+    return this.get_vNext$(policyType).pipe(map((policy) => policy != null));
+  }
+
+  private enforcedPolicyFilter(policies: Policy[], organizations: Organization[]) {
+    const orgDict = Object.fromEntries(organizations.map((o) => [o.id, o]));
+    return policies.filter((policy) => {
+      const organization = orgDict[policy.organizationId];
+
+      // This shouldn't happen, i.e. the user should only have policies for orgs they are a member of
+      // But if it does, err on the side of enforcing the policy
+      if (organization == null) {
+        return true;
+      }
+
+      return (
+        policy.enabled &&
+        organization.status >= OrganizationUserStatusType.Accepted &&
+        organization.usePolicies &&
+        !this.isExemptFromPolicy(policy.type, organization)
+      );
+    });
+  }
+  // --- End StateProvider methods
 
   get$(policyType: PolicyType, policyFilter?: (policy: Policy) => boolean): Observable<Policy> {
     return this.policies$.pipe(
@@ -260,14 +325,6 @@ export class PolicyService implements InternalPolicyServiceAbstraction {
     await this.stateService.setEncryptedPolicies(null, { userId: userId });
   }
 
-  private isExemptFromPolicies(organization: Organization, policyType: PolicyType) {
-    if (policyType === PolicyType.MaximumVaultTimeout) {
-      return organization.type === OrganizationUserType.Owner;
-    }
-
-    return organization.isExemptFromPolicies;
-  }
-
   private async updateObservables(policiesMap: { [id: string]: PolicyData }) {
     const policies = Object.values(policiesMap || {}).map((f) => new Policy(f));
 
@@ -291,7 +348,21 @@ export class PolicyService implements InternalPolicyServiceAbstraction {
         o.status >= OrganizationUserStatusType.Accepted &&
         o.usePolicies &&
         policySet.has(o.id) &&
-        !this.isExemptFromPolicies(o, policyType),
+        !this.isExemptFromPolicy(policyType, o),
     );
+  }
+
+  /**
+   * Determines whether an orgUser is exempt from a specific policy because of their role
+   * Generally orgUsers who can manage policies are exempt from them, but some policies are stricter
+   */
+  private isExemptFromPolicy(policyType: PolicyType, organization: Organization) {
+    switch (policyType) {
+      case PolicyType.MaximumVaultTimeout:
+        // Max Vault Timeout applies to everyone except owners
+        return organization.isOwner;
+      default:
+        return organization.canManagePolicies;
+    }
   }
 }

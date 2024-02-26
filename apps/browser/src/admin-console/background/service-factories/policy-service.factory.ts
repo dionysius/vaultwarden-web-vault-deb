@@ -6,6 +6,10 @@ import {
   FactoryOptions,
 } from "../../../platform/background/service-factories/factory-options";
 import {
+  stateProviderFactory,
+  StateProviderInitOptions,
+} from "../../../platform/background/service-factories/state-provider.factory";
+import {
   stateServiceFactory as stateServiceFactory,
   StateServiceInitOptions,
 } from "../../../platform/background/service-factories/state-service.factory";
@@ -20,6 +24,7 @@ type PolicyServiceFactoryOptions = FactoryOptions;
 
 export type PolicyServiceInitOptions = PolicyServiceFactoryOptions &
   StateServiceInitOptions &
+  StateProviderInitOptions &
   OrganizationServiceInitOptions;
 
 export function policyServiceFactory(
@@ -33,6 +38,7 @@ export function policyServiceFactory(
     async () =>
       new BrowserPolicyService(
         await stateServiceFactory(cache, opts),
+        await stateProviderFactory(cache, opts),
         await organizationServiceFactory(cache, opts),
       ),
   );

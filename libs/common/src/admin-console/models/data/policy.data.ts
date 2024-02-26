@@ -5,10 +5,14 @@ export class PolicyData {
   id: string;
   organizationId: string;
   type: PolicyType;
-  data: any;
+  data: Record<string, string | number | boolean>;
   enabled: boolean;
 
-  constructor(response: PolicyResponse) {
+  constructor(response?: PolicyResponse) {
+    if (response == null) {
+      return;
+    }
+
     this.id = response.id;
     this.organizationId = response.organizationId;
     this.type = response.type;

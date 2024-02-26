@@ -473,7 +473,11 @@ export default class MainBackground {
       this.stateService,
       this.stateProvider,
     );
-    this.policyService = new BrowserPolicyService(this.stateService, this.organizationService);
+    this.policyService = new BrowserPolicyService(
+      this.stateService,
+      this.stateProvider,
+      this.organizationService,
+    );
     this.autofillSettingsService = new AutofillSettingsService(
       this.stateProvider,
       this.policyService,

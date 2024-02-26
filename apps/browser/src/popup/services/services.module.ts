@@ -326,11 +326,12 @@ function getBgService<T>(service: keyof MainBackground) {
       provide: PolicyService,
       useFactory: (
         stateService: StateServiceAbstraction,
+        stateProvider: StateProvider,
         organizationService: OrganizationService,
       ) => {
-        return new BrowserPolicyService(stateService, organizationService);
+        return new BrowserPolicyService(stateService, stateProvider, organizationService);
       },
-      deps: [StateServiceAbstraction, OrganizationService],
+      deps: [StateServiceAbstraction, StateProvider, OrganizationService],
     },
     {
       provide: PolicyApiServiceAbstraction,
