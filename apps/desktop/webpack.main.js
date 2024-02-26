@@ -72,8 +72,6 @@ const main = {
         "./src/package.json",
         { from: "./src/images", to: "images" },
         { from: "./src/locales", to: "locales" },
-        "../../node_modules/argon2-browser/dist/argon2.wasm",
-        "../../node_modules/argon2-browser/dist/argon2-simd.wasm",
       ],
     }),
     new EnvironmentPlugin({
@@ -84,6 +82,8 @@ const main = {
   externals: {
     "electron-reload": "commonjs2 electron-reload",
     "@bitwarden/desktop-native": "commonjs2 @bitwarden/desktop-native",
+
+    argon2: "commonjs2 argon2",
   },
 };
 

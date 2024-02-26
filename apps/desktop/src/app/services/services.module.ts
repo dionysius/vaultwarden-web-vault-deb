@@ -10,6 +10,7 @@ import {
   MEMORY_STORAGE,
   OBSERVABLE_MEMORY_STORAGE,
   OBSERVABLE_DISK_STORAGE,
+  WINDOW,
 } from "@bitwarden/angular/services/injection-tokens";
 import { JslibServicesModule } from "@bitwarden/angular/services/jslib-services.module";
 import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout-settings.service";
@@ -66,6 +67,7 @@ import { SearchBarService } from "../layout/search/search-bar.service";
 import { DesktopFileDownloadService } from "./desktop-file-download.service";
 import { DesktopThemingService } from "./desktop-theming.service";
 import { InitService } from "./init.service";
+import { RendererCryptoFunctionService } from "./renderer-crypto-function.service";
 
 const RELOAD_CALLBACK = new InjectionToken<() => any>("RELOAD_CALLBACK");
 
@@ -174,6 +176,11 @@ const RELOAD_CALLBACK = new InjectionToken<() => any>("RELOAD_CALLBACK");
       provide: LoginServiceAbstraction,
       useClass: LoginService,
       deps: [StateServiceAbstraction],
+    },
+    {
+      provide: CryptoFunctionServiceAbstraction,
+      useClass: RendererCryptoFunctionService,
+      deps: [WINDOW],
     },
     {
       provide: CryptoServiceAbstraction,
