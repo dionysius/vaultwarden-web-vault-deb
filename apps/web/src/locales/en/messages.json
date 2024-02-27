@@ -6673,11 +6673,11 @@
   "resendCode": {
     "message": "Resend code"
   },
-  "membersColumnHeader": {
-    "message": "Member/Group"
-  },
-  "groupAndMemberColumnHeader": {
+  "memberColumnHeader": {
     "message": "Member"
+  },
+  "groupSlashMemberColumnHeader": {
+    "message": "Group/Member"
   },
   "selectGroupsAndMembers": {
     "message": "Select groups and members"
@@ -7503,6 +7503,9 @@
   },
   "grantCollectionAccess": {
     "message": "Grant groups or members access to this collection."
+  },
+  "grantCollectionAccessMembersOnly": {
+    "message": "Grant members access to this collection."
   },
   "adminCollectionAccess": {
     "message": "Administrators can access and manage collections."
