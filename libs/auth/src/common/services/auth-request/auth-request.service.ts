@@ -25,10 +25,10 @@ export class AuthRequestService implements AuthRequestServiceAbstraction {
     if (!authRequest.id) {
       throw new Error("Auth request has no id");
     }
-    if (!authRequest.key) {
+    if (!authRequest.publicKey) {
       throw new Error("Auth request has no public key");
     }
-    const pubKey = Utils.fromB64ToArray(authRequest.key);
+    const pubKey = Utils.fromB64ToArray(authRequest.publicKey);
 
     const masterKey = await this.cryptoService.getMasterKey();
     const masterKeyHash = await this.stateService.getKeyHash();

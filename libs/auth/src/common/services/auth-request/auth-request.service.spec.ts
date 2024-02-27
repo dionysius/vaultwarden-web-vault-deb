@@ -39,12 +39,12 @@ describe("AuthRequestService", () => {
     });
     it("should throw if auth request is missing id or key", async () => {
       const authRequestNoId = new AuthRequestResponse({ id: "", key: "KEY" });
-      const authRequestNoKey = new AuthRequestResponse({ id: "123", key: "" });
+      const authRequestNoPublicKey = new AuthRequestResponse({ id: "123", publicKey: "" });
 
       await expect(sut.approveOrDenyAuthRequest(true, authRequestNoId)).rejects.toThrow(
         "Auth request has no id",
       );
-      await expect(sut.approveOrDenyAuthRequest(true, authRequestNoKey)).rejects.toThrow(
+      await expect(sut.approveOrDenyAuthRequest(true, authRequestNoPublicKey)).rejects.toThrow(
         "Auth request has no public key",
       );
     });
@@ -53,7 +53,10 @@ describe("AuthRequestService", () => {
       cryptoService.getMasterKey.mockResolvedValueOnce({ encKey: new Uint8Array(64) } as MasterKey);
       stateService.getKeyHash.mockResolvedValueOnce("KEY_HASH");
 
-      await sut.approveOrDenyAuthRequest(true, new AuthRequestResponse({ id: "123", key: "KEY" }));
+      await sut.approveOrDenyAuthRequest(
+        true,
+        new AuthRequestResponse({ id: "123", publicKey: "KEY" }),
+      );
 
       expect(cryptoService.rsaEncrypt).toHaveBeenCalledWith(new Uint8Array(64), expect.anything());
     });
@@ -61,7 +64,10 @@ describe("AuthRequestService", () => {
     it("should use the user key if the master key and hash do not exist", async () => {
       cryptoService.getUserKey.mockResolvedValueOnce({ key: new Uint8Array(64) } as UserKey);
 
-      await sut.approveOrDenyAuthRequest(true, new AuthRequestResponse({ id: "123", key: "KEY" }));
+      await sut.approveOrDenyAuthRequest(
+        true,
+        new AuthRequestResponse({ id: "123", publicKey: "KEY" }),
+      );
 
       expect(cryptoService.rsaEncrypt).toHaveBeenCalledWith(new Uint8Array(64), expect.anything());
     });
