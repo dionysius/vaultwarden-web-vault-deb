@@ -65,6 +65,8 @@ export const VAULT_FILTER_DISK = new StateDefinition("vaultFilter", "disk", {
   web: "disk-local",
 });
 
+export const CLEAR_EVENT_DISK = new StateDefinition("clearEvent", "disk");
+
 export const NEW_WEB_LAYOUT_BANNER_DISK = new StateDefinition("newWebLayoutBanner", "disk", {
   web: "disk-local",
 });

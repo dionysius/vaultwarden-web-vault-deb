@@ -41,10 +41,10 @@ export class FakeGlobalState<T> implements GlobalState<T> {
     this.stateSubject.next(initialValue ?? null);
   }
 
-  update: <TCombine>(
+  async update<TCombine>(
     configureState: (state: T, dependency: TCombine) => T,
     options?: StateUpdateOptions<T, TCombine>,
-  ) => Promise<T> = jest.fn(async (configureState, options) => {
+  ): Promise<T> {
     options = populateOptionsWithDefault(options);
     if (this.stateSubject["_buffer"].length == 0) {
       // throw a more helpful not initialized error
@@ -64,9 +64,7 @@ export class FakeGlobalState<T> implements GlobalState<T> {
     this.stateSubject.next(newState);
     this.nextMock(newState);
     return newState;
-  });
-
-  updateMock = this.update as jest.MockedFunction<typeof this.update>;
+  }
   /** Tracks update values resolved by `FakeState.update` */
   nextMock = jest.fn<void, [T]>();
 
@@ -128,8 +126,6 @@ export class FakeSingleUserState<T> implements SingleUserState<T> {
     return newState;
   }
 
-  updateMock = this.update as jest.MockedFunction<typeof this.update>;
-
   /** Tracks update values resolved by `FakeState.update` */
   nextMock = jest.fn<void, [T]>();
   private _keyDefinition: UserKeyDefinition<T> | null = null;
@@ -190,8 +186,6 @@ export class FakeActiveUserState<T> implements ActiveUserState<T> {
     this.nextMock([this.userId, newState]);
     return [this.userId, newState];
   }
-
-  updateMock = this.update as jest.MockedFunction<typeof this.update>;
 
   /** Tracks update values resolved by `FakeState.update` */
   nextMock = jest.fn<void, [[UserId, T]]>();

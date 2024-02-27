@@ -6,7 +6,7 @@ import { array, record } from "./deserialization-helpers";
 import { KeyDefinition, KeyDefinitionOptions } from "./key-definition";
 import { StateDefinition } from "./state-definition";
 
-type ClearEvent = "lock" | "logout";
+export type ClearEvent = "lock" | "logout";
 
 type UserKeyDefinitionOptions<T> = KeyDefinitionOptions<T> & {
   clearOn: ClearEvent[];
