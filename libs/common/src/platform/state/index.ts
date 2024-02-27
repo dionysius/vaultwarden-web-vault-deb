@@ -7,6 +7,7 @@ export { GlobalStateProvider } from "./global-state.provider";
 export { ActiveUserState, SingleUserState } from "./user-state";
 export { ActiveUserStateProvider, SingleUserStateProvider } from "./user-state.provider";
 export { KeyDefinition } from "./key-definition";
+export { StateUpdateOptions } from "./state-update-options";
 export { UserKeyDefinition } from "./user-key-definition";
 
 export * from "./state-definitions";
