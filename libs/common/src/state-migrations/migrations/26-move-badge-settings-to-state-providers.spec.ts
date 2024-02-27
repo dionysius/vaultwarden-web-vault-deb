@@ -3,23 +3,7 @@ import { any, MockProxy } from "jest-mock-extended";
 import { StateDefinitionLike, MigrationHelper } from "../migration-helper";
 import { mockMigrationHelper } from "../migration-helper.spec";
 
-import { ClearClipboardDelayMigrator } from "./25-move-clear-clipboard-to-autofill-settings-state-provider";
-
-export const ClearClipboardDelay = {
-  Never: null as null,
-  TenSeconds: 10,
-  TwentySeconds: 20,
-  ThirtySeconds: 30,
-  OneMinute: 60,
-  TwoMinutes: 120,
-  FiveMinutes: 300,
-} as const;
-
-const AutofillOverlayVisibility = {
-  Off: 0,
-  OnButtonClick: 1,
-  OnFieldFocus: 2,
-} as const;
+import { BadgeSettingsMigrator } from "./26-move-badge-settings-to-state-providers";
 
 function exampleJSON() {
   return {
@@ -29,32 +13,31 @@ function exampleJSON() {
     authenticatedAccounts: ["user-1", "user-2", "user-3"],
     "user-1": {
       settings: {
-        clearClipboard: ClearClipboardDelay.TenSeconds,
+        disableBadgeCounter: true,
         otherStuff: "otherStuff2",
       },
       otherStuff: "otherStuff3",
     },
     "user-2": {
       settings: {
-        clearClipboard: ClearClipboardDelay.Never,
+        disableBadgeCounter: false,
         otherStuff: "otherStuff4",
       },
       otherStuff: "otherStuff5",
     },
     "user-3": {
       settings: {
-        otherStuff: "otherStuff4",
+        otherStuff: "otherStuff6",
       },
-      otherStuff: "otherStuff5",
+      otherStuff: "otherStuff7",
     },
   };
 }
 
 function rollbackJSON() {
   return {
-    global_autofillSettingsLocal_inlineMenuVisibility: AutofillOverlayVisibility.OnButtonClick,
-    "user_user-1_autofillSettingsLocal_clearClipboardDelay": ClearClipboardDelay.TenSeconds,
-    "user_user-2_autofillSettingsLocal_clearClipboardDelay": ClearClipboardDelay.Never,
+    "user_user-1_badgeSettings_enableBadgeCounter": false,
+    "user_user-2_badgeSettings_enableBadgeCounter": true,
     global: {
       otherStuff: "otherStuff1",
     },
@@ -71,28 +54,34 @@ function rollbackJSON() {
       },
       otherStuff: "otherStuff5",
     },
+    "user-3": {
+      settings: {
+        otherStuff: "otherStuff6",
+      },
+      otherStuff: "otherStuff7",
+    },
   };
 }
 
-const autofillSettingsLocalStateDefinition: {
+const badgeSettingsStateDefinition: {
   stateDefinition: StateDefinitionLike;
 } = {
   stateDefinition: {
-    name: "autofillSettingsLocal",
+    name: "badgeSettings",
   },
 };
 
-describe("ClearClipboardDelayMigrator", () => {
+describe("BadgeSettingsMigrator", () => {
   let helper: MockProxy<MigrationHelper>;
-  let sut: ClearClipboardDelayMigrator;
+  let sut: BadgeSettingsMigrator;
 
   describe("migrate", () => {
     beforeEach(() => {
-      helper = mockMigrationHelper(exampleJSON(), 24);
-      sut = new ClearClipboardDelayMigrator(24, 25);
+      helper = mockMigrationHelper(exampleJSON(), 25);
+      sut = new BadgeSettingsMigrator(25, 26);
     });
 
-    it("should remove clearClipboard setting from all accounts", async () => {
+    it("should remove disableBadgeCounter setting from all accounts", async () => {
       await sut.migrate(helper);
       expect(helper.set).toHaveBeenCalledTimes(2);
       expect(helper.set).toHaveBeenCalledWith("user-1", {
@@ -109,27 +98,27 @@ describe("ClearClipboardDelayMigrator", () => {
       });
     });
 
-    it("should set autofill setting values for each account", async () => {
+    it("should set badge setting values for each account", async () => {
       await sut.migrate(helper);
 
       expect(helper.setToUser).toHaveBeenCalledTimes(2);
       expect(helper.setToUser).toHaveBeenCalledWith(
         "user-1",
-        { ...autofillSettingsLocalStateDefinition, key: "clearClipboardDelay" },
-        ClearClipboardDelay.TenSeconds,
+        { ...badgeSettingsStateDefinition, key: "enableBadgeCounter" },
+        false,
       );
       expect(helper.setToUser).toHaveBeenCalledWith(
         "user-2",
-        { ...autofillSettingsLocalStateDefinition, key: "clearClipboardDelay" },
-        ClearClipboardDelay.Never,
+        { ...badgeSettingsStateDefinition, key: "enableBadgeCounter" },
+        true,
       );
     });
   });
 
   describe("rollback", () => {
     beforeEach(() => {
-      helper = mockMigrationHelper(rollbackJSON(), 23);
-      sut = new ClearClipboardDelayMigrator(24, 25);
+      helper = mockMigrationHelper(rollbackJSON(), 24);
+      sut = new BadgeSettingsMigrator(25, 26);
     });
 
     it("should null out new values for each account", async () => {
@@ -138,12 +127,12 @@ describe("ClearClipboardDelayMigrator", () => {
       expect(helper.setToUser).toHaveBeenCalledTimes(2);
       expect(helper.setToUser).toHaveBeenCalledWith(
         "user-1",
-        { ...autofillSettingsLocalStateDefinition, key: "clearClipboardDelay" },
+        { ...badgeSettingsStateDefinition, key: "enableBadgeCounter" },
         null,
       );
       expect(helper.setToUser).toHaveBeenCalledWith(
         "user-2",
-        { ...autofillSettingsLocalStateDefinition, key: "clearClipboardDelay" },
+        { ...badgeSettingsStateDefinition, key: "enableBadgeCounter" },
         null,
       );
     });
@@ -154,14 +143,14 @@ describe("ClearClipboardDelayMigrator", () => {
       expect(helper.set).toHaveBeenCalledTimes(2);
       expect(helper.set).toHaveBeenCalledWith("user-1", {
         settings: {
-          clearClipboard: ClearClipboardDelay.TenSeconds,
+          disableBadgeCounter: true,
           otherStuff: "otherStuff2",
         },
         otherStuff: "otherStuff3",
       });
       expect(helper.set).toHaveBeenCalledWith("user-2", {
         settings: {
-          clearClipboard: ClearClipboardDelay.Never,
+          disableBadgeCounter: false,
           otherStuff: "otherStuff4",
         },
         otherStuff: "otherStuff5",

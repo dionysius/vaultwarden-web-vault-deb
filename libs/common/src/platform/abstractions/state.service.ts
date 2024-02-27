@@ -204,8 +204,6 @@ export abstract class StateService<T extends Account = Account> {
   setDefaultUriMatch: (value: UriMatchType, options?: StorageOptions) => Promise<void>;
   getDisableAddLoginNotification: (options?: StorageOptions) => Promise<boolean>;
   setDisableAddLoginNotification: (value: boolean, options?: StorageOptions) => Promise<void>;
-  getDisableBadgeCounter: (options?: StorageOptions) => Promise<boolean>;
-  setDisableBadgeCounter: (value: boolean, options?: StorageOptions) => Promise<void>;
   getDisableChangedPasswordNotification: (options?: StorageOptions) => Promise<boolean>;
   setDisableChangedPasswordNotification: (
     value: boolean,

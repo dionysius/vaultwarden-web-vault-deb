@@ -73,7 +73,7 @@ const autofillSettingsStateDefinition: {
   },
 };
 
-describe("ProviderKeysMigrator", () => {
+describe("AutofillSettingsKeyMigrator", () => {
   let helper: MockProxy<MigrationHelper>;
   let sut: AutofillSettingsKeyMigrator;
 
