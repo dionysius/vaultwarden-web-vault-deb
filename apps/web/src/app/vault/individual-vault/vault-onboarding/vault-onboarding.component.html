@@ -27,7 +27,12 @@
         <button type="button" bitLink (click)="emitToAddCipher()">
           {{ "onboardingImportDataDetailsLink" | i18n }}
         </button>
-        {{ "onboardingImportDataDetailsPartTwo" | i18n }}
+        <span *ngIf="orgs == null || orgs.length === 0">
+          {{ "onboardingImportDataDetailsPartTwoNoOrgs" | i18n }}
+        </span>
+        <span *ngIf="orgs.length > 0">
+          {{ "onboardingImportDataDetailsPartTwoWithOrgs" | i18n }}
+        </span>
       </p>
     </app-onboarding-task>
 
@@ -35,6 +40,8 @@
       [title]="'installBrowserExtension' | i18n"
       icon="bwi-cli"
       (click)="navigateToExtension()"
+      route="[]"
+      [completed]="onboardingTasks.installExtension"
     >
       <span class="tw-pl-1">
         {{ "installBrowserExtensionDetails" | i18n }}

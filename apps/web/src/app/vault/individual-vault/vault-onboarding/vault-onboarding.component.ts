@@ -9,13 +9,13 @@ import {
   SimpleChanges,
   OnChanges,
 } from "@angular/core";
-import { Router } from "@angular/router";
-import { Subject, takeUntil, Observable, firstValueFrom } from "rxjs";
+import { Subject, takeUntil, Observable, firstValueFrom, fromEvent } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
+import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { ConfigServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config.service.abstraction";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
@@ -35,6 +35,7 @@ import { VaultOnboardingTasks } from "./services/vault-onboarding.service";
 })
 export class VaultOnboardingComponent implements OnInit, OnChanges, OnDestroy {
   @Input() ciphers: CipherView[];
+  @Input() orgs: Organization[];
   @Output() onAddCipher = new EventEmitter<void>();
 
   extensionUrl: string;
@@ -52,7 +53,6 @@ export class VaultOnboardingComponent implements OnInit, OnChanges, OnDestroy {
   constructor(
     protected platformUtilsService: PlatformUtilsService,
     protected policyService: PolicyService,
-    protected router: Router,
     private apiService: ApiService,
     private configService: ConfigServiceAbstraction,
     private vaultOnboardingService: VaultOnboardingServiceAbstraction,
@@ -67,21 +67,48 @@ export class VaultOnboardingComponent implements OnInit, OnChanges, OnDestroy {
     await this.setOnboardingTasks();
     this.setInstallExtLink();
     this.individualVaultPolicyCheck();
+    this.checkForBrowserExtension();
   }
 
   async ngOnChanges(changes: SimpleChanges) {
     if (this.showOnboarding && changes?.ciphers) {
-      await this.saveCompletedTasks({
+      const currentTasks = await firstValueFrom(this.onboardingTasks$);
+      const updatedTasks = {
         createAccount: true,
         importData: this.ciphers.length > 0,
-        installExtension: false,
-      });
+        installExtension: currentTasks.installExtension,
+      };
+      await this.vaultOnboardingService.setVaultOnboardingTasks(updatedTasks);
     }
   }
 
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
+  }
+
+  checkForBrowserExtension() {
+    if (this.showOnboarding) {
+      fromEvent<MessageEvent>(window, "message")
+        .pipe(takeUntil(this.destroy$))
+        .subscribe((event) => {
+          void this.getMessages(event);
+        });
+
+      window.postMessage({ command: "checkIfBWExtensionInstalled" });
+    }
+  }
+
+  async getMessages(event: any) {
+    if (event.data.command === "hasBWInstalled" && this.showOnboarding) {
+      const currentTasks = await firstValueFrom(this.onboardingTasks$);
+      const updatedTasks = {
+        createAccount: currentTasks.createAccount,
+        importData: currentTasks.importData,
+        installExtension: true,
+      };
+      await this.vaultOnboardingService.setVaultOnboardingTasks(updatedTasks);
+    }
   }
 
   async checkCreationDate() {

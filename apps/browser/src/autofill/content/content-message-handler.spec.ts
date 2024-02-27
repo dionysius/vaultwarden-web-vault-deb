@@ -25,6 +25,17 @@ describe("ContentMessageHandler", () => {
     jest.clearAllMocks();
   });
 
+  describe("handled web vault extension response", () => {
+    it("sends a message 'hasBWInstalled'", () => {
+      const mockPostMessage = jest.fn();
+      window.postMessage = mockPostMessage;
+
+      postWindowMessage({ command: "checkIfBWExtensionInstalled" });
+
+      expect(mockPostMessage).toHaveBeenCalled();
+    });
+  });
+
   describe("handled window messages", () => {
     it("ignores messages from other sources", () => {
       postWindowMessage({ command: "authResult" }, "https://localhost/", null);

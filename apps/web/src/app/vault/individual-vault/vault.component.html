@@ -11,7 +11,8 @@
   (onDeleteCollection)="deleteCollection(selectedCollection.node)"
 ></app-vault-header>
 
-<app-vault-onboarding [ciphers]="ciphers" (onAddCipher)="addCipher()"> </app-vault-onboarding>
+<app-vault-onboarding [ciphers]="ciphers" [orgs]="allOrganizations" (onAddCipher)="addCipher()">
+</app-vault-onboarding>
 
 <div class="row">
   <div class="col-3">
