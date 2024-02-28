@@ -114,7 +114,6 @@ import { BrowserApi } from "../../platform/browser/browser-api";
 import BrowserPopupUtils from "../../platform/popup/browser-popup-utils";
 import { BrowserStateService as StateServiceAbstraction } from "../../platform/services/abstractions/browser-state.service";
 import { BrowserConfigService } from "../../platform/services/browser-config.service";
-import { BrowserCryptoService } from "../../platform/services/browser-crypto.service";
 import { BrowserEnvironmentService } from "../../platform/services/browser-environment.service";
 import { BrowserFileDownloadService } from "../../platform/services/browser-file-download.service";
 import { BrowserI18nService } from "../../platform/services/browser-i18n.service";
@@ -269,39 +268,12 @@ function getBgService<T>(service: keyof MainBackground) {
     },
     {
       provide: CryptoService,
-      useFactory: (
-        keyGenerationService: KeyGenerationService,
-        cryptoFunctionService: CryptoFunctionService,
-        encryptService: EncryptService,
-        platformUtilsService: PlatformUtilsService,
-        logService: LogServiceAbstraction,
-        stateService: StateServiceAbstraction,
-        accountService: AccountServiceAbstraction,
-        stateProvider: StateProvider,
-      ) => {
-        const cryptoService = new BrowserCryptoService(
-          keyGenerationService,
-          cryptoFunctionService,
-          encryptService,
-          platformUtilsService,
-          logService,
-          stateService,
-          accountService,
-          stateProvider,
-        );
+      useFactory: (encryptService: EncryptService) => {
+        const cryptoService = getBgService<CryptoService>("cryptoService")();
         new ContainerService(cryptoService, encryptService).attachToGlobal(self);
         return cryptoService;
       },
-      deps: [
-        KeyGenerationService,
-        CryptoFunctionService,
-        EncryptService,
-        PlatformUtilsService,
-        LogServiceAbstraction,
-        StateServiceAbstraction,
-        AccountServiceAbstraction,
-        StateProvider,
-      ],
+      deps: [EncryptService],
     },
     {
       provide: AuthRequestServiceAbstraction,
