@@ -117,7 +117,7 @@ describe("BadgeSettingsMigrator", () => {
 
   describe("rollback", () => {
     beforeEach(() => {
-      helper = mockMigrationHelper(rollbackJSON(), 24);
+      helper = mockMigrationHelper(rollbackJSON(), 26);
       sut = new BadgeSettingsMigrator(25, 26);
     });
 

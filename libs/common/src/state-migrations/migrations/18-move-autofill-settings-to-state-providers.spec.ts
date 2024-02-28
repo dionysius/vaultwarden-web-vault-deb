@@ -147,7 +147,7 @@ describe("AutofillSettingsKeyMigrator", () => {
 
   describe("rollback", () => {
     beforeEach(() => {
-      helper = mockMigrationHelper(rollbackJSON(), 16);
+      helper = mockMigrationHelper(rollbackJSON(), 18);
       sut = new AutofillSettingsKeyMigrator(17, 18);
     });
 

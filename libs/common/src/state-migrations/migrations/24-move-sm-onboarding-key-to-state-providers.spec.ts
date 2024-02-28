@@ -141,7 +141,7 @@ describe("SmOnboardingTasksMigrator", () => {
 
   describe("rollback", () => {
     beforeEach(() => {
-      helper = mockMigrationHelper(rollbackJSON(), 23);
+      helper = mockMigrationHelper(rollbackJSON(), 24);
       sut = new SmOnboardingTasksMigrator(23, 24);
     });
 

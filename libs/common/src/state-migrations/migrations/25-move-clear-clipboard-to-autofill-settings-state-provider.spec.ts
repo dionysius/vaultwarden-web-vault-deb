@@ -128,7 +128,7 @@ describe("ClearClipboardDelayMigrator", () => {
 
   describe("rollback", () => {
     beforeEach(() => {
-      helper = mockMigrationHelper(rollbackJSON(), 23);
+      helper = mockMigrationHelper(rollbackJSON(), 25);
       sut = new ClearClipboardDelayMigrator(24, 25);
     });
 
