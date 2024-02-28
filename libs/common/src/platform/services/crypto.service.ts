@@ -467,10 +467,8 @@ export class CryptoService implements CryptoServiceAbstraction {
   async clearOrgKeys(memoryOnly?: boolean, userId?: UserId): Promise<void> {
     const activeUserId = (await firstValueFrom(this.accountService.activeAccount$))?.id;
     const userIdIsActive = userId == null || userId === activeUserId;
-    if (memoryOnly && userIdIsActive) {
-      // org keys are only cached for active users
-      await this.activeUserOrgKeysState.forceValue({});
-    } else {
+
+    if (!memoryOnly) {
       if (userId == null && activeUserId == null) {
         // nothing to do
         return;
@@ -478,13 +476,17 @@ export class CryptoService implements CryptoServiceAbstraction {
       await this.stateProvider
         .getUser(userId ?? activeUserId, USER_ENCRYPTED_ORGANIZATION_KEYS)
         .update(() => null);
+      return;
+    }
+
+    // org keys are only cached for active users
+    if (userIdIsActive) {
+      await this.activeUserOrgKeysState.forceValue({});
     }
   }
 
   async setProviderKeys(providers: ProfileProviderResponse[]): Promise<void> {
-    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    this.activeUserEncryptedProviderKeysState.update((_) => {
+    await this.activeUserEncryptedProviderKeysState.update((_) => {
       const encProviderKeys: { [providerId: ProviderId]: EncryptedString } = {};
 
       providers.forEach((provider) => {
@@ -511,10 +513,8 @@ export class CryptoService implements CryptoServiceAbstraction {
   async clearProviderKeys(memoryOnly?: boolean, userId?: UserId): Promise<void> {
     const activeUserId = (await firstValueFrom(this.accountService.activeAccount$))?.id;
     const userIdIsActive = userId == null || userId === activeUserId;
-    if (memoryOnly && userIdIsActive) {
-      // provider keys are only cached for active users
-      await this.activeUserProviderKeysState.forceValue({});
-    } else {
+
+    if (!memoryOnly) {
       if (userId == null && activeUserId == null) {
         // nothing to do
         return;
@@ -522,6 +522,12 @@ export class CryptoService implements CryptoServiceAbstraction {
       await this.stateProvider
         .getUser(userId ?? activeUserId, USER_ENCRYPTED_PROVIDER_KEYS)
         .update(() => null);
+      return;
+    }
+
+    // provider keys are only cached for active users
+    if (userIdIsActive) {
+      await this.activeUserProviderKeysState.forceValue({});
     }
   }
 
@@ -578,20 +584,22 @@ export class CryptoService implements CryptoServiceAbstraction {
   async clearKeyPair(memoryOnly?: boolean, userId?: UserId): Promise<void[]> {
     const activeUserId = (await firstValueFrom(this.accountService.activeAccount$))?.id;
     const userIdIsActive = userId == null || userId === activeUserId;
-    if (memoryOnly && userIdIsActive) {
-      // key pair is only cached for active users
-      await this.activeUserPrivateKeyState.forceValue(null);
-      await this.activeUserPublicKeyState.forceValue(null);
-      return;
-    } else {
+
+    if (!memoryOnly) {
       if (userId == null && activeUserId == null) {
         // nothing to do
         return;
       }
-      // below updates decrypted private key and public keys if this is the active user as well since those are derived from the encrypted private key
       await this.stateProvider
         .getUser(userId ?? activeUserId, USER_ENCRYPTED_PRIVATE_KEY)
         .update(() => null);
+      return;
+    }
+
+    // decrypted key pair is only cached for active users
+    if (userIdIsActive) {
+      await this.activeUserPrivateKeyState.forceValue(null);
+      await this.activeUserPublicKeyState.forceValue(null);
     }
   }
 
