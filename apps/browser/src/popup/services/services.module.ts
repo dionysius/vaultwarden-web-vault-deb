@@ -375,7 +375,7 @@ function getBgService<T>(service: keyof MainBackground) {
           stateServiceAbstraction,
         );
       },
-      deps: [CryptoService, I18nServiceAbstraction, CryptoFunctionService, StateServiceAbstraction],
+      deps: [CryptoService, I18nServiceAbstraction, KeyGenerationService, StateServiceAbstraction],
     },
     {
       provide: InternalSendServiceAbstraction,
