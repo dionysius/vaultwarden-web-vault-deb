@@ -147,6 +147,7 @@ function createLocalBgService() {
   return localBgService;
 }
 
+/** @deprecated This method needs to be removed as part of MV3 conversion. Please do not add more and actively try to remove usages */
 function getBgService<T>(service: keyof MainBackground) {
   return (): T => {
     return mainBackground ? (mainBackground[service] as any as T) : null;
