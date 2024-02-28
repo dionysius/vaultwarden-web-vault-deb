@@ -76,14 +76,18 @@ jobs:
             npm_command: "dist:bit:selfhost"
           - name: "cloud-QA"
             npm_command: "build:bit:qa"
+            git_metadata: true
           - name: "ee"
             npm_command: "build:bit:ee"
+            git_metadata: true
           - name: "cloud-euprd"
             npm_command: "build:bit:euprd"
           - name: "cloud-euqa"
             npm_command: "build:bit:euqa"
+            git_metadata: true
           - name: "cloud-usdev"
             npm_command: "build:bit:usdev"
+            git_metadata: true
 
     steps:
       - name: Checkout repo
@@ -109,9 +113,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Setup QA metadata
+      - name: Add Git metadata to build version
         working-directory: apps/web
-        if: matrix.name == 'cloud-QA'
+        if: matrix.git_metadata
         run: |
           VERSION=$( jq -r ".version" package.json)
           jq --arg version "$VERSION+${GITHUB_SHA:0:7}" '.version = $version' package.json > package.json.tmp
