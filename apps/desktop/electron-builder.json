@@ -127,7 +127,8 @@
     "entitlementsLoginHelper": "resources/entitlements.mas.loginhelper.plist",
     "hardenedRuntime": false,
     "extendInfo": {
-      "LSMinimumSystemVersion": "10.15.0"
+      "LSMinimumSystemVersion": "10.15.0",
+      "ElectronTeamID": "LTZ2PFU5D6"
     }
   },
   "nsisWeb": {
