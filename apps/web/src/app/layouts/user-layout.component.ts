@@ -5,13 +5,15 @@ import { RouterModule } from "@angular/router";
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
+import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { BroadcasterService } from "@bitwarden/common/platform/abstractions/broadcaster.service";
+import { ConfigServiceAbstraction as ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service.abstraction";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 import { IconModule, LayoutComponent, NavigationModule } from "@bitwarden/components";
 
-import { PaymentMethodBannersComponent } from "../components/payment-method-banners/payment-method-banners.component";
+import { PaymentMethodWarningsModule } from "../billing/shared";
 
 import { PasswordManagerLogo } from "./password-manager-logo";
 
@@ -28,13 +30,18 @@ const BroadcasterSubscriptionId = "UserLayoutComponent";
     LayoutComponent,
     IconModule,
     NavigationModule,
-    PaymentMethodBannersComponent,
+    PaymentMethodWarningsModule,
   ],
 })
 export class UserLayoutComponent implements OnInit, OnDestroy {
   protected readonly logo = PasswordManagerLogo;
   hasFamilySponsorshipAvailable: boolean;
   hideSubscription: boolean;
+
+  protected showPaymentMethodWarningBanners$ = this.configService.getFeatureFlag$(
+    FeatureFlag.ShowPaymentMethodWarningBanners,
+    false,
+  );
 
   constructor(
     private broadcasterService: BroadcasterService,
@@ -44,6 +51,7 @@ export class UserLayoutComponent implements OnInit, OnDestroy {
     private stateService: StateService,
     private apiService: ApiService,
     private syncService: SyncService,
+    private configService: ConfigService,
   ) {}
 
   async ngOnInit() {

@@ -91,11 +91,11 @@ import {
   BadgeSettingsService,
 } from "@bitwarden/common/autofill/services/badge-settings.service";
 import { BillingApiServiceAbstraction } from "@bitwarden/common/billing/abstractions/billilng-api.service.abstraction";
-import { BillingBannerServiceAbstraction } from "@bitwarden/common/billing/abstractions/billing-banner.service.abstraction";
 import { OrganizationBillingServiceAbstraction } from "@bitwarden/common/billing/abstractions/organization-billing.service";
+import { PaymentMethodWarningsServiceAbstraction } from "@bitwarden/common/billing/abstractions/payment-method-warnings-service.abstraction";
 import { BillingApiService } from "@bitwarden/common/billing/services/billing-api.service";
-import { BillingBannerService } from "@bitwarden/common/billing/services/billing-banner.service";
 import { OrganizationBillingService } from "@bitwarden/common/billing/services/organization-billing.service";
+import { PaymentMethodWarningsService } from "@bitwarden/common/billing/services/payment-method-warnings.service";
 import { AppIdService as AppIdServiceAbstraction } from "@bitwarden/common/platform/abstractions/app-id.service";
 import { BroadcasterService as BroadcasterServiceAbstraction } from "@bitwarden/common/platform/abstractions/broadcaster.service";
 import { ConfigApiServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config-api.service.abstraction";
@@ -921,11 +921,6 @@ import { ModalService } from "./modal.service";
       ],
     },
     {
-      provide: BillingBannerServiceAbstraction,
-      useClass: BillingBannerService,
-      deps: [StateProvider],
-    },
-    {
       provide: OrganizationBillingServiceAbstraction,
       useClass: OrganizationBillingService,
       deps: [
@@ -933,6 +928,8 @@ import { ModalService } from "./modal.service";
         EncryptService,
         I18nServiceAbstraction,
         OrganizationApiServiceAbstraction,
+        OrganizationServiceAbstraction,
+        StateProvider,
       ],
     },
     {
@@ -968,6 +965,11 @@ import { ModalService } from "./modal.service";
       provide: BillingApiServiceAbstraction,
       useClass: BillingApiService,
       deps: [ApiServiceAbstraction],
+    },
+    {
+      provide: PaymentMethodWarningsServiceAbstraction,
+      useClass: PaymentMethodWarningsService,
+      deps: [BillingApiServiceAbstraction, StateProvider],
     },
   ],
 })

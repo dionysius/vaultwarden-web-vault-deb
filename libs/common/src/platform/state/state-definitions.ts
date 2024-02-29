@@ -19,8 +19,6 @@ import { StateDefinition } from "./state-definition";
 
 export const ACCOUNT_MEMORY = new StateDefinition("account", "memory");
 
-export const BILLING_BANNERS_DISK = new StateDefinition("billingBanners", "disk");
-
 export const CRYPTO_DISK = new StateDefinition("crypto", "disk");
 export const CRYPTO_MEMORY = new StateDefinition("crypto", "memory");
 
@@ -41,6 +39,8 @@ export const BIOMETRIC_SETTINGS_DISK = new StateDefinition("biometricSettings", 
 export const ORGANIZATIONS_DISK = new StateDefinition("organizations", "disk");
 export const POLICIES_DISK = new StateDefinition("policies", "disk");
 export const PROVIDERS_DISK = new StateDefinition("providers", "disk");
+
+export const BILLING_DISK = new StateDefinition("billing", "disk");
 
 export const FOLDER_DISK = new StateDefinition("folder", "disk", { web: "memory" });
 

@@ -5,9 +5,11 @@ import { ActivatedRoute, RouterModule } from "@angular/router";
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { ProviderService } from "@bitwarden/common/admin-console/abstractions/provider.service";
 import { Provider } from "@bitwarden/common/admin-console/models/domain/provider";
+import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
+import { ConfigServiceAbstraction as ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service.abstraction";
 import { IconModule, LayoutComponent, NavigationModule } from "@bitwarden/components";
 import { ProviderPortalLogo } from "@bitwarden/web-vault/app/admin-console/icons/provider-portal-logo";
-import { PaymentMethodBannersComponent } from "@bitwarden/web-vault/app/components/payment-method-banners/payment-method-banners.component";
+import { PaymentMethodWarningsModule } from "@bitwarden/web-vault/app/billing/shared";
 
 @Component({
   selector: "providers-layout",
@@ -20,7 +22,7 @@ import { PaymentMethodBannersComponent } from "@bitwarden/web-vault/app/componen
     LayoutComponent,
     IconModule,
     NavigationModule,
-    PaymentMethodBannersComponent,
+    PaymentMethodWarningsModule,
   ],
 })
 // eslint-disable-next-line rxjs-angular/prefer-takeuntil
@@ -30,9 +32,15 @@ export class ProvidersLayoutComponent {
   provider: Provider;
   private providerId: string;
 
+  protected showPaymentMethodWarningBanners$ = this.configService.getFeatureFlag$(
+    FeatureFlag.ShowPaymentMethodWarningBanners,
+    false,
+  );
+
   constructor(
     private route: ActivatedRoute,
     private providerService: ProviderService,
+    private configService: ConfigService,
   ) {}
 
   ngOnInit() {

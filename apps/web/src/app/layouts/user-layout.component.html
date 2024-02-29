@@ -33,9 +33,8 @@
       ></bit-nav-item>
     </bit-nav-group>
   </nav>
-  <app-payment-method-banners
-    *ngIf="false"
-    class="-tw-m-6 tw-flex tw-flex-col tw-pb-6"
-  ></app-payment-method-banners>
+  <app-payment-method-warnings
+    *ngIf="showPaymentMethodWarningBanners$ | async"
+  ></app-payment-method-warnings>
   <router-outlet></router-outlet>
 </bit-layout>
