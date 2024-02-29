@@ -3,8 +3,3 @@
 @tailwind utilities;
 
 @import "../../../../libs/components/src/tw-theme.css";
-
-/* Prevent page from jumping when showing scrollbar */
-html {
-  margin-right: calc(-100vw + 100%);
-}
