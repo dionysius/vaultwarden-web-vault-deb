@@ -24,13 +24,8 @@ import { SettingsService } from "@bitwarden/common/abstractions/settings.service
 import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout-settings.service";
 import { VaultTimeoutService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
-import { PolicyApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/policy/policy-api.service.abstraction";
-import {
-  InternalPolicyService,
-  PolicyService,
-} from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
+import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { ProviderService } from "@bitwarden/common/admin-console/abstractions/provider.service";
-import { PolicyApiService } from "@bitwarden/common/admin-console/services/policy/policy-api.service";
 import { AccountService as AccountServiceAbstraction } from "@bitwarden/common/auth/abstractions/account.service";
 import { AuthService as AuthServiceAbstraction } from "@bitwarden/common/auth/abstractions/auth.service";
 import { DeviceTrustCryptoServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust-crypto.service.abstraction";
@@ -311,17 +306,6 @@ function getBgService<T>(service: keyof MainBackground) {
         return new BrowserPolicyService(stateService, stateProvider, organizationService);
       },
       deps: [StateServiceAbstraction, StateProvider, OrganizationService],
-    },
-    {
-      provide: PolicyApiServiceAbstraction,
-      useFactory: (
-        policyService: InternalPolicyService,
-        apiService: ApiService,
-        stateService: StateService,
-      ) => {
-        return new PolicyApiService(policyService, apiService, stateService);
-      },
-      deps: [InternalPolicyService, ApiService, StateService],
     },
     {
       provide: PlatformUtilsService,
