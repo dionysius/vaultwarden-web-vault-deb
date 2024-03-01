@@ -453,6 +453,7 @@ export default class MainBackground {
       this.stateService,
       this.accountService,
       this.stateProvider,
+      this.biometricStateService,
     );
     this.tokenService = new TokenService(this.stateService);
     this.appIdService = new AppIdService(this.storageService);
@@ -619,6 +620,7 @@ export default class MainBackground {
       this.tokenService,
       this.policyService,
       this.stateService,
+      this.biometricStateService,
     );
 
     this.pinCryptoService = new PinCryptoService(
@@ -833,6 +835,7 @@ export default class MainBackground {
       this.stateService,
       this.logService,
       this.authService,
+      this.biometricStateService,
     );
     this.commandsBackground = new CommandsBackground(
       this,

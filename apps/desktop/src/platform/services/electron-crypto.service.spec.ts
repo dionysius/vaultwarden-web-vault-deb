@@ -73,8 +73,8 @@ describe("electronCryptoService", () => {
         encClientKeyHalf.decrypt = jest.fn().mockResolvedValue(decClientKeyHalf);
       });
 
-      it("sets an Biometric key if getBiometricUnlock is true and the platform supports secure storage", async () => {
-        stateService.getBiometricUnlock.mockResolvedValue(true);
+      it("sets a Biometric key if getBiometricUnlock is true and the platform supports secure storage", async () => {
+        biometricStateService.getBiometricUnlockEnabled.mockResolvedValue(true);
         platformUtilService.supportsSecureStorage.mockReturnValue(true);
         biometricStateService.getRequirePasswordOnStart.mockResolvedValue(true);
         biometricStateService.getEncryptedClientKeyHalf.mockResolvedValue(encClientKeyHalf);
@@ -90,7 +90,7 @@ describe("electronCryptoService", () => {
       });
 
       it("clears the Biometric key if getBiometricUnlock is false or the platform does not support secure storage", async () => {
-        stateService.getBiometricUnlock.mockResolvedValue(true);
+        biometricStateService.getBiometricUnlockEnabled.mockResolvedValue(true);
         platformUtilService.supportsSecureStorage.mockReturnValue(false);
 
         await sut.setUserKey(mockUserKey, mockUserId);

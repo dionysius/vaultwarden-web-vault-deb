@@ -5,6 +5,7 @@ import { EncryptedString, EncString } from "../models/domain/enc-string";
 import { ActiveUserState, StateProvider } from "../state";
 
 import {
+  BIOMETRIC_UNLOCK_ENABLED,
   ENCRYPTED_CLIENT_KEY_HALF,
   REQUIRE_PASSWORD_ON_START,
   DISMISSED_REQUIRE_PASSWORD_ON_START_CALLOUT,
@@ -13,6 +14,10 @@ import {
 } from "./biometric.state";
 
 export abstract class BiometricStateService {
+  /**
+   * `true` if the currently active user has elected to store a biometric key to unlock their vault.
+   */
+  biometricUnlockEnabled$: Observable<boolean>; // used to be biometricUnlock
   /**
    * If the user has elected to require a password on first unlock of an application instance, this key will store the
    * encrypted client key half used to unlock the vault.
@@ -52,6 +57,16 @@ export abstract class BiometricStateService {
    * @param value whether or not a password is required on first unlock after opening the application
    */
   abstract setRequirePasswordOnStart(value: boolean): Promise<void>;
+  /**
+   * Updates the biometric unlock enabled state for the currently active user.
+   * @param enabled whether or not to store a biometric key to unlock the vault
+   */
+  abstract setBiometricUnlockEnabled(enabled: boolean): Promise<void>;
+  /**
+   * Gets the biometric unlock enabled state for the given user.
+   * @param userId user Id to check
+   */
+  abstract getBiometricUnlockEnabled(userId: UserId): Promise<boolean>;
   abstract setEncryptedClientKeyHalf(encryptedKeyHalf: EncString, userId?: UserId): Promise<void>;
   abstract getEncryptedClientKeyHalf(userId: UserId): Promise<EncString>;
   abstract getRequirePasswordOnStart(userId: UserId): Promise<boolean>;
@@ -78,11 +93,13 @@ export abstract class BiometricStateService {
 }
 
 export class DefaultBiometricStateService implements BiometricStateService {
+  private biometricUnlockEnabledState: ActiveUserState<boolean>;
   private requirePasswordOnStartState: ActiveUserState<boolean>;
   private encryptedClientKeyHalfState: ActiveUserState<EncryptedString | undefined>;
   private dismissedRequirePasswordOnStartCalloutState: ActiveUserState<boolean>;
   private promptCancelledState: ActiveUserState<boolean>;
   private promptAutomaticallyState: ActiveUserState<boolean>;
+  biometricUnlockEnabled$: Observable<boolean>;
   encryptedClientKeyHalf$: Observable<EncString | undefined>;
   requirePasswordOnStart$: Observable<boolean>;
   dismissedRequirePasswordOnStartCallout$: Observable<boolean>;
@@ -90,6 +107,9 @@ export class DefaultBiometricStateService implements BiometricStateService {
   promptAutomatically$: Observable<boolean>;
 
   constructor(private stateProvider: StateProvider) {
+    this.biometricUnlockEnabledState = this.stateProvider.getActive(BIOMETRIC_UNLOCK_ENABLED);
+    this.biometricUnlockEnabled$ = this.biometricUnlockEnabledState.state$.pipe(map(Boolean));
+
     this.requirePasswordOnStartState = this.stateProvider.getActive(REQUIRE_PASSWORD_ON_START);
     this.requirePasswordOnStart$ = this.requirePasswordOnStartState.state$.pipe(
       map((value) => !!value),
@@ -104,12 +124,22 @@ export class DefaultBiometricStateService implements BiometricStateService {
       DISMISSED_REQUIRE_PASSWORD_ON_START_CALLOUT,
     );
     this.dismissedRequirePasswordOnStartCallout$ =
-      this.dismissedRequirePasswordOnStartCalloutState.state$.pipe(map((v) => !!v));
+      this.dismissedRequirePasswordOnStartCalloutState.state$.pipe(map(Boolean));
 
     this.promptCancelledState = this.stateProvider.getActive(PROMPT_CANCELLED);
-    this.promptCancelled$ = this.promptCancelledState.state$.pipe(map((v) => !!v));
+    this.promptCancelled$ = this.promptCancelledState.state$.pipe(map(Boolean));
     this.promptAutomaticallyState = this.stateProvider.getActive(PROMPT_AUTOMATICALLY);
-    this.promptAutomatically$ = this.promptAutomaticallyState.state$.pipe(map((v) => !!v));
+    this.promptAutomatically$ = this.promptAutomaticallyState.state$.pipe(map(Boolean));
+  }
+
+  async setBiometricUnlockEnabled(enabled: boolean): Promise<void> {
+    await this.biometricUnlockEnabledState.update(() => enabled);
+  }
+
+  async getBiometricUnlockEnabled(userId: UserId): Promise<boolean> {
+    return await firstValueFrom(
+      this.stateProvider.getUser(userId, BIOMETRIC_UNLOCK_ENABLED).state$.pipe(map(Boolean)),
+    );
   }
 
   async setRequirePasswordOnStart(value: boolean): Promise<void> {

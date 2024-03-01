@@ -38,6 +38,10 @@ import { AutofillSettingsServiceAbstraction } from "@bitwarden/common/autofill/s
 import { ClientType } from "@bitwarden/common/enums";
 import { ConfigApiServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config-api.service.abstraction";
 import { KeyGenerationService as KeyGenerationServiceAbstraction } from "@bitwarden/common/platform/abstractions/key-generation.service";
+import {
+  BiometricStateService,
+  DefaultBiometricStateService,
+} from "@bitwarden/common/platform/biometrics/biometric-state.service";
 import { KeySuffixOptions, LogLevelType } from "@bitwarden/common/platform/enums";
 import { StateFactory } from "@bitwarden/common/platform/factories/state-factory";
 import { Account } from "@bitwarden/common/platform/models/domain/account";
@@ -204,6 +208,7 @@ export class Main {
   derivedStateProvider: DerivedStateProvider;
   stateProvider: StateProvider;
   loginStrategyService: LoginStrategyServiceAbstraction;
+  biometricStateService: BiometricStateService;
 
   constructor() {
     let p = null;
@@ -490,11 +495,14 @@ export class Main {
     const lockedCallback = async (userId?: string) =>
       await this.cryptoService.clearStoredUserKey(KeySuffixOptions.Auto);
 
+    this.biometricStateService = new DefaultBiometricStateService(this.stateProvider);
+
     this.vaultTimeoutSettingsService = new VaultTimeoutSettingsService(
       this.cryptoService,
       this.tokenService,
       this.policyService,
       this.stateService,
+      this.biometricStateService,
     );
 
     this.pinCryptoService = new PinCryptoService(

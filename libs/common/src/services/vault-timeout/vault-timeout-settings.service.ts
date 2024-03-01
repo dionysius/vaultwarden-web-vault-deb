@@ -1,4 +1,4 @@
-import { defer } from "rxjs";
+import { defer, firstValueFrom } from "rxjs";
 
 import { VaultTimeoutSettingsService as VaultTimeoutSettingsServiceAbstraction } from "../../abstractions/vault-timeout/vault-timeout-settings.service";
 import { PolicyService } from "../../admin-console/abstractions/policy/policy.service.abstraction";
@@ -7,6 +7,8 @@ import { TokenService } from "../../auth/abstractions/token.service";
 import { VaultTimeoutAction } from "../../enums/vault-timeout-action.enum";
 import { CryptoService } from "../../platform/abstractions/crypto.service";
 import { StateService } from "../../platform/abstractions/state.service";
+import { BiometricStateService } from "../../platform/biometrics/biometric-state.service";
+import { UserId } from "../../types/guid";
 
 /**
  * - DISABLED: No Pin set
@@ -21,6 +23,7 @@ export class VaultTimeoutSettingsService implements VaultTimeoutSettingsServiceA
     private tokenService: TokenService,
     private policyService: PolicyService,
     private stateService: StateService,
+    private biometricStateService: BiometricStateService,
   ) {}
 
   async setVaultTimeoutOptions(timeout: number, action: VaultTimeoutAction): Promise<void> {
@@ -74,7 +77,11 @@ export class VaultTimeoutSettingsService implements VaultTimeoutSettingsServiceA
   }
 
   async isBiometricLockSet(userId?: string): Promise<boolean> {
-    return await this.stateService.getBiometricUnlock({ userId });
+    const biometricUnlockPromise =
+      userId == null
+        ? firstValueFrom(this.biometricStateService.biometricUnlockEnabled$)
+        : this.biometricStateService.getBiometricUnlockEnabled(userId as UserId);
+    return await biometricUnlockPromise;
   }
 
   async getVaultTimeout(userId?: string): Promise<number> {

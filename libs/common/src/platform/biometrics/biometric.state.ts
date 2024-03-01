@@ -2,6 +2,17 @@ import { EncryptedString } from "../models/domain/enc-string";
 import { KeyDefinition, BIOMETRIC_SETTINGS_DISK } from "../state";
 
 /**
+ * Indicates whether the user elected to store a biometric key to unlock their vault.
+ */
+export const BIOMETRIC_UNLOCK_ENABLED = new KeyDefinition<boolean>(
+  BIOMETRIC_SETTINGS_DISK,
+  "biometricUnlockEnabled",
+  {
+    deserializer: (obj) => obj,
+  },
+);
+
+/**
  * Boolean indicating the user has elected to require a password to use their biometric key upon starting the application.
  *
  * A true setting controls whether {@link ENCRYPTED_CLIENT_KEY_HALF} is set.

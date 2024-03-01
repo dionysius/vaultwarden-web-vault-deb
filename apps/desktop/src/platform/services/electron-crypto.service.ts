@@ -1,3 +1,5 @@
+import { firstValueFrom } from "rxjs";
+
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/crypto-function.service";
 import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
@@ -97,7 +99,11 @@ export class ElectronCryptoService extends CryptoService {
 
   protected async shouldStoreKey(keySuffix: KeySuffixOptions, userId?: UserId): Promise<boolean> {
     if (keySuffix === KeySuffixOptions.Biometric) {
-      const biometricUnlock = await this.stateService.getBiometricUnlock({ userId: userId });
+      const biometricUnlockPromise =
+        userId == null
+          ? firstValueFrom(this.biometricStateService.biometricUnlockEnabled$)
+          : this.biometricStateService.getBiometricUnlockEnabled(userId);
+      const biometricUnlock = await biometricUnlockPromise;
       return biometricUnlock && this.platformUtilService.supportsSecureStorage();
     }
     return await super.shouldStoreKey(keySuffix, userId);
