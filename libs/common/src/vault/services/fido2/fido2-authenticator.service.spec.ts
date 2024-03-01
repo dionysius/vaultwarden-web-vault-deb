@@ -656,14 +656,14 @@ describe("FidoAuthenticatorService", () => {
       beforeEach(init);
 
       /** Spec: Increment the credential associated signature counter */
-      it("should increment counter", async () => {
+      it("should increment counter and save to server when stored counter is larger than zero", async () => {
         const encrypted = Symbol();
         cipherService.encrypt.mockResolvedValue(encrypted as any);
+        ciphers[0].login.fido2Credentials[0].counter = 9000;
 
         await authenticator.getAssertion(params, tab);
 
         expect(cipherService.updateWithServer).toHaveBeenCalledWith(encrypted);
-
         expect(cipherService.encrypt).toHaveBeenCalledWith(
           expect.objectContaining({
             id: ciphers[0].id,
@@ -676,6 +676,17 @@ describe("FidoAuthenticatorService", () => {
             }),
           }),
         );
+      });
+
+      /** Spec: Authenticators that do not implement a signature counter leave the signCount in the authenticator data constant at zero. */
+      it("should not save to server when stored counter is zero", async () => {
+        const encrypted = Symbol();
+        cipherService.encrypt.mockResolvedValue(encrypted as any);
+        ciphers[0].login.fido2Credentials[0].counter = 0;
+
+        await authenticator.getAssertion(params, tab);
+
+        expect(cipherService.updateWithServer).not.toHaveBeenCalled();
       });
 
       it("should return an assertion result", async () => {
