@@ -2709,10 +2709,10 @@
     "message": "Покренути DUO и пратите кораке да бисте завршили пријављивање."
   },
   "duoRequiredForAccount": {
-    "message": "Duo two-step login is required for your account."
+    "message": "Duo пријава у два корака је потребна за ваш налог."
   },
   "popoutTheExtensionToCompleteLogin": {
-    "message": "Popout the extension to complete login."
+    "message": "Искачући додатак да бисте довршили пријаву."
   },
   "popoutExtension": {
     "message": "Popout extension"
@@ -2995,15 +2995,15 @@
     "description": "Button text for the setting that allows overriding the default browser autofill settings"
   },
   "saveCipherAttemptSuccess": {
-    "message": "Credentials saved successfully!",
+    "message": "Акредитиви су успешно сачувани!",
     "description": "Notification message for when saving credentials has succeeded."
   },
   "updateCipherAttemptSuccess": {
-    "message": "Credentials updated successfully!",
+    "message": "Акредитиви су успешно ажурирани!",
     "description": "Notification message for when updating credentials has succeeded."
   },
   "saveCipherAttemptFailed": {
-    "message": "Error saving credentials. Check console for details.",
+    "message": "Грешка при чувању акредитива. Проверите конзолу за детаље.",
     "description": "Notification message for when saving credentials has failed."
   }
 }
