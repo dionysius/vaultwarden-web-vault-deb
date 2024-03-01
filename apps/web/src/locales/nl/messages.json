@@ -1349,14 +1349,18 @@
   },
   "onboardingImportDataDetailsPartOne": {
     "message": "Als je geen gegevens om te importeren hebt, kun je een ",
-    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
   "onboardingImportDataDetailsLink": {
     "message": "nieuw item",
-    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
-  "onboardingImportDataDetailsPartTwo": {
-    "message": " maken. Je moet misschien wachten tot je beheerder je organisatielidmaatschap bevestigt.",
+  "onboardingImportDataDetailsPartTwoNoOrgs": {
+    "message": " aanmaken.",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead."
+  },
+  "onboardingImportDataDetailsPartTwoWithOrgs": {
+    "message": " aanmaken. Je moet misschien wachten tot je beheerder je organisatielidmaatschap bevestigt.",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
   },
   "importError": {
@@ -6669,11 +6673,11 @@
   "resendCode": {
     "message": "Code opnieuw sturen"
   },
-  "membersColumnHeader": {
-    "message": "Lid/Groep"
-  },
-  "groupAndMemberColumnHeader": {
+  "memberColumnHeader": {
     "message": "Lid"
+  },
+  "groupSlashMemberColumnHeader": {
+    "message": "Groep/Lid"
   },
   "selectGroupsAndMembers": {
     "message": "Groepen en leden selecteren"
@@ -7499,6 +7503,9 @@
   },
   "grantCollectionAccess": {
     "message": "Groepen of mensen toegang tot deze collectie geven."
+  },
+  "grantCollectionAccessMembersOnly": {
+    "message": "Leden toegang tot deze collectie geven."
   },
   "adminCollectionAccess": {
     "message": "Beheerders hebben toegang tot collecties en kunnen deze beheren."

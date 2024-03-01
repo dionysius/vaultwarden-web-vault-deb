@@ -1349,13 +1349,17 @@
   },
   "onboardingImportDataDetailsPartOne": {
     "message": "Se non hai dati da importare, puoi invece creare un ",
-    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
   "onboardingImportDataDetailsLink": {
     "message": "nuovo elemento",
-    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
-  "onboardingImportDataDetailsPartTwo": {
+  "onboardingImportDataDetailsPartTwoNoOrgs": {
+    "message": ".",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead."
+  },
+  "onboardingImportDataDetailsPartTwoWithOrgs": {
     "message": ". Potresti dover attendere finché l'amministratore non conferma l'appartenenza all'organizzazione.",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
   },
@@ -6669,11 +6673,11 @@
   "resendCode": {
     "message": "Invia codice di nuovo"
   },
-  "membersColumnHeader": {
-    "message": "Membro/gruppo"
-  },
-  "groupAndMemberColumnHeader": {
+  "memberColumnHeader": {
     "message": "Membro"
+  },
+  "groupSlashMemberColumnHeader": {
+    "message": "Gruppo/Membro"
   },
   "selectGroupsAndMembers": {
     "message": "Seleziona gruppi e membri"
@@ -7499,6 +7503,9 @@
   },
   "grantCollectionAccess": {
     "message": "Consenti a gruppi o membri di accedere a questa raccolta."
+  },
+  "grantCollectionAccessMembersOnly": {
+    "message": "Concedi ai membri l'accesso a questa raccolta."
   },
   "adminCollectionAccess": {
     "message": "Gli amministratori possono accedere e gestire le raccolte."

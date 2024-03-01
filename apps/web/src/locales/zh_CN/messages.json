@@ -1349,13 +1349,17 @@
   },
   "onboardingImportDataDetailsPartOne": {
     "message": "如果您没有任何数据要导入，您可以创建一个 ",
-    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
   "onboardingImportDataDetailsLink": {
     "message": "新项目",
-    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
-  "onboardingImportDataDetailsPartTwo": {
+  "onboardingImportDataDetailsPartTwoNoOrgs": {
+    "message": " 。",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead."
+  },
+  "onboardingImportDataDetailsPartTwoWithOrgs": {
     "message": " 。您可能需要等待您的管理员确认您的组织成员资格。",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
   },
@@ -2534,7 +2538,7 @@
     }
   },
   "trialSecretsManagerThankYou": {
-    "message": "Thanks for signing up for Bitwarden Secrets Manager for $PLAN$!",
+    "message": "感谢您注册适用于 $PLAN$ 的 Bitwarden 机密管理器！",
     "placeholders": {
       "plan": {
         "content": "$1",
@@ -5203,7 +5207,7 @@
     "message": "设置一个唯一的 SP 实体 ID"
   },
   "spUniqueEntityIdDesc": {
-    "message": "Generate an identifier that is unique to your organization"
+    "message": "生成您的组织独有的标识符"
   },
   "idpEntityId": {
     "message": "实体 ID"
@@ -5930,13 +5934,13 @@
     }
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
-    "message": "Launch Duo and follow the steps to finish logging in."
+    "message": "启动 Duo 然后按照步骤完成登录。"
   },
   "duoRequiredByOrgForAccount": {
-    "message": "Duo two-step login is required for your account."
+    "message": "您的账户要求使用 Duo 两步登录。"
   },
   "launchDuo": {
-    "message": "Launch Duo"
+    "message": "启动 Duo"
   },
   "turnOn": {
     "message": "开启"
@@ -6669,11 +6673,11 @@
   "resendCode": {
     "message": "重新发送代码"
   },
-  "membersColumnHeader": {
-    "message": "成员/群组"
-  },
-  "groupAndMemberColumnHeader": {
+  "memberColumnHeader": {
     "message": "成员"
+  },
+  "groupSlashMemberColumnHeader": {
+    "message": "群组/成员"
   },
   "selectGroupsAndMembers": {
     "message": "选择群组和成员"
@@ -7249,7 +7253,7 @@
     "message": "请求了设备批准。"
   },
   "startYour7DayFreeTrialOfBitwardenFor": {
-    "message": "为 $ORG$ 开始您的 Bitwarden 7 天免费试用",
+    "message": "开始 $ORG$ 的 Bitwarden 7 天免费试用",
     "placeholders": {
       "org": {
         "content": "$1",
@@ -7258,7 +7262,7 @@
     }
   },
   "startYour7DayFreeTrialOfBitwardenSecretsManagerFor": {
-    "message": "Start your 7-Day free trial of Bitwarden Secrets Manager for $ORG$",
+    "message": "开始 $ORG$ 的 Bitwarden 机密管理器 7 天免费试用",
     "placeholders": {
       "org": {
         "content": "$1",
@@ -7477,7 +7481,7 @@
     "message": "安装浏览器扩展"
   },
   "installBrowserExtensionDetails": {
-    "message": "使用扩展快速保存登录信息和自动填充表单，无需打开网页应用程序。"
+    "message": "使用扩展快速保存登录信息和自动填充表单，而无需打开网页应用程序。"
   },
   "projectAccessUpdated": {
     "message": "工程访问权限已更新"
@@ -7499,6 +7503,9 @@
   },
   "grantCollectionAccess": {
     "message": "授予群组或成员对此集合的访问权限。"
+  },
+  "grantCollectionAccessMembersOnly": {
+    "message": "授予成员对此集合的访问权限。"
   },
   "adminCollectionAccess": {
     "message": "管理员可以访问和管理集合。"
@@ -7525,32 +7532,32 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
   },
   "collectionEnhancementsDesc": {
-    "message": "为额外的灵活性添加新的设置和权限。 将管理员角色替换为“可以管理”权限。 并引入选项以允许用户创建集合，并限制对集合的管理访问。",
+    "message": "添加新的设置和权限以获得额外的灵活性。将经理角色替换为「可以管理」权限，并引入允许用户创建集合以及限制对集合的管理访问权限的选项。",
     "description": "This describes new features and improvements for user roles and collections"
   },
   "collectionEnhancementsLearnMore": {
-    "message": "了解集合管理"
+    "message": "了解更多关于集合管理"
   },
   "organizationInformation": {
-    "message": "Organization information"
+    "message": "组织信息"
   },
   "confirmationDetails": {
-    "message": "Confirmation details"
+    "message": "确认详细信息"
   },
   "smFreeTrialThankYou": {
-    "message": "Thank you for signing up for Bitwarden Secrets Manager!"
+    "message": "感谢您注册 Bitwarden 机密管理器！"
   },
   "smFreeTrialConfirmationEmail": {
-    "message": "We've sent a confirmation email to your email at "
+    "message": "我们已经发送了一封确认邮件到 "
   },
   "confirmCollectionEnhancementsDialogTitle": {
-    "message": "This action is irreversible"
+    "message": "此操作不可逆"
   },
   "confirmCollectionEnhancementsDialogContent": {
-    "message": "Turning on this feature will deprecate the manager role and replace it with a Can manage permission. This will take a few moments. Do not make any organization changes until it is complete. Are you sure you want to proceed?"
+    "message": "开启此功能将弃用经理角色，并将其替换为「可以管理」权限。这需要一些时间。在完成之前，请勿对组织进行任何更改。您确定要继续吗？"
   },
   "sorryToSeeYouGo": {
-    "message": "很遗憾看到您离开！通过分享您取消的原因，帮助改进 Bitwarden。",
+    "message": "很遗憾看到您离开！请分享您取消的原因，以帮助改进 Bitwarden。",
     "description": "A message shown to users as part of an offboarding survey asking them to provide more information on their subscription cancelation."
   },
   "selectCancellationReason": {
@@ -7558,7 +7565,7 @@
     "description": "Used as a form field label for a select input on the offboarding survey."
   },
   "anyOtherFeedback": {
-    "message": "是否有其他您想要分享的反馈？",
+    "message": "您还有其他反馈要分享吗？",
     "description": "Used as a form field label for a textarea input on the offboarding survey."
   },
   "missingFeatures": {
@@ -7566,7 +7573,7 @@
     "description": "An option for the offboarding survey shown when a user cancels their subscription."
   },
   "movingToAnotherTool": {
-    "message": "迁移到另一个工具",
+    "message": "迁移到其他工具",
     "description": "An option for the offboarding survey shown when a user cancels their subscription."
   },
   "tooDifficultToUse": {
@@ -7594,6 +7601,6 @@
     "message": "管理控制台"
   },
   "providerPortal": {
-    "message": "Provider Portal"
+    "message": "提供商门户"
   }
 }

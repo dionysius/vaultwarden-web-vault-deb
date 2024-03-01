@@ -1349,13 +1349,17 @@
   },
   "onboardingImportDataDetailsPartOne": {
     "message": "Om du inte har någon data att importera, kan du skapa ett ",
-    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
   "onboardingImportDataDetailsLink": {
     "message": "nytt objekt",
-    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
-  "onboardingImportDataDetailsPartTwo": {
+  "onboardingImportDataDetailsPartTwoNoOrgs": {
+    "message": " instead.",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead."
+  },
+  "onboardingImportDataDetailsPartTwoWithOrgs": {
     "message": " instead. You may need to wait until your administrator confirms your organization membership.",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
   },
@@ -6669,11 +6673,11 @@
   "resendCode": {
     "message": "Skicka kod igen"
   },
-  "membersColumnHeader": {
-    "message": "Medlem/Grupp"
-  },
-  "groupAndMemberColumnHeader": {
+  "memberColumnHeader": {
     "message": "Medlem"
+  },
+  "groupSlashMemberColumnHeader": {
+    "message": "Grupp/Medlem"
   },
   "selectGroupsAndMembers": {
     "message": "Välj grupper och medlemmar"
@@ -7499,6 +7503,9 @@
   },
   "grantCollectionAccess": {
     "message": "Ge grupper eller medlemmar tillgång till denna samling."
+  },
+  "grantCollectionAccessMembersOnly": {
+    "message": "Ge medlemmar tillgång till denna samling."
   },
   "adminCollectionAccess": {
     "message": "Administratörer kan komma åt och hantera samlingar."

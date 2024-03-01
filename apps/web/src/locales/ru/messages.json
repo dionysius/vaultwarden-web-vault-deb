@@ -1349,14 +1349,18 @@
   },
   "onboardingImportDataDetailsPartOne": {
     "message": "Если у вас нет данных для импорта, вы можете создать ",
-    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
   "onboardingImportDataDetailsLink": {
     "message": "новый элемент.",
-    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
-  "onboardingImportDataDetailsPartTwo": {
-    "message": " Возможно, вам придется подождать, пока администратор подтвердит ваше членство в организации.",
+  "onboardingImportDataDetailsPartTwoNoOrgs": {
+    "message": " вместо этого.",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead."
+  },
+  "onboardingImportDataDetailsPartTwoWithOrgs": {
+    "message": " вместо этого. Возможно, вам придется подождать, пока администратор подтвердит ваше членство в организации.",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
   },
   "importError": {
@@ -6669,11 +6673,11 @@
   "resendCode": {
     "message": "Отправить код повторно"
   },
-  "membersColumnHeader": {
-    "message": "Участник/Группа"
-  },
-  "groupAndMemberColumnHeader": {
+  "memberColumnHeader": {
     "message": "Участник"
+  },
+  "groupSlashMemberColumnHeader": {
+    "message": "Группа/участник"
   },
   "selectGroupsAndMembers": {
     "message": "Выбор групп и участников"
@@ -7499,6 +7503,9 @@
   },
   "grantCollectionAccess": {
     "message": "Предоставить группам или участникам доступ к этой коллекции."
+  },
+  "grantCollectionAccessMembersOnly": {
+    "message": "Предоставить участникам доступ к этой коллекции."
   },
   "adminCollectionAccess": {
     "message": "Администраторы могут получать доступ к коллекциям и управлять ими."

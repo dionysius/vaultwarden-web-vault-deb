@@ -1349,13 +1349,17 @@
   },
   "onboardingImportDataDetailsPartOne": {
     "message": "Daxilə köçürüləcək datanız yoxdursa, əvəzində yeni element yarada bilərsiniz.",
-    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
   "onboardingImportDataDetailsLink": {
     "message": " ",
-    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
-  "onboardingImportDataDetailsPartTwo": {
+  "onboardingImportDataDetailsPartTwoNoOrgs": {
+    "message": " instead.",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead."
+  },
+  "onboardingImportDataDetailsPartTwoWithOrgs": {
     "message": "Administratorunuz təşkilat üzvlüyünüzü təsdiqləyənə qədər gözləməli ola bilərsiniz.",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
   },
@@ -6669,11 +6673,11 @@
   "resendCode": {
     "message": "Kodu təkrar göndər"
   },
-  "membersColumnHeader": {
-    "message": "Üzv/Qrup"
-  },
-  "groupAndMemberColumnHeader": {
+  "memberColumnHeader": {
     "message": "Üzv"
+  },
+  "groupSlashMemberColumnHeader": {
+    "message": "Qrup/Üzv"
   },
   "selectGroupsAndMembers": {
     "message": "Qrup və üzv seç"
@@ -7500,6 +7504,9 @@
   "grantCollectionAccess": {
     "message": "Qrup və ya üzvlərin bu kolleksiyaya müraciətinə icazə verin."
   },
+  "grantCollectionAccessMembersOnly": {
+    "message": "Üzvlərin bu kolleksiyaya müraciətinə icazə verin."
+  },
   "adminCollectionAccess": {
     "message": "Administratorlar kolleksiyalara müraciət edə və onları idarə edə bilər."
   },
@@ -7591,9 +7598,9 @@
     "message": "Buraxılış bloqunu oxuyun"
   },
   "adminConsole": {
-    "message": "Admin Console"
+    "message": "Admin Konsolu"
   },
   "providerPortal": {
-    "message": "Provider Portal"
+    "message": "Provayder Portal"
   }
 }

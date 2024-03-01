@@ -1349,13 +1349,17 @@
   },
   "onboardingImportDataDetailsPartOne": {
     "message": "Jos sinulla ei ole tuotavia tietoja, voit tuonnin sijaan luoda ",
-    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
   "onboardingImportDataDetailsLink": {
     "message": "uuden kohteen",
-    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
-  "onboardingImportDataDetailsPartTwo": {
+  "onboardingImportDataDetailsPartTwoNoOrgs": {
+    "message": ".",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead."
+  },
+  "onboardingImportDataDetailsPartTwoWithOrgs": {
     "message": ". Saatat joutua odottamaan, että organisaation ylläpito vahvistaa jäsenyytesi organisaatiossa.",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
   },
@@ -4944,7 +4948,7 @@
     "message": "Luo uusi asiakasorganisaatio, joka liitetään sinuun toimittajana. Voit käyttää ja hallita tätä organisaatiota."
   },
   "newClient": {
-    "message": "Uusi asiakas"
+    "message": "Uusi pääte"
   },
   "addExistingOrganization": {
     "message": "Lisää olemassa oleva organisaatio"
@@ -6669,11 +6673,11 @@
   "resendCode": {
     "message": "Lähetä koodi uudelleen"
   },
-  "membersColumnHeader": {
-    "message": "Jäsen/ryhmä"
-  },
-  "groupAndMemberColumnHeader": {
+  "memberColumnHeader": {
     "message": "Jäsen"
+  },
+  "groupSlashMemberColumnHeader": {
+    "message": "Ryhmä/Jäsen"
   },
   "selectGroupsAndMembers": {
     "message": "Valitse ryhmät ja jäsenet"
@@ -7499,6 +7503,9 @@
   },
   "grantCollectionAccess": {
     "message": "Myönnä ryhmille tai henkilöille kokoelman käyttöoikeus."
+  },
+  "grantCollectionAccessMembersOnly": {
+    "message": "Myönnä jäsenille tämän kokoelman käyttöoikeus."
   },
   "adminCollectionAccess": {
     "message": "Ylläpitäjät voivat käyttää ja hallinnoida kokoelmia."

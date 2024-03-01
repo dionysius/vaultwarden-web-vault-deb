@@ -1349,13 +1349,17 @@
   },
   "onboardingImportDataDetailsPartOne": {
     "message": "Ja nav nekādu ievietojamu datu, var izveidot ",
-    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
   "onboardingImportDataDetailsLink": {
     "message": "jaunu vienumu",
-    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
-  "onboardingImportDataDetailsPartTwo": {
+  "onboardingImportDataDetailsPartTwoNoOrgs": {
+    "message": ".",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead."
+  },
+  "onboardingImportDataDetailsPartTwoWithOrgs": {
     "message": ". Var būt nepieciešams gaidīt, līdz pārvaldnieks apstiprina dalību apvienībā.",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
   },
@@ -6669,11 +6673,11 @@
   "resendCode": {
     "message": "Atkārtoti nosūtīt kodu"
   },
-  "membersColumnHeader": {
-    "message": "Dalībnieks/Grupa"
-  },
-  "groupAndMemberColumnHeader": {
+  "memberColumnHeader": {
     "message": "Dalībnieks"
+  },
+  "groupSlashMemberColumnHeader": {
+    "message": "Kopa/dalībnieks"
   },
   "selectGroupsAndMembers": {
     "message": "Atlasīt grupas un dalībniekus"
@@ -7499,6 +7503,9 @@
   },
   "grantCollectionAccess": {
     "message": "Piešķirt kopām vai dalībniekiem piekļuvi šim krājumam."
+  },
+  "grantCollectionAccessMembersOnly": {
+    "message": "Piešķirt dalībniekiem piekļuvi šim krājumam."
   },
   "adminCollectionAccess": {
     "message": "Pārvaldnieki var piekļūt krājumiem un pārvaldīt tos."

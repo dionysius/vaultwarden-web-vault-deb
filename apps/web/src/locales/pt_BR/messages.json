@@ -1349,14 +1349,18 @@
   },
   "onboardingImportDataDetailsPartOne": {
     "message": "Se você não tem dados para importar, você pode criar uma ",
-    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
   "onboardingImportDataDetailsLink": {
     "message": "Novo Item",
-    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
-  "onboardingImportDataDetailsPartTwo": {
-    "message": " em vez disso, você pode precisar esperar até que o seu administrador confirme a sua associação à organização.",
+  "onboardingImportDataDetailsPartTwoNoOrgs": {
+    "message": " instead.",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead."
+  },
+  "onboardingImportDataDetailsPartTwoWithOrgs": {
+    "message": " instead. You may need to wait until your administrator confirms your organization membership.",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
   },
   "importError": {
@@ -6669,11 +6673,11 @@
   "resendCode": {
     "message": "Reenviar código"
   },
-  "membersColumnHeader": {
-    "message": "Membro/Grupo"
+  "memberColumnHeader": {
+    "message": "Member"
   },
-  "groupAndMemberColumnHeader": {
-    "message": "Membro"
+  "groupSlashMemberColumnHeader": {
+    "message": "Group/Member"
   },
   "selectGroupsAndMembers": {
     "message": "Selecione grupos e membros"
@@ -7499,6 +7503,9 @@
   },
   "grantCollectionAccess": {
     "message": "Grant groups or members access to this collection."
+  },
+  "grantCollectionAccessMembersOnly": {
+    "message": "Grant members access to this collection."
   },
   "adminCollectionAccess": {
     "message": "Administrators can access and manage collections."

@@ -1349,14 +1349,18 @@
   },
   "onboardingImportDataDetailsPartOne": {
     "message": "İçe aktarılacak veriniz yoksa bir tane oluşturun ",
-    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
   "onboardingImportDataDetailsLink": {
     "message": "yeni öge",
-    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
-  "onboardingImportDataDetailsPartTwo": {
-    "message": " onun yerine. Yöneticiniz kuruluş üyeliğinizi onaylayana kadar beklemeniz gerekebilir.",
+  "onboardingImportDataDetailsPartTwoNoOrgs": {
+    "message": " yerine.",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead."
+  },
+  "onboardingImportDataDetailsPartTwoWithOrgs": {
+    "message": " yerine. Yöneticiniz kuruluş üyeliğinizi onaylayana kadar beklemeniz gerekebilir.",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
   },
   "importError": {
@@ -6669,11 +6673,11 @@
   "resendCode": {
     "message": "Kodu yeniden gönder"
   },
-  "membersColumnHeader": {
-    "message": "Üye/Grup"
-  },
-  "groupAndMemberColumnHeader": {
+  "memberColumnHeader": {
     "message": "Üye"
+  },
+  "groupSlashMemberColumnHeader": {
+    "message": "Grup/Üye"
   },
   "selectGroupsAndMembers": {
     "message": "Grupları ve üyeleri seçin"
@@ -7499,6 +7503,9 @@
   },
   "grantCollectionAccess": {
     "message": "Gruplara veya üyelere bu koleksiyona erişim izni verin."
+  },
+  "grantCollectionAccessMembersOnly": {
+    "message": "Üyelere bu koleksiyona erişim izni verin."
   },
   "adminCollectionAccess": {
     "message": "Yöneticiler koleksiyonlara erişebilir ve bunları yönetebilir."
