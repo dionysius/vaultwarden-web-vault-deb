@@ -221,7 +221,7 @@ jobs:
           token: '${{ secrets.GITHUB_TOKEN }}'
           initial-status: 'in_progress'
           environment-url: http://vault.bitwarden.com
-          environment: 'Web Vault - Production'
+          environment: 'Web Vault - US Production Cloud'
           description: 'Deployment ${{ needs.setup.outputs.release_version }} from branch ${{ github.ref_name }}'
           task: release
 
