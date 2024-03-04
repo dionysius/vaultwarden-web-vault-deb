@@ -21,6 +21,7 @@ import {
   AbstractStorageService,
   ObservableStorageService,
 } from "../../abstractions/storage.service";
+import { StateEventRegistrarService } from "../state-event-registrar.service";
 import { StateUpdateOptions, populateOptionsWithDefault } from "../state-update-options";
 import { UserKeyDefinition } from "../user-key-definition";
 import { ActiveUserState, CombinedState, activeMarker } from "../user-state";
@@ -42,6 +43,7 @@ export class DefaultActiveUserState<T> implements ActiveUserState<T> {
     protected keyDefinition: UserKeyDefinition<T>,
     private accountService: AccountService,
     private chosenStorageLocation: AbstractStorageService & ObservableStorageService,
+    private stateEventRegistrarService: StateEventRegistrarService,
   ) {
     this.activeUserId$ = this.accountService.activeAccount$.pipe(
       // We only care about the UserId but we do want to know about no user as well.
@@ -150,6 +152,11 @@ export class DefaultActiveUserState<T> implements ActiveUserState<T> {
 
     const newState = configureState(currentState, combinedDependencies);
     await this.saveToStorage(key, newState);
+    if (newState != null && currentState == null) {
+      // Only register this state as something clearable on the first time it saves something
+      // worth deleting. This is helpful in making sure there is less of a race to adding events.
+      await this.stateEventRegistrarService.registerEvents(this.keyDefinition);
+    }
     return [userId, newState];
   }
 

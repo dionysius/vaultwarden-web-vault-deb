@@ -9,18 +9,20 @@ import {
 
 import { CachedServices, FactoryOptions, factory } from "./factory-options";
 import {
-  DiskStorageServiceInitOptions,
-  MemoryStorageServiceInitOptions,
-  observableDiskStorageServiceFactory,
-  observableMemoryStorageServiceFactory,
-} from "./storage-service.factory";
+  StateEventRegistrarServiceInitOptions,
+  stateEventRegistrarServiceFactory,
+} from "./state-event-registrar-service.factory";
+import {
+  StorageServiceProviderInitOptions,
+  storageServiceProviderFactory,
+} from "./storage-service-provider.factory";
 
 type ActiveUserStateProviderFactory = FactoryOptions;
 
 export type ActiveUserStateProviderInitOptions = ActiveUserStateProviderFactory &
   AccountServiceInitOptions &
-  MemoryStorageServiceInitOptions &
-  DiskStorageServiceInitOptions;
+  StorageServiceProviderInitOptions &
+  StateEventRegistrarServiceInitOptions;
 
 export async function activeUserStateProviderFactory(
   cache: { activeUserStateProvider?: ActiveUserStateProvider } & CachedServices,
@@ -33,8 +35,8 @@ export async function activeUserStateProviderFactory(
     async () =>
       new DefaultActiveUserStateProvider(
         await accountServiceFactory(cache, opts),
-        await observableMemoryStorageServiceFactory(cache, opts),
-        await observableDiskStorageServiceFactory(cache, opts),
+        await storageServiceProviderFactory(cache, opts),
+        await stateEventRegistrarServiceFactory(cache, opts),
       ),
   );
 }

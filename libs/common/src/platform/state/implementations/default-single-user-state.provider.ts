@@ -1,11 +1,7 @@
 import { UserId } from "../../../types/guid";
-import {
-  AbstractMemoryStorageService,
-  AbstractStorageService,
-  ObservableStorageService,
-} from "../../abstractions/storage.service";
+import { StorageServiceProvider } from "../../services/storage-service.provider";
 import { KeyDefinition } from "../key-definition";
-import { StateDefinition } from "../state-definition";
+import { StateEventRegistrarService } from "../state-event-registrar.service";
 import { UserKeyDefinition, isUserKeyDefinition } from "../user-key-definition";
 import { SingleUserState } from "../user-state";
 import { SingleUserStateProvider } from "../user-state.provider";
@@ -16,8 +12,8 @@ export class DefaultSingleUserStateProvider implements SingleUserStateProvider {
   private cache: Record<string, SingleUserState<unknown>> = {};
 
   constructor(
-    protected readonly memoryStorage: AbstractMemoryStorageService & ObservableStorageService,
-    protected readonly diskStorage: AbstractStorageService & ObservableStorageService,
+    private readonly storageServiceProvider: StorageServiceProvider,
+    private readonly stateEventRegistrarService: StateEventRegistrarService,
   ) {}
 
   get<T>(
@@ -27,7 +23,11 @@ export class DefaultSingleUserStateProvider implements SingleUserStateProvider {
     if (!isUserKeyDefinition(keyDefinition)) {
       keyDefinition = UserKeyDefinition.fromBaseKeyDefinition(keyDefinition);
     }
-    const cacheKey = this.buildCacheKey(userId, keyDefinition);
+    const [location, storageService] = this.storageServiceProvider.get(
+      keyDefinition.stateDefinition.defaultStorageLocation,
+      keyDefinition.stateDefinition.storageLocationOverrides,
+    );
+    const cacheKey = this.buildCacheKey(location, userId, keyDefinition);
     const existingUserState = this.cache[cacheKey];
     if (existingUserState != null) {
       // I have to cast out of the unknown generic but this should be safe if rules
@@ -35,38 +35,21 @@ export class DefaultSingleUserStateProvider implements SingleUserStateProvider {
       return existingUserState as SingleUserState<T>;
     }
 
-    const newUserState = this.buildSingleUserState(userId, keyDefinition);
+    const newUserState = new DefaultSingleUserState<T>(
+      userId,
+      keyDefinition,
+      storageService,
+      this.stateEventRegistrarService,
+    );
     this.cache[cacheKey] = newUserState;
     return newUserState;
   }
 
-  private buildCacheKey(userId: UserId, keyDefinition: UserKeyDefinition<unknown>) {
-    return `${this.getLocationString(keyDefinition)}_${keyDefinition.fullName}_${userId}`;
-  }
-
-  protected buildSingleUserState<T>(
+  private buildCacheKey(
+    location: string,
     userId: UserId,
-    keyDefinition: UserKeyDefinition<T>,
-  ): SingleUserState<T> {
-    return new DefaultSingleUserState<T>(
-      userId,
-      keyDefinition,
-      this.getLocation(keyDefinition.stateDefinition),
-    );
-  }
-
-  protected getLocationString(keyDefinition: UserKeyDefinition<unknown>): string {
-    return keyDefinition.stateDefinition.defaultStorageLocation;
-  }
-
-  protected getLocation(stateDefinition: StateDefinition) {
-    // The default implementations don't support the client overrides
-    // it is up to the client to extend this class and add that support
-    switch (stateDefinition.defaultStorageLocation) {
-      case "disk":
-        return this.diskStorage;
-      case "memory":
-        return this.memoryStorage;
-    }
+    keyDefinition: UserKeyDefinition<unknown>,
+  ) {
+    return `${location}_${keyDefinition.fullName}_${userId}`;
   }
 }

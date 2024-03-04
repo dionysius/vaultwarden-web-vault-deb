@@ -1,8 +1,12 @@
+import { mock } from "jest-mock-extended";
+
 import { mockAccountServiceWith } from "../../../../spec/fake-account-service";
 import { FakeStorageService } from "../../../../spec/fake-storage.service";
 import { UserId } from "../../../types/guid";
+import { StorageServiceProvider } from "../../services/storage-service.provider";
 import { KeyDefinition } from "../key-definition";
 import { StateDefinition } from "../state-definition";
+import { StateEventRegistrarService } from "../state-event-registrar.service";
 
 import { DefaultActiveUserState } from "./default-active-user-state";
 import { DefaultActiveUserStateProvider } from "./default-active-user-state.provider";
@@ -12,6 +16,9 @@ import { DefaultSingleUserState } from "./default-single-user-state";
 import { DefaultSingleUserStateProvider } from "./default-single-user-state.provider";
 
 describe("Specific State Providers", () => {
+  const storageServiceProvider = mock<StorageServiceProvider>();
+  const stateEventRegistrarService = mock<StateEventRegistrarService>();
+
   let singleSut: DefaultSingleUserStateProvider;
   let activeSut: DefaultActiveUserStateProvider;
   let globalSut: DefaultGlobalStateProvider;
@@ -19,19 +26,20 @@ describe("Specific State Providers", () => {
   const fakeUser1 = "00000000-0000-1000-a000-000000000001" as UserId;
 
   beforeEach(() => {
+    storageServiceProvider.get.mockImplementation((location) => {
+      return [location, new FakeStorageService()];
+    });
+
     singleSut = new DefaultSingleUserStateProvider(
-      new FakeStorageService() as any,
-      new FakeStorageService(),
+      storageServiceProvider,
+      stateEventRegistrarService,
     );
     activeSut = new DefaultActiveUserStateProvider(
       mockAccountServiceWith(null),
-      new FakeStorageService() as any,
-      new FakeStorageService(),
+      storageServiceProvider,
+      stateEventRegistrarService,
     );
-    globalSut = new DefaultGlobalStateProvider(
-      new FakeStorageService() as any,
-      new FakeStorageService(),
-    );
+    globalSut = new DefaultGlobalStateProvider(storageServiceProvider);
   });
 
   const fakeDiskStateDefinition = new StateDefinition("fake", "disk");

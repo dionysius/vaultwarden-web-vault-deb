@@ -13,11 +13,13 @@ import { MigrationBuilderService } from "@bitwarden/common/platform/services/mig
 import { MigrationRunner } from "@bitwarden/common/platform/services/migration-runner";
 import { NoopMessagingService } from "@bitwarden/common/platform/services/noop-messaging.service";
 /* eslint-disable import/no-restricted-paths -- We need the implementation to inject, but generally this should not be accessed */
+import { StorageServiceProvider } from "@bitwarden/common/platform/services/storage-service.provider";
 import { DefaultActiveUserStateProvider } from "@bitwarden/common/platform/state/implementations/default-active-user-state.provider";
 import { DefaultDerivedStateProvider } from "@bitwarden/common/platform/state/implementations/default-derived-state.provider";
 import { DefaultGlobalStateProvider } from "@bitwarden/common/platform/state/implementations/default-global-state.provider";
 import { DefaultSingleUserStateProvider } from "@bitwarden/common/platform/state/implementations/default-single-user-state.provider";
 import { DefaultStateProvider } from "@bitwarden/common/platform/state/implementations/default-state.provider";
+import { StateEventRegistrarService } from "@bitwarden/common/platform/state/state-event-registrar.service";
 import { MemoryStorageService as MemoryStorageServiceForStateProviders } from "@bitwarden/common/platform/state/storage/memory-storage.service";
 /* eslint-enable import/no-restricted-paths */
 
@@ -104,10 +106,11 @@ export class Main {
     this.storageService = new ElectronStorageService(app.getPath("userData"), storageDefaults);
     this.memoryStorageService = new MemoryStorageService();
     this.memoryStorageForStateProviders = new MemoryStorageServiceForStateProviders();
-    const globalStateProvider = new DefaultGlobalStateProvider(
-      this.memoryStorageForStateProviders,
+    const storageServiceProvider = new StorageServiceProvider(
       this.storageService,
+      this.memoryStorageForStateProviders,
     );
+    const globalStateProvider = new DefaultGlobalStateProvider(storageServiceProvider);
 
     const accountService = new AccountServiceImplementation(
       new NoopMessagingService(),
@@ -115,13 +118,18 @@ export class Main {
       globalStateProvider,
     );
 
+    const stateEventRegistrarService = new StateEventRegistrarService(
+      globalStateProvider,
+      storageServiceProvider,
+    );
+
     const stateProvider = new DefaultStateProvider(
       new DefaultActiveUserStateProvider(
         accountService,
-        this.memoryStorageForStateProviders,
-        this.storageService,
+        storageServiceProvider,
+        stateEventRegistrarService,
       ),
-      new DefaultSingleUserStateProvider(this.memoryStorageForStateProviders, this.storageService),
+      new DefaultSingleUserStateProvider(storageServiceProvider, stateEventRegistrarService),
       globalStateProvider,
       new DefaultDerivedStateProvider(this.memoryStorageForStateProviders),
     );

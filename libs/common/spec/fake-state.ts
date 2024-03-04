@@ -65,6 +65,7 @@ export class FakeGlobalState<T> implements GlobalState<T> {
     this.nextMock(newState);
     return newState;
   }
+
   /** Tracks update values resolved by `FakeState.update` */
   nextMock = jest.fn<void, [T]>();
 

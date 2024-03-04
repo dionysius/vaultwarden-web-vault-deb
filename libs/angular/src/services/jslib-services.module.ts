@@ -135,6 +135,7 @@ import { MigrationBuilderService } from "@bitwarden/common/platform/services/mig
 import { MigrationRunner } from "@bitwarden/common/platform/services/migration-runner";
 import { NoopNotificationsService } from "@bitwarden/common/platform/services/noop-notifications.service";
 import { StateService } from "@bitwarden/common/platform/services/state.service";
+import { StorageServiceProvider } from "@bitwarden/common/platform/services/storage-service.provider";
 import { ValidationService } from "@bitwarden/common/platform/services/validation.service";
 import { WebCryptoFunctionService } from "@bitwarden/common/platform/services/web-crypto-function.service";
 import {
@@ -150,6 +151,8 @@ import { DefaultDerivedStateProvider } from "@bitwarden/common/platform/state/im
 import { DefaultGlobalStateProvider } from "@bitwarden/common/platform/state/implementations/default-global-state.provider";
 import { DefaultSingleUserStateProvider } from "@bitwarden/common/platform/state/implementations/default-single-user-state.provider";
 import { DefaultStateProvider } from "@bitwarden/common/platform/state/implementations/default-state.provider";
+import { StateEventRegistrarService } from "@bitwarden/common/platform/state/state-event-registrar.service";
+import { StateEventRunnerService } from "@bitwarden/common/platform/state/state-event-runner.service";
 /* eslint-enable import/no-restricted-paths */
 import { AvatarUpdateService } from "@bitwarden/common/services/account/avatar-update.service";
 import { ApiService } from "@bitwarden/common/services/api.service";
@@ -551,6 +554,7 @@ import { ModalService } from "./modal.service";
         StateServiceAbstraction,
         AuthServiceAbstraction,
         VaultTimeoutSettingsServiceAbstraction,
+        StateEventRunnerService,
         LOCKED_CALLBACK,
         LOGOUT_CALLBACK,
       ],
@@ -891,19 +895,34 @@ import { ModalService } from "./modal.service";
       ],
     },
     {
+      provide: StorageServiceProvider,
+      useClass: StorageServiceProvider,
+      deps: [OBSERVABLE_DISK_STORAGE, OBSERVABLE_MEMORY_STORAGE],
+    },
+    {
+      provide: StateEventRegistrarService,
+      useClass: StateEventRegistrarService,
+      deps: [GlobalStateProvider, StorageServiceProvider],
+    },
+    {
+      provide: StateEventRunnerService,
+      useClass: StateEventRunnerService,
+      deps: [GlobalStateProvider, StorageServiceProvider],
+    },
+    {
       provide: GlobalStateProvider,
       useClass: DefaultGlobalStateProvider,
-      deps: [OBSERVABLE_MEMORY_STORAGE, OBSERVABLE_DISK_STORAGE],
+      deps: [StorageServiceProvider],
     },
     {
       provide: ActiveUserStateProvider,
       useClass: DefaultActiveUserStateProvider,
-      deps: [AccountServiceAbstraction, OBSERVABLE_MEMORY_STORAGE, OBSERVABLE_DISK_STORAGE],
+      deps: [AccountServiceAbstraction, StorageServiceProvider, StateEventRegistrarService],
     },
     {
       provide: SingleUserStateProvider,
       useClass: DefaultSingleUserStateProvider,
-      deps: [OBSERVABLE_MEMORY_STORAGE, OBSERVABLE_DISK_STORAGE],
+      deps: [StorageServiceProvider, StateEventRegistrarService],
     },
     {
       provide: DerivedStateProvider,

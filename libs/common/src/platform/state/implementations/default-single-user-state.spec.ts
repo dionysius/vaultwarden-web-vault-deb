@@ -3,6 +3,7 @@
  * @jest-environment ../shared/test.environment.ts
  */
 
+import { mock } from "jest-mock-extended";
 import { firstValueFrom, of } from "rxjs";
 import { Jsonify } from "type-fest";
 
@@ -11,6 +12,7 @@ import { FakeStorageService } from "../../../../spec/fake-storage.service";
 import { UserId } from "../../../types/guid";
 import { Utils } from "../../misc/utils";
 import { StateDefinition } from "../state-definition";
+import { StateEventRegistrarService } from "../state-event-registrar.service";
 import { UserKeyDefinition } from "../user-key-definition";
 
 import { DefaultSingleUserState } from "./default-single-user-state";
@@ -42,11 +44,17 @@ const userKey = testKeyDefinition.buildKey(userId);
 describe("DefaultSingleUserState", () => {
   let diskStorageService: FakeStorageService;
   let userState: DefaultSingleUserState<TestState>;
+  const stateEventRegistrarService = mock<StateEventRegistrarService>();
   const newData = { date: new Date() };
 
   beforeEach(() => {
     diskStorageService = new FakeStorageService();
-    userState = new DefaultSingleUserState(userId, testKeyDefinition, diskStorageService);
+    userState = new DefaultSingleUserState(
+      userId,
+      testKeyDefinition,
+      diskStorageService,
+      stateEventRegistrarService,
+    );
   });
 
   afterEach(() => {
@@ -255,6 +263,49 @@ describe("DefaultSingleUserState", () => {
       expect(emissions).toHaveLength(2);
       expect(emissions).toEqual(expect.arrayContaining([initialState, newState]));
     });
+
+    it.each([null, undefined])(
+      "should register user key definition when state transitions from null-ish (%s) to non-null",
+      async (startingValue: TestState | null) => {
+        const initialState: Record<string, TestState> = {};
+        initialState[userKey] = startingValue;
+
+        diskStorageService.internalUpdateStore(initialState);
+
+        await userState.update(() => ({ array: ["one"], date: new Date() }));
+
+        expect(stateEventRegistrarService.registerEvents).toHaveBeenCalledWith(testKeyDefinition);
+      },
+    );
+
+    it("should not register user key definition when state has preexisting value", async () => {
+      const initialState: Record<string, TestState> = {};
+      initialState[userKey] = {
+        date: new Date(2019, 1),
+      };
+
+      diskStorageService.internalUpdateStore(initialState);
+
+      await userState.update(() => ({ array: ["one"], date: new Date() }));
+
+      expect(stateEventRegistrarService.registerEvents).not.toHaveBeenCalled();
+    });
+
+    it.each([null, undefined])(
+      "should not register user key definition when setting value to null-ish (%s) value",
+      async (updatedValue: TestState | null) => {
+        const initialState: Record<string, TestState> = {};
+        initialState[userKey] = {
+          date: new Date(2019, 1),
+        };
+
+        diskStorageService.internalUpdateStore(initialState);
+
+        await userState.update(() => updatedValue);
+
+        expect(stateEventRegistrarService.registerEvents).not.toHaveBeenCalled();
+      },
+    );
   });
 
   describe("update races", () => {

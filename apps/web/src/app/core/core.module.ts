@@ -14,7 +14,6 @@ import {
 } from "@bitwarden/angular/services/injection-tokens";
 import { JslibServicesModule } from "@bitwarden/angular/services/jslib-services.module";
 import { ModalService as ModalServiceAbstraction } from "@bitwarden/angular/services/modal.service";
-import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { LoginService as LoginServiceAbstraction } from "@bitwarden/common/auth/abstractions/login.service";
 import { LoginService } from "@bitwarden/common/auth/services/login.service";
 import { FileDownloadService } from "@bitwarden/common/platform/abstractions/file-download/file-download.service";
@@ -28,21 +27,16 @@ import { StateFactory } from "@bitwarden/common/platform/factories/state-factory
 import { MemoryStorageService } from "@bitwarden/common/platform/services/memory-storage.service";
 import { MigrationBuilderService } from "@bitwarden/common/platform/services/migration-builder.service";
 import { MigrationRunner } from "@bitwarden/common/platform/services/migration-runner";
-import {
-  ActiveUserStateProvider,
-  GlobalStateProvider,
-  SingleUserStateProvider,
-} from "@bitwarden/common/platform/state";
-// eslint-disable-next-line import/no-restricted-paths -- Implementation for memory storage
+/* eslint-disable import/no-restricted-paths -- Implementation for memory storage */
+import { StorageServiceProvider } from "@bitwarden/common/platform/services/storage-service.provider";
 import { MemoryStorageService as MemoryStorageServiceForStateProviders } from "@bitwarden/common/platform/state/storage/memory-storage.service";
+/* eslint-enable import/no-restricted-paths -- Implementation for memory storage */
 
 import { PolicyListService } from "../admin-console/core/policy-list.service";
 import { HtmlStorageService } from "../core/html-storage.service";
 import { I18nService } from "../core/i18n.service";
-import { WebActiveUserStateProvider } from "../platform/web-active-user-state.provider";
-import { WebGlobalStateProvider } from "../platform/web-global-state.provider";
 import { WebMigrationRunner } from "../platform/web-migration-runner";
-import { WebSingleUserStateProvider } from "../platform/web-single-user-state.provider";
+import { WebStorageServiceProvider } from "../platform/web-storage-service.provider";
 import { WindowStorageService } from "../platform/window-storage.service";
 import { CollectionAdminService } from "../vault/core/collection-admin.service";
 
@@ -124,24 +118,9 @@ import { WebPlatformUtilsService } from "./web-platform-utils.service";
       useFactory: () => new WindowStorageService(window.localStorage),
     },
     {
-      provide: SingleUserStateProvider,
-      useClass: WebSingleUserStateProvider,
-      deps: [OBSERVABLE_MEMORY_STORAGE, OBSERVABLE_DISK_STORAGE, OBSERVABLE_DISK_LOCAL_STORAGE],
-    },
-    {
-      provide: ActiveUserStateProvider,
-      useClass: WebActiveUserStateProvider,
-      deps: [
-        AccountService,
-        OBSERVABLE_MEMORY_STORAGE,
-        OBSERVABLE_DISK_STORAGE,
-        OBSERVABLE_DISK_LOCAL_STORAGE,
-      ],
-    },
-    {
-      provide: GlobalStateProvider,
-      useClass: WebGlobalStateProvider,
-      deps: [OBSERVABLE_MEMORY_STORAGE, OBSERVABLE_DISK_STORAGE, OBSERVABLE_DISK_LOCAL_STORAGE],
+      provide: StorageServiceProvider,
+      useClass: WebStorageServiceProvider,
+      deps: [OBSERVABLE_DISK_STORAGE, OBSERVABLE_MEMORY_STORAGE, OBSERVABLE_DISK_LOCAL_STORAGE],
     },
     {
       provide: MigrationRunner,

@@ -23,6 +23,7 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { BiometricStateService } from "@bitwarden/common/platform/biometrics/biometric-state.service";
+import { StateEventRunnerService } from "@bitwarden/common/platform/state";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 import { UserId } from "@bitwarden/common/types/guid";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
@@ -89,6 +90,7 @@ export class AppComponent implements OnDestroy, OnInit {
     private configService: ConfigServiceAbstraction,
     private dialogService: DialogService,
     private biometricStateService: BiometricStateService,
+    private stateEventRunnerService: StateEventRunnerService,
     private paymentMethodWarningService: PaymentMethodWarningService,
     private organizationService: OrganizationService,
   ) {}
@@ -283,6 +285,8 @@ export class AppComponent implements OnDestroy, OnInit {
       this.biometricStateService.logout(userId as UserId),
       this.paymentMethodWarningService.clear(),
     ]);
+
+    await this.stateEventRunnerService.handleEvent("logout", userId as UserId);
 
     this.searchService.clearIndex();
     this.authService.logOut(async () => {
