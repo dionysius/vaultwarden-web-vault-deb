@@ -1,4 +1,4 @@
-import { Observable, concatMap, of, zip } from "rxjs";
+import { Observable, concatMap, of, zip, map } from "rxjs";
 import { Jsonify } from "type-fest";
 
 import { EncString } from "../../../platform/models/domain/enc-string";
@@ -9,6 +9,7 @@ import {
   SingleUserState,
   StateProvider,
   StateUpdateOptions,
+  CombinedState,
 } from "../../../platform/state";
 import { UserId } from "../../../types/guid";
 
@@ -37,7 +38,9 @@ type ClassifiedFormat<Disclosed> = {
  *
  *  DO NOT USE THIS for synchronized data.
  */
-export class SecretState<Plaintext extends object, Disclosed> {
+export class SecretState<Plaintext extends object, Disclosed>
+  implements SingleUserState<Plaintext>
+{
   // The constructor is private to avoid creating a circular dependency when
   // wiring the derived and secret states together.
   private constructor(
@@ -46,7 +49,22 @@ export class SecretState<Plaintext extends object, Disclosed> {
     private readonly plaintext: DerivedState<Plaintext>,
   ) {
     this.state$ = plaintext.state$;
+    this.combinedState$ = plaintext.state$.pipe(map((state) => [this.encrypted.userId, state]));
   }
+
+  /** {@link SingleUserState.userId} */
+  get userId() {
+    return this.encrypted.userId;
+  }
+
+  /** Observes changes to the decrypted secret state. The observer
+   *  updates after the secret has been recorded to state storage.
+   *  @returns `undefined` when the account is locked.
+   */
+  readonly state$: Observable<Plaintext>;
+
+  /** {@link SingleUserState.combinedState$} */
+  readonly combinedState$: Observable<CombinedState<Plaintext>>;
 
   /** Creates a secret state bound to an account encryptor. The account must be unlocked
    *  when this method is called.
@@ -105,12 +123,6 @@ export class SecretState<Plaintext extends object, Disclosed> {
     const secretState = new SecretState(encryptor, encryptedState, plaintextState);
     return secretState;
   }
-
-  /** Observes changes to the decrypted secret state. The observer
-   *  updates after the secret has been recorded to state storage.
-   *  @returns `undefined` when the account is locked.
-   */
-  readonly state$: Observable<Plaintext>;
 
   /** Updates the secret stored by this state.
    *  @param configureState a callback that returns an updated decrypted

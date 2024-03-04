@@ -83,7 +83,16 @@ describe("UserEncryptor", () => {
   });
 
   describe("instance", () => {
-    it("gets a set value", async () => {
+    it("userId outputs the user input during construction", async () => {
+      const provider = await fakeStateProvider();
+      const encryptor = mockEncryptor();
+
+      const state = SecretState.from(SomeUser, FOOBAR_KEY, provider, encryptor);
+
+      expect(state.userId).toEqual(SomeUser);
+    });
+
+    it("state$ gets a set value", async () => {
       const provider = await fakeStateProvider();
       const encryptor = mockEncryptor();
       const state = SecretState.from(SomeUser, FOOBAR_KEY, provider, encryptor);
@@ -94,6 +103,20 @@ describe("UserEncryptor", () => {
       const result = await firstValueFrom(state.state$);
 
       expect(result).toEqual(value);
+    });
+
+    it("combinedState$ gets a set value with the userId", async () => {
+      const provider = await fakeStateProvider();
+      const encryptor = mockEncryptor();
+      const state = SecretState.from(SomeUser, FOOBAR_KEY, provider, encryptor);
+      const value = { foo: true, bar: false };
+
+      await state.update(() => value);
+      await awaitAsync();
+      const [userId, result] = await firstValueFrom(state.combinedState$);
+
+      expect(result).toEqual(value);
+      expect(userId).toEqual(SomeUser);
     });
 
     it("round-trips json-serializable values", async () => {

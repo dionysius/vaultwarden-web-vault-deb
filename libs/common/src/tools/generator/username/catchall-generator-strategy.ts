@@ -1,5 +1,7 @@
 import { PolicyType } from "../../../admin-console/enums";
 import { Policy } from "../../../admin-console/models/domain/policy";
+import { StateProvider } from "../../../platform/state";
+import { UserId } from "../../../types/guid";
 import { GeneratorStrategy } from "../abstractions";
 import { DefaultPolicyEvaluator } from "../default-policy-evaluator";
 import { CATCHALL_SETTINGS } from "../key-definitions";
@@ -17,11 +19,14 @@ export class CatchallGeneratorStrategy
   /** Instantiates the generation strategy
    *  @param usernameService generates a catchall address for a domain
    */
-  constructor(private usernameService: UsernameGenerationServiceAbstraction) {}
+  constructor(
+    private usernameService: UsernameGenerationServiceAbstraction,
+    private stateProvider: StateProvider,
+  ) {}
 
-  /** {@link GeneratorStrategy.disk} */
-  get disk() {
-    return CATCHALL_SETTINGS;
+  /** {@link GeneratorStrategy.durableState} */
+  durableState(id: UserId) {
+    return this.stateProvider.getUser(id, CATCHALL_SETTINGS);
   }
 
   /** {@link GeneratorStrategy.policy} */
@@ -38,6 +43,10 @@ export class CatchallGeneratorStrategy
 
   /** {@link GeneratorStrategy.evaluator} */
   evaluator(policy: Policy) {
+    if (!policy) {
+      return new DefaultPolicyEvaluator<CatchallGenerationOptions>();
+    }
+
     if (policy.type !== this.policy) {
       const details = `Expected: ${this.policy}. Received: ${policy.type}`;
       throw Error("Mismatched policy type. " + details);
