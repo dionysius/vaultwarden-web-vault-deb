@@ -80,4 +80,14 @@ export class StateService extends BaseStateService<GlobalState, Account> {
     options = this.reconcileOptions(options, await this.defaultInMemoryOptions());
     return await super.setEncryptedSends(value, options);
   }
+
+  override async getLastSync(options?: StorageOptions): Promise<string> {
+    options = this.reconcileOptions(options, await this.defaultInMemoryOptions());
+    return await super.getLastSync(options);
+  }
+
+  override async setLastSync(value: string, options?: StorageOptions): Promise<void> {
+    options = this.reconcileOptions(options, await this.defaultInMemoryOptions());
+    return await super.setLastSync(value, options);
+  }
 }

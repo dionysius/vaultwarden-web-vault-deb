@@ -1619,6 +1619,23 @@ export class StateService<
     await this.storageService.save(keys.accountActivity, accountActivity, options);
   }
 
+  async getLastSync(options?: StorageOptions): Promise<string> {
+    return (
+      await this.getAccount(this.reconcileOptions(options, await this.defaultOnDiskMemoryOptions()))
+    )?.profile?.lastSync;
+  }
+
+  async setLastSync(value: string, options?: StorageOptions): Promise<void> {
+    const account = await this.getAccount(
+      this.reconcileOptions(options, await this.defaultOnDiskMemoryOptions()),
+    );
+    account.profile.lastSync = value;
+    await this.saveAccount(
+      account,
+      this.reconcileOptions(options, await this.defaultOnDiskMemoryOptions()),
+    );
+  }
+
   async getLocalData(options?: StorageOptions): Promise<{ [cipherId: string]: LocalData }> {
     return (
       await this.getAccount(this.reconcileOptions(options, await this.defaultOnDiskLocalOptions()))

@@ -12,7 +12,7 @@ export const BIOMETRIC_UNLOCK_ENABLED: KeyDefinitionLike = {
   stateDefinition: { name: "biometricSettings" },
 };
 
-export class MoveBiometricUnlockToStateProviders extends Migrator<26, 27> {
+export class MoveBiometricUnlockToStateProviders extends Migrator<27, 28> {
   async migrate(helper: MigrationHelper): Promise<void> {
     const legacyAccounts = await helper.getAccounts<ExpectedAccountType>();
 

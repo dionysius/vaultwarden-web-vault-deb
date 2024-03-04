@@ -3,7 +3,7 @@ import { any, MockProxy } from "jest-mock-extended";
 import { StateDefinitionLike, MigrationHelper } from "../migration-helper";
 import { mockMigrationHelper } from "../migration-helper.spec";
 
-import { BadgeSettingsMigrator } from "./26-move-badge-settings-to-state-providers";
+import { BadgeSettingsMigrator } from "./27-move-badge-settings-to-state-providers";
 
 function exampleJSON() {
   return {
@@ -77,8 +77,8 @@ describe("BadgeSettingsMigrator", () => {
 
   describe("migrate", () => {
     beforeEach(() => {
-      helper = mockMigrationHelper(exampleJSON(), 25);
-      sut = new BadgeSettingsMigrator(25, 26);
+      helper = mockMigrationHelper(exampleJSON(), 26);
+      sut = new BadgeSettingsMigrator(26, 27);
     });
 
     it("should remove disableBadgeCounter setting from all accounts", async () => {
@@ -117,8 +117,8 @@ describe("BadgeSettingsMigrator", () => {
 
   describe("rollback", () => {
     beforeEach(() => {
-      helper = mockMigrationHelper(rollbackJSON(), 26);
-      sut = new BadgeSettingsMigrator(25, 26);
+      helper = mockMigrationHelper(rollbackJSON(), 27);
+      sut = new BadgeSettingsMigrator(26, 27);
     });
 
     it("should null out new values for each account", async () => {

@@ -328,6 +328,8 @@ export abstract class StateService<T extends Account = Account> {
   setKeyHash: (value: string, options?: StorageOptions) => Promise<void>;
   getLastActive: (options?: StorageOptions) => Promise<number>;
   setLastActive: (value: number, options?: StorageOptions) => Promise<void>;
+  getLastSync: (options?: StorageOptions) => Promise<string>;
+  setLastSync: (value: string, options?: StorageOptions) => Promise<void>;
   getLocalData: (options?: StorageOptions) => Promise<{ [cipherId: string]: LocalData }>;
   setLocalData: (
     value: { [cipherId: string]: LocalData },

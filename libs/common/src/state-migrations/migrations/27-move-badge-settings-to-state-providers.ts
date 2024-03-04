@@ -14,7 +14,7 @@ const enableBadgeCounterKeyDefinition: KeyDefinitionLike = {
   key: "enableBadgeCounter",
 };
 
-export class BadgeSettingsMigrator extends Migrator<25, 26> {
+export class BadgeSettingsMigrator extends Migrator<26, 27> {
   async migrate(helper: MigrationHelper): Promise<void> {
     // account state (e.g. account settings -> state provider framework keys)
     const accounts = await helper.getAccounts<ExpectedAccountState>();

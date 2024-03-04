@@ -693,7 +693,6 @@ export default class MainBackground {
       this.folderApiService,
       this.organizationService,
       this.sendApiService,
-      this.stateProvider,
       logoutCallback,
     );
     this.eventUploadService = new EventUploadService(
@@ -1077,7 +1076,7 @@ export default class MainBackground {
     await this.eventUploadService.uploadEvents(userId);
 
     await Promise.all([
-      this.syncService.setLastSync(new Date(0), userId as UserId),
+      this.syncService.setLastSync(new Date(0), userId),
       this.cryptoService.clearKeys(userId),
       this.settingsService.clear(userId),
       this.cipherService.clear(userId),

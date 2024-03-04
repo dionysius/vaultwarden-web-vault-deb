@@ -44,8 +44,6 @@ export const BILLING_DISK = new StateDefinition("billing", "disk");
 
 export const FOLDER_DISK = new StateDefinition("folder", "disk", { web: "memory" });
 
-export const SYNC_STATE = new StateDefinition("sync", "disk", { web: "memory" });
-
 export const VAULT_SETTINGS_DISK = new StateDefinition("vaultSettings", "disk", {
   web: "disk-local",
 });

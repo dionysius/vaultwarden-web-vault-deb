@@ -181,6 +181,7 @@ export class AccountProfile {
   forceSetPasswordReason?: ForceSetPasswordReason;
   hasPremiumPersonally?: boolean;
   hasPremiumFromOrganization?: boolean;
+  lastSync?: string;
   userId?: string;
   usesKeyConnector?: boolean;
   keyHash?: string;
