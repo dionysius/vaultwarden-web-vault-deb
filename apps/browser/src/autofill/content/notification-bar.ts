@@ -7,7 +7,11 @@ import { WatchedForm } from "../models/watched-form";
 import { NotificationBarIframeInitData } from "../notification/abstractions/notification-bar";
 import { FormData } from "../services/abstractions/autofill.service";
 import { GlobalSettings, UserSettings } from "../types";
-import { getFromLocalStorage, setupExtensionDisconnectAction } from "../utils";
+import {
+  getFromLocalStorage,
+  sendExtensionMessage,
+  setupExtensionDisconnectAction,
+} from "../utils";
 
 interface HTMLElementWithFormOpId extends HTMLElement {
   formOpId: string;
@@ -86,12 +90,11 @@ async function loadNotificationBar() {
   ]);
   const changePasswordButtonContainsNames = new Set(["pass", "change", "contras", "senha"]);
 
-  // These are preferences for whether to show the notification bar based on the user's settings
-  // and they are set in the Settings > Options page in the browser extension.
-  let disabledAddLoginNotification = false;
-  let disabledChangedPasswordNotification = false;
+  const enableChangedPasswordPrompt = await sendExtensionMessage(
+    "bgGetEnableChangedPasswordPrompt",
+  );
+  const enableAddedLoginPrompt = await sendExtensionMessage("bgGetEnableAddedLoginPrompt");
   let showNotificationBar = true;
-
   // Look up the active user id from storage
   const activeUserIdKey = "activeUserId";
   const globalStorageKey = "global";
@@ -121,11 +124,7 @@ async function loadNotificationBar() {
       // Example: '{"bitwarden.com":null}'
       const excludedDomainsDict = globalSettings.neverDomains;
       if (!excludedDomainsDict || !(window.location.hostname in excludedDomainsDict)) {
-        // Set local disabled preferences
-        disabledAddLoginNotification = globalSettings.disableAddLoginNotification;
-        disabledChangedPasswordNotification = globalSettings.disableChangedPasswordNotification;
-
-        if (!disabledAddLoginNotification || !disabledChangedPasswordNotification) {
+        if (enableAddedLoginPrompt || enableChangedPasswordPrompt) {
           // If the user has not disabled both notifications, then handle the initial page change (null -> actual page)
           handlePageChange();
         }
@@ -352,9 +351,7 @@ async function loadNotificationBar() {
       // to avoid missing any forms that are added after the page loads
       observeDom();
 
-      sendPlatformMessage({
-        command: "checkNotificationQueue",
-      });
+      void sendExtensionMessage("checkNotificationQueue");
     }
 
     // This is a safeguard in case the observer misses a SPA page change.
@@ -392,10 +389,7 @@ async function loadNotificationBar() {
    *
    * */
   function collectPageDetails() {
-    sendPlatformMessage({
-      command: "bgCollectPageDetails",
-      sender: "notificationBar",
-    });
+    void sendExtensionMessage("bgCollectPageDetails", { sender: "notificationBar" });
   }
 
   // End Page Detail Collection Methods
@@ -620,10 +614,9 @@ async function loadNotificationBar() {
         continue;
       }
 
-      const disabledBoth = disabledChangedPasswordNotification && disabledAddLoginNotification;
-      // if user has not disabled both notifications and we have a username and password field,
+      // if user has enabled either add login or change password notification, and we have a username and password field
       if (
-        !disabledBoth &&
+        (enableChangedPasswordPrompt || enableAddedLoginPrompt) &&
         watchedForms[i].usernameEl != null &&
         watchedForms[i].passwordEl != null
       ) {
@@ -639,10 +632,7 @@ async function loadNotificationBar() {
         const passwordPopulated = login.password != null && login.password !== "";
         if (userNamePopulated && passwordPopulated) {
           processedForm(form);
-          sendPlatformMessage({
-            command: "bgAddLogin",
-            login,
-          });
+          void sendExtensionMessage("bgAddLogin", { login });
           break;
         } else if (
           userNamePopulated &&
@@ -659,7 +649,7 @@ async function loadNotificationBar() {
 
       // if user has not disabled the password changed notification and we have multiple password fields,
       // then check if the user has changed their password
-      if (!disabledChangedPasswordNotification && watchedForms[i].passwordEls != null) {
+      if (enableChangedPasswordPrompt && watchedForms[i].passwordEls != null) {
         // Get the values of the password fields
         const passwords: string[] = watchedForms[i].passwordEls
           .filter((el: HTMLInputElement) => el.value != null && el.value !== "")
@@ -716,7 +706,7 @@ async function loadNotificationBar() {
             currentPassword: curPass,
             url: document.URL,
           };
-          sendPlatformMessage({ command: "bgChangedPassword", data });
+          void sendExtensionMessage("bgChangedPassword", { data });
           break;
         }
       }
@@ -954,9 +944,7 @@ async function loadNotificationBar() {
     switch (barType) {
       case "add":
       case "change":
-        sendPlatformMessage({
-          command: "bgRemoveTabFromNotificationQueue",
-        });
+        void sendExtensionMessage("bgRemoveTabFromNotificationQueue");
         break;
       default:
         break;
@@ -981,12 +969,6 @@ async function loadNotificationBar() {
   // End Notification Bar Functions (open, close, height adjustment, etc.)
 
   // Helper Functions
-  function sendPlatformMessage(msg: any) {
-    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    chrome.runtime.sendMessage(msg);
-  }
-
   function isInIframe() {
     try {
       return window.self !== window.top;

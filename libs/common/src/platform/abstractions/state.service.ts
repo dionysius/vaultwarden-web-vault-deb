@@ -200,13 +200,6 @@ export abstract class StateService<T extends Account = Account> {
   setDecryptedSends: (value: SendView[], options?: StorageOptions) => Promise<void>;
   getDefaultUriMatch: (options?: StorageOptions) => Promise<UriMatchType>;
   setDefaultUriMatch: (value: UriMatchType, options?: StorageOptions) => Promise<void>;
-  getDisableAddLoginNotification: (options?: StorageOptions) => Promise<boolean>;
-  setDisableAddLoginNotification: (value: boolean, options?: StorageOptions) => Promise<void>;
-  getDisableChangedPasswordNotification: (options?: StorageOptions) => Promise<boolean>;
-  setDisableChangedPasswordNotification: (
-    value: boolean,
-    options?: StorageOptions,
-  ) => Promise<void>;
   getDisableContextMenuItem: (options?: StorageOptions) => Promise<boolean>;
   setDisableContextMenuItem: (value: boolean, options?: StorageOptions) => Promise<void>;
   /**

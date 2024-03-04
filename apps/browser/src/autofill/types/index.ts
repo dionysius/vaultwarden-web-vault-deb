@@ -39,10 +39,7 @@ export type UserSettings = {
   vaultTimeoutAction: VaultTimeoutAction;
 };
 
-export type GlobalSettings = Pick<
-  GlobalState,
-  "disableAddLoginNotification" | "disableChangedPasswordNotification" | "neverDomains"
->;
+export type GlobalSettings = Pick<GlobalState, "neverDomains">;
 
 /**
  * A HTMLElement (usually a form element) with additional custom properties added by this script
