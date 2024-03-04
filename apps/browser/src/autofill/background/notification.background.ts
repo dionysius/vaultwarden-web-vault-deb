@@ -6,7 +6,6 @@ import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
-import { ThemeType } from "@bitwarden/common/platform/enums";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { FolderService } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
@@ -58,6 +57,7 @@ export default class NotificationBackground {
     bgUnlockPopoutOpened: ({ message, sender }) => this.unlockVault(message, sender.tab),
     checkNotificationQueue: ({ sender }) => this.checkNotificationQueue(sender.tab),
     bgReopenUnlockPopout: ({ sender }) => this.openUnlockPopout(sender.tab),
+    getWebVaultUrlForNotification: () => this.getWebVaultUrl(),
   };
 
   constructor(
@@ -134,11 +134,9 @@ export default class NotificationBackground {
     notificationQueueMessage: NotificationQueueMessageItem,
   ) {
     const notificationType = notificationQueueMessage.type;
-    const webVaultURL = this.environmentService.getWebVaultUrl();
     const typeData: Record<string, any> = {
       isVaultLocked: notificationQueueMessage.wasVaultLocked,
-      theme: await this.getCurrentTheme(),
-      webVaultURL,
+      theme: await this.stateService.getTheme(),
     };
 
     switch (notificationType) {
@@ -156,18 +154,6 @@ export default class NotificationBackground {
       type: notificationType,
       typeData,
     });
-  }
-
-  private async getCurrentTheme() {
-    const theme = await this.stateService.getTheme();
-
-    if (theme !== ThemeType.System) {
-      return theme;
-    }
-
-    return window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? ThemeType.Dark
-      : ThemeType.Light;
   }
 
   /**
@@ -634,6 +620,10 @@ export default class NotificationBackground {
    */
   private async getFolderData() {
     return await firstValueFrom(this.folderService.folderViews$);
+  }
+
+  private getWebVaultUrl(): string {
+    return this.environmentService.getWebVaultUrl();
   }
 
   private async removeIndividualVault(): Promise<boolean> {

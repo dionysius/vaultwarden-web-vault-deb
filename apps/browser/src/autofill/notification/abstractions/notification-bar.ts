@@ -1,13 +1,26 @@
-import { SaveOrUpdateCipherResult } from "../../background/abstractions/notification.background";
+type NotificationBarIframeInitData = {
+  type?: string;
+  isVaultLocked?: boolean;
+  theme?: string;
+  removeIndividualVault?: boolean;
+  importType?: string;
+};
 
 type NotificationBarWindowMessage = {
   [key: string]: any;
   command: string;
+  error?: string;
+  initData?: NotificationBarIframeInitData;
 };
 
 type NotificationBarWindowMessageHandlers = {
   [key: string]: CallableFunction;
-  saveCipherAttemptCompleted: ({ message }: { message: SaveOrUpdateCipherResult }) => void;
+  initNotificationBar: ({ message }: { message: NotificationBarWindowMessage }) => void;
+  saveCipherAttemptCompleted: ({ message }: { message: NotificationBarWindowMessage }) => void;
 };
 
-export { NotificationBarWindowMessage, NotificationBarWindowMessageHandlers };
+export {
+  NotificationBarIframeInitData,
+  NotificationBarWindowMessage,
+  NotificationBarWindowMessageHandlers,
+};

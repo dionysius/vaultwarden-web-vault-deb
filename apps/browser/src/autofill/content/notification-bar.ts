@@ -4,6 +4,7 @@ import {
 } from "../background/abstractions/notification.background";
 import AutofillField from "../models/autofill-field";
 import { WatchedForm } from "../models/watched-form";
+import { NotificationBarIframeInitData } from "../notification/abstractions/notification-bar";
 import { FormData } from "../services/abstractions/autofill.service";
 import { GlobalSettings, UserSettings } from "../types";
 import { getFromLocalStorage, setupExtensionDisconnectAction } from "../utils";
@@ -856,33 +857,36 @@ async function loadNotificationBar() {
 
   // Notification Bar Functions (open, close, height adjustment, etc.)
   function closeExistingAndOpenBar(type: string, typeData: any) {
-    const barQueryParams = {
+    const notificationBarInitData: NotificationBarIframeInitData = {
       type,
       isVaultLocked: typeData.isVaultLocked,
       theme: typeData.theme,
       removeIndividualVault: typeData.removeIndividualVault,
-      webVaultURL: typeData.webVaultURL,
       importType: typeData.importType,
     };
-    const barQueryString = new URLSearchParams(barQueryParams).toString();
-    const barPage = "notification/bar.html?" + barQueryString;
+    const notificationBarUrl = "notification/bar.html";
 
     const frame = document.getElementById("bit-notification-bar-iframe") as HTMLIFrameElement;
-    if (frame != null && frame.src.indexOf(barPage) >= 0) {
+    if (frame != null && frame.src.indexOf(notificationBarUrl) >= 0) {
       return;
     }
 
     closeBar(false);
-    openBar(type, barPage);
+    openBar(type, notificationBarUrl, notificationBarInitData);
   }
 
-  function openBar(type: string, barPage: string) {
+  function openBar(
+    type: string,
+    barPage: string,
+    notificationBarInitData: NotificationBarIframeInitData,
+  ) {
     barType = type;
 
     if (document.body == null) {
       return;
     }
 
+    setupInitNotificationBarMessageListener(notificationBarInitData);
     const barPageUrl: string = chrome.runtime.getURL(barPage);
 
     notificationBarIframe = document.createElement("iframe");
@@ -901,7 +905,30 @@ async function loadNotificationBar() {
     document.body.appendChild(frameDiv);
 
     (notificationBarIframe.contentWindow.location as any) = barPageUrl;
+  }
 
+  function setupInitNotificationBarMessageListener(initData: NotificationBarIframeInitData) {
+    const handleInitNotificationBarMessage = (event: MessageEvent) => {
+      const { source, data } = event;
+      if (
+        source !== notificationBarIframe.contentWindow ||
+        data?.command !== "initNotificationBar"
+      ) {
+        return;
+      }
+
+      notificationBarIframe.contentWindow.postMessage(
+        { command: "initNotificationBar", initData },
+        "*",
+      );
+      injectSpacer();
+      window.removeEventListener("message", handleInitNotificationBarMessage);
+    };
+
+    window.addEventListener("message", handleInitNotificationBarMessage);
+  }
+
+  function injectSpacer() {
     const spacer = document.createElement("div");
     spacer.id = "bit-notification-bar-spacer";
     spacer.style.cssText = "height: 42px;";

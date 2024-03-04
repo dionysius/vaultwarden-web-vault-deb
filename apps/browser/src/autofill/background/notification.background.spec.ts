@@ -1332,5 +1332,23 @@ describe("NotificationBackground", () => {
         expect(openUnlockWindowSpy).toHaveBeenCalled();
       });
     });
+
+    describe("getWebVaultUrlForNotification", () => {
+      it("returns the web vault url", async () => {
+        const message: NotificationBackgroundExtensionMessage = {
+          command: "getWebVaultUrlForNotification",
+        };
+        const webVaultUrl = "https://example.com";
+        const environmentServiceSpy = jest
+          .spyOn(environmentService, "getWebVaultUrl")
+          .mockReturnValueOnce(webVaultUrl);
+
+        sendExtensionRuntimeMessage(message);
+        await flushPromises();
+
+        expect(environmentServiceSpy).toHaveBeenCalled();
+        expect(environmentServiceSpy).toHaveReturnedWith(webVaultUrl);
+      });
+    });
   });
 });
