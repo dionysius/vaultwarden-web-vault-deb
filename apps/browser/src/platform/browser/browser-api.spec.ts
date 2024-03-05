@@ -320,6 +320,60 @@ describe("BrowserApi", () => {
         },
         files: [injectDetails.file],
         injectImmediately: true,
+        world: "ISOLATED",
+      });
+      expect(result).toEqual(executeScriptResult);
+    });
+
+    it("injects the script into a specified frameId when the extension is built for manifest v3", async () => {
+      const tabId = 1;
+      const frameId = 2;
+      const injectDetails = mock<chrome.tabs.InjectDetails>({
+        file: "file.js",
+        allFrames: true,
+        runAt: "document_start",
+        frameId,
+      });
+      jest.spyOn(BrowserApi, "manifestVersion", "get").mockReturnValue(3);
+      (chrome.scripting.executeScript as jest.Mock).mockResolvedValue(executeScriptResult);
+
+      await BrowserApi.executeScriptInTab(tabId, injectDetails);
+
+      expect(chrome.scripting.executeScript).toHaveBeenCalledWith({
+        target: {
+          tabId: tabId,
+          allFrames: injectDetails.allFrames,
+          frameIds: [frameId],
+        },
+        files: [injectDetails.file],
+        injectImmediately: true,
+        world: "ISOLATED",
+      });
+    });
+
+    it("injects the script into the MAIN world context when injecting a script for manifest v3", async () => {
+      const tabId = 1;
+      const injectDetails = mock<chrome.tabs.InjectDetails>({
+        file: null,
+        allFrames: true,
+        runAt: "document_start",
+        frameId: null,
+      });
+      const scriptingApiDetails = { world: "MAIN" as chrome.scripting.ExecutionWorld };
+      jest.spyOn(BrowserApi, "manifestVersion", "get").mockReturnValue(3);
+      (chrome.scripting.executeScript as jest.Mock).mockResolvedValue(executeScriptResult);
+
+      const result = await BrowserApi.executeScriptInTab(tabId, injectDetails, scriptingApiDetails);
+
+      expect(chrome.scripting.executeScript).toHaveBeenCalledWith({
+        target: {
+          tabId: tabId,
+          allFrames: injectDetails.allFrames,
+          frameIds: null,
+        },
+        files: null,
+        injectImmediately: true,
+        world: "MAIN",
       });
       expect(result).toEqual(executeScriptResult);
     });

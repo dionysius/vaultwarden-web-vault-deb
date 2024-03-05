@@ -43,20 +43,6 @@ describe("LpFilelessImporter", () => {
       expect(portSpy.disconnect).toHaveBeenCalled();
     });
 
-    it("injects a script element that suppresses the download of the LastPass export", () => {
-      const script = document.createElement("script");
-      jest.spyOn(document, "createElement").mockReturnValue(script);
-      jest.spyOn(document.documentElement, "appendChild");
-
-      lpFilelessImporter.handleFeatureFlagVerification({ filelessImportEnabled: true });
-
-      expect(document.createElement).toHaveBeenCalledWith("script");
-      expect(document.documentElement.appendChild).toHaveBeenCalled();
-      expect(script.textContent).toContain(
-        "const defaultAppendChild = Element.prototype.appendChild;",
-      );
-    });
-
     it("sets up an event listener for DOMContentLoaded that triggers the importer when the document ready state is `loading`", () => {
       Object.defineProperty(document, "readyState", {
         value: "loading",
