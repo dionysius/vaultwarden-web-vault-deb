@@ -8,6 +8,7 @@ import {
   canAccessBillingTab,
   canAccessGroupsTab,
   canAccessMembersTab,
+  canAccessOrgAdmin,
   canAccessReportingTab,
   canAccessSettingsTab,
   canAccessVaultTab,
@@ -43,7 +44,7 @@ import { AdminConsoleLogo } from "../../icons/admin-console-logo";
 export class OrganizationLayoutComponent implements OnInit, OnDestroy {
   protected readonly logo = AdminConsoleLogo;
 
-  protected orgFilter = (org: Organization) => org.isAdmin;
+  protected orgFilter = (org: Organization) => canAccessOrgAdmin(org);
 
   organization$: Observable<Organization>;
   showPaymentAndHistory$: Observable<boolean>;

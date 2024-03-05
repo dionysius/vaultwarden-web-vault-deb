@@ -58,9 +58,9 @@ export class ProductSwitcherContentComponent {
 
       // If the active route org doesn't have access to AC, find the first org that does.
       const acOrg =
-        routeOrg != null && canAccessOrgAdmin(routeOrg) && routeOrg.enabled
+        routeOrg != null && canAccessOrgAdmin(routeOrg)
           ? routeOrg
-          : orgs.find((o) => canAccessOrgAdmin(o) && o.enabled);
+          : orgs.find((o) => canAccessOrgAdmin(o));
 
       // TODO: This should be migrated to an Observable provided by the provider service and moved to the combineLatest above. See AC-2092.
       const providers = await this.providerService.getAll();
