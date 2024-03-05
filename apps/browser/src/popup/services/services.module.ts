@@ -15,7 +15,6 @@ import {
   LoginStrategyServiceAbstraction,
 } from "@bitwarden/auth/common";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
-import { AuditService } from "@bitwarden/common/abstractions/audit.service";
 import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { EventUploadService } from "@bitwarden/common/abstractions/event/event-upload.service";
 import { NotificationsService } from "@bitwarden/common/abstractions/notifications.service";
@@ -211,7 +210,6 @@ function getBgService<T>(service: keyof MainBackground) {
       },
       deps: [LogServiceAbstraction, I18nServiceAbstraction],
     },
-    { provide: AuditService, useFactory: getBgService<AuditService>("auditService"), deps: [] },
     {
       provide: CipherFileUploadService,
       useFactory: getBgService<CipherFileUploadService>("cipherFileUploadService"),
