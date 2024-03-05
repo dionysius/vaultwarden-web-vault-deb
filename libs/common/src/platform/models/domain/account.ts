@@ -2,7 +2,6 @@ import { Jsonify } from "type-fest";
 
 import { OrganizationData } from "../../../admin-console/models/data/organization.data";
 import { PolicyData } from "../../../admin-console/models/data/policy.data";
-import { ProviderData } from "../../../admin-console/models/data/provider.data";
 import { Policy } from "../../../admin-console/models/domain/policy";
 import { AdminAuthRequestStorable } from "../../../auth/models/domain/admin-auth-req-storable";
 import { ForceSetPasswordReason } from "../../../auth/models/domain/force-set-password-reason";
@@ -96,7 +95,6 @@ export class AccountData {
   addEditCipherInfo?: AddEditCipherInfo;
   eventCollection?: EventData[];
   organizations?: { [id: string]: OrganizationData };
-  providers?: { [id: string]: ProviderData };
 
   static fromJSON(obj: DeepJsonify<AccountData>): AccountData {
     if (obj == null) {

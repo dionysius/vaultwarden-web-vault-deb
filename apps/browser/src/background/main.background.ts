@@ -700,7 +700,7 @@ export default class MainBackground {
       this.fileUploadService,
       this.sendService,
     );
-    this.providerService = new ProviderService(this.stateService);
+    this.providerService = new ProviderService(this.stateProvider);
     this.syncService = new SyncService(
       this.apiService,
       this.settingsService,
@@ -1114,12 +1114,12 @@ export default class MainBackground {
       this.keyConnectorService.clear(),
       this.vaultFilterService.clear(),
       this.biometricStateService.logout(userId),
-      /*
-      We intentionally do not clear:
-        - autofillSettingsService
-        - badgeSettingsService
-        - userNotificationSettingsService
-      */
+      this.providerService.save(null, userId),
+      /* We intentionally do not clear:
+       *  - autofillSettingsService
+       *  - badgeSettingsService
+       *  - userNotificationSettingsService
+       */
     ]);
 
     //Needs to be checked before state is cleaned
