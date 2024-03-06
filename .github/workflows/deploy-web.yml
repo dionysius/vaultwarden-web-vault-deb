@@ -297,7 +297,7 @@ jobs:
           AZCOPY_TENANT_ID: ${{ steps.retrieve-secrets-azcopy.outputs.sp-bitwarden-web-vault-tenant }}
         run: |
           azcopy sync ./build 'https://${{ steps.retrieve-secrets-azcopy.outputs.sa-bitwarden-web-vault-name }}.blob.core.windows.net/$web/' \
-            --delete-destination=${{ needs.setup.outputs.sync-delete-destination-files }}
+            --delete-destination=${{ needs.setup.outputs.sync-delete-destination-files }} --compare-hash="MD5"
 
       - name: Debug sync logs
         if: ${{ inputs.debug }}
