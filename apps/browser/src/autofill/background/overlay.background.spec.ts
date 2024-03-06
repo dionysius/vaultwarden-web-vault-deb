@@ -2,6 +2,10 @@ import { mock, mockReset } from "jest-mock-extended";
 
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 import { AuthService } from "@bitwarden/common/auth/services/auth.service";
+import {
+  SHOW_AUTOFILL_BUTTON,
+  AutofillOverlayVisibility,
+} from "@bitwarden/common/autofill/constants";
 import { AutofillSettingsService } from "@bitwarden/common/autofill/services/autofill-settings.service";
 import { ThemeType } from "@bitwarden/common/platform/enums";
 import { EnvironmentService } from "@bitwarden/common/platform/services/environment.service";
@@ -15,7 +19,6 @@ import { CipherService } from "@bitwarden/common/vault/services/cipher.service";
 import { BrowserApi } from "../../platform/browser/browser-api";
 import BrowserPlatformUtilsService from "../../platform/services/browser-platform-utils.service";
 import { BrowserStateService } from "../../platform/services/browser-state.service";
-import { SHOW_AUTOFILL_BUTTON } from "../constants";
 import { AutofillService } from "../services/abstractions/autofill.service";
 import {
   createAutofillPageDetailsMock,
@@ -28,7 +31,6 @@ import { flushPromises, sendExtensionRuntimeMessage, sendPortMessage } from "../
 import {
   AutofillOverlayElement,
   AutofillOverlayPort,
-  AutofillOverlayVisibility,
   RedirectFocusDirection,
 } from "../utils/autofill-overlay.enum";
 

@@ -1,6 +1,14 @@
-import { InlineMenuVisibilitySetting } from "../../../../../apps/browser/src/autofill/utils/autofill-overlay.enum";
 import { StateDefinitionLike, MigrationHelper } from "../migration-helper";
 import { Migrator } from "../migrator";
+
+const AutofillOverlayVisibility = {
+  Off: 0,
+  OnButtonClick: 1,
+  OnFieldFocus: 2,
+} as const;
+
+type InlineMenuVisibilitySetting =
+  (typeof AutofillOverlayVisibility)[keyof typeof AutofillOverlayVisibility];
 
 type ExpectedAccountState = {
   settings?: {

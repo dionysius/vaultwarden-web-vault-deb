@@ -1,6 +1,6 @@
+import { EVENTS } from "@bitwarden/common/autofill/constants";
 import { ThemeType } from "@bitwarden/common/platform/enums";
 
-import { EVENTS } from "../../constants";
 import { setElementStyles } from "../../utils";
 import {
   BackgroundPortMessageHandlers,

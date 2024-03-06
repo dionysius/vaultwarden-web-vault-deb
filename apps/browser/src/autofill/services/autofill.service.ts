@@ -4,6 +4,7 @@ import { EventCollectionService } from "@bitwarden/common/abstractions/event/eve
 import { SettingsService } from "@bitwarden/common/abstractions/settings.service";
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { AutofillSettingsServiceAbstraction } from "@bitwarden/common/autofill/services/autofill-settings.service";
+import { InlineMenuVisibilitySetting } from "@bitwarden/common/autofill/types";
 import { EventType } from "@bitwarden/common/enums";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
@@ -20,7 +21,6 @@ import { AutofillPort } from "../enums/autofill-port.enums";
 import AutofillField from "../models/autofill-field";
 import AutofillPageDetails from "../models/autofill-page-details";
 import AutofillScript from "../models/autofill-script";
-import { InlineMenuVisibilitySetting } from "../utils/autofill-overlay.enum";
 
 import {
   AutoFillOptions,

@@ -3,9 +3,9 @@ import "lit/polyfill-support.js";
 import { FocusableElement, tabbable } from "tabbable";
 
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
+import { EVENTS, AutofillOverlayVisibility } from "@bitwarden/common/autofill/constants";
 
 import { FocusedFieldData } from "../background/abstractions/overlay.background";
-import { EVENTS } from "../constants";
 import AutofillField from "../models/autofill-field";
 import AutofillOverlayButtonIframe from "../overlay/iframe-content/autofill-overlay-button-iframe";
 import AutofillOverlayListIframe from "../overlay/iframe-content/autofill-overlay-list-iframe";
@@ -16,11 +16,7 @@ import {
   sendExtensionMessage,
   setElementStyles,
 } from "../utils";
-import {
-  AutofillOverlayElement,
-  RedirectFocusDirection,
-  AutofillOverlayVisibility,
-} from "../utils/autofill-overlay.enum";
+import { AutofillOverlayElement, RedirectFocusDirection } from "../utils/autofill-overlay.enum";
 
 import {
   AutofillOverlayContentService as AutofillOverlayContentServiceInterface,

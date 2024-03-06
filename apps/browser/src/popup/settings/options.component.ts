@@ -6,6 +6,7 @@ import { SettingsService } from "@bitwarden/common/abstractions/settings.service
 import { AutofillSettingsServiceAbstraction } from "@bitwarden/common/autofill/services/autofill-settings.service";
 import { BadgeSettingsServiceAbstraction } from "@bitwarden/common/autofill/services/badge-settings.service";
 import { UserNotificationSettingsServiceAbstraction } from "@bitwarden/common/autofill/services/user-notification-settings.service";
+import { ClearClipboardDelaySetting } from "@bitwarden/common/autofill/types";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
@@ -13,7 +14,6 @@ import { ThemeType } from "@bitwarden/common/platform/enums";
 import { VaultSettingsService } from "@bitwarden/common/vault/abstractions/vault-settings/vault-settings.service";
 import { UriMatchType } from "@bitwarden/common/vault/enums";
 
-import { ClearClipboardDelaySetting } from "../../../../../apps/browser/src/autofill/constants";
 import { enableAccountSwitching } from "../../platform/flags";
 
 @Component({

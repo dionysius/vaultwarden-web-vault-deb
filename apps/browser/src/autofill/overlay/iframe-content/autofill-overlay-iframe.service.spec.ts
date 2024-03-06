@@ -1,8 +1,8 @@
 import { mock } from "jest-mock-extended";
 
+import { EVENTS } from "@bitwarden/common/autofill/constants";
 import { ThemeType } from "@bitwarden/common/platform/enums";
 
-import { EVENTS } from "../../constants";
 import { createPortSpyMock } from "../../spec/autofill-mocks";
 import {
   flushPromises,

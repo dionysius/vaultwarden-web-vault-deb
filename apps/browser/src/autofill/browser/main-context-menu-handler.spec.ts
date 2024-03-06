@@ -1,5 +1,6 @@
 import { mock, MockProxy } from "jest-mock-extended";
 
+import { NOOP_COMMAND_SUFFIX } from "@bitwarden/common/autofill/constants";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { CipherType } from "@bitwarden/common/vault/enums";
@@ -7,7 +8,6 @@ import { Cipher } from "@bitwarden/common/vault/models/domain/cipher";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 
 import { BrowserStateService } from "../../platform/services/abstractions/browser-state.service";
-import { NOOP_COMMAND_SUFFIX } from "../constants";
 
 import { MainContextMenuHandler } from "./main-context-menu-handler";
 

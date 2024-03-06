@@ -2,7 +2,9 @@ import { Component, OnInit } from "@angular/core";
 import { firstValueFrom } from "rxjs";
 
 import { SettingsService } from "@bitwarden/common/abstractions/settings.service";
+import { AutofillOverlayVisibility } from "@bitwarden/common/autofill/constants";
 import { AutofillSettingsServiceAbstraction } from "@bitwarden/common/autofill/services/autofill-settings.service";
+import { InlineMenuVisibilitySetting } from "@bitwarden/common/autofill/types";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
@@ -12,10 +14,6 @@ import { DialogService } from "@bitwarden/components";
 import { BrowserApi } from "../../../platform/browser/browser-api";
 import { enableAccountSwitching } from "../../../platform/flags";
 import { AutofillService } from "../../services/abstractions/autofill.service";
-import {
-  AutofillOverlayVisibility,
-  InlineMenuVisibilitySetting,
-} from "../../utils/autofill-overlay.enum";
 
 @Component({
   selector: "app-autofill",

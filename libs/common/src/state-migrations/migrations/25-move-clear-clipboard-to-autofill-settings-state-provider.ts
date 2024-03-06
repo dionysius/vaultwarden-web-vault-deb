@@ -1,6 +1,17 @@
-import { ClearClipboardDelaySetting } from "../../../../../apps/browser/src/autofill/constants";
 import { StateDefinitionLike, MigrationHelper } from "../migration-helper";
 import { Migrator } from "../migrator";
+
+const ClearClipboardDelay = {
+  Never: null as null,
+  TenSeconds: 10,
+  TwentySeconds: 20,
+  ThirtySeconds: 30,
+  OneMinute: 60,
+  TwoMinutes: 120,
+  FiveMinutes: 300,
+} as const;
+
+type ClearClipboardDelaySetting = (typeof ClearClipboardDelay)[keyof typeof ClearClipboardDelay];
 
 type ExpectedAccountState = {
   settings?: {

@@ -1,3 +1,19 @@
+import {
+  AUTOFILL_CARD_ID,
+  AUTOFILL_ID,
+  AUTOFILL_IDENTITY_ID,
+  COPY_IDENTIFIER_ID,
+  COPY_PASSWORD_ID,
+  COPY_USERNAME_ID,
+  COPY_VERIFICATION_CODE_ID,
+  CREATE_CARD_ID,
+  CREATE_IDENTITY_ID,
+  CREATE_LOGIN_ID,
+  GENERATE_PASSWORD_ID,
+  NOOP_COMMAND_SUFFIX,
+  ROOT_ID,
+  SEPARATOR_ID,
+} from "@bitwarden/common/autofill/constants";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { StateFactory } from "@bitwarden/common/platform/factories/state-factory";
@@ -21,22 +37,6 @@ import {
   StateServiceInitOptions,
 } from "../../platform/background/service-factories/state-service.factory";
 import { BrowserStateService } from "../../platform/services/abstractions/browser-state.service";
-import {
-  AUTOFILL_CARD_ID,
-  AUTOFILL_ID,
-  AUTOFILL_IDENTITY_ID,
-  COPY_IDENTIFIER_ID,
-  COPY_PASSWORD_ID,
-  COPY_USERNAME_ID,
-  COPY_VERIFICATION_CODE_ID,
-  CREATE_CARD_ID,
-  CREATE_IDENTITY_ID,
-  CREATE_LOGIN_ID,
-  GENERATE_PASSWORD_ID,
-  NOOP_COMMAND_SUFFIX,
-  ROOT_ID,
-  SEPARATOR_ID,
-} from "../constants";
 
 import { InitContextMenuItems } from "./abstractions/main-context-menu-handler";
 

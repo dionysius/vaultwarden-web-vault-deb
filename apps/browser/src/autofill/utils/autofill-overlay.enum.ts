@@ -14,19 +14,4 @@ const RedirectFocusDirection = {
   Next: "next",
 } as const;
 
-const AutofillOverlayVisibility = {
-  Off: 0,
-  OnButtonClick: 1,
-  OnFieldFocus: 2,
-} as const;
-
-type InlineMenuVisibilitySetting =
-  (typeof AutofillOverlayVisibility)[keyof typeof AutofillOverlayVisibility];
-
-export {
-  AutofillOverlayElement,
-  AutofillOverlayPort,
-  RedirectFocusDirection,
-  AutofillOverlayVisibility,
-  InlineMenuVisibilitySetting,
-};
+export { AutofillOverlayElement, AutofillOverlayPort, RedirectFocusDirection };

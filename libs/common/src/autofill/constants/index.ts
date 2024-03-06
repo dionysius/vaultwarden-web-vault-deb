@@ -32,9 +32,6 @@ export const ClearClipboardDelay = {
   FiveMinutes: 300,
 } as const;
 
-export type ClearClipboardDelaySetting =
-  (typeof ClearClipboardDelay)[keyof typeof ClearClipboardDelay];
-
 /* Context Menu item Ids */
 export const AUTOFILL_CARD_ID = "autofill-card";
 export const AUTOFILL_ID = "autofill";
@@ -53,3 +50,9 @@ export const ROOT_ID = "root";
 export const SEPARATOR_ID = "separator";
 
 export const NOTIFICATION_BAR_LIFESPAN_MS = 150000; // 150 seconds
+
+export const AutofillOverlayVisibility = {
+  Off: 0,
+  OnButtonClick: 1,
+  OnFieldFocus: 2,
+} as const;
