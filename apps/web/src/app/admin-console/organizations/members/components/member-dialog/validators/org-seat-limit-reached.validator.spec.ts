@@ -4,7 +4,7 @@ import { OrganizationUserType } from "@bitwarden/common/admin-console/enums";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { ProductType } from "@bitwarden/common/enums";
 
-import { orgWithoutAdditionalSeatLimitReachedWithUpgradePathValidator } from "./org-without-additional-seat-limit-reached-with-upgrade-path.validator";
+import { orgSeatLimitReachedValidator } from "./org-seat-limit-reached.validator";
 
 const orgFactory = (props: Partial<Organization> = {}) =>
   Object.assign(
@@ -17,7 +17,7 @@ const orgFactory = (props: Partial<Organization> = {}) =>
     props,
   );
 
-describe("orgWithoutAdditionalSeatLimitReachedWithUpgradePathValidator", () => {
+describe("orgSeatLimitReachedValidator", () => {
   let organization: Organization;
   let allOrganizationUserEmails: string[];
   let validatorFn: (control: AbstractControl) => ValidationErrors | null;
@@ -27,7 +27,7 @@ describe("orgWithoutAdditionalSeatLimitReachedWithUpgradePathValidator", () => {
   });
 
   it("should return null when control value is empty", () => {
-    validatorFn = orgWithoutAdditionalSeatLimitReachedWithUpgradePathValidator(
+    validatorFn = orgSeatLimitReachedValidator(
       organization,
       allOrganizationUserEmails,
       "You cannot invite more than 2 members without upgrading your plan.",
@@ -40,7 +40,7 @@ describe("orgWithoutAdditionalSeatLimitReachedWithUpgradePathValidator", () => {
   });
 
   it("should return null when control value is null", () => {
-    validatorFn = orgWithoutAdditionalSeatLimitReachedWithUpgradePathValidator(
+    validatorFn = orgSeatLimitReachedValidator(
       organization,
       allOrganizationUserEmails,
       "You cannot invite more than 2 members without upgrading your plan.",
@@ -57,7 +57,7 @@ describe("orgWithoutAdditionalSeatLimitReachedWithUpgradePathValidator", () => {
       planProductType: ProductType.Free,
       seats: 2,
     });
-    validatorFn = orgWithoutAdditionalSeatLimitReachedWithUpgradePathValidator(
+    validatorFn = orgSeatLimitReachedValidator(
       organization,
       allOrganizationUserEmails,
       "You cannot invite more than 2 members without upgrading your plan.",
@@ -74,7 +74,7 @@ describe("orgWithoutAdditionalSeatLimitReachedWithUpgradePathValidator", () => {
       planProductType: ProductType.TeamsStarter,
       seats: 10,
     });
-    validatorFn = orgWithoutAdditionalSeatLimitReachedWithUpgradePathValidator(
+    validatorFn = orgSeatLimitReachedValidator(
       organization,
       allOrganizationUserEmails,
       "You cannot invite more than 10 members without upgrading your plan.",
@@ -102,7 +102,7 @@ describe("orgWithoutAdditionalSeatLimitReachedWithUpgradePathValidator", () => {
       seats: 2,
     });
     const errorMessage = "You cannot invite more than 2 members without upgrading your plan.";
-    validatorFn = orgWithoutAdditionalSeatLimitReachedWithUpgradePathValidator(
+    validatorFn = orgSeatLimitReachedValidator(
       organization,
       allOrganizationUserEmails,
       "You cannot invite more than 2 members without upgrading your plan.",
@@ -120,7 +120,7 @@ describe("orgWithoutAdditionalSeatLimitReachedWithUpgradePathValidator", () => {
       planProductType: ProductType.Enterprise,
       seats: 100,
     });
-    validatorFn = orgWithoutAdditionalSeatLimitReachedWithUpgradePathValidator(
+    validatorFn = orgSeatLimitReachedValidator(
       organization,
       allOrganizationUserEmails,
       "You cannot invite more than 2 members without upgrading your plan.",

@@ -11,7 +11,7 @@ import { ProductType } from "@bitwarden/common/enums";
  * @param errorMessage A localized string to display if validation fails
  * @returns A function that validates an `AbstractControl` and returns `ValidationErrors` or `null`
  */
-export function orgWithoutAdditionalSeatLimitReachedWithUpgradePathValidator(
+export function orgSeatLimitReachedValidator(
   organization: Organization,
   allOrganizationUserEmails: string[],
   errorMessage: string,

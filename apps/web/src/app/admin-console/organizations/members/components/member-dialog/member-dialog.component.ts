@@ -37,7 +37,7 @@ import {
 } from "../../../shared/components/access-selector";
 
 import { commaSeparatedEmails } from "./validators/comma-separated-emails.validator";
-import { orgWithoutAdditionalSeatLimitReachedWithUpgradePathValidator } from "./validators/org-without-additional-seat-limit-reached-with-upgrade-path.validator";
+import { orgSeatLimitReachedValidator } from "./validators/org-seat-limit-reached.validator";
 
 export enum MemberDialogTab {
   Role = 0,
@@ -84,7 +84,7 @@ export class MemberDialogComponent implements OnInit, OnDestroy {
   protected groupAccessItems: AccessItemView[] = [];
   protected tabIndex: MemberDialogTab;
   protected formGroup = this.formBuilder.group({
-    emails: ["", { updateOn: "blur" }],
+    emails: [""],
     type: OrganizationUserType.User,
     externalId: this.formBuilder.control({ value: "", disabled: true }),
     accessAllCollections: false,
@@ -176,7 +176,7 @@ export class MemberDialogComponent implements OnInit, OnDestroy {
         const emailsControlValidators = [
           Validators.required,
           commaSeparatedEmails,
-          orgWithoutAdditionalSeatLimitReachedWithUpgradePathValidator(
+          orgSeatLimitReachedValidator(
             this.organization,
             this.params.allOrganizationUserEmails,
             this.i18nService.t("subscriptionUpgrade", organization.seats),
