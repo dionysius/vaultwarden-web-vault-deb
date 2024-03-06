@@ -241,7 +241,7 @@ class OverlayBackground implements OverlayBackgroundInterface {
     });
 
     if (totpCode) {
-      this.platformUtilsService.copyToClipboard(totpCode, { window });
+      this.platformUtilsService.copyToClipboard(totpCode);
     }
 
     this.overlayLoginCiphers = new Map([[overlayCipherId, cipher], ...this.overlayLoginCiphers]);

@@ -20,6 +20,15 @@ export class BrowserApi {
   }
 
   /**
+   * Determines if the extension manifest version is the given version.
+   *
+   * @param expectedVersion - The expected manifest version to check against.
+   */
+  static isManifestVersion(expectedVersion: 2 | 3) {
+    return BrowserApi.manifestVersion === expectedVersion;
+  }
+
+  /**
    * Gets the current window or the window with the given id.
    *
    * @param windowId - The id of the window to get. If not provided, the current window is returned.
@@ -98,12 +107,17 @@ export class BrowserApi {
     });
   }
 
+  /**
+   * Gets the tab with the given id.
+   *
+   * @param tabId - The id of the tab to get.
+   */
   static async getTab(tabId: number): Promise<chrome.tabs.Tab> | null {
     if (!tabId) {
       return null;
     }
 
-    if (BrowserApi.manifestVersion === 3) {
+    if (BrowserApi.isManifestVersion(3)) {
       return await chrome.tabs.get(tabId);
     }
 
@@ -453,8 +467,11 @@ export class BrowserApi {
     });
   }
 
+  /**
+   * Returns the supported BrowserAction API based on the manifest version.
+   */
   static getBrowserAction() {
-    return BrowserApi.manifestVersion === 3 ? chrome.action : chrome.browserAction;
+    return BrowserApi.isManifestVersion(3) ? chrome.action : chrome.browserAction;
   }
 
   static getSidebarAction(
@@ -488,7 +505,7 @@ export class BrowserApi {
       world: chrome.scripting.ExecutionWorld;
     },
   ): Promise<unknown> {
-    if (BrowserApi.manifestVersion === 3) {
+    if (BrowserApi.isManifestVersion(3)) {
       return chrome.scripting.executeScript({
         target: {
           tabId: tabId,
@@ -545,5 +562,33 @@ export class BrowserApi {
     chrome.privacy.services.autofillAddressEnabled.set({ value });
     chrome.privacy.services.autofillCreditCardEnabled.set({ value });
     chrome.privacy.services.passwordSavingEnabled.set({ value });
+  }
+
+  /**
+   * Opens the offscreen document with the given reasons and justification.
+   *
+   * @param reasons - List of reasons for opening the offscreen document.
+   * @see https://developer.chrome.com/docs/extensions/reference/api/offscreen#type-Reason
+   * @param justification - Custom written justification for opening the offscreen document.
+   */
+  static async createOffscreenDocument(reasons: chrome.offscreen.Reason[], justification: string) {
+    await chrome.offscreen.createDocument({
+      url: "offscreen-document/index.html",
+      reasons,
+      justification,
+    });
+  }
+
+  /**
+   * Closes the offscreen document.
+   *
+   * @param callback - Optional callback to execute after the offscreen document is closed.
+   */
+  static closeOffscreenDocument(callback?: () => void) {
+    chrome.offscreen.closeDocument(() => {
+      if (callback) {
+        callback();
+      }
+    });
   }
 }

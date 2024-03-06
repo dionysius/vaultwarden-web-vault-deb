@@ -286,6 +286,16 @@ if (manifestVersion == 2) {
   // Manifest v3 needs an extra helper for utilities in the content script.
   // The javascript output of this should be added to manifest.v3.json
   mainConfig.entry["content/misc-utils"] = "./src/autofill/content/misc-utils.ts";
+  mainConfig.entry["offscreen-document/offscreen-document"] =
+    "./src/platform/offscreen-document/offscreen-document.ts";
+
+  mainConfig.plugins.push(
+    new HtmlWebpackPlugin({
+      template: "./src/platform/offscreen-document/index.html",
+      filename: "offscreen-document/index.html",
+      chunks: ["offscreen-document/offscreen-document"],
+    }),
+  );
 
   /**
    * @type {import("webpack").Configuration}

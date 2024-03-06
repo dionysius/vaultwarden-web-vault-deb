@@ -9,6 +9,24 @@ describe("BrowserApi", () => {
     jest.clearAllMocks();
   });
 
+  describe("isManifestVersion", () => {
+    beforeEach(() => {
+      jest.spyOn(BrowserApi, "manifestVersion", "get").mockReturnValue(3);
+    });
+
+    it("returns true if the manifest version matches the provided version", () => {
+      const result = BrowserApi.isManifestVersion(3);
+
+      expect(result).toBe(true);
+    });
+
+    it("returns false if the manifest version does not match the provided version", () => {
+      const result = BrowserApi.isManifestVersion(2);
+
+      expect(result).toBe(false);
+    });
+  });
+
   describe("getWindow", () => {
     it("will get the current window if a window id is not provided", () => {
       // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
@@ -103,6 +121,38 @@ describe("BrowserApi", () => {
         { focused: true },
         expect.anything(),
       );
+    });
+  });
+
+  describe("getTab", () => {
+    it("returns `null` if the tabId is a falsy value", async () => {
+      const result = await BrowserApi.getTab(null);
+
+      expect(result).toBeNull();
+    });
+
+    it("returns the tab within manifest v3", async () => {
+      const tabId = 1;
+      jest.spyOn(BrowserApi, "manifestVersion", "get").mockReturnValue(3);
+      (chrome.tabs.get as jest.Mock).mockImplementation(
+        (tabId) => ({ id: tabId }) as chrome.tabs.Tab,
+      );
+
+      const result = await BrowserApi.getTab(tabId);
+
+      expect(result).toEqual({ id: tabId });
+    });
+
+    it("returns the tab within manifest v2", async () => {
+      const tabId = 1;
+      jest.spyOn(BrowserApi, "manifestVersion", "get").mockReturnValue(2);
+      (chrome.tabs.get as jest.Mock).mockImplementation((tabId, callback) =>
+        callback({ id: tabId } as chrome.tabs.Tab),
+      );
+
+      const result = BrowserApi.getTab(tabId);
+
+      await expect(result).resolves.toEqual({ id: tabId });
     });
   });
 
@@ -280,6 +330,24 @@ describe("BrowserApi", () => {
     });
   });
 
+  describe("getBrowserAction", () => {
+    it("returns the `chrome.action` API if the extension manifest is for version 3", () => {
+      jest.spyOn(BrowserApi, "manifestVersion", "get").mockReturnValue(3);
+
+      const result = BrowserApi.getBrowserAction();
+
+      expect(result).toEqual(chrome.action);
+    });
+
+    it("returns the `chrome.browserAction` API if the extension manifest is for version 2", () => {
+      jest.spyOn(BrowserApi, "manifestVersion", "get").mockReturnValue(2);
+
+      const result = BrowserApi.getBrowserAction();
+
+      expect(result).toEqual(chrome.browserAction);
+    });
+  });
+
   describe("executeScriptInTab", () => {
     it("calls to the extension api to execute a script within the give tabId", async () => {
       const tabId = 1;
@@ -454,6 +522,32 @@ describe("BrowserApi", () => {
       expect(chrome.privacy.services.passwordSavingEnabled.set).toHaveBeenCalledWith({
         value: false,
       });
+    });
+  });
+
+  describe("createOffscreenDocument", () => {
+    it("creates the offscreen document with the supplied reasons and justification", async () => {
+      const reasons = [chrome.offscreen.Reason.CLIPBOARD];
+      const justification = "justification";
+
+      await BrowserApi.createOffscreenDocument(reasons, justification);
+
+      expect(chrome.offscreen.createDocument).toHaveBeenCalledWith({
+        url: "offscreen-document/index.html",
+        reasons,
+        justification,
+      });
+    });
+  });
+
+  describe("closeOffscreenDocument", () => {
+    it("closes the offscreen document", () => {
+      const callbackMock = jest.fn();
+
+      BrowserApi.closeOffscreenDocument(callbackMock);
+
+      expect(chrome.offscreen.closeDocument).toHaveBeenCalled();
+      expect(callbackMock).toHaveBeenCalled();
     });
   });
 });

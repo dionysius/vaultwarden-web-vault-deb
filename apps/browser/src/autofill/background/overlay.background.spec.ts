@@ -1259,7 +1259,7 @@ describe("OverlayBackground", () => {
           });
           await flushPromises();
 
-          expect(copyToClipboardSpy).toHaveBeenCalledWith("totp-code", { window });
+          expect(copyToClipboardSpy).toHaveBeenCalledWith("totp-code");
         });
       });
 
