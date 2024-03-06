@@ -278,6 +278,9 @@ jobs:
 
   snap:
     name: Build Snap
+    # Note, before updating the ubuntu version of the workflow, ensure the snap base image
+    # is equal or greater than the new version. Otherwise there might be GLIBC version issues.
+    # The snap base for CLI is defined in `apps/cli/stores/snap/snapcraft.yaml`
     runs-on: ubuntu-22.04
     needs: [setup, cli]
     env:

@@ -167,6 +167,7 @@
   },
   "snap": {
     "autoStart": true,
+    "base": "core22",
     "confinement": "strict",
     "plugs": ["default", "password-manager-service"],
     "stagePackages": ["default"]
