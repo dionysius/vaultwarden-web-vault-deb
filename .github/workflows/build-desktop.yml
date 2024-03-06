@@ -508,7 +508,7 @@ jobs:
 
           az keyvault secret show --id https://bitwarden-ci.vault.azure.net/certificates/bitwarden-desktop-key |
             jq -r .value | base64 -d > $HOME/certificates/bitwarden-desktop-key.p12
-          
+
           az keyvault secret show --id https://bitwarden-ci.vault.azure.net/certificates/appstore-app-cert |
             jq -r .value | base64 -d > $HOME/certificates/appstore-app-cert.p12
 
@@ -669,7 +669,7 @@ jobs:
 
           az keyvault secret show --id https://bitwarden-ci.vault.azure.net/certificates/bitwarden-desktop-key |
             jq -r .value | base64 -d > $HOME/certificates/bitwarden-desktop-key.p12
-          
+
           az keyvault secret show --id https://bitwarden-ci.vault.azure.net/certificates/appstore-app-cert |
             jq -r .value | base64 -d > $HOME/certificates/appstore-app-cert.p12
 
@@ -875,7 +875,7 @@ jobs:
 
           az keyvault secret show --id https://bitwarden-ci.vault.azure.net/certificates/bitwarden-desktop-key |
             jq -r .value | base64 -d > $HOME/certificates/bitwarden-desktop-key.p12
-          
+
           az keyvault secret show --id https://bitwarden-ci.vault.azure.net/certificates/appstore-app-cert |
             jq -r .value | base64 -d > $HOME/certificates/appstore-app-cert.p12
 
@@ -1068,7 +1068,7 @@ jobs:
 
           az keyvault secret show --id https://bitwarden-ci.vault.azure.net/certificates/bitwarden-desktop-key |
             jq -r .value | base64 -d > $HOME/certificates/bitwarden-desktop-key.p12
-          
+
           az keyvault secret show --id https://bitwarden-ci.vault.azure.net/certificates/appstore-app-cert |
             jq -r .value | base64 -d > $HOME/certificates/appstore-app-cert.p12
 
@@ -1236,37 +1236,8 @@ jobs:
       - crowdin-push
     steps:
       - name: Check if any job failed
-        if: ${{ (github.ref == 'refs/heads/main') || (github.ref == 'refs/heads/rc') }}
-        env:
-          ELECTRON_VERIFY_STATUS: ${{ needs.electron-verify.result }}
-          BROWSER_BUILD_STATUS: ${{ needs.browser-build.result }}
-          SETUP_STATUS: ${{ needs.setup.result }}
-          LINUX_STATUS: ${{ needs.linux.result }}
-          WINDOWS_STATUS: ${{ needs.windows.result }}
-          MACOS_BUILD_STATUS: ${{ needs.macos-build.result }}
-          MACOS_PKG_GITHUB_STATUS: ${{ needs.macos-package-github.result }}
-          MACOS_PKG_MAS_STATUS: ${{ needs.macos-package-mas.result }}
-          CROWDIN_PUSH_STATUS: ${{ needs.crowdin-push.result }}
-        run: |
-          if [ "$ELECTRON_VERIFY_STATUS" = "failure" ]; then
-              exit 1
-          elif [ "$BROWSER_BUILD_STATUS" = "failure" ]; then
-              exit 1
-          elif [ "$SETUP_STATUS" = "failure" ]; then
-              exit 1
-          elif [ "$LINUX_STATUS" = "failure" ]; then
-              exit 1
-          elif [ "$WINDOWS_STATUS" = "failure" ]; then
-              exit 1
-          elif [ "$MACOS_BUILD_STATUS" = "failure" ]; then
-              exit 1
-          elif [ "$MACOS_PKG_GITHUB_STATUS" = "failure" ]; then
-              exit 1
-          elif [ "$MACOS_PKG_MAS_STATUS" = "failure" ]; then
-              exit 1
-          elif [ "$CROWDIN_PUSH_STATUS" = "failure" ]; then
-              exit 1
-          fi
+        if: (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/rc' || github.ref == 'refs/heads/hotfix-rc') && contains(needs.*.result, 'failure')
+        run: exit 1
 
       - name: Login to Azure - Prod Subscription
         uses: Azure/login@e15b166166a8746d1a47596803bd8c1b595455cf # v1.6.0

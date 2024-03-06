@@ -327,27 +327,8 @@ jobs:
       - trigger-web-vault-deploy
     steps:
       - name: Check if any job failed
-        if: ${{ (github.ref == 'refs/heads/main') || (github.ref == 'refs/heads/rc') }}
-        env:
-          SETUP_STATUS: ${{ needs.setup.result }}
-          ARTIFACT_STATUS: ${{ needs.build-artifacts.result }}
-          BUILD_CONTAINERS_STATUS: ${{ needs.build-containers.result }}
-          CROWDIN_PUSH_STATUS: ${{ needs.crowdin-push.result }}
-          TRIGGER_WEB_VAULT_DEPLOY_STATUS: ${{ needs.trigger-web-vault-deploy.result }}
-        run: |
-          if [ "$SETUP_STATUS" = "failure" ]; then
-              exit 1
-          elif [ "$ARTIFACT_STATUS" = "failure" ]; then
-              exit 1
-          elif [ "$BUILD_SELFHOST_STATUS" = "failure" ]; then
-              exit 1
-          elif [ "$BUILD_CONTAINERS_STATUS" = "failure" ]; then
-              exit 1
-          elif [ "$CROWDIN_PUSH_STATUS" = "failure" ]; then
-              exit 1
-          elif [ "$TRIGGER_WEB_VAULT_DEPLOY_STATUS" = "failure" ]; then
-              exit 1
-          fi
+        if: (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/rc' || github.ref == 'refs/heads/hotfix-rc') && contains(needs.*.result, 'failure')
+        run: exit 1
 
       - name: Login to Azure - Prod Subscription
         uses: Azure/login@e15b166166a8746d1a47596803bd8c1b595455cf # v1.6.0

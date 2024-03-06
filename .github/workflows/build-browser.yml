@@ -280,7 +280,7 @@ jobs:
 
           az keyvault secret show --id https://bitwarden-ci.vault.azure.net/certificates/bitwarden-desktop-key |
             jq -r .value | base64 -d > $HOME/certificates/bitwarden-desktop-key.p12
-          
+
           az keyvault secret show --id https://bitwarden-ci.vault.azure.net/certificates/appstore-app-cert |
             jq -r .value | base64 -d > $HOME/certificates/appstore-app-cert.p12
 
@@ -394,25 +394,8 @@ jobs:
       - crowdin-push
     steps:
       - name: Check if any job failed
-        if: ${{ (github.ref == 'refs/heads/main') || (github.ref == 'refs/heads/rc') }}
-        env:
-          SETUP_STATUS: ${{ needs.setup.result }}
-          LOCALES_TEST_STATUS: ${{ needs.locales-test.result }}
-          BUILD_STATUS: ${{ needs.build.result }}
-          SAFARI_BUILD_STATUS: ${{ needs.build-safari.result }}
-          CROWDIN_PUSH_STATUS: ${{ needs.crowdin-push.result }}
-        run: |
-          if [ "$SETUP_STATUS" = "failure" ]; then
-              exit 1
-          elif [ "$LOCALES_TEST_STATUS" = "failure" ]; then
-              exit 1
-          elif [ "$BUILD_STATUS" = "failure" ]; then
-              exit 1
-          elif [ "$SAFARI_BUILD_STATUS" = "failure" ]; then
-              exit 1
-          elif [ "$CROWDIN_PUSH_STATUS" = "failure" ]; then
-              exit 1
-          fi
+        if: (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/rc' || github.ref == 'refs/heads/hotfix-rc') && contains(needs.*.result, 'failure')
+        run: exit 1
 
       - name: Login to Azure - Prod Subscription
         uses: Azure/login@e15b166166a8746d1a47596803bd8c1b595455cf # v1.6.0
