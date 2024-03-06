@@ -424,14 +424,14 @@ jobs:
 
       - name: Cache Build
         id: build-cache
-        uses: actions/cache@13aacd865c20de90d75de3b17ebe84f7a17d57d2 # v4.0.0
+        uses: actions/cache@ab5e6d0c87105b4c9c2047343972218f562e4319 # v4.0.1
         with:
           path: apps/desktop/build
           key: ${{ runner.os }}-${{ github.run_id }}-build
 
       - name: Cache Safari
         id: safari-cache
-        uses: actions/cache@13aacd865c20de90d75de3b17ebe84f7a17d57d2 # v4.0.0
+        uses: actions/cache@ab5e6d0c87105b4c9c2047343972218f562e4319 # v4.0.1
         with:
           path: apps/browser/dist/Safari
           key: ${{ runner.os }}-${{ github.run_id }}-safari-extension
@@ -555,14 +555,14 @@ jobs:
 
       - name: Get Build Cache
         id: build-cache
-        uses: actions/cache@13aacd865c20de90d75de3b17ebe84f7a17d57d2 # v4.0.0
+        uses: actions/cache@ab5e6d0c87105b4c9c2047343972218f562e4319 # v4.0.1
         with:
           path: apps/desktop/build
           key: ${{ runner.os }}-${{ github.run_id }}-build
 
       - name: Setup Safari Cache
         id: safari-cache
-        uses: actions/cache@13aacd865c20de90d75de3b17ebe84f7a17d57d2 # v4.0.0
+        uses: actions/cache@ab5e6d0c87105b4c9c2047343972218f562e4319 # v4.0.1
         with:
           path: apps/browser/dist/Safari
           key: ${{ runner.os }}-${{ github.run_id }}-safari-extension
@@ -659,7 +659,7 @@ jobs:
 
       - name: Download artifact from hotfix-rc
         if: github.ref == 'refs/heads/hotfix-rc'
-        uses: dawidd6/action-download-artifact@e7466d1a7587ed14867642c2ca74b5bcc1e19a2d # v3.0.0
+        uses: dawidd6/action-download-artifact@71072fbb1229e1317f1a8de6b04206afb461bd67 # v3.1.2
         with:
           workflow: build-browser.yml
           workflow_conclusion: success
@@ -668,7 +668,7 @@ jobs:
 
       - name: Download artifact from rc
         if: github.ref == 'refs/heads/rc'
-        uses: dawidd6/action-download-artifact@e7466d1a7587ed14867642c2ca74b5bcc1e19a2d # v3.0.0
+        uses: dawidd6/action-download-artifact@71072fbb1229e1317f1a8de6b04206afb461bd67 # v3.1.2
         with:
           workflow: build-browser.yml
           workflow_conclusion: success
@@ -677,7 +677,7 @@ jobs:
 
       - name: Download artifacts from main
         if: ${{ github.ref != 'refs/heads/rc' && github.ref != 'refs/heads/hotfix-rc' }}
-        uses: dawidd6/action-download-artifact@e7466d1a7587ed14867642c2ca74b5bcc1e19a2d # v3.0.0
+        uses: dawidd6/action-download-artifact@71072fbb1229e1317f1a8de6b04206afb461bd67 # v3.1.2
         with:
           workflow: build-browser.yml
           workflow_conclusion: success
@@ -765,14 +765,14 @@ jobs:
 
       - name: Get Build Cache
         id: build-cache
-        uses: actions/cache@13aacd865c20de90d75de3b17ebe84f7a17d57d2 # v4.0.0
+        uses: actions/cache@ab5e6d0c87105b4c9c2047343972218f562e4319 # v4.0.1
         with:
           path: apps/desktop/build
           key: ${{ runner.os }}-${{ github.run_id }}-build
 
       - name: Setup Safari Cache
         id: safari-cache
-        uses: actions/cache@13aacd865c20de90d75de3b17ebe84f7a17d57d2 # v4.0.0
+        uses: actions/cache@ab5e6d0c87105b4c9c2047343972218f562e4319 # v4.0.1
         with:
           path: apps/browser/dist/Safari
           key: ${{ runner.os }}-${{ github.run_id }}-safari-extension
@@ -864,7 +864,7 @@ jobs:
 
       - name: Download artifact from hotfix-rc
         if: github.ref == 'refs/heads/hotfix-rc'
-        uses: dawidd6/action-download-artifact@e7466d1a7587ed14867642c2ca74b5bcc1e19a2d # v3.0.0
+        uses: dawidd6/action-download-artifact@71072fbb1229e1317f1a8de6b04206afb461bd67 # v3.1.2
         with:
           workflow: build-browser.yml
           workflow_conclusion: success
@@ -873,7 +873,7 @@ jobs:
 
       - name: Download artifact from rc
         if: github.ref == 'refs/heads/rc'
-        uses: dawidd6/action-download-artifact@e7466d1a7587ed14867642c2ca74b5bcc1e19a2d # v3.0.0
+        uses: dawidd6/action-download-artifact@71072fbb1229e1317f1a8de6b04206afb461bd67 # v3.1.2
         with:
           workflow: build-browser.yml
           workflow_conclusion: success
@@ -882,7 +882,7 @@ jobs:
 
       - name: Download artifact from main
         if: ${{ github.ref != 'refs/heads/rc' && github.ref != 'refs/heads/hotfix-rc' }}
-        uses: dawidd6/action-download-artifact@e7466d1a7587ed14867642c2ca74b5bcc1e19a2d # v3.0.0
+        uses: dawidd6/action-download-artifact@71072fbb1229e1317f1a8de6b04206afb461bd67 # v3.1.2
         with:
           workflow: build-browser.yml
           workflow_conclusion: success
@@ -953,7 +953,7 @@ jobs:
             cf-prod-account"
 
       - name: Download all artifacts
-        uses: actions/download-artifact@eaceaf801fd36c7dee90939fad912460b18a1ffe # v4.1.2
+        uses: actions/download-artifact@c850b930e6ba138125429b7e5c93fc707a7f8427 # v4.1.4
         with:
           path: apps/desktop/artifacts
 
@@ -992,7 +992,7 @@ jobs:
 
       - name: Update deployment status to Success
         if: ${{ success() }}
-        uses: chrnorm/deployment-status@2afb7d27101260f4a764219439564d954d10b5b0 # v2.0.1
+        uses: chrnorm/deployment-status@9a72af4586197112e0491ea843682b5dc280d806 # v2.0.3
         with:
           token: '${{ secrets.GITHUB_TOKEN }}'
           state: 'success'
@@ -1000,7 +1000,7 @@ jobs:
 
       - name: Update deployment status to Failure
         if: ${{ failure() }}
-        uses: chrnorm/deployment-status@2afb7d27101260f4a764219439564d954d10b5b0 # v2.0.1
+        uses: chrnorm/deployment-status@9a72af4586197112e0491ea843682b5dc280d806 # v2.0.3
         with:
           token: '${{ secrets.GITHUB_TOKEN }}'
           state: 'failure'
