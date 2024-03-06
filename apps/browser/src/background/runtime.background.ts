@@ -345,10 +345,34 @@ export default class RuntimeBackground {
           if (await this.environmentService.hasManagedEnvironment()) {
             await this.environmentService.setUrlsToManagedEnvironment();
           }
+
+          await this.sendBwInstalledMessageToVault();
         }
 
         this.onInstalledReason = null;
       }
     }, 100);
+  }
+
+  async sendBwInstalledMessageToVault() {
+    try {
+      const vaultUrl = this.environmentService.getWebVaultUrl();
+      const urlObj = new URL(vaultUrl);
+
+      const tabs = await BrowserApi.tabsQuery({ url: `${urlObj.href}*` });
+
+      if (!tabs?.length) {
+        return;
+      }
+
+      for (const tab of tabs) {
+        await BrowserApi.executeScriptInTab(tab.id, {
+          file: "content/send-on-installed-message.js",
+          runAt: "document_end",
+        });
+      }
+    } catch (e) {
+      this.logService.error(`Error sending on installed message to vault: ${e}`);
+    }
   }
 }

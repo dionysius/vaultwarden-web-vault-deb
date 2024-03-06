@@ -19,6 +19,7 @@ import { Organization } from "@bitwarden/common/admin-console/models/domain/orga
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { ConfigServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config.service.abstraction";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { VaultOnboardingMessages } from "@bitwarden/common/vault/enums/vault-onboarding.enum";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { LinkModule } from "@bitwarden/components";
 
@@ -95,12 +96,12 @@ export class VaultOnboardingComponent implements OnInit, OnChanges, OnDestroy {
           void this.getMessages(event);
         });
 
-      window.postMessage({ command: "checkIfBWExtensionInstalled" });
+      window.postMessage({ command: VaultOnboardingMessages.checkBwInstalled });
     }
   }
 
   async getMessages(event: any) {
-    if (event.data.command === "hasBWInstalled" && this.showOnboarding) {
+    if (event.data.command === VaultOnboardingMessages.HasBwInstalled && this.showOnboarding) {
       const currentTasks = await firstValueFrom(this.onboardingTasks$);
       const updatedTasks = {
         createAccount: currentTasks.createAccount,

@@ -1,5 +1,7 @@
 import { mock } from "jest-mock-extended";
 
+import { VaultOnboardingMessages } from "@bitwarden/common/vault/enums/vault-onboarding.enum";
+
 import { postWindowMessage, sendExtensionRuntimeMessage } from "../spec/testing-utils";
 
 describe("ContentMessageHandler", () => {
@@ -30,9 +32,11 @@ describe("ContentMessageHandler", () => {
       const mockPostMessage = jest.fn();
       window.postMessage = mockPostMessage;
 
-      postWindowMessage({ command: "checkIfBWExtensionInstalled" });
+      postWindowMessage({ command: VaultOnboardingMessages.checkBwInstalled });
 
-      expect(mockPostMessage).toHaveBeenCalled();
+      expect(mockPostMessage).toHaveBeenCalledWith({
+        command: VaultOnboardingMessages.HasBwInstalled,
+      });
     });
   });
 

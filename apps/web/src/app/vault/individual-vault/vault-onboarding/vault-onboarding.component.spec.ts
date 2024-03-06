@@ -9,6 +9,7 @@ import { ConfigServiceAbstraction } from "@bitwarden/common/platform/abstraction
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateProvider } from "@bitwarden/common/platform/state";
+import { VaultOnboardingMessages } from "@bitwarden/common/vault/enums/vault-onboarding.enum";
 
 import { VaultOnboardingService as VaultOnboardingServiceAbstraction } from "./services/abstraction/vault-onboarding.service";
 import { VaultOnboardingComponent } from "./vault-onboarding.component";
@@ -143,7 +144,9 @@ describe("VaultOnboardingComponent", () => {
   describe("checkBrowserExtension", () => {
     it("should call getMessages when showOnboarding is true", () => {
       const messageEventSubject = new Subject<MessageEvent>();
-      const messageEvent = new MessageEvent("message", { data: "hasBWInstalled" });
+      const messageEvent = new MessageEvent("message", {
+        data: VaultOnboardingMessages.HasBwInstalled,
+      });
       const getMessagesSpy = jest.spyOn(component, "getMessages");
 
       (component as any).showOnboarding = true;
@@ -151,7 +154,9 @@ describe("VaultOnboardingComponent", () => {
       messageEventSubject.next(messageEvent);
 
       void fixture.whenStable().then(() => {
-        expect(window.postMessage).toHaveBeenCalledWith({ command: "checkIfBWExtensionInstalled" });
+        expect(window.postMessage).toHaveBeenCalledWith({
+          command: VaultOnboardingMessages.checkBwInstalled,
+        });
         expect(getMessagesSpy).toHaveBeenCalled();
       });
     });
@@ -168,7 +173,7 @@ describe("VaultOnboardingComponent", () => {
         installExtension: false,
       });
 
-      const eventData = { data: { command: "hasBWInstalled" } };
+      const eventData = { data: { command: VaultOnboardingMessages.HasBwInstalled } };
 
       (component as any).showOnboarding = true;
 
