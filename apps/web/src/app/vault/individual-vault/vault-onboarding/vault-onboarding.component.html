@@ -27,11 +27,8 @@
         <button type="button" bitLink (click)="emitToAddCipher()">
           {{ "onboardingImportDataDetailsLink" | i18n }}
         </button>
-        <span *ngIf="orgs == null || orgs.length === 0">
+        <span>
           {{ "onboardingImportDataDetailsPartTwoNoOrgs" | i18n }}
-        </span>
-        <span *ngIf="orgs.length > 0">
-          {{ "onboardingImportDataDetailsPartTwoWithOrgs" | i18n }}
         </span>
       </p>
     </app-onboarding-task>
