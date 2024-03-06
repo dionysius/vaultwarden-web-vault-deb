@@ -113,6 +113,7 @@ export class Fido2AuthenticatorService implements Fido2AuthenticatorServiceAbstr
         credentialName: params.rpEntity.name,
         userName: params.userEntity.displayName,
         userVerification: params.requireUserVerification,
+        rpId: params.rpEntity.id,
       });
       const cipherId = response.cipherId;
       userVerified = response.userVerified;

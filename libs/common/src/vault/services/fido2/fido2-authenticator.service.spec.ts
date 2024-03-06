@@ -216,6 +216,7 @@ describe("FidoAuthenticatorService", () => {
             credentialName: params.rpEntity.name,
             userName: params.userEntity.displayName,
             userVerification,
+            rpId: params.rpEntity.id,
           } as NewCredentialParams);
         });
       }
