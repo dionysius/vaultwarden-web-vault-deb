@@ -268,14 +268,14 @@ export class ProductSwitcherService {
         if (smOrg) {
           bento.push(products.sm);
         } else {
-          other.push(products.sm);
+          // other.push(products.sm); no ad for secret manager in Vaultwarden
         }
 
         if (acOrg) {
           bento.push(products.ac);
         } else {
           if (!userHasSingleOrgPolicy) {
-            other.push(products.orgs);
+            // other.push(products.orgs); no add for Organizations in Vaultwarden
           }
         }
 
