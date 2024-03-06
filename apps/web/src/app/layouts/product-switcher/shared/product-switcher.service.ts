@@ -19,11 +19,7 @@ import {
 } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { ProviderService } from "@bitwarden/common/admin-console/abstractions/provider.service";
-import {
-  OrganizationUserType,
-  PolicyType,
-  ProviderType,
-} from "@bitwarden/common/admin-console/enums";
+import { PolicyType, ProviderType } from "@bitwarden/common/admin-console/enums";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { Provider } from "@bitwarden/common/admin-console/models/domain/provider";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
@@ -216,9 +212,7 @@ export class ProductSwitcherService {
         // Check if SM ads should be disabled for any organization
         // SM ads are disabled if the user is a regular User (not Admin or Owner)
         // in an organization that has useDisableSMAdsForUsers enabled
-        const shouldDisableSMAds = orgs.some(
-          (org) => org.useDisableSMAdsForUsers === true && org.type === OrganizationUserType.User,
-        );
+        const shouldDisableSMAds = true; // always hide ads for secret manager in Vaultwarden
 
         const products = {
           pm: {
@@ -288,7 +282,7 @@ export class ProductSwitcherService {
           bento.push(products.ac);
         } else {
           if (!userHasSingleOrgPolicy) {
-            other.push(products.orgs);
+            // other.push(products.orgs); no add for Organizations in Vaultwarden
           }
         }
 
