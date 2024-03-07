@@ -24,27 +24,33 @@ const TestOptions: UsernameGeneratorOptions = {
   forwarders: {
     service: Forwarders.Fastmail.id,
     fastMail: {
+      website: null,
       domain: "httpbin.com",
       prefix: "foo",
       token: "some-token",
     },
     addyIo: {
+      website: null,
       baseUrl: "https://app.addy.io",
       domain: "example.com",
       token: "some-token",
     },
     forwardEmail: {
+      website: null,
       token: "some-token",
       domain: "example.com",
     },
     simpleLogin: {
+      website: null,
       baseUrl: "https://app.simplelogin.io",
       token: "some-token",
     },
     duckDuckGo: {
+      website: null,
       token: "some-token",
     },
     firefoxRelay: {
+      website: null,
       token: "some-token",
     },
   },
