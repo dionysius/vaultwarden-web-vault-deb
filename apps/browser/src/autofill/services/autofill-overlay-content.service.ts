@@ -646,12 +646,10 @@ class AutofillOverlayContentService implements AutofillOverlayContentServiceInte
    */
   private toggleOverlayHidden(isHidden: boolean) {
     const displayValue = isHidden ? "none" : "block";
-    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    this.sendExtensionMessage("updateAutofillOverlayHidden", { display: displayValue });
+    void this.sendExtensionMessage("updateAutofillOverlayHidden", { display: displayValue });
 
-    this.isOverlayButtonVisible = !isHidden;
-    this.isOverlayListVisible = !isHidden;
+    this.isOverlayButtonVisible = !!this.overlayButtonElement && !isHidden;
+    this.isOverlayListVisible = !!this.overlayListElement && !isHidden;
   }
 
   /**
