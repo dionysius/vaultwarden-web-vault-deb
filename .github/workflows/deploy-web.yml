@@ -19,14 +19,14 @@ on:
         description: "Branch or Tag name to deploy (examples: 'main', 'feature/sm', 'web-v2023.12.0')"
         type: string
         default: main
-      invert-default-sync-delete-destination-files-value:
-        description: "Invert the default sync-delete-destination-files value"
+      force-delete-destination:
+        description: "Delete remote files that are not found locally"
         type: boolean
         default: false
       debug:
         description: "Debug mode"
         type: boolean
-        default: false
+        default: true
 
   workflow_call:
     inputs:
@@ -38,8 +38,8 @@ on:
         description: "Branch or Tag name to deploy (examples: 'main', 'feature/sm', 'web-v2023.12.0')"
         type: string
         default: main
-      invert-default-sync-delete-destination-files-value:
-        description: "Invert the default sync-delete-destination-files value"
+      force-delete-destination:
+        description: "Delete remote files that are not found locally"
         type: boolean
         default: false
       debug:
@@ -70,14 +70,6 @@ jobs:
           ENV_NAME_LOWER=$(echo "${{ inputs.environment }}" | awk '{print tolower($0)}')
           echo "configuring the Web deploy for ${{ inputs.environment }}"
           echo "environment=${{ inputs.environment }}" >> $GITHUB_OUTPUT
-
-          # Invert the default value for sync-delete-destination-files
-          if [ ${{ inputs.invert-default-sync-delete-destination-files-value }} ]; then
-            echo "sync-delete-destination-files=true" >> $GITHUB_OUTPUT
-          else
-          # This is the default value for USQA, EUQA, USPROD, and EUPROD
-          echo "sync-delete-destination-files=false" >> $GITHUB_OUTPUT
-          fi
 
           case ${{ inputs.environment }} in
             "USQA")
@@ -114,13 +106,6 @@ jobs:
               echo "environment-artifact=web-*-cloud-usdev.zip" >> $GITHUB_OUTPUT
               echo "environment-name=Web Vault - US Development Cloud" >> $GITHUB_OUTPUT
               echo "environment-url=http://vault.$ENV_NAME_LOWER.bitwarden.pw" >> $GITHUB_OUTPUT
-
-              if [ ${{ inputs.invert-default-sync-delete-destination-files-value }} ]; then
-                echo "sync-delete-destination-files=false" >> $GITHUB_OUTPUT
-              else
-                # This is the default value for USDEV
-                echo "sync-delete-destination-files=true" >> $GITHUB_OUTPUT
-              fi
               ;;
           esac
           # Set the sync utility to use for deployment to the environment (az-sync or azcopy)
@@ -285,7 +270,7 @@ jobs:
             --source "./build" \
             --container '$web' \
             --connection-string "${{ steps.retrieve-secrets-az-sync.outputs.sa-bitwarden-web-vault-dev-key-temp }}" \
-            --delete-destination=${{ needs.setup.outputs.sync-delete-destination-files }}
+            --delete-destination=${{ inputs.force-delete-destination }}
 
       - name: Sync to Azure Storage Account using azcopy
         if: ${{ needs.setup.outputs.sync-utility == 'azcopy' }}
@@ -297,7 +282,7 @@ jobs:
           AZCOPY_TENANT_ID: ${{ steps.retrieve-secrets-azcopy.outputs.sp-bitwarden-web-vault-tenant }}
         run: |
           azcopy sync ./build 'https://${{ steps.retrieve-secrets-azcopy.outputs.sa-bitwarden-web-vault-name }}.blob.core.windows.net/$web/' \
-            --delete-destination=${{ needs.setup.outputs.sync-delete-destination-files }} --compare-hash="MD5"
+            --delete-destination=${{ inputs.force-delete-destination }} --compare-hash="MD5"
 
       - name: Debug sync logs
         if: ${{ inputs.debug }}
