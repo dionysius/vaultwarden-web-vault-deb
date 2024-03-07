@@ -78,7 +78,11 @@ export class SecretsManagerTrialFreeStepperComponent implements OnInit {
     this.verticalStepper.next();
   }
 
-  async navigateTo(organizationRoute: string): Promise<void> {
-    await this.router.navigate(["organizations", this.organizationId, organizationRoute]);
+  async navigateToMembers(): Promise<void> {
+    await this.router.navigate(["organizations", this.organizationId, "members"]);
+  }
+
+  async navigateToSecretsManager(): Promise<void> {
+    await this.router.navigate(["sm", this.organizationId]);
   }
 }
