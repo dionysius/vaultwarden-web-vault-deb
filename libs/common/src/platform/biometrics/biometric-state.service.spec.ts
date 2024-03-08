@@ -12,6 +12,7 @@ import {
   BIOMETRIC_UNLOCK_ENABLED,
   DISMISSED_REQUIRE_PASSWORD_ON_START_CALLOUT,
   ENCRYPTED_CLIENT_KEY_HALF,
+  FINGERPRINT_VALIDATED,
   PROMPT_AUTOMATICALLY,
   PROMPT_CANCELLED,
   REQUIRE_PASSWORD_ON_START,
@@ -64,6 +65,19 @@ describe("BiometricStateService", () => {
       state.nextState(undefined);
 
       expect(await firstValueFrom(sut.encryptedClientKeyHalf$)).toBe(null);
+    });
+  });
+
+  describe("fingerprintValidated$", () => {
+    it("emits when the fingerprint validated state changes", async () => {
+      const state = stateProvider.global.getFake(FINGERPRINT_VALIDATED);
+      state.stateSubject.next(undefined);
+
+      expect(await firstValueFrom(sut.fingerprintValidated$)).toBe(false);
+
+      state.stateSubject.next(true);
+
+      expect(await firstValueFrom(sut.fingerprintValidated$)).toEqual(true);
     });
   });
 
@@ -205,6 +219,22 @@ describe("BiometricStateService", () => {
       stateProvider.singleUser.getFake(userId, BIOMETRIC_UNLOCK_ENABLED).nextState(undefined);
 
       expect(await sut.getBiometricUnlockEnabled(userId)).toBe(false);
+    });
+  });
+
+  describe("setFingerprintValidated", () => {
+    it("updates fingerprintValidated$", async () => {
+      await sut.setFingerprintValidated(true);
+
+      expect(await firstValueFrom(sut.fingerprintValidated$)).toBe(true);
+    });
+
+    it("updates state", async () => {
+      await sut.setFingerprintValidated(true);
+
+      expect(stateProvider.global.getFake(FINGERPRINT_VALIDATED).nextMock).toHaveBeenCalledWith(
+        true,
+      );
     });
   });
 });

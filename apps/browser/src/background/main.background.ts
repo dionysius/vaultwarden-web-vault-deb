@@ -814,6 +814,7 @@ export default class MainBackground {
       this.stateService,
       this.autofillSettingsService,
       this.vaultTimeoutSettingsService,
+      this.biometricStateService,
     );
 
     // Other fields

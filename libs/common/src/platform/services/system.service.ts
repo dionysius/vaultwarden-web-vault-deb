@@ -9,6 +9,7 @@ import { MessagingService } from "../abstractions/messaging.service";
 import { PlatformUtilsService } from "../abstractions/platform-utils.service";
 import { StateService } from "../abstractions/state.service";
 import { SystemService as SystemServiceAbstraction } from "../abstractions/system.service";
+import { BiometricStateService } from "../biometrics/biometric-state.service";
 import { Utils } from "../misc/utils";
 
 export class SystemService implements SystemServiceAbstraction {
@@ -23,6 +24,7 @@ export class SystemService implements SystemServiceAbstraction {
     private stateService: StateService,
     private autofillSettingsService: AutofillSettingsServiceAbstraction,
     private vaultTimeoutSettingsService: VaultTimeoutSettingsService,
+    private biometricStateService: BiometricStateService,
   ) {}
 
   async startProcessReload(authService: AuthService): Promise<void> {
@@ -54,8 +56,9 @@ export class SystemService implements SystemServiceAbstraction {
   }
 
   private async executeProcessReload() {
-    const biometricLockedFingerprintValidated =
-      await this.stateService.getBiometricFingerprintValidated();
+    const biometricLockedFingerprintValidated = await firstValueFrom(
+      this.biometricStateService.fingerprintValidated$,
+    );
     if (!biometricLockedFingerprintValidated) {
       clearInterval(this.reloadInterval);
       this.reloadInterval = null;

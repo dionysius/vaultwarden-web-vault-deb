@@ -74,3 +74,14 @@ export const PROMPT_AUTOMATICALLY = new KeyDefinition<boolean>(
     deserializer: (obj) => obj,
   },
 );
+
+/**
+ * Stores whether or not IPC handshake has been validated this session.
+ */
+export const FINGERPRINT_VALIDATED = new KeyDefinition<boolean>(
+  BIOMETRIC_SETTINGS_DISK,
+  "fingerprintValidated",
+  {
+    deserializer: (obj) => obj,
+  },
+);

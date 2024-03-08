@@ -2,7 +2,7 @@ import { Observable, firstValueFrom, map } from "rxjs";
 
 import { UserId } from "../../types/guid";
 import { EncryptedString, EncString } from "../models/domain/enc-string";
-import { ActiveUserState, StateProvider } from "../state";
+import { ActiveUserState, GlobalState, StateProvider } from "../state";
 
 import {
   BIOMETRIC_UNLOCK_ENABLED,
@@ -11,6 +11,7 @@ import {
   DISMISSED_REQUIRE_PASSWORD_ON_START_CALLOUT,
   PROMPT_AUTOMATICALLY,
   PROMPT_CANCELLED,
+  FINGERPRINT_VALIDATED,
 } from "./biometric.state";
 
 export abstract class BiometricStateService {
@@ -49,6 +50,10 @@ export abstract class BiometricStateService {
    * tracks the currently active user
    */
   promptAutomatically$: Observable<boolean>;
+  /**
+   * Whether or not IPC fingerprint has been validated by the user this session.
+   */
+  fingerprintValidated$: Observable<boolean>;
 
   /**
    * Updates the require password on start state for the currently active user.
@@ -88,6 +93,11 @@ export abstract class BiometricStateService {
    * @param prompt Whether or not to prompt for biometrics on application start.
    */
   abstract setPromptAutomatically(prompt: boolean): Promise<void>;
+  /**
+   * Updates whether or not IPC has been validated by the user this session
+   * @param validated the value to save
+   */
+  abstract setFingerprintValidated(validated: boolean): Promise<void>;
 
   abstract logout(userId: UserId): Promise<void>;
 }
@@ -99,12 +109,14 @@ export class DefaultBiometricStateService implements BiometricStateService {
   private dismissedRequirePasswordOnStartCalloutState: ActiveUserState<boolean>;
   private promptCancelledState: ActiveUserState<boolean>;
   private promptAutomaticallyState: ActiveUserState<boolean>;
+  private fingerprintValidatedState: GlobalState<boolean>;
   biometricUnlockEnabled$: Observable<boolean>;
   encryptedClientKeyHalf$: Observable<EncString | undefined>;
   requirePasswordOnStart$: Observable<boolean>;
   dismissedRequirePasswordOnStartCallout$: Observable<boolean>;
   promptCancelled$: Observable<boolean>;
   promptAutomatically$: Observable<boolean>;
+  fingerprintValidated$: Observable<boolean>;
 
   constructor(private stateProvider: StateProvider) {
     this.biometricUnlockEnabledState = this.stateProvider.getActive(BIOMETRIC_UNLOCK_ENABLED);
@@ -130,6 +142,9 @@ export class DefaultBiometricStateService implements BiometricStateService {
     this.promptCancelled$ = this.promptCancelledState.state$.pipe(map(Boolean));
     this.promptAutomaticallyState = this.stateProvider.getActive(PROMPT_AUTOMATICALLY);
     this.promptAutomatically$ = this.promptAutomaticallyState.state$.pipe(map(Boolean));
+
+    this.fingerprintValidatedState = this.stateProvider.getGlobal(FINGERPRINT_VALIDATED);
+    this.fingerprintValidated$ = this.fingerprintValidatedState.state$.pipe(map(Boolean));
   }
 
   async setBiometricUnlockEnabled(enabled: boolean): Promise<void> {
@@ -206,6 +221,10 @@ export class DefaultBiometricStateService implements BiometricStateService {
 
   async setPromptAutomatically(prompt: boolean): Promise<void> {
     await this.promptAutomaticallyState.update(() => prompt);
+  }
+
+  async setFingerprintValidated(validated: boolean): Promise<void> {
+    await this.fingerprintValidatedState.update(() => validated);
   }
 }
 
