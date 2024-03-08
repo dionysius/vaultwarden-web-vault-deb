@@ -30,7 +30,7 @@ export class WindowMain {
   private windowStateChangeTimer: NodeJS.Timeout;
   private windowStates: { [key: string]: WindowState } = {};
   private enableAlwaysOnTop = false;
-  private session: Electron.Session;
+  session: Electron.Session;
 
   readonly defaultWidth = 950;
   readonly defaultHeight = 600;
