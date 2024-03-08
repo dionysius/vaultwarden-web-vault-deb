@@ -103,8 +103,12 @@ export async function waitForMigrations(
   const isReady = async () => {
     const version = await currentVersion(storageService, logService);
     // The saved version is what we consider the latest
-    // migrations should be complete
-    return version === CURRENT_VERSION;
+    // migrations should be complete, the state version
+    // shouldn't become larger than `CURRENT_VERSION` in
+    // any normal usage of the application but it is common
+    // enough in dev scenarios where we want to consider that
+    // ready as well and return true in that scenario.
+    return version >= CURRENT_VERSION;
   };
 
   const wait = async (time: number) => {
