@@ -92,13 +92,13 @@
     "message": "자동 완성"
   },
   "autoFillLogin": {
-    "message": "Auto-fill login"
+    "message": "로그인 자동 완성"
   },
   "autoFillCard": {
-    "message": "Auto-fill card"
+    "message": "카드 자동 완성"
   },
   "autoFillIdentity": {
-    "message": "Auto-fill identity"
+    "message": "신원 자동 완성"
   },
   "generatePasswordCopied": {
     "message": "비밀번호 생성 및 클립보드에 복사"
@@ -110,19 +110,19 @@
     "message": "사용할 수 있는 로그인이 없습니다."
   },
   "noCards": {
-    "message": "No cards"
+    "message": "카드 없음"
   },
   "noIdentities": {
-    "message": "No identities"
+    "message": "신원 없음"
   },
   "addLoginMenu": {
-    "message": "Add login"
+    "message": "로그인 추가"
   },
   "addCardMenu": {
-    "message": "Add card"
+    "message": "카드 추가"
   },
   "addIdentityMenu": {
-    "message": "Add identity"
+    "message": "신원 추가"
   },
   "unlockVaultMenu": {
     "message": "보관함 잠금 해제"
@@ -220,7 +220,7 @@
     "message": "도움말 및 의견"
   },
   "helpCenter": {
-    "message": "Bitwarden Help center"
+    "message": "Bitwarden 도움말 센터"
   },
   "communityForums": {
     "message": "Explore Bitwarden community forums"

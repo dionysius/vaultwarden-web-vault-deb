@@ -2005,7 +2005,7 @@
     "message": "Seleccione carpeta..."
   },
   "noFoldersFound": {
-    "message": "No folders found",
+    "message": "Ninguna carpeta encontrada",
     "description": "Used as a message within the notification bar when no folders are found"
   },
   "orgPermissionsUpdatedMustSetPassword": {
@@ -2670,25 +2670,25 @@
     "message": "Verificar biométricamente"
   },
   "awaitingConfirmation": {
-    "message": "Awaiting confirmation"
+    "message": "Esperando confirmación"
   },
   "couldNotCompleteBiometrics": {
-    "message": "Could not complete biometrics."
+    "message": "No se pudo completar la biométrica."
   },
   "needADifferentMethod": {
     "message": "¿Necesita un método distinto?"
   },
   "useMasterPassword": {
-    "message": "Use master password"
+    "message": "Usar contraseña maestra"
   },
   "usePin": {
     "message": "Usar NIP"
   },
   "useBiometrics": {
-    "message": "Use biometrics"
+    "message": "Usar biométrica"
   },
   "enterVerificationCodeSentToEmail": {
-    "message": "Enter the verification code that was sent to your email."
+    "message": "Introduzca el código de verificación que se ha enviado a su correo electrónico."
   },
   "resendCode": {
     "message": "Volver a enviar código"
@@ -2706,19 +2706,19 @@
     }
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
-    "message": "Launch Duo and follow the steps to finish logging in."
+    "message": "Abra Duo y siga los pasos para terminar de iniciar sesión."
   },
   "duoRequiredForAccount": {
-    "message": "Duo two-step login is required for your account."
+    "message": "Se requiere el inicio de sesión en dos pasos Duo para su cuenta."
   },
   "popoutTheExtensionToCompleteLogin": {
-    "message": "Popout the extension to complete login."
+    "message": "Abra la extensión para completar el inicio de sesión."
   },
   "popoutExtension": {
-    "message": "Popout extension"
+    "message": "Abrir extensión"
   },
   "launchDuo": {
-    "message": "Launch Duo"
+    "message": "Iniciar Duo"
   },
   "importFormatError": {
     "message": "Los datos no están formateados correctamente. Por favor, comprueba tu archivo de importación e inténtalo de nuevo."
@@ -2995,15 +2995,15 @@
     "description": "Button text for the setting that allows overriding the default browser autofill settings"
   },
   "saveCipherAttemptSuccess": {
-    "message": "Credentials saved successfully!",
+    "message": "¡Credenciales guardadas con éxito!",
     "description": "Notification message for when saving credentials has succeeded."
   },
   "updateCipherAttemptSuccess": {
-    "message": "Credentials updated successfully!",
+    "message": "¡Credenciales actualizadas con éxito!",
     "description": "Notification message for when updating credentials has succeeded."
   },
   "saveCipherAttemptFailed": {
-    "message": "Error saving credentials. Check console for details.",
+    "message": "Se produjo un error al guardar las credenciales. Revise la consola para obtener detalles.",
     "description": "Notification message for when saving credentials has failed."
   }
 }
