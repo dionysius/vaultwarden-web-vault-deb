@@ -110,9 +110,8 @@ describe("VaultTimeoutSettingsService", () => {
           stateService.getAccountDecryptionOptions.mockResolvedValue(
             new AccountDecryptionOptions({ hasMasterPassword: true }),
           );
-          policyService.policyAppliesToUser.mockResolvedValue(policy === null ? false : true);
-          policyService.getAll.mockResolvedValue(
-            policy === null ? [] : ([{ data: { action: policy } }] as unknown as Policy[]),
+          policyService.getAll$.mockReturnValue(
+            of(policy === null ? [] : ([{ data: { action: policy } }] as unknown as Policy[])),
           );
           stateService.getVaultTimeoutAction.mockResolvedValue(userPreference);
 
@@ -140,9 +139,8 @@ describe("VaultTimeoutSettingsService", () => {
           stateService.getAccountDecryptionOptions.mockResolvedValue(
             new AccountDecryptionOptions({ hasMasterPassword: false }),
           );
-          policyService.policyAppliesToUser.mockResolvedValue(policy === null ? false : true);
-          policyService.getAll.mockResolvedValue(
-            policy === null ? [] : ([{ data: { action: policy } }] as unknown as Policy[]),
+          policyService.getAll$.mockReturnValue(
+            of(policy === null ? [] : ([{ data: { action: policy } }] as unknown as Policy[])),
           );
           stateService.getVaultTimeoutAction.mockResolvedValue(userPreference);
 

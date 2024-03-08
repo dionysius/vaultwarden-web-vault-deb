@@ -1,8 +1,9 @@
+import { PolicyId } from "../../../types/guid";
 import { PolicyType } from "../../enums";
 import { PolicyResponse } from "../response/policy.response";
 
 export class PolicyData {
-  id: string;
+  id: PolicyId;
   organizationId: string;
   type: PolicyType;
   data: Record<string, string | number | boolean>;

@@ -22,6 +22,7 @@ import { PolicyApiServiceAbstraction } from "@bitwarden/common/admin-console/abs
 import { InternalPolicyService as InternalPolicyServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { ProviderService as ProviderServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/provider.service";
 import { PolicyApiService } from "@bitwarden/common/admin-console/services/policy/policy-api.service";
+import { PolicyService } from "@bitwarden/common/admin-console/services/policy/policy.service";
 import { ProviderService } from "@bitwarden/common/admin-console/services/provider.service";
 import { AccountService as AccountServiceAbstraction } from "@bitwarden/common/auth/abstractions/account.service";
 import { AuthService as AuthServiceAbstraction } from "@bitwarden/common/auth/abstractions/auth.service";
@@ -175,7 +176,6 @@ import {
 } from "@bitwarden/vault-export-core";
 
 import { BrowserOrganizationService } from "../admin-console/services/browser-organization.service";
-import { BrowserPolicyService } from "../admin-console/services/browser-policy.service";
 import ContextMenusBackground from "../autofill/background/context-menus.background";
 import NotificationBackground from "../autofill/background/notification.background";
 import OverlayBackground from "../autofill/background/overlay.background";
@@ -501,11 +501,7 @@ export default class MainBackground {
       this.stateService,
       this.stateProvider,
     );
-    this.policyService = new BrowserPolicyService(
-      this.stateService,
-      this.stateProvider,
-      this.organizationService,
-    );
+    this.policyService = new PolicyService(this.stateProvider, this.organizationService);
     this.autofillSettingsService = new AutofillSettingsService(
       this.stateProvider,
       this.policyService,
