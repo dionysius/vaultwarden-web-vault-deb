@@ -53,6 +53,10 @@ const INLINE_MENU_VISIBILITY = new KeyDefinition(
   },
 );
 
+const ENABLE_CONTEXT_MENU = new KeyDefinition(AUTOFILL_SETTINGS_DISK, "enableContextMenu", {
+  deserializer: (value: boolean) => value ?? true,
+});
+
 const CLEAR_CLIPBOARD_DELAY = new KeyDefinition(
   AUTOFILL_SETTINGS_DISK_LOCAL,
   "clearClipboardDelay",
@@ -75,6 +79,8 @@ export abstract class AutofillSettingsServiceAbstraction {
   setAutoCopyTotp: (newValue: boolean) => Promise<void>;
   inlineMenuVisibility$: Observable<InlineMenuVisibilitySetting>;
   setInlineMenuVisibility: (newValue: InlineMenuVisibilitySetting) => Promise<void>;
+  enableContextMenu$: Observable<boolean>;
+  setEnableContextMenu: (newValue: boolean) => Promise<void>;
   clearClipboardDelay$: Observable<ClearClipboardDelaySetting>;
   setClearClipboardDelay: (newValue: ClearClipboardDelaySetting) => Promise<void>;
 }
@@ -99,6 +105,9 @@ export class AutofillSettingsService implements AutofillSettingsServiceAbstracti
 
   private inlineMenuVisibilityState: GlobalState<InlineMenuVisibilitySetting>;
   readonly inlineMenuVisibility$: Observable<InlineMenuVisibilitySetting>;
+
+  private enableContextMenuState: GlobalState<boolean>;
+  readonly enableContextMenu$: Observable<boolean>;
 
   private clearClipboardDelayState: ActiveUserState<ClearClipboardDelaySetting>;
   readonly clearClipboardDelay$: Observable<ClearClipboardDelaySetting>;
@@ -142,6 +151,9 @@ export class AutofillSettingsService implements AutofillSettingsServiceAbstracti
       map((x) => x ?? AutofillOverlayVisibility.Off),
     );
 
+    this.enableContextMenuState = this.stateProvider.getGlobal(ENABLE_CONTEXT_MENU);
+    this.enableContextMenu$ = this.enableContextMenuState.state$.pipe(map((x) => x ?? true));
+
     this.clearClipboardDelayState = this.stateProvider.getActive(CLEAR_CLIPBOARD_DELAY);
     this.clearClipboardDelay$ = this.clearClipboardDelayState.state$.pipe(
       map((x) => x ?? ClearClipboardDelay.Never),
@@ -170,6 +182,10 @@ export class AutofillSettingsService implements AutofillSettingsServiceAbstracti
 
   async setInlineMenuVisibility(newValue: InlineMenuVisibilitySetting): Promise<void> {
     await this.inlineMenuVisibilityState.update(() => newValue);
+  }
+
+  async setEnableContextMenu(newValue: boolean): Promise<void> {
+    await this.enableContextMenuState.update(() => newValue);
   }
 
   async setClearClipboardDelay(newValue: ClearClipboardDelaySetting): Promise<void> {

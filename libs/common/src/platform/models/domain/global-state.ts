@@ -26,6 +26,5 @@ export class GlobalState {
   enableBrowserIntegrationFingerprint?: boolean;
   enableDuckDuckGoBrowserIntegration?: boolean;
   neverDomains?: { [id: string]: unknown };
-  disableContextMenuItem?: boolean;
   deepLinkRedirectUrl?: string;
 }

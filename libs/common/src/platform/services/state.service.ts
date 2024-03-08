@@ -832,24 +832,6 @@ export class StateService<
     );
   }
 
-  async getDisableContextMenuItem(options?: StorageOptions): Promise<boolean> {
-    return (
-      (await this.getGlobals(this.reconcileOptions(options, await this.defaultOnDiskOptions())))
-        ?.disableContextMenuItem ?? false
-    );
-  }
-
-  async setDisableContextMenuItem(value: boolean, options?: StorageOptions): Promise<void> {
-    const globals = await this.getGlobals(
-      this.reconcileOptions(options, await this.defaultOnDiskOptions()),
-    );
-    globals.disableContextMenuItem = value;
-    await this.saveGlobals(
-      globals,
-      this.reconcileOptions(options, await this.defaultOnDiskOptions()),
-    );
-  }
-
   async getDisableFavicon(options?: StorageOptions): Promise<boolean> {
     return (
       (
