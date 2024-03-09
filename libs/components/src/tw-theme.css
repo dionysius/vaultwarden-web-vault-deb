@@ -13,13 +13,13 @@
   --color-background: 255 255 255;
   --color-background-alt: 243 246 249;
   --color-background-alt2: 23 92 219;
-  --color-background-alt3: 26 65 172;
-  --color-background-alt4: 2 15 102;
+  --color-background-alt3: 33 37 41; /* bg of menu panel */
+  --color-background-alt4: 16 18 21; /* bg of active menu item */
 
   --color-primary-100: 219 229 246;
-  --color-primary-300: 121 161 233;
-  --color-primary-600: 23 93 220;
-  --color-primary-700: 26 65 172;
+  --color-primary-300: 108 117 125; /* hover of menu items */
+  --color-primary-600: 18 82 163; /* color of links and buttons */
+  --color-primary-700: 13 60 119; /* hover of links and buttons */
 
   --color-secondary-100: 230 233 239;
   --color-secondary-300: 168 179 200;
@@ -55,7 +55,7 @@
   --color-text-alt2: 255 255 255;
   --color-text-code: 192 17 118;
 
-  --color-marketing-logo: 23 93 220;
+  --color-marketing-logo: 15 15 15; /* The Vaultwarden Logo */
 
   --tw-ring-offset-color: #ffffff;
 }
