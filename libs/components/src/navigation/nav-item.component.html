@@ -54,7 +54,7 @@
         [relativeTo]="relativeTo"
         [attr.aria-label]="ariaLabel || text"
         routerLinkActive
-        [routerLinkActiveOptions]="rlaOptions"
+        [routerLinkActiveOptions]="routerLinkActiveOptions"
         [ariaCurrentWhenActive]="'page'"
         (isActiveChange)="setIsActive($event)"
         (click)="mainContentClicked.emit()"

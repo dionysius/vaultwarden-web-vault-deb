@@ -4,12 +4,12 @@
   [icon]="icon"
   [route]="route"
   [relativeTo]="relativeTo"
+  [routerLinkActiveOptions]="routerLinkActiveOptions"
   [variant]="variant"
   (mainContentClicked)="toggle()"
   [treeDepth]="treeDepth"
   (mainContentClicked)="mainContentClicked.emit()"
   [ariaLabel]="ariaLabel"
-  [exactMatch]="exactMatch"
   [hideActiveStyles]="parentHideActiveStyles"
 >
   <ng-template #button>

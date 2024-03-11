@@ -4,8 +4,8 @@
   [ariaLabel]="['organization' | i18n, activeOrganization.name].join(' ')"
   icon="bwi-business"
   [route]="['../', activeOrganization.id]"
+  [routerLinkActiveOptions]="{ exact: true }"
   [(open)]="open"
-  [exactMatch]="true"
 >
   <i
     slot="end"
@@ -21,7 +21,7 @@
       [ariaLabel]="['organization' | i18n, org.name].join(' ')"
       [route]="['../', org.id]"
       (mainContentClicked)="toggle()"
-      [exactMatch]="true"
+      [routerLinkActiveOptions]="{ exact: true }"
     >
       <i
         slot="end"
