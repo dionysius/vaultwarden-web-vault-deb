@@ -578,6 +578,9 @@
   "access": {
     "message": "Adgang"
   },
+  "accessLevel": {
+    "message": "Adgangsniveau"
+  },
   "loggedOut": {
     "message": "Logget ud"
   },
@@ -669,7 +672,7 @@
     "message": "Kryptering ikke understøttet"
   },
   "enablePasskeyEncryption": {
-    "message": "Set up encryption"
+    "message": "Opsæt kryptering"
   },
   "usedForEncryption": {
     "message": "Bruges til kryptering"
@@ -5937,10 +5940,10 @@
     "message": "Start DUO og følg trinene for at fuldføre indlogningen."
   },
   "duoRequiredByOrgForAccount": {
-    "message": "DUO totrins indlogning kræves for kontoen."
+    "message": "Duo totrinsindlogning kræves for kontoen."
   },
   "launchDuo": {
-    "message": "Start DUO"
+    "message": "Start Duo"
   },
   "turnOn": {
     "message": "Slå til"
@@ -6731,7 +6734,7 @@
     }
   },
   "teamsStarterPlanInvLimitReachedManageBilling": {
-    "message": "Teams Starter plans may have up to $SEATCOUNT$ members. Upgrade to your plan to invite more members.",
+    "message": "Teams Starter kan have op til $SEATCOUNT$ medlemmer. Opgradér til en betalt abonnementstype for at invitere flere deltagerer.",
     "placeholders": {
       "seatcount": {
         "content": "$1",
@@ -7474,7 +7477,7 @@
     }
   },
   "seeDetailedInstructions": {
-    "message": "See detailed instructions on our help site at",
+    "message": "Se detaljeret vejledning på vores hjælpewebsted på",
     "description": "This is followed a by a hyperlink to the help website."
   },
   "installBrowserExtension": {
