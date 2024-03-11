@@ -1500,7 +1500,7 @@
     "message": "无效 PIN 码。"
   },
   "tooManyInvalidPinEntryAttemptsLoggingOut": {
-    "message": "无效的 PIN 输入尝试次数过多，正在注销。"
+    "message": "无效的 PIN 输入尝试次数过多，正在退出登录。"
   },
   "unlockWithBiometrics": {
     "message": "使用生物识别解锁"

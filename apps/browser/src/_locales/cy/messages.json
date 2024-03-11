@@ -360,7 +360,7 @@
     "message": "Gwefan"
   },
   "toggleVisibility": {
-    "message": "Toggle visibility"
+    "message": "Toglo gwelededd"
   },
   "manage": {
     "message": "Rheoli"
@@ -381,7 +381,7 @@
     "message": "Ystyriwch ein helpu ni gydag adolygiad da!"
   },
   "browserNotSupportClipboard": {
-    "message": "Your web browser does not support easy clipboard copying. Copy it manually instead."
+    "message": "Dyw eich porwr gwe ddim yn cefnogi copïo drwy'r clipfwrdd yn hawdd. Copïwch â llaw yn lle."
   },
   "verifyIdentity": {
     "message": "Gwirio'ch hunaniaeth"
@@ -415,7 +415,7 @@
     "message": "Cloi nawr"
   },
   "lockAll": {
-    "message": "Lock all"
+    "message": "Cloi'r cwbl"
   },
   "immediately": {
     "message": "ar unwaith"
@@ -2925,7 +2925,7 @@
     "message": "Newid i gyfrif"
   },
   "activeAccount": {
-    "message": "Active account"
+    "message": "Cyfrif gweithredol"
   },
   "availableAccounts": {
     "message": "Cyfrifon ar gael"
@@ -2943,7 +2943,7 @@
     "message": "unlocked"
   },
   "server": {
-    "message": "server"
+    "message": "gweinydd"
   },
   "hostedAt": {
     "message": "hosted at"
@@ -2952,7 +2952,7 @@
     "message": "Use your device or hardware key"
   },
   "justOnce": {
-    "message": "Just once"
+    "message": "Unwaith yn unig"
   },
   "alwaysForThisSite": {
     "message": "Always for this site"
@@ -2971,7 +2971,7 @@
     "description": "Label indicating the most common import formats"
   },
   "overrideDefaultBrowserAutofillTitle": {
-    "message": "Make Bitwarden your default password manager?",
+    "message": "Hoffech chi wneud Bitwarden yn rheolydd cyfrineiriau rhagosodedig?",
     "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutofillDescription": {
