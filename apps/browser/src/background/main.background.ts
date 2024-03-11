@@ -352,7 +352,7 @@ export default class MainBackground {
     this.cryptoFunctionService = new WebCryptoFunctionService(self);
     this.keyGenerationService = new KeyGenerationService(this.cryptoFunctionService);
     this.storageService = new BrowserLocalStorageService();
-    this.secureStorageService = new BrowserLocalStorageService();
+    this.secureStorageService = this.storageService; // secure storage is not supported in browsers, so we use local storage and warn users when it is used
     this.memoryStorageService = BrowserApi.isManifestVersion(3)
       ? new LocalBackedSessionStorageService(
           new EncryptServiceImplementation(this.cryptoFunctionService, this.logService, false),

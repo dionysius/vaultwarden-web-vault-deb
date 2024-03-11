@@ -417,7 +417,7 @@ function getBgService<T>(service: keyof MainBackground) {
     },
     {
       provide: SECURE_STORAGE,
-      useFactory: getBgService<AbstractStorageService>("secureStorageService"),
+      useExisting: AbstractStorageService, // Secure storage is not available in the browser, so we use normal storage instead and warn users when it is used.
     },
     {
       provide: MEMORY_STORAGE,
