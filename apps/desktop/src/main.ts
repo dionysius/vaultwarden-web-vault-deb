@@ -97,7 +97,6 @@ export class Main {
     }
 
     this.logService = new ElectronLogMainService(null, app.getPath("userData"));
-    this.i18nService = new I18nMainService("en", "./locales/");
 
     const storageDefaults: any = {};
     // Default vault timeout to "on restart", and action to "lock"
@@ -111,6 +110,8 @@ export class Main {
       this.memoryStorageForStateProviders,
     );
     const globalStateProvider = new DefaultGlobalStateProvider(storageServiceProvider);
+
+    this.i18nService = new I18nMainService("en", "./locales/", globalStateProvider);
 
     const accountService = new AccountServiceImplementation(
       new NoopMessagingService(),
@@ -218,8 +219,7 @@ export class Main {
     this.migrationRunner.run().then(
       async () => {
         await this.windowMain.init();
-        const locale = await this.stateService.getLocale();
-        await this.i18nService.init(locale != null ? locale : app.getLocale());
+        await this.i18nService.init();
         this.messagingMain.init();
         // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
         // eslint-disable-next-line @typescript-eslint/no-floating-promises

@@ -50,8 +50,7 @@ export class InitService {
 
       setTimeout(() => this.notificationsService.init(), 3000);
       await this.vaultTimeoutService.init(true);
-      const locale = await this.stateService.getLocale();
-      await (this.i18nService as I18nService).init(locale);
+      await (this.i18nService as I18nService).init();
       (this.eventUploadService as EventUploadService).init(true);
       this.twoFactorService.init();
       const htmlEl = this.win.document.documentElement;

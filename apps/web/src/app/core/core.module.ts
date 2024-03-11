@@ -29,6 +29,7 @@ import { MigrationBuilderService } from "@bitwarden/common/platform/services/mig
 import { MigrationRunner } from "@bitwarden/common/platform/services/migration-runner";
 /* eslint-disable import/no-restricted-paths -- Implementation for memory storage */
 import { StorageServiceProvider } from "@bitwarden/common/platform/services/storage-service.provider";
+import { GlobalStateProvider } from "@bitwarden/common/platform/state";
 import { MemoryStorageService as MemoryStorageServiceForStateProviders } from "@bitwarden/common/platform/state/storage/memory-storage.service";
 /* eslint-enable import/no-restricted-paths -- Implementation for memory storage */
 
@@ -74,7 +75,7 @@ import { WebPlatformUtilsService } from "./web-platform-utils.service";
     {
       provide: I18nServiceAbstraction,
       useClass: I18nService,
-      deps: [SYSTEM_LANGUAGE, LOCALES_DIRECTORY],
+      deps: [SYSTEM_LANGUAGE, LOCALES_DIRECTORY, GlobalStateProvider],
     },
     { provide: AbstractStorageService, useClass: HtmlStorageService },
     {

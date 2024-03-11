@@ -34,4 +34,8 @@ export class I18nMockService implements I18nService {
   translate(id: string, p1?: string, p2?: string, p3?: string) {
     return this.t(id, p1, p2, p3);
   }
+
+  async setLocale(locale: string): Promise<void> {
+    throw new Error("Method not implemented.");
+  }
 }

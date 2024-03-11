@@ -43,7 +43,7 @@ import { GlobalState } from "@bitwarden/common/platform/models/domain/global-sta
 import { MemoryStorageService } from "@bitwarden/common/platform/services/memory-storage.service";
 import { MigrationRunner } from "@bitwarden/common/platform/services/migration-runner";
 import { SystemService } from "@bitwarden/common/platform/services/system.service";
-import { StateProvider } from "@bitwarden/common/platform/state";
+import { GlobalStateProvider, StateProvider } from "@bitwarden/common/platform/state";
 // eslint-disable-next-line import/no-restricted-paths -- Implementation for memory storage
 import { MemoryStorageService as MemoryStorageServiceForStateProviders } from "@bitwarden/common/platform/state/storage/memory-storage.service";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
@@ -104,7 +104,7 @@ const RELOAD_CALLBACK = new InjectionToken<() => any>("RELOAD_CALLBACK");
     {
       provide: I18nServiceAbstraction,
       useClass: I18nRendererService,
-      deps: [SYSTEM_LANGUAGE, LOCALES_DIRECTORY],
+      deps: [SYSTEM_LANGUAGE, LOCALES_DIRECTORY, GlobalStateProvider],
     },
     {
       provide: MessagingServiceAbstraction,

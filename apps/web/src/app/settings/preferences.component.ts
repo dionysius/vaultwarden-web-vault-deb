@@ -142,7 +142,7 @@ export class PreferencesComponent implements OnInit {
       ),
       enableFavicons: !(await this.settingsService.getDisableFavicon()),
       theme: await this.stateService.getTheme(),
-      locale: (await this.stateService.getLocale()) ?? null,
+      locale: (await firstValueFrom(this.i18nService.locale$)) ?? null,
     };
     this.startingLocale = initialFormValues.locale;
     this.startingTheme = initialFormValues.theme;
@@ -169,7 +169,7 @@ export class PreferencesComponent implements OnInit {
       await this.themingService.updateConfiguredTheme(values.theme);
       this.startingTheme = values.theme;
     }
-    await this.stateService.setLocale(values.locale);
+    await this.i18nService.setLocale(values.locale);
     if (values.locale !== this.startingLocale) {
       window.location.reload();
     } else {

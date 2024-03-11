@@ -264,7 +264,7 @@ export class SettingsComponent implements OnInit {
       enableDuckDuckGoBrowserIntegration:
         await this.stateService.getEnableDuckDuckGoBrowserIntegration(),
       theme: await this.stateService.getTheme(),
-      locale: (await this.stateService.getLocale()) ?? null,
+      locale: await firstValueFrom(this.i18nService.locale$),
     };
     this.form.setValue(initialValues, { emitEvent: false });
 
@@ -553,7 +553,7 @@ export class SettingsComponent implements OnInit {
   }
 
   async saveLocale() {
-    await this.stateService.setLocale(this.form.value.locale);
+    await this.i18nService.setLocale(this.form.value.locale);
   }
 
   async saveTheme() {
