@@ -391,11 +391,6 @@ function getBgService<T>(service: keyof MainBackground) {
       deps: [],
     },
     {
-      provide: LogServiceAbstraction,
-      useFactory: getBgService<ConsoleLogService>("logService"),
-      deps: [],
-    },
-    {
       provide: OrganizationService,
       useFactory: (stateService: StateServiceAbstraction, stateProvider: StateProvider) => {
         return new BrowserOrganizationService(stateService, stateProvider);
