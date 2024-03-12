@@ -736,7 +736,7 @@ import { ModalService } from "./modal.service";
       useClass: PasswordResetEnrollmentServiceImplementation,
       deps: [
         OrganizationApiServiceAbstraction,
-        StateServiceAbstraction,
+        AccountServiceAbstraction,
         CryptoServiceAbstraction,
         OrganizationUserService,
         I18nServiceAbstraction,
