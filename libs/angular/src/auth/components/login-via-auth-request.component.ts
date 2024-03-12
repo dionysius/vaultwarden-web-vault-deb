@@ -99,8 +99,7 @@ export class LoginViaAuthRequestComponent
     }
 
     //gets signalR push notification
-    this.loginStrategyService
-      .getPushNotificationObs$()
+    this.loginStrategyService.authRequestPushNotification$
       .pipe(takeUntil(this.destroy$))
       .subscribe((id) => {
         // Only fires on approval currently

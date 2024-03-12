@@ -328,6 +328,7 @@ import { ModalService } from "./modal.service";
         PolicyServiceAbstraction,
         DeviceTrustCryptoServiceAbstraction,
         AuthRequestServiceAbstraction,
+        GlobalStateProvider,
       ],
     },
     {

@@ -571,6 +571,7 @@ export default class MainBackground {
       this.policyService,
       this.deviceTrustCryptoService,
       this.authRequestService,
+      this.globalStateProvider,
     );
 
     this.ssoLoginService = new SsoLoginService(this.stateProvider);

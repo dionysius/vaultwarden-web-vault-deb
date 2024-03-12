@@ -27,6 +27,10 @@ import {
   FactoryOptions,
 } from "../../../platform/background/service-factories/factory-options";
 import {
+  globalStateProviderFactory,
+  GlobalStateProviderInitOptions,
+} from "../../../platform/background/service-factories/global-state-provider.factory";
+import {
   i18nServiceFactory,
   I18nServiceInitOptions,
 } from "../../../platform/background/service-factories/i18n-service.factory";
@@ -84,7 +88,8 @@ export type LoginStrategyServiceInitOptions = LoginStrategyServiceFactoryOptions
   PolicyServiceInitOptions &
   PasswordStrengthServiceInitOptions &
   DeviceTrustCryptoServiceInitOptions &
-  AuthRequestServiceInitOptions;
+  AuthRequestServiceInitOptions &
+  GlobalStateProviderInitOptions;
 
 export function loginStrategyServiceFactory(
   cache: { loginStrategyService?: LoginStrategyServiceAbstraction } & CachedServices,
@@ -113,6 +118,7 @@ export function loginStrategyServiceFactory(
         await policyServiceFactory(cache, opts),
         await deviceTrustCryptoServiceFactory(cache, opts),
         await authRequestServiceFactory(cache, opts),
+        await globalStateProviderFactory(cache, opts),
       ),
   );
 }

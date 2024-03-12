@@ -18,10 +18,15 @@ import { MasterKey, UserKey } from "@bitwarden/common/types/key";
 
 import { AuthRequestLoginCredentials } from "../models/domain/login-credentials";
 
-import { AuthRequestLoginStrategy } from "./auth-request-login.strategy";
+import {
+  AuthRequestLoginStrategy,
+  AuthRequestLoginStrategyData,
+} from "./auth-request-login.strategy";
 import { identityTokenResponseFactory } from "./login.strategy.spec";
 
 describe("AuthRequestLoginStrategy", () => {
+  let cache: AuthRequestLoginStrategyData;
+
   let cryptoService: MockProxy<CryptoService>;
   let apiService: MockProxy<ApiService>;
   let tokenService: MockProxy<TokenService>;
@@ -65,6 +70,7 @@ describe("AuthRequestLoginStrategy", () => {
     tokenService.decodeToken.mockResolvedValue({});
 
     authRequestLoginStrategy = new AuthRequestLoginStrategy(
+      cache,
       cryptoService,
       apiService,
       tokenService,

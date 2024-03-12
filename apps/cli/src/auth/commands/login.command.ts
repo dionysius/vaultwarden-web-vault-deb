@@ -273,8 +273,8 @@ export class LoginCommand {
           selectedProvider.type === TwoFactorProviderType.Email
         ) {
           const emailReq = new TwoFactorEmailRequest();
-          emailReq.email = this.loginStrategyService.email;
-          emailReq.masterPasswordHash = this.loginStrategyService.masterPasswordHash;
+          emailReq.email = await this.loginStrategyService.getEmail();
+          emailReq.masterPasswordHash = await this.loginStrategyService.getMasterPasswordHash();
           await this.apiService.postTwoFactorEmail(emailReq);
         }
 

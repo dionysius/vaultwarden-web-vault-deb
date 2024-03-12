@@ -29,7 +29,7 @@ import { LoginStrategyServiceAbstraction } from "../abstractions";
 import { PasswordLoginCredentials } from "../models/domain/login-credentials";
 
 import { identityTokenResponseFactory } from "./login.strategy.spec";
-import { PasswordLoginStrategy } from "./password-login.strategy";
+import { PasswordLoginStrategy, PasswordLoginStrategyData } from "./password-login.strategy";
 
 const email = "hello@world.com";
 const masterPassword = "password";
@@ -47,6 +47,8 @@ const masterPasswordPolicy = new MasterPasswordPolicyResponse({
 });
 
 describe("PasswordLoginStrategy", () => {
+  let cache: PasswordLoginStrategyData;
+
   let loginStrategyService: MockProxy<LoginStrategyServiceAbstraction>;
   let cryptoService: MockProxy<CryptoService>;
   let apiService: MockProxy<ApiService>;
@@ -93,6 +95,7 @@ describe("PasswordLoginStrategy", () => {
     policyService.evaluateMasterPassword.mockReturnValue(true);
 
     passwordLoginStrategy = new PasswordLoginStrategy(
+      cache,
       cryptoService,
       apiService,
       tokenService,

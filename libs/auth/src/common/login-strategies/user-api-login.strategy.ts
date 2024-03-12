@@ -1,3 +1,6 @@
+import { BehaviorSubject } from "rxjs";
+import { Jsonify } from "type-fest";
+
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { KeyConnectorService } from "@bitwarden/common/auth/abstractions/key-connector.service";
 import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
@@ -13,13 +16,26 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 
 import { UserApiLoginCredentials } from "../models/domain/login-credentials";
+import { CacheData } from "../services/login-strategies/login-strategy.state";
 
-import { LoginStrategy } from "./login.strategy";
+import { LoginStrategy, LoginStrategyData } from "./login.strategy";
+
+export class UserApiLoginStrategyData implements LoginStrategyData {
+  tokenRequest: UserApiTokenRequest;
+  captchaBypassToken: string;
+
+  static fromJSON(obj: Jsonify<UserApiLoginStrategyData>): UserApiLoginStrategyData {
+    return Object.assign(new UserApiLoginStrategyData(), obj, {
+      tokenRequest: UserApiTokenRequest.fromJSON(obj.tokenRequest),
+    });
+  }
+}
 
 export class UserApiLoginStrategy extends LoginStrategy {
-  tokenRequest: UserApiTokenRequest;
+  protected cache: BehaviorSubject<UserApiLoginStrategyData>;
 
   constructor(
+    data: UserApiLoginStrategyData,
     cryptoService: CryptoService,
     apiService: ApiService,
     tokenService: TokenService,
@@ -43,15 +59,18 @@ export class UserApiLoginStrategy extends LoginStrategy {
       stateService,
       twoFactorService,
     );
+    this.cache = new BehaviorSubject(data);
   }
 
   override async logIn(credentials: UserApiLoginCredentials) {
-    this.tokenRequest = new UserApiTokenRequest(
+    const data = new UserApiLoginStrategyData();
+    data.tokenRequest = new UserApiTokenRequest(
       credentials.clientId,
       credentials.clientSecret,
       await this.buildTwoFactor(),
       await this.buildDeviceRequest(),
     );
+    this.cache.next(data);
 
     const [authResult] = await this.startLogIn();
     return authResult;
@@ -84,7 +103,15 @@ export class UserApiLoginStrategy extends LoginStrategy {
 
   protected async saveAccountInformation(tokenResponse: IdentityTokenResponse) {
     await super.saveAccountInformation(tokenResponse);
-    await this.stateService.setApiKeyClientId(this.tokenRequest.clientId);
-    await this.stateService.setApiKeyClientSecret(this.tokenRequest.clientSecret);
+
+    const tokenRequest = this.cache.value.tokenRequest;
+    await this.stateService.setApiKeyClientId(tokenRequest.clientId);
+    await this.stateService.setApiKeyClientSecret(tokenRequest.clientSecret);
+  }
+
+  exportCache(): CacheData {
+    return {
+      userApiKey: this.cache.value,
+    };
   }
 }

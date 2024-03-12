@@ -1,3 +1,5 @@
+import { BehaviorSubject } from "rxjs";
+
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
 import { TwoFactorService } from "@bitwarden/common/auth/abstractions/two-factor.service";
@@ -36,16 +38,21 @@ import {
   AuthRequestLoginCredentials,
   WebAuthnLoginCredentials,
 } from "../models/domain/login-credentials";
+import { CacheData } from "../services/login-strategies/login-strategy.state";
 
 type IdentityResponse = IdentityTokenResponse | IdentityTwoFactorResponse | IdentityCaptchaResponse;
 
-export abstract class LoginStrategy {
-  protected abstract tokenRequest:
+export abstract class LoginStrategyData {
+  tokenRequest:
     | UserApiTokenRequest
     | PasswordTokenRequest
     | SsoTokenRequest
     | WebAuthnLoginTokenRequest;
-  protected captchaBypassToken: string = null;
+  captchaBypassToken?: string;
+}
+
+export abstract class LoginStrategy {
+  protected abstract cache: BehaviorSubject<LoginStrategyData>;
 
   constructor(
     protected cryptoService: CryptoService,
@@ -58,6 +65,8 @@ export abstract class LoginStrategy {
     protected stateService: StateService,
     protected twoFactorService: TwoFactorService,
   ) {}
+
+  abstract exportCache(): CacheData;
 
   abstract logIn(
     credentials:
@@ -72,7 +81,9 @@ export abstract class LoginStrategy {
     twoFactor: TokenTwoFactorRequest,
     captchaResponse: string = null,
   ): Promise<AuthResult> {
-    this.tokenRequest.setTwoFactor(twoFactor);
+    const data = this.cache.value;
+    data.tokenRequest.setTwoFactor(twoFactor);
+    this.cache.next(data);
     const [authResult] = await this.startLogIn();
     return authResult;
   }
@@ -80,7 +91,8 @@ export abstract class LoginStrategy {
   protected async startLogIn(): Promise<[AuthResult, IdentityResponse]> {
     this.twoFactorService.clearSelectedProvider();
 
-    const response = await this.apiService.postIdentityToken(this.tokenRequest);
+    const tokenRequest = this.cache.value.tokenRequest;
+    const response = await this.apiService.postIdentityToken(tokenRequest);
 
     if (response instanceof IdentityTwoFactorResponse) {
       return [await this.processTwoFactorResponse(response), response];
@@ -195,9 +207,7 @@ export abstract class LoginStrategy {
 
   // The keys comes from different sources depending on the login strategy
   protected abstract setMasterKey(response: IdentityTokenResponse): Promise<void>;
-
   protected abstract setUserKey(response: IdentityTokenResponse): Promise<void>;
-
   protected abstract setPrivateKey(response: IdentityTokenResponse): Promise<void>;
 
   // Old accounts used master key for encryption. We are forcing migrations but only need to
@@ -221,7 +231,7 @@ export abstract class LoginStrategy {
     result.twoFactorProviders = response.twoFactorProviders2;
 
     this.twoFactorService.setProviders(response);
-    this.captchaBypassToken = response.captchaToken ?? null;
+    this.cache.next({ ...this.cache.value, captchaBypassToken: response.captchaToken ?? null });
     result.ssoEmail2FaSessionToken = response.ssoEmail2faSessionToken;
     result.email = response.email;
     return result;

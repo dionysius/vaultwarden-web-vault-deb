@@ -1,7 +1,9 @@
 import { Observable } from "rxjs";
 
+import { AuthenticationType } from "@bitwarden/common/auth/enums/authentication-type";
 import { AuthResult } from "@bitwarden/common/auth/models/domain/auth-result";
 import { TokenTwoFactorRequest } from "@bitwarden/common/auth/models/request/identity-token/token-two-factor.request";
+import { AuthRequestResponse } from "@bitwarden/common/auth/models/response/auth-request.response";
 import { AuthRequestPushNotification } from "@bitwarden/common/models/response/notification.response";
 import { MasterKey } from "@bitwarden/common/types/key";
 
@@ -14,12 +16,45 @@ import {
 } from "../models/domain/login-credentials";
 
 export abstract class LoginStrategyServiceAbstraction {
-  masterPasswordHash: string;
-  email: string;
-  accessCode: string;
-  authRequestId: string;
-  ssoEmail2FaSessionToken: string;
+  /**
+   * The current strategy being used to authenticate.
+   * Emits null if the session has timed out.
+   */
+  currentAuthType$: Observable<AuthenticationType | null>;
+  /**
+   * Emits when an auth request has been approved.
+   */
+  authRequestPushNotification$: Observable<string>;
+  /**
+   * If the login strategy uses the email address of the user, this
+   * will return it. Otherwise, it will return null.
+   */
+  getEmail: () => Promise<string | null>;
+  /**
+   * If the user is logging in with a master password, this will return
+   * the master password hash. Otherwise, it will return null.
+   */
+  getMasterPasswordHash: () => Promise<string | null>;
+  /**
+   * If the user is logging in with SSO, this will return
+   * the email auth token. Otherwise, it will return null.
+   * @see {@link SsoLoginStrategyData.ssoEmail2FaSessionToken}
+   */
+  getSsoEmail2FaSessionToken: () => Promise<string | null>;
+  /**
+   * Returns the access code if the user is logging in with an
+   * Auth Request. Otherwise, it will return null.
+   */
+  getAccessCode: () => Promise<string | null>;
+  /**
+   * Returns the auth request ID if the user is logging in with an
+   * Auth Request. Otherwise, it will return null.
+   */
+  getAuthRequestId: () => Promise<string | null>;
 
+  /**
+   * Sends a token request to the server using the provided credentials.
+   */
   logIn: (
     credentials:
       | UserApiLoginCredentials
@@ -28,15 +63,30 @@ export abstract class LoginStrategyServiceAbstraction {
       | AuthRequestLoginCredentials
       | WebAuthnLoginCredentials,
   ) => Promise<AuthResult>;
+  /**
+   * Sends a token request to the server with the provided two factor token
+   * and captcha response. This uses data stored from {@link LoginStrategyServiceAbstraction.logIn},
+   * so that must be called first.
+   * Returns an error if no session data is found.
+   */
   logInTwoFactor: (
     twoFactor: TokenTwoFactorRequest,
     captchaResponse: string,
   ) => Promise<AuthResult>;
+  /**
+   * Creates a master key from the provided master password and email.
+   */
   makePreloginKey: (masterPassword: string, email: string) => Promise<MasterKey>;
-  authingWithUserApiKey: () => boolean;
-  authingWithSso: () => boolean;
-  authingWithPassword: () => boolean;
-  authingWithPasswordless: () => boolean;
-  authResponsePushNotification: (notification: AuthRequestPushNotification) => Promise<any>;
-  getPushNotificationObs$: () => Observable<any>;
+  /**
+   * Sends a notification to {@link LoginStrategyServiceAbstraction.authRequestPushNotification}
+   */
+  sendAuthRequestPushNotification: (notification: AuthRequestPushNotification) => Promise<void>;
+  /**
+   * Sends a response to an auth request.
+   */
+  passwordlessLogin: (
+    id: string,
+    key: string,
+    requestApproved: boolean,
+  ) => Promise<AuthRequestResponse>;
 }

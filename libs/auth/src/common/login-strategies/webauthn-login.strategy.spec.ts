@@ -20,9 +20,11 @@ import { PrfKey, UserKey } from "@bitwarden/common/types/key";
 import { WebAuthnLoginCredentials } from "../models/domain/login-credentials";
 
 import { identityTokenResponseFactory } from "./login.strategy.spec";
-import { WebAuthnLoginStrategy } from "./webauthn-login.strategy";
+import { WebAuthnLoginStrategy, WebAuthnLoginStrategyData } from "./webauthn-login.strategy";
 
 describe("WebAuthnLoginStrategy", () => {
+  let cache: WebAuthnLoginStrategyData;
+
   let cryptoService!: MockProxy<CryptoService>;
   let apiService!: MockProxy<ApiService>;
   let tokenService!: MockProxy<TokenService>;
@@ -72,6 +74,7 @@ describe("WebAuthnLoginStrategy", () => {
     tokenService.decodeToken.mockResolvedValue({});
 
     webAuthnLoginStrategy = new WebAuthnLoginStrategy(
+      cache,
       cryptoService,
       apiService,
       tokenService,
@@ -286,7 +289,7 @@ function randomBytes(length: number): Uint8Array {
 // AuthenticatorAssertionResponse && PublicKeyCredential are only available in secure contexts
 // so we need to mock them and assign them to the global object to make them available
 // for the tests
-class MockAuthenticatorAssertionResponse implements AuthenticatorAssertionResponse {
+export class MockAuthenticatorAssertionResponse implements AuthenticatorAssertionResponse {
   clientDataJSON: ArrayBuffer = randomBytes(32).buffer;
   authenticatorData: ArrayBuffer = randomBytes(196).buffer;
   signature: ArrayBuffer = randomBytes(72).buffer;
@@ -298,7 +301,7 @@ class MockAuthenticatorAssertionResponse implements AuthenticatorAssertionRespon
   userHandleB64Str = Utils.fromBufferToUrlB64(this.userHandle);
 }
 
-class MockPublicKeyCredential implements PublicKeyCredential {
+export class MockPublicKeyCredential implements PublicKeyCredential {
   authenticatorAttachment = "cross-platform";
   id = "mockCredentialId";
   type = "public-key";

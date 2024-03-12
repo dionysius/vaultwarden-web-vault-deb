@@ -1,4 +1,12 @@
-import { Observable, Subject } from "rxjs";
+import {
+  combineLatestWith,
+  distinctUntilChanged,
+  filter,
+  firstValueFrom,
+  map,
+  Observable,
+  shareReplay,
+} from "rxjs";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
@@ -10,6 +18,8 @@ import { AuthenticationType } from "@bitwarden/common/auth/enums/authentication-
 import { AuthResult } from "@bitwarden/common/auth/models/domain/auth-result";
 import { KdfConfig } from "@bitwarden/common/auth/models/domain/kdf-config";
 import { TokenTwoFactorRequest } from "@bitwarden/common/auth/models/request/identity-token/token-two-factor.request";
+import { PasswordlessAuthRequest } from "@bitwarden/common/auth/models/request/passwordless-auth.request";
+import { AuthRequestResponse } from "@bitwarden/common/auth/models/response/auth-request.response";
 import { PreloginRequest } from "@bitwarden/common/models/request/prelogin.request";
 import { ErrorResponse } from "@bitwarden/common/models/response/error.response";
 import { AuthRequestPushNotification } from "@bitwarden/common/models/response/notification.response";
@@ -23,6 +33,8 @@ import { MessagingService } from "@bitwarden/common/platform/abstractions/messag
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { KdfType } from "@bitwarden/common/platform/enums";
+import { Utils } from "@bitwarden/common/platform/misc/utils";
+import { GlobalState, GlobalStateProvider } from "@bitwarden/common/platform/state";
 import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/password-strength";
 import { MasterKey } from "@bitwarden/common/types/key";
 
@@ -40,54 +52,35 @@ import {
   WebAuthnLoginCredentials,
 } from "../../models";
 
+import {
+  AUTH_REQUEST_PUSH_NOTIFICATION_KEY,
+  CURRENT_LOGIN_STRATEGY_KEY,
+  CacheData,
+  CACHE_EXPIRATION_KEY,
+  CACHE_KEY,
+} from "./login-strategy.state";
+
 const sessionTimeoutLength = 2 * 60 * 1000; // 2 minutes
 
 export class LoginStrategyService implements LoginStrategyServiceAbstraction {
-  get email(): string {
-    if (
-      this.logInStrategy instanceof PasswordLoginStrategy ||
-      this.logInStrategy instanceof AuthRequestLoginStrategy ||
-      this.logInStrategy instanceof SsoLoginStrategy
-    ) {
-      return this.logInStrategy.email;
-    }
+  private sessionTimeout: unknown;
+  private currentAuthnTypeState: GlobalState<AuthenticationType | null>;
+  private loginStrategyCacheState: GlobalState<CacheData | null>;
+  private loginStrategyCacheExpirationState: GlobalState<Date | null>;
+  private authRequestPushNotificationState: GlobalState<string>;
 
-    return null;
-  }
-
-  get masterPasswordHash(): string {
-    return this.logInStrategy instanceof PasswordLoginStrategy
-      ? this.logInStrategy.masterPasswordHash
-      : null;
-  }
-
-  get accessCode(): string {
-    return this.logInStrategy instanceof AuthRequestLoginStrategy
-      ? this.logInStrategy.accessCode
-      : null;
-  }
-
-  get authRequestId(): string {
-    return this.logInStrategy instanceof AuthRequestLoginStrategy
-      ? this.logInStrategy.authRequestId
-      : null;
-  }
-
-  get ssoEmail2FaSessionToken(): string {
-    return this.logInStrategy instanceof SsoLoginStrategy
-      ? this.logInStrategy.ssoEmail2FaSessionToken
-      : null;
-  }
-
-  private logInStrategy:
+  private loginStrategy$: Observable<
     | UserApiLoginStrategy
     | PasswordLoginStrategy
     | SsoLoginStrategy
     | AuthRequestLoginStrategy
-    | WebAuthnLoginStrategy;
-  private sessionTimeout: any;
+    | WebAuthnLoginStrategy
+    | null
+  >;
 
-  private pushNotificationSubject = new Subject<string>();
+  currentAuthType$: Observable<AuthenticationType | null>;
+  // TODO: move to auth request service
+  authRequestPushNotification$: Observable<string>;
 
   constructor(
     protected cryptoService: CryptoService,
@@ -107,7 +100,71 @@ export class LoginStrategyService implements LoginStrategyServiceAbstraction {
     protected policyService: PolicyService,
     protected deviceTrustCryptoService: DeviceTrustCryptoServiceAbstraction,
     protected authRequestService: AuthRequestServiceAbstraction,
-  ) {}
+    protected stateProvider: GlobalStateProvider,
+  ) {
+    this.currentAuthnTypeState = this.stateProvider.get(CURRENT_LOGIN_STRATEGY_KEY);
+    this.loginStrategyCacheState = this.stateProvider.get(CACHE_KEY);
+    this.loginStrategyCacheExpirationState = this.stateProvider.get(CACHE_EXPIRATION_KEY);
+    this.authRequestPushNotificationState = this.stateProvider.get(
+      AUTH_REQUEST_PUSH_NOTIFICATION_KEY,
+    );
+
+    this.currentAuthType$ = this.currentAuthnTypeState.state$;
+    this.authRequestPushNotification$ = this.authRequestPushNotificationState.state$.pipe(
+      filter((id) => id != null),
+    );
+    this.loginStrategy$ = this.currentAuthnTypeState.state$.pipe(
+      distinctUntilChanged(),
+      combineLatestWith(this.loginStrategyCacheState.state$),
+      this.initializeLoginStrategy.bind(this),
+      shareReplay({ refCount: true, bufferSize: 1 }),
+    );
+  }
+
+  async getEmail(): Promise<string | null> {
+    const strategy = await firstValueFrom(this.loginStrategy$);
+
+    if ("email$" in strategy) {
+      return await firstValueFrom(strategy.email$);
+    }
+    return null;
+  }
+
+  async getMasterPasswordHash(): Promise<string | null> {
+    const strategy = await firstValueFrom(this.loginStrategy$);
+
+    if ("masterKeyHash$" in strategy) {
+      return await firstValueFrom(strategy.masterKeyHash$);
+    }
+    return null;
+  }
+
+  async getSsoEmail2FaSessionToken(): Promise<string | null> {
+    const strategy = await firstValueFrom(this.loginStrategy$);
+
+    if ("ssoEmail2FaSessionToken$" in strategy) {
+      return await firstValueFrom(strategy.ssoEmail2FaSessionToken$);
+    }
+    return null;
+  }
+
+  async getAccessCode(): Promise<string | null> {
+    const strategy = await firstValueFrom(this.loginStrategy$);
+
+    if ("accessCode$" in strategy) {
+      return await firstValueFrom(strategy.accessCode$);
+    }
+    return null;
+  }
+
+  async getAuthRequestId(): Promise<string | null> {
+    const strategy = await firstValueFrom(this.loginStrategy$);
+
+    if ("authRequestId$" in strategy) {
+      return await firstValueFrom(strategy.authRequestId$);
+    }
+    return null;
+  }
 
   async logIn(
     credentials:
@@ -117,99 +174,27 @@ export class LoginStrategyService implements LoginStrategyServiceAbstraction {
       | AuthRequestLoginCredentials
       | WebAuthnLoginCredentials,
   ): Promise<AuthResult> {
-    this.clearState();
+    await this.clearCache();
 
-    let strategy:
-      | UserApiLoginStrategy
-      | PasswordLoginStrategy
-      | SsoLoginStrategy
-      | AuthRequestLoginStrategy
-      | WebAuthnLoginStrategy;
+    await this.currentAuthnTypeState.update((_) => credentials.type);
 
-    switch (credentials.type) {
-      case AuthenticationType.Password:
-        strategy = new PasswordLoginStrategy(
-          this.cryptoService,
-          this.apiService,
-          this.tokenService,
-          this.appIdService,
-          this.platformUtilsService,
-          this.messagingService,
-          this.logService,
-          this.stateService,
-          this.twoFactorService,
-          this.passwordStrengthService,
-          this.policyService,
-          this,
-        );
-        break;
-      case AuthenticationType.Sso:
-        strategy = new SsoLoginStrategy(
-          this.cryptoService,
-          this.apiService,
-          this.tokenService,
-          this.appIdService,
-          this.platformUtilsService,
-          this.messagingService,
-          this.logService,
-          this.stateService,
-          this.twoFactorService,
-          this.keyConnectorService,
-          this.deviceTrustCryptoService,
-          this.authRequestService,
-          this.i18nService,
-        );
-        break;
-      case AuthenticationType.UserApi:
-        strategy = new UserApiLoginStrategy(
-          this.cryptoService,
-          this.apiService,
-          this.tokenService,
-          this.appIdService,
-          this.platformUtilsService,
-          this.messagingService,
-          this.logService,
-          this.stateService,
-          this.twoFactorService,
-          this.environmentService,
-          this.keyConnectorService,
-        );
-        break;
-      case AuthenticationType.AuthRequest:
-        strategy = new AuthRequestLoginStrategy(
-          this.cryptoService,
-          this.apiService,
-          this.tokenService,
-          this.appIdService,
-          this.platformUtilsService,
-          this.messagingService,
-          this.logService,
-          this.stateService,
-          this.twoFactorService,
-          this.deviceTrustCryptoService,
-        );
-        break;
-      case AuthenticationType.WebAuthn:
-        strategy = new WebAuthnLoginStrategy(
-          this.cryptoService,
-          this.apiService,
-          this.tokenService,
-          this.appIdService,
-          this.platformUtilsService,
-          this.messagingService,
-          this.logService,
-          this.stateService,
-          this.twoFactorService,
-        );
-        break;
-    }
+    const strategy = await firstValueFrom(this.loginStrategy$);
 
-    // Note: Do not set the credentials object directly on the strategy. They are
+    // Note: We aren't passing the credentials directly to the strategy since they are
     // created in the popup and can cause DeadObject references on Firefox.
-    const result = await strategy.logIn(credentials as any);
+    // This is a shallow copy, but use deep copy in future if objects are added to credentials
+    // that were created in popup.
+    // If the popup uses its own instance of this service, this can be removed.
+    const ownedCredentials = { ...credentials };
 
-    if (result?.requiresTwoFactor) {
-      this.saveState(strategy);
+    const result = await strategy.logIn(ownedCredentials as any);
+
+    if (result != null && !result.requiresTwoFactor) {
+      await this.clearCache();
+    } else {
+      // Cache the strategy data so we can attempt again later with 2fa. Cache supports different contexts
+      await this.loginStrategyCacheState.update((_) => strategy.exportCache());
+      await this.startSessionTimeout();
     }
 
     return result;
@@ -219,41 +204,30 @@ export class LoginStrategyService implements LoginStrategyServiceAbstraction {
     twoFactor: TokenTwoFactorRequest,
     captchaResponse: string,
   ): Promise<AuthResult> {
-    if (this.logInStrategy == null) {
+    if (!(await this.isSessionValid())) {
       throw new Error(this.i18nService.t("sessionTimeout"));
     }
 
-    try {
-      const result = await this.logInStrategy.logInTwoFactor(twoFactor, captchaResponse);
+    const strategy = await firstValueFrom(this.loginStrategy$);
+    if (strategy == null) {
+      throw new Error("No login strategy found.");
+    }
 
-      // Only clear state if 2FA token has been accepted, otherwise we need to be able to try again
-      if (!result.requiresTwoFactor && !result.requiresCaptcha) {
-        this.clearState();
+    try {
+      const result = await strategy.logInTwoFactor(twoFactor, captchaResponse);
+
+      // Only clear cache if 2FA token has been accepted, otherwise we need to be able to try again
+      if (result != null && !result.requiresTwoFactor && !result.requiresCaptcha) {
+        await this.clearCache();
       }
       return result;
     } catch (e) {
-      // API exceptions are okay, but if there are any unhandled client-side errors then clear state to be safe
+      // API exceptions are okay, but if there are any unhandled client-side errors then clear cache to be safe
       if (!(e instanceof ErrorResponse)) {
-        this.clearState();
+        await this.clearCache();
       }
       throw e;
     }
-  }
-
-  authingWithUserApiKey(): boolean {
-    return this.logInStrategy instanceof UserApiLoginStrategy;
-  }
-
-  authingWithSso(): boolean {
-    return this.logInStrategy instanceof SsoLoginStrategy;
-  }
-
-  authingWithPassword(): boolean {
-    return this.logInStrategy instanceof PasswordLoginStrategy;
-  }
-
-  authingWithPasswordless(): boolean {
-    return this.logInStrategy instanceof AuthRequestLoginStrategy;
   }
 
   async makePreloginKey(masterPassword: string, email: string): Promise<MasterKey> {
@@ -278,39 +252,171 @@ export class LoginStrategyService implements LoginStrategyServiceAbstraction {
     return await this.cryptoService.makeMasterKey(masterPassword, email, kdf, kdfConfig);
   }
 
-  async authResponsePushNotification(notification: AuthRequestPushNotification): Promise<any> {
-    this.pushNotificationSubject.next(notification.id);
-  }
-
-  getPushNotificationObs$(): Observable<any> {
-    return this.pushNotificationSubject.asObservable();
-  }
-
-  private saveState(
-    strategy:
-      | UserApiLoginStrategy
-      | PasswordLoginStrategy
-      | SsoLoginStrategy
-      | AuthRequestLoginStrategy
-      | WebAuthnLoginStrategy,
-  ) {
-    this.logInStrategy = strategy;
-    this.startSessionTimeout();
-  }
-
-  private clearState() {
-    this.logInStrategy = null;
-    this.clearSessionTimeout();
-  }
-
-  private startSessionTimeout() {
-    this.clearSessionTimeout();
-    this.sessionTimeout = setTimeout(() => this.clearState(), sessionTimeoutLength);
-  }
-
-  private clearSessionTimeout() {
-    if (this.sessionTimeout != null) {
-      clearTimeout(this.sessionTimeout);
+  // TODO move to auth request service
+  async sendAuthRequestPushNotification(notification: AuthRequestPushNotification): Promise<void> {
+    if (notification.id != null) {
+      await this.authRequestPushNotificationState.update((_) => notification.id);
     }
+  }
+
+  // TODO: move to auth request service
+  async passwordlessLogin(
+    id: string,
+    key: string,
+    requestApproved: boolean,
+  ): Promise<AuthRequestResponse> {
+    const pubKey = Utils.fromB64ToArray(key);
+
+    const masterKey = await this.cryptoService.getMasterKey();
+    let keyToEncrypt;
+    let encryptedMasterKeyHash = null;
+
+    if (masterKey) {
+      keyToEncrypt = masterKey.encKey;
+
+      // Only encrypt the master password hash if masterKey exists as
+      // we won't have a masterKeyHash without a masterKey
+      const masterKeyHash = await this.stateService.getKeyHash();
+      if (masterKeyHash != null) {
+        encryptedMasterKeyHash = await this.cryptoService.rsaEncrypt(
+          Utils.fromUtf8ToArray(masterKeyHash),
+          pubKey,
+        );
+      }
+    } else {
+      const userKey = await this.cryptoService.getUserKey();
+      keyToEncrypt = userKey.key;
+    }
+
+    const encryptedKey = await this.cryptoService.rsaEncrypt(keyToEncrypt, pubKey);
+
+    const request = new PasswordlessAuthRequest(
+      encryptedKey.encryptedString,
+      encryptedMasterKeyHash?.encryptedString,
+      await this.appIdService.getAppId(),
+      requestApproved,
+    );
+    return await this.apiService.putAuthRequest(id, request);
+  }
+
+  private async clearCache(): Promise<void> {
+    await this.currentAuthnTypeState.update((_) => null);
+    await this.loginStrategyCacheState.update((_) => null);
+    await this.clearSessionTimeout();
+  }
+
+  private async startSessionTimeout(): Promise<void> {
+    await this.clearSessionTimeout();
+    await this.loginStrategyCacheExpirationState.update(
+      (_) => new Date(Date.now() + sessionTimeoutLength),
+    );
+    this.sessionTimeout = setTimeout(() => this.clearCache(), sessionTimeoutLength);
+  }
+
+  private async clearSessionTimeout(): Promise<void> {
+    await this.loginStrategyCacheExpirationState.update((_) => null);
+    this.sessionTimeout = null;
+  }
+
+  private async isSessionValid(): Promise<boolean> {
+    const cache = await firstValueFrom(this.loginStrategyCacheState.state$);
+    if (cache == null) {
+      return false;
+    }
+    const expiration = await firstValueFrom(this.loginStrategyCacheExpirationState.state$);
+    if (expiration != null && expiration < new Date()) {
+      await this.clearCache();
+      return false;
+    }
+    return true;
+  }
+
+  private initializeLoginStrategy(
+    source: Observable<[AuthenticationType | null, CacheData | null]>,
+  ) {
+    return source.pipe(
+      map(([strategy, data]) => {
+        if (strategy == null) {
+          return null;
+        }
+        switch (strategy) {
+          case AuthenticationType.Password:
+            return new PasswordLoginStrategy(
+              data?.password,
+              this.cryptoService,
+              this.apiService,
+              this.tokenService,
+              this.appIdService,
+              this.platformUtilsService,
+              this.messagingService,
+              this.logService,
+              this.stateService,
+              this.twoFactorService,
+              this.passwordStrengthService,
+              this.policyService,
+              this,
+            );
+          case AuthenticationType.Sso:
+            return new SsoLoginStrategy(
+              data?.sso,
+              this.cryptoService,
+              this.apiService,
+              this.tokenService,
+              this.appIdService,
+              this.platformUtilsService,
+              this.messagingService,
+              this.logService,
+              this.stateService,
+              this.twoFactorService,
+              this.keyConnectorService,
+              this.deviceTrustCryptoService,
+              this.authRequestService,
+              this.i18nService,
+            );
+          case AuthenticationType.UserApiKey:
+            return new UserApiLoginStrategy(
+              data?.userApiKey,
+              this.cryptoService,
+              this.apiService,
+              this.tokenService,
+              this.appIdService,
+              this.platformUtilsService,
+              this.messagingService,
+              this.logService,
+              this.stateService,
+              this.twoFactorService,
+              this.environmentService,
+              this.keyConnectorService,
+            );
+          case AuthenticationType.AuthRequest:
+            return new AuthRequestLoginStrategy(
+              data?.authRequest,
+              this.cryptoService,
+              this.apiService,
+              this.tokenService,
+              this.appIdService,
+              this.platformUtilsService,
+              this.messagingService,
+              this.logService,
+              this.stateService,
+              this.twoFactorService,
+              this.deviceTrustCryptoService,
+            );
+          case AuthenticationType.WebAuthn:
+            return new WebAuthnLoginStrategy(
+              data?.webAuthn,
+              this.cryptoService,
+              this.apiService,
+              this.tokenService,
+              this.appIdService,
+              this.platformUtilsService,
+              this.messagingService,
+              this.logService,
+              this.stateService,
+              this.twoFactorService,
+            );
+        }
+      }),
+    );
   }
 }

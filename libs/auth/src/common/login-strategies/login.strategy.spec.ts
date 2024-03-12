@@ -40,7 +40,7 @@ import { UserKey, MasterKey, DeviceKey } from "@bitwarden/common/types/key";
 import { LoginStrategyServiceAbstraction } from "../abstractions/login-strategy.service";
 import { PasswordLoginCredentials } from "../models/domain/login-credentials";
 
-import { PasswordLoginStrategy } from "./password-login.strategy";
+import { PasswordLoginStrategy, PasswordLoginStrategyData } from "./password-login.strategy";
 
 const email = "hello@world.com";
 const masterPassword = "password";
@@ -94,6 +94,8 @@ export function identityTokenResponseFactory(
 
 // TODO: add tests for latest changes to base class for TDE
 describe("LoginStrategy", () => {
+  let cache: PasswordLoginStrategyData;
+
   let loginStrategyService: MockProxy<LoginStrategyServiceAbstraction>;
   let cryptoService: MockProxy<CryptoService>;
   let apiService: MockProxy<ApiService>;
@@ -129,6 +131,7 @@ describe("LoginStrategy", () => {
 
     // The base class is abstract so we test it via PasswordLoginStrategy
     passwordLoginStrategy = new PasswordLoginStrategy(
+      cache,
       cryptoService,
       apiService,
       tokenService,
@@ -377,11 +380,23 @@ describe("LoginStrategy", () => {
 
     it("sends 2FA token provided by user to server (two-step)", async () => {
       // Simulate a partially completed login
-      passwordLoginStrategy.tokenRequest = new PasswordTokenRequest(
-        email,
-        masterPasswordHash,
-        null,
-        null,
+      cache = new PasswordLoginStrategyData();
+      cache.tokenRequest = new PasswordTokenRequest(email, masterPasswordHash, null, null);
+
+      passwordLoginStrategy = new PasswordLoginStrategy(
+        cache,
+        cryptoService,
+        apiService,
+        tokenService,
+        appIdService,
+        platformUtilsService,
+        messagingService,
+        logService,
+        stateService,
+        twoFactorService,
+        passwordStrengthService,
+        policyService,
+        loginStrategyService,
       );
 
       apiService.postIdentityToken.mockResolvedValue(identityTokenResponseFactory());
