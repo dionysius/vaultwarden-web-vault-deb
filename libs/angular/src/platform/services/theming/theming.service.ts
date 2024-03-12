@@ -1,25 +1,20 @@
-import { DOCUMENT } from "@angular/common";
-import { Inject, Injectable } from "@angular/core";
 import { BehaviorSubject, filter, fromEvent, Observable } from "rxjs";
 
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { ThemeType } from "@bitwarden/common/platform/enums";
 
-import { WINDOW } from "../../../services/injection-tokens";
-
 import { Theme } from "./theme";
 import { ThemeBuilder } from "./theme-builder";
 import { AbstractThemingService } from "./theming.service.abstraction";
 
-@Injectable()
 export class ThemingService implements AbstractThemingService {
   private _theme = new BehaviorSubject<ThemeBuilder | null>(null);
   theme$: Observable<Theme> = this._theme.pipe(filter((x) => x !== null));
 
   constructor(
     private stateService: StateService,
-    @Inject(WINDOW) private window: Window,
-    @Inject(DOCUMENT) private document: Document,
+    private window: Window,
+    private document: Document,
   ) {
     // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
