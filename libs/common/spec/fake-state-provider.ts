@@ -15,6 +15,8 @@ import {
   DerivedStateProvider,
   UserKeyDefinition,
 } from "../src/platform/state";
+// eslint-disable-next-line import/no-restricted-paths -- Needed to type check similarly to the real state providers
+import { isUserKeyDefinition } from "../src/platform/state/user-key-definition";
 import { UserId } from "../src/types/guid";
 import { DerivedStateDependencies } from "../src/types/state";
 
@@ -25,7 +27,6 @@ import {
   FakeGlobalState,
   FakeSingleUserState,
 } from "./fake-state";
-import { isUserKeyDefinition } from "../src/platform/state/user-key-definition";
 
 export class FakeGlobalStateProvider implements GlobalStateProvider {
   mock = mock<GlobalStateProvider>();
