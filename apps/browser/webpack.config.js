@@ -1,6 +1,5 @@
 const path = require("path");
 const webpack = require("webpack");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -138,9 +137,6 @@ const plugins = [
     entryModule: "src/popup/app.module#AppModule",
     sourceMap: true,
   }),
-  new CleanWebpackPlugin({
-    cleanAfterEveryBuildPatterns: ["!popup/fonts/**/*"],
-  }),
   new webpack.ProvidePlugin({
     process: "process/browser.js",
   }),
@@ -244,6 +240,7 @@ const mainConfig = {
   output: {
     filename: "[name].js",
     path: path.resolve(__dirname, "build"),
+    clean: true,
   },
   module: {
     noParse: /\.wasm$/,
