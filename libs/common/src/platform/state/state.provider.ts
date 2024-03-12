@@ -18,8 +18,22 @@ import { ActiveUserStateProvider, SingleUserStateProvider } from "./user-state.p
  * and {@link GlobalStateProvider}.
  */
 export abstract class StateProvider {
-  /** @see{@link ActiveUserState.activeUserId$} */
+  /** @see{@link ActiveUserStateProvider.activeUserId$} */
   activeUserId$: Observable<UserId | undefined>;
+
+  /**
+   * Gets a state observable for a given key and userId.
+   *
+   * @remarks If userId is falsy the observable returned will point to the currently active user _and not update if the active user changes_.
+   * This is different to how `getActive` works and more similar to `getUser` for whatever user happens to be active at the time of the call.
+   *
+   * @note consider converting your {@link KeyDefinition} to a {@link UserKeyDefinition} for additional features.
+   *
+   * @param keyDefinition - The key definition for the state you want to get.
+   * @param userId - The userId for which you want the state for. If not provided, the state for the currently active user will be returned.
+   */
+  abstract getUserState$<T>(keyDefinition: KeyDefinition<T>, userId?: UserId): Observable<T>;
+
   /**
    * Gets a state observable for a given key and userId.
    *
@@ -29,7 +43,7 @@ export abstract class StateProvider {
    * @param keyDefinition - The key definition for the state you want to get.
    * @param userId - The userId for which you want the state for. If not provided, the state for the currently active user will be returned.
    */
-  getUserState$: <T>(keyDefinition: KeyDefinition<T>, userId?: UserId) => Observable<T>;
+  abstract getUserState$<T>(keyDefinition: UserKeyDefinition<T>, userId?: UserId): Observable<T>;
 
   /**
    * Sets the state for a given key and userId.
