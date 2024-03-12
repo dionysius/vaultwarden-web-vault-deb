@@ -1,11 +1,26 @@
 import { DeviceType } from "@bitwarden/common/enums";
 
-import { flushPromises } from "../../autofill/spec/testing-utils";
-import { SafariApp } from "../../browser/safariApp";
-import { BrowserApi } from "../browser/browser-api";
+import { flushPromises } from "../../../autofill/spec/testing-utils";
+import { SafariApp } from "../../../browser/safariApp";
+import { BrowserApi } from "../../browser/browser-api";
+import BrowserClipboardService from "../browser-clipboard.service";
 
-import BrowserClipboardService from "./browser-clipboard.service";
-import BrowserPlatformUtilsService from "./browser-platform-utils.service";
+import { BrowserPlatformUtilsService } from "./browser-platform-utils.service";
+
+class TestBrowserPlatformUtilsService extends BrowserPlatformUtilsService {
+  constructor(clipboardSpy: jest.Mock, win: Window & typeof globalThis) {
+    super(clipboardSpy, null, win);
+  }
+
+  showToast(
+    type: "error" | "success" | "warning" | "info",
+    title: string,
+    text: string | string[],
+    options?: any,
+  ): void {
+    throw new Error("Method not implemented.");
+  }
+}
 
 describe("Browser Utils Service", () => {
   let browserPlatformUtilsService: BrowserPlatformUtilsService;
@@ -13,10 +28,8 @@ describe("Browser Utils Service", () => {
 
   beforeEach(() => {
     (window as any).matchMedia = jest.fn().mockReturnValueOnce({});
-    browserPlatformUtilsService = new BrowserPlatformUtilsService(
-      null,
+    browserPlatformUtilsService = new TestBrowserPlatformUtilsService(
       clipboardWriteCallbackSpy,
-      null,
       window,
     );
   });

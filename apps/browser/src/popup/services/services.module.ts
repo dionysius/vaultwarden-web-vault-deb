@@ -1,4 +1,6 @@
 import { APP_INITIALIZER, NgModule, NgZone } from "@angular/core";
+import { DomSanitizer } from "@angular/platform-browser";
+import { ToastrService } from "ngx-toastr";
 
 import { UnauthGuard as BaseUnauthGuardService } from "@bitwarden/angular/auth/guards";
 import { ThemingService } from "@bitwarden/angular/platform/services/theming/theming.service";
@@ -117,6 +119,7 @@ import BrowserMessagingPrivateModePopupService from "../../platform/services/bro
 import BrowserMessagingService from "../../platform/services/browser-messaging.service";
 import { BrowserStateService } from "../../platform/services/browser-state.service";
 import I18nService from "../../platform/services/i18n.service";
+import { ForegroundPlatformUtilsService } from "../../platform/services/platform-utils/foreground-platform-utils.service";
 import { ForegroundDerivedStateProvider } from "../../platform/state/foreground-derived-state.provider";
 import { ForegroundMemoryStorageService } from "../../platform/storage/foreground-memory-storage.service";
 import { BrowserSendService } from "../../services/browser-send.service";
@@ -290,8 +293,32 @@ function getBgService<T>(service: keyof MainBackground) {
     },
     {
       provide: PlatformUtilsService,
-      useFactory: getBgService<PlatformUtilsService>("platformUtilsService"),
-      deps: [],
+      useExisting: ForegroundPlatformUtilsService,
+    },
+    {
+      provide: ForegroundPlatformUtilsService,
+      useClass: ForegroundPlatformUtilsService,
+      useFactory: (sanitizer: DomSanitizer, toastrService: ToastrService) => {
+        return new ForegroundPlatformUtilsService(
+          sanitizer,
+          toastrService,
+          (clipboardValue: string, clearMs: number) => {
+            void BrowserApi.sendMessage("clearClipboard", { clipboardValue, clearMs });
+          },
+          async () => {
+            const response = await BrowserApi.sendMessageWithResponse<{
+              result: boolean;
+              error: string;
+            }>("biometricUnlock");
+            if (!response.result) {
+              throw response.error;
+            }
+            return response.result;
+          },
+          window,
+        );
+      },
+      deps: [DomSanitizer, ToastrService],
     },
     {
       provide: PasswordStrengthServiceAbstraction,

@@ -1,20 +1,17 @@
 import { ClientType, DeviceType } from "@bitwarden/common/enums";
-import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import {
   ClipboardOptions,
   PlatformUtilsService,
 } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 
-import { SafariApp } from "../../browser/safariApp";
-import { BrowserApi } from "../browser/browser-api";
+import { SafariApp } from "../../../browser/safariApp";
+import { BrowserApi } from "../../browser/browser-api";
+import BrowserClipboardService from "../browser-clipboard.service";
 
-import BrowserClipboardService from "./browser-clipboard.service";
-
-export default class BrowserPlatformUtilsService implements PlatformUtilsService {
+export abstract class BrowserPlatformUtilsService implements PlatformUtilsService {
   private static deviceCache: DeviceType = null;
 
   constructor(
-    private messagingService: MessagingService,
     private clipboardWriteCallback: (clipboardValue: string, clearMs: number) => void,
     private biometricCallback: () => Promise<boolean>,
     private globalContext: Window | ServiceWorkerGlobalScope,
@@ -193,19 +190,12 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
     return true;
   }
 
-  showToast(
+  abstract showToast(
     type: "error" | "success" | "warning" | "info",
     title: string,
     text: string | string[],
     options?: any,
-  ): void {
-    this.messagingService.send("showToast", {
-      text: text,
-      title: title,
-      type: type,
-      options: options,
-    });
-  }
+  ): void;
 
   isDev(): boolean {
     return process.env.ENV === "development";
@@ -279,11 +269,10 @@ export default class BrowserPlatformUtilsService implements PlatformUtilsService
 
   async supportsBiometric() {
     const platformInfo = await BrowserApi.getPlatformInfo();
-    if (platformInfo.os === "android") {
-      return false;
+    if (platformInfo.os === "mac" || platformInfo.os === "win") {
+      return true;
     }
-
-    return true;
+    return false;
   }
 
   authenticateBiometric() {

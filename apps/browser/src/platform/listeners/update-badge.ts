@@ -17,7 +17,7 @@ import { Account } from "../../models/account";
 import IconDetails from "../../vault/background/models/icon-details";
 import { cipherServiceFactory } from "../../vault/background/service_factories/cipher-service.factory";
 import { BrowserApi } from "../browser/browser-api";
-import BrowserPlatformUtilsService from "../services/browser-platform-utils.service";
+import { BrowserPlatformUtilsService } from "../services/platform-utils/browser-platform-utils.service";
 
 export type BadgeOptions = {
   tab?: chrome.tabs.Tab;

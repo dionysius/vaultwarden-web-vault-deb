@@ -198,10 +198,11 @@ import { BrowserEnvironmentService } from "../platform/services/browser-environm
 import BrowserLocalStorageService from "../platform/services/browser-local-storage.service";
 import BrowserMessagingPrivateModeBackgroundService from "../platform/services/browser-messaging-private-mode-background.service";
 import BrowserMessagingService from "../platform/services/browser-messaging.service";
-import BrowserPlatformUtilsService from "../platform/services/browser-platform-utils.service";
 import { BrowserStateService } from "../platform/services/browser-state.service";
 import I18nService from "../platform/services/i18n.service";
 import { LocalBackedSessionStorageService } from "../platform/services/local-backed-session-storage.service";
+import { BackgroundPlatformUtilsService } from "../platform/services/platform-utils/background-platform-utils.service";
+import { BrowserPlatformUtilsService } from "../platform/services/platform-utils/browser-platform-utils.service";
 import { BackgroundDerivedStateProvider } from "../platform/state/background-derived-state.provider";
 import { BackgroundMemoryStorageService } from "../platform/storage/background-memory-storage.service";
 import { BrowserSendService } from "../services/browser-send.service";
@@ -438,28 +439,10 @@ export default class MainBackground {
       migrationRunner,
     );
     this.userNotificationSettingsService = new UserNotificationSettingsService(this.stateProvider);
-    this.platformUtilsService = new BrowserPlatformUtilsService(
+    this.platformUtilsService = new BackgroundPlatformUtilsService(
       this.messagingService,
-      (clipboardValue, clearMs) => {
-        if (this.systemService != null) {
-          // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-          // eslint-disable-next-line @typescript-eslint/no-floating-promises
-          this.systemService.clearClipboard(clipboardValue, clearMs);
-        }
-      },
-      async () => {
-        if (this.nativeMessagingBackground != null) {
-          const promise = this.nativeMessagingBackground.getResponse();
-
-          try {
-            await this.nativeMessagingBackground.send({ command: "biometricUnlock" });
-          } catch (e) {
-            return Promise.reject(e);
-          }
-
-          return promise.then((result) => result.response === "unlocked");
-        }
-      },
+      (clipboardValue, clearMs) => this.clearClipboard(clipboardValue, clearMs),
+      async () => this.biometricUnlock(),
       self,
     );
     this.i18nService = new I18nService(BrowserApi.getUILanguage(), this.globalStateProvider);
@@ -1220,6 +1203,23 @@ export default class MainBackground {
       }
       await this.storageService.save(key, storage[key]);
     }
+  }
+
+  async clearClipboard(clipboardValue: string, clearMs: number) {
+    if (this.systemService != null) {
+      await this.systemService.clearClipboard(clipboardValue, clearMs);
+    }
+  }
+
+  async biometricUnlock(): Promise<boolean> {
+    if (this.nativeMessagingBackground == null) {
+      return false;
+    }
+
+    const responsePromise = this.nativeMessagingBackground.getResponse();
+    await this.nativeMessagingBackground.send({ command: "biometricUnlock" });
+    const response = await responsePromise;
+    return response.response === "unlocked";
   }
 
   private async fullSync(override = false) {

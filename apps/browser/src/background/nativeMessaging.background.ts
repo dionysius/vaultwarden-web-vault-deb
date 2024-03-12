@@ -122,7 +122,7 @@ export class NativeMessagingBackground {
             break;
           case "disconnected":
             if (this.connecting) {
-              reject("startDesktop");
+              reject(new Error("startDesktop"));
             }
             this.connected = false;
             this.port.disconnect();
@@ -203,7 +203,7 @@ export class NativeMessagingBackground {
         this.connected = false;
 
         const reason = error != null ? "desktopIntegrationDisabled" : null;
-        reject(reason);
+        reject(new Error(reason));
       });
     });
   }

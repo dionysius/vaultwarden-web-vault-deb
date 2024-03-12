@@ -3,7 +3,7 @@ import { Observable } from "rxjs";
 import { DeviceType } from "@bitwarden/common/enums";
 
 import { TabMessage } from "../../types/tab-messages";
-import BrowserPlatformUtilsService from "../services/browser-platform-utils.service";
+import { BrowserPlatformUtilsService } from "../services/platform-utils/browser-platform-utils.service";
 
 export class BrowserApi {
   static isWebExtensionsApi: boolean = typeof browser !== "undefined";
