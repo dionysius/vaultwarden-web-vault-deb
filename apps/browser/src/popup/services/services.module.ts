@@ -44,7 +44,6 @@ import {
   UserNotificationSettingsService,
   UserNotificationSettingsServiceAbstraction,
 } from "@bitwarden/common/autofill/services/user-notification-settings.service";
-import { AppIdService } from "@bitwarden/common/platform/abstractions/app-id.service";
 import { ConfigApiServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config-api.service.abstraction";
 import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/crypto-function.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
@@ -349,7 +348,6 @@ function getBgService<T>(service: keyof MainBackground) {
       useClass: BrowserLocalStorageService,
       deps: [],
     },
-    { provide: AppIdService, useFactory: getBgService<AppIdService>("appIdService"), deps: [] },
     {
       provide: AutofillService,
       useFactory: getBgService<AutofillService>("autofillService"),
