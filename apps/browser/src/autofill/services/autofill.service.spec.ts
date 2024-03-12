@@ -1,19 +1,25 @@
 import { mock, mockReset } from "jest-mock-extended";
+import { of } from "rxjs";
 
 import { UserVerificationService } from "@bitwarden/common/auth/services/user-verification/user-verification.service";
 import { AutofillOverlayVisibility } from "@bitwarden/common/autofill/constants";
 import { AutofillSettingsService } from "@bitwarden/common/autofill/services/autofill-settings.service";
-import { EventType } from "@bitwarden/common/enums";
-import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
-import { EventCollectionService } from "@bitwarden/common/services/event/event-collection.service";
-import { SettingsService } from "@bitwarden/common/services/settings.service";
 import {
-  FieldType,
-  LinkedIdType,
-  LoginLinkedId,
-  UriMatchType,
-  CipherType,
-} from "@bitwarden/common/vault/enums";
+  DefaultDomainSettingsService,
+  DomainSettingsService,
+} from "@bitwarden/common/autofill/services/domain-settings.service";
+import { EventType } from "@bitwarden/common/enums";
+import { UriMatchStrategy } from "@bitwarden/common/models/domain/domain-service";
+import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
+import { Utils } from "@bitwarden/common/platform/misc/utils";
+import { EventCollectionService } from "@bitwarden/common/services/event/event-collection.service";
+import {
+  FakeStateProvider,
+  FakeAccountService,
+  mockAccountServiceWith,
+} from "@bitwarden/common/spec";
+import { UserId } from "@bitwarden/common/types/guid";
+import { FieldType, LinkedIdType, LoginLinkedId, CipherType } from "@bitwarden/common/vault/enums";
 import { CipherRepromptType } from "@bitwarden/common/vault/enums/cipher-reprompt-type";
 import { CardView } from "@bitwarden/common/vault/models/view/card.view";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
@@ -47,15 +53,24 @@ import {
 import { AutoFillConstants, IdentityAutoFillConstants } from "./autofill-constants";
 import AutofillService from "./autofill.service";
 
+const mockEquivalentDomains = [
+  ["example.com", "exampleapp.com", "example.co.uk", "ejemplo.es"],
+  ["bitwarden.com", "bitwarden.co.uk", "sm-bitwarden.com"],
+  ["example.co.uk", "exampleapp.co.uk"],
+];
+
 describe("AutofillService", () => {
   let autofillService: AutofillService;
   const cipherService = mock<CipherService>();
   const stateService = mock<BrowserStateService>();
   const autofillSettingsService = mock<AutofillSettingsService>();
+  const mockUserId = Utils.newGuid() as UserId;
+  const accountService: FakeAccountService = mockAccountServiceWith(mockUserId);
+  const fakeStateProvider: FakeStateProvider = new FakeStateProvider(accountService);
+  let domainSettingsService: DomainSettingsService;
   const totpService = mock<TotpService>();
   const eventCollectionService = mock<EventCollectionService>();
   const logService = mock<LogService>();
-  const settingsService = mock<SettingsService>();
   const userVerificationService = mock<UserVerificationService>();
 
   beforeEach(() => {
@@ -66,9 +81,12 @@ describe("AutofillService", () => {
       totpService,
       eventCollectionService,
       logService,
-      settingsService,
+      domainSettingsService,
       userVerificationService,
     );
+
+    domainSettingsService = new DefaultDomainSettingsService(fakeStateProvider);
+    domainSettingsService.equivalentDomains$ = of(mockEquivalentDomains);
   });
 
   afterEach(() => {
@@ -407,6 +425,8 @@ describe("AutofillService", () => {
       autofillOptions.cipher.login.matchesUri = jest.fn().mockReturnValue(true);
       autofillOptions.cipher.login.username = "username";
       autofillOptions.cipher.login.password = "password";
+
+      jest.spyOn(autofillService, "getDefaultUriMatchStrategy").mockResolvedValue(0);
     });
 
     describe("given a set of autofill options that are incomplete", () => {
@@ -468,7 +488,6 @@ describe("AutofillService", () => {
 
     it("will autofill login data for a page", async () => {
       jest.spyOn(stateService, "getCanAccessPremium");
-      jest.spyOn(stateService, "getDefaultUriMatch");
       jest.spyOn(autofillService as any, "generateFillScript");
       jest.spyOn(autofillService as any, "generateLoginFillScript");
       jest.spyOn(logService, "info");
@@ -479,7 +498,7 @@ describe("AutofillService", () => {
 
       const currentAutofillPageDetails = autofillOptions.pageDetails[0];
       expect(stateService.getCanAccessPremium).toHaveBeenCalled();
-      expect(stateService.getDefaultUriMatch).toHaveBeenCalled();
+      expect(autofillService["getDefaultUriMatchStrategy"]).toHaveBeenCalled();
       expect(autofillService["generateFillScript"]).toHaveBeenCalledWith(
         currentAutofillPageDetails.details,
         {
@@ -1488,7 +1507,7 @@ describe("AutofillService", () => {
       };
       defaultLoginUriView = mock<LoginUriView>({
         uri: "https://www.example.com",
-        match: UriMatchType.Domain,
+        match: UriMatchStrategy.Domain,
       });
       options = createGenerateFillScriptOptionsMock();
       options.cipher.login = mock<LoginView>({
@@ -1559,13 +1578,13 @@ describe("AutofillService", () => {
         ]);
       });
 
-      it("skips adding any login uri views that have a UriMatchType of Never to the list of saved urls", async () => {
+      it("skips adding any login uri views that have a UriMatchStrategySetting of Never to the list of saved urls", async () => {
         const secondUriView = mock<LoginUriView>({
           uri: "https://www.second-example.com",
         });
         const thirdUriView = mock<LoginUriView>({
           uri: "https://www.third-example.com",
-          match: UriMatchType.Never,
+          match: UriMatchStrategy.Never,
         });
         options.cipher.login.uris = [defaultLoginUriView, secondUriView, thirdUriView];
 
@@ -2752,31 +2771,32 @@ describe("AutofillService", () => {
   });
 
   describe("inUntrustedIframe", () => {
-    it("returns a false value if the passed pageUrl is equal to the options tabUrl", () => {
+    it("returns a false value if the passed pageUrl is equal to the options tabUrl", async () => {
       const pageUrl = "https://www.example.com";
       const tabUrl = "https://www.example.com";
       const generateFillScriptOptions = createGenerateFillScriptOptionsMock({ tabUrl });
       generateFillScriptOptions.cipher.login.matchesUri = jest.fn().mockReturnValueOnce(true);
-      jest.spyOn(settingsService, "getEquivalentDomains");
 
-      const result = autofillService["inUntrustedIframe"](pageUrl, generateFillScriptOptions);
+      const result = await autofillService["inUntrustedIframe"](pageUrl, generateFillScriptOptions);
 
-      expect(settingsService.getEquivalentDomains).not.toHaveBeenCalled();
       expect(generateFillScriptOptions.cipher.login.matchesUri).not.toHaveBeenCalled();
       expect(result).toBe(false);
     });
 
-    it("returns a false value if the passed pageUrl matches the domain of the tabUrl", () => {
+    it("returns a false value if the passed pageUrl matches the domain of the tabUrl", async () => {
       const pageUrl = "https://subdomain.example.com";
       const tabUrl = "https://www.example.com";
-      const equivalentDomains = new Set(["example.com"]);
+      const equivalentDomains = new Set([
+        "ejemplo.es",
+        "example.co.uk",
+        "example.com",
+        "exampleapp.com",
+      ]);
       const generateFillScriptOptions = createGenerateFillScriptOptionsMock({ tabUrl });
       generateFillScriptOptions.cipher.login.matchesUri = jest.fn().mockReturnValueOnce(true);
-      jest.spyOn(settingsService as any, "getEquivalentDomains").mockReturnValue(equivalentDomains);
 
-      const result = autofillService["inUntrustedIframe"](pageUrl, generateFillScriptOptions);
+      const result = await autofillService["inUntrustedIframe"](pageUrl, generateFillScriptOptions);
 
-      expect(settingsService.getEquivalentDomains).toHaveBeenCalledWith(pageUrl);
       expect(generateFillScriptOptions.cipher.login.matchesUri).toHaveBeenCalledWith(
         pageUrl,
         equivalentDomains,
@@ -2785,17 +2805,21 @@ describe("AutofillService", () => {
       expect(result).toBe(false);
     });
 
-    it("returns a true value if the passed pageUrl does not match the domain of the tabUrl", () => {
+    it("returns a true value if the passed pageUrl does not match the domain of the tabUrl", async () => {
+      const equivalentDomains = new Set([
+        "ejemplo.es",
+        "example.co.uk",
+        "example.com",
+        "exampleapp.com",
+      ]);
+      domainSettingsService.equivalentDomains$ = of([["not-example.com"]]);
       const pageUrl = "https://subdomain.example.com";
       const tabUrl = "https://www.not-example.com";
-      const equivalentDomains = new Set(["not-example.com"]);
       const generateFillScriptOptions = createGenerateFillScriptOptionsMock({ tabUrl });
       generateFillScriptOptions.cipher.login.matchesUri = jest.fn().mockReturnValueOnce(false);
-      jest.spyOn(settingsService as any, "getEquivalentDomains").mockReturnValue(equivalentDomains);
 
-      const result = autofillService["inUntrustedIframe"](pageUrl, generateFillScriptOptions);
+      const result = await autofillService["inUntrustedIframe"](pageUrl, generateFillScriptOptions);
 
-      expect(settingsService.getEquivalentDomains).toHaveBeenCalledWith(pageUrl);
       expect(generateFillScriptOptions.cipher.login.matchesUri).toHaveBeenCalledWith(
         pageUrl,
         equivalentDomains,

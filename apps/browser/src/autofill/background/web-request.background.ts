@@ -1,8 +1,8 @@
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
+import { UriMatchStrategy } from "@bitwarden/common/models/domain/domain-service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
-import { UriMatchType } from "@bitwarden/common/vault/enums";
 
 import { BrowserApi } from "../../platform/browser/browser-api";
 
@@ -73,7 +73,7 @@ export default class WebRequestBackground {
       const ciphers = await this.cipherService.getAllDecryptedForUrl(
         domain,
         null,
-        UriMatchType.Host,
+        UriMatchStrategy.Host,
       );
       if (ciphers == null || ciphers.length !== 1) {
         error();

@@ -3,8 +3,9 @@ import { SemVer } from "semver";
 
 import { ApiService } from "../../abstractions/api.service";
 import { SearchService } from "../../abstractions/search.service";
-import { SettingsService } from "../../abstractions/settings.service";
 import { AutofillSettingsServiceAbstraction } from "../../autofill/services/autofill-settings.service";
+import { DomainSettingsService } from "../../autofill/services/domain-settings.service";
+import { UriMatchStrategySetting } from "../../models/domain/domain-service";
 import { ErrorResponse } from "../../models/response/error.response";
 import { ListResponse } from "../../models/response/list.response";
 import { View } from "../../models/view/view";
@@ -23,7 +24,7 @@ import { SymmetricCryptoKey } from "../../platform/models/domain/symmetric-crypt
 import { UserKey, OrgKey } from "../../types/key";
 import { CipherService as CipherServiceAbstraction } from "../abstractions/cipher.service";
 import { CipherFileUploadService } from "../abstractions/file-upload/cipher-file-upload.service";
-import { FieldType, UriMatchType } from "../enums";
+import { FieldType } from "../enums";
 import { CipherType } from "../enums/cipher-type";
 import { CipherData } from "../models/data/cipher.data";
 import { Attachment } from "../models/domain/attachment";
@@ -61,7 +62,7 @@ export class CipherService implements CipherServiceAbstraction {
 
   constructor(
     private cryptoService: CryptoService,
-    private settingsService: SettingsService,
+    private domainSettingsService: DomainSettingsService,
     private apiService: ApiService,
     private i18nService: I18nService,
     private searchService: SearchService,
@@ -355,15 +356,17 @@ export class CipherService implements CipherServiceAbstraction {
   async getAllDecryptedForUrl(
     url: string,
     includeOtherTypes?: CipherType[],
-    defaultMatch: UriMatchType = null,
+    defaultMatch: UriMatchStrategySetting = null,
   ): Promise<CipherView[]> {
     if (url == null && includeOtherTypes == null) {
       return Promise.resolve([]);
     }
 
-    const equivalentDomains = this.settingsService.getEquivalentDomains(url);
+    const equivalentDomains = await firstValueFrom(
+      this.domainSettingsService.getUrlEquivalentDomains(url),
+    );
     const ciphers = await this.getAllDecrypted();
-    defaultMatch ??= await this.stateService.getDefaultUriMatch();
+    defaultMatch ??= await firstValueFrom(this.domainSettingsService.defaultUriMatchStrategy$);
 
     return ciphers.filter((cipher) => {
       const cipherIsLogin = cipher.type === CipherType.Login && cipher.login !== null;
@@ -503,12 +506,12 @@ export class CipherService implements CipherServiceAbstraction {
       return;
     }
 
-    let domains = await this.stateService.getNeverDomains();
+    let domains = await firstValueFrom(this.domainSettingsService.neverDomains$);
     if (!domains) {
       domains = {};
     }
     domains[domain] = null;
-    await this.stateService.setNeverDomains(domains);
+    await this.domainSettingsService.setNeverDomains(domains);
   }
 
   async createWithServer(cipher: Cipher, orgAdmin?: boolean): Promise<any> {

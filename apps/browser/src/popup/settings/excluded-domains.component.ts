@@ -1,6 +1,8 @@
 import { Component, NgZone, OnDestroy, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { firstValueFrom } from "rxjs";
 
+import { DomainSettingsService } from "@bitwarden/common/autofill/services/domain-settings.service";
 import { BroadcasterService } from "@bitwarden/common/platform/abstractions/broadcaster.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
@@ -30,6 +32,7 @@ export class ExcludedDomainsComponent implements OnInit, OnDestroy {
 
   constructor(
     private stateService: StateService,
+    private domainSettingsService: DomainSettingsService,
     private i18nService: I18nService,
     private router: Router,
     private broadcasterService: BroadcasterService,
@@ -40,7 +43,7 @@ export class ExcludedDomainsComponent implements OnInit, OnDestroy {
   }
 
   async ngOnInit() {
-    const savedDomains = await this.stateService.getNeverDomains();
+    const savedDomains = await firstValueFrom(this.domainSettingsService.neverDomains$);
     if (savedDomains) {
       for (const uri of Object.keys(savedDomains)) {
         this.excludedDomains.push({ uri: uri, showCurrentUris: false });
@@ -107,7 +110,7 @@ export class ExcludedDomainsComponent implements OnInit, OnDestroy {
       }
     }
 
-    await this.stateService.setNeverDomains(savedDomains);
+    await this.domainSettingsService.setNeverDomains(savedDomains);
     // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.router.navigate(["/tabs/settings"]);

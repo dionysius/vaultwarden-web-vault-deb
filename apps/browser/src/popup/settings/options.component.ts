@@ -5,14 +5,18 @@ import { AbstractThemingService } from "@bitwarden/angular/platform/services/the
 import { SettingsService } from "@bitwarden/common/abstractions/settings.service";
 import { AutofillSettingsServiceAbstraction } from "@bitwarden/common/autofill/services/autofill-settings.service";
 import { BadgeSettingsServiceAbstraction } from "@bitwarden/common/autofill/services/badge-settings.service";
+import { DomainSettingsService } from "@bitwarden/common/autofill/services/domain-settings.service";
 import { UserNotificationSettingsServiceAbstraction } from "@bitwarden/common/autofill/services/user-notification-settings.service";
 import { ClearClipboardDelaySetting } from "@bitwarden/common/autofill/types";
+import {
+  UriMatchStrategy,
+  UriMatchStrategySetting,
+} from "@bitwarden/common/models/domain/domain-service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { ThemeType } from "@bitwarden/common/platform/enums";
 import { VaultSettingsService } from "@bitwarden/common/vault/abstractions/vault-settings/vault-settings.service";
-import { UriMatchType } from "@bitwarden/common/vault/enums";
 
 import { enableAccountSwitching } from "../../platform/flags";
 
@@ -36,7 +40,7 @@ export class OptionsComponent implements OnInit {
   showClearClipboard = true;
   theme: ThemeType;
   themeOptions: any[];
-  defaultUriMatch = UriMatchType.Domain;
+  defaultUriMatch: UriMatchStrategySetting = UriMatchStrategy.Domain;
   uriMatchOptions: any[];
   clearClipboard: ClearClipboardDelaySetting;
   clearClipboardOptions: any[];
@@ -50,6 +54,7 @@ export class OptionsComponent implements OnInit {
     private stateService: StateService,
     private userNotificationSettingsService: UserNotificationSettingsServiceAbstraction,
     private autofillSettingsService: AutofillSettingsServiceAbstraction,
+    private domainSettingsService: DomainSettingsService,
     private badgeSettingsService: BadgeSettingsServiceAbstraction,
     i18nService: I18nService,
     private themingService: AbstractThemingService,
@@ -64,12 +69,12 @@ export class OptionsComponent implements OnInit {
       { name: i18nService.t("solarizedDark"), value: ThemeType.SolarizedDark },
     ];
     this.uriMatchOptions = [
-      { name: i18nService.t("baseDomain"), value: UriMatchType.Domain },
-      { name: i18nService.t("host"), value: UriMatchType.Host },
-      { name: i18nService.t("startsWith"), value: UriMatchType.StartsWith },
-      { name: i18nService.t("regEx"), value: UriMatchType.RegularExpression },
-      { name: i18nService.t("exact"), value: UriMatchType.Exact },
-      { name: i18nService.t("never"), value: UriMatchType.Never },
+      { name: i18nService.t("baseDomain"), value: UriMatchStrategy.Domain },
+      { name: i18nService.t("host"), value: UriMatchStrategy.Host },
+      { name: i18nService.t("startsWith"), value: UriMatchStrategy.StartsWith },
+      { name: i18nService.t("regEx"), value: UriMatchStrategy.RegularExpression },
+      { name: i18nService.t("exact"), value: UriMatchStrategy.Exact },
+      { name: i18nService.t("never"), value: UriMatchStrategy.Never },
     ];
     this.clearClipboardOptions = [
       { name: i18nService.t("never"), value: null },
@@ -122,8 +127,10 @@ export class OptionsComponent implements OnInit {
 
     this.theme = await this.stateService.getTheme();
 
-    const defaultUriMatch = await this.stateService.getDefaultUriMatch();
-    this.defaultUriMatch = defaultUriMatch == null ? UriMatchType.Domain : defaultUriMatch;
+    const defaultUriMatch = await firstValueFrom(
+      this.domainSettingsService.defaultUriMatchStrategy$,
+    );
+    this.defaultUriMatch = defaultUriMatch == null ? UriMatchStrategy.Domain : defaultUriMatch;
 
     this.clearClipboard = await firstValueFrom(this.autofillSettingsService.clearClipboardDelay$);
   }
@@ -180,10 +187,6 @@ export class OptionsComponent implements OnInit {
 
   async saveTheme() {
     await this.themingService.updateConfiguredTheme(this.theme);
-  }
-
-  async saveDefaultUriMatch() {
-    await this.stateService.setDefaultUriMatch(this.defaultUriMatch);
   }
 
   async saveClearClipboard() {

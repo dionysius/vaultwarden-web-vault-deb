@@ -5,6 +5,7 @@ import {
   combineLatest,
   concatMap,
   filter,
+  firstValueFrom,
   map,
   Observable,
   Subject,
@@ -13,7 +14,7 @@ import {
 } from "rxjs";
 
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
-import { SettingsService } from "@bitwarden/common/abstractions/settings.service";
+import { DomainSettingsService } from "@bitwarden/common/autofill/services/domain-settings.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
@@ -72,7 +73,7 @@ export class Fido2Component implements OnInit, OnDestroy {
     private cipherService: CipherService,
     private passwordRepromptService: PasswordRepromptService,
     private platformUtilsService: PlatformUtilsService,
-    private settingsService: SettingsService,
+    private domainSettingsService: DomainSettingsService,
     private searchService: SearchService,
     private logService: LogService,
     private dialogService: DialogService,
@@ -133,7 +134,9 @@ export class Fido2Component implements OnInit, OnDestroy {
       concatMap(async (message) => {
         switch (message.type) {
           case "ConfirmNewCredentialRequest": {
-            const equivalentDomains = this.settingsService.getEquivalentDomains(this.url);
+            const equivalentDomains = await firstValueFrom(
+              this.domainSettingsService.getUrlEquivalentDomains(this.url),
+            );
 
             this.ciphers = (await this.cipherService.getAllDecrypted()).filter(
               (cipher) => cipher.type === CipherType.Login && !cipher.isDeleted,
@@ -317,7 +320,9 @@ export class Fido2Component implements OnInit, OnDestroy {
         this.ciphers,
       );
     } else {
-      const equivalentDomains = this.settingsService.getEquivalentDomains(this.url);
+      const equivalentDomains = await firstValueFrom(
+        this.domainSettingsService.getUrlEquivalentDomains(this.url),
+      );
       this.displayedCiphers = this.ciphers.filter((cipher) =>
         cipher.login.matchesUri(this.url, equivalentDomains),
       );

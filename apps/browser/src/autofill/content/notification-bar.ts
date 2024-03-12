@@ -6,7 +6,7 @@ import AutofillField from "../models/autofill-field";
 import { WatchedForm } from "../models/watched-form";
 import { NotificationBarIframeInitData } from "../notification/abstractions/notification-bar";
 import { FormData } from "../services/abstractions/autofill.service";
-import { GlobalSettings, UserSettings } from "../types";
+import { UserSettings } from "../types";
 import {
   getFromLocalStorage,
   sendExtensionMessage,
@@ -94,10 +94,11 @@ async function loadNotificationBar() {
     "bgGetEnableChangedPasswordPrompt",
   );
   const enableAddedLoginPrompt = await sendExtensionMessage("bgGetEnableAddedLoginPrompt");
+  const excludedDomains = await sendExtensionMessage("bgGetExcludedDomains");
+
   let showNotificationBar = true;
   // Look up the active user id from storage
   const activeUserIdKey = "activeUserId";
-  const globalStorageKey = "global";
   let activeUserId: string;
 
   const activeUserStorageValue = await getFromLocalStorage(activeUserIdKey);
@@ -109,9 +110,6 @@ async function loadNotificationBar() {
   const userSettingsStorageValue = await getFromLocalStorage(activeUserId);
   if (userSettingsStorageValue[activeUserId]) {
     const userSettings: UserSettings = userSettingsStorageValue[activeUserId].settings;
-    const globalSettings: GlobalSettings = (await getFromLocalStorage(globalStorageKey))[
-      globalStorageKey
-    ];
 
     // Do not show the notification bar on the Bitwarden vault
     // because they can add logins and change passwords there
@@ -122,8 +120,8 @@ async function loadNotificationBar() {
       // show the notification bar on (for login detail collection or password change).
       // It is managed in the Settings > Excluded Domains page in the browser extension.
       // Example: '{"bitwarden.com":null}'
-      const excludedDomainsDict = globalSettings.neverDomains;
-      if (!excludedDomainsDict || !(window.location.hostname in excludedDomainsDict)) {
+
+      if (!excludedDomains || !(window.location.hostname in excludedDomains)) {
         if (enableAddedLoginPrompt || enableChangedPasswordPrompt) {
           // If the user has not disabled both notifications, then handle the initial page change (null -> actual page)
           handlePageChange();

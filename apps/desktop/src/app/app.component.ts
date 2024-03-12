@@ -577,7 +577,6 @@ export class AppComponent implements OnInit, OnDestroy {
       await this.eventUploadService.uploadEvents(userBeingLoggedOut);
       await this.syncService.setLastSync(new Date(0), userBeingLoggedOut);
       await this.cryptoService.clearKeys(userBeingLoggedOut);
-      await this.settingsService.clear(userBeingLoggedOut);
       await this.cipherService.clear(userBeingLoggedOut);
       await this.folderService.clear(userBeingLoggedOut);
       await this.collectionService.clear(userBeingLoggedOut);

@@ -1,5 +1,4 @@
 import { ApiService } from "../../../abstractions/api.service";
-import { SettingsService } from "../../../abstractions/settings.service";
 import { InternalOrganizationServiceAbstraction } from "../../../admin-console/abstractions/organization/organization.service.abstraction";
 import { InternalPolicyService } from "../../../admin-console/abstractions/policy/policy.service.abstraction";
 import { ProviderService } from "../../../admin-console/abstractions/provider.service";
@@ -10,6 +9,7 @@ import { ProviderData } from "../../../admin-console/models/data/provider.data";
 import { PolicyResponse } from "../../../admin-console/models/response/policy.response";
 import { KeyConnectorService } from "../../../auth/abstractions/key-connector.service";
 import { ForceSetPasswordReason } from "../../../auth/models/domain/force-set-password-reason";
+import { DomainSettingsService } from "../../../autofill/services/domain-settings.service";
 import { DomainsResponse } from "../../../models/response/domains.response";
 import {
   SyncCipherNotification,
@@ -44,7 +44,7 @@ export class SyncService implements SyncServiceAbstraction {
 
   constructor(
     private apiService: ApiService,
-    private settingsService: SettingsService,
+    private domainSettingsService: DomainSettingsService,
     private folderService: InternalFolderService,
     private cipherService: CipherService,
     private cryptoService: CryptoService,
@@ -457,7 +457,7 @@ export class SyncService implements SyncServiceAbstraction {
       });
     }
 
-    return this.settingsService.setEquivalentDomains(eqDomains);
+    return this.domainSettingsService.setEquivalentDomains(eqDomains);
   }
 
   private async syncPolicies(response: PolicyResponse[]) {

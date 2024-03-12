@@ -1,14 +1,16 @@
 import { Component, OnInit } from "@angular/core";
 import { firstValueFrom } from "rxjs";
 
-import { SettingsService } from "@bitwarden/common/abstractions/settings.service";
 import { AutofillOverlayVisibility } from "@bitwarden/common/autofill/constants";
 import { AutofillSettingsServiceAbstraction } from "@bitwarden/common/autofill/services/autofill-settings.service";
+import { DomainSettingsService } from "@bitwarden/common/autofill/services/domain-settings.service";
 import { InlineMenuVisibilitySetting } from "@bitwarden/common/autofill/types";
+import {
+  UriMatchStrategy,
+  UriMatchStrategySetting,
+} from "@bitwarden/common/models/domain/domain-service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
-import { UriMatchType } from "@bitwarden/common/vault/enums";
 import { DialogService } from "@bitwarden/components";
 
 import { BrowserApi } from "../../../platform/browser/browser-api";
@@ -28,16 +30,15 @@ export class AutofillComponent implements OnInit {
   enableAutoFillOnPageLoad = false;
   autoFillOnPageLoadDefault = false;
   autoFillOnPageLoadOptions: any[];
-  defaultUriMatch = UriMatchType.Domain;
+  defaultUriMatch: UriMatchStrategySetting = UriMatchStrategy.Domain;
   uriMatchOptions: any[];
   autofillKeyboardHelperText: string;
   accountSwitcherEnabled = false;
 
   constructor(
-    private stateService: StateService,
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
-    private settingsService: SettingsService,
+    private domainSettingsService: DomainSettingsService,
     private autofillService: AutofillService,
     private dialogService: DialogService,
     private autofillSettingsService: AutofillSettingsServiceAbstraction,
@@ -61,12 +62,12 @@ export class AutofillComponent implements OnInit {
       { name: i18nService.t("autoFillOnPageLoadNo"), value: false },
     ];
     this.uriMatchOptions = [
-      { name: i18nService.t("baseDomain"), value: UriMatchType.Domain },
-      { name: i18nService.t("host"), value: UriMatchType.Host },
-      { name: i18nService.t("startsWith"), value: UriMatchType.StartsWith },
-      { name: i18nService.t("regEx"), value: UriMatchType.RegularExpression },
-      { name: i18nService.t("exact"), value: UriMatchType.Exact },
-      { name: i18nService.t("never"), value: UriMatchType.Never },
+      { name: i18nService.t("baseDomain"), value: UriMatchStrategy.Domain },
+      { name: i18nService.t("host"), value: UriMatchStrategy.Host },
+      { name: i18nService.t("startsWith"), value: UriMatchStrategy.StartsWith },
+      { name: i18nService.t("regEx"), value: UriMatchStrategy.RegularExpression },
+      { name: i18nService.t("exact"), value: UriMatchStrategy.Exact },
+      { name: i18nService.t("never"), value: UriMatchStrategy.Never },
     ];
 
     this.accountSwitcherEnabled = enableAccountSwitching();
@@ -94,8 +95,10 @@ export class AutofillComponent implements OnInit {
       this.autofillSettingsService.autofillOnPageLoadDefault$,
     );
 
-    const defaultUriMatch = await this.stateService.getDefaultUriMatch();
-    this.defaultUriMatch = defaultUriMatch == null ? UriMatchType.Domain : defaultUriMatch;
+    const defaultUriMatch = await firstValueFrom(
+      this.domainSettingsService.defaultUriMatchStrategy$,
+    );
+    this.defaultUriMatch = defaultUriMatch == null ? UriMatchStrategy.Domain : defaultUriMatch;
 
     const command = await this.platformUtilsService.getAutofillKeyboardShortcut();
     await this.setAutofillKeyboardHelperText(command);
@@ -119,7 +122,7 @@ export class AutofillComponent implements OnInit {
   }
 
   async saveDefaultUriMatch() {
-    await this.stateService.setDefaultUriMatch(this.defaultUriMatch);
+    await this.domainSettingsService.setDefaultUriMatchStrategy(this.defaultUriMatch);
   }
 
   private async setAutofillKeyboardHelperText(command: string) {

@@ -5,7 +5,9 @@ import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 import { NOTIFICATION_BAR_LIFESPAN_MS } from "@bitwarden/common/autofill/constants";
+import { DomainSettingsService } from "@bitwarden/common/autofill/services/domain-settings.service";
 import { UserNotificationSettingsServiceAbstraction } from "@bitwarden/common/autofill/services/user-notification-settings.service";
+import { NeverDomains } from "@bitwarden/common/models/domain/domain-service";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
@@ -60,6 +62,7 @@ export default class NotificationBackground {
     bgReopenUnlockPopout: ({ sender }) => this.openUnlockPopout(sender.tab),
     bgGetEnableChangedPasswordPrompt: () => this.getEnableChangedPasswordPrompt(),
     bgGetEnableAddedLoginPrompt: () => this.getEnableAddedLoginPrompt(),
+    bgGetExcludedDomains: () => this.getExcludedDomains(),
     getWebVaultUrlForNotification: () => this.getWebVaultUrl(),
   };
 
@@ -71,6 +74,7 @@ export default class NotificationBackground {
     private folderService: FolderService,
     private stateService: BrowserStateService,
     private userNotificationSettingsService: UserNotificationSettingsServiceAbstraction,
+    private domainSettingsService: DomainSettingsService,
     private environmentService: EnvironmentService,
     private logService: LogService,
   ) {}
@@ -97,6 +101,13 @@ export default class NotificationBackground {
    */
   async getEnableAddedLoginPrompt(): Promise<boolean> {
     return await firstValueFrom(this.userNotificationSettingsService.enableAddedLoginPrompt$);
+  }
+
+  /**
+   * Gets the neverDomains setting from the domain settings service.
+   */
+  async getExcludedDomains(): Promise<NeverDomains> {
+    return await firstValueFrom(this.domainSettingsService.neverDomains$);
   }
 
   /**
