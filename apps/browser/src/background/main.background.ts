@@ -458,7 +458,7 @@ export default class MainBackground {
       this.biometricStateService,
     );
     this.tokenService = new TokenService(this.stateService);
-    this.appIdService = new AppIdService(this.storageService);
+    this.appIdService = new AppIdService(this.globalStateProvider);
     this.apiService = new ApiService(
       this.tokenService,
       this.platformUtilsService,
