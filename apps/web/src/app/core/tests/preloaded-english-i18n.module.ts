@@ -8,6 +8,7 @@ import eng from "../../../locales/en/messages.json";
 
 class PreloadedEnglishI18nService extends TranslationService implements I18nService {
   translationLocale = "en";
+  userSetLocale$: Observable<string | undefined> = of("en");
   locale$: Observable<string> = of("en");
   constructor() {
     super("en", "", () => {

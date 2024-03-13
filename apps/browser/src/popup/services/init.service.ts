@@ -24,6 +24,7 @@ export class InitService {
   init() {
     return async () => {
       await this.stateService.init();
+      await this.i18nService.init();
 
       if (!BrowserPopupUtils.inPopup(window)) {
         window.document.body.classList.add("body-full");

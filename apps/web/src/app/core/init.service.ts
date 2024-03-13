@@ -18,8 +18,6 @@ import { ContainerService } from "@bitwarden/common/platform/services/container.
 import { EventUploadService } from "@bitwarden/common/services/event/event-upload.service";
 import { VaultTimeoutService } from "@bitwarden/common/services/vault-timeout/vault-timeout.service";
 
-import { I18nService } from "../core/i18n.service";
-
 @Injectable()
 export class InitService {
   constructor(
@@ -50,7 +48,7 @@ export class InitService {
 
       setTimeout(() => this.notificationsService.init(), 3000);
       await this.vaultTimeoutService.init(true);
-      await (this.i18nService as I18nService).init();
+      await this.i18nService.init();
       (this.eventUploadService as EventUploadService).init(true);
       this.twoFactorService.init();
       const htmlEl = this.win.document.documentElement;
