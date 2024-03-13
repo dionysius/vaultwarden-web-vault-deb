@@ -141,7 +141,7 @@ export class PreferencesComponent implements OnInit {
       ),
       enableFavicons: !(await this.settingsService.getDisableFavicon()),
       theme: await firstValueFrom(this.themeStateService.selectedTheme$),
-      locale: (await firstValueFrom(this.i18nService.locale$)) ?? null,
+      locale: (await firstValueFrom(this.i18nService.userSetLocale$)) ?? null,
     };
     this.startingLocale = initialFormValues.locale;
     this.form.setValue(initialFormValues, { emitEvent: false });

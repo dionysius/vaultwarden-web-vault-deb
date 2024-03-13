@@ -12,6 +12,7 @@ const LOCALE_KEY = new KeyDefinition<string>(TRANSLATION_DISK, "locale", {
 export class I18nService extends TranslationService implements I18nServiceAbstraction {
   translationLocale: string;
   protected translationLocaleState: GlobalState<string>;
+  userSetLocale$: Observable<string | undefined>;
   locale$: Observable<string>;
 
   constructor(
@@ -22,7 +23,8 @@ export class I18nService extends TranslationService implements I18nServiceAbstra
   ) {
     super(systemLanguage, localesDirectory, getLocalesJson);
     this.translationLocaleState = globalStateProvider.get(LOCALE_KEY);
-    this.locale$ = this.translationLocaleState.state$.pipe(map((locale) => locale ?? null));
+    this.userSetLocale$ = this.translationLocaleState.state$;
+    this.locale$ = this.userSetLocale$.pipe(map((locale) => locale ?? this.translationLocale));
   }
 
   async setLocale(locale: string): Promise<void> {
