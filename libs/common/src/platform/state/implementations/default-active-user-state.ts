@@ -173,7 +173,9 @@ export class DefaultActiveUserState<T> implements ActiveUserState<T> {
       ),
     );
     if (userId == null) {
-      throw new Error("No active user at this time.");
+      throw new Error(
+        `Error storing ${this.keyDefinition.fullName} for the active user: No active user at this time.`,
+      );
     }
     const fullKey = this.keyDefinition.buildKey(userId);
     return [
