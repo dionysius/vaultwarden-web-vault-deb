@@ -91,14 +91,9 @@ import {
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CollectionService } from "@bitwarden/common/vault/abstractions/collection.service";
 import { CipherFileUploadService } from "@bitwarden/common/vault/abstractions/file-upload/cipher-file-upload.service";
-import { FolderApiServiceAbstraction } from "@bitwarden/common/vault/abstractions/folder/folder-api.service.abstraction";
-import {
-  FolderService as FolderServiceAbstraction,
-  InternalFolderService,
-} from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
+import { FolderService as FolderServiceAbstraction } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 import { TotpService } from "@bitwarden/common/vault/abstractions/totp.service";
-import { FolderApiService } from "@bitwarden/common/vault/services/folder/folder-api.service";
 import { DialogService } from "@bitwarden/components";
 import { ImportServiceAbstraction } from "@bitwarden/importer/core";
 import { VaultExportServiceAbstraction } from "@bitwarden/vault-export-core";
@@ -216,17 +211,6 @@ function getBgService<T>(service: keyof MainBackground) {
       provide: CryptoFunctionService,
       useFactory: () => new WebCryptoFunctionService(window),
       deps: [],
-    },
-    {
-      provide: InternalFolderService,
-      useExisting: FolderServiceAbstraction,
-    },
-    {
-      provide: FolderApiServiceAbstraction,
-      useFactory: (folderService: InternalFolderService, apiService: ApiService) => {
-        return new FolderApiService(folderService, apiService);
-      },
-      deps: [InternalFolderService, ApiService],
     },
     {
       provide: CollectionService,
