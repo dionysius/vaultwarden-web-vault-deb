@@ -8,6 +8,7 @@ import { DomainSettingsService } from "@bitwarden/common/autofill/services/domai
 import { UserNotificationSettingsService } from "@bitwarden/common/autofill/services/user-notification-settings.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { EnvironmentService } from "@bitwarden/common/platform/services/environment.service";
+import { ThemeStateService } from "@bitwarden/common/platform/theming/theme-state.service";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { FolderView } from "@bitwarden/common/vault/models/view/folder.view";
 import { CipherService } from "@bitwarden/common/vault/services/cipher.service";
@@ -51,6 +52,7 @@ describe("NotificationBackground", () => {
   const domainSettingsService = mock<DomainSettingsService>();
   const environmentService = mock<EnvironmentService>();
   const logService = mock<LogService>();
+  const themeStateService = mock<ThemeStateService>();
 
   beforeEach(() => {
     notificationBackground = new NotificationBackground(
@@ -64,6 +66,7 @@ describe("NotificationBackground", () => {
       domainSettingsService,
       environmentService,
       logService,
+      themeStateService,
     );
   });
 

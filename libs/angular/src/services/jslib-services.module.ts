@@ -1,4 +1,3 @@
-import { DOCUMENT } from "@angular/common";
 import { LOCALE_ID, NgModule } from "@angular/core";
 import { UnwrapOpaque } from "type-fest";
 
@@ -160,6 +159,10 @@ import { DefaultStateProvider } from "@bitwarden/common/platform/state/implement
 import { StateEventRegistrarService } from "@bitwarden/common/platform/state/state-event-registrar.service";
 import { StateEventRunnerService } from "@bitwarden/common/platform/state/state-event-runner.service";
 /* eslint-enable import/no-restricted-paths */
+import {
+  DefaultThemeStateService,
+  ThemeStateService,
+} from "@bitwarden/common/platform/theming/theme-state.service";
 import { AvatarUpdateService } from "@bitwarden/common/services/account/avatar-update.service";
 import { ApiService } from "@bitwarden/common/services/api.service";
 import { AuditService } from "@bitwarden/common/services/audit.service";
@@ -231,7 +234,7 @@ import { UnauthGuard } from "../auth/guards/unauth.guard";
 import { FormValidationErrorsService as FormValidationErrorsServiceAbstraction } from "../platform/abstractions/form-validation-errors.service";
 import { BroadcasterService } from "../platform/services/broadcaster.service";
 import { FormValidationErrorsService } from "../platform/services/form-validation-errors.service";
-import { ThemingService } from "../platform/services/theming/theming.service";
+import { AngularThemingService } from "../platform/services/theming/angular-theming.service";
 import { AbstractThemingService } from "../platform/services/theming/theming.service.abstraction";
 import { safeProvider, SafeProvider } from "../platform/utils/safe-provider";
 
@@ -248,6 +251,7 @@ import {
   STATE_FACTORY,
   STATE_SERVICE_USE_CACHE,
   SYSTEM_LANGUAGE,
+  SYSTEM_THEME_OBSERVABLE,
   WINDOW,
 } from "./injection-tokens";
 import { ModalService } from "./modal.service";
@@ -299,6 +303,21 @@ const typesafeProviders: Array<SafeProvider> = [
   safeProvider({
     provide: LOG_MAC_FAILURES,
     useValue: true,
+  }),
+  safeProvider({
+    provide: SYSTEM_THEME_OBSERVABLE,
+    useFactory: (window: Window) => AngularThemingService.createSystemThemeFromWindow(window),
+    deps: [WINDOW],
+  }),
+  safeProvider({
+    provide: ThemeStateService,
+    useClass: DefaultThemeStateService,
+    deps: [GlobalStateProvider],
+  }),
+  safeProvider({
+    provide: AbstractThemingService,
+    useClass: AngularThemingService,
+    deps: [ThemeStateService, SYSTEM_THEME_OBSERVABLE],
   }),
   safeProvider({
     provide: AppIdServiceAbstraction,
@@ -771,11 +790,6 @@ const typesafeProviders: Array<SafeProvider> = [
     provide: TwoFactorServiceAbstraction,
     useClass: TwoFactorService,
     deps: [I18nServiceAbstraction, PlatformUtilsServiceAbstraction],
-  }),
-  safeProvider({
-    provide: AbstractThemingService,
-    useClass: ThemingService,
-    deps: [StateServiceAbstraction, WINDOW, DOCUMENT as SafeInjectionToken<Document>],
   }),
   safeProvider({
     provide: FormValidationErrorsServiceAbstraction,

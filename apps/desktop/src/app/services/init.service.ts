@@ -1,3 +1,4 @@
+import { DOCUMENT } from "@angular/common";
 import { Inject, Injectable } from "@angular/core";
 
 import { AbstractThemingService } from "@bitwarden/angular/platform/services/theming/theming.service.abstraction";
@@ -38,6 +39,7 @@ export class InitService {
     private themingService: AbstractThemingService,
     private encryptService: EncryptService,
     private configService: ConfigService,
+    @Inject(DOCUMENT) private document: Document,
   ) {}
 
   init() {
@@ -58,7 +60,7 @@ export class InitService {
       setTimeout(() => this.notificationsService.init(), 3000);
       const htmlEl = this.win.document.documentElement;
       htmlEl.classList.add("os_" + this.platformUtilsService.getDeviceString());
-      await this.themingService.monitorThemeChanges();
+      this.themingService.applyThemeChangesTo(this.document);
       let installAction = null;
       const installedVersion = await this.stateService.getInstalledVersion();
       const currentVersion = await this.platformUtilsService.getApplicationVersion();

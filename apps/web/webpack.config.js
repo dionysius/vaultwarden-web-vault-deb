@@ -323,7 +323,7 @@ const webpackConfig = {
     "connectors/sso": "./src/connectors/sso.ts",
     "connectors/captcha": "./src/connectors/captcha.ts",
     "connectors/duo-redirect": "./src/connectors/duo-redirect.ts",
-    theme_head: "./src/theme.js",
+    theme_head: "./src/theme.ts",
   },
   optimization: {
     splitChunks: {

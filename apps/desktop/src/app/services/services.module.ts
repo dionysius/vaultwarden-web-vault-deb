@@ -1,8 +1,5 @@
-import { DOCUMENT } from "@angular/common";
 import { APP_INITIALIZER, InjectionToken, NgModule } from "@angular/core";
 
-import { AbstractThemingService } from "@bitwarden/angular/platform/services/theming/theming.service.abstraction";
-import { safeProvider } from "@bitwarden/angular/platform/utils/safe-provider";
 import {
   SECURE_STORAGE,
   STATE_FACTORY,
@@ -13,7 +10,7 @@ import {
   OBSERVABLE_MEMORY_STORAGE,
   OBSERVABLE_DISK_STORAGE,
   WINDOW,
-  SafeInjectionToken,
+  SYSTEM_THEME_OBSERVABLE,
 } from "@bitwarden/angular/services/injection-tokens";
 import { JslibServicesModule } from "@bitwarden/angular/services/jslib-services.module";
 import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout-settings.service";
@@ -63,13 +60,13 @@ import { ElectronRendererSecureStorageService } from "../../platform/services/el
 import { ElectronRendererStorageService } from "../../platform/services/electron-renderer-storage.service";
 import { ElectronStateService } from "../../platform/services/electron-state.service";
 import { I18nRendererService } from "../../platform/services/i18n.renderer.service";
+import { fromIpcSystemTheme } from "../../platform/utils/from-ipc-system-theme";
 import { EncryptedMessageHandlerService } from "../../services/encrypted-message-handler.service";
 import { NativeMessageHandlerService } from "../../services/native-message-handler.service";
 import { NativeMessagingService } from "../../services/native-messaging.service";
 import { SearchBarService } from "../layout/search/search-bar.service";
 
 import { DesktopFileDownloadService } from "./desktop-file-download.service";
-import { DesktopThemingService } from "./desktop-theming.service";
 import { InitService } from "./init.service";
 import { RendererCryptoFunctionService } from "./renderer-crypto-function.service";
 
@@ -151,11 +148,10 @@ const RELOAD_CALLBACK = new InjectionToken<() => any>("RELOAD_CALLBACK");
       provide: FileDownloadService,
       useClass: DesktopFileDownloadService,
     },
-    safeProvider({
-      provide: AbstractThemingService,
-      useClass: DesktopThemingService,
-      deps: [StateServiceAbstraction, WINDOW, DOCUMENT as SafeInjectionToken<Document>],
-    }),
+    {
+      provide: SYSTEM_THEME_OBSERVABLE,
+      useFactory: () => fromIpcSystemTheme(),
+    },
     {
       provide: EncryptedMessageHandlerService,
       deps: [

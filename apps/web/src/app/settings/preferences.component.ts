@@ -2,7 +2,6 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 import { concatMap, filter, firstValueFrom, map, Observable, Subject, takeUntil, tap } from "rxjs";
 
-import { AbstractThemingService } from "@bitwarden/angular/platform/services/theming/theming.service.abstraction";
 import { SettingsService } from "@bitwarden/common/abstractions/settings.service";
 import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout-settings.service";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
@@ -14,6 +13,7 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { ThemeType } from "@bitwarden/common/platform/enums";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
+import { ThemeStateService } from "@bitwarden/common/platform/theming/theme-state.service";
 import { DialogService } from "@bitwarden/components";
 
 @Component({
@@ -35,7 +35,6 @@ export class PreferencesComponent implements OnInit {
   themeOptions: any[];
 
   private startingLocale: string;
-  private startingTheme: ThemeType;
   private destroy$ = new Subject<void>();
 
   form = this.formBuilder.group({
@@ -54,7 +53,7 @@ export class PreferencesComponent implements OnInit {
     private vaultTimeoutSettingsService: VaultTimeoutSettingsService,
     private platformUtilsService: PlatformUtilsService,
     private messagingService: MessagingService,
-    private themingService: AbstractThemingService,
+    private themeStateService: ThemeStateService,
     private settingsService: SettingsService,
     private dialogService: DialogService,
   ) {
@@ -141,11 +140,10 @@ export class PreferencesComponent implements OnInit {
         this.vaultTimeoutSettingsService.vaultTimeoutAction$(),
       ),
       enableFavicons: !(await this.settingsService.getDisableFavicon()),
-      theme: await this.stateService.getTheme(),
+      theme: await firstValueFrom(this.themeStateService.selectedTheme$),
       locale: (await firstValueFrom(this.i18nService.locale$)) ?? null,
     };
     this.startingLocale = initialFormValues.locale;
-    this.startingTheme = initialFormValues.theme;
     this.form.setValue(initialFormValues, { emitEvent: false });
   }
 
@@ -165,10 +163,7 @@ export class PreferencesComponent implements OnInit {
       values.vaultTimeoutAction,
     );
     await this.settingsService.setDisableFavicon(!values.enableFavicons);
-    if (values.theme !== this.startingTheme) {
-      await this.themingService.updateConfiguredTheme(values.theme);
-      this.startingTheme = values.theme;
-    }
+    await this.themeStateService.setSelectedTheme(values.theme);
     await this.i18nService.setLocale(values.locale);
     if (values.locale !== this.startingLocale) {
       window.location.reload();

@@ -1,4 +1,5 @@
-import { Injectable } from "@angular/core";
+import { DOCUMENT } from "@angular/common";
+import { Inject, Injectable } from "@angular/core";
 
 import { AbstractThemingService } from "@bitwarden/angular/platform/services/theming/theming.service.abstraction";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -19,6 +20,7 @@ export class InitService {
     private logService: LogServiceAbstraction,
     private themingService: AbstractThemingService,
     private configService: ConfigService,
+    @Inject(DOCUMENT) private document: Document,
   ) {}
 
   init() {
@@ -34,7 +36,7 @@ export class InitService {
       }
 
       const htmlEl = window.document.documentElement;
-      await this.themingService.monitorThemeChanges();
+      this.themingService.applyThemeChangesTo(this.document);
       htmlEl.classList.add("locale_" + this.i18nService.translationLocale);
 
       // Workaround for slow performance on external monitors on Chrome + MacOS

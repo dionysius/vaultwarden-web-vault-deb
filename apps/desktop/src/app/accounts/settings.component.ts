@@ -3,7 +3,6 @@ import { FormBuilder } from "@angular/forms";
 import { BehaviorSubject, firstValueFrom, Observable, Subject } from "rxjs";
 import { concatMap, debounceTime, filter, map, switchMap, takeUntil, tap } from "rxjs/operators";
 
-import { AbstractThemingService } from "@bitwarden/angular/platform/services/theming/theming.service.abstraction";
 import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { SettingsService } from "@bitwarden/common/abstractions/settings.service";
 import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout-settings.service";
@@ -21,6 +20,7 @@ import { StateService } from "@bitwarden/common/platform/abstractions/state.serv
 import { BiometricStateService } from "@bitwarden/common/platform/biometrics/biometric-state.service";
 import { ThemeType, KeySuffixOptions } from "@bitwarden/common/platform/enums";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
+import { ThemeStateService } from "@bitwarden/common/platform/theming/theme-state.service";
 import { DialogService } from "@bitwarden/components";
 
 import { SetPinComponent } from "../../auth/components/set-pin.component";
@@ -116,7 +116,7 @@ export class SettingsComponent implements OnInit {
     private messagingService: MessagingService,
     private cryptoService: CryptoService,
     private modalService: ModalService,
-    private themingService: AbstractThemingService,
+    private themeStateService: ThemeStateService,
     private settingsService: SettingsService,
     private dialogService: DialogService,
     private userVerificationService: UserVerificationServiceAbstraction,
@@ -263,7 +263,7 @@ export class SettingsComponent implements OnInit {
         await this.stateService.getEnableBrowserIntegrationFingerprint(),
       enableDuckDuckGoBrowserIntegration:
         await this.stateService.getEnableDuckDuckGoBrowserIntegration(),
-      theme: await this.stateService.getTheme(),
+      theme: await firstValueFrom(this.themeStateService.selectedTheme$),
       locale: await firstValueFrom(this.i18nService.locale$),
     };
     this.form.setValue(initialValues, { emitEvent: false });
@@ -557,7 +557,7 @@ export class SettingsComponent implements OnInit {
   }
 
   async saveTheme() {
-    await this.themingService.updateConfiguredTheme(this.form.value.theme);
+    await this.themeStateService.setSelectedTheme(this.form.value.theme);
   }
 
   async saveMinOnCopyToClipboard() {

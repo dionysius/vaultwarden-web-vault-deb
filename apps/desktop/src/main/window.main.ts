@@ -246,8 +246,7 @@ export class WindowMain {
   // Retrieve the background color
   // Resolves background color missmatch when starting the application.
   async getBackgroundColor(): Promise<string> {
-    const data: { theme?: string } = await this.storageService.get("global");
-    let theme = data?.theme;
+    let theme = await this.storageService.get("global_theming_selection");
 
     if (theme == null || theme === "system") {
       theme = nativeTheme.shouldUseDarkColors ? "dark" : "light";

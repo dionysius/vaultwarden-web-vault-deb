@@ -32,7 +32,7 @@ import {
   AbstractMemoryStorageService,
   AbstractStorageService,
 } from "../abstractions/storage.service";
-import { HtmlStorageLocation, KdfType, StorageLocation, ThemeType } from "../enums";
+import { HtmlStorageLocation, KdfType, StorageLocation } from "../enums";
 import { StateFactory } from "../factories/state-factory";
 import { Utils } from "../misc/utils";
 import { ServerConfigData } from "../models/data/server-config.data";
@@ -1751,23 +1751,6 @@ export class StateService<
     await this.saveAccount(
       account,
       this.reconcileOptions(options, await this.defaultInMemoryOptions()),
-    );
-  }
-
-  async getTheme(options?: StorageOptions): Promise<ThemeType> {
-    return (
-      await this.getGlobals(this.reconcileOptions(options, await this.defaultOnDiskLocalOptions()))
-    )?.theme;
-  }
-
-  async setTheme(value: ThemeType, options?: StorageOptions): Promise<void> {
-    const globals = await this.getGlobals(
-      this.reconcileOptions(options, await this.defaultOnDiskLocalOptions()),
-    );
-    globals.theme = value;
-    await this.saveGlobals(
-      globals,
-      this.reconcileOptions(options, await this.defaultOnDiskLocalOptions()),
     );
   }
 

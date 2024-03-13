@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { firstValueFrom } from "rxjs";
 
-import { AbstractThemingService } from "@bitwarden/angular/platform/services/theming/theming.service.abstraction";
 import { SettingsService } from "@bitwarden/common/abstractions/settings.service";
 import { AutofillSettingsServiceAbstraction } from "@bitwarden/common/autofill/services/autofill-settings.service";
 import { BadgeSettingsServiceAbstraction } from "@bitwarden/common/autofill/services/badge-settings.service";
@@ -16,6 +15,7 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { ThemeType } from "@bitwarden/common/platform/enums";
+import { ThemeStateService } from "@bitwarden/common/platform/theming/theme-state.service";
 import { VaultSettingsService } from "@bitwarden/common/vault/abstractions/vault-settings/vault-settings.service";
 
 import { enableAccountSwitching } from "../../platform/flags";
@@ -57,7 +57,7 @@ export class OptionsComponent implements OnInit {
     private domainSettingsService: DomainSettingsService,
     private badgeSettingsService: BadgeSettingsServiceAbstraction,
     i18nService: I18nService,
-    private themingService: AbstractThemingService,
+    private themeStateService: ThemeStateService,
     private settingsService: SettingsService,
     private vaultSettingsService: VaultSettingsService,
   ) {
@@ -125,7 +125,7 @@ export class OptionsComponent implements OnInit {
 
     this.enablePasskeys = await firstValueFrom(this.vaultSettingsService.enablePasskeys$);
 
-    this.theme = await this.stateService.getTheme();
+    this.theme = await firstValueFrom(this.themeStateService.selectedTheme$);
 
     const defaultUriMatch = await firstValueFrom(
       this.domainSettingsService.defaultUriMatchStrategy$,
@@ -186,7 +186,7 @@ export class OptionsComponent implements OnInit {
   }
 
   async saveTheme() {
-    await this.themingService.updateConfiguredTheme(this.theme);
+    await this.themeStateService.setSelectedTheme(this.theme);
   }
 
   async saveClearClipboard() {
