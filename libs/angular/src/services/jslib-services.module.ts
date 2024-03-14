@@ -954,7 +954,7 @@ const typesafeProviders: Array<SafeProvider> = [
   safeProvider({
     provide: ActiveUserStateProvider,
     useClass: DefaultActiveUserStateProvider,
-    deps: [AccountServiceAbstraction, StorageServiceProvider, StateEventRegistrarService],
+    deps: [AccountServiceAbstraction, SingleUserStateProvider],
   }),
   safeProvider({
     provide: SingleUserStateProvider,

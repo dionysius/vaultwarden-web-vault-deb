@@ -34,11 +34,7 @@ describe("Specific State Providers", () => {
       storageServiceProvider,
       stateEventRegistrarService,
     );
-    activeSut = new DefaultActiveUserStateProvider(
-      mockAccountServiceWith(null),
-      storageServiceProvider,
-      stateEventRegistrarService,
-    );
+    activeSut = new DefaultActiveUserStateProvider(mockAccountServiceWith(null), singleSut);
     globalSut = new DefaultGlobalStateProvider(storageServiceProvider);
   });
 
@@ -67,33 +63,31 @@ describe("Specific State Providers", () => {
     },
   );
 
-  describe.each([
+  const globalAndSingle = [
+    {
+      getMethod: (keyDefinition: KeyDefinition<boolean>) => globalSut.get(keyDefinition),
+      expectedInstance: DefaultGlobalState,
+    },
     {
       // Use a static user id so that it has the same signature as the rest and then write special tests
       // handling differing user id
       getMethod: (keyDefinition: KeyDefinition<boolean>) => singleSut.get(fakeUser1, keyDefinition),
       expectedInstance: DefaultSingleUserState,
     },
+  ];
+
+  describe.each([
     {
       getMethod: (keyDefinition: KeyDefinition<boolean>) => activeSut.get(keyDefinition),
       expectedInstance: DefaultActiveUserState,
     },
-    {
-      getMethod: (keyDefinition: KeyDefinition<boolean>) => globalSut.get(keyDefinition),
-      expectedInstance: DefaultGlobalState,
-    },
+    ...globalAndSingle,
   ])("common behavior %s", ({ getMethod, expectedInstance }) => {
     it("returns expected instance", () => {
       const state = getMethod(fakeDiskKeyDefinition);
 
       expect(state).toBeTruthy();
       expect(state).toBeInstanceOf(expectedInstance);
-    });
-
-    it("returns cached instance on repeated request", () => {
-      const stateFirst = getMethod(fakeDiskKeyDefinition);
-      const stateCached = getMethod(fakeDiskKeyDefinition);
-      expect(stateFirst).toStrictEqual(stateCached);
     });
 
     it("returns different instances when the storage location differs", () => {
@@ -112,6 +106,14 @@ describe("Specific State Providers", () => {
       const state = getMethod(fakeDiskKeyDefinition);
       const stateAlt = getMethod(fakeDiskKeyDefinitionAlternate);
       expect(state).not.toStrictEqual(stateAlt);
+    });
+  });
+
+  describe.each(globalAndSingle)("Global And Single Behavior", ({ getMethod }) => {
+    it("returns cached instance on repeated request", () => {
+      const stateFirst = getMethod(fakeDiskKeyDefinition);
+      const stateCached = getMethod(fakeDiskKeyDefinition);
+      expect(stateFirst).toStrictEqual(stateCached);
     });
   });
 

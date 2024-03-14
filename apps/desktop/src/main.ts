@@ -124,13 +124,14 @@ export class Main {
       storageServiceProvider,
     );
 
+    const singleUserStateProvider = new DefaultSingleUserStateProvider(
+      storageServiceProvider,
+      stateEventRegistrarService,
+    );
+
     const stateProvider = new DefaultStateProvider(
-      new DefaultActiveUserStateProvider(
-        accountService,
-        storageServiceProvider,
-        stateEventRegistrarService,
-      ),
-      new DefaultSingleUserStateProvider(storageServiceProvider, stateEventRegistrarService),
+      new DefaultActiveUserStateProvider(accountService, singleUserStateProvider),
+      singleUserStateProvider,
       globalStateProvider,
       new DefaultDerivedStateProvider(this.memoryStorageForStateProviders),
     );

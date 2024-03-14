@@ -3,19 +3,21 @@
  * @jest-environment ../shared/test.environment.ts
  */
 import { any, mock } from "jest-mock-extended";
-import { BehaviorSubject, firstValueFrom, of, timeout } from "rxjs";
+import { BehaviorSubject, firstValueFrom, map, of, timeout } from "rxjs";
 import { Jsonify } from "type-fest";
 
 import { awaitAsync, trackEmissions } from "../../../../spec";
 import { FakeStorageService } from "../../../../spec/fake-storage.service";
-import { AccountInfo, AccountService } from "../../../auth/abstractions/account.service";
+import { AccountInfo } from "../../../auth/abstractions/account.service";
 import { AuthenticationStatus } from "../../../auth/enums/authentication-status";
 import { UserId } from "../../../types/guid";
+import { StorageServiceProvider } from "../../services/storage-service.provider";
 import { StateDefinition } from "../state-definition";
 import { StateEventRegistrarService } from "../state-event-registrar.service";
 import { UserKeyDefinition } from "../user-key-definition";
 
 import { DefaultActiveUserState } from "./default-active-user-state";
+import { DefaultSingleUserStateProvider } from "./default-single-user-state.provider";
 
 class TestState {
   date: Date;
@@ -41,23 +43,35 @@ const testKeyDefinition = new UserKeyDefinition<TestState>(testStateDefinition, 
 });
 
 describe("DefaultActiveUserState", () => {
-  const accountService = mock<AccountService>();
   let diskStorageService: FakeStorageService;
+  const storageServiceProvider = mock<StorageServiceProvider>();
   const stateEventRegistrarService = mock<StateEventRegistrarService>();
   let activeAccountSubject: BehaviorSubject<{ id: UserId } & AccountInfo>;
+
+  let singleUserStateProvider: DefaultSingleUserStateProvider;
+
   let userState: DefaultActiveUserState<TestState>;
 
   beforeEach(() => {
-    activeAccountSubject = new BehaviorSubject<{ id: UserId } & AccountInfo>(undefined);
-    accountService.activeAccount$ = activeAccountSubject;
-
     diskStorageService = new FakeStorageService();
-    userState = new DefaultActiveUserState(
-      testKeyDefinition,
-      accountService,
-      diskStorageService,
+    storageServiceProvider.get.mockReturnValue(["disk", diskStorageService]);
+
+    singleUserStateProvider = new DefaultSingleUserStateProvider(
+      storageServiceProvider,
       stateEventRegistrarService,
     );
+
+    activeAccountSubject = new BehaviorSubject<{ id: UserId } & AccountInfo>(undefined);
+
+    userState = new DefaultActiveUserState(
+      testKeyDefinition,
+      activeAccountSubject.asObservable().pipe(map((a) => a?.id)),
+      singleUserStateProvider,
+    );
+  });
+
+  afterEach(() => {
+    jest.resetAllMocks();
   });
 
   const makeUserId = (id: string) => {
@@ -223,7 +237,16 @@ describe("DefaultActiveUserState", () => {
     await changeActiveUser("1");
 
     // This should always return a value right await
-    const value = await firstValueFrom(userState.state$);
+    const value = await firstValueFrom(
+      userState.state$.pipe(
+        timeout({
+          first: 20,
+          with: () => {
+            throw new Error("Did not emit data from newly active user.");
+          },
+        }),
+      ),
+    );
     expect(value).toEqual(user1Data);
 
     // Make it such that there is no active user
@@ -392,9 +415,7 @@ describe("DefaultActiveUserState", () => {
       await changeActiveUser(undefined);
       // Act
 
-      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-      // eslint-disable-next-line @typescript-eslint/no-floating-promises
-      expect(async () => await userState.update(() => null)).rejects.toThrow(
+      await expect(async () => await userState.update(() => null)).rejects.toThrow(
         "No active user at this time.",
       );
     });
@@ -563,7 +584,7 @@ describe("DefaultActiveUserState", () => {
     });
 
     it("does not await updates if the active user changes", async () => {
-      const initialUserId = (await firstValueFrom(accountService.activeAccount$)).id;
+      const initialUserId = (await firstValueFrom(activeAccountSubject)).id;
       expect(initialUserId).toBe(userId);
       trackEmissions(userState.state$);
       await awaitAsync(); // storage updates are behind a promise
