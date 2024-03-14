@@ -4,6 +4,7 @@ import { FormBuilder, Validators } from "@angular/forms";
 import {
   combineLatest,
   firstValueFrom,
+  map,
   Observable,
   of,
   shareReplay,
@@ -20,7 +21,9 @@ import {
 } from "@bitwarden/common/admin-console/enums";
 import { PermissionsApi } from "@bitwarden/common/admin-console/models/api/permissions.api";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { ProductType } from "@bitwarden/common/enums";
+import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { ConfigServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config.service.abstraction";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
@@ -99,6 +102,8 @@ export class MemberDialogComponent implements OnDestroy {
     groups: [[] as AccessItemValue[]],
   });
 
+  protected restrictedAccess$: Observable<boolean>;
+
   protected permissionsGroup = this.formBuilder.group({
     manageAssignedCollectionsGroup: this.formBuilder.group<Record<string, boolean>>({
       manageAssignedCollections: false,
@@ -144,6 +149,7 @@ export class MemberDialogComponent implements OnDestroy {
     private organizationUserService: OrganizationUserService,
     private dialogService: DialogService,
     private configService: ConfigServiceAbstraction,
+    private accountService: AccountService,
     organizationService: OrganizationService,
   ) {
     this.organization$ = organizationService
@@ -162,12 +168,42 @@ export class MemberDialogComponent implements OnDestroy {
       ),
     );
 
+    const userDetails$ = this.params.organizationUserId
+      ? this.userService.get(this.params.organizationId, this.params.organizationUserId)
+      : of(null);
+
+    // The orgUser cannot manage their own Group assignments if collection access is restricted
+    // TODO: fix disabled state of access-selector rows so that any controls are hidden
+    this.restrictedAccess$ = combineLatest([
+      this.organization$,
+      userDetails$,
+      this.accountService.activeAccount$,
+      this.configService.getFeatureFlag$(FeatureFlag.FlexibleCollectionsV1),
+    ]).pipe(
+      map(
+        ([organization, userDetails, activeAccount, flexibleCollectionsV1Enabled]) =>
+          // Feature flag conditionals
+          flexibleCollectionsV1Enabled &&
+          organization.flexibleCollections &&
+          // Business logic conditionals
+          userDetails.userId == activeAccount.id &&
+          !organization.allowAdminAccessToAllCollectionItems,
+      ),
+      shareReplay({ refCount: true, bufferSize: 1 }),
+    );
+
+    this.restrictedAccess$.pipe(takeUntil(this.destroy$)).subscribe((restrictedAccess) => {
+      if (restrictedAccess) {
+        this.formGroup.controls.groups.disable();
+      } else {
+        this.formGroup.controls.groups.enable();
+      }
+    });
+
     combineLatest({
       organization: this.organization$,
       collections: this.collectionAdminService.getAll(this.params.organizationId),
-      userDetails: this.params.organizationUserId
-        ? this.userService.get(this.params.organizationId, this.params.organizationUserId)
-        : of(null),
+      userDetails: userDetails$,
       groups: groups$,
     })
       .pipe(takeUntil(this.destroy$))
@@ -369,7 +405,11 @@ export class MemberDialogComponent implements OnDestroy {
     userView.collections = this.formGroup.value.access
       .filter((v) => v.type === AccessItemType.Collection)
       .map(convertToSelectionView);
-    userView.groups = this.formGroup.value.groups.map((m) => m.id);
+
+    userView.groups = (await firstValueFrom(this.restrictedAccess$))
+      ? null
+      : this.formGroup.value.groups.map((m) => m.id);
+
     userView.accessSecretsManager = this.formGroup.value.accessSecretsManager;
 
     if (this.editMode) {

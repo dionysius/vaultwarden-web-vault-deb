@@ -399,7 +399,11 @@
         </bit-tab>
         <bit-tab *ngIf="organization.useGroups" [label]="'groups' | i18n">
           <div class="tw-mb-6">
-            {{ "groupAccessUserDesc" | i18n }}
+            {{
+              (restrictedAccess$ | async)
+                ? ("restrictedGroupAccess" | i18n)
+                : ("groupAccessUserDesc" | i18n)
+            }}
           </div>
           <bit-access-selector
             formControlName="groups"
@@ -408,10 +412,14 @@
             [selectorLabelText]="'selectGroups' | i18n"
             [emptySelectionText]="'noGroupsAdded' | i18n"
             [flexibleCollectionsEnabled]="organization.flexibleCollections"
+            [hideMultiSelect]="restrictedAccess$ | async"
           ></bit-access-selector>
         </bit-tab>
         <bit-tab [label]="'collections' | i18n">
-          <div *ngIf="organization.useGroups" class="tw-mb-6">
+          <div class="tw-mb-6" *ngIf="restrictedAccess$ | async">
+            {{ "restrictedCollectionAccess" | i18n }}
+          </div>
+          <div *ngIf="organization.useGroups && !(restrictedAccess$ | async)" class="tw-mb-6">
             {{ "userPermissionOverrideHelper" | i18n }}
           </div>
           <div *ngIf="!organization.flexibleCollections" class="tw-mb-6">
@@ -441,6 +449,7 @@
             [selectorLabelText]="'selectCollections' | i18n"
             [emptySelectionText]="'noCollectionsAdded' | i18n"
             [flexibleCollectionsEnabled]="organization.flexibleCollections"
+            [hideMultiSelect]="restrictedAccess$ | async"
           ></bit-access-selector
         ></bit-tab>
       </bit-tab-group>
