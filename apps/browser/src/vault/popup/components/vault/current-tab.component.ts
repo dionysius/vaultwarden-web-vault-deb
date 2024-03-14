@@ -10,10 +10,10 @@ import { AutofillSettingsServiceAbstraction } from "@bitwarden/common/autofill/s
 import { BroadcasterService } from "@bitwarden/common/platform/abstractions/broadcaster.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
+import { VaultSettingsService } from "@bitwarden/common/vault/abstractions/vault-settings/vault-settings.service";
 import { CipherType } from "@bitwarden/common/vault/enums";
 import { CipherRepromptType } from "@bitwarden/common/vault/enums/cipher-reprompt-type";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
@@ -65,11 +65,11 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     private changeDetectorRef: ChangeDetectorRef,
     private syncService: SyncService,
     private searchService: SearchService,
-    private stateService: StateService,
     private autofillSettingsService: AutofillSettingsServiceAbstraction,
     private passwordRepromptService: PasswordRepromptService,
     private organizationService: OrganizationService,
     private vaultFilterService: VaultFilterService,
+    private vaultSettingsService: VaultSettingsService,
   ) {}
 
   async ngOnInit() {
@@ -271,8 +271,10 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     });
 
     const otherTypes: CipherType[] = [];
-    const dontShowCards = await this.stateService.getDontShowCardsCurrentTab();
-    const dontShowIdentities = await this.stateService.getDontShowIdentitiesCurrentTab();
+    const dontShowCards = !(await firstValueFrom(this.vaultSettingsService.showCardsCurrentTab$));
+    const dontShowIdentities = !(await firstValueFrom(
+      this.vaultSettingsService.showIdentitiesCurrentTab$,
+    ));
     this.showOrganizations = this.organizationService.hasOrganizations();
     if (!dontShowCards) {
       otherTypes.push(CipherType.Card);

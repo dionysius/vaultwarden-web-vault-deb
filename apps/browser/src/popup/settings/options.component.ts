@@ -114,8 +114,10 @@ export class OptionsComponent implements OnInit {
       this.autofillSettingsService.enableContextMenu$,
     );
 
-    this.showCardsCurrentTab = !(await this.stateService.getDontShowCardsCurrentTab());
-    this.showIdentitiesCurrentTab = !(await this.stateService.getDontShowIdentitiesCurrentTab());
+    this.showCardsCurrentTab = await firstValueFrom(this.vaultSettingsService.showCardsCurrentTab$);
+    this.showIdentitiesCurrentTab = await firstValueFrom(
+      this.vaultSettingsService.showIdentitiesCurrentTab$,
+    );
 
     this.enableAutoTotpCopy = await firstValueFrom(this.autofillSettingsService.autoCopyTotp$);
 
@@ -178,11 +180,11 @@ export class OptionsComponent implements OnInit {
   }
 
   async updateShowCardsCurrentTab() {
-    await this.stateService.setDontShowCardsCurrentTab(!this.showCardsCurrentTab);
+    await this.vaultSettingsService.setShowCardsCurrentTab(this.showCardsCurrentTab);
   }
 
   async updateShowIdentitiesCurrentTab() {
-    await this.stateService.setDontShowIdentitiesCurrentTab(!this.showIdentitiesCurrentTab);
+    await this.vaultSettingsService.setShowIdentitiesCurrentTab(this.showIdentitiesCurrentTab);
   }
 
   async saveTheme() {
