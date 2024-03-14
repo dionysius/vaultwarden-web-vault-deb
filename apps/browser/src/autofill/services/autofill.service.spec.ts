@@ -3380,6 +3380,34 @@ describe("AutofillService", () => {
 
       expect(value).toBe(false);
     });
+
+    it("validates attribute identifiers with mixed camel case and non-alpha characters", () => {
+      const attributes: Record<string, boolean> = {
+        _$1_go_look: true,
+        go_look: true,
+        goLook: true,
+        go1look: true,
+        "go look": true,
+        look_go: true,
+        findPerson: true,
+        query$1: true,
+        look_goo: false,
+        golook: false,
+        lookgo: false,
+        logonField: false,
+        ego_input: false,
+        "Gold Password": false,
+        searching_for: false,
+        person_finder: false,
+      };
+      const autofillFieldMocks = Object.keys(attributes).map((key) =>
+        createAutofillFieldMock({ htmlID: key }),
+      );
+      autofillFieldMocks.forEach((field) => {
+        const value = AutofillService["isSearchField"](field);
+        expect(value).toBe(attributes[field.htmlID]);
+      });
+    });
   });
 
   describe("isFieldMatch", () => {
