@@ -97,6 +97,10 @@ export default class RuntimeBackground {
       case "unlocked": {
         let item: LockedVaultPendingNotificationsData;
 
+        if (msg.command === "loggedIn") {
+          await this.sendBwInstalledMessageToVault();
+        }
+
         if (this.lockedVaultPendingNotifications?.length > 0) {
           item = this.lockedVaultPendingNotifications.pop();
           await closeUnlockPopout();
@@ -351,8 +355,6 @@ export default class RuntimeBackground {
           if (await this.environmentService.hasManagedEnvironment()) {
             await this.environmentService.setUrlsToManagedEnvironment();
           }
-
-          await this.sendBwInstalledMessageToVault();
         }
 
         this.onInstalledReason = null;
