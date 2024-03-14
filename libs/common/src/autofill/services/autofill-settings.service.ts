@@ -42,7 +42,7 @@ const AUTOFILL_ON_PAGE_LOAD_POLICY_TOAST_HAS_DISPLAYED = new KeyDefinition(
 );
 
 const AUTO_COPY_TOTP = new KeyDefinition(AUTOFILL_SETTINGS_DISK, "autoCopyTotp", {
-  deserializer: (value: boolean) => value ?? false,
+  deserializer: (value: boolean) => value ?? true,
 });
 
 const INLINE_MENU_VISIBILITY = new KeyDefinition(
@@ -144,7 +144,7 @@ export class AutofillSettingsService implements AutofillSettingsServiceAbstracti
     );
 
     this.autoCopyTotpState = this.stateProvider.getActive(AUTO_COPY_TOTP);
-    this.autoCopyTotp$ = this.autoCopyTotpState.state$.pipe(map((x) => x ?? false));
+    this.autoCopyTotp$ = this.autoCopyTotpState.state$.pipe(map((x) => x ?? true));
 
     this.inlineMenuVisibilityState = this.stateProvider.getGlobal(INLINE_MENU_VISIBILITY);
     this.inlineMenuVisibility$ = this.inlineMenuVisibilityState.state$.pipe(
