@@ -359,9 +359,6 @@ export abstract class StateService<T extends Account = Account> {
    * @deprecated Do not call this directly, use ConfigService
    */
   setServerConfig: (value: ServerConfigData, options?: StorageOptions) => Promise<void>;
-
-  getAvatarColor: (options?: StorageOptions) => Promise<string | null | undefined>;
-  setAvatarColor: (value: string, options?: StorageOptions) => Promise<void>;
   /**
    * fetches string value of URL user tried to navigate to while unauthenticated.
    * @param options Defines the storage options for the URL; Defaults to session Storage.

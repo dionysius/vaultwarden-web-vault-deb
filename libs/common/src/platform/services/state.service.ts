@@ -1854,23 +1854,6 @@ export class StateService<
     )?.settings?.serverConfig;
   }
 
-  async getAvatarColor(options?: StorageOptions): Promise<string | null | undefined> {
-    return (
-      await this.getAccount(this.reconcileOptions(options, await this.defaultOnDiskLocalOptions()))
-    )?.settings?.avatarColor;
-  }
-
-  async setAvatarColor(value: string, options?: StorageOptions): Promise<void> {
-    const account = await this.getAccount(
-      this.reconcileOptions(options, await this.defaultOnDiskLocalOptions()),
-    );
-    account.settings.avatarColor = value;
-    return await this.saveAccount(
-      account,
-      this.reconcileOptions(options, await this.defaultOnDiskLocalOptions()),
-    );
-  }
-
   async getDeepLinkRedirectUrl(options?: StorageOptions): Promise<string> {
     return (
       await this.getGlobals(this.reconcileOptions(options, await this.defaultOnDiskOptions()))
