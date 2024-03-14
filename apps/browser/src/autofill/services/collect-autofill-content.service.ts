@@ -755,6 +755,9 @@ class CollectAutofillContentService implements CollectAutofillContentServiceInte
 
     // Prioritize capturing text content from elements rather than nodes.
     currentElement = currentElement.parentElement || currentElement.parentNode;
+    if (!currentElement) {
+      return textContentItems;
+    }
 
     let siblingElement = nodeIsElement(currentElement)
       ? currentElement.previousElementSibling
