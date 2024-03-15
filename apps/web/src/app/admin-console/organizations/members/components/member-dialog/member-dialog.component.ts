@@ -186,6 +186,7 @@ export class MemberDialogComponent implements OnDestroy {
           flexibleCollectionsV1Enabled &&
           organization.flexibleCollections &&
           // Business logic conditionals
+          userDetails != null &&
           userDetails.userId == activeAccount.id &&
           !organization.allowAdminAccessToAllCollectionItems,
       ),
