@@ -1,4 +1,4 @@
-import { Observable, switchMap, take } from "rxjs";
+import { Observable, filter, of, switchMap, take } from "rxjs";
 
 import { UserId } from "../../../types/guid";
 import { DerivedStateDependencies } from "../../../types/state";
@@ -30,8 +30,26 @@ export class DefaultStateProvider implements StateProvider {
       return this.getUser<T>(userId, keyDefinition).state$;
     } else {
       return this.activeUserId$.pipe(
+        filter((userId) => userId != null), // Filter out null-ish user ids since we can't get state for a null user id
         take(1),
         switchMap((userId) => this.getUser<T>(userId, keyDefinition).state$),
+      );
+    }
+  }
+
+  getUserStateOrDefault$<T>(
+    keyDefinition: KeyDefinition<T> | UserKeyDefinition<T>,
+    config: { userId: UserId | undefined; defaultValue?: T },
+  ): Observable<T> {
+    const { userId, defaultValue = null } = config;
+    if (userId) {
+      return this.getUser<T>(userId, keyDefinition).state$;
+    } else {
+      return this.activeUserId$.pipe(
+        take(1),
+        switchMap((userId) =>
+          userId != null ? this.getUser<T>(userId, keyDefinition).state$ : of(defaultValue),
+        ),
       );
     }
   }
