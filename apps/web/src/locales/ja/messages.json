@@ -7605,5 +7605,11 @@
   },
   "providerPortal": {
     "message": "プロバイダーポータル"
+  },
+  "restrictedGroupAccess": {
+    "message": "あなた自身をグループに追加することはできません。"
+  },
+  "restrictedCollectionAccess": {
+    "message": "コレクションに自分自身を追加することはできません。"
   }
 }

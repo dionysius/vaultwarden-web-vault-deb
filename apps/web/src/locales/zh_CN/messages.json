@@ -7605,5 +7605,11 @@
   },
   "providerPortal": {
     "message": "提供商门户"
+  },
+  "restrictedGroupAccess": {
+    "message": "You cannot add yourself to groups."
+  },
+  "restrictedCollectionAccess": {
+    "message": "You cannot add yourself to collections."
   }
 }

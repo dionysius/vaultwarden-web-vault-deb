@@ -7605,5 +7605,11 @@
   },
   "providerPortal": {
     "message": "Portale Fornitori"
+  },
+  "restrictedGroupAccess": {
+    "message": "You cannot add yourself to groups."
+  },
+  "restrictedCollectionAccess": {
+    "message": "You cannot add yourself to collections."
   }
 }

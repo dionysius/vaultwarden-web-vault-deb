@@ -7605,5 +7605,11 @@
   },
   "providerPortal": {
     "message": "Portal do fornecedor"
+  },
+  "restrictedGroupAccess": {
+    "message": "Não se pode adicionar a si próprio a grupos."
+  },
+  "restrictedCollectionAccess": {
+    "message": "Não se pode adicionar a si próprio a coleções."
   }
 }
