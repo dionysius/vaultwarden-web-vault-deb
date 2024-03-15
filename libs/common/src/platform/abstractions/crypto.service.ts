@@ -4,7 +4,7 @@ import { ProfileOrganizationResponse } from "../../admin-console/models/response
 import { ProfileProviderOrganizationResponse } from "../../admin-console/models/response/profile-provider-organization.response";
 import { ProfileProviderResponse } from "../../admin-console/models/response/profile-provider.response";
 import { KdfConfig } from "../../auth/models/domain/kdf-config";
-import { OrganizationId, ProviderId } from "../../types/guid";
+import { OrganizationId, ProviderId, UserId } from "../../types/guid";
 import { UserKey, MasterKey, OrgKey, ProviderKey, PinKey, CipherKey } from "../../types/key";
 import { KeySuffixOptions, KdfType, HashPurpose } from "../enums";
 import { EncArrayBuffer } from "../models/domain/enc-array-buffer";
@@ -62,12 +62,15 @@ export abstract class CryptoService {
   getUserKeyFromStorage: (keySuffix: KeySuffixOptions, userId?: string) => Promise<UserKey>;
 
   /**
+   * Determines whether the user key is available for the given user.
+   * @param userId The desired user. If not provided, the active user will be used. If no active user exists, the method will return false.
    * @returns True if the user key is available
    */
-  hasUserKey: () => Promise<boolean>;
+  hasUserKey: (userId?: UserId) => Promise<boolean>;
   /**
-   * @param userId The desired user
-   * @returns True if the user key is set in memory
+   * Determines whether the user key is available for the given user in memory.
+   * @param userId The desired user. If not provided, the active user will be used. If no active user exists, the method will return false.
+   * @returns True if the user key is available
    */
   hasUserKeyInMemory: (userId?: string) => Promise<boolean>;
   /**

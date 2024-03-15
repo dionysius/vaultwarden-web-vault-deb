@@ -1,5 +1,5 @@
 import { mock } from "jest-mock-extended";
-import { firstValueFrom } from "rxjs";
+import { firstValueFrom, of } from "rxjs";
 
 import { FakeAccountService, mockAccountServiceWith } from "../../../spec/fake-account-service";
 import { FakeActiveUserState, FakeSingleUserState } from "../../../spec/fake-state";
@@ -106,6 +106,52 @@ describe("cryptoService", () => {
 
       expect(userKey).toBeFalsy();
     });
+  });
+
+  describe.each(["hasUserKey", "hasUserKeyInMemory"])(
+    `%s`,
+    (method: "hasUserKey" | "hasUserKeyInMemory") => {
+      let mockUserKey: UserKey;
+
+      beforeEach(() => {
+        const mockRandomBytes = new Uint8Array(64) as CsprngArray;
+        mockUserKey = new SymmetricCryptoKey(mockRandomBytes) as UserKey;
+      });
+
+      it.each([true, false])("returns %s if the user key is set", async (hasKey) => {
+        stateProvider.singleUser
+          .getFake(mockUserId, USER_KEY)
+          .nextState(hasKey ? mockUserKey : null);
+        expect(await cryptoService[method](mockUserId)).toBe(hasKey);
+      });
+
+      it("returns false when no active userId is set", async () => {
+        accountService.activeAccountSubject.next(null);
+        expect(await cryptoService[method]()).toBe(false);
+      });
+
+      it.each([true, false])(
+        "resolves %s for active user id when none is provided",
+        async (hasKey) => {
+          stateProvider.activeUserId$ = of(mockUserId);
+          stateProvider.singleUser
+            .getFake(mockUserId, USER_KEY)
+            .nextState(hasKey ? mockUserKey : null);
+          expect(await cryptoService[method]()).toBe(hasKey);
+        },
+      );
+    },
+  );
+
+  describe("hasUserKey", () => {
+    it.each([true, false])(
+      "returns %s when the user key is not in memory, but the auto key is set",
+      async (hasKey) => {
+        stateProvider.singleUser.getFake(mockUserId, USER_KEY).nextState(null);
+        cryptoService.hasUserKeyStored = jest.fn().mockResolvedValue(hasKey);
+        expect(await cryptoService.hasUserKey(mockUserId)).toBe(hasKey);
+      },
+    );
   });
 
   describe("getUserKeyWithLegacySupport", () => {

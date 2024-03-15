@@ -119,7 +119,7 @@ export class FakeActiveUserStateProvider implements ActiveUserStateProvider {
   states: Map<string, FakeActiveUserState<unknown>> = new Map();
 
   constructor(public accountService: FakeAccountService) {
-    this.activeUserId$ = accountService.activeAccountSubject.asObservable().pipe(map((a) => a.id));
+    this.activeUserId$ = accountService.activeAccountSubject.asObservable().pipe(map((a) => a?.id));
   }
 
   get<T>(keyDefinition: KeyDefinition<T> | UserKeyDefinition<T>): ActiveUserState<T> {
