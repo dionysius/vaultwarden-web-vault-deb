@@ -16,6 +16,7 @@ import { IdentityCaptchaResponse } from "@bitwarden/common/auth/models/response/
 import { IdentityTokenResponse } from "@bitwarden/common/auth/models/response/identity-token.response";
 import { IdentityTwoFactorResponse } from "@bitwarden/common/auth/models/response/identity-two-factor.response";
 import { ClientType } from "@bitwarden/common/enums";
+import { VaultTimeoutAction } from "@bitwarden/common/enums/vault-timeout-action.enum";
 import { KeysRequest } from "@bitwarden/common/models/request/keys.request";
 import { AppIdService } from "@bitwarden/common/platform/abstractions/app-id.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
@@ -49,6 +50,9 @@ export abstract class LoginStrategyData {
     | SsoTokenRequest
     | WebAuthnLoginTokenRequest;
   captchaBypassToken?: string;
+
+  /** User's entered email obtained pre-login. */
+  abstract userEnteredEmail?: string;
 }
 
 export abstract class LoginStrategy {
@@ -110,21 +114,47 @@ export abstract class LoginStrategy {
     return new DeviceRequest(appId, this.platformUtilsService);
   }
 
-  protected async buildTwoFactor(userProvidedTwoFactor?: TokenTwoFactorRequest) {
+  /**
+   * Builds the TokenTwoFactorRequest to be used within other login strategies token requests
+   * to the server.
+   * If the user provided a 2FA token in an already created TokenTwoFactorRequest, it will be used.
+   * If not, and the user has previously remembered a 2FA token, it will be used.
+   * If neither of these are true, an empty TokenTwoFactorRequest will be returned.
+   * @param userProvidedTwoFactor - optional - The 2FA token request provided by the caller
+   * @param email - optional - ensure that email is provided for any login strategies that support remember 2FA functionality
+   * @returns a promise which resolves to a TokenTwoFactorRequest to be sent to the server
+   */
+  protected async buildTwoFactor(
+    userProvidedTwoFactor?: TokenTwoFactorRequest,
+    email?: string,
+  ): Promise<TokenTwoFactorRequest> {
     if (userProvidedTwoFactor != null) {
       return userProvidedTwoFactor;
     }
 
-    const storedTwoFactorToken = await this.tokenService.getTwoFactorToken();
-    if (storedTwoFactorToken != null) {
-      return new TokenTwoFactorRequest(TwoFactorProviderType.Remember, storedTwoFactorToken, false);
+    if (email) {
+      const storedTwoFactorToken = await this.tokenService.getTwoFactorToken(email);
+      if (storedTwoFactorToken != null) {
+        return new TokenTwoFactorRequest(
+          TwoFactorProviderType.Remember,
+          storedTwoFactorToken,
+          false,
+        );
+      }
     }
 
     return new TokenTwoFactorRequest();
   }
 
-  protected async saveAccountInformation(tokenResponse: IdentityTokenResponse) {
-    const accountInformation = await this.tokenService.decodeToken(tokenResponse.accessToken);
+  /**
+   * Initializes the account with information from the IdTokenResponse after successful login.
+   * It also sets the access token and refresh token in the token service.
+   *
+   * @param {IdentityTokenResponse} tokenResponse - The response from the server containing the identity token.
+   * @returns {Promise<void>} - A promise that resolves when the account information has been successfully saved.
+   */
+  protected async saveAccountInformation(tokenResponse: IdentityTokenResponse): Promise<void> {
+    const accountInformation = await this.tokenService.decodeAccessToken(tokenResponse.accessToken);
 
     // Must persist existing device key if it exists for trusted device decryption to work
     // However, we must provide a user id so that the device key can be retrieved
@@ -140,6 +170,18 @@ export abstract class LoginStrategy {
 
     // If you don't persist existing admin auth requests on login, they will get deleted.
     const adminAuthRequest = await this.stateService.getAdminAuthRequest({ userId });
+
+    const vaultTimeoutAction = await this.stateService.getVaultTimeoutAction();
+    const vaultTimeout = await this.stateService.getVaultTimeout();
+
+    // set access token and refresh token before account initialization so authN status can be accurate
+    // User id will be derived from the access token.
+    await this.tokenService.setTokens(
+      tokenResponse.accessToken,
+      tokenResponse.refreshToken,
+      vaultTimeoutAction as VaultTimeoutAction,
+      vaultTimeout,
+    );
 
     await this.stateService.addAccount(
       new Account({
@@ -158,10 +200,6 @@ export abstract class LoginStrategy {
         },
         tokens: {
           ...new AccountTokens(),
-          ...{
-            accessToken: tokenResponse.accessToken,
-            refreshToken: tokenResponse.refreshToken,
-          },
         },
         keys: accountKeys,
         decryptionOptions: AccountDecryptionOptions.fromResponse(tokenResponse),
@@ -193,7 +231,10 @@ export abstract class LoginStrategy {
     await this.saveAccountInformation(response);
 
     if (response.twoFactorToken != null) {
-      await this.tokenService.setTwoFactorToken(response);
+      // note: we can read email from access token b/c it was saved in saveAccountInformation
+      const userEmail = await this.tokenService.getEmail();
+
+      await this.tokenService.setTwoFactorToken(userEmail, response.twoFactorToken);
     }
 
     await this.setMasterKey(response);
@@ -226,7 +267,18 @@ export abstract class LoginStrategy {
     }
   }
 
+  /**
+   * Handles the response from the server when a 2FA is required.
+   * It clears any existing 2FA token, as it's no longer valid, and sets up the necessary data for the 2FA process.
+   *
+   * @param {IdentityTwoFactorResponse} response - The response from the server indicating that 2FA is required.
+   * @returns {Promise<AuthResult>} - A promise that resolves to an AuthResult object
+   */
   private async processTwoFactorResponse(response: IdentityTwoFactorResponse): Promise<AuthResult> {
+    // If we get a 2FA required response, then we should clear the 2FA token
+    // just in case as it is no longer valid.
+    await this.clearTwoFactorToken();
+
     const result = new AuthResult();
     result.twoFactorProviders = response.twoFactorProviders2;
 
@@ -235,6 +287,16 @@ export abstract class LoginStrategy {
     result.ssoEmail2FaSessionToken = response.ssoEmail2faSessionToken;
     result.email = response.email;
     return result;
+  }
+
+  /**
+   * Clears the 2FA token from the token service using the user's email if it exists
+   */
+  private async clearTwoFactorToken() {
+    const email = this.cache.value.userEnteredEmail;
+    if (email) {
+      await this.tokenService.clearTwoFactorToken(email);
+    }
   }
 
   private async processCaptchaResponse(response: IdentityCaptchaResponse): Promise<AuthResult> {

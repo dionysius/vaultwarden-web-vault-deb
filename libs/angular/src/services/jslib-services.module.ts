@@ -250,6 +250,7 @@ import {
   SECURE_STORAGE,
   STATE_FACTORY,
   STATE_SERVICE_USE_CACHE,
+  SUPPORTS_SECURE_STORAGE,
   SYSTEM_LANGUAGE,
   SYSTEM_THEME_OBSERVABLE,
   WINDOW,
@@ -271,6 +272,12 @@ const typesafeProviders: Array<SafeProvider> = [
     provide: LOCALE_ID as SafeInjectionToken<string>,
     useFactory: (i18nService: I18nServiceAbstraction) => i18nService.translationLocale,
     deps: [I18nServiceAbstraction],
+  }),
+  safeProvider({
+    provide: SUPPORTS_SECURE_STORAGE,
+    useFactory: (platformUtilsService: PlatformUtilsServiceAbstraction) =>
+      platformUtilsService.supportsSecureStorage(),
+    deps: [PlatformUtilsServiceAbstraction],
   }),
   safeProvider({
     provide: LOCALES_DIRECTORY,
@@ -475,7 +482,12 @@ const typesafeProviders: Array<SafeProvider> = [
   safeProvider({
     provide: TokenServiceAbstraction,
     useClass: TokenService,
-    deps: [StateServiceAbstraction],
+    deps: [
+      SingleUserStateProvider,
+      GlobalStateProvider,
+      SUPPORTS_SECURE_STORAGE,
+      AbstractStorageService,
+    ],
   }),
   safeProvider({
     provide: KeyGenerationServiceAbstraction,
@@ -519,6 +531,7 @@ const typesafeProviders: Array<SafeProvider> = [
       PlatformUtilsServiceAbstraction,
       EnvironmentServiceAbstraction,
       AppIdServiceAbstraction,
+      StateServiceAbstraction,
       LOGOUT_CALLBACK,
     ],
   }),
@@ -621,6 +634,7 @@ const typesafeProviders: Array<SafeProvider> = [
       STATE_FACTORY,
       AccountServiceAbstraction,
       EnvironmentServiceAbstraction,
+      TokenServiceAbstraction,
       MigrationRunner,
       STATE_SERVICE_USE_CACHE,
     ],

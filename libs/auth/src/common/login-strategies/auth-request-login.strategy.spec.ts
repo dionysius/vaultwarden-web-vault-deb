@@ -67,7 +67,7 @@ describe("AuthRequestLoginStrategy", () => {
 
     tokenService.getTwoFactorToken.mockResolvedValue(null);
     appIdService.getAppId.mockResolvedValue(deviceId);
-    tokenService.decodeToken.mockResolvedValue({});
+    tokenService.decodeAccessToken.mockResolvedValue({});
 
     authRequestLoginStrategy = new AuthRequestLoginStrategy(
       cache,

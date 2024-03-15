@@ -79,7 +79,7 @@ export class AuthRequestLoginStrategy extends LoginStrategy {
       credentials.email,
       credentials.accessCode,
       null,
-      await this.buildTwoFactor(credentials.twoFactor),
+      await this.buildTwoFactor(credentials.twoFactor, credentials.email),
       await this.buildDeviceRequest(),
     );
     data.tokenRequest.setAuthRequestAccessCode(credentials.authRequestId);

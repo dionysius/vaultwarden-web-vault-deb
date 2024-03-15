@@ -32,6 +32,10 @@ import { LoginStrategy, LoginStrategyData } from "./login.strategy";
 
 export class PasswordLoginStrategyData implements LoginStrategyData {
   tokenRequest: PasswordTokenRequest;
+
+  /** User's entered email obtained pre-login. Always present in MP login. */
+  userEnteredEmail: string;
+
   captchaBypassToken?: string;
   /**
    * The local version of the user's master key hash
@@ -105,6 +109,7 @@ export class PasswordLoginStrategy extends LoginStrategy {
 
     const data = new PasswordLoginStrategyData();
     data.masterKey = await this.loginStrategyService.makePreloginKey(masterPassword, email);
+    data.userEnteredEmail = email;
 
     // Hash the password early (before authentication) so we don't persist it in memory in plaintext
     data.localMasterKeyHash = await this.cryptoService.hashMasterKey(
@@ -118,7 +123,7 @@ export class PasswordLoginStrategy extends LoginStrategy {
       email,
       masterKeyHash,
       captchaToken,
-      await this.buildTwoFactor(twoFactor),
+      await this.buildTwoFactor(twoFactor, email),
       await this.buildDeviceRequest(),
     );
 

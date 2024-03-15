@@ -71,7 +71,7 @@ describe("WebAuthnLoginStrategy", () => {
 
     tokenService.getTwoFactorToken.mockResolvedValue(null);
     appIdService.getAppId.mockResolvedValue(deviceId);
-    tokenService.decodeToken.mockResolvedValue({});
+    tokenService.decodeAccessToken.mockResolvedValue({});
 
     webAuthnLoginStrategy = new WebAuthnLoginStrategy(
       cache,

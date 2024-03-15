@@ -1,5 +1,6 @@
 import { mock, MockProxy } from "jest-mock-extended";
 
+import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import {
@@ -32,6 +33,7 @@ describe("Browser State Service", () => {
   let stateFactory: MockProxy<StateFactory<GlobalState, Account>>;
   let useAccountCache: boolean;
   let environmentService: MockProxy<EnvironmentService>;
+  let tokenService: MockProxy<TokenService>;
   let migrationRunner: MockProxy<MigrationRunner>;
 
   let state: State<GlobalState, Account>;
@@ -46,6 +48,7 @@ describe("Browser State Service", () => {
     logService = mock();
     stateFactory = mock();
     environmentService = mock();
+    tokenService = mock();
     migrationRunner = mock();
     // turn off account cache for tests
     useAccountCache = false;
@@ -77,6 +80,7 @@ describe("Browser State Service", () => {
         stateFactory,
         accountService,
         environmentService,
+        tokenService,
         migrationRunner,
         useAccountCache,
       );

@@ -184,6 +184,11 @@ export class MainContextMenuHandler {
         stateServiceOptions: {
           stateFactory: stateFactory,
         },
+        platformUtilsServiceOptions: {
+          clipboardWriteCallback: () => Promise.resolve(),
+          biometricCallback: () => Promise.resolve(false),
+          win: self,
+        },
       };
 
     return new MainContextMenuHandler(

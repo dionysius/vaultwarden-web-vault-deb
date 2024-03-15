@@ -114,7 +114,7 @@ describe("LoginStrategyService", () => {
         token_type: "Bearer",
       }),
     );
-    tokenService.decodeToken.calledWith("ACCESS_TOKEN").mockResolvedValue({
+    tokenService.decodeAccessToken.calledWith("ACCESS_TOKEN").mockResolvedValue({
       sub: "USER_ID",
       name: "NAME",
       email: "EMAIL",
@@ -161,7 +161,7 @@ describe("LoginStrategyService", () => {
       }),
     );
 
-    tokenService.decodeToken.calledWith("ACCESS_TOKEN").mockResolvedValue({
+    tokenService.decodeAccessToken.calledWith("ACCESS_TOKEN").mockResolvedValue({
       sub: "USER_ID",
       name: "NAME",
       email: "EMAIL",

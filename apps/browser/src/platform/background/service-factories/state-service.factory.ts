@@ -5,6 +5,10 @@ import {
   accountServiceFactory,
   AccountServiceInitOptions,
 } from "../../../auth/background/service-factories/account-service.factory";
+import {
+  tokenServiceFactory,
+  TokenServiceInitOptions,
+} from "../../../auth/background/service-factories/token-service.factory";
 import { Account } from "../../../models/account";
 import { BrowserStateService } from "../../services/browser-state.service";
 
@@ -38,6 +42,7 @@ export type StateServiceInitOptions = StateServiceFactoryOptions &
   LogServiceInitOptions &
   AccountServiceInitOptions &
   EnvironmentServiceInitOptions &
+  TokenServiceInitOptions &
   MigrationRunnerInitOptions;
 
 export async function stateServiceFactory(
@@ -57,6 +62,7 @@ export async function stateServiceFactory(
         opts.stateServiceOptions.stateFactory,
         await accountServiceFactory(cache, opts),
         await environmentServiceFactory(cache, opts),
+        await tokenServiceFactory(cache, opts),
         await migrationRunnerFactory(cache, opts),
         opts.stateServiceOptions.useAccountCache,
       ),

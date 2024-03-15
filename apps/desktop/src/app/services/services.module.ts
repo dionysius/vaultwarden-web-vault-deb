@@ -10,6 +10,7 @@ import {
   OBSERVABLE_MEMORY_STORAGE,
   OBSERVABLE_DISK_STORAGE,
   WINDOW,
+  SUPPORTS_SECURE_STORAGE,
   SYSTEM_THEME_OBSERVABLE,
 } from "@bitwarden/angular/services/injection-tokens";
 import { JslibServicesModule } from "@bitwarden/angular/services/jslib-services.module";
@@ -18,6 +19,7 @@ import { PolicyService as PolicyServiceAbstraction } from "@bitwarden/common/adm
 import { AccountService as AccountServiceAbstraction } from "@bitwarden/common/auth/abstractions/account.service";
 import { AuthService as AuthServiceAbstraction } from "@bitwarden/common/auth/abstractions/auth.service";
 import { LoginService as LoginServiceAbstraction } from "@bitwarden/common/auth/abstractions/login.service";
+import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
 import { LoginService } from "@bitwarden/common/auth/services/login.service";
 import { AutofillSettingsServiceAbstraction } from "@bitwarden/common/autofill/services/autofill-settings.service";
 import { BroadcasterService as BroadcasterServiceAbstraction } from "@bitwarden/common/platform/abstractions/broadcaster.service";
@@ -54,7 +56,10 @@ import { LoginGuard } from "../../auth/guards/login.guard";
 import { Account } from "../../models/account";
 import { ElectronCryptoService } from "../../platform/services/electron-crypto.service";
 import { ElectronLogRendererService } from "../../platform/services/electron-log.renderer.service";
-import { ElectronPlatformUtilsService } from "../../platform/services/electron-platform-utils.service";
+import {
+  ELECTRON_SUPPORTS_SECURE_STORAGE,
+  ElectronPlatformUtilsService,
+} from "../../platform/services/electron-platform-utils.service";
 import { ElectronRendererMessagingService } from "../../platform/services/electron-renderer-messaging.service";
 import { ElectronRendererSecureStorageService } from "../../platform/services/electron-renderer-secure-storage.service";
 import { ElectronRendererStorageService } from "../../platform/services/electron-renderer-storage.service";
@@ -102,6 +107,13 @@ const RELOAD_CALLBACK = new InjectionToken<() => any>("RELOAD_CALLBACK");
       deps: [I18nServiceAbstraction, MessagingServiceAbstraction],
     },
     {
+      // We manually override the value of SUPPORTS_SECURE_STORAGE here to avoid
+      // the TokenService having to inject the PlatformUtilsService which introduces a
+      // circular dependency on Desktop only.
+      provide: SUPPORTS_SECURE_STORAGE,
+      useValue: ELECTRON_SUPPORTS_SECURE_STORAGE,
+    },
+    {
       provide: I18nServiceAbstraction,
       useClass: I18nRendererService,
       deps: [SYSTEM_LANGUAGE, LOCALES_DIRECTORY, GlobalStateProvider],
@@ -140,6 +152,7 @@ const RELOAD_CALLBACK = new InjectionToken<() => any>("RELOAD_CALLBACK");
         STATE_FACTORY,
         AccountServiceAbstraction,
         EnvironmentService,
+        TokenService,
         MigrationRunner,
         STATE_SERVICE_USE_CACHE,
       ],

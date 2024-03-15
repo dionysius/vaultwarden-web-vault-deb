@@ -4,6 +4,7 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { KeyConnectorService } from "@bitwarden/common/auth/abstractions/key-connector.service";
 import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
 import { TwoFactorService } from "@bitwarden/common/auth/abstractions/two-factor.service";
+import { VaultTimeoutAction } from "@bitwarden/common/enums/vault-timeout-action.enum";
 import { AppIdService } from "@bitwarden/common/platform/abstractions/app-id.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
@@ -59,7 +60,7 @@ describe("UserApiLoginStrategy", () => {
 
     appIdService.getAppId.mockResolvedValue(deviceId);
     tokenService.getTwoFactorToken.mockResolvedValue(null);
-    tokenService.decodeToken.mockResolvedValue({});
+    tokenService.decodeAccessToken.mockResolvedValue({});
 
     apiLogInStrategy = new UserApiLoginStrategy(
       cache,
@@ -101,10 +102,23 @@ describe("UserApiLoginStrategy", () => {
   it("sets the local environment after a successful login", async () => {
     apiService.postIdentityToken.mockResolvedValue(identityTokenResponseFactory());
 
+    const mockVaultTimeoutAction = VaultTimeoutAction.Lock;
+    const mockVaultTimeout = 60;
+    stateService.getVaultTimeoutAction.mockResolvedValue(mockVaultTimeoutAction);
+    stateService.getVaultTimeout.mockResolvedValue(mockVaultTimeout);
+
     await apiLogInStrategy.logIn(credentials);
 
-    expect(stateService.setApiKeyClientId).toHaveBeenCalledWith(apiClientId);
-    expect(stateService.setApiKeyClientSecret).toHaveBeenCalledWith(apiClientSecret);
+    expect(tokenService.setClientId).toHaveBeenCalledWith(
+      apiClientId,
+      mockVaultTimeoutAction,
+      mockVaultTimeout,
+    );
+    expect(tokenService.setClientSecret).toHaveBeenCalledWith(
+      apiClientSecret,
+      mockVaultTimeoutAction,
+      mockVaultTimeout,
+    );
     expect(stateService.addAccount).toHaveBeenCalled();
   });
 

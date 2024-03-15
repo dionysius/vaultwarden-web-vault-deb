@@ -81,7 +81,7 @@ describe("PasswordLoginStrategy", () => {
     passwordStrengthService = mock<PasswordStrengthService>();
 
     appIdService.getAppId.mockResolvedValue(deviceId);
-    tokenService.decodeToken.mockResolvedValue({});
+    tokenService.decodeAccessToken.mockResolvedValue({});
 
     loginStrategyService.makePreloginKey.mockResolvedValue(masterKey);
 

@@ -203,6 +203,7 @@ export class LoginCommand {
             ssoCodeVerifier,
             this.ssoRedirectUri,
             orgIdentifier,
+            undefined, // email to look up 2FA token not required as CLI can't remember 2FA token
             twoFactor,
           ),
         );

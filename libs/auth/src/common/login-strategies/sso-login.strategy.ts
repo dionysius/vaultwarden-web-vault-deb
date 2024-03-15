@@ -30,6 +30,10 @@ export class SsoLoginStrategyData implements LoginStrategyData {
   captchaBypassToken: string;
   tokenRequest: SsoTokenRequest;
   /**
+   * User's entered email obtained pre-login. Present in most SSO flows, but not CLI + SSO Flow.
+   */
+  userEnteredEmail?: string;
+  /**
    * User email address. Only available after authentication.
    */
   email?: string;
@@ -105,11 +109,14 @@ export class SsoLoginStrategy extends LoginStrategy {
   async logIn(credentials: SsoLoginCredentials) {
     const data = new SsoLoginStrategyData();
     data.orgId = credentials.orgId;
+
+    data.userEnteredEmail = credentials.email;
+
     data.tokenRequest = new SsoTokenRequest(
       credentials.code,
       credentials.codeVerifier,
       credentials.redirectUrl,
-      await this.buildTwoFactor(credentials.twoFactor),
+      await this.buildTwoFactor(credentials.twoFactor, credentials.email),
       await this.buildDeviceRequest(),
     );
 
