@@ -33,7 +33,6 @@ import { DomainSettingsMigrator } from "./migrations/34-move-domain-settings-to-
 import { MoveThemeToStateProviderMigrator } from "./migrations/35-move-theme-to-state-providers";
 import { VaultSettingsKeyMigrator } from "./migrations/36-move-show-card-and-identity-to-state-provider";
 import { AvatarColorMigrator } from "./migrations/37-move-avatar-color-to-state-providers";
-import { DeleteBiometricPromptCancelledData } from "./migrations/38-delete-orphaned-biometric-prompt-data";
 import { RemoveEverBeenUnlockedMigrator } from "./migrations/4-remove-ever-been-unlocked";
 import { AddKeyTypeToOrgKeysMigrator } from "./migrations/5-add-key-type-to-org-keys";
 import { RemoveLegacyEtmKeyMigrator } from "./migrations/6-remove-legacy-etm-key";
@@ -43,7 +42,7 @@ import { MoveBrowserSettingsToGlobal } from "./migrations/9-move-browser-setting
 import { MinVersionMigrator } from "./migrations/min-version";
 
 export const MIN_VERSION = 2;
-export const CURRENT_VERSION = 38;
+export const CURRENT_VERSION = 37;
 export type MinVersion = typeof MIN_VERSION;
 
 export function createMigrationBuilder() {
@@ -83,8 +82,7 @@ export function createMigrationBuilder() {
     .with(DomainSettingsMigrator, 33, 34)
     .with(MoveThemeToStateProviderMigrator, 34, 35)
     .with(VaultSettingsKeyMigrator, 35, 36)
-    .with(AvatarColorMigrator, 36, 37)
-    .with(DeleteBiometricPromptCancelledData, 37, CURRENT_VERSION);
+    .with(AvatarColorMigrator, 36, CURRENT_VERSION);
 }
 
 export async function currentVersion(
