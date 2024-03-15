@@ -485,12 +485,7 @@ const typesafeProviders: Array<SafeProvider> = [
   safeProvider({
     provide: TokenServiceAbstraction,
     useClass: TokenService,
-    deps: [
-      SingleUserStateProvider,
-      GlobalStateProvider,
-      SUPPORTS_SECURE_STORAGE,
-      AbstractStorageService,
-    ],
+    deps: [SingleUserStateProvider, GlobalStateProvider, SUPPORTS_SECURE_STORAGE, SECURE_STORAGE],
   }),
   safeProvider({
     provide: KeyGenerationServiceAbstraction,

@@ -42,6 +42,7 @@ import { ELECTRON_SUPPORTS_SECURE_STORAGE } from "./platform/services/electron-p
 import { ElectronStateService } from "./platform/services/electron-state.service";
 import { ElectronStorageService } from "./platform/services/electron-storage.service";
 import { I18nMainService } from "./platform/services/i18n.main.service";
+import { IllegalSecureStorageService } from "./platform/services/illegal-secure-storage-service";
 import { ElectronMainMessagingService } from "./services/electron-main-messaging.service";
 
 export class Main {
@@ -147,11 +148,14 @@ export class Main {
 
     this.environmentService = new EnvironmentService(stateProvider, accountService);
 
+    // Note: secure storage service is not available and should not be called in the main background process.
+    const illegalSecureStorageService = new IllegalSecureStorageService();
+
     this.tokenService = new TokenService(
       singleUserStateProvider,
       globalStateProvider,
       ELECTRON_SUPPORTS_SECURE_STORAGE,
-      this.storageService,
+      illegalSecureStorageService,
     );
 
     this.migrationRunner = new MigrationRunner(
