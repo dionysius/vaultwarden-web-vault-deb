@@ -119,7 +119,7 @@
     "message": "Дадаць лагін"
   },
   "addCardMenu": {
-    "message": "Add card"
+    "message": "Дадаць картку"
   },
   "addIdentityMenu": {
     "message": "Add identity"
@@ -269,7 +269,7 @@
     "message": "Даўжыня"
   },
   "passwordMinLength": {
-    "message": "Minimum password length"
+    "message": "Мінімальная даўжыня пароля"
   },
   "uppercase": {
     "message": "Вялікія літары (A-Z)"
@@ -369,7 +369,7 @@
     "message": "Iншае"
   },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
-    "message": "Set up an unlock method to change your vault timeout action."
+    "message": "Наладзіць метад разблакіроўкі для змянення дзеяння часу чакання вашага сховішча."
   },
   "unlockMethodNeeded": {
     "message": "Set up an unlock method in Settings"
@@ -415,7 +415,7 @@
     "message": "Заблакіраваць зараз"
   },
   "lockAll": {
-    "message": "Lock all"
+    "message": "Заблакаваць усе"
   },
   "immediately": {
     "message": "Адразу"
@@ -494,7 +494,7 @@
     "message": "Ваш уліковы запіс створаны! Цяпер вы можаце ўвайсці ў яго."
   },
   "youSuccessfullyLoggedIn": {
-    "message": "You successfully logged in"
+    "message": "Вы паспяхова аўтарызаваны"
   },
   "youMayCloseThisWindow": {
     "message": "You may close this window"
@@ -2005,7 +2005,7 @@
     "message": "Выбраць папку..."
   },
   "noFoldersFound": {
-    "message": "No folders found",
+    "message": "Папкі не знойдзены",
     "description": "Used as a message within the notification bar when no folders are found"
   },
   "orgPermissionsUpdatedMustSetPassword": {
@@ -2215,7 +2215,7 @@
     "message": "Версія сервера"
   },
   "selfHostedServer": {
-    "message": "self-hosted"
+    "message": "уласнае размяшчэнне"
   },
   "thirdParty": {
     "message": "Іншы пастаўшчык"
@@ -2356,25 +2356,25 @@
     }
   },
   "loggingInOn": {
-    "message": "Logging in on"
+    "message": "Увайсці на"
   },
   "opensInANewWindow": {
     "message": "Адкрываць у новым акне"
   },
   "deviceApprovalRequired": {
-    "message": "Device approval required. Select an approval option below:"
+    "message": "Патрабуецца ўхваленне прылады. Выберыце параметры ўхвалення ніжэй:"
   },
   "rememberThisDevice": {
-    "message": "Remember this device"
+    "message": "Запомніць гэту прыладу"
   },
   "uncheckIfPublicDevice": {
-    "message": "Uncheck if using a public device"
+    "message": "Здыміце пазнаку, калі выкарыстоўваеце агульнадаступную прыладу"
   },
   "approveFromYourOtherDevice": {
-    "message": "Approve from your other device"
+    "message": "Ухваліць з іншай вашай прылады"
   },
   "requestAdminApproval": {
-    "message": "Request admin approval"
+    "message": "Запытаць ухваленне адміністратара"
   },
   "approveWithMasterPassword": {
     "message": "Approve with master password"
@@ -2402,7 +2402,7 @@
     "message": "Адлюстраванне"
   },
   "accountSuccessfullyCreated": {
-    "message": "Account successfully created!"
+    "message": "Уліковы запіс паспяхова створаны!"
   },
   "adminApprovalRequested": {
     "message": "Admin approval requested"
