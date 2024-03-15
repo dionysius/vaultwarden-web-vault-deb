@@ -70,7 +70,7 @@
           type="button"
           bitButton
           buttonType="secondary"
-          [disabled]="!canAccessPremium && p.premium"
+          [disabled]="!(canAccessPremium$ | async) && p.premium"
           (click)="manage(p.type)"
         >
           {{ "manage" | i18n }}

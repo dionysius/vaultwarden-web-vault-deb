@@ -41,6 +41,8 @@ import {
   DefaultDomainSettingsService,
   DomainSettingsService,
 } from "@bitwarden/common/autofill/services/domain-settings.service";
+import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions/account/billing-account-profile-state.service";
+import { DefaultBillingAccountProfileStateService } from "@bitwarden/common/billing/services/account/billing-account-profile-state.service";
 import { ClientType } from "@bitwarden/common/enums";
 import { ConfigApiServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config-api.service.abstraction";
 import { KeyGenerationService as KeyGenerationServiceAbstraction } from "@bitwarden/common/platform/abstractions/key-generation.service";
@@ -221,6 +223,7 @@ export class Main {
   avatarService: AvatarServiceAbstraction;
   stateEventRunnerService: StateEventRunnerService;
   biometricStateService: BiometricStateService;
+  billingAccountProfileStateService: BillingAccountProfileStateService;
 
   constructor() {
     let p = null;
@@ -456,6 +459,10 @@ export class Main {
       this.stateService,
     );
 
+    this.billingAccountProfileStateService = new DefaultBillingAccountProfileStateService(
+      this.activeUserStateProvider,
+    );
+
     this.loginStrategyService = new LoginStrategyService(
       this.cryptoService,
       this.apiService,
@@ -475,6 +482,7 @@ export class Main {
       this.deviceTrustCryptoService,
       this.authRequestService,
       this.globalStateProvider,
+      this.billingAccountProfileStateService,
     );
 
     this.authService = new AuthService(
@@ -586,6 +594,7 @@ export class Main {
       this.sendApiService,
       this.avatarService,
       async (expired: boolean) => await this.logout(),
+      this.billingAccountProfileStateService,
     );
 
     this.totpService = new TotpService(this.cryptoFunctionService, this.logService);

@@ -9,6 +9,7 @@ import {
   ApiServiceInitOptions,
 } from "../../../platform/background/service-factories/api-service.factory";
 import { appIdServiceFactory } from "../../../platform/background/service-factories/app-id-service.factory";
+import { billingAccountProfileStateServiceFactory } from "../../../platform/background/service-factories/billing-account-profile-state-service.factory";
 import {
   CryptoServiceInitOptions,
   cryptoServiceFactory,
@@ -119,6 +120,7 @@ export function loginStrategyServiceFactory(
         await deviceTrustCryptoServiceFactory(cache, opts),
         await authRequestServiceFactory(cache, opts),
         await globalStateProviderFactory(cache, opts),
+        await billingAccountProfileStateServiceFactory(cache, opts),
       ),
   );
 }

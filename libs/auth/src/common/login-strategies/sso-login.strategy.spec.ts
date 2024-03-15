@@ -9,6 +9,7 @@ import { AdminAuthRequestStorable } from "@bitwarden/common/auth/models/domain/a
 import { AuthRequestResponse } from "@bitwarden/common/auth/models/response/auth-request.response";
 import { IdentityTokenResponse } from "@bitwarden/common/auth/models/response/identity-token.response";
 import { IUserDecryptionOptionsServerResponse } from "@bitwarden/common/auth/models/response/user-decryption-options/user-decryption-options.response";
+import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions/account/billing-account-profile-state.service";
 import { ErrorResponse } from "@bitwarden/common/models/response/error.response";
 import { AppIdService } from "@bitwarden/common/platform/abstractions/app-id.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
@@ -42,6 +43,7 @@ describe("SsoLoginStrategy", () => {
   let deviceTrustCryptoService: MockProxy<DeviceTrustCryptoServiceAbstraction>;
   let authRequestService: MockProxy<AuthRequestServiceAbstraction>;
   let i18nService: MockProxy<I18nService>;
+  let billingAccountProfileStateService: MockProxy<BillingAccountProfileStateService>;
 
   let ssoLoginStrategy: SsoLoginStrategy;
   let credentials: SsoLoginCredentials;
@@ -68,6 +70,7 @@ describe("SsoLoginStrategy", () => {
     deviceTrustCryptoService = mock<DeviceTrustCryptoServiceAbstraction>();
     authRequestService = mock<AuthRequestServiceAbstraction>();
     i18nService = mock<I18nService>();
+    billingAccountProfileStateService = mock<BillingAccountProfileStateService>();
 
     tokenService.getTwoFactorToken.mockResolvedValue(null);
     appIdService.getAppId.mockResolvedValue(deviceId);
@@ -88,6 +91,7 @@ describe("SsoLoginStrategy", () => {
       deviceTrustCryptoService,
       authRequestService,
       i18nService,
+      billingAccountProfileStateService,
     );
     credentials = new SsoLoginCredentials(ssoCode, ssoCodeVerifier, ssoRedirectUrl, ssoOrgId);
   });

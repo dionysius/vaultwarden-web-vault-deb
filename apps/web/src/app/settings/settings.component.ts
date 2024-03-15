@@ -1,11 +1,11 @@
 import { Component, NgZone, OnDestroy, OnInit } from "@angular/core";
+import { firstValueFrom } from "rxjs";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
+import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions/account/billing-account-profile-state.service";
 import { BroadcasterService } from "@bitwarden/common/platform/abstractions/broadcaster.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-
-import { StateService } from "../core";
 
 const BroadcasterSubscriptionId = "SettingsComponent";
 
@@ -24,8 +24,8 @@ export class SettingsComponent implements OnInit, OnDestroy {
     private ngZone: NgZone,
     private platformUtilsService: PlatformUtilsService,
     private organizationService: OrganizationService,
-    private stateService: StateService,
     private apiService: ApiService,
+    private billingAccountProfileStateServiceAbstraction: BillingAccountProfileStateService,
   ) {}
 
   async ngOnInit() {
@@ -51,9 +51,13 @@ export class SettingsComponent implements OnInit, OnDestroy {
   }
 
   async load() {
-    this.premium = await this.stateService.getHasPremiumPersonally();
+    this.premium = await firstValueFrom(
+      this.billingAccountProfileStateServiceAbstraction.hasPremiumPersonally$,
+    );
     this.hasFamilySponsorshipAvailable = await this.organizationService.canManageSponsorships();
-    const hasPremiumFromOrg = await this.stateService.getHasPremiumFromOrganization();
+    const hasPremiumFromOrg = await firstValueFrom(
+      this.billingAccountProfileStateServiceAbstraction.hasPremiumFromAnyOrganization$,
+    );
     let billing = null;
     if (!this.selfHosted) {
       billing = await this.apiService.getUserBillingHistory();

@@ -5,6 +5,7 @@ import { UserVerificationService } from "@bitwarden/common/auth/abstractions/use
 import { AutofillSettingsServiceAbstraction } from "@bitwarden/common/autofill/services/autofill-settings.service";
 import { DomainSettingsService } from "@bitwarden/common/autofill/services/domain-settings.service";
 import { InlineMenuVisibilitySetting } from "@bitwarden/common/autofill/types";
+import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions/account/billing-account-profile-state.service";
 import { EventType } from "@bitwarden/common/enums";
 import {
   UriMatchStrategySetting,
@@ -55,6 +56,7 @@ export default class AutofillService implements AutofillServiceInterface {
     private logService: LogService,
     private domainSettingsService: DomainSettingsService,
     private userVerificationService: UserVerificationService,
+    private billingAccountProfileStateService: BillingAccountProfileStateService,
   ) {}
 
   /**
@@ -240,7 +242,9 @@ export default class AutofillService implements AutofillServiceInterface {
 
     let totp: string | null = null;
 
-    const canAccessPremium = await this.stateService.getCanAccessPremium();
+    const canAccessPremium = await firstValueFrom(
+      this.billingAccountProfileStateService.hasPremiumFromAnySource$,
+    );
     const defaultUriMatch = await this.getDefaultUriMatchStrategy();
 
     if (!canAccessPremium) {

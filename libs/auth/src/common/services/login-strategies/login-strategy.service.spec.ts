@@ -11,6 +11,7 @@ import { AuthResult } from "@bitwarden/common/auth/models/domain/auth-result";
 import { TokenTwoFactorRequest } from "@bitwarden/common/auth/models/request/identity-token/token-two-factor.request";
 import { IdentityTokenResponse } from "@bitwarden/common/auth/models/response/identity-token.response";
 import { IdentityTwoFactorResponse } from "@bitwarden/common/auth/models/response/identity-two-factor.response";
+import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions/account/billing-account-profile-state.service";
 import { AppIdService } from "@bitwarden/common/platform/abstractions/app-id.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
@@ -50,6 +51,7 @@ describe("LoginStrategyService", () => {
   let policyService: MockProxy<PolicyService>;
   let deviceTrustCryptoService: MockProxy<DeviceTrustCryptoServiceAbstraction>;
   let authRequestService: MockProxy<AuthRequestServiceAbstraction>;
+  let billingAccountProfileStateService: MockProxy<BillingAccountProfileStateService>;
 
   let stateProvider: FakeGlobalStateProvider;
   let loginStrategyCacheExpirationState: FakeGlobalState<Date | null>;
@@ -72,6 +74,7 @@ describe("LoginStrategyService", () => {
     policyService = mock<PolicyService>();
     deviceTrustCryptoService = mock<DeviceTrustCryptoServiceAbstraction>();
     authRequestService = mock<AuthRequestServiceAbstraction>();
+    billingAccountProfileStateService = mock<BillingAccountProfileStateService>();
     stateProvider = new FakeGlobalStateProvider();
 
     sut = new LoginStrategyService(
@@ -93,6 +96,7 @@ describe("LoginStrategyService", () => {
       deviceTrustCryptoService,
       authRequestService,
       stateProvider,
+      billingAccountProfileStateService,
     );
 
     loginStrategyCacheExpirationState = stateProvider.getFake(CACHE_EXPIRATION_KEY);

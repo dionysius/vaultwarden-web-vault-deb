@@ -11,6 +11,7 @@ import { AvatarService } from "../../../auth/abstractions/avatar.service";
 import { KeyConnectorService } from "../../../auth/abstractions/key-connector.service";
 import { ForceSetPasswordReason } from "../../../auth/models/domain/force-set-password-reason";
 import { DomainSettingsService } from "../../../autofill/services/domain-settings.service";
+import { BillingAccountProfileStateService } from "../../../billing/abstractions/account/billing-account-profile-state.service";
 import { DomainsResponse } from "../../../models/response/domains.response";
 import {
   SyncCipherNotification,
@@ -62,6 +63,7 @@ export class SyncService implements SyncServiceAbstraction {
     private sendApiService: SendApiService,
     private avatarService: AvatarService,
     private logoutCallback: (expired: boolean) => Promise<void>,
+    private billingAccountProfileStateService: BillingAccountProfileStateService,
   ) {}
 
   async getLastSync(): Promise<Date> {
@@ -314,8 +316,11 @@ export class SyncService implements SyncServiceAbstraction {
     await this.avatarService.setAvatarColor(response.avatarColor);
     await this.stateService.setSecurityStamp(response.securityStamp);
     await this.stateService.setEmailVerified(response.emailVerified);
-    await this.stateService.setHasPremiumPersonally(response.premiumPersonally);
-    await this.stateService.setHasPremiumFromOrganization(response.premiumFromOrganization);
+
+    await this.billingAccountProfileStateService.setHasPremium(
+      response.premiumPersonally,
+      response.premiumFromOrganization,
+    );
     await this.keyConnectorService.setUsesKeyConnector(response.usesKeyConnector);
 
     await this.setForceSetPasswordReasonIfNeeded(response);

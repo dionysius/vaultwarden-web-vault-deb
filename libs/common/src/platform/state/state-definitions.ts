@@ -23,6 +23,9 @@ export const ORGANIZATIONS_DISK = new StateDefinition("organizations", "disk");
 export const POLICIES_DISK = new StateDefinition("policies", "disk");
 export const PROVIDERS_DISK = new StateDefinition("providers", "disk");
 
+// Billing
+export const BILLING_DISK = new StateDefinition("billing", "disk");
+
 // Auth
 
 export const ACCOUNT_MEMORY = new StateDefinition("account", "memory");
@@ -43,15 +46,11 @@ export const USER_NOTIFICATION_SETTINGS_DISK = new StateDefinition(
   "disk",
 );
 
-// Billing
-
 export const DOMAIN_SETTINGS_DISK = new StateDefinition("domainSettings", "disk");
-
 export const AUTOFILL_SETTINGS_DISK = new StateDefinition("autofillSettings", "disk");
 export const AUTOFILL_SETTINGS_DISK_LOCAL = new StateDefinition("autofillSettingsLocal", "disk", {
   web: "disk-local",
 });
-export const BILLING_DISK = new StateDefinition("billing", "disk");
 
 // Components
 

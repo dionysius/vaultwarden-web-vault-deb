@@ -6,6 +6,7 @@ import {
   EventCollectionServiceInitOptions,
   eventCollectionServiceFactory,
 } from "../../../background/service-factories/event-collection-service.factory";
+import { billingAccountProfileStateServiceFactory } from "../../../platform/background/service-factories/billing-account-profile-state-service.factory";
 import {
   CachedServices,
   factory,
@@ -69,6 +70,7 @@ export function autofillServiceFactory(
         await logServiceFactory(cache, opts),
         await domainSettingsServiceFactory(cache, opts),
         await userVerificationServiceFactory(cache, opts),
+        await billingAccountProfileStateServiceFactory(cache, opts),
       ),
   );
 }

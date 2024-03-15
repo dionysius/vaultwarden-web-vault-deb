@@ -5,6 +5,7 @@ import { DeviceTrustCryptoServiceAbstraction } from "@bitwarden/common/auth/abst
 import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
 import { TwoFactorService } from "@bitwarden/common/auth/abstractions/two-factor.service";
 import { IdentityTokenResponse } from "@bitwarden/common/auth/models/response/identity-token.response";
+import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions/account/billing-account-profile-state.service";
 import { AppIdService } from "@bitwarden/common/platform/abstractions/app-id.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
@@ -37,6 +38,7 @@ describe("AuthRequestLoginStrategy", () => {
   let stateService: MockProxy<StateService>;
   let twoFactorService: MockProxy<TwoFactorService>;
   let deviceTrustCryptoService: MockProxy<DeviceTrustCryptoServiceAbstraction>;
+  let billingAccountProfileStateService: MockProxy<BillingAccountProfileStateService>;
 
   let authRequestLoginStrategy: AuthRequestLoginStrategy;
   let credentials: AuthRequestLoginCredentials;
@@ -64,6 +66,7 @@ describe("AuthRequestLoginStrategy", () => {
     stateService = mock<StateService>();
     twoFactorService = mock<TwoFactorService>();
     deviceTrustCryptoService = mock<DeviceTrustCryptoServiceAbstraction>();
+    billingAccountProfileStateService = mock<BillingAccountProfileStateService>();
 
     tokenService.getTwoFactorToken.mockResolvedValue(null);
     appIdService.getAppId.mockResolvedValue(deviceId);
@@ -81,6 +84,7 @@ describe("AuthRequestLoginStrategy", () => {
       stateService,
       twoFactorService,
       deviceTrustCryptoService,
+      billingAccountProfileStateService,
     );
 
     tokenResponse = identityTokenResponseFactory();

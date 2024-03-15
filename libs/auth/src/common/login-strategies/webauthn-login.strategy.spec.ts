@@ -7,6 +7,7 @@ import { AuthResult } from "@bitwarden/common/auth/models/domain/auth-result";
 import { IdentityTokenResponse } from "@bitwarden/common/auth/models/response/identity-token.response";
 import { IUserDecryptionOptionsServerResponse } from "@bitwarden/common/auth/models/response/user-decryption-options/user-decryption-options.response";
 import { WebAuthnLoginAssertionResponseRequest } from "@bitwarden/common/auth/services/webauthn-login/request/webauthn-login-assertion-response.request";
+import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions/account/billing-account-profile-state.service";
 import { AppIdService } from "@bitwarden/common/platform/abstractions/app-id.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
@@ -34,6 +35,7 @@ describe("WebAuthnLoginStrategy", () => {
   let logService!: MockProxy<LogService>;
   let stateService!: MockProxy<StateService>;
   let twoFactorService!: MockProxy<TwoFactorService>;
+  let billingAccountProfileStateService: MockProxy<BillingAccountProfileStateService>;
 
   let webAuthnLoginStrategy!: WebAuthnLoginStrategy;
 
@@ -68,6 +70,7 @@ describe("WebAuthnLoginStrategy", () => {
     logService = mock<LogService>();
     stateService = mock<StateService>();
     twoFactorService = mock<TwoFactorService>();
+    billingAccountProfileStateService = mock<BillingAccountProfileStateService>();
 
     tokenService.getTwoFactorToken.mockResolvedValue(null);
     appIdService.getAppId.mockResolvedValue(deviceId);
@@ -84,6 +87,7 @@ describe("WebAuthnLoginStrategy", () => {
       logService,
       stateService,
       twoFactorService,
+      billingAccountProfileStateService,
     );
 
     // Create credentials

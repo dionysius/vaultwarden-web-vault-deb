@@ -7,6 +7,7 @@ import { TwoFactorService } from "@bitwarden/common/auth/abstractions/two-factor
 import { AuthResult } from "@bitwarden/common/auth/models/domain/auth-result";
 import { WebAuthnLoginTokenRequest } from "@bitwarden/common/auth/models/request/identity-token/webauthn-login-token.request";
 import { IdentityTokenResponse } from "@bitwarden/common/auth/models/response/identity-token.response";
+import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions/account/billing-account-profile-state.service";
 import { AppIdService } from "@bitwarden/common/platform/abstractions/app-id.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
@@ -48,6 +49,7 @@ export class WebAuthnLoginStrategy extends LoginStrategy {
     logService: LogService,
     stateService: StateService,
     twoFactorService: TwoFactorService,
+    billingAccountProfileStateService: BillingAccountProfileStateService,
   ) {
     super(
       cryptoService,
@@ -59,6 +61,7 @@ export class WebAuthnLoginStrategy extends LoginStrategy {
       logService,
       stateService,
       twoFactorService,
+      billingAccountProfileStateService,
     );
 
     this.cache = new BehaviorSubject(data);
