@@ -6,7 +6,6 @@ import { DomainSettingsService } from "@bitwarden/common/autofill/services/domai
 import { BroadcasterService } from "@bitwarden/common/platform/abstractions/broadcaster.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 
 import { BrowserApi } from "../../platform/browser/browser-api";
@@ -31,7 +30,6 @@ export class ExcludedDomainsComponent implements OnInit, OnDestroy {
   accountSwitcherEnabled = false;
 
   constructor(
-    private stateService: StateService,
     private domainSettingsService: DomainSettingsService,
     private i18nService: I18nService,
     private router: Router,

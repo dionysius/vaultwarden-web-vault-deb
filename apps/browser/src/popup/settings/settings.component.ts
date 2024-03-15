@@ -16,7 +16,6 @@ import {
   takeUntil,
 } from "rxjs";
 
-import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { FingerprintDialogComponent } from "@bitwarden/auth/angular";
 import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout-settings.service";
 import { VaultTimeoutService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout.service";
@@ -98,7 +97,6 @@ export class SettingsComponent implements OnInit {
     private environmentService: EnvironmentService,
     private cryptoService: CryptoService,
     private stateService: StateService,
-    private modalService: ModalService,
     private userVerificationService: UserVerificationService,
     private dialogService: DialogService,
     private changeDetectorRef: ChangeDetectorRef,

@@ -3,7 +3,6 @@ import { firstValueFrom } from "rxjs";
 
 import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/crypto-function.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
-import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
@@ -35,7 +34,6 @@ export class NativeMessagingService {
     private cryptoService: CryptoService,
     private platformUtilService: PlatformUtilsService,
     private logService: LogService,
-    private i18nService: I18nService,
     private messagingService: MessagingService,
     private stateService: StateService,
     private biometricStateService: BiometricStateService,

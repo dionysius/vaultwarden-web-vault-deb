@@ -5,7 +5,6 @@ import { AuthService } from "../../../auth/abstractions/auth.service";
 import { AuthenticationStatus } from "../../../auth/enums/authentication-status";
 import { DomainSettingsService } from "../../../autofill/services/domain-settings.service";
 import { ConfigServiceAbstraction } from "../../../platform/abstractions/config/config.service.abstraction";
-import { StateService } from "../../../platform/abstractions/state.service";
 import { Utils } from "../../../platform/misc/utils";
 import {
   Fido2AuthenticatorError,
@@ -33,7 +32,6 @@ describe("FidoAuthenticatorService", () => {
   let authenticator!: MockProxy<Fido2AuthenticatorService>;
   let configService!: MockProxy<ConfigServiceAbstraction>;
   let authService!: MockProxy<AuthService>;
-  let stateService!: MockProxy<StateService>;
   let vaultSettingsService: MockProxy<VaultSettingsService>;
   let domainSettingsService: MockProxy<DomainSettingsService>;
   let client!: Fido2ClientService;
@@ -43,7 +41,6 @@ describe("FidoAuthenticatorService", () => {
     authenticator = mock<Fido2AuthenticatorService>();
     configService = mock<ConfigServiceAbstraction>();
     authService = mock<AuthService>();
-    stateService = mock<StateService>();
     vaultSettingsService = mock<VaultSettingsService>();
     domainSettingsService = mock<DomainSettingsService>();
 
@@ -51,7 +48,6 @@ describe("FidoAuthenticatorService", () => {
       authenticator,
       configService,
       authService,
-      stateService,
       vaultSettingsService,
       domainSettingsService,
     );

@@ -10,7 +10,6 @@ import { VaultTimeoutAction } from "@bitwarden/common/enums/vault-timeout-action
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { ThemeType } from "@bitwarden/common/platform/enums";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { ThemeStateService } from "@bitwarden/common/platform/theming/theme-state.service";
@@ -48,7 +47,6 @@ export class PreferencesComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private policyService: PolicyService,
-    private stateService: StateService,
     private i18nService: I18nService,
     private vaultTimeoutSettingsService: VaultTimeoutSettingsService,
     private platformUtilsService: PlatformUtilsService,

@@ -6,7 +6,6 @@ import { firstValueFrom } from "rxjs";
 import { DomainSettingsService } from "@bitwarden/common/autofill/services/domain-settings.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 
 import { BrowserFido2UserInterfaceSession } from "../../../fido2/browser-fido2-user-interface.service";
@@ -52,7 +51,6 @@ export class Fido2UseBrowserLinkComponent {
   protected fido2PopoutSessionData$ = fido2PopoutSessionData$();
 
   constructor(
-    private stateService: StateService,
     private domainSettingsService: DomainSettingsService,
     private platformUtilsService: PlatformUtilsService,
     private i18nService: I18nService,

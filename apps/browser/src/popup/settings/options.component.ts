@@ -13,7 +13,6 @@ import {
 } from "@bitwarden/common/models/domain/domain-service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
-import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { ThemeType } from "@bitwarden/common/platform/enums";
 import { ThemeStateService } from "@bitwarden/common/platform/theming/theme-state.service";
 import { VaultSettingsService } from "@bitwarden/common/vault/abstractions/vault-settings/vault-settings.service";
@@ -51,7 +50,6 @@ export class OptionsComponent implements OnInit {
 
   constructor(
     private messagingService: MessagingService,
-    private stateService: StateService,
     private userNotificationSettingsService: UserNotificationSettingsServiceAbstraction,
     private autofillSettingsService: AutofillSettingsServiceAbstraction,
     private domainSettingsService: DomainSettingsService,
