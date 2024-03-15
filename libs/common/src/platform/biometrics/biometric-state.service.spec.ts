@@ -1,7 +1,7 @@
 import { firstValueFrom } from "rxjs";
 
-import { makeEncString } from "../../../spec";
-import { mockAccountServiceWith } from "../../../spec/fake-account-service";
+import { makeEncString, trackEmissions } from "../../../spec";
+import { FakeAccountService, mockAccountServiceWith } from "../../../spec/fake-account-service";
 import { FakeSingleUserState } from "../../../spec/fake-state";
 import { FakeStateProvider } from "../../../spec/fake-state-provider";
 import { UserId } from "../../types/guid";
@@ -23,10 +23,11 @@ describe("BiometricStateService", () => {
   const userId = "userId" as UserId;
   const encClientKeyHalf = makeEncString();
   const encryptedClientKeyHalf = encClientKeyHalf.encryptedString;
-  const accountService = mockAccountServiceWith(userId);
+  let accountService: FakeAccountService;
   let stateProvider: FakeStateProvider;
 
   beforeEach(() => {
+    accountService = mockAccountServiceWith(userId);
     stateProvider = new FakeStateProvider(accountService);
 
     sut = new DefaultBiometricStateService(stateProvider);
@@ -145,6 +146,13 @@ describe("BiometricStateService", () => {
   });
 
   describe("setPromptCancelled", () => {
+    let existingState: Record<UserId, boolean>;
+
+    beforeEach(() => {
+      existingState = { ["otherUser" as UserId]: false };
+      stateProvider.global.getFake(PROMPT_CANCELLED).stateSubject.next(existingState);
+    });
+
     test("observable is updated", async () => {
       await sut.setPromptCancelled();
 
@@ -154,9 +162,38 @@ describe("BiometricStateService", () => {
     it("updates state", async () => {
       await sut.setPromptCancelled();
 
-      const nextMock = stateProvider.activeUser.getFake(PROMPT_CANCELLED).nextMock;
-      expect(nextMock).toHaveBeenCalledWith([userId, true]);
+      const nextMock = stateProvider.global.getFake(PROMPT_CANCELLED).nextMock;
+      expect(nextMock).toHaveBeenCalledWith({ ...existingState, [userId]: true });
       expect(nextMock).toHaveBeenCalledTimes(1);
+    });
+
+    it("throws when called with no active user", async () => {
+      await accountService.switchAccount(null);
+      await expect(sut.setPromptCancelled()).rejects.toThrow(
+        "Cannot update biometric prompt cancelled state without an active user",
+      );
+      const nextMock = stateProvider.global.getFake(PROMPT_CANCELLED).nextMock;
+      expect(nextMock).not.toHaveBeenCalled();
+    });
+  });
+
+  describe("resetPromptCancelled", () => {
+    it("deletes all prompt cancelled state", async () => {
+      await sut.resetPromptCancelled();
+
+      const nextMock = stateProvider.global.getFake(PROMPT_CANCELLED).nextMock;
+      expect(nextMock).toHaveBeenCalledWith(null);
+      expect(nextMock).toHaveBeenCalledTimes(1);
+    });
+
+    it("updates observable to false", async () => {
+      const emissions = trackEmissions(sut.promptCancelled$);
+
+      await sut.setPromptCancelled();
+
+      await sut.resetPromptCancelled();
+
+      expect(emissions).toEqual([false, true, false]);
     });
   });
 
