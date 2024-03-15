@@ -138,7 +138,9 @@ export class UserKeyDefinition<T> {
 
   buildKey(userId: UserId) {
     if (!Utils.isGuid(userId)) {
-      throw new Error("You cannot build a user key without a valid UserId");
+      throw new Error(
+        `You cannot build a user key without a valid UserId, building for key ${this.fullName}`,
+      );
     }
     return `user_${userId}_${this.stateDefinition.name}_${this.key}` as StorageKey;
   }
