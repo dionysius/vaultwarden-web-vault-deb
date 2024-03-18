@@ -110,7 +110,7 @@ export class OrganizationSubscriptionSelfhostComponent implements OnInit, OnDest
       return;
     }
     this.loading = true;
-    this.userOrg = this.organizationService.get(this.organizationId);
+    this.userOrg = await this.organizationService.get(this.organizationId);
     if (this.userOrg.canViewSubscription) {
       const subscriptionResponse = await this.organizationApiService.getSubscription(
         this.organizationId,

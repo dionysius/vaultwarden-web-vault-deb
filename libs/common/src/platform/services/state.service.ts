@@ -1,7 +1,6 @@
 import { BehaviorSubject, Observable, map } from "rxjs";
 import { Jsonify, JsonValue } from "type-fest";
 
-import { OrganizationData } from "../../admin-console/models/data/organization.data";
 import { AccountService } from "../../auth/abstractions/account.service";
 import { TokenService } from "../../auth/abstractions/token.service";
 import { AuthenticationStatus } from "../../auth/enums/authentication-status";
@@ -1471,32 +1470,6 @@ export class StateService<
     await this.saveGlobals(
       globals,
       this.reconcileOptions(options, await this.defaultInMemoryOptions()),
-    );
-  }
-
-  /**
-   * @deprecated Do not call this directly, use OrganizationService
-   */
-  async getOrganizations(options?: StorageOptions): Promise<{ [id: string]: OrganizationData }> {
-    return (
-      await this.getAccount(this.reconcileOptions(options, await this.defaultOnDiskOptions()))
-    )?.data?.organizations;
-  }
-
-  /**
-   * @deprecated Do not call this directly, use OrganizationService
-   */
-  async setOrganizations(
-    value: { [id: string]: OrganizationData },
-    options?: StorageOptions,
-  ): Promise<void> {
-    const account = await this.getAccount(
-      this.reconcileOptions(options, await this.defaultOnDiskOptions()),
-    );
-    account.data.organizations = value;
-    await this.saveAccount(
-      account,
-      this.reconcileOptions(options, await this.defaultOnDiskOptions()),
     );
   }
 

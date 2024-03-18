@@ -275,7 +275,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     const dontShowIdentities = !(await firstValueFrom(
       this.vaultSettingsService.showIdentitiesCurrentTab$,
     ));
-    this.showOrganizations = this.organizationService.hasOrganizations();
+    this.showOrganizations = await this.organizationService.hasOrganizations();
     if (!dontShowCards) {
       otherTypes.push(CipherType.Card);
     }

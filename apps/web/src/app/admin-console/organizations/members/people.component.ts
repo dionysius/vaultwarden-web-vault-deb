@@ -143,7 +143,7 @@ export class PeopleComponent
 
   async ngOnInit() {
     const organization$ = this.route.params.pipe(
-      map((params) => this.organizationService.get(params.organizationId)),
+      concatMap((params) => this.organizationService.get$(params.organizationId)),
       shareReplay({ refCount: true, bufferSize: 1 }),
     );
 

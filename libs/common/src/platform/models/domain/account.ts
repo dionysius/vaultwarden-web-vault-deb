@@ -1,6 +1,5 @@
 import { Jsonify } from "type-fest";
 
-import { OrganizationData } from "../../../admin-console/models/data/organization.data";
 import { AdminAuthRequestStorable } from "../../../auth/models/domain/admin-auth-req-storable";
 import { ForceSetPasswordReason } from "../../../auth/models/domain/force-set-password-reason";
 import { KeyConnectorUserDecryptionOption } from "../../../auth/models/domain/user-decryption-options/key-connector-user-decryption-option";
@@ -91,7 +90,6 @@ export class AccountData {
   > = new EncryptionPair<GeneratedPasswordHistory[], GeneratedPasswordHistory[]>();
   addEditCipherInfo?: AddEditCipherInfo;
   eventCollection?: EventData[];
-  organizations?: { [id: string]: OrganizationData };
 
   static fromJSON(obj: DeepJsonify<AccountData>): AccountData {
     if (obj == null) {

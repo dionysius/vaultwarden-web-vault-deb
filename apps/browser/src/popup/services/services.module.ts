@@ -98,7 +98,6 @@ import { DialogService } from "@bitwarden/components";
 import { ImportServiceAbstraction } from "@bitwarden/importer/core";
 import { VaultExportServiceAbstraction } from "@bitwarden/vault-export-core";
 
-import { BrowserOrganizationService } from "../../admin-console/services/browser-organization.service";
 import { UnauthGuardService } from "../../auth/popup/services";
 import { AutofillService } from "../../autofill/services/abstractions/autofill.service";
 import MainBackground from "../../background/main.background";
@@ -397,13 +396,6 @@ function getBgService<T>(service: keyof MainBackground) {
       provide: NotificationsService,
       useFactory: getBgService<NotificationsService>("notificationsService"),
       deps: [],
-    },
-    {
-      provide: OrganizationService,
-      useFactory: (stateService: StateServiceAbstraction, stateProvider: StateProvider) => {
-        return new BrowserOrganizationService(stateService, stateProvider);
-      },
-      deps: [StateServiceAbstraction, StateProvider],
     },
     {
       provide: VaultFilterService,

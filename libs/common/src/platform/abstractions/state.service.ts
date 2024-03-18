@@ -1,6 +1,5 @@
 import { Observable } from "rxjs";
 
-import { OrganizationData } from "../../admin-console/models/data/organization.data";
 import { AdminAuthRequestStorable } from "../../auth/models/domain/admin-auth-req-storable";
 import { ForceSetPasswordReason } from "../../auth/models/domain/force-set-password-reason";
 import { KdfConfig } from "../../auth/models/domain/kdf-config";
@@ -291,17 +290,6 @@ export abstract class StateService<T extends Account = Account> {
   setOpenAtLogin: (value: boolean, options?: StorageOptions) => Promise<void>;
   getOrganizationInvitation: (options?: StorageOptions) => Promise<any>;
   setOrganizationInvitation: (value: any, options?: StorageOptions) => Promise<void>;
-  /**
-   * @deprecated Do not call this directly, use OrganizationService
-   */
-  getOrganizations: (options?: StorageOptions) => Promise<{ [id: string]: OrganizationData }>;
-  /**
-   * @deprecated Do not call this directly, use OrganizationService
-   */
-  setOrganizations: (
-    value: { [id: string]: OrganizationData },
-    options?: StorageOptions,
-  ) => Promise<void>;
   getPasswordGenerationOptions: (options?: StorageOptions) => Promise<PasswordGeneratorOptions>;
   setPasswordGenerationOptions: (
     value: PasswordGeneratorOptions,

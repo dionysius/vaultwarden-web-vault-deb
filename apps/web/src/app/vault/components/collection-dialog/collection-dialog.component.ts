@@ -139,9 +139,9 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
   }
 
   async loadOrg(orgId: string, collectionIds: string[]) {
-    const organization$ = of(this.organizationService.get(orgId)).pipe(
-      shareReplay({ refCount: true, bufferSize: 1 }),
-    );
+    const organization$ = this.organizationService
+      .get$(orgId)
+      .pipe(shareReplay({ refCount: true, bufferSize: 1 }));
     const groups$ = organization$.pipe(
       switchMap((organization) => {
         if (!organization.useGroups) {

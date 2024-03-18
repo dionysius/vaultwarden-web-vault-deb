@@ -94,7 +94,7 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
       return;
     }
     this.loading = true;
-    this.userOrg = this.organizationService.get(this.organizationId);
+    this.userOrg = await this.organizationService.get(this.organizationId);
     if (this.userOrg.canViewSubscription) {
       this.sub = await this.organizationApiService.getSubscription(this.organizationId);
       this.lineItems = this.sub?.subscription?.items;
