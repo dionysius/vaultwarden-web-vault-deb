@@ -17,8 +17,6 @@ import {
   LoginStrategyServiceAbstraction,
 } from "@bitwarden/auth/common";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
-import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
-import { EventUploadService } from "@bitwarden/common/abstractions/event/event-upload.service";
 import { NotificationsService } from "@bitwarden/common/abstractions/notifications.service";
 import { SearchService as SearchServiceAbstraction } from "@bitwarden/common/abstractions/search.service";
 import { SettingsService } from "@bitwarden/common/abstractions/settings.service";
@@ -261,16 +259,6 @@ function getBgService<T>(service: keyof MainBackground) {
     {
       provide: DevicesServiceAbstraction,
       useFactory: getBgService<DevicesServiceAbstraction>("devicesService"),
-      deps: [],
-    },
-    {
-      provide: EventUploadService,
-      useFactory: getBgService<EventUploadService>("eventUploadService"),
-      deps: [],
-    },
-    {
-      provide: EventCollectionService,
-      useFactory: getBgService<EventCollectionService>("eventCollectionService"),
       deps: [],
     },
     {

@@ -5,7 +5,6 @@ import { ForceSetPasswordReason } from "../../../auth/models/domain/force-set-pa
 import { KeyConnectorUserDecryptionOption } from "../../../auth/models/domain/user-decryption-options/key-connector-user-decryption-option";
 import { TrustedDeviceUserDecryptionOption } from "../../../auth/models/domain/user-decryption-options/trusted-device-user-decryption-option";
 import { IdentityTokenResponse } from "../../../auth/models/response/identity-token.response";
-import { EventData } from "../../../models/data/event.data";
 import { UriMatchStrategySetting } from "../../../models/domain/domain-service";
 import { GeneratorOptions } from "../../../tools/generator/generator-options";
 import {
@@ -89,7 +88,6 @@ export class AccountData {
     GeneratedPasswordHistory[]
   > = new EncryptionPair<GeneratedPasswordHistory[], GeneratedPasswordHistory[]>();
   addEditCipherInfo?: AddEditCipherInfo;
-  eventCollection?: EventData[];
 
   static fromJSON(obj: DeepJsonify<AccountData>): AccountData {
     if (obj == null) {

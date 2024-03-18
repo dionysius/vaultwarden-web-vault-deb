@@ -721,16 +721,17 @@ const typesafeProviders: Array<SafeProvider> = [
   safeProvider({
     provide: EventUploadServiceAbstraction,
     useClass: EventUploadService,
-    deps: [ApiServiceAbstraction, StateServiceAbstraction, LogService],
+    deps: [ApiServiceAbstraction, StateProvider, LogService, AccountServiceAbstraction],
   }),
   safeProvider({
     provide: EventCollectionServiceAbstraction,
     useClass: EventCollectionService,
     deps: [
       CipherServiceAbstraction,
-      StateServiceAbstraction,
+      StateProvider,
       OrganizationServiceAbstraction,
       EventUploadServiceAbstraction,
+      AccountServiceAbstraction,
     ],
   }),
   safeProvider({

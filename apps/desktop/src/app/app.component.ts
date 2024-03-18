@@ -576,7 +576,8 @@ export class AppComponent implements OnInit, OnDestroy {
 
     let preLogoutActiveUserId;
     try {
-      await this.eventUploadService.uploadEvents(userBeingLoggedOut);
+      // Provide the userId of the user to upload events for
+      await this.eventUploadService.uploadEvents(userBeingLoggedOut as UserId);
       await this.syncService.setLastSync(new Date(0), userBeingLoggedOut);
       await this.cryptoService.clearKeys(userBeingLoggedOut);
       await this.cipherService.clear(userBeingLoggedOut);
