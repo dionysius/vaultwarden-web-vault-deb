@@ -21,6 +21,7 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
+import { OrganizationManagementPreferencesService } from "@bitwarden/common/admin-console/abstractions/organization-management-preferences/organization-management-preferences.service";
 import { OrganizationUserService } from "@bitwarden/common/admin-console/abstractions/organization-user/organization-user.service";
 import { OrganizationUserConfirmRequest } from "@bitwarden/common/admin-console/abstractions/organization-user/requests";
 import {
@@ -43,7 +44,6 @@ import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.se
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { ValidationService } from "@bitwarden/common/platform/abstractions/validation.service";
 import { CollectionService } from "@bitwarden/common/vault/abstractions/collection.service";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
@@ -117,7 +117,6 @@ export class PeopleComponent
     searchPipe: SearchPipe,
     userNamePipe: UserNamePipe,
     private syncService: SyncService,
-    stateService: StateService,
     private organizationService: OrganizationService,
     private organizationApiService: OrganizationApiServiceAbstraction,
     private organizationUserService: OrganizationUserService,
@@ -125,6 +124,7 @@ export class PeopleComponent
     private router: Router,
     private groupService: GroupService,
     private collectionService: CollectionService,
+    organizationManagementPreferencesService: OrganizationManagementPreferencesService,
   ) {
     super(
       apiService,
@@ -137,8 +137,8 @@ export class PeopleComponent
       logService,
       searchPipe,
       userNamePipe,
-      stateService,
       dialogService,
+      organizationManagementPreferencesService,
     );
   }
 

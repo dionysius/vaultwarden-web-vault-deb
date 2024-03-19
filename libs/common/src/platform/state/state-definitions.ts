@@ -22,6 +22,13 @@ import { StateDefinition } from "./state-definition";
 export const ORGANIZATIONS_DISK = new StateDefinition("organizations", "disk");
 export const POLICIES_DISK = new StateDefinition("policies", "disk");
 export const PROVIDERS_DISK = new StateDefinition("providers", "disk");
+export const ORGANIZATION_MANAGEMENT_PREFERENCES_DISK = new StateDefinition(
+  "organizationManagementPreferences",
+  "disk",
+  {
+    web: "disk-local",
+  },
+);
 
 // Billing
 export const BILLING_DISK = new StateDefinition("billing", "disk");
