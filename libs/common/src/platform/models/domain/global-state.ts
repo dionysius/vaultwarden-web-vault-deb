@@ -10,7 +10,6 @@ export class GlobalState {
   theme?: ThemeType = ThemeType.System;
   window?: WindowState = new WindowState();
   twoFactorToken?: string;
-  disableFavicon?: boolean;
   biometricFingerprintValidated?: boolean;
   vaultTimeout?: number;
   vaultTimeoutAction?: string;

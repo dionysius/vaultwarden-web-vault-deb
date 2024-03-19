@@ -37,6 +37,7 @@ import { MoveBillingAccountProfileMigrator } from "./migrations/39-move-billing-
 import { RemoveEverBeenUnlockedMigrator } from "./migrations/4-remove-ever-been-unlocked";
 import { OrganizationMigrator } from "./migrations/40-move-organization-state-to-state-provider";
 import { EventCollectionMigrator } from "./migrations/41-move-event-collection-to-state-provider";
+import { EnableFaviconMigrator } from "./migrations/42-move-enable-favicon-to-domain-settings-state-provider";
 import { AddKeyTypeToOrgKeysMigrator } from "./migrations/5-add-key-type-to-org-keys";
 import { RemoveLegacyEtmKeyMigrator } from "./migrations/6-remove-legacy-etm-key";
 import { MoveBiometricAutoPromptToAccount } from "./migrations/7-move-biometric-auto-prompt-to-account";
@@ -45,7 +46,7 @@ import { MoveBrowserSettingsToGlobal } from "./migrations/9-move-browser-setting
 import { MinVersionMigrator } from "./migrations/min-version";
 
 export const MIN_VERSION = 3;
-export const CURRENT_VERSION = 41;
+export const CURRENT_VERSION = 42;
 export type MinVersion = typeof MIN_VERSION;
 
 export function createMigrationBuilder() {
@@ -88,7 +89,8 @@ export function createMigrationBuilder() {
     .with(TokenServiceStateProviderMigrator, 37, 38)
     .with(MoveBillingAccountProfileMigrator, 38, 39)
     .with(OrganizationMigrator, 39, 40)
-    .with(EventCollectionMigrator, 40, CURRENT_VERSION);
+    .with(EventCollectionMigrator, 40, 41)
+    .with(EnableFaviconMigrator, 41, 42);
 }
 
 export async function currentVersion(

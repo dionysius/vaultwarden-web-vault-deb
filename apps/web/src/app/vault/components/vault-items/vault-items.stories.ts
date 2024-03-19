@@ -3,11 +3,11 @@ import { RouterModule } from "@angular/router";
 import { applicationConfig, Meta, moduleMetadata, Story } from "@storybook/angular";
 import { BehaviorSubject, of } from "rxjs";
 
-import { SettingsService } from "@bitwarden/common/abstractions/settings.service";
 import { OrganizationUserType } from "@bitwarden/common/admin-console/enums";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { AvatarService } from "@bitwarden/common/auth/abstractions/avatar.service";
 import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
+import { DomainSettingsService } from "@bitwarden/common/autofill/services/domain-settings.service";
 import { ConfigServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config.service.abstraction";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
@@ -57,19 +57,19 @@ export default {
           useValue: {
             activeAccount$: new BehaviorSubject("1").asObservable(),
             accounts$: new BehaviorSubject({ "1": { profile: { name: "Foo" } } }).asObservable(),
-            async getDisableFavicon() {
-              return false;
+            async getShowFavicon() {
+              return true;
             },
           } as Partial<StateService>,
         },
         {
-          provide: SettingsService,
+          provide: DomainSettingsService,
           useValue: {
-            disableFavicon$: new BehaviorSubject(false).asObservable(),
-            getDisableFavicon() {
-              return false;
+            showFavicons$: new BehaviorSubject(true).asObservable(),
+            getShowFavicon() {
+              return true;
             },
-          } as Partial<SettingsService>,
+          } as Partial<DomainSettingsService>,
         },
         {
           provide: AvatarService,

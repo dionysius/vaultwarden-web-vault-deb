@@ -1,10 +1,10 @@
 import { firstValueFrom } from "rxjs";
 
-import { SettingsService } from "@bitwarden/common/abstractions/settings.service";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 import { SHOW_AUTOFILL_BUTTON } from "@bitwarden/common/autofill/constants";
 import { AutofillSettingsServiceAbstraction } from "@bitwarden/common/autofill/services/autofill-settings.service";
+import { DomainSettingsService } from "@bitwarden/common/autofill/services/domain-settings.service";
 import { InlineMenuVisibilitySetting } from "@bitwarden/common/autofill/types";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -92,7 +92,7 @@ class OverlayBackground implements OverlayBackgroundInterface {
     private autofillService: AutofillService,
     private authService: AuthService,
     private environmentService: EnvironmentService,
-    private settingsService: SettingsService,
+    private domainSettingsService: DomainSettingsService,
     private stateService: StateService,
     private autofillSettingsService: AutofillSettingsServiceAbstraction,
     private i18nService: I18nService,
@@ -145,7 +145,7 @@ class OverlayBackground implements OverlayBackgroundInterface {
       this.overlayLoginCiphers.set(`overlay-cipher-${cipherIndex}`, ciphersViews[cipherIndex]);
     }
 
-    const ciphers = this.getOverlayCipherData();
+    const ciphers = await this.getOverlayCipherData();
     this.overlayListPort?.postMessage({ command: "updateOverlayListCiphers", ciphers });
     await BrowserApi.tabSendMessageData(currentTab, "updateIsOverlayCiphersPopulated", {
       isOverlayCiphersPopulated: Boolean(ciphers.length),
@@ -156,8 +156,8 @@ class OverlayBackground implements OverlayBackgroundInterface {
    * Strips out unnecessary data from the ciphers and returns an array of
    * objects that contain the cipher data needed for the overlay list.
    */
-  private getOverlayCipherData(): OverlayCipherData[] {
-    const isFaviconDisabled = this.settingsService.getDisableFavicon();
+  private async getOverlayCipherData(): Promise<OverlayCipherData[]> {
+    const showFavicons = await firstValueFrom(this.domainSettingsService.showFavicons$);
     const overlayCiphersArray = Array.from(this.overlayLoginCiphers);
     const overlayCipherData = [];
     let loginCipherIcon: WebsiteIconData;
@@ -165,7 +165,7 @@ class OverlayBackground implements OverlayBackgroundInterface {
     for (let cipherIndex = 0; cipherIndex < overlayCiphersArray.length; cipherIndex++) {
       const [overlayCipherId, cipher] = overlayCiphersArray[cipherIndex];
       if (!loginCipherIcon && cipher.type === CipherType.Login) {
-        loginCipherIcon = buildCipherIcon(this.iconsServerUrl, cipher, isFaviconDisabled);
+        loginCipherIcon = buildCipherIcon(this.iconsServerUrl, cipher, showFavicons);
       }
 
       overlayCipherData.push({
@@ -177,7 +177,7 @@ class OverlayBackground implements OverlayBackgroundInterface {
         icon:
           cipher.type === CipherType.Login
             ? loginCipherIcon
-            : buildCipherIcon(this.iconsServerUrl, cipher, isFaviconDisabled),
+            : buildCipherIcon(this.iconsServerUrl, cipher, showFavicons),
         login: cipher.type === CipherType.Login ? { username: cipher.login.username } : null,
         card: cipher.type === CipherType.Card ? cipher.card.subTitle : null,
       });
@@ -699,7 +699,7 @@ class OverlayBackground implements OverlayBackgroundInterface {
       styleSheetUrl: chrome.runtime.getURL(`overlay/${isOverlayListPort ? "list" : "button"}.css`),
       theme: await firstValueFrom(this.themeStateService.selectedTheme$),
       translations: this.getTranslations(),
-      ciphers: isOverlayListPort ? this.getOverlayCipherData() : null,
+      ciphers: isOverlayListPort ? await this.getOverlayCipherData() : null,
     });
     this.updateOverlayPosition({
       overlayElement: isOverlayListPort
