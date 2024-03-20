@@ -78,7 +78,12 @@ export class CipherService implements CipherServiceAbstraction {
   }
 
   async setDecryptedCipherCache(value: CipherView[]) {
-    await this.stateService.setDecryptedCiphers(value);
+    // Sometimes we might prematurely decrypt the vault and that will result in no ciphers
+    // if we cache it then we may accidentially return it when it's not right, we'd rather try decryption again.
+    // We still want to set null though, that is the indicator that the cache isn't valid and we should do decryption.
+    if (value == null || value.length !== 0) {
+      await this.stateService.setDecryptedCiphers(value);
+    }
     if (this.searchService != null) {
       if (value == null) {
         this.searchService.clearIndex();
