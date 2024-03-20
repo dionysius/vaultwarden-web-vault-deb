@@ -3,6 +3,7 @@ import { Router } from "@angular/router";
 
 import { TwoFactorService } from "@bitwarden/common/auth/abstractions/two-factor.service";
 import { TwoFactorProviderType } from "@bitwarden/common/auth/enums/two-factor-provider-type";
+import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 
@@ -19,6 +20,7 @@ export class TwoFactorOptionsComponent implements OnInit {
     protected i18nService: I18nService,
     protected platformUtilsService: PlatformUtilsService,
     protected win: Window,
+    protected environmentService: EnvironmentService,
   ) {}
 
   ngOnInit() {
@@ -30,7 +32,8 @@ export class TwoFactorOptionsComponent implements OnInit {
   }
 
   recover() {
-    this.platformUtilsService.launchUri("https://vault.bitwarden.com/#/recover-2fa");
+    const webVault = this.environmentService.getWebVaultUrl();
+    this.platformUtilsService.launchUri(webVault + "/#/recover-2fa");
     this.onRecoverSelected.emit();
   }
 }
