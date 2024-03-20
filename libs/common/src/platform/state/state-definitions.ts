@@ -75,7 +75,7 @@ export const CLEAR_EVENT_DISK = new StateDefinition("clearEvent", "disk");
 export const CRYPTO_DISK = new StateDefinition("crypto", "disk");
 export const CRYPTO_MEMORY = new StateDefinition("crypto", "memory");
 export const ENVIRONMENT_DISK = new StateDefinition("environment", "disk");
-export const THEMING_DISK = new StateDefinition("theming", "disk");
+export const THEMING_DISK = new StateDefinition("theming", "disk", { web: "disk-local" });
 export const TRANSLATION_DISK = new StateDefinition("translation", "disk");
 
 // Secrets Manager
