@@ -29,6 +29,7 @@ import { SendData } from "../../../tools/send/models/data/send.data";
 import { SendResponse } from "../../../tools/send/models/response/send.response";
 import { SendApiService } from "../../../tools/send/services/send-api.service.abstraction";
 import { InternalSendService } from "../../../tools/send/services/send.service.abstraction";
+import { UserId } from "../../../types/guid";
 import { CipherService } from "../../../vault/abstractions/cipher.service";
 import { FolderApiServiceAbstraction } from "../../../vault/abstractions/folder/folder-api.service.abstraction";
 import { InternalFolderService } from "../../../vault/abstractions/folder/folder.service.abstraction";
@@ -313,7 +314,7 @@ export class SyncService implements SyncServiceAbstraction {
     await this.cryptoService.setPrivateKey(response.privateKey);
     await this.cryptoService.setProviderKeys(response.providers);
     await this.cryptoService.setOrgKeys(response.organizations, response.providerOrganizations);
-    await this.avatarService.setAvatarColor(response.avatarColor);
+    await this.avatarService.setSyncAvatarColor(response.id as UserId, response.avatarColor);
     await this.stateService.setSecurityStamp(response.securityStamp);
     await this.stateService.setEmailVerified(response.emailVerified);
 
