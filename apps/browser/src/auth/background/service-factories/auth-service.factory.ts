@@ -15,8 +15,8 @@ import {
   factory,
 } from "../../../platform/background/service-factories/factory-options";
 import {
-  messagingServiceFactory,
   MessagingServiceInitOptions,
+  messagingServiceFactory,
 } from "../../../platform/background/service-factories/messaging-service.factory";
 import {
   StateServiceInitOptions,

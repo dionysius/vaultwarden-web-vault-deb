@@ -17,6 +17,7 @@ import { MessagingService } from "@bitwarden/common/platform/abstractions/messag
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 
+import { InternalUserDecryptionOptionsServiceAbstraction } from "../abstractions/user-decryption-options.service.abstraction";
 import { UserApiLoginCredentials } from "../models/domain/login-credentials";
 import { CacheData } from "../services/login-strategies/login-strategy.state";
 
@@ -47,6 +48,7 @@ export class UserApiLoginStrategy extends LoginStrategy {
     logService: LogService,
     stateService: StateService,
     twoFactorService: TwoFactorService,
+    userDecryptionOptionsService: InternalUserDecryptionOptionsServiceAbstraction,
     private environmentService: EnvironmentService,
     private keyConnectorService: KeyConnectorService,
     billingAccountProfileStateService: BillingAccountProfileStateService,
@@ -61,6 +63,7 @@ export class UserApiLoginStrategy extends LoginStrategy {
       logService,
       stateService,
       twoFactorService,
+      userDecryptionOptionsService,
       billingAccountProfileStateService,
     );
     this.cache = new BehaviorSubject(data);

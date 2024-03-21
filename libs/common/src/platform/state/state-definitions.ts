@@ -44,6 +44,7 @@ export const TOKEN_DISK_LOCAL = new StateDefinition("tokenDiskLocal", "disk", {
 });
 export const TOKEN_MEMORY = new StateDefinition("token", "memory");
 export const LOGIN_STRATEGY_MEMORY = new StateDefinition("loginStrategy", "memory");
+export const USER_DECRYPTION_OPTIONS_DISK = new StateDefinition("userDecryptionOptions", "disk");
 
 // Autofill
 

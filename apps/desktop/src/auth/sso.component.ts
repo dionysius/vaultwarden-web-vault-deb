@@ -2,7 +2,10 @@ import { Component } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 
 import { SsoComponent as BaseSsoComponent } from "@bitwarden/angular/auth/components/sso.component";
-import { LoginStrategyServiceAbstraction } from "@bitwarden/auth/common";
+import {
+  LoginStrategyServiceAbstraction,
+  UserDecryptionOptionsServiceAbstraction,
+} from "@bitwarden/auth/common";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { SsoLoginServiceAbstraction } from "@bitwarden/common/auth/abstractions/sso-login.service.abstraction";
 import { ConfigServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config.service.abstraction";
@@ -34,6 +37,7 @@ export class SsoComponent extends BaseSsoComponent {
     environmentService: EnvironmentService,
     passwordGenerationService: PasswordGenerationServiceAbstraction,
     logService: LogService,
+    userDecryptionOptionsService: UserDecryptionOptionsServiceAbstraction,
     configService: ConfigServiceAbstraction,
   ) {
     super(
@@ -49,6 +53,7 @@ export class SsoComponent extends BaseSsoComponent {
       environmentService,
       passwordGenerationService,
       logService,
+      userDecryptionOptionsService,
       configService,
     );
     super.onSuccessfulLogin = async () => {

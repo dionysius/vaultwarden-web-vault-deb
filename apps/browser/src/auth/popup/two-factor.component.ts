@@ -5,7 +5,10 @@ import { filter, first, takeUntil } from "rxjs/operators";
 
 import { TwoFactorComponent as BaseTwoFactorComponent } from "@bitwarden/angular/auth/components/two-factor.component";
 import { WINDOW } from "@bitwarden/angular/services/injection-tokens";
-import { LoginStrategyServiceAbstraction } from "@bitwarden/auth/common";
+import {
+  LoginStrategyServiceAbstraction,
+  UserDecryptionOptionsServiceAbstraction,
+} from "@bitwarden/auth/common";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { LoginService } from "@bitwarden/common/auth/abstractions/login.service";
 import { SsoLoginServiceAbstraction } from "@bitwarden/common/auth/abstractions/sso-login.service.abstraction";
@@ -55,6 +58,7 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
     twoFactorService: TwoFactorService,
     appIdService: AppIdService,
     loginService: LoginService,
+    userDecryptionOptionsService: UserDecryptionOptionsServiceAbstraction,
     configService: ConfigServiceAbstraction,
     ssoLoginService: SsoLoginServiceAbstraction,
     private dialogService: DialogService,
@@ -75,6 +79,7 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
       twoFactorService,
       appIdService,
       loginService,
+      userDecryptionOptionsService,
       ssoLoginService,
       configService,
     );

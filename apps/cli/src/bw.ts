@@ -5,11 +5,13 @@ import { program } from "commander";
 import * as jsdom from "jsdom";
 
 import {
+  InternalUserDecryptionOptionsServiceAbstraction,
   AuthRequestService,
   LoginStrategyService,
   LoginStrategyServiceAbstraction,
   PinCryptoService,
   PinCryptoServiceAbstraction,
+  UserDecryptionOptionsService,
 } from "@bitwarden/auth/common";
 import { EventCollectionService as EventCollectionServiceAbstraction } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { EventUploadService as EventUploadServiceAbstraction } from "@bitwarden/common/abstractions/event/event-upload.service";
@@ -169,6 +171,7 @@ export class Main {
   eventUploadService: EventUploadServiceAbstraction;
   passwordGenerationService: PasswordGenerationServiceAbstraction;
   passwordStrengthService: PasswordStrengthServiceAbstraction;
+  userDecryptionOptionsService: InternalUserDecryptionOptionsServiceAbstraction;
   totpService: TotpService;
   containerService: ContainerService;
   auditService: AuditService;
@@ -436,6 +439,8 @@ export class Main {
       this.stateService,
     );
 
+    this.userDecryptionOptionsService = new UserDecryptionOptionsService(this.stateProvider);
+
     this.devicesApiService = new DevicesApiServiceImplementation(this.apiService);
     this.deviceTrustCryptoService = new DeviceTrustCryptoService(
       this.keyGenerationService,
@@ -447,6 +452,7 @@ export class Main {
       this.devicesApiService,
       this.i18nService,
       this.platformUtilsService,
+      this.userDecryptionOptionsService,
     );
 
     this.authRequestService = new AuthRequestService(
@@ -478,6 +484,7 @@ export class Main {
       this.policyService,
       this.deviceTrustCryptoService,
       this.authRequestService,
+      this.userDecryptionOptionsService,
       this.globalStateProvider,
       this.billingAccountProfileStateService,
     );
@@ -529,6 +536,7 @@ export class Main {
     this.biometricStateService = new DefaultBiometricStateService(this.stateProvider);
 
     this.vaultTimeoutSettingsService = new VaultTimeoutSettingsService(
+      this.userDecryptionOptionsService,
       this.cryptoService,
       this.tokenService,
       this.policyService,
@@ -548,6 +556,7 @@ export class Main {
       this.cryptoService,
       this.i18nService,
       this.userVerificationApiService,
+      this.userDecryptionOptionsService,
       this.pinCryptoService,
       this.logService,
       this.vaultTimeoutSettingsService,
@@ -589,6 +598,7 @@ export class Main {
       this.folderApiService,
       this.organizationService,
       this.sendApiService,
+      this.userDecryptionOptionsService,
       this.avatarService,
       async (expired: boolean) => await this.logout(),
       this.billingAccountProfileStateService,

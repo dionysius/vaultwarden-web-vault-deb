@@ -8,6 +8,9 @@ import {
   PinCryptoService,
   LoginStrategyServiceAbstraction,
   LoginStrategyService,
+  InternalUserDecryptionOptionsServiceAbstraction,
+  UserDecryptionOptionsService,
+  UserDecryptionOptionsServiceAbstraction,
 } from "@bitwarden/auth/common";
 import { ApiService as ApiServiceAbstraction } from "@bitwarden/common/abstractions/api.service";
 import { AuditService as AuditServiceAbstraction } from "@bitwarden/common/abstractions/audit.service";
@@ -243,8 +246,8 @@ import { safeProvider, SafeProvider } from "../platform/utils/safe-provider";
 import {
   LOCALES_DIRECTORY,
   LOCKED_CALLBACK,
-  LOG_MAC_FAILURES,
   LOGOUT_CALLBACK,
+  LOG_MAC_FAILURES,
   MEMORY_STORAGE,
   OBSERVABLE_DISK_STORAGE,
   OBSERVABLE_MEMORY_STORAGE,
@@ -369,6 +372,7 @@ const typesafeProviders: Array<SafeProvider> = [
       PolicyServiceAbstraction,
       DeviceTrustCryptoServiceAbstraction,
       AuthRequestServiceAbstraction,
+      InternalUserDecryptionOptionsServiceAbstraction,
       GlobalStateProvider,
       BillingAccountProfileStateService,
     ],
@@ -478,6 +482,15 @@ const typesafeProviders: Array<SafeProvider> = [
     deps: [StateProvider, AccountServiceAbstraction],
   }),
   safeProvider({
+    provide: InternalUserDecryptionOptionsServiceAbstraction,
+    useClass: UserDecryptionOptionsService,
+    deps: [StateProvider],
+  }),
+  safeProvider({
+    provide: UserDecryptionOptionsServiceAbstraction,
+    useExisting: InternalUserDecryptionOptionsServiceAbstraction,
+  }),
+  safeProvider({
     provide: TotpServiceAbstraction,
     useClass: TotpService,
     deps: [CryptoFunctionServiceAbstraction, LogService],
@@ -577,6 +590,7 @@ const typesafeProviders: Array<SafeProvider> = [
       FolderApiServiceAbstraction,
       InternalOrganizationServiceAbstraction,
       SendApiServiceAbstraction,
+      UserDecryptionOptionsServiceAbstraction,
       AvatarServiceAbstraction,
       LOGOUT_CALLBACK,
       BillingAccountProfileStateService,
@@ -587,6 +601,7 @@ const typesafeProviders: Array<SafeProvider> = [
     provide: VaultTimeoutSettingsServiceAbstraction,
     useClass: VaultTimeoutSettingsService,
     deps: [
+      UserDecryptionOptionsServiceAbstraction,
       CryptoServiceAbstraction,
       TokenServiceAbstraction,
       PolicyServiceAbstraction,
@@ -765,6 +780,7 @@ const typesafeProviders: Array<SafeProvider> = [
       CryptoServiceAbstraction,
       I18nServiceAbstraction,
       UserVerificationApiServiceAbstraction,
+      UserDecryptionOptionsServiceAbstraction,
       PinCryptoServiceAbstraction,
       LogService,
       VaultTimeoutSettingsServiceAbstraction,
@@ -902,6 +918,7 @@ const typesafeProviders: Array<SafeProvider> = [
       DevicesApiServiceAbstraction,
       I18nServiceAbstraction,
       PlatformUtilsServiceAbstraction,
+      UserDecryptionOptionsServiceAbstraction,
     ],
   }),
   safeProvider({
