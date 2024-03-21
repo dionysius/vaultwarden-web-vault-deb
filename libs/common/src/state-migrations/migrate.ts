@@ -41,6 +41,7 @@ import { EnableFaviconMigrator } from "./migrations/42-move-enable-favicon-to-do
 import { AutoConfirmFingerPrintsMigrator } from "./migrations/43-move-auto-confirm-finger-prints-to-state-provider";
 import { UserDecryptionOptionsMigrator } from "./migrations/44-move-user-decryption-options-to-state-provider";
 import { MergeEnvironmentState } from "./migrations/45-merge-environment-state";
+import { DeleteBiometricPromptCancelledData } from "./migrations/46-delete-orphaned-biometric-prompt-data";
 import { AddKeyTypeToOrgKeysMigrator } from "./migrations/5-add-key-type-to-org-keys";
 import { RemoveLegacyEtmKeyMigrator } from "./migrations/6-remove-legacy-etm-key";
 import { MoveBiometricAutoPromptToAccount } from "./migrations/7-move-biometric-auto-prompt-to-account";
@@ -49,8 +50,7 @@ import { MoveBrowserSettingsToGlobal } from "./migrations/9-move-browser-setting
 import { MinVersionMigrator } from "./migrations/min-version";
 
 export const MIN_VERSION = 3;
-export const CURRENT_VERSION = 45;
-
+export const CURRENT_VERSION = 46;
 export type MinVersion = typeof MIN_VERSION;
 
 export function createMigrationBuilder() {
@@ -97,7 +97,8 @@ export function createMigrationBuilder() {
     .with(EnableFaviconMigrator, 41, 42)
     .with(AutoConfirmFingerPrintsMigrator, 42, 43)
     .with(UserDecryptionOptionsMigrator, 43, 44)
-    .with(MergeEnvironmentState, 44, CURRENT_VERSION);
+    .with(MergeEnvironmentState, 44, 45)
+    .with(DeleteBiometricPromptCancelledData, 45, CURRENT_VERSION);
 }
 
 export async function currentVersion(
