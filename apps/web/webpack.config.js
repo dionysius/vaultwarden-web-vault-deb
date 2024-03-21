@@ -171,6 +171,7 @@ const plugins = [
     PAYPAL_CONFIG: envConfig["paypal"] ?? {},
     FLAGS: envConfig["flags"] ?? {},
     DEV_FLAGS: NODE_ENV === "development" ? envConfig["devFlags"] : {},
+    ADDITIONAL_REGIONS: envConfig["additionalRegions"] ?? [],
   }),
   new AngularWebpackPlugin({
     tsConfigPath: "tsconfig.json",

@@ -1,5 +1,5 @@
 import { mock, mockReset } from "jest-mock-extended";
-import { of } from "rxjs";
+import { BehaviorSubject, of } from "rxjs";
 
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 import { AuthService } from "@bitwarden/common/auth/services/auth.service";
@@ -12,9 +12,13 @@ import {
   DefaultDomainSettingsService,
   DomainSettingsService,
 } from "@bitwarden/common/autofill/services/domain-settings.service";
+import {
+  EnvironmentService,
+  Region,
+} from "@bitwarden/common/platform/abstractions/environment.service";
 import { ThemeType } from "@bitwarden/common/platform/enums";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
-import { EnvironmentService } from "@bitwarden/common/platform/services/environment.service";
+import { CloudEnvironment } from "@bitwarden/common/platform/services/default-environment.service";
 import { I18nService } from "@bitwarden/common/platform/services/i18n.service";
 import { ThemeStateService } from "@bitwarden/common/platform/theming/theme-state.service";
 import {
@@ -48,8 +52,6 @@ import {
 
 import OverlayBackground from "./overlay.background";
 
-const iconServerUrl = "https://icons.bitwarden.com/";
-
 describe("OverlayBackground", () => {
   const mockUserId = Utils.newGuid() as UserId;
   const accountService: FakeAccountService = mockAccountServiceWith(mockUserId);
@@ -61,9 +63,15 @@ describe("OverlayBackground", () => {
   const cipherService = mock<CipherService>();
   const autofillService = mock<AutofillService>();
   const authService = mock<AuthService>();
-  const environmentService = mock<EnvironmentService>({
-    getIconsUrl: () => iconServerUrl,
-  });
+
+  const environmentService = mock<EnvironmentService>();
+  environmentService.environment$ = new BehaviorSubject(
+    new CloudEnvironment({
+      key: Region.US,
+      domain: "bitwarden.com",
+      urls: { icons: "https://icons.bitwarden.com/" },
+    }),
+  );
   const stateService = mock<BrowserStateService>();
   const autofillSettingsService = mock<AutofillSettingsService>();
   const i18nService = mock<I18nService>();

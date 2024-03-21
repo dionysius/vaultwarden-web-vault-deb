@@ -14,10 +14,14 @@ import { OrganizationService } from "@bitwarden/common/admin-console/abstraction
 import { PaymentMethodType } from "@bitwarden/common/billing/enums";
 import { BitPayInvoiceRequest } from "@bitwarden/common/billing/models/request/bit-pay-invoice.request";
 import { ConfigServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config.service.abstraction";
-import { PayPalConfig } from "@bitwarden/common/platform/abstractions/environment.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
+
+export type PayPalConfig = {
+  businessId?: string;
+  buttonAction?: string;
+};
 
 @Component({
   selector: "app-add-credit",

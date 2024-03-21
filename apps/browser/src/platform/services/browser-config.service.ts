@@ -7,6 +7,7 @@ import { EnvironmentService } from "@bitwarden/common/platform/abstractions/envi
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { ConfigService } from "@bitwarden/common/platform/services/config/config.service";
+import { StateProvider } from "@bitwarden/common/platform/state";
 
 import { browserSession, sessionSync } from "../decorators/session-sync-observable";
 
@@ -21,8 +22,17 @@ export class BrowserConfigService extends ConfigService {
     authService: AuthService,
     environmentService: EnvironmentService,
     logService: LogService,
+    stateProvider: StateProvider,
     subscribe = false,
   ) {
-    super(stateService, configApiService, authService, environmentService, logService, subscribe);
+    super(
+      stateService,
+      configApiService,
+      authService,
+      environmentService,
+      logService,
+      stateProvider,
+      subscribe,
+    );
   }
 }

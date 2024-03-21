@@ -116,7 +116,8 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
     }
 
     if (this.win != null && this.webAuthnSupported) {
-      const webVaultUrl = this.environmentService.getWebVaultUrl();
+      const env = await firstValueFrom(this.environmentService.environment$);
+      const webVaultUrl = env.getWebVaultUrl();
       this.webAuthn = new WebAuthnIFrame(
         this.win,
         webVaultUrl,
@@ -494,5 +495,5 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
   }
 
   // implemented in clients
-  launchDuoFrameless() {}
+  async launchDuoFrameless() {}
 }

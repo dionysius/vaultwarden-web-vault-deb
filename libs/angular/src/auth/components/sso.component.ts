@@ -157,8 +157,10 @@ export class SsoComponent {
     // Save state (regardless of new or existing)
     await this.ssoLoginService.setSsoState(state);
 
+    const env = await firstValueFrom(this.environmentService.environment$);
+
     let authorizeUrl =
-      this.environmentService.getIdentityUrl() +
+      env.getIdentityUrl() +
       "/connect/authorize?" +
       "client_id=" +
       this.clientId +

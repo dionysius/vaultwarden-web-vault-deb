@@ -13,6 +13,7 @@ import {
 } from "./environment-service.factory";
 import { FactoryOptions, CachedServices, factory } from "./factory-options";
 import { logServiceFactory, LogServiceInitOptions } from "./log-service.factory";
+import { stateProviderFactory } from "./state-provider.factory";
 import { stateServiceFactory, StateServiceInitOptions } from "./state-service.factory";
 
 type ConfigServiceFactoryOptions = FactoryOptions & {
@@ -43,6 +44,7 @@ export function configServiceFactory(
         await authServiceFactory(cache, opts),
         await environmentServiceFactory(cache, opts),
         await logServiceFactory(cache, opts),
+        await stateProviderFactory(cache, opts),
         opts.configServiceOptions?.subscribe ?? true,
       ),
   );

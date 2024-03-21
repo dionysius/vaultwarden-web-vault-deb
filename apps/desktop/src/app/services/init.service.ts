@@ -8,7 +8,6 @@ import { NotificationsService as NotificationsServiceAbstraction } from "@bitwar
 import { TwoFactorService as TwoFactorServiceAbstraction } from "@bitwarden/common/auth/abstractions/two-factor.service";
 import { CryptoService as CryptoServiceAbstraction } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
-import { EnvironmentService as EnvironmentServiceAbstraction } from "@bitwarden/common/platform/abstractions/environment.service";
 import { I18nService as I18nServiceAbstraction } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService as PlatformUtilsServiceAbstraction } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService as StateServiceAbstraction } from "@bitwarden/common/platform/abstractions/state.service";
@@ -25,7 +24,6 @@ import { NativeMessagingService } from "../../services/native-messaging.service"
 export class InitService {
   constructor(
     @Inject(WINDOW) private win: Window,
-    private environmentService: EnvironmentServiceAbstraction,
     private syncService: SyncServiceAbstraction,
     private vaultTimeoutService: VaultTimeoutService,
     private i18nService: I18nServiceAbstraction,
@@ -46,10 +44,6 @@ export class InitService {
     return async () => {
       this.nativeMessagingService.init();
       await this.stateService.init({ runMigrations: false }); // Desktop will run them in main process
-      await this.environmentService.setUrlsFromStorage();
-      // Workaround to ignore stateService.activeAccount until URLs are set
-      // TODO: Remove this when implementing ticket PM-2637
-      this.environmentService.initialized = true;
       // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
       // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.syncService.fullSync(true);

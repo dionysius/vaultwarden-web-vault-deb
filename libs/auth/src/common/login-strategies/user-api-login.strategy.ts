@@ -1,4 +1,4 @@
-import { BehaviorSubject } from "rxjs";
+import { firstValueFrom, BehaviorSubject } from "rxjs";
 import { Jsonify } from "type-fest";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
@@ -85,7 +85,8 @@ export class UserApiLoginStrategy extends LoginStrategy {
 
   protected override async setMasterKey(response: IdentityTokenResponse) {
     if (response.apiUseKeyConnector) {
-      const keyConnectorUrl = this.environmentService.getKeyConnectorUrl();
+      const env = await firstValueFrom(this.environmentService.environment$);
+      const keyConnectorUrl = env.getKeyConnectorUrl();
       await this.keyConnectorService.setMasterKeyFromUrl(keyConnectorUrl);
     }
   }

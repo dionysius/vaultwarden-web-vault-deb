@@ -1,4 +1,5 @@
 import { app, Menu } from "electron";
+import { firstValueFrom } from "rxjs";
 
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -45,7 +46,8 @@ export class MenuMain {
   }
 
   private async getWebVaultUrl() {
-    return this.environmentService.getWebVaultUrl() ?? cloudWebVaultUrl;
+    const env = await firstValueFrom(this.environmentService.environment$);
+    return env.getWebVaultUrl() ?? cloudWebVaultUrl;
   }
 
   private initContextMenu() {

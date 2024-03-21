@@ -1,5 +1,6 @@
 import { Component, Inject, NgZone, ViewChild, ViewContainerRef } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
+import { firstValueFrom } from "rxjs";
 
 import { TwoFactorComponent as BaseTwoFactorComponent } from "@bitwarden/angular/auth/components/two-factor.component";
 import { WINDOW } from "@bitwarden/angular/services/injection-tokens";
@@ -141,7 +142,7 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
     }
   }
 
-  override launchDuoFrameless() {
+  override async launchDuoFrameless() {
     const duoHandOffMessage = {
       title: this.i18nService.t("youSuccessfullyLoggedIn"),
       message: this.i18nService.t("youMayCloseThisWindow"),
@@ -150,8 +151,9 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
 
     // we're using the connector here as a way to set a cookie with translations
     // before continuing to the duo frameless url
+    const env = await firstValueFrom(this.environmentService.environment$);
     const launchUrl =
-      this.environmentService.getWebVaultUrl() +
+      env.getWebVaultUrl() +
       "/duo-redirect-connector.html" +
       "?duoFramelessUrl=" +
       encodeURIComponent(this.duoFramelessUrl) +

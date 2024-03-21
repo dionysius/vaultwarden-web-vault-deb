@@ -1,5 +1,6 @@
 import { Directive, EventEmitter, OnInit, Output } from "@angular/core";
 import { Router } from "@angular/router";
+import { firstValueFrom } from "rxjs";
 
 import { TwoFactorService } from "@bitwarden/common/auth/abstractions/two-factor.service";
 import { TwoFactorProviderType } from "@bitwarden/common/auth/enums/two-factor-provider-type";
@@ -31,8 +32,9 @@ export class TwoFactorOptionsComponent implements OnInit {
     this.onProviderSelected.emit(p.type);
   }
 
-  recover() {
-    const webVault = this.environmentService.getWebVaultUrl();
+  async recover() {
+    const env = await firstValueFrom(this.environmentService.environment$);
+    const webVault = env.getWebVaultUrl();
     this.platformUtilsService.launchUri(webVault + "/#/recover-2fa");
     this.onRecoverSelected.emit();
   }

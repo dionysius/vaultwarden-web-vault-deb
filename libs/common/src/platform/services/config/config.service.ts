@@ -22,6 +22,7 @@ import { EnvironmentService, Region } from "../../abstractions/environment.servi
 import { LogService } from "../../abstractions/log.service";
 import { StateService } from "../../abstractions/state.service";
 import { ServerConfigData } from "../../models/data/server-config.data";
+import { StateProvider } from "../../state";
 
 const ONE_HOUR_IN_MILLISECONDS = 1000 * 3600;
 
@@ -44,6 +45,7 @@ export class ConfigService implements ConfigServiceAbstraction {
     private authService: AuthService,
     private environmentService: EnvironmentService,
     private logService: LogService,
+    private stateProvider: StateProvider,
 
     // Used to avoid duplicate subscriptions, e.g. in browser between the background and popup
     private subscribe = true,
@@ -67,7 +69,7 @@ export class ConfigService implements ConfigServiceAbstraction {
     // If you need to fetch a new config when an event occurs, add an observable that emits on that event here
     merge(
       this.refreshTimer$, // an overridable interval
-      this.environmentService.urls, // when environment URLs change (including when app is started)
+      this.environmentService.environment$, // when environment URLs change (including when app is started)
       this._forceFetchConfig, // manual
     )
       .pipe(
@@ -104,8 +106,9 @@ export class ConfigService implements ConfigServiceAbstraction {
       return;
     }
 
+    const userId = await firstValueFrom(this.stateProvider.activeUserId$);
     await this.stateService.setServerConfig(data);
-    this.environmentService.setCloudWebVaultUrl(data.environment?.cloudRegion);
+    await this.environmentService.setCloudRegion(userId, data.environment?.cloudRegion);
   }
 
   /**

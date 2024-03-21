@@ -1,11 +1,13 @@
 import { MockProxy, mock } from "jest-mock-extended";
 import { ReplaySubject, skip, take } from "rxjs";
 
+import { FakeStateProvider, mockAccountServiceWith } from "../../../../spec";
 import { AuthService } from "../../../auth/abstractions/auth.service";
 import { AuthenticationStatus } from "../../../auth/enums/authentication-status";
+import { UserId } from "../../../types/guid";
 import { ConfigApiServiceAbstraction } from "../../abstractions/config/config-api.service.abstraction";
 import { ServerConfig } from "../../abstractions/config/server-config";
-import { EnvironmentService } from "../../abstractions/environment.service";
+import { Environment, EnvironmentService } from "../../abstractions/environment.service";
 import { LogService } from "../../abstractions/log.service";
 import { StateService } from "../../abstractions/state.service";
 import { ServerConfigData } from "../../models/data/server-config.data";
@@ -14,6 +16,7 @@ import {
   ServerConfigResponse,
   ThirdPartyServerConfigResponse,
 } from "../../models/response/server-config.response";
+import { StateProvider } from "../../state";
 
 import { ConfigService } from "./config.service";
 
@@ -23,6 +26,8 @@ describe("ConfigService", () => {
   let authService: MockProxy<AuthService>;
   let environmentService: MockProxy<EnvironmentService>;
   let logService: MockProxy<LogService>;
+  let replaySubject: ReplaySubject<Environment>;
+  let stateProvider: StateProvider;
 
   let serverResponseCount: number; // increments to track distinct responses received from server
 
@@ -35,6 +40,7 @@ describe("ConfigService", () => {
       authService,
       environmentService,
       logService,
+      stateProvider,
     );
     configService.init();
     return configService;
@@ -46,8 +52,11 @@ describe("ConfigService", () => {
     authService = mock();
     environmentService = mock();
     logService = mock();
+    replaySubject = new ReplaySubject<Environment>(1);
+    const accountService = mockAccountServiceWith("0" as UserId);
+    stateProvider = new FakeStateProvider(accountService);
 
-    environmentService.urls = new ReplaySubject<void>(1);
+    environmentService.environment$ = replaySubject.asObservable();
 
     serverResponseCount = 1;
     configApiService.get.mockImplementation(() =>
@@ -139,7 +148,7 @@ describe("ConfigService", () => {
         }
       });
 
-      (environmentService.urls as ReplaySubject<void>).next();
+      replaySubject.next(null);
     });
 
     it("when triggerServerConfigFetch() is called", (done) => {
