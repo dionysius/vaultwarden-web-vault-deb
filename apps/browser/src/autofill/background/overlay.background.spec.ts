@@ -125,7 +125,8 @@ describe("OverlayBackground", () => {
   describe("removePageDetails", () => {
     it("removes the page details for a specific tab from the pageDetailsForTab object", () => {
       const tabId = 1;
-      overlayBackground["pageDetailsForTab"][tabId] = [createPageDetailMock()];
+      const frameId = 2;
+      overlayBackground["pageDetailsForTab"][tabId] = new Map([[frameId, createPageDetailMock()]]);
       overlayBackground.removePageDetails(tabId);
 
       expect(overlayBackground["pageDetailsForTab"][tabId]).toBeUndefined();
@@ -864,29 +865,40 @@ describe("OverlayBackground", () => {
             sender,
           );
 
-          expect(overlayBackground["pageDetailsForTab"][sender.tab.id]).toStrictEqual([
-            { frameId: sender.frameId, tab: sender.tab, details: pageDetails1 },
-          ]);
+          expect(overlayBackground["pageDetailsForTab"][sender.tab.id]).toStrictEqual(
+            new Map([
+              [sender.frameId, { frameId: sender.frameId, tab: sender.tab, details: pageDetails1 }],
+            ]),
+          );
         });
 
         it("updates the page details for a tab that already has a set of page details stored ", () => {
-          overlayBackground["pageDetailsForTab"][sender.tab.id] = [
-            {
-              frameId: sender.frameId,
-              tab: sender.tab,
-              details: pageDetails1,
-            },
-          ];
+          const secondFrameSender = mock<chrome.runtime.MessageSender>({
+            tab: { id: 1 },
+            frameId: 3,
+          });
+          overlayBackground["pageDetailsForTab"][sender.tab.id] = new Map([
+            [sender.frameId, { frameId: sender.frameId, tab: sender.tab, details: pageDetails1 }],
+          ]);
 
           sendExtensionRuntimeMessage(
             { command: "collectPageDetailsResponse", details: pageDetails2 },
-            sender,
+            secondFrameSender,
           );
 
-          expect(overlayBackground["pageDetailsForTab"][sender.tab.id]).toStrictEqual([
-            { frameId: sender.frameId, tab: sender.tab, details: pageDetails1 },
-            { frameId: sender.frameId, tab: sender.tab, details: pageDetails2 },
-          ]);
+          expect(overlayBackground["pageDetailsForTab"][sender.tab.id]).toStrictEqual(
+            new Map([
+              [sender.frameId, { frameId: sender.frameId, tab: sender.tab, details: pageDetails1 }],
+              [
+                secondFrameSender.frameId,
+                {
+                  frameId: secondFrameSender.frameId,
+                  tab: secondFrameSender.tab,
+                  details: pageDetails2,
+                },
+              ],
+            ]),
+          );
         });
       });
 
@@ -1196,6 +1208,10 @@ describe("OverlayBackground", () => {
         let getLoginCiphersSpy: jest.SpyInstance;
         let isPasswordRepromptRequiredSpy: jest.SpyInstance;
         let doAutoFillSpy: jest.SpyInstance;
+        let sender: chrome.runtime.MessageSender;
+        const pageDetails = createAutofillPageDetailsMock({
+          login: { username: "username1", password: "password1" },
+        });
 
         beforeEach(() => {
           getLoginCiphersSpy = jest.spyOn(overlayBackground["overlayLoginCiphers"], "get");
@@ -1204,10 +1220,23 @@ describe("OverlayBackground", () => {
             "isPasswordRepromptRequired",
           );
           doAutoFillSpy = jest.spyOn(overlayBackground["autofillService"], "doAutoFill");
+          sender = mock<chrome.runtime.MessageSender>({ tab: { id: 1 } });
         });
 
         it("ignores the fill request if the overlay cipher id is not provided", async () => {
           sendPortMessage(listPortSpy, { command: "fillSelectedListItem" });
+          await flushPromises();
+
+          expect(getLoginCiphersSpy).not.toHaveBeenCalled();
+          expect(isPasswordRepromptRequiredSpy).not.toHaveBeenCalled();
+          expect(doAutoFillSpy).not.toHaveBeenCalled();
+        });
+
+        it("ignores the fill request if the tab does not contain any identified page details", async () => {
+          sendPortMessage(listPortSpy, {
+            command: "fillSelectedListItem",
+            overlayCipherId: "overlay-cipher-1",
+          });
           await flushPromises();
 
           expect(getLoginCiphersSpy).not.toHaveBeenCalled();
@@ -1221,6 +1250,9 @@ describe("OverlayBackground", () => {
             type: CipherType.Login,
           });
           overlayBackground["overlayLoginCiphers"] = new Map([["overlay-cipher-1", cipher]]);
+          overlayBackground["pageDetailsForTab"][sender.tab.id] = new Map([
+            [sender.frameId, { frameId: sender.frameId, tab: sender.tab, details: pageDetails }],
+          ]);
           getLoginCiphersSpy = jest.spyOn(overlayBackground["overlayLoginCiphers"], "get");
           isPasswordRepromptRequiredSpy.mockResolvedValue(true);
 
@@ -1247,6 +1279,14 @@ describe("OverlayBackground", () => {
             ["overlay-cipher-2", cipher2],
             ["overlay-cipher-3", cipher3],
           ]);
+          const pageDetailsForTab = {
+            frameId: sender.frameId,
+            tab: sender.tab,
+            details: pageDetails,
+          };
+          overlayBackground["pageDetailsForTab"][sender.tab.id] = new Map([
+            [sender.frameId, pageDetailsForTab],
+          ]);
           isPasswordRepromptRequiredSpy.mockResolvedValue(false);
 
           sendPortMessage(listPortSpy, {
@@ -1262,7 +1302,7 @@ describe("OverlayBackground", () => {
           expect(doAutoFillSpy).toHaveBeenCalledWith({
             tab: listPortSpy.sender.tab,
             cipher: cipher2,
-            pageDetails: undefined,
+            pageDetails: [pageDetailsForTab],
             fillNewPassword: true,
             allowTotpAutofill: true,
           });
@@ -1278,6 +1318,9 @@ describe("OverlayBackground", () => {
         it("copies the cipher's totp code to the clipboard after filling", async () => {
           const cipher1 = mock<CipherView>({ id: "overlay-cipher-1" });
           overlayBackground["overlayLoginCiphers"] = new Map([["overlay-cipher-1", cipher1]]);
+          overlayBackground["pageDetailsForTab"][sender.tab.id] = new Map([
+            [sender.frameId, { frameId: sender.frameId, tab: sender.tab, details: pageDetails }],
+          ]);
           isPasswordRepromptRequiredSpy.mockResolvedValue(false);
           const copyToClipboardSpy = jest
             .spyOn(overlayBackground["platformUtilsService"], "copyToClipboard")
