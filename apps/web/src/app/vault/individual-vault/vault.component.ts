@@ -406,10 +406,6 @@ export class VaultComponent implements OnInit, OnDestroy {
             (filter.organizationId === undefined || filter.organizationId === Unassigned);
           this.isEmpty = collections?.length === 0 && ciphers?.length === 0;
 
-          // This is a temporary fix to avoid double fetching collections.
-          // TODO: Remove when implementing new VVR menu
-          this.vaultFilterService.reloadCollections(allCollections);
-
           this.performingInitialLoad = false;
           this.refreshing = false;
         },
