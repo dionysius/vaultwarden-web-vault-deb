@@ -7,7 +7,7 @@ import { NgModule } from "@angular/core";
 
 import { ColorPasswordCountPipe } from "@bitwarden/angular/pipes/color-password-count.pipe";
 import { ColorPasswordPipe } from "@bitwarden/angular/pipes/color-password.pipe";
-import { DialogModule } from "@bitwarden/components";
+import { DialogModule, CalloutModule } from "@bitwarden/components";
 import { ExportScopeCalloutComponent } from "@bitwarden/vault-export-ui";
 
 import { AccessibilityCookieComponent } from "../auth/accessibility-cookie.component";
@@ -60,6 +60,7 @@ import { SendComponent } from "./tools/send/send.component";
     VaultFilterModule,
     LoginModule,
     DialogModule,
+    CalloutModule,
     DeleteAccountComponent,
     UserVerificationComponent,
     ExportScopeCalloutComponent,

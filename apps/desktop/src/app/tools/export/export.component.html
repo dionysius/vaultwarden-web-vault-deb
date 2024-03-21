@@ -2,13 +2,13 @@
   <div class="modal-dialog" role="document">
     <form class="modal-content" #form (ngSubmit)="submit()" [formGroup]="exportForm">
       <div class="modal-body">
-        <app-callout
+        <bit-callout
           type="warning"
           title="{{ 'vaultExportDisabled' | i18n }}"
           *ngIf="disabledByPolicy"
         >
           {{ "personalVaultExportPolicyInEffect" | i18n }}
-        </app-callout>
+        </bit-callout>
         <tools-export-scope-callout *ngIf="!disabledByPolicy"></tools-export-scope-callout>
         <div class="box">
           <h1 class="box-header" id="exportTitle">
