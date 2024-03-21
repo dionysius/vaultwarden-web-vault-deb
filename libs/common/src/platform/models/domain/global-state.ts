@@ -2,7 +2,6 @@ import { ThemeType } from "../../enums";
 
 export class GlobalState {
   installedVersion?: string;
-  locale?: string;
   organizationInvitation?: any;
   rememberedEmail?: string;
   theme?: ThemeType = ThemeType.System;

@@ -246,8 +246,6 @@ export abstract class StateService<T extends Account = Account> {
     value: { [cipherId: string]: LocalData },
     options?: StorageOptions,
   ) => Promise<void>;
-  getLocale: (options?: StorageOptions) => Promise<string>;
-  setLocale: (value: string, options?: StorageOptions) => Promise<void>;
   getMinimizeOnCopyToClipboard: (options?: StorageOptions) => Promise<boolean>;
   setMinimizeOnCopyToClipboard: (value: boolean, options?: StorageOptions) => Promise<void>;
   getOrganizationInvitation: (options?: StorageOptions) => Promise<any>;
