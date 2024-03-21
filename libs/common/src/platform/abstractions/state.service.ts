@@ -4,7 +4,6 @@ import { AdminAuthRequestStorable } from "../../auth/models/domain/admin-auth-re
 import { ForceSetPasswordReason } from "../../auth/models/domain/force-set-password-reason";
 import { KdfConfig } from "../../auth/models/domain/kdf-config";
 import { BiometricKey } from "../../auth/types/biometric-key";
-import { WindowState } from "../../models/domain/window-state";
 import { GeneratorOptions } from "../../tools/generator/generator-options";
 import { GeneratedPasswordHistory, PasswordGeneratorOptions } from "../../tools/generator/password";
 import { UsernameGeneratorOptions } from "../../tools/generator/username";
@@ -52,8 +51,6 @@ export abstract class StateService<T extends Account = Account> {
 
   getAddEditCipherInfo: (options?: StorageOptions) => Promise<AddEditCipherInfo>;
   setAddEditCipherInfo: (value: AddEditCipherInfo, options?: StorageOptions) => Promise<void>;
-  getAlwaysShowDock: (options?: StorageOptions) => Promise<boolean>;
-  setAlwaysShowDock: (value: boolean, options?: StorageOptions) => Promise<void>;
   getBiometricFingerprintValidated: (options?: StorageOptions) => Promise<boolean>;
   setBiometricFingerprintValidated: (value: boolean, options?: StorageOptions) => Promise<void>;
   getConvertAccountToKeyConnector: (options?: StorageOptions) => Promise<boolean>;
@@ -184,8 +181,6 @@ export abstract class StateService<T extends Account = Account> {
   setEmail: (value: string, options?: StorageOptions) => Promise<void>;
   getEmailVerified: (options?: StorageOptions) => Promise<boolean>;
   setEmailVerified: (value: boolean, options?: StorageOptions) => Promise<void>;
-  getEnableAlwaysOnTop: (options?: StorageOptions) => Promise<boolean>;
-  setEnableAlwaysOnTop: (value: boolean, options?: StorageOptions) => Promise<void>;
   getEnableBrowserIntegration: (options?: StorageOptions) => Promise<boolean>;
   setEnableBrowserIntegration: (value: boolean, options?: StorageOptions) => Promise<void>;
   getEnableBrowserIntegrationFingerprint: (options?: StorageOptions) => Promise<boolean>;
@@ -193,19 +188,11 @@ export abstract class StateService<T extends Account = Account> {
     value: boolean,
     options?: StorageOptions,
   ) => Promise<void>;
-  getEnableCloseToTray: (options?: StorageOptions) => Promise<boolean>;
-  setEnableCloseToTray: (value: boolean, options?: StorageOptions) => Promise<void>;
   getEnableDuckDuckGoBrowserIntegration: (options?: StorageOptions) => Promise<boolean>;
   setEnableDuckDuckGoBrowserIntegration: (
     value: boolean,
     options?: StorageOptions,
   ) => Promise<void>;
-  getEnableMinimizeToTray: (options?: StorageOptions) => Promise<boolean>;
-  setEnableMinimizeToTray: (value: boolean, options?: StorageOptions) => Promise<void>;
-  getEnableStartToTray: (options?: StorageOptions) => Promise<boolean>;
-  setEnableStartToTray: (value: boolean, options?: StorageOptions) => Promise<void>;
-  getEnableTray: (options?: StorageOptions) => Promise<boolean>;
-  setEnableTray: (value: boolean, options?: StorageOptions) => Promise<void>;
   getEncryptedCiphers: (options?: StorageOptions) => Promise<{ [id: string]: CipherData }>;
   setEncryptedCiphers: (
     value: { [id: string]: CipherData },
@@ -261,12 +248,8 @@ export abstract class StateService<T extends Account = Account> {
   ) => Promise<void>;
   getLocale: (options?: StorageOptions) => Promise<string>;
   setLocale: (value: string, options?: StorageOptions) => Promise<void>;
-  getMainWindowSize: (options?: StorageOptions) => Promise<number>;
-  setMainWindowSize: (value: number, options?: StorageOptions) => Promise<void>;
   getMinimizeOnCopyToClipboard: (options?: StorageOptions) => Promise<boolean>;
   setMinimizeOnCopyToClipboard: (value: boolean, options?: StorageOptions) => Promise<void>;
-  getOpenAtLogin: (options?: StorageOptions) => Promise<boolean>;
-  setOpenAtLogin: (value: boolean, options?: StorageOptions) => Promise<void>;
   getOrganizationInvitation: (options?: StorageOptions) => Promise<any>;
   setOrganizationInvitation: (value: any, options?: StorageOptions) => Promise<void>;
   getPasswordGenerationOptions: (options?: StorageOptions) => Promise<PasswordGeneratorOptions>;
@@ -302,8 +285,6 @@ export abstract class StateService<T extends Account = Account> {
   setVaultTimeoutAction: (value: string, options?: StorageOptions) => Promise<void>;
   getApproveLoginRequests: (options?: StorageOptions) => Promise<boolean>;
   setApproveLoginRequests: (value: boolean, options?: StorageOptions) => Promise<void>;
-  getWindow: () => Promise<WindowState>;
-  setWindow: (value: WindowState) => Promise<void>;
   /**
    * @deprecated Do not call this directly, use ConfigService
    */

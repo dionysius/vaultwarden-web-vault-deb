@@ -186,7 +186,6 @@ export class AccountProfile {
 export class AccountSettings {
   defaultUriMatch?: UriMatchStrategySetting;
   disableGa?: boolean;
-  enableAlwaysOnTop?: boolean;
   enableBiometric?: boolean;
   minimizeOnCopyToClipboard?: boolean;
   passwordGenerationOptions?: PasswordGeneratorOptions;
