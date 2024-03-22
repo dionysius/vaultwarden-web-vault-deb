@@ -5,6 +5,7 @@ import { EnvironmentService } from "@bitwarden/common/platform/abstractions/envi
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 
+import { DesktopSettingsService } from "../../platform/services/desktop-settings.service";
 import { UpdaterMain } from "../updater.main";
 import { WindowMain } from "../window.main";
 
@@ -20,6 +21,7 @@ export class MenuMain {
     private environmentService: EnvironmentService,
     private windowMain: WindowMain,
     private updaterMain: UpdaterMain,
+    private desktopSettingsService: DesktopSettingsService,
   ) {}
 
   async init() {
@@ -36,10 +38,12 @@ export class MenuMain {
       new Menubar(
         this.i18nService,
         this.messagingService,
+        this.desktopSettingsService,
         this.updaterMain,
         this.windowMain,
         await this.getWebVaultUrl(),
         app.getVersion(),
+        await firstValueFrom(this.desktopSettingsService.hardwareAcceleration$),
         updateRequest,
       ).menu,
     );

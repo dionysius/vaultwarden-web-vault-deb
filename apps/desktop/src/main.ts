@@ -207,6 +207,7 @@ export class Main {
       this.environmentService,
       this.windowMain,
       this.updaterMain,
+      this.desktopSettingsService,
     );
 
     this.biometricsService = new BiometricsService(
