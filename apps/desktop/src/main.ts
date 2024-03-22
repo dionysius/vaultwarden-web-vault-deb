@@ -26,6 +26,7 @@ import { StateEventRegistrarService } from "@bitwarden/common/platform/state/sta
 import { MemoryStorageService as MemoryStorageServiceForStateProviders } from "@bitwarden/common/platform/state/storage/memory-storage.service";
 /* eslint-enable import/no-restricted-paths */
 
+import { DesktopAutofillSettingsService } from "./autofill/services/desktop-autofill-settings.service";
 import { MenuMain } from "./main/menu/menu.main";
 import { MessagingMain } from "./main/messaging.main";
 import { NativeMessagingMain } from "./main/native-messaging.main";
@@ -71,6 +72,7 @@ export class Main {
   biometricsService: BiometricsServiceAbstraction;
   nativeMessagingMain: NativeMessagingMain;
   clipboardMain: ClipboardMain;
+  desktopAutofillSettingsService: DesktopAutofillSettingsService;
 
   constructor() {
     // Set paths for portable builds
@@ -233,6 +235,8 @@ export class Main {
       app.getPath("exe"),
     );
 
+    this.desktopAutofillSettingsService = new DesktopAutofillSettingsService(stateProvider);
+
     this.clipboardMain = new ClipboardMain();
     this.clipboardMain.init();
 
@@ -268,10 +272,10 @@ export class Main {
 
         if (
           (await this.stateService.getEnableBrowserIntegration()) ||
-          (await this.stateService.getEnableDuckDuckGoBrowserIntegration())
+          (await firstValueFrom(
+            this.desktopAutofillSettingsService.enableDuckDuckGoBrowserIntegration$,
+          ))
         ) {
-          // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-          // eslint-disable-next-line @typescript-eslint/no-floating-promises
           this.nativeMessagingMain.listen();
         }
 

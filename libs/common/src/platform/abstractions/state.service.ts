@@ -188,11 +188,6 @@ export abstract class StateService<T extends Account = Account> {
     value: boolean,
     options?: StorageOptions,
   ) => Promise<void>;
-  getEnableDuckDuckGoBrowserIntegration: (options?: StorageOptions) => Promise<boolean>;
-  setEnableDuckDuckGoBrowserIntegration: (
-    value: boolean,
-    options?: StorageOptions,
-  ) => Promise<void>;
   getEncryptedCiphers: (options?: StorageOptions) => Promise<{ [id: string]: CipherData }>;
   setEncryptedCiphers: (
     value: { [id: string]: CipherData },

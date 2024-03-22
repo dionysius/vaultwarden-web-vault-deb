@@ -13,6 +13,5 @@ export class GlobalState {
   mainWindowSize?: number;
   enableBrowserIntegration?: boolean;
   enableBrowserIntegrationFingerprint?: boolean;
-  enableDuckDuckGoBrowserIntegration?: boolean;
   deepLinkRedirectUrl?: string;
 }
