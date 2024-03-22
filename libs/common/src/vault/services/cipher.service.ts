@@ -21,7 +21,8 @@ import Domain from "../../platform/models/domain/domain-base";
 import { EncArrayBuffer } from "../../platform/models/domain/enc-array-buffer";
 import { EncString } from "../../platform/models/domain/enc-string";
 import { SymmetricCryptoKey } from "../../platform/models/domain/symmetric-crypto-key";
-import { UserKey, OrgKey } from "../../types/key";
+import { CipherId, CollectionId, OrganizationId } from "../../types/guid";
+import { OrgKey, UserKey } from "../../types/key";
 import { CipherService as CipherServiceAbstraction } from "../abstractions/cipher.service";
 import { CipherFileUploadService } from "../abstractions/file-upload/cipher-file-upload.service";
 import { FieldType } from "../enums";
@@ -42,6 +43,7 @@ import { CipherBulkDeleteRequest } from "../models/request/cipher-bulk-delete.re
 import { CipherBulkMoveRequest } from "../models/request/cipher-bulk-move.request";
 import { CipherBulkRestoreRequest } from "../models/request/cipher-bulk-restore.request";
 import { CipherBulkShareRequest } from "../models/request/cipher-bulk-share.request";
+import { CipherBulkUpdateCollectionsRequest } from "../models/request/cipher-bulk-update-collections.request";
 import { CipherCollectionsRequest } from "../models/request/cipher-collections.request";
 import { CipherCreateRequest } from "../models/request/cipher-create.request";
 import { CipherPartialRequest } from "../models/request/cipher-partial.request";
@@ -683,6 +685,49 @@ export class CipherService implements CipherServiceAbstraction {
     await this.apiService.putCipherCollections(cipher.id, request);
     const data = cipher.toCipherData();
     await this.upsert(data);
+  }
+
+  /**
+   * Bulk update collections for many ciphers with the server
+   * @param orgId
+   * @param cipherIds
+   * @param collectionIds
+   * @param removeCollections - If true, the collectionIds will be removed from the ciphers, otherwise they will be added
+   */
+  async bulkUpdateCollectionsWithServer(
+    orgId: OrganizationId,
+    cipherIds: CipherId[],
+    collectionIds: CollectionId[],
+    removeCollections: boolean = false,
+  ): Promise<void> {
+    const request = new CipherBulkUpdateCollectionsRequest(
+      orgId,
+      cipherIds,
+      collectionIds,
+      removeCollections,
+    );
+
+    await this.apiService.send("POST", "/ciphers/bulk-collections", request, true, false);
+
+    // Update the local state
+    const ciphers = await this.stateService.getEncryptedCiphers();
+
+    for (const id of cipherIds) {
+      const cipher = ciphers[id];
+      if (cipher) {
+        if (removeCollections) {
+          cipher.collectionIds = cipher.collectionIds?.filter(
+            (cid) => !collectionIds.includes(cid as CollectionId),
+          );
+        } else {
+          // Append to the collectionIds if it's not already there
+          cipher.collectionIds = [...new Set([...(cipher.collectionIds ?? []), ...collectionIds])];
+        }
+      }
+    }
+
+    await this.clearCache();
+    await this.stateService.setEncryptedCiphers(ciphers);
   }
 
   async upsert(cipher: CipherData | CipherData[]): Promise<any> {
