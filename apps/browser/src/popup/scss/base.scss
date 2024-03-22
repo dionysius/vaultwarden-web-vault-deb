@@ -17,6 +17,8 @@ body {
 body {
   width: 375px !important;
   height: 600px !important;
+  position: relative;
+  min-height: 100vh;
   overflow: hidden;
   color: $text-color;
   background-color: $background-color;
