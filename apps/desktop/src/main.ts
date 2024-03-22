@@ -45,6 +45,7 @@ import { ElectronStateService } from "./platform/services/electron-state.service
 import { ElectronStorageService } from "./platform/services/electron-storage.service";
 import { I18nMainService } from "./platform/services/i18n.main.service";
 import { ElectronMainMessagingService } from "./services/electron-main-messaging.service";
+import { isMacAppStore } from "./utils";
 
 export class Main {
   logService: ElectronLogMainService;
@@ -322,6 +323,19 @@ export class Main {
     if (!hardwareAcceleration) {
       this.logService.warning("Hardware acceleration is disabled");
       app.disableHardwareAcceleration();
+    } else if (isMacAppStore()) {
+      // We disable hardware acceleration on Mac App Store builds for iMacs with amd switchable GPUs due to:
+      // https://github.com/electron/electron/issues/41346
+      const gpuInfo: any = await app.getGPUInfo("basic");
+      const badGpu = gpuInfo?.auxAttributes?.amdSwitchable ?? false;
+      const isImac = gpuInfo?.machineModelName == "iMac";
+
+      if (isImac && badGpu) {
+        this.logService.warning(
+          "Bad GPU detected, hardware acceleration is disabled for compatibility",
+        );
+        app.disableHardwareAcceleration();
+      }
     }
   }
 }
