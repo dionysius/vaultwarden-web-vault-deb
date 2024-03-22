@@ -7063,12 +7063,6 @@
   "enforceOnLoginDesc": {
     "message": "Kræv, at eksisterende medlemmer ændrer deres adgangskoder"
   },
-  "usDomain": {
-    "message": "bitwarden.com"
-  },
-  "euDomain": {
-    "message": "bitwarden.eu"
-  },
   "smProjectDeleteAccessRestricted": {
     "message": "Ingen tilladelse til at slette dette objekt",
     "description": "The individual description shown to the user when the user doesn't have access to delete a project."
@@ -7607,9 +7601,9 @@
     "message": "Udbyderportal"
   },
   "restrictedGroupAccess": {
-    "message": "You cannot add yourself to groups."
+    "message": "Man kan ikke føje sig selv til grupper."
   },
   "restrictedCollectionAccess": {
-    "message": "You cannot add yourself to collections."
+    "message": "Man kan ikke føje sig selv til samlinger."
   }
 }

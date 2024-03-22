@@ -7063,12 +7063,6 @@
   "enforceOnLoginDesc": {
     "message": "Obbliga i membri esistenti a cambiare le loro password"
   },
-  "usDomain": {
-    "message": "bitwarden.com"
-  },
-  "euDomain": {
-    "message": "bitwarden.eu"
-  },
   "smProjectDeleteAccessRestricted": {
     "message": "Non hai l'autorizzazione per eliminare questo progetto",
     "description": "The individual description shown to the user when the user doesn't have access to delete a project."
@@ -7607,9 +7601,9 @@
     "message": "Portale Fornitori"
   },
   "restrictedGroupAccess": {
-    "message": "You cannot add yourself to groups."
+    "message": "Non puoi aggiungerti da solo ai gruppi."
   },
   "restrictedCollectionAccess": {
-    "message": "You cannot add yourself to collections."
+    "message": "Non puoi aggiungerti da solo alle raccolte."
   }
 }

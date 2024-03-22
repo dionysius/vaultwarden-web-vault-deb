@@ -7063,12 +7063,6 @@
   "enforceOnLoginDesc": {
     "message": "Wymagaj od istniejących członków zmiany haseł"
   },
-  "usDomain": {
-    "message": "bitwarden.com"
-  },
-  "euDomain": {
-    "message": "bitwarden.eu"
-  },
   "smProjectDeleteAccessRestricted": {
     "message": "Nie masz uprawnień do usunięcia tego projektu",
     "description": "The individual description shown to the user when the user doesn't have access to delete a project."
