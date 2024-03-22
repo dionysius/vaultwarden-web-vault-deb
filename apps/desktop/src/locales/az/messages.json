@@ -1644,6 +1644,12 @@
   "enableBrowserIntegrationFingerprintDesc": {
     "message": "Masaüstü tətbiqi ilə brauzer arasında bağlantı qurarkən barmaq izi ifadəsinin təsdiqlənməsini tələb edərək əlavə bir güvənlik qatını fəallaşdıra bilərsiniz. Bu, hər bağlantı qurulanda istifadəçi müdaxiləsi və doğrulama tələb edir."
   },
+  "enableHardwareAcceleration": {
+    "message": "Avadanlıq sürətləndirməsini istifadə et"
+  },
+  "enableHardwareAccelerationDesc": {
+    "message": "İlkin olaraq bu ayar AÇIQDIR. Yalnız qrafik problemlərlə üzləşsəniz SÖNDÜRÜN. Yenidən başlatma tələb olunur."
+  },
   "approve": {
     "message": "Təsdiqlə"
   },
@@ -2339,12 +2345,6 @@
   },
   "loggingInOn": {
     "message": "Giriş edilir"
-  },
-  "usDomain": {
-    "message": "bitwarden.com"
-  },
-  "euDomain": {
-    "message": "bitwarden.eu"
   },
   "selfHostedServer": {
     "message": "öz-özünə sahiblik edən"

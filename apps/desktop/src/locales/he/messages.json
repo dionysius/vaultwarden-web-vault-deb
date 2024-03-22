@@ -1644,6 +1644,12 @@
   "enableBrowserIntegrationFingerprintDesc": {
     "message": "הפעל שכבת אבטחה נוספת באמצעות בקשת אימות טביעות אצבע בעת יצירת קישור בין שולחן העבודה לדפדפן. כשהוא מופעל, זה דורש התערבות ואימות משתמש בכל פעם שנוצר חיבור."
   },
+  "enableHardwareAcceleration": {
+    "message": "Use hardware acceleration"
+  },
+  "enableHardwareAccelerationDesc": {
+    "message": "By default this setting is ON. Turn OFF only if you experience graphical issues. Restart is required."
+  },
   "approve": {
     "message": "לְאַשֵׁר"
   },
@@ -2339,12 +2345,6 @@
   },
   "loggingInOn": {
     "message": "Logging in on"
-  },
-  "usDomain": {
-    "message": "bitwarden.com"
-  },
-  "euDomain": {
-    "message": "bitwarden.eu"
   },
   "selfHostedServer": {
     "message": "self-hosted"

@@ -1644,6 +1644,12 @@
   "enableBrowserIntegrationFingerprintDesc": {
     "message": "Омогућите додатни ниво заштите захтевајући проверу фразе отиска прста приликом успостављања везе између desktop-а и прегледача. Када је омогућено, ово захтева интервенцију и верификацију корисника сваки пут када се успостави веза."
   },
+  "enableHardwareAcceleration": {
+    "message": "Use hardware acceleration"
+  },
+  "enableHardwareAccelerationDesc": {
+    "message": "By default this setting is ON. Turn OFF only if you experience graphical issues. Restart is required."
+  },
   "approve": {
     "message": "Одобри"
   },
@@ -2339,12 +2345,6 @@
   },
   "loggingInOn": {
     "message": "Пријављено на"
-  },
-  "usDomain": {
-    "message": "bitwarden.com"
-  },
-  "euDomain": {
-    "message": "bitwarden.eu"
   },
   "selfHostedServer": {
     "message": "личан хостинг"

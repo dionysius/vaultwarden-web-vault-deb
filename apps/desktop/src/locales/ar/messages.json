@@ -1644,6 +1644,12 @@
   "enableBrowserIntegrationFingerprintDesc": {
     "message": "أضف طبقة أمان إضافية عن طريق طلب تأكيد عبارة بصمة الإصبع عند إنشاء رابط بين سطح المكتب الخاص بك والمتصفح. هذا يتطلب إجراء المستخدم والتحقق في كل مرة يتم فيها إنشاء اتصال."
   },
+  "enableHardwareAcceleration": {
+    "message": "Use hardware acceleration"
+  },
+  "enableHardwareAccelerationDesc": {
+    "message": "By default this setting is ON. Turn OFF only if you experience graphical issues. Restart is required."
+  },
   "approve": {
     "message": "الموافقة"
   },
@@ -2339,12 +2345,6 @@
   },
   "loggingInOn": {
     "message": "جارٍ تسجيل الدخول"
-  },
-  "usDomain": {
-    "message": "bitwarden.com"
-  },
-  "euDomain": {
-    "message": "bitwarden.eu"
   },
   "selfHostedServer": {
     "message": "استضافة ذاتية"

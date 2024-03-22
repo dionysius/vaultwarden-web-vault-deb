@@ -1644,6 +1644,12 @@
   "enableBrowserIntegrationFingerprintDesc": {
     "message": "デスクトップとブラウザ間のリンクを確立する際にパスフレーズを要求することで、さらなるセキュリティ層を有効にします。 有効にすると、接続を確立するたびにユーザーによる確認が必要になります。"
   },
+  "enableHardwareAcceleration": {
+    "message": "ハードウェアアクセラレーションを使用する"
+  },
+  "enableHardwareAccelerationDesc": {
+    "message": "デフォルトではこの設定はオンになっています。グラフィックの問題が発生した場合のみオフにしてください。再起動が必要です。"
+  },
   "approve": {
     "message": "承認"
   },
@@ -2339,12 +2345,6 @@
   },
   "loggingInOn": {
     "message": "ログイン先"
-  },
-  "usDomain": {
-    "message": "bitwarden.com"
-  },
-  "euDomain": {
-    "message": "bitwarden.eu"
   },
   "selfHostedServer": {
     "message": "自己ホスト型"

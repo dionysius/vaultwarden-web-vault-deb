@@ -1644,6 +1644,12 @@
   "enableBrowserIntegrationFingerprintDesc": {
     "message": "Habilita una capa de seguretat addicional mitjançant la validació de frases d'empremtes dactilars quan estableix un enllaç entre l'escriptori i el navegador. Quan està habilitat, requereix la intervenció i verificació de l'usuari cada vegada que s'estableix una connexió."
   },
+  "enableHardwareAcceleration": {
+    "message": "Use hardware acceleration"
+  },
+  "enableHardwareAccelerationDesc": {
+    "message": "By default this setting is ON. Turn OFF only if you experience graphical issues. Restart is required."
+  },
   "approve": {
     "message": "Aprova"
   },
@@ -2339,12 +2345,6 @@
   },
   "loggingInOn": {
     "message": "Inici de sessió en"
-  },
-  "usDomain": {
-    "message": "bitwarden.com"
-  },
-  "euDomain": {
-    "message": "bitwarden.eu"
   },
   "selfHostedServer": {
     "message": "autoallotjat"

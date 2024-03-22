@@ -1644,6 +1644,12 @@
   "enableBrowserIntegrationFingerprintDesc": {
     "message": "Tilføj et ekstra sikkerhedslag ved at kræve bekræftelse af fingeraftrykssætning, når der oprettes forbindelse mellem din computer og din browser. Dette kræver brugerhandling og bekræftelse, hver gang der forbindelse oprettes."
   },
+  "enableHardwareAcceleration": {
+    "message": "Use hardware acceleration"
+  },
+  "enableHardwareAccelerationDesc": {
+    "message": "By default this setting is ON. Turn OFF only if you experience graphical issues. Restart is required."
+  },
   "approve": {
     "message": "Godkend"
   },
@@ -2339,12 +2345,6 @@
   },
   "loggingInOn": {
     "message": "Logger ind på"
-  },
-  "usDomain": {
-    "message": "bitwarden.com"
-  },
-  "euDomain": {
-    "message": "bitwarden.eu"
   },
   "selfHostedServer": {
     "message": "selv-hostet"

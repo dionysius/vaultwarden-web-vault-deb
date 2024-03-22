@@ -1644,6 +1644,12 @@
   "enableBrowserIntegrationFingerprintDesc": {
     "message": "Додайте ще один рівень безпеки, вимагаючи підтвердження фрази відбитка під час встановлення зв'язку між програмою на комп'ютері та браузером. Вимагатиметься дія користувача і перевірка щоразу під час встановлення зв'язку."
   },
+  "enableHardwareAcceleration": {
+    "message": "Використовувати апаратне прискорення"
+  },
+  "enableHardwareAccelerationDesc": {
+    "message": "Типово, цей параметр увімкнено. Вимкніть його лише за виникнення проблем із графікою. Потрібен перезапуск."
+  },
   "approve": {
     "message": "Схвалити"
   },
@@ -2339,12 +2345,6 @@
   },
   "loggingInOn": {
     "message": "Увійти на"
-  },
-  "usDomain": {
-    "message": "bitwarden.com"
-  },
-  "euDomain": {
-    "message": "bitwarden.eu"
   },
   "selfHostedServer": {
     "message": "власне розміщення"

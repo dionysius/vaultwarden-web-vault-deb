@@ -1644,6 +1644,12 @@
   "enableBrowserIntegrationFingerprintDesc": {
     "message": "Activez une couche de sécurité supplémentaire en exigeant la validation de la phrase d'empreinte du compte lors de l'établissement d'un lien entre l'application et votre navigateur. Lorsque cette option est activée, cela nécessite une intervention et une vérification de l'utilisateur à chaque fois qu'une connexion est établie."
   },
+  "enableHardwareAcceleration": {
+    "message": "Utiliser l'accélération matérielle"
+  },
+  "enableHardwareAccelerationDesc": {
+    "message": "Ce paramètre est activé par défaut. Désactivez-le uniquement si vous rencontrez des problèmes graphiques. Redémarrage requis."
+  },
   "approve": {
     "message": "Accepter"
   },
@@ -2339,12 +2345,6 @@
   },
   "loggingInOn": {
     "message": "Connexion sur"
-  },
-  "usDomain": {
-    "message": "bitwarden.com"
-  },
-  "euDomain": {
-    "message": "bitwarden.eu"
   },
   "selfHostedServer": {
     "message": "auto-hébergé"
