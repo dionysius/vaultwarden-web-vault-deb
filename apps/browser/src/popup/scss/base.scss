@@ -169,7 +169,7 @@ cdk-virtual-scroll-viewport::-webkit-scrollbar-thumb,
   }
 }
 
-header:not(bit-callout header) {
+header:not(bit-callout header, bit-dialog header) {
   height: 44px;
   display: flex;
 
