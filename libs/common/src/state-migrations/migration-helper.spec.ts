@@ -9,7 +9,7 @@ import { AbstractStorageService } from "../platform/abstractions/storage.service
 // eslint-disable-next-line import/no-restricted-paths -- Needed to generate unique strings for injection
 import { Utils } from "../platform/misc/utils";
 
-import { MigrationHelper } from "./migration-helper";
+import { MigrationHelper, MigrationHelperType } from "./migration-helper";
 import { Migrator } from "./migrator";
 
 const exampleJSON = {
@@ -37,7 +37,7 @@ describe("RemoveLegacyEtmKeyMigrator", () => {
     storage = mock();
     storage.get.mockImplementation((key) => (exampleJSON as any)[key]);
 
-    sut = new MigrationHelper(0, storage, logService);
+    sut = new MigrationHelper(0, storage, logService, "general");
   });
 
   describe("get", () => {
@@ -150,6 +150,7 @@ describe("RemoveLegacyEtmKeyMigrator", () => {
 export function mockMigrationHelper(
   storageJson: any,
   stateVersion = 0,
+  type: MigrationHelperType = "general",
 ): MockProxy<MigrationHelper> {
   const logService: MockProxy<LogService> = mock();
   const storage: MockProxy<AbstractStorageService> = mock();
@@ -157,7 +158,7 @@ export function mockMigrationHelper(
   storage.save.mockImplementation(async (key, value) => {
     (storageJson as any)[key] = value;
   });
-  const helper = new MigrationHelper(stateVersion, storage, logService);
+  const helper = new MigrationHelper(stateVersion, storage, logService, type);
 
   const mockHelper = mock<MigrationHelper>();
   mockHelper.get.mockImplementation((key) => helper.get(key));
@@ -175,6 +176,9 @@ export function mockMigrationHelper(
     helper.setToUser(userId, keyDefinition, value),
   );
   mockHelper.getAccounts.mockImplementation(() => helper.getAccounts());
+
+  mockHelper.type = helper.type;
+
   return mockHelper;
 }
 
@@ -291,7 +295,7 @@ export async function runMigrator<
   const allInjectedData = injectData(initalData, []);
 
   const fakeStorageService = new FakeStorageService(initalData);
-  const helper = new MigrationHelper(migrator.fromVersion, fakeStorageService, mock());
+  const helper = new MigrationHelper(migrator.fromVersion, fakeStorageService, mock(), "general");
 
   // Run their migrations
   if (direction === "rollback") {
