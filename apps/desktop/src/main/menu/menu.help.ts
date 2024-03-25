@@ -240,7 +240,11 @@ export class HelpMenu implements IMenubarMenu {
           await this.desktopSettingsService.setHardwareAcceleration(
             !this.hardwareAccelerationEnabled,
           );
-          app.relaunch();
+          // `app.relaunch` crashes the app on Mac Store builds. Disabling it for now.
+          // https://github.com/electron/electron/issues/41690
+          if (!isMacAppStore()) {
+            app.relaunch();
+          }
           app.exit();
         },
       },
