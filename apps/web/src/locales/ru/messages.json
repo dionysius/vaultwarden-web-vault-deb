@@ -7605,5 +7605,42 @@
   },
   "restrictedCollectionAccess": {
     "message": "Нельзя добавить самого себя в коллекции."
+  },
+  "assign": {
+    "message": "Назначить"
+  },
+  "assignToCollections": {
+    "message": "Назначить коллекциям"
+  },
+  "assignToTheseCollections": {
+    "message": "Назначить этим коллекциям"
+  },
+  "bulkCollectionAssignmentDialogDescription": {
+    "message": "Выберите коллекции, в которые будут переданы элементы. Если элемент обновлен в одной коллекции, это изменение будет отражено во всех коллекциях. Только члены организации, имеющие доступ к этим коллекциям, смогут видеть элементы."
+  },
+  "selectCollectionsToAssign": {
+    "message": "Выбрать коллекции для назначения"
+  },
+  "noCollectionsAssigned": {
+    "message": "Коллекции не назначены"
+  },
+  "successfullyAssignedCollections": {
+    "message": "Коллекции успешно назначены"
+  },
+  "bulkCollectionAssignmentWarning": {
+    "message": "Вы выбрали $TOTAL_COUNT$ элемента(-ов). Вы не можете обновить $READONLY_COUNT$ элемента(-ов), поскольку у вас нет прав на редактирование.",
+    "placeholders": {
+      "total_count": {
+        "content": "$1",
+        "example": "10"
+      },
+      "readonly_count": {
+        "content": "$2",
+        "example": "3"
+      }
+    }
+  },
+  "items": {
+    "message": "Элементы"
   }
 }

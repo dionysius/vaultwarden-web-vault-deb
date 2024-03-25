@@ -7605,5 +7605,42 @@
   },
   "restrictedCollectionAccess": {
     "message": "Kendinizi koleksiyonlara ekleyemezsiniz."
+  },
+  "assign": {
+    "message": "Ata"
+  },
+  "assignToCollections": {
+    "message": "Koleksiyonlara ata"
+  },
+  "assignToTheseCollections": {
+    "message": "Bu koleksiyonlara ata"
+  },
+  "bulkCollectionAssignmentDialogDescription": {
+    "message": "Öğelerin paylaşılacağı koleksiyonları seçin. Bir koleksiyondaki bir öğe güncellendiğinde tüm koleksiyonlara yansıtılacaktır. Öğeleri yalnızca bu koleksiyonlara erişimi olan kuruluş üyeleri görebilir."
+  },
+  "selectCollectionsToAssign": {
+    "message": "Atanacak koleksiyonları seçin"
+  },
+  "noCollectionsAssigned": {
+    "message": "Hiçbir koleksiyon atanmadı"
+  },
+  "successfullyAssignedCollections": {
+    "message": "Başarıyla atanan koleksiyonlar"
+  },
+  "bulkCollectionAssignmentWarning": {
+    "message": "$TOTAL_COUNT$ öğe seçtiniz. Düzenleme izniniz olmadığı için $READONLY_COUNT$ öğeyi güncelleyemezsiniz.",
+    "placeholders": {
+      "total_count": {
+        "content": "$1",
+        "example": "10"
+      },
+      "readonly_count": {
+        "content": "$2",
+        "example": "3"
+      }
+    }
+  },
+  "items": {
+    "message": "Ögeler"
   }
 }

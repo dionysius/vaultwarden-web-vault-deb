@@ -7605,5 +7605,42 @@
   },
   "restrictedCollectionAccess": {
     "message": "Et voi lisätä itseäsi kokoelmiin."
+  },
+  "assign": {
+    "message": "Määritä"
+  },
+  "assignToCollections": {
+    "message": "Määritä kokoelmiin"
+  },
+  "assignToTheseCollections": {
+    "message": "Määritä näihin kokoelmiin"
+  },
+  "bulkCollectionAssignmentDialogDescription": {
+    "message": "Valitse kokoelmat, joihin kohteet jaetaan. Kun kohdetta muokataan yhdessä kokoelmassa, päivittyy muutos kaikkiin kokoelmiin. Kohteet näkyvät vain niille organisaation jäsenille, joilla on näiden kokoelmien käyttöoikeus."
+  },
+  "selectCollectionsToAssign": {
+    "message": "Valitse määritettävät kokoelmat"
+  },
+  "noCollectionsAssigned": {
+    "message": "Kokoelmia ei ole määritetty"
+  },
+  "successfullyAssignedCollections": {
+    "message": "Kokoelmat on määritetty"
+  },
+  "bulkCollectionAssignmentWarning": {
+    "message": "Olet valinnut $TOTAL_COUNT$ kohdetta. Et voi muuttaa näistä $READONLY_COUNT$ kohdetta, koska käyttöoikeutesi eivät riitä niiden muokkaukseen.",
+    "placeholders": {
+      "total_count": {
+        "content": "$1",
+        "example": "10"
+      },
+      "readonly_count": {
+        "content": "$2",
+        "example": "3"
+      }
+    }
+  },
+  "items": {
+    "message": "Kohteet"
   }
 }

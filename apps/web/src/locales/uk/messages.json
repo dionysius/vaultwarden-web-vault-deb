@@ -7605,5 +7605,42 @@
   },
   "restrictedCollectionAccess": {
     "message": "Ви не можете додати себе до збірок."
+  },
+  "assign": {
+    "message": "Призначити"
+  },
+  "assignToCollections": {
+    "message": "Призначити до збірок"
+  },
+  "assignToTheseCollections": {
+    "message": "Призначити до цих збірок"
+  },
+  "bulkCollectionAssignmentDialogDescription": {
+    "message": "Оберіть збірки, в яких поширюватимуться записи. Після оновлення запису в одній збірці зміни буде відображено у всіх збірках. Лише учасники організації з доступом до цих збірок зможуть переглядати записи."
+  },
+  "selectCollectionsToAssign": {
+    "message": "Оберіть збірки для призначення"
+  },
+  "noCollectionsAssigned": {
+    "message": "Не призначено жодної збірки"
+  },
+  "successfullyAssignedCollections": {
+    "message": "Збірки успішно призначено"
+  },
+  "bulkCollectionAssignmentWarning": {
+    "message": "Ви вибрали $TOTAL_COUNT$ записів. Ви не можете оновити $READONLY_COUNT$ записів, тому що у вас немає доступу на редагування.",
+    "placeholders": {
+      "total_count": {
+        "content": "$1",
+        "example": "10"
+      },
+      "readonly_count": {
+        "content": "$2",
+        "example": "3"
+      }
+    }
+  },
+  "items": {
+    "message": "Записи"
   }
 }

@@ -7605,5 +7605,42 @@
   },
   "restrictedCollectionAccess": {
     "message": "Vous ne pouvez vous ajoutez vous-même aux collections."
+  },
+  "assign": {
+    "message": "Assigner"
+  },
+  "assignToCollections": {
+    "message": "Assigner aux collections"
+  },
+  "assignToTheseCollections": {
+    "message": "Assigner à ces collections"
+  },
+  "bulkCollectionAssignmentDialogDescription": {
+    "message": "Sélectionnez les collections avec lesquelles les éléments seront partagés. Une fois qu'un élément est mis à jour dans une collection, il le sera aussi dans toutes ces collections. Seuls les membres de l'organisation ayant accès à ces collections pourront voir les éléments."
+  },
+  "selectCollectionsToAssign": {
+    "message": "Sélectionnez les collections à assigner"
+  },
+  "noCollectionsAssigned": {
+    "message": "Aucune collection n'a été assignée"
+  },
+  "successfullyAssignedCollections": {
+    "message": "Collections assignées avec succès"
+  },
+  "bulkCollectionAssignmentWarning": {
+    "message": "Vous avez sélectionné $TOTAL_COUNT$ éléments. Vous ne pouvez pas mettre à jour $READONLY_COUNT$ de ces éléments parce que vous n'avez pas les autorisations pour les éditer.",
+    "placeholders": {
+      "total_count": {
+        "content": "$1",
+        "example": "10"
+      },
+      "readonly_count": {
+        "content": "$2",
+        "example": "3"
+      }
+    }
+  },
+  "items": {
+    "message": "Éléments"
   }
 }

@@ -7605,5 +7605,42 @@
   },
   "restrictedCollectionAccess": {
     "message": "Man kan ikke føje sig selv til samlinger."
+  },
+  "assign": {
+    "message": "Tildel"
+  },
+  "assignToCollections": {
+    "message": "Tildel til samlinger"
+  },
+  "assignToTheseCollections": {
+    "message": "Tildel til samlinger"
+  },
+  "bulkCollectionAssignmentDialogDescription": {
+    "message": "Vælg de samlinger som emnerne vil blive delt med. Når et emne er opdateret i en samling, vil det blive afspejlet i alle samlinger. Kun organisationsmedlemmer med adgang til disse samlinger vil kunne se emnerne."
+  },
+  "selectCollectionsToAssign": {
+    "message": "Vælg samlinger at tildele"
+  },
+  "noCollectionsAssigned": {
+    "message": "Ingen samlinger er blevet tildelt"
+  },
+  "successfullyAssignedCollections": {
+    "message": "Samlinger hermed tildelt"
+  },
+  "bulkCollectionAssignmentWarning": {
+    "message": "Der er valgt $TOTAL_COUNT$ emner. $READONLY_COUNT$ af emnerne kan ikke opdateres, da du ikke har redigeringsrettigheder.",
+    "placeholders": {
+      "total_count": {
+        "content": "$1",
+        "example": "10"
+      },
+      "readonly_count": {
+        "content": "$2",
+        "example": "3"
+      }
+    }
+  },
+  "items": {
+    "message": "Emner"
   }
 }

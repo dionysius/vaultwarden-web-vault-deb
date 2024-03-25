@@ -7605,5 +7605,42 @@
   },
   "restrictedCollectionAccess": {
     "message": "Не може да добавяте себе си към колекции."
+  },
+  "assign": {
+    "message": "Свързване"
+  },
+  "assignToCollections": {
+    "message": "Свързване с колекции"
+  },
+  "assignToTheseCollections": {
+    "message": "Свързване с тези колекции"
+  },
+  "bulkCollectionAssignmentDialogDescription": {
+    "message": "Изберете колекциите, с които да бъдат споделени тези елементи. Когато даден елемент бъде променен в една колекция, промяната ще бъде отразена във всички колекции. Само членовете на организацията с достъп до тези колекции ще могат да виждат елементите."
+  },
+  "selectCollectionsToAssign": {
+    "message": "Изберете колекции за свързване"
+  },
+  "noCollectionsAssigned": {
+    "message": "Няма свързани колекции"
+  },
+  "successfullyAssignedCollections": {
+    "message": "Успешно свързване на колекциите"
+  },
+  "bulkCollectionAssignmentWarning": {
+    "message": "Избрали сте $TOTAL_COUNT$ елемента Не можете да промените $READONLY_COUNT$ от елементите, тъй като нямате право за редактиране.",
+    "placeholders": {
+      "total_count": {
+        "content": "$1",
+        "example": "10"
+      },
+      "readonly_count": {
+        "content": "$2",
+        "example": "3"
+      }
+    }
+  },
+  "items": {
+    "message": "Елементи"
   }
 }

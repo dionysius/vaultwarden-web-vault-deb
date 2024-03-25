@@ -7605,5 +7605,42 @@
   },
   "restrictedCollectionAccess": {
     "message": "Nem adhadjuk magunkat a gyűjteményhez."
+  },
+  "assign": {
+    "message": "Hozzárendelés"
+  },
+  "assignToCollections": {
+    "message": "Hozzárendelés gyűjteményekhez"
+  },
+  "assignToTheseCollections": {
+    "message": "Hozzárendelés ezen gyűjteményekhez"
+  },
+  "bulkCollectionAssignmentDialogDescription": {
+    "message": "Válasszuk ki azokat a gyűjteményeket, amelyekkel az elemek megosztásra kerülnek. Ha egy elem egy gyűjteményben frissítésre kerül, az az összes gyűjteményben megjelenik. Csak az ezekhez a gyűjteményekhez hozzáféréssel rendelkező szervezeti tagok láthatják az elemeket."
+  },
+  "selectCollectionsToAssign": {
+    "message": "Hozzárendelendő gyűjtemények kiválasztása"
+  },
+  "noCollectionsAssigned": {
+    "message": "Nem lettek gyűjtemények hozzárendelve."
+  },
+  "successfullyAssignedCollections": {
+    "message": "A gyűjtemények sikeresen hozzárendelésre kerültek."
+  },
+  "bulkCollectionAssignmentWarning": {
+    "message": "$TOTAL_COUNT$ elem lett kiválasztva. Az elemek közül $READONLY_COUNT$ nem frissíthető, mert nincs szerkesztési jogosultság.",
+    "placeholders": {
+      "total_count": {
+        "content": "$1",
+        "example": "10"
+      },
+      "readonly_count": {
+        "content": "$2",
+        "example": "3"
+      }
+    }
+  },
+  "items": {
+    "message": "Elemek"
   }
 }
