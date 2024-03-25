@@ -2687,5 +2687,14 @@
   "commonImportFormats": {
     "message": "通用格式",
     "description": "Label indicating the most common import formats"
+  },
+  "troubleshooting": {
+    "message": "故障排除"
+  },
+  "disableHardwareAccelerationRestart": {
+    "message": "禁用硬件加速并重启"
+  },
+  "enableHardwareAccelerationRestart": {
+    "message": "启用硬件加速并重启"
   }
 }

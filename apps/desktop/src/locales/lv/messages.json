@@ -1645,10 +1645,10 @@
     "message": "Iespējo papildu drošības slāni, pieprasot atpazīšanas vārdkopas pārbaudi, kad tiek izveidota saikne starp darbvirsmu un pārlūku. Ir nepieciešama lietotāja darbība un apliecināšana katru reizi, kad tiek izveidots savienojums."
   },
   "enableHardwareAcceleration": {
-    "message": "Use hardware acceleration"
+    "message": "Izmantot aparatūras paātrināšanu"
   },
   "enableHardwareAccelerationDesc": {
-    "message": "By default this setting is ON. Turn OFF only if you experience graphical issues. Restart is required."
+    "message": "Pēc noklusējuma šis iestatījums ir ieslēgts. Izslēgt tikai tad, ja tiek pieredzētas attēlojuma nepilnības. Nepieciešama pārsāknēšana."
   },
   "approve": {
     "message": "Apstiprināt"
@@ -2687,5 +2687,14 @@
   "commonImportFormats": {
     "message": "Izplatīti veidoli",
     "description": "Label indicating the most common import formats"
+  },
+  "troubleshooting": {
+    "message": "Sarežģījumu novēršana"
+  },
+  "disableHardwareAccelerationRestart": {
+    "message": "Atspējot aparatūras paātrinājumu un pārsāknēt"
+  },
+  "enableHardwareAccelerationRestart": {
+    "message": "Iespējot aparatūras paātrinājumu un pārsāknēt"
   }
 }

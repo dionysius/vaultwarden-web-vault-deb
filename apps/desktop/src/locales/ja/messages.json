@@ -2687,5 +2687,14 @@
   "commonImportFormats": {
     "message": "一般的な形式",
     "description": "Label indicating the most common import formats"
+  },
+  "troubleshooting": {
+    "message": "トラブルシューティング"
+  },
+  "disableHardwareAccelerationRestart": {
+    "message": "ハードウェアアクセラレーションを無効にして再起動する"
+  },
+  "enableHardwareAccelerationRestart": {
+    "message": "ハードウェアアクセラレーションを有効にして再起動する"
   }
 }

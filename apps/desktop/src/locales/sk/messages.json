@@ -2687,5 +2687,14 @@
   "commonImportFormats": {
     "message": "Bežné formáty",
     "description": "Label indicating the most common import formats"
+  },
+  "troubleshooting": {
+    "message": "Riešenie problémov"
+  },
+  "disableHardwareAccelerationRestart": {
+    "message": "Zakázať hardvérové zrýchlenie a reštartovať"
+  },
+  "enableHardwareAccelerationRestart": {
+    "message": "Povoliť hardvérové zrýchlenie a reštartovať"
   }
 }

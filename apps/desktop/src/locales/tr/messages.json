@@ -2687,5 +2687,14 @@
   "commonImportFormats": {
     "message": "Common formats",
     "description": "Label indicating the most common import formats"
+  },
+  "troubleshooting": {
+    "message": "Sorun giderme"
+  },
+  "disableHardwareAccelerationRestart": {
+    "message": "Donanım hızlandırmayı devre dışı bırakın ve yeniden başlatın"
+  },
+  "enableHardwareAccelerationRestart": {
+    "message": "Donanım hızlandırmayı etkinleştirin ve yeniden başlatın"
   }
 }
