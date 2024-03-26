@@ -1,5 +1,6 @@
+import { map, pipe } from "rxjs";
+
 import { PolicyType } from "../../../admin-console/enums";
-import { Policy } from "../../../admin-console/models/domain/policy";
 import { CryptoService } from "../../../platform/abstractions/crypto.service";
 import { EncryptService } from "../../../platform/abstractions/encrypt.service";
 import { KeyDefinition, SingleUserState, StateProvider } from "../../../platform/state";
@@ -81,8 +82,8 @@ export abstract class ForwarderGeneratorStrategy<
   /** Determine where forwarder configuration is stored  */
   protected abstract readonly key: KeyDefinition<Options>;
 
-  /** {@link GeneratorStrategy.evaluator} */
-  evaluator = (_policy: Policy) => {
-    return new DefaultPolicyEvaluator<Options>();
+  /** {@link GeneratorStrategy.toEvaluator} */
+  toEvaluator = () => {
+    return pipe(map((_) => new DefaultPolicyEvaluator<Options>()));
   };
 }
