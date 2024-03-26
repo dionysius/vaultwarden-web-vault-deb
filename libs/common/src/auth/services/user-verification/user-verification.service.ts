@@ -140,7 +140,7 @@ export class UserVerificationService implements UserVerificationServiceAbstracti
       case VerificationType.MasterPassword:
         return this.verifyUserByMasterPassword(verification);
       case VerificationType.PIN:
-        break;
+        return this.verifyUserByPIN(verification);
       case VerificationType.Biometrics:
         return this.verifyUserByBiometrics();
       default: {
