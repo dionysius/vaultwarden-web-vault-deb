@@ -1387,7 +1387,6 @@ export class CipherService implements CipherServiceAbstraction {
         cipher.attachments = attachments;
       }),
     ]);
-
     return cipher;
   }
 
