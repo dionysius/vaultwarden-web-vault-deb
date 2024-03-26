@@ -6,11 +6,15 @@ import { firstValueFrom } from "rxjs";
 import { TokenService as TokenServiceAbstraction } from "@bitwarden/common/auth/abstractions/token.service";
 import { AccountServiceImplementation } from "@bitwarden/common/auth/services/account.service";
 import { TokenService } from "@bitwarden/common/auth/services/token.service";
+import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
+import { KeyGenerationService as KeyGenerationServiceAbstraction } from "@bitwarden/common/platform/abstractions/key-generation.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { DefaultBiometricStateService } from "@bitwarden/common/platform/biometrics/biometric-state.service";
 import { StateFactory } from "@bitwarden/common/platform/factories/state-factory";
 import { GlobalState } from "@bitwarden/common/platform/models/domain/global-state";
+import { EncryptServiceImplementation } from "@bitwarden/common/platform/services/cryptography/encrypt.service.implementation";
 import { DefaultEnvironmentService } from "@bitwarden/common/platform/services/default-environment.service";
+import { KeyGenerationService } from "@bitwarden/common/platform/services/key-generation.service";
 import { MemoryStorageService } from "@bitwarden/common/platform/services/memory-storage.service";
 import { MigrationBuilderService } from "@bitwarden/common/platform/services/migration-builder.service";
 import { MigrationRunner } from "@bitwarden/common/platform/services/migration-runner";
@@ -45,6 +49,7 @@ import { ELECTRON_SUPPORTS_SECURE_STORAGE } from "./platform/services/electron-p
 import { ElectronStateService } from "./platform/services/electron-state.service";
 import { ElectronStorageService } from "./platform/services/electron-storage.service";
 import { I18nMainService } from "./platform/services/i18n.main.service";
+import { IllegalSecureStorageService } from "./platform/services/illegal-secure-storage.service";
 import { ElectronMainMessagingService } from "./services/electron-main-messaging.service";
 import { isMacAppStore } from "./utils";
 
@@ -62,6 +67,8 @@ export class Main {
   desktopSettingsService: DesktopSettingsService;
   migrationRunner: MigrationRunner;
   tokenService: TokenServiceAbstraction;
+  keyGenerationService: KeyGenerationServiceAbstraction;
+  encryptService: EncryptService;
 
   windowMain: WindowMain;
   messagingMain: MessagingMain;
@@ -153,11 +160,28 @@ export class Main {
 
     this.environmentService = new DefaultEnvironmentService(stateProvider, accountService);
 
+    this.mainCryptoFunctionService = new MainCryptoFunctionService();
+    this.mainCryptoFunctionService.init();
+
+    this.keyGenerationService = new KeyGenerationService(this.mainCryptoFunctionService);
+
+    this.encryptService = new EncryptServiceImplementation(
+      this.mainCryptoFunctionService,
+      this.logService,
+      true, // log mac failures
+    );
+
+    // Note: secure storage service is not available and should not be called in the main background process.
+    const illegalSecureStorageService = new IllegalSecureStorageService();
+
     this.tokenService = new TokenService(
       singleUserStateProvider,
       globalStateProvider,
       ELECTRON_SUPPORTS_SECURE_STORAGE,
-      this.storageService,
+      illegalSecureStorageService,
+      this.keyGenerationService,
+      this.encryptService,
+      this.logService,
     );
 
     this.migrationRunner = new MigrationRunner(
@@ -239,9 +263,6 @@ export class Main {
 
     this.clipboardMain = new ClipboardMain();
     this.clipboardMain.init();
-
-    this.mainCryptoFunctionService = new MainCryptoFunctionService();
-    this.mainCryptoFunctionService.init();
   }
 
   bootstrap() {
