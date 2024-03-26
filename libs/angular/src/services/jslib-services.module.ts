@@ -1067,7 +1067,7 @@ const typesafeProviders: Array<SafeProvider> = [
   safeProvider({
     provide: BillingAccountProfileStateService,
     useClass: DefaultBillingAccountProfileStateService,
-    deps: [ActiveUserStateProvider],
+    deps: [StateProvider],
   }),
   safeProvider({
     provide: OrganizationManagementPreferencesService,
