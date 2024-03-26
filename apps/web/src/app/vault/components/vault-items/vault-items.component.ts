@@ -91,7 +91,7 @@ export class VaultItemsComponent {
   }
 
   get bulkAssignToCollectionsAllowed() {
-    return this.ciphers.length > 0;
+    return this.showBulkAddToCollections && this.ciphers.length > 0;
   }
 
   protected canEditCollection(collection: CollectionView): boolean {
