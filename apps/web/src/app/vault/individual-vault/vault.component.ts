@@ -246,7 +246,7 @@ export class VaultComponent implements OnInit, OnDestroy {
       });
 
     const filter$ = this.routedVaultFilterService.filter$;
-    const allCollections$ = Utils.asyncToObservable(() => this.collectionService.getAllDecrypted());
+    const allCollections$ = this.collectionService.decryptedCollections$;
     const nestedCollections$ = allCollections$.pipe(
       map((collections) => getNestedCollectionTree(collections)),
     );
