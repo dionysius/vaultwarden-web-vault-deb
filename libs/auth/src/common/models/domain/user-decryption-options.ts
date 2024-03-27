@@ -15,11 +15,14 @@ export class KeyConnectorUserDecryptionOption {
   /**
    * Initializes a new instance of the KeyConnectorUserDecryptionOption from a response object.
    * @param response The key connector user decryption option response object.
-   * @returns A new instance of the KeyConnectorUserDecryptionOption. Will initialize even if the response is nullish.
+   * @returns A new instance of the KeyConnectorUserDecryptionOption or undefined if `response` is nullish.
    */
   static fromResponse(
     response: KeyConnectorUserDecryptionOptionResponse,
-  ): KeyConnectorUserDecryptionOption {
+  ): KeyConnectorUserDecryptionOption | undefined {
+    if (response == null) {
+      return undefined;
+    }
     const options = new KeyConnectorUserDecryptionOption();
     options.keyConnectorUrl = response?.keyConnectorUrl ?? null;
     return options;
@@ -28,11 +31,14 @@ export class KeyConnectorUserDecryptionOption {
   /**
    * Initializes a new instance of a KeyConnectorUserDecryptionOption from a JSON object.
    * @param obj JSON object to deserialize.
-   * @returns A new instance of the KeyConnectorUserDecryptionOption. Will initialize even if the JSON object is nullish.
+   * @returns A new instance of the KeyConnectorUserDecryptionOption or undefined if `obj` is nullish.
    */
   static fromJSON(
     obj: Jsonify<KeyConnectorUserDecryptionOption>,
-  ): KeyConnectorUserDecryptionOption {
+  ): KeyConnectorUserDecryptionOption | undefined {
+    if (obj == null) {
+      return undefined;
+    }
     return Object.assign(new KeyConnectorUserDecryptionOption(), obj);
   }
 }
@@ -52,11 +58,14 @@ export class TrustedDeviceUserDecryptionOption {
   /**
    * Initializes a new instance of the TrustedDeviceUserDecryptionOption from a response object.
    * @param response The trusted device user decryption option response object.
-   * @returns A new instance of the TrustedDeviceUserDecryptionOption. Will initialize even if the response is nullish.
+   * @returns A new instance of the TrustedDeviceUserDecryptionOption or undefined if `response` is nullish.
    */
   static fromResponse(
     response: TrustedDeviceUserDecryptionOptionResponse,
-  ): TrustedDeviceUserDecryptionOption {
+  ): TrustedDeviceUserDecryptionOption | undefined {
+    if (response == null) {
+      return undefined;
+    }
     const options = new TrustedDeviceUserDecryptionOption();
     options.hasAdminApproval = response?.hasAdminApproval ?? false;
     options.hasLoginApprovingDevice = response?.hasLoginApprovingDevice ?? false;
@@ -67,11 +76,14 @@ export class TrustedDeviceUserDecryptionOption {
   /**
    * Initializes a new instance of the TrustedDeviceUserDecryptionOption from a JSON object.
    * @param obj JSON object to deserialize.
-   * @returns A new instance of the TrustedDeviceUserDecryptionOption. Will initialize even if the JSON object is nullish.
+   * @returns A new instance of the TrustedDeviceUserDecryptionOption or undefined if `obj` is nullish.
    */
   static fromJSON(
     obj: Jsonify<TrustedDeviceUserDecryptionOption>,
-  ): TrustedDeviceUserDecryptionOption {
+  ): TrustedDeviceUserDecryptionOption | undefined {
+    if (obj == null) {
+      return undefined;
+    }
     return Object.assign(new TrustedDeviceUserDecryptionOption(), obj);
   }
 }
