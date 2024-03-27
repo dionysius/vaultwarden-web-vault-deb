@@ -75,6 +75,17 @@ type SafeExistingProvider<
 };
 
 /**
+ * Represents a dependency where there is no abstract token, the token is the implementation
+ */
+type SafeConcreteProvider<
+  I extends Constructor<any>,
+  D extends MapParametersToDeps<ConstructorParameters<I>>,
+> = {
+  provide: I;
+  deps: D;
+};
+
+/**
  * A factory function that creates a provider for the ngModule providers array.
  * This guarantees type safety for your provider definition. It does nothing at runtime.
  * @param provider Your provider object in the usual shape (e.g. using useClass, useValue, useFactory, etc.)
@@ -97,11 +108,15 @@ export const safeProvider = <
   IExisting extends
     | Constructor<ProviderInstanceType<AExisting>>
     | AbstractConstructor<ProviderInstanceType<AExisting>>,
+  // types for no token
+  IConcrete extends Constructor<any>,
+  DConcrete extends MapParametersToDeps<ConstructorParameters<IConcrete>>,
 >(
   provider:
     | SafeClassProvider<AClass, IClass, DClass>
     | SafeValueProvider<AValue, VValue>
     | SafeFactoryProvider<AFactory, IFactory, DFactory>
     | SafeExistingProvider<AExisting, IExisting>
+    | SafeConcreteProvider<IConcrete, DConcrete>
     | Constructor<unknown>,
 ): SafeProvider => provider as SafeProvider;
