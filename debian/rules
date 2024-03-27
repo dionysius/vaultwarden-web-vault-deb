@@ -17,7 +17,10 @@ endif
 
 override_dh_auto_configure:
 # copy images
-	cp -rf debian/patches/resources/* apps/web/
+	cp -rf debian/patches/resources/src/* apps/web/src/
+# replace inline file contents
+	sed -i 's|^<svg.*|$(shell cat debian/patches/resources/vaultwarden-admin-console-logo.svg)|' apps/web/src/app/admin-console/icons/admin-console-logo.ts
+	sed -i 's|^<svg.*|$(shell cat debian/patches/resources/vaultwarden-password-manager-logo.svg)|' apps/web/src/app/layouts/password-manager-logo.ts
 
 override_dh_auto_build:
 # install dependencies
