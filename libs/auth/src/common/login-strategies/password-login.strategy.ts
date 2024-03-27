@@ -63,14 +63,12 @@ export class PasswordLoginStrategyData implements LoginStrategyData {
 }
 
 export class PasswordLoginStrategy extends LoginStrategy {
-  /**
-   * The email address of the user attempting to log in.
-   */
+  /** The email address of the user attempting to log in. */
   email$: Observable<string>;
-  /**
-   * The master key hash of the user attempting to log in.
-   */
-  masterKeyHash$: Observable<string | null>;
+  /** The master key hash used for authentication */
+  serverMasterKeyHash$: Observable<string>;
+  /** The local master key hash we store client side */
+  localMasterKeyHash$: Observable<string | null>;
 
   protected cache: BehaviorSubject<PasswordLoginStrategyData>;
 
@@ -107,7 +105,10 @@ export class PasswordLoginStrategy extends LoginStrategy {
 
     this.cache = new BehaviorSubject(data);
     this.email$ = this.cache.pipe(map((state) => state.tokenRequest.email));
-    this.masterKeyHash$ = this.cache.pipe(map((state) => state.localMasterKeyHash));
+    this.serverMasterKeyHash$ = this.cache.pipe(
+      map((state) => state.tokenRequest.masterPasswordHash),
+    );
+    this.localMasterKeyHash$ = this.cache.pipe(map((state) => state.localMasterKeyHash));
   }
 
   override async logIn(credentials: PasswordLoginCredentials) {
@@ -123,11 +124,14 @@ export class PasswordLoginStrategy extends LoginStrategy {
       data.masterKey,
       HashPurpose.LocalAuthorization,
     );
-    const masterKeyHash = await this.cryptoService.hashMasterKey(masterPassword, data.masterKey);
+    const serverMasterKeyHash = await this.cryptoService.hashMasterKey(
+      masterPassword,
+      data.masterKey,
+    );
 
     data.tokenRequest = new PasswordTokenRequest(
       email,
-      masterKeyHash,
+      serverMasterKeyHash,
       captchaToken,
       await this.buildTwoFactor(twoFactor, email),
       await this.buildDeviceRequest(),

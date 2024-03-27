@@ -137,8 +137,8 @@ export class LoginStrategyService implements LoginStrategyServiceAbstraction {
   async getMasterPasswordHash(): Promise<string | null> {
     const strategy = await firstValueFrom(this.loginStrategy$);
 
-    if ("masterKeyHash$" in strategy) {
-      return await firstValueFrom(strategy.masterKeyHash$);
+    if ("serverMasterKeyHash$" in strategy) {
+      return await firstValueFrom(strategy.serverMasterKeyHash$);
     }
     return null;
   }
