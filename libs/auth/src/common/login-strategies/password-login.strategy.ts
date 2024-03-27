@@ -37,15 +37,11 @@ export class PasswordLoginStrategyData implements LoginStrategyData {
 
   /** User's entered email obtained pre-login. Always present in MP login. */
   userEnteredEmail: string;
-
+  /** If 2fa is required, token is returned to bypass captcha */
   captchaBypassToken?: string;
-  /**
-   * The local version of the user's master key hash
-   */
+  /** The local version of the user's master key hash */
   localMasterKeyHash: string;
-  /**
-   * The user's master key
-   */
+  /** The user's master key */
   masterKey: MasterKey;
   /**
    * Tracks if the user needs to update their password due to
@@ -175,10 +171,10 @@ export class PasswordLoginStrategy extends LoginStrategy {
     twoFactor: TokenTwoFactorRequest,
     captchaResponse: string,
   ): Promise<AuthResult> {
-    this.cache.next({
-      ...this.cache.value,
-      captchaBypassToken: captchaResponse ?? this.cache.value.captchaBypassToken,
-    });
+    const data = this.cache.value;
+    data.tokenRequest.captchaResponse = captchaResponse ?? data.captchaBypassToken;
+    this.cache.next(data);
+
     const result = await super.logInTwoFactor(twoFactor);
 
     // 2FA was successful, save the force update password options with the state service if defined
