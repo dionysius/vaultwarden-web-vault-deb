@@ -1780,9 +1780,9 @@ export class ApiService implements ApiServiceAbstraction {
 
       await this.tokenService.setTokens(
         tokenResponse.accessToken,
-        tokenResponse.refreshToken,
         vaultTimeoutAction as VaultTimeoutAction,
         vaultTimeout,
+        tokenResponse.refreshToken,
       );
     } else {
       const error = await this.handleError(response, true, true);

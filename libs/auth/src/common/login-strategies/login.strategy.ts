@@ -182,9 +182,9 @@ export abstract class LoginStrategy {
     // User id will be derived from the access token.
     await this.tokenService.setTokens(
       tokenResponse.accessToken,
-      tokenResponse.refreshToken,
       vaultTimeoutAction as VaultTimeoutAction,
       vaultTimeout,
+      tokenResponse.refreshToken, // Note: CLI login via API key sends undefined for refresh token.
     );
 
     await this.stateService.addAccount(

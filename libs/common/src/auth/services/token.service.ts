@@ -149,13 +149,13 @@ export class TokenService implements TokenServiceAbstraction {
 
   async setTokens(
     accessToken: string,
-    refreshToken: string,
     vaultTimeoutAction: VaultTimeoutAction,
     vaultTimeout: number | null,
+    refreshToken?: string,
     clientIdClientSecret?: [string, string],
   ): Promise<void> {
-    if (!accessToken || !refreshToken) {
-      throw new Error("Access token and refresh token are required.");
+    if (!accessToken) {
+      throw new Error("Access token is required.");
     }
 
     // get user id the access token
@@ -166,7 +166,11 @@ export class TokenService implements TokenServiceAbstraction {
     }
 
     await this._setAccessToken(accessToken, vaultTimeoutAction, vaultTimeout, userId);
-    await this.setRefreshToken(refreshToken, vaultTimeoutAction, vaultTimeout, userId);
+
+    if (refreshToken) {
+      await this.setRefreshToken(refreshToken, vaultTimeoutAction, vaultTimeout, userId);
+    }
+
     if (clientIdClientSecret != null) {
       await this.setClientId(clientIdClientSecret[0], vaultTimeoutAction, vaultTimeout, userId);
       await this.setClientSecret(clientIdClientSecret[1], vaultTimeoutAction, vaultTimeout, userId);

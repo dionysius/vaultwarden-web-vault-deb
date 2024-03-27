@@ -52,7 +52,7 @@ export class VaultTimeoutSettingsService implements VaultTimeoutSettingsServiceA
 
     await this.stateService.setVaultTimeoutAction(action);
 
-    await this.tokenService.setTokens(accessToken, refreshToken, action, timeout, [
+    await this.tokenService.setTokens(accessToken, action, timeout, refreshToken, [
       clientId,
       clientSecret,
     ]);

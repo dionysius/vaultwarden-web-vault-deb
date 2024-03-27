@@ -186,9 +186,9 @@ describe("LoginStrategy", () => {
 
       expect(tokenService.setTokens).toHaveBeenCalledWith(
         accessToken,
-        refreshToken,
         mockVaultTimeoutAction,
         mockVaultTimeout,
+        refreshToken,
       );
 
       expect(stateService.addAccount).toHaveBeenCalledWith(
