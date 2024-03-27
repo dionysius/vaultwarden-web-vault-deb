@@ -16,7 +16,6 @@ import {
   AuthRequestServiceAbstraction,
   LoginStrategyServiceAbstraction,
 } from "@bitwarden/auth/common";
-import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { NotificationsService } from "@bitwarden/common/abstractions/notifications.service";
 import { SearchService as SearchServiceAbstraction } from "@bitwarden/common/abstractions/search.service";
 import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout-settings.service";
@@ -53,9 +52,7 @@ import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.se
 import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { FileDownloadService } from "@bitwarden/common/platform/abstractions/file-download/file-download.service";
-import { FileUploadService } from "@bitwarden/common/platform/abstractions/file-upload/file-upload.service";
 import { I18nService as I18nServiceAbstraction } from "@bitwarden/common/platform/abstractions/i18n.service";
-import { KeyGenerationService } from "@bitwarden/common/platform/abstractions/key-generation.service";
 import {
   LogService,
   LogService as LogServiceAbstraction,
@@ -82,12 +79,6 @@ import {
 import { SearchService } from "@bitwarden/common/services/search.service";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 import { UsernameGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/username";
-import { SendApiService } from "@bitwarden/common/tools/send/services/send-api.service";
-import { SendApiService as SendApiServiceAbstraction } from "@bitwarden/common/tools/send/services/send-api.service.abstraction";
-import {
-  InternalSendService as InternalSendServiceAbstraction,
-  SendService,
-} from "@bitwarden/common/tools/send/services/send.service.abstraction";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CollectionService } from "@bitwarden/common/vault/abstractions/collection.service";
 import { CipherFileUploadService } from "@bitwarden/common/vault/abstractions/file-upload/cipher-file-upload.service";
@@ -115,7 +106,6 @@ import I18nService from "../../platform/services/i18n.service";
 import { ForegroundPlatformUtilsService } from "../../platform/services/platform-utils/foreground-platform-utils.service";
 import { ForegroundDerivedStateProvider } from "../../platform/state/foreground-derived-state.provider";
 import { ForegroundMemoryStorageService } from "../../platform/storage/foreground-memory-storage.service";
-import { BrowserSendService } from "../../services/browser-send.service";
 import { FilePopoutUtilsService } from "../../tools/popup/services/file-popout-utils.service";
 import { VaultFilterService } from "../../vault/services/vault-filter.service";
 
@@ -294,38 +284,6 @@ function getBgService<T>(service: keyof MainBackground) {
       provide: PasswordGenerationServiceAbstraction,
       useFactory: getBgService<PasswordGenerationServiceAbstraction>("passwordGenerationService"),
       deps: [],
-    },
-    {
-      provide: SendService,
-      useFactory: (
-        cryptoService: CryptoService,
-        i18nService: I18nServiceAbstraction,
-        keyGenerationService: KeyGenerationService,
-        stateServiceAbstraction: StateServiceAbstraction,
-      ) => {
-        return new BrowserSendService(
-          cryptoService,
-          i18nService,
-          keyGenerationService,
-          stateServiceAbstraction,
-        );
-      },
-      deps: [CryptoService, I18nServiceAbstraction, KeyGenerationService, StateServiceAbstraction],
-    },
-    {
-      provide: InternalSendServiceAbstraction,
-      useExisting: SendService,
-    },
-    {
-      provide: SendApiServiceAbstraction,
-      useFactory: (
-        apiService: ApiService,
-        fileUploadService: FileUploadService,
-        sendService: InternalSendServiceAbstraction,
-      ) => {
-        return new SendApiService(apiService, fileUploadService, sendService);
-      },
-      deps: [ApiService, FileUploadService, InternalSendServiceAbstraction],
     },
     { provide: SyncService, useFactory: getBgService<SyncService>("syncService"), deps: [] },
     {
