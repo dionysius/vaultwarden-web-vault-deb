@@ -4,7 +4,7 @@ import { Subject } from "rxjs";
 
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
-import { ConfigServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config.service.abstraction";
+import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { CipherId, CollectionId, OrganizationId } from "@bitwarden/common/types/guid";
@@ -65,7 +65,7 @@ export class BulkCollectionAssignmentDialogComponent implements OnDestroy, OnIni
     private cipherService: CipherService,
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
-    private configService: ConfigServiceAbstraction,
+    private configService: ConfigService,
     private organizationService: OrganizationService,
   ) {}
 

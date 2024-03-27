@@ -9,7 +9,7 @@ import { UriMatchStrategySetting } from "../../models/domain/domain-service";
 import { ErrorResponse } from "../../models/response/error.response";
 import { ListResponse } from "../../models/response/list.response";
 import { View } from "../../models/view/view";
-import { ConfigServiceAbstraction } from "../../platform/abstractions/config/config.service.abstraction";
+import { ConfigService } from "../../platform/abstractions/config/config.service";
 import { CryptoService } from "../../platform/abstractions/crypto.service";
 import { EncryptService } from "../../platform/abstractions/encrypt.service";
 import { I18nService } from "../../platform/abstractions/i18n.service";
@@ -72,7 +72,7 @@ export class CipherService implements CipherServiceAbstraction {
     private autofillSettingsService: AutofillSettingsServiceAbstraction,
     private encryptService: EncryptService,
     private cipherFileUploadService: CipherFileUploadService,
-    private configService: ConfigServiceAbstraction,
+    private configService: ConfigService,
   ) {}
 
   async getDecryptedCipherCache(): Promise<CipherView[]> {

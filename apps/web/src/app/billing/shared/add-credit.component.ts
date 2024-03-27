@@ -13,7 +13,7 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { PaymentMethodType } from "@bitwarden/common/billing/enums";
 import { BitPayInvoiceRequest } from "@bitwarden/common/billing/models/request/bit-pay-invoice.request";
-import { ConfigServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config.service.abstraction";
+import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
@@ -57,7 +57,7 @@ export class AddCreditComponent implements OnInit {
     private platformUtilsService: PlatformUtilsService,
     private organizationService: OrganizationService,
     private logService: LogService,
-    private configService: ConfigServiceAbstraction,
+    private configService: ConfigService,
   ) {
     const payPalConfig = process.env.PAYPAL_CONFIG as PayPalConfig;
     this.ppButtonFormAction = payPalConfig.buttonAction;

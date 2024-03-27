@@ -21,7 +21,7 @@ import { AuthResult } from "@bitwarden/common/auth/models/domain/auth-result";
 import { ForceSetPasswordReason } from "@bitwarden/common/auth/models/domain/force-set-password-reason";
 import { TokenTwoFactorRequest } from "@bitwarden/common/auth/models/request/identity-token/token-two-factor.request";
 import { AppIdService } from "@bitwarden/common/platform/abstractions/app-id.service";
-import { ConfigServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config.service.abstraction";
+import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
@@ -62,7 +62,7 @@ describe("TwoFactorComponent", () => {
   let mockLoginService: MockProxy<LoginService>;
   let mockUserDecryptionOptionsService: MockProxy<UserDecryptionOptionsServiceAbstraction>;
   let mockSsoLoginService: MockProxy<SsoLoginServiceAbstraction>;
-  let mockConfigService: MockProxy<ConfigServiceAbstraction>;
+  let mockConfigService: MockProxy<ConfigService>;
 
   let mockUserDecryptionOpts: {
     noMasterPassword: UserDecryptionOptions;
@@ -92,7 +92,7 @@ describe("TwoFactorComponent", () => {
     mockLoginService = mock<LoginService>();
     mockUserDecryptionOptionsService = mock<UserDecryptionOptionsServiceAbstraction>();
     mockSsoLoginService = mock<SsoLoginServiceAbstraction>();
-    mockConfigService = mock<ConfigServiceAbstraction>();
+    mockConfigService = mock<ConfigService>();
 
     mockUserDecryptionOpts = {
       noMasterPassword: new UserDecryptionOptions({
@@ -169,7 +169,7 @@ describe("TwoFactorComponent", () => {
           useValue: mockUserDecryptionOptionsService,
         },
         { provide: SsoLoginServiceAbstraction, useValue: mockSsoLoginService },
-        { provide: ConfigServiceAbstraction, useValue: mockConfigService },
+        { provide: ConfigService, useValue: mockConfigService },
       ],
     });
 

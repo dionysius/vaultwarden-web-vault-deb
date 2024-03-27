@@ -3,7 +3,7 @@ import { Component } from "@angular/core";
 import { combineLatest, map } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
-import { ConfigServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config.service.abstraction";
+import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { ButtonModule, DialogModule } from "@bitwarden/components";
 
@@ -24,7 +24,7 @@ export class AboutComponent {
   ]).pipe(map(([serverConfig, isCloud]) => ({ serverConfig, isCloud })));
 
   constructor(
-    private configService: ConfigServiceAbstraction,
+    private configService: ConfigService,
     private environmentService: EnvironmentService,
   ) {}
 }

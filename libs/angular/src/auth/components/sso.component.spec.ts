@@ -16,7 +16,7 @@ import { SsoLoginServiceAbstraction } from "@bitwarden/common/auth/abstractions/
 import { TwoFactorProviderType } from "@bitwarden/common/auth/enums/two-factor-provider-type";
 import { AuthResult } from "@bitwarden/common/auth/models/domain/auth-result";
 import { ForceSetPasswordReason } from "@bitwarden/common/auth/models/domain/force-set-password-reason";
-import { ConfigServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config.service.abstraction";
+import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/crypto-function.service";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -66,7 +66,7 @@ describe("SsoComponent", () => {
   let mockPasswordGenerationService: MockProxy<PasswordGenerationServiceAbstraction>;
   let mockLogService: MockProxy<LogService>;
   let mockUserDecryptionOptionsService: MockProxy<UserDecryptionOptionsServiceAbstraction>;
-  let mockConfigService: MockProxy<ConfigServiceAbstraction>;
+  let mockConfigService: MockProxy<ConfigService>;
 
   // Mock authService.logIn params
   let code: string;
@@ -107,16 +107,16 @@ describe("SsoComponent", () => {
       queryParams: mockQueryParams,
     } as any as ActivatedRoute;
 
-    mockSsoLoginService = mock<SsoLoginServiceAbstraction>();
-    mockStateService = mock<StateService>();
-    mockPlatformUtilsService = mock<PlatformUtilsService>();
-    mockApiService = mock<ApiService>();
-    mockCryptoFunctionService = mock<CryptoFunctionService>();
-    mockEnvironmentService = mock<EnvironmentService>();
-    mockPasswordGenerationService = mock<PasswordGenerationServiceAbstraction>();
-    mockLogService = mock<LogService>();
-    mockUserDecryptionOptionsService = mock<UserDecryptionOptionsServiceAbstraction>();
-    mockConfigService = mock<ConfigServiceAbstraction>();
+    mockSsoLoginService = mock();
+    mockStateService = mock();
+    mockPlatformUtilsService = mock();
+    mockApiService = mock();
+    mockCryptoFunctionService = mock();
+    mockEnvironmentService = mock();
+    mockPasswordGenerationService = mock();
+    mockLogService = mock();
+    mockUserDecryptionOptionsService = mock();
+    mockConfigService = mock();
 
     // Mock loginStrategyService.logIn params
     code = "code";
@@ -198,7 +198,7 @@ describe("SsoComponent", () => {
           useValue: mockUserDecryptionOptionsService,
         },
         { provide: LogService, useValue: mockLogService },
-        { provide: ConfigServiceAbstraction, useValue: mockConfigService },
+        { provide: ConfigService, useValue: mockConfigService },
       ],
     });
 

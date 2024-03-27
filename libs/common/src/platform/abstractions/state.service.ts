@@ -16,7 +16,6 @@ import { LocalData } from "../../vault/models/data/local.data";
 import { CipherView } from "../../vault/models/view/cipher.view";
 import { AddEditCipherInfo } from "../../vault/types/add-edit-cipher-info";
 import { KdfType } from "../enums";
-import { ServerConfigData } from "../models/data/server-config.data";
 import { Account } from "../models/domain/account";
 import { EncString } from "../models/domain/enc-string";
 import { StorageOptions } from "../models/domain/storage-options";
@@ -278,14 +277,6 @@ export abstract class StateService<T extends Account = Account> {
   setVaultTimeoutAction: (value: string, options?: StorageOptions) => Promise<void>;
   getApproveLoginRequests: (options?: StorageOptions) => Promise<boolean>;
   setApproveLoginRequests: (value: boolean, options?: StorageOptions) => Promise<void>;
-  /**
-   * @deprecated Do not call this directly, use ConfigService
-   */
-  getServerConfig: (options?: StorageOptions) => Promise<ServerConfigData>;
-  /**
-   * @deprecated Do not call this directly, use ConfigService
-   */
-  setServerConfig: (value: ServerConfigData, options?: StorageOptions) => Promise<void>;
   /**
    * fetches string value of URL user tried to navigate to while unauthenticated.
    * @param options Defines the storage options for the URL; Defaults to session Storage.

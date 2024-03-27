@@ -12,7 +12,7 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { SsoLoginServiceAbstraction } from "@bitwarden/common/auth/abstractions/sso-login.service.abstraction";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
-import { ConfigServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config.service.abstraction";
+import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/crypto-function.service";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -44,7 +44,7 @@ export class SsoComponent extends BaseSsoComponent {
     environmentService: EnvironmentService,
     logService: LogService,
     userDecryptionOptionsService: UserDecryptionOptionsServiceAbstraction,
-    configService: ConfigServiceAbstraction,
+    configService: ConfigService,
     protected authService: AuthService,
     @Inject(WINDOW) private win: Window,
   ) {

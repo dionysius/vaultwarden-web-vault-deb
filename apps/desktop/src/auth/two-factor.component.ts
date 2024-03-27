@@ -16,7 +16,7 @@ import { TwoFactorService } from "@bitwarden/common/auth/abstractions/two-factor
 import { TwoFactorProviderType } from "@bitwarden/common/auth/enums/two-factor-provider-type";
 import { AppIdService } from "@bitwarden/common/platform/abstractions/app-id.service";
 import { BroadcasterService } from "@bitwarden/common/platform/abstractions/broadcaster.service";
-import { ConfigServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config.service.abstraction";
+import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
@@ -59,7 +59,7 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
     loginService: LoginService,
     userDecryptionOptionsService: UserDecryptionOptionsServiceAbstraction,
     ssoLoginService: SsoLoginServiceAbstraction,
-    configService: ConfigServiceAbstraction,
+    configService: ConfigService,
     @Inject(WINDOW) protected win: Window,
   ) {
     super(

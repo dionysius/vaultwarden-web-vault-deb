@@ -46,17 +46,13 @@ import {
   UserNotificationSettingsService,
   UserNotificationSettingsServiceAbstraction,
 } from "@bitwarden/common/autofill/services/user-notification-settings.service";
-import { ConfigApiServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config-api.service.abstraction";
 import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/crypto-function.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { FileDownloadService } from "@bitwarden/common/platform/abstractions/file-download/file-download.service";
 import { I18nService as I18nServiceAbstraction } from "@bitwarden/common/platform/abstractions/i18n.service";
-import {
-  LogService,
-  LogService as LogServiceAbstraction,
-} from "@bitwarden/common/platform/abstractions/log.service";
+import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService as BaseStateServiceAbstraction } from "@bitwarden/common/platform/abstractions/state.service";
@@ -66,7 +62,6 @@ import {
 } from "@bitwarden/common/platform/abstractions/storage.service";
 import { StateFactory } from "@bitwarden/common/platform/factories/state-factory";
 import { GlobalState } from "@bitwarden/common/platform/models/domain/global-state";
-import { ConfigService } from "@bitwarden/common/platform/services/config/config.service";
 import { ConsoleLogService } from "@bitwarden/common/platform/services/console-log.service";
 import { ContainerService } from "@bitwarden/common/platform/services/container.service";
 import { MigrationRunner } from "@bitwarden/common/platform/services/migration-runner";
@@ -95,7 +90,6 @@ import { Account } from "../../models/account";
 import { BrowserApi } from "../../platform/browser/browser-api";
 import BrowserPopupUtils from "../../platform/popup/browser-popup-utils";
 import { BrowserStateService as StateServiceAbstraction } from "../../platform/services/abstractions/browser-state.service";
-import { BrowserConfigService } from "../../platform/services/browser-config.service";
 import { BrowserEnvironmentService } from "../../platform/services/browser-environment.service";
 import { BrowserFileDownloadService } from "../../platform/services/browser-file-download.service";
 import BrowserLocalStorageService from "../../platform/services/browser-local-storage.service";
@@ -186,7 +180,7 @@ function getBgService<T>(service: keyof MainBackground) {
           i18nService,
         );
       },
-      deps: [LogServiceAbstraction, I18nServiceAbstraction],
+      deps: [LogService, I18nServiceAbstraction],
     },
     {
       provide: CipherFileUploadService,
@@ -205,7 +199,7 @@ function getBgService<T>(service: keyof MainBackground) {
       deps: [],
     },
     {
-      provide: LogServiceAbstraction,
+      provide: LogService,
       useFactory: (platformUtilsService: PlatformUtilsService) =>
         new ConsoleLogService(platformUtilsService.isDev()),
       deps: [PlatformUtilsService],
@@ -367,7 +361,7 @@ function getBgService<T>(service: keyof MainBackground) {
         storageService: AbstractStorageService,
         secureStorageService: AbstractStorageService,
         memoryStorageService: AbstractMemoryStorageService,
-        logService: LogServiceAbstraction,
+        logService: LogService,
         accountService: AccountServiceAbstraction,
         environmentService: EnvironmentService,
         tokenService: TokenService,
@@ -389,7 +383,7 @@ function getBgService<T>(service: keyof MainBackground) {
         AbstractStorageService,
         SECURE_STORAGE,
         MEMORY_STORAGE,
-        LogServiceAbstraction,
+        LogService,
         AccountServiceAbstraction,
         EnvironmentService,
         TokenService,
@@ -429,18 +423,6 @@ function getBgService<T>(service: keyof MainBackground) {
         return AngularThemingService.createSystemThemeFromWindow(windowContext);
       },
       deps: [PlatformUtilsService],
-    },
-    {
-      provide: ConfigService,
-      useClass: BrowserConfigService,
-      deps: [
-        StateServiceAbstraction,
-        ConfigApiServiceAbstraction,
-        AuthServiceAbstraction,
-        EnvironmentService,
-        StateProvider,
-        LogService,
-      ],
     },
     {
       provide: FilePopoutUtilsService,

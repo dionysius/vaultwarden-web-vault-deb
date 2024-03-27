@@ -14,7 +14,7 @@ import { Organization } from "@bitwarden/common/admin-console/models/domain/orga
 import { EventType } from "@bitwarden/common/enums";
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { UriMatchStrategy } from "@bitwarden/common/models/domain/domain-service";
-import { ConfigServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config.service.abstraction";
+import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
@@ -119,7 +119,7 @@ export class AddEditComponent implements OnInit, OnDestroy {
     protected dialogService: DialogService,
     protected win: Window,
     protected datePipe: DatePipe,
-    protected configService: ConfigServiceAbstraction,
+    protected configService: ConfigService,
   ) {
     this.typeOptions = [
       { name: i18nService.t("typeLogin"), value: CipherType.Login },
