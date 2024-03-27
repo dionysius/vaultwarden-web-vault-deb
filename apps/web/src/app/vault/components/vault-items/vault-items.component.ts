@@ -37,7 +37,7 @@ export class VaultItemsComponent {
   @Input() showBulkMove: boolean;
   @Input() showBulkTrashOptions: boolean;
   // Encompasses functionality only available from the organization vault context
-  @Input() showAdminActions: boolean;
+  @Input() showAdminActions = false;
   @Input() allOrganizations: Organization[] = [];
   @Input() allCollections: CollectionView[] = [];
   @Input() allGroups: GroupView[] = [];

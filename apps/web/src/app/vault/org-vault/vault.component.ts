@@ -143,10 +143,6 @@ export class VaultComponent implements OnInit, OnDestroy {
   protected currentSearchText$: Observable<string>;
   protected editableCollections$: Observable<CollectionView[]>;
   protected allCollectionsWithoutUnassigned$: Observable<CollectionAdminView[]>;
-  protected showBulkEditCollectionAccess$ = this.configService.getFeatureFlag$(
-    FeatureFlag.BulkCollectionAccess,
-    false,
-  );
   private _flexibleCollectionsV1FlagEnabled: boolean;
 
   protected get flexibleCollectionsV1Enabled(): boolean {
