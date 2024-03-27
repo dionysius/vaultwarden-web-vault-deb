@@ -1,5 +1,4 @@
 import { LOCALE_ID, NgModule } from "@angular/core";
-import { UnwrapOpaque } from "type-fest";
 
 import {
   AuthRequestServiceAbstraction,
@@ -267,7 +266,7 @@ import { ModalService } from "./modal.service";
  * Add your provider definition here using the safeProvider function as a wrapper. This will give you type safety.
  * If you need help please ask for it, do NOT change the type of this array.
  */
-const typesafeProviders: Array<SafeProvider> = [
+const safeProviders: SafeProvider[] = [
   safeProvider(AuthGuard),
   safeProvider(UnauthGuard),
   safeProvider(ModalService),
@@ -1085,6 +1084,6 @@ function encryptServiceFactory(
 @NgModule({
   declarations: [],
   // Do not register your dependency here! Add it to the typesafeProviders array using the helper function
-  providers: typesafeProviders as UnwrapOpaque<SafeProvider>[],
+  providers: safeProviders,
 })
 export class JslibServicesModule {}
