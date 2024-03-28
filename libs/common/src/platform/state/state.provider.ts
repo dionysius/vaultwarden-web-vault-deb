@@ -19,7 +19,7 @@ import { ActiveUserStateProvider, SingleUserStateProvider } from "./user-state.p
  */
 export abstract class StateProvider {
   /** @see{@link ActiveUserStateProvider.activeUserId$} */
-  activeUserId$: Observable<UserId | undefined>;
+  abstract activeUserId$: Observable<UserId | undefined>;
 
   /**
    * Gets a state observable for a given key and userId.
@@ -149,10 +149,10 @@ export abstract class StateProvider {
   ): SingleUserState<T>;
 
   /** @see{@link GlobalStateProvider.get} */
-  getGlobal: <T>(keyDefinition: KeyDefinition<T>) => GlobalState<T>;
-  getDerived: <TFrom, TTo, TDeps extends DerivedStateDependencies>(
+  abstract getGlobal<T>(keyDefinition: KeyDefinition<T>): GlobalState<T>;
+  abstract getDerived<TFrom, TTo, TDeps extends DerivedStateDependencies>(
     parentState$: Observable<TFrom>,
     deriveDefinition: DeriveDefinition<TFrom, TTo, TDeps>,
     dependencies: TDeps,
-  ) => DerivedState<TTo>;
+  ): DerivedState<TTo>;
 }

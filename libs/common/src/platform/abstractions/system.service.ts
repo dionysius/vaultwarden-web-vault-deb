@@ -1,8 +1,8 @@
 import { AuthService } from "../../auth/abstractions/auth.service";
 
 export abstract class SystemService {
-  startProcessReload: (authService: AuthService) => Promise<void>;
-  cancelProcessReload: () => void;
-  clearClipboard: (clipboardValue: string, timeoutMs?: number) => Promise<void>;
-  clearPendingClipboard: () => Promise<any>;
+  abstract startProcessReload(authService: AuthService): Promise<void>;
+  abstract cancelProcessReload(): void;
+  abstract clearClipboard(clipboardValue: string, timeoutMs?: number): Promise<void>;
+  abstract clearPendingClipboard(): Promise<any>;
 }

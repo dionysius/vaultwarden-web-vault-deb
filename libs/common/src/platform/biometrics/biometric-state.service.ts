@@ -18,42 +18,42 @@ export abstract class BiometricStateService {
   /**
    * `true` if the currently active user has elected to store a biometric key to unlock their vault.
    */
-  biometricUnlockEnabled$: Observable<boolean>; // used to be biometricUnlock
+  abstract biometricUnlockEnabled$: Observable<boolean>; // used to be biometricUnlock
   /**
    * If the user has elected to require a password on first unlock of an application instance, this key will store the
    * encrypted client key half used to unlock the vault.
    *
    * Tracks the currently active user
    */
-  encryptedClientKeyHalf$: Observable<EncString | undefined>;
+  abstract encryptedClientKeyHalf$: Observable<EncString | undefined>;
   /**
    * whether or not a password is required on first unlock after opening the application
    *
    * tracks the currently active user
    */
-  requirePasswordOnStart$: Observable<boolean>;
+  abstract requirePasswordOnStart$: Observable<boolean>;
   /**
    * Indicates the user has been warned about the security implications of using biometrics and, depending on the OS,
    *
    * tracks the currently active user.
    */
-  dismissedRequirePasswordOnStartCallout$: Observable<boolean>;
+  abstract dismissedRequirePasswordOnStartCallout$: Observable<boolean>;
   /**
    * Whether the user has cancelled the biometric prompt.
    *
    * tracks the currently active user
    */
-  promptCancelled$: Observable<boolean>;
+  abstract promptCancelled$: Observable<boolean>;
   /**
    * Whether the user has elected to automatically prompt for biometrics.
    *
    * tracks the currently active user
    */
-  promptAutomatically$: Observable<boolean>;
+  abstract promptAutomatically$: Observable<boolean>;
   /**
    * Whether or not IPC fingerprint has been validated by the user this session.
    */
-  fingerprintValidated$: Observable<boolean>;
+  abstract fingerprintValidated$: Observable<boolean>;
 
   /**
    * Updates the require password on start state for the currently active user.

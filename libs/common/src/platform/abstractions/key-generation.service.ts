@@ -11,7 +11,7 @@ export abstract class KeyGenerationService {
    * 512 bits = 64 bytes
    * @returns Generated key.
    */
-  createKey: (bitLength: 256 | 512) => Promise<SymmetricCryptoKey>;
+  abstract createKey(bitLength: 256 | 512): Promise<SymmetricCryptoKey>;
   /**
    * Generates key material from CSPRNG and derives a 64 byte key from it.
    * Uses HKDF, see {@link https://datatracker.ietf.org/doc/html/rfc5869 RFC 5869}
@@ -22,11 +22,11 @@ export abstract class KeyGenerationService {
    * @param salt Optional. If not provided will be generated from CSPRNG.
    * @returns An object containing the salt, key material, and derived key.
    */
-  createKeyWithPurpose: (
+  abstract createKeyWithPurpose(
     bitLength: 128 | 192 | 256 | 512,
     purpose: string,
     salt?: string,
-  ) => Promise<{ salt: string; material: CsprngArray; derivedKey: SymmetricCryptoKey }>;
+  ): Promise<{ salt: string; material: CsprngArray; derivedKey: SymmetricCryptoKey }>;
   /**
    * Derives a 64 byte key from key material.
    * @remark The key material should be generated from {@link createKey}, or {@link createKeyWithPurpose}.
@@ -37,11 +37,11 @@ export abstract class KeyGenerationService {
    * Different purposes results in different keys, even with the same material.
    * @returns 64 byte derived key.
    */
-  deriveKeyFromMaterial: (
+  abstract deriveKeyFromMaterial(
     material: CsprngArray,
     salt: string,
     purpose: string,
-  ) => Promise<SymmetricCryptoKey>;
+  ): Promise<SymmetricCryptoKey>;
   /**
    * Derives a 32 byte key from a password using a key derivation function.
    * @param password Password to derive the key from.
@@ -50,10 +50,10 @@ export abstract class KeyGenerationService {
    * @param kdfConfig Configuration for the key derivation function.
    * @returns 32 byte derived key.
    */
-  deriveKeyFromPassword: (
+  abstract deriveKeyFromPassword(
     password: string | Uint8Array,
     salt: string | Uint8Array,
     kdf: KdfType,
     kdfConfig: KdfConfig,
-  ) => Promise<SymmetricCryptoKey>;
+  ): Promise<SymmetricCryptoKey>;
 }

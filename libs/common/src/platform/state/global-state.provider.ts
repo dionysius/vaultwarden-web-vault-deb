@@ -9,5 +9,5 @@ export abstract class GlobalStateProvider {
    * Gets a {@link GlobalState} scoped to the given {@link KeyDefinition}
    * @param keyDefinition - The {@link KeyDefinition} for which you want the state for.
    */
-  get: <T>(keyDefinition: KeyDefinition<T>) => GlobalState<T>;
+  abstract get<T>(keyDefinition: KeyDefinition<T>): GlobalState<T>;
 }
