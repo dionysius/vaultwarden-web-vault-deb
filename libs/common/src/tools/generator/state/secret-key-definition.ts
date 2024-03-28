@@ -1,6 +1,7 @@
-import { KeyDefinitionOptions } from "../../../platform/state";
+import { KeyDefinition, KeyDefinitionOptions } from "../../../platform/state";
 // eslint-disable-next-line -- `StateDefinition` used as an argument
 import { StateDefinition } from "../../../platform/state/state-definition";
+import { ClassifiedFormat } from "./classified-format";
 import { SecretClassifier } from "./secret-classifier";
 
 /** Encryption and storage settings for data stored by a `SecretState`.
@@ -17,6 +18,20 @@ export class SecretKeyDefinition<Outer, Id, Inner extends object, Disclosed, Sec
     readonly deconstruct: (value: any) => [Id, any][],
     readonly reconstruct: ([inners, ids]: (readonly [Id, any])[]) => Outer,
   ) {}
+
+  /** Converts the secret key to the `KeyDefinition` used for secret storage. */
+  toEncryptedStateKey() {
+    const secretKey = new KeyDefinition<ClassifiedFormat<Id, Disclosed>[]>(
+      this.stateDefinition,
+      this.key,
+      {
+        cleanupDelayMs: this.options.cleanupDelayMs,
+        deserializer: (jsonValue) => jsonValue as ClassifiedFormat<Id, Disclosed>[],
+      },
+    );
+
+    return secretKey;
+  }
 
   /**
    * Define a secret state for a single value

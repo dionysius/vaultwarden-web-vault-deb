@@ -77,17 +77,19 @@ export class SecretClassifier<Plaintext extends object, Disclosed, Secret> {
   }
 
   /** Partitions `secret` into its disclosed properties and secret properties.
-   *  @param secret The object to partition
+   *  @param value The object to partition
    *  @returns an object that classifies secrets.
    *    The `disclosed` member is new and contains disclosed properties.
-   *    The `secret` member aliases the secret parameter, with all
-   *    disclosed and excluded properties deleted.
+   *    The `secret` member is a copy of the secret parameter, including its
+   *    prototype, with all disclosed and excluded properties deleted.
    */
-  classify(secret: Plaintext): { disclosed: Disclosed; secret: Secret } {
-    const copy = { ...secret };
+  classify(value: Plaintext): { disclosed: Jsonify<Disclosed>; secret: Jsonify<Secret> } {
+    // need to JSONify during classification because the prototype is almost guaranteed
+    // to be invalid when this  method deletes arbitrary properties.
+    const secret = JSON.parse(JSON.stringify(value)) as Record<keyof Plaintext, unknown>;
 
     for (const excludedProp of this.excluded) {
-      delete copy[excludedProp];
+      delete secret[excludedProp];
     }
 
     const disclosed: Record<PropertyKey, unknown> = {};
@@ -95,13 +97,13 @@ export class SecretClassifier<Plaintext extends object, Disclosed, Secret> {
       // disclosedProp is known to be a subset of the keys of `Plaintext`, so these
       // type assertions are accurate.
       // FIXME: prove it to the compiler
-      disclosed[disclosedProp] = copy[disclosedProp as unknown as keyof Plaintext];
-      delete copy[disclosedProp as unknown as keyof Plaintext];
+      disclosed[disclosedProp] = secret[disclosedProp as keyof Plaintext];
+      delete secret[disclosedProp as keyof Plaintext];
     }
 
     return {
-      disclosed: disclosed as Disclosed,
-      secret: copy as unknown as Secret,
+      disclosed: disclosed as Jsonify<Disclosed>,
+      secret: secret as Jsonify<Secret>,
     };
   }
 

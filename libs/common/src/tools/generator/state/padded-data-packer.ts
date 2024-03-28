@@ -37,7 +37,7 @@ export class PaddedDataPacker extends DataPackerAbstraction {
    * with the frameSize.
    * @see {@link DataPackerAbstraction.unpack}
    */
-  pack<Secret>(value: Secret) {
+  pack<Secret>(value: Jsonify<Secret>) {
     // encode the value
     const json = JSON.stringify(value);
     const b64 = Utils.fromUtf8ToB64(json);

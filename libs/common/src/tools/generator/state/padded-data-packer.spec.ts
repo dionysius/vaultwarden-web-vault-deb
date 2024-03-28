@@ -88,14 +88,4 @@ describe("UserKeyEncryptor", () => {
 
     expect(unpacked).toEqual(input);
   });
-
-  it("should unpack a packed JSON-serializable value", () => {
-    const dataPacker = new PaddedDataPacker(8);
-    const input = { foo: new Date(100) };
-
-    const packed = dataPacker.pack(input);
-    const unpacked = dataPacker.unpack(packed);
-
-    expect(unpacked).toEqual({ foo: "1970-01-01T00:00:00.100Z" });
-  });
 });

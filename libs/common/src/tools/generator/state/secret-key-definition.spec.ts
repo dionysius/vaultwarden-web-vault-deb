@@ -7,6 +7,28 @@ describe("SecretKeyDefinition", () => {
   const classifier = SecretClassifier.allSecret<{ foo: boolean }>();
   const options = { deserializer: (v: any) => v };
 
+  it("toEncryptedStateKey returns a key", () => {
+    const expectedOptions = {
+      deserializer: (v: any) => v,
+      cleanupDelayMs: 100,
+    };
+    const definition = SecretKeyDefinition.value(
+      GENERATOR_DISK,
+      "key",
+      classifier,
+      expectedOptions,
+    );
+    const expectedDeserializerResult = {} as any;
+
+    const result = definition.toEncryptedStateKey();
+    const deserializerResult = result.deserializer(expectedDeserializerResult);
+
+    expect(result.stateDefinition).toEqual(GENERATOR_DISK);
+    expect(result.key).toBe("key");
+    expect(result.cleanupDelayMs).toBe(expectedOptions.cleanupDelayMs);
+    expect(deserializerResult).toBe(expectedDeserializerResult);
+  });
+
   describe("value", () => {
     it("returns an initialized SecretKeyDefinition", () => {
       const definition = SecretKeyDefinition.value(GENERATOR_DISK, "key", classifier, options);

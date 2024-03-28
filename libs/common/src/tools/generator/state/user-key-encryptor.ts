@@ -11,7 +11,7 @@ import { UserEncryptor } from "./user-encryptor.abstraction";
 /** A classification strategy that protects a type's secrets by encrypting them
  *  with a `UserKey`
  */
-export class UserKeyEncryptor<Secret> extends UserEncryptor<Secret> {
+export class UserKeyEncryptor extends UserEncryptor {
   /** Instantiates the encryptor
    *  @param encryptService protects properties of `Secret`.
    *  @param keyService looks up the user key when protecting data.
@@ -26,7 +26,7 @@ export class UserKeyEncryptor<Secret> extends UserEncryptor<Secret> {
   }
 
   /** {@link UserEncryptor.encrypt} */
-  async encrypt(secret: Secret, userId: UserId): Promise<EncString> {
+  async encrypt<Secret>(secret: Jsonify<Secret>, userId: UserId): Promise<EncString> {
     this.assertHasValue("secret", secret);
     this.assertHasValue("userId", userId);
 
@@ -42,7 +42,7 @@ export class UserKeyEncryptor<Secret> extends UserEncryptor<Secret> {
   }
 
   /** {@link UserEncryptor.decrypt} */
-  async decrypt(secret: EncString, userId: UserId): Promise<Jsonify<Secret>> {
+  async decrypt<Secret>(secret: EncString, userId: UserId): Promise<Jsonify<Secret>> {
     this.assertHasValue("secret", secret);
     this.assertHasValue("userId", userId);
 

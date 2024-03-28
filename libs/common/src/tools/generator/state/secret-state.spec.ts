@@ -36,26 +36,26 @@ const FOOBAR_RECORD = SecretKeyDefinition.record(GENERATOR_DISK, "fooBar", class
 
 const SomeUser = "some user" as UserId;
 
-function mockEncryptor(fooBar: FooBar[] = []): UserEncryptor<FooBar> {
+function mockEncryptor<T>(fooBar: T[] = []): UserEncryptor {
   // stores "encrypted values" so that they can be "decrypted" later
   // while allowing the operations to be interleaved.
   const encrypted = new Map<string, Jsonify<FooBar>>(
-    fooBar.map((fb) => [toKey(fb).encryptedString, toValue(fb)] as const),
+    fooBar.map((fb) => [toKey(fb as any).encryptedString, toValue(fb)] as const),
   );
 
-  const result = mock<UserEncryptor<FooBar>>({
-    encrypt(value: FooBar, user: UserId) {
-      const encString = toKey(value);
+  const result = mock<UserEncryptor>({
+    encrypt<T>(value: Jsonify<T>, user: UserId) {
+      const encString = toKey(value as any);
       encrypted.set(encString.encryptedString, toValue(value));
       return Promise.resolve(encString);
     },
     decrypt(secret: EncString, userId: UserId) {
-      const decString = encrypted.get(toValue(secret.encryptedString));
-      return Promise.resolve(decString);
+      const decValue = encrypted.get(secret.encryptedString);
+      return Promise.resolve(decValue as any);
     },
   });
 
-  function toKey(value: FooBar) {
+  function toKey(value: Jsonify<T>) {
     // `stringify` is only relevant for its uniqueness as a key
     // to `encrypted`.
     return makeEncString(JSON.stringify(value));
@@ -68,7 +68,7 @@ function mockEncryptor(fooBar: FooBar[] = []): UserEncryptor<FooBar> {
 
   // typescript pops a false positive about missing `encrypt` and `decrypt`
   // functions, so assert the type manually.
-  return result as unknown as UserEncryptor<FooBar>;
+  return result as unknown as UserEncryptor;
 }
 
 async function fakeStateProvider() {
@@ -77,7 +77,7 @@ async function fakeStateProvider() {
   return stateProvider;
 }
 
-describe("UserEncryptor", () => {
+describe("SecretState", () => {
   describe("from", () => {
     it("returns a state store", async () => {
       const provider = await fakeStateProvider();

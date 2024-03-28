@@ -77,6 +77,15 @@ describe("SecretClassifier", () => {
       expect(classified.disclosed).toEqual({ foo: true });
     });
 
+    it("jsonifies its outputs", () => {
+      const classifier = SecretClassifier.allSecret<{ foo: Date; bar: Date }>().disclose("foo");
+
+      const classified = classifier.classify({ foo: new Date(100), bar: new Date(100) });
+
+      expect(classified.disclosed).toEqual({ foo: "1970-01-01T00:00:00.100Z" });
+      expect(classified.secret).toEqual({ bar: "1970-01-01T00:00:00.100Z" });
+    });
+
     it("deletes disclosed properties from the secret member", () => {
       const classifier = SecretClassifier.allSecret<{ foo: boolean; bar: boolean }>().disclose(
         "foo",
@@ -105,15 +114,6 @@ describe("SecretClassifier", () => {
       const classified = classifier.classify({ foo: true, bar: false });
 
       expect(classified.disclosed).toEqual({});
-    });
-
-    it("returns its input as the secret member", () => {
-      const classifier = SecretClassifier.allSecret<{ foo: boolean }>();
-      const input = { foo: true };
-
-      const classified = classifier.classify(input);
-
-      expect(classified.secret).toEqual(input);
     });
   });
 

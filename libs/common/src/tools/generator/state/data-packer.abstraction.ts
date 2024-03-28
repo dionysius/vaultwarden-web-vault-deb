@@ -9,7 +9,7 @@ export abstract class DataPacker {
    * @param value is packed into the string
    * @returns the packed string
    */
-  abstract pack<Data>(value: Data): string;
+  abstract pack<Data>(value: Jsonify<Data>): string;
 
   /** Unpacks a string produced by pack.
    * @param packedValue is the string to unpack

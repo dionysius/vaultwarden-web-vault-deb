@@ -7,7 +7,7 @@ import { UserId } from "../../../types/guid";
  *  user-specific information. The specific kind of information is
  *  determined by the classification strategy.
  */
-export abstract class UserEncryptor<Secret> {
+export abstract class UserEncryptor {
   /** Protects secrets in `value` with a user-specific key.
    *  @param secret the object to protect. This object is mutated during encryption.
    *  @param userId identifies the user-specific information used to protect
@@ -17,7 +17,7 @@ export abstract class UserEncryptor<Secret> {
    *    properties.
    *   @throws If `value` is `null` or `undefined`, the promise rejects with an error.
    */
-  abstract encrypt(secret: Secret, userId: UserId): Promise<EncString>;
+  abstract encrypt<Secret>(secret: Jsonify<Secret>, userId: UserId): Promise<EncString>;
 
   /** Combines protected secrets and disclosed data into a type that can be
    *  rehydrated into a domain object.
@@ -30,5 +30,5 @@ export abstract class UserEncryptor<Secret> {
    *  @throws If `secret` or `disclosed` is `null` or `undefined`, the promise
    *    rejects with an error.
    */
-  abstract decrypt(secret: EncString, userId: UserId): Promise<Jsonify<Secret>>;
+  abstract decrypt<Secret>(secret: EncString, userId: UserId): Promise<Jsonify<Secret>>;
 }

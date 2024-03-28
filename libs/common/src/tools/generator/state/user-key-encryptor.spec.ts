@@ -39,10 +39,10 @@ describe("UserKeyEncryptor", () => {
     it("should throw if value was not supplied", async () => {
       const encryptor = new UserKeyEncryptor(encryptService, keyService, dataPacker);
 
-      await expect(encryptor.encrypt(null, anyUserId)).rejects.toThrow(
+      await expect(encryptor.encrypt<Record<string, never>>(null, anyUserId)).rejects.toThrow(
         "secret cannot be null or undefined",
       );
-      await expect(encryptor.encrypt(undefined, anyUserId)).rejects.toThrow(
+      await expect(encryptor.encrypt<Record<string, never>>(undefined, anyUserId)).rejects.toThrow(
         "secret cannot be null or undefined",
       );
     });
@@ -50,10 +50,10 @@ describe("UserKeyEncryptor", () => {
     it("should throw if userId was not supplied", async () => {
       const encryptor = new UserKeyEncryptor(encryptService, keyService, dataPacker);
 
-      await expect(encryptor.encrypt({} as any, null)).rejects.toThrow(
+      await expect(encryptor.encrypt({}, null)).rejects.toThrow(
         "userId cannot be null or undefined",
       );
-      await expect(encryptor.encrypt({} as any, undefined)).rejects.toThrow(
+      await expect(encryptor.encrypt({}, undefined)).rejects.toThrow(
         "userId cannot be null or undefined",
       );
     });
