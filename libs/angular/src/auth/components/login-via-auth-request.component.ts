@@ -68,7 +68,6 @@ export class LoginViaAuthRequestComponent
 
   private authRequestKeyPair: { publicKey: Uint8Array; privateKey: Uint8Array };
 
-  // TODO: in future, go to child components and remove child constructors and let deps fall through to the super class
   constructor(
     protected router: Router,
     private cryptoService: CryptoService,
@@ -98,14 +97,16 @@ export class LoginViaAuthRequestComponent
       this.email = this.loginService.getEmail();
     }
 
-    //gets signalR push notification
-    this.loginStrategyService.authRequestPushNotification$
+    // Gets signalR push notification
+    // Only fires on approval to prevent enumeration
+    this.authRequestService.authRequestPushNotification$
       .pipe(takeUntil(this.destroy$))
       .subscribe((id) => {
-        // Only fires on approval currently
-        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
         // eslint-disable-next-line @typescript-eslint/no-floating-promises
-        this.verifyAndHandleApprovedAuthReq(id);
+        this.verifyAndHandleApprovedAuthReq(id).catch((e: Error) => {
+          this.platformUtilsService.showToast("error", this.i18nService.t("error"), e.message);
+          this.logService.error("Failed to use approved auth request: " + e.message);
+        });
       });
   }
 
@@ -164,10 +165,10 @@ export class LoginViaAuthRequestComponent
     }
   }
 
-  ngOnDestroy(): void {
+  async ngOnDestroy() {
+    await this.anonymousHubService.stopHubConnection();
     this.destroy$.next();
     this.destroy$.complete();
-    this.anonymousHubService.stopHubConnection();
   }
 
   private async handleExistingAdminAuthRequest(adminAuthReqStorable: AdminAuthRequestStorable) {
@@ -213,7 +214,7 @@ export class LoginViaAuthRequestComponent
 
     // Request still pending response from admin
     // So, create hub connection so that any approvals will be received via push notification
-    this.anonymousHubService.createHubConnection(adminAuthReqStorable.id);
+    await this.anonymousHubService.createHubConnection(adminAuthReqStorable.id);
   }
 
   private async handleExistingAdminAuthReqDeletedOrDenied() {
@@ -273,7 +274,7 @@ export class LoginViaAuthRequestComponent
       }
 
       if (reqResponse.id) {
-        this.anonymousHubService.createHubConnection(reqResponse.id);
+        await this.anonymousHubService.createHubConnection(reqResponse.id);
       }
     } catch (e) {
       this.logService.error(e);

@@ -866,7 +866,7 @@ const safeProviders: SafeProvider[] = [
   safeProvider({
     provide: AnonymousHubServiceAbstraction,
     useClass: AnonymousHubService,
-    deps: [EnvironmentService, LoginStrategyServiceAbstraction, LogService],
+    deps: [EnvironmentService, AuthRequestServiceAbstraction],
   }),
   safeProvider({
     provide: ValidationServiceAbstraction,

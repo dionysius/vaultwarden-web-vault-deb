@@ -1,7 +1,12 @@
+import { Observable } from "rxjs";
+
 import { AuthRequestResponse } from "@bitwarden/common/auth/models/response/auth-request.response";
+import { AuthRequestPushNotification } from "@bitwarden/common/models/response/notification.response";
 import { UserKey, MasterKey } from "@bitwarden/common/types/key";
 
 export abstract class AuthRequestServiceAbstraction {
+  /** Emits an auth request id when an auth request has been approved. */
+  authRequestPushNotification$: Observable<string>;
   /**
    * Approve or deny an auth request.
    * @param approve True to approve, false to deny.
@@ -54,4 +59,11 @@ export abstract class AuthRequestServiceAbstraction {
     pubKeyEncryptedMasterKeyHash: string,
     privateKey: ArrayBuffer,
   ) => Promise<{ masterKey: MasterKey; masterKeyHash: string }>;
+
+  /**
+   * Handles incoming auth request push notifications.
+   * @param notification push notification.
+   * @remark We should only be receiving approved push notifications to prevent enumeration.
+   */
+  abstract sendAuthRequestPushNotification: (notification: AuthRequestPushNotification) => void;
 }

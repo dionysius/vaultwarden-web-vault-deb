@@ -4,7 +4,6 @@ import { AuthenticationType } from "@bitwarden/common/auth/enums/authentication-
 import { AuthResult } from "@bitwarden/common/auth/models/domain/auth-result";
 import { TokenTwoFactorRequest } from "@bitwarden/common/auth/models/request/identity-token/token-two-factor.request";
 import { AuthRequestResponse } from "@bitwarden/common/auth/models/response/auth-request.response";
-import { AuthRequestPushNotification } from "@bitwarden/common/models/response/notification.response";
 import { MasterKey } from "@bitwarden/common/types/key";
 
 import {
@@ -21,10 +20,6 @@ export abstract class LoginStrategyServiceAbstraction {
    * Emits null if the session has timed out.
    */
   currentAuthType$: Observable<AuthenticationType | null>;
-  /**
-   * Emits when an auth request has been approved.
-   */
-  authRequestPushNotification$: Observable<string>;
   /**
    * If the login strategy uses the email address of the user, this
    * will return it. Otherwise, it will return null.
@@ -77,10 +72,6 @@ export abstract class LoginStrategyServiceAbstraction {
    * Creates a master key from the provided master password and email.
    */
   makePreloginKey: (masterPassword: string, email: string) => Promise<MasterKey>;
-  /**
-   * Sends a notification to {@link LoginStrategyServiceAbstraction.authRequestPushNotification}
-   */
-  sendAuthRequestPushNotification: (notification: AuthRequestPushNotification) => Promise<void>;
   /**
    * Sends a response to an auth request.
    */

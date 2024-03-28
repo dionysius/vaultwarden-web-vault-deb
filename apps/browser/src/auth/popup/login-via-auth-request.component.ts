@@ -1,5 +1,5 @@
 import { Location } from "@angular/common";
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { Router } from "@angular/router";
 
 import { LoginViaAuthRequestComponent as BaseLoginWithDeviceComponent } from "@bitwarden/angular/auth/components/login-via-auth-request.component";
@@ -28,10 +28,7 @@ import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.serv
   selector: "app-login-via-auth-request",
   templateUrl: "login-via-auth-request.component.html",
 })
-export class LoginViaAuthRequestComponent
-  extends BaseLoginWithDeviceComponent
-  implements OnInit, OnDestroy
-{
+export class LoginViaAuthRequestComponent extends BaseLoginWithDeviceComponent {
   constructor(
     router: Router,
     cryptoService: CryptoService,

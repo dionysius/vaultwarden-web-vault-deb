@@ -1,7 +1,6 @@
 import {
   combineLatestWith,
   distinctUntilChanged,
-  filter,
   firstValueFrom,
   map,
   Observable,
@@ -23,7 +22,6 @@ import { AuthRequestResponse } from "@bitwarden/common/auth/models/response/auth
 import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions/account/billing-account-profile-state.service";
 import { PreloginRequest } from "@bitwarden/common/models/request/prelogin.request";
 import { ErrorResponse } from "@bitwarden/common/models/response/error.response";
-import { AuthRequestPushNotification } from "@bitwarden/common/models/response/notification.response";
 import { AppIdService } from "@bitwarden/common/platform/abstractions/app-id.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
@@ -81,8 +79,6 @@ export class LoginStrategyService implements LoginStrategyServiceAbstraction {
   >;
 
   currentAuthType$: Observable<AuthenticationType | null>;
-  // TODO: move to auth request service
-  authRequestPushNotification$: Observable<string>;
 
   constructor(
     protected cryptoService: CryptoService,
@@ -114,9 +110,6 @@ export class LoginStrategyService implements LoginStrategyServiceAbstraction {
     );
 
     this.currentAuthType$ = this.currentAuthnTypeState.state$;
-    this.authRequestPushNotification$ = this.authRequestPushNotificationState.state$.pipe(
-      filter((id) => id != null),
-    );
     this.loginStrategy$ = this.currentAuthnTypeState.state$.pipe(
       distinctUntilChanged(),
       combineLatestWith(this.loginStrategyCacheState.state$),
@@ -254,13 +247,6 @@ export class LoginStrategyService implements LoginStrategyServiceAbstraction {
       }
     }
     return await this.cryptoService.makeMasterKey(masterPassword, email, kdf, kdfConfig);
-  }
-
-  // TODO move to auth request service
-  async sendAuthRequestPushNotification(notification: AuthRequestPushNotification): Promise<void> {
-    if (notification.id != null) {
-      await this.authRequestPushNotificationState.update((_) => notification.id);
-    }
   }
 
   // TODO: move to auth request service
