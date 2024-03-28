@@ -7478,7 +7478,7 @@
     "message": "安装浏览器扩展"
   },
   "installBrowserExtensionDetails": {
-    "message": "使用扩展快速保存登录信息和自动填充表单，而无需打开网页应用程序。"
+    "message": "使用扩展快速保存登录信息和自动填充表单，而无需打开网页 App。"
   },
   "projectAccessUpdated": {
     "message": "工程访问权限已更新"
@@ -7511,7 +7511,7 @@
     "message": "服务账户访问权限已更新"
   },
   "commonImportFormats": {
-    "message": "通用格式",
+    "message": "常规格式",
     "description": "Label indicating the most common import formats"
   },
   "maintainYourSubscription": {
@@ -7533,7 +7533,7 @@
     "description": "This describes new features and improvements for user roles and collections"
   },
   "collectionEnhancementsLearnMore": {
-    "message": "了解更多关于集合管理"
+    "message": "了解更多关于集合管理的信息"
   },
   "organizationInformation": {
     "message": "组织信息"
@@ -7604,31 +7604,31 @@
     "message": "您不能将自己添加到群组。"
   },
   "restrictedCollectionAccess": {
-    "message": "您不能将自己添加到群组。"
+    "message": "您不能将自己添加到集合。"
   },
   "assign": {
-    "message": "Assign"
+    "message": "分配"
   },
   "assignToCollections": {
-    "message": "Assign to collections"
+    "message": "分配到集合"
   },
   "assignToTheseCollections": {
-    "message": "Assign to these collections"
+    "message": "分配到这些集合"
   },
   "bulkCollectionAssignmentDialogDescription": {
-    "message": "Select the collections that the items will be shared with. Once an item is updated in one collection, it will be reflected in all collections. Only organization members with access to these collections will be able to see the items."
+    "message": "选择要共享项目的集合。当一个项目在某个集合中更新后，它将反映在所有集合中。只有能够访问这些集合的组织成员才能看到此项目。"
   },
   "selectCollectionsToAssign": {
-    "message": "Select collections to assign"
+    "message": "选择要分配的集合"
   },
   "noCollectionsAssigned": {
-    "message": "No collections have been assigned"
+    "message": "没有分配任何集合"
   },
   "successfullyAssignedCollections": {
-    "message": "Successfully assigned collections"
+    "message": "成功分配了集合"
   },
   "bulkCollectionAssignmentWarning": {
-    "message": "You have selected $TOTAL_COUNT$ items. You cannot update $READONLY_COUNT$ of the items because you do not have edit permissions.",
+    "message": "您选择了 $TOTAL_COUNT$ 个项目。其中的 $READONLY_COUNT$ 个项目由于您没有编辑权限，您将无法更新它们。",
     "placeholders": {
       "total_count": {
         "content": "$1",
@@ -7641,6 +7641,6 @@
     }
   },
   "items": {
-    "message": "Items"
+    "message": "项目"
   }
 }
