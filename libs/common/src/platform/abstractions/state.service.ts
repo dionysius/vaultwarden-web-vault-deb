@@ -52,8 +52,6 @@ export abstract class StateService<T extends Account = Account> {
   setAddEditCipherInfo: (value: AddEditCipherInfo, options?: StorageOptions) => Promise<void>;
   getBiometricFingerprintValidated: (options?: StorageOptions) => Promise<boolean>;
   setBiometricFingerprintValidated: (value: boolean, options?: StorageOptions) => Promise<void>;
-  getConvertAccountToKeyConnector: (options?: StorageOptions) => Promise<boolean>;
-  setConvertAccountToKeyConnector: (value: boolean, options?: StorageOptions) => Promise<void>;
   /**
    * Gets the user's master key
    */
@@ -269,8 +267,6 @@ export abstract class StateService<T extends Account = Account> {
   getSecurityStamp: (options?: StorageOptions) => Promise<string>;
   setSecurityStamp: (value: string, options?: StorageOptions) => Promise<void>;
   getUserId: (options?: StorageOptions) => Promise<string>;
-  getUsesKeyConnector: (options?: StorageOptions) => Promise<boolean>;
-  setUsesKeyConnector: (value: boolean, options?: StorageOptions) => Promise<void>;
   getVaultTimeout: (options?: StorageOptions) => Promise<number>;
   setVaultTimeout: (value: number, options?: StorageOptions) => Promise<void>;
   getVaultTimeoutAction: (options?: StorageOptions) => Promise<string>;

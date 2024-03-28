@@ -276,7 +276,6 @@ export class AppComponent implements OnDestroy, OnInit {
       this.collectionService.clear(userId),
       this.policyService.clear(userId),
       this.passwordGenerationService.clear(),
-      this.keyConnectorService.clear(),
       this.biometricStateService.logout(userId as UserId),
       this.paymentMethodWarningService.clear(),
     ]);

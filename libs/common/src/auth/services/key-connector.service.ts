@@ -1,3 +1,5 @@
+import { firstValueFrom } from "rxjs";
+
 import { ApiService } from "../../abstractions/api.service";
 import { OrganizationService } from "../../admin-console/abstractions/organization/organization.service.abstraction";
 import { OrganizationUserType } from "../../admin-console/enums";
@@ -5,9 +7,14 @@ import { KeysRequest } from "../../models/request/keys.request";
 import { CryptoService } from "../../platform/abstractions/crypto.service";
 import { KeyGenerationService } from "../../platform/abstractions/key-generation.service";
 import { LogService } from "../../platform/abstractions/log.service";
-import { StateService } from "../../platform/abstractions/state.service";
 import { Utils } from "../../platform/misc/utils";
 import { SymmetricCryptoKey } from "../../platform/models/domain/symmetric-crypto-key";
+import {
+  ActiveUserState,
+  KEY_CONNECTOR_DISK,
+  StateProvider,
+  UserKeyDefinition,
+} from "../../platform/state";
 import { MasterKey } from "../../types/key";
 import { KeyConnectorService as KeyConnectorServiceAbstraction } from "../abstractions/key-connector.service";
 import { TokenService } from "../abstractions/token.service";
@@ -16,9 +23,28 @@ import { KeyConnectorUserKeyRequest } from "../models/request/key-connector-user
 import { SetKeyConnectorKeyRequest } from "../models/request/set-key-connector-key.request";
 import { IdentityTokenResponse } from "../models/response/identity-token.response";
 
+export const USES_KEY_CONNECTOR = new UserKeyDefinition<boolean>(
+  KEY_CONNECTOR_DISK,
+  "usesKeyConnector",
+  {
+    deserializer: (usesKeyConnector) => usesKeyConnector,
+    clearOn: ["logout"],
+  },
+);
+
+export const CONVERT_ACCOUNT_TO_KEY_CONNECTOR = new UserKeyDefinition<boolean>(
+  KEY_CONNECTOR_DISK,
+  "convertAccountToKeyConnector",
+  {
+    deserializer: (convertAccountToKeyConnector) => convertAccountToKeyConnector,
+    clearOn: ["logout"],
+  },
+);
+
 export class KeyConnectorService implements KeyConnectorServiceAbstraction {
+  private usesKeyConnectorState: ActiveUserState<boolean>;
+  private convertAccountToKeyConnectorState: ActiveUserState<boolean>;
   constructor(
-    private stateService: StateService,
     private cryptoService: CryptoService,
     private apiService: ApiService,
     private tokenService: TokenService,
@@ -26,14 +52,20 @@ export class KeyConnectorService implements KeyConnectorServiceAbstraction {
     private organizationService: OrganizationService,
     private keyGenerationService: KeyGenerationService,
     private logoutCallback: (expired: boolean, userId?: string) => Promise<void>,
-  ) {}
-
-  setUsesKeyConnector(usesKeyConnector: boolean) {
-    return this.stateService.setUsesKeyConnector(usesKeyConnector);
+    private stateProvider: StateProvider,
+  ) {
+    this.usesKeyConnectorState = this.stateProvider.getActive(USES_KEY_CONNECTOR);
+    this.convertAccountToKeyConnectorState = this.stateProvider.getActive(
+      CONVERT_ACCOUNT_TO_KEY_CONNECTOR,
+    );
   }
 
-  async getUsesKeyConnector(): Promise<boolean> {
-    return await this.stateService.getUsesKeyConnector();
+  async setUsesKeyConnector(usesKeyConnector: boolean) {
+    await this.usesKeyConnectorState.update(() => usesKeyConnector);
+  }
+
+  getUsesKeyConnector(): Promise<boolean> {
+    return firstValueFrom(this.usesKeyConnectorState.state$);
   }
 
   async userNeedsMigration() {
@@ -132,19 +164,15 @@ export class KeyConnectorService implements KeyConnectorServiceAbstraction {
   }
 
   async setConvertAccountRequired(status: boolean) {
-    await this.stateService.setConvertAccountToKeyConnector(status);
+    await this.convertAccountToKeyConnectorState.update(() => status);
   }
 
-  async getConvertAccountRequired(): Promise<boolean> {
-    return await this.stateService.getConvertAccountToKeyConnector();
+  getConvertAccountRequired(): Promise<boolean> {
+    return firstValueFrom(this.convertAccountToKeyConnectorState.state$);
   }
 
   async removeConvertAccountRequired() {
-    await this.stateService.setConvertAccountToKeyConnector(null);
-  }
-
-  async clear() {
-    await this.removeConvertAccountRequired();
+    await this.setConvertAccountRequired(null);
   }
 
   private handleKeyConnectorError(e: any) {
