@@ -42,7 +42,6 @@ export class SettingsComponent implements OnInit {
   themeOptions: any[];
   clearClipboardOptions: any[];
   supportsBiometric: boolean;
-  additionalBiometricSettingsText: string;
   showAlwaysShowDock = false;
   requireEnableTray = false;
   showDuckDuckGoIntegrationOption = false;
@@ -283,10 +282,6 @@ export class SettingsComponent implements OnInit {
     this.showMinToTray = this.platformUtilsService.getDevice() !== DeviceType.LinuxDesktop;
     this.showAlwaysShowDock = this.platformUtilsService.getDevice() === DeviceType.MacOsDesktop;
     this.supportsBiometric = await this.platformUtilsService.supportsBiometric();
-    this.additionalBiometricSettingsText =
-      this.biometricText === "unlockWithTouchId"
-        ? "additionalTouchIdSettings"
-        : "additionalWindowsHelloSettings";
     this.previousVaultTimeout = this.form.value.vaultTimeout;
 
     this.refreshTimeoutSettings$
@@ -696,6 +691,17 @@ export class SettingsComponent implements OnInit {
         return "autoPromptTouchId";
       case DeviceType.WindowsDesktop:
         return "autoPromptWindowsHello";
+      default:
+        throw new Error("Unsupported platform");
+    }
+  }
+
+  get additionalBiometricSettingsText() {
+    switch (this.platformUtilsService.getDevice()) {
+      case DeviceType.MacOsDesktop:
+        return "additionalTouchIdSettings";
+      case DeviceType.WindowsDesktop:
+        return "additionalWindowsHelloSettings";
       default:
         throw new Error("Unsupported platform");
     }
