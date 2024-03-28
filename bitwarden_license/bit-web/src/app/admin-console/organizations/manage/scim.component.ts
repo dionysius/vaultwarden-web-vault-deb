@@ -107,7 +107,7 @@ export class ScimComponent implements OnInit {
     try {
       const response = await this.rotatePromise;
       this.formData.setValue({
-        endpointUrl: this.getScimEndpointUrl(),
+        endpointUrl: await this.getScimEndpointUrl(),
         clientSecret: response.apiKey,
       });
       this.platformUtilsService.showToast("success", null, this.i18nService.t("scimApiKeyRotated"));
