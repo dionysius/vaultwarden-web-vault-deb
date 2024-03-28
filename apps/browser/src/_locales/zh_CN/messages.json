@@ -1500,7 +1500,7 @@
     "message": "无效 PIN 码。"
   },
   "tooManyInvalidPinEntryAttemptsLoggingOut": {
-    "message": "无效的 PIN 输入尝试次数过多，正在退出登录。"
+    "message": "无效的 PIN 输入尝试次数过多，正在注销。"
   },
   "unlockWithBiometrics": {
     "message": "使用生物识别解锁"
@@ -1742,7 +1742,7 @@
     "message": "Bitwarden 将不会询问是否为这些域名保存登录信息。您必须刷新页面才能使更改生效。"
   },
   "excludedDomainsDescAlt": {
-    "message": "Bitwarden 不会询问保存所有已登录的账户的这些域名的登录信息。您必须刷新页面才能使更改生效。"
+    "message": "Bitwarden 不会询问保存所有已登录的账户的这些域名的登录信息。必须刷新页面才能使更改生效。"
   },
   "excludedDomainsInvalidDomain": {
     "message": "$DOMAIN$ 不是一个有效的域名",
@@ -2314,7 +2314,7 @@
     "message": "如何自动填充"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "从此界面选择一个项目，使用快捷方式 $COMMAND$，或探索设置中的其他选项。",
+    "message": "从此界面选择一个项目，使用快捷键 $COMMAND$，或探索设置中的其他选项。",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2335,10 +2335,10 @@
     "message": "自动填充键盘快捷键"
   },
   "autofillShortcutNotSet": {
-    "message": "未设置自动填充快捷方式。请在浏览器设置中更改此设置。"
+    "message": "未设置自动填充快捷键。可在浏览器的设置中更改它。"
   },
   "autofillShortcutText": {
-    "message": "自动填充快捷方式为： $COMMAND$。在浏览器设置中更改此项。",
+    "message": "自动填充快捷键为：$COMMAND$。可在浏览器的设置中更改它。",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2928,7 +2928,7 @@
     "message": "已达到账户上限。请注销一个账户后再添加其他账户。"
   },
   "active": {
-    "message": "已生效"
+    "message": "活动的"
   },
   "locked": {
     "message": "已锁定"
@@ -2961,7 +2961,7 @@
     }
   },
   "commonImportFormats": {
-    "message": "通用格式",
+    "message": "常规格式",
     "description": "Label indicating the most common import formats"
   },
   "overrideDefaultBrowserAutofillTitle": {
@@ -2969,7 +2969,7 @@
     "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutofillDescription": {
-    "message": "忽略此设置可能会导致 Bitwarden 自动填充菜单与浏览器自带功能产生冲突。",
+    "message": "忽略此选项可能会导致 Bitwarden 自动填充菜单与浏览器自带功能产生冲突。",
     "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutoFillSettings": {
