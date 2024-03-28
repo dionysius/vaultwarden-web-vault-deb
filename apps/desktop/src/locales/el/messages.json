@@ -1087,7 +1087,7 @@
     "message": "1 GB κρυπτογραφημένο αποθηκευτικό χώρο για συνημμένα αρχεία."
   },
   "premiumSignUpTwoStepOptions": {
-    "message": "Proprietary two-step login options such as YubiKey and Duo."
+    "message": "Ιδιόκτητες επιλογές σύνδεσης δύο βημάτων, όπως το YubiKey και το Duo."
   },
   "premiumSignUpReports": {
     "message": "Ασφάλεια κωδικών, υγιής λογαριασμός και αναφορές παραβίασης δεδομένων για να διατηρήσετε ασφαλή τη λίστα σας."
@@ -1399,7 +1399,7 @@
     "message": "Μη έγκυρος κωδικός PIN."
   },
   "tooManyInvalidPinEntryAttemptsLoggingOut": {
-    "message": "Too many invalid PIN entry attempts. Logging out."
+    "message": "Πάρα πολλές άκυρες απόπειρες εισαγωγής PIN. Γίνεται αποσύνδεση."
   },
   "unlockWithWindowsHello": {
     "message": "Ξεκλειδώστε με το Windows Hello"
@@ -1554,7 +1554,7 @@
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "verificationRequired": {
-    "message": "Verification required",
+    "message": "Απαιτείται επαλήθευση",
     "description": "Default title for the user verification dialog."
   },
   "currentMasterPass": {
@@ -1645,10 +1645,10 @@
     "message": "Ενεργοποιήστε ένα πρόσθετο επίπεδο ασφάλειας απαιτώντας επικύρωση φράσης δακτυλικών αποτυπωμάτων κατά τη δημιουργία μιας σύνδεσης μεταξύ της επιφάνειας εργασίας σας και του προγράμματος περιήγησης. Όταν ενεργοποιηθεί, αυτό απαιτεί παρέμβαση χρήστη και επαλήθευση κάθε φορά που δημιουργείται σύνδεση."
   },
   "enableHardwareAcceleration": {
-    "message": "Use hardware acceleration"
+    "message": "Χρήση επιτάχυνσης υλικού"
   },
   "enableHardwareAccelerationDesc": {
-    "message": "By default this setting is ON. Turn OFF only if you experience graphical issues. Restart is required."
+    "message": "Εξ ορισμού αυτή η ρύθμιση είναι ΕΝΕΡΓΗ. Απενεργοποιήστε μόνο αν αντιμετωπίζετε γραφικά προβλήματα. Απαιτείται επανεκκίνηση."
   },
   "approve": {
     "message": "Έγκριση"
@@ -1690,7 +1690,7 @@
     "message": "Μια πολιτική του οργανισμού, επηρεάζει τις επιλογές ιδιοκτησίας σας."
   },
   "personalOwnershipPolicyInEffectImports": {
-    "message": "An organization policy has blocked importing items into your individual vault."
+    "message": "Μια πολιτική οργανισμού έχει αποτρέψει την εισαγωγή στοιχείων στην προσωπική κρύπτη σας."
   },
   "allSends": {
     "message": "Όλα τα Sends",
@@ -1886,43 +1886,43 @@
     "message": "Ο Κύριος Κωδικός Πρόσβασής σας άλλαξε πρόσφατα από διαχειριστή στον οργανισμό σας. Για να αποκτήσετε πρόσβαση στο vault, πρέπει να τον ενημερώσετε τώρα. Η διαδικασία θα σας αποσυνδέσει από την τρέχουσα συνεδρία σας, απαιτώντας από εσάς να συνδεθείτε ξανά. Οι ενεργές συνεδρίες σε άλλες συσκευές ενδέχεται να συνεχίσουν να είναι ενεργές για μία ώρα."
   },
   "updateWeakMasterPasswordWarning": {
-    "message": "Your master password does not meet one or more of your organization policies. In order to access the vault, you must update your master password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Ο κύριος κωδικός πρόσβασης δεν πληροί τις απαιτήσεις πολιτικής αυτού του οργανισμού. Για να έχετε πρόσβαση στην κρύπτη, πρέπει να ενημερώσετε τον κύριο κωδικό σας άμεσα. Η διαδικασία θα σάς αποσυνδέσει από την τρέχουσα συνεδρία σας, απαιτώντας να συνδεθείτε ξανά. Οι ενεργές συνεδρίες σε άλλες συσκευές ενδέχεται να συνεχίσουν να είναι ενεργές για το πολύ μία ώρα."
   },
   "tryAgain": {
-    "message": "Try again"
+    "message": "Προσπαθήστε ξανά"
   },
   "verificationRequiredForActionSetPinToContinue": {
-    "message": "Verification required for this action. Set a PIN to continue."
+    "message": "Απαιτείται επαλήθευση για αυτήν την ενέργεια. Ορίστε ένα PIN για να συνεχίσετε."
   },
   "setPin": {
-    "message": "Set PIN"
+    "message": "Ορισμός PIN"
   },
   "verifyWithBiometrics": {
-    "message": "Verify with biometrics"
+    "message": "Επαλήθευση με βιομετρικά"
   },
   "awaitingConfirmation": {
-    "message": "Awaiting confirmation"
+    "message": "Σε αναμονή επιβεβαίωσης"
   },
   "couldNotCompleteBiometrics": {
-    "message": "Could not complete biometrics."
+    "message": "Αδύνατη η ολοκλήρωση των βιομετρικών."
   },
   "needADifferentMethod": {
-    "message": "Need a different method?"
+    "message": "Χρειάζεστε μια διαφορετική μέθοδο;"
   },
   "useMasterPassword": {
-    "message": "Use master password"
+    "message": "Χρήση κύριου κωδικού"
   },
   "usePin": {
-    "message": "Use PIN"
+    "message": "Χρήση PIN"
   },
   "useBiometrics": {
-    "message": "Use biometrics"
+    "message": "Χρήση βιομετρικών"
   },
   "enterVerificationCodeSentToEmail": {
-    "message": "Enter the verification code that was sent to your email."
+    "message": "Εισάγετε τον κωδικό επαλήθευσης που έχει σταλεί στο email σας."
   },
   "resendCode": {
-    "message": "Resend code"
+    "message": "Επαναποστολή κωδικού"
   },
   "hours": {
     "message": "Ώρες"
@@ -1944,7 +1944,7 @@
     }
   },
   "vaultTimeoutPolicyWithActionInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed vault timeout is $HOURS$ hour(s) and $MINUTES$ minute(s). Your vault timeout action is set to $ACTION$.",
+    "message": "Οι πολιτικές του οργανισμού σας επηρεάζουν το χρονικό όριο λήξης της κρύ[της σας. Το μέγιστο επιτρεπόμενο χρονικό όριο λήξης vault είναι $HOURS$ ώρα(ες) και $MINUTES$ λεπτό(ά). H ενέργεια χρονικού ορίου λήξης της κρύπτης είναι ορισμένη ως $ACTION$.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -1961,7 +1961,7 @@
     }
   },
   "vaultTimeoutActionPolicyInEffect": {
-    "message": "Your organization policies have set your vault timeout action to $ACTION$.",
+    "message": "Οι πολιτικές του οργανισμού σας έχουν ορίσει την ενέργεια χρονικού ορίου λήξης κρύπτης σε $ACTION$.",
     "placeholders": {
       "action": {
         "content": "$1",
@@ -2051,7 +2051,7 @@
     "message": "Εξαγωγή Προσωπικού Vault"
   },
   "exportingIndividualVaultDescription": {
-    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated attachments.",
+    "message": "Μόνο τα μεμονωμένα αντικείμενα κρύπτης που σχετίζονται με το $EMAIL$ θα εξαχθούν. Τα αντικείμενα κρύπτης οργανισμού δε θα συμπεριληφθούν. Μόνο πληροφορίες αντικειμένων κρύπτης θα εξαχθούν και δε θα περιλαμβάνουν συσχετιζόμενα συνημμένα.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2176,7 +2176,7 @@
     "message": "Συνδεθείτε με άλλη συσκευή"
   },
   "loginInitiated": {
-    "message": "Login initiated"
+    "message": "Η σύνδεση ξεκίνησε"
   },
   "notificationSentDevice": {
     "message": "Μια ειδοποίηση έχει σταλεί στη συσκευή σας."
@@ -2310,7 +2310,7 @@
     }
   },
   "windowsBiometricUpdateWarning": {
-    "message": "Bitwarden recommends updating your biometric settings to require your master password (or PIN) on the first unlock. Would you like to update your settings now?"
+    "message": "Το Bitwarden συστήνει την ενημέρωση των βιομετρικών ρυθμίσεών σας ώστε να απαιτηθεί ο κύριος κωδικός πρόσβασης (ή PIN) στο πρώτο ξεκλείδωμα. Θέλετε να ενημερώσετε τις ρυθμίσεις σας τώρα;"
   },
   "windowsBiometricUpdateWarningTitle": {
     "message": "Ενημέρωση Προτεινόμενων Ρυθμίσεων"
@@ -2319,74 +2319,74 @@
     "message": "Απαιτείται έγκριση συσκευής. Επιλέξτε μια επιλογή έγκρισης παρακάτω:"
   },
   "rememberThisDevice": {
-    "message": "Remember this device"
+    "message": "Απομνημόνευση αυτής της συσκευής"
   },
   "uncheckIfPublicDevice": {
-    "message": "Uncheck if using a public device"
+    "message": "Αποεπιλογή αν γίνεται χρήση δημόσιας συσκευής"
   },
   "approveFromYourOtherDevice": {
-    "message": "Approve from your other device"
+    "message": "Έγκριση από άλλη συσκευή σας"
   },
   "requestAdminApproval": {
-    "message": "Request admin approval"
+    "message": "Αίτηση έγκρισης διαχειριστή"
   },
   "approveWithMasterPassword": {
-    "message": "Approve with master password"
+    "message": "Έγκριση με τον κύριο κωδικό"
   },
   "region": {
-    "message": "Region"
+    "message": "Περιοχή"
   },
   "ssoIdentifierRequired": {
-    "message": "Organization SSO identifier is required."
+    "message": "Απαιτείται αναγνωριστικό οργανισμού SSO."
   },
   "eu": {
-    "message": "EU",
+    "message": "ΕΕ",
     "description": "European Union"
   },
   "loggingInOn": {
-    "message": "Logging in on"
+    "message": "Σύνδεση σε"
   },
   "selfHostedServer": {
-    "message": "self-hosted"
+    "message": "αυτο-φιλοξενούμενο"
   },
   "accessDenied": {
-    "message": "Access denied. You do not have permission to view this page."
+    "message": "Δεν επιτρέπεται η πρόσβαση. Δεν έχετε άδεια για να δείτε αυτή τη σελίδα."
   },
   "accountSuccessfullyCreated": {
-    "message": "Account successfully created!"
+    "message": "Επιτυχής δημιουργία λογαριασμού!"
   },
   "adminApprovalRequested": {
-    "message": "Admin approval requested"
+    "message": "Ζητήθηκε έγκριση διαχειριστή"
   },
   "adminApprovalRequestSentToAdmins": {
-    "message": "Your request has been sent to your admin."
+    "message": "Το αίτημά σας εστάλη στον διαχειριστή σας."
   },
   "youWillBeNotifiedOnceApproved": {
-    "message": "You will be notified once approved."
+    "message": "Θα ειδοποιηθείτε μόλις εγκριθεί."
   },
   "troubleLoggingIn": {
-    "message": "Trouble logging in?"
+    "message": "Πρόβλημα σύνδεσης;"
   },
   "loginApproved": {
-    "message": "Login approved"
+    "message": "Η σύνδεση εγκρίθηκε"
   },
   "userEmailMissing": {
-    "message": "User email missing"
+    "message": "Το email του χρήστη λείπει"
   },
   "deviceTrusted": {
-    "message": "Device trusted"
+    "message": "Αξιόπιστη συσκευή"
   },
   "inputRequired": {
-    "message": "Input is required."
+    "message": "Απαιτείται είσοδος."
   },
   "required": {
     "message": "απαιτείται"
   },
   "search": {
-    "message": "Search"
+    "message": "Αναζήτηση"
   },
   "inputMinLength": {
-    "message": "Input must be at least $COUNT$ characters long.",
+    "message": "Η είσοδος πρέπει να είναι τουλάχιστον $COUNT$ χαρακτήρες.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2395,7 +2395,7 @@
     }
   },
   "inputMaxLength": {
-    "message": "Input must not exceed $COUNT$ characters in length.",
+    "message": "Η είσοδος δεν πρέπει να υπερβαίνει τους $COUNT$ χαρακτήρες.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2404,7 +2404,7 @@
     }
   },
   "inputForbiddenCharacters": {
-    "message": "The following characters are not allowed: $CHARACTERS$",
+    "message": "Οι ακόλουθοι χαρακτήρες δεν επιτρέπονται: $CHARACTERS$",
     "placeholders": {
       "characters": {
         "content": "$1",
@@ -2413,7 +2413,7 @@
     }
   },
   "inputMinValue": {
-    "message": "Input value must be at least $MIN$.",
+    "message": "Η τιμή εισόδου πρέπει να είναι τουλάχιστον $MIN$.",
     "placeholders": {
       "min": {
         "content": "$1",
@@ -2422,7 +2422,7 @@
     }
   },
   "inputMaxValue": {
-    "message": "Input value must not exceed $MAX$.",
+    "message": "Η τιμή εισόδου δεν πρέπει να υπερβαίνει το $MAX$.",
     "placeholders": {
       "max": {
         "content": "$1",
@@ -2431,17 +2431,17 @@
     }
   },
   "multipleInputEmails": {
-    "message": "1 or more emails are invalid"
+    "message": "1 ή περισσότερα email δεν είναι έγκυρα"
   },
   "inputTrimValidator": {
-    "message": "Input must not contain only whitespace.",
+    "message": "Η είσοδος δεν πρέπει να περιέχει μόνο κενά.",
     "description": "Notification to inform the user that a form's input can't contain only whitespace."
   },
   "inputEmail": {
-    "message": "Input is not an email address."
+    "message": "Η είσοδος δεν είναι διεύθυνση email."
   },
   "fieldsNeedAttention": {
-    "message": "$COUNT$ field(s) above need your attention.",
+    "message": "$COUNT$ πεδίο(α) παραπάνω χρειάζονται την προσοχή σας.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2450,22 +2450,22 @@
     }
   },
   "selectPlaceholder": {
-    "message": "-- Select --"
+    "message": "-- Επιλογή --"
   },
   "multiSelectPlaceholder": {
-    "message": "-- Type to filter --"
+    "message": "-- Πληκτρολογήστε για φιλτράρισμα --"
   },
   "multiSelectLoading": {
-    "message": "Retrieving options..."
+    "message": "Ανάκτηση επιλογών..."
   },
   "multiSelectNotFound": {
-    "message": "No items found"
+    "message": "Δεν βρέθηκαν αντικείμενα"
   },
   "multiSelectClearAll": {
-    "message": "Clear all"
+    "message": "Εκκαθάριση όλων"
   },
   "plusNMore": {
-    "message": "+ $QUANTITY$ more",
+    "message": "+ $QUANTITY$ ακόμα",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -2474,44 +2474,44 @@
     }
   },
   "submenu": {
-    "message": "Submenu"
+    "message": "Υπομενού"
   },
   "skipToContent": {
-    "message": "Skip to content"
+    "message": "Μετάβαση στο περιεχόμενο"
   },
   "typePasskey": {
-    "message": "Passkey"
+    "message": "Κλειδί πρόσβασης"
   },
   "passkeyNotCopied": {
-    "message": "Passkey will not be copied"
+    "message": "Το κλειδί πρόσβασης δεν θα αντιγραφεί"
   },
   "passkeyNotCopiedAlert": {
-    "message": "The passkey will not be copied to the cloned item. Do you want to continue cloning this item?"
+    "message": "Το κλειδί πρόσβασης δε θα αντιγραφεί στο κλωνοποιημένο στοιχείο. Θέλετε να συνεχίσετε την κλωνοποίηση αυτού του στοιχείου;"
   },
   "aliasDomain": {
-    "message": "Alias domain"
+    "message": "Ψευδώνυμο τομέα"
   },
   "importData": {
-    "message": "Import data",
+    "message": "Εισαγωγή δεδομένων",
     "description": "Used for the desktop menu item and the header of the import dialog"
   },
   "importError": {
-    "message": "Import error"
+    "message": "Σφάλμα κατά την εισαγωγή"
   },
   "importErrorDesc": {
-    "message": "There was a problem with the data you tried to import. Please resolve the errors listed below in your source file and try again."
+    "message": "Παρουσιάστηκε πρόβλημα με τα δεδομένα που επιχειρήσατε να εισαγάγετε. Παρακαλώ επιλύστε τα σφάλματα που αναφέρονται παρακάτω στο αρχείο πηγής και προσπαθήστε ξανά."
   },
   "resolveTheErrorsBelowAndTryAgain": {
-    "message": "Resolve the errors below and try again."
+    "message": "Επιλύστε τα παρακάτω σφάλματα και προσπαθήστε ξανά."
   },
   "description": {
-    "message": "Description"
+    "message": "Περιγραφή"
   },
   "importSuccess": {
-    "message": "Data successfully imported"
+    "message": "Τα δεδομένα εισήχθησαν επιτυχώς"
   },
   "importSuccessNumberOfItems": {
-    "message": "A total of $AMOUNT$ items were imported.",
+    "message": "Ένα σύνολο $AMOUNT$ στοιχείων εισήχθησαν.",
     "placeholders": {
       "amount": {
         "content": "$1",
@@ -2520,10 +2520,10 @@
     }
   },
   "total": {
-    "message": "Total"
+    "message": "Σύνολο"
   },
   "importWarning": {
-    "message": "You are importing data to $ORGANIZATION$. Your data may be shared with members of this organization. Do you want to proceed?",
+    "message": "Εισαγάγετε δεδομένα στην $ORGANIZATION$. Τα δεδομένα σας μπορεί να μοιραστούν με μέλη αυτού του οργανισμού. Θέλετε να συνεχίσετε;",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -2532,22 +2532,22 @@
     }
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
-    "message": "Launch Duo and follow the steps to finish logging in."
+    "message": "Εκκινήστε το Duo και ακολουθήστε τα βήματα για να ολοκληρώσετε τη σύνδεση."
   },
   "duoRequiredByOrgForAccount": {
-    "message": "Duo two-step login is required for your account."
+    "message": "Η Σύνδεση δύο βημάτων Duo απαιτείται για τον λογαριασμό σας."
   },
   "launchDuo": {
-    "message": "Launch Duo in Browser"
+    "message": "Εκκίνηση Duo στον περιηγητή"
   },
   "importFormatError": {
-    "message": "Data is not formatted correctly. Please check your import file and try again."
+    "message": "Τα δεδομένα δεν έχουν διαμορφωθεί σωστά. Ελέγξτε το αρχείο εισαγωγής και δοκιμάστε ξανά."
   },
   "importNothingError": {
-    "message": "Nothing was imported."
+    "message": "Τίποτα δεν εισήχθη."
   },
   "importEncKeyError": {
-    "message": "Error decrypting the exported file. Your encryption key does not match the encryption key used export the data."
+    "message": "Σφάλμα αποκρυπτογράφησης του εξαγόμενου αρχείου. Το κλειδί κρυπτογράφησης δεν ταιριάζει με το κλειδί κρυπτογράφησης που χρησιμοποιήθηκε για την εξαγωγή των δεδομένων."
   },
   "invalidFilePassword": {
     "message": "Invalid file password, please use the password you entered when you created the export file."
@@ -2633,68 +2633,68 @@
     "message": "Multifactor authentication failed"
   },
   "includeSharedFolders": {
-    "message": "Include shared folders"
+    "message": "Συμπερίληψη κοινόχρηστων φακέλων"
   },
   "lastPassEmail": {
     "message": "LastPass Email"
   },
   "importingYourAccount": {
-    "message": "Importing your account..."
+    "message": "Εισαγωγή του λογαριασμού σας..."
   },
   "lastPassMFARequired": {
-    "message": "LastPass multifactor authentication required"
+    "message": "Απαιτείται πολυμερής ταυτοποίηση LastPass"
   },
   "lastPassMFADesc": {
-    "message": "Enter your one-time passcode from your authentication app"
+    "message": "Εισαγάγετε τον κωδικό μιας χρήσης από την εφαρμογή επαλήθευσης"
   },
   "lastPassOOBDesc": {
-    "message": "Approve the login request in your authentication app or enter a one-time passcode."
+    "message": "Εγκρίνετε το αίτημα σύνδεσης στην εφαρμογή επαλήθευσης ή εισαγάγετε έναν κωδικό πρόσβασης μιας χρήσης."
   },
   "passcode": {
-    "message": "Passcode"
+    "message": "Κωδικός"
   },
   "lastPassMasterPassword": {
-    "message": "LastPass master password"
+    "message": "Κύριος κωδικός πρόσβασης LastPass"
   },
   "lastPassAuthRequired": {
-    "message": "LastPass authentication required"
+    "message": "Απαιτείται ταυτοποίηση LastPass"
   },
   "awaitingSSO": {
-    "message": "Awaiting SSO authentication"
+    "message": "Αναμονή ελέγχου ταυτότητας SSO"
   },
   "awaitingSSODesc": {
-    "message": "Please continue to log in using your company credentials."
+    "message": "Παρακαλούμε συνεχίστε τη σύνδεση χρησιμοποιώντας τα στοιχεία της εταιρείας σας."
   },
   "seeDetailedInstructions": {
-    "message": "See detailed instructions on our help site at",
+    "message": "Δείτε λεπτομερείς οδηγίες στην ιστοσελίδα βοήθειας μας στο",
     "description": "This is followed a by a hyperlink to the help website."
   },
   "importDirectlyFromLastPass": {
-    "message": "Import directly from LastPass"
+    "message": "Εισαγωγή απευθείας από το LastPass"
   },
   "importFromCSV": {
-    "message": "Import from CSV"
+    "message": "Εισαγωγή από CSV"
   },
   "lastPassTryAgainCheckEmail": {
-    "message": "Try again or look for an email from LastPass to verify it's you."
+    "message": "Δοκιμάστε ξανά ή ψάξτε για ένα email από το LastPass για να επιβεβαιώσετε ότι είστε εσείς."
   },
   "collection": {
-    "message": "Collection"
+    "message": "Συλλογή"
   },
   "lastPassYubikeyDesc": {
-    "message": "Insert the YubiKey associated with your LastPass account into your computer's USB port, then touch its button."
+    "message": "Εισαγάγετε το YubiKey που σχετίζεται με το λογαριασμό LastPass στη θύρα USB του υπολογιστή σας και στη συνέχεια αγγίξτε το κουμπί του."
   },
   "commonImportFormats": {
-    "message": "Common formats",
+    "message": "Κοινές μορφές",
     "description": "Label indicating the most common import formats"
   },
   "troubleshooting": {
-    "message": "Troubleshooting"
+    "message": "Αντιμετώπιση Προβλημάτων"
   },
   "disableHardwareAccelerationRestart": {
-    "message": "Disable hardware acceleration and restart"
+    "message": "Απενεργοποίηση επιτάχυνσης υλικού και επανεκκίνηση"
   },
   "enableHardwareAccelerationRestart": {
-    "message": "Enable hardware acceleration and restart"
+    "message": "Ενεργοποίηση επιτάχυνσης υλικού και επανεκκίνηση"
   }
 }
