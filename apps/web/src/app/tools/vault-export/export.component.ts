@@ -95,7 +95,6 @@ export class ExportComponent extends BaseExportComponent {
     }
 
     const result = await UserVerificationDialogComponent.open(this.dialogService, {
-      clientSideOnlyVerification: true,
       title: "confirmVaultExport",
       bodyText: confirmDescription,
       confirmButtonOptions: {
