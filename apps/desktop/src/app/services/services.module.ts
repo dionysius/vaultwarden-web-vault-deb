@@ -20,9 +20,7 @@ import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vaul
 import { PolicyService as PolicyServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { AccountService as AccountServiceAbstraction } from "@bitwarden/common/auth/abstractions/account.service";
 import { AuthService as AuthServiceAbstraction } from "@bitwarden/common/auth/abstractions/auth.service";
-import { LoginService as LoginServiceAbstraction } from "@bitwarden/common/auth/abstractions/login.service";
 import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
-import { LoginService } from "@bitwarden/common/auth/services/login.service";
 import { AutofillSettingsServiceAbstraction } from "@bitwarden/common/autofill/services/autofill-settings.service";
 import { BroadcasterService as BroadcasterServiceAbstraction } from "@bitwarden/common/platform/abstractions/broadcaster.service";
 import { CryptoFunctionService as CryptoFunctionServiceAbstraction } from "@bitwarden/common/platform/abstractions/crypto-function.service";
@@ -220,11 +218,6 @@ const safeProviders: SafeProvider[] = [
       DialogService,
       DesktopAutofillSettingsService,
     ],
-  }),
-  safeProvider({
-    provide: LoginServiceAbstraction,
-    useClass: LoginService,
-    deps: [StateServiceAbstraction],
   }),
   safeProvider({
     provide: CryptoFunctionServiceAbstraction,
