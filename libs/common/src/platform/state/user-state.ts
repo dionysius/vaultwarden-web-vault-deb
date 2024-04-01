@@ -6,24 +6,25 @@ import { StateUpdateOptions } from "./state-update-options";
 
 export type CombinedState<T> = readonly [userId: UserId, state: T];
 
-/**
- * A helper object for interacting with state that is scoped to a specific user.
- */
+/** A helper object for interacting with state that is scoped to a specific user. */
 export interface UserState<T> {
-  /**
-   * Emits a stream of data.
-   */
-  readonly state$: Observable<T>;
+  /** Emits a stream of data. Emits null if the user does not have specified state. */
+  readonly state$: Observable<T | null>;
 
-  /**
-   * Emits a stream of data alongside the user id the data corresponds to.
-   */
+  /** Emits a stream of tuples, with the first element being a user id and the second element being the data for that user. */
   readonly combinedState$: Observable<CombinedState<T>>;
 }
 
 export const activeMarker: unique symbol = Symbol("active");
 export interface ActiveUserState<T> extends UserState<T> {
   readonly [activeMarker]: true;
+
+  /**
+   * Emits a stream of data. Emits null if the user does not have specified state.
+   * Note: Will not emit if there is no active user.
+   */
+  readonly state$: Observable<T | null>;
+
   /**
    * Updates backing stores for the active user.
    * @param configureState function that takes the current state and returns the new state
