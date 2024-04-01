@@ -48,6 +48,7 @@ import { AccountServerConfigMigrator } from "./migrations/49-move-account-server
 import { AddKeyTypeToOrgKeysMigrator } from "./migrations/5-add-key-type-to-org-keys";
 import { KeyConnectorMigrator } from "./migrations/50-move-key-connector-to-state-provider";
 import { RememberedEmailMigrator } from "./migrations/51-move-remembered-email-to-state-providers";
+import { DeleteInstalledVersion } from "./migrations/52-delete-installed-version";
 import { RemoveLegacyEtmKeyMigrator } from "./migrations/6-remove-legacy-etm-key";
 import { MoveBiometricAutoPromptToAccount } from "./migrations/7-move-biometric-auto-prompt-to-account";
 import { MoveStateVersionMigrator } from "./migrations/8-move-state-version";
@@ -55,7 +56,7 @@ import { MoveBrowserSettingsToGlobal } from "./migrations/9-move-browser-setting
 import { MinVersionMigrator } from "./migrations/min-version";
 
 export const MIN_VERSION = 3;
-export const CURRENT_VERSION = 51;
+export const CURRENT_VERSION = 52;
 
 export type MinVersion = typeof MIN_VERSION;
 
@@ -109,7 +110,8 @@ export function createMigrationBuilder() {
     .with(MoveDdgToStateProviderMigrator, 47, 48)
     .with(AccountServerConfigMigrator, 48, 49)
     .with(KeyConnectorMigrator, 49, 50)
-    .with(RememberedEmailMigrator, 50, CURRENT_VERSION);
+    .with(RememberedEmailMigrator, 50, 51)
+    .with(DeleteInstalledVersion, 51, CURRENT_VERSION);
 }
 
 export async function currentVersion(
