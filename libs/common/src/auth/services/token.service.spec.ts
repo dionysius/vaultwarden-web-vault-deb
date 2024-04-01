@@ -1,4 +1,5 @@
 import { MockProxy, mock } from "jest-mock-extended";
+import { firstValueFrom } from "rxjs";
 
 import { FakeSingleUserStateProvider, FakeGlobalStateProvider } from "../../../spec";
 import { VaultTimeoutAction } from "../../enums/vault-timeout-action.enum";
@@ -103,6 +104,61 @@ describe("TokenService", () => {
   describe("Access Token methods", () => {
     const accessTokenKeyPartialSecureStorageKey = `_accessTokenKey`;
     const accessTokenKeySecureStorageKey = `${userIdFromAccessToken}${accessTokenKeyPartialSecureStorageKey}`;
+
+    describe("hasAccessToken$", () => {
+      it("returns true when an access token exists in memory", async () => {
+        // Arrange
+        singleUserStateProvider
+          .getFake(userIdFromAccessToken, ACCESS_TOKEN_MEMORY)
+          .stateSubject.next([userIdFromAccessToken, accessTokenJwt]);
+
+        // Act
+        const result = await firstValueFrom(tokenService.hasAccessToken$(userIdFromAccessToken));
+
+        // Assert
+        expect(result).toEqual(true);
+      });
+
+      it("returns true when an access token exists in disk", async () => {
+        // Arrange
+        singleUserStateProvider
+          .getFake(userIdFromAccessToken, ACCESS_TOKEN_MEMORY)
+          .stateSubject.next([userIdFromAccessToken, undefined]);
+
+        singleUserStateProvider
+          .getFake(userIdFromAccessToken, ACCESS_TOKEN_DISK)
+          .stateSubject.next([userIdFromAccessToken, accessTokenJwt]);
+
+        // Act
+        const result = await firstValueFrom(tokenService.hasAccessToken$(userIdFromAccessToken));
+
+        // Assert
+        expect(result).toEqual(true);
+      });
+
+      it("returns true when an access token exists in secure storage", async () => {
+        // Arrange
+        singleUserStateProvider
+          .getFake(userIdFromAccessToken, ACCESS_TOKEN_DISK)
+          .stateSubject.next([userIdFromAccessToken, "encryptedAccessToken"]);
+
+        secureStorageService.get.mockResolvedValue(accessTokenKeyB64);
+
+        // Act
+        const result = await firstValueFrom(tokenService.hasAccessToken$(userIdFromAccessToken));
+
+        // Assert
+        expect(result).toEqual(true);
+      });
+
+      it("should return false if no access token exists in memory, disk, or secure storage", async () => {
+        // Act
+        const result = await firstValueFrom(tokenService.hasAccessToken$(userIdFromAccessToken));
+
+        // Assert
+        expect(result).toEqual(false);
+      });
+    });
 
     describe("setAccessToken", () => {
       it("should throw an error if the access token is null", async () => {

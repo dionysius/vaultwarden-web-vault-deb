@@ -13,6 +13,14 @@ import { SymmetricCryptoKey } from "../models/domain/symmetric-crypto-key";
 
 export abstract class CryptoService {
   abstract activeUserKey$: Observable<UserKey>;
+
+  /**
+   * Returns the an observable key for the given user id.
+   *
+   * @note this observable represents only user keys stored in memory. A null value does not indicate that we cannot load a user key from storage.
+   * @param userId The desired user
+   */
+  abstract getInMemoryUserKeyFor$(userId: UserId): Observable<UserKey>;
   /**
    * Sets the provided user key and stores
    * any other necessary versions (such as auto, biometrics,

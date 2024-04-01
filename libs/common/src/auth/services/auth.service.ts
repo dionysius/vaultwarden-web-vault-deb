@@ -1,12 +1,22 @@
-import { Observable, distinctUntilChanged, map, shareReplay } from "rxjs";
+import {
+  Observable,
+  combineLatest,
+  distinctUntilChanged,
+  map,
+  of,
+  shareReplay,
+  switchMap,
+} from "rxjs";
 
 import { ApiService } from "../../abstractions/api.service";
 import { CryptoService } from "../../platform/abstractions/crypto.service";
 import { MessagingService } from "../../platform/abstractions/messaging.service";
 import { StateService } from "../../platform/abstractions/state.service";
 import { KeySuffixOptions } from "../../platform/enums";
+import { UserId } from "../../types/guid";
 import { AccountService } from "../abstractions/account.service";
 import { AuthService as AuthServiceAbstraction } from "../abstractions/auth.service";
+import { TokenService } from "../abstractions/token.service";
 import { AuthenticationStatus } from "../enums/authentication-status";
 
 export class AuthService implements AuthServiceAbstraction {
@@ -18,9 +28,36 @@ export class AuthService implements AuthServiceAbstraction {
     protected cryptoService: CryptoService,
     protected apiService: ApiService,
     protected stateService: StateService,
+    private tokenService: TokenService,
   ) {
     this.activeAccountStatus$ = this.accountService.activeAccount$.pipe(
-      map((account) => account.status),
+      map((account) => account?.id),
+      switchMap((userId) => {
+        return this.authStatusFor$(userId);
+      }),
+    );
+  }
+
+  authStatusFor$(userId: UserId): Observable<AuthenticationStatus> {
+    if (userId == null) {
+      return of(AuthenticationStatus.LoggedOut);
+    }
+
+    return combineLatest([
+      this.cryptoService.getInMemoryUserKeyFor$(userId),
+      this.tokenService.hasAccessToken$(userId),
+    ]).pipe(
+      map(([userKey, hasAccessToken]) => {
+        if (!hasAccessToken) {
+          return AuthenticationStatus.LoggedOut;
+        }
+
+        if (!userKey) {
+          return AuthenticationStatus.Locked;
+        }
+
+        return AuthenticationStatus.Unlocked;
+      }),
       distinctUntilChanged(),
       shareReplay({ bufferSize: 1, refCount: false }),
     );

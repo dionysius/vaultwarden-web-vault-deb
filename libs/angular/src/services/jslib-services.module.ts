@@ -349,6 +349,7 @@ const safeProviders: SafeProvider[] = [
       CryptoServiceAbstraction,
       ApiServiceAbstraction,
       StateServiceAbstraction,
+      TokenService,
     ],
   }),
   safeProvider({

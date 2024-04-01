@@ -1,4 +1,4 @@
-import { firstValueFrom } from "rxjs";
+import { Observable, combineLatest, firstValueFrom, map } from "rxjs";
 import { Opaque } from "type-fest";
 
 import { decodeJwtTokenToJson } from "@bitwarden/auth/common";
@@ -133,6 +133,15 @@ export class TokenService implements TokenServiceAbstraction {
     private logService: LogService,
   ) {
     this.initializeState();
+  }
+
+  hasAccessToken$(userId: UserId): Observable<boolean> {
+    // FIXME Once once vault timeout action is observable, we can use it to determine storage location
+    // and avoid the need to check both disk and memory.
+    return combineLatest([
+      this.singleUserStateProvider.get(userId, ACCESS_TOKEN_DISK).state$,
+      this.singleUserStateProvider.get(userId, ACCESS_TOKEN_MEMORY).state$,
+    ]).pipe(map(([disk, memory]) => Boolean(disk || memory)));
   }
 
   // pivoting to an approach where we create a symmetric key we store in secure storage

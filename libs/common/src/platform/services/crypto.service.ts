@@ -160,6 +160,10 @@ export class CryptoService implements CryptoServiceAbstraction {
     await this.setUserKey(key);
   }
 
+  getInMemoryUserKeyFor$(userId: UserId): Observable<UserKey> {
+    return this.stateProvider.getUserState$(USER_KEY, userId);
+  }
+
   async getUserKey(userId?: UserId): Promise<UserKey> {
     let userKey = await firstValueFrom(this.stateProvider.getUserState$(USER_KEY, userId));
     if (userKey) {

@@ -503,6 +503,7 @@ export class Main {
       this.cryptoService,
       this.apiService,
       this.stateService,
+      this.tokenService,
     );
 
     this.configApiService = new ConfigApiService(this.apiService, this.tokenService);
