@@ -22,7 +22,9 @@ export class AuthRequestService implements AuthRequestServiceAbstraction {
     private cryptoService: CryptoService,
     private apiService: ApiService,
     private stateService: StateService,
-  ) {}
+  ) {
+    this.authRequestPushNotification$ = this.authRequestPushNotificationSubject.asObservable();
+  }
 
   async approveOrDenyAuthRequest(
     approve: boolean,
