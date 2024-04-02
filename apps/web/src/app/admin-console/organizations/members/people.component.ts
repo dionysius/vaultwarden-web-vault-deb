@@ -571,7 +571,8 @@ export class PeopleComponent
   }
 
   async bulkEnableSM() {
-    const users = this.getCheckedUsers();
+    const users = this.getCheckedUsers().filter((ou) => !ou.accessSecretsManager);
+
     if (users.length === 0) {
       this.platformUtilsService.showToast(
         "error",
@@ -588,6 +589,7 @@ export class PeopleComponent
 
     await lastValueFrom(dialogRef.closed);
     this.selectAll(false);
+    await this.load();
   }
 
   async events(user: OrganizationUserView) {
