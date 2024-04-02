@@ -1,42 +1,35 @@
+import { ConsoleLogService } from "@bitwarden/common/platform/services/console-log.service";
+
 import MainBackground from "../background/main.background";
 
-import { onAlarmListener } from "./alarms/on-alarm-listener";
-import { registerAlarms } from "./alarms/register-alarms";
 import { BrowserApi } from "./browser/browser-api";
-import {
-  contextMenusClickedListener,
-  onCommandListener,
-  onInstallListener,
-  runtimeMessageListener,
-  windowsOnFocusChangedListener,
-  tabsOnActivatedListener,
-  tabsOnReplacedListener,
-  tabsOnUpdatedListener,
-} from "./listeners";
 
-if (BrowserApi.isManifestVersion(3)) {
-  chrome.commands.onCommand.addListener(onCommandListener);
-  chrome.runtime.onInstalled.addListener(onInstallListener);
-  chrome.alarms.onAlarm.addListener(onAlarmListener);
-  registerAlarms();
-  chrome.windows.onFocusChanged.addListener(windowsOnFocusChangedListener);
-  chrome.tabs.onActivated.addListener(tabsOnActivatedListener);
-  chrome.tabs.onReplaced.addListener(tabsOnReplacedListener);
-  chrome.tabs.onUpdated.addListener(tabsOnUpdatedListener);
-  chrome.contextMenus.onClicked.addListener(contextMenusClickedListener);
-  BrowserApi.messageListener(
-    "runtime.background",
-    (message: { command: string }, sender, sendResponse) => {
-      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-      // eslint-disable-next-line @typescript-eslint/no-floating-promises
-      runtimeMessageListener(message, sender);
-    },
-  );
-} else {
-  const bitwardenMain = ((self as any).bitwardenMain = new MainBackground());
-  // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-  // eslint-disable-next-line @typescript-eslint/no-floating-promises
-  bitwardenMain.bootstrap().then(() => {
+const logService = new ConsoleLogService(false);
+const bitwardenMain = ((self as any).bitwardenMain = new MainBackground());
+bitwardenMain
+  .bootstrap()
+  .then(() => {
     // Finished bootstrapping
-  });
+    if (BrowserApi.isManifestVersion(3)) {
+      startHeartbeat().catch((error) => logService.error(error));
+    }
+  })
+  .catch((error) => logService.error(error));
+
+/**
+ * Tracks when a service worker was last alive and extends the service worker
+ * lifetime by writing the current time to extension storage every 20 seconds.
+ */
+async function runHeartbeat() {
+  await chrome.storage.local.set({ "last-heartbeat": new Date().getTime() });
+}
+
+/**
+ * Starts the heartbeat interval which keeps the service worker alive.
+ */
+async function startHeartbeat() {
+  // Run the heartbeat once at service worker startup, then again every 20 seconds.
+  runHeartbeat()
+    .then(() => setInterval(runHeartbeat, 20 * 1000))
+    .catch((error) => logService.error(error));
 }
