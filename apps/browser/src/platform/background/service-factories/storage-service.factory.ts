@@ -7,6 +7,7 @@ import { MemoryStorageService } from "@bitwarden/common/platform/services/memory
 
 import { BrowserApi } from "../../browser/browser-api";
 import BrowserLocalStorageService from "../../services/browser-local-storage.service";
+import BrowserMemoryStorageService from "../../services/browser-memory-storage.service";
 import { LocalBackedSessionStorageService } from "../../services/local-backed-session-storage.service";
 import { BackgroundMemoryStorageService } from "../../storage/background-memory-storage.service";
 
@@ -17,13 +18,14 @@ import {
   keyGenerationServiceFactory,
 } from "./key-generation-service.factory";
 
-type StorageServiceFactoryOptions = FactoryOptions;
-
-export type DiskStorageServiceInitOptions = StorageServiceFactoryOptions;
-export type SecureStorageServiceInitOptions = StorageServiceFactoryOptions;
-export type MemoryStorageServiceInitOptions = StorageServiceFactoryOptions &
+export type DiskStorageServiceInitOptions = FactoryOptions;
+export type SecureStorageServiceInitOptions = FactoryOptions;
+export type SessionStorageServiceInitOptions = FactoryOptions;
+export type MemoryStorageServiceInitOptions = FactoryOptions &
   EncryptServiceInitOptions &
-  KeyGenerationServiceInitOptions;
+  KeyGenerationServiceInitOptions &
+  DiskStorageServiceInitOptions &
+  SessionStorageServiceInitOptions;
 
 export function diskStorageServiceFactory(
   cache: { diskStorageService?: AbstractStorageService } & CachedServices,
@@ -47,6 +49,13 @@ export function secureStorageServiceFactory(
   return factory(cache, "secureStorageService", opts, () => new BrowserLocalStorageService());
 }
 
+export function sessionStorageServiceFactory(
+  cache: { sessionStorageService?: AbstractStorageService } & CachedServices,
+  opts: SessionStorageServiceInitOptions,
+): Promise<AbstractStorageService> {
+  return factory(cache, "sessionStorageService", opts, () => new BrowserMemoryStorageService());
+}
+
 export function memoryStorageServiceFactory(
   cache: { memoryStorageService?: AbstractMemoryStorageService } & CachedServices,
   opts: MemoryStorageServiceInitOptions,
@@ -56,6 +65,9 @@ export function memoryStorageServiceFactory(
       return new LocalBackedSessionStorageService(
         await encryptServiceFactory(cache, opts),
         await keyGenerationServiceFactory(cache, opts),
+        await diskStorageServiceFactory(cache, opts),
+        await sessionStorageServiceFactory(cache, opts),
+        "serviceFactories",
       );
     }
     return new MemoryStorageService();

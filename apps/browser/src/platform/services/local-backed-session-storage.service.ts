@@ -1,40 +1,60 @@
-import { Subject } from "rxjs";
+import { Observable, Subject, filter, map, merge, share, tap } from "rxjs";
 import { Jsonify } from "type-fest";
 
 import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { KeyGenerationService } from "@bitwarden/common/platform/abstractions/key-generation.service";
 import {
   AbstractMemoryStorageService,
+  AbstractStorageService,
+  ObservableStorageService,
   StorageUpdate,
 } from "@bitwarden/common/platform/abstractions/storage.service";
 import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 import { MemoryStorageOptions } from "@bitwarden/common/platform/models/domain/storage-options";
 import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
 
+import { fromChromeEvent } from "../browser/from-chrome-event";
 import { devFlag } from "../decorators/dev-flag.decorator";
 import { devFlagEnabled } from "../flags";
 
-import BrowserLocalStorageService from "./browser-local-storage.service";
-import BrowserMemoryStorageService from "./browser-memory-storage.service";
-
-const keys = {
-  encKey: "localEncryptionKey",
-  sessionKey: "session",
-};
-
-export class LocalBackedSessionStorageService extends AbstractMemoryStorageService {
+export class LocalBackedSessionStorageService
+  extends AbstractMemoryStorageService
+  implements ObservableStorageService
+{
   private cache = new Map<string, unknown>();
-  private localStorage = new BrowserLocalStorageService();
-  private sessionStorage = new BrowserMemoryStorageService();
   private updatesSubject = new Subject<StorageUpdate>();
-  updates$;
+
+  private commandName = `localBackedSessionStorage_${this.name}`;
+  private encKey = `localEncryptionKey_${this.name}`;
+  private sessionKey = `session_${this.name}`;
+
+  updates$: Observable<StorageUpdate>;
 
   constructor(
     private encryptService: EncryptService,
     private keyGenerationService: KeyGenerationService,
+    private localStorage: AbstractStorageService,
+    private sessionStorage: AbstractStorageService,
+    private name: string,
   ) {
     super();
-    this.updates$ = this.updatesSubject.asObservable();
+
+    const remoteObservable = fromChromeEvent(chrome.runtime.onMessage).pipe(
+      filter(([msg]) => msg.command === this.commandName),
+      map(([msg]) => msg.update as StorageUpdate),
+      tap((update) => {
+        if (update.updateType === "remove") {
+          this.cache.set(update.key, null);
+        } else {
+          this.cache.delete(update.key);
+        }
+      }),
+      share(),
+    );
+
+    remoteObservable.subscribe();
+
+    this.updates$ = merge(this.updatesSubject.asObservable(), remoteObservable);
   }
 
   get valuesRequireDeserialization(): boolean {
@@ -70,23 +90,37 @@ export class LocalBackedSessionStorageService extends AbstractMemoryStorageServi
 
   async save<T>(key: string, obj: T): Promise<void> {
     if (obj == null) {
-      this.cache.delete(key);
-    } else {
-      this.cache.set(key, obj);
+      return await this.remove(key);
     }
 
+    this.cache.set(key, obj);
+    await this.updateLocalSessionValue(key, obj);
+    this.sendUpdate({ key, updateType: "save" });
+  }
+
+  async remove(key: string): Promise<void> {
+    this.cache.set(key, null);
+    await this.updateLocalSessionValue(key, null);
+    this.sendUpdate({ key, updateType: "remove" });
+  }
+
+  sendUpdate(storageUpdate: StorageUpdate) {
+    this.updatesSubject.next(storageUpdate);
+    void chrome.runtime.sendMessage({
+      command: this.commandName,
+      update: storageUpdate,
+    });
+  }
+
+  private async updateLocalSessionValue<T>(key: string, obj: T) {
     const sessionEncKey = await this.getSessionEncKey();
     const localSession = (await this.getLocalSession(sessionEncKey)) ?? {};
     localSession[key] = obj;
     await this.setLocalSession(localSession, sessionEncKey);
   }
 
-  async remove(key: string): Promise<void> {
-    await this.save(key, null);
-  }
-
   async getLocalSession(encKey: SymmetricCryptoKey): Promise<Record<string, unknown>> {
-    const local = await this.localStorage.get<string>(keys.sessionKey);
+    const local = await this.localStorage.get<string>(this.sessionKey);
 
     if (local == null) {
       return null;
@@ -100,7 +134,7 @@ export class LocalBackedSessionStorageService extends AbstractMemoryStorageServi
     if (sessionJson == null) {
       // Error with decryption -- session is lost, delete state and key and start over
       await this.setSessionEncKey(null);
-      await this.localStorage.remove(keys.sessionKey);
+      await this.localStorage.remove(this.sessionKey);
       return null;
     }
     return JSON.parse(sessionJson);
@@ -119,9 +153,9 @@ export class LocalBackedSessionStorageService extends AbstractMemoryStorageServi
     // Make sure we're storing the jsonified version of the session
     const jsonSession = JSON.parse(JSON.stringify(session));
     if (session == null) {
-      await this.localStorage.remove(keys.sessionKey);
+      await this.localStorage.remove(this.sessionKey);
     } else {
-      await this.localStorage.save(keys.sessionKey, jsonSession);
+      await this.localStorage.save(this.sessionKey, jsonSession);
     }
   }
 
@@ -130,13 +164,13 @@ export class LocalBackedSessionStorageService extends AbstractMemoryStorageServi
     const encSession = await this.encryptService.encrypt(jsonSession, key);
 
     if (encSession == null) {
-      return await this.localStorage.remove(keys.sessionKey);
+      return await this.localStorage.remove(this.sessionKey);
     }
-    await this.localStorage.save(keys.sessionKey, encSession.encryptedString);
+    await this.localStorage.save(this.sessionKey, encSession.encryptedString);
   }
 
   async getSessionEncKey(): Promise<SymmetricCryptoKey> {
-    let storedKey = await this.sessionStorage.get<SymmetricCryptoKey>(keys.encKey);
+    let storedKey = await this.sessionStorage.get<SymmetricCryptoKey>(this.encKey);
     if (storedKey == null || Object.keys(storedKey).length == 0) {
       const generatedKey = await this.keyGenerationService.createKeyWithPurpose(
         128,
@@ -153,9 +187,9 @@ export class LocalBackedSessionStorageService extends AbstractMemoryStorageServi
 
   async setSessionEncKey(input: SymmetricCryptoKey): Promise<void> {
     if (input == null) {
-      await this.sessionStorage.remove(keys.encKey);
+      await this.sessionStorage.remove(this.encKey);
     } else {
-      await this.sessionStorage.save(keys.encKey, input);
+      await this.sessionStorage.save(this.encKey, input);
     }
   }
 }

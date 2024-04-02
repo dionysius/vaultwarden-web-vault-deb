@@ -207,6 +207,7 @@ import { BrowserStateService as StateServiceAbstraction } from "../platform/serv
 import { BrowserCryptoService } from "../platform/services/browser-crypto.service";
 import { BrowserEnvironmentService } from "../platform/services/browser-environment.service";
 import BrowserLocalStorageService from "../platform/services/browser-local-storage.service";
+import BrowserMemoryStorageService from "../platform/services/browser-memory-storage.service";
 import BrowserMessagingPrivateModeBackgroundService from "../platform/services/browser-messaging-private-mode-background.service";
 import BrowserMessagingService from "../platform/services/browser-messaging.service";
 import { BrowserStateService } from "../platform/services/browser-state.service";
@@ -230,7 +231,7 @@ import RuntimeBackground from "./runtime.background";
 
 export default class MainBackground {
   messagingService: MessagingServiceAbstraction;
-  storageService: AbstractStorageService;
+  storageService: AbstractStorageService & ObservableStorageService;
   secureStorageService: AbstractStorageService;
   memoryStorageService: AbstractMemoryStorageService;
   memoryStorageForStateProviders: AbstractMemoryStorageService & ObservableStorageService;
@@ -365,22 +366,28 @@ export default class MainBackground {
     this.cryptoFunctionService = new WebCryptoFunctionService(self);
     this.keyGenerationService = new KeyGenerationService(this.cryptoFunctionService);
     this.storageService = new BrowserLocalStorageService();
+
+    const mv3MemoryStorageCreator = (partitionName: string) => {
+      // TODO: Consider using multithreaded encrypt service in popup only context
+      return new LocalBackedSessionStorageService(
+        new EncryptServiceImplementation(this.cryptoFunctionService, this.logService, false),
+        this.keyGenerationService,
+        new BrowserLocalStorageService(),
+        new BrowserMemoryStorageService(),
+        partitionName,
+      );
+    };
+
     this.secureStorageService = this.storageService; // secure storage is not supported in browsers, so we use local storage and warn users when it is used
     this.memoryStorageService = BrowserApi.isManifestVersion(3)
-      ? new LocalBackedSessionStorageService(
-          new EncryptServiceImplementation(this.cryptoFunctionService, this.logService, false),
-          this.keyGenerationService,
-        )
+      ? mv3MemoryStorageCreator("stateService")
       : new MemoryStorageService();
     this.memoryStorageForStateProviders = BrowserApi.isManifestVersion(3)
-      ? new LocalBackedSessionStorageService(
-          new EncryptServiceImplementation(this.cryptoFunctionService, this.logService, false),
-          this.keyGenerationService,
-        )
+      ? mv3MemoryStorageCreator("stateProviders")
       : new BackgroundMemoryStorageService();
 
     const storageServiceProvider = new StorageServiceProvider(
-      this.storageService as BrowserLocalStorageService,
+      this.storageService,
       this.memoryStorageForStateProviders,
     );
 
