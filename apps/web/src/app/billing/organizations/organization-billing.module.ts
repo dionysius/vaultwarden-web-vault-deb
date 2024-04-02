@@ -17,6 +17,7 @@ import { OrganizationSubscriptionSelfhostComponent } from "./organization-subscr
 import { SecretsManagerAdjustSubscriptionComponent } from "./sm-adjust-subscription.component";
 import { SecretsManagerSubscribeStandaloneComponent } from "./sm-subscribe-standalone.component";
 import { SubscriptionHiddenComponent } from "./subscription-hidden.component";
+import { SubscriptionStatusComponent } from "./subscription-status.component";
 
 @NgModule({
   imports: [
@@ -38,6 +39,7 @@ import { SubscriptionHiddenComponent } from "./subscription-hidden.component";
     SecretsManagerAdjustSubscriptionComponent,
     SecretsManagerSubscribeStandaloneComponent,
     SubscriptionHiddenComponent,
+    SubscriptionStatusComponent,
   ],
 })
 export class OrganizationBillingModule {}

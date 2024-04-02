@@ -8,6 +8,7 @@ export enum FeatureFlag {
   FlexibleCollectionsMigration = "flexible-collections-migration",
   ShowPaymentMethodWarningBanners = "show-payment-method-warning-banners",
   EnableConsolidatedBilling = "enable-consolidated-billing",
+  AC1795_UpdatedSubscriptionStatusSection = "AC-1795_updated-subscription-status-section",
 }
 
 // Replace this with a type safe lookup of the feature flag values in PM-2282
