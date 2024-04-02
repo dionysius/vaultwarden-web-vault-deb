@@ -1,14 +1,23 @@
-import { any, mock, MockProxy } from "jest-mock-extended";
-import { BehaviorSubject, firstValueFrom } from "rxjs";
+import { mock } from "jest-mock-extended";
+import { firstValueFrom } from "rxjs";
 
+import {
+  FakeAccountService,
+  FakeActiveUserState,
+  FakeStateProvider,
+  awaitAsync,
+  mockAccountServiceWith,
+} from "../../../../spec";
+import { AuthenticationStatus } from "../../../auth/enums/authentication-status";
 import { CryptoService } from "../../../platform/abstractions/crypto.service";
 import { EncryptService } from "../../../platform/abstractions/encrypt.service";
 import { I18nService } from "../../../platform/abstractions/i18n.service";
 import { KeyGenerationService } from "../../../platform/abstractions/key-generation.service";
-import { StateService } from "../../../platform/abstractions/state.service";
+import { Utils } from "../../../platform/misc/utils";
 import { EncString } from "../../../platform/models/domain/enc-string";
 import { SymmetricCryptoKey } from "../../../platform/models/domain/symmetric-crypto-key";
 import { ContainerService } from "../../../platform/services/container.service";
+import { UserId } from "../../../types/guid";
 import { UserKey } from "../../../types/key";
 import { SendType } from "../enums/send-type";
 import { SendFileApi } from "../models/api/send-file.api";
@@ -16,10 +25,17 @@ import { SendTextApi } from "../models/api/send-text.api";
 import { SendFileData } from "../models/data/send-file.data";
 import { SendTextData } from "../models/data/send-text.data";
 import { SendData } from "../models/data/send.data";
-import { Send } from "../models/domain/send";
 import { SendView } from "../models/view/send.view";
 
+import { SEND_USER_DECRYPTED, SEND_USER_ENCRYPTED } from "./key-definitions";
+import { SendStateProvider } from "./send-state.provider";
 import { SendService } from "./send.service";
+import {
+  createSendData,
+  testSend,
+  testSendData,
+  testSendViewData,
+} from "./test-data/send-tests.data";
 
 describe("SendService", () => {
   const cryptoService = mock<CryptoService>();
@@ -27,56 +43,53 @@ describe("SendService", () => {
   const keyGenerationService = mock<KeyGenerationService>();
   const encryptService = mock<EncryptService>();
 
+  let sendStateProvider: SendStateProvider;
   let sendService: SendService;
 
-  let stateService: MockProxy<StateService>;
-  let activeAccount: BehaviorSubject<string>;
-  let activeAccountUnlocked: BehaviorSubject<boolean>;
+  let stateProvider: FakeStateProvider;
+  let encryptedState: FakeActiveUserState<Record<string, SendData>>;
+  let decryptedState: FakeActiveUserState<SendView[]>;
+
+  const mockUserId = Utils.newGuid() as UserId;
+  let accountService: FakeAccountService;
 
   beforeEach(() => {
-    activeAccount = new BehaviorSubject("123");
-    activeAccountUnlocked = new BehaviorSubject(true);
+    accountService = mockAccountServiceWith(mockUserId);
+    stateProvider = new FakeStateProvider(accountService);
+    sendStateProvider = new SendStateProvider(stateProvider);
 
-    stateService = mock<StateService>();
-    stateService.activeAccount$ = activeAccount;
-    stateService.activeAccountUnlocked$ = activeAccountUnlocked;
     (window as any).bitwardenContainerService = new ContainerService(cryptoService, encryptService);
 
-    stateService.getEncryptedSends.calledWith(any()).mockResolvedValue({
-      "1": sendData("1", "Test Send"),
+    accountService.activeAccountSubject.next({
+      id: mockUserId,
+      email: "email",
+      name: "name",
+      status: AuthenticationStatus.Unlocked,
     });
 
-    stateService.getDecryptedSends
-      .calledWith(any())
-      .mockResolvedValue([sendView("1", "Test Send")]);
-
-    sendService = new SendService(cryptoService, i18nService, keyGenerationService, stateService);
-  });
-
-  afterEach(() => {
-    activeAccount.complete();
-    activeAccountUnlocked.complete();
-  });
-
-  describe("get", () => {
-    it("exists", async () => {
-      const result = sendService.get("1");
-
-      expect(result).toEqual(send("1", "Test Send"));
+    // Initial encrypted state
+    encryptedState = stateProvider.activeUser.getFake(SEND_USER_ENCRYPTED);
+    encryptedState.nextState({
+      "1": testSendData("1", "Test Send"),
     });
+    // Initial decrypted state
+    decryptedState = stateProvider.activeUser.getFake(SEND_USER_DECRYPTED);
+    decryptedState.nextState([testSendViewData("1", "Test Send")]);
 
-    it("does not exist", async () => {
-      const result = sendService.get("2");
-
-      expect(result).toBe(undefined);
-    });
+    sendService = new SendService(
+      cryptoService,
+      i18nService,
+      keyGenerationService,
+      sendStateProvider,
+      encryptService,
+    );
   });
 
   describe("get$", () => {
     it("exists", async () => {
       const result = await firstValueFrom(sendService.get$("1"));
 
-      expect(result).toEqual(send("1", "Test Send"));
+      expect(result).toEqual(testSend("1", "Test Send"));
     });
 
     it("does not exist", async () => {
@@ -88,14 +101,14 @@ describe("SendService", () => {
     it("updated observable", async () => {
       const singleSendObservable = sendService.get$("1");
       const result = await firstValueFrom(singleSendObservable);
-      expect(result).toEqual(send("1", "Test Send"));
+      expect(result).toEqual(testSend("1", "Test Send"));
 
       await sendService.replace({
-        "1": sendData("1", "Test Send Updated"),
+        "1": testSendData("1", "Test Send Updated"),
       });
 
       const result2 = await firstValueFrom(singleSendObservable);
-      expect(result2).toEqual(send("1", "Test Send Updated"));
+      expect(result2).toEqual(testSend("1", "Test Send Updated"));
     });
 
     it("reports a change when name changes on a new send", async () => {
@@ -103,13 +116,13 @@ describe("SendService", () => {
       sendService.get$("1").subscribe(() => {
         changed = true;
       });
-      const sendDataObject = sendData("1", "Test Send 2");
+      const sendDataObject = testSendData("1", "Test Send 2");
 
       //it is immediately called when subscribed, we need to reset the value
       changed = false;
       await sendService.replace({
         "1": sendDataObject,
-        "2": sendData("2", "Test Send 2"),
+        "2": testSendData("2", "Test Send 2"),
       });
 
       expect(changed).toEqual(true);
@@ -120,7 +133,7 @@ describe("SendService", () => {
 
       await sendService.replace({
         "1": sendDataObject,
-        "2": sendData("2", "Test Send 2"),
+        "2": testSendData("2", "Test Send 2"),
       });
 
       let changed = false;
@@ -134,7 +147,7 @@ describe("SendService", () => {
 
       await sendService.replace({
         "1": sendDataObject,
-        "2": sendData("2", "Test Send 2"),
+        "2": testSendData("2", "Test Send 2"),
       });
 
       expect(changed).toEqual(true);
@@ -145,7 +158,7 @@ describe("SendService", () => {
 
       await sendService.replace({
         "1": sendDataObject,
-        "2": sendData("2", "Test Send 2"),
+        "2": testSendData("2", "Test Send 2"),
       });
 
       let changed = false;
@@ -159,7 +172,7 @@ describe("SendService", () => {
       sendDataObject.text.text = "new text";
       await sendService.replace({
         "1": sendDataObject,
-        "2": sendData("2", "Test Send 2"),
+        "2": testSendData("2", "Test Send 2"),
       });
 
       expect(changed).toEqual(true);
@@ -170,7 +183,7 @@ describe("SendService", () => {
 
       await sendService.replace({
         "1": sendDataObject,
-        "2": sendData("2", "Test Send 2"),
+        "2": testSendData("2", "Test Send 2"),
       });
 
       let changed = false;
@@ -184,7 +197,7 @@ describe("SendService", () => {
       sendDataObject.text = null;
       await sendService.replace({
         "1": sendDataObject,
-        "2": sendData("2", "Test Send 2"),
+        "2": testSendData("2", "Test Send 2"),
       });
 
       expect(changed).toEqual(true);
@@ -197,7 +210,7 @@ describe("SendService", () => {
       }) as SendData;
       await sendService.replace({
         "1": sendDataObject,
-        "2": sendData("2", "Test Send 2"),
+        "2": testSendData("2", "Test Send 2"),
       });
 
       sendDataObject.file = new SendFileData(new SendFileApi({ FileName: "updated name of file" }));
@@ -211,7 +224,7 @@ describe("SendService", () => {
 
       await sendService.replace({
         "1": sendDataObject,
-        "2": sendData("2", "Test Send 2"),
+        "2": testSendData("2", "Test Send 2"),
       });
 
       expect(changed).toEqual(false);
@@ -222,7 +235,7 @@ describe("SendService", () => {
 
       await sendService.replace({
         "1": sendDataObject,
-        "2": sendData("2", "Test Send 2"),
+        "2": testSendData("2", "Test Send 2"),
       });
 
       let changed = false;
@@ -236,7 +249,7 @@ describe("SendService", () => {
       sendDataObject.key = "newKey";
       await sendService.replace({
         "1": sendDataObject,
-        "2": sendData("2", "Test Send 2"),
+        "2": testSendData("2", "Test Send 2"),
       });
 
       expect(changed).toEqual(true);
@@ -247,7 +260,7 @@ describe("SendService", () => {
 
       await sendService.replace({
         "1": sendDataObject,
-        "2": sendData("2", "Test Send 2"),
+        "2": testSendData("2", "Test Send 2"),
       });
 
       let changed = false;
@@ -261,7 +274,7 @@ describe("SendService", () => {
       sendDataObject.revisionDate = "2025-04-05";
       await sendService.replace({
         "1": sendDataObject,
-        "2": sendData("2", "Test Send 2"),
+        "2": testSendData("2", "Test Send 2"),
       });
 
       expect(changed).toEqual(true);
@@ -272,7 +285,7 @@ describe("SendService", () => {
 
       await sendService.replace({
         "1": sendDataObject,
-        "2": sendData("2", "Test Send 2"),
+        "2": testSendData("2", "Test Send 2"),
       });
 
       let changed = false;
@@ -286,7 +299,7 @@ describe("SendService", () => {
       sendDataObject.name = null;
       await sendService.replace({
         "1": sendDataObject,
-        "2": sendData("2", "Test Send 2"),
+        "2": testSendData("2", "Test Send 2"),
       });
 
       expect(changed).toEqual(true);
@@ -299,7 +312,7 @@ describe("SendService", () => {
 
       await sendService.replace({
         "1": sendDataObject,
-        "2": sendData("2", "Test Send 2"),
+        "2": testSendData("2", "Test Send 2"),
       });
 
       let changed = false;
@@ -312,7 +325,7 @@ describe("SendService", () => {
 
       await sendService.replace({
         "1": sendDataObject,
-        "2": sendData("2", "Test Send 2"),
+        "2": testSendData("2", "Test Send 2"),
       });
 
       expect(changed).toEqual(false);
@@ -320,7 +333,7 @@ describe("SendService", () => {
       sendDataObject.text.text = "Asdf";
       await sendService.replace({
         "1": sendDataObject,
-        "2": sendData("2", "Test Send 2"),
+        "2": testSendData("2", "Test Send 2"),
       });
 
       expect(changed).toEqual(true);
@@ -332,14 +345,14 @@ describe("SendService", () => {
         changed = true;
       });
 
-      const sendDataObject = sendData("1", "Test Send");
+      const sendDataObject = testSendData("1", "Test Send");
 
       //it is immediately called when subscribed, we need to reset the value
       changed = false;
 
       await sendService.replace({
         "1": sendDataObject,
-        "2": sendData("3", "Test Send 3"),
+        "2": testSendData("3", "Test Send 3"),
       });
 
       expect(changed).toEqual(false);
@@ -354,7 +367,7 @@ describe("SendService", () => {
       changed = false;
 
       await sendService.replace({
-        "2": sendData("2", "Test Send 2"),
+        "2": testSendData("2", "Test Send 2"),
       });
 
       expect(changed).toEqual(true);
@@ -366,14 +379,14 @@ describe("SendService", () => {
     const send1 = sends[0];
 
     expect(sends).toHaveLength(1);
-    expect(send1).toEqual(send("1", "Test Send"));
+    expect(send1).toEqual(testSend("1", "Test Send"));
   });
 
   describe("getFromState", () => {
     it("exists", async () => {
       const result = await sendService.getFromState("1");
 
-      expect(result).toEqual(send("1", "Test Send"));
+      expect(result).toEqual(testSend("1", "Test Send"));
     });
     it("does not exist", async () => {
       const result = await sendService.getFromState("2");
@@ -383,17 +396,17 @@ describe("SendService", () => {
   });
 
   it("getAllDecryptedFromState", async () => {
-    await sendService.getAllDecryptedFromState();
+    const sends = await sendService.getAllDecryptedFromState();
 
-    expect(stateService.getDecryptedSends).toHaveBeenCalledTimes(1);
+    expect(sends[0]).toMatchObject(testSendViewData("1", "Test Send"));
   });
 
   describe("getRotatedKeys", () => {
     let encryptedKey: EncString;
     beforeEach(() => {
-      cryptoService.decryptToBytes.mockResolvedValue(new Uint8Array(32));
+      encryptService.decryptToBytes.mockResolvedValue(new Uint8Array(32));
       encryptedKey = new EncString("Re-encrypted Send Key");
-      cryptoService.encrypt.mockResolvedValue(encryptedKey);
+      encryptService.encrypt.mockResolvedValue(encryptedKey);
     });
 
     it("returns re-encrypted user sends", async () => {
@@ -407,6 +420,8 @@ describe("SendService", () => {
       // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
       // eslint-disable-next-line @typescript-eslint/no-floating-promises
       sendService.replace(null);
+
+      await awaitAsync();
 
       const newUserKey = new SymmetricCryptoKey(new Uint8Array(32)) as UserKey;
       const result = await sendService.getRotatedKeys(newUserKey);
@@ -424,114 +439,51 @@ describe("SendService", () => {
   // InternalSendService
 
   it("upsert", async () => {
-    await sendService.upsert(sendData("2", "Test 2"));
+    await sendService.upsert(testSendData("2", "Test 2"));
 
     expect(await firstValueFrom(sendService.sends$)).toEqual([
-      send("1", "Test Send"),
-      send("2", "Test 2"),
+      testSend("1", "Test Send"),
+      testSend("2", "Test 2"),
     ]);
   });
 
   it("replace", async () => {
-    await sendService.replace({ "2": sendData("2", "test 2") });
+    await sendService.replace({ "2": testSendData("2", "test 2") });
 
-    expect(await firstValueFrom(sendService.sends$)).toEqual([send("2", "test 2")]);
+    expect(await firstValueFrom(sendService.sends$)).toEqual([testSend("2", "test 2")]);
   });
 
   it("clear", async () => {
     await sendService.clear();
-
+    await awaitAsync();
     expect(await firstValueFrom(sendService.sends$)).toEqual([]);
   });
+  describe("Delete", () => {
+    it("Sends count should decrease after delete", async () => {
+      const sendsBeforeDelete = await firstValueFrom(sendService.sends$);
+      await sendService.delete(sendsBeforeDelete[0].id);
 
-  describe("delete", () => {
-    it("exists", async () => {
-      await sendService.delete("1");
-
-      expect(stateService.getEncryptedSends).toHaveBeenCalledTimes(2);
-      expect(stateService.setEncryptedSends).toHaveBeenCalledTimes(1);
+      const sendsAfterDelete = await firstValueFrom(sendService.sends$);
+      expect(sendsAfterDelete.length).toBeLessThan(sendsBeforeDelete.length);
     });
 
-    it("does not exist", async () => {
-      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-      // eslint-disable-next-line @typescript-eslint/no-floating-promises
-      sendService.delete("1");
+    it("Intended send should be delete", async () => {
+      const sendsBeforeDelete = await firstValueFrom(sendService.sends$);
+      await sendService.delete(sendsBeforeDelete[0].id);
+      const sendsAfterDelete = await firstValueFrom(sendService.sends$);
+      expect(sendsAfterDelete[0]).not.toBe(sendsBeforeDelete[0]);
+    });
 
-      expect(stateService.getEncryptedSends).toHaveBeenCalledTimes(2);
+    it("Deleting on an empty sends array should not throw", async () => {
+      sendStateProvider.getEncryptedSends = jest.fn().mockResolvedValue(null);
+      await expect(sendService.delete("2")).resolves.not.toThrow();
+    });
+
+    it("Delete multiple sends", async () => {
+      await sendService.upsert(testSendData("2", "send data 2"));
+      await sendService.delete(["1", "2"]);
+      const sendsAfterDelete = await firstValueFrom(sendService.sends$);
+      expect(sendsAfterDelete.length).toBe(0);
     });
   });
-
-  // Send object helper functions
-
-  function sendData(id: string, name: string) {
-    const data = new SendData({} as any);
-    data.id = id;
-    data.name = name;
-    data.disabled = false;
-    data.accessCount = 2;
-    data.accessId = "1";
-    data.revisionDate = null;
-    data.expirationDate = null;
-    data.deletionDate = null;
-    data.notes = "Notes!!";
-    data.key = null;
-    return data;
-  }
-
-  const defaultSendData: Partial<SendData> = {
-    id: "1",
-    name: "Test Send",
-    accessId: "123",
-    type: SendType.Text,
-    notes: "notes!",
-    file: null,
-    text: new SendTextData(new SendTextApi({ Text: "send text" })),
-    key: "key",
-    maxAccessCount: 12,
-    accessCount: 2,
-    revisionDate: "2024-09-04",
-    expirationDate: "2024-09-04",
-    deletionDate: "2024-09-04",
-    password: "password",
-    disabled: false,
-    hideEmail: false,
-  };
-
-  function createSendData(value: Partial<SendData> = {}) {
-    const testSend: any = {};
-    for (const prop in defaultSendData) {
-      testSend[prop] = value[prop as keyof SendData] ?? defaultSendData[prop as keyof SendData];
-    }
-    return testSend;
-  }
-
-  function sendView(id: string, name: string) {
-    const data = new SendView({} as any);
-    data.id = id;
-    data.name = name;
-    data.disabled = false;
-    data.accessCount = 2;
-    data.accessId = "1";
-    data.revisionDate = null;
-    data.expirationDate = null;
-    data.deletionDate = null;
-    data.notes = "Notes!!";
-    data.key = null;
-    return data;
-  }
-
-  function send(id: string, name: string) {
-    const data = new Send({} as any);
-    data.id = id;
-    data.name = new EncString(name);
-    data.disabled = false;
-    data.accessCount = 2;
-    data.accessId = "1";
-    data.revisionDate = null;
-    data.expirationDate = null;
-    data.deletionDate = null;
-    data.notes = new EncString("Notes!!");
-    data.key = null;
-    return data;
-  }
 });

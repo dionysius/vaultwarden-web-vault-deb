@@ -11,8 +11,6 @@ import { BiometricKey } from "../../auth/types/biometric-key";
 import { GeneratorOptions } from "../../tools/generator/generator-options";
 import { GeneratedPasswordHistory, PasswordGeneratorOptions } from "../../tools/generator/password";
 import { UsernameGeneratorOptions } from "../../tools/generator/username";
-import { SendData } from "../../tools/send/models/data/send.data";
-import { SendView } from "../../tools/send/models/view/send.view";
 import { UserId } from "../../types/guid";
 import { MasterKey } from "../../types/key";
 import { CipherData } from "../../vault/models/data/cipher.data";
@@ -614,24 +612,6 @@ export class StateService<
     );
   }
 
-  @withPrototypeForArrayMembers(SendView)
-  async getDecryptedSends(options?: StorageOptions): Promise<SendView[]> {
-    return (
-      await this.getAccount(this.reconcileOptions(options, await this.defaultInMemoryOptions()))
-    )?.data?.sends?.decrypted;
-  }
-
-  async setDecryptedSends(value: SendView[], options?: StorageOptions): Promise<void> {
-    const account = await this.getAccount(
-      this.reconcileOptions(options, await this.defaultInMemoryOptions()),
-    );
-    account.data.sends.decrypted = value;
-    await this.saveAccount(
-      account,
-      this.reconcileOptions(options, await this.defaultInMemoryOptions()),
-    );
-  }
-
   async getDuckDuckGoSharedKey(options?: StorageOptions): Promise<string> {
     options = this.reconcileOptions(options, await this.defaultSecureStorageOptions());
     if (options?.userId == null) {
@@ -822,27 +802,6 @@ export class StateService<
     await this.saveAccount(
       account,
       this.reconcileOptions(options, await this.defaultOnDiskOptions()),
-    );
-  }
-
-  @withPrototypeForObjectValues(SendData)
-  async getEncryptedSends(options?: StorageOptions): Promise<{ [id: string]: SendData }> {
-    return (
-      await this.getAccount(this.reconcileOptions(options, await this.defaultOnDiskMemoryOptions()))
-    )?.data?.sends.encrypted;
-  }
-
-  async setEncryptedSends(
-    value: { [id: string]: SendData },
-    options?: StorageOptions,
-  ): Promise<void> {
-    const account = await this.getAccount(
-      this.reconcileOptions(options, await this.defaultOnDiskMemoryOptions()),
-    );
-    account.data.sends.encrypted = value;
-    await this.saveAccount(
-      account,
-      this.reconcileOptions(options, await this.defaultOnDiskMemoryOptions()),
     );
   }
 

@@ -19,10 +19,6 @@ export abstract class SendService {
     key?: SymmetricCryptoKey,
   ) => Promise<[Send, EncArrayBuffer]>;
   /**
-   * @deprecated Do not call this, use the get$ method
-   */
-  get: (id: string) => Send;
-  /**
    * Provides a send for a determined id
    * updates after a change occurs to the send that matches the id
    * @param id The id of the desired send
@@ -53,6 +49,5 @@ export abstract class SendService {
 export abstract class InternalSendService extends SendService {
   upsert: (send: SendData | SendData[]) => Promise<any>;
   replace: (sends: { [id: string]: SendData }) => Promise<void>;
-  clear: (userId: string) => Promise<any>;
   delete: (id: string | string[]) => Promise<any>;
 }

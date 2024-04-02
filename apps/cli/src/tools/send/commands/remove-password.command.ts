@@ -18,7 +18,7 @@ export class SendRemovePasswordCommand {
     try {
       await this.sendApiService.removePassword(id);
 
-      const updatedSend = await this.sendService.get(id);
+      const updatedSend = await firstValueFrom(this.sendService.get$(id));
       const decSend = await updatedSend.decrypt();
       const env = await firstValueFrom(this.environmentService.environment$);
       const webVaultUrl = env.getWebVaultUrl();

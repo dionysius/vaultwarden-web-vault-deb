@@ -1,5 +1,5 @@
 import { Directive, NgZone, OnDestroy, OnInit } from "@angular/core";
-import { Subject, firstValueFrom, takeUntil } from "rxjs";
+import { Subject, firstValueFrom, mergeMap, takeUntil } from "rxjs";
 
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
@@ -77,9 +77,15 @@ export class SendComponent implements OnInit, OnDestroy {
 
   async load(filter: (send: SendView) => boolean = null) {
     this.loading = true;
-    this.sendService.sendViews$.pipe(takeUntil(this.destroy$)).subscribe((sends) => {
-      this.sends = sends;
-    });
+    this.sendService.sendViews$
+      .pipe(
+        mergeMap(async (sends) => {
+          this.sends = sends;
+          await this.search(null);
+        }),
+        takeUntil(this.destroy$),
+      )
+      .subscribe();
     if (this.onSuccessfulLoad != null) {
       await this.onSuccessfulLoad();
     } else {
