@@ -2,9 +2,7 @@
 
 exports[`AutofillOverlayList initAutofillOverlayList the list of ciphers for an authenticated user creates the view for a list of ciphers 1`] = `
 <div
-  aria-modal="true"
   class="overlay-list-container theme_light"
-  role="dialog"
 >
   <ul
     class="overlay-actions-list"
@@ -436,9 +434,7 @@ exports[`AutofillOverlayList initAutofillOverlayList the list of ciphers for an 
 
 exports[`AutofillOverlayList initAutofillOverlayList the locked overlay for an unauthenticated user creates the views for the locked overlay 1`] = `
 <div
-  aria-modal="true"
   class="overlay-list-container theme_light"
-  role="dialog"
 >
   <div
     class="locked-overlay overlay-list-message"
@@ -490,9 +486,7 @@ exports[`AutofillOverlayList initAutofillOverlayList the locked overlay for an u
 
 exports[`AutofillOverlayList initAutofillOverlayList the overlay with an empty list of ciphers creates the views for the no results overlay 1`] = `
 <div
-  aria-modal="true"
   class="overlay-list-container theme_light"
-  role="dialog"
 >
   <div
     class="no-items overlay-list-message"

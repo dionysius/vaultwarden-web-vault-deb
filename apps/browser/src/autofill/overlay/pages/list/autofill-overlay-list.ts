@@ -59,8 +59,6 @@ class AutofillOverlayList extends AutofillOverlayPageElement {
 
     this.overlayListContainer = globalThis.document.createElement("div");
     this.overlayListContainer.classList.add("overlay-list-container", themeClass);
-    this.overlayListContainer.setAttribute("role", "dialog");
-    this.overlayListContainer.setAttribute("aria-modal", "true");
     this.resizeObserver.observe(this.overlayListContainer);
 
     this.shadowDom.append(linkElement, this.overlayListContainer);
@@ -487,6 +485,9 @@ class AutofillOverlayList extends AutofillOverlayPageElement {
    * the first cipher button.
    */
   private focusOverlayList() {
+    this.overlayListContainer.setAttribute("role", "dialog");
+    this.overlayListContainer.setAttribute("aria-modal", "true");
+
     const unlockButtonElement = this.overlayListContainer.querySelector(
       "#unlock-button",
     ) as HTMLElement;

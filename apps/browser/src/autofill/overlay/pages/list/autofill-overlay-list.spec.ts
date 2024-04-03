@@ -312,6 +312,24 @@ describe("AutofillOverlayList", () => {
     });
 
     describe("directing user focus into the overlay list", () => {
+      it("sets ARIA attributes that define the list as a `dialog` to screen reader users", () => {
+        postWindowMessage(
+          createInitAutofillOverlayListMessageMock({
+            authStatus: AuthenticationStatus.Locked,
+            cipherList: [],
+          }),
+        );
+        const overlayContainerSetAttributeSpy = jest.spyOn(
+          autofillOverlayList["overlayListContainer"],
+          "setAttribute",
+        );
+
+        postWindowMessage({ command: "focusOverlayList" });
+
+        expect(overlayContainerSetAttributeSpy).toHaveBeenCalledWith("role", "dialog");
+        expect(overlayContainerSetAttributeSpy).toHaveBeenCalledWith("aria-modal", "true");
+      });
+
       it("focuses the unlock button element if the user is not authenticated", () => {
         postWindowMessage(
           createInitAutofillOverlayListMessageMock({
