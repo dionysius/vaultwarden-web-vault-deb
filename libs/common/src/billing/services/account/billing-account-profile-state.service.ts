@@ -3,19 +3,20 @@ import { map, Observable, of, switchMap } from "rxjs";
 import {
   ActiveUserState,
   BILLING_DISK,
-  KeyDefinition,
   StateProvider,
+  UserKeyDefinition,
 } from "../../../platform/state";
 import {
   BillingAccountProfile,
   BillingAccountProfileStateService,
 } from "../../abstractions/account/billing-account-profile-state.service";
 
-export const BILLING_ACCOUNT_PROFILE_KEY_DEFINITION = new KeyDefinition<BillingAccountProfile>(
+export const BILLING_ACCOUNT_PROFILE_KEY_DEFINITION = new UserKeyDefinition<BillingAccountProfile>(
   BILLING_DISK,
   "accountProfile",
   {
     deserializer: (billingAccountProfile) => billingAccountProfile,
+    clearOn: ["logout"],
   },
 );
 
