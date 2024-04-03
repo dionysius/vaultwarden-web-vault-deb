@@ -17,10 +17,6 @@ import {
   LogServiceInitOptions,
 } from "../../../platform/background/service-factories/log-service.factory";
 import {
-  stateServiceFactory,
-  StateServiceInitOptions,
-} from "../../../platform/background/service-factories/state-service.factory";
-import {
   cipherServiceFactory,
   CipherServiceInitOptions,
 } from "../../../vault/background/service_factories/cipher-service.factory";
@@ -44,7 +40,6 @@ type AutoFillServiceOptions = FactoryOptions;
 
 export type AutoFillServiceInitOptions = AutoFillServiceOptions &
   CipherServiceInitOptions &
-  StateServiceInitOptions &
   AutofillSettingsServiceInitOptions &
   TotpServiceInitOptions &
   EventCollectionServiceInitOptions &
@@ -63,7 +58,6 @@ export function autofillServiceFactory(
     async () =>
       new AutofillService(
         await cipherServiceFactory(cache, opts),
-        await stateServiceFactory(cache, opts),
         await autofillSettingsServiceFactory(cache, opts),
         await totpServiceFactory(cache, opts),
         await eventCollectionServiceFactory(cache, opts),

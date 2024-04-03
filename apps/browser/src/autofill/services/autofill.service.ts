@@ -20,7 +20,6 @@ import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { FieldView } from "@bitwarden/common/vault/models/view/field.view";
 
 import { BrowserApi } from "../../platform/browser/browser-api";
-import { BrowserStateService } from "../../platform/services/abstractions/browser-state.service";
 import { openVaultItemPasswordRepromptPopout } from "../../vault/popup/utils/vault-popout-window";
 import { AutofillPort } from "../enums/autofill-port.enums";
 import AutofillField from "../models/autofill-field";
@@ -49,7 +48,6 @@ export default class AutofillService implements AutofillServiceInterface {
 
   constructor(
     private cipherService: CipherService,
-    private stateService: BrowserStateService,
     private autofillSettingsService: AutofillSettingsServiceAbstraction,
     private totpService: TotpService,
     private eventCollectionService: EventCollectionService,

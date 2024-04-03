@@ -767,7 +767,6 @@ export default class MainBackground {
 
     this.autofillService = new AutofillService(
       this.cipherService,
-      this.stateService,
       this.autofillSettingsService,
       this.totpService,
       this.eventCollectionService,

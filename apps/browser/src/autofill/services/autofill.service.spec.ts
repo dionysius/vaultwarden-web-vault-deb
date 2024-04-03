@@ -32,7 +32,6 @@ import { CipherService } from "@bitwarden/common/vault/services/cipher.service";
 import { TotpService } from "@bitwarden/common/vault/services/totp.service";
 
 import { BrowserApi } from "../../platform/browser/browser-api";
-import { BrowserStateService } from "../../platform/services/browser-state.service";
 import { AutofillPort } from "../enums/autofill-port.enums";
 import AutofillField from "../models/autofill-field";
 import AutofillPageDetails from "../models/autofill-page-details";
@@ -63,7 +62,6 @@ const mockEquivalentDomains = [
 describe("AutofillService", () => {
   let autofillService: AutofillService;
   const cipherService = mock<CipherService>();
-  const stateService = mock<BrowserStateService>();
   const autofillSettingsService = mock<AutofillSettingsService>();
   const mockUserId = Utils.newGuid() as UserId;
   const accountService: FakeAccountService = mockAccountServiceWith(mockUserId);
@@ -78,7 +76,6 @@ describe("AutofillService", () => {
   beforeEach(() => {
     autofillService = new AutofillService(
       cipherService,
-      stateService,
       autofillSettingsService,
       totpService,
       eventCollectionService,
