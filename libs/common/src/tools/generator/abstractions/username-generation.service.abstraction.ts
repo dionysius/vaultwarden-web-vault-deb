@@ -1,5 +1,6 @@
-import { UsernameGeneratorOptions } from "./username-generation-options";
+import { UsernameGeneratorOptions } from "../username/username-generation-options";
 
+/** @deprecated Use {@link GeneratorService} with a username {@link GeneratorStrategy} instead. */
 export abstract class UsernameGenerationServiceAbstraction {
   generateUsername: (options: UsernameGeneratorOptions) => Promise<string>;
   generateWord: (options: UsernameGeneratorOptions) => Promise<string>;

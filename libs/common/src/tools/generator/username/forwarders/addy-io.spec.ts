@@ -2,17 +2,32 @@
  * include Request in test environment.
  * @jest-environment ../../../../shared/test.environment.ts
  */
+import { firstValueFrom } from "rxjs";
+
+import { UserId } from "../../../../types/guid";
 import { ADDY_IO_FORWARDER } from "../../key-definitions";
 import { Forwarders } from "../options/constants";
 
-import { AddyIoForwarder } from "./addy-io";
+import { AddyIoForwarder, DefaultAddyIoOptions } from "./addy-io";
 import { mockApiService, mockI18nService } from "./mocks.jest";
+
+const SomeUser = "some user" as UserId;
 
 describe("Addy.io Forwarder", () => {
   it("key returns the Addy IO forwarder key", () => {
     const forwarder = new AddyIoForwarder(null, null, null, null, null);
 
     expect(forwarder.key).toBe(ADDY_IO_FORWARDER);
+  });
+
+  describe("defaults$", () => {
+    it("should return the default subaddress options", async () => {
+      const strategy = new AddyIoForwarder(null, null, null, null, null);
+
+      const result = await firstValueFrom(strategy.defaults$(SomeUser));
+
+      expect(result).toEqual(DefaultAddyIoOptions);
+    });
   });
 
   describe("generate(string | null, SelfHostedApiOptions & EmailDomainOptions)", () => {

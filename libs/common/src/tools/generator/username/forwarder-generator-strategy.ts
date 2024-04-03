@@ -1,4 +1,4 @@
-import { map, pipe } from "rxjs";
+import { Observable, map, pipe } from "rxjs";
 
 import { PolicyType } from "../../../admin-console/enums";
 import { CryptoService } from "../../../platform/abstractions/crypto.service";
@@ -78,6 +78,9 @@ export abstract class ForwarderGeneratorStrategy<
     const packer = new PaddedDataPacker(OPTIONS_FRAME_SIZE);
     return new UserKeyEncryptor(this.encryptService, this.keyService, packer);
   }
+
+  /** Gets the default options. */
+  abstract defaults$: (userId: UserId) => Observable<Options>;
 
   /** Determine where forwarder configuration is stored  */
   protected abstract readonly key: KeyDefinition<Options>;

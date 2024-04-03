@@ -2,17 +2,32 @@
  * include Request in test environment.
  * @jest-environment ../../../../shared/test.environment.ts
  */
+import { firstValueFrom } from "rxjs";
+
+import { UserId } from "../../../../types/guid";
 import { FIREFOX_RELAY_FORWARDER } from "../../key-definitions";
 import { Forwarders } from "../options/constants";
 
-import { FirefoxRelayForwarder } from "./firefox-relay";
+import { FirefoxRelayForwarder, DefaultFirefoxRelayOptions } from "./firefox-relay";
 import { mockApiService, mockI18nService } from "./mocks.jest";
+
+const SomeUser = "some user" as UserId;
 
 describe("Firefox Relay Forwarder", () => {
   it("key returns the Firefox Relay forwarder key", () => {
     const forwarder = new FirefoxRelayForwarder(null, null, null, null, null);
 
     expect(forwarder.key).toBe(FIREFOX_RELAY_FORWARDER);
+  });
+
+  describe("defaults$", () => {
+    it("should return the default subaddress options", async () => {
+      const strategy = new FirefoxRelayForwarder(null, null, null, null, null);
+
+      const result = await firstValueFrom(strategy.defaults$(SomeUser));
+
+      expect(result).toEqual(DefaultFirefoxRelayOptions);
+    });
   });
 
   describe("generate(string | null, SelfHostedApiOptions & EmailDomainOptions)", () => {

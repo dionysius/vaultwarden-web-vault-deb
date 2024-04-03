@@ -1,19 +1,26 @@
-import { map, pipe } from "rxjs";
+import { BehaviorSubject, map, pipe } from "rxjs";
 
 import { PolicyType } from "../../../admin-console/enums";
 import { StateProvider } from "../../../platform/state";
 import { UserId } from "../../../types/guid";
 import { GeneratorStrategy } from "../abstractions";
+import { UsernameGenerationServiceAbstraction } from "../abstractions/username-generation.service.abstraction";
 import { DefaultPolicyEvaluator } from "../default-policy-evaluator";
 import { SUBADDRESS_SETTINGS } from "../key-definitions";
 import { NoPolicy } from "../no-policy";
 
-import { SubaddressGenerationOptions } from "./subaddress-generator-options";
-import { UsernameGenerationServiceAbstraction } from "./username-generation.service.abstraction";
+import {
+  DefaultSubaddressOptions,
+  SubaddressGenerationOptions,
+} from "./subaddress-generator-options";
 
 const ONE_MINUTE = 60 * 1000;
 
-/** Strategy for creating an email subaddress */
+/** Strategy for creating an email subaddress
+ *  @remarks The subaddress is the part following the `+`.
+ *  For example, if the email address is `jd+xyz@domain.io`,
+ *  the subaddress is `xyz`.
+ */
 export class SubaddressGeneratorStrategy
   implements GeneratorStrategy<SubaddressGenerationOptions, NoPolicy>
 {
@@ -28,6 +35,11 @@ export class SubaddressGeneratorStrategy
   /** {@link GeneratorStrategy.durableState} */
   durableState(id: UserId) {
     return this.stateProvider.getUser(id, SUBADDRESS_SETTINGS);
+  }
+
+  /** {@link GeneratorStrategy.defaults$} */
+  defaults$(userId: UserId) {
+    return new BehaviorSubject({ ...DefaultSubaddressOptions }).asObservable();
   }
 
   /** {@link GeneratorStrategy.policy} */
@@ -49,9 +61,6 @@ export class SubaddressGeneratorStrategy
 
   /** {@link GeneratorStrategy.generate} */
   generate(options: SubaddressGenerationOptions) {
-    return this.usernameService.generateSubaddress({
-      subaddressEmail: options.email,
-      subaddressType: options.type,
-    });
+    return this.usernameService.generateSubaddress(options);
   }
 }

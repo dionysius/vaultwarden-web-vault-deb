@@ -5,10 +5,10 @@ import { CryptoService } from "../../../platform/abstractions/crypto.service";
 import { StateService } from "../../../platform/abstractions/state.service";
 import { EFFLongWordList } from "../../../platform/misc/wordlist";
 import { EncString } from "../../../platform/models/domain/enc-string";
+import { PasswordGenerationServiceAbstraction } from "../abstractions/password-generation.service.abstraction";
 import { PassphraseGeneratorOptionsEvaluator } from "../passphrase/passphrase-generator-options-evaluator";
 
 import { GeneratedPasswordHistory } from "./generated-password-history";
-import { PasswordGenerationServiceAbstraction } from "./password-generation.service.abstraction";
 import { PasswordGeneratorOptions } from "./password-generator-options";
 import { PasswordGeneratorOptionsEvaluator } from "./password-generator-options-evaluator";
 
@@ -339,24 +339,6 @@ export class PasswordGenerationService implements PasswordGenerationServiceAbstr
   async clear(userId?: string): Promise<void> {
     await this.stateService.setEncryptedPasswordGenerationHistory(null, { userId: userId });
     await this.stateService.setDecryptedPasswordGenerationHistory(null, { userId: userId });
-  }
-
-  normalizeOptions(
-    options: PasswordGeneratorOptions,
-    enforcedPolicyOptions: PasswordGeneratorPolicyOptions,
-  ) {
-    const evaluator =
-      options.type == "password"
-        ? new PasswordGeneratorOptionsEvaluator(enforcedPolicyOptions)
-        : new PassphraseGeneratorOptionsEvaluator(enforcedPolicyOptions);
-
-    const evaluatedOptions = evaluator.applyPolicy(options);
-    const santizedOptions = evaluator.sanitize(evaluatedOptions);
-
-    // callers assume this function updates the options parameter
-    Object.assign(options, santizedOptions);
-
-    return options;
   }
 
   private capitalize(str: string) {

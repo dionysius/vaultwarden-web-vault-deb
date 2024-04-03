@@ -1,13 +1,22 @@
+import { BehaviorSubject } from "rxjs";
+
 import { ApiService } from "../../../../abstractions/api.service";
 import { CryptoService } from "../../../../platform/abstractions/crypto.service";
 import { EncryptService } from "../../../../platform/abstractions/encrypt.service";
 import { I18nService } from "../../../../platform/abstractions/i18n.service";
 import { Utils } from "../../../../platform/misc/utils";
 import { StateProvider } from "../../../../platform/state";
+import { UserId } from "../../../../types/guid";
 import { FORWARD_EMAIL_FORWARDER } from "../../key-definitions";
 import { ForwarderGeneratorStrategy } from "../forwarder-generator-strategy";
 import { Forwarders } from "../options/constants";
 import { EmailDomainOptions, ApiOptions } from "../options/forwarder-options";
+
+export const DefaultForwardEmailOptions: ApiOptions & EmailDomainOptions = Object.freeze({
+  website: null,
+  token: "",
+  domain: "",
+});
 
 /** Generates a forwarding address for Forward Email */
 export class ForwardEmailForwarder extends ForwarderGeneratorStrategy<
@@ -34,6 +43,11 @@ export class ForwardEmailForwarder extends ForwarderGeneratorStrategy<
   get key() {
     return FORWARD_EMAIL_FORWARDER;
   }
+
+  /** {@link ForwarderGeneratorStrategy.defaults$} */
+  defaults$ = (userId: UserId) => {
+    return new BehaviorSubject({ ...DefaultForwardEmailOptions });
+  };
 
   /** {@link ForwarderGeneratorStrategy.generate} */
   generate = async (options: ApiOptions & EmailDomainOptions) => {
@@ -96,3 +110,9 @@ export class ForwardEmailForwarder extends ForwarderGeneratorStrategy<
     }
   };
 }
+
+export const DefaultOptions = Object.freeze({
+  website: null,
+  token: "",
+  domain: "",
+});

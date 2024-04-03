@@ -15,6 +15,7 @@ import { DUCK_DUCK_GO_FORWARDER } from "../key-definitions";
 import { SecretState } from "../state/secret-state";
 
 import { ForwarderGeneratorStrategy } from "./forwarder-generator-strategy";
+import { DefaultDuckDuckGoOptions } from "./forwarders/duck-duck-go";
 import { ApiOptions } from "./options/forwarder-options";
 
 class TestForwarder extends ForwarderGeneratorStrategy<ApiOptions> {
@@ -30,6 +31,10 @@ class TestForwarder extends ForwarderGeneratorStrategy<ApiOptions> {
     // arbitrary.
     return DUCK_DUCK_GO_FORWARDER;
   }
+
+  defaults$ = (userId: UserId) => {
+    return of(DefaultDuckDuckGoOptions);
+  };
 }
 
 const SomeUser = "some user" as UserId;

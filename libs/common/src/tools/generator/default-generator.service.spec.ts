@@ -37,6 +37,7 @@ function mockGeneratorStrategy(config?: {
   userState?: SingleUserState<any>;
   policy?: PolicyType;
   evaluator?: any;
+  defaults?: any;
 }) {
   const durableState =
     config?.userState ?? new FakeSingleUserState<PasswordGenerationOptions>(SomeUser);
@@ -45,6 +46,7 @@ function mockGeneratorStrategy(config?: {
     // whether they're used properly are guaranteed to test
     // the value from `config`.
     durableState: jest.fn(() => durableState),
+    defaults$: jest.fn(() => new BehaviorSubject(config?.defaults)),
     policy: config?.policy ?? PolicyType.DisableSend,
     toEvaluator: jest.fn(() =>
       pipe(map(() => config?.evaluator ?? mock<PolicyEvaluator<any, any>>())),
@@ -69,6 +71,20 @@ describe("Password generator service", () => {
 
       expect(strategy.durableState).toHaveBeenCalledWith(SomeUser);
       expect(result).toBe(userState.state$);
+    });
+  });
+
+  describe("defaults$", () => {
+    it("should retrieve default state from the service", async () => {
+      const policy = mockPolicyService();
+      const defaults = {};
+      const strategy = mockGeneratorStrategy({ defaults });
+      const service = new DefaultGeneratorService(strategy, policy);
+
+      const result = await firstValueFrom(service.defaults$(SomeUser));
+
+      expect(strategy.defaults$).toHaveBeenCalledWith(SomeUser);
+      expect(result).toBe(defaults);
     });
   });
 

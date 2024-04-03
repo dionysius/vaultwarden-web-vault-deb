@@ -2,6 +2,7 @@ import { ApiService } from "../../../abstractions/api.service";
 import { CryptoService } from "../../../platform/abstractions/crypto.service";
 import { StateService } from "../../../platform/abstractions/state.service";
 import { EFFLongWordList } from "../../../platform/misc/wordlist";
+import { UsernameGenerationServiceAbstraction } from "../abstractions/username-generation.service.abstraction";
 
 import {
   AnonAddyForwarder,
@@ -14,10 +15,10 @@ import {
   SimpleLoginForwarder,
 } from "./email-forwarders";
 import { UsernameGeneratorOptions } from "./username-generation-options";
-import { UsernameGenerationServiceAbstraction } from "./username-generation.service.abstraction";
 
 const DefaultOptions: UsernameGeneratorOptions = {
   type: "word",
+  website: null,
   wordCapitalize: true,
   wordIncludeNumber: true,
   subaddressType: "random",

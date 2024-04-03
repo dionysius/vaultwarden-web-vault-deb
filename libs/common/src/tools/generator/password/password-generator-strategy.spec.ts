@@ -17,6 +17,7 @@ import { PASSWORD_SETTINGS } from "../key-definitions";
 import { DisabledPasswordGeneratorPolicy } from "./password-generator-policy";
 
 import {
+  DefaultPasswordGenerationOptions,
   PasswordGenerationServiceAbstraction,
   PasswordGeneratorOptionsEvaluator,
   PasswordGeneratorStrategy,
@@ -79,6 +80,16 @@ describe("Password generation strategy", () => {
       strategy.durableState(SomeUser);
 
       expect(provider.getUser).toHaveBeenCalledWith(SomeUser, PASSWORD_SETTINGS);
+    });
+  });
+
+  describe("defaults$", () => {
+    it("should return the default subaddress options", async () => {
+      const strategy = new PasswordGeneratorStrategy(null, null);
+
+      const result = await firstValueFrom(strategy.defaults$(SomeUser));
+
+      expect(result).toEqual(DefaultPasswordGenerationOptions);
     });
   });
 

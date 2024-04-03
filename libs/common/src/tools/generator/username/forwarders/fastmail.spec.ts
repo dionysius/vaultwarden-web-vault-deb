@@ -2,12 +2,17 @@
  * include Request in test environment.
  * @jest-environment ../../../../shared/test.environment.ts
  */
+import { firstValueFrom } from "rxjs";
+
 import { ApiService } from "../../../../abstractions/api.service";
+import { UserId } from "../../../../types/guid";
 import { FASTMAIL_FORWARDER } from "../../key-definitions";
 import { Forwarders } from "../options/constants";
 
-import { FastmailForwarder } from "./fastmail";
+import { FastmailForwarder, DefaultFastmailOptions } from "./fastmail";
 import { mockI18nService } from "./mocks.jest";
+
+const SomeUser = "some user" as UserId;
 
 type MockResponse = { status: number; body: any };
 
@@ -50,6 +55,16 @@ describe("Fastmail Forwarder", () => {
     const forwarder = new FastmailForwarder(null, null, null, null, null);
 
     expect(forwarder.key).toBe(FASTMAIL_FORWARDER);
+  });
+
+  describe("defaults$", () => {
+    it("should return the default subaddress options", async () => {
+      const strategy = new FastmailForwarder(null, null, null, null, null);
+
+      const result = await firstValueFrom(strategy.defaults$(SomeUser));
+
+      expect(result).toEqual(DefaultFastmailOptions);
+    });
   });
 
   describe("generate(string | null, SelfHostedApiOptions & EmailDomainOptions)", () => {

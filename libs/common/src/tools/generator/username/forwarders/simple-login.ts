@@ -1,12 +1,21 @@
+import { BehaviorSubject } from "rxjs";
+
 import { ApiService } from "../../../../abstractions/api.service";
 import { CryptoService } from "../../../../platform/abstractions/crypto.service";
 import { EncryptService } from "../../../../platform/abstractions/encrypt.service";
 import { I18nService } from "../../../../platform/abstractions/i18n.service";
 import { StateProvider } from "../../../../platform/state";
+import { UserId } from "../../../../types/guid";
 import { SIMPLE_LOGIN_FORWARDER } from "../../key-definitions";
 import { ForwarderGeneratorStrategy } from "../forwarder-generator-strategy";
 import { Forwarders } from "../options/constants";
 import { SelfHostedApiOptions } from "../options/forwarder-options";
+
+export const DefaultSimpleLoginOptions: SelfHostedApiOptions = Object.freeze({
+  website: null,
+  baseUrl: "https://app.simplelogin.io",
+  token: "",
+});
 
 /** Generates a forwarding address for Simple Login */
 export class SimpleLoginForwarder extends ForwarderGeneratorStrategy<SelfHostedApiOptions> {
@@ -31,6 +40,11 @@ export class SimpleLoginForwarder extends ForwarderGeneratorStrategy<SelfHostedA
   get key() {
     return SIMPLE_LOGIN_FORWARDER;
   }
+
+  /** {@link ForwarderGeneratorStrategy.defaults$} */
+  defaults$ = (userId: UserId) => {
+    return new BehaviorSubject({ ...DefaultSimpleLoginOptions });
+  };
 
   /** {@link ForwarderGeneratorStrategy.generate} */
   generate = async (options: SelfHostedApiOptions) => {
@@ -80,3 +94,9 @@ export class SimpleLoginForwarder extends ForwarderGeneratorStrategy<SelfHostedA
     }
   };
 }
+
+export const DefaultOptions = Object.freeze({
+  website: null,
+  baseUrl: "https://app.simplelogin.io",
+  token: "",
+});

@@ -1,14 +1,17 @@
-import { map, pipe } from "rxjs";
+import { BehaviorSubject, map, pipe } from "rxjs";
 
 import { GeneratorStrategy } from "..";
 import { PolicyType } from "../../../admin-console/enums";
 import { StateProvider } from "../../../platform/state";
 import { UserId } from "../../../types/guid";
+import { PasswordGenerationServiceAbstraction } from "../abstractions/password-generation.service.abstraction";
 import { PASSPHRASE_SETTINGS } from "../key-definitions";
-import { PasswordGenerationServiceAbstraction } from "../password/password-generation.service.abstraction";
 import { reduceCollection } from "../reduce-collection.operator";
 
-import { PassphraseGenerationOptions } from "./passphrase-generation-options";
+import {
+  PassphraseGenerationOptions,
+  DefaultPassphraseGenerationOptions,
+} from "./passphrase-generation-options";
 import { PassphraseGeneratorOptionsEvaluator } from "./passphrase-generator-options-evaluator";
 import {
   DisabledPassphraseGeneratorPolicy,
@@ -34,6 +37,11 @@ export class PassphraseGeneratorStrategy
   /** {@link GeneratorStrategy.durableState} */
   durableState(id: UserId) {
     return this.stateProvider.getUser(id, PASSPHRASE_SETTINGS);
+  }
+
+  /** Gets the default options. */
+  defaults$(_: UserId) {
+    return new BehaviorSubject({ ...DefaultPassphraseGenerationOptions }).asObservable();
   }
 
   /** {@link GeneratorStrategy.policy} */

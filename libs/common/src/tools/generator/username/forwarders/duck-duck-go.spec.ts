@@ -2,17 +2,32 @@
  * include Request in test environment.
  * @jest-environment ../../../../shared/test.environment.ts
  */
+import { firstValueFrom } from "rxjs";
+
+import { UserId } from "../../../../types/guid";
 import { DUCK_DUCK_GO_FORWARDER } from "../../key-definitions";
 import { Forwarders } from "../options/constants";
 
-import { DuckDuckGoForwarder } from "./duck-duck-go";
+import { DuckDuckGoForwarder, DefaultDuckDuckGoOptions } from "./duck-duck-go";
 import { mockApiService, mockI18nService } from "./mocks.jest";
+
+const SomeUser = "some user" as UserId;
 
 describe("DuckDuckGo Forwarder", () => {
   it("key returns the Duck Duck Go forwarder key", () => {
     const forwarder = new DuckDuckGoForwarder(null, null, null, null, null);
 
     expect(forwarder.key).toBe(DUCK_DUCK_GO_FORWARDER);
+  });
+
+  describe("defaults$", () => {
+    it("should return the default subaddress options", async () => {
+      const strategy = new DuckDuckGoForwarder(null, null, null, null, null);
+
+      const result = await firstValueFrom(strategy.defaults$(SomeUser));
+
+      expect(result).toEqual(DefaultDuckDuckGoOptions);
+    });
   });
 
   describe("generate(string | null, SelfHostedApiOptions & EmailDomainOptions)", () => {

@@ -1,12 +1,22 @@
+import { BehaviorSubject } from "rxjs";
+
 import { ApiService } from "../../../../abstractions/api.service";
 import { CryptoService } from "../../../../platform/abstractions/crypto.service";
 import { EncryptService } from "../../../../platform/abstractions/encrypt.service";
 import { I18nService } from "../../../../platform/abstractions/i18n.service";
 import { StateProvider } from "../../../../platform/state";
+import { UserId } from "../../../../types/guid";
 import { FASTMAIL_FORWARDER } from "../../key-definitions";
 import { ForwarderGeneratorStrategy } from "../forwarder-generator-strategy";
 import { Forwarders } from "../options/constants";
 import { EmailPrefixOptions, ApiOptions } from "../options/forwarder-options";
+
+export const DefaultFastmailOptions: ApiOptions & EmailPrefixOptions = Object.freeze({
+  website: null,
+  domain: "",
+  prefix: "",
+  token: "",
+});
 
 /** Generates a forwarding address for Fastmail */
 export class FastmailForwarder extends ForwarderGeneratorStrategy<ApiOptions & EmailPrefixOptions> {
@@ -31,6 +41,11 @@ export class FastmailForwarder extends ForwarderGeneratorStrategy<ApiOptions & E
   get key() {
     return FASTMAIL_FORWARDER;
   }
+
+  /** {@link ForwarderGeneratorStrategy.defaults$} */
+  defaults$ = (userId: UserId) => {
+    return new BehaviorSubject({ ...DefaultFastmailOptions });
+  };
 
   /** {@link ForwarderGeneratorStrategy.generate} */
   generate = async (options: ApiOptions & EmailPrefixOptions) => {
@@ -141,3 +156,10 @@ export class FastmailForwarder extends ForwarderGeneratorStrategy<ApiOptions & E
     return null;
   }
 }
+
+export const DefaultOptions = Object.freeze({
+  website: null,
+  domain: "",
+  prefix: "",
+  token: "",
+});

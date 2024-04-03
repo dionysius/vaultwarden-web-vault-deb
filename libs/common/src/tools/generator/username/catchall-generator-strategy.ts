@@ -1,15 +1,15 @@
-import { map, pipe } from "rxjs";
+import { BehaviorSubject, map, pipe } from "rxjs";
 
 import { PolicyType } from "../../../admin-console/enums";
 import { StateProvider } from "../../../platform/state";
 import { UserId } from "../../../types/guid";
 import { GeneratorStrategy } from "../abstractions";
+import { UsernameGenerationServiceAbstraction } from "../abstractions/username-generation.service.abstraction";
 import { DefaultPolicyEvaluator } from "../default-policy-evaluator";
 import { CATCHALL_SETTINGS } from "../key-definitions";
 import { NoPolicy } from "../no-policy";
 
-import { CatchallGenerationOptions } from "./catchall-generator-options";
-import { UsernameGenerationServiceAbstraction } from "./username-generation.service.abstraction";
+import { CatchallGenerationOptions, DefaultCatchallOptions } from "./catchall-generator-options";
 
 const ONE_MINUTE = 60 * 1000;
 
@@ -28,6 +28,11 @@ export class CatchallGeneratorStrategy
   /** {@link GeneratorStrategy.durableState} */
   durableState(id: UserId) {
     return this.stateProvider.getUser(id, CATCHALL_SETTINGS);
+  }
+
+  /** {@link GeneratorStrategy.defaults$} */
+  defaults$(userId: UserId) {
+    return new BehaviorSubject({ ...DefaultCatchallOptions }).asObservable();
   }
 
   /** {@link GeneratorStrategy.policy} */
@@ -49,9 +54,6 @@ export class CatchallGeneratorStrategy
 
   /** {@link GeneratorStrategy.generate} */
   generate(options: CatchallGenerationOptions) {
-    return this.usernameService.generateCatchall({
-      catchallDomain: options.domain,
-      catchallType: options.type,
-    });
+    return this.usernameService.generateCatchall(options);
   }
 }

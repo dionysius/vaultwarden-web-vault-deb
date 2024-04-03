@@ -1,12 +1,20 @@
+import { BehaviorSubject } from "rxjs";
+
 import { ApiService } from "../../../../abstractions/api.service";
 import { CryptoService } from "../../../../platform/abstractions/crypto.service";
 import { EncryptService } from "../../../../platform/abstractions/encrypt.service";
 import { I18nService } from "../../../../platform/abstractions/i18n.service";
 import { StateProvider } from "../../../../platform/state";
+import { UserId } from "../../../../types/guid";
 import { FIREFOX_RELAY_FORWARDER } from "../../key-definitions";
 import { ForwarderGeneratorStrategy } from "../forwarder-generator-strategy";
 import { Forwarders } from "../options/constants";
 import { ApiOptions } from "../options/forwarder-options";
+
+export const DefaultFirefoxRelayOptions: ApiOptions = Object.freeze({
+  website: null,
+  token: "",
+});
 
 /** Generates a forwarding address for Firefox Relay */
 export class FirefoxRelayForwarder extends ForwarderGeneratorStrategy<ApiOptions> {
@@ -31,6 +39,11 @@ export class FirefoxRelayForwarder extends ForwarderGeneratorStrategy<ApiOptions
   get key() {
     return FIREFOX_RELAY_FORWARDER;
   }
+
+  /** {@link ForwarderGeneratorStrategy.defaults$} */
+  defaults$ = (userId: UserId) => {
+    return new BehaviorSubject({ ...DefaultFirefoxRelayOptions });
+  };
 
   /** {@link ForwarderGeneratorStrategy.generate} */
   generate = async (options: ApiOptions) => {
@@ -75,3 +88,8 @@ export class FirefoxRelayForwarder extends ForwarderGeneratorStrategy<ApiOptions
     }
   };
 }
+
+export const DefaultOptions = Object.freeze({
+  website: null,
+  token: "",
+});

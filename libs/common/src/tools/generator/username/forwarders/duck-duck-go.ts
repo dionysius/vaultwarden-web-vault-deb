@@ -1,12 +1,20 @@
+import { BehaviorSubject } from "rxjs";
+
 import { ApiService } from "../../../../abstractions/api.service";
 import { CryptoService } from "../../../../platform/abstractions/crypto.service";
 import { EncryptService } from "../../../../platform/abstractions/encrypt.service";
 import { I18nService } from "../../../../platform/abstractions/i18n.service";
 import { StateProvider } from "../../../../platform/state";
+import { UserId } from "../../../../types/guid";
 import { DUCK_DUCK_GO_FORWARDER } from "../../key-definitions";
 import { ForwarderGeneratorStrategy } from "../forwarder-generator-strategy";
 import { Forwarders } from "../options/constants";
 import { ApiOptions } from "../options/forwarder-options";
+
+export const DefaultDuckDuckGoOptions: ApiOptions = Object.freeze({
+  website: null,
+  token: "",
+});
 
 /** Generates a forwarding address for DuckDuckGo */
 export class DuckDuckGoForwarder extends ForwarderGeneratorStrategy<ApiOptions> {
@@ -31,6 +39,11 @@ export class DuckDuckGoForwarder extends ForwarderGeneratorStrategy<ApiOptions> 
   get key() {
     return DUCK_DUCK_GO_FORWARDER;
   }
+
+  /** {@link ForwarderGeneratorStrategy.defaults$} */
+  defaults$ = (userId: UserId) => {
+    return new BehaviorSubject({ ...DefaultDuckDuckGoOptions });
+  };
 
   /** {@link ForwarderGeneratorStrategy.generate} */
   generate = async (options: ApiOptions): Promise<string> => {
@@ -68,3 +81,8 @@ export class DuckDuckGoForwarder extends ForwarderGeneratorStrategy<ApiOptions> 
     }
   };
 }
+
+export const DefaultOptions = Object.freeze({
+  website: null,
+  token: "",
+});

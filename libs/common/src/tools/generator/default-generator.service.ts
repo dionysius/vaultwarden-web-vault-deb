@@ -21,9 +21,14 @@ export class DefaultGeneratorService<Options, Policy> implements GeneratorServic
 
   private _evaluators$ = new Map<UserId, Observable<PolicyEvaluator<Policy, Options>>>();
 
-  /** {@link GeneratorService.options$()} */
+  /** {@link GeneratorService.options$} */
   options$(userId: UserId) {
     return this.strategy.durableState(userId).state$;
+  }
+
+  /** {@link GeneratorService.defaults$} */
+  defaults$(userId: UserId) {
+    return this.strategy.defaults$(userId);
   }
 
   /** {@link GeneratorService.saveOptions} */
@@ -31,7 +36,7 @@ export class DefaultGeneratorService<Options, Policy> implements GeneratorServic
     await this.strategy.durableState(userId).update(() => options);
   }
 
-  /** {@link GeneratorService.evaluator$()} */
+  /** {@link GeneratorService.evaluator$} */
   evaluator$(userId: UserId) {
     let evaluator$ = this._evaluators$.get(userId);
 
@@ -59,7 +64,7 @@ export class DefaultGeneratorService<Options, Policy> implements GeneratorServic
     return evaluator$;
   }
 
-  /** {@link GeneratorService.enforcePolicy()} */
+  /** {@link GeneratorService.enforcePolicy} */
   async enforcePolicy(userId: UserId, options: Options): Promise<Options> {
     const policy = await firstValueFrom(this.evaluator$(userId));
     const evaluated = policy.applyPolicy(options);
