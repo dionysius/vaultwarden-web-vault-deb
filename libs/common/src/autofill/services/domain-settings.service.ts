@@ -29,11 +29,12 @@ const EQUIVALENT_DOMAINS = new UserKeyDefinition(DOMAIN_SETTINGS_DISK, "equivale
   clearOn: ["logout"],
 });
 
-const DEFAULT_URI_MATCH_STRATEGY = new KeyDefinition(
+const DEFAULT_URI_MATCH_STRATEGY = new UserKeyDefinition(
   DOMAIN_SETTINGS_DISK,
   "defaultUriMatchStrategy",
   {
     deserializer: (value: UriMatchStrategySetting) => value ?? UriMatchStrategy.Domain,
+    clearOn: [],
   },
 );
 

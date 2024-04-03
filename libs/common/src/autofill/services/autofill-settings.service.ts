@@ -9,40 +9,46 @@ import {
   GlobalState,
   KeyDefinition,
   StateProvider,
+  UserKeyDefinition,
 } from "../../platform/state";
 import { ClearClipboardDelay, AutofillOverlayVisibility } from "../constants";
 import { ClearClipboardDelaySetting, InlineMenuVisibilitySetting } from "../types";
 
-const AUTOFILL_ON_PAGE_LOAD = new KeyDefinition(AUTOFILL_SETTINGS_DISK, "autofillOnPageLoad", {
+const AUTOFILL_ON_PAGE_LOAD = new UserKeyDefinition(AUTOFILL_SETTINGS_DISK, "autofillOnPageLoad", {
   deserializer: (value: boolean) => value ?? false,
+  clearOn: [],
 });
 
-const AUTOFILL_ON_PAGE_LOAD_DEFAULT = new KeyDefinition(
+const AUTOFILL_ON_PAGE_LOAD_DEFAULT = new UserKeyDefinition(
   AUTOFILL_SETTINGS_DISK,
   "autofillOnPageLoadDefault",
   {
     deserializer: (value: boolean) => value ?? false,
+    clearOn: [],
   },
 );
 
-const AUTOFILL_ON_PAGE_LOAD_CALLOUT_DISMISSED = new KeyDefinition(
+const AUTOFILL_ON_PAGE_LOAD_CALLOUT_DISMISSED = new UserKeyDefinition(
   AUTOFILL_SETTINGS_DISK,
   "autofillOnPageLoadCalloutIsDismissed",
   {
     deserializer: (value: boolean) => value ?? false,
+    clearOn: [],
   },
 );
 
-const AUTOFILL_ON_PAGE_LOAD_POLICY_TOAST_HAS_DISPLAYED = new KeyDefinition(
+const AUTOFILL_ON_PAGE_LOAD_POLICY_TOAST_HAS_DISPLAYED = new UserKeyDefinition(
   AUTOFILL_SETTINGS_DISK,
   "autofillOnPageLoadPolicyToastHasDisplayed",
   {
     deserializer: (value: boolean) => value ?? false,
+    clearOn: [],
   },
 );
 
-const AUTO_COPY_TOTP = new KeyDefinition(AUTOFILL_SETTINGS_DISK, "autoCopyTotp", {
+const AUTO_COPY_TOTP = new UserKeyDefinition(AUTOFILL_SETTINGS_DISK, "autoCopyTotp", {
   deserializer: (value: boolean) => value ?? true,
+  clearOn: [],
 });
 
 const INLINE_MENU_VISIBILITY = new KeyDefinition(
@@ -57,11 +63,12 @@ const ENABLE_CONTEXT_MENU = new KeyDefinition(AUTOFILL_SETTINGS_DISK, "enableCon
   deserializer: (value: boolean) => value ?? true,
 });
 
-const CLEAR_CLIPBOARD_DELAY = new KeyDefinition(
+const CLEAR_CLIPBOARD_DELAY = new UserKeyDefinition(
   AUTOFILL_SETTINGS_DISK_LOCAL,
   "clearClipboardDelay",
   {
     deserializer: (value: ClearClipboardDelaySetting) => value ?? ClearClipboardDelay.Never,
+    clearOn: [],
   },
 );
 
