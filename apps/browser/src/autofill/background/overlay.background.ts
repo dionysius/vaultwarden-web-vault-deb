@@ -604,9 +604,7 @@ class OverlayBackground implements OverlayBackgroundInterface {
    * @param sender - The sender of the port message
    */
   private getNewVaultItemDetails({ sender }: chrome.runtime.Port) {
-    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    BrowserApi.tabSendMessage(sender.tab, { command: "addNewVaultItemFromOverlay" });
+    void BrowserApi.tabSendMessage(sender.tab, { command: "addNewVaultItemFromOverlay" });
   }
 
   /**
@@ -643,8 +641,8 @@ class OverlayBackground implements OverlayBackgroundInterface {
       collectionIds: cipherView.collectionIds,
     });
 
-    await BrowserApi.sendMessage("inlineAutofillMenuRefreshAddEditCipher");
     await this.openAddEditVaultItemPopout(sender.tab, { cipherId: cipherView.id });
+    await BrowserApi.sendMessage("inlineAutofillMenuRefreshAddEditCipher");
   }
 
   /**
