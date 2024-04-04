@@ -16,6 +16,7 @@ import { IconModule, LayoutComponent, NavigationModule } from "@bitwarden/compon
 import { PaymentMethodWarningsModule } from "../billing/shared";
 
 import { PasswordManagerLogo } from "./password-manager-logo";
+import { ToggleWidthComponent } from "./toggle-width.component";
 
 @Component({
   selector: "app-user-layout",
@@ -29,6 +30,7 @@ import { PasswordManagerLogo } from "./password-manager-logo";
     IconModule,
     NavigationModule,
     PaymentMethodWarningsModule,
+    ToggleWidthComponent,
   ],
 })
 export class UserLayoutComponent implements OnInit {
