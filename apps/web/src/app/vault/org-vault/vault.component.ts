@@ -213,7 +213,7 @@ export class VaultComponent implements OnInit, OnDestroy {
       switchMap(async ([organization]) => {
         this.organization = organization;
 
-        if (!organization.canUseAdminCollections) {
+        if (!organization.canUseAdminCollections(this.flexibleCollectionsV1Enabled)) {
           await this.syncService.fullSync(false);
         }
 
@@ -322,7 +322,7 @@ export class VaultComponent implements OnInit, OnDestroy {
           }
         } else {
           // Pre-flexible collections logic, to be removed after flexible collections is fully released
-          if (organization.canEditAnyCollection) {
+          if (organization.canEditAllCiphers(this.flexibleCollectionsV1Enabled)) {
             ciphers = await this.cipherService.getAllFromApiForOrganization(organization.id);
           } else {
             ciphers = (await this.cipherService.getAllDecrypted()).filter(
@@ -407,7 +407,8 @@ export class VaultComponent implements OnInit, OnDestroy {
     ]).pipe(
       map(([filter, collection, organization]) => {
         return (
-          (filter.collectionId === Unassigned && !organization.canUseAdminCollections) ||
+          (filter.collectionId === Unassigned &&
+            !organization.canUseAdminCollections(this.flexibleCollectionsV1Enabled)) ||
           (!organization.canEditAllCiphers(this.flexibleCollectionsV1Enabled) &&
             collection != undefined &&
             !collection.node.assigned)
@@ -453,11 +454,12 @@ export class VaultComponent implements OnInit, OnDestroy {
       map(([filter, collection, organization]) => {
         return (
           // Filtering by unassigned, show message if not admin
-          (filter.collectionId === Unassigned && !organization.canUseAdminCollections) ||
+          (filter.collectionId === Unassigned &&
+            !organization.canUseAdminCollections(this.flexibleCollectionsV1Enabled)) ||
           // Filtering by a collection, so show message if user is not assigned
           (collection != undefined &&
             !collection.node.assigned &&
-            !organization.canUseAdminCollections)
+            !organization.canUseAdminCollections(this.flexibleCollectionsV1Enabled))
         );
       }),
       shareReplay({ refCount: true, bufferSize: 1 }),
@@ -480,7 +482,7 @@ export class VaultComponent implements OnInit, OnDestroy {
               (await firstValueFrom(allCipherMap$))[cipherId] != undefined;
           } else {
             canEditCipher =
-              organization.canUseAdminCollections ||
+              organization.canUseAdminCollections(this.flexibleCollectionsV1Enabled) ||
               (await this.cipherService.get(cipherId)) != null;
           }
 
@@ -856,7 +858,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     try {
-      const asAdmin = this.organization?.canEditAnyCollection;
+      const asAdmin = this.organization?.canEditAnyCollection(this.flexibleCollectionsV1Enabled);
       await this.cipherService.restoreWithServer(c.id, asAdmin);
       this.platformUtilsService.showToast("success", null, this.i18nService.t("restoredItem"));
       this.refresh();
@@ -1143,7 +1145,7 @@ export class VaultComponent implements OnInit, OnDestroy {
   }
 
   protected deleteCipherWithServer(id: string, permanent: boolean) {
-    const asAdmin = this.organization?.canEditAnyCollection;
+    const asAdmin = this.organization?.canEditAllCiphers(this.flexibleCollectionsV1Enabled);
     return permanent
       ? this.cipherService.deleteWithServer(id, asAdmin)
       : this.cipherService.softDeleteWithServer(id, asAdmin);

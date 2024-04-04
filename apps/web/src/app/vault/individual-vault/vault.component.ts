@@ -39,6 +39,7 @@ import { TokenService } from "@bitwarden/common/auth/abstractions/token.service"
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions/account/billing-account-profile-state.service";
 import { EventType } from "@bitwarden/common/enums";
+import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { BroadcasterService } from "@bitwarden/common/platform/abstractions/broadcaster.service";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -144,6 +145,10 @@ export class VaultComponent implements OnInit, OnDestroy {
   protected selectedCollection: TreeNode<CollectionView> | undefined;
   protected canCreateCollections = false;
   protected currentSearchText$: Observable<string>;
+  protected flexibleCollectionsV1Enabled$ = this.configService.getFeatureFlag$(
+    FeatureFlag.FlexibleCollectionsV1,
+    false,
+  );
 
   private searchText$ = new Subject<string>();
   private refresh$ = new BehaviorSubject<void>(null);
