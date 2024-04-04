@@ -6,7 +6,6 @@ import { TwoFactorService } from "@bitwarden/common/auth/abstractions/two-factor
 import { AuthResult } from "@bitwarden/common/auth/models/domain/auth-result";
 import { IdentityTokenResponse } from "@bitwarden/common/auth/models/response/identity-token.response";
 import { IUserDecryptionOptionsServerResponse } from "@bitwarden/common/auth/models/response/user-decryption-options/user-decryption-options.response";
-import { FakeMasterPasswordService } from "@bitwarden/common/auth/services/master-password/fake-master-password.service";
 import { WebAuthnLoginAssertionResponseRequest } from "@bitwarden/common/auth/services/webauthn-login/request/webauthn-login-assertion-response.request";
 import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions/account/billing-account-profile-state.service";
 import { AppIdService } from "@bitwarden/common/platform/abstractions/app-id.service";
@@ -17,7 +16,6 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
-import { FakeAccountService } from "@bitwarden/common/spec";
 import { PrfKey, UserKey } from "@bitwarden/common/types/key";
 
 import { InternalUserDecryptionOptionsServiceAbstraction } from "../abstractions/user-decryption-options.service.abstraction";
@@ -28,8 +26,6 @@ import { WebAuthnLoginStrategy, WebAuthnLoginStrategyData } from "./webauthn-log
 
 describe("WebAuthnLoginStrategy", () => {
   let cache: WebAuthnLoginStrategyData;
-  let accountService: FakeAccountService;
-  let masterPasswordService: FakeMasterPasswordService;
 
   let cryptoService!: MockProxy<CryptoService>;
   let apiService!: MockProxy<ApiService>;
@@ -67,9 +63,6 @@ describe("WebAuthnLoginStrategy", () => {
   beforeEach(() => {
     jest.clearAllMocks();
 
-    accountService = new FakeAccountService(null);
-    masterPasswordService = new FakeMasterPasswordService();
-
     cryptoService = mock<CryptoService>();
     apiService = mock<ApiService>();
     tokenService = mock<TokenService>();
@@ -88,8 +81,6 @@ describe("WebAuthnLoginStrategy", () => {
 
     webAuthnLoginStrategy = new WebAuthnLoginStrategy(
       cache,
-      accountService,
-      masterPasswordService,
       cryptoService,
       apiService,
       tokenService,
@@ -216,7 +207,7 @@ describe("WebAuthnLoginStrategy", () => {
     expect(cryptoService.setPrivateKey).toHaveBeenCalledWith(idTokenResponse.privateKey);
 
     // Master key and private key should not be set
-    expect(masterPasswordService.mock.setMasterKey).not.toHaveBeenCalled();
+    expect(cryptoService.setMasterKey).not.toHaveBeenCalled();
   });
 
   it("does not try to set the user key when prfKey is missing", async () => {

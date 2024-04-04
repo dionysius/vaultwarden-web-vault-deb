@@ -1,12 +1,9 @@
 import { Directive } from "@angular/core";
 import { Router } from "@angular/router";
-import { firstValueFrom } from "rxjs";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { MasterPasswordPolicyOptions } from "@bitwarden/common/admin-console/models/domain/master-password-policy-options";
-import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
-import { InternalMasterPasswordServiceAbstraction } from "@bitwarden/common/auth/abstractions/master-password.service.abstraction";
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { VerificationType } from "@bitwarden/common/auth/enums/verification-type";
 import { ForceSetPasswordReason } from "@bitwarden/common/auth/models/domain/force-set-password-reason";
@@ -59,8 +56,6 @@ export class UpdateTempPasswordComponent extends BaseChangePasswordComponent {
     private userVerificationService: UserVerificationService,
     protected router: Router,
     dialogService: DialogService,
-    private accountService: AccountService,
-    private masterPasswordService: InternalMasterPasswordServiceAbstraction,
   ) {
     super(
       i18nService,
@@ -77,8 +72,7 @@ export class UpdateTempPasswordComponent extends BaseChangePasswordComponent {
   async ngOnInit() {
     await this.syncService.fullSync(true);
 
-    const userId = (await firstValueFrom(this.accountService.activeAccount$))?.id;
-    this.reason = await firstValueFrom(this.masterPasswordService.forceSetPasswordReason$(userId));
+    this.reason = await this.stateService.getForceSetPasswordReason();
 
     // If we somehow end up here without a reason, go back to the home page
     if (this.reason == ForceSetPasswordReason.None) {
@@ -169,11 +163,7 @@ export class UpdateTempPasswordComponent extends BaseChangePasswordComponent {
         this.i18nService.t("updatedMasterPassword"),
       );
 
-      const userId = (await firstValueFrom(this.accountService.activeAccount$))?.id;
-      await this.masterPasswordService.setForceSetPasswordReason(
-        ForceSetPasswordReason.None,
-        userId,
-      );
+      await this.stateService.setForceSetPasswordReason(ForceSetPasswordReason.None);
 
       if (this.onSuccessfulChangePassword != null) {
         // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.

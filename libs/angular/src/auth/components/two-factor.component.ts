@@ -14,8 +14,6 @@ import {
   UserDecryptionOptionsServiceAbstraction,
 } from "@bitwarden/auth/common";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
-import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
-import { InternalMasterPasswordServiceAbstraction } from "@bitwarden/common/auth/abstractions/master-password.service.abstraction";
 import { SsoLoginServiceAbstraction } from "@bitwarden/common/auth/abstractions/sso-login.service.abstraction";
 import { TwoFactorService } from "@bitwarden/common/auth/abstractions/two-factor.service";
 import { AuthenticationType } from "@bitwarden/common/auth/enums/authentication-type";
@@ -94,8 +92,6 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
     protected userDecryptionOptionsService: UserDecryptionOptionsServiceAbstraction,
     protected ssoLoginService: SsoLoginServiceAbstraction,
     protected configService: ConfigService,
-    protected masterPasswordService: InternalMasterPasswordServiceAbstraction,
-    protected accountService: AccountService,
   ) {
     super(environmentService, i18nService, platformUtilsService);
     this.webAuthnSupported = this.platformUtilsService.supportsWebAuthn(win);
@@ -346,10 +342,8 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
       // Set flag so that auth guard can redirect to set password screen after decryption (trusted or untrusted device)
       // Note: we cannot directly navigate to the set password screen in this scenario as we are in a pre-decryption state, and
       // if you try to set a new MP before decrypting, you will invalidate the user's data by making a new user key.
-      const userId = (await firstValueFrom(this.accountService.activeAccount$))?.id;
-      await this.masterPasswordService.setForceSetPasswordReason(
+      await this.stateService.setForceSetPasswordReason(
         ForceSetPasswordReason.TdeUserWithoutPasswordHasPasswordResetPermission,
-        userId,
       );
     }
 

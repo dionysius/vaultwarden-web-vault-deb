@@ -1,6 +1,7 @@
 import { Jsonify } from "type-fest";
 
 import { AdminAuthRequestStorable } from "../../../auth/models/domain/admin-auth-req-storable";
+import { ForceSetPasswordReason } from "../../../auth/models/domain/force-set-password-reason";
 import { UriMatchStrategySetting } from "../../../models/domain/domain-service";
 import { GeneratorOptions } from "../../../tools/generator/generator-options";
 import {
@@ -9,6 +10,7 @@ import {
 } from "../../../tools/generator/password";
 import { UsernameGeneratorOptions } from "../../../tools/generator/username/username-generation-options";
 import { DeepJsonify } from "../../../types/deep-jsonify";
+import { MasterKey } from "../../../types/key";
 import { CipherData } from "../../../vault/models/data/cipher.data";
 import { CipherView } from "../../../vault/models/view/cipher.view";
 import { AddEditCipherInfo } from "../../../vault/types/add-edit-cipher-info";
@@ -88,8 +90,12 @@ export class AccountData {
 }
 
 export class AccountKeys {
+  masterKey?: MasterKey;
+  masterKeyEncryptedUserKey?: string;
   publicKey?: Uint8Array;
 
+  /** @deprecated July 2023, left for migration purposes*/
+  cryptoMasterKey?: SymmetricCryptoKey;
   /** @deprecated July 2023, left for migration purposes*/
   cryptoMasterKeyAuto?: string;
   /** @deprecated July 2023, left for migration purposes*/
@@ -114,6 +120,8 @@ export class AccountKeys {
       return null;
     }
     return Object.assign(new AccountKeys(), obj, {
+      masterKey: SymmetricCryptoKey.fromJSON(obj?.masterKey),
+      cryptoMasterKey: SymmetricCryptoKey.fromJSON(obj?.cryptoMasterKey),
       cryptoSymmetricKey: EncryptionPair.fromJSON(
         obj?.cryptoSymmetricKey,
         SymmetricCryptoKey.fromJSON,
@@ -142,8 +150,10 @@ export class AccountProfile {
   email?: string;
   emailVerified?: boolean;
   everBeenUnlocked?: boolean;
+  forceSetPasswordReason?: ForceSetPasswordReason;
   lastSync?: string;
   userId?: string;
+  keyHash?: string;
   kdfIterations?: number;
   kdfMemory?: number;
   kdfParallelism?: number;

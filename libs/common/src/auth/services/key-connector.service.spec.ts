@@ -21,7 +21,6 @@ import {
   CONVERT_ACCOUNT_TO_KEY_CONNECTOR,
   KeyConnectorService,
 } from "./key-connector.service";
-import { FakeMasterPasswordService } from "./master-password/fake-master-password.service";
 import { TokenService } from "./token.service";
 
 describe("KeyConnectorService", () => {
@@ -37,7 +36,6 @@ describe("KeyConnectorService", () => {
   let stateProvider: FakeStateProvider;
 
   let accountService: FakeAccountService;
-  let masterPasswordService: FakeMasterPasswordService;
 
   const mockUserId = Utils.newGuid() as UserId;
   const mockOrgId = Utils.newGuid() as OrganizationId;
@@ -49,13 +47,10 @@ describe("KeyConnectorService", () => {
   beforeEach(() => {
     jest.clearAllMocks();
 
-    masterPasswordService = new FakeMasterPasswordService();
     accountService = mockAccountServiceWith(mockUserId);
     stateProvider = new FakeStateProvider(accountService);
 
     keyConnectorService = new KeyConnectorService(
-      accountService,
-      masterPasswordService,
       cryptoService,
       apiService,
       tokenService,
@@ -219,10 +214,7 @@ describe("KeyConnectorService", () => {
 
       // Assert
       expect(apiService.getMasterKeyFromKeyConnector).toHaveBeenCalledWith(url);
-      expect(masterPasswordService.mock.setMasterKey).toHaveBeenCalledWith(
-        masterKey,
-        expect.any(String),
-      );
+      expect(cryptoService.setMasterKey).toHaveBeenCalledWith(masterKey);
     });
 
     it("should handle errors thrown during the process", async () => {
@@ -249,10 +241,10 @@ describe("KeyConnectorService", () => {
       // Arrange
       const organization = organizationData(true, true, "https://key-connector-url.com", 2, false);
       const masterKey = getMockMasterKey();
-      masterPasswordService.masterKeySubject.next(masterKey);
       const keyConnectorRequest = new KeyConnectorUserKeyRequest(masterKey.encKeyB64);
 
       jest.spyOn(keyConnectorService, "getManagingOrganization").mockResolvedValue(organization);
+      jest.spyOn(cryptoService, "getMasterKey").mockResolvedValue(masterKey);
       jest.spyOn(apiService, "postUserKeyToKeyConnector").mockResolvedValue();
 
       // Act
@@ -260,6 +252,7 @@ describe("KeyConnectorService", () => {
 
       // Assert
       expect(keyConnectorService.getManagingOrganization).toHaveBeenCalled();
+      expect(cryptoService.getMasterKey).toHaveBeenCalled();
       expect(apiService.postUserKeyToKeyConnector).toHaveBeenCalledWith(
         organization.keyConnectorUrl,
         keyConnectorRequest,
@@ -275,8 +268,8 @@ describe("KeyConnectorService", () => {
       const error = new Error("Failed to post user key to key connector");
       organizationService.getAll.mockResolvedValue([organization]);
 
-      masterPasswordService.masterKeySubject.next(masterKey);
       jest.spyOn(keyConnectorService, "getManagingOrganization").mockResolvedValue(organization);
+      jest.spyOn(cryptoService, "getMasterKey").mockResolvedValue(masterKey);
       jest.spyOn(apiService, "postUserKeyToKeyConnector").mockRejectedValue(error);
       jest.spyOn(logService, "error");
 
@@ -287,6 +280,7 @@ describe("KeyConnectorService", () => {
         // Assert
         expect(logService.error).toHaveBeenCalledWith(error);
         expect(keyConnectorService.getManagingOrganization).toHaveBeenCalled();
+        expect(cryptoService.getMasterKey).toHaveBeenCalled();
         expect(apiService.postUserKeyToKeyConnector).toHaveBeenCalledWith(
           organization.keyConnectorUrl,
           keyConnectorRequest,

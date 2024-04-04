@@ -1,11 +1,9 @@
-import { firstValueFrom, Observable, map, BehaviorSubject } from "rxjs";
+import { Observable, map, BehaviorSubject } from "rxjs";
 import { Jsonify } from "type-fest";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
-import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { DeviceTrustCryptoServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust-crypto.service.abstraction";
 import { KeyConnectorService } from "@bitwarden/common/auth/abstractions/key-connector.service";
-import { InternalMasterPasswordServiceAbstraction } from "@bitwarden/common/auth/abstractions/master-password.service.abstraction";
 import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
 import { TwoFactorService } from "@bitwarden/common/auth/abstractions/two-factor.service";
 import { ForceSetPasswordReason } from "@bitwarden/common/auth/models/domain/force-set-password-reason";
@@ -81,8 +79,6 @@ export class SsoLoginStrategy extends LoginStrategy {
 
   constructor(
     data: SsoLoginStrategyData,
-    accountService: AccountService,
-    masterPasswordService: InternalMasterPasswordServiceAbstraction,
     cryptoService: CryptoService,
     apiService: ApiService,
     tokenService: TokenService,
@@ -100,8 +96,6 @@ export class SsoLoginStrategy extends LoginStrategy {
     billingAccountProfileStateService: BillingAccountProfileStateService,
   ) {
     super(
-      accountService,
-      masterPasswordService,
       cryptoService,
       apiService,
       tokenService,
@@ -144,11 +138,7 @@ export class SsoLoginStrategy extends LoginStrategy {
 
     // Auth guard currently handles redirects for this.
     if (ssoAuthResult.forcePasswordReset == ForceSetPasswordReason.AdminForcePasswordReset) {
-      const userId = (await firstValueFrom(this.accountService.activeAccount$))?.id;
-      await this.masterPasswordService.setForceSetPasswordReason(
-        ssoAuthResult.forcePasswordReset,
-        userId,
-      );
+      await this.stateService.setForceSetPasswordReason(ssoAuthResult.forcePasswordReset);
     }
 
     this.cache.next({
@@ -333,8 +323,7 @@ export class SsoLoginStrategy extends LoginStrategy {
   }
 
   private async trySetUserKeyWithMasterKey(): Promise<void> {
-    const userId = (await firstValueFrom(this.accountService.activeAccount$))?.id;
-    const masterKey = await firstValueFrom(this.masterPasswordService.masterKey$(userId));
+    const masterKey = await this.cryptoService.getMasterKey();
 
     // There is a scenario in which the master key is not set here. That will occur if the user
     // has a master password and is using Key Connector. In that case, we cannot set the master key

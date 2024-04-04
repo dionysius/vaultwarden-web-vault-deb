@@ -5,10 +5,6 @@ import {
   accountServiceFactory,
 } from "../../../auth/background/service-factories/account-service.factory";
 import {
-  internalMasterPasswordServiceFactory,
-  MasterPasswordServiceInitOptions,
-} from "../../../auth/background/service-factories/master-password-service.factory";
-import {
   StateServiceInitOptions,
   stateServiceFactory,
 } from "../../../platform/background/service-factories/state-service.factory";
@@ -38,7 +34,6 @@ import { StateProviderInitOptions, stateProviderFactory } from "./state-provider
 type CryptoServiceFactoryOptions = FactoryOptions;
 
 export type CryptoServiceInitOptions = CryptoServiceFactoryOptions &
-  MasterPasswordServiceInitOptions &
   KeyGenerationServiceInitOptions &
   CryptoFunctionServiceInitOptions &
   EncryptServiceInitOptions &
@@ -58,7 +53,6 @@ export function cryptoServiceFactory(
     opts,
     async () =>
       new BrowserCryptoService(
-        await internalMasterPasswordServiceFactory(cache, opts),
         await keyGenerationServiceFactory(cache, opts),
         await cryptoFunctionServiceFactory(cache, opts),
         await encryptServiceFactory(cache, opts),

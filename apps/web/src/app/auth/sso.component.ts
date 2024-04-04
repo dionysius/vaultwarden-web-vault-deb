@@ -10,8 +10,6 @@ import {
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { OrgDomainApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization-domain/org-domain-api.service.abstraction";
 import { OrganizationDomainSsoDetailsResponse } from "@bitwarden/common/admin-console/abstractions/organization-domain/responses/organization-domain-sso-details.response";
-import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
-import { InternalMasterPasswordServiceAbstraction } from "@bitwarden/common/auth/abstractions/master-password.service.abstraction";
 import { SsoLoginServiceAbstraction } from "@bitwarden/common/auth/abstractions/sso-login.service.abstraction";
 import { HttpStatusCode } from "@bitwarden/common/enums";
 import { ErrorResponse } from "@bitwarden/common/models/response/error.response";
@@ -48,8 +46,6 @@ export class SsoComponent extends BaseSsoComponent {
     private validationService: ValidationService,
     userDecryptionOptionsService: UserDecryptionOptionsServiceAbstraction,
     configService: ConfigService,
-    masterPasswordService: InternalMasterPasswordServiceAbstraction,
-    accountService: AccountService,
   ) {
     super(
       ssoLoginService,
@@ -66,8 +62,6 @@ export class SsoComponent extends BaseSsoComponent {
       logService,
       userDecryptionOptionsService,
       configService,
-      masterPasswordService,
-      accountService,
     );
     this.redirectUri = window.location.origin + "/sso-connector.html";
     this.clientId = "web";

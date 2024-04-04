@@ -1,7 +1,6 @@
 import { firstValueFrom } from "rxjs";
 
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
-import { InternalMasterPasswordServiceAbstraction } from "@bitwarden/common/auth/abstractions/master-password.service.abstraction";
 import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/crypto-function.service";
 import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { KeyGenerationService } from "@bitwarden/common/platform/abstractions/key-generation.service";
@@ -21,7 +20,6 @@ import { UserKey, MasterKey } from "@bitwarden/common/types/key";
 
 export class ElectronCryptoService extends CryptoService {
   constructor(
-    masterPasswordService: InternalMasterPasswordServiceAbstraction,
     keyGenerationService: KeyGenerationService,
     cryptoFunctionService: CryptoFunctionService,
     encryptService: EncryptService,
@@ -33,7 +31,6 @@ export class ElectronCryptoService extends CryptoService {
     private biometricStateService: BiometricStateService,
   ) {
     super(
-      masterPasswordService,
       keyGenerationService,
       cryptoFunctionService,
       encryptService,
@@ -162,16 +159,12 @@ export class ElectronCryptoService extends CryptoService {
       const oldBiometricKey = await this.stateService.getCryptoMasterKeyBiometric({ userId });
       // decrypt
       const masterKey = new SymmetricCryptoKey(Utils.fromB64ToArray(oldBiometricKey)) as MasterKey;
-      userId ??= (await firstValueFrom(this.accountService.activeAccount$))?.id;
-      const encUserKeyPrim = await this.stateService.getEncryptedCryptoSymmetricKey();
-      const encUserKey =
-        encUserKeyPrim != null
-          ? new EncString(encUserKeyPrim)
-          : await this.masterPasswordService.getMasterKeyEncryptedUserKey(userId);
+      let encUserKey = await this.stateService.getEncryptedCryptoSymmetricKey();
+      encUserKey = encUserKey ?? (await this.stateService.getMasterKeyEncryptedUserKey());
       if (!encUserKey) {
         throw new Error("No user key found during biometric migration");
       }
-      const userKey = await this.decryptUserKeyWithMasterKey(masterKey, encUserKey);
+      const userKey = await this.decryptUserKeyWithMasterKey(masterKey, new EncString(encUserKey));
       // migrate
       await this.storeBiometricKey(userKey, userId);
       await this.stateService.setCryptoMasterKeyBiometric(null, { userId });

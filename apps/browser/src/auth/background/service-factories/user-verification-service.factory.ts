@@ -31,11 +31,6 @@ import {
   stateServiceFactory,
 } from "../../../platform/background/service-factories/state-service.factory";
 
-import { accountServiceFactory, AccountServiceInitOptions } from "./account-service.factory";
-import {
-  internalMasterPasswordServiceFactory,
-  MasterPasswordServiceInitOptions,
-} from "./master-password-service.factory";
 import { PinCryptoServiceInitOptions, pinCryptoServiceFactory } from "./pin-crypto-service.factory";
 import {
   userDecryptionOptionsServiceFactory,
@@ -51,8 +46,6 @@ type UserVerificationServiceFactoryOptions = FactoryOptions;
 export type UserVerificationServiceInitOptions = UserVerificationServiceFactoryOptions &
   StateServiceInitOptions &
   CryptoServiceInitOptions &
-  AccountServiceInitOptions &
-  MasterPasswordServiceInitOptions &
   I18nServiceInitOptions &
   UserVerificationApiServiceInitOptions &
   UserDecryptionOptionsServiceInitOptions &
@@ -73,8 +66,6 @@ export function userVerificationServiceFactory(
       new UserVerificationService(
         await stateServiceFactory(cache, opts),
         await cryptoServiceFactory(cache, opts),
-        await accountServiceFactory(cache, opts),
-        await internalMasterPasswordServiceFactory(cache, opts),
         await i18nServiceFactory(cache, opts),
         await userVerificationApiServiceFactory(cache, opts),
         await userDecryptionOptionsServiceFactory(cache, opts),
