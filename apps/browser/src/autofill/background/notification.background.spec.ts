@@ -6,6 +6,7 @@ import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authenticatio
 import { AuthService } from "@bitwarden/common/auth/services/auth.service";
 import { DomainSettingsService } from "@bitwarden/common/autofill/services/domain-settings.service";
 import { UserNotificationSettingsService } from "@bitwarden/common/autofill/services/user-notification-settings.service";
+import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { SelfHostedEnvironment } from "@bitwarden/common/platform/services/default-environment.service";
@@ -54,6 +55,7 @@ describe("NotificationBackground", () => {
   const environmentService = mock<EnvironmentService>();
   const logService = mock<LogService>();
   const themeStateService = mock<ThemeStateService>();
+  const configService = mock<ConfigService>();
 
   beforeEach(() => {
     notificationBackground = new NotificationBackground(
@@ -68,6 +70,7 @@ describe("NotificationBackground", () => {
       environmentService,
       logService,
       themeStateService,
+      configService,
     );
   });
 

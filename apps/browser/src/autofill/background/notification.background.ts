@@ -8,6 +8,8 @@ import { NOTIFICATION_BAR_LIFESPAN_MS } from "@bitwarden/common/autofill/constan
 import { DomainSettingsService } from "@bitwarden/common/autofill/services/domain-settings.service";
 import { UserNotificationSettingsServiceAbstraction } from "@bitwarden/common/autofill/services/user-notification-settings.service";
 import { NeverDomains } from "@bitwarden/common/models/domain/domain-service";
+import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
+import { ServerConfig } from "@bitwarden/common/platform/abstractions/config/server-config";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
@@ -64,6 +66,7 @@ export default class NotificationBackground {
     bgGetEnableChangedPasswordPrompt: () => this.getEnableChangedPasswordPrompt(),
     bgGetEnableAddedLoginPrompt: () => this.getEnableAddedLoginPrompt(),
     bgGetExcludedDomains: () => this.getExcludedDomains(),
+    bgGetActiveUserServerConfig: () => this.getActiveUserServerConfig(),
     getWebVaultUrlForNotification: () => this.getWebVaultUrl(),
   };
 
@@ -79,6 +82,7 @@ export default class NotificationBackground {
     private environmentService: EnvironmentService,
     private logService: LogService,
     private themeStateService: ThemeStateService,
+    private configService: ConfigService,
   ) {}
 
   async init() {
@@ -110,6 +114,13 @@ export default class NotificationBackground {
    */
   async getExcludedDomains(): Promise<NeverDomains> {
     return await firstValueFrom(this.domainSettingsService.neverDomains$);
+  }
+
+  /**
+   * Gets the active user server config from the config service.
+   */
+  async getActiveUserServerConfig(): Promise<ServerConfig> {
+    return await firstValueFrom(this.configService.serverConfig$);
   }
 
   /**

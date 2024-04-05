@@ -908,6 +908,7 @@ export default class MainBackground {
       this.environmentService,
       this.logService,
       themeStateService,
+      this.configService,
     );
     this.overlayBackground = new OverlayBackground(
       this.cipherService,

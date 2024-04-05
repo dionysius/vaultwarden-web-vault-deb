@@ -1,3 +1,4 @@
+import { ServerConfig } from "../../../../../libs/common/src/platform/abstractions/config/server-config";
 import {
   AddLoginMessageData,
   ChangePasswordMessageData,
@@ -6,12 +7,7 @@ import AutofillField from "../models/autofill-field";
 import { WatchedForm } from "../models/watched-form";
 import { NotificationBarIframeInitData } from "../notification/abstractions/notification-bar";
 import { FormData } from "../services/abstractions/autofill.service";
-import { UserSettings } from "../types";
-import {
-  getFromLocalStorage,
-  sendExtensionMessage,
-  setupExtensionDisconnectAction,
-} from "../utils";
+import { sendExtensionMessage, setupExtensionDisconnectAction } from "../utils";
 
 interface HTMLElementWithFormOpId extends HTMLElement {
   formOpId: string;
@@ -95,25 +91,17 @@ async function loadNotificationBar() {
   );
   const enableAddedLoginPrompt = await sendExtensionMessage("bgGetEnableAddedLoginPrompt");
   const excludedDomains = await sendExtensionMessage("bgGetExcludedDomains");
+  const activeUserServerConfig: ServerConfig = await sendExtensionMessage(
+    "bgGetActiveUserServerConfig",
+  );
+  const activeUserVault = activeUserServerConfig?.environment?.vault;
 
   let showNotificationBar = true;
-  // Look up the active user id from storage
-  const activeUserIdKey = "activeUserId";
-  let activeUserId: string;
 
-  const activeUserStorageValue = await getFromLocalStorage(activeUserIdKey);
-  if (activeUserStorageValue[activeUserIdKey]) {
-    activeUserId = activeUserStorageValue[activeUserIdKey];
-  }
-
-  // Look up the user's settings from storage
-  const userSettingsStorageValue = await getFromLocalStorage(activeUserId);
-  if (userSettingsStorageValue[activeUserId]) {
-    const userSettings: UserSettings = userSettingsStorageValue[activeUserId].settings;
-
+  if (activeUserVault) {
     // Do not show the notification bar on the Bitwarden vault
     // because they can add logins and change passwords there
-    if (window.location.origin === userSettings.serverConfig.environment.vault) {
+    if (window.location.origin === activeUserVault) {
       showNotificationBar = false;
     } else {
       // NeverDomains is a dictionary of domains that the user has chosen to never
