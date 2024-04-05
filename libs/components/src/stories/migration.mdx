@@ -49,14 +49,14 @@ Only use Tailwind for styling. No Bootstrap or other custom CSS is allowed.
 This is easy to verify. Bitwarden prefixes all Tailwind classes with `tw-`. If you see a class
 without this prefix, it probably shouldn't be there.
 
-<div class="tw-bg-danger-500/10 tw-p-4">
+<div class="tw-bg-danger-600/10 tw-p-4">
   <span class="tw-font-bold tw-text-danger">Bad (Bootstrap)</span>
   ```html
   <div class="mb-2"></div>
   ```
 </div>
 
-<div class="tw-bg-success-500/10 tw-p-4">
+<div class="tw-bg-success-600/10 tw-p-4">
   <span class="tw-font-bold tw-text-success">Good (Tailwind)</span>
   ```html
   <div class="tw-mb-2"></div>
@@ -65,7 +65,7 @@ without this prefix, it probably shouldn't be there.
 
 **Exception:** Icon font classes, prefixed with `bwi`, are allowed.
 
-<div class="tw-bg-success-500/10 tw-p-4">
+<div class="tw-bg-success-600/10 tw-p-4">
   <span class="tw-font-bold tw-text-success">Good (Icons)</span>
   ```html
   <i class="bwi bwi-spinner bwi-lg bwi-spin" aria-hidden="true"></i>
@@ -79,7 +79,7 @@ The CL has form components that integrate with Angular's reactive forms: `bit-fo
 reactive forms to make use of these components. Review the
 [form component docs](?path=/docs/component-library-form--docs).
 
-<div class="tw-bg-danger-500/10 tw-p-4">
+<div class="tw-bg-danger-600/10 tw-p-4">
     <span class="tw-text-danger tw-font-bold">Bad</span>
     ```html
     <form #form (ngSubmit)="submit()">
@@ -88,7 +88,7 @@ reactive forms to make use of these components. Review the
     ```
 </div>
 
-<div class="tw-bg-success-500/10 tw-p-4">
+<div class="tw-bg-success-600/10 tw-p-4">
     <span class="tw-text-success tw-font-bold">Good</span>
     ```html
     <form [formGroup]="formGroup" [bitSubmit]="submit">
@@ -105,14 +105,14 @@ fully migrated should have no reference to the `ModalService`.
 
 1. Update the template to use CL components:
 
-<div class="tw-bg-danger-500/10 tw-p-4">
+<div class="tw-bg-danger-600/10 tw-p-4">
     ```html
     <!-- FooDialogComponent -->
     <div class="modal fade" role="dialog" aria-modal="true">...</div>
     ```
 </div>
 
-<div class="tw-bg-success-500/10 tw-p-4">
+<div class="tw-bg-success-600/10 tw-p-4">
     ```html
     <!-- FooDialogComponent -->
     <bit-dialog>...</bit-dialog>
@@ -121,7 +121,7 @@ fully migrated should have no reference to the `ModalService`.
 
 2. Create a static `open` method on the component, that calls `DialogService.open`:
 
-<div class="tw-bg-success-500/10 tw-p-4">
+<div class="tw-bg-success-600/10 tw-p-4">
     ```ts
       export class FooDialogComponent {
         //...
@@ -137,7 +137,7 @@ fully migrated should have no reference to the `ModalService`.
 3. If you need to pass data into the dialog, pass it to `open` as a parameter and inject
    `DIALOG_DATA` into the component's constructor.
 
-<div class="tw-bg-success-500/10 tw-p-4">
+<div class="tw-bg-success-600/10 tw-p-4">
     ```ts
     export type FooDialogParams = {
       bar: string;
@@ -157,9 +157,9 @@ fully migrated should have no reference to the `ModalService`.
 4. Replace calls to `ModalService.open` or `ModalService.openViewRef` with the newly created static
    `open` method:
 
-<div class="tw-bg-danger-500/10 tw-p-4">`this.modalService.open(FooDialogComponent);`</div>
+<div class="tw-bg-danger-600/10 tw-p-4">`this.modalService.open(FooDialogComponent);`</div>
 
-<div class="tw-bg-success-500/10 tw-p-4">`FooDialogComponent.open(this.dialogService);`</div>
+<div class="tw-bg-success-600/10 tw-p-4">`FooDialogComponent.open(this.dialogService);`</div>
 
 ## Examples
 

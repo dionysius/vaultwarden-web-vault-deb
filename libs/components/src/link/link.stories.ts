@@ -30,7 +30,7 @@ export const Buttons: Story = {
   render: (args) => ({
     props: args,
     template: `
-    <div class="tw-p-2" [ngClass]="{ 'tw-bg-transparent': linkType != 'contrast', 'tw-bg-primary-500': linkType === 'contrast' }">
+    <div class="tw-p-2" [ngClass]="{ 'tw-bg-transparent': linkType != 'contrast', 'tw-bg-primary-600': linkType === 'contrast' }">
       <div class="tw-block tw-p-2">
         <button bitLink [linkType]="linkType">Button</button>
       </div>
@@ -61,7 +61,7 @@ export const Anchors: StoryObj<AnchorLinkDirective> = {
   render: (args) => ({
     props: args,
     template: `
-    <div class="tw-p-2" [ngClass]="{ 'tw-bg-transparent': linkType != 'contrast', 'tw-bg-primary-500': linkType === 'contrast' }">
+    <div class="tw-p-2" [ngClass]="{ 'tw-bg-transparent': linkType != 'contrast', 'tw-bg-primary-600': linkType === 'contrast' }">
       <div class="tw-block tw-p-2">
         <a bitLink [linkType]="linkType" href="#">Anchor</a>
       </div>
@@ -108,7 +108,7 @@ export const Disabled: Story = {
     template: `
       <button bitLink disabled linkType="primary" class="tw-mr-2">Primary</button>
       <button bitLink disabled linkType="secondary" class="tw-mr-2">Secondary</button>
-      <div class="tw-bg-primary-500 tw-p-2 tw-inline-block">
+      <div class="tw-bg-primary-600 tw-p-2 tw-inline-block">
         <button bitLink disabled linkType="contrast" class="tw-mr-2">Contrast</button>
       </div>
     `,

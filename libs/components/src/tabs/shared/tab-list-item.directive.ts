@@ -42,7 +42,7 @@ export class TabListItemDirective implements FocusableOption {
       return ["!tw-text-muted", "hover:!tw-text-muted"];
     }
     if (this.active) {
-      return ["!tw-text-primary-500", "hover:!tw-text-primary-700"];
+      return ["!tw-text-primary-600", "hover:!tw-text-primary-700"];
     }
     return ["!tw-text-main", "hover:!tw-text-main"];
   }
@@ -78,7 +78,7 @@ export class TabListItemDirective implements FocusableOption {
     return [
       "tw--mb-px",
       "tw-border-x-secondary-300",
-      "tw-border-t-primary-500",
+      "tw-border-t-primary-600",
       "tw-border-b",
       "tw-border-b-background",
       "!tw-bg-background",

@@ -29,7 +29,7 @@ export class BitInputDirective implements BitFormFieldControl {
       "tw-bg-background-alt",
       "tw-border",
       "tw-border-solid",
-      this.hasError ? "tw-border-danger-500" : "tw-border-secondary-500",
+      this.hasError ? "tw-border-danger-600" : "tw-border-secondary-600",
       "tw-text-main",
       "tw-placeholder-text-muted",
       // Rounded

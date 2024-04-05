@@ -4,10 +4,10 @@ export type LinkType = "primary" | "secondary" | "contrast" | "light";
 
 const linkStyles: Record<LinkType, string[]> = {
   primary: [
-    "!tw-text-primary-500",
-    "hover:!tw-text-primary-500",
+    "!tw-text-primary-600",
+    "hover:!tw-text-primary-600",
     "focus-visible:before:tw-ring-primary-700",
-    "disabled:!tw-text-primary-500/60",
+    "disabled:!tw-text-primary-600/60",
   ],
   secondary: [
     "!tw-text-main",

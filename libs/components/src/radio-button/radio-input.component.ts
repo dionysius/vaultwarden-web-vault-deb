@@ -24,7 +24,7 @@ export class RadioInputComponent implements BitFormControlAbstraction {
     "tw-rounded-full",
     "tw-border",
     "tw-border-solid",
-    "tw-border-secondary-500",
+    "tw-border-secondary-600",
     "tw-w-3.5",
     "tw-h-3.5",
     "tw-mr-1.5",
@@ -50,7 +50,7 @@ export class RadioInputComponent implements BitFormControlAbstraction {
     "disabled:tw-bg-secondary-100",
 
     "checked:tw-bg-text-contrast",
-    "checked:tw-border-primary-500",
+    "checked:tw-border-primary-600",
 
     "checked:hover:tw-border",
     "checked:hover:tw-border-primary-700",
@@ -58,7 +58,7 @@ export class RadioInputComponent implements BitFormControlAbstraction {
     "[&>label:hover]:checked:tw-bg-primary-700",
     "[&>label:hover]:checked:tw-border-primary-700",
 
-    "checked:before:tw-bg-primary-500",
+    "checked:before:tw-bg-primary-600",
 
     "checked:disabled:tw-border-secondary-100",
     "checked:disabled:tw-bg-secondary-100",

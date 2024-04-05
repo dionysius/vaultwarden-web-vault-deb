@@ -3,12 +3,12 @@ import { Directive, ElementRef, HostBinding, Input } from "@angular/core";
 export type BadgeVariant = "primary" | "secondary" | "success" | "danger" | "warning" | "info";
 
 const styles: Record<BadgeVariant, string[]> = {
-  primary: ["tw-bg-primary-500"],
+  primary: ["tw-bg-primary-600"],
   secondary: ["tw-bg-text-muted"],
-  success: ["tw-bg-success-500"],
-  danger: ["tw-bg-danger-500"],
-  warning: ["tw-bg-warning-500"],
-  info: ["tw-bg-info-500"],
+  success: ["tw-bg-success-600"],
+  danger: ["tw-bg-danger-600"],
+  warning: ["tw-bg-warning-600"],
+  info: ["tw-bg-info-600"],
 };
 
 const hoverStyles: Record<BadgeVariant, string[]> = {

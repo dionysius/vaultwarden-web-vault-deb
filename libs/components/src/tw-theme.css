@@ -1,5 +1,13 @@
 @import "./reset.css";
 
+/** 
+  Note that the value of the *-600 colors is currently equivalent to the value 
+  of the *-500 variant of that color. This is a temporary change to make BW-42
+  updates easier. 
+
+  TODO remove comment when the color palette portion of BW-42 is completed.
+*/
+
 :root {
   --color-transparent-hover: rgb(0 0 0 / 0.03);
 
@@ -10,24 +18,24 @@
   --color-background-alt4: 13 60 119;
 
   --color-primary-300: 103 149 232;
-  --color-primary-500: 23 93 220;
+  --color-primary-600: 23 93 220;
   --color-primary-700: 18 82 163;
 
   --color-secondary-100: 240 240 240;
   --color-secondary-300: 206 212 220;
-  --color-secondary-500: 137 146 159;
+  --color-secondary-600: 137 146 159;
   --color-secondary-700: 33 37 41;
 
-  --color-success-500: 1 126 69;
+  --color-success-600: 1 126 69;
   --color-success-700: 0 85 46;
 
-  --color-danger-500: 200 53 34;
+  --color-danger-600: 200 53 34;
   --color-danger-700: 152 41 27;
 
-  --color-warning-500: 139 102 9;
+  --color-warning-600: 139 102 9;
   --color-warning-700: 105 77 5;
 
-  --color-info-500: 85 85 85;
+  --color-info-600: 85 85 85;
   --color-info-700: 59 58 58;
 
   --color-text-main: 33 37 41;
@@ -53,24 +61,24 @@
   --color-background-alt4: 16 18 21;
 
   --color-primary-300: 23 93 220;
-  --color-primary-500: 106 153 240;
+  --color-primary-600: 106 153 240;
   --color-primary-700: 180 204 249;
 
   --color-secondary-100: 47 52 61;
   --color-secondary-300: 110 118 137;
-  --color-secondary-500: 186 192 206;
+  --color-secondary-600: 186 192 206;
   --color-secondary-700: 255 255 255;
 
-  --color-success-500: 82 224 124;
+  --color-success-600: 82 224 124;
   --color-success-700: 168 239 190;
 
-  --color-danger-500: 255 141 133;
+  --color-danger-600: 255 141 133;
   --color-danger-700: 255 191 187;
 
-  --color-warning-500: 255 235 102;
+  --color-warning-600: 255 235 102;
   --color-warning-700: 255 245 179;
 
-  --color-info-500: 164 176 198;
+  --color-info-600: 164 176 198;
   --color-info-700: 209 215 226;
 
   --color-text-main: 255 255 255;
@@ -92,24 +100,24 @@
   --color-background-alt4: 67 76 94;
 
   --color-primary-300: 108 153 166;
-  --color-primary-500: 136 192 208;
+  --color-primary-600: 136 192 208;
   --color-primary-700: 160 224 242;
 
   --color-secondary-100: 76 86 106;
   --color-secondary-300: 94 105 125;
-  --color-secondary-500: 216 222 233;
+  --color-secondary-600: 216 222 233;
   --color-secondary-700: 255 255 255;
 
-  --color-success-500: 163 190 140;
+  --color-success-600: 163 190 140;
   --color-success-700: 144 170 122;
 
-  --color-danger-500: 228 129 139;
+  --color-danger-600: 228 129 139;
   --color-danger-700: 191 97 106;
 
-  --color-warning-500: 235 203 139;
+  --color-warning-600: 235 203 139;
   --color-warning-700: 210 181 121;
 
-  --color-info-500: 129 161 193;
+  --color-info-600: 129 161 193;
   --color-info-700: 94 129 172;
 
   --color-text-main: 229 233 240;
@@ -131,24 +139,24 @@
   --color-background-alt4: 0 43 54;
 
   --color-primary-300: 42 161 152;
-  --color-primary-500: 133 153 0;
+  --color-primary-600: 133 153 0;
   --color-primary-700: 192 203 123;
 
   --color-secondary-100: 31 72 87;
   --color-secondary-300: 101 123 131;
-  --color-secondary-500: 131 148 150;
+  --color-secondary-600: 131 148 150;
   --color-secondary-700: 238 232 213;
 
-  --color-success-500: 133 153 0;
+  --color-success-600: 133 153 0;
   --color-success-700: 192 203 123;
 
-  --color-danger-500: 220 50 47;
+  --color-danger-600: 220 50 47;
   --color-danger-700: 223 135 134;
 
-  --color-warning-500: 181 137 0;
+  --color-warning-600: 181 137 0;
   --color-warning-700: 220 189 92;
 
-  --color-info-500: 133 153 0;
+  --color-info-600: 133 153 0;
   --color-info-700: 192 203 123;
 
   --color-text-main: 253 246 227;

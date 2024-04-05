@@ -40,7 +40,7 @@ export class AvatarComponent implements OnChanges {
   get classList() {
     return ["tw-rounded-full"]
       .concat(SizeClasses[this.size] ?? [])
-      .concat(this.border ? ["tw-border", "tw-border-solid", "tw-border-secondary-500"] : []);
+      .concat(this.border ? ["tw-border", "tw-border-solid", "tw-border-secondary-600"] : []);
   }
 
   private generate() {

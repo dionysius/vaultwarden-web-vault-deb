@@ -15,7 +15,7 @@ const DEFAULT_ICON: Record<SimpleDialogType, string> = {
 };
 
 const DEFAULT_COLOR: Record<SimpleDialogType, string> = {
-  primary: "tw-text-primary-500",
+  primary: "tw-text-primary-600",
   success: "tw-text-success",
   info: "tw-text-info",
   warning: "tw-text-warning",

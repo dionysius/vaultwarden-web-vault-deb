@@ -30,7 +30,7 @@ export class ColorPasswordComponent {
     [CharacterType.Emoji]: [],
     [CharacterType.Letter]: ["tw-text-main"],
     [CharacterType.Special]: ["tw-text-danger"],
-    [CharacterType.Number]: ["tw-text-primary-500"],
+    [CharacterType.Number]: ["tw-text-primary-600"],
   };
 
   @HostBinding("class")

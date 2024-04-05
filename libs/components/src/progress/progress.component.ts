@@ -10,10 +10,10 @@ const SizeClasses: Record<SizeTypes, string[]> = {
 };
 
 const BackgroundClasses: Record<BackgroundTypes, string[]> = {
-  danger: ["tw-bg-danger-500"],
-  primary: ["tw-bg-primary-500"],
-  success: ["tw-bg-success-500"],
-  warning: ["tw-bg-warning-500"],
+  danger: ["tw-bg-danger-600"],
+  primary: ["tw-bg-primary-600"],
+  success: ["tw-bg-success-600"],
+  warning: ["tw-bg-warning-600"],
 };
 
 @Component({

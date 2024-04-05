@@ -6,7 +6,7 @@ export const PrefixClasses = [
   "tw-bg-background-alt",
   "tw-border",
   "tw-border-solid",
-  "tw-border-secondary-500",
+  "tw-border-secondary-600",
   "tw-text-muted",
   "tw-rounded-none",
 ];

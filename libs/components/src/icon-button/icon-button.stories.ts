@@ -30,7 +30,7 @@ export const Default: Story = {
       <button bitIconButton="bwi-plus" [disabled]="disabled" [loading]="loading" buttonType="primary" [size]="size">Button</button>
       <button bitIconButton="bwi-plus" [disabled]="disabled" [loading]="loading" buttonType="secondary"[size]="size">Button</button>
       <button bitIconButton="bwi-plus" [disabled]="disabled" [loading]="loading" buttonType="danger" [size]="size">Button</button>
-      <div class="tw-bg-primary-500 tw-p-2 tw-inline-block">
+      <div class="tw-bg-primary-600 tw-p-2 tw-inline-block">
         <button bitIconButton="bwi-plus" [disabled]="disabled" [loading]="loading" buttonType="contrast" [size]="size">Button</button>
       </div>
       <div class="tw-bg-background-alt2 tw-p-2 tw-inline-block">
@@ -111,7 +111,7 @@ export const Contrast: Story = {
   render: (args) => ({
     props: args,
     template: `
-    <div class="tw-bg-primary-500 tw-p-6 tw-w-full tw-inline-block">
+    <div class="tw-bg-primary-600 tw-p-6 tw-w-full tw-inline-block">
       <button bitIconButton="bwi-plus" [disabled]="disabled" [loading]="loading" [buttonType]="buttonType" [size]="size">Button</button>
     </div>
       `,

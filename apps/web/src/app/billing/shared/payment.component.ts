@@ -287,7 +287,7 @@ export class PaymentComponent implements OnInit, OnDestroy {
       )})`;
       this.StripeElementStyle.invalid.color = `rgb(${style.getPropertyValue("--color-text-main")})`;
       this.StripeElementStyle.invalid.borderColor = `rgb(${style.getPropertyValue(
-        "--color-danger-500",
+        "--color-danger-600",
       )})`;
     });
   }

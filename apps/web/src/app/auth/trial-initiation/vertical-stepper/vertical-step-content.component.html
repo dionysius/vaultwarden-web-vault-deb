@@ -14,7 +14,7 @@
       class="tw-mr-3.5 tw-w-9 tw-rounded-full tw-font-bold tw-leading-9"
       *ngIf="!step.completed"
       [ngClass]="{
-        'tw-bg-primary-500 tw-text-contrast': selected,
+        'tw-bg-primary-600 tw-text-contrast': selected,
         'tw-bg-secondary-300 tw-text-main': !selected && !disabled && step.editable,
         'tw-bg-transparent tw-text-muted': disabled
       }"
@@ -22,7 +22,7 @@
       {{ stepNumber }}
     </span>
     <span
-      class="tw-mr-3.5 tw-w-9 tw-rounded-full tw-bg-primary-500 tw-font-bold tw-leading-9 tw-text-contrast"
+      class="tw-mr-3.5 tw-w-9 tw-rounded-full tw-bg-primary-600 tw-font-bold tw-leading-9 tw-text-contrast"
       *ngIf="step.completed"
     >
       <i class="bwi bwi-fw bwi-check tw-p-1" aria-hidden="true"></i>

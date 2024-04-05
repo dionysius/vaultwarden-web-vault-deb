@@ -28,13 +28,13 @@ export class BannerComponent implements OnInit {
   get bannerClass() {
     switch (this.bannerType) {
       case "danger":
-        return "tw-bg-danger-500";
+        return "tw-bg-danger-600";
       case "info":
-        return "tw-bg-info-500";
+        return "tw-bg-info-600";
       case "premium":
-        return "tw-bg-success-500";
+        return "tw-bg-success-600";
       case "warning":
-        return "tw-bg-warning-500";
+        return "tw-bg-warning-600";
     }
   }
 }

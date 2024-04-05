@@ -41,13 +41,13 @@ export class SelectableAvatarComponent {
       .concat(["tw-cursor-pointer", "tw-outline", "tw-outline-solid", "tw-outline-offset-1"])
       .concat(
         this.selected
-          ? ["tw-outline-[3px]", "tw-outline-primary-500"]
+          ? ["tw-outline-[3px]", "tw-outline-primary-600"]
           : [
               "tw-outline-0",
               "hover:tw-outline-1",
               "hover:tw-outline-primary-300",
               "focus:tw-outline-2",
-              "focus:tw-outline-primary-500",
+              "focus:tw-outline-primary-600",
             ],
       );
   }

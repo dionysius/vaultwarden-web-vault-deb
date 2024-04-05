@@ -42,13 +42,13 @@ export class CalloutComponent implements OnInit {
   get calloutClass() {
     switch (this.type) {
       case "danger":
-        return "tw-border-l-danger-500";
+        return "tw-border-l-danger-600";
       case "info":
-        return "tw-border-l-info-500";
+        return "tw-border-l-info-600";
       case "success":
-        return "tw-border-l-success-500";
+        return "tw-border-l-success-600";
       case "warning":
-        return "tw-border-l-warning-500";
+        return "tw-border-l-warning-600";
     }
   }
 
