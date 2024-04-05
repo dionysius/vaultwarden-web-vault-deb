@@ -58,11 +58,12 @@ export class PaddedDataPacker extends DataPackerAbstraction {
   /** {@link DataPackerAbstraction.unpack} */
   unpack<Secret>(secret: string): Jsonify<Secret> {
     // frame size is stored before the JSON payload in base 10
-    const frameBreakpoint = secret.indexOf(DATA_PACKING.divider);
-    if (frameBreakpoint < 1) {
+    const frameEndIndex = secret.indexOf(DATA_PACKING.divider);
+    if (frameEndIndex < 1) {
       throw new Error("missing frame size");
     }
-    const frameSize = parseInt(secret.slice(0, frameBreakpoint), 10);
+    const frameSize = parseInt(secret.slice(0, frameEndIndex), 10);
+    const dataStartIndex = frameEndIndex + 1;
 
     // The decrypted string should be a multiple of the frame length
     if (secret.length % frameSize > 0) {
@@ -70,20 +71,20 @@ export class PaddedDataPacker extends DataPackerAbstraction {
     }
 
     // encoded data terminates with the divider, followed by the padding character
-    const jsonBreakpoint = secret.lastIndexOf(DATA_PACKING.divider);
-    if (jsonBreakpoint == frameBreakpoint) {
+    const dataEndIndex = secret.lastIndexOf(DATA_PACKING.divider);
+    if (dataEndIndex == frameEndIndex) {
       throw new Error("missing json object");
     }
-    const paddingBegins = jsonBreakpoint + 1;
+    const paddingStartIndex = dataEndIndex + 1;
 
     // If the padding contains invalid padding characters then the padding could be used
     // as a side channel for arbitrary data.
-    if (secret.slice(paddingBegins).match(DATA_PACKING.hasInvalidPadding)) {
+    if (secret.slice(paddingStartIndex).match(DATA_PACKING.hasInvalidPadding)) {
       throw new Error("invalid padding");
     }
 
     // remove frame size and padding
-    const b64 = secret.substring(frameBreakpoint, paddingBegins);
+    const b64 = secret.slice(dataStartIndex, dataEndIndex);
 
     // unpack the stored data
     const json = Utils.fromB64ToUtf8(b64);
