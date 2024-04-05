@@ -703,7 +703,6 @@ export class Main {
       this.folderService.clear(userId),
       this.collectionService.clear(userId as UserId),
       this.passwordGenerationService.clear(),
-      this.providerService.save(null, userId as UserId),
     ]);
 
     await this.stateEventRunnerService.handleEvent("logout", userId as UserId);
