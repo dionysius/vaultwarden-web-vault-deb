@@ -203,8 +203,9 @@ export class Organization {
     );
   }
 
-  canUseAdminCollections(flexibleCollectionsV1Enabled: boolean) {
-    return this.canEditAnyCollection(flexibleCollectionsV1Enabled);
+  canEditUnassignedCiphers() {
+    // TODO: Update this to exclude Providers if provider access is restricted in AC-1707
+    return this.isAdmin || this.permissions.editAnyCollection;
   }
 
   canEditAllCiphers(flexibleCollectionsV1Enabled: boolean) {

@@ -662,7 +662,7 @@ export class AddEditComponent implements OnInit, OnDestroy {
 
     // if a cipher is unassigned we want to check if they are an admin or have permission to edit any collection
     if (!cipher.collectionIds) {
-      orgAdmin = this.organization?.canEditAllCiphers(this.flexibleCollectionsV1Enabled);
+      orgAdmin = this.organization?.canEditUnassignedCiphers();
     }
 
     return this.cipher.id == null

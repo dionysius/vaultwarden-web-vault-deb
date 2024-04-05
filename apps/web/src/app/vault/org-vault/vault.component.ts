@@ -213,7 +213,7 @@ export class VaultComponent implements OnInit, OnDestroy {
       switchMap(async ([organization]) => {
         this.organization = organization;
 
-        if (!organization.canUseAdminCollections(this.flexibleCollectionsV1Enabled)) {
+        if (!organization.canEditAnyCollection(this.flexibleCollectionsV1Enabled)) {
           await this.syncService.fullSync(false);
         }
 
@@ -407,8 +407,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     ]).pipe(
       map(([filter, collection, organization]) => {
         return (
-          (filter.collectionId === Unassigned &&
-            !organization.canUseAdminCollections(this.flexibleCollectionsV1Enabled)) ||
+          (filter.collectionId === Unassigned && !organization.canEditUnassignedCiphers()) ||
           (!organization.canEditAllCiphers(this.flexibleCollectionsV1Enabled) &&
             collection != undefined &&
             !collection.node.assigned)
@@ -454,12 +453,11 @@ export class VaultComponent implements OnInit, OnDestroy {
       map(([filter, collection, organization]) => {
         return (
           // Filtering by unassigned, show message if not admin
-          (filter.collectionId === Unassigned &&
-            !organization.canUseAdminCollections(this.flexibleCollectionsV1Enabled)) ||
+          (filter.collectionId === Unassigned && !organization.canEditUnassignedCiphers()) ||
           // Filtering by a collection, so show message if user is not assigned
           (collection != undefined &&
             !collection.node.assigned &&
-            !organization.canUseAdminCollections(this.flexibleCollectionsV1Enabled))
+            !organization.canEditAnyCollection(this.flexibleCollectionsV1Enabled))
         );
       }),
       shareReplay({ refCount: true, bufferSize: 1 }),
@@ -482,7 +480,7 @@ export class VaultComponent implements OnInit, OnDestroy {
               (await firstValueFrom(allCipherMap$))[cipherId] != undefined;
           } else {
             canEditCipher =
-              organization.canUseAdminCollections(this.flexibleCollectionsV1Enabled) ||
+              organization.canEditAnyCollection(this.flexibleCollectionsV1Enabled) ||
               (await this.cipherService.get(cipherId)) != null;
           }
 
