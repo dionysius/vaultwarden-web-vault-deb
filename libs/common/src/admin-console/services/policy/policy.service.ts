@@ -1,6 +1,6 @@
 import { combineLatest, firstValueFrom, map, Observable, of } from "rxjs";
 
-import { KeyDefinition, POLICIES_DISK, StateProvider } from "../../../platform/state";
+import { UserKeyDefinition, POLICIES_DISK, StateProvider } from "../../../platform/state";
 import { PolicyId, UserId } from "../../../types/guid";
 import { OrganizationService } from "../../abstractions/organization/organization.service.abstraction";
 import { InternalPolicyService as InternalPolicyServiceAbstraction } from "../../abstractions/policy/policy.service.abstraction";
@@ -14,8 +14,9 @@ import { ResetPasswordPolicyOptions } from "../../models/domain/reset-password-p
 const policyRecordToArray = (policiesMap: { [id: string]: PolicyData }) =>
   Object.values(policiesMap || {}).map((f) => new Policy(f));
 
-export const POLICIES = KeyDefinition.record<PolicyData, PolicyId>(POLICIES_DISK, "policies", {
+export const POLICIES = UserKeyDefinition.record<PolicyData, PolicyId>(POLICIES_DISK, "policies", {
   deserializer: (policyData) => policyData,
+  clearOn: ["logout"],
 });
 
 export class PolicyService implements InternalPolicyServiceAbstraction {
@@ -220,10 +221,6 @@ export class PolicyService implements InternalPolicyServiceAbstraction {
 
   async replace(policies: { [id: string]: PolicyData }): Promise<void> {
     await this.activeUserPolicyState.update(() => policies);
-  }
-
-  async clear(userId?: UserId): Promise<void> {
-    await this.stateProvider.setUserState(POLICIES, null, userId);
   }
 
   /**

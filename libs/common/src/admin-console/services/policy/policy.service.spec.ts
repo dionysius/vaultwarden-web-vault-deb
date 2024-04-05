@@ -102,66 +102,6 @@ describe("PolicyService", () => {
     ]);
   });
 
-  describe("clear", () => {
-    beforeEach(() => {
-      activeUserState.nextState(
-        arrayToRecord([
-          policyData("1", "test-organization", PolicyType.MaximumVaultTimeout, true, {
-            minutes: 14,
-          }),
-        ]),
-      );
-    });
-
-    it("clears state for the active user", async () => {
-      await policyService.clear();
-
-      expect(await firstValueFrom(policyService.policies$)).toEqual([]);
-      expect(await firstValueFrom(activeUserState.state$)).toEqual(null);
-      expect(stateProvider.activeUser.getFake(POLICIES).nextMock).toHaveBeenCalledWith([
-        "userId",
-        null,
-      ]);
-    });
-
-    it("clears state for an inactive user", async () => {
-      const inactiveUserId = "someOtherUserId" as UserId;
-      const inactiveUserState = stateProvider.singleUser.getFake(inactiveUserId, POLICIES);
-      inactiveUserState.nextState(
-        arrayToRecord([
-          policyData("10", "another-test-organization", PolicyType.PersonalOwnership, true),
-        ]),
-      );
-
-      await policyService.clear(inactiveUserId);
-
-      // Active user is not affected
-      const expectedActiveUserPolicy: Partial<Policy> = {
-        id: "1" as PolicyId,
-        organizationId: "test-organization",
-        type: PolicyType.MaximumVaultTimeout,
-        enabled: true,
-        data: { minutes: 14 },
-      };
-      expect(await firstValueFrom(policyService.policies$)).toEqual([expectedActiveUserPolicy]);
-      expect(await firstValueFrom(activeUserState.state$)).toEqual({
-        "1": expectedActiveUserPolicy,
-      });
-      expect(stateProvider.activeUser.getFake(POLICIES).nextMock).not.toHaveBeenCalled();
-
-      // Non-active user is cleared
-      expect(
-        await firstValueFrom(
-          policyService.getAll$(PolicyType.PersonalOwnership, "someOtherUserId" as UserId),
-        ),
-      ).toEqual([]);
-      expect(await firstValueFrom(inactiveUserState.state$)).toEqual(null);
-      expect(
-        stateProvider.singleUser.getFake("someOtherUserId" as UserId, POLICIES).nextMock,
-      ).toHaveBeenCalledWith(null);
-    });
-  });
-
   describe("masterPasswordPolicyOptions", () => {
     it("returns default policy options", async () => {
       const data: any = {
