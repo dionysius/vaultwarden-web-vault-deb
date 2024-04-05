@@ -5,11 +5,11 @@ import { OrganizationSubscriptionResponse } from "@bitwarden/common/billing/mode
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 
 type ComponentData = {
-  status: {
+  status?: {
     label: string;
     value: string;
   };
-  date: {
+  date?: {
     label: string;
     value: string;
   };
@@ -44,13 +44,15 @@ export class SubscriptionStatusComponent {
   }
 
   get status(): string {
-    return this.subscription.status != "canceled" && this.subscription.cancelAtEndDate
-      ? "pending_cancellation"
-      : this.subscription.status;
+    return this.subscription
+      ? this.subscription.status != "canceled" && this.subscription.cancelAtEndDate
+        ? "pending_cancellation"
+        : this.subscription.status
+      : "free";
   }
 
   get subscription() {
-    return this.organizationSubscriptionResponse.subscription;
+    return this.organizationSubscriptionResponse?.subscription;
   }
 
   get data(): ComponentData {
@@ -61,6 +63,9 @@ export class SubscriptionStatusComponent {
     const cancellationDateLabel = this.i18nService.t("cancellationDate");
 
     switch (this.status) {
+      case "free": {
+        return {};
+      }
       case "trialing": {
         return {
           status: {
