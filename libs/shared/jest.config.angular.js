@@ -6,6 +6,11 @@ const { defaultTransformerOptions } = require("jest-preset-angular/presets");
 module.exports = {
   testMatch: ["**/+(*.)+(spec).+(ts)"],
 
+  testPathIgnorePatterns: [
+    "/node_modules/", // default value
+    ".*.type.spec.ts", // ignore type tests (which are checked at compile time and not run by jest)
+  ],
+
   // Workaround for a memory leak that crashes tests in CI:
   // https://github.com/facebook/jest/issues/9430#issuecomment-1149882002
   // Also anecdotally improves performance when run locally
