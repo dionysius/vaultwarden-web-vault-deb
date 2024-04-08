@@ -8,6 +8,23 @@ import {
 
 import { fromChromeEvent } from "../../browser/from-chrome-event";
 
+export const serializationIndicator = "__json__";
+
+export const objToStore = (obj: any) => {
+  if (obj == null) {
+    return null;
+  }
+
+  if (obj instanceof Set) {
+    obj = Array.from(obj);
+  }
+
+  return {
+    [serializationIndicator]: true,
+    value: JSON.stringify(obj),
+  };
+};
+
 export default abstract class AbstractChromeStorageService
   implements AbstractStorageService, ObservableStorageService
 {
@@ -44,7 +61,11 @@ export default abstract class AbstractChromeStorageService
     return new Promise((resolve) => {
       this.chromeStorageApi.get(key, (obj: any) => {
         if (obj != null && obj[key] != null) {
-          resolve(obj[key] as T);
+          let value = obj[key];
+          if (value[serializationIndicator] && typeof value.value === "string") {
+            value = JSON.parse(value.value);
+          }
+          resolve(value as T);
           return;
         }
         resolve(null);
@@ -57,14 +78,7 @@ export default abstract class AbstractChromeStorageService
   }
 
   async save(key: string, obj: any): Promise<void> {
-    if (obj == null) {
-      // Fix safari not liking null in set
-      return this.remove(key);
-    }
-
-    if (obj instanceof Set) {
-      obj = Array.from(obj);
-    }
+    obj = objToStore(obj);
 
     const keyedObj = { [key]: obj };
     return new Promise<void>((resolve) => {
