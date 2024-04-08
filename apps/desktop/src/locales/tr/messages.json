@@ -2696,5 +2696,11 @@
   },
   "enableHardwareAccelerationRestart": {
     "message": "Donanım hızlandırmayı etkinleştirin ve yeniden başlatın"
+  },
+  "removePasskey": {
+    "message": "Remove passkey"
+  },
+  "passkeyRemoved": {
+    "message": "Passkey removed"
   }
 }

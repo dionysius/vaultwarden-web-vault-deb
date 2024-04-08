@@ -2696,5 +2696,11 @@
   },
   "enableHardwareAccelerationRestart": {
     "message": "Activeu l'acceleració i reinicieu el maquinari"
+  },
+  "removePasskey": {
+    "message": "Remove passkey"
+  },
+  "passkeyRemoved": {
+    "message": "Passkey removed"
   }
 }

@@ -2550,22 +2550,22 @@
     "message": "Σφάλμα αποκρυπτογράφησης του εξαγόμενου αρχείου. Το κλειδί κρυπτογράφησης δεν ταιριάζει με το κλειδί κρυπτογράφησης που χρησιμοποιήθηκε για την εξαγωγή των δεδομένων."
   },
   "invalidFilePassword": {
-    "message": "Invalid file password, please use the password you entered when you created the export file."
+    "message": "Μη έγκυρος κωδικός πρόσβασης, παρακαλώ χρησιμοποιήστε τον κωδικό πρόσβασης που εισαγάγατε όταν δημιουργήσατε το αρχείο εξαγωγής."
   },
   "importDestination": {
-    "message": "Import destination"
+    "message": "Προορισμός εισαγωγής"
   },
   "learnAboutImportOptions": {
-    "message": "Learn about your import options"
+    "message": "Μάθετε για τις επιλογές εισαγωγής σας"
   },
   "selectImportFolder": {
-    "message": "Select a folder"
+    "message": "Επιλέξτε ένα φάκελο"
   },
   "selectImportCollection": {
-    "message": "Select a collection"
+    "message": "Επιλέξτε μια συλλογή"
   },
   "importTargetHint": {
-    "message": "Select this option if you want the imported file contents moved to a $DESTINATION$",
+    "message": "Επιλέξτε αυτό αν θέλετε τα περιεχόμενα του εισαγόμενου αρχείου να μετακινηθούν σε $DESTINATION$",
     "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
     "placeholders": {
       "destination": {
@@ -2575,25 +2575,25 @@
     }
   },
   "importUnassignedItemsError": {
-    "message": "File contains unassigned items."
+    "message": "Το αρχείο περιέχει μη συσχετισμένα στοιχεία."
   },
   "selectFormat": {
-    "message": "Select the format of the import file"
+    "message": "Επιλέξτε τη μορφή του αρχείου εισαγωγής"
   },
   "selectImportFile": {
-    "message": "Select the import file"
+    "message": "Επιλέξτε το αρχείο εισαγωγής"
   },
   "chooseFile": {
-    "message": "Choose File"
+    "message": "Επιλογή Αρχείου"
   },
   "noFileChosen": {
-    "message": "No file chosen"
+    "message": "Δεν επιλέχθηκε κανένα αρχείο"
   },
   "orCopyPasteFileContents": {
-    "message": "or copy/paste the import file contents"
+    "message": "ή αντιγράψτε/επικολλήστε τα περιεχόμενα του αρχείου εισαγωγής"
   },
   "instructionsFor": {
-    "message": "$NAME$ Instructions",
+    "message": "$NAME$ Οδηγίες",
     "description": "The title for the import tool instructions.",
     "placeholders": {
       "name": {
@@ -2603,34 +2603,34 @@
     }
   },
   "confirmVaultImport": {
-    "message": "Confirm vault import"
+    "message": "Επιβεβαίωση εισαγωγής κρύπτης"
   },
   "confirmVaultImportDesc": {
-    "message": "This file is password-protected. Please enter the file password to import data."
+    "message": "Αυτό το αρχείο προστατεύεται με κωδικό πρόσβασης. Παρακαλώ εισαγάγετε τον κωδικό πρόσβασης για την εισαγωγή δεδομένων."
   },
   "confirmFilePassword": {
-    "message": "Confirm file password"
+    "message": "Επιβεβαίωση κωδικού πρόσβασης αρχείου"
   },
   "multifactorAuthenticationCancelled": {
-    "message": "Multifactor authentication cancelled"
+    "message": "Ο πολυμερής έλεγχος ταυτότητας ακυρώθηκε"
   },
   "noLastPassDataFound": {
-    "message": "No LastPass data found"
+    "message": "Δεν βρέθηκαν δεδομένα LastPass"
   },
   "incorrectUsernameOrPassword": {
-    "message": "Incorrect username or password"
+    "message": "Λάθος όνομα χρήστη ή κωδικού πρόσβασης"
   },
   "incorrectPassword": {
-    "message": "Incorrect password"
+    "message": "Λάθος κωδικός"
   },
   "incorrectCode": {
-    "message": "Incorrect code"
+    "message": "Λάθος κωδικός"
   },
   "incorrectPin": {
-    "message": "Incorrect PIN"
+    "message": "Λάθος PIN"
   },
   "multifactorAuthenticationFailed": {
-    "message": "Multifactor authentication failed"
+    "message": "Ο πολυμερής έλεγχος ταυτότητας απέτυχε"
   },
   "includeSharedFolders": {
     "message": "Συμπερίληψη κοινόχρηστων φακέλων"
@@ -2696,5 +2696,11 @@
   },
   "enableHardwareAccelerationRestart": {
     "message": "Ενεργοποίηση επιτάχυνσης υλικού και επανεκκίνηση"
+  },
+  "removePasskey": {
+    "message": "Remove passkey"
+  },
+  "passkeyRemoved": {
+    "message": "Passkey removed"
   }
 }

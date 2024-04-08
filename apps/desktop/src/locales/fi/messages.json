@@ -2689,12 +2689,18 @@
     "description": "Label indicating the most common import formats"
   },
   "troubleshooting": {
-    "message": "Troubleshooting"
+    "message": "Vianmääritys"
   },
   "disableHardwareAccelerationRestart": {
-    "message": "Disable hardware acceleration and restart"
+    "message": "Poista laitteistokiihdytys käytöstä ja käynnistä sovellus uudelleen"
   },
   "enableHardwareAccelerationRestart": {
-    "message": "Enable hardware acceleration and restart"
+    "message": "Ota laitteistokiihdytys käyttöön ja käynnistä sovellus uudelleen"
+  },
+  "removePasskey": {
+    "message": "Poista suojausavain"
+  },
+  "passkeyRemoved": {
+    "message": "Suojausavain poistettiin"
   }
 }

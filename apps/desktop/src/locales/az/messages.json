@@ -2689,12 +2689,18 @@
     "description": "Label indicating the most common import formats"
   },
   "troubleshooting": {
-    "message": "Troubleshooting"
+    "message": "Problemlərin aradan qaldırılması"
   },
   "disableHardwareAccelerationRestart": {
-    "message": "Disable hardware acceleration and restart"
+    "message": "Avadanlıq sürətləndirməni ləğv et və yenidən başlat"
   },
   "enableHardwareAccelerationRestart": {
-    "message": "Enable hardware acceleration and restart"
+    "message": "Avadanlıq sürətləndirməni işə sal və yenidən başlat"
+  },
+  "removePasskey": {
+    "message": "Parolu sil"
+  },
+  "passkeyRemoved": {
+    "message": "Parol silindi"
   }
 }

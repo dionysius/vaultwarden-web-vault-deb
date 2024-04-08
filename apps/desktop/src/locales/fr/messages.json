@@ -2696,5 +2696,11 @@
   },
   "enableHardwareAccelerationRestart": {
     "message": "Activer l'accélération matérielle et redémarrer"
+  },
+  "removePasskey": {
+    "message": "Retirer la clé d'identification (passkey)"
+  },
+  "passkeyRemoved": {
+    "message": "Clé d'identification (passkey) retirée"
   }
 }
