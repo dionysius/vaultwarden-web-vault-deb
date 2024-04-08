@@ -7501,6 +7501,9 @@
   "collectionAccessRestricted": {
     "message": "Collection access is restricted"
   },
+  "readOnlyCollectionAccess": {
+    "message": "You do not have access to manage this collection."
+  },
   "grantCollectionAccess": {
     "message": "Grant groups or members access to this collection."
   },
@@ -7602,6 +7605,9 @@
   },
   "providerPortal": {
     "message": "Provider Portal"
+  },
+  "viewCollection": {
+    "message": "View collection"
   },
   "restrictedGroupAccess": {
     "message": "You cannot add yourself to groups."
