@@ -8,7 +8,7 @@ import { StateDefinition } from "./state-definition";
 
 export type ClearEvent = "lock" | "logout";
 
-type UserKeyDefinitionOptions<T> = KeyDefinitionOptions<T> & {
+export type UserKeyDefinitionOptions<T> = KeyDefinitionOptions<T> & {
   clearOn: ClearEvent[];
 };
 

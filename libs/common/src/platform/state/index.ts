@@ -8,7 +8,7 @@ export { ActiveUserState, SingleUserState, CombinedState } from "./user-state";
 export { ActiveUserStateProvider, SingleUserStateProvider } from "./user-state.provider";
 export { KeyDefinition, KeyDefinitionOptions } from "./key-definition";
 export { StateUpdateOptions } from "./state-update-options";
-export { UserKeyDefinition } from "./user-key-definition";
+export { UserKeyDefinitionOptions, UserKeyDefinition } from "./user-key-definition";
 export { StateEventRunnerService } from "./state-event-runner.service";
 
 export * from "./state-definitions";

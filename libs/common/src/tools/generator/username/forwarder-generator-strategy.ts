@@ -3,7 +3,7 @@ import { Observable, map, pipe } from "rxjs";
 import { PolicyType } from "../../../admin-console/enums";
 import { CryptoService } from "../../../platform/abstractions/crypto.service";
 import { EncryptService } from "../../../platform/abstractions/encrypt.service";
-import { KeyDefinition, SingleUserState, StateProvider } from "../../../platform/state";
+import { SingleUserState, StateProvider, UserKeyDefinition } from "../../../platform/state";
 import { UserId } from "../../../types/guid";
 import { GeneratorStrategy } from "../abstractions";
 import { DefaultPolicyEvaluator } from "../default-policy-evaluator";
@@ -56,6 +56,7 @@ export abstract class ForwarderGeneratorStrategy<
       const key = SecretKeyDefinition.value(this.key.stateDefinition, this.key.key, classifier, {
         deserializer: (d) => this.key.deserializer(d),
         cleanupDelayMs: this.key.cleanupDelayMs,
+        clearOn: this.key.clearOn,
       });
 
       // the type parameter is explicit because type inference fails for `Omit<Options, "website">`
@@ -83,7 +84,7 @@ export abstract class ForwarderGeneratorStrategy<
   abstract defaults$: (userId: UserId) => Observable<Options>;
 
   /** Determine where forwarder configuration is stored  */
-  protected abstract readonly key: KeyDefinition<Options>;
+  protected abstract readonly key: UserKeyDefinition<Options>;
 
   /** {@link GeneratorStrategy.toEvaluator} */
   toEvaluator = () => {
