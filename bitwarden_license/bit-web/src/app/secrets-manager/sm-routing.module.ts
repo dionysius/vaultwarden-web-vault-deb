@@ -2,7 +2,6 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
 import { AuthGuard } from "@bitwarden/angular/auth/guards";
-import { buildFlaggedRoute } from "@bitwarden/web-vault/app/oss-routing.module";
 
 import { organizationEnabledGuard } from "./guards/sm-org-enabled.guard";
 import { canActivateSM } from "./guards/sm.guard";
@@ -17,7 +16,7 @@ import { OrgSuspendedComponent } from "./shared/org-suspended.component";
 import { TrashModule } from "./trash/trash.module";
 
 const routes: Routes = [
-  buildFlaggedRoute("secretsManager", {
+  {
     path: "",
     children: [
       {
@@ -86,7 +85,7 @@ const routes: Routes = [
         ],
       },
     ],
-  }),
+  },
 ];
 
 @NgModule({

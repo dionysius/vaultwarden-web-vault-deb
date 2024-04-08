@@ -11,13 +11,13 @@ import { GroupPolicyEnvironment } from "../admin-console/types/group-policy-envi
 import { BrowserApi } from "./browser/browser-api";
 
 // required to avoid linting errors when there are no flags
-/* eslint-disable-next-line @typescript-eslint/ban-types */
+// eslint-disable-next-line @typescript-eslint/ban-types
 export type Flags = {
   accountSwitching?: boolean;
 } & SharedFlags;
 
 // required to avoid linting errors when there are no flags
-/* eslint-disable-next-line @typescript-eslint/ban-types */
+// eslint-disable-next-line @typescript-eslint/ban-types
 export type DevFlags = {
   storeSessionDecrypted?: boolean;
   managedEnvironment?: GroupPolicyEnvironment;

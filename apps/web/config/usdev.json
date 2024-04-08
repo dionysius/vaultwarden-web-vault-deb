@@ -5,7 +5,6 @@
     "scim": "https://scim.usdev.bitwarden.pw"
   },
   "flags": {
-    "secretsManager": true,
     "showPasswordless": true
   }
 }

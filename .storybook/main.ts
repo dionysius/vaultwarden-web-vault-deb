@@ -38,9 +38,7 @@ const config: StorybookConfig = {
   },
   env: (config) => ({
     ...config,
-    FLAGS: JSON.stringify({
-      secretsManager: true,
-    }),
+    FLAGS: JSON.stringify({}),
   }),
   webpackFinal: async (config, { configType }) => {
     if (config.resolve) {
