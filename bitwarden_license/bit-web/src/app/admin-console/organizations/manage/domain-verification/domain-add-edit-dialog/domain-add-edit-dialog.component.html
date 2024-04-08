@@ -26,7 +26,7 @@
         <bit-hint>{{ "domainNameInputHint" | i18n }}</bit-hint>
       </bit-form-field>
 
-      <bit-form-field>
+      <bit-form-field *ngIf="data?.orgDomain">
         <bit-label>{{ "dnsTxtRecord" | i18n }}</bit-label>
         <input bitInput formControlName="txt" />
         <bit-hint>{{ "dnsTxtRecordInputHint" | i18n }}</bit-hint>
@@ -42,7 +42,7 @@
       </bit-form-field>
 
       <bit-callout
-        *ngIf="!data?.orgDomain?.verifiedDate"
+        *ngIf="data?.orgDomain && !data?.orgDomain?.verifiedDate"
         type="info"
         title="{{ 'automaticDomainVerification' | i18n }}"
       >
@@ -51,7 +51,10 @@
     </div>
     <ng-container bitDialogFooter>
       <button type="submit" bitButton bitFormButton buttonType="primary">
-        <span *ngIf="!data?.orgDomain?.verifiedDate">{{ "verifyDomain" | i18n }}</span>
+        <span *ngIf="!data?.orgDomain">{{ "next" | i18n }}</span>
+        <span *ngIf="data?.orgDomain && !data?.orgDomain?.verifiedDate">{{
+          "verifyDomain" | i18n
+        }}</span>
         <span *ngIf="data?.orgDomain?.verifiedDate">{{ "reverifyDomain" | i18n }}</span>
       </button>
       <button bitButton buttonType="secondary" (click)="dialogRef.close()" type="button">
