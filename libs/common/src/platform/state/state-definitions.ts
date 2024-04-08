@@ -102,6 +102,7 @@ export const SM_ONBOARDING_DISK = new StateDefinition("smOnboarding", "disk", {
 
 export const GENERATOR_DISK = new StateDefinition("generator", "disk");
 export const GENERATOR_MEMORY = new StateDefinition("generator", "memory");
+export const BROWSER_SEND_MEMORY = new StateDefinition("sendBrowser", "memory");
 export const EVENT_COLLECTION_DISK = new StateDefinition("eventCollection", "disk");
 export const SEND_DISK = new StateDefinition("encryptedSend", "disk", {
   web: "memory",

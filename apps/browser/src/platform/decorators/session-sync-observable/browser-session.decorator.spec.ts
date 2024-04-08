@@ -3,7 +3,7 @@ import { BehaviorSubject } from "rxjs";
 import { AbstractMemoryStorageService } from "@bitwarden/common/platform/abstractions/storage.service";
 import { MemoryStorageService } from "@bitwarden/common/platform/services/memory-storage.service";
 
-import { BrowserStateService } from "../../services/browser-state.service";
+import { DefaultBrowserStateService } from "../../services/default-browser-state.service";
 
 import { browserSession } from "./browser-session.decorator";
 import { SessionStorable } from "./session-storable";
@@ -25,7 +25,7 @@ describe("browserSession decorator", () => {
   });
 
   it("should create if StateService is a constructor argument", () => {
-    const stateService = Object.create(BrowserStateService.prototype, {
+    const stateService = Object.create(DefaultBrowserStateService.prototype, {
       memoryStorageService: {
         value: Object.create(MemoryStorageService.prototype, {
           type: { value: MemoryStorageService.TYPE },
@@ -35,7 +35,7 @@ describe("browserSession decorator", () => {
 
     @browserSession
     class TestClass {
-      constructor(private stateService: BrowserStateService) {}
+      constructor(private stateService: DefaultBrowserStateService) {}
     }
 
     expect(new TestClass(stateService)).toBeDefined();

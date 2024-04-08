@@ -33,7 +33,7 @@ import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { CipherService } from "@bitwarden/common/vault/services/cipher.service";
 
 import { BrowserApi } from "../../platform/browser/browser-api";
-import { BrowserStateService } from "../../platform/services/browser-state.service";
+import { DefaultBrowserStateService } from "../../platform/services/default-browser-state.service";
 import { BrowserPlatformUtilsService } from "../../platform/services/platform-utils/browser-platform-utils.service";
 import { AutofillService } from "../services/abstractions/autofill.service";
 import {
@@ -72,7 +72,7 @@ describe("OverlayBackground", () => {
       urls: { icons: "https://icons.bitwarden.com/" },
     }),
   );
-  const stateService = mock<BrowserStateService>();
+  const stateService = mock<DefaultBrowserStateService>();
   const autofillSettingsService = mock<AutofillSettingsService>();
   const i18nService = mock<I18nService>();
   const platformUtilsService = mock<BrowserPlatformUtilsService>();

@@ -99,11 +99,12 @@ import { BrowserEnvironmentService } from "../../platform/services/browser-envir
 import BrowserLocalStorageService from "../../platform/services/browser-local-storage.service";
 import BrowserMessagingPrivateModePopupService from "../../platform/services/browser-messaging-private-mode-popup.service";
 import BrowserMessagingService from "../../platform/services/browser-messaging.service";
-import { BrowserStateService } from "../../platform/services/browser-state.service";
+import { DefaultBrowserStateService } from "../../platform/services/default-browser-state.service";
 import I18nService from "../../platform/services/i18n.service";
 import { ForegroundPlatformUtilsService } from "../../platform/services/platform-utils/foreground-platform-utils.service";
 import { ForegroundDerivedStateProvider } from "../../platform/state/foreground-derived-state.provider";
 import { ForegroundMemoryStorageService } from "../../platform/storage/foreground-memory-storage.service";
+import { BrowserSendStateService } from "../../tools/popup/services/browser-send-state.service";
 import { FilePopoutUtilsService } from "../../tools/popup/services/file-popout-utils.service";
 import { VaultBrowserStateService } from "../../vault/services/vault-browser-state.service";
 import { VaultFilterService } from "../../vault/services/vault-filter.service";
@@ -412,7 +413,7 @@ const safeProviders: SafeProvider[] = [
       tokenService: TokenService,
       migrationRunner: MigrationRunner,
     ) => {
-      return new BrowserStateService(
+      return new DefaultBrowserStateService(
         storageService,
         secureStorageService,
         memoryStorageService,
@@ -485,6 +486,11 @@ const safeProviders: SafeProvider[] = [
   safeProvider({
     provide: UserNotificationSettingsServiceAbstraction,
     useClass: UserNotificationSettingsService,
+    deps: [StateProvider],
+  }),
+  safeProvider({
+    provide: BrowserSendStateService,
+    useClass: BrowserSendStateService,
     deps: [StateProvider],
   }),
 ];

@@ -15,17 +15,15 @@ import { MigrationRunner } from "@bitwarden/common/platform/services/migration-r
 import { StateService as BaseStateService } from "@bitwarden/common/platform/services/state.service";
 
 import { Account } from "../../models/account";
-import { BrowserComponentState } from "../../models/browserComponentState";
-import { BrowserSendComponentState } from "../../models/browserSendComponentState";
 import { BrowserApi } from "../browser/browser-api";
 import { browserSession, sessionSync } from "../decorators/session-sync-observable";
 
-import { BrowserStateService as StateServiceAbstraction } from "./abstractions/browser-state.service";
+import { BrowserStateService } from "./abstractions/browser-state.service";
 
 @browserSession
-export class BrowserStateService
+export class DefaultBrowserStateService
   extends BaseStateService<GlobalState, Account>
-  implements StateServiceAbstraction
+  implements BrowserStateService
 {
   @sessionSync({
     initializer: Account.fromJSON as any, // TODO: Remove this any when all any types are removed from Account
@@ -112,46 +110,6 @@ export class BrowserStateService
     return (
       (await super.getIsAuthenticated(options)) &&
       (await this.getAccount(await this.defaultInMemoryOptions())) != null
-    );
-  }
-
-  async getBrowserSendComponentState(options?: StorageOptions): Promise<BrowserSendComponentState> {
-    return (
-      await this.getAccount(this.reconcileOptions(options, await this.defaultInMemoryOptions()))
-    )?.send;
-  }
-
-  async setBrowserSendComponentState(
-    value: BrowserSendComponentState,
-    options?: StorageOptions,
-  ): Promise<void> {
-    const account = await this.getAccount(
-      this.reconcileOptions(options, await this.defaultInMemoryOptions()),
-    );
-    account.send = value;
-    await this.saveAccount(
-      account,
-      this.reconcileOptions(options, await this.defaultInMemoryOptions()),
-    );
-  }
-
-  async getBrowserSendTypeComponentState(options?: StorageOptions): Promise<BrowserComponentState> {
-    return (
-      await this.getAccount(this.reconcileOptions(options, await this.defaultInMemoryOptions()))
-    )?.sendType;
-  }
-
-  async setBrowserSendTypeComponentState(
-    value: BrowserComponentState,
-    options?: StorageOptions,
-  ): Promise<void> {
-    const account = await this.getAccount(
-      this.reconcileOptions(options, await this.defaultInMemoryOptions()),
-    );
-    account.sendType = value;
-    await this.saveAccount(
-      account,
-      this.reconcileOptions(options, await this.defaultInMemoryOptions()),
     );
   }
 
