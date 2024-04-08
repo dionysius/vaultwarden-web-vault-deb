@@ -2706,7 +2706,7 @@
     "message": "Hesabınız üçün Duo iki addımlı giriş tələb olunur."
   },
   "popoutTheExtensionToCompleteLogin": {
-    "message": "Popout the extension to complete login."
+    "message": "Girişi tamamlamaq üçün uzantını aç."
   },
   "popoutExtension": {
     "message": "Popout uzantısı"
@@ -2999,5 +2999,11 @@
   "saveCipherAttemptFailed": {
     "message": "Kimlik məlumatlarını saxlama xətası. Detallar üçün konsolu yoxlayın.",
     "description": "Notification message for when saving credentials has failed."
+  },
+  "removePasskey": {
+    "message": "Parolu sil"
+  },
+  "passkeyRemoved": {
+    "message": "Parol silindi"
   }
 }

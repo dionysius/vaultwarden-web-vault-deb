@@ -2999,5 +2999,11 @@
   "saveCipherAttemptFailed": {
     "message": "Chyba pri ukladaní prihlasovacích údajov. Viac informácii nájdete v konzole.",
     "description": "Notification message for when saving credentials has failed."
+  },
+  "removePasskey": {
+    "message": "Odstrániť prístupový kľúč"
+  },
+  "passkeyRemoved": {
+    "message": "Prístupový kľúč bol odstránený"
   }
 }

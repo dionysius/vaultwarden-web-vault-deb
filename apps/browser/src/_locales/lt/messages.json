@@ -2999,5 +2999,11 @@
   "saveCipherAttemptFailed": {
     "message": "Klaida išsaugant kredencialus. Išsamesnės informacijos patikrink konsolėje.",
     "description": "Notification message for when saving credentials has failed."
+  },
+  "removePasskey": {
+    "message": "Pašalinti slaptaraktį"
+  },
+  "passkeyRemoved": {
+    "message": "Pašalintas slaptaraktis"
   }
 }

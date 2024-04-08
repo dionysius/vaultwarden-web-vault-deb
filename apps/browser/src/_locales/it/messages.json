@@ -2999,5 +2999,11 @@
   "saveCipherAttemptFailed": {
     "message": "Errore durante il salvataggio delle credenziali. Controlla la console per più dettagli.",
     "description": "Notification message for when saving credentials has failed."
+  },
+  "removePasskey": {
+    "message": "Rimuovi passkey"
+  },
+  "passkeyRemoved": {
+    "message": "Passkey rimossa"
   }
 }

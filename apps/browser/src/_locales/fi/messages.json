@@ -2989,15 +2989,21 @@
     "description": "Button text for the setting that allows overriding the default browser autofill settings"
   },
   "saveCipherAttemptSuccess": {
-    "message": "Käyttäjätiedot on tallennettu!",
+    "message": "Käyttäjätiedot tallennettiin!",
     "description": "Notification message for when saving credentials has succeeded."
   },
   "updateCipherAttemptSuccess": {
-    "message": "Käyttäjätiedot on päivitetty!",
+    "message": "Käyttäjätiedot päivitettiin!",
     "description": "Notification message for when updating credentials has succeeded."
   },
   "saveCipherAttemptFailed": {
     "message": "Virhe tallennettaessa käyttäjätietoja. Näet isätietoja hallinnasta.",
     "description": "Notification message for when saving credentials has failed."
+  },
+  "removePasskey": {
+    "message": "Poista suojausavain"
+  },
+  "passkeyRemoved": {
+    "message": "Suojausavain poistettiin"
   }
 }

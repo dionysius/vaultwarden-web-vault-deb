@@ -2999,5 +2999,11 @@
   "saveCipherAttemptFailed": {
     "message": "Грешка при запазването на идентификационните данни. Вижте конзолата за подробности.",
     "description": "Notification message for when saving credentials has failed."
+  },
+  "removePasskey": {
+    "message": "Премахване на секретния ключ"
+  },
+  "passkeyRemoved": {
+    "message": "Секретният ключ е премахнат"
   }
 }

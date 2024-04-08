@@ -2999,5 +2999,11 @@
   "saveCipherAttemptFailed": {
     "message": "資格情報の保存中にエラーが発生しました。詳細はコンソールを確認してください。",
     "description": "Notification message for when saving credentials has failed."
+  },
+  "removePasskey": {
+    "message": "パスキーを削除"
+  },
+  "passkeyRemoved": {
+    "message": "パスキーを削除しました"
   }
 }

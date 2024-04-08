@@ -2999,5 +2999,11 @@
   "saveCipherAttemptFailed": {
     "message": "Ошибка сохранения учетных данных. Проверьте консоль для получения подробной информации.",
     "description": "Notification message for when saving credentials has failed."
+  },
+  "removePasskey": {
+    "message": "Удалить passkey"
+  },
+  "passkeyRemoved": {
+    "message": "Passkey удален"
   }
 }

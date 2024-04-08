@@ -2999,5 +2999,11 @@
   "saveCipherAttemptFailed": {
     "message": "Fejl under import. Tjek konsollen for detaljer.",
     "description": "Notification message for when saving credentials has failed."
+  },
+  "removePasskey": {
+    "message": "Fjern adgangsnøgle"
+  },
+  "passkeyRemoved": {
+    "message": "Adgangsnøgle fjernet"
   }
 }

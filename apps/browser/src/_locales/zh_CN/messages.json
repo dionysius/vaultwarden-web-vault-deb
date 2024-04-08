@@ -2999,5 +2999,11 @@
   "saveCipherAttemptFailed": {
     "message": "保存凭据时出错。检查控制台以获取详细信息。",
     "description": "Notification message for when saving credentials has failed."
+  },
+  "removePasskey": {
+    "message": "移除通行密钥"
+  },
+  "passkeyRemoved": {
+    "message": "通行密钥已移除"
   }
 }

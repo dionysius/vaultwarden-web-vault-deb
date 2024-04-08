@@ -1058,7 +1058,7 @@
     "message": "適用於所有已登入的帳戶。"
   },
   "turnOffBrowserBuiltInPasswordManagerSettings": {
-    "message": "Turn off your browser’s built in password manager settings to avoid conflicts."
+    "message": "關閉你的瀏覽器內建密碼管理器設定以避免衝突。"
   },
   "turnOffBrowserBuiltInPasswordManagerSettingsLink": {
     "message": "編輯瀏覽器設定"
@@ -1168,7 +1168,7 @@
     "message": "在每個登入資料旁顯示一個可辨識的圖片。"
   },
   "faviconDescAlt": {
-    "message": "Show a recognizable image next to each login. Applies to all logged in accounts."
+    "message": "在每次登入時旁邊顯示可識別的圖片。適用於所有已登入的帳號。"
   },
   "enableBadgeCounter": {
     "message": "顯示圖示計數器"
@@ -2314,7 +2314,7 @@
     "message": "如何自動填入"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Select an item from this screen, use the shortcut $COMMAND$, or explore other options in settings.",
+    "message": "從此畫面中選擇一個項目；使用捷徑 $COMMAND$，或在設定中探索其他選項。",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2323,7 +2323,7 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "Select an item from this screen, or explore other options in settings."
+    "message": "從此畫面中選擇一個項目，或在設定中探索其他選項。"
   },
   "gotIt": {
     "message": "我知道了"
@@ -2524,15 +2524,15 @@
     "description": "Toggling an expand/collapse state."
   },
   "filelessImport": {
-    "message": "Import your data to Bitwarden?",
+    "message": "匯入你的資料至 Bitwarden？",
     "description": "Default notification title for triggering a fileless import."
   },
   "lpFilelessImport": {
-    "message": "Protect your LastPass data and import to Bitwarden?",
+    "message": "保護你的 LastPass 資料並匯入至 Bitwarden？",
     "description": "LastPass specific notification title for triggering a fileless import."
   },
   "lpCancelFilelessImport": {
-    "message": "Save as unencrypted file",
+    "message": "儲存為未加密的檔案",
     "description": "LastPass specific notification button text for cancelling a fileless import."
   },
   "startFilelessImport": {
@@ -2548,7 +2548,7 @@
     "description": "Notification message for when an import has completed successfully."
   },
   "dataImportFailed": {
-    "message": "Error importing. Check console for details.",
+    "message": "匯入時發生錯誤。檢查控制台以了解詳細資訊。",
     "description": "Notification message for when an import has failed."
   },
   "importNetworkError": {
@@ -2655,7 +2655,7 @@
     "message": "再試一次"
   },
   "verificationRequiredForActionSetPinToContinue": {
-    "message": "Verification required for this action. Set a PIN to continue."
+    "message": "此操作需要驗證。設定 PIN 碼以繼續。"
   },
   "setPin": {
     "message": "設定 PIN 碼"
@@ -2667,7 +2667,7 @@
     "message": "正在等待確認"
   },
   "couldNotCompleteBiometrics": {
-    "message": "Could not complete biometrics."
+    "message": "無法完成生物辨識。"
   },
   "needADifferentMethod": {
     "message": "需要不同的方法嗎？"
@@ -2682,7 +2682,7 @@
     "message": "用生物識別"
   },
   "enterVerificationCodeSentToEmail": {
-    "message": "Enter the verification code that was sent to your email."
+    "message": "輸入傳送到你的電子郵件的驗證碼。"
   },
   "resendCode": {
     "message": "重新傳送驗證碼"
@@ -2700,7 +2700,7 @@
     }
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
-    "message": "Launch Duo and follow the steps to finish logging in."
+    "message": "啟動 Duo 並依照步驟完成登入。"
   },
   "duoRequiredForAccount": {
     "message": "Duo two-step login is required for your account."
@@ -2999,5 +2999,11 @@
   "saveCipherAttemptFailed": {
     "message": "Error saving credentials. Check console for details.",
     "description": "Notification message for when saving credentials has failed."
+  },
+  "removePasskey": {
+    "message": "Remove passkey"
+  },
+  "passkeyRemoved": {
+    "message": "Passkey removed"
   }
 }

@@ -2999,5 +2999,11 @@
   "saveCipherAttemptFailed": {
     "message": "Kļūda piekļuves informācijas saglabāšanā. Jāpārbauda, vai konsolē ir izvērstāka informācija.",
     "description": "Notification message for when saving credentials has failed."
+  },
+  "removePasskey": {
+    "message": "Noņemt piekļuves atslēgu"
+  },
+  "passkeyRemoved": {
+    "message": "Piekļuves atslēga noņemta"
   }
 }
