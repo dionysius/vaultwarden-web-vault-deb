@@ -404,7 +404,7 @@
     "message": "長度"
   },
   "passwordMinLength": {
-    "message": "Minimum password length"
+    "message": "最小密碼長度"
   },
   "uppercase": {
     "message": "大寫 (A-Z)"
@@ -561,10 +561,10 @@
     "message": "帳戶已建立！現在可以登入了。"
   },
   "youSuccessfullyLoggedIn": {
-    "message": "You successfully logged in"
+    "message": "你已成功登入"
   },
   "youMayCloseThisWindow": {
-    "message": "You may close this window"
+    "message": "你可以關閉此視窗"
   },
   "masterPassSent": {
     "message": "已寄出包含您主密碼提示的電子郵件。"
@@ -1546,15 +1546,15 @@
     "message": "設定主密碼"
   },
   "orgPermissionsUpdatedMustSetPassword": {
-    "message": "Your organization permissions were updated, requiring you to set a master password.",
+    "message": "你的組織權限已更新，要求你設定一個主密碼。",
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "orgRequiresYouToSetPassword": {
-    "message": "Your organization requires you to set a master password.",
+    "message": "你的組織要求你設定一個主密碼。",
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "verificationRequired": {
-    "message": "Verification required",
+    "message": "需要驗證",
     "description": "Default title for the user verification dialog."
   },
   "currentMasterPass": {
@@ -1645,10 +1645,10 @@
     "message": "在您的桌面和瀏覽器閒建立連綫時，透過要求指紋短語確認，以添加一個額外的安全層。每次建立連綫都需要使用者干預和驗證。"
   },
   "enableHardwareAcceleration": {
-    "message": "Use hardware acceleration"
+    "message": "使用硬體加速"
   },
   "enableHardwareAccelerationDesc": {
-    "message": "By default this setting is ON. Turn OFF only if you experience graphical issues. Restart is required."
+    "message": "此設定預設為開啟。僅當你遇到圖形問題時才關閉。需要重新啟動。"
   },
   "approve": {
     "message": "核准"
@@ -1889,40 +1889,40 @@
     "message": "您的主密碼不符合一個或多個組織原則要求。您必須立即更新您的主密碼才能存取密碼庫。進行此動作將登出您目前的工作階段，需要您重新登入。其他裝置上的工作階段可能繼續長達一小時。"
   },
   "tryAgain": {
-    "message": "Try again"
+    "message": "再試一次"
   },
   "verificationRequiredForActionSetPinToContinue": {
-    "message": "Verification required for this action. Set a PIN to continue."
+    "message": "此操作需要驗證。設定 PIN 碼以繼續。"
   },
   "setPin": {
-    "message": "Set PIN"
+    "message": "設定 PIN 碼"
   },
   "verifyWithBiometrics": {
-    "message": "Verify with biometrics"
+    "message": "使用生物辨識進行驗證"
   },
   "awaitingConfirmation": {
-    "message": "Awaiting confirmation"
+    "message": "正在等待確認"
   },
   "couldNotCompleteBiometrics": {
-    "message": "Could not complete biometrics."
+    "message": "無法完成生物辨識。"
   },
   "needADifferentMethod": {
-    "message": "Need a different method?"
+    "message": "需要不同的方法嗎？"
   },
   "useMasterPassword": {
-    "message": "Use master password"
+    "message": "使用主密碼"
   },
   "usePin": {
-    "message": "Use PIN"
+    "message": "使用 PIN 碼"
   },
   "useBiometrics": {
-    "message": "Use biometrics"
+    "message": "使用生物辨識"
   },
   "enterVerificationCodeSentToEmail": {
     "message": "Enter the verification code that was sent to your email."
   },
   "resendCode": {
-    "message": "Resend code"
+    "message": "重新傳送驗證碼"
   },
   "hours": {
     "message": "小時"
@@ -2465,7 +2465,7 @@
     "message": "全部清除"
   },
   "plusNMore": {
-    "message": "+ $QUANTITY$ more",
+    "message": "+ $QUANTITY$ 個更多",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -2477,7 +2477,7 @@
     "message": "子選單"
   },
   "skipToContent": {
-    "message": "Skip to content"
+    "message": "跳至內容"
   },
   "typePasskey": {
     "message": "密碼金鑰"
@@ -2621,13 +2621,13 @@
     "message": "使用者名稱或密碼不正確"
   },
   "incorrectPassword": {
-    "message": "Incorrect password"
+    "message": "密碼不正確"
   },
   "incorrectCode": {
-    "message": "Incorrect code"
+    "message": "驗證碼不正確"
   },
   "incorrectPin": {
-    "message": "Incorrect PIN"
+    "message": "PIN 碼不正確"
   },
   "multifactorAuthenticationFailed": {
     "message": "多因素驗證失敗"
@@ -2685,22 +2685,22 @@
     "message": "將與您的 LastPass 帳戶關聯的 YubiKey 插入電腦的 USB 連接埠，然後觸摸其按鈕。"
   },
   "commonImportFormats": {
-    "message": "Common formats",
+    "message": "常見格式",
     "description": "Label indicating the most common import formats"
   },
   "troubleshooting": {
-    "message": "Troubleshooting"
+    "message": "疑難排解"
   },
   "disableHardwareAccelerationRestart": {
-    "message": "Disable hardware acceleration and restart"
+    "message": "停用硬體加速並重新啟動"
   },
   "enableHardwareAccelerationRestart": {
-    "message": "Enable hardware acceleration and restart"
+    "message": "啟用硬體加速並重新啟動"
   },
   "removePasskey": {
-    "message": "Remove passkey"
+    "message": "移除金鑰"
   },
   "passkeyRemoved": {
-    "message": "Passkey removed"
+    "message": "金鑰已移除"
   }
 }
