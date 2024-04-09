@@ -95,10 +95,10 @@
     "message": "Auto-fill login"
   },
   "autoFillCard": {
-    "message": "Auto-fill card"
+    "message": "Auto-bete txartela"
   },
   "autoFillIdentity": {
-    "message": "Auto-fill identity"
+    "message": "Auto-bete nortasuna"
   },
   "generatePasswordCopied": {
     "message": "Sortu pasahitza (kopiatuta)"
@@ -110,19 +110,19 @@
     "message": "Bat datozen saio-hasierarik gabe"
   },
   "noCards": {
-    "message": "No cards"
+    "message": "Txartelik ez"
   },
   "noIdentities": {
-    "message": "No identities"
+    "message": "Nortasunik ez"
   },
   "addLoginMenu": {
     "message": "Add login"
   },
   "addCardMenu": {
-    "message": "Add card"
+    "message": "Gehitu txartela"
   },
   "addIdentityMenu": {
-    "message": "Add identity"
+    "message": "Gehitu nortasuna"
   },
   "unlockVaultMenu": {
     "message": "Desblokeatu kutxa gotorra"
@@ -223,10 +223,10 @@
     "message": "Bitwarden Laguntza zentroa"
   },
   "communityForums": {
-    "message": "Explore Bitwarden community forums"
+    "message": "Esploratu Bitwarden komunitatearen foroak"
   },
   "contactSupport": {
-    "message": "Contact Bitwarden support"
+    "message": "Jarri harremanetan Bitwardeneko laguntza taldearekin"
   },
   "sync": {
     "message": "Sinkronizatu"
@@ -269,7 +269,7 @@
     "message": "Luzera"
   },
   "passwordMinLength": {
-    "message": "Minimum password length"
+    "message": "Pasahitzaren gutxieneko luzera"
   },
   "uppercase": {
     "message": "Letra larria (A-Z)"
@@ -1064,7 +1064,7 @@
     "message": "Edit browser settings."
   },
   "autofillOverlayVisibilityOff": {
-    "message": "Off",
+    "message": "Itzalita",
     "description": "Overlay setting select option for disabling autofill overlay"
   },
   "autofillOverlayVisibilityOnFieldFocus": {
@@ -1592,10 +1592,10 @@
     "message": "Ezarri pasahitz nagusia"
   },
   "currentMasterPass": {
-    "message": "Current master password"
+    "message": "Oraingo pasahitz nagusia"
   },
   "newMasterPass": {
-    "message": "New master password"
+    "message": "Pasahitz nagusi berria"
   },
   "confirmNewMasterPass": {
     "message": "Confirm new master password"
@@ -2266,10 +2266,10 @@
     "message": "Please make sure your vault is unlocked and the Fingerprint phrase matches on the other device."
   },
   "resendNotification": {
-    "message": "Resend notification"
+    "message": "Berbidali jakinarazpena"
   },
   "viewAllLoginOptions": {
-    "message": "View all log in options"
+    "message": "Ikusi erregistro guztiak ezarpenetan"
   },
   "notificationSentDevice": {
     "message": "A notification has been sent to your device."
@@ -2293,13 +2293,13 @@
     "message": "Check known data breaches for this password"
   },
   "important": {
-    "message": "Important:"
+    "message": "Garrantzitsua:"
   },
   "masterPasswordHint": {
     "message": "Your master password cannot be recovered if you forget it!"
   },
   "characterMinimum": {
-    "message": "$LENGTH$ character minimum",
+    "message": "$LENGTH$ karaktere gutxienez",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -2326,7 +2326,7 @@
     "message": "Select an item from this screen, or explore other options in settings."
   },
   "gotIt": {
-    "message": "Got it"
+    "message": "Ulertuta"
   },
   "autofillSettings": {
     "message": "Auto-fill settings"
@@ -2359,25 +2359,25 @@
     "message": "Logging in on"
   },
   "opensInANewWindow": {
-    "message": "Opens in a new window"
+    "message": "Leiho berri batean irekitzen da"
   },
   "deviceApprovalRequired": {
     "message": "Device approval required. Select an approval option below:"
   },
   "rememberThisDevice": {
-    "message": "Remember this device"
+    "message": "Gogoratu gailu hau"
   },
   "uncheckIfPublicDevice": {
     "message": "Uncheck if using a public device"
   },
   "approveFromYourOtherDevice": {
-    "message": "Approve from your other device"
+    "message": "Onartu zure beste gailutik"
   },
   "requestAdminApproval": {
-    "message": "Request admin approval"
+    "message": "Eskatu administratzailearen onarpena"
   },
   "approveWithMasterPassword": {
-    "message": "Approve with master password"
+    "message": "Onartu pasahitz nagusiarekin"
   },
   "ssoIdentifierRequired": {
     "message": "Organization SSO identifier is required."
@@ -2390,31 +2390,31 @@
     "message": "Access denied. You do not have permission to view this page."
   },
   "general": {
-    "message": "General"
+    "message": "Orokorra"
   },
   "display": {
-    "message": "Display"
+    "message": "Bistaratzea"
   },
   "accountSuccessfullyCreated": {
-    "message": "Account successfully created!"
+    "message": "Kontua zuzen sortu da!"
   },
   "adminApprovalRequested": {
-    "message": "Admin approval requested"
+    "message": "Administratzailearen onarpena eskatuta"
   },
   "adminApprovalRequestSentToAdmins": {
-    "message": "Your request has been sent to your admin."
+    "message": "Zure eskaera zure administratzaileari bidali zaio."
   },
   "youWillBeNotifiedOnceApproved": {
-    "message": "You will be notified once approved."
+    "message": "Jakinaraziko zaizu onartzen denean."
   },
   "troubleLoggingIn": {
-    "message": "Trouble logging in?"
+    "message": "Arazoak saioa hasterakoan?"
   },
   "loginApproved": {
     "message": "Login approved"
   },
   "userEmailMissing": {
-    "message": "User email missing"
+    "message": "Erabiltzailearen emaila falta da"
   },
   "deviceTrusted": {
     "message": "Device trusted"
@@ -2540,19 +2540,19 @@
     "description": "Notification button text for starting a fileless import."
   },
   "importing": {
-    "message": "Importing...",
+    "message": "Inportatzen...",
     "description": "Notification message for when an import is in progress."
   },
   "dataSuccessfullyImported": {
-    "message": "Data successfully imported!",
+    "message": "Datuak zuzen inportatu dira!",
     "description": "Notification message for when an import has completed successfully."
   },
   "dataImportFailed": {
-    "message": "Error importing. Check console for details.",
+    "message": "Errorea gertatu da inportatzean. Begiratu xehetasunak kontsolan.",
     "description": "Notification message for when an import has failed."
   },
   "importNetworkError": {
-    "message": "Network error encountered during import.",
+    "message": "Sareko errorea gertatu da inportatzerakoan.",
     "description": "Notification message for when an import has failed due to a network error."
   },
   "aliasDomain": {
@@ -2602,11 +2602,11 @@
     "description": "Screen reader text for when a login item is focused where a partial username is displayed. SR will announce this phrase before reading the text of the partial username"
   },
   "noItemsToShow": {
-    "message": "No items to show",
+    "message": "Ez dago elementurik erakusteko",
     "description": "Text to show in overlay if there are no matching items"
   },
   "newItem": {
-    "message": "New item",
+    "message": "Elementu berria",
     "description": "Button text to display in overlay when there are no matching items"
   },
   "addNewVaultItem": {
@@ -2618,32 +2618,32 @@
     "description": "Screen reader text for announcing when the overlay opens on the page"
   },
   "turnOn": {
-    "message": "Turn on"
+    "message": "Piztu"
   },
   "ignore": {
-    "message": "Ignore"
+    "message": "Ezikusi"
   },
   "importData": {
-    "message": "Import data",
+    "message": "Inportatu datuak",
     "description": "Used for the header of the import dialog, the import button and within the file-password-prompt"
   },
   "importError": {
-    "message": "Import error"
+    "message": "Errorea inportatzerakoan"
   },
   "importErrorDesc": {
-    "message": "There was a problem with the data you tried to import. Please resolve the errors listed below in your source file and try again."
+    "message": "Inportatzen saiatu zaren datuekin arazo bat egon da. Mesedez, konpondu ondoren adierazten diren akatsak eta saiatu berriro."
   },
   "resolveTheErrorsBelowAndTryAgain": {
-    "message": "Resolve the errors below and try again."
+    "message": "Konpondu beheko akatsak eta saiatu berriro."
   },
   "description": {
-    "message": "Description"
+    "message": "Deskribapena"
   },
   "importSuccess": {
-    "message": "Data successfully imported"
+    "message": "Datuak zuzen inportatu dira"
   },
   "importSuccessNumberOfItems": {
-    "message": "A total of $AMOUNT$ items were imported.",
+    "message": "Guztira $AMOUNT$ elementu inportatu dira.",
     "placeholders": {
       "amount": {
         "content": "$1",
@@ -2652,7 +2652,7 @@
     }
   },
   "tryAgain": {
-    "message": "Try again"
+    "message": "Saiatu berriro"
   },
   "verificationRequiredForActionSetPinToContinue": {
     "message": "Verification required for this action. Set a PIN to continue."
@@ -2661,10 +2661,10 @@
     "message": "Set PIN"
   },
   "verifyWithBiometrics": {
-    "message": "Verify with biometrics"
+    "message": "Egiaztatu biometria erabiliz"
   },
   "awaitingConfirmation": {
-    "message": "Awaiting confirmation"
+    "message": "Baieztapenaren zain"
   },
   "couldNotCompleteBiometrics": {
     "message": "Could not complete biometrics."
@@ -2673,13 +2673,13 @@
     "message": "Need a different method?"
   },
   "useMasterPassword": {
-    "message": "Use master password"
+    "message": "Erabili pasahitz nagusia"
   },
   "usePin": {
-    "message": "Use PIN"
+    "message": "Erabili PIN kodea"
   },
   "useBiometrics": {
-    "message": "Use biometrics"
+    "message": "Erabili biometria"
   },
   "enterVerificationCodeSentToEmail": {
     "message": "Enter the verification code that was sent to your email."
@@ -2688,10 +2688,10 @@
     "message": "Resend code"
   },
   "total": {
-    "message": "Total"
+    "message": "Guztira"
   },
   "importWarning": {
-    "message": "You are importing data to $ORGANIZATION$. Your data may be shared with members of this organization. Do you want to proceed?",
+    "message": "$ORGANIZATION$(e)ra datuak inportatzen ari zara. Zure datuak erakunde horretako kideekin parteka daitezke. Jarraitu nahi duzu?",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -2810,7 +2810,7 @@
     "message": "You do not have a matching login for this site."
   },
   "confirm": {
-    "message": "Confirm"
+    "message": "Berretsi"
   },
   "savePasskey": {
     "message": "Save passkey"
