@@ -4,13 +4,14 @@ import { OrganizationId } from "../../../types/guid";
 import { OrgKey } from "../../../types/key";
 import { CryptoService } from "../../abstractions/crypto.service";
 import { SymmetricCryptoKey } from "../../models/domain/symmetric-crypto-key";
-import { KeyDefinition, CRYPTO_DISK, DeriveDefinition } from "../../state";
+import { CRYPTO_DISK, DeriveDefinition, UserKeyDefinition } from "../../state";
 
-export const USER_ENCRYPTED_ORGANIZATION_KEYS = KeyDefinition.record<
+export const USER_ENCRYPTED_ORGANIZATION_KEYS = UserKeyDefinition.record<
   EncryptedOrganizationKeyData,
   OrganizationId
 >(CRYPTO_DISK, "organizationKeys", {
   deserializer: (obj) => obj,
+  clearOn: ["logout"],
 });
 
 export const USER_ORGANIZATION_KEYS = DeriveDefinition.from<

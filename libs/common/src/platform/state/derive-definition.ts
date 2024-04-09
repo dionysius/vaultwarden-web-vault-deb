@@ -5,6 +5,7 @@ import { DerivedStateDependencies, StorageKey } from "../../types/state";
 
 import { KeyDefinition } from "./key-definition";
 import { StateDefinition } from "./state-definition";
+import { UserKeyDefinition } from "./user-key-definition";
 
 declare const depShapeMarker: unique symbol;
 /**
@@ -129,26 +130,28 @@ export class DeriveDefinition<TFrom, TTo, TDeps extends DerivedStateDependencies
   static from<TFrom, TTo, TDeps extends DerivedStateDependencies = never>(
     definition:
       | KeyDefinition<TFrom>
+      | UserKeyDefinition<TFrom>
       | [DeriveDefinition<unknown, TFrom, DerivedStateDependencies>, string],
     options: DeriveDefinitionOptions<TFrom, TTo, TDeps>,
   ) {
-    if (isKeyDefinition(definition)) {
-      return new DeriveDefinition(definition.stateDefinition, definition.key, options);
-    } else {
+    if (isFromDeriveDefinition(definition)) {
       return new DeriveDefinition(definition[0].stateDefinition, definition[1], options);
+    } else {
+      return new DeriveDefinition(definition.stateDefinition, definition.key, options);
     }
   }
 
   static fromWithUserId<TKeyDef, TTo, TDeps extends DerivedStateDependencies = never>(
     definition:
       | KeyDefinition<TKeyDef>
+      | UserKeyDefinition<TKeyDef>
       | [DeriveDefinition<unknown, TKeyDef, DerivedStateDependencies>, string],
     options: DeriveDefinitionOptions<[UserId, TKeyDef], TTo, TDeps>,
   ) {
-    if (isKeyDefinition(definition)) {
-      return new DeriveDefinition(definition.stateDefinition, definition.key, options);
-    } else {
+    if (isFromDeriveDefinition(definition)) {
       return new DeriveDefinition(definition[0].stateDefinition, definition[1], options);
+    } else {
+      return new DeriveDefinition(definition.stateDefinition, definition.key, options);
     }
   }
 
@@ -181,10 +184,11 @@ export class DeriveDefinition<TFrom, TTo, TDeps extends DerivedStateDependencies
   }
 }
 
-function isKeyDefinition(
+function isFromDeriveDefinition(
   definition:
     | KeyDefinition<unknown>
+    | UserKeyDefinition<unknown>
     | [DeriveDefinition<unknown, unknown, DerivedStateDependencies>, string],
-): definition is KeyDefinition<unknown> {
-  return Object.prototype.hasOwnProperty.call(definition, "key");
+): definition is [DeriveDefinition<unknown, unknown, DerivedStateDependencies>, string] {
+  return Array.isArray(definition);
 }

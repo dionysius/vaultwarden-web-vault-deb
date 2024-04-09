@@ -3,14 +3,15 @@ import { ProviderKey } from "../../../types/key";
 import { EncryptService } from "../../abstractions/encrypt.service";
 import { EncString, EncryptedString } from "../../models/domain/enc-string";
 import { SymmetricCryptoKey } from "../../models/domain/symmetric-crypto-key";
-import { KeyDefinition, CRYPTO_DISK, DeriveDefinition } from "../../state";
+import { CRYPTO_DISK, DeriveDefinition, UserKeyDefinition } from "../../state";
 import { CryptoService } from "../crypto.service";
 
-export const USER_ENCRYPTED_PROVIDER_KEYS = KeyDefinition.record<EncryptedString, ProviderId>(
+export const USER_ENCRYPTED_PROVIDER_KEYS = UserKeyDefinition.record<EncryptedString, ProviderId>(
   CRYPTO_DISK,
   "providerKeys",
   {
     deserializer: (obj) => obj,
+    clearOn: ["logout"],
   },
 );
 

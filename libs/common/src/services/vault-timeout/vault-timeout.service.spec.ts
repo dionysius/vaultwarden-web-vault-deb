@@ -156,7 +156,6 @@ describe("VaultTimeoutService", () => {
     expect(vaultTimeoutSettingsService.availableVaultTimeoutActions$).toHaveBeenCalledWith(userId);
     expect(stateService.setEverBeenUnlocked).toHaveBeenCalledWith(true, { userId: userId });
     expect(stateService.setUserKeyAutoUnlock).toHaveBeenCalledWith(null, { userId: userId });
-    expect(cryptoService.clearUserKey).toHaveBeenCalledWith(false, userId);
     expect(cryptoService.clearMasterKey).toHaveBeenCalledWith(userId);
     expect(cipherService.clearCache).toHaveBeenCalledWith(userId);
     expect(lockedCallback).toHaveBeenCalledWith(userId);

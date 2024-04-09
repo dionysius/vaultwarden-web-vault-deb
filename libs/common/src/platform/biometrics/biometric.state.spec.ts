@@ -1,5 +1,5 @@
 import { EncryptedString } from "../models/domain/enc-string";
-import { KeyDefinition } from "../state";
+import { KeyDefinition, UserKeyDefinition } from "../state";
 
 import {
   BIOMETRIC_UNLOCK_ENABLED,
@@ -22,9 +22,15 @@ describe.each([
 ])(
   "deserializes state %s",
   (
-    ...args: [KeyDefinition<EncryptedString>, EncryptedString] | [KeyDefinition<boolean>, boolean]
+    ...args:
+      | [UserKeyDefinition<EncryptedString>, EncryptedString]
+      | [UserKeyDefinition<boolean>, boolean]
+      | [KeyDefinition<boolean>, boolean]
   ) => {
-    function testDeserialization<T>(keyDefinition: KeyDefinition<T>, state: T) {
+    function testDeserialization<T>(
+      keyDefinition: UserKeyDefinition<T> | KeyDefinition<T>,
+      state: T,
+    ) {
       const deserialized = keyDefinition.deserializer(JSON.parse(JSON.stringify(state)));
       expect(deserialized).toEqual(state);
     }

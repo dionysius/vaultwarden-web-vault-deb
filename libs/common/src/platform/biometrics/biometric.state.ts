@@ -1,15 +1,16 @@
 import { UserId } from "../../types/guid";
 import { EncryptedString } from "../models/domain/enc-string";
-import { KeyDefinition, BIOMETRIC_SETTINGS_DISK } from "../state";
+import { KeyDefinition, BIOMETRIC_SETTINGS_DISK, UserKeyDefinition } from "../state";
 
 /**
  * Indicates whether the user elected to store a biometric key to unlock their vault.
  */
-export const BIOMETRIC_UNLOCK_ENABLED = new KeyDefinition<boolean>(
+export const BIOMETRIC_UNLOCK_ENABLED = new UserKeyDefinition<boolean>(
   BIOMETRIC_SETTINGS_DISK,
   "biometricUnlockEnabled",
   {
     deserializer: (obj) => obj,
+    clearOn: [],
   },
 );
 
@@ -18,11 +19,12 @@ export const BIOMETRIC_UNLOCK_ENABLED = new KeyDefinition<boolean>(
  *
  * A true setting controls whether {@link ENCRYPTED_CLIENT_KEY_HALF} is set.
  */
-export const REQUIRE_PASSWORD_ON_START = new KeyDefinition<boolean>(
+export const REQUIRE_PASSWORD_ON_START = new UserKeyDefinition<boolean>(
   BIOMETRIC_SETTINGS_DISK,
   "requirePasswordOnStart",
   {
     deserializer: (value) => value,
+    clearOn: [],
   },
 );
 
@@ -33,11 +35,12 @@ export const REQUIRE_PASSWORD_ON_START = new KeyDefinition<boolean>(
  * For operating systems without application-level key storage, this key half is concatenated with a signature
  * provided by the OS and used to encrypt the biometric key prior to storage.
  */
-export const ENCRYPTED_CLIENT_KEY_HALF = new KeyDefinition<EncryptedString>(
+export const ENCRYPTED_CLIENT_KEY_HALF = new UserKeyDefinition<EncryptedString>(
   BIOMETRIC_SETTINGS_DISK,
   "clientKeyHalf",
   {
     deserializer: (obj) => obj,
+    clearOn: ["logout"],
   },
 );
 
@@ -45,11 +48,12 @@ export const ENCRYPTED_CLIENT_KEY_HALF = new KeyDefinition<EncryptedString>(
  * Indicates the user has been warned about the security implications of using biometrics and, depending on the OS,
  * recommended to require a password on first unlock of an application instance.
  */
-export const DISMISSED_REQUIRE_PASSWORD_ON_START_CALLOUT = new KeyDefinition<boolean>(
+export const DISMISSED_REQUIRE_PASSWORD_ON_START_CALLOUT = new UserKeyDefinition<boolean>(
   BIOMETRIC_SETTINGS_DISK,
   "dismissedBiometricRequirePasswordOnStartCallout",
   {
     deserializer: (obj) => obj,
+    clearOn: [],
   },
 );
 
@@ -68,11 +72,12 @@ export const PROMPT_CANCELLED = KeyDefinition.record<boolean, UserId>(
 /**
  * Stores whether the user has elected to automatically prompt for biometric unlock on application start.
  */
-export const PROMPT_AUTOMATICALLY = new KeyDefinition<boolean>(
+export const PROMPT_AUTOMATICALLY = new UserKeyDefinition<boolean>(
   BIOMETRIC_SETTINGS_DISK,
   "promptAutomatically",
   {
     deserializer: (obj) => obj,
+    clearOn: [],
   },
 );
 

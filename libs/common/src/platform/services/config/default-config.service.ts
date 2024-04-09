@@ -32,7 +32,6 @@ export const USER_SERVER_CONFIG = new UserKeyDefinition<ServerConfig>(CONFIG_DIS
   clearOn: ["logout"],
 });
 
-// TODO MDG: When to clean these up?
 export const GLOBAL_SERVER_CONFIGURATIONS = KeyDefinition.record<ServerConfig, ApiUrl>(
   CONFIG_DISK,
   "byServer",

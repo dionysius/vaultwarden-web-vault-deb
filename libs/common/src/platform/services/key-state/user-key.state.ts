@@ -3,18 +3,25 @@ import { CryptoFunctionService } from "../../abstractions/crypto-function.servic
 import { EncryptService } from "../../abstractions/encrypt.service";
 import { EncString, EncryptedString } from "../../models/domain/enc-string";
 import { SymmetricCryptoKey } from "../../models/domain/symmetric-crypto-key";
-import { KeyDefinition, CRYPTO_DISK, DeriveDefinition, CRYPTO_MEMORY } from "../../state";
+import {
+  KeyDefinition,
+  CRYPTO_DISK,
+  DeriveDefinition,
+  CRYPTO_MEMORY,
+  UserKeyDefinition,
+} from "../../state";
 import { CryptoService } from "../crypto.service";
 
 export const USER_EVER_HAD_USER_KEY = new KeyDefinition<boolean>(CRYPTO_DISK, "everHadUserKey", {
   deserializer: (obj) => obj,
 });
 
-export const USER_ENCRYPTED_PRIVATE_KEY = new KeyDefinition<EncryptedString>(
+export const USER_ENCRYPTED_PRIVATE_KEY = new UserKeyDefinition<EncryptedString>(
   CRYPTO_DISK,
   "privateKey",
   {
     deserializer: (obj) => obj,
+    clearOn: ["logout"],
   },
 );
 
@@ -58,6 +65,7 @@ export const USER_PUBLIC_KEY = DeriveDefinition.from<
     return (await cryptoFunctionService.rsaExtractPublicKey(privateKey)) as UserPublicKey;
   },
 });
-export const USER_KEY = new KeyDefinition<UserKey>(CRYPTO_MEMORY, "userKey", {
+export const USER_KEY = new UserKeyDefinition<UserKey>(CRYPTO_MEMORY, "userKey", {
   deserializer: (obj) => SymmetricCryptoKey.fromJSON(obj) as UserKey,
+  clearOn: ["logout", "lock"],
 });
