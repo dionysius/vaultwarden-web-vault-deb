@@ -10,6 +10,7 @@ import {
   AuthRequestServiceAbstraction,
   AuthRequestService,
   LoginEmailServiceAbstraction,
+  LoginEmailService,
 } from "@bitwarden/auth/common";
 import { ApiService as ApiServiceAbstraction } from "@bitwarden/common/abstractions/api.service";
 import { AuditService as AuditServiceAbstraction } from "@bitwarden/common/abstractions/audit.service";
@@ -609,6 +610,8 @@ export default class MainBackground {
     this.billingAccountProfileStateService = new DefaultBillingAccountProfileStateService(
       this.stateProvider,
     );
+
+    this.loginEmailService = new LoginEmailService(this.stateProvider);
 
     this.loginStrategyService = new LoginStrategyService(
       this.accountService,
