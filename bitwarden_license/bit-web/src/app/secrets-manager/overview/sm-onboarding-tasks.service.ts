@@ -3,16 +3,21 @@ import { Observable, map } from "rxjs";
 
 import {
   ActiveUserState,
-  KeyDefinition,
   SM_ONBOARDING_DISK,
   StateProvider,
+  UserKeyDefinition,
 } from "@bitwarden/common/platform/state";
 
 export type SMOnboardingTasks = Record<string, Record<string, boolean>>;
 
-const SM_ONBOARDING_TASKS_KEY = new KeyDefinition<SMOnboardingTasks>(SM_ONBOARDING_DISK, "tasks", {
-  deserializer: (b) => b,
-});
+const SM_ONBOARDING_TASKS_KEY = new UserKeyDefinition<SMOnboardingTasks>(
+  SM_ONBOARDING_DISK,
+  "tasks",
+  {
+    deserializer: (b) => b,
+    clearOn: [], // Used to track tasks completed by a user, we don't want to reshow if they've locked or logged out and came back to the app
+  },
+);
 
 @Injectable({
   providedIn: "root",
