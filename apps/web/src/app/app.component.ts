@@ -281,7 +281,7 @@ export class AppComponent implements OnDestroy, OnInit {
 
     await this.stateEventRunnerService.handleEvent("logout", userId as UserId);
 
-    this.searchService.clearIndex();
+    await this.searchService.clearIndex();
     this.authService.logOut(async () => {
       if (expired) {
         this.platformUtilsService.showToast(

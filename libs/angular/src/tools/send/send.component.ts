@@ -1,5 +1,13 @@
 import { Directive, NgZone, OnDestroy, OnInit } from "@angular/core";
-import { Subject, firstValueFrom, mergeMap, takeUntil } from "rxjs";
+import {
+  BehaviorSubject,
+  Subject,
+  firstValueFrom,
+  mergeMap,
+  from,
+  switchMap,
+  takeUntil,
+} from "rxjs";
 
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
@@ -24,7 +32,6 @@ export class SendComponent implements OnInit, OnDestroy {
   expired = false;
   type: SendType = null;
   sends: SendView[] = [];
-  searchText: string;
   selectedType: SendType;
   selectedAll: boolean;
   filter: (cipher: SendView) => boolean;
@@ -39,6 +46,8 @@ export class SendComponent implements OnInit, OnDestroy {
   private searchTimeout: any;
   private destroy$ = new Subject<void>();
   private _filteredSends: SendView[];
+  private _searchText$ = new BehaviorSubject<string>("");
+  protected isSearchable: boolean = false;
 
   get filteredSends(): SendView[] {
     return this._filteredSends;
@@ -46,6 +55,14 @@ export class SendComponent implements OnInit, OnDestroy {
 
   set filteredSends(filteredSends: SendView[]) {
     this._filteredSends = filteredSends;
+  }
+
+  get searchText() {
+    return this._searchText$.value;
+  }
+
+  set searchText(value: string) {
+    this._searchText$.next(value);
   }
 
   constructor(
@@ -67,6 +84,15 @@ export class SendComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.destroy$))
       .subscribe((policyAppliesToActiveUser) => {
         this.disableSend = policyAppliesToActiveUser;
+      });
+
+    this._searchText$
+      .pipe(
+        switchMap((searchText) => from(this.searchService.isSearchable(searchText))),
+        takeUntil(this.destroy$),
+      )
+      .subscribe((isSearchable) => {
+        this.isSearchable = isSearchable;
       });
   }
 
@@ -122,14 +148,14 @@ export class SendComponent implements OnInit, OnDestroy {
       clearTimeout(this.searchTimeout);
     }
     if (timeout == null) {
-      this.hasSearched = this.searchService.isSearchable(this.searchText);
+      this.hasSearched = this.isSearchable;
       this.filteredSends = this.sends.filter((s) => this.filter == null || this.filter(s));
       this.applyTextSearch();
       return;
     }
     this.searchPending = true;
     this.searchTimeout = setTimeout(async () => {
-      this.hasSearched = this.searchService.isSearchable(this.searchText);
+      this.hasSearched = this.isSearchable;
       this.filteredSends = this.sends.filter((s) => this.filter == null || this.filter(s));
       this.applyTextSearch();
       this.searchPending = false;

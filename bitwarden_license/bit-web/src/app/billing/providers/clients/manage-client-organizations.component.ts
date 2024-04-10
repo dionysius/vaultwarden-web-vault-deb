@@ -1,8 +1,8 @@
 import { SelectionModel } from "@angular/cdk/collections";
-import { Component, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { firstValueFrom } from "rxjs";
-import { first } from "rxjs/operators";
+import { BehaviorSubject, Subject, firstValueFrom, from } from "rxjs";
+import { first, switchMap, takeUntil } from "rxjs/operators";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
@@ -23,12 +23,22 @@ import { ManageClientOrganizationSubscriptionComponent } from "./manage-client-o
 })
 
 // eslint-disable-next-line rxjs-angular/prefer-takeuntil
-export class ManageClientOrganizationsComponent implements OnInit {
+export class ManageClientOrganizationsComponent implements OnInit, OnDestroy {
   providerId: string;
   loading = true;
   manageOrganizations = false;
 
+  private destroy$ = new Subject<void>();
+  private _searchText$ = new BehaviorSubject<string>("");
+  private isSearching: boolean = false;
+
+  get searchText() {
+    return this._searchText$.value;
+  }
+
   set searchText(search: string) {
+    this._searchText$.value;
+
     this.selection.clear();
     this.dataSource.filter = search;
   }
@@ -67,6 +77,20 @@ export class ManageClientOrganizationsComponent implements OnInit {
         this.searchText = qParams.search;
       });
     });
+
+    this._searchText$
+      .pipe(
+        switchMap((searchText) => from(this.searchService.isSearchable(searchText))),
+        takeUntil(this.destroy$),
+      )
+      .subscribe((isSearchable) => {
+        this.isSearching = isSearchable;
+      });
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
   async load() {
@@ -80,17 +104,13 @@ export class ManageClientOrganizationsComponent implements OnInit {
   }
 
   isPaging() {
-    const searching = this.isSearching();
+    const searching = this.isSearching;
     if (searching && this.didScroll) {
       // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
       // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.resetPaging();
     }
     return !searching && this.clients && this.clients.length > this.pageSize;
-  }
-
-  isSearching() {
-    return this.searchService.isSearchable(this.searchText);
   }
 
   async resetPaging() {

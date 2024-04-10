@@ -514,7 +514,7 @@ export default class MainBackground {
       this.apiService,
       this.fileUploadService,
     );
-    this.searchService = new SearchService(this.logService, this.i18nService);
+    this.searchService = new SearchService(this.logService, this.i18nService, this.stateProvider);
 
     this.collectionService = new CollectionService(
       this.cryptoService,
@@ -1177,7 +1177,7 @@ export default class MainBackground {
     const newActiveUser = await this.stateService.clean({ userId: userId });
 
     if (userId == null || userId === currentUserId) {
-      this.searchService.clearIndex();
+      await this.searchService.clearIndex();
     }
 
     await this.stateEventRunnerService.handleEvent("logout", currentUserId as UserId);

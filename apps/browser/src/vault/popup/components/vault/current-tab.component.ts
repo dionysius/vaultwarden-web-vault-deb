@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, NgZone, OnDestroy, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { Subject, firstValueFrom } from "rxjs";
-import { debounceTime, takeUntil } from "rxjs/operators";
+import { Subject, firstValueFrom, from } from "rxjs";
+import { debounceTime, switchMap, takeUntil } from "rxjs/operators";
 
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
@@ -120,8 +120,14 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     }
 
     this.search$
-      .pipe(debounceTime(500), takeUntil(this.destroy$))
-      .subscribe(() => this.searchVault());
+      .pipe(
+        debounceTime(500),
+        switchMap(() => {
+          return from(this.searchVault());
+        }),
+        takeUntil(this.destroy$),
+      )
+      .subscribe();
 
     const autofillOnPageLoadOrgPolicy = await firstValueFrom(
       this.autofillSettingsService.activateAutofillOnPageLoadFromPolicy$,
@@ -232,14 +238,12 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     }
   }
 
-  searchVault() {
-    if (!this.searchService.isSearchable(this.searchText)) {
+  async searchVault() {
+    if (!(await this.searchService.isSearchable(this.searchText))) {
       return;
     }
 
-    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    this.router.navigate(["/tabs/vault"], { queryParams: { searchText: this.searchText } });
+    await this.router.navigate(["/tabs/vault"], { queryParams: { searchText: this.searchText } });
   }
 
   closeOnEsc(e: KeyboardEvent) {

@@ -311,7 +311,7 @@ export class Fido2Component implements OnInit, OnDestroy {
   }
 
   protected async search() {
-    this.hasSearched = this.searchService.isSearchable(this.searchText);
+    this.hasSearched = await this.searchService.isSearchable(this.searchText);
     this.searchPending = true;
     if (this.hasSearched) {
       this.displayedCiphers = await this.searchService.searchCiphers(

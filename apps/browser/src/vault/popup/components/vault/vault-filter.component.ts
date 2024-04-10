@@ -1,8 +1,8 @@
 import { Location } from "@angular/common";
 import { ChangeDetectorRef, Component, NgZone, OnDestroy, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { firstValueFrom } from "rxjs";
-import { first } from "rxjs/operators";
+import { BehaviorSubject, Subject, firstValueFrom, from } from "rxjs";
+import { first, switchMap, takeUntil } from "rxjs/operators";
 
 import { VaultFilter } from "@bitwarden/angular/vault/vault-filter/models/vault-filter.model";
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
@@ -53,7 +53,6 @@ export class VaultFilterComponent implements OnInit, OnDestroy {
   folderCounts = new Map<string, number>();
   collectionCounts = new Map<string, number>();
   typeCounts = new Map<CipherType, number>();
-  searchText: string;
   state: BrowserGroupingsComponentState;
   showLeftHeader = true;
   searchPending = false;
@@ -71,6 +70,16 @@ export class VaultFilterComponent implements OnInit, OnDestroy {
   private hasSearched = false;
   private hasLoadedAllCiphers = false;
   private allCiphers: CipherView[] = null;
+  private destroy$ = new Subject<void>();
+  private _searchText$ = new BehaviorSubject<string>("");
+  private isSearchable: boolean = false;
+
+  get searchText() {
+    return this._searchText$.value;
+  }
+  set searchText(value: string) {
+    this._searchText$.next(value);
+  }
 
   constructor(
     private i18nService: I18nService,
@@ -148,6 +157,15 @@ export class VaultFilterComponent implements OnInit, OnDestroy {
         BrowserPopupUtils.setContentScrollY(window, this.state?.scrollY);
       }
     });
+
+    this._searchText$
+      .pipe(
+        switchMap((searchText) => from(this.searchService.isSearchable(searchText))),
+        takeUntil(this.destroy$),
+      )
+      .subscribe((isSearchable) => {
+        this.isSearchable = isSearchable;
+      });
   }
 
   ngOnDestroy() {
@@ -161,6 +179,8 @@ export class VaultFilterComponent implements OnInit, OnDestroy {
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.saveState();
     this.broadcasterService.unsubscribe(ComponentId);
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
   async load() {
@@ -181,7 +201,7 @@ export class VaultFilterComponent implements OnInit, OnDestroy {
   async loadCiphers() {
     this.allCiphers = await this.cipherService.getAllDecrypted();
     if (!this.hasLoadedAllCiphers) {
-      this.hasLoadedAllCiphers = !this.searchService.isSearchable(this.searchText);
+      this.hasLoadedAllCiphers = !(await this.searchService.isSearchable(this.searchText));
     }
     await this.search(null);
     this.getCounts();
@@ -210,7 +230,7 @@ export class VaultFilterComponent implements OnInit, OnDestroy {
     }
     const filterDeleted = (c: CipherView) => !c.isDeleted;
     if (timeout == null) {
-      this.hasSearched = this.searchService.isSearchable(this.searchText);
+      this.hasSearched = this.isSearchable;
       this.ciphers = await this.searchService.searchCiphers(
         this.searchText,
         filterDeleted,
@@ -223,7 +243,7 @@ export class VaultFilterComponent implements OnInit, OnDestroy {
     }
     this.searchPending = true;
     this.searchTimeout = setTimeout(async () => {
-      this.hasSearched = this.searchService.isSearchable(this.searchText);
+      this.hasSearched = this.isSearchable;
       if (!this.hasLoadedAllCiphers && !this.hasSearched) {
         await this.loadCiphers();
       } else {
@@ -381,9 +401,7 @@ export class VaultFilterComponent implements OnInit, OnDestroy {
   }
 
   showSearching() {
-    return (
-      this.hasSearched || (!this.searchPending && this.searchService.isSearchable(this.searchText))
-    );
+    return this.hasSearched || (!this.searchPending && this.isSearchable);
   }
 
   closeOnEsc(e: KeyboardEvent) {

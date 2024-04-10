@@ -127,3 +127,4 @@ export const VAULT_SETTINGS_DISK = new StateDefinition("vaultSettings", "disk", 
   web: "disk-local",
 });
 export const VAULT_BROWSER_MEMORY = new StateDefinition("vaultBrowser", "memory");
+export const VAULT_SEARCH_MEMORY = new StateDefinition("vaultSearch", "memory");

@@ -6,7 +6,7 @@ import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abs
 import { EventType } from "@bitwarden/common/enums";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { TotpService } from "@bitwarden/common/vault/abstractions/totp.service";
+import { TotpService as TotpServiceAbstraction } from "@bitwarden/common/vault/abstractions/totp.service";
 import { CipherType } from "@bitwarden/common/vault/enums";
 import { CipherRepromptType } from "@bitwarden/common/vault/enums/cipher-reprompt-type";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
@@ -31,7 +31,7 @@ export class ActionButtonsComponent implements OnInit, OnDestroy {
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
     private eventCollectionService: EventCollectionService,
-    private totpService: TotpService,
+    private totpService: TotpServiceAbstraction,
     private passwordRepromptService: PasswordRepromptService,
     private billingAccountProfileStateService: BillingAccountProfileStateService,
   ) {}

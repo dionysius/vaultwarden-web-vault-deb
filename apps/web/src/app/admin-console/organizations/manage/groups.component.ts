@@ -91,15 +91,16 @@ export class GroupsComponent implements OnInit, OnDestroy {
   private pagedGroupsCount = 0;
   private pagedGroups: GroupDetailsRow[];
   private searchedGroups: GroupDetailsRow[];
-  private _searchText: string;
+  private _searchText$ = new BehaviorSubject<string>("");
   private destroy$ = new Subject<void>();
   private refreshGroups$ = new BehaviorSubject<void>(null);
+  private isSearching: boolean = false;
 
   get searchText() {
-    return this._searchText;
+    return this._searchText$.value;
   }
   set searchText(value: string) {
-    this._searchText = value;
+    this._searchText$.next(value);
     // Manually update as we are not using the search pipe in the template
     this.updateSearchedGroups();
   }
@@ -114,7 +115,7 @@ export class GroupsComponent implements OnInit, OnDestroy {
     if (this.isPaging()) {
       return this.pagedGroups;
     }
-    if (this.isSearching()) {
+    if (this.isSearching) {
       return this.searchedGroups;
     }
     return this.groups;
@@ -180,6 +181,15 @@ export class GroupsComponent implements OnInit, OnDestroy {
         takeUntil(this.destroy$),
       )
       .subscribe();
+
+    this._searchText$
+      .pipe(
+        switchMap((searchText) => this.searchService.isSearchable(searchText)),
+        takeUntil(this.destroy$),
+      )
+      .subscribe((isSearchable) => {
+        this.isSearching = isSearchable;
+      });
   }
 
   ngOnDestroy() {
@@ -297,10 +307,6 @@ export class GroupsComponent implements OnInit, OnDestroy {
     this.loadMore();
   }
 
-  isSearching() {
-    return this.searchService.isSearchable(this.searchText);
-  }
-
   check(groupRow: GroupDetailsRow) {
     groupRow.checked = !groupRow.checked;
   }
@@ -310,7 +316,7 @@ export class GroupsComponent implements OnInit, OnDestroy {
   }
 
   isPaging() {
-    const searching = this.isSearching();
+    const searching = this.isSearching;
     if (searching && this.didScroll) {
       this.resetPaging();
     }
@@ -340,7 +346,7 @@ export class GroupsComponent implements OnInit, OnDestroy {
   }
 
   private updateSearchedGroups() {
-    if (this.searchService.isSearchable(this.searchText)) {
+    if (this.isSearching) {
       // Making use of the pipe in the component as we need know which groups where filtered
       this.searchedGroups = this.searchPipe.transform(
         this.groups,

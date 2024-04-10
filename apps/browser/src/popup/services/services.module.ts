@@ -74,17 +74,15 @@ import {
   GlobalStateProvider,
   StateProvider,
 } from "@bitwarden/common/platform/state";
-import { SearchService } from "@bitwarden/common/services/search.service";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 import { UsernameGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/username";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CollectionService } from "@bitwarden/common/vault/abstractions/collection.service";
-import { CipherFileUploadService } from "@bitwarden/common/vault/abstractions/file-upload/cipher-file-upload.service";
 import { FolderService as FolderServiceAbstraction } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
-import { TotpService } from "@bitwarden/common/vault/abstractions/totp.service";
+import { TotpService as TotpServiceAbstraction } from "@bitwarden/common/vault/abstractions/totp.service";
+import { TotpService } from "@bitwarden/common/vault/services/totp.service";
 import { DialogService } from "@bitwarden/components";
-import { VaultExportServiceAbstraction } from "@bitwarden/vault-export-core";
 
 import { UnauthGuardService } from "../../auth/popup/services";
 import { AutofillService as AutofillServiceAbstraction } from "../../autofill/services/abstractions/autofill.service";
@@ -187,19 +185,8 @@ const safeProviders: SafeProvider[] = [
   }),
   safeProvider({
     provide: SearchServiceAbstraction,
-    useFactory: (logService: LogService, i18nService: I18nServiceAbstraction) => {
-      return new PopupSearchService(
-        getBgService<SearchService>("searchService")(),
-        logService,
-        i18nService,
-      );
-    },
-    deps: [LogService, I18nServiceAbstraction],
-  }),
-  safeProvider({
-    provide: CipherFileUploadService,
-    useFactory: getBgService<CipherFileUploadService>("cipherFileUploadService"),
-    deps: [],
+    useClass: PopupSearchService,
+    deps: [LogService, I18nServiceAbstraction, StateProvider],
   }),
   safeProvider({
     provide: CipherService,
@@ -232,11 +219,6 @@ const safeProviders: SafeProvider[] = [
     deps: [LogService, StateProvider, AccountServiceAbstraction],
   }),
   safeProvider({
-    provide: TotpService,
-    useFactory: getBgService<TotpService>("totpService"),
-    deps: [],
-  }),
-  safeProvider({
     provide: I18nServiceAbstraction,
     useFactory: (globalStateProvider: GlobalStateProvider) => {
       return new I18nService(BrowserApi.getUILanguage(), globalStateProvider);
@@ -251,6 +233,11 @@ const safeProviders: SafeProvider[] = [
       return cryptoService;
     },
     deps: [EncryptService],
+  }),
+  safeProvider({
+    provide: TotpServiceAbstraction,
+    useClass: TotpService,
+    deps: [CryptoFunctionService, LogService],
   }),
   safeProvider({
     provide: AuthRequestServiceAbstraction,
@@ -332,11 +319,6 @@ const safeProviders: SafeProvider[] = [
       UserVerificationService,
       BillingAccountProfileStateService,
     ],
-  }),
-  safeProvider({
-    provide: VaultExportServiceAbstraction,
-    useFactory: getBgService<VaultExportServiceAbstraction>("exportService"),
-    deps: [],
   }),
   safeProvider({
     provide: KeyConnectorService,

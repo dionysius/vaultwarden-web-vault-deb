@@ -8,3 +8,4 @@ export type CollectionId = Opaque<string, "CollectionId">;
 export type ProviderId = Opaque<string, "ProviderId">;
 export type PolicyId = Opaque<string, "PolicyId">;
 export type CipherId = Opaque<string, "CipherId">;
+export type IndexedEntityId = Opaque<string, "IndexedEntityId">;

@@ -1,20 +1,91 @@
 import * as lunr from "lunr";
+import { Observable, firstValueFrom, map } from "rxjs";
+import { Jsonify } from "type-fest";
 
 import { SearchService as SearchServiceAbstraction } from "../abstractions/search.service";
 import { UriMatchStrategy } from "../models/domain/domain-service";
 import { I18nService } from "../platform/abstractions/i18n.service";
 import { LogService } from "../platform/abstractions/log.service";
+import {
+  ActiveUserState,
+  StateProvider,
+  UserKeyDefinition,
+  VAULT_SEARCH_MEMORY,
+} from "../platform/state";
 import { SendView } from "../tools/send/models/view/send.view";
+import { IndexedEntityId } from "../types/guid";
 import { FieldType } from "../vault/enums";
 import { CipherType } from "../vault/enums/cipher-type";
 import { CipherView } from "../vault/models/view/cipher.view";
 
+export type SerializedLunrIndex = {
+  version: string;
+  fields: string[];
+  fieldVectors: [string, number[]];
+  invertedIndex: any[];
+  pipeline: string[];
+};
+
+/**
+ * The `KeyDefinition` for accessing the search index in application state.
+ * The key definition is configured to clear the index when the user locks the vault.
+ */
+export const LUNR_SEARCH_INDEX = new UserKeyDefinition<SerializedLunrIndex>(
+  VAULT_SEARCH_MEMORY,
+  "searchIndex",
+  {
+    deserializer: (obj: Jsonify<SerializedLunrIndex>) => obj,
+    clearOn: ["lock"],
+  },
+);
+
+/**
+ * The `KeyDefinition` for accessing the ID of the entity currently indexed by Lunr search.
+ * The key definition is configured to clear the indexed entity ID when the user locks the vault.
+ */
+export const LUNR_SEARCH_INDEXED_ENTITY_ID = new UserKeyDefinition<IndexedEntityId>(
+  VAULT_SEARCH_MEMORY,
+  "searchIndexedEntityId",
+  {
+    deserializer: (obj: Jsonify<IndexedEntityId>) => obj,
+    clearOn: ["lock"],
+  },
+);
+
+/**
+ * The `KeyDefinition` for accessing the state of Lunr search indexing, indicating whether the Lunr search index is currently being built or updating.
+ * The key definition is configured to clear the indexing state when the user locks the vault.
+ */
+export const LUNR_SEARCH_INDEXING = new UserKeyDefinition<boolean>(
+  VAULT_SEARCH_MEMORY,
+  "isIndexing",
+  {
+    deserializer: (obj: Jsonify<boolean>) => obj,
+    clearOn: ["lock"],
+  },
+);
+
 export class SearchService implements SearchServiceAbstraction {
   private static registeredPipeline = false;
 
-  indexedEntityId?: string = null;
-  private indexing = false;
-  private index: lunr.Index = null;
+  private searchIndexState: ActiveUserState<SerializedLunrIndex> =
+    this.stateProvider.getActive(LUNR_SEARCH_INDEX);
+  private readonly index$: Observable<lunr.Index | null> = this.searchIndexState.state$.pipe(
+    map((searchIndex) => (searchIndex ? lunr.Index.load(searchIndex) : null)),
+  );
+
+  private searchIndexEntityIdState: ActiveUserState<IndexedEntityId> = this.stateProvider.getActive(
+    LUNR_SEARCH_INDEXED_ENTITY_ID,
+  );
+  readonly indexedEntityId$: Observable<IndexedEntityId | null> =
+    this.searchIndexEntityIdState.state$.pipe(map((id) => id));
+
+  private searchIsIndexingState: ActiveUserState<boolean> =
+    this.stateProvider.getActive(LUNR_SEARCH_INDEXING);
+  private readonly searchIsIndexing$: Observable<boolean> = this.searchIsIndexingState.state$.pipe(
+    map((indexing) => indexing ?? false),
+  );
+
   private readonly immediateSearchLocales: string[] = ["zh-CN", "zh-TW", "ja", "ko", "vi"];
   private readonly defaultSearchableMinLength: number = 2;
   private searchableMinLength: number = this.defaultSearchableMinLength;
@@ -22,6 +93,7 @@ export class SearchService implements SearchServiceAbstraction {
   constructor(
     private logService: LogService,
     private i18nService: I18nService,
+    private stateProvider: StateProvider,
   ) {
     this.i18nService.locale$.subscribe((locale) => {
       if (this.immediateSearchLocales.indexOf(locale) !== -1) {
@@ -40,28 +112,29 @@ export class SearchService implements SearchServiceAbstraction {
     }
   }
 
-  clearIndex(): void {
-    this.indexedEntityId = null;
-    this.index = null;
+  async clearIndex(): Promise<void> {
+    await this.searchIndexEntityIdState.update(() => null);
+    await this.searchIndexState.update(() => null);
+    await this.searchIsIndexingState.update(() => null);
   }
 
-  isSearchable(query: string): boolean {
+  async isSearchable(query: string): Promise<boolean> {
     query = SearchService.normalizeSearchQuery(query);
+    const index = await this.getIndexForSearch();
     const notSearchable =
       query == null ||
-      (this.index == null && query.length < this.searchableMinLength) ||
-      (this.index != null && query.length < this.searchableMinLength && query.indexOf(">") !== 0);
+      (index == null && query.length < this.searchableMinLength) ||
+      (index != null && query.length < this.searchableMinLength && query.indexOf(">") !== 0);
     return !notSearchable;
   }
 
-  indexCiphers(ciphers: CipherView[], indexedEntityId?: string): void {
-    if (this.indexing) {
+  async indexCiphers(ciphers: CipherView[], indexedEntityId?: string): Promise<void> {
+    if (await this.getIsIndexing()) {
       return;
     }
 
-    this.indexing = true;
-    this.indexedEntityId = indexedEntityId;
-    this.index = null;
+    await this.setIsIndexing(true);
+    await this.setIndexedEntityIdForSearch(indexedEntityId as IndexedEntityId);
     const builder = new lunr.Builder();
     builder.pipeline.add(this.normalizeAccentsPipelineFunction);
     builder.ref("id");
@@ -95,9 +168,11 @@ export class SearchService implements SearchServiceAbstraction {
     builder.field("organizationid", { extractor: (c: CipherView) => c.organizationId });
     ciphers = ciphers || [];
     ciphers.forEach((c) => builder.add(c));
-    this.index = builder.build();
+    const index = builder.build();
 
-    this.indexing = false;
+    await this.setIndexForSearch(index.toJSON() as SerializedLunrIndex);
+
+    await this.setIsIndexing(false);
 
     this.logService.info("Finished search indexing");
   }
@@ -125,18 +200,18 @@ export class SearchService implements SearchServiceAbstraction {
       ciphers = ciphers.filter(filter as (cipher: CipherView) => boolean);
     }
 
-    if (!this.isSearchable(query)) {
+    if (!(await this.isSearchable(query))) {
       return ciphers;
     }
 
-    if (this.indexing) {
+    if (await this.getIsIndexing()) {
       await new Promise((r) => setTimeout(r, 250));
-      if (this.indexing) {
+      if (await this.getIsIndexing()) {
         await new Promise((r) => setTimeout(r, 500));
       }
     }
 
-    const index = this.getIndexForSearch();
+    const index = await this.getIndexForSearch();
     if (index == null) {
       // Fall back to basic search if index is not available
       return this.searchCiphersBasic(ciphers, query);
@@ -230,8 +305,24 @@ export class SearchService implements SearchServiceAbstraction {
     return sendsMatched.concat(lowPriorityMatched);
   }
 
-  getIndexForSearch(): lunr.Index {
-    return this.index;
+  async getIndexForSearch(): Promise<lunr.Index | null> {
+    return await firstValueFrom(this.index$);
+  }
+
+  private async setIndexForSearch(index: SerializedLunrIndex): Promise<void> {
+    await this.searchIndexState.update(() => index);
+  }
+
+  private async setIndexedEntityIdForSearch(indexedEntityId: IndexedEntityId): Promise<void> {
+    await this.searchIndexEntityIdState.update(() => indexedEntityId);
+  }
+
+  private async setIsIndexing(indexing: boolean): Promise<void> {
+    await this.searchIsIndexingState.update(() => indexing);
+  }
+
+  private async getIsIndexing(): Promise<boolean> {
+    return await firstValueFrom(this.searchIsIndexing$);
   }
 
   private fieldExtractor(c: CipherView, joined: boolean) {
