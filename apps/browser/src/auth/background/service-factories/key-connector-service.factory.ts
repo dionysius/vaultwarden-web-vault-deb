@@ -31,6 +31,11 @@ import {
   StateProviderInitOptions,
 } from "../../../platform/background/service-factories/state-provider.factory";
 
+import { accountServiceFactory, AccountServiceInitOptions } from "./account-service.factory";
+import {
+  internalMasterPasswordServiceFactory,
+  MasterPasswordServiceInitOptions,
+} from "./master-password-service.factory";
 import { TokenServiceInitOptions, tokenServiceFactory } from "./token-service.factory";
 
 type KeyConnectorServiceFactoryOptions = FactoryOptions & {
@@ -40,6 +45,8 @@ type KeyConnectorServiceFactoryOptions = FactoryOptions & {
 };
 
 export type KeyConnectorServiceInitOptions = KeyConnectorServiceFactoryOptions &
+  AccountServiceInitOptions &
+  MasterPasswordServiceInitOptions &
   CryptoServiceInitOptions &
   ApiServiceInitOptions &
   TokenServiceInitOptions &
@@ -58,6 +65,8 @@ export function keyConnectorServiceFactory(
     opts,
     async () =>
       new KeyConnectorService(
+        await accountServiceFactory(cache, opts),
+        await internalMasterPasswordServiceFactory(cache, opts),
         await cryptoServiceFactory(cache, opts),
         await apiServiceFactory(cache, opts),
         await tokenServiceFactory(cache, opts),

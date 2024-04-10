@@ -106,18 +106,6 @@ export abstract class CryptoService {
    */
   abstract setMasterKeyEncryptedUserKey(UserKeyMasterKey: string, userId?: string): Promise<void>;
   /**
-   * Sets the user's master key
-   * @param key The user's master key to set
-   * @param userId The desired user
-   */
-  abstract setMasterKey(key: MasterKey, userId?: string): Promise<void>;
-  /**
-   * @param userId The desired user
-   * @returns The user's master key
-   */
-  abstract getMasterKey(userId?: string): Promise<MasterKey>;
-
-  /**
    * @param password The user's master password that will be used to derive a master key if one isn't found
    * @param userId The desired user
    */
@@ -136,11 +124,6 @@ export abstract class CryptoService {
     kdf: KdfType,
     KdfConfig: KdfConfig,
   ): Promise<MasterKey>;
-  /**
-   * Clears the user's master key
-   * @param userId The desired user
-   */
-  abstract clearMasterKey(userId?: string): Promise<void>;
   /**
    * Encrypts the existing (or provided) user key with the
    * provided master key
@@ -178,20 +161,6 @@ export abstract class CryptoService {
     key: MasterKey,
     hashPurpose?: HashPurpose,
   ): Promise<string>;
-  /**
-   * Sets the user's master password hash
-   * @param keyHash The user's master password hash to set
-   */
-  abstract setMasterKeyHash(keyHash: string): Promise<void>;
-  /**
-   * @returns The user's master password hash
-   */
-  abstract getMasterKeyHash(): Promise<string>;
-  /**
-   * Clears the user's stored master password hash
-   * @param userId The desired user
-   */
-  abstract clearMasterKeyHash(userId?: string): Promise<void>;
   /**
    * Compares the provided master password to the stored password hash and server password hash.
    * Updates the stored hash if outdated.

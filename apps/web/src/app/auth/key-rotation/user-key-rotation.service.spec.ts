@@ -2,6 +2,7 @@ import { mock, MockProxy } from "jest-mock-extended";
 import { BehaviorSubject } from "rxjs";
 
 import { DeviceTrustCryptoServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust-crypto.service.abstraction";
+import { FakeMasterPasswordService } from "@bitwarden/common/auth/services/master-password/fake-master-password.service";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
@@ -9,7 +10,6 @@ import { EncryptionType } from "@bitwarden/common/platform/enums";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
-import { FakeAccountService, mockAccountServiceWith } from "@bitwarden/common/spec";
 import { Send } from "@bitwarden/common/tools/send/models/domain/send";
 import { SendService } from "@bitwarden/common/tools/send/services/send.service.abstraction";
 import { UserId } from "@bitwarden/common/types/guid";
@@ -22,6 +22,10 @@ import { Folder } from "@bitwarden/common/vault/models/domain/folder";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { FolderView } from "@bitwarden/common/vault/models/view/folder.view";
 
+import {
+  FakeAccountService,
+  mockAccountServiceWith,
+} from "../../../../../../libs/common/spec/fake-account-service";
 import { OrganizationUserResetPasswordService } from "../../admin-console/organizations/members/services/organization-user-reset-password/organization-user-reset-password.service";
 import { StateService } from "../../core";
 import { EmergencyAccessService } from "../emergency-access";
@@ -46,8 +50,10 @@ describe("KeyRotationService", () => {
 
   const mockUserId = Utils.newGuid() as UserId;
   const mockAccountService: FakeAccountService = mockAccountServiceWith(mockUserId);
+  let mockMasterPasswordService: FakeMasterPasswordService = new FakeMasterPasswordService();
 
   beforeAll(() => {
+    mockMasterPasswordService = new FakeMasterPasswordService();
     mockApiService = mock<UserKeyRotationApiService>();
     mockCipherService = mock<CipherService>();
     mockFolderService = mock<FolderService>();
@@ -61,6 +67,7 @@ describe("KeyRotationService", () => {
     mockConfigService = mock<ConfigService>();
 
     keyRotationService = new UserKeyRotationService(
+      mockMasterPasswordService,
       mockApiService,
       mockCipherService,
       mockFolderService,
@@ -174,7 +181,10 @@ describe("KeyRotationService", () => {
     it("saves the master key in state after creation", async () => {
       await keyRotationService.rotateUserKeyAndEncryptedData("mockMasterPassword");
 
-      expect(mockCryptoService.setMasterKey).toHaveBeenCalledWith("mockMasterKey" as any);
+      expect(mockMasterPasswordService.mock.setMasterKey).toHaveBeenCalledWith(
+        "mockMasterKey" as any,
+        mockUserId,
+      );
     });
 
     it("uses legacy rotation if feature flag is off", async () => {

@@ -2,7 +2,6 @@ import { makeStaticByteArray } from "../../../../spec";
 import { Utils } from "../../misc/utils";
 
 import { AccountKeys, EncryptionPair } from "./account";
-import { SymmetricCryptoKey } from "./symmetric-crypto-key";
 
 describe("AccountKeys", () => {
   describe("toJSON", () => {
@@ -30,12 +29,6 @@ describe("AccountKeys", () => {
         publicKey: "hello",
       });
       expect(keys.publicKey).toEqual(Utils.fromByteStringToArray("hello"));
-    });
-
-    it("should deserialize cryptoMasterKey", () => {
-      const spy = jest.spyOn(SymmetricCryptoKey, "fromJSON");
-      AccountKeys.fromJSON({} as any);
-      expect(spy).toHaveBeenCalled();
     });
 
     it("should deserialize privateKey", () => {

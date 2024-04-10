@@ -3,6 +3,7 @@ import { firstValueFrom } from "rxjs";
 
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { DeviceTrustCryptoServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust-crypto.service.abstraction";
+import { InternalMasterPasswordServiceAbstraction } from "@bitwarden/common/auth/abstractions/master-password.service.abstraction";
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
@@ -25,6 +26,7 @@ import { UserKeyRotationApiService } from "./user-key-rotation-api.service";
 @Injectable()
 export class UserKeyRotationService {
   constructor(
+    private masterPasswordService: InternalMasterPasswordServiceAbstraction,
     private apiService: UserKeyRotationApiService,
     private cipherService: CipherService,
     private folderService: FolderService,
@@ -61,7 +63,8 @@ export class UserKeyRotationService {
     }
 
     // Set master key again in case it was lost (could be lost on refresh)
-    await this.cryptoService.setMasterKey(masterKey);
+    const userId = (await firstValueFrom(this.accountService.activeAccount$))?.id;
+    await this.masterPasswordService.setMasterKey(masterKey, userId);
     const [newUserKey, newEncUserKey] = await this.cryptoService.makeUserKey(masterKey);
 
     if (!newUserKey || !newEncUserKey) {
