@@ -93,6 +93,10 @@ export class SessionSyncer {
   }
 
   async update(serializedValue: any) {
+    if (!serializedValue) {
+      return;
+    }
+
     const unBuiltValue = JSON.parse(serializedValue);
     if (!BrowserApi.isManifestVersion(3) && BrowserApi.isBackgroundPage(self)) {
       await this.memoryStorageService.save(this.metaData.sessionKey, serializedValue);
@@ -104,6 +108,10 @@ export class SessionSyncer {
   }
 
   private async updateSession(value: any) {
+    if (!value) {
+      return;
+    }
+
     const serializedValue = JSON.stringify(value);
     if (BrowserApi.isManifestVersion(3) || BrowserApi.isBackgroundPage(self)) {
       await this.memoryStorageService.save(this.metaData.sessionKey, serializedValue);
