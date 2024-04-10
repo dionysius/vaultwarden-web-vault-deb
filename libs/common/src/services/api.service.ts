@@ -506,6 +506,11 @@ export class ApiService implements ApiServiceAbstraction {
     return new ListResponse(r, CipherResponse);
   }
 
+  async getShowUnassignedCiphersBanner(): Promise<boolean> {
+    const r = await this.send("GET", "/ciphers/has-unassigned-ciphers", null, true, true);
+    return r;
+  }
+
   async postCipher(request: CipherRequest): Promise<CipherResponse> {
     const r = await this.send("POST", "/ciphers", request, true, true);
     return new CipherResponse(r);

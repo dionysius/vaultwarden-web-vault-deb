@@ -9,6 +9,7 @@ export enum FeatureFlag {
   ShowPaymentMethodWarningBanners = "show-payment-method-warning-banners",
   EnableConsolidatedBilling = "enable-consolidated-billing",
   AC1795_UpdatedSubscriptionStatusSection = "AC-1795_updated-subscription-status-section",
+  UnassignedItemsBanner = "unassigned-items-banner",
 }
 
 // Replace this with a type safe lookup of the feature flag values in PM-2282
