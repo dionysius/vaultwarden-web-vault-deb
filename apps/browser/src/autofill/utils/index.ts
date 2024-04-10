@@ -107,18 +107,6 @@ function setElementStyles(
 }
 
 /**
- * Get data from local storage based on the keys provided.
- *
- * @param keys - String or array of strings of keys to get from local storage
- * @deprecated Do not call this, use state-relevant services instead
- */
-async function getFromLocalStorage(keys: string | string[]): Promise<Record<string, any>> {
-  return new Promise((resolve) => {
-    chrome.storage.local.get(keys, (storage: Record<string, any>) => resolve(storage));
-  });
-}
-
-/**
  * Sets up a long-lived connection with the extension background
  * and triggers an onDisconnect event if the extension context
  * is invalidated.
@@ -278,7 +266,6 @@ export {
   buildSvgDomElement,
   sendExtensionMessage,
   setElementStyles,
-  getFromLocalStorage,
   setupExtensionDisconnectAction,
   setupAutofillInitDisconnectAction,
   elementIsFillableFormField,

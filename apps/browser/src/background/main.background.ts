@@ -234,7 +234,7 @@ import RuntimeBackground from "./runtime.background";
 
 export default class MainBackground {
   messagingService: MessagingServiceAbstraction;
-  storageService: AbstractStorageService & ObservableStorageService;
+  storageService: BrowserLocalStorageService;
   secureStorageService: AbstractStorageService;
   memoryStorageService: AbstractMemoryStorageService;
   memoryStorageForStateProviders: AbstractMemoryStorageService & ObservableStorageService;
@@ -1255,18 +1255,8 @@ export default class MainBackground {
       return;
     }
 
-    const getStorage = (): Promise<any> =>
-      new Promise((resolve) => {
-        chrome.storage.local.get(null, (o: any) => resolve(o));
-      });
-
-    const clearStorage = (): Promise<void> =>
-      new Promise((resolve) => {
-        chrome.storage.local.clear(() => resolve());
-      });
-
-    const storage = await getStorage();
-    await clearStorage();
+    const storage = await this.storageService.getAll();
+    await this.storageService.clear();
 
     for (const key in storage) {
       // eslint-disable-next-line

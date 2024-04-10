@@ -66,6 +66,7 @@ describe("ChromeStorageApiService", () => {
 
   describe("get", () => {
     let getMock: jest.Mock;
+    const key = "key";
 
     beforeEach(() => {
       // setup get
@@ -76,7 +77,6 @@ describe("ChromeStorageApiService", () => {
     });
 
     it("returns a stored value when it is serialized", async () => {
-      const key = "key";
       const value = { key: "value" };
       store[key] = objToStore(value);
       const result = await service.get(key);
@@ -84,7 +84,6 @@ describe("ChromeStorageApiService", () => {
     });
 
     it("returns a stored value when it is not serialized", async () => {
-      const key = "key";
       const value = "value";
       store[key] = value;
       const result = await service.get(key);
@@ -93,6 +92,13 @@ describe("ChromeStorageApiService", () => {
 
     it("returns null when the key does not exist", async () => {
       const result = await service.get("key");
+      expect(result).toBeNull();
+    });
+
+    it("returns null when the stored object is null", async () => {
+      store[key] = null;
+
+      const result = await service.get(key);
       expect(result).toBeNull();
     });
   });
