@@ -1188,7 +1188,7 @@ export default class MainBackground {
       await this.searchService.clearIndex();
     }
 
-    await this.stateEventRunnerService.handleEvent("logout", currentUserId as UserId);
+    await this.stateEventRunnerService.handleEvent("logout", userId);
 
     if (newActiveUser != null) {
       // we have a new active user, do not continue tearing down application
