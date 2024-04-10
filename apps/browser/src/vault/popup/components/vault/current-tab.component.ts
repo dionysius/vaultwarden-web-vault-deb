@@ -56,6 +56,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
   private totpTimeout: number;
   private loadedTimeout: number;
   private searchTimeout: number;
+  private initPageDetailsTimeout: number;
 
   protected unassignedItemsBannerEnabled$ = this.configService.getFeatureFlag$(
     FeatureFlag.UnassignedItemsBanner,
@@ -316,18 +317,13 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     });
 
     if (this.loginCiphers.length) {
-      void BrowserApi.tabSendMessage(this.tab, {
-        command: "collectPageDetails",
-        tab: this.tab,
-        sender: BroadcasterSubscriptionId,
-      });
-
       this.loginCiphers = this.loginCiphers.sort((a, b) =>
         this.cipherService.sortCiphersByLastUsedThenName(a, b),
       );
     }
 
     this.isLoading = this.loaded = true;
+    this.collectTabPageDetails();
   }
 
   async goToSettings() {
@@ -364,5 +360,20 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     } else {
       this.autofillCalloutText = this.i18nService.t("autofillSelectInfoWithoutCommand");
     }
+  }
+
+  private collectTabPageDetails() {
+    void BrowserApi.tabSendMessage(this.tab, {
+      command: "collectPageDetails",
+      tab: this.tab,
+      sender: BroadcasterSubscriptionId,
+    });
+
+    window.clearTimeout(this.initPageDetailsTimeout);
+    this.initPageDetailsTimeout = window.setTimeout(() => {
+      if (this.pageDetails.length === 0) {
+        this.collectTabPageDetails();
+      }
+    }, 250);
   }
 }
