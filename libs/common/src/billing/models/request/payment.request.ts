@@ -1,8 +1,8 @@
 import { PaymentMethodType } from "../../enums";
 
-import { OrganizationTaxInfoUpdateRequest } from "./organization-tax-info-update.request";
+import { ExpandedTaxInfoUpdateRequest } from "./expanded-tax-info-update.request";
 
-export class PaymentRequest extends OrganizationTaxInfoUpdateRequest {
+export class PaymentRequest extends ExpandedTaxInfoUpdateRequest {
   paymentMethodType: PaymentMethodType;
   paymentToken: string;
 }

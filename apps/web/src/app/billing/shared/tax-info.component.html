@@ -279,10 +279,7 @@
       />
     </div>
   </div>
-  <div
-    class="col-6"
-    *ngIf="organizationId && taxInfo.country !== 'US' && countrySupportsTax(taxInfo.country)"
-  >
+  <div class="col-6" *ngIf="showTaxIdCheckbox">
     <div class="form-group form-check">
       <input
         class="form-check-input"
@@ -295,21 +292,22 @@
     </div>
   </div>
 </div>
-<div
-  class="row"
-  *ngIf="organizationId && taxInfo.includeTaxId && countrySupportsTax(taxInfo.country)"
->
+<div class="row" *ngIf="showTaxIdFields">
   <div class="col-6">
     <div class="form-group">
       <label for="taxId">{{ "taxIdNumber" | i18n }}</label>
-      <input id="taxId" class="form-control" type="text" name="taxId" [(ngModel)]="taxInfo.taxId" />
+      <input
+        id="taxId"
+        class="form-control"
+        type="text"
+        name="taxId"
+        [(ngModel)]="taxInfo.taxId"
+        [required]="taxInfo.includeTaxId"
+      />
     </div>
   </div>
 </div>
-<div
-  class="row"
-  *ngIf="organizationId && taxInfo.includeTaxId && countrySupportsTax(taxInfo.country)"
->
+<div class="row" *ngIf="showTaxIdFields">
   <div class="col-6">
     <div class="form-group">
       <label for="addressLine1">{{ "address1" | i18n }}</label>

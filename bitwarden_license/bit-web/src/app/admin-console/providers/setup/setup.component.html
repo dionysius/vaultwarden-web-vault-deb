@@ -25,6 +25,9 @@
           required
         />
       </div>
+      <div *ngIf="enableConsolidatedBilling$ | async" class="form-group col-12">
+        <app-tax-info />
+      </div>
     </div>
 
     <div class="mt-4">

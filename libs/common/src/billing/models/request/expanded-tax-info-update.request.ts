@@ -1,6 +1,6 @@
 import { TaxInfoUpdateRequest } from "./tax-info-update.request";
 
-export class OrganizationTaxInfoUpdateRequest extends TaxInfoUpdateRequest {
+export class ExpandedTaxInfoUpdateRequest extends TaxInfoUpdateRequest {
   taxId: string;
   line1: string;
   line2: string;
