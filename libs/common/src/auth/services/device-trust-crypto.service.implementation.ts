@@ -14,7 +14,7 @@ import { StorageLocation } from "../../platform/enums";
 import { EncString } from "../../platform/models/domain/enc-string";
 import { StorageOptions } from "../../platform/models/domain/storage-options";
 import { SymmetricCryptoKey } from "../../platform/models/domain/symmetric-crypto-key";
-import { DEVICE_TRUST_DISK_LOCAL, KeyDefinition, StateProvider } from "../../platform/state";
+import { DEVICE_TRUST_DISK_LOCAL, StateProvider, UserKeyDefinition } from "../../platform/state";
 import { UserId } from "../../types/guid";
 import { UserKey, DeviceKey } from "../../types/key";
 import { DeviceTrustCryptoServiceAbstraction } from "../abstractions/device-trust-crypto.service.abstraction";
@@ -27,16 +27,18 @@ import {
 } from "../models/request/update-devices-trust.request";
 
 /** Uses disk storage so that the device key can persist after log out and tab removal. */
-export const DEVICE_KEY = new KeyDefinition<DeviceKey>(DEVICE_TRUST_DISK_LOCAL, "deviceKey", {
+export const DEVICE_KEY = new UserKeyDefinition<DeviceKey>(DEVICE_TRUST_DISK_LOCAL, "deviceKey", {
   deserializer: (deviceKey) => SymmetricCryptoKey.fromJSON(deviceKey) as DeviceKey,
+  clearOn: [], // Device key is needed to log back into device, so we can't clear it automatically during lock or logout
 });
 
 /** Uses disk storage so that the shouldTrustDevice bool can persist across login. */
-export const SHOULD_TRUST_DEVICE = new KeyDefinition<boolean>(
+export const SHOULD_TRUST_DEVICE = new UserKeyDefinition<boolean>(
   DEVICE_TRUST_DISK_LOCAL,
   "shouldTrustDevice",
   {
     deserializer: (shouldTrustDevice) => shouldTrustDevice,
+    clearOn: [], // Need to preserve the user setting, so we can't clear it automatically during lock or logout
   },
 );
 

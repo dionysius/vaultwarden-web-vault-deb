@@ -1,30 +1,41 @@
-import { KeyDefinition, TOKEN_DISK, TOKEN_DISK_LOCAL, TOKEN_MEMORY } from "../../platform/state";
+import {
+  KeyDefinition,
+  TOKEN_DISK,
+  TOKEN_DISK_LOCAL,
+  TOKEN_MEMORY,
+  UserKeyDefinition,
+} from "../../platform/state";
 
 // Note: all tokens / API key information must be cleared on logout.
 // because we are using secure storage, we must manually call to clean up our tokens.
 // See stateService.deAuthenticateAccount for where we call clearTokens(...)
 
-export const ACCESS_TOKEN_DISK = new KeyDefinition<string>(TOKEN_DISK, "accessToken", {
+export const ACCESS_TOKEN_DISK = new UserKeyDefinition<string>(TOKEN_DISK, "accessToken", {
   deserializer: (accessToken) => accessToken,
+  clearOn: [], // Manually handled
 });
 
-export const ACCESS_TOKEN_MEMORY = new KeyDefinition<string>(TOKEN_MEMORY, "accessToken", {
+export const ACCESS_TOKEN_MEMORY = new UserKeyDefinition<string>(TOKEN_MEMORY, "accessToken", {
   deserializer: (accessToken) => accessToken,
+  clearOn: [], // Manually handled
 });
 
-export const REFRESH_TOKEN_DISK = new KeyDefinition<string>(TOKEN_DISK, "refreshToken", {
+export const REFRESH_TOKEN_DISK = new UserKeyDefinition<string>(TOKEN_DISK, "refreshToken", {
   deserializer: (refreshToken) => refreshToken,
+  clearOn: [], // Manually handled
 });
 
-export const REFRESH_TOKEN_MEMORY = new KeyDefinition<string>(TOKEN_MEMORY, "refreshToken", {
+export const REFRESH_TOKEN_MEMORY = new UserKeyDefinition<string>(TOKEN_MEMORY, "refreshToken", {
   deserializer: (refreshToken) => refreshToken,
+  clearOn: [], // Manually handled
 });
 
-export const REFRESH_TOKEN_MIGRATED_TO_SECURE_STORAGE = new KeyDefinition<boolean>(
+export const REFRESH_TOKEN_MIGRATED_TO_SECURE_STORAGE = new UserKeyDefinition<boolean>(
   TOKEN_DISK,
   "refreshTokenMigratedToSecureStorage",
   {
     deserializer: (refreshTokenMigratedToSecureStorage) => refreshTokenMigratedToSecureStorage,
+    clearOn: [], // Don't clear on lock/logout so that we always check the correct place (secure storage) for the refresh token if it's been migrated
   },
 );
 
@@ -36,26 +47,34 @@ export const EMAIL_TWO_FACTOR_TOKEN_RECORD_DISK_LOCAL = KeyDefinition.record<str
   },
 );
 
-export const API_KEY_CLIENT_ID_DISK = new KeyDefinition<string>(TOKEN_DISK, "apiKeyClientId", {
+export const API_KEY_CLIENT_ID_DISK = new UserKeyDefinition<string>(TOKEN_DISK, "apiKeyClientId", {
   deserializer: (apiKeyClientId) => apiKeyClientId,
+  clearOn: [], // Manually handled
 });
 
-export const API_KEY_CLIENT_ID_MEMORY = new KeyDefinition<string>(TOKEN_MEMORY, "apiKeyClientId", {
-  deserializer: (apiKeyClientId) => apiKeyClientId,
-});
+export const API_KEY_CLIENT_ID_MEMORY = new UserKeyDefinition<string>(
+  TOKEN_MEMORY,
+  "apiKeyClientId",
+  {
+    deserializer: (apiKeyClientId) => apiKeyClientId,
+    clearOn: [], // Manually handled
+  },
+);
 
-export const API_KEY_CLIENT_SECRET_DISK = new KeyDefinition<string>(
+export const API_KEY_CLIENT_SECRET_DISK = new UserKeyDefinition<string>(
   TOKEN_DISK,
   "apiKeyClientSecret",
   {
     deserializer: (apiKeyClientSecret) => apiKeyClientSecret,
+    clearOn: [], // Manually handled
   },
 );
 
-export const API_KEY_CLIENT_SECRET_MEMORY = new KeyDefinition<string>(
+export const API_KEY_CLIENT_SECRET_MEMORY = new UserKeyDefinition<string>(
   TOKEN_MEMORY,
   "apiKeyClientSecret",
   {
     deserializer: (apiKeyClientSecret) => apiKeyClientSecret,
+    clearOn: [], // Manually handled
   },
 );

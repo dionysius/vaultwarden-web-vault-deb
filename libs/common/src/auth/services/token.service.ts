@@ -15,8 +15,8 @@ import { SymmetricCryptoKey } from "../../platform/models/domain/symmetric-crypt
 import {
   GlobalState,
   GlobalStateProvider,
-  KeyDefinition,
   SingleUserStateProvider,
+  UserKeyDefinition,
 } from "../../platform/state";
 import { UserId } from "../../types/guid";
 import { TokenService as TokenServiceAbstraction } from "../abstractions/token.service";
@@ -863,7 +863,7 @@ export class TokenService implements TokenServiceAbstraction {
 
   private async getStateValueByUserIdAndKeyDef(
     userId: UserId,
-    storageLocation: KeyDefinition<string>,
+    storageLocation: UserKeyDefinition<string>,
   ): Promise<string | undefined> {
     // read from single user state provider
     return await firstValueFrom(this.singleUserStateProvider.get(userId, storageLocation).state$);

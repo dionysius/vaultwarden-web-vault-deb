@@ -6,6 +6,7 @@ import {
   KeyDefinition,
   SSO_DISK,
   StateProvider,
+  UserKeyDefinition,
 } from "../../platform/state";
 import { SsoLoginServiceAbstraction } from "../abstractions/sso-login.service.abstraction";
 
@@ -26,7 +27,19 @@ const SSO_STATE = new KeyDefinition<string>(SSO_DISK, "ssoState", {
 /**
  * Uses disk storage so that the organization sso identifier can be persisted across sso redirects.
  */
-const ORGANIZATION_SSO_IDENTIFIER = new KeyDefinition<string>(
+const USER_ORGANIZATION_SSO_IDENTIFIER = new UserKeyDefinition<string>(
+  SSO_DISK,
+  "organizationSsoIdentifier",
+  {
+    deserializer: (organizationIdentifier) => organizationIdentifier,
+    clearOn: ["logout"], // Used for login, so not needed past logout
+  },
+);
+
+/**
+ * Uses disk storage so that the organization sso identifier can be persisted across sso redirects.
+ */
+const GLOBAL_ORGANIZATION_SSO_IDENTIFIER = new KeyDefinition<string>(
   SSO_DISK,
   "organizationSsoIdentifier",
   {
@@ -51,10 +64,10 @@ export class SsoLoginService implements SsoLoginServiceAbstraction {
   constructor(private stateProvider: StateProvider) {
     this.codeVerifierState = this.stateProvider.getGlobal(CODE_VERIFIER);
     this.ssoState = this.stateProvider.getGlobal(SSO_STATE);
-    this.orgSsoIdentifierState = this.stateProvider.getGlobal(ORGANIZATION_SSO_IDENTIFIER);
+    this.orgSsoIdentifierState = this.stateProvider.getGlobal(GLOBAL_ORGANIZATION_SSO_IDENTIFIER);
     this.ssoEmailState = this.stateProvider.getGlobal(SSO_EMAIL);
     this.activeUserOrgSsoIdentifierState = this.stateProvider.getActive(
-      ORGANIZATION_SSO_IDENTIFIER,
+      USER_ORGANIZATION_SSO_IDENTIFIER,
     );
   }
 
