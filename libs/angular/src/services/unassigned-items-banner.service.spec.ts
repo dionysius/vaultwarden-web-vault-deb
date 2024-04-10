@@ -1,15 +1,15 @@
 import { MockProxy, mock } from "jest-mock-extended";
 import { firstValueFrom, skip } from "rxjs";
 
-import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { FakeStateProvider, mockAccountServiceWith } from "@bitwarden/common/spec";
 import { UserId } from "@bitwarden/common/types/guid";
 
+import { UnassignedItemsBannerApiService } from "./unassigned-items-banner.api.service";
 import { SHOW_BANNER_KEY, UnassignedItemsBannerService } from "./unassigned-items-banner.service";
 
 describe("UnassignedItemsBanner", () => {
   let stateProvider: FakeStateProvider;
-  let apiService: MockProxy<ApiService>;
+  let apiService: MockProxy<UnassignedItemsBannerApiService>;
 
   const sutFactory = () => new UnassignedItemsBannerService(stateProvider, apiService);
 

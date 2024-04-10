@@ -1,12 +1,13 @@
 import { Injectable } from "@angular/core";
 import { EMPTY, concatMap } from "rxjs";
 
-import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import {
   StateProvider,
   UNASSIGNED_ITEMS_BANNER_DISK,
   UserKeyDefinition,
 } from "@bitwarden/common/platform/state";
+
+import { UnassignedItemsBannerApiService } from "./unassigned-items-banner.api.service";
 
 export const SHOW_BANNER_KEY = new UserKeyDefinition<boolean>(
   UNASSIGNED_ITEMS_BANNER_DISK,
@@ -37,7 +38,7 @@ export class UnassignedItemsBannerService {
 
   constructor(
     private stateProvider: StateProvider,
-    private apiService: ApiService,
+    private apiService: UnassignedItemsBannerApiService,
   ) {}
 
   async hideBanner() {

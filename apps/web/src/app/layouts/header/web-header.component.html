@@ -1,8 +1,8 @@
 <bit-banner
   class="-tw-m-6 tw-flex tw-flex-col tw-pb-6"
-  (onClose)="webUnassignedItemsBannerService.hideBanner()"
+  (onClose)="unassignedItemsBannerService.hideBanner()"
   *ngIf="
-    (unassignedItemsBannerEnabled$ | async) && (webUnassignedItemsBannerService.showBanner$ | async)
+    (unassignedItemsBannerEnabled$ | async) && (unassignedItemsBannerService.showBanner$ | async)
   "
 >
   {{ "unassignedItemsBanner" | i18n }}
