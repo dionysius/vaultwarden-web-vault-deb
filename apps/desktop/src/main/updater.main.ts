@@ -27,8 +27,7 @@ export class UpdaterMain {
       process.platform === "win32" && !isWindowsStore() && !isWindowsPortable();
     const macCanUpdate = process.platform === "darwin" && !isMacAppStore();
     this.canUpdate =
-      process.env.ELECTRON_NO_UPDATER !== "1" &&
-      (linuxCanUpdate || windowsCanUpdate || macCanUpdate);
+      !this.userDisabledUpdates() && (linuxCanUpdate || windowsCanUpdate || macCanUpdate);
   }
 
   async init() {
@@ -143,5 +142,14 @@ export class UpdaterMain {
   private reset() {
     autoUpdater.autoDownload = true;
     this.doingUpdateCheck = false;
+  }
+
+  private userDisabledUpdates(): boolean {
+    for (const arg of process.argv) {
+      if (arg != null && arg.toUpperCase().indexOf("--ELECTRON_NO_UPDATER=1") > -1) {
+        return true;
+      }
+    }
+    return process.env.ELECTRON_NO_UPDATER === "1";
   }
 }
