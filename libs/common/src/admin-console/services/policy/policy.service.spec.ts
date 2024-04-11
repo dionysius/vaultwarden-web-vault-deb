@@ -50,6 +50,8 @@ describe("PolicyService", () => {
       organization("org4", true, true, OrganizationUserStatusType.Confirmed, false),
       // Another User
       organization("org5", true, true, OrganizationUserStatusType.Confirmed, false),
+      // Can manage policies
+      organization("org6", true, true, OrganizationUserStatusType.Confirmed, true),
     ]);
 
     policyService = new PolicyService(stateProvider, organizationService);
@@ -252,6 +254,22 @@ describe("PolicyService", () => {
       );
 
       expect(result).toBeNull();
+    });
+
+    it.each([
+      ["owners", "org2"],
+      ["administrators", "org6"],
+    ])("returns the password generator policy for %s", async (_, organization) => {
+      activeUserState.nextState(
+        arrayToRecord([
+          policyData("policy1", "org1", PolicyType.ActivateAutofill, false),
+          policyData("policy2", organization, PolicyType.PasswordGenerator, true),
+        ]),
+      );
+
+      const result = await firstValueFrom(policyService.get$(PolicyType.PasswordGenerator));
+
+      expect(result).toBeTruthy();
     });
 
     it("does not return policies for organizations that do not use policies", async () => {
