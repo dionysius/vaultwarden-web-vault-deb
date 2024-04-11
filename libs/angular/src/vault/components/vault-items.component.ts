@@ -52,7 +52,8 @@ export class VaultItemsComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    throw new Error("Method not implemented.");
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
   async load(filter: (cipher: CipherView) => boolean = null, deleted = false) {
