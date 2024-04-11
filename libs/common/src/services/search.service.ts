@@ -35,7 +35,7 @@ export const LUNR_SEARCH_INDEX = new UserKeyDefinition<SerializedLunrIndex>(
   "searchIndex",
   {
     deserializer: (obj: Jsonify<SerializedLunrIndex>) => obj,
-    clearOn: ["lock"],
+    clearOn: ["lock", "logout"],
   },
 );
 
@@ -48,7 +48,7 @@ export const LUNR_SEARCH_INDEXED_ENTITY_ID = new UserKeyDefinition<IndexedEntity
   "searchIndexedEntityId",
   {
     deserializer: (obj: Jsonify<IndexedEntityId>) => obj,
-    clearOn: ["lock"],
+    clearOn: ["lock", "logout"],
   },
 );
 
@@ -61,7 +61,7 @@ export const LUNR_SEARCH_INDEXING = new UserKeyDefinition<boolean>(
   "isIndexing",
   {
     deserializer: (obj: Jsonify<boolean>) => obj,
-    clearOn: ["lock"],
+    clearOn: ["lock", "logout"],
   },
 );
 
