@@ -228,7 +228,7 @@
     "artifactName": "${productName}-${version}-${arch}.${ext}"
   },
   "snap": {
-    "summary": "**Installation**\nBitwarden requires access to the `password-manager-service`. Please enable it through permissions or by running `sudo snap connect bitwarden:password-manager-service` after installation.",
+    "summary": "After installation enable required `password-manager-service` by running `sudo snap connect bitwarden:password-manager-service`.",
     "autoStart": true,
     "base": "core22",
     "confinement": "strict",
