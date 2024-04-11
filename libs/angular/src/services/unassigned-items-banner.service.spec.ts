@@ -1,5 +1,5 @@
 import { MockProxy, mock } from "jest-mock-extended";
-import { firstValueFrom, skip } from "rxjs";
+import { firstValueFrom } from "rxjs";
 
 import { FakeStateProvider, mockAccountServiceWith } from "@bitwarden/common/spec";
 import { UserId } from "@bitwarden/common/types/guid";
@@ -44,10 +44,8 @@ describe("UnassignedItemsBanner", () => {
     showBanner.nextState(undefined);
 
     const sut = sutFactory();
-    // skip first value so we get the recomputed value after the server call
-    expect(await firstValueFrom(sut.showBanner$.pipe(skip(1)))).toBe(true);
-    // Expect to have updated local state
-    expect(await firstValueFrom(showBanner.state$)).toBe(true);
+
+    expect(await firstValueFrom(sut.showBanner$)).toBe(true);
     expect(apiService.getShowUnassignedCiphersBanner).toHaveBeenCalledTimes(1);
   });
 });

@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { EMPTY, concatMap } from "rxjs";
+import { concatMap } from "rxjs";
 
 import {
   StateProvider,
@@ -24,15 +24,15 @@ export class UnassignedItemsBannerService {
   private _showBanner = this.stateProvider.getActive(SHOW_BANNER_KEY);
 
   showBanner$ = this._showBanner.state$.pipe(
-    concatMap(async (showBanner) => {
+    concatMap(async (showBannerState) => {
       // null indicates that the user has not seen or dismissed the banner yet - get the flag from server
-      if (showBanner == null) {
+      if (showBannerState == null) {
         const showBannerResponse = await this.apiService.getShowUnassignedCiphersBanner();
         await this._showBanner.update(() => showBannerResponse);
-        return EMPTY; // complete the inner observable without emitting any value; the update on the previous line will trigger another run
+        return showBannerResponse;
       }
 
-      return showBanner;
+      return showBannerState;
     }),
   );
 
