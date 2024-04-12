@@ -120,7 +120,6 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
     additionalStorage: [0, [Validators.min(0), Validators.max(99)]],
     additionalSeats: [0, [Validators.min(0), Validators.max(100000)]],
     clientOwnerEmail: ["", [Validators.email]],
-    businessName: [""],
     plan: [this.plan],
     product: [this.product],
     secretsManager: this.secretsManagerSubscription,
@@ -596,9 +595,6 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
 
   private async updateOrganization(orgId: string) {
     const request = new OrganizationUpgradeRequest();
-    request.businessName = this.formGroup.controls.businessOwned.value
-      ? this.formGroup.controls.businessName.value
-      : null;
     request.additionalSeats = this.formGroup.controls.additionalSeats.value;
     request.additionalStorageGb = this.formGroup.controls.additionalStorage.value;
     request.premiumAccessAddon =
@@ -656,9 +652,6 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
 
       request.paymentToken = tokenResult[0];
       request.paymentMethodType = tokenResult[1];
-      request.businessName = this.formGroup.controls.businessOwned.value
-        ? this.formGroup.controls.businessName.value
-        : null;
       request.additionalSeats = this.formGroup.controls.additionalSeats.value;
       request.additionalStorageGb = this.formGroup.controls.additionalStorage.value;
       request.premiumAccessAddon =
