@@ -51,7 +51,7 @@ export class PolicyService implements InternalPolicyServiceAbstraction {
       map((policies) => policies.filter((p) => p.type === policyType)),
     );
 
-    return combineLatest([filteredPolicies$, this.organizationService.organizations$]).pipe(
+    return combineLatest([filteredPolicies$, this.organizationService.getAll$(userId)]).pipe(
       map(([policies, organizations]) => this.enforcedPolicyFilter(policies, organizations)),
     );
   }

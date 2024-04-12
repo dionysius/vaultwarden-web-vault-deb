@@ -32,7 +32,8 @@ describe("PolicyService", () => {
     organizationService = mock<OrganizationService>();
 
     activeUserState = stateProvider.activeUser.getFake(POLICIES);
-    organizationService.organizations$ = of([
+
+    const organizations$ = of([
       // User
       organization("org1", true, true, OrganizationUserStatusType.Confirmed, false),
       // Owner
@@ -53,6 +54,10 @@ describe("PolicyService", () => {
       // Can manage policies
       organization("org6", true, true, OrganizationUserStatusType.Confirmed, true),
     ]);
+
+    organizationService.organizations$ = organizations$;
+
+    organizationService.getAll$.mockReturnValue(organizations$);
 
     policyService = new PolicyService(stateProvider, organizationService);
   });
