@@ -39,12 +39,13 @@
     <app-callout
       *ngIf="
         (unassignedItemsBannerEnabled$ | async) &&
-        (unassignedItemsBannerService.showBanner$ | async)
+        (unassignedItemsBannerService.showBanner$ | async) &&
+        (unassignedItemsBannerService.bannerText$ | async)
       "
       type="info"
     >
       <p>
-        {{ "unassignedItemsBanner" | i18n }}
+        {{ unassignedItemsBannerService.bannerText$ | async | i18n }}
         <a
           href="https://bitwarden.com/help/unassigned-vault-items-moved-to-admin-console"
           bitLink

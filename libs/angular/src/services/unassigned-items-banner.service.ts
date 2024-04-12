@@ -1,6 +1,10 @@
 import { Injectable } from "@angular/core";
-import { concatMap } from "rxjs";
+import { concatMap, map } from "rxjs";
 
+import {
+  EnvironmentService,
+  Region,
+} from "@bitwarden/common/platform/abstractions/environment.service";
 import {
   StateProvider,
   UNASSIGNED_ITEMS_BANNER_DISK,
@@ -36,9 +40,18 @@ export class UnassignedItemsBannerService {
     }),
   );
 
+  bannerText$ = this.environmentService.environment$.pipe(
+    map((e) =>
+      e?.getRegion() == Region.SelfHosted
+        ? "unassignedItemsBannerSelfHost"
+        : "unassignedItemsBanner",
+    ),
+  );
+
   constructor(
     private stateProvider: StateProvider,
     private apiService: UnassignedItemsBannerApiService,
+    private environmentService: EnvironmentService,
   ) {}
 
   async hideBanner() {

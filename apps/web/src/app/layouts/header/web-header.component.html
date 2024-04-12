@@ -2,10 +2,12 @@
   class="-tw-m-6 tw-flex tw-flex-col tw-pb-6"
   (onClose)="unassignedItemsBannerService.hideBanner()"
   *ngIf="
-    (unassignedItemsBannerEnabled$ | async) && (unassignedItemsBannerService.showBanner$ | async)
+    (unassignedItemsBannerEnabled$ | async) &&
+    (unassignedItemsBannerService.showBanner$ | async) &&
+    (unassignedItemsBannerService.bannerText$ | async)
   "
 >
-  {{ "unassignedItemsBanner" | i18n }}
+  {{ unassignedItemsBannerService.bannerText$ | async | i18n }}
   <a
     href="https://bitwarden.com/help/unassigned-vault-items-moved-to-admin-console"
     bitLink
