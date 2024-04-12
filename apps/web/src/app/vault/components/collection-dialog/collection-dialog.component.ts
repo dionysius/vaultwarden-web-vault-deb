@@ -29,9 +29,9 @@ import { CollectionView } from "@bitwarden/common/vault/models/view/collection.v
 import { BitValidators, DialogService } from "@bitwarden/components";
 
 import {
+  CollectionAccessSelectionView,
   GroupService,
   GroupView,
-  CollectionAccessSelectionView,
 } from "../../../admin-console/organizations/core";
 import { PermissionMode } from "../../../admin-console/organizations/shared/components/access-selector/access-selector.component";
 import {
@@ -432,7 +432,10 @@ function mapGroupToAccessItemView(group: GroupView, collectionId: string): Acces
     labelName: group.name,
     accessAllItems: group.accessAll,
     readonly: group.accessAll,
-    readonlyPermission: convertToPermission(group.collections.find((gc) => gc.id == collectionId)),
+    readonlyPermission:
+      collectionId != null
+        ? convertToPermission(group.collections.find((gc) => gc.id == collectionId))
+        : undefined,
   };
 }
 
@@ -456,9 +459,12 @@ function mapUserToAccessItemView(
     status: user.status,
     accessAllItems: user.accessAll,
     readonly: user.accessAll,
-    readonlyPermission: convertToPermission(
-      new CollectionAccessSelectionView(user.collections.find((uc) => uc.id == collectionId)),
-    ),
+    readonlyPermission:
+      collectionId != null
+        ? convertToPermission(
+            new CollectionAccessSelectionView(user.collections.find((uc) => uc.id == collectionId)),
+          )
+        : undefined,
   };
 }
 

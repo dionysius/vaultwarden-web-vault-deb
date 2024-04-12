@@ -101,7 +101,12 @@ export const getPermissionList = (flexibleCollectionsEnabled: boolean): Permissi
  * for the dropdown in the AccessSelectorComponent
  * @param value
  */
-export const convertToPermission = (value: CollectionAccessSelectionView) => {
+export const convertToPermission = (
+  value: CollectionAccessSelectionView | undefined,
+): CollectionPermission | undefined => {
+  if (value == null) {
+    return undefined;
+  }
   if (value.manage) {
     return CollectionPermission.Manage;
   } else if (value.readOnly) {
