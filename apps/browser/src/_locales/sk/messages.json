@@ -3005,5 +3005,8 @@
   },
   "passkeyRemoved": {
     "message": "Prístupový kľúč bol odstránený"
+  },
+  "unassignedItemsBanner": {
+    "message": "Upozornenie: Nepriradené položky organizácie už nie sú viditeľné v zobrazení Všetky Trezory a sú prístupné len cez administrátorskú konzolu. Aby boli viditeľné, priraďte tieto položky do kolekcie z konzoly administrátora."
   }
 }

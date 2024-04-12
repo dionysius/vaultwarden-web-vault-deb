@@ -3001,9 +3001,12 @@
     "description": "Notification message for when saving credentials has failed."
   },
   "removePasskey": {
-    "message": "Remove passkey"
+    "message": "Suprimeix la clau de pas"
   },
   "passkeyRemoved": {
-    "message": "Passkey removed"
+    "message": "Clau de pas suprimida"
+  },
+  "unassignedItemsBanner": {
+    "message": "Notice: Unassigned organization items are no longer visible in the All Vaults view and only accessible via the Admin Console. Assign these items to a collection from the Admin Console to make them visible."
   }
 }

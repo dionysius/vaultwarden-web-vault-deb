@@ -3005,5 +3005,8 @@
   },
   "passkeyRemoved": {
     "message": "Passkey został usunięty"
+  },
+  "unassignedItemsBanner": {
+    "message": "Uwaga: Nieprzypisane elementy w organizacji nie są już widoczne w widoku Wszystkie sejfy i są dostępne tylko przez Konsolę Administracyjną. Przypisz te elementy do kolekcji z konsoli administracyjnej, aby były one widoczne."
   }
 }

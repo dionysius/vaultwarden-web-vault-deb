@@ -3005,5 +3005,8 @@
   },
   "passkeyRemoved": {
     "message": "Passkey verwijderd"
+  },
+  "unassignedItemsBanner": {
+    "message": "Let op: Niet-toegewezen organisatie-items zijn niet langer zichtbaar in de weergave van alle kluisjes en zijn alleen toegankelijk via de Admin Console. Om deze items zichtbaar te maken, moet je ze toewijzen aan een collectie via de Admin Console."
   }
 }

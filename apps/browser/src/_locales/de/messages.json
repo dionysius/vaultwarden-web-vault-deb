@@ -2706,7 +2706,7 @@
     "message": "Für dein Konto ist die Duo Zwei-Faktor-Authentifizierung erforderlich."
   },
   "popoutTheExtensionToCompleteLogin": {
-    "message": "Popout the extension to complete login."
+    "message": "Koppel die Erweiterung ab, um die Anmeldung abzuschließen."
   },
   "popoutExtension": {
     "message": "Popout-Erweiterung"
@@ -3005,5 +3005,8 @@
   },
   "passkeyRemoved": {
     "message": "Passkey gelöscht"
+  },
+  "unassignedItemsBanner": {
+    "message": "Hinweis: Nicht zugeordnete Organisationseinträge sind nicht mehr in der Ansicht aller Tresore sichtbar und nur über die Administrator-Konsole zugänglich. Weise diese Einträge einer Sammlung aus der Administrator-Konsole zu, um sie sichtbar zu machen."
   }
 }
