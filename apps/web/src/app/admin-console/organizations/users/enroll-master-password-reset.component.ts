@@ -1,12 +1,7 @@
-import { DIALOG_DATA, DialogRef } from "@angular/cdk/dialog";
-import { Component, Inject } from "@angular/core";
-import { FormControl, FormGroup, Validators } from "@angular/forms";
-
+import { UserVerificationDialogComponent } from "@bitwarden/auth/angular";
 import { OrganizationUserService } from "@bitwarden/common/admin-console/abstractions/organization-user/organization-user.service";
 import { OrganizationUserResetPasswordEnrollmentRequest } from "@bitwarden/common/admin-console/abstractions/organization-user/requests";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
-import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
-import { Verification } from "@bitwarden/common/auth/types/verification";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
@@ -19,63 +14,58 @@ interface EnrollMasterPasswordResetData {
   organization: Organization;
 }
 
-@Component({
-  selector: "app-enroll-master-password-reset",
-  templateUrl: "enroll-master-password-reset.component.html",
-})
 export class EnrollMasterPasswordReset {
-  protected organization: Organization;
+  constructor() {}
 
-  protected formGroup = new FormGroup({
-    verification: new FormControl<Verification>(null, Validators.required),
-  });
-
-  constructor(
-    private dialogRef: DialogRef,
-    @Inject(DIALOG_DATA) protected data: EnrollMasterPasswordResetData,
-    private resetPasswordService: OrganizationUserResetPasswordService,
-    private userVerificationService: UserVerificationService,
-    private platformUtilsService: PlatformUtilsService,
-    private i18nService: I18nService,
-    private syncService: SyncService,
-    private logService: LogService,
-    private organizationUserService: OrganizationUserService,
+  static async open(
+    dialogService: DialogService,
+    data: EnrollMasterPasswordResetData,
+    resetPasswordService: OrganizationUserResetPasswordService,
+    organizationUserService: OrganizationUserService,
+    platformUtilsService: PlatformUtilsService,
+    i18nService: I18nService,
+    syncService: SyncService,
+    logService: LogService,
   ) {
-    this.organization = data.organization;
-  }
+    const result = await UserVerificationDialogComponent.open(dialogService, {
+      title: "enrollAccountRecovery",
+      calloutOptions: {
+        text: "resetPasswordEnrollmentWarning",
+        type: "warning",
+      },
+    });
 
-  submit = async () => {
-    try {
-      await this.userVerificationService
-        .buildRequest(
-          this.formGroup.value.verification,
-          OrganizationUserResetPasswordEnrollmentRequest,
-        )
-        .then(async (request) => {
-          // Create request and execute enrollment
-          request.resetPasswordKey = await this.resetPasswordService.buildRecoveryKey(
-            this.organization.id,
-          );
-          await this.organizationUserService.putOrganizationUserResetPasswordEnrollment(
-            this.organization.id,
-            this.organization.userId,
-            request,
-          );
-
-          await this.syncService.fullSync(true);
-        });
-      this.platformUtilsService.showToast(
-        "success",
-        null,
-        this.i18nService.t("enrollPasswordResetSuccess"),
-      );
-      this.dialogRef.close();
-    } catch (e) {
-      this.logService.error(e);
+    // Handle the result of the dialog based on user action and verification success
+    if (result.userAction === "cancel") {
+      return;
     }
-  };
 
-  static open(dialogService: DialogService, data: EnrollMasterPasswordResetData) {
-    return dialogService.open(EnrollMasterPasswordReset, { data });
+    // User confirmed the dialog so check verification success
+    if (!result.verificationSuccess) {
+      // verification failed
+      return;
+    }
+
+    // Verification succeeded
+    try {
+      // This object is missing most of the properties in the
+      // `OrganizationUserResetPasswordEnrollmentRequest()`, but those
+      // properties don't carry over to the server model anyway and are
+      // never used by this flow.
+      const request = new OrganizationUserResetPasswordEnrollmentRequest();
+      request.resetPasswordKey = await resetPasswordService.buildRecoveryKey(data.organization.id);
+
+      await organizationUserService.putOrganizationUserResetPasswordEnrollment(
+        data.organization.id,
+        data.organization.userId,
+        request,
+      );
+
+      platformUtilsService.showToast("success", null, i18nService.t("enrollPasswordResetSuccess"));
+
+      await syncService.fullSync(true);
+    } catch (e) {
+      logService.error(e);
+    }
   }
 }

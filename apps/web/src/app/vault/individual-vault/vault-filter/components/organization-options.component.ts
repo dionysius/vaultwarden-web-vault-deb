@@ -16,6 +16,7 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 import { DialogService } from "@bitwarden/components";
 
+import { OrganizationUserResetPasswordService } from "../../../../admin-console/organizations/members/services/organization-user-reset-password/organization-user-reset-password.service";
 import { EnrollMasterPasswordReset } from "../../../../admin-console/organizations/users/enroll-master-password-reset.component";
 import { OptionsInput } from "../shared/components/vault-filter-section.component";
 import { OrganizationFilter } from "../shared/models/vault-filter.type";
@@ -46,6 +47,7 @@ export class OrganizationOptionsComponent implements OnInit, OnDestroy {
     private organizationUserService: OrganizationUserService,
     private userDecryptionOptionsService: UserDecryptionOptionsServiceAbstraction,
     private dialogService: DialogService,
+    private resetPasswordService: OrganizationUserResetPasswordService,
   ) {}
 
   async ngOnInit() {
@@ -144,7 +146,16 @@ export class OrganizationOptionsComponent implements OnInit, OnDestroy {
 
   async toggleResetPasswordEnrollment(org: Organization) {
     if (!this.organization.resetPasswordEnrolled) {
-      EnrollMasterPasswordReset.open(this.dialogService, { organization: org });
+      await EnrollMasterPasswordReset.open(
+        this.dialogService,
+        { organization: org },
+        this.resetPasswordService,
+        this.organizationUserService,
+        this.platformUtilsService,
+        this.i18nService,
+        this.syncService,
+        this.logService,
+      );
     } else {
       // Remove reset password
       const request = new OrganizationUserResetPasswordEnrollmentRequest();
