@@ -6,6 +6,7 @@ import { Subject, firstValueFrom, map, switchMap, takeUntil } from "rxjs";
 import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout-settings.service";
 import { VaultTimeoutService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout.service";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
+import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 import { VaultTimeoutAction } from "@bitwarden/common/enums/vault-timeout-action.enum";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
@@ -32,6 +33,7 @@ export class AccountSwitcherComponent implements OnInit, OnDestroy {
     private location: Location,
     private router: Router,
     private vaultTimeoutSettingsService: VaultTimeoutSettingsService,
+    private authService: AuthService,
   ) {}
 
   get accountLimit() {
@@ -42,13 +44,14 @@ export class AccountSwitcherComponent implements OnInit, OnDestroy {
     return this.accountSwitcherService.SPECIAL_ADD_ACCOUNT_ID;
   }
 
-  get availableAccounts$() {
-    return this.accountSwitcherService.availableAccounts$;
-  }
-
-  get currentAccount$() {
-    return this.accountService.activeAccount$;
-  }
+  readonly availableAccounts$ = this.accountSwitcherService.availableAccounts$;
+  readonly currentAccount$ = this.accountService.activeAccount$.pipe(
+    switchMap((a) =>
+      a == null
+        ? null
+        : this.authService.activeAccountStatus$.pipe(map((s) => ({ ...a, status: s }))),
+    ),
+  );
 
   async ngOnInit() {
     const availableVaultTimeoutActions = await firstValueFrom(

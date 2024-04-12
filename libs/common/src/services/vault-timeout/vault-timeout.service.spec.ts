@@ -138,7 +138,6 @@ describe("VaultTimeoutService", () => {
     if (globalSetups?.userId) {
       accountService.activeAccountSubject.next({
         id: globalSetups.userId as UserId,
-        status: accounts[globalSetups.userId]?.authStatus,
         email: null,
         name: null,
       });

@@ -11,6 +11,7 @@ import {
 } from "rxjs";
 
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
+import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { AvatarService } from "@bitwarden/common/auth/abstractions/avatar.service";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
@@ -48,25 +49,27 @@ export class AccountSwitcherService {
     private messagingService: MessagingService,
     private environmentService: EnvironmentService,
     private logService: LogService,
+    authService: AuthService,
   ) {
     this.availableAccounts$ = combineLatest([
-      this.accountService.accounts$,
+      accountService.accounts$,
+      authService.authStatuses$,
       this.accountService.activeAccount$,
     ]).pipe(
-      switchMap(async ([accounts, activeAccount]) => {
-        const accountEntries = Object.entries(accounts).filter(
-          ([_, account]) => account.status !== AuthenticationStatus.LoggedOut,
+      switchMap(async ([accounts, accountStatuses, activeAccount]) => {
+        const loggedInIds = Object.keys(accounts).filter(
+          (id: UserId) => accountStatuses[id] !== AuthenticationStatus.LoggedOut,
         );
         // Accounts shouldn't ever be more than ACCOUNT_LIMIT but just in case do a greater than
-        const hasMaxAccounts = accountEntries.length >= this.ACCOUNT_LIMIT;
+        const hasMaxAccounts = loggedInIds.length >= this.ACCOUNT_LIMIT;
         const options: AvailableAccount[] = await Promise.all(
-          accountEntries.map(async ([id, account]) => {
+          loggedInIds.map(async (id: UserId) => {
             return {
-              name: account.name ?? account.email,
-              email: account.email,
+              name: accounts[id].name ?? accounts[id].email,
+              email: accounts[id].email,
               id: id,
               server: (await this.environmentService.getEnvironment(id))?.getHostname(),
-              status: account.status,
+              status: accountStatuses[id],
               isActive: id === activeAccount?.id,
               avatarColor: await firstValueFrom(
                 this.avatarService.getUserAvatarColor$(id as UserId),

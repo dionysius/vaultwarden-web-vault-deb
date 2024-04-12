@@ -21,6 +21,7 @@ import { AuthenticationStatus } from "../enums/authentication-status";
 
 export class AuthService implements AuthServiceAbstraction {
   activeAccountStatus$: Observable<AuthenticationStatus>;
+  authStatuses$: Observable<Record<UserId, AuthenticationStatus>>;
 
   constructor(
     protected accountService: AccountService,
@@ -34,6 +35,26 @@ export class AuthService implements AuthServiceAbstraction {
       map((account) => account?.id),
       switchMap((userId) => {
         return this.authStatusFor$(userId);
+      }),
+    );
+
+    this.authStatuses$ = this.accountService.accounts$.pipe(
+      map((accounts) => Object.keys(accounts) as UserId[]),
+      switchMap((entries) =>
+        combineLatest(
+          entries.map((userId) =>
+            this.authStatusFor$(userId).pipe(map((status) => ({ userId, status }))),
+          ),
+        ),
+      ),
+      map((statuses) => {
+        return statuses.reduce(
+          (acc, { userId, status }) => {
+            acc[userId] = status;
+            return acc;
+          },
+          {} as Record<UserId, AuthenticationStatus>,
+        );
       }),
     );
   }

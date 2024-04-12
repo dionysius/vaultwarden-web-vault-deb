@@ -1,8 +1,7 @@
 import { mock } from "jest-mock-extended";
-import { Observable, ReplaySubject } from "rxjs";
+import { ReplaySubject } from "rxjs";
 
 import { AccountInfo, AccountService } from "../src/auth/abstractions/account.service";
-import { AuthenticationStatus } from "../src/auth/enums/authentication-status";
 import { UserId } from "../src/types/guid";
 
 export function mockAccountServiceWith(
@@ -14,7 +13,6 @@ export function mockAccountServiceWith(
     ...{
       name: "name",
       email: "email",
-      status: AuthenticationStatus.Locked,
     },
   };
   const service = new FakeAccountService({ [userId]: fullInfo });
@@ -34,8 +32,6 @@ export class FakeAccountService implements AccountService {
   }
   accounts$ = this.accountsSubject.asObservable();
   activeAccount$ = this.activeAccountSubject.asObservable();
-  accountLock$: Observable<UserId>;
-  accountLogout$: Observable<UserId>;
 
   constructor(initialData: Record<UserId, AccountInfo>) {
     this.accountsSubject.next(initialData);
@@ -55,14 +51,6 @@ export class FakeAccountService implements AccountService {
 
   async setAccountEmail(userId: UserId, email: string): Promise<void> {
     await this.mock.setAccountEmail(userId, email);
-  }
-
-  async setAccountStatus(userId: UserId, status: AuthenticationStatus): Promise<void> {
-    await this.mock.setAccountStatus(userId, status);
-  }
-
-  async setMaxAccountStatus(userId: UserId, maxStatus: AuthenticationStatus): Promise<void> {
-    await this.mock.setMaxAccountStatus(userId, maxStatus);
   }
 
   async switchAccount(userId: UserId): Promise<void> {

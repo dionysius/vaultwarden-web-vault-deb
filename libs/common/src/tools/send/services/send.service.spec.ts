@@ -8,7 +8,6 @@ import {
   awaitAsync,
   mockAccountServiceWith,
 } from "../../../../spec";
-import { AuthenticationStatus } from "../../../auth/enums/authentication-status";
 import { CryptoService } from "../../../platform/abstractions/crypto.service";
 import { EncryptService } from "../../../platform/abstractions/encrypt.service";
 import { I18nService } from "../../../platform/abstractions/i18n.service";
@@ -64,7 +63,6 @@ describe("SendService", () => {
       id: mockUserId,
       email: "email",
       name: "name",
-      status: AuthenticationStatus.Unlocked,
     });
 
     // Initial encrypted state

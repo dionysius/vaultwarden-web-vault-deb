@@ -8,7 +8,6 @@ import { OrganizationAutoEnrollStatusResponse } from "../../admin-console/models
 import { CryptoService } from "../../platform/abstractions/crypto.service";
 import { I18nService } from "../../platform/abstractions/i18n.service";
 import { AccountInfo, AccountService } from "../abstractions/account.service";
-import { AuthenticationStatus } from "../enums/authentication-status";
 
 import { PasswordResetEnrollmentServiceImplementation } from "./password-reset-enrollment.service.implementation";
 
@@ -91,7 +90,6 @@ describe("PasswordResetEnrollmentServiceImplementation", () => {
       const user1AccountInfo: AccountInfo = {
         name: "Test User 1",
         email: "test1@email.com",
-        status: AuthenticationStatus.Unlocked,
       };
       activeAccountSubject.next(Object.assign(user1AccountInfo, { id: "userId" as UserId }));
 

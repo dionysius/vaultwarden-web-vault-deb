@@ -14,7 +14,6 @@ import {
   KeyDefinition,
 } from "../../platform/state";
 import { UserId } from "../../types/guid";
-import { AuthenticationStatus } from "../enums/authentication-status";
 
 export const ACCOUNT_ACCOUNTS = KeyDefinition.record<AccountInfo, UserId>(
   ACCOUNT_MEMORY,
@@ -36,8 +35,6 @@ export class AccountServiceImplementation implements InternalAccountService {
 
   accounts$;
   activeAccount$;
-  accountLock$ = this.lock.asObservable();
-  accountLogout$ = this.logout.asObservable();
 
   constructor(
     private messagingService: MessagingService,
@@ -72,34 +69,6 @@ export class AccountServiceImplementation implements InternalAccountService {
 
   async setAccountEmail(userId: UserId, email: string): Promise<void> {
     await this.setAccountInfo(userId, { email });
-  }
-
-  async setAccountStatus(userId: UserId, status: AuthenticationStatus): Promise<void> {
-    await this.setAccountInfo(userId, { status });
-
-    if (status === AuthenticationStatus.LoggedOut) {
-      this.logout.next(userId);
-    } else if (status === AuthenticationStatus.Locked) {
-      this.lock.next(userId);
-    }
-  }
-
-  async setMaxAccountStatus(userId: UserId, maxStatus: AuthenticationStatus): Promise<void> {
-    await this.accountsState.update(
-      (accounts) => {
-        accounts[userId].status = maxStatus;
-        return accounts;
-      },
-      {
-        shouldUpdate: (accounts) => {
-          if (accounts?.[userId] == null) {
-            throw new Error("Account does not exist");
-          }
-
-          return accounts[userId].status > maxStatus;
-        },
-      },
-    );
   }
 
   async switchAccount(userId: UserId): Promise<void> {

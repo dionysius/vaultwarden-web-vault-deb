@@ -122,6 +122,25 @@ describe("AuthService", () => {
     });
   });
 
+  describe("authStatuses$", () => {
+    it("requests auth status for all known users", async () => {
+      const userId2 = Utils.newGuid() as UserId;
+
+      await accountService.addAccount(userId2, { email: "email2", name: "name2" });
+
+      const mockFn = jest.fn().mockReturnValue(of(AuthenticationStatus.Locked));
+      sut.authStatusFor$ = mockFn;
+
+      await expect(firstValueFrom(await sut.authStatuses$)).resolves.toEqual({
+        [userId]: AuthenticationStatus.Locked,
+        [userId2]: AuthenticationStatus.Locked,
+      });
+      expect(mockFn).toHaveBeenCalledTimes(2);
+      expect(mockFn).toHaveBeenCalledWith(userId);
+      expect(mockFn).toHaveBeenCalledWith(userId2);
+    });
+  });
+
   describe("authStatusFor$", () => {
     beforeEach(() => {
       tokenService.hasAccessToken$.mockReturnValue(of(true));

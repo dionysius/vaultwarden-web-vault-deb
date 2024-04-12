@@ -8,7 +8,6 @@ import { LogService } from "../../platform/abstractions/log.service";
 import { MessagingService } from "../../platform/abstractions/messaging.service";
 import { UserId } from "../../types/guid";
 import { AccountInfo } from "../abstractions/account.service";
-import { AuthenticationStatus } from "../enums/authentication-status";
 
 import {
   ACCOUNT_ACCOUNTS,
@@ -24,9 +23,7 @@ describe("accountService", () => {
   let accountsState: FakeGlobalState<Record<UserId, AccountInfo>>;
   let activeAccountIdState: FakeGlobalState<UserId>;
   const userId = "userId" as UserId;
-  function userInfo(status: AuthenticationStatus): AccountInfo {
-    return { status, email: "email", name: "name" };
-  }
+  const userInfo = { email: "email", name: "name" };
 
   beforeEach(() => {
     messagingService = mock();
@@ -50,61 +47,49 @@ describe("accountService", () => {
       expect(emissions).toEqual([undefined]);
     });
 
-    it("should emit the active account and status", async () => {
+    it("should emit the active account", async () => {
       const emissions = trackEmissions(sut.activeAccount$);
-      accountsState.stateSubject.next({ [userId]: userInfo(AuthenticationStatus.Unlocked) });
+      accountsState.stateSubject.next({ [userId]: userInfo });
       activeAccountIdState.stateSubject.next(userId);
 
       expect(emissions).toEqual([
         undefined, // initial value
-        { id: userId, ...userInfo(AuthenticationStatus.Unlocked) },
-      ]);
-    });
-
-    it("should update the status if the account status changes", async () => {
-      accountsState.stateSubject.next({ [userId]: userInfo(AuthenticationStatus.Unlocked) });
-      activeAccountIdState.stateSubject.next(userId);
-      const emissions = trackEmissions(sut.activeAccount$);
-      accountsState.stateSubject.next({ [userId]: userInfo(AuthenticationStatus.Locked) });
-
-      expect(emissions).toEqual([
-        { id: userId, ...userInfo(AuthenticationStatus.Unlocked) },
-        { id: userId, ...userInfo(AuthenticationStatus.Locked) },
+        { id: userId, ...userInfo },
       ]);
     });
 
     it("should remember the last emitted value", async () => {
-      accountsState.stateSubject.next({ [userId]: userInfo(AuthenticationStatus.Unlocked) });
+      accountsState.stateSubject.next({ [userId]: userInfo });
       activeAccountIdState.stateSubject.next(userId);
 
       expect(await firstValueFrom(sut.activeAccount$)).toEqual({
         id: userId,
-        ...userInfo(AuthenticationStatus.Unlocked),
+        ...userInfo,
       });
     });
   });
 
   describe("accounts$", () => {
     it("should maintain an accounts cache", async () => {
-      accountsState.stateSubject.next({ [userId]: userInfo(AuthenticationStatus.Unlocked) });
-      accountsState.stateSubject.next({ [userId]: userInfo(AuthenticationStatus.Locked) });
+      accountsState.stateSubject.next({ [userId]: userInfo });
+      accountsState.stateSubject.next({ [userId]: userInfo });
       expect(await firstValueFrom(sut.accounts$)).toEqual({
-        [userId]: userInfo(AuthenticationStatus.Locked),
+        [userId]: userInfo,
       });
     });
   });
 
   describe("addAccount", () => {
     it("should emit the new account", async () => {
-      await sut.addAccount(userId, userInfo(AuthenticationStatus.Unlocked));
+      await sut.addAccount(userId, userInfo);
       const currentValue = await firstValueFrom(sut.accounts$);
 
-      expect(currentValue).toEqual({ [userId]: userInfo(AuthenticationStatus.Unlocked) });
+      expect(currentValue).toEqual({ [userId]: userInfo });
     });
   });
 
   describe("setAccountName", () => {
-    const initialState = { [userId]: userInfo(AuthenticationStatus.Unlocked) };
+    const initialState = { [userId]: userInfo };
     beforeEach(() => {
       accountsState.stateSubject.next(initialState);
     });
@@ -114,7 +99,7 @@ describe("accountService", () => {
       const currentState = await firstValueFrom(accountsState.state$);
 
       expect(currentState).toEqual({
-        [userId]: { ...userInfo(AuthenticationStatus.Unlocked), name: "new name" },
+        [userId]: { ...userInfo, name: "new name" },
       });
     });
 
@@ -127,7 +112,7 @@ describe("accountService", () => {
   });
 
   describe("setAccountEmail", () => {
-    const initialState = { [userId]: userInfo(AuthenticationStatus.Unlocked) };
+    const initialState = { [userId]: userInfo };
     beforeEach(() => {
       accountsState.stateSubject.next(initialState);
     });
@@ -137,7 +122,7 @@ describe("accountService", () => {
       const currentState = await firstValueFrom(accountsState.state$);
 
       expect(currentState).toEqual({
-        [userId]: { ...userInfo(AuthenticationStatus.Unlocked), email: "new email" },
+        [userId]: { ...userInfo, email: "new email" },
       });
     });
 
@@ -149,49 +134,9 @@ describe("accountService", () => {
     });
   });
 
-  describe("setAccountStatus", () => {
-    const initialState = { [userId]: userInfo(AuthenticationStatus.Unlocked) };
-    beforeEach(() => {
-      accountsState.stateSubject.next(initialState);
-    });
-
-    it("should update the account", async () => {
-      await sut.setAccountStatus(userId, AuthenticationStatus.Locked);
-      const currentState = await firstValueFrom(accountsState.state$);
-
-      expect(currentState).toEqual({
-        [userId]: {
-          ...userInfo(AuthenticationStatus.Unlocked),
-          status: AuthenticationStatus.Locked,
-        },
-      });
-    });
-
-    it("should not update if the status is the same", async () => {
-      await sut.setAccountStatus(userId, AuthenticationStatus.Unlocked);
-      const currentState = await firstValueFrom(accountsState.state$);
-
-      expect(currentState).toEqual(initialState);
-    });
-
-    it("should emit logout if the status is logged out", async () => {
-      const emissions = trackEmissions(sut.accountLogout$);
-      await sut.setAccountStatus(userId, AuthenticationStatus.LoggedOut);
-
-      expect(emissions).toEqual([userId]);
-    });
-
-    it("should emit lock if the status is locked", async () => {
-      const emissions = trackEmissions(sut.accountLock$);
-      await sut.setAccountStatus(userId, AuthenticationStatus.Locked);
-
-      expect(emissions).toEqual([userId]);
-    });
-  });
-
   describe("switchAccount", () => {
     beforeEach(() => {
-      accountsState.stateSubject.next({ [userId]: userInfo(AuthenticationStatus.Unlocked) });
+      accountsState.stateSubject.next({ [userId]: userInfo });
       activeAccountIdState.stateSubject.next(userId);
     });
 
@@ -205,28 +150,6 @@ describe("accountService", () => {
       // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
       // eslint-disable-next-line @typescript-eslint/no-floating-promises
       expect(sut.switchAccount("unknown" as UserId)).rejects.toThrowError("Account does not exist");
-    });
-  });
-
-  describe("setMaxAccountStatus", () => {
-    it("should update the account", async () => {
-      accountsState.stateSubject.next({ [userId]: userInfo(AuthenticationStatus.Unlocked) });
-      await sut.setMaxAccountStatus(userId, AuthenticationStatus.Locked);
-      const currentState = await firstValueFrom(accountsState.state$);
-
-      expect(currentState).toEqual({
-        [userId]: userInfo(AuthenticationStatus.Locked),
-      });
-    });
-
-    it("should not update if the new max status is higher than the current", async () => {
-      accountsState.stateSubject.next({ [userId]: userInfo(AuthenticationStatus.LoggedOut) });
-      await sut.setMaxAccountStatus(userId, AuthenticationStatus.Locked);
-      const currentState = await firstValueFrom(accountsState.state$);
-
-      expect(currentState).toEqual({
-        [userId]: userInfo(AuthenticationStatus.LoggedOut),
-      });
     });
   });
 });

@@ -2,7 +2,7 @@ import { firstValueFrom, map } from "rxjs";
 
 import { ApiService } from "../../abstractions/api.service";
 import { EventUploadService as EventUploadServiceAbstraction } from "../../abstractions/event/event-upload.service";
-import { AccountService } from "../../auth/abstractions/account.service";
+import { AuthService } from "../../auth/abstractions/auth.service";
 import { AuthenticationStatus } from "../../auth/enums/authentication-status";
 import { EventData } from "../../models/data/event.data";
 import { EventRequest } from "../../models/request/event.request";
@@ -18,7 +18,7 @@ export class EventUploadService implements EventUploadServiceAbstraction {
     private apiService: ApiService,
     private stateProvider: StateProvider,
     private logService: LogService,
-    private accountService: AccountService,
+    private authService: AuthService,
   ) {}
 
   init(checkOnInterval: boolean) {
@@ -43,13 +43,16 @@ export class EventUploadService implements EventUploadServiceAbstraction {
       userId = await firstValueFrom(this.stateProvider.activeUserId$);
     }
 
-    // Get the auth status from the provided user or the active user
-    const userAuth$ = this.accountService.accounts$.pipe(
-      map((accounts) => accounts[userId]?.status === AuthenticationStatus.Unlocked),
-    );
+    if (!userId) {
+      return;
+    }
 
-    const isAuthenticated = await firstValueFrom(userAuth$);
-    if (!isAuthenticated) {
+    const isUnlocked = await firstValueFrom(
+      this.authService
+        .authStatusFor$(userId)
+        .pipe(map((status) => status === AuthenticationStatus.Unlocked)),
+    );
+    if (!isUnlocked) {
       return;
     }
 

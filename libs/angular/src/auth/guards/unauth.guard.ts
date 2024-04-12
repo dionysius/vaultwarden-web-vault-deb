@@ -2,7 +2,6 @@ import { Injectable, inject } from "@angular/core";
 import { CanActivate, CanActivateFn, Router, UrlTree } from "@angular/router";
 import { Observable, map } from "rxjs";
 
-import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 
@@ -43,14 +42,14 @@ const defaultRoutes: UnauthRoutes = {
 };
 
 function unauthGuard(routes: UnauthRoutes): Observable<boolean | UrlTree> {
-  const accountService = inject(AccountService);
+  const authService = inject(AuthService);
   const router = inject(Router);
 
-  return accountService.activeAccount$.pipe(
-    map((accountData) => {
-      if (accountData == null || accountData.status === AuthenticationStatus.LoggedOut) {
+  return authService.activeAccountStatus$.pipe(
+    map((status) => {
+      if (status == null || status === AuthenticationStatus.LoggedOut) {
         return true;
-      } else if (accountData.status === AuthenticationStatus.Locked) {
+      } else if (status === AuthenticationStatus.Locked) {
         return router.createUrlTree([routes.locked]);
       } else {
         return router.createUrlTree([routes.homepage()]);

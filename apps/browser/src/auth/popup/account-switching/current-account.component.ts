@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { Observable, combineLatest, switchMap } from "rxjs";
 
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
+import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { AvatarService } from "@bitwarden/common/auth/abstractions/avatar.service";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 import { UserId } from "@bitwarden/common/types/guid";
@@ -29,12 +30,14 @@ export class CurrentAccountComponent {
     private router: Router,
     private location: Location,
     private route: ActivatedRoute,
+    private authService: AuthService,
   ) {
     this.currentAccount$ = combineLatest([
       this.accountService.activeAccount$,
       this.avatarService.avatarColor$,
+      this.authService.activeAccountStatus$,
     ]).pipe(
-      switchMap(async ([account, avatarColor]) => {
+      switchMap(async ([account, avatarColor, accountStatus]) => {
         if (account == null) {
           return null;
         }
@@ -42,7 +45,7 @@ export class CurrentAccountComponent {
           id: account.id,
           name: account.name || account.email,
           email: account.email,
-          status: account.status,
+          status: accountStatus,
           avatarColor,
         };
 

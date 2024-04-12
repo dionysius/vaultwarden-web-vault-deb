@@ -779,14 +779,14 @@ export default class MainBackground {
       this.apiService,
       this.stateProvider,
       this.logService,
-      this.accountService,
+      this.authService,
     );
     this.eventCollectionService = new EventCollectionService(
       this.cipherService,
       this.stateProvider,
       this.organizationService,
       this.eventUploadService,
-      this.accountService,
+      this.authService,
     );
     this.totpService = new TotpService(this.cryptoFunctionService, this.logService);
 

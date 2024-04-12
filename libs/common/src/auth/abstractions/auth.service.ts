@@ -6,6 +6,8 @@ import { AuthenticationStatus } from "../enums/authentication-status";
 export abstract class AuthService {
   /** Authentication status for the active user */
   abstract activeAccountStatus$: Observable<AuthenticationStatus>;
+  /** Authentication status for all known users */
+  abstract authStatuses$: Observable<Record<UserId, AuthenticationStatus>>;
   /**
    * Returns an observable authentication status for the given user id.
    * @note userId is a required parameter, null values will always return `AuthenticationStatus.LoggedOut`
