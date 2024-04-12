@@ -565,8 +565,12 @@ export class ApiService implements ApiServiceAbstraction {
     return this.send("PUT", "/ciphers/share", request, true, false);
   }
 
-  putCipherCollections(id: string, request: CipherCollectionsRequest): Promise<any> {
-    return this.send("PUT", "/ciphers/" + id + "/collections", request, true, false);
+  async putCipherCollections(
+    id: string,
+    request: CipherCollectionsRequest,
+  ): Promise<CipherResponse> {
+    const response = await this.send("PUT", "/ciphers/" + id + "/collections", request, true, true);
+    return new CipherResponse(response);
   }
 
   putCipherCollectionsAdmin(id: string, request: CipherCollectionsRequest): Promise<any> {
