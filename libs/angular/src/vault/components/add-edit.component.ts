@@ -592,7 +592,7 @@ export class AddEditComponent implements OnInit, OnDestroy {
       this.writeableCollections.forEach((c) => ((c as any).checked = false));
     }
     if (this.cipher.organizationId != null) {
-      this.collections = this.writeableCollections.filter(
+      this.collections = this.writeableCollections?.filter(
         (c) => c.organizationId === this.cipher.organizationId,
       );
       const org = await this.organizationService.get(this.cipher.organizationId);

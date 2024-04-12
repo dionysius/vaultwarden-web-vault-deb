@@ -75,6 +75,7 @@ export class AddEditComponent extends BaseAddEditComponent implements OnChanges,
 
   async ngOnInit() {
     await super.ngOnInit();
+    await this.load();
     this.broadcasterService.subscribe(BroadcasterSubscriptionId, async (message: any) => {
       this.ngZone.run(() => {
         switch (message.command) {
