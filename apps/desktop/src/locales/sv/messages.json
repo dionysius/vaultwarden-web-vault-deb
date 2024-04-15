@@ -2689,7 +2689,7 @@
     "description": "Label indicating the most common import formats"
   },
   "troubleshooting": {
-    "message": "Troubleshooting"
+    "message": "Felsökning"
   },
   "disableHardwareAccelerationRestart": {
     "message": "Disable hardware acceleration and restart"
@@ -2698,9 +2698,9 @@
     "message": "Enable hardware acceleration and restart"
   },
   "removePasskey": {
-    "message": "Remove passkey"
+    "message": "Ta bort nyckel"
   },
   "passkeyRemoved": {
-    "message": "Passkey removed"
+    "message": "Nyckel borttagen"
   }
 }
