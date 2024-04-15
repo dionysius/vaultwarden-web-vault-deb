@@ -167,7 +167,7 @@
     "message": "移除"
   },
   "unassigned": {
-    "message": "未分派"
+    "message": "未分配"
   },
   "noneFolder": {
     "message": "无文件夹",
@@ -7521,7 +7521,7 @@
     "description": "Label indicating the most common import formats"
   },
   "maintainYourSubscription": {
-    "message": "要维护 $ORG$ 的订阅，",
+    "message": "要保留 $ORG$ 的订阅，",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'",
     "placeholders": {
       "org": {
@@ -7653,7 +7653,7 @@
     "message": "项目"
   },
   "assignedSeats": {
-    "message": "分配的座席"
+    "message": "已分配的席位"
   },
   "assigned": {
     "message": "已分配"
@@ -7668,29 +7668,29 @@
     "message": "脱离组织"
   },
   "manageSeats": {
-    "message": "管理坐席"
+    "message": "管理席位"
   },
   "manageSeatsDescription": {
     "message": "席位的调整将反映在下一个计费周期中。"
   },
   "unassignedSeatsDescription": {
-    "message": "未分配的订阅座席"
+    "message": "未分配的订阅席位"
   },
   "purchaseSeatDescription": {
-    "message": "已购买额外座席"
+    "message": "已购买附加席位"
   },
   "assignedSeatCannotUpdate": {
-    "message": "无法更新已分配的坐席。请联系您的组织所有者群求协助。"
+    "message": "无法更新已分配的席位。请联系您的组织所有者获取协助。"
   },
   "subscriptionUpdateFailed": {
     "message": "订阅更新失败"
   },
   "trial": {
-    "message": "Trial",
+    "message": "试用",
     "description": "A subscription status label."
   },
   "pastDue": {
-    "message": "Past due",
+    "message": "逾期未支付",
     "description": "A subscription status label"
   },
   "subscriptionExpired": {
@@ -7698,7 +7698,7 @@
     "description": "The date header used when a subscription is past due."
   },
   "pastDueWarningForChargeAutomatically": {
-    "message": "You have a grace period of $DAYS$ days from your subscription expiration date to maintain your subscription. Please resolve the past due invoices by $SUSPENSION_DATE$.",
+    "message": "从您的订阅到期之日起，您有 $DAYS$ 天的宽限期来保留您的订购。请在 $SUSPENSION_DATE$ 之前处理逾期未支付的账单。",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -7712,7 +7712,7 @@
     "description": "A warning shown to the user when their subscription is past due and they are charged automatically."
   },
   "pastDueWarningForSendInvoice": {
-    "message": "You have a grace period of $DAYS$ days from the date your first unpaid invoice is due to maintain your subscription. Please resolve the past due invoices by $SUSPENSION_DATE$.",
+    "message": "从第一笔未支付的账单到期之日起，您有 $DAYS$ 天的宽限期来保留您的订购。请在 $SUSPENSION_DATE$ 之前处理逾期未支付的账单。",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -7730,7 +7730,7 @@
     "description": "The header of a warning box shown to a user whose subscription is unpaid."
   },
   "toReactivateYourSubscription": {
-    "message": "To reactivate your subscription, please resolve the past due invoices.",
+    "message": "要重新激活您的订阅，请先处理逾期未支付的账单。",
     "description": "The body of a warning box shown to a user whose subscription is unpaid."
   },
   "cancellationDate": {
@@ -7738,42 +7738,42 @@
     "description": "The date header used when a subscription is cancelled."
   },
   "machineAccountsCannotCreate": {
-    "message": "Machine accounts cannot be created in suspended organizations. Please contact your organization owner for assistance."
+    "message": "无法在已停用的组织中创建机器账户。请联系您的组织所有者获取协助。"
   },
   "machineAccount": {
-    "message": "Machine account",
+    "message": "机器账户",
     "description": "A machine user which can be used to automate processes and access secrets in the system."
   },
   "machineAccounts": {
-    "message": "Machine accounts",
+    "message": "机器账户",
     "description": "The title for the section that deals with machine accounts."
   },
   "newMachineAccount": {
-    "message": "New machine account",
+    "message": "新增机器账户",
     "description": "Title for creating a new machine account."
   },
   "machineAccountsNoItemsMessage": {
-    "message": "Create a new machine account to get started automating secret access.",
+    "message": "创建一个新的机器账户以开始使用自动机密访问。",
     "description": "Message to encourage the user to start creating machine accounts."
   },
   "machineAccountsNoItemsTitle": {
-    "message": "Nothing to show yet",
+    "message": "暂无要显示的内容",
     "description": "Title to indicate that there are no machine accounts to display."
   },
   "deleteMachineAccounts": {
-    "message": "Delete machine accounts",
+    "message": "删除机器账户",
     "description": "Title for the action to delete one or multiple machine accounts."
   },
   "deleteMachineAccount": {
-    "message": "Delete machine account",
+    "message": "删除机器账户",
     "description": "Title for the action to delete a single machine account."
   },
   "viewMachineAccount": {
-    "message": "View machine account",
+    "message": "查看机器账户",
     "description": "Action to view the details of a machine account."
   },
   "deleteMachineAccountDialogMessage": {
-    "message": "Deleting machine account $MACHINE_ACCOUNT$ is permanent and irreversible.",
+    "message": "删除机器账户 $MACHINE_ACCOUNT$ 是永久性操作，无法撤销！",
     "placeholders": {
       "machine_account": {
         "content": "$1",
@@ -7782,10 +7782,10 @@
     }
   },
   "deleteMachineAccountsDialogMessage": {
-    "message": "Deleting machine accounts is permanent and irreversible."
+    "message": "删除机器账户是永久性操作，无法撤销！"
   },
   "deleteMachineAccountsConfirmMessage": {
-    "message": "Delete $COUNT$ machine accounts",
+    "message": "删除 $COUNT$ 个机器账户",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -7794,60 +7794,60 @@
     }
   },
   "deleteMachineAccountToast": {
-    "message": "Machine account deleted"
+    "message": "机器账户已删除"
   },
   "deleteMachineAccountsToast": {
-    "message": "Machine accounts deleted"
+    "message": "机器账户已删除"
   },
   "searchMachineAccounts": {
-    "message": "Search machine accounts",
+    "message": "搜索机器账户",
     "description": "Placeholder text for searching machine accounts."
   },
   "editMachineAccount": {
-    "message": "Edit machine account",
+    "message": "编辑机器账户",
     "description": "Title for editing a machine account."
   },
   "machineAccountName": {
-    "message": "Machine account name",
+    "message": "机器账户名称",
     "description": "Label for the name of a machine account"
   },
   "machineAccountCreated": {
-    "message": "Machine account created",
+    "message": "机器账户已创建",
     "description": "Notifies that a new machine account has been created"
   },
   "machineAccountUpdated": {
-    "message": "Machine account updated",
+    "message": "机器账户已更新",
     "description": "Notifies that a machine account has been updated"
   },
   "projectMachineAccountsDescription": {
-    "message": "Grant machine accounts access to this project."
+    "message": "授予机器账户对此工程的访问权限。"
   },
   "projectMachineAccountsSelectHint": {
-    "message": "Type or select machine accounts"
+    "message": "输入或选择机器账户"
   },
   "projectEmptyMachineAccountAccessPolicies": {
-    "message": "Add machine accounts to grant access"
+    "message": "添加机器账户以授予访问权限"
   },
   "machineAccountPeopleDescription": {
-    "message": "Grant groups or people access to this machine account."
+    "message": "授予群组或人员对此机器账户的访问权限。"
   },
   "machineAccountProjectsDescription": {
-    "message": "Assign projects to this machine account. "
+    "message": "分配工程到此机器账户。 "
   },
   "createMachineAccount": {
-    "message": "Create a machine account"
+    "message": "创建机器账户"
   },
   "maPeopleWarningMessage": {
-    "message": "Removing people from a machine account does not remove the access tokens they created. For security best practice, it is recommended to revoke access tokens created by people removed from a machine account."
+    "message": "从机器账户中移除人员并不会移除他们已创建的访问令牌。基于安全方面的最佳做法，建议吊销从机器账户中被移除的人员创建的访问令牌。"
   },
   "smAccessRemovalWarningMaTitle": {
-    "message": "Remove access to this machine account"
+    "message": "移除此机器账户的访问权限"
   },
   "smAccessRemovalWarningMaMessage": {
-    "message": "This action will remove your access to the machine account."
+    "message": "此操作将移除您对此机器账户的访问权限。"
   },
   "machineAccountsIncluded": {
-    "message": "$COUNT$ machine accounts included",
+    "message": "包含 $COUNT$ 个机器账户",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -7856,7 +7856,7 @@
     }
   },
   "additionalMachineAccountCost": {
-    "message": "$COST$ per month for additional machine accounts",
+    "message": "附加机器账户 $COST$ 每月",
     "placeholders": {
       "cost": {
         "content": "$1",
@@ -7865,10 +7865,10 @@
     }
   },
   "additionalMachineAccounts": {
-    "message": "Additional machine accounts"
+    "message": "附加机器账户"
   },
   "includedMachineAccounts": {
-    "message": "Your plan comes with $COUNT$ machine accounts.",
+    "message": "您的计划包含 $COUNT$ 个机器账户。",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -7877,7 +7877,7 @@
     }
   },
   "addAdditionalMachineAccounts": {
-    "message": "You can add additional machine accounts for $COST$ per month.",
+    "message": "您也可以以 $COST$ 每月购买附加机器账户。",
     "placeholders": {
       "cost": {
         "content": "$1",
@@ -7886,21 +7886,24 @@
     }
   },
   "limitMachineAccounts": {
-    "message": "Limit machine accounts (optional)"
+    "message": "限制机器账户（可选）"
   },
   "limitMachineAccountsDesc": {
-    "message": "Set a limit for your machine accounts. Once this limit is reached, you will not be able to create new machine accounts."
+    "message": "为您的机器账户设置一个限制。达到此限制后，您将无法创建新的机器账户。"
   },
   "machineAccountLimit": {
-    "message": "Machine account limit (optional)"
+    "message": "机器账户限制（可选）"
   },
   "maxMachineAccountCost": {
-    "message": "Max potential machine account cost"
+    "message": "最大潜在的机器账户费用"
   },
   "machineAccountAccessUpdated": {
-    "message": "Machine account access updated"
+    "message": "机器账户访问权限已更新"
   },
   "unassignedItemsBanner": {
     "message": "注意：未分配的组织项目在您所有设备的「所有密码库」视图中不再可见，现在只能通过管理控制台访问。通过管理控制台将这些项目分配给集合以使其可见。"
+  },
+  "unassignedItemsBannerSelfHost": {
+    "message": "注意：从 2024 年 5 月 2 日起，未分配的组织项目在您所有设备的「所有密码库」视图中将不再可见，只能通过管理控制台访问。通过管理控制台将这些项目分配给集合以使其可见。"
   }
 }

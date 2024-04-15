@@ -4957,7 +4957,7 @@
     "message": "Bestehende Organisation hinzufügen"
   },
   "addNewOrganization": {
-    "message": "Neue Organisation erstellen"
+    "message": "Neue Organisation hinzufügen"
   },
   "myProvider": {
     "message": "Mein Anbieter"
@@ -7502,7 +7502,7 @@
     "message": "Zugriff auf Sammlungen ist eingeschränkt"
   },
   "readOnlyCollectionAccess": {
-    "message": "Du hast keinen Zugriff, um diese Sammlung zu verwalten."
+    "message": "Du hast keinen Zugriff zur Verwaltung dieser Sammlung."
   },
   "grantCollectionAccess": {
     "message": "Gewähre Gruppen oder Mitgliedern Zugriff auf diese Sammlung."
@@ -7665,7 +7665,7 @@
     "message": "Verbleibend"
   },
   "unlinkOrganization": {
-    "message": "Organisations-Verknüpfung aufheben"
+    "message": "Organisationsverknüpfung aufheben"
   },
   "manageSeats": {
     "message": "Benutzerpätze verwalten"
@@ -7902,5 +7902,8 @@
   },
   "unassignedItemsBanner": {
     "message": "Hinweis: Nicht zugewiesene Organisationseinträge sind nicht mehr geräteübergreifend in der Ansicht aller Tresore sichtbar und sind nun nur über die Administrator-Konsole zugänglich. Weise diese Einträge einer Sammlung aus der Administrator-Konsole zu, um sie sichtbar zu machen."
+  },
+  "unassignedItemsBannerSelfHost": {
+    "message": "Hinweis: Ab dem 2. Mai 2024 werden nicht zugewiesene Organisationseinträge nicht mehr geräteübergreifend in der Ansicht aller Tresore sichtbar sein und sind nur über die Administrator-Konsole zugänglich. Weise diese Elemente einer Sammlung aus der Administrator-Konsole zu, um sie sichtbar zu machen."
   }
 }

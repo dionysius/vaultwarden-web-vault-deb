@@ -7622,10 +7622,10 @@
     "message": "Määritä kokoelmiin"
   },
   "assignToTheseCollections": {
-    "message": "Määritä näihin kokoelmiin"
+    "message": "Määritä seuraaviin kokoelmiin"
   },
   "bulkCollectionAssignmentDialogDescription": {
-    "message": "Valitse kokoelmat, joihin kohteet jaetaan. Kun kohdetta muokataan yhdessä kokoelmassa, päivittyy muutos kaikkiin kokoelmiin. Kohteet näkyvät vain niille organisaation jäsenille, joilla on näiden kokoelmien käyttöoikeus."
+    "message": "Valitse kokoelmat, joihin kohteet sisällytetään. Kun kohdetta muokataan yhdessä kokoelmassa, päivittyy muutos kaikkiin kokoelmiin. Kohteet näkyvät vain niille organisaation jäsenille, joilla on näiden kokoelmien käyttöoikeus."
   },
   "selectCollectionsToAssign": {
     "message": "Valitse määritettävät kokoelmat"
@@ -7634,10 +7634,10 @@
     "message": "Kokoelmia ei ole määritetty"
   },
   "successfullyAssignedCollections": {
-    "message": "Kokoelmat on määritetty"
+    "message": "Kokoelmat määritettiin"
   },
   "bulkCollectionAssignmentWarning": {
-    "message": "Olet valinnut $TOTAL_COUNT$ kohdetta. Et voi muuttaa näistä $READONLY_COUNT$ kohdetta, koska käyttöoikeutesi eivät riitä niiden muokkaukseen.",
+    "message": "Olet valinnut $TOTAL_COUNT$ kohdetta. Et voi päivittää näistä $READONLY_COUNT$ kohdetta, koska käyttöoikeutesi eivät salli muokkausta.",
     "placeholders": {
       "total_count": {
         "content": "$1",
@@ -7677,7 +7677,7 @@
     "message": "Tilauksen määrittämättömät käyttäjäpaikat"
   },
   "purchaseSeatDescription": {
-    "message": "Käyttäjäpaikkoja ostettu lisää"
+    "message": "Käyttäjäpaikkoja ostettiin lisää"
   },
   "assignedSeatCannotUpdate": {
     "message": "Määritettyjä käyttäjäpaikkoja ei ole mahdollista päivittää. Ole yhteydessä organisaatiosi omistajaan saadaksesi apua."
@@ -7698,7 +7698,7 @@
     "description": "The date header used when a subscription is past due."
   },
   "pastDueWarningForChargeAutomatically": {
-    "message": "Sinulla on $DAYS$ päivän varoaika tilauksesi säilyttämiseksi. Maksa erääntyneet laskut $SUSPENSION_DATE$ mennessä.",
+    "message": "Tilauksesi päätyttyä sinulla on $DAYS$ päivän varoaika sen säilyttämiseksi. Maksa erääntyneet laskut $SUSPENSION_DATE$ mennessä.",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -7712,7 +7712,7 @@
     "description": "A warning shown to the user when their subscription is past due and they are charged automatically."
   },
   "pastDueWarningForSendInvoice": {
-    "message": "Sinulla on $DAYS$ päivän varoaika ensimmäisen erääntyneen laskusi eräpäivästä tilauksesi säilyttämiseksi. Maksa erääntyneet laskut $SUSPENSION_DATE$ mennessä.",
+    "message": "Ensimmäisen maksamattoman laskusi eräpäivästä sinulla on $DAYS$ päivän varoaika tilauksesi säilyttämiseksi. Maksa erääntyneet laskut $SUSPENSION_DATE$ mennessä.",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -7738,7 +7738,7 @@
     "description": "The date header used when a subscription is cancelled."
   },
   "machineAccountsCannotCreate": {
-    "message": "Konetilien luonti ei ole mahdollista jäädytetyissä organisaatioissa. Ole yhteydessä organisaatiosi omistajaan saadaksesi apua."
+    "message": "Konetilejä ei ole mahdollista luoda jäädytetyissä organisaatioissa. Ole yhteydessä organisaatiosi omistajaan saadaksesi apua."
   },
   "machineAccount": {
     "message": "Konetili",
@@ -7753,11 +7753,11 @@
     "description": "Title for creating a new machine account."
   },
   "machineAccountsNoItemsMessage": {
-    "message": "Aloita salaisen käytön automatisointi luomalla uusi konetili.",
+    "message": "Aloita salaisuuksien käytön automatisointi luomalla uusi konetili.",
     "description": "Message to encourage the user to start creating machine accounts."
   },
   "machineAccountsNoItemsTitle": {
-    "message": "Ei vielä mitään näytettävää",
+    "message": "Mitään näytettävää ei vielä ole",
     "description": "Title to indicate that there are no machine accounts to display."
   },
   "deleteMachineAccounts": {
@@ -7820,7 +7820,7 @@
     "description": "Notifies that a machine account has been updated"
   },
   "projectMachineAccountsDescription": {
-    "message": "Myönnä konetileille käyttöoikeus projektiin."
+    "message": "Myönnä konetileille projektin käyttöoikeus."
   },
   "projectMachineAccountsSelectHint": {
     "message": "Syötä tai valitse konetilit"
@@ -7838,7 +7838,7 @@
     "message": "Luo konetili"
   },
   "maPeopleWarningMessage": {
-    "message": "Henkilöiden poistaminen konetililtä ei poista heidän luomiaan käyttötunnisteita. Parasta suojauskäytäntöä varten on suositeltavaa mitätöidä konetililtä poistettujen henkilöiden luomat tunnukset."
+    "message": "Henkilöiden poistaminen konetililtä ei poista heidän luomiaan käyttötunnisteita. Parasta suojauskäytäntöä varten on suositeltavaa mitätöidä konetililtä poistettujen henkilöiden luomat tunnisteet."
   },
   "smAccessRemovalWarningMaTitle": {
     "message": "Poista konetilin käyttöoikeus"
@@ -7901,6 +7901,9 @@
     "message": "Konetilin oikeuksia muutettiin"
   },
   "unassignedItemsBanner": {
-    "message": "Huomautus: Organisaation kohteita, joita ei ole lisätty kokoelmaan, ei enää näytetä laitteiden \"Kaikki holvit\" -näkymissä, ja jatkossa ne näkyvät vain hallintakonsolin kautta. Lisää kohteet kokoelmiin, jotta ne ovat laitteilla käytettävissä."
+    "message": "Huomautus: Organisaatioiden kokoelmiin määrittämättömät kohteet eivät enää näy laitteiden \"Kaikki holvit\" -näkymissä, vaan ne ovat nähtävissä vain Hallintapaneelista. Määritä kohteet kokoelmiin Hallintapaneelista, jotta ne ovat jatkossakin käytettävissä kaikilta laitteilta."
+  },
+  "unassignedItemsBannerSelfHost": {
+    "message": "Huomautus: 2.5.2024 alkaen kokoelmiin määrittämättömät organisaatioiden kohteet eivät enää näy laitteiden \"Kaikki holvit\" -näkymissä, vaan ne ovat nähtävissä vain Hallintapaneelista. Määritä kohteet kokoelmiin Hallintapaneelista, jotta ne ovat jatkossakin käytettävissä kaikilta laitteilta."
   }
 }

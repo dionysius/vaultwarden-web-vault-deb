@@ -7902,5 +7902,8 @@
   },
   "unassignedItemsBanner": {
     "message": "Megjegyzés: A nem hozzá rendelt szervezeti elemek már nem láthatók az Összes széf nézetben a különböző eszközökön és mostantól csak a Felügyeleti konzolon keresztül érhetők el. Rendeljük ezeket az elemeket egy gyűjteményhez az Adminisztrátori konzolból, hogy láthatóvá tegyeük azokat."
+  },
+  "unassignedItemsBannerSelfHost": {
+    "message": "Megjegyzés: A nem hozzá rendelt szervezeti elemek már nem láthatók az Összes széf nézetben a különböző eszközökön és mostantól csak a Felügyeleti konzolon keresztül érhetők el. Rendeljük ezeket az elemeket egy gyűjteményhez az Adminisztrátori konzolból, hogy láthatóvá tegyeük azokat."
   }
 }

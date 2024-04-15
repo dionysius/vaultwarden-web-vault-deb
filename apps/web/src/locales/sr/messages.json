@@ -7502,7 +7502,7 @@
     "message": "Приступ колекцији је ограничен"
   },
   "readOnlyCollectionAccess": {
-    "message": "You do not have access to manage this collection."
+    "message": "Немате приступ за управљање овом колекцијом."
   },
   "grantCollectionAccess": {
     "message": "Одобрите групама или члановима приступ овој колекцији."
@@ -7607,7 +7607,7 @@
     "message": "Портал провајдера"
   },
   "viewCollection": {
-    "message": "View collection"
+    "message": "Преглед колекције"
   },
   "restrictedGroupAccess": {
     "message": "Не можете да се додате у групе."
@@ -7901,6 +7901,9 @@
     "message": "Приступ налога машине ажуриран"
   },
   "unassignedItemsBanner": {
-    "message": "Notice: Unassigned organization items are no longer visible in your All Vaults view across devices and are now only accessible via the Admin Console. Assign these items to a collection from the Admin Console to make them visible."
+    "message": "Напомена: Недодељене ставке организације више нису видљиве у вашем приказу Сви сефови на свим уређајима и сада су доступне само преко Админ конзоле. Доделите ове ставке колекцији са Админ конзолом да бисте их учинили видљивим."
+  },
+  "unassignedItemsBannerSelfHost": {
+    "message": "Обавештење: 2. маја 2024. недодељене ставке организације више неће бити видљиве у вашем приказу Сви сефови на свим уређајима и биће им доступне само преко Админ конзоле. Доделите ове ставке колекцији са Админ конзолом да бисте их учинили видљивим."
   }
 }

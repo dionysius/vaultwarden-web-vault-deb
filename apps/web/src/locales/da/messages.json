@@ -7734,7 +7734,7 @@
     "description": "The body of a warning box shown to a user whose subscription is unpaid."
   },
   "cancellationDate": {
-    "message": "Cancellation date",
+    "message": "Opsigelsesdato",
     "description": "The date header used when a subscription is cancelled."
   },
   "machineAccountsCannotCreate": {
@@ -7902,5 +7902,8 @@
   },
   "unassignedItemsBanner": {
     "message": "Bemærk: Utildelte organisationsemner er ikke længere synlige i Alle Bokse-visningen og er kun tilgængelige via Adminkonsollen. Føj disse emner til en samling fra Adminkonsollen for at gøre dem synlige."
+  },
+  "unassignedItemsBannerSelfHost": {
+    "message": "Bemærk: Pr. 2. maj 2024 vil utildelte organisationsemner ikke længere være synlige i Alle Bokse-visningen på tværs af enheder og vil kun være tilgængelige via Admin-konsollen. Tildel disse emner til en samling via Admin-konsollen for at gøre dem synlige."
   }
 }

@@ -7901,6 +7901,9 @@
     "message": "Accès au compte machine mis à jour"
   },
   "unassignedItemsBanner": {
-    "message": "Remarque : Les éléments d'organisation non assignés ne sont plus visibles dans la vue tous les coffres sur les appareils et ne sont maintenant accessibles que via la Console Admin. Assigner ces éléments à une collection de la Console Admin pour les rendre visibles."
+    "message": "Remarque : les éléments d'organisation non assignés ne sont plus visibles dans votre vue Tous les coffres sur tous les appareils et sont uniquement accessibles via la Console d'administration. Assignez ces éléments à une collection à partir de la Console d'administration pour les rendre visibles."
+  },
+  "unassignedItemsBannerSelfHost": {
+    "message": "Remarque : au 2 mai 2024, les éléments d'organisation non assignés ne sont plus visibles dans votre vue Tous les coffres sur tous les appareils et sont uniquement accessibles via la Console d'administration. Assignez ces éléments à une collection à partir de la Console d'administration pour les rendre visibles."
   }
 }
