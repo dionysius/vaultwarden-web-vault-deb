@@ -4956,6 +4956,9 @@
   "addExistingOrganization": {
     "message": "Добавяне на съществуваща организация"
   },
+  "addNewOrganization": {
+    "message": "Добавяне на нова организация"
+  },
   "myProvider": {
     "message": "Моят доставчик"
   },
@@ -7498,6 +7501,9 @@
   "collectionAccessRestricted": {
     "message": "Достъпът до колекцията е ограничен"
   },
+  "readOnlyCollectionAccess": {
+    "message": "Нямате достъп за управление на тази колекция."
+  },
   "grantCollectionAccess": {
     "message": "Дайте права на групи и членове до тази колекция."
   },
@@ -7600,6 +7606,9 @@
   "providerPortal": {
     "message": "Портал за доставчици"
   },
+  "viewCollection": {
+    "message": "Преглед на колекцията"
+  },
   "restrictedGroupAccess": {
     "message": "Не може да добавяте себе си към групи."
   },
@@ -7642,5 +7651,256 @@
   },
   "items": {
     "message": "Елементи"
+  },
+  "assignedSeats": {
+    "message": "Назначени места"
+  },
+  "assigned": {
+    "message": "Назначени"
+  },
+  "used": {
+    "message": "Използвани"
+  },
+  "remaining": {
+    "message": "Оставащи"
+  },
+  "unlinkOrganization": {
+    "message": "Разкачане на организацията"
+  },
+  "manageSeats": {
+    "message": "УПРАВЛЕНИЕ НА МЕСТАТА"
+  },
+  "manageSeatsDescription": {
+    "message": "Промените по местата ще се отразят в следващия платежен цикъл."
+  },
+  "unassignedSeatsDescription": {
+    "message": "Неназначени места от абонамента"
+  },
+  "purchaseSeatDescription": {
+    "message": "Закупени са нови места"
+  },
+  "assignedSeatCannotUpdate": {
+    "message": "Назначените места не могат да бъдат променени. Свържете се със собственика на организацията си за помощ."
+  },
+  "subscriptionUpdateFailed": {
+    "message": "Промяната на абонамента беше неуспешна"
+  },
+  "trial": {
+    "message": "Пробен период",
+    "description": "A subscription status label."
+  },
+  "pastDue": {
+    "message": "Просрочено",
+    "description": "A subscription status label"
+  },
+  "subscriptionExpired": {
+    "message": "Абонаментът е изтекъл",
+    "description": "The date header used when a subscription is past due."
+  },
+  "pastDueWarningForChargeAutomatically": {
+    "message": "След като просрочите периода на абонамента си, разполагате с още $DAYS$ дни, за да го подновите. Моля, заплатете старите фактури до $SUSPENSION_DATE$.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "11"
+      },
+      "suspension_date": {
+        "content": "$2",
+        "example": "01/10/2024"
+      }
+    },
+    "description": "A warning shown to the user when their subscription is past due and they are charged automatically."
+  },
+  "pastDueWarningForSendInvoice": {
+    "message": "След като просрочите срока на първата си неплатена фактура, разполагате с още $DAYS$ дни, за да подновите абонамента си. Моля, заплатете старите фактури до $SUSPENSION_DATE$.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "11"
+      },
+      "suspension_date": {
+        "content": "$2",
+        "example": "01/10/2024"
+      }
+    },
+    "description": "A warning shown to the user when their subscription is past due and they pay via invoice."
+  },
+  "unpaidInvoice": {
+    "message": "Неплатена фактура",
+    "description": "The header of a warning box shown to a user whose subscription is unpaid."
+  },
+  "toReactivateYourSubscription": {
+    "message": "За да подновите абонамента си, моля, заплатете фактурите с изтекъл срок.",
+    "description": "The body of a warning box shown to a user whose subscription is unpaid."
+  },
+  "cancellationDate": {
+    "message": "Дата на прекратяване",
+    "description": "The date header used when a subscription is cancelled."
+  },
+  "machineAccountsCannotCreate": {
+    "message": "В изключени организации не могат да се създават машинни акаунти. Свържете се със собственика на организацията си за помощ."
+  },
+  "machineAccount": {
+    "message": "Машинен акаунт",
+    "description": "A machine user which can be used to automate processes and access secrets in the system."
+  },
+  "machineAccounts": {
+    "message": "Машинни акаунти",
+    "description": "The title for the section that deals with machine accounts."
+  },
+  "newMachineAccount": {
+    "message": "Нов машинен акаунт",
+    "description": "Title for creating a new machine account."
+  },
+  "machineAccountsNoItemsMessage": {
+    "message": "Създайте нов машинен акаунт, за да можете да автоматизирате достъпа до тайните.",
+    "description": "Message to encourage the user to start creating machine accounts."
+  },
+  "machineAccountsNoItemsTitle": {
+    "message": "Все още няма нищо за показване",
+    "description": "Title to indicate that there are no machine accounts to display."
+  },
+  "deleteMachineAccounts": {
+    "message": "Изтриване на машинните акаунти",
+    "description": "Title for the action to delete one or multiple machine accounts."
+  },
+  "deleteMachineAccount": {
+    "message": "Изтриване на машинния акаунт",
+    "description": "Title for the action to delete a single machine account."
+  },
+  "viewMachineAccount": {
+    "message": "Преглед на машинния акаунт",
+    "description": "Action to view the details of a machine account."
+  },
+  "deleteMachineAccountDialogMessage": {
+    "message": "Изтриването на машинния акаунт $MACHINE_ACCOUNT$ е окончателно и необратимо.",
+    "placeholders": {
+      "machine_account": {
+        "content": "$1",
+        "example": "Machine account name"
+      }
+    }
+  },
+  "deleteMachineAccountsDialogMessage": {
+    "message": "Изтриването на машинни акаунти е окончателно и необратимо."
+  },
+  "deleteMachineAccountsConfirmMessage": {
+    "message": "Изтриване $COUNT$ машинни акаунти",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteMachineAccountToast": {
+    "message": "Машинният акаунт е изтрит"
+  },
+  "deleteMachineAccountsToast": {
+    "message": "Машинните акаунти са изтрити"
+  },
+  "searchMachineAccounts": {
+    "message": "Търсене на машинни акаунти",
+    "description": "Placeholder text for searching machine accounts."
+  },
+  "editMachineAccount": {
+    "message": "Редактиране на машинния акаунт",
+    "description": "Title for editing a machine account."
+  },
+  "machineAccountName": {
+    "message": "Име на машинния акаунт",
+    "description": "Label for the name of a machine account"
+  },
+  "machineAccountCreated": {
+    "message": "Машинният акаунт е създаден",
+    "description": "Notifies that a new machine account has been created"
+  },
+  "machineAccountUpdated": {
+    "message": "Машинният акаунт е обновен",
+    "description": "Notifies that a machine account has been updated"
+  },
+  "projectMachineAccountsDescription": {
+    "message": "Дайте достъп на машинните акаунти до този проект."
+  },
+  "projectMachineAccountsSelectHint": {
+    "message": "Пишете тук или изберете машинни акаунти"
+  },
+  "projectEmptyMachineAccountAccessPolicies": {
+    "message": "Добавете машинни акаунти, за да дадете достъп"
+  },
+  "machineAccountPeopleDescription": {
+    "message": "Дайте права на групи и хора до този машинен акаунт."
+  },
+  "machineAccountProjectsDescription": {
+    "message": "Назначете проекти към този машинен акаунт. "
+  },
+  "createMachineAccount": {
+    "message": "Създаване на машинен акаунт"
+  },
+  "maPeopleWarningMessage": {
+    "message": "Премахването на хора от даден машинен акаунт не премахва идентификаторите за достъп, които те са създали. От гледна точка на сигурността е препоръчително да отнемете достъпа чрез идентификаторите създадени от хора, които са били премахнати от машинен акаунт."
+  },
+  "smAccessRemovalWarningMaTitle": {
+    "message": "Премахване на достъпа до този машинен акаунт"
+  },
+  "smAccessRemovalWarningMaMessage": {
+    "message": "Това действие ще премахне достъпа Ви до машинния акаунт."
+  },
+  "machineAccountsIncluded": {
+    "message": "$COUNT$ включени машинни акаунта",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "additionalMachineAccountCost": {
+    "message": "$COST$ на месец за допълнителни машинни акаунти",
+    "placeholders": {
+      "cost": {
+        "content": "$1",
+        "example": "$0.50"
+      }
+    }
+  },
+  "additionalMachineAccounts": {
+    "message": "Допълнителни машинни акаунти"
+  },
+  "includedMachineAccounts": {
+    "message": "В плана Ви са включени $COUNT$ машинни акаунта.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "50"
+      }
+    }
+  },
+  "addAdditionalMachineAccounts": {
+    "message": "Може да добавите още машинни акаунти за $COST$ на месец.",
+    "placeholders": {
+      "cost": {
+        "content": "$1",
+        "example": "$0.50"
+      }
+    }
+  },
+  "limitMachineAccounts": {
+    "message": "Ограничаване на машинните акаунти (незадължително)"
+  },
+  "limitMachineAccountsDesc": {
+    "message": "Задайте ограничение за броя на машинните акаунти. Когато то бъде достигнато, няма да можете да създавате нови машинни акаунти."
+  },
+  "machineAccountLimit": {
+    "message": "Ограничение на машинните акаунти (незадължително)"
+  },
+  "maxMachineAccountCost": {
+    "message": "Максимална възможна цена за машинни акаунти"
+  },
+  "machineAccountAccessUpdated": {
+    "message": "Достъпът на машинния акаунт е променен"
+  },
+  "unassignedItemsBanner": {
+    "message": "Забележка: неразпределените елементи на организацията вече не се виждат в изгледа с „Всички трезори“ на различните устройства, а са достъпни само през Административната конзола. Добавете тези елементи към някоя колекция в Административната конзола, за да станат видими."
   }
 }

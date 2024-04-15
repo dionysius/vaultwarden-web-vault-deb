@@ -4956,6 +4956,9 @@
   "addExistingOrganization": {
     "message": "Bestehende Organisation hinzufügen"
   },
+  "addNewOrganization": {
+    "message": "Neue Organisation erstellen"
+  },
   "myProvider": {
     "message": "Mein Anbieter"
   },
@@ -7498,6 +7501,9 @@
   "collectionAccessRestricted": {
     "message": "Zugriff auf Sammlungen ist eingeschränkt"
   },
+  "readOnlyCollectionAccess": {
+    "message": "Du hast keinen Zugriff, um diese Sammlung zu verwalten."
+  },
   "grantCollectionAccess": {
     "message": "Gewähre Gruppen oder Mitgliedern Zugriff auf diese Sammlung."
   },
@@ -7600,6 +7606,9 @@
   "providerPortal": {
     "message": "Anbieterportal"
   },
+  "viewCollection": {
+    "message": "Sammlung anzeigen"
+  },
   "restrictedGroupAccess": {
     "message": "Du kannst dich nicht selbst zu Gruppen hinzufügen."
   },
@@ -7642,5 +7651,256 @@
   },
   "items": {
     "message": "Einträge"
+  },
+  "assignedSeats": {
+    "message": "Zugewiesene Benutzerplätze"
+  },
+  "assigned": {
+    "message": "Zugewiesen"
+  },
+  "used": {
+    "message": "Belegt"
+  },
+  "remaining": {
+    "message": "Verbleibend"
+  },
+  "unlinkOrganization": {
+    "message": "Organisations-Verknüpfung aufheben"
+  },
+  "manageSeats": {
+    "message": "Benutzerpätze verwalten"
+  },
+  "manageSeatsDescription": {
+    "message": "Die Anpassung der Benutzerplätze wird im nächsten Abrechnungszeitraum berücksichtigt."
+  },
+  "unassignedSeatsDescription": {
+    "message": "Nicht zugewiesene Abonnement-Benutzerplätze"
+  },
+  "purchaseSeatDescription": {
+    "message": "Zusätzliche gekaufte Benutzerplätze"
+  },
+  "assignedSeatCannotUpdate": {
+    "message": "Zugewiesene Benutzerplätze können nicht aktualisiert werden. Bitte kontaktiere deinen Organisationseigentümer, um Unterstützung zu erhalten."
+  },
+  "subscriptionUpdateFailed": {
+    "message": "Aktualisierung des Abonnement fehlgeschlagen"
+  },
+  "trial": {
+    "message": "Testversion",
+    "description": "A subscription status label."
+  },
+  "pastDue": {
+    "message": "Überfällig",
+    "description": "A subscription status label"
+  },
+  "subscriptionExpired": {
+    "message": "Abonnement abgelaufen",
+    "description": "The date header used when a subscription is past due."
+  },
+  "pastDueWarningForChargeAutomatically": {
+    "message": "Du hast eine Übergangsfrist von $DAYS$ Tagen ab dem Ablaufdatum deines Abonnements, um dein Abonnement weiterzuführen. Bitte begleiche die letzten fälligen Rechnungen bis zum $SUSPENSION_DATE$.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "11"
+      },
+      "suspension_date": {
+        "content": "$2",
+        "example": "01/10/2024"
+      }
+    },
+    "description": "A warning shown to the user when their subscription is past due and they are charged automatically."
+  },
+  "pastDueWarningForSendInvoice": {
+    "message": "Du hast eine Übergangsfrist von $DAYS$ Tagen ab dem Fälligkeitsdatum deiner ersten unbezahlten Rechnung, um dein Abonnement weiterzuführen. Bitte begleiche die überfälligen Rechnungen bis zum $SUSPENSION_DATE$.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "11"
+      },
+      "suspension_date": {
+        "content": "$2",
+        "example": "01/10/2024"
+      }
+    },
+    "description": "A warning shown to the user when their subscription is past due and they pay via invoice."
+  },
+  "unpaidInvoice": {
+    "message": "Unbezahlte Rechnung",
+    "description": "The header of a warning box shown to a user whose subscription is unpaid."
+  },
+  "toReactivateYourSubscription": {
+    "message": "Um dein Abonnement zu reaktivieren, begleiche bitte die letzten überfälligen Rechnungen.",
+    "description": "The body of a warning box shown to a user whose subscription is unpaid."
+  },
+  "cancellationDate": {
+    "message": "Kündigungsdatum",
+    "description": "The date header used when a subscription is cancelled."
+  },
+  "machineAccountsCannotCreate": {
+    "message": "Gerätekonten können in deaktivierten Organisationen nicht erstellt werden. Bitte kontaktiere deinen Organisationseigentümer, um Unterstützung zu erhalten."
+  },
+  "machineAccount": {
+    "message": "Gerätekonto",
+    "description": "A machine user which can be used to automate processes and access secrets in the system."
+  },
+  "machineAccounts": {
+    "message": "Gerätekonten",
+    "description": "The title for the section that deals with machine accounts."
+  },
+  "newMachineAccount": {
+    "message": "Neues Gerätekonto",
+    "description": "Title for creating a new machine account."
+  },
+  "machineAccountsNoItemsMessage": {
+    "message": "Erstelle ein neues Gerätekonto, um mit der Automation für Zugriffe auf Geheimnisse zu beginnen.",
+    "description": "Message to encourage the user to start creating machine accounts."
+  },
+  "machineAccountsNoItemsTitle": {
+    "message": "Hier gibt es noch nichts",
+    "description": "Title to indicate that there are no machine accounts to display."
+  },
+  "deleteMachineAccounts": {
+    "message": "Gerätekonten löschen",
+    "description": "Title for the action to delete one or multiple machine accounts."
+  },
+  "deleteMachineAccount": {
+    "message": "Gerätekonto löschen",
+    "description": "Title for the action to delete a single machine account."
+  },
+  "viewMachineAccount": {
+    "message": "Gerätekonto anzeigen",
+    "description": "Action to view the details of a machine account."
+  },
+  "deleteMachineAccountDialogMessage": {
+    "message": "Das Löschen des Gerätekontos $MACHINE_ACCOUNT$ ist dauerhaft und unwiderruflich.",
+    "placeholders": {
+      "machine_account": {
+        "content": "$1",
+        "example": "Machine account name"
+      }
+    }
+  },
+  "deleteMachineAccountsDialogMessage": {
+    "message": "Das Löschen von Gerätekonten ist dauerhaft und unwiderruflich."
+  },
+  "deleteMachineAccountsConfirmMessage": {
+    "message": "$COUNT$ Gerätekonten löschen",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteMachineAccountToast": {
+    "message": "Gerätekonto gelöscht"
+  },
+  "deleteMachineAccountsToast": {
+    "message": "Gerätekonten gelöscht"
+  },
+  "searchMachineAccounts": {
+    "message": "Gerätekonten suchen",
+    "description": "Placeholder text for searching machine accounts."
+  },
+  "editMachineAccount": {
+    "message": "Gerätekonto bearbeiten",
+    "description": "Title for editing a machine account."
+  },
+  "machineAccountName": {
+    "message": "Name des Gerätekontos",
+    "description": "Label for the name of a machine account"
+  },
+  "machineAccountCreated": {
+    "message": "Neues Gerätekonto erstellt",
+    "description": "Notifies that a new machine account has been created"
+  },
+  "machineAccountUpdated": {
+    "message": "Gerätekonto aktualisiert",
+    "description": "Notifies that a machine account has been updated"
+  },
+  "projectMachineAccountsDescription": {
+    "message": "Gerätekonten Zugriff auf dieses Projekt erlauben."
+  },
+  "projectMachineAccountsSelectHint": {
+    "message": "Gerätekonten suchen oder auswählen"
+  },
+  "projectEmptyMachineAccountAccessPolicies": {
+    "message": "Gerätekonten hinzufügen, um Zugriff zu gewähren"
+  },
+  "machineAccountPeopleDescription": {
+    "message": "Gruppen oder Personen Zugriff auf dieses Gerätekonto gewähren."
+  },
+  "machineAccountProjectsDescription": {
+    "message": "Diesem Gerätekonto Projekte zuweisen. "
+  },
+  "createMachineAccount": {
+    "message": "Gerätekonto erstellen"
+  },
+  "maPeopleWarningMessage": {
+    "message": "Das Entfernen von Personen aus einem Gerätekonto entfernt nicht die von ihnen erstellten Zugriffstoken. Aus Sicherheitsgründen wird empfohlen, Zugriffstoken zu widerrufen, die von Personen erstellt wurden, die aus einem Gerätekonto entfernt wurden."
+  },
+  "smAccessRemovalWarningMaTitle": {
+    "message": "Zugriff auf dieses Gerätekonto entfernen"
+  },
+  "smAccessRemovalWarningMaMessage": {
+    "message": "Diese Aktion wird deinen Zugriff auf das Gerätekonto entfernen."
+  },
+  "machineAccountsIncluded": {
+    "message": "$COUNT$ Gerätekonten enthalten",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "additionalMachineAccountCost": {
+    "message": "$COST$ pro Monat für zusätzliche Gerätekonten",
+    "placeholders": {
+      "cost": {
+        "content": "$1",
+        "example": "$0.50"
+      }
+    }
+  },
+  "additionalMachineAccounts": {
+    "message": "Zusätzliche Gerätekonten"
+  },
+  "includedMachineAccounts": {
+    "message": "Dein Tarif enthält $COUNT$ Gerätekonten.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "50"
+      }
+    }
+  },
+  "addAdditionalMachineAccounts": {
+    "message": "Du kannst zusätzliche Gerätekonten für $COST$ pro Monat hinzufügen.",
+    "placeholders": {
+      "cost": {
+        "content": "$1",
+        "example": "$0.50"
+      }
+    }
+  },
+  "limitMachineAccounts": {
+    "message": "Gerätekonten begrenzen (optional)"
+  },
+  "limitMachineAccountsDesc": {
+    "message": "Lege ein Limit für deine Gerätekonten fest. Sobald dieses Limit erreicht ist, kannst du keine neuen Gerätekonten mehr erstellen."
+  },
+  "machineAccountLimit": {
+    "message": "Gerätekonten-Limit (optional)"
+  },
+  "maxMachineAccountCost": {
+    "message": "Maximal mögliche Kosten des Gerätekontos"
+  },
+  "machineAccountAccessUpdated": {
+    "message": "Zugriff auf Gerätekonto aktualisiert"
+  },
+  "unassignedItemsBanner": {
+    "message": "Hinweis: Nicht zugewiesene Organisationseinträge sind nicht mehr geräteübergreifend in der Ansicht aller Tresore sichtbar und sind nun nur über die Administrator-Konsole zugänglich. Weise diese Einträge einer Sammlung aus der Administrator-Konsole zu, um sie sichtbar zu machen."
   }
 }

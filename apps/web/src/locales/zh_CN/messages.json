@@ -579,7 +579,7 @@
     "message": "访问权限"
   },
   "accessLevel": {
-    "message": "访问级别"
+    "message": "访问权限等级"
   },
   "loggedOut": {
     "message": "已注销"
@@ -630,7 +630,7 @@
     "message": "通行密钥无效。请重试。"
   },
   "twoFactorForPasskeysNotSupportedOnClientUpdateToLogIn": {
-    "message": "不支持通行密钥 2FA。请更新 App 以登录。"
+    "message": "不支持通行密钥 2FA。请更新 App 再登录。"
   },
   "loginWithPasskeyInfo": {
     "message": "使用已生成的通行密钥，无需密码即可自动登录。生物识别（例如面部识别或指纹）或其他 FIDO2 安全方法将用于验证您的身份。"
@@ -675,7 +675,7 @@
     "message": "设置加密"
   },
   "usedForEncryption": {
-    "message": "用于加密"
+    "message": "已用于加密"
   },
   "loginWithPasskeyEnabled": {
     "message": "已启用通行密钥登录"
@@ -989,7 +989,7 @@
     "message": "选择一个您想将这些项目移至的组织。移动到组织会将这些项目的所有权转让给该组织。移动后，您将不再是这些项目的直接所有者。"
   },
   "collectionsDesc": {
-    "message": "编辑与此项目共享的集合。只有具有这些集合访问权限的组织用户才能看到此项目。"
+    "message": "编辑与其共享此项目的集合。只有具有这些集合访问权限的组织用户才能看到此项目。"
   },
   "deleteSelectedItemsDesc": {
     "message": "$COUNT$ 个项目将被发送到回收站。",
@@ -1498,7 +1498,7 @@
     "message": "排除"
   },
   "include": {
-    "message": "包括"
+    "message": "包含"
   },
   "customize": {
     "message": "自定义"
@@ -2661,7 +2661,7 @@
     "message": "外部 ID 是一个 Bitwarden 目录连接器和 API 使用的未经加密的参考。"
   },
   "nestCollectionUnder": {
-    "message": "嵌套集合在"
+    "message": "嵌套于集合下"
   },
   "accessControl": {
     "message": "访问控制"
@@ -4646,7 +4646,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or sign up to **try it today.**'"
   },
   "sendAccessCreatorIdentifier": {
-    "message": "Bitwarden 成员 $USER_IDENTIFIER$ 与您分享了以下内容",
+    "message": "Bitwarden 成员 $USER_IDENTIFIER$ 与您共享了以下内容",
     "placeholders": {
       "user_identifier": {
         "content": "$1",
@@ -4955,6 +4955,9 @@
   },
   "addExistingOrganization": {
     "message": "添加现有组织"
+  },
+  "addNewOrganization": {
+    "message": "添加新组织"
   },
   "myProvider": {
     "message": "我的提供商"
@@ -5582,7 +5585,7 @@
     "message": "必填"
   },
   "charactersCurrentAndMaximum": {
-    "message": "$CURRENT$ / 最多字符数 $MAX$",
+    "message": "$CURRENT$ / 最多 $MAX$ 个字符",
     "placeholders": {
       "current": {
         "content": "$1",
@@ -7393,7 +7396,7 @@
     "message": "管理组织的集合行为"
   },
   "limitCollectionCreationDeletionDesc": {
-    "message": "对所有者和管理员限制集合的创建和删除"
+    "message": "限制为仅所有者和管理员可以创建和删除集合"
   },
   "allowAdminAccessToAllCollectionItemsDesc": {
     "message": "所有者和管理员可以管理所有集合和项目"
@@ -7478,7 +7481,7 @@
     "message": "安装浏览器扩展"
   },
   "installBrowserExtensionDetails": {
-    "message": "使用扩展快速保存登录信息和自动填充表单，而无需打开网页 App。"
+    "message": "使用扩展快速保存登录信息以及自动填充表单，而无需打开网页 App。"
   },
   "projectAccessUpdated": {
     "message": "工程访问权限已更新"
@@ -7497,6 +7500,9 @@
   },
   "collectionAccessRestricted": {
     "message": "集合访问权限受限"
+  },
+  "readOnlyCollectionAccess": {
+    "message": "您没有管理此集合的权限。"
   },
   "grantCollectionAccess": {
     "message": "授予群组或成员对此集合的访问权限。"
@@ -7592,13 +7598,16 @@
     "message": "欢迎使用全新改进的网页 App。了解更多有关变更的信息。"
   },
   "releaseBlog": {
-    "message": "阅读发布博客"
+    "message": "阅读发行博客"
   },
   "adminConsole": {
     "message": "管理控制台"
   },
   "providerPortal": {
     "message": "提供商门户"
+  },
+  "viewCollection": {
+    "message": "查看集合"
   },
   "restrictedGroupAccess": {
     "message": "您不能将自己添加到群组。"
@@ -7616,7 +7625,7 @@
     "message": "分配到这些集合"
   },
   "bulkCollectionAssignmentDialogDescription": {
-    "message": "选择要共享项目的集合。当一个项目在某个集合中更新后，它将反映在所有集合中。只有能够访问这些集合的组织成员才能看到此项目。"
+    "message": "选择与其共享项目的集合。当一个项目在某个集合中更新后，它将反映到所有集合中。只有具有这些集合访问权限的组织成员才能看到这些项目。"
   },
   "selectCollectionsToAssign": {
     "message": "选择要分配的集合"
@@ -7642,5 +7651,256 @@
   },
   "items": {
     "message": "项目"
+  },
+  "assignedSeats": {
+    "message": "分配的座席"
+  },
+  "assigned": {
+    "message": "已分配"
+  },
+  "used": {
+    "message": "已用"
+  },
+  "remaining": {
+    "message": "余额："
+  },
+  "unlinkOrganization": {
+    "message": "脱离组织"
+  },
+  "manageSeats": {
+    "message": "管理坐席"
+  },
+  "manageSeatsDescription": {
+    "message": "席位的调整将反映在下一个计费周期中。"
+  },
+  "unassignedSeatsDescription": {
+    "message": "未分配的订阅座席"
+  },
+  "purchaseSeatDescription": {
+    "message": "已购买额外座席"
+  },
+  "assignedSeatCannotUpdate": {
+    "message": "无法更新已分配的坐席。请联系您的组织所有者群求协助。"
+  },
+  "subscriptionUpdateFailed": {
+    "message": "订阅更新失败"
+  },
+  "trial": {
+    "message": "Trial",
+    "description": "A subscription status label."
+  },
+  "pastDue": {
+    "message": "Past due",
+    "description": "A subscription status label"
+  },
+  "subscriptionExpired": {
+    "message": "订阅已过期",
+    "description": "The date header used when a subscription is past due."
+  },
+  "pastDueWarningForChargeAutomatically": {
+    "message": "You have a grace period of $DAYS$ days from your subscription expiration date to maintain your subscription. Please resolve the past due invoices by $SUSPENSION_DATE$.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "11"
+      },
+      "suspension_date": {
+        "content": "$2",
+        "example": "01/10/2024"
+      }
+    },
+    "description": "A warning shown to the user when their subscription is past due and they are charged automatically."
+  },
+  "pastDueWarningForSendInvoice": {
+    "message": "You have a grace period of $DAYS$ days from the date your first unpaid invoice is due to maintain your subscription. Please resolve the past due invoices by $SUSPENSION_DATE$.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "11"
+      },
+      "suspension_date": {
+        "content": "$2",
+        "example": "01/10/2024"
+      }
+    },
+    "description": "A warning shown to the user when their subscription is past due and they pay via invoice."
+  },
+  "unpaidInvoice": {
+    "message": "未支付的账单",
+    "description": "The header of a warning box shown to a user whose subscription is unpaid."
+  },
+  "toReactivateYourSubscription": {
+    "message": "To reactivate your subscription, please resolve the past due invoices.",
+    "description": "The body of a warning box shown to a user whose subscription is unpaid."
+  },
+  "cancellationDate": {
+    "message": "取消日期",
+    "description": "The date header used when a subscription is cancelled."
+  },
+  "machineAccountsCannotCreate": {
+    "message": "Machine accounts cannot be created in suspended organizations. Please contact your organization owner for assistance."
+  },
+  "machineAccount": {
+    "message": "Machine account",
+    "description": "A machine user which can be used to automate processes and access secrets in the system."
+  },
+  "machineAccounts": {
+    "message": "Machine accounts",
+    "description": "The title for the section that deals with machine accounts."
+  },
+  "newMachineAccount": {
+    "message": "New machine account",
+    "description": "Title for creating a new machine account."
+  },
+  "machineAccountsNoItemsMessage": {
+    "message": "Create a new machine account to get started automating secret access.",
+    "description": "Message to encourage the user to start creating machine accounts."
+  },
+  "machineAccountsNoItemsTitle": {
+    "message": "Nothing to show yet",
+    "description": "Title to indicate that there are no machine accounts to display."
+  },
+  "deleteMachineAccounts": {
+    "message": "Delete machine accounts",
+    "description": "Title for the action to delete one or multiple machine accounts."
+  },
+  "deleteMachineAccount": {
+    "message": "Delete machine account",
+    "description": "Title for the action to delete a single machine account."
+  },
+  "viewMachineAccount": {
+    "message": "View machine account",
+    "description": "Action to view the details of a machine account."
+  },
+  "deleteMachineAccountDialogMessage": {
+    "message": "Deleting machine account $MACHINE_ACCOUNT$ is permanent and irreversible.",
+    "placeholders": {
+      "machine_account": {
+        "content": "$1",
+        "example": "Machine account name"
+      }
+    }
+  },
+  "deleteMachineAccountsDialogMessage": {
+    "message": "Deleting machine accounts is permanent and irreversible."
+  },
+  "deleteMachineAccountsConfirmMessage": {
+    "message": "Delete $COUNT$ machine accounts",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteMachineAccountToast": {
+    "message": "Machine account deleted"
+  },
+  "deleteMachineAccountsToast": {
+    "message": "Machine accounts deleted"
+  },
+  "searchMachineAccounts": {
+    "message": "Search machine accounts",
+    "description": "Placeholder text for searching machine accounts."
+  },
+  "editMachineAccount": {
+    "message": "Edit machine account",
+    "description": "Title for editing a machine account."
+  },
+  "machineAccountName": {
+    "message": "Machine account name",
+    "description": "Label for the name of a machine account"
+  },
+  "machineAccountCreated": {
+    "message": "Machine account created",
+    "description": "Notifies that a new machine account has been created"
+  },
+  "machineAccountUpdated": {
+    "message": "Machine account updated",
+    "description": "Notifies that a machine account has been updated"
+  },
+  "projectMachineAccountsDescription": {
+    "message": "Grant machine accounts access to this project."
+  },
+  "projectMachineAccountsSelectHint": {
+    "message": "Type or select machine accounts"
+  },
+  "projectEmptyMachineAccountAccessPolicies": {
+    "message": "Add machine accounts to grant access"
+  },
+  "machineAccountPeopleDescription": {
+    "message": "Grant groups or people access to this machine account."
+  },
+  "machineAccountProjectsDescription": {
+    "message": "Assign projects to this machine account. "
+  },
+  "createMachineAccount": {
+    "message": "Create a machine account"
+  },
+  "maPeopleWarningMessage": {
+    "message": "Removing people from a machine account does not remove the access tokens they created. For security best practice, it is recommended to revoke access tokens created by people removed from a machine account."
+  },
+  "smAccessRemovalWarningMaTitle": {
+    "message": "Remove access to this machine account"
+  },
+  "smAccessRemovalWarningMaMessage": {
+    "message": "This action will remove your access to the machine account."
+  },
+  "machineAccountsIncluded": {
+    "message": "$COUNT$ machine accounts included",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "additionalMachineAccountCost": {
+    "message": "$COST$ per month for additional machine accounts",
+    "placeholders": {
+      "cost": {
+        "content": "$1",
+        "example": "$0.50"
+      }
+    }
+  },
+  "additionalMachineAccounts": {
+    "message": "Additional machine accounts"
+  },
+  "includedMachineAccounts": {
+    "message": "Your plan comes with $COUNT$ machine accounts.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "50"
+      }
+    }
+  },
+  "addAdditionalMachineAccounts": {
+    "message": "You can add additional machine accounts for $COST$ per month.",
+    "placeholders": {
+      "cost": {
+        "content": "$1",
+        "example": "$0.50"
+      }
+    }
+  },
+  "limitMachineAccounts": {
+    "message": "Limit machine accounts (optional)"
+  },
+  "limitMachineAccountsDesc": {
+    "message": "Set a limit for your machine accounts. Once this limit is reached, you will not be able to create new machine accounts."
+  },
+  "machineAccountLimit": {
+    "message": "Machine account limit (optional)"
+  },
+  "maxMachineAccountCost": {
+    "message": "Max potential machine account cost"
+  },
+  "machineAccountAccessUpdated": {
+    "message": "Machine account access updated"
+  },
+  "unassignedItemsBanner": {
+    "message": "注意：未分配的组织项目在您所有设备的「所有密码库」视图中不再可见，现在只能通过管理控制台访问。通过管理控制台将这些项目分配给集合以使其可见。"
   }
 }

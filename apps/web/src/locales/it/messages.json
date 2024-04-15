@@ -4956,6 +4956,9 @@
   "addExistingOrganization": {
     "message": "Aggiungi organizzazione esistente"
   },
+  "addNewOrganization": {
+    "message": "Aggiungi nuova organizzazione"
+  },
   "myProvider": {
     "message": "Il mio fornitore"
   },
@@ -7498,6 +7501,9 @@
   "collectionAccessRestricted": {
     "message": "L'accesso alla raccolta è limitato"
   },
+  "readOnlyCollectionAccess": {
+    "message": "Non hai accesso alla gestione di questa raccolta."
+  },
   "grantCollectionAccess": {
     "message": "Consenti a gruppi o membri di accedere a questa raccolta."
   },
@@ -7600,6 +7606,9 @@
   "providerPortal": {
     "message": "Portale Fornitori"
   },
+  "viewCollection": {
+    "message": "Visualizza raccolta"
+  },
   "restrictedGroupAccess": {
     "message": "Non puoi aggiungerti da solo ai gruppi."
   },
@@ -7642,5 +7651,256 @@
   },
   "items": {
     "message": "Elementi"
+  },
+  "assignedSeats": {
+    "message": "Slot assegnati"
+  },
+  "assigned": {
+    "message": "Assegnato"
+  },
+  "used": {
+    "message": "Usato"
+  },
+  "remaining": {
+    "message": "Rimanenti"
+  },
+  "unlinkOrganization": {
+    "message": "Scollega organizzazione"
+  },
+  "manageSeats": {
+    "message": "GESTISCI SLOT"
+  },
+  "manageSeatsDescription": {
+    "message": "Le modifiche agli slot si rifletteranno nel prossimo ciclo di fatturazione."
+  },
+  "unassignedSeatsDescription": {
+    "message": "Posti in abbonamento non assegnati"
+  },
+  "purchaseSeatDescription": {
+    "message": "Slot aggiuntivi acquistati"
+  },
+  "assignedSeatCannotUpdate": {
+    "message": "Gli slot assegnati non possono essere aggiornati. Contatta il proprietario della tua organizzazione per ricevere assistenza."
+  },
+  "subscriptionUpdateFailed": {
+    "message": "Aggiornamento dell'abbonamento fallito"
+  },
+  "trial": {
+    "message": "Prova",
+    "description": "A subscription status label."
+  },
+  "pastDue": {
+    "message": "Arretrato",
+    "description": "A subscription status label"
+  },
+  "subscriptionExpired": {
+    "message": "Abbonamento scaduto",
+    "description": "The date header used when a subscription is past due."
+  },
+  "pastDueWarningForChargeAutomatically": {
+    "message": "Hai un periodo di grazia di $DAYS$ giorni dalla data di scadenza dell'abbonamento per mantenerlo. Risolvi le fatture scadute entro il $SUSPENSION_DATE$.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "11"
+      },
+      "suspension_date": {
+        "content": "$2",
+        "example": "01/10/2024"
+      }
+    },
+    "description": "A warning shown to the user when their subscription is past due and they are charged automatically."
+  },
+  "pastDueWarningForSendInvoice": {
+    "message": "Hai un periodo di grazia di $DAYS$ giorni dalla data di scadenza della prima fattura non pagata per mantenere il tuo abbonamento. Risolvi le fatture scadute entro il $SUSPENSION_DATE$.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "11"
+      },
+      "suspension_date": {
+        "content": "$2",
+        "example": "01/10/2024"
+      }
+    },
+    "description": "A warning shown to the user when their subscription is past due and they pay via invoice."
+  },
+  "unpaidInvoice": {
+    "message": "Fattura non pagata",
+    "description": "The header of a warning box shown to a user whose subscription is unpaid."
+  },
+  "toReactivateYourSubscription": {
+    "message": "Per riattivare il tuo abbonamento, risolvi le fatture arretrate.",
+    "description": "The body of a warning box shown to a user whose subscription is unpaid."
+  },
+  "cancellationDate": {
+    "message": "Data di cancellazione",
+    "description": "The date header used when a subscription is cancelled."
+  },
+  "machineAccountsCannotCreate": {
+    "message": "Non è possibile creare account macchina nelle organizzazioni disabilitate. Contatta il proprietario della tua organizzazione per assistenza."
+  },
+  "machineAccount": {
+    "message": "Account macchina",
+    "description": "A machine user which can be used to automate processes and access secrets in the system."
+  },
+  "machineAccounts": {
+    "message": "Account macchina",
+    "description": "The title for the section that deals with machine accounts."
+  },
+  "newMachineAccount": {
+    "message": "Nuovo account macchina",
+    "description": "Title for creating a new machine account."
+  },
+  "machineAccountsNoItemsMessage": {
+    "message": "Crea un nuovo account macchina per iniziare ad automatizzare le credenziali dei segreti.",
+    "description": "Message to encourage the user to start creating machine accounts."
+  },
+  "machineAccountsNoItemsTitle": {
+    "message": "Niente da mostrare per ora",
+    "description": "Title to indicate that there are no machine accounts to display."
+  },
+  "deleteMachineAccounts": {
+    "message": "Elimina account macchina",
+    "description": "Title for the action to delete one or multiple machine accounts."
+  },
+  "deleteMachineAccount": {
+    "message": "Elimina account macchina",
+    "description": "Title for the action to delete a single machine account."
+  },
+  "viewMachineAccount": {
+    "message": "Visualizza account macchina",
+    "description": "Action to view the details of a machine account."
+  },
+  "deleteMachineAccountDialogMessage": {
+    "message": "L'eliminazione dell'account macchina $MACHINE_ACCOUNT$ è permanente e irreversibile.",
+    "placeholders": {
+      "machine_account": {
+        "content": "$1",
+        "example": "Machine account name"
+      }
+    }
+  },
+  "deleteMachineAccountsDialogMessage": {
+    "message": "L'eliminazione degli account macchina è permanente e irreversibile."
+  },
+  "deleteMachineAccountsConfirmMessage": {
+    "message": "Elimina $COUNT$ account macchina",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteMachineAccountToast": {
+    "message": "Account macchina eliminato"
+  },
+  "deleteMachineAccountsToast": {
+    "message": "Account macchina eliminati"
+  },
+  "searchMachineAccounts": {
+    "message": "Cerca account macchina",
+    "description": "Placeholder text for searching machine accounts."
+  },
+  "editMachineAccount": {
+    "message": "Modifica account macchina",
+    "description": "Title for editing a machine account."
+  },
+  "machineAccountName": {
+    "message": "Nome account macchina",
+    "description": "Label for the name of a machine account"
+  },
+  "machineAccountCreated": {
+    "message": "Account macchina creato",
+    "description": "Notifies that a new machine account has been created"
+  },
+  "machineAccountUpdated": {
+    "message": "Account macchina aggiornato",
+    "description": "Notifies that a machine account has been updated"
+  },
+  "projectMachineAccountsDescription": {
+    "message": "Concedi agli account macchina di accedere a questo progetto."
+  },
+  "projectMachineAccountsSelectHint": {
+    "message": "Digita o seleziona account macchina"
+  },
+  "projectEmptyMachineAccountAccessPolicies": {
+    "message": "Aggiungi account macchina per concedere l'accesso"
+  },
+  "machineAccountPeopleDescription": {
+    "message": "Consenti a gruppi o persone di accedere a questo account macchina."
+  },
+  "machineAccountProjectsDescription": {
+    "message": "Assegna progetti a questo account macchina. "
+  },
+  "createMachineAccount": {
+    "message": "Crea un account macchina"
+  },
+  "maPeopleWarningMessage": {
+    "message": "Rimuovere persone da un account macchina non rimuove i token di accesso che hanno creato. Per ragioni di sicurezza, consigliamo di revocare i token di accesso creati da persone rimosse da un account macchina."
+  },
+  "smAccessRemovalWarningMaTitle": {
+    "message": "Rimuovi accesso a questo account macchina"
+  },
+  "smAccessRemovalWarningMaMessage": {
+    "message": "Questa azione rimuoverà il tuo accesso all'account macchina."
+  },
+  "machineAccountsIncluded": {
+    "message": "$COUNT$ account macchina inclusi",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "additionalMachineAccountCost": {
+    "message": "$COST$ al mese per account macchina aggiuntivi",
+    "placeholders": {
+      "cost": {
+        "content": "$1",
+        "example": "$0.50"
+      }
+    }
+  },
+  "additionalMachineAccounts": {
+    "message": "Account macchina aggiuntivi"
+  },
+  "includedMachineAccounts": {
+    "message": "Il tuo piano include $COUNT$ account macchina.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "50"
+      }
+    }
+  },
+  "addAdditionalMachineAccounts": {
+    "message": "Puoi aggiungere più account macchina a $COST$ al mese.",
+    "placeholders": {
+      "cost": {
+        "content": "$1",
+        "example": "$0.50"
+      }
+    }
+  },
+  "limitMachineAccounts": {
+    "message": "Limita gli account macchina (facoltativo)"
+  },
+  "limitMachineAccountsDesc": {
+    "message": "Imposta un limite per i tuoi account macchina. Una volta raggiunto questo limite, non potrai creare nuovi account macchina."
+  },
+  "machineAccountLimit": {
+    "message": "Limite account macchina (facoltativo)"
+  },
+  "maxMachineAccountCost": {
+    "message": "Costo massimo potenziale dell'account macchina"
+  },
+  "machineAccountAccessUpdated": {
+    "message": "Accesso all'account macchina aggiornato"
+  },
+  "unassignedItemsBanner": {
+    "message": "Avviso: gli elementi dell'organizzazione non assegnati non sono più visibili nella visualizzazione Tutte le Cassaforti su tutti i dispositivi e sono ora accessibili solo tramite la Console di amministrazione. Assegna questi elementi ad una raccolta dalla Console di amministrazione per renderli visibili."
   }
 }

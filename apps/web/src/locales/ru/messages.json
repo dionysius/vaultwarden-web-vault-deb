@@ -615,7 +615,7 @@
     "message": "Войти с мастер-паролем"
   },
   "readingPasskeyLoading": {
-    "message": "Чтение ключа доступа..."
+    "message": "Чтение passkey..."
   },
   "readingPasskeyLoadingInfo": {
     "message": "Не закрывайте это окно и следуйте запросам браузера."
@@ -624,40 +624,40 @@
     "message": "Использовать другой способ авторизации"
   },
   "loginWithPasskey": {
-    "message": "Войти с ключом доступа"
+    "message": "Войти с passkey"
   },
   "invalidPasskeyPleaseTryAgain": {
-    "message": "Неверный ключ доступа. Попробуйте снова."
+    "message": "Неверный passkey. Попробуйте снова."
   },
   "twoFactorForPasskeysNotSupportedOnClientUpdateToLogIn": {
-    "message": "2FA для ключей доступа не поддерживается. Для авторизации обновите приложение."
+    "message": "2FA для passkey не поддерживается. Для авторизации обновите приложение."
   },
   "loginWithPasskeyInfo": {
-    "message": "Используйте сгенерированный ключ доступа для автоматической авторизации без пароля. Ваша личность будет подтверждена биометрическими данными (распознаванием лица, отпечатком пальца или другим методом безопасности FIDO2)."
+    "message": "Используйте сгенерированный passkey для автоматической авторизации без пароля. Ваша личность будет подтверждена биометрическими данными (распознаванием лица, отпечатком пальца или другим методом безопасности FIDO2)."
   },
   "newPasskey": {
-    "message": "Новый ключ доступа"
+    "message": "Новый passkey"
   },
   "learnMoreAboutPasswordless": {
     "message": "Подробнее о беспарольном режиме"
   },
   "creatingPasskeyLoading": {
-    "message": "Создание ключа доступа..."
+    "message": "Создание passkey..."
   },
   "creatingPasskeyLoadingInfo": {
     "message": "Не закрывайте это окно и следуйте запросам браузера."
   },
   "errorCreatingPasskey": {
-    "message": "Ошибка создания ключа доступа"
+    "message": "Ошибка создания passkey"
   },
   "errorCreatingPasskeyInfo": {
-    "message": "При создании ключа доступа возникла проблема."
+    "message": "При создании passkey возникла проблема."
   },
   "passkeySuccessfullyCreated": {
-    "message": "Ключ доступа успешно создан!"
+    "message": "Passkey успешно создан!"
   },
   "customPasskeyNameInfo": {
-    "message": "Назовите ключ доступа так, чтобы вы могли его идентифицировать."
+    "message": "Назовите passkey так, чтобы вы могли его идентифицировать."
   },
   "useForVaultEncryption": {
     "message": "Использовать для шифрования хранилища"
@@ -666,7 +666,7 @@
     "message": "Авторизация и разблокировка на поддерживаемых устройствах без мастер-пароля. Для завершения настройки следуйте подсказкам браузера."
   },
   "useForVaultEncryptionErrorReadingPasskey": {
-    "message": "Ошибка чтения ключа доступа. Попробуйте еще раз или снимите флажок с этой опции."
+    "message": "Ошибка чтения passkey. Попробуйте еще раз или снимите флажок с этой опции."
   },
   "encryptionNotSupported": {
     "message": "Шифрование не поддерживается"
@@ -678,7 +678,7 @@
     "message": "Используется для шифрования"
   },
   "loginWithPasskeyEnabled": {
-    "message": "Авторизоваться с помощью ключа доступа"
+    "message": "Авторизоваться с помощью passkey"
   },
   "passkeySaved": {
     "message": "$NAME$ сохранен",
@@ -690,16 +690,16 @@
     }
   },
   "passkeyRemoved": {
-    "message": "Ключ доступа удален"
+    "message": "Passkey удален"
   },
   "removePasskey": {
-    "message": "Удалить ключ доступа"
+    "message": "Удалить passkey"
   },
   "removePasskeyInfo": {
-    "message": "Если будут удалены все ключи доступа, вы не сможете авторизоваться на новых устройствах без мастер-пароля."
+    "message": "Если будут удалены все passkey, вы не сможете авторизоваться на новых устройствах без мастер-пароля."
   },
   "passkeyLimitReachedInfo": {
-    "message": "Достигнут предел ключей доступа. Удалите какой-нибудь ключ, чтобы добавить другой."
+    "message": "Достигнут лимит passkey. Удалите какой-нибудь passkey, чтобы добавить другой."
   },
   "tryAgain": {
     "message": "Попробуйте снова"
@@ -4956,6 +4956,9 @@
   "addExistingOrganization": {
     "message": "Добавить существующую организацию"
   },
+  "addNewOrganization": {
+    "message": "Добавить новую организацию"
+  },
   "myProvider": {
     "message": "Мой поставщик"
   },
@@ -7453,13 +7456,13 @@
     "message": "Как минимум один участник или группа должны иметь разрешение 'Может управлять'."
   },
   "typePasskey": {
-    "message": "Ключ доступа"
+    "message": "Passkey"
   },
   "passkeyNotCopied": {
-    "message": "Ключ доступа не будет скопирован"
+    "message": "Passkey не будет скопирован"
   },
   "passkeyNotCopiedAlert": {
-    "message": "Ключ доступа не будет скопирован в клонированный элемент. Продолжить клонирование этого элемента?"
+    "message": "Passkey не будет скопирован в клонированный элемент. Продолжить клонирование этого элемента?"
   },
   "modifiedCollectionManagement": {
     "message": "Изменена настройка управления коллекцией $ID$.",
@@ -7497,6 +7500,9 @@
   },
   "collectionAccessRestricted": {
     "message": "Доступ к коллекции ограничен"
+  },
+  "readOnlyCollectionAccess": {
+    "message": "У вас нет доступа к управлению этой коллекцией."
   },
   "grantCollectionAccess": {
     "message": "Предоставить группам или участникам доступ к этой коллекции."
@@ -7600,6 +7606,9 @@
   "providerPortal": {
     "message": "Портал провайдера"
   },
+  "viewCollection": {
+    "message": "Посмотреть коллекцию"
+  },
   "restrictedGroupAccess": {
     "message": "Нельзя добавить самого себя в группы."
   },
@@ -7642,5 +7651,256 @@
   },
   "items": {
     "message": "Элементы"
+  },
+  "assignedSeats": {
+    "message": "Назначенные места"
+  },
+  "assigned": {
+    "message": "Назначено"
+  },
+  "used": {
+    "message": "Использовано"
+  },
+  "remaining": {
+    "message": "Осталось"
+  },
+  "unlinkOrganization": {
+    "message": "Отвязать организацию"
+  },
+  "manageSeats": {
+    "message": "УПРАВЛЕНИЕ МЕСТАМИ"
+  },
+  "manageSeatsDescription": {
+    "message": "Корректировка мест будет отражена в следующем расчетном цикле."
+  },
+  "unassignedSeatsDescription": {
+    "message": "Нераспределенные места в соответствии с подпиской"
+  },
+  "purchaseSeatDescription": {
+    "message": "Приобретено дополнительных мест"
+  },
+  "assignedSeatCannotUpdate": {
+    "message": "Назначенные места не могут быть обновлены. Обратитесь за помощью к владельцу организации."
+  },
+  "subscriptionUpdateFailed": {
+    "message": "Не удалось обновить подписку"
+  },
+  "trial": {
+    "message": "Пробная версия",
+    "description": "A subscription status label."
+  },
+  "pastDue": {
+    "message": "Просрочено",
+    "description": "A subscription status label"
+  },
+  "subscriptionExpired": {
+    "message": "Срок действия подписки истек",
+    "description": "The date header used when a subscription is past due."
+  },
+  "pastDueWarningForChargeAutomatically": {
+    "message": "У вас есть льготный период в $DAYS$ дней с даты истечения срока действия подписки, чтобы сохранить подписку. Пожалуйста, решите вопрос с просроченными платежами до $SUSPENSION_DATE$.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "11"
+      },
+      "suspension_date": {
+        "content": "$2",
+        "example": "01/10/2024"
+      }
+    },
+    "description": "A warning shown to the user when their subscription is past due and they are charged automatically."
+  },
+  "pastDueWarningForSendInvoice": {
+    "message": "У вас есть льготный период в $DAYS$ дней с момента оплаты первого неоплаченного счета, чтобы сохранить подписку. Пожалуйста, решите вопрос с просроченными платежами до $SUSPENSION_DATE$.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "11"
+      },
+      "suspension_date": {
+        "content": "$2",
+        "example": "01/10/2024"
+      }
+    },
+    "description": "A warning shown to the user when their subscription is past due and they pay via invoice."
+  },
+  "unpaidInvoice": {
+    "message": "Неоплаченный счет",
+    "description": "The header of a warning box shown to a user whose subscription is unpaid."
+  },
+  "toReactivateYourSubscription": {
+    "message": "Чтобы возобновить подписку, пожалуйста, решите вопрос с просроченными платежами.",
+    "description": "The body of a warning box shown to a user whose subscription is unpaid."
+  },
+  "cancellationDate": {
+    "message": "Дата аннуляции",
+    "description": "The date header used when a subscription is cancelled."
+  },
+  "machineAccountsCannotCreate": {
+    "message": "Аккаунты компьютеров не могут быть созданы в отключенных организациях. Обратитесь за помощью к владельцу организации."
+  },
+  "machineAccount": {
+    "message": "Аккаунт компьютера",
+    "description": "A machine user which can be used to automate processes and access secrets in the system."
+  },
+  "machineAccounts": {
+    "message": "Аккаунты компьютеров",
+    "description": "The title for the section that deals with machine accounts."
+  },
+  "newMachineAccount": {
+    "message": "Новый аккаунт компьютера",
+    "description": "Title for creating a new machine account."
+  },
+  "machineAccountsNoItemsMessage": {
+    "message": "Чтобы приступить к автоматизации секретного доступа, создайте новый аккаунт компьютера.",
+    "description": "Message to encourage the user to start creating machine accounts."
+  },
+  "machineAccountsNoItemsTitle": {
+    "message": "Пока нечего показать",
+    "description": "Title to indicate that there are no machine accounts to display."
+  },
+  "deleteMachineAccounts": {
+    "message": "Удалить аккаунты компьютеров",
+    "description": "Title for the action to delete one or multiple machine accounts."
+  },
+  "deleteMachineAccount": {
+    "message": "Удалить аккаунт компьютера",
+    "description": "Title for the action to delete a single machine account."
+  },
+  "viewMachineAccount": {
+    "message": "Просмотр аккаунта компьютера",
+    "description": "Action to view the details of a machine account."
+  },
+  "deleteMachineAccountDialogMessage": {
+    "message": "Удаление аккаунта компьютера $MACHINE_ACCOUNT$ окончательно и необратимо.",
+    "placeholders": {
+      "machine_account": {
+        "content": "$1",
+        "example": "Machine account name"
+      }
+    }
+  },
+  "deleteMachineAccountsDialogMessage": {
+    "message": "Удаление аккаунтов компьютеров окончательно и необратимо."
+  },
+  "deleteMachineAccountsConfirmMessage": {
+    "message": "Аккаунтов компьютеров к удалению: $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteMachineAccountToast": {
+    "message": "Аккаунт компьютера удален"
+  },
+  "deleteMachineAccountsToast": {
+    "message": "Аккаунты компьютеров удалены"
+  },
+  "searchMachineAccounts": {
+    "message": "Поиск аккаунтов компьютеров",
+    "description": "Placeholder text for searching machine accounts."
+  },
+  "editMachineAccount": {
+    "message": "Изменить аккаунт компьютера",
+    "description": "Title for editing a machine account."
+  },
+  "machineAccountName": {
+    "message": "Название аккаунта компьютера",
+    "description": "Label for the name of a machine account"
+  },
+  "machineAccountCreated": {
+    "message": "Аккаунт компьютера создан",
+    "description": "Notifies that a new machine account has been created"
+  },
+  "machineAccountUpdated": {
+    "message": "Аккаунт компьютера обновлен",
+    "description": "Notifies that a machine account has been updated"
+  },
+  "projectMachineAccountsDescription": {
+    "message": "Предоставить аккаунтам компьютеров доступ к этому проекту."
+  },
+  "projectMachineAccountsSelectHint": {
+    "message": "Введите или выберите аккаунты компьютеров"
+  },
+  "projectEmptyMachineAccountAccessPolicies": {
+    "message": "Добавить аккаунты компьютеров для предоставления доступа"
+  },
+  "machineAccountPeopleDescription": {
+    "message": "Предоставить группам или людям доступ к этому аккаунту компьютера."
+  },
+  "machineAccountProjectsDescription": {
+    "message": "Назначить проекты этому аккаунту компьютера. "
+  },
+  "createMachineAccount": {
+    "message": "Создать аккаунт компьютера"
+  },
+  "maPeopleWarningMessage": {
+    "message": "Удаление пользователей из аккаунта компьютера не приводит к удалению созданных ими токенов доступа. В целях обеспечения безопасности рекомендуется отзывать токены доступа, созданные пользователями, удаленными из аккаунта компьютера."
+  },
+  "smAccessRemovalWarningMaTitle": {
+    "message": "Удалить доступ к этому аккаунту компьютера"
+  },
+  "smAccessRemovalWarningMaMessage": {
+    "message": "Это действие лишит вас доступа к аккаунту компьютера."
+  },
+  "machineAccountsIncluded": {
+    "message": "Включено аккаунтов компьютеров: $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "additionalMachineAccountCost": {
+    "message": "В месяц за дополнительные аккаунты компьютеров: $COST$",
+    "placeholders": {
+      "cost": {
+        "content": "$1",
+        "example": "$0.50"
+      }
+    }
+  },
+  "additionalMachineAccounts": {
+    "message": "Дополнительные аккаунты компьютеров"
+  },
+  "includedMachineAccounts": {
+    "message": "Ваш план включает в себя аккаунтов компьютеров: $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "50"
+      }
+    }
+  },
+  "addAdditionalMachineAccounts": {
+    "message": "Стоимость дополнительных аккаунтов компьютеров за месяц: $COST$",
+    "placeholders": {
+      "cost": {
+        "content": "$1",
+        "example": "$0.50"
+      }
+    }
+  },
+  "limitMachineAccounts": {
+    "message": "Лимит аккаунтов компьютеров (опционально)"
+  },
+  "limitMachineAccountsDesc": {
+    "message": "Установите лимит для аккаунтов компьютеров. По достижении этого лимита создание новых аккаунтов компьютеров будет невозможным."
+  },
+  "machineAccountLimit": {
+    "message": "Лимит аккаунтов компьютеров (опционально)"
+  },
+  "maxMachineAccountCost": {
+    "message": "Максимальная потенциальная стоимость аккаунта компьютера"
+  },
+  "machineAccountAccessUpdated": {
+    "message": "Доступ аккаунта компьютера обновлен"
+  },
+  "unassignedItemsBanner": {
+    "message": "Обратите внимание: неприсвоенные элементы организации больше не видны в представлении \"Все хранилища\" на всех устройствах и теперь доступны только через консоль администратора. Назначьте эти элементы коллекции в консоли администратора, чтобы сделать их видимыми."
   }
 }

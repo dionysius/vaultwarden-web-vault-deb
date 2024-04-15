@@ -4956,6 +4956,9 @@
   "addExistingOrganization": {
     "message": "Přidat existující organizaci"
   },
+  "addNewOrganization": {
+    "message": "Přidat novou organizaci"
+  },
   "myProvider": {
     "message": "Můj poskytovatel"
   },
@@ -7498,6 +7501,9 @@
   "collectionAccessRestricted": {
     "message": "Přístup ke kolekci je omezen"
   },
+  "readOnlyCollectionAccess": {
+    "message": "Nemáte přístup ke správě této kolekce."
+  },
   "grantCollectionAccess": {
     "message": "Udělí skupinám nebo členům přístup k této kolekci."
   },
@@ -7600,6 +7606,9 @@
   "providerPortal": {
     "message": "Portál poskytovatele"
   },
+  "viewCollection": {
+    "message": "Zobrazit kolekci"
+  },
   "restrictedGroupAccess": {
     "message": "Do skupin nemůžete přidat sami sebe."
   },
@@ -7642,5 +7651,256 @@
   },
   "items": {
     "message": "Položky"
+  },
+  "assignedSeats": {
+    "message": "Přiřazení uživatelé"
+  },
+  "assigned": {
+    "message": "Přiřazeno"
+  },
+  "used": {
+    "message": "Využito"
+  },
+  "remaining": {
+    "message": "Zbývá"
+  },
+  "unlinkOrganization": {
+    "message": "Odpojit organizaci"
+  },
+  "manageSeats": {
+    "message": "SPRAVOVAT UŽIVATELE"
+  },
+  "manageSeatsDescription": {
+    "message": "Nastavení uživatelů bude započítáno v dalším fakturačním cyklu."
+  },
+  "unassignedSeatsDescription": {
+    "message": "Nepřiřazení uživatelé k odběru"
+  },
+  "purchaseSeatDescription": {
+    "message": "Další zakoupení uživatelé"
+  },
+  "assignedSeatCannotUpdate": {
+    "message": "Přiřazení uživatelé nemohou být aktualizováni. Požádejte o pomoc vlastníka organizace."
+  },
+  "subscriptionUpdateFailed": {
+    "message": "Aktualizace předplatného se nezdařila"
+  },
+  "trial": {
+    "message": "Zkušební verze",
+    "description": "A subscription status label."
+  },
+  "pastDue": {
+    "message": "Po splatnosti",
+    "description": "A subscription status label"
+  },
+  "subscriptionExpired": {
+    "message": "Předplatné vypršelo",
+    "description": "The date header used when a subscription is past due."
+  },
+  "pastDueWarningForChargeAutomatically": {
+    "message": "Máte lhůtu k odkladu $DAYS$ dnů od data vypršení předplatného pro zachování předplatného. Vyřešte poslední splatné faktury od $SUSPENSION_DATE$.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "11"
+      },
+      "suspension_date": {
+        "content": "$2",
+        "example": "01/10/2024"
+      }
+    },
+    "description": "A warning shown to the user when their subscription is past due and they are charged automatically."
+  },
+  "pastDueWarningForSendInvoice": {
+    "message": "Máte lhůtu k odkladu $DAYS$ dnů od data, kdy byla Vaše první nezaplacená faktura udržována v předplatném. Vyřešte poslední splatné faktury od $SUSPENSION_DATE$.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "11"
+      },
+      "suspension_date": {
+        "content": "$2",
+        "example": "01/10/2024"
+      }
+    },
+    "description": "A warning shown to the user when their subscription is past due and they pay via invoice."
+  },
+  "unpaidInvoice": {
+    "message": "Nezaplacená faktura",
+    "description": "The header of a warning box shown to a user whose subscription is unpaid."
+  },
+  "toReactivateYourSubscription": {
+    "message": "Chcete-li znovu aktivovat předplatné, vyřešte poslední splatné faktury.",
+    "description": "The body of a warning box shown to a user whose subscription is unpaid."
+  },
+  "cancellationDate": {
+    "message": "Datum zrušení",
+    "description": "The date header used when a subscription is cancelled."
+  },
+  "machineAccountsCannotCreate": {
+    "message": "Strojové účty nelze vytvořit v pozastavených organizacích. Požádejte o pomoc vlastníka organizace."
+  },
+  "machineAccount": {
+    "message": "Strojový účet",
+    "description": "A machine user which can be used to automate processes and access secrets in the system."
+  },
+  "machineAccounts": {
+    "message": "Strojové účty",
+    "description": "The title for the section that deals with machine accounts."
+  },
+  "newMachineAccount": {
+    "message": "Nový strojový účet",
+    "description": "Title for creating a new machine account."
+  },
+  "machineAccountsNoItemsMessage": {
+    "message": "Abyste mohli začít automatizovat přístup k tajnému kliči, vytvořte nový strojový účet.",
+    "description": "Message to encourage the user to start creating machine accounts."
+  },
+  "machineAccountsNoItemsTitle": {
+    "message": "Nyní není nic k zobrazení",
+    "description": "Title to indicate that there are no machine accounts to display."
+  },
+  "deleteMachineAccounts": {
+    "message": "Smazat strojové účty",
+    "description": "Title for the action to delete one or multiple machine accounts."
+  },
+  "deleteMachineAccount": {
+    "message": "Smazat strojový účet",
+    "description": "Title for the action to delete a single machine account."
+  },
+  "viewMachineAccount": {
+    "message": "Zobrazit strojový účet",
+    "description": "Action to view the details of a machine account."
+  },
+  "deleteMachineAccountDialogMessage": {
+    "message": "Smazání strojového účtu $MACHINE_ACCOUNT$ je trvalé a nevratné.",
+    "placeholders": {
+      "machine_account": {
+        "content": "$1",
+        "example": "Machine account name"
+      }
+    }
+  },
+  "deleteMachineAccountsDialogMessage": {
+    "message": "Smazání strojových účtů je trvalé a nevratné."
+  },
+  "deleteMachineAccountsConfirmMessage": {
+    "message": "Smazat $COUNT$ strojových účtů",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteMachineAccountToast": {
+    "message": "Strojový účet byl smazán"
+  },
+  "deleteMachineAccountsToast": {
+    "message": "Strojové účty byly smazány"
+  },
+  "searchMachineAccounts": {
+    "message": "Prohledat strojové účty",
+    "description": "Placeholder text for searching machine accounts."
+  },
+  "editMachineAccount": {
+    "message": "Upravit strojový účet",
+    "description": "Title for editing a machine account."
+  },
+  "machineAccountName": {
+    "message": "Název strojového účtu",
+    "description": "Label for the name of a machine account"
+  },
+  "machineAccountCreated": {
+    "message": "Strojový účet byl vytvořen",
+    "description": "Notifies that a new machine account has been created"
+  },
+  "machineAccountUpdated": {
+    "message": "Strojový účet byl aktualizován",
+    "description": "Notifies that a machine account has been updated"
+  },
+  "projectMachineAccountsDescription": {
+    "message": "Udělí strojovým účtům přístup k tomuto projektu."
+  },
+  "projectMachineAccountsSelectHint": {
+    "message": "Napište nebo vyberte strojové účty"
+  },
+  "projectEmptyMachineAccountAccessPolicies": {
+    "message": "Přidejte strojové účty pro udělení přístupu"
+  },
+  "machineAccountPeopleDescription": {
+    "message": "Udělí skupinám nebo lidem přístup k tomuto strojovému účtu."
+  },
+  "machineAccountProjectsDescription": {
+    "message": "Přiřaďte projekty k tomuto strojovému účtu. "
+  },
+  "createMachineAccount": {
+    "message": "Vytvořit strojový účet"
+  },
+  "maPeopleWarningMessage": {
+    "message": "Odebráním osob ze strojového účtu se neodeberou přístupové tokeny, které tyto osoby vytvořily. V rámci osvědčených bezpečnostních postupů se doporučuje zrušit přístupové tokeny vytvořené osobami odebranými ze strojového účtu."
+  },
+  "smAccessRemovalWarningMaTitle": {
+    "message": "Odebrat přístup k tomuto strojovému účtu"
+  },
+  "smAccessRemovalWarningMaMessage": {
+    "message": "Tato akce odebere Váš přístup ke strojovému účtu."
+  },
+  "machineAccountsIncluded": {
+    "message": "Zahrnuto $COUNT$ strojových účtů",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "additionalMachineAccountCost": {
+    "message": "Pro další strojové účty $COST$ měsíčně",
+    "placeholders": {
+      "cost": {
+        "content": "$1",
+        "example": "$0.50"
+      }
+    }
+  },
+  "additionalMachineAccounts": {
+    "message": "Další strojové účty"
+  },
+  "includedMachineAccounts": {
+    "message": "Váš plán již obsahuje $COUNT$ strojových účtů.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "50"
+      }
+    }
+  },
+  "addAdditionalMachineAccounts": {
+    "message": "Za $COST$ měsíčně můžete přidat další strojové účty.",
+    "placeholders": {
+      "cost": {
+        "content": "$1",
+        "example": "$0.50"
+      }
+    }
+  },
+  "limitMachineAccounts": {
+    "message": "Omezit strojové účty (volitelné)"
+  },
+  "limitMachineAccountsDesc": {
+    "message": "Nastavte limit pro Vaše strojové účty. Jakmile tohoto limitu dosáhnete, nebudete moci vytvářet nové strojové účty."
+  },
+  "machineAccountLimit": {
+    "message": "Limit strojových účtů (volitelné)"
+  },
+  "maxMachineAccountCost": {
+    "message": "Max. potenciální náklady na strojový účet"
+  },
+  "machineAccountAccessUpdated": {
+    "message": "Přístup strojového účtu byl aktualizován"
+  },
+  "unassignedItemsBanner": {
+    "message": "Upozornění: Nepřiřazené položky organizace již nejsou viditelné ve Vašem zobrazení všech trezorů napříč zařízeními a jsou nyní přístupné jen v konzoli správce. Přiřaďte tyto položky do kolekce z konzole pro správce, aby byly viditelné."
   }
 }

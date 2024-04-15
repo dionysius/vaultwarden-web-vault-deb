@@ -395,7 +395,7 @@
     "message": "항목 보기"
   },
   "new": {
-    "message": "New",
+    "message": "새 항목",
     "description": "for adding new items"
   },
   "item": {
@@ -609,7 +609,7 @@
     "message": "기기로 로그인"
   },
   "loginWithDeviceEnabledNote": {
-    "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
+    "message": "기기로 로그인은 Bitwarden 앱 설정에서 구성돼야 합니다. 다른 방식이 필요하신가요?"
   },
   "loginWithMasterPassword": {
     "message": "마스터 비밀번호로 로그인"
@@ -624,7 +624,7 @@
     "message": "Use a different log in method"
   },
   "loginWithPasskey": {
-    "message": "Log in with passkey"
+    "message": "패스키로 로그인"
   },
   "invalidPasskeyPleaseTryAgain": {
     "message": "Invalid Passkey. Please try again."
@@ -636,7 +636,7 @@
     "message": "Use a generated passkey that will automatically log you in without a password. Biometrics, like facial recognition or fingerprint, or another FIDO2 security method will verify your identity."
   },
   "newPasskey": {
-    "message": "New passkey"
+    "message": "새 패스키"
   },
   "learnMoreAboutPasswordless": {
     "message": "Learn more about passwordless"
@@ -654,7 +654,7 @@
     "message": "There was a problem creating your passkey."
   },
   "passkeySuccessfullyCreated": {
-    "message": "Passkey successfully created!"
+    "message": "패스키가 생성되었습니다!"
   },
   "customPasskeyNameInfo": {
     "message": "Name your passkey to help you identify it."
@@ -711,7 +711,7 @@
     "message": "새로 찾아오셨나요?"
   },
   "startTrial": {
-    "message": "평가판 시작"
+    "message": "\b무료 체험 시작"
   },
   "logIn": {
     "message": "로그인"
@@ -793,7 +793,7 @@
     "message": "계정 생성이 완료되었습니다! 이제 로그인하실 수 있습니다."
   },
   "trialAccountCreated": {
-    "message": "계정 생성에 성공했습니다."
+    "message": "계정이 생성되었습니다."
   },
   "masterPassSent": {
     "message": "마스터 비밀번호 힌트가 담긴 이메일을 보냈습니다."
@@ -905,7 +905,7 @@
     "message": "인증 코드 이메일 다시 보내기"
   },
   "useAnotherTwoStepMethod": {
-    "message": "다른 2단계 인증 사용"
+    "message": "다른 2단계 로그인 방법 사용"
   },
   "insertYubiKey": {
     "message": "YubiKey를 컴퓨터의 USB 포트에 삽입하고 버튼을 누르세요."
@@ -1045,7 +1045,7 @@
     "message": "인증 코드 복사"
   },
   "copyUuid": {
-    "message": "Copy UUID"
+    "message": "UUID 복사"
   },
   "warning": {
     "message": "경고"
@@ -1054,7 +1054,7 @@
     "message": "보관함 내보내기 확인"
   },
   "confirmSecretsExport": {
-    "message": "Confirm secrets export"
+    "message": "비밀 데이터 내보내기 확인"
   },
   "exportWarningDesc": {
     "message": "내보내기는 보관함 데이터가 암호화되지 않은 형식으로 포함됩니다. 내보낸 파일을 안전하지 않은 채널(예: 이메일)을 통해 저장하거나 보내지 마십시오. 사용이 끝난 후에는 즉시 삭제하십시오."
@@ -1078,7 +1078,7 @@
     "message": "보관함 내보내기"
   },
   "exportSecrets": {
-    "message": "Export secrets"
+    "message": "비밀 데이터 내보내기"
   },
   "fileFormat": {
     "message": "파일 형식"
@@ -1108,13 +1108,13 @@
     "message": "Set a file password to encrypt the export and import it to any Bitwarden account using the password for decryption."
   },
   "exportTypeHeading": {
-    "message": "Export type"
+    "message": "내보내기 유형"
   },
   "accountRestricted": {
-    "message": "Account restricted"
+    "message": "계정 제한됨"
   },
   "passwordProtected": {
-    "message": "Password protected"
+    "message": "비밀번호로 보호됨"
   },
   "filePasswordAndConfirmFilePasswordDoNotMatch": {
     "message": "'파일 암호'와 '파일 암호 확인'이 일치하지 않습니다."
@@ -1151,7 +1151,7 @@
     "message": "길이"
   },
   "passwordMinLength": {
-    "message": "Minimum password length"
+    "message": "최소 비밀번호 길이"
   },
   "uppercase": {
     "message": "대문자 (A-Z)",
@@ -1351,19 +1351,19 @@
     "message": "데이터 가져오기"
   },
   "onboardingImportDataDetailsPartOne": {
-    "message": "If you don't have any data to import, you can create a ",
+    "message": "가져오기할 데이터가 없으면, 대신 ",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
   "onboardingImportDataDetailsLink": {
-    "message": "new item",
+    "message": "새 항목",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
   "onboardingImportDataDetailsPartTwoNoOrgs": {
-    "message": " instead.",
+    "message": "을 생성할 수 있습니다.",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead."
   },
   "onboardingImportDataDetailsPartTwoWithOrgs": {
-    "message": " instead. You may need to wait until your administrator confirms your organization membership.",
+    "message": "을 생성할 수 있습니다. 관리자가 귀하의 조직을 확인할 때까지 기다려야 할 수 있습니다.",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
   },
   "importError": {
@@ -1385,7 +1385,7 @@
     }
   },
   "dataExportSuccess": {
-    "message": "Data successfully exported"
+    "message": "데이터를 내보내기했습니다"
   },
   "importWarning": {
     "message": "$ORGANIZATION$ 조직으로 데이터를 가져오려고 합니다. 데이터가 이 조직의 구성원과 공유될 수 있습니다. 계속하시겠습니까?",
@@ -1409,13 +1409,13 @@
     "message": "Import destination"
   },
   "learnAboutImportOptions": {
-    "message": "Learn about your import options"
+    "message": "가져오기 설정 알아보기"
   },
   "selectImportFolder": {
-    "message": "Select a folder"
+    "message": "폴더 선택"
   },
   "selectImportCollection": {
-    "message": "Select a collection"
+    "message": "컬렉션 선택"
   },
   "importTargetHint": {
     "message": "Select this option if you want the imported file contents moved to a $DESTINATION$",
@@ -1456,7 +1456,7 @@
     }
   },
   "options": {
-    "message": "옵션"
+    "message": "설정"
   },
   "preferences": {
     "message": "설정"
@@ -1522,10 +1522,10 @@
     "message": "도메인 업데이트됨"
   },
   "twoStepLogin": {
-    "message": "2단계 인증"
+    "message": "2단계 로그인"
   },
   "twoStepLoginEnforcement": {
-    "message": "Two-step Login Enforcement"
+    "message": "2단계 로그인 필수 설정"
   },
   "twoStepLoginDesc": {
     "message": "로그인할 때 추가 단계를 요구하여 계정을 보호하십시오."
@@ -1534,11 +1534,11 @@
     "message": "Enable two-step login for your organization."
   },
   "twoStepLoginEnterpriseDescStart": {
-    "message": "Enforce Bitwarden Two-step Login options for members by using the ",
+    "message": "을 사용해 구성원에게 Bitwarden 2단계 로그인 설정을 필수로 설정합니다.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
   "twoStepLoginPolicy": {
-    "message": "2단계 인증 정책"
+    "message": "2단계 로그인 정책"
   },
   "twoStepLoginOrganizationDuoDesc": {
     "message": "To enforce Two-step Login through Duo, use the options below."
@@ -1735,7 +1735,7 @@
     "message": "계정에 FIDO U2F 보안 키 추가"
   },
   "removeU2fConfirmation": {
-    "message": "정말로 이 보안 키를 제거하시겠습니까?"
+    "message": "이 보안 키를 삭제하시겠습니까?"
   },
   "twoFactorWebAuthnAdd": {
     "message": "계정에 WebAuthn 보안 키 추가"
@@ -1992,7 +1992,7 @@
     "message": "결제"
   },
   "billingPlanLabel": {
-    "message": "요금제"
+    "message": "청구 계획"
   },
   "paymentType": {
     "message": "결제 수단"
@@ -2036,7 +2036,7 @@
     "message": "1GB의 암호화된 파일 저장소."
   },
   "premiumSignUpTwoStepOptions": {
-    "message": "Proprietary two-step login options such as YubiKey and Duo."
+    "message": "YubiKey, Duo와 같은 \b상용 2단계 로그인 방법."
   },
   "premiumSignUpEmergency": {
     "message": "긴급 접근"
@@ -2104,7 +2104,7 @@
     "message": "# 의 추가 GB"
   },
   "additionalStorageIntervalDesc": {
-    "message": "귀하의 플랜은 $SIZE$의 암호화된 파일 저장소가 제공됩니다. GB / $INTERVAL$당 $PRICE$로 저장소용량을 추가할 수 있습니다.",
+    "message": "귀하의 요금제는 $SIZE$의 암호화 파일 저장소\u001d를 포함합니다. 추가 1GB당 매$INTERVAL$ $PRICE$로 저장소를 추가하실 수 있습니다.",
     "placeholders": {
       "size": {
         "content": "$1",
@@ -2155,7 +2155,7 @@
     "message": "Your payment method will be charged for any unpaid subscriptions."
   },
   "paymentChargedWithTrial": {
-    "message": "귀하의 플랜은 7일 무료 평가판입니다. 평가 기간이 만료될 때까지 카드에서 대금이 지불되지 않습니다. 이후 정기적으로 매 $INTERVAL$ 청구됩니다. 언제든지 취소할 수 있습니다."
+    "message": "\b귀하의 요금제는 7일 무료 체험을 포함합니다. 체험 기간이 끝날 때까지 등록한 결제 수단에 요금이 청구되지 않습니다. 언제든지 취소하실 수 있습니다."
   },
   "paymentInformation": {
     "message": "결제 정보"
@@ -2302,7 +2302,7 @@
     "message": "추가되는 저장소 용량 (GB)"
   },
   "gbStorageRemove": {
-    "message": "삭제되는 저장소 용량 (GB)"
+    "message": "제거할 저장소 (GB)"
   },
   "storageAddNote": {
     "message": "저장소 용량을 추가하면 청구 총계가 조정되고 파일에 즉시 지불 방법이 청구됩니다. 첫 번째 요금은 현재 청구 주기의 나머지 기간 동안 적립될 것입니다."
@@ -2326,7 +2326,7 @@
     "message": "Contact Support"
   },
   "updatedPaymentMethod": {
-    "message": "결제방식 업데이트됨."
+    "message": "결제 수단이 업데이트되었습니다."
   },
   "purchasePremium": {
     "message": "프리미엄 구매"
@@ -2371,7 +2371,7 @@
     "message": "기업 이름"
   },
   "chooseYourPlan": {
-    "message": "플랜을 선택하십시오"
+    "message": "요금제를 선택하세요"
   },
   "users": {
     "message": "사용자"
@@ -2386,7 +2386,7 @@
     "message": "# 의 사용자 수"
   },
   "userSeatsAdditionalDesc": {
-    "message": "귀하의 플랜은 $BASE_SEATS$개의 사용자 수가 제공됩니다. 사용자 당 월 $SEAT_PRICE$로 사용자를 추가할 수 있습니다.",
+    "message": "귀하의 요금제는 $BASE_SEATS$명의 사용자\u001d를 포함합니다. 추가 사용자 1명 당 매월 $SEAT_PRICE$로 사용자를 추가하실 수 있습니다.",
     "placeholders": {
       "base_seats": {
         "content": "$1",
@@ -2415,7 +2415,7 @@
     }
   },
   "planNameFamilies": {
-    "message": "가정"
+    "message": "가족"
   },
   "planDescFamilies": {
     "message": "개인적인 사용을 위해 가족과 친구들에게 공유하세요."
@@ -2427,7 +2427,7 @@
     "message": "기업 및 기타 팀 조직용."
   },
   "planNameTeamsStarter": {
-    "message": "Teams Starter"
+    "message": "팀 스타터"
   },
   "planNameEnterprise": {
     "message": "기업"
@@ -2523,7 +2523,7 @@
     "message": "우선 고객 지원"
   },
   "xDayFreeTrial": {
-    "message": "$COUNT$일간 무료 평가, 언제든지 취소",
+    "message": "$COUNT$일 무료 \b체험. 언제든지 취소하실 수 있습니다.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2532,7 +2532,7 @@
     }
   },
   "trialThankYou": {
-    "message": "Bitwarden의 $PLAN$에 가입해 주셔서 감사합니다!",
+    "message": "Bitwarden $PLAN$에 가입해 주셔서 고맙습니다!",
     "placeholders": {
       "plan": {
         "content": "$1",
@@ -2541,7 +2541,7 @@
     }
   },
   "trialSecretsManagerThankYou": {
-    "message": "Thanks for signing up for Bitwarden Secrets Manager for $PLAN$!",
+    "message": "Bitwarden 비밀 데이터 관리자 $PLAN$에 가입해 주셔서 고맙습니다!",
     "placeholders": {
       "plan": {
         "content": "$1",
@@ -2643,7 +2643,7 @@
     }
   },
   "removeUserConfirmation": {
-    "message": "정말 이 사용자를 제거하시겠습니까?"
+    "message": "이 사용자를 삭제하시겠습니까?"
   },
   "removeOrgUserConfirmation": {
     "message": "구성원이 제거되면 해당 구성원은 그룹 데이터에 접근할 수 없으며 이 작업은 되돌릴 수 없습니다. 구성원을 다시 그룹에 추가하려면 해당 구성원을 다시 초대하여야 합니다."
@@ -2802,10 +2802,10 @@
     "message": "CLI"
   },
   "bitWebVault": {
-    "message": "Bitwarden Web vault"
+    "message": "Bitwarden 웹 보관함"
   },
   "bitSecretsManager": {
-    "message": "Bitwarden Secrets Manager"
+    "message": "Birwarden 비밀 데이터 관리자"
   },
   "loggedIn": {
     "message": "로그인됨."
@@ -2940,7 +2940,7 @@
     }
   },
   "editItemWithName": {
-    "message": "Edit item - $NAME$",
+    "message": "항목 편집 - $NAME$",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -3384,7 +3384,7 @@
     "message": "User accounts will remain active after deletion but will no longer be associated to this organization."
   },
   "deletingOrganizationIsPermanentWarning": {
-    "message": "Deleting $ORGANIZATION$ is permanent and irreversible.",
+    "message": "$ORGANIZATION$ 삭제는 영구적이며 되돌릴 수 없습니다.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -3408,7 +3408,7 @@
     "message": "청구서에 대한 세금 정보를 제공(또는 업데이트) 하려면 지원팀에 문의하십시오."
   },
   "billingPlan": {
-    "message": "플랜",
+    "message": "요금제",
     "description": "A billing plan/package. For example: Families, Teams, Enterprise, etc."
   },
   "changeBillingPlan": {
@@ -3531,7 +3531,7 @@
     "message": "Subscription updated. You now have access to Secrets Manager."
   },
   "additionalOptions": {
-    "message": "추가 옵션"
+    "message": "추가 설정"
   },
   "additionalOptionsDesc": {
     "message": "구독과 관련하여 추가적인 도움이 필요한 경우 고객 지원에 문의하십시오."
@@ -3642,7 +3642,7 @@
     "message": "조직 업그레이드"
   },
   "upgradeOrganizationDesc": {
-    "message": "이 기능은 무료 조직에서는 사용할 수 없습니다. 더 많은 기능을 이용하려면 유료 플랜으로 전환하십시오."
+    "message": "이 기능은 무료 조직에서 사용하실 수 없습니다. 더 많은 기능을 잠금 해제하시려면 유료 요금제로 전환하세요."
   },
   "createOrganizationStep1": {
     "message": "조직 만들기: 1단계"
@@ -4210,7 +4210,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "removePassword": {
-    "message": "비밀번호 제거"
+    "message": "비밀번호 삭제"
   },
   "removedPassword": {
     "message": "비밀번호 제거함"
@@ -4255,7 +4255,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "downloadAttachments": {
-    "message": "Download attachments"
+    "message": "첨부 파일 다운로드"
   },
   "sendAccessUnavailable": {
     "message": "접근하려고 하는 Send가 존재하지 않거나 더이상 제공되지 않습니다.",
@@ -4956,6 +4956,9 @@
   "addExistingOrganization": {
     "message": "이미 있는 조직 추가"
   },
+  "addNewOrganization": {
+    "message": "Add new organization"
+  },
   "myProvider": {
     "message": "내 공급자"
   },
@@ -5420,7 +5423,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Use the require single-sign-on authentication policy to require all members to log in with SSO.'"
   },
   "memberDecryptionOption": {
-    "message": "멤버 복호화 옵션"
+    "message": "구성원 복호화 옵션"
   },
   "memberDecryptionPassDesc": {
     "message": "Once authenticated, members will decrypt vault data using their master passwords."
@@ -5625,7 +5628,7 @@
     "message": "Exporting organization vault"
   },
   "exportingIndividualVaultDescription": {
-    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated attachments.",
+    "message": "$EMAIL$ 주소와 연관된 개인 보관함 항목만 내보내기됩니다. 조직 보관함 항목은 포함되지 않습니다. 보관함 항목 정보만 내보내기되고 첨부 파일을 포함하지 않습니다.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -5634,7 +5637,7 @@
     }
   },
   "exportingOrganizationVaultDesc": {
-    "message": "Only the organization vault associated with $ORGANIZATION$ will be exported. Items in individual vaults or other organizations will not be included.",
+    "message": "$ORGANIZATION$ 조직과 연관된 조직 보관함만 내보내기됩니다. 개인 보관함이나 다른 조직의 항목은 포함되지 않습니다.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -6043,34 +6046,34 @@
     "description": "The label for the date and time when a item was last edited."
   },
   "editSecret": {
-    "message": "Edit secret",
+    "message": "비밀 데이터 편집",
     "description": "Action to modify an existing secret."
   },
   "addSecret": {
-    "message": "Add secret",
+    "message": "비밀 데이터 추가",
     "description": "Action to create a new secret."
   },
   "copySecretName": {
-    "message": "Copy secret name",
+    "message": "비밀 데이터 이름 복사",
     "description": "Action to copy the name of a secret to the system's clipboard."
   },
   "copySecretValue": {
-    "message": "Copy secret value",
+    "message": "비밀 데이터 값 복사",
     "description": "Action to copy the value of a secret to the system's clipboard."
   },
   "deleteSecret": {
-    "message": "Delete secret",
+    "message": "비밀 데이터 삭제",
     "description": "Action to delete a single secret from the system."
   },
   "deleteSecrets": {
-    "message": "Delete secrets",
+    "message": "비밀 데이터 삭제",
     "description": "The action to delete multiple secrets from the system."
   },
   "hardDeleteSecret": {
-    "message": "Permanently delete secret"
+    "message": "비밀 데이터 영구 삭제"
   },
   "hardDeleteSecrets": {
-    "message": "Permanently delete secrets"
+    "message": "비밀 데이터 영구 삭제"
   },
   "secretProjectAssociationDescription": {
     "message": "Select projects that the secret will be associated with. Only organization users with access to these projects will be able to see the secret.",
@@ -6105,7 +6108,7 @@
     "description": "The action to delete multiple projects from the system."
   },
   "secret": {
-    "message": "Secret",
+    "message": "비밀 데이터",
     "description": "Label for a secret (key/value pair)"
   },
   "serviceAccount": {
@@ -6677,13 +6680,13 @@
     "message": "Resend code"
   },
   "memberColumnHeader": {
-    "message": "Member"
+    "message": "구성원"
   },
   "groupSlashMemberColumnHeader": {
-    "message": "Group/Member"
+    "message": "그룹/구성원"
   },
   "selectGroupsAndMembers": {
-    "message": "Select groups and members"
+    "message": "그룹 및 구성원 선택"
   },
   "selectGroups": {
     "message": "Select groups"
@@ -6698,7 +6701,7 @@
     "message": "Deleted"
   },
   "memberStatusFilter": {
-    "message": "Member status filter"
+    "message": "구성원 상태 필터"
   },
   "inviteMember": {
     "message": "구성원 초대"
@@ -6884,7 +6887,7 @@
     "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
   },
   "secretsManager": {
-    "message": "Secrets Manager"
+    "message": "비밀 데이터 관리자"
   },
   "secretsManagerAccessDescription": {
     "message": "Activate user access to Secrets Manager."
@@ -7081,7 +7084,7 @@
     "message": "Device approval required. Select an approval option below:"
   },
   "rememberThisDevice": {
-    "message": "Remember this device"
+    "message": "이 기기 기억하기"
   },
   "uncheckIfPublicDevice": {
     "message": "Uncheck if using a public device"
@@ -7168,7 +7171,7 @@
     "description": "This description is shown to an admin when they are attempting to add more users to Secrets Manager."
   },
   "activateSecretsManager": {
-    "message": "Activate Secrets Manager"
+    "message": "비밀 데이터 관리자 활성화"
   },
   "yourOrganizationsFingerprint": {
     "message": "Your organization's fingerprint phrase",
@@ -7402,10 +7405,10 @@
     "message": "Updated collection management setting"
   },
   "passwordManagerPlanPrice": {
-    "message": "Password Manager plan price"
+    "message": "비밀번호 관리자 요금제 가격"
   },
   "secretsManagerPlanPrice": {
-    "message": "Secrets Manager plan price"
+    "message": "비밀 데이터 관리자 요금제 가격"
   },
   "passwordManager": {
     "message": "Password Manager"
@@ -7453,7 +7456,7 @@
     "message": "At least one member or group must have can manage permission."
   },
   "typePasskey": {
-    "message": "Passkey"
+    "message": "패스키"
   },
   "passkeyNotCopied": {
     "message": "Passkey will not be copied"
@@ -7497,6 +7500,9 @@
   },
   "collectionAccessRestricted": {
     "message": "Collection access is restricted"
+  },
+  "readOnlyCollectionAccess": {
+    "message": "You do not have access to manage this collection."
   },
   "grantCollectionAccess": {
     "message": "Grant groups or members access to this collection."
@@ -7542,7 +7548,7 @@
     "message": "Confirmation details"
   },
   "smFreeTrialThankYou": {
-    "message": "Thank you for signing up for Bitwarden Secrets Manager!"
+    "message": "Bitwarden 비밀 데이터 관리자에 가입해 주셔서 고맙습니다!"
   },
   "smFreeTrialConfirmationEmail": {
     "message": "We've sent a confirmation email to your email at "
@@ -7600,6 +7606,9 @@
   "providerPortal": {
     "message": "Provider Portal"
   },
+  "viewCollection": {
+    "message": "View collection"
+  },
   "restrictedGroupAccess": {
     "message": "You cannot add yourself to groups."
   },
@@ -7642,5 +7651,256 @@
   },
   "items": {
     "message": "Items"
+  },
+  "assignedSeats": {
+    "message": "Assigned seats"
+  },
+  "assigned": {
+    "message": "Assigned"
+  },
+  "used": {
+    "message": "Used"
+  },
+  "remaining": {
+    "message": "Remaining"
+  },
+  "unlinkOrganization": {
+    "message": "Unlink organization"
+  },
+  "manageSeats": {
+    "message": "MANAGE SEATS"
+  },
+  "manageSeatsDescription": {
+    "message": "Adjustments to seats will be reflected in the next billing cycle."
+  },
+  "unassignedSeatsDescription": {
+    "message": "Unassigned subscription seats"
+  },
+  "purchaseSeatDescription": {
+    "message": "Additional seats purchased"
+  },
+  "assignedSeatCannotUpdate": {
+    "message": "Assigned Seats can not be updated. Please contact your organization owner for assistance."
+  },
+  "subscriptionUpdateFailed": {
+    "message": "Subscription update failed"
+  },
+  "trial": {
+    "message": "Trial",
+    "description": "A subscription status label."
+  },
+  "pastDue": {
+    "message": "Past due",
+    "description": "A subscription status label"
+  },
+  "subscriptionExpired": {
+    "message": "Subscription expired",
+    "description": "The date header used when a subscription is past due."
+  },
+  "pastDueWarningForChargeAutomatically": {
+    "message": "You have a grace period of $DAYS$ days from your subscription expiration date to maintain your subscription. Please resolve the past due invoices by $SUSPENSION_DATE$.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "11"
+      },
+      "suspension_date": {
+        "content": "$2",
+        "example": "01/10/2024"
+      }
+    },
+    "description": "A warning shown to the user when their subscription is past due and they are charged automatically."
+  },
+  "pastDueWarningForSendInvoice": {
+    "message": "You have a grace period of $DAYS$ days from the date your first unpaid invoice is due to maintain your subscription. Please resolve the past due invoices by $SUSPENSION_DATE$.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "11"
+      },
+      "suspension_date": {
+        "content": "$2",
+        "example": "01/10/2024"
+      }
+    },
+    "description": "A warning shown to the user when their subscription is past due and they pay via invoice."
+  },
+  "unpaidInvoice": {
+    "message": "Unpaid invoice",
+    "description": "The header of a warning box shown to a user whose subscription is unpaid."
+  },
+  "toReactivateYourSubscription": {
+    "message": "To reactivate your subscription, please resolve the past due invoices.",
+    "description": "The body of a warning box shown to a user whose subscription is unpaid."
+  },
+  "cancellationDate": {
+    "message": "Cancellation date",
+    "description": "The date header used when a subscription is cancelled."
+  },
+  "machineAccountsCannotCreate": {
+    "message": "Machine accounts cannot be created in suspended organizations. Please contact your organization owner for assistance."
+  },
+  "machineAccount": {
+    "message": "Machine account",
+    "description": "A machine user which can be used to automate processes and access secrets in the system."
+  },
+  "machineAccounts": {
+    "message": "Machine accounts",
+    "description": "The title for the section that deals with machine accounts."
+  },
+  "newMachineAccount": {
+    "message": "New machine account",
+    "description": "Title for creating a new machine account."
+  },
+  "machineAccountsNoItemsMessage": {
+    "message": "Create a new machine account to get started automating secret access.",
+    "description": "Message to encourage the user to start creating machine accounts."
+  },
+  "machineAccountsNoItemsTitle": {
+    "message": "Nothing to show yet",
+    "description": "Title to indicate that there are no machine accounts to display."
+  },
+  "deleteMachineAccounts": {
+    "message": "Delete machine accounts",
+    "description": "Title for the action to delete one or multiple machine accounts."
+  },
+  "deleteMachineAccount": {
+    "message": "Delete machine account",
+    "description": "Title for the action to delete a single machine account."
+  },
+  "viewMachineAccount": {
+    "message": "View machine account",
+    "description": "Action to view the details of a machine account."
+  },
+  "deleteMachineAccountDialogMessage": {
+    "message": "Deleting machine account $MACHINE_ACCOUNT$ is permanent and irreversible.",
+    "placeholders": {
+      "machine_account": {
+        "content": "$1",
+        "example": "Machine account name"
+      }
+    }
+  },
+  "deleteMachineAccountsDialogMessage": {
+    "message": "Deleting machine accounts is permanent and irreversible."
+  },
+  "deleteMachineAccountsConfirmMessage": {
+    "message": "Delete $COUNT$ machine accounts",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteMachineAccountToast": {
+    "message": "Machine account deleted"
+  },
+  "deleteMachineAccountsToast": {
+    "message": "Machine accounts deleted"
+  },
+  "searchMachineAccounts": {
+    "message": "Search machine accounts",
+    "description": "Placeholder text for searching machine accounts."
+  },
+  "editMachineAccount": {
+    "message": "Edit machine account",
+    "description": "Title for editing a machine account."
+  },
+  "machineAccountName": {
+    "message": "Machine account name",
+    "description": "Label for the name of a machine account"
+  },
+  "machineAccountCreated": {
+    "message": "Machine account created",
+    "description": "Notifies that a new machine account has been created"
+  },
+  "machineAccountUpdated": {
+    "message": "Machine account updated",
+    "description": "Notifies that a machine account has been updated"
+  },
+  "projectMachineAccountsDescription": {
+    "message": "Grant machine accounts access to this project."
+  },
+  "projectMachineAccountsSelectHint": {
+    "message": "Type or select machine accounts"
+  },
+  "projectEmptyMachineAccountAccessPolicies": {
+    "message": "Add machine accounts to grant access"
+  },
+  "machineAccountPeopleDescription": {
+    "message": "Grant groups or people access to this machine account."
+  },
+  "machineAccountProjectsDescription": {
+    "message": "Assign projects to this machine account. "
+  },
+  "createMachineAccount": {
+    "message": "Create a machine account"
+  },
+  "maPeopleWarningMessage": {
+    "message": "Removing people from a machine account does not remove the access tokens they created. For security best practice, it is recommended to revoke access tokens created by people removed from a machine account."
+  },
+  "smAccessRemovalWarningMaTitle": {
+    "message": "Remove access to this machine account"
+  },
+  "smAccessRemovalWarningMaMessage": {
+    "message": "This action will remove your access to the machine account."
+  },
+  "machineAccountsIncluded": {
+    "message": "$COUNT$ machine accounts included",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "additionalMachineAccountCost": {
+    "message": "$COST$ per month for additional machine accounts",
+    "placeholders": {
+      "cost": {
+        "content": "$1",
+        "example": "$0.50"
+      }
+    }
+  },
+  "additionalMachineAccounts": {
+    "message": "Additional machine accounts"
+  },
+  "includedMachineAccounts": {
+    "message": "Your plan comes with $COUNT$ machine accounts.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "50"
+      }
+    }
+  },
+  "addAdditionalMachineAccounts": {
+    "message": "You can add additional machine accounts for $COST$ per month.",
+    "placeholders": {
+      "cost": {
+        "content": "$1",
+        "example": "$0.50"
+      }
+    }
+  },
+  "limitMachineAccounts": {
+    "message": "Limit machine accounts (optional)"
+  },
+  "limitMachineAccountsDesc": {
+    "message": "Set a limit for your machine accounts. Once this limit is reached, you will not be able to create new machine accounts."
+  },
+  "machineAccountLimit": {
+    "message": "Machine account limit (optional)"
+  },
+  "maxMachineAccountCost": {
+    "message": "Max potential machine account cost"
+  },
+  "machineAccountAccessUpdated": {
+    "message": "Machine account access updated"
+  },
+  "unassignedItemsBanner": {
+    "message": "Notice: Unassigned organization items are no longer visible in your All Vaults view across devices and are now only accessible via the Admin Console. Assign these items to a collection from the Admin Console to make them visible."
   }
 }

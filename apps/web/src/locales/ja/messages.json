@@ -4956,6 +4956,9 @@
   "addExistingOrganization": {
     "message": "既存の組織を追加する"
   },
+  "addNewOrganization": {
+    "message": "新しい組織を追加"
+  },
   "myProvider": {
     "message": "プロバイダー"
   },
@@ -7498,6 +7501,9 @@
   "collectionAccessRestricted": {
     "message": "コレクションへのアクセスが制限されています"
   },
+  "readOnlyCollectionAccess": {
+    "message": "このコレクションを管理する権限がありません。"
+  },
   "grantCollectionAccess": {
     "message": "グループまたはメンバーにこのコレクションへのアクセスを許可します。"
   },
@@ -7600,6 +7606,9 @@
   "providerPortal": {
     "message": "プロバイダーポータル"
   },
+  "viewCollection": {
+    "message": "コレクションを表示"
+  },
   "restrictedGroupAccess": {
     "message": "あなた自身をグループに追加することはできません。"
   },
@@ -7642,5 +7651,256 @@
   },
   "items": {
     "message": "アイテム"
+  },
+  "assignedSeats": {
+    "message": "割り当て済のシート"
+  },
+  "assigned": {
+    "message": "割り当て済"
+  },
+  "used": {
+    "message": "使用中"
+  },
+  "remaining": {
+    "message": "残り"
+  },
+  "unlinkOrganization": {
+    "message": "組織のリンクを解除"
+  },
+  "manageSeats": {
+    "message": "シートの管理"
+  },
+  "manageSeatsDescription": {
+    "message": "調整したシートは、次の請求サイクルで反映されます。"
+  },
+  "unassignedSeatsDescription": {
+    "message": "未割り当てのサブスクリプションシート"
+  },
+  "purchaseSeatDescription": {
+    "message": "追加シートを購入しました"
+  },
+  "assignedSeatCannotUpdate": {
+    "message": "割り当て済のシートは更新できません。組織の所有者に連絡してください。"
+  },
+  "subscriptionUpdateFailed": {
+    "message": "サブスクリプションの更新に失敗しました"
+  },
+  "trial": {
+    "message": "お試し",
+    "description": "A subscription status label."
+  },
+  "pastDue": {
+    "message": "期限切れ",
+    "description": "A subscription status label"
+  },
+  "subscriptionExpired": {
+    "message": "サブスクリプションの有効期限が切れました",
+    "description": "The date header used when a subscription is past due."
+  },
+  "pastDueWarningForChargeAutomatically": {
+    "message": "期限が切れた日から$DAYS$日間の猶予期間があり、支払いを済ませればサブスクリプションを継続できます。期限切れになった請求書の支払いを $SUSPENSION_DATE$ までに済ませてください。",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "11"
+      },
+      "suspension_date": {
+        "content": "$2",
+        "example": "01/10/2024"
+      }
+    },
+    "description": "A warning shown to the user when their subscription is past due and they are charged automatically."
+  },
+  "pastDueWarningForSendInvoice": {
+    "message": "最初の未払いの請求書の期限日から$DAYS$日間の猶予期間があり、支払いを済ませればサブスクリプションを継続できます。期限切れになった請求書の支払いを $SUSPENSION_DATE$ までに済ませてください。",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "11"
+      },
+      "suspension_date": {
+        "content": "$2",
+        "example": "01/10/2024"
+      }
+    },
+    "description": "A warning shown to the user when their subscription is past due and they pay via invoice."
+  },
+  "unpaidInvoice": {
+    "message": "未払い請求書",
+    "description": "The header of a warning box shown to a user whose subscription is unpaid."
+  },
+  "toReactivateYourSubscription": {
+    "message": "サブスクリプションを再度有効にするには、期限切れになった請求書の支払いをしてください。",
+    "description": "The body of a warning box shown to a user whose subscription is unpaid."
+  },
+  "cancellationDate": {
+    "message": "解約日",
+    "description": "The date header used when a subscription is cancelled."
+  },
+  "machineAccountsCannotCreate": {
+    "message": "一時停止中の組織ではマシンアカウントを作成できません。組織の所有者に問い合わせてください。"
+  },
+  "machineAccount": {
+    "message": "マシンアカウント",
+    "description": "A machine user which can be used to automate processes and access secrets in the system."
+  },
+  "machineAccounts": {
+    "message": "マシンアカウント",
+    "description": "The title for the section that deals with machine accounts."
+  },
+  "newMachineAccount": {
+    "message": "新しいマシンアカウント",
+    "description": "Title for creating a new machine account."
+  },
+  "machineAccountsNoItemsMessage": {
+    "message": "シークレットアクセスを自動化するためには、新しいマシンアカウントを作成してください。",
+    "description": "Message to encourage the user to start creating machine accounts."
+  },
+  "machineAccountsNoItemsTitle": {
+    "message": "まだ表示するものはありません",
+    "description": "Title to indicate that there are no machine accounts to display."
+  },
+  "deleteMachineAccounts": {
+    "message": "マシンアカウントの削除",
+    "description": "Title for the action to delete one or multiple machine accounts."
+  },
+  "deleteMachineAccount": {
+    "message": "マシンアカウントの削除",
+    "description": "Title for the action to delete a single machine account."
+  },
+  "viewMachineAccount": {
+    "message": "マシンアカウントを表示",
+    "description": "Action to view the details of a machine account."
+  },
+  "deleteMachineAccountDialogMessage": {
+    "message": "マシンアカウント $MACHINE_ACCOUNT$ を削除すると元に戻すことはできません。",
+    "placeholders": {
+      "machine_account": {
+        "content": "$1",
+        "example": "Machine account name"
+      }
+    }
+  },
+  "deleteMachineAccountsDialogMessage": {
+    "message": "マシンアカウントを削除すると元に戻すことはできません。"
+  },
+  "deleteMachineAccountsConfirmMessage": {
+    "message": "$COUNT$ 個のマシンアカウントの削除",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteMachineAccountToast": {
+    "message": "マシンアカウントを削除しました"
+  },
+  "deleteMachineAccountsToast": {
+    "message": "マシンアカウントを削除しました"
+  },
+  "searchMachineAccounts": {
+    "message": "マシンアカウントの検索",
+    "description": "Placeholder text for searching machine accounts."
+  },
+  "editMachineAccount": {
+    "message": "マシンアカウントの編集",
+    "description": "Title for editing a machine account."
+  },
+  "machineAccountName": {
+    "message": "マシンアカウント名",
+    "description": "Label for the name of a machine account"
+  },
+  "machineAccountCreated": {
+    "message": "マシンアカウントの作成",
+    "description": "Notifies that a new machine account has been created"
+  },
+  "machineAccountUpdated": {
+    "message": "マシンアカウントを更新しました",
+    "description": "Notifies that a machine account has been updated"
+  },
+  "projectMachineAccountsDescription": {
+    "message": "このプロジェクトへのマシンアカウントのアクセスを許可します。"
+  },
+  "projectMachineAccountsSelectHint": {
+    "message": "マシンアカウントを入力または選択"
+  },
+  "projectEmptyMachineAccountAccessPolicies": {
+    "message": "アクセスを許可するマシンアカウントを追加"
+  },
+  "machineAccountPeopleDescription": {
+    "message": "グループまたはメンバーにこのマシンアカウントへのアクセスを許可します。"
+  },
+  "machineAccountProjectsDescription": {
+    "message": "このマシンアカウントにプロジェクトを割り当てます。 "
+  },
+  "createMachineAccount": {
+    "message": "マシンアカウントを作成"
+  },
+  "maPeopleWarningMessage": {
+    "message": "マシンアカウントからユーザーを削除しても、作成したアクセストークンは削除されません。 セキュリティ向上のために、マシンアカウントから削除されたユーザーによって作成されたアクセストークンを取り消すことをお勧めします。"
+  },
+  "smAccessRemovalWarningMaTitle": {
+    "message": "このマシンアカウントへのアクセスを削除"
+  },
+  "smAccessRemovalWarningMaMessage": {
+    "message": "この操作により、マシンアカウントへのあなたのアクセス権限が削除されます。"
+  },
+  "machineAccountsIncluded": {
+    "message": "$COUNT$ 個のマシンアカウントが含まれています",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "additionalMachineAccountCost": {
+    "message": "追加のマシンアカウントは月額 $COST$",
+    "placeholders": {
+      "cost": {
+        "content": "$1",
+        "example": "$0.50"
+      }
+    }
+  },
+  "additionalMachineAccounts": {
+    "message": "追加のマシンアカウント"
+  },
+  "includedMachineAccounts": {
+    "message": "お客様のプランには $COUNT$ 個のマシンアカウントが付属しています。",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "50"
+      }
+    }
+  },
+  "addAdditionalMachineAccounts": {
+    "message": "月額 $COST$ でマシンアカウントを追加できます。",
+    "placeholders": {
+      "cost": {
+        "content": "$1",
+        "example": "$0.50"
+      }
+    }
+  },
+  "limitMachineAccounts": {
+    "message": "マシンアカウントの制限 (オプション)"
+  },
+  "limitMachineAccountsDesc": {
+    "message": "マシンアカウントの上限を設定します。この制限に達すると、新しいマシンアカウントを作成できなくなります。"
+  },
+  "machineAccountLimit": {
+    "message": "マシンアカウントの上限（オプション）"
+  },
+  "maxMachineAccountCost": {
+    "message": "マシンアカウントのコストの最大値"
+  },
+  "machineAccountAccessUpdated": {
+    "message": "マシンアカウントへのアクセス権限を更新しました"
+  },
+  "unassignedItemsBanner": {
+    "message": "注意: 割り当てられていない組織項目は、デバイス間のすべての保管庫のビューでは表示されなくなり、管理コンソールからのみアクセスできます。 管理コンソールからコレクションにこれらのアイテムを割り当てると、表示するようにできます。"
   }
 }

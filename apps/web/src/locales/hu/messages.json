@@ -4956,6 +4956,9 @@
   "addExistingOrganization": {
     "message": "Létező fordítások hozzáadása"
   },
+  "addNewOrganization": {
+    "message": "Új szervezet hozzáadása"
+  },
   "myProvider": {
     "message": "Saját szolgáltató"
   },
@@ -7498,6 +7501,9 @@
   "collectionAccessRestricted": {
     "message": "A gyűjtemény elérése korlátozott."
   },
+  "readOnlyCollectionAccess": {
+    "message": "Nincs jogosultság ennek a gyűjteménynek a kezelésére."
+  },
   "grantCollectionAccess": {
     "message": "Adjunk hozzáférést csoportoknak vagy személyeknek eennél a gyűjteménynél."
   },
@@ -7600,6 +7606,9 @@
   "providerPortal": {
     "message": "Szolgáltató portál"
   },
+  "viewCollection": {
+    "message": "Gyűjtemény megtekintése"
+  },
   "restrictedGroupAccess": {
     "message": "Nem adhadjuk magunkat a csoporthoz."
   },
@@ -7642,5 +7651,256 @@
   },
   "items": {
     "message": "Elemek"
+  },
+  "assignedSeats": {
+    "message": "Hozzárendelt helyek"
+  },
+  "assigned": {
+    "message": "Hozzárendelve"
+  },
+  "used": {
+    "message": "Felhasznált"
+  },
+  "remaining": {
+    "message": "Maradt"
+  },
+  "unlinkOrganization": {
+    "message": "Szervezet leválasztása"
+  },
+  "manageSeats": {
+    "message": "HELYEK KEZELÉSE"
+  },
+  "manageSeatsDescription": {
+    "message": "A helyek módosításai a következő számlázási ciklusban jelennek meg."
+  },
+  "unassignedSeatsDescription": {
+    "message": "Nem hozzárendelt előfizetési helyek"
+  },
+  "purchaseSeatDescription": {
+    "message": "További megvásárolt helyek"
+  },
+  "assignedSeatCannotUpdate": {
+    "message": "A hozzárendelt helyek nem frissíthetők. Segítségért forduljunk a szervezet tulajdonosához."
+  },
+  "subscriptionUpdateFailed": {
+    "message": "Az előfizetés frissítés sikertelen volt."
+  },
+  "trial": {
+    "message": "Próba",
+    "description": "A subscription status label."
+  },
+  "pastDue": {
+    "message": "Határidőn túl",
+    "description": "A subscription status label"
+  },
+  "subscriptionExpired": {
+    "message": "Az előfizetés lejárt.",
+    "description": "The date header used when a subscription is past due."
+  },
+  "pastDueWarningForChargeAutomatically": {
+    "message": "Az előfizetés lejárati dátumától számítva $DAYS$ nap türelmi időszak áll rendelkezésére az előfizetés fenntartásához. Rendezzük a lejárt számlákat a következő időpontig: $SUSPENSION_DATE$.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "11"
+      },
+      "suspension_date": {
+        "content": "$2",
+        "example": "01/10/2024"
+      }
+    },
+    "description": "A warning shown to the user when their subscription is past due and they are charged automatically."
+  },
+  "pastDueWarningForSendInvoice": {
+    "message": "Az első kifizetetlen számla esedékességétől számítva $DAYS$ nap türelmi időszak áll rendelkezésére az előfizetés fenntartására. Rendezzük a lejárt számlákat a következő időpontig: $SUSPENSION_DATE$.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "11"
+      },
+      "suspension_date": {
+        "content": "$2",
+        "example": "01/10/2024"
+      }
+    },
+    "description": "A warning shown to the user when their subscription is past due and they pay via invoice."
+  },
+  "unpaidInvoice": {
+    "message": "Kifizetetlen számla",
+    "description": "The header of a warning box shown to a user whose subscription is unpaid."
+  },
+  "toReactivateYourSubscription": {
+    "message": "Az előfizetés újraaktiválásához oldjuk meg a lejárt számlákat.",
+    "description": "The body of a warning box shown to a user whose subscription is unpaid."
+  },
+  "cancellationDate": {
+    "message": "Lemondási dátum",
+    "description": "The date header used when a subscription is cancelled."
+  },
+  "machineAccountsCannotCreate": {
+    "message": "A felfüggesztett szervezetekben nem hozhatók létre szolgáltatásfiókok. Segítségért forduljunk a szervezet tulajdonosához."
+  },
+  "machineAccount": {
+    "message": "Gépi fiók",
+    "description": "A machine user which can be used to automate processes and access secrets in the system."
+  },
+  "machineAccounts": {
+    "message": "Gépi fiókok",
+    "description": "The title for the section that deals with machine accounts."
+  },
+  "newMachineAccount": {
+    "message": "Új gépi fiók",
+    "description": "Title for creating a new machine account."
+  },
+  "machineAccountsNoItemsMessage": {
+    "message": "Új gépi fiók létrehozása a titkos kód automatikus hozzáféréséhez.",
+    "description": "Message to encourage the user to start creating machine accounts."
+  },
+  "machineAccountsNoItemsTitle": {
+    "message": "Nincs megjeleníthető tartalom.",
+    "description": "Title to indicate that there are no machine accounts to display."
+  },
+  "deleteMachineAccounts": {
+    "message": "Gépi fiókok törlése",
+    "description": "Title for the action to delete one or multiple machine accounts."
+  },
+  "deleteMachineAccount": {
+    "message": "Gépi fiók törlése",
+    "description": "Title for the action to delete a single machine account."
+  },
+  "viewMachineAccount": {
+    "message": "Gépi fiók mgtekintése",
+    "description": "Action to view the details of a machine account."
+  },
+  "deleteMachineAccountDialogMessage": {
+    "message": "$MACHINE_ACCOUNT$ gépi fiók törlése végleges és visszafordíthatatlan.",
+    "placeholders": {
+      "machine_account": {
+        "content": "$1",
+        "example": "Machine account name"
+      }
+    }
+  },
+  "deleteMachineAccountsDialogMessage": {
+    "message": "A gépi fiókok törlése végleges és visszafordíthatatlan."
+  },
+  "deleteMachineAccountsConfirmMessage": {
+    "message": "$COUNT$ gépi fiókok törlése",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteMachineAccountToast": {
+    "message": "A gépi fiók törlésre került."
+  },
+  "deleteMachineAccountsToast": {
+    "message": "A gépi fiókok törlésre kerültek."
+  },
+  "searchMachineAccounts": {
+    "message": "Gépi fiókok keresése",
+    "description": "Placeholder text for searching machine accounts."
+  },
+  "editMachineAccount": {
+    "message": "Gépi fiók szerkesztése",
+    "description": "Title for editing a machine account."
+  },
+  "machineAccountName": {
+    "message": "Gépi fióknév",
+    "description": "Label for the name of a machine account"
+  },
+  "machineAccountCreated": {
+    "message": "A gépi fiók létrehozásra került.",
+    "description": "Notifies that a new machine account has been created"
+  },
+  "machineAccountUpdated": {
+    "message": "A gépi fiók frissítésre került.",
+    "description": "Notifies that a machine account has been updated"
+  },
+  "projectMachineAccountsDescription": {
+    "message": "Gépi fiókok elérésének engedélyezése ehhez a projekthez."
+  },
+  "projectMachineAccountsSelectHint": {
+    "message": "Írjuk be vagy válasszuk ki a gépi fiókokat."
+  },
+  "projectEmptyMachineAccountAccessPolicies": {
+    "message": "Adjunk hozzá gépi fiókokat a hozzáférés biztosításához"
+  },
+  "machineAccountPeopleDescription": {
+    "message": "Adjunk hozzáférést csoportoknak vagy személyeknek ehhez a gépi fiókhoz."
+  },
+  "machineAccountProjectsDescription": {
+    "message": "Projektek hozzárendelése ehhez a gépi fiókhoz. "
+  },
+  "createMachineAccount": {
+    "message": "Gépi fiók létrehozása"
+  },
+  "maPeopleWarningMessage": {
+    "message": "Az emberek gépi fiókból való eltávolítása nem távolítja el az általuk létrehozott elérési vezérjeleket. A legjobb biztonsági gyakorlat érdekében javasolt visszavonni a gépi fiókból eltávolított személyek által létrehozott elérési vezérjeleket."
+  },
+  "smAccessRemovalWarningMaTitle": {
+    "message": "A gépi fiók elérés visszavonása"
+  },
+  "smAccessRemovalWarningMaMessage": {
+    "message": "Ez a művelet eltávolítja a gépi fiók elérési lehetőségét."
+  },
+  "machineAccountsIncluded": {
+    "message": "$COUNT$ gépi fiók belefoglalva",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "additionalMachineAccountCost": {
+    "message": "$COST$ havonta kiegészítő gépi fiókokhoz",
+    "placeholders": {
+      "cost": {
+        "content": "$1",
+        "example": "$0.50"
+      }
+    }
+  },
+  "additionalMachineAccounts": {
+    "message": "Kiegészítő gépi fiókok"
+  },
+  "includedMachineAccounts": {
+    "message": "A csomag $COUNT$ gépi fiókot tartalmaz.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "50"
+      }
+    }
+  },
+  "addAdditionalMachineAccounts": {
+    "message": "További gépi fiókok adhatók hozzá havi $COST$ áron.",
+    "placeholders": {
+      "cost": {
+        "content": "$1",
+        "example": "$0.50"
+      }
+    }
+  },
+  "limitMachineAccounts": {
+    "message": "Gépi fiókok korlátozása (opcionális)"
+  },
+  "limitMachineAccountsDesc": {
+    "message": "Állítsunk be korlátot a gépi fiókokhoz. Ha elérjük ezt a korlátot, nem tudunk új gépi fiókokat létrehozni."
+  },
+  "machineAccountLimit": {
+    "message": "Gépi fiók korlát (opcionális)"
+  },
+  "maxMachineAccountCost": {
+    "message": "Maximális lehetséges gépi fiókköltség"
+  },
+  "machineAccountAccessUpdated": {
+    "message": "A gépi fiók elérése frissítésre került."
+  },
+  "unassignedItemsBanner": {
+    "message": "Megjegyzés: A nem hozzá rendelt szervezeti elemek már nem láthatók az Összes széf nézetben a különböző eszközökön és mostantól csak a Felügyeleti konzolon keresztül érhetők el. Rendeljük ezeket az elemeket egy gyűjteményhez az Adminisztrátori konzolból, hogy láthatóvá tegyeük azokat."
   }
 }

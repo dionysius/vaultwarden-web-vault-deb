@@ -615,7 +615,7 @@
     "message": "使用主密碼登入"
   },
   "readingPasskeyLoading": {
-    "message": "正在讀取密碼金輪..."
+    "message": "正在讀取金輪..."
   },
   "readingPasskeyLoadingInfo": {
     "message": "請保持視窗開啟，並按照瀏覽器指示操作。"
@@ -627,7 +627,7 @@
     "message": "使用密碼金鑰登入"
   },
   "invalidPasskeyPleaseTryAgain": {
-    "message": "無效的密碼金鑰，請再試一次。"
+    "message": "無效的金鑰。請再試一次。"
   },
   "twoFactorForPasskeysNotSupportedOnClientUpdateToLogIn": {
     "message": "不支援的密碼金鑰的 2FA 兩階段認證。更新 app 以登入"
@@ -1355,7 +1355,7 @@
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
   "onboardingImportDataDetailsLink": {
-    "message": "new item",
+    "message": "新項目",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
   "onboardingImportDataDetailsPartTwoNoOrgs": {
@@ -2835,7 +2835,7 @@
     "message": "不正確的代碼"
   },
   "incorrectPin": {
-    "message": "Incorrect PIN"
+    "message": "PIN 碼不正確"
   },
   "exportedVault": {
     "message": "已匯出密碼庫"
@@ -4044,7 +4044,7 @@
     "message": "您現在可以關閉此分頁，並且回到擴充套件繼續。"
   },
   "youSuccessfullyLoggedIn": {
-    "message": "You successfully logged in"
+    "message": "你已成功登入"
   },
   "thisWindowWillCloseIn5Seconds": {
     "message": "This window will automatically close in 5 seconds"
@@ -4951,10 +4951,13 @@
     "message": "建立一個新的客戶組織，該組織將作為提供者與您建立關聯。您將能夠存取和管理此組織。"
   },
   "newClient": {
-    "message": "New client"
+    "message": "新用戶端"
   },
   "addExistingOrganization": {
     "message": "新增現有組織"
+  },
+  "addNewOrganization": {
+    "message": "新增組織"
   },
   "myProvider": {
     "message": "我的提供者"
@@ -5943,7 +5946,7 @@
     "message": "Duo two-step login is required for your account."
   },
   "launchDuo": {
-    "message": "Launch Duo"
+    "message": "啟動 Duo"
   },
   "turnOn": {
     "message": "開啟"
@@ -6647,40 +6650,40 @@
     "message": "Verification required for this action. Set a PIN to continue."
   },
   "setPin": {
-    "message": "Set PIN"
+    "message": "設定 PIN 碼"
   },
   "verifyWithBiometrics": {
-    "message": "Verify with biometrics"
+    "message": "使用生物辨識進行驗證"
   },
   "awaitingConfirmation": {
-    "message": "Awaiting confirmation"
+    "message": "正在等待確認"
   },
   "couldNotCompleteBiometrics": {
-    "message": "Could not complete biometrics."
+    "message": "無法完成生物辨識。"
   },
   "needADifferentMethod": {
-    "message": "Need a different method?"
+    "message": "需要不同的方法嗎？"
   },
   "useMasterPassword": {
-    "message": "Use master password"
+    "message": "使用主密碼"
   },
   "usePin": {
-    "message": "Use PIN"
+    "message": "使用 PIN 碼"
   },
   "useBiometrics": {
-    "message": "Use biometrics"
+    "message": "使用生物辨識"
   },
   "enterVerificationCodeSentToEmail": {
     "message": "Enter the verification code that was sent to your email."
   },
   "resendCode": {
-    "message": "Resend code"
+    "message": "重新傳送驗證碼"
   },
   "memberColumnHeader": {
-    "message": "Member"
+    "message": "成員"
   },
   "groupSlashMemberColumnHeader": {
-    "message": "Group/Member"
+    "message": "群組／成員"
   },
   "selectGroupsAndMembers": {
     "message": "選擇群組和成員"
@@ -6934,7 +6937,7 @@
     "description": "Software Development Kit"
   },
   "createAnAccount": {
-    "message": "Create an account"
+    "message": "建立帳號"
   },
   "createSecret": {
     "message": "建立機密"
@@ -7147,7 +7150,7 @@
     }
   },
   "verificationRequired": {
-    "message": "Verification required",
+    "message": "需要驗證",
     "description": "Default title for the user verification dialog."
   },
   "recoverAccount": {
@@ -7475,7 +7478,7 @@
     "description": "This is followed a by a hyperlink to the help website."
   },
   "installBrowserExtension": {
-    "message": "Install browser extension"
+    "message": "安裝瀏覽器擴充套件"
   },
   "installBrowserExtensionDetails": {
     "message": "Use the extension to quickly save logins and auto-fill forms without opening the web app."
@@ -7498,6 +7501,9 @@
   "collectionAccessRestricted": {
     "message": "Collection access is restricted"
   },
+  "readOnlyCollectionAccess": {
+    "message": "You do not have access to manage this collection."
+  },
   "grantCollectionAccess": {
     "message": "Grant groups or members access to this collection."
   },
@@ -7511,7 +7517,7 @@
     "message": "Service account access updated"
   },
   "commonImportFormats": {
-    "message": "Common formats",
+    "message": "常見格式",
     "description": "Label indicating the most common import formats"
   },
   "maintainYourSubscription": {
@@ -7525,7 +7531,7 @@
     }
   },
   "addAPaymentMethod": {
-    "message": "add a payment method",
+    "message": "新增付款方式",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
   },
   "collectionEnhancementsDesc": {
@@ -7536,7 +7542,7 @@
     "message": "Learn more about collection management"
   },
   "organizationInformation": {
-    "message": "Organization information"
+    "message": "組織資訊"
   },
   "confirmationDetails": {
     "message": "Confirmation details"
@@ -7548,7 +7554,7 @@
     "message": "We've sent a confirmation email to your email at "
   },
   "confirmCollectionEnhancementsDialogTitle": {
-    "message": "This action is irreversible"
+    "message": "此操作是不可逆轉的"
   },
   "confirmCollectionEnhancementsDialogContent": {
     "message": "Turning on this feature will deprecate the manager role and replace it with a Can manage permission. This will take a few moments. Do not make any organization changes until it is complete. Are you sure you want to proceed?"
@@ -7600,6 +7606,9 @@
   "providerPortal": {
     "message": "Provider Portal"
   },
+  "viewCollection": {
+    "message": "View collection"
+  },
   "restrictedGroupAccess": {
     "message": "You cannot add yourself to groups."
   },
@@ -7642,5 +7651,256 @@
   },
   "items": {
     "message": "Items"
+  },
+  "assignedSeats": {
+    "message": "Assigned seats"
+  },
+  "assigned": {
+    "message": "已指派"
+  },
+  "used": {
+    "message": "已使用"
+  },
+  "remaining": {
+    "message": "剩餘"
+  },
+  "unlinkOrganization": {
+    "message": "取消連結組織"
+  },
+  "manageSeats": {
+    "message": "MANAGE SEATS"
+  },
+  "manageSeatsDescription": {
+    "message": "Adjustments to seats will be reflected in the next billing cycle."
+  },
+  "unassignedSeatsDescription": {
+    "message": "Unassigned subscription seats"
+  },
+  "purchaseSeatDescription": {
+    "message": "Additional seats purchased"
+  },
+  "assignedSeatCannotUpdate": {
+    "message": "Assigned Seats can not be updated. Please contact your organization owner for assistance."
+  },
+  "subscriptionUpdateFailed": {
+    "message": "Subscription update failed"
+  },
+  "trial": {
+    "message": "Trial",
+    "description": "A subscription status label."
+  },
+  "pastDue": {
+    "message": "Past due",
+    "description": "A subscription status label"
+  },
+  "subscriptionExpired": {
+    "message": "Subscription expired",
+    "description": "The date header used when a subscription is past due."
+  },
+  "pastDueWarningForChargeAutomatically": {
+    "message": "You have a grace period of $DAYS$ days from your subscription expiration date to maintain your subscription. Please resolve the past due invoices by $SUSPENSION_DATE$.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "11"
+      },
+      "suspension_date": {
+        "content": "$2",
+        "example": "01/10/2024"
+      }
+    },
+    "description": "A warning shown to the user when their subscription is past due and they are charged automatically."
+  },
+  "pastDueWarningForSendInvoice": {
+    "message": "You have a grace period of $DAYS$ days from the date your first unpaid invoice is due to maintain your subscription. Please resolve the past due invoices by $SUSPENSION_DATE$.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "11"
+      },
+      "suspension_date": {
+        "content": "$2",
+        "example": "01/10/2024"
+      }
+    },
+    "description": "A warning shown to the user when their subscription is past due and they pay via invoice."
+  },
+  "unpaidInvoice": {
+    "message": "Unpaid invoice",
+    "description": "The header of a warning box shown to a user whose subscription is unpaid."
+  },
+  "toReactivateYourSubscription": {
+    "message": "To reactivate your subscription, please resolve the past due invoices.",
+    "description": "The body of a warning box shown to a user whose subscription is unpaid."
+  },
+  "cancellationDate": {
+    "message": "Cancellation date",
+    "description": "The date header used when a subscription is cancelled."
+  },
+  "machineAccountsCannotCreate": {
+    "message": "Machine accounts cannot be created in suspended organizations. Please contact your organization owner for assistance."
+  },
+  "machineAccount": {
+    "message": "Machine account",
+    "description": "A machine user which can be used to automate processes and access secrets in the system."
+  },
+  "machineAccounts": {
+    "message": "Machine accounts",
+    "description": "The title for the section that deals with machine accounts."
+  },
+  "newMachineAccount": {
+    "message": "New machine account",
+    "description": "Title for creating a new machine account."
+  },
+  "machineAccountsNoItemsMessage": {
+    "message": "Create a new machine account to get started automating secret access.",
+    "description": "Message to encourage the user to start creating machine accounts."
+  },
+  "machineAccountsNoItemsTitle": {
+    "message": "Nothing to show yet",
+    "description": "Title to indicate that there are no machine accounts to display."
+  },
+  "deleteMachineAccounts": {
+    "message": "Delete machine accounts",
+    "description": "Title for the action to delete one or multiple machine accounts."
+  },
+  "deleteMachineAccount": {
+    "message": "Delete machine account",
+    "description": "Title for the action to delete a single machine account."
+  },
+  "viewMachineAccount": {
+    "message": "View machine account",
+    "description": "Action to view the details of a machine account."
+  },
+  "deleteMachineAccountDialogMessage": {
+    "message": "Deleting machine account $MACHINE_ACCOUNT$ is permanent and irreversible.",
+    "placeholders": {
+      "machine_account": {
+        "content": "$1",
+        "example": "Machine account name"
+      }
+    }
+  },
+  "deleteMachineAccountsDialogMessage": {
+    "message": "Deleting machine accounts is permanent and irreversible."
+  },
+  "deleteMachineAccountsConfirmMessage": {
+    "message": "Delete $COUNT$ machine accounts",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteMachineAccountToast": {
+    "message": "Machine account deleted"
+  },
+  "deleteMachineAccountsToast": {
+    "message": "Machine accounts deleted"
+  },
+  "searchMachineAccounts": {
+    "message": "Search machine accounts",
+    "description": "Placeholder text for searching machine accounts."
+  },
+  "editMachineAccount": {
+    "message": "Edit machine account",
+    "description": "Title for editing a machine account."
+  },
+  "machineAccountName": {
+    "message": "Machine account name",
+    "description": "Label for the name of a machine account"
+  },
+  "machineAccountCreated": {
+    "message": "Machine account created",
+    "description": "Notifies that a new machine account has been created"
+  },
+  "machineAccountUpdated": {
+    "message": "Machine account updated",
+    "description": "Notifies that a machine account has been updated"
+  },
+  "projectMachineAccountsDescription": {
+    "message": "Grant machine accounts access to this project."
+  },
+  "projectMachineAccountsSelectHint": {
+    "message": "Type or select machine accounts"
+  },
+  "projectEmptyMachineAccountAccessPolicies": {
+    "message": "Add machine accounts to grant access"
+  },
+  "machineAccountPeopleDescription": {
+    "message": "Grant groups or people access to this machine account."
+  },
+  "machineAccountProjectsDescription": {
+    "message": "Assign projects to this machine account. "
+  },
+  "createMachineAccount": {
+    "message": "Create a machine account"
+  },
+  "maPeopleWarningMessage": {
+    "message": "Removing people from a machine account does not remove the access tokens they created. For security best practice, it is recommended to revoke access tokens created by people removed from a machine account."
+  },
+  "smAccessRemovalWarningMaTitle": {
+    "message": "Remove access to this machine account"
+  },
+  "smAccessRemovalWarningMaMessage": {
+    "message": "This action will remove your access to the machine account."
+  },
+  "machineAccountsIncluded": {
+    "message": "$COUNT$ machine accounts included",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "additionalMachineAccountCost": {
+    "message": "$COST$ per month for additional machine accounts",
+    "placeholders": {
+      "cost": {
+        "content": "$1",
+        "example": "$0.50"
+      }
+    }
+  },
+  "additionalMachineAccounts": {
+    "message": "Additional machine accounts"
+  },
+  "includedMachineAccounts": {
+    "message": "Your plan comes with $COUNT$ machine accounts.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "50"
+      }
+    }
+  },
+  "addAdditionalMachineAccounts": {
+    "message": "You can add additional machine accounts for $COST$ per month.",
+    "placeholders": {
+      "cost": {
+        "content": "$1",
+        "example": "$0.50"
+      }
+    }
+  },
+  "limitMachineAccounts": {
+    "message": "Limit machine accounts (optional)"
+  },
+  "limitMachineAccountsDesc": {
+    "message": "Set a limit for your machine accounts. Once this limit is reached, you will not be able to create new machine accounts."
+  },
+  "machineAccountLimit": {
+    "message": "Machine account limit (optional)"
+  },
+  "maxMachineAccountCost": {
+    "message": "Max potential machine account cost"
+  },
+  "machineAccountAccessUpdated": {
+    "message": "Machine account access updated"
+  },
+  "unassignedItemsBanner": {
+    "message": "Notice: Unassigned organization items are no longer visible in your All Vaults view across devices and are now only accessible via the Admin Console. Assign these items to a collection from the Admin Console to make them visible."
   }
 }

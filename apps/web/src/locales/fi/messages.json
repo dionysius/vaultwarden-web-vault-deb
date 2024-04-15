@@ -603,7 +603,7 @@
     "message": "Ei"
   },
   "loginOrCreateNewAccount": {
-    "message": "Käytä salattua holviasi kirjautumalla sisään tai tai luo uusi tili."
+    "message": "Käytä salattua holviasi kirjautumalla sisään tai luo uusi tili."
   },
   "loginWithDevice": {
     "message": "Laitteella kirjautuminen"
@@ -3168,7 +3168,7 @@
     }
   },
   "unlinkedSsoUser": {
-    "message": "Irrotti käyttäjän \"$ID$\" kertakirjautumisesta.",
+    "message": "Poisti kertakirjautumisen käyttäjältä \"$ID$\".",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4955,6 +4955,9 @@
   },
   "addExistingOrganization": {
     "message": "Lisää olemassa oleva organisaatio"
+  },
+  "addNewOrganization": {
+    "message": "Lisää uusi organisaatio"
   },
   "myProvider": {
     "message": "Oma toimittaja"
@@ -7498,6 +7501,9 @@
   "collectionAccessRestricted": {
     "message": "Kokoelman käyttöä on rajoitettu"
   },
+  "readOnlyCollectionAccess": {
+    "message": "Oikeutesi eivät riitä kokoelman hallintaan."
+  },
   "grantCollectionAccess": {
     "message": "Myönnä ryhmille tai henkilöille kokoelman käyttöoikeus."
   },
@@ -7600,6 +7606,9 @@
   "providerPortal": {
     "message": "Toimittajaportaali"
   },
+  "viewCollection": {
+    "message": "Tarkastele kokoelmaa"
+  },
   "restrictedGroupAccess": {
     "message": "Et voi lisätä itseäsi ryhmiin."
   },
@@ -7642,5 +7651,256 @@
   },
   "items": {
     "message": "Kohteet"
+  },
+  "assignedSeats": {
+    "message": "Määritetyt käyttäjäpaikat"
+  },
+  "assigned": {
+    "message": "Määritetty"
+  },
+  "used": {
+    "message": "Käytetty"
+  },
+  "remaining": {
+    "message": "Jäljellä"
+  },
+  "unlinkOrganization": {
+    "message": "Irrota organisaatio"
+  },
+  "manageSeats": {
+    "message": "HALLITSE KÄYTTÄJÄPAIKKOJA"
+  },
+  "manageSeatsDescription": {
+    "message": "Käyttäjäpaikkojen muutokset näkyvät seuraavalla laskutuskaudella."
+  },
+  "unassignedSeatsDescription": {
+    "message": "Tilauksen määrittämättömät käyttäjäpaikat"
+  },
+  "purchaseSeatDescription": {
+    "message": "Käyttäjäpaikkoja ostettu lisää"
+  },
+  "assignedSeatCannotUpdate": {
+    "message": "Määritettyjä käyttäjäpaikkoja ei ole mahdollista päivittää. Ole yhteydessä organisaatiosi omistajaan saadaksesi apua."
+  },
+  "subscriptionUpdateFailed": {
+    "message": "Tilausmuutos epäonnistui"
+  },
+  "trial": {
+    "message": "Kokeilu",
+    "description": "A subscription status label."
+  },
+  "pastDue": {
+    "message": "Erääntynyt",
+    "description": "A subscription status label"
+  },
+  "subscriptionExpired": {
+    "message": "Tilaus on päättynyt",
+    "description": "The date header used when a subscription is past due."
+  },
+  "pastDueWarningForChargeAutomatically": {
+    "message": "Sinulla on $DAYS$ päivän varoaika tilauksesi säilyttämiseksi. Maksa erääntyneet laskut $SUSPENSION_DATE$ mennessä.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "11"
+      },
+      "suspension_date": {
+        "content": "$2",
+        "example": "01/10/2024"
+      }
+    },
+    "description": "A warning shown to the user when their subscription is past due and they are charged automatically."
+  },
+  "pastDueWarningForSendInvoice": {
+    "message": "Sinulla on $DAYS$ päivän varoaika ensimmäisen erääntyneen laskusi eräpäivästä tilauksesi säilyttämiseksi. Maksa erääntyneet laskut $SUSPENSION_DATE$ mennessä.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "11"
+      },
+      "suspension_date": {
+        "content": "$2",
+        "example": "01/10/2024"
+      }
+    },
+    "description": "A warning shown to the user when their subscription is past due and they pay via invoice."
+  },
+  "unpaidInvoice": {
+    "message": "Maksamaton lasku",
+    "description": "The header of a warning box shown to a user whose subscription is unpaid."
+  },
+  "toReactivateYourSubscription": {
+    "message": "Palauta tilauksesi käyttöön maksamalla erääntyneet laskut.",
+    "description": "The body of a warning box shown to a user whose subscription is unpaid."
+  },
+  "cancellationDate": {
+    "message": "Peruutuspäivä",
+    "description": "The date header used when a subscription is cancelled."
+  },
+  "machineAccountsCannotCreate": {
+    "message": "Konetilien luonti ei ole mahdollista jäädytetyissä organisaatioissa. Ole yhteydessä organisaatiosi omistajaan saadaksesi apua."
+  },
+  "machineAccount": {
+    "message": "Konetili",
+    "description": "A machine user which can be used to automate processes and access secrets in the system."
+  },
+  "machineAccounts": {
+    "message": "Konetilit",
+    "description": "The title for the section that deals with machine accounts."
+  },
+  "newMachineAccount": {
+    "message": "Uusi konetili",
+    "description": "Title for creating a new machine account."
+  },
+  "machineAccountsNoItemsMessage": {
+    "message": "Aloita salaisen käytön automatisointi luomalla uusi konetili.",
+    "description": "Message to encourage the user to start creating machine accounts."
+  },
+  "machineAccountsNoItemsTitle": {
+    "message": "Ei vielä mitään näytettävää",
+    "description": "Title to indicate that there are no machine accounts to display."
+  },
+  "deleteMachineAccounts": {
+    "message": "Poista konetilit",
+    "description": "Title for the action to delete one or multiple machine accounts."
+  },
+  "deleteMachineAccount": {
+    "message": "Poista konetili",
+    "description": "Title for the action to delete a single machine account."
+  },
+  "viewMachineAccount": {
+    "message": "Näytä konetili",
+    "description": "Action to view the details of a machine account."
+  },
+  "deleteMachineAccountDialogMessage": {
+    "message": "Konetilin $MACHINE_ACCOUNT$ poisto on pysyvää ja peruuttamatonta.",
+    "placeholders": {
+      "machine_account": {
+        "content": "$1",
+        "example": "Machine account name"
+      }
+    }
+  },
+  "deleteMachineAccountsDialogMessage": {
+    "message": "Konetilien poisto on pysyvää ja peruuttamatonta."
+  },
+  "deleteMachineAccountsConfirmMessage": {
+    "message": "Poista $COUNT$ konetiliä",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteMachineAccountToast": {
+    "message": "Konetili poistettiin"
+  },
+  "deleteMachineAccountsToast": {
+    "message": "Konetilit poistettiin"
+  },
+  "searchMachineAccounts": {
+    "message": "Etsi konetileistä",
+    "description": "Placeholder text for searching machine accounts."
+  },
+  "editMachineAccount": {
+    "message": "Muokkaa konetiliä",
+    "description": "Title for editing a machine account."
+  },
+  "machineAccountName": {
+    "message": "Konetilin nimi",
+    "description": "Label for the name of a machine account"
+  },
+  "machineAccountCreated": {
+    "message": "Konetili luotiin",
+    "description": "Notifies that a new machine account has been created"
+  },
+  "machineAccountUpdated": {
+    "message": "Konetili päivitettiin",
+    "description": "Notifies that a machine account has been updated"
+  },
+  "projectMachineAccountsDescription": {
+    "message": "Myönnä konetileille käyttöoikeus projektiin."
+  },
+  "projectMachineAccountsSelectHint": {
+    "message": "Syötä tai valitse konetilit"
+  },
+  "projectEmptyMachineAccountAccessPolicies": {
+    "message": "Myönnä käyttöoikeuksia lisäämällä konetilejä"
+  },
+  "machineAccountPeopleDescription": {
+    "message": "Myönnä ryhmille tai henkilöille tämän konetilin käyttöoikeus."
+  },
+  "machineAccountProjectsDescription": {
+    "message": "Määritä konetilille projekteja. "
+  },
+  "createMachineAccount": {
+    "message": "Luo konetili"
+  },
+  "maPeopleWarningMessage": {
+    "message": "Henkilöiden poistaminen konetililtä ei poista heidän luomiaan käyttötunnisteita. Parasta suojauskäytäntöä varten on suositeltavaa mitätöidä konetililtä poistettujen henkilöiden luomat tunnukset."
+  },
+  "smAccessRemovalWarningMaTitle": {
+    "message": "Poista konetilin käyttöoikeus"
+  },
+  "smAccessRemovalWarningMaMessage": {
+    "message": "Tämä poistaa käyttöoikeutesi konetiliin."
+  },
+  "machineAccountsIncluded": {
+    "message": "Sisältää $COUNT$ konetiliä",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "additionalMachineAccountCost": {
+    "message": "Jokainen lisätty konetili kustantaa $COST$ kuukaudessa",
+    "placeholders": {
+      "cost": {
+        "content": "$1",
+        "example": "$0.50"
+      }
+    }
+  },
+  "additionalMachineAccounts": {
+    "message": "Lisättävät konetilit"
+  },
+  "includedMachineAccounts": {
+    "message": "Tilaukseesi sisältyy $COUNT$ konetiliä.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "50"
+      }
+    }
+  },
+  "addAdditionalMachineAccounts": {
+    "message": "Voit hankkia lisää konetilejä hintaan $COST$/tili/kuukausi.",
+    "placeholders": {
+      "cost": {
+        "content": "$1",
+        "example": "$0.50"
+      }
+    }
+  },
+  "limitMachineAccounts": {
+    "message": "Rajoita konetilien määrää (valinnainen)"
+  },
+  "limitMachineAccountsDesc": {
+    "message": "Aseta tilaukseesi sisältyvä konetilien määrä. Määrän täytyttyä et voi luoda uusia konetilejä."
+  },
+  "machineAccountLimit": {
+    "message": "Konetilien enimmäismäärä (valinnainen)"
+  },
+  "maxMachineAccountCost": {
+    "message": "Konetilin mahdollinen enimmäiskustannus"
+  },
+  "machineAccountAccessUpdated": {
+    "message": "Konetilin oikeuksia muutettiin"
+  },
+  "unassignedItemsBanner": {
+    "message": "Huomautus: Organisaation kohteita, joita ei ole lisätty kokoelmaan, ei enää näytetä laitteiden \"Kaikki holvit\" -näkymissä, ja jatkossa ne näkyvät vain hallintakonsolin kautta. Lisää kohteet kokoelmiin, jotta ne ovat laitteilla käytettävissä."
   }
 }

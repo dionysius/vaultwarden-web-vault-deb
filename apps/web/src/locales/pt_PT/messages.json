@@ -2051,7 +2051,7 @@
     "message": "Prioridade no apoio ao cliente."
   },
   "premiumSignUpFuture": {
-    "message": "Todas as futuras funcionalidades Premium. Mais em breve!"
+    "message": "Todas as futuras funcionalidades Premium. E muitas mais em breve!"
   },
   "premiumPrice": {
     "message": "Tudo por apenas $PRICE$ /ano!",
@@ -2532,7 +2532,7 @@
     }
   },
   "trialThankYou": {
-    "message": "Obrigado por se inscrever no Bitwarden para $PLAN$!",
+    "message": "Obrigado por se registar no Bitwarden para $PLAN$!",
     "placeholders": {
       "plan": {
         "content": "$1",
@@ -2541,7 +2541,7 @@
     }
   },
   "trialSecretsManagerThankYou": {
-    "message": "Obrigado por se inscrever no Gestor de Segredos Bitwarden para o plano $PLAN$!",
+    "message": "Obrigado por se registar no Gestor de Segredos Bitwarden para o plano $PLAN$!",
     "placeholders": {
       "plan": {
         "content": "$1",
@@ -3534,7 +3534,7 @@
     "message": "Opções adicionais"
   },
   "additionalOptionsDesc": {
-    "message": "Para obter ajuda adicional na gestão da sua subscrição, contacte o serviço de apoio ao cliente."
+    "message": "Para obter ajuda adicional na gestão da sua subscrição, por favor, contacte o apoio ao cliente."
   },
   "subscriptionUserSeatsUnlimitedAutoscale": {
     "message": "Os ajustes à sua subscrição resultarão em alterações proporcionais aos seus totais de faturação. Se os novos utilizadores convidados excederem o número de licenças da sua subscrição, receberá imediatamente uma cobrança proporcional pelos utilizadores adicionais."
@@ -3717,16 +3717,16 @@
     "message": "Organização suspensa"
   },
   "secretsAccessSuspended": {
-    "message": "Não é possível aceder a organizações suspensas. Contacte o proprietário da organização para obter assistência."
+    "message": "Não é possível aceder a organizações suspensas. Por favor, contacte o proprietário da organização para obter assistência."
   },
   "secretsCannotCreate": {
-    "message": "Os segredos não podem ser criados em organizações suspensas. Contacte o proprietário da organização para obter assistência."
+    "message": "Os segredos não podem ser criados em organizações suspensas. Por favor, contacte o proprietário da organização para obter assistência."
   },
   "projectsCannotCreate": {
-    "message": "Os projetos não podem ser criados em organizações suspensas. Contacte o proprietário da organização para obter assistência."
+    "message": "Os projetos não podem ser criados em organizações suspensas. Por favor, contacte o proprietário da organização para obter assistência."
   },
   "serviceAccountsCannotCreate": {
-    "message": "As contas de serviço não podem ser criadas em organizações suspensas. Contacte o proprietário da organização para obter assistência."
+    "message": "As contas de serviço não podem ser criadas em organizações suspensas. Por favor, contacte o proprietário da organização para obter assistência."
   },
   "disabledOrganizationFilterError": {
     "message": "Não é possível aceder aos itens de organizações suspensas. Contacte o proprietário da organização para obter assistência."
@@ -4102,7 +4102,7 @@
     "message": "Impedir os membros de aderirem a outras organizações."
   },
   "singleOrgBlockCreateMessage": {
-    "message": "A sua organização atual tem uma política que não lhe permite aderir a mais do que uma organização. Contacte os administradores da sua organização ou inscreva-se a partir de uma conta Bitwarden diferente."
+    "message": "A sua organização atual tem uma política que não lhe permite aderir a mais do que uma organização. Por favor, contacte os administradores da sua organização ou registe-se a partir de uma conta Bitwarden diferente."
   },
   "singleOrgPolicyWarning": {
     "message": "Os membros da organização que não sejam proprietários ou administradores e que já sejam membros de outra organização serão removidos da sua organização."
@@ -4638,7 +4638,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send **or** sign up to try it today.'"
   },
   "sendAccessTaglineSignUp": {
-    "message": "inscreva-se",
+    "message": "registe-se",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more about Bitwarden Send or **sign up** to try it today.'"
   },
   "sendAccessTaglineTryToday": {
@@ -4896,7 +4896,7 @@
     "message": "Foi convidado a configurar um novo fornecedor. Para continuar, é necessário iniciar sessão ou criar uma nova conta Bitwarden."
   },
   "setupProviderDesc": {
-    "message": "Introduza os dados abaixo para concluir a configuração do fornecedor. Contacte o apoio ao cliente se tiver alguma dúvida."
+    "message": "Por favor, introduza os dados abaixo para concluir a configuração do fornecedor. Contacte o apoio ao cliente se tiver alguma dúvida."
   },
   "providerName": {
     "message": "Nome do fornecedor"
@@ -4955,6 +4955,9 @@
   },
   "addExistingOrganization": {
     "message": "Adicionar organização existente"
+  },
+  "addNewOrganization": {
+    "message": "Adicionar nova organização"
   },
   "myProvider": {
     "message": "O meu fornecedor"
@@ -7498,6 +7501,9 @@
   "collectionAccessRestricted": {
     "message": "O acesso à coleção é restrito"
   },
+  "readOnlyCollectionAccess": {
+    "message": "Não tem acesso para gerir esta coleção."
+  },
   "grantCollectionAccess": {
     "message": "Conceder a grupos ou membros acesso a esta coleção."
   },
@@ -7542,7 +7548,7 @@
     "message": "Detalhes da confirmação"
   },
   "smFreeTrialThankYou": {
-    "message": "Obrigado por se inscrever no Gestor de Segredos Bitwarden!"
+    "message": "Obrigado por se registar no Gestor de Segredos Bitwarden!"
   },
   "smFreeTrialConfirmationEmail": {
     "message": "Enviámos um e-mail de confirmação para o seu e-mail:"
@@ -7600,6 +7606,9 @@
   "providerPortal": {
     "message": "Portal do fornecedor"
   },
+  "viewCollection": {
+    "message": "Ver coleção"
+  },
   "restrictedGroupAccess": {
     "message": "Não se pode adicionar a si próprio a grupos."
   },
@@ -7642,5 +7651,256 @@
   },
   "items": {
     "message": "Itens"
+  },
+  "assignedSeats": {
+    "message": "Lugares atribuídos"
+  },
+  "assigned": {
+    "message": "Atribuídos"
+  },
+  "used": {
+    "message": "Utilizados"
+  },
+  "remaining": {
+    "message": "Restantes"
+  },
+  "unlinkOrganization": {
+    "message": "Desvincular a organização"
+  },
+  "manageSeats": {
+    "message": "GERIR LUGARES"
+  },
+  "manageSeatsDescription": {
+    "message": "Os ajustes nos lugares serão refletidos no ciclo de faturação seguinte."
+  },
+  "unassignedSeatsDescription": {
+    "message": "Lugares de subscrição não atribuídos"
+  },
+  "purchaseSeatDescription": {
+    "message": "Lugares adicionais adquiridos"
+  },
+  "assignedSeatCannotUpdate": {
+    "message": "Os lugares atribuídos não podem ser atualizados. Por favor, contacte o proprietário da organização para obter assistência."
+  },
+  "subscriptionUpdateFailed": {
+    "message": "Falha na atualização da subscrição"
+  },
+  "trial": {
+    "message": "Período experimental",
+    "description": "A subscription status label."
+  },
+  "pastDue": {
+    "message": "Vencida",
+    "description": "A subscription status label"
+  },
+  "subscriptionExpired": {
+    "message": "Subscrição expirada",
+    "description": "The date header used when a subscription is past due."
+  },
+  "pastDueWarningForChargeAutomatically": {
+    "message": "Dispõe de um período de carência de $DAYS$ dias a partir da data de expiração da sua subscrição para manter a sua subscrição. Por favor, resolva as faturas vencidas até $SUSPENSION_DATE$.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "11"
+      },
+      "suspension_date": {
+        "content": "$2",
+        "example": "01/10/2024"
+      }
+    },
+    "description": "A warning shown to the user when their subscription is past due and they are charged automatically."
+  },
+  "pastDueWarningForSendInvoice": {
+    "message": "Dispõe de um período de carência de $DAYS$ dias a partir da data de vencimento da sua primeira fatura não paga para manter a sua subscrição. Por favor, resolva as faturas vencidas até $SUSPENSION_DATE$.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "11"
+      },
+      "suspension_date": {
+        "content": "$2",
+        "example": "01/10/2024"
+      }
+    },
+    "description": "A warning shown to the user when their subscription is past due and they pay via invoice."
+  },
+  "unpaidInvoice": {
+    "message": "Fatura não paga",
+    "description": "The header of a warning box shown to a user whose subscription is unpaid."
+  },
+  "toReactivateYourSubscription": {
+    "message": "Para reativar a sua subscrição, por favor, resolva as faturas vencidas.",
+    "description": "The body of a warning box shown to a user whose subscription is unpaid."
+  },
+  "cancellationDate": {
+    "message": "Data de cancelamento",
+    "description": "The date header used when a subscription is cancelled."
+  },
+  "machineAccountsCannotCreate": {
+    "message": "As contas automáticas não podem ser criadas em organizações suspensas. Por favor, contacte o proprietário da organização para obter assistência."
+  },
+  "machineAccount": {
+    "message": "Conta automática",
+    "description": "A machine user which can be used to automate processes and access secrets in the system."
+  },
+  "machineAccounts": {
+    "message": "Contas automáticas",
+    "description": "The title for the section that deals with machine accounts."
+  },
+  "newMachineAccount": {
+    "message": "Nova conta automática",
+    "description": "Title for creating a new machine account."
+  },
+  "machineAccountsNoItemsMessage": {
+    "message": "Crie uma nova conta automática para começar a automatizar o acesso a segredos.",
+    "description": "Message to encourage the user to start creating machine accounts."
+  },
+  "machineAccountsNoItemsTitle": {
+    "message": "Ainda não há nada para mostrar",
+    "description": "Title to indicate that there are no machine accounts to display."
+  },
+  "deleteMachineAccounts": {
+    "message": "Eliminar contas automáticas",
+    "description": "Title for the action to delete one or multiple machine accounts."
+  },
+  "deleteMachineAccount": {
+    "message": "Eliminar conta automática",
+    "description": "Title for the action to delete a single machine account."
+  },
+  "viewMachineAccount": {
+    "message": "Ver conta automática",
+    "description": "Action to view the details of a machine account."
+  },
+  "deleteMachineAccountDialogMessage": {
+    "message": "A eliminação da conta automática $MACHINE_ACCOUNT$ é permanente e irreversível.",
+    "placeholders": {
+      "machine_account": {
+        "content": "$1",
+        "example": "Machine account name"
+      }
+    }
+  },
+  "deleteMachineAccountsDialogMessage": {
+    "message": "A eliminação de contas automáticas é permanente e irreversível."
+  },
+  "deleteMachineAccountsConfirmMessage": {
+    "message": "Eliminar $COUNT$ contas automáticas",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteMachineAccountToast": {
+    "message": "Conta automática eliminada"
+  },
+  "deleteMachineAccountsToast": {
+    "message": "Contas automáticas eliminadas"
+  },
+  "searchMachineAccounts": {
+    "message": "Procurar contas automáticas",
+    "description": "Placeholder text for searching machine accounts."
+  },
+  "editMachineAccount": {
+    "message": "Editar conta automática",
+    "description": "Title for editing a machine account."
+  },
+  "machineAccountName": {
+    "message": "Nome da conta automática",
+    "description": "Label for the name of a machine account"
+  },
+  "machineAccountCreated": {
+    "message": "Conta automática criada",
+    "description": "Notifies that a new machine account has been created"
+  },
+  "machineAccountUpdated": {
+    "message": "Conta automática atualizada",
+    "description": "Notifies that a machine account has been updated"
+  },
+  "projectMachineAccountsDescription": {
+    "message": "Conceder acesso a este projeto às contas automáticas."
+  },
+  "projectMachineAccountsSelectHint": {
+    "message": "Escreva ou selecione contas automáticas"
+  },
+  "projectEmptyMachineAccountAccessPolicies": {
+    "message": "Adicionar contas automáticas para conceder acesso"
+  },
+  "machineAccountPeopleDescription": {
+    "message": "Conceder a grupos ou pessoas acesso a esta conta automática."
+  },
+  "machineAccountProjectsDescription": {
+    "message": "Atribuir projetos a esta conta automática. "
+  },
+  "createMachineAccount": {
+    "message": "Criar uma conta automática"
+  },
+  "maPeopleWarningMessage": {
+    "message": "Remover pessoas de uma conta automática não remove os tokens de acesso que criaram. Como prática recomendada de segurança, recomenda-se a revogação dos tokens de acesso criados por pessoas removidas de uma conta automática."
+  },
+  "smAccessRemovalWarningMaTitle": {
+    "message": "Remover o acesso a esta conta automática"
+  },
+  "smAccessRemovalWarningMaMessage": {
+    "message": "Esta ação retirará o seu acesso à conta automática."
+  },
+  "machineAccountsIncluded": {
+    "message": "$COUNT$ contas automáticas incluídas",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "additionalMachineAccountCost": {
+    "message": "$COST$ por mês para contas automáticas adicionais",
+    "placeholders": {
+      "cost": {
+        "content": "$1",
+        "example": "$0.50"
+      }
+    }
+  },
+  "additionalMachineAccounts": {
+    "message": "Contas automáticas adicionais"
+  },
+  "includedMachineAccounts": {
+    "message": "O seu plano inclui $COUNT$ contas automáticas.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "50"
+      }
+    }
+  },
+  "addAdditionalMachineAccounts": {
+    "message": "Pode adicionar contas automáticas adicionais por $COST$ por mês.",
+    "placeholders": {
+      "cost": {
+        "content": "$1",
+        "example": "$0.50"
+      }
+    }
+  },
+  "limitMachineAccounts": {
+    "message": "Limitar contas automáticas (opcional)"
+  },
+  "limitMachineAccountsDesc": {
+    "message": "Defina um limite para as suas contas automáticas. Quando este limite for atingido, não será possível criar novas contas automáticas."
+  },
+  "machineAccountLimit": {
+    "message": "Limite de contas automáticas (opcional)"
+  },
+  "maxMachineAccountCost": {
+    "message": "Custo potencial máximo da conta automática"
+  },
+  "machineAccountAccessUpdated": {
+    "message": "Acesso à conta automática atualizado"
+  },
+  "unassignedItemsBanner": {
+    "message": "Aviso: Os itens da organização não atribuídos já não são visíveis na sua vista Todos os cofres em todos os dispositivos e agora só estão acessíveis através da Consola de administração. Atribua estes itens a uma coleção a partir da Consola de administração para os tornar visíveis."
   }
 }

@@ -4956,6 +4956,9 @@
   "addExistingOrganization": {
     "message": "Bestaande organisatie toevoegen"
   },
+  "addNewOrganization": {
+    "message": "Nieuwe organisatie toevoegen"
+  },
   "myProvider": {
     "message": "Mijn provider"
   },
@@ -7498,6 +7501,9 @@
   "collectionAccessRestricted": {
     "message": "Collectietoegang is beperkt"
   },
+  "readOnlyCollectionAccess": {
+    "message": "Je hebt geen toegang om deze collectie te beheren."
+  },
   "grantCollectionAccess": {
     "message": "Groepen of mensen toegang tot deze collectie geven."
   },
@@ -7600,6 +7606,9 @@
   "providerPortal": {
     "message": "Providerportaal"
   },
+  "viewCollection": {
+    "message": "Collectie weergeven"
+  },
   "restrictedGroupAccess": {
     "message": "Het is niet mogelijk om jezelf toe te voegen aan groepen."
   },
@@ -7642,5 +7651,256 @@
   },
   "items": {
     "message": "Items"
+  },
+  "assignedSeats": {
+    "message": "Toegewezen plaatsen"
+  },
+  "assigned": {
+    "message": "Toegewezen"
+  },
+  "used": {
+    "message": "Gebruikt"
+  },
+  "remaining": {
+    "message": "Resterend"
+  },
+  "unlinkOrganization": {
+    "message": "Organisatie ontkoppelen"
+  },
+  "manageSeats": {
+    "message": "PLAATSEN BEHEREN"
+  },
+  "manageSeatsDescription": {
+    "message": "Aanpassingen op plaatsen zijn effectief in de volgende factureringscyclus."
+  },
+  "unassignedSeatsDescription": {
+    "message": "Niet-toegewezen stoelen"
+  },
+  "purchaseSeatDescription": {
+    "message": "Aanvullende gekochte plaatsen"
+  },
+  "assignedSeatCannotUpdate": {
+    "message": "Je kunt toegewezen plaatsen niet bijwerken. Neem contact op met de eigenaar van je organisatie voor ondersteuning."
+  },
+  "subscriptionUpdateFailed": {
+    "message": "Abonnement bijwerken mislukt"
+  },
+  "trial": {
+    "message": "Proefperiode",
+    "description": "A subscription status label."
+  },
+  "pastDue": {
+    "message": "Verlopen",
+    "description": "A subscription status label"
+  },
+  "subscriptionExpired": {
+    "message": "Abonnement verlopen",
+    "description": "The date header used when a subscription is past due."
+  },
+  "pastDueWarningForChargeAutomatically": {
+    "message": "Je hebt een gratieperiode van $DAYS$ dagen vanaf de vervaldatum van je abonnement om je abonnement te behouden. Graag de openstaande facturen voor $SUSPENSION_DATE$ voldoen.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "11"
+      },
+      "suspension_date": {
+        "content": "$2",
+        "example": "01/10/2024"
+      }
+    },
+    "description": "A warning shown to the user when their subscription is past due and they are charged automatically."
+  },
+  "pastDueWarningForSendInvoice": {
+    "message": "Je hebt een gratieperiode van $DAYS$ dagen vanaf de datum waarop je eerste niet-betaalde factuur verloopt om je abonnement te behouden. Graag de openstaande facturen voor $SUSPENSION_DATE$ voldoen.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "11"
+      },
+      "suspension_date": {
+        "content": "$2",
+        "example": "01/10/2024"
+      }
+    },
+    "description": "A warning shown to the user when their subscription is past due and they pay via invoice."
+  },
+  "unpaidInvoice": {
+    "message": "Openstaande factuur",
+    "description": "The header of a warning box shown to a user whose subscription is unpaid."
+  },
+  "toReactivateYourSubscription": {
+    "message": "Voldoe de openstaande facturen om je abonnement te activeren.",
+    "description": "The body of a warning box shown to a user whose subscription is unpaid."
+  },
+  "cancellationDate": {
+    "message": "Annuleringsdatum",
+    "description": "The date header used when a subscription is cancelled."
+  },
+  "machineAccountsCannotCreate": {
+    "message": "Je kunt geen machine-accounts aanmaken in opgeschorte organisaties. Neem contact op met de eigenaar van je organisatie voor hulp."
+  },
+  "machineAccount": {
+    "message": "Machine-account",
+    "description": "A machine user which can be used to automate processes and access secrets in the system."
+  },
+  "machineAccounts": {
+    "message": "Machine-accounts",
+    "description": "The title for the section that deals with machine accounts."
+  },
+  "newMachineAccount": {
+    "message": "Nieuw machine-account",
+    "description": "Title for creating a new machine account."
+  },
+  "machineAccountsNoItemsMessage": {
+    "message": "Nieuw machine-account aanmaken om te beginnen met het automatiseren van secrets.",
+    "description": "Message to encourage the user to start creating machine accounts."
+  },
+  "machineAccountsNoItemsTitle": {
+    "message": "Nog niets te tonen",
+    "description": "Title to indicate that there are no machine accounts to display."
+  },
+  "deleteMachineAccounts": {
+    "message": "Machine-accounts verwijderen",
+    "description": "Title for the action to delete one or multiple machine accounts."
+  },
+  "deleteMachineAccount": {
+    "message": "Machine-account verwijderen",
+    "description": "Title for the action to delete a single machine account."
+  },
+  "viewMachineAccount": {
+    "message": "Machine-account weergeven",
+    "description": "Action to view the details of a machine account."
+  },
+  "deleteMachineAccountDialogMessage": {
+    "message": "Het verwijderen van machine-account $MACHINE_ACCOUNT$ is definitief en onomkeerbaar.",
+    "placeholders": {
+      "machine_account": {
+        "content": "$1",
+        "example": "Machine account name"
+      }
+    }
+  },
+  "deleteMachineAccountsDialogMessage": {
+    "message": "Het verwijderen van machine-accounts is definitief en onomkeerbaar."
+  },
+  "deleteMachineAccountsConfirmMessage": {
+    "message": "$COUNT$ machine-accounts verwijderen",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteMachineAccountToast": {
+    "message": "Machine-account verwijderd"
+  },
+  "deleteMachineAccountsToast": {
+    "message": "Machine-accounts verwijderd"
+  },
+  "searchMachineAccounts": {
+    "message": "Machine-accounts zoeken",
+    "description": "Placeholder text for searching machine accounts."
+  },
+  "editMachineAccount": {
+    "message": "Machine-account bewerken",
+    "description": "Title for editing a machine account."
+  },
+  "machineAccountName": {
+    "message": "Machine-accountnaam",
+    "description": "Label for the name of a machine account"
+  },
+  "machineAccountCreated": {
+    "message": "Machine-account aangemaakt",
+    "description": "Notifies that a new machine account has been created"
+  },
+  "machineAccountUpdated": {
+    "message": "Machine-account verwijderd",
+    "description": "Notifies that a machine account has been updated"
+  },
+  "projectMachineAccountsDescription": {
+    "message": "Machine-accounts toegang tot dit project geven."
+  },
+  "projectMachineAccountsSelectHint": {
+    "message": "Typ of selecteer machine-accounts"
+  },
+  "projectEmptyMachineAccountAccessPolicies": {
+    "message": "Machine-accounts toevoegen om toegang te verlenen"
+  },
+  "machineAccountPeopleDescription": {
+    "message": "Groepen of mensen toegang tot dit machine-account geven."
+  },
+  "machineAccountProjectsDescription": {
+    "message": "Projecten aan dit machine-account toewijzen. "
+  },
+  "createMachineAccount": {
+    "message": "Machine-account aanmaken"
+  },
+  "maPeopleWarningMessage": {
+    "message": "Het verwijderen van mensen uit een machine-account verwijdert de door hen aangemaakte toegangstokens niet. Voor de veiligheid kun je het beste de toegangstokens die zijn gemaakt door mensen die zijn verwijderd uit een machine-account intrekken."
+  },
+  "smAccessRemovalWarningMaTitle": {
+    "message": "Toegang tot dit machine-account verwijderen"
+  },
+  "smAccessRemovalWarningMaMessage": {
+    "message": "Deze actie verwijdert je toegang tot het machine-account."
+  },
+  "machineAccountsIncluded": {
+    "message": "$COUNT$ machine-accounts inbegrepen",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "additionalMachineAccountCost": {
+    "message": "$COST$ per maand voor extra machine-accounts",
+    "placeholders": {
+      "cost": {
+        "content": "$1",
+        "example": "$0.50"
+      }
+    }
+  },
+  "additionalMachineAccounts": {
+    "message": "Extra machine-accounts"
+  },
+  "includedMachineAccounts": {
+    "message": "Bij je abonnement horen $COUNT$ machine-accounts.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "50"
+      }
+    }
+  },
+  "addAdditionalMachineAccounts": {
+    "message": "Je kunt extra machine-accounts toevoegen voor $COST$ per maand.",
+    "placeholders": {
+      "cost": {
+        "content": "$1",
+        "example": "$0.50"
+      }
+    }
+  },
+  "limitMachineAccounts": {
+    "message": "Machine-accounts beperken (optioneel)"
+  },
+  "limitMachineAccountsDesc": {
+    "message": "Stel een limiet in voor je machine-accounts. Zodra deze limiet is bereikt, kun je geen nieuwe machine-accounts toevoegen."
+  },
+  "machineAccountLimit": {
+    "message": "Machine-account limiet (optioneel)"
+  },
+  "maxMachineAccountCost": {
+    "message": "Maximale potentiële machine-account kosten"
+  },
+  "machineAccountAccessUpdated": {
+    "message": "Toegang tot machine-account bijgewerkt"
+  },
+  "unassignedItemsBanner": {
+    "message": "Notice: Unassigned organization items are no longer visible in your All Vaults view across devices and are now only accessible via the Admin Console. Assign these items to a collection from the Admin Console to make them visible."
   }
 }

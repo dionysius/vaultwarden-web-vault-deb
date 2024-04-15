@@ -4956,6 +4956,9 @@
   "addExistingOrganization": {
     "message": "Mövcud təşkilatı əlavə et"
   },
+  "addNewOrganization": {
+    "message": "Yeni təşkilat əlavə et"
+  },
   "myProvider": {
     "message": "Provayderim"
   },
@@ -7498,6 +7501,9 @@
   "collectionAccessRestricted": {
     "message": "Kolleksiya müraciəti məhdudlaşdırıldı"
   },
+  "readOnlyCollectionAccess": {
+    "message": "Bu kolleksiyanı idarə etmək üçün müraciətiniz yoxdur."
+  },
   "grantCollectionAccess": {
     "message": "Qrup və ya üzvlərin bu kolleksiyaya müraciətinə icazə verin."
   },
@@ -7600,6 +7606,9 @@
   "providerPortal": {
     "message": "Provayder Portal"
   },
+  "viewCollection": {
+    "message": "Kolleksiyaya bax"
+  },
   "restrictedGroupAccess": {
     "message": "Özünüzü qruplara əlavə edə bilməzsiniz."
   },
@@ -7607,28 +7616,28 @@
     "message": "Özünüzü kolleksiyalara əlavə edə bilməzsiniz."
   },
   "assign": {
-    "message": "Assign"
+    "message": "Təyin et"
   },
   "assignToCollections": {
-    "message": "Assign to collections"
+    "message": "Kolleksiyalara təyin et"
   },
   "assignToTheseCollections": {
-    "message": "Assign to these collections"
+    "message": "Bu kolleksiyalara təyin et"
   },
   "bulkCollectionAssignmentDialogDescription": {
-    "message": "Select the collections that the items will be shared with. Once an item is updated in one collection, it will be reflected in all collections. Only organization members with access to these collections will be able to see the items."
+    "message": "Elementlərin paylaşılacağı kolleksiyaları seçin. Bir kolleksiyada bir element güncəlləndikdə, bütün kolleksiyalarda əks olunacaq. Elementləri, yalnız bu kolleksiyalara müraciət edə bilən təşkilat üzvləri görə bilər."
   },
   "selectCollectionsToAssign": {
-    "message": "Select collections to assign"
+    "message": "Təyin ediləcək kolleksiyaları seçin"
   },
   "noCollectionsAssigned": {
-    "message": "No collections have been assigned"
+    "message": "Heç bir kolleksiya təyin edilmədi"
   },
   "successfullyAssignedCollections": {
-    "message": "Successfully assigned collections"
+    "message": "Uğurla təyin edilən kolleksiyalar"
   },
   "bulkCollectionAssignmentWarning": {
-    "message": "You have selected $TOTAL_COUNT$ items. You cannot update $READONLY_COUNT$ of the items because you do not have edit permissions.",
+    "message": "$TOTAL_COUNT$ element seçmisiniz. Düzəliş icazəniz olmadığı üçün $READONLY_COUNT$ elementi güncəlləyə bilməzsiniz.",
     "placeholders": {
       "total_count": {
         "content": "$1",
@@ -7641,6 +7650,257 @@
     }
   },
   "items": {
-    "message": "Items"
+    "message": "Elementlər"
+  },
+  "assignedSeats": {
+    "message": "Təyin edilən yerlər"
+  },
+  "assigned": {
+    "message": "Təyin edilmiş"
+  },
+  "used": {
+    "message": "İstifadə edilmiş"
+  },
+  "remaining": {
+    "message": "Qalan"
+  },
+  "unlinkOrganization": {
+    "message": "Təşkilatı ayır"
+  },
+  "manageSeats": {
+    "message": "YERLƏRİ İDARƏ ET"
+  },
+  "manageSeatsDescription": {
+    "message": "Yerlərə edilən düzəlişlər növbəti hesablaşma dövründə öz əksini tapacaq."
+  },
+  "unassignedSeatsDescription": {
+    "message": "Təyin edilməmiş abunəlik yerləri"
+  },
+  "purchaseSeatDescription": {
+    "message": "Əlavə yerlər satın alındı"
+  },
+  "assignedSeatCannotUpdate": {
+    "message": "Təyin edilən yerlər güncəllənə bilməz. Lütfən kömək üçün təşkilatınızın sahibi ilə əlaqə saxlayın."
+  },
+  "subscriptionUpdateFailed": {
+    "message": "Abunəlik güncəllənmədi"
+  },
+  "trial": {
+    "message": "Sınaq",
+    "description": "A subscription status label."
+  },
+  "pastDue": {
+    "message": "Vaxtı keçmiş",
+    "description": "A subscription status label"
+  },
+  "subscriptionExpired": {
+    "message": "Abunəliyin müddəti bitib",
+    "description": "The date header used when a subscription is past due."
+  },
+  "pastDueWarningForChargeAutomatically": {
+    "message": "Abunəliyinizi davam etdirmək üçün abunəliyin bitmə tarixindən etibarən $DAYS$ gün güzəşt dövrünüz var. $SUSPENSION_DATE$ tarixinə qədər vaxtı keçmiş fakturaları həll edin.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "11"
+      },
+      "suspension_date": {
+        "content": "$2",
+        "example": "01/10/2024"
+      }
+    },
+    "description": "A warning shown to the user when their subscription is past due and they are charged automatically."
+  },
+  "pastDueWarningForSendInvoice": {
+    "message": "Abunəliyinizi davam etdirmək üçün ilk ödənilməmiş fakturanızın yazıldığı tarixdən etibarən $DAYS$ gün güzəşt dövrünüz var. $SUSPENSION_DATE$ tarixinə qədər vaxtı keçmiş fakturaları həll edin.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "11"
+      },
+      "suspension_date": {
+        "content": "$2",
+        "example": "01/10/2024"
+      }
+    },
+    "description": "A warning shown to the user when their subscription is past due and they pay via invoice."
+  },
+  "unpaidInvoice": {
+    "message": "Ödənilməmiş faktura",
+    "description": "The header of a warning box shown to a user whose subscription is unpaid."
+  },
+  "toReactivateYourSubscription": {
+    "message": "Abunəliyi yenidən aktivləşdirmək üçün lütfən vaxtı keçmiş fakturaları həll edin.",
+    "description": "The body of a warning box shown to a user whose subscription is unpaid."
+  },
+  "cancellationDate": {
+    "message": "Ləğv tarixi",
+    "description": "The date header used when a subscription is cancelled."
+  },
+  "machineAccountsCannotCreate": {
+    "message": "Maşın hesabları fəaliyyəti dayandırılmış təşkilatlarda yaradıla bilməz. Lütfən kömək üçün təşkilatınızın sahibi ilə əlaqə saxlayın."
+  },
+  "machineAccount": {
+    "message": "Maşın hesabı",
+    "description": "A machine user which can be used to automate processes and access secrets in the system."
+  },
+  "machineAccounts": {
+    "message": "Maşın hesabları",
+    "description": "The title for the section that deals with machine accounts."
+  },
+  "newMachineAccount": {
+    "message": "Yeni maşın hesabı",
+    "description": "Title for creating a new machine account."
+  },
+  "machineAccountsNoItemsMessage": {
+    "message": "\"Sirr\" müraciətini avtomatlaşdırmağa başlamaq üçün yeni bir maşın hesabı yaradın.",
+    "description": "Message to encourage the user to start creating machine accounts."
+  },
+  "machineAccountsNoItemsTitle": {
+    "message": "Göstəriləcək heç nə yoxdur",
+    "description": "Title to indicate that there are no machine accounts to display."
+  },
+  "deleteMachineAccounts": {
+    "message": "Maşın hesablarını sil",
+    "description": "Title for the action to delete one or multiple machine accounts."
+  },
+  "deleteMachineAccount": {
+    "message": "Maşın hesabını sil",
+    "description": "Title for the action to delete a single machine account."
+  },
+  "viewMachineAccount": {
+    "message": "Maşın hesabına bax",
+    "description": "Action to view the details of a machine account."
+  },
+  "deleteMachineAccountDialogMessage": {
+    "message": "$MACHINE_ACCOUNT$ maşın hesabının silinməsi daimi və geri qaytarıla bilməyən prosesdir.",
+    "placeholders": {
+      "machine_account": {
+        "content": "$1",
+        "example": "Machine account name"
+      }
+    }
+  },
+  "deleteMachineAccountsDialogMessage": {
+    "message": "Maşın hesablarının silinməsi daimi və geri qaytarıla bilməyən prosesdir."
+  },
+  "deleteMachineAccountsConfirmMessage": {
+    "message": "$COUNT$ maşın hesabını sil",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteMachineAccountToast": {
+    "message": "Maşın hesabı silindi"
+  },
+  "deleteMachineAccountsToast": {
+    "message": "Maşın hesabları silindi"
+  },
+  "searchMachineAccounts": {
+    "message": "Maşın hesablarını axtar",
+    "description": "Placeholder text for searching machine accounts."
+  },
+  "editMachineAccount": {
+    "message": "Maşın hesabına düzəliş et",
+    "description": "Title for editing a machine account."
+  },
+  "machineAccountName": {
+    "message": "Maşın hesabının adı",
+    "description": "Label for the name of a machine account"
+  },
+  "machineAccountCreated": {
+    "message": "Maşın hesabı yaradıldı",
+    "description": "Notifies that a new machine account has been created"
+  },
+  "machineAccountUpdated": {
+    "message": "Maşın hesabı güncəlləndi",
+    "description": "Notifies that a machine account has been updated"
+  },
+  "projectMachineAccountsDescription": {
+    "message": "Maşın hesablarının bu layihəyə müraciətinə icazə verin."
+  },
+  "projectMachineAccountsSelectHint": {
+    "message": "Maşın hesablarını yazın və ya seçin"
+  },
+  "projectEmptyMachineAccountAccessPolicies": {
+    "message": "Müraciət icazəsi veriləcək maşın hesablarını əlavə edin"
+  },
+  "machineAccountPeopleDescription": {
+    "message": "Qrup və ya insanların bu maşın hesabına müraciətinə icazə verin."
+  },
+  "machineAccountProjectsDescription": {
+    "message": "Bu maşın hesabına layihələr təyin edin. "
+  },
+  "createMachineAccount": {
+    "message": "Bir maşın hesabı yarat"
+  },
+  "maPeopleWarningMessage": {
+    "message": "İnsanları maşın hesabından silsəniz belə, yaratdıqları müraciət tokenləri silinmir. Güvənliyin ən yaxşı təcrübəsi üçün, maşın hesabından silinmiş insanlar tərəfindən yaradılan müraciət tokenlərinin ləğv edilməsi tövsiyə olunur."
+  },
+  "smAccessRemovalWarningMaTitle": {
+    "message": "Bu maşın hesabına müraciəti sil"
+  },
+  "smAccessRemovalWarningMaMessage": {
+    "message": "Bu əməliyyat, maşın hesabına olan müraciətinizi götürəcək."
+  },
+  "machineAccountsIncluded": {
+    "message": "$COUNT$ maşın hesabı daxildir",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "additionalMachineAccountCost": {
+    "message": "Əlavə maşın hesabları üçün aylıq $COST$",
+    "placeholders": {
+      "cost": {
+        "content": "$1",
+        "example": "$0.50"
+      }
+    }
+  },
+  "additionalMachineAccounts": {
+    "message": "Əlavə maşın hesabları"
+  },
+  "includedMachineAccounts": {
+    "message": "Planınız, $COUNT$ maşın hesabı ilə gəlir.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "50"
+      }
+    }
+  },
+  "addAdditionalMachineAccounts": {
+    "message": "Aylıq $COST$ qarşılığında əlavə maşın hesablarını əlavə edə bilərsiniz.",
+    "placeholders": {
+      "cost": {
+        "content": "$1",
+        "example": "$0.50"
+      }
+    }
+  },
+  "limitMachineAccounts": {
+    "message": "Maşın hesablarını limitlə (ixtiyari)"
+  },
+  "limitMachineAccountsDesc": {
+    "message": "Maşın hesablarınız üçün bir limit müəyyən edin. Bu limitə çatanda, yeni maşın hesabı yarada bilməyəcəksiniz."
+  },
+  "machineAccountLimit": {
+    "message": "Maşın hesabı limiti (ixtiyari)"
+  },
+  "maxMachineAccountCost": {
+    "message": "Maksimal mümkün maşın hesabı qiyməti"
+  },
+  "machineAccountAccessUpdated": {
+    "message": "Maşın hesabına müraciət güncəlləndi"
+  },
+  "unassignedItemsBanner": {
+    "message": "Notice: Unassigned organization items are no longer visible in your All Vaults view across devices and are now only accessible via the Admin Console. Assign these items to a collection from the Admin Console to make them visible."
   }
 }

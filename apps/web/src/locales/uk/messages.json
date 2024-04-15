@@ -4956,6 +4956,9 @@
   "addExistingOrganization": {
     "message": "Додати наявну організацію"
   },
+  "addNewOrganization": {
+    "message": "Додати нову організацію"
+  },
   "myProvider": {
     "message": "Мій провайдер"
   },
@@ -7498,6 +7501,9 @@
   "collectionAccessRestricted": {
     "message": "Доступ до збірки обмежено"
   },
+  "readOnlyCollectionAccess": {
+    "message": "У вас немає доступу до керування цією збіркою."
+  },
   "grantCollectionAccess": {
     "message": "Надайте групам або учасникам доступ до цієї збірки."
   },
@@ -7600,6 +7606,9 @@
   "providerPortal": {
     "message": "Портал провайдера"
   },
+  "viewCollection": {
+    "message": "Переглянути збірку"
+  },
   "restrictedGroupAccess": {
     "message": "Ви не можете додати себе до груп."
   },
@@ -7642,5 +7651,256 @@
   },
   "items": {
     "message": "Записи"
+  },
+  "assignedSeats": {
+    "message": "Призначені місця"
+  },
+  "assigned": {
+    "message": "Призначено"
+  },
+  "used": {
+    "message": "Використано"
+  },
+  "remaining": {
+    "message": "Залишилось"
+  },
+  "unlinkOrganization": {
+    "message": "Від'єднати організацію"
+  },
+  "manageSeats": {
+    "message": "КЕРУВАТИ МІСЦЯМИ"
+  },
+  "manageSeatsDescription": {
+    "message": "Скориговані місця будуть відображені в наступному платіжному циклі."
+  },
+  "unassignedSeatsDescription": {
+    "message": "Непризначені місця передплати"
+  },
+  "purchaseSeatDescription": {
+    "message": "Додаткові придбані місця"
+  },
+  "assignedSeatCannotUpdate": {
+    "message": "Призначені місця не можна оновити. Будь ласка, зверніться до власника вашої організації по допомогу."
+  },
+  "subscriptionUpdateFailed": {
+    "message": "Не вдалося оновити передплату"
+  },
+  "trial": {
+    "message": "Пробний період",
+    "description": "A subscription status label."
+  },
+  "pastDue": {
+    "message": "Протерміновано",
+    "description": "A subscription status label"
+  },
+  "subscriptionExpired": {
+    "message": "Термін дії передплати завершився",
+    "description": "The date header used when a subscription is past due."
+  },
+  "pastDueWarningForChargeAutomatically": {
+    "message": "У вас є $DAYS$ днів пільгового періоду після завершення передплати для можливості її поновлення. Будь ласка, сплатіть протерміновані рахунки до $SUSPENSION_DATE$.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "11"
+      },
+      "suspension_date": {
+        "content": "$2",
+        "example": "01/10/2024"
+      }
+    },
+    "description": "A warning shown to the user when their subscription is past due and they are charged automatically."
+  },
+  "pastDueWarningForSendInvoice": {
+    "message": "У вас є $DAYS$ днів пільгового періоду від дати протермінування першого несплаченого рахунку. Протягом цього часу вам необхідно поновити передплату. Будь ласка, сплатіть протерміновані рахунки до $SUSPENSION_DATE$.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "11"
+      },
+      "suspension_date": {
+        "content": "$2",
+        "example": "01/10/2024"
+      }
+    },
+    "description": "A warning shown to the user when their subscription is past due and they pay via invoice."
+  },
+  "unpaidInvoice": {
+    "message": "Несплачений рахунок",
+    "description": "The header of a warning box shown to a user whose subscription is unpaid."
+  },
+  "toReactivateYourSubscription": {
+    "message": "Будь ласка, сплатіть протерміновані рахунки, щоб знову активувати передплату.",
+    "description": "The body of a warning box shown to a user whose subscription is unpaid."
+  },
+  "cancellationDate": {
+    "message": "Дата скасування",
+    "description": "The date header used when a subscription is cancelled."
+  },
+  "machineAccountsCannotCreate": {
+    "message": "У призупинених організаціях не можна створювати машинні облікові записи. Зверніться до власника вашої організації для отримання допомоги."
+  },
+  "machineAccount": {
+    "message": "Машинний обліковий запис",
+    "description": "A machine user which can be used to automate processes and access secrets in the system."
+  },
+  "machineAccounts": {
+    "message": "Машинні облікові записи",
+    "description": "The title for the section that deals with machine accounts."
+  },
+  "newMachineAccount": {
+    "message": "Новий машинний обліковий запис",
+    "description": "Title for creating a new machine account."
+  },
+  "machineAccountsNoItemsMessage": {
+    "message": "Створіть новий машинний обліковий запис, щоб почати автоматизацію доступу до секретів.",
+    "description": "Message to encourage the user to start creating machine accounts."
+  },
+  "machineAccountsNoItemsTitle": {
+    "message": "Наразі немає даних для показу",
+    "description": "Title to indicate that there are no machine accounts to display."
+  },
+  "deleteMachineAccounts": {
+    "message": "Видалити машинні облікові записи",
+    "description": "Title for the action to delete one or multiple machine accounts."
+  },
+  "deleteMachineAccount": {
+    "message": "Видалити машинний обліковий запис",
+    "description": "Title for the action to delete a single machine account."
+  },
+  "viewMachineAccount": {
+    "message": "Переглянути машинний обліковий запис",
+    "description": "Action to view the details of a machine account."
+  },
+  "deleteMachineAccountDialogMessage": {
+    "message": "Видалення машинного облікового запису $MACHINE_ACCOUNT$ – це остаточна й незворотна дія.",
+    "placeholders": {
+      "machine_account": {
+        "content": "$1",
+        "example": "Machine account name"
+      }
+    }
+  },
+  "deleteMachineAccountsDialogMessage": {
+    "message": "Видалення машинних облікових записів – це остаточна й незворотна дія."
+  },
+  "deleteMachineAccountsConfirmMessage": {
+    "message": "Видалити машинні облікові записи: $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteMachineAccountToast": {
+    "message": "Машинний обліковий запис видалено"
+  },
+  "deleteMachineAccountsToast": {
+    "message": "Машинні облікові записи видалено"
+  },
+  "searchMachineAccounts": {
+    "message": "Пошук машинних облікових записів",
+    "description": "Placeholder text for searching machine accounts."
+  },
+  "editMachineAccount": {
+    "message": "Редагувати машинний обліковий запис",
+    "description": "Title for editing a machine account."
+  },
+  "machineAccountName": {
+    "message": "Назва машинного облікового запису",
+    "description": "Label for the name of a machine account"
+  },
+  "machineAccountCreated": {
+    "message": "Машинний обліковий запис створено",
+    "description": "Notifies that a new machine account has been created"
+  },
+  "machineAccountUpdated": {
+    "message": "Машинний обліковий запис оновлено",
+    "description": "Notifies that a machine account has been updated"
+  },
+  "projectMachineAccountsDescription": {
+    "message": "Надайте машинним обліковим записам доступ до цього проєкту."
+  },
+  "projectMachineAccountsSelectHint": {
+    "message": "Введіть або виберіть машинні облікові записи"
+  },
+  "projectEmptyMachineAccountAccessPolicies": {
+    "message": "Додайте машинні облікові записи для надання доступу"
+  },
+  "machineAccountPeopleDescription": {
+    "message": "Надайте групам або людям доступ до цього машинного облікового запису."
+  },
+  "machineAccountProjectsDescription": {
+    "message": "Призначте проєкти цьому машинному обліковому запису. "
+  },
+  "createMachineAccount": {
+    "message": "Створити машинний обліковий запис"
+  },
+  "maPeopleWarningMessage": {
+    "message": "Вилучення людей з машинного облікового запису не вилучає створені ними токени доступу. З міркувань безпеки рекомендовано відкликати токени доступу, створені людьми, вилученими з машинного облікового запису."
+  },
+  "smAccessRemovalWarningMaTitle": {
+    "message": "Вилучити доступ до цього машинного облікового запису"
+  },
+  "smAccessRemovalWarningMaMessage": {
+    "message": "Ця дія призведе до вилучення вашого доступу до цього машинного облікового запису."
+  },
+  "machineAccountsIncluded": {
+    "message": "Включає машинні облікові записи: $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "additionalMachineAccountCost": {
+    "message": "$COST$ на місяць за додаткові машинні облікові записи",
+    "placeholders": {
+      "cost": {
+        "content": "$1",
+        "example": "$0.50"
+      }
+    }
+  },
+  "additionalMachineAccounts": {
+    "message": "Додаткові машинні облікові записи"
+  },
+  "includedMachineAccounts": {
+    "message": "Ваш тарифний план включає машинні облікові записи: $COUNT$.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "50"
+      }
+    }
+  },
+  "addAdditionalMachineAccounts": {
+    "message": "Ви можете додати більше машинних облікових записів за $COST$/місяць.",
+    "placeholders": {
+      "cost": {
+        "content": "$1",
+        "example": "$0.50"
+      }
+    }
+  },
+  "limitMachineAccounts": {
+    "message": "Обмеження машинних облікових записів (необов'язково)"
+  },
+  "limitMachineAccountsDesc": {
+    "message": "Встановіть обмеження кількості машинних облікових записів. Після досягнення ліміту ви не зможете створювати нові машинні облікові записи."
+  },
+  "machineAccountLimit": {
+    "message": "Обмеження машинних облікових записів (необов'язково)"
+  },
+  "maxMachineAccountCost": {
+    "message": "Потенційна максимальна вартість машинного облікового запису"
+  },
+  "machineAccountAccessUpdated": {
+    "message": "Доступ до машинного облікового запису оновлено"
+  },
+  "unassignedItemsBanner": {
+    "message": "Увага: непризначені елементи організації більше не видимі у поданні \"Усі сховища\" на різних пристроях і тепер доступні лише в консолі адміністратора. Щоб зробити їх видимими, призначте ці елементи збірці в консолі адміністратора."
   }
 }

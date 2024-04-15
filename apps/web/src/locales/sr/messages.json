@@ -4956,6 +4956,9 @@
   "addExistingOrganization": {
     "message": "Додај постојећу организацију"
   },
+  "addNewOrganization": {
+    "message": "Додај нову организацију"
+  },
   "myProvider": {
     "message": "Мој провајдер"
   },
@@ -7498,6 +7501,9 @@
   "collectionAccessRestricted": {
     "message": "Приступ колекцији је ограничен"
   },
+  "readOnlyCollectionAccess": {
+    "message": "You do not have access to manage this collection."
+  },
   "grantCollectionAccess": {
     "message": "Одобрите групама или члановима приступ овој колекцији."
   },
@@ -7600,6 +7606,9 @@
   "providerPortal": {
     "message": "Портал провајдера"
   },
+  "viewCollection": {
+    "message": "View collection"
+  },
   "restrictedGroupAccess": {
     "message": "Не можете да се додате у групе."
   },
@@ -7642,5 +7651,256 @@
   },
   "items": {
     "message": "Ставке"
+  },
+  "assignedSeats": {
+    "message": "Додељена места"
+  },
+  "assigned": {
+    "message": "Додељено"
+  },
+  "used": {
+    "message": "У употреби"
+  },
+  "remaining": {
+    "message": "Преостало"
+  },
+  "unlinkOrganization": {
+    "message": "Прекини везу са организацијом"
+  },
+  "manageSeats": {
+    "message": "УПРАВЉАЈТЕ МЕСТИМА"
+  },
+  "manageSeatsDescription": {
+    "message": "Прилагођавања местима ће се одразити на следећи обрачунски циклус."
+  },
+  "unassignedSeatsDescription": {
+    "message": "Недодијељена претплатничка места"
+  },
+  "purchaseSeatDescription": {
+    "message": "Додатна места су купљена"
+  },
+  "assignedSeatCannotUpdate": {
+    "message": "Додељена места се не могу ажурирати. За помоћ контактирајте власника организације."
+  },
+  "subscriptionUpdateFailed": {
+    "message": "Ажурирање претплате није успело"
+  },
+  "trial": {
+    "message": "Проба",
+    "description": "A subscription status label."
+  },
+  "pastDue": {
+    "message": "Протекли задаци",
+    "description": "A subscription status label"
+  },
+  "subscriptionExpired": {
+    "message": "Претплата је истекла",
+    "description": "The date header used when a subscription is past due."
+  },
+  "pastDueWarningForChargeAutomatically": {
+    "message": "Имате грејс период од $DAYS$ дана од датума истека ваше претплате да бисте одржали претплату. Решите фактуре са кашњењем до $SUSPENSION_DATE$.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "11"
+      },
+      "suspension_date": {
+        "content": "$2",
+        "example": "01/10/2024"
+      }
+    },
+    "description": "A warning shown to the user when their subscription is past due and they are charged automatically."
+  },
+  "pastDueWarningForSendInvoice": {
+    "message": "Имате грејс период од $DAYS$ дана од датума када ваша прва неплаћена фактура треба да одржи претплату. Решите фактуре са кашњењем до $SUSPENSION_DATE$.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "11"
+      },
+      "suspension_date": {
+        "content": "$2",
+        "example": "01/10/2024"
+      }
+    },
+    "description": "A warning shown to the user when their subscription is past due and they pay via invoice."
+  },
+  "unpaidInvoice": {
+    "message": "Неплаћен рачун",
+    "description": "The header of a warning box shown to a user whose subscription is unpaid."
+  },
+  "toReactivateYourSubscription": {
+    "message": "Да бисте поново активирали своју претплату, решите фактуре са кашњењем.",
+    "description": "The body of a warning box shown to a user whose subscription is unpaid."
+  },
+  "cancellationDate": {
+    "message": "Датум отказивања",
+    "description": "The date header used when a subscription is cancelled."
+  },
+  "machineAccountsCannotCreate": {
+    "message": "Налози машине се не могу креирати у суспендованим организацијама. За помоћ контактирајте власника своје организације."
+  },
+  "machineAccount": {
+    "message": "Налог машине",
+    "description": "A machine user which can be used to automate processes and access secrets in the system."
+  },
+  "machineAccounts": {
+    "message": "Налози машине",
+    "description": "The title for the section that deals with machine accounts."
+  },
+  "newMachineAccount": {
+    "message": "Нов налог машине",
+    "description": "Title for creating a new machine account."
+  },
+  "machineAccountsNoItemsMessage": {
+    "message": "Креирајте нови налог машине да бисте започели аутоматизацију тајног приступа.",
+    "description": "Message to encourage the user to start creating machine accounts."
+  },
+  "machineAccountsNoItemsTitle": {
+    "message": "Нема ништа за приказати",
+    "description": "Title to indicate that there are no machine accounts to display."
+  },
+  "deleteMachineAccounts": {
+    "message": "Избришите налоге машине",
+    "description": "Title for the action to delete one or multiple machine accounts."
+  },
+  "deleteMachineAccount": {
+    "message": "Избришите налог машине",
+    "description": "Title for the action to delete a single machine account."
+  },
+  "viewMachineAccount": {
+    "message": "Приказ налог машине",
+    "description": "Action to view the details of a machine account."
+  },
+  "deleteMachineAccountDialogMessage": {
+    "message": "Брисање налога машине $MACHINE_ACCOUNT$ је трајно и неповратно.",
+    "placeholders": {
+      "machine_account": {
+        "content": "$1",
+        "example": "Machine account name"
+      }
+    }
+  },
+  "deleteMachineAccountsDialogMessage": {
+    "message": "Брисање налога машине је трајно и неповратно."
+  },
+  "deleteMachineAccountsConfirmMessage": {
+    "message": "Брисање $COUNT$ налога машине",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteMachineAccountToast": {
+    "message": "Налог машине избрисан"
+  },
+  "deleteMachineAccountsToast": {
+    "message": "Налози машине избрисани"
+  },
+  "searchMachineAccounts": {
+    "message": "Тражити налоге машине",
+    "description": "Placeholder text for searching machine accounts."
+  },
+  "editMachineAccount": {
+    "message": "Уредити налог машине",
+    "description": "Title for editing a machine account."
+  },
+  "machineAccountName": {
+    "message": "Име налога машине",
+    "description": "Label for the name of a machine account"
+  },
+  "machineAccountCreated": {
+    "message": "Налог машине креиран",
+    "description": "Notifies that a new machine account has been created"
+  },
+  "machineAccountUpdated": {
+    "message": "Налог машине ажуриран",
+    "description": "Notifies that a machine account has been updated"
+  },
+  "projectMachineAccountsDescription": {
+    "message": "Одобрите налозима машине приступ овом пројекту."
+  },
+  "projectMachineAccountsSelectHint": {
+    "message": "Унесите или изаберите налоге машине"
+  },
+  "projectEmptyMachineAccountAccessPolicies": {
+    "message": "Додајте налоге машине да бисте одобрили приступ"
+  },
+  "machineAccountPeopleDescription": {
+    "message": "Одобрите групама или људима приступ овом налогу машине."
+  },
+  "machineAccountProjectsDescription": {
+    "message": "Доделите пројекте овом налогу машине. "
+  },
+  "createMachineAccount": {
+    "message": "Креирајте налог машине"
+  },
+  "maPeopleWarningMessage": {
+    "message": "Уклањање људи са налога машине не уклања приступне токене које су креирали. Ради најбоље безбедносне праксе, препоручује се да опозовете приступне токене које су креирали људи уклоњени са налога машине."
+  },
+  "smAccessRemovalWarningMaTitle": {
+    "message": "Уклоните приступ овом налогу машине"
+  },
+  "smAccessRemovalWarningMaMessage": {
+    "message": "Ова радња ће вам уклонити приступ налогу машине."
+  },
+  "machineAccountsIncluded": {
+    "message": "$COUNT$ рачуни машина укључени",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "additionalMachineAccountCost": {
+    "message": "$COST$ месечно за додатне рачуне машина",
+    "placeholders": {
+      "cost": {
+        "content": "$1",
+        "example": "$0.50"
+      }
+    }
+  },
+  "additionalMachineAccounts": {
+    "message": "Додатни налози машине"
+  },
+  "includedMachineAccounts": {
+    "message": "Ваш план долази са $COUNT$ налога машине.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "50"
+      }
+    }
+  },
+  "addAdditionalMachineAccounts": {
+    "message": "Можете додати још налога машине за $COST$ месечно.",
+    "placeholders": {
+      "cost": {
+        "content": "$1",
+        "example": "$0.50"
+      }
+    }
+  },
+  "limitMachineAccounts": {
+    "message": "Ограничити рачуне машина (опционо)"
+  },
+  "limitMachineAccountsDesc": {
+    "message": "Поставите ограничење за рачуне машине. Када се ово ограничење достигне, нећете моћи да креирате нове налоге на машини."
+  },
+  "machineAccountLimit": {
+    "message": "Ограничење рачуна машине (опционо)"
+  },
+  "maxMachineAccountCost": {
+    "message": "Максимални потенцијални трошак рачуна машине"
+  },
+  "machineAccountAccessUpdated": {
+    "message": "Приступ налога машине ажуриран"
+  },
+  "unassignedItemsBanner": {
+    "message": "Notice: Unassigned organization items are no longer visible in your All Vaults view across devices and are now only accessible via the Admin Console. Assign these items to a collection from the Admin Console to make them visible."
   }
 }

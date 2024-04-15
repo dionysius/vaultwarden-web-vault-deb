@@ -4956,6 +4956,9 @@
   "addExistingOrganization": {
     "message": "Tilføj eksisterende organisation"
   },
+  "addNewOrganization": {
+    "message": "Tilføj ny organisation"
+  },
   "myProvider": {
     "message": "Min udbyder"
   },
@@ -7498,6 +7501,9 @@
   "collectionAccessRestricted": {
     "message": "Adgang til samling er begrænset"
   },
+  "readOnlyCollectionAccess": {
+    "message": "Du har ikke adgang til at håndtere denne samling."
+  },
   "grantCollectionAccess": {
     "message": "Tildel grupper eller medlemmer adgang til denne samling."
   },
@@ -7600,6 +7606,9 @@
   "providerPortal": {
     "message": "Udbyderportal"
   },
+  "viewCollection": {
+    "message": "Vis samling"
+  },
   "restrictedGroupAccess": {
     "message": "Man kan ikke føje sig selv til grupper."
   },
@@ -7642,5 +7651,256 @@
   },
   "items": {
     "message": "Emner"
+  },
+  "assignedSeats": {
+    "message": "Tildelte pladser"
+  },
+  "assigned": {
+    "message": "Tildelte"
+  },
+  "used": {
+    "message": "Brugte"
+  },
+  "remaining": {
+    "message": "Resterer"
+  },
+  "unlinkOrganization": {
+    "message": "Fjern associering til organisation"
+  },
+  "manageSeats": {
+    "message": "HÅNDTERING AF PLADSER"
+  },
+  "manageSeatsDescription": {
+    "message": "Justeringer af pladser afspejles i den næste faktureringsperiode."
+  },
+  "unassignedSeatsDescription": {
+    "message": "Ikke-tildelte abonnementspladser"
+  },
+  "purchaseSeatDescription": {
+    "message": "Yderligere pladser tilkøbt"
+  },
+  "assignedSeatCannotUpdate": {
+    "message": "Tildelte pladser kan ikke opdateres. Kontakt organisationsejeren for assistance."
+  },
+  "subscriptionUpdateFailed": {
+    "message": "Abonnementsopdatering mislykkedes"
+  },
+  "trial": {
+    "message": "Prøveperiode",
+    "description": "A subscription status label."
+  },
+  "pastDue": {
+    "message": "Forfalden",
+    "description": "A subscription status label"
+  },
+  "subscriptionExpired": {
+    "message": "Abonnement udløbet",
+    "description": "The date header used when a subscription is past due."
+  },
+  "pastDueWarningForChargeAutomatically": {
+    "message": "Der er en respitperiode på $DAYS$ dage fra abonnementsudløbsdatoen til at bevare abonnementet. Afregn venligst de forfaldne fakturaer inden $SUSPENSION_DATE$.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "11"
+      },
+      "suspension_date": {
+        "content": "$2",
+        "example": "01/10/2024"
+      }
+    },
+    "description": "A warning shown to the user when their subscription is past due and they are charged automatically."
+  },
+  "pastDueWarningForSendInvoice": {
+    "message": "Der er en respitperiode på $DAYS$ dage fra første fakturaforfaldsdato til at bevare abonnementet. Afregn venligst de forfaldne fakturaer inden $SUSPENSION_DATE$.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "11"
+      },
+      "suspension_date": {
+        "content": "$2",
+        "example": "01/10/2024"
+      }
+    },
+    "description": "A warning shown to the user when their subscription is past due and they pay via invoice."
+  },
+  "unpaidInvoice": {
+    "message": "Ubetalt faktura",
+    "description": "The header of a warning box shown to a user whose subscription is unpaid."
+  },
+  "toReactivateYourSubscription": {
+    "message": "Afregn de tidligere forfaldne fakturaer for at genaktivere abonnementet.",
+    "description": "The body of a warning box shown to a user whose subscription is unpaid."
+  },
+  "cancellationDate": {
+    "message": "Cancellation date",
+    "description": "The date header used when a subscription is cancelled."
+  },
+  "machineAccountsCannotCreate": {
+    "message": "Maskinekonti kan ikke oprettes i suspenderede organisationer. Kontakt organisationsejeren for hjælp."
+  },
+  "machineAccount": {
+    "message": "Maskinekonto",
+    "description": "A machine user which can be used to automate processes and access secrets in the system."
+  },
+  "machineAccounts": {
+    "message": "Maskinekonti",
+    "description": "The title for the section that deals with machine accounts."
+  },
+  "newMachineAccount": {
+    "message": "Ny maskinekonto",
+    "description": "Title for creating a new machine account."
+  },
+  "machineAccountsNoItemsMessage": {
+    "message": "Opret en ny maskinekonto for at komme i gang med at automatisere hemmelig adgang.",
+    "description": "Message to encourage the user to start creating machine accounts."
+  },
+  "machineAccountsNoItemsTitle": {
+    "message": "Intet at vise endnu",
+    "description": "Title to indicate that there are no machine accounts to display."
+  },
+  "deleteMachineAccounts": {
+    "message": "Slet maskinekonti",
+    "description": "Title for the action to delete one or multiple machine accounts."
+  },
+  "deleteMachineAccount": {
+    "message": "Slet maskinekonto",
+    "description": "Title for the action to delete a single machine account."
+  },
+  "viewMachineAccount": {
+    "message": "Vis maskinekonto",
+    "description": "Action to view the details of a machine account."
+  },
+  "deleteMachineAccountDialogMessage": {
+    "message": "Sletning af maskinekontoen $MACHINE_ACCOUNT$ er permanent og irreversibel.",
+    "placeholders": {
+      "machine_account": {
+        "content": "$1",
+        "example": "Machine account name"
+      }
+    }
+  },
+  "deleteMachineAccountsDialogMessage": {
+    "message": "Sletning af maskinekonti er permanent og irreversibel."
+  },
+  "deleteMachineAccountsConfirmMessage": {
+    "message": "Slet $COUNT$ maskinekonti",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteMachineAccountToast": {
+    "message": "Maskinekonto slettet"
+  },
+  "deleteMachineAccountsToast": {
+    "message": "Maskinekonti slettet"
+  },
+  "searchMachineAccounts": {
+    "message": "Søg efter maskinekonti",
+    "description": "Placeholder text for searching machine accounts."
+  },
+  "editMachineAccount": {
+    "message": "Redigér maskinekonto",
+    "description": "Title for editing a machine account."
+  },
+  "machineAccountName": {
+    "message": "Maskinekontonavn",
+    "description": "Label for the name of a machine account"
+  },
+  "machineAccountCreated": {
+    "message": "Maskinekonto oprettet",
+    "description": "Notifies that a new machine account has been created"
+  },
+  "machineAccountUpdated": {
+    "message": "Maskinekonto opdateret",
+    "description": "Notifies that a machine account has been updated"
+  },
+  "projectMachineAccountsDescription": {
+    "message": "Tildel maskinkonti adgang til dette projekt."
+  },
+  "projectMachineAccountsSelectHint": {
+    "message": "Angiv eller vælg maskinekonti"
+  },
+  "projectEmptyMachineAccountAccessPolicies": {
+    "message": "Tilføj maskinekonti for at tildele adgang"
+  },
+  "machineAccountPeopleDescription": {
+    "message": "Tildel grupper eller personer adgang til denne maskinekonto."
+  },
+  "machineAccountProjectsDescription": {
+    "message": "Tildel projekter til denne maskinekonto. "
+  },
+  "createMachineAccount": {
+    "message": "Opret en maskinekonto"
+  },
+  "maPeopleWarningMessage": {
+    "message": "Fjernelse af personer fra en maskinekonto fjerner ikke deres oprettede adgangstokener. For bedste sikkerhedspraksis anbefales ophævelse af adgangtokener oprettet af personer fjernet fra en maskinekonto."
+  },
+  "smAccessRemovalWarningMaTitle": {
+    "message": "Fjern adgang til denne maskinekonto"
+  },
+  "smAccessRemovalWarningMaMessage": {
+    "message": "Denne handling fjerner maskinekontoadgangen."
+  },
+  "machineAccountsIncluded": {
+    "message": "$COUNT$ maskinekonti inkluderet",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "additionalMachineAccountCost": {
+    "message": "$COST$ pr. måned for yderligere maskinekonti",
+    "placeholders": {
+      "cost": {
+        "content": "$1",
+        "example": "$0.50"
+      }
+    }
+  },
+  "additionalMachineAccounts": {
+    "message": "Yderligere maskinekonti"
+  },
+  "includedMachineAccounts": {
+    "message": "Abonnementstypen er inkl. $COUNT$ maskinekonti.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "50"
+      }
+    }
+  },
+  "addAdditionalMachineAccounts": {
+    "message": "Yderligere maskinekonti kan tilføjes for $COST$ pr. måned.",
+    "placeholders": {
+      "cost": {
+        "content": "$1",
+        "example": "$0.50"
+      }
+    }
+  },
+  "limitMachineAccounts": {
+    "message": "Begræns maskinekonti (valgfrit)"
+  },
+  "limitMachineAccountsDesc": {
+    "message": "Opsæt kvote for maskinekonti. Når kvoten er opbrugt, vil nye maskinekonti ikke kunne oprettes."
+  },
+  "machineAccountLimit": {
+    "message": "Maskinekontokvote (valgfrit)"
+  },
+  "maxMachineAccountCost": {
+    "message": "Maks. potentiel maskinekontoomkostning"
+  },
+  "machineAccountAccessUpdated": {
+    "message": "Maskinekontoadgang opdateret"
+  },
+  "unassignedItemsBanner": {
+    "message": "Bemærk: Utildelte organisationsemner er ikke længere synlige i Alle Bokse-visningen og er kun tilgængelige via Adminkonsollen. Føj disse emner til en samling fra Adminkonsollen for at gøre dem synlige."
   }
 }

@@ -4956,6 +4956,9 @@
   "addExistingOrganization": {
     "message": "Ajouter une organisation existante"
   },
+  "addNewOrganization": {
+    "message": "Ajouter une nouvelle organisation"
+  },
   "myProvider": {
     "message": "Mon fournisseur"
   },
@@ -7498,6 +7501,9 @@
   "collectionAccessRestricted": {
     "message": "L'accès à la collection est restreint"
   },
+  "readOnlyCollectionAccess": {
+    "message": "Vous n'avez pas accès à la gestion de cette collection."
+  },
   "grantCollectionAccess": {
     "message": "Accorder l'accès à cette collection aux groupes ou aux membres."
   },
@@ -7600,6 +7606,9 @@
   "providerPortal": {
     "message": "Portail fournisseur"
   },
+  "viewCollection": {
+    "message": "Afficher la Collection"
+  },
   "restrictedGroupAccess": {
     "message": "Vous ne pouvez vous ajoutez vous-même aux groupes."
   },
@@ -7642,5 +7651,256 @@
   },
   "items": {
     "message": "Éléments"
+  },
+  "assignedSeats": {
+    "message": "Places assignées"
+  },
+  "assigned": {
+    "message": "Assigné"
+  },
+  "used": {
+    "message": "Utilisé"
+  },
+  "remaining": {
+    "message": "Restant"
+  },
+  "unlinkOrganization": {
+    "message": "Délier l'organisation"
+  },
+  "manageSeats": {
+    "message": "GÉRER LES PLACES"
+  },
+  "manageSeatsDescription": {
+    "message": "Les ajustements aux licences seront reflétés lors du prochain cycle de facturation."
+  },
+  "unassignedSeatsDescription": {
+    "message": "Licenses d'abonnement non assignés"
+  },
+  "purchaseSeatDescription": {
+    "message": "Licenses additionnelles achetées"
+  },
+  "assignedSeatCannotUpdate": {
+    "message": "Les Licences assignées ne peuvent être mises à jour. Veuillez contacter le propriétaire de votre organisation pour assistance."
+  },
+  "subscriptionUpdateFailed": {
+    "message": "Mise à jour de l'abonnement échouée"
+  },
+  "trial": {
+    "message": "Essai",
+    "description": "A subscription status label."
+  },
+  "pastDue": {
+    "message": "Échéance dépassée",
+    "description": "A subscription status label"
+  },
+  "subscriptionExpired": {
+    "message": "Abonnement expiré",
+    "description": "The date header used when a subscription is past due."
+  },
+  "pastDueWarningForChargeAutomatically": {
+    "message": "Vous bénéficiez d'une période de grace de $DAYS$ jours suivants la date d'expiration de votre abonnement pour le maintenir. Veuillez adresser les paiements en souffrance pour les factures dont les échéances sont passées d'ici le $SUSPENSION_DATE$.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "11"
+      },
+      "suspension_date": {
+        "content": "$2",
+        "example": "01/10/2024"
+      }
+    },
+    "description": "A warning shown to the user when their subscription is past due and they are charged automatically."
+  },
+  "pastDueWarningForSendInvoice": {
+    "message": "Vous bénéficiez d'une période de grace de $DAYS$ jours à partir de la première journée de votre première facture impayée pour maintenir votre abonnement. Veuillez adresser les paiements en souffrance pour les factures dont les échéances sont passées d'ici le $SUSPENSION_DATE$.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "11"
+      },
+      "suspension_date": {
+        "content": "$2",
+        "example": "01/10/2024"
+      }
+    },
+    "description": "A warning shown to the user when their subscription is past due and they pay via invoice."
+  },
+  "unpaidInvoice": {
+    "message": "Facture impayée",
+    "description": "The header of a warning box shown to a user whose subscription is unpaid."
+  },
+  "toReactivateYourSubscription": {
+    "message": "Pour réactiver votre abonnement, veuillez adresser les paiements en souffrance pour les factures dont les échéances sont passées.",
+    "description": "The body of a warning box shown to a user whose subscription is unpaid."
+  },
+  "cancellationDate": {
+    "message": "Date d'annulation",
+    "description": "The date header used when a subscription is cancelled."
+  },
+  "machineAccountsCannotCreate": {
+    "message": "Les comptes de machine ne peuvent pas être créés dans les organisations suspendues. Veuillez contacter le propriétaire de votre organisation pour obtenir de l'aide."
+  },
+  "machineAccount": {
+    "message": "Compte machine",
+    "description": "A machine user which can be used to automate processes and access secrets in the system."
+  },
+  "machineAccounts": {
+    "message": "Comptes de machine",
+    "description": "The title for the section that deals with machine accounts."
+  },
+  "newMachineAccount": {
+    "message": "Nouveau compte machine",
+    "description": "Title for creating a new machine account."
+  },
+  "machineAccountsNoItemsMessage": {
+    "message": "Créez un nouveau compte machine pour commencer à automatiser l'accès secret.",
+    "description": "Message to encourage the user to start creating machine accounts."
+  },
+  "machineAccountsNoItemsTitle": {
+    "message": "Rien à afficher pour l'instant",
+    "description": "Title to indicate that there are no machine accounts to display."
+  },
+  "deleteMachineAccounts": {
+    "message": "Supprimer les comptes de machine",
+    "description": "Title for the action to delete one or multiple machine accounts."
+  },
+  "deleteMachineAccount": {
+    "message": "Supprimer le compte machine",
+    "description": "Title for the action to delete a single machine account."
+  },
+  "viewMachineAccount": {
+    "message": "Afficher le compte machine",
+    "description": "Action to view the details of a machine account."
+  },
+  "deleteMachineAccountDialogMessage": {
+    "message": "La suppression du compte machine $MACHINE_ACCOUNT$ est permanente et irréversible.",
+    "placeholders": {
+      "machine_account": {
+        "content": "$1",
+        "example": "Machine account name"
+      }
+    }
+  },
+  "deleteMachineAccountsDialogMessage": {
+    "message": "La suppression des comptes de la machine est permanente et irréversible."
+  },
+  "deleteMachineAccountsConfirmMessage": {
+    "message": "Supprimer $COUNT$ comptes machines",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "deleteMachineAccountToast": {
+    "message": "Compte de machine supprimé"
+  },
+  "deleteMachineAccountsToast": {
+    "message": "Comptes de machine supprimés"
+  },
+  "searchMachineAccounts": {
+    "message": "Rechercher des comptes de machine",
+    "description": "Placeholder text for searching machine accounts."
+  },
+  "editMachineAccount": {
+    "message": "Éditer le compte machine",
+    "description": "Title for editing a machine account."
+  },
+  "machineAccountName": {
+    "message": "Nom du compte machine",
+    "description": "Label for the name of a machine account"
+  },
+  "machineAccountCreated": {
+    "message": "Compte de machine créé",
+    "description": "Notifies that a new machine account has been created"
+  },
+  "machineAccountUpdated": {
+    "message": "Compte de la machine mis à jour",
+    "description": "Notifies that a machine account has been updated"
+  },
+  "projectMachineAccountsDescription": {
+    "message": "Accorder l'accès à ce projet aux comptes de machine."
+  },
+  "projectMachineAccountsSelectHint": {
+    "message": "Saisissez ou sélectionnez les comptes de machine"
+  },
+  "projectEmptyMachineAccountAccessPolicies": {
+    "message": "Ajouter des comptes de machine pour accorder l'accès"
+  },
+  "machineAccountPeopleDescription": {
+    "message": "Accorder l'accès à ce compte à des groupes ou à des personnes."
+  },
+  "machineAccountProjectsDescription": {
+    "message": "Assigner des projets à ce compte machine. "
+  },
+  "createMachineAccount": {
+    "message": "Créer un compte machine"
+  },
+  "maPeopleWarningMessage": {
+    "message": "La suppression de personnes d'un compte machine ne supprime pas les jetons d'accès qu'ils ont créés. Pour de meilleures pratiques en matière de sécurité, il est recommandé de révoquer les jetons d'accès créés par des personnes supprimées d'un compte machine."
+  },
+  "smAccessRemovalWarningMaTitle": {
+    "message": "Retirer l'accès à ce compte machine"
+  },
+  "smAccessRemovalWarningMaMessage": {
+    "message": "Cette action supprimera votre accès au compte de la machine."
+  },
+  "machineAccountsIncluded": {
+    "message": "$COUNT$ comptes machines inclus",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "additionalMachineAccountCost": {
+    "message": "$COST$ par mois pour des comptes machines supplémentaires",
+    "placeholders": {
+      "cost": {
+        "content": "$1",
+        "example": "$0.50"
+      }
+    }
+  },
+  "additionalMachineAccounts": {
+    "message": "Comptes de machine supplémentaires"
+  },
+  "includedMachineAccounts": {
+    "message": "Votre forfait est livré avec $COUNT$ comptes machines.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "50"
+      }
+    }
+  },
+  "addAdditionalMachineAccounts": {
+    "message": "Vous pouvez ajouter des comptes machines supplémentaires pour $COST$ par mois.",
+    "placeholders": {
+      "cost": {
+        "content": "$1",
+        "example": "$0.50"
+      }
+    }
+  },
+  "limitMachineAccounts": {
+    "message": "Limiter les comptes de la machine (facultatif)"
+  },
+  "limitMachineAccountsDesc": {
+    "message": "Définissez une limite pour vos comptes machines. Une fois cette limite atteinte, vous ne pourrez plus créer de nouveaux comptes machines."
+  },
+  "machineAccountLimit": {
+    "message": "Limite du compte de la machine (facultatif)"
+  },
+  "maxMachineAccountCost": {
+    "message": "Coût potentiel maximal de compte machine"
+  },
+  "machineAccountAccessUpdated": {
+    "message": "Accès au compte machine mis à jour"
+  },
+  "unassignedItemsBanner": {
+    "message": "Remarque : Les éléments d'organisation non assignés ne sont plus visibles dans la vue tous les coffres sur les appareils et ne sont maintenant accessibles que via la Console Admin. Assigner ces éléments à une collection de la Console Admin pour les rendre visibles."
   }
 }
