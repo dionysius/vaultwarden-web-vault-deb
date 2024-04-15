@@ -3007,6 +3007,9 @@
     "message": "Приступачни кључ је уклоњен"
   },
   "unassignedItemsBanner": {
-    "message": "Notice: Unassigned organization items are no longer visible in the All Vaults view and only accessible via the Admin Console. Assign these items to a collection from the Admin Console to make them visible."
+    "message": "Напомена: Недодељене ставке организације више нису видљиве у приказу Сви сефови и доступне су само преко Админ конзоле. Доделите ове ставке колекцији са Админ конзолом да бисте их учинили видљивим."
+  },
+  "unassignedItemsBannerSelfHost": {
+    "message": "Обавештење: 2. маја 2024. недодељене ставке организације више неће бити видљиве у приказу Сви сефови и биће доступне само преко Админ конзоле. Доделите ове ставке колекцији са Админ конзолом да бисте их учинили видљивим."
   }
 }

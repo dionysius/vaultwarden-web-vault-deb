@@ -3007,6 +3007,9 @@
     "message": "Parol silindi"
   },
   "unassignedItemsBanner": {
-    "message": "Notice: Unassigned organization items are no longer visible in the All Vaults view and only accessible via the Admin Console. Assign these items to a collection from the Admin Console to make them visible."
+    "message": "Bildiriş: Təyin edilməmiş təşkilat elementləri artıq Bütün Anbarlar görünüşündə görünməyəndir və yalnız Admin Konsolu vasitəsilə əlçatandır. Bu elementləri görünən etmək üçün Admin Konsolundan bir kolleksiyaya təyin edin."
+  },
+  "unassignedItemsBannerSelfHost": {
+    "message": "Bildiriş: 2 May 2024-cü ildən etibarən təyin edilməmiş təşkilat elementləri artıq Bütün Anbarlar görünüşündə görünməyən və yalnız Admin Konsolu vasitəsilə əlçatan olacaq. Bu elementləri görünən etmək üçün Admin Konsolundan bir kolleksiyaya təyin edin."
   }
 }

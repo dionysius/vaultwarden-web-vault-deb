@@ -3008,5 +3008,8 @@
   },
   "unassignedItemsBanner": {
     "message": "Aviso: Os itens da organização não atribuídos já não são visíveis na vista Todos os cofres e só são acessíveis através da consola de administração. Atribua estes itens a uma coleção a partir da Consola de administração para os tornar visíveis."
+  },
+  "unassignedItemsBannerSelfHost": {
+    "message": "Aviso: A 2 de maio de 2024, os itens da organização não atribuídos deixarão de ser visíveis na vista Todos os cofres e só estarão acessíveis através da Consola de administração. Atribua estes itens a uma coleção a partir da Consola de administração para os tornar visíveis."
   }
 }

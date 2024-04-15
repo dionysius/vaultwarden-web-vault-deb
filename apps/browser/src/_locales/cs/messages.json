@@ -3008,5 +3008,8 @@
   },
   "unassignedItemsBanner": {
     "message": "Upozornění: Nepřiřazené položky organizace již nejsou viditelné ve Vašem zobrazení všech trezorů a jsou nyní přístupné jen v konzoli správce. Přiřaďte tyto položky do kolekce z konzole pro správce, aby byly viditelné."
+  },
+  "unassignedItemsBannerSelfHost": {
+    "message": "Upozornění: Dne 2. května 2024 již nebudou nepřiřazené položky organizace viditelné v zobrazení Všechny trezory a budou přístupné jen prostřednictvím konzoly správce. Přiřaďte tyto položky do kolekce z konzoly pro správce, aby byly viditelné."
   }
 }

@@ -3001,12 +3001,15 @@
     "description": "Notification message for when saving credentials has failed."
   },
   "removePasskey": {
-    "message": "Passkey löschen"
+    "message": "Passkey entfernen"
   },
   "passkeyRemoved": {
-    "message": "Passkey gelöscht"
+    "message": "Passkey entfernt"
   },
   "unassignedItemsBanner": {
     "message": "Hinweis: Nicht zugeordnete Organisationseinträge sind nicht mehr in der Ansicht aller Tresore sichtbar und nur über die Administrator-Konsole zugänglich. Weise diese Einträge einer Sammlung aus der Administrator-Konsole zu, um sie sichtbar zu machen."
+  },
+  "unassignedItemsBannerSelfHost": {
+    "message": "Hinweis: Ab dem 2. Mai 2024 werden nicht zugewiesene Organisationseinträge nicht mehr in der Ansicht aller Tresore sichtbar sein und sind nur über die Administrator-Konsole zugänglich. Weise diese Elemente einer Sammlung aus der Administrator-Konsole zu, um sie sichtbar zu machen."
   }
 }

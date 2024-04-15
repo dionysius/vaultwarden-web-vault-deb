@@ -3007,6 +3007,9 @@
     "message": "Suojausavain poistettiin"
   },
   "unassignedItemsBanner": {
-    "message": "Notice: Unassigned organization items are no longer visible in the All Vaults view and only accessible via the Admin Console. Assign these items to a collection from the Admin Console to make them visible."
+    "message": "Huomautus: Organisaatioiden kokoelmiin määrittämättömät kohteet eivät enää näy laitteiden \"Kaikki holvit\" -näkymissä, vaan ne ovat nähtävissä vain Hallintapaneelista. Määritä kohteet kokoelmiin Hallintapaneelista, jotta ne ovat jatkossakin käytettävissä kaikilta laitteilta."
+  },
+  "unassignedItemsBannerSelfHost": {
+    "message": "Huomautus: 2.5.2024 alkaen kokoelmiin määrittämättömät organisaatioiden kohteet eivät enää näy laitteiden \"Kaikki holvit\" -näkymissä, vaan ne ovat nähtävissä vain Hallintapaneelista. Määritä kohteet kokoelmiin Hallintapaneelista, jotta ne ovat jatkossakin käytettävissä kaikilta laitteilta."
   }
 }

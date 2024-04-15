@@ -3008,5 +3008,8 @@
   },
   "unassignedItemsBanner": {
     "message": "Upozornenie: Nepriradené položky organizácie už nie sú viditeľné v zobrazení Všetky Trezory a sú prístupné len cez administrátorskú konzolu. Aby boli viditeľné, priraďte tieto položky do kolekcie z konzoly administrátora."
+  },
+  "unassignedItemsBannerSelfHost": {
+    "message": "Upozornenie: 2. mája nepriradené položky organizácie už nebudú viditeľné v zobrazení Všetky Trezory a budú prístupné len cez administrátorskú konzolu. Aby boli viditeľné, priraďte tieto položky do kolekcie z konzoly administrátora."
   }
 }

@@ -3008,5 +3008,8 @@
   },
   "unassignedItemsBanner": {
     "message": "Let op: Niet-toegewezen organisatie-items zijn niet langer zichtbaar in de weergave van alle kluisjes en zijn alleen toegankelijk via de Admin Console. Om deze items zichtbaar te maken, moet je ze toewijzen aan een collectie via de Admin Console."
+  },
+  "unassignedItemsBannerSelfHost": {
+    "message": "Kennisgeving: Vanaf 2 mei 2024 zijn niet-toegewezen organisatie-items op geen enkel apparaat meer zichtbaar in de weergave van alle kluisjes en alleen toegankelijk via de Admin Console. Je kunt deze items in het Admin Console aan een collectie toewijzen om ze zichtbaar te maken."
   }
 }

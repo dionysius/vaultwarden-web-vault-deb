@@ -3008,5 +3008,8 @@
   },
   "unassignedItemsBanner": {
     "message": "Notice : les éléments d'organisation non assignés ne sont plus visibles dans la vue Tous les coffres et sont uniquement accessibles via la console d'administration. Assignez ces éléments à une collection à partir de la console d'administration pour les rendre visibles."
+  },
+  "unassignedItemsBannerSelfHost": {
+    "message": "Remarque : au 2 mai 2024, les éléments d'organisation non assignés ne sont plus visibles dans votre vue Tous les coffres sur tous les appareils et sont uniquement accessibles via la Console d'administration. Assignez ces éléments à une collection à partir de la Console d'administration pour les rendre visibles."
   }
 }
