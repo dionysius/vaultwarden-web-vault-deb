@@ -596,6 +596,7 @@ export default class MainBackground {
       this.masterPasswordService,
       this.cryptoService,
       this.apiService,
+      this.stateProvider,
     );
 
     this.authService = new AuthService(
@@ -844,6 +845,7 @@ export default class MainBackground {
       logoutCallback,
       this.stateService,
       this.authService,
+      this.authRequestService,
       this.messagingService,
     );
 

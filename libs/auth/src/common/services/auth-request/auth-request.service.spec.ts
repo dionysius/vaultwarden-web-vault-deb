@@ -9,6 +9,7 @@ import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.se
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
+import { StateProvider } from "@bitwarden/common/platform/state";
 import { FakeAccountService, mockAccountServiceWith } from "@bitwarden/common/spec";
 import { UserId } from "@bitwarden/common/types/guid";
 import { MasterKey, UserKey } from "@bitwarden/common/types/key";
@@ -18,6 +19,7 @@ import { AuthRequestService } from "./auth-request.service";
 describe("AuthRequestService", () => {
   let sut: AuthRequestService;
 
+  const stateProvider = mock<StateProvider>();
   let accountService: FakeAccountService;
   let masterPasswordService: FakeMasterPasswordService;
   const appIdService = mock<AppIdService>();
@@ -38,6 +40,7 @@ describe("AuthRequestService", () => {
       masterPasswordService,
       cryptoService,
       apiService,
+      stateProvider,
     );
 
     mockPrivateKey = new Uint8Array(64);
@@ -56,6 +59,31 @@ describe("AuthRequestService", () => {
       sut.sendAuthRequestPushNotification(notification);
 
       expect(spy).toHaveBeenCalledWith("PUSH_NOTIFICATION");
+    });
+  });
+
+  describe("AcceptAuthRequests", () => {
+    it("returns an error when userId isn't provided", async () => {
+      await expect(sut.getAcceptAuthRequests(undefined)).rejects.toThrow("User ID is required");
+      await expect(sut.setAcceptAuthRequests(true, undefined)).rejects.toThrow(
+        "User ID is required",
+      );
+    });
+  });
+
+  describe("AdminAuthRequest", () => {
+    it("returns an error when userId isn't provided", async () => {
+      await expect(sut.getAdminAuthRequest(undefined)).rejects.toThrow("User ID is required");
+      await expect(sut.setAdminAuthRequest(undefined, undefined)).rejects.toThrow(
+        "User ID is required",
+      );
+      await expect(sut.clearAdminAuthRequest(undefined)).rejects.toThrow("User ID is required");
+    });
+
+    it("does not allow clearing from setAdminAuthRequest", async () => {
+      await expect(sut.setAdminAuthRequest(null, "USER_ID" as UserId)).rejects.toThrow(
+        "Auth request is required",
+      );
     });
   });
 

@@ -1,6 +1,5 @@
 import { Observable } from "rxjs";
 
-import { AdminAuthRequestStorable } from "../../auth/models/domain/admin-auth-req-storable";
 import { KdfConfig } from "../../auth/models/domain/kdf-config";
 import { BiometricKey } from "../../auth/types/biometric-key";
 import { GeneratorOptions } from "../../tools/generator/generator-options";
@@ -124,11 +123,6 @@ export abstract class StateService<T extends Account = Account> {
   setDecryptedPinProtected: (value: EncString, options?: StorageOptions) => Promise<void>;
   getDuckDuckGoSharedKey: (options?: StorageOptions) => Promise<string>;
   setDuckDuckGoSharedKey: (value: string, options?: StorageOptions) => Promise<void>;
-  getAdminAuthRequest: (options?: StorageOptions) => Promise<AdminAuthRequestStorable | null>;
-  setAdminAuthRequest: (
-    adminAuthRequest: AdminAuthRequestStorable,
-    options?: StorageOptions,
-  ) => Promise<void>;
   getEmail: (options?: StorageOptions) => Promise<string>;
   setEmail: (value: string, options?: StorageOptions) => Promise<void>;
   getEmailVerified: (options?: StorageOptions) => Promise<boolean>;
@@ -207,7 +201,5 @@ export abstract class StateService<T extends Account = Account> {
   setVaultTimeout: (value: number, options?: StorageOptions) => Promise<void>;
   getVaultTimeoutAction: (options?: StorageOptions) => Promise<string>;
   setVaultTimeoutAction: (value: string, options?: StorageOptions) => Promise<void>;
-  getApproveLoginRequests: (options?: StorageOptions) => Promise<boolean>;
-  setApproveLoginRequests: (value: boolean, options?: StorageOptions) => Promise<void>;
   nextUpActiveUser: () => Promise<UserId>;
 }

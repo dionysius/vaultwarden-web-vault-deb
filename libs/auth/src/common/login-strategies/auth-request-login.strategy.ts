@@ -132,7 +132,10 @@ export class AuthRequestLoginStrategy extends LoginStrategy {
     }
   }
 
-  protected override async setUserKey(response: IdentityTokenResponse): Promise<void> {
+  protected override async setUserKey(
+    response: IdentityTokenResponse,
+    userId: UserId,
+  ): Promise<void> {
     const authRequestCredentials = this.cache.value.authRequestCredentials;
     // User now may or may not have a master password
     // but set the master key encrypted user key if it exists regardless
@@ -143,7 +146,6 @@ export class AuthRequestLoginStrategy extends LoginStrategy {
     } else {
       await this.trySetUserKeyWithMasterKey();
 
-      const userId = (await this.stateService.getUserId()) as UserId;
       // Establish trust if required after setting user key
       await this.deviceTrustCryptoService.trustDeviceIfRequired(userId);
     }

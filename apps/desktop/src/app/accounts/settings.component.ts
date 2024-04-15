@@ -3,6 +3,7 @@ import { FormBuilder } from "@angular/forms";
 import { BehaviorSubject, firstValueFrom, Observable, Subject } from "rxjs";
 import { concatMap, debounceTime, filter, map, switchMap, takeUntil, tap } from "rxjs/operators";
 
+import { AuthRequestServiceAbstraction } from "@bitwarden/auth/common";
 import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout-settings.service";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
@@ -20,6 +21,7 @@ import { BiometricStateService } from "@bitwarden/common/platform/biometrics/bio
 import { ThemeType, KeySuffixOptions } from "@bitwarden/common/platform/enums";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { ThemeStateService } from "@bitwarden/common/platform/theming/theme-state.service";
+import { UserId } from "@bitwarden/common/types/guid";
 import { DialogService } from "@bitwarden/components";
 
 import { SetPinComponent } from "../../auth/components/set-pin.component";
@@ -60,6 +62,7 @@ export class SettingsComponent implements OnInit {
   showAppPreferences = true;
 
   currentUserEmail: string;
+  currentUserId: UserId;
 
   availableVaultTimeoutActions$: Observable<VaultTimeoutAction[]>;
   vaultTimeoutPolicyCallout: Observable<{
@@ -122,6 +125,7 @@ export class SettingsComponent implements OnInit {
     private desktopSettingsService: DesktopSettingsService,
     private biometricStateService: BiometricStateService,
     private desktopAutofillSettingsService: DesktopAutofillSettingsService,
+    private authRequestService: AuthRequestServiceAbstraction,
   ) {
     const isMac = this.platformUtilsService.getDevice() === DeviceType.MacOsDesktop;
 
@@ -207,6 +211,7 @@ export class SettingsComponent implements OnInit {
       return;
     }
     this.currentUserEmail = await this.stateService.getEmail();
+    this.currentUserId = (await this.stateService.getUserId()) as UserId;
 
     this.availableVaultTimeoutActions$ = this.refreshTimeoutSettings$.pipe(
       switchMap(() => this.vaultTimeoutSettingsService.availableVaultTimeoutActions$()),
@@ -249,7 +254,8 @@ export class SettingsComponent implements OnInit {
       requirePasswordOnStart: await firstValueFrom(
         this.biometricStateService.requirePasswordOnStart$,
       ),
-      approveLoginRequests: (await this.stateService.getApproveLoginRequests()) ?? false,
+      approveLoginRequests:
+        (await this.authRequestService.getAcceptAuthRequests(this.currentUserId)) ?? false,
       clearClipboard: await firstValueFrom(this.autofillSettingsService.clearClipboardDelay$),
       minimizeOnCopyToClipboard: await this.stateService.getMinimizeOnCopyToClipboard(),
       enableFavicons: await firstValueFrom(this.domainSettingsService.showFavicons$),
@@ -665,7 +671,10 @@ export class SettingsComponent implements OnInit {
   }
 
   async updateApproveLoginRequests() {
-    await this.stateService.setApproveLoginRequests(this.form.value.approveLoginRequests);
+    await this.authRequestService.setAcceptAuthRequests(
+      this.form.value.approveLoginRequests,
+      this.currentUserId,
+    );
   }
 
   ngOnDestroy() {

@@ -45,6 +45,9 @@ export const LOGIN_EMAIL_DISK = new StateDefinition("loginEmail", "disk", {
   web: "disk-local",
 });
 export const LOGIN_STRATEGY_MEMORY = new StateDefinition("loginStrategy", "memory");
+export const AUTH_REQUEST_DISK_LOCAL = new StateDefinition("authRequestLocal", "disk", {
+  web: "disk-local",
+});
 export const SSO_DISK = new StateDefinition("ssoLogin", "disk");
 export const TOKEN_DISK = new StateDefinition("token", "disk");
 export const TOKEN_DISK_LOCAL = new StateDefinition("tokenDiskLocal", "disk", {

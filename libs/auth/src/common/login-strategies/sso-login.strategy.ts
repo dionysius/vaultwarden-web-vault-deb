@@ -216,7 +216,10 @@ export class SsoLoginStrategy extends LoginStrategy {
 
   // TODO: future passkey login strategy will need to support setting user key (decrypting via TDE or admin approval request)
   // so might be worth moving this logic to a common place (base login strategy or a separate service?)
-  protected override async setUserKey(tokenResponse: IdentityTokenResponse): Promise<void> {
+  protected override async setUserKey(
+    tokenResponse: IdentityTokenResponse,
+    userId: UserId,
+  ): Promise<void> {
     const masterKeyEncryptedUserKey = tokenResponse.key;
 
     // Note: masterKeyEncryptedUserKey is undefined for SSO JIT provisioned users
@@ -232,7 +235,7 @@ export class SsoLoginStrategy extends LoginStrategy {
 
     // Note: TDE and key connector are mutually exclusive
     if (userDecryptionOptions?.trustedDeviceOption) {
-      await this.trySetUserKeyWithApprovedAdminRequestIfExists();
+      await this.trySetUserKeyWithApprovedAdminRequestIfExists(userId);
 
       const hasUserKey = await this.cryptoService.hasUserKey();
 
@@ -252,9 +255,9 @@ export class SsoLoginStrategy extends LoginStrategy {
     // is responsible for deriving master key from MP entry and then decrypting the user key
   }
 
-  private async trySetUserKeyWithApprovedAdminRequestIfExists(): Promise<void> {
+  private async trySetUserKeyWithApprovedAdminRequestIfExists(userId: UserId): Promise<void> {
     // At this point a user could have an admin auth request that has been approved
-    const adminAuthReqStorable = await this.stateService.getAdminAuthRequest();
+    const adminAuthReqStorable = await this.authRequestService.getAdminAuthRequest(userId);
 
     if (!adminAuthReqStorable) {
       return;
@@ -268,7 +271,7 @@ export class SsoLoginStrategy extends LoginStrategy {
     } catch (error) {
       if (error instanceof ErrorResponse && error.statusCode === HttpStatusCode.NotFound) {
         // if we get a 404, it means the auth request has been deleted so clear it from storage
-        await this.stateService.setAdminAuthRequest(null);
+        await this.authRequestService.clearAdminAuthRequest(userId);
       }
 
       // Always return on an error here as we don't want to block the user from logging in
@@ -295,12 +298,11 @@ export class SsoLoginStrategy extends LoginStrategy {
       if (await this.cryptoService.hasUserKey()) {
         // Now that we have a decrypted user key in memory, we can check if we
         // need to establish trust on the current device
-        const userId = (await this.stateService.getUserId()) as UserId;
         await this.deviceTrustCryptoService.trustDeviceIfRequired(userId);
 
         // if we successfully decrypted the user key, we can delete the admin auth request out of state
         // TODO: eventually we post and clean up DB as well once consumed on client
-        await this.stateService.setAdminAuthRequest(null);
+        await this.authRequestService.clearAdminAuthRequest(userId);
 
         this.platformUtilsService.showToast("success", null, this.i18nService.t("loginApproved"));
       }
