@@ -30,15 +30,6 @@ export const REFRESH_TOKEN_MEMORY = new UserKeyDefinition<string>(TOKEN_MEMORY, 
   clearOn: [], // Manually handled
 });
 
-export const REFRESH_TOKEN_MIGRATED_TO_SECURE_STORAGE = new UserKeyDefinition<boolean>(
-  TOKEN_DISK,
-  "refreshTokenMigratedToSecureStorage",
-  {
-    deserializer: (refreshTokenMigratedToSecureStorage) => refreshTokenMigratedToSecureStorage,
-    clearOn: [], // Don't clear on lock/logout so that we always check the correct place (secure storage) for the refresh token if it's been migrated
-  },
-);
-
 export const EMAIL_TWO_FACTOR_TOKEN_RECORD_DISK_LOCAL = KeyDefinition.record<string, string>(
   TOKEN_DISK_LOCAL,
   "emailTwoFactorTokenRecord",

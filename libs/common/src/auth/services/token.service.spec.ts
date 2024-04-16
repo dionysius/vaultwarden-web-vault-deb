@@ -23,7 +23,6 @@ import {
   EMAIL_TWO_FACTOR_TOKEN_RECORD_DISK_LOCAL,
   REFRESH_TOKEN_DISK,
   REFRESH_TOKEN_MEMORY,
-  REFRESH_TOKEN_MIGRATED_TO_SECURE_STORAGE,
 } from "./token.state";
 
 describe("TokenService", () => {
@@ -1120,20 +1119,13 @@ describe("TokenService", () => {
             secureStorageOptions,
           );
 
-          // assert data was migrated out of disk and memory + flag was set
+          // assert data was migrated out of disk and memory
           expect(
             singleUserStateProvider.getFake(userIdFromAccessToken, REFRESH_TOKEN_DISK).nextMock,
           ).toHaveBeenCalledWith(null);
           expect(
             singleUserStateProvider.getFake(userIdFromAccessToken, REFRESH_TOKEN_MEMORY).nextMock,
           ).toHaveBeenCalledWith(null);
-
-          expect(
-            singleUserStateProvider.getFake(
-              userIdFromAccessToken,
-              REFRESH_TOKEN_MIGRATED_TO_SECURE_STORAGE,
-            ).nextMock,
-          ).toHaveBeenCalledWith(true);
         });
       });
     });
@@ -1260,11 +1252,6 @@ describe("TokenService", () => {
             .getFake(ACCOUNT_ACTIVE_ACCOUNT_ID)
             .stateSubject.next(userIdFromAccessToken);
 
-          // set access token migration flag to true
-          singleUserStateProvider
-            .getFake(userIdFromAccessToken, REFRESH_TOKEN_MIGRATED_TO_SECURE_STORAGE)
-            .stateSubject.next([userIdFromAccessToken, true]);
-
           // Act
           const result = await tokenService.getRefreshToken();
           // Assert
@@ -1284,11 +1271,6 @@ describe("TokenService", () => {
 
           secureStorageService.get.mockResolvedValue(refreshToken);
 
-          // set access token migration flag to true
-          singleUserStateProvider
-            .getFake(userIdFromAccessToken, REFRESH_TOKEN_MIGRATED_TO_SECURE_STORAGE)
-            .stateSubject.next([userIdFromAccessToken, true]);
-
           // Act
           const result = await tokenService.getRefreshToken(userIdFromAccessToken);
           // Assert
@@ -1304,11 +1286,6 @@ describe("TokenService", () => {
           singleUserStateProvider
             .getFake(userIdFromAccessToken, REFRESH_TOKEN_DISK)
             .stateSubject.next([userIdFromAccessToken, refreshToken]);
-
-          // set refresh token migration flag to false
-          singleUserStateProvider
-            .getFake(userIdFromAccessToken, REFRESH_TOKEN_MIGRATED_TO_SECURE_STORAGE)
-            .stateSubject.next([userIdFromAccessToken, false]);
 
           // Act
           const result = await tokenService.getRefreshToken(userIdFromAccessToken);
@@ -1334,11 +1311,6 @@ describe("TokenService", () => {
           globalStateProvider
             .getFake(ACCOUNT_ACTIVE_ACCOUNT_ID)
             .stateSubject.next(userIdFromAccessToken);
-
-          // set access token migration flag to false
-          singleUserStateProvider
-            .getFake(userIdFromAccessToken, REFRESH_TOKEN_MIGRATED_TO_SECURE_STORAGE)
-            .stateSubject.next([userIdFromAccessToken, false]);
 
           // Act
           const result = await tokenService.getRefreshToken();

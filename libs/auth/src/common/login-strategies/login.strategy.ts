@@ -166,8 +166,8 @@ export abstract class LoginStrategy {
 
     const userId = accountInformation.sub;
 
-    const vaultTimeoutAction = await this.stateService.getVaultTimeoutAction();
-    const vaultTimeout = await this.stateService.getVaultTimeout();
+    const vaultTimeoutAction = await this.stateService.getVaultTimeoutAction({ userId });
+    const vaultTimeout = await this.stateService.getVaultTimeout({ userId });
 
     // set access token and refresh token before account initialization so authN status can be accurate
     // User id will be derived from the access token.

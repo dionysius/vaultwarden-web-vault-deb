@@ -54,6 +54,7 @@ import { SendMigrator } from "./migrations/54-move-encrypted-sends";
 import { MoveMasterKeyStateToProviderMigrator } from "./migrations/55-move-master-key-state-to-provider";
 import { AuthRequestMigrator } from "./migrations/56-move-auth-requests";
 import { CipherServiceMigrator } from "./migrations/57-move-cipher-service-to-state-provider";
+import { RemoveRefreshTokenMigratedFlagMigrator } from "./migrations/58-remove-refresh-token-migrated-state-provider-flag";
 import { RemoveLegacyEtmKeyMigrator } from "./migrations/6-remove-legacy-etm-key";
 import { MoveBiometricAutoPromptToAccount } from "./migrations/7-move-biometric-auto-prompt-to-account";
 import { MoveStateVersionMigrator } from "./migrations/8-move-state-version";
@@ -61,7 +62,7 @@ import { MoveBrowserSettingsToGlobal } from "./migrations/9-move-browser-setting
 import { MinVersionMigrator } from "./migrations/min-version";
 
 export const MIN_VERSION = 3;
-export const CURRENT_VERSION = 57;
+export const CURRENT_VERSION = 58;
 export type MinVersion = typeof MIN_VERSION;
 
 export function createMigrationBuilder() {
@@ -120,7 +121,8 @@ export function createMigrationBuilder() {
     .with(SendMigrator, 53, 54)
     .with(MoveMasterKeyStateToProviderMigrator, 54, 55)
     .with(AuthRequestMigrator, 55, 56)
-    .with(CipherServiceMigrator, 56, CURRENT_VERSION);
+    .with(CipherServiceMigrator, 56, 57)
+    .with(RemoveRefreshTokenMigratedFlagMigrator, 57, CURRENT_VERSION);
 }
 
 export async function currentVersion(

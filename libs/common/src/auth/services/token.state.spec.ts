@@ -10,7 +10,6 @@ import {
   EMAIL_TWO_FACTOR_TOKEN_RECORD_DISK_LOCAL,
   REFRESH_TOKEN_DISK,
   REFRESH_TOKEN_MEMORY,
-  REFRESH_TOKEN_MIGRATED_TO_SECURE_STORAGE,
 } from "./token.state";
 
 describe.each([
@@ -18,7 +17,6 @@ describe.each([
   [ACCESS_TOKEN_MEMORY, "accessTokenMemory"],
   [REFRESH_TOKEN_DISK, "refreshTokenDisk"],
   [REFRESH_TOKEN_MEMORY, "refreshTokenMemory"],
-  [REFRESH_TOKEN_MIGRATED_TO_SECURE_STORAGE, true],
   [EMAIL_TWO_FACTOR_TOKEN_RECORD_DISK_LOCAL, { user: "token" }],
   [API_KEY_CLIENT_ID_DISK, "apiKeyClientIdDisk"],
   [API_KEY_CLIENT_ID_MEMORY, "apiKeyClientIdMemory"],
