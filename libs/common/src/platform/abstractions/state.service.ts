@@ -6,10 +6,6 @@ import { GeneratorOptions } from "../../tools/generator/generator-options";
 import { GeneratedPasswordHistory, PasswordGeneratorOptions } from "../../tools/generator/password";
 import { UsernameGeneratorOptions } from "../../tools/generator/username";
 import { UserId } from "../../types/guid";
-import { CipherData } from "../../vault/models/data/cipher.data";
-import { LocalData } from "../../vault/models/data/local.data";
-import { CipherView } from "../../vault/models/view/cipher.view";
-import { AddEditCipherInfo } from "../../vault/types/add-edit-cipher-info";
 import { KdfType } from "../enums";
 import { Account } from "../models/domain/account";
 import { EncString } from "../models/domain/enc-string";
@@ -38,8 +34,6 @@ export abstract class StateService<T extends Account = Account> {
   clean: (options?: StorageOptions) => Promise<UserId>;
   init: (initOptions?: InitOptions) => Promise<void>;
 
-  getAddEditCipherInfo: (options?: StorageOptions) => Promise<AddEditCipherInfo>;
-  setAddEditCipherInfo: (value: AddEditCipherInfo, options?: StorageOptions) => Promise<void>;
   /**
    * Gets the user's auto key
    */
@@ -104,8 +98,6 @@ export abstract class StateService<T extends Account = Account> {
    * @deprecated For migration purposes only, use setUserKeyBiometric instead
    */
   setCryptoMasterKeyBiometric: (value: BiometricKey, options?: StorageOptions) => Promise<void>;
-  getDecryptedCiphers: (options?: StorageOptions) => Promise<CipherView[]>;
-  setDecryptedCiphers: (value: CipherView[], options?: StorageOptions) => Promise<void>;
   getDecryptedPasswordGenerationHistory: (
     options?: StorageOptions,
   ) => Promise<GeneratedPasswordHistory[]>;
@@ -134,11 +126,6 @@ export abstract class StateService<T extends Account = Account> {
     value: boolean,
     options?: StorageOptions,
   ) => Promise<void>;
-  getEncryptedCiphers: (options?: StorageOptions) => Promise<{ [id: string]: CipherData }>;
-  setEncryptedCiphers: (
-    value: { [id: string]: CipherData },
-    options?: StorageOptions,
-  ) => Promise<void>;
   getEncryptedPasswordGenerationHistory: (
     options?: StorageOptions,
   ) => Promise<GeneratedPasswordHistory[]>;
@@ -165,11 +152,6 @@ export abstract class StateService<T extends Account = Account> {
   setLastActive: (value: number, options?: StorageOptions) => Promise<void>;
   getLastSync: (options?: StorageOptions) => Promise<string>;
   setLastSync: (value: string, options?: StorageOptions) => Promise<void>;
-  getLocalData: (options?: StorageOptions) => Promise<{ [cipherId: string]: LocalData }>;
-  setLocalData: (
-    value: { [cipherId: string]: LocalData },
-    options?: StorageOptions,
-  ) => Promise<void>;
   getMinimizeOnCopyToClipboard: (options?: StorageOptions) => Promise<boolean>;
   setMinimizeOnCopyToClipboard: (value: boolean, options?: StorageOptions) => Promise<void>;
   getOrganizationInvitation: (options?: StorageOptions) => Promise<any>;

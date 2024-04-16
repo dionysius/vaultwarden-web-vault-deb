@@ -411,6 +411,7 @@ const safeProviders: SafeProvider[] = [
       encryptService: EncryptService,
       fileUploadService: CipherFileUploadServiceAbstraction,
       configService: ConfigService,
+      stateProvider: StateProvider,
     ) =>
       new CipherService(
         cryptoService,
@@ -423,6 +424,7 @@ const safeProviders: SafeProvider[] = [
         encryptService,
         fileUploadService,
         configService,
+        stateProvider,
       ),
     deps: [
       CryptoServiceAbstraction,
@@ -435,6 +437,7 @@ const safeProviders: SafeProvider[] = [
       EncryptService,
       CipherFileUploadServiceAbstraction,
       ConfigService,
+      StateProvider,
     ],
   }),
   safeProvider({
@@ -444,7 +447,6 @@ const safeProviders: SafeProvider[] = [
       CryptoServiceAbstraction,
       I18nServiceAbstraction,
       CipherServiceAbstraction,
-      StateServiceAbstraction,
       StateProvider,
     ],
   }),

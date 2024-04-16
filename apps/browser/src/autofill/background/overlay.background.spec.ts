@@ -592,7 +592,7 @@ describe("OverlayBackground", () => {
         beforeEach(() => {
           sender = mock<chrome.runtime.MessageSender>({ tab: { id: 1 } });
           jest
-            .spyOn(overlayBackground["stateService"], "setAddEditCipherInfo")
+            .spyOn(overlayBackground["cipherService"], "setAddEditCipherInfo")
             .mockImplementation();
           jest.spyOn(overlayBackground as any, "openAddEditVaultItemPopout").mockImplementation();
         });
@@ -600,7 +600,7 @@ describe("OverlayBackground", () => {
         it("will not open the add edit popout window if the message does not have a login cipher provided", () => {
           sendExtensionRuntimeMessage({ command: "autofillOverlayAddNewVaultItem" }, sender);
 
-          expect(overlayBackground["stateService"].setAddEditCipherInfo).not.toHaveBeenCalled();
+          expect(overlayBackground["cipherService"].setAddEditCipherInfo).not.toHaveBeenCalled();
           expect(overlayBackground["openAddEditVaultItemPopout"]).not.toHaveBeenCalled();
         });
 
@@ -621,7 +621,7 @@ describe("OverlayBackground", () => {
           );
           await flushPromises();
 
-          expect(overlayBackground["stateService"].setAddEditCipherInfo).toHaveBeenCalled();
+          expect(overlayBackground["cipherService"].setAddEditCipherInfo).toHaveBeenCalled();
           expect(BrowserApi.sendMessage).toHaveBeenCalledWith(
             "inlineAutofillMenuRefreshAddEditCipher",
           );

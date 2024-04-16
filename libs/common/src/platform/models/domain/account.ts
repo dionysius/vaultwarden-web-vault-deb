@@ -8,9 +8,6 @@ import {
 } from "../../../tools/generator/password";
 import { UsernameGeneratorOptions } from "../../../tools/generator/username/username-generation-options";
 import { DeepJsonify } from "../../../types/deep-jsonify";
-import { CipherData } from "../../../vault/models/data/cipher.data";
-import { CipherView } from "../../../vault/models/view/cipher.view";
-import { AddEditCipherInfo } from "../../../vault/types/add-edit-cipher-info";
 import { KdfType } from "../../enums";
 import { Utils } from "../../misc/utils";
 
@@ -61,28 +58,17 @@ export class DataEncryptionPair<TEncrypted, TDecrypted> {
 }
 
 export class AccountData {
-  ciphers?: DataEncryptionPair<CipherData, CipherView> = new DataEncryptionPair<
-    CipherData,
-    CipherView
-  >();
-  localData?: any;
   passwordGenerationHistory?: EncryptionPair<
     GeneratedPasswordHistory[],
     GeneratedPasswordHistory[]
   > = new EncryptionPair<GeneratedPasswordHistory[], GeneratedPasswordHistory[]>();
-  addEditCipherInfo?: AddEditCipherInfo;
 
   static fromJSON(obj: DeepJsonify<AccountData>): AccountData {
     if (obj == null) {
       return null;
     }
 
-    return Object.assign(new AccountData(), obj, {
-      addEditCipherInfo: {
-        cipher: CipherView.fromJSON(obj?.addEditCipherInfo?.cipher),
-        collectionIds: obj?.addEditCipherInfo?.collectionIds,
-      },
-    });
+    return Object.assign(new AccountData(), obj);
   }
 }
 

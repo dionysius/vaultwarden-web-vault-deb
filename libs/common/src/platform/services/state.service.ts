@@ -9,10 +9,6 @@ import { GeneratorOptions } from "../../tools/generator/generator-options";
 import { GeneratedPasswordHistory, PasswordGeneratorOptions } from "../../tools/generator/password";
 import { UsernameGeneratorOptions } from "../../tools/generator/username";
 import { UserId } from "../../types/guid";
-import { CipherData } from "../../vault/models/data/cipher.data";
-import { LocalData } from "../../vault/models/data/local.data";
-import { CipherView } from "../../vault/models/view/cipher.view";
-import { AddEditCipherInfo } from "../../vault/types/add-edit-cipher-info";
 import { EnvironmentService } from "../abstractions/environment.service";
 import { LogService } from "../abstractions/log.service";
 import {
@@ -219,34 +215,6 @@ export class StateService<
     await this.removeAccountFromMemory(options?.userId);
     await this.pushAccounts();
     return currentUser as UserId;
-  }
-
-  async getAddEditCipherInfo(options?: StorageOptions): Promise<AddEditCipherInfo> {
-    const account = await this.getAccount(
-      this.reconcileOptions(options, await this.defaultInMemoryOptions()),
-    );
-    // ensure prototype on cipher
-    const raw = account?.data?.addEditCipherInfo;
-    return raw == null
-      ? null
-      : {
-          cipher:
-            raw?.cipher.toJSON != null
-              ? raw.cipher
-              : CipherView.fromJSON(raw?.cipher as Jsonify<CipherView>),
-          collectionIds: raw?.collectionIds,
-        };
-  }
-
-  async setAddEditCipherInfo(value: AddEditCipherInfo, options?: StorageOptions): Promise<void> {
-    const account = await this.getAccount(
-      this.reconcileOptions(options, await this.defaultInMemoryOptions()),
-    );
-    account.data.addEditCipherInfo = value;
-    await this.saveAccount(
-      account,
-      this.reconcileOptions(options, await this.defaultInMemoryOptions()),
-    );
   }
 
   /**
@@ -465,24 +433,6 @@ export class StateService<
     await this.saveSecureStorageKey(partialKeys.biometricKey, value, options);
   }
 
-  @withPrototypeForArrayMembers(CipherView, CipherView.fromJSON)
-  async getDecryptedCiphers(options?: StorageOptions): Promise<CipherView[]> {
-    return (
-      await this.getAccount(this.reconcileOptions(options, await this.defaultInMemoryOptions()))
-    )?.data?.ciphers?.decrypted;
-  }
-
-  async setDecryptedCiphers(value: CipherView[], options?: StorageOptions): Promise<void> {
-    const account = await this.getAccount(
-      this.reconcileOptions(options, await this.defaultInMemoryOptions()),
-    );
-    account.data.ciphers.decrypted = value;
-    await this.saveAccount(
-      account,
-      this.reconcileOptions(options, await this.defaultInMemoryOptions()),
-    );
-  }
-
   @withPrototypeForArrayMembers(GeneratedPasswordHistory)
   async getDecryptedPasswordGenerationHistory(
     options?: StorageOptions,
@@ -618,27 +568,6 @@ export class StateService<
     await this.saveGlobals(
       globals,
       this.reconcileOptions(options, await this.defaultOnDiskOptions()),
-    );
-  }
-
-  @withPrototypeForObjectValues(CipherData)
-  async getEncryptedCiphers(options?: StorageOptions): Promise<{ [id: string]: CipherData }> {
-    return (
-      await this.getAccount(this.reconcileOptions(options, await this.defaultOnDiskMemoryOptions()))
-    )?.data?.ciphers?.encrypted;
-  }
-
-  async setEncryptedCiphers(
-    value: { [id: string]: CipherData },
-    options?: StorageOptions,
-  ): Promise<void> {
-    const account = await this.getAccount(
-      this.reconcileOptions(options, await this.defaultOnDiskMemoryOptions()),
-    );
-    account.data.ciphers.encrypted = value;
-    await this.saveAccount(
-      account,
-      this.reconcileOptions(options, await this.defaultOnDiskMemoryOptions()),
     );
   }
 
@@ -802,26 +731,6 @@ export class StateService<
     await this.saveAccount(
       account,
       this.reconcileOptions(options, await this.defaultOnDiskMemoryOptions()),
-    );
-  }
-
-  async getLocalData(options?: StorageOptions): Promise<{ [cipherId: string]: LocalData }> {
-    return (
-      await this.getAccount(this.reconcileOptions(options, await this.defaultOnDiskLocalOptions()))
-    )?.data?.localData;
-  }
-
-  async setLocalData(
-    value: { [cipherId: string]: LocalData },
-    options?: StorageOptions,
-  ): Promise<void> {
-    const account = await this.getAccount(
-      this.reconcileOptions(options, await this.defaultOnDiskLocalOptions()),
-    );
-    account.data.localData = value;
-    await this.saveAccount(
-      account,
-      this.reconcileOptions(options, await this.defaultOnDiskLocalOptions()),
     );
   }
 
@@ -1504,53 +1413,6 @@ function withPrototypeForArrayMembers<T>(
                     Object.create(memberConstructor.prototype, Object.getOwnPropertyDescriptors(r)),
                   );
             });
-          }
-        });
-      },
-    };
-  };
-}
-
-function withPrototypeForObjectValues<T>(
-  valuesConstructor: new (...args: any[]) => T,
-  valuesConverter: (input: any) => T = (i) => i,
-): (
-  target: any,
-  propertyKey: string | symbol,
-  descriptor: PropertyDescriptor,
-) => { value: (...args: any[]) => Promise<{ [key: string]: T }> } {
-  return (target: any, propertyKey: string | symbol, descriptor: PropertyDescriptor) => {
-    const originalMethod = descriptor.value;
-
-    return {
-      value: function (...args: any[]) {
-        const originalResult: Promise<{ [key: string]: T }> = originalMethod.apply(this, args);
-
-        if (!Utils.isPromise(originalResult)) {
-          throw new Error(
-            `Error applying prototype to stored value -- result is not a promise for method ${String(
-              propertyKey,
-            )}`,
-          );
-        }
-
-        return originalResult.then((result) => {
-          if (result == null) {
-            return null;
-          } else {
-            for (const [key, val] of Object.entries(result)) {
-              result[key] =
-                val == null || val.constructor.name === valuesConstructor.prototype.constructor.name
-                  ? valuesConverter(val)
-                  : valuesConverter(
-                      Object.create(
-                        valuesConstructor.prototype,
-                        Object.getOwnPropertyDescriptors(val),
-                      ),
-                    );
-            }
-
-            return result as { [key: string]: T };
           }
         });
       },
