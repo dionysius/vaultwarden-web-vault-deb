@@ -1,4 +1,5 @@
-import { Component } from "@angular/core";
+import { DIALOG_DATA, DialogConfig, DialogRef } from "@angular/cdk/dialog";
+import { Component, Inject } from "@angular/core";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
@@ -11,8 +12,13 @@ import { CollectionService } from "@bitwarden/common/vault/abstractions/collecti
 import { CipherData } from "@bitwarden/common/vault/models/data/cipher.data";
 import { Cipher } from "@bitwarden/common/vault/models/domain/cipher";
 import { CipherCollectionsRequest } from "@bitwarden/common/vault/models/request/cipher-collections.request";
+import { CollectionView } from "@bitwarden/common/vault/models/view/collection.view";
+import { DialogService } from "@bitwarden/components";
 
-import { CollectionsComponent as BaseCollectionsComponent } from "../individual-vault/collections.component";
+import {
+  CollectionsComponent as BaseCollectionsComponent,
+  CollectionsDialogResult,
+} from "../individual-vault/collections.component";
 
 @Component({
   selector: "app-org-vault-collections",
@@ -29,6 +35,8 @@ export class CollectionsComponent extends BaseCollectionsComponent {
     organizationService: OrganizationService,
     private apiService: ApiService,
     logService: LogService,
+    protected dialogRef: DialogRef,
+    @Inject(DIALOG_DATA) params: OrgVaultCollectionsDialogParams,
   ) {
     super(
       collectionService,
@@ -37,8 +45,14 @@ export class CollectionsComponent extends BaseCollectionsComponent {
       cipherService,
       organizationService,
       logService,
+      dialogRef,
+      params,
     );
     this.allowSelectNone = true;
+    this.collectionIds = params?.collectionIds;
+    this.collections = params?.collections;
+    this.organization = params?.organization;
+    this.cipherId = params?.cipherId;
   }
 
   protected async loadCipher() {
@@ -78,4 +92,26 @@ export class CollectionsComponent extends BaseCollectionsComponent {
       return super.saveCollections();
     }
   }
+}
+
+export interface OrgVaultCollectionsDialogParams {
+  collectionIds: string[];
+  collections: CollectionView[];
+  organization: Organization;
+  cipherId: string;
+}
+
+/**
+ * Strongly typed helper to open a Collections dialog
+ * @param dialogService Instance of the dialog service that will be used to open the dialog
+ * @param config Optional configuration for the dialog
+ */
+export function openOrgVaultCollectionsDialog(
+  dialogService: DialogService,
+  config?: DialogConfig<OrgVaultCollectionsDialogParams>,
+) {
+  return dialogService.open<CollectionsDialogResult, OrgVaultCollectionsDialogParams>(
+    CollectionsComponent,
+    config,
+  );
 }

@@ -59,7 +59,7 @@ export class CollectionsComponent implements OnInit {
     }
   }
 
-  async submit() {
+  async submit(): Promise<boolean> {
     const selectedCollectionIds = this.collections
       .filter((c) => {
         if (this.organization.canEditAllCiphers(this.flexibleCollectionsV1Enabled)) {
@@ -75,7 +75,7 @@ export class CollectionsComponent implements OnInit {
         this.i18nService.t("errorOccurred"),
         this.i18nService.t("selectOneCollection"),
       );
-      return;
+      return false;
     }
     this.cipherDomain.collectionIds = selectedCollectionIds;
     try {
@@ -83,8 +83,10 @@ export class CollectionsComponent implements OnInit {
       await this.formPromise;
       this.onSavedCollections.emit();
       this.platformUtilsService.showToast("success", null, this.i18nService.t("editedItem"));
+      return true;
     } catch (e) {
       this.logService.error(e);
+      return false;
     }
   }
 
