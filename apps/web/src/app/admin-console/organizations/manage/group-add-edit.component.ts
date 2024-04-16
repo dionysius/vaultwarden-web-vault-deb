@@ -1,15 +1,31 @@
 import { DIALOG_DATA, DialogConfig, DialogRef } from "@angular/cdk/dialog";
 import { ChangeDetectorRef, Component, Inject, OnDestroy, OnInit } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
-import { catchError, combineLatest, from, map, of, Subject, switchMap, takeUntil } from "rxjs";
+import {
+  catchError,
+  combineLatest,
+  concatMap,
+  from,
+  map,
+  Observable,
+  of,
+  shareReplay,
+  Subject,
+  switchMap,
+  takeUntil,
+} from "rxjs";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { OrganizationUserService } from "@bitwarden/common/admin-console/abstractions/organization-user/organization-user.service";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
+import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { ErrorResponse } from "@bitwarden/common/models/response/error.response";
+import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { UserId } from "@bitwarden/common/types/guid";
 import { CollectionService } from "@bitwarden/common/vault/abstractions/collection.service";
 import { CollectionData } from "@bitwarden/common/vault/models/data/collection.data";
 import { Collection } from "@bitwarden/common/vault/models/domain/collection";
@@ -88,10 +104,9 @@ export class GroupAddEditComponent implements OnInit, OnDestroy {
 
   tabIndex: GroupAddEditTabType;
   loading = true;
-  editMode = false;
   title: string;
   collections: AccessItemView[] = [];
-  members: AccessItemView[] = [];
+  members: Array<AccessItemView & { userId: UserId }> = [];
   group: GroupView;
 
   groupForm = this.formBuilder.group({
@@ -108,6 +123,10 @@ export class GroupAddEditComponent implements OnInit, OnDestroy {
 
   get organizationId(): string {
     return this.params.organizationId;
+  }
+
+  protected get editMode(): boolean {
+    return this.groupId != null;
   }
 
   private destroy$ = new Subject<void>();
@@ -134,7 +153,7 @@ export class GroupAddEditComponent implements OnInit, OnDestroy {
     );
   }
 
-  private get orgMembers$() {
+  private get orgMembers$(): Observable<Array<AccessItemView & { userId: UserId }>> {
     return from(this.organizationUserService.getAllUsers(this.organizationId)).pipe(
       map((response) =>
         response.data.map((m) => ({
@@ -145,34 +164,55 @@ export class GroupAddEditComponent implements OnInit, OnDestroy {
           listName: m.name?.length > 0 ? `${m.name} (${m.email})` : m.email,
           labelName: m.name || m.email,
           status: m.status,
+          userId: m.userId as UserId,
         })),
       ),
     );
   }
 
-  private get groupDetails$() {
-    if (!this.editMode) {
-      return of(undefined);
-    }
-
-    return combineLatest([
-      this.groupService.get(this.organizationId, this.groupId),
-      this.apiService.getGroupUsers(this.organizationId, this.groupId),
-    ]).pipe(
-      map(([groupView, users]) => {
-        groupView.members = users;
-        return groupView;
-      }),
-      catchError((e: unknown) => {
-        if (e instanceof ErrorResponse) {
-          this.logService.error(e.message);
-        } else {
-          this.logService.error(e.toString());
-        }
+  private groupDetails$: Observable<GroupView | undefined> = of(this.editMode).pipe(
+    concatMap((editMode) => {
+      if (!editMode) {
         return of(undefined);
-      }),
-    );
-  }
+      }
+
+      return combineLatest([
+        this.groupService.get(this.organizationId, this.groupId),
+        this.apiService.getGroupUsers(this.organizationId, this.groupId),
+      ]).pipe(
+        map(([groupView, users]) => {
+          groupView.members = users;
+          return groupView;
+        }),
+        catchError((e: unknown) => {
+          if (e instanceof ErrorResponse) {
+            this.logService.error(e.message);
+          } else {
+            this.logService.error(e.toString());
+          }
+          return of(undefined);
+        }),
+      );
+    }),
+    shareReplay({ refCount: false }),
+  );
+
+  restrictGroupAccess$ = combineLatest([
+    this.organizationService.get$(this.organizationId),
+    this.configService.getFeatureFlag$(FeatureFlag.FlexibleCollectionsV1),
+    this.groupDetails$,
+  ]).pipe(
+    map(
+      ([organization, flexibleCollectionsV1Enabled, group]) =>
+        // Feature flag conditionals
+        flexibleCollectionsV1Enabled &&
+        organization.flexibleCollections &&
+        // Business logic conditionals
+        !organization.allowAdminAccessToAllCollectionItems &&
+        group !== undefined,
+    ),
+    shareReplay({ refCount: true, bufferSize: 1 }),
+  );
 
   constructor(
     @Inject(DIALOG_DATA) private params: GroupAddEditDialogParams,
@@ -188,17 +228,25 @@ export class GroupAddEditComponent implements OnInit, OnDestroy {
     private changeDetectorRef: ChangeDetectorRef,
     private dialogService: DialogService,
     private organizationService: OrganizationService,
+    private configService: ConfigService,
+    private accountService: AccountService,
   ) {
     this.tabIndex = params.initialTab ?? GroupAddEditTabType.Info;
   }
 
   ngOnInit() {
-    this.editMode = this.loading = this.groupId != null;
+    this.loading = true;
     this.title = this.i18nService.t(this.editMode ? "editGroup" : "newGroup");
 
-    combineLatest([this.orgCollections$, this.orgMembers$, this.groupDetails$])
+    combineLatest([
+      this.orgCollections$,
+      this.orgMembers$,
+      this.groupDetails$,
+      this.restrictGroupAccess$,
+      this.accountService.activeAccount$,
+    ])
       .pipe(takeUntil(this.destroy$))
-      .subscribe(([collections, members, group]) => {
+      .subscribe(([collections, members, group, restrictGroupAccess, activeAccount]) => {
         this.collections = collections;
         this.members = members;
         this.group = group;
@@ -222,6 +270,18 @@ export class GroupAddEditComponent implements OnInit, OnDestroy {
               permission: convertToPermission(gc),
             })),
           });
+        }
+
+        // If the current user is not already in the group and cannot add themselves, remove them from the list
+        if (restrictGroupAccess) {
+          const organizationUserId = this.members.find((m) => m.userId === activeAccount.id).id;
+          const isAlreadyInGroup = this.groupForm.value.members.some(
+            (m) => m.id === organizationUserId,
+          );
+
+          if (!isAlreadyInGroup) {
+            this.members = this.members.filter((m) => m.id !== organizationUserId);
+          }
         }
 
         this.loading = false;

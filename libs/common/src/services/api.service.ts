@@ -866,16 +866,6 @@ export class ApiService implements ApiServiceAbstraction {
     return r;
   }
 
-  async putGroupUsers(organizationId: string, id: string, request: string[]): Promise<any> {
-    await this.send(
-      "PUT",
-      "/organizations/" + organizationId + "/groups/" + id + "/users",
-      request,
-      true,
-      false,
-    );
-  }
-
   deleteGroupUser(organizationId: string, id: string, organizationUserId: string): Promise<any> {
     return this.send(
       "DELETE",

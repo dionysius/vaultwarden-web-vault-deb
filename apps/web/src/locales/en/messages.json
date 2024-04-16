@@ -7905,5 +7905,8 @@
   },
   "unassignedItemsBannerSelfHost": {
     "message": "Notice: On May 2, 2024, unassigned organization items will no longer be visible in your All Vaults view across devices and will only be accessible via the Admin Console. Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "restrictedGroupAccessDesc": {
+    "message": "You cannot add yourself to a group."
   }
 }

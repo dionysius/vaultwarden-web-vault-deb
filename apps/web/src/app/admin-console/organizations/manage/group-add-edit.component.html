@@ -31,7 +31,12 @@
         </bit-tab>
 
         <bit-tab label="{{ 'members' | i18n }}">
-          <p>{{ "editGroupMembersDesc" | i18n }}</p>
+          <p>
+            {{ "editGroupMembersDesc" | i18n }}
+            <span *ngIf="restrictGroupAccess$ | async">
+              {{ "restrictedGroupAccessDesc" | i18n }}
+            </span>
+          </p>
           <bit-access-selector
             formControlName="members"
             [items]="members"

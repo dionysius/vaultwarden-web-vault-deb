@@ -297,7 +297,6 @@ export abstract class ApiService {
   ) => Promise<any>;
 
   getGroupUsers: (organizationId: string, id: string) => Promise<string[]>;
-  putGroupUsers: (organizationId: string, id: string, request: string[]) => Promise<any>;
   deleteGroupUser: (organizationId: string, id: string, organizationUserId: string) => Promise<any>;
 
   getSync: () => Promise<SyncResponse>;
