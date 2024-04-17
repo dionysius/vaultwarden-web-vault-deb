@@ -160,9 +160,9 @@ jobs:
         run: npm run dist
         working-directory: browser-source/apps/browser
 
-      # - name: Build Manifest v3
-      #   run: npm run dist:mv3
-      #   working-directory: browser-source/apps/browser
+      - name: Build Manifest v3
+        run: npm run dist:mv3
+        working-directory: browser-source/apps/browser
 
       - name: Gulp
         run: gulp ci
