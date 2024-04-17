@@ -196,7 +196,7 @@ describe("ImportService", () => {
         new Object() as FolderView,
       );
 
-      await expect(setImportTargetMethod).rejects.toThrow("Error assigning target collection");
+      await expect(setImportTargetMethod).rejects.toThrow();
     });
 
     it("passing importTarget as null on setImportTarget throws error", async () => {
@@ -206,7 +206,7 @@ describe("ImportService", () => {
         new Object() as CollectionView,
       );
 
-      await expect(setImportTargetMethod).rejects.toThrow("Error assigning target folder");
+      await expect(setImportTargetMethod).rejects.toThrow();
     });
 
     it("passing importTarget, collectionRelationship has the expected values", async () => {
