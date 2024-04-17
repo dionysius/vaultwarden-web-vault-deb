@@ -785,7 +785,7 @@ export class CipherService implements CipherServiceAbstraction {
   async upsert(cipher: CipherData | CipherData[]): Promise<any> {
     const ciphers = cipher instanceof CipherData ? [cipher] : cipher;
     await this.updateEncryptedCipherState((current) => {
-      ciphers.forEach((c) => current[c.id as CipherId]);
+      ciphers.forEach((c) => (current[c.id as CipherId] = c));
       return current;
     });
   }
