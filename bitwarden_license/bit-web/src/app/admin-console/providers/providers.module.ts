@@ -8,6 +8,7 @@ import { OrganizationPlansComponent, TaxInfoComponent } from "@bitwarden/web-vau
 import { PaymentMethodWarningsModule } from "@bitwarden/web-vault/app/billing/shared";
 import { OssModule } from "@bitwarden/web-vault/app/oss.module";
 
+import { DangerZoneComponent } from "../../../../../../apps/web/src/app/auth/settings/account/danger-zone.component";
 import { ManageClientOrganizationSubscriptionComponent } from "../../billing/providers/clients/manage-client-organization-subscription.component";
 import { ManageClientOrganizationsComponent } from "../../billing/providers/clients/manage-client-organizations.component";
 
@@ -40,6 +41,7 @@ import { SetupComponent } from "./setup/setup.component";
     ProvidersLayoutComponent,
     PaymentMethodWarningsModule,
     TaxInfoComponent,
+    DangerZoneComponent,
   ],
   declarations: [
     AcceptProviderComponent,

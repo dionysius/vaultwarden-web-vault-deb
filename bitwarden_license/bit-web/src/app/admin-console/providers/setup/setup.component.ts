@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { firstValueFrom } from "rxjs";
 import { first } from "rxjs/operators";
 
-import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { ProviderApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/provider/provider-api.service.abstraction";
 import { ProviderSetupRequest } from "@bitwarden/common/admin-console/models/request/provider/provider-setup.request";
 import { ExpandedTaxInfoUpdateRequest } from "@bitwarden/common/billing/models/request/expanded-tax-info-update.request";
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
@@ -50,10 +50,10 @@ export class SetupComponent implements OnInit {
     private i18nService: I18nService,
     private route: ActivatedRoute,
     private cryptoService: CryptoService,
-    private apiService: ApiService,
     private syncService: SyncService,
     private validationService: ValidationService,
     private configService: ConfigService,
+    private providerApiService: ProviderApiServiceAbstraction,
   ) {}
 
   ngOnInit() {
@@ -80,7 +80,7 @@ export class SetupComponent implements OnInit {
 
       // Check if provider exists, redirect if it does
       try {
-        const provider = await this.apiService.getProvider(this.providerId);
+        const provider = await this.providerApiService.getProvider(this.providerId);
         if (provider.name != null) {
           // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
           // eslint-disable-next-line @typescript-eslint/no-floating-promises
@@ -128,7 +128,7 @@ export class SetupComponent implements OnInit {
         }
       }
 
-      const provider = await this.apiService.postProviderSetup(this.providerId, request);
+      const provider = await this.providerApiService.postProviderSetup(this.providerId, request);
       this.platformUtilsService.showToast("success", null, this.i18nService.t("providerSetup"));
       await this.syncService.fullSync(true);
 

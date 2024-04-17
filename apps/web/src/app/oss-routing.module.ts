@@ -13,6 +13,7 @@ import { flagEnabled, Flags } from "../utils/flags";
 
 import { AcceptFamilySponsorshipComponent } from "./admin-console/organizations/sponsorships/accept-family-sponsorship.component";
 import { FamiliesForEnterpriseSetupComponent } from "./admin-console/organizations/sponsorships/families-for-enterprise-setup.component";
+import { VerifyRecoverDeleteProviderComponent } from "./admin-console/providers/verify-recover-delete-provider.component";
 import { CreateOrganizationComponent } from "./admin-console/settings/create-organization.component";
 import { SponsoredFamiliesComponent } from "./admin-console/settings/sponsored-families.component";
 import { AcceptOrganizationComponent } from "./auth/accept-organization.component";
@@ -153,6 +154,12 @@ const routes: Routes = [
       {
         path: "verify-recover-delete",
         component: VerifyRecoverDeleteComponent,
+        canActivate: [UnauthGuard],
+        data: { titleId: "deleteAccount" },
+      },
+      {
+        path: "verify-recover-delete-provider",
+        component: VerifyRecoverDeleteProviderComponent,
         canActivate: [UnauthGuard],
         data: { titleId: "deleteAccount" },
       },

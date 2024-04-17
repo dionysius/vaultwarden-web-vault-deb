@@ -4,8 +4,6 @@ import { OrganizationSponsorshipRedeemRequest } from "../admin-console/models/re
 import { OrganizationConnectionRequest } from "../admin-console/models/request/organization-connection.request";
 import { ProviderAddOrganizationRequest } from "../admin-console/models/request/provider/provider-add-organization.request";
 import { ProviderOrganizationCreateRequest } from "../admin-console/models/request/provider/provider-organization-create.request";
-import { ProviderSetupRequest } from "../admin-console/models/request/provider/provider-setup.request";
-import { ProviderUpdateRequest } from "../admin-console/models/request/provider/provider-update.request";
 import { ProviderUserAcceptRequest } from "../admin-console/models/request/provider/provider-user-accept.request";
 import { ProviderUserBulkConfirmRequest } from "../admin-console/models/request/provider/provider-user-bulk-confirm.request";
 import { ProviderUserBulkRequest } from "../admin-console/models/request/provider/provider-user-bulk.request";
@@ -29,7 +27,6 @@ import {
   ProviderUserResponse,
   ProviderUserUserDetailsResponse,
 } from "../admin-console/models/response/provider/provider-user.response";
-import { ProviderResponse } from "../admin-console/models/response/provider/provider.response";
 import { SelectionReadOnlyResponse } from "../admin-console/models/response/selection-read-only.response";
 import { CreateAuthRequest } from "../auth/models/request/create-auth.request";
 import { DeviceVerificationRequest } from "../auth/models/request/device-verification.request";
@@ -371,10 +368,6 @@ export abstract class ApiService {
   deleteOrganizationConnection: (id: string) => Promise<void>;
   getPlans: () => Promise<ListResponse<PlanResponse>>;
   getTaxRates: () => Promise<ListResponse<TaxRateResponse>>;
-
-  postProviderSetup: (id: string, request: ProviderSetupRequest) => Promise<ProviderResponse>;
-  getProvider: (id: string) => Promise<ProviderResponse>;
-  putProvider: (id: string, request: ProviderUpdateRequest) => Promise<ProviderResponse>;
 
   getProviderUsers: (providerId: string) => Promise<ListResponse<ProviderUserUserDetailsResponse>>;
   getProviderUser: (providerId: string, id: string) => Promise<ProviderUserResponse>;

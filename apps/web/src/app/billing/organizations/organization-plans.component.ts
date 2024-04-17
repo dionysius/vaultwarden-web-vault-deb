@@ -15,6 +15,7 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
+import { ProviderApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/provider/provider-api.service.abstraction";
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { OrganizationCreateRequest } from "@bitwarden/common/admin-console/models/request/organization-create.request";
@@ -147,6 +148,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
     private messagingService: MessagingService,
     private formBuilder: FormBuilder,
     private organizationApiService: OrganizationApiServiceAbstraction,
+    private providerApiService: ProviderApiServiceAbstraction,
   ) {
     this.selfHosted = platformUtilsService.isSelfHost();
   }
@@ -182,7 +184,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
     if (this.hasProvider) {
       this.formGroup.controls.businessOwned.setValue(true);
       this.changedOwnedBusiness();
-      this.provider = await this.apiService.getProvider(this.providerId);
+      this.provider = await this.providerApiService.getProvider(this.providerId);
       const providerDefaultPlan = this.passwordManagerPlans.find(
         (plan) => plan.type === PlanType.TeamsAnnually,
       );
