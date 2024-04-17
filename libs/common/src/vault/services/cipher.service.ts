@@ -1,4 +1,4 @@
-import { Observable, firstValueFrom } from "rxjs";
+import { Observable, firstValueFrom, map } from "rxjs";
 import { SemVer } from "semver";
 
 import { ApiService } from "../../abstractions/api.service";
@@ -100,9 +100,9 @@ export class CipherService implements CipherServiceAbstraction {
     this.decryptedCiphersState = this.stateProvider.getActive(DECRYPTED_CIPHERS);
     this.addEditCipherInfoState = this.stateProvider.getActive(ADD_EDIT_CIPHER_INFO_KEY);
 
-    this.localData$ = this.localDataState.state$;
-    this.ciphers$ = this.encryptedCiphersState.state$;
-    this.cipherViews$ = this.decryptedCiphersState.state$;
+    this.localData$ = this.localDataState.state$.pipe(map((data) => data ?? {}));
+    this.ciphers$ = this.encryptedCiphersState.state$.pipe(map((ciphers) => ciphers ?? {}));
+    this.cipherViews$ = this.decryptedCiphersState.state$.pipe(map((views) => views ?? {}));
     this.addEditCipherInfo$ = this.addEditCipherInfoState.state$;
   }
 
