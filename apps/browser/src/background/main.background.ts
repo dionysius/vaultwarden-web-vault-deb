@@ -342,11 +342,11 @@ export default class MainBackground {
   private syncTimeout: any;
   private isSafari: boolean;
   private nativeMessagingBackground: NativeMessagingBackground;
-  popupOnlyContext: boolean;
 
-  constructor(public isPrivateMode: boolean = false) {
-    this.popupOnlyContext = isPrivateMode || BrowserApi.isManifestVersion(3);
-
+  constructor(
+    public isPrivateMode: boolean = false,
+    public popupOnlyContext: boolean = false,
+  ) {
     // Services
     const lockedCallback = async (userId?: string) => {
       if (this.notificationsService != null) {
@@ -889,82 +889,83 @@ export default class MainBackground {
     this.isSafari = this.platformUtilsService.isSafari();
 
     // Background
-    this.runtimeBackground = new RuntimeBackground(
-      this,
-      this.autofillService,
-      this.platformUtilsService as BrowserPlatformUtilsService,
-      this.i18nService,
-      this.notificationsService,
-      this.stateService,
-      this.autofillSettingsService,
-      this.systemService,
-      this.environmentService,
-      this.messagingService,
-      this.logService,
-      this.configService,
-      this.fido2Service,
-    );
-    this.nativeMessagingBackground = new NativeMessagingBackground(
-      this.accountService,
-      this.masterPasswordService,
-      this.cryptoService,
-      this.cryptoFunctionService,
-      this.runtimeBackground,
-      this.messagingService,
-      this.appIdService,
-      this.platformUtilsService,
-      this.stateService,
-      this.logService,
-      this.authService,
-      this.biometricStateService,
-    );
-    this.commandsBackground = new CommandsBackground(
-      this,
-      this.passwordGenerationService,
-      this.platformUtilsService,
-      this.vaultTimeoutService,
-      this.authService,
-    );
-    this.notificationBackground = new NotificationBackground(
-      this.autofillService,
-      this.cipherService,
-      this.authService,
-      this.policyService,
-      this.folderService,
-      this.stateService,
-      this.userNotificationSettingsService,
-      this.domainSettingsService,
-      this.environmentService,
-      this.logService,
-      themeStateService,
-      this.configService,
-    );
-    this.overlayBackground = new OverlayBackground(
-      this.cipherService,
-      this.autofillService,
-      this.authService,
-      this.environmentService,
-      this.domainSettingsService,
-      this.stateService,
-      this.autofillSettingsService,
-      this.i18nService,
-      this.platformUtilsService,
-      themeStateService,
-    );
-    this.filelessImporterBackground = new FilelessImporterBackground(
-      this.configService,
-      this.authService,
-      this.policyService,
-      this.notificationBackground,
-      this.importService,
-      this.syncService,
-    );
-    this.tabsBackground = new TabsBackground(
-      this,
-      this.notificationBackground,
-      this.overlayBackground,
-    );
     if (!this.popupOnlyContext) {
+      this.runtimeBackground = new RuntimeBackground(
+        this,
+        this.autofillService,
+        this.platformUtilsService as BrowserPlatformUtilsService,
+        this.i18nService,
+        this.notificationsService,
+        this.stateService,
+        this.autofillSettingsService,
+        this.systemService,
+        this.environmentService,
+        this.messagingService,
+        this.logService,
+        this.configService,
+        this.fido2Service,
+      );
+      this.nativeMessagingBackground = new NativeMessagingBackground(
+        this.accountService,
+        this.masterPasswordService,
+        this.cryptoService,
+        this.cryptoFunctionService,
+        this.runtimeBackground,
+        this.messagingService,
+        this.appIdService,
+        this.platformUtilsService,
+        this.stateService,
+        this.logService,
+        this.authService,
+        this.biometricStateService,
+      );
+      this.commandsBackground = new CommandsBackground(
+        this,
+        this.passwordGenerationService,
+        this.platformUtilsService,
+        this.vaultTimeoutService,
+        this.authService,
+      );
+      this.notificationBackground = new NotificationBackground(
+        this.autofillService,
+        this.cipherService,
+        this.authService,
+        this.policyService,
+        this.folderService,
+        this.stateService,
+        this.userNotificationSettingsService,
+        this.domainSettingsService,
+        this.environmentService,
+        this.logService,
+        themeStateService,
+        this.configService,
+      );
+      this.overlayBackground = new OverlayBackground(
+        this.cipherService,
+        this.autofillService,
+        this.authService,
+        this.environmentService,
+        this.domainSettingsService,
+        this.stateService,
+        this.autofillSettingsService,
+        this.i18nService,
+        this.platformUtilsService,
+        themeStateService,
+      );
+      this.filelessImporterBackground = new FilelessImporterBackground(
+        this.configService,
+        this.authService,
+        this.policyService,
+        this.notificationBackground,
+        this.importService,
+        this.syncService,
+      );
+      this.tabsBackground = new TabsBackground(
+        this,
+        this.notificationBackground,
+        this.overlayBackground,
+      );
+
       const contextMenuClickedHandler = new ContextMenuClickedHandler(
         (options) => this.platformUtilsService.copyToClipboard(options.text),
         async (_tab) => {
@@ -1006,11 +1007,6 @@ export default class MainBackground {
       this.notificationsService,
       this.accountService,
     );
-    this.webRequestBackground = new WebRequestBackground(
-      this.platformUtilsService,
-      this.cipherService,
-      this.authService,
-    );
 
     this.usernameGenerationService = new UsernameGenerationService(
       this.cryptoService,
@@ -1032,34 +1028,40 @@ export default class MainBackground {
         this.authService,
         this.cipherService,
       );
+
+      if (BrowserApi.isManifestVersion(2)) {
+        this.webRequestBackground = new WebRequestBackground(
+          this.platformUtilsService,
+          this.cipherService,
+          this.authService,
+        );
+      }
     }
   }
 
   async bootstrap() {
     this.containerService.attachToGlobal(self);
 
-    await this.stateService.init();
+    await this.stateService.init({ runMigrations: !this.isPrivateMode });
 
-    await this.vaultTimeoutService.init(true);
     await (this.i18nService as I18nService).init();
-    await (this.eventUploadService as EventUploadService).init(true);
-    await this.runtimeBackground.init();
-    await this.notificationBackground.init();
-    this.filelessImporterBackground.init();
-    await this.commandsBackground.init();
-
+    (this.eventUploadService as EventUploadService).init(true);
     this.twoFactorService.init();
 
-    await this.overlayBackground.init();
-
-    await this.tabsBackground.init();
     if (!this.popupOnlyContext) {
+      await this.vaultTimeoutService.init(true);
+      await this.runtimeBackground.init();
+      await this.notificationBackground.init();
+      this.filelessImporterBackground.init();
+      await this.commandsBackground.init();
+      await this.overlayBackground.init();
+      await this.tabsBackground.init();
       this.contextMenusBackground?.init();
+      await this.idleBackground.init();
+      if (BrowserApi.isManifestVersion(2)) {
+        await this.webRequestBackground.init();
+      }
     }
-    await this.idleBackground.init();
-    await this.webRequestBackground.init();
-
-    await this.fido2Service.init();
 
     if (this.platformUtilsService.isFirefox() && !this.isPrivateMode) {
       // Set Private Mode windows to the default icon - they do not share state with the background page
@@ -1082,9 +1084,7 @@ export default class MainBackground {
         if (!this.isPrivateMode) {
           await this.refreshBadge();
         }
-        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-        // eslint-disable-next-line @typescript-eslint/no-floating-promises
-        this.fullSync(true);
+        await this.fullSync(true);
         setTimeout(() => this.notificationsService.init(), 2500);
         resolve();
       }, 500);
@@ -1205,7 +1205,7 @@ export default class MainBackground {
       BrowserApi.sendMessage("updateBadge");
     }
     await this.refreshBadge();
-    await this.mainContextMenuHandler.noAccess();
+    await this.mainContextMenuHandler?.noAccess();
     // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.notificationsService.updateConnection(false);
