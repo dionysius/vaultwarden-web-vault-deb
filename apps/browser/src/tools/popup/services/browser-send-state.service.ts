@@ -42,7 +42,7 @@ export class BrowserSendStateService {
   }
 
   /** Set the active user's browser send component state
-   *  @param { BrowserSendComponentState } value sets the sends and type counts along with the scroll position and search text for
+   *  @param { BrowserSendComponentState } value sets the sends along with the scroll position and search text for
    *  the send component on the browser
    */
   async setBrowserSendComponentState(value: BrowserSendComponentState): Promise<void> {

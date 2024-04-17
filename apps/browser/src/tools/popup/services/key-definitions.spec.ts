@@ -1,7 +1,5 @@
 import { Jsonify } from "type-fest";
 
-import { SendType } from "@bitwarden/common/tools/send/enums/send-type";
-
 import { BrowserSendComponentState } from "../../../models/browserSendComponentState";
 
 import { BROWSER_SEND_COMPONENT, BROWSER_SEND_TYPE_COMPONENT } from "./key-definitions";
@@ -12,7 +10,8 @@ describe("Key definitions", () => {
       const keyDef = BROWSER_SEND_COMPONENT;
 
       const expectedState = {
-        typeCounts: new Map<SendType, number>(),
+        scrollY: 0,
+        searchText: "test",
       };
 
       const result = keyDef.deserializer(

@@ -61,7 +61,7 @@
             <div class="icon"><i class="bwi bwi-fw bwi-lg bwi-file-text"></i></div>
             <span class="text">{{ "sendTypeText" | i18n }}</span>
           </div>
-          <span class="row-sub-label">{{ typeCounts.get(sendType.Text) || 0 }}</span>
+          <span class="row-sub-label">{{ getSendCount(sends, sendType.Text) }}</span>
           <span><i class="bwi bwi-angle-right bwi-lg row-sub-icon"></i></span>
         </button>
         <button
@@ -74,7 +74,7 @@
             <div class="icon"><i class="bwi bwi-fw bwi-lg bwi-file"></i></div>
             <span class="text">{{ "sendTypeFile" | i18n }}</span>
           </div>
-          <span class="row-sub-label">{{ typeCounts.get(sendType.File) || 0 }}</span>
+          <span class="row-sub-label">{{ getSendCount(sends, sendType.File) }}</span>
           <span><i class="bwi bwi-angle-right bwi-lg row-sub-icon"></i></span>
         </button>
       </div>

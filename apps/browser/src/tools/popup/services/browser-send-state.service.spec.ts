@@ -6,7 +6,6 @@ import { FakeStateProvider } from "@bitwarden/common/../spec/fake-state-provider
 import { awaitAsync } from "@bitwarden/common/../spec/utils";
 
 import { Utils } from "@bitwarden/common/platform/misc/utils";
-import { SendType } from "@bitwarden/common/tools/send/enums/send-type";
 import { UserId } from "@bitwarden/common/types/guid";
 
 import { BrowserComponentState } from "../../../models/browserComponentState";
@@ -33,7 +32,6 @@ describe("Browser Send State Service", () => {
       const state = new BrowserSendComponentState();
       state.scrollY = 0;
       state.searchText = "test";
-      state.typeCounts = new Map<SendType, number>().set(SendType.File, 1);
 
       await stateService.setBrowserSendComponentState(state);
 
