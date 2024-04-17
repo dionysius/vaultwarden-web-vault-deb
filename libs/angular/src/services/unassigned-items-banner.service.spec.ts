@@ -1,6 +1,7 @@
 import { MockProxy, mock } from "jest-mock-extended";
 import { firstValueFrom, of } from "rxjs";
 
+import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { FakeStateProvider, mockAccountServiceWith } from "@bitwarden/common/spec";
 import { UserId } from "@bitwarden/common/types/guid";
@@ -12,9 +13,15 @@ describe("UnassignedItemsBanner", () => {
   let stateProvider: FakeStateProvider;
   let apiService: MockProxy<UnassignedItemsBannerApiService>;
   let environmentService: MockProxy<EnvironmentService>;
+  let organizationService: MockProxy<OrganizationService>;
 
   const sutFactory = () =>
-    new UnassignedItemsBannerService(stateProvider, apiService, environmentService);
+    new UnassignedItemsBannerService(
+      stateProvider,
+      apiService,
+      environmentService,
+      organizationService,
+    );
 
   beforeEach(() => {
     const fakeAccountService = mockAccountServiceWith("userId" as UserId);
@@ -22,6 +29,8 @@ describe("UnassignedItemsBanner", () => {
     apiService = mock();
     environmentService = mock();
     environmentService.environment$ = of(null);
+    organizationService = mock();
+    organizationService.organizations$ = of([]);
   });
 
   it("shows the banner if showBanner local state is true", async () => {

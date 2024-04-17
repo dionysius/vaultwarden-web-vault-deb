@@ -4,10 +4,19 @@
   *ngIf="
     (unassignedItemsBannerEnabled$ | async) &&
     (unassignedItemsBannerService.showBanner$ | async) &&
-    (unassignedItemsBannerService.bannerText$ | async)
+    !(unassignedItemsBannerService.loading$ | async)
   "
 >
   {{ unassignedItemsBannerService.bannerText$ | async | i18n }}
+  {{ "unassignedItemsBannerCTAPartOne" | i18n }}
+  <a
+    [href]="unassignedItemsBannerService.adminConsoleUrl$ | async"
+    bitLink
+    linkType="contrast"
+    rel="noreferrer"
+    >{{ "adminConsole" | i18n }}</a
+  >
+  {{ "unassignedItemsBannerCTAPartTwo" | i18n }}
   <a
     href="https://bitwarden.com/help/unassigned-vault-items-moved-to-admin-console"
     bitLink
