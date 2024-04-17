@@ -92,6 +92,7 @@ export class SendComponent extends BaseSendComponent {
   }
 
   ngOnDestroy() {
+    this.dialogService.closeAll();
     this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
   }
 
