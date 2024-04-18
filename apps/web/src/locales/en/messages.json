@@ -7979,5 +7979,11 @@
   },
   "createdNewClient": {
     "message": "Successfully created new client"
+   },
+  "noAccess": {
+    "message": "No access"
+  },
+  "collectionAdminConsoleManaged": {
+    "message": "This collection is only accessible from the admin console"
   }
 }
