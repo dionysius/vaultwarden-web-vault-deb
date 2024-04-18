@@ -63,6 +63,7 @@ export interface MemberDialogParams {
   organizationUserId: string;
   allOrganizationUserEmails: string[];
   usesKeyConnector: boolean;
+  isOnSecretsManagerStandalone: boolean;
   initialTab?: MemberDialogTab;
   numConfirmedMembers: number;
 }
@@ -88,6 +89,7 @@ export class MemberDialogComponent implements OnDestroy {
   organizationUserType = OrganizationUserType;
   PermissionMode = PermissionMode;
   showNoMasterPasswordWarning = false;
+  isOnSecretsManagerStandalone: boolean;
 
   protected organization$: Observable<Organization>;
   protected collectionAccessItems: AccessItemView[] = [];
@@ -160,6 +162,13 @@ export class MemberDialogComponent implements OnDestroy {
     this.editMode = this.params.organizationUserId != null;
     this.tabIndex = this.params.initialTab ?? MemberDialogTab.Role;
     this.title = this.i18nService.t(this.editMode ? "editMember" : "inviteMember");
+    this.isOnSecretsManagerStandalone = this.params.isOnSecretsManagerStandalone;
+
+    if (this.isOnSecretsManagerStandalone) {
+      this.formGroup.patchValue({
+        accessSecretsManager: true,
+      });
+    }
 
     const groups$ = this.organization$.pipe(
       switchMap((organization) =>

@@ -41,6 +41,8 @@ export type SubscriptionInformation = {
 };
 
 export abstract class OrganizationBillingServiceAbstraction {
+  isOnSecretsManagerStandalone: (organizationId: string) => Promise<boolean>;
+
   purchaseSubscription: (subscription: SubscriptionInformation) => Promise<OrganizationResponse>;
 
   startFree: (subscription: SubscriptionInformation) => Promise<OrganizationResponse>;

@@ -385,7 +385,12 @@
             </h3>
             <p class="tw-text-muted">{{ "secretsManagerAccessDescription" | i18n }}</p>
             <bit-form-control>
-              <input type="checkbox" bitCheckbox formControlName="accessSecretsManager" />
+              <input
+                type="checkbox"
+                [disabled]="isOnSecretsManagerStandalone"
+                bitCheckbox
+                formControlName="accessSecretsManager"
+              />
               <bit-label>
                 {{ "userAccessSecretsManagerGA" | i18n }}
               </bit-label>
