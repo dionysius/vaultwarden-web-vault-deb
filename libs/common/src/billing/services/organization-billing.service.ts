@@ -1,3 +1,4 @@
+import { ApiService } from "../../abstractions/api.service";
 import { OrganizationApiServiceAbstraction as OrganizationApiService } from "../../admin-console/abstractions/organization/organization-api.service.abstraction";
 import { OrganizationCreateRequest } from "../../admin-console/models/request/organization-create.request";
 import { OrganizationKeysRequest } from "../../admin-console/models/request/organization-keys.request";
@@ -7,6 +8,7 @@ import { EncryptService } from "../../platform/abstractions/encrypt.service";
 import { I18nService } from "../../platform/abstractions/i18n.service";
 import { EncString } from "../../platform/models/domain/enc-string";
 import { OrgKey } from "../../types/key";
+import { SyncService } from "../../vault/abstractions/sync/sync.service.abstraction";
 import {
   OrganizationBillingServiceAbstraction,
   OrganizationInformation,
@@ -25,10 +27,12 @@ interface OrganizationKeys {
 
 export class OrganizationBillingService implements OrganizationBillingServiceAbstraction {
   constructor(
+    private apiService: ApiService,
     private cryptoService: CryptoService,
     private encryptService: EncryptService,
     private i18nService: I18nService,
     private organizationApiService: OrganizationApiService,
+    private syncService: SyncService,
   ) {}
 
   async purchaseSubscription(subscription: SubscriptionInformation): Promise<OrganizationResponse> {
@@ -44,7 +48,13 @@ export class OrganizationBillingService implements OrganizationBillingServiceAbs
 
     this.setPaymentInformation(request, subscription.payment);
 
-    return await this.organizationApiService.create(request);
+    const response = await this.organizationApiService.create(request);
+
+    await this.apiService.refreshIdentityToken();
+
+    await this.syncService.fullSync(true);
+
+    return response;
   }
 
   async startFree(subscription: SubscriptionInformation): Promise<OrganizationResponse> {
@@ -58,7 +68,13 @@ export class OrganizationBillingService implements OrganizationBillingServiceAbs
 
     this.setPlanInformation(request, subscription.plan);
 
-    return await this.organizationApiService.create(request);
+    const response = await this.organizationApiService.create(request);
+
+    await this.apiService.refreshIdentityToken();
+
+    await this.syncService.fullSync(true);
+
+    return response;
   }
 
   private async makeOrganizationKeys(): Promise<OrganizationKeys> {

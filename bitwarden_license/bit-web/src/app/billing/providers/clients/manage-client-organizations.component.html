@@ -1,6 +1,12 @@
 <app-header>
   <bit-search [placeholder]="'search' | i18n" [(ngModel)]="searchText"></bit-search>
-  <a bitButton routerLink="create" *ngIf="manageOrganizations" buttonType="primary">
+  <a
+    type="button"
+    bitButton
+    *ngIf="manageOrganizations"
+    buttonType="primary"
+    (click)="createClientOrganization()"
+  >
     <i class="bwi bwi-plus bwi-fw" aria-hidden="true"></i>
     {{ "addNewOrganization" | i18n }}
   </a>

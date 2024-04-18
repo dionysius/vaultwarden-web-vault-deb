@@ -1,7 +1,7 @@
 import { SelectionModel } from "@angular/cdk/collections";
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { BehaviorSubject, Subject, firstValueFrom, from } from "rxjs";
+import { BehaviorSubject, firstValueFrom, from, lastValueFrom, Subject } from "rxjs";
 import { first, switchMap, takeUntil } from "rxjs/operators";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
@@ -9,6 +9,8 @@ import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { ProviderService } from "@bitwarden/common/admin-console/abstractions/provider.service";
 import { ProviderUserType } from "@bitwarden/common/admin-console/enums";
 import { ProviderOrganizationOrganizationDetailsResponse } from "@bitwarden/common/admin-console/models/response/provider/provider-organization.response";
+import { BillingApiServiceAbstraction as BillingApiService } from "@bitwarden/common/billing/abstractions/billilng-api.service.abstraction";
+import { PlanResponse } from "@bitwarden/common/billing/models/response/plan.response";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { ValidationService } from "@bitwarden/common/platform/abstractions/validation.service";
@@ -16,6 +18,10 @@ import { DialogService, TableDataSource } from "@bitwarden/components";
 
 import { WebProviderService } from "../../../admin-console/providers/services/web-provider.service";
 
+import {
+  CreateClientOrganizationResultType,
+  openCreateClientOrganizationDialog,
+} from "./create-client-organization.component";
 import { ManageClientOrganizationSubscriptionComponent } from "./manage-client-organization-subscription.component";
 
 @Component({
@@ -52,6 +58,7 @@ export class ManageClientOrganizationsComponent implements OnInit, OnDestroy {
   private pagedClientsCount = 0;
   selection = new SelectionModel<string>(true, []);
   protected dataSource = new TableDataSource<ProviderOrganizationOrganizationDetailsResponse>();
+  protected plans: PlanResponse[];
 
   constructor(
     private route: ActivatedRoute,
@@ -63,6 +70,7 @@ export class ManageClientOrganizationsComponent implements OnInit, OnDestroy {
     private validationService: ValidationService,
     private webProviderService: WebProviderService,
     private dialogService: DialogService,
+    private billingApiService: BillingApiService,
   ) {}
 
   async ngOnInit() {
@@ -94,11 +102,15 @@ export class ManageClientOrganizationsComponent implements OnInit, OnDestroy {
   }
 
   async load() {
-    const response = await this.apiService.getProviderClients(this.providerId);
-    this.clients = response.data != null && response.data.length > 0 ? response.data : [];
+    const clientsResponse = await this.apiService.getProviderClients(this.providerId);
+    this.clients =
+      clientsResponse.data != null && clientsResponse.data.length > 0 ? clientsResponse.data : [];
     this.dataSource.data = this.clients;
     this.manageOrganizations =
       (await this.providerService.get(this.providerId)).type === ProviderUserType.ProviderAdmin;
+
+    const plansResponse = await this.billingApiService.getPlans();
+    this.plans = plansResponse.data;
 
     this.loading = false;
   }
@@ -177,4 +189,21 @@ export class ManageClientOrganizationsComponent implements OnInit, OnDestroy {
     }
     this.actionPromise = null;
   }
+
+  createClientOrganization = async () => {
+    const reference = openCreateClientOrganizationDialog(this.dialogService, {
+      data: {
+        providerId: this.providerId,
+        plans: this.plans,
+      },
+    });
+
+    const result = await lastValueFrom(reference.closed);
+
+    if (result === CreateClientOrganizationResultType.Closed) {
+      return;
+    }
+
+    await this.load();
+  };
 }

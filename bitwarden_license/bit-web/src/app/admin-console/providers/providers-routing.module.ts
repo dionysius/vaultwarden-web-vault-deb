@@ -69,7 +69,7 @@ const routes: Routes = [
           {
             path: "manage-client-organizations",
             component: ManageClientOrganizationsComponent,
-            data: { titleId: "manage-client-organizations" },
+            data: { titleId: "clients" },
           },
           {
             path: "manage",
