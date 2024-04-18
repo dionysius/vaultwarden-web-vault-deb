@@ -573,7 +573,7 @@ export class CipherService implements CipherServiceAbstraction {
     await this.domainSettingsService.setNeverDomains(domains);
   }
 
-  async createWithServer(cipher: Cipher, orgAdmin?: boolean): Promise<any> {
+  async createWithServer(cipher: Cipher, orgAdmin?: boolean): Promise<Cipher> {
     let response: CipherResponse;
     if (orgAdmin && cipher.organizationId != null) {
       const request = new CipherCreateRequest(cipher);
@@ -588,10 +588,16 @@ export class CipherService implements CipherServiceAbstraction {
     cipher.id = response.id;
 
     const data = new CipherData(response, cipher.collectionIds);
-    await this.upsert(data);
+    const updated = await this.upsert(data);
+    // No local data for new ciphers
+    return new Cipher(updated[cipher.id as CipherId]);
   }
 
-  async updateWithServer(cipher: Cipher, orgAdmin?: boolean, isNotClone?: boolean): Promise<any> {
+  async updateWithServer(
+    cipher: Cipher,
+    orgAdmin?: boolean,
+    isNotClone?: boolean,
+  ): Promise<Cipher> {
     let response: CipherResponse;
     if (orgAdmin && isNotClone) {
       const request = new CipherRequest(cipher);
@@ -605,7 +611,9 @@ export class CipherService implements CipherServiceAbstraction {
     }
 
     const data = new CipherData(response, cipher.collectionIds);
-    await this.upsert(data);
+    const updated = await this.upsert(data);
+    // updating with server does not change local data
+    return new Cipher(updated[cipher.id as CipherId], cipher.localData);
   }
 
   async shareWithServer(
@@ -732,11 +740,13 @@ export class CipherService implements CipherServiceAbstraction {
     return new Cipher(cData);
   }
 
-  async saveCollectionsWithServer(cipher: Cipher): Promise<any> {
+  async saveCollectionsWithServer(cipher: Cipher): Promise<Cipher> {
     const request = new CipherCollectionsRequest(cipher.collectionIds);
     const response = await this.apiService.putCipherCollections(cipher.id, request);
     const data = new CipherData(response);
-    await this.upsert(data);
+    const updated = await this.upsert(data);
+    // Collection updates don't change local data
+    return new Cipher(updated[cipher.id as CipherId], cipher.localData);
   }
 
   /**
@@ -782,9 +792,9 @@ export class CipherService implements CipherServiceAbstraction {
     await this.encryptedCiphersState.update(() => ciphers);
   }
 
-  async upsert(cipher: CipherData | CipherData[]): Promise<any> {
+  async upsert(cipher: CipherData | CipherData[]): Promise<Record<CipherId, CipherData>> {
     const ciphers = cipher instanceof CipherData ? [cipher] : cipher;
-    await this.updateEncryptedCipherState((current) => {
+    return await this.updateEncryptedCipherState((current) => {
       ciphers.forEach((c) => (current[c.id as CipherId] = c));
       return current;
     });
@@ -796,12 +806,13 @@ export class CipherService implements CipherServiceAbstraction {
 
   private async updateEncryptedCipherState(
     update: (current: Record<CipherId, CipherData>) => Record<CipherId, CipherData>,
-  ) {
+  ): Promise<Record<CipherId, CipherData>> {
     await this.clearDecryptedCiphersState();
-    await this.encryptedCiphersState.update((current) => {
+    const [, updatedCiphers] = await this.encryptedCiphersState.update((current) => {
       const result = update(current ?? {});
       return result;
     });
+    return updatedCiphers;
   }
 
   async clear(userId?: string): Promise<any> {

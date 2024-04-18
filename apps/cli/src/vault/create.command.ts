@@ -80,8 +80,7 @@ export class CreateCommand {
   private async createCipher(req: CipherExport) {
     const cipher = await this.cipherService.encrypt(CipherExport.toView(req));
     try {
-      await this.cipherService.createWithServer(cipher);
-      const newCipher = await this.cipherService.get(cipher.id);
+      const newCipher = await this.cipherService.createWithServer(cipher);
       const decCipher = await newCipher.decrypt(
         await this.cipherService.getKeyForCipherKeyDecryption(newCipher),
       );
@@ -142,12 +141,11 @@ export class CreateCommand {
     }
 
     try {
-      await this.cipherService.saveAttachmentRawWithServer(
+      const updatedCipher = await this.cipherService.saveAttachmentRawWithServer(
         cipher,
         fileName,
         new Uint8Array(fileBuf).buffer,
       );
-      const updatedCipher = await this.cipherService.get(cipher.id);
       const decCipher = await updatedCipher.decrypt(
         await this.cipherService.getKeyForCipherKeyDecryption(updatedCipher),
       );
