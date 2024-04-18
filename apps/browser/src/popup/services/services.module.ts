@@ -1,7 +1,5 @@
 import { APP_INITIALIZER, NgModule, NgZone } from "@angular/core";
-import { DomSanitizer } from "@angular/platform-browser";
 import { Router } from "@angular/router";
-import { ToastrService } from "ngx-toastr";
 
 import { UnauthGuard as BaseUnauthGuardService } from "@bitwarden/angular/auth/guards";
 import { AngularThemingService } from "@bitwarden/angular/platform/services/theming/angular-theming.service";
@@ -83,7 +81,7 @@ import { FolderService as FolderServiceAbstraction } from "@bitwarden/common/vau
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 import { TotpService as TotpServiceAbstraction } from "@bitwarden/common/vault/abstractions/totp.service";
 import { TotpService } from "@bitwarden/common/vault/services/totp.service";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 
 import { UnauthGuardService } from "../../auth/popup/services";
 import { AutofillService as AutofillServiceAbstraction } from "../../autofill/services/abstractions/autofill.service";
@@ -259,15 +257,9 @@ const safeProviders: SafeProvider[] = [
   }),
   safeProvider({
     provide: PlatformUtilsService,
-    useExisting: ForegroundPlatformUtilsService,
-  }),
-  safeProvider({
-    provide: ForegroundPlatformUtilsService,
-    useClass: ForegroundPlatformUtilsService,
-    useFactory: (sanitizer: DomSanitizer, toastrService: ToastrService) => {
+    useFactory: (toastService: ToastService) => {
       return new ForegroundPlatformUtilsService(
-        sanitizer,
-        toastrService,
+        toastService,
         (clipboardValue: string, clearMs: number) => {
           void BrowserApi.sendMessage("clearClipboard", { clipboardValue, clearMs });
         },
@@ -284,7 +276,7 @@ const safeProviders: SafeProvider[] = [
         window,
       );
     },
-    deps: [DomSanitizer, ToastrService],
+    deps: [ToastService],
   }),
   safeProvider({
     provide: PasswordGenerationServiceAbstraction,
