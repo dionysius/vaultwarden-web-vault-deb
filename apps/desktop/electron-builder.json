@@ -24,7 +24,7 @@
     "**/node_modules/argon2/package.json",
     "**/node_modules/argon2/lib/binding/napi-v3/argon2.node"
   ],
-  "electronVersion": "28.2.8",
+  "electronVersion": "28.3.1",
   "generateUpdatesFilesForAllChannels": true,
   "publish": {
     "provider": "generic",
