@@ -32,6 +32,7 @@ import { CipherService } from "@bitwarden/common/vault/services/cipher.service";
 import { TotpService } from "@bitwarden/common/vault/services/totp.service";
 
 import { BrowserApi } from "../../platform/browser/browser-api";
+import { BrowserScriptInjectorService } from "../../platform/services/browser-script-injector.service";
 import { AutofillPort } from "../enums/autofill-port.enums";
 import AutofillField from "../models/autofill-field";
 import AutofillPageDetails from "../models/autofill-page-details";
@@ -67,6 +68,7 @@ describe("AutofillService", () => {
   const accountService: FakeAccountService = mockAccountServiceWith(mockUserId);
   const fakeStateProvider: FakeStateProvider = new FakeStateProvider(accountService);
   let domainSettingsService: DomainSettingsService;
+  let scriptInjectorService: BrowserScriptInjectorService;
   const totpService = mock<TotpService>();
   const eventCollectionService = mock<EventCollectionService>();
   const logService = mock<LogService>();
@@ -74,6 +76,7 @@ describe("AutofillService", () => {
   const billingAccountProfileStateService = mock<BillingAccountProfileStateService>();
 
   beforeEach(() => {
+    scriptInjectorService = new BrowserScriptInjectorService();
     autofillService = new AutofillService(
       cipherService,
       autofillSettingsService,
@@ -83,6 +86,7 @@ describe("AutofillService", () => {
       domainSettingsService,
       userVerificationService,
       billingAccountProfileStateService,
+      scriptInjectorService,
     );
 
     domainSettingsService = new DefaultDomainSettingsService(fakeStateProvider);
@@ -250,6 +254,7 @@ describe("AutofillService", () => {
 
       expect(BrowserApi.executeScriptInTab).toHaveBeenCalledWith(tabMock.id, {
         file: "content/content-message-handler.js",
+        frameId: 0,
         ...defaultExecuteScriptOptions,
       });
     });

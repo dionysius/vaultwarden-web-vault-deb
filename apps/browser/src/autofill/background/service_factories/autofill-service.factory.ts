@@ -8,6 +8,10 @@ import {
 } from "../../../background/service-factories/event-collection-service.factory";
 import { billingAccountProfileStateServiceFactory } from "../../../platform/background/service-factories/billing-account-profile-state-service.factory";
 import {
+  browserScriptInjectorServiceFactory,
+  BrowserScriptInjectorServiceInitOptions,
+} from "../../../platform/background/service-factories/browser-script-injector-service.factory";
+import {
   CachedServices,
   factory,
   FactoryOptions,
@@ -45,7 +49,8 @@ export type AutoFillServiceInitOptions = AutoFillServiceOptions &
   EventCollectionServiceInitOptions &
   LogServiceInitOptions &
   UserVerificationServiceInitOptions &
-  DomainSettingsServiceInitOptions;
+  DomainSettingsServiceInitOptions &
+  BrowserScriptInjectorServiceInitOptions;
 
 export function autofillServiceFactory(
   cache: { autofillService?: AbstractAutoFillService } & CachedServices,
@@ -65,6 +70,7 @@ export function autofillServiceFactory(
         await domainSettingsServiceFactory(cache, opts),
         await userVerificationServiceFactory(cache, opts),
         await billingAccountProfileStateServiceFactory(cache, opts),
+        await browserScriptInjectorServiceFactory(cache, opts),
       ),
   );
 }

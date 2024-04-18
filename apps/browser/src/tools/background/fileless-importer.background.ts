@@ -11,6 +11,7 @@ import { ImportServiceAbstraction } from "@bitwarden/importer/core";
 
 import NotificationBackground from "../../autofill/background/notification.background";
 import { BrowserApi } from "../../platform/browser/browser-api";
+import { ScriptInjectorService } from "../../platform/services/abstractions/script-injector.service";
 import { FilelessImporterInjectedScriptsConfig } from "../config/fileless-importer-injected-scripts";
 import {
   FilelessImportPort,
@@ -23,7 +24,6 @@ import {
   LpImporterMessageHandlers,
   FilelessImporterBackground as FilelessImporterBackgroundInterface,
   FilelessImportPortMessage,
-  SuppressDownloadScriptInjectionConfig,
 } from "./abstractions/fileless-importer.background";
 
 class FilelessImporterBackground implements FilelessImporterBackgroundInterface {
@@ -53,6 +53,7 @@ class FilelessImporterBackground implements FilelessImporterBackgroundInterface 
    * @param notificationBackground - Used to inject the notification bar into the tab.
    * @param importService - Used to import the export data into the vault.
    * @param syncService - Used to trigger a full sync after the import is completed.
+   * @param scriptInjectorService - Used to inject content scripts that initialize the import process
    */
   constructor(
     private configService: ConfigService,
@@ -61,6 +62,7 @@ class FilelessImporterBackground implements FilelessImporterBackgroundInterface 
     private notificationBackground: NotificationBackground,
     private importService: ImportServiceAbstraction,
     private syncService: SyncService,
+    private scriptInjectorService: ScriptInjectorService,
   ) {}
 
   /**
@@ -108,23 +110,6 @@ class FilelessImporterBackground implements FilelessImporterBackgroundInterface 
    */
   private async displayFilelessImportNotification(tab: chrome.tabs.Tab, importType: string) {
     await this.notificationBackground.requestFilelessImport(tab, importType);
-  }
-
-  /**
-   * Injects the script used to suppress the download of the LP importer export file.
-   *
-   * @param sender - The sender of the message.
-   * @param injectionConfig - The configuration for the injection.
-   */
-  private async injectScriptConfig(
-    sender: chrome.runtime.MessageSender,
-    injectionConfig: SuppressDownloadScriptInjectionConfig,
-  ) {
-    await BrowserApi.executeScriptInTab(
-      sender.tab.id,
-      { file: injectionConfig.file, runAt: "document_start" },
-      injectionConfig.scriptingApiDetails,
-    );
   }
 
   /**
@@ -219,12 +204,12 @@ class FilelessImporterBackground implements FilelessImporterBackgroundInterface 
     switch (port.name) {
       case FilelessImportPort.LpImporter:
         this.lpImporterPort = port;
-        await this.injectScriptConfig(
-          port.sender,
-          BrowserApi.manifestVersion === 3
-            ? FilelessImporterInjectedScriptsConfig.LpSuppressImportDownload.mv3
-            : FilelessImporterInjectedScriptsConfig.LpSuppressImportDownload.mv2,
-        );
+        await this.scriptInjectorService.inject({
+          tabId: port.sender.tab.id,
+          injectDetails: { runAt: "document_start" },
+          mv2Details: FilelessImporterInjectedScriptsConfig.LpSuppressImportDownload.mv2,
+          mv3Details: FilelessImporterInjectedScriptsConfig.LpSuppressImportDownload.mv3,
+        });
         break;
       case FilelessImportPort.NotificationBar:
         this.importNotificationsPort = port;

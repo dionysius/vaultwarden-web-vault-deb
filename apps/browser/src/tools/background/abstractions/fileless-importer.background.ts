@@ -1,10 +1,5 @@
 import { FilelessImportTypeKeys } from "../../enums/fileless-import.enums";
 
-type SuppressDownloadScriptInjectionConfig = {
-  file: string;
-  scriptingApiDetails?: { world: chrome.scripting.ExecutionWorld };
-};
-
 type FilelessImportPortMessage = {
   command?: string;
   importType?: FilelessImportTypeKeys;
@@ -32,7 +27,6 @@ interface FilelessImporterBackground {
 }
 
 export {
-  SuppressDownloadScriptInjectionConfig,
   FilelessImportPortMessage,
   ImportNotificationMessageHandlers,
   LpImporterMessageHandlers,

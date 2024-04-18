@@ -1,9 +1,12 @@
-import { SuppressDownloadScriptInjectionConfig } from "../background/abstractions/fileless-importer.background";
+import {
+  Mv2ScriptInjectionDetails,
+  Mv3ScriptInjectionDetails,
+} from "../../platform/services/abstractions/script-injector.service";
 
 type FilelessImporterInjectedScriptsConfigurations = {
   LpSuppressImportDownload: {
-    mv2: SuppressDownloadScriptInjectionConfig;
-    mv3: SuppressDownloadScriptInjectionConfig;
+    mv2: Mv2ScriptInjectionDetails;
+    mv3: Mv3ScriptInjectionDetails;
   };
 };
 
@@ -14,7 +17,7 @@ const FilelessImporterInjectedScriptsConfig: FilelessImporterInjectedScriptsConf
     },
     mv3: {
       file: "content/lp-suppress-import-download.js",
-      scriptingApiDetails: { world: "MAIN" },
+      world: "MAIN",
     },
   },
 } as const;
