@@ -43,7 +43,7 @@ export class ServiceAccountPeopleComponent implements OnInit, OnDestroy {
     catchError(() => {
       // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
       // eslint-disable-next-line @typescript-eslint/no-floating-promises
-      this.router.navigate(["/sm", this.organizationId, "service-accounts"]);
+      this.router.navigate(["/sm", this.organizationId, "machine-accounts"]);
       return EMPTY;
     }),
   );
@@ -200,7 +200,7 @@ export class ServiceAccountPeopleComponent implements OnInit, OnDestroy {
     if (showAccessRemovalWarning) {
       // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
       // eslint-disable-next-line @typescript-eslint/no-floating-promises
-      this.router.navigate(["sm", this.organizationId, "service-accounts"]);
+      this.router.navigate(["sm", this.organizationId, "machine-accounts"]);
     } else if (
       this.accessPolicySelectorService.isAccessRemoval(currentAccessPolicies, selectedPolicies)
     ) {

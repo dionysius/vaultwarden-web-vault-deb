@@ -54,7 +54,7 @@ const routes: Routes = [
                 },
               },
               {
-                path: "service-accounts",
+                path: "machine-accounts",
                 loadChildren: () => ServiceAccountsModule,
                 data: {
                   titleId: "machineAccounts",

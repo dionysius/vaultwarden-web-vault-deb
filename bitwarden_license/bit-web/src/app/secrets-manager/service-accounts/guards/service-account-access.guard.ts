@@ -21,8 +21,8 @@ export const serviceAccountAccessGuard: CanActivateFn = async (route: ActivatedR
     return createUrlTreeFromSnapshot(route, [
       "/sm",
       route.params.organizationId,
-      "service-accounts",
+      "machine-accounts",
     ]);
   }
-  return createUrlTreeFromSnapshot(route, ["/sm", route.params.organizationId, "service-accounts"]);
+  return createUrlTreeFromSnapshot(route, ["/sm", route.params.organizationId, "machine-accounts"]);
 };

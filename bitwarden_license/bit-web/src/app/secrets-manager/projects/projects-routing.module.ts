@@ -30,7 +30,7 @@ const routes: Routes = [
         component: ProjectPeopleComponent,
       },
       {
-        path: "service-accounts",
+        path: "machine-accounts",
         component: ProjectServiceAccountsComponent,
       },
     ],
