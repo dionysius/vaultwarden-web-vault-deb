@@ -4,7 +4,9 @@ import { Migrator } from "../migrator";
 type ExpectedAccountType = {
   data: {
     localData?: unknown;
-    ciphers?: unknown;
+    ciphers?: {
+      encrypted: unknown;
+    };
   };
 };
 
@@ -37,7 +39,7 @@ export class CipherServiceMigrator extends Migrator<56, 57> {
       }
 
       //Migrate ciphers
-      const ciphers = account?.data?.ciphers;
+      const ciphers = account?.data?.ciphers?.encrypted;
       if (ciphers != null) {
         await helper.setToUser(userId, CIPHERS_DISK, ciphers);
         delete account.data.ciphers;
@@ -68,7 +70,8 @@ export class CipherServiceMigrator extends Migrator<56, 57> {
       const ciphers = await helper.getFromUser(userId, CIPHERS_DISK);
 
       if (account.data && ciphers != null) {
-        account.data.ciphers = ciphers;
+        account.data.ciphers ||= { encrypted: null };
+        account.data.ciphers.encrypted = ciphers;
         await helper.set(userId, account);
       }
       await helper.setToUser(userId, CIPHERS_DISK, null);

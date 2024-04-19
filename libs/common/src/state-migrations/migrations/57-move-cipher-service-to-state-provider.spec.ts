@@ -26,11 +26,13 @@ function exampleJSON() {
           },
         },
         ciphers: {
-          "cipher-id-10": {
-            id: "cipher-id-10",
-          },
-          "cipher-id-11": {
-            id: "cipher-id-11",
+          encrypted: {
+            "cipher-id-10": {
+              id: "cipher-id-10",
+            },
+            "cipher-id-11": {
+              id: "cipher-id-11",
+            },
           },
         },
       },
@@ -150,11 +152,13 @@ describe("CipherServiceMigrator", () => {
             },
           },
           ciphers: {
-            "cipher-id-10": {
-              id: "cipher-id-10",
-            },
-            "cipher-id-11": {
-              id: "cipher-id-11",
+            encrypted: {
+              "cipher-id-10": {
+                id: "cipher-id-10",
+              },
+              "cipher-id-11": {
+                id: "cipher-id-11",
+              },
             },
           },
         },
