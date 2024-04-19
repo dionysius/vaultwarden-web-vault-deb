@@ -75,6 +75,13 @@ export abstract class StateService<T extends Account = Account> {
    */
   setPinKeyEncryptedUserKeyEphemeral: (value: EncString, options?: StorageOptions) => Promise<void>;
   /**
+   * @deprecated For backwards compatible purposes only, use DesktopAutofillSettingsService
+   */
+  setEnableDuckDuckGoBrowserIntegration: (
+    value: boolean,
+    options?: StorageOptions,
+  ) => Promise<void>;
+  /**
    * @deprecated For migration purposes only, use getUserKeyMasterKey instead
    */
   getEncryptedCryptoSymmetricKey: (options?: StorageOptions) => Promise<string>;

@@ -571,6 +571,20 @@ export class StateService<
     );
   }
 
+  async setEnableDuckDuckGoBrowserIntegration(
+    value: boolean,
+    options?: StorageOptions,
+  ): Promise<void> {
+    const globals = await this.getGlobals(
+      this.reconcileOptions(options, await this.defaultOnDiskOptions()),
+    );
+    globals.enableDuckDuckGoBrowserIntegration = value;
+    await this.saveGlobals(
+      globals,
+      this.reconcileOptions(options, await this.defaultOnDiskOptions()),
+    );
+  }
+
   /**
    * @deprecated Use UserKey instead
    */

@@ -660,6 +660,11 @@ export class SettingsComponent implements OnInit {
       this.form.value.enableDuckDuckGoBrowserIntegration,
     );
 
+    // Adding to cover users on a previous version of DDG
+    await this.stateService.setEnableDuckDuckGoBrowserIntegration(
+      this.form.value.enableDuckDuckGoBrowserIntegration,
+    );
+
     if (!this.form.value.enableBrowserIntegration) {
       await this.stateService.setDuckDuckGoSharedKey(null);
     }
