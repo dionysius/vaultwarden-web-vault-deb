@@ -1474,7 +1474,7 @@
     "message": "Veb anbarda istifadə olunan dili dəyişdirin."
   },
   "enableFavicon": {
-    "message": "Veb sayt nişanlarını göstər"
+    "message": "Veb sayt ikonlarını göstər"
   },
   "faviconDesc": {
     "message": "Hər girişin yanında tanına bilən təsvir göstər."
@@ -7606,6 +7606,9 @@
   "providerPortal": {
     "message": "Provayder Portal"
   },
+  "success": {
+    "message": "Uğurlu"
+  },
   "viewCollection": {
     "message": "Kolleksiyaya bax"
   },
@@ -7900,10 +7903,142 @@
   "machineAccountAccessUpdated": {
     "message": "Maşın hesabına müraciət güncəlləndi"
   },
-  "unassignedItemsBanner": {
-    "message": "Notice: Unassigned organization items are no longer visible in your All Vaults view across devices and are now only accessible via the Admin Console. Assign these items to a collection from the Admin Console to make them visible."
+  "restrictedGroupAccessDesc": {
+    "message": "Özünüzü bir qrupa əlavə edə bilməzsiniz."
   },
   "unassignedItemsBannerSelfHost": {
     "message": "Bildiriş: 2 May 2024-cü ildən etibarən təyin edilməmiş təşkilat elementləri artıq cihazlar arasında Bütün Anbarlar görünüşündə görünməyən və yalnız Admin Konsolu vasitəsilə əlçatan olacaq. Bu elementləri görünən etmək üçün Admin Konsolundan bir kolleksiyaya təyin edin."
+  },
+  "unassignedItemsBannerNotice": {
+    "message": "Bildiriş: Təyin edilməyən təşkilat elementləri artıq Bütün Anbarlar görünüşündə görünən olmayacaq və yalnız Admin Konsolu vasitəsilə əlçatan olacaq."
+  },
+  "unassignedItemsBannerSelfHostNotice": {
+    "message": "Bildiriş: 16 May 2024-cü il tarixindən etibarən, təyin edilməyən təşkilat elementləri cihazlar arasında və Bütün Anbarlar görünüşündə görünən olmayacaq və yalnız Admin Konsolu vasitəsilə əlçatan olacaq."
+  },
+  "unassignedItemsBannerCTAPartOne": {
+    "message": "Bu elementləri görünən etmək üçün",
+    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "unassignedItemsBannerCTAPartTwo": {
+    "message": "bir kolleksiyaya təyin edin.",
+    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "deleteProvider": {
+    "message": "Provayderi sil"
+  },
+  "deleteProviderConfirmation": {
+    "message": "Bir provayderin silinməsi daimi və geri qaytarıla bilməyən prosesdir. Provayderin və əlaqəli bütün datanın silinməsini təsdiqləmək üçün ana parolunuzu daxil edin."
+  },
+  "deleteProviderName": {
+    "message": "$ID$ silinə bilmir",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deleteProviderWarningDesc": {
+    "message": "$ID$ silinməzdən əvvəl bütün müştəriləri (client) ayırmalısınız",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "providerDeleted": {
+    "message": "Provayder silindi"
+  },
+  "providerDeletedDesc": {
+    "message": "Provayder və bütün əlaqəli datalar silindi."
+  },
+  "deleteProviderRecoverConfirmDesc": {
+    "message": "Bu Provayderi silmək üçün tələb göndərdiniz. Təsdiqləmək üçün aşağıdakı düyməni istifadə edin."
+  },
+  "deleteProviderWarning": {
+    "message": "Provayderin silinməsi daimi prosesdir. Geri dönüşü olmayacaq."
+  },
+  "errorAssigningTargetCollection": {
+    "message": "Hədəf kolleksiyaya təyin etmə xətası."
+  },
+  "errorAssigningTargetFolder": {
+    "message": "Hədəf qovluğa təyin etmə xətası."
+  },
+  "integrationsAndSdks": {
+    "message": "İnteqrasiyalar və SDK-lar",
+    "description": "The title for the section that deals with integrations and SDKs."
+  },
+  "integrations": {
+    "message": "İnteqrasiyalar"
+  },
+  "integrationsDesc": {
+    "message": "Automatically sync secrets from Bitwarden Secrets Manager to a third-party service."
+  },
+  "sdks": {
+    "message": "SDK-lar"
+  },
+  "sdksDesc": {
+    "message": "Use Bitwarden Secrets Manager SDK in the following programming languages to build your own applications."
+  },
+  "setUpGithubActions": {
+    "message": "Github Actions qur"
+  },
+  "setUpGitlabCICD": {
+    "message": "GitLab CI/CD qur"
+  },
+  "setUpAnsible": {
+    "message": "Ansible qur"
+  },
+  "cSharpSDKRepo": {
+    "message": "C# repozitoriyasına bax"
+  },
+  "cPlusPlusSDKRepo": {
+    "message": "C++ repozitoriyasına bax"
+  },
+  "jsWebAssemblySDKRepo": {
+    "message": "JS WebAssembly repozitoriyasına bax"
+  },
+  "javaSDKRepo": {
+    "message": "Java repozitoriyasına bax"
+  },
+  "pythonSDKRepo": {
+    "message": "Python repozitoriyasına bax"
+  },
+  "phpSDKRepo": {
+    "message": "php repozitoriyasına bax"
+  },
+  "rubySDKRepo": {
+    "message": "Ruby repozitoriyasına bax"
+  },
+  "goSDKRepo": {
+    "message": "Go repozitoriyasına bax"
+  },
+  "createNewClientToManageAsProvider": {
+    "message": "Provayder kimi idarə etmək üçün yeni bir client təşkilatı yaradın. Əlavə yerlər növbəti faktura dövründə əks olunacaq."
+  },
+  "selectAPlan": {
+    "message": "Bir plan seçin"
+  },
+  "thirtyFivePercentDiscount": {
+    "message": "35% endirim"
+  },
+  "monthPerMember": {
+    "message": "üzv başına ay"
+  },
+  "seats": {
+    "message": "Yer"
+  },
+  "addOrganization": {
+    "message": "Təşkilat əlavə et"
+  },
+  "createdNewClient": {
+    "message": "Yeni client uğurla yaradıldı"
+  },
+  "noAccess": {
+    "message": "Müraciət yoxdur"
+  },
+  "collectionAdminConsoleManaged": {
+    "message": "Bu kolleksiya yalnız admin konsolundan əlçatandır"
   }
 }

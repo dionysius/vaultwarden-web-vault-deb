@@ -7601,10 +7601,13 @@
     "message": "Читати блог випусків"
   },
   "adminConsole": {
-    "message": "Консоль адміністратора"
+    "message": "консолі адміністратора,"
   },
   "providerPortal": {
     "message": "Портал провайдера"
+  },
+  "success": {
+    "message": "Успішно"
   },
   "viewCollection": {
     "message": "Переглянути збірку"
@@ -7900,10 +7903,142 @@
   "machineAccountAccessUpdated": {
     "message": "Доступ до машинного облікового запису оновлено"
   },
-  "unassignedItemsBanner": {
-    "message": "Увага: непризначені елементи організації більше не видимі у поданні \"Усі сховища\" на різних пристроях і тепер доступні лише в консолі адміністратора. Щоб зробити їх видимими, призначте ці елементи збірці в консолі адміністратора."
+  "restrictedGroupAccessDesc": {
+    "message": "Ви не можете додати себе до групи."
   },
   "unassignedItemsBannerSelfHost": {
     "message": "Сповіщення: 2 травня 2024 року, непризначені елементи організації більше не будуть видимі на ваших пристроях у поданні \"Усі сховища\", і будуть доступні лише через консоль адміністратора. Щоб зробити їх видимими, призначте ці елементи збірці в консолі адміністратора."
+  },
+  "unassignedItemsBannerNotice": {
+    "message": "Примітка: непризначені елементи організації більше не видимі на ваших пристроях у поданні \"Усі сховища\", і тепер доступні лише через консоль адміністратора."
+  },
+  "unassignedItemsBannerSelfHostNotice": {
+    "message": "Примітка: 16 травня 2024 року непризначені елементи організації більше не будуть видимі на ваших пристроях у поданні \"Усі сховища\", і будуть доступні лише через консоль адміністратора."
+  },
+  "unassignedItemsBannerCTAPartOne": {
+    "message": "Призначте ці елементи збірці в",
+    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "unassignedItemsBannerCTAPartTwo": {
+    "message": "щоб зробити їх видимими.",
+    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "deleteProvider": {
+    "message": "Видалити провайдера"
+  },
+  "deleteProviderConfirmation": {
+    "message": "Видалення провайдера є остаточною і незворотною дією. Введіть свій головний пароль, щоб підтвердити видалення провайдера і всі пов'язані з ним дані."
+  },
+  "deleteProviderName": {
+    "message": "Неможливо видалити $ID$",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deleteProviderWarningDesc": {
+    "message": "Перш ніж видалити $ID$, ви повинні від'єднати всіх клієнтів",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "providerDeleted": {
+    "message": "Провайдера видалено"
+  },
+  "providerDeletedDesc": {
+    "message": "Провайдера і всі пов'язані дані було видалено."
+  },
+  "deleteProviderRecoverConfirmDesc": {
+    "message": "Ви відправили запит на видалення цього провайдера. Натисніть кнопку внизу для підтвердження."
+  },
+  "deleteProviderWarning": {
+    "message": "Видалення провайдера є незворотною дією. Це не можна буде скасувати."
+  },
+  "errorAssigningTargetCollection": {
+    "message": "Помилка призначення цільової збірки."
+  },
+  "errorAssigningTargetFolder": {
+    "message": "Помилка призначення цільової теки."
+  },
+  "integrationsAndSdks": {
+    "message": "Інтеграції та SDK",
+    "description": "The title for the section that deals with integrations and SDKs."
+  },
+  "integrations": {
+    "message": "Інтеграції"
+  },
+  "integrationsDesc": {
+    "message": "Автоматична синхронізація секретів між менеджером секретів Bitwarden і стороннім сервісом."
+  },
+  "sdks": {
+    "message": "SDK"
+  },
+  "sdksDesc": {
+    "message": "Використовуйте SDK менеджера секретів Bitwarden із зазначеними мовами програмування для створення власних програм."
+  },
+  "setUpGithubActions": {
+    "message": "Налаштувати дії для Github"
+  },
+  "setUpGitlabCICD": {
+    "message": "Налаштувати GitLab CI/CD"
+  },
+  "setUpAnsible": {
+    "message": "Налаштувати Ansible"
+  },
+  "cSharpSDKRepo": {
+    "message": "Перегляд репозиторію C#"
+  },
+  "cPlusPlusSDKRepo": {
+    "message": "Перегляд репозиторію C++"
+  },
+  "jsWebAssemblySDKRepo": {
+    "message": "Перегляд репозиторію JS WebAssembly"
+  },
+  "javaSDKRepo": {
+    "message": "Перегляд репозиторію Java"
+  },
+  "pythonSDKRepo": {
+    "message": "Перегляд репозиторію Python"
+  },
+  "phpSDKRepo": {
+    "message": "Перегляд репозиторію php"
+  },
+  "rubySDKRepo": {
+    "message": "Перегляд репозиторію Ruby"
+  },
+  "goSDKRepo": {
+    "message": "Перегляд репозиторію Go"
+  },
+  "createNewClientToManageAsProvider": {
+    "message": "Створіть нову організацію клієнта, щоб керувати нею як провайдер. Додаткові місця будуть відображені в наступному платіжному циклі."
+  },
+  "selectAPlan": {
+    "message": "Оберіть тарифний план"
+  },
+  "thirtyFivePercentDiscount": {
+    "message": "Знижка 35%"
+  },
+  "monthPerMember": {
+    "message": "на місяць за учасника"
+  },
+  "seats": {
+    "message": "Місця"
+  },
+  "addOrganization": {
+    "message": "Додати організацію"
+  },
+  "createdNewClient": {
+    "message": "Нового клієнта успішно створено"
+  },
+  "noAccess": {
+    "message": "Немає доступу"
+  },
+  "collectionAdminConsoleManaged": {
+    "message": "Ця збірка доступна тільки з консолі адміністратора"
   }
 }

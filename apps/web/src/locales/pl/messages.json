@@ -296,7 +296,7 @@
     "message": "Szukaj w organizacji"
   },
   "searchMembers": {
-    "message": "Szukaj w użytkownikach"
+    "message": "Szukaj członków"
   },
   "searchGroups": {
     "message": "Szukaj w grupach"
@@ -854,7 +854,7 @@
     "message": "Brak użytkowników do wyświetlenia."
   },
   "noMembersInList": {
-    "message": "Brak użytkowników do wyświetlenia."
+    "message": "Brak członków do wyświetlenia."
   },
   "noEventsInList": {
     "message": "Brak wydarzeń do wyświetlenia."
@@ -1534,7 +1534,7 @@
     "message": "Włącz dwustopniowe logowanie dla swojej organizacji."
   },
   "twoStepLoginEnterpriseDescStart": {
-    "message": "Wymuszaj opcje logowania dwustopniowego Bitwarden dla użytkowników za pomocą ",
+    "message": "Wymuszaj opcje logowania dwustopniowego Bitwarden dla członków za pomocą ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
   "twoStepLoginPolicy": {
@@ -2085,7 +2085,7 @@
     "message": "Konto Premium"
   },
   "premiumAccessDesc": {
-    "message": "Możesz przyznać dostęp premium wszystkim użytkownikom w Twojej organizacji za $PRICE$ /$INTERVAL$.",
+    "message": "Możesz przyznać dostęp premium wszystkim członkom Twojej organizacji za $PRICE$ /$INTERVAL$.",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -2541,7 +2541,7 @@
     }
   },
   "trialSecretsManagerThankYou": {
-    "message": "Thanks for signing up for Bitwarden Secrets Manager for $PLAN$!",
+    "message": "Dziękujemy za zarejestrowanie się do Menedżera Sekretów Bitwarden w planie $PLAN$!",
     "placeholders": {
       "plan": {
         "content": "$1",
@@ -2691,7 +2691,7 @@
     "message": "Czy na pewno chcesz usunąć tę kolekcję?"
   },
   "editMember": {
-    "message": "Edytuj użytkownika"
+    "message": "Edytuj członka"
   },
   "fieldOnTabRequiresAttention": {
     "message": "Pole na karcie '$TAB$' wymaga uwagi.",
@@ -2751,7 +2751,7 @@
     "message": "Administrator"
   },
   "adminDesc": {
-    "message": "Administratorzy mają dostęp do wszystkich elementów, kolekcji i użytkowników w Twojej organizacji."
+    "message": "Administratorzy mają dostęp do wszystkich elementów, kolekcji i członków Twojej organizacji"
   },
   "user": {
     "message": "Użytkownik"
@@ -3234,7 +3234,7 @@
     "message": "Dostęp grupowy"
   },
   "groupAccessUserDesc": {
-    "message": "Zmień grupy, do których należy użytkownik."
+    "message": "Przyznaj członkowi dostęp do kolekcji, dodając go do 1 lub więcej grup."
   },
   "invitedUsers": {
     "message": "Użytkownicy zostali zaproszeni"
@@ -3270,10 +3270,10 @@
     }
   },
   "confirmUsers": {
-    "message": "Zatwierdź użytkowników"
+    "message": "Zatwierdź członków"
   },
   "usersNeedConfirmed": {
-    "message": "Posiadasz użytkowników, którzy zaakceptowali zaproszenie, ale muszą jeszcze zostać potwierdzeni. Użytkownicy nie będą posiadali dostępu do organizacji, dopóki nie zostaną potwierdzeni."
+    "message": "Posiadasz członków, którzy zaakceptowali zaproszenie, ale muszą jeszcze zostać potwierdzeni. Członkowie nie będą posiadali dostępu do organizacji, dopóki nie zostaną potwierdzeni."
   },
   "startDate": {
     "message": "Data rozpoczęcia"
@@ -3486,10 +3486,10 @@
     "message": "Wpisz identyfikator instalacji"
   },
   "limitSubscriptionDesc": {
-    "message": "Ustaw limit liczby stanowisk subskrypcji. Po osiągnięciu tego limitu nie będziesz mógł zapraszać nowych użytkowników."
+    "message": "Ustaw limit liczby subskrypcji. Po osiągnięciu tego limitu nie będziesz mógł zapraszać nowych członków."
   },
   "limitSmSubscriptionDesc": {
-    "message": "Ustaw limit liczby subskrypcji menedżera sekretów. Po osiągnięciu tego limitu nie będziesz mógł zapraszać nowych użytkowników."
+    "message": "Ustaw limit liczby subskrypcji menedżera sekretów. Po osiągnięciu tego limitu nie będziesz mógł zapraszać nowych członków."
   },
   "maxSeatLimit": {
     "message": "Maksymalna liczba stanowisk (opcjonalnie)",
@@ -3510,7 +3510,7 @@
     "message": "Zmiany w subskrypcji spowodują proporcjonalne zmiany w rozliczeniach. Jeśli nowo zaproszeni użytkownicy przekroczą liczbę stanowisk w subskrypcji, otrzymasz proporcjonalną opłatę za dodatkowych użytkowników."
   },
   "subscriptionUserSeats": {
-    "message": "Twoja subskrypcja pozwala na łączną liczbę $COUNT$ użytkowników.",
+    "message": "Twoja subskrypcja pozwala na łączną liczbę $COUNT$ członków.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3537,10 +3537,10 @@
     "message": "Aby uzyskać dodatkową pomoc w zarządzaniu subskrypcją, skontaktuj się z działem obsługi klienta."
   },
   "subscriptionUserSeatsUnlimitedAutoscale": {
-    "message": "Zmiany w subskrypcji spowodują proporcjonalne zmiany w rozliczeniach. Jeśli nowo zaproszeni użytkownicy przekroczą liczbę stanowisk w subskrypcji, otrzymasz proporcjonalną opłatę za dodatkowych użytkowników."
+    "message": "Zmiany w subskrypcji spowodują proporcjonalne zmiany w rozliczeniach. Jeśli nowo zaproszeni członkowie przekroczą liczbę miejsc w subskrypcji, otrzymasz proporcjonalną opłatę za dodatkowych członków."
   },
   "subscriptionUserSeatsLimitedAutoscale": {
-    "message": "Korekty subskrypcji spowodują proporcjonalne zmiany w sumach rozliczeniowych. Jeśli nowo zaproszeni użytkownicy przekroczą liczbę miejsc objętych subskrypcją, natychmiast otrzymasz proporcjonalną opłatę za dodatkowych użytkowników, aż do osiągnięcia limitu miejsc $MAX$.",
+    "message": "Korekty subskrypcji spowodują proporcjonalne zmiany w sumach rozliczeniowych. Jeśli nowo zaproszeni członkowie przekroczą liczbę miejsc objętych subskrypcją, natychmiast otrzymasz proporcjonalną opłatę za dodatkowych członków, aż do osiągnięcia limitu miejsc $MAX$.",
     "placeholders": {
       "max": {
         "content": "$1",
@@ -4083,7 +4083,7 @@
     "message": "Identyfikator SSO"
   },
   "ssoIdentifierHintPartOne": {
-    "message": "Podaj ten identyfikator swoim użytkownikom, aby zalogować się za pomocą SSO. Aby pominąć ten krok, ustaw ",
+    "message": "Podaj ten identyfikator swoim członkowm, aby zalogować się za pomocą SSO. Aby pominąć ten krok, ustaw ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Provide this ID to your members to login with SSO. To bypass this step, set up Domain verification'"
   },
   "unlinkSso": {
@@ -5210,7 +5210,7 @@
     "message": "Zweryfikuj certyfikaty"
   },
   "spUniqueEntityId": {
-    "message": "Set a unique SP entity ID"
+    "message": "Ustaw unikalny identyfikator jednostki SP"
   },
   "spUniqueEntityIdDesc": {
     "message": "Wygeneruj identyfikator unikalny dla Twojej organizacji"
@@ -5426,13 +5426,13 @@
     "message": "Opcje odszyfrowania użytkownika"
   },
   "memberDecryptionPassDesc": {
-    "message": "Po uwierzytelnieniu użytkownicy odszyfrują dane sejfu za pomocą hasła głównego."
+    "message": "Po uwierzytelnieniu członkowie odszyfrują dane sejfu za pomocą hasła głównego."
   },
   "keyConnector": {
     "message": "Key Connector"
   },
   "memberDecryptionKeyConnectorDescStart": {
-    "message": "Połącz logowanie za pomocą SSO z Twoim serwerem kluczy odszyfrowania. Używając tej opcji, użytkownicy nie będą musieli używać swoich haseł głównych, aby odszyfrować dane sejfu.",
+    "message": "Połącz logowanie za pomocą SSO z Twoim serwerem kluczy odszyfrowania. Używając tej opcji, członkowie nie będą musieli używać swoich haseł głównych, aby odszyfrować dane sejfu.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescLink": {
@@ -6455,7 +6455,7 @@
     "message": "Informacje o grupie"
   },
   "editGroupMembersDesc": {
-    "message": "Przyznaj użytkownikom dostęp do kolekcji przypisanych do grupy."
+    "message": "Przyznaj członkom dostęp do kolekcji przypisanych do grupy."
   },
   "editGroupCollectionsDesc": {
     "message": "Przyznaj dostęp do kolekcji, dodając je do tej grupy."
@@ -6467,7 +6467,7 @@
     "message": "Jeśli zaznaczone, zastąpi to wszystkie inne uprawnienia kolekcji."
   },
   "selectMembers": {
-    "message": "Wybierz użytkowników"
+    "message": "Wybierz członków"
   },
   "selectCollections": {
     "message": "Wybierz kolekcje"
@@ -6476,7 +6476,7 @@
     "message": "Rola"
   },
   "removeMember": {
-    "message": "Usuń użytkownika"
+    "message": "Usuń członka"
   },
   "collection": {
     "message": "Kolekcja"
@@ -6500,7 +6500,7 @@
     "message": "Nie dodano kolekcji"
   },
   "noMembersAdded": {
-    "message": "Nie dodano użytkowników"
+    "message": "Nie dodano członków"
   },
   "noGroupsAdded": {
     "message": "Nie dodano grup"
@@ -6680,13 +6680,13 @@
     "message": "Wysłać kod ponownie"
   },
   "memberColumnHeader": {
-    "message": "Member"
+    "message": "Członek"
   },
   "groupSlashMemberColumnHeader": {
-    "message": "Group/Member"
+    "message": "Grupa/Członek"
   },
   "selectGroupsAndMembers": {
-    "message": "Wybierz grupy i użytkowników"
+    "message": "Wybierz grupy i członków"
   },
   "selectGroups": {
     "message": "Wybierz grupy"
@@ -6695,22 +6695,22 @@
     "message": "Uprawnienia ustawione dla użytkownika zastąpią uprawnienia ustawione przez grupę tego użytkownika"
   },
   "noMembersOrGroupsAdded": {
-    "message": "Nie dodano użytkowników lub grup"
+    "message": "Nie dodano członków lub grup"
   },
   "deleted": {
     "message": "Usunięto"
   },
   "memberStatusFilter": {
-    "message": "Filtr statusu użytkownika"
+    "message": "Filtr statusu członka"
   },
   "inviteMember": {
-    "message": "Zaproś użytkownika"
+    "message": "Zaproś członka"
   },
   "needsConfirmation": {
     "message": "Wymaga potwierdzenia"
   },
   "memberRole": {
-    "message": "Rola użytkownika"
+    "message": "Rola członka"
   },
   "moreFromBitwarden": {
     "message": "Więcej od Bitwarden"
@@ -7105,7 +7105,7 @@
     "message": "Zaufane urządzenia"
   },
   "memberDecryptionOptionTdeDescriptionPartOne": {
-    "message": "Po uwierzytelnieniu użytkownicy odszyfrowają dane sejfu przy użyciu klucza zapisanego na ich urządzeniu.",
+    "message": "Po uwierzytelnieniu członkowie odszyfrowają dane sejfu przy użyciu klucza zapisanego na ich urządzeniu.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO Required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionOptionTdeDescriptionLinkOne": {
@@ -7229,7 +7229,7 @@
     "message": "Brak hasła głównego"
   },
   "removeMembersWithoutMasterPasswordWarning": {
-    "message": "Usuwanie użytkowników, którzy nie mają hasła głównego bez ustawienia go, może ograniczyć dostęp do ich pełnych kont."
+    "message": "Usuwanie członków, którzy nie mają hasła głównego bez ustawienia go, może ograniczyć dostęp do ich pełnych kont."
   },
   "approvedAuthRequest": {
     "message": "Zatwierdzone urządzenie dla $ID$.",
@@ -7262,7 +7262,7 @@
     }
   },
   "startYour7DayFreeTrialOfBitwardenSecretsManagerFor": {
-    "message": "Start your 7-Day free trial of Bitwarden Secrets Manager for $ORG$",
+    "message": "Rozpocznij 7-dniowy darmowy okres próbny Menedżera Sekretów Bitwarden dla $ORG$",
     "placeholders": {
       "org": {
         "content": "$1",
@@ -7508,7 +7508,7 @@
     "message": "Przyznaj grupom lub członkom dostęp do tej kolekcji."
   },
   "grantCollectionAccessMembersOnly": {
-    "message": "Grant members access to this collection."
+    "message": "Przyznaj członkom dostęp do tej kolekcji."
   },
   "adminCollectionAccess": {
     "message": "Administratorzy mogą mieć dostęp do kolekcji i zarządzać nimi."
@@ -7548,7 +7548,7 @@
     "message": "Szczegóły potwierdzenia"
   },
   "smFreeTrialThankYou": {
-    "message": "Thank you for signing up for Bitwarden Secrets Manager!"
+    "message": "Dziękujemy za zarejestrowanie się do Menedżera Sekretów Bitwarden!"
   },
   "smFreeTrialConfirmationEmail": {
     "message": "Wysłaliśmy e-mail weryfikacyjny na adres "
@@ -7557,7 +7557,7 @@
     "message": "Ta akcja jest nieodwracalna"
   },
   "confirmCollectionEnhancementsDialogContent": {
-    "message": "Turning on this feature will deprecate the manager role and replace it with a Can manage permission. This will take a few moments. Do not make any organization changes until it is complete. Are you sure you want to proceed?"
+    "message": "Włączenie tej funkcji spowoduje deprekację roli menedżera i zastąpi ją uprawnieniami do zarządzania uprawnieniami. To zajmie kilka chwil. Nie wprowadzaj żadnych zmian w organizacji dopóki nie zostanie zakończone. Czy na pewno chcesz kontynuować?"
   },
   "sorryToSeeYouGo": {
     "message": "Przykro nam, że nas opuszczasz! Pomóż ulepszyć Bitwarden udostępniając informacje dlaczego anulujesz.",
@@ -7598,7 +7598,7 @@
     "message": "Witaj w nowej i ulepszonej aplikacji internetowej. Dowiedz się więcej o tym, co się zmieniło."
   },
   "releaseBlog": {
-    "message": "Read release blog"
+    "message": "Przeczytaj blog z informacjami o wydaniu"
   },
   "adminConsole": {
     "message": "Konsola administratora"
@@ -7606,14 +7606,17 @@
   "providerPortal": {
     "message": "Portal dostawcy"
   },
+  "success": {
+    "message": "Sukces"
+  },
   "viewCollection": {
     "message": "Zobacz kolekcję"
   },
   "restrictedGroupAccess": {
-    "message": "You cannot add yourself to groups."
+    "message": "Nie możesz dodać siebie do grup."
   },
   "restrictedCollectionAccess": {
-    "message": "You cannot add yourself to collections."
+    "message": "Nie możesz dodać siebie do kolekcji."
   },
   "assign": {
     "message": "Przypisz"
@@ -7738,42 +7741,42 @@
     "description": "The date header used when a subscription is cancelled."
   },
   "machineAccountsCannotCreate": {
-    "message": "Machine accounts cannot be created in suspended organizations. Please contact your organization owner for assistance."
+    "message": "Konta dla maszyn nie mogą być tworzone w zawieszonych organizacjach. Skontaktuj się z właścicielem organizacji, aby uzyskać pomoc."
   },
   "machineAccount": {
-    "message": "Machine account",
+    "message": "Konto dla maszyny",
     "description": "A machine user which can be used to automate processes and access secrets in the system."
   },
   "machineAccounts": {
-    "message": "Machine accounts",
+    "message": "Konta dla maszyn",
     "description": "The title for the section that deals with machine accounts."
   },
   "newMachineAccount": {
-    "message": "New machine account",
+    "message": "Nowe konto dla maszyny",
     "description": "Title for creating a new machine account."
   },
   "machineAccountsNoItemsMessage": {
-    "message": "Create a new machine account to get started automating secret access.",
+    "message": "Utwórz nowe konto dla maszyny, aby rozpocząć automatyzację dostępu do sekretu.",
     "description": "Message to encourage the user to start creating machine accounts."
   },
   "machineAccountsNoItemsTitle": {
-    "message": "Nothing to show yet",
+    "message": "Nie ma nic do pokazania",
     "description": "Title to indicate that there are no machine accounts to display."
   },
   "deleteMachineAccounts": {
-    "message": "Delete machine accounts",
+    "message": "Usuń konta maszyn",
     "description": "Title for the action to delete one or multiple machine accounts."
   },
   "deleteMachineAccount": {
-    "message": "Delete machine account",
+    "message": "Usuń konto maszyny",
     "description": "Title for the action to delete a single machine account."
   },
   "viewMachineAccount": {
-    "message": "View machine account",
+    "message": "Zobacz konto maszyny",
     "description": "Action to view the details of a machine account."
   },
   "deleteMachineAccountDialogMessage": {
-    "message": "Deleting machine account $MACHINE_ACCOUNT$ is permanent and irreversible.",
+    "message": "Usuwanie konta maszyny $MACHINE_ACCOUNT$ jest trwałe i nieodwracalne.",
     "placeholders": {
       "machine_account": {
         "content": "$1",
@@ -7782,10 +7785,10 @@
     }
   },
   "deleteMachineAccountsDialogMessage": {
-    "message": "Deleting machine accounts is permanent and irreversible."
+    "message": "Usuwanie kont maszyn jest trwałe i nieodwracalne."
   },
   "deleteMachineAccountsConfirmMessage": {
-    "message": "Delete $COUNT$ machine accounts",
+    "message": "Usuń $COUNT$ kont maszyn",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -7794,60 +7797,60 @@
     }
   },
   "deleteMachineAccountToast": {
-    "message": "Machine account deleted"
+    "message": "Konto maszyny usunięte"
   },
   "deleteMachineAccountsToast": {
-    "message": "Machine accounts deleted"
+    "message": "Konta maszyn usunięte"
   },
   "searchMachineAccounts": {
-    "message": "Search machine accounts",
+    "message": "Szukaj kont maszyn",
     "description": "Placeholder text for searching machine accounts."
   },
   "editMachineAccount": {
-    "message": "Edit machine account",
+    "message": "Edytuj konto maszyny",
     "description": "Title for editing a machine account."
   },
   "machineAccountName": {
-    "message": "Machine account name",
+    "message": "Nazwa konta maszyny",
     "description": "Label for the name of a machine account"
   },
   "machineAccountCreated": {
-    "message": "Machine account created",
+    "message": "Konto maszyny utworzone",
     "description": "Notifies that a new machine account has been created"
   },
   "machineAccountUpdated": {
-    "message": "Machine account updated",
+    "message": "Konto maszyny zaktualizowane",
     "description": "Notifies that a machine account has been updated"
   },
   "projectMachineAccountsDescription": {
-    "message": "Grant machine accounts access to this project."
+    "message": "Przyznaj dostęp kontom maszynowym do tego projektu."
   },
   "projectMachineAccountsSelectHint": {
-    "message": "Type or select machine accounts"
+    "message": "Wpisz lub wybierz konta maszyn"
   },
   "projectEmptyMachineAccountAccessPolicies": {
-    "message": "Add machine accounts to grant access"
+    "message": "Dodaj konta maszyn, aby udzielić dostępu"
   },
   "machineAccountPeopleDescription": {
-    "message": "Grant groups or people access to this machine account."
+    "message": "Przyznaj grupom lub ludziom dostęp do tego konta maszyny."
   },
   "machineAccountProjectsDescription": {
-    "message": "Assign projects to this machine account. "
+    "message": "Przypisz projekty do tego konta maszyny. "
   },
   "createMachineAccount": {
-    "message": "Create a machine account"
+    "message": "Utwórz konto dla maszyny"
   },
   "maPeopleWarningMessage": {
-    "message": "Removing people from a machine account does not remove the access tokens they created. For security best practice, it is recommended to revoke access tokens created by people removed from a machine account."
+    "message": "Usuwanie osób z konta maszyny nie usuwa tokenów dostępu. Dla zapewnienia najlepszej praktyki bezpieczeństwa zaleca się cofnięcie tokenów dostępu stworzonych przez osoby usunięte z konta maszyny."
   },
   "smAccessRemovalWarningMaTitle": {
-    "message": "Remove access to this machine account"
+    "message": "Usuń dostęp do tego konta maszyny"
   },
   "smAccessRemovalWarningMaMessage": {
-    "message": "This action will remove your access to the machine account."
+    "message": "Ta akcja usunie Twój dostęp do konta maszyny."
   },
   "machineAccountsIncluded": {
-    "message": "$COUNT$ machine accounts included",
+    "message": "Uwzględnione konta maszyn: $COUNT$",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -7856,7 +7859,7 @@
     }
   },
   "additionalMachineAccountCost": {
-    "message": "$COST$ per month for additional machine accounts",
+    "message": "$COST$ miesięcznie dla dodatkowych kont dla maszyn",
     "placeholders": {
       "cost": {
         "content": "$1",
@@ -7865,10 +7868,10 @@
     }
   },
   "additionalMachineAccounts": {
-    "message": "Additional machine accounts"
+    "message": "Dodatkowe konta dla maszyn"
   },
   "includedMachineAccounts": {
-    "message": "Your plan comes with $COUNT$ machine accounts.",
+    "message": "Twój plan obejmuje $COUNT$ kont dla maszyn.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -7877,7 +7880,7 @@
     }
   },
   "addAdditionalMachineAccounts": {
-    "message": "You can add additional machine accounts for $COST$ per month.",
+    "message": "Możesz dodać dodatkowe konta dla maszyn za $COST$ miesięcznie.",
     "placeholders": {
       "cost": {
         "content": "$1",
@@ -7886,24 +7889,156 @@
     }
   },
   "limitMachineAccounts": {
-    "message": "Limit machine accounts (optional)"
+    "message": "Limit kont dla maszyn (opcjonalnie)"
   },
   "limitMachineAccountsDesc": {
-    "message": "Set a limit for your machine accounts. Once this limit is reached, you will not be able to create new machine accounts."
+    "message": "Ustaw limit liczby kont dla maszyn. Po osiągnięciu tego limitu nie będziesz mógł tworzyć nowych kont."
   },
   "machineAccountLimit": {
-    "message": "Machine account limit (optional)"
+    "message": "Limit konta dla maszyn (opcjonalnie)"
   },
   "maxMachineAccountCost": {
-    "message": "Max potential machine account cost"
+    "message": "Maksymalny potencjalny koszt kont dla maszyn"
   },
   "machineAccountAccessUpdated": {
-    "message": "Machine account access updated"
+    "message": "Zaktualizowano dostęp do konta dla maszyny"
   },
-  "unassignedItemsBanner": {
-    "message": "Uwaga: Nieprzypisane elementy w organizacji nie są już widoczne w widoku Wszystkie sejfy na urządzeniach i są teraz dostępne tylko przez Konsolę Administracyjną. Przypisz te elementy do kolekcji z konsoli administracyjnej, aby były one widoczne."
+  "restrictedGroupAccessDesc": {
+    "message": "Nie możesz dodać siebie do grupy."
   },
   "unassignedItemsBannerSelfHost": {
     "message": "Uwaga: 2 maja 2024 r. nieprzypisane elementy w organizacji nie będą już widoczne w widoku Wszystkie sejfy na urządzeniach i będą dostępne tylko przez Konsolę Administracyjną. Przypisz te elementy do kolekcji z konsoli administracyjnej, aby były one widoczne."
+  },
+  "unassignedItemsBannerNotice": {
+    "message": "Uwaga: Nieprzypisane elementy organizacji nie są już widoczne w widoku Wszystkie sejfy na urządzeniach i są teraz dostępne tylko przez Konsolę Administracyjną."
+  },
+  "unassignedItemsBannerSelfHostNotice": {
+    "message": "Uwaga: 16 maja 2024 r. nieprzypisana elementy w organizacji nie będą już widoczne w widoku Wszystkie sejfy na urządzeniach i będą dostępne tylko przez Konsolę Administracyjną."
+  },
+  "unassignedItemsBannerCTAPartOne": {
+    "message": "Przypisz te elementy do kolekcji z",
+    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "unassignedItemsBannerCTAPartTwo": {
+    "message": ", aby były widoczne.",
+    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "deleteProvider": {
+    "message": "Usuń dostawcę"
+  },
+  "deleteProviderConfirmation": {
+    "message": "Usunięcie dostawcy jest trwałe i nieodwracalne. Wprowadź swoje hasło główne, aby potwierdzić usunięcie dostawcy i wszystkich powiązanych danych."
+  },
+  "deleteProviderName": {
+    "message": "Nie można usunąć $ID$",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deleteProviderWarningDesc": {
+    "message": "Musisz odłączyć wszystkich klientów zanim będziesz mógł usunąć $ID$",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "providerDeleted": {
+    "message": "Dostawca został usunięty"
+  },
+  "providerDeletedDesc": {
+    "message": "Dostawca i wszystkie powiązane dane zostały usunięte."
+  },
+  "deleteProviderRecoverConfirmDesc": {
+    "message": "Poprosiłeś o usunięcie tego dostawcy. Kliknij poniższy przycisk, aby to potwierdzić."
+  },
+  "deleteProviderWarning": {
+    "message": "Usunięcie dostawcy jest nieodwracalne. Ta czynność nie może zostać cofnięta."
+  },
+  "errorAssigningTargetCollection": {
+    "message": "Wystąpił błąd podczas przypisywania kolekcji."
+  },
+  "errorAssigningTargetFolder": {
+    "message": "Wystąpił błąd podczas przypisywania folderu."
+  },
+  "integrationsAndSdks": {
+    "message": "Integracje i SDK",
+    "description": "The title for the section that deals with integrations and SDKs."
+  },
+  "integrations": {
+    "message": "Integracje"
+  },
+  "integrationsDesc": {
+    "message": "Automatycznie synchronizuj sekrety z Menedżera Sekretnych Bitwarden do usługi innej firmy."
+  },
+  "sdks": {
+    "message": "SDKs"
+  },
+  "sdksDesc": {
+    "message": "Użyj SDK Menedżera Sekretów Bitwarden w następujących językach programowania, aby zbudować własne aplikacje."
+  },
+  "setUpGithubActions": {
+    "message": "Skonfiguruj Github Actions"
+  },
+  "setUpGitlabCICD": {
+    "message": "Skonfiguruj GitLab CI/CD"
+  },
+  "setUpAnsible": {
+    "message": "Skonfiguruj Ansible"
+  },
+  "cSharpSDKRepo": {
+    "message": "Zobacz repozytorium C#"
+  },
+  "cPlusPlusSDKRepo": {
+    "message": "Zobacz repozytorium C++"
+  },
+  "jsWebAssemblySDKRepo": {
+    "message": "Zobacz repozytorium JS WebAssembly"
+  },
+  "javaSDKRepo": {
+    "message": "Zobacz repozytorium Java"
+  },
+  "pythonSDKRepo": {
+    "message": "Zobacz repozytorium Pythona"
+  },
+  "phpSDKRepo": {
+    "message": "Zobacz repozytorium php"
+  },
+  "rubySDKRepo": {
+    "message": "Zobacz repozytorium Ruby"
+  },
+  "goSDKRepo": {
+    "message": "Zobacz repozytorium Go"
+  },
+  "createNewClientToManageAsProvider": {
+    "message": "Utwórz nową organizację klienta do zarządzania jako dostawca. Dodatkowe miejsca zostaną odzwierciedlone w następnym cyklu rozliczeniowym."
+  },
+  "selectAPlan": {
+    "message": "Wybierz plan"
+  },
+  "thirtyFivePercentDiscount": {
+    "message": "Zniżka 35%"
+  },
+  "monthPerMember": {
+    "message": "miesięcznie za członka"
+  },
+  "seats": {
+    "message": "Miejsca"
+  },
+  "addOrganization": {
+    "message": "Dodaj organizację"
+  },
+  "createdNewClient": {
+    "message": "Pomyślnie utworzono nowego klienta"
+  },
+  "noAccess": {
+    "message": "Brak dostępu"
+  },
+  "collectionAdminConsoleManaged": {
+    "message": "Ta kolekcja jest dostępna tylko z konsoli administracyjnej"
   }
 }

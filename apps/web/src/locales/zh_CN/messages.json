@@ -7606,6 +7606,9 @@
   "providerPortal": {
     "message": "提供商门户"
   },
+  "success": {
+    "message": "Success"
+  },
   "viewCollection": {
     "message": "查看集合"
   },
@@ -7698,7 +7701,7 @@
     "description": "The date header used when a subscription is past due."
   },
   "pastDueWarningForChargeAutomatically": {
-    "message": "从您的订阅到期之日起，您有 $DAYS$ 天的宽限期来保留您的订购。请在 $SUSPENSION_DATE$ 之前处理逾期未支付的账单。",
+    "message": "从您的订阅到期之日起，您有 $DAYS$ 天的宽限期来保留您的订阅。请在 $SUSPENSION_DATE$ 之前处理逾期未支付的账单。",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -7712,7 +7715,7 @@
     "description": "A warning shown to the user when their subscription is past due and they are charged automatically."
   },
   "pastDueWarningForSendInvoice": {
-    "message": "从第一笔未支付的账单到期之日起，您有 $DAYS$ 天的宽限期来保留您的订购。请在 $SUSPENSION_DATE$ 之前处理逾期未支付的账单。",
+    "message": "从第一笔未支付的账单到期之日起，您有 $DAYS$ 天的宽限期来保留您的订阅。请在 $SUSPENSION_DATE$ 之前处理逾期未支付的账单。",
     "placeholders": {
       "days": {
         "content": "$1",
@@ -7900,10 +7903,142 @@
   "machineAccountAccessUpdated": {
     "message": "机器账户访问权限已更新"
   },
-  "unassignedItemsBanner": {
-    "message": "注意：未分配的组织项目在您所有设备的「所有密码库」视图中不再可见，现在只能通过管理控制台访问。通过管理控制台将这些项目分配给集合以使其可见。"
+  "restrictedGroupAccessDesc": {
+    "message": "您不能将自己添加到群组。"
   },
   "unassignedItemsBannerSelfHost": {
-    "message": "注意：从 2024 年 5 月 2 日起，未分配的组织项目在您所有设备的「所有密码库」视图中将不再可见，只能通过管理控制台访问。通过管理控制台将这些项目分配给集合以使其可见。"
+    "message": "Notice: On May 2, 2024, unassigned organization items will no longer be visible in your All Vaults view across devices and will only be accessible via the Admin Console. Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "unassignedItemsBannerNotice": {
+    "message": "Notice: Unassigned organization items are no longer visible in your All Vaults view across devices and are now only accessible via the Admin Console."
+  },
+  "unassignedItemsBannerSelfHostNotice": {
+    "message": "Notice: On May 16, 2024, unassigned organization items will no longer be visible in your All Vaults view across devices and will only be accessible via the Admin Console."
+  },
+  "unassignedItemsBannerCTAPartOne": {
+    "message": "Assign these items to a collection from the",
+    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "unassignedItemsBannerCTAPartTwo": {
+    "message": "to make them visible.",
+    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "deleteProvider": {
+    "message": "删除提供商"
+  },
+  "deleteProviderConfirmation": {
+    "message": "删除提供商是永久性操作，无法撤销！输入您的主密码以确认删除提供商及所有关联的数据。"
+  },
+  "deleteProviderName": {
+    "message": "无法删除 $ID$",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deleteProviderWarningDesc": {
+    "message": "You must unlink all clients before you can delete $ID$",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "providerDeleted": {
+    "message": "提供商已删除"
+  },
+  "providerDeletedDesc": {
+    "message": "提供商和所有关联数据已被删除。"
+  },
+  "deleteProviderRecoverConfirmDesc": {
+    "message": "您已请求删除此提供商。请使用下面的按钮确认。"
+  },
+  "deleteProviderWarning": {
+    "message": "删除您的提供商是永久性操作，无法撤销！"
+  },
+  "errorAssigningTargetCollection": {
+    "message": "分配目标集合时出错。"
+  },
+  "errorAssigningTargetFolder": {
+    "message": "分配目标文件夹时出错。"
+  },
+  "integrationsAndSdks": {
+    "message": "Integrations & SDKs",
+    "description": "The title for the section that deals with integrations and SDKs."
+  },
+  "integrations": {
+    "message": "Integrations"
+  },
+  "integrationsDesc": {
+    "message": "Automatically sync secrets from Bitwarden Secrets Manager to a third-party service."
+  },
+  "sdks": {
+    "message": "SDKs"
+  },
+  "sdksDesc": {
+    "message": "Use Bitwarden Secrets Manager SDK in the following programming languages to build your own applications."
+  },
+  "setUpGithubActions": {
+    "message": "Set up Github Actions"
+  },
+  "setUpGitlabCICD": {
+    "message": "Set up GitLab CI/CD"
+  },
+  "setUpAnsible": {
+    "message": "Set up Ansible"
+  },
+  "cSharpSDKRepo": {
+    "message": "View C# repository"
+  },
+  "cPlusPlusSDKRepo": {
+    "message": "View C++ repository"
+  },
+  "jsWebAssemblySDKRepo": {
+    "message": "View JS WebAssembly repository"
+  },
+  "javaSDKRepo": {
+    "message": "View Java repository"
+  },
+  "pythonSDKRepo": {
+    "message": "View Python repository"
+  },
+  "phpSDKRepo": {
+    "message": "View php repository"
+  },
+  "rubySDKRepo": {
+    "message": "View Ruby repository"
+  },
+  "goSDKRepo": {
+    "message": "View Go repository"
+  },
+  "createNewClientToManageAsProvider": {
+    "message": "Create a new client organization to manage as a Provider. Additional seats will be reflected in the next billing cycle."
+  },
+  "selectAPlan": {
+    "message": "Select a plan"
+  },
+  "thirtyFivePercentDiscount": {
+    "message": "35% Discount"
+  },
+  "monthPerMember": {
+    "message": "month per member"
+  },
+  "seats": {
+    "message": "Seats"
+  },
+  "addOrganization": {
+    "message": "Add organization"
+  },
+  "createdNewClient": {
+    "message": "Successfully created new client"
+  },
+  "noAccess": {
+    "message": "No access"
+  },
+  "collectionAdminConsoleManaged": {
+    "message": "This collection is only accessible from the admin console"
   }
 }

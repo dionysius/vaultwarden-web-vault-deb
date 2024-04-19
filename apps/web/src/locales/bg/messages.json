@@ -7606,6 +7606,9 @@
   "providerPortal": {
     "message": "Портал за доставчици"
   },
+  "success": {
+    "message": "Success"
+  },
   "viewCollection": {
     "message": "Преглед на колекцията"
   },
@@ -7900,10 +7903,142 @@
   "machineAccountAccessUpdated": {
     "message": "Достъпът на машинния акаунт е променен"
   },
-  "unassignedItemsBanner": {
-    "message": "Известие: неразпределените елементи на организацията вече не се виждат в изгледа с „Всички трезори“ на различните устройства, а са достъпни само през Административната конзола. Добавете тези елементи към някоя колекция в Административната конзола, за да станат видими."
+  "restrictedGroupAccessDesc": {
+    "message": "Не може да добавяте себе си към групи."
   },
   "unassignedItemsBannerSelfHost": {
-    "message": "Известие: от 2 май 2024г. неразпределените елементи на организациите вече няма се виждат в изгледа с „Всички трезори“ на различните устройства, а ще бъдат достъпни само през Административната конзола. Добавете тези елементи към някоя колекция в Административната конзола, за да станат видими."
+    "message": "Notice: On May 2, 2024, unassigned organization items will no longer be visible in your All Vaults view across devices and will only be accessible via the Admin Console. Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "unassignedItemsBannerNotice": {
+    "message": "Известие: неразпределените елементи в организацията вече няма да се виждат в изгледа с всички трезори на различните устройства, а са достъпни само през Административната конзола."
+  },
+  "unassignedItemsBannerSelfHostNotice": {
+    "message": "Известие: след 16 май 2024, неразпределените елементи в организацията вече няма да се виждат в изгледа с всички трезори на различните устройства, а ще бъдат достъпни само през Административната конзола."
+  },
+  "unassignedItemsBannerCTAPartOne": {
+    "message": "Добавете тези елементи към колекция в",
+    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "unassignedItemsBannerCTAPartTwo": {
+    "message": "за да ги направите видими.",
+    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "deleteProvider": {
+    "message": "Изтриване на доставчик"
+  },
+  "deleteProviderConfirmation": {
+    "message": "Изтриването на доставчик е окончателно и необратимо. Въведете главната си парола, за да потвърдите изтриването на доставчика и всички свързани данни."
+  },
+  "deleteProviderName": {
+    "message": "Изтриването на $ID$ е невъзможно",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deleteProviderWarningDesc": {
+    "message": "Трябва да разкачите всички клиенти, преди да можете да изтриете $ID$",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "providerDeleted": {
+    "message": "Доставчикът е изтрит"
+  },
+  "providerDeletedDesc": {
+    "message": "Доставчикът и всички свързани данни са изтрити."
+  },
+  "deleteProviderRecoverConfirmDesc": {
+    "message": "Заявили сте, че искате да изтриете този доставчик. Използвайте бутона по-долу, за да потвърдите това решение."
+  },
+  "deleteProviderWarning": {
+    "message": "Изтриването на доставчика Ви е окончателно и необратимо."
+  },
+  "errorAssigningTargetCollection": {
+    "message": "Грешка при задаването на целева колекция."
+  },
+  "errorAssigningTargetFolder": {
+    "message": "Грешка при задаването на целева папка."
+  },
+  "integrationsAndSdks": {
+    "message": "Integrations & SDKs",
+    "description": "The title for the section that deals with integrations and SDKs."
+  },
+  "integrations": {
+    "message": "Integrations"
+  },
+  "integrationsDesc": {
+    "message": "Automatically sync secrets from Bitwarden Secrets Manager to a third-party service."
+  },
+  "sdks": {
+    "message": "SDKs"
+  },
+  "sdksDesc": {
+    "message": "Use Bitwarden Secrets Manager SDK in the following programming languages to build your own applications."
+  },
+  "setUpGithubActions": {
+    "message": "Set up Github Actions"
+  },
+  "setUpGitlabCICD": {
+    "message": "Set up GitLab CI/CD"
+  },
+  "setUpAnsible": {
+    "message": "Set up Ansible"
+  },
+  "cSharpSDKRepo": {
+    "message": "View C# repository"
+  },
+  "cPlusPlusSDKRepo": {
+    "message": "View C++ repository"
+  },
+  "jsWebAssemblySDKRepo": {
+    "message": "View JS WebAssembly repository"
+  },
+  "javaSDKRepo": {
+    "message": "View Java repository"
+  },
+  "pythonSDKRepo": {
+    "message": "View Python repository"
+  },
+  "phpSDKRepo": {
+    "message": "View php repository"
+  },
+  "rubySDKRepo": {
+    "message": "View Ruby repository"
+  },
+  "goSDKRepo": {
+    "message": "View Go repository"
+  },
+  "createNewClientToManageAsProvider": {
+    "message": "Create a new client organization to manage as a Provider. Additional seats will be reflected in the next billing cycle."
+  },
+  "selectAPlan": {
+    "message": "Select a plan"
+  },
+  "thirtyFivePercentDiscount": {
+    "message": "35% Discount"
+  },
+  "monthPerMember": {
+    "message": "month per member"
+  },
+  "seats": {
+    "message": "Seats"
+  },
+  "addOrganization": {
+    "message": "Add organization"
+  },
+  "createdNewClient": {
+    "message": "Successfully created new client"
+  },
+  "noAccess": {
+    "message": "No access"
+  },
+  "collectionAdminConsoleManaged": {
+    "message": "This collection is only accessible from the admin console"
   }
 }

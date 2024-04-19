@@ -3360,7 +3360,7 @@
     "message": "Ja konts pastāv, tika nosūtīts e-pasta ziņojums ar turpmākām norādēm."
   },
   "deleteRecoverConfirmDesc": {
-    "message": "Tika pieprasīts izdzēst Bitwarden kontu. Jānospiež zemāk esošā poga, lai apstiprinātu."
+    "message": "Tika pieprasīts izdzēst Bitwarden kontu. Jāizmanto zemāk esošā poga, lai apstiprinātu."
   },
   "myOrganization": {
     "message": "Mana apvienība"
@@ -3396,7 +3396,7 @@
     "message": "Apvienība izdzēsta"
   },
   "organizationDeletedDesc": {
-    "message": "Apvienība un visi ar to saistītie dati ir izdzēsti."
+    "message": "Apvienība un visi ar to saistītie dati tika izdzēsti."
   },
   "organizationUpdated": {
     "message": "Apvienība atjaunināta"
@@ -4927,7 +4927,7 @@
     "message": "Uziacināt jaunu nodrošinātāja lietotāju, zemāk esošajā laukā ievadot tā Bitwarden konta e-pasta adresi. Ja tam vēl nav Bitwarden konta, tiks vaicāts izveidot jaunu."
   },
   "joinProvider": {
-    "message": "Pievienot nodrošinātāju"
+    "message": "Pievienoties nodrošinātāju"
   },
   "joinProviderDesc": {
     "message": "Tu esi uzaicināts pievienoties augstāk norādītajam nodrošinātājam. Lai to pieņemtu, jāpiesakās vai jāizveido jauns Bitwarden konts."
@@ -4945,7 +4945,7 @@
     "message": "Nodrošinātājs"
   },
   "newClientOrganization": {
-    "message": "Jauna sniedzēja apvienība"
+    "message": "Jauna pasūtītāja apvienība"
   },
   "newClientOrganizationDesc": {
     "message": "Izveidot jaunu pasūtītāja apvienību, kas būs piesaistīta šim kontam kā nodrošinātājam. Tas sniegs iespēju piekļūt šai apvienībai un to pārvaldīt."
@@ -5661,7 +5661,7 @@
     "message": "Rēķinu vēsture"
   },
   "backToReports": {
-    "message": "Atgriezties pie atskaitēm"
+    "message": "Atgriezties pie pārskatiem"
   },
   "organizationPicker": {
     "message": "Apvienību atlasītājs"
@@ -7606,6 +7606,9 @@
   "providerPortal": {
     "message": "Nodrošinātāju portāls"
   },
+  "success": {
+    "message": "Success"
+  },
   "viewCollection": {
     "message": "Skatīt krājumu"
   },
@@ -7757,7 +7760,7 @@
     "description": "Message to encourage the user to start creating machine accounts."
   },
   "machineAccountsNoItemsTitle": {
-    "message": "Nothing to show yet",
+    "message": "Vēl nav nekā, ko parādīt",
     "description": "Title to indicate that there are no machine accounts to display."
   },
   "deleteMachineAccounts": {
@@ -7900,10 +7903,142 @@
   "machineAccountAccessUpdated": {
     "message": "Machine account access updated"
   },
-  "unassignedItemsBanner": {
-    "message": "Jāņem vērā: nepiešķirti apvienības vienumi vairs nav redzami skatā \"Visas glabātavas\" dažādās ierīcēs un ir sasniedzami tikai no pārvaldības konsoles, kur šie vienumi jāpiešķir krājumam, lai padarītu tos redzamus."
+  "restrictedGroupAccessDesc": {
+    "message": "Sevi nevar pievienot kopai."
   },
   "unassignedItemsBannerSelfHost": {
-    "message": "Jāņem vērā: 2024. gada 2. maijā nepiešķirti apvienības vienumi vairs nebūs redzami skatā \"Visas glabātavas\" dažādās ierīcēs un būs sasniedzami tikai no pārvaldības konsoles, kur šie vienumi jāpiešķir krājumam, lai padarītu tos redzamus."
+    "message": "Notice: On May 2, 2024, unassigned organization items will no longer be visible in your All Vaults view across devices and will only be accessible via the Admin Console. Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "unassignedItemsBannerNotice": {
+    "message": "Jāņem vērā: nepiešķirti apvienības vienumi vairs nav redzami skatā \"Visas glabātavas\" dažādās ierīcēs un tagad ir pieejami tikai pārvaldības konsolē."
+  },
+  "unassignedItemsBannerSelfHostNotice": {
+    "message": "Jāņem vērā: no 2024. gada 16. maija nepiešķirti apvienības vienumi vairs nebūs redzami skatā \"Visas glabātavas\" dažādās ierīcēs un būs pieejami tikai pārvaldības konsolē."
+  },
+  "unassignedItemsBannerCTAPartOne": {
+    "message": "Piešķirt šos vienumus krājumam",
+    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "unassignedItemsBannerCTAPartTwo": {
+    "message": ", lai padarītu tos redzamus.",
+    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "deleteProvider": {
+    "message": "Izdzēst nodrošinātāju"
+  },
+  "deleteProviderConfirmation": {
+    "message": "Nodrošinātāja izdzēšana ir paliekoša un neatgriezeniska. Jāievada sava galvenā parole, lai apliecinātu nodrošinātāja un visu saistīto datu izdzēšanu."
+  },
+  "deleteProviderName": {
+    "message": "Nevar izdzēst $ID$",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deleteProviderWarningDesc": {
+    "message": "Ir jāatsaista visi klienti, pirms var izdzēst $ID$",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "providerDeleted": {
+    "message": "Nodrošinātājs izdzēsts"
+  },
+  "providerDeletedDesc": {
+    "message": "Nodrošinātājs un visi ar to saistītie dati tika izdzēsti."
+  },
+  "deleteProviderRecoverConfirmDesc": {
+    "message": "Tika pieprasīts izdzēst šo nodrošinātāju. Jāizmanto zemāk esošā poga, lai apstiprinātu."
+  },
+  "deleteProviderWarning": {
+    "message": "Nodrošinātāja izdzēšana ir paliekoša. To nevar atsaukt."
+  },
+  "errorAssigningTargetCollection": {
+    "message": "Kļūda mērķa krājuma piešķiršanā."
+  },
+  "errorAssigningTargetFolder": {
+    "message": "Kļūda mērķa mapes piešķiršanā."
+  },
+  "integrationsAndSdks": {
+    "message": "Integrations & SDKs",
+    "description": "The title for the section that deals with integrations and SDKs."
+  },
+  "integrations": {
+    "message": "Integrations"
+  },
+  "integrationsDesc": {
+    "message": "Automatically sync secrets from Bitwarden Secrets Manager to a third-party service."
+  },
+  "sdks": {
+    "message": "SDKs"
+  },
+  "sdksDesc": {
+    "message": "Use Bitwarden Secrets Manager SDK in the following programming languages to build your own applications."
+  },
+  "setUpGithubActions": {
+    "message": "Set up Github Actions"
+  },
+  "setUpGitlabCICD": {
+    "message": "Set up GitLab CI/CD"
+  },
+  "setUpAnsible": {
+    "message": "Set up Ansible"
+  },
+  "cSharpSDKRepo": {
+    "message": "View C# repository"
+  },
+  "cPlusPlusSDKRepo": {
+    "message": "View C++ repository"
+  },
+  "jsWebAssemblySDKRepo": {
+    "message": "View JS WebAssembly repository"
+  },
+  "javaSDKRepo": {
+    "message": "View Java repository"
+  },
+  "pythonSDKRepo": {
+    "message": "View Python repository"
+  },
+  "phpSDKRepo": {
+    "message": "View php repository"
+  },
+  "rubySDKRepo": {
+    "message": "View Ruby repository"
+  },
+  "goSDKRepo": {
+    "message": "View Go repository"
+  },
+  "createNewClientToManageAsProvider": {
+    "message": "Create a new client organization to manage as a Provider. Additional seats will be reflected in the next billing cycle."
+  },
+  "selectAPlan": {
+    "message": "Select a plan"
+  },
+  "thirtyFivePercentDiscount": {
+    "message": "35% Discount"
+  },
+  "monthPerMember": {
+    "message": "month per member"
+  },
+  "seats": {
+    "message": "Seats"
+  },
+  "addOrganization": {
+    "message": "Add organization"
+  },
+  "createdNewClient": {
+    "message": "Successfully created new client"
+  },
+  "noAccess": {
+    "message": "No access"
+  },
+  "collectionAdminConsoleManaged": {
+    "message": "This collection is only accessible from the admin console"
   }
 }

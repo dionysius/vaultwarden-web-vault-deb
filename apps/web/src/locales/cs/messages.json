@@ -7606,6 +7606,9 @@
   "providerPortal": {
     "message": "Portál poskytovatele"
   },
+  "success": {
+    "message": "Úspěch"
+  },
   "viewCollection": {
     "message": "Zobrazit kolekci"
   },
@@ -7900,10 +7903,142 @@
   "machineAccountAccessUpdated": {
     "message": "Přístup strojového účtu byl aktualizován"
   },
-  "unassignedItemsBanner": {
-    "message": "Upozornění: Nepřiřazené položky organizace již nejsou viditelné ve Vašem zobrazení všech trezorů napříč zařízeními a jsou nyní přístupné jen v konzoli správce. Přiřaďte tyto položky do kolekce z konzole pro správce, aby byly viditelné."
+  "restrictedGroupAccessDesc": {
+    "message": "Do skupiny nemůžete přidat sami sebe."
   },
   "unassignedItemsBannerSelfHost": {
-    "message": "Upozornění: Dne 2. května 2024 již nebudou nepřiřazené položky organizace viditelné v zobrazení Všechny trezory ve všech zařízeních a budou přístupné jen prostřednictvím konzoly správce. Přiřaďte tyto položky do kolekce z konzoly pro správce, aby byly viditelné."
+    "message": "Notice: On May 2, 2024, unassigned organization items will no longer be visible in your All Vaults view across devices and will only be accessible via the Admin Console. Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "unassignedItemsBannerNotice": {
+    "message": "Upozornění: Nepřiřazené položky organizace již nejsou viditelné ve vašem zobrazení všech trezorů napříč zařízeními a jsou nyní přístupné pouze v konzoli správce."
+  },
+  "unassignedItemsBannerSelfHostNotice": {
+    "message": "Upozornění: 16. květba 2024 již nebudou nepřiřazené položky organizace viditelné ve vašem zobrazení všech trezorů napříč zařízeními a budou přístupné pouze v konzoli správce."
+  },
+  "unassignedItemsBannerCTAPartOne": {
+    "message": "Přiřadit tyto položky ke kolekci z",
+    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "unassignedItemsBannerCTAPartTwo": {
+    "message": "aby byly viditelné.",
+    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "deleteProvider": {
+    "message": "Smazat poskytovatele"
+  },
+  "deleteProviderConfirmation": {
+    "message": "Smazání poskytovatele je trvalé a nevratné. Zadejte hlavní heslo pro potvrzení smazání poskytovatele a všech souvisejících dat."
+  },
+  "deleteProviderName": {
+    "message": "Nelze smazat $ID$",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deleteProviderWarningDesc": {
+    "message": "Před smazáním $ID$ musíte odpojit všechny klienty",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "providerDeleted": {
+    "message": "Poskytovatel byl smazán"
+  },
+  "providerDeletedDesc": {
+    "message": "Poskytovatel a veškerá související data byla smazána."
+  },
+  "deleteProviderRecoverConfirmDesc": {
+    "message": "Požádali jste o smazání tohoto poskytovatele. Pro potvrzení použijte tlačítko níže."
+  },
+  "deleteProviderWarning": {
+    "message": "Smazání poskytovatele je trvalé. Tuto akci nelze vrátit zpět."
+  },
+  "errorAssigningTargetCollection": {
+    "message": "Chyba při přiřazování cílové kolekce."
+  },
+  "errorAssigningTargetFolder": {
+    "message": "Chyba při přiřazování cílové složky."
+  },
+  "integrationsAndSdks": {
+    "message": "Integrations & SDKs",
+    "description": "The title for the section that deals with integrations and SDKs."
+  },
+  "integrations": {
+    "message": "Integrations"
+  },
+  "integrationsDesc": {
+    "message": "Automatically sync secrets from Bitwarden Secrets Manager to a third-party service."
+  },
+  "sdks": {
+    "message": "SDKs"
+  },
+  "sdksDesc": {
+    "message": "Use Bitwarden Secrets Manager SDK in the following programming languages to build your own applications."
+  },
+  "setUpGithubActions": {
+    "message": "Set up Github Actions"
+  },
+  "setUpGitlabCICD": {
+    "message": "Set up GitLab CI/CD"
+  },
+  "setUpAnsible": {
+    "message": "Set up Ansible"
+  },
+  "cSharpSDKRepo": {
+    "message": "View C# repository"
+  },
+  "cPlusPlusSDKRepo": {
+    "message": "View C++ repository"
+  },
+  "jsWebAssemblySDKRepo": {
+    "message": "View JS WebAssembly repository"
+  },
+  "javaSDKRepo": {
+    "message": "View Java repository"
+  },
+  "pythonSDKRepo": {
+    "message": "View Python repository"
+  },
+  "phpSDKRepo": {
+    "message": "View php repository"
+  },
+  "rubySDKRepo": {
+    "message": "View Ruby repository"
+  },
+  "goSDKRepo": {
+    "message": "View Go repository"
+  },
+  "createNewClientToManageAsProvider": {
+    "message": "Vytvořte novou klientskou organizaci pro správu jako poskytovatele. Další uživatelé budou reflektováni v dalším platebním cyklu."
+  },
+  "selectAPlan": {
+    "message": "Vyberte plán"
+  },
+  "thirtyFivePercentDiscount": {
+    "message": "35% sleva"
+  },
+  "monthPerMember": {
+    "message": "měsíčně za člena"
+  },
+  "seats": {
+    "message": "Počet"
+  },
+  "addOrganization": {
+    "message": "Přidat organizaci"
+  },
+  "createdNewClient": {
+    "message": "Nový klient byl úspěšně vytvořen"
+  },
+  "noAccess": {
+    "message": "No access"
+  },
+  "collectionAdminConsoleManaged": {
+    "message": "This collection is only accessible from the admin console"
   }
 }

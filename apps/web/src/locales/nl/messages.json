@@ -7606,6 +7606,9 @@
   "providerPortal": {
     "message": "Providerportaal"
   },
+  "success": {
+    "message": "Succes"
+  },
   "viewCollection": {
     "message": "Collectie weergeven"
   },
@@ -7900,10 +7903,142 @@
   "machineAccountAccessUpdated": {
     "message": "Toegang tot machine-account bijgewerkt"
   },
-  "unassignedItemsBanner": {
-    "message": "Notice: Unassigned organization items are no longer visible in your All Vaults view across devices and are now only accessible via the Admin Console. Assign these items to a collection from the Admin Console to make them visible."
+  "restrictedGroupAccessDesc": {
+    "message": "Je kunt jezelf niet aan een groep toevoegen."
   },
   "unassignedItemsBannerSelfHost": {
     "message": "Kennisgeving: Vanaf 2 mei 2024 zijn niet-toegewezen organisatie-items op geen enkel apparaat meer zichtbaar in de weergave van alle kluisjes en alleen toegankelijk via de Admin Console. Je kunt deze items in het Admin Console aan een collectie toewijzen om ze zichtbaar te maken."
+  },
+  "unassignedItemsBannerNotice": {
+    "message": "Let op: Niet-toegewezen organisatie-items zijn niet langer zichtbaar in de weergave van alle kluissen op verschillende apparaten en zijn nu alleen toegankelijk via de Admin Console."
+  },
+  "unassignedItemsBannerSelfHostNotice": {
+    "message": "Let op: Vanaf 16 mei 2024 zijn niet-toegewezen organisatie-items niet langer zichtbaar in de weergave van alle kluissen op verschillende apparaten en alleen toegankelijk via de Admin Console."
+  },
+  "unassignedItemsBannerCTAPartOne": {
+    "message": "Deze items toewijzen aan een collectie van de",
+    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "unassignedItemsBannerCTAPartTwo": {
+    "message": "om ze zichtbaar te maken.",
+    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "deleteProvider": {
+    "message": "Provider verwijderen"
+  },
+  "deleteProviderConfirmation": {
+    "message": "Het verwijderen van een provider is definitief en onomkeerbaar. Voer je hoofdwachtwoord in om het verwijderen van de provider en alle bijbehorende gegevens te bevestigen."
+  },
+  "deleteProviderName": {
+    "message": "Kan $ID$ niet verwijderen",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deleteProviderWarningDesc": {
+    "message": "Je moet alle clients ontkoppelen voordat je $ID$ kunt verwijderen",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "providerDeleted": {
+    "message": "Provider verwijderd"
+  },
+  "providerDeletedDesc": {
+    "message": "De organisatie en alle bijhorende gegevens zijn verwijderd."
+  },
+  "deleteProviderRecoverConfirmDesc": {
+    "message": "Je hebt het verwijderen van deze provider aangevraagd. Gebruik deonderstaande knop om te bevestigen."
+  },
+  "deleteProviderWarning": {
+    "message": "Het verwijderen van een provider is definitief. Je kunt het niet ongedaan maken."
+  },
+  "errorAssigningTargetCollection": {
+    "message": "Fout bij toewijzen doelverzameling."
+  },
+  "errorAssigningTargetFolder": {
+    "message": "Fout bij toewijzen doelmap."
+  },
+  "integrationsAndSdks": {
+    "message": "Integraties & SDKs",
+    "description": "The title for the section that deals with integrations and SDKs."
+  },
+  "integrations": {
+    "message": "Integraties"
+  },
+  "integrationsDesc": {
+    "message": "Automatisch secrets synchroniseren van Bitwarden Secrets Manager met een dienst van derden."
+  },
+  "sdks": {
+    "message": "SDKs"
+  },
+  "sdksDesc": {
+    "message": "Gebruik Bitwarden Secrets Manager SDK in de volgende programmeertalen om je eigen applicaties te bouwen."
+  },
+  "setUpGithubActions": {
+    "message": "GitHub Actions instellen"
+  },
+  "setUpGitlabCICD": {
+    "message": "GitLab CI/CD instellen"
+  },
+  "setUpAnsible": {
+    "message": "Ansibel instellen"
+  },
+  "cSharpSDKRepo": {
+    "message": "C#-repository bekijken"
+  },
+  "cPlusPlusSDKRepo": {
+    "message": "C++-repository bekijken"
+  },
+  "jsWebAssemblySDKRepo": {
+    "message": "JS WebAssembly-repository bekijken"
+  },
+  "javaSDKRepo": {
+    "message": "Java-repository bekijken"
+  },
+  "pythonSDKRepo": {
+    "message": "Python-repository bekijken"
+  },
+  "phpSDKRepo": {
+    "message": "Php-repository bekijken"
+  },
+  "rubySDKRepo": {
+    "message": "Ruby-repository bekijken"
+  },
+  "goSDKRepo": {
+    "message": "Go-repository bekijken"
+  },
+  "createNewClientToManageAsProvider": {
+    "message": "Create a new client organization to manage as a Provider. Additional seats will be reflected in the next billing cycle."
+  },
+  "selectAPlan": {
+    "message": "Select a plan"
+  },
+  "thirtyFivePercentDiscount": {
+    "message": "35% Discount"
+  },
+  "monthPerMember": {
+    "message": "month per member"
+  },
+  "seats": {
+    "message": "Seats"
+  },
+  "addOrganization": {
+    "message": "Add organization"
+  },
+  "createdNewClient": {
+    "message": "Successfully created new client"
+  },
+  "noAccess": {
+    "message": "Geen toegang"
+  },
+  "collectionAdminConsoleManaged": {
+    "message": "Deze collectie is alleen toegankelijk vanaf de admin console"
   }
 }

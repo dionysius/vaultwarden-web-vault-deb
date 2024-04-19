@@ -7601,10 +7601,13 @@
     "message": "リリースブログを読む"
   },
   "adminConsole": {
-    "message": "管理者コンソール"
+    "message": "管理コンソール"
   },
   "providerPortal": {
     "message": "プロバイダーポータル"
+  },
+  "success": {
+    "message": "Success"
   },
   "viewCollection": {
     "message": "コレクションを表示"
@@ -7900,10 +7903,142 @@
   "machineAccountAccessUpdated": {
     "message": "マシンアカウントへのアクセス権限を更新しました"
   },
-  "unassignedItemsBanner": {
-    "message": "注意: 割り当てられていない組織項目は、デバイス間のすべての保管庫のビューでは表示されなくなり、管理コンソールからのみアクセスできます。 管理コンソールからコレクションにこれらのアイテムを割り当てると、表示するようにできます。"
+  "restrictedGroupAccessDesc": {
+    "message": "あなた自身をグループに追加することはできません。"
   },
   "unassignedItemsBannerSelfHost": {
-    "message": "お知らせ：2024年5月2日に、 割り当てられていない組織アイテムはデバイス間のすべての保管庫ビューに表示されなくなり、管理コンソールからのみアクセス可能になります。 管理コンソールからコレクションにこれらのアイテムを割り当てると、表示できるようになります。"
+    "message": "Notice: On May 2, 2024, unassigned organization items will no longer be visible in your All Vaults view across devices and will only be accessible via the Admin Console. Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "unassignedItemsBannerNotice": {
+    "message": "注意: 割り当てられていない組織アイテムは、デバイス間のすべての保管庫ビューでは表示されなくなり、管理コンソールからのみアクセスできるようになりました。"
+  },
+  "unassignedItemsBannerSelfHostNotice": {
+    "message": "お知らせ：2024年5月16日に、 割り当てられていない組織アイテムは、デバイス間のすべての保管庫ビューに表示されなくなり、管理コンソールからのみアクセス可能になります。"
+  },
+  "unassignedItemsBannerCTAPartOne": {
+    "message": "これらのアイテムのコレクションへの割り当てを",
+    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "unassignedItemsBannerCTAPartTwo": {
+    "message": "で実行すると表示できるようになります。",
+    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "deleteProvider": {
+    "message": "プロバイダを削除"
+  },
+  "deleteProviderConfirmation": {
+    "message": "プロバイダの削除は恒久的で元に戻せません。マスターパスワードを入力して、プロバイダと関連するすべてのデータの削除を確認してください。"
+  },
+  "deleteProviderName": {
+    "message": "$ID$ を削除できません",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deleteProviderWarningDesc": {
+    "message": "$ID$ を削除する前に、すべてのクライアントのリンクを解除してください",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "providerDeleted": {
+    "message": "プロバイダを削除しました"
+  },
+  "providerDeletedDesc": {
+    "message": "プロバイダと関連するすべてのデータを削除しました。"
+  },
+  "deleteProviderRecoverConfirmDesc": {
+    "message": "このプロバイダの削除をリクエストしました。下のボタンを使うと確認できます。"
+  },
+  "deleteProviderWarning": {
+    "message": "プロバイダを削除すると元に戻すことはできません。"
+  },
+  "errorAssigningTargetCollection": {
+    "message": "ターゲットコレクションの割り当てに失敗しました。"
+  },
+  "errorAssigningTargetFolder": {
+    "message": "ターゲットフォルダーの割り当てに失敗しました。"
+  },
+  "integrationsAndSdks": {
+    "message": "Integrations & SDKs",
+    "description": "The title for the section that deals with integrations and SDKs."
+  },
+  "integrations": {
+    "message": "Integrations"
+  },
+  "integrationsDesc": {
+    "message": "Automatically sync secrets from Bitwarden Secrets Manager to a third-party service."
+  },
+  "sdks": {
+    "message": "SDKs"
+  },
+  "sdksDesc": {
+    "message": "Use Bitwarden Secrets Manager SDK in the following programming languages to build your own applications."
+  },
+  "setUpGithubActions": {
+    "message": "Set up Github Actions"
+  },
+  "setUpGitlabCICD": {
+    "message": "Set up GitLab CI/CD"
+  },
+  "setUpAnsible": {
+    "message": "Set up Ansible"
+  },
+  "cSharpSDKRepo": {
+    "message": "View C# repository"
+  },
+  "cPlusPlusSDKRepo": {
+    "message": "View C++ repository"
+  },
+  "jsWebAssemblySDKRepo": {
+    "message": "View JS WebAssembly repository"
+  },
+  "javaSDKRepo": {
+    "message": "View Java repository"
+  },
+  "pythonSDKRepo": {
+    "message": "View Python repository"
+  },
+  "phpSDKRepo": {
+    "message": "View php repository"
+  },
+  "rubySDKRepo": {
+    "message": "View Ruby repository"
+  },
+  "goSDKRepo": {
+    "message": "View Go repository"
+  },
+  "createNewClientToManageAsProvider": {
+    "message": "Create a new client organization to manage as a Provider. Additional seats will be reflected in the next billing cycle."
+  },
+  "selectAPlan": {
+    "message": "Select a plan"
+  },
+  "thirtyFivePercentDiscount": {
+    "message": "35% Discount"
+  },
+  "monthPerMember": {
+    "message": "month per member"
+  },
+  "seats": {
+    "message": "Seats"
+  },
+  "addOrganization": {
+    "message": "Add organization"
+  },
+  "createdNewClient": {
+    "message": "Successfully created new client"
+  },
+  "noAccess": {
+    "message": "No access"
+  },
+  "collectionAdminConsoleManaged": {
+    "message": "This collection is only accessible from the admin console"
   }
 }

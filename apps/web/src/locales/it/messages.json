@@ -7606,6 +7606,9 @@
   "providerPortal": {
     "message": "Portale Fornitori"
   },
+  "success": {
+    "message": "Success"
+  },
   "viewCollection": {
     "message": "Visualizza raccolta"
   },
@@ -7900,10 +7903,142 @@
   "machineAccountAccessUpdated": {
     "message": "Accesso all'account macchina aggiornato"
   },
-  "unassignedItemsBanner": {
-    "message": "Avviso: gli elementi dell'organizzazione non assegnati non sono più visibili nella visualizzazione Tutte le Cassaforti su tutti i dispositivi e sono ora accessibili solo tramite la Console di amministrazione. Assegna questi elementi ad una raccolta dalla Console di amministrazione per renderli visibili."
+  "restrictedGroupAccessDesc": {
+    "message": "Non puoi aggiungerti a un gruppo."
   },
   "unassignedItemsBannerSelfHost": {
-    "message": "Avviso: dal 2 maggio 2024, gli elementi dell'organizzazione non assegnati non saranno più visibili nella tua visualizzazione Tutte le Cassaforti su tutti i dispositivi e saranno accessibili solo tramite la Console di amministrazione. Assegna questi elementi ad una raccolta dalla Console di amministrazione per renderli visibili."
+    "message": "Notice: On May 2, 2024, unassigned organization items will no longer be visible in your All Vaults view across devices and will only be accessible via the Admin Console. Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "unassignedItemsBannerNotice": {
+    "message": "Avviso: gli elementi dell'organizzazione non assegnati non sono più visibili nella visualizzazione Tutte le Cassaforti su tutti i dispositivi e sono ora accessibili solo tramite la Console di amministrazione."
+  },
+  "unassignedItemsBannerSelfHostNotice": {
+    "message": "Avviso: dal 2 maggio 2024, gli elementi dell'organizzazione non assegnati non saranno più visibili nella tua visualizzazione Tutte le Cassaforti su tutti i dispositivi e saranno accessibili solo tramite la Console di amministrazione."
+  },
+  "unassignedItemsBannerCTAPartOne": {
+    "message": "Assegna questi elementi ad una raccolta dalla",
+    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "unassignedItemsBannerCTAPartTwo": {
+    "message": "per renderli visibili.",
+    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "deleteProvider": {
+    "message": "Elimina fornitore"
+  },
+  "deleteProviderConfirmation": {
+    "message": "La cancellazione di un fornitore è permanente e irreversibile. Inserisci la tua password principale per confermare l'eliminazione del fornitore e di tutti i dati associati."
+  },
+  "deleteProviderName": {
+    "message": "Impossibile eliminare $ID$",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deleteProviderWarningDesc": {
+    "message": "Devi scollegare tutti i client prima di poter eliminare $ID$",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "providerDeleted": {
+    "message": "Fornitore eliminato"
+  },
+  "providerDeletedDesc": {
+    "message": "Il fornitore e tutti i dati associati sono stati eliminati."
+  },
+  "deleteProviderRecoverConfirmDesc": {
+    "message": "Hai richiesto di eliminare il questo fornitore. Clicca qui sotto per confermare."
+  },
+  "deleteProviderWarning": {
+    "message": "L'eliminazione del fornitore è permanente. Questa azione non è reversibile."
+  },
+  "errorAssigningTargetCollection": {
+    "message": "Errore nell'assegnazione della raccolta di destinazione."
+  },
+  "errorAssigningTargetFolder": {
+    "message": "Errore nell'assegnazione della cartella di destinazione."
+  },
+  "integrationsAndSdks": {
+    "message": "Integrations & SDKs",
+    "description": "The title for the section that deals with integrations and SDKs."
+  },
+  "integrations": {
+    "message": "Integrations"
+  },
+  "integrationsDesc": {
+    "message": "Automatically sync secrets from Bitwarden Secrets Manager to a third-party service."
+  },
+  "sdks": {
+    "message": "SDKs"
+  },
+  "sdksDesc": {
+    "message": "Use Bitwarden Secrets Manager SDK in the following programming languages to build your own applications."
+  },
+  "setUpGithubActions": {
+    "message": "Set up Github Actions"
+  },
+  "setUpGitlabCICD": {
+    "message": "Set up GitLab CI/CD"
+  },
+  "setUpAnsible": {
+    "message": "Set up Ansible"
+  },
+  "cSharpSDKRepo": {
+    "message": "View C# repository"
+  },
+  "cPlusPlusSDKRepo": {
+    "message": "View C++ repository"
+  },
+  "jsWebAssemblySDKRepo": {
+    "message": "View JS WebAssembly repository"
+  },
+  "javaSDKRepo": {
+    "message": "View Java repository"
+  },
+  "pythonSDKRepo": {
+    "message": "View Python repository"
+  },
+  "phpSDKRepo": {
+    "message": "View php repository"
+  },
+  "rubySDKRepo": {
+    "message": "View Ruby repository"
+  },
+  "goSDKRepo": {
+    "message": "View Go repository"
+  },
+  "createNewClientToManageAsProvider": {
+    "message": "Crea una nuova organizzazione cliente da gestire come fornitore. Gli slot aggiuntivi saranno riflessi nel prossimo ciclo di fatturazione."
+  },
+  "selectAPlan": {
+    "message": "Seleziona un piano"
+  },
+  "thirtyFivePercentDiscount": {
+    "message": "Sconto del 35%"
+  },
+  "monthPerMember": {
+    "message": "mese per membro"
+  },
+  "seats": {
+    "message": "Slot"
+  },
+  "addOrganization": {
+    "message": "Aggiungi organizzazione"
+  },
+  "createdNewClient": {
+    "message": "Nuovo cliente creato con successo"
+  },
+  "noAccess": {
+    "message": "No access"
+  },
+  "collectionAdminConsoleManaged": {
+    "message": "This collection is only accessible from the admin console"
   }
 }

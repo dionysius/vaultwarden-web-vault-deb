@@ -7606,6 +7606,9 @@
   "providerPortal": {
     "message": "Portal do fornecedor"
   },
+  "success": {
+    "message": "Com sucesso"
+  },
   "viewCollection": {
     "message": "Ver coleção"
   },
@@ -7900,10 +7903,142 @@
   "machineAccountAccessUpdated": {
     "message": "Acesso à conta automática atualizado"
   },
-  "unassignedItemsBanner": {
-    "message": "Aviso: Os itens da organização não atribuídos já não são visíveis na sua vista Todos os cofres em todos os dispositivos e agora só estão acessíveis através da Consola de administração. Atribua estes itens a uma coleção a partir da Consola de administração para os tornar visíveis."
+  "restrictedGroupAccessDesc": {
+    "message": "Não se pode adicionar a si próprio a um grupo."
   },
   "unassignedItemsBannerSelfHost": {
     "message": "Aviso: A 2 de maio de 2024, os itens da organização não atribuídos deixarão de estar visíveis na vista Todos os cofres em todos os dispositivos e só estarão acessíveis através da Consola de administração. Atribua estes itens a uma coleção a partir da Consola de administração para os tornar visíveis."
+  },
+  "unassignedItemsBannerNotice": {
+    "message": "Aviso: Os itens da organização não atribuídos já não são visíveis na vista Todos os cofres em todos os dispositivos e agora só estão acessíveis através da Consola de administração."
+  },
+  "unassignedItemsBannerSelfHostNotice": {
+    "message": "Aviso: A 16 de maio de 2024, os itens da organização não atribuídos deixarão de estar visíveis na vista Todos os cofres em todos os dispositivos e só estarão acessíveis através da Consola de administração."
+  },
+  "unassignedItemsBannerCTAPartOne": {
+    "message": "Atribua estes itens a uma coleção a partir da",
+    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "unassignedItemsBannerCTAPartTwo": {
+    "message": "para os tornar visíveis.",
+    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "deleteProvider": {
+    "message": "Eliminar fornecedor"
+  },
+  "deleteProviderConfirmation": {
+    "message": "A eliminação de um fornecedor é permanente e irreversível. Introduza a sua palavra-passe mestra para confirmar a eliminação do fornecedor e de todos os dados associados."
+  },
+  "deleteProviderName": {
+    "message": "Não é possível eliminar $ID$",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "deleteProviderWarningDesc": {
+    "message": "É necessário desvincular todos os clientes antes de poder eliminar $ID$",
+    "placeholders": {
+      "id": {
+        "content": "$1",
+        "example": "John Smith"
+      }
+    }
+  },
+  "providerDeleted": {
+    "message": "Fornecedor eliminado"
+  },
+  "providerDeletedDesc": {
+    "message": "O fornecedor e todos os dados associados foram eliminados."
+  },
+  "deleteProviderRecoverConfirmDesc": {
+    "message": "Pediu para eliminar este fornecedor. Clique no botão abaixo para confirmar."
+  },
+  "deleteProviderWarning": {
+    "message": "A eliminação do seu fornecedor é permanente. Não pode ser anulada."
+  },
+  "errorAssigningTargetCollection": {
+    "message": "Erro ao atribuir a coleção de destino."
+  },
+  "errorAssigningTargetFolder": {
+    "message": "Erro ao atribuir a pasta de destino."
+  },
+  "integrationsAndSdks": {
+    "message": "Integrações e SDKs",
+    "description": "The title for the section that deals with integrations and SDKs."
+  },
+  "integrations": {
+    "message": "Integrações"
+  },
+  "integrationsDesc": {
+    "message": "Sincronize automaticamente segredos do Gestor de Segredos do Bitwarden para um serviço de terceiros."
+  },
+  "sdks": {
+    "message": "SDKs"
+  },
+  "sdksDesc": {
+    "message": "Utilize o SDK do Gestor de Segredos do Bitwarden nas seguintes linguagens de programação para criar as suas próprias aplicações."
+  },
+  "setUpGithubActions": {
+    "message": "Configurar ações do Github"
+  },
+  "setUpGitlabCICD": {
+    "message": "Configurar o GitLab CI/CD"
+  },
+  "setUpAnsible": {
+    "message": "Configurar o Ansible"
+  },
+  "cSharpSDKRepo": {
+    "message": "Ver repositório de C#"
+  },
+  "cPlusPlusSDKRepo": {
+    "message": "Ver repositório de C++"
+  },
+  "jsWebAssemblySDKRepo": {
+    "message": "Ver repositório de JS WebAssembly"
+  },
+  "javaSDKRepo": {
+    "message": "Ver repositório de Java"
+  },
+  "pythonSDKRepo": {
+    "message": "Ver repositório de Python"
+  },
+  "phpSDKRepo": {
+    "message": "Ver repositório de php"
+  },
+  "rubySDKRepo": {
+    "message": "Ver repositório de Ruby"
+  },
+  "goSDKRepo": {
+    "message": "Ver repositório de Go"
+  },
+  "createNewClientToManageAsProvider": {
+    "message": "Crie uma nova organização de clientes para gerir como Fornecedor. Os lugares adicionais serão refletidos na próxima faturação."
+  },
+  "selectAPlan": {
+    "message": "Selecionar um plano"
+  },
+  "thirtyFivePercentDiscount": {
+    "message": "Desconto de 35%"
+  },
+  "monthPerMember": {
+    "message": "mês por membro"
+  },
+  "seats": {
+    "message": "Lugares"
+  },
+  "addOrganization": {
+    "message": "Adicionar organização"
+  },
+  "createdNewClient": {
+    "message": "Novo cliente criado com sucesso"
+  },
+  "noAccess": {
+    "message": "Sem acesso"
+  },
+  "collectionAdminConsoleManaged": {
+    "message": "Esta coleção só é acessível a partir da Consola de administração"
   }
 }
