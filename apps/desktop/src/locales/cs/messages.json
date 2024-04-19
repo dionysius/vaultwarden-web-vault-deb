@@ -800,8 +800,11 @@
   "changeMasterPass": {
     "message": "Změnit hlavní heslo"
   },
-  "changeMasterPasswordConfirmation": {
-    "message": "Hlavní heslo si můžete změnit na webové stránce bitwarden.com. Chcete tuto stránku nyní otevřít?"
+  "continueToWebApp": {
+    "message": "Pokračovat do webové aplikace?"
+  },
+  "changeMasterPasswordOnWebConfirmation": {
+    "message": "Hlavní heslo můžete změnit ve webové aplikaci Bitwardenu."
   },
   "fingerprintPhrase": {
     "message": "Fráze otisku prstu",
@@ -1628,6 +1631,12 @@
   },
   "browserIntegrationUnsupportedTitle": {
     "message": "Integrace prohlížeče není podporována"
+  },
+  "browserIntegrationErrorTitle": {
+    "message": "Chyba při povolování integrace prohlížeče"
+  },
+  "browserIntegrationErrorDesc": {
+    "message": "Vyskytla se chyba při povolování integrace prohlížeče."
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Integrace prohlížeče je podporována jen ve verzi pro Mac App Store."
@@ -2688,6 +2697,9 @@
     "message": "Společné formáty",
     "description": "Label indicating the most common import formats"
   },
+  "success": {
+    "message": "Úspěch"
+  },
   "troubleshooting": {
     "message": "Řešení problémů"
   },
@@ -2702,5 +2714,11 @@
   },
   "passkeyRemoved": {
     "message": "Přístupový klíč byl odebrán"
+  },
+  "errorAssigningTargetCollection": {
+    "message": "Chyba při přiřazování cílové kolekce."
+  },
+  "errorAssigningTargetFolder": {
+    "message": "Chyba při přiřazování cílové složky."
   }
 }

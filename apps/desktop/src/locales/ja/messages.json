@@ -800,8 +800,11 @@
   "changeMasterPass": {
     "message": "マスターパスワードの変更"
   },
-  "changeMasterPasswordConfirmation": {
-    "message": "マスターパスワードは bitwarden.com ウェブ保管庫で変更できます。ウェブサイトを開きますか？"
+  "continueToWebApp": {
+    "message": "ウェブアプリに進みますか?"
+  },
+  "changeMasterPasswordOnWebConfirmation": {
+    "message": "Bitwarden ウェブアプリでマスターパスワードを変更できます。"
   },
   "fingerprintPhrase": {
     "message": "パスフレーズ",
@@ -1628,6 +1631,12 @@
   },
   "browserIntegrationUnsupportedTitle": {
     "message": "ブラウザー統合はサポートされていません"
+  },
+  "browserIntegrationErrorTitle": {
+    "message": "ブラウザー連携を有効にする際にエラーが発生しました"
+  },
+  "browserIntegrationErrorDesc": {
+    "message": "ブラウザー統合の有効化中にエラーが発生しました。"
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "残念ながら、ブラウザ統合は、Mac App Storeのバージョンでのみサポートされています。"
@@ -2688,6 +2697,9 @@
     "message": "一般的な形式",
     "description": "Label indicating the most common import formats"
   },
+  "success": {
+    "message": "成功"
+  },
   "troubleshooting": {
     "message": "トラブルシューティング"
   },
@@ -2702,5 +2714,11 @@
   },
   "passkeyRemoved": {
     "message": "パスキーを削除しました"
+  },
+  "errorAssigningTargetCollection": {
+    "message": "ターゲットコレクションの割り当てに失敗しました。"
+  },
+  "errorAssigningTargetFolder": {
+    "message": "ターゲットフォルダーの割り当てに失敗しました。"
   }
 }

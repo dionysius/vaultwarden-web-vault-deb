@@ -800,8 +800,11 @@
   "changeMasterPass": {
     "message": "Hoofdwachtwoord wijzigen"
   },
-  "changeMasterPasswordConfirmation": {
-    "message": "Je kunt je hoofdwachtwoord wijzigen in de kluis op bitwarden.com. Wil je de website nu bezoeken?"
+  "continueToWebApp": {
+    "message": "Doorgaan naar web-app?"
+  },
+  "changeMasterPasswordOnWebConfirmation": {
+    "message": "Je kunt je hoofdwachtwoord wijzigen in de Bitwarden-webapp."
   },
   "fingerprintPhrase": {
     "message": "Vingerafdrukzin",
@@ -1628,6 +1631,12 @@
   },
   "browserIntegrationUnsupportedTitle": {
     "message": "Browserintegratie niet ondersteund"
+  },
+  "browserIntegrationErrorTitle": {
+    "message": "Fout bij inschakelen van de browserintegratie"
+  },
+  "browserIntegrationErrorDesc": {
+    "message": "Er is iets misgegaan bij het tijdens het inschakelen van de browserintegratie."
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Helaas wordt browserintegratie momenteel alleen ondersteund in de Mac App Store-versie."
@@ -2688,6 +2697,9 @@
     "message": "Veelvoorkomende formaten",
     "description": "Label indicating the most common import formats"
   },
+  "success": {
+    "message": "Success"
+  },
   "troubleshooting": {
     "message": "Probleemoplossing"
   },
@@ -2702,5 +2714,11 @@
   },
   "passkeyRemoved": {
     "message": "Passkey verwijderd"
+  },
+  "errorAssigningTargetCollection": {
+    "message": "Fout bij toewijzen doelverzameling."
+  },
+  "errorAssigningTargetFolder": {
+    "message": "Fout bij toewijzen doelmap."
   }
 }

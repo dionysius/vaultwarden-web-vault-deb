@@ -717,7 +717,7 @@
     "message": "Bildiriş server URL-si"
   },
   "iconsUrl": {
-    "message": "Nişan server URL-si"
+    "message": "İkon server URL-si"
   },
   "environmentSaved": {
     "message": "Mühit URL-ləri saxlanıldı."
@@ -800,8 +800,11 @@
   "changeMasterPass": {
     "message": "Ana parolu dəyişdir"
   },
-  "changeMasterPasswordConfirmation": {
-    "message": "Ana parolunuzu bitwarden.com veb anbarında dəyişdirə bilərsiniz. İndi saytı ziyarət etmək istəyirsiniz?"
+  "continueToWebApp": {
+    "message": "Veb tətbiqlə davam edilsin?"
+  },
+  "changeMasterPasswordOnWebConfirmation": {
+    "message": "Ana parolunuzu Bitwarden veb tətbiqində dəyişdirə bilərsiniz."
   },
   "fingerprintPhrase": {
     "message": "Barmaq izi ifadəsi",
@@ -920,52 +923,52 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "enableFavicon": {
-    "message": "Veb sayt nişanlarını göstər"
+    "message": "Veb sayt ikonlarını göstər"
   },
   "faviconDesc": {
     "message": "Hər girişin yanında tanına bilən bir təsvir göstər."
   },
   "enableMinToTray": {
-    "message": "Bildiriş nişanına kiçildin"
+    "message": "Bildiriş sahəsi ikonuna kiçilt"
   },
   "enableMinToTrayDesc": {
-    "message": "Pəncərə kiçildiləndə, bildiriş sahəsində bir nişan göstər."
+    "message": "Pəncərə kiçildiləndə, bunun əvəzinə bildiriş sahəsində bir ikon göstər."
   },
   "enableMinToMenuBar": {
-    "message": "Menyu sətrinə kiçilt"
+    "message": "Menyu çubuğuna kiçilt"
   },
   "enableMinToMenuBarDesc": {
-    "message": "Pəncərəni kiçildəndə, menyu sətrində bir nişan göstər."
+    "message": "Pəncərəni kiçildəndə, bunun əvəzinə menyu çubuğunda bir ikon göstər."
   },
   "enableCloseToTray": {
-    "message": "Bildiriş nişanına bağla"
+    "message": "Bildiriş ikonu üçün bağla"
   },
   "enableCloseToTrayDesc": {
-    "message": "Pəncərə bağlananda, bildiriş sahəsində bir nişan göstər."
+    "message": "Pəncərə bağladılanda, bunun əvəzinə bildiriş sahəsində bir ikon göstər."
   },
   "enableCloseToMenuBar": {
-    "message": "Menyu sətrini bağla"
+    "message": "Menyu çubuğunda bağla"
   },
   "enableCloseToMenuBarDesc": {
-    "message": "Pəncərəni bağlananda, menyu sətrində bir nişan göstər."
+    "message": "Pəncərəni bağladılanda, bunun əvəzinə menyu çubuğunda bir ikon göstər."
   },
   "enableTray": {
-    "message": "Bildiriş sahəsi nişanını fəallaşdır"
+    "message": "Bildiriş sahəsi ikonunu göstər"
   },
   "enableTrayDesc": {
-    "message": "Bildiriş sahəsində həmişə bir nişan göstər."
+    "message": "Bildiriş sahəsində həmişə bir ikon göstər."
   },
   "startToTray": {
-    "message": "Bildiriş sahəsi nişanı kimi başlat"
+    "message": "Bildiriş sahəsi ikonu kimi başlat"
   },
   "startToTrayDesc": {
-    "message": "Tətbiq ilk başladılanda, yalnız bildiriş sahəsi nişanı görünsün."
+    "message": "Tətbiq ilk başladılanda, sistem bildiriş sahəsində yalnız ikon olaraq görünsün."
   },
   "startToMenuBar": {
-    "message": "Menyu sətrini başlat"
+    "message": "Menyu çubuğunda başlat"
   },
   "startToMenuBarDesc": {
-    "message": "Tətbiq ilk başladılanda, menyu sətri sadəcə nişan kimi görünsün."
+    "message": "Tətbiq ilk başladılanda, menyu çubuğunda yalnız ikon olaraq görünsün."
   },
   "openAtLogin": {
     "message": "Giriş ediləndə avtomatik başlat"
@@ -977,7 +980,7 @@
     "message": "\"Dock\"da həmişə göstər"
   },
   "alwaysShowDockDesc": {
-    "message": "Menyu sətrinə kiçildiləndə belə Bitwarden nişanını \"Dock\"da göstər."
+    "message": "Menyu çubuğuna kiçildiləndə belə Bitwarden ikonunu Yuvada göstər."
   },
   "confirmTrayTitle": {
     "message": "Bildiriş sahəsi nişanını ləğv et"
@@ -1450,16 +1453,16 @@
     "message": "Hesabınız bağlandı və bütün əlaqəli datalar silindi."
   },
   "preferences": {
-    "message": "Tercihlər"
+    "message": "Tərcihlər"
   },
   "enableMenuBar": {
-    "message": "Menyu sətri nişanını fəallaşdır"
+    "message": "Menyu çubuğu ikonunu göstər"
   },
   "enableMenuBarDesc": {
-    "message": "Menyu sətrində həmişə bir nişan göstər."
+    "message": "Menyu çubuğunda həmişə bir ikon göstər."
   },
   "hideToMenuBar": {
-    "message": "Menyu sətrini gizlət"
+    "message": "Menyu çubuğunda gizlət"
   },
   "selectOneCollection": {
     "message": "Ən azı bir kolleksiya seçməlisiniz."
@@ -1628,6 +1631,12 @@
   },
   "browserIntegrationUnsupportedTitle": {
     "message": "Brauzer inteqrasiyası dəstəklənmir"
+  },
+  "browserIntegrationErrorTitle": {
+    "message": "Brauzer inteqrasiyasını fəallaşdırma xətası"
+  },
+  "browserIntegrationErrorDesc": {
+    "message": "Brauzer inteqrasiyasını fəallaşdırarkən bir xəta baş verdi."
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Təəssüf ki, brauzer inteqrasiyası indilik yalnız Mac App Store versiyasında dəstəklənir."
@@ -2021,7 +2030,7 @@
     "message": "Eyni vaxtda 5-dən çox hesaba giriş edilə bilməz."
   },
   "accountPreferences": {
-    "message": "Tercihlər"
+    "message": "Tərcihlər"
   },
   "appPreferences": {
     "message": "Tətbiq ayarları (bütün hesablar)"
@@ -2688,6 +2697,9 @@
     "message": "Ortaq formatlar",
     "description": "Label indicating the most common import formats"
   },
+  "success": {
+    "message": "Uğurlu"
+  },
   "troubleshooting": {
     "message": "Problemlərin aradan qaldırılması"
   },
@@ -2702,5 +2714,11 @@
   },
   "passkeyRemoved": {
     "message": "Parol silindi"
+  },
+  "errorAssigningTargetCollection": {
+    "message": "Hədəf kolleksiyaya təyin etmə xətası."
+  },
+  "errorAssigningTargetFolder": {
+    "message": "Hədəf qovluğa təyin etmə xətası."
   }
 }

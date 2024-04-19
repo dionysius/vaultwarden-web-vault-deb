@@ -800,8 +800,11 @@
   "changeMasterPass": {
     "message": "Cambia password principale"
   },
-  "changeMasterPasswordConfirmation": {
-    "message": "Puoi cambiare la tua password principale sulla cassaforte online di bitwarden.com. Vuoi visitare ora il sito?"
+  "continueToWebApp": {
+    "message": "Passa al sito web?"
+  },
+  "changeMasterPasswordOnWebConfirmation": {
+    "message": "Puoi modificare la tua password principale sul sito web di Bitwarden."
   },
   "fingerprintPhrase": {
     "message": "Frase impronta",
@@ -1628,6 +1631,12 @@
   },
   "browserIntegrationUnsupportedTitle": {
     "message": "L'integrazione del browser non è supportata"
+  },
+  "browserIntegrationErrorTitle": {
+    "message": "Error enabling browser integration"
+  },
+  "browserIntegrationErrorDesc": {
+    "message": "An error has occurred while enabling browser integration."
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Purtroppo l'integrazione del browser è supportata solo nella versione nell'App Store per ora."
@@ -2688,6 +2697,9 @@
     "message": "Formati comuni",
     "description": "Label indicating the most common import formats"
   },
+  "success": {
+    "message": "Success"
+  },
   "troubleshooting": {
     "message": "Risoluzione problemi"
   },
@@ -2702,5 +2714,11 @@
   },
   "passkeyRemoved": {
     "message": "Passkey rimossa"
+  },
+  "errorAssigningTargetCollection": {
+    "message": "Errore nell'assegnazione della raccolta di destinazione."
+  },
+  "errorAssigningTargetFolder": {
+    "message": "Errore nell'assegnazione della cartella di destinazione."
   }
 }

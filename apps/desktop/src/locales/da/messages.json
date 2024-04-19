@@ -800,8 +800,11 @@
   "changeMasterPass": {
     "message": "Skift hovedadgangskode"
   },
-  "changeMasterPasswordConfirmation": {
-    "message": "Man kan ændre sin hovedadgangskode via bitwarden.com web-boksen. Besøg webstedet nu?"
+  "continueToWebApp": {
+    "message": "Fortsæt til web-app?"
+  },
+  "changeMasterPasswordOnWebConfirmation": {
+    "message": "Hovedadgangskoden kan ændres via Bitwarden web-appen."
   },
   "fingerprintPhrase": {
     "message": "Fingeraftrykssætning",
@@ -1628,6 +1631,12 @@
   },
   "browserIntegrationUnsupportedTitle": {
     "message": "Browserintegration understøttes ikke"
+  },
+  "browserIntegrationErrorTitle": {
+    "message": "Fejl ved aktivering af webbrowserintegration"
+  },
+  "browserIntegrationErrorDesc": {
+    "message": "En fejl opstod under aktivering af webbrowserintegration."
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Desværre understøttes browserintegration indtil videre kun i Mac App Store-versionen."
@@ -2688,6 +2697,9 @@
     "message": "Almindelige formater",
     "description": "Label indicating the most common import formats"
   },
+  "success": {
+    "message": "Gennemført"
+  },
   "troubleshooting": {
     "message": "Fejlfinding"
   },
@@ -2702,5 +2714,11 @@
   },
   "passkeyRemoved": {
     "message": "Adgangsnøgle fjernet"
+  },
+  "errorAssigningTargetCollection": {
+    "message": "Fejl ved tildeling af målsamling."
+  },
+  "errorAssigningTargetFolder": {
+    "message": "Fejl ved tildeling af målmappe."
   }
 }

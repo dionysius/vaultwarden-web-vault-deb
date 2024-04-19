@@ -800,8 +800,11 @@
   "changeMasterPass": {
     "message": "Alterar palavra-passe mestra"
   },
-  "changeMasterPasswordConfirmation": {
-    "message": "Pode alterar o seu endereço de e-mail no cofre do site bitwarden.com. Deseja visitar o site agora?"
+  "continueToWebApp": {
+    "message": "Continuar para a aplicação Web?"
+  },
+  "changeMasterPasswordOnWebConfirmation": {
+    "message": "Pode alterar a sua palavra-passe mestra na aplicação Web Bitwarden."
   },
   "fingerprintPhrase": {
     "message": "Frase de impressão digital",
@@ -1628,6 +1631,12 @@
   },
   "browserIntegrationUnsupportedTitle": {
     "message": "Integração com o navegador não suportada"
+  },
+  "browserIntegrationErrorTitle": {
+    "message": "Erro ao ativar a integração do navegador"
+  },
+  "browserIntegrationErrorDesc": {
+    "message": "Ocorreu um erro ao ativar a integração do navegador."
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Infelizmente, a integração do navegador só é suportada na versão da Mac App Store por enquanto."
@@ -2688,6 +2697,9 @@
     "message": "Formatos comuns",
     "description": "Label indicating the most common import formats"
   },
+  "success": {
+    "message": "Com sucesso"
+  },
   "troubleshooting": {
     "message": "Resolução de problemas"
   },
@@ -2702,5 +2714,11 @@
   },
   "passkeyRemoved": {
     "message": "Chave de acesso removida"
+  },
+  "errorAssigningTargetCollection": {
+    "message": "Erro ao atribuir a coleção de destino."
+  },
+  "errorAssigningTargetFolder": {
+    "message": "Erro ao atribuir a pasta de destino."
   }
 }

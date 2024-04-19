@@ -800,8 +800,11 @@
   "changeMasterPass": {
     "message": "Zmień hasło główne"
   },
-  "changeMasterPasswordConfirmation": {
-    "message": "Hasło główne możesz zmienić na stronie sejfu bitwarden.com. Czy chcesz przejść do tej strony?"
+  "continueToWebApp": {
+    "message": "Kontynuować do aplikacji internetowej?"
+  },
+  "changeMasterPasswordOnWebConfirmation": {
+    "message": "Możesz zmienić swoje hasło główne w aplikacji internetowej Bitwarden."
   },
   "fingerprintPhrase": {
     "message": "Unikalny identyfikator konta",
@@ -1628,6 +1631,12 @@
   },
   "browserIntegrationUnsupportedTitle": {
     "message": "Połączenie z przeglądarką nie jest obsługiwane"
+  },
+  "browserIntegrationErrorTitle": {
+    "message": "Błąd podczas włączania integracji z przeglądarką"
+  },
+  "browserIntegrationErrorDesc": {
+    "message": "Wystąpił błąd podczas włączania integracji z przeglądarką."
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Połączenie z przeglądarką jest obsługiwane tylko z wersją aplikacji ze sklepu Mac App Store."
@@ -2688,6 +2697,9 @@
     "message": "Popularne formaty",
     "description": "Label indicating the most common import formats"
   },
+  "success": {
+    "message": "Sukces"
+  },
   "troubleshooting": {
     "message": "Rozwiązywanie problemów"
   },
@@ -2702,5 +2714,11 @@
   },
   "passkeyRemoved": {
     "message": "Passkey został usunięty"
+  },
+  "errorAssigningTargetCollection": {
+    "message": "Wystąpił błąd podczas przypisywania kolekcji."
+  },
+  "errorAssigningTargetFolder": {
+    "message": "Wystąpił błąd podczas przypisywania folderu."
   }
 }

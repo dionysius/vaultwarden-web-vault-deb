@@ -445,7 +445,7 @@
     "message": "Vyhnúť sa zameniteľným znakom"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "Vyhľadať zbierku"
   },
   "searchFolder": {
     "message": "Search folder"
@@ -800,8 +800,11 @@
   "changeMasterPass": {
     "message": "Zmeniť hlavné heslo"
   },
-  "changeMasterPasswordConfirmation": {
-    "message": "Svoje hlavné heslo môžete zmeniť vo webovom trezore bitwarden.com. Chcete teraz navštíviť túto stránku?"
+  "continueToWebApp": {
+    "message": "Pokračovať vo webovej aplikácii?"
+  },
+  "changeMasterPasswordOnWebConfirmation": {
+    "message": "Hlavné heslo si môžete zmeniť vo webovej aplikácii Bitwarden."
   },
   "fingerprintPhrase": {
     "message": "Fráza odtlačku",
@@ -1628,6 +1631,12 @@
   },
   "browserIntegrationUnsupportedTitle": {
     "message": "Integrácia v prehliadači nie je podporovaná"
+  },
+  "browserIntegrationErrorTitle": {
+    "message": "Chyba pri povoľovaní integrácie v prehliadači"
+  },
+  "browserIntegrationErrorDesc": {
+    "message": "Pri povoľovaní integrácie v prehliadači sa vyskytla chyba."
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Bohužiaľ, integrácia v prehliadači je zatiaľ podporovaná iba vo verzii Mac App Store."
@@ -2688,6 +2697,9 @@
     "message": "Bežné formáty",
     "description": "Label indicating the most common import formats"
   },
+  "success": {
+    "message": "Úspech"
+  },
   "troubleshooting": {
     "message": "Riešenie problémov"
   },
@@ -2702,5 +2714,11 @@
   },
   "passkeyRemoved": {
     "message": "Prístupový kľúč bol odstránený"
+  },
+  "errorAssigningTargetCollection": {
+    "message": "Chyba pri priraďovaní cieľovej kolekcie."
+  },
+  "errorAssigningTargetFolder": {
+    "message": "Chyba pri priraďovaní cieľového priečinka."
   }
 }

@@ -800,8 +800,11 @@
   "changeMasterPass": {
     "message": "Changer le mot de passe principal"
   },
-  "changeMasterPasswordConfirmation": {
-    "message": "Vous pouvez changer votre mot de passe principal depuis le coffre web de bitwarden.com. Voulez-vous visiter le site web maintenant ?"
+  "continueToWebApp": {
+    "message": "Poursuivre vers l'application web ?"
+  },
+  "changeMasterPasswordOnWebConfirmation": {
+    "message": "Vous pouvez modifier votre mot de passe principal sur l'application web de Bitwarden."
   },
   "fingerprintPhrase": {
     "message": "Phrase d'empreinte",
@@ -1628,6 +1631,12 @@
   },
   "browserIntegrationUnsupportedTitle": {
     "message": "Intégration dans le navigateur non supportée"
+  },
+  "browserIntegrationErrorTitle": {
+    "message": "Error enabling browser integration"
+  },
+  "browserIntegrationErrorDesc": {
+    "message": "An error has occurred while enabling browser integration."
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Malheureusement l'intégration avec le navigateur est uniquement supportée dans la version Mac App Store pour le moment."
@@ -2688,6 +2697,9 @@
     "message": "Formats communs",
     "description": "Label indicating the most common import formats"
   },
+  "success": {
+    "message": "Success"
+  },
   "troubleshooting": {
     "message": "Résolution de problèmes"
   },
@@ -2702,5 +2714,11 @@
   },
   "passkeyRemoved": {
     "message": "Clé d'identification (passkey) retirée"
+  },
+  "errorAssigningTargetCollection": {
+    "message": "Erreur lors de l'assignation de la collection cible."
+  },
+  "errorAssigningTargetFolder": {
+    "message": "Erreur lors de l'assignation du dossier cible."
   }
 }

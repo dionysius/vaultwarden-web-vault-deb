@@ -800,8 +800,11 @@
   "changeMasterPass": {
     "message": "變更主密碼"
   },
-  "changeMasterPasswordConfirmation": {
-    "message": "您可以在 bitwarden.com 網頁版密碼庫變更主密碼。現在要前往嗎？"
+  "continueToWebApp": {
+    "message": "Continue to web app?"
+  },
+  "changeMasterPasswordOnWebConfirmation": {
+    "message": "You can change your master password on the Bitwarden web app."
   },
   "fingerprintPhrase": {
     "message": "指紋短語",
@@ -1628,6 +1631,12 @@
   },
   "browserIntegrationUnsupportedTitle": {
     "message": "不支援瀏覽器整合"
+  },
+  "browserIntegrationErrorTitle": {
+    "message": "Error enabling browser integration"
+  },
+  "browserIntegrationErrorDesc": {
+    "message": "An error has occurred while enabling browser integration."
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "很遺憾，目前僅 Mac App Store 版本支援瀏覽器整合功能。"
@@ -2688,6 +2697,9 @@
     "message": "常見格式",
     "description": "Label indicating the most common import formats"
   },
+  "success": {
+    "message": "Success"
+  },
   "troubleshooting": {
     "message": "疑難排解"
   },
@@ -2702,5 +2714,11 @@
   },
   "passkeyRemoved": {
     "message": "金鑰已移除"
+  },
+  "errorAssigningTargetCollection": {
+    "message": "Error assigning target collection."
+  },
+  "errorAssigningTargetFolder": {
+    "message": "Error assigning target folder."
   }
 }

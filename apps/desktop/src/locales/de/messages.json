@@ -800,8 +800,11 @@
   "changeMasterPass": {
     "message": "Master-Passwort ändern"
   },
-  "changeMasterPasswordConfirmation": {
-    "message": "Du kannst dein Master-Passwort im bitwarden.com-Web-Tresor ändern. Möchtest du die Seite jetzt öffnen?"
+  "continueToWebApp": {
+    "message": "Weiter zur Web-App?"
+  },
+  "changeMasterPasswordOnWebConfirmation": {
+    "message": "Du kannst dein Master-Passwort in der Bitwarden Web-App ändern."
   },
   "fingerprintPhrase": {
     "message": "Fingerabdruck-Phrase",
@@ -1628,6 +1631,12 @@
   },
   "browserIntegrationUnsupportedTitle": {
     "message": "Browser-Integration wird nicht unterstützt"
+  },
+  "browserIntegrationErrorTitle": {
+    "message": "Error enabling browser integration"
+  },
+  "browserIntegrationErrorDesc": {
+    "message": "An error has occurred while enabling browser integration."
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Leider wird die Browser-Integration derzeit nur in der Mac App Store Version unterstützt."
@@ -2688,6 +2697,9 @@
     "message": "Gängigste Formate",
     "description": "Label indicating the most common import formats"
   },
+  "success": {
+    "message": "Success"
+  },
   "troubleshooting": {
     "message": "Problembehandlung"
   },
@@ -2702,5 +2714,11 @@
   },
   "passkeyRemoved": {
     "message": "Passkey entfernt"
+  },
+  "errorAssigningTargetCollection": {
+    "message": "Fehler beim Zuweisen der Ziel-Sammlung."
+  },
+  "errorAssigningTargetFolder": {
+    "message": "Fehler beim Zuweisen des Ziel-Ordners."
   }
 }
