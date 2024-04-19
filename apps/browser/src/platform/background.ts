@@ -5,16 +5,11 @@ import MainBackground from "../background/main.background";
 import { BrowserApi } from "./browser/browser-api";
 
 const logService = new ConsoleLogService(false);
+if (BrowserApi.isManifestVersion(3)) {
+  startHeartbeat().catch((error) => logService.error(error));
+}
 const bitwardenMain = ((self as any).bitwardenMain = new MainBackground());
-bitwardenMain
-  .bootstrap()
-  .then(() => {
-    // Finished bootstrapping
-    if (BrowserApi.isManifestVersion(3)) {
-      startHeartbeat().catch((error) => logService.error(error));
-    }
-  })
-  .catch((error) => logService.error(error));
+bitwardenMain.bootstrap().catch((error) => logService.error(error));
 
 /**
  * Tracks when a service worker was last alive and extends the service worker

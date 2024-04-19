@@ -1,8 +1,10 @@
-import { Observable, Subject, filter, map, merge, share, tap } from "rxjs";
+import { Subject } from "rxjs";
 import { Jsonify } from "type-fest";
 
 import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { KeyGenerationService } from "@bitwarden/common/platform/abstractions/key-generation.service";
+import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
+import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import {
   AbstractMemoryStorageService,
   AbstractStorageService,
@@ -13,57 +15,77 @@ import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 import { MemoryStorageOptions } from "@bitwarden/common/platform/models/domain/storage-options";
 import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
 
-import { fromChromeEvent } from "../browser/from-chrome-event";
+import { BrowserApi } from "../browser/browser-api";
 import { devFlag } from "../decorators/dev-flag.decorator";
 import { devFlagEnabled } from "../flags";
+import { MemoryStoragePortMessage } from "../storage/port-messages";
+import { portName } from "../storage/port-name";
 
 export class LocalBackedSessionStorageService
   extends AbstractMemoryStorageService
   implements ObservableStorageService
 {
-  private cache = new Map<string, unknown>();
   private updatesSubject = new Subject<StorageUpdate>();
-
-  private commandName = `localBackedSessionStorage_${this.name}`;
-  private encKey = `localEncryptionKey_${this.name}`;
-  private sessionKey = `session_${this.name}`;
-
-  updates$: Observable<StorageUpdate>;
+  private commandName = `localBackedSessionStorage_${this.partitionName}`;
+  private encKey = `localEncryptionKey_${this.partitionName}`;
+  private sessionKey = `session_${this.partitionName}`;
+  private cachedSession: Record<string, unknown> = {};
+  private _ports: Set<chrome.runtime.Port> = new Set([]);
+  private knownNullishCacheKeys: Set<string> = new Set([]);
 
   constructor(
+    private logService: LogService,
     private encryptService: EncryptService,
     private keyGenerationService: KeyGenerationService,
     private localStorage: AbstractStorageService,
     private sessionStorage: AbstractStorageService,
-    private name: string,
+    private platformUtilsService: PlatformUtilsService,
+    private partitionName: string,
   ) {
     super();
 
-    const remoteObservable = fromChromeEvent(chrome.runtime.onMessage).pipe(
-      filter(([msg]) => msg.command === this.commandName),
-      map(([msg]) => msg.update as StorageUpdate),
-      tap((update) => {
-        if (update.updateType === "remove") {
-          this.cache.set(update.key, null);
-        } else {
-          this.cache.delete(update.key);
-        }
-      }),
-      share(),
-    );
+    BrowserApi.addListener(chrome.runtime.onConnect, (port) => {
+      if (port.name !== `${portName(chrome.storage.session)}_${partitionName}`) {
+        return;
+      }
 
-    remoteObservable.subscribe();
+      this._ports.add(port);
 
-    this.updates$ = merge(this.updatesSubject.asObservable(), remoteObservable);
+      const listenerCallback = this.onMessageFromForeground.bind(this);
+      port.onDisconnect.addListener(() => {
+        this._ports.delete(port);
+        port.onMessage.removeListener(listenerCallback);
+      });
+      port.onMessage.addListener(listenerCallback);
+      // Initialize the new memory storage service with existing data
+      this.sendMessageTo(port, {
+        action: "initialization",
+        data: Array.from(Object.keys(this.cachedSession)),
+      });
+    });
+    this.updates$.subscribe((update) => {
+      this.broadcastMessage({
+        action: "subject_update",
+        data: update,
+      });
+    });
   }
 
   get valuesRequireDeserialization(): boolean {
     return true;
   }
 
+  get updates$() {
+    return this.updatesSubject.asObservable();
+  }
+
   async get<T>(key: string, options?: MemoryStorageOptions<T>): Promise<T> {
-    if (this.cache.has(key)) {
-      return this.cache.get(key) as T;
+    if (this.cachedSession[key] != null) {
+      return this.cachedSession[key] as T;
+    }
+
+    if (this.knownNullishCacheKeys.has(key)) {
+      return null;
     }
 
     return await this.getBypassCache(key, options);
@@ -71,7 +93,8 @@ export class LocalBackedSessionStorageService
 
   async getBypassCache<T>(key: string, options?: MemoryStorageOptions<T>): Promise<T> {
     const session = await this.getLocalSession(await this.getSessionEncKey());
-    if (session == null || !Object.keys(session).includes(key)) {
+    if (session[key] == null) {
+      this.knownNullishCacheKeys.add(key);
       return null;
     }
 
@@ -80,8 +103,8 @@ export class LocalBackedSessionStorageService
       value = options.deserializer(value as Jsonify<T>);
     }
 
-    this.cache.set(key, value);
-    return this.cache.get(key) as T;
+    void this.save(key, value);
+    return value as T;
   }
 
   async has(key: string): Promise<boolean> {
@@ -89,41 +112,48 @@ export class LocalBackedSessionStorageService
   }
 
   async save<T>(key: string, obj: T): Promise<void> {
+    // This is for observation purposes only. At some point, we don't want to write to local session storage if the value is the same.
+    if (this.platformUtilsService.isDev()) {
+      const existingValue = this.cachedSession[key] as T;
+      if (this.compareValues<T>(existingValue, obj)) {
+        this.logService.warning(`Possible unnecessary write to local session storage. Key: ${key}`);
+        this.logService.warning(obj as any);
+      }
+    }
+
     if (obj == null) {
       return await this.remove(key);
     }
 
-    this.cache.set(key, obj);
+    this.knownNullishCacheKeys.delete(key);
+    this.cachedSession[key] = obj;
     await this.updateLocalSessionValue(key, obj);
-    this.sendUpdate({ key, updateType: "save" });
+    this.updatesSubject.next({ key, updateType: "save" });
   }
 
   async remove(key: string): Promise<void> {
-    this.cache.set(key, null);
+    this.knownNullishCacheKeys.add(key);
+    delete this.cachedSession[key];
     await this.updateLocalSessionValue(key, null);
-    this.sendUpdate({ key, updateType: "remove" });
-  }
-
-  sendUpdate(storageUpdate: StorageUpdate) {
-    this.updatesSubject.next(storageUpdate);
-    void chrome.runtime.sendMessage({
-      command: this.commandName,
-      update: storageUpdate,
-    });
+    this.updatesSubject.next({ key, updateType: "remove" });
   }
 
   private async updateLocalSessionValue<T>(key: string, obj: T) {
     const sessionEncKey = await this.getSessionEncKey();
     const localSession = (await this.getLocalSession(sessionEncKey)) ?? {};
     localSession[key] = obj;
-    await this.setLocalSession(localSession, sessionEncKey);
+    void this.setLocalSession(localSession, sessionEncKey);
   }
 
   async getLocalSession(encKey: SymmetricCryptoKey): Promise<Record<string, unknown>> {
-    const local = await this.localStorage.get<string>(this.sessionKey);
+    if (Object.keys(this.cachedSession).length > 0) {
+      return this.cachedSession;
+    }
 
+    this.cachedSession = {};
+    const local = await this.localStorage.get<string>(this.sessionKey);
     if (local == null) {
-      return null;
+      return this.cachedSession;
     }
 
     if (devFlagEnabled("storeSessionDecrypted")) {
@@ -135,9 +165,11 @@ export class LocalBackedSessionStorageService
       // Error with decryption -- session is lost, delete state and key and start over
       await this.setSessionEncKey(null);
       await this.localStorage.remove(this.sessionKey);
-      return null;
+      return this.cachedSession;
     }
-    return JSON.parse(sessionJson);
+
+    this.cachedSession = JSON.parse(sessionJson);
+    return this.cachedSession;
   }
 
   async setLocalSession(session: Record<string, unknown>, key: SymmetricCryptoKey) {
@@ -191,5 +223,77 @@ export class LocalBackedSessionStorageService
     } else {
       await this.sessionStorage.save(this.encKey, input);
     }
+  }
+
+  private compareValues<T>(value1: T, value2: T): boolean {
+    if (value1 == null && value2 == null) {
+      return true;
+    }
+
+    if (value1 && value2 == null) {
+      return false;
+    }
+
+    if (value1 == null && value2) {
+      return false;
+    }
+
+    if (typeof value1 !== "object" || typeof value2 !== "object") {
+      return value1 === value2;
+    }
+
+    if (JSON.stringify(value1) === JSON.stringify(value2)) {
+      return true;
+    }
+
+    return Object.entries(value1).sort().toString() === Object.entries(value2).sort().toString();
+  }
+
+  private async onMessageFromForeground(
+    message: MemoryStoragePortMessage,
+    port: chrome.runtime.Port,
+  ) {
+    if (message.originator === "background") {
+      return;
+    }
+
+    let result: unknown = null;
+
+    switch (message.action) {
+      case "get":
+      case "getBypassCache":
+      case "has": {
+        result = await this[message.action](message.key);
+        break;
+      }
+      case "save":
+        await this.save(message.key, JSON.parse((message.data as string) ?? null) as unknown);
+        break;
+      case "remove":
+        await this.remove(message.key);
+        break;
+    }
+
+    this.sendMessageTo(port, {
+      id: message.id,
+      key: message.key,
+      data: JSON.stringify(result),
+    });
+  }
+
+  protected broadcastMessage(data: Omit<MemoryStoragePortMessage, "originator">) {
+    this._ports.forEach((port) => {
+      this.sendMessageTo(port, data);
+    });
+  }
+
+  private sendMessageTo(
+    port: chrome.runtime.Port,
+    data: Omit<MemoryStoragePortMessage, "originator">,
+  ) {
+    port.postMessage({
+      ...data,
+      originator: "background",
+    });
   }
 }

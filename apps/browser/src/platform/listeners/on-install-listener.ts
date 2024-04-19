@@ -23,6 +23,11 @@ export async function onInstallListener(details: chrome.runtime.InstalledDetails
     stateServiceOptions: {
       stateFactory: new StateFactory(GlobalState, Account),
     },
+    platformUtilsServiceOptions: {
+      win: self,
+      biometricCallback: async () => false,
+      clipboardWriteCallback: async () => {},
+    },
   };
   const environmentService = await environmentServiceFactory(cache, opts);
 

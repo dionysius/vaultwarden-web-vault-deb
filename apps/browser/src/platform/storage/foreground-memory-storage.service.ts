@@ -21,12 +21,16 @@ export class ForegroundMemoryStorageService extends AbstractMemoryStorageService
   }
   updates$;
 
-  constructor() {
+  constructor(private partitionName?: string) {
     super();
 
     this.updates$ = this.updatesSubject.asObservable();
 
-    this._port = chrome.runtime.connect({ name: portName(chrome.storage.session) });
+    let name = portName(chrome.storage.session);
+    if (this.partitionName) {
+      name = `${name}_${this.partitionName}`;
+    }
+    this._port = chrome.runtime.connect({ name });
     this._backgroundResponses$ = fromChromeEvent(this._port.onMessage).pipe(
       map(([message]) => message),
       filter((message) => message.originator === "background"),

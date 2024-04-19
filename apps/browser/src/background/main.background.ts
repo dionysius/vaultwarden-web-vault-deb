@@ -226,6 +226,7 @@ import { BackgroundPlatformUtilsService } from "../platform/services/platform-ut
 import { BrowserPlatformUtilsService } from "../platform/services/platform-utils/browser-platform-utils.service";
 import { BackgroundDerivedStateProvider } from "../platform/state/background-derived-state.provider";
 import { BackgroundMemoryStorageService } from "../platform/storage/background-memory-storage.service";
+import { ForegroundMemoryStorageService } from "../platform/storage/foreground-memory-storage.service";
 import { fromChromeRuntimeMessaging } from "../platform/utils/from-chrome-runtime-messaging";
 import VaultTimeoutService from "../services/vault-timeout/vault-timeout.service";
 import FilelessImporterBackground from "../tools/background/fileless-importer.background";
@@ -394,13 +395,26 @@ export default class MainBackground {
       ),
     );
 
+    this.platformUtilsService = new BackgroundPlatformUtilsService(
+      this.messagingService,
+      (clipboardValue, clearMs) => this.clearClipboard(clipboardValue, clearMs),
+      async () => this.biometricUnlock(),
+      self,
+    );
+
     const mv3MemoryStorageCreator = (partitionName: string) => {
+      if (this.popupOnlyContext) {
+        return new ForegroundMemoryStorageService(partitionName);
+      }
+
       // TODO: Consider using multithreaded encrypt service in popup only context
       return new LocalBackedSessionStorageService(
+        this.logService,
         new EncryptServiceImplementation(this.cryptoFunctionService, this.logService, false),
         this.keyGenerationService,
         new BrowserLocalStorageService(),
         new BrowserMemoryStorageService(),
+        this.platformUtilsService,
         partitionName,
       );
     };
@@ -469,12 +483,6 @@ export default class MainBackground {
     this.biometricStateService = new DefaultBiometricStateService(this.stateProvider);
 
     this.userNotificationSettingsService = new UserNotificationSettingsService(this.stateProvider);
-    this.platformUtilsService = new BackgroundPlatformUtilsService(
-      this.messagingService,
-      (clipboardValue, clearMs) => this.clearClipboard(clipboardValue, clearMs),
-      async () => this.biometricUnlock(),
-      self,
-    );
 
     this.tokenService = new TokenService(
       this.singleUserStateProvider,

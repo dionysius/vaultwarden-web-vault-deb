@@ -17,6 +17,11 @@ import {
   KeyGenerationServiceInitOptions,
   keyGenerationServiceFactory,
 } from "./key-generation-service.factory";
+import { logServiceFactory, LogServiceInitOptions } from "./log-service.factory";
+import {
+  platformUtilsServiceFactory,
+  PlatformUtilsServiceInitOptions,
+} from "./platform-utils-service.factory";
 
 export type DiskStorageServiceInitOptions = FactoryOptions;
 export type SecureStorageServiceInitOptions = FactoryOptions;
@@ -25,7 +30,9 @@ export type MemoryStorageServiceInitOptions = FactoryOptions &
   EncryptServiceInitOptions &
   KeyGenerationServiceInitOptions &
   DiskStorageServiceInitOptions &
-  SessionStorageServiceInitOptions;
+  SessionStorageServiceInitOptions &
+  LogServiceInitOptions &
+  PlatformUtilsServiceInitOptions;
 
 export function diskStorageServiceFactory(
   cache: { diskStorageService?: AbstractStorageService } & CachedServices,
@@ -63,10 +70,12 @@ export function memoryStorageServiceFactory(
   return factory(cache, "memoryStorageService", opts, async () => {
     if (BrowserApi.isManifestVersion(3)) {
       return new LocalBackedSessionStorageService(
+        await logServiceFactory(cache, opts),
         await encryptServiceFactory(cache, opts),
         await keyGenerationServiceFactory(cache, opts),
         await diskStorageServiceFactory(cache, opts),
         await sessionStorageServiceFactory(cache, opts),
+        await platformUtilsServiceFactory(cache, opts),
         "serviceFactories",
       );
     }
