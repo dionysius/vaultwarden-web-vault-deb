@@ -48,11 +48,7 @@ interface OnSuccessArgs {
   organizationId: string;
 }
 
-const AllowedLegacyPlanTypes = [
-  PlanType.TeamsMonthly2023,
-  PlanType.TeamsAnnually2023,
-  PlanType.EnterpriseAnnually2023,
-  PlanType.EnterpriseMonthly2023,
+const Allowed2020PlansForLegacyProviders = [
   PlanType.TeamsMonthly2020,
   PlanType.TeamsAnnually2020,
   PlanType.EnterpriseAnnually2020,
@@ -283,7 +279,8 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
         (!this.currentPlan || this.currentPlan.upgradeSortOrder < plan.upgradeSortOrder) &&
         (!this.hasProvider || plan.product !== ProductType.TeamsStarter) &&
         ((!this.isProviderQualifiedFor2020Plan() && this.planIsEnabled(plan)) ||
-          (this.isProviderQualifiedFor2020Plan() && AllowedLegacyPlanTypes.includes(plan.type))),
+          (this.isProviderQualifiedFor2020Plan() &&
+            Allowed2020PlansForLegacyProviders.includes(plan.type))),
     );
 
     result.sort((planA, planB) => planA.displaySortOrder - planB.displaySortOrder);
@@ -298,7 +295,8 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
         (plan) =>
           plan.product === selectedProductType &&
           ((!this.isProviderQualifiedFor2020Plan() && this.planIsEnabled(plan)) ||
-            (this.isProviderQualifiedFor2020Plan() && AllowedLegacyPlanTypes.includes(plan.type))),
+            (this.isProviderQualifiedFor2020Plan() &&
+              Allowed2020PlansForLegacyProviders.includes(plan.type))),
       ) || [];
 
     result.sort((planA, planB) => planA.displaySortOrder - planB.displaySortOrder);
