@@ -1,4 +1,4 @@
-import { Observable, firstValueFrom, map } from "rxjs";
+import { Observable, firstValueFrom, map, share, skipWhile, switchMap } from "rxjs";
 import { SemVer } from "semver";
 
 import { ApiService } from "../../abstractions/api.service";
@@ -21,7 +21,13 @@ import Domain from "../../platform/models/domain/domain-base";
 import { EncArrayBuffer } from "../../platform/models/domain/enc-array-buffer";
 import { EncString } from "../../platform/models/domain/enc-string";
 import { SymmetricCryptoKey } from "../../platform/models/domain/symmetric-crypto-key";
-import { ActiveUserState, StateProvider } from "../../platform/state";
+import {
+  ActiveUserState,
+  CIPHERS_MEMORY,
+  DeriveDefinition,
+  DerivedState,
+  StateProvider,
+} from "../../platform/state";
 import { CipherId, CollectionId, OrganizationId } from "../../types/guid";
 import { UserKey, OrgKey } from "../../types/key";
 import { CipherService as CipherServiceAbstraction } from "../abstractions/cipher.service";
@@ -71,10 +77,14 @@ export class CipherService implements CipherServiceAbstraction {
   private sortedCiphersCache: SortedCiphersCache = new SortedCiphersCache(
     this.sortCiphersByLastUsed,
   );
+  private ciphersExpectingUpdate: DerivedState<boolean>;
 
   localData$: Observable<Record<CipherId, LocalData>>;
   ciphers$: Observable<Record<CipherId, CipherData>>;
   cipherViews$: Observable<Record<CipherId, CipherView>>;
+  viewFor$(id: CipherId) {
+    return this.cipherViews$.pipe(map((views) => views[id]));
+  }
   addEditCipherInfo$: Observable<AddEditCipherInfo>;
 
   private localDataState: ActiveUserState<Record<CipherId, LocalData>>;
@@ -99,10 +109,29 @@ export class CipherService implements CipherServiceAbstraction {
     this.encryptedCiphersState = this.stateProvider.getActive(ENCRYPTED_CIPHERS);
     this.decryptedCiphersState = this.stateProvider.getActive(DECRYPTED_CIPHERS);
     this.addEditCipherInfoState = this.stateProvider.getActive(ADD_EDIT_CIPHER_INFO_KEY);
+    this.ciphersExpectingUpdate = this.stateProvider.getDerived(
+      this.encryptedCiphersState.state$,
+      new DeriveDefinition(CIPHERS_MEMORY, "ciphersExpectingUpdate", {
+        derive: (_: Record<CipherId, CipherData>) => false,
+        deserializer: (value) => value,
+      }),
+      {},
+    );
 
     this.localData$ = this.localDataState.state$.pipe(map((data) => data ?? {}));
-    this.ciphers$ = this.encryptedCiphersState.state$.pipe(map((ciphers) => ciphers ?? {}));
-    this.cipherViews$ = this.decryptedCiphersState.state$.pipe(map((views) => views ?? {}));
+    // First wait for ciphersExpectingUpdate to be false before emitting ciphers
+    this.ciphers$ = this.ciphersExpectingUpdate.state$.pipe(
+      skipWhile((expectingUpdate) => expectingUpdate),
+      switchMap(() => this.encryptedCiphersState.state$),
+      map((ciphers) => ciphers ?? {}),
+    );
+    this.cipherViews$ = this.decryptedCiphersState.state$.pipe(
+      map((views) => views ?? {}),
+
+      share({
+        resetOnRefCountZero: true,
+      }),
+    );
     this.addEditCipherInfo$ = this.addEditCipherInfoState.state$;
   }
 
@@ -807,6 +836,8 @@ export class CipherService implements CipherServiceAbstraction {
   private async updateEncryptedCipherState(
     update: (current: Record<CipherId, CipherData>) => Record<CipherId, CipherData>,
   ): Promise<Record<CipherId, CipherData>> {
+    // Store that we should wait for an update to return any ciphers
+    await this.ciphersExpectingUpdate.forceValue(true);
     await this.clearDecryptedCiphersState();
     const [, updatedCiphers] = await this.encryptedCiphersState.update((current) => {
       const result = update(current ?? {});
