@@ -7939,7 +7939,7 @@
     }
   },
   "deleteProviderWarningDesc": {
-    "message": "You must unlink all clients before you can delete $ID$",
+    "message": "删除 $ID$ 之前，您必须取消链接所有的客户端。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -8018,7 +8018,7 @@
     "message": "Create a new client organization to manage as a Provider. Additional seats will be reflected in the next billing cycle."
   },
   "selectAPlan": {
-    "message": "Select a plan"
+    "message": "选择套餐"
   },
   "thirtyFivePercentDiscount": {
     "message": "35% Discount"
@@ -8040,5 +8040,14 @@
   },
   "collectionAdminConsoleManaged": {
     "message": "This collection is only accessible from the admin console"
+  },
+  "organizationOptionsMenu": {
+    "message": "Toggle Organization Menu"
+  },
+  "vaultItemSelect": {
+    "message": "Select vault item"
+  },
+  "collectionItemSelect": {
+    "message": "Select collection item"
   }
 }

@@ -7607,7 +7607,7 @@
     "message": "Portale Fornitori"
   },
   "success": {
-    "message": "Success"
+    "message": "Successo"
   },
   "viewCollection": {
     "message": "Visualizza raccolta"
@@ -8040,5 +8040,14 @@
   },
   "collectionAdminConsoleManaged": {
     "message": "This collection is only accessible from the admin console"
+  },
+  "organizationOptionsMenu": {
+    "message": "Attiva/Disattiva Menu Organizzazione"
+  },
+  "vaultItemSelect": {
+    "message": "Seleziona elemento della cassaforte"
+  },
+  "collectionItemSelect": {
+    "message": "Seleziona elemento della raccolta"
   }
 }

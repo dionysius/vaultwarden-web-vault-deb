@@ -7966,17 +7966,17 @@
     "message": "Error assigning target folder."
   },
   "integrationsAndSdks": {
-    "message": "Integrations & SDKs",
+    "message": "Integrationer och SDK:er",
     "description": "The title for the section that deals with integrations and SDKs."
   },
   "integrations": {
-    "message": "Integrations"
+    "message": "Integrationer"
   },
   "integrationsDesc": {
-    "message": "Automatically sync secrets from Bitwarden Secrets Manager to a third-party service."
+    "message": "Synkronisera automatiskt hemligheter från Bitwarden Secrets Manager till en tredjepartstjänst."
   },
   "sdks": {
-    "message": "SDKs"
+    "message": "SDK:er"
   },
   "sdksDesc": {
     "message": "Use Bitwarden Secrets Manager SDK in the following programming languages to build your own applications."
@@ -7985,10 +7985,10 @@
     "message": "Set up Github Actions"
   },
   "setUpGitlabCICD": {
-    "message": "Set up GitLab CI/CD"
+    "message": "Ställ in GitLab CI/CD"
   },
   "setUpAnsible": {
-    "message": "Set up Ansible"
+    "message": "Ställ in Ansible"
   },
   "cSharpSDKRepo": {
     "message": "View C# repository"
@@ -8040,5 +8040,14 @@
   },
   "collectionAdminConsoleManaged": {
     "message": "This collection is only accessible from the admin console"
+  },
+  "organizationOptionsMenu": {
+    "message": "Toggle Organization Menu"
+  },
+  "vaultItemSelect": {
+    "message": "Select vault item"
+  },
+  "collectionItemSelect": {
+    "message": "Select collection item"
   }
 }

@@ -7607,7 +7607,7 @@
     "message": "Nodrošinātāju portāls"
   },
   "success": {
-    "message": "Success"
+    "message": "Izdevās"
   },
   "viewCollection": {
     "message": "Skatīt krājumu"
@@ -8036,9 +8036,18 @@
     "message": "Successfully created new client"
   },
   "noAccess": {
-    "message": "No access"
+    "message": "Nav piekļuves"
   },
   "collectionAdminConsoleManaged": {
-    "message": "This collection is only accessible from the admin console"
+    "message": "Šis krājums ir pieejams tikai pārvaldības konsolē"
+  },
+  "organizationOptionsMenu": {
+    "message": "Toggle Organization Menu"
+  },
+  "vaultItemSelect": {
+    "message": "Select vault item"
+  },
+  "collectionItemSelect": {
+    "message": "Select collection item"
   }
 }

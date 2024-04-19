@@ -7907,7 +7907,7 @@
     "message": "Vous ne pouvez pas vous ajouter vous-même à un groupe."
   },
   "unassignedItemsBannerSelfHost": {
-    "message": "Notice: On May 2, 2024, unassigned organization items will no longer be visible in your All Vaults view across devices and will only be accessible via the Admin Console. Assign these items to a collection from the Admin Console to make them visible."
+    "message": "Remarque : le 2 mai 2024, les éléments d'organisation non assignés ne seront plus visibles dans votre vue Tous les coffres sur les appareils et seront uniquement accessibles via la Console Admin. Assignez ces éléments à une collection à partir de la Console Admin pour les rendre visibles."
   },
   "unassignedItemsBannerNotice": {
     "message": "Remarque : Les éléments d'organisation non assignés ne sont plus visibles dans la vue Tous les coffres sur les appareils et ne sont maintenant accessibles que via la Console Admin."
@@ -7966,53 +7966,53 @@
     "message": "Erreur lors de l'assignation du dossier cible."
   },
   "integrationsAndSdks": {
-    "message": "Integrations & SDKs",
+    "message": "Intégrations & SDKs",
     "description": "The title for the section that deals with integrations and SDKs."
   },
   "integrations": {
-    "message": "Integrations"
+    "message": "Intégrations"
   },
   "integrationsDesc": {
-    "message": "Automatically sync secrets from Bitwarden Secrets Manager to a third-party service."
+    "message": "Synchroniser automatiquement les secrets à partir du Secrets Manager de Bitwarden vers un service tiers."
   },
   "sdks": {
-    "message": "SDKs"
+    "message": "SDK"
   },
   "sdksDesc": {
-    "message": "Use Bitwarden Secrets Manager SDK in the following programming languages to build your own applications."
+    "message": "Utilisez Bitwarden Secrets Manager SDK dans les langages de programmation suivants pour construire vos propres applications."
   },
   "setUpGithubActions": {
-    "message": "Set up Github Actions"
+    "message": "Configurer Github Actions"
   },
   "setUpGitlabCICD": {
-    "message": "Set up GitLab CI/CD"
+    "message": "Configurer GitLab CI/CD"
   },
   "setUpAnsible": {
-    "message": "Set up Ansible"
+    "message": "Configurer Ansible"
   },
   "cSharpSDKRepo": {
-    "message": "View C# repository"
+    "message": "Afficher le dépôt C#"
   },
   "cPlusPlusSDKRepo": {
-    "message": "View C++ repository"
+    "message": "Afficher le dépôt C++"
   },
   "jsWebAssemblySDKRepo": {
-    "message": "View JS WebAssembly repository"
+    "message": "Afficher le dépôt JS WebAssembly"
   },
   "javaSDKRepo": {
-    "message": "View Java repository"
+    "message": "Afficher le dépôt Java"
   },
   "pythonSDKRepo": {
-    "message": "View Python repository"
+    "message": "Afficher le dépôt Python"
   },
   "phpSDKRepo": {
-    "message": "View php repository"
+    "message": "Afficher le dépôt php"
   },
   "rubySDKRepo": {
-    "message": "View Ruby repository"
+    "message": "Afficher le dépôt Ruby"
   },
   "goSDKRepo": {
-    "message": "View Go repository"
+    "message": "Afficher le dépôt Go"
   },
   "createNewClientToManageAsProvider": {
     "message": "Créez une nouvelle organisation de clients à gérer en tant que Fournisseur. Des sièges supplémentaires seront reflétés lors du prochain cycle de facturation."
@@ -8040,5 +8040,14 @@
   },
   "collectionAdminConsoleManaged": {
     "message": "Cette collection n'est accessible qu'à partir de la Console Admin"
+  },
+  "organizationOptionsMenu": {
+    "message": "Toggle Organization Menu"
+  },
+  "vaultItemSelect": {
+    "message": "Select vault item"
+  },
+  "collectionItemSelect": {
+    "message": "Select collection item"
   }
 }

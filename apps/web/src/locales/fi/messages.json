@@ -630,7 +630,7 @@
     "message": "Suojausavain ei kelpaa. Yritä uudelleen."
   },
   "twoFactorForPasskeysNotSupportedOnClientUpdateToLogIn": {
-    "message": "Kaksivaiheista salausavainkirjautumista ei tueta. Päivitä sovellus kirjautuaksesi sisään."
+    "message": "Kaksivaiheista suojausavainkirjautumista ei tueta. Päivitä sovellus kirjautuaksesi sisään."
   },
   "loginWithPasskeyInfo": {
     "message": "Käytä generoitua suojausavainta, joka kirjaa sinut automaattisesti sisään ilman salasanaa. Henkilöllisyytesi vahvistetaan kasvojen tunnistuksen tai sormenjäljen kataisilla biometrisillä tiedoilla, tai jollakin muulla FIDO2-suojausratkaisulla."
@@ -2799,7 +2799,7 @@
     "message": "Verkkoholvi"
   },
   "cli": {
-    "message": "komentorivi"
+    "message": "Komentorivi"
   },
   "bitWebVault": {
     "message": "Bitwarden Verkkoholvi"
@@ -4948,10 +4948,10 @@
     "message": "Uusi asiakasorganisaatio"
   },
   "newClientOrganizationDesc": {
-    "message": "Luo uusi asiakasorganisaatio, joka liitetään sinuun toimittajana. Voit käyttää ja hallita tätä organisaatiota."
+    "message": "Luo uusi asiakasorganisaatio, jonka toimittajaksi sinut määritetään. Voit käyttää ja hallita tätä organisaatiota."
   },
   "newClient": {
-    "message": "Uusi pääte"
+    "message": "Uusi asiakas"
   },
   "addExistingOrganization": {
     "message": "Lisää olemassa oleva organisaatio"
@@ -6238,7 +6238,7 @@
     "description": "Title for creating a new project."
   },
   "softDeleteSecretWarning": {
-    "message": "Salaisuuksien poistaminen voi vaikuttaa olemassa oleviin integrointeihin.",
+    "message": "Salaisuuksien poistaminen voi vaikuttaa olemassa oleviin integraatioihin.",
     "description": "Warns that deleting secrets can have consequences on integrations"
   },
   "softDeletesSuccessToast": {
@@ -7071,7 +7071,7 @@
     "description": "The individual description shown to the user when the user doesn't have access to delete a project."
   },
   "smProjectsDeleteBulkConfirmation": {
-    "message": "Seuraavien projektien poistaminen ei ole mahdollista. Haluatko jatkaa?",
+    "message": "Seuraavia projekteja ei ole mahdollista poistaa. Haluatko jatkaa?",
     "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
   },
   "updateKdfSettings": {
@@ -7217,7 +7217,7 @@
     "message": "Tilille ei ole asetettu pääsalasanaa"
   },
   "removeOrgUserNoMasterPasswordDesc": {
-    "message": "Käyttäjän $USER$ poistaminen asettamatta hänen tililleen pääsalasanaa voi estää häntä kirjautumasta hänen omalle tililleen. Haluatko varmasti jatkaa?",
+    "message": "Käyttäjän $USER$ poistaminen asettamatta hänen tililleen pääsalasanaa voi estää häntä kirjautumasta heidän omalle tililleen. Haluatko varmasti jatkaa?",
     "placeholders": {
       "user": {
         "content": "$1",
@@ -7484,7 +7484,7 @@
     "message": "Laajennuksella voit tallentaa kirjautumistietoja ja automaattitäyttää lomakkeita avaamatta verkkosovellusta."
   },
   "projectAccessUpdated": {
-    "message": "Projektin käyttöoikeudet on muutettu"
+    "message": "Projektin käyttöoikeuksia muutettiin"
   },
   "unexpectedErrorSend": {
     "message": "Odottamaton virhe ladattaessa Sendiä. Yritä myöhemmin uudelleen."
@@ -7514,7 +7514,7 @@
     "message": "Ylläpitäjät voivat käyttää ja hallinnoida kokoelmia."
   },
   "serviceAccountAccessUpdated": {
-    "message": "Palvelutilin oikeuksia muutettiin"
+    "message": "Palvelutilin käyttöoikeuksia muutettiin"
   },
   "commonImportFormats": {
     "message": "Yleiset muodot",
@@ -7595,7 +7595,7 @@
     "message": "Ilmainen 1 vuoden ajan"
   },
   "newWebApp": {
-    "message": "Tervetuloa uuteen, entistä parempaan verkkosovellukseen. Lue lisää siitä, mikä on muuttunut."
+    "message": "Tervetuloa uuteen, entistä parempaan verkkosovellukseen. Katso mikä on muuttunut."
   },
   "releaseBlog": {
     "message": "Lue julkaisublogia"
@@ -7607,10 +7607,10 @@
     "message": "Toimittajaportaali"
   },
   "success": {
-    "message": "Success"
+    "message": "Onnistui"
   },
   "viewCollection": {
-    "message": "Tarkastele kokoelmaa"
+    "message": "Näytä kokoelma"
   },
   "restrictedGroupAccess": {
     "message": "Et voi lisätä itseäsi ryhmiin."
@@ -7640,7 +7640,7 @@
     "message": "Kokoelmat määritettiin"
   },
   "bulkCollectionAssignmentWarning": {
-    "message": "Olet valinnut $TOTAL_COUNT$ kohdetta. Et voi päivittää näistä $READONLY_COUNT$ kohdetta, koska käyttöoikeutesi eivät salli muokkausta.",
+    "message": "Olet valinnut $TOTAL_COUNT$ kohdetta. Näistä $READONLY_COUNT$ et voi muuttaa, koska käyttöoikeutesi eivät salli muokkausta.",
     "placeholders": {
       "total_count": {
         "content": "$1",
@@ -7668,7 +7668,7 @@
     "message": "Jäljellä"
   },
   "unlinkOrganization": {
-    "message": "Irrota organisaatio"
+    "message": "Poista organisaatioliitos"
   },
   "manageSeats": {
     "message": "HALLITSE KÄYTTÄJÄPAIKKOJA"
@@ -7904,33 +7904,33 @@
     "message": "Konetilin oikeuksia muutettiin"
   },
   "restrictedGroupAccessDesc": {
-    "message": "You cannot add yourself to a group."
+    "message": "Et voi lisätä itseäsi ryhmään."
   },
   "unassignedItemsBannerSelfHost": {
-    "message": "Notice: On May 2, 2024, unassigned organization items will no longer be visible in your All Vaults view across devices and will only be accessible via the Admin Console. Assign these items to a collection from the Admin Console to make them visible."
+    "message": "Huomioi: Alkaen 2. toukokuuta 2024, määrittämättömät organisaatiokohteet eivät enää näy laitteidesi \"Kaikki holvit\" -näkymissä, vaan ne ovat käytettävissä vain Hallintapaneelista."
   },
   "unassignedItemsBannerNotice": {
-    "message": "Notice: Unassigned organization items are no longer visible in your All Vaults view across devices and are now only accessible via the Admin Console."
+    "message": "Huomioi: Määrittämättömät organisaatiokohteet eivät enää näy laitteidesi \"Kaikki holvit\" -näkymissä, vaan ne ovat käytettävissä vain Hallintapaneelista."
   },
   "unassignedItemsBannerSelfHostNotice": {
-    "message": "Notice: On May 16, 2024, unassigned organization items will no longer be visible in your All Vaults view across devices and will only be accessible via the Admin Console."
+    "message": "Huomioi: Alkaen 16. toukokuuta 2024, määrittämättömät organisaatiokohteet eivät enää näy laitteidesi \"Kaikki holvit\" -näkymissä, vaan ne ovat käytettävissä vain Hallintapaneelista."
   },
   "unassignedItemsBannerCTAPartOne": {
-    "message": "Assign these items to a collection from the",
+    "message": "Määritä nämä kohteet kokoelmaan",
     "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
   },
   "unassignedItemsBannerCTAPartTwo": {
-    "message": "to make them visible.",
+    "message": ", jotta ne näkyvät.",
     "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
   },
   "deleteProvider": {
-    "message": "Delete provider"
+    "message": "Poista toimittaja"
   },
   "deleteProviderConfirmation": {
-    "message": "Deleting a provider is permanent and irreversible. Enter your master password to confirm the deletion of the provider and all associated data."
+    "message": "Toimittajan poisto on pysyvää ja peruuttamatonta. Vahvista palveluntarjoajan ja kaikkien siihen liittyvien tietojen poisto syöttämällä pääsalasanasi."
   },
   "deleteProviderName": {
-    "message": "Cannot delete $ID$",
+    "message": "Toimittajaa $ID$ ei ole mahdollista poistaa",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -7939,7 +7939,7 @@
     }
   },
   "deleteProviderWarningDesc": {
-    "message": "You must unlink all clients before you can delete $ID$",
+    "message": "Kaikki liitetyt asiakkaat on poistettava ennen toimittajan $ID$ poistoa.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -7948,97 +7948,106 @@
     }
   },
   "providerDeleted": {
-    "message": "Provider deleted"
+    "message": "Toimittaja poistettiin"
   },
   "providerDeletedDesc": {
-    "message": "The Provider and all associated data has been deleted."
+    "message": "Toimittaja ja kaikki siihen liittyvät tiedot on poistettu."
   },
   "deleteProviderRecoverConfirmDesc": {
-    "message": "You have requested to delete this Provider. Use the button below to confirm."
+    "message": "Olet pyytänyt tämän toimittajan poistoa. Vahvista alla olevalla painikeella."
   },
   "deleteProviderWarning": {
-    "message": "Deleting your provider is permanent. It cannot be undone."
+    "message": "Toimittajasi poisto on pysyvä toimenpide, eikä sen peruminen ole mahdollista."
   },
   "errorAssigningTargetCollection": {
-    "message": "Error assigning target collection."
+    "message": "Virhe määritettäessä kohdekokoelmaa."
   },
   "errorAssigningTargetFolder": {
-    "message": "Error assigning target folder."
+    "message": "Virhe määritettäessä kohdekansiota."
   },
   "integrationsAndSdks": {
-    "message": "Integrations & SDKs",
+    "message": "Integraatiot ja SDK:t",
     "description": "The title for the section that deals with integrations and SDKs."
   },
   "integrations": {
-    "message": "Integrations"
+    "message": "Integraatiot"
   },
   "integrationsDesc": {
-    "message": "Automatically sync secrets from Bitwarden Secrets Manager to a third-party service."
+    "message": "Synkronoi salaisuudet automaattisesti Bitwardenin Salaisuushallinnan ja ulkopuolisen palvelun välillä."
   },
   "sdks": {
-    "message": "SDKs"
+    "message": "SDK:t"
   },
   "sdksDesc": {
-    "message": "Use Bitwarden Secrets Manager SDK in the following programming languages to build your own applications."
+    "message": "Bitwardenin Salaisuushallinnan SDK:n avulla voit kehittää omia sovelluksiasi seuraavilla ohjelmointikielillä."
   },
   "setUpGithubActions": {
-    "message": "Set up Github Actions"
+    "message": "Määritä GitHub Actions"
   },
   "setUpGitlabCICD": {
-    "message": "Set up GitLab CI/CD"
+    "message": "Määritä GitLab CI/CD"
   },
   "setUpAnsible": {
-    "message": "Set up Ansible"
+    "message": "Määritä Ansible"
   },
   "cSharpSDKRepo": {
-    "message": "View C# repository"
+    "message": "Näytä C#-arkisto"
   },
   "cPlusPlusSDKRepo": {
-    "message": "View C++ repository"
+    "message": "Näytä C++-arkisto"
   },
   "jsWebAssemblySDKRepo": {
-    "message": "View JS WebAssembly repository"
+    "message": "Näytä JS WebAssembly -arkisto"
   },
   "javaSDKRepo": {
-    "message": "View Java repository"
+    "message": "Näytä Java-arkisto"
   },
   "pythonSDKRepo": {
-    "message": "View Python repository"
+    "message": "Näytä Python-arkisto"
   },
   "phpSDKRepo": {
-    "message": "View php repository"
+    "message": "Näytä php-arkisto"
   },
   "rubySDKRepo": {
-    "message": "View Ruby repository"
+    "message": "Näytä Ruby-arkisto"
   },
   "goSDKRepo": {
-    "message": "View Go repository"
+    "message": "Näytä Go-arkisto"
   },
   "createNewClientToManageAsProvider": {
-    "message": "Create a new client organization to manage as a Provider. Additional seats will be reflected in the next billing cycle."
+    "message": "Luo uusi asiakasorganisaatio, jota hallitset toimittajana. Uudet käyttäjäpaikat näkyvät seuraavalla laskutusjaksolla."
   },
   "selectAPlan": {
-    "message": "Select a plan"
+    "message": "Valitse tilaus"
   },
   "thirtyFivePercentDiscount": {
-    "message": "35% Discount"
+    "message": "35 %:n alennus"
   },
   "monthPerMember": {
-    "message": "month per member"
+    "message": "kuukaudessa/jäsen"
   },
   "seats": {
-    "message": "Seats"
+    "message": "Käyttäjäpaikat"
   },
   "addOrganization": {
-    "message": "Add organization"
+    "message": "Lisää organisaatio"
   },
   "createdNewClient": {
-    "message": "Successfully created new client"
+    "message": "Uuden asiakkaan luonti onnistui."
   },
   "noAccess": {
-    "message": "No access"
+    "message": "Käyttöoikeutta ei ole"
   },
   "collectionAdminConsoleManaged": {
-    "message": "This collection is only accessible from the admin console"
+    "message": "Tämä kokoelma on käytettävissä vain hallintakonsolista"
+  },
+  "organizationOptionsMenu": {
+    "message": "Näytä/piilota organisaatiovalikko"
+  },
+  "vaultItemSelect": {
+    "message": "Valitse holvin kohde"
+  },
+  "collectionItemSelect": {
+    "message": "Valitse kokoelman kohde"
   }
 }

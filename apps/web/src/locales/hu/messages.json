@@ -7607,7 +7607,7 @@
     "message": "Szolgáltató portál"
   },
   "success": {
-    "message": "Success"
+    "message": "Sikeres"
   },
   "viewCollection": {
     "message": "Gyűjtemény megtekintése"
@@ -8040,5 +8040,14 @@
   },
   "collectionAdminConsoleManaged": {
     "message": "Ez a gyűjtemény csak az adminisztrátori konzolról érhető el."
+  },
+  "organizationOptionsMenu": {
+    "message": "Toggle Organization Menu"
+  },
+  "vaultItemSelect": {
+    "message": "Select vault item"
+  },
+  "collectionItemSelect": {
+    "message": "Select collection item"
   }
 }

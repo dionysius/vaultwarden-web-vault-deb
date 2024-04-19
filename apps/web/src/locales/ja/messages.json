@@ -7607,7 +7607,7 @@
     "message": "プロバイダーポータル"
   },
   "success": {
-    "message": "Success"
+    "message": "成功"
   },
   "viewCollection": {
     "message": "コレクションを表示"
@@ -7907,7 +7907,7 @@
     "message": "あなた自身をグループに追加することはできません。"
   },
   "unassignedItemsBannerSelfHost": {
-    "message": "Notice: On May 2, 2024, unassigned organization items will no longer be visible in your All Vaults view across devices and will only be accessible via the Admin Console. Assign these items to a collection from the Admin Console to make them visible."
+    "message": "お知らせ：2024年5月2日に、 割り当てられていない組織アイテムはデバイス間のすべての保管庫ビューに表示されなくなり、管理コンソールからのみアクセス可能になります。 管理コンソールからコレクションにこれらのアイテムを割り当てると、表示できるようになります。"
   },
   "unassignedItemsBannerNotice": {
     "message": "注意: 割り当てられていない組織アイテムは、デバイス間のすべての保管庫ビューでは表示されなくなり、管理コンソールからのみアクセスできるようになりました。"
@@ -7966,79 +7966,88 @@
     "message": "ターゲットフォルダーの割り当てに失敗しました。"
   },
   "integrationsAndSdks": {
-    "message": "Integrations & SDKs",
+    "message": "連携＆SDK",
     "description": "The title for the section that deals with integrations and SDKs."
   },
   "integrations": {
-    "message": "Integrations"
+    "message": "システム連携"
   },
   "integrationsDesc": {
-    "message": "Automatically sync secrets from Bitwarden Secrets Manager to a third-party service."
+    "message": "Bitwarden シークレットマネージャーのシークレットを、サードパーティーのサービスに自動的に同期します。"
   },
   "sdks": {
-    "message": "SDKs"
+    "message": "SDK"
   },
   "sdksDesc": {
-    "message": "Use Bitwarden Secrets Manager SDK in the following programming languages to build your own applications."
+    "message": "Bitwarden シークレットマネージャー SDK を以下のプログラミング言語で使用して、独自のアプリを構築できます。"
   },
   "setUpGithubActions": {
-    "message": "Set up Github Actions"
+    "message": "Github アクションを設定"
   },
   "setUpGitlabCICD": {
-    "message": "Set up GitLab CI/CD"
+    "message": "GitLab CI/CD の設定"
   },
   "setUpAnsible": {
-    "message": "Set up Ansible"
+    "message": "Ansible を設定"
   },
   "cSharpSDKRepo": {
-    "message": "View C# repository"
+    "message": "C# リポジトリを表示"
   },
   "cPlusPlusSDKRepo": {
-    "message": "View C++ repository"
+    "message": "C++ リポジトリを表示"
   },
   "jsWebAssemblySDKRepo": {
-    "message": "View JS WebAssembly repository"
+    "message": "JS WebAssembly リポジトリを表示"
   },
   "javaSDKRepo": {
-    "message": "View Java repository"
+    "message": "Java リポジトリを表示"
   },
   "pythonSDKRepo": {
-    "message": "View Python repository"
+    "message": "Python リポジトリを表示"
   },
   "phpSDKRepo": {
-    "message": "View php repository"
+    "message": "PHP リポジトリを表示"
   },
   "rubySDKRepo": {
-    "message": "View Ruby repository"
+    "message": "Ruby リポジトリを表示"
   },
   "goSDKRepo": {
-    "message": "View Go repository"
+    "message": "Go リポジトリを表示"
   },
   "createNewClientToManageAsProvider": {
-    "message": "Create a new client organization to manage as a Provider. Additional seats will be reflected in the next billing cycle."
+    "message": "プロバイダーとして管理するための新しいクライアント組織を作成します。次の請求サイクルに追加のシートが反映されます。"
   },
   "selectAPlan": {
-    "message": "Select a plan"
+    "message": "プランを選択"
   },
   "thirtyFivePercentDiscount": {
-    "message": "35% Discount"
+    "message": "35%割引"
   },
   "monthPerMember": {
-    "message": "month per member"
+    "message": "月/メンバーあたり"
   },
   "seats": {
-    "message": "Seats"
+    "message": "シート"
   },
   "addOrganization": {
-    "message": "Add organization"
+    "message": "組織を追加"
   },
   "createdNewClient": {
-    "message": "Successfully created new client"
+    "message": "新しいクライアントを作成しました"
   },
   "noAccess": {
-    "message": "No access"
+    "message": "アクセス不可"
   },
   "collectionAdminConsoleManaged": {
-    "message": "This collection is only accessible from the admin console"
+    "message": "このコレクションは管理コンソールからのみアクセス可能です"
+  },
+  "organizationOptionsMenu": {
+    "message": "Toggle Organization Menu"
+  },
+  "vaultItemSelect": {
+    "message": "Select vault item"
+  },
+  "collectionItemSelect": {
+    "message": "Select collection item"
   }
 }
