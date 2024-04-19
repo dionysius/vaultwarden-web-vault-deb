@@ -7,6 +7,7 @@
     [disabled]="disabled"
     [checked]="checked"
     (change)="$event ? this.checkedToggled.next() : null"
+    [attr.aria-label]="'collectionItemSelect' | i18n"
   />
 </td>
 <td bitCell [ngClass]="RowHeightClass" class="tw-min-w-fit">
