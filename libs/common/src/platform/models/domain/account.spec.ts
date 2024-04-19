@@ -1,4 +1,4 @@
-import { Account, AccountKeys, AccountProfile, AccountSettings, AccountTokens } from "./account";
+import { Account, AccountKeys, AccountProfile, AccountSettings } from "./account";
 
 describe("Account", () => {
   describe("fromJSON", () => {
@@ -10,14 +10,12 @@ describe("Account", () => {
       const keysSpy = jest.spyOn(AccountKeys, "fromJSON");
       const profileSpy = jest.spyOn(AccountProfile, "fromJSON");
       const settingsSpy = jest.spyOn(AccountSettings, "fromJSON");
-      const tokensSpy = jest.spyOn(AccountTokens, "fromJSON");
 
       Account.fromJSON({});
 
       expect(keysSpy).toHaveBeenCalled();
       expect(profileSpy).toHaveBeenCalled();
       expect(settingsSpy).toHaveBeenCalled();
-      expect(tokensSpy).toHaveBeenCalled();
     });
   });
 });

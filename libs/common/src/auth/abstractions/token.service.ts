@@ -213,4 +213,10 @@ export abstract class TokenService {
    * @returns A promise that resolves with a boolean representing the user's external authN status.
    */
   getIsExternal: () => Promise<boolean>;
+
+  /** Gets the active or passed in user's security stamp */
+  getSecurityStamp: (userId?: UserId) => Promise<string | null>;
+
+  /** Sets the security stamp for the active or passed in user */
+  setSecurityStamp: (securityStamp: string, userId?: UserId) => Promise<void>;
 }

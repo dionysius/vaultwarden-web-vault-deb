@@ -788,6 +788,7 @@ export default class MainBackground {
       this.avatarService,
       logoutCallback,
       this.billingAccountProfileStateService,
+      this.tokenService,
     );
     this.eventUploadService = new EventUploadService(
       this.apiService,
