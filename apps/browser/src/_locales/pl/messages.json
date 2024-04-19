@@ -172,6 +172,12 @@
   "changeMasterPassword": {
     "message": "Zmień hasło główne"
   },
+  "continueToWebApp": {
+    "message": "Kontynuować do aplikacji internetowej?"
+  },
+  "changeMasterPasswordOnWebConfirmation": {
+    "message": "Możesz zmienić swoje hasło główne w aplikacji internetowej Bitwarden."
+  },
   "fingerprintPhrase": {
     "message": "Unikalny identyfikator konta",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
@@ -556,12 +562,6 @@
   },
   "addedFolder": {
     "message": "Folder został dodany"
-  },
-  "changeMasterPass": {
-    "message": "Zmień hasło główne"
-  },
-  "changeMasterPasswordConfirmation": {
-    "message": "Hasło główne możesz zmienić na stronie sejfu bitwarden.com. Czy chcesz przejść do tej strony?"
   },
   "twoStepLoginConfirmation": {
     "message": "Logowanie dwustopniowe sprawia, że konto jest bardziej bezpieczne poprzez wymuszenie potwierdzenia logowania z innego urządzenia, takiego jak z klucza bezpieczeństwa, aplikacji uwierzytelniającej, wiadomości SMS, telefonu lub adresu e-mail. Logowanie dwustopniowe możesz włączyć w sejfie internetowym bitwarden.com. Czy chcesz przejść do tej strony?"
@@ -2709,7 +2709,7 @@
     "message": "Otwórz rozszerzenie w nowym oknie, aby dokończyć logowanie."
   },
   "popoutExtension": {
-    "message": "Popout extension"
+    "message": "Otwórz rozszerzenie w nowym oknie"
   },
   "launchDuo": {
     "message": "Uruchom DUO"
@@ -2822,7 +2822,7 @@
     "message": "Wybierz dane logowania do których przypisać passkey"
   },
   "passkeyItem": {
-    "message": "Passkey Item"
+    "message": "Element Passkey"
   },
   "overwritePasskey": {
     "message": "Zastąpić passkey?"
@@ -3000,16 +3000,36 @@
     "message": "Błąd podczas zapisywania danych logowania. Sprawdź konsolę, aby uzyskać szczegóły.",
     "description": "Notification message for when saving credentials has failed."
   },
+  "success": {
+    "message": "Sukces"
+  },
   "removePasskey": {
     "message": "Usuń passkey"
   },
   "passkeyRemoved": {
     "message": "Passkey został usunięty"
   },
-  "unassignedItemsBanner": {
-    "message": "Uwaga: Nieprzypisane elementy w organizacji nie są już widoczne w widoku Wszystkie sejfy i są dostępne tylko przez Konsolę Administracyjną. Przypisz te elementy do kolekcji z konsoli administracyjnej, aby były one widoczne."
+  "unassignedItemsBannerNotice": {
+    "message": "Uwaga: Nieprzypisane elementy organizacji nie są już widoczne w widoku Wszystkie sejfy i są teraz dostępne tylko przez Konsolę Administracyjną."
   },
-  "unassignedItemsBannerSelfHost": {
-    "message": "Uwaga: 2 maja 2024 r. nieprzypisane elementy w organizacji nie będą już widoczne w widoku Wszystkie sejfy i będą dostępne tylko przez Konsolę Administracyjną. Przypisz te elementy do kolekcji z konsoli administracyjnej, aby były one widoczne."
+  "unassignedItemsBannerSelfHostNotice": {
+    "message": "Uwaga: 16 maja 2024 r. nieprzypisana elementy w organizacji nie będą już widoczne w widoku Wszystkie sejfy i będą dostępne tylko przez Konsolę Administracyjną."
+  },
+  "unassignedItemsBannerCTAPartOne": {
+    "message": "Przypisz te elementy do kolekcji z",
+    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "unassignedItemsBannerCTAPartTwo": {
+    "message": ", aby były widoczne.",
+    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "adminConsole": {
+    "message": "Konsola Administracyjna"
+  },
+  "errorAssigningTargetCollection": {
+    "message": "Wystąpił błąd podczas przypisywania kolekcji."
+  },
+  "errorAssigningTargetFolder": {
+    "message": "Wystąpił błąd podczas przypisywania folderu."
   }
 }

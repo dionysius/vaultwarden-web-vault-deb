@@ -172,6 +172,12 @@
   "changeMasterPassword": {
     "message": "Canvia la contrasenya mestra"
   },
+  "continueToWebApp": {
+    "message": "Continue to web app?"
+  },
+  "changeMasterPasswordOnWebConfirmation": {
+    "message": "You can change your master password on the Bitwarden web app."
+  },
   "fingerprintPhrase": {
     "message": "Frase d'empremta digital",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
@@ -556,12 +562,6 @@
   },
   "addedFolder": {
     "message": "Carpeta afegida"
-  },
-  "changeMasterPass": {
-    "message": "Canvia la contrasenya mestra"
-  },
-  "changeMasterPasswordConfirmation": {
-    "message": "Podeu canviar la contrasenya mestra a la caixa forta web de bitwarden.com. Voleu visitar el lloc web ara?"
   },
   "twoStepLoginConfirmation": {
     "message": "L'inici de sessió en dues passes fa que el vostre compte siga més segur, ja que obliga a verificar el vostre inici de sessió amb un altre dispositiu, com ara una clau de seguretat, una aplicació autenticadora, un SMS, una trucada telefònica o un correu electrònic. Es pot habilitar l'inici de sessió en dues passes a la caixa forta web de bitwarden.com. Voleu visitar el lloc web ara?"
@@ -3000,16 +3000,36 @@
     "message": "S'ha produït un error en guardar les credencials. Consulteu la consola per obtenir més informació.",
     "description": "Notification message for when saving credentials has failed."
   },
+  "success": {
+    "message": "Success"
+  },
   "removePasskey": {
     "message": "Suprimeix la clau de pas"
   },
   "passkeyRemoved": {
     "message": "Clau de pas suprimida"
   },
-  "unassignedItemsBanner": {
-    "message": "Nota: els elements de l'organització sense assignar ja no es veuran a la vista \"Totes les caixes fortes\" i només es veuran des de la consola d'administració. Assigneu-los-hi una col·lecció des de la consola per fer-los visibles."
+  "unassignedItemsBannerNotice": {
+    "message": "Notice: Unassigned organization items are no longer visible in the All Vaults view and only accessible via the Admin Console."
   },
-  "unassignedItemsBannerSelfHost": {
-    "message": "Notice: On May 2, 2024, unassigned organization items will no longer be visible in the All Vaults view and will only be accessible via the Admin Console. Assign these items to a collection from the Admin Console to make them visible."
+  "unassignedItemsBannerSelfHostNotice": {
+    "message": "Notice: On May 16, 2024, unassigned organization items will no longer be visible in the All Vaults view and will only be accessible via the Admin Console."
+  },
+  "unassignedItemsBannerCTAPartOne": {
+    "message": "Assign these items to a collection from the",
+    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "unassignedItemsBannerCTAPartTwo": {
+    "message": "to make them visible.",
+    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "adminConsole": {
+    "message": "Admin Console"
+  },
+  "errorAssigningTargetCollection": {
+    "message": "Error assigning target collection."
+  },
+  "errorAssigningTargetFolder": {
+    "message": "Error assigning target folder."
   }
 }

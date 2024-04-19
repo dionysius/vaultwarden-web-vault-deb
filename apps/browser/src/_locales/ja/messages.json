@@ -172,6 +172,12 @@
   "changeMasterPassword": {
     "message": "マスターパスワードの変更"
   },
+  "continueToWebApp": {
+    "message": "ウェブアプリに進みますか?"
+  },
+  "changeMasterPasswordOnWebConfirmation": {
+    "message": "Bitwarden ウェブアプリでマスターパスワードを変更できます。"
+  },
   "fingerprintPhrase": {
     "message": "パスフレーズ",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
@@ -556,12 +562,6 @@
   },
   "addedFolder": {
     "message": "フォルダを追加しました"
-  },
-  "changeMasterPass": {
-    "message": "マスターパスワードの変更"
-  },
-  "changeMasterPasswordConfirmation": {
-    "message": "マスターパスワードは bitwarden.com ウェブ保管庫で変更できます。ウェブサイトを開きますか？"
   },
   "twoStepLoginConfirmation": {
     "message": "2段階認証を使うと、ログイン時にセキュリティキーや認証アプリ、SMS、電話やメールでの認証を必要にすることでアカウントをさらに安全に出来ます。2段階認証は bitwarden.com ウェブ保管庫で有効化できます。ウェブサイトを開きますか？"
@@ -3000,16 +3000,36 @@
     "message": "資格情報の保存中にエラーが発生しました。詳細はコンソールを確認してください。",
     "description": "Notification message for when saving credentials has failed."
   },
+  "success": {
+    "message": "成功"
+  },
   "removePasskey": {
     "message": "パスキーを削除"
   },
   "passkeyRemoved": {
     "message": "パスキーを削除しました"
   },
-  "unassignedItemsBanner": {
-    "message": "注意: 割り当てられていない組織項目は、すべての保管庫のビューでは表示されなくなり、管理コンソールからのみアクセスできます。 管理コンソールからコレクションにこれらのアイテムを割り当てると、表示するようにできます。"
+  "unassignedItemsBannerNotice": {
+    "message": "注意: 割り当てられていない組織アイテムは、すべての保管庫ビューでは表示されなくなり、管理コンソールからのみアクセスできるようになります。"
   },
-  "unassignedItemsBannerSelfHost": {
-    "message": "お知らせ：2024年5月2日に、 割り当てられていない組織アイテムはデバイス間のすべての保管庫ビューに表示されなくなり、管理コンソールからのみアクセス可能になります。 管理コンソールからコレクションにこれらのアイテムを割り当てると、表示できるようになります。"
+  "unassignedItemsBannerSelfHostNotice": {
+    "message": "お知らせ：2024年5月16日に、 割り当てられていない組織アイテムは、すべての保管庫ビューに表示されなくなり、管理コンソールからのみアクセス可能になります。"
+  },
+  "unassignedItemsBannerCTAPartOne": {
+    "message": "これらのアイテムのコレクションへの割り当てを",
+    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "unassignedItemsBannerCTAPartTwo": {
+    "message": "で実行すると表示できるようになります。",
+    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "adminConsole": {
+    "message": "管理コンソール"
+  },
+  "errorAssigningTargetCollection": {
+    "message": "ターゲットコレクションの割り当てに失敗しました。"
+  },
+  "errorAssigningTargetFolder": {
+    "message": "ターゲットフォルダーの割り当てに失敗しました。"
   }
 }

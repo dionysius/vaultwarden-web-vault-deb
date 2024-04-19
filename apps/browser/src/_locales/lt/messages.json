@@ -172,6 +172,12 @@
   "changeMasterPassword": {
     "message": "Keisti pagrindinį slaptažodį"
   },
+  "continueToWebApp": {
+    "message": "Continue to web app?"
+  },
+  "changeMasterPasswordOnWebConfirmation": {
+    "message": "You can change your master password on the Bitwarden web app."
+  },
   "fingerprintPhrase": {
     "message": "Pirštų atspaudų frazė",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
@@ -556,12 +562,6 @@
   },
   "addedFolder": {
     "message": "Katalogas pridėtas"
-  },
-  "changeMasterPass": {
-    "message": "Keisti pagrindinį slaptažodį"
-  },
-  "changeMasterPasswordConfirmation": {
-    "message": "Pagrindinį slaptažodį galite pakeisti „bitwarden.com“ žiniatinklio saugykloje. Ar norite dabar apsilankyti svetainėje?"
   },
   "twoStepLoginConfirmation": {
     "message": "Prisijungus dviem veiksmais, jūsų paskyra tampa saugesnė, reikalaujant patvirtinti prisijungimą naudojant kitą įrenginį, pvz., saugos raktą, autentifikavimo programėlę, SMS, telefono skambutį ar el. paštą. Dviejų žingsnių prisijungimą galima įjungti „bitwarden.com“ interneto saugykloje. Ar norite dabar apsilankyti svetainėje?"
@@ -3000,16 +3000,36 @@
     "message": "Klaida išsaugant kredencialus. Išsamesnės informacijos patikrink konsolėje.",
     "description": "Notification message for when saving credentials has failed."
   },
+  "success": {
+    "message": "Success"
+  },
   "removePasskey": {
     "message": "Pašalinti slaptaraktį"
   },
   "passkeyRemoved": {
     "message": "Pašalintas slaptaraktis"
   },
-  "unassignedItemsBanner": {
-    "message": "Notice: Unassigned organization items are no longer visible in the All Vaults view and only accessible via the Admin Console. Assign these items to a collection from the Admin Console to make them visible."
+  "unassignedItemsBannerNotice": {
+    "message": "Notice: Unassigned organization items are no longer visible in the All Vaults view and only accessible via the Admin Console."
   },
-  "unassignedItemsBannerSelfHost": {
-    "message": "Notice: On May 2, 2024, unassigned organization items will no longer be visible in the All Vaults view and will only be accessible via the Admin Console. Assign these items to a collection from the Admin Console to make them visible."
+  "unassignedItemsBannerSelfHostNotice": {
+    "message": "Notice: On May 16, 2024, unassigned organization items will no longer be visible in the All Vaults view and will only be accessible via the Admin Console."
+  },
+  "unassignedItemsBannerCTAPartOne": {
+    "message": "Assign these items to a collection from the",
+    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "unassignedItemsBannerCTAPartTwo": {
+    "message": "to make them visible.",
+    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "adminConsole": {
+    "message": "Admin Console"
+  },
+  "errorAssigningTargetCollection": {
+    "message": "Error assigning target collection."
+  },
+  "errorAssigningTargetFolder": {
+    "message": "Error assigning target folder."
   }
 }

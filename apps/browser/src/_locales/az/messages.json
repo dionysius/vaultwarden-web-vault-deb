@@ -172,6 +172,12 @@
   "changeMasterPassword": {
     "message": "Ana parolu dəyişdir"
   },
+  "continueToWebApp": {
+    "message": "Veb tətbiqlə davam edilsin?"
+  },
+  "changeMasterPasswordOnWebConfirmation": {
+    "message": "Ana parolunuzu Bitwarden veb tətbiqində dəyişdirə bilərsiniz."
+  },
   "fingerprintPhrase": {
     "message": "Barmaq izi ifadəsi",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
@@ -556,12 +562,6 @@
   },
   "addedFolder": {
     "message": "Qovluq əlavə edildi"
-  },
-  "changeMasterPass": {
-    "message": "Ana parolu dəyişdir"
-  },
-  "changeMasterPasswordConfirmation": {
-    "message": "Ana parolunuzu bitwarden.com veb anbarında dəyişdirə bilərsiniz. İndi saytı ziyarət etmək istəyirsiniz?"
   },
   "twoStepLoginConfirmation": {
     "message": "İki addımlı giriş, güvənlik açarı, kimlik doğrulayıcı tətbiq, SMS, telefon zəngi və ya e-poçt kimi digər cihazlarla girişinizi doğrulamanızı tələb edərək hesabınızı daha da güvənli edir. İki addımlı giriş, bitwarden.com veb anbarında qurula bilər. Veb saytı indi ziyarət etmək istəyirsiniz?"
@@ -1045,7 +1045,7 @@
     "message": "Bildiriş server URL-si"
   },
   "iconsUrl": {
-    "message": "Nişan server URL-si"
+    "message": "İkon server URL-si"
   },
   "environmentSaved": {
     "message": "Mühit URL-ləri saxlanıldı."
@@ -1072,7 +1072,7 @@
     "description": "Overlay appearance select option for showing the field on focus of the input element"
   },
   "autofillOverlayVisibilityOnButtonClick": {
-    "message": "Avto-doldurma nişanı seçiləndə",
+    "message": "Avto-doldurma ikonu seçiləndə",
     "description": "Overlay appearance select option for showing the field on click of the overlay icon"
   },
   "enableAutoFillOnPageLoad": {
@@ -1109,7 +1109,7 @@
     "message": "Anbarı açılan pəncərədə aç"
   },
   "commandOpenSidebar": {
-    "message": "Anbar yan sətirdə aç"
+    "message": "Anbarı yan çubuqda aç"
   },
   "commandAutofillDesc": {
     "message": "Hazırkı veb sayt üçün son istifadə edilən giriş məlumatlarını avto-doldur"
@@ -1162,7 +1162,7 @@
     "message": "Bu brauzer bu açılan pəncərədə U2F tələblərini emal edə bilmir. U2F istifadə edərək giriş etmək üçün bu açılan pəncərəni yeni bir pəncərədə açmaq istəyirsiniz?"
   },
   "enableFavicon": {
-    "message": "Veb sayt nişanlarını göstər"
+    "message": "Veb sayt ikonlarını göstər"
   },
   "faviconDesc": {
     "message": "Hər girişin yanında tanına bilən təsvir göstər."
@@ -1724,7 +1724,7 @@
     "message": "İcazə tələb xətası"
   },
   "nativeMessaginPermissionSidebarDesc": {
-    "message": "Bu əməliyyatı kənar çubuqda icra edilə bilməz. Lütfən açılan pəncərədə yenidən sınayın."
+    "message": "Bu əməliyyat yan çubuqda icra edilə bilməz. Lütfən açılan pəncərədə yenidən sınayın."
   },
   "personalOwnershipSubmitError": {
     "message": "Müəssisə Siyasətinə görə, elementləri şəxsi anbarınızda saxlamağınız məhdudlaşdırılıb. Sahiblik seçimini təşkilat olaraq dəyişdirin və mövcud kolleksiyalar arasından seçim edin."
@@ -1924,10 +1924,10 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
-    "message": "Bir fayl seçmək üçün (mümkünsə) kənar çubuqdakı uzantını açın və ya bu bannerə klikləyərək yeni bir pəncərədə açın."
+    "message": "Bir fayl seçmək üçün (mümkünsə) yan çubuqdakı uzantını açın və ya bu bannerə klikləyərək yeni bir pəncərədə açın."
   },
   "sendFirefoxFileWarning": {
-    "message": "Firefox istifadə edərək bir fayl seçmək üçün kənar çubuqdakı uzantını açın və ya bu bannerə klikləyərək yeni bir pəncərədə açın."
+    "message": "Firefox istifadə edərək bir fayl seçmək üçün yan çubuqdakı uzantını açın və ya bu bannerə klikləyərək yeni bir pəncərədə açın."
   },
   "sendSafariFileWarning": {
     "message": "Safari istifadə edərək bir fayl seçmək üçün bu bannerə klikləyərək yeni bir pəncərədə açın."
@@ -3000,16 +3000,36 @@
     "message": "Kimlik məlumatlarını saxlama xətası. Detallar üçün konsolu yoxlayın.",
     "description": "Notification message for when saving credentials has failed."
   },
+  "success": {
+    "message": "Uğurlu"
+  },
   "removePasskey": {
     "message": "Parolu sil"
   },
   "passkeyRemoved": {
     "message": "Parol silindi"
   },
-  "unassignedItemsBanner": {
-    "message": "Bildiriş: Təyin edilməmiş təşkilat elementləri artıq Bütün Anbarlar görünüşündə görünməyəndir və yalnız Admin Konsolu vasitəsilə əlçatandır. Bu elementləri görünən etmək üçün Admin Konsolundan bir kolleksiyaya təyin edin."
+  "unassignedItemsBannerNotice": {
+    "message": "Bildiriş: Təyin edilməyən təşkilat elementləri artıq Bütün Anbarlar görünüşündə görünən olmayacaq və yalnız Admin Konsolu vasitəsilə əlçatan olacaq."
   },
-  "unassignedItemsBannerSelfHost": {
-    "message": "Bildiriş: 2 May 2024-cü ildən etibarən təyin edilməmiş təşkilat elementləri artıq Bütün Anbarlar görünüşündə görünməyən və yalnız Admin Konsolu vasitəsilə əlçatan olacaq. Bu elementləri görünən etmək üçün Admin Konsolundan bir kolleksiyaya təyin edin."
+  "unassignedItemsBannerSelfHostNotice": {
+    "message": "Bildiriş: 16 May 2024-cü il tarixindən etibarən, təyin edilməyən təşkilat elementləri Bütün Anbarlar görünüşündə görünən olmayacaq və yalnız Admin Konsolu vasitəsilə əlçatan olacaq."
+  },
+  "unassignedItemsBannerCTAPartOne": {
+    "message": "Bu elementləri görünən etmək üçün",
+    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "unassignedItemsBannerCTAPartTwo": {
+    "message": "bir kolleksiyaya təyin edin.",
+    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "adminConsole": {
+    "message": "Admin Konsolu"
+  },
+  "errorAssigningTargetCollection": {
+    "message": "Hədəf kolleksiyaya təyin etmə xətası."
+  },
+  "errorAssigningTargetFolder": {
+    "message": "Hədəf qovluğa təyin etmə xətası."
   }
 }

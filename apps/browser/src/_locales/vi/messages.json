@@ -172,6 +172,12 @@
   "changeMasterPassword": {
     "message": "Thay đổi mật khẩu chính"
   },
+  "continueToWebApp": {
+    "message": "Tiếp tục tới ứng dụng web?"
+  },
+  "changeMasterPasswordOnWebConfirmation": {
+    "message": "Bạn có thể thay đổi mật khẩu chính của mình trên Bitwarden bản web."
+  },
   "fingerprintPhrase": {
     "message": "Fingerprint Phrase",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
@@ -415,7 +421,7 @@
     "message": "Khóa ngay"
   },
   "lockAll": {
-    "message": "Lock all"
+    "message": "Khóa tất cả"
   },
   "immediately": {
     "message": "Ngay lập tức"
@@ -494,10 +500,10 @@
     "message": "Tài khoản mới của bạn đã được tạo! Bạn có thể đăng nhập từ bây giờ."
   },
   "youSuccessfullyLoggedIn": {
-    "message": "You successfully logged in"
+    "message": "Bạn đã đăng nhập thành công"
   },
   "youMayCloseThisWindow": {
-    "message": "You may close this window"
+    "message": "Bạn có thể đóng cửa sổ này"
   },
   "masterPassSent": {
     "message": "Chúng tôi đã gửi cho bạn email có chứa gợi ý mật khẩu chính của bạn."
@@ -522,16 +528,16 @@
     "message": "Không thể tự động điền mục đã chọn trên trang này. Hãy thực hiện sao chép và dán thông tin một cách thủ công."
   },
   "totpCaptureError": {
-    "message": "Unable to scan QR code from the current webpage"
+    "message": "Không thể quét mã QR từ trang web hiện tại"
   },
   "totpCaptureSuccess": {
-    "message": "Authenticator key added"
+    "message": "Đã thêm khóa xác thực"
   },
   "totpCapture": {
-    "message": "Scan authenticator QR code from current webpage"
+    "message": "Quét mã QR xác thực từ trang web hiện tại"
   },
   "copyTOTP": {
-    "message": "Copy Authenticator key (TOTP)"
+    "message": "Sao chép khóa Authenticator (TOTP)"
   },
   "loggedOut": {
     "message": "Đã đăng xuất"
@@ -556,12 +562,6 @@
   },
   "addedFolder": {
     "message": "Đã thêm thư mục"
-  },
-  "changeMasterPass": {
-    "message": "Thay đổi mật khẩu chính"
-  },
-  "changeMasterPasswordConfirmation": {
-    "message": "Bạn có thể thay đổi mật khẩu chính trong trang web kho lưu trữ của Bitwarden. Bạn có muốn truy cập trang web ngay bây giờ không?"
   },
   "twoStepLoginConfirmation": {
     "message": "Xác thực hai lớp giúp cho tài khoản của bạn an toàn hơn bằng cách yêu cầu bạn xác minh thông tin đăng nhập của bạn bằng một thiết bị khác như khóa bảo mật, ứng dụng xác thực, SMS, cuộc gọi điện thoại hoặc email. Bạn có thể bật xác thực hai lớp trong kho bitwarden nền web. Bạn có muốn ghé thăm trang web bây giờ?"
@@ -3000,16 +3000,36 @@
     "message": "Error saving credentials. Check console for details.",
     "description": "Notification message for when saving credentials has failed."
   },
+  "success": {
+    "message": "Success"
+  },
   "removePasskey": {
     "message": "Remove passkey"
   },
   "passkeyRemoved": {
     "message": "Passkey removed"
   },
-  "unassignedItemsBanner": {
-    "message": "Notice: Unassigned organization items are no longer visible in the All Vaults view and only accessible via the Admin Console. Assign these items to a collection from the Admin Console to make them visible."
+  "unassignedItemsBannerNotice": {
+    "message": "Lưu ý: Các mục tổ chức chưa được chỉ định sẽ không còn hiển thị trong chế độ xem Tất cả Vault và chỉ có thể truy cập được qua Bảng điều khiển dành cho quản trị viên."
   },
-  "unassignedItemsBannerSelfHost": {
-    "message": "Notice: On May 2, 2024, unassigned organization items will no longer be visible in the All Vaults view and will only be accessible via the Admin Console. Assign these items to a collection from the Admin Console to make them visible."
+  "unassignedItemsBannerSelfHostNotice": {
+    "message": "Lưu ý: Vào ngày 16 tháng 5 năm 2024, các mục tổ chức chưa được chỉ định sẽ không còn hiển thị trong chế độ xem Tất cả Vault và sẽ chỉ có thể truy cập được qua Bảng điều khiển dành cho quản trị viên."
+  },
+  "unassignedItemsBannerCTAPartOne": {
+    "message": "Gán các mục này vào một bộ sưu tập từ",
+    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "unassignedItemsBannerCTAPartTwo": {
+    "message": "để làm cho chúng hiển thị.",
+    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "adminConsole": {
+    "message": "Bảng điều khiển dành cho quản trị viên"
+  },
+  "errorAssigningTargetCollection": {
+    "message": "Error assigning target collection."
+  },
+  "errorAssigningTargetFolder": {
+    "message": "Error assigning target folder."
   }
 }

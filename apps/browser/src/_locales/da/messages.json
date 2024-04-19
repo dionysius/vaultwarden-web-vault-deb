@@ -172,6 +172,12 @@
   "changeMasterPassword": {
     "message": "Skift hovedadgangskode"
   },
+  "continueToWebApp": {
+    "message": "Fortsæt til web-app?"
+  },
+  "changeMasterPasswordOnWebConfirmation": {
+    "message": "Hovedadgangskoden kan ændres via Bitwarden web-appen."
+  },
   "fingerprintPhrase": {
     "message": "Fingeraftrykssætning",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
@@ -556,12 +562,6 @@
   },
   "addedFolder": {
     "message": "Mappe tilføjet"
-  },
-  "changeMasterPass": {
-    "message": "Skift hovedadgangskode"
-  },
-  "changeMasterPasswordConfirmation": {
-    "message": "Du kan ændre din hovedadgangskode i bitwarden.com web-boksen. Vil du besøge hjemmesiden nu?"
   },
   "twoStepLoginConfirmation": {
     "message": "To-trins login gør din konto mere sikker ved at kræve, at du verificerer dit login med en anden enhed, såsom en sikkerhedsnøgle, autentificeringsapp, SMS, telefonopkald eller e-mail. To-trins login kan aktiveres i bitwarden.com web-boksen. Vil du besøge hjemmesiden nu?"
@@ -3000,16 +3000,36 @@
     "message": "Fejl under import. Tjek konsollen for detaljer.",
     "description": "Notification message for when saving credentials has failed."
   },
+  "success": {
+    "message": "Gennemført"
+  },
   "removePasskey": {
     "message": "Fjern adgangsnøgle"
   },
   "passkeyRemoved": {
     "message": "Adgangsnøgle fjernet"
   },
-  "unassignedItemsBanner": {
-    "message": "Bemærk: Utildelte organisationsemner er ikke længere synlige i Alle Bokse-visningen og er kun tilgængelige via Adminkonsollen. Føj disse emner til en samling fra Adminkonsollen for at gøre dem synlige."
+  "unassignedItemsBannerNotice": {
+    "message": "Bemærk: Utildelte organisationsemner er ikke længere synlige i Alle Bokse-visningen, men er kun tilgængelige via Admin-konsol."
   },
-  "unassignedItemsBannerSelfHost": {
-    "message": "Bemærk: Pr. 2. maj 2024 vil utildelte organisationsemner ikke længere være synlige i Alle Bokse-visningen og vil kun være tilgængelige via Admin-konsollen. Tildel disse emner til en samling via Admin-konsollen for at gøre dem synlige."
+  "unassignedItemsBannerSelfHostNotice": {
+    "message": "Bemærk: Pr. 16. maj 2024 er utildelte organisationsemner er ikke længere synlige i Alle Bokse-visningen, men er kun tilgængelige via Admin-konsol."
+  },
+  "unassignedItemsBannerCTAPartOne": {
+    "message": "Tildel disse emner til en samling via",
+    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "unassignedItemsBannerCTAPartTwo": {
+    "message": "for at gøre dem synlige.",
+    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "adminConsole": {
+    "message": "Admin-konsol"
+  },
+  "errorAssigningTargetCollection": {
+    "message": "Fejl ved tildeling af målsamling."
+  },
+  "errorAssigningTargetFolder": {
+    "message": "Fejl ved tildeling af målmappe."
   }
 }

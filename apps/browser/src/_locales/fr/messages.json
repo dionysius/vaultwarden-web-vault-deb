@@ -172,6 +172,12 @@
   "changeMasterPassword": {
     "message": "Changer le mot de passe principal"
   },
+  "continueToWebApp": {
+    "message": "Poursuivre vers l'application web ?"
+  },
+  "changeMasterPasswordOnWebConfirmation": {
+    "message": "Vous pouvez modifier votre mot de passe principal sur l'application web de Bitwarden."
+  },
   "fingerprintPhrase": {
     "message": "Phrase d'empreinte",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
@@ -525,13 +531,13 @@
     "message": "Impossible de scanner le QR code à partir de la page web actuelle"
   },
   "totpCaptureSuccess": {
-    "message": "Clé de l'Authentificateur ajoutée"
+    "message": "Clé Authenticator ajoutée"
   },
   "totpCapture": {
     "message": "Scanner le QR code de l'authentificateur à partir de la page web actuelle"
   },
   "copyTOTP": {
-    "message": "Copier la clé de l'Authentificateur (TOTP)"
+    "message": "Copier la clé Authenticator (TOTP)"
   },
   "loggedOut": {
     "message": "Déconnecté"
@@ -556,12 +562,6 @@
   },
   "addedFolder": {
     "message": "Dossier ajouté"
-  },
-  "changeMasterPass": {
-    "message": "Changer le mot de passe principal"
-  },
-  "changeMasterPasswordConfirmation": {
-    "message": "Vous pouvez changer votre mot de passe principal depuis le coffre web de bitwarden.com. Voulez-vous visiter le site web maintenant ?"
   },
   "twoStepLoginConfirmation": {
     "message": "L'authentification à deux facteurs rend votre compte plus sûr en vous demandant de vérifier votre connexion avec un autre dispositif tel qu'une clé de sécurité, une application d'authentification, un SMS, un appel téléphonique ou un courriel. L'authentification à deux facteurs peut être configurée dans le coffre web de bitwarden.com. Voulez-vous visiter le site web maintenant ?"
@@ -659,7 +659,7 @@
     "message": "Liste les éléments des cartes de paiement sur la Page d'onglet pour faciliter la saisie automatique."
   },
   "showIdentitiesCurrentTab": {
-    "message": "Afficher les identités sur la page d'onglet"
+    "message": "Afficher les identités sur la Page d'onglet"
   },
   "showIdentitiesCurrentTabDesc": {
     "message": "Liste les éléments d'identité sur la Page d'onglet pour faciliter la saisie automatique."
@@ -802,7 +802,7 @@
     "message": "En savoir plus"
   },
   "authenticatorKeyTotp": {
-    "message": "Clé de l'Authentificateur (TOTP)"
+    "message": "Clé Authenticator (TOTP)"
   },
   "verificationCodeTotp": {
     "message": "Code de vérification (TOTP)"
@@ -3000,16 +3000,36 @@
     "message": "Erreur lors de l'enregistrement des identifiants. Consultez la console pour plus de détails.",
     "description": "Notification message for when saving credentials has failed."
   },
+  "success": {
+    "message": "Success"
+  },
   "removePasskey": {
     "message": "Retirer la clé d'identification (passkey)"
   },
   "passkeyRemoved": {
     "message": "Clé d'identification (passkey) retirée"
   },
-  "unassignedItemsBanner": {
-    "message": "Notice : les éléments d'organisation non assignés ne sont plus visibles dans la vue Tous les coffres et sont uniquement accessibles via la console d'administration. Assignez ces éléments à une collection à partir de la console d'administration pour les rendre visibles."
+  "unassignedItemsBannerNotice": {
+    "message": "Notice: Unassigned organization items are no longer visible in the All Vaults view and only accessible via the Admin Console."
   },
-  "unassignedItemsBannerSelfHost": {
-    "message": "Remarque : au 2 mai 2024, les éléments d'organisation non assignés ne sont plus visibles dans votre vue Tous les coffres sur tous les appareils et sont uniquement accessibles via la Console d'administration. Assignez ces éléments à une collection à partir de la Console d'administration pour les rendre visibles."
+  "unassignedItemsBannerSelfHostNotice": {
+    "message": "Notice: On May 16, 2024, unassigned organization items will no longer be visible in the All Vaults view and will only be accessible via the Admin Console."
+  },
+  "unassignedItemsBannerCTAPartOne": {
+    "message": "Assign these items to a collection from the",
+    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "unassignedItemsBannerCTAPartTwo": {
+    "message": "to make them visible.",
+    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "adminConsole": {
+    "message": "Admin Console"
+  },
+  "errorAssigningTargetCollection": {
+    "message": "Error assigning target collection."
+  },
+  "errorAssigningTargetFolder": {
+    "message": "Error assigning target folder."
   }
 }

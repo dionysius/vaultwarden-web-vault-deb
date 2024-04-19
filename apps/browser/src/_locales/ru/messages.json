@@ -172,6 +172,12 @@
   "changeMasterPassword": {
     "message": "Изменить мастер-пароль"
   },
+  "continueToWebApp": {
+    "message": "Перейти к веб-приложению?"
+  },
+  "changeMasterPasswordOnWebConfirmation": {
+    "message": "Изменить мастер-пароль можно в веб-приложении Bitwarden."
+  },
   "fingerprintPhrase": {
     "message": "Фраза отпечатка",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
@@ -556,12 +562,6 @@
   },
   "addedFolder": {
     "message": "Папка добавлена"
-  },
-  "changeMasterPass": {
-    "message": "Изменить мастер-пароль"
-  },
-  "changeMasterPasswordConfirmation": {
-    "message": "Вы можете изменить свой мастер-пароль на bitwarden.com. Перейти на сайт сейчас?"
   },
   "twoStepLoginConfirmation": {
     "message": "Двухэтапная аутентификация делает аккаунт более защищенным, поскольку требуется подтверждение входа при помощи другого устройства, например, ключа безопасности, приложения-аутентификатора, SMS, телефонного звонка или электронной почты. Двухэтапная аутентификация включается на bitwarden.com. Перейти на сайт сейчас?"
@@ -3000,16 +3000,36 @@
     "message": "Ошибка сохранения учетных данных. Проверьте консоль для получения подробной информации.",
     "description": "Notification message for when saving credentials has failed."
   },
+  "success": {
+    "message": "Успешно"
+  },
   "removePasskey": {
     "message": "Удалить passkey"
   },
   "passkeyRemoved": {
     "message": "Passkey удален"
   },
-  "unassignedItemsBanner": {
-    "message": "Обратите внимание: неприсвоенные элементы организации больше не видны в представлении \"Все хранилища\" и доступны только через консоль администратора. Назначьте эти элементы коллекции в консоли администратора, чтобы сделать их видимыми."
+  "unassignedItemsBannerNotice": {
+    "message": "Уведомление: Неприсвоенные элементы организации больше не видны в представлении \"Все хранилища\" и доступны только через консоль администратора."
   },
-  "unassignedItemsBannerSelfHost": {
-    "message": "Уведомление: 2 мая 2024 года неприсвоенные элементы организации больше не будут видны в представлении \"Все хранилища\" и будут доступны только через консоль администратора. Назначьте эти элементы коллекции в консоли администратора, чтобы сделать их видимыми."
+  "unassignedItemsBannerSelfHostNotice": {
+    "message": "Уведомление: с 16 мая 2024 года не назначенные элементы организации больше не будут видны в представлении \"Все хранилища\" и будут доступны только через консоль администратора."
+  },
+  "unassignedItemsBannerCTAPartOne": {
+    "message": "Назначьте эти элементы в коллекцию из",
+    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "unassignedItemsBannerCTAPartTwo": {
+    "message": "чтобы сделать их видимыми.",
+    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
+  },
+  "adminConsole": {
+    "message": "консоли администратора"
+  },
+  "errorAssigningTargetCollection": {
+    "message": "Ошибка при назначении целевой коллекции."
+  },
+  "errorAssigningTargetFolder": {
+    "message": "Ошибка при назначении целевой папки."
   }
 }
