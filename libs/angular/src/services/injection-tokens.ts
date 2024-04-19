@@ -1,5 +1,5 @@
 import { InjectionToken } from "@angular/core";
-import { Observable } from "rxjs";
+import { Observable, Subject } from "rxjs";
 
 import {
   AbstractMemoryStorageService,
@@ -8,6 +8,7 @@ import {
 } from "@bitwarden/common/platform/abstractions/storage.service";
 import { ThemeType } from "@bitwarden/common/platform/enums";
 import { StateFactory } from "@bitwarden/common/platform/factories/state-factory";
+import { Message } from "@bitwarden/common/platform/messaging";
 
 declare const tag: unique symbol;
 /**
@@ -48,4 +49,7 @@ export const SYSTEM_LANGUAGE = new SafeInjectionToken<string>("SYSTEM_LANGUAGE")
 export const LOG_MAC_FAILURES = new SafeInjectionToken<boolean>("LOG_MAC_FAILURES");
 export const SYSTEM_THEME_OBSERVABLE = new SafeInjectionToken<Observable<ThemeType>>(
   "SYSTEM_THEME_OBSERVABLE",
+);
+export const INTRAPROCESS_MESSAGING_SUBJECT = new SafeInjectionToken<Subject<Message<object>>>(
+  "INTRAPROCESS_MESSAGING_SUBJECT",
 );

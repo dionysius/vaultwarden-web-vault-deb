@@ -1,4 +1,5 @@
 import { ErrorHandler, LOCALE_ID, NgModule } from "@angular/core";
+import { Subject } from "rxjs";
 
 import {
   AuthRequestServiceAbstraction,
@@ -116,7 +117,7 @@ import { BillingApiService } from "@bitwarden/common/billing/services/billing-ap
 import { OrganizationBillingService } from "@bitwarden/common/billing/services/organization-billing.service";
 import { PaymentMethodWarningsService } from "@bitwarden/common/billing/services/payment-method-warnings.service";
 import { AppIdService as AppIdServiceAbstraction } from "@bitwarden/common/platform/abstractions/app-id.service";
-import { BroadcasterService as BroadcasterServiceAbstraction } from "@bitwarden/common/platform/abstractions/broadcaster.service";
+import { BroadcasterService } from "@bitwarden/common/platform/abstractions/broadcaster.service";
 import { ConfigApiServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config-api.service.abstraction";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { CryptoFunctionService as CryptoFunctionServiceAbstraction } from "@bitwarden/common/platform/abstractions/crypto-function.service";
@@ -137,6 +138,9 @@ import {
   DefaultBiometricStateService,
 } from "@bitwarden/common/platform/biometrics/biometric-state.service";
 import { StateFactory } from "@bitwarden/common/platform/factories/state-factory";
+import { Message, MessageListener, MessageSender } from "@bitwarden/common/platform/messaging";
+// eslint-disable-next-line no-restricted-imports -- Used for dependency injection
+import { SubjectMessageSender } from "@bitwarden/common/platform/messaging/internal";
 import { devFlagEnabled, flagEnabled } from "@bitwarden/common/platform/misc/flags";
 import { Account } from "@bitwarden/common/platform/models/domain/account";
 import { GlobalState } from "@bitwarden/common/platform/models/domain/global-state";
@@ -147,6 +151,7 @@ import { ConsoleLogService } from "@bitwarden/common/platform/services/console-l
 import { CryptoService } from "@bitwarden/common/platform/services/crypto.service";
 import { EncryptServiceImplementation } from "@bitwarden/common/platform/services/cryptography/encrypt.service.implementation";
 import { MultithreadEncryptServiceImplementation } from "@bitwarden/common/platform/services/cryptography/multithread-encrypt.service.implementation";
+import { DefaultBroadcasterService } from "@bitwarden/common/platform/services/default-broadcaster.service";
 import { DefaultEnvironmentService } from "@bitwarden/common/platform/services/default-environment.service";
 import { FileUploadService } from "@bitwarden/common/platform/services/file-upload/file-upload.service";
 import { KeyGenerationService } from "@bitwarden/common/platform/services/key-generation.service";
@@ -247,7 +252,6 @@ import {
 import { AuthGuard } from "../auth/guards/auth.guard";
 import { UnauthGuard } from "../auth/guards/unauth.guard";
 import { FormValidationErrorsService as FormValidationErrorsServiceAbstraction } from "../platform/abstractions/form-validation-errors.service";
-import { BroadcasterService } from "../platform/services/broadcaster.service";
 import { FormValidationErrorsService } from "../platform/services/form-validation-errors.service";
 import { LoggingErrorHandler } from "../platform/services/logging-error-handler";
 import { AngularThemingService } from "../platform/services/theming/angular-theming.service";
@@ -270,6 +274,7 @@ import {
   SYSTEM_LANGUAGE,
   SYSTEM_THEME_OBSERVABLE,
   WINDOW,
+  INTRAPROCESS_MESSAGING_SUBJECT,
 } from "./injection-tokens";
 import { ModalService } from "./modal.service";
 
@@ -625,7 +630,11 @@ const safeProviders: SafeProvider[] = [
       BillingAccountProfileStateService,
     ],
   }),
-  safeProvider({ provide: BroadcasterServiceAbstraction, useClass: BroadcasterService, deps: [] }),
+  safeProvider({
+    provide: BroadcasterService,
+    useClass: DefaultBroadcasterService,
+    deps: [MessageSender, MessageListener],
+  }),
   safeProvider({
     provide: VaultTimeoutSettingsServiceAbstraction,
     useClass: VaultTimeoutSettingsService,
@@ -1126,6 +1135,21 @@ const safeProviders: SafeProvider[] = [
     provide: ErrorHandler,
     useClass: LoggingErrorHandler,
     deps: [],
+  }),
+  safeProvider({
+    provide: INTRAPROCESS_MESSAGING_SUBJECT,
+    useFactory: () => new Subject<Message<object>>(),
+    deps: [],
+  }),
+  safeProvider({
+    provide: MessageListener,
+    useFactory: (subject: Subject<Message<object>>) => new MessageListener(subject.asObservable()),
+    deps: [INTRAPROCESS_MESSAGING_SUBJECT],
+  }),
+  safeProvider({
+    provide: MessageSender,
+    useFactory: (subject: Subject<Message<object>>) => new SubjectMessageSender(subject),
+    deps: [INTRAPROCESS_MESSAGING_SUBJECT],
   }),
   safeProvider({
     provide: ProviderApiServiceAbstraction,

@@ -1,6 +1,7 @@
 import { powerMonitor } from "electron";
 
-import { ElectronMainMessagingService } from "../services/electron-main-messaging.service";
+import { MessageSender } from "@bitwarden/common/platform/messaging";
+
 import { isSnapStore } from "../utils";
 
 // tslint:disable-next-line
@@ -10,7 +11,7 @@ const IdleCheckInterval = 30 * 1000; // 30 seconds
 export class PowerMonitorMain {
   private idle = false;
 
-  constructor(private messagingService: ElectronMainMessagingService) {}
+  constructor(private messagingService: MessageSender) {}
 
   init() {
     // ref: https://github.com/electron/electron/issues/13767

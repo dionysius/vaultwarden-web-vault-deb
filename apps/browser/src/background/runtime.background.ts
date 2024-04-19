@@ -1,4 +1,4 @@
-import { firstValueFrom } from "rxjs";
+import { firstValueFrom, mergeMap } from "rxjs";
 
 import { NotificationsService } from "@bitwarden/common/abstractions/notifications.service";
 import { AutofillOverlayVisibility } from "@bitwarden/common/autofill/constants";
@@ -10,6 +10,7 @@ import { SystemService } from "@bitwarden/common/platform/abstractions/system.se
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { CipherType } from "@bitwarden/common/vault/enums";
 
+import { MessageListener } from "../../../../libs/common/src/platform/messaging";
 import {
   closeUnlockPopout,
   openSsoAuthResultPopout,
@@ -44,6 +45,7 @@ export default class RuntimeBackground {
     private logService: LogService,
     private configService: ConfigService,
     private fido2Background: Fido2Background,
+    private messageListener: MessageListener,
   ) {
     // onInstalled listener must be wired up before anything else, so we do it in the ctor
     chrome.runtime.onInstalled.addListener((details: any) => {
@@ -60,91 +62,46 @@ export default class RuntimeBackground {
     const backgroundMessageListener = (
       msg: any,
       sender: chrome.runtime.MessageSender,
-      sendResponse: any,
+      sendResponse: (response: any) => void,
     ) => {
       const messagesWithResponse = ["biometricUnlock"];
 
       if (messagesWithResponse.includes(msg.command)) {
-        this.processMessage(msg, sender).then(
+        this.processMessageWithSender(msg, sender).then(
           (value) => sendResponse({ result: value }),
           (error) => sendResponse({ error: { ...error, message: error.message } }),
         );
         return true;
       }
 
-      this.processMessage(msg, sender).catch((e) => this.logService.error(e));
+      void this.processMessageWithSender(msg, sender).catch((err) =>
+        this.logService.error(
+          `Error while processing message in RuntimeBackground '${msg?.command}'. Error: ${err?.message ?? "Unknown Error"}`,
+        ),
+      );
+      return false;
     };
 
+    this.messageListener.allMessages$
+      .pipe(
+        mergeMap(async (message: any) => {
+          await this.processMessage(message);
+        }),
+      )
+      .subscribe();
+
+    // For messages that require the full on message interface
     BrowserApi.messageListener("runtime.background", backgroundMessageListener);
-    if (this.main.popupOnlyContext) {
-      (self as any).bitwardenBackgroundMessageListener = backgroundMessageListener;
-    }
   }
 
-  async processMessage(msg: any, sender: chrome.runtime.MessageSender) {
+  // Messages that need the chrome sender and send back a response need to be registered in this method.
+  async processMessageWithSender(msg: any, sender: chrome.runtime.MessageSender) {
     switch (msg.command) {
-      case "loggedIn":
-      case "unlocked": {
-        let item: LockedVaultPendingNotificationsData;
-
-        if (msg.command === "loggedIn") {
-          await this.sendBwInstalledMessageToVault();
-        }
-
-        if (this.lockedVaultPendingNotifications?.length > 0) {
-          item = this.lockedVaultPendingNotifications.pop();
-          await closeUnlockPopout();
-        }
-
-        await this.notificationsService.updateConnection(msg.command === "loggedIn");
-        await this.main.refreshBadge();
-        await this.main.refreshMenu(false);
-        this.systemService.cancelProcessReload();
-
-        if (item) {
-          await BrowserApi.focusWindow(item.commandToRetry.sender.tab.windowId);
-          await BrowserApi.focusTab(item.commandToRetry.sender.tab.id);
-          await BrowserApi.tabSendMessageData(
-            item.commandToRetry.sender.tab,
-            "unlockCompleted",
-            item,
-          );
-        }
-        break;
-      }
-      case "addToLockedVaultPendingNotifications":
-        this.lockedVaultPendingNotifications.push(msg.data);
-        break;
-      case "logout":
-        await this.main.logout(msg.expired, msg.userId);
-        break;
-      case "syncCompleted":
-        if (msg.successfully) {
-          setTimeout(async () => {
-            await this.main.refreshBadge();
-            await this.main.refreshMenu();
-          }, 2000);
-          await this.configService.ensureConfigFetched();
-        }
-        break;
-      case "openPopup":
-        await this.main.openPopup();
-        break;
       case "triggerAutofillScriptInjection":
         await this.autofillService.injectAutofillScripts(sender.tab, sender.frameId);
         break;
       case "bgCollectPageDetails":
         await this.main.collectPageDetailsForContentScript(sender.tab, msg.sender, sender.frameId);
-        break;
-      case "bgUpdateContextMenu":
-      case "editedCipher":
-      case "addedCipher":
-      case "deletedCipher":
-        await this.main.refreshBadge();
-        await this.main.refreshMenu();
-        break;
-      case "bgReseedStorage":
-        await this.main.reseedStorage();
         break;
       case "collectPageDetailsResponse":
         switch (msg.sender) {
@@ -209,6 +166,72 @@ export default class RuntimeBackground {
             break;
         }
         break;
+      case "biometricUnlock": {
+        const result = await this.main.biometricUnlock();
+        return result;
+      }
+    }
+  }
+
+  async processMessage(msg: any) {
+    switch (msg.command) {
+      case "loggedIn":
+      case "unlocked": {
+        let item: LockedVaultPendingNotificationsData;
+
+        if (msg.command === "loggedIn") {
+          await this.sendBwInstalledMessageToVault();
+        }
+
+        if (this.lockedVaultPendingNotifications?.length > 0) {
+          item = this.lockedVaultPendingNotifications.pop();
+          await closeUnlockPopout();
+        }
+
+        await this.notificationsService.updateConnection(msg.command === "loggedIn");
+        await this.main.refreshBadge();
+        await this.main.refreshMenu(false);
+        this.systemService.cancelProcessReload();
+
+        if (item) {
+          await BrowserApi.focusWindow(item.commandToRetry.sender.tab.windowId);
+          await BrowserApi.focusTab(item.commandToRetry.sender.tab.id);
+          await BrowserApi.tabSendMessageData(
+            item.commandToRetry.sender.tab,
+            "unlockCompleted",
+            item,
+          );
+        }
+        break;
+      }
+      case "addToLockedVaultPendingNotifications":
+        this.lockedVaultPendingNotifications.push(msg.data);
+        break;
+      case "logout":
+        await this.main.logout(msg.expired, msg.userId);
+        break;
+      case "syncCompleted":
+        if (msg.successfully) {
+          setTimeout(async () => {
+            await this.main.refreshBadge();
+            await this.main.refreshMenu();
+          }, 2000);
+          await this.configService.ensureConfigFetched();
+        }
+        break;
+      case "openPopup":
+        await this.main.openPopup();
+        break;
+      case "bgUpdateContextMenu":
+      case "editedCipher":
+      case "addedCipher":
+      case "deletedCipher":
+        await this.main.refreshBadge();
+        await this.main.refreshMenu();
+        break;
+      case "bgReseedStorage":
+        await this.main.reseedStorage();
+        break;
       case "authResult": {
         const env = await firstValueFrom(this.environmentService.environment$);
         const vaultUrl = env.getWebVaultUrl();
@@ -264,9 +287,6 @@ export default class RuntimeBackground {
       case "clearClipboard": {
         await this.main.clearClipboard(msg.clipboardValue, msg.timeoutMs);
         break;
-      }
-      case "biometricUnlock": {
-        return await this.main.biometricUnlock();
       }
     }
   }

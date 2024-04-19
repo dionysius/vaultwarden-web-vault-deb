@@ -103,7 +103,8 @@ export class TrialBillingStepComponent implements OnInit {
       planDescription,
     });
 
-    this.messagingService.send("organizationCreated", organizationId);
+    // TODO: No one actually listening to this?
+    this.messagingService.send("organizationCreated", { organizationId });
   }
 
   protected changedCountry() {

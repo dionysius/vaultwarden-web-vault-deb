@@ -1,17 +1,16 @@
 import { ChangeDetectorRef, Component, NgZone, OnDestroy, OnInit } from "@angular/core";
 import { NavigationEnd, Router, RouterOutlet } from "@angular/router";
-import { filter, concatMap, Subject, takeUntil, firstValueFrom, map } from "rxjs";
+import { filter, concatMap, Subject, takeUntil, firstValueFrom, tap, map } from "rxjs";
 
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
-import { BroadcasterService } from "@bitwarden/common/platform/abstractions/broadcaster.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { MessageListener } from "@bitwarden/common/platform/messaging";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { DialogService, SimpleDialogOptions, ToastService } from "@bitwarden/components";
 
 import { BrowserApi } from "../platform/browser/browser-api";
-import { ZonedMessageListenerService } from "../platform/browser/zoned-message-listener.service";
 import { BrowserStateService } from "../platform/services/abstractions/browser-state.service";
 import { BrowserSendStateService } from "../tools/popup/services/browser-send-state.service";
 import { VaultBrowserStateService } from "../vault/services/vault-browser-state.service";
@@ -34,7 +33,6 @@ export class AppComponent implements OnInit, OnDestroy {
   private destroy$ = new Subject<void>();
 
   constructor(
-    private broadcasterService: BroadcasterService,
     private authService: AuthService,
     private i18nService: I18nService,
     private router: Router,
@@ -46,7 +44,7 @@ export class AppComponent implements OnInit, OnDestroy {
     private ngZone: NgZone,
     private platformUtilsService: PlatformUtilsService,
     private dialogService: DialogService,
-    private browserMessagingApi: ZonedMessageListenerService,
+    private messageListener: MessageListener,
     private toastService: ToastService,
   ) {}
 
@@ -78,77 +76,76 @@ export class AppComponent implements OnInit, OnDestroy {
       window.onkeypress = () => this.recordActivity();
     });
 
-    const bitwardenPopupMainMessageListener = (msg: any, sender: any) => {
-      if (msg.command === "doneLoggingOut") {
-        this.authService.logOut(async () => {
-          if (msg.expired) {
-            this.toastService.showToast({
-              variant: "warning",
-              title: this.i18nService.t("loggedOut"),
-              message: this.i18nService.t("loginExpired"),
+    this.messageListener.allMessages$
+      .pipe(
+        tap((msg: any) => {
+          if (msg.command === "doneLoggingOut") {
+            this.authService.logOut(async () => {
+              if (msg.expired) {
+                this.toastService.showToast({
+                  variant: "warning",
+                  title: this.i18nService.t("loggedOut"),
+                  message: this.i18nService.t("loginExpired"),
+                });
+              }
+
+              // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+              // eslint-disable-next-line @typescript-eslint/no-floating-promises
+              this.router.navigate(["home"]);
             });
+            this.changeDetectorRef.detectChanges();
+          } else if (msg.command === "authBlocked") {
+            // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+            // eslint-disable-next-line @typescript-eslint/no-floating-promises
+            this.router.navigate(["home"]);
+          } else if (
+            msg.command === "locked" &&
+            (msg.userId == null || msg.userId == this.activeUserId)
+          ) {
+            // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+            // eslint-disable-next-line @typescript-eslint/no-floating-promises
+            this.router.navigate(["lock"]);
+          } else if (msg.command === "showDialog") {
+            // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+            // eslint-disable-next-line @typescript-eslint/no-floating-promises
+            this.showDialog(msg);
+          } else if (msg.command === "showNativeMessagingFinterprintDialog") {
+            // TODO: Should be refactored to live in another service.
+            // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+            // eslint-disable-next-line @typescript-eslint/no-floating-promises
+            this.showNativeMessagingFingerprintDialog(msg);
+          } else if (msg.command === "showToast") {
+            this.toastService._showToast(msg);
+          } else if (msg.command === "reloadProcess") {
+            const forceWindowReload =
+              this.platformUtilsService.isSafari() ||
+              this.platformUtilsService.isFirefox() ||
+              this.platformUtilsService.isOpera();
+            // Wait to make sure background has reloaded first.
+            window.setTimeout(
+              () => BrowserApi.reloadExtension(forceWindowReload ? window : null),
+              2000,
+            );
+          } else if (msg.command === "reloadPopup") {
+            // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+            // eslint-disable-next-line @typescript-eslint/no-floating-promises
+            this.router.navigate(["/"]);
+          } else if (msg.command === "convertAccountToKeyConnector") {
+            // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+            // eslint-disable-next-line @typescript-eslint/no-floating-promises
+            this.router.navigate(["/remove-password"]);
+          } else if (msg.command === "switchAccountFinish") {
+            // TODO: unset loading?
+            // this.loading = false;
+          } else if (msg.command == "update-temp-password") {
+            // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+            // eslint-disable-next-line @typescript-eslint/no-floating-promises
+            this.router.navigate(["/update-temp-password"]);
           }
-
-          // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-          // eslint-disable-next-line @typescript-eslint/no-floating-promises
-          this.router.navigate(["home"]);
-        });
-        this.changeDetectorRef.detectChanges();
-      } else if (msg.command === "authBlocked") {
-        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-        // eslint-disable-next-line @typescript-eslint/no-floating-promises
-        this.router.navigate(["home"]);
-      } else if (
-        msg.command === "locked" &&
-        (msg.userId == null || msg.userId == this.activeUserId)
-      ) {
-        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-        // eslint-disable-next-line @typescript-eslint/no-floating-promises
-        this.router.navigate(["lock"]);
-      } else if (msg.command === "showDialog") {
-        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-        // eslint-disable-next-line @typescript-eslint/no-floating-promises
-        this.showDialog(msg);
-      } else if (msg.command === "showNativeMessagingFinterprintDialog") {
-        // TODO: Should be refactored to live in another service.
-        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-        // eslint-disable-next-line @typescript-eslint/no-floating-promises
-        this.showNativeMessagingFingerprintDialog(msg);
-      } else if (msg.command === "showToast") {
-        this.toastService._showToast(msg);
-      } else if (msg.command === "reloadProcess") {
-        const forceWindowReload =
-          this.platformUtilsService.isSafari() ||
-          this.platformUtilsService.isFirefox() ||
-          this.platformUtilsService.isOpera();
-        // Wait to make sure background has reloaded first.
-        window.setTimeout(
-          () => BrowserApi.reloadExtension(forceWindowReload ? window : null),
-          2000,
-        );
-      } else if (msg.command === "reloadPopup") {
-        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-        // eslint-disable-next-line @typescript-eslint/no-floating-promises
-        this.router.navigate(["/"]);
-      } else if (msg.command === "convertAccountToKeyConnector") {
-        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-        // eslint-disable-next-line @typescript-eslint/no-floating-promises
-        this.router.navigate(["/remove-password"]);
-      } else if (msg.command === "switchAccountFinish") {
-        // TODO: unset loading?
-        // this.loading = false;
-      } else if (msg.command == "update-temp-password") {
-        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-        // eslint-disable-next-line @typescript-eslint/no-floating-promises
-        this.router.navigate(["/update-temp-password"]);
-      } else {
-        msg.webExtSender = sender;
-        this.broadcasterService.send(msg);
-      }
-    };
-
-    (self as any).bitwardenPopupMainMessageListener = bitwardenPopupMainMessageListener;
-    this.browserMessagingApi.messageListener("app.component", bitwardenPopupMainMessageListener);
+        }),
+        takeUntil(this.destroy$),
+      )
+      .subscribe();
 
     // eslint-disable-next-line rxjs/no-async-subscribe
     this.router.events.pipe(takeUntil(this.destroy$)).subscribe(async (event) => {
