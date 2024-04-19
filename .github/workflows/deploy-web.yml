@@ -128,29 +128,90 @@ jobs:
       - name: Success Code
         run: exit 0
 
-  get-branch-or-tag-sha:
-    name: Get Branch or Tag SHA
+  artifact-check:
+    name: Check if Web artifact is present
     runs-on: ubuntu-22.04
+    needs: setup
+    env:
+      _ENVIRONMENT_ARTIFACT: ${{ needs.setup.outputs.environment-artifact }}
     outputs:
-      branch-or-tag-sha: ${{ steps.get-branch-or-tag-sha.outputs.sha }}
+      artifact-build-commit: ${{ steps.set-artifact-commit.outputs.commit }}
     steps:
-      - name: Checkout Branch
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      - name: 'Download latest cloud asset using GitHub Run ID: ${{ inputs.build-web-run-id }}'
+        if: ${{ inputs.build-web-run-id }}
+        uses: bitwarden/gh-actions/download-artifacts@main
+        id: download-latest-artifacts-run-id
+        continue-on-error: true
         with:
-          ref: ${{ inputs.branch-or-tag }}
-          fetch-depth: 0
+          workflow: build-web.yml
+          path: apps/web
+          workflow_conclusion: success
+          run_id: ${{ inputs.build-web-run-id }}
+          artifacts: ${{ env._ENVIRONMENT_ARTIFACT }}
 
-      - name: Get Branch or Tag SHA
-        id: get-branch-or-tag-sha
+      - name: 'Download latest cloud asset from branch/tag: ${{ inputs.branch-or-tag }}'
+        if: ${{ !inputs.build-web-run-id }}
+        uses: bitwarden/gh-actions/download-artifacts@main
+        id: download-latest-artifacts
+        continue-on-error: true
+        with:
+          workflow: build-web.yml
+          path: apps/web
+          workflow_conclusion: success
+          branch: ${{ inputs.branch-or-tag }}
+          artifacts: ${{ env._ENVIRONMENT_ARTIFACT }}
+
+      - name: Login to Azure
+        if: ${{ steps.download-latest-artifacts.outcome == 'failure' }}
+        uses: Azure/login@e15b166166a8746d1a47596803bd8c1b595455cf # v1.6.0
+        with:
+          creds: ${{ secrets.AZURE_KV_CI_SERVICE_PRINCIPAL }}
+
+      - name: Retrieve secrets for Build trigger
+        if: ${{ steps.download-latest-artifacts.outcome == 'failure' }}
+        id: retrieve-secret
+        uses: bitwarden/gh-actions/get-keyvault-secrets@main
+        with:
+          keyvault: "bitwarden-ci"
+          secrets: "github-pat-bitwarden-devops-bot-repo-scope"
+
+      - name: 'Trigger build web for missing branch/tag ${{ inputs.branch-or-tag }}'
+        if: ${{ steps.download-latest-artifacts.outcome == 'failure' }}
+        uses: convictional/trigger-workflow-and-wait@f69fa9eedd3c62a599220f4d5745230e237904be # v1.6.5
+        id: trigger-build-web
+        with:
+          owner: bitwarden
+          repo: clients
+          github_token: ${{ steps.retrieve-secret.outputs.github-pat-bitwarden-devops-bot-repo-scope }}
+          workflow_file_name: build-web.yml
+          ref: ${{ inputs.branch-or-tag }}
+          wait_interval: 100
+
+      - name: Set artifact build commit
+        id: set-artifact-commit
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          echo "sha=$(git rev-parse origin/${{ inputs.branch-or-tag }})" >> $GITHUB_OUTPUT
+          # If run-id was used, get the commit from the download-latest-artifacts-run-id step
+          if [ "${{ inputs.build-web-run-id }}" ]; then
+            echo "commit=${{ steps.download-latest-artifacts-run-id.outputs.artifact-build-commit }}" >> $GITHUB_OUTPUT
+
+          elif [ "${{ steps.download-latest-artifacts.outcome }}" == "failure" ]; then
+            # If the download-latest-artifacts step failed, query the GH API to get the commit SHA of the artifact that was just built with trigger-build-web.
+            commit=$(gh api /repos/bitwarden/clients/actions/runs/${{ steps.trigger-build-web.outputs.workflow_id }}/artifacts --jq '.artifacts[0].workflow_run.head_sha')
+            echo "commit=$commit" >> $GITHUB_OUTPUT
+
+          else
+            # Set the commit to the output of step download-latest-artifacts.
+            echo "commit=${{ steps.download-latest-artifacts.outputs.artifact-build-commit }}" >> $GITHUB_OUTPUT
+          fi
 
   notify-start:
     name: Notify Slack with start message
     needs:
       - approval
       - setup
-      - get-branch-or-tag-sha
+      - artifact-check
     runs-on: ubuntu-22.04
     if: ${{ always() && contains( inputs.environment , 'QA' ) }}
     outputs:
@@ -165,65 +226,9 @@ jobs:
           tag: ${{ inputs.branch-or-tag }}
           slack-channel: team-eng-qa-devops
           event: 'start'
-          commit-sha: ${{ needs.get-branch-or-tag-sha.outputs.branch-or-tag-sha }}
+          commit-sha: ${{ needs.artifact-check.outputs.artifact-build-commit }}
           url: https://github.com/bitwarden/clients/actions/runs/${{ github.run_id }}
           AZURE_KV_CI_SERVICE_PRINCIPAL: ${{ secrets.AZURE_KV_CI_SERVICE_PRINCIPAL }}
-
-  artifact-check:
-    name: Check if Web artifact is present
-    runs-on: ubuntu-22.04
-    needs: setup
-    env:
-      _ENVIRONMENT_ARTIFACT: ${{ needs.setup.outputs.environment-artifact }}
-    steps:
-      - name: 'Download latest cloud asset using GitHub Run ID: ${{ inputs.build-web-run-id }}'
-        if: ${{ inputs.build-web-run-id }}
-        uses: bitwarden/gh-actions/download-artifacts@main
-        id: download-latest-artifacts
-        continue-on-error: true
-        with:
-          workflow: build-web.yml
-          path: apps/web
-          workflow_conclusion: success
-          run_id: ${{ inputs.build-web-run-id }}
-          artifacts: ${{ env._ENVIRONMENT_ARTIFACT }}
-
-      - name: 'Download latest cloud asset from branch/tag: ${{ inputs.branch-or-tag }}'
-        if: ${{ !inputs.build-web-run-id }}
-        uses: bitwarden/gh-actions/download-artifacts@main
-        id: download-artifacts
-        continue-on-error: true
-        with:
-          workflow: build-web.yml
-          path: apps/web
-          workflow_conclusion: success
-          branch: ${{ inputs.branch-or-tag }}
-          artifacts: ${{ env._ENVIRONMENT_ARTIFACT }}
-
-      - name: Login to Azure
-        if: ${{ steps.download-artifacts.outcome == 'failure' }}
-        uses: Azure/login@e15b166166a8746d1a47596803bd8c1b595455cf # v1.6.0
-        with:
-          creds: ${{ secrets.AZURE_KV_CI_SERVICE_PRINCIPAL }}
-
-      - name: Retrieve secrets for Build trigger
-        if: ${{ steps.download-artifacts.outcome == 'failure' }}
-        id: retrieve-secret
-        uses: bitwarden/gh-actions/get-keyvault-secrets@main
-        with:
-          keyvault: "bitwarden-ci"
-          secrets: "github-pat-bitwarden-devops-bot-repo-scope"
-
-      - name: 'Trigger build web for missing branch/tag ${{ inputs.branch-or-tag }}'
-        if: ${{ steps.download-artifacts.outcome == 'failure' }}
-        uses: convictional/trigger-workflow-and-wait@f69fa9eedd3c62a599220f4d5745230e237904be # v1.6.5
-        with:
-          owner: bitwarden
-          repo: clients
-          github_token: ${{ steps.retrieve-secret.outputs.github-pat-bitwarden-devops-bot-repo-scope }}
-          workflow_file_name: build-web.yml
-          ref: ${{ inputs.branch-or-tag }}
-          wait_interval: 100
 
   azure-deploy:
     name: Deploy Web Vault to ${{ inputs.environment }} Storage Account
@@ -248,6 +253,7 @@ jobs:
           environment: ${{ env._ENVIRONMENT_NAME }}
           task: 'deploy'
           description: 'Deployment from branch/tag: ${{ inputs.branch-or-tag }}'
+          ref: ${{ needs.artifact-check.outputs.artifact-build-commit }}
 
       - name: Login to Azure
         uses: Azure/login@e15b166166a8746d1a47596803bd8c1b595455cf # v1.6.0
@@ -349,10 +355,10 @@ jobs:
     runs-on: ubuntu-22.04
     if: ${{ always() && contains( inputs.environment , 'QA' ) }}
     needs:
+      - setup
       - notify-start
       - azure-deploy
-      - setup
-      - get-branch-or-tag-sha
+      - artifact-check
     steps:
       - uses: bitwarden/gh-actions/report-deployment-status-to-slack@main
         with:
@@ -362,6 +368,6 @@ jobs:
           slack-channel: ${{ needs.notify-start.outputs.channel_id }}
           event: ${{ needs.azure-deploy.result }}
           url: https://github.com/bitwarden/clients/actions/runs/${{ github.run_id }}
-          commit-sha: ${{ needs.get-branch-or-tag-sha.outputs.branch-or-tag-sha }}
+          commit-sha: ${{ needs.artifact-check.outputs.artifact-build-commit }}
           update-ts: ${{ needs.notify-start.outputs.ts }}
           AZURE_KV_CI_SERVICE_PRINCIPAL: ${{ secrets.AZURE_KV_CI_SERVICE_PRINCIPAL }}
