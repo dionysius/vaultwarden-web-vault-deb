@@ -1,4 +1,4 @@
-import { Observable, combineLatest, concatMap, filter, map, of } from "rxjs";
+import { Observable, combineLatest, concatMap, filter, map, of, concat, merge } from "rxjs";
 
 import {
   StateProvider,
@@ -33,68 +33,53 @@ export class BufferedState<Input, Output, Dependency> implements SingleUserState
     private output: SingleUserState<Output>,
     dependency$: Observable<Dependency> = null,
   ) {
-    this.bufferState = provider.getUser(output.userId, key.toKeyDefinition());
+    this.bufferedState = provider.getUser(output.userId, key.toKeyDefinition());
 
-    const watching = [
-      this.bufferState.state$,
-      this.output.state$,
-      dependency$ ?? of(true as unknown as Dependency),
-    ] as const;
-
-    this.state$ = combineLatest(watching).pipe(
-      concatMap(async ([input, output, dependency]) => {
-        const normalized = input ?? null;
-
-        const canOverwrite = normalized !== null && key.shouldOverwrite(dependency);
-        if (canOverwrite) {
-          await this.updateOutput(dependency);
-
-          // prevent duplicate updates by suppressing the update
-          return [false, output] as const;
+    // overwrite the output value
+    const hasValue$ = concat(of(null), this.bufferedState.state$).pipe(
+      map((buffer) => (buffer ?? null) !== null),
+    );
+    const overwriteDependency$ = (dependency$ ?? of(true as unknown as Dependency)).pipe(
+      map((dependency) => [key.shouldOverwrite(dependency), dependency] as const),
+    );
+    const overwrite$ = combineLatest([hasValue$, overwriteDependency$]).pipe(
+      concatMap(async ([hasValue, [shouldOverwrite, dependency]]) => {
+        if (hasValue && shouldOverwrite) {
+          await this.overwriteOutput(dependency);
         }
-
-        return [true, output] as const;
+        return [false, null] as const;
       }),
-      filter(([updated]) => updated),
+    );
+
+    // drive overwrites only when there's a subscription;
+    // the output state determines when emissions occur
+    const output$ = this.output.state$.pipe(map((output) => [true, output] as const));
+    this.state$ = merge(overwrite$, output$).pipe(
+      filter(([emit]) => emit),
       map(([, output]) => output),
     );
 
     this.combinedState$ = this.state$.pipe(map((state) => [this.output.userId, state]));
 
-    this.bufferState$ = this.bufferState.state$;
+    this.bufferedState$ = this.bufferedState.state$;
   }
 
-  private bufferState: SingleUserState<Input>;
+  private bufferedState: SingleUserState<Input>;
 
-  private async updateOutput(dependency: Dependency) {
-    // retrieve the latest input value
-    let input: Input;
-    await this.bufferState.update((state) => state, {
-      shouldUpdate: (state) => {
-        input = state;
-        return false;
-      },
+  private async overwriteOutput(dependency: Dependency) {
+    // take the latest value from the buffer
+    let buffered: Input;
+    await this.bufferedState.update((state) => {
+      buffered = state ?? null;
+      return null;
     });
 
-    // bail if this update lost the race with the last update
-    if (input === null) {
-      return;
+    // update the output state
+    const isValid = await this.key.isValid(buffered, dependency);
+    if (isValid) {
+      const output = await this.key.map(buffered, dependency);
+      await this.output.update(() => output);
     }
-
-    // destroy invalid data and bail
-    if (!(await this.key.isValid(input, dependency))) {
-      await this.bufferState.update(() => null);
-      return;
-    }
-
-    // overwrite anything left to the output; the updates need to be awaited with `Promise.all`
-    // so that `inputState.update(() => null)` runs before `shouldUpdate` reads the value (above).
-    // This lets the emission from `this.outputState.update` renter the `concatMap`. If the
-    // awaits run in sequence, it can win the race and cause a double emission.
-    const output = await this.key.map(input, dependency);
-    await Promise.all([this.output.update(() => output), this.bufferState.update(() => null)]);
-
-    return;
   }
 
   /** {@link SingleUserState.userId} */
@@ -119,14 +104,14 @@ export class BufferedState<Input, Output, Dependency> implements SingleUserState
   async buffer(value: Input): Promise<void> {
     const normalized = value ?? null;
     if (normalized !== null) {
-      await this.bufferState.update(() => normalized);
+      await this.bufferedState.update(() => normalized);
     }
   }
 
   /** The data presently being buffered. This emits the pending value each time
    *  new buffer data is provided. It emits null when the buffer is empty.
    */
-  readonly bufferState$: Observable<Input>;
+  readonly bufferedState$: Observable<Input>;
 
   /** Updates the output state.
    *  @param configureState a callback that returns an updated output

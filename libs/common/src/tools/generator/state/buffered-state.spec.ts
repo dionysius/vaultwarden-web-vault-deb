@@ -75,14 +75,16 @@ describe("BufferedState", () => {
     it("rolls over pending values from the buffered state immediately by default", async () => {
       const provider = new FakeStateProvider(accountService);
       const outputState = provider.getUser(SomeUser, SOME_KEY);
-      await outputState.update(() => ({ foo: true, bar: false }));
+      const initialValue = { foo: true, bar: false };
+      await outputState.update(() => initialValue);
       const bufferedState = new BufferedState(provider, BUFFER_KEY, outputState);
       const bufferedValue = { foo: true, bar: true };
       await provider.setUserState(BUFFER_KEY.toKeyDefinition(), bufferedValue, SomeUser);
 
-      const result = await firstValueFrom(bufferedState.state$);
+      const result = await trackEmissions(bufferedState.state$);
+      await awaitAsync();
 
-      expect(result).toEqual(bufferedValue);
+      expect(result).toEqual([initialValue, bufferedValue]);
     });
 
     // also important for data migrations
@@ -131,14 +133,16 @@ describe("BufferedState", () => {
       });
       const provider = new FakeStateProvider(accountService);
       const outputState = provider.getUser(SomeUser, SOME_KEY);
-      await outputState.update(() => ({ foo: true, bar: false }));
+      const initialValue = { foo: true, bar: false };
+      await outputState.update(() => initialValue);
       const bufferedState = new BufferedState(provider, bufferedKey, outputState);
       const bufferedValue = { foo: true, bar: true };
       await provider.setUserState(bufferedKey.toKeyDefinition(), bufferedValue, SomeUser);
 
-      const result = await firstValueFrom(bufferedState.state$);
+      const result = await trackEmissions(bufferedState.state$);
+      await awaitAsync();
 
-      expect(result).toEqual(bufferedValue);
+      expect(result).toEqual([initialValue, bufferedValue]);
     });
 
     it("reads from the output state when shouldOverwrite returns a falsy value", async () => {
@@ -274,7 +278,7 @@ describe("BufferedState", () => {
       await bufferedState.buffer(bufferedValue);
       await awaitAsync();
 
-      expect(result).toEqual([firstValue, firstValue]);
+      expect(result).toEqual([firstValue]);
     });
 
     it("replaces the output state when its dependency becomes true", async () => {
@@ -296,7 +300,7 @@ describe("BufferedState", () => {
       dependency.next(true);
       await awaitAsync();
 
-      expect(result).toEqual([firstValue, firstValue, bufferedValue]);
+      expect(result).toEqual([firstValue, bufferedValue]);
     });
 
     it.each([[null], [undefined]])("ignores `%p`", async (bufferedValue) => {
@@ -325,11 +329,13 @@ describe("BufferedState", () => {
       await outputState.update(() => firstValue);
       const bufferedState = new BufferedState(provider, bufferedKey, outputState);
 
-      const result = trackEmissions(bufferedState.state$);
+      const stateResult = trackEmissions(bufferedState.state$);
       await bufferedState.buffer({ foo: true, bar: true });
       await awaitAsync();
+      const bufferedResult = await firstValueFrom(bufferedState.bufferedState$);
 
-      expect(result).toEqual([firstValue, firstValue]);
+      expect(stateResult).toEqual([firstValue]);
+      expect(bufferedResult).toBeNull();
     });
 
     it("overwrites the output when isValid returns true", async () => {

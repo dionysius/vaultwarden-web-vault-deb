@@ -87,9 +87,13 @@ export class BufferedKeyDefinition<Input, Output = Input, Dependency = true> {
   }
 
   /** Checks whether the input type can be converted to the output type.
-   *  @returns `true` if the definition is valid, otherwise `false`.
+   *  @returns `true` if the definition is defined and valid, otherwise `false`.
    */
   isValid(input: Input, dependency: Dependency) {
+    if (input === null) {
+      return Promise.resolve(false);
+    }
+
     const isValid = this.options?.isValid;
     if (isValid) {
       return isValid(input, dependency);
