@@ -3,11 +3,11 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden - Ingyenes jelszókezelő",
+    "message": "Bitwarden Password Manager",
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
-    "message": "Egy biztonságos és ingyenes jelszókezelő az összes eszközre.",
+    "message": "At home, at work, or on the go, Bitwarden easily secures all your passwords, passkeys, and sensitive information.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -3001,7 +3001,7 @@
     "description": "Notification message for when saving credentials has failed."
   },
   "success": {
-    "message": "Success"
+    "message": "Sikeres"
   },
   "removePasskey": {
     "message": "Jelszó eltávolítása"

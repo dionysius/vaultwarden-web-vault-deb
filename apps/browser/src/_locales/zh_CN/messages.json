@@ -3,11 +3,11 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden - 免费密码管理器",
+    "message": "Bitwarden Password Manager",
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
-    "message": "安全且免费的跨平台密码管理器。",
+    "message": "At home, at work, or on the go, Bitwarden easily secures all your passwords, passkeys, and sensitive information.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -3001,7 +3001,7 @@
     "description": "Notification message for when saving credentials has failed."
   },
   "success": {
-    "message": "Success"
+    "message": "成功"
   },
   "removePasskey": {
     "message": "移除通行密钥"
@@ -3024,12 +3024,12 @@
     "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
   },
   "adminConsole": {
-    "message": "Admin Console"
+    "message": "管理控制台"
   },
   "errorAssigningTargetCollection": {
-    "message": "Error assigning target collection."
+    "message": "分配目标集合时出错。"
   },
   "errorAssigningTargetFolder": {
-    "message": "Error assigning target folder."
+    "message": "分配目标文件夹时出错。"
   }
 }

@@ -3,11 +3,11 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden – Ilmainen salasanahallinta",
+    "message": "Bitwarden – Salasanahallinta",
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
-    "message": "Turvallinen ja ilmainen salasanahallinta kaikille laitteillesi.",
+    "message": "Kotona, töissä tai reissussa, Bitwarden suojaa helposti kaikki salasanasi, avainkoodisi ja arkaluonteiset tietosi.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -3001,7 +3001,7 @@
     "description": "Notification message for when saving credentials has failed."
   },
   "success": {
-    "message": "Success"
+    "message": "Onnistui"
   },
   "removePasskey": {
     "message": "Poista suojausavain"
@@ -3010,10 +3010,10 @@
     "message": "Suojausavain poistettiin"
   },
   "unassignedItemsBannerNotice": {
-    "message": "Notice: Unassigned organization items are no longer visible in the All Vaults view and only accessible via the Admin Console."
+    "message": "Huomioi: Määrittämättömät organisaatiokohteet eivät enää näy \"Kaikki holvit\" -näkymässä, vaan ne ovat käytettävissä vain Hallintapaneelista."
   },
   "unassignedItemsBannerSelfHostNotice": {
-    "message": "Notice: On May 16, 2024, unassigned organization items will no longer be visible in the All Vaults view and will only be accessible via the Admin Console."
+    "message": "Huomioi: Alkaen 16. toukokuuta 2024, määrittämättömät organisaatiokohteet eivät enää näy \"Kaikki holvit\" -näkymässä, vaan ne ovat käytettävissä vain Hallintapaneelista."
   },
   "unassignedItemsBannerCTAPartOne": {
     "message": "Määritä nämä kohteet kokoelmaan",
@@ -3027,9 +3027,9 @@
     "message": "Hallintapaneelista"
   },
   "errorAssigningTargetCollection": {
-    "message": "Error assigning target collection."
+    "message": "Virhe määritettäessä kohdekokoelmaa."
   },
   "errorAssigningTargetFolder": {
-    "message": "Error assigning target folder."
+    "message": "Virhe määritettäessä kohdekansiota."
   }
 }
