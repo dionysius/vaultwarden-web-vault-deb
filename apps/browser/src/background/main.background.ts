@@ -110,6 +110,7 @@ import { MigrationBuilderService } from "@bitwarden/common/platform/services/mig
 import { MigrationRunner } from "@bitwarden/common/platform/services/migration-runner";
 import { StorageServiceProvider } from "@bitwarden/common/platform/services/storage-service.provider";
 import { SystemService } from "@bitwarden/common/platform/services/system.service";
+import { UserKeyInitService } from "@bitwarden/common/platform/services/user-key-init.service";
 import { WebCryptoFunctionService } from "@bitwarden/common/platform/services/web-crypto-function.service";
 import {
   ActiveUserStateProvider,
@@ -325,6 +326,7 @@ export default class MainBackground {
   stateEventRunnerService: StateEventRunnerService;
   ssoLoginService: SsoLoginServiceAbstraction;
   billingAccountProfileStateService: BillingAccountProfileStateService;
+  userKeyInitService: UserKeyInitService;
   scriptInjectorService: BrowserScriptInjectorService;
 
   onUpdatedRan: boolean;
@@ -1046,12 +1048,22 @@ export default class MainBackground {
         );
       }
     }
+
+    this.userKeyInitService = new UserKeyInitService(
+      this.accountService,
+      this.cryptoService,
+      this.logService,
+    );
   }
 
   async bootstrap() {
     this.containerService.attachToGlobal(self);
 
     await this.stateService.init({ runMigrations: !this.isPrivateMode });
+
+    // This is here instead of in in the InitService b/c we don't plan for
+    // side effects to run in the Browser InitService.
+    this.userKeyInitService.listenForActiveUserChangesToSetUserKey();
 
     await (this.i18nService as I18nService).init();
     await (this.eventUploadService as EventUploadService).init(true);

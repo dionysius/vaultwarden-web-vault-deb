@@ -283,7 +283,6 @@ export class LockComponent implements OnInit, OnDestroy {
   }
 
   private async doContinue(evaluatePasswordAfterUnlock: boolean) {
-    await this.stateService.setEverBeenUnlocked(true);
     await this.biometricStateService.resetUserPromptCancelled();
     this.messagingService.send("unlocked");
 

@@ -91,21 +91,7 @@ describe("cryptoService", () => {
       expect(userKey).toEqual(mockUserKey);
     });
 
-    it("sets from the Auto key if the User Key if not set", async () => {
-      const autoKeyB64 =
-        "IT5cA1i5Hncd953pb00E58D2FqJX+fWTj4AvoI67qkGHSQPgulAqKv+LaKRAo9Bg0xzP9Nw00wk4TqjMmGSM+g==";
-      stateService.getUserKeyAutoUnlock.mockResolvedValue(autoKeyB64);
-      const setKeySpy = jest.spyOn(cryptoService, "setUserKey");
-
-      const userKey = await cryptoService.getUserKey(mockUserId);
-
-      expect(setKeySpy).toHaveBeenCalledWith(expect.any(SymmetricCryptoKey), mockUserId);
-      expect(setKeySpy).toHaveBeenCalledTimes(1);
-
-      expect(userKey.keyB64).toEqual(autoKeyB64);
-    });
-
-    it("returns nullish if there is no auto key and the user key is not set", async () => {
+    it("returns nullish if the user key is not set", async () => {
       const userKey = await cryptoService.getUserKey(mockUserId);
 
       expect(userKey).toBeFalsy();
@@ -146,17 +132,6 @@ describe("cryptoService", () => {
       );
     },
   );
-
-  describe("hasUserKey", () => {
-    it.each([true, false])(
-      "returns %s when the user key is not in memory, but the auto key is set",
-      async (hasKey) => {
-        stateProvider.singleUser.getFake(mockUserId, USER_KEY).nextState(null);
-        cryptoService.hasUserKeyStored = jest.fn().mockResolvedValue(hasKey);
-        expect(await cryptoService.hasUserKey(mockUserId)).toBe(hasKey);
-      },
-    );
-  });
 
   describe("getUserKeyWithLegacySupport", () => {
     let mockUserKey: UserKey;

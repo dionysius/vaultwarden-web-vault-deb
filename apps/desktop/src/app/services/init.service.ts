@@ -12,6 +12,7 @@ import { I18nService as I18nServiceAbstraction } from "@bitwarden/common/platfor
 import { PlatformUtilsService as PlatformUtilsServiceAbstraction } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService as StateServiceAbstraction } from "@bitwarden/common/platform/abstractions/state.service";
 import { ContainerService } from "@bitwarden/common/platform/services/container.service";
+import { UserKeyInitService } from "@bitwarden/common/platform/services/user-key-init.service";
 import { EventUploadService } from "@bitwarden/common/services/event/event-upload.service";
 import { VaultTimeoutService } from "@bitwarden/common/services/vault-timeout/vault-timeout.service";
 import { SyncService as SyncServiceAbstraction } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
@@ -35,6 +36,7 @@ export class InitService {
     private nativeMessagingService: NativeMessagingService,
     private themingService: AbstractThemingService,
     private encryptService: EncryptService,
+    private userKeyInitService: UserKeyInitService,
     @Inject(DOCUMENT) private document: Document,
   ) {}
 
@@ -42,6 +44,8 @@ export class InitService {
     return async () => {
       this.nativeMessagingService.init();
       await this.stateService.init({ runMigrations: false }); // Desktop will run them in main process
+      this.userKeyInitService.listenForActiveUserChangesToSetUserKey();
+
       // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
       // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.syncService.fullSync(true);

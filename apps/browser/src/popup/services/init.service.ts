@@ -9,7 +9,6 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
 import { BrowserApi } from "../../platform/browser/browser-api";
 import BrowserPopupUtils from "../../platform/popup/browser-popup-utils";
 import { BrowserStateService as StateServiceAbstraction } from "../../platform/services/abstractions/browser-state.service";
-
 @Injectable()
 export class InitService {
   constructor(

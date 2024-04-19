@@ -12,7 +12,6 @@ import { ApiService } from "../../abstractions/api.service";
 import { CryptoService } from "../../platform/abstractions/crypto.service";
 import { MessagingService } from "../../platform/abstractions/messaging.service";
 import { StateService } from "../../platform/abstractions/state.service";
-import { KeySuffixOptions } from "../../platform/enums";
 import { UserId } from "../../types/guid";
 import { AccountService } from "../abstractions/account.service";
 import { AuthService as AuthServiceAbstraction } from "../abstractions/auth.service";
@@ -91,31 +90,11 @@ export class AuthService implements AuthServiceAbstraction {
       return AuthenticationStatus.LoggedOut;
     }
 
-    // If we don't have a user key in memory, we're locked
-    if (!(await this.cryptoService.hasUserKeyInMemory(userId))) {
-      // Check if the user has vault timeout set to never and verify that
-      // they've never unlocked their vault
-      const neverLock =
-        (await this.cryptoService.hasUserKeyStored(KeySuffixOptions.Auto, userId)) &&
-        !(await this.stateService.getEverBeenUnlocked({ userId: userId }));
+    // Note: since we aggresively set the auto user key to memory if it exists on app init (see InitService)
+    // we only need to check if the user key is in memory.
+    const hasUserKey = await this.cryptoService.hasUserKeyInMemory(userId as UserId);
 
-      if (neverLock) {
-        // Attempt to get the key from storage and set it in memory
-        const userKey = await this.cryptoService.getUserKeyFromStorage(
-          KeySuffixOptions.Auto,
-          userId,
-        );
-        await this.cryptoService.setUserKey(userKey, userId);
-      }
-    }
-
-    // We do another check here in case setting the auto key failed
-    const hasKeyInMemory = await this.cryptoService.hasUserKeyInMemory(userId);
-    if (!hasKeyInMemory) {
-      return AuthenticationStatus.Locked;
-    }
-
-    return AuthenticationStatus.Unlocked;
+    return hasUserKey ? AuthenticationStatus.Unlocked : AuthenticationStatus.Locked;
   }
 
   logOut(callback: () => void) {

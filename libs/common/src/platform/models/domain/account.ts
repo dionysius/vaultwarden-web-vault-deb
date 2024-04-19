@@ -126,7 +126,6 @@ export class AccountProfile {
   name?: string;
   email?: string;
   emailVerified?: boolean;
-  everBeenUnlocked?: boolean;
   lastSync?: string;
   userId?: string;
   kdfIterations?: number;

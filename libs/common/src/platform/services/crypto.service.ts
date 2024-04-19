@@ -164,19 +164,8 @@ export class CryptoService implements CryptoServiceAbstraction {
   }
 
   async getUserKey(userId?: UserId): Promise<UserKey> {
-    let userKey = await firstValueFrom(this.stateProvider.getUserState$(USER_KEY, userId));
-    if (userKey) {
-      return userKey;
-    }
-
-    // If the user has set their vault timeout to 'Never', we can load the user key from storage
-    if (await this.hasUserKeyStored(KeySuffixOptions.Auto, userId)) {
-      userKey = await this.getKeyFromStorage(KeySuffixOptions.Auto, userId);
-      if (userKey) {
-        await this.setUserKey(userKey, userId);
-        return userKey;
-      }
-    }
+    const userKey = await firstValueFrom(this.stateProvider.getUserState$(USER_KEY, userId));
+    return userKey;
   }
 
   async isLegacyUser(masterKey?: MasterKey, userId?: UserId): Promise<boolean> {
@@ -217,10 +206,7 @@ export class CryptoService implements CryptoServiceAbstraction {
     if (userId == null) {
       return false;
     }
-    return (
-      (await this.hasUserKeyInMemory(userId)) ||
-      (await this.hasUserKeyStored(KeySuffixOptions.Auto, userId))
-    );
+    return await this.hasUserKeyInMemory(userId);
   }
 
   async hasUserKeyInMemory(userId?: UserId): Promise<boolean> {
