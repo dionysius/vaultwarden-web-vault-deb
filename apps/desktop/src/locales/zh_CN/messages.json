@@ -1633,10 +1633,10 @@
     "message": "不支持浏览器集成"
   },
   "browserIntegrationErrorTitle": {
-    "message": "Error enabling browser integration"
+    "message": "启用浏览器集成时出错"
   },
   "browserIntegrationErrorDesc": {
-    "message": "An error has occurred while enabling browser integration."
+    "message": "启用浏览器集成时出错。"
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "很遗憾，目前仅 Mac App Store 版本支持浏览器集成。"
@@ -2697,9 +2697,6 @@
     "message": "常规格式",
     "description": "Label indicating the most common import formats"
   },
-  "success": {
-    "message": "Success"
-  },
   "troubleshooting": {
     "message": "故障排除"
   },
@@ -2716,9 +2713,9 @@
     "message": "通行密钥已移除"
   },
   "errorAssigningTargetCollection": {
-    "message": "Error assigning target collection."
+    "message": "分配目标集合时出错。"
   },
   "errorAssigningTargetFolder": {
-    "message": "Error assigning target folder."
+    "message": "分配目标文件夹时出错。"
   }
 }

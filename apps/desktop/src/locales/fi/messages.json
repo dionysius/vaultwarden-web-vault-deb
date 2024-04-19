@@ -1633,10 +1633,10 @@
     "message": "Selainintegraatiota ei tueta"
   },
   "browserIntegrationErrorTitle": {
-    "message": "Error enabling browser integration"
+    "message": "Virhe otettaessa selainintegrointia käyttöön"
   },
   "browserIntegrationErrorDesc": {
-    "message": "An error has occurred while enabling browser integration."
+    "message": "Otettaessa selainintegraatiota käyttöön tapahtui virhe."
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Valitettavasti selainintegraatiota tuetaan toistaiseksi vain Mac App Store -versiossa."
@@ -2697,9 +2697,6 @@
     "message": "Yleiset muodot",
     "description": "Label indicating the most common import formats"
   },
-  "success": {
-    "message": "Success"
-  },
   "troubleshooting": {
     "message": "Vianetsintä"
   },
@@ -2716,9 +2713,9 @@
     "message": "Suojausavain poistettiin"
   },
   "errorAssigningTargetCollection": {
-    "message": "Error assigning target collection."
+    "message": "Virhe määritettäessä kohdekokoelmaa."
   },
   "errorAssigningTargetFolder": {
-    "message": "Error assigning target folder."
+    "message": "Virhe määritettäessä kohdekansiota."
   }
 }

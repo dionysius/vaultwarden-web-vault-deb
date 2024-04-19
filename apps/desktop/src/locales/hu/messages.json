@@ -1633,10 +1633,10 @@
     "message": "A böngésző integráció nem támogatott."
   },
   "browserIntegrationErrorTitle": {
-    "message": "Error enabling browser integration"
+    "message": "Böngésző integráció engedélyezése"
   },
   "browserIntegrationErrorDesc": {
-    "message": "An error has occurred while enabling browser integration."
+    "message": "Hiba történt a böngésző integrációjának engedélyezése közben."
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Sajnos a böngésző integrációt egyelőre csak a Mac App Store verzió támogatja."
@@ -2696,9 +2696,6 @@
   "commonImportFormats": {
     "message": "Általános formátumok",
     "description": "Label indicating the most common import formats"
-  },
-  "success": {
-    "message": "Success"
   },
   "troubleshooting": {
     "message": "Hibaelhárítás"

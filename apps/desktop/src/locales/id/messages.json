@@ -404,7 +404,7 @@
     "message": "Panjang"
   },
   "passwordMinLength": {
-    "message": "Minimum password length"
+    "message": "Panjang kata sandi minimum"
   },
   "uppercase": {
     "message": "Huruf Kapital (A-Z)"
@@ -545,7 +545,7 @@
     "message": "Diperlukan pengetikan ulang kata sandi utama."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Kata sandi utama minimal harus $VALUE$ karakter.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -561,7 +561,7 @@
     "message": "Akun baru Anda telah dibuat! Sekarang Anda bisa masuk."
   },
   "youSuccessfullyLoggedIn": {
-    "message": "You successfully logged in"
+    "message": "Anda berhasil masuk"
   },
   "youMayCloseThisWindow": {
     "message": "You may close this window"
@@ -801,10 +801,10 @@
     "message": "Ubah Kata Sandi Utama"
   },
   "continueToWebApp": {
-    "message": "Continue to web app?"
+    "message": "Lanjutkan ke aplikasi web?"
   },
   "changeMasterPasswordOnWebConfirmation": {
-    "message": "You can change your master password on the Bitwarden web app."
+    "message": "Anda bisa mengganti kata sandi utama Anda di aplikasi web Bitwarden."
   },
   "fingerprintPhrase": {
     "message": "Frase Fingerprint",
@@ -2696,9 +2696,6 @@
   "commonImportFormats": {
     "message": "Common formats",
     "description": "Label indicating the most common import formats"
-  },
-  "success": {
-    "message": "Success"
   },
   "troubleshooting": {
     "message": "Troubleshooting"

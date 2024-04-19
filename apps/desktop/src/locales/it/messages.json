@@ -1633,10 +1633,10 @@
     "message": "L'integrazione del browser non è supportata"
   },
   "browserIntegrationErrorTitle": {
-    "message": "Error enabling browser integration"
+    "message": "Errore durante l'attivazione dell'integrazione del browser"
   },
   "browserIntegrationErrorDesc": {
-    "message": "An error has occurred while enabling browser integration."
+    "message": "Si è verificato un errore durante l'attivazione dell'integrazione del browser."
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Purtroppo l'integrazione del browser è supportata solo nella versione nell'App Store per ora."
@@ -2696,9 +2696,6 @@
   "commonImportFormats": {
     "message": "Formati comuni",
     "description": "Label indicating the most common import formats"
-  },
-  "success": {
-    "message": "Success"
   },
   "troubleshooting": {
     "message": "Risoluzione problemi"
