@@ -87,6 +87,7 @@ describe("AutofillService", () => {
       userVerificationService,
       billingAccountProfileStateService,
       scriptInjectorService,
+      accountService,
     );
 
     domainSettingsService = new DefaultDomainSettingsService(fakeStateProvider);

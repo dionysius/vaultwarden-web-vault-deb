@@ -1,4 +1,8 @@
 import {
+  accountServiceFactory,
+  AccountServiceInitOptions,
+} from "../../../auth/background/service-factories/account-service.factory";
+import {
   UserVerificationServiceInitOptions,
   userVerificationServiceFactory,
 } from "../../../auth/background/service-factories/user-verification-service.factory";
@@ -50,7 +54,8 @@ export type AutoFillServiceInitOptions = AutoFillServiceOptions &
   LogServiceInitOptions &
   UserVerificationServiceInitOptions &
   DomainSettingsServiceInitOptions &
-  BrowserScriptInjectorServiceInitOptions;
+  BrowserScriptInjectorServiceInitOptions &
+  AccountServiceInitOptions;
 
 export function autofillServiceFactory(
   cache: { autofillService?: AbstractAutoFillService } & CachedServices,
@@ -71,6 +76,7 @@ export function autofillServiceFactory(
         await userVerificationServiceFactory(cache, opts),
         await billingAccountProfileStateServiceFactory(cache, opts),
         await browserScriptInjectorServiceFactory(cache, opts),
+        await accountServiceFactory(cache, opts),
       ),
   );
 }
