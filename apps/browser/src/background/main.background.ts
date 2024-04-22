@@ -1105,20 +1105,22 @@ export default class MainBackground {
     await (this.eventUploadService as EventUploadService).init(true);
     this.twoFactorService.init();
 
-    if (!this.popupOnlyContext) {
-      await this.vaultTimeoutService.init(true);
-      this.fido2Background.init();
-      await this.runtimeBackground.init();
-      await this.notificationBackground.init();
-      this.filelessImporterBackground.init();
-      await this.commandsBackground.init();
-      await this.overlayBackground.init();
-      await this.tabsBackground.init();
-      this.contextMenusBackground?.init();
-      await this.idleBackground.init();
-      if (BrowserApi.isManifestVersion(2)) {
-        await this.webRequestBackground.init();
-      }
+    if (this.popupOnlyContext) {
+      return;
+    }
+
+    await this.vaultTimeoutService.init(true);
+    this.fido2Background.init();
+    await this.runtimeBackground.init();
+    await this.notificationBackground.init();
+    this.filelessImporterBackground.init();
+    await this.commandsBackground.init();
+    await this.overlayBackground.init();
+    await this.tabsBackground.init();
+    this.contextMenusBackground?.init();
+    await this.idleBackground.init();
+    if (BrowserApi.isManifestVersion(2)) {
+      await this.webRequestBackground.init();
     }
 
     if (this.platformUtilsService.isFirefox() && !this.isPrivateMode) {
