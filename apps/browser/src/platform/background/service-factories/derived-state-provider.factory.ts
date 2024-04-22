@@ -4,14 +4,14 @@ import { BackgroundDerivedStateProvider } from "../../state/background-derived-s
 
 import { CachedServices, FactoryOptions, factory } from "./factory-options";
 import {
-  MemoryStorageServiceInitOptions,
-  observableMemoryStorageServiceFactory,
-} from "./storage-service.factory";
+  StorageServiceProviderInitOptions,
+  storageServiceProviderFactory,
+} from "./storage-service-provider.factory";
 
 type DerivedStateProviderFactoryOptions = FactoryOptions;
 
 export type DerivedStateProviderInitOptions = DerivedStateProviderFactoryOptions &
-  MemoryStorageServiceInitOptions;
+  StorageServiceProviderInitOptions;
 
 export async function derivedStateProviderFactory(
   cache: { derivedStateProvider?: DerivedStateProvider } & CachedServices,
@@ -22,6 +22,6 @@ export async function derivedStateProviderFactory(
     "derivedStateProvider",
     opts,
     async () =>
-      new BackgroundDerivedStateProvider(await observableMemoryStorageServiceFactory(cache, opts)),
+      new BackgroundDerivedStateProvider(await storageServiceProviderFactory(cache, opts)),
   );
 }

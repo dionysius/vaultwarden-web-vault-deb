@@ -35,6 +35,7 @@ export class ForegroundDerivedState<TTo> implements DerivedState<TTo> {
   constructor(
     private deriveDefinition: DeriveDefinition<unknown, TTo, DerivedStateDependencies>,
     private memoryStorage: AbstractStorageService & ObservableStorageService,
+    private portName: string,
     private ngZone: NgZone,
   ) {
     this.storageKey = deriveDefinition.storageKey;
@@ -88,7 +89,7 @@ export class ForegroundDerivedState<TTo> implements DerivedState<TTo> {
       return;
     }
 
-    this.port = chrome.runtime.connect({ name: this.deriveDefinition.buildCacheKey() });
+    this.port = chrome.runtime.connect({ name: this.portName });
 
     this.backgroundResponses$ = fromChromeEvent(this.port.onMessage).pipe(
       map(([message]) => message as DerivedStateMessage),

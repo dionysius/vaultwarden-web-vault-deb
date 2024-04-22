@@ -309,9 +309,7 @@ export class Main {
       this.singleUserStateProvider,
     );
 
-    this.derivedStateProvider = new DefaultDerivedStateProvider(
-      this.memoryStorageForStateProviders,
-    );
+    this.derivedStateProvider = new DefaultDerivedStateProvider(storageServiceProvider);
 
     this.stateProvider = new DefaultStateProvider(
       this.activeUserStateProvider,

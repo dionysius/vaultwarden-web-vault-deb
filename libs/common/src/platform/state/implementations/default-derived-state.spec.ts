@@ -72,12 +72,12 @@ describe("DefaultDerivedState", () => {
     parentState$.next(dateString);
     await awaitAsync();
 
-    expect(memoryStorage.internalStore[deriveDefinition.buildCacheKey()]).toEqual(
+    expect(memoryStorage.internalStore[deriveDefinition.storageKey]).toEqual(
       derivedValue(new Date(dateString)),
     );
     const calls = memoryStorage.mock.save.mock.calls;
     expect(calls.length).toBe(1);
-    expect(calls[0][0]).toBe(deriveDefinition.buildCacheKey());
+    expect(calls[0][0]).toBe(deriveDefinition.storageKey);
     expect(calls[0][1]).toEqual(derivedValue(new Date(dateString)));
   });
 
@@ -94,7 +94,7 @@ describe("DefaultDerivedState", () => {
 
       it("should store the forced value", async () => {
         await sut.forceValue(forced);
-        expect(memoryStorage.internalStore[deriveDefinition.buildCacheKey()]).toEqual(
+        expect(memoryStorage.internalStore[deriveDefinition.storageKey]).toEqual(
           derivedValue(forced),
         );
       });
@@ -109,7 +109,7 @@ describe("DefaultDerivedState", () => {
 
       it("should store the forced value", async () => {
         await sut.forceValue(forced);
-        expect(memoryStorage.internalStore[deriveDefinition.buildCacheKey()]).toEqual(
+        expect(memoryStorage.internalStore[deriveDefinition.storageKey]).toEqual(
           derivedValue(forced),
         );
       });
@@ -153,7 +153,7 @@ describe("DefaultDerivedState", () => {
       parentState$.next(newDate);
       await awaitAsync();
 
-      expect(memoryStorage.internalStore[deriveDefinition.buildCacheKey()]).toEqual(
+      expect(memoryStorage.internalStore[deriveDefinition.storageKey]).toEqual(
         derivedValue(new Date(newDate)),
       );
 
@@ -161,7 +161,7 @@ describe("DefaultDerivedState", () => {
       // Wait for cleanup
       await awaitAsync(cleanupDelayMs * 2);
 
-      expect(memoryStorage.internalStore[deriveDefinition.buildCacheKey()]).toBeUndefined();
+      expect(memoryStorage.internalStore[deriveDefinition.storageKey]).toBeUndefined();
     });
 
     it("should not clear state after cleanup if clearOnCleanup is false", async () => {
@@ -171,7 +171,7 @@ describe("DefaultDerivedState", () => {
       parentState$.next(newDate);
       await awaitAsync();
 
-      expect(memoryStorage.internalStore[deriveDefinition.buildCacheKey()]).toEqual(
+      expect(memoryStorage.internalStore[deriveDefinition.storageKey]).toEqual(
         derivedValue(new Date(newDate)),
       );
 
@@ -179,7 +179,7 @@ describe("DefaultDerivedState", () => {
       // Wait for cleanup
       await awaitAsync(cleanupDelayMs * 2);
 
-      expect(memoryStorage.internalStore[deriveDefinition.buildCacheKey()]).toEqual(
+      expect(memoryStorage.internalStore[deriveDefinition.storageKey]).toEqual(
         derivedValue(new Date(newDate)),
       );
     });

@@ -171,8 +171,8 @@ export class DeriveDefinition<TFrom, TTo, TDeps extends DerivedStateDependencies
     return this.options.clearOnCleanup ?? true;
   }
 
-  buildCacheKey(): string {
-    return `derived_${this.stateDefinition.name}_${this.uniqueDerivationName}`;
+  buildCacheKey(location: string): string {
+    return `derived_${location}_${this.stateDefinition.name}_${this.uniqueDerivationName}`;
   }
 
   /**

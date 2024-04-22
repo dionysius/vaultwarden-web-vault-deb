@@ -111,7 +111,6 @@ import { KeyGenerationService } from "@bitwarden/common/platform/services/key-ge
 import { MemoryStorageService } from "@bitwarden/common/platform/services/memory-storage.service";
 import { MigrationBuilderService } from "@bitwarden/common/platform/services/migration-builder.service";
 import { MigrationRunner } from "@bitwarden/common/platform/services/migration-runner";
-import { StorageServiceProvider } from "@bitwarden/common/platform/services/storage-service.provider";
 import { SystemService } from "@bitwarden/common/platform/services/system.service";
 import { UserKeyInitService } from "@bitwarden/common/platform/services/user-key-init.service";
 import { WebCryptoFunctionService } from "@bitwarden/common/platform/services/web-crypto-function.service";
@@ -226,6 +225,7 @@ import { BackgroundPlatformUtilsService } from "../platform/services/platform-ut
 import { BrowserPlatformUtilsService } from "../platform/services/platform-utils/browser-platform-utils.service";
 import { BackgroundDerivedStateProvider } from "../platform/state/background-derived-state.provider";
 import { BackgroundMemoryStorageService } from "../platform/storage/background-memory-storage.service";
+import { BrowserStorageServiceProvider } from "../platform/storage/browser-storage-service.provider";
 import { ForegroundMemoryStorageService } from "../platform/storage/foreground-memory-storage.service";
 import { fromChromeRuntimeMessaging } from "../platform/utils/from-chrome-runtime-messaging";
 import VaultTimeoutService from "../services/vault-timeout/vault-timeout.service";
@@ -246,6 +246,8 @@ export default class MainBackground {
   secureStorageService: AbstractStorageService;
   memoryStorageService: AbstractMemoryStorageService;
   memoryStorageForStateProviders: AbstractMemoryStorageService & ObservableStorageService;
+  largeObjectMemoryStorageForStateProviders: AbstractMemoryStorageService &
+    ObservableStorageService;
   i18nService: I18nServiceAbstraction;
   platformUtilsService: PlatformUtilsServiceAbstraction;
   logService: LogServiceAbstraction;
@@ -424,12 +426,16 @@ export default class MainBackground {
       ? mv3MemoryStorageCreator("stateService")
       : new MemoryStorageService();
     this.memoryStorageForStateProviders = BrowserApi.isManifestVersion(3)
-      ? mv3MemoryStorageCreator("stateProviders")
-      : new BackgroundMemoryStorageService();
+      ? new BrowserMemoryStorageService() // mv3 stores to storage.session
+      : new BackgroundMemoryStorageService(); // mv2 stores to memory
+    this.largeObjectMemoryStorageForStateProviders = BrowserApi.isManifestVersion(3)
+      ? mv3MemoryStorageCreator("stateProviders") // mv3 stores to local-backed session storage
+      : this.memoryStorageForStateProviders; // mv2 stores to the same location
 
-    const storageServiceProvider = new StorageServiceProvider(
+    const storageServiceProvider = new BrowserStorageServiceProvider(
       this.storageService,
       this.memoryStorageForStateProviders,
+      this.largeObjectMemoryStorageForStateProviders,
     );
 
     this.globalStateProvider = new DefaultGlobalStateProvider(storageServiceProvider);
@@ -466,9 +472,7 @@ export default class MainBackground {
       this.accountService,
       this.singleUserStateProvider,
     );
-    this.derivedStateProvider = new BackgroundDerivedStateProvider(
-      this.memoryStorageForStateProviders,
-    );
+    this.derivedStateProvider = new BackgroundDerivedStateProvider(storageServiceProvider);
     this.stateProvider = new DefaultStateProvider(
       this.activeUserStateProvider,
       this.singleUserStateProvider,

@@ -33,13 +33,14 @@ jest.mock("../browser/run-inside-angular.operator", () => {
 describe("ForegroundDerivedState", () => {
   let sut: ForegroundDerivedState<Date>;
   let memoryStorage: FakeStorageService;
+  const portName = "testPort";
   const ngZone = mock<NgZone>();
 
   beforeEach(() => {
     memoryStorage = new FakeStorageService();
     memoryStorage.internalUpdateValuesRequireDeserialization(true);
     mockPorts();
-    sut = new ForegroundDerivedState(deriveDefinition, memoryStorage, ngZone);
+    sut = new ForegroundDerivedState(deriveDefinition, memoryStorage, portName, ngZone);
   });
 
   afterEach(() => {

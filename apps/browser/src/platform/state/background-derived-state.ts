@@ -23,10 +23,10 @@ export class BackgroundDerivedState<
     parentState$: Observable<TFrom>,
     deriveDefinition: DeriveDefinition<TFrom, TTo, TDeps>,
     memoryStorage: AbstractStorageService & ObservableStorageService,
+    portName: string,
     dependencies: TDeps,
   ) {
     super(parentState$, deriveDefinition, memoryStorage, dependencies);
-    const portName = deriveDefinition.buildCacheKey();
 
     // listen for foreground derived states to connect
     BrowserApi.addListener(chrome.runtime.onConnect, (port) => {
