@@ -98,7 +98,9 @@ import { StateFactory } from "@bitwarden/common/platform/factories/state-factory
 import { Message, MessageListener, MessageSender } from "@bitwarden/common/platform/messaging";
 // eslint-disable-next-line no-restricted-imports -- Used for dependency creation
 import { SubjectMessageSender } from "@bitwarden/common/platform/messaging/internal";
+import { Lazy } from "@bitwarden/common/platform/misc/lazy";
 import { GlobalState } from "@bitwarden/common/platform/models/domain/global-state";
+import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
 import { AppIdService } from "@bitwarden/common/platform/services/app-id.service";
 import { ConfigApiService } from "@bitwarden/common/platform/services/config/config-api.service";
 import { DefaultConfigService } from "@bitwarden/common/platform/services/config/default-config.service";
@@ -404,32 +406,51 @@ export default class MainBackground {
       self,
     );
 
-    const mv3MemoryStorageCreator = (partitionName: string) => {
-      if (this.popupOnlyContext) {
-        return new ForegroundMemoryStorageService(partitionName);
+    // Creates a session key for mv3 storage of large memory items
+    const sessionKey = new Lazy(async () => {
+      // Key already in session storage
+      const sessionStorage = new BrowserMemoryStorageService();
+      const existingKey = await sessionStorage.get<SymmetricCryptoKey>("session-key");
+      if (existingKey) {
+        if (sessionStorage.valuesRequireDeserialization) {
+          return SymmetricCryptoKey.fromJSON(existingKey);
+        }
+        return existingKey;
       }
 
-      // TODO: Consider using multithreaded encrypt service in popup only context
+      // New key
+      const { derivedKey } = await this.keyGenerationService.createKeyWithPurpose(
+        128,
+        "ephemeral",
+        "bitwarden-ephemeral",
+      );
+      await sessionStorage.save("session-key", derivedKey);
+      return derivedKey;
+    });
+
+    const mv3MemoryStorageCreator = () => {
+      if (this.popupOnlyContext) {
+        return new ForegroundMemoryStorageService();
+      }
+
       return new LocalBackedSessionStorageService(
-        this.logService,
+        sessionKey,
+        this.storageService,
         new EncryptServiceImplementation(this.cryptoFunctionService, this.logService, false),
-        this.keyGenerationService,
-        new BrowserLocalStorageService(),
-        new BrowserMemoryStorageService(),
         this.platformUtilsService,
-        partitionName,
+        this.logService,
       );
     };
 
     this.secureStorageService = this.storageService; // secure storage is not supported in browsers, so we use local storage and warn users when it is used
-    this.memoryStorageService = BrowserApi.isManifestVersion(3)
-      ? mv3MemoryStorageCreator("stateService")
-      : new MemoryStorageService();
     this.memoryStorageForStateProviders = BrowserApi.isManifestVersion(3)
       ? new BrowserMemoryStorageService() // mv3 stores to storage.session
       : new BackgroundMemoryStorageService(); // mv2 stores to memory
+    this.memoryStorageService = BrowserApi.isManifestVersion(3)
+      ? this.memoryStorageForStateProviders // manifest v3 can reuse the same storage. They are split for v2 due to lacking a good sync mechanism, which isn't true for v3
+      : new MemoryStorageService();
     this.largeObjectMemoryStorageForStateProviders = BrowserApi.isManifestVersion(3)
-      ? mv3MemoryStorageCreator("stateProviders") // mv3 stores to local-backed session storage
+      ? mv3MemoryStorageCreator() // mv3 stores to local-backed session storage
       : this.memoryStorageForStateProviders; // mv2 stores to the same location
 
     const storageServiceProvider = new BrowserStorageServiceProvider(

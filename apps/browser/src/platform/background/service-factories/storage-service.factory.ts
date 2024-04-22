@@ -3,6 +3,8 @@ import {
   AbstractStorageService,
   ObservableStorageService,
 } from "@bitwarden/common/platform/abstractions/storage.service";
+import { Lazy } from "@bitwarden/common/platform/misc/lazy";
+import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
 import { MemoryStorageService } from "@bitwarden/common/platform/services/memory-storage.service";
 
 import { BrowserApi } from "../../browser/browser-api";
@@ -17,10 +19,10 @@ import {
   KeyGenerationServiceInitOptions,
   keyGenerationServiceFactory,
 } from "./key-generation-service.factory";
-import { logServiceFactory, LogServiceInitOptions } from "./log-service.factory";
+import { LogServiceInitOptions, logServiceFactory } from "./log-service.factory";
 import {
-  platformUtilsServiceFactory,
   PlatformUtilsServiceInitOptions,
+  platformUtilsServiceFactory,
 } from "./platform-utils-service.factory";
 
 export type DiskStorageServiceInitOptions = FactoryOptions;
@@ -70,13 +72,23 @@ export function memoryStorageServiceFactory(
   return factory(cache, "memoryStorageService", opts, async () => {
     if (BrowserApi.isManifestVersion(3)) {
       return new LocalBackedSessionStorageService(
-        await logServiceFactory(cache, opts),
-        await encryptServiceFactory(cache, opts),
-        await keyGenerationServiceFactory(cache, opts),
+        new Lazy(async () => {
+          const existingKey = await (
+            await sessionStorageServiceFactory(cache, opts)
+          ).get<SymmetricCryptoKey>("session-key");
+          if (existingKey) {
+            return existingKey;
+          }
+          const { derivedKey } = await (
+            await keyGenerationServiceFactory(cache, opts)
+          ).createKeyWithPurpose(128, "ephemeral", "bitwarden-ephemeral");
+          await (await sessionStorageServiceFactory(cache, opts)).save("session-key", derivedKey);
+          return derivedKey;
+        }),
         await diskStorageServiceFactory(cache, opts),
-        await sessionStorageServiceFactory(cache, opts),
+        await encryptServiceFactory(cache, opts),
         await platformUtilsServiceFactory(cache, opts),
-        "serviceFactories",
+        await logServiceFactory(cache, opts),
       );
     }
     return new MemoryStorageService();

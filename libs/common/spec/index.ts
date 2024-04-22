@@ -4,3 +4,4 @@ export * from "./matchers";
 export * from "./fake-state-provider";
 export * from "./fake-state";
 export * from "./fake-account-service";
+export * from "./fake-storage.service";
