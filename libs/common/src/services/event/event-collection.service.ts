@@ -36,7 +36,7 @@ export class EventCollectionService implements EventCollectionServiceAbstraction
     const userId = await firstValueFrom(this.stateProvider.activeUserId$);
     const eventStore = this.stateProvider.getUser(userId, EVENT_COLLECTION);
 
-    if (!(await this.shouldUpdate(cipherId, organizationId))) {
+    if (!(await this.shouldUpdate(cipherId, organizationId, eventType))) {
       return;
     }
 
@@ -64,6 +64,7 @@ export class EventCollectionService implements EventCollectionServiceAbstraction
   private async shouldUpdate(
     cipherId: string = null,
     organizationId: string = null,
+    eventType: EventType = null,
   ): Promise<boolean> {
     const orgIds$ = this.organizationService.organizations$.pipe(
       map((orgs) => orgs?.filter((o) => o.useEvents)?.map((x) => x.id) ?? []),
@@ -83,6 +84,11 @@ export class EventCollectionService implements EventCollectionServiceAbstraction
     // User must have organizations assigned to them
     if (orgIds == null || orgIds.length == 0) {
       return false;
+    }
+
+    // Individual vault export doesn't need cipher id or organization id.
+    if (eventType == EventType.User_ClientExportedVault) {
+      return true;
     }
 
     // If the cipher is null there must be an organization id provided
