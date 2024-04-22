@@ -80,7 +80,7 @@ export class VaultHeaderComponent implements OnInit {
       ? this.i18nService.t("collections").toLowerCase()
       : this.i18nService.t("vault").toLowerCase();
 
-    if (this.collection !== undefined) {
+    if (this.collection != null) {
       return this.collection.node.name;
     }
 

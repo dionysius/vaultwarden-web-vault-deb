@@ -958,11 +958,9 @@ export class VaultComponent implements OnInit, OnDestroy {
         this.i18nService.t("deletedCollectionId", collection.name),
       );
 
-      // Navigate away if we deleted the colletion we were viewing
+      // Navigate away if we deleted the collection we were viewing
       if (this.selectedCollection?.node.id === collection.id) {
-        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-        // eslint-disable-next-line @typescript-eslint/no-floating-promises
-        this.router.navigate([], {
+        void this.router.navigate([], {
           queryParams: { collectionId: this.selectedCollection.parent?.node.id ?? null },
           queryParamsHandling: "merge",
           replaceUrl: true,
@@ -1095,6 +1093,18 @@ export class VaultComponent implements OnInit, OnDestroy {
       result.action === CollectionDialogAction.Deleted
     ) {
       this.refresh();
+
+      // If we deleted the selected collection, navigate up/away
+      if (
+        result.action === CollectionDialogAction.Deleted &&
+        this.selectedCollection?.node.id === c?.id
+      ) {
+        void this.router.navigate([], {
+          queryParams: { collectionId: this.selectedCollection.parent?.node.id ?? null },
+          queryParamsHandling: "merge",
+          replaceUrl: true,
+        });
+      }
     }
   }
 
