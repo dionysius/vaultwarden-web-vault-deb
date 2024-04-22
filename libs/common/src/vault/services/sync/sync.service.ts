@@ -15,7 +15,6 @@ import { AccountService } from "../../../auth/abstractions/account.service";
 import { AvatarService } from "../../../auth/abstractions/avatar.service";
 import { KeyConnectorService } from "../../../auth/abstractions/key-connector.service";
 import { InternalMasterPasswordServiceAbstraction } from "../../../auth/abstractions/master-password.service.abstraction";
-import { TokenService } from "../../../auth/abstractions/token.service";
 import { ForceSetPasswordReason } from "../../../auth/models/domain/force-set-password-reason";
 import { DomainSettingsService } from "../../../autofill/services/domain-settings.service";
 import { BillingAccountProfileStateService } from "../../../billing/abstractions/account/billing-account-profile-state.service";
@@ -74,7 +73,6 @@ export class SyncService implements SyncServiceAbstraction {
     private avatarService: AvatarService,
     private logoutCallback: (expired: boolean) => Promise<void>,
     private billingAccountProfileStateService: BillingAccountProfileStateService,
-    private tokenService: TokenService,
   ) {}
 
   async getLastSync(): Promise<Date> {
@@ -311,7 +309,7 @@ export class SyncService implements SyncServiceAbstraction {
   }
 
   private async syncProfile(response: ProfileResponse) {
-    const stamp = await this.tokenService.getSecurityStamp(response.id as UserId);
+    const stamp = await this.stateService.getSecurityStamp();
     if (stamp != null && stamp !== response.securityStamp) {
       if (this.logoutCallback != null) {
         await this.logoutCallback(true);
@@ -325,7 +323,7 @@ export class SyncService implements SyncServiceAbstraction {
     await this.cryptoService.setProviderKeys(response.providers);
     await this.cryptoService.setOrgKeys(response.organizations, response.providerOrganizations);
     await this.avatarService.setSyncAvatarColor(response.id as UserId, response.avatarColor);
-    await this.tokenService.setSecurityStamp(response.securityStamp, response.id as UserId);
+    await this.stateService.setSecurityStamp(response.securityStamp);
     await this.stateService.setEmailVerified(response.emailVerified);
 
     await this.billingAccountProfileStateService.setHasPremium(

@@ -69,8 +69,3 @@ export const API_KEY_CLIENT_SECRET_MEMORY = new UserKeyDefinition<string>(
     clearOn: [], // Manually handled
   },
 );
-
-export const SECURITY_STAMP_MEMORY = new UserKeyDefinition<string>(TOKEN_MEMORY, "securityStamp", {
-  deserializer: (securityStamp) => securityStamp,
-  clearOn: ["logout"],
-});

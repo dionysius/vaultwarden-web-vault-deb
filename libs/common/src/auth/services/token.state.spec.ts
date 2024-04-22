@@ -10,7 +10,6 @@ import {
   EMAIL_TWO_FACTOR_TOKEN_RECORD_DISK_LOCAL,
   REFRESH_TOKEN_DISK,
   REFRESH_TOKEN_MEMORY,
-  SECURITY_STAMP_MEMORY,
 } from "./token.state";
 
 describe.each([
@@ -23,7 +22,6 @@ describe.each([
   [API_KEY_CLIENT_ID_MEMORY, "apiKeyClientIdMemory"],
   [API_KEY_CLIENT_SECRET_DISK, "apiKeyClientSecretDisk"],
   [API_KEY_CLIENT_SECRET_MEMORY, "apiKeyClientSecretMemory"],
-  [SECURITY_STAMP_MEMORY, "securityStamp"],
 ])(
   "deserializes state key definitions",
   (
