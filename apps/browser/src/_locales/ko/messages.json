@@ -8,7 +8,7 @@
   },
   "extDesc": {
     "message": "집에서도, 직장에서도, 이동 중에도 Bitwarden은 비밀번호, 패스키, 민감 정보를 쉽게 보호합니다.",
-    "description": "Extension description"
+    "description": "Extension description, MUST be less than 112 characters (Safari restriction)"
   },
   "loginOrCreateNewAccount": {
     "message": "안전 보관함에 접근하려면 로그인하거나 새 계정을 만드세요."

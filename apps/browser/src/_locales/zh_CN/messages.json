@@ -8,7 +8,7 @@
   },
   "extDesc": {
     "message": "无论是在家里、工作中还是在外出时，Bitwarden 都可以轻松地保护您的所有密码、通行密钥和敏感信息。",
-    "description": "Extension description"
+    "description": "Extension description, MUST be less than 112 characters (Safari restriction)"
   },
   "loginOrCreateNewAccount": {
     "message": "登录或者创建一个账户来访问您的安全密码库。"
