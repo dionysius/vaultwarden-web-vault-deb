@@ -47,3 +47,8 @@ $card-icons-base: "../../src/billing/images/cards/";
 @import "bootstrap/scss/_print";
 
 @import "multi-select/scss/bw.theme.scss";
+
+// Workaround for https://bitwarden.atlassian.net/browse/CL-110
+#storybook-docs pre.prismjs {
+  color: white;
+}
