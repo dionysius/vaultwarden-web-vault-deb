@@ -118,6 +118,7 @@ import { EnvironmentService } from "../platform/abstractions/environment.service
 import { PlatformUtilsService } from "../platform/abstractions/platform-utils.service";
 import { StateService } from "../platform/abstractions/state.service";
 import { Utils } from "../platform/misc/utils";
+import { UserId } from "../types/guid";
 import { AttachmentRequest } from "../vault/models/request/attachment.request";
 import { CipherBulkDeleteRequest } from "../vault/models/request/cipher-bulk-delete.request";
 import { CipherBulkMoveRequest } from "../vault/models/request/cipher-bulk-move.request";
@@ -1423,8 +1424,8 @@ export class ApiService implements ApiServiceAbstraction {
     return new ListResponse(r, EventResponse);
   }
 
-  async postEventsCollect(request: EventRequest[]): Promise<any> {
-    const authHeader = await this.getActiveBearerToken();
+  async postEventsCollect(request: EventRequest[], userId?: UserId): Promise<any> {
+    const authHeader = await this.tokenService.getAccessToken(userId);
     const headers = new Headers({
       "Device-Type": this.deviceType,
       Authorization: "Bearer " + authHeader,

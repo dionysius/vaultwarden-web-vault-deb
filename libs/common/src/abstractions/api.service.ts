@@ -103,6 +103,7 @@ import { EventResponse } from "../models/response/event.response";
 import { ListResponse } from "../models/response/list.response";
 import { ProfileResponse } from "../models/response/profile.response";
 import { UserKeyResponse } from "../models/response/user-key.response";
+import { UserId } from "../types/guid";
 import { AttachmentRequest } from "../vault/models/request/attachment.request";
 import { CipherBulkDeleteRequest } from "../vault/models/request/cipher-bulk-delete.request";
 import { CipherBulkMoveRequest } from "../vault/models/request/cipher-bulk-move.request";
@@ -451,7 +452,13 @@ export abstract class ApiService {
     end: string,
     token: string,
   ) => Promise<ListResponse<EventResponse>>;
-  postEventsCollect: (request: EventRequest[]) => Promise<any>;
+
+  /**
+   * Posts events for a user
+   * @param request The array of events to upload
+   * @param userId The optional user id the events belong to. If no user id is provided the active user id is used.
+   */
+  postEventsCollect: (request: EventRequest[], userId?: UserId) => Promise<any>;
 
   deleteSsoUser: (organizationId: string) => Promise<void>;
   getSsoUserIdentifier: () => Promise<string>;

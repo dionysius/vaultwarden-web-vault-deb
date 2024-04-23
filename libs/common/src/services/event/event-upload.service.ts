@@ -70,7 +70,7 @@ export class EventUploadService implements EventUploadServiceAbstraction {
       return req;
     });
     try {
-      await this.apiService.postEventsCollect(request);
+      await this.apiService.postEventsCollect(request, userId);
     } catch (e) {
       this.logService.error(e);
       // Add the events back to state if there was an error and they were not uploaded.
