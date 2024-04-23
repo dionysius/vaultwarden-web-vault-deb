@@ -13,7 +13,7 @@
     </bit-form-field>
     <bit-form-field>
       <bit-label>{{ (passwordRemoved ? "newPassword" : "password") | i18n }}</bit-label>
-      <input bitInput type="password" formControlName="password" />
+      <input bitInput type="password" formControlName="password" autocomplete="new-password" />
       <button
         data-testid="toggle-visibility-for-password"
         type="button"
