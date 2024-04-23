@@ -3,11 +3,11 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden Password Manager",
+    "message": "Bitwarden 비밀번호 관리자",
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
-    "message": "At home, at work, or on the go, Bitwarden easily secures all your passwords, passkeys, and sensitive information.",
+    "message": "집에서도, 직장에서도, 이동 중에도 Bitwarden은 비밀번호, 패스키, 민감 정보를 쉽게 보호합니다.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -173,7 +173,7 @@
     "message": "마스터 비밀번호 변경"
   },
   "continueToWebApp": {
-    "message": "Continue to web app?"
+    "message": "웹 앱에서 계속하시겠용?"
   },
   "changeMasterPasswordOnWebConfirmation": {
     "message": "You can change your master password on the Bitwarden web app."
@@ -688,10 +688,10 @@
     "message": "Ask to update a login's password when a change is detected on a website. Applies to all logged in accounts."
   },
   "enableUsePasskeys": {
-    "message": "Ask to save and use passkeys"
+    "message": "패스키를 저장 및 사용할지 묻기"
   },
   "usePasskeysDesc": {
-    "message": "Ask to save new passkeys or log in with passkeys stored in your vault. Applies to all logged in accounts."
+    "message": "보관함에 새 패스키를 저장하거나 로그인할지 물어봅니다. 모든 로그인된 계정에 적용됩니다."
   },
   "notificationChangeDesc": {
     "message": "Bitwarden에 저장되어 있는 비밀번호를 이 비밀번호로 변경하시겠습니까?"
@@ -2786,55 +2786,55 @@
     "message": "Confirm file password"
   },
   "typePasskey": {
-    "message": "Passkey"
+    "message": "패스키"
   },
   "passkeyNotCopied": {
-    "message": "Passkey will not be copied"
+    "message": "패스키가 복사되지 않습니다"
   },
   "passkeyNotCopiedAlert": {
-    "message": "The passkey will not be copied to the cloned item. Do you want to continue cloning this item?"
+    "message": "패스키는 복제된 아이템에 복사되지 않습니다. 계속 이 항목을 복제하시겠어요?"
   },
   "passkeyFeatureIsNotImplementedForAccountsWithoutMasterPassword": {
-    "message": "Verification required by the initiating site. This feature is not yet implemented for accounts without master password."
+    "message": "사이트에서 인증을 요구합니다. 이 기능은 비밀번호가 없는 계정에서는 아직 지원하지 않습니다."
   },
   "logInWithPasskey": {
-    "message": "Log in with passkey?"
+    "message": "패스키로 로그인하시겠어요?"
   },
   "passkeyAlreadyExists": {
-    "message": "A passkey already exists for this application."
+    "message": "이미 이 애플리케이션에 해당하는 패스키가 있습니다."
   },
   "noPasskeysFoundForThisApplication": {
-    "message": "No passkeys found for this application."
+    "message": "이 애플리케이션에 대한 패스키를 찾을 수 없습니다."
   },
   "noMatchingPasskeyLogin": {
-    "message": "You do not have a matching login for this site."
+    "message": "사이트와 일치하는 로그인이 없습니다."
   },
   "confirm": {
     "message": "Confirm"
   },
   "savePasskey": {
-    "message": "Save passkey"
+    "message": "패스키 저장"
   },
   "savePasskeyNewLogin": {
-    "message": "Save passkey as new login"
+    "message": "새 로그인으로 패스키 저장"
   },
   "choosePasskey": {
-    "message": "Choose a login to save this passkey to"
+    "message": "패스키를 저장할 로그인 선택하기"
   },
   "passkeyItem": {
-    "message": "Passkey Item"
+    "message": "패스키 항목"
   },
   "overwritePasskey": {
-    "message": "Overwrite passkey?"
+    "message": "비밀번호를 덮어쓰시겠어요?"
   },
   "overwritePasskeyAlert": {
-    "message": "This item already contains a passkey. Are you sure you want to overwrite the current passkey?"
+    "message": "이 항목은 이미 패스키가 있습니다. 정말로 현재 패스키를 덮어쓰시겠어요?"
   },
   "featureNotSupported": {
     "message": "Feature not yet supported"
   },
   "yourPasskeyIsLocked": {
-    "message": "Authentication required to use passkey. Verify your identity to continue."
+    "message": "패스키를 사용하려면 인증이 필요합니다. 인증을 진행해주세요."
   },
   "multifactorAuthenticationCancelled": {
     "message": "Multifactor authentication cancelled"
@@ -3004,10 +3004,10 @@
     "message": "Success"
   },
   "removePasskey": {
-    "message": "Remove passkey"
+    "message": "패스키 제거"
   },
   "passkeyRemoved": {
-    "message": "Passkey removed"
+    "message": "패스키 제거됨"
   },
   "unassignedItemsBannerNotice": {
     "message": "Notice: Unassigned organization items are no longer visible in the All Vaults view and only accessible via the Admin Console."

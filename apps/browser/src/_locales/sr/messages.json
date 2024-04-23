@@ -173,10 +173,10 @@
     "message": "Промени главну лозинку"
   },
   "continueToWebApp": {
-    "message": "Continue to web app?"
+    "message": "Ићи на веб апликацију?"
   },
   "changeMasterPasswordOnWebConfirmation": {
-    "message": "You can change your master password on the Bitwarden web app."
+    "message": "Можете променити главну лозинку на Bitwarden веб апликацији."
   },
   "fingerprintPhrase": {
     "message": "Сигурносна Фраза Сефа",
@@ -3001,7 +3001,7 @@
     "description": "Notification message for when saving credentials has failed."
   },
   "success": {
-    "message": "Success"
+    "message": "Успех"
   },
   "removePasskey": {
     "message": "Уклонити приступачни кључ"
@@ -3010,10 +3010,10 @@
     "message": "Приступачни кључ је уклоњен"
   },
   "unassignedItemsBannerNotice": {
-    "message": "Notice: Unassigned organization items are no longer visible in the All Vaults view and only accessible via the Admin Console."
+    "message": "Напомена: Недодељене ставке организације више нису видљиве у приказу Сви сефови и доступне су само преко Админ конзоле."
   },
   "unassignedItemsBannerSelfHostNotice": {
-    "message": "Notice: On May 16, 2024, unassigned organization items will no longer be visible in the All Vaults view and will only be accessible via the Admin Console."
+    "message": "Напомена: од 16 Маја 2024м недодељене ставке организације више нису видљиве у приказу Сви сефови и доступне су само преко Админ конзоле."
   },
   "unassignedItemsBannerCTAPartOne": {
     "message": "Assign these items to a collection from the",
@@ -3024,12 +3024,12 @@
     "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
   },
   "adminConsole": {
-    "message": "Admin Console"
+    "message": "Администраторска конзола"
   },
   "errorAssigningTargetCollection": {
-    "message": "Error assigning target collection."
+    "message": "Грешка при додељивању циљне колекције."
   },
   "errorAssigningTargetFolder": {
-    "message": "Error assigning target folder."
+    "message": "Грешка при додељивању циљне фасцикле."
   }
 }

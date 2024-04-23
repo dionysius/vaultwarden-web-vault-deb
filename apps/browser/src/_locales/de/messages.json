@@ -3,11 +3,11 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden Password Manager",
+    "message": "Bitwarden Passwortmanager",
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
-    "message": "At home, at work, or on the go, Bitwarden easily secures all your passwords, passkeys, and sensitive information.",
+    "message": "Zu Hause, am Arbeitsplatz oder unterwegs schützt Bitwarden einfach alle deine Passwörter, Passkeys und vertraulichen Informationen.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -173,10 +173,10 @@
     "message": "Master-Passwort ändern"
   },
   "continueToWebApp": {
-    "message": "Continue to web app?"
+    "message": "Weiter zur Web-App?"
   },
   "changeMasterPasswordOnWebConfirmation": {
-    "message": "You can change your master password on the Bitwarden web app."
+    "message": "Du kannst dein Master-Passwort in der Bitwarden Web-App ändern."
   },
   "fingerprintPhrase": {
     "message": "Fingerabdruck-Phrase",
@@ -3001,7 +3001,7 @@
     "description": "Notification message for when saving credentials has failed."
   },
   "success": {
-    "message": "Success"
+    "message": "Erfolg"
   },
   "removePasskey": {
     "message": "Passkey entfernen"
@@ -3010,21 +3010,21 @@
     "message": "Passkey entfernt"
   },
   "unassignedItemsBannerNotice": {
-    "message": "Notice: Unassigned organization items are no longer visible in the All Vaults view and only accessible via the Admin Console."
+    "message": "Hinweis: Nicht zugeordnete Organisationseinträge sind nicht mehr in der Ansicht aller Tresore sichtbar und nur über die Administrator-Konsole zugänglich."
   },
   "unassignedItemsBannerSelfHostNotice": {
-    "message": "Notice: On May 16, 2024, unassigned organization items will no longer be visible in the All Vaults view and will only be accessible via the Admin Console."
+    "message": "Hinweis: Ab dem 16. Mai 2024 sind nicht zugewiesene Organisationselemente nicht mehr in der Ansicht aller Tresore sichtbar und nur über die Administrator-Konsole zugänglich."
   },
   "unassignedItemsBannerCTAPartOne": {
-    "message": "Assign these items to a collection from the",
+    "message": "Weise diese Einträge einer Sammlung aus der",
     "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
   },
   "unassignedItemsBannerCTAPartTwo": {
-    "message": "to make them visible.",
+    "message": "zu, um sie sichtbar zu machen.",
     "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
   },
   "adminConsole": {
-    "message": "Admin Console"
+    "message": "Administrator-Konsole"
   },
   "errorAssigningTargetCollection": {
     "message": "Fehler beim Zuweisen der Ziel-Sammlung."

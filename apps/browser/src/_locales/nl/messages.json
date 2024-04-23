@@ -531,7 +531,7 @@
     "message": "Kan de QR-code van de huidige webpagina niet scannen"
   },
   "totpCaptureSuccess": {
-    "message": "Authenticatie-sleutel toegevoegd"
+    "message": "Authenticatiesleutel toegevoegd"
   },
   "totpCapture": {
     "message": "Scan de authenticatie-QR-code van de huidige webpagina"
@@ -1673,10 +1673,10 @@
     "message": "Browserintegratie is niet ingeschakeld in de Bitwarden-desktopapplicatie. Schakel deze optie in de instellingen binnen de desktop-applicatie in."
   },
   "startDesktopTitle": {
-    "message": "Bitwarden-desktopapplicatie opstarten"
+    "message": "Bitwarden desktopapplicatie opstarten"
   },
   "startDesktopDesc": {
-    "message": "Je moet de Bitwarden-desktopapplicatie starten om deze functie te gebruiken."
+    "message": "Je moet de Bitwarden desktopapplicatie starten om deze functie te gebruiken."
   },
   "errorEnableBiometricTitle": {
     "message": "Kon biometrie niet inschakelen"

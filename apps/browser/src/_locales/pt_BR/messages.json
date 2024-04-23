@@ -3,11 +3,11 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden Password Manager",
+    "message": "Bitwarden Gerenciador de Senhas",
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
-    "message": "At home, at work, or on the go, Bitwarden easily secures all your passwords, passkeys, and sensitive information.",
+    "message": "Em casa, no trabalho, ou em qualquer lugar, o Bitwarden protege facilmente todas as suas senhas, senhas e informações confidenciais.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -173,10 +173,10 @@
     "message": "Alterar Senha Mestra"
   },
   "continueToWebApp": {
-    "message": "Continue to web app?"
+    "message": "Continuar no aplicativo web?"
   },
   "changeMasterPasswordOnWebConfirmation": {
-    "message": "You can change your master password on the Bitwarden web app."
+    "message": "Você pode alterar a sua senha mestra no aplicativo web Bitwarden."
   },
   "fingerprintPhrase": {
     "message": "Frase Biométrica",
@@ -500,10 +500,10 @@
     "message": "A sua nova conta foi criada! Agora você pode iniciar a sessão."
   },
   "youSuccessfullyLoggedIn": {
-    "message": "You successfully logged in"
+    "message": "Você logou na sua conta com sucesso"
   },
   "youMayCloseThisWindow": {
-    "message": "You may close this window"
+    "message": "Você pode fechar esta janela"
   },
   "masterPassSent": {
     "message": "Enviamos um e-mail com a dica da sua senha mestra."
@@ -1500,7 +1500,7 @@
     "message": "Código PIN inválido."
   },
   "tooManyInvalidPinEntryAttemptsLoggingOut": {
-    "message": "Too many invalid PIN entry attempts. Logging out."
+    "message": "Muitas tentativas de entrada de PIN inválidas. Desconectando."
   },
   "unlockWithBiometrics": {
     "message": "Desbloquear com a biometria"
@@ -2005,7 +2005,7 @@
     "message": "Selecionar pasta..."
   },
   "noFoldersFound": {
-    "message": "No folders found",
+    "message": "Nenhuma pasta encontrada",
     "description": "Used as a message within the notification bar when no folders are found"
   },
   "orgPermissionsUpdatedMustSetPassword": {
@@ -2017,7 +2017,7 @@
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "verificationRequired": {
-    "message": "Verification required",
+    "message": "Verificação necessária",
     "description": "Default title for the user verification dialog."
   },
   "hours": {
@@ -2652,40 +2652,40 @@
     }
   },
   "tryAgain": {
-    "message": "Try again"
+    "message": "Tentar novamente"
   },
   "verificationRequiredForActionSetPinToContinue": {
-    "message": "Verification required for this action. Set a PIN to continue."
+    "message": "Verificação necessária para esta ação. Defina um PIN para continuar."
   },
   "setPin": {
-    "message": "Set PIN"
+    "message": "Definir PIN"
   },
   "verifyWithBiometrics": {
-    "message": "Verify with biometrics"
+    "message": "Verificiar com biometria"
   },
   "awaitingConfirmation": {
-    "message": "Awaiting confirmation"
+    "message": "Aguardando confirmação"
   },
   "couldNotCompleteBiometrics": {
-    "message": "Could not complete biometrics."
+    "message": "Não foi possível completar a biometria."
   },
   "needADifferentMethod": {
-    "message": "Need a different method?"
+    "message": "Precisa de um método diferente?"
   },
   "useMasterPassword": {
-    "message": "Use master password"
+    "message": "Usar a senha mestra"
   },
   "usePin": {
-    "message": "Use PIN"
+    "message": "Usar PIN"
   },
   "useBiometrics": {
-    "message": "Use biometrics"
+    "message": "Usar biometria"
   },
   "enterVerificationCodeSentToEmail": {
-    "message": "Enter the verification code that was sent to your email."
+    "message": "Digite o código de verificação que foi enviado para o seu e-mail."
   },
   "resendCode": {
-    "message": "Resend code"
+    "message": "Reenviar código"
   },
   "total": {
     "message": "Total"
@@ -2700,19 +2700,19 @@
     }
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
-    "message": "Launch Duo and follow the steps to finish logging in."
+    "message": "Inicie o Duo e siga os passos para finalizar o login."
   },
   "duoRequiredForAccount": {
-    "message": "Duo two-step login is required for your account."
+    "message": "A autenticação em duas etapas do Duo é necessária para sua conta."
   },
   "popoutTheExtensionToCompleteLogin": {
-    "message": "Popout the extension to complete login."
+    "message": "Abra a extensão para concluir o login."
   },
   "popoutExtension": {
-    "message": "Popout extension"
+    "message": "Extensão pop-out"
   },
   "launchDuo": {
-    "message": "Launch Duo"
+    "message": "Abrir o Duo"
   },
   "importFormatError": {
     "message": "Os dados não estão formatados corretamente. Por favor, verifique o seu arquivo de importação e tente novamente."
@@ -2846,13 +2846,13 @@
     "message": "Nome de usuário ou senha incorretos"
   },
   "incorrectPassword": {
-    "message": "Incorrect password"
+    "message": "Senha incorreta"
   },
   "incorrectCode": {
-    "message": "Incorrect code"
+    "message": "Código incorreto"
   },
   "incorrectPin": {
-    "message": "Incorrect PIN"
+    "message": "PIN incorreto"
   },
   "multifactorAuthenticationFailed": {
     "message": "Falha na autenticação de múltiplos fatores"
@@ -2965,71 +2965,71 @@
     "description": "Label indicating the most common import formats"
   },
   "overrideDefaultBrowserAutofillTitle": {
-    "message": "Make Bitwarden your default password manager?",
+    "message": "Tornar o Bitwarden seu gerenciador de senhas padrão?",
     "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutofillDescription": {
-    "message": "Ignoring this option may cause conflicts between the Bitwarden auto-fill menu and your browser's.",
+    "message": "Ignorar esta opção pode causar conflitos entre o menu de autopreenchimento do Bitwarden e o do seu navegador.",
     "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutoFillSettings": {
-    "message": "Make Bitwarden your default password manager",
+    "message": "Faça do Bitwarden seu gerenciador de senhas padrão",
     "description": "Label for the setting that allows overriding the default browser autofill settings"
   },
   "privacyPermissionAdditionNotGrantedTitle": {
-    "message": "Unable to set Bitwarden as the default password manager",
+    "message": "Não é possível definir o Bitwarden como o gerenciador de senhas padrão",
     "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "privacyPermissionAdditionNotGrantedDescription": {
-    "message": "You must grant browser privacy permissions to Bitwarden to set it as the default password manager.",
+    "message": "Você deve conceder permissões de privacidade do navegador ao Bitwarden para defini-lo como o Gerenciador de Senhas padrão.",
     "description": "Description for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "makeDefault": {
-    "message": "Make default",
+    "message": "Tornar padrão",
     "description": "Button text for the setting that allows overriding the default browser autofill settings"
   },
   "saveCipherAttemptSuccess": {
-    "message": "Credentials saved successfully!",
+    "message": "Credenciais salvas com sucesso!",
     "description": "Notification message for when saving credentials has succeeded."
   },
   "updateCipherAttemptSuccess": {
-    "message": "Credentials updated successfully!",
+    "message": "Credenciais atualizadas com sucesso!",
     "description": "Notification message for when updating credentials has succeeded."
   },
   "saveCipherAttemptFailed": {
-    "message": "Error saving credentials. Check console for details.",
+    "message": "Erro ao salvar credenciais. Verifique o console para detalhes.",
     "description": "Notification message for when saving credentials has failed."
   },
   "success": {
-    "message": "Success"
+    "message": "Sucesso"
   },
   "removePasskey": {
-    "message": "Remove passkey"
+    "message": "Remover senha"
   },
   "passkeyRemoved": {
-    "message": "Passkey removed"
+    "message": "Chave de acesso removida"
   },
   "unassignedItemsBannerNotice": {
-    "message": "Notice: Unassigned organization items are no longer visible in the All Vaults view and only accessible via the Admin Console."
+    "message": "Aviso: Itens da organização não atribuídos não estão mais visíveis na visualização Todos os Cofres e só são acessíveis por meio do painel de administração."
   },
   "unassignedItemsBannerSelfHostNotice": {
-    "message": "Notice: On May 16, 2024, unassigned organization items will no longer be visible in the All Vaults view and will only be accessible via the Admin Console."
+    "message": "Aviso: Em 16 de maio, 2024, itens da organização não serão mais visíveis na visualização Todos os Cofres e só serão acessíveis por meio do painel de administração."
   },
   "unassignedItemsBannerCTAPartOne": {
-    "message": "Assign these items to a collection from the",
+    "message": "Atribua estes itens a uma coleção da",
     "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
   },
   "unassignedItemsBannerCTAPartTwo": {
-    "message": "to make them visible.",
+    "message": "para torná-los visíveis.",
     "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
   },
   "adminConsole": {
-    "message": "Admin Console"
+    "message": "Painel de administração"
   },
   "errorAssigningTargetCollection": {
-    "message": "Error assigning target collection."
+    "message": "Erro ao atribuir coleção de destino."
   },
   "errorAssigningTargetFolder": {
-    "message": "Error assigning target folder."
+    "message": "Erro ao atribuir pasta de destino."
   }
 }
