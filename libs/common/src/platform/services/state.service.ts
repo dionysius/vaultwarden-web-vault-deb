@@ -115,14 +115,19 @@ export class StateService<
       return;
     }
 
+    // Get all likely authenticated accounts
+    const authenticatedAccounts = (
+      (await this.storageService.get<string[]>(keys.authenticatedAccounts)) ?? []
+    ).filter((account) => account != null);
+
     await this.updateState(async (state) => {
-      state.authenticatedAccounts =
-        (await this.storageService.get<string[]>(keys.authenticatedAccounts)) ?? [];
-      for (const i in state.authenticatedAccounts) {
-        if (i != null) {
-          state = await this.syncAccountFromDisk(state.authenticatedAccounts[i]);
-        }
+      for (const i in authenticatedAccounts) {
+        state = await this.syncAccountFromDisk(authenticatedAccounts[i]);
       }
+
+      // After all individual accounts have been added
+      state.authenticatedAccounts = authenticatedAccounts;
+
       const storedActiveUser = await this.storageService.get<string>(keys.activeUserId);
       if (storedActiveUser != null) {
         state.activeUserId = storedActiveUser;
