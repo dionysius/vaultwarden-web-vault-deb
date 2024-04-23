@@ -9,7 +9,7 @@ import {
   OnInit,
   Output,
 } from "@angular/core";
-import { firstValueFrom, Subject, takeUntil } from "rxjs";
+import { firstValueFrom } from "rxjs";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AuditService } from "@bitwarden/common/abstractions/audit.service";
@@ -69,7 +69,6 @@ export class ViewComponent implements OnDestroy, OnInit {
   private totpInterval: any;
   private previousCipherId: string;
   private passwordReprompted = false;
-  private directiveIsDestroyed$ = new Subject<boolean>();
 
   get fido2CredentialCreationDateValue(): string {
     const dateCreated = this.i18nService.t("dateCreated");
@@ -119,19 +118,11 @@ export class ViewComponent implements OnDestroy, OnInit {
         }
       });
     });
-
-    this.billingAccountProfileStateService.hasPremiumFromAnySource$
-      .pipe(takeUntil(this.directiveIsDestroyed$))
-      .subscribe((canAccessPremium: boolean) => {
-        this.canAccessPremium = canAccessPremium;
-      });
   }
 
   ngOnDestroy() {
     this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
     this.cleanUp();
-    this.directiveIsDestroyed$.next(true);
-    this.directiveIsDestroyed$.complete();
   }
 
   async load() {
@@ -140,6 +131,9 @@ export class ViewComponent implements OnDestroy, OnInit {
     const cipher = await this.cipherService.get(this.cipherId);
     this.cipher = await cipher.decrypt(
       await this.cipherService.getKeyForCipherKeyDecryption(cipher),
+    );
+    this.canAccessPremium = await firstValueFrom(
+      this.billingAccountProfileStateService.hasPremiumFromAnySource$,
     );
     this.showPremiumRequiredTotp =
       this.cipher.login.totp && !this.canAccessPremium && !this.cipher.organizationUseTotp;
