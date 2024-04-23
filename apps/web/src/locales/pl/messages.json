@@ -4053,7 +4053,7 @@
     "message": "Wszystkie funkcje zespołów oraz:"
   },
   "includeAllTeamsStarterFeatures": {
-    "message": "All Teams Starter features, plus:"
+    "message": "Wszystkie funkcje z Teams Starter, plus:"
   },
   "chooseMonthlyOrAnnualBilling": {
     "message": "Wybierz miesięczną lub roczną płatność"
@@ -6737,7 +6737,7 @@
     }
   },
   "teamsStarterPlanInvLimitReachedManageBilling": {
-    "message": "Teams Starter plans may have up to $SEATCOUNT$ members. Upgrade to your plan to invite more members.",
+    "message": "Plan Teams Starter może mieć maksymalnie $SEATCOUNT$ członków. Przejdź na wyższy plan, aby zaprosić więcej członków.",
     "placeholders": {
       "seatcount": {
         "content": "$1",
@@ -6746,7 +6746,7 @@
     }
   },
   "teamsStarterPlanInvLimitReachedNoManageBilling": {
-    "message": "Teams Starter plans may have up to $SEATCOUNT$ members. Contact your organization owner to upgrade your plan and invite more members.",
+    "message": "Plan Teams Starter może mieć maksymalnie $SEATCOUNT$ członków. Skontaktuj się z właścicielem organizacji, aby przejść na wyższy plan i zaprosić więcej członków.",
     "placeholders": {
       "seatcount": {
         "content": "$1",

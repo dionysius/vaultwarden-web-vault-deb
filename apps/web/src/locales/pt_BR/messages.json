@@ -627,10 +627,10 @@
     "message": "Iniciar sessão com a chave de acesso"
   },
   "invalidPasskeyPleaseTryAgain": {
-    "message": "Invalid Passkey. Please try again."
+    "message": "Senha inválida. Por favor, tente novamente."
   },
   "twoFactorForPasskeysNotSupportedOnClientUpdateToLogIn": {
-    "message": "2FA for passkeys is not supported. Update the app to log in."
+    "message": "2FA para senhas não é suportada. Atualize o aplicativo para iniciar a sessão."
   },
   "loginWithPasskeyInfo": {
     "message": "Use uma senha gerada que fará o login automaticamente sem uma senha. Biometrias como reconhecimento facial ou impressão digital, ou outro método de segurança FIDO2 verificarão sua identidade."
@@ -1359,11 +1359,11 @@
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
   "onboardingImportDataDetailsPartTwoNoOrgs": {
-    "message": " instead.",
+    "message": " em vez disso.",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead."
   },
   "onboardingImportDataDetailsPartTwoWithOrgs": {
-    "message": " instead. You may need to wait until your administrator confirms your organization membership.",
+    "message": " em vez disso, você pode precisar esperar até que o seu administrador confirme a sua associação à organização.",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
   },
   "importError": {
@@ -2802,10 +2802,10 @@
     "message": "CLI"
   },
   "bitWebVault": {
-    "message": "Bitwarden Web vault"
+    "message": "Cofre Web do Bitwarden"
   },
   "bitSecretsManager": {
-    "message": "Bitwarden Secrets Manager"
+    "message": "Gerenciador de Segredos Bitwarden"
   },
   "loggedIn": {
     "message": "Conectado(a)."
@@ -3489,7 +3489,7 @@
     "message": "Defina um limite de vagas para sua assinatura. Quando esse limite for atingido, você não poderá convidar novos usuários."
   },
   "limitSmSubscriptionDesc": {
-    "message": "Set a seat limit for your Secrets Manager subscription. Once this limit is reached, you will not be able to invite new members."
+    "message": "Defina um limite de assento para sua assinatura do Gerenciador Secretos. Uma vez que este limite for atingido, você não poderá convidar novos membros."
   },
   "maxSeatLimit": {
     "message": "Limite Máximo de Vaga (opcional)",
@@ -3621,7 +3621,7 @@
     "message": "Atualizar Chave de Criptografia"
   },
   "updateEncryptionSchemeDesc": {
-    "message": "We've changed the encryption scheme to provide better security. Update your encryption key now by entering your master password below."
+    "message": "Alteramos o esquema de criptografia para fornecer melhor segurança. Atualize sua chave de criptografia agora digitando sua senha mestra abaixo."
   },
   "updateEncryptionKeyWarning": {
     "message": "Depois de atualizar sua chave de criptografia, é necessário encerrar e iniciar a sessão em todos os aplicativos do Bitwarden que você está usando atualmente (como o aplicativo móvel ou as extensões do navegador). Não encerrar e iniciar sessão (que baixa sua nova chave de criptografia) pode resultar em corrupção de dados. Nós tentaremos desconectá-lo automaticamente, mas isso pode demorar um pouco."
@@ -3678,7 +3678,7 @@
     "message": "Escolha quando o tempo limite do seu cofre irá se esgotar e execute a ação selecionada."
   },
   "vaultTimeoutLogoutDesc": {
-    "message": "Choose when your vault will be logged out."
+    "message": "Escolha quando seu cofre será desconectado."
   },
   "oneMinute": {
     "message": "1 minuto"
@@ -4083,7 +4083,7 @@
     "message": "Identificador SSO"
   },
   "ssoIdentifierHintPartOne": {
-    "message": "Provide this ID to your members to login with SSO. To bypass this step, set up ",
+    "message": "Forneça esse ID aos seus membros para logar com SSO. Para ignorar essa etapa, configure ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Provide this ID to your members to login with SSO. To bypass this step, set up Domain verification'"
   },
   "unlinkSso": {
@@ -4695,7 +4695,7 @@
     "message": "Inscrito na recuperação de conta"
   },
   "withdrawAccountRecovery": {
-    "message": "Withdraw from account recovery"
+    "message": "Retirar da recuperação de conta"
   },
   "enrollPasswordResetSuccess": {
     "message": "Inscrição com sucesso!"
@@ -4704,7 +4704,7 @@
     "message": "Retirada com sucesso!"
   },
   "eventEnrollAccountRecovery": {
-    "message": "User $ID$ enrolled in account recovery.",
+    "message": "O usuário $ID$ se inscreveu na recuperação de conta.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4713,7 +4713,7 @@
     }
   },
   "eventWithdrawAccountRecovery": {
-    "message": "User $ID$ withdrew from account recovery.",
+    "message": "O usuário $ID$ retirou da recuperação de conta.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4887,7 +4887,7 @@
     "message": "Erro"
   },
   "accountRecoveryManageUsers": {
-    "message": "Manage users must also be granted with the manage account recovery permission"
+    "message": "Gerenciar usuários também devem ser concedidos com a permissão de gerenciar a recuperação de contas"
   },
   "setupProvider": {
     "message": "Configuração do Provedor"
@@ -5117,7 +5117,7 @@
     "message": "Ativar preenchimento automático"
   },
   "activateAutofillPolicyDesc": {
-    "message": "Activate the auto-fill on page load setting on the browser extension for all existing and new members."
+    "message": "Ative o autopreenchimento na configuração de carregamento de página na extensão do navegador para todos os membros existentes e novos."
   },
   "experimentalFeature": {
     "message": "Sites comprometidos ou não confiáveis podem tomar vantagem do autopreenchimento ao carregar a página."
@@ -5432,7 +5432,7 @@
     "message": "Conector de Chave"
   },
   "memberDecryptionKeyConnectorDescStart": {
-    "message": "Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The",
+    "message": "Conecte o login com SSO ao seu servidor de chave de descriptografia auto-hospedado. Usando essa opção, os membros não precisarão usar suas senhas mestres para descriptografar os dados",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescLink": {
@@ -5440,7 +5440,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescEnd": {
-    "message": "are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.",
+    "message": "são necessários para configurar a descriptografia do conector chave. Contacte o suporte do Bitwarden para configurar a assistência.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "keyConnectorPolicyRestriction": {
@@ -5637,7 +5637,7 @@
     }
   },
   "exportingOrganizationVaultDesc": {
-    "message": "Only the organization vault associated with $ORGANIZATION$ will be exported. Items in individual vaults or other organizations will not be included.",
+    "message": "Apenas o cofre da organização associado com $ORGANIZATION$ será exportado. Itens do cofre pessoal e itens de outras organizações não serão incluídos.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -6707,10 +6707,10 @@
     "message": "Convidar membro"
   },
   "needsConfirmation": {
-    "message": "Needs confirmation"
+    "message": "Precisa de confirmação"
   },
   "memberRole": {
-    "message": "Member role"
+    "message": "Função de membro"
   },
   "moreFromBitwarden": {
     "message": "Mais do Bitwarden"
@@ -6719,7 +6719,7 @@
     "message": "Trocar Produtos"
   },
   "freeOrgInvLimitReachedManageBilling": {
-    "message": "Free organizations may have up to $SEATCOUNT$ members. Upgrade to a paid plan to invite more members.",
+    "message": "Organizações gratuitas podem ter até $SEATCOUNT$ membros. Faça upgrade para um plano pago para convidar mais membros.",
     "placeholders": {
       "seatcount": {
         "content": "$1",
@@ -6728,7 +6728,7 @@
     }
   },
   "freeOrgInvLimitReachedNoManageBilling": {
-    "message": "Free organizations may have up to $SEATCOUNT$ members. Contact your organization owner to upgrade.",
+    "message": "Organizações gratuitas podem ter até $SEATCOUNT$ membros. Entre em contato com o proprietário da sua organização para fazer upgrade.",
     "placeholders": {
       "seatcount": {
         "content": "$1",
@@ -6737,7 +6737,7 @@
     }
   },
   "teamsStarterPlanInvLimitReachedManageBilling": {
-    "message": "Teams Starter plans may have up to $SEATCOUNT$ members. Upgrade to your plan to invite more members.",
+    "message": "Planos de Times Starter podem ter até $SEATCOUNT$ membros. Atualize para o seu plano para convidar mais membros.",
     "placeholders": {
       "seatcount": {
         "content": "$1",
@@ -6755,7 +6755,7 @@
     }
   },
   "freeOrgMaxCollectionReachedManageBilling": {
-    "message": "Free organizations may have up to $COLLECTIONCOUNT$ collections. Upgrade to a paid plan to add more collections.",
+    "message": "Organizações gratuitas podem ter até $COLLECTIONCOUNT$ coleções. Faça o upgrade para um plano pago para adicionar mais coleções.",
     "placeholders": {
       "COLLECTIONCOUNT": {
         "content": "$1",
@@ -6764,7 +6764,7 @@
     }
   },
   "freeOrgMaxCollectionReachedNoManageBilling": {
-    "message": "Free organizations may have up to $COLLECTIONCOUNT$ collections. Contact your organization owner to upgrade.",
+    "message": "Organizações gratuitas podem ter até $COLLECTIONCOUNT$ membros. Entre em contato com o proprietário da sua organização para fazer upgrade.",
     "placeholders": {
       "COLLECTIONCOUNT": {
         "content": "$1",
@@ -6779,10 +6779,10 @@
     "message": "Exportar dados"
   },
   "exportingOrganizationSecretDataTitle": {
-    "message": "Exporting Organization Secret Data"
+    "message": "Exportando dados secretos da organização"
   },
   "exportingOrganizationSecretDataDescription": {
-    "message": "Only the Secrets Manager data associated with $ORGANIZATION$ will be exported. Items in other products or from other organizations will not be included.",
+    "message": "Apenas o cofre da organização associado com $ORGANIZATION$ será exportado. Itens do cofre pessoal e itens de outras organizações não serão incluídos.",
     "placeholders": {
       "ORGANIZATION": {
         "content": "$1",
@@ -6812,7 +6812,7 @@
     "message": "Upload manual"
   },
   "manualUploadDesc": {
-    "message": "If you do not want to opt into billing sync, manually upload your license here."
+    "message": "Se você não deseja optar pela sincronização de cobrança, carregue sua licença manualmente aqui."
   },
   "syncLicense": {
     "message": "Sincronizar licença"
@@ -6827,13 +6827,13 @@
     "message": "Última sincronização de licença"
   },
   "billingSyncHelp": {
-    "message": "Billing Sync help"
+    "message": "Ajuda da Sincronização de faturamento"
   },
   "licensePaidFeaturesHelp": {
-    "message": "License paid features help"
+    "message": "Ajuda dos recursos de licença paga"
   },
   "selfHostGracePeriodHelp": {
-    "message": "After your subscription expires, you have 60 days to apply an updated license file to your organization. Grace period ends $GRACE_PERIOD_END_DATE$.",
+    "message": "Após a expiração da assinatura, você tem 60 dias para aplicar um arquivo de licença atualizado à sua organização. Fim do período de carência $GRACE_PERIOD_END_DATE$.",
     "placeholders": {
       "GRACE_PERIOD_END_DATE": {
         "content": "$1",
@@ -6845,28 +6845,28 @@
     "message": "Enviar licença"
   },
   "projectPeopleDescription": {
-    "message": "Grant groups or people access to this project."
+    "message": "Conceder acesso a este projeto ou grupos de pessoas."
   },
   "projectPeopleSelectHint": {
-    "message": "Type or select people or groups"
+    "message": "Digite ou selecione pessoas ou grupos"
   },
   "projectServiceAccountsDescription": {
-    "message": "Grant service accounts access to this project."
+    "message": "Conceder acesso a contas de serviço a este projeto."
   },
   "projectServiceAccountsSelectHint": {
-    "message": "Type or select service accounts"
+    "message": "Digite ou selecione contas de serviço"
   },
   "projectEmptyPeopleAccessPolicies": {
-    "message": "Add people or groups to start collaborating"
+    "message": "Adicione pessoas ou grupos para começar a colaborar"
   },
   "projectEmptyServiceAccountAccessPolicies": {
     "message": "Adicione contas de serviço para conceder acesso"
   },
   "serviceAccountPeopleDescription": {
-    "message": "Grant groups or people access to this service account."
+    "message": "Conceder acesso a esta conta de serviço a grupos ou pessoas."
   },
   "serviceAccountProjectsDescription": {
-    "message": "Assign projects to this service account. "
+    "message": "Atribuir projetos para esta conta de serviço. "
   },
   "serviceAccountEmptyProjectAccesspolicies": {
     "message": "Adicionar projetos para conceder acesso"
@@ -6878,13 +6878,13 @@
     "message": "Grupo/Usuário"
   },
   "lowKdfIterations": {
-    "message": "Low KDF Iterations"
+    "message": "Iterações KDF baixas"
   },
   "updateLowKdfIterationsDesc": {
-    "message": "Update your encryption settings to meet new security recommendations and improve account protection."
+    "message": "Atualize suas configurações de criptografia para atender às novas recomendações de segurança e melhorar a proteção da conta."
   },
   "changeKdfLoggedOutWarning": {
-    "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login setup. We recommend exporting your vault before changing your encryption settings to prevent data loss."
+    "message": "O processo desconectará você de todas as sessões ativas. Você precisará iniciar a sessão novamente e concluir a configuração de login em duas etapas. Recomendamos exportar seu cofre antes de alterar suas configurações de criptografia para evitar perda de dados."
   },
   "secretsManager": {
     "message": "Gerenciador de Segredos"
@@ -6924,7 +6924,7 @@
     "message": "Ocorreu um erro ao tentar ler o arquivo de importação"
   },
   "accessedSecret": {
-    "message": "Accessed secret $SECRET_ID$.",
+    "message": "$SECRET_ID$ secreto acessado.",
     "placeholders": {
       "secret_id": {
         "content": "$1",
@@ -6996,10 +6996,10 @@
     "message": "Seleção é necessária."
   },
   "saPeopleWarningTitle": {
-    "message": "Access tokens still available"
+    "message": "Tokens de acesso ainda disponíveis"
   },
   "saPeopleWarningMessage": {
-    "message": "Removing people from a service account does not remove the access tokens they created. For security best practice, it is recommended to revoke access tokens created by people removed from a service account."
+    "message": "Remover pessoas de uma conta de serviço não remove os tokens de acesso que criaram. Para a melhor prática de segurança, é recomendável revogar os tokens de acesso criados por pessoas removidas de uma conta de serviço."
   },
   "smAccessRemovalWarningProjectTitle": {
     "message": "Remover acesso para esse projeto"
@@ -7008,10 +7008,10 @@
     "message": "Esta ação removerá seu acesso ao projeto."
   },
   "smAccessRemovalWarningSaTitle": {
-    "message": "Remove access to this service account"
+    "message": "Remover acesso a essa conta de serviço"
   },
   "smAccessRemovalWarningSaMessage": {
-    "message": "This action will remove your access to the service account."
+    "message": "Essa ação removerá seu acesso à conta de serviço."
   },
   "removeAccess": {
     "message": "Remover acesso"
@@ -7023,16 +7023,16 @@
     "message": "Senha mestre exposta"
   },
   "exposedMasterPasswordDesc": {
-    "message": "Password found in a data breach. Use a unique password to protect your account. Are you sure you want to use an exposed password?"
+    "message": "A senha foi encontrada em violação de dados. Use uma senha única para proteger sua conta. Tem certeza de que deseja usar uma senha exposta?"
   },
   "weakAndExposedMasterPassword": {
-    "message": "Weak and Exposed Master Password"
+    "message": "Senha Mestra Fraca e Exposta"
   },
   "weakAndBreachedMasterPasswordDesc": {
-    "message": "Weak password identified and found in a data breach. Use a strong and unique password to protect your account. Are you sure you want to use this password?"
+    "message": "Senha fraca identificada e encontrada em um vazamento de dados. Use uma senha forte e única para proteger a sua conta. Tem certeza de que deseja usar essa senha?"
   },
   "characterMinimum": {
-    "message": "$LENGTH$ character minimum",
+    "message": "Mínimo de $LENGTH$ caracteres",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -7041,7 +7041,7 @@
     }
   },
   "masterPasswordMinimumlength": {
-    "message": "Master password must be at least $LENGTH$ characters long.",
+    "message": "A senha mestra deve ter pelo menos $LENGTH$ caracteres.",
     "placeholders": {
       "length": {
         "content": "$1",
@@ -7057,14 +7057,14 @@
     "message": "Descartar"
   },
   "notAvailableForFreeOrganization": {
-    "message": "This feature is not available for free organizations. Contact your organization owner to upgrade."
+    "message": "Este recurso não está disponível para organizações gratuitas. Entre em contato com o seu proprietário para atualizar."
   },
   "smProjectSecretsNoItemsNoAccess": {
-    "message": "Contact your organization's admin to manage secrets for this project.",
+    "message": "Entre em contato com o administrador da sua organização para gerenciar segredos para este projeto.",
     "description": "The message shown to the user under a project's secrets tab when the user only has read access to the project."
   },
   "enforceOnLoginDesc": {
-    "message": "Require existing members to change their passwords"
+    "message": "Exigir que os membros existentes alterem suas senhas"
   },
   "smProjectDeleteAccessRestricted": {
     "message": "Você não tem permissão para excluir este projeto",
@@ -7081,16 +7081,16 @@
     "message": "Sessão iniciada"
   },
   "deviceApprovalRequired": {
-    "message": "Device approval required. Select an approval option below:"
+    "message": "Aprovação do dispositivo necessária. Selecione uma opção de aprovação abaixo:"
   },
   "rememberThisDevice": {
     "message": "Lembrar deste dispositivo"
   },
   "uncheckIfPublicDevice": {
-    "message": "Uncheck if using a public device"
+    "message": "Desmarque se estiver usando um dispositivo público"
   },
   "approveFromYourOtherDevice": {
-    "message": "Approve from your other device"
+    "message": "Aprovar do seu outro dispositivo"
   },
   "requestAdminApproval": {
     "message": "Solicitar aprovação do administrador"
@@ -7099,17 +7099,17 @@
     "message": "Aprovar com a senha mestre"
   },
   "trustedDeviceEncryption": {
-    "message": "Trusted device encryption"
+    "message": "Criptografia de dispositivo confiável"
   },
   "trustedDevices": {
     "message": "Dispositivos confiáveis"
   },
   "memberDecryptionOptionTdeDescriptionPartOne": {
-    "message": "Once authenticated, members will decrypt vault data using a key stored on their device. The",
+    "message": "Uma vez autenticados, os membros descriptografarão os dados do cofre usando uma chave armazenada no seu dispositivo",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO Required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionOptionTdeDescriptionLinkOne": {
-    "message": "single organization",
+    "message": "organização única",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionOptionTdeDescriptionPartTwo": {
@@ -7117,7 +7117,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionOptionTdeDescriptionLinkTwo": {
-    "message": "SSO required",
+    "message": "Necessário SSO",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionOptionTdeDescriptionPartThree": {
@@ -7125,11 +7125,11 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionOptionTdeDescriptionLinkThree": {
-    "message": "account recovery administration",
+    "message": "gerenciar recuperação de conta",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionOptionTdeDescriptionPartFour": {
-    "message": "policy with automatic enrollment will turn on when this option is used.",
+    "message": "política com inscrição automática será ativada quando esta opção for utilizada.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "orgPermissionsUpdatedMustSetPassword": {
@@ -7157,7 +7157,7 @@
     "message": "Recuperar conta"
   },
   "updatedTempPassword": {
-    "message": "User updated a password issued through account recovery."
+    "message": "O usuário atualizou uma senha emitida através da recuperação de conta."
   },
   "activatedAccessToSecretsManager": {
     "message": "Acesso ativado ao Gerenciador de Segredos",
@@ -7232,7 +7232,7 @@
     "message": "Remover membros que não têm senhas mestres sem definir uma para eles pode restringir o acesso à sua conta completa."
   },
   "approvedAuthRequest": {
-    "message": "Approved device for $ID$.",
+    "message": "Dispositivo aprovado para $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -7241,7 +7241,7 @@
     }
   },
   "rejectedAuthRequest": {
-    "message": "Denied device for $ID$.",
+    "message": "Dispositivo negado para $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -7250,7 +7250,7 @@
     }
   },
   "requestedDeviceApproval": {
-    "message": "Requested device approval."
+    "message": "Aprovação do dispositivo solicitada."
   },
   "startYour7DayFreeTrialOfBitwardenFor": {
     "message": "Comece o seu período de teste gratuito de 7 dias do Bitwarden para $ORG$",
@@ -7262,7 +7262,7 @@
     }
   },
   "startYour7DayFreeTrialOfBitwardenSecretsManagerFor": {
-    "message": "Start your 7-Day free trial of Bitwarden Secrets Manager for $ORG$",
+    "message": "Inicie o seu período de teste gratuito de 7 dias do Bitwarden Secrets Manager para $ORG$",
     "placeholders": {
       "org": {
         "content": "$1",
@@ -7280,19 +7280,19 @@
     "message": "Sinalização de região selecionada"
   },
   "accountSuccessfullyCreated": {
-    "message": "Account successfully created!"
+    "message": "Conta criada com sucesso!"
   },
   "adminApprovalRequested": {
-    "message": "Admin approval requested"
+    "message": "Aprovação do administrador necessária"
   },
   "adminApprovalRequestSentToAdmins": {
-    "message": "Your request has been sent to your admin."
+    "message": "Seu pedido foi enviado para seu administrador."
   },
   "youWillBeNotifiedOnceApproved": {
-    "message": "You will be notified once approved."
+    "message": "Será notificado assim que for aprovado."
   },
   "troubleLoggingIn": {
-    "message": "Trouble logging in?"
+    "message": "Problemas em efetuar login?"
   },
   "loginApproved": {
     "message": "Sessão aprovada"
@@ -7324,10 +7324,10 @@
     }
   },
   "secretsManagerForPlanDesc": {
-    "message": "For engineering and DevOps teams to manage secrets throughout the software development lifecycle."
+    "message": "Para equipes de engenharia e DevOps gerenciar segredos durante todo o ciclo de vida do desenvolvimento de software."
   },
   "free2PersonOrganization": {
-    "message": "Free 2-person Organizations"
+    "message": "Organizações gratuitas com 2 pessoas"
   },
   "unlimitedSecrets": {
     "message": "Segredos ilimitados"
@@ -7366,7 +7366,7 @@
     "message": "Assine o Gerenciador de Segredos"
   },
   "addSecretsManagerUpgradeDesc": {
-    "message": "Add Secrets Manager to your upgraded plan to maintain access to any secrets created with your previous plan."
+    "message": "Adicione o Gerenciador de Segredos ao seu plano atualizado para manter o acesso a todos os segredos criados com seu plano anterior."
   },
   "additionalServiceAccounts": {
     "message": "Contas de serviço adicionais"
@@ -7420,13 +7420,13 @@
     "message": "Limitar contas de serviço (opcional)"
   },
   "limitServiceAccountsDesc": {
-    "message": "Set a limit for your service accounts. Once this limit is reached, you will not be able to create new service accounts."
+    "message": "Defina um limite para suas contas de máquina. Quando este limite for atingido, você não poderá criar novas contas de máquina."
   },
   "serviceAccountLimit": {
     "message": "Limite de contas de serviço (opcional)"
   },
   "maxServiceAccountCost": {
-    "message": "Max potential service account cost"
+    "message": "Custo máximo da conta de serviço potencial"
   },
   "loggedInExclamation": {
     "message": "Conectado!"
@@ -7459,10 +7459,10 @@
     "message": "Chave de acesso"
   },
   "passkeyNotCopied": {
-    "message": "Passkey will not be copied"
+    "message": "A senha não será copiada"
   },
   "passkeyNotCopiedAlert": {
-    "message": "The passkey will not be copied to the cloned item. Do you want to continue cloning this item?"
+    "message": "A senha não será copiada para o item clonado. Deseja continuar clonando este item?"
   },
   "modifiedCollectionManagement": {
     "message": "Definição de gerenciamento da coleção $ID$ modificada.",
@@ -7484,7 +7484,7 @@
     "message": "Use a extensão para salvar rapidamente credenciais e formulários de autopreenchimento sem abrir o aplicativo web."
   },
   "projectAccessUpdated": {
-    "message": "Project access updated"
+    "message": "Acesso ao projeto atualizado"
   },
   "unexpectedErrorSend": {
     "message": "Ocorreu um erro inesperado ao carregar este Envio. Tente novamente mais tarde."
@@ -7505,7 +7505,7 @@
     "message": "Você não tem acesso para gerenciar esta coleção."
   },
   "grantCollectionAccess": {
-    "message": "Grant groups or members access to this collection."
+    "message": "Conceder acesso de grupos ou membros a esta coleção."
   },
   "grantCollectionAccessMembersOnly": {
     "message": "Conceder acesso a essa coleção."
@@ -8042,12 +8042,12 @@
     "message": "This collection is only accessible from the admin console"
   },
   "organizationOptionsMenu": {
-    "message": "Toggle Organization Menu"
+    "message": "Alternar Menu da Organização"
   },
   "vaultItemSelect": {
-    "message": "Select vault item"
+    "message": "Selecionar item do cofre"
   },
   "collectionItemSelect": {
-    "message": "Select collection item"
+    "message": "Selecionar item da coleção"
   }
 }

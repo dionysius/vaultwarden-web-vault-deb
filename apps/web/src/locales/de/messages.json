@@ -4951,7 +4951,7 @@
     "message": "Erstelle eine neue Kunden-Organisation, die dir als Anbieter zugeordnet wird. Du kannst auf diese Organisation zugreifen und diese verwalten."
   },
   "newClient": {
-    "message": "New client"
+    "message": "Neuer Kunde"
   },
   "addExistingOrganization": {
     "message": "Bestehende Organisation hinzufügen"
@@ -7607,7 +7607,7 @@
     "message": "Anbieterportal"
   },
   "success": {
-    "message": "Success"
+    "message": "Erfolg"
   },
   "viewCollection": {
     "message": "Sammlung anzeigen"
@@ -7907,30 +7907,30 @@
     "message": "Du kannst dich nicht selbst zu einer Gruppe hinzufügen."
   },
   "unassignedItemsBannerSelfHost": {
-    "message": "Notice: On May 2, 2024, unassigned organization items will no longer be visible in your All Vaults view across devices and will only be accessible via the Admin Console. Assign these items to a collection from the Admin Console to make them visible."
+    "message": "Hinweis: Ab dem 2. Mai 2024 werden nicht zugewiesene Organisationseinträge nicht mehr geräteübergreifend in der Ansicht aller Tresore sichtbar sein und sind nur über die Administrator-Konsole zugänglich. Weise diese Elemente einer Sammlung aus der Administrator-Konsole zu, um sie sichtbar zu machen."
   },
   "unassignedItemsBannerNotice": {
-    "message": "Notice: Unassigned organization items are no longer visible in your All Vaults view across devices and are now only accessible via the Admin Console."
+    "message": "Hinweis: Nicht zugewiesene Organisationseinträge sind nicht mehr geräteübergreifend in der Ansicht aller Tresore sichtbar und nun nur über die Administrator-Konsole zugänglich."
   },
   "unassignedItemsBannerSelfHostNotice": {
-    "message": "Notice: On May 16, 2024, unassigned organization items will no longer be visible in your All Vaults view across devices and will only be accessible via the Admin Console."
+    "message": "Hinweis: Ab dem 16. Mai 2024 werden nicht zugewiesene Organisationseinträge nicht mehr geräteübergreifend in der Ansicht aller Tresore sichtbar sein und nur über die Administrator-Konsole zugänglich."
   },
   "unassignedItemsBannerCTAPartOne": {
-    "message": "Assign these items to a collection from the",
+    "message": "Weise diese Einträge einer Sammlung aus der",
     "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
   },
   "unassignedItemsBannerCTAPartTwo": {
-    "message": "to make them visible.",
+    "message": "zu, um sie sichtbar zu machen.",
     "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
   },
   "deleteProvider": {
-    "message": "Delete provider"
+    "message": "Anbieter löschen"
   },
   "deleteProviderConfirmation": {
-    "message": "Deleting a provider is permanent and irreversible. Enter your master password to confirm the deletion of the provider and all associated data."
+    "message": "Das Löschen eines Anbieters ist dauerhaft und unwiderruflich. Gib dein Master-Passwort ein, um die Löschung des Anbieters und aller zugehörigen Daten zu bestätigen."
   },
   "deleteProviderName": {
-    "message": "Cannot delete $ID$",
+    "message": "Kann $ID$ nicht löschen",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -7939,7 +7939,7 @@
     }
   },
   "deleteProviderWarningDesc": {
-    "message": "You must unlink all clients before you can delete $ID$",
+    "message": "Du musst die Verknüpfung zu allen Kunden aufheben, bevor du $ID$ löschen kannst",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -7948,16 +7948,16 @@
     }
   },
   "providerDeleted": {
-    "message": "Provider deleted"
+    "message": "Anbieter gelöscht"
   },
   "providerDeletedDesc": {
-    "message": "The Provider and all associated data has been deleted."
+    "message": "Der Anbieter und alle zugehörigen Daten wurden gelöscht."
   },
   "deleteProviderRecoverConfirmDesc": {
-    "message": "You have requested to delete this Provider. Use the button below to confirm."
+    "message": "Du hast die Löschung dieses Anbieters angefragt. Verwende den Button unten, um dies zu bestätigen."
   },
   "deleteProviderWarning": {
-    "message": "Deleting your provider is permanent. It cannot be undone."
+    "message": "Die Löschung deines Anbieters ist dauerhaft. Sie kann nicht widerrufen werden."
   },
   "errorAssigningTargetCollection": {
     "message": "Fehler beim Zuweisen der Ziel-Sammlung."
@@ -7966,88 +7966,88 @@
     "message": "Fehler beim Zuweisen des Ziel-Ordners."
   },
   "integrationsAndSdks": {
-    "message": "Integrations & SDKs",
+    "message": "Integrationen & SDKs",
     "description": "The title for the section that deals with integrations and SDKs."
   },
   "integrations": {
-    "message": "Integrations"
+    "message": "Integrationen"
   },
   "integrationsDesc": {
-    "message": "Automatically sync secrets from Bitwarden Secrets Manager to a third-party service."
+    "message": "Geheimnisse des Bitwarden Secrets Managers automatisch mit einem Drittanbieter-Dienst synchronisieren."
   },
   "sdks": {
     "message": "SDKs"
   },
   "sdksDesc": {
-    "message": "Use Bitwarden Secrets Manager SDK in the following programming languages to build your own applications."
+    "message": "Verwende das Bitwarden Secrets Manager SDK in den folgenden Programmiersprachen, um deine eigenen Anwendungen zu erstellen."
   },
   "setUpGithubActions": {
-    "message": "Set up Github Actions"
+    "message": "GitHub Actions einrichten"
   },
   "setUpGitlabCICD": {
-    "message": "Set up GitLab CI/CD"
+    "message": "GitLab CI/CD einrichten"
   },
   "setUpAnsible": {
-    "message": "Set up Ansible"
+    "message": "Ansible einrichten"
   },
   "cSharpSDKRepo": {
-    "message": "View C# repository"
+    "message": "C#-Repository anzeigen"
   },
   "cPlusPlusSDKRepo": {
-    "message": "View C++ repository"
+    "message": "C++-Repository anzeigen"
   },
   "jsWebAssemblySDKRepo": {
-    "message": "View JS WebAssembly repository"
+    "message": "JS WebAssembly-Repository anzeigen"
   },
   "javaSDKRepo": {
-    "message": "View Java repository"
+    "message": "Java-Repository anzeigen"
   },
   "pythonSDKRepo": {
-    "message": "View Python repository"
+    "message": "Python-Repository anzeigen"
   },
   "phpSDKRepo": {
-    "message": "View php repository"
+    "message": "PHP-Repository anzeigen"
   },
   "rubySDKRepo": {
-    "message": "View Ruby repository"
+    "message": "Ruby-Repository anzeigen"
   },
   "goSDKRepo": {
-    "message": "View Go repository"
+    "message": "Go-Repository anzeigen"
   },
   "createNewClientToManageAsProvider": {
-    "message": "Create a new client organization to manage as a Provider. Additional seats will be reflected in the next billing cycle."
+    "message": "Erstelle eine neue Kunden-Organisation, um sie als Anbieter zu verwalten. Zusätzliche Benutzerplätze werden im nächsten Abrechnungszeitraum berücksichtigt."
   },
   "selectAPlan": {
-    "message": "Select a plan"
+    "message": "Ein Abo auswählen"
   },
   "thirtyFivePercentDiscount": {
-    "message": "35% Discount"
+    "message": "35% Rabatt"
   },
   "monthPerMember": {
     "message": "month per member"
   },
   "seats": {
-    "message": "Seats"
+    "message": "Benutzerplätze"
   },
   "addOrganization": {
-    "message": "Add organization"
+    "message": "Organisation hinzufügen"
   },
   "createdNewClient": {
-    "message": "Successfully created new client"
+    "message": "Neuer Kunde erfolgreich erstellt"
   },
   "noAccess": {
-    "message": "No access"
+    "message": "Kein Zugriff"
   },
   "collectionAdminConsoleManaged": {
-    "message": "This collection is only accessible from the admin console"
+    "message": "Diese Sammlung ist nur über die Administrator-Konsole zugänglich"
   },
   "organizationOptionsMenu": {
-    "message": "Toggle Organization Menu"
+    "message": "Organisationsmenü umschalten"
   },
   "vaultItemSelect": {
-    "message": "Select vault item"
+    "message": "Tresor-Eintrag auswählen"
   },
   "collectionItemSelect": {
-    "message": "Select collection item"
+    "message": "Sammlungseintrag auswählen"
   }
 }

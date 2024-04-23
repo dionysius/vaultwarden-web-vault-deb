@@ -7607,7 +7607,7 @@
     "message": "Портал провајдера"
   },
   "success": {
-    "message": "Success"
+    "message": "Успех"
   },
   "viewCollection": {
     "message": "Преглед колекције"
@@ -7904,16 +7904,16 @@
     "message": "Приступ налога машине ажуриран"
   },
   "restrictedGroupAccessDesc": {
-    "message": "You cannot add yourself to a group."
+    "message": "Не можете да се додате у групу."
   },
   "unassignedItemsBannerSelfHost": {
-    "message": "Notice: On May 2, 2024, unassigned organization items will no longer be visible in your All Vaults view across devices and will only be accessible via the Admin Console. Assign these items to a collection from the Admin Console to make them visible."
+    "message": "Обавештење: 2. маја 2024. недодељене ставке организације више неће бити видљиве у вашем приказу Сви сефови на свим уређајима и биће им доступне само преко Админ конзоле. Доделите ове ставке колекцији са Админ конзолом да бисте их учинили видљивим."
   },
   "unassignedItemsBannerNotice": {
-    "message": "Notice: Unassigned organization items are no longer visible in your All Vaults view across devices and are now only accessible via the Admin Console."
+    "message": "Напомена: Недодељене ставке организације више нису видљиве у вашем приказу Сви сефови на свим уређајима и сада су доступне само преко Админ конзоле."
   },
   "unassignedItemsBannerSelfHostNotice": {
-    "message": "Notice: On May 16, 2024, unassigned organization items will no longer be visible in your All Vaults view across devices and will only be accessible via the Admin Console."
+    "message": "Обавештење: 16. маја 2024. недодељене ставке организације више неће бити видљиве у вашем приказу Сви сефови на свим уређајима и биће им доступне само преко Админ конзоле."
   },
   "unassignedItemsBannerCTAPartOne": {
     "message": "Assign these items to a collection from the",
@@ -7924,13 +7924,13 @@
     "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
   },
   "deleteProvider": {
-    "message": "Delete provider"
+    "message": "Избриши провајдера"
   },
   "deleteProviderConfirmation": {
-    "message": "Deleting a provider is permanent and irreversible. Enter your master password to confirm the deletion of the provider and all associated data."
+    "message": "Брисање провајдера је трајно и неповратно. Унесите своју главну лозинку да бисте потврдили брисање провајдера и свих повезаних података."
   },
   "deleteProviderName": {
-    "message": "Cannot delete $ID$",
+    "message": "Не може да се избрише $ID$",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -7939,7 +7939,7 @@
     }
   },
   "deleteProviderWarningDesc": {
-    "message": "You must unlink all clients before you can delete $ID$",
+    "message": "Морате прекинути везу са свим клијентима да бисте могли да избришете $ID$",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -7948,106 +7948,106 @@
     }
   },
   "providerDeleted": {
-    "message": "Provider deleted"
+    "message": "Провајдер је избрисан"
   },
   "providerDeletedDesc": {
-    "message": "The Provider and all associated data has been deleted."
+    "message": "Провајдер и сви повезани подаци су избрисани."
   },
   "deleteProviderRecoverConfirmDesc": {
-    "message": "You have requested to delete this Provider. Use the button below to confirm."
+    "message": "Захтевали сте брисање овог провајдера. Користите дугме испод да потврдите."
   },
   "deleteProviderWarning": {
-    "message": "Deleting your provider is permanent. It cannot be undone."
+    "message": "Брисање провајдера је трајно. Не може се поништити."
   },
   "errorAssigningTargetCollection": {
-    "message": "Error assigning target collection."
+    "message": "Грешка при додељивању циљне колекције."
   },
   "errorAssigningTargetFolder": {
-    "message": "Error assigning target folder."
+    "message": "Грешка при додељивању циљне фасцикле."
   },
   "integrationsAndSdks": {
-    "message": "Integrations & SDKs",
+    "message": "Интеграције & SDK",
     "description": "The title for the section that deals with integrations and SDKs."
   },
   "integrations": {
-    "message": "Integrations"
+    "message": "Интеграције"
   },
   "integrationsDesc": {
-    "message": "Automatically sync secrets from Bitwarden Secrets Manager to a third-party service."
+    "message": "Аутоматски синхронизујте тајне од Bitwarden Secrets Manager са сервисима треће стране."
   },
   "sdks": {
-    "message": "SDKs"
+    "message": "SDK"
   },
   "sdksDesc": {
-    "message": "Use Bitwarden Secrets Manager SDK in the following programming languages to build your own applications."
+    "message": "Употребите Bitwarden Secrets Manager SDK на следећим програмским језицима да направите сопствене апликације."
   },
   "setUpGithubActions": {
-    "message": "Set up Github Actions"
+    "message": "Подесити акције GitHub-а"
   },
   "setUpGitlabCICD": {
-    "message": "Set up GitLab CI/CD"
+    "message": "Подесити GitLab CI/CD"
   },
   "setUpAnsible": {
-    "message": "Set up Ansible"
+    "message": "Подесити Ansible"
   },
   "cSharpSDKRepo": {
-    "message": "View C# repository"
+    "message": "Преглед C# спремишта"
   },
   "cPlusPlusSDKRepo": {
-    "message": "View C++ repository"
+    "message": "Преглед C++ спремишта"
   },
   "jsWebAssemblySDKRepo": {
-    "message": "View JS WebAssembly repository"
+    "message": "Преглед JS WebAssembly спремишта"
   },
   "javaSDKRepo": {
-    "message": "View Java repository"
+    "message": "Преглед Java спремишта"
   },
   "pythonSDKRepo": {
-    "message": "View Python repository"
+    "message": "Преглед Python спремишта"
   },
   "phpSDKRepo": {
-    "message": "View php repository"
+    "message": "Преглед php спремишта"
   },
   "rubySDKRepo": {
-    "message": "View Ruby repository"
+    "message": "Преглед Ruby спремишта"
   },
   "goSDKRepo": {
-    "message": "View Go repository"
+    "message": "Преглед Go спремишта"
   },
   "createNewClientToManageAsProvider": {
-    "message": "Create a new client organization to manage as a Provider. Additional seats will be reflected in the next billing cycle."
+    "message": "Креирајте нову клијентску организацију којом ћете управљати као добављач. Додатна места ће се одразити у следећем обрачунском циклусу."
   },
   "selectAPlan": {
-    "message": "Select a plan"
+    "message": "Изаберите пакет"
   },
   "thirtyFivePercentDiscount": {
-    "message": "35% Discount"
+    "message": "Попуст од 35%"
   },
   "monthPerMember": {
-    "message": "month per member"
+    "message": "месечно по члану"
   },
   "seats": {
-    "message": "Seats"
+    "message": "Места"
   },
   "addOrganization": {
-    "message": "Add organization"
+    "message": "Додај организацију"
   },
   "createdNewClient": {
-    "message": "Successfully created new client"
+    "message": "Нови клијент је успешно креиран"
   },
   "noAccess": {
-    "message": "No access"
+    "message": "Немате приступ"
   },
   "collectionAdminConsoleManaged": {
-    "message": "This collection is only accessible from the admin console"
+    "message": "Овој колекцији се може приступити само са администраторске конзоле"
   },
   "organizationOptionsMenu": {
-    "message": "Toggle Organization Menu"
+    "message": "Укључи мени Организација"
   },
   "vaultItemSelect": {
-    "message": "Select vault item"
+    "message": "Изаберите ставку сефа"
   },
   "collectionItemSelect": {
-    "message": "Select collection item"
+    "message": "Изаберите ставку колекције"
   }
 }
