@@ -92,9 +92,16 @@ export class LocalBackedSessionStorageService
     // This is for observation purposes only. At some point, we don't want to write to local session storage if the value is the same.
     if (this.platformUtilsService.isDev()) {
       const existingValue = this.cache[key] as T;
-      if (this.compareValues<T>(existingValue, obj)) {
-        this.logService.warning(`Possible unnecessary write to local session storage. Key: ${key}`);
-        this.logService.warning(obj as any);
+      try {
+        if (this.compareValues<T>(existingValue, obj)) {
+          this.logService.warning(
+            `Possible unnecessary write to local session storage. Key: ${key}`,
+          );
+          this.logService.warning(obj as any);
+        }
+      } catch (err) {
+        this.logService.warning(`Error while comparing values for key: ${key}`);
+        this.logService.warning(err);
       }
     }
 
