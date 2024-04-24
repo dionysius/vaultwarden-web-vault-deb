@@ -5,7 +5,6 @@ import { SafeProvider, safeProvider } from "@bitwarden/angular/platform/utils/sa
 import {
   SECURE_STORAGE,
   STATE_FACTORY,
-  STATE_SERVICE_USE_CACHE,
   LOCALES_DIRECTORY,
   SYSTEM_LANGUAGE,
   MEMORY_STORAGE,
@@ -77,10 +76,6 @@ const safeProviders: SafeProvider[] = [
   safeProvider({
     provide: STATE_FACTORY,
     useValue: new StateFactory(GlobalState, Account),
-  }),
-  safeProvider({
-    provide: STATE_SERVICE_USE_CACHE,
-    useValue: false,
   }),
   safeProvider({
     provide: I18nServiceAbstraction,

@@ -36,7 +36,6 @@ export const MEMORY_STORAGE = new SafeInjectionToken<AbstractMemoryStorageServic
 );
 export const SECURE_STORAGE = new SafeInjectionToken<AbstractStorageService>("SECURE_STORAGE");
 export const STATE_FACTORY = new SafeInjectionToken<StateFactory>("STATE_FACTORY");
-export const STATE_SERVICE_USE_CACHE = new SafeInjectionToken<boolean>("STATE_SERVICE_USE_CACHE");
 export const LOGOUT_CALLBACK = new SafeInjectionToken<
   (expired: boolean, userId?: string) => Promise<void>
 >("LOGOUT_CALLBACK");

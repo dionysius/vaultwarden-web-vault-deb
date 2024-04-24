@@ -30,7 +30,6 @@ import {
 
 type StateServiceFactoryOptions = FactoryOptions & {
   stateServiceOptions: {
-    useAccountCache?: boolean;
     stateFactory: StateFactory<GlobalState, Account>;
   };
 };
@@ -64,7 +63,6 @@ export async function stateServiceFactory(
         await environmentServiceFactory(cache, opts),
         await tokenServiceFactory(cache, opts),
         await migrationRunnerFactory(cache, opts),
-        opts.stateServiceOptions.useAccountCache,
       ),
   );
   // TODO: If we run migration through a chrome installed/updated event we can turn off running migrations

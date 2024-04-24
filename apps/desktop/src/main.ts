@@ -205,7 +205,6 @@ export class Main {
       this.environmentService,
       this.tokenService,
       this.migrationRunner,
-      false, // Do not use disk caching because this will get out of sync with the renderer service
     );
 
     this.desktopSettingsService = new DesktopSettingsService(stateProvider);

@@ -4,7 +4,6 @@ import { Subject, merge } from "rxjs";
 import { SafeProvider, safeProvider } from "@bitwarden/angular/platform/utils/safe-provider";
 import {
   SECURE_STORAGE,
-  STATE_SERVICE_USE_CACHE,
   LOCALES_DIRECTORY,
   SYSTEM_LANGUAGE,
   MEMORY_STORAGE,
@@ -205,7 +204,6 @@ const safeProviders: SafeProvider[] = [
       EnvironmentService,
       TokenService,
       MigrationRunner,
-      STATE_SERVICE_USE_CACHE,
     ],
   }),
   safeProvider({

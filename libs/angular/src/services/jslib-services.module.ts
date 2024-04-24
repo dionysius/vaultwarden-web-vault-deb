@@ -269,7 +269,6 @@ import {
   SafeInjectionToken,
   SECURE_STORAGE,
   STATE_FACTORY,
-  STATE_SERVICE_USE_CACHE,
   SUPPORTS_SECURE_STORAGE,
   SYSTEM_LANGUAGE,
   SYSTEM_THEME_OBSERVABLE,
@@ -312,10 +311,6 @@ const safeProviders: SafeProvider[] = [
   safeProvider({
     provide: STATE_FACTORY,
     useValue: new StateFactory(GlobalState, Account),
-  }),
-  safeProvider({
-    provide: STATE_SERVICE_USE_CACHE,
-    useValue: true,
   }),
   safeProvider({
     provide: LOGOUT_CALLBACK,
@@ -690,7 +685,6 @@ const safeProviders: SafeProvider[] = [
       EnvironmentService,
       TokenServiceAbstraction,
       MigrationRunner,
-      STATE_SERVICE_USE_CACHE,
     ],
   }),
   safeProvider({
