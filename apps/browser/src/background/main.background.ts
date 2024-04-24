@@ -1095,7 +1095,8 @@ export default class MainBackground {
   async bootstrap() {
     this.containerService.attachToGlobal(self);
 
-    await this.stateService.init({ runMigrations: !this.isPrivateMode });
+    // Only the "true" background should run migrations
+    await this.stateService.init({ runMigrations: !this.popupOnlyContext });
 
     // This is here instead of in in the InitService b/c we don't plan for
     // side effects to run in the Browser InitService.
