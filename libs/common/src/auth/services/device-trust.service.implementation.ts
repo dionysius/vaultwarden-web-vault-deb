@@ -17,7 +17,7 @@ import { SymmetricCryptoKey } from "../../platform/models/domain/symmetric-crypt
 import { DEVICE_TRUST_DISK_LOCAL, StateProvider, UserKeyDefinition } from "../../platform/state";
 import { UserId } from "../../types/guid";
 import { UserKey, DeviceKey } from "../../types/key";
-import { DeviceTrustCryptoServiceAbstraction } from "../abstractions/device-trust-crypto.service.abstraction";
+import { DeviceTrustServiceAbstraction } from "../abstractions/device-trust.service.abstraction";
 import { DeviceResponse } from "../abstractions/devices/responses/device.response";
 import { DevicesApiServiceAbstraction } from "../abstractions/devices-api.service.abstraction";
 import { SecretVerificationRequest } from "../models/request/secret-verification.request";
@@ -42,7 +42,7 @@ export const SHOULD_TRUST_DEVICE = new UserKeyDefinition<boolean>(
   },
 );
 
-export class DeviceTrustCryptoService implements DeviceTrustCryptoServiceAbstraction {
+export class DeviceTrustService implements DeviceTrustServiceAbstraction {
   private readonly platformSupportsSecureStorage =
     this.platformUtilsService.supportsSecureStorage();
   private readonly deviceKeySecureStorageKey: string = "_deviceKey";

@@ -23,7 +23,7 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
 import { OrganizationUserService } from "@bitwarden/common/admin-console/abstractions/organization-user/organization-user.service";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
-import { DeviceTrustCryptoServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust-crypto.service.abstraction";
+import { DeviceTrustServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust.service.abstraction";
 import { DevicesServiceAbstraction } from "@bitwarden/common/auth/abstractions/devices/devices.service.abstraction";
 import { PasswordResetEnrollmentServiceAbstraction } from "@bitwarden/common/auth/abstractions/password-reset-enrollment.service.abstraction";
 import { SsoLoginServiceAbstraction } from "@bitwarden/common/auth/abstractions/sso-login.service.abstraction";
@@ -93,7 +93,7 @@ export class BaseLoginDecryptionOptionsComponent implements OnInit, OnDestroy {
     protected apiService: ApiService,
     protected i18nService: I18nService,
     protected validationService: ValidationService,
-    protected deviceTrustCryptoService: DeviceTrustCryptoServiceAbstraction,
+    protected deviceTrustService: DeviceTrustServiceAbstraction,
     protected platformUtilsService: PlatformUtilsService,
     protected userDecryptionOptionsService: UserDecryptionOptionsServiceAbstraction,
     protected passwordResetEnrollmentService: PasswordResetEnrollmentServiceAbstraction,
@@ -156,7 +156,7 @@ export class BaseLoginDecryptionOptionsComponent implements OnInit, OnDestroy {
   }
 
   private async setRememberDeviceDefaultValue() {
-    const rememberDeviceFromState = await this.deviceTrustCryptoService.getShouldTrustDevice(
+    const rememberDeviceFromState = await this.deviceTrustService.getShouldTrustDevice(
       this.activeAccountId,
     );
 
@@ -169,9 +169,7 @@ export class BaseLoginDecryptionOptionsComponent implements OnInit, OnDestroy {
     this.rememberDevice.valueChanges
       .pipe(
         switchMap((value) =>
-          defer(() =>
-            this.deviceTrustCryptoService.setShouldTrustDevice(this.activeAccountId, value),
-          ),
+          defer(() => this.deviceTrustService.setShouldTrustDevice(this.activeAccountId, value)),
         ),
         takeUntil(this.destroy$),
       )
@@ -288,7 +286,7 @@ export class BaseLoginDecryptionOptionsComponent implements OnInit, OnDestroy {
       await this.passwordResetEnrollmentService.enroll(this.data.organizationId);
 
       if (this.rememberDeviceForm.value.rememberDevice) {
-        await this.deviceTrustCryptoService.trustDevice(this.activeAccountId);
+        await this.deviceTrustService.trustDevice(this.activeAccountId);
       }
     } catch (error) {
       this.validationService.showError(error);

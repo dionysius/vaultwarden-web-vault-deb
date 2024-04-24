@@ -12,7 +12,7 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { AnonymousHubService } from "@bitwarden/common/auth/abstractions/anonymous-hub.service";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
-import { DeviceTrustCryptoServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust-crypto.service.abstraction";
+import { DeviceTrustServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust.service.abstraction";
 import { AuthRequestType } from "@bitwarden/common/auth/enums/auth-request-type";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 import { AdminAuthRequestStorable } from "@bitwarden/common/auth/models/domain/admin-auth-req-storable";
@@ -86,7 +86,7 @@ export class LoginViaAuthRequestComponent
     private validationService: ValidationService,
     private stateService: StateService,
     private loginEmailService: LoginEmailServiceAbstraction,
-    private deviceTrustCryptoService: DeviceTrustCryptoServiceAbstraction,
+    private deviceTrustService: DeviceTrustServiceAbstraction,
     private authRequestService: AuthRequestServiceAbstraction,
     private loginStrategyService: LoginStrategyServiceAbstraction,
     private accountService: AccountService,
@@ -402,7 +402,7 @@ export class LoginViaAuthRequestComponent
     // Now that we have a decrypted user key in memory, we can check if we
     // need to establish trust on the current device
     const activeAccount = await firstValueFrom(this.accountService.activeAccount$);
-    await this.deviceTrustCryptoService.trustDeviceIfRequired(activeAccount.id);
+    await this.deviceTrustService.trustDeviceIfRequired(activeAccount.id);
 
     // TODO: don't forget to use auto enrollment service everywhere we trust device
 

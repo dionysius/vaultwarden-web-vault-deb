@@ -1,5 +1,5 @@
-import { DeviceTrustCryptoServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust-crypto.service.abstraction";
-import { DeviceTrustCryptoService } from "@bitwarden/common/auth/services/device-trust-crypto.service.implementation";
+import { DeviceTrustServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust.service.abstraction";
+import { DeviceTrustService } from "@bitwarden/common/auth/services/device-trust.service.implementation";
 
 import {
   DevicesApiServiceInitOptions,
@@ -52,9 +52,9 @@ import {
   userDecryptionOptionsServiceFactory,
 } from "./user-decryption-options-service.factory";
 
-type DeviceTrustCryptoServiceFactoryOptions = FactoryOptions;
+type DeviceTrustServiceFactoryOptions = FactoryOptions;
 
-export type DeviceTrustCryptoServiceInitOptions = DeviceTrustCryptoServiceFactoryOptions &
+export type DeviceTrustServiceInitOptions = DeviceTrustServiceFactoryOptions &
   KeyGenerationServiceInitOptions &
   CryptoFunctionServiceInitOptions &
   CryptoServiceInitOptions &
@@ -67,16 +67,16 @@ export type DeviceTrustCryptoServiceInitOptions = DeviceTrustCryptoServiceFactor
   SecureStorageServiceInitOptions &
   UserDecryptionOptionsServiceInitOptions;
 
-export function deviceTrustCryptoServiceFactory(
-  cache: { deviceTrustCryptoService?: DeviceTrustCryptoServiceAbstraction } & CachedServices,
-  opts: DeviceTrustCryptoServiceInitOptions,
-): Promise<DeviceTrustCryptoServiceAbstraction> {
+export function deviceTrustServiceFactory(
+  cache: { deviceTrustService?: DeviceTrustServiceAbstraction } & CachedServices,
+  opts: DeviceTrustServiceInitOptions,
+): Promise<DeviceTrustServiceAbstraction> {
   return factory(
     cache,
-    "deviceTrustCryptoService",
+    "deviceTrustService",
     opts,
     async () =>
-      new DeviceTrustCryptoService(
+      new DeviceTrustService(
         await keyGenerationServiceFactory(cache, opts),
         await cryptoFunctionServiceFactory(cache, opts),
         await cryptoServiceFactory(cache, opts),

@@ -11,7 +11,7 @@ import { PolicyApiServiceAbstraction } from "@bitwarden/common/admin-console/abs
 import { InternalPolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { MasterPasswordPolicyOptions } from "@bitwarden/common/admin-console/models/domain/master-password-policy-options";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
-import { DeviceTrustCryptoServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust-crypto.service.abstraction";
+import { DeviceTrustServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust.service.abstraction";
 import { InternalMasterPasswordServiceAbstraction } from "@bitwarden/common/auth/abstractions/master-password.service.abstraction";
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { ForceSetPasswordReason } from "@bitwarden/common/auth/models/domain/force-set-password-reason";
@@ -74,7 +74,7 @@ export class LockComponent implements OnInit, OnDestroy {
     protected policyService: InternalPolicyService,
     protected passwordStrengthService: PasswordStrengthServiceAbstraction,
     protected dialogService: DialogService,
-    protected deviceTrustCryptoService: DeviceTrustCryptoServiceAbstraction,
+    protected deviceTrustService: DeviceTrustServiceAbstraction,
     protected userVerificationService: UserVerificationService,
     protected pinCryptoService: PinCryptoServiceAbstraction,
     protected biometricStateService: BiometricStateService,
@@ -277,7 +277,7 @@ export class LockComponent implements OnInit, OnDestroy {
     // Now that we have a decrypted user key in memory, we can check if we
     // need to establish trust on the current device
     const activeAccount = await firstValueFrom(this.accountService.activeAccount$);
-    await this.deviceTrustCryptoService.trustDeviceIfRequired(activeAccount.id);
+    await this.deviceTrustService.trustDeviceIfRequired(activeAccount.id);
 
     await this.doContinue(evaluatePasswordAfterUnlock);
   }

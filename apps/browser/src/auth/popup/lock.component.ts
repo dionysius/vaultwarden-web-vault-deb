@@ -11,7 +11,7 @@ import { PolicyApiServiceAbstraction } from "@bitwarden/common/admin-console/abs
 import { InternalPolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
-import { DeviceTrustCryptoServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust-crypto.service.abstraction";
+import { DeviceTrustServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust.service.abstraction";
 import { InternalMasterPasswordServiceAbstraction } from "@bitwarden/common/auth/abstractions/master-password.service.abstraction";
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
@@ -60,7 +60,7 @@ export class LockComponent extends BaseLockComponent {
     passwordStrengthService: PasswordStrengthServiceAbstraction,
     private authService: AuthService,
     dialogService: DialogService,
-    deviceTrustCryptoService: DeviceTrustCryptoServiceAbstraction,
+    deviceTrustService: DeviceTrustServiceAbstraction,
     userVerificationService: UserVerificationService,
     pinCryptoService: PinCryptoServiceAbstraction,
     private routerService: BrowserRouterService,
@@ -85,7 +85,7 @@ export class LockComponent extends BaseLockComponent {
       policyService,
       passwordStrengthService,
       dialogService,
-      deviceTrustCryptoService,
+      deviceTrustService,
       userVerificationService,
       pinCryptoService,
       biometricStateService,

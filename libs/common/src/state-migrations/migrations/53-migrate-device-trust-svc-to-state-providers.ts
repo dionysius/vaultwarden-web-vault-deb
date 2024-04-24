@@ -16,7 +16,7 @@ type ExpectedAccountType = {
 };
 
 export const DEVICE_KEY: KeyDefinitionLike = {
-  key: "deviceKey", // matches KeyDefinition.key in DeviceTrustCryptoService
+  key: "deviceKey", // matches KeyDefinition.key in DeviceTrustService
   stateDefinition: {
     name: "deviceTrust", // matches StateDefinition.name in StateDefinitions
   },
@@ -29,7 +29,7 @@ export const SHOULD_TRUST_DEVICE: KeyDefinitionLike = {
   },
 };
 
-export class DeviceTrustCryptoServiceStateProviderMigrator extends Migrator<52, 53> {
+export class DeviceTrustServiceStateProviderMigrator extends Migrator<52, 53> {
   async migrate(helper: MigrationHelper): Promise<void> {
     const accounts = await helper.getAccounts<ExpectedAccountType>();
     async function migrateAccount(userId: string, account: ExpectedAccountType): Promise<void> {

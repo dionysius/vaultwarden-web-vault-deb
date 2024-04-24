@@ -28,7 +28,7 @@ import { OrganizationService } from "@bitwarden/common/admin-console/abstraction
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { AccountService as AccountServiceAbstraction } from "@bitwarden/common/auth/abstractions/account.service";
 import { AuthService as AuthServiceAbstraction } from "@bitwarden/common/auth/abstractions/auth.service";
-import { DeviceTrustCryptoServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust-crypto.service.abstraction";
+import { DeviceTrustServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust.service.abstraction";
 import { DevicesServiceAbstraction } from "@bitwarden/common/auth/abstractions/devices/devices.service.abstraction";
 import { KeyConnectorService } from "@bitwarden/common/auth/abstractions/key-connector.service";
 import { SsoLoginServiceAbstraction } from "@bitwarden/common/auth/abstractions/sso-login.service.abstraction";
@@ -250,8 +250,8 @@ const safeProviders: SafeProvider[] = [
     deps: [],
   }),
   safeProvider({
-    provide: DeviceTrustCryptoServiceAbstraction,
-    useFactory: getBgService<DeviceTrustCryptoServiceAbstraction>("deviceTrustCryptoService"),
+    provide: DeviceTrustServiceAbstraction,
+    useFactory: getBgService<DeviceTrustServiceAbstraction>("deviceTrustService"),
     deps: [],
   }),
   safeProvider({

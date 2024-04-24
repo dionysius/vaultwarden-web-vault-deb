@@ -10,7 +10,6 @@ import {
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
-import { DeviceTrustCryptoServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust-crypto.service.abstraction";
 import { KeyConnectorService } from "@bitwarden/common/auth/abstractions/key-connector.service";
 import { InternalMasterPasswordServiceAbstraction } from "@bitwarden/common/auth/abstractions/master-password.service.abstraction";
 import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
@@ -36,6 +35,7 @@ import { StateService } from "@bitwarden/common/platform/abstractions/state.serv
 import { KdfType } from "@bitwarden/common/platform/enums";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { GlobalState, GlobalStateProvider } from "@bitwarden/common/platform/state";
+import { DeviceTrustServiceAbstraction } from "@bitwarden/common/src/auth/abstractions/device-trust.service.abstraction";
 import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/password-strength";
 import { MasterKey } from "@bitwarden/common/types/key";
 
@@ -100,7 +100,7 @@ export class LoginStrategyService implements LoginStrategyServiceAbstraction {
     protected encryptService: EncryptService,
     protected passwordStrengthService: PasswordStrengthServiceAbstraction,
     protected policyService: PolicyService,
-    protected deviceTrustCryptoService: DeviceTrustCryptoServiceAbstraction,
+    protected deviceTrustService: DeviceTrustServiceAbstraction,
     protected authRequestService: AuthRequestServiceAbstraction,
     protected userDecryptionOptionsService: InternalUserDecryptionOptionsServiceAbstraction,
     protected stateProvider: GlobalStateProvider,
@@ -371,7 +371,7 @@ export class LoginStrategyService implements LoginStrategyServiceAbstraction {
               this.twoFactorService,
               this.userDecryptionOptionsService,
               this.keyConnectorService,
-              this.deviceTrustCryptoService,
+              this.deviceTrustService,
               this.authRequestService,
               this.i18nService,
               this.billingAccountProfileStateService,
@@ -410,7 +410,7 @@ export class LoginStrategyService implements LoginStrategyServiceAbstraction {
               this.stateService,
               this.twoFactorService,
               this.userDecryptionOptionsService,
-              this.deviceTrustCryptoService,
+              this.deviceTrustService,
               this.billingAccountProfileStateService,
             );
           case AuthenticationType.WebAuthn:

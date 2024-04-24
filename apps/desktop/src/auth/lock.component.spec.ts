@@ -13,7 +13,7 @@ import { VaultTimeoutService } from "@bitwarden/common/abstractions/vault-timeou
 import { PolicyApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/policy/policy-api.service.abstraction";
 import { InternalPolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
-import { DeviceTrustCryptoServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust-crypto.service.abstraction";
+import { DeviceTrustServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust.service.abstraction";
 import { InternalMasterPasswordServiceAbstraction } from "@bitwarden/common/auth/abstractions/master-password.service.abstraction";
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { FakeMasterPasswordService } from "@bitwarden/common/auth/services/master-password/fake-master-password.service";
@@ -145,8 +145,8 @@ describe("LockComponent", () => {
           useValue: mock<DialogService>(),
         },
         {
-          provide: DeviceTrustCryptoServiceAbstraction,
-          useValue: mock<DeviceTrustCryptoServiceAbstraction>(),
+          provide: DeviceTrustServiceAbstraction,
+          useValue: mock<DeviceTrustServiceAbstraction>(),
         },
         {
           provide: UserVerificationService,

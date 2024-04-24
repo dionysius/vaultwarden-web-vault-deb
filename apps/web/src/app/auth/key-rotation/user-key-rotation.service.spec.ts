@@ -1,7 +1,7 @@
 import { mock, MockProxy } from "jest-mock-extended";
 import { BehaviorSubject } from "rxjs";
 
-import { DeviceTrustCryptoServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust-crypto.service.abstraction";
+import { DeviceTrustServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust.service.abstraction";
 import { FakeMasterPasswordService } from "@bitwarden/common/auth/services/master-password/fake-master-password.service";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
@@ -42,7 +42,7 @@ describe("KeyRotationService", () => {
   let mockSendService: MockProxy<SendService>;
   let mockEmergencyAccessService: MockProxy<EmergencyAccessService>;
   let mockResetPasswordService: MockProxy<OrganizationUserResetPasswordService>;
-  let mockDeviceTrustCryptoService: MockProxy<DeviceTrustCryptoServiceAbstraction>;
+  let mockDeviceTrustService: MockProxy<DeviceTrustServiceAbstraction>;
   let mockCryptoService: MockProxy<CryptoService>;
   let mockEncryptService: MockProxy<EncryptService>;
   let mockStateService: MockProxy<StateService>;
@@ -60,7 +60,7 @@ describe("KeyRotationService", () => {
     mockSendService = mock<SendService>();
     mockEmergencyAccessService = mock<EmergencyAccessService>();
     mockResetPasswordService = mock<OrganizationUserResetPasswordService>();
-    mockDeviceTrustCryptoService = mock<DeviceTrustCryptoServiceAbstraction>();
+    mockDeviceTrustService = mock<DeviceTrustServiceAbstraction>();
     mockCryptoService = mock<CryptoService>();
     mockEncryptService = mock<EncryptService>();
     mockStateService = mock<StateService>();
@@ -74,7 +74,7 @@ describe("KeyRotationService", () => {
       mockSendService,
       mockEmergencyAccessService,
       mockResetPasswordService,
-      mockDeviceTrustCryptoService,
+      mockDeviceTrustService,
       mockCryptoService,
       mockEncryptService,
       mockStateService,

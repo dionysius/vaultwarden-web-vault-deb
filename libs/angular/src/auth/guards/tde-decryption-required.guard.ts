@@ -8,7 +8,7 @@ import {
 import { firstValueFrom } from "rxjs";
 
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
-import { DeviceTrustCryptoServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust-crypto.service.abstraction";
+import { DeviceTrustServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust.service.abstraction";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 
@@ -22,11 +22,11 @@ export function tdeDecryptionRequiredGuard(): CanActivateFn {
   return async (_: ActivatedRouteSnapshot, state: RouterStateSnapshot) => {
     const authService = inject(AuthService);
     const cryptoService = inject(CryptoService);
-    const deviceTrustCryptoService = inject(DeviceTrustCryptoServiceAbstraction);
+    const deviceTrustService = inject(DeviceTrustServiceAbstraction);
     const router = inject(Router);
 
     const authStatus = await authService.getAuthStatus();
-    const tdeEnabled = await firstValueFrom(deviceTrustCryptoService.supportsDeviceTrust$);
+    const tdeEnabled = await firstValueFrom(deviceTrustService.supportsDeviceTrust$);
     const everHadUserKey = await firstValueFrom(cryptoService.everHadUserKey$);
     if (authStatus !== AuthenticationStatus.Locked || !tdeEnabled || everHadUserKey) {
       return router.createUrlTree(["/"]);

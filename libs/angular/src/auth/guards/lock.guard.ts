@@ -8,7 +8,7 @@ import {
 import { firstValueFrom } from "rxjs";
 
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
-import { DeviceTrustCryptoServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust-crypto.service.abstraction";
+import { DeviceTrustServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust.service.abstraction";
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 import { ClientType } from "@bitwarden/common/enums";
@@ -30,7 +30,7 @@ export function lockGuard(): CanActivateFn {
   ) => {
     const authService = inject(AuthService);
     const cryptoService = inject(CryptoService);
-    const deviceTrustCryptoService = inject(DeviceTrustCryptoServiceAbstraction);
+    const deviceTrustService = inject(DeviceTrustServiceAbstraction);
     const platformUtilService = inject(PlatformUtilsService);
     const messagingService = inject(MessagingService);
     const router = inject(Router);
@@ -53,7 +53,7 @@ export function lockGuard(): CanActivateFn {
 
     // User is authN and in locked state.
 
-    const tdeEnabled = await firstValueFrom(deviceTrustCryptoService.supportsDeviceTrust$);
+    const tdeEnabled = await firstValueFrom(deviceTrustService.supportsDeviceTrust$);
 
     // Create special exception which allows users to go from the login-initiated page to the lock page for the approve w/ MP flow
     // The MP check is necessary to prevent direct manual navigation from other locked state pages for users who don't have a MP

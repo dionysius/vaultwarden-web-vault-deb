@@ -4,7 +4,7 @@ import { IRREVERSIBLE, Migrator } from "../migrator";
 type ExpectedAccountType = NonNullable<unknown>;
 
 export const REFRESH_TOKEN_MIGRATED_TO_SECURE_STORAGE: KeyDefinitionLike = {
-  key: "refreshTokenMigratedToSecureStorage", // matches KeyDefinition.key in DeviceTrustCryptoService
+  key: "refreshTokenMigratedToSecureStorage", // matches KeyDefinition.key
   stateDefinition: {
     name: "token", // matches StateDefinition.name in StateDefinitions
   },

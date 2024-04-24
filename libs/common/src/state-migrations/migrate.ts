@@ -49,7 +49,7 @@ import { AddKeyTypeToOrgKeysMigrator } from "./migrations/5-add-key-type-to-org-
 import { KeyConnectorMigrator } from "./migrations/50-move-key-connector-to-state-provider";
 import { RememberedEmailMigrator } from "./migrations/51-move-remembered-email-to-state-providers";
 import { DeleteInstalledVersion } from "./migrations/52-delete-installed-version";
-import { DeviceTrustCryptoServiceStateProviderMigrator } from "./migrations/53-migrate-device-trust-crypto-svc-to-state-providers";
+import { DeviceTrustServiceStateProviderMigrator } from "./migrations/53-migrate-device-trust-svc-to-state-providers";
 import { SendMigrator } from "./migrations/54-move-encrypted-sends";
 import { MoveMasterKeyStateToProviderMigrator } from "./migrations/55-move-master-key-state-to-provider";
 import { AuthRequestMigrator } from "./migrations/56-move-auth-requests";
@@ -117,7 +117,7 @@ export function createMigrationBuilder() {
     .with(KeyConnectorMigrator, 49, 50)
     .with(RememberedEmailMigrator, 50, 51)
     .with(DeleteInstalledVersion, 51, 52)
-    .with(DeviceTrustCryptoServiceStateProviderMigrator, 52, 53)
+    .with(DeviceTrustServiceStateProviderMigrator, 52, 53)
     .with(SendMigrator, 53, 54)
     .with(MoveMasterKeyStateToProviderMigrator, 54, 55)
     .with(AuthRequestMigrator, 55, 56)
