@@ -77,6 +77,7 @@ import { MigrationBuilderService } from "@bitwarden/common/platform/services/mig
 import { MigrationRunner } from "@bitwarden/common/platform/services/migration-runner";
 import { StateService } from "@bitwarden/common/platform/services/state.service";
 import { StorageServiceProvider } from "@bitwarden/common/platform/services/storage-service.provider";
+import { UserKeyInitService } from "@bitwarden/common/platform/services/user-key-init.service";
 import {
   ActiveUserStateProvider,
   DerivedStateProvider,
@@ -233,6 +234,7 @@ export class Main {
   biometricStateService: BiometricStateService;
   billingAccountProfileStateService: BillingAccountProfileStateService;
   providerApiService: ProviderApiServiceAbstraction;
+  userKeyInitService: UserKeyInitService;
 
   constructor() {
     let p = null;
@@ -692,6 +694,12 @@ export class Main {
     );
 
     this.providerApiService = new ProviderApiService(this.apiService);
+
+    this.userKeyInitService = new UserKeyInitService(
+      this.accountService,
+      this.cryptoService,
+      this.logService,
+    );
   }
 
   async run() {
@@ -735,6 +743,7 @@ export class Main {
     this.containerService.attachToGlobal(global);
     await this.i18nService.init();
     this.twoFactorService.init();
+    this.userKeyInitService.listenForActiveUserChangesToSetUserKey();
   }
 }
 
