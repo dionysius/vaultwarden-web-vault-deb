@@ -2,6 +2,8 @@ import { EncString } from "../../platform/models/domain/enc-string";
 import { Collection as CollectionDomain } from "../../vault/models/domain/collection";
 import { CollectionView } from "../../vault/models/view/collection.view";
 
+import { safeGetString } from "./utils";
+
 export class CollectionExport {
   static template(): CollectionExport {
     const req = new CollectionExport();
@@ -36,11 +38,7 @@ export class CollectionExport {
   // Use build method instead of ctor so that we can control order of JSON stringify for pretty print
   build(o: CollectionView | CollectionDomain) {
     this.organizationId = o.organizationId;
-    if (o instanceof CollectionView) {
-      this.name = o.name;
-    } else {
-      this.name = o.name?.encryptedString;
-    }
+    this.name = safeGetString(o.name);
     this.externalId = o.externalId;
   }
 }

@@ -10,6 +10,7 @@ import { IdentityExport } from "./identity.export";
 import { LoginExport } from "./login.export";
 import { PasswordHistoryExport } from "./password-history.export";
 import { SecureNoteExport } from "./secure-note.export";
+import { safeGetString } from "./utils";
 
 export class CipherExport {
   static template(): CipherExport {
@@ -145,23 +146,16 @@ export class CipherExport {
     this.type = o.type;
     this.reprompt = o.reprompt;
 
-    if (o instanceof CipherView) {
-      this.name = o.name;
-      this.notes = o.notes;
-    } else {
-      this.name = o.name?.encryptedString;
-      this.notes = o.notes?.encryptedString;
+    this.name = safeGetString(o.name);
+    this.notes = safeGetString(o.notes);
+    if ("key" in o) {
       this.key = o.key?.encryptedString;
     }
 
     this.favorite = o.favorite;
 
     if (o.fields != null) {
-      if (o instanceof CipherView) {
-        this.fields = o.fields.map((f) => new FieldExport(f));
-      } else {
-        this.fields = o.fields.map((f) => new FieldExport(f));
-      }
+      this.fields = o.fields.map((f) => new FieldExport(f));
     }
 
     switch (o.type) {
@@ -180,11 +174,7 @@ export class CipherExport {
     }
 
     if (o.passwordHistory != null) {
-      if (o instanceof CipherView) {
-        this.passwordHistory = o.passwordHistory.map((ph) => new PasswordHistoryExport(ph));
-      } else {
-        this.passwordHistory = o.passwordHistory.map((ph) => new PasswordHistoryExport(ph));
-      }
+      this.passwordHistory = o.passwordHistory.map((ph) => new PasswordHistoryExport(ph));
     }
 
     this.creationDate = o.creationDate;

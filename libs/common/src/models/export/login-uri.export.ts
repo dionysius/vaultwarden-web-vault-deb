@@ -3,6 +3,8 @@ import { EncString } from "../../platform/models/domain/enc-string";
 import { LoginUri as LoginUriDomain } from "../../vault/models/domain/login-uri";
 import { LoginUriView } from "../../vault/models/view/login-uri.view";
 
+import { safeGetString } from "./utils";
+
 export class LoginUriExport {
   static template(): LoginUriExport {
     const req = new LoginUriExport();
@@ -33,10 +35,8 @@ export class LoginUriExport {
       return;
     }
 
-    if (o instanceof LoginUriView) {
-      this.uri = o.uri;
-    } else {
-      this.uri = o.uri?.encryptedString;
+    this.uri = safeGetString(o.uri);
+    if ("uriChecksum" in o) {
       this.uriChecksum = o.uriChecksum?.encryptedString;
     }
     this.match = o.match;

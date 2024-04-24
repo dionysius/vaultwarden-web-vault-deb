@@ -4,6 +4,7 @@ import { LoginView } from "../../vault/models/view/login.view";
 
 import { Fido2CredentialExport } from "./fido2-credential.export";
 import { LoginUriExport } from "./login-uri.export";
+import { safeGetString } from "./utils";
 
 export class LoginExport {
   static template(): LoginExport {
@@ -53,25 +54,15 @@ export class LoginExport {
     }
 
     if (o.uris != null) {
-      if (o instanceof LoginView) {
-        this.uris = o.uris.map((u) => new LoginUriExport(u));
-      } else {
-        this.uris = o.uris.map((u) => new LoginUriExport(u));
-      }
+      this.uris = o.uris.map((u) => new LoginUriExport(u));
     }
 
     if (o.fido2Credentials != null) {
       this.fido2Credentials = o.fido2Credentials.map((key) => new Fido2CredentialExport(key));
     }
 
-    if (o instanceof LoginView) {
-      this.username = o.username;
-      this.password = o.password;
-      this.totp = o.totp;
-    } else {
-      this.username = o.username?.encryptedString;
-      this.password = o.password?.encryptedString;
-      this.totp = o.totp?.encryptedString;
-    }
+    this.username = safeGetString(o.username);
+    this.password = safeGetString(o.password);
+    this.totp = safeGetString(o.totp);
   }
 }

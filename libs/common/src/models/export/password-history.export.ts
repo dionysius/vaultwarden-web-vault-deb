@@ -2,6 +2,8 @@ import { EncString } from "../../platform/models/domain/enc-string";
 import { Password } from "../../vault/models/domain/password";
 import { PasswordHistoryView } from "../../vault/models/view/password-history.view";
 
+import { safeGetString } from "./utils";
+
 export class PasswordHistoryExport {
   static template(): PasswordHistoryExport {
     const req = new PasswordHistoryExport();
@@ -30,11 +32,7 @@ export class PasswordHistoryExport {
       return;
     }
 
-    if (o instanceof PasswordHistoryView) {
-      this.password = o.password;
-    } else {
-      this.password = o.password?.encryptedString;
-    }
+    this.password = safeGetString(o.password);
     this.lastUsedDate = o.lastUsedDate;
   }
 }

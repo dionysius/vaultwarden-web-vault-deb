@@ -2,6 +2,8 @@ import { EncString } from "../../platform/models/domain/enc-string";
 import { Folder as FolderDomain } from "../../vault/models/domain/folder";
 import { FolderView } from "../../vault/models/view/folder.view";
 
+import { safeGetString } from "./utils";
+
 export class FolderExport {
   static template(): FolderExport {
     const req = new FolderExport();
@@ -23,10 +25,6 @@ export class FolderExport {
 
   // Use build method instead of ctor so that we can control order of JSON stringify for pretty print
   build(o: FolderView | FolderDomain) {
-    if (o instanceof FolderView) {
-      this.name = o.name;
-    } else {
-      this.name = o.name?.encryptedString;
-    }
+    this.name = safeGetString(o.name);
   }
 }

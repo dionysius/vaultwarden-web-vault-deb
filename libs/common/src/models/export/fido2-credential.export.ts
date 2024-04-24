@@ -2,6 +2,8 @@ import { EncString } from "../../platform/models/domain/enc-string";
 import { Fido2Credential } from "../../vault/models/domain/fido2-credential";
 import { Fido2CredentialView } from "../../vault/models/view/fido2-credential.view";
 
+import { safeGetString } from "./utils";
+
 /**
  * Represents format of Fido2 Credentials in JSON exports.
  */
@@ -99,33 +101,18 @@ export class Fido2CredentialExport {
       return;
     }
 
-    if (o instanceof Fido2CredentialView) {
-      this.credentialId = o.credentialId;
-      this.keyType = o.keyType;
-      this.keyAlgorithm = o.keyAlgorithm;
-      this.keyCurve = o.keyCurve;
-      this.keyValue = o.keyValue;
-      this.rpId = o.rpId;
-      this.userHandle = o.userHandle;
-      this.userName = o.userName;
-      this.counter = String(o.counter);
-      this.rpName = o.rpName;
-      this.userDisplayName = o.userDisplayName;
-      this.discoverable = String(o.discoverable);
-    } else {
-      this.credentialId = o.credentialId?.encryptedString;
-      this.keyType = o.keyType?.encryptedString;
-      this.keyAlgorithm = o.keyAlgorithm?.encryptedString;
-      this.keyCurve = o.keyCurve?.encryptedString;
-      this.keyValue = o.keyValue?.encryptedString;
-      this.rpId = o.rpId?.encryptedString;
-      this.userHandle = o.userHandle?.encryptedString;
-      this.userName = o.userName?.encryptedString;
-      this.counter = o.counter?.encryptedString;
-      this.rpName = o.rpName?.encryptedString;
-      this.userDisplayName = o.userDisplayName?.encryptedString;
-      this.discoverable = o.discoverable?.encryptedString;
-    }
+    this.credentialId = safeGetString(o.credentialId);
+    this.keyType = safeGetString(o.keyType);
+    this.keyAlgorithm = safeGetString(o.keyAlgorithm);
+    this.keyCurve = safeGetString(o.keyCurve);
+    this.keyValue = safeGetString(o.keyValue);
+    this.rpId = safeGetString(o.rpId);
+    this.userHandle = safeGetString(o.userHandle);
+    this.userName = safeGetString(o.userName);
+    this.counter = safeGetString(String(o.counter));
+    this.rpName = safeGetString(o.rpName);
+    this.userDisplayName = safeGetString(o.userDisplayName);
+    this.discoverable = safeGetString(String(o.discoverable));
     this.creationDate = o.creationDate;
   }
 }
