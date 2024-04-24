@@ -17,7 +17,7 @@ export default {
 
 type Story = StoryObj<SectionComponent>;
 
-/** Sections are simple containers that apply a bottom margin. They often contain a heading. */
+/** Sections are simple containers that apply a responsive bottom margin. They often contain a heading. */
 export const Default: Story = {
   render: (args) => ({
     props: args,

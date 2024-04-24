@@ -6,7 +6,7 @@ import { Component } from "@angular/core";
   standalone: true,
   imports: [CommonModule],
   template: `
-    <section class="tw-mb-12">
+    <section class="tw-mb-6 md:tw-mb-12">
       <ng-content></ng-content>
     </section>
   `,
