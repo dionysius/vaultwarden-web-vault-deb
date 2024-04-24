@@ -221,7 +221,8 @@ export class LoginViaAuthRequestComponent
     }
 
     // Request still pending response from admin
-    // So, create hub connection so that any approvals will be received via push notification
+    // set keypair and create hub connection so that any approvals will be received via push notification
+    this.authRequestKeyPair = { privateKey: adminAuthReqStorable.privateKey, publicKey: null };
     await this.anonymousHubService.createHubConnection(adminAuthReqStorable.id);
   }
 
