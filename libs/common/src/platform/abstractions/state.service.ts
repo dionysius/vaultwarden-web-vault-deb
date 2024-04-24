@@ -181,8 +181,6 @@ export abstract class StateService<T extends Account = Account> {
    * Sets the user's Pin, encrypted by the user key
    */
   setProtectedPin: (value: string, options?: StorageOptions) => Promise<void>;
-  getSecurityStamp: (options?: StorageOptions) => Promise<string>;
-  setSecurityStamp: (value: string, options?: StorageOptions) => Promise<void>;
   getUserId: (options?: StorageOptions) => Promise<string>;
   getVaultTimeout: (options?: StorageOptions) => Promise<number>;
   setVaultTimeout: (value: number, options?: StorageOptions) => Promise<void>;

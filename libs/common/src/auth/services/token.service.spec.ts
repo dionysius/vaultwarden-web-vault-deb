@@ -23,6 +23,7 @@ import {
   EMAIL_TWO_FACTOR_TOKEN_RECORD_DISK_LOCAL,
   REFRESH_TOKEN_DISK,
   REFRESH_TOKEN_MEMORY,
+  SECURITY_STAMP_MEMORY,
 } from "./token.state";
 
 describe("TokenService", () => {
@@ -2187,6 +2188,84 @@ describe("TokenService", () => {
         expect(
           globalStateProvider.getFake(EMAIL_TWO_FACTOR_TOKEN_RECORD_DISK_LOCAL).nextMock,
         ).toHaveBeenCalledWith({});
+      });
+    });
+  });
+
+  describe("Security Stamp methods", () => {
+    const mockSecurityStamp = "securityStamp";
+
+    describe("setSecurityStamp", () => {
+      it("should throw an error if no user id is provided and there is no active user in global state", async () => {
+        // Act
+        // note: don't await here because we want to test the error
+        const result = tokenService.setSecurityStamp(mockSecurityStamp);
+        // Assert
+        await expect(result).rejects.toThrow("User id not found. Cannot set security stamp.");
+      });
+
+      it("should set the security stamp in memory when there is an active user in global state", async () => {
+        // Arrange
+        globalStateProvider
+          .getFake(ACCOUNT_ACTIVE_ACCOUNT_ID)
+          .stateSubject.next(userIdFromAccessToken);
+
+        // Act
+        await tokenService.setSecurityStamp(mockSecurityStamp);
+
+        // Assert
+        expect(
+          singleUserStateProvider.getFake(userIdFromAccessToken, SECURITY_STAMP_MEMORY).nextMock,
+        ).toHaveBeenCalledWith(mockSecurityStamp);
+      });
+
+      it("should set the security stamp in memory for the specified user id", async () => {
+        // Act
+        await tokenService.setSecurityStamp(mockSecurityStamp, userIdFromAccessToken);
+
+        // Assert
+        expect(
+          singleUserStateProvider.getFake(userIdFromAccessToken, SECURITY_STAMP_MEMORY).nextMock,
+        ).toHaveBeenCalledWith(mockSecurityStamp);
+      });
+    });
+
+    describe("getSecurityStamp", () => {
+      it("should throw an error if no user id is provided and there is no active user in global state", async () => {
+        // Act
+        // note: don't await here because we want to test the error
+        const result = tokenService.getSecurityStamp();
+        // Assert
+        await expect(result).rejects.toThrow("User id not found. Cannot get security stamp.");
+      });
+
+      it("should return the security stamp from memory with no user id specified (uses global active user)", async () => {
+        // Arrange
+        globalStateProvider
+          .getFake(ACCOUNT_ACTIVE_ACCOUNT_ID)
+          .stateSubject.next(userIdFromAccessToken);
+
+        singleUserStateProvider
+          .getFake(userIdFromAccessToken, SECURITY_STAMP_MEMORY)
+          .stateSubject.next([userIdFromAccessToken, mockSecurityStamp]);
+
+        // Act
+        const result = await tokenService.getSecurityStamp();
+
+        // Assert
+        expect(result).toEqual(mockSecurityStamp);
+      });
+
+      it("should return the security stamp from memory for the specified user id", async () => {
+        // Arrange
+        singleUserStateProvider
+          .getFake(userIdFromAccessToken, SECURITY_STAMP_MEMORY)
+          .stateSubject.next([userIdFromAccessToken, mockSecurityStamp]);
+
+        // Act
+        const result = await tokenService.getSecurityStamp(userIdFromAccessToken);
+        // Assert
+        expect(result).toEqual(mockSecurityStamp);
       });
     });
   });

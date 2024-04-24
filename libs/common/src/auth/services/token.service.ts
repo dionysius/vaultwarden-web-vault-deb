@@ -32,6 +32,7 @@ import {
   EMAIL_TWO_FACTOR_TOKEN_RECORD_DISK_LOCAL,
   REFRESH_TOKEN_DISK,
   REFRESH_TOKEN_MEMORY,
+  SECURITY_STAMP_MEMORY,
 } from "./token.state";
 
 export enum TokenStorageLocation {
@@ -848,6 +849,30 @@ export class TokenService implements TokenServiceAbstraction {
     }
 
     return Array.isArray(decoded.amr) && decoded.amr.includes("external");
+  }
+
+  async getSecurityStamp(userId?: UserId): Promise<string | null> {
+    userId ??= await firstValueFrom(this.activeUserIdGlobalState.state$);
+
+    if (!userId) {
+      throw new Error("User id not found. Cannot get security stamp.");
+    }
+
+    const securityStamp = await this.getStateValueByUserIdAndKeyDef(userId, SECURITY_STAMP_MEMORY);
+
+    return securityStamp;
+  }
+
+  async setSecurityStamp(securityStamp: string, userId?: UserId): Promise<void> {
+    userId ??= await firstValueFrom(this.activeUserIdGlobalState.state$);
+
+    if (!userId) {
+      throw new Error("User id not found. Cannot set security stamp.");
+    }
+
+    await this.singleUserStateProvider
+      .get(userId, SECURITY_STAMP_MEMORY)
+      .update((_) => securityStamp);
   }
 
   private async getStateValueByUserIdAndKeyDef(
