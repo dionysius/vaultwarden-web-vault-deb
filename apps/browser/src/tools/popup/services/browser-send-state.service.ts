@@ -46,7 +46,9 @@ export class BrowserSendStateService {
    *  the send component on the browser
    */
   async setBrowserSendComponentState(value: BrowserSendComponentState): Promise<void> {
-    await this.activeUserBrowserSendComponentState.update(() => value);
+    await this.activeUserBrowserSendComponentState.update(() => value, {
+      shouldUpdate: (current) => !(current == null && value == null),
+    });
   }
 
   /** Get the active user's browser component state
@@ -60,6 +62,8 @@ export class BrowserSendStateService {
    *  @param { BrowserComponentState } value set the scroll position and search text for the send component on the browser
    */
   async setBrowserSendTypeComponentState(value: BrowserComponentState): Promise<void> {
-    await this.activeUserBrowserSendTypeComponentState.update(() => value);
+    await this.activeUserBrowserSendTypeComponentState.update(() => value, {
+      shouldUpdate: (current) => !(current == null && value == null),
+    });
   }
 }

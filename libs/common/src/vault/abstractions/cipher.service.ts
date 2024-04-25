@@ -33,6 +33,7 @@ export abstract class CipherService {
     url: string,
     includeOtherTypes?: CipherType[],
     defaultMatch?: UriMatchStrategySetting,
+    reindexCiphers?: boolean,
   ) => Promise<CipherView[]>;
   getAllFromApiForOrganization: (organizationId: string) => Promise<CipherView[]>;
   /**
