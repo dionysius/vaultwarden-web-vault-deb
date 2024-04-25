@@ -184,8 +184,6 @@ export class AddEditComponent implements OnInit, OnDestroy {
       FeatureFlag.FlexibleCollectionsV1,
       false,
     );
-    this.writeableCollections = await this.loadCollections();
-    this.canUseReprompt = await this.passwordRepromptService.enabled();
 
     this.policyService
       .policyAppliesToActiveUser$(PolicyType.PersonalOwnership)
@@ -197,6 +195,9 @@ export class AddEditComponent implements OnInit, OnDestroy {
         takeUntil(this.destroy$),
       )
       .subscribe();
+
+    this.writeableCollections = await this.loadCollections();
+    this.canUseReprompt = await this.passwordRepromptService.enabled();
   }
 
   ngOnDestroy() {
