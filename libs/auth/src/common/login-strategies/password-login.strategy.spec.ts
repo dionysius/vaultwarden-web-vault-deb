@@ -99,7 +99,9 @@ describe("PasswordLoginStrategy", () => {
     kdfConfigService = mock<KdfConfigService>();
 
     appIdService.getAppId.mockResolvedValue(deviceId);
-    tokenService.decodeAccessToken.mockResolvedValue({});
+    tokenService.decodeAccessToken.mockResolvedValue({
+      sub: userId,
+    });
 
     loginStrategyService.makePreloginKey.mockResolvedValue(masterKey);
 

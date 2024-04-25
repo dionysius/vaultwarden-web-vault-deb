@@ -253,7 +253,7 @@ describe("SsoComponent", () => {
     describe("2FA scenarios", () => {
       beforeEach(() => {
         const authResult = new AuthResult();
-        authResult.twoFactorProviders = new Map([[TwoFactorProviderType.Authenticator, {}]]);
+        authResult.twoFactorProviders = { [TwoFactorProviderType.Authenticator]: {} };
 
         // use standard user with MP because this test is not concerned with password reset.
         selectedUserDecryptionOptions.next(mockUserDecryptionOpts.withMasterPassword);

@@ -14,7 +14,7 @@ export class AuthResult {
   resetMasterPassword = false;
 
   forcePasswordReset: ForceSetPasswordReason = ForceSetPasswordReason.None;
-  twoFactorProviders: Map<TwoFactorProviderType, { [key: string]: string }> = null;
+  twoFactorProviders: Partial<Record<TwoFactorProviderType, Record<string, string>>> = null;
   ssoEmail2FaSessionToken?: string;
   email: string;
   requiresEncryptionKeyMigration: boolean;

@@ -1,5 +1,9 @@
+import { firstValueFrom, map } from "rxjs";
+
 import { I18nService } from "../../platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "../../platform/abstractions/platform-utils.service";
+import { Utils } from "../../platform/misc/utils";
+import { GlobalStateProvider, KeyDefinition, TWO_FACTOR_MEMORY } from "../../platform/state";
 import {
   TwoFactorProviderDetails,
   TwoFactorService as TwoFactorServiceAbstraction,
@@ -59,13 +63,36 @@ export const TwoFactorProviders: Partial<Record<TwoFactorProviderType, TwoFactor
     },
   };
 
+// Memory storage as only required during authentication process
+export const PROVIDERS = KeyDefinition.record<Record<string, string>, TwoFactorProviderType>(
+  TWO_FACTOR_MEMORY,
+  "providers",
+  {
+    deserializer: (obj) => obj,
+  },
+);
+
+// Memory storage as only required during authentication process
+export const SELECTED_PROVIDER = new KeyDefinition<TwoFactorProviderType>(
+  TWO_FACTOR_MEMORY,
+  "selected",
+  {
+    deserializer: (obj) => obj,
+  },
+);
+
 export class TwoFactorService implements TwoFactorServiceAbstraction {
-  private twoFactorProvidersData: Map<TwoFactorProviderType, { [key: string]: string }>;
-  private selectedTwoFactorProviderType: TwoFactorProviderType = null;
+  private providersState = this.globalStateProvider.get(PROVIDERS);
+  private selectedState = this.globalStateProvider.get(SELECTED_PROVIDER);
+  readonly providers$ = this.providersState.state$.pipe(
+    map((providers) => Utils.recordToMap(providers)),
+  );
+  readonly selected$ = this.selectedState.state$;
 
   constructor(
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
+    private globalStateProvider: GlobalStateProvider,
   ) {}
 
   init() {
@@ -93,63 +120,60 @@ export class TwoFactorService implements TwoFactorServiceAbstraction {
       this.i18nService.t("yubiKeyDesc");
   }
 
-  getSupportedProviders(win: Window): TwoFactorProviderDetails[] {
+  async getSupportedProviders(win: Window): Promise<TwoFactorProviderDetails[]> {
+    const data = await firstValueFrom(this.providers$);
     const providers: any[] = [];
-    if (this.twoFactorProvidersData == null) {
+    if (data == null) {
       return providers;
     }
 
     if (
-      this.twoFactorProvidersData.has(TwoFactorProviderType.OrganizationDuo) &&
+      data.has(TwoFactorProviderType.OrganizationDuo) &&
       this.platformUtilsService.supportsDuo()
     ) {
       providers.push(TwoFactorProviders[TwoFactorProviderType.OrganizationDuo]);
     }
 
-    if (this.twoFactorProvidersData.has(TwoFactorProviderType.Authenticator)) {
+    if (data.has(TwoFactorProviderType.Authenticator)) {
       providers.push(TwoFactorProviders[TwoFactorProviderType.Authenticator]);
     }
 
-    if (this.twoFactorProvidersData.has(TwoFactorProviderType.Yubikey)) {
+    if (data.has(TwoFactorProviderType.Yubikey)) {
       providers.push(TwoFactorProviders[TwoFactorProviderType.Yubikey]);
     }
 
-    if (
-      this.twoFactorProvidersData.has(TwoFactorProviderType.Duo) &&
-      this.platformUtilsService.supportsDuo()
-    ) {
+    if (data.has(TwoFactorProviderType.Duo) && this.platformUtilsService.supportsDuo()) {
       providers.push(TwoFactorProviders[TwoFactorProviderType.Duo]);
     }
 
     if (
-      this.twoFactorProvidersData.has(TwoFactorProviderType.WebAuthn) &&
+      data.has(TwoFactorProviderType.WebAuthn) &&
       this.platformUtilsService.supportsWebAuthn(win)
     ) {
       providers.push(TwoFactorProviders[TwoFactorProviderType.WebAuthn]);
     }
 
-    if (this.twoFactorProvidersData.has(TwoFactorProviderType.Email)) {
+    if (data.has(TwoFactorProviderType.Email)) {
       providers.push(TwoFactorProviders[TwoFactorProviderType.Email]);
     }
 
     return providers;
   }
 
-  getDefaultProvider(webAuthnSupported: boolean): TwoFactorProviderType {
-    if (this.twoFactorProvidersData == null) {
+  async getDefaultProvider(webAuthnSupported: boolean): Promise<TwoFactorProviderType> {
+    const data = await firstValueFrom(this.providers$);
+    const selected = await firstValueFrom(this.selected$);
+    if (data == null) {
       return null;
     }
 
-    if (
-      this.selectedTwoFactorProviderType != null &&
-      this.twoFactorProvidersData.has(this.selectedTwoFactorProviderType)
-    ) {
-      return this.selectedTwoFactorProviderType;
+    if (selected != null && data.has(selected)) {
+      return selected;
     }
 
     let providerType: TwoFactorProviderType = null;
     let providerPriority = -1;
-    this.twoFactorProvidersData.forEach((_value, type) => {
+    data.forEach((_value, type) => {
       const provider = (TwoFactorProviders as any)[type];
       if (provider != null && provider.priority > providerPriority) {
         if (type === TwoFactorProviderType.WebAuthn && !webAuthnSupported) {
@@ -164,23 +188,23 @@ export class TwoFactorService implements TwoFactorServiceAbstraction {
     return providerType;
   }
 
-  setSelectedProvider(type: TwoFactorProviderType) {
-    this.selectedTwoFactorProviderType = type;
+  async setSelectedProvider(type: TwoFactorProviderType): Promise<void> {
+    await this.selectedState.update(() => type);
   }
 
-  clearSelectedProvider() {
-    this.selectedTwoFactorProviderType = null;
+  async clearSelectedProvider(): Promise<void> {
+    await this.selectedState.update(() => null);
   }
 
-  setProviders(response: IdentityTwoFactorResponse) {
-    this.twoFactorProvidersData = response.twoFactorProviders2;
+  async setProviders(response: IdentityTwoFactorResponse): Promise<void> {
+    await this.providersState.update(() => response.twoFactorProviders2);
   }
 
-  clearProviders() {
-    this.twoFactorProvidersData = null;
+  async clearProviders(): Promise<void> {
+    await this.providersState.update(() => null);
   }
 
-  getProviders() {
-    return this.twoFactorProvidersData;
+  getProviders(): Promise<Map<TwoFactorProviderType, { [key: string]: string }>> {
+    return firstValueFrom(this.providers$);
   }
 }

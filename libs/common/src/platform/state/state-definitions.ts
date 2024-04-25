@@ -40,6 +40,7 @@ export const KEY_CONNECTOR_DISK = new StateDefinition("keyConnector", "disk");
 export const ACCOUNT_MEMORY = new StateDefinition("account", "memory");
 export const MASTER_PASSWORD_MEMORY = new StateDefinition("masterPassword", "memory");
 export const MASTER_PASSWORD_DISK = new StateDefinition("masterPassword", "disk");
+export const TWO_FACTOR_MEMORY = new StateDefinition("twoFactor", "memory");
 export const AVATAR_DISK = new StateDefinition("avatar", "disk", { web: "disk-local" });
 export const ROUTER_DISK = new StateDefinition("router", "disk");
 export const LOGIN_EMAIL_DISK = new StateDefinition("loginEmail", "disk", {

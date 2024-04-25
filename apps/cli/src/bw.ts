@@ -455,7 +455,11 @@ export class Main {
       this.stateProvider,
     );
 
-    this.twoFactorService = new TwoFactorService(this.i18nService, this.platformUtilsService);
+    this.twoFactorService = new TwoFactorService(
+      this.i18nService,
+      this.platformUtilsService,
+      this.globalStateProvider,
+    );
 
     this.passwordStrengthService = new PasswordStrengthService();
 

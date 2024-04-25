@@ -3,8 +3,6 @@ import { Subject, firstValueFrom, merge } from "rxjs";
 import {
   PinCryptoServiceAbstraction,
   PinCryptoService,
-  LoginStrategyServiceAbstraction,
-  LoginStrategyService,
   InternalUserDecryptionOptionsServiceAbstraction,
   UserDecryptionOptionsService,
   AuthRequestServiceAbstraction,
@@ -38,7 +36,6 @@ import { KeyConnectorService as KeyConnectorServiceAbstraction } from "@bitwarde
 import { InternalMasterPasswordServiceAbstraction } from "@bitwarden/common/auth/abstractions/master-password.service.abstraction";
 import { SsoLoginServiceAbstraction } from "@bitwarden/common/auth/abstractions/sso-login.service.abstraction";
 import { TokenService as TokenServiceAbstraction } from "@bitwarden/common/auth/abstractions/token.service";
-import { TwoFactorService as TwoFactorServiceAbstraction } from "@bitwarden/common/auth/abstractions/two-factor.service";
 import { UserVerificationApiServiceAbstraction } from "@bitwarden/common/auth/abstractions/user-verification/user-verification-api.service.abstraction";
 import { UserVerificationService as UserVerificationServiceAbstraction } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
@@ -54,7 +51,6 @@ import { KeyConnectorService } from "@bitwarden/common/auth/services/key-connect
 import { MasterPasswordService } from "@bitwarden/common/auth/services/master-password/master-password.service";
 import { SsoLoginService } from "@bitwarden/common/auth/services/sso-login.service";
 import { TokenService } from "@bitwarden/common/auth/services/token.service";
-import { TwoFactorService } from "@bitwarden/common/auth/services/two-factor.service";
 import { UserVerificationApiService } from "@bitwarden/common/auth/services/user-verification/user-verification-api.service";
 import { UserVerificationService } from "@bitwarden/common/auth/services/user-verification/user-verification.service";
 import {
@@ -277,7 +273,6 @@ export default class MainBackground {
   containerService: ContainerService;
   auditService: AuditServiceAbstraction;
   authService: AuthServiceAbstraction;
-  loginStrategyService: LoginStrategyServiceAbstraction;
   loginEmailService: LoginEmailServiceAbstraction;
   importApiService: ImportApiServiceAbstraction;
   importService: ImportServiceAbstraction;
@@ -301,7 +296,6 @@ export default class MainBackground {
   providerService: ProviderServiceAbstraction;
   keyConnectorService: KeyConnectorServiceAbstraction;
   userVerificationService: UserVerificationServiceAbstraction;
-  twoFactorService: TwoFactorServiceAbstraction;
   vaultFilterService: VaultFilterService;
   usernameGenerationService: UsernameGenerationServiceAbstraction;
   encryptService: EncryptService;
@@ -614,8 +608,6 @@ export default class MainBackground {
       this.stateService,
     );
 
-    this.twoFactorService = new TwoFactorService(this.i18nService, this.platformUtilsService);
-
     this.userDecryptionOptionsService = new UserDecryptionOptionsService(this.stateProvider);
 
     this.devicesApiService = new DevicesApiServiceImplementation(this.apiService);
@@ -658,32 +650,6 @@ export default class MainBackground {
     );
 
     this.loginEmailService = new LoginEmailService(this.stateProvider);
-
-    this.loginStrategyService = new LoginStrategyService(
-      this.accountService,
-      this.masterPasswordService,
-      this.cryptoService,
-      this.apiService,
-      this.tokenService,
-      this.appIdService,
-      this.platformUtilsService,
-      this.messagingService,
-      this.logService,
-      this.keyConnectorService,
-      this.environmentService,
-      this.stateService,
-      this.twoFactorService,
-      this.i18nService,
-      this.encryptService,
-      this.passwordStrengthService,
-      this.policyService,
-      this.deviceTrustService,
-      this.authRequestService,
-      this.userDecryptionOptionsService,
-      this.globalStateProvider,
-      this.billingAccountProfileStateService,
-      this.kdfConfigService,
-    );
 
     this.ssoLoginService = new SsoLoginService(this.stateProvider);
 
@@ -1114,8 +1080,7 @@ export default class MainBackground {
     this.userKeyInitService.listenForActiveUserChangesToSetUserKey();
 
     await (this.i18nService as I18nService).init();
-    await (this.eventUploadService as EventUploadService).init(true);
-    this.twoFactorService.init();
+    (this.eventUploadService as EventUploadService).init(true);
 
     if (this.popupOnlyContext) {
       return;

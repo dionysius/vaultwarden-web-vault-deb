@@ -1,4 +1,4 @@
-import { BehaviorSubject } from "rxjs";
+import { BehaviorSubject, filter, firstValueFrom, timeout } from "rxjs";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
@@ -101,7 +101,7 @@ export abstract class LoginStrategy {
   }
 
   protected async startLogIn(): Promise<[AuthResult, IdentityResponse]> {
-    this.twoFactorService.clearSelectedProvider();
+    await this.twoFactorService.clearSelectedProvider();
 
     const tokenRequest = this.cache.value.tokenRequest;
     const response = await this.apiService.postIdentityToken(tokenRequest);
@@ -159,12 +159,12 @@ export abstract class LoginStrategy {
    * It also sets the access token and refresh token in the token service.
    *
    * @param {IdentityTokenResponse} tokenResponse - The response from the server containing the identity token.
-   * @returns {Promise<void>} - A promise that resolves when the account information has been successfully saved.
+   * @returns {Promise<UserId>} - A promise that resolves the the UserId when the account information has been successfully saved.
    */
   protected async saveAccountInformation(tokenResponse: IdentityTokenResponse): Promise<UserId> {
     const accountInformation = await this.tokenService.decodeAccessToken(tokenResponse.accessToken);
 
-    const userId = accountInformation.sub;
+    const userId = accountInformation.sub as UserId;
 
     const vaultTimeoutAction = await this.stateService.getVaultTimeoutAction({ userId });
     const vaultTimeout = await this.stateService.getVaultTimeout({ userId });
@@ -191,6 +191,8 @@ export abstract class LoginStrategy {
       }),
     );
 
+    await this.verifyAccountAdded(userId);
+
     await this.userDecryptionOptionsService.setUserDecryptionOptions(
       UserDecryptionOptions.fromResponse(tokenResponse),
     );
@@ -207,7 +209,7 @@ export abstract class LoginStrategy {
     );
 
     await this.billingAccountProfileStateService.setHasPremium(accountInformation.premium, false);
-    return userId as UserId;
+    return userId;
   }
 
   protected async processTokenResponse(response: IdentityTokenResponse): Promise<AuthResult> {
@@ -284,7 +286,7 @@ export abstract class LoginStrategy {
     const result = new AuthResult();
     result.twoFactorProviders = response.twoFactorProviders2;
 
-    this.twoFactorService.setProviders(response);
+    await this.twoFactorService.setProviders(response);
     this.cache.next({ ...this.cache.value, captchaBypassToken: response.captchaToken ?? null });
     result.ssoEmail2FaSessionToken = response.ssoEmail2faSessionToken;
     result.email = response.email;
@@ -305,5 +307,25 @@ export abstract class LoginStrategy {
     const result = new AuthResult();
     result.captchaSiteKey = response.siteKey;
     return result;
+  }
+
+  /**
+   * Verifies that the active account is set after initialization.
+   * Note: In browser there is a slight delay between when active account emits in background,
+   * and when it emits in foreground. We're giving the foreground 1 second to catch up.
+   * If nothing is emitted, we throw an error.
+   */
+  private async verifyAccountAdded(expectedUserId: UserId) {
+    await firstValueFrom(
+      this.accountService.activeAccount$.pipe(
+        filter((account) => account?.id === expectedUserId),
+        timeout({
+          first: 1000,
+          with: () => {
+            throw new Error("Expected user never made active user after initialization.");
+          },
+        }),
+      ),
+    );
   }
 }
