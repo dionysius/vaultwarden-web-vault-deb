@@ -78,6 +78,11 @@ export default abstract class AbstractChromeStorageService
   async save(key: string, obj: any): Promise<void> {
     obj = objToStore(obj);
 
+    if (obj == null) {
+      // Safari does not support set of null values
+      return this.remove(key);
+    }
+
     const keyedObj = { [key]: obj };
     return new Promise<void>((resolve) => {
       this.chromeStorageApi.set(keyedObj, () => {

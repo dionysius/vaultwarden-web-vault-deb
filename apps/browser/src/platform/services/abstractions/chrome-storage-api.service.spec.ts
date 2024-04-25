@@ -62,6 +62,17 @@ describe("ChromeStorageApiService", () => {
         expect.any(Function),
       );
     });
+
+    it("removes the key when the value is null", async () => {
+      const removeMock = chrome.storage.local.remove as jest.Mock;
+      removeMock.mockImplementation((key, callback) => {
+        delete store[key];
+        callback();
+      });
+      const key = "key";
+      await service.save(key, null);
+      expect(removeMock).toHaveBeenCalledWith(key, expect.any(Function));
+    });
   });
 
   describe("get", () => {
