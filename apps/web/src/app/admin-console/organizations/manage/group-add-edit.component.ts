@@ -194,7 +194,7 @@ export class GroupAddEditComponent implements OnInit, OnDestroy {
         }),
       );
     }),
-    shareReplay({ refCount: false }),
+    shareReplay({ refCount: true, bufferSize: 1 }),
   );
 
   restrictGroupAccess$ = combineLatest([
