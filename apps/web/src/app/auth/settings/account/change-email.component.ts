@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
 import { TwoFactorProviderType } from "@bitwarden/common/auth/enums/two-factor-provider-type";
 import { EmailTokenRequest } from "@bitwarden/common/auth/models/request/email-token.request";
 import { EmailRequest } from "@bitwarden/common/auth/models/request/email.request";
@@ -37,6 +38,7 @@ export class ChangeEmailComponent implements OnInit {
     private logService: LogService,
     private stateService: StateService,
     private formBuilder: FormBuilder,
+    private kdfConfigService: KdfConfigService,
   ) {}
 
   async ngOnInit() {
@@ -83,12 +85,10 @@ export class ChangeEmailComponent implements OnInit {
         step1Value.masterPassword,
         await this.cryptoService.getOrDeriveMasterKey(step1Value.masterPassword),
       );
-      const kdf = await this.stateService.getKdfType();
-      const kdfConfig = await this.stateService.getKdfConfig();
+      const kdfConfig = await this.kdfConfigService.getKdfConfig();
       const newMasterKey = await this.cryptoService.makeMasterKey(
         step1Value.masterPassword,
         newEmail,
-        kdf,
         kdfConfig,
       );
       request.newMasterPasswordHash = await this.cryptoService.hashMasterKey(

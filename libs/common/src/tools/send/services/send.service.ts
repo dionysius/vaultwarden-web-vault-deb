@@ -1,10 +1,10 @@
 import { Observable, concatMap, distinctUntilChanged, firstValueFrom, map } from "rxjs";
 
+import { PBKDF2KdfConfig } from "../../../auth/models/domain/kdf-config";
 import { CryptoService } from "../../../platform/abstractions/crypto.service";
 import { EncryptService } from "../../../platform/abstractions/encrypt.service";
 import { I18nService } from "../../../platform/abstractions/i18n.service";
 import { KeyGenerationService } from "../../../platform/abstractions/key-generation.service";
-import { KdfType } from "../../../platform/enums";
 import { Utils } from "../../../platform/misc/utils";
 import { EncArrayBuffer } from "../../../platform/models/domain/enc-array-buffer";
 import { EncString } from "../../../platform/models/domain/enc-string";
@@ -69,8 +69,7 @@ export class SendService implements InternalSendServiceAbstraction {
       const passwordKey = await this.keyGenerationService.deriveKeyFromPassword(
         password,
         model.key,
-        KdfType.PBKDF2_SHA256,
-        { iterations: SEND_KDF_ITERATIONS },
+        new PBKDF2KdfConfig(SEND_KDF_ITERATIONS),
       );
       send.password = passwordKey.keyB64;
     }

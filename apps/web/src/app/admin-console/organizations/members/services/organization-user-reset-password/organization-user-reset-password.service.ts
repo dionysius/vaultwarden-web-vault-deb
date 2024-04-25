@@ -7,10 +7,15 @@ import {
   OrganizationUserResetPasswordRequest,
   OrganizationUserResetPasswordWithIdRequest,
 } from "@bitwarden/common/admin-console/abstractions/organization-user/requests";
-import { KdfConfig } from "@bitwarden/common/auth/models/domain/kdf-config";
+import {
+  Argon2KdfConfig,
+  KdfConfig,
+  PBKDF2KdfConfig,
+} from "@bitwarden/common/auth/models/domain/kdf-config";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
+import { KdfType } from "@bitwarden/common/platform/enums";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { EncryptedString, EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
@@ -90,12 +95,17 @@ export class OrganizationUserResetPasswordService {
     const decValue = await this.cryptoService.rsaDecrypt(response.resetPasswordKey, decPrivateKey);
     const existingUserKey = new SymmetricCryptoKey(decValue) as UserKey;
 
+    // determine Kdf Algorithm
+    const kdfConfig: KdfConfig =
+      response.kdf === KdfType.PBKDF2_SHA256
+        ? new PBKDF2KdfConfig(response.kdfIterations)
+        : new Argon2KdfConfig(response.kdfIterations, response.kdfMemory, response.kdfParallelism);
+
     // Create new master key and hash new password
     const newMasterKey = await this.cryptoService.makeMasterKey(
       newMasterPassword,
       email.trim().toLowerCase(),
-      response.kdf,
-      new KdfConfig(response.kdfIterations, response.kdfMemory, response.kdfParallelism),
+      kdfConfig,
     );
     const newMasterKeyHash = await this.cryptoService.hashMasterKey(
       newMasterPassword,

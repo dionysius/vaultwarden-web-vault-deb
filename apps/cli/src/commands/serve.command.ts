@@ -134,6 +134,7 @@ export class ServeCommand {
       this.main.syncService,
       this.main.organizationApiService,
       async () => await this.main.logout(),
+      this.main.kdfConfigService,
     );
 
     this.sendCreateCommand = new SendCreateCommand(

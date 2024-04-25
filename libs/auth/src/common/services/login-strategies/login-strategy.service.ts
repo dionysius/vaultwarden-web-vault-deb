@@ -10,13 +10,18 @@ import {
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
+import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
 import { KeyConnectorService } from "@bitwarden/common/auth/abstractions/key-connector.service";
 import { InternalMasterPasswordServiceAbstraction } from "@bitwarden/common/auth/abstractions/master-password.service.abstraction";
 import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
 import { TwoFactorService } from "@bitwarden/common/auth/abstractions/two-factor.service";
 import { AuthenticationType } from "@bitwarden/common/auth/enums/authentication-type";
 import { AuthResult } from "@bitwarden/common/auth/models/domain/auth-result";
-import { KdfConfig } from "@bitwarden/common/auth/models/domain/kdf-config";
+import {
+  Argon2KdfConfig,
+  KdfConfig,
+  PBKDF2KdfConfig,
+} from "@bitwarden/common/auth/models/domain/kdf-config";
 import { TokenTwoFactorRequest } from "@bitwarden/common/auth/models/request/identity-token/token-two-factor.request";
 import { PasswordlessAuthRequest } from "@bitwarden/common/auth/models/request/passwordless-auth.request";
 import { AuthRequestResponse } from "@bitwarden/common/auth/models/response/auth-request.response";
@@ -32,7 +37,7 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
-import { KdfType } from "@bitwarden/common/platform/enums";
+import { KdfType } from "@bitwarden/common/platform/enums/kdf-type.enum";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { GlobalState, GlobalStateProvider } from "@bitwarden/common/platform/state";
 import { DeviceTrustServiceAbstraction } from "@bitwarden/common/src/auth/abstractions/device-trust.service.abstraction";
@@ -105,6 +110,7 @@ export class LoginStrategyService implements LoginStrategyServiceAbstraction {
     protected userDecryptionOptionsService: InternalUserDecryptionOptionsServiceAbstraction,
     protected stateProvider: GlobalStateProvider,
     protected billingAccountProfileStateService: BillingAccountProfileStateService,
+    protected kdfConfigService: KdfConfigService,
   ) {
     this.currentAuthnTypeState = this.stateProvider.get(CURRENT_LOGIN_STRATEGY_KEY);
     this.loginStrategyCacheState = this.stateProvider.get(CACHE_KEY);
@@ -233,24 +239,25 @@ export class LoginStrategyService implements LoginStrategyServiceAbstraction {
 
   async makePreloginKey(masterPassword: string, email: string): Promise<MasterKey> {
     email = email.trim().toLowerCase();
-    let kdf: KdfType = null;
     let kdfConfig: KdfConfig = null;
     try {
       const preloginResponse = await this.apiService.postPrelogin(new PreloginRequest(email));
       if (preloginResponse != null) {
-        kdf = preloginResponse.kdf;
-        kdfConfig = new KdfConfig(
-          preloginResponse.kdfIterations,
-          preloginResponse.kdfMemory,
-          preloginResponse.kdfParallelism,
-        );
+        kdfConfig =
+          preloginResponse.kdf === KdfType.PBKDF2_SHA256
+            ? new PBKDF2KdfConfig(preloginResponse.kdfIterations)
+            : new Argon2KdfConfig(
+                preloginResponse.kdfIterations,
+                preloginResponse.kdfMemory,
+                preloginResponse.kdfParallelism,
+              );
       }
     } catch (e) {
       if (e == null || e.statusCode !== 404) {
         throw e;
       }
     }
-    return await this.cryptoService.makeMasterKey(masterPassword, email, kdf, kdfConfig);
+    return await this.cryptoService.makeMasterKey(masterPassword, email, kdfConfig);
   }
 
   // TODO: move to auth request service
@@ -354,6 +361,7 @@ export class LoginStrategyService implements LoginStrategyServiceAbstraction {
               this.policyService,
               this,
               this.billingAccountProfileStateService,
+              this.kdfConfigService,
             );
           case AuthenticationType.Sso:
             return new SsoLoginStrategy(
@@ -375,6 +383,7 @@ export class LoginStrategyService implements LoginStrategyServiceAbstraction {
               this.authRequestService,
               this.i18nService,
               this.billingAccountProfileStateService,
+              this.kdfConfigService,
             );
           case AuthenticationType.UserApiKey:
             return new UserApiLoginStrategy(
@@ -394,6 +403,7 @@ export class LoginStrategyService implements LoginStrategyServiceAbstraction {
               this.environmentService,
               this.keyConnectorService,
               this.billingAccountProfileStateService,
+              this.kdfConfigService,
             );
           case AuthenticationType.AuthRequest:
             return new AuthRequestLoginStrategy(
@@ -412,6 +422,7 @@ export class LoginStrategyService implements LoginStrategyServiceAbstraction {
               this.userDecryptionOptionsService,
               this.deviceTrustService,
               this.billingAccountProfileStateService,
+              this.kdfConfigService,
             );
           case AuthenticationType.WebAuthn:
             return new WebAuthnLoginStrategy(
@@ -429,6 +440,7 @@ export class LoginStrategyService implements LoginStrategyServiceAbstraction {
               this.twoFactorService,
               this.userDecryptionOptionsService,
               this.billingAccountProfileStateService,
+              this.kdfConfigService,
             );
         }
       }),

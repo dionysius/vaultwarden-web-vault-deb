@@ -13,6 +13,7 @@ import { KeySuffixOptions } from "../../../platform/enums/key-suffix-options.enu
 import { UserId } from "../../../types/guid";
 import { UserKey } from "../../../types/key";
 import { AccountService } from "../../abstractions/account.service";
+import { KdfConfigService } from "../../abstractions/kdf-config.service";
 import { InternalMasterPasswordServiceAbstraction } from "../../abstractions/master-password.service.abstraction";
 import { UserVerificationApiServiceAbstraction } from "../../abstractions/user-verification/user-verification-api.service.abstraction";
 import { UserVerificationService as UserVerificationServiceAbstraction } from "../../abstractions/user-verification/user-verification.service.abstraction";
@@ -47,6 +48,7 @@ export class UserVerificationService implements UserVerificationServiceAbstracti
     private logService: LogService,
     private vaultTimeoutSettingsService: VaultTimeoutSettingsServiceAbstraction,
     private platformUtilsService: PlatformUtilsService,
+    private kdfConfigService: KdfConfigService,
   ) {}
 
   async getAvailableVerificationOptions(
@@ -118,8 +120,7 @@ export class UserVerificationService implements UserVerificationServiceAbstracti
         masterKey = await this.cryptoService.makeMasterKey(
           verification.secret,
           await this.stateService.getEmail(),
-          await this.stateService.getKdfType(),
-          await this.stateService.getKdfConfig(),
+          await this.kdfConfigService.getKdfConfig(),
         );
       }
       request.masterPasswordHash = alreadyHashed
@@ -176,8 +177,7 @@ export class UserVerificationService implements UserVerificationServiceAbstracti
       masterKey = await this.cryptoService.makeMasterKey(
         verification.secret,
         await this.stateService.getEmail(),
-        await this.stateService.getKdfType(),
-        await this.stateService.getKdfConfig(),
+        await this.kdfConfigService.getKdfConfig(),
       );
     }
     const passwordValid = await this.cryptoService.compareAndUpdateKeyHash(

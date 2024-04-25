@@ -3,6 +3,7 @@ import { firstValueFrom } from "rxjs";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
+import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
 import { KeyConnectorService } from "@bitwarden/common/auth/abstractions/key-connector.service";
 import { InternalMasterPasswordServiceAbstraction } from "@bitwarden/common/auth/abstractions/master-password.service.abstraction";
 import { SecretVerificationRequest } from "@bitwarden/common/auth/models/request/secret-verification.request";
@@ -34,6 +35,7 @@ export class UnlockCommand {
     private syncService: SyncService,
     private organizationApiService: OrganizationApiServiceAbstraction,
     private logout: () => Promise<void>,
+    private kdfConfigService: KdfConfigService,
   ) {}
 
   async run(password: string, cmdOptions: Record<string, any>) {
@@ -48,9 +50,8 @@ export class UnlockCommand {
 
     await this.setNewSessionKey();
     const email = await this.stateService.getEmail();
-    const kdf = await this.stateService.getKdfType();
-    const kdfConfig = await this.stateService.getKdfConfig();
-    const masterKey = await this.cryptoService.makeMasterKey(password, email, kdf, kdfConfig);
+    const kdfConfig = await this.kdfConfigService.getKdfConfig();
+    const masterKey = await this.cryptoService.makeMasterKey(password, email, kdfConfig);
     const userId = (await firstValueFrom(this.accountService.activeAccount$))?.id;
     const storedMasterKeyHash = await firstValueFrom(
       this.masterPasswordService.masterKeyHash$(userId),

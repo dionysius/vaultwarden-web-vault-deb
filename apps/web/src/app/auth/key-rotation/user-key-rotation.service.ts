@@ -3,6 +3,7 @@ import { firstValueFrom } from "rxjs";
 
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { DeviceTrustServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust.service.abstraction";
+import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
 import { InternalMasterPasswordServiceAbstraction } from "@bitwarden/common/auth/abstractions/master-password.service.abstraction";
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
@@ -39,6 +40,7 @@ export class UserKeyRotationService {
     private stateService: StateService,
     private accountService: AccountService,
     private configService: ConfigService,
+    private kdfConfigService: KdfConfigService,
   ) {}
 
   /**
@@ -54,8 +56,7 @@ export class UserKeyRotationService {
     const masterKey = await this.cryptoService.makeMasterKey(
       masterPassword,
       await this.stateService.getEmail(),
-      await this.stateService.getKdfType(),
-      await this.stateService.getKdfConfig(),
+      await this.kdfConfigService.getKdfConfig(),
     );
 
     if (!masterKey) {

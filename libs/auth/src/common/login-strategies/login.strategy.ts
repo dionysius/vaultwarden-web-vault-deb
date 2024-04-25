@@ -2,12 +2,14 @@ import { BehaviorSubject } from "rxjs";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
+import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
 import { InternalMasterPasswordServiceAbstraction } from "@bitwarden/common/auth/abstractions/master-password.service.abstraction";
 import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
 import { TwoFactorService } from "@bitwarden/common/auth/abstractions/two-factor.service";
 import { TwoFactorProviderType } from "@bitwarden/common/auth/enums/two-factor-provider-type";
 import { AuthResult } from "@bitwarden/common/auth/models/domain/auth-result";
 import { ForceSetPasswordReason } from "@bitwarden/common/auth/models/domain/force-set-password-reason";
+import { Argon2KdfConfig, PBKDF2KdfConfig } from "@bitwarden/common/auth/models/domain/kdf-config";
 import { DeviceRequest } from "@bitwarden/common/auth/models/request/identity-token/device.request";
 import { PasswordTokenRequest } from "@bitwarden/common/auth/models/request/identity-token/password-token.request";
 import { SsoTokenRequest } from "@bitwarden/common/auth/models/request/identity-token/sso-token.request";
@@ -27,6 +29,7 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
+import { KdfType } from "@bitwarden/common/platform/enums";
 import { Account, AccountProfile } from "@bitwarden/common/platform/models/domain/account";
 import { UserId } from "@bitwarden/common/types/guid";
 
@@ -72,6 +75,7 @@ export abstract class LoginStrategy {
     protected twoFactorService: TwoFactorService,
     protected userDecryptionOptionsService: InternalUserDecryptionOptionsServiceAbstraction,
     protected billingAccountProfileStateService: BillingAccountProfileStateService,
+    protected KdfConfigService: KdfConfigService,
   ) {}
 
   abstract exportCache(): CacheData;
@@ -182,10 +186,6 @@ export abstract class LoginStrategy {
             userId,
             name: accountInformation.name,
             email: accountInformation.email,
-            kdfIterations: tokenResponse.kdfIterations,
-            kdfMemory: tokenResponse.kdfMemory,
-            kdfParallelism: tokenResponse.kdfParallelism,
-            kdfType: tokenResponse.kdf,
           },
         },
       }),
@@ -193,6 +193,17 @@ export abstract class LoginStrategy {
 
     await this.userDecryptionOptionsService.setUserDecryptionOptions(
       UserDecryptionOptions.fromResponse(tokenResponse),
+    );
+
+    await this.KdfConfigService.setKdfConfig(
+      userId as UserId,
+      tokenResponse.kdf === KdfType.PBKDF2_SHA256
+        ? new PBKDF2KdfConfig(tokenResponse.kdfIterations)
+        : new Argon2KdfConfig(
+            tokenResponse.kdfIterations,
+            tokenResponse.kdfMemory,
+            tokenResponse.kdfParallelism,
+          ),
     );
 
     await this.billingAccountProfileStateService.setHasPremium(accountInformation.premium, false);

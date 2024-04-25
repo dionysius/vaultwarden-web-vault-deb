@@ -1,9 +1,9 @@
 import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout-settings.service";
+import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
 import { KdfConfig } from "@bitwarden/common/auth/models/domain/kdf-config";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
-import { KdfType } from "@bitwarden/common/platform/enums";
 import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 import { PinLockType } from "@bitwarden/common/services/vault-timeout/vault-timeout-settings.service";
 import { UserKey } from "@bitwarden/common/types/key";
@@ -16,6 +16,7 @@ export class PinCryptoService implements PinCryptoServiceAbstraction {
     private cryptoService: CryptoService,
     private vaultTimeoutSettingsService: VaultTimeoutSettingsService,
     private logService: LogService,
+    private kdfConfigService: KdfConfigService,
   ) {}
   async decryptUserKeyWithPin(pin: string): Promise<UserKey | null> {
     try {
@@ -24,8 +25,7 @@ export class PinCryptoService implements PinCryptoServiceAbstraction {
       const { pinKeyEncryptedUserKey, oldPinKeyEncryptedMasterKey } =
         await this.getPinKeyEncryptedKeys(pinLockType);
 
-      const kdf: KdfType = await this.stateService.getKdfType();
-      const kdfConfig: KdfConfig = await this.stateService.getKdfConfig();
+      const kdfConfig: KdfConfig = await this.kdfConfigService.getKdfConfig();
       let userKey: UserKey;
       const email = await this.stateService.getEmail();
       if (oldPinKeyEncryptedMasterKey) {
@@ -33,7 +33,6 @@ export class PinCryptoService implements PinCryptoServiceAbstraction {
           pinLockType === "TRANSIENT",
           pin,
           email,
-          kdf,
           kdfConfig,
           oldPinKeyEncryptedMasterKey,
         );
@@ -41,7 +40,6 @@ export class PinCryptoService implements PinCryptoServiceAbstraction {
         userKey = await this.cryptoService.decryptUserKeyWithPin(
           pin,
           email,
-          kdf,
           kdfConfig,
           pinKeyEncryptedUserKey,
         );

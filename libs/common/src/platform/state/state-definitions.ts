@@ -35,6 +35,7 @@ export const BILLING_DISK = new StateDefinition("billing", "disk");
 
 // Auth
 
+export const KDF_CONFIG_DISK = new StateDefinition("kdfConfig", "disk");
 export const KEY_CONNECTOR_DISK = new StateDefinition("keyConnector", "disk");
 export const ACCOUNT_MEMORY = new StateDefinition("account", "memory");
 export const MASTER_PASSWORD_MEMORY = new StateDefinition("masterPassword", "memory");

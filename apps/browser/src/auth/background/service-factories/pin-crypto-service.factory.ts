@@ -22,13 +22,16 @@ import {
   stateServiceFactory,
 } from "../../../platform/background/service-factories/state-service.factory";
 
+import { KdfConfigServiceInitOptions, kdfConfigServiceFactory } from "./kdf-config-service.factory";
+
 type PinCryptoServiceFactoryOptions = FactoryOptions;
 
 export type PinCryptoServiceInitOptions = PinCryptoServiceFactoryOptions &
   StateServiceInitOptions &
   CryptoServiceInitOptions &
   VaultTimeoutSettingsServiceInitOptions &
-  LogServiceInitOptions;
+  LogServiceInitOptions &
+  KdfConfigServiceInitOptions;
 
 export function pinCryptoServiceFactory(
   cache: { pinCryptoService?: PinCryptoServiceAbstraction } & CachedServices,
@@ -44,6 +47,7 @@ export function pinCryptoServiceFactory(
         await cryptoServiceFactory(cache, opts),
         await vaultTimeoutSettingsServiceFactory(cache, opts),
         await logServiceFactory(cache, opts),
+        await kdfConfigServiceFactory(cache, opts),
       ),
   );
 }

@@ -1,9 +1,10 @@
 import { mock } from "jest-mock-extended";
 
-import { KdfConfig } from "@bitwarden/common/auth/models/domain/kdf-config";
+import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
+import { DEFAULT_KDF_CONFIG } from "@bitwarden/common/platform/enums";
 import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
 import {
@@ -13,6 +14,7 @@ import {
 import { UserKey } from "@bitwarden/common/types/key";
 
 import { PinCryptoService } from "./pin-crypto.service.implementation";
+
 describe("PinCryptoService", () => {
   let pinCryptoService: PinCryptoService;
 
@@ -20,6 +22,7 @@ describe("PinCryptoService", () => {
   const cryptoService = mock<CryptoService>();
   const vaultTimeoutSettingsService = mock<VaultTimeoutSettingsService>();
   const logService = mock<LogService>();
+  const kdfConfigService = mock<KdfConfigService>();
 
   beforeEach(() => {
     jest.clearAllMocks();
@@ -29,6 +32,7 @@ describe("PinCryptoService", () => {
       cryptoService,
       vaultTimeoutSettingsService,
       logService,
+      kdfConfigService,
     );
   });
 
@@ -39,7 +43,6 @@ describe("PinCryptoService", () => {
   describe("decryptUserKeyWithPin(...)", () => {
     const mockPin = "1234";
     const mockProtectedPin = "protectedPin";
-    const DEFAULT_PBKDF2_ITERATIONS = 600000;
     const mockUserEmail = "user@example.com";
     const mockUserKey = new SymmetricCryptoKey(randomBytes(32)) as UserKey;
 
@@ -49,7 +52,7 @@ describe("PinCryptoService", () => {
     ) {
       vaultTimeoutSettingsService.isPinLockSet.mockResolvedValue(pinLockType);
 
-      stateService.getKdfConfig.mockResolvedValue(new KdfConfig(DEFAULT_PBKDF2_ITERATIONS));
+      kdfConfigService.getKdfConfig.mockResolvedValue(DEFAULT_KDF_CONFIG);
       stateService.getEmail.mockResolvedValue(mockUserEmail);
 
       if (migrationStatus === "PRE") {

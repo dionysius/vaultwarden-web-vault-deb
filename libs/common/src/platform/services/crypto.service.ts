@@ -6,6 +6,7 @@ import { ProfileOrganizationResponse } from "../../admin-console/models/response
 import { ProfileProviderOrganizationResponse } from "../../admin-console/models/response/profile-provider-organization.response";
 import { ProfileProviderResponse } from "../../admin-console/models/response/profile-provider.response";
 import { AccountService } from "../../auth/abstractions/account.service";
+import { KdfConfigService } from "../../auth/abstractions/kdf-config.service";
 import { InternalMasterPasswordServiceAbstraction } from "../../auth/abstractions/master-password.service.abstraction";
 import { KdfConfig } from "../../auth/models/domain/kdf-config";
 import { Utils } from "../../platform/misc/utils";
@@ -28,16 +29,7 @@ import { KeyGenerationService } from "../abstractions/key-generation.service";
 import { LogService } from "../abstractions/log.service";
 import { PlatformUtilsService } from "../abstractions/platform-utils.service";
 import { StateService } from "../abstractions/state.service";
-import {
-  KeySuffixOptions,
-  HashPurpose,
-  KdfType,
-  ARGON2_ITERATIONS,
-  ARGON2_MEMORY,
-  ARGON2_PARALLELISM,
-  EncryptionType,
-  PBKDF2_ITERATIONS,
-} from "../enums";
+import { KeySuffixOptions, HashPurpose, EncryptionType } from "../enums";
 import { sequentialize } from "../misc/sequentialize";
 import { EFFLongWordList } from "../misc/wordlist";
 import { EncArrayBuffer } from "../models/domain/enc-array-buffer";
@@ -91,6 +83,7 @@ export class CryptoService implements CryptoServiceAbstraction {
     protected stateService: StateService,
     protected accountService: AccountService,
     protected stateProvider: StateProvider,
+    protected kdfConfigService: KdfConfigService,
   ) {
     // User Key
     this.activeUserKeyState = stateProvider.getActive(USER_KEY);
@@ -283,8 +276,7 @@ export class CryptoService implements CryptoServiceAbstraction {
     return (masterKey ||= await this.makeMasterKey(
       password,
       await this.stateService.getEmail({ userId: userId }),
-      await this.stateService.getKdfType({ userId: userId }),
-      await this.stateService.getKdfConfig({ userId: userId }),
+      await this.kdfConfigService.getKdfConfig(),
     ));
   }
 
@@ -295,16 +287,10 @@ export class CryptoService implements CryptoServiceAbstraction {
    * Does not validate the kdf config to ensure it satisfies the minimum requirements for the given kdf type.
    * TODO: Move to MasterPasswordService
    */
-  async makeMasterKey(
-    password: string,
-    email: string,
-    kdf: KdfType,
-    KdfConfig: KdfConfig,
-  ): Promise<MasterKey> {
+  async makeMasterKey(password: string, email: string, KdfConfig: KdfConfig): Promise<MasterKey> {
     return (await this.keyGenerationService.deriveKeyFromPassword(
       password,
       email,
-      kdf,
       KdfConfig,
     )) as MasterKey;
   }
@@ -560,8 +546,8 @@ export class CryptoService implements CryptoServiceAbstraction {
     await this.stateProvider.setUserState(USER_ENCRYPTED_PRIVATE_KEY, null, userId);
   }
 
-  async makePinKey(pin: string, salt: string, kdf: KdfType, kdfConfig: KdfConfig): Promise<PinKey> {
-    const pinKey = await this.keyGenerationService.deriveKeyFromPassword(pin, salt, kdf, kdfConfig);
+  async makePinKey(pin: string, salt: string, kdfConfig: KdfConfig): Promise<PinKey> {
+    const pinKey = await this.keyGenerationService.deriveKeyFromPassword(pin, salt, kdfConfig);
     return (await this.stretchKey(pinKey)) as PinKey;
   }
 
@@ -575,7 +561,6 @@ export class CryptoService implements CryptoServiceAbstraction {
   async decryptUserKeyWithPin(
     pin: string,
     salt: string,
-    kdf: KdfType,
     kdfConfig: KdfConfig,
     pinProtectedUserKey?: EncString,
   ): Promise<UserKey> {
@@ -584,7 +569,7 @@ export class CryptoService implements CryptoServiceAbstraction {
     if (!pinProtectedUserKey) {
       throw new Error("No PIN protected key found.");
     }
-    const pinKey = await this.makePinKey(pin, salt, kdf, kdfConfig);
+    const pinKey = await this.makePinKey(pin, salt, kdfConfig);
     const userKey = await this.encryptService.decryptToBytes(pinProtectedUserKey, pinKey);
     return new SymmetricCryptoKey(userKey) as UserKey;
   }
@@ -593,7 +578,6 @@ export class CryptoService implements CryptoServiceAbstraction {
   async decryptMasterKeyWithPin(
     pin: string,
     salt: string,
-    kdf: KdfType,
     kdfConfig: KdfConfig,
     pinProtectedMasterKey?: EncString,
   ): Promise<MasterKey> {
@@ -604,7 +588,7 @@ export class CryptoService implements CryptoServiceAbstraction {
       }
       pinProtectedMasterKey = new EncString(pinProtectedMasterKeyString);
     }
-    const pinKey = await this.makePinKey(pin, salt, kdf, kdfConfig);
+    const pinKey = await this.makePinKey(pin, salt, kdfConfig);
     const masterKey = await this.encryptService.decryptToBytes(pinProtectedMasterKey, pinKey);
     return new SymmetricCryptoKey(masterKey) as MasterKey;
   }
@@ -831,8 +815,7 @@ export class CryptoService implements CryptoServiceAbstraction {
     const pinKey = await this.makePinKey(
       pin,
       await this.stateService.getEmail({ userId: userId }),
-      await this.stateService.getKdfType({ userId: userId }),
-      await this.stateService.getKdfConfig({ userId: userId }),
+      await this.kdfConfigService.getKdfConfig(),
     );
     const encPin = await this.encryptService.encrypt(key.key, pinKey);
 
@@ -871,43 +854,6 @@ export class CryptoService implements CryptoServiceAbstraction {
       }
     }
     return null;
-  }
-
-  /**
-   * Validate that the KDF config follows the requirements for the given KDF type.
-   *
-   * @remarks
-   * Should always be called before updating a users KDF config.
-   */
-  validateKdfConfig(kdf: KdfType, kdfConfig: KdfConfig): void {
-    switch (kdf) {
-      case KdfType.PBKDF2_SHA256:
-        if (!PBKDF2_ITERATIONS.inRange(kdfConfig.iterations)) {
-          throw new Error(
-            `PBKDF2 iterations must be between ${PBKDF2_ITERATIONS.min} and ${PBKDF2_ITERATIONS.max}`,
-          );
-        }
-        break;
-      case KdfType.Argon2id:
-        if (!ARGON2_ITERATIONS.inRange(kdfConfig.iterations)) {
-          throw new Error(
-            `Argon2 iterations must be between ${ARGON2_ITERATIONS.min} and ${ARGON2_ITERATIONS.max}`,
-          );
-        }
-
-        if (!ARGON2_MEMORY.inRange(kdfConfig.memory)) {
-          throw new Error(
-            `Argon2 memory must be between ${ARGON2_MEMORY.min}mb and ${ARGON2_MEMORY.max}mb`,
-          );
-        }
-
-        if (!ARGON2_PARALLELISM.inRange(kdfConfig.parallelism)) {
-          throw new Error(
-            `Argon2 parallelism must be between ${ARGON2_PARALLELISM.min} and ${ARGON2_PARALLELISM.max}.`,
-          );
-        }
-        break;
-    }
   }
 
   protected async clearAllStoredUserKeys(userId?: UserId): Promise<void> {
@@ -1007,16 +953,15 @@ export class CryptoService implements CryptoServiceAbstraction {
     masterPasswordOnRestart: boolean,
     pin: string,
     email: string,
-    kdf: KdfType,
     kdfConfig: KdfConfig,
     oldPinKey: EncString,
   ): Promise<UserKey> {
     // Decrypt
-    const masterKey = await this.decryptMasterKeyWithPin(pin, email, kdf, kdfConfig, oldPinKey);
+    const masterKey = await this.decryptMasterKeyWithPin(pin, email, kdfConfig, oldPinKey);
     const encUserKey = await this.stateService.getEncryptedCryptoSymmetricKey();
     const userKey = await this.decryptUserKeyWithMasterKey(masterKey, new EncString(encUserKey));
     // Migrate
-    const pinKey = await this.makePinKey(pin, email, kdf, kdfConfig);
+    const pinKey = await this.makePinKey(pin, email, kdfConfig);
     const pinProtectedKey = await this.encryptService.encrypt(userKey.key, pinKey);
     if (masterPasswordOnRestart) {
       await this.stateService.setDecryptedPinProtected(null);

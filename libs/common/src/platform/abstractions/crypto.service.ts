@@ -6,7 +6,7 @@ import { ProfileProviderResponse } from "../../admin-console/models/response/pro
 import { KdfConfig } from "../../auth/models/domain/kdf-config";
 import { OrganizationId, ProviderId, UserId } from "../../types/guid";
 import { UserKey, MasterKey, OrgKey, ProviderKey, PinKey, CipherKey } from "../../types/key";
-import { KeySuffixOptions, KdfType, HashPurpose } from "../enums";
+import { KeySuffixOptions, HashPurpose } from "../enums";
 import { EncArrayBuffer } from "../models/domain/enc-array-buffer";
 import { EncString } from "../models/domain/enc-string";
 import { SymmetricCryptoKey } from "../models/domain/symmetric-crypto-key";
@@ -114,16 +114,10 @@ export abstract class CryptoService {
    * Generates a master key from the provided password
    * @param password The user's master password
    * @param email The user's email
-   * @param kdf The user's selected key derivation function to use
    * @param KdfConfig The user's key derivation function configuration
    * @returns A master key derived from the provided password
    */
-  abstract makeMasterKey(
-    password: string,
-    email: string,
-    kdf: KdfType,
-    KdfConfig: KdfConfig,
-  ): Promise<MasterKey>;
+  abstract makeMasterKey(password: string, email: string, KdfConfig: KdfConfig): Promise<MasterKey>;
   /**
    * Encrypts the existing (or provided) user key with the
    * provided master key
@@ -258,16 +252,10 @@ export abstract class CryptoService {
   /**
    * @param pin The user's pin
    * @param salt The user's salt
-   * @param kdf The user's kdf
    * @param kdfConfig The user's kdf config
    * @returns A key derived from the user's pin
    */
-  abstract makePinKey(
-    pin: string,
-    salt: string,
-    kdf: KdfType,
-    kdfConfig: KdfConfig,
-  ): Promise<PinKey>;
+  abstract makePinKey(pin: string, salt: string, kdfConfig: KdfConfig): Promise<PinKey>;
   /**
    * Clears the user's pin keys from storage
    * Note: This will remove the stored pin and as a result,
@@ -279,7 +267,6 @@ export abstract class CryptoService {
    * Decrypts the user key with their pin
    * @param pin The user's PIN
    * @param salt The user's salt
-   * @param kdf The user's KDF
    * @param kdfConfig The user's KDF config
    * @param pinProtectedUserKey The user's PIN protected symmetric key, if not provided
    * it will be retrieved from storage
@@ -288,7 +275,6 @@ export abstract class CryptoService {
   abstract decryptUserKeyWithPin(
     pin: string,
     salt: string,
-    kdf: KdfType,
     kdfConfig: KdfConfig,
     protectedKeyCs?: EncString,
   ): Promise<UserKey>;
@@ -298,7 +284,6 @@ export abstract class CryptoService {
    * @param masterPasswordOnRestart True if Master Password on Restart is enabled
    * @param pin User's PIN
    * @param email User's email
-   * @param kdf User's KdfType
    * @param kdfConfig User's KdfConfig
    * @param oldPinKey The old Pin key from state (retrieved from different
    * places depending on if Master Password on Restart was enabled)
@@ -308,7 +293,6 @@ export abstract class CryptoService {
     masterPasswordOnRestart: boolean,
     pin: string,
     email: string,
-    kdf: KdfType,
     kdfConfig: KdfConfig,
     oldPinKey: EncString,
   ): Promise<UserKey>;
@@ -359,20 +343,11 @@ export abstract class CryptoService {
   }>;
 
   /**
-   * Validate that the KDF config follows the requirements for the given KDF type.
-   *
-   * @remarks
-   * Should always be called before updating a users KDF config.
-   */
-  abstract validateKdfConfig(kdf: KdfType, kdfConfig: KdfConfig): void;
-
-  /**
    * @deprecated Left for migration purposes. Use decryptUserKeyWithPin instead.
    */
   abstract decryptMasterKeyWithPin(
     pin: string,
     salt: string,
-    kdf: KdfType,
     kdfConfig: KdfConfig,
     protectedKeyCs?: EncString,
   ): Promise<MasterKey>;

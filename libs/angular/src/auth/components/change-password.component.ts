@@ -3,13 +3,13 @@ import { Subject, takeUntil } from "rxjs";
 
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { MasterPasswordPolicyOptions } from "@bitwarden/common/admin-console/models/domain/master-password-policy-options";
+import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
 import { KdfConfig } from "@bitwarden/common/auth/models/domain/kdf-config";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
-import { KdfType } from "@bitwarden/common/platform/enums";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
@@ -31,7 +31,6 @@ export class ChangePasswordComponent implements OnInit, OnDestroy {
   minimumLength = Utils.minimumPasswordLength;
 
   protected email: string;
-  protected kdf: KdfType;
   protected kdfConfig: KdfConfig;
 
   protected destroy$ = new Subject<void>();
@@ -45,6 +44,7 @@ export class ChangePasswordComponent implements OnInit, OnDestroy {
     protected policyService: PolicyService,
     protected stateService: StateService,
     protected dialogService: DialogService,
+    protected kdfConfigService: KdfConfigService,
   ) {}
 
   async ngOnInit() {
@@ -73,18 +73,14 @@ export class ChangePasswordComponent implements OnInit, OnDestroy {
     }
 
     const email = await this.stateService.getEmail();
-    if (this.kdf == null) {
-      this.kdf = await this.stateService.getKdfType();
-    }
     if (this.kdfConfig == null) {
-      this.kdfConfig = await this.stateService.getKdfConfig();
+      this.kdfConfig = await this.kdfConfigService.getKdfConfig();
     }
 
     // Create new master key
     const newMasterKey = await this.cryptoService.makeMasterKey(
       this.masterPassword,
       email.trim().toLowerCase(),
-      this.kdf,
       this.kdfConfig,
     );
     const newMasterKeyHash = await this.cryptoService.hashMasterKey(

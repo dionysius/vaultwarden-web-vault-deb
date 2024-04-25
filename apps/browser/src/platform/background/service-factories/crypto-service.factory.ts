@@ -5,6 +5,10 @@ import {
   accountServiceFactory,
 } from "../../../auth/background/service-factories/account-service.factory";
 import {
+  KdfConfigServiceInitOptions,
+  kdfConfigServiceFactory,
+} from "../../../auth/background/service-factories/kdf-config-service.factory";
+import {
   internalMasterPasswordServiceFactory,
   MasterPasswordServiceInitOptions,
 } from "../../../auth/background/service-factories/master-password-service.factory";
@@ -18,7 +22,10 @@ import {
 } from "../../background/service-factories/log-service.factory";
 import { BrowserCryptoService } from "../../services/browser-crypto.service";
 
-import { biometricStateServiceFactory } from "./biometric-state-service.factory";
+import {
+  BiometricStateServiceInitOptions,
+  biometricStateServiceFactory,
+} from "./biometric-state-service.factory";
 import {
   cryptoFunctionServiceFactory,
   CryptoFunctionServiceInitOptions,
@@ -46,7 +53,9 @@ export type CryptoServiceInitOptions = CryptoServiceFactoryOptions &
   LogServiceInitOptions &
   StateServiceInitOptions &
   AccountServiceInitOptions &
-  StateProviderInitOptions;
+  StateProviderInitOptions &
+  BiometricStateServiceInitOptions &
+  KdfConfigServiceInitOptions;
 
 export function cryptoServiceFactory(
   cache: { cryptoService?: AbstractCryptoService } & CachedServices,
@@ -68,6 +77,7 @@ export function cryptoServiceFactory(
         await accountServiceFactory(cache, opts),
         await stateProviderFactory(cache, opts),
         await biometricStateServiceFactory(cache, opts),
+        await kdfConfigServiceFactory(cache, opts),
       ),
   );
 }

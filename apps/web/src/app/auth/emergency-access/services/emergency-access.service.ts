@@ -3,10 +3,15 @@ import { Injectable } from "@angular/core";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { PolicyData } from "@bitwarden/common/admin-console/models/data/policy.data";
 import { Policy } from "@bitwarden/common/admin-console/models/domain/policy";
-import { KdfConfig } from "@bitwarden/common/auth/models/domain/kdf-config";
+import {
+  Argon2KdfConfig,
+  KdfConfig,
+  PBKDF2KdfConfig,
+} from "@bitwarden/common/auth/models/domain/kdf-config";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
+import { KdfType } from "@bitwarden/common/platform/enums";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { EncryptedString } from "@bitwarden/common/platform/models/domain/enc-string";
 import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
@@ -231,16 +236,22 @@ export class EmergencyAccessService {
 
     const grantorUserKey = new SymmetricCryptoKey(grantorKeyBuffer) as UserKey;
 
-    const masterKey = await this.cryptoService.makeMasterKey(
-      masterPassword,
-      email,
-      takeoverResponse.kdf,
-      new KdfConfig(
-        takeoverResponse.kdfIterations,
-        takeoverResponse.kdfMemory,
-        takeoverResponse.kdfParallelism,
-      ),
-    );
+    let config: KdfConfig;
+
+    switch (takeoverResponse.kdf) {
+      case KdfType.PBKDF2_SHA256:
+        config = new PBKDF2KdfConfig(takeoverResponse.kdfIterations);
+        break;
+      case KdfType.Argon2id:
+        config = new Argon2KdfConfig(
+          takeoverResponse.kdfIterations,
+          takeoverResponse.kdfMemory,
+          takeoverResponse.kdfParallelism,
+        );
+        break;
+    }
+
+    const masterKey = await this.cryptoService.makeMasterKey(masterPassword, email, config);
     const masterKeyHash = await this.cryptoService.hashMasterKey(masterPassword, masterKey);
 
     const encKey = await this.cryptoService.encryptUserKeyWithMasterKey(masterKey, grantorUserKey);

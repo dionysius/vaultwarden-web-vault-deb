@@ -1,6 +1,5 @@
 import { KdfConfig } from "../../auth/models/domain/kdf-config";
 import { CsprngArray } from "../../types/csprng";
-import { KdfType } from "../enums";
 import { SymmetricCryptoKey } from "../models/domain/symmetric-crypto-key";
 
 export abstract class KeyGenerationService {
@@ -46,14 +45,12 @@ export abstract class KeyGenerationService {
    * Derives a 32 byte key from a password using a key derivation function.
    * @param password Password to derive the key from.
    * @param salt Salt for the key derivation function.
-   * @param kdf Key derivation function to use.
    * @param kdfConfig Configuration for the key derivation function.
    * @returns 32 byte derived key.
    */
   abstract deriveKeyFromPassword(
     password: string | Uint8Array,
     salt: string | Uint8Array,
-    kdf: KdfType,
     kdfConfig: KdfConfig,
   ): Promise<SymmetricCryptoKey>;
 }

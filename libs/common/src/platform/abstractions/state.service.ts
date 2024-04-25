@@ -1,12 +1,10 @@
 import { Observable } from "rxjs";
 
-import { KdfConfig } from "../../auth/models/domain/kdf-config";
 import { BiometricKey } from "../../auth/types/biometric-key";
 import { GeneratorOptions } from "../../tools/generator/generator-options";
 import { GeneratedPasswordHistory, PasswordGeneratorOptions } from "../../tools/generator/password";
 import { UsernameGeneratorOptions } from "../../tools/generator/username";
 import { UserId } from "../../types/guid";
-import { KdfType } from "../enums";
 import { Account } from "../models/domain/account";
 import { EncString } from "../models/domain/enc-string";
 import { StorageOptions } from "../models/domain/storage-options";
@@ -149,10 +147,6 @@ export abstract class StateService<T extends Account = Account> {
    */
   setEncryptedPinProtected: (value: string, options?: StorageOptions) => Promise<void>;
   getIsAuthenticated: (options?: StorageOptions) => Promise<boolean>;
-  getKdfConfig: (options?: StorageOptions) => Promise<KdfConfig>;
-  setKdfConfig: (kdfConfig: KdfConfig, options?: StorageOptions) => Promise<void>;
-  getKdfType: (options?: StorageOptions) => Promise<KdfType>;
-  setKdfType: (value: KdfType, options?: StorageOptions) => Promise<void>;
   getLastActive: (options?: StorageOptions) => Promise<number>;
   setLastActive: (value: number, options?: StorageOptions) => Promise<void>;
   getLastSync: (options?: StorageOptions) => Promise<string>;

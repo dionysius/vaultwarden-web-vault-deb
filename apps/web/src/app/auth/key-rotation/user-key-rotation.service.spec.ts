@@ -2,6 +2,7 @@ import { mock, MockProxy } from "jest-mock-extended";
 import { BehaviorSubject } from "rxjs";
 
 import { DeviceTrustServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust.service.abstraction";
+import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
 import { FakeMasterPasswordService } from "@bitwarden/common/auth/services/master-password/fake-master-password.service";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
@@ -47,6 +48,7 @@ describe("KeyRotationService", () => {
   let mockEncryptService: MockProxy<EncryptService>;
   let mockStateService: MockProxy<StateService>;
   let mockConfigService: MockProxy<ConfigService>;
+  let mockKdfConfigService: MockProxy<KdfConfigService>;
 
   const mockUserId = Utils.newGuid() as UserId;
   const mockAccountService: FakeAccountService = mockAccountServiceWith(mockUserId);
@@ -65,6 +67,7 @@ describe("KeyRotationService", () => {
     mockEncryptService = mock<EncryptService>();
     mockStateService = mock<StateService>();
     mockConfigService = mock<ConfigService>();
+    mockKdfConfigService = mock<KdfConfigService>();
 
     keyRotationService = new UserKeyRotationService(
       mockMasterPasswordService,
@@ -80,6 +83,7 @@ describe("KeyRotationService", () => {
       mockStateService,
       mockAccountService,
       mockConfigService,
+      mockKdfConfigService,
     );
   });
 

@@ -1,7 +1,7 @@
+import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
 import { KdfConfig } from "@bitwarden/common/auth/models/domain/kdf-config";
 import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/crypto-function.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
-import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { KdfType } from "@bitwarden/common/platform/enums";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { CipherType } from "@bitwarden/common/vault/enums";
@@ -12,15 +12,14 @@ export class BaseVaultExportService {
   constructor(
     protected cryptoService: CryptoService,
     private cryptoFunctionService: CryptoFunctionService,
-    private stateService: StateService,
+    private kdfConfigService: KdfConfigService,
   ) {}
 
   protected async buildPasswordExport(clearText: string, password: string): Promise<string> {
-    const kdfType: KdfType = await this.stateService.getKdfType();
-    const kdfConfig: KdfConfig = await this.stateService.getKdfConfig();
+    const kdfConfig: KdfConfig = await this.kdfConfigService.getKdfConfig();
 
     const salt = Utils.fromBufferToB64(await this.cryptoFunctionService.randomBytes(16));
-    const key = await this.cryptoService.makePinKey(password, salt, kdfType, kdfConfig);
+    const key = await this.cryptoService.makePinKey(password, salt, kdfConfig);
 
     const encKeyValidation = await this.cryptoService.encrypt(Utils.newGuid(), key);
     const encText = await this.cryptoService.encrypt(clearText, key);
@@ -29,13 +28,16 @@ export class BaseVaultExportService {
       encrypted: true,
       passwordProtected: true,
       salt: salt,
-      kdfType: kdfType,
+      kdfType: kdfConfig.kdfType,
       kdfIterations: kdfConfig.iterations,
-      kdfMemory: kdfConfig.memory,
-      kdfParallelism: kdfConfig.parallelism,
       encKeyValidation_DO_NOT_EDIT: encKeyValidation.encryptedString,
       data: encText.encryptedString,
     };
+
+    if (kdfConfig.kdfType === KdfType.Argon2id) {
+      jsonDoc.kdfMemory = kdfConfig.memory;
+      jsonDoc.kdfParallelism = kdfConfig.parallelism;
+    }
 
     return JSON.stringify(jsonDoc, null, "  ");
   }

@@ -32,6 +32,7 @@ import {
 } from "../../../platform/background/service-factories/state-service.factory";
 
 import { accountServiceFactory, AccountServiceInitOptions } from "./account-service.factory";
+import { KdfConfigServiceInitOptions, kdfConfigServiceFactory } from "./kdf-config-service.factory";
 import {
   internalMasterPasswordServiceFactory,
   MasterPasswordServiceInitOptions,
@@ -59,7 +60,8 @@ export type UserVerificationServiceInitOptions = UserVerificationServiceFactoryO
   PinCryptoServiceInitOptions &
   LogServiceInitOptions &
   VaultTimeoutSettingsServiceInitOptions &
-  PlatformUtilsServiceInitOptions;
+  PlatformUtilsServiceInitOptions &
+  KdfConfigServiceInitOptions;
 
 export function userVerificationServiceFactory(
   cache: { userVerificationService?: AbstractUserVerificationService } & CachedServices,
@@ -82,6 +84,7 @@ export function userVerificationServiceFactory(
         await logServiceFactory(cache, opts),
         await vaultTimeoutSettingsServiceFactory(cache, opts),
         await platformUtilsServiceFactory(cache, opts),
+        await kdfConfigServiceFactory(cache, opts),
       ),
   );
 }

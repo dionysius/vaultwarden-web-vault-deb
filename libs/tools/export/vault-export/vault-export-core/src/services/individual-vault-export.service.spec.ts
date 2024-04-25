@@ -1,13 +1,12 @@
 import { mock, MockProxy } from "jest-mock-extended";
 
-import { KdfConfig } from "@bitwarden/common/auth/models/domain/kdf-config";
+import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
 import { CipherWithIdExport } from "@bitwarden/common/models/export/cipher-with-ids.export";
 import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/crypto-function.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
-import { KdfType, PBKDF2_ITERATIONS } from "@bitwarden/common/platform/enums";
+import { DEFAULT_KDF_CONFIG, KdfType, PBKDF2_ITERATIONS } from "@bitwarden/common/platform/enums";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { EncryptedString, EncString } from "@bitwarden/common/platform/models/domain/enc-string";
-import { StateService } from "@bitwarden/common/platform/services/state.service";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { FolderService } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
 import { CipherType } from "@bitwarden/common/vault/enums";
@@ -110,10 +109,10 @@ function expectEqualCiphers(ciphers: CipherView[] | Cipher[], jsonResult: string
   expect(actual).toEqual(JSON.stringify(items));
 }
 
-function expectEqualFolderViews(folderviews: FolderView[] | Folder[], jsonResult: string) {
+function expectEqualFolderViews(folderViews: FolderView[] | Folder[], jsonResult: string) {
   const actual = JSON.stringify(JSON.parse(jsonResult).folders);
   const folders: FolderResponse[] = [];
-  folderviews.forEach((c) => {
+  folderViews.forEach((c) => {
     const folder = new FolderResponse();
     folder.id = c.id;
     folder.name = c.name.toString();
@@ -144,19 +143,18 @@ describe("VaultExportService", () => {
   let cipherService: MockProxy<CipherService>;
   let folderService: MockProxy<FolderService>;
   let cryptoService: MockProxy<CryptoService>;
-  let stateService: MockProxy<StateService>;
+  let kdfConfigService: MockProxy<KdfConfigService>;
 
   beforeEach(() => {
     cryptoFunctionService = mock<CryptoFunctionService>();
     cipherService = mock<CipherService>();
     folderService = mock<FolderService>();
     cryptoService = mock<CryptoService>();
-    stateService = mock<StateService>();
+    kdfConfigService = mock<KdfConfigService>();
 
     folderService.getAllDecryptedFromState.mockResolvedValue(UserFolderViews);
     folderService.getAllFromState.mockResolvedValue(UserFolders);
-    stateService.getKdfType.mockResolvedValue(KdfType.PBKDF2_SHA256);
-    stateService.getKdfConfig.mockResolvedValue(new KdfConfig(PBKDF2_ITERATIONS.defaultValue));
+    kdfConfigService.getKdfConfig.mockResolvedValue(DEFAULT_KDF_CONFIG);
     cryptoService.encrypt.mockResolvedValue(new EncString("encrypted"));
 
     exportService = new IndividualVaultExportService(
@@ -164,7 +162,7 @@ describe("VaultExportService", () => {
       cipherService,
       cryptoService,
       cryptoFunctionService,
-      stateService,
+      kdfConfigService,
     );
   });
 

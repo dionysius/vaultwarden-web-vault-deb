@@ -46,17 +46,16 @@ export class KeyGenerationService implements KeyGenerationServiceAbstraction {
   async deriveKeyFromPassword(
     password: string | Uint8Array,
     salt: string | Uint8Array,
-    kdf: KdfType,
     kdfConfig: KdfConfig,
   ): Promise<SymmetricCryptoKey> {
     let key: Uint8Array = null;
-    if (kdf == null || kdf === KdfType.PBKDF2_SHA256) {
+    if (kdfConfig.kdfType == null || kdfConfig.kdfType === KdfType.PBKDF2_SHA256) {
       if (kdfConfig.iterations == null) {
         kdfConfig.iterations = PBKDF2_ITERATIONS.defaultValue;
       }
 
       key = await this.cryptoFunctionService.pbkdf2(password, salt, "sha256", kdfConfig.iterations);
-    } else if (kdf == KdfType.Argon2id) {
+    } else if (kdfConfig.kdfType == KdfType.Argon2id) {
       if (kdfConfig.iterations == null) {
         kdfConfig.iterations = ARGON2_ITERATIONS.defaultValue;
       }

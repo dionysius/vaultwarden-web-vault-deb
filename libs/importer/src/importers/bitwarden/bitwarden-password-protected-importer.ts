@@ -1,4 +1,8 @@
-import { KdfConfig } from "@bitwarden/common/auth/models/domain/kdf-config";
+import {
+  Argon2KdfConfig,
+  KdfConfig,
+  PBKDF2KdfConfig,
+} from "@bitwarden/common/auth/models/domain/kdf-config";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { KdfType } from "@bitwarden/common/platform/enums";
@@ -69,12 +73,12 @@ export class BitwardenPasswordProtectedImporter extends BitwardenJsonImporter im
       return false;
     }
 
-    this.key = await this.cryptoService.makePinKey(
-      password,
-      jdoc.salt,
-      jdoc.kdfType,
-      new KdfConfig(jdoc.kdfIterations, jdoc.kdfMemory, jdoc.kdfParallelism),
-    );
+    const kdfConfig: KdfConfig =
+      jdoc.kdfType === KdfType.PBKDF2_SHA256
+        ? new PBKDF2KdfConfig(jdoc.kdfIterations)
+        : new Argon2KdfConfig(jdoc.kdfIterations, jdoc.kdfMemory, jdoc.kdfParallelism);
+
+    this.key = await this.cryptoService.makePinKey(password, jdoc.salt, kdfConfig);
 
     const encKeyValidation = new EncString(jdoc.encKeyValidation_DO_NOT_EDIT);
 
