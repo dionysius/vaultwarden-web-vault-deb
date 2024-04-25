@@ -1,4 +1,4 @@
-import { ProviderUserStatusType, ProviderUserType } from "../../enums";
+import { ProviderStatusType, ProviderUserStatusType, ProviderUserType } from "../../enums";
 import { ProviderData } from "../data/provider.data";
 
 export class Provider {
@@ -9,6 +9,7 @@ export class Provider {
   enabled: boolean;
   userId: string;
   useEvents: boolean;
+  providerStatus: ProviderStatusType;
 
   constructor(obj?: ProviderData) {
     if (obj == null) {
@@ -22,6 +23,7 @@ export class Provider {
     this.enabled = obj.enabled;
     this.userId = obj.userId;
     this.useEvents = obj.useEvents;
+    this.providerStatus = obj.providerStatus;
   }
 
   get canAccess() {

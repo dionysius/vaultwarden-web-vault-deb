@@ -11,14 +11,7 @@
       <bit-label>
         {{ "assignedSeats" | i18n }}
       </bit-label>
-      <input
-        id="assignedSeats"
-        type="number"
-        appAutoFocus
-        bitInput
-        required
-        [(ngModel)]="assignedSeats"
-      />
+      <input id="assignedSeats" type="number" bitInput required [(ngModel)]="assignedSeats" />
     </bit-form-field>
     <ng-container *ngIf="remainingOpenSeats > 0">
       <p>
