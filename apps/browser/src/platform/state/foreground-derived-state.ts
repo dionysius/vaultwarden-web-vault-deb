@@ -56,7 +56,7 @@ export class ForegroundDerivedState<TTo> implements DerivedState<TTo> {
 
         return await this.getStoredValue();
       }),
-      filter((s) => s.derived),
+      filter((s) => s?.derived === true), // A "remove" storage update will return us null
       map((s) => s.value),
     );
 
