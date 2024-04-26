@@ -148,7 +148,6 @@ export class VaultComponent implements OnInit, OnDestroy {
   protected currentSearchText$: Observable<string>;
   protected flexibleCollectionsV1Enabled$ = this.configService.getFeatureFlag$(
     FeatureFlag.FlexibleCollectionsV1,
-    false,
   );
 
   private searchText$ = new Subject<string>();

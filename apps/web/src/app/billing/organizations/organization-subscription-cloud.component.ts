@@ -84,7 +84,6 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
 
     this.showUpdatedSubscriptionStatusSection$ = this.configService.getFeatureFlag$(
       FeatureFlag.AC1795_UpdatedSubscriptionStatusSection,
-      false,
     );
   }
 

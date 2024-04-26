@@ -42,7 +42,6 @@ export class ClientsComponent extends BaseClientsComponent {
 
   protected consolidatedBillingEnabled$ = this.configService.getFeatureFlag$(
     FeatureFlag.EnableConsolidatedBilling,
-    false,
   );
 
   constructor(

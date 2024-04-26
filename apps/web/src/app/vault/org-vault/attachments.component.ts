@@ -60,7 +60,7 @@ export class AttachmentsComponent extends BaseAttachmentsComponent implements On
   async ngOnInit() {
     await super.ngOnInit();
     this.flexibleCollectionsV1Enabled = await firstValueFrom(
-      this.configService.getFeatureFlag$(FeatureFlag.FlexibleCollectionsV1, false),
+      this.configService.getFeatureFlag$(FeatureFlag.FlexibleCollectionsV1),
     );
   }
 

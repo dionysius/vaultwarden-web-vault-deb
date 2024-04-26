@@ -30,7 +30,6 @@ export class AccountComponent {
 
   protected enableDeleteProvider$ = this.configService.getFeatureFlag$(
     FeatureFlag.EnableDeleteProvider,
-    false,
   );
 
   constructor(

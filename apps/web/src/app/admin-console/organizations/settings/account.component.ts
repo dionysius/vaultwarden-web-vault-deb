@@ -44,12 +44,10 @@ export class AccountComponent {
 
   protected flexibleCollectionsMigrationEnabled$ = this.configService.getFeatureFlag$(
     FeatureFlag.FlexibleCollectionsMigration,
-    false,
   );
 
   flexibleCollectionsV1Enabled$ = this.configService.getFeatureFlag$(
     FeatureFlag.FlexibleCollectionsV1,
-    false,
   );
 
   // FormGroup validators taken from server Organization domain object

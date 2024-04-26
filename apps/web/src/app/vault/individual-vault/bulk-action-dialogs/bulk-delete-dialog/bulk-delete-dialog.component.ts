@@ -54,7 +54,6 @@ export class BulkDeleteDialogComponent {
 
   private flexibleCollectionsV1Enabled$ = this.configService.getFeatureFlag$(
     FeatureFlag.FlexibleCollectionsV1,
-    false,
   );
 
   constructor(

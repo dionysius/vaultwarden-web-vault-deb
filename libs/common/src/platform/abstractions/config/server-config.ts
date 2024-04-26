@@ -1,5 +1,6 @@
 import { Jsonify } from "type-fest";
 
+import { AllowedFeatureFlagTypes } from "../../../enums/feature-flag.enum";
 import {
   ServerConfigData,
   ThirdPartyServerConfigData,
@@ -14,7 +15,7 @@ export class ServerConfig {
   server?: ThirdPartyServerConfigData;
   environment?: EnvironmentServerConfigData;
   utcDate: Date;
-  featureStates: { [key: string]: string } = {};
+  featureStates: { [key: string]: AllowedFeatureFlagTypes } = {};
 
   constructor(serverConfigData: ServerConfigData) {
     this.version = serverConfigData.version;

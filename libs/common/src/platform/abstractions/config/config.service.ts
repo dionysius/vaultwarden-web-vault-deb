@@ -1,7 +1,7 @@
 import { Observable } from "rxjs";
 import { SemVer } from "semver";
 
-import { FeatureFlag } from "../../../enums/feature-flag.enum";
+import { FeatureFlag, FeatureFlagValueType } from "../../../enums/feature-flag.enum";
 import { Region } from "../environment.service";
 
 import { ServerConfig } from "./server-config";
@@ -14,23 +14,15 @@ export abstract class ConfigService {
   /**
    * Retrieves the value of a feature flag for the currently active user
    * @param key The feature flag to retrieve
-   * @param defaultValue The default value to return if the feature flag is not set or the server's config is irretrievable
    * @returns An observable that emits the value of the feature flag, updates as the server config changes
    */
-  getFeatureFlag$: <T extends boolean | number | string>(
-    key: FeatureFlag,
-    defaultValue?: T,
-  ) => Observable<T>;
+  getFeatureFlag$: <Flag extends FeatureFlag>(key: Flag) => Observable<FeatureFlagValueType<Flag>>;
   /**
    * Retrieves the value of a feature flag for the currently active user
    * @param key The feature flag to retrieve
-   * @param defaultValue The default value to return if the feature flag is not set or the server's config is irretrievable
    * @returns The value of the feature flag
    */
-  getFeatureFlag: <T extends boolean | number | string>(
-    key: FeatureFlag,
-    defaultValue?: T,
-  ) => Promise<T>;
+  getFeatureFlag: <Flag extends FeatureFlag>(key: Flag) => Promise<FeatureFlagValueType<Flag>>;
   /**
    * Verifies whether the server version meets the minimum required version
    * @param minimumRequiredServerVersion The minimum version required

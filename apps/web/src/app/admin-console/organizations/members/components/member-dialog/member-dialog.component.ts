@@ -218,7 +218,6 @@ export class MemberDialogComponent implements OnDestroy {
       groups: groups$,
       flexibleCollectionsV1Enabled: this.configService.getFeatureFlag$(
         FeatureFlag.FlexibleCollectionsV1,
-        false,
       ),
     })
       .pipe(takeUntil(this.destroy$))

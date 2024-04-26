@@ -183,7 +183,7 @@ class FilelessImporterBackground implements FilelessImporterBackgroundInterface 
       return;
     }
 
-    const filelessImportFeatureFlagEnabled = await this.configService.getFeatureFlag<boolean>(
+    const filelessImportFeatureFlagEnabled = await this.configService.getFeatureFlag(
       FeatureFlag.BrowserFilelessImport,
     );
     const userAuthStatus = await this.authService.getAuthStatus();

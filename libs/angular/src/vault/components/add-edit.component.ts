@@ -182,7 +182,6 @@ export class AddEditComponent implements OnInit, OnDestroy {
   async ngOnInit() {
     this.flexibleCollectionsV1Enabled = await this.configService.getFeatureFlag(
       FeatureFlag.FlexibleCollectionsV1,
-      false,
     );
 
     this.policyService

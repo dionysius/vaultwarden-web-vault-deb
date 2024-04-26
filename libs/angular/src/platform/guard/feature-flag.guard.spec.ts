@@ -34,12 +34,12 @@ describe("canAccessFeature", () => {
         flag == testFlag ? Promise.resolve(flagValue) : Promise.resolve(defaultValue),
       );
     } else if (typeof flagValue === "string") {
-      mockConfigService.getFeatureFlag.mockImplementation((flag, defaultValue = "") =>
-        flag == testFlag ? Promise.resolve(flagValue) : Promise.resolve(defaultValue),
+      mockConfigService.getFeatureFlag.mockImplementation((flag) =>
+        flag == testFlag ? Promise.resolve(flagValue as any) : Promise.resolve(""),
       );
     } else if (typeof flagValue === "number") {
-      mockConfigService.getFeatureFlag.mockImplementation((flag, defaultValue = 0) =>
-        flag == testFlag ? Promise.resolve(flagValue) : Promise.resolve(defaultValue),
+      mockConfigService.getFeatureFlag.mockImplementation((flag) =>
+        flag == testFlag ? Promise.resolve(flagValue as any) : Promise.resolve(0),
       );
     }
 

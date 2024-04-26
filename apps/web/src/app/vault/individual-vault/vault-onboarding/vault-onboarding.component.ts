@@ -60,9 +60,8 @@ export class VaultOnboardingComponent implements OnInit, OnChanges, OnDestroy {
   ) {}
 
   async ngOnInit() {
-    this.showOnboardingAccess$ = await this.configService.getFeatureFlag$<boolean>(
+    this.showOnboardingAccess$ = await this.configService.getFeatureFlag$(
       FeatureFlag.VaultOnboarding,
-      false,
     );
     this.onboardingTasks$ = this.vaultOnboardingService.vaultOnboardingState$;
     await this.setOnboardingTasks();
