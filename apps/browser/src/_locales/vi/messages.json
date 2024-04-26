@@ -3,11 +3,11 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden Password Manager",
+    "message": "Bitwarden - Trình Quản lý Mật khẩu",
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
-    "message": "At home, at work, or on the go, Bitwarden easily secures all your passwords, passkeys, and sensitive information",
+    "message": "Ở nhà, ở cơ quan, hay trên đường đi, Bitwarden sẽ bảo mật tất cả mật khẩu, passkey, và thông tin cá nhân của bạn",
     "description": "Extension description, MUST be less than 112 characters (Safari restriction)"
   },
   "loginOrCreateNewAccount": {
@@ -650,7 +650,7 @@
     "message": "'Thông báo Thêm đăng nhập' sẽ tự động nhắc bạn lưu các đăng nhập mới vào hầm an toàn của bạn bất cứ khi nào bạn đăng nhập trang web lần đầu tiên."
   },
   "addLoginNotificationDescAlt": {
-    "message": "Ask to add an item if one isn't found in your vault. Applies to all logged in accounts."
+    "message": "Đưa ra lựa chọn để thêm một mục nếu không tìm thấy mục đó trong hòm của bạn. Áp dụng với mọi tài khoản đăng nhập trên thiết bị."
   },
   "showCardsCurrentTab": {
     "message": "Hiển thị thẻ trên trang Tab"
@@ -685,13 +685,13 @@
     "message": "Yêu cầu cập nhật mật khẩu đăng nhập khi phát hiện thay đổi trên trang web."
   },
   "changedPasswordNotificationDescAlt": {
-    "message": "Ask to update a login's password when a change is detected on a website. Applies to all logged in accounts."
+    "message": "Đưa ra lựa chọn để cập nhật mật khẩu khi phát hiện có sự thay đổi trên trang web. Áp dụng với mọi tài khoản đăng nhập trên thiết bị."
   },
   "enableUsePasskeys": {
-    "message": "Ask to save and use passkeys"
+    "message": "Đưa ra lựa chọn để lưu và sử dụng passkey"
   },
   "usePasskeysDesc": {
-    "message": "Ask to save new passkeys or log in with passkeys stored in your vault. Applies to all logged in accounts."
+    "message": "Đưa ra lựa chọn để lưu passkey mới hoặc đăng nhập bằng passkey đã lưu trong hòm. Áp dụng với mọi tài khoản đăng nhập trên thiết bị."
   },
   "notificationChangeDesc": {
     "message": "Bạn có muốn cập nhật mật khẩu này trên Bitwarden không?"
@@ -712,7 +712,7 @@
     "message": "Sử dụng một đúp chuột để truy cập vào việc tạo mật khẩu và thông tin đăng nhập phù hợp cho trang web. "
   },
   "contextMenuItemDescAlt": {
-    "message": "Use a secondary click to access password generation and matching logins for the website. Applies to all logged in accounts."
+    "message": "Truy cập trình khởi tạo mật khẩu và các mục đăng nhập đã lưu của trang web bằng cách nhấn đúp chuột. Áp dụng với mọi tài khoản đăng nhập trên thiết bị."
   },
   "defaultUriMatchDetection": {
     "message": "Phương thức kiểm tra URI mặc định",
@@ -728,7 +728,7 @@
     "message": "Thay đổi màu sắc ứng dụng."
   },
   "themeDescAlt": {
-    "message": "Change the application's color theme. Applies to all logged in accounts."
+    "message": "Thay đổi tông màu giao diện của ứng dụng. Áp dụng với mọi tài khoản đăng nhập trên thiết bị."
   },
   "dark": {
     "message": "Tối",
@@ -1061,10 +1061,10 @@
     "message": "Tắt cài đặt trình quản lý mật khẩu tích hợp trong trình duyệt của bạn để tránh xung đột."
   },
   "turnOffBrowserBuiltInPasswordManagerSettingsLink": {
-    "message": "Edit browser settings."
+    "message": "Thay đổi cài đặt của trình duyệt."
   },
   "autofillOverlayVisibilityOff": {
-    "message": "Off",
+    "message": "Tắt",
     "description": "Overlay setting select option for disabling autofill overlay"
   },
   "autofillOverlayVisibilityOnFieldFocus": {
@@ -1168,7 +1168,7 @@
     "message": "Hiển thị một ảnh nhận dạng bên cạnh mỗi lần đăng nhập."
   },
   "faviconDescAlt": {
-    "message": "Show a recognizable image next to each login. Applies to all logged in accounts."
+    "message": "Hiển thị một biểu tượng dễ nhận dạng bên cạnh mỗi mục đăng nhập. Áp dụng với mọi tài khoản đăng nhập trên thiết bị."
   },
   "enableBadgeCounter": {
     "message": "Hiển thị biểu tượng bộ đếm"
@@ -1500,7 +1500,7 @@
     "message": "Mã PIN không hợp lệ."
   },
   "tooManyInvalidPinEntryAttemptsLoggingOut": {
-    "message": "Too many invalid PIN entry attempts. Logging out."
+    "message": "Mã PIN bị gõ sai quá nhiều lần. Đang đăng xuất."
   },
   "unlockWithBiometrics": {
     "message": "Mở khóa bằng sinh trắc học"
