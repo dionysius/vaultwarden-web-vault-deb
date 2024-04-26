@@ -26,7 +26,12 @@ export class ForegroundDerivedStateProvider extends DefaultDerivedStateProvider 
     _dependencies: TDeps,
     storageLocation: [string, AbstractStorageService & ObservableStorageService],
   ): DerivedState<TTo> {
-    const [cacheKey, storageService] = storageLocation;
-    return new ForegroundDerivedState(deriveDefinition, storageService, cacheKey, this.ngZone);
+    const [location, storageService] = storageLocation;
+    return new ForegroundDerivedState(
+      deriveDefinition,
+      storageService,
+      deriveDefinition.buildCacheKey(location),
+      this.ngZone,
+    );
   }
 }
