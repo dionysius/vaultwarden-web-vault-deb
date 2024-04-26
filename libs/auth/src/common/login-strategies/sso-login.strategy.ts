@@ -244,7 +244,7 @@ export class SsoLoginStrategy extends LoginStrategy {
 
       // Only try to set user key with device key if admin approval request was not successful
       if (!hasUserKey) {
-        await this.trySetUserKeyWithDeviceKey(tokenResponse);
+        await this.trySetUserKeyWithDeviceKey(tokenResponse, userId);
       }
     } else if (
       masterKeyEncryptedUserKey != null &&
@@ -312,10 +312,11 @@ export class SsoLoginStrategy extends LoginStrategy {
     }
   }
 
-  private async trySetUserKeyWithDeviceKey(tokenResponse: IdentityTokenResponse): Promise<void> {
+  private async trySetUserKeyWithDeviceKey(
+    tokenResponse: IdentityTokenResponse,
+    userId: UserId,
+  ): Promise<void> {
     const trustedDeviceOption = tokenResponse.userDecryptionOptions?.trustedDeviceOption;
-
-    const userId = (await this.stateService.getUserId()) as UserId;
 
     const deviceKey = await this.deviceTrustService.getDeviceKey(userId);
     const encDevicePrivateKey = trustedDeviceOption?.encryptedPrivateKey;
