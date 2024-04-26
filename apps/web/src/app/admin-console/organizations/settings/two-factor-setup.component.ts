@@ -10,6 +10,7 @@ import { PolicyService } from "@bitwarden/common/admin-console/abstractions/poli
 import { TwoFactorProviderType } from "@bitwarden/common/auth/enums/two-factor-provider-type";
 import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions/account/billing-account-profile-state.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
+import { DialogService } from "@bitwarden/components";
 
 import { TwoFactorDuoComponent } from "../../../auth/settings/two-factor-duo.component";
 import { TwoFactorSetupComponent as BaseTwoFactorSetupComponent } from "../../../auth/settings/two-factor-setup.component";
@@ -22,6 +23,7 @@ import { TwoFactorSetupComponent as BaseTwoFactorSetupComponent } from "../../..
 export class TwoFactorSetupComponent extends BaseTwoFactorSetupComponent {
   tabbedHeader = false;
   constructor(
+    dialogService: DialogService,
     apiService: ApiService,
     modalService: ModalService,
     messagingService: MessagingService,
@@ -31,6 +33,7 @@ export class TwoFactorSetupComponent extends BaseTwoFactorSetupComponent {
     billingAccountProfileStateService: BillingAccountProfileStateService,
   ) {
     super(
+      dialogService,
       apiService,
       modalService,
       messagingService,

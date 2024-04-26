@@ -15,8 +15,6 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <app-two-factor-verify [type]="type" (onAuthed)="auth($event)" *ngIf="!authed">
-      </app-two-factor-verify>
       <ng-container *ngIf="authed">
         <div class="modal-body text-center">
           <ng-container *ngIf="code">

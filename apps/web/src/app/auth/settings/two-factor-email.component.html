@@ -15,13 +15,6 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <app-two-factor-verify
-        [organizationId]="organizationId"
-        [type]="type"
-        (onAuthed)="auth($any($event))"
-        *ngIf="!authed"
-      >
-      </app-two-factor-verify>
       <form
         #form
         (ngSubmit)="submit()"
