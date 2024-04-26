@@ -238,10 +238,6 @@ export class BrowserApi {
     return typeof window !== "undefined" && window === BrowserApi.getBackgroundPage();
   }
 
-  static getApplicationVersion(): string {
-    return chrome.runtime.getManifest().version;
-  }
-
   /**
    * Gets the extension views that match the given properties. This method is not
    * available within background service worker. As a result, it will return an

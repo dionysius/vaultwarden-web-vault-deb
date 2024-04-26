@@ -175,11 +175,13 @@ export abstract class BrowserPlatformUtilsService implements PlatformUtilsServic
   }
 
   getApplicationVersion(): Promise<string> {
-    return Promise.resolve(BrowserApi.getApplicationVersion());
+    const manifest = chrome.runtime.getManifest();
+    return Promise.resolve(manifest.version_name ?? manifest.version);
   }
 
-  async getApplicationVersionNumber(): Promise<string> {
-    return (await this.getApplicationVersion()).split(RegExp("[+|-]"))[0].trim();
+  getApplicationVersionNumber(): Promise<string> {
+    const manifest = chrome.runtime.getManifest();
+    return Promise.resolve(manifest.version.split(RegExp("[+|-]"))[0].trim());
   }
 
   supportsWebAuthn(win: Window): boolean {
