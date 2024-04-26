@@ -38,7 +38,6 @@ export class ManageClientOrganizationsComponent extends BaseClientsComponent {
 
   private consolidatedBillingEnabled$ = this.configService.getFeatureFlag$(
     FeatureFlag.EnableConsolidatedBilling,
-    false,
   );
 
   protected plans: PlanResponse[];
