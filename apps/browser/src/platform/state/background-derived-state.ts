@@ -1,10 +1,7 @@
-import { Observable, Subscription } from "rxjs";
+import { Observable, Subscription, concatMap } from "rxjs";
 import { Jsonify } from "type-fest";
 
-import {
-  AbstractStorageService,
-  ObservableStorageService,
-} from "@bitwarden/common/platform/abstractions/storage.service";
+import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { DeriveDefinition } from "@bitwarden/common/platform/state";
 // eslint-disable-next-line import/no-restricted-paths -- extending this class for this client
 import { DefaultDerivedState } from "@bitwarden/common/platform/state/implementations/default-derived-state";
@@ -22,11 +19,10 @@ export class BackgroundDerivedState<
   constructor(
     parentState$: Observable<TFrom>,
     deriveDefinition: DeriveDefinition<TFrom, TTo, TDeps>,
-    memoryStorage: AbstractStorageService & ObservableStorageService,
     portName: string,
     dependencies: TDeps,
   ) {
-    super(parentState$, deriveDefinition, memoryStorage, dependencies);
+    super(parentState$, deriveDefinition, dependencies);
 
     // listen for foreground derived states to connect
     BrowserApi.addListener(chrome.runtime.onConnect, (port) => {
@@ -42,7 +38,20 @@ export class BackgroundDerivedState<
       });
       port.onMessage.addListener(listenerCallback);
 
-      const stateSubscription = this.state$.subscribe();
+      const stateSubscription = this.state$
+        .pipe(
+          concatMap(async (state) => {
+            await this.sendMessage(
+              {
+                action: "nextState",
+                data: JSON.stringify(state),
+                id: Utils.newGuid(),
+              },
+              port,
+            );
+          }),
+        )
+        .subscribe();
 
       this.portSubscriptions.set(port, stateSubscription);
     });

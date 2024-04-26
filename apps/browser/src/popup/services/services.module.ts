@@ -473,7 +473,7 @@ const safeProviders: SafeProvider[] = [
   safeProvider({
     provide: DerivedStateProvider,
     useClass: ForegroundDerivedStateProvider,
-    deps: [StorageServiceProvider, NgZone],
+    deps: [NgZone],
   }),
   safeProvider({
     provide: AutofillSettingsServiceAbstraction,

@@ -1,10 +1,6 @@
 import { Observable, ReplaySubject, Subject, concatMap, merge, share, timer } from "rxjs";
 
 import { DerivedStateDependencies } from "../../../types/state";
-import {
-  AbstractStorageService,
-  ObservableStorageService,
-} from "../../abstractions/storage.service";
 import { DeriveDefinition } from "../derive-definition";
 import { DerivedState } from "../derived-state";
 
@@ -22,7 +18,6 @@ export class DefaultDerivedState<TFrom, TTo, TDeps extends DerivedStateDependenc
   constructor(
     private parentState$: Observable<TFrom>,
     protected deriveDefinition: DeriveDefinition<TFrom, TTo, TDeps>,
-    private memoryStorage: AbstractStorageService & ObservableStorageService,
     private dependencies: TDeps,
   ) {
     this.storageKey = deriveDefinition.storageKey;
@@ -34,7 +29,6 @@ export class DefaultDerivedState<TFrom, TTo, TDeps extends DerivedStateDependenc
           derivedStateOrPromise = await derivedStateOrPromise;
         }
         const derivedState = derivedStateOrPromise;
-        await this.storeValue(derivedState);
         return derivedState;
       }),
     );
@@ -44,26 +38,13 @@ export class DefaultDerivedState<TFrom, TTo, TDeps extends DerivedStateDependenc
         connector: () => {
           return new ReplaySubject<TTo>(1);
         },
-        resetOnRefCountZero: () =>
-          timer(this.deriveDefinition.cleanupDelayMs).pipe(
-            concatMap(async () => {
-              if (this.deriveDefinition.clearOnCleanup) {
-                await this.memoryStorage.remove(this.storageKey);
-              }
-              return true;
-            }),
-          ),
+        resetOnRefCountZero: () => timer(this.deriveDefinition.cleanupDelayMs),
       }),
     );
   }
 
   async forceValue(value: TTo) {
-    await this.storeValue(value);
     this.forcedValueSubject.next(value);
     return value;
-  }
-
-  private storeValue(value: TTo) {
-    return this.memoryStorage.save(this.storageKey, { derived: true, value });
   }
 }

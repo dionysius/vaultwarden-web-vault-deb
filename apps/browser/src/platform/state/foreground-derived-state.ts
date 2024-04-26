@@ -6,19 +6,14 @@ import {
   filter,
   firstValueFrom,
   map,
-  merge,
   of,
   share,
   switchMap,
   tap,
   timer,
 } from "rxjs";
-import { Jsonify, JsonObject } from "type-fest";
+import { Jsonify } from "type-fest";
 
-import {
-  AbstractStorageService,
-  ObservableStorageService,
-} from "@bitwarden/common/platform/abstractions/storage.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { DeriveDefinition, DerivedState } from "@bitwarden/common/platform/state";
 import { DerivedStateDependencies } from "@bitwarden/common/types/state";
@@ -27,41 +22,28 @@ import { fromChromeEvent } from "../browser/from-chrome-event";
 import { runInsideAngular } from "../browser/run-inside-angular.operator";
 
 export class ForegroundDerivedState<TTo> implements DerivedState<TTo> {
-  private storageKey: string;
   private port: chrome.runtime.Port;
   private backgroundResponses$: Observable<DerivedStateMessage>;
   state$: Observable<TTo>;
 
   constructor(
     private deriveDefinition: DeriveDefinition<unknown, TTo, DerivedStateDependencies>,
-    private memoryStorage: AbstractStorageService & ObservableStorageService,
     private portName: string,
     private ngZone: NgZone,
   ) {
-    this.storageKey = deriveDefinition.storageKey;
-
-    const initialStorageGet$ = defer(() => {
-      return this.getStoredValue();
-    }).pipe(
-      filter((s) => s.derived),
-      map((s) => s.value),
-    );
-
-    const latestStorage$ = this.memoryStorage.updates$.pipe(
-      filter((s) => s.key === this.storageKey),
-      switchMap(async (storageUpdate) => {
-        if (storageUpdate.updateType === "remove") {
-          return null;
-        }
-
-        return await this.getStoredValue();
-      }),
-      filter((s) => s?.derived === true), // A "remove" storage update will return us null
-      map((s) => s.value),
-    );
+    const latestValueFromPort$ = (port: chrome.runtime.Port) => {
+      return fromChromeEvent(port.onMessage).pipe(
+        map(([message]) => message as DerivedStateMessage),
+        filter((message) => message.originator === "background" && message.action === "nextState"),
+        map((message) => {
+          const json = JSON.parse(message.data) as Jsonify<TTo>;
+          return this.deriveDefinition.deserialize(json);
+        }),
+      );
+    };
 
     this.state$ = defer(() => of(this.initializePort())).pipe(
-      switchMap(() => merge(initialStorageGet$, latestStorage$)),
+      switchMap(() => latestValueFromPort$(this.port)),
       share({
         connector: () => new ReplaySubject<TTo>(1),
         resetOnRefCountZero: () =>
@@ -129,29 +111,5 @@ export class ForegroundDerivedState<TTo> implements DerivedState<TTo> {
     this.port.disconnect();
     this.port = null;
     this.backgroundResponses$ = null;
-  }
-
-  protected async getStoredValue(): Promise<{ derived: boolean; value: TTo | null }> {
-    if (this.memoryStorage.valuesRequireDeserialization) {
-      const storedJson = await this.memoryStorage.get<
-        Jsonify<{ derived: true; value: JsonObject }>
-      >(this.storageKey);
-
-      if (!storedJson?.derived) {
-        return { derived: false, value: null };
-      }
-
-      const value = this.deriveDefinition.deserialize(storedJson.value as any);
-
-      return { derived: true, value };
-    } else {
-      const stored = await this.memoryStorage.get<{ derived: true; value: TTo }>(this.storageKey);
-
-      if (!stored?.derived) {
-        return { derived: false, value: null };
-      }
-
-      return { derived: true, value: stored.value };
-    }
   }
 }

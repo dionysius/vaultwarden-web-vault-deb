@@ -249,11 +249,11 @@ export class FakeDerivedStateProvider implements DerivedStateProvider {
     deriveDefinition: DeriveDefinition<TFrom, TTo, TDeps>,
     dependencies: TDeps,
   ): DerivedState<TTo> {
-    let result = this.states.get(deriveDefinition.buildCacheKey("memory")) as DerivedState<TTo>;
+    let result = this.states.get(deriveDefinition.buildCacheKey()) as DerivedState<TTo>;
 
     if (result == null) {
       result = new FakeDerivedState(parentState$, deriveDefinition, dependencies);
-      this.states.set(deriveDefinition.buildCacheKey("memory"), result);
+      this.states.set(deriveDefinition.buildCacheKey(), result);
     }
     return result;
   }

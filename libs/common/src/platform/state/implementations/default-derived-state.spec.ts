@@ -5,7 +5,6 @@
 import { Subject, firstValueFrom } from "rxjs";
 
 import { awaitAsync, trackEmissions } from "../../../../spec";
-import { FakeStorageService } from "../../../../spec/fake-storage.service";
 import { DeriveDefinition } from "../derive-definition";
 import { StateDefinition } from "../state-definition";
 
@@ -29,7 +28,6 @@ const deriveDefinition = new DeriveDefinition<string, Date, { date: Date }>(
 
 describe("DefaultDerivedState", () => {
   let parentState$: Subject<string>;
-  let memoryStorage: FakeStorageService;
   let sut: DefaultDerivedState<string, Date, { date: Date }>;
   const deps = {
     date: new Date(),
@@ -38,8 +36,7 @@ describe("DefaultDerivedState", () => {
   beforeEach(() => {
     callCount = 0;
     parentState$ = new Subject();
-    memoryStorage = new FakeStorageService();
-    sut = new DefaultDerivedState(parentState$, deriveDefinition, memoryStorage, deps);
+    sut = new DefaultDerivedState(parentState$, deriveDefinition, deps);
   });
 
   afterEach(() => {
@@ -66,71 +63,33 @@ describe("DefaultDerivedState", () => {
     expect(callCount).toBe(1);
   });
 
-  it("should store the derived state in memory", async () => {
-    const dateString = "2020-01-01";
-    trackEmissions(sut.state$);
-    parentState$.next(dateString);
-    await awaitAsync();
-
-    expect(memoryStorage.internalStore[deriveDefinition.storageKey]).toEqual(
-      derivedValue(new Date(dateString)),
-    );
-    const calls = memoryStorage.mock.save.mock.calls;
-    expect(calls.length).toBe(1);
-    expect(calls[0][0]).toBe(deriveDefinition.storageKey);
-    expect(calls[0][1]).toEqual(derivedValue(new Date(dateString)));
-  });
-
   describe("forceValue", () => {
     const initialParentValue = "2020-01-01";
     const forced = new Date("2020-02-02");
     let emissions: Date[];
 
-    describe("without observers", () => {
-      beforeEach(async () => {
-        parentState$.next(initialParentValue);
-        await awaitAsync();
-      });
-
-      it("should store the forced value", async () => {
-        await sut.forceValue(forced);
-        expect(memoryStorage.internalStore[deriveDefinition.storageKey]).toEqual(
-          derivedValue(forced),
-        );
-      });
+    beforeEach(async () => {
+      emissions = trackEmissions(sut.state$);
+      parentState$.next(initialParentValue);
+      await awaitAsync();
     });
 
-    describe("with observers", () => {
-      beforeEach(async () => {
-        emissions = trackEmissions(sut.state$);
-        parentState$.next(initialParentValue);
-        await awaitAsync();
-      });
+    it("should force the value", async () => {
+      await sut.forceValue(forced);
+      expect(emissions).toEqual([new Date(initialParentValue), forced]);
+    });
 
-      it("should store the forced value", async () => {
-        await sut.forceValue(forced);
-        expect(memoryStorage.internalStore[deriveDefinition.storageKey]).toEqual(
-          derivedValue(forced),
-        );
-      });
+    it("should only force the value once", async () => {
+      await sut.forceValue(forced);
 
-      it("should force the value", async () => {
-        await sut.forceValue(forced);
-        expect(emissions).toEqual([new Date(initialParentValue), forced]);
-      });
+      parentState$.next(initialParentValue);
+      await awaitAsync();
 
-      it("should only force the value once", async () => {
-        await sut.forceValue(forced);
-
-        parentState$.next(initialParentValue);
-        await awaitAsync();
-
-        expect(emissions).toEqual([
-          new Date(initialParentValue),
-          forced,
-          new Date(initialParentValue),
-        ]);
-      });
+      expect(emissions).toEqual([
+        new Date(initialParentValue),
+        forced,
+        new Date(initialParentValue),
+      ]);
     });
   });
 
@@ -146,42 +105,6 @@ describe("DefaultDerivedState", () => {
       await awaitAsync(cleanupDelayMs * 2);
 
       expect(parentState$.observed).toBe(false);
-    });
-
-    it("should clear state after cleanup", async () => {
-      const subscription = sut.state$.subscribe();
-      parentState$.next(newDate);
-      await awaitAsync();
-
-      expect(memoryStorage.internalStore[deriveDefinition.storageKey]).toEqual(
-        derivedValue(new Date(newDate)),
-      );
-
-      subscription.unsubscribe();
-      // Wait for cleanup
-      await awaitAsync(cleanupDelayMs * 2);
-
-      expect(memoryStorage.internalStore[deriveDefinition.storageKey]).toBeUndefined();
-    });
-
-    it("should not clear state after cleanup if clearOnCleanup is false", async () => {
-      deriveDefinition.options.clearOnCleanup = false;
-
-      const subscription = sut.state$.subscribe();
-      parentState$.next(newDate);
-      await awaitAsync();
-
-      expect(memoryStorage.internalStore[deriveDefinition.storageKey]).toEqual(
-        derivedValue(new Date(newDate)),
-      );
-
-      subscription.unsubscribe();
-      // Wait for cleanup
-      await awaitAsync(cleanupDelayMs * 2);
-
-      expect(memoryStorage.internalStore[deriveDefinition.storageKey]).toEqual(
-        derivedValue(new Date(newDate)),
-      );
     });
 
     it("should not cleanup if there are still subscribers", async () => {
@@ -260,7 +183,3 @@ describe("DefaultDerivedState", () => {
     });
   });
 });
-
-function derivedValue<T>(value: T) {
-  return { derived: true, value };
-}

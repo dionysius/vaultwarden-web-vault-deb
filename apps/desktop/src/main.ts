@@ -157,7 +157,7 @@ export class Main {
       activeUserStateProvider,
       singleUserStateProvider,
       globalStateProvider,
-      new DefaultDerivedStateProvider(storageServiceProvider),
+      new DefaultDerivedStateProvider(),
     );
 
     this.environmentService = new DefaultEnvironmentService(stateProvider, accountService);

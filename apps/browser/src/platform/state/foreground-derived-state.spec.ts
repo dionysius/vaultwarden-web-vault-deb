@@ -1,11 +1,5 @@
-/**
- * need to update test environment so structuredClone works appropriately
- * @jest-environment ../../libs/shared/test.environment.ts
- */
-
 import { NgZone } from "@angular/core";
-import { awaitAsync, trackEmissions } from "@bitwarden/common/../spec";
-import { FakeStorageService } from "@bitwarden/common/../spec/fake-storage.service";
+import { awaitAsync } from "@bitwarden/common/../spec";
 import { mock } from "jest-mock-extended";
 
 import { DeriveDefinition } from "@bitwarden/common/platform/state";
@@ -32,15 +26,12 @@ jest.mock("../browser/run-inside-angular.operator", () => {
 
 describe("ForegroundDerivedState", () => {
   let sut: ForegroundDerivedState<Date>;
-  let memoryStorage: FakeStorageService;
   const portName = "testPort";
   const ngZone = mock<NgZone>();
 
   beforeEach(() => {
-    memoryStorage = new FakeStorageService();
-    memoryStorage.internalUpdateValuesRequireDeserialization(true);
     mockPorts();
-    sut = new ForegroundDerivedState(deriveDefinition, memoryStorage, portName, ngZone);
+    sut = new ForegroundDerivedState(deriveDefinition, portName, ngZone);
   });
 
   afterEach(() => {
@@ -66,19 +57,5 @@ describe("ForegroundDerivedState", () => {
 
     expect(disconnectSpy).toHaveBeenCalled();
     expect(sut["port"]).toBeNull();
-  });
-
-  it("should emit when the memory storage updates", async () => {
-    const dateString = "2020-01-01";
-    const emissions = trackEmissions(sut.state$);
-
-    await memoryStorage.save(deriveDefinition.storageKey, {
-      derived: true,
-      value: new Date(dateString),
-    });
-
-    await awaitAsync();
-
-    expect(emissions).toEqual([new Date(dateString)]);
   });
 });

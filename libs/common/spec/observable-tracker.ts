@@ -16,9 +16,11 @@ export class ObservableTracker<T> {
   /**
    * Awaits the next emission from the observable, or throws if the timeout is exceeded
    * @param msTimeout The maximum time to wait for another emission before throwing
+   * @returns The next emission from the observable
+   * @throws If the timeout is exceeded
    */
-  async expectEmission(msTimeout = 50) {
-    await firstValueFrom(
+  async expectEmission(msTimeout = 50): Promise<T> {
+    return await firstValueFrom(
       this.observable.pipe(
         timeout({
           first: msTimeout,

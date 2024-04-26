@@ -490,7 +490,7 @@ export default class MainBackground {
       this.accountService,
       this.singleUserStateProvider,
     );
-    this.derivedStateProvider = new BackgroundDerivedStateProvider(storageServiceProvider);
+    this.derivedStateProvider = new BackgroundDerivedStateProvider();
     this.stateProvider = new DefaultStateProvider(
       this.activeUserStateProvider,
       this.singleUserStateProvider,
