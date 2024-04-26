@@ -10,7 +10,7 @@ import { CryptoService } from "../abstractions/crypto.service";
 import { EncryptService } from "../abstractions/encrypt.service";
 import { I18nService } from "../abstractions/i18n.service";
 
-const nodeURL = typeof window === "undefined" ? require("url") : null;
+const nodeURL = typeof self === "undefined" ? require("url") : null;
 
 declare global {
   /* eslint-disable-next-line no-var */
