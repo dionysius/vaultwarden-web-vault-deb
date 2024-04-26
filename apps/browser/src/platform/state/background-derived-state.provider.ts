@@ -18,12 +18,12 @@ export class BackgroundDerivedStateProvider extends DefaultDerivedStateProvider 
     dependencies: TDeps,
     storageLocation: [string, AbstractStorageService & ObservableStorageService],
   ): DerivedState<TTo> {
-    const [cacheKey, storageService] = storageLocation;
+    const [location, storageService] = storageLocation;
     return new BackgroundDerivedState(
       parentState$,
       deriveDefinition,
       storageService,
-      cacheKey,
+      deriveDefinition.buildCacheKey(location),
       dependencies,
     );
   }
