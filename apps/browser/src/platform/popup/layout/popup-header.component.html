@@ -1,0 +1,19 @@
+<header
+  class="tw-p-4 tw-border-0 tw-border-solid tw-border-b tw-border-secondary-300 tw-bg-background"
+>
+  <div class="tw-max-w-screen-sm tw-mx-auto tw-flex tw-justify-between tw-w-full">
+    <div class="tw-inline-flex tw-items-center tw-gap-2 tw-h-9">
+      <button
+        bitIconButton="bwi-back"
+        type="button"
+        *ngIf="showBackButton"
+        [title]="'back' | i18n"
+        [ariaLabel]="'back' | i18n"
+      ></button>
+      <h1 bitTypography="h3" class="!tw-mb-0.5 tw-text-headers">{{ pageTitle }}</h1>
+    </div>
+    <div class="tw-inline-flex tw-items-center tw-gap-2 tw-h-9">
+      <ng-content select="[slot=end]"></ng-content>
+    </div>
+  </div>
+</header>

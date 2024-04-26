@@ -17,7 +17,11 @@
   --color-background-alt3: 18 82 163;
   --color-background-alt4: 13 60 119;
 
+  /* Can only be used behind the extension refresh flag */
+  --color-primary-100: 200 217 249;
   --color-primary-300: 103 149 232;
+  /* Can only be used behind the extension refresh flag */
+  --color-primary-500: 23 93 220;
   --color-primary-600: 23 93 220;
   --color-primary-700: 18 82 163;
 
@@ -43,6 +47,7 @@
   --color-text-contrast: 255 255 255;
   --color-text-alt2: 255 255 255;
   --color-text-code: 192 17 118;
+  --color-text-headers: 2 15 102;
 
   --tw-ring-offset-color: #ffffff;
 }
@@ -60,7 +65,9 @@
   --color-background-alt3: 47 52 61;
   --color-background-alt4: 16 18 21;
 
+  --color-primary-100: 8 31 73;
   --color-primary-300: 23 93 220;
+  --color-primary-500: 54 117 232;
   --color-primary-600: 106 153 240;
   --color-primary-700: 180 204 249;
 
@@ -86,6 +93,7 @@
   --color-text-contrast: 25 30 38;
   --color-text-alt2: 255 255 255;
   --color-text-code: 240 141 199;
+  --color-text-headers: 226 227 228;
 
   --tw-ring-offset-color: #1f242e;
 }

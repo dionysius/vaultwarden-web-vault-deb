@@ -24,7 +24,11 @@ module.exports = {
       current: colors.current,
       black: colors.black,
       primary: {
+        // Can only be used behind the extension refresh flag
+        100: rgba("--color-primary-100"),
         300: rgba("--color-primary-300"),
+        // Can only be used behind the extension refresh flag
+        500: rgba("--color-primary-500"),
         600: rgba("--color-primary-600"),
         700: rgba("--color-primary-700"),
       },
@@ -69,6 +73,7 @@ module.exports = {
       main: rgba("--color-text-main"),
       muted: rgba("--color-text-muted"),
       contrast: rgba("--color-text-contrast"),
+      headers: rgba("--color-text-headers"),
       alt2: rgba("--color-text-alt2"),
       code: rgba("--color-text-code"),
       success: rgba("--color-success-600"),

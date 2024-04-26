@@ -36,6 +36,10 @@ import { TwoFactorComponent } from "../auth/popup/two-factor.component";
 import { UpdateTempPasswordComponent } from "../auth/popup/update-temp-password.component";
 import { AutofillComponent } from "../autofill/popup/settings/autofill.component";
 import { HeaderComponent } from "../platform/popup/header.component";
+import { PopupFooterComponent } from "../platform/popup/layout/popup-footer.component";
+import { PopupHeaderComponent } from "../platform/popup/layout/popup-header.component";
+import { PopupPageComponent } from "../platform/popup/layout/popup-page.component";
+import { PopupTabNavigationComponent } from "../platform/popup/layout/popup-tab-navigation.component";
 import { FilePopoutCalloutComponent } from "../tools/popup/components/file-popout-callout.component";
 import { GeneratorComponent } from "../tools/popup/generator/generator.component";
 import { PasswordGeneratorHistoryComponent } from "../tools/popup/generator/password-generator-history.component";
@@ -108,6 +112,10 @@ import "../platform/popup/locales";
     AccountComponent,
     ButtonModule,
     ExportScopeCalloutComponent,
+    PopupPageComponent,
+    PopupTabNavigationComponent,
+    PopupFooterComponent,
+    PopupHeaderComponent,
   ],
   declarations: [
     ActionButtonsComponent,

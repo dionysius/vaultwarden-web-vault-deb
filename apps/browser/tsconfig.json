@@ -2,6 +2,7 @@
   "compilerOptions": {
     "moduleResolution": "node",
     "noImplicitAny": true,
+    "allowSyntheticDefaultImports": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "module": "ES2020",

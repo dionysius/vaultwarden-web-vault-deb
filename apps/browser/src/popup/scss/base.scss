@@ -68,7 +68,7 @@ img {
   border: none;
 }
 
-a {
+a:not(popup-page a, popup-tab-navigation a) {
   text-decoration: none;
 
   @include themify($themes) {
@@ -171,7 +171,7 @@ cdk-virtual-scroll-viewport::-webkit-scrollbar-thumb,
   }
 }
 
-header:not(bit-callout header, bit-dialog header) {
+header:not(bit-callout header, bit-dialog header, popup-page header) {
   height: 44px;
   display: flex;
 
@@ -448,7 +448,7 @@ app-root {
   }
 }
 
-main {
+main:not(popup-page main) {
   position: absolute;
   top: 44px;
   bottom: 0;
