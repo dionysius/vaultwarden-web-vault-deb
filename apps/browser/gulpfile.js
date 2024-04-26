@@ -35,6 +35,9 @@ function buildString() {
   if (process.env.MANIFEST_VERSION) {
     build = `-mv${process.env.MANIFEST_VERSION}`;
   }
+  if (process.env.BETA_BUILD === "1") {
+    build += "-beta";
+  }
   if (process.env.BUILD_NUMBER && process.env.BUILD_NUMBER !== "") {
     build = `-${process.env.BUILD_NUMBER}`;
   }
@@ -65,6 +68,9 @@ function distFirefox() {
     manifest.optional_permissions = manifest.optional_permissions.filter(
       (permission) => permission !== "privacy",
     );
+    if (process.env.BETA_BUILD === "1") {
+      manifest = applyBetaLabels(manifest);
+    }
     return manifest;
   });
 }
@@ -72,6 +78,9 @@ function distFirefox() {
 function distOpera() {
   return dist("opera", (manifest) => {
     delete manifest.applications;
+    if (process.env.BETA_BUILD === "1") {
+      manifest = applyBetaLabels(manifest);
+    }
     return manifest;
   });
 }
@@ -81,6 +90,9 @@ function distChrome() {
     delete manifest.applications;
     delete manifest.sidebar_action;
     delete manifest.commands._execute_sidebar_action;
+    if (process.env.BETA_BUILD === "1") {
+      manifest = applyBetaLabels(manifest);
+    }
     return manifest;
   });
 }
@@ -90,6 +102,9 @@ function distEdge() {
     delete manifest.applications;
     delete manifest.sidebar_action;
     delete manifest.commands._execute_sidebar_action;
+    if (process.env.BETA_BUILD === "1") {
+      manifest = applyBetaLabels(manifest);
+    }
     return manifest;
   });
 }
@@ -210,6 +225,9 @@ async function safariCopyBuild(source, dest) {
             delete manifest.commands._execute_sidebar_action;
             delete manifest.optional_permissions;
             manifest.permissions.push("nativeMessaging");
+            if (process.env.BETA_BUILD === "1") {
+              manifest = applyBetaLabels(manifest);
+            }
             return manifest;
           }),
         ),
@@ -233,6 +251,19 @@ async function ciCoverage(cb) {
     .pipe(filter(["**", "!coverage/coverage*.zip"]))
     .pipe(zip(`coverage${buildString()}.zip`))
     .pipe(gulp.dest(paths.coverage));
+}
+
+function applyBetaLabels(manifest) {
+  manifest.name = "Bitwarden Password Manager BETA";
+  manifest.short_name = "Bitwarden BETA";
+  manifest.description = "THIS EXTENSION IS FOR BETA TESTING BITWARDEN.";
+  if (process.env.GITHUB_RUN_ID) {
+    manifest.version_name = `${manifest.version} beta - ${process.env.GITHUB_SHA.slice(0, 8)}`;
+    manifest.version = `${manifest.version}.${parseInt(process.env.GITHUB_RUN_ID.slice(-4))}`;
+  } else {
+    manifest.version = `${manifest.version}.0`;
+  }
+  return manifest;
 }
 
 exports["dist:firefox"] = distFirefox;
