@@ -110,7 +110,7 @@ export class AccountSwitcherService {
       }),
     );
 
-    // Create a reusable observable that listens to the the switchAccountFinish message and returns the userId from the message
+    // Create a reusable observable that listens to the switchAccountFinish message and returns the userId from the message
     this.switchAccountFinished$ = fromChromeEvent<[message: { command: string; userId: string }]>(
       chrome.runtime.onMessage,
     ).pipe(

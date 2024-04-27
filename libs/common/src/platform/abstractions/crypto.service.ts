@@ -223,7 +223,7 @@ export abstract class CryptoService {
    */
   abstract makeOrgKey<T extends OrgKey | ProviderKey>(): Promise<[EncString, T]>;
   /**
-   * Sets the the user's encrypted private key in storage and
+   * Sets the user's encrypted private key in storage and
    * clears the decrypted private key from memory
    * Note: does not clear the private key if null is provided
    * @param encPrivateKey An encrypted private key

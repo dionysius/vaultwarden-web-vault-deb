@@ -154,7 +154,7 @@ export class MigrationHelper {
    *
    * This is useful from creating migrations off of this paradigm, but should not be used once a value is migrated to a state provider.
    *
-   * @returns a list of all accounts that have been authenticated with state service, cast the the expected type.
+   * @returns a list of all accounts that have been authenticated with state service, cast the expected type.
    */
   async getAccounts<ExpectedAccountType>(): Promise<
     { userId: string; account: ExpectedAccountType }[]

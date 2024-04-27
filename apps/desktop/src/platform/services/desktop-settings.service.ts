@@ -164,7 +164,7 @@ export class DesktopSettingsService {
 
   /**
    * Sets the setting for whether or not the application should be shown in the dock.
-   * @param value `true` if the application should should in the dock, `false` if it should not.
+   * @param value `true` if the application should show in the dock, `false` if it should not.
    */
   async setAlwaysShowDock(value: boolean) {
     await this.alwaysShowDockState.update(() => value);

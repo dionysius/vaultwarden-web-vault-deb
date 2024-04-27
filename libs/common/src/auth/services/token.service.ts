@@ -252,7 +252,7 @@ export class TokenService implements TokenServiceAbstraction {
 
     if (!accessTokenKey) {
       // If we don't have an accessTokenKey, then that means we don't have an access token as it hasn't been set yet
-      // and we have to return null here to properly indicate the the user isn't logged in.
+      // and we have to return null here to properly indicate the user isn't logged in.
       return null;
     }
 

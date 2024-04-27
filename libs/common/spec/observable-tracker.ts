@@ -30,7 +30,7 @@ export class ObservableTracker<T> {
     );
   }
 
-  /** Awaits until the the total number of emissions observed by this tracker equals or exceeds {@link count}
+  /** Awaits until the total number of emissions observed by this tracker equals or exceeds {@link count}
    * @param count The number of emissions to wait for
    */
   async pauseUntilReceived(count: number, msTimeout = 50): Promise<T[]> {
