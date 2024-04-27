@@ -85,7 +85,11 @@ export default class RuntimeBackground {
     this.messageListener.allMessages$
       .pipe(
         mergeMap(async (message: any) => {
-          await this.processMessage(message);
+          try {
+            await this.processMessage(message);
+          } catch (err) {
+            this.logService.error(err);
+          }
         }),
       )
       .subscribe();
