@@ -8,7 +8,6 @@ import { EncryptService } from "../../abstractions/encrypt.service";
 import { EncryptionType } from "../../enums";
 import { Utils } from "../../misc/utils";
 import { EncString } from "../../models/domain/enc-string";
-import { CryptoService } from "../crypto.service";
 
 import {
   USER_ENCRYPTED_PRIVATE_KEY,
@@ -89,40 +88,37 @@ describe("Derived decrypted private key", () => {
   });
 
   it("should derive decrypted private key", async () => {
-    const cryptoService = mock<CryptoService>();
-    cryptoService.getUserKey.mockResolvedValue(userKey);
+    const getUserKey = jest.fn(async () => userKey);
     const encryptService = mock<EncryptService>();
     encryptService.decryptToBytes.mockResolvedValue(decryptedPrivateKey);
 
     const result = await sut.derive([userId, encryptedPrivateKey], {
       encryptService,
-      cryptoService,
+      getUserKey,
     });
 
     expect(result).toEqual(decryptedPrivateKey);
   });
 
   it("should handle null input values", async () => {
-    const cryptoService = mock<CryptoService>();
-    cryptoService.getUserKey.mockResolvedValue(userKey);
+    const getUserKey = jest.fn(async () => userKey);
     const encryptService = mock<EncryptService>();
 
     const result = await sut.derive([userId, null], {
       encryptService,
-      cryptoService,
+      getUserKey,
     });
 
     expect(result).toEqual(null);
   });
 
   it("should handle null user key", async () => {
-    const cryptoService = mock<CryptoService>();
-    cryptoService.getUserKey.mockResolvedValue(null);
+    const getUserKey = jest.fn(async () => null);
     const encryptService = mock<EncryptService>();
 
     const result = await sut.derive([userId, encryptedPrivateKey], {
       encryptService,
-      cryptoService,
+      getUserKey,
     });
 
     expect(result).toEqual(null);
