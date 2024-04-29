@@ -3,6 +3,7 @@ import * as path from "path";
 
 import { program } from "commander";
 import * as jsdom from "jsdom";
+import { firstValueFrom } from "rxjs";
 
 import {
   InternalUserDecryptionOptionsServiceAbstraction,
@@ -79,7 +80,7 @@ import { MigrationBuilderService } from "@bitwarden/common/platform/services/mig
 import { MigrationRunner } from "@bitwarden/common/platform/services/migration-runner";
 import { StateService } from "@bitwarden/common/platform/services/state.service";
 import { StorageServiceProvider } from "@bitwarden/common/platform/services/storage-service.provider";
-import { UserKeyInitService } from "@bitwarden/common/platform/services/user-key-init.service";
+import { UserAutoUnlockKeyService } from "@bitwarden/common/platform/services/user-auto-unlock-key.service";
 import {
   ActiveUserStateProvider,
   DerivedStateProvider,
@@ -236,7 +237,7 @@ export class Main {
   biometricStateService: BiometricStateService;
   billingAccountProfileStateService: BillingAccountProfileStateService;
   providerApiService: ProviderApiServiceAbstraction;
-  userKeyInitService: UserKeyInitService;
+  userAutoUnlockKeyService: UserAutoUnlockKeyService;
   kdfConfigService: KdfConfigServiceAbstraction;
 
   constructor() {
@@ -709,11 +710,7 @@ export class Main {
 
     this.providerApiService = new ProviderApiService(this.apiService);
 
-    this.userKeyInitService = new UserKeyInitService(
-      this.accountService,
-      this.cryptoService,
-      this.logService,
-    );
+    this.userAutoUnlockKeyService = new UserAutoUnlockKeyService(this.cryptoService);
   }
 
   async run() {
@@ -757,7 +754,11 @@ export class Main {
     this.containerService.attachToGlobal(global);
     await this.i18nService.init();
     this.twoFactorService.init();
-    this.userKeyInitService.listenForActiveUserChangesToSetUserKey();
+
+    const activeAccount = await firstValueFrom(this.accountService.activeAccount$);
+    if (activeAccount) {
+      await this.userAutoUnlockKeyService.setUserKeyInMemoryIfAutoUserKeySet(activeAccount.id);
+    }
   }
 }
 
