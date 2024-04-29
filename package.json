@@ -75,7 +75,7 @@
     "@types/node-ipc": "9.2.3",
     "@types/papaparse": "5.3.14",
     "@types/proper-lockfile": "4.1.4",
-    "@types/react": "16.14.57",
+    "@types/react": "16.14.60",
     "@types/retry": "0.12.5",
     "@types/zxcvbn": "4.4.4",
     "@typescript-eslint/eslint-plugin": "7.7.1",
@@ -124,8 +124,8 @@
     "prettier": "3.2.2",
     "prettier-plugin-tailwindcss": "0.5.14",
     "process": "0.11.10",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
     "regedit": "^3.0.3",
     "remark-gfm": "3.0.1",
     "rimraf": "5.0.5",
@@ -213,7 +213,7 @@
     "replacestream": "4.0.3"
   },
   "resolutions": {
-    "@types/react": "16.14.57"
+    "@types/react": "16.14.60"
   },
   "lint-staged": {
     "*": "prettier --cache --ignore-unknown --write",
