@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit } from "@angular/core";
 import { FormControl, FormGroup } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
-import { catchError, combineLatest, EMPTY, Subject, switchMap, takeUntil } from "rxjs";
+import { combineLatest, Subject, switchMap, takeUntil } from "rxjs";
 
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
@@ -40,12 +40,6 @@ export class ServiceAccountPeopleComponent implements OnInit, OnDestroy {
           return convertToAccessPolicyItemViews(policies);
         }),
     ),
-    catchError(() => {
-      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-      // eslint-disable-next-line @typescript-eslint/no-floating-promises
-      this.router.navigate(["/sm", this.organizationId, "machine-accounts"]);
-      return EMPTY;
-    }),
   );
 
   private potentialGrantees$ = combineLatest([this.route.params]).pipe(
@@ -101,29 +95,32 @@ export class ServiceAccountPeopleComponent implements OnInit, OnDestroy {
     if (this.isFormInvalid()) {
       return;
     }
+    const formValues = this.formGroup.value.accessPolicies;
+    this.formGroup.disable();
 
     const showAccessRemovalWarning =
       await this.accessPolicySelectorService.showAccessRemovalWarning(
         this.organizationId,
-        this.formGroup.value.accessPolicies,
+        formValues,
       );
 
     if (
       await this.handleAccessRemovalWarning(showAccessRemovalWarning, this.currentAccessPolicies)
     ) {
+      this.formGroup.enable();
       return;
     }
 
     try {
       const peoplePoliciesViews = await this.updateServiceAccountPeopleAccessPolicies(
         this.serviceAccountId,
-        this.formGroup.value.accessPolicies,
+        formValues,
       );
 
       await this.handleAccessTokenAvailableWarning(
         showAccessRemovalWarning,
         this.currentAccessPolicies,
-        this.formGroup.value.accessPolicies,
+        formValues,
       );
 
       this.currentAccessPolicies = convertToAccessPolicyItemViews(peoplePoliciesViews);
@@ -137,6 +134,7 @@ export class ServiceAccountPeopleComponent implements OnInit, OnDestroy {
       this.validationService.showError(e);
       this.setSelected(this.currentAccessPolicies);
     }
+    this.formGroup.enable();
   };
 
   private setSelected(policiesToSelect: ApItemViewType[]) {
@@ -198,9 +196,7 @@ export class ServiceAccountPeopleComponent implements OnInit, OnDestroy {
     selectedPolicies: ApItemValueType[],
   ): Promise<void> {
     if (showAccessRemovalWarning) {
-      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-      // eslint-disable-next-line @typescript-eslint/no-floating-promises
-      this.router.navigate(["sm", this.organizationId, "machine-accounts"]);
+      await this.router.navigate(["sm", this.organizationId, "machine-accounts"]);
     } else if (
       this.accessPolicySelectorService.isAccessRemoval(currentAccessPolicies, selectedPolicies)
     ) {
