@@ -230,6 +230,17 @@ jobs:
           url: https://github.com/bitwarden/clients/actions/runs/${{ github.run_id }}
           AZURE_KV_CI_SERVICE_PRINCIPAL: ${{ secrets.AZURE_KV_CI_SERVICE_PRINCIPAL }}
 
+  update-summary:
+    name: Display commit
+    needs: artifact-check
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Display commit SHA
+        run: |
+          REPO_URL="https://github.com/bitwarden/clients/commit"
+          COMMIT_SHA="${{ needs.artifact-check.outputs.artifact-build-commit }}"
+          echo ":steam_locomotive: View [commit]($REPO_URL/$COMMIT_SHA)" >> $GITHUB_STEP_SUMMARY
+
   azure-deploy:
     name: Deploy Web Vault to ${{ inputs.environment }} Storage Account
     needs:
