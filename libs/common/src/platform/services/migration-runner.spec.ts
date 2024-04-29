@@ -1,6 +1,7 @@
 import { mock } from "jest-mock-extended";
 
 import { awaitAsync } from "../../../spec";
+import { ClientType } from "../../enums";
 import { CURRENT_VERSION } from "../../state-migrations";
 import { MigrationBuilder } from "../../state-migrations/migration-builder";
 import { LogService } from "../abstractions/log.service";
@@ -17,7 +18,7 @@ describe("MigrationRunner", () => {
 
   migrationBuilderService.build.mockReturnValue(mockMigrationBuilder);
 
-  const sut = new MigrationRunner(storage, logService, migrationBuilderService);
+  const sut = new MigrationRunner(storage, logService, migrationBuilderService, ClientType.Web);
 
   describe("migrate", () => {
     it("should not run migrations if state is empty", async () => {

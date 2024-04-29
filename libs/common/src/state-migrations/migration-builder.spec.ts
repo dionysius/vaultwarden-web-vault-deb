@@ -1,5 +1,8 @@
 import { mock } from "jest-mock-extended";
 
+// eslint-disable-next-line import/no-restricted-paths
+import { ClientType } from "../enums";
+
 import { MigrationBuilder } from "./migration-builder";
 import { MigrationHelper } from "./migration-helper";
 import { Migrator } from "./migrator";
@@ -72,65 +75,69 @@ describe("MigrationBuilder", () => {
     expect(migrations[1]).toMatchObject({ migrator: expect.any(TestMigrator), direction: "down" });
   });
 
-  describe("migrate", () => {
-    let migrator: TestMigrator;
-    let rollback_migrator: TestMigrator;
+  const clientTypes = Object.values(ClientType);
 
-    beforeEach(() => {
-      sut = sut.with(TestMigrator, 0, 1).rollback(TestMigrator, 1, 0);
-      migrator = (sut as any).migrations[0].migrator;
-      rollback_migrator = (sut as any).migrations[1].migrator;
+  describe.each(clientTypes)("for client %s", (clientType) => {
+    describe("migrate", () => {
+      let migrator: TestMigrator;
+      let rollback_migrator: TestMigrator;
+
+      beforeEach(() => {
+        sut = sut.with(TestMigrator, 0, 1).rollback(TestMigrator, 1, 0);
+        migrator = (sut as any).migrations[0].migrator;
+        rollback_migrator = (sut as any).migrations[1].migrator;
+      });
+
+      it("should migrate", async () => {
+        const helper = new MigrationHelper(0, mock(), mock(), "general", clientType);
+        const spy = jest.spyOn(migrator, "migrate");
+        await sut.migrate(helper);
+        expect(spy).toBeCalledWith(helper);
+      });
+
+      it("should rollback", async () => {
+        const helper = new MigrationHelper(1, mock(), mock(), "general", clientType);
+        const spy = jest.spyOn(rollback_migrator, "rollback");
+        await sut.migrate(helper);
+        expect(spy).toBeCalledWith(helper);
+      });
+
+      it("should update version on migrate", async () => {
+        const helper = new MigrationHelper(0, mock(), mock(), "general", clientType);
+        const spy = jest.spyOn(migrator, "updateVersion");
+        await sut.migrate(helper);
+        expect(spy).toBeCalledWith(helper, "up");
+      });
+
+      it("should update version on rollback", async () => {
+        const helper = new MigrationHelper(1, mock(), mock(), "general", clientType);
+        const spy = jest.spyOn(rollback_migrator, "updateVersion");
+        await sut.migrate(helper);
+        expect(spy).toBeCalledWith(helper, "down");
+      });
+
+      it("should not run the migrator if the current version does not match the from version", async () => {
+        const helper = new MigrationHelper(3, mock(), mock(), "general", clientType);
+        const migrate = jest.spyOn(migrator, "migrate");
+        const rollback = jest.spyOn(rollback_migrator, "rollback");
+        await sut.migrate(helper);
+        expect(migrate).not.toBeCalled();
+        expect(rollback).not.toBeCalled();
+      });
+
+      it("should not update version if the current version does not match the from version", async () => {
+        const helper = new MigrationHelper(3, mock(), mock(), "general", clientType);
+        const migrate = jest.spyOn(migrator, "updateVersion");
+        const rollback = jest.spyOn(rollback_migrator, "updateVersion");
+        await sut.migrate(helper);
+        expect(migrate).not.toBeCalled();
+        expect(rollback).not.toBeCalled();
+      });
     });
 
-    it("should migrate", async () => {
-      const helper = new MigrationHelper(0, mock(), mock(), "general");
-      const spy = jest.spyOn(migrator, "migrate");
-      await sut.migrate(helper);
-      expect(spy).toBeCalledWith(helper);
+    it("should be able to call instance methods", async () => {
+      const helper = new MigrationHelper(0, mock(), mock(), "general", clientType);
+      await sut.with(TestMigratorWithInstanceMethod, 0, 1).migrate(helper);
     });
-
-    it("should rollback", async () => {
-      const helper = new MigrationHelper(1, mock(), mock(), "general");
-      const spy = jest.spyOn(rollback_migrator, "rollback");
-      await sut.migrate(helper);
-      expect(spy).toBeCalledWith(helper);
-    });
-
-    it("should update version on migrate", async () => {
-      const helper = new MigrationHelper(0, mock(), mock(), "general");
-      const spy = jest.spyOn(migrator, "updateVersion");
-      await sut.migrate(helper);
-      expect(spy).toBeCalledWith(helper, "up");
-    });
-
-    it("should update version on rollback", async () => {
-      const helper = new MigrationHelper(1, mock(), mock(), "general");
-      const spy = jest.spyOn(rollback_migrator, "updateVersion");
-      await sut.migrate(helper);
-      expect(spy).toBeCalledWith(helper, "down");
-    });
-
-    it("should not run the migrator if the current version does not match the from version", async () => {
-      const helper = new MigrationHelper(3, mock(), mock(), "general");
-      const migrate = jest.spyOn(migrator, "migrate");
-      const rollback = jest.spyOn(rollback_migrator, "rollback");
-      await sut.migrate(helper);
-      expect(migrate).not.toBeCalled();
-      expect(rollback).not.toBeCalled();
-    });
-
-    it("should not update version if the current version does not match the from version", async () => {
-      const helper = new MigrationHelper(3, mock(), mock(), "general");
-      const migrate = jest.spyOn(migrator, "updateVersion");
-      const rollback = jest.spyOn(rollback_migrator, "updateVersion");
-      await sut.migrate(helper);
-      expect(migrate).not.toBeCalled();
-      expect(rollback).not.toBeCalled();
-    });
-  });
-
-  it("should be able to call instance methods", async () => {
-    const helper = new MigrationHelper(0, mock(), mock(), "general");
-    await sut.with(TestMigratorWithInstanceMethod, 0, 1).migrate(helper);
   });
 });

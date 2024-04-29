@@ -276,6 +276,7 @@ import {
   SYSTEM_THEME_OBSERVABLE,
   WINDOW,
   INTRAPROCESS_MESSAGING_SUBJECT,
+  CLIENT_TYPE,
 } from "./injection-tokens";
 import { ModalService } from "./modal.service";
 
@@ -1099,7 +1100,7 @@ const safeProviders: SafeProvider[] = [
   safeProvider({
     provide: MigrationRunner,
     useClass: MigrationRunner,
-    deps: [AbstractStorageService, LogService, MigrationBuilderService],
+    deps: [AbstractStorageService, LogService, MigrationBuilderService, CLIENT_TYPE],
   }),
   safeProvider({
     provide: MigrationBuilderService,

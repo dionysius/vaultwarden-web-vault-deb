@@ -1,6 +1,7 @@
 import { InjectionToken } from "@angular/core";
 import { Observable, Subject } from "rxjs";
 
+import { ClientType } from "@bitwarden/common/enums";
 import {
   AbstractMemoryStorageService,
   AbstractStorageService,
@@ -52,3 +53,4 @@ export const SYSTEM_THEME_OBSERVABLE = new SafeInjectionToken<Observable<ThemeTy
 export const INTRAPROCESS_MESSAGING_SUBJECT = new SafeInjectionToken<Subject<Message<object>>>(
   "INTRAPROCESS_MESSAGING_SUBJECT",
 );
+export const CLIENT_TYPE = new SafeInjectionToken<ClientType>("CLIENT_TYPE");

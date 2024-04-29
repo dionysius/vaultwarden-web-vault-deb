@@ -13,6 +13,7 @@ import {
   SYSTEM_THEME_OBSERVABLE,
   SafeInjectionToken,
   INTRAPROCESS_MESSAGING_SUBJECT,
+  CLIENT_TYPE,
 } from "@bitwarden/angular/services/injection-tokens";
 import { JslibServicesModule } from "@bitwarden/angular/services/jslib-services.module";
 import { AuthRequestServiceAbstraction } from "@bitwarden/auth/common";
@@ -45,6 +46,7 @@ import {
   UserNotificationSettingsServiceAbstraction,
 } from "@bitwarden/common/autofill/services/user-notification-settings.service";
 import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions/account/billing-account-profile-state.service";
+import { ClientType } from "@bitwarden/common/enums";
 import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/crypto-function.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
@@ -557,6 +559,10 @@ const safeProviders: SafeProvider[] = [
       OBSERVABLE_MEMORY_STORAGE,
       OBSERVABLE_LARGE_OBJECT_MEMORY_STORAGE,
     ],
+  }),
+  safeProvider({
+    provide: CLIENT_TYPE,
+    useValue: ClientType.Browser,
   }),
 ];
 

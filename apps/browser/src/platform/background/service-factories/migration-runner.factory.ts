@@ -1,3 +1,4 @@
+import { ClientType } from "@bitwarden/common/enums";
 import { MigrationBuilderService } from "@bitwarden/common/platform/services/migration-builder.service";
 import { MigrationRunner } from "@bitwarden/common/platform/services/migration-runner";
 
@@ -27,6 +28,7 @@ export async function migrationRunnerFactory(
         await diskStorageServiceFactory(cache, opts),
         await logServiceFactory(cache, opts),
         new MigrationBuilderService(),
+        ClientType.Browser,
       ),
   );
 }

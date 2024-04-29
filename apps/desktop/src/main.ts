@@ -6,6 +6,7 @@ import { Subject, firstValueFrom } from "rxjs";
 import { TokenService as TokenServiceAbstraction } from "@bitwarden/common/auth/abstractions/token.service";
 import { AccountServiceImplementation } from "@bitwarden/common/auth/services/account.service";
 import { TokenService } from "@bitwarden/common/auth/services/token.service";
+import { ClientType } from "@bitwarden/common/enums";
 import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { KeyGenerationService as KeyGenerationServiceAbstraction } from "@bitwarden/common/platform/abstractions/key-generation.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
@@ -190,6 +191,7 @@ export class Main {
       this.storageService,
       this.logService,
       new MigrationBuilderService(),
+      ClientType.Desktop,
     );
 
     // TODO: this state service will have access to on disk storage, but not in memory storage.

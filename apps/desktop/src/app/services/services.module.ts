@@ -15,6 +15,7 @@ import {
   SafeInjectionToken,
   STATE_FACTORY,
   INTRAPROCESS_MESSAGING_SUBJECT,
+  CLIENT_TYPE,
 } from "@bitwarden/angular/services/injection-tokens";
 import { JslibServicesModule } from "@bitwarden/angular/services/jslib-services.module";
 import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout-settings.service";
@@ -25,6 +26,7 @@ import { KdfConfigService as KdfConfigServiceAbstraction } from "@bitwarden/comm
 import { InternalMasterPasswordServiceAbstraction } from "@bitwarden/common/auth/abstractions/master-password.service.abstraction";
 import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
 import { AutofillSettingsServiceAbstraction } from "@bitwarden/common/autofill/services/autofill-settings.service";
+import { ClientType } from "@bitwarden/common/enums";
 import { CryptoFunctionService as CryptoFunctionServiceAbstraction } from "@bitwarden/common/platform/abstractions/crypto-function.service";
 import { CryptoService as CryptoServiceAbstraction } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
@@ -274,6 +276,10 @@ const safeProviders: SafeProvider[] = [
     provide: NativeMessagingManifestService,
     useClass: NativeMessagingManifestService,
     deps: [],
+  }),
+  safeProvider({
+    provide: CLIENT_TYPE,
+    useValue: ClientType.Desktop,
   }),
 ];
 
