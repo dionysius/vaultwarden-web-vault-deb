@@ -60,7 +60,9 @@
     "clipboardWrite",
     "idle",
     "scripting",
-    "offscreen"
+    "offscreen",
+    "webRequest",
+    "webRequestAuthProvider"
   ],
   "optional_permissions": ["nativeMessaging", "privacy"],
   "host_permissions": ["<all_urls>"],
