@@ -1,7 +1,7 @@
 import { Component, ElementRef, Input, ViewChild } from "@angular/core";
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 
-import { FocusableElement } from "../input/autofocus.directive";
+import { FocusableElement } from "../shared/focusable-element";
 
 let nextId = 0;
 
@@ -32,8 +32,8 @@ export class SearchComponent implements ControlValueAccessor, FocusableElement {
   @Input() disabled: boolean;
   @Input() placeholder: string;
 
-  focus() {
-    this.input.nativeElement.focus();
+  getFocusTarget() {
+    return this.input.nativeElement;
   }
 
   onChange(searchText: string) {

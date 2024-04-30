@@ -1,6 +1,7 @@
-import { Component, HostBinding, Input } from "@angular/core";
+import { Component, ElementRef, HostBinding, Input } from "@angular/core";
 
 import { ButtonLikeAbstraction, ButtonType } from "../shared/button-like.abstraction";
+import { FocusableElement } from "../shared/focusable-element";
 
 export type IconButtonType = ButtonType | "contrast" | "main" | "muted" | "light";
 
@@ -123,9 +124,12 @@ const sizes: Record<IconButtonSize, string[]> = {
 @Component({
   selector: "button[bitIconButton]:not(button[bitButton])",
   templateUrl: "icon-button.component.html",
-  providers: [{ provide: ButtonLikeAbstraction, useExisting: BitIconButtonComponent }],
+  providers: [
+    { provide: ButtonLikeAbstraction, useExisting: BitIconButtonComponent },
+    { provide: FocusableElement, useExisting: BitIconButtonComponent },
+  ],
 })
-export class BitIconButtonComponent implements ButtonLikeAbstraction {
+export class BitIconButtonComponent implements ButtonLikeAbstraction, FocusableElement {
   @Input("bitIconButton") icon: string;
 
   @Input() buttonType: IconButtonType;
@@ -162,4 +166,10 @@ export class BitIconButtonComponent implements ButtonLikeAbstraction {
   setButtonType(value: "primary" | "secondary" | "danger" | "unstyled") {
     this.buttonType = value;
   }
+
+  getFocusTarget() {
+    return this.elementRef.nativeElement;
+  }
+
+  constructor(private elementRef: ElementRef) {}
 }

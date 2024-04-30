@@ -1,5 +1,7 @@
 import { Directive, ElementRef, HostBinding, Input } from "@angular/core";
 
+import { FocusableElement } from "../shared/focusable-element";
+
 export type BadgeVariant = "primary" | "secondary" | "success" | "danger" | "warning" | "info";
 
 const styles: Record<BadgeVariant, string[]> = {
@@ -22,8 +24,9 @@ const hoverStyles: Record<BadgeVariant, string[]> = {
 
 @Directive({
   selector: "span[bitBadge], a[bitBadge], button[bitBadge]",
+  providers: [{ provide: FocusableElement, useExisting: BadgeDirective }],
 })
-export class BadgeDirective {
+export class BadgeDirective implements FocusableElement {
   @HostBinding("class") get classList() {
     return [
       "tw-inline-block",
@@ -61,6 +64,10 @@ export class BadgeDirective {
    * Truncate long text
    */
   @Input() truncate = true;
+
+  getFocusTarget() {
+    return this.el.nativeElement;
+  }
 
   private hasHoverEffects = false;
 
