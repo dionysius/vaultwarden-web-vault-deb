@@ -2,6 +2,7 @@ import {
   Observable,
   combineLatest,
   distinctUntilChanged,
+  firstValueFrom,
   map,
   of,
   shareReplay,
@@ -12,6 +13,7 @@ import { ApiService } from "../../abstractions/api.service";
 import { CryptoService } from "../../platform/abstractions/crypto.service";
 import { MessagingService } from "../../platform/abstractions/messaging.service";
 import { StateService } from "../../platform/abstractions/state.service";
+import { Utils } from "../../platform/misc/utils";
 import { UserId } from "../../types/guid";
 import { AccountService } from "../abstractions/account.service";
 import { AuthService as AuthServiceAbstraction } from "../abstractions/auth.service";
@@ -39,13 +41,16 @@ export class AuthService implements AuthServiceAbstraction {
 
     this.authStatuses$ = this.accountService.accounts$.pipe(
       map((accounts) => Object.keys(accounts) as UserId[]),
-      switchMap((entries) =>
-        combineLatest(
+      switchMap((entries) => {
+        if (entries.length === 0) {
+          return of([] as { userId: UserId; status: AuthenticationStatus }[]);
+        }
+        return combineLatest(
           entries.map((userId) =>
             this.authStatusFor$(userId).pipe(map((status) => ({ userId, status }))),
           ),
-        ),
-      ),
+        );
+      }),
       map((statuses) => {
         return statuses.reduce(
           (acc, { userId, status }) => {
@@ -59,7 +64,7 @@ export class AuthService implements AuthServiceAbstraction {
   }
 
   authStatusFor$(userId: UserId): Observable<AuthenticationStatus> {
-    if (userId == null) {
+    if (!Utils.isGuid(userId)) {
       return of(AuthenticationStatus.LoggedOut);
     }
 
@@ -84,17 +89,8 @@ export class AuthService implements AuthServiceAbstraction {
   }
 
   async getAuthStatus(userId?: string): Promise<AuthenticationStatus> {
-    // If we don't have an access token or userId, we're logged out
-    const isAuthenticated = await this.stateService.getIsAuthenticated({ userId: userId });
-    if (!isAuthenticated) {
-      return AuthenticationStatus.LoggedOut;
-    }
-
-    // Note: since we aggresively set the auto user key to memory if it exists on app init (see InitService)
-    // we only need to check if the user key is in memory.
-    const hasUserKey = await this.cryptoService.hasUserKeyInMemory(userId as UserId);
-
-    return hasUserKey ? AuthenticationStatus.Unlocked : AuthenticationStatus.Locked;
+    userId ??= await firstValueFrom(this.accountService.activeAccount$.pipe(map((a) => a?.id)));
+    return await firstValueFrom(this.authStatusFor$(userId as UserId));
   }
 
   logOut(callback: () => void) {

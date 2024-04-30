@@ -4,6 +4,7 @@ import { FormBuilder } from "@angular/forms";
 
 import { AddEditComponent as BaseAddEditComponent } from "@bitwarden/angular/tools/send/add-edit.component";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions/account/billing-account-profile-state.service";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -34,6 +35,7 @@ export class AddEditComponent extends BaseAddEditComponent {
     dialogService: DialogService,
     formBuilder: FormBuilder,
     billingAccountProfileStateService: BillingAccountProfileStateService,
+    accountService: AccountService,
   ) {
     super(
       i18nService,
@@ -49,6 +51,7 @@ export class AddEditComponent extends BaseAddEditComponent {
       dialogService,
       formBuilder,
       billingAccountProfileStateService,
+      accountService,
     );
   }
 

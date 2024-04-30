@@ -9,7 +9,7 @@ import {
 } from "@bitwarden/angular/auth/guards";
 
 import { AccessibilityCookieComponent } from "../auth/accessibility-cookie.component";
-import { LoginGuard } from "../auth/guards/login.guard";
+import { maxAccountsGuardFn } from "../auth/guards/max-accounts.guard";
 import { HintComponent } from "../auth/hint.component";
 import { LockComponent } from "../auth/lock.component";
 import { LoginDecryptionOptionsComponent } from "../auth/login/login-decryption-options/login-decryption-options.component";
@@ -40,7 +40,7 @@ const routes: Routes = [
   {
     path: "login",
     component: LoginComponent,
-    canActivate: [LoginGuard],
+    canActivate: [maxAccountsGuardFn()],
   },
   {
     path: "login-with-device",

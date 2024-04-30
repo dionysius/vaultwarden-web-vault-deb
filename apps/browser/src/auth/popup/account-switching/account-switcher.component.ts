@@ -10,6 +10,7 @@ import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 import { VaultTimeoutAction } from "@bitwarden/common/enums/vault-timeout-action.enum";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
+import { UserId } from "@bitwarden/common/types/guid";
 import { DialogService } from "@bitwarden/components";
 
 import { AccountSwitcherService } from "./services/account-switcher.service";
@@ -64,9 +65,9 @@ export class AccountSwitcherComponent implements OnInit, OnDestroy {
     this.location.back();
   }
 
-  async lock(userId?: string) {
+  async lock(userId: string) {
     this.loading = true;
-    await this.vaultTimeoutService.lock(userId ? userId : null);
+    await this.vaultTimeoutService.lock(userId);
     // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.router.navigate(["lock"]);
@@ -96,7 +97,7 @@ export class AccountSwitcherComponent implements OnInit, OnDestroy {
       .subscribe(() => this.router.navigate(["lock"]));
   }
 
-  async logOut() {
+  async logOut(userId: UserId) {
     this.loading = true;
     const confirmed = await this.dialogService.openSimpleDialog({
       title: { key: "logOut" },
@@ -105,7 +106,7 @@ export class AccountSwitcherComponent implements OnInit, OnDestroy {
     });
 
     if (confirmed) {
-      this.messagingService.send("logout");
+      this.messagingService.send("logout", { userId });
     }
 
     // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.

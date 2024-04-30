@@ -65,6 +65,7 @@ describe("UserDecryptionOptionsService", () => {
       await fakeAccountService.addAccount(givenUser, {
         name: "Test User 1",
         email: "test1@email.com",
+        emailVerified: false,
       });
       await fakeStateProvider.setUserState(
         USER_DECRYPTION_OPTIONS,

@@ -1,4 +1,4 @@
-import { Subject, combineLatestWith, map, distinctUntilChanged, shareReplay } from "rxjs";
+import { combineLatestWith, map, distinctUntilChanged, shareReplay, combineLatest } from "rxjs";
 
 import {
   AccountInfo,
@@ -7,8 +7,9 @@ import {
 } from "../../auth/abstractions/account.service";
 import { LogService } from "../../platform/abstractions/log.service";
 import { MessagingService } from "../../platform/abstractions/messaging.service";
+import { Utils } from "../../platform/misc/utils";
 import {
-  ACCOUNT_MEMORY,
+  ACCOUNT_DISK,
   GlobalState,
   GlobalStateProvider,
   KeyDefinition,
@@ -16,25 +17,36 @@ import {
 import { UserId } from "../../types/guid";
 
 export const ACCOUNT_ACCOUNTS = KeyDefinition.record<AccountInfo, UserId>(
-  ACCOUNT_MEMORY,
+  ACCOUNT_DISK,
   "accounts",
   {
     deserializer: (accountInfo) => accountInfo,
   },
 );
 
-export const ACCOUNT_ACTIVE_ACCOUNT_ID = new KeyDefinition(ACCOUNT_MEMORY, "activeAccountId", {
+export const ACCOUNT_ACTIVE_ACCOUNT_ID = new KeyDefinition(ACCOUNT_DISK, "activeAccountId", {
   deserializer: (id: UserId) => id,
 });
 
+export const ACCOUNT_ACTIVITY = KeyDefinition.record<Date, UserId>(ACCOUNT_DISK, "activity", {
+  deserializer: (activity) => new Date(activity),
+});
+
+const LOGGED_OUT_INFO: AccountInfo = {
+  email: "",
+  emailVerified: false,
+  name: undefined,
+};
+
 export class AccountServiceImplementation implements InternalAccountService {
-  private lock = new Subject<UserId>();
-  private logout = new Subject<UserId>();
   private accountsState: GlobalState<Record<UserId, AccountInfo>>;
   private activeAccountIdState: GlobalState<UserId | undefined>;
 
   accounts$;
   activeAccount$;
+  accountActivity$;
+  sortedUserIds$;
+  nextUpAccount$;
 
   constructor(
     private messagingService: MessagingService,
@@ -53,14 +65,40 @@ export class AccountServiceImplementation implements InternalAccountService {
       distinctUntilChanged((a, b) => a?.id === b?.id && accountInfoEqual(a, b)),
       shareReplay({ bufferSize: 1, refCount: false }),
     );
+    this.accountActivity$ = this.globalStateProvider
+      .get(ACCOUNT_ACTIVITY)
+      .state$.pipe(map((activity) => activity ?? {}));
+    this.sortedUserIds$ = this.accountActivity$.pipe(
+      map((activity) => {
+        return Object.entries(activity)
+          .map(([userId, lastActive]: [UserId, Date]) => ({ userId, lastActive }))
+          .sort((a, b) => b.lastActive.getTime() - a.lastActive.getTime()) // later dates first
+          .map((a) => a.userId);
+      }),
+    );
+    this.nextUpAccount$ = combineLatest([
+      this.accounts$,
+      this.activeAccount$,
+      this.sortedUserIds$,
+    ]).pipe(
+      map(([accounts, activeAccount, sortedUserIds]) => {
+        const nextId = sortedUserIds.find((id) => id !== activeAccount?.id && accounts[id] != null);
+        return nextId ? { id: nextId, ...accounts[nextId] } : null;
+      }),
+    );
   }
 
   async addAccount(userId: UserId, accountData: AccountInfo): Promise<void> {
+    if (!Utils.isGuid(userId)) {
+      throw new Error("userId is required");
+    }
+
     await this.accountsState.update((accounts) => {
       accounts ||= {};
       accounts[userId] = accountData;
       return accounts;
     });
+    await this.setAccountActivity(userId, new Date());
   }
 
   async setAccountName(userId: UserId, name: string): Promise<void> {
@@ -69,6 +107,15 @@ export class AccountServiceImplementation implements InternalAccountService {
 
   async setAccountEmail(userId: UserId, email: string): Promise<void> {
     await this.setAccountInfo(userId, { email });
+  }
+
+  async setAccountEmailVerified(userId: UserId, emailVerified: boolean): Promise<void> {
+    await this.setAccountInfo(userId, { emailVerified });
+  }
+
+  async clean(userId: UserId) {
+    await this.setAccountInfo(userId, LOGGED_OUT_INFO);
+    await this.removeAccountActivity(userId);
   }
 
   async switchAccount(userId: UserId): Promise<void> {
@@ -91,6 +138,37 @@ export class AccountServiceImplementation implements InternalAccountService {
           return id !== userId;
         },
       },
+    );
+  }
+
+  async setAccountActivity(userId: UserId, lastActivity: Date): Promise<void> {
+    if (!Utils.isGuid(userId)) {
+      // only store for valid userIds
+      return;
+    }
+
+    await this.globalStateProvider.get(ACCOUNT_ACTIVITY).update(
+      (activity) => {
+        activity ||= {};
+        activity[userId] = lastActivity;
+        return activity;
+      },
+      {
+        shouldUpdate: (oldActivity) => oldActivity?.[userId]?.getTime() !== lastActivity?.getTime(),
+      },
+    );
+  }
+
+  async removeAccountActivity(userId: UserId): Promise<void> {
+    await this.globalStateProvider.get(ACCOUNT_ACTIVITY).update(
+      (activity) => {
+        if (activity == null) {
+          return activity;
+        }
+        delete activity[userId];
+        return activity;
+      },
+      { shouldUpdate: (oldActivity) => oldActivity?.[userId] != null },
     );
   }
 

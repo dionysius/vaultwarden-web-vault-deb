@@ -82,6 +82,7 @@ describe("DefaultActiveUserState", () => {
     activeAccountSubject.next({
       id: userId,
       email: `test${id}@example.com`,
+      emailVerified: false,
       name: `Test User ${id}`,
     });
     await awaitAsync();

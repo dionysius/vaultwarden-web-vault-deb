@@ -3,6 +3,33 @@ import * as path from "path";
 import { Utils } from "./utils";
 
 describe("Utils Service", () => {
+  describe("isGuid", () => {
+    it("is false when null", () => {
+      expect(Utils.isGuid(null)).toBe(false);
+    });
+
+    it("is false when undefined", () => {
+      expect(Utils.isGuid(undefined)).toBe(false);
+    });
+
+    it("is false when empty", () => {
+      expect(Utils.isGuid("")).toBe(false);
+    });
+
+    it("is false when not a string", () => {
+      expect(Utils.isGuid(123 as any)).toBe(false);
+    });
+
+    it("is false when not a guid", () => {
+      expect(Utils.isGuid("not a guid")).toBe(false);
+    });
+
+    it("is true when a guid", () => {
+      // we use a limited guid scope in which all zeroes is invalid
+      expect(Utils.isGuid("00000000-0000-1000-8000-000000000000")).toBe(true);
+    });
+  });
+
   describe("getDomain", () => {
     it("should fail for invalid urls", () => {
       expect(Utils.getDomain(null)).toBeNull();

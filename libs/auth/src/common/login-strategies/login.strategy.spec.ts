@@ -218,7 +218,7 @@ describe("LoginStrategy", () => {
       expect(messagingService.send).toHaveBeenCalledWith("loggedIn");
     });
 
-    it("throws if active account isn't found after being initialized", async () => {
+    it("throws if new account isn't active after being initialized", async () => {
       const idTokenResponse = identityTokenResponseFactory();
       apiService.postIdentityToken.mockResolvedValue(idTokenResponse);
 
@@ -228,7 +228,8 @@ describe("LoginStrategy", () => {
       stateService.getVaultTimeoutAction.mockResolvedValue(mockVaultTimeoutAction);
       stateService.getVaultTimeout.mockResolvedValue(mockVaultTimeout);
 
-      accountService.activeAccountSubject.next(null);
+      accountService.switchAccount = jest.fn(); // block internal switch to new account
+      accountService.activeAccountSubject.next(null); // simulate no active account
 
       await expect(async () => await passwordLoginStrategy.logIn(credentials)).rejects.toThrow();
     });

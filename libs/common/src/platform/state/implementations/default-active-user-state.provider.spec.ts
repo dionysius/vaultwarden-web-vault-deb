@@ -1,7 +1,6 @@
 import { mock } from "jest-mock-extended";
 
 import { mockAccountServiceWith, trackEmissions } from "../../../../spec";
-import { AuthenticationStatus } from "../../../auth/enums/authentication-status";
 import { UserId } from "../../../types/guid";
 import { SingleUserStateProvider } from "../user-state.provider";
 
@@ -14,7 +13,7 @@ describe("DefaultActiveUserStateProvider", () => {
     id: userId,
     name: "name",
     email: "email",
-    status: AuthenticationStatus.Locked,
+    emailVerified: false,
   };
   const accountService = mockAccountServiceWith(userId, accountInfo);
   let sut: DefaultActiveUserStateProvider;

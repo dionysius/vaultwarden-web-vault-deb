@@ -65,9 +65,10 @@ export class Menubar {
       isLocked = updateRequest.accounts[updateRequest.activeUserId]?.isLocked ?? true;
     }
 
-    const isLockable = !isLocked && updateRequest?.accounts[updateRequest.activeUserId]?.isLockable;
+    const isLockable =
+      !isLocked && updateRequest?.accounts?.[updateRequest.activeUserId]?.isLockable;
     const hasMasterPassword =
-      updateRequest?.accounts[updateRequest.activeUserId]?.hasMasterPassword ?? false;
+      updateRequest?.accounts?.[updateRequest.activeUserId]?.hasMasterPassword ?? false;
 
     this.items = [
       new FileMenu(

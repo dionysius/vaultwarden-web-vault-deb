@@ -56,6 +56,7 @@ describe("AuthService", () => {
       status: AuthenticationStatus.Unlocked,
       id: userId,
       email: "email",
+      emailVerified: false,
       name: "name",
     };
 
@@ -109,6 +110,7 @@ describe("AuthService", () => {
         status: AuthenticationStatus.Unlocked,
         id: Utils.newGuid() as UserId,
         email: "email2",
+        emailVerified: false,
         name: "name2",
       };
 
@@ -126,7 +128,11 @@ describe("AuthService", () => {
     it("requests auth status for all known users", async () => {
       const userId2 = Utils.newGuid() as UserId;
 
-      await accountService.addAccount(userId2, { email: "email2", name: "name2" });
+      await accountService.addAccount(userId2, {
+        email: "email2",
+        emailVerified: false,
+        name: "name2",
+      });
 
       const mockFn = jest.fn().mockReturnValue(of(AuthenticationStatus.Locked));
       sut.authStatusFor$ = mockFn;
@@ -147,11 +153,14 @@ describe("AuthService", () => {
       cryptoService.getInMemoryUserKeyFor$.mockReturnValue(of(undefined));
     });
 
-    it("emits LoggedOut when userId is null", async () => {
-      expect(await firstValueFrom(sut.authStatusFor$(null))).toEqual(
-        AuthenticationStatus.LoggedOut,
-      );
-    });
+    it.each([null, undefined, "not a userId"])(
+      "emits LoggedOut when userId is invalid (%s)",
+      async () => {
+        expect(await firstValueFrom(sut.authStatusFor$(null))).toEqual(
+          AuthenticationStatus.LoggedOut,
+        );
+      },
+    );
 
     it("emits LoggedOut when there is no access token", async () => {
       tokenService.hasAccessToken$.mockReturnValue(of(false));

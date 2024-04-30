@@ -58,6 +58,7 @@ describe("AccountSwitcherService", () => {
       const accountInfo: AccountInfo = {
         name: "Test User 1",
         email: "test1@email.com",
+        emailVerified: true,
       };
 
       avatarService.getUserAvatarColor$.mockReturnValue(of("#cccccc"));
@@ -89,6 +90,7 @@ describe("AccountSwitcherService", () => {
         for (let i = 0; i < numberOfAccounts; i++) {
           seedAccounts[`${i}` as UserId] = {
             email: `test${i}@email.com`,
+            emailVerified: true,
             name: "Test User ${i}",
           };
           seedStatuses[`${i}` as UserId] = AuthenticationStatus.Unlocked;
@@ -113,6 +115,7 @@ describe("AccountSwitcherService", () => {
       const user1AccountInfo: AccountInfo = {
         name: "Test User 1",
         email: "",
+        emailVerified: true,
       };
       accountsSubject.next({ ["1" as UserId]: user1AccountInfo });
       authStatusSubject.next({ ["1" as UserId]: AuthenticationStatus.LoggedOut });

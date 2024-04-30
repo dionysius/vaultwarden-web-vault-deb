@@ -1,4 +1,4 @@
-import { firstValueFrom, timeout } from "rxjs";
+import { combineLatest, firstValueFrom, switchMap } from "rxjs";
 
 import { SearchService } from "../../abstractions/search.service";
 import { VaultTimeoutSettingsService } from "../../abstractions/vault-timeout/vault-timeout-settings.service";
@@ -64,14 +64,25 @@ export class VaultTimeoutService implements VaultTimeoutServiceAbstraction {
     // Get whether or not the view is open a single time so it can be compared for each user
     const isViewOpen = await this.platformUtilsService.isViewOpen();
 
-    const activeUserId = await firstValueFrom(this.stateService.activeAccount$.pipe(timeout(500)));
-
-    const accounts = await firstValueFrom(this.stateService.accounts$);
-    for (const userId in accounts) {
-      if (userId != null && (await this.shouldLock(userId, activeUserId, isViewOpen))) {
-        await this.executeTimeoutAction(userId);
-      }
-    }
+    await firstValueFrom(
+      combineLatest([
+        this.accountService.activeAccount$,
+        this.accountService.accountActivity$,
+      ]).pipe(
+        switchMap(async ([activeAccount, accountActivity]) => {
+          const activeUserId = activeAccount?.id;
+          for (const userIdString in accountActivity) {
+            const userId = userIdString as UserId;
+            if (
+              userId != null &&
+              (await this.shouldLock(userId, accountActivity[userId], activeUserId, isViewOpen))
+            ) {
+              await this.executeTimeoutAction(userId);
+            }
+          }
+        }),
+      ),
+    );
   }
 
   async lock(userId?: string): Promise<void> {
@@ -123,6 +134,7 @@ export class VaultTimeoutService implements VaultTimeoutServiceAbstraction {
 
   private async shouldLock(
     userId: string,
+    lastActive: Date,
     activeUserId: string,
     isViewOpen: boolean,
   ): Promise<boolean> {
@@ -146,13 +158,12 @@ export class VaultTimeoutService implements VaultTimeoutServiceAbstraction {
       return false;
     }
 
-    const lastActive = await this.stateService.getLastActive({ userId: userId });
     if (lastActive == null) {
       return false;
     }
 
     const vaultTimeoutSeconds = vaultTimeout * 60;
-    const diffSeconds = (new Date().getTime() - lastActive) / 1000;
+    const diffSeconds = (new Date().getTime() - lastActive.getTime()) / 1000;
     return diffSeconds >= vaultTimeoutSeconds;
   }
 

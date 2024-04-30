@@ -69,7 +69,12 @@ describe("DefaultStateProvider", () => {
         userId?: UserId,
       ) => Observable<string>,
     ) => {
-      const accountInfo = { email: "email", name: "name", status: AuthenticationStatus.LoggedOut };
+      const accountInfo = {
+        email: "email",
+        emailVerified: false,
+        name: "name",
+        status: AuthenticationStatus.LoggedOut,
+      };
       const keyDefinition = new KeyDefinition<string>(new StateDefinition("test", "disk"), "test", {
         deserializer: (s) => s,
       });
@@ -114,7 +119,12 @@ describe("DefaultStateProvider", () => {
   );
 
   describe("getUserState$", () => {
-    const accountInfo = { email: "email", name: "name", status: AuthenticationStatus.LoggedOut };
+    const accountInfo = {
+      email: "email",
+      emailVerified: false,
+      name: "name",
+      status: AuthenticationStatus.LoggedOut,
+    };
     const keyDefinition = new KeyDefinition<string>(new StateDefinition("test", "disk"), "test", {
       deserializer: (s) => s,
     });

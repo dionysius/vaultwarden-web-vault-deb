@@ -49,7 +49,7 @@
         <button
           type="button"
           class="account-switcher-row tw-flex tw-w-full tw-items-center tw-gap-3 tw-rounded-md tw-p-3 disabled:tw-cursor-not-allowed disabled:tw-border-text-muted/60 disabled:!tw-text-muted/60"
-          (click)="lock()"
+          (click)="lock(currentAccount.id)"
           [disabled]="currentAccount.status === lockedStatus || !activeUserCanLock"
           [title]="!activeUserCanLock ? ('unlockMethodNeeded' | i18n) : ''"
         >
@@ -59,7 +59,7 @@
         <button
           type="button"
           class="account-switcher-row tw-flex tw-w-full tw-items-center tw-gap-3 tw-rounded-md tw-p-3"
-          (click)="logOut()"
+          (click)="logOut(currentAccount.id)"
         >
           <i class="bwi bwi-sign-out tw-text-2xl" aria-hidden="true"></i>
           {{ "logOut" | i18n }}

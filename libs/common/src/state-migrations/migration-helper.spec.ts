@@ -27,6 +27,14 @@ const exampleJSON = {
   },
   global_serviceName_key: "global_serviceName_key",
   user_userId_serviceName_key: "user_userId_serviceName_key",
+  global_account_accounts: {
+    "c493ed01-4e08-4e88-abc7-332f380ca760": {
+      otherStuff: "otherStuff3",
+    },
+    "23e61a5f-2ece-4f5e-b499-f0bc489482a9": {
+      otherStuff: "otherStuff4",
+    },
+  },
 };
 
 describe("RemoveLegacyEtmKeyMigrator", () => {
@@ -80,6 +88,41 @@ describe("RemoveLegacyEtmKeyMigrator", () => {
         );
         const accounts = await sut.getAccounts();
         expect(accounts).toEqual([]);
+      });
+
+      it("handles global scoped known accounts for version 60 and after", async () => {
+        sut.currentVersion = 60;
+        const accounts = await sut.getAccounts();
+        expect(accounts).toEqual([
+          // Note, still gets values stored in state service objects, just grabs user ids from global
+          {
+            userId: "c493ed01-4e08-4e88-abc7-332f380ca760",
+            account: { otherStuff: "otherStuff1" },
+          },
+          {
+            userId: "23e61a5f-2ece-4f5e-b499-f0bc489482a9",
+            account: { otherStuff: "otherStuff2" },
+          },
+        ]);
+      });
+    });
+
+    describe("getKnownUserIds", () => {
+      it("returns all user ids", async () => {
+        const userIds = await sut.getKnownUserIds();
+        expect(userIds).toEqual([
+          "c493ed01-4e08-4e88-abc7-332f380ca760",
+          "23e61a5f-2ece-4f5e-b499-f0bc489482a9",
+        ]);
+      });
+
+      it("returns all user ids when version is 60 or greater", async () => {
+        sut.currentVersion = 60;
+        const userIds = await sut.getKnownUserIds();
+        expect(userIds).toEqual([
+          "c493ed01-4e08-4e88-abc7-332f380ca760",
+          "23e61a5f-2ece-4f5e-b499-f0bc489482a9",
+        ]);
       });
     });
 

@@ -57,13 +57,14 @@ import { CipherServiceMigrator } from "./migrations/57-move-cipher-service-to-st
 import { RemoveRefreshTokenMigratedFlagMigrator } from "./migrations/58-remove-refresh-token-migrated-state-provider-flag";
 import { KdfConfigMigrator } from "./migrations/59-move-kdf-config-to-state-provider";
 import { RemoveLegacyEtmKeyMigrator } from "./migrations/6-remove-legacy-etm-key";
+import { KnownAccountsMigrator } from "./migrations/60-known-accounts";
 import { MoveBiometricAutoPromptToAccount } from "./migrations/7-move-biometric-auto-prompt-to-account";
 import { MoveStateVersionMigrator } from "./migrations/8-move-state-version";
 import { MoveBrowserSettingsToGlobal } from "./migrations/9-move-browser-settings-to-global";
 import { MinVersionMigrator } from "./migrations/min-version";
 
 export const MIN_VERSION = 3;
-export const CURRENT_VERSION = 59;
+export const CURRENT_VERSION = 60;
 export type MinVersion = typeof MIN_VERSION;
 
 export function createMigrationBuilder() {
@@ -124,7 +125,8 @@ export function createMigrationBuilder() {
     .with(AuthRequestMigrator, 55, 56)
     .with(CipherServiceMigrator, 56, 57)
     .with(RemoveRefreshTokenMigratedFlagMigrator, 57, 58)
-    .with(KdfConfigMigrator, 58, CURRENT_VERSION);
+    .with(KdfConfigMigrator, 58, 59)
+    .with(KnownAccountsMigrator, 59, CURRENT_VERSION);
 }
 
 export async function currentVersion(

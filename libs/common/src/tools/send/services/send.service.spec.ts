@@ -62,6 +62,7 @@ describe("SendService", () => {
     accountService.activeAccountSubject.next({
       id: mockUserId,
       email: "email",
+      emailVerified: false,
       name: "name",
     });
 

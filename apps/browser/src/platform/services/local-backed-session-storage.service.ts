@@ -200,26 +200,29 @@ export class LocalBackedSessionStorageService
   }
 
   private compareValues<T>(value1: T, value2: T): boolean {
-    if (value1 == null && value2 == null) {
+    try {
+      if (value1 == null && value2 == null) {
+        return true;
+      }
+
+      if (value1 && value2 == null) {
+        return false;
+      }
+
+      if (value1 == null && value2) {
+        return false;
+      }
+
+      if (typeof value1 !== "object" || typeof value2 !== "object") {
+        return value1 === value2;
+      }
+
+      return JSON.stringify(value1) === JSON.stringify(value2);
+    } catch (e) {
+      this.logService.error(
+        `error comparing values\n${JSON.stringify(value1)}\n${JSON.stringify(value2)}`,
+      );
       return true;
     }
-
-    if (value1 && value2 == null) {
-      return false;
-    }
-
-    if (value1 == null && value2) {
-      return false;
-    }
-
-    if (typeof value1 !== "object" || typeof value2 !== "object") {
-      return value1 === value2;
-    }
-
-    if (JSON.stringify(value1) === JSON.stringify(value2)) {
-      return true;
-    }
-
-    return Object.entries(value1).sort().toString() === Object.entries(value2).sort().toString();
   }
 }

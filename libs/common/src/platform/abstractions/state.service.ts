@@ -25,11 +25,10 @@ export type InitOptions = {
 
 export abstract class StateService<T extends Account = Account> {
   accounts$: Observable<{ [userId: string]: T }>;
-  activeAccount$: Observable<string>;
 
   addAccount: (account: T) => Promise<void>;
-  setActiveUser: (userId: string) => Promise<void>;
-  clean: (options?: StorageOptions) => Promise<UserId>;
+  clearDecryptedData: (userId: UserId) => Promise<void>;
+  clean: (options?: StorageOptions) => Promise<void>;
   init: (initOptions?: InitOptions) => Promise<void>;
 
   /**
@@ -122,8 +121,6 @@ export abstract class StateService<T extends Account = Account> {
   setDuckDuckGoSharedKey: (value: string, options?: StorageOptions) => Promise<void>;
   getEmail: (options?: StorageOptions) => Promise<string>;
   setEmail: (value: string, options?: StorageOptions) => Promise<void>;
-  getEmailVerified: (options?: StorageOptions) => Promise<boolean>;
-  setEmailVerified: (value: boolean, options?: StorageOptions) => Promise<void>;
   getEnableBrowserIntegration: (options?: StorageOptions) => Promise<boolean>;
   setEnableBrowserIntegration: (value: boolean, options?: StorageOptions) => Promise<void>;
   getEnableBrowserIntegrationFingerprint: (options?: StorageOptions) => Promise<boolean>;
@@ -147,8 +144,6 @@ export abstract class StateService<T extends Account = Account> {
    */
   setEncryptedPinProtected: (value: string, options?: StorageOptions) => Promise<void>;
   getIsAuthenticated: (options?: StorageOptions) => Promise<boolean>;
-  getLastActive: (options?: StorageOptions) => Promise<number>;
-  setLastActive: (value: number, options?: StorageOptions) => Promise<void>;
   getLastSync: (options?: StorageOptions) => Promise<string>;
   setLastSync: (value: string, options?: StorageOptions) => Promise<void>;
   getMinimizeOnCopyToClipboard: (options?: StorageOptions) => Promise<boolean>;
@@ -180,5 +175,4 @@ export abstract class StateService<T extends Account = Account> {
   setVaultTimeout: (value: number, options?: StorageOptions) => Promise<void>;
   getVaultTimeoutAction: (options?: StorageOptions) => Promise<string>;
   setVaultTimeoutAction: (value: string, options?: StorageOptions) => Promise<void>;
-  nextUpActiveUser: () => Promise<UserId>;
 }

@@ -29,8 +29,6 @@ export class DefaultBrowserStateService
     initializeAs: "record",
   })
   protected accountsSubject: BehaviorSubject<{ [userId: string]: Account }>;
-  @sessionSync({ initializer: (s: string) => s })
-  protected activeAccountSubject: BehaviorSubject<string>;
 
   protected accountDeserializer = Account.fromJSON;
 

@@ -1,3 +1,8 @@
+/**
+ * need to update test environment so structuredClone works appropriately
+ * @jest-environment ../../libs/shared/test.environment.ts
+ */
+
 import { MockProxy, mock } from "jest-mock-extended";
 import { firstValueFrom } from "rxjs";
 
@@ -6,14 +11,56 @@ import { FakeGlobalStateProvider } from "../../../spec/fake-state-provider";
 import { trackEmissions } from "../../../spec/utils";
 import { LogService } from "../../platform/abstractions/log.service";
 import { MessagingService } from "../../platform/abstractions/messaging.service";
+import { Utils } from "../../platform/misc/utils";
 import { UserId } from "../../types/guid";
-import { AccountInfo } from "../abstractions/account.service";
+import { AccountInfo, accountInfoEqual } from "../abstractions/account.service";
 
 import {
   ACCOUNT_ACCOUNTS,
   ACCOUNT_ACTIVE_ACCOUNT_ID,
+  ACCOUNT_ACTIVITY,
   AccountServiceImplementation,
 } from "./account.service";
+
+describe("accountInfoEqual", () => {
+  const accountInfo: AccountInfo = { name: "name", email: "email", emailVerified: true };
+
+  it("compares nulls", () => {
+    expect(accountInfoEqual(null, null)).toBe(true);
+    expect(accountInfoEqual(null, accountInfo)).toBe(false);
+    expect(accountInfoEqual(accountInfo, null)).toBe(false);
+  });
+
+  it("compares all keys, not just those defined in AccountInfo", () => {
+    const different = { ...accountInfo, extra: "extra" };
+
+    expect(accountInfoEqual(accountInfo, different)).toBe(false);
+  });
+
+  it("compares name", () => {
+    const same = { ...accountInfo };
+    const different = { ...accountInfo, name: "name2" };
+
+    expect(accountInfoEqual(accountInfo, same)).toBe(true);
+    expect(accountInfoEqual(accountInfo, different)).toBe(false);
+  });
+
+  it("compares email", () => {
+    const same = { ...accountInfo };
+    const different = { ...accountInfo, email: "email2" };
+
+    expect(accountInfoEqual(accountInfo, same)).toBe(true);
+    expect(accountInfoEqual(accountInfo, different)).toBe(false);
+  });
+
+  it("compares emailVerified", () => {
+    const same = { ...accountInfo };
+    const different = { ...accountInfo, emailVerified: false };
+
+    expect(accountInfoEqual(accountInfo, same)).toBe(true);
+    expect(accountInfoEqual(accountInfo, different)).toBe(false);
+  });
+});
 
 describe("accountService", () => {
   let messagingService: MockProxy<MessagingService>;
@@ -22,8 +69,8 @@ describe("accountService", () => {
   let sut: AccountServiceImplementation;
   let accountsState: FakeGlobalState<Record<UserId, AccountInfo>>;
   let activeAccountIdState: FakeGlobalState<UserId>;
-  const userId = "userId" as UserId;
-  const userInfo = { email: "email", name: "name" };
+  const userId = Utils.newGuid() as UserId;
+  const userInfo = { email: "email", name: "name", emailVerified: true };
 
   beforeEach(() => {
     messagingService = mock();
@@ -86,6 +133,25 @@ describe("accountService", () => {
 
       expect(currentValue).toEqual({ [userId]: userInfo });
     });
+
+    it("sets the last active date of the account to now", async () => {
+      const state = globalStateProvider.getFake(ACCOUNT_ACTIVITY);
+      state.stateSubject.next({});
+      await sut.addAccount(userId, userInfo);
+
+      expect(state.nextMock).toHaveBeenCalledWith({ [userId]: expect.any(Date) });
+    });
+
+    it.each([null, undefined, 123, "not a guid"])(
+      "does not set last active if the userId is not a valid guid",
+      async (userId) => {
+        const state = globalStateProvider.getFake(ACCOUNT_ACTIVITY);
+        state.stateSubject.next({});
+        await expect(sut.addAccount(userId as UserId, userInfo)).rejects.toThrow(
+          "userId is required",
+        );
+      },
+    );
   });
 
   describe("setAccountName", () => {
@@ -134,6 +200,58 @@ describe("accountService", () => {
     });
   });
 
+  describe("setAccountEmailVerified", () => {
+    const initialState = { [userId]: userInfo };
+    initialState[userId].emailVerified = false;
+    beforeEach(() => {
+      accountsState.stateSubject.next(initialState);
+    });
+
+    it("should update the account", async () => {
+      await sut.setAccountEmailVerified(userId, true);
+      const currentState = await firstValueFrom(accountsState.state$);
+
+      expect(currentState).toEqual({
+        [userId]: { ...userInfo, emailVerified: true },
+      });
+    });
+
+    it("should not update if the email is the same", async () => {
+      await sut.setAccountEmailVerified(userId, false);
+      const currentState = await firstValueFrom(accountsState.state$);
+
+      expect(currentState).toEqual(initialState);
+    });
+  });
+
+  describe("clean", () => {
+    beforeEach(() => {
+      accountsState.stateSubject.next({ [userId]: userInfo });
+    });
+
+    it("removes account info of the given user", async () => {
+      await sut.clean(userId);
+      const currentState = await firstValueFrom(accountsState.state$);
+
+      expect(currentState).toEqual({
+        [userId]: {
+          email: "",
+          emailVerified: false,
+          name: undefined,
+        },
+      });
+    });
+
+    it("removes account activity of the given user", async () => {
+      const state = globalStateProvider.getFake(ACCOUNT_ACTIVITY);
+      state.stateSubject.next({ [userId]: new Date() });
+
+      await sut.clean(userId);
+
+      expect(state.nextMock).toHaveBeenCalledWith({});
+    });
+  });
+
   describe("switchAccount", () => {
     beforeEach(() => {
       accountsState.stateSubject.next({ [userId]: userInfo });
@@ -152,4 +270,83 @@ describe("accountService", () => {
       expect(sut.switchAccount("unknown" as UserId)).rejects.toThrowError("Account does not exist");
     });
   });
+
+  describe("account activity", () => {
+    let state: FakeGlobalState<Record<UserId, Date>>;
+
+    beforeEach(() => {
+      state = globalStateProvider.getFake(ACCOUNT_ACTIVITY);
+    });
+    describe("accountActivity$", () => {
+      it("returns the account activity state", async () => {
+        state.stateSubject.next({
+          [toId("user1")]: new Date(1),
+          [toId("user2")]: new Date(2),
+        });
+
+        await expect(firstValueFrom(sut.accountActivity$)).resolves.toEqual({
+          [toId("user1")]: new Date(1),
+          [toId("user2")]: new Date(2),
+        });
+      });
+
+      it("returns an empty object when account activity is null", async () => {
+        state.stateSubject.next(null);
+
+        await expect(firstValueFrom(sut.accountActivity$)).resolves.toEqual({});
+      });
+    });
+
+    describe("sortedUserIds$", () => {
+      it("returns the sorted user ids by date with most recent first", async () => {
+        state.stateSubject.next({
+          [toId("user1")]: new Date(3),
+          [toId("user2")]: new Date(2),
+          [toId("user3")]: new Date(1),
+        });
+
+        await expect(firstValueFrom(sut.sortedUserIds$)).resolves.toEqual([
+          "user1" as UserId,
+          "user2" as UserId,
+          "user3" as UserId,
+        ]);
+      });
+
+      it("returns an empty array when account activity is null", async () => {
+        state.stateSubject.next(null);
+
+        await expect(firstValueFrom(sut.sortedUserIds$)).resolves.toEqual([]);
+      });
+    });
+
+    describe("setAccountActivity", () => {
+      const userId = Utils.newGuid() as UserId;
+      it("sets the account activity", async () => {
+        await sut.setAccountActivity(userId, new Date(1));
+
+        expect(state.nextMock).toHaveBeenCalledWith({ [userId]: new Date(1) });
+      });
+
+      it("does not update if the activity is the same", async () => {
+        state.stateSubject.next({ [userId]: new Date(1) });
+
+        await sut.setAccountActivity(userId, new Date(1));
+
+        expect(state.nextMock).not.toHaveBeenCalled();
+      });
+
+      it.each([null, undefined, 123, "not a guid"])(
+        "does not set last active if the userId is not a valid guid",
+        async (userId) => {
+          await sut.setAccountActivity(userId as UserId, new Date(1));
+
+          expect(state.nextMock).not.toHaveBeenCalled();
+        },
+      );
+    });
+  });
 });
+
+function toId(userId: string) {
+  return userId as UserId;
+}

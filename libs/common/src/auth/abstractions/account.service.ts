@@ -8,18 +8,44 @@ import { UserId } from "../../types/guid";
  */
 export type AccountInfo = {
   email: string;
+  emailVerified: boolean;
   name: string | undefined;
 };
 
 export function accountInfoEqual(a: AccountInfo, b: AccountInfo) {
-  return a?.email === b?.email && a?.name === b?.name;
+  if (a == null && b == null) {
+    return true;
+  }
+
+  if (a == null || b == null) {
+    return false;
+  }
+
+  const keys = new Set([...Object.keys(a), ...Object.keys(b)]) as Set<keyof AccountInfo>;
+  for (const key of keys) {
+    if (a[key] !== b[key]) {
+      return false;
+    }
+  }
+  return true;
 }
 
 export abstract class AccountService {
   accounts$: Observable<Record<UserId, AccountInfo>>;
   activeAccount$: Observable<{ id: UserId | undefined } & AccountInfo>;
+
+  /**
+   * Observable of the last activity time for each account.
+   */
+  accountActivity$: Observable<Record<UserId, Date>>;
+  /** Account list in order of descending recency */
+  sortedUserIds$: Observable<UserId[]>;
+  /** Next account that is not the current active account */
+  nextUpAccount$: Observable<{ id: UserId } & AccountInfo>;
   /**
    * Updates the `accounts$` observable with the new account data.
+   *
+   * @note Also sets the last active date of the account to `now`.
    * @param userId
    * @param accountData
    */
@@ -37,10 +63,29 @@ export abstract class AccountService {
    */
   abstract setAccountEmail(userId: UserId, email: string): Promise<void>;
   /**
+   * updates the `accounts$` observable with the new email verification status for the account.
+   * @param userId
+   * @param emailVerified
+   */
+  abstract setAccountEmailVerified(userId: UserId, emailVerified: boolean): Promise<void>;
+  /**
    * Updates the `activeAccount$` observable with the new active account.
    * @param userId
    */
   abstract switchAccount(userId: UserId): Promise<void>;
+  /**
+   * Cleans personal information for the given account from the `accounts$` observable. Does not remove the userId from the observable.
+   *
+   * @note Also sets the last active date of the account to `null`.
+   * @param userId
+   */
+  abstract clean(userId: UserId): Promise<void>;
+  /**
+   * Updates the given user's last activity time.
+   * @param userId
+   * @param lastActivity
+   */
+  abstract setAccountActivity(userId: UserId, lastActivity: Date): Promise<void>;
 }
 
 export abstract class InternalAccountService extends AccountService {

@@ -2,7 +2,7 @@ import { DOCUMENT } from "@angular/common";
 import { Component, Inject, NgZone, OnDestroy, OnInit } from "@angular/core";
 import { NavigationEnd, Router } from "@angular/router";
 import * as jq from "jquery";
-import { Subject, switchMap, takeUntil, timer } from "rxjs";
+import { Subject, firstValueFrom, map, switchMap, takeUntil, timer } from "rxjs";
 
 import { EventUploadService } from "@bitwarden/common/abstractions/event/event-upload.service";
 import { NotificationsService } from "@bitwarden/common/abstractions/notifications.service";
@@ -10,6 +10,7 @@ import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { VaultTimeoutService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout.service";
 import { InternalOrganizationServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { InternalPolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { KeyConnectorService } from "@bitwarden/common/auth/abstractions/key-connector.service";
 import { PaymentMethodWarningsServiceAbstraction as PaymentMethodWarningService } from "@bitwarden/common/billing/abstractions/payment-method-warnings-service.abstraction";
@@ -51,7 +52,7 @@ const PaymentMethodWarningsRefresh = 60000; // 1 Minute
   templateUrl: "app.component.html",
 })
 export class AppComponent implements OnDestroy, OnInit {
-  private lastActivity: number = null;
+  private lastActivity: Date = null;
   private idleTimer: number = null;
   private isIdle = false;
   private destroy$ = new Subject<void>();
@@ -86,6 +87,7 @@ export class AppComponent implements OnDestroy, OnInit {
     private stateEventRunnerService: StateEventRunnerService,
     private paymentMethodWarningService: PaymentMethodWarningService,
     private organizationService: InternalOrganizationServiceAbstraction,
+    private accountService: AccountService,
   ) {}
 
   ngOnInit() {
@@ -298,15 +300,16 @@ export class AppComponent implements OnDestroy, OnInit {
   }
 
   private async recordActivity() {
-    const now = new Date().getTime();
-    if (this.lastActivity != null && now - this.lastActivity < 250) {
+    const activeUserId = await firstValueFrom(
+      this.accountService.activeAccount$.pipe(map((a) => a?.id)),
+    );
+    const now = new Date();
+    if (this.lastActivity != null && now.getTime() - this.lastActivity.getTime() < 250) {
       return;
     }
 
     this.lastActivity = now;
-    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    this.stateService.setLastActive(now);
+    await this.accountService.setAccountActivity(activeUserId, now);
     // Idle states
     if (this.isIdle) {
       this.isIdle = false;

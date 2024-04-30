@@ -169,6 +169,12 @@ export abstract class LoginStrategy {
     const vaultTimeoutAction = await this.stateService.getVaultTimeoutAction({ userId });
     const vaultTimeout = await this.stateService.getVaultTimeout({ userId });
 
+    await this.accountService.addAccount(userId, {
+      name: accountInformation.name,
+      email: accountInformation.email,
+      emailVerified: accountInformation.email_verified,
+    });
+
     // set access token and refresh token before account initialization so authN status can be accurate
     // User id will be derived from the access token.
     await this.tokenService.setTokens(
@@ -177,6 +183,8 @@ export abstract class LoginStrategy {
       vaultTimeout,
       tokenResponse.refreshToken, // Note: CLI login via API key sends undefined for refresh token.
     );
+
+    await this.accountService.switchAccount(userId);
 
     await this.stateService.addAccount(
       new Account({

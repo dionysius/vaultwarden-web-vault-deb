@@ -1,4 +1,4 @@
-import { BehaviorSubject } from "rxjs";
+import { BehaviorSubject, firstValueFrom, map } from "rxjs";
 import { Jsonify, JsonValue } from "type-fest";
 
 import { AccountService } from "../../auth/abstractions/account.service";
@@ -33,10 +33,7 @@ const keys = {
   state: "state",
   stateVersion: "stateVersion",
   global: "global",
-  authenticatedAccounts: "authenticatedAccounts",
-  activeUserId: "activeUserId",
   tempAccountSettings: "tempAccountSettings", // used to hold account specific settings (i.e clear clipboard) between initial migration and first account authentication
-  accountActivity: "accountActivity",
 };
 
 const partialKeys = {
@@ -57,9 +54,6 @@ export class StateService<
 {
   protected accountsSubject = new BehaviorSubject<{ [userId: string]: TAccount }>({});
   accounts$ = this.accountsSubject.asObservable();
-
-  protected activeAccountSubject = new BehaviorSubject<string | null>(null);
-  activeAccount$ = this.activeAccountSubject.asObservable();
 
   private hasBeenInited = false;
   protected isRecoveredSession = false;
@@ -112,36 +106,16 @@ export class StateService<
     }
 
     // Get all likely authenticated accounts
-    const authenticatedAccounts = (
-      (await this.storageService.get<string[]>(keys.authenticatedAccounts)) ?? []
-    ).filter((account) => account != null);
+    const authenticatedAccounts = await firstValueFrom(
+      this.accountService.accounts$.pipe(map((accounts) => Object.keys(accounts))),
+    );
 
     await this.updateState(async (state) => {
       for (const i in authenticatedAccounts) {
         state = await this.syncAccountFromDisk(authenticatedAccounts[i]);
       }
 
-      // After all individual accounts have been added
-      state.authenticatedAccounts = authenticatedAccounts;
-
-      const storedActiveUser = await this.storageService.get<string>(keys.activeUserId);
-      if (storedActiveUser != null) {
-        state.activeUserId = storedActiveUser;
-      }
       await this.pushAccounts();
-      this.activeAccountSubject.next(state.activeUserId);
-      // TODO: Temporary update to avoid routing all account status changes through account service for now.
-      // account service tracks logged out accounts, but State service does not, so we need to add the active account
-      // if it's not in the accounts list.
-      if (state.activeUserId != null && this.accountsSubject.value[state.activeUserId] == null) {
-        const activeDiskAccount = await this.getAccountFromDisk({ userId: state.activeUserId });
-        await this.accountService.addAccount(state.activeUserId as UserId, {
-          name: activeDiskAccount.profile.name,
-          email: activeDiskAccount.profile.email,
-        });
-      }
-      await this.accountService.switchAccount(state.activeUserId as UserId);
-      // End TODO
 
       return state;
     });
@@ -161,61 +135,25 @@ export class StateService<
       return state;
     });
 
-    // TODO: Temporary update to avoid routing all account status changes through account service for now.
-    // The determination of state should be handled by the various services that control those values.
-    await this.accountService.addAccount(userId as UserId, {
-      name: diskAccount.profile.name,
-      email: diskAccount.profile.email,
-    });
-
     return state;
   }
 
   async addAccount(account: TAccount) {
     await this.environmentService.seedUserEnvironment(account.profile.userId as UserId);
     await this.updateState(async (state) => {
-      state.authenticatedAccounts.push(account.profile.userId);
-      await this.storageService.save(keys.authenticatedAccounts, state.authenticatedAccounts);
       state.accounts[account.profile.userId] = account;
       return state;
     });
     await this.scaffoldNewAccountStorage(account);
-    await this.setLastActive(new Date().getTime(), { userId: account.profile.userId });
-    // TODO: Temporary update to avoid routing all account status changes through account service for now.
-    await this.accountService.addAccount(account.profile.userId as UserId, {
-      name: account.profile.name,
-      email: account.profile.email,
-    });
-    await this.setActiveUser(account.profile.userId);
   }
 
-  async setActiveUser(userId: string): Promise<void> {
-    await this.clearDecryptedDataForActiveUser();
-    await this.updateState(async (state) => {
-      state.activeUserId = userId;
-      await this.storageService.save(keys.activeUserId, userId);
-      this.activeAccountSubject.next(state.activeUserId);
-      // TODO: temporary update to avoid routing all account status changes through account service for now.
-      await this.accountService.switchAccount(userId as UserId);
-
-      return state;
-    });
-
-    await this.pushAccounts();
-  }
-
-  async clean(options?: StorageOptions): Promise<UserId> {
+  async clean(options?: StorageOptions): Promise<void> {
     options = this.reconcileOptions(options, await this.defaultInMemoryOptions());
     await this.deAuthenticateAccount(options.userId);
-    let currentUser = (await this.state())?.activeUserId;
-    if (options.userId === currentUser) {
-      currentUser = await this.dynamicallySetActiveUser();
-    }
 
     await this.removeAccountFromDisk(options?.userId);
     await this.removeAccountFromMemory(options?.userId);
     await this.pushAccounts();
-    return currentUser as UserId;
   }
 
   /**
@@ -515,24 +453,6 @@ export class StateService<
     );
   }
 
-  async getEmailVerified(options?: StorageOptions): Promise<boolean> {
-    return (
-      (await this.getAccount(this.reconcileOptions(options, await this.defaultOnDiskOptions())))
-        ?.profile.emailVerified ?? false
-    );
-  }
-
-  async setEmailVerified(value: boolean, options?: StorageOptions): Promise<void> {
-    const account = await this.getAccount(
-      this.reconcileOptions(options, await this.defaultOnDiskOptions()),
-    );
-    account.profile.emailVerified = value;
-    await this.saveAccount(
-      account,
-      this.reconcileOptions(options, await this.defaultOnDiskOptions()),
-    );
-  }
-
   async getEnableBrowserIntegration(options?: StorageOptions): Promise<boolean> {
     return (
       (await this.getGlobals(this.reconcileOptions(options, await this.defaultOnDiskOptions())))
@@ -640,35 +560,6 @@ export class StateService<
       (await this.tokenService.getAccessToken(options?.userId as UserId)) != null &&
       (await this.getUserId(options)) != null
     );
-  }
-
-  async getLastActive(options?: StorageOptions): Promise<number> {
-    options = this.reconcileOptions(options, await this.defaultOnDiskOptions());
-
-    const accountActivity = await this.storageService.get<{ [userId: string]: number }>(
-      keys.accountActivity,
-      options,
-    );
-
-    if (accountActivity == null || Object.keys(accountActivity).length < 1) {
-      return null;
-    }
-
-    return accountActivity[options.userId];
-  }
-
-  async setLastActive(value: number, options?: StorageOptions): Promise<void> {
-    options = this.reconcileOptions(options, await this.defaultOnDiskOptions());
-    if (options.userId == null) {
-      return;
-    }
-    const accountActivity =
-      (await this.storageService.get<{ [userId: string]: number }>(
-        keys.accountActivity,
-        options,
-      )) ?? {};
-    accountActivity[options.userId] = value;
-    await this.storageService.save(keys.accountActivity, accountActivity, options);
   }
 
   async getLastSync(options?: StorageOptions): Promise<string> {
@@ -910,24 +801,28 @@ export class StateService<
   }
 
   protected async getAccountFromMemory(options: StorageOptions): Promise<TAccount> {
+    const userId =
+      options.userId ??
+      (await firstValueFrom(
+        this.accountService.activeAccount$.pipe(map((account) => account?.id)),
+      ));
+
     return await this.state().then(async (state) => {
       if (state.accounts == null) {
         return null;
       }
-      return state.accounts[await this.getUserIdFromMemory(options)];
-    });
-  }
-
-  protected async getUserIdFromMemory(options: StorageOptions): Promise<string> {
-    return await this.state().then((state) => {
-      return options?.userId != null
-        ? state.accounts[options.userId]?.profile?.userId
-        : state.activeUserId;
+      return state.accounts[userId];
     });
   }
 
   protected async getAccountFromDisk(options: StorageOptions): Promise<TAccount> {
-    if (options?.userId == null && (await this.state())?.activeUserId == null) {
+    const userId =
+      options.userId ??
+      (await firstValueFrom(
+        this.accountService.activeAccount$.pipe(map((account) => account?.id)),
+      ));
+
+    if (userId == null) {
       return null;
     }
 
@@ -1086,53 +981,76 @@ export class StateService<
   }
 
   protected async defaultInMemoryOptions(): Promise<StorageOptions> {
+    const userId = await firstValueFrom(
+      this.accountService.activeAccount$.pipe(map((account) => account?.id)),
+    );
+
     return {
       storageLocation: StorageLocation.Memory,
-      userId: (await this.state()).activeUserId,
+      userId,
     };
   }
 
   protected async defaultOnDiskOptions(): Promise<StorageOptions> {
+    const userId = await firstValueFrom(
+      this.accountService.activeAccount$.pipe(map((account) => account?.id)),
+    );
+
     return {
       storageLocation: StorageLocation.Disk,
       htmlStorageLocation: HtmlStorageLocation.Session,
-      userId: (await this.state())?.activeUserId ?? (await this.getActiveUserIdFromStorage()),
+      userId,
       useSecureStorage: false,
     };
   }
 
   protected async defaultOnDiskLocalOptions(): Promise<StorageOptions> {
+    const userId = await firstValueFrom(
+      this.accountService.activeAccount$.pipe(map((account) => account?.id)),
+    );
+
     return {
       storageLocation: StorageLocation.Disk,
       htmlStorageLocation: HtmlStorageLocation.Local,
-      userId: (await this.state())?.activeUserId ?? (await this.getActiveUserIdFromStorage()),
+      userId,
       useSecureStorage: false,
     };
   }
 
   protected async defaultOnDiskMemoryOptions(): Promise<StorageOptions> {
+    const userId = await firstValueFrom(
+      this.accountService.activeAccount$.pipe(map((account) => account?.id)),
+    );
+
     return {
       storageLocation: StorageLocation.Disk,
       htmlStorageLocation: HtmlStorageLocation.Memory,
-      userId: (await this.state())?.activeUserId ?? (await this.getUserId()),
+      userId,
       useSecureStorage: false,
     };
   }
 
   protected async defaultSecureStorageOptions(): Promise<StorageOptions> {
+    const userId = await firstValueFrom(
+      this.accountService.activeAccount$.pipe(map((account) => account?.id)),
+    );
+
     return {
       storageLocation: StorageLocation.Disk,
       useSecureStorage: true,
-      userId: (await this.state())?.activeUserId ?? (await this.getActiveUserIdFromStorage()),
+      userId,
     };
   }
 
   protected async getActiveUserIdFromStorage(): Promise<string> {
-    return await this.storageService.get<string>(keys.activeUserId);
+    return await firstValueFrom(this.accountService.activeAccount$.pipe(map((a) => a?.id)));
   }
 
   protected async removeAccountFromLocalStorage(userId: string = null): Promise<void> {
-    userId = userId ?? (await this.state())?.activeUserId;
+    userId ??= await firstValueFrom(
+      this.accountService.activeAccount$.pipe(map((account) => account?.id)),
+    );
+
     const storedAccount = await this.getAccount(
       this.reconcileOptions({ userId: userId }, await this.defaultOnDiskLocalOptions()),
     );
@@ -1143,7 +1061,10 @@ export class StateService<
   }
 
   protected async removeAccountFromSessionStorage(userId: string = null): Promise<void> {
-    userId = userId ?? (await this.state())?.activeUserId;
+    userId ??= await firstValueFrom(
+      this.accountService.activeAccount$.pipe(map((account) => account?.id)),
+    );
+
     const storedAccount = await this.getAccount(
       this.reconcileOptions({ userId: userId }, await this.defaultOnDiskOptions()),
     );
@@ -1154,7 +1075,10 @@ export class StateService<
   }
 
   protected async removeAccountFromSecureStorage(userId: string = null): Promise<void> {
-    userId = userId ?? (await this.state())?.activeUserId;
+    userId ??= await firstValueFrom(
+      this.accountService.activeAccount$.pipe(map((account) => account?.id)),
+    );
+
     await this.setUserKeyAutoUnlock(null, { userId: userId });
     await this.setUserKeyBiometric(null, { userId: userId });
     await this.setCryptoMasterKeyAuto(null, { userId: userId });
@@ -1163,8 +1087,11 @@ export class StateService<
   }
 
   protected async removeAccountFromMemory(userId: string = null): Promise<void> {
+    userId ??= await firstValueFrom(
+      this.accountService.activeAccount$.pipe(map((account) => account?.id)),
+    );
+
     await this.updateState(async (state) => {
-      userId = userId ?? state.activeUserId;
       delete state.accounts[userId];
       return state;
     });
@@ -1178,15 +1105,16 @@ export class StateService<
     return Object.assign(this.createAccount(), persistentAccountInformation);
   }
 
-  protected async clearDecryptedDataForActiveUser(): Promise<void> {
+  async clearDecryptedData(userId: UserId): Promise<void> {
     await this.updateState(async (state) => {
-      const userId = state?.activeUserId;
       if (userId != null && state?.accounts[userId]?.data != null) {
         state.accounts[userId].data = new AccountData();
       }
 
       return state;
     });
+
+    await this.pushAccounts();
   }
 
   protected createAccount(init: Partial<TAccount> = null): TAccount {
@@ -1201,46 +1129,12 @@ export class StateService<
     // We must have a manual call to clear tokens as we can't leverage state provider to clean
     // up our data as we have secure storage in the mix.
     await this.tokenService.clearTokens(userId as UserId);
-    await this.setLastActive(null, { userId: userId });
-    await this.updateState(async (state) => {
-      state.authenticatedAccounts = state.authenticatedAccounts.filter((id) => id !== userId);
-
-      await this.storageService.save(keys.authenticatedAccounts, state.authenticatedAccounts);
-
-      return state;
-    });
   }
 
   protected async removeAccountFromDisk(userId: string) {
     await this.removeAccountFromSessionStorage(userId);
     await this.removeAccountFromLocalStorage(userId);
     await this.removeAccountFromSecureStorage(userId);
-  }
-
-  async nextUpActiveUser() {
-    const accounts = (await this.state())?.accounts;
-    if (accounts == null || Object.keys(accounts).length < 1) {
-      return null;
-    }
-
-    let newActiveUser;
-    for (const userId in accounts) {
-      if (userId == null) {
-        continue;
-      }
-      if (await this.getIsAuthenticated({ userId: userId })) {
-        newActiveUser = userId;
-        break;
-      }
-      newActiveUser = null;
-    }
-    return newActiveUser as UserId;
-  }
-
-  protected async dynamicallySetActiveUser() {
-    const newActiveUser = await this.nextUpActiveUser();
-    await this.setActiveUser(newActiveUser);
-    return newActiveUser;
   }
 
   protected async saveSecureStorageKey<T extends JsonValue>(

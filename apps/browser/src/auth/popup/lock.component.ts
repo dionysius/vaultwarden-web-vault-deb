@@ -59,7 +59,7 @@ export class LockComponent extends BaseLockComponent {
     policyApiService: PolicyApiServiceAbstraction,
     policyService: InternalPolicyService,
     passwordStrengthService: PasswordStrengthServiceAbstraction,
-    private authService: AuthService,
+    authService: AuthService,
     dialogService: DialogService,
     deviceTrustService: DeviceTrustServiceAbstraction,
     userVerificationService: UserVerificationService,
@@ -92,6 +92,7 @@ export class LockComponent extends BaseLockComponent {
       pinCryptoService,
       biometricStateService,
       accountService,
+      authService,
       kdfConfigService,
     );
     this.successRoute = "/tabs/current";

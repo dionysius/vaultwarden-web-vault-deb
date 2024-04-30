@@ -5,6 +5,7 @@ import { Subject, firstValueFrom, takeUntil, map, BehaviorSubject, concatMap } f
 
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions/account/billing-account-profile-state.service";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -118,6 +119,7 @@ export class AddEditComponent implements OnInit, OnDestroy {
     protected dialogService: DialogService,
     protected formBuilder: FormBuilder,
     protected billingAccountProfileStateService: BillingAccountProfileStateService,
+    protected accountService: AccountService,
   ) {
     this.typeOptions = [
       { name: i18nService.t("sendTypeFile"), value: SendType.File, premium: true },
@@ -215,7 +217,9 @@ export class AddEditComponent implements OnInit, OnDestroy {
   }
 
   async load() {
-    this.emailVerified = await this.stateService.getEmailVerified();
+    this.emailVerified = await firstValueFrom(
+      this.accountService.activeAccount$.pipe(map((a) => a?.emailVerified ?? false)),
+    );
 
     this.type = !this.canAccessPremium || !this.emailVerified ? SendType.Text : SendType.File;
     if (this.send == null) {

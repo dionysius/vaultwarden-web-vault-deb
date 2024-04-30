@@ -1,12 +1,14 @@
 import { ChangeDetectorRef, Component, NgZone, OnDestroy, OnInit } from "@angular/core";
 import { NavigationEnd, Router, RouterOutlet } from "@angular/router";
-import { filter, concatMap, Subject, takeUntil, firstValueFrom, tap, map } from "rxjs";
+import { Subject, takeUntil, firstValueFrom, concatMap, filter, tap } from "rxjs";
 
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { MessageListener } from "@bitwarden/common/platform/messaging";
+import { UserId } from "@bitwarden/common/types/guid";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { DialogService, SimpleDialogOptions, ToastService } from "@bitwarden/components";
 
@@ -27,8 +29,9 @@ import { DesktopSyncVerificationDialogComponent } from "./components/desktop-syn
   </div>`,
 })
 export class AppComponent implements OnInit, OnDestroy {
-  private lastActivity: number = null;
-  private activeUserId: string;
+  private lastActivity: Date;
+  private activeUserId: UserId;
+  private recordActivitySubject = new Subject<void>();
 
   private destroy$ = new Subject<void>();
 
@@ -46,6 +49,7 @@ export class AppComponent implements OnInit, OnDestroy {
     private dialogService: DialogService,
     private messageListener: MessageListener,
     private toastService: ToastService,
+    private accountService: AccountService,
   ) {}
 
   async ngOnInit() {
@@ -53,14 +57,13 @@ export class AppComponent implements OnInit, OnDestroy {
     // Clear them aggressively to make sure this doesn't occur
     await this.clearComponentStates();
 
-    this.stateService.activeAccount$.pipe(takeUntil(this.destroy$)).subscribe((userId) => {
-      this.activeUserId = userId;
+    this.accountService.activeAccount$.pipe(takeUntil(this.destroy$)).subscribe((account) => {
+      this.activeUserId = account?.id;
     });
 
     this.authService.activeAccountStatus$
       .pipe(
-        map((status) => status === AuthenticationStatus.Unlocked),
-        filter((unlocked) => unlocked),
+        filter((status) => status === AuthenticationStatus.Unlocked),
         concatMap(async () => {
           await this.recordActivity();
         }),
@@ -200,13 +203,13 @@ export class AppComponent implements OnInit, OnDestroy {
       return;
     }
 
-    const now = new Date().getTime();
-    if (this.lastActivity != null && now - this.lastActivity < 250) {
+    const now = new Date();
+    if (this.lastActivity != null && now.getTime() - this.lastActivity.getTime() < 250) {
       return;
     }
 
     this.lastActivity = now;
-    await this.stateService.setLastActive(now, { userId: this.activeUserId });
+    await this.accountService.setAccountActivity(this.activeUserId, now);
   }
 
   private showToast(msg: any) {
