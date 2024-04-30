@@ -175,8 +175,8 @@ export class MigrationHelper {
    * Helper method to read known users ids.
    */
   async getKnownUserIds(): Promise<string[]> {
-    if (this.currentVersion < 61) {
-      return knownAccountUserIdsBuilderPre61(this.storageService);
+    if (this.currentVersion < 60) {
+      return knownAccountUserIdsBuilderPre60(this.storageService);
     } else {
       return knownAccountUserIdsBuilder(this.storageService);
     }
@@ -245,7 +245,7 @@ function globalKeyBuilderPre9(): string {
   throw Error("No key builder should be used for versions prior to 9.");
 }
 
-async function knownAccountUserIdsBuilderPre61(
+async function knownAccountUserIdsBuilderPre60(
   storageService: AbstractStorageService,
 ): Promise<string[]> {
   return (await storageService.get<string[]>("authenticatedAccounts")) ?? [];

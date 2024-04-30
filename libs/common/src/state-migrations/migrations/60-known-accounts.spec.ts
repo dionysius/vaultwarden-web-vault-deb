@@ -51,17 +51,13 @@ const rollbackJson = () => {
     },
     global_account_accounts: {
       user1: {
-        profile: {
-          email: "user1",
-          name: "User 1",
-          emailVerified: true,
-        },
+        email: "user1",
+        name: "User 1",
+        emailVerified: true,
       },
       user2: {
-        profile: {
-          email: "",
-          emailVerified: false,
-        },
+        email: "",
+        emailVerified: false,
       },
     },
     global_account_activeAccountId: "user1",

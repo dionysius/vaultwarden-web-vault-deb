@@ -235,6 +235,11 @@ export function mockMigrationHelper(
     helper.setToUser(userId, keyDefinition, value),
   );
   mockHelper.getAccounts.mockImplementation(() => helper.getAccounts());
+  mockHelper.getKnownUserIds.mockImplementation(() => helper.getKnownUserIds());
+  mockHelper.removeFromGlobal.mockImplementation((keyDefinition) =>
+    helper.removeFromGlobal(keyDefinition),
+  );
+  mockHelper.remove.mockImplementation((key) => helper.remove(key));
 
   mockHelper.type = helper.type;
 
