@@ -6,17 +6,17 @@ export class ConsoleLogService extends BaseConsoleLogService {
     super(isDev, filter);
   }
 
-  write(level: LogLevelType, message: string) {
+  write(level: LogLevelType, message?: any, ...optionalParams: any[]) {
     if (this.filter != null && this.filter(level)) {
       return;
     }
 
     if (process.env.BW_RESPONSE === "true") {
       // eslint-disable-next-line
-      console.error(message);
+      console.error(message, ...optionalParams);
       return;
     }
 
-    super.write(level, message);
+    super.write(level, message, ...optionalParams);
   }
 }

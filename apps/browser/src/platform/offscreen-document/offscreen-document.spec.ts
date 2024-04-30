@@ -28,6 +28,7 @@ describe("OffscreenDocument", () => {
     });
 
     it("shows a console message if the handler throws an error", async () => {
+      const error = new Error("test error");
       browserClipboardServiceCopySpy.mockRejectedValueOnce(new Error("test error"));
 
       sendExtensionRuntimeMessage({ command: "offscreenCopyToClipboard", text: "test" });
@@ -35,7 +36,8 @@ describe("OffscreenDocument", () => {
 
       expect(browserClipboardServiceCopySpy).toHaveBeenCalled();
       expect(consoleErrorSpy).toHaveBeenCalledWith(
-        "Error resolving extension message response: Error: test error",
+        "Error resolving extension message response",
+        error,
       );
     });
 

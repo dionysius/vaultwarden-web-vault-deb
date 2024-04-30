@@ -71,7 +71,7 @@ class OffscreenDocument implements OffscreenDocumentInterface {
     Promise.resolve(messageResponse)
       .then((response) => sendResponse(response))
       .catch((error) =>
-        this.consoleLogService.error(`Error resolving extension message response: ${error}`),
+        this.consoleLogService.error("Error resolving extension message response", error),
       );
     return true;
   };

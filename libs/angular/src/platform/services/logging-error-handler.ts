@@ -14,7 +14,7 @@ export class LoggingErrorHandler extends ErrorHandler {
   override handleError(error: any): void {
     try {
       const logService = this.injector.get(LogService, null);
-      logService.error(error);
+      logService.error("Unhandled error in angular", error);
     } catch {
       super.handleError(error);
     }

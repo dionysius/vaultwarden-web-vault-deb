@@ -25,28 +25,28 @@ export class ElectronLogMainService extends BaseLogService {
     }
     log.initialize();
 
-    ipcMain.handle("ipc.log", (_event, { level, message }) => {
-      this.write(level, message);
+    ipcMain.handle("ipc.log", (_event, { level, message, optionalParams }) => {
+      this.write(level, message, ...optionalParams);
     });
   }
 
-  write(level: LogLevelType, message: string) {
+  write(level: LogLevelType, message?: any, ...optionalParams: any[]) {
     if (this.filter != null && this.filter(level)) {
       return;
     }
 
     switch (level) {
       case LogLevelType.Debug:
-        log.debug(message);
+        log.debug(message, ...optionalParams);
         break;
       case LogLevelType.Info:
-        log.info(message);
+        log.info(message, ...optionalParams);
         break;
       case LogLevelType.Warning:
-        log.warn(message);
+        log.warn(message, ...optionalParams);
         break;
       case LogLevelType.Error:
-        log.error(message);
+        log.error(message, ...optionalParams);
         break;
       default:
         break;
