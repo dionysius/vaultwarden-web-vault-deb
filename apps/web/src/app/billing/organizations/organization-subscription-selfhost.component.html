@@ -42,7 +42,10 @@
             : subscription.expirationWithGracePeriod
           ) | date: "mediumDate"
         }}
-        <div *ngIf="subscription.hasSeparateGracePeriod" class="tw-text-muted">
+        <div
+          *ngIf="subscription.hasSeparateGracePeriod && !subscription.isInTrial"
+          class="tw-text-muted"
+        >
           {{
             "selfHostGracePeriodHelp"
               | i18n: (subscription.expirationWithGracePeriod | date: "mediumDate")
