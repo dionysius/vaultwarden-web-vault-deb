@@ -146,6 +146,8 @@ export class NativeMessagingMain {
         allowed_origins: [
           // Chrome extension
           "chrome-extension://nngceckbapebfimnlniiiahkandclblb/",
+          // Chrome beta extension
+          "chrome-extension://hccnnhgbibccigepcmlgppchkpfdophk/",
           // Edge extension
           "chrome-extension://jbkfoedolllekgbhcbcoahefnbanhhlh/",
           // Opera extension
