@@ -50,7 +50,12 @@
         </bit-tab>
 
         <bit-tab label="{{ 'collections' | i18n }}">
-          <p>{{ "editGroupCollectionsDesc" | i18n }}</p>
+          <p>
+            {{ "editGroupCollectionsDesc" | i18n }}
+            <span *ngIf="!(allowAdminAccessToAllCollectionItems$ | async)">
+              {{ "editGroupCollectionsRestrictionsDesc" | i18n }}
+            </span>
+          </p>
           <div *ngIf="!(flexibleCollectionsEnabled$ | async)" class="tw-my-3">
             <input type="checkbox" formControlName="accessAll" id="accessAll" />
             <label class="tw-mb-0 tw-text-lg" for="accessAll">{{
