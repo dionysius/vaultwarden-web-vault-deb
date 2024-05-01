@@ -737,7 +737,6 @@ export default class MainBackground {
       this.cipherService,
       this.folderService,
       this.collectionService,
-      this.cryptoService,
       this.platformUtilsService,
       this.messagingService,
       this.searchService,

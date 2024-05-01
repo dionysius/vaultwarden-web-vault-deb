@@ -9,7 +9,6 @@ import { AuthService } from "../../auth/abstractions/auth.service";
 import { AuthenticationStatus } from "../../auth/enums/authentication-status";
 import { FakeMasterPasswordService } from "../../auth/services/master-password/fake-master-password.service";
 import { VaultTimeoutAction } from "../../enums/vault-timeout-action.enum";
-import { CryptoService } from "../../platform/abstractions/crypto.service";
 import { MessagingService } from "../../platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "../../platform/abstractions/platform-utils.service";
 import { StateService } from "../../platform/abstractions/state.service";
@@ -28,7 +27,6 @@ describe("VaultTimeoutService", () => {
   let cipherService: MockProxy<CipherService>;
   let folderService: MockProxy<FolderService>;
   let collectionService: MockProxy<CollectionService>;
-  let cryptoService: MockProxy<CryptoService>;
   let platformUtilsService: MockProxy<PlatformUtilsService>;
   let messagingService: MockProxy<MessagingService>;
   let searchService: MockProxy<SearchService>;
@@ -52,7 +50,6 @@ describe("VaultTimeoutService", () => {
     cipherService = mock();
     folderService = mock();
     collectionService = mock();
-    cryptoService = mock();
     platformUtilsService = mock();
     messagingService = mock();
     searchService = mock();
@@ -76,7 +73,6 @@ describe("VaultTimeoutService", () => {
       cipherService,
       folderService,
       collectionService,
-      cryptoService,
       platformUtilsService,
       messagingService,
       searchService,

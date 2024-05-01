@@ -271,23 +271,6 @@ export class StateService<
   /**
    * @deprecated Use UserKeyAuto instead
    */
-  async getCryptoMasterKeyAuto(options?: StorageOptions): Promise<string> {
-    options = this.reconcileOptions(
-      this.reconcileOptions(options, { keySuffix: "auto" }),
-      await this.defaultSecureStorageOptions(),
-    );
-    if (options?.userId == null) {
-      return null;
-    }
-    return await this.secureStorageService.get<string>(
-      `${options.userId}${partialKeys.autoKey}`,
-      options,
-    );
-  }
-
-  /**
-   * @deprecated Use UserKeyAuto instead
-   */
   async setCryptoMasterKeyAuto(value: string, options?: StorageOptions): Promise<void> {
     options = this.reconcileOptions(
       this.reconcileOptions(options, { keySuffix: "auto" }),

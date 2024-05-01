@@ -83,10 +83,6 @@ export abstract class StateService<T extends Account = Account> {
    */
   getEncryptedCryptoSymmetricKey: (options?: StorageOptions) => Promise<string>;
   /**
-   * @deprecated For migration purposes only, use getUserKeyAuto instead
-   */
-  getCryptoMasterKeyAuto: (options?: StorageOptions) => Promise<string>;
-  /**
    * @deprecated For migration purposes only, use setUserKeyAuto instead
    */
   setCryptoMasterKeyAuto: (value: string, options?: StorageOptions) => Promise<void>;

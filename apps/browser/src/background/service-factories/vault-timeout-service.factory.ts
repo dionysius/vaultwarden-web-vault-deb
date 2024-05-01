@@ -13,10 +13,6 @@ import {
   MasterPasswordServiceInitOptions,
 } from "../../auth/background/service-factories/master-password-service.factory";
 import {
-  CryptoServiceInitOptions,
-  cryptoServiceFactory,
-} from "../../platform/background/service-factories/crypto-service.factory";
-import {
   CachedServices,
   factory,
   FactoryOptions,
@@ -70,7 +66,6 @@ export type VaultTimeoutServiceInitOptions = VaultTimeoutServiceFactoryOptions &
   CipherServiceInitOptions &
   FolderServiceInitOptions &
   CollectionServiceInitOptions &
-  CryptoServiceInitOptions &
   PlatformUtilsServiceInitOptions &
   MessagingServiceInitOptions &
   SearchServiceInitOptions &
@@ -94,7 +89,6 @@ export function vaultTimeoutServiceFactory(
         await cipherServiceFactory(cache, opts),
         await folderServiceFactory(cache, opts),
         await collectionServiceFactory(cache, opts),
-        await cryptoServiceFactory(cache, opts),
         await platformUtilsServiceFactory(cache, opts),
         await messagingServiceFactory(cache, opts),
         await searchServiceFactory(cache, opts),
