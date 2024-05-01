@@ -81,22 +81,6 @@ export class AddEditComponent extends BaseAddEditComponent {
     );
   }
 
-  protected allowOwnershipAssignment() {
-    if (
-      this.ownershipOptions != null &&
-      (this.ownershipOptions.length > 1 || !this.allowPersonal)
-    ) {
-      if (this.organization != null) {
-        return (
-          this.cloneMode && this.organization.canEditAllCiphers(this.flexibleCollectionsV1Enabled)
-        );
-      } else {
-        return !this.editMode || this.cloneMode;
-      }
-    }
-    return false;
-  }
-
   protected loadCollections() {
     if (!this.organization.canEditAllCiphers(this.flexibleCollectionsV1Enabled)) {
       return super.loadCollections();

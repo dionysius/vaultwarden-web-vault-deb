@@ -289,6 +289,16 @@ export class AddEditComponent implements OnInit, OnDestroy {
         });
       }
     }
+    // Only Admins can clone a cipher to different owner
+    if (this.cloneMode && this.cipher.organizationId != null) {
+      const cipherOrg = (await firstValueFrom(this.organizationService.memberOrganizations$)).find(
+        (o) => o.id === this.cipher.organizationId,
+      );
+
+      if (cipherOrg != null && !cipherOrg.isAdmin && !cipherOrg.permissions.editAnyCollection) {
+        this.ownershipOptions = [{ name: cipherOrg.name, value: cipherOrg.id }];
+      }
+    }
 
     // We don't want to copy passkeys when we clone a cipher
     if (this.cloneMode && this.cipher?.login?.hasFido2Credentials) {
