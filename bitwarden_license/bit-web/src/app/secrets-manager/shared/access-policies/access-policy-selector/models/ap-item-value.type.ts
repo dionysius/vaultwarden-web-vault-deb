@@ -5,6 +5,9 @@ import {
   ServiceAccountPeopleAccessPoliciesView,
   UserServiceAccountAccessPolicyView,
   GroupServiceAccountAccessPolicyView,
+  ServiceAccountGrantedPoliciesView,
+  ServiceAccountProjectPolicyPermissionDetailsView,
+  ServiceAccountProjectAccessPolicyView,
 } from "../../../../models/view/access-policy.view";
 
 import { ApItemEnum } from "./enums/ap-item.enum";
@@ -74,5 +77,28 @@ export function convertToServiceAccountPeopleAccessPoliciesView(
       policyView.write = ApPermissionEnumUtil.toWrite(filtered.permission);
       return policyView;
     });
+  return view;
+}
+
+export function convertToServiceAccountGrantedPoliciesView(
+  serviceAccountId: string,
+  selectedPolicyValues: ApItemValueType[],
+): ServiceAccountGrantedPoliciesView {
+  const view = new ServiceAccountGrantedPoliciesView();
+
+  view.grantedProjectPolicies = selectedPolicyValues
+    .filter((x) => x.type == ApItemEnum.Project)
+    .map((filtered) => {
+      const detailView = new ServiceAccountProjectPolicyPermissionDetailsView();
+      const policyView = new ServiceAccountProjectAccessPolicyView();
+      policyView.serviceAccountId = serviceAccountId;
+      policyView.grantedProjectId = filtered.id;
+      policyView.read = ApPermissionEnumUtil.toRead(filtered.permission);
+      policyView.write = ApPermissionEnumUtil.toWrite(filtered.permission);
+
+      detailView.accessPolicy = policyView;
+      return detailView;
+    });
+
   return view;
 }

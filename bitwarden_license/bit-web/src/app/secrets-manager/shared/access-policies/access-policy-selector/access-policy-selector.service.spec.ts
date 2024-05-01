@@ -347,6 +347,7 @@ function createApItemViewType(options: Partial<ApItemViewType> = {}) {
     labelName: options?.labelName ?? "test",
     type: options?.type ?? ApItemEnum.User,
     permission: options?.permission ?? ApPermissionEnum.CanRead,
+    readOnly: options?.readOnly ?? false,
   };
 }
 

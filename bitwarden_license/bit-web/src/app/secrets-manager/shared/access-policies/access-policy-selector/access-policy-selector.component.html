@@ -29,14 +29,17 @@
         bitRow
         *ngFor="let item of selectionList.selectedItems; let i = index"
         [formGroupName]="i"
+        [ngClass]="{ 'tw-text-muted': item.readOnly }"
       >
         <td bitCell class="tw-w-0 tw-pr-0">
-          <i class="bwi {{ item.icon }} tw-text-muted" aria-hidden="true"></i>
+          <i class="bwi {{ item.icon }}" aria-hidden="true"></i>
         </td>
-        <td bitCell class="tw-max-w-sm tw-truncate">{{ item.labelName }}</td>
+        <td bitCell class="tw-max-w-sm tw-truncate">
+          {{ item.labelName }}
+        </td>
         <td bitCell class="tw-mb-auto tw-inline-block tw-w-auto">
           <select
-            *ngIf="!staticPermission; else static"
+            *ngIf="!staticPermission && !item.readOnly; else readOnly"
             bitInput
             formControlName="permission"
             (blur)="handleBlur()"
@@ -45,12 +48,20 @@
               {{ p.labelId | i18n }}
             </option>
           </select>
+          <ng-template #readOnly>
+            <ng-container *ngIf="item.readOnly; else static">
+              <div class="tw-overflow-hidden tw-overflow-ellipsis tw-whitespace-nowrap">
+                {{ item.permission | i18n }}
+              </div>
+            </ng-container>
+          </ng-template>
           <ng-template #static>
             <span>{{ staticPermission | i18n }}</span>
           </ng-template>
         </td>
         <td bitCell class="tw-w-0">
           <button
+            *ngIf="!item.readOnly"
             type="button"
             bitIconButton="bwi-close"
             buttonType="main"
