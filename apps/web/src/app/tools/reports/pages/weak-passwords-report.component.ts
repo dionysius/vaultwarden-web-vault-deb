@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 
 import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
+import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/password-strength";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
@@ -29,8 +30,9 @@ export class WeakPasswordsReportComponent extends CipherReportComponent implemen
     protected organizationService: OrganizationService,
     modalService: ModalService,
     passwordRepromptService: PasswordRepromptService,
+    i18nService: I18nService,
   ) {
-    super(modalService, passwordRepromptService, organizationService);
+    super(cipherService, modalService, passwordRepromptService, organizationService, i18nService);
   }
 
   async ngOnInit() {
@@ -38,7 +40,10 @@ export class WeakPasswordsReportComponent extends CipherReportComponent implemen
   }
 
   async setCiphers() {
-    const allCiphers = await this.getAllCiphers();
+    const allCiphers: any = await this.getAllCiphers();
+    this.passwordStrengthCache = new Map<string, number>();
+    this.weakPasswordCiphers = [];
+    this.filterStatus = [0];
     this.findWeakPasswords(allCiphers);
   }
 
@@ -55,6 +60,7 @@ export class WeakPasswordsReportComponent extends CipherReportComponent implemen
       ) {
         return;
       }
+
       const hasUserName = this.isUserNameNotEmpty(ciph);
       const cacheKey = this.getCacheKey(ciph);
       if (!this.passwordStrengthCache.has(cacheKey)) {
@@ -87,6 +93,7 @@ export class WeakPasswordsReportComponent extends CipherReportComponent implemen
         this.passwordStrengthCache.set(cacheKey, result.score);
       }
       const score = this.passwordStrengthCache.get(cacheKey);
+
       if (score != null && score <= 2) {
         this.passwordStrengthMap.set(id, this.scoreKey(score));
         this.weakPasswordCiphers.push(ciph);
@@ -98,11 +105,8 @@ export class WeakPasswordsReportComponent extends CipherReportComponent implemen
         this.passwordStrengthCache.get(this.getCacheKey(b))
       );
     });
-    this.ciphers = [...this.weakPasswordCiphers];
-  }
 
-  protected getAllCiphers(): Promise<CipherView[]> {
-    return this.cipherService.getAllDecrypted();
+    this.filterCiphersByOrg(this.weakPasswordCiphers);
   }
 
   protected canManageCipher(c: CipherView): boolean {

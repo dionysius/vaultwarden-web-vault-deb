@@ -1,9 +1,11 @@
-import { Directive, ViewChild, ViewContainerRef } from "@angular/core";
-import { Observable } from "rxjs";
+import { Directive, ViewChild, ViewContainerRef, OnDestroy } from "@angular/core";
+import { BehaviorSubject, Observable, Subject, takeUntil } from "rxjs";
 
 import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
+import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
+import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CipherRepromptType } from "@bitwarden/common/vault/enums/cipher-reprompt-type";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { PasswordRepromptService } from "@bitwarden/vault";
@@ -12,27 +14,111 @@ import { AddEditComponent } from "../../../vault/individual-vault/add-edit.compo
 import { AddEditComponent as OrgAddEditComponent } from "../../../vault/org-vault/add-edit.component";
 
 @Directive()
-export class CipherReportComponent {
+export class CipherReportComponent implements OnDestroy {
   @ViewChild("cipherAddEdit", { read: ViewContainerRef, static: true })
   cipherAddEditModalRef: ViewContainerRef;
+  isAdminConsoleActive = false;
 
   loading = false;
   hasLoaded = false;
   ciphers: CipherView[] = [];
+  allCiphers: CipherView[] = [];
   organization: Organization;
+  organizations: Organization[];
   organizations$: Observable<Organization[]>;
 
+  filterStatus: any = [0];
+  showFilterToggle: boolean = false;
+  vaultMsg: string = "vault";
+  currentFilterStatus: number | string;
+  protected filterOrgStatus$ = new BehaviorSubject<number | string>(0);
+  private destroyed$: Subject<void> = new Subject();
+
   constructor(
+    protected cipherService: CipherService,
     private modalService: ModalService,
     protected passwordRepromptService: PasswordRepromptService,
     protected organizationService: OrganizationService,
+    protected i18nService: I18nService,
   ) {
     this.organizations$ = this.organizationService.organizations$;
+    this.organizations$.pipe(takeUntil(this.destroyed$)).subscribe((orgs) => {
+      this.organizations = orgs;
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.destroyed$.next();
+    this.destroyed$.complete();
+  }
+
+  getName(filterId: string | number) {
+    let orgName: any;
+
+    if (filterId === 0) {
+      orgName = this.i18nService.t("all");
+    } else if (filterId === 1) {
+      orgName = this.i18nService.t("me");
+    } else {
+      this.organizations.filter((org: Organization) => {
+        if (org.id === filterId) {
+          orgName = org.name;
+          return org;
+        }
+      });
+    }
+    return orgName;
+  }
+
+  getCount(filterId: string | number) {
+    let orgFilterStatus: any;
+    let cipherCount;
+
+    if (filterId === 0) {
+      cipherCount = this.allCiphers.length;
+    } else if (filterId === 1) {
+      cipherCount = this.allCiphers.filter((c: any) => c.orgFilterStatus === null).length;
+    } else {
+      this.organizations.filter((org: Organization) => {
+        if (org.id === filterId) {
+          orgFilterStatus = org.id;
+          return org;
+        }
+      });
+      cipherCount = this.allCiphers.filter(
+        (c: any) => c.orgFilterStatus === orgFilterStatus,
+      ).length;
+    }
+    return cipherCount;
+  }
+
+  async filterOrgToggle(status: any) {
+    this.currentFilterStatus = status;
+    await this.setCiphers();
+    if (status === 0) {
+      return;
+    } else if (status === 1) {
+      this.ciphers = this.ciphers.filter((c: any) => c.orgFilterStatus == null);
+    } else {
+      this.ciphers = this.ciphers.filter((c: any) => c.orgFilterStatus === status);
+    }
   }
 
   async load() {
     this.loading = true;
-    await this.setCiphers();
+    // when a user fixes an item in a report we want to persist the filter they had
+    // if they fix the last item of that filter we will go back to the "All" filter
+    if (this.currentFilterStatus) {
+      if (this.ciphers.length > 2) {
+        this.filterOrgStatus$.next(this.currentFilterStatus);
+        await this.filterOrgToggle(this.currentFilterStatus);
+      } else {
+        this.filterOrgStatus$.next(0);
+        await this.filterOrgToggle(0);
+      }
+    } else {
+      await this.setCiphers();
+    }
     this.loading = false;
     this.hasLoaded = true;
   }
@@ -76,7 +162,7 @@ export class CipherReportComponent {
   }
 
   protected async setCiphers() {
-    this.ciphers = [];
+    this.allCiphers = [];
   }
 
   protected async repromptCipher(c: CipherView) {
@@ -84,5 +170,33 @@ export class CipherReportComponent {
       c.reprompt === CipherRepromptType.None ||
       (await this.passwordRepromptService.showPasswordPrompt())
     );
+  }
+
+  protected async getAllCiphers(): Promise<CipherView[]> {
+    return await this.cipherService.getAllDecrypted();
+  }
+
+  protected filterCiphersByOrg(ciphersList: CipherView[]) {
+    this.allCiphers = [...ciphersList];
+
+    this.ciphers = ciphersList.map((ciph: any) => {
+      ciph.orgFilterStatus = ciph.organizationId;
+
+      if (this.filterStatus.indexOf(ciph.organizationId) === -1 && ciph.organizationId != null) {
+        this.filterStatus.push(ciph.organizationId);
+      } else if (this.filterStatus.indexOf(1) === -1 && ciph.organizationId == null) {
+        this.filterStatus.splice(1, 0, 1);
+      }
+      return ciph;
+    });
+
+    if (this.filterStatus.length > 2) {
+      this.showFilterToggle = true;
+      this.vaultMsg = "vaults";
+    } else {
+      // If a user fixes an item and there is only one item left remove the filter toggle and change the vault message to singular
+      this.showFilterToggle = false;
+      this.vaultMsg = "vault";
+    }
   }
 }
