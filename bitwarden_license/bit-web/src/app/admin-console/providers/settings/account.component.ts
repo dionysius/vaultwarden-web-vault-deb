@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 
 import { UserVerificationDialogComponent } from "@bitwarden/auth/angular";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
@@ -42,6 +42,7 @@ export class AccountComponent {
     private dialogService: DialogService,
     private configService: ConfigService,
     private providerApiService: ProviderApiServiceAbstraction,
+    private router: Router,
   ) {}
 
   async ngOnInit() {
@@ -93,9 +94,8 @@ export class AccountComponent {
       return;
     }
 
-    this.formPromise = this.providerApiService.deleteProvider(this.providerId);
     try {
-      await this.formPromise;
+      await this.providerApiService.deleteProvider(this.providerId);
       this.platformUtilsService.showToast(
         "success",
         this.i18nService.t("providerDeleted"),
@@ -104,7 +104,8 @@ export class AccountComponent {
     } catch (e) {
       this.logService.error(e);
     }
-    this.formPromise = null;
+
+    await this.router.navigate(["/"]);
   }
 
   private async verifyUser(): Promise<boolean> {
