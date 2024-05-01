@@ -204,10 +204,6 @@ export class BrowserApi {
     chrome.tabs.sendMessage<TabMessage, T>(tabId, message, options, responseCallback);
   }
 
-  static async getPrivateModeWindows(): Promise<browser.windows.Window[]> {
-    return (await browser.windows.getAll()).filter((win) => win.incognito);
-  }
-
   static async onWindowCreated(callback: (win: chrome.windows.Window) => any) {
     // FIXME: Make sure that is does not cause a memory leak in Safari or use BrowserApi.AddListener
     // and test that it doesn't break.

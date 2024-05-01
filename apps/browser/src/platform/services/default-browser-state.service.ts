@@ -62,15 +62,6 @@ export class DefaultBrowserStateService
     await super.addAccount(account);
   }
 
-  async getIsAuthenticated(options?: StorageOptions): Promise<boolean> {
-    // Firefox Private Mode can clash with non-Private Mode because they both read from the same onDiskOptions
-    // Check that there is an account in memory before considering the user authenticated
-    return (
-      (await super.getIsAuthenticated(options)) &&
-      (await this.getAccount(await this.defaultInMemoryOptions())) != null
-    );
-  }
-
   // Overriding the base class to prevent deleting the cache on save. We register a storage listener
   // to delete the cache in the constructor above.
   protected override async saveAccountToDisk(

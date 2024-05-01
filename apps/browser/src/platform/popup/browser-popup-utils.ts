@@ -90,13 +90,6 @@ class BrowserPopupUtils {
   }
 
   /**
-   * Identifies if the popup is loading in private mode.
-   */
-  static inPrivateMode() {
-    return BrowserPopupUtils.backgroundInitializationRequired() && !BrowserApi.isManifestVersion(3);
-  }
-
-  /**
    * Opens a popout window of any extension page. If the popout window is already open, it will be focused.
    *
    * @param extensionUrlPath - A relative path to the extension page. Example: "popup/index.html#/tabs/vault"

@@ -70,7 +70,6 @@ import { FolderAddEditComponent } from "../vault/popup/settings/folder-add-edit.
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { PopOutComponent } from "./components/pop-out.component";
-import { PrivateModeWarningComponent } from "./components/private-mode-warning.component";
 import { UserVerificationComponent } from "./components/user-verification.component";
 import { ServicesModule } from "./services/services.module";
 import { ExcludedDomainsComponent } from "./settings/excluded-domains.component";
@@ -150,7 +149,6 @@ import "../platform/popup/locales";
     PasswordHistoryComponent,
     PopOutComponent,
     PremiumComponent,
-    PrivateModeWarningComponent,
     RegisterComponent,
     SendAddEditComponent,
     SendGroupingsComponent,
