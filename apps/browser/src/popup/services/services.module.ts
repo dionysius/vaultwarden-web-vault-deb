@@ -19,7 +19,6 @@ import { JslibServicesModule } from "@bitwarden/angular/services/jslib-services.
 import { AuthRequestServiceAbstraction } from "@bitwarden/auth/common";
 import { EventCollectionService as EventCollectionServiceAbstraction } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { NotificationsService } from "@bitwarden/common/abstractions/notifications.service";
-import { SearchService as SearchServiceAbstraction } from "@bitwarden/common/abstractions/search.service";
 import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout-settings.service";
 import { VaultTimeoutService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
@@ -125,7 +124,6 @@ import { VaultFilterService } from "../../vault/services/vault-filter.service";
 import { DebounceNavigationService } from "./debounce-navigation.service";
 import { InitService } from "./init.service";
 import { PopupCloseWarningService } from "./popup-close-warning.service";
-import { PopupSearchService } from "./popup-search.service";
 
 const OBSERVABLE_LARGE_OBJECT_MEMORY_STORAGE = new SafeInjectionToken<
   AbstractStorageService & ObservableStorageService
@@ -181,11 +179,6 @@ const safeProviders: SafeProvider[] = [
     provide: SsoLoginServiceAbstraction,
     useFactory: getBgService<SsoLoginServiceAbstraction>("ssoLoginService"),
     deps: [],
-  }),
-  safeProvider({
-    provide: SearchServiceAbstraction,
-    useClass: PopupSearchService,
-    deps: [LogService, I18nServiceAbstraction, StateProvider],
   }),
   safeProvider({
     provide: CryptoFunctionService,

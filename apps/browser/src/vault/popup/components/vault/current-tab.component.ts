@@ -292,8 +292,6 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     const ciphers = await this.cipherService.getAllDecryptedForUrl(
       this.url,
       otherTypes.length > 0 ? otherTypes : null,
-      null,
-      false,
     );
 
     this.loginCiphers = [];
