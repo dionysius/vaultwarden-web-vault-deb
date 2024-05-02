@@ -136,7 +136,7 @@ export class GroupAddEditComponent implements OnInit, OnDestroy {
   private destroy$ = new Subject<void>();
 
   private orgCollections$ = from(this.collectionAdminService.getAll(this.organizationId)).pipe(
-    shareReplay({ refCount: false }),
+    shareReplay({ refCount: true, bufferSize: 1 }),
   );
 
   private get orgMembers$(): Observable<Array<AccessItemView & { userId: UserId }>> {
