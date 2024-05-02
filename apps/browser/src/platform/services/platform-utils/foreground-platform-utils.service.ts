@@ -1,5 +1,7 @@
 import { ToastService } from "@bitwarden/components";
 
+import { OffscreenDocumentService } from "../../offscreen-document/abstractions/offscreen-document";
+
 import { BrowserPlatformUtilsService } from "./browser-platform-utils.service";
 
 export class ForegroundPlatformUtilsService extends BrowserPlatformUtilsService {
@@ -8,8 +10,9 @@ export class ForegroundPlatformUtilsService extends BrowserPlatformUtilsService 
     clipboardWriteCallback: (clipboardValue: string, clearMs: number) => void,
     biometricCallback: () => Promise<boolean>,
     win: Window & typeof globalThis,
+    offscreenDocumentService: OffscreenDocumentService,
   ) {
-    super(clipboardWriteCallback, biometricCallback, win);
+    super(clipboardWriteCallback, biometricCallback, win, offscreenDocumentService);
   }
 
   override showToast(

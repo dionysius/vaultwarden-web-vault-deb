@@ -6,6 +6,7 @@ import {
 
 import { SafariApp } from "../../../browser/safariApp";
 import { BrowserApi } from "../../browser/browser-api";
+import { OffscreenDocumentService } from "../../offscreen-document/abstractions/offscreen-document";
 import BrowserClipboardService from "../browser-clipboard.service";
 
 export abstract class BrowserPlatformUtilsService implements PlatformUtilsService {
@@ -15,6 +16,7 @@ export abstract class BrowserPlatformUtilsService implements PlatformUtilsServic
     private clipboardWriteCallback: (clipboardValue: string, clearMs: number) => void,
     private biometricCallback: () => Promise<boolean>,
     private globalContext: Window | ServiceWorkerGlobalScope,
+    private offscreenDocumentService: OffscreenDocumentService,
   ) {}
 
   static getDevice(globalContext: Window | ServiceWorkerGlobalScope): DeviceType {
@@ -316,24 +318,26 @@ export abstract class BrowserPlatformUtilsService implements PlatformUtilsServic
    * Triggers the offscreen document API to copy the text to the clipboard.
    */
   private async triggerOffscreenCopyToClipboard(text: string) {
-    await BrowserApi.createOffscreenDocument(
+    await this.offscreenDocumentService.withDocument(
       [chrome.offscreen.Reason.CLIPBOARD],
       "Write text to the clipboard.",
+      async () => {
+        await BrowserApi.sendMessageWithResponse("offscreenCopyToClipboard", { text });
+      },
     );
-    await BrowserApi.sendMessageWithResponse("offscreenCopyToClipboard", { text });
-    BrowserApi.closeOffscreenDocument();
   }
 
   /**
    * Triggers the offscreen document API to read the text from the clipboard.
    */
   private async triggerOffscreenReadFromClipboard() {
-    await BrowserApi.createOffscreenDocument(
+    const response = await this.offscreenDocumentService.withDocument(
       [chrome.offscreen.Reason.CLIPBOARD],
       "Read text from the clipboard.",
+      async () => {
+        return await BrowserApi.sendMessageWithResponse("offscreenReadFromClipboard");
+      },
     );
-    const response = await BrowserApi.sendMessageWithResponse("offscreenReadFromClipboard");
-    BrowserApi.closeOffscreenDocument();
     if (typeof response === "string") {
       return response;
     }

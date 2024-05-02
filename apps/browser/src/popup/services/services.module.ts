@@ -100,6 +100,8 @@ import { runInsideAngular } from "../../platform/browser/run-inside-angular.oper
 /* eslint-disable no-restricted-imports */
 import { ChromeMessageSender } from "../../platform/messaging/chrome-message.sender";
 /* eslint-enable no-restricted-imports */
+import { OffscreenDocumentService } from "../../platform/offscreen-document/abstractions/offscreen-document";
+import { DefaultOffscreenDocumentService } from "../../platform/offscreen-document/offscreen-document.service";
 import BrowserPopupUtils from "../../platform/popup/browser-popup-utils";
 import { BrowserFileDownloadService } from "../../platform/popup/services/browser-file-download.service";
 import { BrowserStateService as StateServiceAbstraction } from "../../platform/services/abstractions/browser-state.service";
@@ -288,8 +290,16 @@ const safeProviders: SafeProvider[] = [
     deps: [],
   }),
   safeProvider({
+    provide: OffscreenDocumentService,
+    useClass: DefaultOffscreenDocumentService,
+    deps: [],
+  }),
+  safeProvider({
     provide: PlatformUtilsService,
-    useFactory: (toastService: ToastService) => {
+    useFactory: (
+      toastService: ToastService,
+      offscreenDocumentService: OffscreenDocumentService,
+    ) => {
       return new ForegroundPlatformUtilsService(
         toastService,
         (clipboardValue: string, clearMs: number) => {
@@ -306,9 +316,10 @@ const safeProviders: SafeProvider[] = [
           return response.result;
         },
         window,
+        offscreenDocumentService,
       );
     },
-    deps: [ToastService],
+    deps: [ToastService, OffscreenDocumentService],
   }),
   safeProvider({
     provide: PasswordGenerationServiceAbstraction,

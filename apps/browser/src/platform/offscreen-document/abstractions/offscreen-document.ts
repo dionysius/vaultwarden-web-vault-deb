@@ -1,4 +1,4 @@
-type OffscreenDocumentExtensionMessage = {
+export type OffscreenDocumentExtensionMessage = {
   [key: string]: any;
   command: string;
   text?: string;
@@ -9,18 +9,20 @@ type OffscreenExtensionMessageEventParams = {
   sender: chrome.runtime.MessageSender;
 };
 
-type OffscreenDocumentExtensionMessageHandlers = {
+export type OffscreenDocumentExtensionMessageHandlers = {
   [key: string]: ({ message, sender }: OffscreenExtensionMessageEventParams) => any;
   offscreenCopyToClipboard: ({ message }: OffscreenExtensionMessageEventParams) => any;
   offscreenReadFromClipboard: () => any;
 };
 
-interface OffscreenDocument {
+export interface OffscreenDocument {
   init(): void;
 }
 
-export {
-  OffscreenDocumentExtensionMessage,
-  OffscreenDocumentExtensionMessageHandlers,
-  OffscreenDocument,
-};
+export abstract class OffscreenDocumentService {
+  abstract withDocument<T>(
+    reasons: chrome.offscreen.Reason[],
+    justification: string,
+    callback: () => Promise<T> | T,
+  ): Promise<T>;
+}

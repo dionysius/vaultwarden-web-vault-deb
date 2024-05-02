@@ -525,32 +525,6 @@ describe("BrowserApi", () => {
     });
   });
 
-  describe("createOffscreenDocument", () => {
-    it("creates the offscreen document with the supplied reasons and justification", async () => {
-      const reasons = [chrome.offscreen.Reason.CLIPBOARD];
-      const justification = "justification";
-
-      await BrowserApi.createOffscreenDocument(reasons, justification);
-
-      expect(chrome.offscreen.createDocument).toHaveBeenCalledWith({
-        url: "offscreen-document/index.html",
-        reasons,
-        justification,
-      });
-    });
-  });
-
-  describe("closeOffscreenDocument", () => {
-    it("closes the offscreen document", () => {
-      const callbackMock = jest.fn();
-
-      BrowserApi.closeOffscreenDocument(callbackMock);
-
-      expect(chrome.offscreen.closeDocument).toHaveBeenCalled();
-      expect(callbackMock).toHaveBeenCalled();
-    });
-  });
-
   describe("registerContentScriptsMv2", () => {
     const details: browser.contentScripts.RegisteredContentScriptOptions = {
       matches: ["<all_urls>"],

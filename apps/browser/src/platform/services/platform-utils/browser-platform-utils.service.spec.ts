@@ -1,15 +1,22 @@
+import { MockProxy, mock } from "jest-mock-extended";
+
 import { DeviceType } from "@bitwarden/common/enums";
 
 import { flushPromises } from "../../../autofill/spec/testing-utils";
 import { SafariApp } from "../../../browser/safariApp";
 import { BrowserApi } from "../../browser/browser-api";
+import { OffscreenDocumentService } from "../../offscreen-document/abstractions/offscreen-document";
 import BrowserClipboardService from "../browser-clipboard.service";
 
 import { BrowserPlatformUtilsService } from "./browser-platform-utils.service";
 
 class TestBrowserPlatformUtilsService extends BrowserPlatformUtilsService {
-  constructor(clipboardSpy: jest.Mock, win: Window & typeof globalThis) {
-    super(clipboardSpy, null, win);
+  constructor(
+    clipboardSpy: jest.Mock,
+    win: Window & typeof globalThis,
+    offscreenDocumentService: OffscreenDocumentService,
+  ) {
+    super(clipboardSpy, null, win, offscreenDocumentService);
   }
 
   showToast(
@@ -24,13 +31,16 @@ class TestBrowserPlatformUtilsService extends BrowserPlatformUtilsService {
 
 describe("Browser Utils Service", () => {
   let browserPlatformUtilsService: BrowserPlatformUtilsService;
+  let offscreenDocumentService: MockProxy<OffscreenDocumentService>;
   const clipboardWriteCallbackSpy = jest.fn();
 
   beforeEach(() => {
+    offscreenDocumentService = mock();
     (window as any).matchMedia = jest.fn().mockReturnValueOnce({});
     browserPlatformUtilsService = new TestBrowserPlatformUtilsService(
       clipboardWriteCallbackSpy,
       window,
+      offscreenDocumentService,
     );
   });
 
@@ -223,23 +233,23 @@ describe("Browser Utils Service", () => {
         .spyOn(browserPlatformUtilsService, "getDevice")
         .mockReturnValue(DeviceType.ChromeExtension);
       getManifestVersionSpy.mockReturnValue(3);
-      jest.spyOn(BrowserApi, "createOffscreenDocument");
-      jest.spyOn(BrowserApi, "sendMessageWithResponse").mockResolvedValue(undefined);
-      jest.spyOn(BrowserApi, "closeOffscreenDocument");
 
       browserPlatformUtilsService.copyToClipboard(text);
       await flushPromises();
 
       expect(triggerOffscreenCopyToClipboardSpy).toHaveBeenCalledWith(text);
       expect(clipboardServiceCopySpy).not.toHaveBeenCalled();
-      expect(BrowserApi.createOffscreenDocument).toHaveBeenCalledWith(
+      expect(offscreenDocumentService.withDocument).toHaveBeenCalledWith(
         [chrome.offscreen.Reason.CLIPBOARD],
         "Write text to the clipboard.",
+        expect.any(Function),
       );
+
+      const callback = offscreenDocumentService.withDocument.mock.calls[0][2];
+      await callback();
       expect(BrowserApi.sendMessageWithResponse).toHaveBeenCalledWith("offscreenCopyToClipboard", {
         text,
       });
-      expect(BrowserApi.closeOffscreenDocument).toHaveBeenCalled();
     });
 
     it("skips the clipboardWriteCallback if the clipboard is clearing", async () => {
@@ -298,18 +308,21 @@ describe("Browser Utils Service", () => {
         .spyOn(browserPlatformUtilsService, "getDevice")
         .mockReturnValue(DeviceType.ChromeExtension);
       getManifestVersionSpy.mockReturnValue(3);
-      jest.spyOn(BrowserApi, "createOffscreenDocument");
-      jest.spyOn(BrowserApi, "sendMessageWithResponse").mockResolvedValue("test");
-      jest.spyOn(BrowserApi, "closeOffscreenDocument");
+      offscreenDocumentService.withDocument.mockImplementationOnce((_, __, callback) =>
+        Promise.resolve("test"),
+      );
 
       await browserPlatformUtilsService.readFromClipboard();
 
-      expect(BrowserApi.createOffscreenDocument).toHaveBeenCalledWith(
+      expect(offscreenDocumentService.withDocument).toHaveBeenCalledWith(
         [chrome.offscreen.Reason.CLIPBOARD],
         "Read text from the clipboard.",
+        expect.any(Function),
       );
+
+      const callback = offscreenDocumentService.withDocument.mock.calls[0][2];
+      await callback();
       expect(BrowserApi.sendMessageWithResponse).toHaveBeenCalledWith("offscreenReadFromClipboard");
-      expect(BrowserApi.closeOffscreenDocument).toHaveBeenCalled();
     });
 
     it("returns an empty string from the offscreen document if the response is not of type string", async () => {
@@ -317,9 +330,10 @@ describe("Browser Utils Service", () => {
         .spyOn(browserPlatformUtilsService, "getDevice")
         .mockReturnValue(DeviceType.ChromeExtension);
       getManifestVersionSpy.mockReturnValue(3);
-      jest.spyOn(BrowserApi, "createOffscreenDocument");
       jest.spyOn(BrowserApi, "sendMessageWithResponse").mockResolvedValue(1);
-      jest.spyOn(BrowserApi, "closeOffscreenDocument");
+      offscreenDocumentService.withDocument.mockImplementationOnce((_, __, callback) =>
+        Promise.resolve(1),
+      );
 
       const result = await browserPlatformUtilsService.readFromClipboard();
 

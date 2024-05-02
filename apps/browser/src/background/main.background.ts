@@ -212,6 +212,8 @@ import { UpdateBadge } from "../platform/listeners/update-badge";
 /* eslint-disable no-restricted-imports */
 import { ChromeMessageSender } from "../platform/messaging/chrome-message.sender";
 /* eslint-enable no-restricted-imports */
+import { OffscreenDocumentService } from "../platform/offscreen-document/abstractions/offscreen-document";
+import { DefaultOffscreenDocumentService } from "../platform/offscreen-document/offscreen-document.service";
 import { BrowserStateService as StateServiceAbstraction } from "../platform/services/abstractions/browser-state.service";
 import { BrowserCryptoService } from "../platform/services/browser-crypto.service";
 import { BrowserEnvironmentService } from "../platform/services/browser-environment.service";
@@ -336,6 +338,7 @@ export default class MainBackground {
   userAutoUnlockKeyService: UserAutoUnlockKeyService;
   scriptInjectorService: BrowserScriptInjectorService;
   kdfConfigService: kdfConfigServiceAbstraction;
+  offscreenDocumentService: OffscreenDocumentService;
 
   onUpdatedRan: boolean;
   onReplacedRan: boolean;
@@ -393,11 +396,14 @@ export default class MainBackground {
       ),
     );
 
+    this.offscreenDocumentService = new DefaultOffscreenDocumentService();
+
     this.platformUtilsService = new BackgroundPlatformUtilsService(
       this.messagingService,
       (clipboardValue, clearMs) => this.clearClipboard(clipboardValue, clearMs),
       async () => this.biometricUnlock(),
       self,
+      this.offscreenDocumentService,
     );
 
     // Creates a session key for mv3 storage of large memory items

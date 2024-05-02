@@ -30,6 +30,7 @@ export function platformUtilsServiceFactory(
         opts.platformUtilsServiceOptions.clipboardWriteCallback,
         opts.platformUtilsServiceOptions.biometricCallback,
         opts.platformUtilsServiceOptions.win,
+        null,
       ),
   );
 }
