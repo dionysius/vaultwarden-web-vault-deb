@@ -70,13 +70,13 @@ export class Fido2Background implements Fido2BackgroundInterface {
    */
   async injectFido2ContentScriptsInAllTabs() {
     const tabs = await BrowserApi.tabsQuery({});
+
     for (let index = 0; index < tabs.length; index++) {
       const tab = tabs[index];
-      if (!tab.url?.startsWith("https")) {
-        continue;
-      }
 
-      void this.injectFido2ContentScripts(tab);
+      if (tab.url?.startsWith("https")) {
+        void this.injectFido2ContentScripts(tab);
+      }
     }
   }
 

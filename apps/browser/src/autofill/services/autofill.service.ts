@@ -3,7 +3,6 @@ import { firstValueFrom } from "rxjs";
 import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
-import { AutofillOverlayVisibility } from "@bitwarden/common/autofill/constants";
 import { AutofillSettingsServiceAbstraction } from "@bitwarden/common/autofill/services/autofill-settings.service";
 import { DomainSettingsService } from "@bitwarden/common/autofill/services/domain-settings.service";
 import { InlineMenuVisibilitySetting } from "@bitwarden/common/autofill/types";
@@ -107,17 +106,13 @@ export default class AutofillService implements AutofillServiceInterface {
     frameId = 0,
     triggeringOnPageLoad = true,
   ): Promise<void> {
-    // Autofill settings loaded from state can await the active account state indefinitely if
-    // not guarded by an active account check (e.g. the user is logged in)
+    // Autofill user settings loaded from state can await the active account state indefinitely
+    // if not guarded by an active account check (e.g. the user is logged in)
     const activeAccount = await firstValueFrom(this.accountService.activeAccount$);
 
-    // These settings are not available until the user logs in
-    let overlayVisibility: InlineMenuVisibilitySetting = AutofillOverlayVisibility.Off;
     let autoFillOnPageLoadIsEnabled = false;
+    const overlayVisibility = await this.getOverlayVisibility();
 
-    if (activeAccount) {
-      overlayVisibility = await this.getOverlayVisibility();
-    }
     const mainAutofillScript = overlayVisibility
       ? "bootstrap-autofill-overlay.js"
       : "bootstrap-autofill.js";
@@ -2087,9 +2082,7 @@ export default class AutofillService implements AutofillServiceInterface {
     for (let index = 0; index < tabs.length; index++) {
       const tab = tabs[index];
       if (tab.url?.startsWith("http")) {
-        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-        // eslint-disable-next-line @typescript-eslint/no-floating-promises
-        this.injectAutofillScripts(tab, 0, false);
+        void this.injectAutofillScripts(tab, 0, false);
       }
     }
   }

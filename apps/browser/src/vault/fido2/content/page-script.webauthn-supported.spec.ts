@@ -10,17 +10,29 @@ import { WebauthnUtils } from "../webauthn-utils";
 import { MessageType } from "./messaging/message";
 import { Messenger } from "./messaging/messenger";
 
+const originalGlobalThis = globalThis;
+const mockGlobalThisDocument = {
+  ...originalGlobalThis.document,
+  contentType: "text/html",
+  location: {
+    ...originalGlobalThis.document.location,
+    href: "https://localhost",
+    origin: "https://localhost",
+    protocol: "https:",
+  },
+};
+
 let messenger: Messenger;
 jest.mock("./messaging/messenger", () => {
   return {
     Messenger: class extends jest.requireActual("./messaging/messenger").Messenger {
-      static forDOMCommunication: any = jest.fn((window) => {
-        const windowOrigin = window.location.origin;
+      static forDOMCommunication: any = jest.fn((context) => {
+        const windowOrigin = context.location.origin;
 
         messenger = new Messenger({
-          postMessage: (message, port) => window.postMessage(message, windowOrigin, [port]),
-          addEventListener: (listener) => window.addEventListener("message", listener),
-          removeEventListener: (listener) => window.removeEventListener("message", listener),
+          postMessage: (message, port) => context.postMessage(message, windowOrigin, [port]),
+          addEventListener: (listener) => context.addEventListener("message", listener),
+          removeEventListener: (listener) => context.removeEventListener("message", listener),
         });
         messenger.destroy = jest.fn();
         return messenger;
@@ -31,6 +43,10 @@ jest.mock("./messaging/messenger", () => {
 jest.mock("../webauthn-utils");
 
 describe("Fido2 page script with native WebAuthn support", () => {
+  (jest.spyOn(globalThis, "document", "get") as jest.Mock).mockImplementation(
+    () => mockGlobalThisDocument,
+  );
+
   const mockCredentialCreationOptions = createCredentialCreationOptionsMock();
   const mockCreateCredentialsResult = createCreateCredentialResultMock();
   const mockCredentialRequestOptions = createCredentialRequestOptionsMock();
@@ -39,9 +55,12 @@ describe("Fido2 page script with native WebAuthn support", () => {
 
   require("./page-script");
 
+  afterEach(() => {
+    jest.resetModules();
+  });
+
   afterAll(() => {
     jest.clearAllMocks();
-    jest.resetModules();
   });
 
   describe("creating WebAuthn credentials", () => {
@@ -116,6 +135,44 @@ describe("Fido2 page script with native WebAuthn support", () => {
 
       expect(globalThis.top.removeEventListener).toHaveBeenCalledWith("focus", undefined);
       expect(messenger.destroy).toHaveBeenCalled();
+    });
+  });
+
+  describe("content script execution", () => {
+    beforeEach(() => {
+      jest.clearAllMocks();
+      jest.resetModules();
+    });
+
+    it("skips initializing if the document content type is not 'text/html'", () => {
+      jest.spyOn(Messenger, "forDOMCommunication");
+
+      (jest.spyOn(globalThis, "document", "get") as jest.Mock).mockImplementation(() => ({
+        ...mockGlobalThisDocument,
+        contentType: "json/application",
+      }));
+
+      require("./content-script");
+
+      expect(Messenger.forDOMCommunication).not.toHaveBeenCalled();
+    });
+
+    it("skips initializing if the document location protocol is not 'https'", () => {
+      jest.spyOn(Messenger, "forDOMCommunication");
+
+      (jest.spyOn(globalThis, "document", "get") as jest.Mock).mockImplementation(() => ({
+        ...mockGlobalThisDocument,
+        location: {
+          ...mockGlobalThisDocument.location,
+          href: "http://localhost",
+          origin: "http://localhost",
+          protocol: "http:",
+        },
+      }));
+
+      require("./content-script");
+
+      expect(Messenger.forDOMCommunication).not.toHaveBeenCalled();
     });
   });
 });

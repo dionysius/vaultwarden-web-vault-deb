@@ -1,3 +1,8 @@
+import { mock } from "jest-mock-extended";
+
+import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
+import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+
 import { BrowserApi } from "../browser/browser-api";
 
 import {
@@ -20,9 +25,11 @@ describe("ScriptInjectorService", () => {
   let scriptInjectorService: BrowserScriptInjectorService;
   jest.spyOn(BrowserApi, "executeScriptInTab").mockImplementation();
   jest.spyOn(BrowserApi, "isManifestVersion");
+  const platformUtilsService = mock<PlatformUtilsService>();
+  const logService = mock<LogService>();
 
   beforeEach(() => {
-    scriptInjectorService = new BrowserScriptInjectorService();
+    scriptInjectorService = new BrowserScriptInjectorService(platformUtilsService, logService);
   });
 
   describe("inject", () => {

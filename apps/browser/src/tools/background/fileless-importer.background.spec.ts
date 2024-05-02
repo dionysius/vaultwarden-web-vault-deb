@@ -5,6 +5,8 @@ import { PolicyService } from "@bitwarden/common/admin-console/services/policy/p
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 import { AuthService } from "@bitwarden/common/auth/services/auth.service";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
+import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
+import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 import { Importer, ImportResult, ImportServiceAbstraction } from "@bitwarden/importer/core";
 
@@ -38,10 +40,12 @@ describe("FilelessImporterBackground ", () => {
   const notificationBackground = mock<NotificationBackground>();
   const importService = mock<ImportServiceAbstraction>();
   const syncService = mock<SyncService>();
+  const platformUtilsService = mock<PlatformUtilsService>();
+  const logService = mock<LogService>();
   let scriptInjectorService: BrowserScriptInjectorService;
 
   beforeEach(() => {
-    scriptInjectorService = new BrowserScriptInjectorService();
+    scriptInjectorService = new BrowserScriptInjectorService(platformUtilsService, logService);
     filelessImporterBackground = new FilelessImporterBackground(
       configService,
       authService,

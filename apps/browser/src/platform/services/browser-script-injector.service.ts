@@ -1,3 +1,6 @@
+import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
+import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+
 import { BrowserApi } from "../browser/browser-api";
 
 import {
@@ -7,6 +10,13 @@ import {
 } from "./abstractions/script-injector.service";
 
 export class BrowserScriptInjectorService extends ScriptInjectorService {
+  constructor(
+    private readonly platformUtilsService: PlatformUtilsService,
+    private readonly logService: LogService,
+  ) {
+    super();
+  }
+
   /**
    * Facilitates the injection of a script into a tab context. Will adjust
    * behavior between manifest v2 and v3 based on the passed configuration.
@@ -23,9 +33,26 @@ export class BrowserScriptInjectorService extends ScriptInjectorService {
     const injectionDetails = this.buildInjectionDetails(injectDetails, file);
 
     if (BrowserApi.isManifestVersion(3)) {
-      await BrowserApi.executeScriptInTab(tabId, injectionDetails, {
-        world: mv3Details?.world ?? "ISOLATED",
-      });
+      try {
+        await BrowserApi.executeScriptInTab(tabId, injectionDetails, {
+          world: mv3Details?.world ?? "ISOLATED",
+        });
+      } catch (error) {
+        // Swallow errors for host permissions, since this is believed to be a Manifest V3 Chrome bug
+        // @TODO remove when the bugged behaviour is resolved
+        if (
+          error.message !==
+          "Cannot access contents of the page. Extension manifest must request permission to access the respective host."
+        ) {
+          throw error;
+        }
+
+        if (this.platformUtilsService.isDev()) {
+          this.logService.warning(
+            `BrowserApi.executeScriptInTab exception for ${injectDetails.file} in tab ${tabId}: ${error.message}`,
+          );
+        }
+      }
 
       return;
     }

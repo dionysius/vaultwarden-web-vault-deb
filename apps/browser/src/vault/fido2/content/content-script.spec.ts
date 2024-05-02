@@ -15,33 +15,49 @@ jest.mock("../../../autofill/utils", () => ({
   }),
 }));
 
+const originalGlobalThis = globalThis;
+const mockGlobalThisDocument = {
+  ...originalGlobalThis.document,
+  contentType: "text/html",
+  location: {
+    ...originalGlobalThis.document.location,
+    href: "https://localhost",
+    origin: "https://localhost",
+    protocol: "https:",
+  },
+};
+
 describe("Fido2 Content Script", () => {
+  beforeAll(() => {
+    (jest.spyOn(globalThis, "document", "get") as jest.Mock).mockImplementation(
+      () => mockGlobalThisDocument,
+    );
+  });
+
+  afterEach(() => {
+    jest.resetModules();
+  });
+
+  afterAll(() => {
+    jest.clearAllMocks();
+  });
+
   let messenger: Messenger;
   const messengerForDOMCommunicationSpy = jest
     .spyOn(Messenger, "forDOMCommunication")
-    .mockImplementation((window) => {
-      const windowOrigin = window.location.origin;
+    .mockImplementation((context) => {
+      const windowOrigin = context.location.origin;
 
       messenger = new Messenger({
-        postMessage: (message, port) => window.postMessage(message, windowOrigin, [port]),
-        addEventListener: (listener) => window.addEventListener("message", listener),
-        removeEventListener: (listener) => window.removeEventListener("message", listener),
+        postMessage: (message, port) => context.postMessage(message, windowOrigin, [port]),
+        addEventListener: (listener) => context.addEventListener("message", listener),
+        removeEventListener: (listener) => context.removeEventListener("message", listener),
       });
       messenger.destroy = jest.fn();
       return messenger;
     });
   const portSpy: MockProxy<chrome.runtime.Port> = createPortSpyMock(Fido2PortName.InjectedScript);
   chrome.runtime.connect = jest.fn(() => portSpy);
-
-  afterEach(() => {
-    Object.defineProperty(document, "contentType", {
-      value: "text/html",
-      writable: true,
-    });
-
-    jest.clearAllMocks();
-    jest.resetModules();
-  });
 
   it("destroys the messenger when the port is disconnected", () => {
     require("./content-script");
@@ -151,11 +167,31 @@ describe("Fido2 Content Script", () => {
     await expect(result).rejects.toEqual(errorMessage);
   });
 
-  it("skips initializing the content script if the document content type is not 'text/html'", () => {
-    Object.defineProperty(document, "contentType", {
-      value: "application/json",
-      writable: true,
-    });
+  it("skips initializing if the document content type is not 'text/html'", () => {
+    jest.clearAllMocks();
+
+    (jest.spyOn(globalThis, "document", "get") as jest.Mock).mockImplementation(() => ({
+      ...mockGlobalThisDocument,
+      contentType: "application/json",
+    }));
+
+    require("./content-script");
+
+    expect(messengerForDOMCommunicationSpy).not.toHaveBeenCalled();
+  });
+
+  it("skips initializing if the document location protocol is not 'https'", () => {
+    jest.clearAllMocks();
+
+    (jest.spyOn(globalThis, "document", "get") as jest.Mock).mockImplementation(() => ({
+      ...mockGlobalThisDocument,
+      location: {
+        ...mockGlobalThisDocument.location,
+        href: "http://localhost",
+        origin: "http://localhost",
+        protocol: "http:",
+      },
+    }));
 
     require("./content-script");
 

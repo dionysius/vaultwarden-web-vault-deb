@@ -9,17 +9,29 @@ import { WebauthnUtils } from "../webauthn-utils";
 import { MessageType } from "./messaging/message";
 import { Messenger } from "./messaging/messenger";
 
+const originalGlobalThis = globalThis;
+const mockGlobalThisDocument = {
+  ...originalGlobalThis.document,
+  contentType: "text/html",
+  location: {
+    ...originalGlobalThis.document.location,
+    href: "https://localhost",
+    origin: "https://localhost",
+    protocol: "https:",
+  },
+};
+
 let messenger: Messenger;
 jest.mock("./messaging/messenger", () => {
   return {
     Messenger: class extends jest.requireActual("./messaging/messenger").Messenger {
-      static forDOMCommunication: any = jest.fn((window) => {
-        const windowOrigin = window.location.origin;
+      static forDOMCommunication: any = jest.fn((context) => {
+        const windowOrigin = context.location.origin;
 
         messenger = new Messenger({
-          postMessage: (message, port) => window.postMessage(message, windowOrigin, [port]),
-          addEventListener: (listener) => window.addEventListener("message", listener),
-          removeEventListener: (listener) => window.removeEventListener("message", listener),
+          postMessage: (message, port) => context.postMessage(message, windowOrigin, [port]),
+          addEventListener: (listener) => context.addEventListener("message", listener),
+          removeEventListener: (listener) => context.removeEventListener("message", listener),
         });
         messenger.destroy = jest.fn();
         return messenger;
@@ -30,15 +42,22 @@ jest.mock("./messaging/messenger", () => {
 jest.mock("../webauthn-utils");
 
 describe("Fido2 page script without native WebAuthn support", () => {
+  (jest.spyOn(globalThis, "document", "get") as jest.Mock).mockImplementation(
+    () => mockGlobalThisDocument,
+  );
+
   const mockCredentialCreationOptions = createCredentialCreationOptionsMock();
   const mockCreateCredentialsResult = createCreateCredentialResultMock();
   const mockCredentialRequestOptions = createCredentialRequestOptionsMock();
   const mockCredentialAssertResult = createAssertCredentialResultMock();
   require("./page-script");
 
+  afterEach(() => {
+    jest.resetModules();
+  });
+
   afterAll(() => {
     jest.clearAllMocks();
-    jest.resetModules();
   });
 
   describe("creating WebAuthn credentials", () => {

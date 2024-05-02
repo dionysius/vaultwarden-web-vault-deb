@@ -51,7 +51,7 @@
     "default_popup": "popup/index.html"
   },
   "permissions": [
-    "<all_urls>",
+    "activeTab",
     "tabs",
     "contextMenus",
     "storage",
@@ -65,7 +65,7 @@
     "webRequestAuthProvider"
   ],
   "optional_permissions": ["nativeMessaging", "privacy"],
-  "host_permissions": ["<all_urls>"],
+  "host_permissions": ["https://*/*", "http://*/*"],
   "content_security_policy": {
     "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'",
     "sandbox": "sandbox allow-scripts; script-src 'self'"
