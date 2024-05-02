@@ -4,6 +4,7 @@ import { SelectItemView } from "@bitwarden/components";
 import {
   ProjectPeopleAccessPoliciesView,
   ServiceAccountGrantedPoliciesView,
+  ProjectServiceAccountsAccessPoliciesView,
   ServiceAccountPeopleAccessPoliciesView,
 } from "../../../../models/view/access-policy.view";
 import { PotentialGranteeView } from "../../../../models/view/potential-grantee.view";
@@ -93,6 +94,29 @@ export function convertGrantedPoliciesToAccessPolicyItemViews(
         detailView.accessPolicy.write,
       ),
       readOnly: !detailView.hasPermission,
+    });
+  });
+  return accessPolicies;
+}
+
+export function convertProjectServiceAccountsViewToApItemViews(
+  value: ProjectServiceAccountsAccessPoliciesView,
+): ApItemViewType[] {
+  const accessPolicies: ApItemViewType[] = [];
+
+  value.serviceAccountAccessPolicies.forEach((accessPolicyView) => {
+    accessPolicies.push({
+      type: ApItemEnum.ServiceAccount,
+      icon: ApItemEnumUtil.itemIcon(ApItemEnum.ServiceAccount),
+      id: accessPolicyView.serviceAccountId,
+      accessPolicyId: accessPolicyView.id,
+      labelName: accessPolicyView.serviceAccountName,
+      listName: accessPolicyView.serviceAccountName,
+      permission: ApPermissionEnumUtil.toApPermissionEnum(
+        accessPolicyView.read,
+        accessPolicyView.write,
+      ),
+      readOnly: false,
     });
   });
   return accessPolicies;

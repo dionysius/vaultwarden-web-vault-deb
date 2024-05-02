@@ -67,3 +67,7 @@ export class ServiceAccountProjectPolicyPermissionDetailsView {
 export class ServiceAccountGrantedPoliciesView {
   grantedProjectPolicies: ServiceAccountProjectPolicyPermissionDetailsView[];
 }
+
+export class ProjectServiceAccountsAccessPoliciesView {
+  serviceAccountAccessPolicies: ServiceAccountProjectAccessPolicyView[];
+}
