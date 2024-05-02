@@ -19,17 +19,36 @@ export class MultithreadEncryptServiceImplementation extends EncryptServiceImple
   private clear$ = new Subject<void>();
 
   /**
-   * Sends items to a web worker to decrypt them.
-   * This utilises multithreading to decrypt items faster without interrupting other operations (e.g. updating UI).
+   * Decrypts items using a web worker if the environment supports it.
+   * Will fall back to the main thread if the window object is not available.
    */
   async decryptItems<T extends InitializerMetadata>(
     items: Decryptable<T>[],
     key: SymmetricCryptoKey,
   ): Promise<T[]> {
+    if (typeof window === "undefined") {
+      return super.decryptItems(items, key);
+    }
+
     if (items == null || items.length < 1) {
       return [];
     }
 
+    const decryptedItems = await this.getDecryptedItemsFromWorker(items, key);
+    const parsedItems = JSON.parse(decryptedItems);
+
+    return this.initializeItems(parsedItems);
+  }
+
+  /**
+   * Sends items to a web worker to decrypt them. This utilizes multithreading to decrypt items
+   * faster without interrupting other operations (e.g. updating UI). This method returns values
+   * prior to deserialization to support forwarding results to another party
+   */
+  async getDecryptedItemsFromWorker<T extends InitializerMetadata>(
+    items: Decryptable<T>[],
+    key: SymmetricCryptoKey,
+  ): Promise<string> {
     this.logService.info("Starting decryption using multithreading");
 
     this.worker ??= new Worker(
@@ -53,17 +72,18 @@ export class MultithreadEncryptServiceImplementation extends EncryptServiceImple
     return await firstValueFrom(
       fromEvent(this.worker, "message").pipe(
         filter((response: MessageEvent) => response.data?.id === request.id),
-        map((response) => JSON.parse(response.data.items)),
-        map((items) =>
-          items.map((jsonItem: Jsonify<T>) => {
-            const initializer = getClassInitializer<T>(jsonItem.initializerKey);
-            return initializer(jsonItem);
-          }),
-        ),
+        map((response) => response.data.items),
         takeUntil(this.clear$),
-        defaultIfEmpty([]),
+        defaultIfEmpty("[]"),
       ),
     );
+  }
+
+  protected initializeItems<T extends InitializerMetadata>(items: Jsonify<T>[]): T[] {
+    return items.map((jsonItem: Jsonify<T>) => {
+      const initializer = getClassInitializer<T>(jsonItem.initializerKey);
+      return initializer(jsonItem);
+    });
   }
 
   private clear() {
