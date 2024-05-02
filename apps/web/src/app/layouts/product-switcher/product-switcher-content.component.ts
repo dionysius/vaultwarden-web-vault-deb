@@ -97,7 +97,7 @@ export class ProductSwitcherContentComponent {
         },
         ac: {
           name: "Admin Console",
-          icon: "bwi-business",
+          icon: "bwi-user-monitor",
           appRoute: ["/organizations", acOrg?.id],
           marketingRoute: "https://bitwarden.com/products/business/",
           isActive: this.router.url.includes("/organizations/"),
