@@ -801,10 +801,10 @@
     "message": "Ana parolayı değiştir"
   },
   "continueToWebApp": {
-    "message": "Continue to web app?"
+    "message": "Web uygulamasına devam edilsin mi?"
   },
   "changeMasterPasswordOnWebConfirmation": {
-    "message": "You can change your master password on the Bitwarden web app."
+    "message": "Ana parolanızı Bitwarden web uygulamasında değiştirebilirsiniz."
   },
   "fingerprintPhrase": {
     "message": "Parmak izi ifadesi",
@@ -1557,7 +1557,7 @@
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "verificationRequired": {
-    "message": "Verification required",
+    "message": "Doğrulama gerekli",
     "description": "Default title for the user verification dialog."
   },
   "currentMasterPass": {
@@ -1633,7 +1633,7 @@
     "message": "Tarayıcı entegrasyonu desteklenmiyor"
   },
   "browserIntegrationErrorTitle": {
-    "message": "Error enabling browser integration"
+    "message": "Tarayıcı entegrasyonunu etkinleştirme hatası"
   },
   "browserIntegrationErrorDesc": {
     "message": "An error has occurred while enabling browser integration."
@@ -1654,10 +1654,10 @@
     "message": "Masaüstü uygulamanızla tarayıcınız arasında bağlantı kurulurken parmak izi ifadesi doğrulamasını zorunlu kılarak ek bir güvenlik önlemi alabilirsiniz. Bu ayarı açarsanız her bağlantı kurulduğunda tekrar doğrulama yapmanız gerekir."
   },
   "enableHardwareAcceleration": {
-    "message": "Donanım hızlandırması kullan"
+    "message": "Donanım hızlandırmayı kullan"
   },
   "enableHardwareAccelerationDesc": {
-    "message": "Varsayılan olarak bu ayar AÇIK'tır. Yalnızca grafiksel sorunlarla karşılaşırsanız KAPATIN. Yeniden başlatma gerekli."
+    "message": "Varsayılan olarak bu ayar AÇIKTIR. Yalnızca grafik sorunlarıyla karşılaşırsanız KAPATIN. Yeniden başlatma gerekir."
   },
   "approve": {
     "message": "Onayla"
@@ -1898,40 +1898,40 @@
     "message": "Ana parolanız kuruluş ilkelerinizi karşılamıyor. Kasanıza erişmek için ana parolanızı güncellemelisiniz. Devam ettiğinizde oturumunuz kapanacak ve yeniden oturum açmanız gerekecektir. Diğer cihazlardaki aktif oturumlar bir saate kadar aktif kalabilir."
   },
   "tryAgain": {
-    "message": "Try again"
+    "message": "Yeniden dene"
   },
   "verificationRequiredForActionSetPinToContinue": {
-    "message": "Verification required for this action. Set a PIN to continue."
+    "message": "Bu işlem için doğrulama gerekiyor. Devam etmek için bir PIN belirleyin."
   },
   "setPin": {
-    "message": "Set PIN"
+    "message": "PIN belirle"
   },
   "verifyWithBiometrics": {
-    "message": "Verify with biometrics"
+    "message": "Biyometri ile doğrula"
   },
   "awaitingConfirmation": {
-    "message": "Awaiting confirmation"
+    "message": "Onay bekleniyor"
   },
   "couldNotCompleteBiometrics": {
-    "message": "Could not complete biometrics."
+    "message": "Biyometri işlemi tamamlanamadı."
   },
   "needADifferentMethod": {
-    "message": "Need a different method?"
+    "message": "Farklı bir yönteme mi ihtiyacınız var?"
   },
   "useMasterPassword": {
-    "message": "Use master password"
+    "message": "Ana parolayı kullan"
   },
   "usePin": {
-    "message": "Use PIN"
+    "message": "PIN kullan"
   },
   "useBiometrics": {
-    "message": "Use biometrics"
+    "message": "Biyometri kullan"
   },
   "enterVerificationCodeSentToEmail": {
-    "message": "Enter the verification code that was sent to your email."
+    "message": "E-posta adresinize gönderilen doğrulama kodunu girin."
   },
   "resendCode": {
-    "message": "Resend code"
+    "message": "Kodu yeniden gönder"
   },
   "hours": {
     "message": "Saat"
@@ -2547,7 +2547,7 @@
     "message": "Hesabınız için Duo iki adımlı giriş gereklidir."
   },
   "launchDuo": {
-    "message": "Duo'yu Tarayıcıda Başlat"
+    "message": "Duo'yu tarayıcıda başlat"
   },
   "importFormatError": {
     "message": "Veriler doğru biçimlendirilmemiş. Lütfen içe aktarma dosyanızı kontrol edin ve tekrar deneyin."
@@ -2630,13 +2630,13 @@
     "message": "Kullanıcı adı veya parola yanlış"
   },
   "incorrectPassword": {
-    "message": "Incorrect password"
+    "message": "Yanlış parola"
   },
   "incorrectCode": {
-    "message": "Incorrect code"
+    "message": "Yanlış kod"
   },
   "incorrectPin": {
-    "message": "Incorrect PIN"
+    "message": "Yanlış PIN"
   },
   "multifactorAuthenticationFailed": {
     "message": "Çok faktörlü kimlik doğrulama başarısız oldu"
@@ -2694,26 +2694,26 @@
     "message": "LastPass hesabınızla ilişkili YubiKey'i bilgisayarınızın USB portuna takıp düğmesine dokunun."
   },
   "commonImportFormats": {
-    "message": "Common formats",
+    "message": "Sık kullanılan biçimler",
     "description": "Label indicating the most common import formats"
   },
   "success": {
-    "message": "Success"
+    "message": "Başarılı"
   },
   "troubleshooting": {
     "message": "Sorun giderme"
   },
   "disableHardwareAccelerationRestart": {
-    "message": "Donanım hızlandırmayı devre dışı bırakın ve yeniden başlatın"
+    "message": "Donanım hızlandırmayı kapatıp yeniden başlat"
   },
   "enableHardwareAccelerationRestart": {
-    "message": "Donanım hızlandırmayı etkinleştirin ve yeniden başlatın"
+    "message": "Donanım hızlandırmayı etkinleştirip yeniden başlat"
   },
   "removePasskey": {
-    "message": "Remove passkey"
+    "message": "Geçiş anahtarını kaldır"
   },
   "passkeyRemoved": {
-    "message": "Passkey removed"
+    "message": "Geçiş anahtarı kaldırıldı"
   },
   "errorAssigningTargetCollection": {
     "message": "Error assigning target collection."

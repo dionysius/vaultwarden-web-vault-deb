@@ -801,10 +801,10 @@
     "message": "Canvia la contrasenya mestra"
   },
   "continueToWebApp": {
-    "message": "Continue to web app?"
+    "message": "Continua cap a l'aplicació web?"
   },
   "changeMasterPasswordOnWebConfirmation": {
-    "message": "You can change your master password on the Bitwarden web app."
+    "message": "Podeu canviar la vostra contrasenya mestra a l'aplicació web de Bitwarden."
   },
   "fingerprintPhrase": {
     "message": "Frase d'empremta digital",
@@ -1633,10 +1633,10 @@
     "message": "La integració en el navegador no és compatible"
   },
   "browserIntegrationErrorTitle": {
-    "message": "Error enabling browser integration"
+    "message": "S'ha produït un error en habilitar la integració del navegador"
   },
   "browserIntegrationErrorDesc": {
-    "message": "An error has occurred while enabling browser integration."
+    "message": "S'ha produït un error en activar la integració del navegador."
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "Malauradament, la integració del navegador només és compatible amb la versió de Mac App Store."
@@ -2698,7 +2698,7 @@
     "description": "Label indicating the most common import formats"
   },
   "success": {
-    "message": "Success"
+    "message": "Èxit"
   },
   "troubleshooting": {
     "message": "Resolució de problemes"
@@ -2716,9 +2716,9 @@
     "message": "Clau de pas suprimida"
   },
   "errorAssigningTargetCollection": {
-    "message": "Error assigning target collection."
+    "message": "S'ha produït un error en assignar la col·lecció de destinació."
   },
   "errorAssigningTargetFolder": {
-    "message": "Error assigning target folder."
+    "message": "S'ha produït un error en assignar la carpeta de destinació."
   }
 }

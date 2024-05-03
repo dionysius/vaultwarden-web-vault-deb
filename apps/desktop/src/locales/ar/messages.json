@@ -801,10 +801,10 @@
     "message": "تغيير كلمة المرور الرئيسية"
   },
   "continueToWebApp": {
-    "message": "Continue to web app?"
+    "message": "متابعة إلى تطبيق الويب؟"
   },
   "changeMasterPasswordOnWebConfirmation": {
-    "message": "You can change your master password on the Bitwarden web app."
+    "message": "يمكنك تغيير كلمة المرور الرئيسية الخاصة بك على تطبيق ويب Bitwarden."
   },
   "fingerprintPhrase": {
     "message": "عبارة بصمة الإصبع",
@@ -1633,10 +1633,10 @@
     "message": "تكامل المتصفح غير مدعوم"
   },
   "browserIntegrationErrorTitle": {
-    "message": "Error enabling browser integration"
+    "message": "خطأ في تمكين تكامل المتصفح"
   },
   "browserIntegrationErrorDesc": {
-    "message": "An error has occurred while enabling browser integration."
+    "message": "حدث خطأ أثناء تمكين دمج المتصفح."
   },
   "browserIntegrationMasOnlyDesc": {
     "message": "للأسف، لا يتم دعم تكامل المتصفح إلا في إصدار متجر تطبيقات ماك في الوقت الحالي."
@@ -1654,10 +1654,10 @@
     "message": "أضف طبقة أمان إضافية عن طريق طلب تأكيد عبارة بصمة الإصبع عند إنشاء رابط بين سطح المكتب الخاص بك والمتصفح. هذا يتطلب إجراء المستخدم والتحقق في كل مرة يتم فيها إنشاء اتصال."
   },
   "enableHardwareAcceleration": {
-    "message": "Use hardware acceleration"
+    "message": "استخدام تسارع العتاد"
   },
   "enableHardwareAccelerationDesc": {
-    "message": "By default this setting is ON. Turn OFF only if you experience graphical issues. Restart is required."
+    "message": "بشكل افتراضي هذا الإعداد مفعل. أوقف التشغيل فقط إذا واجهت مشاكل في الرسوم البيانية. إعادة التشغيل مطلوبة."
   },
   "approve": {
     "message": "الموافقة"
@@ -2698,27 +2698,27 @@
     "description": "Label indicating the most common import formats"
   },
   "success": {
-    "message": "Success"
+    "message": "نجاح"
   },
   "troubleshooting": {
-    "message": "Troubleshooting"
+    "message": "استكشاف الأخطاء وإصلاحها"
   },
   "disableHardwareAccelerationRestart": {
-    "message": "Disable hardware acceleration and restart"
+    "message": "تعطيل تسارع العتاد وإعادة التشغيل"
   },
   "enableHardwareAccelerationRestart": {
-    "message": "Enable hardware acceleration and restart"
+    "message": "تمكين تسارع العتاد وإعادة التشغيل"
   },
   "removePasskey": {
-    "message": "Remove passkey"
+    "message": "إزالة مفتاح المرور"
   },
   "passkeyRemoved": {
-    "message": "Passkey removed"
+    "message": "تمت إزالة كلمة المرور"
   },
   "errorAssigningTargetCollection": {
-    "message": "Error assigning target collection."
+    "message": "خطأ في تعيين مجموعة الأهداف."
   },
   "errorAssigningTargetFolder": {
-    "message": "Error assigning target folder."
+    "message": "خطأ في تعيين مجلد الهدف."
   }
 }

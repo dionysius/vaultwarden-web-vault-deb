@@ -163,7 +163,7 @@
     "message": "Número do passaporte"
   },
   "licenseNumber": {
-    "message": "Número da licença"
+    "message": "Número da carta de condução"
   },
   "email": {
     "message": "E-mail"
@@ -287,7 +287,7 @@
     "message": "Cidade / Localidade"
   },
   "stateProvince": {
-    "message": "Estado / Província"
+    "message": "Estado / Região"
   },
   "zipPostalCode": {
     "message": "Código postal"
@@ -435,10 +435,10 @@
     "message": "Fechar"
   },
   "minNumbers": {
-    "message": "Números mínimos"
+    "message": "Mínimo de números"
   },
   "minSpecial": {
-    "message": "Caracteres especiais minímos",
+    "message": "Mínimo de caracteres especiais",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
@@ -1292,7 +1292,7 @@
     "description": "ex. Date this item was updated"
   },
   "dateCreated": {
-    "message": "Criado a",
+    "message": "Criado",
     "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
