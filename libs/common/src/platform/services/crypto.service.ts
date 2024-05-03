@@ -771,16 +771,10 @@ export class CryptoService implements CryptoServiceAbstraction {
     publicKey: string;
     privateKey: EncString;
   }> {
-    // Verify keys don't exist
+    // Verify user key doesn't exist
     const existingUserKey = await this.getUserKey();
-    const existingPrivateKey = await this.getPrivateKey();
-    if (existingUserKey != null || existingPrivateKey != null) {
-      if (existingUserKey != null) {
-        this.logService.error("Tried to initialize account with existing user key.");
-      }
-      if (existingPrivateKey != null) {
-        this.logService.error("Tried to initialize account with existing private key.");
-      }
+    if (existingUserKey != null) {
+      this.logService.error("Tried to initialize account with existing user key.");
       throw new Error("Cannot initialize account, keys already exist.");
     }
 
