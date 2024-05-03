@@ -6,6 +6,7 @@ import { AuditService } from "@bitwarden/common/abstractions/audit.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
+import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 import { Cipher } from "@bitwarden/common/vault/models/domain/cipher";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { PasswordRepromptService } from "@bitwarden/vault";
@@ -29,6 +30,7 @@ export class ExposedPasswordsReportComponent extends BaseExposedPasswordsReportC
     private route: ActivatedRoute,
     passwordRepromptService: PasswordRepromptService,
     i18nService: I18nService,
+    syncService: SyncService,
   ) {
     super(
       cipherService,
@@ -37,6 +39,7 @@ export class ExposedPasswordsReportComponent extends BaseExposedPasswordsReportC
       modalService,
       passwordRepromptService,
       i18nService,
+      syncService,
     );
   }
 

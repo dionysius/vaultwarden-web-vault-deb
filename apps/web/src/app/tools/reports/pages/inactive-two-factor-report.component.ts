@@ -6,6 +6,7 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
+import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 import { CipherType } from "@bitwarden/common/vault/enums";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { PasswordRepromptService } from "@bitwarden/vault";
@@ -28,8 +29,16 @@ export class InactiveTwoFactorReportComponent extends CipherReportComponent impl
     private logService: LogService,
     passwordRepromptService: PasswordRepromptService,
     i18nService: I18nService,
+    syncService: SyncService,
   ) {
-    super(cipherService, modalService, passwordRepromptService, organizationService, i18nService);
+    super(
+      cipherService,
+      modalService,
+      passwordRepromptService,
+      organizationService,
+      i18nService,
+      syncService,
+    );
   }
 
   async ngOnInit() {

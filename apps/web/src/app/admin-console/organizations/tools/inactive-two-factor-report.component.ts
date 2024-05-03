@@ -6,6 +6,7 @@ import { OrganizationService } from "@bitwarden/common/admin-console/abstraction
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
+import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { PasswordRepromptService } from "@bitwarden/vault";
 
@@ -26,6 +27,7 @@ export class InactiveTwoFactorReportComponent extends BaseInactiveTwoFactorRepor
     passwordRepromptService: PasswordRepromptService,
     organizationService: OrganizationService,
     i18nService: I18nService,
+    syncService: SyncService,
   ) {
     super(
       cipherService,
@@ -34,6 +36,7 @@ export class InactiveTwoFactorReportComponent extends BaseInactiveTwoFactorRepor
       logService,
       passwordRepromptService,
       i18nService,
+      syncService,
     );
   }
 

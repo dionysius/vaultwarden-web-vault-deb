@@ -6,6 +6,7 @@ import { OrganizationService } from "@bitwarden/common/admin-console/abstraction
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
+import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 import { CipherRepromptType } from "@bitwarden/common/vault/enums/cipher-reprompt-type";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { PasswordRepromptService } from "@bitwarden/vault";
@@ -40,6 +41,7 @@ export class CipherReportComponent implements OnDestroy {
     protected passwordRepromptService: PasswordRepromptService,
     protected organizationService: OrganizationService,
     protected i18nService: I18nService,
+    private syncService: SyncService,
   ) {
     this.organizations$ = this.organizationService.organizations$;
     this.organizations$.pipe(takeUntil(this.destroyed$)).subscribe((orgs) => {
@@ -106,6 +108,7 @@ export class CipherReportComponent implements OnDestroy {
 
   async load() {
     this.loading = true;
+    await this.syncService.fullSync(false);
     // when a user fixes an item in a report we want to persist the filter they had
     // if they fix the last item of that filter we will go back to the "All" filter
     if (this.currentFilterStatus) {

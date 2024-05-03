@@ -5,6 +5,7 @@ import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
+import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { PasswordRepromptService } from "@bitwarden/vault";
 
@@ -24,8 +25,16 @@ export class UnsecuredWebsitesReportComponent extends BaseUnsecuredWebsitesRepor
     organizationService: OrganizationService,
     passwordRepromptService: PasswordRepromptService,
     i18nService: I18nService,
+    syncService: SyncService,
   ) {
-    super(cipherService, organizationService, modalService, passwordRepromptService, i18nService);
+    super(
+      cipherService,
+      organizationService,
+      modalService,
+      passwordRepromptService,
+      i18nService,
+      syncService,
+    );
   }
 
   async ngOnInit() {

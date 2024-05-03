@@ -6,6 +6,7 @@ import { OrganizationService } from "@bitwarden/common/admin-console/abstraction
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/password-strength";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
+import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 import { Cipher } from "@bitwarden/common/vault/models/domain/cipher";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { PasswordRepromptService } from "@bitwarden/vault";
@@ -29,6 +30,7 @@ export class WeakPasswordsReportComponent extends BaseWeakPasswordsReportCompone
     organizationService: OrganizationService,
     passwordRepromptService: PasswordRepromptService,
     i18nService: I18nService,
+    syncService: SyncService,
   ) {
     super(
       cipherService,
@@ -37,6 +39,7 @@ export class WeakPasswordsReportComponent extends BaseWeakPasswordsReportCompone
       modalService,
       passwordRepromptService,
       i18nService,
+      syncService,
     );
   }
 
