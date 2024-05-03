@@ -3,11 +3,11 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden Password Manager",
+    "message": "Bitwarden - Gestor de contrasenyes",
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
-    "message": "At home, at work, or on the go, Bitwarden easily secures all your passwords, passkeys, and sensitive information",
+    "message": "A casa, a la feina o en moviment, Bitwarden protegeix totes les contrasenyes, claus de pas i informació sensible",
     "description": "Extension description, MUST be less than 112 characters (Safari restriction)"
   },
   "loginOrCreateNewAccount": {
@@ -173,10 +173,10 @@
     "message": "Canvia la contrasenya mestra"
   },
   "continueToWebApp": {
-    "message": "Continue to web app?"
+    "message": "Continua cap a l'aplicació web?"
   },
   "changeMasterPasswordOnWebConfirmation": {
-    "message": "You can change your master password on the Bitwarden web app."
+    "message": "Podeu canviar la vostra contrasenya mestra a l'aplicació web de Bitwarden."
   },
   "fingerprintPhrase": {
     "message": "Frase d'empremta digital",
@@ -1119,9 +1119,6 @@
   },
   "commandLockVaultDesc": {
     "message": "Tanca la caixa forta"
-  },
-  "privateModeWarning": {
-    "message": "El suport del mode privat és experimental i algunes funcions són limitades."
   },
   "customFields": {
     "message": "Camps personalitzats"
@@ -3001,7 +2998,7 @@
     "description": "Notification message for when saving credentials has failed."
   },
   "success": {
-    "message": "Success"
+    "message": "Èxit"
   },
   "removePasskey": {
     "message": "Suprimeix la clau de pas"
@@ -3010,26 +3007,26 @@
     "message": "Clau de pas suprimida"
   },
   "unassignedItemsBannerNotice": {
-    "message": "Notice: Unassigned organization items are no longer visible in the All Vaults view and only accessible via the Admin Console."
+    "message": "Avís: els elements de l'organització no assignats ja no són visibles a la visualització de Totes les caixes fortes i només es poden accedir des de la Consola d'administració."
   },
   "unassignedItemsBannerSelfHostNotice": {
-    "message": "Notice: On May 16, 2024, unassigned organization items will no longer be visible in the All Vaults view and will only be accessible via the Admin Console."
+    "message": "Avís: el 16 de maig de 2024, els elements de l'organització no assignats deixaran de ser visibles a la visualització de Totes les caixes fortes i només es podran accedir des de la Consola d'administració."
   },
   "unassignedItemsBannerCTAPartOne": {
-    "message": "Assign these items to a collection from the",
+    "message": "Assigna aquests elements a una col·lecció de",
     "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
   },
   "unassignedItemsBannerCTAPartTwo": {
-    "message": "to make them visible.",
+    "message": "per fer-los visibles.",
     "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
   },
   "adminConsole": {
-    "message": "Admin Console"
+    "message": "Consola d'administració"
   },
   "errorAssigningTargetCollection": {
-    "message": "Error assigning target collection."
+    "message": "S'ha produït un error en assignar la col·lecció de destinació."
   },
   "errorAssigningTargetFolder": {
-    "message": "Error assigning target folder."
+    "message": "S'ha produït un error en assignar la carpeta de destinació."
   }
 }

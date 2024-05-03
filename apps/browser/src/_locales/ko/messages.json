@@ -176,7 +176,7 @@
     "message": "웹 앱에서 계속하시겠용?"
   },
   "changeMasterPasswordOnWebConfirmation": {
-    "message": "You can change your master password on the Bitwarden web app."
+    "message": "Bitwarden 웹 앱에서 마스터 비밀번호를 변경할 수 있습니다."
   },
   "fingerprintPhrase": {
     "message": "지문 구절",
@@ -229,10 +229,10 @@
     "message": "Bitwarden 도움말 센터"
   },
   "communityForums": {
-    "message": "Explore Bitwarden community forums"
+    "message": "Bitwarden 커뮤니티 포럼 탐색하기"
   },
   "contactSupport": {
-    "message": "Contact Bitwarden support"
+    "message": "Bitwarden 지원에 문의하기"
   },
   "sync": {
     "message": "동기화"
@@ -275,7 +275,7 @@
     "message": "길이"
   },
   "passwordMinLength": {
-    "message": "Minimum password length"
+    "message": "최소 비밀번호 길이"
   },
   "uppercase": {
     "message": "대문자 (A-Z)"
@@ -333,7 +333,7 @@
     "message": "비밀번호"
   },
   "totp": {
-    "message": "Authenticator secret"
+    "message": "인증기 비밀 키"
   },
   "passphrase": {
     "message": "패스프레이즈"
@@ -375,10 +375,10 @@
     "message": "기타"
   },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
-    "message": "Set up an unlock method to change your vault timeout action."
+    "message": "잠금 해제 방법을 설정하여 보관함의 시간 초과 동작을 변경하세요."
   },
   "unlockMethodNeeded": {
-    "message": "Set up an unlock method in Settings"
+    "message": "설정에서 잠금 해제 수단 설정하기"
   },
   "rateExtension": {
     "message": "확장 프로그램 평가"
@@ -421,7 +421,7 @@
     "message": "지금 잠그기"
   },
   "lockAll": {
-    "message": "Lock all"
+    "message": "모두 잠그기"
   },
   "immediately": {
     "message": "즉시"
@@ -484,7 +484,7 @@
     "message": "마스터 비밀번호를 재입력해야 합니다."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "마스터 비밀번호는 최소 $VALUE$자 이상이어야 합니다.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -500,10 +500,10 @@
     "message": "계정 생성이 완료되었습니다! 이제 로그인하실 수 있습니다."
   },
   "youSuccessfullyLoggedIn": {
-    "message": "You successfully logged in"
+    "message": "로그인에 성공했습니다."
   },
   "youMayCloseThisWindow": {
-    "message": "You may close this window"
+    "message": "이제 창을 닫으실 수 있습니다."
   },
   "masterPassSent": {
     "message": "마스터 비밀번호 힌트가 담긴 이메일을 보냈습니다."
@@ -528,16 +528,16 @@
     "message": "선택한 항목을 이 페이지에서 자동 완성할 수 없습니다. 대신 정보를 직접 복사 / 붙여넣기하여 사용하십시오."
   },
   "totpCaptureError": {
-    "message": "Unable to scan QR code from the current webpage"
+    "message": "현재 웹페이지에서 QR 코드를 스캔할 수 없습니다"
   },
   "totpCaptureSuccess": {
-    "message": "Authenticator key added"
+    "message": "인증 키를 추가했습니다"
   },
   "totpCapture": {
-    "message": "Scan authenticator QR code from current webpage"
+    "message": "현재 웹페이지에서 QR 코드 스캔하기"
   },
   "copyTOTP": {
-    "message": "Copy Authenticator key (TOTP)"
+    "message": "인증서 키 (TOTP) 복사"
   },
   "loggedOut": {
     "message": "로그아웃됨"
@@ -644,7 +644,7 @@
     "description": "This is the folder for uncategorized items"
   },
   "enableAddLoginNotification": {
-    "message": "Ask to add login"
+    "message": "로그인을 추가할 건지 물어보기"
   },
   "addLoginNotificationDesc": {
     "message": "\"로그인 추가 알림\"을 사용하면 새 로그인을 사용할 때마다 보관함에 그 로그인을 추가할 것인지 물어봅니다."
@@ -653,7 +653,7 @@
     "message": "Ask to add an item if one isn't found in your vault. Applies to all logged in accounts."
   },
   "showCardsCurrentTab": {
-    "message": "Show cards on Tab page"
+    "message": "탭 페이지에 카드 표시"
   },
   "showCardsCurrentTabDesc": {
     "message": "List card items on the Tab page for easy auto-fill."
@@ -679,7 +679,7 @@
     "message": "예, 지금 저장하겠습니다."
   },
   "enableChangedPasswordNotification": {
-    "message": "Ask to update existing login"
+    "message": "현재 로그인으로 업데이트할 건지 묻기"
   },
   "changedPasswordNotificationDesc": {
     "message": "Ask to update a login's password when a change is detected on a website."
@@ -703,7 +703,7 @@
     "message": "Unlock your Bitwarden vault to complete the auto-fill request."
   },
   "notificationUnlock": {
-    "message": "Unlock"
+    "message": "잠금 해제"
   },
   "enableContextMenuItem": {
     "message": "Show context menu options"
@@ -1119,9 +1119,6 @@
   },
   "commandLockVaultDesc": {
     "message": "보관함 잠그기"
-  },
-  "privateModeWarning": {
-    "message": "시크릿 모드 지원은 실험적이며 일부 기능이 제한됩니다."
   },
   "customFields": {
     "message": "사용자 지정 필드"

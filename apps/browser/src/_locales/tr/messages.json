@@ -3,11 +3,11 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden Password Manager",
+    "message": "Bitwarden Parola Yöneticisi",
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
-    "message": "At home, at work, or on the go, Bitwarden easily secures all your passwords, passkeys, and sensitive information",
+    "message": "Bitwarden tüm parolalarınızı, geçiş anahtarlarınızı ve hassas bilgilerinizi güvenle saklar",
     "description": "Extension description, MUST be less than 112 characters (Safari restriction)"
   },
   "loginOrCreateNewAccount": {
@@ -173,10 +173,10 @@
     "message": "Ana parolayı değiştir"
   },
   "continueToWebApp": {
-    "message": "Continue to web app?"
+    "message": "Web uygulamasına devam edilsin mi?"
   },
   "changeMasterPasswordOnWebConfirmation": {
-    "message": "You can change your master password on the Bitwarden web app."
+    "message": "Ana parolanızı Bitwarden web uygulamasında değiştirebilirsiniz."
   },
   "fingerprintPhrase": {
     "message": "Parmak izi ifadesi",
@@ -333,7 +333,7 @@
     "message": "Parola"
   },
   "totp": {
-    "message": "Authenticator secret"
+    "message": "Kimlik doğrulama sırrı"
   },
   "passphrase": {
     "message": "Uzun söz"
@@ -528,16 +528,16 @@
     "message": "Seçilen hesap bu sayfada otomatik olarak doldurulamadı. Lütfen bilgileri elle kopyalayıp yapıştırın."
   },
   "totpCaptureError": {
-    "message": "Mevcut web sayfasından QR kodu taranamıyor"
+    "message": "Mevcut web sayfasındaki QR kodu taranamıyor"
   },
   "totpCaptureSuccess": {
     "message": "Kimlik doğrulama anahtarı eklendi"
   },
   "totpCapture": {
-    "message": "Mevcut web sayfasından kimlik doğrulayıcı QR kodunu tarayın"
+    "message": "Mevcut web sayfasındaki kimlik doğrulayıcı QR kodunu tarayın"
   },
   "copyTOTP": {
-    "message": "Kimlik Doğrulayıcı anahtarını kopyala (TOTP)"
+    "message": "Kimlik doğrulama anahtarını kopyala (TOTP)"
   },
   "loggedOut": {
     "message": "Çıkış yapıldı"
@@ -1119,9 +1119,6 @@
   },
   "commandLockVaultDesc": {
     "message": "Kasayı kilitle"
-  },
-  "privateModeWarning": {
-    "message": "Gizli mod desteği deneyseldir ve bazı özellikler kısıtlıdır."
   },
   "customFields": {
     "message": "Özel alanlar"
@@ -2005,7 +2002,7 @@
     "message": "Klasör seç..."
   },
   "noFoldersFound": {
-    "message": "Herhangi bir klasör bulunamadı",
+    "message": "Hiçbir klasör bulunamadı",
     "description": "Used as a message within the notification bar when no folders are found"
   },
   "orgPermissionsUpdatedMustSetPassword": {
@@ -2652,13 +2649,13 @@
     }
   },
   "tryAgain": {
-    "message": "Tekrar deneyin"
+    "message": "Yeniden dene"
   },
   "verificationRequiredForActionSetPinToContinue": {
-    "message": "Bu işlem için doğrulama gerekiyor. Devam etmek için bir PIN ayarlayın."
+    "message": "Bu işlem için doğrulama gerekiyor. Devam etmek için bir PIN belirleyin."
   },
   "setPin": {
-    "message": "PIN Belirle"
+    "message": "PIN belirle"
   },
   "verifyWithBiometrics": {
     "message": "Biyometri ile doğrula"
@@ -2673,7 +2670,7 @@
     "message": "Farklı bir yönteme mi ihtiyacınız var?"
   },
   "useMasterPassword": {
-    "message": "Ana parolayı kullanın"
+    "message": "Ana parolayı kullan"
   },
   "usePin": {
     "message": "PIN kullan"
@@ -2685,7 +2682,7 @@
     "message": "E-posta adresinize gönderilen doğrulama kodunu girin."
   },
   "resendCode": {
-    "message": "Kodu tekrar gönder"
+    "message": "Kodu yeniden gönder"
   },
   "total": {
     "message": "Toplam"
@@ -2700,19 +2697,19 @@
     }
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
-    "message": "DUO'yu başlatın ve oturum açmayı tamamlamak için adımları izleyin."
+    "message": "Duo'yu başlatın ve oturum açmayı tamamlamak için adımları izleyin."
   },
   "duoRequiredForAccount": {
-    "message": "Hesabınız için Duo'ya iki adımlı giriş yapmanız gerekiyor."
+    "message": "Hesabınız için Duo iki adımlı giriş gereklidir."
   },
   "popoutTheExtensionToCompleteLogin": {
-    "message": "Oturum açma işlemini tamamlamak için uzantıyı açın."
+    "message": "Giriş işlemini tamamlamak için uzantıyı dışarı alın."
   },
   "popoutExtension": {
-    "message": "Popout uzantısı"
+    "message": "Uzantıyı dışarı al"
   },
   "launchDuo": {
-    "message": "DUO'yu başlat"
+    "message": "Duo'yu başlat"
   },
   "importFormatError": {
     "message": "Veriler doğru biçimlendirilmemiş. Lütfen içe aktarma dosyanızı kontrol edin ve tekrar deneyin."
@@ -2795,7 +2792,7 @@
     "message": "Geçiş anahtarı klonlanan öğeye kopyalanmayacaktır. Bu öğeyi klonlamaya devam etmek istiyor musunuz?"
   },
   "passkeyFeatureIsNotImplementedForAccountsWithoutMasterPassword": {
-    "message": "Açılan sitenin gerektirdiği doğrulama. Bu özellik henüz ana şifresi olmayan hesaplara uygulanmamaktadır."
+    "message": "Site kimlik doğrulaması gerektiriyor. Bu özellik henüz ana parolası olmayan hesaplarda kullanılamaz."
   },
   "logInWithPasskey": {
     "message": "Geçiş anahtarı ile giriş yapılsın mı?"
@@ -2828,13 +2825,13 @@
     "message": "Geçiş anahtarının üzerine yazılsın mı?"
   },
   "overwritePasskeyAlert": {
-    "message": "Bu öğe zaten bir şifre anahtarı içeriyor. Geçerli şifrenin üzerine yazmak istediğinizden emin misiniz?"
+    "message": "Bu kayıt zaten bir geçiş anahtarı içeriyor. Mevcut geçiş anahtarının üzerine yazmak istediğinizden emin misiniz?"
   },
   "featureNotSupported": {
     "message": "Bu özellik henüz desteklenmiyor"
   },
   "yourPasskeyIsLocked": {
-    "message": "Şifreyi kullanmak için kimlik doğrulama gerekiyor. Devam etmek için kimliğinizi doğrulayın."
+    "message": "Geçiş anahtarını kullanmak için kimlik doğrulama gerekiyor. Devam etmek için kimliğinizi doğrulayın."
   },
   "multifactorAuthenticationCancelled": {
     "message": "Çok faktörlü kimlik doğrulama iptal edildi"
@@ -2943,10 +2940,10 @@
     "message": "konum"
   },
   "useDeviceOrHardwareKey": {
-    "message": "Cihazınızı veya donanım anahtarınızı kullanın"
+    "message": "Cihazınızı veya donanımsal anahtarınızı kullanın"
   },
   "justOnce": {
-    "message": "Yalnızca bir kez"
+    "message": "Yalnızca bir defa"
   },
   "alwaysForThisSite": {
     "message": "Bu site için her zaman"
@@ -2961,23 +2958,23 @@
     }
   },
   "commonImportFormats": {
-    "message": "Ortak formatlar",
+    "message": "Sık kullanılan biçimler",
     "description": "Label indicating the most common import formats"
   },
   "overrideDefaultBrowserAutofillTitle": {
-    "message": "Bitwarden varsayılan şifre yöneticiniz yapılsın mı?",
+    "message": "Bitwarden varsayılan parola yöneticiniz yapılsın mı?",
     "description": "Dialog title facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutofillDescription": {
-    "message": "Bu seçeneğin göz ardı edilmesi, Bitwarden otomatik doldurma menüsü ile tarayıcınızınki arasında çakışmalara neden olabilir.",
+    "message": "Bu seçeneği göz ardı ederseniz Bitwarden otomatik doldurma menüsüyle tarayıcınızınki arasında çakışma yaşanabilir.",
     "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutoFillSettings": {
-    "message": "Bitwarden'ı varsayılan şifre yöneticiniz yapın",
+    "message": "Bitwarden'ı varsayılan parola yöneticiniz yapın",
     "description": "Label for the setting that allows overriding the default browser autofill settings"
   },
   "privacyPermissionAdditionNotGrantedTitle": {
-    "message": "Bitwarden varsayılan parola yöneticisi olarak ayarlanamıyor",
+    "message": "Bitwarden varsayılan parola yöneticisi olarak ayarlanamadı",
     "description": "Title for the dialog that appears when the user has not granted the extension permission to set privacy settings"
   },
   "privacyPermissionAdditionNotGrantedDescription": {
@@ -3001,13 +2998,13 @@
     "description": "Notification message for when saving credentials has failed."
   },
   "success": {
-    "message": "Success"
+    "message": "Başarılı"
   },
   "removePasskey": {
-    "message": "Remove passkey"
+    "message": "Geçiş anahtarını kaldır"
   },
   "passkeyRemoved": {
-    "message": "Passkey removed"
+    "message": "Geçiş anahtarı kaldırıldı"
   },
   "unassignedItemsBannerNotice": {
     "message": "Notice: Unassigned organization items are no longer visible in the All Vaults view and only accessible via the Admin Console."
@@ -3024,7 +3021,7 @@
     "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
   },
   "adminConsole": {
-    "message": "Admin Console"
+    "message": "Yönetici Konsolu"
   },
   "errorAssigningTargetCollection": {
     "message": "Error assigning target collection."

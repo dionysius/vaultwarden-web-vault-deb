@@ -3,11 +3,11 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden Password Manager",
+    "message": "Bitwarden - Správce hesel",
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
-    "message": "At home, at work, or on the go, Bitwarden easily secures all your passwords, passkeys, and sensitive information",
+    "message": "Bitwarden zabezpečí všechna Vaše hesla, přístupové klíče a citlivé informace doma, v práci nebo na cestách",
     "description": "Extension description, MUST be less than 112 characters (Safari restriction)"
   },
   "loginOrCreateNewAccount": {
@@ -1119,9 +1119,6 @@
   },
   "commandLockVaultDesc": {
     "message": "Zamkne trezor."
-  },
-  "privateModeWarning": {
-    "message": "Podpora soukromého režimu je experimentální a některé funkce jsou omezené."
   },
   "customFields": {
     "message": "Vlastní pole"

@@ -1120,9 +1120,6 @@
   "commandLockVaultDesc": {
     "message": "锁定密码库"
   },
-  "privateModeWarning": {
-    "message": "私密模式的支持是实验性的，某些功能会受到限制。"
-  },
   "customFields": {
     "message": "自定义字段"
   },
@@ -3016,11 +3013,11 @@
     "message": "注意：从 2024 年 5 月 16 日起，未分配的组织项目在「所有密码库」视图中将不再可见，只能通过管理控制台访问。"
   },
   "unassignedItemsBannerCTAPartOne": {
-    "message": "Assign these items to a collection from the",
+    "message": "将这些项目分配到集合，通过",
     "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
   },
   "unassignedItemsBannerCTAPartTwo": {
-    "message": "以使其可见。",
+    "message": "，以使其可见。",
     "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
   },
   "adminConsole": {
