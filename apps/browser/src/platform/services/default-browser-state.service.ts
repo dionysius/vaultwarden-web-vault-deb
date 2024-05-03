@@ -1,5 +1,3 @@
-import { BehaviorSubject } from "rxjs";
-
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
@@ -15,21 +13,13 @@ import { MigrationRunner } from "@bitwarden/common/platform/services/migration-r
 import { StateService as BaseStateService } from "@bitwarden/common/platform/services/state.service";
 
 import { Account } from "../../models/account";
-import { browserSession, sessionSync } from "../decorators/session-sync-observable";
 
 import { BrowserStateService } from "./abstractions/browser-state.service";
 
-@browserSession
 export class DefaultBrowserStateService
   extends BaseStateService<GlobalState, Account>
   implements BrowserStateService
 {
-  @sessionSync({
-    initializer: Account.fromJSON as any, // TODO: Remove this any when all any types are removed from Account
-    initializeAs: "record",
-  })
-  protected accountsSubject: BehaviorSubject<{ [userId: string]: Account }>;
-
   protected accountDeserializer = Account.fromJSON;
 
   constructor(

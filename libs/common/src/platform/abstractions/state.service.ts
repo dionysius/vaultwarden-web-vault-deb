@@ -1,5 +1,3 @@
-import { Observable } from "rxjs";
-
 import { BiometricKey } from "../../auth/types/biometric-key";
 import { GeneratorOptions } from "../../tools/generator/generator-options";
 import { GeneratedPasswordHistory, PasswordGeneratorOptions } from "../../tools/generator/password";
@@ -24,8 +22,6 @@ export type InitOptions = {
 };
 
 export abstract class StateService<T extends Account = Account> {
-  accounts$: Observable<{ [userId: string]: T }>;
-
   addAccount: (account: T) => Promise<void>;
   clearDecryptedData: (userId: UserId) => Promise<void>;
   clean: (options?: StorageOptions) => Promise<void>;

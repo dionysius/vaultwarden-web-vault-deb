@@ -1,12 +1,13 @@
-import { firstValueFrom } from "rxjs";
+import { firstValueFrom, map } from "rxjs";
 
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
-import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
+import { UserId } from "@bitwarden/common/types/guid";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CipherType } from "@bitwarden/common/vault/enums";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
@@ -28,7 +29,7 @@ import { UserStatusErrorResponse } from "../models/native-messaging/encrypted-me
 
 export class EncryptedMessageHandlerService {
   constructor(
-    private stateService: StateService,
+    private accountService: AccountService,
     private authService: AuthService,
     private cipherService: CipherService,
     private policyService: PolicyService,
@@ -62,7 +63,9 @@ export class EncryptedMessageHandlerService {
   }
 
   private async checkUserStatus(userId: string): Promise<string> {
-    const activeUserId = await this.stateService.getUserId();
+    const activeUserId = await firstValueFrom(
+      this.accountService.activeAccount$.pipe(map((a) => a?.id)),
+    );
 
     if (userId !== activeUserId) {
       return "not-active-user";
@@ -77,17 +80,19 @@ export class EncryptedMessageHandlerService {
   }
 
   private async statusCommandHandler(): Promise<AccountStatusResponse[]> {
-    const accounts = await firstValueFrom(this.stateService.accounts$);
-    const activeUserId = await this.stateService.getUserId();
+    const accounts = await firstValueFrom(this.accountService.accounts$);
+    const activeUserId = await firstValueFrom(
+      this.accountService.activeAccount$.pipe(map((a) => a?.id)),
+    );
 
     if (!accounts || !Object.keys(accounts)) {
       return [];
     }
 
     return Promise.all(
-      Object.keys(accounts).map(async (userId) => {
+      Object.keys(accounts).map(async (userId: UserId) => {
         const authStatus = await this.authService.getAuthStatus(userId);
-        const email = await this.stateService.getEmail({ userId });
+        const email = accounts[userId].email;
 
         return {
           id: userId,
@@ -107,7 +112,9 @@ export class EncryptedMessageHandlerService {
     }
 
     const ciphersResponse: CipherResponse[] = [];
-    const activeUserId = await this.stateService.getUserId();
+    const activeUserId = await firstValueFrom(
+      this.accountService.activeAccount$.pipe(map((a) => a?.id)),
+    );
     const authStatus = await this.authService.getAuthStatus(activeUserId);
 
     if (authStatus !== AuthenticationStatus.Unlocked) {

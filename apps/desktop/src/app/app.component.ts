@@ -218,8 +218,10 @@ export class AppComponent implements OnInit, OnDestroy {
             await this.vaultTimeoutService.lock(message.userId);
             break;
           case "lockAllVaults": {
-            const currentUser = await this.stateService.getUserId();
-            const accounts = await firstValueFrom(this.stateService.accounts$);
+            const currentUser = await firstValueFrom(
+              this.accountService.activeAccount$.pipe(map((a) => a.id)),
+            );
+            const accounts = await firstValueFrom(this.accountService.accounts$);
             await this.vaultTimeoutService.lock(currentUser);
             for (const account of Object.keys(accounts)) {
               if (account === currentUser) {
@@ -690,7 +692,7 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   private async checkForSystemTimeout(timeout: number): Promise<void> {
-    const accounts = await firstValueFrom(this.stateService.accounts$);
+    const accounts = await firstValueFrom(this.accountService.accounts$);
     for (const userId in accounts) {
       if (userId == null) {
         continue;
