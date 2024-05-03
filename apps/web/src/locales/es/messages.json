@@ -1809,12 +1809,16 @@
   "unsecuredWebsitesFound": {
     "message": "Sitios web no seguros encontrados"
   },
-  "unsecuredWebsitesFoundDesc": {
-    "message": "Hemos encontrado $COUNT$ elemento(s) en su caja fuerte con URIs no seguras. Si el sitio web lo permite debe cambiar su esquema URI a https://.",
+  "unsecuredWebsitesFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ with unsecured URIs. You should change their URI scheme to https:// if the website allows it.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1830,12 +1834,16 @@
   "inactive2faFound": {
     "message": "Inicios de sesión sin 2FA encontrados"
   },
-  "inactive2faFoundDesc": {
-    "message": "Hemos encontrado $COUNT$ sitios web en tu bóveda que pueden no estar configurados con inicio de sesión en dos pasos (de acuerdo a 2fa. irectory). Para proteger aún más estas cuentas, debe configurar el inicio de sesión en dos pasos.",
+  "inactive2faFoundReportDesc": {
+    "message": "We found $COUNT$ website(s) in your $VAULT$ that may not be configured with two-step login (according to 2fa.directory). To further protect these accounts, you should set up two-step login.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1854,12 +1862,16 @@
   "exposedPasswordsFound": {
     "message": "Contraseñas comprometidas encontradas"
   },
-  "exposedPasswordsFoundDesc": {
-    "message": "Hemos encontrado $COUNT$ elementos en su caja fuerte que tienen contraseñas que fueron comprometidas en filtraciones de datos conocidas. Debe cambiarlos para utilizar una contraseña nueva.",
+  "exposedPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ that have passwords that were exposed in known data breaches. You should change them to use a new password.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1887,12 +1899,16 @@
   "weakPasswordsFound": {
     "message": "Contraseñas débiles encontradas"
   },
-  "weakPasswordsFoundDesc": {
-    "message": "Hemos encontrado $COUNT$ elemento(s) en su caja fuerte con contraseñas que no son fuertes. Se deben actualizar para usar contraseñas más fuertes.",
+  "weakPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ with passwords that are not strong. You should update them to use stronger passwords.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1908,12 +1924,16 @@
   "reusedPasswordsFound": {
     "message": "Contraseñas reutilizadas encontradas"
   },
-  "reusedPasswordsFoundDesc": {
-    "message": "Hemos encontrado $COUNT$ contraseña(s) que están siendo reutilizadas en su caja fuerte. Debe cambiarlas a un valor único.",
+  "reusedPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ passwords that are being reused in your $VAULT$. You should change them to a unique value.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -6460,6 +6480,9 @@
   "editGroupCollectionsDesc": {
     "message": "Conceder acceso a las colecciones añadiéndolas a este grupo."
   },
+  "editGroupCollectionsRestrictionsDesc": {
+    "message": "You can only assign collections you manage."
+  },
   "accessAllCollectionsDesc": {
     "message": "Otorgar acceso a todas las colecciones actuales y futuras."
   },
@@ -8049,5 +8072,8 @@
   },
   "collectionItemSelect": {
     "message": "Select collection item"
+  },
+  "manageBillingFromProviderPortalMessage": {
+    "message": "Manage billing from the Provider Portal"
   }
 }

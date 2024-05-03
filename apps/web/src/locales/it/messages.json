@@ -1809,12 +1809,16 @@
   "unsecuredWebsitesFound": {
     "message": "Siti web non protetti trovati"
   },
-  "unsecuredWebsitesFoundDesc": {
+  "unsecuredWebsitesFoundReportDesc": {
     "message": "Abbiamo trovato $COUNT$ elementi nella tua cassaforte con URI non protetti. Dovresti cambiare il loro schema URL in https:// se il sito lo consente.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1830,12 +1834,16 @@
   "inactive2faFound": {
     "message": "Login senza verifica in due passaggi trovati"
   },
-  "inactive2faFoundDesc": {
+  "inactive2faFoundReportDesc": {
     "message": "Abbiamo trovato $COUNT$ siti web nella tua cassaforte che potrebbero non essere configurati con la verifica in due passaggi (secondo 2fa.directory). Per proteggere ulteriormente questi account, abilita la verifica in due passaggi.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1854,12 +1862,16 @@
   "exposedPasswordsFound": {
     "message": "Password esposte trovate"
   },
-  "exposedPasswordsFoundDesc": {
-    "message": "Abbiamo trovato $COUNT$ elementi nella tua cassaforte contenenti password che sono state esposte in violazioni di dati. Dovresti modificarli per usare una nuova password.",
+  "exposedPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ that have passwords that were exposed in known data breaches. You should change them to use a new password.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1887,12 +1899,16 @@
   "weakPasswordsFound": {
     "message": "Password deboli trovate"
   },
-  "weakPasswordsFoundDesc": {
-    "message": "Abbiamo trovato $COUNT$ elementi nella tua cassaforte con password deboli. Aggiornali usando password più sicure.",
+  "weakPasswordsFoundReportDesc": {
+    "message": "Abbiamo trovato $COUNT$ elementi nella tua cassaforte con password che non sono forti. Dovresti aggiornarli per usare password più forti.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1908,12 +1924,16 @@
   "reusedPasswordsFound": {
     "message": "Password riutilizzate trovate"
   },
-  "reusedPasswordsFoundDesc": {
-    "message": "Abbiamo trovato $COUNT$ password riutilizzate nella tua cassaforte. Cambiale in modo che ognuna sia unica.",
+  "reusedPasswordsFoundReportDesc": {
+    "message": "Abbiamo trovato $COUNT$ password che vengono riutilizzate nella tua cassaforte. Dovresti cambiarli in un valore univoco.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -6460,6 +6480,9 @@
   "editGroupCollectionsDesc": {
     "message": "Concedi accesso alle raccolte aggiungendo gli utenti a questo gruppo."
   },
+  "editGroupCollectionsRestrictionsDesc": {
+    "message": "Puoi assegnare solo le raccolte che gestisci."
+  },
   "accessAllCollectionsDesc": {
     "message": "Concedi accesso a tutte le raccolte esistenti e future."
   },
@@ -7907,7 +7930,7 @@
     "message": "Non puoi aggiungerti a un gruppo."
   },
   "unassignedItemsBannerSelfHost": {
-    "message": "Notice: On May 2, 2024, unassigned organization items will no longer be visible in your All Vaults view across devices and will only be accessible via the Admin Console. Assign these items to a collection from the Admin Console to make them visible."
+    "message": "Avviso: dal 2 maggio 2024, gli elementi dell'organizzazione non assegnati non saranno più visibili nella tua visualizzazione Tutte le Cassaforti su tutti i dispositivi e saranno accessibili solo tramite la Console di amministrazione. Assegna questi elementi ad una raccolta dalla Console di amministrazione per renderli visibili."
   },
   "unassignedItemsBannerNotice": {
     "message": "Avviso: gli elementi dell'organizzazione non assegnati non sono più visibili nella visualizzazione Tutte le Cassaforti su tutti i dispositivi e sono ora accessibili solo tramite la Console di amministrazione."
@@ -7966,53 +7989,53 @@
     "message": "Errore nell'assegnazione della cartella di destinazione."
   },
   "integrationsAndSdks": {
-    "message": "Integrations & SDKs",
+    "message": "Integrazioni e SDK",
     "description": "The title for the section that deals with integrations and SDKs."
   },
   "integrations": {
-    "message": "Integrations"
+    "message": "Integrazioni"
   },
   "integrationsDesc": {
-    "message": "Automatically sync secrets from Bitwarden Secrets Manager to a third-party service."
+    "message": "Sincronizza automaticamente i segreti da Bitwarden Secrets Manager a un servizio di terze parti."
   },
   "sdks": {
-    "message": "SDKs"
+    "message": "SDK"
   },
   "sdksDesc": {
-    "message": "Use Bitwarden Secrets Manager SDK in the following programming languages to build your own applications."
+    "message": "Usa l'SDK di Bitwarden Secrets Manager nei seguenti linguaggi di programmazione per creare le tue applicazioni."
   },
   "setUpGithubActions": {
-    "message": "Set up Github Actions"
+    "message": "Configura GitHub Actions"
   },
   "setUpGitlabCICD": {
-    "message": "Set up GitLab CI/CD"
+    "message": "Configura GitLab CI/CD"
   },
   "setUpAnsible": {
-    "message": "Set up Ansible"
+    "message": "Configura Ansible"
   },
   "cSharpSDKRepo": {
-    "message": "View C# repository"
+    "message": "Visualizza la repository C#"
   },
   "cPlusPlusSDKRepo": {
-    "message": "View C++ repository"
+    "message": "Visualizza la repository C++"
   },
   "jsWebAssemblySDKRepo": {
-    "message": "View JS WebAssembly repository"
+    "message": "Visualizza la repository JS WebAssembly"
   },
   "javaSDKRepo": {
-    "message": "View Java repository"
+    "message": "Visualizza la repository Java"
   },
   "pythonSDKRepo": {
-    "message": "View Python repository"
+    "message": "Visualizza la repository Python"
   },
   "phpSDKRepo": {
-    "message": "View php repository"
+    "message": "Visualizza la repository php"
   },
   "rubySDKRepo": {
-    "message": "View Ruby repository"
+    "message": "Visualizza la repository Ruby"
   },
   "goSDKRepo": {
-    "message": "View Go repository"
+    "message": "Visualizza la repository Go"
   },
   "createNewClientToManageAsProvider": {
     "message": "Crea una nuova organizzazione cliente da gestire come fornitore. Gli slot aggiuntivi saranno riflessi nel prossimo ciclo di fatturazione."
@@ -8036,10 +8059,10 @@
     "message": "Nuovo cliente creato con successo"
   },
   "noAccess": {
-    "message": "No access"
+    "message": "Nessun accesso"
   },
   "collectionAdminConsoleManaged": {
-    "message": "This collection is only accessible from the admin console"
+    "message": "Questa raccolta è accessibile solo dalla console di amministrazione"
   },
   "organizationOptionsMenu": {
     "message": "Attiva/Disattiva Menu Organizzazione"
@@ -8049,5 +8072,8 @@
   },
   "collectionItemSelect": {
     "message": "Seleziona elemento della raccolta"
+  },
+  "manageBillingFromProviderPortalMessage": {
+    "message": "Gestisci la fatturazione dal Portale del Fornitore"
   }
 }

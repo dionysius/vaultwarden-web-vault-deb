@@ -648,10 +648,10 @@
     "message": "Pidä tämä ikkuna avoinna ja seuraa selaimesi opasteita."
   },
   "errorCreatingPasskey": {
-    "message": "Virhe suojausavaimen luonnissa"
+    "message": "Virhe luotaessa suojausavainta"
   },
   "errorCreatingPasskeyInfo": {
-    "message": "Suojausavaimesi luonnissa kohdattiin ongelma."
+    "message": "Suojausavaintasi luotaessa kohdattiin ongelma."
   },
   "passkeySuccessfullyCreated": {
     "message": "Suojausavain on luotu"
@@ -1809,12 +1809,16 @@
   "unsecuredWebsitesFound": {
     "message": "Suojaamattomia verkkosivustoja löytyi"
   },
-  "unsecuredWebsitesFoundDesc": {
-    "message": "Löysimme holvistasi $COUNT$ kohdetta suojaamattomilla URI-osoitteilla. Sinun tulisi muuttaa niiden URI suojattuun \"https://\" -muotoon, jos sivusto tukee sitä.",
+  "unsecuredWebsitesFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ with unsecured URIs. You should change their URI scheme to https:// if the website allows it.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1830,12 +1834,16 @@
   "inactive2faFound": {
     "message": "Löytyi kirjautumistietoja, joille ei ole määritetty kaksivaiheista kirjautumista"
   },
-  "inactive2faFoundDesc": {
-    "message": "Löysimme holvistasi $COUNT$ sivustoa, joita ei ehkä ole määritetty käyttämään kaksivaiheista kirjautumista (2fa.directory-sivuston mukaan). Suojataksesi nämä tilit paremmin, sinun tulisi määrittää niille kaksivaiheinen kirjautuminen.",
+  "inactive2faFoundReportDesc": {
+    "message": "We found $COUNT$ website(s) in your $VAULT$ that may not be configured with two-step login (according to 2fa.directory). To further protect these accounts, you should set up two-step login.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1854,12 +1862,16 @@
   "exposedPasswordsFound": {
     "message": "Paljastuneita salasanoja löytyi"
   },
-  "exposedPasswordsFoundDesc": {
-    "message": "Löysimme holvistasi $COUNT$ kohdetta, jotka sisältävät tunnetuissa tietovuodoissa paljastuneita salasanoja. Näiden palveluiden salasanat tulisi vaihtaa.",
+  "exposedPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ that have passwords that were exposed in known data breaches. You should change them to use a new password.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1887,12 +1899,16 @@
   "weakPasswordsFound": {
     "message": "Heikkoja salasanoja löytyi"
   },
-  "weakPasswordsFoundDesc": {
-    "message": "Löysimme holvistasi $COUNT$ kohdetta, joiden salasanat eivät ole vahvoja. Nämä tulisi korvata vahvemmilla salasanoilla.",
+  "weakPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ with passwords that are not strong. You should update them to use stronger passwords.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1908,12 +1924,16 @@
   "reusedPasswordsFound": {
     "message": "Toistuvia salasanoja löytyi"
   },
-  "reusedPasswordsFoundDesc": {
-    "message": "Löysimme holvistasi $COUNT$ toistuvasti käytettyä salasanaa. Ne tulisi vaihtaa yksilöllisiksi.",
+  "reusedPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ passwords that are being reused in your $VAULT$. You should change them to a unique value.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -6460,6 +6480,9 @@
   "editGroupCollectionsDesc": {
     "message": "Myönnä käyttöoikeudet kokoelmiin lisäämällä heidät tähän ryhmään."
   },
+  "editGroupCollectionsRestrictionsDesc": {
+    "message": "You can only assign collections you manage."
+  },
   "accessAllCollectionsDesc": {
     "message": "Myönnä käyttöoikeudet kaikkiin nykyisiin ja tuleviin kokoelmiin"
   },
@@ -8049,5 +8072,8 @@
   },
   "collectionItemSelect": {
     "message": "Valitse kokoelman kohde"
+  },
+  "manageBillingFromProviderPortalMessage": {
+    "message": "Manage billing from the Provider Portal"
   }
 }

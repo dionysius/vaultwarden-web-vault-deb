@@ -1809,12 +1809,16 @@
   "unsecuredWebsitesFound": {
     "message": "Знайдено незахищені вебсайти"
   },
-  "unsecuredWebsitesFoundDesc": {
-    "message": "Ми знайшли $COUNT$ записів у вашому сховищі з незахищеними URL-адресами. Вам слід змінити їхні URL-схеми на https://, якщо вони це дозволяють.",
+  "unsecuredWebsitesFoundReportDesc": {
+    "message": "Ми знайшли $COUNT$ записів у вашому $VAULT$ з незахищеними URL-адресами. Вам слід змінити їхні URL-схеми на https://, якщо вони це дозволяють.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1830,12 +1834,16 @@
   "inactive2faFound": {
     "message": "Знайдено записи без двоетапної перевірки"
   },
-  "inactive2faFoundDesc": {
-    "message": "Ми знайшли $COUNT$ вебсайтів у вашому сховищі, що можуть бути не налаштовані для двоетапної перевірки (за даними 2fa.directory). Для захисту цих облікових записів вам слід активувати двоетапну перевірку.",
+  "inactive2faFoundReportDesc": {
+    "message": "Ми знайшли $COUNT$ вебсайтів у вашому $VAULT$, що можуть бути не налаштовані для двоетапної перевірки (за даними 2fa.directory). Для захисту цих облікових записів вам слід активувати двоетапну перевірку.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1854,12 +1862,16 @@
   "exposedPasswordsFound": {
     "message": "Знайдено викриті паролі"
   },
-  "exposedPasswordsFoundDesc": {
-    "message": "У вашому сховищі знайдено $COUNT$ записів з паролями, які було викрито у відомих витоках даних. Вам слід змінити їх з використанням нового пароля.",
+  "exposedPasswordsFoundReportDesc": {
+    "message": "У вашому $VAULT$ знайдено $COUNT$ записів з паролями, які було викрито у відомих витоках даних. Вам слід змінити їх з використанням нового пароля.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1887,12 +1899,16 @@
   "weakPasswordsFound": {
     "message": "Знайдено ненадійні паролі"
   },
-  "weakPasswordsFoundDesc": {
-    "message": "У вашому сховищі знайдено $COUNT$ записів з ненадійними паролями. Вам слід оновити їх з використанням надійніших паролів.",
+  "weakPasswordsFoundReportDesc": {
+    "message": "У вашому $VAULT$ знайдено $COUNT$ записів з ненадійними паролями. Вам слід оновити їх з використанням надійніших паролів.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1908,12 +1924,16 @@
   "reusedPasswordsFound": {
     "message": "Знайдено повторювані паролі"
   },
-  "reusedPasswordsFoundDesc": {
-    "message": "У вашому сховищі знайдено $COUNT$ паролів з повторним використанням. Вам слід змінити їх на унікальні.",
+  "reusedPasswordsFoundReportDesc": {
+    "message": "У вашому $VAULT$ знайдено $COUNT$ паролів з повторним використанням. Вам слід змінити їх на унікальні.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -6460,6 +6480,9 @@
   "editGroupCollectionsDesc": {
     "message": "Надати доступ до збірок, додавши їх до цієї групи."
   },
+  "editGroupCollectionsRestrictionsDesc": {
+    "message": "Ви можете призначити лише збірки, якими керуєте."
+  },
   "accessAllCollectionsDesc": {
     "message": "Надати доступ до всіх наявних і майбутніх збірок."
   },
@@ -8049,5 +8072,8 @@
   },
   "collectionItemSelect": {
     "message": "Вибрати елемент збірки"
+  },
+  "manageBillingFromProviderPortalMessage": {
+    "message": "Керування рахунками на порталі провайдера"
   }
 }

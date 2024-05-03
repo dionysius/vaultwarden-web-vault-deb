@@ -1809,12 +1809,16 @@
   "unsecuredWebsitesFound": {
     "message": "May nakitang mga website na hindi ligtas"
   },
-  "unsecuredWebsitesFoundDesc": {
-    "message": "May $COUNT$ item sa vault mo na gumagamit ng hindi ligtas na URI. Dapat gawing https:// ang URI scheme nito kung maa-access mo ang website gamit nito.",
+  "unsecuredWebsitesFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ with unsecured URIs. You should change their URI scheme to https:// if the website allows it.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1830,12 +1834,16 @@
   "inactive2faFound": {
     "message": "May mga login na nakasara ang dalawang-hakbang na pag-log in"
   },
-  "inactive2faFoundDesc": {
-    "message": "May $COUNT$ website sa vault mo na maaaring hindi pa gumagamit ng dalawang-hakbang na pag-log in (ayon sa 2fa.directory). I-set up ang dalawang-hakbang na pag-log in sa mga account na ito para sa karagdagang proteksyon.",
+  "inactive2faFoundReportDesc": {
+    "message": "We found $COUNT$ website(s) in your $VAULT$ that may not be configured with two-step login (according to 2fa.directory). To further protect these accounts, you should set up two-step login.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1854,12 +1862,16 @@
   "exposedPasswordsFound": {
     "message": "May nakitang mga nakompromisong password"
   },
-  "exposedPasswordsFoundDesc": {
-    "message": "May $COUNT$ item sa vault mo na may password na nakompromiso sa mga naitalang data breach. Kailangan mo silang baguhin.",
+  "exposedPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ that have passwords that were exposed in known data breaches. You should change them to use a new password.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1887,12 +1899,16 @@
   "weakPasswordsFound": {
     "message": "May mga mahinang password"
   },
-  "weakPasswordsFoundDesc": {
-    "message": "May $COUNT$ item sa vault mo na may mahinang password. Dapat mo silang palakasin.",
+  "weakPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ with passwords that are not strong. You should update them to use stronger passwords.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1908,12 +1924,16 @@
   "reusedPasswordsFound": {
     "message": "May mga naulit na password"
   },
-  "reusedPasswordsFoundDesc": {
-    "message": "May $COUNT$ item sa vault mo na may password na pinapaulit-ulit. Kailangan mo silang gawing unique.",
+  "reusedPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ passwords that are being reused in your $VAULT$. You should change them to a unique value.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -6460,6 +6480,9 @@
   "editGroupCollectionsDesc": {
     "message": "Magbigay ng access sa mga koleksyon sa pamamagitan ng pagdaragdag ng mga ito sa grupong ito."
   },
+  "editGroupCollectionsRestrictionsDesc": {
+    "message": "You can only assign collections you manage."
+  },
   "accessAllCollectionsDesc": {
     "message": "Magbigay ng access sa lahat ng kasalukuyan at hinaharap na mga koleksyon."
   },
@@ -8049,5 +8072,8 @@
   },
   "collectionItemSelect": {
     "message": "Select collection item"
+  },
+  "manageBillingFromProviderPortalMessage": {
+    "message": "Manage billing from the Provider Portal"
   }
 }

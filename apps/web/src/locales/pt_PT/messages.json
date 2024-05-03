@@ -67,7 +67,7 @@
     "message": "Número do passaporte"
   },
   "licenseNumber": {
-    "message": "Número da licença"
+    "message": "Número da carta de condução"
   },
   "email": {
     "message": "E-mail"
@@ -365,7 +365,7 @@
     "message": "Cidade / Localidade"
   },
   "stateProvince": {
-    "message": "Estado / Província"
+    "message": "Estado / Região"
   },
   "zipPostalCode": {
     "message": "Código postal"
@@ -1135,10 +1135,10 @@
     "message": "Pontuação mínima de complexidade"
   },
   "minNumbers": {
-    "message": "Números mínimos"
+    "message": "Mínimo de números"
   },
   "minSpecial": {
-    "message": "Caracteres especiais minímos",
+    "message": "Mínimo de caracteres especiais",
     "description": "Minimum special characters"
   },
   "ambiguous": {
@@ -1809,12 +1809,16 @@
   "unsecuredWebsitesFound": {
     "message": "Sites inseguros encontrados"
   },
-  "unsecuredWebsitesFoundDesc": {
+  "unsecuredWebsitesFoundReportDesc": {
     "message": "Encontrámos $COUNT$ itens no seu cofre com URIs não seguros. Deve alterar o esquema de URI para https:// se o site o permitir.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1830,12 +1834,16 @@
   "inactive2faFound": {
     "message": "Credenciais sem verificação de dois passos encontrados"
   },
-  "inactive2faFoundDesc": {
-    "message": "Encontrámos $COUNT$ site(s) no seu cofre que podem não ter a verificação de dois passos configurada (de acordo com 2fa.directory). Para proteger ainda mais essas contas, deve configurar a verificação de dois passos.",
+  "inactive2faFoundReportDesc": {
+    "message": "Encontrámos $COUNT$ site(s) no seu cofre que podem não estar configurados com a verificação de dois passos (de acordo com a 2fa.directory). Para proteger ainda mais estas contas, deve configurar a verificação de dois passos.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1854,12 +1862,16 @@
   "exposedPasswordsFound": {
     "message": "Palavras-passe expostas encontradas"
   },
-  "exposedPasswordsFoundDesc": {
-    "message": "Encontrámos $COUNT$ itens no seu cofre que têm palavras-passe que foram expostas em violações de dados conhecidas. Deve alterá-los para utilizar uma nova palavra-passe.",
+  "exposedPasswordsFoundReportDesc": {
+    "message": "Encontrámos $COUNT$ itens no seu cofre que têm palavras-passe que foram expostas em violações de dados conhecidas. Deve alterá-los para utilizarem uma nova palavra-passe.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1887,12 +1899,16 @@
   "weakPasswordsFound": {
     "message": "Palavras-passe fracas encontradas"
   },
-  "weakPasswordsFoundDesc": {
+  "weakPasswordsFoundReportDesc": {
     "message": "Encontrámos $COUNT$ itens no seu cofre com palavras-passe que não são fortes. Deve atualizá-los para utilizarem palavras-passe mais fortes.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1908,12 +1924,16 @@
   "reusedPasswordsFound": {
     "message": "Palavras-passe reutilizadas encontradas"
   },
-  "reusedPasswordsFoundDesc": {
+  "reusedPasswordsFoundReportDesc": {
     "message": "Encontrámos $COUNT$ palavras-passe que estão a ser reutilizadas no seu cofre. Deve alterá-las para um valor único.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -3706,7 +3726,7 @@
     "description": "ex. Date this item was updated"
   },
   "dateCreated": {
-    "message": "Criado a",
+    "message": "Criado",
     "description": "ex. Date this item was created"
   },
   "datePasswordUpdated": {
@@ -5955,7 +5975,7 @@
     "message": "Ligado"
   },
   "off": {
-    "message": "Desligado"
+    "message": "Desativado"
   },
   "members": {
     "message": "Membros"
@@ -6459,6 +6479,9 @@
   },
   "editGroupCollectionsDesc": {
     "message": "Conceder aos membros acesso às coleções adicionando-os a este grupo."
+  },
+  "editGroupCollectionsRestrictionsDesc": {
+    "message": "Só pode atribuir colecções que gere."
   },
   "accessAllCollectionsDesc": {
     "message": "Conceder acesso a todas as coleções atuais e futuras."
@@ -8049,5 +8072,8 @@
   },
   "collectionItemSelect": {
     "message": "Selecionar item da coleção"
+  },
+  "manageBillingFromProviderPortalMessage": {
+    "message": "Gira a faturação a partir do Portal do fornecedor"
   }
 }

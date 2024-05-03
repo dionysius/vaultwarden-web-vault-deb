@@ -1809,12 +1809,16 @@
   "unsecuredWebsitesFound": {
     "message": "Sites web non sécurisés trouvés"
   },
-  "unsecuredWebsitesFoundDesc": {
-    "message": "Nous avons trouvé $COUNT$ éléments dans votre coffre avec des URI non sécurisés. Vous devriez remplacer leur schéma URI par https:// si le site Web le permet.",
+  "unsecuredWebsitesFoundReportDesc": {
+    "message": "Nous avons $COUNT$ éléments dans $VAULT$ avec des URI non sécurisées. Vous devriez modifier leur schéma URI en https:// si le site le permet.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1830,12 +1834,16 @@
   "inactive2faFound": {
     "message": "Identifiants sans authentification à deux facteurs trouvés"
   },
-  "inactive2faFoundDesc": {
-    "message": "Nous avons trouvé $COUNT$ site(s) web dans votre coffre peut-être non configuré(s) avec l'authentification à deux facteurs (selon 2fa.directory). Pour protéger davantage ces comptes, vous devriez mettre en place l'authentification à deux facteurs.",
+  "inactive2faFoundReportDesc": {
+    "message": "Nous avons trouvé $COUNT$ site(s) web dans $VAULT$ qui ne sont peut-être pas configurés avec une connexion en deux étapes (selon le 2fa.directory). Pour protéger davantage ces comptes, vous devez configurer une connexion en deux étapes.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1854,12 +1862,16 @@
   "exposedPasswordsFound": {
     "message": "Mots de passe exposés trouvés"
   },
-  "exposedPasswordsFoundDesc": {
-    "message": "Nous avons trouvé $COUNT$ éléments dans votre coffre qui ont des mots de passe qui ont été exposés dans des fuites de données connues. Vous devriez les changer pour utiliser un nouveau mot de passe.",
+  "exposedPasswordsFoundReportDesc": {
+    "message": "Nous avons trouvé $COUNT$ éléments dans $VAULT$ qui ont des mots de passe qui ont été exposés dans des fuites de données connues. Vous devriez les changer pour utiliser un nouveau mot de passe.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1887,12 +1899,16 @@
   "weakPasswordsFound": {
     "message": "Mots de passe faibles trouvés"
   },
-  "weakPasswordsFoundDesc": {
-    "message": "Nous avons trouvé $COUNT$ éléments dans votre coffre avec des mots de passe qui ne sont pas forts. Vous devriez les mettre à jour pour utiliser des mots de passe plus forts.",
+  "weakPasswordsFoundReportDesc": {
+    "message": "Nous avons trouvé $COUNT$ éléments dans $VAULT$ avec des mots de passe faibles. Vous devriez les mettre à jour pour utiliser des mots de passe plus forts.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1908,12 +1924,16 @@
   "reusedPasswordsFound": {
     "message": "Mots de passe réutilisés trouvés"
   },
-  "reusedPasswordsFoundDesc": {
-    "message": "Nous avons trouvé $COUNT$ mots de passe qui sont réutilisés dans votre coffre. Vous devriez les changer pour utiliser des mots de passe différents.",
+  "reusedPasswordsFoundReportDesc": {
+    "message": "Nous avons trouvé $COUNT$ mots de passe qui sont réutilisés dans $VAULT$. Vous devriez les changer pour utiliser des mots de passe uniques.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -6460,6 +6480,9 @@
   "editGroupCollectionsDesc": {
     "message": "Accorder l'accès aux collections en les ajoutant à ce groupe."
   },
+  "editGroupCollectionsRestrictionsDesc": {
+    "message": "Vous ne pouvez affecter que les collections que vous gérez."
+  },
   "accessAllCollectionsDesc": {
     "message": "Accorder l'accès à toutes les collections actuelles et futures."
   },
@@ -8049,5 +8072,8 @@
   },
   "collectionItemSelect": {
     "message": "Sélectionner un élément de la collection"
+  },
+  "manageBillingFromProviderPortalMessage": {
+    "message": "Gérer la facturation depuis le Portail Fournisseur"
   }
 }

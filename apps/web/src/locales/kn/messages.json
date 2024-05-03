@@ -1809,12 +1809,16 @@
   "unsecuredWebsitesFound": {
     "message": "ಅಸುರಕ್ಷಿತ ವೆಬ್‌ಸೈಟ್‌ಗಳು ಕಂಡುಬಂದಿವೆ"
   },
-  "unsecuredWebsitesFoundDesc": {
-    "message": "ಅಸುರಕ್ಷಿತ URI ಗಳೊಂದಿಗೆ ನಿಮ್ಮ ವಾಲ್ಟ್‌ನಲ್ಲಿ $COUNT$ ವಸ್ತುಗಳನ್ನು ನಾವು ಕಂಡುಕೊಂಡಿದ್ದೇವೆ. ವೆಬ್‌ಸೈಟ್ ಅನುಮತಿಸಿದರೆ ನೀವು ಅವರ ಯುಆರ್‌ಐ ಯೋಜನೆಯನ್ನು https: // ಗೆ ಬದಲಾಯಿಸಬೇಕು.",
+  "unsecuredWebsitesFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ with unsecured URIs. You should change their URI scheme to https:// if the website allows it.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1830,12 +1834,16 @@
   "inactive2faFound": {
     "message": "2FA ಇಲ್ಲದೆ ಲಾಗಿನ್‌ಗಳು ಕಂಡುಬಂದಿಲ್ಲ"
   },
-  "inactive2faFoundDesc": {
-    "message": "ನಿಮ್ಮ ವಾಲ್ಟ್‌ನಲ್ಲಿ $COUNT$ ವೆಬ್‌ಸೈಟ್ (ಗಳನ್ನು) ನಾವು ಕಂಡುಕೊಂಡಿದ್ದೇವೆ, ಅದನ್ನು ಎರಡು ಅಂಶಗಳ ದೃಢೀಕರಣದೊಂದಿಗೆ ಕಾನ್ಫಿಗರ್ ಮಾಡಲಾಗುವುದಿಲ್ಲ (2fa.directory ಪ್ರಕಾರ). ಈ ಖಾತೆಗಳನ್ನು ಮತ್ತಷ್ಟು ರಕ್ಷಿಸಲು, ನೀವು ಎರಡು ಅಂಶಗಳ ದೃಢೀಕರಣವನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಬೇಕು.",
+  "inactive2faFoundReportDesc": {
+    "message": "We found $COUNT$ website(s) in your $VAULT$ that may not be configured with two-step login (according to 2fa.directory). To further protect these accounts, you should set up two-step login.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1854,12 +1862,16 @@
   "exposedPasswordsFound": {
     "message": "ಬಹಿರಂಗಪಡಿಸಿದ ಪಾಸ್‌ವರ್ಡ್‌ಗಳು ಕಂಡುಬಂದಿವೆ"
   },
-  "exposedPasswordsFoundDesc": {
-    "message": "ತಿಳಿದಿರುವ ದತ್ತಾಂಶ ಉಲ್ಲಂಘನೆಗಳಲ್ಲಿ ಬಹಿರಂಗಗೊಂಡ ಪಾಸ್‌ವರ್ಡ್‌ಗಳನ್ನು ಹೊಂದಿರುವ ನಿಮ್ಮ ವಾಲ್ಟ್‌ನಲ್ಲಿ $COUNT$ ವಸ್ತುಗಳನ್ನು ನಾವು ಕಂಡುಕೊಂಡಿದ್ದೇವೆ. ಹೊಸ ಪಾಸ್‌ವರ್ಡ್ ಬಳಸಲು ನೀವು ಅವುಗಳನ್ನು ಬದಲಾಯಿಸಬೇಕು.",
+  "exposedPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ that have passwords that were exposed in known data breaches. You should change them to use a new password.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1887,12 +1899,16 @@
   "weakPasswordsFound": {
     "message": "ದುರ್ಬಲ ಪಾಸ್‌ವರ್ಡ್‌ಗಳು ಕಂಡುಬಂದಿವೆ"
   },
-  "weakPasswordsFoundDesc": {
-    "message": "ನಿಮ್ಮ ವಾಲ್ಟ್‌ನಲ್ಲಿ ಪ್ರಬಲವಲ್ಲದ ಪಾಸ್‌ವರ್ಡ್‌ಗಳೊಂದಿಗೆ $COUNT$ ವಸ್ತುಗಳನ್ನು ನಾವು ಕಂಡುಕೊಂಡಿದ್ದೇವೆ. ಬಲವಾದ ಪಾಸ್‌ವರ್ಡ್‌ಗಳನ್ನು ಬಳಸಲು ನೀವು ಅವುಗಳನ್ನು ನವೀಕರಿಸಬೇಕು.",
+  "weakPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ with passwords that are not strong. You should update them to use stronger passwords.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1908,12 +1924,16 @@
   "reusedPasswordsFound": {
     "message": "ಮರುಬಳಕೆ ಮಾಡಿದ ಪಾಸ್‌ವರ್ಡ್‌ಗಳು ಕಂಡುಬಂದಿವೆ"
   },
-  "reusedPasswordsFoundDesc": {
-    "message": "ನಿಮ್ಮ ವಾಲ್ಟ್‌ನಲ್ಲಿ ಮರುಬಳಕೆ ಮಾಡಲಾಗುತ್ತಿರುವ $COUNT$ ಪಾಸ್‌ವರ್ಡ್‌ಗಳನ್ನು ನಾವು ಕಂಡುಕೊಂಡಿದ್ದೇವೆ. ನೀವು ಅವುಗಳನ್ನು ಅನನ್ಯ ಮೌಲ್ಯಕ್ಕೆ ಬದಲಾಯಿಸಬೇಕು.",
+  "reusedPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ passwords that are being reused in your $VAULT$. You should change them to a unique value.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -6460,6 +6480,9 @@
   "editGroupCollectionsDesc": {
     "message": "Grant access to collections by adding them to this group."
   },
+  "editGroupCollectionsRestrictionsDesc": {
+    "message": "You can only assign collections you manage."
+  },
   "accessAllCollectionsDesc": {
     "message": "Grant access to all current and future collections."
   },
@@ -8049,5 +8072,8 @@
   },
   "collectionItemSelect": {
     "message": "Select collection item"
+  },
+  "manageBillingFromProviderPortalMessage": {
+    "message": "Manage billing from the Provider Portal"
   }
 }

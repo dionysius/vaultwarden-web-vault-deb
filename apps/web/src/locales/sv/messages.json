@@ -1809,12 +1809,16 @@
   "unsecuredWebsitesFound": {
     "message": "Osäkra webbplatser hittades"
   },
-  "unsecuredWebsitesFoundDesc": {
-    "message": "Vi hittade $COUNT$ objekt i ditt valv med osäkra URI:er. Om webbplatsen stödjer det bör du ändra deras URI-protokoll till https://.",
+  "unsecuredWebsitesFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ with unsecured URIs. You should change their URI scheme to https:// if the website allows it.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1830,12 +1834,16 @@
   "inactive2faFound": {
     "message": "Inloggningar utan 2FA hittades"
   },
-  "inactive2faFoundDesc": {
-    "message": "Vi hittade $COUNT$ webbplats(er) i ditt valv som kanske inte har tvåstegsverifiering konfigurerat (enligt 2fa.directory). För att skydda dessa konton ytterligare bör du aktivera tvåstegsverifiering.",
+  "inactive2faFoundReportDesc": {
+    "message": "We found $COUNT$ website(s) in your $VAULT$ that may not be configured with two-step login (according to 2fa.directory). To further protect these accounts, you should set up two-step login.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1854,12 +1862,16 @@
   "exposedPasswordsFound": {
     "message": "Avslöjade lösenord hittades"
   },
-  "exposedPasswordsFoundDesc": {
-    "message": "Vi hittade $COUNT$ objekt i ditt valv med lösenord som har äventyrats i kända dataintrång. Du bör ändra dessa till att använda nya lösenord.",
+  "exposedPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ that have passwords that were exposed in known data breaches. You should change them to use a new password.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1887,12 +1899,16 @@
   "weakPasswordsFound": {
     "message": "Svaga lösenord hittades"
   },
-  "weakPasswordsFoundDesc": {
-    "message": "Vi hittade $COUNT$ objekt i ditt valv med lösenord som inte är starka. Du bör ändra dessa till att använda starkare lösenord.",
+  "weakPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ with passwords that are not strong. You should update them to use stronger passwords.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1908,12 +1924,16 @@
   "reusedPasswordsFound": {
     "message": "Återanvända lösenord hittades"
   },
-  "reusedPasswordsFoundDesc": {
-    "message": "Vi hittade $COUNT$ lösenord som återanvänds i ditt valv. Du bör ändra dessa till unika lösenord.",
+  "reusedPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ passwords that are being reused in your $VAULT$. You should change them to a unique value.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -6460,6 +6480,9 @@
   "editGroupCollectionsDesc": {
     "message": "Grant access to collections by adding them to this group."
   },
+  "editGroupCollectionsRestrictionsDesc": {
+    "message": "Du kan bara tilldela samlingar som du hanterar."
+  },
   "accessAllCollectionsDesc": {
     "message": "Grant access to all current and future collections."
   },
@@ -8049,5 +8072,8 @@
   },
   "collectionItemSelect": {
     "message": "Select collection item"
+  },
+  "manageBillingFromProviderPortalMessage": {
+    "message": "Manage billing from the Provider Portal"
   }
 }

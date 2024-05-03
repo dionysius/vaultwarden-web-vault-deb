@@ -1809,12 +1809,16 @@
   "unsecuredWebsitesFound": {
     "message": "S-au găsit website-uri nesecurizate"
   },
-  "unsecuredWebsitesFoundDesc": {
-    "message": "Am găsit $COUNT$ articole în seiful dvs. cu URI-uri nesecurizate. Ar trebui să schimbați schema URl-urilor lor în https:// dacă saitul o permite.",
+  "unsecuredWebsitesFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ with unsecured URIs. You should change their URI scheme to https:// if the website allows it.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1830,12 +1834,16 @@
   "inactive2faFound": {
     "message": "S-au găsit autentificări fără autentificare în două etape"
   },
-  "inactive2faFoundDesc": {
-    "message": "Am găsit $COUNT$ website(-uri) în seiful dvs. care s-ar putea să nu fie configurate cu autentificare în două etape (în conformitate cu 2fa.directory). Pentru a proteja în continuare aceste conturi, ar trebui să configurați autentificarea în două etape.",
+  "inactive2faFoundReportDesc": {
+    "message": "We found $COUNT$ website(s) in your $VAULT$ that may not be configured with two-step login (according to 2fa.directory). To further protect these accounts, you should set up two-step login.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1854,12 +1862,16 @@
   "exposedPasswordsFound": {
     "message": "Parolele expuse găsite"
   },
-  "exposedPasswordsFoundDesc": {
-    "message": "Am găsit $COUNT$ articole în seiful dvs. care folosesc parole dezvăluite în scurgeri de date cunoscute. Ar trebui să le schimbați pentru a utiliza o parolă nouă.",
+  "exposedPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ that have passwords that were exposed in known data breaches. You should change them to use a new password.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1887,12 +1899,16 @@
   "weakPasswordsFound": {
     "message": "Parole slabe găsite"
   },
-  "weakPasswordsFoundDesc": {
-    "message": "Am găsit $COUNT$ articole cu parole slabe articole în seiful dvs. Ar trebui să le actualizați ca să folosească parole puternice.",
+  "weakPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ with passwords that are not strong. You should update them to use stronger passwords.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1908,12 +1924,16 @@
   "reusedPasswordsFound": {
     "message": "S-au găsit parole refolosite"
   },
-  "reusedPasswordsFoundDesc": {
-    "message": "Am găsit $COUNT$ parole reutilizate în seiful dvs. Ar trebui să le schimbați la o valoare unică.",
+  "reusedPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ passwords that are being reused in your $VAULT$. You should change them to a unique value.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -6460,6 +6480,9 @@
   "editGroupCollectionsDesc": {
     "message": "Grant access to collections by adding them to this group."
   },
+  "editGroupCollectionsRestrictionsDesc": {
+    "message": "You can only assign collections you manage."
+  },
   "accessAllCollectionsDesc": {
     "message": "Grant access to all current and future collections."
   },
@@ -8049,5 +8072,8 @@
   },
   "collectionItemSelect": {
     "message": "Select collection item"
+  },
+  "manageBillingFromProviderPortalMessage": {
+    "message": "Manage billing from the Provider Portal"
   }
 }

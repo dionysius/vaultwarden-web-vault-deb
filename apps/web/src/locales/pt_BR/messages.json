@@ -1809,12 +1809,16 @@
   "unsecuredWebsitesFound": {
     "message": "Sites Inseguros Encontrados"
   },
-  "unsecuredWebsitesFoundDesc": {
-    "message": "Nós encontramos $COUNT$ item(ns) no seu cofre com URIs não protegido(s). Você deve alterar o esquema de URI para https:// se o site permitir.",
+  "unsecuredWebsitesFoundReportDesc": {
+    "message": "Nós encontramos $COUNT$ item(ns) no seu cofre com URIs não segura(s). Você deve alterar o esquema de URI para https:// se o site permitir.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1830,12 +1834,16 @@
   "inactive2faFound": {
     "message": "Credenciais Sem 2FA Encontradas"
   },
-  "inactive2faFoundDesc": {
-    "message": "Encontramos $COUNT$ site(s) no seu cofre que pode(m) não estar configurados com login em duas etapas (segundo o site 2fa.directory). Para proteger ainda mais essas contas, você deve configurar o login em duas etapas.",
+  "inactive2faFoundReportDesc": {
+    "message": "Encontramos $COUNT$ site(s) no seu $VAULT$ que pode(m) não estar configurado com o login em duas etapas (de acordo com 2fa. irectory). Para proteger ainda mais essas contas, você deve configurar o login em duas etapas.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1854,12 +1862,16 @@
   "exposedPasswordsFound": {
     "message": "Senhas Expostas Encontradas"
   },
-  "exposedPasswordsFoundDesc": {
+  "exposedPasswordsFoundReportDesc": {
     "message": "Encontramos no seu cofre $COUNT$ item(ns) com senha(s) que foi(ram) exposta(s) em violações de dado conhecida. Você deve alterá-las para usar uma nova senha.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1887,12 +1899,16 @@
   "weakPasswordsFound": {
     "message": "Senhas Fracas Encontradas"
   },
-  "weakPasswordsFoundDesc": {
+  "weakPasswordsFoundReportDesc": {
     "message": "Encontramos $COUNT$ item(ns) no seu cofre com senha(s) que não é/são fortes. Você deve atualizá-las para usar senhas mais fortes.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1908,12 +1924,16 @@
   "reusedPasswordsFound": {
     "message": "Senhas Reutilizadas Encontradas"
   },
-  "reusedPasswordsFoundDesc": {
+  "reusedPasswordsFoundReportDesc": {
     "message": "Nós encontramos $COUNT$ senha(s) que esta(ão) sendo reutilizadas no seu cofre. Você deve alterá-los para um valor único.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -6460,6 +6480,9 @@
   "editGroupCollectionsDesc": {
     "message": "Conceder acesso às coleções adicionando-as a este grupo."
   },
+  "editGroupCollectionsRestrictionsDesc": {
+    "message": "Você só pode atribuir coleções que você gerencia."
+  },
   "accessAllCollectionsDesc": {
     "message": "Conceder acesso a todas as coleções atuais e futuras."
   },
@@ -8049,5 +8072,8 @@
   },
   "collectionItemSelect": {
     "message": "Selecionar item da coleção"
+  },
+  "manageBillingFromProviderPortalMessage": {
+    "message": "Gerenciar faturamento a partir do Portal do Provedor"
   }
 }

@@ -1809,12 +1809,16 @@
   "unsecuredWebsitesFound": {
     "message": "发现不安全的网站"
   },
-  "unsecuredWebsitesFoundDesc": {
-    "message": "我们在您的密码库中发现了 $COUNT$ 个项目带有不安全的 URI。如果网站允许，您应该将他们更改为 https://。",
+  "unsecuredWebsitesFoundReportDesc": {
+    "message": "我们在您的 $VAULT$ 中发现了 $COUNT$ 个带不安全 URI 的项目。如果网站允许，您应将其 URI 方案更改为 https://。",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1830,12 +1834,16 @@
   "inactive2faFound": {
     "message": "发现未启用两步登录的登录项目"
   },
-  "inactive2faFoundDesc": {
-    "message": "我们在您的密码库中发现 $COUNT$ 个网站可能没有配置两步登录（根据 2fa.directory）。为了进一步保护这些账户，您应该设置两步登录。",
+  "inactive2faFoundReportDesc": {
+    "message": "我们在您的 $VAULT$ 中发现了 $COUNT$ 个网站可能未配置两步登录（通过 2fa.directory）。为进一步保护这些账户，您应设置两步登录。",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1854,12 +1862,16 @@
   "exposedPasswordsFound": {
     "message": "发现暴露的密码"
   },
-  "exposedPasswordsFoundDesc": {
-    "message": "我们在您的密码库中发现了 $COUNT$ 个项目的密码在已知数据泄露事件中被暴露。您应该将它们更改为新密码。",
+  "exposedPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ that have passwords that were exposed in known data breaches. You should change them to use a new password.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1887,12 +1899,16 @@
   "weakPasswordsFound": {
     "message": "发现弱密码"
   },
-  "weakPasswordsFoundDesc": {
-    "message": "我们在您的密码库中发现了 $COUNT$ 个弱密码项目。您应该将它们改为更强的密码。",
+  "weakPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ with passwords that are not strong. You should update them to use stronger passwords.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1908,12 +1924,16 @@
   "reusedPasswordsFound": {
     "message": "发现重复使用的密码"
   },
-  "reusedPasswordsFoundDesc": {
-    "message": "我们在您的密码库中发现了 $COUNT$ 个被重复使用的密码。您应该将它们更改为唯一值。",
+  "reusedPasswordsFoundReportDesc": {
+    "message": "我们在您的 $VAULT$ 中发现了 $COUNT$ 个被重复使用的密码。您应将其更改为唯一值。",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -6460,6 +6480,9 @@
   "editGroupCollectionsDesc": {
     "message": "通过将集合添加到此群组来授予对集合的访问权限。"
   },
+  "editGroupCollectionsRestrictionsDesc": {
+    "message": "您只能分配您管理的集合。"
+  },
   "accessAllCollectionsDesc": {
     "message": "授予对所有当前和未来的集合的访问权限。"
   },
@@ -8049,5 +8072,8 @@
   },
   "collectionItemSelect": {
     "message": "选择集合项目"
+  },
+  "manageBillingFromProviderPortalMessage": {
+    "message": "在供应商门户中管理账单"
   }
 }

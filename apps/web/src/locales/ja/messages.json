@@ -1809,12 +1809,16 @@
   "unsecuredWebsitesFound": {
     "message": "セキュリティ保護されていないウェブサイトが見つかりました"
   },
-  "unsecuredWebsitesFoundDesc": {
-    "message": "セキュアでないURIが$COUNT$個のアイテムで見つかりました。ウェブサイトが対応しているならば、URIをhttps://形式に変更すべきです。",
+  "unsecuredWebsitesFoundReportDesc": {
+    "message": "セキュアでない URI が $VAULT$ 内で $COUNT$ 個見つかりました。ウェブサイトが対応している場合は、URI を https:// 形式に変更すべきです。",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1830,12 +1834,16 @@
   "inactive2faFound": {
     "message": "二段階認証を利用していないアイテムが見つかりました"
   },
-  "inactive2faFoundDesc": {
-    "message": "保管庫に $COUNT$ 個のウェブサイトがあり、2段階認証でのログインが設定されていない可能性があります (2fa.directory によれば)。これらのアカウントをさらに保護するには、2段階認証のログインを設定する必要があります。",
+  "inactive2faFoundReportDesc": {
+    "message": "$VAULT$ に $COUNT$ 個のウェブサイトがあり、(2fa.directory によれば) 2段階認証でのログインを設定できる可能性があります 。これらのアカウントをさらに保護するには、2段階認証のログインを設定してください。",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1854,12 +1862,16 @@
   "exposedPasswordsFound": {
     "message": "流出したパスワードが見つかりました"
   },
-  "exposedPasswordsFoundDesc": {
-    "message": "既知のデータ流出で公開されていたパスワードが $COUNT$ 個のアイテムで見つかりました。これらは新しいパスワードへ変更すべきです。",
+  "exposedPasswordsFoundReportDesc": {
+    "message": "既知の流出済みパスワードが $VAULT$ 内の $COUNT$ 個のアイテムで見つかりました。これらは新しいパスワードへ変更すべきです。",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1887,12 +1899,16 @@
   "weakPasswordsFound": {
     "message": "脆弱なパスワードが見つかりました"
   },
-  "weakPasswordsFoundDesc": {
-    "message": "保管庫内に$COUNT$個の強力でないパスワードが見つかりました。もっと強力なパスワードへ更新すべきです。",
+  "weakPasswordsFoundReportDesc": {
+    "message": "$VAULT$ 内に $COUNT$ 個の脆弱なパスワードが見つかりました。もっと強力なパスワードへ更新すべきです。",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1908,12 +1924,16 @@
   "reusedPasswordsFound": {
     "message": "再利用しているパスワードが見つかりました。"
   },
-  "reusedPasswordsFoundDesc": {
-    "message": "$COUNT$個の再利用しているパスワードが見つかりました。それぞれ異なるパスワードへ変更すべきです。",
+  "reusedPasswordsFoundReportDesc": {
+    "message": "$VAULT$ 内に $COUNT$ 個の再利用しているパスワードが見つかりました。それぞれ異なるパスワードへ変更すべきです。",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -6460,6 +6480,9 @@
   "editGroupCollectionsDesc": {
     "message": "このグループに追加してコレクションへのアクセスを許可します。"
   },
+  "editGroupCollectionsRestrictionsDesc": {
+    "message": "You can only assign collections you manage."
+  },
   "accessAllCollectionsDesc": {
     "message": "現在および将来のすべてのコレクションへのアクセスを許可します。"
   },
@@ -8049,5 +8072,8 @@
   },
   "collectionItemSelect": {
     "message": "コレクションのアイテムを選択"
+  },
+  "manageBillingFromProviderPortalMessage": {
+    "message": "プロバイダーポータルからの請求を管理"
   }
 }

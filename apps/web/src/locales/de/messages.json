@@ -1809,12 +1809,16 @@
   "unsecuredWebsitesFound": {
     "message": "Ungesicherte Websites gefunden"
   },
-  "unsecuredWebsitesFoundDesc": {
-    "message": "Wir haben $COUNT$ Einträge in deinem Tresor mit ungesicherten URIs gefunden. Du solltest ihr URI-Präfix auf https:// ändern, wenn die Website dies zulässt.",
+  "unsecuredWebsitesFoundReportDesc": {
+    "message": "Wir haben $COUNT$ Einträge in deinem/deinen $VAULT$ mit ungeschützen URIs gefunden. Du solltest deren URI-Präfix in https:// ändern, wenn die Webseite dies zulässt.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1830,12 +1834,16 @@
   "inactive2faFound": {
     "message": "Zugangsdaten ohne 2FA gefunden"
   },
-  "inactive2faFoundDesc": {
-    "message": "Wir haben $COUNT$ Webseite(n) in Ihrem Tresor gefunden, die eine Zwei-Faktor Authentifizierung anbieten (laut 2fa.directory), aber bei denen diese Funktion möglicherweise nicht aktiviert ist. Um diese Accounts abzusichern, sollten Sie die Zwei-Faktor Authentifizierung aktivieren.",
+  "inactive2faFoundReportDesc": {
+    "message": "Wir haben $COUNT$ Website(s) in deinem/deinen $VAULT$ gefunden, die eine Zwei-Faktor-Authentifizierung anbieten (laut 2fa.directory), aber bei denen diese Funktion möglicherweise nicht aktiviert ist. Um diese Konten weiter abzusichern, solltest du die Zwei-Faktor-Authentifizierung aktivieren.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1854,12 +1862,16 @@
   "exposedPasswordsFound": {
     "message": "Es wurden kompromittierte Passwörter gefunden"
   },
-  "exposedPasswordsFoundDesc": {
-    "message": "Wir haben $COUNT$ Einträge in deinem Tresor gefunden, die in bekannten Passwortdiebstählen veröffentlicht wurden. Du solltest diese Passwörter so schnell wie möglich ändern.",
+  "exposedPasswordsFoundReportDesc": {
+    "message": "Wir haben $COUNT$ Einträge in deinem/deinen $VAULT$ gefunden, die Passwörter enthalten, die in bekannten Passwortdiebstahl-Datenbanken veröffentlicht wurden. Du solltest diese ändern und ein neues Passwort verwenden.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1887,12 +1899,16 @@
   "weakPasswordsFound": {
     "message": "Schwache Passwörter gefunden"
   },
-  "weakPasswordsFoundDesc": {
-    "message": "Wir haben $COUNT$ Einträge mit schwachen Passwörtern in deinem Tresor gefunden. Du solltest diese aktualisieren und ein sicheres Passwort verwenden.",
+  "weakPasswordsFoundReportDesc": {
+    "message": "Wir haben $COUNT$ Einträge in deinem/deinen $VAULT$ mit unsicheren Passwörtern gefunden. Du solltest diese ändern und sicherere Passwörter verwenden.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1908,12 +1924,16 @@
   "reusedPasswordsFound": {
     "message": "Wiederverwendete Passwörter gefunden"
   },
-  "reusedPasswordsFoundDesc": {
-    "message": "Wir haben $COUNT$ Passwörter in deinem Tresor gefunden, die mehrfach benutzt wurden. Du solltest diese ändern und jedes Passwort nur ein einziges Mal benutzen.",
+  "reusedPasswordsFoundReportDesc": {
+    "message": "Wir haben $COUNT$ Passwörter in deinem/deinen $VAULT$ gefunden, die mehrfach verwendet werden. Du solltest diese ändern und einzigartige Passwörter verwenden.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -6460,6 +6480,9 @@
   "editGroupCollectionsDesc": {
     "message": "Gewähre Zugriff auf Sammlungen, indem du diese zu dieser Gruppe hinzufügst."
   },
+  "editGroupCollectionsRestrictionsDesc": {
+    "message": "You can only assign collections you manage."
+  },
   "accessAllCollectionsDesc": {
     "message": "Gewähre Zugriff auf alle aktuellen und zukünftigen Sammlungen."
   },
@@ -8049,5 +8072,8 @@
   },
   "collectionItemSelect": {
     "message": "Sammlungseintrag auswählen"
+  },
+  "manageBillingFromProviderPortalMessage": {
+    "message": "Rechnungen über das Anbieter-Portal verwalten"
   }
 }

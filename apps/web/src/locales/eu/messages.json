@@ -1809,12 +1809,16 @@
   "unsecuredWebsitesFound": {
     "message": "Webgune ez seguruak aurkituak"
   },
-  "unsecuredWebsitesFoundDesc": {
-    "message": "$COUNT$ artikulu aurkitu d(it)ugu kutxa gotorrean bermatuta ez dauden URI-ekin. Zure URI eskema https://-ra aldatu behar duzu, web guneak onartzen badu.",
+  "unsecuredWebsitesFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ with unsecured URIs. You should change their URI scheme to https:// if the website allows it.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1830,12 +1834,16 @@
   "inactive2faFound": {
     "message": "2FA-rik gabeko saio hasierak aurkituak"
   },
-  "inactive2faFoundDesc": {
-    "message": "$COUNT$ webgune aurkitu ditugu zure kutxa gotorrean bi urratseko autentifikazioarekin konfiguratu ezin direnak (twofactorauth.org-en arabera). Kontu horiek babesteko, bi urratseko autentifikazioa gaitu behar duzu.",
+  "inactive2faFoundReportDesc": {
+    "message": "We found $COUNT$ website(s) in your $VAULT$ that may not be configured with two-step login (according to 2fa.directory). To further protect these accounts, you should set up two-step login.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1854,12 +1862,16 @@
   "exposedPasswordsFound": {
     "message": "Ikusgai dauden pasahitzak aurkituak"
   },
-  "exposedPasswordsFoundDesc": {
-    "message": "Kutxa gotorrean $COUNT$ elementuren pasahitz daude, datu bortxaketa ezagunetan erakutsi direnak. Aldatu beharko zenituzke eta pasahitz berria erabili.",
+  "exposedPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ that have passwords that were exposed in known data breaches. You should change them to use a new password.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1887,12 +1899,16 @@
   "weakPasswordsFound": {
     "message": "Pasahitz ahulak aurkituak"
   },
-  "weakPasswordsFoundDesc": {
-    "message": "Zure kutxa gotorrean $COUNT$ elementu aurkitu ditugu pasahitz ahulekin. Eguneratu egin behar dituzu pasahitz seguruagoak erabiltzeko.",
+  "weakPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ with passwords that are not strong. You should update them to use stronger passwords.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1908,12 +1924,16 @@
   "reusedPasswordsFound": {
     "message": "Pasahitz berrerabiliak aurkituak"
   },
-  "reusedPasswordsFoundDesc": {
-    "message": "Zure kutxa gotorrean $COUNT$ elementu aurkitu ditugu pasahitz berrerabiliekin. Aldatu beharko zenituzke pasahitz bakarrak erabiltzeko.",
+  "reusedPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ passwords that are being reused in your $VAULT$. You should change them to a unique value.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -6460,6 +6480,9 @@
   "editGroupCollectionsDesc": {
     "message": "Grant access to collections by adding them to this group."
   },
+  "editGroupCollectionsRestrictionsDesc": {
+    "message": "You can only assign collections you manage."
+  },
   "accessAllCollectionsDesc": {
     "message": "Grant access to all current and future collections."
   },
@@ -8049,5 +8072,8 @@
   },
   "collectionItemSelect": {
     "message": "Select collection item"
+  },
+  "manageBillingFromProviderPortalMessage": {
+    "message": "Manage billing from the Provider Portal"
   }
 }

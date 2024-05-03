@@ -1809,12 +1809,16 @@
   "unsecuredWebsitesFound": {
     "message": "Atrastas nedrošas tīmekļvietnes"
   },
-  "unsecuredWebsitesFoundDesc": {
-    "message": "Glabātavā tika atrasts(i) $COUNT$ vienums(i) ar nedrošām adresēm. Ir ieteicams tās mainīt uz URI ar https://, ja tīmekļvietne to nodrošina.",
+  "unsecuredWebsitesFoundReportDesc": {
+    "message": "$VAULT$ tika atrasts(i) $COUNT$ vienums(i) ar nedrošām adresēm. Ir ieteicams tās mainīt uz URI ar https://, ja tīmekļvietne to nodrošina.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1830,12 +1834,16 @@
   "inactive2faFound": {
     "message": "Atrastie pieteikšanās vienumi bez 2FA"
   },
-  "inactive2faFoundDesc": {
-    "message": "Glabātavā tika atrasta(s) $COUNT$ tīmekļvietne(s), kurā(s) nav uzstādīta divpakāpju pieteikšanās (vadoties pēc 2fa.directory). Lai labāk aizsargātu šos kontus, ir ieteicams uzstādīt divpakāpju pieteikšanos.",
+  "inactive2faFoundReportDesc": {
+    "message": "$VAULT$ tika atrasta(s) $COUNT$ tīmekļvietne(s), kurā(s) nav uzstādīta divpakāpju pieteikšanās (vadoties pēc 2fa.directory). Lai labāk aizsargātu šos kontus, ir ieteicams uzstādīt divpakāpju pieteikšanos.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1854,12 +1862,16 @@
   "exposedPasswordsFound": {
     "message": "Atrastas atklātās paroles"
   },
-  "exposedPasswordsFoundDesc": {
-    "message": "Glabātavā tika atrasts(i) $COUNT$ vienums(i), kuros ir paroles, kas ir atklātas zināmās datu noplūdēs. Tos vajadzētu mainīt, lai izmantotu jaunu paroli.",
+  "exposedPasswordsFoundReportDesc": {
+    "message": "$VAULT$ tika atrasts(i) $COUNT$ vienums(i), kuros ir paroles, kas ir atklātas zināmās datu noplūdēs. Tos vajadzētu mainīt, lai izmantotu jaunu paroli.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1887,12 +1899,16 @@
   "weakPasswordsFound": {
     "message": "Atrastas vājas paroles"
   },
-  "weakPasswordsFoundDesc": {
-    "message": "Glabātavā tika atrasts(i) $COUNT$ vienums(i) ar parolēm, kas nav spēcīgas. Tos vajadzētu atjaunināt, lai izmantotu spēcīgākas paroles.",
+  "weakPasswordsFoundReportDesc": {
+    "message": "$VAULT$ tika atrasts(i) $COUNT$ vienums(i) ar parolēm, kas nav spēcīgas. Tos vajadzētu atjaunināt, lai izmantotu spēcīgākas paroles.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1908,12 +1924,16 @@
   "reusedPasswordsFound": {
     "message": "Atrastās vairākkārt izmantotās paroles"
   },
-  "reusedPasswordsFoundDesc": {
-    "message": "Glabātavā tika atrasta(s) $COUNT$ parole(s), kas tiek vairākkārt izmantotas. Ir ieteicams tās nomainīt uz vērtību, kas neatkārtojas citur.",
+  "reusedPasswordsFoundReportDesc": {
+    "message": "$VAULT$ tika atrasta(s) $COUNT$ parole(s), kas tiek vairākkārt izmantotas. Ir ieteicams tās nomainīt uz vērtību, kas neatkārtojas citur.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -6460,6 +6480,9 @@
   "editGroupCollectionsDesc": {
     "message": "Piešķirt piekļuvi krājumiem, pievienojot tos šai grupai."
   },
+  "editGroupCollectionsRestrictionsDesc": {
+    "message": "Var piešķirt tikai pārvaldītos krājumus."
+  },
   "accessAllCollectionsDesc": {
     "message": "Piešķirt piekļuvi visiem pašreizējiem un turpmākajiem krājumiem."
   },
@@ -8049,5 +8072,8 @@
   },
   "collectionItemSelect": {
     "message": "Atlasīt krājuma vienumu"
+  },
+  "manageBillingFromProviderPortalMessage": {
+    "message": "Norēķinus var pārvaldīt Nodrošinātāju portālā"
   }
 }

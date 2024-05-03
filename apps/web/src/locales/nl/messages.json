@@ -1809,12 +1809,16 @@
   "unsecuredWebsitesFound": {
     "message": "Onveilige websites gevonden"
   },
-  "unsecuredWebsitesFoundDesc": {
-    "message": "We hebben $COUNT$ items met onbeveiligde URIs in je kluis gevonden. Als de website het ondersteunt, moet je de URI naar https:// wijzigen.",
+  "unsecuredWebsitesFoundReportDesc": {
+    "message": "We vonden $COUNT$ items met onbeveiligde URIs in $VAULT$. Als de website het ondersteunt, kun je de URI beter aanpassen naar https://.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1830,12 +1834,16 @@
   "inactive2faFound": {
     "message": "Logins zonder 2FA gevonden"
   },
-  "inactive2faFoundDesc": {
-    "message": "We hebben $COUNT$ website(s) in je kluis gevonden waar je (volgens 2fa.directory) nog tweestapsaanmelding kunt instellen. Om deze accounts beter te beschermen, zou je tweestapsaanmelding moeten inschakelen.",
+  "inactive2faFoundReportDesc": {
+    "message": "We vonden $COUNT$ website(s) in $VAULT$ waar je tweestapsaanmelding nog niet gebruikt (terwijl dat volgens 2fa.directory wel kan). Om deze accounts beter te beschermen, kun je tweestapsaanmelding instellen.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1854,12 +1862,16 @@
   "exposedPasswordsFound": {
     "message": "Gelekte wachtwoorden gevonden"
   },
-  "exposedPasswordsFoundDesc": {
-    "message": "We hebben in je kluis $COUNT$ wachtwoorden gevonden die zijn gelekt. Je zou voor deze accounts een nieuw wachtwoord moeten instellen.",
+  "exposedPasswordsFoundReportDesc": {
+    "message": "We vonden $COUNT$ items in $VAULT$ met wachtwoorden die voorkomen in bekende datalekken. Je kunt die wachtwoorden het beste vervangen door een nieuw wachtwoord.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1887,12 +1899,16 @@
   "weakPasswordsFound": {
     "message": "Zwakke wachtwoorden gevonden"
   },
-  "weakPasswordsFoundDesc": {
-    "message": "We hebben $COUNT$ zwakke wachtwoorden in je kluis gevonden. Je zou ze moeten veranderen in sterke wachtwoorden.",
+  "weakPasswordsFoundReportDesc": {
+    "message": "We vonden $COUNT$ items in $VAULT$ met zwakke wachtwoorden. Je kunt die wachtwoorden het beste vervangen door sterke wachtwoorden.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1908,12 +1924,16 @@
   "reusedPasswordsFound": {
     "message": "Dubbele wachtwoorden gevonden"
   },
-  "reusedPasswordsFoundDesc": {
-    "message": "We hebben $COUNT$ dubbele wachtwoorden in je kluis gevonden. Je zou deze moeten veranderen in unieke wachtwoorden.",
+  "reusedPasswordsFoundReportDesc": {
+    "message": "We vonden $COUNT$ wachtwoorden die vaker voorkomen in $VAULT$. Je kunt die wachtwoorden het beste vervangen door een uniek wachtwoord.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -6460,6 +6480,9 @@
   "editGroupCollectionsDesc": {
     "message": "Geef toegang tot collecties door ze aan deze groep toe te voegen."
   },
+  "editGroupCollectionsRestrictionsDesc": {
+    "message": "You can only assign collections you manage."
+  },
   "accessAllCollectionsDesc": {
     "message": "Geef toegang tot alle huidige en toekomstige collecties."
   },
@@ -8049,5 +8072,8 @@
   },
   "collectionItemSelect": {
     "message": "Select collection item"
+  },
+  "manageBillingFromProviderPortalMessage": {
+    "message": "Manage billing from the Provider Portal"
   }
 }

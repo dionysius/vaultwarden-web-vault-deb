@@ -1809,12 +1809,16 @@
   "unsecuredWebsitesFound": {
     "message": "Открити са записи без защита"
   },
-  "unsecuredWebsitesFoundDesc": {
-    "message": "Открити са $COUNT$ записи в трезора с адрес без защита. Трябва да смените схемата за URI-то им на „https://“, ако сайтовете го поддържат.",
+  "unsecuredWebsitesFoundReportDesc": {
+    "message": "Във Вашия $VAULT$ има $COUNT$ елемента с незащитени адреси. Препоръчително е да смените протокола им на „https://“, ако уеб сайтовете го поддържат.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1830,12 +1834,16 @@
   "inactive2faFound": {
     "message": "Открити са записи без двустепенна идентификация"
   },
-  "inactive2faFoundDesc": {
-    "message": "В трезора ви има $COUNT$ уебсайт(а), които е възможно да не са настроени за вписване чрез двустепенно удостоверяване (според сайта 2fa.directory). За да защитите тези регистрации, трябва да настроите двустепенното удостоверяване.",
+  "inactive2faFoundReportDesc": {
+    "message": "Във Вашия $VAULT$ има $COUNT$ уебсайт(а), които е възможно да не са настроени за вписване чрез двустепенно удостоверяване (според сайта 2fa.directory). За да защитите тези регистрации, трябва да настроите двустепенното удостоверяване.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1854,12 +1862,16 @@
   "exposedPasswordsFound": {
     "message": "Открити са разкрити пароли"
   },
-  "exposedPasswordsFoundDesc": {
-    "message": "Открити са $COUNT$ записа в трезора ви, които са с разкрити пароли. Трябва да смените тези пароли.",
+  "exposedPasswordsFoundReportDesc": {
+    "message": "Във Вашия $VAULT$ са открити $COUNT$ елемента с пароли, които са открити в известни случаи на изтичане на данни. Препоръчително е да смените тези пароли.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1887,12 +1899,16 @@
   "weakPasswordsFound": {
     "message": "Открити са слаби пароли"
   },
-  "weakPasswordsFoundDesc": {
-    "message": "В трезора ви има $COUNT$записи със слаби пароли. Сменете паролите с надеждни.",
+  "weakPasswordsFoundReportDesc": {
+    "message": "Във Вашия $VAULT$ има $COUNT$ елемент(а) със слаби пароли. Препоръчително е да ги смените с по-надеждни.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1908,12 +1924,16 @@
   "reusedPasswordsFound": {
     "message": "Отрити са повтарящи се пароли"
   },
-  "reusedPasswordsFoundDesc": {
-    "message": "В трезора ви има $COUNT$ повтарящи се пароли. Задължително ги сменете с други, уникални пароли.",
+  "reusedPasswordsFoundReportDesc": {
+    "message": "Във Вашия $VAULT$ има $COUNT$ повтарящи се пароли. Препоръчително е да ги смените, така че всяка да е уникална.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -6460,6 +6480,9 @@
   "editGroupCollectionsDesc": {
     "message": "Дайте достъп до колекциите, като ги добавите към тази група."
   },
+  "editGroupCollectionsRestrictionsDesc": {
+    "message": "Можете да свързвате само колекции, които имате право да управлявате."
+  },
   "accessAllCollectionsDesc": {
     "message": "Дайте достъп до всички текущи и бъдещи колекции."
   },
@@ -8049,5 +8072,8 @@
   },
   "collectionItemSelect": {
     "message": "Изберете елемент от колекцията"
+  },
+  "manageBillingFromProviderPortalMessage": {
+    "message": "Управление на плащанията от Портала за доставчици"
   }
 }

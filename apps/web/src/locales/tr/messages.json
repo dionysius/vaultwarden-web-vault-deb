@@ -657,7 +657,7 @@
     "message": "Geçiş anahtarı başarıyla oluşturuldu."
   },
   "customPasskeyNameInfo": {
-    "message": "Tanımlamanıza yardımcı olması için Passkey'inize bir isim verin."
+    "message": "Sonradan tanıyabilmeniz için geçiş anahtarınıza bir isim verin."
   },
   "useForVaultEncryption": {
     "message": "Kasa şifrelemesinde kullan"
@@ -678,7 +678,7 @@
     "message": "Şifreleme için kullanılır"
   },
   "loginWithPasskeyEnabled": {
-    "message": "Passkey ile giriş yap"
+    "message": "Geçiş anahtarıyla giriş açık"
   },
   "passkeySaved": {
     "message": "$NAME$ kaydedildi",
@@ -696,10 +696,10 @@
     "message": "Geçiş anahtarını kaldır"
   },
   "removePasskeyInfo": {
-    "message": "Tüm Passkey'ler kaldırılırsa, ana parolanız olmadan yeni cihazlara giriş yapamazsınız."
+    "message": "Tüm geçiş anahtarları kaldırılırsa ana parolanız olmadan yeni cihazlara giriş yapamazsınız."
   },
   "passkeyLimitReachedInfo": {
-    "message": "Passkey sınırına ulaşıldı. Başka bir Passkey eklemek için bir Passley'i kaldırın."
+    "message": "Geçiş anahtarı sınırına ulaşıldı. Yeni bir geçiş anahtarı eklemek için mevcut bir geçiş anahtarını kaldırın."
   },
   "tryAgain": {
     "message": "Yeniden dene"
@@ -1809,12 +1809,16 @@
   "unsecuredWebsitesFound": {
     "message": "Güvensiz web siteleri bulundu"
   },
-  "unsecuredWebsitesFoundDesc": {
-    "message": "Kasanızda güvenli olmayan URI'ye sahip $COUNT$ kayıt bulduk. Web sitesi izin veriyorsa URI şemasını https:// olarak değiştirmelisiniz.",
+  "unsecuredWebsitesFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ with unsecured URIs. You should change their URI scheme to https:// if the website allows it.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1830,12 +1834,16 @@
   "inactive2faFound": {
     "message": "İki aşamalı girişi olmayan hesaplar bulundu"
   },
-  "inactive2faFoundDesc": {
-    "message": "Kasanızda iki aşamalı giriş kullanmıyor olabilecek $COUNT$ web sitesi bulduk (2fa.directory’ye göre). Bu hesapları daha iyi korumak için iki aşamalı girişi etkinleştirmelisiniz.",
+  "inactive2faFoundReportDesc": {
+    "message": "We found $COUNT$ website(s) in your $VAULT$ that may not be configured with two-step login (according to 2fa.directory). To further protect these accounts, you should set up two-step login.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1854,12 +1862,16 @@
   "exposedPasswordsFound": {
     "message": "Açığa çıkmış parolalar bulundu"
   },
-  "exposedPasswordsFoundDesc": {
-    "message": "Kasanızda, bilinen veri ihlallerine maruz kalmış parolalara sahip $COUNT$ kayıt bulundu. Bu parolaları değiştirmelisiniz.",
+  "exposedPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ that have passwords that were exposed in known data breaches. You should change them to use a new password.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1887,12 +1899,16 @@
   "weakPasswordsFound": {
     "message": "Zayıf parolalar pulundu"
   },
-  "weakPasswordsFoundDesc": {
-    "message": "Kasanızda zayıf parolalara sahip $COUNT$ kayıt bulduk. Bunları güncelleyip daha güçlü parolalar kullanmalısınız.",
+  "weakPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ with passwords that are not strong. You should update them to use stronger passwords.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1908,12 +1924,16 @@
   "reusedPasswordsFound": {
     "message": "Yeniden kullanılmış parolalar bulundu"
   },
-  "reusedPasswordsFoundDesc": {
-    "message": "Kasanızda tekrar kullanılmakta olan $COUNT$ parola bulduk. Onları benzersiz parolalarla değiştirmelisiniz.",
+  "reusedPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ passwords that are being reused in your $VAULT$. You should change them to a unique value.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -2323,7 +2343,7 @@
     "message": "Müşteri hizmetleriyle iletişime geçin"
   },
   "contactSupportShort": {
-    "message": "Destek Ekibiyle İletişime Geç"
+    "message": "Destek ekibiyle iletişime geç"
   },
   "updatedPaymentMethod": {
     "message": "Ödeme yöntemi güncellendi."
@@ -2427,7 +2447,7 @@
     "message": "İşletmeler ve diğer ekipler için."
   },
   "planNameTeamsStarter": {
-    "message": "Başlangıç Ekipleri"
+    "message": "Teams Starter"
   },
   "planNameEnterprise": {
     "message": "Kurumsal"
@@ -3678,7 +3698,7 @@
     "message": "Kasa zaman aşımı eyleminin ne zaman gerçekleştirileceğini seçin."
   },
   "vaultTimeoutLogoutDesc": {
-    "message": "Kasanızın oturumundan ne zaman çıkış yapılacağını seçin."
+    "message": "Kasanızdan ne zaman çıkış yapılacağını seçin."
   },
   "oneMinute": {
     "message": "1 dakika"
@@ -4782,7 +4802,7 @@
     "message": "Ana parolaları olan mevcut hesaplar, yöneticilerin hesaplarını kurtarabilmesi için üyelerin kendi kendilerine kaydolmalarını gerektirecektir. Otomatik kayıt, yeni üyeler için hesap kurtarmayı açacaktır."
   },
   "accountRecoverySingleOrgRequirementDesc": {
-    "message": "The single organization Enterprise policy must be turned on before activating this policy."
+    "message": "Bu ilkeyi etkinleştirmeden önce tek kuruluş kurumsal ilkesi etkinleştirilmelidir."
   },
   "resetPasswordPolicyAutoEnroll": {
     "message": "Otomatik eklenme"
@@ -4957,7 +4977,7 @@
     "message": "Mevcut kuruluşu ekle"
   },
   "addNewOrganization": {
-    "message": "Add new organization"
+    "message": "Yeni kuruluş ekle"
   },
   "myProvider": {
     "message": "Sağlayıcım"
@@ -5796,7 +5816,7 @@
     "message": "Cihaz doğrulamasını aç"
   },
   "deviceVerificationDesc": {
-    "message": "Verification codes are sent to your email address when logging in from an unrecognized device"
+    "message": "Tanınmayan bir cihazdan oturum açarken e-posta adresinize doğrulama kodları gönderilir"
   },
   "updatedDeviceVerification": {
     "message": "Cihaz doğrulaması güncellendi"
@@ -5940,13 +5960,13 @@
     }
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
-    "message": "DUO'yu başlatın ve oturum açmayı tamamlamak için adımları izleyin."
+    "message": "Duo'yu başlatın ve oturum açmayı tamamlamak için adımları izleyin."
   },
   "duoRequiredByOrgForAccount": {
-    "message": "Hesabınız için DUO iki adımlı giriş gereklidir."
+    "message": "Hesabınız için Duo iki adımlı giriş gereklidir."
   },
   "launchDuo": {
-    "message": "DUO'yu başlat"
+    "message": "Duo'yu başlat"
   },
   "turnOn": {
     "message": "Aç"
@@ -6460,6 +6480,9 @@
   "editGroupCollectionsDesc": {
     "message": "Kullanıcıları bu gruba ekleyerek koleksiyonlara erişim izni verin."
   },
+  "editGroupCollectionsRestrictionsDesc": {
+    "message": "You can only assign collections you manage."
+  },
   "accessAllCollectionsDesc": {
     "message": "Mevcut ve gelecekteki tüm koleksiyonlara erişim izni verin."
   },
@@ -6647,16 +6670,16 @@
     }
   },
   "verificationRequiredForActionSetPinToContinue": {
-    "message": "Verification required for this action. Set a PIN to continue."
+    "message": "Bu işlem için doğrulama gerekiyor. Devam etmek için bir PIN belirleyin."
   },
   "setPin": {
-    "message": "Set PIN"
+    "message": "PIN belirle"
   },
   "verifyWithBiometrics": {
-    "message": "Verify with biometrics"
+    "message": "Biyometri ile doğrula"
   },
   "awaitingConfirmation": {
-    "message": "Awaiting confirmation"
+    "message": "Onay bekleniyor"
   },
   "couldNotCompleteBiometrics": {
     "message": "Biyometri işlemi tamamlanamadı."
@@ -6671,10 +6694,10 @@
     "message": "PIN kullan"
   },
   "useBiometrics": {
-    "message": "Use biometrics"
+    "message": "Biyometri kullan"
   },
   "enterVerificationCodeSentToEmail": {
-    "message": "Enter the verification code that was sent to your email."
+    "message": "E-posta adresinize gönderilen doğrulama kodunu girin."
   },
   "resendCode": {
     "message": "Kodu yeniden gönder"
@@ -7150,7 +7173,7 @@
     }
   },
   "verificationRequired": {
-    "message": "Verification required",
+    "message": "Doğrulama gerekli",
     "description": "Default title for the user verification dialog."
   },
   "recoverAccount": {
@@ -7517,11 +7540,11 @@
     "message": "Hizmet hesabı erişimi güncellendi"
   },
   "commonImportFormats": {
-    "message": "Common formats",
+    "message": "Sık kullanılan biçimler",
     "description": "Label indicating the most common import formats"
   },
   "maintainYourSubscription": {
-    "message": "$ORG$ aboneliğinizi sürdürmek için, ",
+    "message": "$ORG$ aboneliğinizi sürdürmek için ",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'",
     "placeholders": {
       "org": {
@@ -7531,7 +7554,7 @@
     }
   },
   "addAPaymentMethod": {
-    "message": "bir ödeme yöntemi ekle",
+    "message": "bir ödeme yöntemi ekleyin",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
   },
   "collectionEnhancementsDesc": {
@@ -7554,7 +7577,7 @@
     "message": "E-posta adresinize bir onay e-postası gönderdik:"
   },
   "confirmCollectionEnhancementsDialogTitle": {
-    "message": "Bu eylem geri alınamaz"
+    "message": "Bu işlem geri alınamaz"
   },
   "confirmCollectionEnhancementsDialogContent": {
     "message": "Bu özelliğin etkinleştirilmesi, yönetici rolünün kullanımdan kaldırılmasına ve onun yerine Yönetebilir izninin getirilmesine neden olur. Bu birkaç dakika sürecektir. Tamamlanana kadar herhangi bir organizasyon değişikliği yapmayın. Devam etmek istediğinizden emin misiniz?"
@@ -7580,11 +7603,11 @@
     "description": "An option for the offboarding survey shown when a user cancels their subscription."
   },
   "tooDifficultToUse": {
-    "message": "Kullanılması zor",
+    "message": "Kullanması zor",
     "description": "An option for the offboarding survey shown when a user cancels their subscription."
   },
   "notUsingEnough": {
-    "message": "Yeterince kullanılmama",
+    "message": "Fazla kullanmıyorum",
     "description": "An option for the offboarding survey shown when a user cancels their subscription."
   },
   "tooExpensive": {
@@ -7607,7 +7630,7 @@
     "message": "Sağlayıcı Portalı"
   },
   "success": {
-    "message": "Success"
+    "message": "Başarılı"
   },
   "viewCollection": {
     "message": "View collection"
@@ -7662,10 +7685,10 @@
     "message": "Assigned"
   },
   "used": {
-    "message": "Used"
+    "message": "Kullanılan"
   },
   "remaining": {
-    "message": "Remaining"
+    "message": "Kalan"
   },
   "unlinkOrganization": {
     "message": "Unlink organization"
@@ -7930,7 +7953,7 @@
     "message": "Deleting a provider is permanent and irreversible. Enter your master password to confirm the deletion of the provider and all associated data."
   },
   "deleteProviderName": {
-    "message": "Cannot delete $ID$",
+    "message": "$ID$ silinemedi",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -8049,5 +8072,8 @@
   },
   "collectionItemSelect": {
     "message": "Select collection item"
+  },
+  "manageBillingFromProviderPortalMessage": {
+    "message": "Manage billing from the Provider Portal"
   }
 }

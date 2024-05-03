@@ -1,6 +1,6 @@
 {
   "whatTypeOfItem": {
-    "message": "Какой это тип элемента?"
+    "message": "Выберите тип элемента"
   },
   "name": {
     "message": "Название"
@@ -1809,12 +1809,16 @@
   "unsecuredWebsitesFound": {
     "message": "Найдены незащищенные сайты"
   },
-  "unsecuredWebsitesFoundDesc": {
-    "message": "В хранилище обнаружены элементы ($COUNT$ шт.) с незащищенными URI. Вам следует изменить их схему URI на https://, если сайт это позволяет.",
+  "unsecuredWebsitesFoundReportDesc": {
+    "message": "В вашем $VAULT$ обнаружены элементы ($COUNT$ шт.) с незащищенными URI. Вам следует изменить их схему URI на https://, если сайт это позволяет.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1830,12 +1834,16 @@
   "inactive2faFound": {
     "message": "Найдены логины без двухэтапной аутентификации"
   },
-  "inactive2faFoundDesc": {
-    "message": "В хранилище обнаружены сайты ($COUNT$ шт.), у которых может быть не настроена двухэтапная аутентификация (согласно 2fa.directory). Для дополнительной защиты этих аккаунтов следует настроить двухэтапную аутентификацию.",
+  "inactive2faFoundReportDesc": {
+    "message": "В вашем $VAULT$ обнаружены сайты ($COUNT$ шт.), у которых может быть не настроена двухэтапная аутентификация (согласно 2fa.directory). Для дополнительной защиты этих аккаунтов следует настроить двухэтапную аутентификацию.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1854,12 +1862,16 @@
   "exposedPasswordsFound": {
     "message": "Найдены скомпрометированные пароли"
   },
-  "exposedPasswordsFoundDesc": {
-    "message": "В хранилище обнаружены элементы ($COUNT$ шт.), пароли которых скомпрометированы. Вам следует задать для них новые пароли.",
+  "exposedPasswordsFoundReportDesc": {
+    "message": "В вашем $VAULT$ обнаружены элементы ($COUNT$ шт.), пароли которых скомпрометированы. Вам следует задать для них новые пароли.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1887,12 +1899,16 @@
   "weakPasswordsFound": {
     "message": "Обнаружены слабые пароли"
   },
-  "weakPasswordsFoundDesc": {
-    "message": "В хранилище есть элементы ($COUNT$ шт.) с ненадежными паролями. Следует задать для них более сильные пароли.",
+  "weakPasswordsFoundReportDesc": {
+    "message": "В вашем $VAULT$ обнаружены элементы ($COUNT$ шт.) с ненадежными паролями. Следует задать для них более сильные пароли.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1908,12 +1924,16 @@
   "reusedPasswordsFound": {
     "message": "Обнаружены повторно использованные пароли"
   },
-  "reusedPasswordsFoundDesc": {
-    "message": "В хранилище есть элементы ($COUNT$ шт.) с повторно использованными паролями. Следует изменить их на уникальные.",
+  "reusedPasswordsFoundReportDesc": {
+    "message": "В вашем $VAULT$ обнаружена элементы ($COUNT$ шт.) с повторно использованными паролями. Следует изменить их на уникальные.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -6460,6 +6480,9 @@
   "editGroupCollectionsDesc": {
     "message": "Предоставить доступ к коллекциям, при добавлении их в эту группу."
   },
+  "editGroupCollectionsRestrictionsDesc": {
+    "message": "Вы можете назначать только те коллекции, которыми управляете."
+  },
   "accessAllCollectionsDesc": {
     "message": "Предоставить доступ ко всем текущим и будущим коллекциям."
   },
@@ -8049,5 +8072,8 @@
   },
   "collectionItemSelect": {
     "message": "Выбрать элемент коллекции"
+  },
+  "manageBillingFromProviderPortalMessage": {
+    "message": "Управление биллингом на портале провайдера"
   }
 }

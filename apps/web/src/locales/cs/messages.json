@@ -1809,12 +1809,16 @@
   "unsecuredWebsitesFound": {
     "message": "Nalezena nezabezpečená webová stránka"
   },
-  "unsecuredWebsitesFoundDesc": {
-    "message": "Nalezli jsme $COUNT$ položek ve Vašem trezoru, které používají nezabezpečené URI. Schémata URI by měla být změněna na https://, pokud to web umožňuje.",
+  "unsecuredWebsitesFoundReportDesc": {
+    "message": "Nalezli jsme $COUNT$ položek ve Vašem trezoru $VAULT$, které používají nezabezpečené URI. Schémata URI by měla být změněna na https://, pokud to web umožňuje.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1830,12 +1834,16 @@
   "inactive2faFound": {
     "message": "Nalezena přihlášení bez dvoufázového ověření"
   },
-  "inactive2faFoundDesc": {
-    "message": "Nalezli jsme $COUNT$ webových stránek ve Vašem trezoru, které zřejmě nejsou nakonfigurovány pro použití dvoufaktorového přihlášení. Pro lepší ochranu Vašich účtů byste měli dvoufaktorové přihlášení povolit.",
+  "inactive2faFoundReportDesc": {
+    "message": "Nalezli jsme $COUNT$ webových stránek ve Vašem trezoru $VAULT$, které zřejmě nejsou nakonfigurovány pro použití dvoufaktorového přihlášení. Pro lepší ochranu Vašich účtů byste měli dvoufaktorové přihlášení povolit.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1854,12 +1862,16 @@
   "exposedPasswordsFound": {
     "message": "Nalezena odhalená hesla"
   },
-  "exposedPasswordsFoundDesc": {
-    "message": "Nalezli jsme $COUNT$ položek ve Vašem trezoru, jejichž hesla byla odhalena během známých úniků dat. Měli byste u nich použít nové heslo.",
+  "exposedPasswordsFoundReportDesc": {
+    "message": "Našli jsme $COUNT$ položek ve Vašem trezoru $VAULT$, která mají hesla, které byly odhaleny ve známých únicích dat. Měli byste je změnit tak, aby používaly nové heslo.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1887,12 +1899,16 @@
   "weakPasswordsFound": {
     "message": "Nalezena slabá hesla"
   },
-  "weakPasswordsFoundDesc": {
-    "message": "Našli jsme $COUNT$ položek ve Vašem trezoru se slabým heslem. Měli byste je aktualizovat a použit silnější hesla.",
+  "weakPasswordsFoundReportDesc": {
+    "message": "Našli jsme $COUNT$ položek ve Vašem trezoru $VAULT$ se slabým heslem. Měli byste je aktualizovat a použit silnější hesla.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1908,12 +1924,16 @@
   "reusedPasswordsFound": {
     "message": "Nalezena opakovaně použitá hesla"
   },
-  "reusedPasswordsFoundDesc": {
-    "message": "Nalezli jsme $COUNT$ opakovaně použitých hesel ve Vašem trezoru. Doporučujeme je změnit, aby byly unikátní.",
+  "reusedPasswordsFoundReportDesc": {
+    "message": "Nalezli jsme $COUNT$ opakovaně použitých hesel ve Vašem trezoru $VAULT$. Doporučujeme je změnit, aby byly unikátní.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -6460,6 +6480,9 @@
   "editGroupCollectionsDesc": {
     "message": "Udělí členům přístup ke kolekcím přidáním do této skupiny."
   },
+  "editGroupCollectionsRestrictionsDesc": {
+    "message": "Můžete přiřadit jen Vámi spravované kolekce."
+  },
   "accessAllCollectionsDesc": {
     "message": "Udělí přístup ke všem aktuálním i budoucím kolekcím."
   },
@@ -7910,10 +7933,10 @@
     "message": "Upozornění: Dne 2. května 2024 již nebudou nepřiřazené položky organizace viditelné v zobrazení Všechny trezory ve všech zařízeních a budou přístupné jen prostřednictvím konzoly správce. Přiřaďte tyto položky do kolekce z konzoly pro správce, aby byly viditelné."
   },
   "unassignedItemsBannerNotice": {
-    "message": "Upozornění: Nepřiřazené položky organizace již nejsou viditelné ve vašem zobrazení všech trezorů napříč zařízeními a jsou nyní přístupné pouze v konzoli správce."
+    "message": "Upozornění: Nepřiřazené položky organizace již nejsou viditelné ve Vašem zobrazení všech trezorů napříč zařízeními a jsou nyní přístupné pouze v konzoli správce."
   },
   "unassignedItemsBannerSelfHostNotice": {
-    "message": "Upozornění: 16. květba 2024 již nebudou nepřiřazené položky organizace viditelné ve vašem zobrazení všech trezorů napříč zařízeními a budou přístupné pouze v konzoli správce."
+    "message": "Upozornění: 16. květba 2024 již nebudou nepřiřazené položky organizace viditelné ve Vašem zobrazení všech trezorů napříč zařízeními a budou přístupné pouze v konzoli správce."
   },
   "unassignedItemsBannerCTAPartOne": {
     "message": "Přiřadit tyto položky ke kolekci z",
@@ -8039,7 +8062,7 @@
     "message": "Žádný přístup"
   },
   "collectionAdminConsoleManaged": {
-    "message": "Tato kolekce je přístupná pouze z konzole administrátora"
+    "message": "Tato kolekce je přístupná pouze z konzole správce"
   },
   "organizationOptionsMenu": {
     "message": "Přepnout menu organizace"
@@ -8049,5 +8072,8 @@
   },
   "collectionItemSelect": {
     "message": "Vybrat položku kolekce"
+  },
+  "manageBillingFromProviderPortalMessage": {
+    "message": "Spravovat fakturaci z portálu poskytovatele"
   }
 }

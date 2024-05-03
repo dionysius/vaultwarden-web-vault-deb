@@ -1809,12 +1809,16 @@
   "unsecuredWebsitesFound": {
     "message": "Našli sa nezabezpečené stránky"
   },
-  "unsecuredWebsitesFoundDesc": {
-    "message": "Našli sme $COUNT$ položky vo vašom trezore s nezabezpečenými URI. Ak to stránka podporuje, môžete zmeniť schému URI na https://.",
+  "unsecuredWebsitesFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ with unsecured URIs. You should change their URI scheme to https:// if the website allows it.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1830,12 +1834,16 @@
   "inactive2faFound": {
     "message": "Našli sa prihlásenia bez dvojstupňového overenia"
   },
-  "inactive2faFoundDesc": {
-    "message": "We found $COUNT$ website(s) in your vault that may not be configured with two-step login (according to 2fa.directory). To further protect these accounts, you should set up two-step login.",
+  "inactive2faFoundReportDesc": {
+    "message": "We found $COUNT$ website(s) in your $VAULT$ that may not be configured with two-step login (according to 2fa.directory). To further protect these accounts, you should set up two-step login.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1854,12 +1862,16 @@
   "exposedPasswordsFound": {
     "message": "Našli sme uniknuté heslá"
   },
-  "exposedPasswordsFoundDesc": {
-    "message": "Našli sme $COUNT$ položiek vo vašom trezore ktoré používajú uniknuté heslá. Mali by ste ich zmeniť aby používali nové heslá.",
+  "exposedPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ that have passwords that were exposed in known data breaches. You should change them to use a new password.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1887,12 +1899,16 @@
   "weakPasswordsFound": {
     "message": "Našli sa slabé heslá"
   },
-  "weakPasswordsFoundDesc": {
-    "message": "Našli sme $COUNT$ položiek vo vašom trezore, ktoré nepoužívajú silné heslá. Mali by ste ich aktualizovať a použiť silnejšie heslá.",
+  "weakPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ with passwords that are not strong. You should update them to use stronger passwords.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1908,12 +1924,16 @@
   "reusedPasswordsFound": {
     "message": "Našli sa viacnásobne použité heslá"
   },
-  "reusedPasswordsFoundDesc": {
-    "message": "Vo vašom trezore sme našli $COUNT$ hesiel, ktoré sú použité na viacerých stránkach. Mali by ste ich zmeniť aby každá stránka mala unikátne heslo.",
+  "reusedPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ passwords that are being reused in your $VAULT$. You should change them to a unique value.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -6460,6 +6480,9 @@
   "editGroupCollectionsDesc": {
     "message": "Povoľte prístup k zbierkam ich pridaním do tejto skupiny."
   },
+  "editGroupCollectionsRestrictionsDesc": {
+    "message": "You can only assign collections you manage."
+  },
   "accessAllCollectionsDesc": {
     "message": "Povoliť prístup k všetkým súčasným a budúcim zbierkam."
   },
@@ -8049,5 +8072,8 @@
   },
   "collectionItemSelect": {
     "message": "Vyberte položku zo zbierky"
+  },
+  "manageBillingFromProviderPortalMessage": {
+    "message": "Spravujte fakturáciu cez portál poskytovateľa"
   }
 }

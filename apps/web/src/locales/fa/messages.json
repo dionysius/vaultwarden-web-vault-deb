@@ -1809,12 +1809,16 @@
   "unsecuredWebsitesFound": {
     "message": "وب‌سایت های نا امن پیدا شد"
   },
-  "unsecuredWebsitesFoundDesc": {
-    "message": "ما $COUNT$ مورد را با نشانی‌های اینترنتی نا امن در خزانه شما پیدا کردیم. اگر وب‌سایت اجازه می‌دهد، باید طرح نشانی اینترنتی آن‌ها را به //:https‌ تغییر دهید.",
+  "unsecuredWebsitesFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ with unsecured URIs. You should change their URI scheme to https:// if the website allows it.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1830,12 +1834,16 @@
   "inactive2faFound": {
     "message": "ورود‌های بدون ورود دو مرحله ای یافت شد"
   },
-  "inactive2faFoundDesc": {
-    "message": "ما $COUNT$ وب‌سایت را در گاوصندوق شما پیدا کردیم که ممکن است با ورود دو مرحله‌ای پیکربندی نشده باشند (بر اساس 2fa.directory). برای محافظت بیشتر از این حساب‌ها، باید ورود دو مرحله ای را تنظیم کنید.",
+  "inactive2faFoundReportDesc": {
+    "message": "We found $COUNT$ website(s) in your $VAULT$ that may not be configured with two-step login (according to 2fa.directory). To further protect these accounts, you should set up two-step login.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1854,12 +1862,16 @@
   "exposedPasswordsFound": {
     "message": "کلمه‌های عبور افشا شده یافت شد"
   },
-  "exposedPasswordsFoundDesc": {
-    "message": "ما $COUNT$ موردی را در خزانه شما پیدا کردیم که دارای کلمه‌های عبوری هستند که در نقض‌های اطلاعاتی شناخته شده افشا شده‌اند. شما باید آن‌ها را تغییر دهید تا از یک کلمه عبور جدید استفاده کنید.",
+  "exposedPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ that have passwords that were exposed in known data breaches. You should change them to use a new password.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1887,12 +1899,16 @@
   "weakPasswordsFound": {
     "message": "کلمه‌های عبور ضعیف پیدا شد"
   },
-  "weakPasswordsFoundDesc": {
-    "message": "ما $COUNT$ مورد با کلمه‌های عبوری که قوی نیستند در گاوصندوق شما پیدا کردیم. شما باید آن‌ها را به‌روز کنید تا از کلمه‌های عبور قوی تر استفاده کنید.",
+  "weakPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ with passwords that are not strong. You should update them to use stronger passwords.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1908,12 +1924,16 @@
   "reusedPasswordsFound": {
     "message": "کلمه‌های عبور مجدد استفاده شده یافت شد"
   },
-  "reusedPasswordsFoundDesc": {
-    "message": "ما $COUNT$ کلمه عبور پیدا کردیم که در گاوضندوق شما دوباره استفاده می‌شود. شما باید آن‌ها را به یک مقدار منحصر به فرد تغییر دهید.",
+  "reusedPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ passwords that are being reused in your $VAULT$. You should change them to a unique value.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -6460,6 +6480,9 @@
   "editGroupCollectionsDesc": {
     "message": "با افزودن مجموعه‌ها به این گروه، اجازه دسترسی به مجموعه‌ها را بدهید."
   },
+  "editGroupCollectionsRestrictionsDesc": {
+    "message": "You can only assign collections you manage."
+  },
   "accessAllCollectionsDesc": {
     "message": "اجازه دسترسی به تمام مجموعه‌های فعلی و آینده."
   },
@@ -8049,5 +8072,8 @@
   },
   "collectionItemSelect": {
     "message": "Select collection item"
+  },
+  "manageBillingFromProviderPortalMessage": {
+    "message": "Manage billing from the Provider Portal"
   }
 }

@@ -1809,12 +1809,16 @@
   "unsecuredWebsitesFound": {
     "message": "Пронађене су незаштићене веб странице"
   },
-  "unsecuredWebsitesFoundDesc": {
-    "message": "Нашли смо $COUNT$ ставке у вашем сефу са незаштићеним УРЛ. Требали би да промените шеме у https:// ако веб страница то дозвољава.",
+  "unsecuredWebsitesFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ with unsecured URIs. You should change their URI scheme to https:// if the website allows it.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1830,12 +1834,16 @@
   "inactive2faFound": {
     "message": "Нађене пријаве без 2FA"
   },
-  "inactive2faFoundDesc": {
-    "message": "Нашли смо $COUNT$ сајта у вашем сефу који можда нису конфигурисани за пријаву у два корака (према 2fa.directory). Да бисте додатно заштитили ове налоге, требало би да подесите пријаву у два корака.",
+  "inactive2faFoundReportDesc": {
+    "message": "We found $COUNT$ website(s) in your $VAULT$ that may not be configured with two-step login (according to 2fa.directory). To further protect these accounts, you should set up two-step login.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1854,12 +1862,16 @@
   "exposedPasswordsFound": {
     "message": "Пронађене изложене лозинке"
   },
-  "exposedPasswordsFoundDesc": {
-    "message": "Пронашли смо у вашем сефу $COUNT$ предмета који садрже лозинке откривене у познатим повредама података. Требали би да их промените да бисте користили нову лозинку.",
+  "exposedPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ that have passwords that were exposed in known data breaches. You should change them to use a new password.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1887,12 +1899,16 @@
   "weakPasswordsFound": {
     "message": "Пронађене су слабе лозинке"
   },
-  "weakPasswordsFoundDesc": {
-    "message": "Пронашли смо у вашем сефу $COUNT$ ставки са слабим лозинкама. Требали бисте их ажурирати да би користили јаче лозинке.",
+  "weakPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ with passwords that are not strong. You should update them to use stronger passwords.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1908,12 +1924,16 @@
   "reusedPasswordsFound": {
     "message": "Пронађене поновне лозинке"
   },
-  "reusedPasswordsFoundDesc": {
-    "message": "Нашли смо $COUNT$ лозинке које се поново користе у вашем сефу. Требали бисте да их промените у јединствену вредност.",
+  "reusedPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ passwords that are being reused in your $VAULT$. You should change them to a unique value.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -6460,6 +6480,9 @@
   "editGroupCollectionsDesc": {
     "message": "Grant access to collections by adding them to this group."
   },
+  "editGroupCollectionsRestrictionsDesc": {
+    "message": "You can only assign collections you manage."
+  },
   "accessAllCollectionsDesc": {
     "message": "Grant access to all current and future collections."
   },
@@ -8049,5 +8072,8 @@
   },
   "collectionItemSelect": {
     "message": "Изаберите ставку колекције"
+  },
+  "manageBillingFromProviderPortalMessage": {
+    "message": "Manage billing from the Provider Portal"
   }
 }

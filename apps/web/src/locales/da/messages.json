@@ -1809,12 +1809,16 @@
   "unsecuredWebsitesFound": {
     "message": "Ikke-sikrede websteder fundet"
   },
-  "unsecuredWebsitesFoundDesc": {
-    "message": "$COUNT$ emner fundet i din boks med ikke-sikrede URI'er. Deres URI-protokoller bør ændres til https://, såfremt webstedet tillader det.",
+  "unsecuredWebsitesFoundReportDesc": {
+    "message": "$COUNT$ emner fundet i $VAULT$ med ikke-sikreded URI'er. Hvis tilladt af webstedet, bør deres URI-protokol ændres til https://.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1830,12 +1834,16 @@
   "inactive2faFound": {
     "message": "Logins uden totrins-login fundet"
   },
-  "inactive2faFoundDesc": {
-    "message": "$COUNT$ websted(er) fundet i boksen, som muligvis ikke er opsat med totrins-login (jf. 2fa.directory). For yderligere at beskytte disse konti, bør totrins-login opsættes.",
+  "inactive2faFoundReportDesc": {
+    "message": "$COUNT$ websted(er) muligvis uden opsat med tofaktorgodkendelse (iflg. 2fa.directory) fundet i $VAULT$. For yderligere beskyttelse af disse konti bør tofaktorgodkendelse opsættes.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1854,12 +1862,16 @@
   "exposedPasswordsFound": {
     "message": "Kompromitterede adgangskoder fundet"
   },
-  "exposedPasswordsFoundDesc": {
-    "message": "$COUNT$ emner fundet i din boks med adgangskoder kompromitteret i kendte datalæk. En ny adgangskode bør opsættes for disse emner.",
+  "exposedPasswordsFoundReportDesc": {
+    "message": "$COUNT$ emner fundet i $VAULT$ med adgangskoder kompromitteret via kendte datalæk. Deres adgangskoder bør skiftes.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1887,12 +1899,16 @@
   "weakPasswordsFound": {
     "message": "Svage adgangskoder fundet"
   },
-  "weakPasswordsFoundDesc": {
-    "message": "$COUNT$ emner fundet i din boks med adgangskoder, som ikke er stærke. Disse bør opdateres med stærkere adgangskoder.",
+  "weakPasswordsFoundReportDesc": {
+    "message": "$COUNT$ emner med svage adgangskoder fundet i $VAULT$. Disse bør skiftes til stærke adgangskoder.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1908,12 +1924,16 @@
   "reusedPasswordsFound": {
     "message": "Genbrugte adgangskoder fundet"
   },
-  "reusedPasswordsFoundDesc": {
-    "message": "Vi fandt $COUNT$ adgangskoder, der genbruges i din boks. Du bør ændre dem til unikke koder.",
+  "reusedPasswordsFoundReportDesc": {
+    "message": "$COUNT$ adgangskoder, som genbruges, fundet i $VAULT$. Disse bør skiftes til unikke adgangskoder.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -6460,6 +6480,9 @@
   "editGroupCollectionsDesc": {
     "message": "Tildel adgang til samlinger ved at føje dem til denne gruppe."
   },
+  "editGroupCollectionsRestrictionsDesc": {
+    "message": "Der kan kun tildeles samlinger, man selv håndterer."
+  },
   "accessAllCollectionsDesc": {
     "message": "Tildel adgang til alle nuværende og fremtidige samlinger."
   },
@@ -8049,5 +8072,8 @@
   },
   "collectionItemSelect": {
     "message": "Vælg samlingsemne"
+  },
+  "manageBillingFromProviderPortalMessage": {
+    "message": "Håndter fakturering via udbyderportalen"
   }
 }

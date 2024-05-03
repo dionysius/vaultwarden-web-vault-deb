@@ -1809,12 +1809,16 @@
   "unsecuredWebsitesFound": {
     "message": "發現不安全的網站"
   },
-  "unsecuredWebsitesFoundDesc": {
-    "message": "我們在您的密碼庫中找到了 $COUNT$ 個使用不安全 URI 的項目。若網站允許，您應變更其網址配置為 https://。",
+  "unsecuredWebsitesFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ with unsecured URIs. You should change their URI scheme to https:// if the website allows it.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1830,12 +1834,16 @@
   "inactive2faFound": {
     "message": "發現未啟用 2FA 的登入"
   },
-  "inactive2faFoundDesc": {
-    "message": "我們在您的密碼庫中找到 $COUNT$ 個可能未設定兩步驟登入的網站（依據 twofactorauth.org）。若要進一步保護這些帳戶，您應啟用兩步驟登入。",
+  "inactive2faFoundReportDesc": {
+    "message": "We found $COUNT$ website(s) in your $VAULT$ that may not be configured with two-step login (according to 2fa.directory). To further protect these accounts, you should set up two-step login.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1854,12 +1862,16 @@
   "exposedPasswordsFound": {
     "message": "發現暴露的密碼"
   },
-  "exposedPasswordsFoundDesc": {
-    "message": "我們在您的密碼庫中找到了 $COUNT$ 個項目的密碼在已知資料外洩事件中被暴露。您應將它們變更為新密碼。",
+  "exposedPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ that have passwords that were exposed in known data breaches. You should change them to use a new password.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1887,12 +1899,16 @@
   "weakPasswordsFound": {
     "message": "發現弱式密碼"
   },
-  "weakPasswordsFoundDesc": {
-    "message": "我們在您的密碼庫中找到了 $COUNT$ 個使用弱式密碼的項目。您應該將它們變更為更強的密碼。",
+  "weakPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ with passwords that are not strong. You should update them to use stronger passwords.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1908,12 +1924,16 @@
   "reusedPasswordsFound": {
     "message": "發現重複使用的密碼"
   },
-  "reusedPasswordsFoundDesc": {
-    "message": "我們在您的密碼庫中找到了 $COUNT$ 組密碼重複使用。您應該將它們變更為不同的密碼。",
+  "reusedPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ passwords that are being reused in your $VAULT$. You should change them to a unique value.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -6460,6 +6480,9 @@
   "editGroupCollectionsDesc": {
     "message": "透過將他們添加到此群組，授予對集合的存取權限。"
   },
+  "editGroupCollectionsRestrictionsDesc": {
+    "message": "You can only assign collections you manage."
+  },
   "accessAllCollectionsDesc": {
     "message": "授予對所有目前和未來的集合的存取權限。"
   },
@@ -8049,5 +8072,8 @@
   },
   "collectionItemSelect": {
     "message": "Select collection item"
+  },
+  "manageBillingFromProviderPortalMessage": {
+    "message": "Manage billing from the Provider Portal"
   }
 }

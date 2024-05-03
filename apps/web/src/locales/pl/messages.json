@@ -1809,12 +1809,16 @@
   "unsecuredWebsitesFound": {
     "message": "Znaleźliśmy niezabezpieczone strony"
   },
-  "unsecuredWebsitesFoundDesc": {
-    "message": "Znaleźliśmy elementy w Twoim sejfie zawierające niezabezpieczone adresy URI. Jeśli witryna to umożliwia, zmień schemat adresu na protokół HTTPS.",
+  "unsecuredWebsitesFoundReportDesc": {
+    "message": "Znaleźliśmy $COUNT$ elementów w Twoim $VAULT$, zawierających niezabezpieczone identyfikatory URI. Jeśli witryna to umożliwia, należy zmienić schemat identyfikatora URI na https://.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1830,12 +1834,16 @@
   "inactive2faFound": {
     "message": "Znaleźliśmy elementy bez włączonej opcji logowania dwustopniowego"
   },
-  "inactive2faFoundDesc": {
-    "message": "Znaleźliśmy $COUNT$ witryn(y) w sejfie, które mogą nie być skonfigurowane z wykorzystaniem logowania dwustopniowego (wg 2fa.directory). Aby dodatkowo zabezpieczyć te konta, należy skonfigurować logowanie dwustopniowe.",
+  "inactive2faFoundReportDesc": {
+    "message": "We found $COUNT$ website(s) in your $VAULT$ that may not be configured with two-step login (according to 2fa.directory). To further protect these accounts, you should set up two-step login.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1854,12 +1862,16 @@
   "exposedPasswordsFound": {
     "message": "Znaleźliśmy ujawnione hasła"
   },
-  "exposedPasswordsFoundDesc": {
-    "message": "Znaleźliśmy elementy w sejfie, które zawierają ujawnione hasła w znanych wyciekach danych. Zmień te hasła.",
+  "exposedPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ that have passwords that were exposed in known data breaches. You should change them to use a new password.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1887,12 +1899,16 @@
   "weakPasswordsFound": {
     "message": "Znaleźliśmy słabe hasła"
   },
-  "weakPasswordsFoundDesc": {
-    "message": "Znaleźliśmy elementy w sejfie, które zawierają słabe hasła. Zaktualizuj je na silniejsze hasła.",
+  "weakPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ with passwords that are not strong. You should update them to use stronger passwords.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1908,12 +1924,16 @@
   "reusedPasswordsFound": {
     "message": "Znaleźliśmy identyczne hasła"
   },
-  "reusedPasswordsFoundDesc": {
-    "message": "Znaleźliśmy hasła, które powtarzają się w sejfie. Zmień je, aby były unikalne.",
+  "reusedPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ passwords that are being reused in your $VAULT$. You should change them to a unique value.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -6460,6 +6480,9 @@
   "editGroupCollectionsDesc": {
     "message": "Przyznaj dostęp do kolekcji, dodając je do tej grupy."
   },
+  "editGroupCollectionsRestrictionsDesc": {
+    "message": "You can only assign collections you manage."
+  },
   "accessAllCollectionsDesc": {
     "message": "Udziel dostępu do wszystkich bieżących i przyszłych kolekcji."
   },
@@ -8049,5 +8072,8 @@
   },
   "collectionItemSelect": {
     "message": "Wybierz element kolekcji"
+  },
+  "manageBillingFromProviderPortalMessage": {
+    "message": "Zarządzaj płatnościami z portalu dostawcy"
   }
 }

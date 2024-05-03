@@ -573,13 +573,13 @@
     "message": "폴더 삭제함"
   },
   "editInfo": {
-    "message": "Edit info"
+    "message": "정보 편집"
   },
   "access": {
     "message": "접근"
   },
   "accessLevel": {
-    "message": "Access level"
+    "message": "접근 권한"
   },
   "loggedOut": {
     "message": "로그아웃됨"
@@ -615,7 +615,7 @@
     "message": "마스터 비밀번호로 로그인"
   },
   "readingPasskeyLoading": {
-    "message": "Reading passkey..."
+    "message": "패스키를 읽는 중..."
   },
   "readingPasskeyLoadingInfo": {
     "message": "Keep this window open and follow prompts from your browser."
@@ -1809,12 +1809,16 @@
   "unsecuredWebsitesFound": {
     "message": "안전하지 않은 웹사이트가 발견됨"
   },
-  "unsecuredWebsitesFoundDesc": {
-    "message": "보관함에 안전하지 않은 URI를 가진 항목 $COUNT$개를 발견했습니다. 웹 사이트에서 허용하는 경우 URI 스키마를 https://로 변경하십시오.",
+  "unsecuredWebsitesFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ with unsecured URIs. You should change their URI scheme to https:// if the website allows it.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1830,12 +1834,16 @@
   "inactive2faFound": {
     "message": "2단계 인증이 없는 로그인이 발견됨"
   },
-  "inactive2faFoundDesc": {
-    "message": "보관함에 (2fa.directory에 따른) 2단계 인증이 설정되지 않은 웹 사이트를 $COUNT$개 발견했습니다. 이러한 계정을 더욱 보호하려면 2단계 인증을 사용하십시오.",
+  "inactive2faFoundReportDesc": {
+    "message": "We found $COUNT$ website(s) in your $VAULT$ that may not be configured with two-step login (according to 2fa.directory). To further protect these accounts, you should set up two-step login.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1854,12 +1862,16 @@
   "exposedPasswordsFound": {
     "message": "노출된 비밀번호가 발견됨"
   },
-  "exposedPasswordsFoundDesc": {
-    "message": "보관함에 알려진 데이터 유출로 노출된 비밀번호가 있는 $COUNT$개의 항목을 발견했습니다. 새 암호를 사용하도록 암호를 변경해야합니다.",
+  "exposedPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ that have passwords that were exposed in known data breaches. You should change them to use a new password.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1887,12 +1899,16 @@
   "weakPasswordsFound": {
     "message": "취약한 비밀번호가 발견됨"
   },
-  "weakPasswordsFoundDesc": {
-    "message": "강력한 비밀번호가 아닌 $COUNT$개의 항목을 보관함에서 찾았습니다. 더 강력한 암호를 사용하도록 업데이트해야 합니다.",
+  "weakPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ items in your $VAULT$ with passwords that are not strong. You should update them to use stronger passwords.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1908,12 +1924,16 @@
   "reusedPasswordsFound": {
     "message": "재사용된 비밀번호가 발견됨"
   },
-  "reusedPasswordsFoundDesc": {
-    "message": "보관함에서 재사용중인 $COUNT$개의 비밀번호를 찾았습니다. 고유한 값으로 변경해야 합니다.",
+  "reusedPasswordsFoundReportDesc": {
+    "message": "We found $COUNT$ passwords that are being reused in your $VAULT$. You should change them to a unique value.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -6460,6 +6480,9 @@
   "editGroupCollectionsDesc": {
     "message": "Grant access to collections by adding them to this group."
   },
+  "editGroupCollectionsRestrictionsDesc": {
+    "message": "You can only assign collections you manage."
+  },
   "accessAllCollectionsDesc": {
     "message": "Grant access to all current and future collections."
   },
@@ -8049,5 +8072,8 @@
   },
   "collectionItemSelect": {
     "message": "Select collection item"
+  },
+  "manageBillingFromProviderPortalMessage": {
+    "message": "Manage billing from the Provider Portal"
   }
 }

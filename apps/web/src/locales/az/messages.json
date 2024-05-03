@@ -1809,12 +1809,16 @@
   "unsecuredWebsitesFound": {
     "message": "Güvənli olmayan veb sayt tapıldı"
   },
-  "unsecuredWebsitesFoundDesc": {
-    "message": "Anbarınızda güvənli olmayan URI-lərə sahib $COUNT$ element tapıldı. Veb sayt icazə verirsə, onların URI sxemini https:// olaraq dəyişdirməlisiniz.",
+  "unsecuredWebsitesFoundReportDesc": {
+    "message": "$VAULT$ daxilində güvənli olmayan URI-lərə sahib $COUNT$ element tapdıq. Veb sayt icazə verirsə, onların URI sxemini https:// olaraq dəyişdirməlisiniz.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1830,12 +1834,16 @@
   "inactive2faFound": {
     "message": "2FA olmayan hesablar tapıldı"
   },
-  "inactive2faFoundDesc": {
-    "message": "Anbarınızda (\"2fa.directory\"ə uyğun olaraq) iki addımlı kimlik doğrulama ilə konfiqurasiya edilmədiyini düşündüyümüz $COUNT$ veb sayt tapdıq. Bu hesabları daha çox qorumaq üçün iki addımlı girişi qurmalısınız.",
+  "inactive2faFoundReportDesc": {
+    "message": "$VAULT$ daxilində (\"2fa.directory\"ə uyğun olaraq) iki addımlı kimlik doğrulama ilə konfiqurasiya edilmədiyini düşündüyümüz $COUNT$ veb sayt tapdıq. Bu hesabları daha çox qorumaq üçün iki addımlı girişi qurmalısınız.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1854,12 +1862,16 @@
   "exposedPasswordsFound": {
     "message": "İfşa olunmuş parollar tapıldı"
   },
-  "exposedPasswordsFoundDesc": {
-    "message": "Anbarınızda, bilinən məlumat pozuntusunda parolları ifşa olunmuş $COUNT$ element tapdıq. Yeni bir parol istifadə etməzdən əvvəl onları dəyişdirməlisiniz.",
+  "exposedPasswordsFoundReportDesc": {
+    "message": "$VAULT$ daxilində, bilinən məlumat pozuntusunda parolları ifşa olunmuş $COUNT$ element tapdıq. Yeni bir parol istifadə etməzdən əvvəl onları dəyişdirməlisiniz.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1887,12 +1899,16 @@
   "weakPasswordsFound": {
     "message": "Zəif parol tapıldı"
   },
-  "weakPasswordsFoundDesc": {
-    "message": "Anbarınızda, şifrələri güclü olmayan $COUNT$ element tapdıq. Güclü şifrələr istifadə etmək üçün onları güncəlləməlisiniz.",
+  "weakPasswordsFoundReportDesc": {
+    "message": "$VAULT$ daxilində, parolları güclü olmayan $COUNT$ element tapdıq. Güclü parollar istifadə etmək üçün onları güncəlləməlisiniz.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -1908,12 +1924,16 @@
   "reusedPasswordsFound": {
     "message": "Təkrar istifadə olunmuş parollar tapıldı"
   },
-  "reusedPasswordsFoundDesc": {
-    "message": "Anbarınızda təkrar istifadə edilən $COUNT$ parol tapdıq. Onları unikal bir dəyərlə dəyişdirməlisiniz.",
+  "reusedPasswordsFoundReportDesc": {
+    "message": "$VAULT$ daxilində təkrar istifadə edilən $COUNT$ parol tapdıq. Onları unikal bir dəyərlə dəyişdirməlisiniz.",
     "placeholders": {
       "count": {
         "content": "$1",
         "example": "8"
+      },
+      "vault": {
+        "content": "$2",
+        "example": "this will be 'vault' or 'vaults'"
       }
     }
   },
@@ -4247,7 +4267,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendProtectedPasswordDontKnow": {
-    "message": "Şifrəni bilmirsiniz? Bu \"Send\"ə müraciət etmək üçün parolu göndərən şəxsdən istəyin.",
+    "message": "Parolu bilmirsiniz? Bu \"Send\"ə müraciət etmək üçün parolu göndərən şəxsdən istəyin.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendHiddenByDefault": {
@@ -6460,6 +6480,9 @@
   "editGroupCollectionsDesc": {
     "message": "Bu qrupa əlavə edərək kolleksiyalara müraciət icazəsi verin."
   },
+  "editGroupCollectionsRestrictionsDesc": {
+    "message": "Yalnız idarə etdiyiniz kolleksiyaları təyin edə bilərsiniz."
+  },
   "accessAllCollectionsDesc": {
     "message": "Hazırkı və gələcəkdəki bütün kolleksiyalara müraciət icazəsi verin."
   },
@@ -7973,13 +7996,13 @@
     "message": "İnteqrasiyalar"
   },
   "integrationsDesc": {
-    "message": "Automatically sync secrets from Bitwarden Secrets Manager to a third-party service."
+    "message": "\"Bitwarden Sirr Meneceri\"ndəki sirləri avtomatik olaraq üçüncü tərəf xidmətlə sinxronlaşdır."
   },
   "sdks": {
     "message": "SDK-lar"
   },
   "sdksDesc": {
-    "message": "Use Bitwarden Secrets Manager SDK in the following programming languages to build your own applications."
+    "message": "Öz tətbiqlərinizi qurmaq üçün \"Bitwarden Sirr Meneceri SDK\"sını aşağıdakı proqramlaşdırma dillərində istifadə edin."
   },
   "setUpGithubActions": {
     "message": "Github Actions qur"
@@ -8049,5 +8072,8 @@
   },
   "collectionItemSelect": {
     "message": "Kolleksiya elementini seç"
+  },
+  "manageBillingFromProviderPortalMessage": {
+    "message": "Fakturanı \"Provayder Portalı\"ndan idarə et"
   }
 }
