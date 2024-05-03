@@ -2,7 +2,7 @@ import { DOCUMENT } from "@angular/common";
 import { Component, Inject, NgZone, OnDestroy, OnInit } from "@angular/core";
 import { NavigationEnd, Router } from "@angular/router";
 import * as jq from "jquery";
-import { Subject, firstValueFrom, map, switchMap, takeUntil, timer } from "rxjs";
+import { Subject, filter, firstValueFrom, map, switchMap, takeUntil, timeout, timer } from "rxjs";
 
 import { EventUploadService } from "@bitwarden/common/abstractions/event/event-upload.service";
 import { NotificationsService } from "@bitwarden/common/abstractions/notifications.service";
@@ -13,6 +13,7 @@ import { InternalPolicyService } from "@bitwarden/common/admin-console/abstracti
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { KeyConnectorService } from "@bitwarden/common/auth/abstractions/key-connector.service";
+import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 import { PaymentMethodWarningsServiceAbstraction as PaymentMethodWarningService } from "@bitwarden/common/billing/abstractions/payment-method-warnings-service.abstraction";
 import { BroadcasterService } from "@bitwarden/common/platform/abstractions/broadcaster.service";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
@@ -136,9 +137,7 @@ export class AppComponent implements OnDestroy, OnInit {
             this.router.navigate(["/"]);
             break;
           case "logout":
-            // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-            // eslint-disable-next-line @typescript-eslint/no-floating-promises
-            this.logOut(!!message.expired, message.redirect);
+            await this.logOut(!!message.expired, message.redirect);
             break;
           case "lockVault":
             await this.vaultTimeoutService.lock();
@@ -266,7 +265,20 @@ export class AppComponent implements OnDestroy, OnInit {
 
   private async logOut(expired: boolean, redirect = true) {
     await this.eventUploadService.uploadEvents();
-    const userId = await this.stateService.getUserId();
+    const userId = (await this.stateService.getUserId()) as UserId;
+
+    const logoutPromise = firstValueFrom(
+      this.authService.authStatusFor$(userId).pipe(
+        filter((authenticationStatus) => authenticationStatus === AuthenticationStatus.LoggedOut),
+        timeout({
+          first: 5_000,
+          with: () => {
+            throw new Error("The logout process did not complete in a reasonable amount of time.");
+          },
+        }),
+      ),
+    );
+
     await Promise.all([
       this.syncService.setLastSync(new Date(0)),
       this.cryptoService.clearKeys(),
@@ -274,11 +286,11 @@ export class AppComponent implements OnDestroy, OnInit {
       this.folderService.clear(userId),
       this.collectionService.clear(userId),
       this.passwordGenerationService.clear(),
-      this.biometricStateService.logout(userId as UserId),
+      this.biometricStateService.logout(userId),
       this.paymentMethodWarningService.clear(),
     ]);
 
-    await this.stateEventRunnerService.handleEvent("logout", userId as UserId);
+    await this.stateEventRunnerService.handleEvent("logout", userId);
 
     await this.searchService.clearIndex();
     this.authService.logOut(async () => {
@@ -291,6 +303,10 @@ export class AppComponent implements OnDestroy, OnInit {
       }
 
       await this.stateService.clean({ userId: userId });
+      await this.accountService.clean(userId);
+
+      await logoutPromise;
+
       if (redirect) {
         // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
         // eslint-disable-next-line @typescript-eslint/no-floating-promises

@@ -8,7 +8,7 @@ import {
   ViewContainerRef,
 } from "@angular/core";
 import { Router } from "@angular/router";
-import { firstValueFrom, map, Subject, takeUntil } from "rxjs";
+import { filter, firstValueFrom, map, Subject, takeUntil, timeout } from "rxjs";
 
 import { ModalRef } from "@bitwarden/angular/components/modal/modal.ref";
 import { ModalService } from "@bitwarden/angular/services/modal.service";
@@ -566,19 +566,42 @@ export class AppComponent implements OnInit, OnDestroy {
     this.messagingService.send("updateAppMenu", { updateRequest: updateRequest });
   }
 
-  private async logOut(expired: boolean, userId?: string) {
-    const userBeingLoggedOut =
-      (userId as UserId) ??
-      (await firstValueFrom(this.accountService.activeAccount$.pipe(map((a) => a?.id))));
+  // Even though the userId parameter is no longer optional doesn't mean a message couldn't be
+  // passing null-ish values to us.
+  private async logOut(expired: boolean, userId: UserId) {
+    const activeUserId = await firstValueFrom(
+      this.accountService.activeAccount$.pipe(map((a) => a?.id)),
+    );
+
+    const userBeingLoggedOut = userId ?? activeUserId;
 
     // Mark account as being cleaned up so that the updateAppMenu logic (executed on syncCompleted)
     // doesn't attempt to update a user that is being logged out as we will manually
     // call updateAppMenu when the logout is complete.
     this.startAccountCleanUp(userBeingLoggedOut);
 
-    let preLogoutActiveUserId;
-    const nextUpAccount = await firstValueFrom(this.accountService.nextUpAccount$);
+    const nextUpAccount =
+      activeUserId === userBeingLoggedOut
+        ? await firstValueFrom(this.accountService.nextUpAccount$) // We'll need to switch accounts
+        : null;
+
     try {
+      // HACK: We shouldn't wait for authentication status to change here but instead subscribe to the
+      // authentication status to do various actions.
+      const logoutPromise = firstValueFrom(
+        this.authService.authStatusFor$(userBeingLoggedOut).pipe(
+          filter((authenticationStatus) => authenticationStatus === AuthenticationStatus.LoggedOut),
+          timeout({
+            first: 5_000,
+            with: () => {
+              throw new Error(
+                "The logout process did not complete in a reasonable amount of time.",
+              );
+            },
+          }),
+        ),
+      );
+
       // Provide the userId of the user to upload events for
       await this.eventUploadService.uploadEvents(userBeingLoggedOut);
       await this.syncService.setLastSync(new Date(0), userBeingLoggedOut);
@@ -592,26 +615,33 @@ export class AppComponent implements OnInit, OnDestroy {
 
       await this.stateEventRunnerService.handleEvent("logout", userBeingLoggedOut);
 
-      preLogoutActiveUserId = this.activeUserId;
       await this.stateService.clean({ userId: userBeingLoggedOut });
       await this.accountService.clean(userBeingLoggedOut);
+
+      // HACK: Wait for the user logging outs authentication status to transition to LoggedOut
+      await logoutPromise;
     } finally {
       this.finishAccountCleanUp(userBeingLoggedOut);
     }
 
-    if (nextUpAccount == null) {
-      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-      // eslint-disable-next-line @typescript-eslint/no-floating-promises
-      this.router.navigate(["login"]);
-    } else if (preLogoutActiveUserId !== nextUpAccount.id) {
-      this.messagingService.send("switchAccount", { userId: nextUpAccount.id });
+    // We only need to change the display at all if the account being looked at is the one
+    // being logged out. If it was a background account, no need to do anything.
+    if (userBeingLoggedOut === activeUserId) {
+      if (nextUpAccount != null) {
+        this.messagingService.send("switchAccount", { userId: nextUpAccount.id });
+      } else {
+        // We don't have another user to switch to, bring them to the login page so they
+        // can sign into a user.
+        await this.accountService.switchAccount(null);
+        void this.router.navigate(["login"]);
+      }
     }
 
     await this.updateAppMenu();
 
     // This must come last otherwise the logout will prematurely trigger
     // a process reload before all the state service user data can be cleaned up
-    if (userBeingLoggedOut === preLogoutActiveUserId) {
+    if (userBeingLoggedOut === activeUserId) {
       this.authService.logOut(async () => {
         if (expired) {
           this.platformUtilsService.showToast(
@@ -702,7 +732,7 @@ export class AppComponent implements OnInit, OnDestroy {
         // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
         // eslint-disable-next-line @typescript-eslint/no-floating-promises
         options[1] === "logOut"
-          ? this.logOut(false, userId)
+          ? this.logOut(false, userId as UserId)
           : await this.vaultTimeoutService.lock(userId);
       }
     }
