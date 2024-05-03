@@ -153,6 +153,7 @@ describe("EmergencyAccessService", () => {
       } as EmergencyAccessTakeoverResponse);
 
       const mockDecryptedGrantorUserKey = new Uint8Array(64);
+      cryptoService.getPrivateKey.mockResolvedValue(new Uint8Array(64));
       cryptoService.rsaDecrypt.mockResolvedValueOnce(mockDecryptedGrantorUserKey);
 
       const mockMasterKey = new SymmetricCryptoKey(new Uint8Array(64) as CsprngArray) as MasterKey;
@@ -197,10 +198,26 @@ describe("EmergencyAccessService", () => {
         kdf: KdfType.PBKDF2_SHA256,
         kdfIterations: 500,
       } as EmergencyAccessTakeoverResponse);
+      cryptoService.getPrivateKey.mockResolvedValue(new Uint8Array(64));
 
       await expect(
         emergencyAccessService.takeover(mockId, mockEmail, mockName),
       ).rejects.toThrowError("Failed to decrypt grantor key");
+
+      expect(emergencyAccessApiService.postEmergencyAccessPassword).not.toHaveBeenCalled();
+    });
+
+    it("should throw an error if the users private key cannot be retrieved", async () => {
+      emergencyAccessApiService.postEmergencyAccessTakeover.mockResolvedValueOnce({
+        keyEncrypted: "EncryptedKey",
+        kdf: KdfType.PBKDF2_SHA256,
+        kdfIterations: 500,
+      } as EmergencyAccessTakeoverResponse);
+      cryptoService.getPrivateKey.mockResolvedValue(null);
+
+      await expect(emergencyAccessService.takeover(mockId, mockEmail, mockName)).rejects.toThrow(
+        "user does not have a private key",
+      );
 
       expect(emergencyAccessApiService.postEmergencyAccessPassword).not.toHaveBeenCalled();
     });

@@ -621,19 +621,20 @@ export class CryptoService implements CryptoServiceAbstraction {
     await this.stateProvider.setUserState(USER_EVER_HAD_USER_KEY, null, userId);
   }
 
-  async rsaEncrypt(data: Uint8Array, publicKey?: Uint8Array): Promise<EncString> {
+  async rsaEncrypt(data: Uint8Array, publicKey: Uint8Array): Promise<EncString> {
     if (publicKey == null) {
-      publicKey = await this.getPublicKey();
-    }
-    if (publicKey == null) {
-      throw new Error("Public key unavailable.");
+      throw new Error("'publicKey' is a required parameter and must be non-null");
     }
 
     const encBytes = await this.cryptoFunctionService.rsaEncrypt(data, publicKey, "sha1");
     return new EncString(EncryptionType.Rsa2048_OaepSha1_B64, Utils.fromBufferToB64(encBytes));
   }
 
-  async rsaDecrypt(encValue: string, privateKeyValue?: Uint8Array): Promise<Uint8Array> {
+  async rsaDecrypt(encValue: string, privateKey: Uint8Array): Promise<Uint8Array> {
+    if (privateKey == null) {
+      throw new Error("'privateKey' is a required parameter and must be non-null");
+    }
+
     const headerPieces = encValue.split(".");
     let encType: EncryptionType = null;
     let encPieces: string[];
@@ -665,10 +666,6 @@ export class CryptoService implements CryptoServiceAbstraction {
     }
 
     const data = Utils.fromB64ToArray(encPieces[0]);
-    const privateKey = privateKeyValue ?? (await this.getPrivateKey());
-    if (privateKey == null) {
-      throw new Error("No private key.");
-    }
 
     let alg: "sha1" | "sha256" = "sha1";
     switch (encType) {

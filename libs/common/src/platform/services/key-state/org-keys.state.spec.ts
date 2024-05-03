@@ -65,6 +65,10 @@ describe("derived decrypted org keys", () => {
       "org-id-2": new SymmetricCryptoKey(makeStaticByteArray(64, 2)) as OrgKey,
     };
 
+    const userPrivateKey = makeStaticByteArray(64, 3);
+
+    cryptoService.getPrivateKey.mockResolvedValue(userPrivateKey);
+
     // TODO: How to not have to mock these decryptions. They are internal concerns of EncryptedOrganizationKey
     cryptoService.rsaDecrypt.mockResolvedValueOnce(decryptedOrgKeys["org-id-1"].key);
     cryptoService.rsaDecrypt.mockResolvedValueOnce(decryptedOrgKeys["org-id-2"].key);

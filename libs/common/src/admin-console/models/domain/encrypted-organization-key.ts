@@ -25,7 +25,13 @@ export class EncryptedOrganizationKey implements BaseEncryptedOrganizationKey {
   constructor(private key: string) {}
 
   async decrypt(cryptoService: CryptoService) {
-    const decValue = await cryptoService.rsaDecrypt(this.key);
+    const activeUserPrivateKey = await cryptoService.getPrivateKey();
+
+    if (activeUserPrivateKey == null) {
+      throw new Error("Active user does not have a private key, cannot decrypt organization key.");
+    }
+
+    const decValue = await cryptoService.rsaDecrypt(this.key, activeUserPrivateKey);
     return new SymmetricCryptoKey(decValue) as OrgKey;
   }
 

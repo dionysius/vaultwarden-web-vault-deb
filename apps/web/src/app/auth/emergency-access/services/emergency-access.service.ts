@@ -209,7 +209,16 @@ export class EmergencyAccessService {
   async getViewOnlyCiphers(id: string): Promise<CipherView[]> {
     const response = await this.emergencyAccessApiService.postEmergencyAccessView(id);
 
-    const grantorKeyBuffer = await this.cryptoService.rsaDecrypt(response.keyEncrypted);
+    const activeUserPrivateKey = await this.cryptoService.getPrivateKey();
+
+    if (activeUserPrivateKey == null) {
+      throw new Error("Active user does not have a private key, cannot get view only ciphers.");
+    }
+
+    const grantorKeyBuffer = await this.cryptoService.rsaDecrypt(
+      response.keyEncrypted,
+      activeUserPrivateKey,
+    );
     const grantorUserKey = new SymmetricCryptoKey(grantorKeyBuffer) as UserKey;
 
     const ciphers = await this.encryptService.decryptItems(
@@ -229,7 +238,16 @@ export class EmergencyAccessService {
   async takeover(id: string, masterPassword: string, email: string) {
     const takeoverResponse = await this.emergencyAccessApiService.postEmergencyAccessTakeover(id);
 
-    const grantorKeyBuffer = await this.cryptoService.rsaDecrypt(takeoverResponse.keyEncrypted);
+    const activeUserPrivateKey = await this.cryptoService.getPrivateKey();
+
+    if (activeUserPrivateKey == null) {
+      throw new Error("Active user does not have a private key, cannot complete a takeover.");
+    }
+
+    const grantorKeyBuffer = await this.cryptoService.rsaDecrypt(
+      takeoverResponse.keyEncrypted,
+      activeUserPrivateKey,
+    );
     if (grantorKeyBuffer == null) {
       throw new Error("Failed to decrypt grantor key");
     }
