@@ -1,17 +1,17 @@
 import { Component } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { combineLatest, firstValueFrom, from, lastValueFrom } from "rxjs";
-import { concatMap, switchMap, takeUntil } from "rxjs/operators";
+import { firstValueFrom, from, lastValueFrom, map } from "rxjs";
+import { switchMap, takeUntil } from "rxjs/operators";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { ProviderService } from "@bitwarden/common/admin-console/abstractions/provider.service";
-import { ProviderStatusType, ProviderUserType } from "@bitwarden/common/admin-console/enums";
+import { ProviderUserType } from "@bitwarden/common/admin-console/enums";
 import { Provider } from "@bitwarden/common/admin-console/models/domain/provider";
 import { ProviderOrganizationOrganizationDetailsResponse } from "@bitwarden/common/admin-console/models/response/provider/provider-organization.response";
 import { BillingApiServiceAbstraction as BillingApiService } from "@bitwarden/common/billing/abstractions/billilng-api.service.abstraction";
+import { canAccessBilling } from "@bitwarden/common/billing/abstractions/provider-billing.service.abstraction";
 import { PlanResponse } from "@bitwarden/common/billing/models/response/plan.response";
-import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { ValidationService } from "@bitwarden/common/platform/abstractions/validation.service";
@@ -35,10 +35,6 @@ export class ManageClientOrganizationsComponent extends BaseClientsComponent {
 
   loading = true;
   manageOrganizations = false;
-
-  private consolidatedBillingEnabled$ = this.configService.getFeatureFlag$(
-    FeatureFlag.EnableConsolidatedBilling,
-  );
 
   protected plans: PlanResponse[];
 
@@ -72,23 +68,16 @@ export class ManageClientOrganizationsComponent extends BaseClientsComponent {
       .pipe(
         switchMap((params) => {
           this.providerId = params.providerId;
-          return combineLatest([
-            this.providerService.get(this.providerId),
-            this.consolidatedBillingEnabled$,
-          ]).pipe(
-            concatMap(([provider, consolidatedBillingEnabled]) => {
-              if (
-                !consolidatedBillingEnabled ||
-                provider.providerStatus !== ProviderStatusType.Billable
-              ) {
+          return this.providerService.get$(this.providerId).pipe(
+            canAccessBilling(this.configService),
+            map((canAccessBilling) => {
+              if (!canAccessBilling) {
                 return from(
                   this.router.navigate(["../clients"], {
                     relativeTo: this.activatedRoute,
                   }),
                 );
               } else {
-                this.provider = provider;
-                this.manageOrganizations = this.provider.type === ProviderUserType.ProviderAdmin;
                 return from(this.load());
               }
             }),
@@ -104,6 +93,10 @@ export class ManageClientOrganizationsComponent extends BaseClientsComponent {
   }
 
   async load() {
+    this.provider = await firstValueFrom(this.providerService.get$(this.providerId));
+
+    this.manageOrganizations = this.provider.type === ProviderUserType.ProviderAdmin;
+
     this.clients = (await this.apiService.getProviderClients(this.providerId)).data;
 
     this.dataSource.data = this.clients;

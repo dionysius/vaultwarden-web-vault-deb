@@ -1,3 +1,5 @@
+import { firstValueFrom } from "rxjs";
+
 import { FakeAccountService, FakeStateProvider, mockAccountServiceWith } from "../../../spec";
 import { FakeActiveUserState, FakeSingleUserState } from "../../../spec/fake-state";
 import { Utils } from "../../platform/misc/utils";
@@ -86,6 +88,7 @@ describe("ProviderService", () => {
     fakeStateProvider = new FakeStateProvider(fakeAccountService);
     fakeUserState = fakeStateProvider.singleUser.getFake(fakeUserId, PROVIDERS);
     fakeActiveUserState = fakeStateProvider.activeUser.getFake(PROVIDERS);
+
     providerService = new ProviderService(fakeStateProvider);
   });
 
@@ -103,6 +106,22 @@ describe("ProviderService", () => {
       fakeUserState.nextState(arrayToRecord(mockData));
       const result = await providerService.getAll();
       expect(result).toEqual([]);
+    });
+  });
+
+  describe("get$()", () => {
+    it("Returns an observable of a single provider from state that matches the specified id", async () => {
+      const mockData = buildMockProviders(5);
+      fakeUserState.nextState(arrayToRecord(mockData));
+      const result = providerService.get$(mockData[3].id);
+      const provider = await firstValueFrom(result);
+      expect(provider).toEqual(new Provider(mockData[3]));
+    });
+
+    it("Returns an observable of undefined if the specified provider is not found", async () => {
+      const result = providerService.get$("this-provider-does-not-exist");
+      const provider = await firstValueFrom(result);
+      expect(provider).toBe(undefined);
     });
   });
 

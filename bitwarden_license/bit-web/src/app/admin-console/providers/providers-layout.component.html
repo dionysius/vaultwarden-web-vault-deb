@@ -1,5 +1,5 @@
 <bit-layout variant="secondary">
-  <nav slot="sidebar" *ngIf="provider">
+  <nav slot="sidebar" *ngIf="provider$ | async as provider">
     <a routerLink="." class="tw-m-5 tw-mt-7 tw-block" [appA11yTitle]="'providerPortal' | i18n">
       <bit-icon [icon]="logo"></bit-icon>
     </a>
@@ -7,14 +7,14 @@
     <bit-nav-item
       icon="bwi-bank"
       [text]="'clients' | i18n"
-      [route]="
-        (enableConsolidatedBilling$ | async) &&
-        provider.providerStatus === ProviderStatusType.Billable
-          ? 'manage-client-organizations'
-          : 'clients'
-      "
+      [route]="(canAccessBilling$ | async) ? 'manage-client-organizations' : 'clients'"
     ></bit-nav-item>
-    <bit-nav-group icon="bwi-sliders" [text]="'manage' | i18n" route="manage" *ngIf="showManageTab">
+    <bit-nav-group
+      icon="bwi-sliders"
+      [text]="'manage' | i18n"
+      route="manage"
+      *ngIf="showManageTab(provider)"
+    >
       <bit-nav-item
         [text]="'people' | i18n"
         route="manage/people"
@@ -26,13 +26,20 @@
         *ngIf="provider.useEvents"
       ></bit-nav-item>
     </bit-nav-group>
+    <bit-nav-group
+      icon="bwi-billing"
+      [text]="'billing' | i18n"
+      route="billing"
+      *ngIf="canAccessBilling$ | async"
+    >
+      <bit-nav-item [text]="'subscription' | i18n" route="billing/subscription"></bit-nav-item>
+    </bit-nav-group>
     <bit-nav-item
       icon="bwi-cogs"
       [text]="'settings' | i18n"
       route="settings"
-      *ngIf="showSettingsTab"
+      *ngIf="showSettingsTab(provider)"
     ></bit-nav-item>
-
     <app-toggle-width></app-toggle-width>
   </nav>
   <app-payment-method-warnings

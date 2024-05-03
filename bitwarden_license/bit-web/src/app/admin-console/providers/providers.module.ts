@@ -9,6 +9,7 @@ import { OrganizationPlansComponent, TaxInfoComponent } from "@bitwarden/web-vau
 import { PaymentMethodWarningsModule } from "@bitwarden/web-vault/app/billing/shared";
 import { OssModule } from "@bitwarden/web-vault/app/oss.module";
 
+import { ProviderSubscriptionComponent } from "../../billing/providers";
 import {
   CreateClientOrganizationComponent,
   ManageClientOrganizationSubscriptionComponent,
@@ -62,6 +63,7 @@ import { SetupComponent } from "./setup/setup.component";
     CreateClientOrganizationComponent,
     ManageClientOrganizationsComponent,
     ManageClientOrganizationSubscriptionComponent,
+    ProviderSubscriptionComponent,
   ],
   providers: [WebProviderService, ProviderPermissionsGuard],
 })

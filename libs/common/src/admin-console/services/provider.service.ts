@@ -1,6 +1,6 @@
-import { Observable, map, firstValueFrom, of, switchMap, take } from "rxjs";
+import { firstValueFrom, map, Observable, of, switchMap, take } from "rxjs";
 
-import { UserKeyDefinition, PROVIDERS_DISK, StateProvider } from "../../platform/state";
+import { PROVIDERS_DISK, StateProvider, UserKeyDefinition } from "../../platform/state";
 import { UserId } from "../../types/guid";
 import { ProviderService as ProviderServiceAbstraction } from "../abstractions/provider.service";
 import { ProviderData } from "../models/data/provider.data";
@@ -36,6 +36,10 @@ export class ProviderService implements ProviderServiceAbstraction {
     return map<Record<string, ProviderData>, Provider[]>((providers) =>
       Object.values(providers ?? {})?.map((o) => new Provider(o)),
     );
+  }
+
+  get$(id: string): Observable<Provider> {
+    return this.providers$().pipe(mapToSingleProvider(id));
   }
 
   async get(id: string): Promise<Provider> {
