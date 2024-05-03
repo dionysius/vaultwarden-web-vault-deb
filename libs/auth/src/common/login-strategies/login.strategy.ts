@@ -241,6 +241,7 @@ export abstract class LoginStrategy {
 
     // Must come before setting keys, user key needs email to update additional keys
     const userId = await this.saveAccountInformation(response);
+    result.userId = userId;
 
     if (response.twoFactorToken != null) {
       // note: we can read email from access token b/c it was saved in saveAccountInformation
@@ -249,7 +250,7 @@ export abstract class LoginStrategy {
       await this.tokenService.setTwoFactorToken(userEmail, response.twoFactorToken);
     }
 
-    await this.setMasterKey(response);
+    await this.setMasterKey(response, userId);
     await this.setUserKey(response, userId);
     await this.setPrivateKey(response);
 
@@ -259,7 +260,7 @@ export abstract class LoginStrategy {
   }
 
   // The keys comes from different sources depending on the login strategy
-  protected abstract setMasterKey(response: IdentityTokenResponse): Promise<void>;
+  protected abstract setMasterKey(response: IdentityTokenResponse, userId: UserId): Promise<void>;
   protected abstract setUserKey(response: IdentityTokenResponse, userId: UserId): Promise<void>;
   protected abstract setPrivateKey(response: IdentityTokenResponse): Promise<void>;
 

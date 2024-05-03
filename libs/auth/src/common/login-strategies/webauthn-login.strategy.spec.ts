@@ -208,7 +208,10 @@ describe("WebAuthnLoginStrategy", () => {
     // Assert
     // Master key encrypted user key should be set
     expect(cryptoService.setMasterKeyEncryptedUserKey).toHaveBeenCalledTimes(1);
-    expect(cryptoService.setMasterKeyEncryptedUserKey).toHaveBeenCalledWith(idTokenResponse.key);
+    expect(cryptoService.setMasterKeyEncryptedUserKey).toHaveBeenCalledWith(
+      idTokenResponse.key,
+      userId,
+    );
 
     expect(cryptoService.decryptToBytes).toHaveBeenCalledTimes(1);
     expect(cryptoService.decryptToBytes).toHaveBeenCalledWith(
@@ -220,7 +223,7 @@ describe("WebAuthnLoginStrategy", () => {
       idTokenResponse.userDecryptionOptions.webAuthnPrfOption.encryptedUserKey.encryptedString,
       mockPrfPrivateKey,
     );
-    expect(cryptoService.setUserKey).toHaveBeenCalledWith(mockUserKey);
+    expect(cryptoService.setUserKey).toHaveBeenCalledWith(mockUserKey, userId);
     expect(cryptoService.setPrivateKey).toHaveBeenCalledWith(idTokenResponse.privateKey);
 
     // Master key and private key should not be set

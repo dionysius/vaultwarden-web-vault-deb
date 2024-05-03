@@ -174,7 +174,7 @@ describe("UserApiLoginStrategy", () => {
 
     await apiLogInStrategy.logIn(credentials);
 
-    expect(keyConnectorService.setMasterKeyFromUrl).toHaveBeenCalledWith(keyConnectorUrl);
+    expect(keyConnectorService.setMasterKeyFromUrl).toHaveBeenCalledWith(keyConnectorUrl, userId);
   });
 
   it("decrypts and sets the user key if Key Connector is enabled", async () => {
@@ -195,6 +195,6 @@ describe("UserApiLoginStrategy", () => {
     await apiLogInStrategy.logIn(credentials);
 
     expect(cryptoService.decryptUserKeyWithMasterKey).toHaveBeenCalledWith(masterKey);
-    expect(cryptoService.setUserKey).toHaveBeenCalledWith(userKey);
+    expect(cryptoService.setUserKey).toHaveBeenCalledWith(userKey, userId);
   });
 });

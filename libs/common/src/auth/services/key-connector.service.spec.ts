@@ -215,7 +215,7 @@ describe("KeyConnectorService", () => {
       const masterKey = new SymmetricCryptoKey(keyArr) as MasterKey;
 
       // Act
-      await keyConnectorService.setMasterKeyFromUrl(url);
+      await keyConnectorService.setMasterKeyFromUrl(url, mockUserId);
 
       // Assert
       expect(apiService.getMasterKeyFromKeyConnector).toHaveBeenCalledWith(url);
@@ -235,7 +235,7 @@ describe("KeyConnectorService", () => {
 
       try {
         // Act
-        await keyConnectorService.setMasterKeyFromUrl(url);
+        await keyConnectorService.setMasterKeyFromUrl(url, mockUserId);
       } catch {
         // Assert
         expect(logService.error).toHaveBeenCalledWith(error);

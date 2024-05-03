@@ -8,6 +8,7 @@ import { KeyConnectorService } from "@bitwarden/common/auth/abstractions/key-con
 import { InternalMasterPasswordServiceAbstraction } from "@bitwarden/common/auth/abstractions/master-password.service.abstraction";
 import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
 import { TwoFactorService } from "@bitwarden/common/auth/abstractions/two-factor.service";
+import { AuthResult } from "@bitwarden/common/auth/models/domain/auth-result";
 import { ForceSetPasswordReason } from "@bitwarden/common/auth/models/domain/force-set-password-reason";
 import { SsoTokenRequest } from "@bitwarden/common/auth/models/request/identity-token/sso-token.request";
 import { AuthRequestResponse } from "@bitwarden/common/auth/models/response/auth-request.response";
@@ -124,7 +125,7 @@ export class SsoLoginStrategy extends LoginStrategy {
     this.ssoEmail2FaSessionToken$ = this.cache.pipe(map((state) => state.ssoEmail2FaSessionToken));
   }
 
-  async logIn(credentials: SsoLoginCredentials) {
+  async logIn(credentials: SsoLoginCredentials): Promise<AuthResult> {
     const data = new SsoLoginStrategyData();
     data.orgId = credentials.orgId;
 
@@ -147,10 +148,9 @@ export class SsoLoginStrategy extends LoginStrategy {
 
     // Auth guard currently handles redirects for this.
     if (ssoAuthResult.forcePasswordReset == ForceSetPasswordReason.AdminForcePasswordReset) {
-      const userId = (await firstValueFrom(this.accountService.activeAccount$))?.id;
       await this.masterPasswordService.setForceSetPasswordReason(
         ssoAuthResult.forcePasswordReset,
-        userId,
+        ssoAuthResult.userId,
       );
     }
 
@@ -163,7 +163,7 @@ export class SsoLoginStrategy extends LoginStrategy {
     return ssoAuthResult;
   }
 
-  protected override async setMasterKey(tokenResponse: IdentityTokenResponse) {
+  protected override async setMasterKey(tokenResponse: IdentityTokenResponse, userId: UserId) {
     // The only way we can be setting a master key at this point is if we are using Key Connector.
     // First, check to make sure that we should do so based on the token response.
     if (this.shouldSetMasterKeyFromKeyConnector(tokenResponse)) {
@@ -175,10 +175,11 @@ export class SsoLoginStrategy extends LoginStrategy {
         await this.keyConnectorService.convertNewSsoUserToKeyConnector(
           tokenResponse,
           this.cache.value.orgId,
+          userId,
         );
       } else {
         const keyConnectorUrl = this.getKeyConnectorUrl(tokenResponse);
-        await this.keyConnectorService.setMasterKeyFromUrl(keyConnectorUrl);
+        await this.keyConnectorService.setMasterKeyFromUrl(keyConnectorUrl, userId);
       }
     }
   }
@@ -231,7 +232,7 @@ export class SsoLoginStrategy extends LoginStrategy {
 
     if (masterKeyEncryptedUserKey) {
       // set the master key encrypted user key if it exists
-      await this.cryptoService.setMasterKeyEncryptedUserKey(masterKeyEncryptedUserKey);
+      await this.cryptoService.setMasterKeyEncryptedUserKey(masterKeyEncryptedUserKey, userId);
     }
 
     const userDecryptionOptions = tokenResponse?.userDecryptionOptions;
@@ -251,7 +252,7 @@ export class SsoLoginStrategy extends LoginStrategy {
       this.getKeyConnectorUrl(tokenResponse) != null
     ) {
       // Key connector enabled for user
-      await this.trySetUserKeyWithMasterKey();
+      await this.trySetUserKeyWithMasterKey(userId);
     }
 
     // Note: In the traditional SSO flow with MP without key connector, the lock component
@@ -338,8 +339,7 @@ export class SsoLoginStrategy extends LoginStrategy {
     }
   }
 
-  private async trySetUserKeyWithMasterKey(): Promise<void> {
-    const userId = (await firstValueFrom(this.accountService.activeAccount$))?.id;
+  private async trySetUserKeyWithMasterKey(userId: UserId): Promise<void> {
     const masterKey = await firstValueFrom(this.masterPasswordService.masterKey$(userId));
 
     // There is a scenario in which the master key is not set here. That will occur if the user
