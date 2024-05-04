@@ -395,12 +395,11 @@ export class CryptoService implements CryptoServiceAbstraction {
   }
 
   async setOrgKeys(
-    orgs: ProfileOrganizationResponse[] = [],
-    providerOrgs: ProfileProviderOrganizationResponse[] = [],
+    orgs: ProfileOrganizationResponse[],
+    providerOrgs: ProfileProviderOrganizationResponse[],
+    userId: UserId,
   ): Promise<void> {
-    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    this.activeUserEncryptedOrgKeysState.update((_) => {
+    await this.stateProvider.getUser(userId, USER_ENCRYPTED_ORGANIZATION_KEYS).update(() => {
       const encOrgKeyData: { [orgId: string]: EncryptedOrganizationKeyData } = {};
 
       orgs.forEach((org) => {
@@ -450,8 +449,8 @@ export class CryptoService implements CryptoServiceAbstraction {
     await this.stateProvider.setUserState(USER_ENCRYPTED_ORGANIZATION_KEYS, null, userId);
   }
 
-  async setProviderKeys(providers: ProfileProviderResponse[]): Promise<void> {
-    await this.activeUserEncryptedProviderKeysState.update((_) => {
+  async setProviderKeys(providers: ProfileProviderResponse[], userId: UserId): Promise<void> {
+    await this.stateProvider.getUser(userId, USER_ENCRYPTED_PROVIDER_KEYS).update(() => {
       const encProviderKeys: { [providerId: ProviderId]: EncryptedString } = {};
 
       providers.forEach((provider) => {
@@ -494,12 +493,14 @@ export class CryptoService implements CryptoServiceAbstraction {
     return [encShareKey, shareKey as T];
   }
 
-  async setPrivateKey(encPrivateKey: EncryptedString): Promise<void> {
+  async setPrivateKey(encPrivateKey: EncryptedString, userId: UserId): Promise<void> {
     if (encPrivateKey == null) {
       return;
     }
 
-    await this.activeUserEncryptedPrivateKeyState.update(() => encPrivateKey);
+    await this.stateProvider
+      .getUser(userId, USER_ENCRYPTED_PRIVATE_KEY)
+      .update(() => encPrivateKey);
   }
 
   async getPrivateKey(): Promise<Uint8Array> {
@@ -523,9 +524,10 @@ export class CryptoService implements CryptoServiceAbstraction {
     return this.hashPhrase(userFingerprint);
   }
 
-  async makeKeyPair(key?: SymmetricCryptoKey): Promise<[string, EncString]> {
-    // Default to user key
-    key ||= await this.getUserKeyWithLegacySupport();
+  async makeKeyPair(key: SymmetricCryptoKey): Promise<[string, EncString]> {
+    if (key == null) {
+      throw new Error("'key' is a required parameter and must be non-null.");
+    }
 
     const keyPair = await this.cryptoFunctionService.rsaGenerateKeyPair(2048);
     const publicB64 = Utils.fromBufferToB64(keyPair[0]);

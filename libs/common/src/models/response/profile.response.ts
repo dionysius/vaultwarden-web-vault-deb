@@ -1,11 +1,12 @@
 import { ProfileOrganizationResponse } from "../../admin-console/models/response/profile-organization.response";
 import { ProfileProviderOrganizationResponse } from "../../admin-console/models/response/profile-provider-organization.response";
 import { ProfileProviderResponse } from "../../admin-console/models/response/profile-provider.response";
+import { UserId } from "../../types/guid";
 
 import { BaseResponse } from "./base.response";
 
 export class ProfileResponse extends BaseResponse {
-  id: string;
+  id: UserId;
   name: string;
   email: string;
   emailVerified: boolean;

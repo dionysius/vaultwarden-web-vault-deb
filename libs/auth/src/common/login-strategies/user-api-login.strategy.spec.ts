@@ -159,7 +159,7 @@ describe("UserApiLoginStrategy", () => {
     await apiLogInStrategy.logIn(credentials);
 
     expect(cryptoService.setMasterKeyEncryptedUserKey).toHaveBeenCalledWith(tokenResponse.key);
-    expect(cryptoService.setPrivateKey).toHaveBeenCalledWith(tokenResponse.privateKey);
+    expect(cryptoService.setPrivateKey).toHaveBeenCalledWith(tokenResponse.privateKey, userId);
   });
 
   it("gets and sets the master key if Key Connector is enabled", async () => {

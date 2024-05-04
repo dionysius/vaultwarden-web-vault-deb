@@ -354,12 +354,16 @@ export class SsoLoginStrategy extends LoginStrategy {
     await this.cryptoService.setUserKey(userKey);
   }
 
-  protected override async setPrivateKey(tokenResponse: IdentityTokenResponse): Promise<void> {
+  protected override async setPrivateKey(
+    tokenResponse: IdentityTokenResponse,
+    userId: UserId,
+  ): Promise<void> {
     const newSsoUser = tokenResponse.key == null;
 
     if (!newSsoUser) {
       await this.cryptoService.setPrivateKey(
-        tokenResponse.privateKey ?? (await this.createKeyPairForOldAccount()),
+        tokenResponse.privateKey ?? (await this.createKeyPairForOldAccount(userId)),
+        userId,
       );
     }
   }

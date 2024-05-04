@@ -54,13 +54,23 @@ export abstract class CryptoService {
    * for encryption of data instead of the user key.
    */
   abstract isLegacyUser(masterKey?: MasterKey, userId?: string): Promise<boolean>;
+
+  /**
+   * Use for encryption/decryption of data in order to support legacy
+   * encryption models. It will return the user key if available,
+   * if not it will return the master key.
+   *
+   * @deprecated Please provide the userId of the user you want the user key for.
+   */
+  abstract getUserKeyWithLegacySupport(): Promise<UserKey>;
+
   /**
    * Use for encryption/decryption of data in order to support legacy
    * encryption models. It will return the user key if available,
    * if not it will return the master key.
    * @param userId The desired user
    */
-  abstract getUserKeyWithLegacySupport(userId?: string): Promise<UserKey>;
+  abstract getUserKeyWithLegacySupport(userId: UserId): Promise<UserKey>;
   /**
    * Retrieves the user key from storage
    * @param keySuffix The desired version of the user's key to retrieve
@@ -169,10 +179,12 @@ export abstract class CryptoService {
    * organization keys currently in memory
    * @param orgs The organizations to set keys for
    * @param providerOrgs The provider organizations to set keys for
+   * @param userId The user id of the user to set the org keys for
    */
   abstract setOrgKeys(
     orgs: ProfileOrganizationResponse[],
     providerOrgs: ProfileProviderOrganizationResponse[],
+    userId: UserId,
   ): Promise<void>;
   abstract activeUserOrgKeys$: Observable<Record<OrganizationId, OrgKey>>;
   /**
@@ -200,7 +212,13 @@ export abstract class CryptoService {
    * @param providers The providers to set keys for
    */
   abstract activeUserProviderKeys$: Observable<Record<ProviderId, ProviderKey>>;
-  abstract setProviderKeys(orgs: ProfileProviderResponse[]): Promise<void>;
+
+  /**
+   * Stores the provider keys for a given user.
+   * @param orgs The provider orgs for which to save the keys from.
+   * @param userId The user id of the user for which to store the keys for.
+   */
+  abstract setProviderKeys(orgs: ProfileProviderResponse[], userId: UserId): Promise<void>;
   /**
    * @param providerId The desired provider
    * @returns The provider's symmetric key
@@ -228,7 +246,7 @@ export abstract class CryptoService {
    * Note: does not clear the private key if null is provided
    * @param encPrivateKey An encrypted private key
    */
-  abstract setPrivateKey(encPrivateKey: string): Promise<void>;
+  abstract setPrivateKey(encPrivateKey: string, userId: UserId): Promise<void>;
   /**
    * Returns the private key from memory. If not available, decrypts it
    * from storage and stores it in memory
@@ -247,8 +265,9 @@ export abstract class CryptoService {
    * @param key A key to encrypt the private key with. If not provided,
    * defaults to the user key
    * @returns A new keypair: [publicKey in Base64, encrypted privateKey]
+   * @throws If the provided key is a null-ish value.
    */
-  abstract makeKeyPair(key?: SymmetricCryptoKey): Promise<[string, EncString]>;
+  abstract makeKeyPair(key: SymmetricCryptoKey): Promise<[string, EncString]>;
   /**
    * @param pin The user's pin
    * @param salt The user's salt

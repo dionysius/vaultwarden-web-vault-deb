@@ -35,7 +35,6 @@ import { SendData } from "../../../tools/send/models/data/send.data";
 import { SendResponse } from "../../../tools/send/models/response/send.response";
 import { SendApiService } from "../../../tools/send/services/send-api.service.abstraction";
 import { InternalSendService } from "../../../tools/send/services/send.service.abstraction";
-import { UserId } from "../../../types/guid";
 import { CipherService } from "../../../vault/abstractions/cipher.service";
 import { FolderApiServiceAbstraction } from "../../../vault/abstractions/folder/folder-api.service.abstraction";
 import { InternalFolderService } from "../../../vault/abstractions/folder/folder.service.abstraction";
@@ -311,7 +310,7 @@ export class SyncService implements SyncServiceAbstraction {
   }
 
   private async syncProfile(response: ProfileResponse) {
-    const stamp = await this.tokenService.getSecurityStamp(response.id as UserId);
+    const stamp = await this.tokenService.getSecurityStamp(response.id);
     if (stamp != null && stamp !== response.securityStamp) {
       if (this.logoutCallback != null) {
         await this.logoutCallback(true);
@@ -321,15 +320,16 @@ export class SyncService implements SyncServiceAbstraction {
     }
 
     await this.cryptoService.setMasterKeyEncryptedUserKey(response.key);
-    await this.cryptoService.setPrivateKey(response.privateKey);
-    await this.cryptoService.setProviderKeys(response.providers);
-    await this.cryptoService.setOrgKeys(response.organizations, response.providerOrganizations);
-    await this.avatarService.setSyncAvatarColor(response.id as UserId, response.avatarColor);
-    await this.tokenService.setSecurityStamp(response.securityStamp, response.id as UserId);
-    await this.accountService.setAccountEmailVerified(
-      response.id as UserId,
-      response.emailVerified,
+    await this.cryptoService.setPrivateKey(response.privateKey, response.id);
+    await this.cryptoService.setProviderKeys(response.providers, response.id);
+    await this.cryptoService.setOrgKeys(
+      response.organizations,
+      response.providerOrganizations,
+      response.id,
     );
+    await this.avatarService.setSyncAvatarColor(response.id, response.avatarColor);
+    await this.tokenService.setSecurityStamp(response.securityStamp, response.id);
+    await this.accountService.setAccountEmailVerified(response.id, response.emailVerified);
 
     await this.billingAccountProfileStateService.setHasPremium(
       response.premiumPersonally,
