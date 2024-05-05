@@ -81,8 +81,9 @@ export class AccountComponent {
     if (providerClients.data != null && providerClients.data.length > 0) {
       await this.dialogService.openSimpleDialog({
         title: { key: "deleteProviderName", placeholders: [this.provider.name] },
-        content: { key: "deleteProviderWarningDesc", placeholders: [this.provider.name] },
+        content: { key: "deleteProviderWarningDescription", placeholders: [this.provider.name] },
         acceptButtonText: { key: "ok" },
+        cancelButtonText: { key: "close" },
         type: "danger",
       });
 
