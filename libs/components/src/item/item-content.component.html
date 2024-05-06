@@ -1,11 +1,11 @@
-<div class="tw-flex tw-gap-2 tw-items-center">
+<div class="tw-flex tw-gap-2 tw-items-center tw-w-full">
   <ng-content select="[slot=start]"></ng-content>
 
   <div class="tw-flex tw-flex-col tw-items-start tw-text-start tw-w-full [&_p]:tw-mb-0">
-    <div class="tw-text-main tw-text-base">
+    <div class="tw-text-main tw-text-base tw-w-full tw-truncate">
       <ng-content></ng-content>
     </div>
-    <div class="tw-text-muted tw-text-sm">
+    <div class="tw-text-muted tw-text-sm tw-w-full tw-truncate">
       <ng-content select="[slot=secondary]"></ng-content>
     </div>
   </div>

@@ -113,11 +113,19 @@ export const TextOverflow: Story = {
   render: (args) => ({
     props: args,
     template: /*html*/ `
-      <div class="tw-text-main tw-mb-4">TODO: Fix truncation</div>
       <bit-item>
         <bit-item-content>
-          Helloooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+          Helloooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo!
+          <ng-container slot="secondary">Worlddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd!</ng-container>
         </bit-item-content>
+        <ng-container slot="end">
+          <bit-item-action>
+            <button type="button" bitIconButton="bwi-clone"></button>
+          </bit-item-action>
+          <bit-item-action>
+            <button type="button" bitIconButton="bwi-ellipsis-v"></button>
+          </bit-item-action>
+        </ng-container>
       </bit-item>
     `,
   }),
