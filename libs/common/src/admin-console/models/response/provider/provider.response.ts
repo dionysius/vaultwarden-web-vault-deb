@@ -1,4 +1,5 @@
 import { BaseResponse } from "../../../../models/response/base.response";
+import { ProviderType } from "../../../enums";
 
 export class ProviderResponse extends BaseResponse {
   id: string;
@@ -6,6 +7,7 @@ export class ProviderResponse extends BaseResponse {
   businessName: string;
   billingEmail: string;
   creationDate: Date;
+  type: ProviderType;
 
   constructor(response: any) {
     super(response);
@@ -14,5 +16,6 @@ export class ProviderResponse extends BaseResponse {
     this.businessName = this.getResponseProperty("BusinessName");
     this.billingEmail = this.getResponseProperty("BillingEmail");
     this.creationDate = this.getResponseProperty("CreationDate");
+    this.type = this.getResponseProperty("Type");
   }
 }
