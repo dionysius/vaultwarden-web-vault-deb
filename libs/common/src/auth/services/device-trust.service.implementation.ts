@@ -8,6 +8,7 @@ import { CryptoService } from "../../platform/abstractions/crypto.service";
 import { EncryptService } from "../../platform/abstractions/encrypt.service";
 import { I18nService } from "../../platform/abstractions/i18n.service";
 import { KeyGenerationService } from "../../platform/abstractions/key-generation.service";
+import { LogService } from "../../platform/abstractions/log.service";
 import { PlatformUtilsService } from "../../platform/abstractions/platform-utils.service";
 import { AbstractStorageService } from "../../platform/abstractions/storage.service";
 import { StorageLocation } from "../../platform/enums";
@@ -61,6 +62,7 @@ export class DeviceTrustService implements DeviceTrustServiceAbstraction {
     private stateProvider: StateProvider,
     private secureStorageService: AbstractStorageService,
     private userDecryptionOptionsService: UserDecryptionOptionsServiceAbstraction,
+    private logService: LogService,
   ) {
     this.supportsDeviceTrust$ = this.userDecryptionOptionsService.userDecryptionOptions$.pipe(
       map((options) => options?.trustedDeviceOption != null ?? false),
@@ -110,7 +112,7 @@ export class DeviceTrustService implements DeviceTrustServiceAbstraction {
     }
 
     // Attempt to get user key
-    const userKey: UserKey = await this.cryptoService.getUserKey();
+    const userKey: UserKey = await this.cryptoService.getUserKey(userId);
 
     // If user key is not found, throw error
     if (!userKey) {
@@ -223,19 +225,23 @@ export class DeviceTrustService implements DeviceTrustServiceAbstraction {
       throw new Error("UserId is required. Cannot get device key.");
     }
 
-    if (this.platformSupportsSecureStorage) {
-      const deviceKeyB64 = await this.secureStorageService.get<
-        ReturnType<SymmetricCryptoKey["toJSON"]>
-      >(`${userId}${this.deviceKeySecureStorageKey}`, this.getSecureStorageOptions(userId));
+    try {
+      if (this.platformSupportsSecureStorage) {
+        const deviceKeyB64 = await this.secureStorageService.get<
+          ReturnType<SymmetricCryptoKey["toJSON"]>
+        >(`${userId}${this.deviceKeySecureStorageKey}`, this.getSecureStorageOptions(userId));
 
-      const deviceKey = SymmetricCryptoKey.fromJSON(deviceKeyB64) as DeviceKey;
+        const deviceKey = SymmetricCryptoKey.fromJSON(deviceKeyB64) as DeviceKey;
+
+        return deviceKey;
+      }
+
+      const deviceKey = await firstValueFrom(this.stateProvider.getUserState$(DEVICE_KEY, userId));
 
       return deviceKey;
+    } catch (e) {
+      this.logService.error("Failed to get device key", e);
     }
-
-    const deviceKey = await firstValueFrom(this.stateProvider.getUserState$(DEVICE_KEY, userId));
-
-    return deviceKey;
   }
 
   private async setDeviceKey(userId: UserId, deviceKey: DeviceKey | null): Promise<void> {
@@ -243,16 +249,20 @@ export class DeviceTrustService implements DeviceTrustServiceAbstraction {
       throw new Error("UserId is required. Cannot set device key.");
     }
 
-    if (this.platformSupportsSecureStorage) {
-      await this.secureStorageService.save<DeviceKey>(
-        `${userId}${this.deviceKeySecureStorageKey}`,
-        deviceKey,
-        this.getSecureStorageOptions(userId),
-      );
-      return;
-    }
+    try {
+      if (this.platformSupportsSecureStorage) {
+        await this.secureStorageService.save<DeviceKey>(
+          `${userId}${this.deviceKeySecureStorageKey}`,
+          deviceKey,
+          this.getSecureStorageOptions(userId),
+        );
+        return;
+      }
 
-    await this.stateProvider.setUserState(DEVICE_KEY, deviceKey?.toJSON(), userId);
+      await this.stateProvider.setUserState(DEVICE_KEY, deviceKey?.toJSON(), userId);
+    } catch (e) {
+      this.logService.error("Failed to set device key", e);
+    }
   }
 
   private async makeDeviceKey(): Promise<DeviceKey> {
@@ -293,6 +303,7 @@ export class DeviceTrustService implements DeviceTrustServiceAbstraction {
       return new SymmetricCryptoKey(userKey) as UserKey;
     } catch (e) {
       // If either decryption effort fails, we want to remove the device key
+      this.logService.error("Failed to decrypt using device key. Removing device key.");
       await this.setDeviceKey(userId, null);
 
       return null;

@@ -272,6 +272,7 @@ export class BaseLoginDecryptionOptionsComponent implements OnInit, OnDestroy {
 
     // this.loading to support clients without async-actions-support
     this.loading = true;
+    // errors must be caught in child components to prevent navigation
     try {
       const { publicKey, privateKey } = await this.cryptoService.initAccount();
       const keysRequest = new KeysRequest(publicKey, privateKey.encryptedString);
@@ -288,8 +289,6 @@ export class BaseLoginDecryptionOptionsComponent implements OnInit, OnDestroy {
       if (this.rememberDeviceForm.value.rememberDevice) {
         await this.deviceTrustService.trustDevice(this.activeAccountId);
       }
-    } catch (error) {
-      this.validationService.showError(error);
     } finally {
       this.loading = false;
     }

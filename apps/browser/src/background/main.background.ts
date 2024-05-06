@@ -631,6 +631,7 @@ export default class MainBackground {
       this.stateProvider,
       this.secureStorageService,
       this.userDecryptionOptionsService,
+      this.logService,
     );
 
     this.devicesService = new DevicesServiceImplementation(this.devicesApiService);

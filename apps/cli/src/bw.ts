@@ -486,6 +486,7 @@ export class Main {
       this.stateProvider,
       this.secureStorageService,
       this.userDecryptionOptionsService,
+      this.logService,
     );
 
     this.authRequestService = new AuthRequestService(

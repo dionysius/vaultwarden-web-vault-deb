@@ -14,6 +14,7 @@ import { CryptoService } from "../../platform/abstractions/crypto.service";
 import { EncryptService } from "../../platform/abstractions/encrypt.service";
 import { I18nService } from "../../platform/abstractions/i18n.service";
 import { KeyGenerationService } from "../../platform/abstractions/key-generation.service";
+import { LogService } from "../../platform/abstractions/log.service";
 import { PlatformUtilsService } from "../../platform/abstractions/platform-utils.service";
 import { AbstractStorageService } from "../../platform/abstractions/storage.service";
 import { StorageLocation } from "../../platform/enums";
@@ -48,6 +49,7 @@ describe("deviceTrustService", () => {
   const i18nService = mock<I18nService>();
   const platformUtilsService = mock<PlatformUtilsService>();
   const secureStorageService = mock<AbstractStorageService>();
+  const logService = mock<LogService>();
 
   const userDecryptionOptionsService = mock<UserDecryptionOptionsServiceAbstraction>();
   const decryptionOptions = new BehaviorSubject<UserDecryptionOptions>(null);
@@ -726,6 +728,7 @@ describe("deviceTrustService", () => {
       stateProvider,
       secureStorageService,
       userDecryptionOptionsService,
+      logService,
     );
   }
 });

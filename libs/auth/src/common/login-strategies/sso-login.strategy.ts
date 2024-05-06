@@ -241,7 +241,7 @@ export class SsoLoginStrategy extends LoginStrategy {
     if (userDecryptionOptions?.trustedDeviceOption) {
       await this.trySetUserKeyWithApprovedAdminRequestIfExists(userId);
 
-      const hasUserKey = await this.cryptoService.hasUserKey();
+      const hasUserKey = await this.cryptoService.hasUserKey(userId);
 
       // Only try to set user key with device key if admin approval request was not successful
       if (!hasUserKey) {

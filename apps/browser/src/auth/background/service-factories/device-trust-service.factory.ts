@@ -34,6 +34,7 @@ import {
   KeyGenerationServiceInitOptions,
   keyGenerationServiceFactory,
 } from "../../../platform/background/service-factories/key-generation-service.factory";
+import { logServiceFactory } from "../../../platform/background/service-factories/log-service.factory";
 import {
   PlatformUtilsServiceInitOptions,
   platformUtilsServiceFactory,
@@ -88,6 +89,7 @@ export function deviceTrustServiceFactory(
         await stateProviderFactory(cache, opts),
         await secureStorageServiceFactory(cache, opts),
         await userDecryptionOptionsServiceFactory(cache, opts),
+        await logServiceFactory(cache, opts),
       ),
   );
 }
