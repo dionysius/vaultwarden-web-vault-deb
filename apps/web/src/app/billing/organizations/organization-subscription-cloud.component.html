@@ -1,6 +1,6 @@
 <app-header></app-header>
 
-<bit-container *ngIf="!IsProviderManaged">
+<bit-container *ngIf="!isProviderManaged">
   <ng-container *ngIf="!firstLoaded && loading">
     <i class="bwi bwi-spinner bwi-spin text-muted" title="{{ 'loading' | i18n }}"></i>
     <span class="sr-only">{{ "loading" | i18n }}</span>
