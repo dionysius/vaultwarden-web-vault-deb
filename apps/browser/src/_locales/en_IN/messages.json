@@ -226,7 +226,7 @@
     "message": "Help & feedback"
   },
   "helpCenter": {
-    "message": "Bitwarden Help center"
+    "message": "Bitwarden Help centre"
   },
   "communityForums": {
     "message": "Explore Bitwarden community forums"
@@ -728,7 +728,7 @@
     "message": "Change the application's colour theme."
   },
   "themeDescAlt": {
-    "message": "Change the application's color theme. Applies to all logged in accounts."
+    "message": "Change the application's colour theme. Applies to all logged in accounts."
   },
   "dark": {
     "message": "Dark",
@@ -1165,7 +1165,7 @@
     "message": "Show a recognizable image next to each login."
   },
   "faviconDescAlt": {
-    "message": "Show a recognizable image next to each login. Applies to all logged in accounts."
+    "message": "Show a recognisable image next to each login. Applies to all logged in accounts."
   },
   "enableBadgeCounter": {
     "message": "Show badge counter"
@@ -1730,7 +1730,7 @@
     "message": "An organization policy is affecting your ownership options."
   },
   "personalOwnershipPolicyInEffectImports": {
-    "message": "An organization policy has blocked importing items into your individual vault."
+    "message": "An organisation policy has blocked importing items into your individual vault."
   },
   "excludedDomains": {
     "message": "Excluded Domains"
@@ -1990,7 +1990,7 @@
     "message": "Your Master Password was recently changed by an administrator in your organization. In order to access the vault, you must update it now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
   },
   "updateWeakMasterPasswordWarning": {
-    "message": "Your master password does not meet one or more of your organization policies. In order to access the vault, you must update your master password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Your master password does not meet one or more of your organisation policies. In order to access the vault, you must update your master password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
   },
   "resetPasswordPolicyAutoEnroll": {
     "message": "Automatic Enrollment"
@@ -2006,11 +2006,11 @@
     "description": "Used as a message within the notification bar when no folders are found"
   },
   "orgPermissionsUpdatedMustSetPassword": {
-    "message": "Your organization permissions were updated, requiring you to set a master password.",
+    "message": "Your organisation permissions were updated, requiring you to set a master password.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "orgRequiresYouToSetPassword": {
-    "message": "Your organization requires you to set a master password.",
+    "message": "Your organisation requires you to set a master password.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "verificationRequired": {
@@ -2037,7 +2037,7 @@
     }
   },
   "vaultTimeoutPolicyWithActionInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed vault timeout is $HOURS$ hour(s) and $MINUTES$ minute(s). Your vault timeout action is set to $ACTION$.",
+    "message": "Your organisation policies are affecting your vault timeout. Maximum allowed vault timeout is $HOURS$ hour(s) and $MINUTES$ minute(s). Your vault timeout action is set to $ACTION$.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -2054,7 +2054,7 @@
     }
   },
   "vaultTimeoutActionPolicyInEffect": {
-    "message": "Your organization policies have set your vault timeout action to $ACTION$.",
+    "message": "Your organisation policies have set your vault timeout action to $ACTION$.",
     "placeholders": {
       "action": {
         "content": "$1",
@@ -2111,7 +2111,7 @@
     "message": "Exporting Personal Vault"
   },
   "exportingIndividualVaultDescription": {
-    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated attachments.",
+    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organisation vault items will not be included. Only vault item information will be exported and will not include associated attachments.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -2305,7 +2305,7 @@
     }
   },
   "autofillPageLoadPolicyActivated": {
-    "message": "Your organization policies have turned on auto-fill on page load."
+    "message": "Your organisation policies have turned on auto-fill on page load."
   },
   "howToAutofill": {
     "message": "How to auto-fill"
@@ -2377,7 +2377,7 @@
     "message": "Approve with master password"
   },
   "ssoIdentifierRequired": {
-    "message": "Organization SSO identifier is required."
+    "message": "Organisation SSO identifier is required."
   },
   "eu": {
     "message": "EU",
@@ -2688,7 +2688,7 @@
     "message": "Total"
   },
   "importWarning": {
-    "message": "You are importing data to $ORGANIZATION$. Your data may be shared with members of this organization. Do you want to proceed?",
+    "message": "You are importing data to $ORGANIZATION$. Your data may be shared with members of this organisation. Do you want to proceed?",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -3007,10 +3007,10 @@
     "message": "Passkey removed"
   },
   "unassignedItemsBannerNotice": {
-    "message": "Notice: Unassigned organization items are no longer visible in the All Vaults view and only accessible via the Admin Console."
+    "message": "Notice: Unassigned organisation items are no longer visible in the All Vaults view and only accessible via the Admin Console."
   },
   "unassignedItemsBannerSelfHostNotice": {
-    "message": "Notice: On May 16, 2024, unassigned organization items will no longer be visible in the All Vaults view and will only be accessible via the Admin Console."
+    "message": "Notice: On May 16, 2024, unassigned organisation items will no longer be visible in the All Vaults view and will only be accessible via the Admin Console."
   },
   "unassignedItemsBannerCTAPartOne": {
     "message": "Assign these items to a collection from the",

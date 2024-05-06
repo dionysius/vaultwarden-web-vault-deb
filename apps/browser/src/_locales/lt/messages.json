@@ -173,10 +173,10 @@
     "message": "Keisti pagrindinį slaptažodį"
   },
   "continueToWebApp": {
-    "message": "Continue to web app?"
+    "message": "Tęsti į žiniatinklio programėlę?"
   },
   "changeMasterPasswordOnWebConfirmation": {
-    "message": "You can change your master password on the Bitwarden web app."
+    "message": "Pagrindinį slaptažodį galite pakeisti „Bitwarden“ žiniatinklio programėlėje."
   },
   "fingerprintPhrase": {
     "message": "Pirštų atspaudų frazė",
@@ -2998,7 +2998,7 @@
     "description": "Notification message for when saving credentials has failed."
   },
   "success": {
-    "message": "Success"
+    "message": "Sėkmė"
   },
   "removePasskey": {
     "message": "Pašalinti slaptaraktį"
@@ -3007,26 +3007,26 @@
     "message": "Pašalintas slaptaraktis"
   },
   "unassignedItemsBannerNotice": {
-    "message": "Notice: Unassigned organization items are no longer visible in the All Vaults view and only accessible via the Admin Console."
+    "message": "Pranešimas: nepriskirti organizacijos elementai nebėra matomi peržiūros rodinyje Visi saugyklos ir yra pasiekiami tik per Administratoriaus konsolę."
   },
   "unassignedItemsBannerSelfHostNotice": {
-    "message": "Notice: On May 16, 2024, unassigned organization items will no longer be visible in the All Vaults view and will only be accessible via the Admin Console."
+    "message": "Pranešimas: 2024 m. gegužės 16 d. nepriskirti organizacijos elementai nebėra matomi peržiūros rodinyje Visi saugyklos ir yra pasiekiami tik per Administratoriaus konsolę."
   },
   "unassignedItemsBannerCTAPartOne": {
-    "message": "Assign these items to a collection from the",
+    "message": "Priskirkite šiuos elementus kolekcijai iš",
     "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
   },
   "unassignedItemsBannerCTAPartTwo": {
-    "message": "to make them visible.",
+    "message": ", kad jie būtų matomi.",
     "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
   },
   "adminConsole": {
-    "message": "Admin Console"
+    "message": "Administratoriaus konsolės"
   },
   "errorAssigningTargetCollection": {
-    "message": "Error assigning target collection."
+    "message": "Klaida priskiriant tikslinę kolekciją."
   },
   "errorAssigningTargetFolder": {
-    "message": "Error assigning target folder."
+    "message": "Klaida priskiriant tikslinį aplanką."
   }
 }
