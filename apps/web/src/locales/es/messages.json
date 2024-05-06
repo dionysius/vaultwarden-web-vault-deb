@@ -579,7 +579,7 @@
     "message": "Acceso"
   },
   "accessLevel": {
-    "message": "Access level"
+    "message": "Nivel de acceso"
   },
   "loggedOut": {
     "message": "Sesión terminada"
@@ -1359,11 +1359,11 @@
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
   "onboardingImportDataDetailsPartTwoNoOrgs": {
-    "message": " instead.",
+    "message": " en su lugar.",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead."
   },
   "onboardingImportDataDetailsPartTwoWithOrgs": {
-    "message": " instead. You may need to wait until your administrator confirms your organization membership.",
+    "message": " en su lugar. Es posible que tenga que esperar hasta que su administrador confirme la pertenencia a su organización.",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
   },
   "importError": {
@@ -1810,7 +1810,7 @@
     "message": "Sitios web no seguros encontrados"
   },
   "unsecuredWebsitesFoundReportDesc": {
-    "message": "We found $COUNT$ items in your $VAULT$ with unsecured URIs. You should change their URI scheme to https:// if the website allows it.",
+    "message": "Hemos encontrado $COUNT$ elementos en su $VAULT$ con URIs no seguros. Deberías cambiar su esquema URI a https:// si el sitio web lo permite.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1835,7 +1835,7 @@
     "message": "Inicios de sesión sin 2FA encontrados"
   },
   "inactive2faFoundReportDesc": {
-    "message": "We found $COUNT$ website(s) in your $VAULT$ that may not be configured with two-step login (according to 2fa.directory). To further protect these accounts, you should set up two-step login.",
+    "message": "Hemos encontrado $COUNT$ sitio(s) web en su $VAULT$ que pueden no estar configurados con inicio de sesión en dos pasos (según 2fa.directory). Para proteger aún más estas cuentas, debe configurar el inicio de sesión en dos pasos.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1863,7 +1863,7 @@
     "message": "Contraseñas comprometidas encontradas"
   },
   "exposedPasswordsFoundReportDesc": {
-    "message": "We found $COUNT$ items in your $VAULT$ that have passwords that were exposed in known data breaches. You should change them to use a new password.",
+    "message": "Hemos encontrado $COUNT$ elementos en su $VAULT$ que tienen contraseñas que fueron expuestas en violaciones de datos conocidas. Deberías cambiarlas para utilizar una contraseña nueva.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1900,7 +1900,7 @@
     "message": "Contraseñas débiles encontradas"
   },
   "weakPasswordsFoundReportDesc": {
-    "message": "We found $COUNT$ items in your $VAULT$ with passwords that are not strong. You should update them to use stronger passwords.",
+    "message": "Hemos encontrado $COUNT$ elementos en su $VAULT$ con contraseñas que no son seguras. Debe actualizarlos para utilizar contraseñas más seguras.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1925,7 +1925,7 @@
     "message": "Contraseñas reutilizadas encontradas"
   },
   "reusedPasswordsFoundReportDesc": {
-    "message": "We found $COUNT$ passwords that are being reused in your $VAULT$. You should change them to a unique value.",
+    "message": "Hemos encontrado $COUNT$ contraseñas que están siendo reutilizadas en tu $VAULT$. Deberías cambiarlas por un valor único.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -4971,13 +4971,13 @@
     "message": "Cree una nueva organización de clientes que estará asociada a usted como proveedor. Usted poddrá acceder y gestionar esta organización."
   },
   "newClient": {
-    "message": "New client"
+    "message": "Nuevo cliente"
   },
   "addExistingOrganization": {
     "message": "Añadir una organización existente"
   },
   "addNewOrganization": {
-    "message": "Add new organization"
+    "message": "Añadir nueva organización"
   },
   "myProvider": {
     "message": "Mi proveedor"
@@ -5233,7 +5233,7 @@
     "message": "Set a unique SP entity ID"
   },
   "spUniqueEntityIdDesc": {
-    "message": "Generate an identifier that is unique to your organization"
+    "message": "Genera un identificador único para su organización"
   },
   "idpEntityId": {
     "message": "ID de la entidad"
@@ -7961,8 +7961,8 @@
       }
     }
   },
-  "deleteProviderWarningDesc": {
-    "message": "You must unlink all clients before you can delete $ID$",
+  "deleteProviderWarningDescription": {
+    "message": "You must unlink all clients before you can delete $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",

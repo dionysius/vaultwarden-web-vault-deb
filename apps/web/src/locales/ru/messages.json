@@ -7961,8 +7961,8 @@
       }
     }
   },
-  "deleteProviderWarningDesc": {
-    "message": "Перед удалением $ID$ необходимо отвязать всех клиентов",
+  "deleteProviderWarningDescription": {
+    "message": "Перед удалением $ID$ необходимо отвязать всех клиентов.",
     "placeholders": {
       "id": {
         "content": "$1",

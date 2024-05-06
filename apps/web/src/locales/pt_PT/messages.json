@@ -1288,7 +1288,7 @@
     "message": "Definições da chave de encriptação alteradas"
   },
   "dangerZone": {
-    "message": "Zona de perigo"
+    "message": "Zona de risco"
   },
   "dangerZoneDesc": {
     "message": "Cuidado, estas ações são irreversíveis!"
@@ -7961,8 +7961,8 @@
       }
     }
   },
-  "deleteProviderWarningDesc": {
-    "message": "É necessário desvincular todos os clientes antes de poder eliminar $ID$",
+  "deleteProviderWarningDescription": {
+    "message": "É necessário desvincular todos os clientes antes de poder eliminar $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",

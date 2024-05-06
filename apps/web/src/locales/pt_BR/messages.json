@@ -7961,8 +7961,8 @@
       }
     }
   },
-  "deleteProviderWarningDesc": {
-    "message": "Você deve desvincular todos os clientes antes de excluir $ID$",
+  "deleteProviderWarningDescription": {
+    "message": "You must unlink all clients before you can delete $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",

@@ -7961,8 +7961,8 @@
       }
     }
   },
-  "deleteProviderWarningDesc": {
-    "message": "Je moet alle clients ontkoppelen voordat je $ID$ kunt verwijderen",
+  "deleteProviderWarningDescription": {
+    "message": "Je moet alle clients ontkoppelen voordat je $ID$ kunt verwijderen.",
     "placeholders": {
       "id": {
         "content": "$1",

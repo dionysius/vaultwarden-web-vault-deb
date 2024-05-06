@@ -7961,7 +7961,7 @@
       }
     }
   },
-  "deleteProviderWarningDesc": {
+  "deleteProviderWarningDescription": {
     "message": "删除 $ID$ 之前，您必须取消链接所有的客户端。",
     "placeholders": {
       "id": {
@@ -7996,7 +7996,7 @@
     "message": "集成"
   },
   "integrationsDesc": {
-    "message": "通过 Bitwarden 机密管理器将机密自动同步到第三方服务。"
+    "message": "自动将机密从 Bitwarden 机密管理器同步到第三方服务。"
   },
   "sdks": {
     "message": "SDK"

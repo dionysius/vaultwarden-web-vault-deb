@@ -7961,8 +7961,8 @@
       }
     }
   },
-  "deleteProviderWarningDesc": {
-    "message": "Musisz odłączyć wszystkich klientów zanim będziesz mógł usunąć $ID$",
+  "deleteProviderWarningDescription": {
+    "message": "Musisz odłączyć wszystkich klientów zanim będziesz mógł usunąć $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",

@@ -1863,7 +1863,7 @@
     "message": "Password esposte trovate"
   },
   "exposedPasswordsFoundReportDesc": {
-    "message": "We found $COUNT$ items in your $VAULT$ that have passwords that were exposed in known data breaches. You should change them to use a new password.",
+    "message": "Abbiamo trovato $COUNT$ elementi nella tua cassaforte che hanno password che sono state esposte a violazioni di dati note. Dovresti cambiarli per usare una nuova password.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -7961,8 +7961,8 @@
       }
     }
   },
-  "deleteProviderWarningDesc": {
-    "message": "Devi scollegare tutti i client prima di poter eliminare $ID$",
+  "deleteProviderWarningDescription": {
+    "message": "Devi scollegare tutti i client prima di poter eliminare $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",

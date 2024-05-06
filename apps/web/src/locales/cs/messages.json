@@ -7961,8 +7961,8 @@
       }
     }
   },
-  "deleteProviderWarningDesc": {
-    "message": "Před smazáním $ID$ musíte odpojit všechny klienty",
+  "deleteProviderWarningDescription": {
+    "message": "Před smazáním $ID$ musíte odpojit všechny klienty.",
     "placeholders": {
       "id": {
         "content": "$1",

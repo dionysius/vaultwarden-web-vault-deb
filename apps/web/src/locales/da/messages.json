@@ -7961,8 +7961,8 @@
       }
     }
   },
-  "deleteProviderWarningDesc": {
-    "message": "Alle klienttilknytninger skal fjernes, før $ID$ kan slettes",
+  "deleteProviderWarningDescription": {
+    "message": "Alle klienttilknytninger skal fjernes, før $ID$ kan slettes.",
     "placeholders": {
       "id": {
         "content": "$1",

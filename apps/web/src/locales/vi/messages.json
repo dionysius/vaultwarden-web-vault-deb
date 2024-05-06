@@ -579,7 +579,7 @@
     "message": "Quyền truy cập"
   },
   "accessLevel": {
-    "message": "Access level"
+    "message": "Cấp độ truy cập"
   },
   "loggedOut": {
     "message": "Đã đăng xuất"
@@ -609,7 +609,7 @@
     "message": "Đăng nhập bằng thiết bị"
   },
   "loginWithDeviceEnabledNote": {
-    "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
+    "message": "Đăng nhập bằng thiết bị phải được thiết lập trong cài đặt của ứng dụng Bitwarden. Dùng cách khác?"
   },
   "loginWithMasterPassword": {
     "message": "Đăng nhập bằng mật khẩu chính"
@@ -7961,8 +7961,8 @@
       }
     }
   },
-  "deleteProviderWarningDesc": {
-    "message": "You must unlink all clients before you can delete $ID$",
+  "deleteProviderWarningDescription": {
+    "message": "You must unlink all clients before you can delete $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",

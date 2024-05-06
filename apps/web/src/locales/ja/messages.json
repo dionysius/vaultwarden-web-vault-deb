@@ -7961,8 +7961,8 @@
       }
     }
   },
-  "deleteProviderWarningDesc": {
-    "message": "$ID$ を削除する前に、すべてのクライアントのリンクを解除してください",
+  "deleteProviderWarningDescription": {
+    "message": "$ID$ を削除するには、まずすべてのクライアントのリンクを解除してください。",
     "placeholders": {
       "id": {
         "content": "$1",

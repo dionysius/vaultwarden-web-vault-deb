@@ -7961,8 +7961,8 @@
       }
     }
   },
-  "deleteProviderWarningDesc": {
-    "message": "You must unlink all clients before you can delete $ID$",
+  "deleteProviderWarningDescription": {
+    "message": "$ID$ törlése előtt le kell választani az összes klienst.",
     "placeholders": {
       "id": {
         "content": "$1",

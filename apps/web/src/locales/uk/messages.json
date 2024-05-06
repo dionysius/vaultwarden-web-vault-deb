@@ -7961,8 +7961,8 @@
       }
     }
   },
-  "deleteProviderWarningDesc": {
-    "message": "Перш ніж видалити $ID$, ви повинні від'єднати всіх клієнтів",
+  "deleteProviderWarningDescription": {
+    "message": "Перш ніж видалити $ID$, ви повинні від'єднати всіх клієнтів.",
     "placeholders": {
       "id": {
         "content": "$1",

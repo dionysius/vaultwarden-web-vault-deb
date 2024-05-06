@@ -1810,7 +1810,7 @@
     "message": "Suojaamattomia verkkosivustoja löytyi"
   },
   "unsecuredWebsitesFoundReportDesc": {
-    "message": "We found $COUNT$ items in your $VAULT$ with unsecured URIs. You should change their URI scheme to https:// if the website allows it.",
+    "message": "Löysimme holv(e)istasi $COUNT$ kohdetta suojaamattomilla URI-osoitteilla. Nämä tulisi muuttaa suojattuun \"https://\" -muotoon, jos sivustot sen mahdollistavat.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1835,7 +1835,7 @@
     "message": "Löytyi kirjautumistietoja, joille ei ole määritetty kaksivaiheista kirjautumista"
   },
   "inactive2faFoundReportDesc": {
-    "message": "We found $COUNT$ website(s) in your $VAULT$ that may not be configured with two-step login (according to 2fa.directory). To further protect these accounts, you should set up two-step login.",
+    "message": "Löysimme holv(e)istasi $COUNT$ sivustoa, joita ei ehkä ole määritetty käyttämään kaksivaiheista tunnistautumista (2fa.directory-sivuston mukaan). Nämä tilit tulisi suojata paremmin määrittämällä niille kaksivaiheinen tunnistautuminen.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1863,7 +1863,7 @@
     "message": "Paljastuneita salasanoja löytyi"
   },
   "exposedPasswordsFoundReportDesc": {
-    "message": "We found $COUNT$ items in your $VAULT$ that have passwords that were exposed in known data breaches. You should change them to use a new password.",
+    "message": "Löysimme holv(e)istasi $COUNT$ kohdetta, joiden salasanat ovat paljastuneet tunnetuissa tietovuodoissa. Nämä salasanat tulisi vaihtaa.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1900,7 +1900,7 @@
     "message": "Heikkoja salasanoja löytyi"
   },
   "weakPasswordsFoundReportDesc": {
-    "message": "We found $COUNT$ items in your $VAULT$ with passwords that are not strong. You should update them to use stronger passwords.",
+    "message": "Löysimme holv(e)istasi $COUNT$ kohdetta, joiden salasanat eivät ole vahvoja. Nämä tulisi korvata vahvemmilla salasanoilla.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1925,7 +1925,7 @@
     "message": "Toistuvia salasanoja löytyi"
   },
   "reusedPasswordsFoundReportDesc": {
-    "message": "We found $COUNT$ passwords that are being reused in your $VAULT$. You should change them to a unique value.",
+    "message": "Löysimme holv(e)istasi $COUNT$ toistuvasti käytettyä salasanaa. Ne tulisi korvata yksilöllisillä salasanoilla.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -6481,7 +6481,7 @@
     "message": "Myönnä käyttöoikeudet kokoelmiin lisäämällä heidät tähän ryhmään."
   },
   "editGroupCollectionsRestrictionsDesc": {
-    "message": "You can only assign collections you manage."
+    "message": "Voit määrittää vain hallitsemiasi kokoelmia."
   },
   "accessAllCollectionsDesc": {
     "message": "Myönnä käyttöoikeudet kaikkiin nykyisiin ja tuleviin kokoelmiin"
@@ -7961,8 +7961,8 @@
       }
     }
   },
-  "deleteProviderWarningDesc": {
-    "message": "Kaikki liitetyt asiakkaat on poistettava ennen toimittajan $ID$ poistoa.",
+  "deleteProviderWarningDescription": {
+    "message": "You must unlink all clients before you can delete $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -8074,6 +8074,6 @@
     "message": "Valitse kokoelman kohde"
   },
   "manageBillingFromProviderPortalMessage": {
-    "message": "Manage billing from the Provider Portal"
+    "message": "Hallitse laskutusta Toimittajaportaaliista"
   }
 }

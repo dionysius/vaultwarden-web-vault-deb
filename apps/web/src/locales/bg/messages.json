@@ -7961,8 +7961,8 @@
       }
     }
   },
-  "deleteProviderWarningDesc": {
-    "message": "Трябва да разкачите всички клиенти, преди да можете да изтриете $ID$",
+  "deleteProviderWarningDescription": {
+    "message": "Трябва да разкачите всички клиенти, преди да можете да изтриете $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",

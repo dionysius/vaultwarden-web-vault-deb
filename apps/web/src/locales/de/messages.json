@@ -6481,7 +6481,7 @@
     "message": "Gewähre Zugriff auf Sammlungen, indem du diese zu dieser Gruppe hinzufügst."
   },
   "editGroupCollectionsRestrictionsDesc": {
-    "message": "You can only assign collections you manage."
+    "message": "Du kannst nur von dir verwaltete Sammlungen zuweisen."
   },
   "accessAllCollectionsDesc": {
     "message": "Gewähre Zugriff auf alle aktuellen und zukünftigen Sammlungen."
@@ -7961,8 +7961,8 @@
       }
     }
   },
-  "deleteProviderWarningDesc": {
-    "message": "Du musst die Verknüpfung zu allen Kunden aufheben, bevor du $ID$ löschen kannst",
+  "deleteProviderWarningDescription": {
+    "message": "You must unlink all clients before you can delete $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
