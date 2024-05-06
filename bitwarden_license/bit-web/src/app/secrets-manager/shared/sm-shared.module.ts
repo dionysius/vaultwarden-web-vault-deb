@@ -13,7 +13,6 @@ import { ProductSwitcherModule } from "@bitwarden/web-vault/app/layouts/product-
 import { SharedModule } from "@bitwarden/web-vault/app/shared";
 
 import { AccessPolicySelectorComponent } from "./access-policies/access-policy-selector/access-policy-selector.component";
-import { AccessSelectorComponent } from "./access-policies/access-selector.component";
 import { BulkConfirmationDialogComponent } from "./dialogs/bulk-confirmation-dialog.component";
 import { BulkStatusDialogComponent } from "./dialogs/bulk-status-dialog.component";
 import { NewMenuComponent } from "./new-menu.component";
@@ -35,7 +34,6 @@ import { SecretsListComponent } from "./secrets-list.component";
   ],
   exports: [
     AccessPolicySelectorComponent,
-    AccessSelectorComponent,
     BulkConfirmationDialogComponent,
     BulkStatusDialogComponent,
     HeaderModule,
@@ -49,7 +47,6 @@ import { SecretsListComponent } from "./secrets-list.component";
   ],
   declarations: [
     AccessPolicySelectorComponent,
-    AccessSelectorComponent,
     BulkConfirmationDialogComponent,
     BulkStatusDialogComponent,
     BulkStatusDialogComponent,

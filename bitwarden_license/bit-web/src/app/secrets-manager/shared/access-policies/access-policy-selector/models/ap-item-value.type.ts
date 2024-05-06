@@ -1,15 +1,17 @@
 import {
-  ProjectPeopleAccessPoliciesView,
   UserProjectAccessPolicyView,
   GroupProjectAccessPolicyView,
-  ServiceAccountPeopleAccessPoliciesView,
   UserServiceAccountAccessPolicyView,
   GroupServiceAccountAccessPolicyView,
+  ServiceAccountProjectAccessPolicyView,
+} from "../../../../models/view/access-policies/access-policy.view";
+import { ProjectPeopleAccessPoliciesView } from "../../../../models/view/access-policies/project-people-access-policies.view";
+import { ProjectServiceAccountsAccessPoliciesView } from "../../../../models/view/access-policies/project-service-accounts-access-policies.view";
+import {
   ServiceAccountGrantedPoliciesView,
   ServiceAccountProjectPolicyPermissionDetailsView,
-  ServiceAccountProjectAccessPolicyView,
-  ProjectServiceAccountsAccessPoliciesView,
-} from "../../../../models/view/access-policy.view";
+} from "../../../../models/view/access-policies/service-account-granted-policies.view";
+import { ServiceAccountPeopleAccessPoliciesView } from "../../../../models/view/access-policies/service-account-people-access-policies.view";
 
 import { ApItemEnum } from "./enums/ap-item.enum";
 import { ApPermissionEnum, ApPermissionEnumUtil } from "./enums/ap-permission.enum";

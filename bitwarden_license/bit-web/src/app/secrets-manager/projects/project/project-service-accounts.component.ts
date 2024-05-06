@@ -7,7 +7,7 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { ValidationService } from "@bitwarden/common/platform/abstractions/validation.service";
 
-import { ProjectServiceAccountsAccessPoliciesView } from "../../models/view/access-policy.view";
+import { ProjectServiceAccountsAccessPoliciesView } from "../../models/view/access-policies/project-service-accounts-access-policies.view";
 import {
   ApItemValueType,
   convertToProjectServiceAccountsAccessPoliciesView,

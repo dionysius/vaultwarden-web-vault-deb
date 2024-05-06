@@ -6,7 +6,6 @@ import { OrganizationService } from "@bitwarden/common/admin-console/abstraction
 import { DialogService } from "@bitwarden/components";
 
 import { ProjectListView } from "../../models/view/project-list.view";
-import { AccessPolicyService } from "../../shared/access-policies/access-policy.service";
 import {
   BulkConfirmationDetails,
   BulkConfirmationDialogComponent,
@@ -38,7 +37,6 @@ export class ProjectsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private projectService: ProjectService,
-    private accessPolicyService: AccessPolicyService,
     private dialogService: DialogService,
     private organizationService: OrganizationService,
   ) {}
@@ -47,7 +45,6 @@ export class ProjectsComponent implements OnInit {
     this.projects$ = combineLatest([
       this.route.params,
       this.projectService.project$.pipe(startWith(null)),
-      this.accessPolicyService.projectAccessPolicyChanges$.pipe(startWith(null)),
     ]).pipe(
       switchMap(async ([params]) => {
         this.organizationId = params.organizationId;
