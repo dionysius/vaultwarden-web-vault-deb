@@ -17,25 +17,25 @@ export class PopupTabNavigationComponent {
   navButtons = [
     {
       label: "Vault",
-      page: "/vault",
+      page: "/tabs/vault",
       iconKey: "lock",
       iconKeyActive: "lock-f",
     },
     {
       label: "Generator",
-      page: "/generator",
+      page: "/tabs/generator",
       iconKey: "generate",
       iconKeyActive: "generate-f",
     },
     {
       label: "Send",
-      page: "/send",
+      page: "/tabs/send",
       iconKey: "send",
       iconKeyActive: "send-f",
     },
     {
       label: "Settings",
-      page: "/settings",
+      page: "/tabs/settings",
       iconKey: "cog",
       iconKeyActive: "cog-f",
     },

@@ -80,6 +80,7 @@ import { OptionsComponent } from "./settings/options.component";
 import { SettingsComponent } from "./settings/settings.component";
 import { SyncComponent } from "./settings/sync.component";
 import { VaultTimeoutInputComponent } from "./settings/vault-timeout-input.component";
+import { TabsV2Component } from "./tabs-v2.component";
 import { TabsComponent } from "./tabs.component";
 
 // Register the locales for the application
@@ -160,6 +161,7 @@ import "../platform/popup/locales";
     SsoComponent,
     SyncComponent,
     TabsComponent,
+    TabsV2Component,
     TwoFactorComponent,
     TwoFactorOptionsComponent,
     UpdateTempPasswordComponent,
