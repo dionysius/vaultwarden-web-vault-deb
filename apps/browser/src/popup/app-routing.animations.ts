@@ -174,6 +174,9 @@ export const routerTransition = trigger("routerTransition", [
   transition("clone-cipher => attachments, clone-cipher => collections", inSlideLeft),
   transition("attachments => clone-cipher, collections => clone-cipher", outSlideRight),
 
+  transition("tabs => account-security", inSlideLeft),
+  transition("account-security => tabs", outSlideRight),
+
   transition("tabs => import", inSlideLeft),
   transition("import => tabs", outSlideRight),
 
