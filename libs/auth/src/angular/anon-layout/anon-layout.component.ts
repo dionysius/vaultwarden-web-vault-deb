@@ -5,7 +5,7 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
 
 import { IconModule, Icon } from "../../../../components/src/icon";
 import { TypographyModule } from "../../../../components/src/typography";
-import { BitwardenLogo } from "../../icons/bitwarden-logo";
+import { BitwardenLogo } from "../icons/bitwarden-logo.icon";
 
 @Component({
   standalone: true,

@@ -1,5 +1,5 @@
 <main
-  class="tw-flex tw-min-h-screen tw-max-w-xl tw-w-full tw-mx-auto tw-flex-col tw-gap-9 tw-px-4 tw-pb-4 tw-pt-14 tw-text-main"
+  class="tw-flex tw-min-h-screen tw-w-full tw-mx-auto tw-flex-col tw-gap-9 tw-px-4 tw-pb-4 tw-pt-14 tw-text-main"
 >
   <div class="tw-text-center">
     <div class="tw-px-8">
@@ -13,8 +13,10 @@
     </h1>
     <p *ngIf="subtitle" bitTypography="body1">{{ subtitle }}</p>
   </div>
-  <div class="tw-mb-auto tw-mx-auto tw-max-w-md tw-grid tw-gap-9">
-    <div class="tw-rounded-xl sm:tw-border sm:tw-border-solid sm:tw-border-secondary-300 sm:tw-p-8">
+  <div class="tw-mb-auto tw-mx-auto tw-grid">
+    <div
+      class="tw-rounded-xl tw-mb-9 tw-mx-auto sm:tw-border sm:tw-border-solid sm:tw-border-secondary-300 sm:tw-p-8"
+    >
       <ng-content></ng-content>
     </div>
     <ng-content select="[slot=secondary]"></ng-content>

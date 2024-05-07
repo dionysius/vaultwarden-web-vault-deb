@@ -1,0 +1,118 @@
+import { Meta, Story, Controls } from "@storybook/addon-docs";
+
+import * as stories from "./anon-layout.stories";
+
+<Meta of={stories} />
+
+# AnonLayout Component
+
+The Auth-owned AnonLayoutComponent is to be used for unauthenticated pages, where we don't know who
+the user is (this includes viewing a Send).
+
+---
+
+### Incorrect Usage ❌
+
+The AnonLayoutComponent is **not** to be implemented by every component that uses it in that
+component's template directly. For example, if you have a component template called
+`example.component.html`, and you want it to use the AnonLayoutComponent, you will **not** be
+writing:
+
+```html
+<!-- File: example.component.html -->
+
+<auth-anon-layout>
+  <div>Example component content</div>
+</auth-anon-layout>
+```
+
+### Correct Usage ✅
+
+Instead the AnonLayoutComponent is implemented solely in the router via routable composition, which
+gives us the advantages of nested routes in Angular.
+
+To allow for routable composition, Auth will also provide a wrapper component in each client, called
+AnonLayout**Wrapper**Component.
+
+For clarity:
+
+- AnonLayoutComponent = the Auth-owned library component - `<auth-anon-layout>`
+- AnonLayout**Wrapper**Component = the client-specific wrapper component to be used in a client
+  routing module
+
+The AnonLayout**Wrapper**Component embeds the AnonLayoutComponent along with the router outlets:
+
+```html
+<!-- File: anon-layout-wrapper.component.html -->
+
+<auth-anon-layout>
+  <router-outlet></router-outlet>
+  <router-outlet slot="secondary" name="secondary"></router-outlet>
+</auth-anon-layout>
+```
+
+To implement, the developer does not need to work with the base AnonLayoutComponent directly. The
+devoloper simply uses the AnonLayout**Wrapper**Component in `oss-routing.module.ts` (for Web, for
+example) to construct the page via routable composition:
+
+```javascript
+// File: oss-routing.module.ts
+
+{
+    path: "",
+    component: AnonLayoutWrapperComponent, // Wrapper component
+    children: [
+      {
+        path: "sample-route", // replace with your route
+        children: [
+          {
+            path: "",
+            component: MyPrimaryComponent, // replace with your component
+          },
+          {
+            path: "",
+            component: MySecondaryComponent, // replace with your component (or remove this secondary outlet object entirely if not needed)
+            outlet: "secondary",
+          },
+        ],
+        data: {
+          pageTitle: "logIn", // example of a translation key from messages.json
+          pageSubtitle: "loginWithMasterPassword", // example of a translation key from messages.json
+          pageIcon: LockIcon, // example of an icon to pass in
+        },
+      },
+    ],
+  },
+```
+
+And if the AnonLayout**Wrapper**Component is already being used in your client's routing module,
+then your work will be as simple as just adding another child route under the `children` array.
+
+### Data Properties
+
+In the `oss-routing.module.ts` example above, notice the data properties being passed in:
+
+- For the `pageTitle` and `pageSubtitle` - pass in a translation key from `messages.json`.
+- For the `pageIcon` - import an icon (of type `Icon`) into the router file and use the icon
+  directly.
+
+All 3 of these properties are optional.
+
+```javascript
+import { LockIcon } from "@bitwarden/auth/angular";
+
+// ...
+
+{
+  // ...
+  data: {
+    pageTitle: "logIn",
+    pageSubtitle: "loginWithMasterPassword",
+    pageIcon: LockIcon,
+  },
+}
+```
+
+---
+
+<Story of={stories.WithSecondaryContent} />
