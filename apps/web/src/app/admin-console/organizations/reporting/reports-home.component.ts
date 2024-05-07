@@ -23,8 +23,8 @@ export class ReportsHomeComponent implements OnInit {
   ngOnInit() {
     this.homepage$ = this.router.events.pipe(
       filter((event) => event instanceof NavigationEnd),
-      map((event) => (event as NavigationEnd).urlAfterRedirects.endsWith("/reports")),
-      startWith(true),
+      map((event) => this.isReportsHomepageRouteUrl((event as NavigationEnd).urlAfterRedirects)),
+      startWith(this.isReportsHomepageRouteUrl(this.router.url)),
     );
 
     this.reports$ = this.route.params.pipe(
@@ -60,5 +60,9 @@ export class ReportsHomeComponent implements OnInit {
         variant: reportRequiresUpgrade,
       },
     ];
+  }
+
+  private isReportsHomepageRouteUrl(url: string): boolean {
+    return url.endsWith("/reports");
   }
 }
