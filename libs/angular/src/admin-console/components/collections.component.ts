@@ -2,6 +2,8 @@ import { Directive, EventEmitter, Input, OnInit, Output } from "@angular/core";
 
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
+import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
+import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
@@ -33,9 +35,13 @@ export class CollectionsComponent implements OnInit {
     protected cipherService: CipherService,
     protected organizationService: OrganizationService,
     private logService: LogService,
+    private configService: ConfigService,
   ) {}
 
   async ngOnInit() {
+    this.flexibleCollectionsV1Enabled = await this.configService.getFeatureFlag(
+      FeatureFlag.FlexibleCollectionsV1,
+    );
     await this.load();
   }
 

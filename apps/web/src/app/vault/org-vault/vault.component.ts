@@ -802,33 +802,14 @@ export class VaultComponent implements OnInit, OnDestroy {
     const dialog = openOrgVaultCollectionsDialog(this.dialogService, {
       data: {
         collectionIds: cipher.collectionIds,
-        collections: collections.filter((c) => !c.readOnly && c.id != Unassigned),
+        collections: collections,
         organization: this.organization,
         cipherId: cipher.id,
       },
     });
-    /**
-     
-     const [modal] = await this.modalService.openViewRef(
-     CollectionsComponent,
-     this.collectionsModalRef,
-     (comp) => {
-     comp.flexibleCollectionsV1Enabled = this.flexibleCollectionsV1Enabled;
-     comp.collectionIds = cipher.collectionIds;
-     comp.collections = collections;
-     comp.organization = this.organization;
-     comp.cipherId = cipher.id;
-     comp.onSavedCollections.pipe(takeUntil(this.destroy$)).subscribe(() => {
-     modal.close();
-     this.refresh();
-     });
-     },
-     );
-     
-     */
 
     if ((await lastValueFrom(dialog.closed)) == CollectionsDialogResult.Saved) {
-      await this.refresh();
+      this.refresh();
     }
   }
 

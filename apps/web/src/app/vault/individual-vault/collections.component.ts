@@ -1,8 +1,9 @@
 import { DIALOG_DATA, DialogConfig, DialogRef } from "@angular/cdk/dialog";
-import { Component, OnDestroy, Inject } from "@angular/core";
+import { Component, Inject, OnDestroy } from "@angular/core";
 
 import { CollectionsComponent as BaseCollectionsComponent } from "@bitwarden/angular/admin-console/components/collections.component";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
+import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
@@ -23,6 +24,7 @@ export class CollectionsComponent extends BaseCollectionsComponent implements On
     cipherService: CipherService,
     organizationSerivce: OrganizationService,
     logService: LogService,
+    configService: ConfigService,
     protected dialogRef: DialogRef,
     @Inject(DIALOG_DATA) params: CollectionsDialogParams,
   ) {
@@ -33,6 +35,7 @@ export class CollectionsComponent extends BaseCollectionsComponent implements On
       cipherService,
       organizationSerivce,
       logService,
+      configService,
     );
     this.cipherId = params?.cipherId;
   }
