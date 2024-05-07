@@ -3,10 +3,7 @@ import { mock, MockProxy } from "jest-mock-extended";
 import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
-import {
-  AbstractMemoryStorageService,
-  AbstractStorageService,
-} from "@bitwarden/common/platform/abstractions/storage.service";
+import { AbstractStorageService } from "@bitwarden/common/platform/abstractions/storage.service";
 import { StateFactory } from "@bitwarden/common/platform/factories/state-factory";
 import { GlobalState } from "@bitwarden/common/platform/models/domain/global-state";
 import { State } from "@bitwarden/common/platform/models/domain/state";
@@ -56,7 +53,7 @@ describe("Browser State Service", () => {
   });
 
   describe("state methods", () => {
-    let memoryStorageService: MockProxy<AbstractMemoryStorageService>;
+    let memoryStorageService: MockProxy<AbstractStorageService>;
 
     beforeEach(() => {
       memoryStorageService = mock();

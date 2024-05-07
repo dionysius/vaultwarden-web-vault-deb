@@ -59,24 +59,12 @@ describe("LocalBackedSessionStorage", () => {
       await sut.get("test");
       expect(sut["cache"]["test"]).toEqual("decrypted");
     });
-  });
-
-  describe("getBypassCache", () => {
-    it("ignores cached values", async () => {
-      sut["cache"]["test"] = "cached";
-      const encrypted = makeEncString("encrypted");
-      localStorage.internalStore["session_test"] = encrypted.encryptedString;
-      encryptService.decryptToUtf8.mockResolvedValue(JSON.stringify("decrypted"));
-      const result = await sut.getBypassCache("test");
-      expect(encryptService.decryptToUtf8).toHaveBeenCalledWith(encrypted, sessionKey);
-      expect(result).toEqual("decrypted");
-    });
 
     it("returns a decrypted value when one is stored in local storage", async () => {
       const encrypted = makeEncString("encrypted");
       localStorage.internalStore["session_test"] = encrypted.encryptedString;
       encryptService.decryptToUtf8.mockResolvedValue(JSON.stringify("decrypted"));
-      const result = await sut.getBypassCache("test");
+      const result = await sut.get("test");
       expect(encryptService.decryptToUtf8).toHaveBeenCalledWith(encrypted, sessionKey);
       expect(result).toEqual("decrypted");
     });
@@ -85,18 +73,8 @@ describe("LocalBackedSessionStorage", () => {
       const encrypted = makeEncString("encrypted");
       localStorage.internalStore["session_test"] = encrypted.encryptedString;
       encryptService.decryptToUtf8.mockResolvedValue(JSON.stringify("decrypted"));
-      await sut.getBypassCache("test");
+      await sut.get("test");
       expect(sut["cache"]["test"]).toEqual("decrypted");
-    });
-
-    it("deserializes when a deserializer is provided", async () => {
-      const encrypted = makeEncString("encrypted");
-      localStorage.internalStore["session_test"] = encrypted.encryptedString;
-      encryptService.decryptToUtf8.mockResolvedValue(JSON.stringify("decrypted"));
-      const deserializer = jest.fn().mockReturnValue("deserialized");
-      const result = await sut.getBypassCache("test", { deserializer });
-      expect(deserializer).toHaveBeenCalledWith("decrypted");
-      expect(result).toEqual("deserialized");
     });
   });
 

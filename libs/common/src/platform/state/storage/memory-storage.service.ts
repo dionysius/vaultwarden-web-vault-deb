@@ -1,13 +1,13 @@
 import { Subject } from "rxjs";
 
 import {
-  AbstractMemoryStorageService,
+  AbstractStorageService,
   ObservableStorageService,
   StorageUpdate,
 } from "../../abstractions/storage.service";
 
 export class MemoryStorageService
-  extends AbstractMemoryStorageService
+  extends AbstractStorageService
   implements ObservableStorageService
 {
   protected store: Record<string, string> = {};
@@ -48,9 +48,5 @@ export class MemoryStorageService
     delete this.store[key];
     this.updatesSubject.next({ key, updateType: "remove" });
     return Promise.resolve();
-  }
-
-  getBypassCache<T>(key: string): Promise<T> {
-    return this.get<T>(key);
   }
 }

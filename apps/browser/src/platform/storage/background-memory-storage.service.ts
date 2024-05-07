@@ -51,7 +51,6 @@ export class BackgroundMemoryStorageService extends MemoryStorageService {
 
     switch (message.action) {
       case "get":
-      case "getBypassCache":
       case "has": {
         result = await this[message.action](message.key);
         break;

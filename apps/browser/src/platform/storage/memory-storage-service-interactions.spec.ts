@@ -25,9 +25,9 @@ describe("foreground background memory storage interaction", () => {
     jest.resetAllMocks();
   });
 
-  test.each(["has", "get", "getBypassCache"])(
+  test.each(["has", "get"])(
     "background should respond with the correct value for %s",
-    async (action: "get" | "has" | "getBypassCache") => {
+    async (action: "get" | "has") => {
       const key = "key";
       const value = "value";
       background[action] = jest.fn().mockResolvedValue(value);

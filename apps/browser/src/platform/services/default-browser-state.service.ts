@@ -2,10 +2,7 @@ import { AccountService } from "@bitwarden/common/auth/abstractions/account.serv
 import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
-import {
-  AbstractStorageService,
-  AbstractMemoryStorageService,
-} from "@bitwarden/common/platform/abstractions/storage.service";
+import { AbstractStorageService } from "@bitwarden/common/platform/abstractions/storage.service";
 import { StateFactory } from "@bitwarden/common/platform/factories/state-factory";
 import { GlobalState } from "@bitwarden/common/platform/models/domain/global-state";
 import { StorageOptions } from "@bitwarden/common/platform/models/domain/storage-options";
@@ -25,7 +22,7 @@ export class DefaultBrowserStateService
   constructor(
     storageService: AbstractStorageService,
     secureStorageService: AbstractStorageService,
-    memoryStorageService: AbstractMemoryStorageService,
+    memoryStorageService: AbstractStorageService,
     logService: LogService,
     stateFactory: StateFactory<GlobalState, Account>,
     accountService: AccountService,

@@ -14,10 +14,7 @@ import {
   InitOptions,
   StateService as StateServiceAbstraction,
 } from "../abstractions/state.service";
-import {
-  AbstractMemoryStorageService,
-  AbstractStorageService,
-} from "../abstractions/storage.service";
+import { AbstractStorageService } from "../abstractions/storage.service";
 import { HtmlStorageLocation, StorageLocation } from "../enums";
 import { StateFactory } from "../factories/state-factory";
 import { Utils } from "../misc/utils";
@@ -61,7 +58,7 @@ export class StateService<
   constructor(
     protected storageService: AbstractStorageService,
     protected secureStorageService: AbstractStorageService,
-    protected memoryStorageService: AbstractMemoryStorageService,
+    protected memoryStorageService: AbstractStorageService,
     protected logService: LogService,
     protected stateFactory: StateFactory<TGlobalState, TAccount>,
     protected accountService: AccountService,
@@ -1111,9 +1108,10 @@ export class StateService<
   }
 
   protected async state(): Promise<State<TGlobalState, TAccount>> {
-    const state = await this.memoryStorageService.get<State<TGlobalState, TAccount>>(keys.state, {
-      deserializer: (s) => State.fromJSON(s, this.accountDeserializer),
-    });
+    let state = await this.memoryStorageService.get<State<TGlobalState, TAccount>>(keys.state);
+    if (this.memoryStorageService.valuesRequireDeserialization) {
+      state = State.fromJSON(state, this.accountDeserializer);
+    }
     return state;
   }
 

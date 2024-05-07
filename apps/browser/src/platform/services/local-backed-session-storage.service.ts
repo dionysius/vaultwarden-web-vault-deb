@@ -1,18 +1,16 @@
 import { Subject } from "rxjs";
-import { Jsonify } from "type-fest";
 
 import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import {
-  AbstractMemoryStorageService,
   AbstractStorageService,
   ObservableStorageService,
   StorageUpdate,
 } from "@bitwarden/common/platform/abstractions/storage.service";
 import { Lazy } from "@bitwarden/common/platform/misc/lazy";
 import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
-import { MemoryStorageOptions } from "@bitwarden/common/platform/models/domain/storage-options";
+import { StorageOptions } from "@bitwarden/common/platform/models/domain/storage-options";
 import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
 
 import { BrowserApi } from "../browser/browser-api";
@@ -20,7 +18,7 @@ import { MemoryStoragePortMessage } from "../storage/port-messages";
 import { portName } from "../storage/port-name";
 
 export class LocalBackedSessionStorageService
-  extends AbstractMemoryStorageService
+  extends AbstractStorageService
   implements ObservableStorageService
 {
   private ports: Set<chrome.runtime.Port> = new Set([]);
@@ -65,20 +63,12 @@ export class LocalBackedSessionStorageService
     });
   }
 
-  async get<T>(key: string, options?: MemoryStorageOptions<T>): Promise<T> {
+  async get<T>(key: string, options?: StorageOptions): Promise<T> {
     if (this.cache[key] !== undefined) {
       return this.cache[key] as T;
     }
 
-    return await this.getBypassCache(key, options);
-  }
-
-  async getBypassCache<T>(key: string, options?: MemoryStorageOptions<T>): Promise<T> {
-    let value = await this.getLocalSessionValue(await this.sessionKey.get(), key);
-
-    if (options?.deserializer != null) {
-      value = options.deserializer(value as Jsonify<T>);
-    }
+    const value = await this.getLocalSessionValue(await this.sessionKey.get(), key);
 
     this.cache[key] = value;
     return value as T;
@@ -159,7 +149,6 @@ export class LocalBackedSessionStorageService
 
     switch (message.action) {
       case "get":
-      case "getBypassCache":
       case "has": {
         result = await this[message.action](message.key);
         break;

@@ -59,7 +59,6 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService as BaseStateServiceAbstraction } from "@bitwarden/common/platform/abstractions/state.service";
 import {
-  AbstractMemoryStorageService,
   AbstractStorageService,
   ObservableStorageService,
 } from "@bitwarden/common/platform/abstractions/storage.service";
@@ -411,7 +410,7 @@ const safeProviders: SafeProvider[] = [
   safeProvider({
     provide: OBSERVABLE_LARGE_OBJECT_MEMORY_STORAGE,
     useFactory: (
-      regularMemoryStorageService: AbstractMemoryStorageService & ObservableStorageService,
+      regularMemoryStorageService: AbstractStorageService & ObservableStorageService,
     ) => {
       if (BrowserApi.isManifestVersion(2)) {
         return regularMemoryStorageService;
@@ -439,7 +438,7 @@ const safeProviders: SafeProvider[] = [
     useFactory: (
       storageService: AbstractStorageService,
       secureStorageService: AbstractStorageService,
-      memoryStorageService: AbstractMemoryStorageService,
+      memoryStorageService: AbstractStorageService,
       logService: LogService,
       accountService: AccountServiceAbstraction,
       environmentService: EnvironmentService,
