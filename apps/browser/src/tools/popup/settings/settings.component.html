@@ -30,17 +30,9 @@
       <button
         type="button"
         class="box-content-row box-content-row-flex text-default"
-        routerLink="/folders"
+        routerLink="/vault-settings"
       >
-        <div class="row-main">{{ "folders" | i18n }}</div>
-        <i class="bwi bwi-angle-right bwi-lg row-sub-icon" aria-hidden="true"></i>
-      </button>
-      <button
-        type="button"
-        class="box-content-row box-content-row-flex text-default"
-        routerLink="/sync"
-      >
-        <div class="row-main">{{ "sync" | i18n }}</div>
+        <div class="row-main">{{ "vault" | i18n }}</div>
         <i class="bwi bwi-angle-right bwi-lg row-sub-icon" aria-hidden="true"></i>
       </button>
       <button
@@ -72,27 +64,6 @@
   <div class="box list">
     <h2 class="box-header">{{ "tools" | i18n }}</h2>
     <div class="box-content single-line">
-      <button
-        type="button"
-        class="box-content-row box-content-row-flex text-default"
-        appStopClick
-        (click)="import()"
-      >
-        <div class="row-main">{{ "importItems" | i18n }}</div>
-        <i
-          class="bwi bwi-external-link bwi-lg row-sub-icon bwi-rotate-270 bwi-fw"
-          aria-hidden="true"
-        ></i>
-      </button>
-      <button
-        type="button"
-        class="box-content-row box-content-row-flex text-default"
-        appStopClick
-        (click)="export()"
-      >
-        <div class="row-main">{{ "exportVault" | i18n }}</div>
-        <i class="bwi bwi-angle-right bwi-lg row-sub-icon" aria-hidden="true"></i>
-      </button>
       <button
         type="button"
         class="box-content-row box-content-row-flex text-default"
