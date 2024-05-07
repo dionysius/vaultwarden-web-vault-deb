@@ -315,13 +315,13 @@ export default {
         importProvidersFrom(
           RouterModule.forRoot(
             [
-              { path: "", redirectTo: "vault", pathMatch: "full" },
-              { path: "vault", component: MockVaultPageComponent },
-              { path: "generator", component: MockGeneratorPageComponent },
-              { path: "send", component: MockSendPageComponent },
-              { path: "settings", component: MockSettingsPageComponent },
+              { path: "", redirectTo: "tabs/vault", pathMatch: "full" },
+              { path: "tabs/vault", component: MockVaultPageComponent },
+              { path: "tabs/generator", component: MockGeneratorPageComponent },
+              { path: "tabs/send", component: MockSendPageComponent },
+              { path: "tabs/settings", component: MockSettingsPageComponent },
               // in case you are coming from a story that also uses the router
-              { path: "**", redirectTo: "vault" },
+              { path: "**", redirectTo: "tabs/vault" },
             ],
             { useHash: true },
           ),

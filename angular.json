@@ -142,7 +142,15 @@
             "configDir": ".storybook",
             "browserTarget": "components:build",
             "compodoc": true,
-            "compodocArgs": ["-p", "./tsconfig.json", "-e", "json", "-d", "."],
+            "compodocArgs": [
+              "-p",
+              "./tsconfig.json",
+              "-e",
+              "json",
+              "-d",
+              ".",
+              "--disableRoutesGraph"
+            ],
             "port": 6006
           }
         },
