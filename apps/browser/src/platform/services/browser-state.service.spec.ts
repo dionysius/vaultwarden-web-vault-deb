@@ -15,9 +15,6 @@ import { Account } from "../../models/account";
 
 import { DefaultBrowserStateService } from "./default-browser-state.service";
 
-// disable session syncing to just test class
-jest.mock("../decorators/session-sync-observable/");
-
 describe("Browser State Service", () => {
   let secureStorageService: MockProxy<AbstractStorageService>;
   let diskStorageService: MockProxy<AbstractStorageService>;
