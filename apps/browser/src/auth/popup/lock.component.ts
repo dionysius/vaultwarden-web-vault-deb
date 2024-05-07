@@ -143,15 +143,17 @@ export class LockComponent extends BaseLockComponent {
     try {
       success = await super.unlockBiometric();
     } catch (e) {
-      const error = BiometricErrors[e as BiometricErrorTypes];
+      const error = BiometricErrors[e?.message as BiometricErrorTypes];
 
       if (error == null) {
         this.logService.error("Unknown error: " + e);
+        return false;
       }
 
       this.biometricError = this.i18nService.t(error.description);
+    } finally {
+      this.pendingBiometric = false;
     }
-    this.pendingBiometric = false;
 
     return success;
   }
