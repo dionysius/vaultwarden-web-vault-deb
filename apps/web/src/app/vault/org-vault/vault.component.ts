@@ -36,6 +36,9 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
+import { OrganizationUserService } from "@bitwarden/common/admin-console/abstractions/organization-user/organization-user.service";
+import { OrganizationUserUserDetailsResponse } from "@bitwarden/common/admin-console/abstractions/organization-user/responses";
+import { OrganizationUserType } from "@bitwarden/common/admin-console/enums";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { EventType } from "@bitwarden/common/enums";
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
@@ -102,6 +105,11 @@ import { VaultFilterComponent } from "./vault-filter/vault-filter.component";
 const BroadcasterSubscriptionId = "OrgVaultComponent";
 const SearchTextDebounceInterval = 200;
 
+enum AddAccessStatusType {
+  All = 0,
+  AddAccess = 1,
+}
+
 @Component({
   selector: "app-org-vault",
   templateUrl: "vault.component.html",
@@ -122,6 +130,7 @@ export class VaultComponent implements OnInit, OnDestroy {
   trashCleanupWarning: string = null;
   activeFilter: VaultFilter = new VaultFilter();
 
+  protected showAddAccessToggle = false;
   protected noItemIcon = Icons.Search;
   protected performingInitialLoad = true;
   protected refreshing = false;
@@ -149,10 +158,12 @@ export class VaultComponent implements OnInit, OnDestroy {
   protected get flexibleCollectionsV1Enabled(): boolean {
     return this._flexibleCollectionsV1FlagEnabled && this.organization?.flexibleCollections;
   }
+  protected orgRevokedUsers: OrganizationUserUserDetailsResponse[];
 
   private searchText$ = new Subject<string>();
   private refresh$ = new BehaviorSubject<void>(null);
   private destroy$ = new Subject<void>();
+  protected addAccessStatus$ = new BehaviorSubject<AddAccessStatusType>(0);
 
   constructor(
     private route: ActivatedRoute,
@@ -181,6 +192,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     private totpService: TotpService,
     private apiService: ApiService,
     private collectionService: CollectionService,
+    private organizationUserService: OrganizationUserService,
     protected configService: ConfigService,
   ) {}
 
@@ -241,6 +253,11 @@ export class VaultComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.destroy$))
       .subscribe((activeFilter) => {
         this.activeFilter = activeFilter;
+
+        // watch the active filters. Only show toggle when viewing the collections filter
+        if (!this.activeFilter.collectionId) {
+          this.showAddAccessToggle = false;
+        }
       });
 
     this.searchText$
@@ -309,6 +326,10 @@ export class VaultComponent implements OnInit, OnDestroy {
 
     const allCiphers$ = organization$.pipe(
       concatMap(async (organization) => {
+        // If user swaps organization reset the addAccessToggle
+        if (!this.showAddAccessToggle || organization) {
+          this.addAccessToggle(0);
+        }
         let ciphers;
 
         if (this.flexibleCollectionsV1Enabled) {
@@ -348,9 +369,21 @@ export class VaultComponent implements OnInit, OnDestroy {
       shareReplay({ refCount: true, bufferSize: 1 }),
     );
 
-    const collections$ = combineLatest([nestedCollections$, filter$, this.currentSearchText$]).pipe(
+    // This will be passed into the usersCanManage call
+    this.orgRevokedUsers = (
+      await this.organizationUserService.getAllUsers(await firstValueFrom(organizationId$))
+    ).data.filter((user: OrganizationUserUserDetailsResponse) => {
+      return user.status === -1;
+    });
+
+    const collections$ = combineLatest([
+      nestedCollections$,
+      filter$,
+      this.currentSearchText$,
+      this.addAccessStatus$,
+    ]).pipe(
       filter(([collections, filter]) => collections != undefined && filter != undefined),
-      concatMap(async ([collections, filter, searchText]) => {
+      concatMap(async ([collections, filter, searchText, addAccessStatus]) => {
         if (
           filter.collectionId === Unassigned ||
           (filter.collectionId === undefined && filter.type !== undefined)
@@ -358,26 +391,30 @@ export class VaultComponent implements OnInit, OnDestroy {
           return [];
         }
 
+        this.showAddAccessToggle = false;
         let collectionsToReturn = [];
         if (filter.collectionId === undefined || filter.collectionId === All) {
-          collectionsToReturn = collections.map((c) => c.node);
+          collectionsToReturn = await this.addAccessCollectionsMap(collections);
         } else {
           const selectedCollection = ServiceUtils.getTreeNodeObjectFromList(
             collections,
             filter.collectionId,
           );
-          collectionsToReturn = selectedCollection?.children.map((c) => c.node) ?? [];
+          collectionsToReturn = await this.addAccessCollectionsMap(selectedCollection?.children);
         }
 
         if (await this.searchService.isSearchable(searchText)) {
           collectionsToReturn = this.searchPipe.transform(
             collectionsToReturn,
             searchText,
-            (collection) => collection.name,
-            (collection) => collection.id,
+            (collection: CollectionAdminView) => collection.name,
+            (collection: CollectionAdminView) => collection.id,
           );
         }
 
+        if (addAccessStatus === 1 && this.showAddAccessToggle) {
+          collectionsToReturn = collectionsToReturn.filter((c: any) => c.addAccess);
+        }
         return collectionsToReturn;
       }),
       takeUntil(this.destroy$),
@@ -584,6 +621,57 @@ export class VaultComponent implements OnInit, OnDestroy {
           this.performingInitialLoad = false;
         },
       );
+  }
+
+  // Update the list of collections to see if any collection is orphaned
+  // and will receive the addAccess badge / be filterable by the user
+  async addAccessCollectionsMap(collections: TreeNode<CollectionAdminView>[]) {
+    let mappedCollections;
+    const { type, allowAdminAccessToAllCollectionItems, permissions } = this.organization;
+
+    const canEditCiphersCheck =
+      this._flexibleCollectionsV1FlagEnabled &&
+      !this.organization.canEditAllCiphers(this._flexibleCollectionsV1FlagEnabled);
+
+    // This custom type check will show addAccess badge for
+    // Custom users with canEdit access AND owner/admin manage access setting is OFF
+    const customUserCheck =
+      this._flexibleCollectionsV1FlagEnabled &&
+      !allowAdminAccessToAllCollectionItems &&
+      type === OrganizationUserType.Custom &&
+      permissions.editAnyCollection;
+
+    // If Custom user has Delete Only access they will not see Add Access toggle
+    const customUserOnlyDelete =
+      this.flexibleCollectionsV1Enabled &&
+      type === OrganizationUserType.Custom &&
+      permissions.deleteAnyCollection &&
+      !permissions.editAnyCollection;
+
+    if (!customUserOnlyDelete && (canEditCiphersCheck || customUserCheck)) {
+      mappedCollections = collections.map((c: TreeNode<CollectionAdminView>) => {
+        const groupsCanManage = c.node.groupsCanManage();
+        const usersCanManage = c.node.usersCanManage(this.orgRevokedUsers);
+        if (
+          groupsCanManage.length === 0 &&
+          usersCanManage.length === 0 &&
+          c.node.id !== Unassigned
+        ) {
+          c.node.addAccess = true;
+          this.showAddAccessToggle = true;
+        } else {
+          c.node.addAccess = false;
+        }
+        return c.node;
+      });
+    } else {
+      mappedCollections = collections.map((c: TreeNode<CollectionAdminView>) => c.node);
+    }
+    return mappedCollections;
+  }
+
+  addAccessToggle(e: any) {
+    this.addAccessStatus$.next(e);
   }
 
   get loading() {

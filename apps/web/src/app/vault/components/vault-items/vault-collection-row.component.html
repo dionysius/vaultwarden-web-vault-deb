@@ -20,7 +20,7 @@
     bitLink
     [disabled]="disabled"
     type="button"
-    class="tw-w-full tw-truncate tw-text-start tw-leading-snug"
+    class="tw-flex tw-w-full tw-text-start tw-leading-snug"
     linkType="secondary"
     title="{{ 'viewCollectionWithName' | i18n: collection.name }}"
     [routerLink]="[]"
@@ -28,7 +28,15 @@
     queryParamsHandling="merge"
     appStopProp
   >
-    {{ collection.name }}
+    <span class="tw-truncate tw-mr-1">{{ collection.name }}</span>
+    <div>
+      <span
+        *ngIf="collection.addAccess && collection.id !== Unassigned"
+        bitBadge
+        variant="warning"
+        >{{ "addAccess" | i18n }}</span
+      >
+    </div>
   </button>
 </td>
 <td bitCell [ngClass]="RowHeightClass" *ngIf="showOwner">

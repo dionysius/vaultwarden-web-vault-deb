@@ -99,8 +99,12 @@
           (checkedToggled)="selection.toggle(item)"
           (onEvent)="event($event)"
         ></tr>
+        <!-- 
+          addAccessStatus check here so ciphers do not show if user 
+          has filtered for collections with addAccess 
+        -->
         <tr
-          *ngIf="item.cipher"
+          *ngIf="item.cipher && (!addAccessToggle || (addAccessToggle && addAccessStatus !== 1))"
           bitRow
           appVaultCipherRow
           alignContent="middle"

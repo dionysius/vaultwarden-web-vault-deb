@@ -21,6 +21,7 @@ import { RowHeightClass } from "./vault-items.component";
 })
 export class VaultCollectionRowComponent {
   protected RowHeightClass = RowHeightClass;
+  protected Unassigned = "unassigned";
 
   @Input() disabled: boolean;
   @Input() collection: CollectionView;

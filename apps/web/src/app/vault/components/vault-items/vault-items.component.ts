@@ -1,6 +1,7 @@
 import { SelectionModel } from "@angular/cdk/collections";
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 
+import { OrganizationUserType } from "@bitwarden/common/admin-console/enums";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { CollectionView } from "@bitwarden/common/vault/models/view/collection.view";
@@ -45,6 +46,8 @@ export class VaultItemsComponent {
   @Input() showPermissionsColumn = false;
   @Input() viewingOrgVault: boolean;
   @Input({ required: true }) flexibleCollectionsV1Enabled = false;
+  @Input() addAccessStatus: number;
+  @Input() addAccessToggle: boolean;
 
   private _ciphers?: CipherView[] = [];
   @Input() get ciphers(): CipherView[] {
@@ -101,6 +104,28 @@ export class VaultItemsComponent {
     }
 
     const organization = this.allOrganizations.find((o) => o.id === collection.organizationId);
+
+    if (this.flexibleCollectionsV1Enabled) {
+      //Custom user without edit access should not see the Edit option unless that user has "Can Manage" access to a collection
+      if (
+        !collection.manage &&
+        organization?.type === OrganizationUserType.Custom &&
+        !organization?.permissions.editAnyCollection
+      ) {
+        return false;
+      }
+      //Owner/Admin and Custom Users with Edit can see Edit and Access of Orphaned Collections
+      if (
+        collection.addAccess &&
+        collection.id !== Unassigned &&
+        ((organization?.type === OrganizationUserType.Custom &&
+          organization?.permissions.editAnyCollection) ||
+          organization.isAdmin ||
+          organization.isOwner)
+      ) {
+        return true;
+      }
+    }
     return collection.canEdit(organization, this.flexibleCollectionsV1Enabled);
   }
 
@@ -111,6 +136,32 @@ export class VaultItemsComponent {
     }
 
     const organization = this.allOrganizations.find((o) => o.id === collection.organizationId);
+
+    if (this.flexibleCollectionsV1Enabled) {
+      //Custom user with only edit access should not see the Delete button for orphaned collections
+      if (
+        collection.addAccess &&
+        organization?.type === OrganizationUserType.Custom &&
+        !organization?.permissions.deleteAnyCollection &&
+        organization?.permissions.editAnyCollection
+      ) {
+        return false;
+      }
+
+      // Owner/Admin with no access to a collection will not see Delete
+      if (
+        !collection.assigned &&
+        !collection.addAccess &&
+        (organization.isAdmin || organization.isOwner) &&
+        !(
+          organization?.type === OrganizationUserType.Custom &&
+          organization?.permissions.deleteAnyCollection
+        )
+      ) {
+        return false;
+      }
+    }
+
     return collection.canDelete(organization);
   }
 
