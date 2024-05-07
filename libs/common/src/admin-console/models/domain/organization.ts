@@ -203,22 +203,32 @@ export class Organization {
     );
   }
 
-  canEditUnassignedCiphers() {
-    // TODO: Update this to exclude Providers if provider access is restricted in AC-1707
+  canEditUnassignedCiphers(restrictProviderAccessFlagEnabled: boolean) {
+    if (this.isProviderUser) {
+      return !restrictProviderAccessFlagEnabled;
+    }
     return this.isAdmin || this.permissions.editAnyCollection;
   }
 
-  canEditAllCiphers(flexibleCollectionsV1Enabled: boolean) {
+  canEditAllCiphers(
+    flexibleCollectionsV1Enabled: boolean,
+    restrictProviderAccessFlagEnabled: boolean,
+  ) {
     // Before Flexible Collections, any admin or anyone with editAnyCollection permission could edit all ciphers
-    if (!this.flexibleCollections || !flexibleCollectionsV1Enabled) {
+    if (!this.flexibleCollections || !flexibleCollectionsV1Enabled || !this.flexibleCollections) {
       return this.isAdmin || this.permissions.editAnyCollection;
     }
+
+    if (this.isProviderUser) {
+      return !restrictProviderAccessFlagEnabled;
+    }
+
     // Post Flexible Collections V1, the allowAdminAccessToAllCollectionItems flag can restrict admins
-    // Providers and custom users with canEditAnyCollection are not affected by allowAdminAccessToAllCollectionItems flag
+    // Custom users with canEditAnyCollection are not affected by allowAdminAccessToAllCollectionItems flag
     return (
-      this.isProviderUser ||
       (this.type === OrganizationUserType.Custom && this.permissions.editAnyCollection) ||
-      (this.allowAdminAccessToAllCollectionItems && this.isAdmin)
+      (this.allowAdminAccessToAllCollectionItems &&
+        (this.type === OrganizationUserType.Admin || this.type === OrganizationUserType.Owner))
     );
   }
 

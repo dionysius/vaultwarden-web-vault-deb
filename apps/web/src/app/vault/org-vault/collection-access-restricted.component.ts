@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 
 import { ButtonModule, NoItemsModule, svgIcon } from "@bitwarden/components";
 
@@ -22,12 +22,18 @@ const icon = svgIcon`<svg xmlns="http://www.w3.org/2000/svg" width="120" height=
       buttonType="secondary"
       type="button"
     >
-      <i aria-hidden="true" class="bwi bwi-pencil-square"></i> {{ "viewCollection" | i18n }}
+      <i aria-hidden="true" class="bwi bwi-pencil-square"></i> {{ buttonText | i18n }}
     </button>
   </bit-no-items>`,
 })
 export class CollectionAccessRestrictedComponent {
   protected icon = icon;
 
+  @Input() canEditCollection = false;
+
   @Output() viewCollectionClicked = new EventEmitter<void>();
+
+  get buttonText() {
+    return this.canEditCollection ? "editCollection" : "viewCollection";
+  }
 }

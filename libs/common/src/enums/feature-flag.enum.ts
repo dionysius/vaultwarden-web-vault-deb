@@ -17,6 +17,7 @@ export enum FeatureFlag {
   UnassignedItemsBanner = "unassigned-items-banner",
   EnableDeleteProvider = "AC-1218-delete-provider",
   ExtensionRefresh = "extension-refresh",
+  RestrictProviderAccess = "restrict-provider-access",
 }
 
 export type AllowedFeatureFlagTypes = boolean | number | string;
@@ -44,6 +45,7 @@ export const DefaultFeatureFlagValue = {
   [FeatureFlag.UnassignedItemsBanner]: FALSE,
   [FeatureFlag.EnableDeleteProvider]: FALSE,
   [FeatureFlag.ExtensionRefresh]: FALSE,
+  [FeatureFlag.RestrictProviderAccess]: FALSE,
 } satisfies Record<FeatureFlag, AllowedFeatureFlagTypes>;
 
 export type DefaultFeatureFlagValueType = typeof DefaultFeatureFlagValue;

@@ -43,6 +43,9 @@ export class VaultHeaderComponent implements OnInit {
   /** Currently selected collection */
   @Input() collection?: TreeNode<CollectionAdminView>;
 
+  /** The current search text in the header */
+  @Input() searchText: string;
+
   /** Emits an event when the new item button is clicked in the header */
   @Output() onAddCipher = new EventEmitter<void>();
 
@@ -55,10 +58,14 @@ export class VaultHeaderComponent implements OnInit {
   /** Emits an event when the delete collection button is clicked in the header */
   @Output() onDeleteCollection = new EventEmitter<void>();
 
+  /** Emits an event when the search text changes in the header*/
+  @Output() searchTextChanged = new EventEmitter<string>();
+
   protected CollectionDialogTabType = CollectionDialogTabType;
   protected organizations$ = this.organizationService.organizations$;
 
   private flexibleCollectionsV1Enabled = false;
+  private restrictProviderAccessFlag = false;
 
   constructor(
     private organizationService: OrganizationService,
@@ -72,6 +79,9 @@ export class VaultHeaderComponent implements OnInit {
   async ngOnInit() {
     this.flexibleCollectionsV1Enabled = await firstValueFrom(
       this.configService.getFeatureFlag$(FeatureFlag.FlexibleCollectionsV1),
+    );
+    this.restrictProviderAccessFlag = await this.configService.getFeatureFlag(
+      FeatureFlag.RestrictProviderAccess,
     );
   }
 
@@ -197,7 +207,23 @@ export class VaultHeaderComponent implements OnInit {
     return this.collection.node.canDelete(this.organization);
   }
 
+  get canCreateCollection(): boolean {
+    return this.organization?.canCreateNewCollections;
+  }
+
+  get canCreateCipher(): boolean {
+    if (this.organization?.isProviderUser && this.restrictProviderAccessFlag) {
+      return false;
+    }
+    return true;
+  }
+
   deleteCollection() {
     this.onDeleteCollection.emit();
+  }
+
+  onSearchTextChanged(t: string) {
+    this.searchText = t;
+    this.searchTextChanged.emit(t);
   }
 }
