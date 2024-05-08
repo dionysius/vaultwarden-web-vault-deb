@@ -62,7 +62,7 @@ export class UpdateTempPasswordComponent extends BaseChangePasswordComponent {
     dialogService: DialogService,
     kdfConfigService: KdfConfigService,
     private accountService: AccountService,
-    private masterPasswordService: InternalMasterPasswordServiceAbstraction,
+    masterPasswordService: InternalMasterPasswordServiceAbstraction,
   ) {
     super(
       i18nService,
@@ -74,6 +74,7 @@ export class UpdateTempPasswordComponent extends BaseChangePasswordComponent {
       stateService,
       dialogService,
       kdfConfigService,
+      masterPasswordService,
     );
   }
 

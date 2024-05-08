@@ -12,8 +12,16 @@
         <input class="tw-font-mono" bitInput type="password" formControlName="pin" />
         <button type="button" bitIconButton bitSuffix bitPasswordInputToggle></button>
       </bit-form-field>
-      <label class="tw-flex tw-items-start tw-gap-2" *ngIf="showMasterPassOnRestart">
-        <input class="tw-mt-1" type="checkbox" bitCheckbox formControlName="masterPassOnRestart" />
+      <label
+        class="tw-flex tw-items-start tw-gap-2"
+        *ngIf="showMasterPasswordOnClientRestartOption"
+      >
+        <input
+          class="tw-mt-1"
+          type="checkbox"
+          bitCheckbox
+          formControlName="requireMasterPasswordOnClientRestart"
+        />
         <span>{{ "lockWithMasterPassOnRestart" | i18n }}</span>
       </label>
     </div>

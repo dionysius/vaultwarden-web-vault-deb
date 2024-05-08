@@ -1,7 +1,6 @@
 import { Observable } from "rxjs";
 
 import { VaultTimeoutAction } from "../../enums/vault-timeout-action.enum";
-import { PinLockType } from "../../services/vault-timeout/vault-timeout-settings.service";
 
 export abstract class VaultTimeoutSettingsService {
   /**
@@ -37,13 +36,6 @@ export abstract class VaultTimeoutSettingsService {
    * @param userId The user id to check. If not provided, the current user is used
    */
   vaultTimeoutAction$: (userId?: string) => Observable<VaultTimeoutAction>;
-
-  /**
-   * Has the user enabled unlock with Pin.
-   * @param userId The user id to check. If not provided, the current user is used
-   * @returns PinLockType
-   */
-  isPinLockSet: (userId?: string) => Promise<PinLockType>;
 
   /**
    * Has the user enabled unlock with Biometric.

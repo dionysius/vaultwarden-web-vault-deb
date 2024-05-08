@@ -356,7 +356,7 @@ export class NativeMessagingBackground {
               const masterKey = new SymmetricCryptoKey(
                 Utils.fromB64ToArray(message.keyB64),
               ) as MasterKey;
-              const userKey = await this.cryptoService.decryptUserKeyWithMasterKey(
+              const userKey = await this.masterPasswordService.decryptUserKeyWithMasterKey(
                 masterKey,
                 encUserKey,
               );

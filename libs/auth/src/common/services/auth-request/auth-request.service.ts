@@ -178,7 +178,7 @@ export class AuthRequestService implements AuthRequestServiceAbstraction {
     );
 
     // Decrypt and set user key in state
-    const userKey = await this.cryptoService.decryptUserKeyWithMasterKey(masterKey);
+    const userKey = await this.masterPasswordService.decryptUserKeyWithMasterKey(masterKey);
 
     // Set masterKey + masterKeyHash in state after decryption (in case decryption fails)
     const userId = (await firstValueFrom(this.accountService.activeAccount$)).id;

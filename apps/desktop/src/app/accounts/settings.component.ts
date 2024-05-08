@@ -1,12 +1,13 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
-import { BehaviorSubject, firstValueFrom, Observable, Subject } from "rxjs";
+import { BehaviorSubject, Observable, Subject, firstValueFrom } from "rxjs";
 import { concatMap, debounceTime, filter, map, switchMap, takeUntil, tap } from "rxjs/operators";
 
-import { AuthRequestServiceAbstraction } from "@bitwarden/auth/common";
+import { AuthRequestServiceAbstraction, PinServiceAbstraction } from "@bitwarden/auth/common";
 import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout-settings.service";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { UserVerificationService as UserVerificationServiceAbstraction } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { AutofillSettingsServiceAbstraction } from "@bitwarden/common/autofill/services/autofill-settings.service";
 import { DomainSettingsService } from "@bitwarden/common/autofill/services/domain-settings.service";
@@ -19,7 +20,7 @@ import { MessagingService } from "@bitwarden/common/platform/abstractions/messag
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { BiometricStateService } from "@bitwarden/common/platform/biometrics/biometric-state.service";
-import { ThemeType, KeySuffixOptions } from "@bitwarden/common/platform/enums";
+import { KeySuffixOptions, ThemeType } from "@bitwarden/common/platform/enums";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { ThemeStateService } from "@bitwarden/common/platform/theming/theme-state.service";
 import { UserId } from "@bitwarden/common/types/guid";
@@ -111,6 +112,7 @@ export class SettingsComponent implements OnInit {
   private destroy$ = new Subject<void>();
 
   constructor(
+    private accountService: AccountService,
     private policyService: PolicyService,
     private formBuilder: FormBuilder,
     private i18nService: I18nService,
@@ -127,6 +129,7 @@ export class SettingsComponent implements OnInit {
     private desktopSettingsService: DesktopSettingsService,
     private biometricStateService: BiometricStateService,
     private desktopAutofillSettingsService: DesktopAutofillSettingsService,
+    private pinService: PinServiceAbstraction,
     private authRequestService: AuthRequestServiceAbstraction,
     private logService: LogService,
     private nativeMessagingManifestService: NativeMessagingManifestService,
@@ -243,9 +246,10 @@ export class SettingsComponent implements OnInit {
       }),
     );
 
+    const userId = (await firstValueFrom(this.accountService.activeAccount$))?.id;
+
     // Load initial values
-    const pinStatus = await this.vaultTimeoutSettingsService.isPinLockSet();
-    this.userHasPinSet = pinStatus !== "DISABLED";
+    this.userHasPinSet = await this.pinService.isPinSet(userId);
 
     const initialValues = {
       vaultTimeout: await this.vaultTimeoutSettingsService.getVaultTimeout(),

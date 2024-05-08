@@ -172,7 +172,9 @@ describe("AuthRequestService", () => {
 
       masterPasswordService.masterKeySubject.next(undefined);
       masterPasswordService.masterKeyHashSubject.next(undefined);
-      cryptoService.decryptUserKeyWithMasterKey.mockResolvedValueOnce(mockDecryptedUserKey);
+      masterPasswordService.mock.decryptUserKeyWithMasterKey.mockResolvedValue(
+        mockDecryptedUserKey,
+      );
       cryptoService.setUserKey.mockResolvedValueOnce(undefined);
 
       // Act
@@ -192,8 +194,10 @@ describe("AuthRequestService", () => {
         mockDecryptedMasterKeyHash,
         mockUserId,
       );
-      expect(cryptoService.decryptUserKeyWithMasterKey).toHaveBeenCalledWith(
+      expect(masterPasswordService.mock.decryptUserKeyWithMasterKey).toHaveBeenCalledWith(
         mockDecryptedMasterKey,
+        undefined,
+        undefined,
       );
       expect(cryptoService.setUserKey).toHaveBeenCalledWith(mockDecryptedUserKey);
     });

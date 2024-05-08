@@ -1,63 +1,66 @@
 import { DialogRef } from "@angular/cdk/dialog";
 import { Directive, OnInit } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
+import { firstValueFrom } from "rxjs";
 
-import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
+import { PinServiceAbstraction } from "@bitwarden/auth/common";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
-import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 
 @Directive()
 export class SetPinComponent implements OnInit {
-  showMasterPassOnRestart = true;
+  showMasterPasswordOnClientRestartOption = true;
 
   setPinForm = this.formBuilder.group({
     pin: ["", [Validators.required]],
-    masterPassOnRestart: true,
+    requireMasterPasswordOnClientRestart: true,
   });
 
   constructor(
-    private dialogRef: DialogRef,
+    private accountService: AccountService,
     private cryptoService: CryptoService,
-    private userVerificationService: UserVerificationService,
-    private stateService: StateService,
+    private dialogRef: DialogRef,
     private formBuilder: FormBuilder,
-    private kdfConfigService: KdfConfigService,
+    private pinService: PinServiceAbstraction,
+    private userVerificationService: UserVerificationService,
   ) {}
 
   async ngOnInit() {
     const hasMasterPassword = await this.userVerificationService.hasMasterPassword();
 
-    this.setPinForm.controls.masterPassOnRestart.setValue(hasMasterPassword);
-    this.showMasterPassOnRestart = hasMasterPassword;
+    this.setPinForm.controls.requireMasterPasswordOnClientRestart.setValue(hasMasterPassword);
+    this.showMasterPasswordOnClientRestartOption = hasMasterPassword;
   }
 
   submit = async () => {
     const pin = this.setPinForm.get("pin").value;
-    const masterPassOnRestart = this.setPinForm.get("masterPassOnRestart").value;
+    const requireMasterPasswordOnClientRestart = this.setPinForm.get(
+      "requireMasterPasswordOnClientRestart",
+    ).value;
 
     if (Utils.isNullOrWhitespace(pin)) {
       this.dialogRef.close(false);
       return;
     }
 
-    const pinKey = await this.cryptoService.makePinKey(
-      pin,
-      await this.stateService.getEmail(),
-      await this.kdfConfigService.getKdfConfig(),
-    );
+    const userId = (await firstValueFrom(this.accountService.activeAccount$))?.id;
     const userKey = await this.cryptoService.getUserKey();
-    const pinProtectedKey = await this.cryptoService.encrypt(userKey.key, pinKey);
-    const encPin = await this.cryptoService.encrypt(pin, userKey);
 
-    await this.stateService.setProtectedPin(encPin.encryptedString);
+    const userKeyEncryptedPin = await this.pinService.createUserKeyEncryptedPin(pin, userKey);
+    await this.pinService.setUserKeyEncryptedPin(userKeyEncryptedPin, userId);
 
-    if (masterPassOnRestart) {
-      await this.stateService.setPinKeyEncryptedUserKeyEphemeral(pinProtectedKey);
-    } else {
-      await this.stateService.setPinKeyEncryptedUserKey(pinProtectedKey);
-    }
+    const pinKeyEncryptedUserKey = await this.pinService.createPinKeyEncryptedUserKey(
+      pin,
+      userKey,
+      userId,
+    );
+    await this.pinService.storePinKeyEncryptedUserKey(
+      pinKeyEncryptedUserKey,
+      requireMasterPasswordOnClientRestart,
+      userId,
+    );
 
     this.dialogRef.close(true);
   };

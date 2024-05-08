@@ -1,6 +1,10 @@
 import { ImportService, ImportServiceAbstraction } from "@bitwarden/importer/core";
 
 import {
+  pinServiceFactory,
+  PinServiceInitOptions,
+} from "../../../auth/background/service-factories/pin-service.factory";
+import {
   cryptoServiceFactory,
   CryptoServiceInitOptions,
 } from "../../../platform/background/service-factories/crypto-service.factory";
@@ -36,7 +40,8 @@ export type ImportServiceInitOptions = ImportServiceFactoryOptions &
   ImportApiServiceInitOptions &
   I18nServiceInitOptions &
   CollectionServiceInitOptions &
-  CryptoServiceInitOptions;
+  CryptoServiceInitOptions &
+  PinServiceInitOptions;
 
 export function importServiceFactory(
   cache: {
@@ -56,6 +61,7 @@ export function importServiceFactory(
         await i18nServiceFactory(cache, opts),
         await collectionServiceFactory(cache, opts),
         await cryptoServiceFactory(cache, opts),
+        await pinServiceFactory(cache, opts),
       ),
   );
 }

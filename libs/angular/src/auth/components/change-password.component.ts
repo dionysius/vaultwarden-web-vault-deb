@@ -4,6 +4,7 @@ import { Subject, takeUntil } from "rxjs";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { MasterPasswordPolicyOptions } from "@bitwarden/common/admin-console/models/domain/master-password-policy-options";
 import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
+import { InternalMasterPasswordServiceAbstraction } from "@bitwarden/common/auth/abstractions/master-password.service.abstraction";
 import { KdfConfig } from "@bitwarden/common/auth/models/domain/kdf-config";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -45,6 +46,7 @@ export class ChangePasswordComponent implements OnInit, OnDestroy {
     protected stateService: StateService,
     protected dialogService: DialogService,
     protected kdfConfigService: KdfConfigService,
+    protected masterPasswordService: InternalMasterPasswordServiceAbstraction,
   ) {}
 
   async ngOnInit() {

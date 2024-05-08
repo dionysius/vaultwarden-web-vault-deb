@@ -350,7 +350,7 @@ export class SsoLoginStrategy extends LoginStrategy {
       return;
     }
 
-    const userKey = await this.cryptoService.decryptUserKeyWithMasterKey(masterKey);
+    const userKey = await this.masterPasswordService.decryptUserKeyWithMasterKey(masterKey);
     await this.cryptoService.setUserKey(userKey);
   }
 

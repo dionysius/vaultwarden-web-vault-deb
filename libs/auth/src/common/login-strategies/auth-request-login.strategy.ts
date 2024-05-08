@@ -156,7 +156,7 @@ export class AuthRequestLoginStrategy extends LoginStrategy {
   private async trySetUserKeyWithMasterKey(userId: UserId): Promise<void> {
     const masterKey = await firstValueFrom(this.masterPasswordService.masterKey$(userId));
     if (masterKey) {
-      const userKey = await this.cryptoService.decryptUserKeyWithMasterKey(masterKey);
+      const userKey = await this.masterPasswordService.decryptUserKeyWithMasterKey(masterKey);
       await this.cryptoService.setUserKey(userKey);
     }
   }

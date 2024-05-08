@@ -1,5 +1,6 @@
 import { mock, MockProxy } from "jest-mock-extended";
 
+import { PinServiceAbstraction } from "@bitwarden/auth/common";
 import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
 import { CipherWithIdExport } from "@bitwarden/common/models/export/cipher-with-ids.export";
 import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/crypto-function.service";
@@ -141,6 +142,7 @@ describe("VaultExportService", () => {
   let exportService: IndividualVaultExportService;
   let cryptoFunctionService: MockProxy<CryptoFunctionService>;
   let cipherService: MockProxy<CipherService>;
+  let pinService: MockProxy<PinServiceAbstraction>;
   let folderService: MockProxy<FolderService>;
   let cryptoService: MockProxy<CryptoService>;
   let kdfConfigService: MockProxy<KdfConfigService>;
@@ -148,6 +150,7 @@ describe("VaultExportService", () => {
   beforeEach(() => {
     cryptoFunctionService = mock<CryptoFunctionService>();
     cipherService = mock<CipherService>();
+    pinService = mock<PinServiceAbstraction>();
     folderService = mock<FolderService>();
     cryptoService = mock<CryptoService>();
     kdfConfigService = mock<KdfConfigService>();
@@ -160,6 +163,7 @@ describe("VaultExportService", () => {
     exportService = new IndividualVaultExportService(
       folderService,
       cipherService,
+      pinService,
       cryptoService,
       cryptoFunctionService,
       kdfConfigService,

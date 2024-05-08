@@ -1,3 +1,4 @@
+import { PinServiceAbstraction } from "@bitwarden/auth/common";
 import { ImportCiphersRequest } from "@bitwarden/common/models/request/import-ciphers.request";
 import { ImportOrganizationCiphersRequest } from "@bitwarden/common/models/request/import-organization-ciphers.request";
 import { KvpRequest } from "@bitwarden/common/models/request/kvp.request";
@@ -100,6 +101,7 @@ export class ImportService implements ImportServiceAbstraction {
     private i18nService: I18nService,
     private collectionService: CollectionService,
     private cryptoService: CryptoService,
+    private pinService: PinServiceAbstraction,
   ) {}
 
   getImportOptions(): ImportOption[] {
@@ -203,6 +205,7 @@ export class ImportService implements ImportServiceAbstraction {
           this.cryptoService,
           this.i18nService,
           this.cipherService,
+          this.pinService,
           promptForPassword_callback,
         );
       case "lastpasscsv":

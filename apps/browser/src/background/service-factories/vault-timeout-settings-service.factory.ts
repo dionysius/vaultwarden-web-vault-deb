@@ -6,6 +6,14 @@ import {
   PolicyServiceInitOptions,
 } from "../../admin-console/background/service-factories/policy-service.factory";
 import {
+  accountServiceFactory,
+  AccountServiceInitOptions,
+} from "../../auth/background/service-factories/account-service.factory";
+import {
+  pinServiceFactory,
+  PinServiceInitOptions,
+} from "../../auth/background/service-factories/pin-service.factory";
+import {
   tokenServiceFactory,
   TokenServiceInitOptions,
 } from "../../auth/background/service-factories/token-service.factory";
@@ -34,6 +42,8 @@ import {
 type VaultTimeoutSettingsServiceFactoryOptions = FactoryOptions;
 
 export type VaultTimeoutSettingsServiceInitOptions = VaultTimeoutSettingsServiceFactoryOptions &
+  AccountServiceInitOptions &
+  PinServiceInitOptions &
   UserDecryptionOptionsServiceInitOptions &
   CryptoServiceInitOptions &
   TokenServiceInitOptions &
@@ -51,6 +61,8 @@ export function vaultTimeoutSettingsServiceFactory(
     opts,
     async () =>
       new VaultTimeoutSettingsService(
+        await accountServiceFactory(cache, opts),
+        await pinServiceFactory(cache, opts),
         await userDecryptionOptionsServiceFactory(cache, opts),
         await cryptoServiceFactory(cache, opts),
         await tokenServiceFactory(cache, opts),

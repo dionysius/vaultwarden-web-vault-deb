@@ -1,6 +1,7 @@
 import { mock } from "jest-mock-extended";
 import { firstValueFrom, of, tap } from "rxjs";
 
+import { PinServiceAbstraction } from "../../../../auth/src/common/abstractions";
 import { FakeAccountService, mockAccountServiceWith } from "../../../spec/fake-account-service";
 import { FakeActiveUserState, FakeSingleUserState } from "../../../spec/fake-state";
 import { FakeStateProvider } from "../../../spec/fake-state-provider";
@@ -8,7 +9,7 @@ import { KdfConfigService } from "../../auth/abstractions/kdf-config.service";
 import { FakeMasterPasswordService } from "../../auth/services/master-password/fake-master-password.service";
 import { CsprngArray } from "../../types/csprng";
 import { UserId } from "../../types/guid";
-import { UserKey, MasterKey, PinKey } from "../../types/key";
+import { UserKey, MasterKey } from "../../types/key";
 import { CryptoFunctionService } from "../abstractions/crypto-function.service";
 import { EncryptService } from "../abstractions/encrypt.service";
 import { KeyGenerationService } from "../abstractions/key-generation.service";
@@ -32,6 +33,7 @@ import {
 describe("cryptoService", () => {
   let cryptoService: CryptoService;
 
+  const pinService = mock<PinServiceAbstraction>();
   const keyGenerationService = mock<KeyGenerationService>();
   const cryptoFunctionService = mock<CryptoFunctionService>();
   const encryptService = mock<EncryptService>();
@@ -51,6 +53,7 @@ describe("cryptoService", () => {
     stateProvider = new FakeStateProvider(accountService);
 
     cryptoService = new CryptoService(
+      pinService,
       masterPasswordService,
       keyGenerationService,
       cryptoFunctionService,
@@ -251,60 +254,50 @@ describe("cryptoService", () => {
     });
 
     describe("Pin Key refresh", () => {
-      let cryptoSvcMakePinKey: jest.SpyInstance;
-      const protectedPin =
-        "2.jcow2vTUePO+CCyokcIfVw==|DTBNlJ5yVsV2Bsk3UU3H6Q==|YvFBff5gxWqM+UsFB6BKimKxhC32AtjF3IStpU1Ijwg=";
-      let encPin: EncString;
+      const mockPinKeyEncryptedUserKey = new EncString(
+        "2.AAAw2vTUePO+CCyokcIfVw==|DTBNlJ5yVsV2Bsk3UU3H6Q==|YvFBff5gxWqM+UsFB6BKimKxhC32AtjF3IStpU1Ijwg=",
+      );
+      const mockUserKeyEncryptedPin = new EncString(
+        "2.BBBw2vTUePO+CCyokcIfVw==|DTBNlJ5yVsV2Bsk3UU3H6Q==|YvFBff5gxWqM+UsFB6BKimKxhC32AtjF3IStpU1Ijwg=",
+      );
 
-      beforeEach(() => {
-        cryptoSvcMakePinKey = jest.spyOn(cryptoService, "makePinKey");
-        cryptoSvcMakePinKey.mockResolvedValue(new SymmetricCryptoKey(new Uint8Array(64)) as PinKey);
-        encPin = new EncString(
-          "2.jcow2vTUePO+CCyokcIfVw==|DTBNlJ5yVsV2Bsk3UU3H6Q==|YvFBff5gxWqM+UsFB6BKimKxhC32AtjF3IStpU1Ijwg=",
-        );
-        encryptService.encrypt.mockResolvedValue(encPin);
-      });
-
-      it("sets a UserKeyPin if a ProtectedPin and UserKeyPin is set", async () => {
-        stateService.getProtectedPin.mockResolvedValue(protectedPin);
-        stateService.getPinKeyEncryptedUserKey.mockResolvedValue(
-          new EncString(
-            "2.OdGNE3L23GaDZGvu9h2Brw==|/OAcNnrYwu0rjiv8+RUr3Tc+Ef8fV035Tm1rbTxfEuC+2LZtiCAoIvHIZCrM/V1PWnb/pHO2gh9+Koks04YhX8K29ED4FzjeYP8+YQD/dWo=|+12xTcIK/UVRsOyawYudPMHb6+lCHeR2Peq1pQhPm0A=",
-          ),
+      it("sets a pinKeyEncryptedUserKeyPersistent if a userKeyEncryptedPin and pinKeyEncryptedUserKey is set", async () => {
+        pinService.createPinKeyEncryptedUserKey.mockResolvedValue(mockPinKeyEncryptedUserKey);
+        pinService.getUserKeyEncryptedPin.mockResolvedValue(mockUserKeyEncryptedPin);
+        pinService.getPinKeyEncryptedUserKeyPersistent.mockResolvedValue(
+          mockPinKeyEncryptedUserKey,
         );
 
         await cryptoService.setUserKey(mockUserKey, mockUserId);
 
-        expect(stateService.setPinKeyEncryptedUserKey).toHaveBeenCalledWith(expect.any(EncString), {
-          userId: mockUserId,
-        });
-      });
-
-      it("sets a PinKeyEphemeral if a ProtectedPin is set, but a UserKeyPin is not set", async () => {
-        stateService.getProtectedPin.mockResolvedValue(protectedPin);
-        stateService.getPinKeyEncryptedUserKey.mockResolvedValue(null);
-
-        await cryptoService.setUserKey(mockUserKey, mockUserId);
-
-        expect(stateService.setPinKeyEncryptedUserKeyEphemeral).toHaveBeenCalledWith(
-          expect.any(EncString),
-          {
-            userId: mockUserId,
-          },
+        expect(pinService.storePinKeyEncryptedUserKey).toHaveBeenCalledWith(
+          mockPinKeyEncryptedUserKey,
+          false,
+          mockUserId,
         );
       });
 
-      it("clears the UserKeyPin and UserKeyPinEphemeral if the ProtectedPin is not set", async () => {
-        stateService.getProtectedPin.mockResolvedValue(null);
+      it("sets a pinKeyEncryptedUserKeyEphemeral if a userKeyEncryptedPin is set, but a pinKeyEncryptedUserKey is not set", async () => {
+        pinService.createPinKeyEncryptedUserKey.mockResolvedValue(mockPinKeyEncryptedUserKey);
+        pinService.getUserKeyEncryptedPin.mockResolvedValue(mockUserKeyEncryptedPin);
+        pinService.getPinKeyEncryptedUserKeyPersistent.mockResolvedValue(null);
 
         await cryptoService.setUserKey(mockUserKey, mockUserId);
 
-        expect(stateService.setPinKeyEncryptedUserKey).toHaveBeenCalledWith(null, {
-          userId: mockUserId,
-        });
-        expect(stateService.setPinKeyEncryptedUserKeyEphemeral).toHaveBeenCalledWith(null, {
-          userId: mockUserId,
-        });
+        expect(pinService.storePinKeyEncryptedUserKey).toHaveBeenCalledWith(
+          mockPinKeyEncryptedUserKey,
+          true,
+          mockUserId,
+        );
+      });
+
+      it("clears the pinKeyEncryptedUserKeyPersistent and pinKeyEncryptedUserKeyEphemeral if the UserKeyEncryptedPin is not set", async () => {
+        pinService.getUserKeyEncryptedPin.mockResolvedValue(null);
+
+        await cryptoService.setUserKey(mockUserKey, mockUserId);
+
+        expect(pinService.clearPinKeyEncryptedUserKeyPersistent).toHaveBeenCalledWith(mockUserId);
+        expect(pinService.clearPinKeyEncryptedUserKeyEphemeral).toHaveBeenCalledWith(mockUserId);
       });
     });
   });

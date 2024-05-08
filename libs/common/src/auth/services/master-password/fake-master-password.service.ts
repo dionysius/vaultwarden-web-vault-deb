@@ -3,7 +3,7 @@ import { ReplaySubject, Observable } from "rxjs";
 
 import { EncString } from "../../../platform/models/domain/enc-string";
 import { UserId } from "../../../types/guid";
-import { MasterKey } from "../../../types/key";
+import { MasterKey, UserKey } from "../../../types/key";
 import { InternalMasterPasswordServiceAbstraction } from "../../abstractions/master-password.service.abstraction";
 import { ForceSetPasswordReason } from "../../models/domain/force-set-password-reason";
 
@@ -60,5 +60,13 @@ export class FakeMasterPasswordService implements InternalMasterPasswordServiceA
 
   setForceSetPasswordReason(reason: ForceSetPasswordReason, userId: UserId): Promise<void> {
     return this.mock.setForceSetPasswordReason(reason, userId);
+  }
+
+  decryptUserKeyWithMasterKey(
+    masterKey: MasterKey,
+    userKey?: EncString,
+    userId?: string,
+  ): Promise<UserKey> {
+    return this.mock.decryptUserKeyWithMasterKey(masterKey, userKey, userId);
   }
 }

@@ -1,3 +1,4 @@
+import { PinServiceAbstraction } from "@bitwarden/auth/common";
 import {
   CipherWithIdExport,
   CollectionWithIdExport,
@@ -28,6 +29,7 @@ export class BitwardenJsonImporter extends BaseImporter implements Importer {
     protected cryptoService: CryptoService,
     protected i18nService: I18nService,
     protected cipherService: CipherService,
+    protected pinService: PinServiceAbstraction,
   ) {
     super();
   }

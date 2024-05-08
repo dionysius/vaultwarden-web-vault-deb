@@ -1,3 +1,4 @@
+import { PinServiceAbstraction } from "@bitwarden/auth/common";
 import {
   Argon2KdfConfig,
   KdfConfig,
@@ -23,9 +24,10 @@ export class BitwardenPasswordProtectedImporter extends BitwardenJsonImporter im
     cryptoService: CryptoService,
     i18nService: I18nService,
     cipherService: CipherService,
+    pinService: PinServiceAbstraction,
     private promptForPassword_callback: () => Promise<string>,
   ) {
-    super(cryptoService, i18nService, cipherService);
+    super(cryptoService, i18nService, cipherService, pinService);
   }
 
   async parse(data: string): Promise<ImportResult> {
@@ -78,7 +80,7 @@ export class BitwardenPasswordProtectedImporter extends BitwardenJsonImporter im
         ? new PBKDF2KdfConfig(jdoc.kdfIterations)
         : new Argon2KdfConfig(jdoc.kdfIterations, jdoc.kdfMemory, jdoc.kdfParallelism);
 
-    this.key = await this.cryptoService.makePinKey(password, jdoc.salt, kdfConfig);
+    this.key = await this.pinService.makePinKey(password, jdoc.salt, kdfConfig);
 
     const encKeyValidation = new EncString(jdoc.encKeyValidation_DO_NOT_EDIT);
 

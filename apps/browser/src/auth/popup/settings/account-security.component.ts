@@ -16,6 +16,7 @@ import {
 } from "rxjs";
 
 import { FingerprintDialogComponent } from "@bitwarden/auth/angular";
+import { PinServiceAbstraction } from "@bitwarden/auth/common";
 import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout-settings.service";
 import { VaultTimeoutService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout.service";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
@@ -71,6 +72,7 @@ export class AccountSecurityComponent implements OnInit {
 
   constructor(
     private accountService: AccountService,
+    private pinService: PinServiceAbstraction,
     private policyService: PolicyService,
     private formBuilder: FormBuilder,
     private platformUtilsService: PlatformUtilsService,
@@ -131,7 +133,6 @@ export class AccountSecurityComponent implements OnInit {
     if (timeout === -2 && !showOnLocked) {
       timeout = -1;
     }
-    const pinStatus = await this.vaultTimeoutSettingsService.isPinLockSet();
 
     this.form.controls.vaultTimeout.valueChanges
       .pipe(
@@ -153,12 +154,14 @@ export class AccountSecurityComponent implements OnInit {
       )
       .subscribe();
 
+    const userId = (await firstValueFrom(this.accountService.activeAccount$))?.id;
+
     const initialValues = {
       vaultTimeout: timeout,
       vaultTimeoutAction: await firstValueFrom(
         this.vaultTimeoutSettingsService.vaultTimeoutAction$(),
       ),
-      pin: pinStatus !== "DISABLED",
+      pin: await this.pinService.isPinSet(userId),
       biometric: await this.vaultTimeoutSettingsService.isBiometricLockSet(),
       enableAutoBiometricsPrompt: await firstValueFrom(
         this.biometricStateService.promptAutomatically$,

@@ -16,6 +16,7 @@ export class WebAuthnLoginPrfCryptoService implements WebAuthnLoginPrfCryptoServ
     return (await this.stretchKey(new Uint8Array(prf))) as PrfKey;
   }
 
+  // TODO: use keyGenerationService.stretchKey
   private async stretchKey(key: Uint8Array): Promise<SymmetricCryptoKey> {
     const newKey = new Uint8Array(64);
     const encKey = await this.cryptoFunctionService.hkdfExpand(key, "enc", 32, "sha256");

@@ -1,6 +1,7 @@
 import { FakeStateProvider } from "@bitwarden/common/../spec/fake-state-provider";
 import { mock } from "jest-mock-extended";
 
+import { PinServiceAbstraction } from "@bitwarden/auth/common";
 import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
 import { FakeMasterPasswordService } from "@bitwarden/common/auth/services/master-password/fake-master-password.service";
 import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/crypto-function.service";
@@ -26,6 +27,7 @@ import { ElectronCryptoService } from "./electron-crypto.service";
 describe("electronCryptoService", () => {
   let sut: ElectronCryptoService;
 
+  const pinService = mock<PinServiceAbstraction>();
   const keyGenerationService = mock<KeyGenerationService>();
   const cryptoFunctionService = mock<CryptoFunctionService>();
   const encryptService = mock<EncryptService>();
@@ -46,6 +48,7 @@ describe("electronCryptoService", () => {
     stateProvider = new FakeStateProvider(accountService);
 
     sut = new ElectronCryptoService(
+      pinService,
       masterPasswordService,
       keyGenerationService,
       cryptoFunctionService,

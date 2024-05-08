@@ -5,6 +5,7 @@ import { UpdatePasswordComponent as BaseUpdatePasswordComponent } from "@bitward
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
+import { InternalMasterPasswordServiceAbstraction } from "@bitwarden/common/auth/abstractions/master-password.service.abstraction";
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -34,6 +35,7 @@ export class UpdatePasswordComponent extends BaseUpdatePasswordComponent {
     userVerificationService: UserVerificationService,
     dialogService: DialogService,
     kdfConfigService: KdfConfigService,
+    masterPasswordService: InternalMasterPasswordServiceAbstraction,
   ) {
     super(
       router,
@@ -49,6 +51,7 @@ export class UpdatePasswordComponent extends BaseUpdatePasswordComponent {
       logService,
       dialogService,
       kdfConfigService,
+      masterPasswordService,
     );
   }
 }

@@ -1,5 +1,9 @@
 import { firstValueFrom, map, Observable } from "rxjs";
 
+import { EncryptService } from "../../../platform/abstractions/encrypt.service";
+import { KeyGenerationService } from "../../../platform/abstractions/key-generation.service";
+import { StateService } from "../../../platform/abstractions/state.service";
+import { EncryptionType } from "../../../platform/enums";
 import { EncryptedString, EncString } from "../../../platform/models/domain/enc-string";
 import { SymmetricCryptoKey } from "../../../platform/models/domain/symmetric-crypto-key";
 import {
@@ -9,7 +13,7 @@ import {
   UserKeyDefinition,
 } from "../../../platform/state";
 import { UserId } from "../../../types/guid";
-import { MasterKey } from "../../../types/key";
+import { MasterKey, UserKey } from "../../../types/key";
 import { InternalMasterPasswordServiceAbstraction } from "../../abstractions/master-password.service.abstraction";
 import { ForceSetPasswordReason } from "../../models/domain/force-set-password-reason";
 
@@ -46,7 +50,12 @@ const FORCE_SET_PASSWORD_REASON = new UserKeyDefinition<ForceSetPasswordReason>(
 );
 
 export class MasterPasswordService implements InternalMasterPasswordServiceAbstraction {
-  constructor(private stateProvider: StateProvider) {}
+  constructor(
+    private stateProvider: StateProvider,
+    private stateService: StateService,
+    private keyGenerationService: KeyGenerationService,
+    private encryptService: EncryptService,
+  ) {}
 
   masterKey$(userId: UserId): Observable<MasterKey> {
     if (userId == null) {
@@ -136,5 +145,49 @@ export class MasterPasswordService implements InternalMasterPasswordServiceAbstr
       throw new Error("User ID is required.");
     }
     await this.stateProvider.getUser(userId, FORCE_SET_PASSWORD_REASON).update((_) => reason);
+  }
+
+  async decryptUserKeyWithMasterKey(
+    masterKey: MasterKey,
+    userKey?: EncString,
+    userId?: UserId,
+  ): Promise<UserKey> {
+    userId ??= await firstValueFrom(this.stateProvider.activeUserId$);
+    userKey ??= await this.getMasterKeyEncryptedUserKey(userId);
+    masterKey ??= await firstValueFrom(this.masterKey$(userId));
+
+    if (masterKey == null) {
+      throw new Error("No master key found.");
+    }
+
+    // Try one more way to get the user key if it still wasn't found.
+    if (userKey == null) {
+      const deprecatedKey = await this.stateService.getEncryptedCryptoSymmetricKey({
+        userId: userId,
+      });
+
+      if (deprecatedKey == null) {
+        throw new Error("No encrypted user key found.");
+      }
+
+      userKey = new EncString(deprecatedKey);
+    }
+
+    let decUserKey: Uint8Array;
+
+    if (userKey.encryptionType === EncryptionType.AesCbc256_B64) {
+      decUserKey = await this.encryptService.decryptToBytes(userKey, masterKey);
+    } else if (userKey.encryptionType === EncryptionType.AesCbc256_HmacSha256_B64) {
+      const newKey = await this.keyGenerationService.stretchKey(masterKey);
+      decUserKey = await this.encryptService.decryptToBytes(userKey, newKey);
+    } else {
+      throw new Error("Unsupported encryption type.");
+    }
+
+    if (decUserKey == null) {
+      return null;
+    }
+
+    return new SymmetricCryptoKey(decUserKey) as UserKey;
   }
 }

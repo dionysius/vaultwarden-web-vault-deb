@@ -1,3 +1,4 @@
+import { PinServiceAbstraction } from "@bitwarden/auth/common";
 import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
 import { KdfConfig } from "@bitwarden/common/auth/models/domain/kdf-config";
 import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/crypto-function.service";
@@ -10,6 +11,7 @@ import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { BitwardenCsvExportType, BitwardenPasswordProtectedFileFormat } from "../types";
 export class BaseVaultExportService {
   constructor(
+    protected pinService: PinServiceAbstraction,
     protected cryptoService: CryptoService,
     private cryptoFunctionService: CryptoFunctionService,
     private kdfConfigService: KdfConfigService,
@@ -19,7 +21,7 @@ export class BaseVaultExportService {
     const kdfConfig: KdfConfig = await this.kdfConfigService.getKdfConfig();
 
     const salt = Utils.fromBufferToB64(await this.cryptoFunctionService.randomBytes(16));
-    const key = await this.cryptoService.makePinKey(password, salt, kdfConfig);
+    const key = await this.pinService.makePinKey(password, salt, kdfConfig);
 
     const encKeyValidation = await this.cryptoService.encrypt(Utils.newGuid(), key);
     const encText = await this.cryptoService.encrypt(clearText, key);

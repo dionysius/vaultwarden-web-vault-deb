@@ -1,5 +1,6 @@
 import * as papa from "papaparse";
 
+import { PinServiceAbstraction } from "@bitwarden/auth/common";
 import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
 import { CipherWithIdExport, FolderWithIdExport } from "@bitwarden/common/models/export";
 import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/crypto-function.service";
@@ -30,11 +31,12 @@ export class IndividualVaultExportService
   constructor(
     private folderService: FolderService,
     private cipherService: CipherService,
+    pinService: PinServiceAbstraction,
     cryptoService: CryptoService,
     cryptoFunctionService: CryptoFunctionService,
     kdfConfigService: KdfConfigService,
   ) {
-    super(cryptoService, cryptoFunctionService, kdfConfigService);
+    super(pinService, cryptoService, cryptoFunctionService, kdfConfigService);
   }
 
   async getExport(format: ExportFormat = "csv"): Promise<string> {

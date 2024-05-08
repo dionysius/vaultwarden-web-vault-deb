@@ -1,5 +1,6 @@
 import { mock, MockProxy } from "jest-mock-extended";
 
+import { PinServiceAbstraction } from "@bitwarden/auth/common";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
@@ -25,6 +26,7 @@ describe("ImportService", () => {
   let i18nService: MockProxy<I18nService>;
   let collectionService: MockProxy<CollectionService>;
   let cryptoService: MockProxy<CryptoService>;
+  let pinService: MockProxy<PinServiceAbstraction>;
 
   beforeEach(() => {
     cipherService = mock<CipherService>();
@@ -33,6 +35,7 @@ describe("ImportService", () => {
     i18nService = mock<I18nService>();
     collectionService = mock<CollectionService>();
     cryptoService = mock<CryptoService>();
+    pinService = mock<PinServiceAbstraction>();
 
     importService = new ImportService(
       cipherService,
@@ -41,6 +44,7 @@ describe("ImportService", () => {
       i18nService,
       collectionService,
       cryptoService,
+      pinService,
     );
   });
 

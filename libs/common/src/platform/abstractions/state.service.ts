@@ -4,7 +4,6 @@ import { GeneratedPasswordHistory, PasswordGeneratorOptions } from "../../tools/
 import { UsernameGeneratorOptions } from "../../tools/generator/username";
 import { UserId } from "../../types/guid";
 import { Account } from "../models/domain/account";
-import { EncString } from "../models/domain/enc-string";
 import { StorageOptions } from "../models/domain/storage-options";
 
 /**
@@ -48,26 +47,6 @@ export abstract class StateService<T extends Account = Account> {
    */
   setUserKeyBiometric: (value: BiometricKey, options?: StorageOptions) => Promise<void>;
   /**
-   * Gets the user key encrypted by the Pin key.
-   * Used when Lock with MP on Restart is disabled
-   */
-  getPinKeyEncryptedUserKey: (options?: StorageOptions) => Promise<EncString>;
-  /**
-   * Sets the user key encrypted by the Pin key.
-   * Used when Lock with MP on Restart is disabled
-   */
-  setPinKeyEncryptedUserKey: (value: EncString, options?: StorageOptions) => Promise<void>;
-  /**
-   * Gets the ephemeral version of the user key encrypted by the Pin key.
-   * Used when Lock with MP on Restart is enabled
-   */
-  getPinKeyEncryptedUserKeyEphemeral: (options?: StorageOptions) => Promise<EncString>;
-  /**
-   * Sets the ephemeral version of the user key encrypted by the Pin key.
-   * Used when Lock with MP on Restart is enabled
-   */
-  setPinKeyEncryptedUserKeyEphemeral: (value: EncString, options?: StorageOptions) => Promise<void>;
-  /**
    * @deprecated For backwards compatible purposes only, use DesktopAutofillSettingsService
    */
   setEnableDuckDuckGoBrowserIntegration: (
@@ -101,14 +80,6 @@ export abstract class StateService<T extends Account = Account> {
     value: GeneratedPasswordHistory[],
     options?: StorageOptions,
   ) => Promise<void>;
-  /**
-   * @deprecated For migration purposes only, use getDecryptedUserKeyPin instead
-   */
-  getDecryptedPinProtected: (options?: StorageOptions) => Promise<EncString>;
-  /**
-   * @deprecated For migration purposes only, use setDecryptedUserKeyPin instead
-   */
-  setDecryptedPinProtected: (value: EncString, options?: StorageOptions) => Promise<void>;
   getDuckDuckGoSharedKey: (options?: StorageOptions) => Promise<string>;
   setDuckDuckGoSharedKey: (value: string, options?: StorageOptions) => Promise<void>;
   getEmail: (options?: StorageOptions) => Promise<string>;
@@ -127,14 +98,6 @@ export abstract class StateService<T extends Account = Account> {
     value: GeneratedPasswordHistory[],
     options?: StorageOptions,
   ) => Promise<void>;
-  /**
-   * @deprecated For migration purposes only, use getEncryptedUserKeyPin instead
-   */
-  getEncryptedPinProtected: (options?: StorageOptions) => Promise<string>;
-  /**
-   * @deprecated For migration purposes only, use setEncryptedUserKeyPin instead
-   */
-  setEncryptedPinProtected: (value: string, options?: StorageOptions) => Promise<void>;
   getIsAuthenticated: (options?: StorageOptions) => Promise<boolean>;
   getLastSync: (options?: StorageOptions) => Promise<string>;
   setLastSync: (value: string, options?: StorageOptions) => Promise<void>;
@@ -154,14 +117,6 @@ export abstract class StateService<T extends Account = Account> {
   ) => Promise<void>;
   getGeneratorOptions: (options?: StorageOptions) => Promise<GeneratorOptions>;
   setGeneratorOptions: (value: GeneratorOptions, options?: StorageOptions) => Promise<void>;
-  /**
-   * Gets the user's Pin, encrypted by the user key
-   */
-  getProtectedPin: (options?: StorageOptions) => Promise<string>;
-  /**
-   * Sets the user's Pin, encrypted by the user key
-   */
-  setProtectedPin: (value: string, options?: StorageOptions) => Promise<void>;
   getUserId: (options?: StorageOptions) => Promise<string>;
   getVaultTimeout: (options?: StorageOptions) => Promise<number>;
   setVaultTimeout: (value: number, options?: StorageOptions) => Promise<void>;

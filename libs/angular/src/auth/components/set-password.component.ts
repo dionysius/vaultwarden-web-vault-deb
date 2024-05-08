@@ -52,7 +52,7 @@ export class SetPasswordComponent extends BaseChangePasswordComponent {
 
   constructor(
     private accountService: AccountService,
-    private masterPasswordService: InternalMasterPasswordServiceAbstraction,
+    masterPasswordService: InternalMasterPasswordServiceAbstraction,
     i18nService: I18nService,
     cryptoService: CryptoService,
     messagingService: MessagingService,
@@ -82,6 +82,7 @@ export class SetPasswordComponent extends BaseChangePasswordComponent {
       stateService,
       dialogService,
       kdfConfigService,
+      masterPasswordService,
     );
   }
 

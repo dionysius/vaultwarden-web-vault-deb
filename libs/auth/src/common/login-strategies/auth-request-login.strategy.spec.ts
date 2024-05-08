@@ -127,7 +127,7 @@ describe("AuthRequestLoginStrategy", () => {
     const userKey = new SymmetricCryptoKey(new Uint8Array(64).buffer as CsprngArray) as UserKey;
 
     masterPasswordService.masterKeySubject.next(masterKey);
-    cryptoService.decryptUserKeyWithMasterKey.mockResolvedValue(userKey);
+    masterPasswordService.mock.decryptUserKeyWithMasterKey.mockResolvedValue(userKey);
     tokenService.decodeAccessToken.mockResolvedValue({ sub: mockUserId });
 
     await authRequestLoginStrategy.logIn(credentials);
