@@ -5,7 +5,7 @@
   <div bitDialogTitle>Bitwarden</div>
   <div bitDialogContent>
     <p>&copy; Bitwarden Inc. 2015-{{ year }}</p>
-    <p>{{ "version" | i18n }}: {{ version$ | async }}</p>
+    <p class="user-select">{{ "version" | i18n }}: {{ version$ | async }}</p>
     <ng-container *ngIf="data$ | async as data">
       <p *ngIf="data.isCloud">
         {{ "serverVersion" | i18n }}: {{ data.serverConfig?.version }}
@@ -16,7 +16,7 @@
 
       <ng-container *ngIf="!data.isCloud">
         <ng-container *ngIf="data.serverConfig.server">
-          <p>
+          <p class="user-select">
             {{ "serverVersion" | i18n }} <small>({{ "thirdParty" | i18n }})</small>:
             {{ data.serverConfig?.version }}
             <span *ngIf="!data.serverConfig.isValid()">
@@ -28,7 +28,7 @@
           </div>
         </ng-container>
 
-        <p *ngIf="!data.serverConfig.server">
+        <p class="user-select" *ngIf="!data.serverConfig.server">
           {{ "serverVersion" | i18n }} <small>({{ "selfHostedServer" | i18n }})</small>:
           {{ data.serverConfig?.version }}
           <span *ngIf="!data.serverConfig.isValid()">

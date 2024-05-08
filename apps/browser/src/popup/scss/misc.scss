@@ -424,6 +424,10 @@ img,
 .modal-title,
 .overlay-container {
   user-select: none;
+
+  &.user-select {
+    user-select: auto;
+  }
 }
 
 app-about .modal-body > *,
