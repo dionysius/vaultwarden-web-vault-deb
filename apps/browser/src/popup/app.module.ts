@@ -41,6 +41,7 @@ import { AutofillComponent } from "../autofill/popup/settings/autofill.component
 import { ExcludedDomainsComponent } from "../autofill/popup/settings/excluded-domains.component";
 import { NotifcationsSettingsComponent } from "../autofill/popup/settings/notifications.component";
 import { PremiumComponent } from "../billing/popup/settings/premium.component";
+import { PopOutComponent } from "../platform/popup/components/pop-out.component";
 import { HeaderComponent } from "../platform/popup/header.component";
 import { PopupFooterComponent } from "../platform/popup/layout/popup-footer.component";
 import { PopupHeaderComponent } from "../platform/popup/layout/popup-header.component";
@@ -81,7 +82,6 @@ import { VaultSettingsComponent } from "../vault/popup/settings/vault-settings.c
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { PopOutComponent } from "./components/pop-out.component";
 import { UserVerificationComponent } from "./components/user-verification.component";
 import { ServicesModule } from "./services/services.module";
 import { HelpAndFeedbackComponent } from "./settings/help-and-feedback.component";
@@ -118,6 +118,7 @@ import "../platform/popup/locales";
     AccountComponent,
     ButtonModule,
     ExportScopeCalloutComponent,
+    PopOutComponent,
     PopupPageComponent,
     PopupTabNavigationComponent,
     PopupFooterComponent,
@@ -157,7 +158,6 @@ import "../platform/popup/locales";
     GeneratorComponent,
     PasswordGeneratorHistoryComponent,
     PasswordHistoryComponent,
-    PopOutComponent,
     PremiumComponent,
     RegisterComponent,
     SendAddEditComponent,

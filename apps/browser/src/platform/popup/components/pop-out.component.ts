@@ -1,12 +1,16 @@
+import { CommonModule } from "@angular/common";
 import { Component, Input, OnInit } from "@angular/core";
 
+import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 
-import BrowserPopupUtils from "../../platform/popup/browser-popup-utils";
+import BrowserPopupUtils from "../browser-popup-utils";
 
 @Component({
   selector: "app-pop-out",
   templateUrl: "pop-out.component.html",
+  standalone: true,
+  imports: [CommonModule, JslibModule],
 })
 export class PopOutComponent implements OnInit {
   @Input() show = true;
@@ -24,9 +28,7 @@ export class PopOutComponent implements OnInit {
     }
   }
 
-  expand() {
-    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    BrowserPopupUtils.openCurrentPagePopout(window);
+  async expand() {
+    await BrowserPopupUtils.openCurrentPagePopout(window);
   }
 }
