@@ -30,6 +30,7 @@ import { BrowserApi } from "../../../../platform/browser/browser-api";
 import BrowserPopupUtils from "../../../../platform/popup/browser-popup-utils";
 import { PopupCloseWarningService } from "../../../../popup/services/popup-close-warning.service";
 import { BrowserFido2UserInterfaceSession } from "../../../fido2/browser-fido2-user-interface.service";
+import { Fido2UserVerificationService } from "../../../services/fido2-user-verification.service";
 import { fido2PopoutSessionData$ } from "../../utils/fido2-popout-session-data";
 import { closeAddEditVaultItemPopout, VaultPopoutType } from "../../utils/vault-popout-window";
 
@@ -69,6 +70,7 @@ export class AddEditComponent extends BaseAddEditComponent {
     dialogService: DialogService,
     datePipe: DatePipe,
     configService: ConfigService,
+    private fido2UserVerificationService: Fido2UserVerificationService,
   ) {
     super(
       cipherService,
@@ -168,11 +170,17 @@ export class AddEditComponent extends BaseAddEditComponent {
 
   async submit(): Promise<boolean> {
     const fido2SessionData = await firstValueFrom(this.fido2PopoutSessionData$);
-    const { isFido2Session, sessionId, userVerification } = fido2SessionData;
+    const { isFido2Session, sessionId, userVerification, fromLock } = fido2SessionData;
     const inFido2PopoutWindow = BrowserPopupUtils.inPopout(window) && isFido2Session;
+
     if (
       inFido2PopoutWindow &&
-      !(await this.handleFido2UserVerification(sessionId, userVerification))
+      userVerification &&
+      !(await this.fido2UserVerificationService.handleUserVerification(
+        userVerification,
+        this.cipher,
+        fromLock,
+      ))
     ) {
       return false;
     }
@@ -325,14 +333,6 @@ export class AddEditComponent extends BaseAddEditComponent {
         document.getElementById("name").focus();
       }
     }, 200);
-  }
-
-  private async handleFido2UserVerification(
-    sessionId: string,
-    userVerification: boolean,
-  ): Promise<boolean> {
-    // We are bypassing user verification pending implementation of PIN and biometric support.
-    return true;
   }
 
   repromptChanged() {

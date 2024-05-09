@@ -26,7 +26,9 @@ export const fido2AuthGuard: CanActivateFn = async (
   const authStatus = await authService.getAuthStatus();
 
   if (authStatus === AuthenticationStatus.Locked) {
-    routerService.setPreviousUrl(state.url);
+    // Appending fromLock=true to the query params to indicate that the user is being redirected from the lock screen, this is used for user verification.
+    const previousUrl = `${state.url}&fromLock=true`;
+    routerService.setPreviousUrl(previousUrl);
     return router.createUrlTree(["/lock"], { queryParams: route.queryParams });
   }
 
