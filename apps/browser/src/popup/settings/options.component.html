@@ -63,67 +63,6 @@
     <div class="box">
       <div class="box-content">
         <div class="box-content-row box-content-row-checkbox" appBoxRow>
-          <label for="addlogin-notification-bar">{{ "enableAddLoginNotification" | i18n }}</label>
-          <input
-            id="addlogin-notification-bar"
-            type="checkbox"
-            aria-describedby="addlogin-notification-barHelp"
-            (change)="updateAddLoginNotification()"
-            [(ngModel)]="enableAddLoginNotification"
-          />
-        </div>
-      </div>
-      <div id="addlogin-notification-barHelp" class="box-footer">
-        {{
-          accountSwitcherEnabled
-            ? ("addLoginNotificationDescAlt" | i18n)
-            : ("addLoginNotificationDesc" | i18n)
-        }}
-      </div>
-    </div>
-    <div class="box">
-      <div class="box-content">
-        <div class="box-content-row box-content-row-checkbox" appBoxRow>
-          <label for="changedpass-notification-bar">{{
-            "enableChangedPasswordNotification" | i18n
-          }}</label>
-          <input
-            id="changedpass-notification-bar"
-            type="checkbox"
-            aria-describedby="changedpass-notification-barHelp"
-            (change)="updateChangedPasswordNotification()"
-            [(ngModel)]="enableChangedPasswordNotification"
-          />
-        </div>
-      </div>
-      <div id="changedpass-notification-barHelp" class="box-footer">
-        {{
-          accountSwitcherEnabled
-            ? ("changedPasswordNotificationDescAlt" | i18n)
-            : ("changedPasswordNotificationDesc" | i18n)
-        }}
-      </div>
-    </div>
-    <div class="box">
-      <div class="box-content">
-        <div class="box-content-row box-content-row-checkbox" appBoxRow>
-          <label for="use-passkeys">{{ "enableUsePasskeys" | i18n }}</label>
-          <input
-            id="use-passkeys"
-            type="checkbox"
-            aria-describedby="use-passkeysHelp"
-            (change)="updateEnablePasskeys()"
-            [(ngModel)]="enablePasskeys"
-          />
-        </div>
-      </div>
-      <div id="use-passkeysHelp" class="box-footer">
-        {{ "usePasskeysDesc" | i18n }}
-      </div>
-    </div>
-    <div class="box">
-      <div class="box-content">
-        <div class="box-content-row box-content-row-checkbox" appBoxRow>
           <label for="context-menu">{{ "enableContextMenuItem" | i18n }}</label>
           <input
             id="context-menu"

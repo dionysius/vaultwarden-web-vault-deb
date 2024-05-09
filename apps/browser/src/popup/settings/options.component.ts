@@ -3,7 +3,6 @@ import { firstValueFrom } from "rxjs";
 
 import { AutofillSettingsServiceAbstraction } from "@bitwarden/common/autofill/services/autofill-settings.service";
 import { DomainSettingsService } from "@bitwarden/common/autofill/services/domain-settings.service";
-import { UserNotificationSettingsServiceAbstraction } from "@bitwarden/common/autofill/services/user-notification-settings.service";
 import { ClearClipboardDelaySetting } from "@bitwarden/common/autofill/types";
 import {
   UriMatchStrategy,
@@ -25,9 +24,6 @@ export class OptionsComponent implements OnInit {
   autoFillOnPageLoadOptions: any[];
   enableAutoTotpCopy = false; // TODO: Does it matter if this is set to false or true?
   enableContextMenuItem = false;
-  enableAddLoginNotification = false;
-  enableChangedPasswordNotification = false;
-  enablePasskeys = true;
   showCardsCurrentTab = false;
   showIdentitiesCurrentTab = false;
   showClearClipboard = true;
@@ -36,13 +32,11 @@ export class OptionsComponent implements OnInit {
   clearClipboard: ClearClipboardDelaySetting;
   clearClipboardOptions: any[];
   showGeneral = true;
-  showAutofill = true;
   showDisplay = true;
   accountSwitcherEnabled = false;
 
   constructor(
     private messagingService: MessagingService,
-    private userNotificationSettingsService: UserNotificationSettingsServiceAbstraction,
     private autofillSettingsService: AutofillSettingsServiceAbstraction,
     private domainSettingsService: DomainSettingsService,
     i18nService: I18nService,
@@ -82,14 +76,6 @@ export class OptionsComponent implements OnInit {
       this.autofillSettingsService.autofillOnPageLoadDefault$,
     );
 
-    this.enableAddLoginNotification = await firstValueFrom(
-      this.userNotificationSettingsService.enableAddedLoginPrompt$,
-    );
-
-    this.enableChangedPasswordNotification = await firstValueFrom(
-      this.userNotificationSettingsService.enableChangedPasswordPrompt$,
-    );
-
     this.enableContextMenuItem = await firstValueFrom(
       this.autofillSettingsService.enableContextMenu$,
     );
@@ -101,30 +87,12 @@ export class OptionsComponent implements OnInit {
 
     this.enableAutoTotpCopy = await firstValueFrom(this.autofillSettingsService.autoCopyTotp$);
 
-    this.enablePasskeys = await firstValueFrom(this.vaultSettingsService.enablePasskeys$);
-
     const defaultUriMatch = await firstValueFrom(
       this.domainSettingsService.defaultUriMatchStrategy$,
     );
     this.defaultUriMatch = defaultUriMatch == null ? UriMatchStrategy.Domain : defaultUriMatch;
 
     this.clearClipboard = await firstValueFrom(this.autofillSettingsService.clearClipboardDelay$);
-  }
-
-  async updateAddLoginNotification() {
-    await this.userNotificationSettingsService.setEnableAddedLoginPrompt(
-      this.enableAddLoginNotification,
-    );
-  }
-
-  async updateChangedPasswordNotification() {
-    await this.userNotificationSettingsService.setEnableChangedPasswordPrompt(
-      this.enableChangedPasswordNotification,
-    );
-  }
-
-  async updateEnablePasskeys() {
-    await this.vaultSettingsService.setEnablePasskeys(this.enablePasskeys);
   }
 
   async updateContextMenuItem() {
