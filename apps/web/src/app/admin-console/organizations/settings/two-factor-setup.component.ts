@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { concatMap, takeUntil, map, lastValueFrom } from "rxjs";
+import { concatMap, takeUntil, map } from "rxjs";
 import { tap } from "rxjs/operators";
 
 import { ModalService } from "@bitwarden/angular/services/modal.service";
@@ -16,7 +16,6 @@ import { DialogService } from "@bitwarden/components";
 
 import { TwoFactorDuoComponent } from "../../../auth/settings/two-factor-duo.component";
 import { TwoFactorSetupComponent as BaseTwoFactorSetupComponent } from "../../../auth/settings/two-factor-setup.component";
-import { TwoFactorVerifyComponent } from "../../../auth/settings/two-factor-verify.component";
 
 @Component({
   selector: "app-two-factor-setup",
@@ -66,17 +65,17 @@ export class TwoFactorSetupComponent extends BaseTwoFactorSetupComponent {
   async manage(type: TwoFactorProviderType) {
     switch (type) {
       case TwoFactorProviderType.OrganizationDuo: {
-        const twoFactorVerifyDialogRef = TwoFactorVerifyComponent.open(this.dialogService, {
-          data: { type: type, organizationId: this.organizationId },
-        });
-        const result: AuthResponse<TwoFactorDuoResponse> = await lastValueFrom(
-          twoFactorVerifyDialogRef.closed,
+        const result: AuthResponse<TwoFactorDuoResponse> = await this.callTwoFactorVerifyDialog(
+          TwoFactorProviderType.OrganizationDuo,
         );
+
         if (!result) {
           return;
         }
 
         const duoComp = await this.openModal(this.duoModalRef, TwoFactorDuoComponent);
+        duoComp.type = TwoFactorProviderType.OrganizationDuo;
+        duoComp.organizationId = this.organizationId;
         duoComp.auth(result);
         duoComp.onUpdated.pipe(takeUntil(this.destroy$)).subscribe((enabled: boolean) => {
           this.updateStatus(enabled, TwoFactorProviderType.OrganizationDuo);
