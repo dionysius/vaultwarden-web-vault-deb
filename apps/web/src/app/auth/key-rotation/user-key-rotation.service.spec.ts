@@ -82,7 +82,6 @@ describe("KeyRotationService", () => {
       mockEncryptService,
       mockStateService,
       mockAccountService,
-      mockConfigService,
       mockKdfConfigService,
     );
   });
@@ -189,16 +188,6 @@ describe("KeyRotationService", () => {
         "mockMasterKey" as any,
         mockUserId,
       );
-    });
-
-    it("uses legacy rotation if feature flag is off", async () => {
-      mockConfigService.getFeatureFlag.mockResolvedValueOnce(false);
-
-      await keyRotationService.rotateUserKeyAndEncryptedData("mockMasterPassword");
-
-      expect(mockApiService.postUserKeyUpdate).toHaveBeenCalled();
-      expect(mockEmergencyAccessService.postLegacyRotation).toHaveBeenCalled();
-      expect(mockResetPasswordService.postLegacyRotation).toHaveBeenCalled();
     });
 
     it("throws if server rotation fails", async () => {

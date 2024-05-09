@@ -5,8 +5,6 @@ import { AccountService } from "@bitwarden/common/auth/abstractions/account.serv
 import { DeviceTrustServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust.service.abstraction";
 import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
 import { InternalMasterPasswordServiceAbstraction } from "@bitwarden/common/auth/abstractions/master-password.service.abstraction";
-import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
-import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
@@ -39,7 +37,6 @@ export class UserKeyRotationService {
     private encryptService: EncryptService,
     private stateService: StateService,
     private accountService: AccountService,
-    private configService: ConfigService,
     private kdfConfigService: KdfConfigService,
   ) {}
 
@@ -90,11 +87,7 @@ export class UserKeyRotationService {
     request.emergencyAccessKeys = await this.emergencyAccessService.getRotatedKeys(newUserKey);
     request.resetPasswordKeys = await this.resetPasswordService.getRotatedKeys(newUserKey);
 
-    if (await this.configService.getFeatureFlag(FeatureFlag.KeyRotationImprovements)) {
-      await this.apiService.postUserKeyUpdate(request);
-    } else {
-      await this.rotateUserKeyAndEncryptedDataLegacy(request);
-    }
+    await this.apiService.postUserKeyUpdate(request);
 
     const activeAccount = await firstValueFrom(this.accountService.activeAccount$);
     await this.deviceTrustService.rotateDevicesTrust(
@@ -138,17 +131,5 @@ export class UserKeyRotationService {
         return new FolderWithIdRequest(encryptedFolder);
       }),
     );
-  }
-
-  private async rotateUserKeyAndEncryptedDataLegacy(request: UpdateKeyRequest): Promise<void> {
-    // Update keys, ciphers, folders, and sends
-    await this.apiService.postUserKeyUpdate(request);
-
-    // Update emergency access keys
-    await this.emergencyAccessService.postLegacyRotation(request.emergencyAccessKeys);
-
-    // Update account recovery keys
-    const userId = await this.stateService.getUserId();
-    await this.resetPasswordService.postLegacyRotation(userId, request.resetPasswordKeys);
   }
 }

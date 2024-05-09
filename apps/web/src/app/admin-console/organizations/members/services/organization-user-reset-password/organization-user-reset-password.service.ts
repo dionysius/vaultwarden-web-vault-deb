@@ -165,23 +165,4 @@ export class OrganizationUserResetPasswordService {
     }
     return requests;
   }
-
-  /**
-   * @deprecated Nov 6, 2023: Use new Key Rotation Service for posting rotated data.
-   */
-  async postLegacyRotation(
-    userId: string,
-    requests: OrganizationUserResetPasswordWithIdRequest[],
-  ): Promise<void> {
-    if (requests == null) {
-      return;
-    }
-    for (const request of requests) {
-      await this.organizationUserService.putOrganizationUserResetPasswordEnrollment(
-        request.organizationId,
-        userId,
-        request,
-      );
-    }
-  }
 }

@@ -328,16 +328,4 @@ export class EmergencyAccessService {
   private async encryptKey(userKey: UserKey, publicKey: Uint8Array): Promise<EncryptedString> {
     return (await this.cryptoService.rsaEncrypt(userKey.key, publicKey)).encryptedString;
   }
-
-  /**
-   * @deprecated Nov 6, 2023: Use new Key Rotation Service for posting rotated data.
-   */
-  async postLegacyRotation(requests: EmergencyAccessWithIdRequest[]): Promise<void> {
-    if (requests == null) {
-      return;
-    }
-    for (const request of requests) {
-      await this.emergencyAccessApiService.putEmergencyAccess(request.id, request);
-    }
-  }
 }

@@ -9,7 +9,6 @@ export enum FeatureFlag {
   FlexibleCollectionsV1 = "flexible-collections-v-1", // v-1 is intentional
   VaultOnboarding = "vault-onboarding",
   GeneratorToolsModernization = "generator-tools-modernization",
-  KeyRotationImprovements = "key-rotation-improvements",
   FlexibleCollectionsMigration = "flexible-collections-migration",
   ShowPaymentMethodWarningBanners = "show-payment-method-warning-banners",
   EnableConsolidatedBilling = "enable-consolidated-billing",
@@ -37,7 +36,6 @@ export const DefaultFeatureFlagValue = {
   [FeatureFlag.FlexibleCollectionsV1]: FALSE,
   [FeatureFlag.VaultOnboarding]: FALSE,
   [FeatureFlag.GeneratorToolsModernization]: FALSE,
-  [FeatureFlag.KeyRotationImprovements]: FALSE,
   [FeatureFlag.FlexibleCollectionsMigration]: FALSE,
   [FeatureFlag.ShowPaymentMethodWarningBanners]: FALSE,
   [FeatureFlag.EnableConsolidatedBilling]: FALSE,
