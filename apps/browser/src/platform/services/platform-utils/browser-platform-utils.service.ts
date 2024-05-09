@@ -163,6 +163,10 @@ export abstract class BrowserPlatformUtilsService implements PlatformUtilsServic
    * the view is open.
    */
   async isViewOpen(): Promise<boolean> {
+    if (this.isSafari()) {
+      // Query views on safari since chrome.runtime.sendMessage does not timeout and will hang.
+      return BrowserApi.isPopupOpen();
+    }
     return Boolean(await BrowserApi.sendMessageWithResponse("checkVaultPopupHeartbeat"));
   }
 
