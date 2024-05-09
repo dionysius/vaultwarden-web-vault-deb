@@ -9,11 +9,11 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
 import { ButtonModule, DialogModule } from "@bitwarden/components";
 
 @Component({
-  templateUrl: "about.component.html",
+  templateUrl: "about-dialog.component.html",
   standalone: true,
   imports: [CommonModule, JslibModule, DialogModule, ButtonModule],
 })
-export class AboutComponent {
+export class AboutDialogComponent {
   protected year = new Date().getFullYear();
   protected version$: Observable<string>;
 

@@ -13,7 +13,7 @@ import { DialogService } from "@bitwarden/components";
 import { BrowserApi } from "../../../platform/browser/browser-api";
 import BrowserPopupUtils from "../../../platform/popup/browser-popup-utils";
 
-import { AboutComponent } from "./about/about.component";
+import { AboutDialogComponent } from "./about-dialog/about-dialog.component";
 
 const RateUrls = {
   [DeviceType.ChromeExtension]:
@@ -84,7 +84,7 @@ export class SettingsComponent implements OnInit {
   }
 
   about() {
-    this.dialogService.open(AboutComponent);
+    this.dialogService.open(AboutDialogComponent);
   }
 
   rate() {
