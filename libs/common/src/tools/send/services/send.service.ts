@@ -263,18 +263,26 @@ export class SendService implements InternalSendServiceAbstraction {
       throw new Error("New user key is required for rotation.");
     }
 
+    const originalUserKey = await this.cryptoService.getUserKey();
+
     const req = await firstValueFrom(
-      this.sends$.pipe(concatMap(async (sends) => this.toRotatedKeyRequestMap(sends, newUserKey))),
+      this.sends$.pipe(
+        concatMap(async (sends) => this.toRotatedKeyRequestMap(sends, originalUserKey, newUserKey)),
+      ),
     );
     // separate return for easier debugging
     return req;
   }
 
-  private async toRotatedKeyRequestMap(sends: Send[], newUserKey: UserKey) {
+  private async toRotatedKeyRequestMap(
+    sends: Send[],
+    originalUserKey: UserKey,
+    rotateUserKey: UserKey,
+  ) {
     const requests = await Promise.all(
       sends.map(async (send) => {
-        const sendKey = await this.encryptService.decryptToBytes(send.key, newUserKey);
-        send.key = await this.encryptService.encrypt(sendKey, newUserKey);
+        const sendKey = await this.encryptService.decryptToBytes(send.key, originalUserKey);
+        send.key = await this.encryptService.encrypt(sendKey, rotateUserKey);
         return new SendWithIdRequest(send);
       }),
     );
