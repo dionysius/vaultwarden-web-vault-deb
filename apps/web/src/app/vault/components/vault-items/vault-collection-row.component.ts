@@ -30,9 +30,11 @@ export class VaultCollectionRowComponent {
   @Input() showGroups: boolean;
   @Input() canEditCollection: boolean;
   @Input() canDeleteCollection: boolean;
+  @Input() canViewCollectionInfo: boolean;
   @Input() organizations: Organization[];
   @Input() groups: GroupView[];
   @Input() showPermissionsColumn: boolean;
+  @Input() flexibleCollectionsV1Enabled: boolean;
 
   @Output() onEvent = new EventEmitter<VaultItemEvent>();
 
@@ -71,12 +73,12 @@ export class VaultCollectionRowComponent {
     return "";
   }
 
-  protected edit() {
-    this.onEvent.next({ type: "editCollection", item: this.collection });
+  protected edit(readonly: boolean) {
+    this.onEvent.next({ type: "editCollection", item: this.collection, readonly: readonly });
   }
 
-  protected access() {
-    this.onEvent.next({ type: "viewCollectionAccess", item: this.collection });
+  protected access(readonly: boolean) {
+    this.onEvent.next({ type: "viewCollectionAccess", item: this.collection, readonly: readonly });
   }
 
   protected deleteCollection() {

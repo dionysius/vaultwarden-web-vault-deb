@@ -165,6 +165,11 @@ export class VaultItemsComponent {
     return collection.canDelete(organization);
   }
 
+  protected canViewCollectionInfo(collection: CollectionView) {
+    const organization = this.allOrganizations.find((o) => o.id === collection.organizationId);
+    return collection.canViewCollectionInfo(organization);
+  }
+
   protected toggleAll() {
     this.isAllSelected
       ? this.selection.clear()

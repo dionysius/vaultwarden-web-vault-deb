@@ -53,7 +53,10 @@ export class VaultHeaderComponent implements OnInit {
   @Output() onAddCollection = new EventEmitter<void>();
 
   /** Emits an event when the edit collection button is clicked in the header */
-  @Output() onEditCollection = new EventEmitter<{ tab: CollectionDialogTabType }>();
+  @Output() onEditCollection = new EventEmitter<{
+    tab: CollectionDialogTabType;
+    readonly: boolean;
+  }>();
 
   /** Emits an event when the delete collection button is clicked in the header */
   @Output() onDeleteCollection = new EventEmitter<void>();
@@ -64,7 +67,7 @@ export class VaultHeaderComponent implements OnInit {
   protected CollectionDialogTabType = CollectionDialogTabType;
   protected organizations$ = this.organizationService.organizations$;
 
-  private flexibleCollectionsV1Enabled = false;
+  protected flexibleCollectionsV1Enabled = false;
   private restrictProviderAccessFlag = false;
 
   constructor(
@@ -193,8 +196,8 @@ export class VaultHeaderComponent implements OnInit {
     this.onAddCollection.emit();
   }
 
-  async editCollection(tab: CollectionDialogTabType): Promise<void> {
-    this.onEditCollection.emit({ tab });
+  async editCollection(tab: CollectionDialogTabType, readonly: boolean): Promise<void> {
+    this.onEditCollection.emit({ tab, readonly });
   }
 
   get canDeleteCollection(): boolean {
@@ -205,6 +208,10 @@ export class VaultHeaderComponent implements OnInit {
 
     // Otherwise, check if we can delete the specified collection
     return this.collection.node.canDelete(this.organization);
+  }
+
+  get canViewCollectionInfo(): boolean {
+    return this.collection.node.canViewCollectionInfo(this.organization);
   }
 
   get canCreateCollection(): boolean {

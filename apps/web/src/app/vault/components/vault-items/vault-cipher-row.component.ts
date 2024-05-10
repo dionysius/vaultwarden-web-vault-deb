@@ -58,7 +58,7 @@ export class VaultCipherRowComponent {
   }
 
   protected editCollections() {
-    this.onEvent.emit({ type: "viewCollections", item: this.cipher });
+    this.onEvent.emit({ type: "viewCipherCollections", item: this.cipher });
   }
 
   protected events() {

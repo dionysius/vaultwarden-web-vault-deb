@@ -6,7 +6,7 @@
   [searchText]="currentSearchText$ | async"
   (onAddCipher)="addCipher()"
   (onAddCollection)="addCollection()"
-  (onEditCollection)="editCollection(selectedCollection.node, $event.tab)"
+  (onEditCollection)="editCollection(selectedCollection.node, $event.tab, $event.readonly)"
   (onDeleteCollection)="deleteCollection(selectedCollection.node)"
   (searchTextChanged)="filterSearchText($event)"
 ></app-org-vault-header>

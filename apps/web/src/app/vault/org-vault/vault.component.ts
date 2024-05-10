@@ -736,7 +736,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     try {
       if (event.type === "viewAttachments") {
         await this.editCipherAttachments(event.item);
-      } else if (event.type === "viewCollections") {
+      } else if (event.type === "viewCipherCollections") {
         await this.editCipherCollections(event.item);
       } else if (event.type === "clone") {
         await this.cloneCipher(event.item);
@@ -761,9 +761,9 @@ export class VaultComponent implements OnInit, OnDestroy {
       } else if (event.type === "copyField") {
         await this.copy(event.item, event.field);
       } else if (event.type === "editCollection") {
-        await this.editCollection(event.item, CollectionDialogTabType.Info);
+        await this.editCollection(event.item, CollectionDialogTabType.Info, event.readonly);
       } else if (event.type === "viewCollectionAccess") {
-        await this.editCollection(event.item, CollectionDialogTabType.Access);
+        await this.editCollection(event.item, CollectionDialogTabType.Access, event.readonly);
       } else if (event.type === "bulkEditCollectionAccess") {
         await this.bulkEditCollectionAccess(event.items);
       } else if (event.type === "assignToCollections") {
@@ -1190,7 +1190,7 @@ export class VaultComponent implements OnInit, OnDestroy {
   async editCollection(
     c: CollectionView,
     tab: CollectionDialogTabType,
-    readonly: boolean = false,
+    readonly: boolean,
   ): Promise<void> {
     const dialog = openCollectionDialog(this.dialogService, {
       data: {

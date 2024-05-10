@@ -95,13 +95,15 @@
           [groups]="allGroups"
           [canDeleteCollection]="canDeleteCollection(item.collection)"
           [canEditCollection]="canEditCollection(item.collection)"
+          [canViewCollectionInfo]="canViewCollectionInfo(item.collection)"
+          [flexibleCollectionsV1Enabled]="flexibleCollectionsV1Enabled"
           [checked]="selection.isSelected(item)"
           (checkedToggled)="selection.toggle(item)"
           (onEvent)="event($event)"
         ></tr>
-        <!-- 
-          addAccessStatus check here so ciphers do not show if user 
-          has filtered for collections with addAccess 
+        <!--
+          addAccessStatus check here so ciphers do not show if user
+          has filtered for collections with addAccess
         -->
         <tr
           *ngIf="item.cipher && (!addAccessToggle || (addAccessToggle && addAccessStatus !== 1))"
