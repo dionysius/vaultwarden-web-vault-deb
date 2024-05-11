@@ -56,14 +56,16 @@ export class VaultCollectionRowComponent {
   }
 
   get permissionText() {
-    if (this.collection.id != Unassigned && !(this.collection as CollectionAdminView).assigned) {
-      return this.i18nService.t("noAccess");
-    } else {
+    if (this.collection.id == Unassigned && this.organization?.canEditUnassignedCiphers()) {
+      return this.i18nService.t("canEdit");
+    }
+    if ((this.collection as CollectionAdminView).assigned) {
       const permissionList = getPermissionList(this.organization?.flexibleCollections);
       return this.i18nService.t(
         permissionList.find((p) => p.perm === convertToPermission(this.collection))?.labelId,
       );
     }
+    return this.i18nService.t("noAccess");
   }
 
   get permissionTooltip() {
