@@ -176,7 +176,7 @@ export class VaultHeaderComponent implements OnInit {
       (o) => o.id === this.collection?.node.organizationId,
     );
 
-    return this.collection.node.canDelete(organization);
+    return this.collection.node.canDelete(organization, this.flexibleCollectionsV1Enabled);
   }
 
   deleteCollection() {

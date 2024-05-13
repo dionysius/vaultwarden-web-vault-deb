@@ -145,9 +145,12 @@ export class BulkDeleteDialogComponent {
   }
 
   private async deleteCollections(): Promise<any> {
+    const flexibleCollectionsV1Enabled = await firstValueFrom(this.flexibleCollectionsV1Enabled$);
     // From org vault
     if (this.organization) {
-      if (this.collections.some((c) => !c.canDelete(this.organization))) {
+      if (
+        this.collections.some((c) => !c.canDelete(this.organization, flexibleCollectionsV1Enabled))
+      ) {
         this.platformUtilsService.showToast(
           "error",
           this.i18nService.t("errorOccurred"),
@@ -164,7 +167,7 @@ export class BulkDeleteDialogComponent {
       const deletePromises: Promise<any>[] = [];
       for (const organization of this.organizations) {
         const orgCollections = this.collections.filter((o) => o.organizationId === organization.id);
-        if (orgCollections.some((c) => !c.canDelete(organization))) {
+        if (orgCollections.some((c) => !c.canDelete(organization, flexibleCollectionsV1Enabled))) {
           this.platformUtilsService.showToast(
             "error",
             this.i18nService.t("errorOccurred"),

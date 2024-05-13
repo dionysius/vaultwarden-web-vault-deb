@@ -71,12 +71,6 @@ export class CollectionAdminView extends CollectionView {
           (org?.canEditAssignedCollections && this.assigned);
   }
 
-  override canDelete(org: Organization): boolean {
-    return org?.flexibleCollections
-      ? org?.canDeleteAnyCollection || (!org?.limitCollectionCreationDeletion && this.manage)
-      : org?.canDeleteAnyCollection || (org?.canDeleteAssignedCollections && this.assigned);
-  }
-
   /**
    * Whether the user can modify user access to this collection
    */

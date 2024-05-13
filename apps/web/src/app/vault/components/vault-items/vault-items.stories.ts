@@ -4,6 +4,7 @@ import { applicationConfig, Meta, moduleMetadata, Story } from "@storybook/angul
 import { BehaviorSubject, of } from "rxjs";
 
 import { OrganizationUserType } from "@bitwarden/common/admin-console/enums";
+import { PermissionsApi } from "@bitwarden/common/admin-console/models/api/permissions.api";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { AvatarService } from "@bitwarden/common/auth/abstractions/avatar.service";
 import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
@@ -318,5 +319,6 @@ function createOrganization(i: number): Organization {
   organization.id = `organization-${i}`;
   organization.name = `Organization ${i}`;
   organization.type = OrganizationUserType.Owner;
+  organization.permissions = new PermissionsApi();
   return organization;
 }

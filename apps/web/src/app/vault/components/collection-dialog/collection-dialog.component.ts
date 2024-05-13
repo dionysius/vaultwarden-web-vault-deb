@@ -214,7 +214,9 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
               access: accessSelections,
             });
             this.collection.manage = collection?.manage ?? false; // Get manage flag from sync data collection
-            this.showDeleteButton = !this.dialogReadonly && this.collection.canDelete(organization);
+            this.showDeleteButton =
+              !this.dialogReadonly &&
+              this.collection.canDelete(organization, flexibleCollectionsV1);
           } else {
             this.nestOptions = collections;
             const parent = collections.find((c) => c.id === this.params.parentCollectionId);

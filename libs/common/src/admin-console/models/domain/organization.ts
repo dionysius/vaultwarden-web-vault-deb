@@ -232,8 +232,23 @@ export class Organization {
     );
   }
 
-  get canDeleteAnyCollection() {
-    return this.isAdmin || this.permissions.deleteAnyCollection;
+  /**
+   * @param flexibleCollectionsV1Enabled - Whether or not the V1 Flexible Collection feature flag is enabled
+   * @returns True if the user can delete any collection
+   */
+  canDeleteAnyCollection(flexibleCollectionsV1Enabled: boolean) {
+    // Providers and Users with DeleteAnyCollection permission can always delete collections
+    if (this.isProviderUser || this.permissions.deleteAnyCollection) {
+      return true;
+    }
+
+    // If AllowAdminAccessToAllCollectionItems is true, Owners and Admins can delete any collection, regardless of LimitCollectionCreationDeletion setting
+    // Using explicit type checks because provider users are handled above and this mimics the server's permission checks closely
+    if (!flexibleCollectionsV1Enabled || this.allowAdminAccessToAllCollectionItems) {
+      return this.type == OrganizationUserType.Owner || this.type == OrganizationUserType.Admin;
+    }
+
+    return false;
   }
 
   /**
@@ -242,7 +257,9 @@ export class Organization {
    */
   get canViewAllCollections() {
     // Admins can always see all collections even if collection management settings prevent them from editing them or seeing items
-    return this.isAdmin || this.permissions.editAnyCollection || this.canDeleteAnyCollection;
+    return (
+      this.isAdmin || this.permissions.editAnyCollection || this.permissions.deleteAnyCollection
+    );
   }
 
   /**
