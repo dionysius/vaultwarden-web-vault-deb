@@ -108,7 +108,7 @@ describe("VaultOnboardingComponent", () => {
     it("should set extensionUrl to Chrome Web Store when isChrome is true", async () => {
       jest.spyOn((component as any).platformUtilsService, "isChrome").mockReturnValue(true);
       const expected =
-        "https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb";
+        "https://chromewebstore.google.com/detail/bitwarden-password-manage/nngceckbapebfimnlniiiahkandclblb";
       await component.ngOnInit();
       expect(component.extensionUrl).toEqual(expected);
     });

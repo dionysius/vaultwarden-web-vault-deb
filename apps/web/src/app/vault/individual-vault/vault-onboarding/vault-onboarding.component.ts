@@ -169,7 +169,7 @@ export class VaultOnboardingComponent implements OnInit, OnChanges, OnDestroy {
   setInstallExtLink() {
     if (this.platformUtilsService.isChrome()) {
       this.extensionUrl =
-        "https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb";
+        "https://chromewebstore.google.com/detail/bitwarden-password-manage/nngceckbapebfimnlniiiahkandclblb";
     } else if (this.platformUtilsService.isFirefox()) {
       this.extensionUrl =
         "https://addons.mozilla.org/en-US/firefox/addon/bitwarden-password-manager/";
