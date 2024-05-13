@@ -117,10 +117,13 @@
       <collection-access-restricted
         *ngIf="showCollectionAccessRestricted"
         [canEditCollection]="
-          selectedCollection.node?.canEdit(organization, flexibleCollectionsV1Enabled)
+          selectedCollection?.node?.canEdit(organization, flexibleCollectionsV1Enabled)
         "
         [canViewCollectionInfo]="
-          selectedCollection.node?.canViewCollectionInfo(organization, flexibleCollectionsV1Enabled)
+          selectedCollection?.node?.canViewCollectionInfo(
+            organization,
+            flexibleCollectionsV1Enabled
+          )
         "
         (viewCollectionClicked)="
           editCollection(selectedCollection.node, $event.tab, $event.readonly)
