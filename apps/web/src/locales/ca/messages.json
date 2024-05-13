@@ -2788,6 +2788,12 @@
   "all": {
     "message": "Tot"
   },
+  "addAccess": {
+    "message": "Add Access"
+  },
+  "addAccessFilter": {
+    "message": "Add Access Filter"
+  },
   "refresh": {
     "message": "Actualitza"
   },
@@ -7962,7 +7968,7 @@
     }
   },
   "deleteProviderWarningDescription": {
-    "message": "You must unlink all clients before you can delete $ID$.",
+    "message": "Heu de desenllaçar tots els clients abans de poder suprimir $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",

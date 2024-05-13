@@ -2788,6 +2788,12 @@
   "all": {
     "message": "Alle"
   },
+  "addAccess": {
+    "message": "Zugriff hinzufügen"
+  },
+  "addAccessFilter": {
+    "message": "Zugriffsfilter hinzufügen"
+  },
   "refresh": {
     "message": "Aktualisieren"
   },
@@ -7962,7 +7968,7 @@
     }
   },
   "deleteProviderWarningDescription": {
-    "message": "You must unlink all clients before you can delete $ID$.",
+    "message": "Du musst die Verknüpfung zu allen Clients aufheben, bevor du $ID$ löschen kannst.",
     "placeholders": {
       "id": {
         "content": "$1",

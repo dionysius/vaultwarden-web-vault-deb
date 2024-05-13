@@ -1894,7 +1894,7 @@
     "message": "Vājo paroļu pārskats"
   },
   "weakPasswordsReportDesc": {
-    "message": "Vājas paroles var viegli uzminēt urķi un automatizētie rīki, kas tiek izmantoti paroļu uzlaušanā. Bitwarden paroļu veidotājs var palīdzēt izveidot spēcīgas paroles."
+    "message": "Uzbrucēji var viegli uzminēt vājas paroles. Šīs paroles būtu jānomaina pret spēcīgām ar paroļu veidotāja palīdzību."
   },
   "weakPasswordsFound": {
     "message": "Atrastas vājas paroles"
@@ -1941,7 +1941,7 @@
     "message": "Glabātavā nav pieteikšanās vienumu ar vairākkārt izmantotām parolēm."
   },
   "reusedXTimes": {
-    "message": "Vairākkārt izmantota(s) $COUNT$ reizi(es)",
+    "message": "Izmantota $COUNT$ reizes",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -2787,6 +2787,12 @@
   },
   "all": {
     "message": "Visi"
+  },
+  "addAccess": {
+    "message": "Pievienot piekļuvi"
+  },
+  "addAccessFilter": {
+    "message": "Pievienot piekļuves atlasi"
   },
   "refresh": {
     "message": "Atsvaidzināt"
@@ -7962,7 +7968,7 @@
     }
   },
   "deleteProviderWarningDescription": {
-    "message": "You must unlink all clients before you can delete $ID$.",
+    "message": "Ir jāatsaista visi klienti, pirms var izdzēst $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
