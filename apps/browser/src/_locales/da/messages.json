@@ -3,11 +3,11 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden Password Manager",
+    "message": "Bitwarden Adgangskodehåndtering",
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
-    "message": "At home, at work, or on the go, Bitwarden easily secures all your passwords, passkeys, and sensitive information",
+    "message": "Hjemme, på arbejde eller på farten sikrer Bitwarden nemt alle adgangskoder, adgangskort og sensitive oplysninger",
     "description": "Extension description, MUST be less than 112 characters (Safari restriction)"
   },
   "loginOrCreateNewAccount": {
@@ -374,11 +374,20 @@
   "other": {
     "message": "Andre"
   },
+  "unlockMethods": {
+    "message": "Oplåsningsmuligheder"
+  },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "Opsæt en oplåsningsmetode til at ændre bokstimeouthandlingen."
   },
   "unlockMethodNeeded": {
     "message": "Opsæt en oplåsningsmetode i Indstillinger"
+  },
+  "sessionTimeoutHeader": {
+    "message": "Sessionstimeout"
+  },
+  "otherOptions": {
+    "message": "Andre innstillinger"
   },
   "rateExtension": {
     "message": "Bedøm udvidelsen"
@@ -2390,7 +2399,7 @@
     "message": "Generelt"
   },
   "display": {
-    "message": "Display"
+    "message": "Skærm"
   },
   "accountSuccessfullyCreated": {
     "message": "Konto oprettet!"
@@ -3022,6 +3031,15 @@
   },
   "adminConsole": {
     "message": "Admin-konsol"
+  },
+  "accountSecurity": {
+    "message": "Kontosikkerhed"
+  },
+  "notifications": {
+    "message": "Notifikationer"
+  },
+  "appearance": {
+    "message": "Udseende"
   },
   "errorAssigningTargetCollection": {
     "message": "Fejl ved tildeling af målsamling."

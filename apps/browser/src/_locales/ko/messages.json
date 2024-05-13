@@ -374,11 +374,20 @@
   "other": {
     "message": "기타"
   },
+  "unlockMethods": {
+    "message": "Unlock options"
+  },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "잠금 해제 방법을 설정하여 보관함의 시간 초과 동작을 변경하세요."
   },
   "unlockMethodNeeded": {
     "message": "설정에서 잠금 해제 수단 설정하기"
+  },
+  "sessionTimeoutHeader": {
+    "message": "Session timeout"
+  },
+  "otherOptions": {
+    "message": "Other options"
   },
   "rateExtension": {
     "message": "확장 프로그램 평가"
@@ -3022,6 +3031,15 @@
   },
   "adminConsole": {
     "message": "Admin Console"
+  },
+  "accountSecurity": {
+    "message": "Account security"
+  },
+  "notifications": {
+    "message": "Notifications"
+  },
+  "appearance": {
+    "message": "Appearance"
   },
   "errorAssigningTargetCollection": {
     "message": "Error assigning target collection."

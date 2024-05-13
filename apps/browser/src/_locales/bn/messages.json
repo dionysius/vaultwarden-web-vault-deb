@@ -374,11 +374,20 @@
   "other": {
     "message": "অন্যান্য"
   },
+  "unlockMethods": {
+    "message": "Unlock options"
+  },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "Set up an unlock method to change your vault timeout action."
   },
   "unlockMethodNeeded": {
     "message": "Set up an unlock method in Settings"
+  },
+  "sessionTimeoutHeader": {
+    "message": "Session timeout"
+  },
+  "otherOptions": {
+    "message": "Other options"
   },
   "rateExtension": {
     "message": "এক্সটেনশনটি মূল্যায়ন করুন"
@@ -3022,6 +3031,15 @@
   },
   "adminConsole": {
     "message": "Admin Console"
+  },
+  "accountSecurity": {
+    "message": "Account security"
+  },
+  "notifications": {
+    "message": "Notifications"
+  },
+  "appearance": {
+    "message": "Appearance"
   },
   "errorAssigningTargetCollection": {
     "message": "Error assigning target collection."

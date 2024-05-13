@@ -374,11 +374,20 @@
   "other": {
     "message": "Overig"
   },
+  "unlockMethods": {
+    "message": "Ontgrendelopties"
+  },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "Stel een ontgrendelingsmethode in om je kluis time-out actie te wijzigen."
   },
   "unlockMethodNeeded": {
     "message": "Set up an unlock method in Settings"
+  },
+  "sessionTimeoutHeader": {
+    "message": "Sessietime-out"
+  },
+  "otherOptions": {
+    "message": "Andere opties"
   },
   "rateExtension": {
     "message": "Deze extensie beoordelen"
@@ -3022,6 +3031,15 @@
   },
   "adminConsole": {
     "message": "Admin Console"
+  },
+  "accountSecurity": {
+    "message": "Accountbeveiliging"
+  },
+  "notifications": {
+    "message": "Notifications"
+  },
+  "appearance": {
+    "message": "Voorkomen"
   },
   "errorAssigningTargetCollection": {
     "message": "Fout bij toewijzen doelverzameling."

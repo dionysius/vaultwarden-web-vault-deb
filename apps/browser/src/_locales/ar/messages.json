@@ -374,11 +374,20 @@
   "other": {
     "message": "الأخرى"
   },
+  "unlockMethods": {
+    "message": "Unlock options"
+  },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "أعدنّ طريقة إلغاء القُفْل لتغيير إجراء مهلة المخزن الخاص بك."
   },
   "unlockMethodNeeded": {
     "message": "إعداد طريقة إلغاء القفل في الإعدادات"
+  },
+  "sessionTimeoutHeader": {
+    "message": "Session timeout"
+  },
+  "otherOptions": {
+    "message": "Other options"
   },
   "rateExtension": {
     "message": "قيِّم هذه الإضافة"
@@ -3022,6 +3031,15 @@
   },
   "adminConsole": {
     "message": "Admin Console"
+  },
+  "accountSecurity": {
+    "message": "Account security"
+  },
+  "notifications": {
+    "message": "Notifications"
+  },
+  "appearance": {
+    "message": "Appearance"
   },
   "errorAssigningTargetCollection": {
     "message": "Error assigning target collection."

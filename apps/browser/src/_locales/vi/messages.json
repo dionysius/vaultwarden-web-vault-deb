@@ -374,11 +374,20 @@
   "other": {
     "message": "Khác"
   },
+  "unlockMethods": {
+    "message": "Unlock options"
+  },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "Thiết lập phương thức mở khóa để thay đổi hành động hết thời gian chờ của vault."
   },
   "unlockMethodNeeded": {
     "message": "Thiết lập phương pháp mở khóa trong Cài đặt"
+  },
+  "sessionTimeoutHeader": {
+    "message": "Session timeout"
+  },
+  "otherOptions": {
+    "message": "Other options"
   },
   "rateExtension": {
     "message": "Đánh giá tiện ích mở rộng"
@@ -3022,6 +3031,15 @@
   },
   "adminConsole": {
     "message": "Bảng điều khiển dành cho quản trị viên"
+  },
+  "accountSecurity": {
+    "message": "Account security"
+  },
+  "notifications": {
+    "message": "Notifications"
+  },
+  "appearance": {
+    "message": "Appearance"
   },
   "errorAssigningTargetCollection": {
     "message": "Error assigning target collection."

@@ -374,11 +374,20 @@
   "other": {
     "message": "Inne"
   },
+  "unlockMethods": {
+    "message": "Odblokuj Opcje"
+  },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "Ustaw metodę odblokowania, aby zmienić czas blokowania sejfu."
   },
   "unlockMethodNeeded": {
     "message": "Ustaw metodę odblokowania w Ustawieniach"
+  },
+  "sessionTimeoutHeader": {
+    "message": "Limit czasu sesji"
+  },
+  "otherOptions": {
+    "message": "Pozostałe opcje"
   },
   "rateExtension": {
     "message": "Oceń rozszerzenie"
@@ -3022,6 +3031,15 @@
   },
   "adminConsole": {
     "message": "Konsola Administracyjna"
+  },
+  "accountSecurity": {
+    "message": "Bezpieczeństwo konta"
+  },
+  "notifications": {
+    "message": "Powiadomienia"
+  },
+  "appearance": {
+    "message": "Wygląd"
   },
   "errorAssigningTargetCollection": {
     "message": "Wystąpił błąd podczas przypisywania kolekcji."

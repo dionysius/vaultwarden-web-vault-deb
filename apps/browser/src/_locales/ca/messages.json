@@ -374,11 +374,20 @@
   "other": {
     "message": "Altres"
   },
+  "unlockMethods": {
+    "message": "Unlock options"
+  },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "Configura un mètode de desbloqueig per canviar l'acció del temps d'espera de la caixa forta."
   },
   "unlockMethodNeeded": {
     "message": "Configura un mètode de desbloqueig a Configuració"
+  },
+  "sessionTimeoutHeader": {
+    "message": "Session timeout"
+  },
+  "otherOptions": {
+    "message": "Other options"
   },
   "rateExtension": {
     "message": "Valora aquesta extensió"
@@ -3022,6 +3031,15 @@
   },
   "adminConsole": {
     "message": "Consola d'administració"
+  },
+  "accountSecurity": {
+    "message": "Account security"
+  },
+  "notifications": {
+    "message": "Notifications"
+  },
+  "appearance": {
+    "message": "Appearance"
   },
   "errorAssigningTargetCollection": {
     "message": "S'ha produït un error en assignar la col·lecció de destinació."

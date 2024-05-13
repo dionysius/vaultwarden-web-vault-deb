@@ -374,11 +374,20 @@
   "other": {
     "message": "その他"
   },
+  "unlockMethods": {
+    "message": "ロック解除オプション"
+  },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "保管庫のタイムアウト動作を変更するには、ロック解除方法を設定してください。"
   },
   "unlockMethodNeeded": {
     "message": "設定でロック解除方法をセットアップ"
+  },
+  "sessionTimeoutHeader": {
+    "message": "セッションタイムアウト"
+  },
+  "otherOptions": {
+    "message": "その他のオプション"
   },
   "rateExtension": {
     "message": "拡張機能の評価"
@@ -3022,6 +3031,15 @@
   },
   "adminConsole": {
     "message": "管理コンソール"
+  },
+  "accountSecurity": {
+    "message": "アカウントのセキュリティ"
+  },
+  "notifications": {
+    "message": "通知"
+  },
+  "appearance": {
+    "message": "外観"
   },
   "errorAssigningTargetCollection": {
     "message": "ターゲットコレクションの割り当てに失敗しました。"

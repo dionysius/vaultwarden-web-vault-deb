@@ -374,11 +374,20 @@
   "other": {
     "message": "Autre"
   },
+  "unlockMethods": {
+    "message": "Unlock options"
+  },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "Configurez une méthode de déverrouillage pour changer le délai d'expiration de votre coffre."
   },
   "unlockMethodNeeded": {
     "message": "Configurer une méthode de déverrouillage dans les Paramètres"
+  },
+  "sessionTimeoutHeader": {
+    "message": "Session timeout"
+  },
+  "otherOptions": {
+    "message": "Other options"
   },
   "rateExtension": {
     "message": "Noter l'extension"
@@ -3010,7 +3019,7 @@
     "message": "Notice: Unassigned organization items are no longer visible in the All Vaults view and only accessible via the Admin Console."
   },
   "unassignedItemsBannerSelfHostNotice": {
-    "message": "Notice: On May 16, 2024, unassigned organization items will no longer be visible in the All Vaults view and will only be accessible via the Admin Console."
+    "message": "Remarque : À partir du 16 mai 2024, les éléments d'organisation non assignés ne seront plus visibles dans votre vue Tous les coffres sur les appareils et ne seront maintenant accessibles que via la Console Admin."
   },
   "unassignedItemsBannerCTAPartOne": {
     "message": "Ajouter ces éléments à une collection depuis la",
@@ -3022,6 +3031,15 @@
   },
   "adminConsole": {
     "message": "Console Admin"
+  },
+  "accountSecurity": {
+    "message": "Account security"
+  },
+  "notifications": {
+    "message": "Notifications"
+  },
+  "appearance": {
+    "message": "Appearance"
   },
   "errorAssigningTargetCollection": {
     "message": "Error assigning target collection."

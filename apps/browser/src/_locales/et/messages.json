@@ -374,11 +374,20 @@
   "other": {
     "message": "Muu"
   },
+  "unlockMethods": {
+    "message": "Unlock options"
+  },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "Hoidla ajalõpu tegevuse muutmiseks vali esmalt lahtilukustamise meetod."
   },
   "unlockMethodNeeded": {
     "message": "Set up an unlock method in Settings"
+  },
+  "sessionTimeoutHeader": {
+    "message": "Session timeout"
+  },
+  "otherOptions": {
+    "message": "Other options"
   },
   "rateExtension": {
     "message": "Hinda seda laiendust"
@@ -3022,6 +3031,15 @@
   },
   "adminConsole": {
     "message": "Admin Console"
+  },
+  "accountSecurity": {
+    "message": "Account security"
+  },
+  "notifications": {
+    "message": "Notifications"
+  },
+  "appearance": {
+    "message": "Appearance"
   },
   "errorAssigningTargetCollection": {
     "message": "Error assigning target collection."

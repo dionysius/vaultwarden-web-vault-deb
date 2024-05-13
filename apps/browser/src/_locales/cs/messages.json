@@ -374,11 +374,20 @@
   "other": {
     "message": "Ostatní"
   },
+  "unlockMethods": {
+    "message": "Volby odemknutí"
+  },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "Nastavte metodu odemknutí, abyste změnili časový limit Vašeho trezoru."
   },
   "unlockMethodNeeded": {
     "message": "Nastavit metodu odemknutí v Nastavení"
+  },
+  "sessionTimeoutHeader": {
+    "message": "Časový limit relace"
+  },
+  "otherOptions": {
+    "message": "Další volby"
   },
   "rateExtension": {
     "message": "Ohodnotit rozšíření"
@@ -3022,6 +3031,15 @@
   },
   "adminConsole": {
     "message": "Konzole správce"
+  },
+  "accountSecurity": {
+    "message": "Zabezpečení účtu"
+  },
+  "notifications": {
+    "message": "Oznámení"
+  },
+  "appearance": {
+    "message": "Vzhled"
   },
   "errorAssigningTargetCollection": {
     "message": "Chyba při přiřazování cílové kolekce."

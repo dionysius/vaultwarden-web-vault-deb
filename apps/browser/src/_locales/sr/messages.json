@@ -374,11 +374,20 @@
   "other": {
     "message": "Остало"
   },
+  "unlockMethods": {
+    "message": "Unlock options"
+  },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "Подесите метод откључавања да бисте променили радњу временског ограничења сефа."
   },
   "unlockMethodNeeded": {
     "message": "Подесите метод откључавања у подешавањима"
+  },
+  "sessionTimeoutHeader": {
+    "message": "Session timeout"
+  },
+  "otherOptions": {
+    "message": "Other options"
   },
   "rateExtension": {
     "message": "Оцени овај додатак"
@@ -3022,6 +3031,15 @@
   },
   "adminConsole": {
     "message": "Администраторска конзола"
+  },
+  "accountSecurity": {
+    "message": "Account security"
+  },
+  "notifications": {
+    "message": "Notifications"
+  },
+  "appearance": {
+    "message": "Appearance"
   },
   "errorAssigningTargetCollection": {
     "message": "Грешка при додељивању циљне колекције."

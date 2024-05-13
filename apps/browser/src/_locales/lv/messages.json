@@ -374,11 +374,20 @@
   "other": {
     "message": "Cits"
   },
+  "unlockMethods": {
+    "message": "Atslēgšanas iespējas"
+  },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "Jāuzstāda atslēgšanas veids, lai mainītu glabātavas noildzes darbību."
   },
   "unlockMethodNeeded": {
     "message": "Jāuzstāda atslēgšanas veids iestatījumos"
+  },
+  "sessionTimeoutHeader": {
+    "message": "Sesijas noildze"
+  },
+  "otherOptions": {
+    "message": "Citas iespējas"
   },
   "rateExtension": {
     "message": "Novērtēt paplašinājumu"
@@ -3022,6 +3031,15 @@
   },
   "adminConsole": {
     "message": "pārvaldības konsolē,"
+  },
+  "accountSecurity": {
+    "message": "Konta drošība"
+  },
+  "notifications": {
+    "message": "Paziņojumi"
+  },
+  "appearance": {
+    "message": "Izskats"
   },
   "errorAssigningTargetCollection": {
     "message": "Kļūda mērķa krājuma piešķiršanā."

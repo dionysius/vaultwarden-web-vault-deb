@@ -374,11 +374,20 @@
   "other": {
     "message": "Diğer"
   },
+  "unlockMethods": {
+    "message": "Kilit açma seçenekleri"
+  },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "Kasa zaman aşımı eyleminizi değiştirmek için kilit açma yönteminizi ayarlayın."
   },
   "unlockMethodNeeded": {
     "message": "Ayarlar'da bir kilit açma yöntemi ayarlayın"
+  },
+  "sessionTimeoutHeader": {
+    "message": "Oturum zaman aşımı"
+  },
+  "otherOptions": {
+    "message": "Diğer seçenekler"
   },
   "rateExtension": {
     "message": "Uzantıyı değerlendirin"
@@ -3023,10 +3032,19 @@
   "adminConsole": {
     "message": "Yönetici Konsolu"
   },
+  "accountSecurity": {
+    "message": "Hesap güvenliği"
+  },
+  "notifications": {
+    "message": "Notifications"
+  },
+  "appearance": {
+    "message": "Appearance"
+  },
   "errorAssigningTargetCollection": {
-    "message": "Error assigning target collection."
+    "message": "Hedef koleksiyonu atama hatası."
   },
   "errorAssigningTargetFolder": {
-    "message": "Error assigning target folder."
+    "message": "Hedef klasörü atama hatası."
   }
 }

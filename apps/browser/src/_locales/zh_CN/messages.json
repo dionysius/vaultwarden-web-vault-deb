@@ -374,11 +374,20 @@
   "other": {
     "message": "其他"
   },
+  "unlockMethods": {
+    "message": "解锁选项"
+  },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "设置一个解锁方式以更改您的密码库超时动作。"
   },
   "unlockMethodNeeded": {
     "message": "在设置中设置一个解锁方式"
+  },
+  "sessionTimeoutHeader": {
+    "message": "会话超时"
+  },
+  "otherOptions": {
+    "message": "其他选项"
   },
   "rateExtension": {
     "message": "为本扩展打分"
@@ -3022,6 +3031,15 @@
   },
   "adminConsole": {
     "message": "管理控制台"
+  },
+  "accountSecurity": {
+    "message": "账户安全"
+  },
+  "notifications": {
+    "message": "通知"
+  },
+  "appearance": {
+    "message": "外观"
   },
   "errorAssigningTargetCollection": {
     "message": "分配目标集合时出错。"

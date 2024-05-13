@@ -374,11 +374,20 @@
   "other": {
     "message": "Altro"
   },
+  "unlockMethods": {
+    "message": "Opzioni di sblocco"
+  },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "Imposta un metodo di sblocco per modificare l'azione timeout cassaforte."
   },
   "unlockMethodNeeded": {
     "message": "Imposta un metodo di sblocco in Impostazioni"
+  },
+  "sessionTimeoutHeader": {
+    "message": "Timeout della sessione"
+  },
+  "otherOptions": {
+    "message": "Altre opzioni"
   },
   "rateExtension": {
     "message": "Valuta l'estensione"
@@ -3022,6 +3031,15 @@
   },
   "adminConsole": {
     "message": "Console di amministrazione"
+  },
+  "accountSecurity": {
+    "message": "Sicurezza dell'account"
+  },
+  "notifications": {
+    "message": "Notifiche"
+  },
+  "appearance": {
+    "message": "Aspetto"
   },
   "errorAssigningTargetCollection": {
     "message": "Errore nell'assegnazione della raccolta di destinazione."

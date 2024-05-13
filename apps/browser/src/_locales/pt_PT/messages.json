@@ -374,11 +374,20 @@
   "other": {
     "message": "Outros"
   },
+  "unlockMethods": {
+    "message": "Opções de desbloqueio"
+  },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "Configure um método de desbloqueio para alterar a ação de tempo limite do seu cofre."
   },
   "unlockMethodNeeded": {
     "message": "Definir um método de desbloqueio nas Definições"
+  },
+  "sessionTimeoutHeader": {
+    "message": "Tempo limite da sessão"
+  },
+  "otherOptions": {
+    "message": "Outras opções"
   },
   "rateExtension": {
     "message": "Avaliar a extensão"
@@ -3022,6 +3031,15 @@
   },
   "adminConsole": {
     "message": "Consola de administração"
+  },
+  "accountSecurity": {
+    "message": "Segurança da conta"
+  },
+  "notifications": {
+    "message": "Notificações"
+  },
+  "appearance": {
+    "message": "Aparência"
   },
   "errorAssigningTargetCollection": {
     "message": "Erro ao atribuir a coleção de destino."

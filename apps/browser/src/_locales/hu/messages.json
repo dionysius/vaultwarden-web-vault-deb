@@ -374,11 +374,20 @@
   "other": {
     "message": "Egyéb"
   },
+  "unlockMethods": {
+    "message": "Feloldási opciók"
+  },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "Állítsunk be egy feloldási módot a széf időkifutási műveletének módosításához."
   },
   "unlockMethodNeeded": {
     "message": "Feloldási mód beállítása a Beállításokban"
+  },
+  "sessionTimeoutHeader": {
+    "message": "Munkamenet időkifutás"
+  },
+  "otherOptions": {
+    "message": "Egyéb opciók"
   },
   "rateExtension": {
     "message": "Bővítmény értékelése"
@@ -3022,6 +3031,15 @@
   },
   "adminConsole": {
     "message": "Adminisztrátori konzol"
+  },
+  "accountSecurity": {
+    "message": "Fiókbiztonság"
+  },
+  "notifications": {
+    "message": "Értesítések"
+  },
+  "appearance": {
+    "message": "Megjelenés"
   },
   "errorAssigningTargetCollection": {
     "message": "Hiba történt a célgyűjtemény hozzárendelése során."

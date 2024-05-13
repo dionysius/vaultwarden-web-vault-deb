@@ -374,11 +374,20 @@
   "other": {
     "message": "Muut"
   },
+  "unlockMethods": {
+    "message": "Avausasetukset"
+  },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "Muuta holvisi aikakatkaisutoimintoa määrittämällä lukituksen avaustapa."
   },
   "unlockMethodNeeded": {
     "message": "Määritä avaustapa asetuksista"
+  },
+  "sessionTimeoutHeader": {
+    "message": "Istunnon aikakatkaisu"
+  },
+  "otherOptions": {
+    "message": "Muut asetukset"
   },
   "rateExtension": {
     "message": "Arvioi laajennus"
@@ -3022,6 +3031,15 @@
   },
   "adminConsole": {
     "message": "Hallintapaneelista"
+  },
+  "accountSecurity": {
+    "message": "Tilin suojaus"
+  },
+  "notifications": {
+    "message": "Ilmoitukset"
+  },
+  "appearance": {
+    "message": "Ulkoasu"
   },
   "errorAssigningTargetCollection": {
     "message": "Virhe määritettäessä kohdekokoelmaa."

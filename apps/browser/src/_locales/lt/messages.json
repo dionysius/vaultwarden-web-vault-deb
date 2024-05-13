@@ -374,11 +374,20 @@
   "other": {
     "message": "Kita"
   },
+  "unlockMethods": {
+    "message": "Unlock options"
+  },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "Nustatyk atrakinimo būdą, kad pakeistum saugyklos laiko limito veiksmą."
   },
   "unlockMethodNeeded": {
     "message": "Nustatykite nustatymuose atrakinimo metodą"
+  },
+  "sessionTimeoutHeader": {
+    "message": "Session timeout"
+  },
+  "otherOptions": {
+    "message": "Other options"
   },
   "rateExtension": {
     "message": "Įvertinkite šį plėtinį"
@@ -3022,6 +3031,15 @@
   },
   "adminConsole": {
     "message": "Administratoriaus konsolės"
+  },
+  "accountSecurity": {
+    "message": "Account security"
+  },
+  "notifications": {
+    "message": "Notifications"
+  },
+  "appearance": {
+    "message": "Appearance"
   },
   "errorAssigningTargetCollection": {
     "message": "Klaida priskiriant tikslinę kolekciją."
