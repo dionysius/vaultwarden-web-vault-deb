@@ -30,7 +30,7 @@ import { LogService } from "../../platform/abstractions/log.service";
 import { BiometricStateService } from "../../platform/biometrics/biometric-state.service";
 import { StateProvider } from "../../platform/state";
 import { UserId } from "../../types/guid";
-import { VaultTimeout } from "../../types/vault-timeout.type";
+import { VaultTimeout, VaultTimeoutStringType } from "../../types/vault-timeout.type";
 
 import { VAULT_TIMEOUT, VAULT_TIMEOUT_ACTION } from "./vault-timeout-settings.state";
 
@@ -74,7 +74,7 @@ export class VaultTimeoutSettingsService implements VaultTimeoutSettingsServiceA
 
     await this.setVaultTimeout(userId, timeout);
 
-    if (timeout != null && action === VaultTimeoutAction.LogOut) {
+    if (timeout != VaultTimeoutStringType.Never && action === VaultTimeoutAction.LogOut) {
       // if we have a vault timeout and the action is log out, reset tokens
       // as the tokens were stored on disk and now should be stored in memory
       await this.tokenService.clearTokens();

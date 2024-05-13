@@ -313,7 +313,7 @@ describe("VaultTimeoutSettingsService", () => {
       expect(cryptoService.refreshAdditionalKeys).toHaveBeenCalled();
     });
 
-    it("should clear the tokens when the timeout is non-null and the action is log out", async () => {
+    it("should clear the tokens when the timeout is not never and the action is log out", async () => {
       // Arrange
       const action = VaultTimeoutAction.LogOut;
       const timeout = 30;
@@ -323,6 +323,18 @@ describe("VaultTimeoutSettingsService", () => {
 
       // Assert
       expect(tokenService.clearTokens).toHaveBeenCalled();
+    });
+
+    it("should not clear the tokens when the timeout is never and the action is log out", async () => {
+      // Arrange
+      const action = VaultTimeoutAction.LogOut;
+      const timeout = VaultTimeoutStringType.Never;
+
+      // Act
+      await vaultTimeoutSettingsService.setVaultTimeoutOptions(mockUserId, timeout, action);
+
+      // Assert
+      expect(tokenService.clearTokens).not.toHaveBeenCalled();
     });
   });
 
