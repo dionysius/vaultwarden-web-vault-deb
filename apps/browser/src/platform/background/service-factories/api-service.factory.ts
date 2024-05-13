@@ -6,6 +6,10 @@ import {
   TokenServiceInitOptions,
 } from "../../../auth/background/service-factories/token-service.factory";
 import {
+  vaultTimeoutSettingsServiceFactory,
+  VaultTimeoutSettingsServiceInitOptions,
+} from "../../../background/service-factories/vault-timeout-settings-service.factory";
+import {
   CachedServices,
   factory,
   FactoryOptions,
@@ -20,7 +24,6 @@ import {
   PlatformUtilsServiceInitOptions,
   platformUtilsServiceFactory,
 } from "./platform-utils-service.factory";
-import { stateServiceFactory, StateServiceInitOptions } from "./state-service.factory";
 
 type ApiServiceFactoryOptions = FactoryOptions & {
   apiServiceOptions: {
@@ -34,7 +37,7 @@ export type ApiServiceInitOptions = ApiServiceFactoryOptions &
   PlatformUtilsServiceInitOptions &
   EnvironmentServiceInitOptions &
   AppIdServiceInitOptions &
-  StateServiceInitOptions;
+  VaultTimeoutSettingsServiceInitOptions;
 
 export function apiServiceFactory(
   cache: { apiService?: AbstractApiService } & CachedServices,
@@ -50,7 +53,7 @@ export function apiServiceFactory(
         await platformUtilsServiceFactory(cache, opts),
         await environmentServiceFactory(cache, opts),
         await appIdServiceFactory(cache, opts),
-        await stateServiceFactory(cache, opts),
+        await vaultTimeoutSettingsServiceFactory(cache, opts),
         opts.apiServiceOptions.logoutCallback,
         opts.apiServiceOptions.customUserAgent,
       ),

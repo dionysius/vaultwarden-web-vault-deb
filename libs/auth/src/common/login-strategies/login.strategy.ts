@@ -1,6 +1,7 @@
 import { BehaviorSubject, filter, firstValueFrom, timeout } from "rxjs";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout-settings.service";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
 import { InternalMasterPasswordServiceAbstraction } from "@bitwarden/common/auth/abstractions/master-password.service.abstraction";
@@ -75,6 +76,7 @@ export abstract class LoginStrategy {
     protected twoFactorService: TwoFactorService,
     protected userDecryptionOptionsService: InternalUserDecryptionOptionsServiceAbstraction,
     protected billingAccountProfileStateService: BillingAccountProfileStateService,
+    protected vaultTimeoutSettingsService: VaultTimeoutSettingsService,
     protected KdfConfigService: KdfConfigService,
   ) {}
 
@@ -163,26 +165,13 @@ export abstract class LoginStrategy {
    */
   protected async saveAccountInformation(tokenResponse: IdentityTokenResponse): Promise<UserId> {
     const accountInformation = await this.tokenService.decodeAccessToken(tokenResponse.accessToken);
-
     const userId = accountInformation.sub as UserId;
-
-    const vaultTimeoutAction = await this.stateService.getVaultTimeoutAction({ userId });
-    const vaultTimeout = await this.stateService.getVaultTimeout({ userId });
 
     await this.accountService.addAccount(userId, {
       name: accountInformation.name,
       email: accountInformation.email,
       emailVerified: accountInformation.email_verified,
     });
-
-    // set access token and refresh token before account initialization so authN status can be accurate
-    // User id will be derived from the access token.
-    await this.tokenService.setTokens(
-      tokenResponse.accessToken,
-      vaultTimeoutAction as VaultTimeoutAction,
-      vaultTimeout,
-      tokenResponse.refreshToken, // Note: CLI login via API key sends undefined for refresh token.
-    );
 
     await this.accountService.switchAccount(userId);
 
@@ -201,8 +190,25 @@ export abstract class LoginStrategy {
 
     await this.verifyAccountAdded(userId);
 
+    // We must set user decryption options before retrieving vault timeout settings
+    // as the user decryption options help determine the available timeout actions.
     await this.userDecryptionOptionsService.setUserDecryptionOptions(
       UserDecryptionOptions.fromResponse(tokenResponse),
+    );
+
+    const vaultTimeoutAction = await firstValueFrom(
+      this.vaultTimeoutSettingsService.getVaultTimeoutActionByUserId$(userId),
+    );
+    const vaultTimeout = await firstValueFrom(
+      this.vaultTimeoutSettingsService.getVaultTimeoutByUserId$(userId),
+    );
+
+    // User id will be derived from the access token.
+    await this.tokenService.setTokens(
+      tokenResponse.accessToken,
+      vaultTimeoutAction as VaultTimeoutAction,
+      vaultTimeout,
+      tokenResponse.refreshToken, // Note: CLI login via API key sends undefined for refresh token.
     );
 
     await this.KdfConfigService.setKdfConfig(

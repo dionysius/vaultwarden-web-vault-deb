@@ -2,6 +2,7 @@ import { BehaviorSubject } from "rxjs";
 import { Jsonify } from "type-fest";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout-settings.service";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
 import { InternalMasterPasswordServiceAbstraction } from "@bitwarden/common/auth/abstractions/master-password.service.abstraction";
@@ -58,6 +59,7 @@ export class WebAuthnLoginStrategy extends LoginStrategy {
     twoFactorService: TwoFactorService,
     userDecryptionOptionsService: InternalUserDecryptionOptionsServiceAbstraction,
     billingAccountProfileStateService: BillingAccountProfileStateService,
+    vaultTimeoutSettingsService: VaultTimeoutSettingsService,
     kdfConfigService: KdfConfigService,
   ) {
     super(
@@ -74,6 +76,7 @@ export class WebAuthnLoginStrategy extends LoginStrategy {
       twoFactorService,
       userDecryptionOptionsService,
       billingAccountProfileStateService,
+      vaultTimeoutSettingsService,
       kdfConfigService,
     );
 

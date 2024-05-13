@@ -2,6 +2,7 @@ import { firstValueFrom, BehaviorSubject } from "rxjs";
 import { Jsonify } from "type-fest";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout-settings.service";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
 import { KeyConnectorService } from "@bitwarden/common/auth/abstractions/key-connector.service";
@@ -58,6 +59,7 @@ export class UserApiLoginStrategy extends LoginStrategy {
     private environmentService: EnvironmentService,
     private keyConnectorService: KeyConnectorService,
     billingAccountProfileStateService: BillingAccountProfileStateService,
+    vaultTimeoutSettingsService: VaultTimeoutSettingsService,
     protected kdfConfigService: KdfConfigService,
   ) {
     super(
@@ -74,6 +76,7 @@ export class UserApiLoginStrategy extends LoginStrategy {
       twoFactorService,
       userDecryptionOptionsService,
       billingAccountProfileStateService,
+      vaultTimeoutSettingsService,
       kdfConfigService,
     );
     this.cache = new BehaviorSubject(data);
@@ -130,8 +133,12 @@ export class UserApiLoginStrategy extends LoginStrategy {
   protected async saveAccountInformation(tokenResponse: IdentityTokenResponse): Promise<UserId> {
     const userId = await super.saveAccountInformation(tokenResponse);
 
-    const vaultTimeout = await this.stateService.getVaultTimeout();
-    const vaultTimeoutAction = await this.stateService.getVaultTimeoutAction();
+    const vaultTimeoutAction = await firstValueFrom(
+      this.vaultTimeoutSettingsService.getVaultTimeoutActionByUserId$(userId),
+    );
+    const vaultTimeout = await firstValueFrom(
+      this.vaultTimeoutSettingsService.getVaultTimeoutByUserId$(userId),
+    );
 
     const tokenRequest = this.cache.value.tokenRequest;
 

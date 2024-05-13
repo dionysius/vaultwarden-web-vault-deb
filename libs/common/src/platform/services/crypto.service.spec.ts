@@ -7,9 +7,11 @@ import { FakeActiveUserState, FakeSingleUserState } from "../../../spec/fake-sta
 import { FakeStateProvider } from "../../../spec/fake-state-provider";
 import { KdfConfigService } from "../../auth/abstractions/kdf-config.service";
 import { FakeMasterPasswordService } from "../../auth/services/master-password/fake-master-password.service";
+import { VAULT_TIMEOUT } from "../../services/vault-timeout/vault-timeout-settings.state";
 import { CsprngArray } from "../../types/csprng";
 import { UserId } from "../../types/guid";
 import { UserKey, MasterKey } from "../../types/key";
+import { VaultTimeoutStringType } from "../../types/vault-timeout.type";
 import { CryptoFunctionService } from "../abstractions/crypto-function.service";
 import { EncryptService } from "../abstractions/encrypt.service";
 import { KeyGenerationService } from "../abstractions/key-generation.service";
@@ -220,8 +222,8 @@ describe("cryptoService", () => {
     });
 
     describe("Auto Key refresh", () => {
-      it("sets an Auto key if vault timeout is set to null", async () => {
-        stateService.getVaultTimeout.mockResolvedValue(null);
+      it("sets an Auto key if vault timeout is set to 'never'", async () => {
+        await stateProvider.setUserState(VAULT_TIMEOUT, VaultTimeoutStringType.Never, mockUserId);
 
         await cryptoService.setUserKey(mockUserKey, mockUserId);
 
@@ -231,7 +233,7 @@ describe("cryptoService", () => {
       });
 
       it("clears the Auto key if vault timeout is set to anything other than null", async () => {
-        stateService.getVaultTimeout.mockResolvedValue(10);
+        await stateProvider.setUserState(VAULT_TIMEOUT, 10, mockUserId);
 
         await cryptoService.setUserKey(mockUserKey, mockUserId);
 

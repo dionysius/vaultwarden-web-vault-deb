@@ -1,20 +1,8 @@
-import {
-  Account as BaseAccount,
-  AccountSettings as BaseAccountSettings,
-} from "@bitwarden/common/platform/models/domain/account";
+import { Account as BaseAccount } from "@bitwarden/common/platform/models/domain/account";
 
-export class AccountSettings extends BaseAccountSettings {
-  vaultTimeout: number = process.env.NODE_ENV === "development" ? null : 15;
-}
-
+// TODO: platform to clean up accounts in later PR
 export class Account extends BaseAccount {
-  settings?: AccountSettings = new AccountSettings();
-
   constructor(init: Partial<Account>) {
     super(init);
-    Object.assign(this.settings, {
-      ...new AccountSettings(),
-      ...this.settings,
-    });
   }
 }

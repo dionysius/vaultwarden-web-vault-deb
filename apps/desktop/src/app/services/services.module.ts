@@ -14,6 +14,7 @@ import {
   SYSTEM_THEME_OBSERVABLE,
   SafeInjectionToken,
   STATE_FACTORY,
+  DEFAULT_VAULT_TIMEOUT,
   INTRAPROCESS_MESSAGING_SUBJECT,
   CLIENT_TYPE,
 } from "@bitwarden/angular/services/injection-tokens";
@@ -56,6 +57,7 @@ import { GlobalStateProvider, StateProvider } from "@bitwarden/common/platform/s
 // eslint-disable-next-line import/no-restricted-paths -- Implementation for memory storage
 import { MemoryStorageService as MemoryStorageServiceForStateProviders } from "@bitwarden/common/platform/state/storage/memory-storage.service";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
+import { VaultTimeoutStringType } from "@bitwarden/common/types/vault-timeout.type";
 import { CipherService as CipherServiceAbstraction } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { DialogService } from "@bitwarden/components";
 
@@ -137,6 +139,10 @@ const safeProviders: SafeProvider[] = [
     // circular dependency on Desktop only.
     provide: SUPPORTS_SECURE_STORAGE,
     useValue: ELECTRON_SUPPORTS_SECURE_STORAGE,
+  }),
+  safeProvider({
+    provide: DEFAULT_VAULT_TIMEOUT,
+    useValue: VaultTimeoutStringType.OnRestart,
   }),
   safeProvider({
     provide: I18nServiceAbstraction,

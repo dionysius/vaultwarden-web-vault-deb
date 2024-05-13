@@ -116,6 +116,7 @@ import { SendApiService } from "@bitwarden/common/tools/send/services/send-api.s
 import { SendStateProvider } from "@bitwarden/common/tools/send/services/send-state.provider";
 import { SendService } from "@bitwarden/common/tools/send/services/send.service";
 import { UserId } from "@bitwarden/common/types/guid";
+import { VaultTimeoutStringType } from "@bitwarden/common/types/vault-timeout.type";
 import { InternalFolderService } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
 import { CipherService } from "@bitwarden/common/vault/services/cipher.service";
 import { CollectionService } from "@bitwarden/common/vault/services/collection.service";
@@ -403,12 +404,32 @@ export class Main {
       " (" +
       this.platformUtilsService.getDeviceString().toUpperCase() +
       ")";
+
+    this.biometricStateService = new DefaultBiometricStateService(this.stateProvider);
+    this.userDecryptionOptionsService = new UserDecryptionOptionsService(this.stateProvider);
+
+    this.organizationService = new OrganizationService(this.stateProvider);
+    this.policyService = new PolicyService(this.stateProvider, this.organizationService);
+
+    this.vaultTimeoutSettingsService = new VaultTimeoutSettingsService(
+      this.accountService,
+      this.pinService,
+      this.userDecryptionOptionsService,
+      this.cryptoService,
+      this.tokenService,
+      this.policyService,
+      this.biometricStateService,
+      this.stateProvider,
+      this.logService,
+      VaultTimeoutStringType.Never, // default vault timeout
+    );
+
     this.apiService = new NodeApiService(
       this.tokenService,
       this.platformUtilsService,
       this.environmentService,
       this.appIdService,
-      this.stateService,
+      this.vaultTimeoutSettingsService,
       async (expired: boolean) => await this.logout(),
       customUserAgent,
     );
@@ -454,11 +475,7 @@ export class Main {
 
     this.providerService = new ProviderService(this.stateProvider);
 
-    this.organizationService = new OrganizationService(this.stateProvider);
-
     this.organizationUserService = new OrganizationUserServiceImplementation(this.apiService);
-
-    this.policyService = new PolicyService(this.stateProvider, this.organizationService);
 
     this.policyApiService = new PolicyApiService(this.policyService, this.apiService);
 
@@ -488,8 +505,6 @@ export class Main {
       this.policyService,
       this.stateService,
     );
-
-    this.userDecryptionOptionsService = new UserDecryptionOptionsService(this.stateProvider);
 
     this.devicesApiService = new DevicesApiServiceImplementation(this.apiService);
     this.deviceTrustService = new DeviceTrustService(
@@ -543,6 +558,7 @@ export class Main {
       this.userDecryptionOptionsService,
       this.globalStateProvider,
       this.billingAccountProfileStateService,
+      this.vaultTimeoutSettingsService,
       this.kdfConfigService,
     );
 
@@ -589,19 +605,6 @@ export class Main {
 
     const lockedCallback = async (userId?: string) =>
       await this.cryptoService.clearStoredUserKey(KeySuffixOptions.Auto);
-
-    this.biometricStateService = new DefaultBiometricStateService(this.stateProvider);
-
-    this.vaultTimeoutSettingsService = new VaultTimeoutSettingsService(
-      this.accountService,
-      this.pinService,
-      this.userDecryptionOptionsService,
-      this.cryptoService,
-      this.tokenService,
-      this.policyService,
-      this.stateService,
-      this.biometricStateService,
-    );
 
     this.userVerificationService = new UserVerificationService(
       this.stateService,

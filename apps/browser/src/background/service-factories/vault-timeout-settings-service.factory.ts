@@ -1,5 +1,6 @@
 import { VaultTimeoutSettingsService as AbstractVaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout-settings.service";
 import { VaultTimeoutSettingsService } from "@bitwarden/common/services/vault-timeout/vault-timeout-settings.service";
+import { VaultTimeoutStringType } from "@bitwarden/common/types/vault-timeout.type";
 
 import {
   policyServiceFactory,
@@ -35,9 +36,13 @@ import {
   FactoryOptions,
 } from "../../platform/background/service-factories/factory-options";
 import {
-  StateServiceInitOptions,
-  stateServiceFactory,
-} from "../../platform/background/service-factories/state-service.factory";
+  logServiceFactory,
+  LogServiceInitOptions,
+} from "../../platform/background/service-factories/log-service.factory";
+import {
+  StateProviderInitOptions,
+  stateProviderFactory,
+} from "../../platform/background/service-factories/state-provider.factory";
 
 type VaultTimeoutSettingsServiceFactoryOptions = FactoryOptions;
 
@@ -48,8 +53,9 @@ export type VaultTimeoutSettingsServiceInitOptions = VaultTimeoutSettingsService
   CryptoServiceInitOptions &
   TokenServiceInitOptions &
   PolicyServiceInitOptions &
-  StateServiceInitOptions &
-  BiometricStateServiceInitOptions;
+  BiometricStateServiceInitOptions &
+  StateProviderInitOptions &
+  LogServiceInitOptions;
 
 export function vaultTimeoutSettingsServiceFactory(
   cache: { vaultTimeoutSettingsService?: AbstractVaultTimeoutSettingsService } & CachedServices,
@@ -67,8 +73,10 @@ export function vaultTimeoutSettingsServiceFactory(
         await cryptoServiceFactory(cache, opts),
         await tokenServiceFactory(cache, opts),
         await policyServiceFactory(cache, opts),
-        await stateServiceFactory(cache, opts),
         await biometricStateServiceFactory(cache, opts),
+        await stateProviderFactory(cache, opts),
+        await logServiceFactory(cache, opts),
+        VaultTimeoutStringType.OnRestart, // default vault timeout
       ),
   );
 }

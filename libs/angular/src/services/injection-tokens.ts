@@ -9,6 +9,7 @@ import {
 import { ThemeType } from "@bitwarden/common/platform/enums";
 import { StateFactory } from "@bitwarden/common/platform/factories/state-factory";
 import { Message } from "@bitwarden/common/platform/messaging";
+import { VaultTimeout } from "@bitwarden/common/types/vault-timeout.type";
 
 declare const tag: unique symbol;
 /**
@@ -47,6 +48,7 @@ export const LOG_MAC_FAILURES = new SafeInjectionToken<boolean>("LOG_MAC_FAILURE
 export const SYSTEM_THEME_OBSERVABLE = new SafeInjectionToken<Observable<ThemeType>>(
   "SYSTEM_THEME_OBSERVABLE",
 );
+export const DEFAULT_VAULT_TIMEOUT = new SafeInjectionToken<VaultTimeout>("DEFAULT_VAULT_TIMEOUT");
 export const INTRAPROCESS_MESSAGING_SUBJECT = new SafeInjectionToken<Subject<Message<object>>>(
   "INTRAPROCESS_MESSAGING_SUBJECT",
 );

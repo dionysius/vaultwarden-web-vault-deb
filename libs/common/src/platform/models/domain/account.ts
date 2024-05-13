@@ -147,8 +147,6 @@ export class AccountSettings {
   passwordGenerationOptions?: PasswordGeneratorOptions;
   usernameGenerationOptions?: UsernameGeneratorOptions;
   generatorOptions?: GeneratorOptions;
-  vaultTimeout?: number;
-  vaultTimeoutAction?: string = "lock";
 
   static fromJSON(obj: Jsonify<AccountSettings>): AccountSettings {
     if (obj == null) {

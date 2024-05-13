@@ -8,6 +8,7 @@ import {
 } from "rxjs";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout-settings.service";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
@@ -110,6 +111,7 @@ export class LoginStrategyService implements LoginStrategyServiceAbstraction {
     protected userDecryptionOptionsService: InternalUserDecryptionOptionsServiceAbstraction,
     protected stateProvider: GlobalStateProvider,
     protected billingAccountProfileStateService: BillingAccountProfileStateService,
+    protected vaultTimeoutSettingsService: VaultTimeoutSettingsService,
     protected kdfConfigService: KdfConfigService,
   ) {
     this.currentAuthnTypeState = this.stateProvider.get(CURRENT_LOGIN_STRATEGY_KEY);
@@ -361,6 +363,7 @@ export class LoginStrategyService implements LoginStrategyServiceAbstraction {
               this.policyService,
               this,
               this.billingAccountProfileStateService,
+              this.vaultTimeoutSettingsService,
               this.kdfConfigService,
             );
           case AuthenticationType.Sso:
@@ -383,6 +386,7 @@ export class LoginStrategyService implements LoginStrategyServiceAbstraction {
               this.authRequestService,
               this.i18nService,
               this.billingAccountProfileStateService,
+              this.vaultTimeoutSettingsService,
               this.kdfConfigService,
             );
           case AuthenticationType.UserApiKey:
@@ -403,6 +407,7 @@ export class LoginStrategyService implements LoginStrategyServiceAbstraction {
               this.environmentService,
               this.keyConnectorService,
               this.billingAccountProfileStateService,
+              this.vaultTimeoutSettingsService,
               this.kdfConfigService,
             );
           case AuthenticationType.AuthRequest:
@@ -422,6 +427,7 @@ export class LoginStrategyService implements LoginStrategyServiceAbstraction {
               this.userDecryptionOptionsService,
               this.deviceTrustService,
               this.billingAccountProfileStateService,
+              this.vaultTimeoutSettingsService,
               this.kdfConfigService,
             );
           case AuthenticationType.WebAuthn:
@@ -440,6 +446,7 @@ export class LoginStrategyService implements LoginStrategyServiceAbstraction {
               this.twoFactorService,
               this.userDecryptionOptionsService,
               this.billingAccountProfileStateService,
+              this.vaultTimeoutSettingsService,
               this.kdfConfigService,
             );
         }

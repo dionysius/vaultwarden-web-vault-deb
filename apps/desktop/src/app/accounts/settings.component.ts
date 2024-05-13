@@ -24,6 +24,11 @@ import { KeySuffixOptions, ThemeType } from "@bitwarden/common/platform/enums";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { ThemeStateService } from "@bitwarden/common/platform/theming/theme-state.service";
 import { UserId } from "@bitwarden/common/types/guid";
+import {
+  VaultTimeout,
+  VaultTimeoutOption,
+  VaultTimeoutStringType,
+} from "@bitwarden/common/types/vault-timeout.type";
 import { DialogService } from "@bitwarden/components";
 
 import { SetPinComponent } from "../../auth/components/set-pin.component";
@@ -41,7 +46,7 @@ export class SettingsComponent implements OnInit {
   protected readonly VaultTimeoutAction = VaultTimeoutAction;
 
   showMinToTray = false;
-  vaultTimeoutOptions: any[];
+  vaultTimeoutOptions: VaultTimeoutOption[];
   localeOptions: any[];
   themeOptions: any[];
   clearClipboardOptions: any[];
@@ -72,14 +77,14 @@ export class SettingsComponent implements OnInit {
     timeout: { hours: number; minutes: number };
     action: "lock" | "logOut";
   }>;
-  previousVaultTimeout: number = null;
+  previousVaultTimeout: VaultTimeout = null;
 
   userHasMasterPassword: boolean;
   userHasPinSet: boolean;
 
   form = this.formBuilder.group({
     // Security
-    vaultTimeout: [null as number | null],
+    vaultTimeout: [null as VaultTimeout | null],
     vaultTimeoutAction: [VaultTimeoutAction.Lock],
     pin: [null as boolean | null],
     biometric: false,
@@ -159,24 +164,26 @@ export class SettingsComponent implements OnInit {
     this.showDuckDuckGoIntegrationOption = isMac;
 
     this.vaultTimeoutOptions = [
-      // { name: i18nService.t('immediately'), value: 0 },
       { name: this.i18nService.t("oneMinute"), value: 1 },
       { name: this.i18nService.t("fiveMinutes"), value: 5 },
       { name: this.i18nService.t("fifteenMinutes"), value: 15 },
       { name: this.i18nService.t("thirtyMinutes"), value: 30 },
       { name: this.i18nService.t("oneHour"), value: 60 },
       { name: this.i18nService.t("fourHours"), value: 240 },
-      { name: this.i18nService.t("onIdle"), value: -4 },
-      { name: this.i18nService.t("onSleep"), value: -3 },
+      { name: this.i18nService.t("onIdle"), value: VaultTimeoutStringType.OnIdle },
+      { name: this.i18nService.t("onSleep"), value: VaultTimeoutStringType.OnSleep },
     ];
 
     if (this.platformUtilsService.getDevice() !== DeviceType.LinuxDesktop) {
-      this.vaultTimeoutOptions.push({ name: this.i18nService.t("onLocked"), value: -2 });
+      this.vaultTimeoutOptions.push({
+        name: this.i18nService.t("onLocked"),
+        value: VaultTimeoutStringType.OnLocked,
+      });
     }
 
     this.vaultTimeoutOptions = this.vaultTimeoutOptions.concat([
-      { name: this.i18nService.t("onRestart"), value: -1 },
-      { name: this.i18nService.t("never"), value: null },
+      { name: this.i18nService.t("onRestart"), value: VaultTimeoutStringType.OnRestart },
+      { name: this.i18nService.t("never"), value: VaultTimeoutStringType.Never },
     ]);
 
     const localeOptions: any[] = [];
@@ -251,10 +258,14 @@ export class SettingsComponent implements OnInit {
     // Load initial values
     this.userHasPinSet = await this.pinService.isPinSet(userId);
 
+    const activeAccount = await firstValueFrom(this.accountService.activeAccount$);
+
     const initialValues = {
-      vaultTimeout: await this.vaultTimeoutSettingsService.getVaultTimeout(),
+      vaultTimeout: await firstValueFrom(
+        this.vaultTimeoutSettingsService.getVaultTimeoutByUserId$(activeAccount.id),
+      ),
       vaultTimeoutAction: await firstValueFrom(
-        this.vaultTimeoutSettingsService.vaultTimeoutAction$(),
+        this.vaultTimeoutSettingsService.getVaultTimeoutActionByUserId$(activeAccount.id),
       ),
       pin: this.userHasPinSet,
       biometric: await this.vaultTimeoutSettingsService.isBiometricLockSet(),
@@ -299,7 +310,9 @@ export class SettingsComponent implements OnInit {
 
     this.refreshTimeoutSettings$
       .pipe(
-        switchMap(() => this.vaultTimeoutSettingsService.vaultTimeoutAction$()),
+        switchMap(() =>
+          this.vaultTimeoutSettingsService.getVaultTimeoutActionByUserId$(activeAccount.id),
+        ),
         takeUntil(this.destroy$),
       )
       .subscribe((action) => {
@@ -357,7 +370,7 @@ export class SettingsComponent implements OnInit {
       });
   }
 
-  async saveVaultTimeout(newValue: number) {
+  async saveVaultTimeout(newValue: VaultTimeout) {
     if (newValue == null) {
       const confirmed = await this.dialogService.openSimpleDialog({
         title: { key: "warning" },
@@ -387,7 +400,10 @@ export class SettingsComponent implements OnInit {
 
     this.previousVaultTimeout = this.form.value.vaultTimeout;
 
+    const activeAccount = await firstValueFrom(this.accountService.activeAccount$);
+
     await this.vaultTimeoutSettingsService.setVaultTimeoutOptions(
+      activeAccount.id,
       newValue,
       this.form.value.vaultTimeoutAction,
     );
@@ -418,7 +434,10 @@ export class SettingsComponent implements OnInit {
       return;
     }
 
+    const activeAccount = await firstValueFrom(this.accountService.activeAccount$);
+
     await this.vaultTimeoutSettingsService.setVaultTimeoutOptions(
+      activeAccount.id,
       this.form.value.vaultTimeout,
       newValue,
     );

@@ -4,7 +4,6 @@ import {
 } from "@bitwarden/common/platform/models/domain/account";
 
 export class AccountSettings extends BaseAccountSettings {
-  vaultTimeout = -1; // On Restart
   dismissedBiometricRequirePasswordOnStartCallout?: boolean;
 }
 

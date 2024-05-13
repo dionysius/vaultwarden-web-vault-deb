@@ -118,8 +118,4 @@ export abstract class StateService<T extends Account = Account> {
   getGeneratorOptions: (options?: StorageOptions) => Promise<GeneratorOptions>;
   setGeneratorOptions: (value: GeneratorOptions, options?: StorageOptions) => Promise<void>;
   getUserId: (options?: StorageOptions) => Promise<string>;
-  getVaultTimeout: (options?: StorageOptions) => Promise<number>;
-  setVaultTimeout: (value: number, options?: StorageOptions) => Promise<void>;
-  getVaultTimeoutAction: (options?: StorageOptions) => Promise<string>;
-  setVaultTimeoutAction: (value: string, options?: StorageOptions) => Promise<void>;
 }

@@ -73,23 +73,25 @@ export class SystemService implements SystemServiceAbstraction {
       clearInterval(this.reloadInterval);
       this.reloadInterval = null;
 
-      const currentUser = await firstValueFrom(
+      const activeUserId = await firstValueFrom(
         this.accountService.activeAccount$.pipe(
           map((a) => a?.id),
           timeout(500),
         ),
       );
       // Replace current active user if they will be logged out on reload
-      if (currentUser != null) {
+      if (activeUserId != null) {
         const timeoutAction = await firstValueFrom(
-          this.vaultTimeoutSettingsService.vaultTimeoutAction$().pipe(timeout(500)),
+          this.vaultTimeoutSettingsService
+            .getVaultTimeoutActionByUserId$(activeUserId)
+            .pipe(timeout(500)), // safety feature to avoid this call hanging and stopping process reload from clearing memory
         );
         if (timeoutAction === VaultTimeoutAction.LogOut) {
           const nextUser = await firstValueFrom(
             this.accountService.nextUpAccount$.pipe(map((account) => account?.id ?? null)),
           );
           // Can be removed once we migrate password generation history to state providers
-          await this.stateService.clearDecryptedData(currentUser);
+          await this.stateService.clearDecryptedData(activeUserId);
           await this.accountService.switchAccount(nextUser);
         }
       }

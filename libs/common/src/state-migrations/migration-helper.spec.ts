@@ -242,6 +242,7 @@ export function mockMigrationHelper(
   mockHelper.remove.mockImplementation((key) => helper.remove(key));
 
   mockHelper.type = helper.type;
+  mockHelper.clientType = helper.clientType;
 
   return mockHelper;
 }

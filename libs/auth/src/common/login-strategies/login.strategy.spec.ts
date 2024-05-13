@@ -1,6 +1,8 @@
 import { mock, MockProxy } from "jest-mock-extended";
+import { BehaviorSubject } from "rxjs";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout-settings.service";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
 import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
@@ -114,6 +116,7 @@ describe("LoginStrategy", () => {
   let policyService: MockProxy<PolicyService>;
   let passwordStrengthService: MockProxy<PasswordStrengthServiceAbstraction>;
   let billingAccountProfileStateService: MockProxy<BillingAccountProfileStateService>;
+  let vaultTimeoutSettingsService: MockProxy<VaultTimeoutSettingsService>;
   let kdfConfigService: MockProxy<KdfConfigService>;
 
   let passwordLoginStrategy: PasswordLoginStrategy;
@@ -139,6 +142,8 @@ describe("LoginStrategy", () => {
     passwordStrengthService = mock<PasswordStrengthService>();
     billingAccountProfileStateService = mock<BillingAccountProfileStateService>();
 
+    vaultTimeoutSettingsService = mock<VaultTimeoutSettingsService>();
+
     appIdService.getAppId.mockResolvedValue(deviceId);
     tokenService.decodeAccessToken.calledWith(accessToken).mockResolvedValue(decodedToken);
 
@@ -161,6 +166,7 @@ describe("LoginStrategy", () => {
       policyService,
       loginStrategyService,
       billingAccountProfileStateService,
+      vaultTimeoutSettingsService,
       kdfConfigService,
     );
     credentials = new PasswordLoginCredentials(email, masterPassword);
@@ -179,6 +185,21 @@ describe("LoginStrategy", () => {
       masterKey = new SymmetricCryptoKey(
         new Uint8Array(masterKeyBytesLength).buffer as CsprngArray,
       ) as MasterKey;
+
+      const mockVaultTimeoutAction = VaultTimeoutAction.Lock;
+      const mockVaultTimeoutActionBSub = new BehaviorSubject<VaultTimeoutAction>(
+        mockVaultTimeoutAction,
+      );
+      vaultTimeoutSettingsService.getVaultTimeoutActionByUserId$.mockReturnValue(
+        mockVaultTimeoutActionBSub.asObservable(),
+      );
+
+      const mockVaultTimeout = 1000;
+
+      const mockVaultTimeoutBSub = new BehaviorSubject<number>(mockVaultTimeout);
+      vaultTimeoutSettingsService.getVaultTimeoutByUserId$.mockReturnValue(
+        mockVaultTimeoutBSub.asObservable(),
+      );
     });
 
     it("sets the local environment after a successful login with master password", async () => {
@@ -186,10 +207,19 @@ describe("LoginStrategy", () => {
       apiService.postIdentityToken.mockResolvedValue(idTokenResponse);
 
       const mockVaultTimeoutAction = VaultTimeoutAction.Lock;
+      const mockVaultTimeoutActionBSub = new BehaviorSubject<VaultTimeoutAction>(
+        mockVaultTimeoutAction,
+      );
+      vaultTimeoutSettingsService.getVaultTimeoutActionByUserId$.mockReturnValue(
+        mockVaultTimeoutActionBSub.asObservable(),
+      );
+
       const mockVaultTimeout = 1000;
 
-      stateService.getVaultTimeoutAction.mockResolvedValue(mockVaultTimeoutAction);
-      stateService.getVaultTimeout.mockResolvedValue(mockVaultTimeout);
+      const mockVaultTimeoutBSub = new BehaviorSubject<number>(mockVaultTimeout);
+      vaultTimeoutSettingsService.getVaultTimeoutByUserId$.mockReturnValue(
+        mockVaultTimeoutBSub.asObservable(),
+      );
 
       await passwordLoginStrategy.logIn(credentials);
 
@@ -223,10 +253,20 @@ describe("LoginStrategy", () => {
       apiService.postIdentityToken.mockResolvedValue(idTokenResponse);
 
       const mockVaultTimeoutAction = VaultTimeoutAction.Lock;
+
+      const mockVaultTimeoutActionBSub = new BehaviorSubject<VaultTimeoutAction>(
+        mockVaultTimeoutAction,
+      );
+      vaultTimeoutSettingsService.getVaultTimeoutActionByUserId$.mockReturnValue(
+        mockVaultTimeoutActionBSub.asObservable(),
+      );
+
       const mockVaultTimeout = 1000;
 
-      stateService.getVaultTimeoutAction.mockResolvedValue(mockVaultTimeoutAction);
-      stateService.getVaultTimeout.mockResolvedValue(mockVaultTimeout);
+      const mockVaultTimeoutBSub = new BehaviorSubject<number>(mockVaultTimeout);
+      vaultTimeoutSettingsService.getVaultTimeoutByUserId$.mockReturnValue(
+        mockVaultTimeoutBSub.asObservable(),
+      );
 
       accountService.switchAccount = jest.fn(); // block internal switch to new account
       accountService.activeAccountSubject.next(null); // simulate no active account
@@ -297,6 +337,22 @@ describe("LoginStrategy", () => {
   });
 
   describe("Two-factor authentication", () => {
+    beforeEach(() => {
+      const mockVaultTimeoutAction = VaultTimeoutAction.Lock;
+      const mockVaultTimeoutActionBSub = new BehaviorSubject<VaultTimeoutAction>(
+        mockVaultTimeoutAction,
+      );
+      vaultTimeoutSettingsService.getVaultTimeoutActionByUserId$.mockReturnValue(
+        mockVaultTimeoutActionBSub.asObservable(),
+      );
+
+      const mockVaultTimeout = 1000;
+      const mockVaultTimeoutBSub = new BehaviorSubject<number>(mockVaultTimeout);
+      vaultTimeoutSettingsService.getVaultTimeoutByUserId$.mockReturnValue(
+        mockVaultTimeoutBSub.asObservable(),
+      );
+    });
+
     it("rejects login if 2FA is required", async () => {
       // Sample response where TOTP 2FA required
       const tokenResponse = new IdentityTwoFactorResponse({
@@ -421,6 +477,7 @@ describe("LoginStrategy", () => {
         policyService,
         loginStrategyService,
         billingAccountProfileStateService,
+        vaultTimeoutSettingsService,
         kdfConfigService,
       );
 
