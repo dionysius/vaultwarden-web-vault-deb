@@ -387,9 +387,10 @@ export class PinService implements PinServiceAbstraction {
     );
 
     const encUserKey = await this.stateService.getEncryptedCryptoSymmetricKey({ userId: userId });
+
     const userKey = await this.masterPasswordService.decryptUserKeyWithMasterKey(
       masterKey,
-      new EncString(encUserKey),
+      encUserKey ? new EncString(encUserKey) : undefined,
     );
 
     const pinKeyEncryptedUserKey = await this.createPinKeyEncryptedUserKey(pin, userKey, userId);
