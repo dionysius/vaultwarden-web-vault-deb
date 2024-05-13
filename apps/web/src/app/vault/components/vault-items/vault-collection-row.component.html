@@ -83,9 +83,7 @@
         {{ "access" | i18n }}
       </button>
     </ng-container>
-    <ng-container
-      *ngIf="flexibleCollectionsV1Enabled && !canEditCollection && canViewCollectionInfo"
-    >
+    <ng-container *ngIf="!canEditCollection && canViewCollectionInfo">
       <button type="button" bitMenuItem (click)="edit(true)">
         <i class="bwi bwi-fw bwi-pencil-square" aria-hidden="true"></i>
         {{ "viewInfo" | i18n }}

@@ -211,7 +211,10 @@ export class VaultHeaderComponent implements OnInit {
   }
 
   get canViewCollectionInfo(): boolean {
-    return this.collection.node.canViewCollectionInfo(this.organization);
+    return this.collection.node.canViewCollectionInfo(
+      this.organization,
+      this.flexibleCollectionsV1Enabled,
+    );
   }
 
   get canCreateCollection(): boolean {

@@ -92,7 +92,10 @@ export class CollectionView implements View, ITreeNodeObject {
   /**
    * Returns true if the user can view collection info and access in a read-only state from the individual vault
    */
-  canViewCollectionInfo(org: Organization | undefined): boolean {
+  canViewCollectionInfo(
+    org: Organization | undefined,
+    flexibleCollectionsV1Enabled: boolean,
+  ): boolean {
     return false;
   }
 
