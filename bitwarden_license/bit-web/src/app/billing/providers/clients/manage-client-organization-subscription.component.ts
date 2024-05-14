@@ -71,6 +71,7 @@ export class ManageClientOrganizationSubscriptionComponent implements OnInit {
 
     const request = new UpdateClientOrganizationRequest();
     request.assignedSeats = assignedSeats;
+    request.name = this.clientName;
 
     await this.billingApiService.updateClientOrganization(
       this.providerId,

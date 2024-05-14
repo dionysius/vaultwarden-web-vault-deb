@@ -78,8 +78,12 @@
               appA11yTitle="{{ 'options' | i18n }}"
             ></button>
             <bit-menu #rowMenu>
+              <button type="button" bitMenuItem (click)="manageName(client)">
+                <i aria-hidden="true" class="bwi bwi-pencil-square"></i>
+                {{ "updateName" | i18n }}
+              </button>
               <button type="button" bitMenuItem (click)="manageSubscription(client)">
-                <i aria-hidden="true" class="bwi bwi-question-circle"></i>
+                <i aria-hidden="true" class="bwi bwi-family"></i>
                 {{ "manageSubscription" | i18n }}
               </button>
               <button type="button" bitMenuItem (click)="remove(client)">

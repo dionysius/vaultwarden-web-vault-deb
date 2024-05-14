@@ -24,6 +24,10 @@ import {
   CreateClientOrganizationResultType,
   openCreateClientOrganizationDialog,
 } from "./create-client-organization.component";
+import {
+  ManageClientOrganizationNameResultType,
+  openManageClientOrganizationNameDialog,
+} from "./manage-client-organization-name.component";
 import { ManageClientOrganizationSubscriptionComponent } from "./manage-client-organization-subscription.component";
 
 @Component({
@@ -106,6 +110,25 @@ export class ManageClientOrganizationsComponent extends BaseClientsComponent {
     this.loading = false;
   }
 
+  async manageName(organization: ProviderOrganizationOrganizationDetailsResponse) {
+    const dialogRef = openManageClientOrganizationNameDialog(this.dialogService, {
+      data: {
+        providerId: this.providerId,
+        organization: {
+          id: organization.id,
+          name: organization.organizationName,
+          seats: organization.seats,
+        },
+      },
+    });
+
+    const result = await firstValueFrom(dialogRef.closed);
+
+    if (result === ManageClientOrganizationNameResultType.Submitted) {
+      await this.load();
+    }
+  }
+
   async manageSubscription(organization: ProviderOrganizationOrganizationDetailsResponse) {
     if (organization == null) {
       return;
@@ -135,4 +158,6 @@ export class ManageClientOrganizationsComponent extends BaseClientsComponent {
 
     await this.load();
   };
+  protected readonly openManageClientOrganizationNameDialog =
+    openManageClientOrganizationNameDialog;
 }
