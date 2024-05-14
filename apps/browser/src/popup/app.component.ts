@@ -91,13 +91,9 @@ export class AppComponent implements OnInit, OnDestroy {
                   message: this.i18nService.t("loginExpired"),
                 });
               }
-
-              // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-              // eslint-disable-next-line @typescript-eslint/no-floating-promises
-              this.router.navigate(["home"]);
             });
             this.changeDetectorRef.detectChanges();
-          } else if (msg.command === "authBlocked") {
+          } else if (msg.command === "authBlocked" || msg.command === "goHome") {
             // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
             // eslint-disable-next-line @typescript-eslint/no-floating-promises
             this.router.navigate(["home"]);
@@ -137,9 +133,6 @@ export class AppComponent implements OnInit, OnDestroy {
             // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
             // eslint-disable-next-line @typescript-eslint/no-floating-promises
             this.router.navigate(["/remove-password"]);
-          } else if (msg.command === "switchAccountFinish") {
-            // TODO: unset loading?
-            // this.loading = false;
           } else if (msg.command == "update-temp-password") {
             // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
             // eslint-disable-next-line @typescript-eslint/no-floating-promises

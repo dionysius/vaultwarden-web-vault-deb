@@ -119,6 +119,7 @@ export class AccountServiceImplementation implements InternalAccountService {
   }
 
   async switchAccount(userId: UserId): Promise<void> {
+    let updateActivity = false;
     await this.activeAccountIdState.update(
       (_, accounts) => {
         if (userId == null) {
@@ -129,6 +130,7 @@ export class AccountServiceImplementation implements InternalAccountService {
         if (accounts?.[userId] == null) {
           throw new Error("Account does not exist");
         }
+        updateActivity = true;
         return userId;
       },
       {
@@ -139,6 +141,10 @@ export class AccountServiceImplementation implements InternalAccountService {
         },
       },
     );
+
+    if (updateActivity) {
+      await this.setAccountActivity(userId, new Date());
+    }
   }
 
   async setAccountActivity(userId: UserId, lastActivity: Date): Promise<void> {

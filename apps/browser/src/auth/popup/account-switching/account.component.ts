@@ -1,10 +1,10 @@
 import { CommonModule, Location } from "@angular/common";
 import { Component, EventEmitter, Input, Output } from "@angular/core";
-import { Router } from "@angular/router";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { AvatarModule } from "@bitwarden/components";
 
 import { AccountSwitcherService, AvailableAccount } from "./services/account-switcher.service";
@@ -21,9 +21,9 @@ export class AccountComponent {
 
   constructor(
     private accountSwitcherService: AccountSwitcherService,
-    private router: Router,
     private location: Location,
     private i18nService: I18nService,
+    private logService: LogService,
   ) {}
 
   get specialAccountAddId() {
@@ -32,15 +32,19 @@ export class AccountComponent {
 
   async selectAccount(id: string) {
     this.loading.emit(true);
-    await this.accountSwitcherService.selectAccount(id);
+    let result;
+    try {
+      result = await this.accountSwitcherService.selectAccount(id);
+    } catch (e) {
+      this.logService.error("Error selecting account", e);
+    }
 
-    if (id === this.specialAccountAddId) {
-      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-      // eslint-disable-next-line @typescript-eslint/no-floating-promises
-      this.router.navigate(["home"]);
-    } else {
+    // Navigate out of account switching for unlocked accounts
+    // locked or logged out account statuses are handled by background and app.component
+    if (result?.status === AuthenticationStatus.Unlocked) {
       this.location.back();
     }
+    this.loading.emit(false);
   }
 
   get status() {

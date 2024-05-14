@@ -1,7 +1,7 @@
 import { Location } from "@angular/common";
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { Subject, firstValueFrom, map, switchMap, takeUntil } from "rxjs";
+import { Subject, firstValueFrom, map, of, switchMap, takeUntil } from "rxjs";
 
 import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout-settings.service";
 import { VaultTimeoutService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout.service";
@@ -49,7 +49,7 @@ export class AccountSwitcherComponent implements OnInit, OnDestroy {
   readonly currentAccount$ = this.accountService.activeAccount$.pipe(
     switchMap((a) =>
       a == null
-        ? null
+        ? of(null)
         : this.authService.activeAccountStatus$.pipe(map((s) => ({ ...a, status: s }))),
     ),
   );
@@ -106,12 +106,14 @@ export class AccountSwitcherComponent implements OnInit, OnDestroy {
     });
 
     if (confirmed) {
-      this.messagingService.send("logout", { userId });
+      const result = await this.accountSwitcherService.logoutAccount(userId);
+      // unlocked logout responses need to be navigated out of the account switcher.
+      // other responses will be handled by background and app.component
+      if (result?.status === AuthenticationStatus.Unlocked) {
+        this.location.back();
+      }
     }
-
-    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    this.router.navigate(["home"]);
+    this.loading = false;
   }
 
   ngOnDestroy() {
