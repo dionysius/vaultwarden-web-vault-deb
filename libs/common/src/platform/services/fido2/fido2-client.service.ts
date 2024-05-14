@@ -4,9 +4,8 @@ import { parse } from "tldts";
 import { AuthService } from "../../../auth/abstractions/auth.service";
 import { AuthenticationStatus } from "../../../auth/enums/authentication-status";
 import { DomainSettingsService } from "../../../autofill/services/domain-settings.service";
-import { ConfigService } from "../../../platform/abstractions/config/config.service";
-import { LogService } from "../../../platform/abstractions/log.service";
-import { Utils } from "../../../platform/misc/utils";
+import { VaultSettingsService } from "../../../vault/abstractions/vault-settings/vault-settings.service";
+import { ConfigService } from "../../abstractions/config/config.service";
 import {
   Fido2AuthenticatorError,
   Fido2AuthenticatorErrorCode,
@@ -26,7 +25,8 @@ import {
   UserRequestedFallbackAbortReason,
   UserVerification,
 } from "../../abstractions/fido2/fido2-client.service.abstraction";
-import { VaultSettingsService } from "../../abstractions/vault-settings/vault-settings.service";
+import { LogService } from "../../abstractions/log.service";
+import { Utils } from "../../misc/utils";
 
 import { isValidRpId } from "./domain-utils";
 import { Fido2Utils } from "./fido2-utils";

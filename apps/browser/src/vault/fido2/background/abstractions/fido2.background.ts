@@ -3,7 +3,7 @@ import {
   AssertCredentialResult,
   CreateCredentialParams,
   CreateCredentialResult,
-} from "@bitwarden/common/vault/abstractions/fido2/fido2-client.service.abstraction";
+} from "@bitwarden/common/platform/abstractions/fido2/fido2-client.service.abstraction";
 
 type SharedFido2ScriptInjectionDetails = {
   runAt: browser.contentScripts.RegisteredContentScriptOptions["runAt"];

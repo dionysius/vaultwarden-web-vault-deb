@@ -4,8 +4,8 @@ import { of } from "rxjs";
 import { AuthService } from "../../../auth/abstractions/auth.service";
 import { AuthenticationStatus } from "../../../auth/enums/authentication-status";
 import { DomainSettingsService } from "../../../autofill/services/domain-settings.service";
-import { ConfigService } from "../../../platform/abstractions/config/config.service";
-import { Utils } from "../../../platform/misc/utils";
+import { VaultSettingsService } from "../../../vault/abstractions/vault-settings/vault-settings.service";
+import { ConfigService } from "../../abstractions/config/config.service";
 import {
   Fido2AuthenticatorError,
   Fido2AuthenticatorErrorCode,
@@ -17,7 +17,7 @@ import {
   CreateCredentialParams,
   FallbackRequestedError,
 } from "../../abstractions/fido2/fido2-client.service.abstraction";
-import { VaultSettingsService } from "../../abstractions/vault-settings/vault-settings.service";
+import { Utils } from "../../misc/utils";
 
 import { Fido2AuthenticatorService } from "./fido2-authenticator.service";
 import { Fido2ClientService } from "./fido2-client.service";

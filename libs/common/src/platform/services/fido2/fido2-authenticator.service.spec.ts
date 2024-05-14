@@ -2,8 +2,14 @@ import { TextEncoder } from "util";
 
 import { mock, MockProxy } from "jest-mock-extended";
 
-import { Utils } from "../../../platform/misc/utils";
-import { CipherService } from "../../abstractions/cipher.service";
+import { CipherService } from "../../../vault/abstractions/cipher.service";
+import { SyncService } from "../../../vault/abstractions/sync/sync.service.abstraction";
+import { CipherRepromptType } from "../../../vault/enums/cipher-reprompt-type";
+import { CipherType } from "../../../vault/enums/cipher-type";
+import { Cipher } from "../../../vault/models/domain/cipher";
+import { CipherView } from "../../../vault/models/view/cipher.view";
+import { Fido2CredentialView } from "../../../vault/models/view/fido2-credential.view";
+import { LoginView } from "../../../vault/models/view/login.view";
 import {
   Fido2AuthenticatorErrorCode,
   Fido2AuthenticatorGetAssertionParams,
@@ -14,13 +20,7 @@ import {
   Fido2UserInterfaceSession,
   NewCredentialParams,
 } from "../../abstractions/fido2/fido2-user-interface.service.abstraction";
-import { SyncService } from "../../abstractions/sync/sync.service.abstraction";
-import { CipherRepromptType } from "../../enums/cipher-reprompt-type";
-import { CipherType } from "../../enums/cipher-type";
-import { Cipher } from "../../models/domain/cipher";
-import { CipherView } from "../../models/view/cipher.view";
-import { Fido2CredentialView } from "../../models/view/fido2-credential.view";
-import { LoginView } from "../../models/view/login.view";
+import { Utils } from "../../misc/utils";
 
 import { CBOR } from "./cbor";
 import { AAGUID, Fido2AuthenticatorService } from "./fido2-authenticator.service";

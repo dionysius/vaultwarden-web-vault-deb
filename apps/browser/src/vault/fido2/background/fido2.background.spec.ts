@@ -1,13 +1,13 @@
 import { mock, MockProxy } from "jest-mock-extended";
 import { BehaviorSubject } from "rxjs";
 
-import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import {
   AssertCredentialParams,
   CreateCredentialParams,
-} from "@bitwarden/common/vault/abstractions/fido2/fido2-client.service.abstraction";
+} from "@bitwarden/common/platform/abstractions/fido2/fido2-client.service.abstraction";
+import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
+import { Fido2ClientService } from "@bitwarden/common/platform/services/fido2/fido2-client.service";
 import { VaultSettingsService } from "@bitwarden/common/vault/abstractions/vault-settings/vault-settings.service";
-import { Fido2ClientService } from "@bitwarden/common/vault/services/fido2/fido2-client.service";
 
 import { createPortSpyMock } from "../../../autofill/spec/autofill-mocks";
 import {

@@ -1,4 +1,4 @@
-import { FallbackRequestedError } from "@bitwarden/common/vault/abstractions/fido2/fido2-client.service.abstraction";
+import { FallbackRequestedError } from "@bitwarden/common/platform/abstractions/fido2/fido2-client.service.abstraction";
 
 import { Message, MessageType } from "./message";
 

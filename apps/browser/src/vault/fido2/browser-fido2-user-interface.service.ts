@@ -16,14 +16,14 @@ import {
 
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
-import { Utils } from "@bitwarden/common/platform/misc/utils";
-import { UserRequestedFallbackAbortReason } from "@bitwarden/common/vault/abstractions/fido2/fido2-client.service.abstraction";
+import { UserRequestedFallbackAbortReason } from "@bitwarden/common/platform/abstractions/fido2/fido2-client.service.abstraction";
 import {
   Fido2UserInterfaceService as Fido2UserInterfaceServiceAbstraction,
   Fido2UserInterfaceSession,
   NewCredentialParams,
   PickCredentialParams,
-} from "@bitwarden/common/vault/abstractions/fido2/fido2-user-interface.service.abstraction";
+} from "@bitwarden/common/platform/abstractions/fido2/fido2-user-interface.service.abstraction";
+import { Utils } from "@bitwarden/common/platform/misc/utils";
 
 import { BrowserApi } from "../../platform/browser/browser-api";
 import { closeFido2Popout, openFido2Popout } from "../popup/utils/vault-popout-window";

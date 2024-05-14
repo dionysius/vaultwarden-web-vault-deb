@@ -1,6 +1,6 @@
 import { mock, MockProxy } from "jest-mock-extended";
 
-import { CreateCredentialResult } from "@bitwarden/common/vault/abstractions/fido2/fido2-client.service.abstraction";
+import { CreateCredentialResult } from "@bitwarden/common/platform/abstractions/fido2/fido2-client.service.abstraction";
 
 import { createPortSpyMock } from "../../../autofill/spec/autofill-mocks";
 import { triggerPortOnDisconnectEvent } from "../../../autofill/spec/testing-utils";
