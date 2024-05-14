@@ -90,4 +90,12 @@ export class VaultCollectionRowComponent {
   protected deleteCollection() {
     this.onEvent.next({ type: "delete", items: [{ collection: this.collection }] });
   }
+
+  protected get showCheckbox() {
+    if (this.flexibleCollectionsV1Enabled) {
+      return this.collection?.id !== Unassigned;
+    }
+
+    return this.canDeleteCollection;
+  }
 }

@@ -62,13 +62,23 @@ export class CollectionAdminView extends CollectionView {
   }
 
   /**
-   * Whether the current user can edit the collection, including user and group access
+   * Returns true if the user can edit a collection (including user and group access) from the Admin Console.
    */
   override canEdit(org: Organization, flexibleCollectionsV1Enabled: boolean): boolean {
-    return org?.flexibleCollections
-      ? org?.canEditAnyCollection(flexibleCollectionsV1Enabled) || this.manage
-      : org?.canEditAnyCollection(flexibleCollectionsV1Enabled) ||
-          (org?.canEditAssignedCollections && this.assigned);
+    return (
+      org?.canEditAnyCollection(flexibleCollectionsV1Enabled) ||
+      super.canEdit(org, flexibleCollectionsV1Enabled)
+    );
+  }
+
+  /**
+   * Returns true if the user can delete a collection from the Admin Console.
+   */
+  override canDelete(org: Organization, flexibleCollectionsV1Enabled: boolean): boolean {
+    return (
+      org?.canDeleteAnyCollection(flexibleCollectionsV1Enabled) ||
+      super.canDelete(org, flexibleCollectionsV1Enabled)
+    );
   }
 
   /**

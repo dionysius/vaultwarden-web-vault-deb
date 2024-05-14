@@ -3,7 +3,7 @@
     type="checkbox"
     bitCheckbox
     appStopProp
-    *ngIf="canDeleteCollection"
+    *ngIf="showCheckbox"
     [disabled]="disabled"
     [checked]="checked"
     (change)="$event ? this.checkedToggled.next() : null"

@@ -59,7 +59,7 @@ import { TreeNode } from "@bitwarden/common/vault/models/domain/tree-node";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { CollectionView } from "@bitwarden/common/vault/models/view/collection.view";
 import { ServiceUtils } from "@bitwarden/common/vault/service-utils";
-import { DialogService, Icons } from "@bitwarden/components";
+import { DialogService, Icons, ToastService } from "@bitwarden/components";
 import { PasswordRepromptService } from "@bitwarden/vault";
 
 import { GroupService, GroupView } from "../../admin-console/organizations/core";
@@ -152,7 +152,7 @@ export class VaultComponent implements OnInit, OnDestroy {
    * A list of collections that the user can assign items to and edit those items within.
    * @protected
    */
-  protected editableCollections$: Observable<CollectionView[]>;
+  protected editableCollections$: Observable<CollectionAdminView[]>;
   protected allCollectionsWithoutUnassigned$: Observable<CollectionAdminView[]>;
   private _flexibleCollectionsV1FlagEnabled: boolean;
 
@@ -200,6 +200,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     private collectionService: CollectionService,
     private organizationUserService: OrganizationUserService,
     protected configService: ConfigService,
+    private toastService: ToastService,
   ) {}
 
   async ngOnInit() {
@@ -567,11 +568,7 @@ export class VaultComponent implements OnInit, OnDestroy {
           if (canEditCipher) {
             await this.editCipherId(cipherId);
           } else {
-            this.platformUtilsService.showToast(
-              "error",
-              this.i18nService.t("errorOccurred"),
-              this.i18nService.t("unknownCipher"),
-            );
+            this.platformUtilsService.showToast("error", null, this.i18nService.t("unknownCipher"));
             await this.router.navigate([], {
               queryParams: { cipherId: null, itemId: null },
               queryParamsHandling: "merge",
@@ -596,11 +593,7 @@ export class VaultComponent implements OnInit, OnDestroy {
             // eslint-disable-next-line @typescript-eslint/no-floating-promises
             this.viewEvents(cipher);
           } else {
-            this.platformUtilsService.showToast(
-              "error",
-              this.i18nService.t("errorOccurred"),
-              this.i18nService.t("unknownCipher"),
-            );
+            this.platformUtilsService.showToast("error", null, this.i18nService.t("unknownCipher"));
             // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
             // eslint-disable-next-line @typescript-eslint/no-floating-promises
             this.router.navigate([], {
@@ -765,7 +758,7 @@ export class VaultComponent implements OnInit, OnDestroy {
       } else if (event.type === "viewCollectionAccess") {
         await this.editCollection(event.item, CollectionDialogTabType.Access, event.readonly);
       } else if (event.type === "bulkEditCollectionAccess") {
-        await this.bulkEditCollectionAccess(event.items);
+        await this.bulkEditCollectionAccess(event.items, this.organization);
       } else if (event.type === "assignToCollections") {
         await this.bulkAssignToCollections(event.items);
       } else if (event.type === "viewEvents") {
@@ -817,7 +810,7 @@ export class VaultComponent implements OnInit, OnDestroy {
   }
 
   async editCipherCollections(cipher: CipherView) {
-    let collections: CollectionView[] = [];
+    let collections: CollectionAdminView[] = [];
 
     if (this.flexibleCollectionsV1Enabled) {
       // V1 limits admins to only adding items to collections they have access to.
@@ -978,11 +971,20 @@ export class VaultComponent implements OnInit, OnDestroy {
   }
 
   async restore(c: CipherView): Promise<boolean> {
-    if (!(await this.repromptCipher([c]))) {
+    if (!c.isDeleted) {
       return;
     }
 
-    if (!c.isDeleted) {
+    if (
+      this.flexibleCollectionsV1Enabled &&
+      !c.edit &&
+      !this.organization.allowAdminAccessToAllCollectionItems
+    ) {
+      this.showMissingPermissionsError();
+      return;
+    }
+
+    if (!(await this.repromptCipher([c]))) {
       return;
     }
 
@@ -997,17 +999,21 @@ export class VaultComponent implements OnInit, OnDestroy {
   }
 
   async bulkRestore(ciphers: CipherView[]) {
+    if (
+      this.flexibleCollectionsV1Enabled &&
+      ciphers.some((c) => !c.edit && !this.organization.allowAdminAccessToAllCollectionItems)
+    ) {
+      this.showMissingPermissionsError();
+      return;
+    }
+
     if (!(await this.repromptCipher(ciphers))) {
       return;
     }
 
     const selectedCipherIds = ciphers.map((cipher) => cipher.id);
     if (selectedCipherIds.length === 0) {
-      this.platformUtilsService.showToast(
-        "error",
-        this.i18nService.t("errorOccurred"),
-        this.i18nService.t("nothingSelected"),
-      );
+      this.platformUtilsService.showToast("error", null, this.i18nService.t("nothingSelected"));
       return;
     }
 
@@ -1017,6 +1023,15 @@ export class VaultComponent implements OnInit, OnDestroy {
   }
 
   async deleteCipher(c: CipherView): Promise<boolean> {
+    if (
+      this.flexibleCollectionsV1Enabled &&
+      !c.edit &&
+      !this.organization.allowAdminAccessToAllCollectionItems
+    ) {
+      this.showMissingPermissionsError();
+      return;
+    }
+
     if (!(await this.repromptCipher([c]))) {
       return;
     }
@@ -1048,11 +1063,7 @@ export class VaultComponent implements OnInit, OnDestroy {
 
   async deleteCollection(collection: CollectionView): Promise<void> {
     if (!collection.canDelete(this.organization, this.flexibleCollectionsV1Enabled)) {
-      this.platformUtilsService.showToast(
-        "error",
-        this.i18nService.t("errorOccurred"),
-        this.i18nService.t("missingPermissions"),
-      );
+      this.showMissingPermissionsError();
       return;
     }
     const confirmed = await this.dialogService.openSimpleDialog({
@@ -1097,13 +1108,23 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     if (ciphers.length === 0 && collections.length === 0) {
-      this.platformUtilsService.showToast(
-        "error",
-        this.i18nService.t("errorOccurred"),
-        this.i18nService.t("nothingSelected"),
-      );
+      this.platformUtilsService.showToast("error", null, this.i18nService.t("nothingSelected"));
       return;
     }
+
+    const canDeleteCollections =
+      collections == null ||
+      collections.every((c) => c.canDelete(organization, this.flexibleCollectionsV1Enabled));
+    const canDeleteCiphers =
+      ciphers == null ||
+      this.organization.allowAdminAccessToAllCollectionItems ||
+      ciphers.every((c) => c.edit);
+
+    if (this.flexibleCollectionsV1Enabled && (!canDeleteCiphers || !canDeleteCollections)) {
+      this.showMissingPermissionsError();
+      return;
+    }
+
     const dialog = openBulkDeleteDialog(this.dialogService, {
       data: {
         permanent: this.filter.type === "trash",
@@ -1228,13 +1249,24 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
   }
 
-  async bulkEditCollectionAccess(collections: CollectionView[]): Promise<void> {
+  async bulkEditCollectionAccess(
+    collections: CollectionView[],
+    organization: Organization,
+  ): Promise<void> {
     if (collections.length === 0) {
-      this.platformUtilsService.showToast(
-        "error",
-        this.i18nService.t("errorOccurred"),
-        this.i18nService.t("nothingSelected"),
-      );
+      this.toastService.showToast({
+        variant: "error",
+        title: null,
+        message: this.i18nService.t("noCollectionsSelected"),
+      });
+      return;
+    }
+
+    if (
+      this.flexibleCollectionsV1Enabled &&
+      collections.some((c) => !c.canEdit(organization, this.flexibleCollectionsV1Enabled))
+    ) {
+      this.showMissingPermissionsError();
       return;
     }
 
@@ -1253,11 +1285,7 @@ export class VaultComponent implements OnInit, OnDestroy {
 
   async bulkAssignToCollections(items: CipherView[]) {
     if (items.length === 0) {
-      this.platformUtilsService.showToast(
-        "error",
-        this.i18nService.t("errorOccurred"),
-        this.i18nService.t("nothingSelected"),
-      );
+      this.platformUtilsService.showToast("error", null, this.i18nService.t("nothingSelected"));
       return;
     }
 
@@ -1338,6 +1366,14 @@ export class VaultComponent implements OnInit, OnDestroy {
   }
 
   protected readonly CollectionDialogTabType = CollectionDialogTabType;
+
+  private showMissingPermissionsError() {
+    this.toastService.showToast({
+      variant: "error",
+      title: null,
+      message: this.i18nService.t("missingPermissions"),
+    });
+  }
 }
 
 /**
