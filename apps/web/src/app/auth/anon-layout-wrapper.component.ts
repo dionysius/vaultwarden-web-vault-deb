@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { ActivatedRoute, RouterModule } from "@angular/router";
 
 import { AnonLayoutComponent } from "@bitwarden/auth/angular";
@@ -10,7 +10,7 @@ import { Icon } from "@bitwarden/components";
   templateUrl: "anon-layout-wrapper.component.html",
   imports: [AnonLayoutComponent, RouterModule],
 })
-export class AnonLayoutWrapperComponent implements OnInit, OnDestroy {
+export class AnonLayoutWrapperComponent {
   protected pageTitle: string;
   protected pageSubtitle: string;
   protected pageIcon: Icon;
@@ -22,13 +22,5 @@ export class AnonLayoutWrapperComponent implements OnInit, OnDestroy {
     this.pageTitle = this.i18nService.t(this.route.snapshot.firstChild.data["pageTitle"]);
     this.pageSubtitle = this.i18nService.t(this.route.snapshot.firstChild.data["pageSubtitle"]);
     this.pageIcon = this.route.snapshot.firstChild.data["pageIcon"]; // don't translate
-  }
-
-  ngOnInit() {
-    document.body.classList.add("layout_frontend");
-  }
-
-  ngOnDestroy() {
-    document.body.classList.remove("layout_frontend");
   }
 }
