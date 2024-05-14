@@ -3,7 +3,6 @@ import { ChangeDetectorRef, Component, Inject, OnDestroy, OnInit } from "@angula
 import { AbstractControl, FormBuilder, Validators } from "@angular/forms";
 import {
   combineLatest,
-  from,
   map,
   Observable,
   of,
@@ -23,7 +22,6 @@ import { ConfigService } from "@bitwarden/common/platform/abstractions/config/co
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
-import { CollectionService } from "@bitwarden/common/vault/abstractions/collection.service";
 import { CollectionResponse } from "@bitwarden/common/vault/models/response/collection.response";
 import { CollectionView } from "@bitwarden/common/vault/models/view/collection.view";
 import { BitValidators, DialogService } from "@bitwarden/components";
@@ -56,7 +54,10 @@ export interface CollectionDialogParams {
   initialTab?: CollectionDialogTabType;
   parentCollectionId?: string;
   showOrgSelector?: boolean;
-  collectionIds?: string[];
+  /**
+   * Flag to limit the nested collections to only those the user has explicit CanManage access too.
+   */
+  limitNestedCollections?: boolean;
   readonly?: boolean;
 }
 
@@ -85,7 +86,7 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
   protected tabIndex: CollectionDialogTabType;
   protected loading = true;
   protected organization?: Organization;
-  protected collection?: CollectionView;
+  protected collection?: CollectionAdminView;
   protected nestOptions: CollectionView[] = [];
   protected accessItems: AccessItemView[] = [];
   protected deletedParentName: string | undefined;
@@ -107,7 +108,6 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
     private organizationService: OrganizationService,
     private groupService: GroupService,
     private collectionAdminService: CollectionAdminService,
-    private collectionService: CollectionService,
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
     private organizationUserService: OrganizationUserService,
@@ -124,7 +124,7 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
       this.showOrgSelector = true;
       this.formGroup.controls.selectedOrg.valueChanges
         .pipe(takeUntil(this.destroy$))
-        .subscribe((id) => this.loadOrg(id, this.params.collectionIds));
+        .subscribe((id) => this.loadOrg(id));
       this.organizations$ = this.organizationService.organizations$.pipe(
         first(),
         map((orgs) =>
@@ -138,11 +138,11 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
     } else {
       // Opened from the org vault
       this.formGroup.patchValue({ selectedOrg: this.params.organizationId });
-      await this.loadOrg(this.params.organizationId, this.params.collectionIds);
+      await this.loadOrg(this.params.organizationId);
     }
   }
 
-  async loadOrg(orgId: string, collectionIds: string[]) {
+  async loadOrg(orgId: string) {
     const organization$ = this.organizationService
       .get$(orgId)
       .pipe(shareReplay({ refCount: true, bufferSize: 1 }));
@@ -158,28 +158,14 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
     combineLatest({
       organization: organization$,
       collections: this.collectionAdminService.getAll(orgId),
-      collectionDetails: this.params.collectionId
-        ? from(this.collectionAdminService.get(orgId, this.params.collectionId))
-        : of(null),
       groups: groups$,
       // Collection(s) needed to map readonlypermission for (potential) access selector disabled state
       users: this.organizationUserService.getAllUsers(orgId, { includeCollections: true }),
-      collection: this.params.collectionId
-        ? this.collectionService.get(this.params.collectionId)
-        : of(null),
       flexibleCollectionsV1: this.flexibleCollectionsV1Enabled$,
     })
       .pipe(takeUntil(this.formGroup.controls.selectedOrg.valueChanges), takeUntil(this.destroy$))
       .subscribe(
-        ({
-          organization,
-          collections,
-          collectionDetails,
-          groups,
-          users,
-          collection,
-          flexibleCollectionsV1,
-        }) => {
+        ({ organization, collections: allCollections, groups, users, flexibleCollectionsV1 }) => {
           this.organization = organization;
           this.accessItems = [].concat(
             groups.map((group) => mapGroupToAccessItemView(group, this.collectionId)),
@@ -189,37 +175,48 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
           // Force change detection to update the access selector's items
           this.changeDetectorRef.detectChanges();
 
-          if (collectionIds) {
-            collections = collections.filter((c) => collectionIds.includes(c.id));
-          }
+          this.nestOptions = this.params.limitNestedCollections
+            ? allCollections.filter((c) => c.manage)
+            : allCollections;
 
           if (this.params.collectionId) {
-            this.collection = collections.find((c) => c.id === this.collectionId);
-            this.nestOptions = collections.filter((c) => c.id !== this.collectionId);
+            this.collection = allCollections.find((c) => c.id === this.collectionId);
+            // Ensure we don't allow nesting the current collection within itself
+            this.nestOptions = this.nestOptions.filter((c) => c.id !== this.collectionId);
 
             if (!this.collection) {
               throw new Error("Could not find collection to edit.");
             }
 
-            const { name, parent } = parseName(this.collection);
-            if (parent !== undefined && !this.nestOptions.find((c) => c.name === parent)) {
-              this.deletedParentName = parent;
+            // Parse the name to find its parent name
+            const { name, parent: parentName } = parseName(this.collection);
+
+            // Determine if the user can see/select the parent collection
+            if (parentName !== undefined) {
+              if (
+                this.organization.canViewAllCollections &&
+                !allCollections.find((c) => c.name === parentName)
+              ) {
+                // The user can view all collections, but the parent was not found -> assume it has been deleted
+                this.deletedParentName = parentName;
+              } else if (!this.nestOptions.find((c) => c.name === parentName)) {
+                // We cannot find the current parent collection in our list of options, so add a placeholder
+                this.nestOptions.unshift({ name: parentName } as CollectionView);
+              }
             }
 
-            const accessSelections = mapToAccessSelections(collectionDetails);
+            const accessSelections = mapToAccessSelections(this.collection);
             this.formGroup.patchValue({
               name,
               externalId: this.collection.externalId,
-              parent,
+              parent: parentName,
               access: accessSelections,
             });
-            this.collection.manage = collection?.manage ?? false; // Get manage flag from sync data collection
             this.showDeleteButton =
               !this.dialogReadonly &&
               this.collection.canDelete(organization, flexibleCollectionsV1);
           } else {
-            this.nestOptions = collections;
-            const parent = collections.find((c) => c.id === this.params.parentCollectionId);
+            const parent = this.nestOptions.find((c) => c.id === this.params.parentCollectionId);
             const currentOrgUserId = users.data.find(
               (u) => u.userId === this.organization?.userId,
             )?.id;
