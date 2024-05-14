@@ -1,1 +1,83 @@
 <app-header></app-header>
+
+<bit-container>
+  <ng-container *ngIf="!firstLoaded && loading">
+    <i class="bwi bwi-spinner bwi-spin text-muted" title="{{ 'loading' | i18n }}"></i>
+    <span class="sr-only">{{ "loading" | i18n }}</span>
+  </ng-container>
+
+  <ng-container *ngIf="subscription && firstLoaded">
+    <bit-callout type="warning" title="{{ 'canceled' | i18n }}" *ngIf="false">
+      {{ "subscriptionCanceled" | i18n }}</bit-callout
+    >
+
+    <dl class="tw-grid tw-grid-flow-col tw-grid-rows-2">
+      <dt>{{ "billingPlan" | i18n }}</dt>
+      <dd>{{ "providerPlan" | i18n }}</dd>
+      <ng-container *ngIf="subscription">
+        <dt>{{ "status" | i18n }}</dt>
+        <dd>
+          <span class="tw-capitalize">{{ subscription.status }}</span>
+        </dd>
+        <dt [ngClass]="{ 'tw-text-danger': isExpired }">{{ "nextCharge" | i18n }}</dt>
+        <dd [ngClass]="{ 'tw-text-danger': isExpired }">
+          {{ subscription.currentPeriodEndDate | date: "mediumDate" }}
+        </dd>
+      </ng-container>
+    </dl>
+  </ng-container>
+
+  <ng-container>
+    <div class="tw-flex-col">
+      <strong class="tw-block tw-border-0 tw-border-b tw-border-solid tw-border-secondary-300 pb-2"
+        >{{ "details" | i18n }} &#160;<span
+          bitBadge
+          variant="success"
+          *ngIf="subscription.discountPercentage"
+          >{{ "providerDiscount" | i18n: subscription.discountPercentage }}</span
+        >
+      </strong>
+      <bit-table>
+        <ng-template body>
+          <ng-container *ngIf="subscription">
+            <tr bitRow *ngFor="let i of subscription.plans">
+              <td bitCell class="tw-pl-0 tw-py-3">
+                {{ getFormattedPlanName(i.planName) }} {{ "orgSeats" | i18n }} ({{
+                  i.cadence.toLowerCase()
+                }}) {{ "&times;" }}{{ getFormattedSeatCount(i.seatMinimum, i.purchasedSeats) }}
+                @
+                {{
+                  getFormattedCost(
+                    i.cost,
+                    i.seatMinimum,
+                    i.purchasedSeats,
+                    subscription.discountPercentage
+                  ) | currency: "$"
+                }}
+              </td>
+              <td bitCell class="tw-text-right tw-py-3">
+                {{ ((100 - subscription.discountPercentage) / 100) * i.cost | currency: "$" }} /{{
+                  "month" | i18n
+                }}
+                <div>
+                  <bit-hint class="tw-text-sm tw-line-through">
+                    {{ i.cost | currency: "$" }} /{{ "month" | i18n }}
+                  </bit-hint>
+                </div>
+              </td>
+            </tr>
+
+            <tr bitRow>
+              <td bitCell class="tw-pl-0 tw-py-3"></td>
+              <td bitCell class="tw-text-right">
+                <span class="tw-font-bold">Total:</span> {{ totalCost | currency: "$" }} /{{
+                  "month" | i18n
+                }}
+              </td>
+            </tr>
+          </ng-container>
+        </ng-template>
+      </bit-table>
+    </div>
+  </ng-container>
+</bit-container>
