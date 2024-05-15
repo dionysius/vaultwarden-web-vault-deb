@@ -230,6 +230,8 @@ import { BrowserPlatformUtilsService } from "../platform/services/platform-utils
 import { BackgroundMemoryStorageService } from "../platform/storage/background-memory-storage.service";
 import { BrowserStorageServiceProvider } from "../platform/storage/browser-storage-service.provider";
 import { ForegroundMemoryStorageService } from "../platform/storage/foreground-memory-storage.service";
+import { ForegroundSyncService } from "../platform/sync/foreground-sync.service";
+import { SyncServiceListener } from "../platform/sync/sync-service.listener";
 import { fromChromeRuntimeMessaging } from "../platform/utils/from-chrome-runtime-messaging";
 import VaultTimeoutService from "../services/vault-timeout/vault-timeout.service";
 import FilelessImporterBackground from "../tools/background/fileless-importer.background";
@@ -339,6 +341,7 @@ export default class MainBackground {
   scriptInjectorService: BrowserScriptInjectorService;
   kdfConfigService: kdfConfigServiceAbstraction;
   offscreenDocumentService: OffscreenDocumentService;
+  syncServiceListener: SyncServiceListener;
 
   onUpdatedRan: boolean;
   onReplacedRan: boolean;
@@ -792,32 +795,52 @@ export default class MainBackground {
 
     this.providerService = new ProviderService(this.stateProvider);
 
-    this.syncService = new SyncService(
-      this.masterPasswordService,
-      this.accountService,
-      this.apiService,
-      this.domainSettingsService,
-      this.folderService,
-      this.cipherService,
-      this.cryptoService,
-      this.collectionService,
-      this.messagingService,
-      this.policyService,
-      this.sendService,
-      this.logService,
-      this.keyConnectorService,
-      this.stateService,
-      this.providerService,
-      this.folderApiService,
-      this.organizationService,
-      this.sendApiService,
-      this.userDecryptionOptionsService,
-      this.avatarService,
-      logoutCallback,
-      this.billingAccountProfileStateService,
-      this.tokenService,
-      this.authService,
-    );
+    if (this.popupOnlyContext) {
+      this.syncService = new ForegroundSyncService(
+        this.stateService,
+        this.folderService,
+        this.folderApiService,
+        this.messagingService,
+        this.logService,
+        this.cipherService,
+        this.collectionService,
+        this.apiService,
+        this.accountService,
+        this.authService,
+        this.sendService,
+        this.sendApiService,
+        messageListener,
+      );
+    } else {
+      this.syncService = new SyncService(
+        this.masterPasswordService,
+        this.accountService,
+        this.apiService,
+        this.domainSettingsService,
+        this.folderService,
+        this.cipherService,
+        this.cryptoService,
+        this.collectionService,
+        this.messagingService,
+        this.policyService,
+        this.sendService,
+        this.logService,
+        this.keyConnectorService,
+        this.stateService,
+        this.providerService,
+        this.folderApiService,
+        this.organizationService,
+        this.sendApiService,
+        this.userDecryptionOptionsService,
+        this.avatarService,
+        logoutCallback,
+        this.billingAccountProfileStateService,
+        this.tokenService,
+        this.authService,
+      );
+
+      this.syncServiceListener = new SyncServiceListener(this.syncService, messageListener);
+    }
     this.eventUploadService = new EventUploadService(
       this.apiService,
       this.stateProvider,
@@ -1141,6 +1164,7 @@ export default class MainBackground {
     this.contextMenusBackground?.init();
     await this.idleBackground.init();
     this.webRequestBackground?.startListening();
+    this.syncServiceListener?.startListening();
 
     return new Promise<void>((resolve) => {
       setTimeout(async () => {

@@ -1,4 +1,4 @@
-import { firstValueFrom, map, of, switchMap } from "rxjs";
+import { firstValueFrom } from "rxjs";
 
 import { UserDecryptionOptionsServiceAbstraction } from "@bitwarden/auth/common";
 
@@ -17,22 +17,17 @@ import { AvatarService } from "../../../auth/abstractions/avatar.service";
 import { KeyConnectorService } from "../../../auth/abstractions/key-connector.service";
 import { InternalMasterPasswordServiceAbstraction } from "../../../auth/abstractions/master-password.service.abstraction";
 import { TokenService } from "../../../auth/abstractions/token.service";
-import { AuthenticationStatus } from "../../../auth/enums/authentication-status";
 import { ForceSetPasswordReason } from "../../../auth/models/domain/force-set-password-reason";
 import { DomainSettingsService } from "../../../autofill/services/domain-settings.service";
 import { BillingAccountProfileStateService } from "../../../billing/abstractions/account/billing-account-profile-state.service";
 import { DomainsResponse } from "../../../models/response/domains.response";
-import {
-  SyncCipherNotification,
-  SyncFolderNotification,
-  SyncSendNotification,
-} from "../../../models/response/notification.response";
 import { ProfileResponse } from "../../../models/response/profile.response";
 import { CryptoService } from "../../../platform/abstractions/crypto.service";
 import { LogService } from "../../../platform/abstractions/log.service";
-import { MessagingService } from "../../../platform/abstractions/messaging.service";
 import { StateService } from "../../../platform/abstractions/state.service";
+import { MessageSender } from "../../../platform/messaging";
 import { sequentialize } from "../../../platform/misc/sequentialize";
+import { CoreSyncService } from "../../../platform/sync/core-sync.service";
 import { SendData } from "../../../tools/send/models/data/send.data";
 import { SendResponse } from "../../../tools/send/models/response/send.response";
 import { SendApiService } from "../../../tools/send/services/send-api.service.abstraction";
@@ -40,7 +35,6 @@ import { InternalSendService } from "../../../tools/send/services/send.service.a
 import { CipherService } from "../../../vault/abstractions/cipher.service";
 import { FolderApiServiceAbstraction } from "../../../vault/abstractions/folder/folder-api.service.abstraction";
 import { InternalFolderService } from "../../../vault/abstractions/folder/folder.service.abstraction";
-import { SyncService as SyncServiceAbstraction } from "../../../vault/abstractions/sync/sync.service.abstraction";
 import { CipherData } from "../../../vault/models/data/cipher.data";
 import { FolderData } from "../../../vault/models/data/folder.data";
 import { CipherResponse } from "../../../vault/models/response/cipher.response";
@@ -49,55 +43,51 @@ import { CollectionService } from "../../abstractions/collection.service";
 import { CollectionData } from "../../models/data/collection.data";
 import { CollectionDetailsResponse } from "../../models/response/collection.response";
 
-export class SyncService implements SyncServiceAbstraction {
-  syncInProgress = false;
-
+export class SyncService extends CoreSyncService {
   constructor(
     private masterPasswordService: InternalMasterPasswordServiceAbstraction,
-    private accountService: AccountService,
-    private apiService: ApiService,
+    accountService: AccountService,
+    apiService: ApiService,
     private domainSettingsService: DomainSettingsService,
-    private folderService: InternalFolderService,
-    private cipherService: CipherService,
+    folderService: InternalFolderService,
+    cipherService: CipherService,
     private cryptoService: CryptoService,
-    private collectionService: CollectionService,
-    private messagingService: MessagingService,
+    collectionService: CollectionService,
+    messageSender: MessageSender,
     private policyService: InternalPolicyService,
-    private sendService: InternalSendService,
-    private logService: LogService,
+    sendService: InternalSendService,
+    logService: LogService,
     private keyConnectorService: KeyConnectorService,
-    private stateService: StateService,
+    stateService: StateService,
     private providerService: ProviderService,
-    private folderApiService: FolderApiServiceAbstraction,
+    folderApiService: FolderApiServiceAbstraction,
     private organizationService: InternalOrganizationServiceAbstraction,
-    private sendApiService: SendApiService,
+    sendApiService: SendApiService,
     private userDecryptionOptionsService: UserDecryptionOptionsServiceAbstraction,
     private avatarService: AvatarService,
     private logoutCallback: (expired: boolean) => Promise<void>,
     private billingAccountProfileStateService: BillingAccountProfileStateService,
     private tokenService: TokenService,
-    private authService: AuthService,
-  ) {}
-
-  async getLastSync(): Promise<Date> {
-    if ((await this.stateService.getUserId()) == null) {
-      return null;
-    }
-
-    const lastSync = await this.stateService.getLastSync();
-    if (lastSync) {
-      return new Date(lastSync);
-    }
-
-    return null;
-  }
-
-  async setLastSync(date: Date, userId?: string): Promise<any> {
-    await this.stateService.setLastSync(date.toJSON(), { userId: userId });
+    authService: AuthService,
+  ) {
+    super(
+      stateService,
+      folderService,
+      folderApiService,
+      messageSender,
+      logService,
+      cipherService,
+      collectionService,
+      apiService,
+      accountService,
+      authService,
+      sendService,
+      sendApiService,
+    );
   }
 
   @sequentialize(() => "fullSync")
-  async fullSync(forceSync: boolean, allowThrowOnError = false): Promise<boolean> {
+  override async fullSync(forceSync: boolean, allowThrowOnError = false): Promise<boolean> {
     this.syncStarted();
     const isAuthenticated = await this.stateService.getIsAuthenticated();
     if (!isAuthenticated) {
@@ -110,6 +100,7 @@ export class SyncService implements SyncServiceAbstraction {
       needsSync = await this.needsSyncing(forceSync);
     } catch (e) {
       if (allowThrowOnError) {
+        this.syncCompleted(false);
         throw e;
       }
     }
@@ -135,176 +126,12 @@ export class SyncService implements SyncServiceAbstraction {
       return this.syncCompleted(true);
     } catch (e) {
       if (allowThrowOnError) {
+        this.syncCompleted(false);
         throw e;
       } else {
         return this.syncCompleted(false);
       }
     }
-  }
-
-  async syncUpsertFolder(notification: SyncFolderNotification, isEdit: boolean): Promise<boolean> {
-    this.syncStarted();
-    if (await this.stateService.getIsAuthenticated()) {
-      try {
-        const localFolder = await this.folderService.get(notification.id);
-        if (
-          (!isEdit && localFolder == null) ||
-          (isEdit && localFolder != null && localFolder.revisionDate < notification.revisionDate)
-        ) {
-          const remoteFolder = await this.folderApiService.get(notification.id);
-          if (remoteFolder != null) {
-            await this.folderService.upsert(new FolderData(remoteFolder));
-            this.messagingService.send("syncedUpsertedFolder", { folderId: notification.id });
-            return this.syncCompleted(true);
-          }
-        }
-      } catch (e) {
-        this.logService.error(e);
-      }
-    }
-    return this.syncCompleted(false);
-  }
-
-  async syncDeleteFolder(notification: SyncFolderNotification): Promise<boolean> {
-    this.syncStarted();
-    if (await this.stateService.getIsAuthenticated()) {
-      await this.folderService.delete(notification.id);
-      this.messagingService.send("syncedDeletedFolder", { folderId: notification.id });
-      this.syncCompleted(true);
-      return true;
-    }
-    return this.syncCompleted(false);
-  }
-
-  async syncUpsertCipher(notification: SyncCipherNotification, isEdit: boolean): Promise<boolean> {
-    this.syncStarted();
-    if (await this.stateService.getIsAuthenticated()) {
-      try {
-        let shouldUpdate = true;
-        const localCipher = await this.cipherService.get(notification.id);
-        if (localCipher != null && localCipher.revisionDate >= notification.revisionDate) {
-          shouldUpdate = false;
-        }
-
-        let checkCollections = false;
-        if (shouldUpdate) {
-          if (isEdit) {
-            shouldUpdate = localCipher != null;
-            checkCollections = true;
-          } else {
-            if (notification.collectionIds == null || notification.organizationId == null) {
-              shouldUpdate = localCipher == null;
-            } else {
-              shouldUpdate = false;
-              checkCollections = true;
-            }
-          }
-        }
-
-        if (
-          !shouldUpdate &&
-          checkCollections &&
-          notification.organizationId != null &&
-          notification.collectionIds != null &&
-          notification.collectionIds.length > 0
-        ) {
-          const collections = await this.collectionService.getAll();
-          if (collections != null) {
-            for (let i = 0; i < collections.length; i++) {
-              if (notification.collectionIds.indexOf(collections[i].id) > -1) {
-                shouldUpdate = true;
-                break;
-              }
-            }
-          }
-        }
-
-        if (shouldUpdate) {
-          const remoteCipher = await this.apiService.getFullCipherDetails(notification.id);
-          if (remoteCipher != null) {
-            await this.cipherService.upsert(new CipherData(remoteCipher));
-            this.messagingService.send("syncedUpsertedCipher", { cipherId: notification.id });
-            return this.syncCompleted(true);
-          }
-        }
-      } catch (e) {
-        if (e != null && e.statusCode === 404 && isEdit) {
-          await this.cipherService.delete(notification.id);
-          this.messagingService.send("syncedDeletedCipher", { cipherId: notification.id });
-          return this.syncCompleted(true);
-        }
-      }
-    }
-    return this.syncCompleted(false);
-  }
-
-  async syncDeleteCipher(notification: SyncCipherNotification): Promise<boolean> {
-    this.syncStarted();
-    if (await this.stateService.getIsAuthenticated()) {
-      await this.cipherService.delete(notification.id);
-      this.messagingService.send("syncedDeletedCipher", { cipherId: notification.id });
-      return this.syncCompleted(true);
-    }
-    return this.syncCompleted(false);
-  }
-
-  async syncUpsertSend(notification: SyncSendNotification, isEdit: boolean): Promise<boolean> {
-    this.syncStarted();
-    const [activeUserId, status] = await firstValueFrom(
-      this.accountService.activeAccount$.pipe(
-        switchMap((a) => {
-          if (a == null) {
-            of([null, AuthenticationStatus.LoggedOut]);
-          }
-          return this.authService.authStatusFor$(a.id).pipe(map((s) => [a.id, s]));
-        }),
-      ),
-    );
-    // Process only notifications for currently active user when user is not logged out
-    // TODO: once send service allows data manipulation of non-active users, this should process any received notification
-    if (activeUserId === notification.userId && status !== AuthenticationStatus.LoggedOut) {
-      try {
-        const localSend = await firstValueFrom(this.sendService.get$(notification.id));
-        if (
-          (!isEdit && localSend == null) ||
-          (isEdit && localSend != null && localSend.revisionDate < notification.revisionDate)
-        ) {
-          const remoteSend = await this.sendApiService.getSend(notification.id);
-          if (remoteSend != null) {
-            await this.sendService.upsert(new SendData(remoteSend));
-            this.messagingService.send("syncedUpsertedSend", { sendId: notification.id });
-            return this.syncCompleted(true);
-          }
-        }
-      } catch (e) {
-        this.logService.error(e);
-      }
-    }
-    return this.syncCompleted(false);
-  }
-
-  async syncDeleteSend(notification: SyncSendNotification): Promise<boolean> {
-    this.syncStarted();
-    if (await this.stateService.getIsAuthenticated()) {
-      await this.sendService.delete(notification.id);
-      this.messagingService.send("syncedDeletedSend", { sendId: notification.id });
-      this.syncCompleted(true);
-      return true;
-    }
-    return this.syncCompleted(false);
-  }
-
-  // Helpers
-
-  private syncStarted() {
-    this.syncInProgress = true;
-    this.messagingService.send("syncStarted");
-  }
-
-  private syncCompleted(successfully: boolean): boolean {
-    this.syncInProgress = false;
-    this.messagingService.send("syncCompleted", { successfully: successfully });
-    return successfully;
   }
 
   private async needsSyncing(forceSync: boolean) {
@@ -365,7 +192,7 @@ export class SyncService implements SyncServiceAbstraction {
 
     if (await this.keyConnectorService.userNeedsMigration()) {
       await this.keyConnectorService.setConvertAccountRequired(true);
-      this.messagingService.send("convertAccountToKeyConnector");
+      this.messageSender.send("convertAccountToKeyConnector");
     } else {
       // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
       // eslint-disable-next-line @typescript-eslint/no-floating-promises

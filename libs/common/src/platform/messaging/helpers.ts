@@ -12,8 +12,8 @@ export const getCommand = (commandDefinition: CommandDefinition<object> | string
 
 export const EXTERNAL_SOURCE_TAG = Symbol("externalSource");
 
-export const isExternalMessage = (message: Message<object>) => {
-  return (message as Record<PropertyKey, unknown>)?.[EXTERNAL_SOURCE_TAG] === true;
+export const isExternalMessage = (message: Record<PropertyKey, unknown>) => {
+  return message?.[EXTERNAL_SOURCE_TAG] === true;
 };
 
 export const tagAsExternal: MonoTypeOperatorFunction<Message<object>> = map(
