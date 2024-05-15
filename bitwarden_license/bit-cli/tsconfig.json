@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "pretty": true,
+    "moduleResolution": "node",
+    "target": "ES2016",
+    "module": "es6",
+    "noImplicitAny": true,
+    "allowSyntheticDefaultImports": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowJs": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@bitwarden/cli/*": ["../../apps/cli/src/*"],
+      "@bitwarden/common/spec": ["../../libs/common/spec"],
+      "@bitwarden/auth/common": ["../../libs/auth/src/common"],
+      "@bitwarden/auth/angular": ["../../libs/auth/src/angular"],
+      "@bitwarden/common/*": ["../../libs/common/src/*"],
+      "@bitwarden/importer/core": ["../../libs/importer/src"],
+      "@bitwarden/vault-export-core": [
+        "../../libs/tools/export/vault-export/vault-export-core/src"
+      ],
+      "@bitwarden/node/*": ["../../libs/node/src/*"]
+    }
+  },
+  "include": ["src", "src/**/*.spec.ts"]
+}

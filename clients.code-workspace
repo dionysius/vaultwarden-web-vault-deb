@@ -17,6 +17,10 @@
       "path": "apps/cli",
     },
     {
+      "name": "cli (bit)",
+      "path": "bitwarden_license/bit-cli",
+    },
+    {
       "name": "desktop",
       "path": "apps/desktop",
     },

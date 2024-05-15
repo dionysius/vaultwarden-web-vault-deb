@@ -1,6 +1,8 @@
 import { program } from "commander";
 
-import { registerOssPrograms } from "./register-oss-programs";
+import { registerOssPrograms } from "@bitwarden/cli/register-oss-programs";
+
+import { registerBitPrograms } from "./register-bit-programs";
 import { ServiceContainer } from "./service-container";
 
 async function main() {
@@ -8,6 +10,7 @@ async function main() {
   await serviceContainer.init();
 
   await registerOssPrograms(serviceContainer);
+  await registerBitPrograms(serviceContainer);
 
   program.parse(process.argv);
 }
