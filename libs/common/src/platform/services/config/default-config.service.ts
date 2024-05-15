@@ -1,13 +1,13 @@
 import {
-  NEVER,
-  Observable,
-  Subject,
   combineLatest,
   firstValueFrom,
   map,
   mergeWith,
+  NEVER,
+  Observable,
   of,
   shareReplay,
+  Subject,
   switchMap,
   tap,
 } from "rxjs";
@@ -24,10 +24,13 @@ import { ConfigService } from "../../abstractions/config/config.service";
 import { ServerConfig } from "../../abstractions/config/server-config";
 import { EnvironmentService, Region } from "../../abstractions/environment.service";
 import { LogService } from "../../abstractions/log.service";
+import { devFlagEnabled, devFlagValue } from "../../misc/flags";
 import { ServerConfigData } from "../../models/data/server-config.data";
 import { CONFIG_DISK, KeyDefinition, StateProvider, UserKeyDefinition } from "../../state";
 
-export const RETRIEVAL_INTERVAL = 3_600_000; // 1 hour
+export const RETRIEVAL_INTERVAL = devFlagEnabled("configRetrievalIntervalMs")
+  ? (devFlagValue("configRetrievalIntervalMs") as number)
+  : 3_600_000; // 1 hour
 
 export type ApiUrl = string;
 
