@@ -6,7 +6,6 @@ import { ProviderKey, UserPrivateKey } from "../../../types/key";
 import { EncryptService } from "../../abstractions/encrypt.service";
 import { EncryptedString } from "../../models/domain/enc-string";
 import { SymmetricCryptoKey } from "../../models/domain/symmetric-crypto-key";
-import { CryptoService } from "../crypto.service";
 
 import { USER_ENCRYPTED_PROVIDER_KEYS, USER_PROVIDER_KEYS } from "./provider-keys.state";
 
@@ -27,7 +26,6 @@ describe("encrypted provider keys", () => {
 
 describe("derived decrypted provider keys", () => {
   const encryptService = mock<EncryptService>();
-  const cryptoService = mock<CryptoService>();
   const userPrivateKey = makeStaticByteArray(64, 0) as UserPrivateKey;
   const sut = USER_PROVIDER_KEYS;
 
@@ -59,9 +57,8 @@ describe("derived decrypted provider keys", () => {
 
     encryptService.rsaDecrypt.mockResolvedValueOnce(decryptedProviderKeys["provider-id-1"].key);
     encryptService.rsaDecrypt.mockResolvedValueOnce(decryptedProviderKeys["provider-id-2"].key);
-    cryptoService.getPrivateKey.mockResolvedValueOnce(userPrivateKey);
 
-    const result = await sut.derive(encryptedProviderKeys, { encryptService, cryptoService });
+    const result = await sut.derive([encryptedProviderKeys, userPrivateKey], { encryptService });
 
     expect(result).toEqual(decryptedProviderKeys);
   });
@@ -69,7 +66,7 @@ describe("derived decrypted provider keys", () => {
   it("should handle null input values", async () => {
     const encryptedProviderKeys: Record<ProviderId, EncryptedString> = null;
 
-    const result = await sut.derive(encryptedProviderKeys, { encryptService, cryptoService });
+    const result = await sut.derive([encryptedProviderKeys, userPrivateKey], { encryptService });
 
     expect(result).toEqual({});
   });

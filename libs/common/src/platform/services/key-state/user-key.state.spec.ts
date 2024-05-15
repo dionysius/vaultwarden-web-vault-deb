@@ -1,7 +1,6 @@
 import { mock } from "jest-mock-extended";
 
 import { makeStaticByteArray } from "../../../../spec";
-import { UserId } from "../../../types/guid";
 import { UserKey, UserPrivateKey, UserPublicKey } from "../../../types/key";
 import { CryptoFunctionService } from "../../abstractions/crypto-function.service";
 import { EncryptService } from "../../abstractions/encrypt.service";
@@ -70,7 +69,6 @@ describe("User public key", () => {
 
 describe("Derived decrypted private key", () => {
   const sut = USER_PRIVATE_KEY;
-  const userId = "userId" as UserId;
   const userKey = mock<UserKey>();
   const encryptedPrivateKey = makeEncString().encryptedString;
   const decryptedPrivateKey = makeStaticByteArray(64, 1);
@@ -88,37 +86,31 @@ describe("Derived decrypted private key", () => {
   });
 
   it("should derive decrypted private key", async () => {
-    const getUserKey = jest.fn(async () => userKey);
     const encryptService = mock<EncryptService>();
     encryptService.decryptToBytes.mockResolvedValue(decryptedPrivateKey);
 
-    const result = await sut.derive([userId, encryptedPrivateKey], {
+    const result = await sut.derive([encryptedPrivateKey, userKey], {
       encryptService,
-      getUserKey,
     });
 
     expect(result).toEqual(decryptedPrivateKey);
   });
 
-  it("should handle null input values", async () => {
-    const getUserKey = jest.fn(async () => userKey);
+  it("should handle null encryptedPrivateKey", async () => {
     const encryptService = mock<EncryptService>();
 
-    const result = await sut.derive([userId, null], {
+    const result = await sut.derive([null, userKey], {
       encryptService,
-      getUserKey,
     });
 
     expect(result).toEqual(null);
   });
 
-  it("should handle null user key", async () => {
-    const getUserKey = jest.fn(async () => null);
+  it("should handle null userKey", async () => {
     const encryptService = mock<EncryptService>();
 
-    const result = await sut.derive([userId, encryptedPrivateKey], {
+    const result = await sut.derive([encryptedPrivateKey, null], {
       encryptService,
-      getUserKey,
     });
 
     expect(result).toEqual(null);

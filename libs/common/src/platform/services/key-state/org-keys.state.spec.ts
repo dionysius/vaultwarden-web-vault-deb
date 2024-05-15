@@ -1,8 +1,8 @@
 import { mock } from "jest-mock-extended";
 
 import { makeEncString, makeStaticByteArray } from "../../../../spec";
-import { OrgKey } from "../../../types/key";
-import { CryptoService } from "../../abstractions/crypto.service";
+import { OrgKey, UserPrivateKey } from "../../../types/key";
+import { EncryptService } from "../../abstractions/encrypt.service";
 import { SymmetricCryptoKey } from "../../models/domain/symmetric-crypto-key";
 
 import { USER_ENCRYPTED_ORGANIZATION_KEYS, USER_ORGANIZATION_KEYS } from "./org-keys.state";
@@ -30,7 +30,8 @@ describe("encrypted org keys", () => {
 });
 
 describe("derived decrypted org keys", () => {
-  const cryptoService = mock<CryptoService>();
+  const encryptService = mock<EncryptService>();
+  const userPrivateKey = makeStaticByteArray(64, 3) as UserPrivateKey;
   const sut = USER_ORGANIZATION_KEYS;
 
   afterEach(() => {
@@ -65,15 +66,11 @@ describe("derived decrypted org keys", () => {
       "org-id-2": new SymmetricCryptoKey(makeStaticByteArray(64, 2)) as OrgKey,
     };
 
-    const userPrivateKey = makeStaticByteArray(64, 3);
-
-    cryptoService.getPrivateKey.mockResolvedValue(userPrivateKey);
-
     // TODO: How to not have to mock these decryptions. They are internal concerns of EncryptedOrganizationKey
-    cryptoService.rsaDecrypt.mockResolvedValueOnce(decryptedOrgKeys["org-id-1"].key);
-    cryptoService.rsaDecrypt.mockResolvedValueOnce(decryptedOrgKeys["org-id-2"].key);
+    encryptService.rsaDecrypt.mockResolvedValueOnce(decryptedOrgKeys["org-id-1"].key);
+    encryptService.rsaDecrypt.mockResolvedValueOnce(decryptedOrgKeys["org-id-2"].key);
 
-    const result = await sut.derive(encryptedOrgKeys, { cryptoService });
+    const result = await sut.derive([encryptedOrgKeys, userPrivateKey, {}], { encryptService });
 
     expect(result).toEqual(decryptedOrgKeys);
   });
@@ -92,16 +89,23 @@ describe("derived decrypted org keys", () => {
       },
     };
 
+    const providerKeys = {
+      "provider-id-1": new SymmetricCryptoKey(makeStaticByteArray(64, 1)),
+      "provider-id-2": new SymmetricCryptoKey(makeStaticByteArray(64, 2)),
+    };
+
     const decryptedOrgKeys = {
       "org-id-1": new SymmetricCryptoKey(makeStaticByteArray(64, 1)) as OrgKey,
       "org-id-2": new SymmetricCryptoKey(makeStaticByteArray(64, 2)) as OrgKey,
     };
 
     // TODO: How to not have to mock these decryptions. They are internal concerns of ProviderEncryptedOrganizationKey
-    cryptoService.decryptToBytes.mockResolvedValueOnce(decryptedOrgKeys["org-id-1"].key);
-    cryptoService.decryptToBytes.mockResolvedValueOnce(decryptedOrgKeys["org-id-2"].key);
+    encryptService.decryptToBytes.mockResolvedValueOnce(decryptedOrgKeys["org-id-1"].key);
+    encryptService.decryptToBytes.mockResolvedValueOnce(decryptedOrgKeys["org-id-2"].key);
 
-    const result = await sut.derive(encryptedOrgKeys, { cryptoService });
+    const result = await sut.derive([encryptedOrgKeys, userPrivateKey, providerKeys], {
+      encryptService,
+    });
 
     expect(result).toEqual(decryptedOrgKeys);
   });
