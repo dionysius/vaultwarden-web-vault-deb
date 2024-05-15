@@ -273,12 +273,13 @@ export class GroupAddEditComponent implements OnInit, OnDestroy {
 
           // If the current user is not already in the group and cannot add themselves, remove them from the list
           if (restrictGroupAccess) {
-            const organizationUserId = this.members.find((m) => m.userId === activeAccount.id).id;
+            // organizationUserId may be null if accessing via a provider
+            const organizationUserId = this.members.find((m) => m.userId === activeAccount.id)?.id;
             const isAlreadyInGroup = this.groupForm.value.members.some(
               (m) => m.id === organizationUserId,
             );
 
-            if (!isAlreadyInGroup) {
+            if (organizationUserId != null && !isAlreadyInGroup) {
               this.members = this.members.filter((m) => m.id !== organizationUserId);
             }
           }
