@@ -167,6 +167,11 @@ export class NativeMessagingBackground {
               cancelButtonText: null,
               type: "danger",
             });
+
+            if (this.resolver) {
+              this.resolver(message);
+            }
+
             break;
           case "verifyFingerprint": {
             if (this.sharedSecret == null) {
