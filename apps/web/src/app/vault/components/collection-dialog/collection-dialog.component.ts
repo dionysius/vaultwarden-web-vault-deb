@@ -59,6 +59,7 @@ export interface CollectionDialogParams {
    */
   limitNestedCollections?: boolean;
   readonly?: boolean;
+  isAddAccessCollection?: boolean;
 }
 
 export interface CollectionDialogResult {
@@ -100,6 +101,7 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
   });
   protected PermissionMode = PermissionMode;
   protected showDeleteButton = false;
+  protected showAddAccessWarning = false;
 
   constructor(
     @Inject(DIALOG_DATA) private params: CollectionDialogParams,
@@ -251,6 +253,7 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
           this.handleFormGroupReadonly(this.dialogReadonly);
 
           this.loading = false;
+          this.showAddAccessWarning = this.handleAddAccessWarning(flexibleCollectionsV1);
         },
       );
   }
@@ -360,6 +363,18 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
+  }
+
+  private handleAddAccessWarning(flexibleCollectionsV1: boolean): boolean {
+    if (
+      flexibleCollectionsV1 &&
+      !this.organization?.allowAdminAccessToAllCollectionItems &&
+      this.params.isAddAccessCollection
+    ) {
+      return true;
+    }
+
+    return false;
   }
 
   private handleFormGroupReadonly(readonly: boolean) {

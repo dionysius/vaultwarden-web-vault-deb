@@ -1222,6 +1222,7 @@ export class VaultComponent implements OnInit, OnDestroy {
         organizationId: this.organization?.id,
         initialTab: tab,
         readonly: readonly,
+        isAddAccessCollection: c.addAccess,
         limitNestedCollections: !this.organization.canEditAnyCollection(
           this.flexibleCollectionsV1Enabled,
         ),
