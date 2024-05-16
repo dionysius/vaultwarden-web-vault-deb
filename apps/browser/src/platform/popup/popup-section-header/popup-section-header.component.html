@@ -1,0 +1,11 @@
+<div class="tw-flex tw-justify-between tw-items-end tw-gap-1 tw-px-1 tw-pb-1">
+  <div>
+    <h2 bitTypography="h6" noMargin class="tw-mb-0 tw-text-headers">
+      {{ title }}
+    </h2>
+    <ng-content select="[slot=title-suffix]"></ng-content>
+  </div>
+  <div class="tw-text-muted has-[button]:-tw-mb-1">
+    <ng-content select="[slot=end]"></ng-content>
+  </div>
+</div>
