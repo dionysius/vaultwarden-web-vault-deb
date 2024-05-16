@@ -105,7 +105,9 @@ export class MemberDialogComponent implements OnDestroy {
     groups: [[] as AccessItemValue[]],
   });
 
-  protected restrictedAccess$: Observable<boolean>;
+  protected allowAdminAccessToAllCollectionItems$: Observable<boolean>;
+  protected restrictEditingSelf$: Observable<boolean>;
+  protected canEditAnyCollection$: Observable<boolean>;
 
   protected permissionsGroup = this.formBuilder.group({
     manageAssignedCollectionsGroup: this.formBuilder.group<Record<string, boolean>>({
@@ -182,43 +184,59 @@ export class MemberDialogComponent implements OnDestroy {
       ? this.userService.get(this.params.organizationId, this.params.organizationUserId)
       : of(null);
 
-    // The orgUser cannot manage their own Group assignments if collection access is restricted
-    // TODO: fix disabled state of access-selector rows so that any controls are hidden
-    this.restrictedAccess$ = combineLatest([
+    this.allowAdminAccessToAllCollectionItems$ = combineLatest([
       this.organization$,
-      userDetails$,
-      this.accountService.activeAccount$,
       this.configService.getFeatureFlag$(FeatureFlag.FlexibleCollectionsV1),
     ]).pipe(
+      map(([organization, flexibleCollectionsV1Enabled]) => {
+        if (!flexibleCollectionsV1Enabled || !organization.flexibleCollections) {
+          return true;
+        }
+
+        return organization.allowAdminAccessToAllCollectionItems;
+      }),
+    );
+
+    // The orgUser cannot manage their own Group assignments if collection access is restricted
+    this.restrictEditingSelf$ = combineLatest([
+      this.allowAdminAccessToAllCollectionItems$,
+      userDetails$,
+      this.accountService.activeAccount$,
+    ]).pipe(
       map(
-        ([organization, userDetails, activeAccount, flexibleCollectionsV1Enabled]) =>
-          // Feature flag conditionals
-          flexibleCollectionsV1Enabled &&
-          organization.flexibleCollections &&
-          // Business logic conditionals
-          userDetails != null &&
-          userDetails.userId == activeAccount.id &&
-          !organization.allowAdminAccessToAllCollectionItems,
+        ([allowAdminAccess, userDetails, activeAccount]) =>
+          !allowAdminAccess && userDetails != null && userDetails.userId == activeAccount.id,
       ),
       shareReplay({ refCount: true, bufferSize: 1 }),
     );
 
-    this.restrictedAccess$.pipe(takeUntil(this.destroy$)).subscribe((restrictedAccess) => {
-      if (restrictedAccess) {
+    this.restrictEditingSelf$.pipe(takeUntil(this.destroy$)).subscribe((restrictEditingSelf) => {
+      if (restrictEditingSelf) {
         this.formGroup.controls.groups.disable();
       } else {
         this.formGroup.controls.groups.enable();
       }
     });
 
+    const flexibleCollectionsV1Enabled$ = this.configService.getFeatureFlag$(
+      FeatureFlag.FlexibleCollectionsV1,
+    );
+
+    this.canEditAnyCollection$ = combineLatest([
+      this.organization$,
+      flexibleCollectionsV1Enabled$,
+    ]).pipe(
+      map(([org, flexibleCollectionsV1Enabled]) =>
+        org.canEditAnyCollection(flexibleCollectionsV1Enabled),
+      ),
+    );
+
     combineLatest({
       organization: this.organization$,
       collections: this.collectionAdminService.getAll(this.params.organizationId),
       userDetails: userDetails$,
       groups: groups$,
-      flexibleCollectionsV1Enabled: this.configService.getFeatureFlag$(
-        FeatureFlag.FlexibleCollectionsV1,
-      ),
+      flexibleCollectionsV1Enabled: flexibleCollectionsV1Enabled$,
     })
       .pipe(takeUntil(this.destroy$))
       .subscribe(
@@ -454,7 +472,7 @@ export class MemberDialogComponent implements OnDestroy {
       .filter((v) => v.type === AccessItemType.Collection)
       .map(convertToSelectionView);
 
-    userView.groups = (await firstValueFrom(this.restrictedAccess$))
+    userView.groups = (await firstValueFrom(this.restrictEditingSelf$))
       ? null
       : this.formGroup.value.groups.map((m) => m.id);
 

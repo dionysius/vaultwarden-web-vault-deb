@@ -405,7 +405,7 @@
         <bit-tab *ngIf="organization.useGroups" [label]="'groups' | i18n">
           <div class="tw-mb-6">
             {{
-              (restrictedAccess$ | async)
+              (restrictEditingSelf$ | async)
                 ? ("restrictedGroupAccess" | i18n)
                 : ("groupAccessUserDesc" | i18n)
             }}
@@ -417,15 +417,18 @@
             [selectorLabelText]="'selectGroups' | i18n"
             [emptySelectionText]="'noGroupsAdded' | i18n"
             [flexibleCollectionsEnabled]="organization.flexibleCollections"
-            [hideMultiSelect]="restrictedAccess$ | async"
+            [hideMultiSelect]="restrictEditingSelf$ | async"
           ></bit-access-selector>
         </bit-tab>
         <bit-tab [label]="'collections' | i18n">
-          <div class="tw-mb-6" *ngIf="restrictedAccess$ | async">
-            {{ "restrictedCollectionAccess" | i18n }}
+          <div class="tw-mb-6" *ngIf="restrictEditingSelf$ | async">
+            {{ "cannotAddYourselfToCollections" | i18n }}
           </div>
-          <div *ngIf="organization.useGroups && !(restrictedAccess$ | async)" class="tw-mb-6">
-            {{ "userPermissionOverrideHelper" | i18n }}
+          <div *ngIf="organization.useGroups && !(restrictEditingSelf$ | async)" class="tw-mb-6">
+            {{ "userPermissionOverrideHelperDesc" | i18n }}
+            <span *ngIf="!(canEditAnyCollection$ | async)">
+              {{ "restrictedCollectionAssignmentDesc" | i18n }}
+            </span>
           </div>
           <div *ngIf="!organization.flexibleCollections" class="tw-mb-6">
             <bit-form-control>
@@ -454,7 +457,7 @@
             [selectorLabelText]="'selectCollections' | i18n"
             [emptySelectionText]="'noCollectionsAdded' | i18n"
             [flexibleCollectionsEnabled]="organization.flexibleCollections"
-            [hideMultiSelect]="restrictedAccess$ | async"
+            [hideMultiSelect]="restrictEditingSelf$ | async"
           ></bit-access-selector
         ></bit-tab>
       </bit-tab-group>

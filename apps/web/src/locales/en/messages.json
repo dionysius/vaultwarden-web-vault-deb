@@ -6588,7 +6588,7 @@
   "editGroupCollectionsDesc": {
     "message": "Grant access to collections by adding them to this group."
   },
-  "editGroupCollectionsRestrictionsDesc": {
+  "restrictedCollectionAssignmentDesc": {
     "message": "You can only assign collections you manage."
   },
   "accessAllCollectionsDesc": {
@@ -6822,8 +6822,8 @@
   "selectGroups": {
     "message": "Select groups"
   },
-  "userPermissionOverrideHelper": {
-    "message": "Permissions set for a member will replace permissions set by that member's group"
+  "userPermissionOverrideHelperDesc": {
+    "message": "Permissions set for a member will replace permissions set by that member's group."
   },
   "noMembersOrGroupsAdded": {
     "message": "No members or groups added"
@@ -7749,7 +7749,7 @@
   "restrictedGroupAccess": {
     "message": "You cannot add yourself to groups."
   },
-  "restrictedCollectionAccess": {
+  "cannotAddYourselfToCollections": {
     "message": "You cannot add yourself to collections."
   },
   "assign": {

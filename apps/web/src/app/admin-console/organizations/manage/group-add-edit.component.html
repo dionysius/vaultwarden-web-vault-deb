@@ -33,7 +33,7 @@
         <bit-tab label="{{ 'members' | i18n }}">
           <p>
             {{ "editGroupMembersDesc" | i18n }}
-            <span *ngIf="restrictGroupAccess$ | async">
+            <span *ngIf="cannotAddSelfToGroup$ | async">
               {{ "restrictedGroupAccessDesc" | i18n }}
             </span>
           </p>
@@ -52,8 +52,8 @@
         <bit-tab label="{{ 'collections' | i18n }}">
           <p>
             {{ "editGroupCollectionsDesc" | i18n }}
-            <span *ngIf="!(allowAdminAccessToAllCollectionItems$ | async)">
-              {{ "editGroupCollectionsRestrictionsDesc" | i18n }}
+            <span *ngIf="!(canEditAnyCollection$ | async)">
+              {{ "restrictedCollectionAssignmentDesc" | i18n }}
             </span>
           </p>
           <div *ngIf="!(flexibleCollectionsEnabled$ | async)" class="tw-my-3">
