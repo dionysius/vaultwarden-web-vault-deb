@@ -13,6 +13,7 @@ import { ConfigService } from "@bitwarden/common/platform/abstractions/config/co
 import { IconModule, LayoutComponent, NavigationModule } from "@bitwarden/components";
 import { ProviderPortalLogo } from "@bitwarden/web-vault/app/admin-console/icons/provider-portal-logo";
 import { PaymentMethodWarningsModule } from "@bitwarden/web-vault/app/billing/shared";
+import { ProductSwitcherModule } from "@bitwarden/web-vault/app/layouts/product-switcher/product-switcher.module";
 import { ToggleWidthComponent } from "@bitwarden/web-vault/app/layouts/toggle-width.component";
 
 @Component({
@@ -28,6 +29,7 @@ import { ToggleWidthComponent } from "@bitwarden/web-vault/app/layouts/toggle-wi
     NavigationModule,
     PaymentMethodWarningsModule,
     ToggleWidthComponent,
+    ProductSwitcherModule,
   ],
 })
 export class ProvidersLayoutComponent implements OnInit, OnDestroy {

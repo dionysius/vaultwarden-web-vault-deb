@@ -101,3 +101,14 @@ export const MultipleItemsWithDivider: Story = {
     `,
   }),
 };
+
+export const ForceActiveStyles: Story = {
+  render: (args: NavItemComponent) => ({
+    props: args,
+    template: `
+      <bit-nav-item text="First Nav" icon="bwi-collection"></bit-nav-item>
+      <bit-nav-item text="Active Nav" icon="bwi-collection" [forceActiveStyles]="true"></bit-nav-item>
+      <bit-nav-item text="Third Nav" icon="bwi-collection"></bit-nav-item>
+    `,
+  }),
+};

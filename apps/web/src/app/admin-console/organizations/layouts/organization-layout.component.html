@@ -1,5 +1,9 @@
 <bit-layout variant="secondary">
-  <nav slot="sidebar" *ngIf="organization$ | async as organization">
+  <nav
+    slot="sidebar"
+    *ngIf="organization$ | async as organization"
+    class="tw-flex tw-flex-col tw-h-full"
+  >
     <a routerLink="." class="tw-m-5 tw-mt-7 tw-block" [appA11yTitle]="'adminConsole' | i18n">
       <bit-icon [icon]="logo"></bit-icon>
     </a>
@@ -105,6 +109,8 @@
         *ngIf="organization.canManageScim"
       ></bit-nav-item>
     </bit-nav-group>
+
+    <navigation-product-switcher class="tw-mt-auto"></navigation-product-switcher>
 
     <app-toggle-width></app-toggle-width>
   </nav>
