@@ -12,7 +12,7 @@
 ></app-org-vault-header>
 
 <div class="row">
-  <div class="col-3" *ngIf="!organization?.isProviderUser">
+  <div class="col-3" *ngIf="!hideVaultFilters">
     <div class="groupings">
       <div class="content">
         <div class="inner-content">
@@ -26,7 +26,7 @@
       </div>
     </div>
   </div>
-  <div [class]="organization?.isProviderUser ? 'col-12' : 'col-9'">
+  <div [class]="hideVaultFilters ? 'col-12' : 'col-9'">
     <bit-toggle-group
       *ngIf="showAddAccessToggle && activeFilter.selectedCollectionNode"
       [selected]="addAccessStatus$ | async"
