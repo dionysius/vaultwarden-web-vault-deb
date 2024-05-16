@@ -1,1 +1,13 @@
-<h1>Vault V2 Extension Refresh</h1>
+<popup-page>
+  <popup-header slot="header" [pageTitle]="'vault' | i18n">
+    <ng-container slot="end">
+      <!-- TODO PM-6826: add selectedVault query param -->
+      <a bitButton buttonType="primary" type="button" routerLink="/add-cipher">
+        <i class="bwi bwi-plus-f" aria-hidden="true"></i>
+        {{ "new" | i18n }}
+      </a>
+      <app-pop-out></app-pop-out>
+      <app-current-account></app-current-account>
+    </ng-container>
+  </popup-header>
+</popup-page>
