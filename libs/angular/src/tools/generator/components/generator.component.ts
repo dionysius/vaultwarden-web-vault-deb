@@ -1,9 +1,10 @@
 import { Directive, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { BehaviorSubject } from "rxjs";
+import { BehaviorSubject, firstValueFrom } from "rxjs";
 import { debounceTime, first, map } from "rxjs/operators";
 
 import { PasswordGeneratorPolicyOptions } from "@bitwarden/common/admin-console/models/domain/password-generator-policy-options";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
@@ -60,6 +61,7 @@ export class GeneratorComponent implements OnInit {
     protected i18nService: I18nService,
     protected logService: LogService,
     protected route: ActivatedRoute,
+    protected accountService: AccountService,
     private win: Window,
   ) {
     this.typeOptions = [
@@ -113,7 +115,9 @@ export class GeneratorComponent implements OnInit {
         this.usernameOptions.subaddressEmail == null ||
         this.usernameOptions.subaddressEmail === ""
       ) {
-        this.usernameOptions.subaddressEmail = await this.stateService.getEmail();
+        this.usernameOptions.subaddressEmail = await firstValueFrom(
+          this.accountService.activeAccount$.pipe(map((a) => a?.email)),
+        );
       }
       if (this.usernameWebsite == null) {
         this.usernameOptions.subaddressType = this.usernameOptions.catchallType = "random";

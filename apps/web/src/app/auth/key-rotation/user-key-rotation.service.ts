@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { firstValueFrom } from "rxjs";
+import { firstValueFrom, map } from "rxjs";
 
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { DeviceTrustServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust.service.abstraction";
@@ -52,7 +52,7 @@ export class UserKeyRotationService {
     // Create master key to validate the master password
     const masterKey = await this.cryptoService.makeMasterKey(
       masterPassword,
-      await this.stateService.getEmail(),
+      await firstValueFrom(this.accountService.activeAccount$.pipe(map((a) => a?.email))),
       await this.kdfConfigService.getKdfConfig(),
     );
 

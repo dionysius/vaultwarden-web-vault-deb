@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 
 import { GeneratorComponent as BaseGeneratorComponent } from "@bitwarden/angular/tools/generator/components/generator.component";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
@@ -26,6 +27,7 @@ export class GeneratorComponent extends BaseGeneratorComponent {
     logService: LogService,
     route: ActivatedRoute,
     private dialogService: DialogService,
+    accountService: AccountService,
   ) {
     super(
       passwordGenerationService,
@@ -35,6 +37,7 @@ export class GeneratorComponent extends BaseGeneratorComponent {
       i18nService,
       logService,
       route,
+      accountService,
       window,
     );
     if (platformUtilsService.isSelfHost()) {

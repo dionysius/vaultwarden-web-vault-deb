@@ -12,6 +12,9 @@ import {
   takeUntil,
   defer,
   throwError,
+  map,
+  Observable,
+  take,
 } from "rxjs";
 
 import {
@@ -67,6 +70,8 @@ export class BaseLoginDecryptionOptionsComponent implements OnInit, OnDestroy {
   protected data?: Data;
   protected loading = true;
 
+  private email$: Observable<string>;
+
   activeAccountId: UserId;
 
   // Remember device means for the user to trust the device
@@ -104,6 +109,14 @@ export class BaseLoginDecryptionOptionsComponent implements OnInit, OnDestroy {
   async ngOnInit() {
     this.loading = true;
     this.activeAccountId = (await firstValueFrom(this.accountService.activeAccount$))?.id;
+    this.email$ = this.accountService.activeAccount$.pipe(
+      map((a) => a?.email),
+      catchError((err: unknown) => {
+        this.validationService.showError(err);
+        return of(undefined);
+      }),
+      takeUntil(this.destroy$),
+    );
 
     this.setupRememberDeviceValueChanges();
 
@@ -193,16 +206,8 @@ export class BaseLoginDecryptionOptionsComponent implements OnInit, OnDestroy {
       }),
     );
 
-    const email$ = from(this.stateService.getEmail()).pipe(
-      catchError((err: unknown) => {
-        this.validationService.showError(err);
-        return of(undefined);
-      }),
-      takeUntil(this.destroy$),
-    );
-
     const autoEnrollStatus = await firstValueFrom(autoEnrollStatus$);
-    const email = await firstValueFrom(email$);
+    const email = await firstValueFrom(this.email$);
 
     this.data = { state: State.NewUser, organizationId: autoEnrollStatus.id, userEmail: email };
     this.loading = false;
@@ -211,17 +216,9 @@ export class BaseLoginDecryptionOptionsComponent implements OnInit, OnDestroy {
   loadUntrustedDeviceData(userDecryptionOptions: UserDecryptionOptions) {
     this.loading = true;
 
-    const email$ = from(this.stateService.getEmail()).pipe(
-      catchError((err: unknown) => {
-        this.validationService.showError(err);
-        return of(undefined);
-      }),
-      takeUntil(this.destroy$),
-    );
-
-    email$
+    this.email$
       .pipe(
-        takeUntil(this.destroy$),
+        take(1),
         finalize(() => {
           this.loading = false;
         }),

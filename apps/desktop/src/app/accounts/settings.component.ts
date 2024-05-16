@@ -224,7 +224,9 @@ export class SettingsComponent implements OnInit {
     if ((await this.stateService.getUserId()) == null) {
       return;
     }
-    this.currentUserEmail = await this.stateService.getEmail();
+    this.currentUserEmail = await firstValueFrom(
+      this.accountService.activeAccount$.pipe(map((a) => a?.email)),
+    );
     this.currentUserId = (await this.stateService.getUserId()) as UserId;
 
     this.availableVaultTimeoutActions$ = this.refreshTimeoutSettings$.pipe(

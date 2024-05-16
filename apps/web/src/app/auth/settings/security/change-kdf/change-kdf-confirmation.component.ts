@@ -1,8 +1,10 @@
 import { DIALOG_DATA } from "@angular/cdk/dialog";
 import { Component, Inject } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
+import { firstValueFrom, map } from "rxjs";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
 import { KdfConfig } from "@bitwarden/common/auth/models/domain/kdf-config";
 import { KdfRequest } from "@bitwarden/common/models/request/kdf.request";
@@ -11,7 +13,6 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { KdfType } from "@bitwarden/common/platform/enums";
 
 @Component({
@@ -35,7 +36,7 @@ export class ChangeKdfConfirmationComponent {
     private platformUtilsService: PlatformUtilsService,
     private cryptoService: CryptoService,
     private messagingService: MessagingService,
-    private stateService: StateService,
+    private accountService: AccountService,
     private logService: LogService,
     private kdfConfigService: KdfConfigService,
     @Inject(DIALOG_DATA) params: { kdfConfig: KdfConfig },
@@ -78,7 +79,9 @@ export class ChangeKdfConfirmationComponent {
     }
     const masterKey = await this.cryptoService.getOrDeriveMasterKey(masterPassword);
     request.masterPasswordHash = await this.cryptoService.hashMasterKey(masterPassword, masterKey);
-    const email = await this.stateService.getEmail();
+    const email = await firstValueFrom(
+      this.accountService.activeAccount$.pipe(map((a) => a?.email)),
+    );
 
     const newMasterKey = await this.cryptoService.makeMasterKey(
       masterPassword,

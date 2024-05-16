@@ -1,4 +1,4 @@
-import { firstValueFrom } from "rxjs";
+import { firstValueFrom, map } from "rxjs";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
@@ -49,10 +49,11 @@ export class UnlockCommand {
     }
 
     await this.setNewSessionKey();
-    const email = await this.stateService.getEmail();
+    const [userId, email] = await firstValueFrom(
+      this.accountService.activeAccount$.pipe(map((a) => [a?.id, a?.email])),
+    );
     const kdfConfig = await this.kdfConfigService.getKdfConfig();
     const masterKey = await this.cryptoService.makeMasterKey(password, email, kdfConfig);
-    const userId = (await firstValueFrom(this.accountService.activeAccount$))?.id;
     const storedMasterKeyHash = await firstValueFrom(
       this.masterPasswordService.masterKeyHash$(userId),
     );

@@ -3,7 +3,7 @@ import * as http from "http";
 import { OptionValues } from "commander";
 import * as inquirer from "inquirer";
 import Separator from "inquirer/lib/objects/separator";
-import { firstValueFrom } from "rxjs";
+import { firstValueFrom, map } from "rxjs";
 
 import {
   LoginStrategyServiceAbstraction,
@@ -15,6 +15,7 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { PolicyApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/policy/policy-api.service.abstraction";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
 import { KeyConnectorService } from "@bitwarden/common/auth/abstractions/key-connector.service";
@@ -31,7 +32,6 @@ import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/c
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
@@ -60,7 +60,7 @@ export class LoginCommand {
     protected passwordGenerationService: PasswordGenerationServiceAbstraction,
     protected passwordStrengthService: PasswordStrengthServiceAbstraction,
     protected platformUtilsService: PlatformUtilsService,
-    protected stateService: StateService,
+    protected accountService: AccountService,
     protected cryptoService: CryptoService,
     protected policyService: PolicyService,
     protected twoFactorService: TwoFactorService,
@@ -491,7 +491,9 @@ export class LoginCommand {
     hint?: string;
   }> {
     if (this.email == null || this.email === "undefined") {
-      this.email = await this.stateService.getEmail();
+      this.email = await firstValueFrom(
+        this.accountService.activeAccount$.pipe(map((a) => a?.email)),
+      );
     }
 
     // Get New Master Password

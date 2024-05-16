@@ -1,5 +1,5 @@
 import * as bigInt from "big-integer";
-import { Observable, filter, firstValueFrom, map, zip } from "rxjs";
+import { Observable, combineLatest, filter, firstValueFrom, map, zip } from "rxjs";
 
 import { PinServiceAbstraction } from "../../../../auth/src/common/abstractions";
 import { EncryptedOrganizationKeyData } from "../../admin-console/models/data/encrypted-organization-key.data";
@@ -280,11 +280,18 @@ export class CryptoService implements CryptoServiceAbstraction {
 
   // TODO: Move to MasterPasswordService
   async getOrDeriveMasterKey(password: string, userId?: UserId) {
-    userId ??= await firstValueFrom(this.stateProvider.activeUserId$);
-    let masterKey = await firstValueFrom(this.masterPasswordService.masterKey$(userId));
+    const [resolvedUserId, email] = await firstValueFrom(
+      combineLatest([this.accountService.activeAccount$, this.accountService.accounts$]).pipe(
+        map(([activeAccount, accounts]) => {
+          userId ??= activeAccount?.id;
+          return [userId, accounts[userId]?.email];
+        }),
+      ),
+    );
+    let masterKey = await firstValueFrom(this.masterPasswordService.masterKey$(resolvedUserId));
     return (masterKey ||= await this.makeMasterKey(
       password,
-      await this.stateService.getEmail({ userId: userId }),
+      email,
       await this.kdfConfigService.getKdfConfig(),
     ));
   }

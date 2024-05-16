@@ -51,7 +51,7 @@ export class SetPasswordComponent extends BaseChangePasswordComponent {
   ForceSetPasswordReason = ForceSetPasswordReason;
 
   constructor(
-    private accountService: AccountService,
+    accountService: AccountService,
     masterPasswordService: InternalMasterPasswordServiceAbstraction,
     i18nService: I18nService,
     cryptoService: CryptoService,
@@ -83,6 +83,7 @@ export class SetPasswordComponent extends BaseChangePasswordComponent {
       dialogService,
       kdfConfigService,
       masterPasswordService,
+      accountService,
     );
   }
 

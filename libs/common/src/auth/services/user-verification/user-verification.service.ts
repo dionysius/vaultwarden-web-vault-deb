@@ -1,4 +1,4 @@
-import { firstValueFrom } from "rxjs";
+import { firstValueFrom, map } from "rxjs";
 
 import { UserDecryptionOptionsServiceAbstraction } from "@bitwarden/auth/common";
 
@@ -115,12 +115,14 @@ export class UserVerificationService implements UserVerificationServiceAbstracti
     if (verification.type === VerificationType.OTP) {
       request.otp = verification.secret;
     } else {
-      const userId = (await firstValueFrom(this.accountService.activeAccount$))?.id;
+      const [userId, email] = await firstValueFrom(
+        this.accountService.activeAccount$.pipe(map((a) => [a?.id, a?.email])),
+      );
       let masterKey = await firstValueFrom(this.masterPasswordService.masterKey$(userId));
       if (!masterKey && !alreadyHashed) {
         masterKey = await this.cryptoService.makeMasterKey(
           verification.secret,
-          await this.stateService.getEmail(),
+          email,
           await this.kdfConfigService.getKdfConfig(),
         );
       }
@@ -138,7 +140,9 @@ export class UserVerificationService implements UserVerificationServiceAbstracti
    * @param verification User-supplied verification data (OTP, MP, PIN, or biometrics)
    */
   async verifyUser(verification: Verification): Promise<boolean> {
-    const userId = (await firstValueFrom(this.accountService.activeAccount$))?.id;
+    const [userId, email] = await firstValueFrom(
+      this.accountService.activeAccount$.pipe(map((a) => [a?.id, a?.email])),
+    );
 
     if (verificationHasSecret(verification)) {
       this.validateSecretInput(verification);
@@ -148,7 +152,7 @@ export class UserVerificationService implements UserVerificationServiceAbstracti
       case VerificationType.OTP:
         return this.verifyUserByOTP(verification);
       case VerificationType.MasterPassword:
-        return this.verifyUserByMasterPassword(verification, userId);
+        return this.verifyUserByMasterPassword(verification, userId, email);
       case VerificationType.PIN:
         return this.verifyUserByPIN(verification, userId);
       case VerificationType.Biometrics:
@@ -174,6 +178,7 @@ export class UserVerificationService implements UserVerificationServiceAbstracti
   private async verifyUserByMasterPassword(
     verification: MasterPasswordVerification,
     userId: UserId,
+    email: string,
   ): Promise<boolean> {
     if (!userId) {
       throw new Error("User ID is required. Cannot verify user by master password.");
@@ -183,7 +188,7 @@ export class UserVerificationService implements UserVerificationServiceAbstracti
     if (!masterKey) {
       masterKey = await this.cryptoService.makeMasterKey(
         verification.secret,
-        await this.stateService.getEmail(),
+        email,
         await this.kdfConfigService.getKdfConfig(),
       );
     }

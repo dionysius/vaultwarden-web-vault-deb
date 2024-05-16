@@ -20,7 +20,6 @@ import { EnvironmentService } from "@bitwarden/common/platform/abstractions/envi
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { ValidationService } from "@bitwarden/common/platform/abstractions/validation.service";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
@@ -44,7 +43,6 @@ export class LoginViaAuthRequestComponent extends BaseLoginWithDeviceComponent {
     platformUtilsService: PlatformUtilsService,
     anonymousHubService: AnonymousHubService,
     validationService: ValidationService,
-    stateService: StateService,
     loginEmailService: LoginEmailServiceAbstraction,
     syncService: SyncService,
     deviceTrustService: DeviceTrustServiceAbstraction,
@@ -67,12 +65,11 @@ export class LoginViaAuthRequestComponent extends BaseLoginWithDeviceComponent {
       platformUtilsService,
       anonymousHubService,
       validationService,
-      stateService,
+      accountService,
       loginEmailService,
       deviceTrustService,
       authRequestService,
       loginStrategyService,
-      accountService,
     );
     super.onSuccessfulLogin = async () => {
       await syncService.fullSync(true);

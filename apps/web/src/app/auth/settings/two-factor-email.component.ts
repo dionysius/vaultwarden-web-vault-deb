@@ -1,6 +1,8 @@
 import { Component } from "@angular/core";
+import { firstValueFrom, map } from "rxjs";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { TwoFactorProviderType } from "@bitwarden/common/auth/enums/two-factor-provider-type";
 import { TwoFactorEmailRequest } from "@bitwarden/common/auth/models/request/two-factor-email.request";
@@ -10,7 +12,6 @@ import { AuthResponse } from "@bitwarden/common/auth/types/auth-response";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { DialogService } from "@bitwarden/components";
 
 import { TwoFactorBaseComponent } from "./two-factor-base.component";
@@ -35,7 +36,7 @@ export class TwoFactorEmailComponent extends TwoFactorBaseComponent {
     platformUtilsService: PlatformUtilsService,
     logService: LogService,
     userVerificationService: UserVerificationService,
-    private stateService: StateService,
+    private accountService: AccountService,
     dialogService: DialogService,
   ) {
     super(
@@ -90,7 +91,9 @@ export class TwoFactorEmailComponent extends TwoFactorBaseComponent {
     this.email = response.email;
     this.enabled = response.enabled;
     if (!this.enabled && (this.email == null || this.email === "")) {
-      this.email = await this.stateService.getEmail();
+      this.email = await firstValueFrom(
+        this.accountService.activeAccount$.pipe(map((a) => a?.email)),
+      );
     }
   }
 }

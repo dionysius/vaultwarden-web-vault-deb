@@ -1,6 +1,6 @@
 import { Directive, OnDestroy, OnInit } from "@angular/core";
 import { IsActiveMatchOptions, Router } from "@angular/router";
-import { Subject, firstValueFrom, takeUntil } from "rxjs";
+import { Subject, firstValueFrom, map, takeUntil } from "rxjs";
 
 import {
   AuthRequestLoginCredentials,
@@ -29,7 +29,6 @@ import { EnvironmentService } from "@bitwarden/common/platform/abstractions/envi
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { ValidationService } from "@bitwarden/common/platform/abstractions/validation.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
@@ -84,12 +83,11 @@ export class LoginViaAuthRequestComponent
     platformUtilsService: PlatformUtilsService,
     private anonymousHubService: AnonymousHubService,
     private validationService: ValidationService,
-    private stateService: StateService,
+    private accountService: AccountService,
     private loginEmailService: LoginEmailServiceAbstraction,
     private deviceTrustService: DeviceTrustServiceAbstraction,
     private authRequestService: AuthRequestServiceAbstraction,
     private loginStrategyService: LoginStrategyServiceAbstraction,
-    private accountService: AccountService,
   ) {
     super(environmentService, i18nService, platformUtilsService);
 
@@ -131,7 +129,9 @@ export class LoginViaAuthRequestComponent
       // Pull email from state for admin auth reqs b/c it is available
       // This also prevents it from being lost on refresh as the
       // login service email does not persist.
-      this.email = await this.stateService.getEmail();
+      this.email = await firstValueFrom(
+        this.accountService.activeAccount$.pipe(map((a) => a?.email)),
+      );
       const userId = (await firstValueFrom(this.accountService.activeAccount$)).id;
 
       if (!this.email) {

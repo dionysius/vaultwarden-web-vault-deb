@@ -372,7 +372,9 @@ export class LockComponent implements OnInit, OnDestroy {
       (await this.vaultTimeoutSettingsService.isBiometricLockSet()) &&
       ((await this.cryptoService.hasUserKeyStored(KeySuffixOptions.Biometric)) ||
         !this.platformUtilsService.supportsSecureStorage());
-    this.email = await this.stateService.getEmail();
+    this.email = await firstValueFrom(
+      this.accountService.activeAccount$.pipe(map((a) => a?.email)),
+    );
 
     this.webVaultHostname = (await this.environmentService.getEnvironment()).getHostname();
   }

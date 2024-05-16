@@ -1,8 +1,9 @@
 import { Component, OnInit } from "@angular/core";
+import { firstValueFrom, map } from "rxjs";
 
 import { AuditService } from "@bitwarden/common/abstractions/audit.service";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { BreachAccountResponse } from "@bitwarden/common/models/response/breach-account.response";
-import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 
 @Component({
   selector: "app-breach-report",
@@ -17,11 +18,13 @@ export class BreachReportComponent implements OnInit {
 
   constructor(
     private auditService: AuditService,
-    private stateService: StateService,
+    private accountService: AccountService,
   ) {}
 
   async ngOnInit() {
-    this.username = await this.stateService.getEmail();
+    this.username = await firstValueFrom(
+      this.accountService.activeAccount$.pipe(map((a) => a?.email)),
+    );
   }
 
   async submit() {

@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 import { UpdatePasswordComponent as BaseUpdatePasswordComponent } from "@bitwarden/angular/auth/components/update-password.component";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
 import { InternalMasterPasswordServiceAbstraction } from "@bitwarden/common/auth/abstractions/master-password.service.abstraction";
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
@@ -36,6 +37,7 @@ export class UpdatePasswordComponent extends BaseUpdatePasswordComponent {
     dialogService: DialogService,
     kdfConfigService: KdfConfigService,
     masterPasswordService: InternalMasterPasswordServiceAbstraction,
+    accountService: AccountService,
   ) {
     super(
       router,
@@ -52,6 +54,7 @@ export class UpdatePasswordComponent extends BaseUpdatePasswordComponent {
       dialogService,
       kdfConfigService,
       masterPasswordService,
+      accountService,
     );
   }
 }

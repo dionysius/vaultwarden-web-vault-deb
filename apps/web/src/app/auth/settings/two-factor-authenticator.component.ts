@@ -1,6 +1,8 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
+import { firstValueFrom, map } from "rxjs";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { TwoFactorProviderType } from "@bitwarden/common/auth/enums/two-factor-provider-type";
 import { UpdateTwoFactorAuthenticatorRequest } from "@bitwarden/common/auth/models/request/update-two-factor-authenticator.request";
@@ -9,7 +11,6 @@ import { AuthResponse } from "@bitwarden/common/auth/types/auth-response";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { DialogService } from "@bitwarden/components";
 
@@ -51,7 +52,7 @@ export class TwoFactorAuthenticatorComponent
     userVerificationService: UserVerificationService,
     platformUtilsService: PlatformUtilsService,
     logService: LogService,
-    private stateService: StateService,
+    private accountService: AccountService,
     dialogService: DialogService,
   ) {
     super(
@@ -104,7 +105,9 @@ export class TwoFactorAuthenticatorComponent
     this.token = null;
     this.enabled = response.enabled;
     this.key = response.key;
-    const email = await this.stateService.getEmail();
+    const email = await firstValueFrom(
+      this.accountService.activeAccount$.pipe(map((a) => a?.email)),
+    );
     window.setTimeout(() => {
       new window.QRious({
         element: document.getElementById("qr"),
