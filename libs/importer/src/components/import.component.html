@@ -2,7 +2,7 @@
   {{ "personalOwnershipPolicyInEffectImports" | i18n }}
 </bit-callout>
 <form [formGroup]="formGroup" [bitSubmit]="submit" id="import_form_importForm">
-  <bit-form-field>
+  <bit-form-field [hidden]="isFromAC">
     <bit-label
       >{{ "importDestination" | i18n }}
       <a

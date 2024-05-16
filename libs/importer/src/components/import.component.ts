@@ -132,7 +132,7 @@ export class ImportComponent implements OnInit, OnDestroy {
   protected destroy$ = new Subject<void>();
 
   private _importBlockedByPolicy = false;
-  private _isFromAC = false;
+  protected isFromAC = false;
 
   formGroup = this.formBuilder.group({
     vaultSelector: [
@@ -232,7 +232,7 @@ export class ImportComponent implements OnInit, OnDestroy {
         .then((collections) => collections.sort(Utils.getSortFunction(this.i18nService, "name"))),
     );
 
-    this._isFromAC = true;
+    this.isFromAC = true;
   }
 
   private handleImportInit() {
@@ -359,7 +359,7 @@ export class ImportComponent implements OnInit, OnDestroy {
         importContents,
         this.organizationId,
         this.formGroup.controls.targetSelector.value,
-        (await this.canAccessImportExport(this.organizationId)) && this._isFromAC,
+        (await this.canAccessImportExport(this.organizationId)) && this.isFromAC,
       );
 
       //No errors, display success message
