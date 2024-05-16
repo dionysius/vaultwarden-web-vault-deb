@@ -1,16 +1,17 @@
 import { DIALOG_DATA, DialogConfig, DialogRef } from "@angular/cdk/dialog";
 import { Component, Inject, ViewChild } from "@angular/core";
 import { FormGroup } from "@angular/forms";
+import { firstValueFrom } from "rxjs";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
 import { PaymentMethodWarningsServiceAbstraction as PaymentMethodWarningService } from "@bitwarden/common/billing/abstractions/payment-method-warnings-service.abstraction";
 import { PaymentMethodType } from "@bitwarden/common/billing/enums";
 import { PaymentRequest } from "@bitwarden/common/billing/models/request/payment.request";
+import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
+import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
-import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
-import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 
 import { PaymentComponent } from "./payment.component";
 import { TaxInfoComponent } from "./tax-info.component";
@@ -44,10 +45,10 @@ export class AdjustPaymentDialogComponent {
     @Inject(DIALOG_DATA) protected data: AdjustPaymentDialogData,
     private apiService: ApiService,
     private i18nService: I18nService,
-    private platformUtilsService: PlatformUtilsService,
-    private logService: LogService,
     private organizationApiService: OrganizationApiServiceAbstraction,
     private paymentMethodWarningService: PaymentMethodWarningService,
+    private configService: ConfigService,
+    private toastService: ToastService,
   ) {
     this.organizationId = data.organizationId;
     this.currentType = data.currentType;
@@ -73,14 +74,17 @@ export class AdjustPaymentDialogComponent {
       }
     });
     await response;
-    if (this.organizationId) {
+    const showPaymentMethodWarningBanners = await firstValueFrom(
+      this.configService.getFeatureFlag$(FeatureFlag.ShowPaymentMethodWarningBanners),
+    );
+    if (this.organizationId && showPaymentMethodWarningBanners) {
       await this.paymentMethodWarningService.removeSubscriptionRisk(this.organizationId);
     }
-    this.platformUtilsService.showToast(
-      "success",
-      null,
-      this.i18nService.t("updatedPaymentMethod"),
-    );
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("updatedPaymentMethod"),
+    });
     this.dialogRef.close(AdjustPaymentDialogResult.Adjusted);
   };
 
