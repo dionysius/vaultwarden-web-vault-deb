@@ -5808,6 +5808,108 @@
   "forwardedEmailDesc": {
     "message": "Згенеруйте псевдонім е-пошти зі стороннім сервісом пересилання."
   },
+  "forwarderError": {
+    "message": "Помилка $SERVICENAME$: $ERRORMESSAGE$",
+    "description": "Reports an error returned by a forwarding service to the user.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      },
+      "errormessage": {
+        "content": "$2",
+        "example": "Invalid characters in domain name."
+      }
+    }
+  },
+  "forwarderGeneratedBy": {
+    "message": "Згенеровано Bitwarden.",
+    "description": "Displayed with the address on the forwarding service's configuration screen."
+  },
+  "forwarderGeneratedByWithWebsite": {
+    "message": "Вебсайт: $WEBSITE$. Згенеровано Bitwarden.",
+    "description": "Displayed with the address on the forwarding service's configuration screen.",
+    "placeholders": {
+      "WEBSITE": {
+        "content": "$1",
+        "example": "www.example.com"
+      }
+    }
+  },
+  "forwaderInvalidToken": {
+    "message": "Недійсний токен API для $SERVICENAME$",
+    "description": "Displayed when the user's API token is empty or rejected by the forwarding service.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwaderInvalidTokenWithMessage": {
+    "message": "Недійсний токен API для $SERVICENAME$: $ERRORMESSAGE$",
+    "description": "Displayed when the user's API token is rejected by the forwarding service with an error message.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      },
+      "errormessage": {
+        "content": "$2",
+        "example": "Please verify your email address to continue."
+      }
+    }
+  },
+  "forwarderNoAccountId": {
+    "message": "Не вдалося отримати ідентифікатор замаскованої е-пошти облікового запису для $SERVICENAME$.",
+    "description": "Displayed when the forwarding service fails to return an account ID.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwarderNoDomain": {
+    "message": "Недійсний домен для $SERVICENAME$.",
+    "description": "Displayed when the domain is empty or domain authorization failed at the forwarding service.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwarderNoUrl": {
+    "message": "Недійсна URL-адреса для $SERVICENAME$.",
+    "description": "Displayed when the url of the forwarding service wasn't supplied.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwarderUnknownError": {
+    "message": "Сталася невідома помилка $SERVICENAME$.",
+    "description": "Displayed when the forwarding service failed due to an unknown error.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwarderUnknownForwarder": {
+    "message": "Невідомий засіб переспрямування: '$SERVICENAME$'.",
+    "description": "Displayed when the forwarding service is not supported.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "JustTrust.us"
+      }
+    }
+  },
   "hostname": {
     "message": "Ім'я вузла",
     "description": "Part of a URL."
@@ -6486,7 +6588,7 @@
   "editGroupCollectionsDesc": {
     "message": "Надати доступ до збірок, додавши їх до цієї групи."
   },
-  "editGroupCollectionsRestrictionsDesc": {
+  "restrictedCollectionAssignmentDesc": {
     "message": "Ви можете призначити лише збірки, якими керуєте."
   },
   "accessAllCollectionsDesc": {
@@ -6720,8 +6822,8 @@
   "selectGroups": {
     "message": "Вибрати групи"
   },
-  "userPermissionOverrideHelper": {
-    "message": "Дозволи, встановлені для учасника, вилучать дозволи, встановлені групою учасника"
+  "userPermissionOverrideHelperDesc": {
+    "message": "Дозволи, встановлені для учасника, вилучать дозволи, встановлені групою учасника."
   },
   "noMembersOrGroupsAdded": {
     "message": "Не додано жодного учасника чи групи"
@@ -6912,8 +7014,8 @@
   "updateLowKdfIterationsDesc": {
     "message": "Оновіть свої налаштування шифрування згідно з новими рекомендаціями щодо безпеки для вдосконалення захисту облікового запису."
   },
-  "changeKdfLoggedOutWarning": {
-    "message": "Продовжуючи, ви вийдете з усіх активних сеансів. Необхідно буде повторно виконати вхід і пройти двоетапну перевірку. Перед зміною налаштувань шифрування ми рекомендуємо експортувати ваше сховище, щоб запобігти можливій втраті даних."
+  "kdfSettingsChangeLogoutWarning": {
+    "message": "Продовжуючи, ви вийдете з усіх активних сеансів. Необхідно буде повторно виконати вхід і пройти двоетапну перевірку, якщо вона увімкнена. Перед зміною налаштувань шифрування ми рекомендуємо експортувати ваше сховище, щоб запобігти можливій втраті даних."
   },
   "secretsManager": {
     "message": "Менеджер секретів"
@@ -7533,6 +7635,12 @@
   "readOnlyCollectionAccess": {
     "message": "У вас немає доступу до керування цією збіркою."
   },
+  "grantAddAccessCollectionWarningTitle": {
+    "message": "Немає дозволу \"Може керувати\""
+  },
+  "grantAddAccessCollectionWarning": {
+    "message": "Надайте дозвіл \"Може керувати\" для можливості повноцінного керування збірками, включно з видаленням."
+  },
   "grantCollectionAccess": {
     "message": "Надайте групам або учасникам доступ до цієї збірки."
   },
@@ -7638,13 +7746,10 @@
   "success": {
     "message": "Успішно"
   },
-  "viewCollection": {
-    "message": "Переглянути збірку"
-  },
   "restrictedGroupAccess": {
     "message": "Ви не можете додати себе до груп."
   },
-  "restrictedCollectionAccess": {
+  "cannotAddYourselfToCollections": {
     "message": "Ви не можете додати себе до збірок."
   },
   "assign": {
@@ -8081,5 +8186,47 @@
   },
   "manageBillingFromProviderPortalMessage": {
     "message": "Керування рахунками на порталі провайдера"
+  },
+  "viewInfo": {
+    "message": "Переглянути інформацію"
+  },
+  "viewAccess": {
+    "message": "Переглянути доступ"
+  },
+  "noCollectionsSelected": {
+    "message": "Ви не вибрали жодної збірки."
+  },
+  "updateName": {
+    "message": "Оновити назву"
+  },
+  "updatedOrganizationName": {
+    "message": "Назву організації оновлено"
+  },
+  "providerPlan": {
+    "message": "Керований постачальник послуг"
+  },
+  "orgSeats": {
+    "message": "Місць в організації"
+  },
+  "providerDiscount": {
+    "message": "$AMOUNT$% знижка",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "secureYourInfrastructure": {
+    "message": "Захистіть свою інфраструктуру"
+  },
+  "protectYourFamilyOrBusiness": {
+    "message": "Захистіть свою сім'ю або бізнес"
+  },
+  "upgradeOrganizationCloseSecurityGaps": {
+    "message": "Close security gaps with monitoring reports"
+  },
+  "upgradeOrganizationCloseSecurityGapsDesc": {
+    "message": "Stay ahead of security vulnerabilities by upgrading to a paid plan for enhanced monitoring."
   }
 }

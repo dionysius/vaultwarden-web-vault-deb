@@ -2789,10 +2789,10 @@
     "message": "Todos"
   },
   "addAccess": {
-    "message": "Add Access"
+    "message": "Adicionar Acesso"
   },
   "addAccessFilter": {
-    "message": "Add Access Filter"
+    "message": "Adicionar Filtro de Acesso"
   },
   "refresh": {
     "message": "Atualizar"
@@ -5808,6 +5808,108 @@
   "forwardedEmailDesc": {
     "message": "Gere um alias de e-mail com um serviço externo de encaminhamento."
   },
+  "forwarderError": {
+    "message": "Erro $SERVICENAME$ : $ERRORMESSAGE$",
+    "description": "Reports an error returned by a forwarding service to the user.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      },
+      "errormessage": {
+        "content": "$2",
+        "example": "Invalid characters in domain name."
+      }
+    }
+  },
+  "forwarderGeneratedBy": {
+    "message": "Gerado pelo Bitwarden.",
+    "description": "Displayed with the address on the forwarding service's configuration screen."
+  },
+  "forwarderGeneratedByWithWebsite": {
+    "message": "Site: $WEBSITE$. Gerado pelo Bitwarden.",
+    "description": "Displayed with the address on the forwarding service's configuration screen.",
+    "placeholders": {
+      "WEBSITE": {
+        "content": "$1",
+        "example": "www.example.com"
+      }
+    }
+  },
+  "forwaderInvalidToken": {
+    "message": "Token de API $SERVICENAME$ inválido",
+    "description": "Displayed when the user's API token is empty or rejected by the forwarding service.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwaderInvalidTokenWithMessage": {
+    "message": "Token de API $SERVICENAME$ inválido: $ERRORMESSAGE$",
+    "description": "Displayed when the user's API token is rejected by the forwarding service with an error message.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      },
+      "errormessage": {
+        "content": "$2",
+        "example": "Please verify your email address to continue."
+      }
+    }
+  },
+  "forwarderNoAccountId": {
+    "message": "Não foi possível obter a máscara do ID da conta de email $SERVICENAME$.",
+    "description": "Displayed when the forwarding service fails to return an account ID.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwarderNoDomain": {
+    "message": "Domínio $SERVICENAME$ inválido.",
+    "description": "Displayed when the domain is empty or domain authorization failed at the forwarding service.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwarderNoUrl": {
+    "message": "URL $SERVICENAME$ inválida.",
+    "description": "Displayed when the url of the forwarding service wasn't supplied.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwarderUnknownError": {
+    "message": "Ocorreu um erro $SERVICENAME$ desconhecido.",
+    "description": "Displayed when the forwarding service failed due to an unknown error.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwarderUnknownForwarder": {
+    "message": "Encaminhador desconhecido: '$SERVICENAME$'.",
+    "description": "Displayed when the forwarding service is not supported.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "JustTrust.us"
+      }
+    }
+  },
   "hostname": {
     "message": "Hostname",
     "description": "Part of a URL."
@@ -6486,8 +6588,8 @@
   "editGroupCollectionsDesc": {
     "message": "Conceder acesso às coleções adicionando-as a este grupo."
   },
-  "editGroupCollectionsRestrictionsDesc": {
-    "message": "Você só pode atribuir coleções que você gerencia."
+  "restrictedCollectionAssignmentDesc": {
+    "message": "You can only assign collections you manage."
   },
   "accessAllCollectionsDesc": {
     "message": "Conceder acesso a todas as coleções atuais e futuras."
@@ -6720,8 +6822,8 @@
   "selectGroups": {
     "message": "Selecione grupos"
   },
-  "userPermissionOverrideHelper": {
-    "message": "Permissões definidas para um membro substituirão as permissões definidas pelo grupo desse membro"
+  "userPermissionOverrideHelperDesc": {
+    "message": "Permissions set for a member will replace permissions set by that member's group."
   },
   "noMembersOrGroupsAdded": {
     "message": "Nenhum membro ou grupo adicionado"
@@ -6912,8 +7014,8 @@
   "updateLowKdfIterationsDesc": {
     "message": "Atualize suas configurações de criptografia para atender às novas recomendações de segurança e melhorar a proteção da conta."
   },
-  "changeKdfLoggedOutWarning": {
-    "message": "O processo desconectará você de todas as sessões ativas. Você precisará iniciar a sessão novamente e concluir a configuração de login em duas etapas. Recomendamos exportar seu cofre antes de alterar suas configurações de criptografia para evitar perda de dados."
+  "kdfSettingsChangeLogoutWarning": {
+    "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login, if any. We recommend exporting your vault before changing your encryption settings to prevent data loss."
   },
   "secretsManager": {
     "message": "Gerenciador de Segredos"
@@ -7533,6 +7635,12 @@
   "readOnlyCollectionAccess": {
     "message": "Você não tem acesso para gerenciar esta coleção."
   },
+  "grantAddAccessCollectionWarningTitle": {
+    "message": "Falta conceder o Poder de Gerenciar Permissões"
+  },
+  "grantAddAccessCollectionWarning": {
+    "message": "Conceda o poder de gerenciar permissões para habilitar o gerenciamento completo da coleção, incluindo a exclusão da coleção."
+  },
   "grantCollectionAccess": {
     "message": "Conceder acesso de grupos ou membros a esta coleção."
   },
@@ -7540,13 +7648,13 @@
     "message": "Conceder acesso a essa coleção."
   },
   "adminCollectionAccess": {
-    "message": "Administrators can access and manage collections."
+    "message": "Os administradores podem acessar e gerenciar coleções."
   },
   "serviceAccountAccessUpdated": {
     "message": "Acesso à conta de serviço atualizado"
   },
   "commonImportFormats": {
-    "message": "Common formats",
+    "message": "Formatos comuns",
     "description": "Label indicating the most common import formats"
   },
   "maintainYourSubscription": {
@@ -7571,16 +7679,16 @@
     "message": "Saiba mais sobre o gerenciamento de coleção"
   },
   "organizationInformation": {
-    "message": "Organization information"
+    "message": "Informação da Organização"
   },
   "confirmationDetails": {
     "message": "Detalhes da confirmação"
   },
   "smFreeTrialThankYou": {
-    "message": "Thank you for signing up for Bitwarden Secrets Manager!"
+    "message": "Obrigado por se inscrever no Bitwarden Secrets Manager!"
   },
   "smFreeTrialConfirmationEmail": {
-    "message": "We've sent a confirmation email to your email at "
+    "message": "Enviamos um e-mail de confirmação para seu e-mail em "
   },
   "confirmCollectionEnhancementsDialogTitle": {
     "message": "Esta ação é irreversível"
@@ -7636,16 +7744,13 @@
     "message": "Portal do provedor"
   },
   "success": {
-    "message": "Success"
-  },
-  "viewCollection": {
-    "message": "Ver Coleção"
+    "message": "Sucesso"
   },
   "restrictedGroupAccess": {
     "message": "Você não pode se adicionar aos grupos."
   },
-  "restrictedCollectionAccess": {
-    "message": "Você não pode se adicionar às coleções."
+  "cannotAddYourselfToCollections": {
+    "message": "You cannot add yourself to collections."
   },
   "assign": {
     "message": "Atribuir"
@@ -7936,7 +8041,7 @@
     "message": "Você não pode adicionar você mesmo a um grupo."
   },
   "unassignedItemsBannerSelfHost": {
-    "message": "Notice: On May 2, 2024, unassigned organization items will no longer be visible in your All Vaults view across devices and will only be accessible via the Admin Console. Assign these items to a collection from the Admin Console to make them visible."
+    "message": "Aviso: Em 2 de maio de 2024, itens da organização não estarão mais visíveis em sua visualização de Todos os Cofres entre dispositivos e só serão acessíveis por meio do painel de administração. Atribuir estes itens a uma coleção do Console de Administração para torná-los visíveis."
   },
   "unassignedItemsBannerNotice": {
     "message": "Aviso: Itens de organização não atribuídos não estão mais visíveis na sua tela Todos os Cofres através dos dispositivos e agora só são acessíveis por meio do Console de Administração."
@@ -7968,7 +8073,7 @@
     }
   },
   "deleteProviderWarningDescription": {
-    "message": "You must unlink all clients before you can delete $ID$.",
+    "message": "Você deve desvincular todos os clientes antes de excluir $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -7995,53 +8100,53 @@
     "message": "Erro ao atribuir pasta de destino."
   },
   "integrationsAndSdks": {
-    "message": "Integrations & SDKs",
+    "message": "Integrações e SDKs",
     "description": "The title for the section that deals with integrations and SDKs."
   },
   "integrations": {
-    "message": "Integrations"
+    "message": "Integrações"
   },
   "integrationsDesc": {
-    "message": "Automatically sync secrets from Bitwarden Secrets Manager to a third-party service."
+    "message": "Sincronize automaticamente segredos do Bitwarden Secrets Manager para um serviço de terceiros."
   },
   "sdks": {
     "message": "SDKs"
   },
   "sdksDesc": {
-    "message": "Use Bitwarden Secrets Manager SDK in the following programming languages to build your own applications."
+    "message": "Utilize o Bitwarden Secrets Manager SDK nas seguintes linguagens de programação para construir seus próprios aplicativos."
   },
   "setUpGithubActions": {
-    "message": "Set up Github Actions"
+    "message": "Configurar ações do Github"
   },
   "setUpGitlabCICD": {
-    "message": "Set up GitLab CI/CD"
+    "message": "Configurar GitLab CI/CD"
   },
   "setUpAnsible": {
-    "message": "Set up Ansible"
+    "message": "Configurar Ansible"
   },
   "cSharpSDKRepo": {
-    "message": "View C# repository"
+    "message": "Visualizar repositório C#"
   },
   "cPlusPlusSDKRepo": {
-    "message": "View C++ repository"
+    "message": "Visualizar repositório C++"
   },
   "jsWebAssemblySDKRepo": {
-    "message": "View JS WebAssembly repository"
+    "message": "Visualizar repositório WebAssembly JS"
   },
   "javaSDKRepo": {
-    "message": "View Java repository"
+    "message": "Ver repositório Java"
   },
   "pythonSDKRepo": {
-    "message": "View Python repository"
+    "message": "Ver repositório Python"
   },
   "phpSDKRepo": {
-    "message": "View php repository"
+    "message": "Ver repositório PHP"
   },
   "rubySDKRepo": {
-    "message": "View Ruby repository"
+    "message": "Ver repositório Ruby"
   },
   "goSDKRepo": {
-    "message": "View Go repository"
+    "message": "Visualizar repositório Go"
   },
   "createNewClientToManageAsProvider": {
     "message": "Crie uma nova organização de cliente para gerenciar como um Provedor. Posições adicionais serão refletidas no próximo ciclo de faturamento."
@@ -8065,10 +8170,10 @@
     "message": "Novo cliente criado com sucesso"
   },
   "noAccess": {
-    "message": "No access"
+    "message": "Sem acesso"
   },
   "collectionAdminConsoleManaged": {
-    "message": "This collection is only accessible from the admin console"
+    "message": "Esta coleção só é acessível a partir do console de administração"
   },
   "organizationOptionsMenu": {
     "message": "Alternar Menu da Organização"
@@ -8081,5 +8186,47 @@
   },
   "manageBillingFromProviderPortalMessage": {
     "message": "Gerenciar faturamento a partir do Portal do Provedor"
+  },
+  "viewInfo": {
+    "message": "Ver informações"
+  },
+  "viewAccess": {
+    "message": "Acesso à visualização"
+  },
+  "noCollectionsSelected": {
+    "message": "Você não selecionou nenhuma coleção."
+  },
+  "updateName": {
+    "message": "Atualizar nome"
+  },
+  "updatedOrganizationName": {
+    "message": "Nome da organização atualizado"
+  },
+  "providerPlan": {
+    "message": "Provedor de Serviços Gerenciados"
+  },
+  "orgSeats": {
+    "message": "Lugares da Organização"
+  },
+  "providerDiscount": {
+    "message": "Desconto de $AMOUNT$%",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "secureYourInfrastructure": {
+    "message": "Secure your infrastructure"
+  },
+  "protectYourFamilyOrBusiness": {
+    "message": "Protect your family or business"
+  },
+  "upgradeOrganizationCloseSecurityGaps": {
+    "message": "Close security gaps with monitoring reports"
+  },
+  "upgradeOrganizationCloseSecurityGapsDesc": {
+    "message": "Stay ahead of security vulnerabilities by upgrading to a paid plan for enhanced monitoring."
   }
 }

@@ -5808,6 +5808,108 @@
   "forwardedEmailDesc": {
     "message": "Gerar um alias de e-mail com um serviço de reencaminhamento externo."
   },
+  "forwarderError": {
+    "message": "Erro no $SERVICENAME$: $ERRORMESSAGE$",
+    "description": "Reports an error returned by a forwarding service to the user.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      },
+      "errormessage": {
+        "content": "$2",
+        "example": "Invalid characters in domain name."
+      }
+    }
+  },
+  "forwarderGeneratedBy": {
+    "message": "Gerado pelo Bitwarden.",
+    "description": "Displayed with the address on the forwarding service's configuration screen."
+  },
+  "forwarderGeneratedByWithWebsite": {
+    "message": "Site: $WEBSITE$. Gerado pelo Bitwarden.",
+    "description": "Displayed with the address on the forwarding service's configuration screen.",
+    "placeholders": {
+      "WEBSITE": {
+        "content": "$1",
+        "example": "www.example.com"
+      }
+    }
+  },
+  "forwaderInvalidToken": {
+    "message": "Token da API de $SERVICENAME$ inválido",
+    "description": "Displayed when the user's API token is empty or rejected by the forwarding service.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwaderInvalidTokenWithMessage": {
+    "message": "Token da API de $SERVICENAME$ inválido: $ERRORMESSAGE$",
+    "description": "Displayed when the user's API token is rejected by the forwarding service with an error message.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      },
+      "errormessage": {
+        "content": "$2",
+        "example": "Please verify your email address to continue."
+      }
+    }
+  },
+  "forwarderNoAccountId": {
+    "message": "Não foi possível obter o ID da conta de e-mail mascarada de $SERVICENAME$.",
+    "description": "Displayed when the forwarding service fails to return an account ID.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwarderNoDomain": {
+    "message": "Domínio de $SERVICENAME$ inválido.",
+    "description": "Displayed when the domain is empty or domain authorization failed at the forwarding service.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwarderNoUrl": {
+    "message": "URL de $SERVICENAME$ inválido.",
+    "description": "Displayed when the url of the forwarding service wasn't supplied.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwarderUnknownError": {
+    "message": "Ocorreu um erro desconhecido de $SERVICENAME$.",
+    "description": "Displayed when the forwarding service failed due to an unknown error.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwarderUnknownForwarder": {
+    "message": "Reencaminhador desconhecido: '$SERVICENAME$'.",
+    "description": "Displayed when the forwarding service is not supported.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "JustTrust.us"
+      }
+    }
+  },
   "hostname": {
     "message": "Nome de domínio",
     "description": "Part of a URL."
@@ -6486,8 +6588,8 @@
   "editGroupCollectionsDesc": {
     "message": "Conceder aos membros acesso às coleções adicionando-os a este grupo."
   },
-  "editGroupCollectionsRestrictionsDesc": {
-    "message": "Só pode atribuir colecções que gere."
+  "restrictedCollectionAssignmentDesc": {
+    "message": "Só pode atribuir coleções que gere."
   },
   "accessAllCollectionsDesc": {
     "message": "Conceder acesso a todas as coleções atuais e futuras."
@@ -6720,8 +6822,8 @@
   "selectGroups": {
     "message": "Selecionar grupos"
   },
-  "userPermissionOverrideHelper": {
-    "message": "As permissões definidas para um membro substituirão as permissões definidas pelo grupo desse membro"
+  "userPermissionOverrideHelperDesc": {
+    "message": "As permissões definidas para um membro substituirão as permissões definidas pelo grupo desse membro."
   },
   "noMembersOrGroupsAdded": {
     "message": "Não foram adicionados membros ou grupos"
@@ -6912,8 +7014,8 @@
   "updateLowKdfIterationsDesc": {
     "message": "Atualize as suas definições de encriptação para cumprir as novas recomendações de segurança e melhorar a proteção da conta."
   },
-  "changeKdfLoggedOutWarning": {
-    "message": "Ao prosseguir, terminará todas as sessões ativas. Terá de iniciar sessão novamente e concluir a configuração da verificação de dois passos. Recomendamos que exporte o seu cofre antes de alterar as definições de encriptação para evitar a perda de dados."
+  "kdfSettingsChangeLogoutWarning": {
+    "message": "Ao prosseguir, sairá de todas as sessões ativas. Terá de voltar a iniciar sessão e concluir a verificação de dois passos, caso exista. Recomendamos que exporte o seu cofre antes de alterar as definições de encriptação para evitar a perda de dados."
   },
   "secretsManager": {
     "message": "Gestor de Segredos"
@@ -7533,6 +7635,12 @@
   "readOnlyCollectionAccess": {
     "message": "Não tem acesso para gerir esta coleção."
   },
+  "grantAddAccessCollectionWarningTitle": {
+    "message": "Faltam permissões Pode gerir"
+  },
+  "grantAddAccessCollectionWarning": {
+    "message": "Conceda permissões Pode gerir para permitir a gestão completa da coleção, incluindo a eliminação da coleção."
+  },
   "grantCollectionAccess": {
     "message": "Conceder a grupos ou membros acesso a esta coleção."
   },
@@ -7638,14 +7746,11 @@
   "success": {
     "message": "Com sucesso"
   },
-  "viewCollection": {
-    "message": "Ver coleção"
-  },
   "restrictedGroupAccess": {
     "message": "Não se pode adicionar a si próprio a grupos."
   },
-  "restrictedCollectionAccess": {
-    "message": "Não se pode adicionar a si próprio a coleções."
+  "cannotAddYourselfToCollections": {
+    "message": "Não se pode adicionar a si próprio às coleções."
   },
   "assign": {
     "message": "Atribuir"
@@ -8081,5 +8186,47 @@
   },
   "manageBillingFromProviderPortalMessage": {
     "message": "Gira a faturação a partir do Portal do fornecedor"
+  },
+  "viewInfo": {
+    "message": "Ver informações"
+  },
+  "viewAccess": {
+    "message": "Ver acesso"
+  },
+  "noCollectionsSelected": {
+    "message": "Não selecionou nenhuma coleção."
+  },
+  "updateName": {
+    "message": "Atualizar nome"
+  },
+  "updatedOrganizationName": {
+    "message": "Nome da organização atualizado"
+  },
+  "providerPlan": {
+    "message": "Fornecedor de serviços geridos"
+  },
+  "orgSeats": {
+    "message": "Lugares da organização"
+  },
+  "providerDiscount": {
+    "message": "$AMOUNT$% de desconto",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "secureYourInfrastructure": {
+    "message": "Proteja a sua infraestrutura"
+  },
+  "protectYourFamilyOrBusiness": {
+    "message": "Proteja a sua família ou empresa"
+  },
+  "upgradeOrganizationCloseSecurityGaps": {
+    "message": "Close security gaps with monitoring reports"
+  },
+  "upgradeOrganizationCloseSecurityGapsDesc": {
+    "message": "Stay ahead of security vulnerabilities by upgrading to a paid plan for enhanced monitoring."
   }
 }

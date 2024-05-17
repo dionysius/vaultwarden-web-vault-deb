@@ -5808,6 +5808,108 @@
   "forwardedEmailDesc": {
     "message": "Générer un alias de courriel avec un service de transfert externe."
   },
+  "forwarderError": {
+    "message": "Erreur $SERVICENAME$ : $ERRORMESSAGE$",
+    "description": "Reports an error returned by a forwarding service to the user.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      },
+      "errormessage": {
+        "content": "$2",
+        "example": "Invalid characters in domain name."
+      }
+    }
+  },
+  "forwarderGeneratedBy": {
+    "message": "Généré par Bitwarden.",
+    "description": "Displayed with the address on the forwarding service's configuration screen."
+  },
+  "forwarderGeneratedByWithWebsite": {
+    "message": "Site web : $WEBSITE$. Généré par Bitwarden.",
+    "description": "Displayed with the address on the forwarding service's configuration screen.",
+    "placeholders": {
+      "WEBSITE": {
+        "content": "$1",
+        "example": "www.example.com"
+      }
+    }
+  },
+  "forwaderInvalidToken": {
+    "message": "Jeton API $SERVICENAME$ invalide",
+    "description": "Displayed when the user's API token is empty or rejected by the forwarding service.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwaderInvalidTokenWithMessage": {
+    "message": "Jeton API $SERVICENAME$ non valide : $ERRORMESSAGE$",
+    "description": "Displayed when the user's API token is rejected by the forwarding service with an error message.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      },
+      "errormessage": {
+        "content": "$2",
+        "example": "Please verify your email address to continue."
+      }
+    }
+  },
+  "forwarderNoAccountId": {
+    "message": "Impossible d'obtenir l'ID du compte de courriel masqué $SERVICENAME$.",
+    "description": "Displayed when the forwarding service fails to return an account ID.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwarderNoDomain": {
+    "message": "Domaine de $SERVICENAME$ invalide.",
+    "description": "Displayed when the domain is empty or domain authorization failed at the forwarding service.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwarderNoUrl": {
+    "message": "L'URL $SERVICENAME$ invalide.",
+    "description": "Displayed when the url of the forwarding service wasn't supplied.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwarderUnknownError": {
+    "message": "Une erreur $SERVICENAME$ inconnue s'est produite.",
+    "description": "Displayed when the forwarding service failed due to an unknown error.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwarderUnknownForwarder": {
+    "message": "Émetteur inconnu: '$SERVICENAME$'.",
+    "description": "Displayed when the forwarding service is not supported.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "JustTrust.us"
+      }
+    }
+  },
   "hostname": {
     "message": "Nom d'hôte",
     "description": "Part of a URL."
@@ -6486,8 +6588,8 @@
   "editGroupCollectionsDesc": {
     "message": "Accorder l'accès aux collections en les ajoutant à ce groupe."
   },
-  "editGroupCollectionsRestrictionsDesc": {
-    "message": "Vous ne pouvez affecter que les collections que vous gérez."
+  "restrictedCollectionAssignmentDesc": {
+    "message": "Vous pouvez seulement assigner les collections que vous gérez."
   },
   "accessAllCollectionsDesc": {
     "message": "Accorder l'accès à toutes les collections actuelles et futures."
@@ -6720,8 +6822,8 @@
   "selectGroups": {
     "message": "Sélectionner les groupes"
   },
-  "userPermissionOverrideHelper": {
-    "message": "Les permissions définies pour un membre remplaceront les permissions définies par le groupe de ce membre"
+  "userPermissionOverrideHelperDesc": {
+    "message": "Les permissions définies pour un membre remplaceront les permissions définies par le groupe de ce membre."
   },
   "noMembersOrGroupsAdded": {
     "message": "Aucun membre ou groupe ajouté"
@@ -6912,8 +7014,8 @@
   "updateLowKdfIterationsDesc": {
     "message": "Mettez à jour vos paramètres de chiffrement pour répondre à de nouvelles recommandations de sécurité et améliorer la protection de votre compte."
   },
-  "changeKdfLoggedOutWarning": {
-    "message": "En poursuivant, vous serez déconnecté de toutes les sessions actives. Vous devrez vous reconnecter et terminer la configuration de l'authentification à deux facteurs. Nous vous recommandons d'exporter votre coffre avant de modifier vos paramètres de chiffrement afin d'éviter toute perte de données."
+  "kdfSettingsChangeLogoutWarning": {
+    "message": "Effectuer cette action vous déconnectera de toutes les sessions actives. Vous devrez vous connecter à nouveau et compléter votre authentification à 2 facteurs, s'il y a lieu. Nous vous recommandons d'exporter votre coffre avant de modifier vos paramètres de chiffrement pour prévenir la perte de vos données."
   },
   "secretsManager": {
     "message": "Secrets Manager"
@@ -7533,6 +7635,12 @@
   "readOnlyCollectionAccess": {
     "message": "Vous n'avez pas accès à la gestion de cette collection."
   },
+  "grantAddAccessCollectionWarningTitle": {
+    "message": "\"Peut Gérer les Permissions\" manquant"
+  },
+  "grantAddAccessCollectionWarning": {
+    "message": "Accorder \"Peut Gérer les Permissions\" pour permettre une gestion complète de la collection, y compris la suppression de la collection."
+  },
   "grantCollectionAccess": {
     "message": "Accorder l'accès à cette collection aux groupes ou aux membres."
   },
@@ -7638,14 +7746,11 @@
   "success": {
     "message": "Succès"
   },
-  "viewCollection": {
-    "message": "Afficher la Collection"
-  },
   "restrictedGroupAccess": {
     "message": "Vous ne pouvez vous ajoutez vous-même aux groupes."
   },
-  "restrictedCollectionAccess": {
-    "message": "Vous ne pouvez vous ajoutez vous-même aux collections."
+  "cannotAddYourselfToCollections": {
+    "message": "You cannot add yourself to collections."
   },
   "assign": {
     "message": "Assigner"
@@ -7968,7 +8073,7 @@
     }
   },
   "deleteProviderWarningDescription": {
-    "message": "You must unlink all clients before you can delete $ID$.",
+    "message": "Vous devez dissocier tous les clients avant de pouvoir supprimer $ID$.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -8081,5 +8186,47 @@
   },
   "manageBillingFromProviderPortalMessage": {
     "message": "Gérer la facturation depuis le Portail Fournisseur"
+  },
+  "viewInfo": {
+    "message": "Afficher les informations"
+  },
+  "viewAccess": {
+    "message": "Afficher les accès"
+  },
+  "noCollectionsSelected": {
+    "message": "Vous n'avez sélectionné aucune collection."
+  },
+  "updateName": {
+    "message": "Mettre le nom à jour"
+  },
+  "updatedOrganizationName": {
+    "message": "Nom de l'organisation mis à jour"
+  },
+  "providerPlan": {
+    "message": "Service Provider géré"
+  },
+  "orgSeats": {
+    "message": "Licences de l'Organisation"
+  },
+  "providerDiscount": {
+    "message": "Remise de $AMOUNT$%",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "secureYourInfrastructure": {
+    "message": "Sécurisez votre infrastructure"
+  },
+  "protectYourFamilyOrBusiness": {
+    "message": "Protégez votre famille ou votre entreprise"
+  },
+  "upgradeOrganizationCloseSecurityGaps": {
+    "message": "Fermer les failles de sécurité avec des rapports de surveillance"
+  },
+  "upgradeOrganizationCloseSecurityGapsDesc": {
+    "message": "Restez en avance sur les vulnérabilités de sécurité en passant à un plan payant pour une surveillance améliorée."
   }
 }

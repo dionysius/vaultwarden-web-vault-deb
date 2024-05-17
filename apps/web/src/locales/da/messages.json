@@ -5808,6 +5808,108 @@
   "forwardedEmailDesc": {
     "message": "Generér et e-mail alias med en ekstern viderestillingstjeneste."
   },
+  "forwarderError": {
+    "message": "$SERVICENAME$-fejl: $ERRORMESSAGE$",
+    "description": "Reports an error returned by a forwarding service to the user.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      },
+      "errormessage": {
+        "content": "$2",
+        "example": "Invalid characters in domain name."
+      }
+    }
+  },
+  "forwarderGeneratedBy": {
+    "message": "Genereret af Bitwarden.",
+    "description": "Displayed with the address on the forwarding service's configuration screen."
+  },
+  "forwarderGeneratedByWithWebsite": {
+    "message": "Websted: $WEBSITE$. Genereret af Bitwarden.",
+    "description": "Displayed with the address on the forwarding service's configuration screen.",
+    "placeholders": {
+      "WEBSITE": {
+        "content": "$1",
+        "example": "www.example.com"
+      }
+    }
+  },
+  "forwaderInvalidToken": {
+    "message": "Ugyldigt $SERVICENAME$ API-token",
+    "description": "Displayed when the user's API token is empty or rejected by the forwarding service.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwaderInvalidTokenWithMessage": {
+    "message": "Ugyldigt $SERVICENAME$ API-token: $ERRORMESSAGE$",
+    "description": "Displayed when the user's API token is rejected by the forwarding service with an error message.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      },
+      "errormessage": {
+        "content": "$2",
+        "example": "Please verify your email address to continue."
+      }
+    }
+  },
+  "forwarderNoAccountId": {
+    "message": "Kan ikke få $SERVICENAME$ maskeret e-mailkonto-ID.",
+    "description": "Displayed when the forwarding service fails to return an account ID.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwarderNoDomain": {
+    "message": "Ugyldigt $SERVICENAME$-domæne.",
+    "description": "Displayed when the domain is empty or domain authorization failed at the forwarding service.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwarderNoUrl": {
+    "message": "Ugyldig $SERVICENAME$-URL.",
+    "description": "Displayed when the url of the forwarding service wasn't supplied.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwarderUnknownError": {
+    "message": "Ukendt $SERVICENAME$-fejl opstod.",
+    "description": "Displayed when the forwarding service failed due to an unknown error.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwarderUnknownForwarder": {
+    "message": "Ukendt videresender: '$SERVICENAME$'.",
+    "description": "Displayed when the forwarding service is not supported.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "JustTrust.us"
+      }
+    }
+  },
   "hostname": {
     "message": "Værtsnavn",
     "description": "Part of a URL."
@@ -6486,8 +6588,8 @@
   "editGroupCollectionsDesc": {
     "message": "Tildel adgang til samlinger ved at føje dem til denne gruppe."
   },
-  "editGroupCollectionsRestrictionsDesc": {
-    "message": "Der kan kun tildeles samlinger, man selv håndterer."
+  "restrictedCollectionAssignmentDesc": {
+    "message": "Man kan kun tildele samlinger, man selv håndterer."
   },
   "accessAllCollectionsDesc": {
     "message": "Tildel adgang til alle nuværende og fremtidige samlinger."
@@ -6720,8 +6822,8 @@
   "selectGroups": {
     "message": "Vælg grupper"
   },
-  "userPermissionOverrideHelper": {
-    "message": "Tilladelser angivet for et medlem vil erstatte tilladelser angivet af medlemmets gruppe"
+  "userPermissionOverrideHelperDesc": {
+    "message": "Tilladelser angivet for et medlem vil erstatte tilladelser angivet af medlemmets gruppe."
   },
   "noMembersOrGroupsAdded": {
     "message": "Ingen medlemmer eller grupper tilføjet"
@@ -6912,8 +7014,8 @@
   "updateLowKdfIterationsDesc": {
     "message": "Opdatér krypteringsindstillingerne for at opfylde nye sikkerhedsanbefalinger og forbedre kontobeskyttelsen."
   },
-  "changeKdfLoggedOutWarning": {
-    "message": "Fortsættes, logges man ud af alle aktive sessioner. Man vil skulle logge ind igen og færdiggøre opsætningen af totrinsindlogning. For at forhindre datatab anbefales det, at boksen eksporteres, inden krypteringsindstillingerne ændres."
+  "kdfSettingsChangeLogoutWarning": {
+    "message": "Fortsættes, logges alle aktive sessioner af. Man vil skulle logge ind igen og færdiggøre opsætningen af totrinsindlogning. Eksport af boksen inden krypteringsindstillingerne ændres anbefales for at forhindre datatab."
   },
   "secretsManager": {
     "message": "Hemmelighedshåndtering"
@@ -7533,6 +7635,12 @@
   "readOnlyCollectionAccess": {
     "message": "Du har ikke adgang til at håndtere denne samling."
   },
+  "grantAddAccessCollectionWarningTitle": {
+    "message": "Manglende Kan håndtere tilladelser"
+  },
+  "grantAddAccessCollectionWarning": {
+    "message": "Tildel Kan håndtere tilladelser for at tillade fuld samlingshåndtering, herunder sletning af samling."
+  },
   "grantCollectionAccess": {
     "message": "Tildel grupper eller medlemmer adgang til denne samling."
   },
@@ -7638,13 +7746,10 @@
   "success": {
     "message": "Gennemført"
   },
-  "viewCollection": {
-    "message": "Vis samling"
-  },
   "restrictedGroupAccess": {
     "message": "Man kan ikke føje sig selv til grupper."
   },
-  "restrictedCollectionAccess": {
+  "cannotAddYourselfToCollections": {
     "message": "Man kan ikke føje sig selv til samlinger."
   },
   "assign": {
@@ -8081,5 +8186,47 @@
   },
   "manageBillingFromProviderPortalMessage": {
     "message": "Håndter fakturering via udbyderportalen"
+  },
+  "viewInfo": {
+    "message": "Se info"
+  },
+  "viewAccess": {
+    "message": "Se adgang"
+  },
+  "noCollectionsSelected": {
+    "message": "Der er ikke valgt nogen samlinger."
+  },
+  "updateName": {
+    "message": "Opdatér navn"
+  },
+  "updatedOrganizationName": {
+    "message": "Opdateret organisationsnavn"
+  },
+  "providerPlan": {
+    "message": "Administreret Tjenesteudbyder"
+  },
+  "orgSeats": {
+    "message": "Organisationspladser"
+  },
+  "providerDiscount": {
+    "message": "$AMOUNT$% rabat",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "secureYourInfrastructure": {
+    "message": "Sikr infrastrukturen"
+  },
+  "protectYourFamilyOrBusiness": {
+    "message": "Beskyt familien eller virksomheden"
+  },
+  "upgradeOrganizationCloseSecurityGaps": {
+    "message": "Luk sikkerhedshuller med monitoreringsrapporter"
+  },
+  "upgradeOrganizationCloseSecurityGapsDesc": {
+    "message": "Vær opdateret mod sikkerhedssårbarheder ved at opgradere til en betalt abonnementstype for forbedret monitorering."
   }
 }

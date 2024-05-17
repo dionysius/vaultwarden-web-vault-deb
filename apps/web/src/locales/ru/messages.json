@@ -5808,6 +5808,108 @@
   "forwardedEmailDesc": {
     "message": "Создать псевдоним электронной почты для внешней службы пересылки."
   },
+  "forwarderError": {
+    "message": "Ошибка $SERVICENAME$: $ERRORMESSAGE$",
+    "description": "Reports an error returned by a forwarding service to the user.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      },
+      "errormessage": {
+        "content": "$2",
+        "example": "Invalid characters in domain name."
+      }
+    }
+  },
+  "forwarderGeneratedBy": {
+    "message": "Создано Bitwarden.",
+    "description": "Displayed with the address on the forwarding service's configuration screen."
+  },
+  "forwarderGeneratedByWithWebsite": {
+    "message": "Сайт: $WEBSITE$. Создано Bitwarden.",
+    "description": "Displayed with the address on the forwarding service's configuration screen.",
+    "placeholders": {
+      "WEBSITE": {
+        "content": "$1",
+        "example": "www.example.com"
+      }
+    }
+  },
+  "forwaderInvalidToken": {
+    "message": "Неверный токен API $SERVICENAME$",
+    "description": "Displayed when the user's API token is empty or rejected by the forwarding service.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwaderInvalidTokenWithMessage": {
+    "message": "Неверный токен $SERVICENAME$ API: $ERRORMESSAGE$",
+    "description": "Displayed when the user's API token is rejected by the forwarding service with an error message.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      },
+      "errormessage": {
+        "content": "$2",
+        "example": "Please verify your email address to continue."
+      }
+    }
+  },
+  "forwarderNoAccountId": {
+    "message": "Не удалось получить скрытый идентификатор email аккаунта $SERVICENAME$.",
+    "description": "Displayed when the forwarding service fails to return an account ID.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwarderNoDomain": {
+    "message": "Недопустимый домен $SERVICENAME$.",
+    "description": "Displayed when the domain is empty or domain authorization failed at the forwarding service.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwarderNoUrl": {
+    "message": "Некорректный URL $SERVICENAME$.",
+    "description": "Displayed when the url of the forwarding service wasn't supplied.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwarderUnknownError": {
+    "message": "Произошла неизвестная ошибка $SERVICENAME$.",
+    "description": "Displayed when the forwarding service failed due to an unknown error.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwarderUnknownForwarder": {
+    "message": "Неизвестный форвардер: '$SERVICENAME$'.",
+    "description": "Displayed when the forwarding service is not supported.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "JustTrust.us"
+      }
+    }
+  },
   "hostname": {
     "message": "Имя хоста",
     "description": "Part of a URL."
@@ -6486,7 +6588,7 @@
   "editGroupCollectionsDesc": {
     "message": "Предоставить доступ к коллекциям, при добавлении их в эту группу."
   },
-  "editGroupCollectionsRestrictionsDesc": {
+  "restrictedCollectionAssignmentDesc": {
     "message": "Вы можете назначать только те коллекции, которыми управляете."
   },
   "accessAllCollectionsDesc": {
@@ -6720,8 +6822,8 @@
   "selectGroups": {
     "message": "Выбрать группы"
   },
-  "userPermissionOverrideHelper": {
-    "message": "Разрешения, установленные для участника, заменят разрешения, установленные группой этого участника"
+  "userPermissionOverrideHelperDesc": {
+    "message": "Разрешения, установленные для участника, заменят разрешения, установленные группой этого участника."
   },
   "noMembersOrGroupsAdded": {
     "message": "Не добавлены участники или группы"
@@ -6912,8 +7014,8 @@
   "updateLowKdfIterationsDesc": {
     "message": "Обновите настройки шифрования в соответствии с новыми рекомендациями по безопасности и улучшите защиту аккаунта."
   },
-  "changeKdfLoggedOutWarning": {
-    "message": "При продолжении все активные сессии будут завершены. Вам потребуется авторизоваться повторно и выполнить настройку двухэтапной аутентификации. Мы рекомендуем экспортировать хранилище перед изменением настроек шифрования, чтобы предотвратить потерю данных."
+  "kdfSettingsChangeLogoutWarning": {
+    "message": "При продолжении все активные сессии будут завершены. Вам потребуется авторизоваться повторно и выполнить двухэтапную аутентификацию, если она включена. Мы рекомендуем экспортировать хранилище перед изменением настроек шифрования, чтобы предотвратить потерю данных."
   },
   "secretsManager": {
     "message": "Менеджер секретов"
@@ -7533,6 +7635,12 @@
   "readOnlyCollectionAccess": {
     "message": "У вас нет доступа к управлению этой коллекцией."
   },
+  "grantAddAccessCollectionWarningTitle": {
+    "message": "Недостаточно полномочий для управления"
+  },
+  "grantAddAccessCollectionWarning": {
+    "message": "Предоставить возможность управлять разрешениями коллекций, включая их удаление."
+  },
   "grantCollectionAccess": {
     "message": "Предоставить группам или участникам доступ к этой коллекции."
   },
@@ -7638,13 +7746,10 @@
   "success": {
     "message": "Успешно"
   },
-  "viewCollection": {
-    "message": "Посмотреть коллекцию"
-  },
   "restrictedGroupAccess": {
     "message": "Нельзя добавить самого себя в группы."
   },
-  "restrictedCollectionAccess": {
+  "cannotAddYourselfToCollections": {
     "message": "Нельзя добавить самого себя в коллекции."
   },
   "assign": {
@@ -8081,5 +8186,47 @@
   },
   "manageBillingFromProviderPortalMessage": {
     "message": "Управление биллингом на портале провайдера"
+  },
+  "viewInfo": {
+    "message": "Просмотр информации"
+  },
+  "viewAccess": {
+    "message": "Просмотр доступа"
+  },
+  "noCollectionsSelected": {
+    "message": "Вы не выбрали ни одной коллекции."
+  },
+  "updateName": {
+    "message": "Обновить название"
+  },
+  "updatedOrganizationName": {
+    "message": "Название организации обновлено"
+  },
+  "providerPlan": {
+    "message": "Поставщик управляемых услуг"
+  },
+  "orgSeats": {
+    "message": "Места организации"
+  },
+  "providerDiscount": {
+    "message": "Скидка $AMOUNT$%",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "secureYourInfrastructure": {
+    "message": "Защитите вашу инфраструктуру"
+  },
+  "protectYourFamilyOrBusiness": {
+    "message": "Защитите свою семью или бизнес"
+  },
+  "upgradeOrganizationCloseSecurityGaps": {
+    "message": "Close security gaps with monitoring reports"
+  },
+  "upgradeOrganizationCloseSecurityGapsDesc": {
+    "message": "Stay ahead of security vulnerabilities by upgrading to a paid plan for enhanced monitoring."
   }
 }

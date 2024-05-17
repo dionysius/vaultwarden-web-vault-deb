@@ -5808,6 +5808,108 @@
   "forwardedEmailDesc": {
     "message": "Email álnév generálása külső továbbító szolgáltatással."
   },
+  "forwarderError": {
+    "message": "$SERVICENAME$ hiba: $ERRORMESSAGE$",
+    "description": "Reports an error returned by a forwarding service to the user.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      },
+      "errormessage": {
+        "content": "$2",
+        "example": "Invalid characters in domain name."
+      }
+    }
+  },
+  "forwarderGeneratedBy": {
+    "message": "Generálta: Bitwarden.",
+    "description": "Displayed with the address on the forwarding service's configuration screen."
+  },
+  "forwarderGeneratedByWithWebsite": {
+    "message": "Webhely: $WEBSITE$. Generálta: Bitwarden.",
+    "description": "Displayed with the address on the forwarding service's configuration screen.",
+    "placeholders": {
+      "WEBSITE": {
+        "content": "$1",
+        "example": "www.example.com"
+      }
+    }
+  },
+  "forwaderInvalidToken": {
+    "message": "$SERVICENAME$ API vezérjel érvénytelen.",
+    "description": "Displayed when the user's API token is empty or rejected by the forwarding service.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwaderInvalidTokenWithMessage": {
+    "message": "$SERVICENAME$ API vezérjel érvénytelen: $ERRORMESSAGE$",
+    "description": "Displayed when the user's API token is rejected by the forwarding service with an error message.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      },
+      "errormessage": {
+        "content": "$2",
+        "example": "Please verify your email address to continue."
+      }
+    }
+  },
+  "forwarderNoAccountId": {
+    "message": "Nem lehet beolvasni $SERVICENAME$ maszkolt email fiók azonosítót.",
+    "description": "Displayed when the forwarding service fails to return an account ID.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwarderNoDomain": {
+    "message": "$SERVICENAME$ domain érvénytelen.",
+    "description": "Displayed when the domain is empty or domain authorization failed at the forwarding service.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwarderNoUrl": {
+    "message": "$SERVICENAME$ webcím érvénytelen.",
+    "description": "Displayed when the url of the forwarding service wasn't supplied.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwarderUnknownError": {
+    "message": "Ismeretlen $SERVICENAME$ hiba történt.",
+    "description": "Displayed when the forwarding service failed due to an unknown error.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwarderUnknownForwarder": {
+    "message": "Ismeretlen továbbító: '$SERVICENAME$'.",
+    "description": "Displayed when the forwarding service is not supported.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "JustTrust.us"
+      }
+    }
+  },
   "hostname": {
     "message": "Kiszolglónév",
     "description": "Part of a URL."
@@ -6486,7 +6588,7 @@
   "editGroupCollectionsDesc": {
     "message": "Hozzáférés kiosztása gyűjteményekhez csoporthoz adásukkal."
   },
-  "editGroupCollectionsRestrictionsDesc": {
+  "restrictedCollectionAssignmentDesc": {
     "message": "Csak a saját kezelésű gyűjteményeket lehet hozzárendelni."
   },
   "accessAllCollectionsDesc": {
@@ -6720,7 +6822,7 @@
   "selectGroups": {
     "message": "Csoportok kiválasztása"
   },
-  "userPermissionOverrideHelper": {
+  "userPermissionOverrideHelperDesc": {
     "message": "A tagok számára beállított jogosultságok felváltják az adott tag csoportja által beállított jogosultságokat."
   },
   "noMembersOrGroupsAdded": {
@@ -6912,8 +7014,8 @@
   "updateLowKdfIterationsDesc": {
     "message": "Frissítsük a titkosítási beállításokat, hogy megfeleljünk az új biztonsági ajánlásoknak és javítsuk a fiókvédelmet."
   },
-  "changeKdfLoggedOutWarning": {
-    "message": "A folytatással minden aktív munkamenetből kijelentkezünkk. Újra be kell jelentkezni és ki kell tölteni a kétlépcsős bejelentkezési beállításokat. Az adatvesztés elkerülése érdekében célszerű a titkosítási beállítások módosítása előtt a széf exportálása."
+  "kdfSettingsChangeLogoutWarning": {
+    "message": "A folytatás kijelentkeztet az összes aktív munkamenetből. Újra be kell jelentkezni és kétlépcsős bejelentkezést kell végrehajtani, ha van ilyen. Célszerű a titkosítási beállítások módosítása előtt a széf exportálása az adatvesztés elkerülése érdekében."
   },
   "secretsManager": {
     "message": "Titkos kód kezelő"
@@ -7533,6 +7635,12 @@
   "readOnlyCollectionAccess": {
     "message": "Nincs jogosultság ennek a gyűjteménynek a kezelésére."
   },
+  "grantAddAccessCollectionWarningTitle": {
+    "message": "Missing Can Manage Permissions"
+  },
+  "grantAddAccessCollectionWarning": {
+    "message": "Grant Can manage permissions to allow full collection management including deletion of collection."
+  },
   "grantCollectionAccess": {
     "message": "Adjunk hozzáférést csoportoknak vagy személyeknek eennél a gyűjteménynél."
   },
@@ -7638,13 +7746,10 @@
   "success": {
     "message": "Sikeres"
   },
-  "viewCollection": {
-    "message": "Gyűjtemény megtekintése"
-  },
   "restrictedGroupAccess": {
     "message": "Nem adhadjuk magunkat a csoporthoz."
   },
-  "restrictedCollectionAccess": {
+  "cannotAddYourselfToCollections": {
     "message": "Nem adhadjuk magunkat a gyűjteményhez."
   },
   "assign": {
@@ -8081,5 +8186,47 @@
   },
   "manageBillingFromProviderPortalMessage": {
     "message": "A számlázás kezelése a szolgáltatói portálon keresztül"
+  },
+  "viewInfo": {
+    "message": "Infó megtekintése"
+  },
+  "viewAccess": {
+    "message": "Hozzáférés megtekintése"
+  },
+  "noCollectionsSelected": {
+    "message": "Nincs semmilyen gyűjtemény kiválasztva."
+  },
+  "updateName": {
+    "message": "Név frissítés"
+  },
+  "updatedOrganizationName": {
+    "message": "Frissített szervezeti név"
+  },
+  "providerPlan": {
+    "message": "Menedzselt szolgáltató"
+  },
+  "orgSeats": {
+    "message": "Szervezeti helyek"
+  },
+  "providerDiscount": {
+    "message": "$AMOUNT$% kedvezmény",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "secureYourInfrastructure": {
+    "message": "Infrastruktúra biztosítása"
+  },
+  "protectYourFamilyOrBusiness": {
+    "message": "Család vagy üzlet megvédése"
+  },
+  "upgradeOrganizationCloseSecurityGaps": {
+    "message": "Close security gaps with monitoring reports"
+  },
+  "upgradeOrganizationCloseSecurityGapsDesc": {
+    "message": "Stay ahead of security vulnerabilities by upgrading to a paid plan for enhanced monitoring."
   }
 }

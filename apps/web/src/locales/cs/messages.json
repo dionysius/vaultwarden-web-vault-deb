@@ -5808,6 +5808,108 @@
   "forwardedEmailDesc": {
     "message": "Vygeneruje alias e-mailu pomocí externí přeposílací služby."
   },
+  "forwarderError": {
+    "message": "Chyba $SERVICENAME$: $ERRORMESSAGE$",
+    "description": "Reports an error returned by a forwarding service to the user.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      },
+      "errormessage": {
+        "content": "$2",
+        "example": "Invalid characters in domain name."
+      }
+    }
+  },
+  "forwarderGeneratedBy": {
+    "message": "Vygenerováno Bitwardenem.",
+    "description": "Displayed with the address on the forwarding service's configuration screen."
+  },
+  "forwarderGeneratedByWithWebsite": {
+    "message": "Webová stránka: $WEBSITE$. Vygenerováno Bitwardenem.",
+    "description": "Displayed with the address on the forwarding service's configuration screen.",
+    "placeholders": {
+      "WEBSITE": {
+        "content": "$1",
+        "example": "www.example.com"
+      }
+    }
+  },
+  "forwaderInvalidToken": {
+    "message": "Neplatný token API $SERVICENAME$",
+    "description": "Displayed when the user's API token is empty or rejected by the forwarding service.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwaderInvalidTokenWithMessage": {
+    "message": "Neplatný token API $SERVICENAME$: $ERRORMESSAGE$",
+    "description": "Displayed when the user's API token is rejected by the forwarding service with an error message.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      },
+      "errormessage": {
+        "content": "$2",
+        "example": "Please verify your email address to continue."
+      }
+    }
+  },
+  "forwarderNoAccountId": {
+    "message": "Nelze získat maskované ID e-mailového účtu $SERVICENAME$.",
+    "description": "Displayed when the forwarding service fails to return an account ID.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwarderNoDomain": {
+    "message": "Neplatná doména $SERVICENAME$.",
+    "description": "Displayed when the domain is empty or domain authorization failed at the forwarding service.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwarderNoUrl": {
+    "message": "Neplatné URL $SERVICENAME$.",
+    "description": "Displayed when the url of the forwarding service wasn't supplied.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwarderUnknownError": {
+    "message": "Došlo k neznámé chybě $SERVICENAME$.",
+    "description": "Displayed when the forwarding service failed due to an unknown error.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwarderUnknownForwarder": {
+    "message": "Neznámý přeposílatel: $SERVICENAME$.",
+    "description": "Displayed when the forwarding service is not supported.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "JustTrust.us"
+      }
+    }
+  },
   "hostname": {
     "message": "Název hostitele",
     "description": "Part of a URL."
@@ -6486,7 +6588,7 @@
   "editGroupCollectionsDesc": {
     "message": "Udělí členům přístup ke kolekcím přidáním do této skupiny."
   },
-  "editGroupCollectionsRestrictionsDesc": {
+  "restrictedCollectionAssignmentDesc": {
     "message": "Můžete přiřadit jen Vámi spravované kolekce."
   },
   "accessAllCollectionsDesc": {
@@ -6720,8 +6822,8 @@
   "selectGroups": {
     "message": "Zvolte skupiny"
   },
-  "userPermissionOverrideHelper": {
-    "message": "Oprávnění nastavená pro člena nahradí oprávnění nastavená skupinou tohoto člena"
+  "userPermissionOverrideHelperDesc": {
+    "message": "Oprávnění nastavená pro člena nahradí oprávnění nastavená skupinou tohoto člena."
   },
   "noMembersOrGroupsAdded": {
     "message": "Nebyli přidáni žádní členové ani skupiny"
@@ -6912,8 +7014,8 @@
   "updateLowKdfIterationsDesc": {
     "message": "Aktualizujte své nastavení šifrování tak, aby splňovalo nová bezpečnostní doporučení a zlepšilo ochranu účtu."
   },
-  "changeKdfLoggedOutWarning": {
-    "message": "Pokračováním se odhlásíte ze všech aktivních relací. Budete se muset znovu přihlásit a dokončit nastavení dvoufázového přihlášení. Před změnou nastavení šifrování doporučujeme exportovat trezor, aby nedošlo ke ztrátě dat."
+  "kdfSettingsChangeLogoutWarning": {
+    "message": "Pokračováním se odhlásíte ze všech aktivních relací. Budete se muset znovu přihlásit a dokončit nastavení dvoufázového přihlášení, pokud nějaké máte. Před změnou nastavení šifrování doporučujeme exportovat trezor, aby nedošlo ke ztrátě dat."
   },
   "secretsManager": {
     "message": "Správce tajných klíčů"
@@ -7533,6 +7635,12 @@
   "readOnlyCollectionAccess": {
     "message": "Nemáte přístup ke správě této kolekce."
   },
+  "grantAddAccessCollectionWarningTitle": {
+    "message": "Chybějící oprávnění \"Může spravovat\""
+  },
+  "grantAddAccessCollectionWarning": {
+    "message": "Udělte oprávnění \"Může spravovat\" pro úplnou správu kolekce, včetně jejího smazání."
+  },
   "grantCollectionAccess": {
     "message": "Udělí skupinám nebo členům přístup k této kolekci."
   },
@@ -7638,13 +7746,10 @@
   "success": {
     "message": "Úspěch"
   },
-  "viewCollection": {
-    "message": "Zobrazit kolekci"
-  },
   "restrictedGroupAccess": {
     "message": "Do skupin nemůžete přidat sami sebe."
   },
-  "restrictedCollectionAccess": {
+  "cannotAddYourselfToCollections": {
     "message": "Do kolekcí nemůžete přidat sami sebe."
   },
   "assign": {
@@ -8081,5 +8186,47 @@
   },
   "manageBillingFromProviderPortalMessage": {
     "message": "Spravovat fakturaci z portálu poskytovatele"
+  },
+  "viewInfo": {
+    "message": "Zobrazit informace"
+  },
+  "viewAccess": {
+    "message": "Zobrazit přístup"
+  },
+  "noCollectionsSelected": {
+    "message": "Nevybrali jste žádné kolekce."
+  },
+  "updateName": {
+    "message": "Aktualizovat název"
+  },
+  "updatedOrganizationName": {
+    "message": "Aktualizovaný název organizace"
+  },
+  "providerPlan": {
+    "message": "Spravovaný poskytovatel služby"
+  },
+  "orgSeats": {
+    "message": "Počet uživatelů v organizaci"
+  },
+  "providerDiscount": {
+    "message": "Sleva $AMOUNT$ %",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "secureYourInfrastructure": {
+    "message": "Zabezpečte Vaši infrastrukturu"
+  },
+  "protectYourFamilyOrBusiness": {
+    "message": "Ochraňte svou rodinu nebo byznys"
+  },
+  "upgradeOrganizationCloseSecurityGaps": {
+    "message": "Close security gaps with monitoring reports"
+  },
+  "upgradeOrganizationCloseSecurityGapsDesc": {
+    "message": "Stay ahead of security vulnerabilities by upgrading to a paid plan for enhanced monitoring."
   }
 }
