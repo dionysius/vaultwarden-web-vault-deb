@@ -1,13 +1,15 @@
-import { Location } from "@angular/common";
+import { CommonModule, Location } from "@angular/common";
 import { Component } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Observable, combineLatest, switchMap } from "rxjs";
 
+import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { AvatarService } from "@bitwarden/common/auth/abstractions/avatar.service";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 import { UserId } from "@bitwarden/common/types/guid";
+import { AvatarModule } from "@bitwarden/components";
 
 export type CurrentAccount = {
   id: UserId;
@@ -20,6 +22,8 @@ export type CurrentAccount = {
 @Component({
   selector: "app-current-account",
   templateUrl: "current-account.component.html",
+  standalone: true,
+  imports: [CommonModule, JslibModule, AvatarModule],
 })
 export class CurrentAccountComponent {
   currentAccount$: Observable<CurrentAccount>;

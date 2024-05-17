@@ -126,6 +126,7 @@ import "../platform/popup/locales";
     PopupHeaderComponent,
     UserVerificationDialogComponent,
     PopupSectionHeaderComponent,
+    CurrentAccountComponent,
   ],
   declarations: [
     ActionButtonsComponent,
@@ -188,7 +189,6 @@ import "../platform/popup/locales";
     HelpAndFeedbackComponent,
     AutofillComponent,
     EnvironmentSelectorComponent,
-    CurrentAccountComponent,
     AccountSwitcherComponent,
     VaultV2Component,
   ],
