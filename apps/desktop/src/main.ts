@@ -119,9 +119,6 @@ export class Main {
     this.logService = new ElectronLogMainService(null, app.getPath("userData"));
 
     const storageDefaults: any = {};
-    // Default vault timeout to "on restart", and action to "lock"
-    storageDefaults["global.vaultTimeout"] = -1;
-    storageDefaults["global.vaultTimeoutAction"] = "lock";
     this.storageService = new ElectronStorageService(app.getPath("userData"), storageDefaults);
     this.memoryStorageService = new MemoryStorageService();
     this.memoryStorageForStateProviders = new MemoryStorageServiceForStateProviders();
