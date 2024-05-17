@@ -153,7 +153,11 @@
       <p bitTypography="body1">{{ subscriptionDesc }}</p>
       <ng-container
         *ngIf="
-          subscription && canAdjustSeats && !subscription.cancelled && !subscriptionMarkedForCancel
+          subscription &&
+          canAdjustSeats &&
+          !subscription.cancelled &&
+          !subscriptionMarkedForCancel &&
+          (!customerDiscount || customerDiscount.id != 'sm-standalone')
         "
       >
         <h3 bitTypography="h3" class="tw-mt-7">{{ "passwordManager" | i18n }}</h3>
@@ -176,32 +180,36 @@
       >
         {{ "removeSponsorship" | i18n }}
       </button>
-      <h4 bitTypography="h4" class="tw-mt-9">{{ "storage" | i18n }}</h4>
-      <p bitTypography="body1">
-        {{ "subscriptionStorage" | i18n: sub.maxStorageGb || 0 : sub.storageName || "0 MB" }}
-      </p>
-      <bit-progress [barWidth]="storagePercentage" bgColor="success"></bit-progress>
-      <ng-container *ngIf="subscription && !subscription.cancelled && !subscriptionMarkedForCancel">
-        <div class="tw-mt-3">
-          <div class="tw-flex tw-space-x-2">
-            <button
-              bitButton
-              buttonType="secondary"
-              type="button"
-              [bitAction]="adjustStorage(true)"
-            >
-              {{ "addStorage" | i18n }}
-            </button>
-            <button
-              bitButton
-              buttonType="secondary"
-              type="button"
-              [bitAction]="adjustStorage(false)"
-            >
-              {{ "removeStorage" | i18n }}
-            </button>
+      <ng-container *ngIf="!customerDiscount || customerDiscount.id != 'sm-standalone'">
+        <h4 bitTypography="h4" class="tw-mt-9">{{ "storage" | i18n }}</h4>
+        <p bitTypography="body1">
+          {{ "subscriptionStorage" | i18n: sub.maxStorageGb || 0 : sub.storageName || "0 MB" }}
+        </p>
+        <bit-progress [barWidth]="storagePercentage" bgColor="success"></bit-progress>
+        <ng-container
+          *ngIf="subscription && !subscription.cancelled && !subscriptionMarkedForCancel"
+        >
+          <div class="tw-mt-3">
+            <div class="tw-flex tw-space-x-2">
+              <button
+                bitButton
+                buttonType="secondary"
+                type="button"
+                [bitAction]="adjustStorage(true)"
+              >
+                {{ "addStorage" | i18n }}
+              </button>
+              <button
+                bitButton
+                buttonType="secondary"
+                type="button"
+                [bitAction]="adjustStorage(false)"
+              >
+                {{ "removeStorage" | i18n }}
+              </button>
+            </div>
           </div>
-        </div>
+        </ng-container>
       </ng-container>
       <ng-container *ngIf="showAdjustSecretsManager">
         <h3 bitTypography="h3" class="tw-mt-9">{{ "secretsManager" | i18n }}</h3>
