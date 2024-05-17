@@ -74,7 +74,10 @@
             </ng-container>
             <ng-template #nonEnterprisePlans>
               <ng-container
-                *ngIf="selectableProduct.product === productTypes.Teams; else fullFeatureList"
+                *ngIf="
+                  selectableProduct.product === productTypes.Teams && teamsStarterPlanIsAvailable;
+                  else fullFeatureList
+                "
               >
                 <ul class="tw-pl-0 tw-list-inside tw-mb-0">
                   <li>{{ "includeAllTeamsStarterFeatures" | i18n }}</li>
