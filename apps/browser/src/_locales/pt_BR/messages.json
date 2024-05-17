@@ -375,7 +375,7 @@
     "message": "Outros"
   },
   "unlockMethods": {
-    "message": "Unlock options"
+    "message": "Opções de desbloqueio"
   },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "Configure um método de desbloqueio para alterar o tempo limite do cofre."
@@ -384,10 +384,10 @@
     "message": "Configure um método de desbloqueio nas Configurações"
   },
   "sessionTimeoutHeader": {
-    "message": "Session timeout"
+    "message": "Tempo limite da sessão"
   },
   "otherOptions": {
-    "message": "Other options"
+    "message": "Outras opções"
   },
   "rateExtension": {
     "message": "Avaliar a Extensão"
@@ -697,10 +697,10 @@
     "message": "Pedir para atualizar a senha de uma credencial quando uma alteração for detectada em um site. Aplica-se a todas as contas conectadas."
   },
   "enableUsePasskeys": {
-    "message": "Pedir para salvar e usar as senhas"
+    "message": "Pedir para salvar e usar chaves de acesso"
   },
   "usePasskeysDesc": {
-    "message": "Pedir para salvar novas senhas ou entrar com as senhas armazenadas no seu cofre. Aplica-se a todas as contas conectadas."
+    "message": "Pedir para salvar novas chaves de acesso ou entrar com as mesmas armazenadas no seu cofre. Aplica-se a todas as contas conectadas."
   },
   "notificationChangeDesc": {
     "message": "Você quer atualizar esta senha no Bitwarden?"
@@ -2177,6 +2177,108 @@
   "forwardedEmailDesc": {
     "message": "Gere um apelido de e-mail com um serviço de encaminhamento externo."
   },
+  "forwarderError": {
+    "message": "Erro $SERVICENAME$: $ERRORMESSAGE$",
+    "description": "Reports an error returned by a forwarding service to the user.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      },
+      "errormessage": {
+        "content": "$2",
+        "example": "Invalid characters in domain name."
+      }
+    }
+  },
+  "forwarderGeneratedBy": {
+    "message": "Gerado pelo Bitwarden.",
+    "description": "Displayed with the address on the forwarding service's configuration screen."
+  },
+  "forwarderGeneratedByWithWebsite": {
+    "message": "Site: $WEBSITE$. Gerado pelo Bitwarden.",
+    "description": "Displayed with the address on the forwarding service's configuration screen.",
+    "placeholders": {
+      "WEBSITE": {
+        "content": "$1",
+        "example": "www.example.com"
+      }
+    }
+  },
+  "forwaderInvalidToken": {
+    "message": "Token de API $SERVICENAME$ inválido",
+    "description": "Displayed when the user's API token is empty or rejected by the forwarding service.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwaderInvalidTokenWithMessage": {
+    "message": "Token de API $SERVICENAME$ inválido: $ERRORMESSAGE$",
+    "description": "Displayed when the user's API token is rejected by the forwarding service with an error message.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      },
+      "errormessage": {
+        "content": "$2",
+        "example": "Please verify your email address to continue."
+      }
+    }
+  },
+  "forwarderNoAccountId": {
+    "message": "Não foi possível obter a máscara do ID da conta de email $SERVICENAME$.",
+    "description": "Displayed when the forwarding service fails to return an account ID.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwarderNoDomain": {
+    "message": "Domínio $SERVICENAME$ inválido.",
+    "description": "Displayed when the domain is empty or domain authorization failed at the forwarding service.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwarderNoUrl": {
+    "message": "URL $SERVICENAME$ inválida.",
+    "description": "Displayed when the url of the forwarding service wasn't supplied.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwarderUnknownError": {
+    "message": "Ocorreu um erro $SERVICENAME$ desconhecido.",
+    "description": "Displayed when the forwarding service failed due to an unknown error.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwarderUnknownForwarder": {
+    "message": "Encaminhador desconhecido: '$SERVICENAME$'.",
+    "description": "Displayed when the forwarding service is not supported.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "JustTrust.us"
+      }
+    }
+  },
   "hostname": {
     "message": "Nome do host",
     "description": "Part of a URL."
@@ -2795,22 +2897,22 @@
     "message": "Chave de acesso"
   },
   "passkeyNotCopied": {
-    "message": "A senha não será copiada"
+    "message": "A chave de acesso não será copiada"
   },
   "passkeyNotCopiedAlert": {
-    "message": "A senha não será copiada para o item clonado. Deseja continuar clonando este item?"
+    "message": "A chave de acesso não será copiada para o item clonado. Deseja continuar clonando este item?"
   },
   "passkeyFeatureIsNotImplementedForAccountsWithoutMasterPassword": {
-    "message": "Verificação exigida pelo site inicial. Esse recurso ainda não está implementado para contas sem senha mestra."
+    "message": "Verificação requerida pelo site que a iniciou. Esse recurso ainda não está implementado para contas sem senha mestra."
   },
   "logInWithPasskey": {
-    "message": "Fazer login com a senha?"
+    "message": "Fazer login com chave de acesso?"
   },
   "passkeyAlreadyExists": {
-    "message": "Uma senha já existe para este aplicativo."
+    "message": "Uma chave de acesso já existe para este aplicativo."
   },
   "noPasskeysFoundForThisApplication": {
-    "message": "Nenhuma senha encontrada para este aplicativo."
+    "message": "Nenhuma chave de acesso encontrada para este aplicativo."
   },
   "noMatchingPasskeyLogin": {
     "message": "Você não tem um login correspondente para este site."
@@ -2819,22 +2921,22 @@
     "message": "Confirmar"
   },
   "savePasskey": {
-    "message": "Salvar senha"
+    "message": "Salvar chave de acesso"
   },
   "savePasskeyNewLogin": {
-    "message": "Salvar senha como novo login"
+    "message": "Salvar chave de acesso como um novo login"
   },
   "choosePasskey": {
     "message": "Escolha um login para salvar esta chave de acesso"
   },
   "passkeyItem": {
-    "message": "Passkey Item"
+    "message": "Item de chave de acesso"
   },
   "overwritePasskey": {
-    "message": "Sobrescrever senha?"
+    "message": "Sobrescrever chave de acesso?"
   },
   "overwritePasskeyAlert": {
-    "message": "Este item já contém uma senha. Tem certeza que deseja substituir a senha de acesso atual?"
+    "message": "Este item já contém uma chave de acesso. Tem certeza que deseja substituir a atual?"
   },
   "featureNotSupported": {
     "message": "Recurso ainda não suportado"
@@ -3010,7 +3112,7 @@
     "message": "Sucesso"
   },
   "removePasskey": {
-    "message": "Remover senha"
+    "message": "Remover chave de acesso"
   },
   "passkeyRemoved": {
     "message": "Chave de acesso removida"
@@ -3033,18 +3135,21 @@
     "message": "Painel de administração"
   },
   "accountSecurity": {
-    "message": "Account security"
+    "message": "Segurança da conta"
   },
   "notifications": {
-    "message": "Notifications"
+    "message": "Notificações"
   },
   "appearance": {
-    "message": "Appearance"
+    "message": "Aparência"
   },
   "errorAssigningTargetCollection": {
     "message": "Erro ao atribuir coleção de destino."
   },
   "errorAssigningTargetFolder": {
     "message": "Erro ao atribuir pasta de destino."
+  },
+  "new": {
+    "message": "New"
   }
 }

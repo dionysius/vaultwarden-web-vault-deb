@@ -125,7 +125,7 @@
     "message": "Agregar identidad"
   },
   "unlockVaultMenu": {
-    "message": "Desbloquea la caja fuerte"
+    "message": "Desbloquea tu caja fuerte"
   },
   "loginToVaultMenu": {
     "message": "Inicia sesión en tu caja fuerte"
@@ -229,7 +229,7 @@
     "message": "Centro de ayuda de Bitwarden"
   },
   "communityForums": {
-    "message": "Explorar los foros de la comunidad Bitwarden"
+    "message": "Explora los foros de la comunidad Bitwarden"
   },
   "contactSupport": {
     "message": "Contactar al soporte de Bitwarden"
@@ -384,7 +384,7 @@
     "message": "Configure un método de desbloqueo en Configuración"
   },
   "sessionTimeoutHeader": {
-    "message": "Session timeout"
+    "message": "Tiempo de sesión agotado"
   },
   "otherOptions": {
     "message": "Otras opciones"
@@ -685,7 +685,7 @@
     "message": "¿Debería Bitwarden recordar esta contraseña por ti?"
   },
   "notificationAddSave": {
-    "message": "Sí, guardar ahora"
+    "message": "Guardar"
   },
   "enableChangedPasswordNotification": {
     "message": "Solicitar la actualización de los datos de inicio de sesión existentes"
@@ -700,7 +700,7 @@
     "message": "Solicitar guardar y usar claves de acceso"
   },
   "usePasskeysDesc": {
-    "message": "Solicitar guardar claves de paso nuevas o acceder con claves de paso almacenadas en su caja fuerte. Se aplica a todas las cuentas accedidas."
+    "message": "Solicita guardar nuevas claves de acceso o inicia sesión con claves de acceso almacenadas en tu caja fuerte. Se aplica a todas las cuentas que hayan iniciado sesión."
   },
   "notificationChangeDesc": {
     "message": "¿Desea actualizar esta contraseña en Bitwarden?"
@@ -709,7 +709,7 @@
     "message": "Actualizar"
   },
   "notificationUnlockDesc": {
-    "message": "Desbloquea tu bóveda Bitwarden para completar la solicitud de autollenado."
+    "message": "Desbloquea tu caja fuerte de Bitwarden para completar la solicitud de autocompletado."
   },
   "notificationUnlock": {
     "message": "Desbloquear"
@@ -2177,6 +2177,108 @@
   "forwardedEmailDesc": {
     "message": "Genera un alias de correo electrónico con un servicio de reenvío externo."
   },
+  "forwarderError": {
+    "message": "$SERVICENAME$ error: $ERRORMESSAGE$",
+    "description": "Reports an error returned by a forwarding service to the user.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      },
+      "errormessage": {
+        "content": "$2",
+        "example": "Invalid characters in domain name."
+      }
+    }
+  },
+  "forwarderGeneratedBy": {
+    "message": "Generado por Bitwarden.",
+    "description": "Displayed with the address on the forwarding service's configuration screen."
+  },
+  "forwarderGeneratedByWithWebsite": {
+    "message": "Sitio web: $WEBSITE$. Generado por Bitwarden.",
+    "description": "Displayed with the address on the forwarding service's configuration screen.",
+    "placeholders": {
+      "WEBSITE": {
+        "content": "$1",
+        "example": "www.example.com"
+      }
+    }
+  },
+  "forwaderInvalidToken": {
+    "message": "Token de API $SERVICENAME$ no válido",
+    "description": "Displayed when the user's API token is empty or rejected by the forwarding service.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwaderInvalidTokenWithMessage": {
+    "message": "Token de API $SERVICENAME$ no válido: $ERRORMESSAGE$",
+    "description": "Displayed when the user's API token is rejected by the forwarding service with an error message.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      },
+      "errormessage": {
+        "content": "$2",
+        "example": "Please verify your email address to continue."
+      }
+    }
+  },
+  "forwarderNoAccountId": {
+    "message": "No se puede obtener el ID de la cuenta de correo electrónico enmascarado de $SERVICENAME$.",
+    "description": "Displayed when the forwarding service fails to return an account ID.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwarderNoDomain": {
+    "message": "Dominio $SERVICENAME$ no válido.",
+    "description": "Displayed when the domain is empty or domain authorization failed at the forwarding service.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwarderNoUrl": {
+    "message": "URL $SERVICENAME$ no válida.",
+    "description": "Displayed when the url of the forwarding service wasn't supplied.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwarderUnknownError": {
+    "message": "Se ha producido un error $SERVICENAME$ desconocido.",
+    "description": "Displayed when the forwarding service failed due to an unknown error.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "SimpleLogin"
+      }
+    }
+  },
+  "forwarderUnknownForwarder": {
+    "message": "Redirigidor desconocido: '$SERVICENAME$'.",
+    "description": "Displayed when the forwarding service is not supported.",
+    "placeholders": {
+      "servicename": {
+        "content": "$1",
+        "example": "JustTrust.us"
+      }
+    }
+  },
   "hostname": {
     "message": "Nombre del servidor",
     "description": "Part of a URL."
@@ -2804,13 +2906,13 @@
     "message": "Verificación requerida por el sitio inicial. Esta característica aún no está implementada para cuentas sin contraseña maestra."
   },
   "logInWithPasskey": {
-    "message": "¿Iniciar sesión con contraseña?"
+    "message": "¿Iniciar sesión con clave de acceso?"
   },
   "passkeyAlreadyExists": {
     "message": "Ya existe una clave de acceso para esta aplicación."
   },
   "noPasskeysFoundForThisApplication": {
-    "message": "No se encontraron contraseñas para esta aplicación."
+    "message": "No se encontraron claves de acceso para esta aplicación."
   },
   "noMatchingPasskeyLogin": {
     "message": "No tiene un inicio de sesión que coincida para este sitio."
@@ -2819,10 +2921,10 @@
     "message": "Confirmar"
   },
   "savePasskey": {
-    "message": "Guardar clave"
+    "message": "Guardar clave de acceso"
   },
   "savePasskeyNewLogin": {
-    "message": "Guardar contraseña como nuevo inicio de sesión"
+    "message": "Guardar clave de acceso como nuevo inicio de sesión"
   },
   "choosePasskey": {
     "message": "Elija un inicio de sesión para guardar esta clave de acceso"
@@ -2831,7 +2933,7 @@
     "message": "Elemento de clave de acceso"
   },
   "overwritePasskey": {
-    "message": "¿Sobrescribir contraseña?"
+    "message": "¿Sobrescribir clave de acceso?"
   },
   "overwritePasskeyAlert": {
     "message": "Este elemento ya contiene una clave de acceso. ¿Está seguro de que desea sobrescribir la contraseña actual?"
@@ -3010,16 +3112,16 @@
     "message": "Éxito"
   },
   "removePasskey": {
-    "message": "Eliminar passkey"
+    "message": "Eliminar clave de acceso"
   },
   "passkeyRemoved": {
-    "message": "Passkey eliminada"
+    "message": "Clave de acceso eliminada"
   },
   "unassignedItemsBannerNotice": {
-    "message": "Notice: Unassigned organization items are no longer visible in the All Vaults view and only accessible via the Admin Console."
+    "message": "Aviso: Los elementos de organización no asignados ya no son visibles en la vista de Todas las cajas fuertes y solo son accesibles a través de la Consola de Administrador."
   },
   "unassignedItemsBannerSelfHostNotice": {
-    "message": "Notice: On May 16, 2024, unassigned organization items will no longer be visible in the All Vaults view and will only be accessible via the Admin Console."
+    "message": "Aviso: El 16 de mayo de 2024, los elementos de organización no asignados no serán visibles en la vista de Todas las cajas fuertes y solo serán accesibles a través de la Consola de Administrador."
   },
   "unassignedItemsBannerCTAPartOne": {
     "message": "Asignar estos elementos a una colección de",
@@ -3046,5 +3148,8 @@
   },
   "errorAssigningTargetFolder": {
     "message": "Error al asignar la carpeta de destino."
+  },
+  "new": {
+    "message": "Nuevo"
   }
 }
