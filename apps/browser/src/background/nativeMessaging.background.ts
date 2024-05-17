@@ -321,6 +321,15 @@ export class NativeMessagingBackground {
             type: "danger",
           });
           break;
+        } else if (message.response === "not unlocked") {
+          this.messagingService.send("showDialog", {
+            title: { key: "biometricsNotUnlockedTitle" },
+            content: { key: "biometricsNotUnlockedDesc" },
+            acceptButtonText: { key: "ok" },
+            cancelButtonText: null,
+            type: "danger",
+          });
+          break;
         } else if (message.response === "canceled") {
           break;
         }
