@@ -20,28 +20,10 @@ import { AutofillSettingsServiceAbstraction } from "@bitwarden/common/autofill/s
 import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions/account/billing-account-profile-state.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
-import { StateFactory } from "@bitwarden/common/platform/factories/state-factory";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
-import { GlobalState } from "@bitwarden/common/platform/models/domain/global-state";
 import { CipherType } from "@bitwarden/common/vault/enums";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 
-import { autofillSettingsServiceFactory } from "../../autofill/background/service_factories/autofill-settings-service.factory";
-import { Account } from "../../models/account";
-import { billingAccountProfileStateServiceFactory } from "../../platform/background/service-factories/billing-account-profile-state-service.factory";
-import { CachedServices } from "../../platform/background/service-factories/factory-options";
-import {
-  i18nServiceFactory,
-  I18nServiceInitOptions,
-} from "../../platform/background/service-factories/i18n-service.factory";
-import {
-  logServiceFactory,
-  LogServiceInitOptions,
-} from "../../platform/background/service-factories/log-service.factory";
-import {
-  stateServiceFactory,
-  StateServiceInitOptions,
-} from "../../platform/background/service-factories/state-service.factory";
 import { BrowserStateService } from "../../platform/services/abstractions/browser-state.service";
 
 import { InitContextMenuItems } from "./abstractions/main-context-menu-handler";
@@ -167,41 +149,6 @@ export class MainContextMenuHandler {
     private logService: LogService,
     private billingAccountProfileStateService: BillingAccountProfileStateService,
   ) {}
-
-  static async mv3Create(cachedServices: CachedServices) {
-    const stateFactory = new StateFactory(GlobalState, Account);
-    const serviceOptions: StateServiceInitOptions & I18nServiceInitOptions & LogServiceInitOptions =
-      {
-        cryptoFunctionServiceOptions: {
-          win: self,
-        },
-        encryptServiceOptions: {
-          logMacFailures: false,
-        },
-        i18nServiceOptions: {
-          systemLanguage: chrome.i18n.getUILanguage(),
-        },
-        logServiceOptions: {
-          isDev: false,
-        },
-        stateServiceOptions: {
-          stateFactory: stateFactory,
-        },
-        platformUtilsServiceOptions: {
-          clipboardWriteCallback: () => Promise.resolve(),
-          biometricCallback: () => Promise.resolve(false),
-          win: self,
-        },
-      };
-
-    return new MainContextMenuHandler(
-      await stateServiceFactory(cachedServices, serviceOptions),
-      await autofillSettingsServiceFactory(cachedServices, serviceOptions),
-      await i18nServiceFactory(cachedServices, serviceOptions),
-      await logServiceFactory(cachedServices, serviceOptions),
-      await billingAccountProfileStateServiceFactory(cachedServices, serviceOptions),
-    );
-  }
 
   /**
    *

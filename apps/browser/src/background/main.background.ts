@@ -1178,7 +1178,7 @@ export default class MainBackground {
   }
 
   async refreshBadge() {
-    await new UpdateBadge(self).run({ existingServices: this as any });
+    await new UpdateBadge(self, this).run();
   }
 
   async refreshMenu(forLocked = false) {
