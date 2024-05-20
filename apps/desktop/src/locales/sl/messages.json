@@ -1414,10 +1414,10 @@
     "message": "Preverite za Bitwarden."
   },
   "unlockWithTouchId": {
-    "message": "Unlock with Touch ID"
+    "message": "Odkleni z biometriko"
   },
   "additionalTouchIdSettings": {
-    "message": "Additional Touch ID settings"
+    "message": "Dodatne nastavitve za Touch ID"
   },
   "touchIdConsentMessage": {
     "message": "odklenite vaš trezor"
@@ -1426,10 +1426,10 @@
     "message": "Ask for Windows Hello on app start"
   },
   "autoPromptTouchId": {
-    "message": "Ask for Touch ID on app start"
+    "message": "Biometrično preverjanje ob zagonu aplikacije"
   },
   "requirePasswordOnStart": {
-    "message": "Require password or PIN on app start"
+    "message": "Ob zagonu zahteva geslo ali PIN"
   },
   "recommendedForSecurity": {
     "message": "Recommended for security."
@@ -1499,7 +1499,7 @@
     "message": "One or more organization policies are affecting your generator settings."
   },
   "vaultTimeoutAction": {
-    "message": "Vault timeout action"
+    "message": "Dejanje po časovni omejitvi trezorja"
   },
   "vaultTimeoutActionLockDesc": {
     "message": "Master password or other unlock method is required to access your vault again."
@@ -1618,7 +1618,7 @@
     "message": "Terms of Service and Privacy Policy have not been acknowledged."
   },
   "enableBrowserIntegration": {
-    "message": "Allow browser integration"
+    "message": "Dovoli integracijo z brskalnikom"
   },
   "enableBrowserIntegrationDesc": {
     "message": "Used for biometrics in browser."
@@ -1630,7 +1630,7 @@
     "message": "Use your Bitwarden vault when browsing with DuckDuckGo."
   },
   "browserIntegrationUnsupportedTitle": {
-    "message": "Browser integration not supported"
+    "message": "Integracija z brskalnikom ni podprta"
   },
   "browserIntegrationErrorTitle": {
     "message": "Error enabling browser integration"
@@ -2339,7 +2339,7 @@
     "message": "Deny login"
   },
   "approveLoginRequests": {
-    "message": "Approve login requests"
+    "message": "Odobri zahtevke za prijavo"
   },
   "logInConfirmedForEmailOnDevice": {
     "message": "Login confirmed for $EMAIL$ on $DEVICE$",
@@ -2376,7 +2376,7 @@
     "message": "This request is no longer valid."
   },
   "approveLoginRequestDesc": {
-    "message": "Use this device to approve login requests made from other devices."
+    "message": "S to napravo odobri zahtevke za prijavo, ki pridejo z drugih naprav."
   },
   "confirmLoginAtemptForMail": {
     "message": "Confirm login attempt for $EMAIL$",
