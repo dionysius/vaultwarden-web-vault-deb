@@ -6,9 +6,9 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { Icon } from "@bitwarden/components";
 
 export interface AnonLayoutWrapperData {
-  pageTitle: string;
-  pageSubtitle: string;
-  pageIcon: Icon;
+  pageTitle?: string;
+  pageSubtitle?: string;
+  pageIcon?: Icon;
 }
 
 @Component({
