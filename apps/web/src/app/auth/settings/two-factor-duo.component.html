@@ -29,9 +29,9 @@
               {{ "twoStepLoginProviderEnabled" | i18n }}
             </app-callout>
             <img class="float-right ml-3 mfaType2" alt="Duo logo" />
-            <strong>{{ "twoFactorDuoIntegrationKey" | i18n }}:</strong> {{ ikey }}
+            <strong>{{ "twoFactorDuoClientId" | i18n }}:</strong> {{ clientId }}
             <br />
-            <strong>{{ "twoFactorDuoSecretKey" | i18n }}:</strong> {{ skey }}
+            <strong>{{ "twoFactorDuoClientSecret" | i18n }}:</strong> {{ clientSecret }}
             <br />
             <strong>{{ "twoFactorDuoApiHostname" | i18n }}:</strong> {{ host }}
           </ng-container>
@@ -39,25 +39,25 @@
             <img class="float-right ml-3 mfaType2" alt="Duo logo" />
             <p>{{ "twoFactorDuoDesc" | i18n }}</p>
             <div class="form-group">
-              <label for="ikey">{{ "twoFactorDuoIntegrationKey" | i18n }}</label>
+              <label for="ClientId">{{ "twoFactorDuoClientId" | i18n }}</label>
               <input
-                id="ikey"
+                id="ClientId"
                 type="text"
-                name="IntegrationKey"
+                name="ClientId"
                 class="form-control"
-                [(ngModel)]="ikey"
+                [(ngModel)]="clientId"
                 required
                 appInputVerbatim
               />
             </div>
             <div class="form-group">
-              <label for="skey">{{ "twoFactorDuoSecretKey" | i18n }}</label>
+              <label for="ClientSecret">{{ "twoFactorDuoClientSecret" | i18n }}</label>
               <input
-                id="skey"
+                id="ClientSecret"
                 type="password"
-                name="SecretKey"
+                name="ClientSecret"
                 class="form-control"
-                [(ngModel)]="skey"
+                [(ngModel)]="clientSecret"
                 required
                 appInputVerbatim
                 autocomplete="new-password"

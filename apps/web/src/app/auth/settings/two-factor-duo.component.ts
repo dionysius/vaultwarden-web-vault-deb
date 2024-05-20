@@ -19,8 +19,8 @@ import { TwoFactorBaseComponent } from "./two-factor-base.component";
 })
 export class TwoFactorDuoComponent extends TwoFactorBaseComponent {
   type = TwoFactorProviderType.Duo;
-  ikey: string;
-  skey: string;
+  clientId: string;
+  clientSecret: string;
   host: string;
   formPromise: Promise<TwoFactorDuoResponse>;
 
@@ -59,8 +59,8 @@ export class TwoFactorDuoComponent extends TwoFactorBaseComponent {
 
   protected async enable() {
     const request = await this.buildRequestModel(UpdateTwoFactorDuoRequest);
-    request.integrationKey = this.ikey;
-    request.secretKey = this.skey;
+    request.integrationKey = this.clientId;
+    request.secretKey = this.clientSecret;
     request.host = this.host;
 
     return super.enable(async () => {
@@ -78,8 +78,8 @@ export class TwoFactorDuoComponent extends TwoFactorBaseComponent {
   }
 
   private processResponse(response: TwoFactorDuoResponse) {
-    this.ikey = response.integrationKey;
-    this.skey = response.secretKey;
+    this.clientId = response.integrationKey;
+    this.clientSecret = response.secretKey;
     this.host = response.host;
     this.enabled = response.enabled;
   }
