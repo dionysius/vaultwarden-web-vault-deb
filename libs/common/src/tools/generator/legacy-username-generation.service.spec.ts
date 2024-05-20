@@ -94,7 +94,7 @@ describe("LegacyUsernameGenerationService", () => {
     it("should generate a catchall username", async () => {
       const options = { type: "catchall" } as UsernameGeneratorOptions;
       const catchall = createGenerator<CatchallGenerationOptions>(null, null);
-      catchall.generate.mockReturnValue(Promise.resolve("catchall@example.com"));
+      catchall.generate.mockResolvedValue("catchall@example.com");
       const generator = new LegacyUsernameGenerationService(
         null,
         null,
@@ -118,7 +118,7 @@ describe("LegacyUsernameGenerationService", () => {
     it("should generate an EFF word username", async () => {
       const options = { type: "word" } as UsernameGeneratorOptions;
       const effWord = createGenerator<EffUsernameGenerationOptions>(null, null);
-      effWord.generate.mockReturnValue(Promise.resolve("eff word"));
+      effWord.generate.mockResolvedValue("eff word");
       const generator = new LegacyUsernameGenerationService(
         null,
         null,
@@ -142,7 +142,7 @@ describe("LegacyUsernameGenerationService", () => {
     it("should generate a subaddress username", async () => {
       const options = { type: "subaddress" } as UsernameGeneratorOptions;
       const subaddress = createGenerator<SubaddressGenerationOptions>(null, null);
-      subaddress.generate.mockReturnValue(Promise.resolve("subaddress@example.com"));
+      subaddress.generate.mockResolvedValue("subaddress@example.com");
       const generator = new LegacyUsernameGenerationService(
         null,
         null,
@@ -170,7 +170,7 @@ describe("LegacyUsernameGenerationService", () => {
         forwardedService: Forwarders.AddyIo.id,
       } as UsernameGeneratorOptions;
       const addyIo = createGenerator<SelfHostedApiOptions & EmailDomainOptions>(null, null);
-      addyIo.generate.mockReturnValue(Promise.resolve("addyio@example.com"));
+      addyIo.generate.mockResolvedValue("addyio@example.com");
       const generator = new LegacyUsernameGenerationService(
         null,
         null,
@@ -196,7 +196,7 @@ describe("LegacyUsernameGenerationService", () => {
     it("should generate a catchall username", async () => {
       const options = { type: "catchall" } as UsernameGeneratorOptions;
       const catchall = createGenerator<CatchallGenerationOptions>(null, null);
-      catchall.generate.mockReturnValue(Promise.resolve("catchall@example.com"));
+      catchall.generate.mockResolvedValue("catchall@example.com");
       const generator = new LegacyUsernameGenerationService(
         null,
         null,
@@ -222,7 +222,7 @@ describe("LegacyUsernameGenerationService", () => {
     it("should generate a subaddress username", async () => {
       const options = { type: "subaddress" } as UsernameGeneratorOptions;
       const subaddress = createGenerator<SubaddressGenerationOptions>(null, null);
-      subaddress.generate.mockReturnValue(Promise.resolve("subaddress@example.com"));
+      subaddress.generate.mockResolvedValue("subaddress@example.com");
       const generator = new LegacyUsernameGenerationService(
         null,
         null,
@@ -254,7 +254,7 @@ describe("LegacyUsernameGenerationService", () => {
         website: "example.com",
       } as UsernameGeneratorOptions;
       const addyIo = createGenerator<SelfHostedApiOptions & EmailDomainOptions>(null, null);
-      addyIo.generate.mockReturnValue(Promise.resolve("addyio@example.com"));
+      addyIo.generate.mockResolvedValue("addyio@example.com");
       const generator = new LegacyUsernameGenerationService(
         null,
         null,
@@ -287,7 +287,7 @@ describe("LegacyUsernameGenerationService", () => {
         website: "example.com",
       } as UsernameGeneratorOptions;
       const duckDuckGo = createGenerator<ApiOptions>(null, null);
-      duckDuckGo.generate.mockReturnValue(Promise.resolve("ddg@example.com"));
+      duckDuckGo.generate.mockResolvedValue("ddg@example.com");
       const generator = new LegacyUsernameGenerationService(
         null,
         null,
@@ -318,7 +318,7 @@ describe("LegacyUsernameGenerationService", () => {
         website: "example.com",
       } as UsernameGeneratorOptions;
       const fastmail = createGenerator<ApiOptions & EmailPrefixOptions>(null, null);
-      fastmail.generate.mockReturnValue(Promise.resolve("fastmail@example.com"));
+      fastmail.generate.mockResolvedValue("fastmail@example.com");
       const generator = new LegacyUsernameGenerationService(
         null,
         null,
@@ -349,7 +349,7 @@ describe("LegacyUsernameGenerationService", () => {
         website: "example.com",
       } as UsernameGeneratorOptions;
       const firefoxRelay = createGenerator<ApiOptions>(null, null);
-      firefoxRelay.generate.mockReturnValue(Promise.resolve("firefoxrelay@example.com"));
+      firefoxRelay.generate.mockResolvedValue("firefoxrelay@example.com");
       const generator = new LegacyUsernameGenerationService(
         null,
         null,
@@ -381,7 +381,7 @@ describe("LegacyUsernameGenerationService", () => {
         website: "example.com",
       } as UsernameGeneratorOptions;
       const forwardEmail = createGenerator<ApiOptions & EmailDomainOptions>(null, null);
-      forwardEmail.generate.mockReturnValue(Promise.resolve("forwardemail@example.com"));
+      forwardEmail.generate.mockResolvedValue("forwardemail@example.com");
       const generator = new LegacyUsernameGenerationService(
         null,
         null,
@@ -414,7 +414,7 @@ describe("LegacyUsernameGenerationService", () => {
         website: "example.com",
       } as UsernameGeneratorOptions;
       const simpleLogin = createGenerator<SelfHostedApiOptions>(null, null);
-      simpleLogin.generate.mockReturnValue(Promise.resolve("simplelogin@example.com"));
+      simpleLogin.generate.mockResolvedValue("simplelogin@example.com");
       const generator = new LegacyUsernameGenerationService(
         null,
         null,

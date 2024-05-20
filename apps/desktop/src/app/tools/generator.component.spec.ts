@@ -8,7 +8,6 @@ import { AccountService } from "@bitwarden/common/auth/abstractions/account.serv
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 import { UsernameGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/username";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
@@ -35,10 +34,6 @@ describe("GeneratorComponent", () => {
         {
           provide: UsernameGenerationServiceAbstraction,
           useValue: mock<UsernameGenerationServiceAbstraction>(),
-        },
-        {
-          provide: StateService,
-          useValue: mock<StateService>(),
         },
         {
           provide: PlatformUtilsService,

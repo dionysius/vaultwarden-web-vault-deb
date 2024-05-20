@@ -10,9 +10,10 @@ import { CryptoService } from "../../../platform/abstractions/crypto.service";
 import { EncryptService } from "../../../platform/abstractions/encrypt.service";
 import { StateProvider } from "../../../platform/state";
 import { UserId } from "../../../types/guid";
+import { UserKey } from "../../../types/key";
 import { DefaultPolicyEvaluator } from "../default-policy-evaluator";
-import { DUCK_DUCK_GO_FORWARDER } from "../key-definitions";
-import { SecretState } from "../state/secret-state";
+import { DUCK_DUCK_GO_FORWARDER, DUCK_DUCK_GO_BUFFER } from "../key-definitions";
+import { BufferedState } from "../state/buffered-state";
 
 import { ForwarderGeneratorStrategy } from "./forwarder-generator-strategy";
 import { DefaultDuckDuckGoOptions } from "./forwarders/duck-duck-go";
@@ -30,6 +31,10 @@ class TestForwarder extends ForwarderGeneratorStrategy<ApiOptions> {
   get key() {
     // arbitrary.
     return DUCK_DUCK_GO_FORWARDER;
+  }
+
+  get rolloverKey() {
+    return DUCK_DUCK_GO_BUFFER;
   }
 
   defaults$ = (userId: UserId) => {
@@ -51,13 +56,22 @@ describe("ForwarderGeneratorStrategy", () => {
   const keyService = mock<CryptoService>();
   const stateProvider = new FakeStateProvider(mockAccountServiceWith(SomeUser));
 
+  beforeEach(() => {
+    const keyAvailable = of({} as UserKey);
+    keyService.getInMemoryUserKeyFor$.mockReturnValue(keyAvailable);
+  });
+
+  afterEach(() => {
+    jest.resetAllMocks();
+  });
+
   describe("durableState", () => {
     it("constructs a secret state", () => {
       const strategy = new TestForwarder(encryptService, keyService, stateProvider);
 
       const result = strategy.durableState(SomeUser);
 
-      expect(result).toBeInstanceOf(SecretState);
+      expect(result).toBeInstanceOf(BufferedState);
     });
 
     it("returns the same secret state for a single user", () => {

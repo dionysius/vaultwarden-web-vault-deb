@@ -23,12 +23,8 @@ import { DefaultGeneratorService } from ".";
 function mockPolicyService(config?: { state?: BehaviorSubject<Policy[]> }) {
   const service = mock<PolicyService>();
 
-  // FIXME: swap out the mock return value when `getAll$` becomes available
   const stateValue = config?.state ?? new BehaviorSubject<Policy[]>([null]);
   service.getAll$.mockReturnValue(stateValue);
-
-  // const stateValue = config?.state ?? new BehaviorSubject<Policy[]>(null);
-  // service.getAll$.mockReturnValue(stateValue);
 
   return service;
 }

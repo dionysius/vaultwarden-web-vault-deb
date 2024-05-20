@@ -59,15 +59,6 @@ describe("Email subaddress list generation strategy", () => {
     });
   });
 
-  describe("cache_ms", () => {
-    it("should be a positive non-zero number", () => {
-      const legacy = mock<UsernameGenerationServiceAbstraction>();
-      const strategy = new CatchallGeneratorStrategy(legacy, null);
-
-      expect(strategy.cache_ms).toBeGreaterThan(0);
-    });
-  });
-
   describe("policy", () => {
     it("should use password generator policy", () => {
       const legacy = mock<UsernameGenerationServiceAbstraction>();

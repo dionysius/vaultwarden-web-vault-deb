@@ -6,7 +6,7 @@ import { EncryptService } from "../../../../platform/abstractions/encrypt.servic
 import { I18nService } from "../../../../platform/abstractions/i18n.service";
 import { StateProvider } from "../../../../platform/state";
 import { UserId } from "../../../../types/guid";
-import { FIREFOX_RELAY_FORWARDER } from "../../key-definitions";
+import { FIREFOX_RELAY_FORWARDER, FIREFOX_RELAY_BUFFER } from "../../key-definitions";
 import { ForwarderGeneratorStrategy } from "../forwarder-generator-strategy";
 import { Forwarders } from "../options/constants";
 import { ApiOptions } from "../options/forwarder-options";
@@ -38,6 +38,11 @@ export class FirefoxRelayForwarder extends ForwarderGeneratorStrategy<ApiOptions
   /** {@link ForwarderGeneratorStrategy.key} */
   get key() {
     return FIREFOX_RELAY_FORWARDER;
+  }
+
+  /** {@link ForwarderGeneratorStrategy.rolloverKey} */
+  get rolloverKey() {
+    return FIREFOX_RELAY_BUFFER;
   }
 
   /** {@link ForwarderGeneratorStrategy.defaults$} */

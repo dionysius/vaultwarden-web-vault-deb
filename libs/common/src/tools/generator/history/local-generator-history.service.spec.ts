@@ -1,5 +1,5 @@
 import { mock } from "jest-mock-extended";
-import { firstValueFrom } from "rxjs";
+import { firstValueFrom, of } from "rxjs";
 
 import { FakeStateProvider, awaitAsync, mockAccountServiceWith } from "../../../../spec";
 import { CryptoService } from "../../../platform/abstractions/crypto.service";
@@ -24,6 +24,7 @@ describe("LocalGeneratorHistoryService", () => {
     encryptService.encrypt.mockImplementation((p) => Promise.resolve(p as unknown as EncString));
     encryptService.decryptToUtf8.mockImplementation((c) => Promise.resolve(c.encryptedString));
     keyService.getUserKey.mockImplementation(() => Promise.resolve(userKey));
+    keyService.getInMemoryUserKeyFor$.mockImplementation(() => of(true as unknown as UserKey));
   });
 
   afterEach(() => {

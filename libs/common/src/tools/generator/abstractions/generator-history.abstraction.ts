@@ -38,6 +38,12 @@ export abstract class GeneratorHistoryService {
    */
   take: (userId: UserId, credential: string) => Promise<GeneratedCredential | null>;
 
+  /** Deletes a user's credential history.
+   *  @param userId identifies the user taking the credential.
+   *  @returns A promise that completes when the history is cleared.
+   */
+  clear: (userId: UserId) => Promise<GeneratedCredential[]>;
+
   /** Lists all credentials for a user.
    *  @param userId identifies the user listing the credential.
    *  @remarks This field is eventually consistent with `track` and `take` operations.

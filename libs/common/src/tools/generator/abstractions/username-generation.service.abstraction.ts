@@ -1,3 +1,5 @@
+import { Observable } from "rxjs";
+
 import { UsernameGeneratorOptions } from "../username/username-generation-options";
 
 /** @deprecated Use {@link GeneratorService} with a username {@link GeneratorStrategy} instead. */
@@ -8,5 +10,6 @@ export abstract class UsernameGenerationServiceAbstraction {
   generateCatchall: (options: UsernameGeneratorOptions) => Promise<string>;
   generateForwarded: (options: UsernameGeneratorOptions) => Promise<string>;
   getOptions: () => Promise<UsernameGeneratorOptions>;
+  getOptions$: () => Observable<UsernameGeneratorOptions>;
   saveOptions: (options: UsernameGeneratorOptions) => Promise<void>;
 }

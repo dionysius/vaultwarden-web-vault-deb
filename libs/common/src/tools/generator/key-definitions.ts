@@ -1,9 +1,14 @@
-import { GENERATOR_DISK, GENERATOR_MEMORY, UserKeyDefinition } from "../../platform/state";
+import { Jsonify } from "type-fest";
+
+import { GENERATOR_DISK, UserKeyDefinition } from "../../platform/state";
 
 import { GeneratedCredential } from "./history/generated-credential";
+import { LegacyPasswordHistoryDecryptor } from "./history/legacy-password-history-decryptor";
 import { GeneratorNavigation } from "./navigation/generator-navigation";
 import { PassphraseGenerationOptions } from "./passphrase/passphrase-generation-options";
+import { GeneratedPasswordHistory } from "./password/generated-password-history";
 import { PasswordGenerationOptions } from "./password/password-generation-options";
+import { BufferedKeyDefinition } from "./state/buffered-key-definition";
 import { SecretClassifier } from "./state/secret-classifier";
 import { SecretKeyDefinition } from "./state/secret-key-definition";
 import { CatchallGenerationOptions } from "./username/catchall-generator-options";
@@ -18,11 +23,11 @@ import { SubaddressGenerationOptions } from "./username/subaddress-generator-opt
 
 /** plaintext password generation options */
 export const GENERATOR_SETTINGS = new UserKeyDefinition<GeneratorNavigation>(
-  GENERATOR_MEMORY,
+  GENERATOR_DISK,
   "generatorSettings",
   {
     deserializer: (value) => value,
-    clearOn: ["lock", "logout"],
+    clearOn: ["logout"],
   },
 );
 
@@ -136,6 +141,66 @@ export const SIMPLE_LOGIN_FORWARDER = new UserKeyDefinition<SelfHostedApiOptions
   },
 );
 
+/** backing store configuration for {@link Forwarders.AddyIo} */
+export const ADDY_IO_BUFFER = new BufferedKeyDefinition<SelfHostedApiOptions & EmailDomainOptions>(
+  GENERATOR_DISK,
+  "addyIoBuffer",
+  {
+    deserializer: (value) => value,
+    clearOn: ["logout"],
+  },
+);
+
+/** backing store configuration for {@link Forwarders.DuckDuckGo} */
+export const DUCK_DUCK_GO_BUFFER = new BufferedKeyDefinition<ApiOptions>(
+  GENERATOR_DISK,
+  "duckDuckGoBuffer",
+  {
+    deserializer: (value) => value,
+    clearOn: ["logout"],
+  },
+);
+
+/** backing store configuration for {@link Forwarders.FastMail} */
+export const FASTMAIL_BUFFER = new BufferedKeyDefinition<ApiOptions & EmailPrefixOptions>(
+  GENERATOR_DISK,
+  "fastmailBuffer",
+  {
+    deserializer: (value) => value,
+    clearOn: ["logout"],
+  },
+);
+
+/** backing store configuration for {@link Forwarders.FireFoxRelay} */
+export const FIREFOX_RELAY_BUFFER = new BufferedKeyDefinition<ApiOptions>(
+  GENERATOR_DISK,
+  "firefoxRelayBuffer",
+  {
+    deserializer: (value) => value,
+    clearOn: ["logout"],
+  },
+);
+
+/** backing store configuration for {@link Forwarders.ForwardEmail} */
+export const FORWARD_EMAIL_BUFFER = new BufferedKeyDefinition<ApiOptions & EmailDomainOptions>(
+  GENERATOR_DISK,
+  "forwardEmailBuffer",
+  {
+    deserializer: (value) => value,
+    clearOn: ["logout"],
+  },
+);
+
+/** backing store configuration for {@link forwarders.SimpleLogin} */
+export const SIMPLE_LOGIN_BUFFER = new BufferedKeyDefinition<SelfHostedApiOptions>(
+  GENERATOR_DISK,
+  "simpleLoginBuffer",
+  {
+    deserializer: (value) => value,
+    clearOn: ["logout"],
+  },
+);
+
 /** encrypted password generation history */
 export const GENERATOR_HISTORY = SecretKeyDefinition.array(
   GENERATOR_DISK,
@@ -146,3 +211,24 @@ export const GENERATOR_HISTORY = SecretKeyDefinition.array(
     clearOn: ["logout"],
   },
 );
+
+/** encrypted password generation history subject to migration */
+export const GENERATOR_HISTORY_BUFFER = new BufferedKeyDefinition<
+  GeneratedPasswordHistory[],
+  GeneratedCredential[],
+  LegacyPasswordHistoryDecryptor
+>(GENERATOR_DISK, "localGeneratorHistoryBuffer", {
+  deserializer(history) {
+    const items = history as Jsonify<GeneratedPasswordHistory>[];
+    return items?.map((h) => new GeneratedPasswordHistory(h.password, h.date));
+  },
+  async isValid(history) {
+    return history.length ? true : false;
+  },
+  async map(history, decryptor) {
+    const credentials = await decryptor.decrypt(history);
+    const mapped = credentials.map((c) => new GeneratedCredential(c.password, "password", c.date));
+    return mapped;
+  },
+  clearOn: ["logout"],
+});

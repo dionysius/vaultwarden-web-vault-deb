@@ -1,4 +1,4 @@
-import { map, OperatorFunction } from "rxjs";
+import { distinctUntilChanged, map, OperatorFunction } from "rxjs";
 
 /**
  * An observable operator that reduces an emitted collection to a single object,
@@ -16,5 +16,23 @@ export function reduceCollection<Item, Accumulator>(
   return map((values: Item[]) => {
     const reduced = (values ?? []).reduce(reduce, structuredClone(defaultValue));
     return reduced;
+  });
+}
+
+/**
+ * An observable operator that emits distinct values by checking that all
+ *   values in the previous entry match the next entry. This method emits
+ *   when a key is added and does not when a key is removed.
+ * @remarks This method checks objects. It does not check items in arrays.
+ */
+export function distinctIfShallowMatch<Item>(): OperatorFunction<Item, Item> {
+  return distinctUntilChanged((previous, current) => {
+    let isDistinct = true;
+
+    for (const key in current) {
+      isDistinct &&= previous[key] === current[key];
+    }
+
+    return isDistinct;
   });
 }

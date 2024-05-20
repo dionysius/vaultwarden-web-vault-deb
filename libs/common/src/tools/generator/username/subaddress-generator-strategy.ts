@@ -14,8 +14,6 @@ import {
   SubaddressGenerationOptions,
 } from "./subaddress-generator-options";
 
-const ONE_MINUTE = 60 * 1000;
-
 /** Strategy for creating an email subaddress
  *  @remarks The subaddress is the part following the `+`.
  *  For example, if the email address is `jd+xyz@domain.io`,
@@ -47,11 +45,6 @@ export class SubaddressGeneratorStrategy
     // Uses password generator since there aren't policies
     // specific to usernames.
     return PolicyType.PasswordGenerator;
-  }
-
-  /** {@link GeneratorStrategy.cache_ms} */
-  get cache_ms() {
-    return ONE_MINUTE;
   }
 
   /** {@link GeneratorStrategy.toEvaluator} */

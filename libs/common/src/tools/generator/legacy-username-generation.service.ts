@@ -1,4 +1,4 @@
-import { zip, firstValueFrom, map, concatMap } from "rxjs";
+import { zip, firstValueFrom, map, concatMap, combineLatest } from "rxjs";
 
 import { ApiService } from "../../abstractions/api.service";
 import { PolicyService } from "../../admin-console/abstractions/policy/policy.service.abstraction";
@@ -56,7 +56,7 @@ type MappedOptions = {
   };
 };
 
-export function legacyPasswordGenerationServiceFactory(
+export function legacyUsernameGenerationServiceFactory(
   apiService: ApiService,
   i18nService: I18nService,
   cryptoService: CryptoService,
@@ -205,10 +205,11 @@ export class LegacyUsernameGenerationService implements UsernameGenerationServic
     }
   }
 
-  getOptions() {
+  getOptions$() {
+    // look upon my works, ye mighty, and despair!
     const options$ = this.accountService.activeAccount$.pipe(
       concatMap((account) =>
-        zip(
+        combineLatest([
           this.navigation.options$(account.id),
           this.navigation.defaults$(account.id),
           this.catchall.options$(account.id),
@@ -229,7 +230,7 @@ export class LegacyUsernameGenerationService implements UsernameGenerationServic
           this.forwardEmail.defaults$(account.id),
           this.simpleLogin.options$(account.id),
           this.simpleLogin.defaults$(account.id),
-        ),
+        ]),
       ),
       map(
         ([
@@ -273,30 +274,38 @@ export class LegacyUsernameGenerationService implements UsernameGenerationServic
       ),
     );
 
-    return firstValueFrom(options$);
+    return options$;
+  }
+
+  getOptions() {
+    return firstValueFrom(this.getOptions$());
   }
 
   async saveOptions(options: UsernameGeneratorOptions) {
     const stored = this.toStoredOptions(options);
-    const userId = await firstValueFrom(this.accountService.activeAccount$.pipe(map((a) => a.id)));
+    const activeAccount = await firstValueFrom(this.accountService.activeAccount$);
 
     // generator settings needs to preserve whether password or passphrase is selected,
     // so `navigationOptions` is mutated.
-    let navigationOptions = await firstValueFrom(this.navigation.options$(userId));
+    const navigationOptions$ = zip(
+      this.navigation.options$(activeAccount.id),
+      this.navigation.defaults$(activeAccount.id),
+    ).pipe(map(([options, defaults]) => options ?? defaults));
+    let navigationOptions = await firstValueFrom(navigationOptions$);
     navigationOptions = Object.assign(navigationOptions, stored.generator);
-    await this.navigation.saveOptions(userId, navigationOptions);
+    await this.navigation.saveOptions(activeAccount.id, navigationOptions);
 
     // overwrite all other settings with latest values
     await Promise.all([
-      this.catchall.saveOptions(userId, stored.algorithms.catchall),
-      this.effUsername.saveOptions(userId, stored.algorithms.effUsername),
-      this.subaddress.saveOptions(userId, stored.algorithms.subaddress),
-      this.addyIo.saveOptions(userId, stored.forwarders.addyIo),
-      this.duckDuckGo.saveOptions(userId, stored.forwarders.duckDuckGo),
-      this.fastmail.saveOptions(userId, stored.forwarders.fastmail),
-      this.firefoxRelay.saveOptions(userId, stored.forwarders.firefoxRelay),
-      this.forwardEmail.saveOptions(userId, stored.forwarders.forwardEmail),
-      this.simpleLogin.saveOptions(userId, stored.forwarders.simpleLogin),
+      this.catchall.saveOptions(activeAccount.id, stored.algorithms.catchall),
+      this.effUsername.saveOptions(activeAccount.id, stored.algorithms.effUsername),
+      this.subaddress.saveOptions(activeAccount.id, stored.algorithms.subaddress),
+      this.addyIo.saveOptions(activeAccount.id, stored.forwarders.addyIo),
+      this.duckDuckGo.saveOptions(activeAccount.id, stored.forwarders.duckDuckGo),
+      this.fastmail.saveOptions(activeAccount.id, stored.forwarders.fastmail),
+      this.firefoxRelay.saveOptions(activeAccount.id, stored.forwarders.firefoxRelay),
+      this.forwardEmail.saveOptions(activeAccount.id, stored.forwarders.forwardEmail),
+      this.simpleLogin.saveOptions(activeAccount.id, stored.forwarders.simpleLogin),
     ]);
   }
 

@@ -6,7 +6,7 @@ import { EncryptService } from "../../../../platform/abstractions/encrypt.servic
 import { I18nService } from "../../../../platform/abstractions/i18n.service";
 import { StateProvider } from "../../../../platform/state";
 import { UserId } from "../../../../types/guid";
-import { FASTMAIL_FORWARDER } from "../../key-definitions";
+import { FASTMAIL_FORWARDER, FASTMAIL_BUFFER } from "../../key-definitions";
 import { ForwarderGeneratorStrategy } from "../forwarder-generator-strategy";
 import { Forwarders } from "../options/constants";
 import { EmailPrefixOptions, ApiOptions } from "../options/forwarder-options";
@@ -46,6 +46,11 @@ export class FastmailForwarder extends ForwarderGeneratorStrategy<ApiOptions & E
   defaults$ = (userId: UserId) => {
     return new BehaviorSubject({ ...DefaultFastmailOptions });
   };
+
+  /** {@link ForwarderGeneratorStrategy.rolloverKey} */
+  get rolloverKey() {
+    return FASTMAIL_BUFFER;
+  }
 
   /** {@link ForwarderGeneratorStrategy.generate} */
   generate = async (options: ApiOptions & EmailPrefixOptions) => {

@@ -6,7 +6,7 @@ import { StateProvider } from "../../../platform/state";
 import { UserId } from "../../../types/guid";
 import { PasswordGenerationServiceAbstraction } from "../abstractions/password-generation.service.abstraction";
 import { PASSPHRASE_SETTINGS } from "../key-definitions";
-import { reduceCollection } from "../reduce-collection.operator";
+import { distinctIfShallowMatch, reduceCollection } from "../rx-operators";
 
 import {
   PassphraseGenerationOptions,
@@ -18,8 +18,6 @@ import {
   PassphraseGeneratorPolicy,
   leastPrivilege,
 } from "./passphrase-generator-policy";
-
-const ONE_MINUTE = 60 * 1000;
 
 /** {@link GeneratorStrategy} */
 export class PassphraseGeneratorStrategy
@@ -49,15 +47,11 @@ export class PassphraseGeneratorStrategy
     return PolicyType.PasswordGenerator;
   }
 
-  /** {@link GeneratorStrategy.cache_ms} */
-  get cache_ms() {
-    return ONE_MINUTE;
-  }
-
   /** {@link GeneratorStrategy.toEvaluator} */
   toEvaluator() {
     return pipe(
       reduceCollection(leastPrivilege, DisabledPassphraseGeneratorPolicy),
+      distinctIfShallowMatch(),
       map((policy) => new PassphraseGeneratorOptionsEvaluator(policy)),
     );
   }

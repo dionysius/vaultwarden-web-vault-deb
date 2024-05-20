@@ -1,5 +1,5 @@
 import { Location } from "@angular/common";
-import { Component } from "@angular/core";
+import { Component, NgZone } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { firstValueFrom } from "rxjs";
 
@@ -8,7 +8,6 @@ import { AccountService } from "@bitwarden/common/auth/abstractions/account.serv
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 import { UsernameGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/username";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
@@ -29,22 +28,22 @@ export class GeneratorComponent extends BaseGeneratorComponent {
     usernameGenerationService: UsernameGenerationServiceAbstraction,
     platformUtilsService: PlatformUtilsService,
     i18nService: I18nService,
-    stateService: StateService,
+    accountService: AccountService,
     cipherService: CipherService,
     route: ActivatedRoute,
     logService: LogService,
-    accountService: AccountService,
+    ngZone: NgZone,
     private location: Location,
   ) {
     super(
       passwordGenerationService,
       usernameGenerationService,
       platformUtilsService,
-      stateService,
+      accountService,
       i18nService,
       logService,
       route,
-      accountService,
+      ngZone,
       window,
     );
     this.cipherService = cipherService;

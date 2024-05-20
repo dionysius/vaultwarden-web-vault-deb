@@ -11,8 +11,6 @@ import { NoPolicy } from "../no-policy";
 
 import { CatchallGenerationOptions, DefaultCatchallOptions } from "./catchall-generator-options";
 
-const ONE_MINUTE = 60 * 1000;
-
 /** Strategy for creating usernames using a catchall email address */
 export class CatchallGeneratorStrategy
   implements GeneratorStrategy<CatchallGenerationOptions, NoPolicy>
@@ -40,11 +38,6 @@ export class CatchallGeneratorStrategy
     // Uses password generator since there aren't policies
     // specific to usernames.
     return PolicyType.PasswordGenerator;
-  }
-
-  /** {@link GeneratorStrategy.cache_ms} */
-  get cache_ms() {
-    return ONE_MINUTE;
   }
 
   /** {@link GeneratorStrategy.toEvaluator} */

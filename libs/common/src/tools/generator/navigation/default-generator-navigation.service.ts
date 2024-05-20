@@ -6,7 +6,7 @@ import { StateProvider } from "../../../platform/state";
 import { UserId } from "../../../types/guid";
 import { GeneratorNavigationService } from "../abstractions/generator-navigation.service.abstraction";
 import { GENERATOR_SETTINGS } from "../key-definitions";
-import { reduceCollection } from "../reduce-collection.operator";
+import { distinctIfShallowMatch, reduceCollection } from "../rx-operators";
 
 import { DefaultGeneratorNavigation, GeneratorNavigation } from "./generator-navigation";
 import { GeneratorNavigationEvaluator } from "./generator-navigation-evaluator";
@@ -42,6 +42,7 @@ export class DefaultGeneratorNavigationService implements GeneratorNavigationSer
   evaluator$(userId: UserId) {
     const evaluator$ = this.policy.getAll$(PolicyType.PasswordGenerator, userId).pipe(
       reduceCollection(preferPassword, DisabledGeneratorNavigationPolicy),
+      distinctIfShallowMatch(),
       map((policy) => new GeneratorNavigationEvaluator(policy)),
     );
 

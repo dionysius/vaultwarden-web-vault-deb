@@ -14,8 +14,6 @@ import {
   EffUsernameGenerationOptions,
 } from "./eff-username-generator-options";
 
-const ONE_MINUTE = 60 * 1000;
-
 /** Strategy for creating usernames from the EFF wordlist */
 export class EffUsernameGeneratorStrategy
   implements GeneratorStrategy<EffUsernameGenerationOptions, NoPolicy>
@@ -43,11 +41,6 @@ export class EffUsernameGeneratorStrategy
     // Uses password generator since there aren't policies
     // specific to usernames.
     return PolicyType.PasswordGenerator;
-  }
-
-  /** {@link GeneratorStrategy.cache_ms} */
-  get cache_ms() {
-    return ONE_MINUTE;
   }
 
   /** {@link GeneratorStrategy.toEvaluator} */

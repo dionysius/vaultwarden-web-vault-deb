@@ -5,12 +5,14 @@ import { EncryptService } from "../../../platform/abstractions/encrypt.service";
 import { SingleUserState, StateProvider } from "../../../platform/state";
 import { UserId } from "../../../types/guid";
 import { GeneratorHistoryService } from "../abstractions/generator-history.abstraction";
-import { GENERATOR_HISTORY } from "../key-definitions";
+import { GENERATOR_HISTORY, GENERATOR_HISTORY_BUFFER } from "../key-definitions";
+import { BufferedState } from "../state/buffered-state";
 import { PaddedDataPacker } from "../state/padded-data-packer";
 import { SecretState } from "../state/secret-state";
 import { UserKeyEncryptor } from "../state/user-key-encryptor";
 
 import { GeneratedCredential } from "./generated-credential";
+import { LegacyPasswordHistoryDecryptor } from "./legacy-password-history-decryptor";
 import { GeneratorCategory, HistoryServiceOptions } from "./options";
 
 const OPTIONS_FRAME_SIZE = 2048;
@@ -51,7 +53,7 @@ export class LocalGeneratorHistoryService extends GeneratorHistoryService {
       },
       {
         shouldUpdate: (credentials) =>
-          credentials?.some((f) => f.credential !== credential) ?? true,
+          !(credentials?.some((f) => f.credential === credential) ?? false),
       },
     );
 
@@ -82,6 +84,13 @@ export class LocalGeneratorHistoryService extends GeneratorHistoryService {
     return result;
   };
 
+  /** {@link GeneratorHistoryService.take} */
+  clear = async (userId: UserId) => {
+    const state = this.getCredentialState(userId);
+    const result = (await state.update(() => null)) ?? [];
+    return result;
+  };
+
   /** {@link GeneratorHistoryService.credentials$} */
   credentials$ = (userId: UserId) => {
     return this.getCredentialState(userId).state$.pipe(map((credentials) => credentials ?? []));
@@ -98,11 +107,12 @@ export class LocalGeneratorHistoryService extends GeneratorHistoryService {
     return state;
   }
 
-  private createSecretState(userId: UserId) {
+  private createSecretState(userId: UserId): SingleUserState<GeneratedCredential[]> {
     // construct the encryptor
     const packer = new PaddedDataPacker(OPTIONS_FRAME_SIZE);
     const encryptor = new UserKeyEncryptor(this.encryptService, this.keyService, packer);
 
+    // construct the durable state
     const state = SecretState.from<
       GeneratedCredential[],
       number,
@@ -111,6 +121,25 @@ export class LocalGeneratorHistoryService extends GeneratorHistoryService {
       GeneratedCredential
     >(userId, GENERATOR_HISTORY, this.stateProvider, encryptor);
 
-    return state;
+    // decryptor is just an algorithm, but it can't run until the key is available;
+    // providing it via an observable makes running it early impossible
+    const decryptor = new LegacyPasswordHistoryDecryptor(
+      userId,
+      this.keyService,
+      this.encryptService,
+    );
+    const decryptor$ = this.keyService
+      .getInMemoryUserKeyFor$(userId)
+      .pipe(map((key) => key && decryptor));
+
+    // move data from the old password history once decryptor is available
+    const buffer = new BufferedState(
+      this.stateProvider,
+      GENERATOR_HISTORY_BUFFER,
+      state,
+      decryptor$,
+    );
+
+    return buffer;
   }
 }

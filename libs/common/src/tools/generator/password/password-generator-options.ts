@@ -8,4 +8,4 @@ import { PasswordGenerationOptions } from "./password-generation-options";
  */
 export type PasswordGeneratorOptions = PasswordGenerationOptions &
   PassphraseGenerationOptions &
-  GeneratorNavigation;
+  GeneratorNavigation & { policyUpdated?: boolean };

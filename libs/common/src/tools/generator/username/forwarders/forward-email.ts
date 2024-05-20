@@ -7,7 +7,7 @@ import { I18nService } from "../../../../platform/abstractions/i18n.service";
 import { Utils } from "../../../../platform/misc/utils";
 import { StateProvider } from "../../../../platform/state";
 import { UserId } from "../../../../types/guid";
-import { FORWARD_EMAIL_FORWARDER } from "../../key-definitions";
+import { FORWARD_EMAIL_FORWARDER, FORWARD_EMAIL_BUFFER } from "../../key-definitions";
 import { ForwarderGeneratorStrategy } from "../forwarder-generator-strategy";
 import { Forwarders } from "../options/constants";
 import { EmailDomainOptions, ApiOptions } from "../options/forwarder-options";
@@ -48,6 +48,11 @@ export class ForwardEmailForwarder extends ForwarderGeneratorStrategy<
   defaults$ = (userId: UserId) => {
     return new BehaviorSubject({ ...DefaultForwardEmailOptions });
   };
+
+  /** {@link ForwarderGeneratorStrategy.rolloverKey} */
+  get rolloverKey() {
+    return FORWARD_EMAIL_BUFFER;
+  }
 
   /** {@link ForwarderGeneratorStrategy.generate} */
   generate = async (options: ApiOptions & EmailDomainOptions) => {

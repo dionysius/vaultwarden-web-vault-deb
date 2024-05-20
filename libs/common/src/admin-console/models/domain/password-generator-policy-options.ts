@@ -70,7 +70,7 @@ export class PasswordGeneratorPolicyOptions extends Domain {
    */
   inEffect() {
     return (
-      this.defaultType !== "" ||
+      this.defaultType ||
       this.minLength > 0 ||
       this.numberCount > 0 ||
       this.specialCount > 0 ||

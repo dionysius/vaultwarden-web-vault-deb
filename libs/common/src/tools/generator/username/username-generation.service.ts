@@ -1,3 +1,5 @@
+import { from } from "rxjs";
+
 import { ApiService } from "../../../abstractions/api.service";
 import { CryptoService } from "../../../platform/abstractions/crypto.service";
 import { StateService } from "../../../platform/abstractions/state.service";
@@ -156,6 +158,10 @@ export class UsernameGenerationService implements UsernameGenerationServiceAbstr
     }
 
     return forwarder.generate(this.apiService, forwarderOptions);
+  }
+
+  getOptions$() {
+    return from(this.getOptions());
   }
 
   async getOptions(): Promise<UsernameGeneratorOptions> {
