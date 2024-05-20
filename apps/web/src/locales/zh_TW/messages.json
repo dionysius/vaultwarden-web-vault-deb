@@ -2299,7 +2299,7 @@
     "description": "Payment/credit transactions."
   },
   "noTransactions": {
-    "message": "無交易記錄"
+    "message": "無交易記錄。"
   },
   "chargeNoun": {
     "message": "費用",
@@ -2696,7 +2696,7 @@
     "message": "唯讀"
   },
   "newCollection": {
-    "message": "新集合"
+    "message": "新增集合"
   },
   "addCollection": {
     "message": "新增集合"
@@ -2789,7 +2789,7 @@
     "message": "全部"
   },
   "addAccess": {
-    "message": "Add Access"
+    "message": "添加存取權限"
   },
   "addAccessFilter": {
     "message": "Add Access Filter"
@@ -3029,7 +3029,7 @@
     }
   },
   "deletedCollections": {
-    "message": "已刪除集合"
+    "message": "已刪除的集合"
   },
   "deletedCollectionId": {
     "message": "已刪除集合 $ID$。",
@@ -3564,6 +3564,12 @@
   },
   "subscriptionUserSeatsUnlimitedAutoscale": {
     "message": "調整訂閱將會依比例變更您的計費總額。若新邀請的成員超過您的訂閱席位，您將立即收到依比例收取的額外使用者費用。"
+  },
+  "smStandaloneTrialSeatCountUpdateMessageFragment1": {
+    "message": "If you want to add additional"
+  },
+  "smStandaloneTrialSeatCountUpdateMessageFragment2": {
+    "message": "seats without the bundled offer, please contact"
   },
   "subscriptionUserSeatsLimitedAutoscale": {
     "message": "調整訂閱將會依比例變更您的計費總額。若新邀請的成員超過您的訂閱席位，您將立即收到依比例收取的額外使用者費用，直到您達到 $MAX$ 席位限制。",
@@ -7533,7 +7539,7 @@
     "message": "Owners and admins can manage all collections and items"
   },
   "updatedCollectionManagement": {
-    "message": "Updated collection management setting"
+    "message": "更新了集合管理設定"
   },
   "passwordManagerPlanPrice": {
     "message": "密碼管理器方案價格"
@@ -7596,7 +7602,7 @@
     "message": "密碼金鑰不會被複製到新的項目中。您要繼續複製此項目嗎？"
   },
   "modifiedCollectionManagement": {
-    "message": "Modified collection management setting $ID$.",
+    "message": "修改了集合管理設定 $ID$。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -7676,7 +7682,7 @@
     "description": "This describes new features and improvements for user roles and collections"
   },
   "collectionEnhancementsLearnMore": {
-    "message": "Learn more about collection management"
+    "message": "深入了解集合管理"
   },
   "organizationInformation": {
     "message": "組織資訊"
@@ -7691,7 +7697,7 @@
     "message": "We've sent a confirmation email to your email at "
   },
   "confirmCollectionEnhancementsDialogTitle": {
-    "message": "此操作是不可逆轉的"
+    "message": "此動作是不可逆轉的"
   },
   "confirmCollectionEnhancementsDialogContent": {
     "message": "Turning on this feature will deprecate the manager role and replace it with a Can manage permission. This will take a few moments. Do not make any organization changes until it is complete. Are you sure you want to proceed?"
@@ -7878,15 +7884,15 @@
     "message": "Machine accounts cannot be created in suspended organizations. Please contact your organization owner for assistance."
   },
   "machineAccount": {
-    "message": "Machine account",
+    "message": "機器帳戶",
     "description": "A machine user which can be used to automate processes and access secrets in the system."
   },
   "machineAccounts": {
-    "message": "Machine accounts",
+    "message": "機器帳戶",
     "description": "The title for the section that deals with machine accounts."
   },
   "newMachineAccount": {
-    "message": "New machine account",
+    "message": "新增機器賬戶",
     "description": "Title for creating a new machine account."
   },
   "machineAccountsNoItemsMessage": {
@@ -7894,19 +7900,19 @@
     "description": "Message to encourage the user to start creating machine accounts."
   },
   "machineAccountsNoItemsTitle": {
-    "message": "Nothing to show yet",
+    "message": "尚無要顯示的內容",
     "description": "Title to indicate that there are no machine accounts to display."
   },
   "deleteMachineAccounts": {
-    "message": "Delete machine accounts",
+    "message": "刪除機器帳戶",
     "description": "Title for the action to delete one or multiple machine accounts."
   },
   "deleteMachineAccount": {
-    "message": "Delete machine account",
+    "message": "刪除機器帳戶",
     "description": "Title for the action to delete a single machine account."
   },
   "viewMachineAccount": {
-    "message": "View machine account",
+    "message": "檢視機器賬戶",
     "description": "Action to view the details of a machine account."
   },
   "deleteMachineAccountDialogMessage": {
@@ -7922,7 +7928,7 @@
     "message": "Deleting machine accounts is permanent and irreversible."
   },
   "deleteMachineAccountsConfirmMessage": {
-    "message": "Delete $COUNT$ machine accounts",
+    "message": "刪除 $COUNT$ 個機器賬戶",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -7931,29 +7937,29 @@
     }
   },
   "deleteMachineAccountToast": {
-    "message": "Machine account deleted"
+    "message": "機器帳戶已刪除"
   },
   "deleteMachineAccountsToast": {
-    "message": "Machine accounts deleted"
+    "message": "機器帳戶已刪除"
   },
   "searchMachineAccounts": {
-    "message": "Search machine accounts",
+    "message": "搜尋機器帳戶",
     "description": "Placeholder text for searching machine accounts."
   },
   "editMachineAccount": {
-    "message": "Edit machine account",
+    "message": "編輯機器賬戶",
     "description": "Title for editing a machine account."
   },
   "machineAccountName": {
-    "message": "Machine account name",
+    "message": "機器賬戶名稱",
     "description": "Label for the name of a machine account"
   },
   "machineAccountCreated": {
-    "message": "Machine account created",
+    "message": "機器賬戶已建立",
     "description": "Notifies that a new machine account has been created"
   },
   "machineAccountUpdated": {
-    "message": "Machine account updated",
+    "message": "機器賬戶已更新",
     "description": "Notifies that a machine account has been updated"
   },
   "projectMachineAccountsDescription": {
@@ -7972,16 +7978,16 @@
     "message": "Assign projects to this machine account. "
   },
   "createMachineAccount": {
-    "message": "Create a machine account"
+    "message": "建立機器賬戶"
   },
   "maPeopleWarningMessage": {
     "message": "Removing people from a machine account does not remove the access tokens they created. For security best practice, it is recommended to revoke access tokens created by people removed from a machine account."
   },
   "smAccessRemovalWarningMaTitle": {
-    "message": "Remove access to this machine account"
+    "message": "移除對此機器賬戶的存取權限"
   },
   "smAccessRemovalWarningMaMessage": {
-    "message": "This action will remove your access to the machine account."
+    "message": "此動作將移除您對此機器賬戶的存取權限"
   },
   "machineAccountsIncluded": {
     "message": "$COUNT$ machine accounts included",
@@ -8035,7 +8041,7 @@
     "message": "Max potential machine account cost"
   },
   "machineAccountAccessUpdated": {
-    "message": "Machine account access updated"
+    "message": "機器賬戶存取權限已更新"
   },
   "restrictedGroupAccessDesc": {
     "message": "You cannot add yourself to a group."
@@ -8061,10 +8067,10 @@
     "message": "Delete provider"
   },
   "deleteProviderConfirmation": {
-    "message": "Deleting a provider is permanent and irreversible. Enter your master password to confirm the deletion of the provider and all associated data."
+    "message": "刪除提供者是永久性的且不可逆轉。輸入您的主密碼以確認刪除提供者和所有關聯資料。"
   },
   "deleteProviderName": {
-    "message": "Cannot delete $ID$",
+    "message": "無法刪除 $ID$",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -8116,37 +8122,37 @@
     "message": "Use Bitwarden Secrets Manager SDK in the following programming languages to build your own applications."
   },
   "setUpGithubActions": {
-    "message": "Set up Github Actions"
+    "message": "設定 Github Actions"
   },
   "setUpGitlabCICD": {
-    "message": "Set up GitLab CI/CD"
+    "message": "設定 GitLab CI/CD"
   },
   "setUpAnsible": {
-    "message": "Set up Ansible"
+    "message": "設定 Ansible"
   },
   "cSharpSDKRepo": {
-    "message": "View C# repository"
+    "message": "檢視 C# 儲存庫"
   },
   "cPlusPlusSDKRepo": {
-    "message": "View C++ repository"
+    "message": "檢視 C++ 儲存庫"
   },
   "jsWebAssemblySDKRepo": {
-    "message": "View JS WebAssembly repository"
+    "message": "檢視 JS WebAssembly 儲存庫"
   },
   "javaSDKRepo": {
-    "message": "View Java repository"
+    "message": "檢視 Java 儲存庫"
   },
   "pythonSDKRepo": {
-    "message": "View Python repository"
+    "message": "檢視 Python 儲存庫"
   },
   "phpSDKRepo": {
-    "message": "View php repository"
+    "message": "檢視 PHP 儲存庫"
   },
   "rubySDKRepo": {
-    "message": "View Ruby repository"
+    "message": "檢視 Ruby 儲存庫"
   },
   "goSDKRepo": {
-    "message": "View Go repository"
+    "message": "檢視 Go 儲存庫"
   },
   "createNewClientToManageAsProvider": {
     "message": "Create a new client organization to manage as a Provider. Additional seats will be reflected in the next billing cycle."
@@ -8161,7 +8167,7 @@
     "message": "month per member"
   },
   "seats": {
-    "message": "Seats"
+    "message": "席位"
   },
   "addOrganization": {
     "message": "Add organization"
@@ -8170,7 +8176,7 @@
     "message": "Successfully created new client"
   },
   "noAccess": {
-    "message": "No access"
+    "message": "無存取權限"
   },
   "collectionAdminConsoleManaged": {
     "message": "This collection is only accessible from the admin console"
@@ -8188,19 +8194,19 @@
     "message": "Manage billing from the Provider Portal"
   },
   "viewInfo": {
-    "message": "View info"
+    "message": "檢視資訊"
   },
   "viewAccess": {
-    "message": "View access"
+    "message": "檢視存取權限"
   },
   "noCollectionsSelected": {
     "message": "You have not selected any collections."
   },
   "updateName": {
-    "message": "Update name"
+    "message": "更新名称"
   },
   "updatedOrganizationName": {
-    "message": "Updated organization name"
+    "message": "更新了組織名稱"
   },
   "providerPlan": {
     "message": "Managed Service Provider"

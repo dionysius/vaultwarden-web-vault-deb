@@ -3565,6 +3565,12 @@
   "subscriptionUserSeatsUnlimitedAutoscale": {
     "message": "Οι προσαρμογές της συνδρομής σας θα έχουν ως αποτέλεσμα αλλαγές στα σύνολα τιμολόγησης. Εάν οι νεοπροσκεκλημένοι χρήστες υπερβούν τις συνδρομητικές σας θέσεις, θα λάβετε αμέσως μια αναθεωρημένη χρέωση για τους πρόσθετους χρήστες."
   },
+  "smStandaloneTrialSeatCountUpdateMessageFragment1": {
+    "message": "If you want to add additional"
+  },
+  "smStandaloneTrialSeatCountUpdateMessageFragment2": {
+    "message": "seats without the bundled offer, please contact"
+  },
   "subscriptionUserSeatsLimitedAutoscale": {
     "message": "Οι προσαρμογές της συνδρομής σας θα έχουν ως αποτέλεσμα αλλαγές στα σύνολα τιμολόγησης. Εάν οι νεοπροσκεκλημένοι χρήστες υπερβούν τις θέσεις συνδρομής, θα λάβετε αμέσως μια τροποποιημένη χρέωση για τους επιπλέον χρήστες μέχρι να συμπληρωθεί το όριο θέσης $MAX$ σας.",
     "placeholders": {

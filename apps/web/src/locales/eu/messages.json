@@ -3565,6 +3565,12 @@
   "subscriptionUserSeatsUnlimitedAutoscale": {
     "message": "Zure harpidetzako doikuntzak fakturazioko guztizkoetan hainbanatutako aldaketak eragingo ditu. Erabiltzaile gonbidatuek harpidetza postuak gainditzen badituzte, berehala tarifa hainbanatua jasoko dute erabiltzaile gehigarrientzat."
   },
+  "smStandaloneTrialSeatCountUpdateMessageFragment1": {
+    "message": "If you want to add additional"
+  },
+  "smStandaloneTrialSeatCountUpdateMessageFragment2": {
+    "message": "seats without the bundled offer, please contact"
+  },
   "subscriptionUserSeatsLimitedAutoscale": {
     "message": "Zure harpidetzako doikuntzak fakturazioko guztizkoetan hainbanatutako aldaketak eragingo ditu. Erabiltzaile gonbidatuek harpidetza postuak gainditzen badituzte, berehala tarifa hainbanatua jasoko dute erabiltzaile gehigarrientzat, $MAX$-eko gehienezko muga gainditzen ez den bitartean.",
     "placeholders": {

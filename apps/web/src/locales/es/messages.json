@@ -3565,6 +3565,12 @@
   "subscriptionUserSeatsUnlimitedAutoscale": {
     "message": "Los ajustes a su suscripción provocarán cambios prorrateados en su facturación total. Si los usuarios recién invitados exceden sus asientos de suscripción, recibirá inmediatamente un cargo prorrateado para los usuarios adicionales."
   },
+  "smStandaloneTrialSeatCountUpdateMessageFragment1": {
+    "message": "If you want to add additional"
+  },
+  "smStandaloneTrialSeatCountUpdateMessageFragment2": {
+    "message": "seats without the bundled offer, please contact"
+  },
   "subscriptionUserSeatsLimitedAutoscale": {
     "message": "Los ajustes a su suscripción provocarán cambios prorrateados en su facturación total. Si los usuarios recién invitados exceden sus asientos de suscripción, recibirás inmediatamente un cargo prorrateado para los usuarios adicionales hasta que alcances tu límite de $MAX$ asientos.",
     "placeholders": {

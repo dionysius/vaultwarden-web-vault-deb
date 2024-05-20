@@ -1355,7 +1355,7 @@
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
   "onboardingImportDataDetailsLink": {
-    "message": "新项目",
+    "message": "新的项目",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
   "onboardingImportDataDetailsPartTwoNoOrgs": {
@@ -3503,7 +3503,7 @@
     "message": "账户类型"
   },
   "bankAccountTypeCompany": {
-    "message": "公司（商业）"
+    "message": "公司（企业）"
   },
   "bankAccountTypeIndividual": {
     "message": "个体（个人）"
@@ -3564,6 +3564,12 @@
   },
   "subscriptionUserSeatsUnlimitedAutoscale": {
     "message": "调整订阅将导致按比例调整您的计费总金额。如果新邀请的成员超过了您的订阅席位，您将立即收到按比例的额外成员费用。"
+  },
+  "smStandaloneTrialSeatCountUpdateMessageFragment1": {
+    "message": "如果您想要添加额外的"
+  },
+  "smStandaloneTrialSeatCountUpdateMessageFragment2": {
+    "message": "无捆绑优惠的座位，请联系"
   },
   "subscriptionUserSeatsLimitedAutoscale": {
     "message": "调整订阅将导致按比例调整您的计费总金额。如果新邀请的成员超过了您的订阅席位，您将立即收到按比例的额外成员费用，直到达到您的 $MAX$ 席位限制。",
@@ -4977,7 +4983,7 @@
     "message": "创建一个新的客户组织，该组织将作为提供商与你关联。您将可以访问和管理这个组织。"
   },
   "newClient": {
-    "message": "新客户端"
+    "message": "新增客户"
   },
   "addExistingOrganization": {
     "message": "添加现有组织"
@@ -6589,7 +6595,7 @@
     "message": "通过将集合添加到此群组来授予对集合的访问权限。"
   },
   "restrictedCollectionAssignmentDesc": {
-    "message": "You can only assign collections you manage."
+    "message": "您只能分配您管理的集合。"
   },
   "accessAllCollectionsDesc": {
     "message": "授予对所有当前和未来的集合的访问权限。"
@@ -6823,7 +6829,7 @@
     "message": "选择群组"
   },
   "userPermissionOverrideHelperDesc": {
-    "message": "Permissions set for a member will replace permissions set by that member's group."
+    "message": "为成员设置的权限将替换为该成员群组设置的权限。"
   },
   "noMembersOrGroupsAdded": {
     "message": "未添加任何成员或群组"
@@ -7750,7 +7756,7 @@
     "message": "您不能将自己添加到群组。"
   },
   "cannotAddYourselfToCollections": {
-    "message": "You cannot add yourself to collections."
+    "message": "您不能将自己添加到集合。"
   },
   "assign": {
     "message": "分配"
@@ -7796,13 +7802,13 @@
     "message": "已分配"
   },
   "used": {
-    "message": "已用"
+    "message": "已使用"
   },
   "remaining": {
-    "message": "余额："
+    "message": "剩余"
   },
   "unlinkOrganization": {
-    "message": "脱离组织"
+    "message": "取消链接组织"
   },
   "manageSeats": {
     "message": "管理席位"
@@ -8073,7 +8079,7 @@
     }
   },
   "deleteProviderWarningDescription": {
-    "message": "删除 $ID$ 之前，您必须取消链接所有的客户端。",
+    "message": "删除 $ID$ 之前，您必须取消链接所有的客户。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -8200,7 +8206,7 @@
     "message": "更新名称"
   },
   "updatedOrganizationName": {
-    "message": "已更新的组织名称"
+    "message": "更新了组织名称"
   },
   "providerPlan": {
     "message": "托管服务提供商"
@@ -8218,15 +8224,15 @@
     }
   },
   "secureYourInfrastructure": {
-    "message": "Secure your infrastructure"
+    "message": "保护您的基础设施"
   },
   "protectYourFamilyOrBusiness": {
-    "message": "Protect your family or business"
+    "message": "保护您的家庭或企业"
   },
   "upgradeOrganizationCloseSecurityGaps": {
-    "message": "Close security gaps with monitoring reports"
+    "message": "通过监控报告弥补安全漏洞"
   },
   "upgradeOrganizationCloseSecurityGapsDesc": {
-    "message": "Stay ahead of security vulnerabilities by upgrading to a paid plan for enhanced monitoring."
+    "message": "升级到付费计划以加强监控，从而提前发现安全漏洞。"
   }
 }

@@ -3565,6 +3565,12 @@
   "subscriptionUserSeatsUnlimitedAutoscale": {
     "message": "Ang mga pagsasaayos sa iyong subscription ay magreresulta sa mga prorated na pagbabago sa iyong mga kabuuan ng pagsingil. Kung ang mga bagong inimbitahang miyembro ay lumampas sa iyong mga upuan sa subscription, agad kang makakatanggap ng prorated na singil para sa mga karagdagang miyembro."
   },
+  "smStandaloneTrialSeatCountUpdateMessageFragment1": {
+    "message": "If you want to add additional"
+  },
+  "smStandaloneTrialSeatCountUpdateMessageFragment2": {
+    "message": "seats without the bundled offer, please contact"
+  },
   "subscriptionUserSeatsLimitedAutoscale": {
     "message": "Ang mga pagsasaayos sa iyong subscription ay magreresulta sa mga prorated na pagbabago sa iyong mga kabuuan ng pagsingil. Kung ang mga bagong inimbitahang miyembro ay lumampas sa iyong mga upuan sa subscription, agad kang makakatanggap ng prorated charge para sa mga karagdagang miyembro hanggang sa maabot ang iyong $MAX$ seat limit.",
     "placeholders": {

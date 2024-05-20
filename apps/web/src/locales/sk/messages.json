@@ -3565,6 +3565,12 @@
   "subscriptionUserSeatsUnlimitedAutoscale": {
     "message": "Úprava predplatného bude mať za následok proporcionálnu zmenu celkového účtu. Ak počet nových odporúčaných používateľov presiahne počet miest vo vašom predplatnom, okamžite dostanete primeraný poplatok za ďalších používateľov."
   },
+  "smStandaloneTrialSeatCountUpdateMessageFragment1": {
+    "message": "If you want to add additional"
+  },
+  "smStandaloneTrialSeatCountUpdateMessageFragment2": {
+    "message": "seats without the bundled offer, please contact"
+  },
   "subscriptionUserSeatsLimitedAutoscale": {
     "message": "Úprava predplatného bude mať za následok proporcionálnu zmenu celkového účtu. Ak počet nových odporúčaných používateľov presiahne počet miest vo vašom predplatnom, okamžite dostanete primeraný poplatok za ďalších používateľov, kým sa naplní obmedzenie $MAX$ miest.",
     "placeholders": {
@@ -6589,7 +6595,7 @@
     "message": "Povoľte prístup k zbierkam ich pridaním do tejto skupiny."
   },
   "restrictedCollectionAssignmentDesc": {
-    "message": "You can only assign collections you manage."
+    "message": "Prideliť môžete iba zbierky ktoré spravujete."
   },
   "accessAllCollectionsDesc": {
     "message": "Povoliť prístup k všetkým súčasným a budúcim zbierkam."
@@ -6823,7 +6829,7 @@
     "message": "Vyberte skupiny"
   },
   "userPermissionOverrideHelperDesc": {
-    "message": "Permissions set for a member will replace permissions set by that member's group."
+    "message": "Povolenia nastavené pre člena nahradia povolenia nastavené skupinou, ktorej je členom"
   },
   "noMembersOrGroupsAdded": {
     "message": "Neboli pridaní žiadni členovia alebo skupiny"
@@ -7750,7 +7756,7 @@
     "message": "Seba nemôžete pridať do skupín."
   },
   "cannotAddYourselfToCollections": {
-    "message": "You cannot add yourself to collections."
+    "message": "Seba nemôžete pridať do zbierok."
   },
   "assign": {
     "message": "Prideliť"

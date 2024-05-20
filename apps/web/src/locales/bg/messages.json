@@ -3565,6 +3565,12 @@
   "subscriptionUserSeatsUnlimitedAutoscale": {
     "message": "Промените в абонамента Ви ще предизвикат пропорционални промени в сумата, която плащате. Ако новопоканените потребители превишат ограничението на абонамента Ви, незабавно ще получите съответстващо пропорционално задължение за допълнителните потребители."
   },
+  "smStandaloneTrialSeatCountUpdateMessageFragment1": {
+    "message": "Ако искате да добавите допълнителни"
+  },
+  "smStandaloneTrialSeatCountUpdateMessageFragment2": {
+    "message": "места без да ползвате пакетното предложение, свържете се с нас"
+  },
   "subscriptionUserSeatsLimitedAutoscale": {
     "message": "Промените в абонамента Ви ще предизвикат пропорционални промени в сумата, която плащате. Ако новопоканените потребители превишат ограничението на абонамента Ви, незабавно ще получите съответстващо пропорционално задължение за допълнителните потребители, докато не бъде достигнато ограничението от $MAX$ потребители.",
     "placeholders": {
@@ -6589,7 +6595,7 @@
     "message": "Дайте достъп до колекциите, като ги добавите към тази група."
   },
   "restrictedCollectionAssignmentDesc": {
-    "message": "You can only assign collections you manage."
+    "message": "Можете да свързвате само колекции, които имате право да управлявате."
   },
   "accessAllCollectionsDesc": {
     "message": "Дайте достъп до всички текущи и бъдещи колекции."
@@ -6823,7 +6829,7 @@
     "message": "Изберете групи"
   },
   "userPermissionOverrideHelperDesc": {
-    "message": "Permissions set for a member will replace permissions set by that member's group."
+    "message": "Правата дадени на един член ще заменят правата дадени му от неговата група."
   },
   "noMembersOrGroupsAdded": {
     "message": "Няма добавени членове или групи"
@@ -7750,7 +7756,7 @@
     "message": "Не може да добавяте себе си към групи."
   },
   "cannotAddYourselfToCollections": {
-    "message": "You cannot add yourself to collections."
+    "message": "Не може да добавяте себе си към колекции."
   },
   "assign": {
     "message": "Свързване"
@@ -8224,9 +8230,9 @@
     "message": "Защитете семейството или бизнеса си"
   },
   "upgradeOrganizationCloseSecurityGaps": {
-    "message": "Close security gaps with monitoring reports"
+    "message": "Отстранете пропуските в сигурността с докладите за наблюдение"
   },
   "upgradeOrganizationCloseSecurityGapsDesc": {
-    "message": "Stay ahead of security vulnerabilities by upgrading to a paid plan for enhanced monitoring."
+    "message": "Не допускайте уязвимост в сигурността си като надградите до платен план с подобрено наблюдение."
   }
 }

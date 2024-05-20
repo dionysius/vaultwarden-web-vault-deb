@@ -3565,6 +3565,12 @@
   "subscriptionUserSeatsUnlimitedAutoscale": {
     "message": "Карэкціроўка вашай падпіскі прывядзе да прапарцыйнага змянення ў вашым выніковым рахунку. Калі колькасць карыстальнікаў перавысіць колькасць месцаў у вашай падпісцы, вы адразу атрымаеце прапарцыйную плату за дадатковых карыстальнікаў."
   },
+  "smStandaloneTrialSeatCountUpdateMessageFragment1": {
+    "message": "If you want to add additional"
+  },
+  "smStandaloneTrialSeatCountUpdateMessageFragment2": {
+    "message": "seats without the bundled offer, please contact"
+  },
   "subscriptionUserSeatsLimitedAutoscale": {
     "message": "Карэкціроўка вашай падпіскі прывядзе да прапарцыйнага змянення ў вашым выніковым рахунку. Калі колькасць карыстальнікаў перавысіць колькасць месцаў у вашай падпісцы, вы адразу атрымаеце прапарцыйную плату за дадатковых карыстальнікаў, пакуль не будзе дасягнута абмежаванне (максімальная колькасць месцаў: $MAX$).",
     "placeholders": {

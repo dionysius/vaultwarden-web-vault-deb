@@ -3565,6 +3565,12 @@
   "subscriptionUserSeatsUnlimitedAutoscale": {
     "message": "Promjene na pretplati rezultirati će proporcionalnim izmjenama ukupnog zaduženja. Ako novopozvanim korisnikom prekoračiš broj licenci, odmah će biti naplaćeno proporcionalno uvećanje za nove korisnike."
   },
+  "smStandaloneTrialSeatCountUpdateMessageFragment1": {
+    "message": "If you want to add additional"
+  },
+  "smStandaloneTrialSeatCountUpdateMessageFragment2": {
+    "message": "seats without the bundled offer, please contact"
+  },
   "subscriptionUserSeatsLimitedAutoscale": {
     "message": "Promjene na pretplati rezultirati će proporcionalnim izmjenama ukupnog zaduženja. Ako novopozvanim korisnikom prekoračiš broj licenci, odmah će biti naplaćeno proporcionalno uvećanje za nove korisnike dok se ne dosegne krajnji broj licenci ($MAX$).",
     "placeholders": {

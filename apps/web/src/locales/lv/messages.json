@@ -3565,6 +3565,12 @@
   "subscriptionUserSeatsUnlimitedAutoscale": {
     "message": "Abonementa pielāgojumi izvērtīsies attiecīgās izmaiņās kopējā rēķinā. Ja jauno uzaicināto lietotāju skaits pārsniedz abonementu vietas, nekavējoties tiks veikts atbilstošs maksājums par papildu lietotājiem."
   },
+  "smStandaloneTrialSeatCountUpdateMessageFragment1": {
+    "message": "Ja vēlies pievienot papildu"
+  },
+  "smStandaloneTrialSeatCountUpdateMessageFragment2": {
+    "message": "vietas bez iekļautā piedāvājuma, lūgums sazināties ar"
+  },
   "subscriptionUserSeatsLimitedAutoscale": {
     "message": "Abonementa pielāgojumi izvērtīsies attiecīgās izmaiņās kopējā rēķinā. Ja jauno uzaicināto lietotāju skaits pārsniedz abonementu vietas, nekavējoties tiks veikts atbilstošs maksājums par papildu lietotājiem līdz tiks sasniegts $MAX$ vietu ierobežojums.",
     "placeholders": {
@@ -6589,7 +6595,7 @@
     "message": "Piešķirt piekļuvi krājumiem, pievienojot tos šai grupai."
   },
   "restrictedCollectionAssignmentDesc": {
-    "message": "You can only assign collections you manage."
+    "message": "Var piešķirt tikai pārvaldītos krājumus."
   },
   "accessAllCollectionsDesc": {
     "message": "Piešķirt piekļuvi visiem pašreizējiem un turpmākajiem krājumiem."
@@ -6823,7 +6829,7 @@
     "message": "Atlasīt grupas"
   },
   "userPermissionOverrideHelperDesc": {
-    "message": "Permissions set for a member will replace permissions set by that member's group."
+    "message": "Dalībniekam iestatītās atļaujas aizstās šī dalībnieka kopas noteiktās atļaujas."
   },
   "noMembersOrGroupsAdded": {
     "message": "Nav pievienotu dalībnieku vai grupu"
@@ -7747,10 +7753,10 @@
     "message": "Izdevās"
   },
   "restrictedGroupAccess": {
-    "message": "Tu nevari sevi pievienot kopām."
+    "message": "Sevi nevar pievienot kopām."
   },
   "cannotAddYourselfToCollections": {
-    "message": "You cannot add yourself to collections."
+    "message": "Sevi nevar pievienot krājumiem."
   },
   "assign": {
     "message": "Piešķirt"
@@ -8203,13 +8209,13 @@
     "message": "Atjaunināts apvienības nosaukums"
   },
   "providerPlan": {
-    "message": "Managed Service Provider"
+    "message": "Pārvaldīts pakalpojuma nodrošinātājs"
   },
   "orgSeats": {
-    "message": "Organization Seats"
+    "message": "Apvienības vietas"
   },
   "providerDiscount": {
-    "message": "$AMOUNT$% Discount",
+    "message": "$AMOUNT$% atlaide",
     "placeholders": {
       "amount": {
         "content": "$1",
@@ -8218,15 +8224,15 @@
     }
   },
   "secureYourInfrastructure": {
-    "message": "Secure your infrastructure"
+    "message": "Nodrošini savu infrastruktūru"
   },
   "protectYourFamilyOrBusiness": {
-    "message": "Protect your family or business"
+    "message": "Aizsargā savu ģimeni vai uzņēmumu"
   },
   "upgradeOrganizationCloseSecurityGaps": {
-    "message": "Close security gaps with monitoring reports"
+    "message": "Novērs drošības caurumus ar uzraudzības pārskatiem"
   },
   "upgradeOrganizationCloseSecurityGapsDesc": {
-    "message": "Stay ahead of security vulnerabilities by upgrading to a paid plan for enhanced monitoring."
+    "message": "Apsteidz drošības ievainojamības ar pāriešanu uz maksas plānu pastiprinātai uzraudzībai."
   }
 }

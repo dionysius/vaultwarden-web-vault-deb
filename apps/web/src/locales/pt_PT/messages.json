@@ -3565,6 +3565,12 @@
   "subscriptionUserSeatsUnlimitedAutoscale": {
     "message": "Os ajustes à sua subscrição resultarão em alterações proporcionais aos seus totais de faturação. Se os novos utilizadores convidados excederem o número de licenças da sua subscrição, receberá imediatamente uma cobrança proporcional pelos utilizadores adicionais."
   },
+  "smStandaloneTrialSeatCountUpdateMessageFragment1": {
+    "message": "Se pretender adicionar mais"
+  },
+  "smStandaloneTrialSeatCountUpdateMessageFragment2": {
+    "message": "lugares sem a oferta agregada, por favor, contacte"
+  },
   "subscriptionUserSeatsLimitedAutoscale": {
     "message": "Os ajustes à sua subscrição resultarão em alterações proporcionais aos seus totais de faturação. Se os novos utilizadores convidados excederem o número de licenças da sua subscrição, receberá imediatamente uma cobrança proporcional pelos utilizadores adicionais até que o seu limite de $MAX$ licenças seja atingido.",
     "placeholders": {
@@ -8224,9 +8230,9 @@
     "message": "Proteja a sua família ou empresa"
   },
   "upgradeOrganizationCloseSecurityGaps": {
-    "message": "Close security gaps with monitoring reports"
+    "message": "Colmatar as lacunas de segurança com relatórios de monitorização"
   },
   "upgradeOrganizationCloseSecurityGapsDesc": {
-    "message": "Stay ahead of security vulnerabilities by upgrading to a paid plan for enhanced monitoring."
+    "message": "Mantenha-se à frente das vulnerabilidades de segurança atualizando para um plano pago para uma monitorização melhorada."
   }
 }

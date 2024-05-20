@@ -3565,6 +3565,12 @@
   "subscriptionUserSeatsUnlimitedAutoscale": {
     "message": "تنظیمات اشتراک شما منجر به تغییرات نسبتاً زیادی در مجموع صورتحساب شما می‌شود. اگر عضو‌هایی که به تازگی دعوت شده‌اند بیشتر از جایگاه‌های اشتراک شما باشند، بلافاصله هزینه‌ای متناسب برای عضو‌هایی اضافی دریافت خواهید کرد."
   },
+  "smStandaloneTrialSeatCountUpdateMessageFragment1": {
+    "message": "If you want to add additional"
+  },
+  "smStandaloneTrialSeatCountUpdateMessageFragment2": {
+    "message": "seats without the bundled offer, please contact"
+  },
   "subscriptionUserSeatsLimitedAutoscale": {
     "message": "تنظیمات اشتراک شما منجر به تغییرات نسبتاً زیادی در مجموع صورتحساب شما می‌شود. اگر اعضای تازه دعوت شده از جایگاه‌های اشتراک شما بیشتر شوند، بلافاصله هزینه‌ای متناسب برای اعضای اضافی دریافت می‌کنید تا زمانی که به محدودیت جایگاه $MAX$ شما برسند.",
     "placeholders": {

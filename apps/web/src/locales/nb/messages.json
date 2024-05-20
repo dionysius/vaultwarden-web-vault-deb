@@ -3565,6 +3565,12 @@
   "subscriptionUserSeatsUnlimitedAutoscale": {
     "message": "Justeringer av ditt abonnement vil resultere i utsatt endring av dine faktureringsbeløp. Hvis nyinviterte brukere overstiger ditt abonnementssete, vil du umiddelbart få et betalt for ekstra brukere."
   },
+  "smStandaloneTrialSeatCountUpdateMessageFragment1": {
+    "message": "If you want to add additional"
+  },
+  "smStandaloneTrialSeatCountUpdateMessageFragment2": {
+    "message": "seats without the bundled offer, please contact"
+  },
   "subscriptionUserSeatsLimitedAutoscale": {
     "message": "Justeringer av ditt abonnement vil resultere i utsatt endring av dine faktureringsbeløp. Om nyinviterte brukere overskrider ditt abonnementssete, umiddelbart vil du få en skattekostnad for tilleggsbrukerne inntil din plass på $MAX$ er nådd.",
     "placeholders": {

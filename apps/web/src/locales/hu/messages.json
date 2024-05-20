@@ -3565,6 +3565,12 @@
   "subscriptionUserSeatsUnlimitedAutoscale": {
     "message": "Az előfizetés módosítása a számlázási összegek arányos módosítását eredményezi. Ha az újonnan meghívott felhasználók túllépik az előfizetői helyeket, akkor haladéktalanul külön díjat kapunk a további felhasználókért."
   },
+  "smStandaloneTrialSeatCountUpdateMessageFragment1": {
+    "message": "Ha szeretnénk hozzáadni további"
+  },
+  "smStandaloneTrialSeatCountUpdateMessageFragment2": {
+    "message": "helyeket a csomagban szereplő ajánlat nélkül, vegyük fel a kapcsolatot"
+  },
   "subscriptionUserSeatsLimitedAutoscale": {
     "message": "Az előfizetés módosítása a számlázási összegek arányos módosítását eredményezi. Ha az újonnan meghívott felhasználók túllépik az előfizetési helyeket, akkor haladéktalanul külön díjat kapunk a további felhasználókért, amíg el nem érjük a $MAX$ helykorlátot.",
     "placeholders": {

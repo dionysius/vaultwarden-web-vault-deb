@@ -3565,6 +3565,12 @@
   "subscriptionUserSeatsUnlimitedAutoscale": {
     "message": "Корректировка вашей подписки приведет к пропорциональным изменениям в сумме счетов. Если новых приглашенных пользователей будет больше, чем мест по подписке, вы сразу получите пропорциональную плату за дополнительных пользователей."
   },
+  "smStandaloneTrialSeatCountUpdateMessageFragment1": {
+    "message": "If you want to add additional"
+  },
+  "smStandaloneTrialSeatCountUpdateMessageFragment2": {
+    "message": "seats without the bundled offer, please contact"
+  },
   "subscriptionUserSeatsLimitedAutoscale": {
     "message": "Корректировка вашей подписки приведет к пропорциональным изменениям в сумме счетов. Если новых приглашенных пользователей будет больше, чем мест по подписке, вы сразу получите пропорциональную плату за дополнительных пользователей, пока не будет достигнут лимит мест ($MAX$).",
     "placeholders": {

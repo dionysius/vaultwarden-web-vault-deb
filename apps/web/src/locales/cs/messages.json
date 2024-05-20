@@ -3565,6 +3565,12 @@
   "subscriptionUserSeatsUnlimitedAutoscale": {
     "message": "Úpravy Vašeho předplatného budou mít za následek poměrné změny Vašich fakturačních součtů. Pokud počet nově pozvaných členů překročí počet členů v předplatném, bude Vám okamžitě doúčtován poměrný poplatek za další členy."
   },
+  "smStandaloneTrialSeatCountUpdateMessageFragment1": {
+    "message": "Pokud chcete přidat další"
+  },
+  "smStandaloneTrialSeatCountUpdateMessageFragment2": {
+    "message": "uživatele bez hromadné nabídky, kontaktujte"
+  },
   "subscriptionUserSeatsLimitedAutoscale": {
     "message": "Úpravy Vašeho předplatného budou mít za následek poměrné změny Vašich fakturačních součtů. Pokud počet nově pozvaných členů překročí počet členů v předplatném, bude Vám okamžitě doúčtován poměrný poplatek za další členy dokud nebude dosaženo maximálního limitu: $MAX$.",
     "placeholders": {
@@ -8224,9 +8230,9 @@
     "message": "Ochraňte svou rodinu nebo byznys"
   },
   "upgradeOrganizationCloseSecurityGaps": {
-    "message": "Close security gaps with monitoring reports"
+    "message": "Odeberte bezpečnostní nedostatky pomocí monitorovacích zpráv"
   },
   "upgradeOrganizationCloseSecurityGapsDesc": {
-    "message": "Stay ahead of security vulnerabilities by upgrading to a paid plan for enhanced monitoring."
+    "message": "Přechodem na placený plán rozšířeného monitorování získáte náskok před zranitelnostmi zabezpečení."
   }
 }

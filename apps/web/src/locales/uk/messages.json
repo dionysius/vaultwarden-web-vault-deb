@@ -3565,6 +3565,12 @@
   "subscriptionUserSeatsUnlimitedAutoscale": {
     "message": "Коригування передплати призведе до відповідної зміни суми вашого рахунку. Якщо нові запрошені користувачі перевищать кількість передплачених місць, з вас негайно буде стягнуто пропорційну оплату за додаткових користувачів."
   },
+  "smStandaloneTrialSeatCountUpdateMessageFragment1": {
+    "message": "Якщо ви хочете додати більше"
+  },
+  "smStandaloneTrialSeatCountUpdateMessageFragment2": {
+    "message": "місць без пропозиції комплекту, зв'яжіться з"
+  },
   "subscriptionUserSeatsLimitedAutoscale": {
     "message": "Коригування передплати призведе до відповідної зміни суми вашого рахунку. Якщо нові запрошені користувачі перевищать кількість передплачених місць, з вас негайно буде стягнуто пропорційну оплату за додаткових користувачів, доки не буде досягнуто встановленого вами обмеження $MAX$ місць.",
     "placeholders": {
@@ -8224,9 +8230,9 @@
     "message": "Захистіть свою сім'ю або бізнес"
   },
   "upgradeOrganizationCloseSecurityGaps": {
-    "message": "Close security gaps with monitoring reports"
+    "message": "Закрийте прогалини в безпеці зі звітами моніторингу"
   },
   "upgradeOrganizationCloseSecurityGapsDesc": {
-    "message": "Stay ahead of security vulnerabilities by upgrading to a paid plan for enhanced monitoring."
+    "message": "Попереджайте вразливості безпеки, передплативши тарифний план для посиленого моніторингу."
   }
 }

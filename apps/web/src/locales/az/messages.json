@@ -3565,6 +3565,12 @@
   "subscriptionUserSeatsUnlimitedAutoscale": {
     "message": "Abunəliyinizə edilən düzəlişlər, faktura cəminizdə nisbətli dəyişikliklərlə nəticələnəcək. Yeni dəvət edilən istifadəçilər abunəlik yerlərini aşsa, əlavə istifadəçilər üçün nisbətli ödəniş dərhal alınacaq."
   },
+  "smStandaloneTrialSeatCountUpdateMessageFragment1": {
+    "message": "Paket təklifi olmayan əlavə yerlər"
+  },
+  "smStandaloneTrialSeatCountUpdateMessageFragment2": {
+    "message": "əlavə etmək istəyirsinizsə, lütfən əlaqə saxlayın"
+  },
   "subscriptionUserSeatsLimitedAutoscale": {
     "message": "Abunəliyinizə edilən düzəlişlər, faktura cəminizdə nisbətli dəyişikliklərlə nəticələnəcək. Yeni dəvət edilən istifadəçilər abunəlik yerlərini aşsa, $MAX$ yer limitinə çatana qədər əlavə istifadəçilər üçün nisbətli ödəniş dərhal alınacaq.",
     "placeholders": {
@@ -6589,7 +6595,7 @@
     "message": "Bu qrupa əlavə edərək kolleksiyalara müraciət icazəsi verin."
   },
   "restrictedCollectionAssignmentDesc": {
-    "message": "You can only assign collections you manage."
+    "message": "Yalnız idarə etdiyiniz kolleksiyaları təyin edə bilərsiniz."
   },
   "accessAllCollectionsDesc": {
     "message": "Hazırkı və gələcəkdəki bütün kolleksiyalara müraciət icazəsi verin."
@@ -6823,7 +6829,7 @@
     "message": "Qrupları seç"
   },
   "userPermissionOverrideHelperDesc": {
-    "message": "Permissions set for a member will replace permissions set by that member's group."
+    "message": "Bir üzv üçün ayarlanan icazələr, həmin üzvün qrupu tərəfindən ayarlanan icazələri əvəz edəcək."
   },
   "noMembersOrGroupsAdded": {
     "message": "Heç bir üzv və ya qrup əlavə edilmədi"
@@ -7750,7 +7756,7 @@
     "message": "Özünüzü qruplara əlavə edə bilməzsiniz."
   },
   "cannotAddYourselfToCollections": {
-    "message": "You cannot add yourself to collections."
+    "message": "Özünüzü kolleksiyalara əlavə edə bilməzsiniz."
   },
   "assign": {
     "message": "Təyin et"
@@ -8224,9 +8230,9 @@
     "message": "Ailənizi və ya işinizi qoruyun"
   },
   "upgradeOrganizationCloseSecurityGaps": {
-    "message": "Close security gaps with monitoring reports"
+    "message": "İzləmə hesabatları ilə təhlükəsizlik boşluqlarını bağlayın"
   },
   "upgradeOrganizationCloseSecurityGapsDesc": {
-    "message": "Stay ahead of security vulnerabilities by upgrading to a paid plan for enhanced monitoring."
+    "message": "Təkmil izləmə üçün ödənişli plana yüksəldərək təhlükəsizlik üzrə zəif nöqtələri qabaqlayın."
   }
 }

@@ -3565,6 +3565,12 @@
   "subscriptionUserSeatsUnlimitedAutoscale": {
     "message": "Zmiany w subskrypcji spowodują proporcjonalne zmiany w rozliczeniach. Jeśli nowo zaproszeni członkowie przekroczą liczbę miejsc w subskrypcji, otrzymasz proporcjonalną opłatę za dodatkowych członków."
   },
+  "smStandaloneTrialSeatCountUpdateMessageFragment1": {
+    "message": "If you want to add additional"
+  },
+  "smStandaloneTrialSeatCountUpdateMessageFragment2": {
+    "message": "seats without the bundled offer, please contact"
+  },
   "subscriptionUserSeatsLimitedAutoscale": {
     "message": "Korekty subskrypcji spowodują proporcjonalne zmiany w sumach rozliczeniowych. Jeśli nowo zaproszeni członkowie przekroczą liczbę miejsc objętych subskrypcją, natychmiast otrzymasz proporcjonalną opłatę za dodatkowych członków, aż do osiągnięcia limitu miejsc $MAX$.",
     "placeholders": {
@@ -8224,9 +8230,9 @@
     "message": "Chroń swoją rodzinę lub firmę"
   },
   "upgradeOrganizationCloseSecurityGaps": {
-    "message": "Close security gaps with monitoring reports"
+    "message": "Zamyka luki bezpieczeństwa za pomocą sprawozdań z monitorowania"
   },
   "upgradeOrganizationCloseSecurityGapsDesc": {
-    "message": "Stay ahead of security vulnerabilities by upgrading to a paid plan for enhanced monitoring."
+    "message": "Bądź na bieżąco z lukami bezpieczeństwa dzięki zmianie na płatny plan z bardziej rozbudowanym monitorowaniem."
   }
 }

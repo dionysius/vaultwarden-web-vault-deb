@@ -3565,6 +3565,12 @@
   "subscriptionUserSeatsUnlimitedAutoscale": {
     "message": "Les ajustements apportés à votre abonnement entraîneront des modifications au prorata de vos totaux de facturation. Si les utilisateurs nouvellement invités dépassent votre nombre de licences, vous recevrez immédiatement des frais au prorata pour les utilisateurs supplémentaires."
   },
+  "smStandaloneTrialSeatCountUpdateMessageFragment1": {
+    "message": "Si vous souhaitez ajouter"
+  },
+  "smStandaloneTrialSeatCountUpdateMessageFragment2": {
+    "message": "des licences sans l'offre groupée, veuillez contacter"
+  },
   "subscriptionUserSeatsLimitedAutoscale": {
     "message": "Les ajustements apportés à votre abonnement entraîneront des modifications au prorata de vos totaux de facturation. Si les utilisateurs nouvellement invités dépassent votre nombre de licences, vous recevrez immédiatement des frais au prorata pour les utilisateurs supplémentaires jusqu'à ce que votre limite de $MAX$ licences soit atteinte.",
     "placeholders": {

@@ -3565,6 +3565,12 @@
   "subscriptionUserSeatsUnlimitedAutoscale": {
     "message": "Abonnementsjusteringer vil resultere i forholdsmæssige ændringer af dine faktureringstotaler. Overstiger antal nyligt inviterede brugere abonnementskvoten, modtager du straks en forholdsmæssig opkrævning for de ekstra brugere."
   },
+  "smStandaloneTrialSeatCountUpdateMessageFragment1": {
+    "message": "Ønskes der tilføjet yderligere"
+  },
+  "smStandaloneTrialSeatCountUpdateMessageFragment2": {
+    "message": "pladser uden pakketilbuddet, kontakt venligst"
+  },
   "subscriptionUserSeatsLimitedAutoscale": {
     "message": "Abonnementsjusteringer vil resultere i forholdsmæssige ændringer af dine faktureringstotaler. Overstiger antal nyligt inviterede brugere abonnementskvoten, modtager du straks en forholdsmæssig opkrævning for de ekstra brugere, indtil pladskvoten på $MAX$ er nået.",
     "placeholders": {

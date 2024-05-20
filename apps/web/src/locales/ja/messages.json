@@ -3565,6 +3565,12 @@
   "subscriptionUserSeatsUnlimitedAutoscale": {
     "message": "サブスクリプションを調整すると、請求の合計が日割りで変更されます。新たに招待されたユーザーがお客様の契約数を超えた場合、お客様は直ちに追加ユーザー分の日割り計算を請求されます。"
   },
+  "smStandaloneTrialSeatCountUpdateMessageFragment1": {
+    "message": "バンドルオファーなしで"
+  },
+  "smStandaloneTrialSeatCountUpdateMessageFragment2": {
+    "message": "シートを追加したい場合はお問い合わせください"
+  },
   "subscriptionUserSeatsLimitedAutoscale": {
     "message": "サブスクリプションを調整すると、請求の合計が日割りで変更されます。新しく招待されたユーザーがお客様の契約数を超えた場合、契約数が$MAX$名に達するまで、追加されたユーザーに対する日割り計算の請求が即座に請求されます。",
     "placeholders": {
@@ -6589,7 +6595,7 @@
     "message": "このグループに追加してコレクションへのアクセスを許可します。"
   },
   "restrictedCollectionAssignmentDesc": {
-    "message": "You can only assign collections you manage."
+    "message": "自分が管理しているコレクションのみを割り当てることができます。"
   },
   "accessAllCollectionsDesc": {
     "message": "現在および将来のすべてのコレクションへのアクセスを許可します。"
@@ -6823,7 +6829,7 @@
     "message": "グループを選択"
   },
   "userPermissionOverrideHelperDesc": {
-    "message": "Permissions set for a member will replace permissions set by that member's group."
+    "message": "メンバーの権限設定は、そのメンバーのグループによって設定された権限に置き換えられます。"
   },
   "noMembersOrGroupsAdded": {
     "message": "メンバーまたはグループが追加されていません"
@@ -7750,7 +7756,7 @@
     "message": "あなた自身をグループに追加することはできません。"
   },
   "cannotAddYourselfToCollections": {
-    "message": "You cannot add yourself to collections."
+    "message": "コレクションに自分自身を追加することはできません。"
   },
   "assign": {
     "message": "割り当て"
@@ -8218,15 +8224,15 @@
     }
   },
   "secureYourInfrastructure": {
-    "message": "Secure your infrastructure"
+    "message": "インフラストラクチャの保護"
   },
   "protectYourFamilyOrBusiness": {
-    "message": "Protect your family or business"
+    "message": "家族やビジネスを保護"
   },
   "upgradeOrganizationCloseSecurityGaps": {
-    "message": "Close security gaps with monitoring reports"
+    "message": "モニタリングレポートでセキュリティギャップを解消"
   },
   "upgradeOrganizationCloseSecurityGapsDesc": {
-    "message": "Stay ahead of security vulnerabilities by upgrading to a paid plan for enhanced monitoring."
+    "message": "監視を強化できる有料プランにアップグレードすると、セキュリティ脆弱性に素早く対応できます。"
   }
 }

@@ -3565,6 +3565,12 @@
   "subscriptionUserSeatsUnlimitedAutoscale": {
     "message": "Penyesuaian pada paket langganan Anda akan mengakibatkan perubahan prorata pada total tagihan Anda. Jika anggota yang baru diundang melampaui kuota langganan Anda, Anda akan langsung dikenakan biaya prorata untuk pengguna tambahan tersebut."
   },
+  "smStandaloneTrialSeatCountUpdateMessageFragment1": {
+    "message": "If you want to add additional"
+  },
+  "smStandaloneTrialSeatCountUpdateMessageFragment2": {
+    "message": "seats without the bundled offer, please contact"
+  },
   "subscriptionUserSeatsLimitedAutoscale": {
     "message": "Penyesuaian pada paket langganan Anda akan mengakibatkan perubahan prorata pada total tagihan Anda. Jika anggota yang baru diundang melampaui kuota langganan Anda, Anda akan langsung dikenakan biaya prorata untuk pengguna tambahan tersebut hingga batas kuota $MAX$ anggota tercapai.",
     "placeholders": {

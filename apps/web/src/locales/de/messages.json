@@ -3565,6 +3565,12 @@
   "subscriptionUserSeatsUnlimitedAutoscale": {
     "message": "Anpassungen an deinem Abonnement führen zu anteiligen Änderungen an deiner Rechnungssumme. Wenn neu eingeladene Benutzer deine Abonnement-Benutzerplätze überschreiten, wird dir sofort eine anteilige Gebühr für die zusätzlichen Benutzer berechnet."
   },
+  "smStandaloneTrialSeatCountUpdateMessageFragment1": {
+    "message": "If you want to add additional"
+  },
+  "smStandaloneTrialSeatCountUpdateMessageFragment2": {
+    "message": "seats without the bundled offer, please contact"
+  },
   "subscriptionUserSeatsLimitedAutoscale": {
     "message": "Anpassungen an deinem Abonnement führen zu anteiligen Änderungen an deiner Rechnungssumme. Wenn neu eingeladene Benutzer deine Abo-Benutzerplätze überschreiten, wird dir sofort eine anteilige Gebühr für die zusätzlichen Benutzer berechnet, bis dein Benutzerlimit von $MAX$ erreicht ist.",
     "placeholders": {
@@ -8224,9 +8230,9 @@
     "message": "Protect your family or business"
   },
   "upgradeOrganizationCloseSecurityGaps": {
-    "message": "Close security gaps with monitoring reports"
+    "message": "Sicherheitslücken durch Kontrollberichte schließen"
   },
   "upgradeOrganizationCloseSecurityGapsDesc": {
-    "message": "Stay ahead of security vulnerabilities by upgrading to a paid plan for enhanced monitoring."
+    "message": "Schütze dich vor Sicherheitsschwachstellen, indem du ein kostenpflichtiges Abo für eine verbesserte Sicherheitskontrolle abschließt."
   }
 }

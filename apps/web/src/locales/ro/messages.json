@@ -3565,6 +3565,12 @@
   "subscriptionUserSeatsUnlimitedAutoscale": {
     "message": "Ajustările abonamentului dvs. vor avea ca rezultat modificări proporționale ale totalurilor dvs. de facturare. Dacă utilizatorii nou invitați depășesc numărul dvs. de licențe, veți primi imediat o taxă proporțională pentru utilizatorii suplimentari."
   },
+  "smStandaloneTrialSeatCountUpdateMessageFragment1": {
+    "message": "If you want to add additional"
+  },
+  "smStandaloneTrialSeatCountUpdateMessageFragment2": {
+    "message": "seats without the bundled offer, please contact"
+  },
   "subscriptionUserSeatsLimitedAutoscale": {
     "message": "Ajustările abonamentului dvs. vor avea ca rezultat modificări proporționale ale totalurilor dvs. de facturare. Dacă utilizatorii nou invitați depășesc numărul dvs. de licențe, veți primi imediat o taxă proporțională pentru utilizatorii suplimentari, până când limita dvs. de $MAX$ licențe este atinsă.",
     "placeholders": {

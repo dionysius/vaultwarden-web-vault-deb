@@ -3565,6 +3565,12 @@
   "subscriptionUserSeatsUnlimitedAutoscale": {
     "message": "Adjustments to your subscription will result in prorated changes to your billing totals. If newly invited members exceed your subscription seats, you will immediately receive a prorated charge for the additional members."
   },
+  "smStandaloneTrialSeatCountUpdateMessageFragment1": {
+    "message": "If you want to add additional"
+  },
+  "smStandaloneTrialSeatCountUpdateMessageFragment2": {
+    "message": "seats without the bundled offer, please contact"
+  },
   "subscriptionUserSeatsLimitedAutoscale": {
     "message": "Adjustments to your subscription will result in prorated changes to your billing totals. If newly invited members exceed your subscription seats, you will immediately receive a prorated charge for the additional members until your $MAX$ seat limit is reached.",
     "placeholders": {
@@ -6589,7 +6595,7 @@
     "message": "Grant access to collections by adding them to this group."
   },
   "restrictedCollectionAssignmentDesc": {
-    "message": "You can only assign collections you manage."
+    "message": "Du kan endast tilldela samlingar som du hanterar."
   },
   "accessAllCollectionsDesc": {
     "message": "Grant access to all current and future collections."
@@ -7750,7 +7756,7 @@
     "message": "Du kan inte lägga till dig själv i grupper."
   },
   "cannotAddYourselfToCollections": {
-    "message": "You cannot add yourself to collections."
+    "message": "Du kan inte lägga till dig själv i samlingar."
   },
   "assign": {
     "message": "Tilldela"
@@ -8218,10 +8224,10 @@
     }
   },
   "secureYourInfrastructure": {
-    "message": "Secure your infrastructure"
+    "message": "Säkra din infrastruktur"
   },
   "protectYourFamilyOrBusiness": {
-    "message": "Protect your family or business"
+    "message": "Skydda din familj eller ditt företag"
   },
   "upgradeOrganizationCloseSecurityGaps": {
     "message": "Close security gaps with monitoring reports"
