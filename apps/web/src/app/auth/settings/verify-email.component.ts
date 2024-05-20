@@ -1,25 +1,29 @@
+import { CommonModule } from "@angular/common";
 import { Component, EventEmitter, Output } from "@angular/core";
 
+import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
-import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { AsyncActionsModule, BannerModule, ButtonModule, LinkModule } from "@bitwarden/components";
 
 @Component({
+  standalone: true,
   selector: "app-verify-email",
   templateUrl: "verify-email.component.html",
+  imports: [AsyncActionsModule, BannerModule, ButtonModule, CommonModule, JslibModule, LinkModule],
 })
 export class VerifyEmailComponent {
   actionPromise: Promise<unknown>;
 
   @Output() onVerified = new EventEmitter<boolean>();
+  @Output() onDismiss = new EventEmitter<void>();
 
   constructor(
     private apiService: ApiService,
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
-    private logService: LogService,
     private tokenService: TokenService,
   ) {}
 

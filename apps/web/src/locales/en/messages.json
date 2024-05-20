@@ -8223,6 +8223,12 @@
       }
     }
   },
+  "lowKDFIterationsBanner": {
+    "message": "Low KDF iterations. Increase your iterations to improve the security of your account."
+  },
+  "changeKDFSettings": {
+    "message": "Change KDF settings"
+  },
   "secureYourInfrastructure": {
     "message": "Secure your infrastructure"
   },

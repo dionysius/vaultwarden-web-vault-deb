@@ -35,9 +35,6 @@ import { EventCollectionService } from "@bitwarden/common/abstractions/event/eve
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
-import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
-import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
-import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions/account/billing-account-profile-state.service";
 import { EventType } from "@bitwarden/common/enums";
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
@@ -47,7 +44,6 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { KdfType, PBKDF2_ITERATIONS } from "@bitwarden/common/platform/enums";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CollectionService } from "@bitwarden/common/vault/abstractions/collection.service";
@@ -122,10 +118,6 @@ export class VaultComponent implements OnInit, OnDestroy {
   @ViewChild("collectionsModal", { read: ViewContainerRef, static: true })
   collectionsModalRef: ViewContainerRef;
 
-  showVerifyEmail = false;
-  showBrowserOutdated = false;
-  showPremiumCallout = false;
-  showLowKdf = false;
   trashCleanupWarning: string = null;
   kdfIterations: number;
   activeFilter: VaultFilter = new VaultFilter();
@@ -161,7 +153,6 @@ export class VaultComponent implements OnInit, OnDestroy {
     private i18nService: I18nService,
     private modalService: ModalService,
     private dialogService: DialogService,
-    private tokenService: TokenService,
     private messagingService: MessagingService,
     private platformUtilsService: PlatformUtilsService,
     private broadcasterService: BroadcasterService,
@@ -180,14 +171,11 @@ export class VaultComponent implements OnInit, OnDestroy {
     private searchPipe: SearchPipe,
     private configService: ConfigService,
     private apiService: ApiService,
-    private userVerificationService: UserVerificationService,
     private billingAccountProfileStateService: BillingAccountProfileStateService,
     private toastService: ToastService,
-    protected kdfConfigService: KdfConfigService,
   ) {}
 
   async ngOnInit() {
-    this.showBrowserOutdated = window.navigator.userAgent.indexOf("MSIE") !== -1;
     this.trashCleanupWarning = this.i18nService.t(
       this.platformUtilsService.isSelfHost()
         ? "trashCleanupWarningSelfHosted"
@@ -197,17 +185,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     const firstSetup$ = this.route.queryParams.pipe(
       first(),
       switchMap(async (params: Params) => {
-        this.showVerifyEmail = !(await this.tokenService.getEmailVerified());
-        this.showLowKdf = (await this.userVerificationService.hasMasterPassword())
-          ? await this.isLowKdfIteration()
-          : false;
         await this.syncService.fullSync(false);
-
-        const canAccessPremium = await firstValueFrom(
-          this.billingAccountProfileStateService.hasPremiumFromAnySource$,
-        );
-        this.showPremiumCallout =
-          !this.showVerifyEmail && !canAccessPremium && !this.platformUtilsService.isSelfHost();
 
         const cipherId = getCipherIdFromParams(params);
         if (!cipherId) {
@@ -410,16 +388,6 @@ export class VaultComponent implements OnInit, OnDestroy {
           this.refreshing = false;
         },
       );
-  }
-
-  get isShowingCards() {
-    return (
-      this.showBrowserOutdated || this.showPremiumCallout || this.showVerifyEmail || this.showLowKdf
-    );
-  }
-
-  emailVerified(verified: boolean) {
-    this.showVerifyEmail = !verified;
   }
 
   ngOnDestroy() {
@@ -1003,14 +971,6 @@ export class VaultComponent implements OnInit, OnDestroy {
     return permanent
       ? this.cipherService.deleteWithServer(id)
       : this.cipherService.softDeleteWithServer(id);
-  }
-
-  async isLowKdfIteration() {
-    const kdfConfig = await this.kdfConfigService.getKdfConfig();
-    return (
-      kdfConfig.kdfType === KdfType.PBKDF2_SHA256 &&
-      kdfConfig.iterations < PBKDF2_ITERATIONS.defaultValue
-    );
   }
 
   protected async repromptCipher(ciphers: CipherView[]) {
