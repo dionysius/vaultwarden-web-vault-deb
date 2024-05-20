@@ -11,6 +11,7 @@ import {
   I18nMockService,
   IconButtonModule,
   ItemModule,
+  NoItemsModule,
 } from "@bitwarden/components";
 
 import { PopupFooterComponent } from "./popup-footer.component";
@@ -289,6 +290,9 @@ export default {
     moduleMetadata({
       imports: [
         PopupTabNavigationComponent,
+        PopupHeaderComponent,
+        PopupPageComponent,
+        PopupFooterComponent,
         CommonModule,
         RouterModule,
         ExtensionContainerComponent,
@@ -298,6 +302,7 @@ export default {
         MockGeneratorPageComponent,
         MockSettingsPageComponent,
         MockVaultPagePoppedComponent,
+        NoItemsModule,
       ],
       providers: [
         {
@@ -375,6 +380,27 @@ export const PoppedOut: Story = {
       <div class="tw-h-[640px] tw-w-[900px] tw-border tw-border-solid tw-border-secondary-300">
         <mock-vault-page-popped></mock-vault-page-popped>
       </div>
+    `,
+  }),
+};
+
+export const CenteredContent: Story = {
+  render: (args) => ({
+    props: args,
+    template: /* HTML */ `
+      <extension-container>
+        <popup-tab-navigation>
+          <popup-page>
+            <popup-header slot="header" pageTitle="Centered Content"></popup-header>
+            <div class="tw-h-full tw-flex tw-items-center tw-justify-center tw-text-main">
+              <bit-no-items>
+                <ng-container slot="title">Before centering a div</ng-container>
+                <ng-container slot="description">One must first center oneself</ng-container>
+              </bit-no-items>
+            </div>
+          </popup-page>
+        </popup-tab-navigation>
+      </extension-container>
     `,
   }),
 };
