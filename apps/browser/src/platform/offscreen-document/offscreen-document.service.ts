@@ -1,9 +1,15 @@
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 
-export class DefaultOffscreenDocumentService implements DefaultOffscreenDocumentService {
+import { OffscreenDocumentService } from "./abstractions/offscreen-document";
+
+export class DefaultOffscreenDocumentService implements OffscreenDocumentService {
   private workerCount = 0;
 
   constructor(private logService: LogService) {}
+
+  offscreenApiSupported(): boolean {
+    return typeof chrome.offscreen !== "undefined";
+  }
 
   async withDocument<T>(
     reasons: chrome.offscreen.Reason[],

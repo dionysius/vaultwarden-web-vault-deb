@@ -49,6 +49,12 @@ describe.each([
     jest.resetAllMocks();
   });
 
+  describe("offscreenApiSupported", () => {
+    it("indicates whether the offscreen API is supported", () => {
+      expect(sut.offscreenApiSupported()).toBe(true);
+    });
+  });
+
   describe("withDocument", () => {
     it("creates a document when none exists", async () => {
       await sut.withDocument(reasons, justification, () => {});

@@ -20,6 +20,7 @@ export interface OffscreenDocument {
 }
 
 export abstract class OffscreenDocumentService {
+  abstract offscreenApiSupported(): boolean;
   abstract withDocument<T>(
     reasons: chrome.offscreen.Reason[],
     justification: string,
