@@ -5,6 +5,12 @@ import { AnonLayoutComponent } from "@bitwarden/auth/angular";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { Icon } from "@bitwarden/components";
 
+export interface AnonLayoutWrapperData {
+  pageTitle: string;
+  pageSubtitle: string;
+  pageIcon: Icon;
+}
+
 @Component({
   standalone: true,
   templateUrl: "anon-layout-wrapper.component.html",

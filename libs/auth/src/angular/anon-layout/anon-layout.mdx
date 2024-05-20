@@ -31,14 +31,13 @@ writing:
 Instead the AnonLayoutComponent is implemented solely in the router via routable composition, which
 gives us the advantages of nested routes in Angular.
 
-To allow for routable composition, Auth will also provide a wrapper component in each client, called
-AnonLayout**Wrapper**Component.
+To allow for routable composition, Auth also provides an AnonLayout**Wrapper**Component which embeds
+the AnonLayoutComponent.
 
 For clarity:
 
-- AnonLayoutComponent = the Auth-owned library component - `<auth-anon-layout>`
-- AnonLayout**Wrapper**Component = the client-specific wrapper component to be used in a client
-  routing module
+- AnonLayoutComponent = the base, Auth-owned library component - `<auth-anon-layout>`
+- AnonLayout**Wrapper**Component = the wrapper to be used in client routing modules
 
 The AnonLayout**Wrapper**Component embeds the AnonLayoutComponent along with the router outlets:
 
@@ -79,7 +78,7 @@ example) to construct the page via routable composition:
           pageTitle: "logIn", // example of a translation key from messages.json
           pageSubtitle: "loginWithMasterPassword", // example of a translation key from messages.json
           pageIcon: LockIcon, // example of an icon to pass in
-        },
+        } satisfies AnonLayoutWrapperData,
       },
     ],
   },
@@ -99,7 +98,7 @@ In the `oss-routing.module.ts` example above, notice the data properties being p
 All 3 of these properties are optional.
 
 ```javascript
-import { LockIcon } from "@bitwarden/auth/angular";
+import { AnonLayoutWrapperData, LockIcon } from "@bitwarden/auth/angular";
 
 // ...
 
@@ -109,7 +108,7 @@ import { LockIcon } from "@bitwarden/auth/angular";
     pageTitle: "logIn",
     pageSubtitle: "loginWithMasterPassword",
     pageIcon: LockIcon,
-  },
+  } satisfies AnonLayoutWrapperData,
 }
 ```
 
