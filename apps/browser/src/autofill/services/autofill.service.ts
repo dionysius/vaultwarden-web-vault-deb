@@ -3,6 +3,7 @@ import { firstValueFrom } from "rxjs";
 import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
+import { AutofillOverlayVisibility } from "@bitwarden/common/autofill/constants";
 import { AutofillSettingsServiceAbstraction } from "@bitwarden/common/autofill/services/autofill-settings.service";
 import { DomainSettingsService } from "@bitwarden/common/autofill/services/domain-settings.service";
 import { InlineMenuVisibilitySetting } from "@bitwarden/common/autofill/types";
@@ -109,9 +110,12 @@ export default class AutofillService implements AutofillServiceInterface {
     // Autofill user settings loaded from state can await the active account state indefinitely
     // if not guarded by an active account check (e.g. the user is logged in)
     const activeAccount = await firstValueFrom(this.accountService.activeAccount$);
-
+    let overlayVisibility: InlineMenuVisibilitySetting = AutofillOverlayVisibility.Off;
     let autoFillOnPageLoadIsEnabled = false;
-    const overlayVisibility = await this.getOverlayVisibility();
+
+    if (activeAccount) {
+      overlayVisibility = await this.getOverlayVisibility();
+    }
 
     const mainAutofillScript = overlayVisibility
       ? "bootstrap-autofill-overlay.js"
