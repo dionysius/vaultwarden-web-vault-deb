@@ -1714,6 +1714,12 @@
   "biometricsNotSupportedDesc": {
     "message": "Біометрія в браузері не підтримується на цьому пристрої."
   },
+  "biometricsNotUnlockedTitle": {
+    "message": "Користувач заблокований або вийшов із системи"
+  },
+  "biometricsNotUnlockedDesc": {
+    "message": "Розблокуйте цього користувача в програмі для комп'ютера і повторіть спробу."
+  },
   "biometricsFailedTitle": {
     "message": "Збій біометрії"
   },

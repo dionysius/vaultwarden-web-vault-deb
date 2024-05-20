@@ -1714,6 +1714,12 @@
   "biometricsNotSupportedDesc": {
     "message": "බ්රව්සර් biometrics මෙම උපාංගය මත සහය නොදක්වයි."
   },
+  "biometricsNotUnlockedTitle": {
+    "message": "User locked or logged out"
+  },
+  "biometricsNotUnlockedDesc": {
+    "message": "Please unlock this user in the desktop application and try again."
+  },
   "biometricsFailedTitle": {
     "message": "Biometrics failed"
   },

@@ -1714,6 +1714,12 @@
   "biometricsNotSupportedDesc": {
     "message": "ब्राउज़र बॉयोमीट्रिक्स इस डिवाइस पर समर्थित नहीं है।"
   },
+  "biometricsNotUnlockedTitle": {
+    "message": "User locked or logged out"
+  },
+  "biometricsNotUnlockedDesc": {
+    "message": "Please unlock this user in the desktop application and try again."
+  },
   "biometricsFailedTitle": {
     "message": "Biometrics failed"
   },

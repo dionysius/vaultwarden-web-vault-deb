@@ -1714,6 +1714,12 @@
   "biometricsNotSupportedDesc": {
     "message": "此设备不支持浏览器生物识别。"
   },
+  "biometricsNotUnlockedTitle": {
+    "message": "用户已锁定或已注销"
+  },
+  "biometricsNotUnlockedDesc": {
+    "message": "请在桌面应用程序中解锁此用户，然后重试。"
+  },
   "biometricsFailedTitle": {
     "message": "生物识别失败"
   },
@@ -3150,6 +3156,6 @@
     "message": "分配目标文件夹时出错。"
   },
   "new": {
-    "message": "New"
+    "message": "新建"
   }
 }

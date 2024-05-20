@@ -1714,6 +1714,12 @@
   "biometricsNotSupportedDesc": {
     "message": "Nhận dạng sinh trắc học trên trình duyệt không được hỗ trợ trên thiết bị này"
   },
+  "biometricsNotUnlockedTitle": {
+    "message": "User locked or logged out"
+  },
+  "biometricsNotUnlockedDesc": {
+    "message": "Please unlock this user in the desktop application and try again."
+  },
   "biometricsFailedTitle": {
     "message": "Biometrics failed"
   },

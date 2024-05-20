@@ -1714,6 +1714,12 @@
   "biometricsNotSupportedDesc": {
     "message": "Biometrie im Browser wird auf diesem Gerät nicht unterstützt."
   },
+  "biometricsNotUnlockedTitle": {
+    "message": "User locked or logged out"
+  },
+  "biometricsNotUnlockedDesc": {
+    "message": "Please unlock this user in the desktop application and try again."
+  },
   "biometricsFailedTitle": {
     "message": "Biometrie fehlgeschlagen"
   },

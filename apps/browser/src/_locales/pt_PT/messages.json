@@ -1714,6 +1714,12 @@
   "biometricsNotSupportedDesc": {
     "message": "A biometria do navegador não é suportada neste dispositivo."
   },
+  "biometricsNotUnlockedTitle": {
+    "message": "Utilizador bloqueado ou com sessão terminada"
+  },
+  "biometricsNotUnlockedDesc": {
+    "message": "Por favor, desbloqueie este utilizador na aplicação para computador e tente novamente."
+  },
   "biometricsFailedTitle": {
     "message": "Falha na biometria"
   },
@@ -3150,6 +3156,6 @@
     "message": "Erro ao atribuir a pasta de destino."
   },
   "new": {
-    "message": "New"
+    "message": "Novo"
   }
 }

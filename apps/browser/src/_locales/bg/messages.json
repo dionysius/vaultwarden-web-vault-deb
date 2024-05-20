@@ -1714,6 +1714,12 @@
   "biometricsNotSupportedDesc": {
     "message": "Устройството не поддържа потвърждаване с биометрични данни."
   },
+  "biometricsNotUnlockedTitle": {
+    "message": "Потребителят е заключен или отписан"
+  },
+  "biometricsNotUnlockedDesc": {
+    "message": "Отключете потребителя в настолното приложение и опитайте отново."
+  },
   "biometricsFailedTitle": {
     "message": "Неуспешно удостоверяване чрез биометрични данни"
   },
@@ -3150,6 +3156,6 @@
     "message": "Грешка при задаването на целева папка."
   },
   "new": {
-    "message": "New"
+    "message": "Ново"
   }
 }

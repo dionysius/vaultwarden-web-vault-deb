@@ -1714,6 +1714,12 @@
   "biometricsNotSupportedDesc": {
     "message": "Dane biometryczne przeglądarki nie są obsługiwane na tym urządzeniu."
   },
+  "biometricsNotUnlockedTitle": {
+    "message": "Użytkownik zablokowany lub wylogowany"
+  },
+  "biometricsNotUnlockedDesc": {
+    "message": "Odblokuj tego użytkownika w aplikacji desktopowej i spróbuj ponownie."
+  },
   "biometricsFailedTitle": {
     "message": "Dane biometryczne są błędne"
   },
@@ -3150,6 +3156,6 @@
     "message": "Wystąpił błąd podczas przypisywania folderu."
   },
   "new": {
-    "message": "New"
+    "message": "Nowy"
   }
 }

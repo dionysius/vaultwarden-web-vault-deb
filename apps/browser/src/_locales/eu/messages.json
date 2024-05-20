@@ -1714,6 +1714,12 @@
   "biometricsNotSupportedDesc": {
     "message": "Nabigatzailearen biometria ezin da gailu honetan erabili."
   },
+  "biometricsNotUnlockedTitle": {
+    "message": "User locked or logged out"
+  },
+  "biometricsNotUnlockedDesc": {
+    "message": "Please unlock this user in the desktop application and try again."
+  },
   "biometricsFailedTitle": {
     "message": "Biometrics failed"
   },

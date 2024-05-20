@@ -1714,6 +1714,12 @@
   "biometricsNotSupportedDesc": {
     "message": "このデバイスではブラウザの生体認証に対応していません。"
   },
+  "biometricsNotUnlockedTitle": {
+    "message": "ユーザーがロックまたはログアウトしました"
+  },
+  "biometricsNotUnlockedDesc": {
+    "message": "デスクトップアプリでこのユーザーのロックを解除して、もう一度やり直してください。"
+  },
   "biometricsFailedTitle": {
     "message": "生体認証に失敗しました"
   },
@@ -3150,6 +3156,6 @@
     "message": "ターゲットフォルダーの割り当てに失敗しました。"
   },
   "new": {
-    "message": "New"
+    "message": "新規作成"
   }
 }

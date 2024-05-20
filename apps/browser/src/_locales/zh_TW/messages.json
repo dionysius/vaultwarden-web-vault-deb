@@ -1714,6 +1714,12 @@
   "biometricsNotSupportedDesc": {
     "message": "此裝置不支援瀏覽器生物特徵辨識。"
   },
+  "biometricsNotUnlockedTitle": {
+    "message": "User locked or logged out"
+  },
+  "biometricsNotUnlockedDesc": {
+    "message": "Please unlock this user in the desktop application and try again."
+  },
   "biometricsFailedTitle": {
     "message": "生物特徵辨識失敗"
   },

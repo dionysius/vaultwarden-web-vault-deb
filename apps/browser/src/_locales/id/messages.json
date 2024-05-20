@@ -3,11 +3,11 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden Password Manager",
+    "message": "Bitwarden Pengelola Sandi",
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
-    "message": "At home, at work, or on the go, Bitwarden easily secures all your passwords, passkeys, and sensitive information",
+    "message": "Bitwarden memudahkan Anda menyimpan kata sandi, kata kunci, dan informasi sensitif dimanapun Anda berada",
     "description": "Extension description, MUST be less than 112 characters (Safari restriction)"
   },
   "loginOrCreateNewAccount": {
@@ -92,13 +92,13 @@
     "message": "Isi otomatis"
   },
   "autoFillLogin": {
-    "message": "Auto-fill login"
+    "message": "Autofill masuk"
   },
   "autoFillCard": {
-    "message": "Auto-fill card"
+    "message": "Autofill kartu"
   },
   "autoFillIdentity": {
-    "message": "Auto-fill identity"
+    "message": "Autofill identitas"
   },
   "generatePasswordCopied": {
     "message": "Membuat Kata Sandi (tersalin)"
@@ -110,19 +110,19 @@
     "message": "Tidak ada info masuk yang cocok."
   },
   "noCards": {
-    "message": "No cards"
+    "message": "Tanpa kartu"
   },
   "noIdentities": {
-    "message": "No identities"
+    "message": "Tanpa identitas"
   },
   "addLoginMenu": {
-    "message": "Add login"
+    "message": "Tambahkan Info Masuk"
   },
   "addCardMenu": {
-    "message": "Add card"
+    "message": "Tambahkan kartu"
   },
   "addIdentityMenu": {
-    "message": "Add identity"
+    "message": "Tambahkan identitas"
   },
   "unlockVaultMenu": {
     "message": "Buka brankas Anda"
@@ -173,10 +173,10 @@
     "message": "Ubah Kata Sandi Utama"
   },
   "continueToWebApp": {
-    "message": "Continue to web app?"
+    "message": "Lanjut ke aplikasi web?"
   },
   "changeMasterPasswordOnWebConfirmation": {
-    "message": "You can change your master password on the Bitwarden web app."
+    "message": "Anda dapat merubah sandi utama di aplikasi Bitwarden web."
   },
   "fingerprintPhrase": {
     "message": "Frasa Sidik Jari",
@@ -226,13 +226,13 @@
     "message": "Bantuan & Umpan Balik"
   },
   "helpCenter": {
-    "message": "Bitwarden Help center"
+    "message": "Pusat Bantuan Bitwarden"
   },
   "communityForums": {
-    "message": "Explore Bitwarden community forums"
+    "message": "Telusuri forum Bitwarden"
   },
   "contactSupport": {
-    "message": "Contact Bitwarden support"
+    "message": "Kontak dukungan Bitwarden"
   },
   "sync": {
     "message": "Sinkronisasi"
@@ -275,7 +275,7 @@
     "message": "Panjang"
   },
   "passwordMinLength": {
-    "message": "Minimum password length"
+    "message": "Panjang kata sandi minimum"
   },
   "uppercase": {
     "message": "Huruf besar (A-Z)"
@@ -333,7 +333,7 @@
     "message": "Kata Sandi"
   },
   "totp": {
-    "message": "Authenticator secret"
+    "message": "Kode Autentikator"
   },
   "passphrase": {
     "message": "Frasa Sandi"
@@ -375,19 +375,19 @@
     "message": "Lainnya"
   },
   "unlockMethods": {
-    "message": "Unlock options"
+    "message": "Pilihan Penguncian"
   },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
-    "message": "Set up an unlock method to change your vault timeout action."
+    "message": "Mengatur metode pembukaan kunci untuk mengubah tindakan batas waktu brankas Anda."
   },
   "unlockMethodNeeded": {
-    "message": "Set up an unlock method in Settings"
+    "message": "Mengatur metode penguncian di Pengaturan"
   },
   "sessionTimeoutHeader": {
-    "message": "Session timeout"
+    "message": "Batas waktu sesi"
   },
   "otherOptions": {
-    "message": "Other options"
+    "message": "Opsi lainnya"
   },
   "rateExtension": {
     "message": "Nilai Ekstensi"
@@ -430,7 +430,7 @@
     "message": "Kunci Sekarang"
   },
   "lockAll": {
-    "message": "Lock all"
+    "message": "Kunci semua"
   },
   "immediately": {
     "message": "Segera"
@@ -490,10 +490,10 @@
     "message": "Kata sandi utama diperlukan."
   },
   "confirmMasterPasswordRequired": {
-    "message": "Master password retype is required."
+    "message": "Sandi utama diperlukan."
   },
   "masterPasswordMinlength": {
-    "message": "Master password must be at least $VALUE$ characters long.",
+    "message": "Kata sandi utama harus $VALUE$ karakter.",
     "description": "The Master Password must be at least a specific number of characters long.",
     "placeholders": {
       "value": {
@@ -509,10 +509,10 @@
     "message": "Akun baru Anda telah dibuat! Sekarang Anda bisa masuk."
   },
   "youSuccessfullyLoggedIn": {
-    "message": "You successfully logged in"
+    "message": "Anda berhasil masuk"
   },
   "youMayCloseThisWindow": {
-    "message": "You may close this window"
+    "message": "Anda dapat menutup jendela ini"
   },
   "masterPassSent": {
     "message": "Kami telah mengirimi Anda email dengan petunjuk sandi utama Anda."
@@ -537,16 +537,16 @@
     "message": "Tidak dapat mengisi otomatis item yang dipilih pada laman ini. Salin dan tempel informasinya sebagai gantinya."
   },
   "totpCaptureError": {
-    "message": "Unable to scan QR code from the current webpage"
+    "message": "Tidak dapat memindai kode QR dari laman ini"
   },
   "totpCaptureSuccess": {
-    "message": "Authenticator key added"
+    "message": "Kunci Autentikator ditambahkan"
   },
   "totpCapture": {
-    "message": "Scan authenticator QR code from current webpage"
+    "message": "Pindai kode QR autentikator dari laman ini"
   },
   "copyTOTP": {
-    "message": "Copy Authenticator key (TOTP)"
+    "message": "Salin kunci Autentikator (TOTP)"
   },
   "loggedOut": {
     "message": "Keluar"
@@ -653,7 +653,7 @@
     "description": "This is the folder for uncategorized items"
   },
   "enableAddLoginNotification": {
-    "message": "Ask to add login"
+    "message": "Tanya untuk penambahan login"
   },
   "addLoginNotificationDesc": {
     "message": "\"Notifikasi Penambahan Info Masuk\" secara otomatis akan meminta Anda untuk menyimpan info masuk baru ke brankas Anda saat Anda masuk untuk pertama kalinya."
@@ -1713,6 +1713,12 @@
   },
   "biometricsNotSupportedDesc": {
     "message": "Biometrik peramban tidak didukung di perangkat ini."
+  },
+  "biometricsNotUnlockedTitle": {
+    "message": "User locked or logged out"
+  },
+  "biometricsNotUnlockedDesc": {
+    "message": "Please unlock this user in the desktop application and try again."
   },
   "biometricsFailedTitle": {
     "message": "Biometrics failed"

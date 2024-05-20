@@ -1714,6 +1714,12 @@
   "biometricsNotSupportedDesc": {
     "message": "بیومتریک مرورگر در این دستگاه پشتیبانی نمی‌شود."
   },
+  "biometricsNotUnlockedTitle": {
+    "message": "User locked or logged out"
+  },
+  "biometricsNotUnlockedDesc": {
+    "message": "Please unlock this user in the desktop application and try again."
+  },
   "biometricsFailedTitle": {
     "message": "زیست‌سنجی ناموفق بود"
   },

@@ -1714,6 +1714,12 @@
   "biometricsNotSupportedDesc": {
     "message": "Browserbiometri understøttes ikke på denne enhed."
   },
+  "biometricsNotUnlockedTitle": {
+    "message": "Bruger låst eller logget ud"
+  },
+  "biometricsNotUnlockedDesc": {
+    "message": "Oplås denne bruger op i computerprogrammet og forsøg igen."
+  },
   "biometricsFailedTitle": {
     "message": "Biometri mislykkedes"
   },
@@ -3150,6 +3156,6 @@
     "message": "Fejl ved tildeling af målmappe."
   },
   "new": {
-    "message": "New"
+    "message": "Ny/Nyt"
   }
 }

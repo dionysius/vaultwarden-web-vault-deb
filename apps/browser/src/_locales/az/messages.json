@@ -1714,6 +1714,12 @@
   "biometricsNotSupportedDesc": {
     "message": "Brauzer biometrikləri bu cihazda dəstəklənmir."
   },
+  "biometricsNotUnlockedTitle": {
+    "message": "İstifadəçi kilidlənib və ya hesabdan çıxış edib"
+  },
+  "biometricsNotUnlockedDesc": {
+    "message": "Lütfən bu istifadəçinin kilidini masaüstü tətbiqində açıb yenidən sınayın."
+  },
   "biometricsFailedTitle": {
     "message": "Biometrik uğursuzdur"
   },
@@ -3150,6 +3156,6 @@
     "message": "Hədəf qovluğa təyin etmə xətası."
   },
   "new": {
-    "message": "New"
+    "message": "Yeni"
   }
 }

@@ -1714,6 +1714,12 @@
   "biometricsNotSupportedDesc": {
     "message": "Біяметрыя ў браўзеры не падтрымліваецца на гэтай прыладзе."
   },
+  "biometricsNotUnlockedTitle": {
+    "message": "User locked or logged out"
+  },
+  "biometricsNotUnlockedDesc": {
+    "message": "Please unlock this user in the desktop application and try again."
+  },
   "biometricsFailedTitle": {
     "message": "Biometrics failed"
   },

@@ -1714,6 +1714,12 @@
   "biometricsNotSupportedDesc": {
     "message": "A böngésző biometrikus adatait ez az eszköz nem támogatja."
   },
+  "biometricsNotUnlockedTitle": {
+    "message": "A felhasználó zárolva van vagy kijelentkezett."
+  },
+  "biometricsNotUnlockedDesc": {
+    "message": "Oldjuk fel a felhasználó zárolását az asztali alkalmazásban és próbáljuk újra."
+  },
   "biometricsFailedTitle": {
     "message": "A biometria nem sikerült."
   },
@@ -3150,6 +3156,6 @@
     "message": "Hiba történt a célmappa hozzárendelése során."
   },
   "new": {
-    "message": "New"
+    "message": "Új"
   }
 }

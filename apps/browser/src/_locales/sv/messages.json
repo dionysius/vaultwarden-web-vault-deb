@@ -1714,6 +1714,12 @@
   "biometricsNotSupportedDesc": {
     "message": "Biometri i webbläsaren stöds inte på den här enheten."
   },
+  "biometricsNotUnlockedTitle": {
+    "message": "User locked or logged out"
+  },
+  "biometricsNotUnlockedDesc": {
+    "message": "Please unlock this user in the desktop application and try again."
+  },
   "biometricsFailedTitle": {
     "message": "Biometri misslyckades"
   },

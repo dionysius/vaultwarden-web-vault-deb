@@ -1714,6 +1714,12 @@
   "biometricsNotSupportedDesc": {
     "message": "Τα βιομετρικά στοιχεία του προγράμματος περιήγησης δεν υποστηρίζονται σε αυτήν τη συσκευή."
   },
+  "biometricsNotUnlockedTitle": {
+    "message": "User locked or logged out"
+  },
+  "biometricsNotUnlockedDesc": {
+    "message": "Please unlock this user in the desktop application and try again."
+  },
   "biometricsFailedTitle": {
     "message": "Ο βιομετρικός έλεγχος απέτυχε"
   },

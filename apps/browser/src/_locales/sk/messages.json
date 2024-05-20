@@ -1714,6 +1714,12 @@
   "biometricsNotSupportedDesc": {
     "message": "Biometria v prehliadači nie je podporovaná na tomto zariadení."
   },
+  "biometricsNotUnlockedTitle": {
+    "message": "Používateľ je zamknutý alebo odhlásený"
+  },
+  "biometricsNotUnlockedDesc": {
+    "message": "Prosím, odomknite tohto používateľa v počítačovej aplikácii a skúste to znova."
+  },
   "biometricsFailedTitle": {
     "message": "Biometria zlyhala"
   },

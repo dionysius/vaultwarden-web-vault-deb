@@ -1714,6 +1714,12 @@
   "biometricsNotSupportedDesc": {
     "message": "Ang browser biometrics ay hindi sinusuportahan sa device na ito."
   },
+  "biometricsNotUnlockedTitle": {
+    "message": "User locked or logged out"
+  },
+  "biometricsNotUnlockedDesc": {
+    "message": "Please unlock this user in the desktop application and try again."
+  },
   "biometricsFailedTitle": {
     "message": "Biometrics failed"
   },

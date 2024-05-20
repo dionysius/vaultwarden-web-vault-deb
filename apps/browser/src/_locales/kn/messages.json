@@ -1714,6 +1714,12 @@
   "biometricsNotSupportedDesc": {
     "message": "ಬ್ರೌಸರ್ ಬಯೋಮೆಟ್ರಿಕ್ಸ್ ಈ ಸಾಧನದಲ್ಲಿ ಬೆಂಬಲಿಸುವುದಿಲ್ಲ."
   },
+  "biometricsNotUnlockedTitle": {
+    "message": "User locked or logged out"
+  },
+  "biometricsNotUnlockedDesc": {
+    "message": "Please unlock this user in the desktop application and try again."
+  },
   "biometricsFailedTitle": {
     "message": "Biometrics failed"
   },

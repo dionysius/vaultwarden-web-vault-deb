@@ -1714,6 +1714,12 @@
   "biometricsNotSupportedDesc": {
     "message": "القياسات الحيوية للمتصفح غير مدعومة على هذا الجهاز."
   },
+  "biometricsNotUnlockedTitle": {
+    "message": "User locked or logged out"
+  },
+  "biometricsNotUnlockedDesc": {
+    "message": "Please unlock this user in the desktop application and try again."
+  },
   "biometricsFailedTitle": {
     "message": "فشل القياسات الحيوية"
   },
