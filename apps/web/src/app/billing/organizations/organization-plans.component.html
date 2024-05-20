@@ -51,8 +51,8 @@
   </bit-section>
   <bit-section>
     <h2 bitTypography="h2">{{ "chooseYourPlan" | i18n }}</h2>
-    <div *ngFor="let selectableProduct of selectableProducts">
-      <bit-radio-group formControlName="product" [block]="true">
+    <bit-radio-group formControlName="product" [block]="true">
+      <div *ngFor="let selectableProduct of selectableProducts" class="tw-mb-3">
         <bit-radio-button [value]="selectableProduct.product" (change)="changedProduct()">
           <bit-label>{{ selectableProduct.nameLocalizationKey | i18n }}</bit-label>
           <bit-hint class="tw-text-sm"
@@ -147,7 +147,7 @@
             </ng-template>
           </bit-hint>
         </bit-radio-button>
-        <span *ngIf="selectableProduct.product != productTypes.Free">
+        <span *ngIf="selectableProduct.product != productTypes.Free" class="tw-pl-4">
           <ng-container
             *ngIf="selectableProduct.PasswordManager.basePrice && !acceptingSponsorship"
           >
@@ -176,6 +176,7 @@
             !selectableProduct.PasswordManager.basePrice &&
             selectableProduct.PasswordManager.hasAdditionalSeatsOption
           "
+          class="tw-pl-4"
         >
           {{
             "costPerUser"
@@ -188,11 +189,11 @@
           }}
           /{{ "month" | i18n }}
         </span>
-        <span *ngIf="selectableProduct.product == productTypes.Free">{{
+        <span *ngIf="selectableProduct.product == productTypes.Free" class="tw-pl-4">{{
           "freeForever" | i18n
         }}</span>
-      </bit-radio-group>
-    </div>
+      </div>
+    </bit-radio-group>
   </bit-section>
   <bit-section *ngIf="formGroup.value.product !== productTypes.Free">
     <bit-section
@@ -277,126 +278,128 @@
         </bit-form-control>
       </div>
     </bit-section>
-    <bit-section *ngFor="let selectablePlan of selectablePlans">
+    <bit-section>
       <h2 bitTypography="h2">{{ "summary" | i18n }}</h2>
       <bit-radio-group formControlName="plan">
-        <bit-radio-button
-          type="radio"
-          id="interval{{ selectablePlan.type }}"
-          [value]="selectablePlan.type"
-        >
-          <bit-label>{{ (selectablePlan.isAnnual ? "annually" : "monthly") | i18n }}</bit-label>
-          <bit-hint *ngIf="selectablePlan.isAnnual">
-            <p
-              class="tw-mb-0"
-              bitTypography="body2"
-              *ngIf="selectablePlan.PasswordManager.basePrice"
-            >
-              {{ "basePrice" | i18n }}:
-              {{
-                (selectablePlan.isAnnual
-                  ? selectablePlan.PasswordManager.basePrice / 12
-                  : selectablePlan.PasswordManager.basePrice
-                ) | currency: "$"
-              }}
-              &times; 12
-              {{ "monthAbbr" | i18n }}
-              =
-              <ng-container *ngIf="acceptingSponsorship; else notAcceptingSponsorship">
-                <span class="tw-line-through">{{
-                  selectablePlan.PasswordManager.basePrice | currency: "$"
-                }}</span>
-                {{ "freeWithSponsorship" | i18n }}
-              </ng-container>
-              <ng-template #notAcceptingSponsorship>
-                {{ selectablePlan.PasswordManager.basePrice | currency: "$" }}
+        <div *ngFor="let selectablePlan of selectablePlans">
+          <bit-radio-button
+            type="radio"
+            id="interval{{ selectablePlan.type }}"
+            [value]="selectablePlan.type"
+          >
+            <bit-label>{{ (selectablePlan.isAnnual ? "annually" : "monthly") | i18n }}</bit-label>
+            <bit-hint *ngIf="selectablePlan.isAnnual">
+              <p
+                class="tw-mb-0"
+                bitTypography="body2"
+                *ngIf="selectablePlan.PasswordManager.basePrice"
+              >
+                {{ "basePrice" | i18n }}:
+                {{
+                  (selectablePlan.isAnnual
+                    ? selectablePlan.PasswordManager.basePrice / 12
+                    : selectablePlan.PasswordManager.basePrice
+                  ) | currency: "$"
+                }}
+                &times; 12
+                {{ "monthAbbr" | i18n }}
+                =
+                <ng-container *ngIf="acceptingSponsorship; else notAcceptingSponsorship">
+                  <span class="tw-line-through">{{
+                    selectablePlan.PasswordManager.basePrice | currency: "$"
+                  }}</span>
+                  {{ "freeWithSponsorship" | i18n }}
+                </ng-container>
+                <ng-template #notAcceptingSponsorship>
+                  {{ selectablePlan.PasswordManager.basePrice | currency: "$" }}
+                  /{{ "year" | i18n }}
+                </ng-template>
+              </p>
+              <p
+                class="tw-mb-0"
+                bitTypography="body2"
+                *ngIf="selectablePlan.PasswordManager.hasAdditionalSeatsOption"
+              >
+                <span *ngIf="selectablePlan.PasswordManager.baseSeats"
+                  >{{ "additionalUsers" | i18n }}:</span
+                >
+                <span *ngIf="!selectablePlan.PasswordManager.baseSeats">{{ "users" | i18n }}:</span>
+                {{ formGroup.controls["additionalSeats"].value || 0 }} &times;
+                {{
+                  (selectablePlan.isAnnual
+                    ? selectablePlan.PasswordManager.seatPrice / 12
+                    : selectablePlan.PasswordManager.seatPrice
+                  ) | currency: "$"
+                }}
+                &times; 12 {{ "monthAbbr" | i18n }} =
+                {{
+                  passwordManagerSeatTotal(selectablePlan, formGroup.value.additionalSeats)
+                    | currency: "$"
+                }}
                 /{{ "year" | i18n }}
-              </ng-template>
-            </p>
-            <p
-              class="tw-mb-0"
-              bitTypography="body2"
-              *ngIf="selectablePlan.PasswordManager.hasAdditionalSeatsOption"
-            >
-              <span *ngIf="selectablePlan.PasswordManager.baseSeats"
-                >{{ "additionalUsers" | i18n }}:</span
+              </p>
+              <p
+                class="tw-mb-0"
+                bitTypography="body2"
+                *ngIf="selectablePlan.PasswordManager.hasAdditionalStorageOption"
               >
-              <span *ngIf="!selectablePlan.PasswordManager.baseSeats">{{ "users" | i18n }}:</span>
-              {{ formGroup.controls["additionalSeats"].value || 0 }} &times;
-              {{
-                (selectablePlan.isAnnual
-                  ? selectablePlan.PasswordManager.seatPrice / 12
-                  : selectablePlan.PasswordManager.seatPrice
-                ) | currency: "$"
-              }}
-              &times; 12 {{ "monthAbbr" | i18n }} =
-              {{
-                passwordManagerSeatTotal(selectablePlan, formGroup.value.additionalSeats)
-                  | currency: "$"
-              }}
-              /{{ "year" | i18n }}
-            </p>
-            <p
-              class="tw-mb-0"
-              bitTypography="body2"
-              *ngIf="selectablePlan.PasswordManager.hasAdditionalStorageOption"
-            >
-              {{ "additionalStorageGb" | i18n }}:
-              {{ formGroup.controls["additionalStorage"].value || 0 }} &times;
-              {{
-                (selectablePlan.isAnnual
-                  ? selectablePlan.PasswordManager.additionalStoragePricePerGb / 12
-                  : selectablePlan.PasswordManager.additionalStoragePricePerGb
-                ) | currency: "$"
-              }}
-              &times; 12 {{ "monthAbbr" | i18n }} =
-              {{ additionalStorageTotal(selectablePlan) | currency: "$" }} /{{ "year" | i18n }}
-            </p>
-          </bit-hint>
-          <bit-hint *ngIf="!selectablePlan.isAnnual">
-            <p
-              class="tw-mb-0"
-              bitTypography="body2"
-              *ngIf="selectablePlan.PasswordManager.basePrice"
-            >
-              {{ "basePrice" | i18n }}:
-              {{ selectablePlan.PasswordManager.basePrice | currency: "$" }}
-              {{ "monthAbbr" | i18n }}
-              =
-              {{ selectablePlan.PasswordManager.basePrice | currency: "$" }}
-              /{{ "month" | i18n }}
-            </p>
-            <p
-              class="tw-mb-0"
-              bitTypography="body2"
-              *ngIf="selectablePlan.PasswordManager.hasAdditionalSeatsOption"
-            >
-              <span *ngIf="selectablePlan.PasswordManager.baseSeats"
-                >{{ "additionalUsers" | i18n }}:</span
+                {{ "additionalStorageGb" | i18n }}:
+                {{ formGroup.controls["additionalStorage"].value || 0 }} &times;
+                {{
+                  (selectablePlan.isAnnual
+                    ? selectablePlan.PasswordManager.additionalStoragePricePerGb / 12
+                    : selectablePlan.PasswordManager.additionalStoragePricePerGb
+                  ) | currency: "$"
+                }}
+                &times; 12 {{ "monthAbbr" | i18n }} =
+                {{ additionalStorageTotal(selectablePlan) | currency: "$" }} /{{ "year" | i18n }}
+              </p>
+            </bit-hint>
+            <bit-hint *ngIf="!selectablePlan.isAnnual">
+              <p
+                class="tw-mb-0"
+                bitTypography="body2"
+                *ngIf="selectablePlan.PasswordManager.basePrice"
               >
-              <span *ngIf="!selectablePlan.PasswordManager.baseSeats">{{ "users" | i18n }}:</span>
-              {{ formGroup.controls["additionalSeats"].value || 0 }} &times;
-              {{ selectablePlan.PasswordManager.seatPrice | currency: "$" }}
-              {{ "monthAbbr" | i18n }} =
-              {{
-                passwordManagerSeatTotal(selectablePlan, formGroup.value.additionalSeats)
-                  | currency: "$"
-              }}
-              /{{ "month" | i18n }}
-            </p>
-            <p
-              class="tw-mb-0"
-              bitTypography="body2"
-              *ngIf="selectablePlan.PasswordManager.hasAdditionalStorageOption"
-            >
-              {{ "additionalStorageGb" | i18n }}:
-              {{ formGroup.controls["additionalStorage"].value || 0 }} &times;
-              {{ selectablePlan.PasswordManager.additionalStoragePricePerGb | currency: "$" }}
-              {{ "monthAbbr" | i18n }} =
-              {{ additionalStorageTotal(selectablePlan) | currency: "$" }} /{{ "month" | i18n }}
-            </p>
-          </bit-hint>
-        </bit-radio-button>
+                {{ "basePrice" | i18n }}:
+                {{ selectablePlan.PasswordManager.basePrice | currency: "$" }}
+                {{ "monthAbbr" | i18n }}
+                =
+                {{ selectablePlan.PasswordManager.basePrice | currency: "$" }}
+                /{{ "month" | i18n }}
+              </p>
+              <p
+                class="tw-mb-0"
+                bitTypography="body2"
+                *ngIf="selectablePlan.PasswordManager.hasAdditionalSeatsOption"
+              >
+                <span *ngIf="selectablePlan.PasswordManager.baseSeats"
+                  >{{ "additionalUsers" | i18n }}:</span
+                >
+                <span *ngIf="!selectablePlan.PasswordManager.baseSeats">{{ "users" | i18n }}:</span>
+                {{ formGroup.controls["additionalSeats"].value || 0 }} &times;
+                {{ selectablePlan.PasswordManager.seatPrice | currency: "$" }}
+                {{ "monthAbbr" | i18n }} =
+                {{
+                  passwordManagerSeatTotal(selectablePlan, formGroup.value.additionalSeats)
+                    | currency: "$"
+                }}
+                /{{ "month" | i18n }}
+              </p>
+              <p
+                class="tw-mb-0"
+                bitTypography="body2"
+                *ngIf="selectablePlan.PasswordManager.hasAdditionalStorageOption"
+              >
+                {{ "additionalStorageGb" | i18n }}:
+                {{ formGroup.controls["additionalStorage"].value || 0 }} &times;
+                {{ selectablePlan.PasswordManager.additionalStoragePricePerGb | currency: "$" }}
+                {{ "monthAbbr" | i18n }} =
+                {{ additionalStorageTotal(selectablePlan) | currency: "$" }} /{{ "month" | i18n }}
+              </p>
+            </bit-hint>
+          </bit-radio-button>
+        </div>
       </bit-radio-group>
     </bit-section>
   </bit-section>
