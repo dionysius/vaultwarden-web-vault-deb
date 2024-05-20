@@ -1,6 +1,6 @@
 import { View } from "@bitwarden/common/models/view/view";
 
-import { PendingOrganizationAuthRequestResponse } from "../services/auth-requests";
+import { PendingOrganizationAuthRequestResponse } from ".";
 
 export class PendingAuthRequestView implements View {
   id: string;

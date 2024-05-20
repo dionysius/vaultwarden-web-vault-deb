@@ -29,7 +29,8 @@
       "@bitwarden/platform": ["./libs/platform/src"],
       "@bitwarden/node/*": ["./libs/node/src/*"],
       "@bitwarden/web-vault/*": ["./apps/web/src/*"],
-      "@bitwarden/vault": ["./libs/vault/src"]
+      "@bitwarden/vault": ["./libs/vault/src"],
+      "@bitwarden/bit-common/*": ["./bitwarden_license/bit-common/src/*"]
     },
     "plugins": [
       {
@@ -42,7 +43,8 @@
     "apps/web/src/**/*",
     "apps/browser/src/**/*",
     "libs/*/src/**/*",
-    "bitwarden_license/bit-web/src/**/*"
+    "bitwarden_license/bit-web/src/**/*",
+    "bitwarden_license/bit-common/src/**/*"
   ],
   "exclude": [
     "apps/web/src/**/*.spec.ts",

@@ -27,7 +27,8 @@
       "@bitwarden/importer/ui": ["./libs/importer/src/components"],
       "@bitwarden/platform": ["./libs/platform/src"],
       "@bitwarden/node/*": ["./libs/node/src/*"],
-      "@bitwarden/vault": ["./libs/vault/src"]
+      "@bitwarden/vault": ["./libs/vault/src"],
+      "@bitwarden/bit-common/*": ["./bitwarden_license/bit-common/src/*"]
     },
     "plugins": [
       {

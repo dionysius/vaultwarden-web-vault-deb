@@ -1,17 +1,13 @@
-import { Injectable } from "@angular/core";
-
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { ListResponse } from "@bitwarden/common/models/response/list.response";
 import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 
-import { PendingAuthRequestView } from "../../views/pending-auth-request.view";
-
 import { AdminAuthRequestUpdateRequest } from "./admin-auth-request-update.request";
 import { BulkDenyAuthRequestsRequest } from "./bulk-deny-auth-requests.request";
+import { PendingAuthRequestView } from "./pending-auth-request.view";
 import { PendingOrganizationAuthRequestResponse } from "./pending-organization-auth-request.response";
 
-@Injectable()
-export class OrganizationAuthRequestService {
+export class OrganizationAuthRequestApiService {
   constructor(private apiService: ApiService) {}
 
   async listPendingRequests(organizationId: string): Promise<PendingAuthRequestView[]> {

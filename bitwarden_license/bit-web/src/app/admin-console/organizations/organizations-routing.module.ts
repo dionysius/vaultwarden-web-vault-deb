@@ -9,7 +9,6 @@ import { OrganizationLayoutComponent } from "@bitwarden/web-vault/app/admin-cons
 
 import { SsoComponent } from "../../auth/sso/sso.component";
 
-import { DeviceApprovalsComponent } from "./manage/device-approvals/device-approvals.component";
 import { DomainVerificationComponent } from "./manage/domain-verification/domain-verification.component";
 import { ScimComponent } from "./manage/scim.component";
 
@@ -55,7 +54,10 @@ const routes: Routes = [
           },
           {
             path: "device-approvals",
-            component: DeviceApprovalsComponent,
+            loadComponent: () =>
+              import("./manage/device-approvals/device-approvals.component").then(
+                (mod) => mod.DeviceApprovalsComponent,
+              ),
             canActivate: [OrganizationPermissionsGuard],
             data: {
               organizationPermissions: (org: Organization) => org.canManageDeviceApprovals,
