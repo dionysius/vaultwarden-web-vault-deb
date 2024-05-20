@@ -699,13 +699,6 @@ export class SettingsComponent implements OnInit {
     );
     if (errorResult !== null) {
       this.logService.error("Error in DDG browser integration: " + errorResult);
-      await this.dialogService.openSimpleDialog({
-        title: { key: "browserIntegrationUnsupportedTitle" },
-        content: errorResult.message,
-        acceptButtonText: { key: "ok" },
-        cancelButtonText: null,
-        type: "warning",
-      });
     }
   }
 
