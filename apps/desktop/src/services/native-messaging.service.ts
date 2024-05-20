@@ -56,6 +56,7 @@ export class NativeMessagingService {
   private async messageHandler(msg: LegacyMessageWrapper | Message) {
     const outerMessage = msg as Message;
     if (outerMessage.version) {
+      // If there is a version, it is a using the protocol created for the DuckDuckGo integration
       await this.nativeMessageHandler.handleMessage(outerMessage);
       return;
     }

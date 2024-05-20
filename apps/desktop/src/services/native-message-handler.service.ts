@@ -24,6 +24,7 @@ import { EncryptedMessageHandlerService } from "./encrypted-message-handler.serv
 
 const EncryptionAlgorithm = "sha1";
 
+// This service handles messages using the protocol created for the DuckDuckGo integration.
 @Injectable()
 export class NativeMessageHandlerService {
   private ddgSharedSecret: SymmetricCryptoKey;

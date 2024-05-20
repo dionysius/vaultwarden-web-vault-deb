@@ -87,6 +87,10 @@ apps/web/src/translation-constants.ts @bitwarden/team-platform-dev
 apps/browser/src/autofill @bitwarden/team-autofill-dev
 apps/desktop/src/autofill @bitwarden/team-autofill-dev
 libs/common/src/autofill @bitwarden/team-autofill-dev
+# DuckDuckGo integration
+apps/desktop/native-messaging-test-runner @bitwarden/team-autofill-dev
+apps/desktop/src/services/native-message-handler.service.ts @bitwarden/team-autofill-dev
+apps/desktop/src/services/native-messaging.service.ts @bitwarden/team-autofill-dev
 
 ## Component Library ##
 .storybook @bitwarden/team-component-library
