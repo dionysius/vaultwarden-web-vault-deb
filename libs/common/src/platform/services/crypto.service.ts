@@ -174,7 +174,7 @@ export class CryptoService implements CryptoServiceAbstraction {
     userId ??= await firstValueFrom(this.stateProvider.activeUserId$);
     masterKey ??= await firstValueFrom(this.masterPasswordService.masterKey$(userId));
 
-    return await this.validateUserKey(masterKey as unknown as UserKey);
+    return await this.validateUserKey(masterKey as unknown as UserKey, userId);
   }
 
   // TODO: legacy support for user key is no longer needed since we require users to migrate on login
@@ -193,9 +193,10 @@ export class CryptoService implements CryptoServiceAbstraction {
   }
 
   async getUserKeyFromStorage(keySuffix: KeySuffixOptions, userId?: UserId): Promise<UserKey> {
+    userId ??= await firstValueFrom(this.stateProvider.activeUserId$);
     const userKey = await this.getKeyFromStorage(keySuffix, userId);
     if (userKey) {
-      if (!(await this.validateUserKey(userKey))) {
+      if (!(await this.validateUserKey(userKey, userId))) {
         this.logService.warning("Invalid key, throwing away stored keys");
         await this.clearAllStoredUserKeys(userId);
       }
@@ -663,13 +664,15 @@ export class CryptoService implements CryptoServiceAbstraction {
   }
 
   // ---HELPERS---
-  protected async validateUserKey(key: UserKey): Promise<boolean> {
+  protected async validateUserKey(key: UserKey, userId: UserId): Promise<boolean> {
     if (!key) {
       return false;
     }
 
     try {
-      const encPrivateKey = await firstValueFrom(this.activeUserEncryptedPrivateKeyState.state$);
+      const encPrivateKey = await firstValueFrom(
+        this.stateProvider.getUserState$(USER_ENCRYPTED_PRIVATE_KEY, userId),
+      );
       if (encPrivateKey == null) {
         return false;
       }
