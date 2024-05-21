@@ -5,7 +5,6 @@ import { ActivatedRoute } from "@angular/router";
 import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
-import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { EventType } from "@bitwarden/common/enums";
 import { FileDownloadService } from "@bitwarden/common/platform/abstractions/file-download/file-download.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -30,7 +29,6 @@ export class OrganizationVaultExportComponent extends ExportComponent {
     private route: ActivatedRoute,
     policyService: PolicyService,
     logService: LogService,
-    userVerificationService: UserVerificationService,
     formBuilder: UntypedFormBuilder,
     fileDownloadService: FileDownloadService,
     dialogService: DialogService,
@@ -43,7 +41,6 @@ export class OrganizationVaultExportComponent extends ExportComponent {
       eventCollectionService,
       policyService,
       logService,
-      userVerificationService,
       formBuilder,
       fileDownloadService,
       dialogService,

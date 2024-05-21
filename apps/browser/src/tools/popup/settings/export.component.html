@@ -29,11 +29,6 @@
             <option *ngFor="let f of formatOptions" [value]="f.value">{{ f.name }}</option>
           </select>
         </div>
-        <app-user-verification ngDefaultControl formControlName="secret" name="Secret">
-        </app-user-verification>
-      </div>
-      <div id="confirmIdentityHelp" class="box-footer">
-        <p>{{ "confirmIdentity" | i18n }}</p>
       </div>
     </div>
   </main>

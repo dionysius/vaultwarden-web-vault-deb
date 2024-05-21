@@ -3,12 +3,12 @@ import { UntypedFormBuilder, Validators } from "@angular/forms";
 import { map, merge, Observable, startWith, Subject, takeUntil } from "rxjs";
 
 import { PasswordStrengthComponent } from "@bitwarden/angular/tools/password-strength/password-strength.component";
+import { UserVerificationDialogComponent } from "@bitwarden/auth/angular";
 import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
-import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { EventType } from "@bitwarden/common/enums";
 import { FileDownloadService } from "@bitwarden/common/platform/abstractions/file-download/file-download.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -67,7 +67,6 @@ export class ExportComponent implements OnInit, OnDestroy {
     protected eventCollectionService: EventCollectionService,
     private policyService: PolicyService,
     private logService: LogService,
-    private userVerificationService: UserVerificationService,
     private formBuilder: UntypedFormBuilder,
     protected fileDownloadService: FileDownloadService,
     protected dialogService: DialogService,
@@ -154,7 +153,21 @@ export class ExportComponent implements OnInit, OnDestroy {
     }
   }
 
-  async submit() {
+  submit = async () => {
+    if (this.isFileEncryptedExport && this.filePassword != this.confirmFilePassword) {
+      this.platformUtilsService.showToast(
+        "error",
+        this.i18nService.t("errorOccurred"),
+        this.i18nService.t("filePasswordAndConfirmFilePasswordDoNotMatch"),
+      );
+      return;
+    }
+
+    this.exportForm.markAllAsTouched();
+    if (this.exportForm.invalid) {
+      return;
+    }
+
     if (this.disabledByPolicy) {
       this.platformUtilsService.showToast(
         "error",
@@ -164,47 +177,50 @@ export class ExportComponent implements OnInit, OnDestroy {
       return;
     }
 
-    const acceptedWarning = await this.warningDialog();
-    if (!acceptedWarning) {
-      return;
-    }
-    const secret = this.exportForm.get("secret").value;
-
-    try {
-      await this.userVerificationService.verifyUser(secret);
-    } catch (e) {
-      this.platformUtilsService.showToast("error", this.i18nService.t("errorOccurred"), e.message);
+    const userVerified = await this.verifyUser();
+    if (!userVerified) {
       return;
     }
 
-    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    this.doExport();
-  }
-
-  async warningDialog() {
-    if (this.encryptedFormat) {
-      return await this.dialogService.openSimpleDialog({
-        title: { key: "confirmVaultExport" },
-        content:
-          this.i18nService.t("encExportKeyWarningDesc") +
-          " " +
-          this.i18nService.t("encExportAccountWarningDesc"),
-        acceptButtonText: { key: "exportVault" },
-        type: "warning",
-      });
-    } else {
-      return await this.dialogService.openSimpleDialog({
-        title: { key: "confirmVaultExport" },
-        content: { key: "exportWarningDesc" },
-        acceptButtonText: { key: "exportVault" },
-        type: "warning",
-      });
-    }
-  }
+    await this.doExport();
+  };
 
   protected saved() {
     this.onSaved.emit();
+  }
+
+  private async verifyUser(): Promise<boolean> {
+    let confirmDescription = "exportWarningDesc";
+    if (this.isFileEncryptedExport) {
+      confirmDescription = "fileEncryptedExportWarningDesc";
+    } else if (this.isAccountEncryptedExport) {
+      confirmDescription = "encExportKeyWarningDesc";
+    }
+
+    const result = await UserVerificationDialogComponent.open(this.dialogService, {
+      title: "confirmVaultExport",
+      bodyText: confirmDescription,
+      confirmButtonOptions: {
+        text: "exportVault",
+        type: "primary",
+      },
+    });
+
+    // Handle the result of the dialog based on user action and verification success
+    if (result.userAction === "cancel") {
+      // User cancelled the dialog
+      return false;
+    }
+
+    // User confirmed the dialog so check verification success
+    if (!result.verificationSuccess) {
+      if (result.noAvailableClientVerificationMethods) {
+        // No client-side verification methods are available
+        // Could send user to configure a verification method like PIN or biometrics
+      }
+      return false;
+    }
+    return true;
   }
 
   protected async getExportData(): Promise<string> {
