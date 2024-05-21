@@ -1,30 +1,26 @@
-import { Component, Input } from "@angular/core";
+import { DIALOG_DATA, DialogConfig } from "@angular/cdk/dialog";
+import { Component, Inject } from "@angular/core";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { OrganizationUserService } from "@bitwarden/common/admin-console/abstractions/organization-user/organization-user.service";
 import { OrganizationUserStatusType } from "@bitwarden/common/admin-console/enums";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
+import { DialogService } from "@bitwarden/components";
 
 import { BulkUserDetails } from "./bulk-status.component";
+
+type BulkRemoveDialogData = {
+  organizationId: string;
+  users: BulkUserDetails[];
+};
 
 @Component({
   selector: "app-bulk-remove",
   templateUrl: "bulk-remove.component.html",
 })
 export class BulkRemoveComponent {
-  @Input() organizationId: string;
-  @Input() set users(value: BulkUserDetails[]) {
-    this._users = value;
-    this.showNoMasterPasswordWarning = this._users.some(
-      (u) => u.status > OrganizationUserStatusType.Invited && u.hasMasterPassword === false,
-    );
-  }
-
-  get users(): BulkUserDetails[] {
-    return this._users;
-  }
-
-  private _users: BulkUserDetails[];
+  organizationId: string;
+  users: BulkUserDetails[];
 
   statuses: Map<string, string> = new Map();
 
@@ -34,12 +30,19 @@ export class BulkRemoveComponent {
   showNoMasterPasswordWarning = false;
 
   constructor(
+    @Inject(DIALOG_DATA) protected data: BulkRemoveDialogData,
     protected apiService: ApiService,
     protected i18nService: I18nService,
     private organizationUserService: OrganizationUserService,
-  ) {}
+  ) {
+    this.organizationId = data.organizationId;
+    this.users = data.users;
+    this.showNoMasterPasswordWarning = this.users.some(
+      (u) => u.status > OrganizationUserStatusType.Invited && u.hasMasterPassword === false,
+    );
+  }
 
-  async submit() {
+  submit = async () => {
     this.loading = true;
     try {
       const response = await this.deleteUsers();
@@ -54,7 +57,7 @@ export class BulkRemoveComponent {
     }
 
     this.loading = false;
-  }
+  };
 
   protected async deleteUsers() {
     return await this.organizationUserService.deleteManyOrganizationUsers(
@@ -65,5 +68,9 @@ export class BulkRemoveComponent {
 
   protected get removeUsersWarning() {
     return this.i18nService.t("removeOrgUsersConfirmation");
+  }
+
+  static open(dialogService: DialogService, config: DialogConfig<BulkRemoveDialogData>) {
+    return dialogService.open(BulkRemoveComponent, config);
   }
 }
