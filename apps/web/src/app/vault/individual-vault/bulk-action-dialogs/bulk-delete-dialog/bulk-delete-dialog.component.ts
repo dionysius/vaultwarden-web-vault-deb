@@ -20,6 +20,7 @@ export interface BulkDeleteDialogParams {
   organization?: Organization;
   organizations?: Organization[];
   collections?: CollectionView[];
+  unassignedCiphers?: string[];
 }
 
 export enum BulkDeleteDialogResult {
@@ -51,6 +52,7 @@ export class BulkDeleteDialogComponent {
   organization: Organization;
   organizations: Organization[];
   collections: CollectionView[];
+  unassignedCiphers: string[];
 
   private flexibleCollectionsV1Enabled$ = this.configService.getFeatureFlag$(
     FeatureFlag.FlexibleCollectionsV1,
@@ -75,6 +77,7 @@ export class BulkDeleteDialogComponent {
     this.organization = params.organization;
     this.organizations = params.organizations;
     this.collections = params.collections;
+    this.unassignedCiphers = params.unassignedCiphers || [];
   }
 
   protected async cancel() {
@@ -83,6 +86,15 @@ export class BulkDeleteDialogComponent {
 
   protected submit = async () => {
     const deletePromises: Promise<void>[] = [];
+    const restrictProviderAccess = await firstValueFrom(this.restrictProviderAccess$);
+
+    // Unassigned ciphers under an Owner/Admin OR Custom Users With Edit will call the deleteCiphersAdmin method
+    if (
+      this.unassignedCiphers.length &&
+      this.organization.canEditUnassignedCiphers(restrictProviderAccess)
+    ) {
+      deletePromises.push(this.deleteCiphersAdmin(this.unassignedCiphers));
+    }
     if (this.cipherIds.length) {
       const flexibleCollectionsV1Enabled = await firstValueFrom(this.flexibleCollectionsV1Enabled$);
       const restrictProviderAccess = await firstValueFrom(this.restrictProviderAccess$);
@@ -93,7 +105,7 @@ export class BulkDeleteDialogComponent {
       ) {
         deletePromises.push(this.deleteCiphers());
       } else {
-        deletePromises.push(this.deleteCiphersAdmin());
+        deletePromises.push(this.deleteCiphersAdmin(this.cipherIds));
       }
     }
 
@@ -103,7 +115,7 @@ export class BulkDeleteDialogComponent {
 
     await Promise.all(deletePromises);
 
-    if (this.cipherIds.length) {
+    if (this.cipherIds.length || this.unassignedCiphers.length) {
       this.platformUtilsService.showToast(
         "success",
         null,
@@ -135,8 +147,8 @@ export class BulkDeleteDialogComponent {
     }
   }
 
-  private async deleteCiphersAdmin(): Promise<any> {
-    const deleteRequest = new CipherBulkDeleteRequest(this.cipherIds, this.organization.id);
+  private async deleteCiphersAdmin(ciphers: string[]): Promise<any> {
+    const deleteRequest = new CipherBulkDeleteRequest(ciphers, this.organization.id);
     if (this.permanent) {
       return await this.apiService.deleteManyCiphersAdmin(deleteRequest);
     } else {

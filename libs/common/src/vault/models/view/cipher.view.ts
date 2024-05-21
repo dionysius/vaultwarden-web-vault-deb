@@ -126,6 +126,12 @@ export class CipherView implements View, InitializerMetadata {
     return this.item?.linkedFieldOptions;
   }
 
+  get isUnassigned(): boolean {
+    return (
+      this.organizationId != null && (this.collectionIds == null || this.collectionIds.length === 0)
+    );
+  }
+
   linkedFieldValue(id: LinkedIdType) {
     const linkedFieldOption = this.linkedFieldOptions?.get(id);
     if (linkedFieldOption == null) {

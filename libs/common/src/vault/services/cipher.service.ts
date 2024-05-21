@@ -1117,14 +1117,15 @@ export class CipherService implements CipherServiceAbstraction {
     await this.restore({ id: id, revisionDate: response.revisionDate });
   }
 
-  async restoreManyWithServer(
-    ids: string[],
-    organizationId: string = null,
-    asAdmin = false,
-  ): Promise<void> {
+  /**
+   * No longer using an asAdmin Param. Org Vault bulkRestore will assess if an item is unassigned or editable
+   * The Org Vault will pass those ids an array as well as the orgId when calling bulkRestore
+   */
+  async restoreManyWithServer(ids: string[], orgId: string = null): Promise<void> {
     let response;
-    if (asAdmin) {
-      const request = new CipherBulkRestoreRequest(ids, organizationId);
+
+    if (orgId) {
+      const request = new CipherBulkRestoreRequest(ids, orgId);
       response = await this.apiService.putRestoreManyCiphersAdmin(request);
     } else {
       const request = new CipherBulkRestoreRequest(ids);
