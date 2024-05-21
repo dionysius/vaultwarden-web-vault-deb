@@ -153,7 +153,7 @@ describe("AccountSwitcherService", () => {
 
       await selectAccountPromise;
 
-      expect(accountService.switchAccount).toBeCalledWith(null);
+      expect(messagingService.send).toHaveBeenCalledWith("switchAccount", { userId: null });
 
       expect(removeListenerSpy).toBeCalledTimes(1);
     });
@@ -176,7 +176,7 @@ describe("AccountSwitcherService", () => {
 
       await selectAccountPromise;
 
-      expect(accountService.switchAccount).toBeCalledWith("1");
+      expect(messagingService.send).toHaveBeenCalledWith("switchAccount", { userId: "1" });
       expect(messagingService.send).toBeCalledWith(
         "switchAccount",
         matches((payload) => {

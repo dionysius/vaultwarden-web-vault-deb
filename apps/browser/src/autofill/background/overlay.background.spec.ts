@@ -1,4 +1,4 @@
-import { mock, mockReset } from "jest-mock-extended";
+import { mock, MockProxy, mockReset } from "jest-mock-extended";
 import { BehaviorSubject, of } from "rxjs";
 
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
@@ -62,7 +62,8 @@ describe("OverlayBackground", () => {
   let overlayBackground: OverlayBackground;
   const cipherService = mock<CipherService>();
   const autofillService = mock<AutofillService>();
-  const authService = mock<AuthService>();
+  let activeAccountStatusMock$: BehaviorSubject<AuthenticationStatus>;
+  let authService: MockProxy<AuthService>;
 
   const environmentService = mock<EnvironmentService>();
   environmentService.environment$ = new BehaviorSubject(
@@ -94,6 +95,9 @@ describe("OverlayBackground", () => {
 
   beforeEach(() => {
     domainSettingsService = new DefaultDomainSettingsService(fakeStateProvider);
+    activeAccountStatusMock$ = new BehaviorSubject(AuthenticationStatus.Unlocked);
+    authService = mock<AuthService>();
+    authService.activeAccountStatus$ = activeAccountStatusMock$;
     overlayBackground = new OverlayBackground(
       cipherService,
       autofillService,
@@ -166,11 +170,11 @@ describe("OverlayBackground", () => {
     });
 
     beforeEach(() => {
-      overlayBackground["userAuthStatus"] = AuthenticationStatus.Unlocked;
+      activeAccountStatusMock$.next(AuthenticationStatus.Unlocked);
     });
 
     it("ignores updating the overlay ciphers if the user's auth status is not unlocked", async () => {
-      overlayBackground["userAuthStatus"] = AuthenticationStatus.Locked;
+      activeAccountStatusMock$.next(AuthenticationStatus.Locked);
       jest.spyOn(BrowserApi, "getTabFromCurrentWindowId");
       jest.spyOn(cipherService, "getAllDecryptedForUrl");
 

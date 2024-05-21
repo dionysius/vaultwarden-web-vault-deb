@@ -136,7 +136,8 @@ class OverlayBackground implements OverlayBackgroundInterface {
    * list of ciphers if the extension is not unlocked.
    */
   async updateOverlayCiphers() {
-    if (this.userAuthStatus !== AuthenticationStatus.Unlocked) {
+    const authStatus = await firstValueFrom(this.authService.activeAccountStatus$);
+    if (authStatus !== AuthenticationStatus.Unlocked) {
       return;
     }
 
@@ -167,7 +168,7 @@ class OverlayBackground implements OverlayBackgroundInterface {
   private async getOverlayCipherData(): Promise<OverlayCipherData[]> {
     const showFavicons = await firstValueFrom(this.domainSettingsService.showFavicons$);
     const overlayCiphersArray = Array.from(this.overlayLoginCiphers);
-    const overlayCipherData = [];
+    const overlayCipherData: OverlayCipherData[] = [];
     let loginCipherIcon: WebsiteIconData;
 
     for (let cipherIndex = 0; cipherIndex < overlayCiphersArray.length; cipherIndex++) {
