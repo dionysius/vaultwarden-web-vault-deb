@@ -97,6 +97,7 @@ describe("AuthRequestLoginStrategy", () => {
 
     authRequestLoginStrategy = new AuthRequestLoginStrategy(
       cache,
+      deviceTrustService,
       accountService,
       masterPasswordService,
       cryptoService,
@@ -109,7 +110,6 @@ describe("AuthRequestLoginStrategy", () => {
       stateService,
       twoFactorService,
       userDecryptionOptions,
-      deviceTrustService,
       billingAccountProfileStateService,
       vaultTimeoutSettingsService,
       kdfConfigService,

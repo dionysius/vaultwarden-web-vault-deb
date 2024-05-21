@@ -118,6 +118,10 @@ describe("SsoLoginStrategy", () => {
 
     ssoLoginStrategy = new SsoLoginStrategy(
       null,
+      keyConnectorService,
+      deviceTrustService,
+      authRequestService,
+      i18nService,
       accountService,
       masterPasswordService,
       cryptoService,
@@ -130,10 +134,6 @@ describe("SsoLoginStrategy", () => {
       stateService,
       twoFactorService,
       userDecryptionOptionsService,
-      keyConnectorService,
-      deviceTrustService,
-      authRequestService,
-      i18nService,
       billingAccountProfileStateService,
       vaultTimeoutSettingsService,
       kdfConfigService,

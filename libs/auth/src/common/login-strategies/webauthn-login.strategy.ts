@@ -1,28 +1,13 @@
 import { BehaviorSubject } from "rxjs";
 import { Jsonify } from "type-fest";
 
-import { ApiService } from "@bitwarden/common/abstractions/api.service";
-import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout-settings.service";
-import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
-import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
-import { InternalMasterPasswordServiceAbstraction } from "@bitwarden/common/auth/abstractions/master-password.service.abstraction";
-import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
-import { TwoFactorService } from "@bitwarden/common/auth/abstractions/two-factor.service";
 import { AuthResult } from "@bitwarden/common/auth/models/domain/auth-result";
 import { WebAuthnLoginTokenRequest } from "@bitwarden/common/auth/models/request/identity-token/webauthn-login-token.request";
 import { IdentityTokenResponse } from "@bitwarden/common/auth/models/response/identity-token.response";
-import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions/account/billing-account-profile-state.service";
-import { AppIdService } from "@bitwarden/common/platform/abstractions/app-id.service";
-import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
-import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
-import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
-import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
 import { UserId } from "@bitwarden/common/types/guid";
 import { UserKey } from "@bitwarden/common/types/key";
 
-import { InternalUserDecryptionOptionsServiceAbstraction } from "../abstractions";
 import { WebAuthnLoginCredentials } from "../models/domain/login-credentials";
 import { CacheData } from "../services/login-strategies/login-strategy.state";
 
@@ -46,39 +31,9 @@ export class WebAuthnLoginStrategy extends LoginStrategy {
 
   constructor(
     data: WebAuthnLoginStrategyData,
-    accountService: AccountService,
-    masterPasswordService: InternalMasterPasswordServiceAbstraction,
-    cryptoService: CryptoService,
-    apiService: ApiService,
-    tokenService: TokenService,
-    appIdService: AppIdService,
-    platformUtilsService: PlatformUtilsService,
-    messagingService: MessagingService,
-    logService: LogService,
-    stateService: StateService,
-    twoFactorService: TwoFactorService,
-    userDecryptionOptionsService: InternalUserDecryptionOptionsServiceAbstraction,
-    billingAccountProfileStateService: BillingAccountProfileStateService,
-    vaultTimeoutSettingsService: VaultTimeoutSettingsService,
-    kdfConfigService: KdfConfigService,
+    ...sharedDeps: ConstructorParameters<typeof LoginStrategy>
   ) {
-    super(
-      accountService,
-      masterPasswordService,
-      cryptoService,
-      apiService,
-      tokenService,
-      appIdService,
-      platformUtilsService,
-      messagingService,
-      logService,
-      stateService,
-      twoFactorService,
-      userDecryptionOptionsService,
-      billingAccountProfileStateService,
-      vaultTimeoutSettingsService,
-      kdfConfigService,
-    );
+    super(...sharedDeps);
 
     this.cache = new BehaviorSubject(data);
   }

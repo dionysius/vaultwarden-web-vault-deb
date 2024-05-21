@@ -121,6 +121,9 @@ describe("PasswordLoginStrategy", () => {
 
     passwordLoginStrategy = new PasswordLoginStrategy(
       cache,
+      passwordStrengthService,
+      policyService,
+      loginStrategyService,
       accountService,
       masterPasswordService,
       cryptoService,
@@ -133,9 +136,6 @@ describe("PasswordLoginStrategy", () => {
       stateService,
       twoFactorService,
       userDecryptionOptionsService,
-      passwordStrengthService,
-      policyService,
-      loginStrategyService,
       billingAccountProfileStateService,
       vaultTimeoutSettingsService,
       kdfConfigService,

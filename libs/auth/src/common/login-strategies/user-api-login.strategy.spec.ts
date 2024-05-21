@@ -94,6 +94,8 @@ describe("UserApiLoginStrategy", () => {
 
     apiLogInStrategy = new UserApiLoginStrategy(
       cache,
+      environmentService,
+      keyConnectorService,
       accountService,
       masterPasswordService,
       cryptoService,
@@ -106,8 +108,6 @@ describe("UserApiLoginStrategy", () => {
       stateService,
       twoFactorService,
       userDecryptionOptionsService,
-      environmentService,
-      keyConnectorService,
       billingAccountProfileStateService,
       vaultTimeoutSettingsService,
       kdfConfigService,
