@@ -9,16 +9,8 @@
       "path": "apps/web",
     },
     {
-      "name": "web vault (bit)",
-      "path": "bitwarden_license/bit-web",
-    },
-    {
       "name": "cli",
       "path": "apps/cli",
-    },
-    {
-      "name": "cli (bit)",
-      "path": "bitwarden_license/bit-cli",
     },
     {
       "name": "desktop",
@@ -31,10 +23,6 @@
     {
       "name": "libs",
       "path": "libs",
-    },
-    {
-      "name": "common (bit)",
-      "path": "bitwarden_license/bit-common",
     },
   ],
   "settings": {

@@ -11,7 +11,6 @@ config.content = [
   path.resolve(__dirname, "../../libs/vault/src/**/*.{html,ts}"),
   path.resolve(__dirname, "../../libs/angular/src/**/*.{html,ts}"),
   path.resolve(__dirname, "../../libs/tools/generator/components/src/**/*.{html,ts}"),
-  path.resolve(__dirname, "../../bitwarden_license/bit-web/src/**/*.{html,ts}"),
 ];
 config.corePlugins.preflight = true;
 
