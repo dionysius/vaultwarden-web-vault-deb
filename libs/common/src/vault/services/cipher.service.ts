@@ -1,4 +1,4 @@
-import { Observable, firstValueFrom, map, share, skipWhile, switchMap } from "rxjs";
+import { firstValueFrom, map, Observable, share, skipWhile, switchMap } from "rxjs";
 import { SemVer } from "semver";
 
 import { ApiService } from "../../abstractions/api.service";
@@ -29,7 +29,7 @@ import {
   StateProvider,
 } from "../../platform/state";
 import { CipherId, CollectionId, OrganizationId, UserId } from "../../types/guid";
-import { UserKey, OrgKey } from "../../types/key";
+import { OrgKey, UserKey } from "../../types/key";
 import { CipherService as CipherServiceAbstraction } from "../abstractions/cipher.service";
 import { CipherFileUploadService } from "../abstractions/file-upload/cipher-file-upload.service";
 import { FieldType } from "../enums";
@@ -65,10 +65,10 @@ import { PasswordHistoryView } from "../models/view/password-history.view";
 import { AddEditCipherInfo } from "../types/add-edit-cipher-info";
 
 import {
-  ENCRYPTED_CIPHERS,
-  LOCAL_DATA_KEY,
   ADD_EDIT_CIPHER_INFO_KEY,
   DECRYPTED_CIPHERS,
+  ENCRYPTED_CIPHERS,
+  LOCAL_DATA_KEY,
 } from "./key-state/ciphers.state";
 
 const CIPHER_KEY_ENC_MIN_SERVER_VER = new SemVer("2024.2.0");
@@ -444,14 +444,23 @@ export class CipherService implements CipherServiceAbstraction {
     includeOtherTypes?: CipherType[],
     defaultMatch: UriMatchStrategySetting = null,
   ): Promise<CipherView[]> {
+    const ciphers = await this.getAllDecrypted();
+    return await this.filterCiphersForUrl(ciphers, url, includeOtherTypes, defaultMatch);
+  }
+
+  async filterCiphersForUrl(
+    ciphers: CipherView[],
+    url: string,
+    includeOtherTypes?: CipherType[],
+    defaultMatch: UriMatchStrategySetting = null,
+  ): Promise<CipherView[]> {
     if (url == null && includeOtherTypes == null) {
-      return Promise.resolve([]);
+      return [];
     }
 
     const equivalentDomains = await firstValueFrom(
       this.domainSettingsService.getUrlEquivalentDomains(url),
     );
-    const ciphers = await this.getAllDecrypted();
     defaultMatch ??= await firstValueFrom(this.domainSettingsService.defaultUriMatchStrategy$);
 
     return ciphers.filter((cipher) => {

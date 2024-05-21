@@ -577,6 +577,17 @@ app-vault-view .box-footer {
   user-select: auto;
 }
 
+/* override for vault icon in desktop */
+app-vault-icon > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+  height: 36px;
+  width: 34px;
+  margin-left: -5px;
+}
+
 /* tweak for inconsistent line heights in cipher view */
 .box-footer button,
 .box-footer a {

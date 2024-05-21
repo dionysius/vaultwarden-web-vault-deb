@@ -1,0 +1,35 @@
+<bit-section *ngIf="ciphers?.length > 0">
+  <popup-section-header [title]="title">
+    <span bitTypography="body2" slot="end">{{ ciphers.length }}</span>
+  </popup-section-header>
+  <bit-item-group>
+    <bit-item *ngFor="let cipher of ciphers">
+      <a bit-item-content [routerLink]="['/view-cipher']" [queryParams]="{ cipherId: cipher.id }">
+        <app-vault-icon slot="start" [cipher]="cipher"></app-vault-icon>
+        {{ cipher.name }}
+        <span slot="secondary">{{ cipher.subTitle }}</span>
+      </a>
+      <ng-container slot="end">
+        <bit-item-action *ngIf="showAutoFill">
+          <button type="button" bitBadge variant="primary">{{ "autoFill" | i18n }}</button>
+        </bit-item-action>
+        <bit-item-action>
+          <button
+            type="button"
+            bitIconButton="bwi-clone"
+            size="small"
+            [attr.aria-label]="'copyInfo' | i18n: cipher.name"
+          ></button>
+        </bit-item-action>
+        <bit-item-action>
+          <button
+            type="button"
+            bitIconButton="bwi-ellipsis-v"
+            size="small"
+            [attr.aria-label]="'moreOptions' | i18n: cipher.name"
+          ></button>
+        </bit-item-action>
+      </ng-container>
+    </bit-item>
+  </bit-item-group>
+</bit-section>

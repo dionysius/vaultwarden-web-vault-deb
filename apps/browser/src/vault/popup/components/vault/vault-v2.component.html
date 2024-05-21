@@ -10,4 +10,40 @@
       <app-current-account></app-current-account>
     </ng-container>
   </popup-header>
+
+  <div *ngIf="showEmptyState$ | async" class="tw-flex tw-flex-col tw-h-full tw-justify-center">
+    <bit-no-items [icon]="vaultIcon">
+      <ng-container slot="title">{{ "yourVaultIsEmpty" | i18n }}</ng-container>
+      <ng-container slot="description">{{ "autofillSuggestionsTip" | i18n }}</ng-container>
+      <button slot="button" type="button" bitButton buttonType="primary" (click)="addCipher()">
+        {{ "new" | i18n }}
+      </button>
+    </bit-no-items>
+  </div>
+
+  <ng-container *ngIf="!(showEmptyState$ | async)">
+    <!-- TODO: Filter/search Section in PM-6824 and PM-6826.-->
+
+    <div
+      *ngIf="showNoResultsState$ | async"
+      class="tw-flex tw-flex-col tw-h-full tw-justify-center"
+    >
+      <bit-no-items>
+        <ng-container slot="title">{{ "noItemsMatchSearch" | i18n }}</ng-container>
+        <ng-container slot="description">{{ "clearFiltersOrTryAnother" | i18n }}</ng-container>
+      </bit-no-items>
+    </div>
+
+    <ng-container *ngIf="!(showNoResultsState$ | async)">
+      <app-autofill-vault-list-items></app-autofill-vault-list-items>
+      <app-vault-list-items-container
+        [title]="'favorites' | i18n"
+        [ciphers]="favoriteCiphers$ | async"
+      ></app-vault-list-items-container>
+      <app-vault-list-items-container
+        [title]="'allItems' | i18n"
+        [ciphers]="remainingCiphers$ | async"
+      ></app-vault-list-items-container>
+    </ng-container>
+  </ng-container>
 </popup-page>

@@ -60,6 +60,7 @@ module.exports = {
         contrast: rgba("--color-text-contrast"),
         alt2: rgba("--color-text-alt2"),
         code: rgba("--color-text-code"),
+        headers: rgba("--color-text-headers"),
       },
       background: {
         DEFAULT: rgba("--color-background"),
