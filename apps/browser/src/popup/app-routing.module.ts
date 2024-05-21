@@ -38,6 +38,7 @@ import { SendGroupingsComponent } from "../tools/popup/send/send-groupings.compo
 import { SendTypeComponent } from "../tools/popup/send/send-type.component";
 import { ExportComponent } from "../tools/popup/settings/export.component";
 import { ImportBrowserComponent } from "../tools/popup/settings/import/import-browser.component";
+import { SettingsV2Component } from "../tools/popup/settings/settings-v2.component";
 import { SettingsComponent } from "../tools/popup/settings/settings.component";
 import { Fido2Component } from "../vault/popup/components/fido2/fido2.component";
 import { AddEditComponent } from "../vault/popup/components/vault/add-edit.component";
@@ -381,12 +382,11 @@ const routes: Routes = [
         canActivate: [AuthGuard],
         data: { state: "tabs_generator" },
       },
-      {
+      ...extensionRefreshSwap(SettingsComponent, SettingsV2Component, {
         path: "settings",
-        component: SettingsComponent,
         canActivate: [AuthGuard],
         data: { state: "tabs_settings" },
-      },
+      }),
       {
         path: "send",
         component: SendGroupingsComponent,
