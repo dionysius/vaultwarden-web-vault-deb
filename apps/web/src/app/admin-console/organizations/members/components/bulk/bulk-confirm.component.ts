@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { DIALOG_DATA, DialogConfig } from "@angular/cdk/dialog";
+import { Component, Inject, OnInit } from "@angular/core";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { OrganizationUserService } from "@bitwarden/common/admin-console/abstractions/organization-user/organization-user.service";
@@ -8,16 +9,22 @@ import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.se
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
+import { DialogService } from "@bitwarden/components";
 
 import { BulkUserDetails } from "./bulk-status.component";
+
+type BulkConfirmDialogData = {
+  organizationId: string;
+  users: BulkUserDetails[];
+};
 
 @Component({
   selector: "app-bulk-confirm",
   templateUrl: "bulk-confirm.component.html",
 })
 export class BulkConfirmComponent implements OnInit {
-  @Input() organizationId: string;
-  @Input() users: BulkUserDetails[];
+  organizationId: string;
+  users: BulkUserDetails[];
 
   excludedUsers: BulkUserDetails[];
   filteredUsers: BulkUserDetails[];
@@ -30,11 +37,15 @@ export class BulkConfirmComponent implements OnInit {
   error: string;
 
   constructor(
+    @Inject(DIALOG_DATA) protected data: BulkConfirmDialogData,
     protected cryptoService: CryptoService,
     protected apiService: ApiService,
     private organizationUserService: OrganizationUserService,
     private i18nService: I18nService,
-  ) {}
+  ) {
+    this.organizationId = data.organizationId;
+    this.users = data.users;
+  }
 
   async ngOnInit() {
     this.excludedUsers = this.users.filter((u) => !this.isAccepted(u));
@@ -109,5 +120,9 @@ export class BulkConfirmComponent implements OnInit {
       this.organizationId,
       request,
     );
+  }
+
+  static open(dialogService: DialogService, config: DialogConfig<BulkConfirmDialogData>) {
+    return dialogService.open(BulkConfirmComponent, config);
   }
 }
