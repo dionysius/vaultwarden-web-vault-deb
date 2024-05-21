@@ -776,9 +776,14 @@ export class CipherService implements CipherServiceAbstraction {
   async saveCollectionsWithServer(cipher: Cipher): Promise<Cipher> {
     const request = new CipherCollectionsRequest(cipher.collectionIds);
     const response = await this.apiService.putCipherCollections(cipher.id, request);
-    const data = new CipherData(response);
+    // The response will now check for an unavailable value. This value determines whether
+    // the user still has Can Manage access to the item after updating.
+    if (response.unavailable) {
+      await this.delete(cipher.id);
+      return;
+    }
+    const data = new CipherData(response.cipher);
     const updated = await this.upsert(data);
-    // Collection updates don't change local data
     return new Cipher(updated[cipher.id as CipherId], cipher.localData);
   }
 

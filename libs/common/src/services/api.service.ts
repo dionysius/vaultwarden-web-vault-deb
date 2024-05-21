@@ -138,6 +138,7 @@ import {
   CollectionDetailsResponse,
   CollectionResponse,
 } from "../vault/models/response/collection.response";
+import { OptionalCipherResponse } from "../vault/models/response/optional-cipher.response";
 import { SyncResponse } from "../vault/models/response/sync.response";
 
 /**
@@ -566,9 +567,15 @@ export class ApiService implements ApiServiceAbstraction {
   async putCipherCollections(
     id: string,
     request: CipherCollectionsRequest,
-  ): Promise<CipherResponse> {
-    const response = await this.send("PUT", "/ciphers/" + id + "/collections", request, true, true);
-    return new CipherResponse(response);
+  ): Promise<OptionalCipherResponse> {
+    const response = await this.send(
+      "PUT",
+      "/ciphers/" + id + "/collections_v2",
+      request,
+      true,
+      true,
+    );
+    return new OptionalCipherResponse(response);
   }
 
   putCipherCollectionsAdmin(id: string, request: CipherCollectionsRequest): Promise<any> {
