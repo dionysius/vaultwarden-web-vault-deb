@@ -105,11 +105,7 @@ export class AutofillComponent implements OnInit {
   }
 
   async updateAutoFillOverlayVisibility() {
-    const previousAutoFillOverlayVisibility = await firstValueFrom(
-      this.autofillSettingsService.inlineMenuVisibility$,
-    );
     await this.autofillSettingsService.setInlineMenuVisibility(this.autoFillOverlayVisibility);
-    await this.handleUpdatingAutofillOverlayContentScripts(previousAutoFillOverlayVisibility);
     await this.requestPrivacyPermission();
   }
 
@@ -179,27 +175,6 @@ export class AutofillComponent implements OnInit {
     // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     BrowserApi.createNewTab(this.disablePasswordManagerLink);
-  }
-
-  private async handleUpdatingAutofillOverlayContentScripts(
-    previousAutoFillOverlayVisibility: number,
-  ) {
-    const autofillOverlayPreviouslyDisabled =
-      previousAutoFillOverlayVisibility === AutofillOverlayVisibility.Off;
-    const autofillOverlayCurrentlyDisabled =
-      this.autoFillOverlayVisibility === AutofillOverlayVisibility.Off;
-
-    if (!autofillOverlayPreviouslyDisabled && !autofillOverlayCurrentlyDisabled) {
-      const tabs = await BrowserApi.tabsQuery({});
-      tabs.forEach((tab) =>
-        BrowserApi.tabSendMessageData(tab, "updateAutofillOverlayVisibility", {
-          autofillOverlayVisibility: this.autoFillOverlayVisibility,
-        }),
-      );
-      return;
-    }
-
-    await this.autofillService.reloadAutofillScripts();
   }
 
   async requestPrivacyPermission() {

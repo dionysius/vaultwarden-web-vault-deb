@@ -188,6 +188,7 @@ export default class RuntimeBackground {
 
         if (msg.command === "loggedIn") {
           await this.sendBwInstalledMessageToVault();
+          await this.autofillService.reloadAutofillScripts();
         }
 
         if (this.lockedVaultPendingNotifications?.length > 0) {
