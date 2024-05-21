@@ -27,9 +27,9 @@ jobs:
         env:
           GH_TOKEN: ${{ steps.retrieve-bot-secrets.outputs.github-pat-bitwarden-devops-bot-repo-scope }}
         run: |
-          echo '{"cut_rc_branch": "false", \
-                 "bump_browser": "false", \
-                 "bump_cli": "false", \
-                 "bump_desktop": "true", \
+          echo '{"cut_rc_branch": "false",
+                 "bump_browser": "false",
+                 "bump_cli": "false",
+                 "bump_desktop": "true",
                  "bump_web": "false"}' | \
           gh workflow run version-bump.yml --json --repo bitwarden/clients
