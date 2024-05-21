@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { UntypedFormBuilder } from "@angular/forms";
+import { UntypedFormBuilder, Validators } from "@angular/forms";
 
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -20,14 +20,14 @@ export class PasswordGeneratorPolicy extends BasePolicy {
 export class PasswordGeneratorPolicyComponent extends BasePolicyComponent {
   data = this.formBuilder.group({
     defaultType: [null],
-    minLength: [null],
+    minLength: [null, [Validators.min(5), Validators.max(128)]],
     useUpper: [null],
     useLower: [null],
     useNumbers: [null],
     useSpecial: [null],
-    minNumbers: [null],
-    minSpecial: [null],
-    minNumberWords: [null],
+    minNumbers: [null, [Validators.min(0), Validators.max(9)]],
+    minSpecial: [null, [Validators.min(0), Validators.max(9)]],
+    minNumberWords: [null, [Validators.min(3), Validators.max(20)]],
     capitalize: [null],
     includeNumber: [null],
   });
