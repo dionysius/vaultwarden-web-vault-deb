@@ -7,7 +7,6 @@ config.content = [
   "libs/vault/src/**/*.{html,ts,mdx}",
   "apps/web/src/**/*.{html,ts,mdx}",
   "apps/browser/src/**/*.{html,ts,mdx}",
-  "bitwarden_license/bit-web/src/**/*.{html,ts,mdx}",
   ".storybook/preview.tsx",
 ];
 config.safelist = [

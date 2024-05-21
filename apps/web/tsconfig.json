@@ -10,7 +10,6 @@
       "@bitwarden/auth/angular": ["../../libs/auth/src/angular"],
       "@bitwarden/auth/common": ["../../libs/auth/src/common"],
       "@bitwarden/billing": ["../../libs/billing/src"],
-      "@bitwarden/bit-common/*": ["../../bitwarden_license/bit-common/src/*"],
       "@bitwarden/common/*": ["../../libs/common/src/*"],
       "@bitwarden/components": ["../../libs/components/src"],
       "@bitwarden/generator-components": ["../../libs/tools/generator/components/src"],
