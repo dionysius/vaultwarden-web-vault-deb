@@ -1,6 +1,6 @@
 import { CommonModule, Location } from "@angular/common";
 import { Component } from "@angular/core";
-import { ActivatedRoute, Router } from "@angular/router";
+import { ActivatedRoute, Router, RouterModule } from "@angular/router";
 import { Observable, combineLatest, switchMap } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
@@ -23,7 +23,7 @@ export type CurrentAccount = {
   selector: "app-current-account",
   templateUrl: "current-account.component.html",
   standalone: true,
-  imports: [CommonModule, JslibModule, AvatarModule],
+  imports: [CommonModule, JslibModule, AvatarModule, RouterModule],
 })
 export class CurrentAccountComponent {
   currentAccount$: Observable<CurrentAccount>;
