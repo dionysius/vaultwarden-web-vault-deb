@@ -28,8 +28,6 @@ import { DeleteOrganizationDialogResult, openDeleteOrganizationDialog } from "./
   templateUrl: "account.component.html",
 })
 export class AccountComponent {
-  @ViewChild("purgeOrganizationTemplate", { read: ViewContainerRef, static: true })
-  purgeModalRef: ViewContainerRef;
   @ViewChild("apiKeyTemplate", { read: ViewContainerRef, static: true })
   apiKeyModalRef: ViewContainerRef;
   @ViewChild("rotateApiKeyTemplate", { read: ViewContainerRef, static: true })
@@ -232,11 +230,14 @@ export class AccountComponent {
     }
   }
 
-  async purgeVault() {
-    await this.modalService.openViewRef(PurgeVaultComponent, this.purgeModalRef, (comp) => {
-      comp.organizationId = this.organizationId;
+  purgeVault = async () => {
+    const dialogRef = PurgeVaultComponent.open(this.dialogService, {
+      data: {
+        organizationId: this.organizationId,
+      },
     });
-  }
+    await lastValueFrom(dialogRef.closed);
+  };
 
   async viewApiKey() {
     await this.modalService.openViewRef(ApiKeyComponent, this.apiKeyModalRef, (comp) => {
