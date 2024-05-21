@@ -13,6 +13,10 @@ import {
 // Represents data in state service pre-migration
 function preMigrationJson() {
   return {
+    // desktop only global data format
+    "global.vaultTimeout": -1,
+    "global.vaultTimeoutAction": "lock",
+
     global: {
       vaultTimeout: 30,
       vaultTimeoutAction: "lock",
@@ -266,6 +270,10 @@ describe("VaultTimeoutSettingsServiceStateProviderMigrator", () => {
         // no longer has vault timeout data
         otherStuff: "otherStuff",
       });
+
+      // Expect we removed desktop specially formatted global data
+      expect(helper.remove).toHaveBeenCalledWith("global\\.vaultTimeout");
+      expect(helper.remove).toHaveBeenCalledWith("global\\.vaultTimeoutAction");
 
       // User data
       expect(helper.set).toHaveBeenCalledWith("user1", {
