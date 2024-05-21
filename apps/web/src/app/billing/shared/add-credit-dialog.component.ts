@@ -1,12 +1,6 @@
-import {
-  Component,
-  ElementRef,
-  EventEmitter,
-  Input,
-  OnInit,
-  Output,
-  ViewChild,
-} from "@angular/core";
+import { DIALOG_DATA, DialogConfig, DialogRef } from "@angular/cdk/dialog";
+import { Component, ElementRef, Inject, OnInit, ViewChild } from "@angular/core";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { firstValueFrom, map } from "rxjs";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
@@ -17,6 +11,16 @@ import { BitPayInvoiceRequest } from "@bitwarden/common/billing/models/request/b
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { DialogService } from "@bitwarden/components";
+
+export interface AddCreditDialogData {
+  organizationId: string;
+}
+
+export enum AddCreditDialogResult {
+  Added = "added",
+  Cancelled = "cancelled",
+}
 
 export type PayPalConfig = {
   businessId?: string;
@@ -24,17 +28,9 @@ export type PayPalConfig = {
 };
 
 @Component({
-  selector: "app-add-credit",
-  templateUrl: "add-credit.component.html",
+  templateUrl: "add-credit-dialog.component.html",
 })
-export class AddCreditComponent implements OnInit {
-  @Input() creditAmount: string;
-  @Input() showOptions = true;
-  @Input() method = PaymentMethodType.PayPal;
-  @Input() organizationId: string;
-  @Output() onAdded = new EventEmitter();
-  @Output() onCanceled = new EventEmitter();
-
+export class AddCreditDialogComponent implements OnInit {
   @ViewChild("ppButtonForm", { read: ElementRef, static: true }) ppButtonFormRef: ElementRef;
 
   paymentMethodType = PaymentMethodType;
@@ -44,14 +40,22 @@ export class AddCreditComponent implements OnInit {
   ppLoading = false;
   subject: string;
   returnUrl: string;
-  formPromise: Promise<any>;
+  organizationId: string;
 
   private userId: string;
   private name: string;
   private email: string;
   private region: string;
 
+  protected DialogResult = AddCreditDialogResult;
+  protected formGroup = new FormGroup({
+    method: new FormControl(PaymentMethodType.PayPal),
+    creditAmount: new FormControl(null, [Validators.required]),
+  });
+
   constructor(
+    private dialogRef: DialogRef,
+    @Inject(DIALOG_DATA) protected data: AddCreditDialogData,
     private accountService: AccountService,
     private apiService: ApiService,
     private platformUtilsService: PlatformUtilsService,
@@ -59,6 +63,7 @@ export class AddCreditComponent implements OnInit {
     private logService: LogService,
     private configService: ConfigService,
   ) {
+    this.organizationId = data.organizationId;
     const payPalConfig = process.env.PAYPAL_CONFIG as PayPalConfig;
     this.ppButtonFormAction = payPalConfig.buttonAction;
     this.ppButtonBusinessId = payPalConfig.businessId;
@@ -93,7 +98,18 @@ export class AddCreditComponent implements OnInit {
     this.returnUrl = window.location.href;
   }
 
-  async submit() {
+  get creditAmount() {
+    return this.formGroup.value.creditAmount;
+  }
+  set creditAmount(value: string) {
+    this.formGroup.get("creditAmount").setValue(value);
+  }
+
+  get method() {
+    return this.formGroup.value.method;
+  }
+
+  submit = async () => {
     if (this.creditAmount == null || this.creditAmount === "") {
       return;
     }
@@ -104,33 +120,20 @@ export class AddCreditComponent implements OnInit {
       return;
     }
     if (this.method === PaymentMethodType.BitPay) {
-      try {
-        const req = new BitPayInvoiceRequest();
-        req.email = this.email;
-        req.name = this.name;
-        req.credit = true;
-        req.amount = this.creditAmountNumber;
-        req.organizationId = this.organizationId;
-        req.userId = this.userId;
-        req.returnUrl = this.returnUrl;
-        this.formPromise = this.apiService.postBitPayInvoice(req);
-        const bitPayUrl: string = await this.formPromise;
-        this.platformUtilsService.launchUri(bitPayUrl);
-      } catch (e) {
-        this.logService.error(e);
-      }
+      const req = new BitPayInvoiceRequest();
+      req.email = this.email;
+      req.name = this.name;
+      req.credit = true;
+      req.amount = this.creditAmountNumber;
+      req.organizationId = this.organizationId;
+      req.userId = this.userId;
+      req.returnUrl = this.returnUrl;
+      const bitPayUrl: string = await this.apiService.postBitPayInvoice(req);
+      this.platformUtilsService.launchUri(bitPayUrl);
       return;
     }
-    try {
-      this.onAdded.emit();
-    } catch (e) {
-      this.logService.error(e);
-    }
-  }
-
-  cancel() {
-    this.onCanceled.emit();
-  }
+    this.dialogRef.close(AddCreditDialogResult.Added);
+  };
 
   formatAmount() {
     try {
@@ -159,4 +162,16 @@ export class AddCreditComponent implements OnInit {
     }
     return null;
   }
+}
+
+/**
+ * Strongly typed helper to open a AddCreditDialog
+ * @param dialogService Instance of the dialog service that will be used to open the dialog
+ * @param config Configuration for the dialog
+ */
+export function openAddCreditDialog(
+  dialogService: DialogService,
+  config: DialogConfig<AddCreditDialogData>,
+) {
+  return dialogService.open<AddCreditDialogResult>(AddCreditDialogComponent, config);
 }
