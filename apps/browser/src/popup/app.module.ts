@@ -39,7 +39,7 @@ import { TwoFactorComponent } from "../auth/popup/two-factor.component";
 import { UpdateTempPasswordComponent } from "../auth/popup/update-temp-password.component";
 import { AutofillComponent } from "../autofill/popup/settings/autofill.component";
 import { ExcludedDomainsComponent } from "../autofill/popup/settings/excluded-domains.component";
-import { NotifcationsSettingsComponent } from "../autofill/popup/settings/notifications.component";
+import { NotificationsSettingsComponent } from "../autofill/popup/settings/notifications.component";
 import { PremiumComponent } from "../billing/popup/settings/premium.component";
 import { PopOutComponent } from "../platform/popup/components/pop-out.component";
 import { HeaderComponent } from "../platform/popup/header.component";
@@ -155,7 +155,7 @@ import "../platform/popup/locales";
     LoginViaAuthRequestComponent,
     LoginDecryptionOptionsComponent,
     OptionsComponent,
-    NotifcationsSettingsComponent,
+    NotificationsSettingsComponent,
     AppearanceComponent,
     GeneratorComponent,
     PasswordGeneratorHistoryComponent,

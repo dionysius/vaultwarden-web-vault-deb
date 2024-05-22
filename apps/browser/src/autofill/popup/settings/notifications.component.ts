@@ -10,7 +10,7 @@ import { enableAccountSwitching } from "../../../platform/flags";
   selector: "autofill-notification-settings",
   templateUrl: "notifications.component.html",
 })
-export class NotifcationsSettingsComponent implements OnInit {
+export class NotificationsSettingsComponent implements OnInit {
   enableAddLoginNotification = false;
   enableChangedPasswordNotification = false;
   enablePasskeys = true;
