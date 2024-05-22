@@ -44,6 +44,7 @@ function cloneCollection(
     cloned.groups = [...collection.groups];
     cloned.users = [...collection.users];
     cloned.assigned = collection.assigned;
+    cloned.unmanaged = collection.unmanaged;
   } else {
     cloned = new CollectionView();
   }

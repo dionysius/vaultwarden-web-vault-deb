@@ -42,10 +42,12 @@ export class CollectionDetailsResponse extends CollectionResponse {
 export class CollectionAccessDetailsResponse extends CollectionDetailsResponse {
   groups: SelectionReadOnlyResponse[] = [];
   users: SelectionReadOnlyResponse[] = [];
+  unmanaged: boolean;
 
   constructor(response: any) {
     super(response);
     this.assigned = this.getResponseProperty("Assigned") || false;
+    this.unmanaged = this.getResponseProperty("Unmanaged") || false;
 
     const groups = this.getResponseProperty("Groups");
     if (groups != null) {

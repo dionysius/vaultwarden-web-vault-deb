@@ -127,6 +127,7 @@ export class CollectionAdminService {
         view.readOnly = c.readOnly;
         view.hidePasswords = c.hidePasswords;
         view.manage = c.manage;
+        view.unmanaged = c.unmanaged;
       }
 
       return view;

@@ -38,7 +38,6 @@ import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { OrganizationUserService } from "@bitwarden/common/admin-console/abstractions/organization-user/organization-user.service";
 import { OrganizationUserUserDetailsResponse } from "@bitwarden/common/admin-console/abstractions/organization-user/responses";
-import { OrganizationUserType } from "@bitwarden/common/admin-console/enums";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { EventType } from "@bitwarden/common/enums";
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
@@ -433,13 +432,13 @@ export class VaultComponent implements OnInit, OnDestroy {
         this.showAddAccessToggle = false;
         let collectionsToReturn = [];
         if (filter.collectionId === undefined || filter.collectionId === All) {
-          collectionsToReturn = await this.addAccessCollectionsMap(collections);
+          collectionsToReturn = collections.map((c) => c.node);
         } else {
           const selectedCollection = ServiceUtils.getTreeNodeObjectFromList(
             collections,
             filter.collectionId,
           );
-          collectionsToReturn = await this.addAccessCollectionsMap(selectedCollection?.children);
+          collectionsToReturn = selectedCollection?.children.map((c) => c.node) ?? [];
         }
 
         if (await this.searchService.isSearchable(searchText)) {
@@ -451,8 +450,15 @@ export class VaultComponent implements OnInit, OnDestroy {
           );
         }
 
+        // Add access toggle is only shown if allowAdminAccessToAllCollectionItems is false and there are unmanaged collections the user can edit
+        this.showAddAccessToggle =
+          this.flexibleCollectionsV1Enabled &&
+          !this.organization.allowAdminAccessToAllCollectionItems &&
+          this.organization.canEditUnmanagedCollections() &&
+          collectionsToReturn.some((c) => c.unmanaged);
+
         if (addAccessStatus === 1 && this.showAddAccessToggle) {
-          collectionsToReturn = collectionsToReturn.filter((c: any) => c.addAccess);
+          collectionsToReturn = collectionsToReturn.filter((c) => c.unmanaged);
         }
         return collectionsToReturn;
       }),
@@ -663,57 +669,7 @@ export class VaultComponent implements OnInit, OnDestroy {
       );
   }
 
-  // Update the list of collections to see if any collection is orphaned
-  // and will receive the addAccess badge / be filterable by the user
-  async addAccessCollectionsMap(collections: TreeNode<CollectionAdminView>[]) {
-    let mappedCollections;
-    const { type, allowAdminAccessToAllCollectionItems, permissions } = this.organization;
-
-    const canEditCiphersCheck =
-      this._flexibleCollectionsV1FlagEnabled &&
-      !this.organization.canEditAllCiphers(
-        this._flexibleCollectionsV1FlagEnabled,
-        this.restrictProviderAccessEnabled,
-      );
-
-    // This custom type check will show addAccess badge for
-    // Custom users with canEdit access AND owner/admin manage access setting is OFF
-    const customUserCheck =
-      this._flexibleCollectionsV1FlagEnabled &&
-      !allowAdminAccessToAllCollectionItems &&
-      type === OrganizationUserType.Custom &&
-      permissions.editAnyCollection;
-
-    // If Custom user has Delete Only access they will not see Add Access toggle
-    const customUserOnlyDelete =
-      this.flexibleCollectionsV1Enabled &&
-      type === OrganizationUserType.Custom &&
-      permissions.deleteAnyCollection &&
-      !permissions.editAnyCollection;
-
-    if (!customUserOnlyDelete && (canEditCiphersCheck || customUserCheck)) {
-      mappedCollections = collections.map((c: TreeNode<CollectionAdminView>) => {
-        const groupsCanManage = c.node.groupsCanManage();
-        const usersCanManage = c.node.usersCanManage(this.orgRevokedUsers);
-        if (
-          groupsCanManage.length === 0 &&
-          usersCanManage.length === 0 &&
-          c.node.id !== Unassigned
-        ) {
-          c.node.addAccess = true;
-          this.showAddAccessToggle = true;
-        } else {
-          c.node.addAccess = false;
-        }
-        return c.node;
-      });
-    } else {
-      mappedCollections = collections.map((c: TreeNode<CollectionAdminView>) => c.node);
-    }
-    return mappedCollections;
-  }
-
-  addAccessToggle(e: any) {
+  addAccessToggle(e: AddAccessStatusType) {
     this.addAccessStatus$.next(e);
   }
 
@@ -758,9 +714,17 @@ export class VaultComponent implements OnInit, OnDestroy {
       } else if (event.type === "copyField") {
         await this.copy(event.item, event.field);
       } else if (event.type === "editCollection") {
-        await this.editCollection(event.item, CollectionDialogTabType.Info, event.readonly);
+        await this.editCollection(
+          event.item as CollectionAdminView,
+          CollectionDialogTabType.Info,
+          event.readonly,
+        );
       } else if (event.type === "viewCollectionAccess") {
-        await this.editCollection(event.item, CollectionDialogTabType.Access, event.readonly);
+        await this.editCollection(
+          event.item as CollectionAdminView,
+          CollectionDialogTabType.Access,
+          event.readonly,
+        );
       } else if (event.type === "bulkEditCollectionAccess") {
         await this.bulkEditCollectionAccess(event.items, this.organization);
       } else if (event.type === "assignToCollections") {
@@ -1273,7 +1237,7 @@ export class VaultComponent implements OnInit, OnDestroy {
   }
 
   async editCollection(
-    c: CollectionView,
+    c: CollectionAdminView,
     tab: CollectionDialogTabType,
     readonly: boolean,
   ): Promise<void> {
@@ -1283,7 +1247,7 @@ export class VaultComponent implements OnInit, OnDestroy {
         organizationId: this.organization?.id,
         initialTab: tab,
         readonly: readonly,
-        isAddAccessCollection: c.addAccess,
+        isAddAccessCollection: c.unmanaged,
         limitNestedCollections: !this.organization.canEditAnyCollection(
           this.flexibleCollectionsV1Enabled,
         ),

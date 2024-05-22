@@ -203,6 +203,11 @@ export class Organization {
     );
   }
 
+  canEditUnmanagedCollections() {
+    // Any admin or custom user with editAnyCollection permission can edit unmanaged collections
+    return this.isAdmin || this.permissions.editAnyCollection;
+  }
+
   canEditUnassignedCiphers(restrictProviderAccessFlagEnabled: boolean) {
     if (this.isProviderUser) {
       return !restrictProviderAccessFlagEnabled;

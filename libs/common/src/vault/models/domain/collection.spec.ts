@@ -64,7 +64,6 @@ describe("Collection", () => {
     const view = await collection.decrypt(key);
 
     expect(view).toEqual({
-      addAccess: false,
       externalId: "extId",
       hidePasswords: false,
       id: "id",

@@ -56,6 +56,28 @@ export class VaultCollectionRowComponent {
     return this.organizations.find((o) => o.id === this.collection.organizationId);
   }
 
+  get showAddAccess() {
+    if (!this.flexibleCollectionsV1Enabled) {
+      return false;
+    }
+
+    if (this.collection.id == Unassigned) {
+      return false;
+    }
+
+    // Only show AddAccess when viewing the Org vault (implied by CollectionAdminView)
+    if (this.collection instanceof CollectionAdminView) {
+      // Only show AddAccess if unmanaged and allowAdminAccessToAllCollectionItems is disabled
+      return (
+        !this.organization.allowAdminAccessToAllCollectionItems &&
+        this.collection.unmanaged &&
+        this.organization.canEditUnmanagedCollections()
+      );
+    }
+
+    return false;
+  }
+
   get permissionText() {
     if (
       this.collection.id == Unassigned &&
