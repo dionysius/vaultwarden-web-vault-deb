@@ -1,15 +1,14 @@
 <app-header>
-  <div class="left">
-    <app-pop-out></app-pop-out>
-  </div>
+  <div class="left"></div>
   <h1 class="center">
     <span class="title">{{ "settings" | i18n }}</span>
   </h1>
-  <div class="right"></div>
+  <div class="right">
+    <app-pop-out></app-pop-out>
+  </div>
 </app-header>
 <main tabindex="-1">
   <div class="box list">
-    <h2 class="box-header">{{ "manage" | i18n }}</h2>
     <div class="box-content single-line">
       <button
         type="button"
@@ -43,41 +42,6 @@
         <div class="row-main">{{ "vault" | i18n }}</div>
         <i class="bwi bwi-angle-right bwi-lg row-sub-icon" aria-hidden="true"></i>
       </button>
-    </div>
-  </div>
-  <div class="box list">
-    <h2 class="box-header">{{ "account" | i18n }}</h2>
-    <div class="box-content single-line">
-      <button type="button" class="box-content-row" routerLink="/premium">
-        <div class="row-main">
-          <div class="icon text-primary">
-            <i class="bwi bwi-fw bwi-lg bwi-star-f" aria-hidden="true"></i>
-          </div>
-          <span class="text text-primary"
-            ><b>{{ "premiumMembership" | i18n }}</b></span
-          >
-        </div>
-        <span><i class="bwi bwi-angle-right bwi-lg row-sub-icon" aria-hidden="true"></i></span>
-      </button>
-    </div>
-  </div>
-  <div class="box list">
-    <h2 class="box-header">{{ "tools" | i18n }}</h2>
-    <div class="box-content single-line">
-      <button
-        type="button"
-        class="box-content-row box-content-row-flex text-default"
-        appStopClick
-        (click)="webVault()"
-      >
-        <div class="row-main">{{ "bitWebVault" | i18n }}</div>
-        <i class="bwi bwi-angle-right bwi-lg row-sub-icon" aria-hidden="true"></i>
-      </button>
-    </div>
-  </div>
-  <div class="box list">
-    <h2 class="box-header">{{ "other" | i18n }}</h2>
-    <div class="box-content single-line">
       <button
         type="button"
         class="box-content-row box-content-row-flex text-default"
@@ -97,40 +61,11 @@
       <button
         type="button"
         class="box-content-row box-content-row-flex text-default"
-        appStopClick
-        (click)="about()"
+        routerLink="/about"
       >
         <div class="row-main">{{ "about" | i18n }}</div>
         <i class="bwi bwi-angle-right bwi-lg row-sub-icon" aria-hidden="true"></i>
       </button>
-      <button
-        type="button"
-        class="box-content-row box-content-row-flex text-default"
-        appStopClick
-        (click)="share()"
-      >
-        <div class="row-main">{{ "learnOrg" | i18n }}</div>
-        <i class="bwi bwi-angle-right bwi-lg row-sub-icon" aria-hidden="true"></i>
-      </button>
-      <button
-        type="button"
-        class="box-content-row box-content-row-flex text-default"
-        routerLink="/help-and-feedback"
-      >
-        <div class="row-main">{{ "helpFeedback" | i18n }}</div>
-        <i class="bwi bwi-angle-right bwi-lg row-sub-icon" aria-hidden="true"></i>
-      </button>
-      <button
-        type="button"
-        aria-describedby="rateExtensionHelp"
-        class="box-content-row box-content-row-flex text-default"
-        appStopClick
-        (click)="rate()"
-      >
-        <div class="row-main">{{ "rateExtension" | i18n }}</div>
-        <i class="bwi bwi-angle-right bwi-lg row-sub-icon" aria-hidden="true"></i>
-      </button>
     </div>
-    <div id="rateExtensionHelp" class="box-footer">{{ "rateExtensionDesc" | i18n }}</div>
   </div>
 </main>

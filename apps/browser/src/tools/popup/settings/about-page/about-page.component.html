@@ -6,9 +6,11 @@
     </button>
   </div>
   <h1 class="center">
-    <span class="title">{{ "helpFeedback" | i18n }}</span>
+    <span class="title">{{ "about" | i18n }}</span>
   </h1>
-  <div class="right"></div>
+  <div class="right">
+    <app-pop-out></app-pop-out>
+  </div>
 </header>
 <main tabindex="-1">
   <div class="box list">
@@ -17,12 +19,26 @@
         type="button"
         class="box-content-row box-content-row-flex text-default"
         appStopClick
+        (click)="about()"
+      >
+        <div class="row-main">{{ "aboutBitwarden" | i18n }}</div>
+      </button>
+      <button
+        type="button"
+        class="box-content-row box-content-row-flex text-default"
+        appStopClick
         (click)="launchHelp()"
       >
-        <div class="icon">
-          <i class="bwi bwi-shield bwi-lg row-sub-icon" aria-hidden="true"></i>
-        </div>
         <div class="row-main">{{ "helpCenter" | i18n }}</div>
+        <i class="bwi bwi-external-link bwi-lg row-sub-icon" aria-hidden="true"></i>
+      </button>
+      <button
+        type="button"
+        class="box-content-row box-content-row-flex text-default"
+        appStopClick
+        (click)="openWebVault()"
+      >
+        <div class="row-main">{{ "bitWebVaultApp" | i18n }}</div>
         <i class="bwi bwi-external-link bwi-lg row-sub-icon" aria-hidden="true"></i>
       </button>
       <button
@@ -31,9 +47,6 @@
         appStopClick
         (click)="launchForums()"
       >
-        <div class="icon">
-          <i class="bwi bwi-discourse bwi-lg row-sub-icon" aria-hidden="true"></i>
-        </div>
         <div class="row-main">{{ "communityForums" | i18n }}</div>
         <i class="bwi bwi-external-link bwi-lg row-sub-icon" aria-hidden="true"></i>
       </button>
@@ -43,10 +56,24 @@
         appStopClick
         (click)="launchContactForm()"
       >
-        <div class="icon">
-          <i class="bwi bwi-shield bwi-lg row-sub-icon" aria-hidden="true"></i>
-        </div>
         <div class="row-main">{{ "contactSupport" | i18n }}</div>
+        <i class="bwi bwi-external-link bwi-lg row-sub-icon" aria-hidden="true"></i>
+      </button>
+      <button
+        type="button"
+        class="box-content-row box-content-row-flex text-default"
+        routerLink="/more-from-bitwarden"
+      >
+        <div class="row-main">{{ "moreFromBitwarden" | i18n }}</div>
+        <i class="bwi bwi-angle-right bwi-lg row-sub-icon" aria-hidden="true"></i>
+      </button>
+      <button
+        type="button"
+        class="box-content-row box-content-row-flex text-default"
+        appStopClick
+        (click)="rate()"
+      >
+        <div class="row-main">{{ "rateExtension" | i18n }}</div>
         <i class="bwi bwi-external-link bwi-lg row-sub-icon" aria-hidden="true"></i>
       </button>
     </div>

@@ -84,7 +84,6 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { UserVerificationComponent } from "./components/user-verification.component";
 import { ServicesModule } from "./services/services.module";
-import { HelpAndFeedbackComponent } from "./settings/help-and-feedback.component";
 import { OptionsComponent } from "./settings/options.component";
 import { TabsV2Component } from "./tabs-v2.component";
 import { TabsComponent } from "./tabs.component";
@@ -185,7 +184,6 @@ import "../platform/popup/locales";
     RemovePasswordComponent,
     VaultSelectComponent,
     Fido2Component,
-    HelpAndFeedbackComponent,
     AutofillComponent,
     EnvironmentSelectorComponent,
     AccountSwitcherComponent,
