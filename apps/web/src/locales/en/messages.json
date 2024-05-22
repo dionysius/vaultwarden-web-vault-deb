@@ -1341,6 +1341,9 @@
   "accountDeletedDesc": {
     "message": "Your account has been closed and all associated data has been deleted."
   },
+  "deleteOrganizationWarning": {
+    "message": "Deleting your organization is permanent. It cannot be undone."
+  },
   "myAccount": {
     "message": "My account"
   },
@@ -3387,6 +3390,9 @@
   },
   "deleteRecoverConfirmDesc": {
     "message": "You have requested to delete your Bitwarden account. Use the button below to confirm."
+  },
+  "deleteRecoverOrgConfirmDesc": {
+    "message": "You have requested to delete your Bitwarden organization."
   },
   "myOrganization": {
     "message": "My organization"

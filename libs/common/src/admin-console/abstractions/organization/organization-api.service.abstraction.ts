@@ -23,6 +23,7 @@ import { OrganizationCreateRequest } from "../../models/request/organization-cre
 import { OrganizationKeysRequest } from "../../models/request/organization-keys.request";
 import { OrganizationUpdateRequest } from "../../models/request/organization-update.request";
 import { OrganizationUpgradeRequest } from "../../models/request/organization-upgrade.request";
+import { OrganizationVerifyDeleteRecoverRequest } from "../../models/request/organization-verify-delete-recover.request";
 import { OrganizationApiKeyInformationResponse } from "../../models/response/organization-api-key-information.response";
 import { OrganizationAutoEnrollStatusResponse } from "../../models/response/organization-auto-enroll-status.response";
 import { OrganizationKeysResponse } from "../../models/response/organization-keys.response";
@@ -54,6 +55,10 @@ export class OrganizationApiServiceAbstraction {
   reinstate: (id: string) => Promise<void>;
   leave: (id: string) => Promise<void>;
   delete: (id: string, request: SecretVerificationRequest) => Promise<void>;
+  deleteUsingToken: (
+    organizationId: string,
+    request: OrganizationVerifyDeleteRecoverRequest,
+  ) => Promise<any>;
   updateLicense: (id: string, data: FormData) => Promise<void>;
   importDirectory: (organizationId: string, request: ImportDirectoryRequest) => Promise<void>;
   getOrCreateApiKey: (id: string, request: OrganizationApiKeyRequest) => Promise<ApiKeyResponse>;

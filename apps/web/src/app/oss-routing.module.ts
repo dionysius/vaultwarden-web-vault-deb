@@ -11,6 +11,7 @@ import {
 
 import { flagEnabled, Flags } from "../utils/flags";
 
+import { VerifyRecoverDeleteOrgComponent } from "./admin-console/organizations/manage/verify-recover-delete-org.component";
 import { AcceptFamilySponsorshipComponent } from "./admin-console/organizations/sponsorships/accept-family-sponsorship.component";
 import { FamiliesForEnterpriseSetupComponent } from "./admin-console/organizations/sponsorships/families-for-enterprise-setup.component";
 import { VerifyRecoverDeleteProviderComponent } from "./admin-console/providers/verify-recover-delete-provider.component";
@@ -156,6 +157,12 @@ const routes: Routes = [
         component: VerifyRecoverDeleteComponent,
         canActivate: [UnauthGuard],
         data: { titleId: "deleteAccount" },
+      },
+      {
+        path: "verify-recover-delete-org",
+        component: VerifyRecoverDeleteOrgComponent,
+        canActivate: [UnauthGuard],
+        data: { titleId: "deleteOrganization" },
       },
       {
         path: "verify-recover-delete-provider",

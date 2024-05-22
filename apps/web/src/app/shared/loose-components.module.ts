@@ -9,6 +9,7 @@ import { LayoutComponent, NavigationModule } from "@bitwarden/components";
 import { OrganizationLayoutComponent } from "../admin-console/organizations/layouts/organization-layout.component";
 import { EventsComponent as OrgEventsComponent } from "../admin-console/organizations/manage/events.component";
 import { UserConfirmComponent as OrgUserConfirmComponent } from "../admin-console/organizations/manage/user-confirm.component";
+import { VerifyRecoverDeleteOrgComponent } from "../admin-console/organizations/manage/verify-recover-delete-org.component";
 import { AcceptFamilySponsorshipComponent } from "../admin-console/organizations/sponsorships/accept-family-sponsorship.component";
 import { ExposedPasswordsReportComponent as OrgExposedPasswordsReportComponent } from "../admin-console/organizations/tools/exposed-passwords-report.component";
 import { InactiveTwoFactorReportComponent as OrgInactiveTwoFactorReportComponent } from "../admin-console/organizations/tools/inactive-two-factor-report.component";
@@ -115,6 +116,7 @@ import { SharedModule } from "./shared.module";
     OrganizationLayoutComponent,
     UserLayoutComponent,
     PaymentMethodWarningsModule,
+    VerifyRecoverDeleteOrgComponent,
   ],
   declarations: [
     AcceptFamilySponsorshipComponent,

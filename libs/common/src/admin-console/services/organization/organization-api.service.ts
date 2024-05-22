@@ -26,6 +26,7 @@ import { OrganizationCreateRequest } from "../../models/request/organization-cre
 import { OrganizationKeysRequest } from "../../models/request/organization-keys.request";
 import { OrganizationUpdateRequest } from "../../models/request/organization-update.request";
 import { OrganizationUpgradeRequest } from "../../models/request/organization-upgrade.request";
+import { OrganizationVerifyDeleteRecoverRequest } from "../../models/request/organization-verify-delete-recover.request";
 import { OrganizationApiKeyInformationResponse } from "../../models/response/organization-api-key-information.response";
 import { OrganizationAutoEnrollStatusResponse } from "../../models/response/organization-auto-enroll-status.response";
 import { OrganizationKeysResponse } from "../../models/response/organization-keys.response";
@@ -196,6 +197,19 @@ export class OrganizationApiService implements OrganizationApiServiceAbstraction
   async delete(id: string, request: SecretVerificationRequest): Promise<void> {
     await this.apiService.send("DELETE", "/organizations/" + id, request, true, false);
     await this.syncService.fullSync(true);
+  }
+
+  deleteUsingToken(
+    organizationId: string,
+    request: OrganizationVerifyDeleteRecoverRequest,
+  ): Promise<any> {
+    return this.apiService.send(
+      "POST",
+      "/organizations/" + organizationId + "/delete-recover-token",
+      request,
+      false,
+      false,
+    );
   }
 
   async updateLicense(id: string, data: FormData): Promise<void> {
