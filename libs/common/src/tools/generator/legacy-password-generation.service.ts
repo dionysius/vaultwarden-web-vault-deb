@@ -8,6 +8,8 @@ import {
   of,
   concat,
   Observable,
+  filter,
+  timeout,
 } from "rxjs";
 
 import { PolicyService } from "../../admin-console/abstractions/policy/policy.service.abstraction";
@@ -382,6 +384,13 @@ export class LegacyPasswordGenerationService implements PasswordGenerationServic
   getHistory() {
     const history = this.accountService.activeAccount$.pipe(
       concatMap((account) => this.history.credentials$(account.id)),
+      timeout({
+        // timeout after 1 second
+        each: 1000,
+        with() {
+          return [];
+        },
+      }),
       map((history) => history.map(toGeneratedPasswordHistory)),
     );
 
@@ -390,13 +399,23 @@ export class LegacyPasswordGenerationService implements PasswordGenerationServic
 
   async addHistory(password: string) {
     const account = await firstValueFrom(this.accountService.activeAccount$);
-    // legacy service doesn't distinguish credential types
-    await this.history.track(account.id, password, "password");
+    if (account?.id) {
+      // legacy service doesn't distinguish credential types
+      await this.history.track(account.id, password, "password");
+    }
   }
 
   clear() {
     const history$ = this.accountService.activeAccount$.pipe(
+      filter((account) => !!account?.id),
       concatMap((account) => this.history.clear(account.id)),
+      timeout({
+        // timeout after 1 second
+        each: 1000,
+        with() {
+          return [];
+        },
+      }),
       map((history) => history.map(toGeneratedPasswordHistory)),
     );
 
