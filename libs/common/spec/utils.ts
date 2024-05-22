@@ -5,6 +5,7 @@ import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 
 import { EncryptionType } from "../src/platform/enums";
 import { Utils } from "../src/platform/misc/utils";
+import { SymmetricCryptoKey } from "../src/platform/models/domain/symmetric-crypto-key";
 
 function newGuid() {
   return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
@@ -43,6 +44,10 @@ export function makeStaticByteArray(length: number, start = 0) {
     arr[i] = start + i;
   }
   return arr;
+}
+
+export function makeSymmetricCryptoKey<T extends SymmetricCryptoKey>(length: 32 | 64 = 64) {
+  return new SymmetricCryptoKey(makeStaticByteArray(length)) as T;
 }
 
 /**

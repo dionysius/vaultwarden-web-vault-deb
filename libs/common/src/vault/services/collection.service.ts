@@ -12,7 +12,7 @@ import {
   DeriveDefinition,
   DerivedState,
 } from "../../platform/state";
-import { CollectionId, UserId } from "../../types/guid";
+import { CollectionId, OrganizationId, UserId } from "../../types/guid";
 import { CollectionService as CollectionServiceAbstraction } from "../../vault/abstractions/collection.service";
 import { CollectionData } from "../models/data/collection.data";
 import { Collection } from "../models/domain/collection";
@@ -108,9 +108,16 @@ export class CollectionService implements CollectionServiceAbstraction {
       return [];
     }
     const decCollections: CollectionView[] = [];
+
+    const organizationKeys = await firstValueFrom(this.cryptoService.activeUserOrgKeys$);
+
     const promises: Promise<any>[] = [];
     collections.forEach((collection) => {
-      promises.push(collection.decrypt().then((c) => decCollections.push(c)));
+      promises.push(
+        collection
+          .decrypt(organizationKeys[collection.organizationId as OrganizationId])
+          .then((c) => decCollections.push(c)),
+      );
     });
     await Promise.all(promises);
     return decCollections.sort(Utils.getSortFunction(this.i18nService, "name"));
