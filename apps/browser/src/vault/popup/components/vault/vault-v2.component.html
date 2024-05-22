@@ -39,10 +39,12 @@
       <app-vault-list-items-container
         [title]="'favorites' | i18n"
         [ciphers]="favoriteCiphers$ | async"
+        id="favorites"
       ></app-vault-list-items-container>
       <app-vault-list-items-container
         [title]="'allItems' | i18n"
         [ciphers]="remainingCiphers$ | async"
+        id="allItems"
       ></app-vault-list-items-container>
     </ng-container>
   </ng-container>
