@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
+import { FormBuilder, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { lastValueFrom, Observable, Subject } from "rxjs";
 import { first, map, takeUntil } from "rxjs/operators";
@@ -43,7 +44,6 @@ export class FamiliesForEnterpriseSetupComponent implements OnInit, OnDestroy {
 
   loading = true;
   badToken = false;
-  formPromise: Promise<any>;
 
   token: string;
   existingFamilyOrganizations: Organization[];
@@ -54,7 +54,9 @@ export class FamiliesForEnterpriseSetupComponent implements OnInit, OnDestroy {
   _selectedFamilyOrganizationId = "";
 
   private _destroy = new Subject<void>();
-
+  formGroup = this.formBuilder.group({
+    selectedFamilyOrganizationId: ["", Validators.required],
+  });
   constructor(
     private router: Router,
     private platformUtilsService: PlatformUtilsService,
@@ -65,6 +67,7 @@ export class FamiliesForEnterpriseSetupComponent implements OnInit, OnDestroy {
     private validationService: ValidationService,
     private organizationService: OrganizationService,
     private dialogService: DialogService,
+    private formBuilder: FormBuilder,
   ) {}
 
   async ngOnInit() {
@@ -101,6 +104,9 @@ export class FamiliesForEnterpriseSetupComponent implements OnInit, OnDestroy {
         this.selectedFamilyOrganizationId = "createNew";
       }
     });
+    this.formGroup.valueChanges.pipe(takeUntil(this._destroy)).subscribe((val) => {
+      this.selectedFamilyOrganizationId = val.selectedFamilyOrganizationId;
+    });
   }
 
   ngOnDestroy(): void {
@@ -108,11 +114,9 @@ export class FamiliesForEnterpriseSetupComponent implements OnInit, OnDestroy {
     this._destroy.complete();
   }
 
-  async submit() {
-    this.formPromise = this.doSubmit(this._selectedFamilyOrganizationId);
-    await this.formPromise;
-    this.formPromise = null;
-  }
+  submit = async () => {
+    await this.doSubmit(this._selectedFamilyOrganizationId);
+  };
 
   get selectedFamilyOrganizationId() {
     return this._selectedFamilyOrganizationId;
