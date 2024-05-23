@@ -9,6 +9,7 @@ import {
   map,
   Observable,
   shareReplay,
+  Subject,
   switchMap,
   takeUntil,
 } from "rxjs";
@@ -93,6 +94,8 @@ export class PeopleComponent extends BasePeopleComponent<OrganizationUserView> {
   orgIsOnSecretsManagerStandalone = false;
 
   protected canUseSecretsManager$: Observable<boolean>;
+
+  private destroy$ = new Subject<void>();
 
   constructor(
     apiService: ApiService,
@@ -194,7 +197,7 @@ export class PeopleComponent extends BasePeopleComponent<OrganizationUserView> {
 
           await this.load();
 
-          this.searchText = qParams.search;
+          this.searchControl.setValue(qParams.search);
           if (qParams.viewEvents != null) {
             const user = this.users.filter((u) => u.id === qParams.viewEvents);
             if (user.length > 0 && user[0].status === OrganizationUserStatusType.Confirmed) {
@@ -210,7 +213,8 @@ export class PeopleComponent extends BasePeopleComponent<OrganizationUserView> {
   }
 
   ngOnDestroy(): void {
-    super.ngOnDestroy();
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
   async load() {

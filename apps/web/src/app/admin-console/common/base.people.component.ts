@@ -1,13 +1,6 @@
-import { Directive, OnDestroy, OnInit, ViewChild, ViewContainerRef } from "@angular/core";
-import {
-  BehaviorSubject,
-  Subject,
-  firstValueFrom,
-  from,
-  lastValueFrom,
-  switchMap,
-  takeUntil,
-} from "rxjs";
+import { Directive, ViewChild, ViewContainerRef } from "@angular/core";
+import { FormControl } from "@angular/forms";
+import { firstValueFrom, concatMap, map, lastValueFrom, startWith, debounceTime } from "rxjs";
 
 import { SearchPipe } from "@bitwarden/angular/pipes/search.pipe";
 import { UserNamePipe } from "@bitwarden/angular/pipes/user-name.pipe";
@@ -40,10 +33,8 @@ const MaxCheckedCount = 500;
 
 @Directive()
 export abstract class BasePeopleComponent<
-    UserType extends ProviderUserUserDetailsResponse | OrganizationUserView,
-  >
-  implements OnInit, OnDestroy
-{
+  UserType extends ProviderUserUserDetailsResponse | OrganizationUserView,
+> {
   @ViewChild("confirmTemplate", { read: ViewContainerRef, static: true })
   confirmModalRef: ViewContainerRef;
 
@@ -106,19 +97,22 @@ export abstract class BasePeopleComponent<
   protected didScroll = false;
   protected pageSize = 100;
 
-  protected destroy$ = new Subject<void>();
+  protected searchControl = new FormControl("", { nonNullable: true });
+  protected isSearching$ = this.searchControl.valueChanges.pipe(
+    debounceTime(500),
+    concatMap((searchText) => this.searchService.isSearchable(searchText)),
+    startWith(false),
+  );
+  protected isPaging$ = this.isSearching$.pipe(
+    map((isSearching) => {
+      if (isSearching && this.didScroll) {
+        this.resetPaging();
+      }
+      return !isSearching && this.users && this.users.length > this.pageSize;
+    }),
+  );
 
   private pagedUsersCount = 0;
-  private _searchText$ = new BehaviorSubject<string>("");
-  private isSearching: boolean = false;
-
-  get searchText() {
-    return this._searchText$.value;
-  }
-
-  set searchText(value: string) {
-    this._searchText$.next(value);
-  }
 
   constructor(
     protected apiService: ApiService,
@@ -142,22 +136,6 @@ export abstract class BasePeopleComponent<
   abstract restoreUser(id: string): Promise<void>;
   abstract reinviteUser(id: string): Promise<void>;
   abstract confirmUser(user: UserType, publicKey: Uint8Array): Promise<void>;
-
-  ngOnInit(): void {
-    this._searchText$
-      .pipe(
-        switchMap((searchText) => from(this.searchService.isSearchable(searchText))),
-        takeUntil(this.destroy$),
-      )
-      .subscribe((isSearchable) => {
-        this.isSearching = isSearchable;
-      });
-  }
-
-  ngOnDestroy(): void {
-    this.destroy$.next();
-    this.destroy$.complete();
-  }
 
   async load() {
     const response = await this.getUsers();
@@ -202,8 +180,6 @@ export abstract class BasePeopleComponent<
     }
     // Reset checkbox selecton
     this.selectAll(false);
-    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.resetPaging();
   }
 
@@ -236,7 +212,7 @@ export abstract class BasePeopleComponent<
 
     const filteredUsers = this.searchPipe.transform(
       this.users,
-      this.searchText,
+      this.searchControl.value,
       "name",
       "email",
       "id",
@@ -249,7 +225,7 @@ export abstract class BasePeopleComponent<
     }
   }
 
-  async resetPaging() {
+  resetPaging() {
     this.pagedUsers = [];
     this.loadMore();
   }
@@ -418,16 +394,6 @@ export abstract class BasePeopleComponent<
     }
   }
 
-  isPaging() {
-    const searching = this.isSearching;
-    if (searching && this.didScroll) {
-      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-      // eslint-disable-next-line @typescript-eslint/no-floating-promises
-      this.resetPaging();
-    }
-    return !searching && this.users && this.users.length > this.pageSize;
-  }
-
   protected revokeWarningMessage(): string {
     return this.i18nService.t("revokeUserConfirmation");
   }
@@ -440,8 +406,6 @@ export abstract class BasePeopleComponent<
     let index = this.users.indexOf(user);
     if (index > -1) {
       this.users.splice(index, 1);
-      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.resetPaging();
     }
 

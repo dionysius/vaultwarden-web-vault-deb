@@ -1,7 +1,7 @@
 <app-header>
   <bit-search
     class="tw-grow"
-    [(ngModel)]="searchText"
+    [formControl]="searchControl"
     [placeholder]="'searchMembers' | i18n"
   ></bit-search>
 
@@ -48,9 +48,9 @@
 <ng-container
   *ngIf="
     !loading &&
-    (isPaging()
+    ((isPaging$ | async)
       ? pagedUsers
-      : (users | search: searchText : 'name' : 'email' : 'id')) as searchedUsers
+      : (users | search: searchControl.value : 'name' : 'email' : 'id')) as searchedUsers
   "
 >
   <p *ngIf="!searchedUsers.length">{{ "noMembersInList" | i18n }}</p>
@@ -66,7 +66,7 @@
     <bit-table
       infinite-scroll
       [infiniteScrollDistance]="1"
-      [infiniteScrollDisabled]="!isPaging()"
+      [infiniteScrollDisabled]="!(isPaging$ | async)"
       (scrolled)="loadMore()"
     >
       <ng-container header>

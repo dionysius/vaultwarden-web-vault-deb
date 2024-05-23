@@ -103,7 +103,7 @@ export class PeopleComponent extends BasePeopleComponent<ProviderUserUserDetails
 
       /* eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe, rxjs/no-nested-subscribe */
       this.route.queryParams.pipe(first()).subscribe(async (qParams) => {
-        this.searchText = qParams.search;
+        this.searchControl.setValue(qParams.search);
         if (qParams.viewEvents != null) {
           const user = this.users.filter((u) => u.id === qParams.viewEvents);
           if (user.length > 0 && user[0].status === ProviderUserStatusType.Confirmed) {
@@ -114,10 +114,6 @@ export class PeopleComponent extends BasePeopleComponent<ProviderUserUserDetails
         }
       });
     });
-  }
-
-  ngOnDestroy(): void {
-    super.ngOnDestroy();
   }
 
   getUsers(): Promise<ListResponse<ProviderUserUserDetailsResponse>> {
