@@ -108,7 +108,7 @@ export class EventsComponent extends BaseEventsComponent implements OnInit, OnDe
       }
     }
 
-    await this.loadEvents(true);
+    await this.refreshEvents();
     this.loaded = true;
   }
 

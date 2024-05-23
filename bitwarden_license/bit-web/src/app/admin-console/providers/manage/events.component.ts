@@ -70,7 +70,7 @@ export class EventsComponent extends BaseEventsComponent implements OnInit {
       this.providerUsersIdMap.set(u.id, { name: name, email: u.email });
       this.providerUsersUserIdMap.set(u.userId, { name: name, email: u.email });
     });
-    await this.loadEvents(true);
+    await this.refreshEvents();
     this.loaded = true;
   }
 

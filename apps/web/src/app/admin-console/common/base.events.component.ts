@@ -1,4 +1,5 @@
 import { Directive } from "@angular/core";
+import { FormControl, FormGroup } from "@angular/forms";
 
 import { EventResponse } from "@bitwarden/common/models/response/event.response";
 import { ListResponse } from "@bitwarden/common/models/response/list.response";
@@ -16,15 +17,15 @@ export abstract class BaseEventsComponent {
   loading = true;
   loaded = false;
   events: EventView[];
-  start: string;
-  end: string;
   dirtyDates = true;
   continuationToken: string;
-  refreshPromise: Promise<any>;
-  exportPromise: Promise<any>;
-  morePromise: Promise<any>;
 
   abstract readonly exportFileName: string;
+
+  protected eventsForm = new FormGroup({
+    start: new FormControl(null),
+    end: new FormControl(null),
+  });
 
   constructor(
     protected eventService: EventService,
@@ -39,8 +40,32 @@ export abstract class BaseEventsComponent {
     this.end = defaultDates[1];
   }
 
-  async exportEvents() {
-    if (this.appApiPromiseUnfulfilled() || this.dirtyDates) {
+  get start(): string {
+    return this.eventsForm.value.start;
+  }
+
+  set start(val: string) {
+    this.eventsForm.get("start").setValue(val);
+  }
+
+  get end(): string {
+    return this.eventsForm.value.end;
+  }
+
+  set end(val: string) {
+    this.eventsForm.get("end").setValue(val);
+  }
+
+  loadMoreEvents = async () => {
+    await this.loadEvents(false);
+  };
+
+  refreshEvents = async () => {
+    await this.loadEvents(true);
+  };
+
+  exportEvents = async () => {
+    if (this.dirtyDates) {
       return;
     }
 
@@ -51,23 +76,19 @@ export abstract class BaseEventsComponent {
       return;
     }
 
+    let promise: Promise<any>;
     try {
-      this.exportPromise = this.export(dates[0], dates[1]);
-
-      await this.exportPromise;
+      promise = this.export(dates[0], dates[1]);
+      await promise;
     } catch (e) {
       this.logService.error(`Handled exception: ${e}`);
     }
 
-    this.exportPromise = null;
+    promise = null;
     this.loading = false;
-  }
+  };
 
-  async loadEvents(clearExisting: boolean) {
-    if (this.appApiPromiseUnfulfilled()) {
-      return;
-    }
-
+  loadEvents = async (clearExisting: boolean) => {
     const dates = this.parseDates();
     if (dates == null) {
       return;
@@ -75,17 +96,14 @@ export abstract class BaseEventsComponent {
 
     this.loading = true;
     let events: EventView[] = [];
+    let promise: Promise<any>;
     try {
-      const promise = this.loadAndParseEvents(
+      promise = this.loadAndParseEvents(
         dates[0],
         dates[1],
         clearExisting ? null : this.continuationToken,
       );
-      if (clearExisting) {
-        this.refreshPromise = promise;
-      } else {
-        this.morePromise = promise;
-      }
+
       const result = await promise;
       this.continuationToken = result.continuationToken;
       events = result.events;
@@ -101,9 +119,8 @@ export abstract class BaseEventsComponent {
 
     this.dirtyDates = false;
     this.loading = false;
-    this.morePromise = null;
-    this.refreshPromise = null;
-  }
+    promise = null;
+  };
 
   protected abstract requestEvents(
     startDate: string,
@@ -159,10 +176,6 @@ export abstract class BaseEventsComponent {
       return null;
     }
     return dates;
-  }
-
-  protected appApiPromiseUnfulfilled() {
-    return this.refreshPromise != null || this.morePromise != null || this.exportPromise != null;
   }
 
   private async export(start: string, end: string) {

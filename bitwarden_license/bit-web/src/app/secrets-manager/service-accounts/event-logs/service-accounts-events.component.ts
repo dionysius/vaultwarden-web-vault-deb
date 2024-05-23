@@ -50,7 +50,7 @@ export class ServiceAccountEventsComponent extends BaseEventsComponent implement
   }
 
   async load() {
-    await this.loadEvents(true);
+    await this.refreshEvents();
     this.loaded = true;
   }
 
