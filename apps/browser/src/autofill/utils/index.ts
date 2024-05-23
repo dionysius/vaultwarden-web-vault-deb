@@ -240,7 +240,11 @@ function elementIsDescriptionTermElement(element: Element): element is HTMLEleme
  * @param node - The node to check.
  */
 function nodeIsElement(node: Node): node is Element {
-  return node?.nodeType === Node.ELEMENT_NODE;
+  if (!node) {
+    return false;
+  }
+
+  return node.nodeType === Node.ELEMENT_NODE;
 }
 
 /**

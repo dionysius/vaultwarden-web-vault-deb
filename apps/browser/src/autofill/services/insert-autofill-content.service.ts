@@ -7,7 +7,6 @@ import {
   elementIsInputElement,
   elementIsSelectElement,
   elementIsTextAreaElement,
-  nodeIsInputElement,
 } from "../utils";
 
 import { InsertAutofillContentService as InsertAutofillContentServiceInterface } from "./abstractions/insert-autofill-content.service";
@@ -101,13 +100,7 @@ class InsertAutofillContentService implements InsertAutofillContentServiceInterf
    * @private
    */
   private isPasswordFieldWithinDocument(): boolean {
-    return Boolean(
-      this.collectAutofillContentService.queryAllTreeWalkerNodes(
-        document.documentElement,
-        (node: Node) => nodeIsInputElement(node) && node.type === "password",
-        false,
-      )?.length,
-    );
+    return this.collectAutofillContentService.isPasswordFieldWithinDocument();
   }
 
   /**

@@ -4,6 +4,7 @@ import { NotificationsService } from "@bitwarden/common/abstractions/notificatio
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { AutofillOverlayVisibility } from "@bitwarden/common/autofill/constants";
 import { AutofillSettingsServiceAbstraction } from "@bitwarden/common/autofill/services/autofill-settings.service";
+import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
@@ -65,7 +66,10 @@ export default class RuntimeBackground {
       sender: chrome.runtime.MessageSender,
       sendResponse: (response: any) => void,
     ) => {
-      const messagesWithResponse = ["biometricUnlock"];
+      const messagesWithResponse = [
+        "biometricUnlock",
+        "getUseTreeWalkerApiForPageDetailsCollectionFeatureFlag",
+      ];
 
       if (messagesWithResponse.includes(msg.command)) {
         this.processMessageWithSender(msg, sender).then(
@@ -176,6 +180,11 @@ export default class RuntimeBackground {
       case "biometricUnlock": {
         const result = await this.main.biometricUnlock();
         return result;
+      }
+      case "getUseTreeWalkerApiForPageDetailsCollectionFeatureFlag": {
+        return await this.configService.getFeatureFlag(
+          FeatureFlag.UseTreeWalkerApiForPageDetailsCollection,
+        );
       }
     }
   }

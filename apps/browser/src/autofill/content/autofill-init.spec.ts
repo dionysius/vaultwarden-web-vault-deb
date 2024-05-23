@@ -6,7 +6,11 @@ import { AutofillOverlayVisibility } from "@bitwarden/common/autofill/constants"
 import AutofillPageDetails from "../models/autofill-page-details";
 import AutofillScript from "../models/autofill-script";
 import AutofillOverlayContentService from "../services/autofill-overlay-content.service";
-import { flushPromises, sendExtensionRuntimeMessage } from "../spec/testing-utils";
+import {
+  flushPromises,
+  mockQuerySelectorAllDefinedCall,
+  sendExtensionRuntimeMessage,
+} from "../spec/testing-utils";
 import { RedirectFocusDirection } from "../utils/autofill-overlay.enum";
 
 import { AutofillExtensionMessage } from "./abstractions/autofill-init";
@@ -16,6 +20,7 @@ describe("AutofillInit", () => {
   let autofillInit: AutofillInit;
   const autofillOverlayContentService = mock<AutofillOverlayContentService>();
   const originalDocumentReadyState = document.readyState;
+  const mockQuerySelectorAll = mockQuerySelectorAllDefinedCall();
 
   beforeEach(() => {
     chrome.runtime.connect = jest.fn().mockReturnValue({
@@ -34,6 +39,10 @@ describe("AutofillInit", () => {
       value: originalDocumentReadyState,
       writable: true,
     });
+  });
+
+  afterAll(() => {
+    mockQuerySelectorAll.mockRestore();
   });
 
   describe("init", () => {
@@ -200,7 +209,12 @@ describe("AutofillInit", () => {
 
           expect(autofillInit["collectAutofillContentService"].getPageDetails).toHaveBeenCalled();
           expect(sendResponse).toBeCalledWith(pageDetails);
-          expect(chrome.runtime.sendMessage).not.toHaveBeenCalled();
+          expect(chrome.runtime.sendMessage).not.toHaveBeenCalledWith({
+            command: "collectPageDetailsResponse",
+            tab: message.tab,
+            details: pageDetails,
+            sender: message.sender,
+          });
         });
       });
 
