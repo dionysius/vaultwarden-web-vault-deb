@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { booleanAttribute, Component, Input } from "@angular/core";
+import { booleanAttribute, Component, EventEmitter, Input, Output } from "@angular/core";
 import { RouterLink } from "@angular/router";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
@@ -33,12 +33,33 @@ import { PopupSectionHeaderComponent } from "../../../../../platform/popup/popup
   standalone: true,
 })
 export class VaultListItemsContainerComponent {
+  /**
+   * The list of ciphers to display.
+   */
   @Input()
   ciphers: CipherView[];
 
+  /**
+   * Title for the vault list item section.
+   */
   @Input()
   title: string;
 
+  /**
+   * Option to show a refresh button in the section header.
+   */
+  @Input({ transform: booleanAttribute })
+  showRefresh: boolean;
+
+  /**
+   * Event emitted when the refresh button is clicked.
+   */
+  @Output()
+  onRefresh = new EventEmitter<void>();
+
+  /**
+   * Option to show the autofill button for each item.
+   */
   @Input({ transform: booleanAttribute })
   showAutoFill: boolean;
 }

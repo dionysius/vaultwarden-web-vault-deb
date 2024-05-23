@@ -1,6 +1,15 @@
 <bit-section *ngIf="ciphers?.length > 0">
   <popup-section-header [title]="title">
     <span bitTypography="body2" slot="end">{{ ciphers.length }}</span>
+    <button
+      *ngIf="showRefresh"
+      bitIconButton="bwi-refresh"
+      type="button"
+      size="small"
+      slot="title-suffix"
+      (click)="onRefresh.emit()"
+      [appA11yTitle]="'refresh' | i18n"
+    ></button>
   </popup-section-header>
   <bit-item-group>
     <bit-item *ngFor="let cipher of ciphers">

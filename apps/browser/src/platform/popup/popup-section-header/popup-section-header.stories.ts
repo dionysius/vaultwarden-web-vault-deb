@@ -1,4 +1,4 @@
-import { Meta, StoryObj, moduleMetadata } from "@storybook/angular";
+import { Meta, moduleMetadata, StoryObj } from "@storybook/angular";
 
 import {
   CardComponent,
@@ -61,6 +61,20 @@ export const TailingIcon: Story = {
   }),
   args: {
     title: "Trailing Icon",
+  },
+};
+
+export const TitleSuffix: Story = {
+  render: (args) => ({
+    props: args,
+    template: `
+      <popup-section-header [title]="title">
+        <button bitIconButton="bwi-refresh" size="small" slot="title-suffix"></button>
+      </popup-section-header>
+    `,
+  }),
+  args: {
+    title: "Title Suffix",
   },
 };
 
