@@ -33,8 +33,6 @@ import { TwoFactorYubiKeyComponent } from "./two-factor-yubikey.component";
   templateUrl: "two-factor-setup.component.html",
 })
 export class TwoFactorSetupComponent implements OnInit, OnDestroy {
-  @ViewChild("recoveryTemplate", { read: ViewContainerRef, static: true })
-  recoveryModalRef: ViewContainerRef;
   @ViewChild("authenticatorTemplate", { read: ViewContainerRef, static: true })
   authenticatorModalRef: ViewContainerRef;
   @ViewChild("yubikeyTemplate", { read: ViewContainerRef, static: true })
@@ -211,8 +209,8 @@ export class TwoFactorSetupComponent implements OnInit, OnDestroy {
   async recoveryCode() {
     const result = await this.callTwoFactorVerifyDialog(-1 as TwoFactorProviderType);
     if (result) {
-      const recoverComp = await this.openModal(this.recoveryModalRef, TwoFactorRecoveryComponent);
-      recoverComp.auth(result);
+      const recoverComp = TwoFactorRecoveryComponent.open(this.dialogService, { data: result });
+      await lastValueFrom(recoverComp.closed);
     }
   }
 

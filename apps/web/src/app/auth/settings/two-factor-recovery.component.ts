@@ -1,8 +1,10 @@
-import { Component } from "@angular/core";
+import { DIALOG_DATA, DialogConfig } from "@angular/cdk/dialog";
+import { Component, Inject } from "@angular/core";
 
 import { TwoFactorProviderType } from "@bitwarden/common/auth/enums/two-factor-provider-type";
 import { TwoFactorRecoverResponse } from "@bitwarden/common/auth/models/response/two-factor-recover.response";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
+import { DialogService } from "@bitwarden/components";
 
 @Component({
   selector: "app-two-factor-recovery",
@@ -14,7 +16,12 @@ export class TwoFactorRecoveryComponent {
   authed: boolean;
   twoFactorProviderType = TwoFactorProviderType;
 
-  constructor(private i18nService: I18nService) {}
+  constructor(
+    @Inject(DIALOG_DATA) protected data: any,
+    private i18nService: I18nService,
+  ) {
+    this.auth(data.response);
+  }
 
   auth(authResponse: any) {
     this.authed = true;
@@ -51,5 +58,9 @@ export class TwoFactorRecoveryComponent {
 
   private processResponse(response: TwoFactorRecoverResponse) {
     this.code = this.formatString(response.code);
+  }
+
+  static open(dialogService: DialogService, config: DialogConfig<any>) {
+    return dialogService.open(TwoFactorRecoveryComponent, config);
   }
 }
