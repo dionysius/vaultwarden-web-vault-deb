@@ -1,5 +1,9 @@
 <app-header>
-  <bit-search class="tw-grow" [(ngModel)]="searchText" [placeholder]="'search' | i18n"></bit-search>
+  <bit-search
+    class="tw-grow"
+    [formControl]="searchControl"
+    [placeholder]="'search' | i18n"
+  ></bit-search>
   <button type="button" bitButton buttonType="primary" (click)="invite()">
     <i class="bwi bwi-plus bwi-fw" aria-hidden="true"></i>
     {{ "inviteUsers" | i18n }}
@@ -83,9 +87,9 @@
 <ng-container
   *ngIf="
     !loading &&
-    (isPaging()
+    ((isPaging$ | async)
       ? pagedUsers
-      : (users | search: searchText : 'name' : 'email' : 'id')) as searchedUsers
+      : (users | search: searchControl.value : 'name' : 'email' : 'id')) as searchedUsers
   "
 >
   <p *ngIf="!searchedUsers.length">{{ "noUsersInList" | i18n }}</p>
@@ -102,7 +106,7 @@
       class="table table-hover table-list"
       infiniteScroll
       [infiniteScrollDistance]="1"
-      [infiniteScrollDisabled]="!isPaging()"
+      [infiniteScrollDisabled]="!(isPaging$ | async)"
       (scrolled)="loadMore()"
     >
       <tbody>
