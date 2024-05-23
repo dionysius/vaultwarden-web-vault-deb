@@ -1,5 +1,4 @@
-import { coerceBooleanProperty } from "@angular/cdk/coercion";
-import { Component, Input } from "@angular/core";
+import { Component, Input, booleanAttribute } from "@angular/core";
 
 import { Option } from "./option";
 
@@ -11,18 +10,12 @@ export class OptionComponent<T = unknown> implements Option<T> {
   @Input()
   icon?: string;
 
-  @Input()
-  value?: T = undefined;
+  @Input({ required: true })
+  value: T;
 
-  @Input()
-  label?: string;
+  @Input({ required: true })
+  label: string;
 
-  private _disabled = false;
-  @Input()
-  get disabled() {
-    return this._disabled;
-  }
-  set disabled(value: boolean | "") {
-    this._disabled = coerceBooleanProperty(value);
-  }
+  @Input({ transform: booleanAttribute })
+  disabled: boolean;
 }

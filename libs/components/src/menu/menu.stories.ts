@@ -35,13 +35,21 @@ type Story = StoryObj<MenuTriggerForDirective>;
 export const OpenMenu: Story = {
   render: (args) => ({
     props: args,
-    template: `
+    template: /*html*/ `
       <bit-menu #myMenu="menuComponent">
         <a href="#" bitMenuItem>Anchor link</a>
         <a href="#" bitMenuItem>Another link</a>
         <button type="button" bitMenuItem>Button</button>
         <bit-menu-divider></bit-menu-divider>
-        <button type="button" bitMenuItem>Button after divider</button>
+        <button type="button" bitMenuItem>
+          <i class="bwi bwi-key" slot="start"></i>
+          Button with icons
+          <i class="bwi bwi-angle-right" slot="end"></i>
+        </button>
+        <button type="button" bitMenuItem disabled>
+          <i class="bwi bwi-clone" slot="start"></i>
+          Disabled button
+        </button>
       </bit-menu>
   
       <div class="tw-h-40">
@@ -55,7 +63,7 @@ export const OpenMenu: Story = {
 export const ClosedMenu: Story = {
   render: (args) => ({
     props: args,
-    template: `
+    template: /*html*/ `
       <div class="tw-h-40">
         <button bitButton buttonType="secondary" [bitMenuTriggerFor]="myMenu">Open menu</button>
       </div>
@@ -65,7 +73,15 @@ export const ClosedMenu: Story = {
         <a href="#" bitMenuItem>Another link</a>
         <button type="button" bitMenuItem>Button</button>
         <bit-menu-divider></bit-menu-divider>
-        <button type="button" bitMenuItem>Button after divider</button>
+        <button type="button" bitMenuItem>
+          <i class="bwi bwi-key" slot="start"></i>
+          Button with icons
+          <i class="bwi bwi-angle-right" slot="end"></i>
+        </button>
+        <button type="button" bitMenuItem disabled>
+          <i class="bwi bwi-clone" slot="start"></i>
+          Disabled button
+        </button>
       </bit-menu>`,
   }),
 };

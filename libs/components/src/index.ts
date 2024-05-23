@@ -9,6 +9,7 @@ export { ButtonType } from "./shared/button-like.abstraction";
 export * from "./callout";
 export * from "./card";
 export * from "./checkbox";
+export * from "./chip-select";
 export * from "./color-password";
 export * from "./container";
 export * from "./dialog";

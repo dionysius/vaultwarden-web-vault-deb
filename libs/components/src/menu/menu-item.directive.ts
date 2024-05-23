@@ -1,12 +1,14 @@
 import { FocusableOption } from "@angular/cdk/a11y";
-import { Directive, ElementRef, HostBinding } from "@angular/core";
+import { Component, ElementRef, HostBinding } from "@angular/core";
 
-@Directive({
+@Component({
   selector: "[bitMenuItem]",
+  templateUrl: "menu-item.component.html",
 })
 export class MenuItemDirective implements FocusableOption {
   @HostBinding("class") classList = [
     "tw-block",
+    "tw-w-full",
     "tw-py-1",
     "tw-px-4",
     "!tw-text-main",
@@ -24,6 +26,9 @@ export class MenuItemDirective implements FocusableOption {
     "focus-visible:tw-ring-primary-700",
     "active:!tw-ring-0",
     "active:!tw-ring-offset-0",
+    "disabled:!tw-text-muted",
+    "disabled:hover:tw-bg-background",
+    "disabled:tw-cursor-not-allowed",
   ];
   @HostBinding("attr.role") role = "menuitem";
   @HostBinding("tabIndex") tabIndex = "-1";
