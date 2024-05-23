@@ -7683,13 +7683,6 @@
     "message": "add a payment method",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
   },
-  "collectionEnhancementsDesc": {
-    "message": "Add new settings and permissions for additional flexibility. Replace the Manager role with the \"can manage\" permission, and introduce options to allow users to create collections as well as restrict administrative access to collections.",
-    "description": "This describes new features and improvements for user roles and collections"
-  },
-  "collectionEnhancementsLearnMore": {
-    "message": "Learn more about collection management"
-  },
   "organizationInformation": {
     "message": "Organization information"
   },
@@ -7701,12 +7694,6 @@
   },
   "smFreeTrialConfirmationEmail": {
     "message": "We've sent a confirmation email to your email at "
-  },
-  "confirmCollectionEnhancementsDialogTitle": {
-    "message": "This action is irreversible"
-  },
-  "confirmCollectionEnhancementsDialogContent": {
-    "message": "Turning on this feature will deprecate the manager role and replace it with a Can manage permission. This will take a few moments. Do not make any organization changes until it is complete. Are you sure you want to proceed?"
   },
   "sorryToSeeYouGo": {
     "message": "Sorry to see you go! Help improve Bitwarden by sharing why you're canceling.",

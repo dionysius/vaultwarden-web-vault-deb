@@ -16,7 +16,7 @@ import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.se
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
-import { DialogService, SimpleDialogOptions } from "@bitwarden/components";
+import { DialogService } from "@bitwarden/components";
 
 import { ApiKeyComponent } from "../../../auth/settings/security/api-key.component";
 import { PurgeVaultComponent } from "../../../vault/settings/purge-vault.component";
@@ -39,10 +39,6 @@ export class AccountComponent {
   canUseApi = false;
   org: OrganizationResponse;
   taxFormPromise: Promise<unknown>;
-
-  protected flexibleCollectionsMigrationEnabled$ = this.configService.getFeatureFlag$(
-    FeatureFlag.FlexibleCollectionsMigration,
-  );
 
   flexibleCollectionsV1Enabled$ = this.configService.getFeatureFlag$(
     FeatureFlag.FlexibleCollectionsV1,
@@ -171,26 +167,6 @@ export class AccountComponent {
 
     this.platformUtilsService.showToast("success", null, this.i18nService.t("organizationUpdated"));
   };
-
-  async showConfirmCollectionEnhancementsDialog() {
-    const collectionEnhancementsDialogOptions: SimpleDialogOptions = {
-      title: this.i18nService.t("confirmCollectionEnhancementsDialogTitle"),
-      content: this.i18nService.t("confirmCollectionEnhancementsDialogContent"),
-      type: "warning",
-      acceptButtonText: this.i18nService.t("continue"),
-      acceptAction: async () => {
-        await this.organizationApiService.enableCollectionEnhancements(this.organizationId);
-
-        this.platformUtilsService.showToast(
-          "success",
-          null,
-          this.i18nService.t("updatedCollectionManagement"),
-        );
-      },
-    };
-
-    await this.dialogService.openSimpleDialog(collectionEnhancementsDialogOptions);
-  }
 
   submitCollectionManagement = async () => {
     // Early exit if self-hosted
