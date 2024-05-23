@@ -1,5 +1,6 @@
 import { Component, ViewChild, ViewContainerRef } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
+import { lastValueFrom } from "rxjs";
 import { first } from "rxjs/operators";
 
 import { SearchPipe } from "@bitwarden/angular/pipes/search.pipe";
@@ -12,7 +13,6 @@ import { ProviderService } from "@bitwarden/common/admin-console/abstractions/pr
 import { ProviderUserStatusType, ProviderUserType } from "@bitwarden/common/admin-console/enums";
 import { ProviderUserBulkRequest } from "@bitwarden/common/admin-console/models/request/provider/provider-user-bulk.request";
 import { ProviderUserConfirmRequest } from "@bitwarden/common/admin-console/models/request/provider/provider-user-confirm.request";
-import { ProviderUserBulkResponse } from "@bitwarden/common/admin-console/models/response/provider/provider-user-bulk.response";
 import { ProviderUserUserDetailsResponse } from "@bitwarden/common/admin-console/models/response/provider/provider-user.response";
 import { ListResponse } from "@bitwarden/common/models/response/list.response";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
@@ -222,12 +222,17 @@ export class PeopleComponent extends BasePeopleComponent<ProviderUserUserDetails
       const response = this.apiService.postManyProviderUserReinvite(this.providerId, request);
       // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
       // eslint-disable-next-line @typescript-eslint/no-floating-promises
-      this.showBulkStatus(
-        users,
-        filteredUsers,
-        response,
-        this.i18nService.t("bulkReinviteMessage"),
-      );
+
+      // Bulk Status component open
+      const dialogRef = BulkStatusComponent.open(this.dialogService, {
+        data: {
+          users: users,
+          filteredUsers: filteredUsers,
+          request: response,
+          successfullMessage: this.i18nService.t("bulkReinviteMessage"),
+        },
+      });
+      await lastValueFrom(dialogRef.closed);
     } catch (e) {
       this.validationService.showError(e);
     }
@@ -250,57 +255,5 @@ export class PeopleComponent extends BasePeopleComponent<ProviderUserUserDetails
 
     await modal.onClosedPromise();
     await this.load();
-  }
-
-  private async showBulkStatus(
-    users: ProviderUserUserDetailsResponse[],
-    filteredUsers: ProviderUserUserDetailsResponse[],
-    request: Promise<ListResponse<ProviderUserBulkResponse>>,
-    successfullMessage: string,
-  ) {
-    const [modal, childComponent] = await this.modalService.openViewRef(
-      BulkStatusComponent,
-      this.bulkStatusModalRef,
-      (comp) => {
-        comp.loading = true;
-      },
-    );
-
-    // Workaround to handle closing the modal shortly after it has been opened
-    let close = false;
-    modal.onShown.subscribe(() => {
-      if (close) {
-        modal.close();
-      }
-    });
-
-    try {
-      const response = await request;
-
-      if (modal) {
-        const keyedErrors: any = response.data
-          .filter((r) => r.error !== "")
-          .reduce((a, x) => ({ ...a, [x.id]: x.error }), {});
-        const keyedFilteredUsers: any = filteredUsers.reduce((a, x) => ({ ...a, [x.id]: x }), {});
-
-        childComponent.users = users.map((user) => {
-          let message = keyedErrors[user.id] ?? successfullMessage;
-          // eslint-disable-next-line
-          if (!keyedFilteredUsers.hasOwnProperty(user.id)) {
-            message = this.i18nService.t("bulkFilteredMessage");
-          }
-
-          return {
-            user: user,
-            error: keyedErrors.hasOwnProperty(user.id), // eslint-disable-line
-            message: message,
-          };
-        });
-        childComponent.loading = false;
-      }
-    } catch {
-      close = true;
-      modal.close();
-    }
   }
 }
