@@ -1,8 +1,15 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
-import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+  AbstractControl,
+  AsyncValidatorFn,
+  ValidationErrors,
+} from "@angular/forms";
 import { firstValueFrom, map, Observable, Subject, takeUntil } from "rxjs";
 
-import { notAllowedValueAsync } from "@bitwarden/angular/admin-console/validators/not-allowed-value-async.validator";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
@@ -50,9 +57,9 @@ export class SponsoredFamiliesComponent implements OnInit, OnDestroy {
         validators: [Validators.required],
       }),
       sponsorshipEmail: new FormControl("", {
-        validators: [Validators.email],
+        validators: [Validators.email, Validators.required],
         asyncValidators: [
-          notAllowedValueAsync(
+          this.notAllowedValueAsync(
             () => firstValueFrom(this.accountService.activeAccount$.pipe(map((a) => a?.email))),
             true,
           ),
@@ -84,6 +91,15 @@ export class SponsoredFamiliesComponent implements OnInit, OnDestroy {
     this.anyActiveSponsorships$ = this.activeSponsorshipOrgs$.pipe(map((orgs) => orgs.length > 0));
 
     this.loading = false;
+
+    this.sponsorshipForm
+      .get("sponsorshipEmail")
+      .valueChanges.pipe(takeUntil(this._destroy))
+      .subscribe((val) => {
+        if (this.sponsorshipEmailControl.hasError("email")) {
+          this.sponsorshipEmailControl.setErrors([{ message: this.i18nService.t("invalidEmail") }]);
+        }
+      });
   }
 
   ngOnDestroy(): void {
@@ -91,7 +107,7 @@ export class SponsoredFamiliesComponent implements OnInit, OnDestroy {
     this._destroy.complete();
   }
 
-  async submit() {
+  submit = async () => {
     this.formPromise = this.apiService.postCreateSponsorship(
       this.sponsorshipForm.value.selectedSponsorshipOrgId,
       {
@@ -108,7 +124,7 @@ export class SponsoredFamiliesComponent implements OnInit, OnDestroy {
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     this.resetForm();
     await this.forceReload();
-  }
+  };
 
   async forceReload() {
     this.loading = true;
@@ -126,5 +142,27 @@ export class SponsoredFamiliesComponent implements OnInit, OnDestroy {
 
   get isSelfHosted(): boolean {
     return this.platformUtilsService.isSelfHost();
+  }
+
+  notAllowedValueAsync(
+    valueGetter: () => Promise<string>,
+    caseInsensitive = false,
+  ): AsyncValidatorFn {
+    return async (control: AbstractControl): Promise<ValidationErrors | null> => {
+      let notAllowedValue = await valueGetter();
+      let controlValue = control.value;
+      if (caseInsensitive) {
+        notAllowedValue = notAllowedValue.toLowerCase();
+        controlValue = controlValue.toLowerCase();
+      }
+
+      if (controlValue === notAllowedValue) {
+        return {
+          errors: {
+            message: this.i18nService.t("cannotSponsorSelf"),
+          },
+        };
+      }
+    };
   }
 }
