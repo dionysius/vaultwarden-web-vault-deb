@@ -1341,6 +1341,9 @@
   "accountDeletedDesc": {
     "message": "Ваш аккаунт был закрыт, а все связанные с ним данные удалены."
   },
+  "deleteOrganizationWarning": {
+    "message": "Удаление организации необратимо. Действие нельзя отменить."
+  },
   "myAccount": {
     "message": "Мой аккаунт"
   },
@@ -1710,11 +1713,11 @@
   "twoFactorDuoDesc": {
     "message": "Введите информацию о приложении Bitwarden из панели администратора Duo."
   },
-  "twoFactorDuoIntegrationKey": {
-    "message": "Ключ интеграции"
+  "twoFactorDuoClientId": {
+    "message": "ID клиента"
   },
-  "twoFactorDuoSecretKey": {
-    "message": "Секретный ключ"
+  "twoFactorDuoClientSecret": {
+    "message": "Секрет клиента"
   },
   "twoFactorDuoApiHostname": {
     "message": "Имя хоста API"
@@ -3388,6 +3391,9 @@
   "deleteRecoverConfirmDesc": {
     "message": "Вы запросили удаление вашего аккаунта Bitwarden. Нажмите кнопку ниже, чтобы подтвердить."
   },
+  "deleteRecoverOrgConfirmDesc": {
+    "message": "Вы запросили удаление организации Bitwarden."
+  },
   "myOrganization": {
     "message": "Моя организация"
   },
@@ -3566,10 +3572,10 @@
     "message": "Корректировка вашей подписки приведет к пропорциональным изменениям в сумме счетов. Если новых приглашенных пользователей будет больше, чем мест по подписке, вы сразу получите пропорциональную плату за дополнительных пользователей."
   },
   "smStandaloneTrialSeatCountUpdateMessageFragment1": {
-    "message": "If you want to add additional"
+    "message": "Если вы хотите добавить дополнительные"
   },
   "smStandaloneTrialSeatCountUpdateMessageFragment2": {
-    "message": "seats without the bundled offer, please contact"
+    "message": "места без пакетного предложения, пожалуйста, свяжитесь с"
   },
   "subscriptionUserSeatsLimitedAutoscale": {
     "message": "Корректировка вашей подписки приведет к пропорциональным изменениям в сумме счетов. Если новых приглашенных пользователей будет больше, чем мест по подписке, вы сразу получите пропорциональную плату за дополнительных пользователей, пока не будет достигнут лимит мест ($MAX$).",
@@ -7677,13 +7683,6 @@
     "message": "добавьте способ оплаты",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
   },
-  "collectionEnhancementsDesc": {
-    "message": "Добавьте новые настройки и разрешения для обеспечения дополнительной гибкости. Замените роль менеджера разрешением \"может управлять\" и введите опции, позволяющие пользователям создавать коллекции, а также ограничивающие административный доступ к коллекциям.",
-    "description": "This describes new features and improvements for user roles and collections"
-  },
-  "collectionEnhancementsLearnMore": {
-    "message": "Узнайте больше об управлении коллекциями"
-  },
   "organizationInformation": {
     "message": "Информация об организации"
   },
@@ -7695,12 +7694,6 @@
   },
   "smFreeTrialConfirmationEmail": {
     "message": "Мы отправили письмо с подтверждением на "
-  },
-  "confirmCollectionEnhancementsDialogTitle": {
-    "message": "Это действие необратимо"
-  },
-  "confirmCollectionEnhancementsDialogContent": {
-    "message": "При включении этой опции роль менеджера будет аннулирована и заменена разрешением 'Может управлять'. Это займет несколько минут. Не вносите никаких изменений в организацию, пока операция не будет завершена. Готовы ли вы продолжить?"
   },
   "sorryToSeeYouGo": {
     "message": "Жаль, что вы уходите! Помогите нам улучшить Bitwarden, поделившись информацией о причинах отмены.",
@@ -8193,6 +8186,40 @@
   "manageBillingFromProviderPortalMessage": {
     "message": "Управление биллингом на портале провайдера"
   },
+  "viewItemsIn": {
+    "message": "Просмотр элементов в $NAME$",
+    "description": "Button to view the contents of a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
+  "backTo": {
+    "message": "Вернуться к $NAME$",
+    "description": "Navigate back to a previous folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
+  "back": {
+    "message": "Назад",
+    "description": "Button text to navigate back"
+  },
+  "removeItem": {
+    "message": "Удалить $NAME$",
+    "description": "Remove a selected option, such as a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
   "viewInfo": {
     "message": "Просмотр информации"
   },
@@ -8223,6 +8250,12 @@
       }
     }
   },
+  "lowKDFIterationsBanner": {
+    "message": "Низкое количество итераций KDF. Увеличьте количество итераций, чтобы повысить защищенность вашего аккаунта."
+  },
+  "changeKDFSettings": {
+    "message": "Изменить параметры KDF"
+  },
   "secureYourInfrastructure": {
     "message": "Защитите вашу инфраструктуру"
   },
@@ -8230,9 +8263,9 @@
     "message": "Защитите свою семью или бизнес"
   },
   "upgradeOrganizationCloseSecurityGaps": {
-    "message": "Close security gaps with monitoring reports"
+    "message": "Устранение пробелов в системе безопасности с помощью мониторинговых отчетов"
   },
   "upgradeOrganizationCloseSecurityGapsDesc": {
-    "message": "Stay ahead of security vulnerabilities by upgrading to a paid plan for enhanced monitoring."
+    "message": "Опережайте уязвимости в системе безопасности, перейдя на платный тарифный план для расширенного мониторинга."
   }
 }

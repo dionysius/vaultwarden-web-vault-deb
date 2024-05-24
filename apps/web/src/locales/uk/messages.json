@@ -1341,6 +1341,9 @@
   "accountDeletedDesc": {
     "message": "Ваш обліковий запис було закрито і всі пов'язані дані було видалено."
   },
+  "deleteOrganizationWarning": {
+    "message": "Видалення вашої організації є незворотною дією. Її неможливо скасувати."
+  },
   "myAccount": {
     "message": "Мій обліковий запис"
   },
@@ -1710,11 +1713,11 @@
   "twoFactorDuoDesc": {
     "message": "Введіть інформацію про програму Bitwarden з вашої панелі адміністратора Duo."
   },
-  "twoFactorDuoIntegrationKey": {
-    "message": "Ключ інтеграції"
+  "twoFactorDuoClientId": {
+    "message": "ID клієнта"
   },
-  "twoFactorDuoSecretKey": {
-    "message": "Секретний ключ"
+  "twoFactorDuoClientSecret": {
+    "message": "Секретний ключ клієнта"
   },
   "twoFactorDuoApiHostname": {
     "message": "Назва вузла API"
@@ -3387,6 +3390,9 @@
   },
   "deleteRecoverConfirmDesc": {
     "message": "Ви відправили запит на видалення облікового запису Bitwarden. Натисніть кнопку внизу для підтвердження."
+  },
+  "deleteRecoverOrgConfirmDesc": {
+    "message": "Ви подали запит на видалення вашої організації Bitwarden."
   },
   "myOrganization": {
     "message": "Моя організація"
@@ -7677,13 +7683,6 @@
     "message": "додайте спосіб оплати",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
   },
-  "collectionEnhancementsDesc": {
-    "message": "Додано нові налаштування та дозволи для додаткової гнучкості. Замінено роль менеджера на дозвіл \"може керувати\" та впроваджено можливість створювати колекції користувачам, а також обмежувати адміністративний доступ до збірок.",
-    "description": "This describes new features and improvements for user roles and collections"
-  },
-  "collectionEnhancementsLearnMore": {
-    "message": "Докладніше про керування збірками"
-  },
   "organizationInformation": {
     "message": "Інформація про організацію"
   },
@@ -7695,12 +7694,6 @@
   },
   "smFreeTrialConfirmationEmail": {
     "message": "Ми надіслали лист з підтвердженням на вашу електронну пошту "
-  },
-  "confirmCollectionEnhancementsDialogTitle": {
-    "message": "Це незворотна дія"
-  },
-  "confirmCollectionEnhancementsDialogContent": {
-    "message": "Увімкнення цієї функції замінить роль менеджера на можливість керування дозволами. Цей процес триватиме кілька секунд. Не робіть жодних змін в організації доки процес не завершиться. Ви дійсно хочете продовжити?"
   },
   "sorryToSeeYouGo": {
     "message": "Нам шкода, що ви нас покидаєте! Допоможіть вдосконалити Bitwarden, повідомивши причину.",
@@ -8193,6 +8186,40 @@
   "manageBillingFromProviderPortalMessage": {
     "message": "Керування рахунками на порталі провайдера"
   },
+  "viewItemsIn": {
+    "message": "View items in $NAME$",
+    "description": "Button to view the contents of a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
+  "backTo": {
+    "message": "Back to $NAME$",
+    "description": "Navigate back to a previous folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
+  "back": {
+    "message": "Back",
+    "description": "Button text to navigate back"
+  },
+  "removeItem": {
+    "message": "Remove $NAME$",
+    "description": "Remove a selected option, such as a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
   "viewInfo": {
     "message": "Переглянути інформацію"
   },
@@ -8222,6 +8249,12 @@
         "example": "2"
       }
     }
+  },
+  "lowKDFIterationsBanner": {
+    "message": "Низьке значення KDF ітерацій. Збільште значення для посилання безпеки свого облікового запису."
+  },
+  "changeKDFSettings": {
+    "message": "Змінити налаштування KDF"
   },
   "secureYourInfrastructure": {
     "message": "Захистіть свою інфраструктуру"

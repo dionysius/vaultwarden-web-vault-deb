@@ -1341,6 +1341,9 @@
   "accountDeletedDesc": {
     "message": "Konto zostało zamknięte i wszystkie powiązane z nim dane zostały usunięte."
   },
+  "deleteOrganizationWarning": {
+    "message": "Usunięcie Twojej organizacji jest nieodwracalne. Akcja ta nie może być cofnięta."
+  },
   "myAccount": {
     "message": "Moje konto"
   },
@@ -1351,19 +1354,19 @@
     "message": "Importuj dane"
   },
   "onboardingImportDataDetailsPartOne": {
-    "message": "If you don't have any data to import, you can create a ",
+    "message": "Jeśli nie masz żadnych danych do zaimportowania, możesz utworzyć ",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
   "onboardingImportDataDetailsLink": {
-    "message": "new item",
+    "message": "nowy element",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
   "onboardingImportDataDetailsPartTwoNoOrgs": {
-    "message": " instead.",
+    "message": " zamiast tego.",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead."
   },
   "onboardingImportDataDetailsPartTwoWithOrgs": {
-    "message": " instead. You may need to wait until your administrator confirms your organization membership.",
+    "message": " zamiast tego. Będziesz musiał(a) poczekać aż administrator potwierdzi Twoje członkostwo w organizacji.",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
   },
   "importError": {
@@ -1710,11 +1713,11 @@
   "twoFactorDuoDesc": {
     "message": "Wpisz informacje o aplikacji Bitwarden z panelu administracyjnego Duo."
   },
-  "twoFactorDuoIntegrationKey": {
-    "message": "Klucz integracji"
+  "twoFactorDuoClientId": {
+    "message": "Id klienta"
   },
-  "twoFactorDuoSecretKey": {
-    "message": "Tajny klucz"
+  "twoFactorDuoClientSecret": {
+    "message": "Tajny klucz klienta"
   },
   "twoFactorDuoApiHostname": {
     "message": "Nazwa domeny API"
@@ -1835,7 +1838,7 @@
     "message": "Znaleźliśmy elementy bez włączonej opcji logowania dwustopniowego"
   },
   "inactive2faFoundReportDesc": {
-    "message": "We found $COUNT$ website(s) in your $VAULT$ that may not be configured with two-step login (according to 2fa.directory). To further protect these accounts, you should set up two-step login.",
+    "message": "Znaleźliśmy $COUNT$ witryn(y) w sejfach, które mogą nie być skonfigurowane z wykorzystaniem logowania dwustopniowego (wg 2fa.directory). Aby dodatkowo zabezpieczyć te konta, należy skonfigurować logowanie dwustopniowe.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1863,7 +1866,7 @@
     "message": "Znaleźliśmy ujawnione hasła"
   },
   "exposedPasswordsFoundReportDesc": {
-    "message": "We found $COUNT$ items in your $VAULT$ that have passwords that were exposed in known data breaches. You should change them to use a new password.",
+    "message": "Znaleźliśmy $COUNT$ elementów w twoich sejfach, które zawierają hasła ujawnione w znanych zdarzeniach naruszeń. Należy ustawić nowe hasła.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1900,7 +1903,7 @@
     "message": "Znaleźliśmy słabe hasła"
   },
   "weakPasswordsFoundReportDesc": {
-    "message": "We found $COUNT$ items in your $VAULT$ with passwords that are not strong. You should update them to use stronger passwords.",
+    "message": "Znaleźliśmy $COUNT$ element(ów) w twoich sejfach, które zawierają słabe hasła. Powinieneś zaktualizować je o silniejsze hasła.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1925,7 +1928,7 @@
     "message": "Znaleźliśmy identyczne hasła"
   },
   "reusedPasswordsFoundReportDesc": {
-    "message": "We found $COUNT$ passwords that are being reused in your $VAULT$. You should change them to a unique value.",
+    "message": "Znaleźliśmy $COUNT$ hasła(eł), które występują kilkukrotnie w twoich sejfach. Należy je zmienić tak, aby były unikalne.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3388,6 +3391,9 @@
   "deleteRecoverConfirmDesc": {
     "message": "Poprosiłeś o usunięcie konta Bitwarden. Kliknij poniższy przycisk, aby to potwierdzić."
   },
+  "deleteRecoverOrgConfirmDesc": {
+    "message": "Poprosiłeś o usunięcie swojej organizacji Bitwarden."
+  },
   "myOrganization": {
     "message": "Moja organizacja"
   },
@@ -3566,10 +3572,10 @@
     "message": "Zmiany w subskrypcji spowodują proporcjonalne zmiany w rozliczeniach. Jeśli nowo zaproszeni członkowie przekroczą liczbę miejsc w subskrypcji, otrzymasz proporcjonalną opłatę za dodatkowych członków."
   },
   "smStandaloneTrialSeatCountUpdateMessageFragment1": {
-    "message": "If you want to add additional"
+    "message": "Jeśli chcesz dodać dodatkowe"
   },
   "smStandaloneTrialSeatCountUpdateMessageFragment2": {
-    "message": "seats without the bundled offer, please contact"
+    "message": "miejsca bez pakietu, skontaktuj się z"
   },
   "subscriptionUserSeatsLimitedAutoscale": {
     "message": "Korekty subskrypcji spowodują proporcjonalne zmiany w sumach rozliczeniowych. Jeśli nowo zaproszeni członkowie przekroczą liczbę miejsc objętych subskrypcją, natychmiast otrzymasz proporcjonalną opłatę za dodatkowych członków, aż do osiągnięcia limitu miejsc $MAX$.",
@@ -5907,7 +5913,7 @@
     }
   },
   "forwarderUnknownForwarder": {
-    "message": "Unknown forwarder: '$SERVICENAME$'.",
+    "message": "Nieznana usługa przekierowania: '$SERVICENAME$'.",
     "description": "Displayed when the forwarding service is not supported.",
     "placeholders": {
       "servicename": {
@@ -7246,19 +7252,19 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO Required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionOptionTdeDescriptionLinkOne": {
-    "message": "single organization",
+    "message": "polityka pojedynczej organizacji",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionOptionTdeDescriptionPartTwo": {
-    "message": "policy,",
+    "message": ",",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionOptionTdeDescriptionLinkTwo": {
-    "message": "SSO required",
+    "message": "polityka wymaganego SSO",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionOptionTdeDescriptionPartThree": {
-    "message": "policy, and",
+    "message": "i",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionOptionTdeDescriptionLinkThree": {
@@ -7642,10 +7648,10 @@
     "message": "Nie masz dostępu do zarządzania tą kolekcją."
   },
   "grantAddAccessCollectionWarningTitle": {
-    "message": "Missing Can Manage Permissions"
+    "message": "Brak uprawnienia Zarządzaj Uprawnieniami"
   },
   "grantAddAccessCollectionWarning": {
-    "message": "Grant Can manage permissions to allow full collection management including deletion of collection."
+    "message": "Przyznaj uprawnienie Zarządzaj Uprawnieniami w celu umożliwienia pełnego zarządzania kolekcją, w tym usuwania kolekcji."
   },
   "grantCollectionAccess": {
     "message": "Przyznaj grupom lub członkom dostęp do tej kolekcji."
@@ -7677,13 +7683,6 @@
     "message": "dodaj metodę płatności",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
   },
-  "collectionEnhancementsDesc": {
-    "message": "Dodaj nowe ustawienia i uprawnienia dla dodatkowej elastyczności. Zastąp rolę menedżera uprawnieniem \"może zarządzać\" i wprowadzić opcje umożliwiające użytkownikom tworzenie kolekcji, a także ograniczenie administracyjnego dostępu do kolekcji.",
-    "description": "This describes new features and improvements for user roles and collections"
-  },
-  "collectionEnhancementsLearnMore": {
-    "message": "Dowiedz się więcej o zarządzaniu kolekcją"
-  },
   "organizationInformation": {
     "message": "Informacje o organizacji"
   },
@@ -7695,12 +7694,6 @@
   },
   "smFreeTrialConfirmationEmail": {
     "message": "Wysłaliśmy e-mail weryfikacyjny na adres "
-  },
-  "confirmCollectionEnhancementsDialogTitle": {
-    "message": "Ta akcja jest nieodwracalna"
-  },
-  "confirmCollectionEnhancementsDialogContent": {
-    "message": "Włączenie tej funkcji spowoduje deprekację roli menedżera i zastąpi ją uprawnieniami do zarządzania uprawnieniami. To zajmie kilka chwil. Nie wprowadzaj żadnych zmian w organizacji dopóki nie zostanie zakończone. Czy na pewno chcesz kontynuować?"
   },
   "sorryToSeeYouGo": {
     "message": "Przykro nam, że nas opuszczasz! Pomóż ulepszyć Bitwarden udostępniając informacje dlaczego anulujesz.",
@@ -8193,6 +8186,40 @@
   "manageBillingFromProviderPortalMessage": {
     "message": "Zarządzaj płatnościami z portalu dostawcy"
   },
+  "viewItemsIn": {
+    "message": "Zobacz elementy w $NAME$",
+    "description": "Button to view the contents of a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
+  "backTo": {
+    "message": "Wróć do $NAME$",
+    "description": "Navigate back to a previous folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
+  "back": {
+    "message": "Powrót",
+    "description": "Button text to navigate back"
+  },
+  "removeItem": {
+    "message": "Usuń $NAME$",
+    "description": "Remove a selected option, such as a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
   "viewInfo": {
     "message": "Wyświetl informacje"
   },
@@ -8209,7 +8236,7 @@
     "message": "Zaktualizowana nazwa organizacji"
   },
   "providerPlan": {
-    "message": "Managed Service Provider"
+    "message": "Dostawca usług zarządzanych"
   },
   "orgSeats": {
     "message": "Miejsca w organizacji"
@@ -8222,6 +8249,12 @@
         "example": "2"
       }
     }
+  },
+  "lowKDFIterationsBanner": {
+    "message": "Niska liczba itracjia KDF. Zwiększ liczbę iteracji, aby zwiększyć bezpieczeństwo Twojego konta."
+  },
+  "changeKDFSettings": {
+    "message": "Zmień ustawienia KDF"
   },
   "secureYourInfrastructure": {
     "message": "Zabezpiecz swoją infrastrukturę"

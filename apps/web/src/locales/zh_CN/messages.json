@@ -1341,6 +1341,9 @@
   "accountDeletedDesc": {
     "message": "您的账户已被关闭，所有相关数据也已被删除。"
   },
+  "deleteOrganizationWarning": {
+    "message": "删除组织是永久性操作，无法撤销！"
+  },
   "myAccount": {
     "message": "我的账户"
   },
@@ -1710,11 +1713,11 @@
   "twoFactorDuoDesc": {
     "message": "输入 Duo 管理面板提供的 Bitwarden 应用信息。"
   },
-  "twoFactorDuoIntegrationKey": {
-    "message": "集成密钥"
+  "twoFactorDuoClientId": {
+    "message": "Client ID"
   },
-  "twoFactorDuoSecretKey": {
-    "message": "安全密钥"
+  "twoFactorDuoClientSecret": {
+    "message": "Client Secret"
   },
   "twoFactorDuoApiHostname": {
     "message": "API 主机名"
@@ -3388,6 +3391,9 @@
   "deleteRecoverConfirmDesc": {
     "message": "您已请求删除您的 Bitwarden 账户。单击下面的按钮以确认。"
   },
+  "deleteRecoverOrgConfirmDesc": {
+    "message": "您已请求删除您的 Bitwarden 组织。"
+  },
   "myOrganization": {
     "message": "我的组织"
   },
@@ -3569,7 +3575,7 @@
     "message": "如果您想要添加额外的"
   },
   "smStandaloneTrialSeatCountUpdateMessageFragment2": {
-    "message": "无捆绑优惠的座位，请联系"
+    "message": "无捆绑优惠的席位，请联系"
   },
   "subscriptionUserSeatsLimitedAutoscale": {
     "message": "调整订阅将导致按比例调整您的计费总金额。如果新邀请的成员超过了您的订阅席位，您将立即收到按比例的额外成员费用，直到达到您的 $MAX$ 席位限制。",
@@ -6850,7 +6856,7 @@
     "message": "成员角色"
   },
   "moreFromBitwarden": {
-    "message": "来自 Bitwarden 的更多产品"
+    "message": "更多来自 Bitwarden 的产品"
   },
   "switchProducts": {
     "message": "切换产品"
@@ -7677,13 +7683,6 @@
     "message": "请添加一个付款方式。",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
   },
-  "collectionEnhancementsDesc": {
-    "message": "添加新的设置和权限以获得额外的灵活性。将经理角色替换为「可以管理」权限，并引入允许用户创建集合以及限制对集合的管理访问权限的选项。",
-    "description": "This describes new features and improvements for user roles and collections"
-  },
-  "collectionEnhancementsLearnMore": {
-    "message": "了解更多关于集合管理的信息"
-  },
   "organizationInformation": {
     "message": "组织信息"
   },
@@ -7695,12 +7694,6 @@
   },
   "smFreeTrialConfirmationEmail": {
     "message": "我们已经发送了一封确认邮件到 "
-  },
-  "confirmCollectionEnhancementsDialogTitle": {
-    "message": "此操作不可逆"
-  },
-  "confirmCollectionEnhancementsDialogContent": {
-    "message": "开启此功能将弃用经理角色，并将其替换为「可以管理」权限。这需要一些时间。在完成之前，请勿对组织进行任何更改。您确定要继续吗？"
   },
   "sorryToSeeYouGo": {
     "message": "很遗憾看到您离开！请分享您取消的原因，以帮助改进 Bitwarden。",
@@ -8193,6 +8186,40 @@
   "manageBillingFromProviderPortalMessage": {
     "message": "从提供商门户管理账单"
   },
+  "viewItemsIn": {
+    "message": "View items in $NAME$",
+    "description": "Button to view the contents of a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
+  "backTo": {
+    "message": "Back to $NAME$",
+    "description": "Navigate back to a previous folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
+  "back": {
+    "message": "Back",
+    "description": "Button text to navigate back"
+  },
+  "removeItem": {
+    "message": "Remove $NAME$",
+    "description": "Remove a selected option, such as a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
   "viewInfo": {
     "message": "查看信息"
   },
@@ -8222,6 +8249,12 @@
         "example": "2"
       }
     }
+  },
+  "lowKDFIterationsBanner": {
+    "message": "KDF 迭代低。请增加迭代次数以提高您账户的安全性。"
+  },
+  "changeKDFSettings": {
+    "message": "更改 KDF 设置"
   },
   "secureYourInfrastructure": {
     "message": "保护您的基础设施"

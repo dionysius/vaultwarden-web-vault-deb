@@ -1341,6 +1341,9 @@
   "accountDeletedDesc": {
     "message": "A sua conta foi encerrada e todos os dados associados foram eliminados."
   },
+  "deleteOrganizationWarning": {
+    "message": "A eliminação da sua organização é permanente. Não pode ser anulada."
+  },
   "myAccount": {
     "message": "A minha conta"
   },
@@ -1710,11 +1713,11 @@
   "twoFactorDuoDesc": {
     "message": "Introduza as informações da aplicação Bitwarden a partir do painel de administração do seu Duo."
   },
-  "twoFactorDuoIntegrationKey": {
-    "message": "Chave de integração"
+  "twoFactorDuoClientId": {
+    "message": "ID do cliente"
   },
-  "twoFactorDuoSecretKey": {
-    "message": "Chave secreta"
+  "twoFactorDuoClientSecret": {
+    "message": "Segredo do cliente"
   },
   "twoFactorDuoApiHostname": {
     "message": "Nome de domínio da API"
@@ -3387,6 +3390,9 @@
   },
   "deleteRecoverConfirmDesc": {
     "message": "Pediu para eliminar a sua conta Bitwarden. Clique no botão abaixo para confirmar."
+  },
+  "deleteRecoverOrgConfirmDesc": {
+    "message": "Pediu para eliminar a sua organização do Bitwarden."
   },
   "myOrganization": {
     "message": "A minha organização"
@@ -7677,13 +7683,6 @@
     "message": "adicione um método de pagamento",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
   },
-  "collectionEnhancementsDesc": {
-    "message": "Adicione novas definições e permissões para maior flexibilidade. Substitua a função de Gestor pela permissão \"pode gerir\" e introduza opções que permitam aos utilizadores criar coleções, bem como restringir o acesso administrativo às coleções.",
-    "description": "This describes new features and improvements for user roles and collections"
-  },
-  "collectionEnhancementsLearnMore": {
-    "message": "Saiba mais sobre a gestão de coleções"
-  },
   "organizationInformation": {
     "message": "Informações sobre a organização"
   },
@@ -7695,12 +7694,6 @@
   },
   "smFreeTrialConfirmationEmail": {
     "message": "Enviámos um e-mail de confirmação para o seu e-mail:"
-  },
-  "confirmCollectionEnhancementsDialogTitle": {
-    "message": "Esta ação é irreversível"
-  },
-  "confirmCollectionEnhancementsDialogContent": {
-    "message": "Ao ativar esta funcionalidade, o papel de gestor será descontinuado e substituído por uma permissão \"Pode gerir\". Isto demorará alguns momentos. Não efetue quaisquer alterações na organização até que esteja concluído. Tem a certeza de que pretende continuar?"
   },
   "sorryToSeeYouGo": {
     "message": "Lamentamos vê-lo partir! Ajude a melhorar o Bitwarden partilhando o motivo do seu cancelamento.",
@@ -8193,6 +8186,40 @@
   "manageBillingFromProviderPortalMessage": {
     "message": "Gira a faturação a partir do Portal do fornecedor"
   },
+  "viewItemsIn": {
+    "message": "Ver itens em $NAME$",
+    "description": "Button to view the contents of a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
+  "backTo": {
+    "message": "Voltar a $NAME$",
+    "description": "Navigate back to a previous folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
+  "back": {
+    "message": "Voltar",
+    "description": "Button text to navigate back"
+  },
+  "removeItem": {
+    "message": "Remover $NAME$",
+    "description": "Remove a selected option, such as a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
   "viewInfo": {
     "message": "Ver informações"
   },
@@ -8222,6 +8249,12 @@
         "example": "2"
       }
     }
+  },
+  "lowKDFIterationsBanner": {
+    "message": "Baixa quantidade de iterações do KDF. Aumente as suas iterações para melhorar a segurança da sua conta."
+  },
+  "changeKDFSettings": {
+    "message": "Alterar as definições do KDF"
   },
   "secureYourInfrastructure": {
     "message": "Proteja a sua infraestrutura"

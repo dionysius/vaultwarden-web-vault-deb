@@ -1341,6 +1341,9 @@
   "accountDeletedDesc": {
     "message": "Konts tika slēgts, un visi saistītie dati tika izdzēsti."
   },
+  "deleteOrganizationWarning": {
+    "message": "Savas apvienības izdzēšana ir paliekoša. To nevar atsaukt."
+  },
   "myAccount": {
     "message": "Mans konts"
   },
@@ -1710,11 +1713,11 @@
   "twoFactorDuoDesc": {
     "message": "Ievadīt Bitwarden lietotnes informāciju no Duo pārvaldības rīka."
   },
-  "twoFactorDuoIntegrationKey": {
-    "message": "Iekļaušanas atslēga"
+  "twoFactorDuoClientId": {
+    "message": "Klienta Id"
   },
-  "twoFactorDuoSecretKey": {
-    "message": "Slepenā atslēga"
+  "twoFactorDuoClientSecret": {
+    "message": "Klienta noslēpums"
   },
   "twoFactorDuoApiHostname": {
     "message": "API saimniekdatora nosaukums"
@@ -3387,6 +3390,9 @@
   },
   "deleteRecoverConfirmDesc": {
     "message": "Tika pieprasīts izdzēst Bitwarden kontu. Jāizmanto zemāk esošā poga, lai apstiprinātu."
+  },
+  "deleteRecoverOrgConfirmDesc": {
+    "message": "Tu pieprasīji izdzēst savu Bitwarden apvienību."
   },
   "myOrganization": {
     "message": "Mana apvienība"
@@ -7677,13 +7683,6 @@
     "message": "jāpievieno maksājuma veids",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
   },
-  "collectionEnhancementsDesc": {
-    "message": "Ir pievienojami jauni iestatījumi un atļaujas papildu pielāgojamībai. Pārvaldnieka loma ir aizvietojama ar \"var pārvaldīt\" atļauju, un var ieviest iespējas, lai ļautu lietotājiem izveidot krājumus, kā arī ierobežot pārvaldības piekļuvi krājumiem.",
-    "description": "This describes new features and improvements for user roles and collections"
-  },
-  "collectionEnhancementsLearnMore": {
-    "message": "Uzzināt vairāk par krājumu pārvaldību"
-  },
   "organizationInformation": {
     "message": "Apvienības informācija"
   },
@@ -7695,12 +7694,6 @@
   },
   "smFreeTrialConfirmationEmail": {
     "message": "Mēs esam nosūtījuši apstiprinājuma e-pasta ziņojumu uz "
-  },
-  "confirmCollectionEnhancementsDialogTitle": {
-    "message": "Šī darbība ir neatgriezeniska"
-  },
-  "confirmCollectionEnhancementsDialogContent": {
-    "message": "Šīs iespējas ieslēgšana padarīs pārvaldnieka lomu par nevēlamu un aizstās to ar atļauju \"Var pārvaldīt\". Tas aizņems dažus mirkļus. Neveikt nekādas apvienību izmaiņas, līdz tas ir pabeigts. Vai tiešām turpināt?"
   },
   "sorryToSeeYouGo": {
     "message": "Žēl redzēt Tevi aizejam. Palīdzi uzlabot Bitwarden, daloties ar atcelšanas iemeslu!",
@@ -8193,6 +8186,40 @@
   "manageBillingFromProviderPortalMessage": {
     "message": "Norēķinus var pārvaldīt Nodrošinātāju portālā"
   },
+  "viewItemsIn": {
+    "message": "View items in $NAME$",
+    "description": "Button to view the contents of a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
+  "backTo": {
+    "message": "Back to $NAME$",
+    "description": "Navigate back to a previous folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
+  "back": {
+    "message": "Back",
+    "description": "Button text to navigate back"
+  },
+  "removeItem": {
+    "message": "Remove $NAME$",
+    "description": "Remove a selected option, such as a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
   "viewInfo": {
     "message": "Skatīt informāciju"
   },
@@ -8222,6 +8249,12 @@
         "example": "2"
       }
     }
+  },
+  "lowKDFIterationsBanner": {
+    "message": "Zems KDF atkārtojumu skaits. Tas jāpalielina, lai uzlabotu sava konta drošību."
+  },
+  "changeKDFSettings": {
+    "message": "Mainīt KDF iestatījumus"
   },
   "secureYourInfrastructure": {
     "message": "Nodrošini savu infrastruktūru"

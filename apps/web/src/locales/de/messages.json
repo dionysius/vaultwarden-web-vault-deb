@@ -1341,6 +1341,9 @@
   "accountDeletedDesc": {
     "message": "Dein Konto wurde geschlossen und alle zugehörigen Daten wurden gelöscht."
   },
+  "deleteOrganizationWarning": {
+    "message": "Die Löschung deiner Organisation ist unwiderruflich. Sie kann nicht rückgängig gemacht werden."
+  },
   "myAccount": {
     "message": "Mein Konto"
   },
@@ -1710,11 +1713,11 @@
   "twoFactorDuoDesc": {
     "message": "Geben Sie die Bitwarden-Anwendungsinformationen aus Ihrem Duo Admin-Panel ein."
   },
-  "twoFactorDuoIntegrationKey": {
-    "message": "Integrationsschlüssel"
+  "twoFactorDuoClientId": {
+    "message": "Client-ID"
   },
-  "twoFactorDuoSecretKey": {
-    "message": "Geheimer Schlüssel"
+  "twoFactorDuoClientSecret": {
+    "message": "Client-Geheimnis"
   },
   "twoFactorDuoApiHostname": {
     "message": "API-Hostname"
@@ -3388,6 +3391,9 @@
   "deleteRecoverConfirmDesc": {
     "message": "Du hast die Löschung deines Bitwarden-Kontos angefragt. Benutze den Button unten, um die Löschung zu bestätigen."
   },
+  "deleteRecoverOrgConfirmDesc": {
+    "message": "Du hast die Löschung deiner Bitwarden-Organisation angefragt."
+  },
   "myOrganization": {
     "message": "Meine Organisation"
   },
@@ -3566,10 +3572,10 @@
     "message": "Anpassungen an deinem Abonnement führen zu anteiligen Änderungen an deiner Rechnungssumme. Wenn neu eingeladene Benutzer deine Abonnement-Benutzerplätze überschreiten, wird dir sofort eine anteilige Gebühr für die zusätzlichen Benutzer berechnet."
   },
   "smStandaloneTrialSeatCountUpdateMessageFragment1": {
-    "message": "If you want to add additional"
+    "message": "Wenn du zusätzliche"
   },
   "smStandaloneTrialSeatCountUpdateMessageFragment2": {
-    "message": "seats without the bundled offer, please contact"
+    "message": "Benutzerplätze ohne das Paketangebot hinzufügen möchtest, kontaktiere bitte"
   },
   "subscriptionUserSeatsLimitedAutoscale": {
     "message": "Anpassungen an deinem Abonnement führen zu anteiligen Änderungen an deiner Rechnungssumme. Wenn neu eingeladene Benutzer deine Abo-Benutzerplätze überschreiten, wird dir sofort eine anteilige Gebühr für die zusätzlichen Benutzer berechnet, bis dein Benutzerlimit von $MAX$ erreicht ist.",
@@ -6595,7 +6601,7 @@
     "message": "Gewähre Zugriff auf Sammlungen, indem du diese zu dieser Gruppe hinzufügst."
   },
   "restrictedCollectionAssignmentDesc": {
-    "message": "You can only assign collections you manage."
+    "message": "Du kannst nur von dir verwaltete Sammlungen zuweisen."
   },
   "accessAllCollectionsDesc": {
     "message": "Gewähre Zugriff auf alle aktuellen und zukünftigen Sammlungen."
@@ -6829,7 +6835,7 @@
     "message": "Gruppen auswählen"
   },
   "userPermissionOverrideHelperDesc": {
-    "message": "Permissions set for a member will replace permissions set by that member's group."
+    "message": "Festgelegte Berechtigungen für ein Mitglied ersetzen dessen festgelegte Mitgliedergruppe-Berechtigungen."
   },
   "noMembersOrGroupsAdded": {
     "message": "Keine Mitglieder oder Gruppen hinzugefügt"
@@ -7021,7 +7027,7 @@
     "message": "Aktualisiere deine Verschlüsselungseinstellungen, um neue Sicherheitsempfehlungen zu erfüllen und den Kontoschutz zu verbessern."
   },
   "kdfSettingsChangeLogoutWarning": {
-    "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login, if any. We recommend exporting your vault before changing your encryption settings to prevent data loss."
+    "message": "Wenn du fortfährst, wirst du von allen aktiven Sitzungen abgemeldet. Du musst dich erneut anmelden und, falls eingerichtet, die Zwei-Faktor-Authentifizierung durchführen. Wir empfehlen, deinen Tresor zu exportieren, bevor du deine Verschlüsselungseinstellungen änderst, um Datenverluste zu vermeiden."
   },
   "secretsManager": {
     "message": "Secrets Manager"
@@ -7642,10 +7648,10 @@
     "message": "Du hast keinen Zugriff zur Verwaltung dieser Sammlung."
   },
   "grantAddAccessCollectionWarningTitle": {
-    "message": "Missing Can Manage Permissions"
+    "message": "Fehlende \"Darf verwalten\"-Berechtigungen"
   },
   "grantAddAccessCollectionWarning": {
-    "message": "Grant Can manage permissions to allow full collection management including deletion of collection."
+    "message": "\"Darf verwalten\"-Berechtigungen gewähren, um die vollständige Sammlungsverwaltung einschließlich der Löschung von Sammlungen zu ermöglichen."
   },
   "grantCollectionAccess": {
     "message": "Gewähre Gruppen oder Mitgliedern Zugriff auf diese Sammlung."
@@ -7677,13 +7683,6 @@
     "message": "füge eine Zahlungsmethode hinzu",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
   },
-  "collectionEnhancementsDesc": {
-    "message": "Füge neue Einstellungen und Berechtigungen für zusätzliche Flexibilität hinzu. Ersetze die Rolle des Managers durch die Berechtigung \"kann verwalten\" und führe Optionen ein, die es Benutzern ermöglichen, Sammlungen zu erstellen sowie den administrativen Zugriff auf Sammlungen zu beschränken.",
-    "description": "This describes new features and improvements for user roles and collections"
-  },
-  "collectionEnhancementsLearnMore": {
-    "message": "Erfahre mehr über die Verwaltung der Sammlungen"
-  },
   "organizationInformation": {
     "message": "Organisationsinformationen"
   },
@@ -7695,12 +7694,6 @@
   },
   "smFreeTrialConfirmationEmail": {
     "message": "Wir haben eine Bestätigungs-E-Mail an deine E-Mail-Adresse gesendet an "
-  },
-  "confirmCollectionEnhancementsDialogTitle": {
-    "message": "Diese Aktion ist unwiderruflich"
-  },
-  "confirmCollectionEnhancementsDialogContent": {
-    "message": "Wenn du diese Funktion aktivierst, wird die Manager-Rolle deaktiviert und durch eine \"Darf verwalten\"-Berechtigung ersetzt. Dies wird einige Augenblicke dauern. Nimm keine Organisationsänderungen vor, bis die Aktivierung abgeschlossen ist. Bist du sicher, dass du fortfahren möchtest?"
   },
   "sorryToSeeYouGo": {
     "message": "Tut uns leid, dass du gehst! Hilf mit, Bitwarden zu verbessern, indem du uns mitteilst, warum du kündigst.",
@@ -7756,7 +7749,7 @@
     "message": "Du kannst dich nicht selbst zu Gruppen hinzufügen."
   },
   "cannotAddYourselfToCollections": {
-    "message": "You cannot add yourself to collections."
+    "message": "Du kannst dich nicht selbst zu Sammlungen hinzufügen."
   },
   "assign": {
     "message": "Zuweisen"
@@ -8193,6 +8186,40 @@
   "manageBillingFromProviderPortalMessage": {
     "message": "Rechnungen über das Anbieter-Portal verwalten"
   },
+  "viewItemsIn": {
+    "message": "View items in $NAME$",
+    "description": "Button to view the contents of a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
+  "backTo": {
+    "message": "Back to $NAME$",
+    "description": "Navigate back to a previous folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
+  "back": {
+    "message": "Back",
+    "description": "Button text to navigate back"
+  },
+  "removeItem": {
+    "message": "Remove $NAME$",
+    "description": "Remove a selected option, such as a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
   "viewInfo": {
     "message": "Info anzeigen"
   },
@@ -8200,7 +8227,7 @@
     "message": "Zugriff anzeigen"
   },
   "noCollectionsSelected": {
-    "message": "You have not selected any collections."
+    "message": "Du hast keine Sammlungen ausgewählt."
   },
   "updateName": {
     "message": "Namen aktualisieren"
@@ -8223,11 +8250,17 @@
       }
     }
   },
+  "lowKDFIterationsBanner": {
+    "message": "Geringe KDF-Iterationen. Erhöhe deine Iterationen, um die Sicherheit deines Kontos zu steigern."
+  },
+  "changeKDFSettings": {
+    "message": "KDF-Einstellungen ändern"
+  },
   "secureYourInfrastructure": {
-    "message": "Secure your infrastructure"
+    "message": "Sichere deine Infrastruktur"
   },
   "protectYourFamilyOrBusiness": {
-    "message": "Protect your family or business"
+    "message": "Schütze deine Familie oder dein Unternehmen"
   },
   "upgradeOrganizationCloseSecurityGaps": {
     "message": "Sicherheitslücken durch Kontrollberichte schließen"

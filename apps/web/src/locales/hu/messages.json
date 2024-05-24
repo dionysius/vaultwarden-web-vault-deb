@@ -1341,6 +1341,9 @@
   "accountDeletedDesc": {
     "message": "A fiók bezárásra került és minden társított adat törölve lett."
   },
+  "deleteOrganizationWarning": {
+    "message": "A szervezet végleges törlése folyamatban van. A művelet nem vonható vissza."
+  },
   "myAccount": {
     "message": "Saját fiók"
   },
@@ -1710,11 +1713,11 @@
   "twoFactorDuoDesc": {
     "message": "A Bitwarden alkalmazás információjának megadása a Duo Admin panelről."
   },
-  "twoFactorDuoIntegrationKey": {
-    "message": "Integrációs kulcs"
+  "twoFactorDuoClientId": {
+    "message": "Ügyfél azonosító"
   },
-  "twoFactorDuoSecretKey": {
-    "message": "Titkos kulcs"
+  "twoFactorDuoClientSecret": {
+    "message": "Ügyfél titkos kód"
   },
   "twoFactorDuoApiHostname": {
     "message": "API kiszolgálónév"
@@ -3387,6 +3390,9 @@
   },
   "deleteRecoverConfirmDesc": {
     "message": "A Bitwarden fiók törlését kértük. Kattintás a lenti gombra a megerősítéshez."
+  },
+  "deleteRecoverOrgConfirmDesc": {
+    "message": "A saját Bitwarden szervezet törlése lett kérve."
   },
   "myOrganization": {
     "message": "Saját szervezet"
@@ -7677,13 +7683,6 @@
     "message": "fitetési metódus hozzáadása",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
   },
-  "collectionEnhancementsDesc": {
-    "message": "Adjunk hozzá új beállításokat és jogosultságokat a nagyobb rugalmasság érdekében. Cseréljük le a Kezelő szerepet a \"kezelheti\" jogosultsággal és vezessünk be olyan opciókat, amelyek lehetővé teszik a felhasználók számára gyűjtemények létrehozását, valamint a gyűjtemények adminisztrátori hozzáférésének korlátozását.",
-    "description": "This describes new features and improvements for user roles and collections"
-  },
-  "collectionEnhancementsLearnMore": {
-    "message": "További információ a gyűjteménykezelésről"
-  },
   "organizationInformation": {
     "message": "Szervezeti információ"
   },
@@ -7695,12 +7694,6 @@
   },
   "smFreeTrialConfirmationEmail": {
     "message": "A megerősítő email elküldésre került az email címre:"
-  },
-  "confirmCollectionEnhancementsDialogTitle": {
-    "message": "Ez a művelet visszavonhatatlan."
-  },
-  "confirmCollectionEnhancementsDialogContent": {
-    "message": "Ezt a funkciót bekapcsolva a kezelői szerepkör elavul és az egy Kezelheti jogosultsággal kerül felváltásra. Ez eltart néhány pillanatig. Ne hajtsunk végre semmilyen szervezeti változtatást, amíg az be nem fejeződött. Biztosan folytatjuk?"
   },
   "sorryToSeeYouGo": {
     "message": "Sorry to see you go! Help improve Bitwarden by sharing why you're canceling.",
@@ -8193,6 +8186,40 @@
   "manageBillingFromProviderPortalMessage": {
     "message": "A számlázás kezelése a szolgáltatói portálon keresztül"
   },
+  "viewItemsIn": {
+    "message": "View items in $NAME$",
+    "description": "Button to view the contents of a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
+  "backTo": {
+    "message": "Back to $NAME$",
+    "description": "Navigate back to a previous folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
+  "back": {
+    "message": "Back",
+    "description": "Button text to navigate back"
+  },
+  "removeItem": {
+    "message": "Remove $NAME$",
+    "description": "Remove a selected option, such as a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
   "viewInfo": {
     "message": "Infó megtekintése"
   },
@@ -8222,6 +8249,12 @@
         "example": "2"
       }
     }
+  },
+  "lowKDFIterationsBanner": {
+    "message": "Alacsony a KDF iterációk száma. Növeljük az iterációk számát a fiók biztonságának javítása érdekében."
+  },
+  "changeKDFSettings": {
+    "message": "KDF beállítások megváltoztatása"
   },
   "secureYourInfrastructure": {
     "message": "Infrastruktúra biztosítása"

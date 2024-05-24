@@ -1341,6 +1341,9 @@
   "accountDeletedDesc": {
     "message": "Váš účet byl uzavřen a všechna související data byla smazána."
   },
+  "deleteOrganizationWarning": {
+    "message": "Smazání Vaší organizace je trvalé. Tuto akci nelze vrátit zpět."
+  },
   "myAccount": {
     "message": "Můj účet"
   },
@@ -1710,11 +1713,11 @@
   "twoFactorDuoDesc": {
     "message": "Zadejte informace o aplikaci Bitwarden z panelu Duo Admin."
   },
-  "twoFactorDuoIntegrationKey": {
-    "message": "Integrační klíč"
+  "twoFactorDuoClientId": {
+    "message": "ID klienta"
   },
-  "twoFactorDuoSecretKey": {
-    "message": "Tajný klíč"
+  "twoFactorDuoClientSecret": {
+    "message": "Tajný klíč klienta"
   },
   "twoFactorDuoApiHostname": {
     "message": "Hostitel API"
@@ -3387,6 +3390,9 @@
   },
   "deleteRecoverConfirmDesc": {
     "message": "Požádali jste o smazání svého účtu na Bitwardenu. Pro potvrzení použijte tlačítko níže."
+  },
+  "deleteRecoverOrgConfirmDesc": {
+    "message": "Požádali jste o smazání Vaší organizace u Bitwardenu."
   },
   "myOrganization": {
     "message": "Moje organizace"
@@ -7677,13 +7683,6 @@
     "message": "přidejte platební metodu",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
   },
-  "collectionEnhancementsDesc": {
-    "message": "Přidá nová nastavení a oprávnění pro další flexibilitu. Nahradí roli správce oprávněním \"can manage\" a zavede volby, které umožní uživatelům vytvářet kolekce a také omezovat přístup ke kolekcím pro správce.",
-    "description": "This describes new features and improvements for user roles and collections"
-  },
-  "collectionEnhancementsLearnMore": {
-    "message": "Více o správě kolekce"
-  },
   "organizationInformation": {
     "message": "Informace o organizaci"
   },
@@ -7695,12 +7694,6 @@
   },
   "smFreeTrialConfirmationEmail": {
     "message": "Potvrzovací e-mail byl odeslán na "
-  },
-  "confirmCollectionEnhancementsDialogTitle": {
-    "message": "Tato akce je nevratná"
-  },
-  "confirmCollectionEnhancementsDialogContent": {
-    "message": "Zapnutí této funkce zruší roli správce a nahradí ji oprávněním Can manage. Toto bude trvat několik okamžiků. Neprovádějte žádné změny organizace, dokud nebude akce dokončena. Opravdu chcete pokračovat?"
   },
   "sorryToSeeYouGo": {
     "message": "Je nám líto, že odcházíte! Pomozte nám Bitwarden vylepšit a řekněte nám, co se Vám nelíbí.",
@@ -8193,6 +8186,40 @@
   "manageBillingFromProviderPortalMessage": {
     "message": "Spravovat fakturaci z portálu poskytovatele"
   },
+  "viewItemsIn": {
+    "message": "View items in $NAME$",
+    "description": "Button to view the contents of a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
+  "backTo": {
+    "message": "Back to $NAME$",
+    "description": "Navigate back to a previous folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
+  "back": {
+    "message": "Back",
+    "description": "Button text to navigate back"
+  },
+  "removeItem": {
+    "message": "Remove $NAME$",
+    "description": "Remove a selected option, such as a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
   "viewInfo": {
     "message": "Zobrazit informace"
   },
@@ -8222,6 +8249,12 @@
         "example": "2"
       }
     }
+  },
+  "lowKDFIterationsBanner": {
+    "message": "Nízké iterace KDF. Zvyšte iterace pro zvýšení bezpečnosti Vašeho účtu."
+  },
+  "changeKDFSettings": {
+    "message": "Změnit nastavení KDF"
   },
   "secureYourInfrastructure": {
     "message": "Zabezpečte Vaši infrastrukturu"

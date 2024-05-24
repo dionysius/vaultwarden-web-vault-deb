@@ -1341,6 +1341,9 @@
   "accountDeletedDesc": {
     "message": "Hesabınız bağlandı və bütün əlaqəli verilənlər silindi."
   },
+  "deleteOrganizationWarning": {
+    "message": "Deleting your organization is permanent. It cannot be undone."
+  },
   "myAccount": {
     "message": "Hesabım"
   },
@@ -1710,11 +1713,11 @@
   "twoFactorDuoDesc": {
     "message": "Duo Admin panelinizdən Bitwarden tətbiq məlumatlarını daxil edin."
   },
-  "twoFactorDuoIntegrationKey": {
-    "message": "İnteqrasiya açarı"
+  "twoFactorDuoClientId": {
+    "message": "Müştəri kimliyi"
   },
-  "twoFactorDuoSecretKey": {
-    "message": "Sirr açarı"
+  "twoFactorDuoClientSecret": {
+    "message": "Müştəri sirri"
   },
   "twoFactorDuoApiHostname": {
     "message": "API Host adı"
@@ -3387,6 +3390,9 @@
   },
   "deleteRecoverConfirmDesc": {
     "message": "Bitwarden hesabınızı silmək üçün tələb göndərdiniz. Təsdiqləmək üçün aşağıdakı düyməyə basın."
+  },
+  "deleteRecoverOrgConfirmDesc": {
+    "message": "You have requested to delete your Bitwarden organization."
   },
   "myOrganization": {
     "message": "Təşkilatım"
@@ -7677,13 +7683,6 @@
     "message": "bir ödəniş üsulu əlavə edin",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
   },
-  "collectionEnhancementsDesc": {
-    "message": "Əlavə rahatlıq üçün yeni ayarlar və icazələr əlavə edin. Menecer rolunu \"idarə edə bilər\" icazəsi ilə əvəz edin və istifadəçilərin kolleksiyalar yaratmasına imkan verən və kolleksiyalara administrativ müraciəti məhdudlaşdıran seçimlər təqdim edin.",
-    "description": "This describes new features and improvements for user roles and collections"
-  },
-  "collectionEnhancementsLearnMore": {
-    "message": "Kolleksiya idarəsi haqqında daha ətraflı"
-  },
   "organizationInformation": {
     "message": "Təşkilat məlumatları"
   },
@@ -7695,12 +7694,6 @@
   },
   "smFreeTrialConfirmationEmail": {
     "message": "E-poçtunuza bir təsdiq məktubu göndərdik "
-  },
-  "confirmCollectionEnhancementsDialogTitle": {
-    "message": "Bu əməliyyatın geri dönüşü yoxdur"
-  },
-  "confirmCollectionEnhancementsDialogContent": {
-    "message": "Bu özəlliyin işə salınması, menecer rolunu ləğv edəcək və onu \"İdarə edə bilər\" icazəsi ilə əvəz edəcək. Bu bir neçə dəqiqə çəkəcək. Tamamlanana qədər heç bir təşkilat dəyişikliyi etməyin. Davam etmək istədiyinizə əminsiniz?"
   },
   "sorryToSeeYouGo": {
     "message": "Getməyinizə məyus olduq! Nə üçün ləğv etdiyinizi paylaşmaqla Bitwarden-i təkmilləşdirməyə kömək edin.",
@@ -8193,6 +8186,40 @@
   "manageBillingFromProviderPortalMessage": {
     "message": "Fakturanı \"Provayder Portalı\"ndan idarə et"
   },
+  "viewItemsIn": {
+    "message": "View items in $NAME$",
+    "description": "Button to view the contents of a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
+  "backTo": {
+    "message": "Back to $NAME$",
+    "description": "Navigate back to a previous folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
+  "back": {
+    "message": "Back",
+    "description": "Button text to navigate back"
+  },
+  "removeItem": {
+    "message": "Remove $NAME$",
+    "description": "Remove a selected option, such as a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
   "viewInfo": {
     "message": "Məlumata bax"
   },
@@ -8222,6 +8249,12 @@
         "example": "2"
       }
     }
+  },
+  "lowKDFIterationsBanner": {
+    "message": "Aşağı KDF iterasiyaları. Hesabınızın güvənliyini təkmilləşdirmək üçün iterasiyaları artırın."
+  },
+  "changeKDFSettings": {
+    "message": "KDF ayarlarını dəyişdir"
   },
   "secureYourInfrastructure": {
     "message": "İnfrastrukturunuzu qoruyun"

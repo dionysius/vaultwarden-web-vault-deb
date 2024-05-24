@@ -1341,6 +1341,9 @@
   "accountDeletedDesc": {
     "message": "アカウントが削除され、すべての関連するデータが削除されました。"
   },
+  "deleteOrganizationWarning": {
+    "message": "組織を恒久的に削除します。元に戻すことはできません。"
+  },
   "myAccount": {
     "message": "マイアカウント"
   },
@@ -1710,11 +1713,11 @@
   "twoFactorDuoDesc": {
     "message": "Bitwardenアプリの情報をDuoの管理パネルから入力して下さい。"
   },
-  "twoFactorDuoIntegrationKey": {
-    "message": "連携キー"
+  "twoFactorDuoClientId": {
+    "message": "Client Id"
   },
-  "twoFactorDuoSecretKey": {
-    "message": "秘密鍵"
+  "twoFactorDuoClientSecret": {
+    "message": "Client Secret"
   },
   "twoFactorDuoApiHostname": {
     "message": "API のホスト名"
@@ -3387,6 +3390,9 @@
   },
   "deleteRecoverConfirmDesc": {
     "message": "Bitwardenアカウント削除のリクエストがありました。削除する場合はボタンをクリックしてください。"
+  },
+  "deleteRecoverOrgConfirmDesc": {
+    "message": "Bitwarden 組織の削除をリクエストしました。"
   },
   "myOrganization": {
     "message": "組織"
@@ -7677,13 +7683,6 @@
     "message": "支払い方法を追加してください",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
   },
-  "collectionEnhancementsDesc": {
-    "message": "柔軟性を高めるために、新しい設定と権限を追加します。 マネージャーのロールを「管理可能」権限に置き換えます。 そして、ユーザーがコレクションを作成できるようにするオプションを導入し、コレクションへの管理者のアクセスを制限します。",
-    "description": "This describes new features and improvements for user roles and collections"
-  },
-  "collectionEnhancementsLearnMore": {
-    "message": "コレクション管理の詳細はこちら"
-  },
   "organizationInformation": {
     "message": "組織情報"
   },
@@ -7695,12 +7694,6 @@
   },
   "smFreeTrialConfirmationEmail": {
     "message": "あなたのメールアドレスに確認メールを送信しました："
-  },
-  "confirmCollectionEnhancementsDialogTitle": {
-    "message": "この操作は元に戻せません"
-  },
-  "confirmCollectionEnhancementsDialogContent": {
-    "message": "この機能を有効にすると、管理者ロールを非推奨にし、管理可能権限に置き換えます。 しばらく時間がかかります。完了するまで組織設定を変更しないでください。続行してもよろしいですか？"
   },
   "sorryToSeeYouGo": {
     "message": "お別れするのは残念です！キャンセルする理由を共有して、Bitwarden の改善にご協力ください。",
@@ -8193,6 +8186,40 @@
   "manageBillingFromProviderPortalMessage": {
     "message": "プロバイダーポータルからの請求を管理"
   },
+  "viewItemsIn": {
+    "message": "View items in $NAME$",
+    "description": "Button to view the contents of a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
+  "backTo": {
+    "message": "Back to $NAME$",
+    "description": "Navigate back to a previous folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
+  "back": {
+    "message": "Back",
+    "description": "Button text to navigate back"
+  },
+  "removeItem": {
+    "message": "Remove $NAME$",
+    "description": "Remove a selected option, such as a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
   "viewInfo": {
     "message": "情報を表示"
   },
@@ -8222,6 +8249,12 @@
         "example": "2"
       }
     }
+  },
+  "lowKDFIterationsBanner": {
+    "message": "KDF 反復回数が少ないです。あなたのアカウントのセキュリティを向上させるために反復回数を増やしてください。"
+  },
+  "changeKDFSettings": {
+    "message": "KDF 設定の変更"
   },
   "secureYourInfrastructure": {
     "message": "インフラストラクチャの保護"

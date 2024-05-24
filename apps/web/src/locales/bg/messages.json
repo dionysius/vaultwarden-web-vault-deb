@@ -1341,6 +1341,9 @@
   "accountDeletedDesc": {
     "message": "Абонаментът ви е окончателно прекратен и всички данни към него са изтрити."
   },
+  "deleteOrganizationWarning": {
+    "message": "Изтриването на организацията Ви е окончателно и необратимо."
+  },
   "myAccount": {
     "message": "Абонамент"
   },
@@ -1710,11 +1713,11 @@
   "twoFactorDuoDesc": {
     "message": "Въведете информацията за приложението на Битуорден от административния панел на Duo."
   },
-  "twoFactorDuoIntegrationKey": {
-    "message": "Ключ за интеграция"
+  "twoFactorDuoClientId": {
+    "message": "Клиентски идентификатор"
   },
-  "twoFactorDuoSecretKey": {
-    "message": "Таен ключ"
+  "twoFactorDuoClientSecret": {
+    "message": "Клиентска тайна"
   },
   "twoFactorDuoApiHostname": {
     "message": "Адрес на сървъра за API"
@@ -3387,6 +3390,9 @@
   },
   "deleteRecoverConfirmDesc": {
     "message": "Заявили сте, че искате да изтриете абонамента си към Битуорден. Натиснете бутона по-долу, за да потвърдите това решение."
+  },
+  "deleteRecoverOrgConfirmDesc": {
+    "message": "Вие поискахте изтриване на Вашата организация в Битуорден."
   },
   "myOrganization": {
     "message": "Моята организация"
@@ -7677,13 +7683,6 @@
     "message": "добавете разплащателен метод",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
   },
-  "collectionEnhancementsDesc": {
-    "message": "Можете да добавяте нови настройки и права, за допълнителна персонализация. Заменете ролята на управителя с правото „може да управлява“, или добавете опции, които позволяват на потребителите да създават колекции, както и да ограничават администраторския достъп до колекциите.",
-    "description": "This describes new features and improvements for user roles and collections"
-  },
-  "collectionEnhancementsLearnMore": {
-    "message": "Научете повече за управлението на колекции"
-  },
   "organizationInformation": {
     "message": "Информация за организацията"
   },
@@ -7695,12 +7694,6 @@
   },
   "smFreeTrialConfirmationEmail": {
     "message": "Изпратихме Ви е-писмо за потвърждение до е-пощата Ви, на адрес: "
-  },
-  "confirmCollectionEnhancementsDialogTitle": {
-    "message": "Това действие е необратимо"
-  },
-  "confirmCollectionEnhancementsDialogContent": {
-    "message": "Ако включите тази функционалност, ролята на управителя ще бъде премахната и заменена от правомощието „може да управлява“. Това ще отнаме съвсем малко време. Не правете промени в организацията, докато процесът не завърши. Наистина ли искате да продължите?"
   },
   "sorryToSeeYouGo": {
     "message": "Съжаляваме, че ни напускате! Помогнете ни да подобрим Битуорден, като споделите с нас защо прекратявате абонамента си.",
@@ -8193,6 +8186,40 @@
   "manageBillingFromProviderPortalMessage": {
     "message": "Управление на плащанията от Портала за доставчици"
   },
+  "viewItemsIn": {
+    "message": "View items in $NAME$",
+    "description": "Button to view the contents of a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
+  "backTo": {
+    "message": "Back to $NAME$",
+    "description": "Navigate back to a previous folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
+  "back": {
+    "message": "Back",
+    "description": "Button text to navigate back"
+  },
+  "removeItem": {
+    "message": "Remove $NAME$",
+    "description": "Remove a selected option, such as a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
   "viewInfo": {
     "message": "Преглед на информацията"
   },
@@ -8222,6 +8249,12 @@
         "example": "2"
       }
     }
+  },
+  "lowKDFIterationsBanner": {
+    "message": "Малък брой повторения за KDF. Увеличете броя повторения, за да подсилите защитата на регистрацията си."
+  },
+  "changeKDFSettings": {
+    "message": "Промяна на настройките за KDF"
   },
   "secureYourInfrastructure": {
     "message": "Подсигурете инфраструктурата си"

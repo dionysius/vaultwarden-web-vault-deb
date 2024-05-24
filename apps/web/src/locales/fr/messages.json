@@ -1341,6 +1341,9 @@
   "accountDeletedDesc": {
     "message": "Votre compte a été fermé et toutes les données associées ont été supprimées."
   },
+  "deleteOrganizationWarning": {
+    "message": "La suppression de votre organisation est permanente. Elle ne peut pas être annulée."
+  },
   "myAccount": {
     "message": "Mon compte"
   },
@@ -1710,11 +1713,11 @@
   "twoFactorDuoDesc": {
     "message": "Entrez les informations de l'application Bitwarden provenant de votre panneau Duo Admin."
   },
-  "twoFactorDuoIntegrationKey": {
-    "message": "Clé d'intégration"
+  "twoFactorDuoClientId": {
+    "message": "ID du client"
   },
-  "twoFactorDuoSecretKey": {
-    "message": "Clé secrète"
+  "twoFactorDuoClientSecret": {
+    "message": "Secret du client"
   },
   "twoFactorDuoApiHostname": {
     "message": "Nom d'hôte de l'API"
@@ -3387,6 +3390,9 @@
   },
   "deleteRecoverConfirmDesc": {
     "message": "Vous avez demandé de supprimer votre compte Bitwarden. Cliquez sur le bouton ci-dessous pour confirmer."
+  },
+  "deleteRecoverOrgConfirmDesc": {
+    "message": "Vous avez demandé à supprimer votre organisation Bitwarden."
   },
   "myOrganization": {
     "message": "Mon organisation"
@@ -7677,13 +7683,6 @@
     "message": "ajouter un moyen de paiement",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
   },
-  "collectionEnhancementsDesc": {
-    "message": "Ajoutez de nouveaux paramètres et autorisations pour une flexibilité additionnelle. Remplacez le rôle de Gestionnaire avec l'autorisation \"peut gérer\", et introduisez des options pour autoriser les utilisateurs à créer des collections tout comme à restreindre l'accès administratif aux collections.",
-    "description": "This describes new features and improvements for user roles and collections"
-  },
-  "collectionEnhancementsLearnMore": {
-    "message": "En savoir plus sur la gestion des collections"
-  },
   "organizationInformation": {
     "message": "Informations sur l'organisation"
   },
@@ -7695,12 +7694,6 @@
   },
   "smFreeTrialConfirmationEmail": {
     "message": "Nous avons envoyé un courriel de confirmation à votre adresse de messagerie à "
-  },
-  "confirmCollectionEnhancementsDialogTitle": {
-    "message": "Cette action est irréversible"
-  },
-  "confirmCollectionEnhancementsDialogContent": {
-    "message": "Activer cette fonctionnalité remplacera le rôle du gestionnaire par une autorisation Peut gérer. Cela prendra quelques instants. N'apportez aucune modification à l'organisation tant que ceci n'est pas terminé. Êtes-vous sûr de vouloir continuer ?"
   },
   "sorryToSeeYouGo": {
     "message": "Désolé de vous voir partir! Aidez à améliorer Bitwarden en partageant pourquoi vous annulez.",
@@ -8193,6 +8186,40 @@
   "manageBillingFromProviderPortalMessage": {
     "message": "Gérer la facturation depuis le Portail Fournisseur"
   },
+  "viewItemsIn": {
+    "message": "Voir les éléments dans $NAME$",
+    "description": "Button to view the contents of a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
+  "backTo": {
+    "message": "Retour à $NAME$",
+    "description": "Navigate back to a previous folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
+  "back": {
+    "message": "Précédent",
+    "description": "Button text to navigate back"
+  },
+  "removeItem": {
+    "message": "Retirer $NAME$",
+    "description": "Remove a selected option, such as a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
   "viewInfo": {
     "message": "Afficher les informations"
   },
@@ -8222,6 +8249,12 @@
         "example": "2"
       }
     }
+  },
+  "lowKDFIterationsBanner": {
+    "message": "Nombres d'itérations KDF bas. Augmentez vos itérations pour améliorer la sécurité de votre compte."
+  },
+  "changeKDFSettings": {
+    "message": "Modifier les paramètres KDF"
   },
   "secureYourInfrastructure": {
     "message": "Sécurisez votre infrastructure"
