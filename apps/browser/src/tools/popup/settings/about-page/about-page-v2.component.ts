@@ -7,10 +7,12 @@ import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { DeviceType } from "@bitwarden/common/enums";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ItemModule } from "@bitwarden/components";
 
 import { BrowserApi } from "../../../../platform/browser/browser-api";
 import { PopOutComponent } from "../../../../platform/popup/components/pop-out.component";
+import { PopupHeaderComponent } from "../../../../platform/popup/layout/popup-header.component";
+import { PopupPageComponent } from "../../../../platform/popup/layout/popup-page.component";
 import { AboutDialogComponent } from "../about-dialog/about-dialog.component";
 
 const RateUrls = {
@@ -28,11 +30,19 @@ const RateUrls = {
 };
 
 @Component({
-  templateUrl: "about-page.component.html",
+  templateUrl: "about-page-v2.component.html",
   standalone: true,
-  imports: [CommonModule, JslibModule, RouterModule, PopOutComponent],
+  imports: [
+    CommonModule,
+    JslibModule,
+    RouterModule,
+    PopupPageComponent,
+    PopupHeaderComponent,
+    PopOutComponent,
+    ItemModule,
+  ],
 })
-export class AboutPageComponent {
+export class AboutPageV2Component {
   constructor(
     private dialogService: DialogService,
     private environmentService: EnvironmentService,

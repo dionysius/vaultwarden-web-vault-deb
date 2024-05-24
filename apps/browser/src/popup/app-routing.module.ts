@@ -36,7 +36,9 @@ import { PasswordGeneratorHistoryComponent } from "../tools/popup/generator/pass
 import { SendAddEditComponent } from "../tools/popup/send/send-add-edit.component";
 import { SendGroupingsComponent } from "../tools/popup/send/send-groupings.component";
 import { SendTypeComponent } from "../tools/popup/send/send-type.component";
+import { AboutPageV2Component } from "../tools/popup/settings/about-page/about-page-v2.component";
 import { AboutPageComponent } from "../tools/popup/settings/about-page/about-page.component";
+import { MoreFromBitwardenPageV2Component } from "../tools/popup/settings/about-page/more-from-bitwarden-page-v2.component";
 import { MoreFromBitwardenPageComponent } from "../tools/popup/settings/about-page/more-from-bitwarden-page.component";
 import { ExportComponent } from "../tools/popup/settings/export.component";
 import { ImportBrowserComponent } from "../tools/popup/settings/import/import-browser.component";
@@ -349,18 +351,16 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     data: { state: "update-temp-password" },
   },
-  {
+  ...extensionRefreshSwap(AboutPageComponent, AboutPageV2Component, {
     path: "about",
-    component: AboutPageComponent,
     canActivate: [AuthGuard],
     data: { state: "about" },
-  },
-  {
+  }),
+  ...extensionRefreshSwap(MoreFromBitwardenPageComponent, MoreFromBitwardenPageV2Component, {
     path: "more-from-bitwarden",
-    component: MoreFromBitwardenPageComponent,
     canActivate: [AuthGuard],
     data: { state: "moreFromBitwarden" },
-  },
+  }),
   ...extensionRefreshSwap(TabsComponent, TabsV2Component, {
     path: "tabs",
     data: { state: "tabs" },
