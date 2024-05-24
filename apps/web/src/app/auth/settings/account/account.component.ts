@@ -8,7 +8,7 @@ import { DialogService } from "@bitwarden/components";
 import { PurgeVaultComponent } from "../../../vault/settings/purge-vault.component";
 
 import { DeauthorizeSessionsComponent } from "./deauthorize-sessions.component";
-import { DeleteAccountComponent } from "./delete-account.component";
+import { DeleteAccountDialogComponent } from "./delete-account-dialog.component";
 
 @Component({
   selector: "app-account",
@@ -17,8 +17,6 @@ import { DeleteAccountComponent } from "./delete-account.component";
 export class AccountComponent {
   @ViewChild("deauthorizeSessionsTemplate", { read: ViewContainerRef, static: true })
   deauthModalRef: ViewContainerRef;
-  @ViewChild("deleteAccountTemplate", { read: ViewContainerRef, static: true })
-  deleteModalRef: ViewContainerRef;
 
   showChangeEmail = true;
 
@@ -41,7 +39,8 @@ export class AccountComponent {
     await lastValueFrom(dialogRef.closed);
   };
 
-  async deleteAccount() {
-    await this.modalService.openViewRef(DeleteAccountComponent, this.deleteModalRef);
-  }
+  deleteAccount = async () => {
+    const dialogRef = DeleteAccountDialogComponent.open(this.dialogService);
+    await lastValueFrom(dialogRef.closed);
+  };
 }
