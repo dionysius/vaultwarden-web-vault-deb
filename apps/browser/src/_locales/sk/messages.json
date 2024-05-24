@@ -166,14 +166,20 @@
   "confirmIdentity": {
     "message": "Ak chcete pokračovať, potvrďte svoju identitu."
   },
-  "account": {
-    "message": "Účet"
-  },
   "changeMasterPassword": {
     "message": "Zmeniť hlavné heslo"
   },
   "continueToWebApp": {
     "message": "Pokračovať vo webovej aplikácii?"
+  },
+  "continueToWebAppDesc": {
+    "message": "Preskúmajte ďalšie funkcie svojho účtu na Bitwarden vo webovej aplikácii."
+  },
+  "continueToHelpCenter": {
+    "message": "Pokračovať v centre pomoci?"
+  },
+  "continueToHelpCenterDesc": {
+    "message": "Viac informácií o používaní Bitwardenu nájdete v centre pomoci."
   },
   "changeMasterPasswordOnWebConfirmation": {
     "message": "Hlavné heslo si môžete zmeniť vo webovej aplikácii Bitwarden."
@@ -192,8 +198,44 @@
   "logOut": {
     "message": "Odhlásiť sa"
   },
+  "aboutBitwarden": {
+    "message": "O Bitwarden"
+  },
   "about": {
     "message": "O aplikácii"
+  },
+  "moreFromBitwarden": {
+    "message": "Viac od spoločnosti Bitwarden"
+  },
+  "continueToBitwardenDotCom": {
+    "message": "Pokračovať na bitwarden.com?"
+  },
+  "bitwardenForBusiness": {
+    "message": "Bitwarden pre podniky"
+  },
+  "bitwardenAuthenticator": {
+    "message": "Bitwarden Authenticator"
+  },
+  "continueToAuthenticatorPageDesc": {
+    "message": "Bitwarden Authenticator umožňuje uložiť overovacie kľúče a generovať kódy TOTP pre dvojstupňoveé overovanie. Viac informácií nájdete na webovej stránke bitwarden.com"
+  },
+  "bitwardenSecretsManager": {
+    "message": "Bitwarden Secrets Manager"
+  },
+  "continueToSecretsManagerPageDesc": {
+    "message": "Bezpečne ukladajte, spravujte a zdieľajte vývojárske tajomstvá s Bitwarden Secrets Manager. Viac sa môžete dozvedieť na stránke bitwarden.com."
+  },
+  "passwordlessDotDev": {
+    "message": "Passwordless.dev"
+  },
+  "continueToPasswordlessDotDevPageDesc": {
+    "message": "Vytvorte plynulé a bezpečné prihlásenie bez tradičných hesiel s Passwordless.dev. Viac sa môžete dozvedieť na stránke bitwarden.com."
+  },
+  "freeBitwardenFamilies": {
+    "message": "Bitwarden pre Rodiny zadarmo"
+  },
+  "freeBitwardenFamiliesPageDesc": {
+    "message": "Máte nárok na bezplatnú službu Bitwarden pre Rodiny. Využite túto ponuku ešte dnes vo webovej aplikácii."
   },
   "version": {
     "message": "Verzia"
@@ -253,8 +295,8 @@
   "passGenInfo": {
     "message": "Automaticky generovať silné a unikátne heslá k prihlasovacím údajom."
   },
-  "bitWebVault": {
-    "message": "Webový trezor Bitwarden"
+  "bitWebVaultApp": {
+    "message": "Webová aplikácia Bitwarden"
   },
   "importItems": {
     "message": "Importovať položky"
@@ -779,11 +821,8 @@
   "shared": {
     "message": "Zdieľané"
   },
-  "learnOrg": {
-    "message": "Zistiť viac o organizáciách"
-  },
-  "learnOrgConfirmation": {
-    "message": "Bitwarden vám umožňuje zdieľať vaše položky trezora s ostatnými pomocou organizácie. Chcete navštíviť webovú stránku bitwarden.com a dozvedieť sa viac?"
+  "bitwardenForBusinessPageDesc": {
+    "message": "Bitwarden pre podniky vám umožňuje zdieľať položky trezoru s ostatnými pomocou organizácie. Viac informácií nájdete na webovej stránke bitwarden.com."
   },
   "moveToOrganization": {
     "message": "Presunúť do organizácie"
@@ -3137,6 +3176,41 @@
     "message": ", aby boli viditeľné.",
     "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
   },
+  "autofillSuggestions": {
+    "message": "Návrhy automatického vypĺňania"
+  },
+  "autofillSuggestionsTip": {
+    "message": "Uložte položku prihlásenia pre tento web na automatické vyplnenie"
+  },
+  "yourVaultIsEmpty": {
+    "message": "Váš trezor je prázdny"
+  },
+  "noItemsMatchSearch": {
+    "message": "Vyhľadávaniu nezodpovedajú žiadne položky"
+  },
+  "clearFiltersOrTryAnother": {
+    "message": "Vymažte filtre alebo zmeňte vyhľadávaný výraz"
+  },
+  "copyInfo": {
+    "message": "Skopírovať info, $ITEMNAME$",
+    "description": "Aria label for a button that opens a menu with options to copy information from an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "moreOptions": {
+    "message": "Ďalšie možnosti, $ITEMNAME$",
+    "description": "Aria label for a button that opens a menu with more options for an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
   "adminConsole": {
     "message": "Správcovská konzola"
   },
@@ -3155,7 +3229,37 @@
   "errorAssigningTargetFolder": {
     "message": "Chyba pri priraďovaní cieľového priečinka."
   },
+  "viewItemsIn": {
+    "message": "View items in $NAME$",
+    "description": "Button to view the contents of a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
+  "backTo": {
+    "message": "Back to $NAME$",
+    "description": "Navigate back to a previous folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
   "new": {
     "message": "Nová"
+  },
+  "removeItem": {
+    "message": "Remove $NAME$",
+    "description": "Remove a selected option, such as a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
   }
 }

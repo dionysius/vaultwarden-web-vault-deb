@@ -166,14 +166,20 @@
   "confirmIdentity": {
     "message": "続行するには本人確認を行ってください。"
   },
-  "account": {
-    "message": "アカウント"
-  },
   "changeMasterPassword": {
     "message": "マスターパスワードの変更"
   },
   "continueToWebApp": {
     "message": "ウェブアプリに進みますか?"
+  },
+  "continueToWebAppDesc": {
+    "message": "Bitwarden アカウントの機能をウェブアプリでご確認ください。"
+  },
+  "continueToHelpCenter": {
+    "message": "ヘルプセンターに進みますか?"
+  },
+  "continueToHelpCenterDesc": {
+    "message": "Bitwarden のヘルプセンターで使用方法の詳細をご覧ください。"
   },
   "changeMasterPasswordOnWebConfirmation": {
     "message": "Bitwarden ウェブアプリでマスターパスワードを変更できます。"
@@ -192,8 +198,44 @@
   "logOut": {
     "message": "ログアウト"
   },
+  "aboutBitwarden": {
+    "message": "Bitwarden について"
+  },
   "about": {
     "message": "アプリについて"
+  },
+  "moreFromBitwarden": {
+    "message": "Bitwarden の詳細"
+  },
+  "continueToBitwardenDotCom": {
+    "message": "bitwarden.com に進みますか？"
+  },
+  "bitwardenForBusiness": {
+    "message": "Bitwarden for Business"
+  },
+  "bitwardenAuthenticator": {
+    "message": "Bitwarden Authenticator"
+  },
+  "continueToAuthenticatorPageDesc": {
+    "message": "Bitwarden Authenticator では認証キーを保存し、2段階認証フロー用の TOTP コードを生成できます。詳細は bitwarden.com ウェブサイトをご覧ください。"
+  },
+  "bitwardenSecretsManager": {
+    "message": "Bitwarden シークレットマネージャー"
+  },
+  "continueToSecretsManagerPageDesc": {
+    "message": "Bitwarden シークレットマネージャーで開発者向けシークレットを安全に保管、管理、共有できます。詳細は bitwarden.com ウェブサイトをご覧ください。"
+  },
+  "passwordlessDotDev": {
+    "message": "Passwordless.dev"
+  },
+  "continueToPasswordlessDotDevPageDesc": {
+    "message": "Passwordless.dev でスムーズで安全なログイン体験を無料で提供します。bitwarden.com のウェブサイトで詳細をご覧ください。"
+  },
+  "freeBitwardenFamilies": {
+    "message": "無料 Bitwarden ファミリー"
+  },
+  "freeBitwardenFamiliesPageDesc": {
+    "message": "無料 Bitwarden ファミリー特典を受け取る資格があります。ウェブアプリで受け取りできます。"
   },
   "version": {
     "message": "バージョン"
@@ -253,8 +295,8 @@
   "passGenInfo": {
     "message": "ログインのために強固なユニークパスワードを自動的に生成します。"
   },
-  "bitWebVault": {
-    "message": "Bitwarden ウェブ保管庫"
+  "bitWebVaultApp": {
+    "message": "Bitwarden ウェブアプリ"
   },
   "importItems": {
     "message": "アイテムのインポート"
@@ -779,11 +821,8 @@
   "shared": {
     "message": "共有"
   },
-  "learnOrg": {
-    "message": "組織について学ぶ"
-  },
-  "learnOrgConfirmation": {
-    "message": "Bitwarden は組織を使って保管庫アイテムを他の人と共有することができます。詳細は bitwarden.com ウェブサイトをご覧ください。"
+  "bitwardenForBusinessPageDesc": {
+    "message": "Bitwarden for Business は組織を使って保管庫アイテムを他の人と共有することができます。詳細は bitwarden.com ウェブサイトをご覧ください。"
   },
   "moveToOrganization": {
     "message": "組織に移動"
@@ -3137,6 +3176,41 @@
     "message": "で実行すると表示できるようになります。",
     "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
   },
+  "autofillSuggestions": {
+    "message": "候補を自動入力する"
+  },
+  "autofillSuggestionsTip": {
+    "message": "自動入力するためにこのサイトのログインアイテムを保存します"
+  },
+  "yourVaultIsEmpty": {
+    "message": "保管庫が空です"
+  },
+  "noItemsMatchSearch": {
+    "message": "検索条件に一致するアイテムがありません"
+  },
+  "clearFiltersOrTryAnother": {
+    "message": "フィルタをクリアするか、別の検索ワードをお試しください"
+  },
+  "copyInfo": {
+    "message": "$ITEMNAME$ の情報をコピー",
+    "description": "Aria label for a button that opens a menu with options to copy information from an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "moreOptions": {
+    "message": "$ITEMNAME$ のその他のオプション",
+    "description": "Aria label for a button that opens a menu with more options for an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
   "adminConsole": {
     "message": "管理コンソール"
   },
@@ -3155,7 +3229,37 @@
   "errorAssigningTargetFolder": {
     "message": "ターゲットフォルダーの割り当てに失敗しました。"
   },
+  "viewItemsIn": {
+    "message": "View items in $NAME$",
+    "description": "Button to view the contents of a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
+  "backTo": {
+    "message": "Back to $NAME$",
+    "description": "Navigate back to a previous folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
   "new": {
     "message": "新規作成"
+  },
+  "removeItem": {
+    "message": "Remove $NAME$",
+    "description": "Remove a selected option, such as a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
   }
 }

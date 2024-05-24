@@ -166,14 +166,20 @@
   "confirmIdentity": {
     "message": "Potwierdź swoją tożsamość, aby kontynuować."
   },
-  "account": {
-    "message": "Konto"
-  },
   "changeMasterPassword": {
     "message": "Zmień hasło główne"
   },
   "continueToWebApp": {
     "message": "Kontynuować do aplikacji internetowej?"
+  },
+  "continueToWebAppDesc": {
+    "message": "Odkryj więcej funkcji swojego konta Bitwarden w aplikacji internetowej."
+  },
+  "continueToHelpCenter": {
+    "message": "Kontynuować do centrum pomocy?"
+  },
+  "continueToHelpCenterDesc": {
+    "message": "Dowiedz się więcej o tym, jak korzystać z centrum pomocy Bitwarden."
   },
   "changeMasterPasswordOnWebConfirmation": {
     "message": "Możesz zmienić swoje hasło główne w aplikacji internetowej Bitwarden."
@@ -192,8 +198,44 @@
   "logOut": {
     "message": "Wyloguj się"
   },
+  "aboutBitwarden": {
+    "message": "O Bitwarden"
+  },
   "about": {
     "message": "O aplikacji"
+  },
+  "moreFromBitwarden": {
+    "message": "Więcej od Bitwarden"
+  },
+  "continueToBitwardenDotCom": {
+    "message": "Kontynuować do bitwarden.com?"
+  },
+  "bitwardenForBusiness": {
+    "message": "Bitwarden dla biznesu"
+  },
+  "bitwardenAuthenticator": {
+    "message": "Bitwarden Authenticator"
+  },
+  "continueToAuthenticatorPageDesc": {
+    "message": "Bitwarden Authenticator pozwala na przechowywanie kluczy uwierzytelniających i generowanie kodów TOTP do dwuetapowego procesu weryfikacji. Dowiedz się więcej na stronie bitwarden.com"
+  },
+  "bitwardenSecretsManager": {
+    "message": "Menedżer sekretów Bitwarden"
+  },
+  "continueToSecretsManagerPageDesc": {
+    "message": "Bezpiecznie przechowuj, zarządzaj i udostępniaj sekrety programistów z Menedżerem sekretów Bitwarden. Dowiedz się więcej na stronie bitwarden.com."
+  },
+  "passwordlessDotDev": {
+    "message": "Passwordless.dev"
+  },
+  "continueToPasswordlessDotDevPageDesc": {
+    "message": "Twórz przyjemne i bezpieczne doświadczenia z logowaniem wolne od tradycyjnych haseł za pomocą Passwordless.dev. Dowiedz się więcej na stronie bitwarden.com."
+  },
+  "freeBitwardenFamilies": {
+    "message": "Darmowy plan rodzinny"
+  },
+  "freeBitwardenFamiliesPageDesc": {
+    "message": "Masz prawo do bezpłatengo planu rodzinnego Bitwarden. Zrealizuj tę ofertę już dziś w aplikacji internetowej."
   },
   "version": {
     "message": "Wersja"
@@ -253,8 +295,8 @@
   "passGenInfo": {
     "message": "Automatycznie wygeneruj silne, unikatowe hasła dla swoich loginów."
   },
-  "bitWebVault": {
-    "message": "Sejf internetowy Bitwarden"
+  "bitWebVaultApp": {
+    "message": "Aplikacja internetowa Bitwarden"
   },
   "importItems": {
     "message": "Importuj elementy"
@@ -779,11 +821,8 @@
   "shared": {
     "message": "Udostępnione"
   },
-  "learnOrg": {
-    "message": "Dowiedz się więcej o organizacjach"
-  },
-  "learnOrgConfirmation": {
-    "message": "Bitwarden pozwala na udostępnianie zawartości sejfu innym osobom za pośrednictwem organizacji. Czy chcesz odwiedzić stronę bitwarden.com, aby dowiedzieć się więcej?"
+  "bitwardenForBusinessPageDesc": {
+    "message": "Bitwarden dla biznesu pozwala na udostępnianie zawartości sejfu innym osobom za pośrednictwem organizacji. Dowiedz się wiecej na bitwarden.com."
   },
   "moveToOrganization": {
     "message": "Przenieś do organizacji"
@@ -2276,7 +2315,7 @@
     }
   },
   "forwarderUnknownForwarder": {
-    "message": "Unknown forwarder: '$SERVICENAME$'.",
+    "message": "Nieznana usługa przekierowania: '$SERVICENAME$'.",
     "description": "Displayed when the forwarding service is not supported.",
     "placeholders": {
       "servicename": {
@@ -3137,6 +3176,41 @@
     "message": ", aby były widoczne.",
     "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
   },
+  "autofillSuggestions": {
+    "message": "Sugestie autouzupełnienia"
+  },
+  "autofillSuggestionsTip": {
+    "message": "Zapisz element logowania dla tej witryny, aby automatycznie wypełnić"
+  },
+  "yourVaultIsEmpty": {
+    "message": "Twój sejf jest pusty"
+  },
+  "noItemsMatchSearch": {
+    "message": "Żaden element nie pasuje do Twojego wyszukiwania"
+  },
+  "clearFiltersOrTryAnother": {
+    "message": "Wyczyść filtry lub użyj innej frazy"
+  },
+  "copyInfo": {
+    "message": "Skopiuj informacje, $ITEMNAME$",
+    "description": "Aria label for a button that opens a menu with options to copy information from an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "moreOptions": {
+    "message": "Więcej opcji, $ITEMNAME$",
+    "description": "Aria label for a button that opens a menu with more options for an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
   "adminConsole": {
     "message": "Konsola Administracyjna"
   },
@@ -3155,7 +3229,37 @@
   "errorAssigningTargetFolder": {
     "message": "Wystąpił błąd podczas przypisywania folderu."
   },
+  "viewItemsIn": {
+    "message": "Zobacz elementy w $NAME$",
+    "description": "Button to view the contents of a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
+  "backTo": {
+    "message": "Wróć do $NAME$",
+    "description": "Navigate back to a previous folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
   "new": {
     "message": "Nowy"
+  },
+  "removeItem": {
+    "message": "Usuń $NAME$",
+    "description": "Remove a selected option, such as a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
   }
 }

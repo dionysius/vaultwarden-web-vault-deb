@@ -166,14 +166,20 @@
   "confirmIdentity": {
     "message": "Bekræft din identitet for at fortsætte."
   },
-  "account": {
-    "message": "Konto"
-  },
   "changeMasterPassword": {
     "message": "Skift hovedadgangskode"
   },
   "continueToWebApp": {
     "message": "Fortsæt til web-app?"
+  },
+  "continueToWebAppDesc": {
+    "message": "Tjek flere funktioner ud i Bitwarden-kontoen på web-appen."
+  },
+  "continueToHelpCenter": {
+    "message": "Fortsæt til Hjælpecenter?"
+  },
+  "continueToHelpCenterDesc": {
+    "message": "Læs mere i Hjælpecenter om, hvordan man bruger Bitwarden."
   },
   "changeMasterPasswordOnWebConfirmation": {
     "message": "Hovedadgangskoden kan ændres via Bitwarden web-appen."
@@ -192,8 +198,44 @@
   "logOut": {
     "message": "Log ud"
   },
+  "aboutBitwarden": {
+    "message": "Om Bitwarden"
+  },
   "about": {
     "message": "Om"
+  },
+  "moreFromBitwarden": {
+    "message": "Mere fra Bitwarden"
+  },
+  "continueToBitwardenDotCom": {
+    "message": "Fortsæt til bitwarden.com?"
+  },
+  "bitwardenForBusiness": {
+    "message": "Bitwarden Business"
+  },
+  "bitwardenAuthenticator": {
+    "message": "Bitwarden Authenticator"
+  },
+  "continueToAuthenticatorPageDesc": {
+    "message": "Bitwarden Authenticator muliggør at gemme godkendelsesnøgler og generere TOTP-koder til 2-trinsbekræftelsesstrømme. Få mere at vide på bitwarden.com-webstedet"
+  },
+  "bitwardenSecretsManager": {
+    "message": "Bitwarden Secrets Manager"
+  },
+  "continueToSecretsManagerPageDesc": {
+    "message": "Gem, håndtér og del udviklerhemmeligheder på sikker vis med Bitwarden Secrets Manager. Få mere at vide på bitwarden.com-webstedet."
+  },
+  "passwordlessDotDev": {
+    "message": "Passwordless.dev"
+  },
+  "continueToPasswordlessDotDevPageDesc": {
+    "message": "Skab problemfrie og sikre loginoplevelser uden traditionelle adgangskoder med Passwordless.dev. Find ud af mere på bitwarden.com-webstedet."
+  },
+  "freeBitwardenFamilies": {
+    "message": "Gratis Bitwarden Families"
+  },
+  "freeBitwardenFamiliesPageDesc": {
+    "message": "Du er berettiget til Gratis Bitwarden Families. Indløs dette tilbud i dag i web-appen."
   },
   "version": {
     "message": "Version"
@@ -253,8 +295,8 @@
   "passGenInfo": {
     "message": "Opret automatisk stærke, unikke adgangskoder til dine logins."
   },
-  "bitWebVault": {
-    "message": "Bitwarden web-boks"
+  "bitWebVaultApp": {
+    "message": "Bitwarden web-app"
   },
   "importItems": {
     "message": "Importér elementer"
@@ -779,11 +821,8 @@
   "shared": {
     "message": "Delt"
   },
-  "learnOrg": {
-    "message": "Få mere at vide om organisationer"
-  },
-  "learnOrgConfirmation": {
-    "message": "Bitwarden giver dig mulighed for at dele elementer i din boks med andre ved hjælp af en organisation. Vil du besøge bitwarden.com-webstedet for at få mere at vide?"
+  "bitwardenForBusinessPageDesc": {
+    "message": "Bitwarden Business muliggør deling af emner i din Boks med andre vha. en organisation. Find ud af mere på bitwarden.com-webstedet."
   },
   "moveToOrganization": {
     "message": "Flyt til organisation"
@@ -3137,6 +3176,41 @@
     "message": "for at gøre dem synlige.",
     "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
   },
+  "autofillSuggestions": {
+    "message": "Autoudfyldningsforslag"
+  },
+  "autofillSuggestionsTip": {
+    "message": "Gem et loginemne for dette websted til autoudfyldning"
+  },
+  "yourVaultIsEmpty": {
+    "message": "Boksen er tom"
+  },
+  "noItemsMatchSearch": {
+    "message": "Ingen emner matcher søgningen"
+  },
+  "clearFiltersOrTryAnother": {
+    "message": "Ryd filtre eller prøv med et andet søgeord"
+  },
+  "copyInfo": {
+    "message": "Kopiér info, $ITEMNAME$",
+    "description": "Aria label for a button that opens a menu with options to copy information from an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "moreOptions": {
+    "message": "Flere valgmuligheder, $ITEMNAME$",
+    "description": "Aria label for a button that opens a menu with more options for an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
   "adminConsole": {
     "message": "Admin-konsol"
   },
@@ -3155,7 +3229,37 @@
   "errorAssigningTargetFolder": {
     "message": "Fejl ved tildeling af målmappe."
   },
+  "viewItemsIn": {
+    "message": "Vis emner i $NAME$",
+    "description": "Button to view the contents of a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
+  "backTo": {
+    "message": "Retur til $NAME$",
+    "description": "Navigate back to a previous folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
   "new": {
     "message": "Ny/Nyt"
+  },
+  "removeItem": {
+    "message": "Fjern $NAME$",
+    "description": "Remove a selected option, such as a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
   }
 }

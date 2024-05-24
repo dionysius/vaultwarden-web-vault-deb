@@ -166,14 +166,20 @@
   "confirmIdentity": {
     "message": "Потвърдете самоличността си, за да продължите."
   },
-  "account": {
-    "message": "Регистрация"
-  },
   "changeMasterPassword": {
     "message": "Промяна на главната парола"
   },
   "continueToWebApp": {
     "message": "Продължаване към уеб приложението?"
+  },
+  "continueToWebAppDesc": {
+    "message": "Разгледайте още от възможностите на регистрацията си в Битуорден в уеб приложението."
+  },
+  "continueToHelpCenter": {
+    "message": "Продължаване към помощния център?"
+  },
+  "continueToHelpCenterDesc": {
+    "message": "Научете повече относно това как да използвате Битуорден в помощния център."
   },
   "changeMasterPasswordOnWebConfirmation": {
     "message": "Може да промените главната си парола в уеб приложението на Битуорден."
@@ -192,8 +198,44 @@
   "logOut": {
     "message": "Отписване"
   },
+  "aboutBitwarden": {
+    "message": "Относно Битуорден"
+  },
   "about": {
     "message": "Относно"
+  },
+  "moreFromBitwarden": {
+    "message": "Още от Битуорден"
+  },
+  "continueToBitwardenDotCom": {
+    "message": "Продължаване към bitwarden.com?"
+  },
+  "bitwardenForBusiness": {
+    "message": "Битуорден за бизнеса"
+  },
+  "bitwardenAuthenticator": {
+    "message": "Удостоверител на Битуорден"
+  },
+  "continueToAuthenticatorPageDesc": {
+    "message": "Удостоверителя на Битуорден позволява да запазвате ключове за удостоверяване, както и да произвеждате еднократни кодове за достъп за местата, където се изисква удостоверяване в 2 стъпки. Научете повече в уеб сайта bitwarden.com"
+  },
+  "bitwardenSecretsManager": {
+    "message": "Управление на тайни"
+  },
+  "continueToSecretsManagerPageDesc": {
+    "message": "Съхранявайте, управлявайте и споделяйте тайните по време на разработка с Управлението на тайни на Битуорден. Научете повече в уеб сайта bitwarden.com."
+  },
+  "passwordlessDotDev": {
+    "message": "Passwordless.dev"
+  },
+  "continueToPasswordlessDotDevPageDesc": {
+    "message": "Създавайте лесни за ползване, но защитени процеси за вписване без нужда от традиционни пароли с помощта на Passwordless.dev. Научете повече в уеб сайта bitwarden.com."
+  },
+  "freeBitwardenFamilies": {
+    "message": "Безплатен Битуорден за семейства"
+  },
+  "freeBitwardenFamiliesPageDesc": {
+    "message": "Може да се активирате Битуорден за семейства безплатно. Възползвайте се от предложението в уеб приложението."
   },
   "version": {
     "message": "Версия"
@@ -253,8 +295,8 @@
   "passGenInfo": {
     "message": "Автоматично създаване на силни и неповторими пароли."
   },
-  "bitWebVault": {
-    "message": "Уебтрезорът на Bitwarden"
+  "bitWebVaultApp": {
+    "message": "Уеб приложение"
   },
   "importItems": {
     "message": "Внасяне на елементи"
@@ -779,11 +821,8 @@
   "shared": {
     "message": "Споделено"
   },
-  "learnOrg": {
-    "message": "Научете за организациите"
-  },
-  "learnOrgConfirmation": {
-    "message": "Битуорден позволява да споделяте елементи от трезора си а други, използвайки организация. Бихте ли посетили сайта bitwarden.com, за да научите повече?"
+  "bitwardenForBusinessPageDesc": {
+    "message": "Битуорден за бизнеса позволява да споделяте части от трезора си чрез използването на организация. Научете повече в уеб сайта bitwarden.com."
   },
   "moveToOrganization": {
     "message": "Преместване в организация"
@@ -3137,6 +3176,41 @@
     "message": "за да ги направите видими.",
     "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
   },
+  "autofillSuggestions": {
+    "message": "Автоматично попълване на предложения"
+  },
+  "autofillSuggestionsTip": {
+    "message": "Запазване на елемент за вписване за този уеб сайт, за авт. попълване"
+  },
+  "yourVaultIsEmpty": {
+    "message": "Трезорът е празен"
+  },
+  "noItemsMatchSearch": {
+    "message": "Няма елементи, отговарящи на търсенето"
+  },
+  "clearFiltersOrTryAnother": {
+    "message": "Изчистете филтрите или опитайте да търсите нещо друго"
+  },
+  "copyInfo": {
+    "message": "Копиране на информацията, $ITEMNAME$",
+    "description": "Aria label for a button that opens a menu with options to copy information from an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "moreOptions": {
+    "message": "Още опции, $ITEMNAME$",
+    "description": "Aria label for a button that opens a menu with more options for an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
   "adminConsole": {
     "message": "Административна конзола"
   },
@@ -3155,7 +3229,37 @@
   "errorAssigningTargetFolder": {
     "message": "Грешка при задаването на целева папка."
   },
+  "viewItemsIn": {
+    "message": "View items in $NAME$",
+    "description": "Button to view the contents of a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
+  "backTo": {
+    "message": "Back to $NAME$",
+    "description": "Navigate back to a previous folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
   "new": {
     "message": "Ново"
+  },
+  "removeItem": {
+    "message": "Remove $NAME$",
+    "description": "Remove a selected option, such as a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
   }
 }

@@ -166,14 +166,20 @@
   "confirmIdentity": {
     "message": "Confirme a sua identidade para continuar."
   },
-  "account": {
-    "message": "Conta"
-  },
   "changeMasterPassword": {
     "message": "Alterar palavra-passe mestra"
   },
   "continueToWebApp": {
     "message": "Continuar para a aplicação Web?"
+  },
+  "continueToWebAppDesc": {
+    "message": "Explore mais funcionalidades da sua conta Bitwarden na aplicação Web."
+  },
+  "continueToHelpCenter": {
+    "message": "Continuar para o Centro de ajuda?"
+  },
+  "continueToHelpCenterDesc": {
+    "message": "Saiba mais sobre como utilizar o Bitwarden no Centro de ajuda."
   },
   "changeMasterPasswordOnWebConfirmation": {
     "message": "Pode alterar a sua palavra-passe mestra na aplicação Web Bitwarden."
@@ -192,8 +198,44 @@
   "logOut": {
     "message": "Terminar sessão"
   },
+  "aboutBitwarden": {
+    "message": "Acerca do Bitwarden"
+  },
   "about": {
     "message": "Acerca de"
+  },
+  "moreFromBitwarden": {
+    "message": "Mais do Bitwarden"
+  },
+  "continueToBitwardenDotCom": {
+    "message": "Continuar para bitwarden.com?"
+  },
+  "bitwardenForBusiness": {
+    "message": "Bitwarden para Empresas"
+  },
+  "bitwardenAuthenticator": {
+    "message": "Autenticador Bitwarden"
+  },
+  "continueToAuthenticatorPageDesc": {
+    "message": "O Autenticador Bitwarden permite-lhe armazenar chaves de autenticação e gerar códigos TOTP para fluxos de verificação de 2 passos. Saiba mais no site bitwarden.com"
+  },
+  "bitwardenSecretsManager": {
+    "message": "Gestor de Segredos Bitwarden"
+  },
+  "continueToSecretsManagerPageDesc": {
+    "message": "Armazene, gira e partilhe segredos de programador de forma segura com o Gestor de Segredos Bitwarden. Saiba mais no site bitwarden.com."
+  },
+  "passwordlessDotDev": {
+    "message": "Passwordless.dev"
+  },
+  "continueToPasswordlessDotDevPageDesc": {
+    "message": "Crie experiências de início de sessão suaves e seguras, livre de palavras-passe tradicionais, com o Passwordless.dev. Saiba mais no site bitwarden.com."
+  },
+  "freeBitwardenFamilies": {
+    "message": "Plano Familiar gratuito Bitwarden"
+  },
+  "freeBitwardenFamiliesPageDesc": {
+    "message": "É elegível para o Plano Familiar gratuito Bitwarden. Resgate esta oferta hoje na aplicação Web."
   },
   "version": {
     "message": "Versão"
@@ -253,8 +295,8 @@
   "passGenInfo": {
     "message": "Gera automaticamente palavras-passe fortes e únicas para as suas credenciais."
   },
-  "bitWebVault": {
-    "message": "Cofre Web Bitwarden"
+  "bitWebVaultApp": {
+    "message": "Aplicação Web Bitwarden"
   },
   "importItems": {
     "message": "Importar itens"
@@ -779,11 +821,8 @@
   "shared": {
     "message": "Partilhado"
   },
-  "learnOrg": {
-    "message": "Saiba mais sobre as organizações"
-  },
-  "learnOrgConfirmation": {
-    "message": "O Bitwarden permite-lhe partilhar os seus itens do cofre com outras pessoas através da utilização de uma organização. Gostaria de visitar o site bitwarden.com para saber mais?"
+  "bitwardenForBusinessPageDesc": {
+    "message": "O Bitwarden para Empresas permite-lhe partilhar os seus itens do cofre com outras pessoas através da utilização de uma organização. Saiba mais no site bitwarden.com."
   },
   "moveToOrganization": {
     "message": "Mover para a organização"
@@ -1339,7 +1378,7 @@
     "message": "Histórico de palavras-passe"
   },
   "back": {
-    "message": "Retroceder"
+    "message": "Voltar"
   },
   "collections": {
     "message": "Coleções"
@@ -3137,6 +3176,41 @@
     "message": "para os tornar visíveis.",
     "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
   },
+  "autofillSuggestions": {
+    "message": "Sugestões de preenchimento automático"
+  },
+  "autofillSuggestionsTip": {
+    "message": "Guarde uma credencial deste site para preenchimento automático"
+  },
+  "yourVaultIsEmpty": {
+    "message": "O seu cofre está vazio"
+  },
+  "noItemsMatchSearch": {
+    "message": "Nenhum item corresponde à sua pesquisa"
+  },
+  "clearFiltersOrTryAnother": {
+    "message": "Limpe os filtros ou tente outro termo de pesquisa"
+  },
+  "copyInfo": {
+    "message": "Copiar informações, $ITEMNAME$",
+    "description": "Aria label for a button that opens a menu with options to copy information from an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "moreOptions": {
+    "message": "Mais opções, $ITEMNAME$",
+    "description": "Aria label for a button that opens a menu with more options for an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
   "adminConsole": {
     "message": "Consola de administração"
   },
@@ -3155,7 +3229,37 @@
   "errorAssigningTargetFolder": {
     "message": "Erro ao atribuir a pasta de destino."
   },
+  "viewItemsIn": {
+    "message": "Ver itens em $NAME$",
+    "description": "Button to view the contents of a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
+  "backTo": {
+    "message": "Voltar a $NAME$",
+    "description": "Navigate back to a previous folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
   "new": {
     "message": "Novo"
+  },
+  "removeItem": {
+    "message": "Remover $NAME$",
+    "description": "Remove a selected option, such as a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
   }
 }

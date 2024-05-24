@@ -166,14 +166,20 @@
   "confirmIdentity": {
     "message": "Подтвердите вашу личность, чтобы продолжить."
   },
-  "account": {
-    "message": "Аккаунт"
-  },
   "changeMasterPassword": {
     "message": "Изменить мастер-пароль"
   },
   "continueToWebApp": {
     "message": "Перейти к веб-приложению?"
+  },
+  "continueToWebAppDesc": {
+    "message": "Изучите дополнительные возможности вашего аккаунта Bitwarden в веб-приложении."
+  },
+  "continueToHelpCenter": {
+    "message": "Перейти в справочный центр?"
+  },
+  "continueToHelpCenterDesc": {
+    "message": "Подробнее о том, как использовать Bitwarden, можно узнать в справочном центре."
   },
   "changeMasterPasswordOnWebConfirmation": {
     "message": "Изменить мастер-пароль можно в веб-приложении Bitwarden."
@@ -192,8 +198,44 @@
   "logOut": {
     "message": "Выход"
   },
+  "aboutBitwarden": {
+    "message": "О Bitwarden"
+  },
   "about": {
     "message": "О Bitwarden"
+  },
+  "moreFromBitwarden": {
+    "message": "Больше от Bitwarden"
+  },
+  "continueToBitwardenDotCom": {
+    "message": "Продолжить на bitwarden.com?"
+  },
+  "bitwardenForBusiness": {
+    "message": "Bitwarden для бизнеса"
+  },
+  "bitwardenAuthenticator": {
+    "message": "Bitwarden Authenticator"
+  },
+  "continueToAuthenticatorPageDesc": {
+    "message": "Bitwarden Authenticator позволяет хранить ключи и генерировать коды TOTP для двухэтапной аутентификации. Узнайте больше на bitwarden.com"
+  },
+  "bitwardenSecretsManager": {
+    "message": "Менеджер секретов Bitwarden"
+  },
+  "continueToSecretsManagerPageDesc": {
+    "message": "Храните, управляйте и делитесь секретами разработчиков с помощью менеджера секретов Bitwarden. Узнайте больше на bitwarden.com."
+  },
+  "passwordlessDotDev": {
+    "message": "Passwordless.dev"
+  },
+  "continueToPasswordlessDotDevPageDesc": {
+    "message": "Создавайте удобную и безопасную авторизацию без традиционных паролей с помощью Passwordless.dev. Узнайте больше на bitwarden.com."
+  },
+  "freeBitwardenFamilies": {
+    "message": "Бесплатный план Bitwarden Families"
+  },
+  "freeBitwardenFamiliesPageDesc": {
+    "message": "Вам доступно бесплатное предложение Bitwarden Families. Воспользуйтесь этим предложением сегодня в веб-приложении."
   },
   "version": {
     "message": "Версия"
@@ -253,8 +295,8 @@
   "passGenInfo": {
     "message": "Автоматическая генерация сильных и уникальных паролей для ваших логинов."
   },
-  "bitWebVault": {
-    "message": "Веб-хранилище Bitwarden"
+  "bitWebVaultApp": {
+    "message": "Веб-приложение Bitwarden"
   },
   "importItems": {
     "message": "Импорт элементов"
@@ -779,11 +821,8 @@
   "shared": {
     "message": "Общие"
   },
-  "learnOrg": {
-    "message": "Узнать об организациях"
-  },
-  "learnOrgConfirmation": {
-    "message": "Bitwarden позволяет делиться элементами вашего хранилища с другими пользователями с помощью организации. Хотите посетить сайт bitwarden.com, чтобы узнать больше?"
+  "bitwardenForBusinessPageDesc": {
+    "message": "Bitwarden для Бизнеса позволяет предоставлять доступ к элементам вашего хранилища другим пользователям с помощью организации. Более подробную информацию можно найти на сайте bitwarden.com."
   },
   "moveToOrganization": {
     "message": "Переместить в организацию"
@@ -1715,10 +1754,10 @@
     "message": "Биометрия в браузере не поддерживается этом устройстве."
   },
   "biometricsNotUnlockedTitle": {
-    "message": "User locked or logged out"
+    "message": "Пользователь заблокирован или отключился"
   },
   "biometricsNotUnlockedDesc": {
-    "message": "Please unlock this user in the desktop application and try again."
+    "message": "Пожалуйста, разблокируйте этого пользователя в приложении для компьютера и повторите попытку."
   },
   "biometricsFailedTitle": {
     "message": "Сбой биометрии"
@@ -3137,6 +3176,41 @@
     "message": "чтобы сделать их видимыми.",
     "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
   },
+  "autofillSuggestions": {
+    "message": "Предложения по автозаполнению"
+  },
+  "autofillSuggestionsTip": {
+    "message": "Сохранить логин для этого сайта для автозаполнения"
+  },
+  "yourVaultIsEmpty": {
+    "message": "Ваше хранилище пусто"
+  },
+  "noItemsMatchSearch": {
+    "message": "Нет элементов, соответствующих вашему запросу"
+  },
+  "clearFiltersOrTryAnother": {
+    "message": "Очистите фильтры или попробуйте другой поисковый запрос"
+  },
+  "copyInfo": {
+    "message": "Скопировать информацию, $ITEMNAME$",
+    "description": "Aria label for a button that opens a menu with options to copy information from an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "moreOptions": {
+    "message": "Больше опций, $ITEMNAME$",
+    "description": "Aria label for a button that opens a menu with more options for an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
   "adminConsole": {
     "message": "консоли администратора"
   },
@@ -3155,7 +3229,37 @@
   "errorAssigningTargetFolder": {
     "message": "Ошибка при назначении целевой папки."
   },
+  "viewItemsIn": {
+    "message": "Просмотр элементов в $NAME$",
+    "description": "Button to view the contents of a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
+  "backTo": {
+    "message": "Вернуться к $NAME$",
+    "description": "Navigate back to a previous folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
   "new": {
-    "message": "New"
+    "message": "Новый"
+  },
+  "removeItem": {
+    "message": "Удалить $NAME$",
+    "description": "Remove a selected option, such as a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
   }
 }

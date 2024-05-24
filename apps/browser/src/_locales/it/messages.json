@@ -166,14 +166,20 @@
   "confirmIdentity": {
     "message": "Conferma la tua identità per continuare."
   },
-  "account": {
-    "message": "Account"
-  },
   "changeMasterPassword": {
     "message": "Cambia password principale"
   },
   "continueToWebApp": {
     "message": "Passa al sito web?"
+  },
+  "continueToWebAppDesc": {
+    "message": "Esplora altre funzionalità del tuo account Bitwarden sul sito web."
+  },
+  "continueToHelpCenter": {
+    "message": "Continua sul centro assistenza?"
+  },
+  "continueToHelpCenterDesc": {
+    "message": "Scopri di più su come usare Bitwarden nel centro assistenza."
   },
   "changeMasterPasswordOnWebConfirmation": {
     "message": "Puoi modificare la tua password principale sul sito web di Bitwarden."
@@ -192,8 +198,44 @@
   "logOut": {
     "message": "Esci"
   },
+  "aboutBitwarden": {
+    "message": "Informazioni su Bitwarden"
+  },
   "about": {
     "message": "Informazioni"
+  },
+  "moreFromBitwarden": {
+    "message": "Altro da Bitwarden"
+  },
+  "continueToBitwardenDotCom": {
+    "message": "Continua su bitwarden.com?"
+  },
+  "bitwardenForBusiness": {
+    "message": "Bitwarden for Business"
+  },
+  "bitwardenAuthenticator": {
+    "message": "Bitwarden Authenticator"
+  },
+  "continueToAuthenticatorPageDesc": {
+    "message": "Bitwarden Authenticator ti consente di memorizzare le chiavi di autenticazione e generare codici TOTP per la verifica in due passaggi. Scopri di più su bitwarden.com"
+  },
+  "bitwardenSecretsManager": {
+    "message": "Bitwarden Secrets Manager"
+  },
+  "continueToSecretsManagerPageDesc": {
+    "message": "Archivia, gestisci e condividi in modo sicuro i segreti degli sviluppatori con Bitwarden Secrets Manager. Scopri di più su bitwarden.com."
+  },
+  "passwordlessDotDev": {
+    "message": "Passwordless.dev"
+  },
+  "continueToPasswordlessDotDevPageDesc": {
+    "message": "Crea esperienze di accesso fluide e sicure, libere dalle password tradizionali con Passwordless.dev. Scopri di più su bitwarden.com."
+  },
+  "freeBitwardenFamilies": {
+    "message": "Bitwarden Families gratis"
+  },
+  "freeBitwardenFamiliesPageDesc": {
+    "message": "Sei idoneo a ricevere Bitwarden Families gratis. Riscatta questa offerta nella web app."
   },
   "version": {
     "message": "Versione"
@@ -253,8 +295,8 @@
   "passGenInfo": {
     "message": "Genera automaticamente password complesse e uniche per i tuoi login."
   },
-  "bitWebVault": {
-    "message": "Cassaforte web di Bitwarden"
+  "bitWebVaultApp": {
+    "message": "Bitwarden web app"
   },
   "importItems": {
     "message": "Importa elementi"
@@ -779,11 +821,8 @@
   "shared": {
     "message": "Condiviso"
   },
-  "learnOrg": {
-    "message": "Ulteriori informazioni sulle organizzazioni"
-  },
-  "learnOrgConfirmation": {
-    "message": "Bitwarden ti permette di condividere gli elementi della tua cassaforte con altri usando un'organizzazione. Vuoi visitare il sito bitwarden.com per saperne di più?"
+  "bitwardenForBusinessPageDesc": {
+    "message": "Bitwarden for Business ti consente di condividere gli elementi della tua cassaforte con altri usando un'organizzazione. Scopri di più su bitwarden.com."
   },
   "moveToOrganization": {
     "message": "Sposta in organizzazione"
@@ -3137,6 +3176,41 @@
     "message": "per renderli visibili.",
     "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
   },
+  "autofillSuggestions": {
+    "message": "Suggerimenti per il riempimento automatico"
+  },
+  "autofillSuggestionsTip": {
+    "message": "Salva un elemento di accesso per questo sito da riempire automaticamente"
+  },
+  "yourVaultIsEmpty": {
+    "message": "La tua cassaforte è vuota"
+  },
+  "noItemsMatchSearch": {
+    "message": "Nessun risultato corrisponde alla tua ricerca"
+  },
+  "clearFiltersOrTryAnother": {
+    "message": "Cancella i filtri o prova un altro termine di ricerca"
+  },
+  "copyInfo": {
+    "message": "Copia informazioni, $ITEMNAME$",
+    "description": "Aria label for a button that opens a menu with options to copy information from an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "moreOptions": {
+    "message": "Più opzioni, $ITEMNAME$",
+    "description": "Aria label for a button that opens a menu with more options for an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
   "adminConsole": {
     "message": "Console di amministrazione"
   },
@@ -3155,7 +3229,37 @@
   "errorAssigningTargetFolder": {
     "message": "Errore nell'assegnazione della cartella di destinazione."
   },
+  "viewItemsIn": {
+    "message": "View items in $NAME$",
+    "description": "Button to view the contents of a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
+  "backTo": {
+    "message": "Back to $NAME$",
+    "description": "Navigate back to a previous folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
   "new": {
     "message": "Nuovo"
+  },
+  "removeItem": {
+    "message": "Remove $NAME$",
+    "description": "Remove a selected option, such as a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
   }
 }

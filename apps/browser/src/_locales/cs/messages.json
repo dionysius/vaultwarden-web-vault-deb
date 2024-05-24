@@ -166,14 +166,20 @@
   "confirmIdentity": {
     "message": "Pro pokračování potvrďte svou identitu."
   },
-  "account": {
-    "message": "Účet"
-  },
   "changeMasterPassword": {
     "message": "Změnit hlavní heslo"
   },
   "continueToWebApp": {
     "message": "Pokračovat do webové aplikace?"
+  },
+  "continueToWebAppDesc": {
+    "message": "Prozkoumejte další funkce Vašeho účtu Bitwarden ve webové aplikaci."
+  },
+  "continueToHelpCenter": {
+    "message": "Pokračovat do Centra nápovědy?"
+  },
+  "continueToHelpCenterDesc": {
+    "message": "Přečtěte si více o tom, jak používat Bitwarden v Centru nápovědy."
   },
   "changeMasterPasswordOnWebConfirmation": {
     "message": "Hlavní heslo můžete změnit ve webové aplikaci Bitwardenu."
@@ -192,8 +198,44 @@
   "logOut": {
     "message": "Odhlásit se"
   },
+  "aboutBitwarden": {
+    "message": "O Bitwardenu"
+  },
   "about": {
     "message": "O rozšíření"
+  },
+  "moreFromBitwarden": {
+    "message": "Více od Bitwardenu"
+  },
+  "continueToBitwardenDotCom": {
+    "message": "Pokračovat na bitwarden.com?"
+  },
+  "bitwardenForBusiness": {
+    "message": "Bitwarden pro byznys"
+  },
+  "bitwardenAuthenticator": {
+    "message": "Autentifikátor Bitwarden"
+  },
+  "continueToAuthenticatorPageDesc": {
+    "message": "Autentifikátor Bitwarden umožňuje ukládat ověřovací klíče a generovat TOTP kódy pro 2-fázové ověřování. Další informace naleznete na stránkách bitwarden.com"
+  },
+  "bitwardenSecretsManager": {
+    "message": "Správce tajných klíčů Bitwardenu"
+  },
+  "continueToSecretsManagerPageDesc": {
+    "message": "Bezpečně ukládá, spravuje a sdílí tajné klíče vývojáře se správcem tajných klíčů Bitwardenu. Více informací naleznete na stránkách bitwarden.com."
+  },
+  "passwordlessDotDev": {
+    "message": "Passwordless.dev"
+  },
+  "continueToPasswordlessDotDevPageDesc": {
+    "message": "S heslem Passwordless.dev vytvoří hladký a bezpečný přístup bez tradičních hesel. Další informace naleznete na stránkách bitwarden.com."
+  },
+  "freeBitwardenFamilies": {
+    "message": "Bitwarden pro rodinu zdarma"
+  },
+  "freeBitwardenFamiliesPageDesc": {
+    "message": "Máte nárok na Bitwarden pro rodinu zdarma. Uplatněte tuto nabídku ještě dnes ve webové aplikaci."
   },
   "version": {
     "message": "Verze"
@@ -253,8 +295,8 @@
   "passGenInfo": {
     "message": "Vygenerujte si silné a unikátní heslo pro přihlašovací údaje."
   },
-  "bitWebVault": {
-    "message": "Webový trezor Bitwardenu"
+  "bitWebVaultApp": {
+    "message": "Webová aplikace Bitwardenu"
   },
   "importItems": {
     "message": "Importovat položky"
@@ -779,11 +821,8 @@
   "shared": {
     "message": "Sdílené"
   },
-  "learnOrg": {
-    "message": "Více o organizacích"
-  },
-  "learnOrgConfirmation": {
-    "message": "Bitwarden Vám umožňuje sdílet položky v trezoru s ostatními prostřednictvím organizace. Chcete přejít na bitwarden.com a dozvědět se více?"
+  "bitwardenForBusinessPageDesc": {
+    "message": "Bitwarden pro bvyznys Vám umožňuje sdílet položky v trezoru s ostatními prostřednictvím organizace. Více informací naleznete na bitwarden.com."
   },
   "moveToOrganization": {
     "message": "Přesunout do organizace"
@@ -3137,6 +3176,41 @@
     "message": "aby byly viditelné.",
     "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
   },
+  "autofillSuggestions": {
+    "message": "Návrhy automatického vyplňování"
+  },
+  "autofillSuggestionsTip": {
+    "message": "Uložit přihlašovací údaje pro tuto stránku do automatického vyplňování"
+  },
+  "yourVaultIsEmpty": {
+    "message": "Váš trezor je prázdný"
+  },
+  "noItemsMatchSearch": {
+    "message": "Hledání neodpovídají žádné položky"
+  },
+  "clearFiltersOrTryAnother": {
+    "message": "Vymažte filtry nebo zkuste jiný hledaný výraz"
+  },
+  "copyInfo": {
+    "message": "Kopírovat informace, $ITEMNAME$",
+    "description": "Aria label for a button that opens a menu with options to copy information from an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "moreOptions": {
+    "message": "Více voleb, $ITEMNAME$",
+    "description": "Aria label for a button that opens a menu with more options for an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
   "adminConsole": {
     "message": "Konzole správce"
   },
@@ -3155,7 +3229,37 @@
   "errorAssigningTargetFolder": {
     "message": "Chyba při přiřazování cílové složky."
   },
+  "viewItemsIn": {
+    "message": "View items in $NAME$",
+    "description": "Button to view the contents of a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
+  "backTo": {
+    "message": "Back to $NAME$",
+    "description": "Navigate back to a previous folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
   "new": {
     "message": "Nové"
+  },
+  "removeItem": {
+    "message": "Remove $NAME$",
+    "description": "Remove a selected option, such as a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
   }
 }

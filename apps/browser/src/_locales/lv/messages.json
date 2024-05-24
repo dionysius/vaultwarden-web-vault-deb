@@ -166,14 +166,20 @@
   "confirmIdentity": {
     "message": "Jāapstiprina identitāte, lai turpinātu."
   },
-  "account": {
-    "message": "Konts"
-  },
   "changeMasterPassword": {
     "message": "Mainīt galveno paroli"
   },
   "continueToWebApp": {
     "message": "Pāriet uz tīmekļa lietotni?"
+  },
+  "continueToWebAppDesc": {
+    "message": "Vairāk sava Bitwarden konta iespēju var izpētīt tīmekļa vietnē."
+  },
+  "continueToHelpCenter": {
+    "message": "Pāriet uz palīdzības centru?"
+  },
+  "continueToHelpCenterDesc": {
+    "message": "Vairāk par to, kā izmantot Bitwarden, var uzzināt palīdzības centrā."
   },
   "changeMasterPasswordOnWebConfirmation": {
     "message": "Savu galveno paroli var mainīt Bitwarden tīmekļa lietotnē."
@@ -192,8 +198,44 @@
   "logOut": {
     "message": "Atteikties"
   },
+  "aboutBitwarden": {
+    "message": "Par Bitwarden"
+  },
   "about": {
     "message": "Par"
+  },
+  "moreFromBitwarden": {
+    "message": "Vairāk no Bitwarden"
+  },
+  "continueToBitwardenDotCom": {
+    "message": "Pāriet uz bitwarden.com?"
+  },
+  "bitwardenForBusiness": {
+    "message": "Bitwarden uzņēmējdarbībai"
+  },
+  "bitwardenAuthenticator": {
+    "message": "Bitwarden autentificētājs"
+  },
+  "continueToAuthenticatorPageDesc": {
+    "message": "Bitwarden autentificētājs ļauj glabāt autentificētāja atslēgas un izveidot TOTP kodus divpakāpju apliecināšanas plūsmām. Vairāk var uzzināt tīmekļvietnē bitwarden.com"
+  },
+  "bitwardenSecretsManager": {
+    "message": "Bitwarden noslēpumu pārvaldnieks"
+  },
+  "continueToSecretsManagerPageDesc": {
+    "message": "Droša izstrādātāju noslēpumu uzglabāšana, pārvaldīšana un kopīgošana ar Bitwarden noslēpumu pārvaldnieku. Vairāk var uzzināt tīmekļvietnē bitwarden.com."
+  },
+  "passwordlessDotDev": {
+    "message": "Passwordless.dev"
+  },
+  "continueToPasswordlessDotDevPageDesc": {
+    "message": "Plūdenu un drošu pieteikšanās pieredžu, kas ir brīvas no ierastajām parolēm, izveidošana ar Passwordless.dev. Vairāk var uzzināt tīmekļvietnē bitwarden.com."
+  },
+  "freeBitwardenFamilies": {
+    "message": "Bezmaksas Bitwarden ģimenēm"
+  },
+  "freeBitwardenFamiliesPageDesc": {
+    "message": "Tev ir tiesības uz bezmaksas Bitwarden ģimenēm. Šo piedāvājumu šodien var pieņemt tīmekļa lietotnē."
   },
   "version": {
     "message": "Laidiens"
@@ -253,8 +295,8 @@
   "passGenInfo": {
     "message": "Automātiski veido spēcīgas, neatkārtojamas paroles visiem pieteikšanās vienumiem."
   },
-  "bitWebVault": {
-    "message": "Bitwarden tīmekļa glabātava"
+  "bitWebVaultApp": {
+    "message": "Bitwarden tīmekļa lietotne"
   },
   "importItems": {
     "message": "Ievietot vienumus"
@@ -779,11 +821,8 @@
   "shared": {
     "message": "Kopīgots"
   },
-  "learnOrg": {
-    "message": "Uzzināt par apvienībām"
-  },
-  "learnOrgConfirmation": {
-    "message": "Bitwarden nodrošina iespēju kopīgot glabātavas vienumus ar citiem, kad tiek izmantota apvienība. Vai apmeklēt bitwarden.com tīmekļvietni, lai uzzinātu vairāk?"
+  "bitwardenForBusinessPageDesc": {
+    "message": "Bitwarden uzņēmējdarbībai nodrošina iespēju kopīgot savas glabātavas vienumus ar citiem, kad tiek izmantota apvienība. Vairāk var uzzināt tīmekļvietnē bitwarden.com."
   },
   "moveToOrganization": {
     "message": "Pārvietot uz apvienību"
@@ -3137,6 +3176,41 @@
     "message": "lai padarītu tos redzamus.",
     "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
   },
+  "autofillSuggestions": {
+    "message": "Ieteikumi automātiskajai aizpildei"
+  },
+  "autofillSuggestionsTip": {
+    "message": "Saglabāt pieteikšanās vienumi, ko automātiski aizpildīt šajā vietnē"
+  },
+  "yourVaultIsEmpty": {
+    "message": "Glabātava ir tukša"
+  },
+  "noItemsMatchSearch": {
+    "message": "Neviens vienums neatbilst meklētajam"
+  },
+  "clearFiltersOrTryAnother": {
+    "message": "Jānotīra atlases vērtības vai jāmēģina cits meklēšanas vaicājums"
+  },
+  "copyInfo": {
+    "message": "Kopēt informāciju, $ITEMNAME$",
+    "description": "Aria label for a button that opens a menu with options to copy information from an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "moreOptions": {
+    "message": "Vairāk iespēju, $ITEMNAME$",
+    "description": "Aria label for a button that opens a menu with more options for an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
   "adminConsole": {
     "message": "pārvaldības konsolē,"
   },
@@ -3155,7 +3229,37 @@
   "errorAssigningTargetFolder": {
     "message": "Kļūda mērķa mapes piešķiršanā."
   },
+  "viewItemsIn": {
+    "message": "View items in $NAME$",
+    "description": "Button to view the contents of a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
+  "backTo": {
+    "message": "Back to $NAME$",
+    "description": "Navigate back to a previous folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
   "new": {
     "message": "Jauns"
+  },
+  "removeItem": {
+    "message": "Remove $NAME$",
+    "description": "Remove a selected option, such as a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
   }
 }
