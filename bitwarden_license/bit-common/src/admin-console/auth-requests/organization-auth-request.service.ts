@@ -6,6 +6,7 @@ import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
 
 import { OrganizationAuthRequestApiService } from "./organization-auth-request-api.service";
+import { OrganizationAuthRequestUpdateRequest } from "./organization-auth-request-update.request";
 import { PendingAuthRequestView } from "./pending-auth-request.view";
 
 export class OrganizationAuthRequestService {
@@ -21,6 +22,42 @@ export class OrganizationAuthRequestService {
 
   async denyPendingRequests(organizationId: string, ...requestIds: string[]): Promise<void> {
     await this.organizationAuthRequestApiService.denyPendingRequests(organizationId, ...requestIds);
+  }
+
+  async approvePendingRequests(
+    organizationId: string,
+    authRequests: PendingAuthRequestView[],
+  ): Promise<void> {
+    const organizationUserIds = authRequests.map((r) => r.organizationUserId);
+    const details =
+      await this.organizationUserService.getManyOrganizationUserAccountRecoveryDetails(
+        organizationId,
+        organizationUserIds,
+      );
+
+    if (
+      details == null ||
+      details.data.length == 0 ||
+      details.data.some((d) => d.resetPasswordKey == null)
+    ) {
+      throw new Error(
+        "All users must be enrolled in account recovery (password reset) in order for the requests to be approved.",
+      );
+    }
+
+    const requestsToApprove = await Promise.all(
+      authRequests.map(async (r) => {
+        const detail = details.data.find((d) => d.organizationUserId === r.organizationUserId);
+        const encryptedKey = await this.getEncryptedUserKey(organizationId, r.publicKey, detail);
+
+        return new OrganizationAuthRequestUpdateRequest(r.id, true, encryptedKey.encryptedString);
+      }),
+    );
+
+    await this.organizationAuthRequestApiService.bulkUpdatePendingRequests(
+      organizationId,
+      requestsToApprove,
+    );
   }
 
   async approvePendingRequest(organizationId: string, authRequest: PendingAuthRequestView) {

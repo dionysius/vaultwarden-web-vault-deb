@@ -4,6 +4,7 @@ import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 
 import { AdminAuthRequestUpdateRequest } from "./admin-auth-request-update.request";
 import { BulkDenyAuthRequestsRequest } from "./bulk-deny-auth-requests.request";
+import { OrganizationAuthRequestUpdateRequest } from "./organization-auth-request-update.request";
 import { PendingAuthRequestView } from "./pending-auth-request.view";
 import { PendingOrganizationAuthRequestResponse } from "./pending-organization-auth-request.response";
 
@@ -29,6 +30,19 @@ export class OrganizationAuthRequestApiService {
       "POST",
       `/organizations/${organizationId}/auth-requests/deny`,
       new BulkDenyAuthRequestsRequest(requestIds),
+      true,
+      false,
+    );
+  }
+
+  async bulkUpdatePendingRequests(
+    organizationId: string,
+    items: OrganizationAuthRequestUpdateRequest[],
+  ): Promise<void> {
+    await this.apiService.send(
+      "POST",
+      `/organizations/${organizationId}/auth-requests`,
+      items,
       true,
       false,
     );

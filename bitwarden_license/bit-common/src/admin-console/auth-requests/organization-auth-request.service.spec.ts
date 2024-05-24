@@ -2,10 +2,12 @@ import { MockProxy, mock } from "jest-mock-extended";
 
 import { OrganizationUserService } from "@bitwarden/common/admin-console/abstractions/organization-user/organization-user.service";
 import { OrganizationUserResetPasswordDetailsResponse } from "@bitwarden/common/admin-console/abstractions/organization-user/responses";
+import { ListResponse } from "@bitwarden/common/models/response/list.response";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 
 import { OrganizationAuthRequestApiService } from "./organization-auth-request-api.service";
+import { OrganizationAuthRequestUpdateRequest } from "./organization-auth-request-update.request";
 import { OrganizationAuthRequestService } from "./organization-auth-request.service";
 import { PendingAuthRequestView } from "./pending-auth-request.view";
 
@@ -88,6 +90,55 @@ describe("OrganizationAuthRequestService", () => {
         "organizationId",
         "requestId1",
         "requestId2",
+      );
+    });
+  });
+
+  describe("approvePendingRequests", () => {
+    it("should approve the specified pending auth requests", async () => {
+      jest.spyOn(organizationAuthRequestApiService, "bulkUpdatePendingRequests");
+
+      const organizationId = "organizationId";
+
+      const organizationUserResetPasswordDetailsResponse = new ListResponse(
+        {
+          Data: [
+            {
+              organizationUserId: "organizationUserId1",
+              resetPasswordKey: "resetPasswordKey",
+              encryptedPrivateKey: "encryptedPrivateKey",
+            },
+          ],
+        },
+        OrganizationUserResetPasswordDetailsResponse,
+      );
+
+      organizationUserService.getManyOrganizationUserAccountRecoveryDetails.mockResolvedValueOnce(
+        organizationUserResetPasswordDetailsResponse,
+      );
+
+      const encryptedUserKey = new EncString("encryptedUserKey");
+      cryptoService.rsaDecrypt.mockResolvedValue(new Uint8Array(32));
+      cryptoService.rsaEncrypt.mockResolvedValue(encryptedUserKey);
+
+      const mockPendingAuthRequest = new PendingAuthRequestView();
+      mockPendingAuthRequest.id = "requestId1";
+      mockPendingAuthRequest.organizationUserId = "organizationUserId1";
+      mockPendingAuthRequest.publicKey = "publicKey1";
+
+      await organizationAuthRequestService.approvePendingRequests(organizationId, [
+        mockPendingAuthRequest,
+      ]);
+
+      expect(organizationAuthRequestApiService.bulkUpdatePendingRequests).toHaveBeenCalledWith(
+        organizationId,
+        [
+          new OrganizationAuthRequestUpdateRequest(
+            "requestId1",
+            true,
+            encryptedUserKey.encryptedString,
+          ),
+        ],
       );
     });
   });
