@@ -1,0 +1,83 @@
+<ng-container *ngIf="state === RegistrationStartState.USER_DATA_ENTRY">
+  <form [formGroup]="formGroup" [bitSubmit]="submit">
+    <bit-form-field>
+      <bit-label>{{ "emailAddress" | i18n }}</bit-label>
+      <input
+        id="register-start_form_input_email"
+        bitInput
+        type="email"
+        formControlName="email"
+        [attr.readonly]="emailReadonly ? true : null"
+        appAutofocus
+      />
+    </bit-form-field>
+
+    <bit-form-field>
+      <bit-label>{{ "name" | i18n }}</bit-label>
+      <input id="register-start_form_input_name" bitInput type="text" formControlName="name" />
+    </bit-form-field>
+
+    <bit-form-control *ngIf="!isSelfHost">
+      <input
+        id="register-start-form-input-accept-policies"
+        type="checkbox"
+        bitCheckbox
+        formControlName="acceptPolicies"
+      />
+      <bit-label for="register-start-form-input-accept-policies">
+        {{ "acceptPolicies" | i18n }}
+        <a
+          bitLink
+          linkType="primary"
+          href="https://bitwarden.com/terms/"
+          target="_blank"
+          rel="noreferrer"
+          >{{ "termsOfService" | i18n }}</a
+        >,
+        <a
+          bitLink
+          linkType="primary"
+          href="https://bitwarden.com/privacy/"
+          target="_blank"
+          rel="noreferrer"
+          >{{ "privacyPolicy" | i18n }}</a
+        >
+      </bit-label>
+    </bit-form-control>
+
+    <button [block]="true" type="submit" buttonType="primary" bitButton bitFormButton>
+      {{ "continue" | i18n }}
+    </button>
+
+    <bit-error-summary *ngIf="showErrorSummary" [formGroup]="formGroup"></bit-error-summary></form
+></ng-container>
+<ng-container *ngIf="state === RegistrationStartState.CHECK_EMAIL">
+  <div class="tw-flex tw-flex-col tw-items-center tw-justify-center">
+    <bit-icon [icon]="Icons.RegistrationCheckEmailIcon" class="tw-mb-6"></bit-icon>
+
+    <h2
+      bitTypography="h2"
+      id="check_your_email_heading"
+      class="tw-font-bold tw-mb-3 tw-text-main"
+      tabindex="0"
+      appAutofocus
+      aria-describedby="follow_the_link_body"
+    >
+      {{ "checkYourEmail" | i18n }}
+    </h2>
+
+    <p bitTypography="body1" class="tw-text-center tw-mb-3 tw-text-main" id="follow_the_link_body">
+      {{ "followTheLinkInTheEmailSentTo" | i18n }}
+      <span class="tw-font-bold">{{ email.value }}</span>
+      {{ "andContinueCreatingYourAccount" | i18n }}
+    </p>
+
+    <p bitTypography="helper" class="tw-text-center tw-text-main">
+      {{ "noEmail" | i18n }}
+      <a bitLink linkType="primary" class="tw-cursor-pointer" tabindex="0" (click)="goBack()">
+        {{ "goBack" | i18n }}
+      </a>
+      {{ "toEditYourEmailAddress" | i18n }}
+    </p>
+  </div>
+</ng-container>

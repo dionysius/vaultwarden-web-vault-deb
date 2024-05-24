@@ -1,0 +1,28 @@
+import { Meta, Story, Controls } from "@storybook/addon-docs";
+
+import * as stories from "./registration-start.stories";
+
+<Meta of={stories} />
+
+# RegistrationStart Component
+
+The Auth-owned RegistrationStartComponent is to be used for the first step in the new email
+verification stagegated registration process. It collects the user's email address (required) and
+optionally their name. On cloud environments, it requires acceptance of the terms of service and the
+privacy policy; the checkbox is hidden on self hosted environments.
+
+### Cloud Example
+
+<Story of={stories.CloudExample} />
+
+### Self Hosted Example
+
+<Story of={stories.SelfHostExample} />
+
+### Query Param Example
+
+The component accepts two query parameters: `email` and `emailReadonly`. If an email is provided, it
+will be pre-filled in the email input field. If `emailReadonly` is set to `true`, the email input
+field will be set to readonly. `emailReadonly` is primarily for the organization invite flow.
+
+<Story of={stories.QueryParamsExample} />

@@ -1,6 +1,7 @@
 {
   "extends": "./tsconfig",
   "compilerOptions": {
+    "resolveJsonModule": true,
     "paths": {
       "@bitwarden/admin-console": ["../admin-console/src"],
       "@bitwarden/angular/*": ["../angular/src/*"],

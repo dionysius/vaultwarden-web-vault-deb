@@ -1,0 +1,16 @@
+<form [formGroup]="formGroup">
+  <bit-form-field>
+    <bit-label>{{ "creatingAccountOn" | i18n }}</bit-label>
+    <bit-select formControlName="selectedRegion">
+      <bit-option
+        *ngFor="let regionConfig of availableRegionConfigs"
+        [value]="regionConfig"
+        [label]="regionConfig.domain"
+      ></bit-option>
+      <bit-option
+        [value]="ServerEnvironmentType.SelfHosted"
+        [label]="'selfHostedServer' | i18n"
+      ></bit-option>
+    </bit-select>
+  </bit-form-field>
+</form>
