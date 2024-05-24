@@ -1,21 +1,3 @@
-<div
-  [ngClass]="{
-    'page-header': selfHosted,
-    'tabbed-header': !selfHosted
-  }"
->
-  <h1>
-    {{ title }}
-    <small *ngIf="firstLoaded && loading">
-      <i
-        class="bwi bwi-spinner bwi-spin text-muted"
-        title="{{ 'loading' | i18n }}"
-        aria-hidden="true"
-      ></i>
-      <span class="sr-only">{{ "loading" | i18n }}</span>
-    </small>
-  </h1>
-</div>
 <ng-container *ngIf="!firstLoaded && loading">
   <i
     class="bwi bwi-spinner bwi-spin text-muted"
