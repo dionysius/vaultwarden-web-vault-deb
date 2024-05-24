@@ -2822,5 +2822,39 @@
   },
   "errorAssigningTargetFolder": {
     "message": "Fejl ved tildeling af målmappe."
+  },
+  "viewItemsIn": {
+    "message": "Vis emner i $NAME$",
+    "description": "Button to view the contents of a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
+  "backTo": {
+    "message": "Retur til $NAME$",
+    "description": "Navigate back to a previous folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
+  "back": {
+    "message": "Retur",
+    "description": "Button text to navigate back"
+  },
+  "removeItem": {
+    "message": "Fjern $NAME$",
+    "description": "Remove a selected option, such as a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
   }
 }

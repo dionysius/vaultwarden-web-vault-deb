@@ -2225,7 +2225,7 @@
     }
   },
   "forwarderUnknownForwarder": {
-    "message": "Unknown forwarder: '$SERVICENAME$'.",
+    "message": "Nieznana usługa przekierowania: '$SERVICENAME$'.",
     "description": "Displayed when the forwarding service is not supported.",
     "placeholders": {
       "servicename": {
@@ -2822,5 +2822,39 @@
   },
   "errorAssigningTargetFolder": {
     "message": "Wystąpił błąd podczas przypisywania folderu."
+  },
+  "viewItemsIn": {
+    "message": "Zobacz elementy w $NAME$",
+    "description": "Button to view the contents of a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
+  "backTo": {
+    "message": "Wróć do $NAME$",
+    "description": "Navigate back to a previous folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
+  },
+  "back": {
+    "message": "Powrót",
+    "description": "Button text to navigate back"
+  },
+  "removeItem": {
+    "message": "Usuń $NAME$",
+    "description": "Remove a selected option, such as a folder or collection",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Work"
+      }
+    }
   }
 }
