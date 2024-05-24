@@ -67,6 +67,16 @@ export abstract class OrganizationUserService {
   ): Promise<OrganizationUserResetPasswordDetailsResponse>;
 
   /**
+   * Retrieve reset password details for many organization users
+   * @param organizationId - Identifier for the organization
+   * @param ids - A list of organization user identifiers
+   */
+  abstract getManyOrganizationUserAccountRecoveryDetails(
+    organizationId: string,
+    ids: string[],
+  ): Promise<ListResponse<OrganizationUserResetPasswordDetailsResponse>>;
+
+  /**
    * Create new organization user invite(s) for the specified organization
    * @param organizationId - Identifier for the organization
    * @param request - New user invitation request details

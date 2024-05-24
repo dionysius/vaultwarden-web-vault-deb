@@ -70,6 +70,7 @@ export class OrganizationUserDetailsResponse extends OrganizationUserResponse {
 }
 
 export class OrganizationUserResetPasswordDetailsResponse extends BaseResponse {
+  organizationUserId: string;
   kdf: KdfType;
   kdfIterations: number;
   kdfMemory?: number;
@@ -79,6 +80,7 @@ export class OrganizationUserResetPasswordDetailsResponse extends BaseResponse {
 
   constructor(response: any) {
     super(response);
+    this.organizationUserId = this.getResponseProperty("OrganizationUserId");
     this.kdf = this.getResponseProperty("Kdf");
     this.kdfIterations = this.getResponseProperty("KdfIterations");
     this.kdfMemory = this.getResponseProperty("KdfMemory");
