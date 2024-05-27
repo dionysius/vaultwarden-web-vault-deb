@@ -3,28 +3,31 @@ import { Jsonify } from "type-fest";
 
 import {
   ActiveUserState,
-  KeyDefinition,
   StateProvider,
+  UserKeyDefinition,
   VAULT_BROWSER_MEMORY,
 } from "@bitwarden/common/platform/state";
 
 import { BrowserComponentState } from "../../models/browserComponentState";
 import { BrowserGroupingsComponentState } from "../../models/browserGroupingsComponentState";
 
-export const VAULT_BROWSER_GROUPINGS_COMPONENT = new KeyDefinition<BrowserGroupingsComponentState>(
-  VAULT_BROWSER_MEMORY,
-  "vault_browser_groupings_component",
-  {
-    deserializer: (obj: Jsonify<BrowserGroupingsComponentState>) =>
-      BrowserGroupingsComponentState.fromJSON(obj),
-  },
-);
+export const VAULT_BROWSER_GROUPINGS_COMPONENT =
+  new UserKeyDefinition<BrowserGroupingsComponentState>(
+    VAULT_BROWSER_MEMORY,
+    "vault_browser_groupings_component",
+    {
+      deserializer: (obj: Jsonify<BrowserGroupingsComponentState>) =>
+        BrowserGroupingsComponentState.fromJSON(obj),
+      clearOn: ["logout", "lock"],
+    },
+  );
 
-export const VAULT_BROWSER_COMPONENT = new KeyDefinition<BrowserComponentState>(
+export const VAULT_BROWSER_COMPONENT = new UserKeyDefinition<BrowserComponentState>(
   VAULT_BROWSER_MEMORY,
   "vault_browser_component",
   {
     deserializer: (obj: Jsonify<BrowserComponentState>) => BrowserComponentState.fromJSON(obj),
+    clearOn: ["logout", "lock"],
   },
 );
 

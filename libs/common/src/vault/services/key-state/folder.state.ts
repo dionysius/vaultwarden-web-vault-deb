@@ -1,15 +1,20 @@
 import { Jsonify } from "type-fest";
 
 import { CryptoService } from "../../../platform/abstractions/crypto.service";
-import { DeriveDefinition, FOLDER_DISK, KeyDefinition } from "../../../platform/state";
+import { DeriveDefinition, FOLDER_DISK, UserKeyDefinition } from "../../../platform/state";
 import { FolderService } from "../../abstractions/folder/folder.service.abstraction";
 import { FolderData } from "../../models/data/folder.data";
 import { Folder } from "../../models/domain/folder";
 import { FolderView } from "../../models/view/folder.view";
 
-export const FOLDER_ENCRYPTED_FOLDERS = KeyDefinition.record<FolderData>(FOLDER_DISK, "folders", {
-  deserializer: (obj: Jsonify<FolderData>) => FolderData.fromJSON(obj),
-});
+export const FOLDER_ENCRYPTED_FOLDERS = UserKeyDefinition.record<FolderData>(
+  FOLDER_DISK,
+  "folders",
+  {
+    deserializer: (obj: Jsonify<FolderData>) => FolderData.fromJSON(obj),
+    clearOn: ["logout"],
+  },
+);
 
 export const FOLDER_DECRYPTED_FOLDERS = DeriveDefinition.from<
   Record<string, FolderData>,

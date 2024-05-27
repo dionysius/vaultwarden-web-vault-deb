@@ -11,9 +11,9 @@ import { KdfType, PBKDF2_ITERATIONS } from "@bitwarden/common/platform/enums";
 import {
   StateProvider,
   ActiveUserState,
-  KeyDefinition,
   PREMIUM_BANNER_DISK_LOCAL,
   BANNERS_DISMISSED_DISK,
+  UserKeyDefinition,
 } from "@bitwarden/common/platform/state";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 
@@ -33,19 +33,21 @@ type PremiumBannerReprompt = {
 /** Banners that will be re-shown on a new session */
 type SessionBanners = Omit<VisibleVaultBanner, VisibleVaultBanner.Premium>;
 
-export const PREMIUM_BANNER_REPROMPT_KEY = new KeyDefinition<PremiumBannerReprompt>(
+export const PREMIUM_BANNER_REPROMPT_KEY = new UserKeyDefinition<PremiumBannerReprompt>(
   PREMIUM_BANNER_DISK_LOCAL,
   "bannerReprompt",
   {
     deserializer: (bannerReprompt) => bannerReprompt,
+    clearOn: [], // Do not clear user tutorials
   },
 );
 
-export const BANNERS_DISMISSED_DISK_KEY = new KeyDefinition<SessionBanners[]>(
+export const BANNERS_DISMISSED_DISK_KEY = new UserKeyDefinition<SessionBanners[]>(
   BANNERS_DISMISSED_DISK,
   "bannersDismissed",
   {
     deserializer: (bannersDismissed) => bannersDismissed,
+    clearOn: [], // Do not clear user tutorials
   },
 );
 
