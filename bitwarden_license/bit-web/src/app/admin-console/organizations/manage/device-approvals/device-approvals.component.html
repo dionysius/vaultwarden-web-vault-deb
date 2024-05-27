@@ -29,6 +29,16 @@
         ></button>
         <bit-menu #headerMenu>
           <button
+            *ngIf="bulkDeviceApprovalEnabled$ | async"
+            type="button"
+            bitMenuItem
+            (click)="approveAllRequests()"
+            [disabled]="actionInProgress"
+          >
+            <i class="bwi bwi-fw bwi-check" aria-hidden="true"></i>
+            {{ "approveAllRequests" | i18n }}
+          </button>
+          <button
             type="button"
             bitMenuItem
             (click)="denyAllRequests()"

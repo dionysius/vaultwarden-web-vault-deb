@@ -8,6 +8,8 @@ import { OrganizationAuthRequestService } from "@bitwarden/bit-common/admin-cons
 import { PendingAuthRequestView } from "@bitwarden/bit-common/admin-console/auth-requests/pending-auth-request.view";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { OrganizationUserService } from "@bitwarden/common/admin-console/abstractions/organization-user/organization-user.service";
+import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
+import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
@@ -41,6 +43,9 @@ export class DeviceApprovalsComponent implements OnInit, OnDestroy {
   actionInProgress = false;
 
   protected readonly Devices = Devices;
+  protected bulkDeviceApprovalEnabled$ = this.configService.getFeatureFlag$(
+    FeatureFlag.BulkDeviceApproval,
+  );
 
   private destroy$ = new Subject<void>();
   private refresh$ = new BehaviorSubject<void>(null);
@@ -52,6 +57,7 @@ export class DeviceApprovalsComponent implements OnInit, OnDestroy {
     private i18nService: I18nService,
     private logService: LogService,
     private validationService: ValidationService,
+    private configService: ConfigService,
   ) {}
 
   async ngOnInit() {
@@ -94,6 +100,24 @@ export class DeviceApprovalsComponent implements OnInit, OnDestroy {
           this.i18nService.t("resetPasswordDetailsError"),
         );
       }
+    });
+  }
+
+  async approveAllRequests() {
+    if (this.tableDataSource.data.length === 0) {
+      return;
+    }
+
+    await this.performAsyncAction(async () => {
+      await this.organizationAuthRequestService.approvePendingRequests(
+        this.organizationId,
+        this.tableDataSource.data,
+      );
+      this.platformUtilsService.showToast(
+        "success",
+        null,
+        this.i18nService.t("allLoginRequestsApproved"),
+      );
     });
   }
 
