@@ -2,12 +2,12 @@ import { program, Command } from "commander";
 
 import { ConfirmCommand } from "./admin-console/commands/confirm.command";
 import { ShareCommand } from "./admin-console/commands/share.command";
+import { BaseProgram } from "./base-program";
 import { EditCommand } from "./commands/edit.command";
 import { GetCommand } from "./commands/get.command";
 import { ListCommand } from "./commands/list.command";
 import { RestoreCommand } from "./commands/restore.command";
 import { Response } from "./models/response";
-import { Program } from "./program";
 import { ExportCommand } from "./tools/export.command";
 import { ImportCommand } from "./tools/import.command";
 import { CliUtils } from "./utils";
@@ -16,8 +16,8 @@ import { DeleteCommand } from "./vault/delete.command";
 
 const writeLn = CliUtils.writeLn;
 
-export class VaultProgram extends Program {
-  async register() {
+export class VaultProgram extends BaseProgram {
+  register() {
     program
       .addCommand(this.listCommand())
       .addCommand(this.getCommand())

@@ -7,9 +7,9 @@ import { program, Command, OptionValues } from "commander";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { SendType } from "@bitwarden/common/tools/send/enums/send-type";
 
+import { BaseProgram } from "../../base-program";
 import { GetCommand } from "../../commands/get.command";
 import { Response } from "../../models/response";
-import { Program } from "../../program";
 import { CliUtils } from "../../utils";
 
 import {
@@ -27,8 +27,8 @@ import { SendResponse } from "./models/send.response";
 
 const writeLn = CliUtils.writeLn;
 
-export class SendProgram extends Program {
-  async register() {
+export class SendProgram extends BaseProgram {
+  register() {
     program.addCommand(this.sendCommand());
     // receive is accessible both at `bw receive` and `bw send receive`
     program.addCommand(this.receiveCommand());

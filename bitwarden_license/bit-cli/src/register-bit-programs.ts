@@ -1,3 +1,4 @@
+import { DeviceApprovalProgram } from "./admin-console/device-approval";
 import { ServiceContainer } from "./service-container";
 
 /**
@@ -7,4 +8,6 @@ import { ServiceContainer } from "./service-container";
  * myProgram.register();
  * @param serviceContainer A class that instantiates services and makes them available for dependency injection
  */
-export async function registerBitPrograms(serviceContainer: ServiceContainer) {}
+export async function registerBitPrograms(serviceContainer: ServiceContainer) {
+  new DeviceApprovalProgram(serviceContainer).register();
+}
