@@ -28,6 +28,10 @@ on:
         description: "Cut RC branch?"
         default: true
         type: boolean
+      enable_slack_notification:
+        description: "Enable Slack notifications for upcoming release?"
+        default: false
+        type: boolean
 
 jobs:
   bump_version:
@@ -44,6 +48,14 @@ jobs:
         uses: bitwarden/gh-actions/version-check@main
         with:
           version: ${{ inputs.version_number_override }}
+
+      - name: Slack Notification Check
+        run: |
+          if [[ "${{ inputs.enable_slack_notification }}" == true ]]; then
+            echo "Slack notifications enabled."
+          else
+            echo "Slack notifications disabled."
+          fi
 
       - name: Checkout Branch
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
@@ -476,7 +488,7 @@ jobs:
         run: gh pr merge $PR_NUMBER --squash --auto --delete-branch
 
       - name: Report upcoming browser release version to Slack
-        if: ${{ steps.version-changed.outputs.changes_to_commit == 'TRUE' && steps.set-final-version-output.outputs.version_browser != '' }}
+        if: ${{ steps.version-changed.outputs.changes_to_commit == 'TRUE' && steps.set-final-version-output.outputs.version_browser != '' && inputs.enable_slack_notification == true }}
         uses: bitwarden/gh-actions/report-upcoming-release-version@main
         with:
           version: ${{ steps.set-final-version-output.outputs.version_browser }}
@@ -484,7 +496,7 @@ jobs:
           AZURE_KV_CI_SERVICE_PRINCIPAL: ${{ secrets.AZURE_KV_CI_SERVICE_PRINCIPAL }}
 
       - name: Report upcoming cli release version to Slack
-        if: ${{ steps.version-changed.outputs.changes_to_commit == 'TRUE' && steps.set-final-version-output.outputs.version_cli != '' }}
+        if: ${{ steps.version-changed.outputs.changes_to_commit == 'TRUE' && steps.set-final-version-output.outputs.version_cli != '' && inputs.enable_slack_notification == true }}
         uses: bitwarden/gh-actions/report-upcoming-release-version@main
         with:
           version: ${{ steps.set-final-version-output.outputs.version_cli }}
@@ -492,7 +504,7 @@ jobs:
           AZURE_KV_CI_SERVICE_PRINCIPAL: ${{ secrets.AZURE_KV_CI_SERVICE_PRINCIPAL }}
 
       - name: Report upcoming desktop release version to Slack
-        if: ${{ steps.version-changed.outputs.changes_to_commit == 'TRUE' && steps.set-final-version-output.outputs.version_desktop != '' }}
+        if: ${{ steps.version-changed.outputs.changes_to_commit == 'TRUE' && steps.set-final-version-output.outputs.version_desktop != '' && inputs.enable_slack_notification == true }}
         uses: bitwarden/gh-actions/report-upcoming-release-version@main
         with:
           version: ${{ steps.set-final-version-output.outputs.version_desktop }}
@@ -500,7 +512,7 @@ jobs:
           AZURE_KV_CI_SERVICE_PRINCIPAL: ${{ secrets.AZURE_KV_CI_SERVICE_PRINCIPAL }}
 
       - name: Report upcoming web release version to Slack
-        if: ${{ steps.version-changed.outputs.changes_to_commit == 'TRUE' && steps.set-final-version-output.outputs.version_web != '' }}
+        if: ${{ steps.version-changed.outputs.changes_to_commit == 'TRUE' && steps.set-final-version-output.outputs.version_web != '' && inputs.enable_slack_notification == true }}
         uses: bitwarden/gh-actions/report-upcoming-release-version@main
         with:
           version: ${{ steps.set-final-version-output.outputs.version_web }}
