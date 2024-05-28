@@ -42,4 +42,9 @@ export class ExportComponent extends BaseExportComponent {
       organizationService,
     );
   }
+
+  protected saved() {
+    super.saved();
+    this.platformUtilsService.showToast("success", null, this.i18nService.t("exportSuccess"));
+  }
 }
