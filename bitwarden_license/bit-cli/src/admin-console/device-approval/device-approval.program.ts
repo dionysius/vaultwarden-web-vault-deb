@@ -30,7 +30,7 @@ export class DeviceApprovalProgram extends BaseProgram {
       .argument("<organizationId>")
       .action(async (organizationId: string) => {
         await this.exitIfFeatureFlagDisabled(FeatureFlag.BulkDeviceApproval);
-        await this.exitIfNotAuthed();
+        await this.exitIfLocked();
 
         const cmd = new ListCommand();
         const response = await cmd.run(organizationId);
