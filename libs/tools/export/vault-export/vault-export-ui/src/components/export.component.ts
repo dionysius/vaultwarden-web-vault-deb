@@ -1,7 +1,9 @@
-import { Directive, EventEmitter, OnDestroy, OnInit, Output, ViewChild } from "@angular/core";
-import { UntypedFormBuilder, Validators } from "@angular/forms";
+import { CommonModule } from "@angular/common";
+import { Component, EventEmitter, OnDestroy, OnInit, Output, ViewChild } from "@angular/core";
+import { ReactiveFormsModule, UntypedFormBuilder, Validators } from "@angular/forms";
 import { map, merge, Observable, startWith, Subject, takeUntil } from "rxjs";
 
+import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { PasswordStrengthComponent } from "@bitwarden/angular/tools/password-strength/password-strength.component";
 import { UserVerificationDialogComponent } from "@bitwarden/auth/angular";
 import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
@@ -16,11 +18,70 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { EncryptedExportType } from "@bitwarden/common/tools/enums/encrypted-export-type.enum";
-import { DialogService } from "@bitwarden/components";
+import {
+  AsyncActionsModule,
+  BitSubmitDirective,
+  ButtonModule,
+  CalloutModule,
+  DialogService,
+  FormFieldModule,
+  IconButtonModule,
+  RadioButtonModule,
+  SelectModule,
+} from "@bitwarden/components";
 import { VaultExportServiceAbstraction } from "@bitwarden/vault-export-core";
 
-@Directive()
+import { ExportScopeCalloutComponent } from "./export-scope-callout.component";
+
+@Component({
+  selector: "tools-export",
+  templateUrl: "export.component.html",
+  standalone: true,
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    JslibModule,
+    FormFieldModule,
+    AsyncActionsModule,
+    ButtonModule,
+    IconButtonModule,
+    SelectModule,
+    CalloutModule,
+    RadioButtonModule,
+    ExportScopeCalloutComponent,
+    UserVerificationDialogComponent,
+  ],
+})
 export class ExportComponent implements OnInit, OnDestroy {
+  /**
+   * The hosting control also needs a bitSubmitDirective (on the Submit button) which calls this components {@link submit}-method.
+   * This components formState (loading/disabled) is emitted back up to the hosting component so for example the Submit button can be enabled/disabled and show loading state.
+   */
+  @ViewChild(BitSubmitDirective)
+  private bitSubmit: BitSubmitDirective;
+
+  /**
+   * Emits true when the BitSubmitDirective({@link bitSubmit} is executing {@link submit} and false when execution has completed.
+   * Example: Used to show the loading state of the submit button present on the hosting component
+   * */
+  @Output()
+  formLoading = new EventEmitter<boolean>();
+
+  /**
+   * Emits true when this form gets disabled and false when enabled.
+   * Example: Used to disable the submit button, which is present on the hosting component
+   * */
+  @Output()
+  formDisabled = new EventEmitter<boolean>();
+
+  /**
+   * Emits when the creation and download of the export-file have succeeded
+   * - Emits an null/empty string when exporting from an individual vault
+   * - Emits the organizationId when exporting from an organizationl vault
+   * */
+  @Output()
+  onSuccessfulExport = new EventEmitter<string>();
+
   @Output() onSaved = new EventEmitter();
   @ViewChild(PasswordStrengthComponent) passwordStrengthComponent: PasswordStrengthComponent;
 
@@ -74,6 +135,11 @@ export class ExportComponent implements OnInit, OnDestroy {
   ) {}
 
   async ngOnInit() {
+    // Setup subscription to emit when this form is enabled/disabled
+    this.exportForm.statusChanges.pipe(takeUntil(this.destroy$)).subscribe((c) => {
+      this.formDisabled.emit(c === "DISABLED");
+    });
+
     this.policyService
       .policyAppliesToActiveUser$(PolicyType.DisablePersonalVaultExport)
       .pipe(takeUntil(this.destroy$))
@@ -88,8 +154,7 @@ export class ExportComponent implements OnInit, OnDestroy {
       this.exportForm.get("format").valueChanges,
       this.exportForm.get("fileEncryptionType").valueChanges,
     )
-      .pipe(takeUntil(this.destroy$))
-      .pipe(startWith(0))
+      .pipe(startWith(0), takeUntil(this.destroy$))
       .subscribe(() => this.adjustValidators());
 
     if (this.organizationId) {
@@ -116,6 +181,12 @@ export class ExportComponent implements OnInit, OnDestroy {
       });
 
     this.exportForm.controls.vaultSelector.setValue("myVault");
+  }
+
+  ngAfterViewInit(): void {
+    this.bitSubmit.loading$.pipe(takeUntil(this.destroy$)).subscribe((loading) => {
+      this.formLoading.emit(loading);
+    });
   }
 
   ngOnDestroy(): void {
@@ -187,6 +258,7 @@ export class ExportComponent implements OnInit, OnDestroy {
 
   protected saved() {
     this.onSaved.emit();
+    this.onSuccessfulExport.emit(this.organizationId);
   }
 
   private async verifyUser(): Promise<boolean> {
@@ -235,6 +307,10 @@ export class ExportComponent implements OnInit, OnDestroy {
   }
 
   protected getFileName(prefix?: string) {
+    if (this.organizationId) {
+      prefix = "org";
+    }
+
     let extension = this.format;
     if (this.format === "encrypted_json") {
       if (prefix == null) {
@@ -248,7 +324,15 @@ export class ExportComponent implements OnInit, OnDestroy {
   }
 
   protected async collectEvent(): Promise<void> {
-    await this.eventCollectionService.collect(EventType.User_ClientExportedVault);
+    if (this.organizationId) {
+      return await this.eventCollectionService.collect(
+        EventType.Organization_ClientExportedVault,
+        null,
+        false,
+        this.organizationId,
+      );
+    }
+    return await this.eventCollectionService.collect(EventType.User_ClientExportedVault);
   }
 
   get format() {
