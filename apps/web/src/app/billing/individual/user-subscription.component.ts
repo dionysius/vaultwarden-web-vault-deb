@@ -20,6 +20,10 @@ import {
   OffboardingSurveyDialogResultType,
   openOffboardingSurvey,
 } from "../shared/offboarding-survey.component";
+import {
+  UpdateLicenseDialogComponent,
+  UpdateLicenseDialogResult,
+} from "../shared/update-license-dialog.component";
 
 @Component({
   templateUrl: "user-subscription.component.html",
@@ -131,21 +135,16 @@ export class UserSubscriptionComponent implements OnInit {
     });
   }
 
-  updateLicense() {
+  updateLicense = async () => {
     if (this.loading) {
       return;
     }
-    this.showUpdateLicense = true;
-  }
-
-  closeUpdateLicense(load: boolean) {
-    this.showUpdateLicense = false;
-    if (load) {
-      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-      // eslint-disable-next-line @typescript-eslint/no-floating-promises
-      this.load();
+    const dialogRef = UpdateLicenseDialogComponent.open(this.dialogService);
+    const result = await lastValueFrom(dialogRef.closed);
+    if (result === UpdateLicenseDialogResult.Updated) {
+      await this.load();
     }
-  }
+  };
 
   adjustStorage = (add: boolean) => {
     return async () => {

@@ -12,6 +12,7 @@ import { PaymentMethodComponent } from "./payment-method.component";
 import { PaymentComponent } from "./payment.component";
 import { SecretsManagerSubscribeComponent } from "./sm-subscribe.component";
 import { TaxInfoComponent } from "./tax-info.component";
+import { UpdateLicenseDialogComponent } from "./update-license-dialog.component";
 import { UpdateLicenseComponent } from "./update-license.component";
 
 @NgModule({
@@ -24,6 +25,7 @@ import { UpdateLicenseComponent } from "./update-license.component";
     PaymentMethodComponent,
     SecretsManagerSubscribeComponent,
     UpdateLicenseComponent,
+    UpdateLicenseDialogComponent,
     OffboardingSurveyComponent,
   ],
   exports: [
@@ -34,6 +36,7 @@ import { UpdateLicenseComponent } from "./update-license.component";
     BillingHistoryComponent,
     SecretsManagerSubscribeComponent,
     UpdateLicenseComponent,
+    UpdateLicenseDialogComponent,
     OffboardingSurveyComponent,
   ],
 })
