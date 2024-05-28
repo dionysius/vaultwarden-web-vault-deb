@@ -24,6 +24,7 @@ import { DefaultContentComponent } from "./content/default-content.component";
 import { EnterpriseContentComponent } from "./content/enterprise-content.component";
 import { Enterprise1ContentComponent } from "./content/enterprise1-content.component";
 import { Enterprise2ContentComponent } from "./content/enterprise2-content.component";
+import { LogoBadgesComponent } from "./content/logo-badges.component";
 import { LogoCnet5StarsComponent } from "./content/logo-cnet-5-stars.component";
 import { LogoCnetComponent } from "./content/logo-cnet.component";
 import { LogoForbesComponent } from "./content/logo-forbes.component";
@@ -69,6 +70,7 @@ import { VerticalStepperModule } from "./vertical-stepper/vertical-stepper.modul
     CnetTeamsContentComponent,
     AbmEnterpriseContentComponent,
     AbmTeamsContentComponent,
+    LogoBadgesComponent,
     LogoCnet5StarsComponent,
     LogoCnetComponent,
     LogoForbesComponent,
