@@ -24,6 +24,9 @@
   <ng-container *ngIf="!(showEmptyState$ | async)">
     <!-- TODO: Filter/search Section in PM-6824 and PM-6826.-->
 
+    <app-vault-v2-search (searchTextChanged)="handleSearchTextChange($event)">
+    </app-vault-v2-search>
+
     <div
       *ngIf="showNoResultsState$ | async"
       class="tw-flex tw-flex-col tw-h-full tw-justify-center"
