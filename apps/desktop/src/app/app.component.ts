@@ -57,7 +57,7 @@ import { PremiumComponent } from "../vault/app/accounts/premium.component";
 import { FolderAddEditComponent } from "../vault/app/vault/folder-add-edit.component";
 
 import { SettingsComponent } from "./accounts/settings.component";
-import { ExportComponent } from "./tools/export/export.component";
+import { ExportDesktopComponent } from "./tools/export/export-desktop.component";
 import { GeneratorComponent } from "./tools/generator.component";
 import { ImportDesktopComponent } from "./tools/import/import-desktop.component";
 import { PasswordGeneratorHistoryComponent } from "./tools/password-generator-history.component";
@@ -366,7 +366,7 @@ export class AppComponent implements OnInit, OnDestroy {
             await this.dialogService.open(ImportDesktopComponent);
             break;
           case "exportVault":
-            await this.openExportVault();
+            await this.dialogService.open(ExportDesktopComponent);
             break;
           case "newLogin":
             this.routeToVault("add", CipherType.Login);
@@ -461,26 +461,6 @@ export class AppComponent implements OnInit, OnDestroy {
     this.destroy$.next();
     this.destroy$.complete();
     this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
-  }
-
-  async openExportVault() {
-    this.modalService.closeAll();
-
-    const [modal, childComponent] = await this.modalService.openViewRef(
-      ExportComponent,
-      this.exportVaultModalRef,
-    );
-    this.modal = modal;
-
-    // eslint-disable-next-line rxjs-angular/prefer-takeuntil
-    childComponent.onSaved.subscribe(() => {
-      this.modal.close();
-    });
-
-    // eslint-disable-next-line rxjs-angular/prefer-takeuntil
-    this.modal.onClosed.subscribe(() => {
-      this.modal = null;
-    });
   }
 
   async addFolder() {

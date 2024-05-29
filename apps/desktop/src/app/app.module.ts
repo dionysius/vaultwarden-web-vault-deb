@@ -8,7 +8,6 @@ import { NgModule } from "@angular/core";
 import { ColorPasswordCountPipe } from "@bitwarden/angular/pipes/color-password-count.pipe";
 import { ColorPasswordPipe } from "@bitwarden/angular/pipes/color-password.pipe";
 import { DialogModule, CalloutModule } from "@bitwarden/components";
-import { ExportScopeCalloutComponent } from "@bitwarden/vault-export-ui";
 
 import { AccessibilityCookieComponent } from "../auth/accessibility-cookie.component";
 import { DeleteAccountComponent } from "../auth/delete-account.component";
@@ -47,7 +46,6 @@ import { HeaderComponent } from "./layout/header.component";
 import { NavComponent } from "./layout/nav.component";
 import { SearchComponent } from "./layout/search/search.component";
 import { SharedModule } from "./shared/shared.module";
-import { ExportComponent } from "./tools/export/export.component";
 import { GeneratorComponent } from "./tools/generator.component";
 import { PasswordGeneratorHistoryComponent } from "./tools/password-generator-history.component";
 import { AddEditComponent as SendAddEditComponent } from "./tools/send/add-edit.component";
@@ -63,7 +61,6 @@ import { SendComponent } from "./tools/send/send.component";
     CalloutModule,
     DeleteAccountComponent,
     UserVerificationComponent,
-    ExportScopeCalloutComponent,
   ],
   declarations: [
     AccessibilityCookieComponent,
@@ -77,7 +74,6 @@ import { SendComponent } from "./tools/send/send.component";
     ColorPasswordPipe,
     ColorPasswordCountPipe,
     EnvironmentComponent,
-    ExportComponent,
     FolderAddEditComponent,
     HeaderComponent,
     HintComponent,
