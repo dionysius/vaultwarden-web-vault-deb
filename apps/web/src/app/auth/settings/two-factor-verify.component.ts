@@ -10,6 +10,7 @@ import { SecretVerificationRequest } from "@bitwarden/common/auth/models/request
 import { AuthResponse } from "@bitwarden/common/auth/types/auth-response";
 import { TwoFactorResponse } from "@bitwarden/common/auth/types/two-factor-response";
 import { Verification } from "@bitwarden/common/auth/types/verification";
+import { ErrorResponse } from "@bitwarden/common/models/response/error.response";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { DialogService } from "@bitwarden/components";
 
@@ -32,6 +33,7 @@ export class TwoFactorVerifyComponent {
   protected formGroup = new FormGroup({
     secret: new FormControl<Verification | null>(null),
   });
+  invalidSecret: boolean = false;
 
   constructor(
     @Inject(DIALOG_DATA) protected data: TwoFactorVerifyDialogData,
@@ -45,23 +47,30 @@ export class TwoFactorVerifyComponent {
   }
 
   submit = async () => {
-    let hashedSecret: string;
-    this.formPromise = this.userVerificationService
-      .buildRequest(this.formGroup.value.secret)
-      .then((request) => {
-        hashedSecret =
-          this.formGroup.value.secret.type === VerificationType.MasterPassword
-            ? request.masterPasswordHash
-            : request.otp;
-        return this.apiCall(request);
-      });
+    try {
+      let hashedSecret: string;
+      this.formPromise = this.userVerificationService
+        .buildRequest(this.formGroup.value.secret)
+        .then((request) => {
+          hashedSecret =
+            this.formGroup.value.secret.type === VerificationType.MasterPassword
+              ? request.masterPasswordHash
+              : request.otp;
+          return this.apiCall(request);
+        });
 
-    const response = await this.formPromise;
-    this.dialogRef.close({
-      response: response,
-      secret: hashedSecret,
-      verificationType: this.formGroup.value.secret.type,
-    });
+      const response = await this.formPromise;
+      this.dialogRef.close({
+        response: response,
+        secret: hashedSecret,
+        verificationType: this.formGroup.value.secret.type,
+      });
+    } catch (e) {
+      if (e instanceof ErrorResponse && e.statusCode === 400) {
+        this.invalidSecret = true;
+      }
+      throw e;
+    }
   };
 
   get dialogTitle(): string {

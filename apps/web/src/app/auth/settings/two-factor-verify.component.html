@@ -7,8 +7,8 @@
     <ng-container bitDialogContent>
       <app-user-verification-form-input
         formControlName="secret"
-        ngDefaultControl
         name="secret"
+        [(invalidSecret)]="invalidSecret"
       ></app-user-verification-form-input>
     </ng-container>
     <ng-container bitDialogFooter>
