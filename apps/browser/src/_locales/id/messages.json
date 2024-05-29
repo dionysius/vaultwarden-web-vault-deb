@@ -173,13 +173,19 @@
     "message": "Lanjut ke aplikasi web?"
   },
   "continueToWebAppDesc": {
-    "message": "Explore more features of your Bitwarden account on the web app."
+    "message": "Temukan fitur Bitwarden lebih melalui aplikasi web."
   },
   "continueToHelpCenter": {
-    "message": "Continue to Help Center?"
+    "message": "Lanjutkan ke Pusat Bantuan?"
   },
   "continueToHelpCenterDesc": {
-    "message": "Learn more about how to use Bitwarden on the Help Center."
+    "message": "Pelajari lebih lanjut penggunaan Bitwarden di Pusat Bantuan."
+  },
+  "continueToBrowserExtensionStore": {
+    "message": "Lanjut ke pasar ekstensi peramban?"
+  },
+  "continueToBrowserExtensionStoreDesc": {
+    "message": "Help others find out if Bitwarden is right for them. Visit your browser's extension store and leave a rating now."
   },
   "changeMasterPasswordOnWebConfirmation": {
     "message": "Anda dapat merubah sandi utama di aplikasi Bitwarden web."
@@ -1600,6 +1606,9 @@
   "restoredItem": {
     "message": "Item Yang Dipulihkan"
   },
+  "alreadyHaveAccount": {
+    "message": "Already have an account?"
+  },
   "vaultTimeoutLogOutConfirmation": {
     "message": "Keluar akan menghapus semua akses ke brankas Anda dan membutuhkan otentikasi daring setelah periode batas waktu tertentu. Apakah Anda yakin ingin menggunakan pengaturan ini?"
   },
@@ -2534,6 +2543,27 @@
   },
   "ssoIdentifierRequired": {
     "message": "Organization SSO identifier is required."
+  },
+  "creatingAccountOn": {
+    "message": "Creating account on"
+  },
+  "checkYourEmail": {
+    "message": "Check your email"
+  },
+  "followTheLinkInTheEmailSentTo": {
+    "message": "Follow the link in the email sent to"
+  },
+  "andContinueCreatingYourAccount": {
+    "message": "and continue creating your account."
+  },
+  "noEmail": {
+    "message": "No email?"
+  },
+  "goBack": {
+    "message": "Go back"
+  },
+  "toEditYourEmailAddress": {
+    "message": "to edit your email address."
   },
   "eu": {
     "message": "EU",

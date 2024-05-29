@@ -181,6 +181,12 @@
   "continueToHelpCenterDesc": {
     "message": "Подробнее о том, как использовать Bitwarden, можно узнать в справочном центре."
   },
+  "continueToBrowserExtensionStore": {
+    "message": "Перейти в магазин расширений для браузера?"
+  },
+  "continueToBrowserExtensionStoreDesc": {
+    "message": "Помогите другим узнать, подходит ли им Bitwarden. Посетите магазин расширений вашего браузера и оставьте отзыв прямо сейчас."
+  },
   "changeMasterPasswordOnWebConfirmation": {
     "message": "Изменить мастер-пароль можно в веб-приложении Bitwarden."
   },
@@ -1600,6 +1606,9 @@
   "restoredItem": {
     "message": "Элемент восстановлен"
   },
+  "alreadyHaveAccount": {
+    "message": "Уже зарегистрированы?"
+  },
   "vaultTimeoutLogOutConfirmation": {
     "message": "По истечении тайм-аута будет выполнен выход, что приведет к отмене всех прав доступа к вашему хранилищу и потребует онлайн-аутентификации. Вы уверены, что хотите использовать этот параметр?"
   },
@@ -2534,6 +2543,27 @@
   },
   "ssoIdentifierRequired": {
     "message": "Требуется идентификатор SSO организации."
+  },
+  "creatingAccountOn": {
+    "message": "Создание аккаунта"
+  },
+  "checkYourEmail": {
+    "message": "Проверьте свою почту"
+  },
+  "followTheLinkInTheEmailSentTo": {
+    "message": "Перейдите по ссылке из отправленного письма"
+  },
+  "andContinueCreatingYourAccount": {
+    "message": "и продолжите создание аккаунта."
+  },
+  "noEmail": {
+    "message": "Нет письма?"
+  },
+  "goBack": {
+    "message": "Вернуться"
+  },
+  "toEditYourEmailAddress": {
+    "message": "для изменения адреса email."
   },
   "eu": {
     "message": "Европа",

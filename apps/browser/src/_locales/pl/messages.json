@@ -181,6 +181,12 @@
   "continueToHelpCenterDesc": {
     "message": "Dowiedz się więcej o tym, jak korzystać z centrum pomocy Bitwarden."
   },
+  "continueToBrowserExtensionStore": {
+    "message": "Kontynuować do sklepu z rozszerzeniami przeglądarki?"
+  },
+  "continueToBrowserExtensionStoreDesc": {
+    "message": "Pomóż innym dowiedzieć się, czy Bitwarden jest dla nich odpowiedni. Odwiedź swój sklep z rozszerzeniami do przeglądarki i zostaw ocenę."
+  },
   "changeMasterPasswordOnWebConfirmation": {
     "message": "Możesz zmienić swoje hasło główne w aplikacji internetowej Bitwarden."
   },
@@ -1600,6 +1606,9 @@
   "restoredItem": {
     "message": "Element został przywrócony"
   },
+  "alreadyHaveAccount": {
+    "message": "Masz już konto?"
+  },
   "vaultTimeoutLogOutConfirmation": {
     "message": "Po wylogowaniu się z sejfu musisz ponownie zalogować się, aby uzyskać do niego dostęp. Czy na pewno chcesz użyć tego ustawienia?"
   },
@@ -2534,6 +2543,27 @@
   },
   "ssoIdentifierRequired": {
     "message": "Identyfikator organizacji jest wymagany."
+  },
+  "creatingAccountOn": {
+    "message": "Tworzenie konta na"
+  },
+  "checkYourEmail": {
+    "message": "Sprawdź swoją pocztę e-mail"
+  },
+  "followTheLinkInTheEmailSentTo": {
+    "message": "Kliknij łącze w wiadomości e-mail wysłanej do"
+  },
+  "andContinueCreatingYourAccount": {
+    "message": "i kontynuuj tworzenie konta."
+  },
+  "noEmail": {
+    "message": "Brak wiadomości e-mail?"
+  },
+  "goBack": {
+    "message": "Wróć"
+  },
+  "toEditYourEmailAddress": {
+    "message": "aby edytować swój adres e-mail."
   },
   "eu": {
     "message": "UE",

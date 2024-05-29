@@ -181,6 +181,12 @@
   "continueToHelpCenterDesc": {
     "message": "Scopri di più su come usare Bitwarden nel centro assistenza."
   },
+  "continueToBrowserExtensionStore": {
+    "message": "Continua sullo store delle estensioni per il browser?"
+  },
+  "continueToBrowserExtensionStoreDesc": {
+    "message": "Aiuta gli altri a scoprire se Bitwarden è adatto a loro. Visita lo store delle estensioni del tuo browser e lascia una recensione."
+  },
   "changeMasterPasswordOnWebConfirmation": {
     "message": "Puoi modificare la tua password principale sul sito web di Bitwarden."
   },
@@ -1600,6 +1606,9 @@
   "restoredItem": {
     "message": "Elemento ripristinato"
   },
+  "alreadyHaveAccount": {
+    "message": "Hai già un account?"
+  },
   "vaultTimeoutLogOutConfirmation": {
     "message": "Uscire rimuoverà tutti gli accessi alla tua cassaforte e richiede l'autenticazione online dopo il periodo di timeout. Sei sicuro di voler usare questa opzione?"
   },
@@ -2535,6 +2544,27 @@
   "ssoIdentifierRequired": {
     "message": "Identificatore SSO dell'organizzazione obbligatorio."
   },
+  "creatingAccountOn": {
+    "message": "Creazione account su"
+  },
+  "checkYourEmail": {
+    "message": "Controlli la tua email"
+  },
+  "followTheLinkInTheEmailSentTo": {
+    "message": "Segui il link nell'email inviata a"
+  },
+  "andContinueCreatingYourAccount": {
+    "message": "e continua a creare il tuo account."
+  },
+  "noEmail": {
+    "message": "Nessuna email?"
+  },
+  "goBack": {
+    "message": "Torna indietro"
+  },
+  "toEditYourEmailAddress": {
+    "message": "per modificare il tuo indirizzo email."
+  },
   "eu": {
     "message": "EU",
     "description": "European Union"
@@ -3230,7 +3260,7 @@
     "message": "Errore nell'assegnazione della cartella di destinazione."
   },
   "viewItemsIn": {
-    "message": "View items in $NAME$",
+    "message": "Visualizza gli elementi in $NAME$",
     "description": "Button to view the contents of a folder or collection",
     "placeholders": {
       "name": {
@@ -3240,7 +3270,7 @@
     }
   },
   "backTo": {
-    "message": "Back to $NAME$",
+    "message": "Torna a $NAME$",
     "description": "Navigate back to a previous folder or collection",
     "placeholders": {
       "name": {
@@ -3253,7 +3283,7 @@
     "message": "Nuovo"
   },
   "removeItem": {
-    "message": "Remove $NAME$",
+    "message": "Rimuovi $NAME$",
     "description": "Remove a selected option, such as a folder or collection",
     "placeholders": {
       "name": {

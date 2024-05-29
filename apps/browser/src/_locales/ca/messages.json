@@ -181,6 +181,12 @@
   "continueToHelpCenterDesc": {
     "message": "Learn more about how to use Bitwarden on the Help Center."
   },
+  "continueToBrowserExtensionStore": {
+    "message": "Continue to browser extension store?"
+  },
+  "continueToBrowserExtensionStoreDesc": {
+    "message": "Help others find out if Bitwarden is right for them. Visit your browser's extension store and leave a rating now."
+  },
   "changeMasterPasswordOnWebConfirmation": {
     "message": "Podeu canviar la vostra contrasenya mestra a l'aplicació web de Bitwarden."
   },
@@ -1600,6 +1606,9 @@
   "restoredItem": {
     "message": "Element restaurat"
   },
+  "alreadyHaveAccount": {
+    "message": "Already have an account?"
+  },
   "vaultTimeoutLogOutConfirmation": {
     "message": "En tancar la sessió s'eliminarà tot l'accés a la vostra caixa forta i es requerirà una autenticació en línia després del període de temps d'espera. Esteu segur que voleu utilitzar aquesta configuració?"
   },
@@ -2534,6 +2543,27 @@
   },
   "ssoIdentifierRequired": {
     "message": "Es requereix un identificador SSO de l'organització."
+  },
+  "creatingAccountOn": {
+    "message": "Creating account on"
+  },
+  "checkYourEmail": {
+    "message": "Check your email"
+  },
+  "followTheLinkInTheEmailSentTo": {
+    "message": "Follow the link in the email sent to"
+  },
+  "andContinueCreatingYourAccount": {
+    "message": "and continue creating your account."
+  },
+  "noEmail": {
+    "message": "No email?"
+  },
+  "goBack": {
+    "message": "Go back"
+  },
+  "toEditYourEmailAddress": {
+    "message": "to edit your email address."
   },
   "eu": {
     "message": "UE",

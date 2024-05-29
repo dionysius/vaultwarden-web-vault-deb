@@ -181,6 +181,12 @@
   "continueToHelpCenterDesc": {
     "message": "Erfahre mehr über die Verwendung von Bitwarden im Hilfezentrum."
   },
+  "continueToBrowserExtensionStore": {
+    "message": "Weiter zum Store für Browser-Erweiterungen?"
+  },
+  "continueToBrowserExtensionStoreDesc": {
+    "message": "Hilf anderen herauszufinden, ob Bitwarden für sie das Richtige ist. Besuch den Erweiterungs-Store deines Browsers und hinterlasse jetzt eine Bewertung."
+  },
   "changeMasterPasswordOnWebConfirmation": {
     "message": "Du kannst dein Master-Passwort in der Bitwarden Web-App ändern."
   },
@@ -1600,6 +1606,9 @@
   "restoredItem": {
     "message": "Eintrag wiederhergestellt"
   },
+  "alreadyHaveAccount": {
+    "message": "Hast du bereits ein Konto?"
+  },
   "vaultTimeoutLogOutConfirmation": {
     "message": "Nach dem Ausloggen verlierest du jeglichen Zugriff auf deinen Tresor und es ist nach Ablauf der Timeout-Zeit eine Online-Authentifizierung erforderlich. Bist du sicher, dass du diese Einstellung nutzen möchten?"
   },
@@ -1688,7 +1697,7 @@
     "message": "Ihr neues Master-Passwort entspricht nicht den Anforderungen der Richtlinie."
   },
   "acceptPolicies": {
-    "message": "Durch Anwählen dieses Kästchens erklären Sie sich mit folgendem einverstanden:"
+    "message": "Durch Anwählen dieses Kästchens erklärst du dich mit Folgendem einverstanden:"
   },
   "acceptPoliciesRequired": {
     "message": "Die Nutzungsbedingungen und Datenschutzerklärung wurden nicht akzeptiert."
@@ -1757,7 +1766,7 @@
     "message": "Nutzer gesperrt oder abgemeldet"
   },
   "biometricsNotUnlockedDesc": {
-    "message": "Bitte entsperren Sie diesen Nutzer in der Desktop-Anwendung und versuchen Sie es erneut."
+    "message": "Bitte entsperre diesen Nutzer in der Desktop-Anwendung und versuche es erneut."
   },
   "biometricsFailedTitle": {
     "message": "Biometrie fehlgeschlagen"
@@ -2535,6 +2544,27 @@
   "ssoIdentifierRequired": {
     "message": "SSO-Kennung der Organisation erforderlich."
   },
+  "creatingAccountOn": {
+    "message": "Konto wird erstellt bei"
+  },
+  "checkYourEmail": {
+    "message": "Überprüfe deine E-Mail"
+  },
+  "followTheLinkInTheEmailSentTo": {
+    "message": "Folge dem Link in der E-Mail an"
+  },
+  "andContinueCreatingYourAccount": {
+    "message": "und fahre mit der Erstellung deines Kontos fort."
+  },
+  "noEmail": {
+    "message": "Keine E-Mail?"
+  },
+  "goBack": {
+    "message": "Geh zurück"
+  },
+  "toEditYourEmailAddress": {
+    "message": ", um deine E-Mail-Adresse zu bearbeiten."
+  },
   "eu": {
     "message": "EU",
     "description": "European Union"
@@ -3183,7 +3213,7 @@
     "message": "Speichere einen Login-Eintrag für diese Seite zum automatischen Ausfüllen"
   },
   "yourVaultIsEmpty": {
-    "message": "Ihr Tresor hat keine Einträge"
+    "message": "Dein Tresor hat keine Einträge"
   },
   "noItemsMatchSearch": {
     "message": "Deine Suche ergab keine Treffer"
@@ -3230,7 +3260,7 @@
     "message": "Fehler beim Zuweisen des Ziel-Ordners."
   },
   "viewItemsIn": {
-    "message": "View items in $NAME$",
+    "message": "Einträge in $NAME$ anzeigen",
     "description": "Button to view the contents of a folder or collection",
     "placeholders": {
       "name": {
@@ -3240,7 +3270,7 @@
     }
   },
   "backTo": {
-    "message": "Back to $NAME$",
+    "message": "Zurück zu $NAME$",
     "description": "Navigate back to a previous folder or collection",
     "placeholders": {
       "name": {
@@ -3253,7 +3283,7 @@
     "message": "Neu"
   },
   "removeItem": {
-    "message": "Remove $NAME$",
+    "message": "$NAME$ entfernen",
     "description": "Remove a selected option, such as a folder or collection",
     "placeholders": {
       "name": {

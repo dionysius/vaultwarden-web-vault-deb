@@ -181,6 +181,12 @@
   "continueToHelpCenterDesc": {
     "message": "Bitwarden のヘルプセンターで使用方法の詳細をご覧ください。"
   },
+  "continueToBrowserExtensionStore": {
+    "message": "ブラウザの拡張機能ストアに進みますか？"
+  },
+  "continueToBrowserExtensionStoreDesc": {
+    "message": "Bitwarden を他のユーザーにもおすすめしましょう。ブラウザーの拡張機能ストアにアクセスして、レビューをしてください。"
+  },
   "changeMasterPasswordOnWebConfirmation": {
     "message": "Bitwarden ウェブアプリでマスターパスワードを変更できます。"
   },
@@ -1600,6 +1606,9 @@
   "restoredItem": {
     "message": "リストアされたアイテム"
   },
+  "alreadyHaveAccount": {
+    "message": "すでにアカウントをお持ちですか？"
+  },
   "vaultTimeoutLogOutConfirmation": {
     "message": "ログアウトすると保管庫へのすべてのアクセスが制限され、タイムアウト期間後にオンライン認証が必要になります。 この設定を使用してもよろしいですか？"
   },
@@ -2535,6 +2544,27 @@
   "ssoIdentifierRequired": {
     "message": "組織の SSO ID が必要です。"
   },
+  "creatingAccountOn": {
+    "message": "アカウント作成："
+  },
+  "checkYourEmail": {
+    "message": "メールをご確認ください"
+  },
+  "followTheLinkInTheEmailSentTo": {
+    "message": "アカウントの作成を続けるには"
+  },
+  "andContinueCreatingYourAccount": {
+    "message": "に送られたメールのリンクを開いてください。"
+  },
+  "noEmail": {
+    "message": "メールがありませんか?"
+  },
+  "goBack": {
+    "message": "戻って"
+  },
+  "toEditYourEmailAddress": {
+    "message": "メールアドレスを編集してください。"
+  },
   "eu": {
     "message": "EU",
     "description": "European Union"
@@ -3230,7 +3260,7 @@
     "message": "ターゲットフォルダーの割り当てに失敗しました。"
   },
   "viewItemsIn": {
-    "message": "View items in $NAME$",
+    "message": "$NAME$ のアイテムを表示",
     "description": "Button to view the contents of a folder or collection",
     "placeholders": {
       "name": {
@@ -3240,7 +3270,7 @@
     }
   },
   "backTo": {
-    "message": "Back to $NAME$",
+    "message": "$NAME$ に戻る",
     "description": "Navigate back to a previous folder or collection",
     "placeholders": {
       "name": {
@@ -3253,7 +3283,7 @@
     "message": "新規作成"
   },
   "removeItem": {
-    "message": "Remove $NAME$",
+    "message": "$NAME$ を削除",
     "description": "Remove a selected option, such as a folder or collection",
     "placeholders": {
       "name": {

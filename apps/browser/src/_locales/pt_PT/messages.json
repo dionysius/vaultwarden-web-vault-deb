@@ -181,6 +181,12 @@
   "continueToHelpCenterDesc": {
     "message": "Saiba mais sobre como utilizar o Bitwarden no Centro de ajuda."
   },
+  "continueToBrowserExtensionStore": {
+    "message": "Continuar para a loja de extensões do navegador?"
+  },
+  "continueToBrowserExtensionStoreDesc": {
+    "message": "Ajude outras pessoas a descobrir se o Bitwarden lhes é adequado. Visite a loja de extensões do seu navegador e deixe uma avaliação agora."
+  },
   "changeMasterPasswordOnWebConfirmation": {
     "message": "Pode alterar a sua palavra-passe mestra na aplicação Web Bitwarden."
   },
@@ -1600,6 +1606,9 @@
   "restoredItem": {
     "message": "Item restaurado"
   },
+  "alreadyHaveAccount": {
+    "message": "Já tem uma conta?"
+  },
   "vaultTimeoutLogOutConfirmation": {
     "message": "Ao terminar sessão removerá todo o acesso ao seu cofre e requer autenticação online após o período de tempo limite. Tem a certeza de que pretende utilizar esta definição?"
   },
@@ -2534,6 +2543,27 @@
   },
   "ssoIdentifierRequired": {
     "message": "É necessário o identificador de SSO da organização."
+  },
+  "creatingAccountOn": {
+    "message": "A criar uma conta em"
+  },
+  "checkYourEmail": {
+    "message": "Verifique o seu e-mail"
+  },
+  "followTheLinkInTheEmailSentTo": {
+    "message": "Siga o link no e-mail enviado para"
+  },
+  "andContinueCreatingYourAccount": {
+    "message": "e continue a criação da sua conta."
+  },
+  "noEmail": {
+    "message": "Não recebeu o e-mail?"
+  },
+  "goBack": {
+    "message": "Volte atrás"
+  },
+  "toEditYourEmailAddress": {
+    "message": "para editar o seu endereço de e-mail."
   },
   "eu": {
     "message": "UE",

@@ -173,13 +173,19 @@
     "message": "Avataanko verkkosovellus?"
   },
   "continueToWebAppDesc": {
-    "message": "Explore more features of your Bitwarden account on the web app."
+    "message": "Tutustu Bitwarden-tilisi muihin ominaisuuksiin verkkosovelluksessa."
   },
   "continueToHelpCenter": {
-    "message": "Continue to Help Center?"
+    "message": "Avataanko tukikeskus?"
   },
   "continueToHelpCenterDesc": {
-    "message": "Learn more about how to use Bitwarden on the Help Center."
+    "message": "Lue Tukikeskuksesta lisää Bitwardenin käytöstä."
+  },
+  "continueToBrowserExtensionStore": {
+    "message": "Avataanko selaimen laajennuskauppa?"
+  },
+  "continueToBrowserExtensionStoreDesc": {
+    "message": "Auta muita selvittämään sopiiko Bitwarden heille. Arvioi se selaimesi laajennuskaupassa nyt."
   },
   "changeMasterPasswordOnWebConfirmation": {
     "message": "Voit vaihtaa pääsalasanasi Bitwardenin verkkosovelluksessa."
@@ -199,16 +205,16 @@
     "message": "Kirjaudu ulos"
   },
   "aboutBitwarden": {
-    "message": "About Bitwarden"
+    "message": "Tietoja Bitwardenista"
   },
   "about": {
     "message": "Tietoja"
   },
   "moreFromBitwarden": {
-    "message": "More from Bitwarden"
+    "message": "Lisää Bitwardenilta"
   },
   "continueToBitwardenDotCom": {
-    "message": "Continue to bitwarden.com?"
+    "message": "Avataanko bitwarden.com?"
   },
   "bitwardenForBusiness": {
     "message": "Bitwarden for Business"
@@ -217,25 +223,25 @@
     "message": "Bitwarden Authenticator"
   },
   "continueToAuthenticatorPageDesc": {
-    "message": "Bitwarden Authenticator allows you to store authenticator keys and generate TOTP codes for 2-step verification flows. Learn more on the bitwarden.com website"
+    "message": "Bitwarden Authenticatorin avulla voit säilyttää todennusavaimet ja luoda TOTP-koodeja kaksivaiheista tunnistautumista varten. Lue lisää bitwarden.com-sivustolta."
   },
   "bitwardenSecretsManager": {
-    "message": "Bitwarden Secrets Manager"
+    "message": "Bitwarden Salaisuushallinta"
   },
   "continueToSecretsManagerPageDesc": {
-    "message": "Securely store, manage, and share developer secrets with Bitwarden Secrets Manager. Learn more on the bitwarden.com website."
+    "message": "Säilytä, hallitse ja jaa kehittäjäsalaisuuksia turvallisesti Bitwardenin Salaisuushallinnalla. Lue lisää bitwarden.com-sivustolta."
   },
   "passwordlessDotDev": {
     "message": "Passwordless.dev"
   },
   "continueToPasswordlessDotDevPageDesc": {
-    "message": "Create smooth and secure login experiences free from traditional passwords with Passwordless.dev. Learn more on the bitwarden.com website."
+    "message": "Luo perinteisistä salasanoista vapaita sujuvia ja turvallisia kirjautumisratkaisuja Passwordless.dev-palvelussa. Tutustu palveluun bitwarden.com-sivustolla."
   },
   "freeBitwardenFamilies": {
-    "message": "Free Bitwarden Families"
+    "message": "Ilmainen Bitwarden Families"
   },
   "freeBitwardenFamiliesPageDesc": {
-    "message": "You are eligible for Free Bitwarden Families. Redeem this offer today in the web app."
+    "message": "Olet oikeutettu ilmaiseen Bitwarden Families -tilaukseen. Lunasta tarjous verkkosovelluksessa tänään."
   },
   "version": {
     "message": "Versio"
@@ -296,7 +302,7 @@
     "message": "Luo kirjautumistiedoillesi automaattisesti vahvoja, ainutlaatuisia salasanoja."
   },
   "bitWebVaultApp": {
-    "message": "Bitwarden web app"
+    "message": "Bitwarden Verkkosovellus"
   },
   "importItems": {
     "message": "Tuo kohteita"
@@ -822,7 +828,7 @@
     "message": "Jaettu"
   },
   "bitwardenForBusinessPageDesc": {
-    "message": "Bitwarden for Business allows you to share your vault items with others by using an organization. Learn more on the bitwarden.com website."
+    "message": "Bitwarden for Business mahdollistaa holvisi sisällön jakamisen organisaation avulla. Lue lisää osoitteesta bitwarden.com."
   },
   "moveToOrganization": {
     "message": "Siirrä organisaatiolle"
@@ -1600,6 +1606,9 @@
   "restoredItem": {
     "message": "Kohde palautettiin"
   },
+  "alreadyHaveAccount": {
+    "message": "Onko sinulla jo tili?"
+  },
   "vaultTimeoutLogOutConfirmation": {
     "message": "Uloskirjautuminen estää pääsyn holviisi ja vaatii ajan umpeuduttua todennuksen Internet-yhteyden välityksellä. Haluatko varmasti käyttää asetusta?"
   },
@@ -1754,10 +1763,10 @@
     "message": "Selaimen biometriaa ei tueta tällä laitteella."
   },
   "biometricsNotUnlockedTitle": {
-    "message": "User locked or logged out"
+    "message": "Käyttäjä on lukittu tai kirjattu ulos"
   },
   "biometricsNotUnlockedDesc": {
-    "message": "Please unlock this user in the desktop application and try again."
+    "message": "Poista käyttäjän lukitus työpöytäsovelluksesta ja yritä uudelleen."
   },
   "biometricsFailedTitle": {
     "message": "Biometria epäonnistui"
@@ -2535,6 +2544,27 @@
   "ssoIdentifierRequired": {
     "message": "Organisaation kertakirjautumistunniste tarvitaan."
   },
+  "creatingAccountOn": {
+    "message": "Luodaan tili palvelimelle"
+  },
+  "checkYourEmail": {
+    "message": "Tarkasta sähköpostisi"
+  },
+  "followTheLinkInTheEmailSentTo": {
+    "message": "Seuraa viestin linkkiä, joka lähetettiin sähköpostitse osoitteeseen"
+  },
+  "andContinueCreatingYourAccount": {
+    "message": "ja jatka tilin luontia."
+  },
+  "noEmail": {
+    "message": "Etkö saanut viestiä?"
+  },
+  "goBack": {
+    "message": "Palaa takaisin"
+  },
+  "toEditYourEmailAddress": {
+    "message": "muokataksesi sähköpostiosoitettasi."
+  },
   "eu": {
     "message": "EU",
     "description": "European Union"
@@ -3177,22 +3207,22 @@
     "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
   },
   "autofillSuggestions": {
-    "message": "Auto-fill suggestions"
+    "message": "Automaattitäytä ehdotukset"
   },
   "autofillSuggestionsTip": {
-    "message": "Save a login item for this site to auto-fill"
+    "message": "Tallenna sivustolle kirjautumiskohde automaattista täyttöä varten"
   },
   "yourVaultIsEmpty": {
-    "message": "Your vault is empty"
+    "message": "Holvisi on tyhjä"
   },
   "noItemsMatchSearch": {
-    "message": "No items match your search"
+    "message": "Mikään kohde ei vastaa hakuasi"
   },
   "clearFiltersOrTryAnother": {
-    "message": "Clear filters or try another search term"
+    "message": "Tyhjennä suodattimet tai kokeile toista hakutermiä"
   },
   "copyInfo": {
-    "message": "Copy info, $ITEMNAME$",
+    "message": "Kopio tiedot, $ITEMNAME$",
     "description": "Aria label for a button that opens a menu with options to copy information from an item.",
     "placeholders": {
       "itemname": {
@@ -3202,7 +3232,7 @@
     }
   },
   "moreOptions": {
-    "message": "More options, $ITEMNAME$",
+    "message": "Lisää valintoja, $ITEMNAME$",
     "description": "Aria label for a button that opens a menu with more options for an item.",
     "placeholders": {
       "itemname": {
@@ -3230,7 +3260,7 @@
     "message": "Virhe määritettäessä kohdekansiota."
   },
   "viewItemsIn": {
-    "message": "View items in $NAME$",
+    "message": "Näytä kohteen $NAME$ kohteet",
     "description": "Button to view the contents of a folder or collection",
     "placeholders": {
       "name": {
@@ -3240,7 +3270,7 @@
     }
   },
   "backTo": {
-    "message": "Back to $NAME$",
+    "message": "Palaa kohteeseen $NAME$",
     "description": "Navigate back to a previous folder or collection",
     "placeholders": {
       "name": {
@@ -3250,10 +3280,10 @@
     }
   },
   "new": {
-    "message": "New"
+    "message": "Uusi"
   },
   "removeItem": {
-    "message": "Remove $NAME$",
+    "message": "Poista $NAME$",
     "description": "Remove a selected option, such as a folder or collection",
     "placeholders": {
       "name": {

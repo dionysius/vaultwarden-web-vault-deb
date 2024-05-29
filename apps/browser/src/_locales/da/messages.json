@@ -181,6 +181,12 @@
   "continueToHelpCenterDesc": {
     "message": "Læs mere i Hjælpecenter om, hvordan man bruger Bitwarden."
   },
+  "continueToBrowserExtensionStore": {
+    "message": "Fortsæt til webbrowserudvidelsesbutik?"
+  },
+  "continueToBrowserExtensionStoreDesc": {
+    "message": "Hjælp andre med at finde ud af, om Bitwarden er det rigtige for dem. Besøg App Store og skriv en bedømmelse nu."
+  },
   "changeMasterPasswordOnWebConfirmation": {
     "message": "Hovedadgangskoden kan ændres via Bitwarden web-appen."
   },
@@ -1600,6 +1606,9 @@
   "restoredItem": {
     "message": "Element gendannet"
   },
+  "alreadyHaveAccount": {
+    "message": "Har allerede en konto?"
+  },
   "vaultTimeoutLogOutConfirmation": {
     "message": "Ved at logge ud fjernes al adgang til din boks og kræver online-godkendelse efter timeout-perioden. Er du sikker på, at du vil bruge denne indstilling?"
   },
@@ -2534,6 +2543,27 @@
   },
   "ssoIdentifierRequired": {
     "message": "Organisations SSO-identifikator kræves."
+  },
+  "creatingAccountOn": {
+    "message": "Opretter konto på"
+  },
+  "checkYourEmail": {
+    "message": "Tjek din e-mail"
+  },
+  "followTheLinkInTheEmailSentTo": {
+    "message": "Følg linket i e-mailen sendt til"
+  },
+  "andContinueCreatingYourAccount": {
+    "message": "og fortsæt med kontooprettelsen."
+  },
+  "noEmail": {
+    "message": "Ingen e-mail?"
+  },
+  "goBack": {
+    "message": "Gå tilbage"
+  },
+  "toEditYourEmailAddress": {
+    "message": "for at redigere e-mailadressen."
   },
   "eu": {
     "message": "EU",

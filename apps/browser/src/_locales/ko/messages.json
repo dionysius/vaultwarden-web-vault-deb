@@ -181,6 +181,12 @@
   "continueToHelpCenterDesc": {
     "message": "Learn more about how to use Bitwarden on the Help Center."
   },
+  "continueToBrowserExtensionStore": {
+    "message": "Continue to browser extension store?"
+  },
+  "continueToBrowserExtensionStoreDesc": {
+    "message": "Help others find out if Bitwarden is right for them. Visit your browser's extension store and leave a rating now."
+  },
   "changeMasterPasswordOnWebConfirmation": {
     "message": "Bitwarden 웹 앱에서 마스터 비밀번호를 변경할 수 있습니다."
   },
@@ -1600,6 +1606,9 @@
   "restoredItem": {
     "message": "복원된 항목"
   },
+  "alreadyHaveAccount": {
+    "message": "Already have an account?"
+  },
   "vaultTimeoutLogOutConfirmation": {
     "message": "로그아웃하면 보관함에 대한 모든 접근이 제거되며 시간 제한을 초과하면 온라인 인증을 요구합니다. 정말로 이 설정을 사용하시겠습니까?"
   },
@@ -2534,6 +2543,27 @@
   },
   "ssoIdentifierRequired": {
     "message": "Organization SSO identifier is required."
+  },
+  "creatingAccountOn": {
+    "message": "Creating account on"
+  },
+  "checkYourEmail": {
+    "message": "Check your email"
+  },
+  "followTheLinkInTheEmailSentTo": {
+    "message": "Follow the link in the email sent to"
+  },
+  "andContinueCreatingYourAccount": {
+    "message": "and continue creating your account."
+  },
+  "noEmail": {
+    "message": "No email?"
+  },
+  "goBack": {
+    "message": "Go back"
+  },
+  "toEditYourEmailAddress": {
+    "message": "to edit your email address."
   },
   "eu": {
     "message": "EU",

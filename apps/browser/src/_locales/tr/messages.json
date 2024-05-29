@@ -173,13 +173,19 @@
     "message": "Web uygulamasına devam edilsin mi?"
   },
   "continueToWebAppDesc": {
-    "message": "Explore more features of your Bitwarden account on the web app."
+    "message": "Web uygulamasında Bitwarden hesabınızın diğer özelliklerini keşfedin."
   },
   "continueToHelpCenter": {
-    "message": "Continue to Help Center?"
+    "message": "Yardım merkezine gitmek ister misiniz?"
   },
   "continueToHelpCenterDesc": {
-    "message": "Learn more about how to use Bitwarden on the Help Center."
+    "message": "Yardım merkezinde Bitwarden kullanımı hakkında daha fazla bilgi alabilirsiniz."
+  },
+  "continueToBrowserExtensionStore": {
+    "message": "Tarayıcınızın uzantı sitesine gitmek ister misiniz?"
+  },
+  "continueToBrowserExtensionStoreDesc": {
+    "message": "Help others find out if Bitwarden is right for them. Visit your browser's extension store and leave a rating now."
   },
   "changeMasterPasswordOnWebConfirmation": {
     "message": "Ana parolanızı Bitwarden web uygulamasında değiştirebilirsiniz."
@@ -199,19 +205,19 @@
     "message": "Çıkış yap"
   },
   "aboutBitwarden": {
-    "message": "About Bitwarden"
+    "message": "Bitwarden hakkında"
   },
   "about": {
     "message": "Hakkında"
   },
   "moreFromBitwarden": {
-    "message": "More from Bitwarden"
+    "message": "Diğer Bitwarden ürünleri"
   },
   "continueToBitwardenDotCom": {
-    "message": "Continue to bitwarden.com?"
+    "message": "bitwarden.com'a gitmek ister misiniz?"
   },
   "bitwardenForBusiness": {
-    "message": "Bitwarden for Business"
+    "message": "İşletmeler için Bitwarden"
   },
   "bitwardenAuthenticator": {
     "message": "Bitwarden Authenticator"
@@ -296,7 +302,7 @@
     "message": "Hesaplarınız için otomatik olarak güçlü, özgün parolalar oluşturun."
   },
   "bitWebVaultApp": {
-    "message": "Bitwarden web app"
+    "message": "Bitwarden web uygulaması"
   },
   "importItems": {
     "message": "Hesapları içe aktar"
@@ -822,7 +828,7 @@
     "message": "Paylaşılan"
   },
   "bitwardenForBusinessPageDesc": {
-    "message": "Bitwarden for Business allows you to share your vault items with others by using an organization. Learn more on the bitwarden.com website."
+    "message": "İşletmeler için Bitwarden'ı kullanarak kasanızdaki kayıtları başkalarıyla paylaşabilirsiniz. Daha fazla bilgi için bitwarden.com sitesini ziyaret edin."
   },
   "moveToOrganization": {
     "message": "Kuruluşa taşı"
@@ -1599,6 +1605,9 @@
   },
   "restoredItem": {
     "message": "Kayıt geri yüklendi"
+  },
+  "alreadyHaveAccount": {
+    "message": "Zaten hesabınız var mı?"
   },
   "vaultTimeoutLogOutConfirmation": {
     "message": "Çıkış yaptığınızda kasanıza erişiminiz tamamen sonlanacak ve zaman aşımının ardından çevrimiçi kimlik doğrulaması yapmanız gerekecek. Bu ayarı kullanmak istediğinizden emin misiniz?"
@@ -2535,6 +2544,27 @@
   "ssoIdentifierRequired": {
     "message": "Kuruluş SSO tanımlayıcısı gereklidir."
   },
+  "creatingAccountOn": {
+    "message": "Creating account on"
+  },
+  "checkYourEmail": {
+    "message": "Check your email"
+  },
+  "followTheLinkInTheEmailSentTo": {
+    "message": "Follow the link in the email sent to"
+  },
+  "andContinueCreatingYourAccount": {
+    "message": "and continue creating your account."
+  },
+  "noEmail": {
+    "message": "No email?"
+  },
+  "goBack": {
+    "message": "Go back"
+  },
+  "toEditYourEmailAddress": {
+    "message": "to edit your email address."
+  },
   "eu": {
     "message": "AB",
     "description": "European Union"
@@ -3177,16 +3207,16 @@
     "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
   },
   "autofillSuggestions": {
-    "message": "Auto-fill suggestions"
+    "message": "Önerileri otomatik doldur"
   },
   "autofillSuggestionsTip": {
     "message": "Save a login item for this site to auto-fill"
   },
   "yourVaultIsEmpty": {
-    "message": "Your vault is empty"
+    "message": "Kasanız boş"
   },
   "noItemsMatchSearch": {
-    "message": "No items match your search"
+    "message": "Aramanızla eşleşen kayıt yok"
   },
   "clearFiltersOrTryAnother": {
     "message": "Clear filters or try another search term"

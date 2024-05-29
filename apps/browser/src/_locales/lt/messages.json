@@ -181,6 +181,12 @@
   "continueToHelpCenterDesc": {
     "message": "Learn more about how to use Bitwarden on the Help Center."
   },
+  "continueToBrowserExtensionStore": {
+    "message": "Continue to browser extension store?"
+  },
+  "continueToBrowserExtensionStoreDesc": {
+    "message": "Help others find out if Bitwarden is right for them. Visit your browser's extension store and leave a rating now."
+  },
   "changeMasterPasswordOnWebConfirmation": {
     "message": "Pagrindinį slaptažodį galite pakeisti „Bitwarden“ žiniatinklio programėlėje."
   },
@@ -1600,6 +1606,9 @@
   "restoredItem": {
     "message": "Elementas atkurtas"
   },
+  "alreadyHaveAccount": {
+    "message": "Already have an account?"
+  },
   "vaultTimeoutLogOutConfirmation": {
     "message": "Atsijungus bus pašalinta visa Jūsų prieiga prie saugyklos, o pasibaigus skirtajam laikotarpiui bus reikalinga autentifikacija internetu. Ar tikrai norite naudoti šį nustatymą?"
   },
@@ -2534,6 +2543,27 @@
   },
   "ssoIdentifierRequired": {
     "message": "Organizacijos SSO identifikatorius yra reikalingas."
+  },
+  "creatingAccountOn": {
+    "message": "Creating account on"
+  },
+  "checkYourEmail": {
+    "message": "Check your email"
+  },
+  "followTheLinkInTheEmailSentTo": {
+    "message": "Follow the link in the email sent to"
+  },
+  "andContinueCreatingYourAccount": {
+    "message": "and continue creating your account."
+  },
+  "noEmail": {
+    "message": "No email?"
+  },
+  "goBack": {
+    "message": "Go back"
+  },
+  "toEditYourEmailAddress": {
+    "message": "to edit your email address."
   },
   "eu": {
     "message": "ES",

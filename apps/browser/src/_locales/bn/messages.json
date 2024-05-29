@@ -181,6 +181,12 @@
   "continueToHelpCenterDesc": {
     "message": "Learn more about how to use Bitwarden on the Help Center."
   },
+  "continueToBrowserExtensionStore": {
+    "message": "Continue to browser extension store?"
+  },
+  "continueToBrowserExtensionStoreDesc": {
+    "message": "Help others find out if Bitwarden is right for them. Visit your browser's extension store and leave a rating now."
+  },
   "changeMasterPasswordOnWebConfirmation": {
     "message": "You can change your master password on the Bitwarden web app."
   },
@@ -1600,6 +1606,9 @@
   "restoredItem": {
     "message": "বস্তু পুনরুদ্ধারকৃত"
   },
+  "alreadyHaveAccount": {
+    "message": "Already have an account?"
+  },
   "vaultTimeoutLogOutConfirmation": {
     "message": "লগ আউট করা আপনার ভল্টের সমস্ত অ্যাক্সেস সরিয়ে ফেলবে এবং সময়সীমার পরে অনলাইন প্রমাণীকরণের প্রয়োজন। আপনি কি নিশ্চিত যে এই সেটিংটি ব্যবহার করবেন?"
   },
@@ -2534,6 +2543,27 @@
   },
   "ssoIdentifierRequired": {
     "message": "Organization SSO identifier is required."
+  },
+  "creatingAccountOn": {
+    "message": "Creating account on"
+  },
+  "checkYourEmail": {
+    "message": "Check your email"
+  },
+  "followTheLinkInTheEmailSentTo": {
+    "message": "Follow the link in the email sent to"
+  },
+  "andContinueCreatingYourAccount": {
+    "message": "and continue creating your account."
+  },
+  "noEmail": {
+    "message": "No email?"
+  },
+  "goBack": {
+    "message": "Go back"
+  },
+  "toEditYourEmailAddress": {
+    "message": "to edit your email address."
   },
   "eu": {
     "message": "EU",

@@ -181,6 +181,12 @@
   "continueToHelpCenterDesc": {
     "message": "Viac informácií o používaní Bitwardenu nájdete v centre pomoci."
   },
+  "continueToBrowserExtensionStore": {
+    "message": "Pokračovať do obchodu s rozšíreniami pre prehliadače?"
+  },
+  "continueToBrowserExtensionStoreDesc": {
+    "message": "Pomôžte ostatným zistiť, či je Bitwarden pre nich vhodný. Navštívte obchod s rozšíreniami pre prehliadače a pridajte hodnotenie."
+  },
   "changeMasterPasswordOnWebConfirmation": {
     "message": "Hlavné heslo si môžete zmeniť vo webovej aplikácii Bitwarden."
   },
@@ -1600,6 +1606,9 @@
   "restoredItem": {
     "message": "Obnovená položka"
   },
+  "alreadyHaveAccount": {
+    "message": "Už máte účet?"
+  },
   "vaultTimeoutLogOutConfirmation": {
     "message": "Odhlásenie bude vyžadovať online prihlásenie po vypršaní časového limitu. Naozaj chcete použiť toto nastavenie?"
   },
@@ -2535,6 +2544,27 @@
   "ssoIdentifierRequired": {
     "message": "Pole identifikátora SSO je povinné."
   },
+  "creatingAccountOn": {
+    "message": "Vytváranie účtu na"
+  },
+  "checkYourEmail": {
+    "message": "Skontrolujte si svoj e-mail"
+  },
+  "followTheLinkInTheEmailSentTo": {
+    "message": "Postupujte podľa odkazu v e-maile zaslanom na adresu"
+  },
+  "andContinueCreatingYourAccount": {
+    "message": "a pokračujte vo vytváraní účtu."
+  },
+  "noEmail": {
+    "message": "Žiadny email?"
+  },
+  "goBack": {
+    "message": "Prejsť späť"
+  },
+  "toEditYourEmailAddress": {
+    "message": "na úpravu e-mailovej adresy."
+  },
   "eu": {
     "message": "EÚ",
     "description": "European Union"
@@ -3230,7 +3260,7 @@
     "message": "Chyba pri priraďovaní cieľového priečinka."
   },
   "viewItemsIn": {
-    "message": "View items in $NAME$",
+    "message": "Zobraziť položky v $NAME$",
     "description": "Button to view the contents of a folder or collection",
     "placeholders": {
       "name": {
@@ -3240,7 +3270,7 @@
     }
   },
   "backTo": {
-    "message": "Back to $NAME$",
+    "message": "Späť do $NAME$",
     "description": "Navigate back to a previous folder or collection",
     "placeholders": {
       "name": {
@@ -3253,7 +3283,7 @@
     "message": "Nová"
   },
   "removeItem": {
-    "message": "Remove $NAME$",
+    "message": "Odstrániť $NAME$",
     "description": "Remove a selected option, such as a folder or collection",
     "placeholders": {
       "name": {

@@ -181,6 +181,12 @@
   "continueToHelpCenterDesc": {
     "message": "További információ a Bitwarden használatáról a Segítség Központban."
   },
+  "continueToBrowserExtensionStore": {
+    "message": "Továbblépés a böngésző bővítmények áruházba?"
+  },
+  "continueToBrowserExtensionStoreDesc": {
+    "message": "Segítsünk másoknak megtudni, hogy a Bitwarden megfelelő-e számukra. Látogassunk el a böngésző bővítmény áruházba és értékeljük most."
+  },
   "changeMasterPasswordOnWebConfirmation": {
     "message": "A mesterjelszó a Bitwarden webalkalmazásban módosítható."
   },
@@ -1600,6 +1606,9 @@
   "restoredItem": {
     "message": "Visszaállított elem"
   },
+  "alreadyHaveAccount": {
+    "message": "Van már saját fiók?"
+  },
   "vaultTimeoutLogOutConfirmation": {
     "message": "Kijelentkezve az összes széf elérés eltávolításra kerül és webes hitelesítésre van szükség az időkifutás után. Biztosan szeretnénk használni ezt a beállítást?"
   },
@@ -2535,6 +2544,27 @@
   "ssoIdentifierRequired": {
     "message": "A szervezeti SSO azonosító megadása szükséges."
   },
+  "creatingAccountOn": {
+    "message": "Fiók létrehozása:"
+  },
+  "checkYourEmail": {
+    "message": "Email cím postaláda ellenőrzése"
+  },
+  "followTheLinkInTheEmailSentTo": {
+    "message": "Kövessük a hivatkozást az elküldött emailben"
+  },
+  "andContinueCreatingYourAccount": {
+    "message": "és folytassuk a fiók létrehozását."
+  },
+  "noEmail": {
+    "message": "Nem érkezett email?"
+  },
+  "goBack": {
+    "message": "Vissza"
+  },
+  "toEditYourEmailAddress": {
+    "message": "az email cím szerkesztéséhez."
+  },
   "eu": {
     "message": "EU",
     "description": "European Union"
@@ -3230,7 +3260,7 @@
     "message": "Hiba történt a célmappa hozzárendelése során."
   },
   "viewItemsIn": {
-    "message": "View items in $NAME$",
+    "message": "$NAME$ elemek megtekintése",
     "description": "Button to view the contents of a folder or collection",
     "placeholders": {
       "name": {
@@ -3240,7 +3270,7 @@
     }
   },
   "backTo": {
-    "message": "Back to $NAME$",
+    "message": "Vissza: $NAME$",
     "description": "Navigate back to a previous folder or collection",
     "placeholders": {
       "name": {
@@ -3253,7 +3283,7 @@
     "message": "Új"
   },
   "removeItem": {
-    "message": "Remove $NAME$",
+    "message": "$NAME$ eltávolítása",
     "description": "Remove a selected option, such as a folder or collection",
     "placeholders": {
       "name": {

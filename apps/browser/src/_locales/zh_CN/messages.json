@@ -181,6 +181,12 @@
   "continueToHelpCenterDesc": {
     "message": "访问帮助中心了解更多如何使用 Bitwarden 的信息。"
   },
+  "continueToBrowserExtensionStore": {
+    "message": "前往浏览器扩展商店吗？"
+  },
+  "continueToBrowserExtensionStoreDesc": {
+    "message": "帮助别人了解 Bitwarden 是否适合他们。立即访问浏览器的扩展程序商店并留下评分。"
+  },
   "changeMasterPasswordOnWebConfirmation": {
     "message": "您可以在 Bitwarden 网页应用上更改您的主密码。"
   },
@@ -229,7 +235,7 @@
     "message": "Passwordless.dev"
   },
   "continueToPasswordlessDotDevPageDesc": {
-    "message": "使用 Passwordless.dev 摆脱传统密码，创建流畅且安全的登录体验。访问 bitwarden.com 网站了解更多信息。"
+    "message": "使用 Passwordless.dev 摆脱传统密码束缚，打造流畅且安全的登录体验。访问 bitwarden.com 网站了解更多信息。"
   },
   "freeBitwardenFamilies": {
     "message": "免费 Bitwarden 家庭"
@@ -1600,6 +1606,9 @@
   "restoredItem": {
     "message": "项目已恢复"
   },
+  "alreadyHaveAccount": {
+    "message": "已经拥有账户了吗？"
+  },
   "vaultTimeoutLogOutConfirmation": {
     "message": "超时后注销账户将解除对密码库的所有访问权限，并需要进行在线身份验证。确定使用此设置吗？"
   },
@@ -2398,7 +2407,7 @@
     "message": "正登录为"
   },
   "notYou": {
-    "message": "不是你？"
+    "message": "不是您吗？"
   },
   "newAroundHere": {
     "message": "初来乍到吗？"
@@ -2534,6 +2543,27 @@
   },
   "ssoIdentifierRequired": {
     "message": "必须填写组织 SSO 标识符。"
+  },
+  "creatingAccountOn": {
+    "message": "创建账户于"
+  },
+  "checkYourEmail": {
+    "message": "检查您的电子邮箱"
+  },
+  "followTheLinkInTheEmailSentTo": {
+    "message": "点击发送到电子邮件中的链接"
+  },
+  "andContinueCreatingYourAccount": {
+    "message": "然后继续创建您的账户。"
+  },
+  "noEmail": {
+    "message": "没收到电子邮件吗？"
+  },
+  "goBack": {
+    "message": "返回"
+  },
+  "toEditYourEmailAddress": {
+    "message": "编辑您的电子邮件地址。"
   },
   "eu": {
     "message": "欧盟",
@@ -2747,7 +2777,7 @@
     "description": "Button text to display in overlay when the account is locked."
   },
   "fillCredentialsFor": {
-    "message": "填写凭据",
+    "message": "为其填写凭据",
     "description": "Screen reader text for when overlay item is in focused"
   },
   "partialUsername": {
@@ -2823,7 +2853,7 @@
     "message": "无法完成生物识别。"
   },
   "needADifferentMethod": {
-    "message": "需要一个不同的方法？"
+    "message": "尝试其他方式吗？"
   },
   "useMasterPassword": {
     "message": "使用主密码"
@@ -3054,7 +3084,7 @@
     "message": "从 CSV 导入"
   },
   "lastPassTryAgainCheckEmail": {
-    "message": "请重试或查找来自 LastPass 的电子邮件以验证您的身份。"
+    "message": "请重试或查找来自 LastPass 的可以验证您的身份的电子邮件。"
   },
   "collection": {
     "message": "集合"
@@ -3230,7 +3260,7 @@
     "message": "分配目标文件夹时出错。"
   },
   "viewItemsIn": {
-    "message": "View items in $NAME$",
+    "message": "查看 $NAME$ 中的项目",
     "description": "Button to view the contents of a folder or collection",
     "placeholders": {
       "name": {
@@ -3240,7 +3270,7 @@
     }
   },
   "backTo": {
-    "message": "Back to $NAME$",
+    "message": "返回 $NAME$",
     "description": "Navigate back to a previous folder or collection",
     "placeholders": {
       "name": {
@@ -3253,7 +3283,7 @@
     "message": "新建"
   },
   "removeItem": {
-    "message": "Remove $NAME$",
+    "message": "删除 $NAME$",
     "description": "Remove a selected option, such as a folder or collection",
     "placeholders": {
       "name": {

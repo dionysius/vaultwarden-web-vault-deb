@@ -3,11 +3,11 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden Password Manager",
+    "message": "Bitwarden Lösenordshanterare",
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
-    "message": "At home, at work, or on the go, Bitwarden easily secures all your passwords, passkeys, and sensitive information",
+    "message": "Hemma, på jobbet eller på språng säkrar Bitwarden enkelt alla dina lösenord, lösenord och känslig information",
     "description": "Extension description, MUST be less than 112 characters (Safari restriction)"
   },
   "loginOrCreateNewAccount": {
@@ -170,19 +170,25 @@
     "message": "Ändra huvudlösenord"
   },
   "continueToWebApp": {
-    "message": "Continue to web app?"
+    "message": "Fortsätt till webbapp?"
   },
   "continueToWebAppDesc": {
-    "message": "Explore more features of your Bitwarden account on the web app."
+    "message": "Utforska fler funktioner i ditt Bitwarden-konto i webbappen."
   },
   "continueToHelpCenter": {
-    "message": "Continue to Help Center?"
+    "message": "Fortsätt till Hjälpcenter?"
   },
   "continueToHelpCenterDesc": {
-    "message": "Learn more about how to use Bitwarden on the Help Center."
+    "message": "Lär dig mer om hur man använder Bitwarden i hjälpcentret."
+  },
+  "continueToBrowserExtensionStore": {
+    "message": "Fortsätt till webbläsartilläggsbutiken?"
+  },
+  "continueToBrowserExtensionStoreDesc": {
+    "message": "Hjälp andra att ta reda på om Bitwarden är rätt för dem. Besök din webbläsares tilläggsbutik och lämna en recension nu."
   },
   "changeMasterPasswordOnWebConfirmation": {
-    "message": "You can change your master password on the Bitwarden web app."
+    "message": "Du kan ändra ditt huvudlösenord i Bitwarden-webbappen."
   },
   "fingerprintPhrase": {
     "message": "Fingeravtrycksfras",
@@ -199,28 +205,28 @@
     "message": "Logga ut"
   },
   "aboutBitwarden": {
-    "message": "About Bitwarden"
+    "message": "Om Bitwarden"
   },
   "about": {
     "message": "Om"
   },
   "moreFromBitwarden": {
-    "message": "More from Bitwarden"
+    "message": "Mer från Bitwarden"
   },
   "continueToBitwardenDotCom": {
-    "message": "Continue to bitwarden.com?"
+    "message": "Fortsätt till bitwarden.com?"
   },
   "bitwardenForBusiness": {
-    "message": "Bitwarden for Business"
+    "message": "Bitwarden för Företag"
   },
   "bitwardenAuthenticator": {
     "message": "Bitwarden Authenticator"
   },
   "continueToAuthenticatorPageDesc": {
-    "message": "Bitwarden Authenticator allows you to store authenticator keys and generate TOTP codes for 2-step verification flows. Learn more on the bitwarden.com website"
+    "message": "Bitwarden Authenticator låter dig lagra autentiseringsnycklar och generera TOTP-koder för tvåstegsverifieringsflöden. Lär dig mer på bitwarden.com hemsidan"
   },
   "bitwardenSecretsManager": {
-    "message": "Bitwarden Secrets Manager"
+    "message": "Bitwarden Hemlighetshanterare"
   },
   "continueToSecretsManagerPageDesc": {
     "message": "Securely store, manage, and share developer secrets with Bitwarden Secrets Manager. Learn more on the bitwarden.com website."
@@ -229,7 +235,7 @@
     "message": "Passwordless.dev"
   },
   "continueToPasswordlessDotDevPageDesc": {
-    "message": "Create smooth and secure login experiences free from traditional passwords with Passwordless.dev. Learn more on the bitwarden.com website."
+    "message": "Skapa smidiga och säkra inloggningsupplevelser fria från traditionella lösenord med Passwordless.dev. Läs mer på bitwarden.com hemsidan."
   },
   "freeBitwardenFamilies": {
     "message": "Free Bitwarden Families"
@@ -296,7 +302,7 @@
     "message": "Skapa starka och unika lösenord automatiskt för dina inloggningar."
   },
   "bitWebVaultApp": {
-    "message": "Bitwarden web app"
+    "message": "Bitwarden webbapp"
   },
   "importItems": {
     "message": "Importera objekt"
@@ -417,7 +423,7 @@
     "message": "Annat"
   },
   "unlockMethods": {
-    "message": "Unlock options"
+    "message": "Upplåsningsalternativ"
   },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "Set up an unlock method to change your vault timeout action."
@@ -429,7 +435,7 @@
     "message": "Session timeout"
   },
   "otherOptions": {
-    "message": "Other options"
+    "message": "Andra alternativ"
   },
   "rateExtension": {
     "message": "Betygsätt tillägget"
@@ -582,7 +588,7 @@
     "message": "Det går inte att skanna QR-koden från den aktuella webbsidan"
   },
   "totpCaptureSuccess": {
-    "message": "Authenticator key added"
+    "message": "Autentiseringsnyckel tillagd"
   },
   "totpCapture": {
     "message": "Scan authenticator QR code from current webpage"
@@ -779,7 +785,7 @@
     "message": "Ändra programmets färgtema."
   },
   "themeDescAlt": {
-    "message": "Change the application's color theme. Applies to all logged in accounts."
+    "message": "Ändra programmets färgtema. Gäller för alla inloggade konton."
   },
   "dark": {
     "message": "Mörkt",
@@ -1109,7 +1115,7 @@
     "message": "Turn off your browser’s built in password manager settings to avoid conflicts."
   },
   "turnOffBrowserBuiltInPasswordManagerSettingsLink": {
-    "message": "Edit browser settings."
+    "message": "Redigera webbläsarinställningar."
   },
   "autofillOverlayVisibilityOff": {
     "message": "Av",
@@ -1600,6 +1606,9 @@
   "restoredItem": {
     "message": "Återställde objekt"
   },
+  "alreadyHaveAccount": {
+    "message": "Har du redan ett konto?"
+  },
   "vaultTimeoutLogOutConfirmation": {
     "message": "Genom att logga ut upphör all åtkomst till valvet och onlineautentisering krävs efter att tidsgränsen överskridits. Är du säker på att du vill använda denna inställning?"
   },
@@ -1757,7 +1766,7 @@
     "message": "User locked or logged out"
   },
   "biometricsNotUnlockedDesc": {
-    "message": "Please unlock this user in the desktop application and try again."
+    "message": "Lås upp den här användaren i skrivbordsprogrammet och försök igen."
   },
   "biometricsFailedTitle": {
     "message": "Biometri misslyckades"
@@ -2237,11 +2246,11 @@
     }
   },
   "forwarderGeneratedBy": {
-    "message": "Generated by Bitwarden.",
+    "message": "Genererad av Bitwarden.",
     "description": "Displayed with the address on the forwarding service's configuration screen."
   },
   "forwarderGeneratedByWithWebsite": {
-    "message": "Website: $WEBSITE$. Generated by Bitwarden.",
+    "message": "Webbplats: $WEBSITE$. Genererad av Bitwarden.",
     "description": "Displayed with the address on the forwarding service's configuration screen.",
     "placeholders": {
       "WEBSITE": {
@@ -2251,7 +2260,7 @@
     }
   },
   "forwaderInvalidToken": {
-    "message": "Invalid $SERVICENAME$ API token",
+    "message": "Ogiltig $SERVICENAME$ API-token",
     "description": "Displayed when the user's API token is empty or rejected by the forwarding service.",
     "placeholders": {
       "servicename": {
@@ -2261,7 +2270,7 @@
     }
   },
   "forwaderInvalidTokenWithMessage": {
-    "message": "Invalid $SERVICENAME$ API token: $ERRORMESSAGE$",
+    "message": "Ogiltig $SERVICENAME$ API token: $ERRORMESSAGE$",
     "description": "Displayed when the user's API token is rejected by the forwarding service with an error message.",
     "placeholders": {
       "servicename": {
@@ -2535,12 +2544,33 @@
   "ssoIdentifierRequired": {
     "message": "Organisationens SSO-identifierare krävs."
   },
+  "creatingAccountOn": {
+    "message": "Skapa konto på"
+  },
+  "checkYourEmail": {
+    "message": "Kolla din e-post"
+  },
+  "followTheLinkInTheEmailSentTo": {
+    "message": "Följ länken i e-postmeddelandet som skickats till"
+  },
+  "andContinueCreatingYourAccount": {
+    "message": "and continue creating your account."
+  },
+  "noEmail": {
+    "message": "Ingen e-post?"
+  },
+  "goBack": {
+    "message": "Gå tillbaka"
+  },
+  "toEditYourEmailAddress": {
+    "message": "för att redigera din e-postadress."
+  },
   "eu": {
     "message": "EU",
     "description": "European Union"
   },
   "accessDenied": {
-    "message": "Access denied. You do not have permission to view this page."
+    "message": "Åtkomst nekad. Du har inte behörighet att visa denna sida."
   },
   "general": {
     "message": "Allmänt"
@@ -2570,7 +2600,7 @@
     "message": "Användarens e-postadress saknas"
   },
   "deviceTrusted": {
-    "message": "Device trusted"
+    "message": "Enhet betrodd"
   },
   "inputRequired": {
     "message": "Inmatning är obligatoriskt."
@@ -2701,7 +2731,7 @@
     "description": "Notification message for when an import has completed successfully."
   },
   "dataImportFailed": {
-    "message": "Error importing. Check console for details.",
+    "message": "Fel vid importeringen. Kolla konsolen för detaljer.",
     "description": "Notification message for when an import has failed."
   },
   "importNetworkError": {
@@ -2739,7 +2769,7 @@
     "description": "Page title in overlay"
   },
   "unlockYourAccountToViewMatchingLogins": {
-    "message": "Unlock your account to view matching logins",
+    "message": "Lås upp ditt konto för att visa matchande inloggningar",
     "description": "Text to display in overlay when the account is locked."
   },
   "unlockAccount": {
@@ -2853,7 +2883,7 @@
     }
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
-    "message": "Launch Duo and follow the steps to finish logging in."
+    "message": "Starta Duo och följ stegen för att slutföra inloggningen."
   },
   "duoRequiredForAccount": {
     "message": "Duo two-step login is required for your account."
@@ -2990,7 +3020,7 @@
     "message": "Autentisering krävs för att använda lösennyckel. Verifiera din identitet för att fortsätta."
   },
   "multifactorAuthenticationCancelled": {
-    "message": "Multifactor authentication cancelled"
+    "message": "Flerfaktorsautentisering avbruten"
   },
   "noLastPassDataFound": {
     "message": "Ingen LastPass-data hittades"
@@ -3008,7 +3038,7 @@
     "message": "Felaktig PIN-kod"
   },
   "multifactorAuthenticationFailed": {
-    "message": "Multifactor authentication failed"
+    "message": "Flerfaktorsautentisering misslyckades"
   },
   "includeSharedFolders": {
     "message": "Inkludera delade mappar"
@@ -3020,7 +3050,7 @@
     "message": "Importerar ditt konto..."
   },
   "lastPassMFARequired": {
-    "message": "LastPass multifactor authentication required"
+    "message": "LastPass flerfaktorsautentisering krävs"
   },
   "lastPassMFADesc": {
     "message": "Ange din engångskod från din autentiseringsapp"
@@ -3035,7 +3065,7 @@
     "message": "LastPass Huvudlösenord"
   },
   "lastPassAuthRequired": {
-    "message": "LastPass authentication required"
+    "message": "LastPass autentisering krävs"
   },
   "awaitingSSO": {
     "message": "Awaiting SSO authentication"
@@ -3081,13 +3111,13 @@
     "message": "Account limit reached. Log out of an account to add another."
   },
   "active": {
-    "message": "active"
+    "message": "aktiv"
   },
   "locked": {
     "message": "låst"
   },
   "unlocked": {
-    "message": "unlocked"
+    "message": "upplåst"
   },
   "server": {
     "message": "server"
@@ -3114,7 +3144,7 @@
     }
   },
   "commonImportFormats": {
-    "message": "Common formats",
+    "message": "Vanliga format",
     "description": "Label indicating the most common import formats"
   },
   "overrideDefaultBrowserAutofillTitle": {
@@ -3157,10 +3187,10 @@
     "message": "Success"
   },
   "removePasskey": {
-    "message": "Remove passkey"
+    "message": "Ta bort passkey"
   },
   "passkeyRemoved": {
-    "message": "Passkey removed"
+    "message": "Passkey borttagen"
   },
   "unassignedItemsBannerNotice": {
     "message": "Notice: Unassigned organization items are no longer visible in the All Vaults view and only accessible via the Admin Console."
@@ -3173,7 +3203,7 @@
     "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
   },
   "unassignedItemsBannerCTAPartTwo": {
-    "message": "to make them visible.",
+    "message": "för att göra dem synliga.",
     "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
   },
   "autofillSuggestions": {
@@ -3183,16 +3213,16 @@
     "message": "Save a login item for this site to auto-fill"
   },
   "yourVaultIsEmpty": {
-    "message": "Your vault is empty"
+    "message": "Ditt valv är tomt"
   },
   "noItemsMatchSearch": {
-    "message": "No items match your search"
+    "message": "Inga objekt matchar din sökning"
   },
   "clearFiltersOrTryAnother": {
     "message": "Clear filters or try another search term"
   },
   "copyInfo": {
-    "message": "Copy info, $ITEMNAME$",
+    "message": "Kopiera information, $ITEMNAME$",
     "description": "Aria label for a button that opens a menu with options to copy information from an item.",
     "placeholders": {
       "itemname": {
@@ -3202,7 +3232,7 @@
     }
   },
   "moreOptions": {
-    "message": "More options, $ITEMNAME$",
+    "message": "Fler alternativ, $ITEMNAME$",
     "description": "Aria label for a button that opens a menu with more options for an item.",
     "placeholders": {
       "itemname": {
@@ -3215,10 +3245,10 @@
     "message": "Admin Console"
   },
   "accountSecurity": {
-    "message": "Account security"
+    "message": "Kontosäkerhet"
   },
   "notifications": {
-    "message": "Notifications"
+    "message": "Aviseringar"
   },
   "appearance": {
     "message": "Utseende"
@@ -3230,7 +3260,7 @@
     "message": "Error assigning target folder."
   },
   "viewItemsIn": {
-    "message": "View items in $NAME$",
+    "message": "Visa objekt i $NAME$",
     "description": "Button to view the contents of a folder or collection",
     "placeholders": {
       "name": {
@@ -3240,7 +3270,7 @@
     }
   },
   "backTo": {
-    "message": "Back to $NAME$",
+    "message": "Tillbaka till $NAME$",
     "description": "Navigate back to a previous folder or collection",
     "placeholders": {
       "name": {
@@ -3250,10 +3280,10 @@
     }
   },
   "new": {
-    "message": "New"
+    "message": "Ny/Nytt"
   },
   "removeItem": {
-    "message": "Remove $NAME$",
+    "message": "Ta bort $NAME$",
     "description": "Remove a selected option, such as a folder or collection",
     "placeholders": {
       "name": {
