@@ -140,7 +140,7 @@ export class TrayMain {
   }
 
   updateContextMenu() {
-    if (this.contextMenu != null && this.isLinux()) {
+    if (this.tray != null && this.contextMenu != null && this.isLinux()) {
       this.tray.setContextMenu(this.contextMenu);
     }
   }
