@@ -25,6 +25,7 @@
       "@bitwarden/importer/ui": ["../../libs/importer/src/components"],
       "@bitwarden/node/*": ["../../libs/node/src/*"],
       "@bitwarden/platform": ["../../libs/platform/src"],
+      "@bitwarden/send-ui": ["../../libs/tools/send/send-ui/src"],
       "@bitwarden/vault": ["../../libs/vault/src"]
     },
     "useDefineForClassFields": false

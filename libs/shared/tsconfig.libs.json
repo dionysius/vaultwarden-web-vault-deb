@@ -15,6 +15,7 @@
       "@bitwarden/importer/core": ["../importer/src"],
       "@bitwarden/importer/ui": ["../importer/src/components"],
       "@bitwarden/platform": ["../platform/src"],
+      "@bitwarden/send-ui": ["../tools/send/send-ui/src"],
       "@bitwarden/node/*": ["../node/src/*"],
       "@bitwarden/vault": ["../vault/src"]
     }

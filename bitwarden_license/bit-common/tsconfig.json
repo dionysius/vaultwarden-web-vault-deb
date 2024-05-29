@@ -15,6 +15,7 @@
         "../../libs/tools/export/vault-export/vault-export-core/src"
       ],
       "@bitwarden/vault-export-ui": ["../../libs/tools/export/vault-export/vault-export-core/src"],
+      "@bitwarden/send-ui": ["../../libs/tools/send/send-ui/src"],
       "@bitwarden/platform": ["../../libs/platform/src"],
       "@bitwarden/vault": ["../../libs/vault/src"],
       "@bitwarden/web-vault/*": ["../../apps/web/src/*"],

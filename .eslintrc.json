@@ -219,6 +219,12 @@
       }
     },
     {
+      "files": ["libs/tools/send/send-ui/src/**/*.ts"],
+      "rules": {
+        "no-restricted-imports": ["error", { "patterns": ["@bitwarden/send-ui/*", "src/**/*"] }]
+      }
+    },
+    {
       "files": ["libs/vault/src/**/*.ts"],
       "rules": {
         "no-restricted-imports": ["error", { "patterns": ["@bitwarden/vault/*", "src/**/*"] }]
