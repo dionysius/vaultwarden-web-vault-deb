@@ -649,7 +649,7 @@ const safeProviders: SafeProvider[] = [
   safeProvider({
     provide: BroadcasterService,
     useClass: DefaultBroadcasterService,
-    deps: [MessageSender, MessageListener],
+    deps: [MessageListener],
   }),
   safeProvider({
     provide: VaultTimeoutSettingsServiceAbstraction,
@@ -1165,17 +1165,19 @@ const safeProviders: SafeProvider[] = [
   }),
   safeProvider({
     provide: INTRAPROCESS_MESSAGING_SUBJECT,
-    useFactory: () => new Subject<Message<object>>(),
+    useFactory: () => new Subject<Message<Record<string, unknown>>>(),
     deps: [],
   }),
   safeProvider({
     provide: MessageListener,
-    useFactory: (subject: Subject<Message<object>>) => new MessageListener(subject.asObservable()),
+    useFactory: (subject: Subject<Message<Record<string, unknown>>>) =>
+      new MessageListener(subject.asObservable()),
     deps: [INTRAPROCESS_MESSAGING_SUBJECT],
   }),
   safeProvider({
     provide: MessageSender,
-    useFactory: (subject: Subject<Message<object>>) => new SubjectMessageSender(subject),
+    useFactory: (subject: Subject<Message<Record<string, unknown>>>) =>
+      new SubjectMessageSender(subject),
     deps: [INTRAPROCESS_MESSAGING_SUBJECT],
   }),
   safeProvider({

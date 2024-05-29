@@ -1,4 +1,4 @@
-import { firstValueFrom, timeout } from "rxjs";
+import { filter, firstValueFrom, of, timeout } from "rxjs";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
@@ -10,6 +10,7 @@ import {
   MessageListener,
   MessageSender,
 } from "@bitwarden/common/platform/messaging";
+import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { CoreSyncService } from "@bitwarden/common/platform/sync/internal";
 import { SendApiService } from "@bitwarden/common/tools/send/services/send-api.service.abstraction";
 import { InternalSendService } from "@bitwarden/common/tools/send/services/send.service.abstraction";
@@ -18,11 +19,11 @@ import { CollectionService } from "@bitwarden/common/vault/abstractions/collecti
 import { FolderApiServiceAbstraction } from "@bitwarden/common/vault/abstractions/folder/folder-api.service.abstraction";
 import { InternalFolderService } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
 
-const SYNC_COMPLETED = new CommandDefinition<{ successfully: boolean }>("syncCompleted");
-export const DO_FULL_SYNC = new CommandDefinition<{
-  forceSync: boolean;
-  allowThrowOnError: boolean;
-}>("doFullSync");
+import { FULL_SYNC_FINISHED } from "./sync-service.listener";
+
+export type FullSyncMessage = { forceSync: boolean; allowThrowOnError: boolean; requestId: string };
+
+export const DO_FULL_SYNC = new CommandDefinition<FullSyncMessage>("doFullSync");
 
 export class ForegroundSyncService extends CoreSyncService {
   constructor(
@@ -59,18 +60,29 @@ export class ForegroundSyncService extends CoreSyncService {
   async fullSync(forceSync: boolean, allowThrowOnError: boolean = false): Promise<boolean> {
     this.syncInProgress = true;
     try {
+      const requestId = Utils.newGuid();
       const syncCompletedPromise = firstValueFrom(
-        this.messageListener.messages$(SYNC_COMPLETED).pipe(
+        this.messageListener.messages$(FULL_SYNC_FINISHED).pipe(
+          filter((m) => m.requestId === requestId),
           timeout({
-            first: 10_000,
+            first: 30_000,
+            // If we haven't heard back in 30 seconds, just pretend we heard back about an unsuccesful sync.
             with: () => {
-              throw new Error("Timeout while doing a fullSync call.");
+              this.logService.warning(
+                "ForegroundSyncService did not receive a message back in a reasonable time.",
+              );
+              return of({ successfully: false, errorMessage: "Sync timed out." });
             },
           }),
         ),
       );
-      this.messageSender.send(DO_FULL_SYNC, { forceSync, allowThrowOnError });
+      this.messageSender.send(DO_FULL_SYNC, { forceSync, allowThrowOnError, requestId });
       const result = await syncCompletedPromise;
+
+      if (allowThrowOnError && result.errorMessage != null) {
+        throw new Error(result.errorMessage);
+      }
+
       return result.successfully;
     } finally {
       this.syncInProgress = false;

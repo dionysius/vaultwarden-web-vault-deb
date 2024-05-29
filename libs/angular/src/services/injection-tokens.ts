@@ -49,7 +49,7 @@ export const SYSTEM_THEME_OBSERVABLE = new SafeInjectionToken<Observable<ThemeTy
   "SYSTEM_THEME_OBSERVABLE",
 );
 export const DEFAULT_VAULT_TIMEOUT = new SafeInjectionToken<VaultTimeout>("DEFAULT_VAULT_TIMEOUT");
-export const INTRAPROCESS_MESSAGING_SUBJECT = new SafeInjectionToken<Subject<Message<object>>>(
-  "INTRAPROCESS_MESSAGING_SUBJECT",
-);
+export const INTRAPROCESS_MESSAGING_SUBJECT = new SafeInjectionToken<
+  Subject<Message<Record<string, unknown>>>
+>("INTRAPROCESS_MESSAGING_SUBJECT");
 export const CLIENT_TYPE = new SafeInjectionToken<ClientType>("CLIENT_TYPE");

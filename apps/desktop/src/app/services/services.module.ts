@@ -151,7 +151,7 @@ const safeProviders: SafeProvider[] = [
   }),
   safeProvider({
     provide: MessageSender,
-    useFactory: (subject: Subject<Message<object>>) =>
+    useFactory: (subject: Subject<Message<Record<string, unknown>>>) =>
       MessageSender.combine(
         new ElectronRendererMessageSender(), // Communication with main process
         new SubjectMessageSender(subject), // Communication with ourself
@@ -160,7 +160,7 @@ const safeProviders: SafeProvider[] = [
   }),
   safeProvider({
     provide: MessageListener,
-    useFactory: (subject: Subject<Message<object>>) =>
+    useFactory: (subject: Subject<Message<Record<string, unknown>>>) =>
       new MessageListener(
         merge(
           subject.asObservable(), // For messages from the same context

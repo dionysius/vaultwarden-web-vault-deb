@@ -15,9 +15,9 @@ const HANDLED_ERRORS: Record<string, ErrorHandler> = {
 export class ChromeMessageSender implements MessageSender {
   constructor(private readonly logService: LogService) {}
 
-  send<T extends object>(
+  send<T extends Record<string, unknown>>(
     commandDefinition: string | CommandDefinition<T>,
-    payload: object | T = {},
+    payload: Record<string, unknown> | T = {},
   ): void {
     const command = getCommand(commandDefinition);
     chrome.runtime.sendMessage(Object.assign(payload, { command: command }), () => {
