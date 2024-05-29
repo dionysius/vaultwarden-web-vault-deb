@@ -517,7 +517,7 @@ describe("OverlayBackground", () => {
 
       expect(returnValue).toBe(undefined);
       expect(sendResponse).not.toHaveBeenCalled();
-      expect(overlayBackground["overlayElementClosed"]).toHaveBeenCalledWith(message);
+      expect(overlayBackground["overlayElementClosed"]).toHaveBeenCalledWith(message, sender);
     });
 
     it("will return a response if the message handler returns a response", async () => {
@@ -568,6 +568,26 @@ describe("OverlayBackground", () => {
       describe("autofillOverlayElementClosed message handler", () => {
         beforeEach(async () => {
           await initOverlayElementPorts();
+        });
+
+        it("disconnects any expired ports if the sender is not from the same page as the most recently focused field", () => {
+          const port1 = mock<chrome.runtime.Port>();
+          const port2 = mock<chrome.runtime.Port>();
+          overlayBackground["expiredPorts"] = [port1, port2];
+          const sender = mock<chrome.runtime.MessageSender>({ tab: { id: 1 } });
+          const focusedFieldData = createFocusedFieldDataMock({ tabId: 2 });
+          sendExtensionRuntimeMessage({ command: "updateFocusedFieldData", focusedFieldData });
+
+          sendExtensionRuntimeMessage(
+            {
+              command: "autofillOverlayElementClosed",
+              overlayElement: AutofillOverlayElement.Button,
+            },
+            sender,
+          );
+
+          expect(port1.disconnect).toHaveBeenCalled();
+          expect(port2.disconnect).toHaveBeenCalled();
         });
 
         it("disconnects the button element port", () => {
@@ -729,6 +749,23 @@ describe("OverlayBackground", () => {
           });
         });
 
+        it("skips updating the position if the most recently focused field is different than the message sender", () => {
+          const sender = mock<chrome.runtime.MessageSender>({ tab: { id: 1 } });
+          const focusedFieldData = createFocusedFieldDataMock({ tabId: 2 });
+          sendExtensionRuntimeMessage({ command: "updateFocusedFieldData", focusedFieldData });
+
+          sendExtensionRuntimeMessage({ command: "updateAutofillOverlayPosition" }, sender);
+
+          expect(listPortSpy.postMessage).not.toHaveBeenCalledWith({
+            command: "updateIframePosition",
+            styles: expect.anything(),
+          });
+          expect(buttonPortSpy.postMessage).not.toHaveBeenCalledWith({
+            command: "updateIframePosition",
+            styles: expect.anything(),
+          });
+        });
+
         it("updates the overlay button's position", () => {
           const focusedFieldData = createFocusedFieldDataMock();
           sendExtensionRuntimeMessage({ command: "updateFocusedFieldData", focusedFieldData });
@@ -796,12 +833,14 @@ describe("OverlayBackground", () => {
         });
 
         it("will post a message to the overlay list facilitating an update of the list's position", () => {
+          const sender = mock<chrome.runtime.MessageSender>({ tab: { id: 1 } });
           const focusedFieldData = createFocusedFieldDataMock();
           sendExtensionRuntimeMessage({ command: "updateFocusedFieldData", focusedFieldData });
 
-          overlayBackground["updateOverlayPosition"]({
-            overlayElement: AutofillOverlayElement.List,
-          });
+          overlayBackground["updateOverlayPosition"](
+            { overlayElement: AutofillOverlayElement.List },
+            sender,
+          );
           sendExtensionRuntimeMessage({
             command: "updateAutofillOverlayPosition",
             overlayElement: AutofillOverlayElement.List,
@@ -1017,9 +1056,10 @@ describe("OverlayBackground", () => {
       expect(chrome.runtime.getURL).toHaveBeenCalledWith("overlay/list.css");
       expect(overlayBackground["getTranslations"]).toHaveBeenCalled();
       expect(overlayBackground["getOverlayCipherData"]).toHaveBeenCalled();
-      expect(overlayBackground["updateOverlayPosition"]).toHaveBeenCalledWith({
-        overlayElement: AutofillOverlayElement.List,
-      });
+      expect(overlayBackground["updateOverlayPosition"]).toHaveBeenCalledWith(
+        { overlayElement: AutofillOverlayElement.List },
+        listPortSpy.sender,
+      );
     });
 
     it("sets up the overlay button port if the port connection is for the overlay button", async () => {
@@ -1032,9 +1072,19 @@ describe("OverlayBackground", () => {
       expect(overlayBackground["getAuthStatus"]).toHaveBeenCalled();
       expect(chrome.runtime.getURL).toHaveBeenCalledWith("overlay/button.css");
       expect(overlayBackground["getTranslations"]).toHaveBeenCalled();
-      expect(overlayBackground["updateOverlayPosition"]).toHaveBeenCalledWith({
-        overlayElement: AutofillOverlayElement.Button,
-      });
+      expect(overlayBackground["updateOverlayPosition"]).toHaveBeenCalledWith(
+        { overlayElement: AutofillOverlayElement.Button },
+        buttonPortSpy.sender,
+      );
+    });
+
+    it("stores an existing overlay port so that it can be disconnected at a later time", async () => {
+      overlayBackground["overlayButtonPort"] = mock<chrome.runtime.Port>();
+
+      await initOverlayElementPorts({ initList: false, initButton: true });
+      await flushPromises();
+
+      expect(overlayBackground["expiredPorts"].length).toBe(1);
     });
 
     it("gets the system theme", async () => {

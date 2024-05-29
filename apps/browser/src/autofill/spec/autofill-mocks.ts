@@ -249,6 +249,7 @@ function createFocusedFieldDataMock(customFields = {}) {
       paddingRight: "6px",
       paddingLeft: "6px",
     },
+    tabId: 1,
     ...customFields,
   };
 }
