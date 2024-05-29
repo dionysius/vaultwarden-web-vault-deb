@@ -33,6 +33,7 @@ export class Parser {
     options: ParserOptions,
   ): Promise<Account> {
     let id: string;
+    let step = 0;
     try {
       const placeholder = "decryption failed";
       const reader = new BinaryReader(chunk.payload);
@@ -42,6 +43,7 @@ export class Parser {
       id = Utils.fromBufferToUtf8(this.readItem(reader));
 
       // 1: name
+      step = 1;
       const name = await this.cryptoUtils.decryptAes256PlainWithDefault(
         this.readItem(reader),
         encryptionKey,
@@ -49,6 +51,7 @@ export class Parser {
       );
 
       // 2: group
+      step = 2;
       const group = await this.cryptoUtils.decryptAes256PlainWithDefault(
         this.readItem(reader),
         encryptionKey,
@@ -56,6 +59,7 @@ export class Parser {
       );
 
       // 3: url
+      step = 3;
       let url = Utils.fromBufferToUtf8(
         this.decodeHexLoose(Utils.fromBufferToUtf8(this.readItem(reader))),
       );
@@ -66,6 +70,7 @@ export class Parser {
       }
 
       // 4: extra (notes)
+      step = 4;
       const notes = await this.cryptoUtils.decryptAes256PlainWithDefault(
         this.readItem(reader),
         encryptionKey,
@@ -73,12 +78,14 @@ export class Parser {
       );
 
       // 5: fav (is favorite)
+      step = 5;
       const isFavorite = Utils.fromBufferToUtf8(this.readItem(reader)) === "1";
 
       // 6: sharedfromaid (?)
       this.skipItem(reader);
 
       // 7: username
+      step = 7;
       let username = await this.cryptoUtils.decryptAes256PlainWithDefault(
         this.readItem(reader),
         encryptionKey,
@@ -86,6 +93,7 @@ export class Parser {
       );
 
       // 8: password
+      step = 8;
       let password = await this.cryptoUtils.decryptAes256PlainWithDefault(
         this.readItem(reader),
         encryptionKey,
@@ -99,6 +107,7 @@ export class Parser {
       this.skipItem(reader);
 
       // 11: sn (is secure note)
+      step = 11;
       const isSecureNote = Utils.fromBufferToUtf8(this.readItem(reader)) === "1";
 
       // Parse secure note
@@ -214,6 +223,7 @@ export class Parser {
       this.skipItem(reader);
 
       // 39: totp (?)
+      step = 39;
       const totp = await this.cryptoUtils.decryptAes256PlainWithDefault(
         this.readItem(reader),
         encryptionKey,
@@ -227,6 +237,7 @@ export class Parser {
       // 42: last_credential_monitoring_stat (?)
 
       // Adjust the path to include the group and the shared folder, if any.
+      step = 42;
       const path = this.makeAccountPath(group, folder);
 
       const account = new Account();
@@ -243,7 +254,12 @@ export class Parser {
       return account;
     } catch (err) {
       throw new Error(
-        "Error parsing accounts on item with ID:" + id + " errorMessage: " + err.message,
+        "Error parsing accounts on item with ID:" +
+          id +
+          " step #" +
+          step +
+          " errorMessage: " +
+          err.message,
       );
     }
   }
