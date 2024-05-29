@@ -2050,6 +2050,9 @@
   "switchAccount": {
     "message": "Cambia account"
   },
+  "alreadyHaveAccount": {
+    "message": "Hai già un account?"
+  },
   "options": {
     "message": "Opzioni"
   },
@@ -2389,6 +2392,27 @@
   },
   "logInRequested": {
     "message": "Accesso richiesto"
+  },
+  "creatingAccountOn": {
+    "message": "Creazione account su"
+  },
+  "checkYourEmail": {
+    "message": "Controlli la tua email"
+  },
+  "followTheLinkInTheEmailSentTo": {
+    "message": "Segui il link nell'email inviata a"
+  },
+  "andContinueCreatingYourAccount": {
+    "message": "e continua a creare il tuo account."
+  },
+  "noEmail": {
+    "message": "Nessuna email?"
+  },
+  "goBack": {
+    "message": "Torna indietro"
+  },
+  "toEditYourEmailAddress": {
+    "message": "per modificare il tuo indirizzo email."
   },
   "exposedMasterPassword": {
     "message": "Password principale violata"
@@ -2824,7 +2848,7 @@
     "message": "Errore nell'assegnazione della cartella di destinazione."
   },
   "viewItemsIn": {
-    "message": "View items in $NAME$",
+    "message": "Visualizza gli elementi in $NAME$",
     "description": "Button to view the contents of a folder or collection",
     "placeholders": {
       "name": {
@@ -2834,7 +2858,7 @@
     }
   },
   "backTo": {
-    "message": "Back to $NAME$",
+    "message": "Torna a $NAME$",
     "description": "Navigate back to a previous folder or collection",
     "placeholders": {
       "name": {
@@ -2844,11 +2868,11 @@
     }
   },
   "back": {
-    "message": "Back",
+    "message": "Indietro",
     "description": "Button text to navigate back"
   },
   "removeItem": {
-    "message": "Remove $NAME$",
+    "message": "Rimuovi $NAME$",
     "description": "Remove a selected option, such as a folder or collection",
     "placeholders": {
       "name": {

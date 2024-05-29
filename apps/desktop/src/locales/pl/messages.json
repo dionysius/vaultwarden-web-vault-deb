@@ -2050,6 +2050,9 @@
   "switchAccount": {
     "message": "Przełącz konto"
   },
+  "alreadyHaveAccount": {
+    "message": "Masz już konto?"
+  },
   "options": {
     "message": "Opcje"
   },
@@ -2389,6 +2392,27 @@
   },
   "logInRequested": {
     "message": "Wysłano prośbę logowania"
+  },
+  "creatingAccountOn": {
+    "message": "Tworzenie konta na"
+  },
+  "checkYourEmail": {
+    "message": "Sprawdź swoją pocztę e-mail"
+  },
+  "followTheLinkInTheEmailSentTo": {
+    "message": "Kliknij łącze w wiadomości e-mail wysłanej do"
+  },
+  "andContinueCreatingYourAccount": {
+    "message": "i kontynuuj tworzenie konta."
+  },
+  "noEmail": {
+    "message": "Brak wiadomości e-mail?"
+  },
+  "goBack": {
+    "message": "Wróć"
+  },
+  "toEditYourEmailAddress": {
+    "message": "aby edytować swój adres e-mail."
   },
   "exposedMasterPassword": {
     "message": "Ujawnione hasło główne"

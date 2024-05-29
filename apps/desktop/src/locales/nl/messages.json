@@ -2050,6 +2050,9 @@
   "switchAccount": {
     "message": "Account wisselen"
   },
+  "alreadyHaveAccount": {
+    "message": "Heb je al een account?"
+  },
   "options": {
     "message": "Opties"
   },
@@ -2389,6 +2392,27 @@
   },
   "logInRequested": {
     "message": "Inloggen verzocht"
+  },
+  "creatingAccountOn": {
+    "message": "Account maken bij"
+  },
+  "checkYourEmail": {
+    "message": "Check je e-mail"
+  },
+  "followTheLinkInTheEmailSentTo": {
+    "message": "Volg de link in de e-mail die verstuurd is naar"
+  },
+  "andContinueCreatingYourAccount": {
+    "message": "en ga verder met het aanmaken van je account."
+  },
+  "noEmail": {
+    "message": "Geen e-mail?"
+  },
+  "goBack": {
+    "message": "Ga terug"
+  },
+  "toEditYourEmailAddress": {
+    "message": "om je e-mailadres te bewerken."
   },
   "exposedMasterPassword": {
     "message": "Gelekt hoofdwachtwoord"

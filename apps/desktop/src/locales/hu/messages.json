@@ -2050,6 +2050,9 @@
   "switchAccount": {
     "message": "Fiók váltása"
   },
+  "alreadyHaveAccount": {
+    "message": "Van már saját fiók?"
+  },
   "options": {
     "message": "Opciók"
   },
@@ -2389,6 +2392,27 @@
   },
   "logInRequested": {
     "message": "Bejelentkezés megkérve"
+  },
+  "creatingAccountOn": {
+    "message": "Fiók létrehozása:"
+  },
+  "checkYourEmail": {
+    "message": "Email cím postaláda ellenőrzése"
+  },
+  "followTheLinkInTheEmailSentTo": {
+    "message": "Kövessük a hivatkozást az elküldött emailben"
+  },
+  "andContinueCreatingYourAccount": {
+    "message": "és folytassuk a fiók létrehozását."
+  },
+  "noEmail": {
+    "message": "Nem érkezett email?"
+  },
+  "goBack": {
+    "message": "Vissza"
+  },
+  "toEditYourEmailAddress": {
+    "message": "az email cím szerkesztéséhez."
   },
   "exposedMasterPassword": {
     "message": "Kiszivárgott mesterjelszó"
@@ -2824,7 +2848,7 @@
     "message": "Hiba történt a célmappa hozzárendelése során."
   },
   "viewItemsIn": {
-    "message": "View items in $NAME$",
+    "message": "$NAME$ elemek megtekintése",
     "description": "Button to view the contents of a folder or collection",
     "placeholders": {
       "name": {
@@ -2834,7 +2858,7 @@
     }
   },
   "backTo": {
-    "message": "Back to $NAME$",
+    "message": "Vissza: $NAME$",
     "description": "Navigate back to a previous folder or collection",
     "placeholders": {
       "name": {
@@ -2844,11 +2868,11 @@
     }
   },
   "back": {
-    "message": "Back",
+    "message": "Vissza",
     "description": "Button text to navigate back"
   },
   "removeItem": {
-    "message": "Remove $NAME$",
+    "message": "$NAME$ eltávolítása",
     "description": "Remove a selected option, such as a folder or collection",
     "placeholders": {
       "name": {

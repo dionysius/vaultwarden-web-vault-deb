@@ -27,28 +27,28 @@
     "message": "सुरक्षित नोट"
   },
   "folders": {
-    "message": "Folders"
+    "message": "फोल्डरहरू"
   },
   "collections": {
-    "message": "Collections"
+    "message": "संग्रह"
   },
   "searchVault": {
-    "message": "Search vault"
+    "message": "भल्टमा खोज्नुहोस्"
   },
   "addItem": {
-    "message": "Add item"
+    "message": "आइटम थप्नुहोस्"
   },
   "shared": {
-    "message": "Shared"
+    "message": "साझा गरियो"
   },
   "share": {
-    "message": "Share"
+    "message": "शेयर"
   },
   "moveToOrganization": {
-    "message": "Move to organization"
+    "message": "संस्थामा सार्नुहोस्"
   },
   "movedItemToOrg": {
-    "message": "$ITEMNAME$ moved to $ORGNAME$",
+    "message": "$ITEMNAME$ लाई $ORGNAME$ मा सारियो",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -61,16 +61,16 @@
     }
   },
   "moveToOrgDesc": {
-    "message": "Choose an organization that you wish to move this item to. Moving to an organization transfers ownership of the item to that organization. You will no longer be the direct owner of this item once it has been moved."
+    "message": "तपाईंले यो आइटम सार्न चाहनुहुने संस्था छान्नुहोस्। संस्थामा सर्दा आइटमको स्वामित्व त्यो संस्थामा हस्तान्तरण हुन्छ। एकपटक सारिएपछि तपाईं अब यस आइटमको प्रत्यक्ष मालिक हुनुहुनेछैन।"
   },
   "attachments": {
-    "message": "Attachments"
+    "message": "अट्याचमेंटहरू"
   },
   "viewItem": {
-    "message": "View item"
+    "message": "आइटम हेर्नुहोस्"
   },
   "name": {
-    "message": "Name"
+    "message": "नाम"
   },
   "uri": {
     "message": "URI"
@@ -86,120 +86,120 @@
     }
   },
   "newUri": {
-    "message": "New URI"
+    "message": "नयाँ URI"
   },
   "username": {
-    "message": "Username"
+    "message": "युजरनेम"
   },
   "password": {
-    "message": "Password"
+    "message": "पासवर्ड"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "पासफ्रेज"
   },
   "editItem": {
-    "message": "Edit item"
+    "message": "आइटम सम्पादन"
   },
   "emailAddress": {
-    "message": "Email address"
+    "message": "इमेल ठेगाना"
   },
   "verificationCodeTotp": {
-    "message": "Verification code (TOTP)"
+    "message": "प्रमाणीकरण कोड (TOTP)"
   },
   "website": {
-    "message": "Website"
+    "message": "वेबसाइट"
   },
   "notes": {
-    "message": "Notes"
+    "message": "टिपोट"
   },
   "customFields": {
-    "message": "Custom fields"
+    "message": "अनुकूलन फिल्डहरू"
   },
   "launch": {
-    "message": "Launch"
+    "message": "वेबसाइटमा जानुहोस्"
   },
   "copyValue": {
     "message": "Copy value",
     "description": "Copy value to clipboard"
   },
   "minimizeOnCopyToClipboard": {
-    "message": "Minimize when copying to clipboard"
+    "message": "क्लिपबोर्डमा प्रतिलिपि गर्दा मिनीमाइज गर्नुहोस्"
   },
   "minimizeOnCopyToClipboardDesc": {
-    "message": "Minimize application when copying an item's data to the clipboard."
+    "message": "क्लिपबोर्डमा आइटमको डेटा प्रतिलिपि गर्दा अनुप्रयोगलाई मिनिमाइज गर्नुहोस्।"
   },
   "toggleVisibility": {
-    "message": "Toggle visibility"
+    "message": "दृश्यता टगल गर्नुहोस्"
   },
   "toggleCollapse": {
     "message": "Toggle collapse",
     "description": "Toggling an expand/collapse state."
   },
   "cardholderName": {
-    "message": "Cardholder name"
+    "message": "कार्डधारकको नाम"
   },
   "number": {
-    "message": "Number"
+    "message": "नम्बर"
   },
   "brand": {
-    "message": "Brand"
+    "message": "ब्राण्ड"
   },
   "expiration": {
-    "message": "Expiration"
+    "message": "म्याद समाप्ति"
   },
   "securityCode": {
-    "message": "Security code"
+    "message": "सुरक्षा कोड (CVV)"
   },
   "identityName": {
-    "message": "Identity name"
+    "message": "पहिचान नाम"
   },
   "company": {
-    "message": "Company"
+    "message": "कम्पनी"
   },
   "ssn": {
-    "message": "Social Security number"
+    "message": "सामाजिक सुरक्षा नम्बर"
   },
   "passportNumber": {
-    "message": "Passport number"
+    "message": "राहदानी नम्बर"
   },
   "licenseNumber": {
-    "message": "License number"
+    "message": "लाइसेन्स नम्बर"
   },
   "email": {
-    "message": "Email"
+    "message": "ईमेल"
   },
   "phone": {
-    "message": "Phone"
+    "message": "फोन नं"
   },
   "address": {
-    "message": "Address"
+    "message": "ठेगाना"
   },
   "premiumRequired": {
-    "message": "Premium required"
+    "message": "प्रिमियम आवश्यक छ"
   },
   "premiumRequiredDesc": {
-    "message": "A Premium membership is required to use this feature."
+    "message": "यो सुविधा प्रयोग गर्न प्रिमियम सदस्यता आवश्यक छ।"
   },
   "errorOccurred": {
-    "message": "An error has occurred."
+    "message": "त्रुटि देखा पर्‍यो।"
   },
   "error": {
-    "message": "Error"
+    "message": "त्रुटि"
   },
   "january": {
-    "message": "January"
+    "message": "जनवरी"
   },
   "february": {
-    "message": "February"
+    "message": "फेब्रुअरी"
   },
   "march": {
-    "message": "March"
+    "message": "मार्च"
   },
   "april": {
-    "message": "April"
+    "message": "अप्रिल"
   },
   "may": {
-    "message": "May"
+    "message": "मे"
   },
   "june": {
     "message": "June"
@@ -349,62 +349,62 @@
     "message": "Name is required."
   },
   "addedItem": {
-    "message": "Item added"
+    "message": "आइटम थपियो"
   },
   "editedItem": {
-    "message": "Item saved"
+    "message": "आइटम सेभ गरियो"
   },
   "deleteItem": {
-    "message": "Delete item"
+    "message": "आइटम हटाउनुहोस्"
   },
   "deleteFolder": {
-    "message": "Delete folder"
+    "message": "फोल्डर हटाउनुहोस्"
   },
   "deleteAttachment": {
-    "message": "Delete attachment"
+    "message": "अट्याचमेंट हटाउनुहोस्"
   },
   "deleteItemConfirmation": {
-    "message": "Do you really want to send to the trash?"
+    "message": "के तपाई साँच्चै रद्दीटोकरीमा पठाउन चाहनुहुन्छ?"
   },
   "deletedItem": {
-    "message": "Item sent to trash"
+    "message": "आइटम रद्दीटोकरीमा पठाइयो"
   },
   "overwritePasswordConfirmation": {
-    "message": "Are you sure you want to overwrite the current password?"
+    "message": "के तपाइँ निश्चित हुनुहुन्छ कि तपाइँ हालको पासवर्ड अधिलेखन (ओभरराइट) गर्न चाहनुहुन्छ?"
   },
   "overwriteUsername": {
-    "message": "Overwrite username"
+    "message": "युजरनेम अधिलेखन गर्नुहोस्"
   },
   "overwriteUsernameConfirmation": {
-    "message": "Are you sure you want to overwrite the current username?"
+    "message": "के तपाइँ निश्चित हुनुहुन्छ कि तपाइँ हालको युजरनेम अधिलेखन (ओभरराइट) गर्न चाहनुहुन्छ?"
   },
   "noneFolder": {
-    "message": "No folder",
+    "message": "कुनै फोल्डर हैन",
     "description": "This is the folder for uncategorized items"
   },
   "addFolder": {
-    "message": "Add folder"
+    "message": "फोल्डर थप्नुहोस्"
   },
   "editFolder": {
-    "message": "Edit folder"
+    "message": "फोल्डर सम्पादन गर्नुहोस्"
   },
   "regeneratePassword": {
-    "message": "Regenerate password"
+    "message": "पासवर्ड पुन: उत्पन्न गर्नुहोस्"
   },
   "copyPassword": {
-    "message": "Copy password"
+    "message": "पासवर्ड प्रतिलिपि गर्नुहोस्"
   },
   "copyUri": {
-    "message": "Copy URI"
+    "message": "URI प्रतिलिपि गर्नुहोस्"
   },
   "copyVerificationCodeTotp": {
-    "message": "Copy verification code (TOTP)"
+    "message": "प्रमाणीकरण कोड (TOTP) प्रतिलिपि गर्नुहोस्"
   },
   "length": {
-    "message": "Length"
+    "message": "लम्बाइ"
   },
   "passwordMinLength": {
-    "message": "Minimum password length"
+    "message": "न्यूनतम पासवर्ड लम्बाइ"
   },
   "uppercase": {
     "message": "Uppercase (A-Z)"
@@ -413,45 +413,45 @@
     "message": "Lowercase (a-z)"
   },
   "numbers": {
-    "message": "Numbers (0-9)"
+    "message": "नम्बरहरू (0-9)"
   },
   "specialCharacters": {
-    "message": "Special characters (!@#$%^&*)"
+    "message": "विशेष अक्षरहरू (!@#$%^&*)"
   },
   "numWords": {
-    "message": "Number of words"
+    "message": "शब्द संख्या"
   },
   "wordSeparator": {
-    "message": "Word separator"
+    "message": "शब्द विभाजक"
   },
   "capitalize": {
     "message": "Capitalize",
     "description": "Make the first letter of a word uppercase."
   },
   "includeNumber": {
-    "message": "Include number"
+    "message": "नम्बर समावेश गर्नुहोस्"
   },
   "close": {
-    "message": "Close"
+    "message": "बन्द गर्नुहोस्"
   },
   "minNumbers": {
-    "message": "Minimum numbers"
+    "message": "न्यूनतम नम्बरहरू"
   },
   "minSpecial": {
-    "message": "Minimum special",
+    "message": "न्यूनतम विषेश अक्षरहरू",
     "description": "Minimum Special Characters"
   },
   "ambiguous": {
-    "message": "Avoid ambiguous characters"
+    "message": "अस्पष्ट अक्षरहरूबाट बच्नुहोस्"
   },
   "searchCollection": {
-    "message": "Search collection"
+    "message": "सङ्ग्रह खोज्नुहोस्"
   },
   "searchFolder": {
-    "message": "Search folder"
+    "message": "फोल्डर खोज्नुहोस्"
   },
   "searchFavorites": {
-    "message": "Search favorites"
+    "message": "मनपर्ने खोज्नुहोस्"
   },
   "searchType": {
     "message": "Search type",
@@ -2050,6 +2050,9 @@
   "switchAccount": {
     "message": "Switch account"
   },
+  "alreadyHaveAccount": {
+    "message": "Already have an account?"
+  },
   "options": {
     "message": "Options"
   },
@@ -2389,6 +2392,27 @@
   },
   "logInRequested": {
     "message": "Log in requested"
+  },
+  "creatingAccountOn": {
+    "message": "Creating account on"
+  },
+  "checkYourEmail": {
+    "message": "Check your email"
+  },
+  "followTheLinkInTheEmailSentTo": {
+    "message": "Follow the link in the email sent to"
+  },
+  "andContinueCreatingYourAccount": {
+    "message": "and continue creating your account."
+  },
+  "noEmail": {
+    "message": "No email?"
+  },
+  "goBack": {
+    "message": "Go back"
+  },
+  "toEditYourEmailAddress": {
+    "message": "to edit your email address."
   },
   "exposedMasterPassword": {
     "message": "Exposed Master Password"
