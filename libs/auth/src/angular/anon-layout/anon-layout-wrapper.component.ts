@@ -9,6 +9,7 @@ export interface AnonLayoutWrapperData {
   pageTitle?: string;
   pageSubtitle?: string;
   pageIcon?: Icon;
+  showReadonlyHostname?: boolean;
 }
 
 @Component({
@@ -20,6 +21,7 @@ export class AnonLayoutWrapperComponent {
   protected pageTitle: string;
   protected pageSubtitle: string;
   protected pageIcon: Icon;
+  protected showReadonlyHostname: boolean;
 
   constructor(
     private route: ActivatedRoute,
@@ -27,6 +29,7 @@ export class AnonLayoutWrapperComponent {
   ) {
     this.pageTitle = this.i18nService.t(this.route.snapshot.firstChild.data["pageTitle"]);
     this.pageSubtitle = this.i18nService.t(this.route.snapshot.firstChild.data["pageSubtitle"]);
-    this.pageIcon = this.route.snapshot.firstChild.data["pageIcon"]; // don't translate
+    this.pageIcon = this.route.snapshot.firstChild.data["pageIcon"];
+    this.showReadonlyHostname = this.route.snapshot.firstChild.data["showReadonlyHostname"];
   }
 }

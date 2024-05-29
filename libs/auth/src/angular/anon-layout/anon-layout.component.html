@@ -22,7 +22,13 @@
     <ng-content select="[slot=secondary]"></ng-content>
   </div>
   <footer class="tw-text-center">
-    <div>&copy; {{ year }} Bitwarden Inc.</div>
-    <div>{{ version }}</div>
+    <div *ngIf="showReadonlyHostname">{{ "accessing" | i18n }} {{ hostname }}</div>
+    <ng-container *ngIf="!showReadonlyHostname">
+      <ng-content select="[slot=environment-selector]"></ng-content>
+    </ng-container>
+    <ng-container *ngIf="showYearAndVersion">
+      <div>&copy; {{ year }} Bitwarden Inc.</div>
+      <div>{{ version }}</div>
+    </ng-container>
   </footer>
 </main>
