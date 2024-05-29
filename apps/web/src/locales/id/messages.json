@@ -3244,6 +3244,27 @@
   "device": {
     "message": "Perangkat"
   },
+  "creatingAccountOn": {
+    "message": "Creating account on"
+  },
+  "checkYourEmail": {
+    "message": "Check your email"
+  },
+  "followTheLinkInTheEmailSentTo": {
+    "message": "Follow the link in the email sent to"
+  },
+  "andContinueCreatingYourAccount": {
+    "message": "and continue creating your account."
+  },
+  "noEmail": {
+    "message": "No email?"
+  },
+  "goBack": {
+    "message": "Go back"
+  },
+  "toEditYourEmailAddress": {
+    "message": "to edit your email address."
+  },
   "view": {
     "message": "Tampilan"
   },
@@ -8267,5 +8288,11 @@
   },
   "upgradeOrganizationCloseSecurityGapsDesc": {
     "message": "Stay ahead of security vulnerabilities by upgrading to a paid plan for enhanced monitoring."
+  },
+  "approveAllRequests": {
+    "message": "Approve all requests"
+  },
+  "allLoginRequestsApproved": {
+    "message": "All login requests approved"
   }
 }

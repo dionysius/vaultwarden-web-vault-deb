@@ -3244,6 +3244,27 @@
   "device": {
     "message": "Пристрій"
   },
+  "creatingAccountOn": {
+    "message": "Створення облікового запису"
+  },
+  "checkYourEmail": {
+    "message": "Перевірте свою електронну пошту"
+  },
+  "followTheLinkInTheEmailSentTo": {
+    "message": "Перейдіть за посиланням у листі, надісланому на"
+  },
+  "andContinueCreatingYourAccount": {
+    "message": "і завершіть створення облікового запису."
+  },
+  "noEmail": {
+    "message": "Не отримали електронного листа?"
+  },
+  "goBack": {
+    "message": "Поверніться назад"
+  },
+  "toEditYourEmailAddress": {
+    "message": "і виправте адресу електронної пошти."
+  },
   "view": {
     "message": "Переглянути"
   },
@@ -8187,7 +8208,7 @@
     "message": "Керування рахунками на порталі провайдера"
   },
   "viewItemsIn": {
-    "message": "View items in $NAME$",
+    "message": "Переглянути записи в $NAME$",
     "description": "Button to view the contents of a folder or collection",
     "placeholders": {
       "name": {
@@ -8197,7 +8218,7 @@
     }
   },
   "backTo": {
-    "message": "Back to $NAME$",
+    "message": "Назад до $NAME$",
     "description": "Navigate back to a previous folder or collection",
     "placeholders": {
       "name": {
@@ -8207,11 +8228,11 @@
     }
   },
   "back": {
-    "message": "Back",
+    "message": "Назад",
     "description": "Button text to navigate back"
   },
   "removeItem": {
-    "message": "Remove $NAME$",
+    "message": "Вилучити $NAME$",
     "description": "Remove a selected option, such as a folder or collection",
     "placeholders": {
       "name": {
@@ -8267,5 +8288,11 @@
   },
   "upgradeOrganizationCloseSecurityGapsDesc": {
     "message": "Попереджайте вразливості безпеки, передплативши тарифний план для посиленого моніторингу."
+  },
+  "approveAllRequests": {
+    "message": "Схвалити всі запити"
+  },
+  "allLoginRequestsApproved": {
+    "message": "Усі запити на вхід схвалено"
   }
 }

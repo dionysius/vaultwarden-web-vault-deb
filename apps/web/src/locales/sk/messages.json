@@ -3244,6 +3244,27 @@
   "device": {
     "message": "Zariadenie"
   },
+  "creatingAccountOn": {
+    "message": "Creating account on"
+  },
+  "checkYourEmail": {
+    "message": "Check your email"
+  },
+  "followTheLinkInTheEmailSentTo": {
+    "message": "Follow the link in the email sent to"
+  },
+  "andContinueCreatingYourAccount": {
+    "message": "and continue creating your account."
+  },
+  "noEmail": {
+    "message": "No email?"
+  },
+  "goBack": {
+    "message": "Go back"
+  },
+  "toEditYourEmailAddress": {
+    "message": "to edit your email address."
+  },
   "view": {
     "message": "Zobraziť"
   },
@@ -8187,7 +8208,7 @@
     "message": "Spravujte fakturáciu cez portál poskytovateľa"
   },
   "viewItemsIn": {
-    "message": "View items in $NAME$",
+    "message": "Zobraziť položky v $NAME$",
     "description": "Button to view the contents of a folder or collection",
     "placeholders": {
       "name": {
@@ -8197,7 +8218,7 @@
     }
   },
   "backTo": {
-    "message": "Back to $NAME$",
+    "message": "Späť do $NAME$",
     "description": "Navigate back to a previous folder or collection",
     "placeholders": {
       "name": {
@@ -8207,11 +8228,11 @@
     }
   },
   "back": {
-    "message": "Back",
+    "message": "Späť",
     "description": "Button text to navigate back"
   },
   "removeItem": {
-    "message": "Remove $NAME$",
+    "message": "Odstrániť $NAME$",
     "description": "Remove a selected option, such as a folder or collection",
     "placeholders": {
       "name": {
@@ -8267,5 +8288,11 @@
   },
   "upgradeOrganizationCloseSecurityGapsDesc": {
     "message": "Stay ahead of security vulnerabilities by upgrading to a paid plan for enhanced monitoring."
+  },
+  "approveAllRequests": {
+    "message": "Schváliť všetky žiadosti"
+  },
+  "allLoginRequestsApproved": {
+    "message": "Všetky žiadosti o prihlásenie schválené"
   }
 }

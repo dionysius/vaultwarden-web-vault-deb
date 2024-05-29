@@ -1342,7 +1342,7 @@
     "message": "Ваш налог је затворен и сви повезани подаци су избрисани."
   },
   "deleteOrganizationWarning": {
-    "message": "Deleting your organization is permanent. It cannot be undone."
+    "message": "Брисање организације је трајно. Не може се поништити."
   },
   "myAccount": {
     "message": "Мој налог"
@@ -1714,10 +1714,10 @@
     "message": "Унесите информације о апликацији Bitwarden из администрације Duo."
   },
   "twoFactorDuoClientId": {
-    "message": "Client Id"
+    "message": "Ид клијента"
   },
   "twoFactorDuoClientSecret": {
-    "message": "Client Secret"
+    "message": "Тајна клијента"
   },
   "twoFactorDuoApiHostname": {
     "message": "API Име хоста"
@@ -3244,6 +3244,27 @@
   "device": {
     "message": "Уређај"
   },
+  "creatingAccountOn": {
+    "message": "Креирај налог на"
+  },
+  "checkYourEmail": {
+    "message": "Проверите свој имејл"
+  },
+  "followTheLinkInTheEmailSentTo": {
+    "message": "Пратите везу послатој на"
+  },
+  "andContinueCreatingYourAccount": {
+    "message": "и наставите са креирањем налога."
+  },
+  "noEmail": {
+    "message": "Немате имејл?"
+  },
+  "goBack": {
+    "message": "Ићи назад"
+  },
+  "toEditYourEmailAddress": {
+    "message": "да измените свој имејл."
+  },
   "view": {
     "message": "Приказ"
   },
@@ -3392,7 +3413,7 @@
     "message": "Затражили сте да избришете свој Bitwarden рачун. Кликните на доње дугме да бисте потврдили."
   },
   "deleteRecoverOrgConfirmDesc": {
-    "message": "You have requested to delete your Bitwarden organization."
+    "message": "Захтевали сте да избришете своју Bitwarden оранизацију."
   },
   "myOrganization": {
     "message": "Моја организација"
@@ -8187,7 +8208,7 @@
     "message": "Управљајте наплатом из Provider Portal"
   },
   "viewItemsIn": {
-    "message": "View items in $NAME$",
+    "message": "Видети ставке у $NAME$",
     "description": "Button to view the contents of a folder or collection",
     "placeholders": {
       "name": {
@@ -8197,7 +8218,7 @@
     }
   },
   "backTo": {
-    "message": "Back to $NAME$",
+    "message": "Назад на $NAME$",
     "description": "Navigate back to a previous folder or collection",
     "placeholders": {
       "name": {
@@ -8207,11 +8228,11 @@
     }
   },
   "back": {
-    "message": "Back",
+    "message": "Назад",
     "description": "Button text to navigate back"
   },
   "removeItem": {
-    "message": "Remove $NAME$",
+    "message": "Уклонити $NAME$",
     "description": "Remove a selected option, such as a folder or collection",
     "placeholders": {
       "name": {
@@ -8251,10 +8272,10 @@
     }
   },
   "lowKDFIterationsBanner": {
-    "message": "Low KDF iterations. Increase your iterations to improve the security of your account."
+    "message": "Ниске KDF итерације. Повећајте број понављања да бисте побољшали безбедност свог налога."
   },
   "changeKDFSettings": {
-    "message": "Change KDF settings"
+    "message": "Променити KDF подешавања"
   },
   "secureYourInfrastructure": {
     "message": "Обезбедите своју инфраструктуру"
@@ -8267,5 +8288,11 @@
   },
   "upgradeOrganizationCloseSecurityGapsDesc": {
     "message": "Будите испред безбедносних пропуста надоградњом на плаћени план за побољшано праћење."
+  },
+  "approveAllRequests": {
+    "message": "Approve all requests"
+  },
+  "allLoginRequestsApproved": {
+    "message": "All login requests approved"
   }
 }

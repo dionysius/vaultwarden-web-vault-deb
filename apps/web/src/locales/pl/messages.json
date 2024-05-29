@@ -3244,6 +3244,27 @@
   "device": {
     "message": "Urządzenie"
   },
+  "creatingAccountOn": {
+    "message": "Tworzenie konta na"
+  },
+  "checkYourEmail": {
+    "message": "Sprawdź swoją pocztę e-mail"
+  },
+  "followTheLinkInTheEmailSentTo": {
+    "message": "Kliknij łącze w wiadomości e-mail wysłanej do"
+  },
+  "andContinueCreatingYourAccount": {
+    "message": "i kontynuuj tworzenie konta."
+  },
+  "noEmail": {
+    "message": "Brak wiadomości e-mail?"
+  },
+  "goBack": {
+    "message": "Wróć"
+  },
+  "toEditYourEmailAddress": {
+    "message": "aby edytować swój adres e-mail."
+  },
   "view": {
     "message": "Widok"
   },
@@ -8267,5 +8288,11 @@
   },
   "upgradeOrganizationCloseSecurityGapsDesc": {
     "message": "Bądź na bieżąco z lukami bezpieczeństwa dzięki zmianie na płatny plan z bardziej rozbudowanym monitorowaniem."
+  },
+  "approveAllRequests": {
+    "message": "Zatwierdź wszystkie prośby"
+  },
+  "allLoginRequestsApproved": {
+    "message": "Wszystkie prośby o logowanie zatwierdzone"
   }
 }

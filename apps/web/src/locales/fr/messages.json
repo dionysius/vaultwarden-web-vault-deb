@@ -3244,6 +3244,27 @@
   "device": {
     "message": "Appareil"
   },
+  "creatingAccountOn": {
+    "message": "Création du compte sur"
+  },
+  "checkYourEmail": {
+    "message": "Vérifiez vos courriels"
+  },
+  "followTheLinkInTheEmailSentTo": {
+    "message": "Suivez le lien dans le courriel envoyé à"
+  },
+  "andContinueCreatingYourAccount": {
+    "message": "et continuer à créer votre compte."
+  },
+  "noEmail": {
+    "message": "Pas courriel?"
+  },
+  "goBack": {
+    "message": "Revenir en arrière"
+  },
+  "toEditYourEmailAddress": {
+    "message": "pour modifier votre adresse courriel."
+  },
   "view": {
     "message": "Voir"
   },
@@ -8267,5 +8288,11 @@
   },
   "upgradeOrganizationCloseSecurityGapsDesc": {
     "message": "Restez en avance sur les vulnérabilités de sécurité en passant à un plan payant pour une surveillance améliorée."
+  },
+  "approveAllRequests": {
+    "message": "Approuver toutes les demandes"
+  },
+  "allLoginRequestsApproved": {
+    "message": "Toutes les demandes de connexion approuvées"
   }
 }

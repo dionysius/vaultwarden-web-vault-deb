@@ -3244,6 +3244,27 @@
   "device": {
     "message": "Ierīce"
   },
+  "creatingAccountOn": {
+    "message": "Tiek veidots konts"
+  },
+  "checkYourEmail": {
+    "message": "Jāpārbauda e-pasts"
+  },
+  "followTheLinkInTheEmailSentTo": {
+    "message": "Jāatver saite, kas tika nosūtīta uz e-pasta adresi"
+  },
+  "andContinueCreatingYourAccount": {
+    "message": "un jāturpina sava konta izveide."
+  },
+  "noEmail": {
+    "message": "Nav e-pasta?"
+  },
+  "goBack": {
+    "message": "Atgriezties"
+  },
+  "toEditYourEmailAddress": {
+    "message": ", lai labotu savu e-pasta adresi."
+  },
   "view": {
     "message": "Skatīt"
   },
@@ -8187,7 +8208,7 @@
     "message": "Norēķinus var pārvaldīt Nodrošinātāju portālā"
   },
   "viewItemsIn": {
-    "message": "View items in $NAME$",
+    "message": "Skatīt $NAME$ vienumus",
     "description": "Button to view the contents of a folder or collection",
     "placeholders": {
       "name": {
@@ -8197,7 +8218,7 @@
     }
   },
   "backTo": {
-    "message": "Back to $NAME$",
+    "message": "Atgriezties uz $NAME$",
     "description": "Navigate back to a previous folder or collection",
     "placeholders": {
       "name": {
@@ -8207,11 +8228,11 @@
     }
   },
   "back": {
-    "message": "Back",
+    "message": "Atpakaļ",
     "description": "Button text to navigate back"
   },
   "removeItem": {
-    "message": "Remove $NAME$",
+    "message": "Noņemt $NAME$",
     "description": "Remove a selected option, such as a folder or collection",
     "placeholders": {
       "name": {
@@ -8267,5 +8288,11 @@
   },
   "upgradeOrganizationCloseSecurityGapsDesc": {
     "message": "Apsteidz drošības ievainojamības ar pāriešanu uz maksas plānu pastiprinātai uzraudzībai."
+  },
+  "approveAllRequests": {
+    "message": "Apstiprināt visus pieprasījumus"
+  },
+  "allLoginRequestsApproved": {
+    "message": "Visi pieteikšanās pieprasījumi apstiprināti"
   }
 }

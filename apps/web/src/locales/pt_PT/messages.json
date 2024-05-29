@@ -3244,6 +3244,27 @@
   "device": {
     "message": "Dispositivo"
   },
+  "creatingAccountOn": {
+    "message": "A criar conta em"
+  },
+  "checkYourEmail": {
+    "message": "Verifique o seu e-mail"
+  },
+  "followTheLinkInTheEmailSentTo": {
+    "message": "Siga o link no e-mail enviado para"
+  },
+  "andContinueCreatingYourAccount": {
+    "message": "e continue a criação da sua conta."
+  },
+  "noEmail": {
+    "message": "Não recebeu o e-mail?"
+  },
+  "goBack": {
+    "message": "Volte atrás"
+  },
+  "toEditYourEmailAddress": {
+    "message": "para editar o seu endereço de e-mail."
+  },
   "view": {
     "message": "Ver"
   },
@@ -8267,5 +8288,11 @@
   },
   "upgradeOrganizationCloseSecurityGapsDesc": {
     "message": "Mantenha-se à frente das vulnerabilidades de segurança atualizando para um plano pago para uma monitorização melhorada."
+  },
+  "approveAllRequests": {
+    "message": "Aprovar todos os pedidos"
+  },
+  "allLoginRequestsApproved": {
+    "message": "Todos os pedidos de início de sessão aprovados"
   }
 }

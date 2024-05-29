@@ -1218,7 +1218,7 @@
     "message": "O processo desconectará você da sessão atual, exigindo que você inicie a sessão novamente. As sessões ativas em outros dispositivos podem continuar ativas por até uma hora."
   },
   "emailChanged": {
-    "message": "E-mail Alterado"
+    "message": "E-mail salvo"
   },
   "logBackIn": {
     "message": "Por favor, reinicie a sessão."
@@ -1233,16 +1233,16 @@
     "message": "Senha Mestra Alterada"
   },
   "currentMasterPass": {
-    "message": "Senha Mestra Atual"
+    "message": "Senha mestra atual"
   },
   "newMasterPass": {
-    "message": "Nova Senha Mestra"
+    "message": "Nova senha mestra"
   },
   "confirmNewMasterPass": {
-    "message": "Confirme a Nova Senha Mestra"
+    "message": "Confirme a nova senha mestra"
   },
   "encKeySettings": {
-    "message": "Configurações da Chave de Criptografia"
+    "message": "Configurações da chave de criptografia"
   },
   "kdfAlgorithm": {
     "message": "Algoritmo KDF"
@@ -1285,7 +1285,7 @@
     "message": "Alterar KDF"
   },
   "encKeySettingsChanged": {
-    "message": "As Configurações da Chave de Criptografia foram Alteradas"
+    "message": "As configurações da chave de criptografia foram salvas"
   },
   "dangerZone": {
     "message": "Zona de perigo"
@@ -1306,7 +1306,7 @@
     "message": "Todas as Sessões Desautorizadas"
   },
   "purgeVault": {
-    "message": "Limpar o Cofre"
+    "message": "Limpar cofre"
   },
   "purgedOrganizationVault": {
     "message": "Cofre da organização limpado."
@@ -1342,7 +1342,7 @@
     "message": "A sua conta foi fechada e todos os dados associados foram excluídos."
   },
   "deleteOrganizationWarning": {
-    "message": "Deleting your organization is permanent. It cannot be undone."
+    "message": "A exclusão da organização é permanente. Não pode ser desfeita."
   },
   "myAccount": {
     "message": "Minha Conta"
@@ -1358,7 +1358,7 @@
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
   "onboardingImportDataDetailsLink": {
-    "message": "Novo Item",
+    "message": "Novo item",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
   "onboardingImportDataDetailsPartTwoNoOrgs": {
@@ -1370,7 +1370,7 @@
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
   },
   "importError": {
-    "message": "Erro de Importação"
+    "message": "Erro de importação"
   },
   "importErrorDesc": {
     "message": "Houve um problema com os dados que você tentou importar. Por favor, resolva os erros listados abaixo em seu arquivo de origem e tente novamente."
@@ -1541,7 +1541,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Enforce Bitwarden Two-step Login options for members by using the Two-step Login Policy.'"
   },
   "twoStepLoginPolicy": {
-    "message": "Política de Login em Duas Etapas"
+    "message": "Política de login em duas etapas"
   },
   "twoStepLoginOrganizationDuoDesc": {
     "message": "Para aplicar o Login em Duas Etapas pelo Duo, use as opções abaixo."
@@ -1553,7 +1553,7 @@
     "message": "Ativar o login em duas etapas pode bloquear você permanentemente da sua conta no Bitwarden. Um código de recuperação permite que você acesse sua conta no caso de não poder mais usar seu provedor de login em duas etapas normalmente (por exemplo, você perde seu dispositivo). O suporte do Bitwarden não poderá ajudá-lo se você perder o acesso à sua conta. Recomendamos que você anote ou imprima o código de recuperação e mantenha-o em um local seguro."
   },
   "viewRecoveryCode": {
-    "message": "Ver Código de Recuperação"
+    "message": "Ver código de recuperação"
   },
   "providers": {
     "message": "Provedores",
@@ -1566,7 +1566,7 @@
     "message": "Habilitado"
   },
   "restoreAccess": {
-    "message": "Recuperar Acesso"
+    "message": "Recuperar acesso"
   },
   "premium": {
     "message": "Premium",
@@ -1576,10 +1576,10 @@
     "message": "Assinatura Premium"
   },
   "premiumRequired": {
-    "message": "Requer Assinatura Premium"
+    "message": "Requer assinatura premium"
   },
   "premiumRequiredDesc": {
-    "message": "Uma conta premium é necessária para usar esse recurso."
+    "message": "É necessário ter uma conta premium para usar esse recurso."
   },
   "youHavePremiumAccess": {
     "message": "Você tem acesso premium"
@@ -1597,7 +1597,7 @@
     "message": "Desabilitar"
   },
   "revokeAccess": {
-    "message": "Revogar Acesso"
+    "message": "Revogar acesso"
   },
   "twoStepLoginProviderEnabled": {
     "message": "Este provedor de login em duas etapas está ativado em sua conta."
@@ -1708,19 +1708,19 @@
     "message": "YubiKeys atualizado"
   },
   "disableAllKeys": {
-    "message": "Desabilitar Todas as Chaves"
+    "message": "Desativar todas as chaves"
   },
   "twoFactorDuoDesc": {
     "message": "Insira as informações do aplicativo Bitwarden no painel do administrador do Duo."
   },
   "twoFactorDuoClientId": {
-    "message": "Client Id"
+    "message": "Id do cliente"
   },
   "twoFactorDuoClientSecret": {
-    "message": "Client Secret"
+    "message": "Segredo do cliente"
   },
   "twoFactorDuoApiHostname": {
-    "message": "Servidor API"
+    "message": "Nome do domínio da API"
   },
   "twoFactorEmailDesc": {
     "message": "Siga estas etapas para configurar o login em duas etapas com e-mail:"
@@ -1789,7 +1789,7 @@
     "message": "Você ainda não habilitou nenhum provedor de login em duas etapas. Depois de ativar um provedor de login em duas etapas, você pode conferir aqui o seu código de recuperação."
   },
   "printCode": {
-    "message": "Imprimir Código",
+    "message": "Imprimir código",
     "description": "Print 2FA recovery code"
   },
   "reports": {
@@ -1804,16 +1804,16 @@
     "description": "Vault health reports can be used to evaluate the security of your Bitwarden individual or organization vault."
   },
   "unsecuredWebsitesReport": {
-    "message": "Relatório de Sites Inseguros"
+    "message": "Relatório de sites inseguros"
   },
   "unsecuredWebsitesReportDesc": {
     "message": "Usar sites inseguros com o esquema http:// pode ser perigoso. Se o site permitir, você deve sempre acessá-lo utilizando o esquema https:// para que a sua conexão seja criptografada."
   },
   "unsecuredWebsitesFound": {
-    "message": "Sites Inseguros Encontrados"
+    "message": "Sites inseguros encontrados"
   },
   "unsecuredWebsitesFoundReportDesc": {
-    "message": "Nós encontramos $COUNT$ item(ns) no seu cofre com URIs não segura(s). Você deve alterar o esquema de URI para https:// se o site permitir.",
+    "message": "Encontramos $COUNT$ item(ns) em seu cofre com URIs não segura(s). Se o site permitir, altere o esquema da URI para https://.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1857,7 +1857,7 @@
     "message": "Instruções"
   },
   "exposedPasswordsReport": {
-    "message": "Relatório de Senhas Expostas"
+    "message": "Relatório de senhas expostas"
   },
   "exposedPasswordsReportDesc": {
     "message": "As senhas expostas em um vazamento de dados são alvos fáceis para os atacantes. Altere estas senhas para evitar possíveis invasões."
@@ -3244,6 +3244,27 @@
   "device": {
     "message": "Dispositivo"
   },
+  "creatingAccountOn": {
+    "message": "Criando conta em"
+  },
+  "checkYourEmail": {
+    "message": "Verifique seu e-mail"
+  },
+  "followTheLinkInTheEmailSentTo": {
+    "message": "Siga o link no e-mail enviado para"
+  },
+  "andContinueCreatingYourAccount": {
+    "message": "e continue criando a sua conta."
+  },
+  "noEmail": {
+    "message": "Sem e-mail?"
+  },
+  "goBack": {
+    "message": "Voltar"
+  },
+  "toEditYourEmailAddress": {
+    "message": "para editar o seu endereço de e-mail."
+  },
   "view": {
     "message": "Ver"
   },
@@ -3392,7 +3413,7 @@
     "message": "Você pediu para excluir a sua conta no Bitwarden. Clique no botão abaixo para confirmar."
   },
   "deleteRecoverOrgConfirmDesc": {
-    "message": "You have requested to delete your Bitwarden organization."
+    "message": "Você pediu para excluir a sua organização do Bitwarden."
   },
   "myOrganization": {
     "message": "Minha Organização"
@@ -3572,10 +3593,10 @@
     "message": "Ajustes em sua assinatura resultarão em alterações rateadas em seus totais de cobrança. Se os usuários recém-convidados excederem o número de vagas de sua assinatura, você receberá imediatamente uma cobrança proporcional pelos usuários adicionais."
   },
   "smStandaloneTrialSeatCountUpdateMessageFragment1": {
-    "message": "If you want to add additional"
+    "message": "Se você quiser adicionar mais"
   },
   "smStandaloneTrialSeatCountUpdateMessageFragment2": {
-    "message": "seats without the bundled offer, please contact"
+    "message": "assentos sem a oferta empacotada, por favor contacte"
   },
   "subscriptionUserSeatsLimitedAutoscale": {
     "message": "Ajustes em sua assinatura resultarão em alterações rateadas em seus totais de cobrança. Se os usuários recém-convidados excederem o número de vagas de sua assinatura, você receberá imediatamente uma cobrança proporcional para os usuários adicionais até que seu limite de $MAX$ de vaga seja atingido.",
@@ -6601,7 +6622,7 @@
     "message": "Conceder acesso às coleções adicionando-as a este grupo."
   },
   "restrictedCollectionAssignmentDesc": {
-    "message": "You can only assign collections you manage."
+    "message": "Você só pode atribuir coleções que você gerencia."
   },
   "accessAllCollectionsDesc": {
     "message": "Conceder acesso a todas as coleções atuais e futuras."
@@ -6835,7 +6856,7 @@
     "message": "Selecione grupos"
   },
   "userPermissionOverrideHelperDesc": {
-    "message": "Permissions set for a member will replace permissions set by that member's group."
+    "message": "Permissões definidas para um membro substituirão as permissões definidas pelo grupo desse membro."
   },
   "noMembersOrGroupsAdded": {
     "message": "Nenhum membro ou grupo adicionado"
@@ -7027,7 +7048,7 @@
     "message": "Atualize suas configurações de criptografia para atender às novas recomendações de segurança e melhorar a proteção da conta."
   },
   "kdfSettingsChangeLogoutWarning": {
-    "message": "Proceeding will log you out of all active sessions. You will need to log back in and complete two-step login, if any. We recommend exporting your vault before changing your encryption settings to prevent data loss."
+    "message": "O processo desconectará você de todas as sessões ativas. Você precisará iniciar a sessão novamente e concluir o login em duas etapas, se houver. Recomendamos exportar seu cofre antes de alterar suas configurações de criptografia para evitar perda de dados."
   },
   "secretsManager": {
     "message": "Gerenciador de Segredos"
@@ -7749,7 +7770,7 @@
     "message": "Você não pode se adicionar aos grupos."
   },
   "cannotAddYourselfToCollections": {
-    "message": "You cannot add yourself to collections."
+    "message": "Você não pode se adicionar às coleções."
   },
   "assign": {
     "message": "Atribuir"
@@ -8187,7 +8208,7 @@
     "message": "Gerenciar faturamento a partir do Portal do Provedor"
   },
   "viewItemsIn": {
-    "message": "View items in $NAME$",
+    "message": "Visualizar itens em $NAME$",
     "description": "Button to view the contents of a folder or collection",
     "placeholders": {
       "name": {
@@ -8197,7 +8218,7 @@
     }
   },
   "backTo": {
-    "message": "Back to $NAME$",
+    "message": "Voltar para $NAME$",
     "description": "Navigate back to a previous folder or collection",
     "placeholders": {
       "name": {
@@ -8207,11 +8228,11 @@
     }
   },
   "back": {
-    "message": "Back",
+    "message": "Voltar",
     "description": "Button text to navigate back"
   },
   "removeItem": {
-    "message": "Remove $NAME$",
+    "message": "Remover $NAME$",
     "description": "Remove a selected option, such as a folder or collection",
     "placeholders": {
       "name": {
@@ -8251,21 +8272,27 @@
     }
   },
   "lowKDFIterationsBanner": {
-    "message": "Low KDF iterations. Increase your iterations to improve the security of your account."
+    "message": "Iterações baixas do KDF. Aumente as suas iterações para melhorar a segurança da sua conta."
   },
   "changeKDFSettings": {
-    "message": "Change KDF settings"
+    "message": "Atualizar as definições do KDF"
   },
   "secureYourInfrastructure": {
-    "message": "Secure your infrastructure"
+    "message": "Proteja sua infraestrutura"
   },
   "protectYourFamilyOrBusiness": {
-    "message": "Protect your family or business"
+    "message": "Proteja sua família ou empresa"
   },
   "upgradeOrganizationCloseSecurityGaps": {
-    "message": "Close security gaps with monitoring reports"
+    "message": "Fechar lacunas de segurança com relatórios de monitoramento"
   },
   "upgradeOrganizationCloseSecurityGapsDesc": {
-    "message": "Stay ahead of security vulnerabilities by upgrading to a paid plan for enhanced monitoring."
+    "message": "Fique à frente das vulnerabilidades de segurança atualizando para um plano pago para um monitoramento melhorado."
+  },
+  "approveAllRequests": {
+    "message": "Approve all requests"
+  },
+  "allLoginRequestsApproved": {
+    "message": "All login requests approved"
   }
 }

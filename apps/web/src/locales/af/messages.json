@@ -579,7 +579,7 @@
     "message": "Toegang"
   },
   "accessLevel": {
-    "message": "Access level"
+    "message": "Toegangsvlak"
   },
   "loggedOut": {
     "message": "Uitgeteken"
@@ -672,10 +672,10 @@
     "message": "Encryption not supported"
   },
   "enablePasskeyEncryption": {
-    "message": "Set up encryption"
+    "message": "Stel enkripsie op"
   },
   "usedForEncryption": {
-    "message": "Used for encryption"
+    "message": "Gebruik vir enkripsie"
   },
   "loginWithPasskeyEnabled": {
     "message": "Log in with passkey turned on"
@@ -1045,7 +1045,7 @@
     "message": "Kopieer bevestigingskode"
   },
   "copyUuid": {
-    "message": "Copy UUID"
+    "message": "Kopieer UUID"
   },
   "warning": {
     "message": "Waarskuwing"
@@ -1151,7 +1151,7 @@
     "message": "Lengte"
   },
   "passwordMinLength": {
-    "message": "Minimum password length"
+    "message": "Minimum wagwoordlengte"
   },
   "uppercase": {
     "message": "Hoofletters (A-Z)",
@@ -3243,6 +3243,27 @@
   },
   "device": {
     "message": "Toestel"
+  },
+  "creatingAccountOn": {
+    "message": "Creating account on"
+  },
+  "checkYourEmail": {
+    "message": "Check your email"
+  },
+  "followTheLinkInTheEmailSentTo": {
+    "message": "Follow the link in the email sent to"
+  },
+  "andContinueCreatingYourAccount": {
+    "message": "and continue creating your account."
+  },
+  "noEmail": {
+    "message": "No email?"
+  },
+  "goBack": {
+    "message": "Go back"
+  },
+  "toEditYourEmailAddress": {
+    "message": "to edit your email address."
   },
   "view": {
     "message": "Bekyk"
@@ -7666,7 +7687,7 @@
     "message": "Service account access updated"
   },
   "commonImportFormats": {
-    "message": "Common formats",
+    "message": "Algemene formate",
     "description": "Label indicating the most common import formats"
   },
   "maintainYourSubscription": {
@@ -7743,7 +7764,7 @@
     "message": "Provider Portal"
   },
   "success": {
-    "message": "Success"
+    "message": "Sukses"
   },
   "restrictedGroupAccess": {
     "message": "You cannot add yourself to groups."
@@ -7862,7 +7883,7 @@
     "description": "A warning shown to the user when their subscription is past due and they pay via invoice."
   },
   "unpaidInvoice": {
-    "message": "Unpaid invoice",
+    "message": "Onbetaalde faktuur",
     "description": "The header of a warning box shown to a user whose subscription is unpaid."
   },
   "toReactivateYourSubscription": {
@@ -7877,39 +7898,39 @@
     "message": "Machine accounts cannot be created in suspended organizations. Please contact your organization owner for assistance."
   },
   "machineAccount": {
-    "message": "Machine account",
+    "message": "Masjienrekening",
     "description": "A machine user which can be used to automate processes and access secrets in the system."
   },
   "machineAccounts": {
-    "message": "Machine accounts",
+    "message": "Masjienrekeninge",
     "description": "The title for the section that deals with machine accounts."
   },
   "newMachineAccount": {
-    "message": "New machine account",
+    "message": "Nuwe masjienrekening",
     "description": "Title for creating a new machine account."
   },
   "machineAccountsNoItemsMessage": {
-    "message": "Create a new machine account to get started automating secret access.",
+    "message": "Skep ’n nuwe masjienrekening om die outomatisering van geheimtoegang te begin.",
     "description": "Message to encourage the user to start creating machine accounts."
   },
   "machineAccountsNoItemsTitle": {
-    "message": "Nothing to show yet",
+    "message": "Nog niks om te wys nie",
     "description": "Title to indicate that there are no machine accounts to display."
   },
   "deleteMachineAccounts": {
-    "message": "Delete machine accounts",
+    "message": "Skrap masjienrekeninge",
     "description": "Title for the action to delete one or multiple machine accounts."
   },
   "deleteMachineAccount": {
-    "message": "Delete machine account",
+    "message": "Skrap masjienrekening",
     "description": "Title for the action to delete a single machine account."
   },
   "viewMachineAccount": {
-    "message": "View machine account",
+    "message": "Bekyk masjienrekening",
     "description": "Action to view the details of a machine account."
   },
   "deleteMachineAccountDialogMessage": {
-    "message": "Deleting machine account $MACHINE_ACCOUNT$ is permanent and irreversible.",
+    "message": "Die skrap van masjienrekening $MACHINE_ACCOUNT$ is permanent en onomkeerbaar.",
     "placeholders": {
       "machine_account": {
         "content": "$1",
@@ -7918,10 +7939,10 @@
     }
   },
   "deleteMachineAccountsDialogMessage": {
-    "message": "Deleting machine accounts is permanent and irreversible."
+    "message": "Die skrap van masjienrekeninge is permanent en onomkeerbaar."
   },
   "deleteMachineAccountsConfirmMessage": {
-    "message": "Delete $COUNT$ machine accounts",
+    "message": "Skrap $COUNT$ masjienrekeninge",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -7930,48 +7951,48 @@
     }
   },
   "deleteMachineAccountToast": {
-    "message": "Machine account deleted"
+    "message": "Masjienrekening geskrap"
   },
   "deleteMachineAccountsToast": {
-    "message": "Machine accounts deleted"
+    "message": "Masjienrekeninge geskrap"
   },
   "searchMachineAccounts": {
-    "message": "Search machine accounts",
+    "message": "Soek masjienrekeninge",
     "description": "Placeholder text for searching machine accounts."
   },
   "editMachineAccount": {
-    "message": "Edit machine account",
+    "message": "Wysig masjienrekening",
     "description": "Title for editing a machine account."
   },
   "machineAccountName": {
-    "message": "Machine account name",
+    "message": "Masjienrekeningnaam",
     "description": "Label for the name of a machine account"
   },
   "machineAccountCreated": {
-    "message": "Machine account created",
+    "message": "Masjienrekening geskep",
     "description": "Notifies that a new machine account has been created"
   },
   "machineAccountUpdated": {
-    "message": "Machine account updated",
+    "message": "Masjienrekening bygewerk",
     "description": "Notifies that a machine account has been updated"
   },
   "projectMachineAccountsDescription": {
-    "message": "Grant machine accounts access to this project."
+    "message": "Verleen masjienrekeninge toegang tot hierdie projek."
   },
   "projectMachineAccountsSelectHint": {
-    "message": "Type or select machine accounts"
+    "message": "Tik of kies masjienrekeninge"
   },
   "projectEmptyMachineAccountAccessPolicies": {
-    "message": "Add machine accounts to grant access"
+    "message": "Voeg masjienrekeninge toe om toegang te verleen"
   },
   "machineAccountPeopleDescription": {
-    "message": "Grant groups or people access to this machine account."
+    "message": "Verleen groepe of mense toegang tot hierdie masjienrekening."
   },
   "machineAccountProjectsDescription": {
-    "message": "Assign projects to this machine account. "
+    "message": "Ken projekte toe aan hierdie masjienrekening. "
   },
   "createMachineAccount": {
-    "message": "Create a machine account"
+    "message": "Skep ’n masjienrekening"
   },
   "maPeopleWarningMessage": {
     "message": "Removing people from a machine account does not remove the access tokens they created. For security best practice, it is recommended to revoke access tokens created by people removed from a machine account."
@@ -8034,10 +8055,10 @@
     "message": "Max potential machine account cost"
   },
   "machineAccountAccessUpdated": {
-    "message": "Machine account access updated"
+    "message": "Masjienrekeningtoegang bygewerk"
   },
   "restrictedGroupAccessDesc": {
-    "message": "You cannot add yourself to a group."
+    "message": "U kan nie uself tot ’n groep toevoeg nie."
   },
   "unassignedItemsBannerSelfHost": {
     "message": "Notice: On May 2, 2024, unassigned organization items will no longer be visible in your All Vaults view across devices and will only be accessible via the Admin Console. Assign these items to a collection from the Admin Console to make them visible."
@@ -8057,7 +8078,7 @@
     "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
   },
   "deleteProvider": {
-    "message": "Delete provider"
+    "message": "Skrap verskaffer"
   },
   "deleteProviderConfirmation": {
     "message": "Deleting a provider is permanent and irreversible. Enter your master password to confirm the deletion of the provider and all associated data."
@@ -8115,13 +8136,13 @@
     "message": "Use Bitwarden Secrets Manager SDK in the following programming languages to build your own applications."
   },
   "setUpGithubActions": {
-    "message": "Set up Github Actions"
+    "message": "Stel Github Actions op"
   },
   "setUpGitlabCICD": {
-    "message": "Set up GitLab CI/CD"
+    "message": "Stel GitLab CI/CD op"
   },
   "setUpAnsible": {
-    "message": "Set up Ansible"
+    "message": "Stel Ansible op"
   },
   "cSharpSDKRepo": {
     "message": "View C# repository"
@@ -8151,13 +8172,13 @@
     "message": "Create a new client organization to manage as a Provider. Additional seats will be reflected in the next billing cycle."
   },
   "selectAPlan": {
-    "message": "Select a plan"
+    "message": "Kies ’n plan"
   },
   "thirtyFivePercentDiscount": {
-    "message": "35% Discount"
+    "message": "35% afslag"
   },
   "monthPerMember": {
-    "message": "month per member"
+    "message": "maand per lid"
   },
   "seats": {
     "message": "Seats"
@@ -8169,7 +8190,7 @@
     "message": "Successfully created new client"
   },
   "noAccess": {
-    "message": "No access"
+    "message": "Geen toegang"
   },
   "collectionAdminConsoleManaged": {
     "message": "This collection is only accessible from the admin console"
@@ -8178,10 +8199,10 @@
     "message": "Toggle Organization Menu"
   },
   "vaultItemSelect": {
-    "message": "Select vault item"
+    "message": "Kies kluisitem"
   },
   "collectionItemSelect": {
-    "message": "Select collection item"
+    "message": "Kies versamelingitem"
   },
   "manageBillingFromProviderPortalMessage": {
     "message": "Manage billing from the Provider Portal"
@@ -8197,7 +8218,7 @@
     }
   },
   "backTo": {
-    "message": "Back to $NAME$",
+    "message": "Terug na $NAME$",
     "description": "Navigate back to a previous folder or collection",
     "placeholders": {
       "name": {
@@ -8207,11 +8228,11 @@
     }
   },
   "back": {
-    "message": "Back",
+    "message": "Terug",
     "description": "Button text to navigate back"
   },
   "removeItem": {
-    "message": "Remove $NAME$",
+    "message": "Verwyder $NAME$",
     "description": "Remove a selected option, such as a folder or collection",
     "placeholders": {
       "name": {
@@ -8221,10 +8242,10 @@
     }
   },
   "viewInfo": {
-    "message": "View info"
+    "message": "Bekyk inligting"
   },
   "viewAccess": {
-    "message": "View access"
+    "message": "Bekyk toegang"
   },
   "noCollectionsSelected": {
     "message": "You have not selected any collections."
@@ -8242,7 +8263,7 @@
     "message": "Organization Seats"
   },
   "providerDiscount": {
-    "message": "$AMOUNT$% Discount",
+    "message": "$AMOUNT$% afslag",
     "placeholders": {
       "amount": {
         "content": "$1",
@@ -8254,18 +8275,24 @@
     "message": "Low KDF iterations. Increase your iterations to improve the security of your account."
   },
   "changeKDFSettings": {
-    "message": "Change KDF settings"
+    "message": "Verander KDF-instellings"
   },
   "secureYourInfrastructure": {
-    "message": "Secure your infrastructure"
+    "message": "Beveilig u infrastruktuur"
   },
   "protectYourFamilyOrBusiness": {
-    "message": "Protect your family or business"
+    "message": "Beskerm u gesin of besigheid"
   },
   "upgradeOrganizationCloseSecurityGaps": {
     "message": "Close security gaps with monitoring reports"
   },
   "upgradeOrganizationCloseSecurityGapsDesc": {
     "message": "Stay ahead of security vulnerabilities by upgrading to a paid plan for enhanced monitoring."
+  },
+  "approveAllRequests": {
+    "message": "Approve all requests"
+  },
+  "allLoginRequestsApproved": {
+    "message": "All login requests approved"
   }
 }

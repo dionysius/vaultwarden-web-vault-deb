@@ -3244,6 +3244,27 @@
   "device": {
     "message": "Apparaat"
   },
+  "creatingAccountOn": {
+    "message": "Account maken bij"
+  },
+  "checkYourEmail": {
+    "message": "Check je e-mail"
+  },
+  "followTheLinkInTheEmailSentTo": {
+    "message": "Volg de link in de e-mail die verstuurd is naar"
+  },
+  "andContinueCreatingYourAccount": {
+    "message": "en ga verder met het aanmaken van je account."
+  },
+  "noEmail": {
+    "message": "Geen e-mail?"
+  },
+  "goBack": {
+    "message": "Ga terug"
+  },
+  "toEditYourEmailAddress": {
+    "message": "om je e-mailadres te bewerken."
+  },
   "view": {
     "message": "Weergeven"
   },
@@ -8267,5 +8288,11 @@
   },
   "upgradeOrganizationCloseSecurityGapsDesc": {
     "message": "Stay ahead of security vulnerabilities by upgrading to a paid plan for enhanced monitoring."
+  },
+  "approveAllRequests": {
+    "message": "Alle verzoeken goedkeuren"
+  },
+  "allLoginRequestsApproved": {
+    "message": "Alle inlogverzoeken goedgekeurd"
   }
 }

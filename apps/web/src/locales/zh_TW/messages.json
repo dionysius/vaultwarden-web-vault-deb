@@ -615,10 +615,10 @@
     "message": "使用主密碼登入"
   },
   "readingPasskeyLoading": {
-    "message": "正在讀取金輪..."
+    "message": "正在讀取密碼金輪..."
   },
   "readingPasskeyLoadingInfo": {
-    "message": "請保持視窗開啟，並按照瀏覽器指示操作。"
+    "message": "保持此視窗打開，然後按照瀏覽器的提示進行操作。"
   },
   "useADifferentLogInMethod": {
     "message": "使用不同的登入方法"
@@ -627,10 +627,10 @@
     "message": "使用密碼金鑰登入"
   },
   "invalidPasskeyPleaseTryAgain": {
-    "message": "無效的金鑰。請再試一次。"
+    "message": "無效的密碼金鑰，請再試一次。"
   },
   "twoFactorForPasskeysNotSupportedOnClientUpdateToLogIn": {
-    "message": "不支援金鑰的多重要素驗證。更新應用程式以登入。"
+    "message": "不支援密碼金鑰 2FA。請更新 app 以登入。"
   },
   "loginWithPasskeyInfo": {
     "message": "使用已產生的密碼金輪，無需密碼即可自動登入。生物特徵辨識（例如面部識別或指紋）或其他 FIDO2 安全方式將用於確認您的身分。"
@@ -642,7 +642,7 @@
     "message": "瞭解更多關於無密碼登入的資訊"
   },
   "creatingPasskeyLoading": {
-    "message": "正在建立密碼金輪..."
+    "message": "正在建立密碼金鑰..."
   },
   "creatingPasskeyLoadingInfo": {
     "message": "保持此視窗打開，然後按照瀏覽器的提示進行操作。"
@@ -657,7 +657,7 @@
     "message": "密碼金鑰已成功建立！"
   },
   "customPasskeyNameInfo": {
-    "message": "命名您的密碼金輪以方便您辨識它。"
+    "message": "命名您的密碼金鑰以方便您辨識它。"
   },
   "useForVaultEncryption": {
     "message": "用於密碼庫加密"
@@ -1991,7 +1991,7 @@
     }
   },
   "breachFound": {
-    "message": "發現已外洩的帳號"
+    "message": "發現已外洩的帳戶"
   },
   "compromisedData": {
     "message": "遭外洩的資料"
@@ -3243,6 +3243,27 @@
   },
   "device": {
     "message": "裝置"
+  },
+  "creatingAccountOn": {
+    "message": "Creating account on"
+  },
+  "checkYourEmail": {
+    "message": "Check your email"
+  },
+  "followTheLinkInTheEmailSentTo": {
+    "message": "Follow the link in the email sent to"
+  },
+  "andContinueCreatingYourAccount": {
+    "message": "and continue creating your account."
+  },
+  "noEmail": {
+    "message": "No email?"
+  },
+  "goBack": {
+    "message": "Go back"
+  },
+  "toEditYourEmailAddress": {
+    "message": "to edit your email address."
   },
   "view": {
     "message": "檢視"
@@ -8236,7 +8257,7 @@
     "message": "更新了組織名稱"
   },
   "providerPlan": {
-    "message": "已管理的服務提供者"
+    "message": "代管服務供應商"
   },
   "orgSeats": {
     "message": "組織席位"
@@ -8267,5 +8288,11 @@
   },
   "upgradeOrganizationCloseSecurityGapsDesc": {
     "message": "Stay ahead of security vulnerabilities by upgrading to a paid plan for enhanced monitoring."
+  },
+  "approveAllRequests": {
+    "message": "Approve all requests"
+  },
+  "allLoginRequestsApproved": {
+    "message": "All login requests approved"
   }
 }

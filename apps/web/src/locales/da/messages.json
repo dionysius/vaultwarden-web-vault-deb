@@ -3244,6 +3244,27 @@
   "device": {
     "message": "Enhed"
   },
+  "creatingAccountOn": {
+    "message": "Opretter konto på"
+  },
+  "checkYourEmail": {
+    "message": "Tjek din e-mail"
+  },
+  "followTheLinkInTheEmailSentTo": {
+    "message": "Følg linket i e-mailen sendt til"
+  },
+  "andContinueCreatingYourAccount": {
+    "message": "og fortsæt med kontooprettelsen."
+  },
+  "noEmail": {
+    "message": "Ingen e-mail?"
+  },
+  "goBack": {
+    "message": "Gå tilbage"
+  },
+  "toEditYourEmailAddress": {
+    "message": "for at redigere e-mailadressen."
+  },
   "view": {
     "message": "Vis"
   },
@@ -8267,5 +8288,11 @@
   },
   "upgradeOrganizationCloseSecurityGapsDesc": {
     "message": "Vær opdateret mod sikkerhedssårbarheder ved at opgradere til en betalt abonnementstype for forbedret monitorering."
+  },
+  "approveAllRequests": {
+    "message": "Godkend alle anmodninger"
+  },
+  "allLoginRequestsApproved": {
+    "message": "Alle login-anmodninger godkendt"
   }
 }
