@@ -33,6 +33,7 @@ import { HashPurpose, KeySuffixOptions } from "@bitwarden/common/platform/enums"
 import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/password-strength";
 import { UserId } from "@bitwarden/common/types/guid";
 import { UserKey } from "@bitwarden/common/types/key";
+import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 import { DialogService } from "@bitwarden/components";
 
 @Directive()
@@ -85,6 +86,7 @@ export class LockComponent implements OnInit, OnDestroy {
     protected accountService: AccountService,
     protected authService: AuthService,
     protected kdfConfigService: KdfConfigService,
+    protected syncService: SyncService,
   ) {}
 
   async ngOnInit() {
@@ -317,6 +319,9 @@ export class LockComponent implements OnInit, OnDestroy {
         this.logService.error(e);
       }
     }
+
+    // Vault can be de-synced since notifications get ignored while locked. Need to check whether sync is required using the sync service.
+    await this.syncService.fullSync(false);
 
     if (this.onSuccessfulSubmit != null) {
       await this.onSuccessfulSubmit();

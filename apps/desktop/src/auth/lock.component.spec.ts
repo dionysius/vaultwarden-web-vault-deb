@@ -32,6 +32,7 @@ import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { FakeAccountService, mockAccountServiceWith } from "@bitwarden/common/spec";
 import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/password-strength";
 import { UserId } from "@bitwarden/common/types/guid";
+import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 import { DialogService } from "@bitwarden/components";
 
 import { LockComponent } from "./lock.component";
@@ -173,6 +174,10 @@ describe("LockComponent", () => {
         {
           provide: KdfConfigService,
           useValue: mock<KdfConfigService>(),
+        },
+        {
+          provide: SyncService,
+          useValue: mock<SyncService>(),
         },
       ],
       schemas: [NO_ERRORS_SCHEMA],
