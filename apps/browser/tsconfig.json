@@ -19,6 +19,9 @@
       "@bitwarden/billing": ["../../libs/billing/src"],
       "@bitwarden/common/*": ["../../libs/common/src/*"],
       "@bitwarden/components": ["../../libs/components/src"],
+      "@bitwarden/generator-components": ["../../libs/tools/generator/components/src"],
+      "@bitwarden/generator-core": ["../../libs/tools/generator/core/src"],
+      "@bitwarden/generator-extensions": ["../../libs/tools/generator/extensions/src"],
       "@bitwarden/vault-export-core": [
         "../../libs/tools/export/vault-export/vault-export-core/src"
       ],

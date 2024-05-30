@@ -97,6 +97,11 @@
                   // Node
                   "./libs/node/**/*",
 
+                  //Generator
+                  "./libs/tools/generator/components/**/*",
+                  "./libs/tools/generator/core/**/*",
+                  "./libs/tools/generator/extensions/**/*",
+
                   // Import/export
                   "./libs/importer/**/*",
                   "./libs/tools/export/vault-export/vault-export-core/**/*"
@@ -179,6 +184,33 @@
         "no-restricted-imports": [
           "error",
           { "patterns": ["@bitwarden/components/*", "src/**/*", "@bitwarden/angular/*"] }
+        ]
+      }
+    },
+    {
+      "files": ["libs/tools/generator/components/src/**/*.ts"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          { "patterns": ["@bitwarden/generator-components/*", "src/**/*"] }
+        ]
+      }
+    },
+    {
+      "files": ["libs/tools/generator/core/src/**/*.ts"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          { "patterns": ["@bitwarden/generator-core/*", "src/**/*"] }
+        ]
+      }
+    },
+    {
+      "files": ["libs/tools/generator/extensions/src/**/*.ts"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          { "patterns": ["@bitwarden/generator-extensions/*", "src/**/*"] }
         ]
       }
     },
