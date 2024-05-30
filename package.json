@@ -81,6 +81,7 @@
     "@typescript-eslint/eslint-plugin": "7.8.0",
     "@typescript-eslint/parser": "7.8.0",
     "@webcomponents/custom-elements": "1.6.0",
+    "@yao-pkg/pkg": "^5.11.5",
     "autoprefixer": "10.4.19",
     "base64-loader": "1.0.0",
     "chromatic": "10.9.6",
@@ -118,7 +119,6 @@
     "lint-staged": "15.2.2",
     "mini-css-extract-plugin": "2.8.1",
     "node-ipc": "9.2.1",
-    "pkg": "5.8.1",
     "postcss": "8.4.38",
     "postcss-loader": "8.1.1",
     "prettier": "3.2.2",
@@ -220,7 +220,7 @@
     "*.ts": "eslint --cache --cache-strategy content --fix"
   },
   "engines": {
-    "node": "^18.18.0",
-    "npm": "~9"
+    "node": "~20",
+    "npm": "~10"
   }
 }

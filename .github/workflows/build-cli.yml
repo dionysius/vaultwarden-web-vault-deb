@@ -78,8 +78,8 @@ jobs:
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
       _NODE_VERSION: ${{ needs.setup.outputs.node_version }}
-      _WIN_PKG_FETCH_VERSION: 18.5.0
-      _WIN_PKG_VERSION: 3.4
+      _WIN_PKG_FETCH_VERSION: 20.11.1
+      _WIN_PKG_VERSION: 3.5
     steps:
       - name: Checkout repo
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
@@ -155,8 +155,8 @@ jobs:
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
       _NODE_VERSION: ${{ needs.setup.outputs.node_version }}
-      _WIN_PKG_FETCH_VERSION: 18.5.0
-      _WIN_PKG_VERSION: 3.4
+      _WIN_PKG_FETCH_VERSION: 20.11.1
+      _WIN_PKG_VERSION: 3.5
     steps:
       - name: Checkout repo
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
@@ -178,7 +178,7 @@ jobs:
         shell: pwsh
         run: |
           cd $HOME
-          $fetchedUrl = "https://github.com/vercel/pkg-fetch/releases/download/v$env:_WIN_PKG_VERSION/node-v$env:_WIN_PKG_FETCH_VERSION-win-x64"
+          $fetchedUrl = "https://github.com/yao-pkg/pkg-fetch/releases/download/v$env:_WIN_PKG_VERSION/node-v$env:_WIN_PKG_FETCH_VERSION-win-x64"
           New-Item -ItemType directory -Path .\.pkg-cache
           New-Item -ItemType directory -Path .\.pkg-cache\v$env:_WIN_PKG_VERSION
           Invoke-RestMethod -Uri $fetchedUrl `
