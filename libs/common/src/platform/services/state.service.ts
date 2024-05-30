@@ -474,23 +474,6 @@ export class StateService<
     );
   }
 
-  async getOrganizationInvitation(options?: StorageOptions): Promise<any> {
-    return (
-      await this.getGlobals(this.reconcileOptions(options, await this.defaultInMemoryOptions()))
-    )?.organizationInvitation;
-  }
-
-  async setOrganizationInvitation(value: any, options?: StorageOptions): Promise<void> {
-    const globals = await this.getGlobals(
-      this.reconcileOptions(options, await this.defaultInMemoryOptions()),
-    );
-    globals.organizationInvitation = value;
-    await this.saveGlobals(
-      globals,
-      this.reconcileOptions(options, await this.defaultInMemoryOptions()),
-    );
-  }
-
   async getPasswordGenerationOptions(options?: StorageOptions): Promise<PasswordGeneratorOptions> {
     return (
       await this.getAccount(this.reconcileOptions(options, await this.defaultOnDiskLocalOptions()))

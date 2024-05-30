@@ -78,6 +78,10 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
 
   protected captchaBypassToken: string = null;
 
+  // allows for extending classes to modify the register request before sending
+  // currently used by web to add organization invitation details
+  protected modifyRegisterRequest: (request: RegisterRequest) => Promise<void>;
+
   constructor(
     protected formValidationErrorService: FormValidationErrorsService,
     protected formBuilder: UntypedFormBuilder,
@@ -290,10 +294,8 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
       kdfConfig.iterations,
     );
     request.keys = new KeysRequest(keys[0], keys[1].encryptedString);
-    const orgInvite = await this.stateService.getOrganizationInvitation();
-    if (orgInvite != null && orgInvite.token != null && orgInvite.organizationUserId != null) {
-      request.token = orgInvite.token;
-      request.organizationUserId = orgInvite.organizationUserId;
+    if (this.modifyRegisterRequest) {
+      await this.modifyRegisterRequest(request);
     }
     return request;
   }

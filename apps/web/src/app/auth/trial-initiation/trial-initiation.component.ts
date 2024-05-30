@@ -14,13 +14,14 @@ import { ProductType } from "@bitwarden/common/enums";
 import { ReferenceEventRequest } from "@bitwarden/common/models/request/reference-event.request";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
-import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 
 import {
   OrganizationCreatedEvent,
   SubscriptionProduct,
   TrialOrganizationType,
 } from "../../billing/accounts/trial-initiation/trial-billing-step.component";
+import { AcceptOrganizationInviteService } from "../organization-invite/accept-organization.service";
+import { OrganizationInvite } from "../organization-invite/organization-invite";
 
 import { RouterService } from "./../../core/router.service";
 import { VerticalStepperComponent } from "./vertical-stepper/vertical-stepper.component";
@@ -121,12 +122,12 @@ export class TrialInitiationComponent implements OnInit, OnDestroy {
     protected router: Router,
     private formBuilder: UntypedFormBuilder,
     private titleCasePipe: TitleCasePipe,
-    private stateService: StateService,
     private logService: LogService,
     private policyApiService: PolicyApiServiceAbstraction,
     private policyService: PolicyService,
     private i18nService: I18nService,
     private routerService: RouterService,
+    private acceptOrgInviteService: AcceptOrganizationInviteService,
   ) {}
 
   async ngOnInit(): Promise<void> {
@@ -180,30 +181,10 @@ export class TrialInitiationComponent implements OnInit, OnDestroy {
         : "Password Manager trial from marketing website";
     });
 
-    const invite = await this.stateService.getOrganizationInvitation();
-    if (invite != null) {
-      try {
-        const policies = await this.policyApiService.getPoliciesByToken(
-          invite.organizationId,
-          invite.token,
-          invite.email,
-          invite.organizationUserId,
-        );
-        if (policies.data != null) {
-          this.policies = Policy.fromListResponse(policies);
-        }
-      } catch (e) {
-        this.logService.error(e);
-      }
-    }
-
-    if (this.policies != null) {
-      this.policyService
-        .masterPasswordPolicyOptions$(this.policies)
-        .pipe(takeUntil(this.destroy$))
-        .subscribe((enforcedPasswordPolicyOptions) => {
-          this.enforcedPolicyOptions = enforcedPasswordPolicyOptions;
-        });
+    // If there's a deep linked org invite, use it to get the password policies
+    const orgInvite = await this.acceptOrgInviteService.getOrganizationInvite();
+    if (orgInvite != null) {
+      await this.initPasswordPolicies(orgInvite);
     }
 
     this.orgInfoFormGroup.controls.name.valueChanges
@@ -301,6 +282,32 @@ export class TrialInitiationComponent implements OnInit, OnDestroy {
         queryParams: { plan: sponsorshipToken },
       });
       this.routerService.setPreviousUrl(route.toString());
+    }
+  }
+
+  private async initPasswordPolicies(invite: OrganizationInvite): Promise<void> {
+    if (invite == null) {
+      return;
+    }
+
+    try {
+      this.policies = await this.policyApiService.getPoliciesByToken(
+        invite.organizationId,
+        invite.token,
+        invite.email,
+        invite.organizationUserId,
+      );
+    } catch (e) {
+      this.logService.error(e);
+    }
+
+    if (this.policies != null) {
+      this.policyService
+        .masterPasswordPolicyOptions$(this.policies)
+        .pipe(takeUntil(this.destroy$))
+        .subscribe((enforcedPasswordPolicyOptions) => {
+          this.enforcedPolicyOptions = enforcedPasswordPolicyOptions;
+        });
     }
   }
 

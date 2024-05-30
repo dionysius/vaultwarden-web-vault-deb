@@ -63,6 +63,7 @@ export const TOKEN_DISK_LOCAL = new StateDefinition("tokenDiskLocal", "disk", {
 export const TOKEN_MEMORY = new StateDefinition("token", "memory");
 export const TWO_FACTOR_MEMORY = new StateDefinition("twoFactor", "memory");
 export const USER_DECRYPTION_OPTIONS_DISK = new StateDefinition("userDecryptionOptions", "disk");
+export const ORGANIZATION_INVITE_DISK = new StateDefinition("organizationInvite", "disk");
 export const VAULT_TIMEOUT_SETTINGS_DISK_LOCAL = new StateDefinition(
   "vaultTimeoutSettings",
   "disk",

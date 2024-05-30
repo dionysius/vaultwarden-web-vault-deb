@@ -155,7 +155,7 @@ export class LoginComponent extends CaptchaProtectedComponent implements OnInit,
 
       if (this.handleCaptchaRequired(response)) {
         return;
-      } else if (this.handleMigrateEncryptionKey(response)) {
+      } else if (await this.handleMigrateEncryptionKey(response)) {
         return;
       } else if (response.requiresTwoFactor) {
         if (this.onSuccessfulLoginTwoFactorNavigate != null) {
@@ -218,9 +218,7 @@ export class LoginComponent extends CaptchaProtectedComponent implements OnInit,
     }
 
     this.setLoginEmailValues();
-    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    this.router.navigate(["/login-with-device"]);
+    await this.router.navigate(["/login-with-device"]);
   }
 
   async launchSsoBrowser(clientId: string, ssoRedirectUri: string) {
@@ -310,7 +308,7 @@ export class LoginComponent extends CaptchaProtectedComponent implements OnInit,
 
   // Legacy accounts used the master key to encrypt data. Migration is required
   // but only performed on web
-  protected handleMigrateEncryptionKey(result: AuthResult): boolean {
+  protected async handleMigrateEncryptionKey(result: AuthResult): Promise<boolean> {
     if (!result.requiresEncryptionKeyMigration) {
       return false;
     }

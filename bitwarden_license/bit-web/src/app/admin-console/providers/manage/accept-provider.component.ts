@@ -3,9 +3,9 @@ import { ActivatedRoute, Params, Router } from "@angular/router";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { ProviderUserAcceptRequest } from "@bitwarden/common/admin-console/models/request/provider/provider-user-accept.request";
+import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { BaseAcceptComponent } from "@bitwarden/web-vault/app/common/base.accept.component";
 
 @Component({
@@ -23,11 +23,11 @@ export class AcceptProviderComponent extends BaseAcceptComponent {
     router: Router,
     i18nService: I18nService,
     route: ActivatedRoute,
-    stateService: StateService,
+    authService: AuthService,
     private apiService: ApiService,
     platformUtilService: PlatformUtilsService,
   ) {
-    super(router, platformUtilService, i18nService, route, stateService);
+    super(router, platformUtilService, i18nService, route, authService);
   }
 
   async authedHandler(qParams: Params) {

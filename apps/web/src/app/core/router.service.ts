@@ -92,7 +92,7 @@ export class RouterService {
   /**
    * Fetch and clear persisted LoginRedirectUrl if present in state
    */
-  async getAndClearLoginRedirectUrl(): Promise<string> | undefined {
+  async getAndClearLoginRedirectUrl(): Promise<string | undefined> {
     const persistedPreLoginUrl = await firstValueFrom(this.deepLinkRedirectUrlState.state$);
 
     if (!Utils.isNullOrEmpty(persistedPreLoginUrl)) {
