@@ -1,6 +1,6 @@
-import { UserKeyDefinition, UserKeyDefinitionOptions } from "../../../platform/state";
+import { UserKeyDefinition, UserKeyDefinitionOptions } from "../../platform/state";
 // eslint-disable-next-line -- `StateDefinition` used as an argument
-import { StateDefinition } from "../../../platform/state/state-definition";
+import { StateDefinition } from "../../platform/state/state-definition";
 
 /** A set of options for customizing the behavior of a {@link BufferedKeyDefinition}
  */

@@ -1,6 +1,9 @@
 import { Jsonify } from "type-fest";
 
 import { GENERATOR_DISK, UserKeyDefinition } from "../../platform/state";
+import { BufferedKeyDefinition } from "../state/buffered-key-definition";
+import { SecretClassifier } from "../state/secret-classifier";
+import { SecretKeyDefinition } from "../state/secret-key-definition";
 
 import { GeneratedCredential } from "./history/generated-credential";
 import { LegacyPasswordHistoryDecryptor } from "./history/legacy-password-history-decryptor";
@@ -8,9 +11,6 @@ import { GeneratorNavigation } from "./navigation/generator-navigation";
 import { PassphraseGenerationOptions } from "./passphrase/passphrase-generation-options";
 import { GeneratedPasswordHistory } from "./password/generated-password-history";
 import { PasswordGenerationOptions } from "./password/password-generation-options";
-import { BufferedKeyDefinition } from "./state/buffered-key-definition";
-import { SecretClassifier } from "./state/secret-classifier";
-import { SecretKeyDefinition } from "./state/secret-key-definition";
 import { CatchallGenerationOptions } from "./username/catchall-generator-options";
 import { EffUsernameGenerationOptions } from "./username/eff-username-generator-options";
 import {

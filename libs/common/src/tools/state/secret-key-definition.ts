@@ -1,6 +1,6 @@
-import { UserKeyDefinitionOptions, UserKeyDefinition } from "../../../platform/state";
+import { UserKeyDefinitionOptions, UserKeyDefinition } from "../../platform/state";
 // eslint-disable-next-line -- `StateDefinition` used as an argument
-import { StateDefinition } from "../../../platform/state/state-definition";
+import { StateDefinition } from "../../platform/state/state-definition";
 import { ClassifiedFormat } from "./classified-format";
 import { SecretClassifier } from "./secret-classifier";
 

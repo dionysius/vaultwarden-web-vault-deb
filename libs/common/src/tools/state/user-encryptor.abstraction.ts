@@ -1,7 +1,7 @@
 import { Jsonify } from "type-fest";
 
-import { EncString } from "../../../platform/models/domain/enc-string";
-import { UserId } from "../../../types/guid";
+import { EncString } from "../../platform/models/domain/enc-string";
+import { UserId } from "../../types/guid";
 
 /** A classification strategy that protects a type's secrets with
  *  user-specific information. The specific kind of information is

@@ -1,9 +1,9 @@
 import { Jsonify } from "type-fest";
 
-import { CryptoService } from "../../../platform/abstractions/crypto.service";
-import { EncryptService } from "../../../platform/abstractions/encrypt.service";
-import { EncString } from "../../../platform/models/domain/enc-string";
-import { UserId } from "../../../types/guid";
+import { CryptoService } from "../../platform/abstractions/crypto.service";
+import { EncryptService } from "../../platform/abstractions/encrypt.service";
+import { EncString } from "../../platform/models/domain/enc-string";
+import { UserId } from "../../types/guid";
 
 import { DataPacker } from "./data-packer.abstraction";
 import { UserEncryptor } from "./user-encryptor.abstraction";

@@ -11,9 +11,9 @@ import { EncryptService } from "../../../platform/abstractions/encrypt.service";
 import { StateProvider } from "../../../platform/state";
 import { UserId } from "../../../types/guid";
 import { UserKey } from "../../../types/key";
+import { BufferedState } from "../../state/buffered-state";
 import { DefaultPolicyEvaluator } from "../default-policy-evaluator";
 import { DUCK_DUCK_GO_FORWARDER, DUCK_DUCK_GO_BUFFER } from "../key-definitions";
-import { BufferedState } from "../state/buffered-state";
 
 import { ForwarderGeneratorStrategy } from "./forwarder-generator-strategy";
 import { DefaultDuckDuckGoOptions } from "./forwarders/duck-duck-go";

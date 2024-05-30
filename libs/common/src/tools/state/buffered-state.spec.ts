@@ -5,9 +5,9 @@ import {
   FakeStateProvider,
   awaitAsync,
   trackEmissions,
-} from "../../../../spec";
-import { GENERATOR_DISK, KeyDefinition } from "../../../platform/state";
-import { UserId } from "../../../types/guid";
+} from "../../../spec";
+import { GENERATOR_DISK, KeyDefinition } from "../../platform/state";
+import { UserId } from "../../types/guid";
 
 import { BufferedKeyDefinition } from "./buffered-key-definition";
 import { BufferedState } from "./buffered-state";

@@ -4,12 +4,12 @@ import { CryptoService } from "../../../platform/abstractions/crypto.service";
 import { EncryptService } from "../../../platform/abstractions/encrypt.service";
 import { SingleUserState, StateProvider } from "../../../platform/state";
 import { UserId } from "../../../types/guid";
+import { BufferedState } from "../../state/buffered-state";
+import { PaddedDataPacker } from "../../state/padded-data-packer";
+import { SecretState } from "../../state/secret-state";
+import { UserKeyEncryptor } from "../../state/user-key-encryptor";
 import { GeneratorHistoryService } from "../abstractions/generator-history.abstraction";
 import { GENERATOR_HISTORY, GENERATOR_HISTORY_BUFFER } from "../key-definitions";
-import { BufferedState } from "../state/buffered-state";
-import { PaddedDataPacker } from "../state/padded-data-packer";
-import { SecretState } from "../state/secret-state";
-import { UserKeyEncryptor } from "../state/user-key-encryptor";
 
 import { GeneratedCredential } from "./generated-credential";
 import { LegacyPasswordHistoryDecryptor } from "./legacy-password-history-decryptor";

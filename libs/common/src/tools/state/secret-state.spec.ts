@@ -7,10 +7,10 @@ import {
   makeEncString,
   mockAccountServiceWith,
   awaitAsync,
-} from "../../../../spec";
-import { EncString } from "../../../platform/models/domain/enc-string";
-import { GENERATOR_DISK } from "../../../platform/state";
-import { UserId } from "../../../types/guid";
+} from "../../../spec";
+import { EncString } from "../../platform/models/domain/enc-string";
+import { GENERATOR_DISK } from "../../platform/state";
+import { UserId } from "../../types/guid";
 
 import { SecretClassifier } from "./secret-classifier";
 import { SecretKeyDefinition } from "./secret-key-definition";

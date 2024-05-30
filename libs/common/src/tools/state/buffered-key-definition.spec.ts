@@ -1,4 +1,4 @@
-import { GENERATOR_DISK, UserKeyDefinition } from "../../../platform/state";
+import { GENERATOR_DISK, UserKeyDefinition } from "../../platform/state";
 
 import { BufferedKeyDefinition } from "./buffered-key-definition";
 

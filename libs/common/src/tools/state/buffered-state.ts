@@ -5,7 +5,7 @@ import {
   SingleUserState,
   CombinedState,
   StateUpdateOptions,
-} from "../../../platform/state";
+} from "../../platform/state";
 
 import { BufferedKeyDefinition } from "./buffered-key-definition";
 

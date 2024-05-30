@@ -1,12 +1,12 @@
 import { mock } from "jest-mock-extended";
 
-import { CryptoService } from "../../../platform/abstractions/crypto.service";
-import { EncryptService } from "../../../platform/abstractions/encrypt.service";
-import { EncString } from "../../../platform/models/domain/enc-string";
-import { SymmetricCryptoKey } from "../../../platform/models/domain/symmetric-crypto-key";
-import { CsprngArray } from "../../../types/csprng";
-import { UserId } from "../../../types/guid";
-import { UserKey } from "../../../types/key";
+import { CryptoService } from "../../platform/abstractions/crypto.service";
+import { EncryptService } from "../../platform/abstractions/encrypt.service";
+import { EncString } from "../../platform/models/domain/enc-string";
+import { SymmetricCryptoKey } from "../../platform/models/domain/symmetric-crypto-key";
+import { CsprngArray } from "../../types/csprng";
+import { UserId } from "../../types/guid";
+import { UserKey } from "../../types/key";
 
 import { DataPacker } from "./data-packer.abstraction";
 import { UserKeyEncryptor } from "./user-key-encryptor";

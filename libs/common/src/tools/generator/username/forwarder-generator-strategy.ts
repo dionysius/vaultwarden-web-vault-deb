@@ -5,16 +5,16 @@ import { CryptoService } from "../../../platform/abstractions/crypto.service";
 import { EncryptService } from "../../../platform/abstractions/encrypt.service";
 import { SingleUserState, StateProvider, UserKeyDefinition } from "../../../platform/state";
 import { UserId } from "../../../types/guid";
+import { BufferedKeyDefinition } from "../../state/buffered-key-definition";
+import { BufferedState } from "../../state/buffered-state";
+import { PaddedDataPacker } from "../../state/padded-data-packer";
+import { SecretClassifier } from "../../state/secret-classifier";
+import { SecretKeyDefinition } from "../../state/secret-key-definition";
+import { SecretState } from "../../state/secret-state";
+import { UserKeyEncryptor } from "../../state/user-key-encryptor";
 import { GeneratorStrategy } from "../abstractions";
 import { DefaultPolicyEvaluator } from "../default-policy-evaluator";
 import { NoPolicy } from "../no-policy";
-import { BufferedKeyDefinition } from "../state/buffered-key-definition";
-import { BufferedState } from "../state/buffered-state";
-import { PaddedDataPacker } from "../state/padded-data-packer";
-import { SecretClassifier } from "../state/secret-classifier";
-import { SecretKeyDefinition } from "../state/secret-key-definition";
-import { SecretState } from "../state/secret-state";
-import { UserKeyEncryptor } from "../state/user-key-encryptor";
 
 import { ApiOptions } from "./options/forwarder-options";
 

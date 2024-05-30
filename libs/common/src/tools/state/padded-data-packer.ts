@@ -1,6 +1,6 @@
 import { Jsonify } from "type-fest";
 
-import { Utils } from "../../../platform/misc/utils";
+import { Utils } from "../../platform/misc/utils";
 
 import { DataPacker as DataPackerAbstraction } from "./data-packer.abstraction";
 

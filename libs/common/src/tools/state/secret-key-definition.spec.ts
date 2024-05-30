@@ -1,4 +1,4 @@
-import { GENERATOR_DISK, UserKeyDefinitionOptions } from "../../../platform/state";
+import { GENERATOR_DISK, UserKeyDefinitionOptions } from "../../platform/state";
 
 import { SecretClassifier } from "./secret-classifier";
 import { SecretKeyDefinition } from "./secret-key-definition";

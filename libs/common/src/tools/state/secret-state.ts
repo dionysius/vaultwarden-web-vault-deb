@@ -1,13 +1,13 @@
 import { Observable, map, concatMap, share, ReplaySubject, timer } from "rxjs";
 
-import { EncString } from "../../../platform/models/domain/enc-string";
+import { EncString } from "../../platform/models/domain/enc-string";
 import {
   SingleUserState,
   StateProvider,
   StateUpdateOptions,
   CombinedState,
-} from "../../../platform/state";
-import { UserId } from "../../../types/guid";
+} from "../../platform/state";
+import { UserId } from "../../types/guid";
 
 import { ClassifiedFormat } from "./classified-format";
 import { SecretKeyDefinition } from "./secret-key-definition";
