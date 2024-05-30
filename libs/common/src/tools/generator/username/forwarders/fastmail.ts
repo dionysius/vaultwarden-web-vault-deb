@@ -12,7 +12,7 @@ import { Forwarders } from "../options/constants";
 import { EmailPrefixOptions, ApiOptions } from "../options/forwarder-options";
 
 export const DefaultFastmailOptions: ApiOptions & EmailPrefixOptions = Object.freeze({
-  website: "",
+  website: null,
   domain: "",
   prefix: "",
   token: "",

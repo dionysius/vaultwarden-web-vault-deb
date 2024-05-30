@@ -14,8 +14,6 @@ export class FastmailForwarder implements Forwarder {
       throw "Unable to obtain Fastmail masked email account ID.";
     }
 
-    const forDomain = (options.website || "");
-
     const requestInit: RequestInit = {
       redirect: "manual",
       cache: "no-store",
@@ -37,7 +35,7 @@ export class FastmailForwarder implements Forwarder {
               "new-masked-email": {
                 state: "enabled",
                 description: "",
-                forDomain: forDomain,
+                forDomain: options.website,
                 emailPrefix: options.fastmail.prefix,
               },
             },
