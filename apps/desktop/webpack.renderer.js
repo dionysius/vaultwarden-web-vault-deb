@@ -24,8 +24,7 @@ const common = {
           {
             loader: "babel-loader",
             options: {
-              configFile: false,
-              plugins: ["@angular/compiler-cli/linker/babel"],
+              configFile: "../../babel.config.json",
             },
           },
         ],
