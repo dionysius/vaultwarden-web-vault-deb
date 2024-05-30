@@ -52,7 +52,7 @@
         <bit-tab label="{{ 'collections' | i18n }}">
           <p>
             {{ "editGroupCollectionsDesc" | i18n }}
-            <span *ngIf="!(canEditAnyCollection$ | async)">
+            <span *ngIf="!(canAssignAccessToAnyCollection$ | async)">
               {{ "restrictedCollectionAssignmentDesc" | i18n }}
             </span>
           </p>

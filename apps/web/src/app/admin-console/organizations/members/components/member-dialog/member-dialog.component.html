@@ -278,9 +278,17 @@
           <div class="tw-mb-6" *ngIf="restrictEditingSelf$ | async">
             {{ "cannotAddYourselfToCollections" | i18n }}
           </div>
-          <div *ngIf="organization.useGroups && !(restrictEditingSelf$ | async)" class="tw-mb-6">
-            {{ "userPermissionOverrideHelperDesc" | i18n }}
-            <span *ngIf="!(canEditAnyCollection$ | async)">
+          <div
+            *ngIf="
+              !(restrictEditingSelf$ | async) &&
+              (organization.useGroups || !(canAssignAccessToAnyCollection$ | async))
+            "
+            class="tw-mb-6"
+          >
+            <span *ngIf="organization.useGroups">
+              {{ "userPermissionOverrideHelperDesc" | i18n }}
+            </span>
+            <span *ngIf="!(canAssignAccessToAnyCollection$ | async)">
               {{ "restrictedCollectionAssignmentDesc" | i18n }}
             </span>
           </div>

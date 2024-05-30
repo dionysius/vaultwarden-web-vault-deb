@@ -107,7 +107,7 @@ export class MemberDialogComponent implements OnDestroy {
 
   protected allowAdminAccessToAllCollectionItems$: Observable<boolean>;
   protected restrictEditingSelf$: Observable<boolean>;
-  protected canEditAnyCollection$: Observable<boolean>;
+  protected canAssignAccessToAnyCollection$: Observable<boolean>;
 
   protected permissionsGroup = this.formBuilder.group({
     manageAssignedCollectionsGroup: this.formBuilder.group<Record<string, boolean>>({
@@ -222,12 +222,17 @@ export class MemberDialogComponent implements OnDestroy {
       FeatureFlag.FlexibleCollectionsV1,
     );
 
-    this.canEditAnyCollection$ = combineLatest([
+    this.canAssignAccessToAnyCollection$ = combineLatest([
       this.organization$,
       flexibleCollectionsV1Enabled$,
+      this.allowAdminAccessToAllCollectionItems$,
     ]).pipe(
-      map(([org, flexibleCollectionsV1Enabled]) =>
-        org.canEditAnyCollection(flexibleCollectionsV1Enabled),
+      map(
+        ([org, flexibleCollectionsV1Enabled, allowAdminAccessToAllCollectionItems]) =>
+          org.canEditAnyCollection(flexibleCollectionsV1Enabled) ||
+          // Manage Users custom permission cannot edit any collection but they can assign access from this dialog
+          // if permitted by collection management settings
+          (org.permissions.manageUsers && allowAdminAccessToAllCollectionItems),
       ),
     );
 
