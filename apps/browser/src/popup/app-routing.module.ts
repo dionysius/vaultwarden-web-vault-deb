@@ -65,7 +65,6 @@ import { VaultSettingsComponent } from "../vault/popup/settings/vault-settings.c
 
 import { extensionRefreshRedirect, extensionRefreshSwap } from "./extension-refresh-route-utils";
 import { debounceNavigationGuard } from "./services/debounce-navigation.service";
-import { OptionsComponent } from "./settings/options.component";
 import { TabsV2Component } from "./tabs-v2.component";
 import { TabsComponent } from "./tabs.component";
 
@@ -308,12 +307,6 @@ const routes: Routes = [
     component: PremiumComponent,
     canActivate: [AuthGuard],
     data: { state: "premium" },
-  },
-  {
-    path: "options",
-    component: OptionsComponent,
-    canActivate: [AuthGuard],
-    data: { state: "options" },
   },
   {
     path: "appearance",

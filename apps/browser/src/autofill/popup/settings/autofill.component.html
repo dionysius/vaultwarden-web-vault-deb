@@ -122,6 +122,54 @@
     </div>
   </div>
   <div class="box">
+    <h2 class="box-header">{{ "additionalOptions" | i18n }}</h2>
+    <div class="box-content">
+      <div class="box-content-row box-content-row-checkbox" appBoxRow>
+        <label for="context-menu">{{ "enableContextMenuItem" | i18n }}</label>
+        <input
+          id="context-menu"
+          type="checkbox"
+          aria-describedby="context-menuHelp"
+          (change)="updateContextMenuItem()"
+          [(ngModel)]="enableContextMenuItem"
+        />
+      </div>
+    </div>
+    <div id="context-menuHelp" class="box-footer">
+      {{
+        accountSwitcherEnabled ? ("contextMenuItemDescAlt" | i18n) : ("contextMenuItemDesc" | i18n)
+      }}
+    </div>
+    <div class="box-content">
+      <div class="box-content-row box-content-row-checkbox" appBoxRow>
+        <label for="totp">{{ "enableAutoTotpCopy" | i18n }}</label>
+        <input
+          id="totp"
+          type="checkbox"
+          aria-describedby="totpHelp"
+          (change)="updateAutoTotpCopy()"
+          [(ngModel)]="enableAutoTotpCopy"
+        />
+      </div>
+    </div>
+    <div id="totpHelp" class="box-footer">{{ "disableAutoTotpCopyDesc" | i18n }}</div>
+    <div class="box-content">
+      <div class="box-content-row" appBoxRow>
+        <label for="clearClipboard">{{ "clearClipboard" | i18n }}</label>
+        <select
+          id="clearClipboard"
+          name="ClearClipboard"
+          aria-describedby="clearClipboardHelp"
+          [(ngModel)]="clearClipboard"
+          (change)="saveClearClipboard()"
+        >
+          <option *ngFor="let o of clearClipboardOptions" [ngValue]="o.value">
+            {{ o.name }}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div id="clearClipboardHelp" class="box-footer">{{ "clearClipboardDesc" | i18n }}</div>
     <div class="box-content">
       <div class="box-content-row" appBoxRow>
         <label for="defaultUriMatch">{{ "defaultUriMatchDetection" | i18n }}</label>
@@ -138,6 +186,36 @@
     </div>
     <div id="defaultUriMatchHelp" class="box-footer">
       {{ "defaultUriMatchDetectionDesc" | i18n }}
+    </div>
+    <div class="box-content">
+      <div class="box-content-row box-content-row-checkbox" appBoxRow>
+        <label for="showCardsCurrentTab">{{ "showCardsCurrentTab" | i18n }}</label>
+        <input
+          id="showCardsCurrentTab"
+          type="checkbox"
+          aria-describedby="showCardsCurrentTabHelp"
+          (change)="updateShowCardsCurrentTab()"
+          [(ngModel)]="showCardsCurrentTab"
+        />
+      </div>
+    </div>
+    <div id="showCardsCurrentTabHelp" class="box-footer">
+      {{ "showCardsCurrentTabDesc" | i18n }}
+    </div>
+    <div class="box-content">
+      <div class="box-content-row box-content-row-checkbox" appBoxRow>
+        <label for="showIdentitiesCurrentTab">{{ "showIdentitiesCurrentTab" | i18n }}</label>
+        <input
+          id="showIdentitiesCurrentTab"
+          type="checkbox"
+          aria-describedby="showIdentitiesCurrentTabHelp"
+          (change)="updateShowIdentitiesCurrentTab()"
+          [(ngModel)]="showIdentitiesCurrentTab"
+        />
+      </div>
+    </div>
+    <div id="showIdentitiesCurrentTabHelp" class="box-footer">
+      {{ "showIdentitiesCurrentTabDesc" | i18n }}
     </div>
   </div>
 </main>

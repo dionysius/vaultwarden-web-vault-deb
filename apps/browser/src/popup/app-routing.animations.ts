@@ -196,9 +196,6 @@ export const routerTransition = trigger("routerTransition", [
   transition("vault-settings => sync", inSlideLeft),
   transition("sync => vault-settings", outSlideRight),
 
-  transition("tabs => options", inSlideLeft),
-  transition("options => tabs", outSlideRight),
-
   // Appearance settings
   transition("tabs => appearance", inSlideLeft),
   transition("appearance => tabs", outSlideRight),

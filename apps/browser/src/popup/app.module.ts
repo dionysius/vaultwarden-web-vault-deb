@@ -82,7 +82,6 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { UserVerificationComponent } from "./components/user-verification.component";
 import { ServicesModule } from "./services/services.module";
-import { OptionsComponent } from "./settings/options.component";
 import { TabsV2Component } from "./tabs-v2.component";
 import { TabsComponent } from "./tabs.component";
 
@@ -149,7 +148,6 @@ import "../platform/popup/locales";
     LoginComponent,
     LoginViaAuthRequestComponent,
     LoginDecryptionOptionsComponent,
-    OptionsComponent,
     NotificationsSettingsComponent,
     AppearanceComponent,
     GeneratorComponent,

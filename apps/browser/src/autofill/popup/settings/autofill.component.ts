@@ -4,13 +4,18 @@ import { firstValueFrom } from "rxjs";
 import { AutofillOverlayVisibility } from "@bitwarden/common/autofill/constants";
 import { AutofillSettingsServiceAbstraction } from "@bitwarden/common/autofill/services/autofill-settings.service";
 import { DomainSettingsService } from "@bitwarden/common/autofill/services/domain-settings.service";
-import { InlineMenuVisibilitySetting } from "@bitwarden/common/autofill/types";
+import {
+  InlineMenuVisibilitySetting,
+  ClearClipboardDelaySetting,
+} from "@bitwarden/common/autofill/types";
 import {
   UriMatchStrategy,
   UriMatchStrategySetting,
 } from "@bitwarden/common/models/domain/domain-service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
+import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { VaultSettingsService } from "@bitwarden/common/vault/abstractions/vault-settings/vault-settings.service";
 import { DialogService } from "@bitwarden/components";
 
 import { BrowserApi } from "../../../platform/browser/browser-api";
@@ -30,8 +35,14 @@ export class AutofillComponent implements OnInit {
   enableAutoFillOnPageLoad = false;
   autoFillOnPageLoadDefault = false;
   autoFillOnPageLoadOptions: any[];
+  enableContextMenuItem = false;
+  enableAutoTotpCopy = false; // TODO: Does it matter if this is set to false or true?
+  clearClipboard: ClearClipboardDelaySetting;
+  clearClipboardOptions: any[];
   defaultUriMatch: UriMatchStrategySetting = UriMatchStrategy.Domain;
   uriMatchOptions: any[];
+  showCardsCurrentTab = false;
+  showIdentitiesCurrentTab = false;
   autofillKeyboardHelperText: string;
   accountSwitcherEnabled = false;
 
@@ -42,6 +53,8 @@ export class AutofillComponent implements OnInit {
     private autofillService: AutofillService,
     private dialogService: DialogService,
     private autofillSettingsService: AutofillSettingsServiceAbstraction,
+    private messagingService: MessagingService,
+    private vaultSettingsService: VaultSettingsService,
   ) {
     this.autoFillOverlayVisibilityOptions = [
       {
@@ -60,6 +73,15 @@ export class AutofillComponent implements OnInit {
     this.autoFillOnPageLoadOptions = [
       { name: i18nService.t("autoFillOnPageLoadYes"), value: true },
       { name: i18nService.t("autoFillOnPageLoadNo"), value: false },
+    ];
+    this.clearClipboardOptions = [
+      { name: i18nService.t("never"), value: null },
+      { name: i18nService.t("tenSeconds"), value: 10 },
+      { name: i18nService.t("twentySeconds"), value: 20 },
+      { name: i18nService.t("thirtySeconds"), value: 30 },
+      { name: i18nService.t("oneMinute"), value: 60 },
+      { name: i18nService.t("twoMinutes"), value: 120 },
+      { name: i18nService.t("fiveMinutes"), value: 300 },
     ];
     this.uriMatchOptions = [
       { name: i18nService.t("baseDomain"), value: UriMatchStrategy.Domain },
@@ -95,6 +117,14 @@ export class AutofillComponent implements OnInit {
       this.autofillSettingsService.autofillOnPageLoadDefault$,
     );
 
+    this.enableContextMenuItem = await firstValueFrom(
+      this.autofillSettingsService.enableContextMenu$,
+    );
+
+    this.enableAutoTotpCopy = await firstValueFrom(this.autofillSettingsService.autoCopyTotp$);
+
+    this.clearClipboard = await firstValueFrom(this.autofillSettingsService.clearClipboardDelay$);
+
     const defaultUriMatch = await firstValueFrom(
       this.domainSettingsService.defaultUriMatchStrategy$,
     );
@@ -102,6 +132,12 @@ export class AutofillComponent implements OnInit {
 
     const command = await this.platformUtilsService.getAutofillKeyboardShortcut();
     await this.setAutofillKeyboardHelperText(command);
+
+    this.showCardsCurrentTab = await firstValueFrom(this.vaultSettingsService.showCardsCurrentTab$);
+
+    this.showIdentitiesCurrentTab = await firstValueFrom(
+      this.vaultSettingsService.showIdentitiesCurrentTab$,
+    );
   }
 
   async updateAutoFillOverlayVisibility() {
@@ -240,5 +276,26 @@ export class AutofillComponent implements OnInit {
 
   async privacyPermissionGranted(): Promise<boolean> {
     return await BrowserApi.permissionsGranted(["privacy"]);
+  }
+
+  async updateContextMenuItem() {
+    await this.autofillSettingsService.setEnableContextMenu(this.enableContextMenuItem);
+    this.messagingService.send("bgUpdateContextMenu");
+  }
+
+  async updateAutoTotpCopy() {
+    await this.autofillSettingsService.setAutoCopyTotp(this.enableAutoTotpCopy);
+  }
+
+  async saveClearClipboard() {
+    await this.autofillSettingsService.setClearClipboardDelay(this.clearClipboard);
+  }
+
+  async updateShowCardsCurrentTab() {
+    await this.vaultSettingsService.setShowCardsCurrentTab(this.showCardsCurrentTab);
+  }
+
+  async updateShowIdentitiesCurrentTab() {
+    await this.vaultSettingsService.setShowIdentitiesCurrentTab(this.showIdentitiesCurrentTab);
   }
 }
