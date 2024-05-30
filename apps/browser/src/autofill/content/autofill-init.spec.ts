@@ -9,7 +9,7 @@ import AutofillOverlayContentService from "../services/autofill-overlay-content.
 import {
   flushPromises,
   mockQuerySelectorAllDefinedCall,
-  sendExtensionRuntimeMessage,
+  sendMockExtensionMessage,
 } from "../spec/testing-utils";
 import { RedirectFocusDirection } from "../utils/autofill-overlay.enum";
 
@@ -174,7 +174,7 @@ describe("AutofillInit", () => {
             .spyOn(autofillInit["collectAutofillContentService"], "getPageDetails")
             .mockResolvedValue(pageDetails);
 
-          sendExtensionRuntimeMessage(message, sender, sendResponse);
+          sendMockExtensionMessage(message, sender, sendResponse);
           await flushPromises();
 
           expect(chrome.runtime.sendMessage).toHaveBeenCalledWith({
@@ -200,7 +200,7 @@ describe("AutofillInit", () => {
             .spyOn(autofillInit["collectAutofillContentService"], "getPageDetails")
             .mockResolvedValue(pageDetails);
 
-          sendExtensionRuntimeMessage(
+          sendMockExtensionMessage(
             { command: "collectPageDetailsImmediately" },
             sender,
             sendResponse,
@@ -233,7 +233,7 @@ describe("AutofillInit", () => {
             pageDetailsUrl: "https://a-different-url.com",
           };
 
-          sendExtensionRuntimeMessage(message);
+          sendMockExtensionMessage(message);
           await flushPromises();
 
           expect(autofillInit["insertAutofillContentService"].fillForm).not.toHaveBeenCalledWith(
@@ -242,7 +242,7 @@ describe("AutofillInit", () => {
         });
 
         it("calls the InsertAutofillContentService to fill the form", async () => {
-          sendExtensionRuntimeMessage({
+          sendMockExtensionMessage({
             command: "fillForm",
             fillScript,
             pageDetailsUrl: window.location.href,
@@ -256,7 +256,7 @@ describe("AutofillInit", () => {
 
         it("removes the overlay when filling the form", async () => {
           const blurAndRemoveOverlaySpy = jest.spyOn(autofillInit as any, "blurAndRemoveOverlay");
-          sendExtensionRuntimeMessage({
+          sendMockExtensionMessage({
             command: "fillForm",
             fillScript,
             pageDetailsUrl: window.location.href,
@@ -273,7 +273,7 @@ describe("AutofillInit", () => {
             .spyOn(autofillInit["autofillOverlayContentService"], "focusMostRecentOverlayField")
             .mockImplementation();
 
-          sendExtensionRuntimeMessage({
+          sendMockExtensionMessage({
             command: "fillForm",
             fillScript,
             pageDetailsUrl: window.location.href,
@@ -297,7 +297,7 @@ describe("AutofillInit", () => {
             .spyOn(newAutofillInit["insertAutofillContentService"], "fillForm")
             .mockImplementation();
 
-          sendExtensionRuntimeMessage({
+          sendMockExtensionMessage({
             command: "fillForm",
             fillScript,
             pageDetailsUrl: window.location.href,
@@ -333,13 +333,13 @@ describe("AutofillInit", () => {
           const newAutofillInit = new AutofillInit(undefined);
           newAutofillInit.init();
 
-          sendExtensionRuntimeMessage(message);
+          sendMockExtensionMessage(message);
 
           expect(newAutofillInit["autofillOverlayContentService"]).toBe(undefined);
         });
 
         it("opens the autofill overlay", () => {
-          sendExtensionRuntimeMessage(message);
+          sendMockExtensionMessage(message);
 
           expect(
             autofillInit["autofillOverlayContentService"].openAutofillOverlay,
@@ -362,7 +362,7 @@ describe("AutofillInit", () => {
           newAutofillInit.init();
           jest.spyOn(newAutofillInit as any, "removeAutofillOverlay");
 
-          sendExtensionRuntimeMessage({
+          sendMockExtensionMessage({
             command: "closeAutofillOverlay",
             data: { forceCloseOverlay: false },
           });
@@ -371,7 +371,7 @@ describe("AutofillInit", () => {
         });
 
         it("removes the autofill overlay if the message flags a forced closure", () => {
-          sendExtensionRuntimeMessage({
+          sendMockExtensionMessage({
             command: "closeAutofillOverlay",
             data: { forceCloseOverlay: true },
           });
@@ -384,7 +384,7 @@ describe("AutofillInit", () => {
         it("ignores the message if a field is currently focused", () => {
           autofillInit["autofillOverlayContentService"].isFieldCurrentlyFocused = true;
 
-          sendExtensionRuntimeMessage({ command: "closeAutofillOverlay" });
+          sendMockExtensionMessage({ command: "closeAutofillOverlay" });
 
           expect(
             autofillInit["autofillOverlayContentService"].removeAutofillOverlayList,
@@ -397,7 +397,7 @@ describe("AutofillInit", () => {
         it("removes the autofill overlay list if the overlay is currently filling", () => {
           autofillInit["autofillOverlayContentService"].isCurrentlyFilling = true;
 
-          sendExtensionRuntimeMessage({ command: "closeAutofillOverlay" });
+          sendMockExtensionMessage({ command: "closeAutofillOverlay" });
 
           expect(
             autofillInit["autofillOverlayContentService"].removeAutofillOverlayList,
@@ -408,7 +408,7 @@ describe("AutofillInit", () => {
         });
 
         it("removes the entire overlay if the overlay is not currently filling", () => {
-          sendExtensionRuntimeMessage({ command: "closeAutofillOverlay" });
+          sendMockExtensionMessage({ command: "closeAutofillOverlay" });
 
           expect(
             autofillInit["autofillOverlayContentService"].removeAutofillOverlayList,
@@ -424,13 +424,13 @@ describe("AutofillInit", () => {
           const newAutofillInit = new AutofillInit(undefined);
           newAutofillInit.init();
 
-          sendExtensionRuntimeMessage({ command: "addNewVaultItemFromOverlay" });
+          sendMockExtensionMessage({ command: "addNewVaultItemFromOverlay" });
 
           expect(newAutofillInit["autofillOverlayContentService"]).toBe(undefined);
         });
 
         it("will add a new vault item", () => {
-          sendExtensionRuntimeMessage({ command: "addNewVaultItemFromOverlay" });
+          sendMockExtensionMessage({ command: "addNewVaultItemFromOverlay" });
 
           expect(autofillInit["autofillOverlayContentService"].addNewVaultItem).toHaveBeenCalled();
         });
@@ -448,13 +448,13 @@ describe("AutofillInit", () => {
           const newAutofillInit = new AutofillInit(undefined);
           newAutofillInit.init();
 
-          sendExtensionRuntimeMessage(message);
+          sendMockExtensionMessage(message);
 
           expect(newAutofillInit["autofillOverlayContentService"]).toBe(undefined);
         });
 
         it("redirects the overlay focus", () => {
-          sendExtensionRuntimeMessage(message);
+          sendMockExtensionMessage(message);
 
           expect(
             autofillInit["autofillOverlayContentService"].redirectOverlayFocusOut,
@@ -474,13 +474,13 @@ describe("AutofillInit", () => {
           const newAutofillInit = new AutofillInit(undefined);
           newAutofillInit.init();
 
-          sendExtensionRuntimeMessage(message);
+          sendMockExtensionMessage(message);
 
           expect(newAutofillInit["autofillOverlayContentService"]).toBe(undefined);
         });
 
         it("updates whether the overlay ciphers are populated", () => {
-          sendExtensionRuntimeMessage(message);
+          sendMockExtensionMessage(message);
 
           expect(autofillInit["autofillOverlayContentService"].isOverlayCiphersPopulated).toEqual(
             message.data.isOverlayCiphersPopulated,
@@ -494,7 +494,7 @@ describe("AutofillInit", () => {
           newAutofillInit.init();
           jest.spyOn(newAutofillInit as any, "removeAutofillOverlay");
 
-          sendExtensionRuntimeMessage({ command: "bgUnlockPopoutOpened" });
+          sendMockExtensionMessage({ command: "bgUnlockPopoutOpened" });
 
           expect(newAutofillInit["autofillOverlayContentService"]).toBe(undefined);
           expect(newAutofillInit["removeAutofillOverlay"]).not.toHaveBeenCalled();
@@ -504,7 +504,7 @@ describe("AutofillInit", () => {
           jest.spyOn(autofillInit["autofillOverlayContentService"], "blurMostRecentOverlayField");
           jest.spyOn(autofillInit as any, "removeAutofillOverlay");
 
-          sendExtensionRuntimeMessage({ command: "bgUnlockPopoutOpened" });
+          sendMockExtensionMessage({ command: "bgUnlockPopoutOpened" });
 
           expect(
             autofillInit["autofillOverlayContentService"].blurMostRecentOverlayField,
@@ -519,7 +519,7 @@ describe("AutofillInit", () => {
           newAutofillInit.init();
           jest.spyOn(newAutofillInit as any, "removeAutofillOverlay");
 
-          sendExtensionRuntimeMessage({ command: "bgVaultItemRepromptPopoutOpened" });
+          sendMockExtensionMessage({ command: "bgVaultItemRepromptPopoutOpened" });
 
           expect(newAutofillInit["autofillOverlayContentService"]).toBe(undefined);
           expect(newAutofillInit["removeAutofillOverlay"]).not.toHaveBeenCalled();
@@ -529,7 +529,7 @@ describe("AutofillInit", () => {
           jest.spyOn(autofillInit["autofillOverlayContentService"], "blurMostRecentOverlayField");
           jest.spyOn(autofillInit as any, "removeAutofillOverlay");
 
-          sendExtensionRuntimeMessage({ command: "bgVaultItemRepromptPopoutOpened" });
+          sendMockExtensionMessage({ command: "bgVaultItemRepromptPopoutOpened" });
 
           expect(
             autofillInit["autofillOverlayContentService"].blurMostRecentOverlayField,
@@ -545,7 +545,7 @@ describe("AutofillInit", () => {
         });
 
         it("skips attempting to update the overlay visibility if the autofillOverlayVisibility data value is not present", () => {
-          sendExtensionRuntimeMessage({
+          sendMockExtensionMessage({
             command: "updateAutofillOverlayVisibility",
             data: {},
           });
@@ -563,7 +563,7 @@ describe("AutofillInit", () => {
             },
           };
 
-          sendExtensionRuntimeMessage(message);
+          sendMockExtensionMessage(message);
 
           expect(autofillInit["autofillOverlayContentService"].autofillOverlayVisibility).toEqual(
             message.data.autofillOverlayVisibility,

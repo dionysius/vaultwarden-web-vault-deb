@@ -12,7 +12,7 @@ import { VaultSettingsService } from "@bitwarden/common/vault/abstractions/vault
 import { createPortSpyMock } from "../../../autofill/spec/autofill-mocks";
 import {
   flushPromises,
-  sendExtensionRuntimeMessage,
+  sendMockExtensionMessage,
   triggerPortOnDisconnectEvent,
   triggerRuntimeOnConnectEvent,
 } from "../../../autofill/spec/testing-utils";
@@ -263,7 +263,7 @@ describe("Fido2Background", () => {
     it("ignores messages that do not have a handler associated with a command within the message", () => {
       const message = mock<Fido2ExtensionMessage>({ command: "nonexistentCommand" });
 
-      sendExtensionRuntimeMessage(message);
+      sendMockExtensionMessage(message);
 
       expect(abortManagerMock.abort).not.toHaveBeenCalled();
     });
@@ -274,7 +274,7 @@ describe("Fido2Background", () => {
       const sendResponse = jest.fn();
       fido2ClientService.createCredential.mockRejectedValue(new Error("error"));
 
-      sendExtensionRuntimeMessage(message, sender, sendResponse);
+      sendMockExtensionMessage(message, sender, sendResponse);
       await flushPromises();
 
       expect(sendResponse).toHaveBeenCalledWith({ error: { message: "error" } });
@@ -287,7 +287,7 @@ describe("Fido2Background", () => {
           abortedRequestId: "123",
         });
 
-        sendExtensionRuntimeMessage(message);
+        sendMockExtensionMessage(message);
         await flushPromises();
 
         expect(abortManagerMock.abort).toHaveBeenCalledWith(message.abortedRequestId);
@@ -302,7 +302,7 @@ describe("Fido2Background", () => {
           data: mock<CreateCredentialParams>(),
         });
 
-        sendExtensionRuntimeMessage(message, senderMock);
+        sendMockExtensionMessage(message, senderMock);
         await flushPromises();
 
         expect(fido2ClientService.createCredential).toHaveBeenCalledWith(
@@ -323,7 +323,7 @@ describe("Fido2Background", () => {
           data: mock<AssertCredentialParams>(),
         });
 
-        sendExtensionRuntimeMessage(message, senderMock);
+        sendMockExtensionMessage(message, senderMock);
         await flushPromises();
 
         expect(fido2ClientService.assertCredential).toHaveBeenCalledWith(

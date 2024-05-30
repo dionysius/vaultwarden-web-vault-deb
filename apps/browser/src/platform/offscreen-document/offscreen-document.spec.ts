@@ -1,4 +1,4 @@
-import { flushPromises, sendExtensionRuntimeMessage } from "../../autofill/spec/testing-utils";
+import { flushPromises, sendMockExtensionMessage } from "../../autofill/spec/testing-utils";
 import { BrowserApi } from "../browser/browser-api";
 import BrowserClipboardService from "../services/browser-clipboard.service";
 
@@ -21,7 +21,7 @@ describe("OffscreenDocument", () => {
 
   describe("extension message handlers", () => {
     it("ignores messages that do not have a handler registered with the corresponding command", () => {
-      sendExtensionRuntimeMessage({ command: "notAValidCommand" });
+      sendMockExtensionMessage({ command: "notAValidCommand" });
 
       expect(browserClipboardServiceCopySpy).not.toHaveBeenCalled();
       expect(browserClipboardServiceReadSpy).not.toHaveBeenCalled();
@@ -31,7 +31,7 @@ describe("OffscreenDocument", () => {
       const error = new Error("test error");
       browserClipboardServiceCopySpy.mockRejectedValueOnce(new Error("test error"));
 
-      sendExtensionRuntimeMessage({ command: "offscreenCopyToClipboard", text: "test" });
+      sendMockExtensionMessage({ command: "offscreenCopyToClipboard", text: "test" });
       await flushPromises();
 
       expect(browserClipboardServiceCopySpy).toHaveBeenCalled();
@@ -45,7 +45,7 @@ describe("OffscreenDocument", () => {
       it("copies the message text", async () => {
         const text = "test";
 
-        sendExtensionRuntimeMessage({ command: "offscreenCopyToClipboard", text });
+        sendMockExtensionMessage({ command: "offscreenCopyToClipboard", text });
         await flushPromises();
 
         expect(browserClipboardServiceCopySpy).toHaveBeenCalledWith(window, text);
@@ -54,7 +54,7 @@ describe("OffscreenDocument", () => {
 
     describe("handleOffscreenReadFromClipboard", () => {
       it("reads the value from the clipboard service", async () => {
-        sendExtensionRuntimeMessage({ command: "offscreenReadFromClipboard" });
+        sendMockExtensionMessage({ command: "offscreenReadFromClipboard" });
         await flushPromises();
 
         expect(browserClipboardServiceReadSpy).toHaveBeenCalledWith(window);

@@ -15,7 +15,7 @@ function postWindowMessage(data: any, origin = "https://localhost/", source = wi
   globalThis.dispatchEvent(new MessageEvent("message", { data, origin, source }));
 }
 
-function sendExtensionRuntimeMessage(
+function sendMockExtensionMessage(
   message: any,
   sender?: chrome.runtime.MessageSender,
   sendResponse?: CallableFunction,
@@ -130,7 +130,7 @@ export {
   triggerTestFailure,
   flushPromises,
   postWindowMessage,
-  sendExtensionRuntimeMessage,
+  sendMockExtensionMessage,
   triggerRuntimeOnConnectEvent,
   sendPortMessage,
   triggerPortOnDisconnectEvent,
