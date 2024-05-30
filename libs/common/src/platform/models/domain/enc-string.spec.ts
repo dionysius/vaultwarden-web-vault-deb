@@ -55,6 +55,26 @@ describe("EncString", () => {
           encryptionType: 3,
         });
       });
+
+      const cases = [
+        "aXY=|Y3Q=", // AesCbc256_B64 w/out header
+        "aXY=|Y3Q=|cnNhQ3Q=", // AesCbc128_HmacSha256_B64 w/out header
+        "0.QmFzZTY0UGFydA==|QmFzZTY0UGFydA==", // AesCbc256_B64 with header
+        "1.QmFzZTY0UGFydA==|QmFzZTY0UGFydA==|QmFzZTY0UGFydA==", // AesCbc128_HmacSha256_B64
+        "2.QmFzZTY0UGFydA==|QmFzZTY0UGFydA==|QmFzZTY0UGFydA==", // AesCbc256_HmacSha256_B64
+        "3.QmFzZTY0UGFydA==", // Rsa2048_OaepSha256_B64
+        "4.QmFzZTY0UGFydA==", // Rsa2048_OaepSha1_B64
+        "5.QmFzZTY0UGFydA==|QmFzZTY0UGFydA==", // Rsa2048_OaepSha256_HmacSha256_B64
+        "6.QmFzZTY0UGFydA==|QmFzZTY0UGFydA==", // Rsa2048_OaepSha1_HmacSha256_B64
+      ];
+
+      it.each(cases)("can retrieve data bytes for %s", (encryptedString) => {
+        const encString = new EncString(encryptedString);
+
+        const dataBytes = encString.dataBytes;
+        expect(dataBytes).not.toBeNull();
+        expect(dataBytes.length).toBeGreaterThan(0);
+      });
     });
 
     describe("decrypt", () => {
