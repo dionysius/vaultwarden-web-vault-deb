@@ -13,6 +13,7 @@ import { SendService } from "@bitwarden/common/tools/send/services/send.service.
 import { UserKey } from "@bitwarden/common/types/key";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { FolderService } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
+import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 import { CipherWithIdRequest } from "@bitwarden/common/vault/models/request/cipher-with-id.request";
 import { FolderWithIdRequest } from "@bitwarden/common/vault/models/request/folder-with-id.request";
 
@@ -38,6 +39,7 @@ export class UserKeyRotationService {
     private stateService: StateService,
     private accountService: AccountService,
     private kdfConfigService: KdfConfigService,
+    private syncService: SyncService,
   ) {}
 
   /**
@@ -47,6 +49,12 @@ export class UserKeyRotationService {
   async rotateUserKeyAndEncryptedData(masterPassword: string): Promise<void> {
     if (!masterPassword) {
       throw new Error("Invalid master password");
+    }
+
+    if ((await this.syncService.getLastSync()) === null) {
+      throw new Error(
+        "The local vault is de-synced and the keys cannot be rotated. Please log out and log back in to resolve this issue.",
+      );
     }
 
     // Create master key to validate the master password
