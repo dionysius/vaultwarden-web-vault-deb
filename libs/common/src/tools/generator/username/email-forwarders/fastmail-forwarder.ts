@@ -14,7 +14,7 @@ export class FastmailForwarder implements Forwarder {
       throw "Unable to obtain Fastmail masked email account ID.";
     }
 
-    const forDomain = (options.website || "");
+    const forDomain = options.website || "";
 
     const requestInit: RequestInit = {
       redirect: "manual",
