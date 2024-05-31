@@ -175,7 +175,7 @@ export class DeviceTrustService implements DeviceTrustServiceAbstraction {
     }
 
     // At this point of rotating their keys, they should still have their old user key in state
-    const oldUserKey = await firstValueFrom(this.cryptoService.activeUserKey$);
+    const oldUserKey = await firstValueFrom(this.cryptoService.userKey$(userId));
 
     const deviceIdentifier = await this.appIdService.getAppId();
     const secretVerificationRequest = new SecretVerificationRequest();

@@ -595,7 +595,7 @@ describe("deviceTrustService", () => {
         const fakeNewUserKeyData = new Uint8Array(64);
         fakeNewUserKeyData.fill(FakeNewUserKeyMarker, 0, 1);
         fakeNewUserKey = new SymmetricCryptoKey(fakeNewUserKeyData) as UserKey;
-        cryptoService.activeUserKey$ = of(fakeNewUserKey);
+        cryptoService.userKey$.mockReturnValue(of(fakeNewUserKey));
       });
 
       it("throws an error when a null user id is passed in", async () => {
@@ -631,7 +631,9 @@ describe("deviceTrustService", () => {
           fakeOldUserKeyData.fill(FakeOldUserKeyMarker, 0, 1);
 
           // Mock the retrieval of a user key that differs from the new one passed into the method
-          cryptoService.activeUserKey$ = of(new SymmetricCryptoKey(fakeOldUserKeyData) as UserKey);
+          cryptoService.userKey$.mockReturnValue(
+            of(new SymmetricCryptoKey(fakeOldUserKeyData) as UserKey),
+          );
 
           appIdService.getAppId.mockResolvedValue("test_device_identifier");
 

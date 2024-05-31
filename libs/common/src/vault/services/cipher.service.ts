@@ -135,8 +135,7 @@ export class CipherService implements CipherServiceAbstraction {
     this.addEditCipherInfo$ = this.addEditCipherInfoState.state$;
   }
 
-  async setDecryptedCipherCache(value: CipherView[]) {
-    const userId = await firstValueFrom(this.stateProvider.activeUserId$);
+  async setDecryptedCipherCache(value: CipherView[], userId: UserId) {
     // Sometimes we might prematurely decrypt the vault and that will result in no ciphers
     // if we cache it then we may accidentally return it when it's not right, we'd rather try decryption again.
     // We still want to set null though, that is the indicator that the cache isn't valid and we should do decryption.
@@ -367,9 +366,15 @@ export class CipherService implements CipherServiceAbstraction {
       return await this.getDecryptedCiphers();
     }
 
-    decCiphers = await this.decryptCiphers(await this.getAll());
+    const activeUserId = await firstValueFrom(this.stateProvider.activeUserId$);
 
-    await this.setDecryptedCipherCache(decCiphers);
+    if (activeUserId == null) {
+      return [];
+    }
+
+    decCiphers = await this.decryptCiphers(await this.getAll(), activeUserId);
+
+    await this.setDecryptedCipherCache(decCiphers, activeUserId);
     return decCiphers;
   }
 
@@ -377,10 +382,10 @@ export class CipherService implements CipherServiceAbstraction {
     return Object.values(await firstValueFrom(this.cipherViews$));
   }
 
-  private async decryptCiphers(ciphers: Cipher[]) {
-    const orgKeys = await this.cryptoService.getOrgKeys();
-    const userKey = await this.cryptoService.getUserKeyWithLegacySupport();
-    if (Object.keys(orgKeys).length === 0 && userKey == null) {
+  private async decryptCiphers(ciphers: Cipher[], userId: UserId) {
+    const keys = await firstValueFrom(this.cryptoService.cipherDecryptionKeys$(userId, true));
+
+    if (keys == null || (keys.userKey == null && Object.keys(keys.orgKeys).length === 0)) {
       // return early if there are no keys to decrypt with
       return;
     }
@@ -398,7 +403,10 @@ export class CipherService implements CipherServiceAbstraction {
     const decCiphers = (
       await Promise.all(
         Object.entries(grouped).map(([orgId, groupedCiphers]) =>
-          this.encryptService.decryptItems(groupedCiphers, orgKeys[orgId] ?? userKey),
+          this.encryptService.decryptItems(
+            groupedCiphers,
+            keys.orgKeys[orgId as OrganizationId] ?? keys.userKey,
+          ),
         ),
       )
     )
