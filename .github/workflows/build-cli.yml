@@ -65,7 +65,7 @@ jobs:
         os:
          [
           { base: "linux", distro: "ubuntu-22.04" },
-          { base: "mac", distro: "macos-11" }
+          { base: "mac", distro: "macos-13" }
          ]
         license_type:
          [

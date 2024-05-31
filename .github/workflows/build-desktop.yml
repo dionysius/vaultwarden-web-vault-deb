@@ -444,10 +444,7 @@ jobs:
 
   macos-build:
     name: MacOS Build
-    # Note, this workflow is running on macOS 11 to maintain compatibility with macOS 10.15 Catalina, 
-    # as the newer versions will case the native modules to be incompatible with older macOS systems
-    # This version should stay pinned until we drop support for macOS 10.15, or we drop the native modules
-    runs-on: macos-11
+    runs-on: macos-13
     needs: setup
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.package_version }}
@@ -605,10 +602,7 @@ jobs:
 
   macos-package-github:
     name: MacOS Package GitHub Release Assets
-    # Note, this workflow is running on macOS 11 to maintain compatibility with macOS 10.15 Catalina, 
-    # as the newer versions will case the native modules to be incompatible with older macOS systems
-    # This version should stay pinned until we drop support for macOS 10.15, or we drop the native modules
-    runs-on: macos-11
+    runs-on: macos-13
     needs:
       - browser-build
       - macos-build
@@ -814,10 +808,7 @@ jobs:
 
   macos-package-mas:
     name: MacOS Package Prod Release Asset
-    # Note, this workflow is running on macOS 11 to maintain compatibility with macOS 10.15 Catalina, 
-    # as the newer versions will case the native modules to be incompatible with older macOS systems
-    # This version should stay pinned until we drop support for macOS 10.15, or we drop the native modules
-    runs-on: macos-11
+    runs-on: macos-13
     needs:
       - browser-build
       - macos-build
@@ -1014,11 +1005,7 @@ jobs:
 
   macos-package-dev:
     name: MacOS Package Dev Release Asset
-    if: false  # We need to look into how code signing works for dev
-    # Note, this workflow is running on macOS 11 to maintain compatibility with macOS 10.15 Catalina, 
-    # as the newer versions will case the native modules to be incompatible with older macOS systems
-    # This version should stay pinned until we drop support for macOS 10.15, or we drop the native modules
-    runs-on: macos-11
+    runs-on: macos-13
     needs:
       - browser-build
       - macos-build
@@ -1188,14 +1175,15 @@ jobs:
           APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
 
       - name: Zip masdev asset
-        working-directory: ./dist/mas-dev-universal
-        run: zip -r Bitwarden-${{ env.PACKAGE_VERSION }}-masdev-universal.zip Bitwarden.app
+        run: |
+          cd dist/mas-dev-universal
+          zip -r Bitwarden-${{ env._PACKAGE_VERSION }}-masdev-universal.zip Bitwarden.app
 
       - name: Upload masdev artifact
         uses: actions/upload-artifact@5d5d22a31266ced268874388b861e4b58bb5c2f3 # v4.3.1
         with:
           name: Bitwarden-${{ env._PACKAGE_VERSION }}-masdev-universal.zip
-          path: apps/desktop/dist/mas-universal/Bitwarden-${{ env._PACKAGE_VERSION }}-masdev-universal.zip
+          path: apps/desktop/dist/mas-dev-universal/Bitwarden-${{ env._PACKAGE_VERSION }}-masdev-universal.zip
           if-no-files-found: error
 
 

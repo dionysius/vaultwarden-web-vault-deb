@@ -393,10 +393,7 @@ jobs:
 
   macos-build:
     name: MacOS Build
-    # Note, this workflow is running on macOS 11 to maintain compatibility with macOS 10.15 Catalina, 
-    # as the newer versions will case the native modules to be incompatible with older macOS systems
-    # This version should stay pinned until we drop support for macOS 10.15, or we drop the native modules
-    runs-on: macos-11
+    runs-on: macos-13
     needs: setup
     env:
       _PACKAGE_VERSION: ${{ needs.setup.outputs.release-version }}
@@ -457,7 +454,7 @@ jobs:
 
           az keyvault secret show --id https://bitwarden-ci.vault.azure.net/certificates/bitwarden-desktop-key |
             jq -r .value | base64 -d > $HOME/certificates/bitwarden-desktop-key.p12
-          
+
           az keyvault secret show --id https://bitwarden-ci.vault.azure.net/certificates/appstore-app-cert |
             jq -r .value | base64 -d > $HOME/certificates/appstore-app-cert.p12
 
@@ -525,10 +522,7 @@ jobs:
 
   macos-package-github:
     name: MacOS Package GitHub Release Assets
-    # Note, this workflow is running on macOS 11 to maintain compatibility with macOS 10.15 Catalina, 
-    # as the newer versions will case the native modules to be incompatible with older macOS systems
-    # This version should stay pinned until we drop support for macOS 10.15, or we drop the native modules  
-    runs-on: macos-11
+    runs-on: macos-13
     needs:
       - setup
       - macos-build
@@ -596,7 +590,7 @@ jobs:
 
           az keyvault secret show --id https://bitwarden-ci.vault.azure.net/certificates/bitwarden-desktop-key |
             jq -r .value | base64 -d > $HOME/certificates/bitwarden-desktop-key.p12
-          
+
           az keyvault secret show --id https://bitwarden-ci.vault.azure.net/certificates/appstore-app-cert |
             jq -r .value | base64 -d > $HOME/certificates/appstore-app-cert.p12
 
@@ -738,10 +732,7 @@ jobs:
 
   macos-package-mas:
     name: MacOS Package Prod Release Asset
-    # Note, this workflow is running on macOS 11 to maintain compatibility with macOS 10.15 Catalina, 
-    # as the newer versions will case the native modules to be incompatible with older macOS systems
-    # This version should stay pinned until we drop support for macOS 10.15, or we drop the native modules    
-    runs-on: macos-11
+    runs-on: macos-13
     needs:
       - setup
       - macos-build
@@ -804,7 +795,7 @@ jobs:
 
           az keyvault secret show --id https://bitwarden-ci.vault.azure.net/certificates/bitwarden-desktop-key |
             jq -r .value | base64 -d > $HOME/certificates/bitwarden-desktop-key.p12
-          
+
           az keyvault secret show --id https://bitwarden-ci.vault.azure.net/certificates/appstore-app-cert |
             jq -r .value | base64 -d > $HOME/certificates/appstore-app-cert.p12
 
