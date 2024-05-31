@@ -1,3 +1,5 @@
+import "jest-preset-angular/setup-jest";
+
 // Add chrome storage api
 const QUOTA_BYTES = 10;
 const storage = {

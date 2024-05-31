@@ -53,7 +53,9 @@ describe("Fido2 page script with native WebAuthn support", () => {
   const mockCredentialAssertResult = createAssertCredentialResultMock();
   setupMockedWebAuthnSupport();
 
-  require("./page-script");
+  beforeAll(() => {
+    require("./page-script");
+  });
 
   afterEach(() => {
     jest.resetModules();

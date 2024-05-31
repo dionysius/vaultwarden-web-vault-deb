@@ -144,7 +144,7 @@ describe("AutofillInit", () => {
         .mockResolvedValue(pageDetails);
 
       const response = await autofillInit["handleExtensionMessage"](message, sender, sendResponse);
-      await Promise.resolve(response);
+      await flushPromises();
 
       expect(response).toBe(true);
       expect(sendResponse).toHaveBeenCalledWith(pageDetails);

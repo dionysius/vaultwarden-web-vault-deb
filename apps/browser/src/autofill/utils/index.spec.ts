@@ -37,14 +37,29 @@ describe("generateRandomCustomElementName", () => {
 });
 
 describe("sendExtensionMessage", () => {
-  it("sends a message to the extention", () => {
-    const extensionMessageResponse = sendExtensionMessage("updateAutofillOverlayHidden", {
+  it("sends a message to the extension", async () => {
+    const extensionMessagePromise = sendExtensionMessage("updateAutofillOverlayHidden", {
       display: "none",
     });
-    jest.spyOn(chrome.runtime, "sendMessage");
 
-    expect(chrome.runtime.sendMessage).toHaveBeenCalled();
-    expect(extensionMessageResponse).toEqual(Promise.resolve({}));
+    // Jest doesn't give anyway to select the typed overload of "sendMessage",
+    // a cast is needed to get the correct spy type.
+    const sendMessageSpy = jest.spyOn(chrome.runtime, "sendMessage") as unknown as jest.SpyInstance<
+      void,
+      [message: string, responseCallback: (response: string) => void],
+      unknown
+    >;
+
+    expect(sendMessageSpy).toHaveBeenCalled();
+
+    const [latestCall] = sendMessageSpy.mock.calls;
+    const responseCallback = latestCall[1];
+
+    responseCallback("sendMessageResponse");
+
+    const response = await extensionMessagePromise;
+
+    expect(response).toEqual("sendMessageResponse");
   });
 });
 
