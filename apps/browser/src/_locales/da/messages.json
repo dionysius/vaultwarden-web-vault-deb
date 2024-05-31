@@ -762,6 +762,9 @@
   "notificationUnlock": {
     "message": "Oplås"
   },
+  "additionalOptions": {
+    "message": "Yderligere indstillinger"
+  },
   "enableContextMenuItem": {
     "message": "Vis indstillinger i kontekstmenuen"
   },
@@ -799,11 +802,38 @@
     "message": "Solariseret mørk",
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
+  "exportFrom": {
+    "message": "Eksportér fra"
+  },
   "exportVault": {
     "message": "Eksportér boks"
   },
   "fileFormat": {
     "message": "Filformat"
+  },
+  "fileEncryptedExportWarningDesc": {
+    "message": "Denne fileksport vil være adgangskodebeskyttet og kræve filadgangskoden at dekryptere."
+  },
+  "filePassword": {
+    "message": "Filadgangskode"
+  },
+  "exportPasswordDescription": {
+    "message": "Denne adgangskode vil blive brugt ved eksport og import af denne fil"
+  },
+  "accountRestrictedOptionDescription": {
+    "message": "Brug kontokrypteringsnøglen, dannet af kontobrugernavn og Hovedadgangskode, for at kryptere eksporten og hindre import til andre end den aktuelle Bitwarden-konto."
+  },
+  "passwordProtectedOptionDescription": {
+    "message": "Opsæt en adgangskode til både at kryptere eksporten samt dekryptere denne ved import til enhver Bitwarden-konto."
+  },
+  "exportTypeHeading": {
+    "message": "Eksporttype"
+  },
+  "accountRestricted": {
+    "message": "Konto begrænset"
+  },
+  "filePasswordAndConfirmFilePasswordDoNotMatch": {
+    "message": "“Filadgangskode” og “Bekræft filadgangskode“ matcher ikke."
   },
   "warning": {
     "message": "ADVARSEL",
@@ -2179,6 +2209,18 @@
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      }
+    }
+  },
+  "exportingOrganizationVaultTitle": {
+    "message": "Eksport af organisationsboks"
+  },
+  "exportingOrganizationVaultDesc": {
+    "message": "Kun organisationsboksen tilknyttet $ORGANIZATION$ eksporteres. Emner i individuelle bokse eller andre organisationer medtages ikke.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "ACME Moving Co."
       }
     }
   },

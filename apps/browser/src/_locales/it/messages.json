@@ -762,6 +762,9 @@
   "notificationUnlock": {
     "message": "Sblocca"
   },
+  "additionalOptions": {
+    "message": "Opzioni aggiuntive"
+  },
   "enableContextMenuItem": {
     "message": "Mostra opzioni nel menu contestuale"
   },
@@ -799,11 +802,38 @@
     "message": "Scuro solarizzato",
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
+  "exportFrom": {
+    "message": "Esporta da"
+  },
   "exportVault": {
     "message": "Esporta cassaforte"
   },
   "fileFormat": {
     "message": "Formato file"
+  },
+  "fileEncryptedExportWarningDesc": {
+    "message": "Questo file esportato sarà protetto e richiederà la password del file per decifrarlo."
+  },
+  "filePassword": {
+    "message": "Password del file"
+  },
+  "exportPasswordDescription": {
+    "message": "La password sarà utilizzata per importare ed esportare questo file"
+  },
+  "accountRestrictedOptionDescription": {
+    "message": "Usa la chiave di crittografia dell'account, derivata dal nome utente e dalla password principale del tuo account, per crittografare il file di esportazione e limitare l'importazione solo all'account Bitwarden corrente."
+  },
+  "passwordProtectedOptionDescription": {
+    "message": "Imposta una password del file per crittografare il file esportato e importarlo in qualsiasi account Bitwarden usando la password per decrittografarlo."
+  },
+  "exportTypeHeading": {
+    "message": "Tipo di esportazione"
+  },
+  "accountRestricted": {
+    "message": "Account limitato"
+  },
+  "filePasswordAndConfirmFilePasswordDoNotMatch": {
+    "message": "Le due password del file non corrispondono."
   },
   "warning": {
     "message": "ATTENZIONE",
@@ -2179,6 +2209,18 @@
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      }
+    }
+  },
+  "exportingOrganizationVaultTitle": {
+    "message": "Esportando cassaforte dell'organizzazione"
+  },
+  "exportingOrganizationVaultDesc": {
+    "message": "Solo la cassaforte dell'organizzazione associata a $ORGANIZATION$ sarà esportata. Elementi nelle casseforti individuali o in altre organizzazioni non saranno inclusi.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "ACME Moving Co."
       }
     }
   },

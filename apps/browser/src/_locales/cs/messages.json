@@ -762,6 +762,9 @@
   "notificationUnlock": {
     "message": "Odemknout"
   },
+  "additionalOptions": {
+    "message": "Další volby"
+  },
   "enableContextMenuItem": {
     "message": "Zobrazit volby v kontextovém menu"
   },
@@ -799,11 +802,38 @@
     "message": "Tmavý (solarizovaný)",
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
+  "exportFrom": {
+    "message": "Exportovat z"
+  },
   "exportVault": {
     "message": "Exportovat trezor"
   },
   "fileFormat": {
     "message": "Formát souboru"
+  },
+  "fileEncryptedExportWarningDesc": {
+    "message": "Tento soubor exportu bude chráněn heslem a k dešifrování bude vyžadovat heslo souboru."
+  },
+  "filePassword": {
+    "message": "Heslo souboru"
+  },
+  "exportPasswordDescription": {
+    "message": "Toto heslo bude použito pro export a import tohoto souboru"
+  },
+  "accountRestrictedOptionDescription": {
+    "message": "Pro zašifrování exportu a omezení importu pouze na aktuální účet Bitwardenu použijte šifrovací klíč Vašeho účtu odvozený z uživatelského jména a hlavního hesla."
+  },
+  "passwordProtectedOptionDescription": {
+    "message": "Nastavte heslo pro šifrování exportu a importujte ho do libovolného účtu Bitwardenu pomocí hesla pro dešifrování."
+  },
+  "exportTypeHeading": {
+    "message": "Typ exportu"
+  },
+  "accountRestricted": {
+    "message": "Účet je omezený"
+  },
+  "filePasswordAndConfirmFilePasswordDoNotMatch": {
+    "message": "\"Heslo souboru\" a \"Potvrzení hesla souboru\" se neshodují."
   },
   "warning": {
     "message": "VAROVÁNÍ",
@@ -2179,6 +2209,18 @@
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      }
+    }
+  },
+  "exportingOrganizationVaultTitle": {
+    "message": "Exportování trezoru organizace"
+  },
+  "exportingOrganizationVaultDesc": {
+    "message": "Exportován bude jen trezor organizace přidružený k položce $ORGANIZATION$. Osobní položky trezoru a položky z jiných organizací nebudou zahrnuty.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "ACME Moving Co."
       }
     }
   },

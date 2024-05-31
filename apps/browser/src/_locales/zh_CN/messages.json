@@ -762,6 +762,9 @@
   "notificationUnlock": {
     "message": "解锁​​​​"
   },
+  "additionalOptions": {
+    "message": "附加选项"
+  },
   "enableContextMenuItem": {
     "message": "显示上下文菜单选项"
   },
@@ -799,11 +802,38 @@
     "message": "过曝暗",
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
+  "exportFrom": {
+    "message": "导出自"
+  },
   "exportVault": {
     "message": "导出密码库"
   },
   "fileFormat": {
     "message": "文件格式"
+  },
+  "fileEncryptedExportWarningDesc": {
+    "message": "此文件导出将受密码保护，需要文件密码才能解密。"
+  },
+  "filePassword": {
+    "message": "文件密码"
+  },
+  "exportPasswordDescription": {
+    "message": "此密码将用于导出和导入此文件"
+  },
+  "accountRestrictedOptionDescription": {
+    "message": "使用衍生自您账户的用户名和主密码的加密密钥，以加密此导出并限制只能导入到当前的 Bitwarden 账户。"
+  },
+  "passwordProtectedOptionDescription": {
+    "message": "设置一个密码用来加密导出的数据，并使用此密码解密以导入到任意 Bitwarden 账户。"
+  },
+  "exportTypeHeading": {
+    "message": "导出类型"
+  },
+  "accountRestricted": {
+    "message": "账户受限"
+  },
+  "filePasswordAndConfirmFilePasswordDoNotMatch": {
+    "message": "「文件密码」与「确认文件密码」不一致。"
   },
   "warning": {
     "message": "警告",
@@ -2179,6 +2209,18 @@
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      }
+    }
+  },
+  "exportingOrganizationVaultTitle": {
+    "message": "正在导出组织密码库"
+  },
+  "exportingOrganizationVaultDesc": {
+    "message": "仅会导出与 $ORGANIZATION$ 关联的组织密码库数据。不包括个人密码库和其他组织中的项目。",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "ACME Moving Co."
       }
     }
   },

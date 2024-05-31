@@ -185,7 +185,7 @@
     "message": "Tarayıcınızın uzantı sitesine gitmek ister misiniz?"
   },
   "continueToBrowserExtensionStoreDesc": {
-    "message": "Help others find out if Bitwarden is right for them. Visit your browser's extension store and leave a rating now."
+    "message": "Bitwarden'ı başkalarına da tanımak ister misiniz? Tarayıcınızın uzantı mağazasını ziyaret edip Bitwarden'ı değerlendirin."
   },
   "changeMasterPasswordOnWebConfirmation": {
     "message": "Ana parolanızı Bitwarden web uygulamasında değiştirebilirsiniz."
@@ -762,6 +762,9 @@
   "notificationUnlock": {
     "message": "Kilidi aç"
   },
+  "additionalOptions": {
+    "message": "Ek seçenekler"
+  },
   "enableContextMenuItem": {
     "message": "Bağlam menüsü seçeneklerini göster"
   },
@@ -799,11 +802,38 @@
     "message": "Solarized koyu",
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
+  "exportFrom": {
+    "message": "Export from"
+  },
   "exportVault": {
     "message": "Kasayı dışa aktar"
   },
   "fileFormat": {
     "message": "Dosya biçimi"
+  },
+  "fileEncryptedExportWarningDesc": {
+    "message": "This file export will be password protected and require the file password to decrypt."
+  },
+  "filePassword": {
+    "message": "Dosya parolası"
+  },
+  "exportPasswordDescription": {
+    "message": "Bu parola, bu dosyayı dışa ve içe aktarmak için kullanılacaktır"
+  },
+  "accountRestrictedOptionDescription": {
+    "message": "Dışa aktarmayı şifrelemek ve içe aktarmayı yalnızca mevcut Bitwarden hesabıyla kısıtlamak için, hesabınızın kullanıcı adı ve ana parolasından türetilen hesap şifreleme anahtarınızı kullanın."
+  },
+  "passwordProtectedOptionDescription": {
+    "message": "Dışa aktardığınız dosyayı şifrelemek ve bir Bitwarden hesabına içe aktarmak için kullanacağınız parolayı belirleyin."
+  },
+  "exportTypeHeading": {
+    "message": "Dışa aktarma türü"
+  },
+  "accountRestricted": {
+    "message": "Hesap kısıtlı"
+  },
+  "filePasswordAndConfirmFilePasswordDoNotMatch": {
+    "message": "\"Dosya parolası\" ile \"Dosya parolasını onaylayın\" eşleşmiyor."
   },
   "warning": {
     "message": "UYARI",
@@ -2182,6 +2212,18 @@
       }
     }
   },
+  "exportingOrganizationVaultTitle": {
+    "message": "Kuruluş kasasını dışa aktarma"
+  },
+  "exportingOrganizationVaultDesc": {
+    "message": "Only the organization vault associated with $ORGANIZATION$ will be exported. Items in individual vaults or other organizations will not be included.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "ACME Moving Co."
+      }
+    }
+  },
   "error": {
     "message": "Hata"
   },
@@ -2548,7 +2590,7 @@
     "message": "Creating account on"
   },
   "checkYourEmail": {
-    "message": "Check your email"
+    "message": "E-postanızı kontrol edin"
   },
   "followTheLinkInTheEmailSentTo": {
     "message": "Follow the link in the email sent to"
@@ -2560,10 +2602,10 @@
     "message": "No email?"
   },
   "goBack": {
-    "message": "Go back"
+    "message": "Geri dönüp"
   },
   "toEditYourEmailAddress": {
-    "message": "to edit your email address."
+    "message": "e-posta adresinizi düzenleyin."
   },
   "eu": {
     "message": "AB",

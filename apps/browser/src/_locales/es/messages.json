@@ -762,6 +762,9 @@
   "notificationUnlock": {
     "message": "Desbloquear"
   },
+  "additionalOptions": {
+    "message": "Additional options"
+  },
   "enableContextMenuItem": {
     "message": "Mostrar las opciones de menú contextuales"
   },
@@ -799,11 +802,38 @@
     "message": "Solarized Dark",
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
+  "exportFrom": {
+    "message": "Exportar desde"
+  },
   "exportVault": {
     "message": "Exportar caja fuerte"
   },
   "fileFormat": {
     "message": "Formato de archivo"
+  },
+  "fileEncryptedExportWarningDesc": {
+    "message": "Esta exportación de archivo estará protegida por contraseña y requerirá la contraseña del archivo para descifrarla."
+  },
+  "filePassword": {
+    "message": "Contraseña del archivo"
+  },
+  "exportPasswordDescription": {
+    "message": "Esta contraseña se utilizará para exportar e importar este archivo"
+  },
+  "accountRestrictedOptionDescription": {
+    "message": "Utiliza la clave de cifrado de tu cuenta, derivada del nombre de usuario y la contraseña maestra de tu cuenta, para cifrar la exportación y restringir la importación solo a la cuenta actual de Bitwarden."
+  },
+  "passwordProtectedOptionDescription": {
+    "message": "Establece una contraseña de archivo para cifrar la exportación e importarlo a cualquier cuenta de Bitwarden utilizando la contraseña para el descifrado."
+  },
+  "exportTypeHeading": {
+    "message": "Tipo de exportación"
+  },
+  "accountRestricted": {
+    "message": "Cuenta restringida"
+  },
+  "filePasswordAndConfirmFilePasswordDoNotMatch": {
+    "message": "\"Contraseña de archivo\" y \"Confirmar contraseña de archivo\" no coinciden."
   },
   "warning": {
     "message": "ADVERTENCIA",
@@ -2179,6 +2209,18 @@
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      }
+    }
+  },
+  "exportingOrganizationVaultTitle": {
+    "message": "Exportando caja fuerte de la organización"
+  },
+  "exportingOrganizationVaultDesc": {
+    "message": "Solo se exportará la caja fuerte de la organización asociada a $ORGANIZATION$. Los elementos en las cajas fuertes individuales o de otras organizaciones no serán incluidos.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "ACME Moving Co."
       }
     }
   },
