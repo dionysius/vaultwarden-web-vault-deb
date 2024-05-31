@@ -1299,11 +1299,41 @@
     "message": "Wachtwoord bijgewerkt",
     "description": "ex. Date this password was updated"
   },
+  "exportFrom": {
+    "message": "Exporteren vanuit"
+  },
   "exportVault": {
     "message": "Kluis exporteren"
   },
   "fileFormat": {
     "message": "Bestandsindeling"
+  },
+  "fileEncryptedExportWarningDesc": {
+    "message": "We beveiligen deze bestandsexport met een wachtwoord beveiligd, je hebt het bestandswachtwoord nodig om het te decoderen."
+  },
+  "filePassword": {
+    "message": "Bestandswachtwoord"
+  },
+  "exportPasswordDescription": {
+    "message": "We gebruiken dit wachtwoord bij het exporteren en importeren van dit bestand"
+  },
+  "accountRestrictedOptionDescription": {
+    "message": "Gebruik de encryptiesleutel van je account, afgeleid van je gebruikersnaam en hoodfwachtwoord, om de export te versleutelen en importeren te beperken tot het huidige Bitwarden-account."
+  },
+  "passwordProtected": {
+    "message": "Beveiligd met wachtwoord"
+  },
+  "passwordProtectedOptionDescription": {
+    "message": "Stel een bestandswachtwoord in om de export te versleutelen en te importeren naar een willekeurig Bitwarden-account met het wachtwoord voor decoderen."
+  },
+  "exportTypeHeading": {
+    "message": "Exporttype"
+  },
+  "accountRestricted": {
+    "message": "Account beperkt"
+  },
+  "filePasswordAndConfirmFilePasswordDoNotMatch": {
+    "message": "\"Bestandswachtwoord\" en \"Bestandswachtwoord bevestigen\" komen niet overeen."
   },
   "hCaptchaUrl": {
     "message": "hCaptcha-URL",
@@ -2068,6 +2098,18 @@
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      }
+    }
+  },
+  "exportingOrganizationVaultTitle": {
+    "message": "Organisatiekluis exporteren"
+  },
+  "exportingOrganizationVaultDesc": {
+    "message": "Exporteert alleen de organisatiekluis van $ORGANIZATION$. Geen persoonlijke kluis-items of items van andere organisaties.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "ACME Moving Co."
       }
     }
   },

@@ -1299,11 +1299,41 @@
     "message": "Обновена парола",
     "description": "ex. Date this password was updated"
   },
+  "exportFrom": {
+    "message": "Изнасяне от"
+  },
   "exportVault": {
     "message": "Изнасяне на трезора"
   },
   "fileFormat": {
     "message": "Формат на файла"
+  },
+  "fileEncryptedExportWarningDesc": {
+    "message": "Изнесеният файл ще бъде защитен с парола, която ще бъде необходима за дешифриране на файла."
+  },
+  "filePassword": {
+    "message": "Парола на файла"
+  },
+  "exportPasswordDescription": {
+    "message": "Парола ще се използва при изнасянето и при внасянето на този файл"
+  },
+  "accountRestrictedOptionDescription": {
+    "message": "Използвайте ключа си за шифриране, който се получава чрез комбиниране на потребителското име на регистрацията Ви и главната парола. С него изнасянето ще се шифрира и внасянето ще бъда възможно само в текущата регистрация в Битуорден."
+  },
+  "passwordProtected": {
+    "message": "Защита с парола"
+  },
+  "passwordProtectedOptionDescription": {
+    "message": "Задайте парола за файла, за да шифровате изнесените данни. Ще можете да внесете данните във всяка регистрация в Битуорден използвайки паролата за дешифриране."
+  },
+  "exportTypeHeading": {
+    "message": "Вид изнасяне"
+  },
+  "accountRestricted": {
+    "message": "Регистрацията е ограничена"
+  },
+  "filePasswordAndConfirmFilePasswordDoNotMatch": {
+    "message": "Дънните в полетата „Парола на файла“ и „Потвърждаване на паролата на файла“ не съвпадат."
   },
   "hCaptchaUrl": {
     "message": "Адрес за hCaptcha",
@@ -2068,6 +2098,18 @@
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      }
+    }
+  },
+  "exportingOrganizationVaultTitle": {
+    "message": "Изнасяне на трезора на организацията"
+  },
+  "exportingOrganizationVaultDesc": {
+    "message": "Ще бъдат изнесени само записите от трезора свързан с $ORGANIZATION$. Записите в отделните лични трезори и тези в други организации няма да бъдат включени.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "ACME Moving Co."
       }
     }
   },

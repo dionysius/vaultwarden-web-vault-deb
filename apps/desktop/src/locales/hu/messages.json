@@ -1299,11 +1299,41 @@
     "message": "A jelszó frissítésre került.",
     "description": "ex. Date this password was updated"
   },
+  "exportFrom": {
+    "message": "Exportálás innen:"
+  },
   "exportVault": {
     "message": "Széf exportálása"
   },
   "fileFormat": {
     "message": "Fájlformátum"
+  },
+  "fileEncryptedExportWarningDesc": {
+    "message": "Ez a fájl exportálás jelszóval védett és a visszafejtéshez a fájl jelszó megadása szükséges."
+  },
+  "filePassword": {
+    "message": "Fájl jelszó"
+  },
+  "exportPasswordDescription": {
+    "message": "Ezt a jelszó kerül használatba a fájl exportálására és importálására."
+  },
+  "accountRestrictedOptionDescription": {
+    "message": "Használjuk a fiók felhasználónevéből és mesterjelszavából származó fióktitkosítási kulcsot az exportálás titkosításához és az importálást csak az aktuális Bitwarden fiókra korlátozzuk."
+  },
+  "passwordProtected": {
+    "message": "Jelszóval védett"
+  },
+  "passwordProtectedOptionDescription": {
+    "message": "Állítsunk be egy fájl jelszót az exportálás titkosításához és importáljuk azt bármely Bitwarden fiókba a visszafejtéshez használt jelszó használatával."
+  },
+  "exportTypeHeading": {
+    "message": "Exportálási típus"
+  },
+  "accountRestricted": {
+    "message": "Korlátozott fiók"
+  },
+  "filePasswordAndConfirmFilePasswordDoNotMatch": {
+    "message": "A “Fájl jelszó”  és a  “Fájl jelszó megerősítés“ nem egyezik."
   },
   "hCaptchaUrl": {
     "message": "hCaptcha webcím",
@@ -2068,6 +2098,18 @@
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      }
+    }
+  },
+  "exportingOrganizationVaultTitle": {
+    "message": "Szervezeti széf exportálása"
+  },
+  "exportingOrganizationVaultDesc": {
+    "message": "Csak $ORGANIZATION$ névvel társított szervezeti széf kerül exportálásra. Ebbe nem kerülnek be a személyes és más szervezeti széf elemek.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "ACME Moving Co."
       }
     }
   },

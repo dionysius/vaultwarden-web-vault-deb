@@ -1299,11 +1299,41 @@
     "message": "Hasło zostało zaktualizowane",
     "description": "ex. Date this password was updated"
   },
+  "exportFrom": {
+    "message": "Eksportuj z"
+  },
   "exportVault": {
     "message": "Eksportuj sejf"
   },
   "fileFormat": {
     "message": "Format pliku"
+  },
+  "fileEncryptedExportWarningDesc": {
+    "message": "Plik będzie chroniony hasłem, które będzie wymagane do odszyfrowania pliku."
+  },
+  "filePassword": {
+    "message": "Hasło do pliku"
+  },
+  "exportPasswordDescription": {
+    "message": "Hasło będzie używane do eksportowania i importowania pliku"
+  },
+  "accountRestrictedOptionDescription": {
+    "message": "Użyj klucza szyfrowania konta, pochodzącego z nazwy użytkownika konta i hasła głównego, aby zaszyfrować eksport i ograniczyć import tylko do bieżącego konta Bitwarden."
+  },
+  "passwordProtected": {
+    "message": "Chroniona hasłem"
+  },
+  "passwordProtectedOptionDescription": {
+    "message": "Ustaw hasło dla pliku, aby zaszyfrować eksport i zaimportować je na dowolne konto Bitwarden przy użyciu hasła do odszyfrowania."
+  },
+  "exportTypeHeading": {
+    "message": "Rodzaj eksportu"
+  },
+  "accountRestricted": {
+    "message": "Konto ograniczone"
+  },
+  "filePasswordAndConfirmFilePasswordDoNotMatch": {
+    "message": "“Hasło pliku” i “Potwierdź hasło pliku“ nie pasują do siebie."
   },
   "hCaptchaUrl": {
     "message": "Adres URL hCaptcha",
@@ -2068,6 +2098,18 @@
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      }
+    }
+  },
+  "exportingOrganizationVaultTitle": {
+    "message": "Eksportowanie sejfu organizacji"
+  },
+  "exportingOrganizationVaultDesc": {
+    "message": "Tylko sejf organizacji powiązany z $ORGANIZATION$ zostanie wyeksportowany. Pozycje w poszczególnych sejfach lub innych organizacji nie będą uwzględnione.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "ACME Moving Co."
       }
     }
   },

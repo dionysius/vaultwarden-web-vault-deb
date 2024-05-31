@@ -1299,11 +1299,41 @@
     "message": "Heslo bolo aktualizované",
     "description": "ex. Date this password was updated"
   },
+  "exportFrom": {
+    "message": "Exportovať z"
+  },
   "exportVault": {
     "message": "Export trezoru"
   },
   "fileFormat": {
     "message": "Formát Súboru"
+  },
+  "fileEncryptedExportWarningDesc": {
+    "message": "Tento exportovaný súbor bude chránený heslom a na dešifrovanie bude potrebné heslo súboru."
+  },
+  "filePassword": {
+    "message": "Heslo súboru"
+  },
+  "exportPasswordDescription": {
+    "message": "Toto heslo sa použije na export a import tohto súboru"
+  },
+  "accountRestrictedOptionDescription": {
+    "message": "Na zašifrovanie exportu a obmedzenie importu len na aktuálny účet Bitwarden použite šifrovací kľúč účtu odvodený z používateľského mena a hlavného hesla účtu."
+  },
+  "passwordProtected": {
+    "message": "Chránené heslom"
+  },
+  "passwordProtectedOptionDescription": {
+    "message": "Nastavte heslo súboru na zašifrovanie exportu a importujte ho do akéhokoľvek účtu Bitwarden pomocou hesla na dešifrovanie."
+  },
+  "exportTypeHeading": {
+    "message": "Typ exportu"
+  },
+  "accountRestricted": {
+    "message": "Obmedzený účet"
+  },
+  "filePasswordAndConfirmFilePasswordDoNotMatch": {
+    "message": "\"Heslo súboru\" a \"Potvrdiť heslo súboru\" sa nezhodujú."
   },
   "hCaptchaUrl": {
     "message": "URL hCaptcha",
@@ -2068,6 +2098,18 @@
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      }
+    }
+  },
+  "exportingOrganizationVaultTitle": {
+    "message": "Exportovanie trezora organizácie"
+  },
+  "exportingOrganizationVaultDesc": {
+    "message": "Exportované budú iba položky trezora organizácie spojené s $ORGANIZATION$. Položky osobného trezora a položky z iných organizácií nebudú zahrnuté.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "ACME Moving Co."
       }
     }
   },

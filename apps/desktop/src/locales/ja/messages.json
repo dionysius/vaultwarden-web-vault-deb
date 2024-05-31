@@ -1299,11 +1299,41 @@
     "message": "パスワード更新日",
     "description": "ex. Date this password was updated"
   },
+  "exportFrom": {
+    "message": "エクスポート元"
+  },
   "exportVault": {
     "message": "保管庫のエクスポート"
   },
   "fileFormat": {
     "message": "ファイル形式"
+  },
+  "fileEncryptedExportWarningDesc": {
+    "message": "エクスポートするファイルはパスワードで保護され、復号するにはファイルパスワードが必要になります。"
+  },
+  "filePassword": {
+    "message": "ファイルパスワード"
+  },
+  "exportPasswordDescription": {
+    "message": "このパスワードはこのファイルのエクスポートとインポート時に使用します"
+  },
+  "accountRestrictedOptionDescription": {
+    "message": "アカウントのユーザー名とマスターパスワードから得られる暗号化キーを使用してエクスポートするデータを暗号化し、現在の Bitwarden アカウントのみがインポートできるよう制限します。"
+  },
+  "passwordProtected": {
+    "message": "パスワード保護あり"
+  },
+  "passwordProtectedOptionDescription": {
+    "message": "エクスポートを暗号化するためのファイルパスワードを設定します。そのパスワードを使用して、任意の Bitwarden アカウントにインポートします。"
+  },
+  "exportTypeHeading": {
+    "message": "エクスポートの種類"
+  },
+  "accountRestricted": {
+    "message": "アカウント制限"
+  },
+  "filePasswordAndConfirmFilePasswordDoNotMatch": {
+    "message": "「ファイルパスワード」と「ファイルパスワードの確認」が一致しません。"
   },
   "hCaptchaUrl": {
     "message": "hCaptcha URL",
@@ -2068,6 +2098,18 @@
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      }
+    }
+  },
+  "exportingOrganizationVaultTitle": {
+    "message": "組織保管庫のエクスポート"
+  },
+  "exportingOrganizationVaultDesc": {
+    "message": "$ORGANIZATION$ に関連付けられた組織保管庫のみがエクスポートされます。個々の保管庫または他の組織にあるアイテムは含まれません。",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "ACME Moving Co."
       }
     }
   },

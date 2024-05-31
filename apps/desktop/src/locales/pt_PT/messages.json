@@ -1299,11 +1299,41 @@
     "message": "Palavra-passe atualizada a",
     "description": "ex. Date this password was updated"
   },
+  "exportFrom": {
+    "message": "Exportar de"
+  },
   "exportVault": {
     "message": "Exportar cofre"
   },
   "fileFormat": {
     "message": "Formato do ficheiro"
+  },
+  "fileEncryptedExportWarningDesc": {
+    "message": "A exportação deste ficheiro será protegida por uma palavra-passe e exigirá a palavra-passe do ficheiro para ser desencriptada."
+  },
+  "filePassword": {
+    "message": "Palavra-passe do ficheiro"
+  },
+  "exportPasswordDescription": {
+    "message": "Esta palavra-passe será utilizada para exportar e importar este ficheiro"
+  },
+  "accountRestrictedOptionDescription": {
+    "message": "Utilize a chave de encriptação da sua conta, derivada do nome de utilizador e da palavra-passe mestra da sua conta, para encriptar a exportação e restringir a importação apenas à conta Bitwarden atual."
+  },
+  "passwordProtected": {
+    "message": "Protegido por palavra-passe"
+  },
+  "passwordProtectedOptionDescription": {
+    "message": "Defina uma palavra-passe do ficheiro para encriptar a exportação e importe-a para qualquer conta Bitwarden utilizando a palavra-passe de desencriptação."
+  },
+  "exportTypeHeading": {
+    "message": "Tipo de exportação"
+  },
+  "accountRestricted": {
+    "message": "Conta restringida"
+  },
+  "filePasswordAndConfirmFilePasswordDoNotMatch": {
+    "message": "\"Palavra-passe do ficheiro\" e \"Confirmar palavra-passe do ficheiro\" não correspondem."
   },
   "hCaptchaUrl": {
     "message": "URL do hCaptcha",
@@ -2068,6 +2098,18 @@
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      }
+    }
+  },
+  "exportingOrganizationVaultTitle": {
+    "message": "A exportar o cofre da organização"
+  },
+  "exportingOrganizationVaultDesc": {
+    "message": "Apenas o cofre da organização associado a $ORGANIZATION$ será exportado. Os itens em cofres individuais ou noutras organizações não serão incluídos.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "ACME Moving Co."
       }
     }
   },

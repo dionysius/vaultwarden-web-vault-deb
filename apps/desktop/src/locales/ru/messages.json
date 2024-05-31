@@ -1299,11 +1299,41 @@
     "message": "Пароль обновлен",
     "description": "ex. Date this password was updated"
   },
+  "exportFrom": {
+    "message": "Экспорт из"
+  },
   "exportVault": {
     "message": "Экспорт хранилища"
   },
   "fileFormat": {
     "message": "Формат файла"
+  },
+  "fileEncryptedExportWarningDesc": {
+    "message": "Экспорт этого файла будет защищен паролем, и для расшифровки потребуется пароль файла."
+  },
+  "filePassword": {
+    "message": "Пароль к файлу"
+  },
+  "exportPasswordDescription": {
+    "message": "Этот пароль будет использоваться для экспорта и импорта этого файла"
+  },
+  "accountRestrictedOptionDescription": {
+    "message": "Использовать ключ шифрования вашего аккаунта, полученный из имени пользователя и мастер-пароля, для шифрования экспорта и ограничения импорта только для текущего аккаунта Bitwarden."
+  },
+  "passwordProtected": {
+    "message": "Пароль защищен"
+  },
+  "passwordProtectedOptionDescription": {
+    "message": "Установите пароль файла для шифрования экспорта и импортируйте его в любую учетную запись Bitwarden, используя пароль для расшифровки."
+  },
+  "exportTypeHeading": {
+    "message": "Тип экспорта"
+  },
+  "accountRestricted": {
+    "message": "Ограничено аккаунтом"
+  },
+  "filePasswordAndConfirmFilePasswordDoNotMatch": {
+    "message": "\"Пароль к файлу\" и \"Подтверждение пароля к файлу\" не совпадают."
   },
   "hCaptchaUrl": {
     "message": "URL hCaptcha",
@@ -2068,6 +2098,18 @@
       "email": {
         "content": "$1",
         "example": "name@example.com"
+      }
+    }
+  },
+  "exportingOrganizationVaultTitle": {
+    "message": "Экспорт хранилища организации"
+  },
+  "exportingOrganizationVaultDesc": {
+    "message": "Будет экспортировано только хранилище организации, связанное с $ORGANIZATION$. Элементы из личных хранилищ и из других организаций включены не будут.",
+    "placeholders": {
+      "organization": {
+        "content": "$1",
+        "example": "ACME Moving Co."
       }
     }
   },
