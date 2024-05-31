@@ -581,6 +581,9 @@
   "accessLevel": {
     "message": "Käyttöoikeustaso"
   },
+  "accessing": {
+    "message": "Avataan"
+  },
   "loggedOut": {
     "message": "Kirjauduttu ulos"
   },
@@ -8290,9 +8293,9 @@
     "message": "Pysy haavoittuvuuksien edellä tehostamalla valvontaa päivittämällä maksulliseen tilaukseeen."
   },
   "approveAllRequests": {
-    "message": "Approve all requests"
+    "message": "Hyväksy kaikki pyynnöt"
   },
   "allLoginRequestsApproved": {
-    "message": "All login requests approved"
+    "message": "Kaikki kirjautumispyynnöt hyväksyttiin"
   }
 }
