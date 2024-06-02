@@ -763,7 +763,7 @@
     "message": "Lås upp"
   },
   "additionalOptions": {
-    "message": "Additional options"
+    "message": "Ytterligare alternativ"
   },
   "enableContextMenuItem": {
     "message": "Visa alternativ för snabbmenyn"
@@ -803,7 +803,7 @@
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportFrom": {
-    "message": "Export from"
+    "message": "Exportera från"
   },
   "exportVault": {
     "message": "Exportera valv"
@@ -815,7 +815,7 @@
     "message": "This file export will be password protected and require the file password to decrypt."
   },
   "filePassword": {
-    "message": "File password"
+    "message": "Fillösenord"
   },
   "exportPasswordDescription": {
     "message": "This password will be used to export and import this file"
@@ -827,7 +827,7 @@
     "message": "Set a file password to encrypt the export and import it to any Bitwarden account using the password for decryption."
   },
   "exportTypeHeading": {
-    "message": "Export type"
+    "message": "Exporttyp"
   },
   "accountRestricted": {
     "message": "Account restricted"
