@@ -1300,7 +1300,7 @@
     "description": "ex. Date this password was updated"
   },
   "exportFrom": {
-    "message": "Export from"
+    "message": "导出自"
   },
   "exportVault": {
     "message": "导出密码库"
@@ -1309,31 +1309,31 @@
     "message": "文件格式"
   },
   "fileEncryptedExportWarningDesc": {
-    "message": "This file export will be password protected and require the file password to decrypt."
+    "message": "此文件导出将受密码保护，需要文件密码才能解密。"
   },
   "filePassword": {
-    "message": "File password"
+    "message": "文件密码"
   },
   "exportPasswordDescription": {
-    "message": "This password will be used to export and import this file"
+    "message": "此密码将用于导出和导入此文件"
   },
   "accountRestrictedOptionDescription": {
-    "message": "Use your account encryption key, derived from your account's username and Master Password, to encrypt the export and restrict import to only the current Bitwarden account."
+    "message": "使用衍生自您账户的用户名和主密码的账户加密密钥，以加密此导出并限制只能导入到当前的 Bitwarden 账户。"
   },
   "passwordProtected": {
-    "message": "Password protected"
+    "message": "密码保护"
   },
   "passwordProtectedOptionDescription": {
-    "message": "Set a file password to encrypt the export and import it to any Bitwarden account using the password for decryption."
+    "message": "设置一个文件密码用来加密此导出，并使用此密码解密以导入到任意 Bitwarden 账户。"
   },
   "exportTypeHeading": {
-    "message": "Export type"
+    "message": "导出类型"
   },
   "accountRestricted": {
-    "message": "Account restricted"
+    "message": "账户受限"
   },
   "filePasswordAndConfirmFilePasswordDoNotMatch": {
-    "message": "“File password”  and “Confirm file password“ do not match."
+    "message": "「文件密码」与「确认文件密码」不一致。"
   },
   "hCaptchaUrl": {
     "message": "hCaptcha URL",
@@ -2102,10 +2102,10 @@
     }
   },
   "exportingOrganizationVaultTitle": {
-    "message": "Exporting organization vault"
+    "message": "正在导出组织密码库"
   },
   "exportingOrganizationVaultDesc": {
-    "message": "Only the organization vault associated with $ORGANIZATION$ will be exported. Items in individual vaults or other organizations will not be included.",
+    "message": "仅会导出与 $ORGANIZATION$ 关联的组织密码库数据。不包括个人密码库和其他组织中的项目。",
     "placeholders": {
       "organization": {
         "content": "$1",
