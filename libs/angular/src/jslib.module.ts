@@ -2,7 +2,24 @@ import { CommonModule, DatePipe } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
-import { AutofocusDirective, ToastModule } from "@bitwarden/components";
+import {
+  AddAccountCreditDialogComponent,
+  ManageTaxInformationComponent,
+  SelectPaymentMethodComponent,
+  VerifyBankAccountComponent,
+} from "@bitwarden/angular/billing/components";
+import {
+  AsyncActionsModule,
+  AutofocusDirective,
+  ButtonModule,
+  CheckboxModule,
+  DialogModule,
+  FormFieldModule,
+  RadioButtonModule,
+  SelectModule,
+  ToastModule,
+  TypographyModule,
+} from "@bitwarden/components";
 
 import { CalloutComponent } from "./components/callout.component";
 import { A11yInvalidDirective } from "./directives/a11y-invalid.directive";
@@ -41,6 +58,14 @@ import { IconComponent } from "./vault/components/icon.component";
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    AsyncActionsModule,
+    RadioButtonModule,
+    FormFieldModule,
+    SelectModule,
+    ButtonModule,
+    CheckboxModule,
+    DialogModule,
+    TypographyModule,
   ],
   declarations: [
     A11yInvalidDirective,
@@ -70,6 +95,10 @@ import { IconComponent } from "./vault/components/icon.component";
     UserTypePipe,
     IfFeatureDirective,
     FingerprintPipe,
+    AddAccountCreditDialogComponent,
+    ManageTaxInformationComponent,
+    SelectPaymentMethodComponent,
+    VerifyBankAccountComponent,
   ],
   exports: [
     A11yInvalidDirective,
@@ -100,6 +129,10 @@ import { IconComponent } from "./vault/components/icon.component";
     UserTypePipe,
     IfFeatureDirective,
     FingerprintPipe,
+    AddAccountCreditDialogComponent,
+    ManageTaxInformationComponent,
+    SelectPaymentMethodComponent,
+    VerifyBankAccountComponent,
   ],
   providers: [
     CreditCardNumberPipe,

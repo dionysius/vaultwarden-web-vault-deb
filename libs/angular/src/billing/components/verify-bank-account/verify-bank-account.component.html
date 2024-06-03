@@ -1,0 +1,18 @@
+<app-callout type="warning" title="{{ 'verifyBankAccount' | i18n }}">
+  <p>{{ "verifyBankAccountDesc" | i18n }} {{ "verifyBankAccountFailureWarning" | i18n }}</p>
+  <form [formGroup]="formGroup" [bitSubmit]="submit">
+    <bit-form-field class="tw-mr-2 tw-w-40">
+      <bit-label>{{ "amountX" | i18n: "1" }}</bit-label>
+      <input bitInput type="number" step="1" placeholder="xx" formControlName="amount1" />
+      <span bitPrefix>$0.</span>
+    </bit-form-field>
+    <bit-form-field class="tw-mr-2 tw-w-40">
+      <bit-label>{{ "amountX" | i18n: "2" }}</bit-label>
+      <input bitInput type="number" step="1" placeholder="xx" formControlName="amount2" />
+      <span bitPrefix>$0.</span>
+    </bit-form-field>
+    <button type="submit" bitButton bitFormButton buttonType="primary">
+      {{ "submit" | i18n }}
+    </button>
+  </form>
+</app-callout>

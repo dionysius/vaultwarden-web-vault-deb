@@ -109,14 +109,20 @@ import {
   DomainSettingsService,
   DefaultDomainSettingsService,
 } from "@bitwarden/common/autofill/services/domain-settings.service";
+import {
+  BillingApiServiceAbstraction,
+  BraintreeServiceAbstraction,
+  OrganizationBillingServiceAbstraction,
+  PaymentMethodWarningsServiceAbstraction,
+  StripeServiceAbstraction,
+} from "@bitwarden/common/billing/abstractions";
 import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions/account/billing-account-profile-state.service";
-import { BillingApiServiceAbstraction } from "@bitwarden/common/billing/abstractions/billilng-api.service.abstraction";
-import { OrganizationBillingServiceAbstraction } from "@bitwarden/common/billing/abstractions/organization-billing.service";
-import { PaymentMethodWarningsServiceAbstraction } from "@bitwarden/common/billing/abstractions/payment-method-warnings-service.abstraction";
 import { DefaultBillingAccountProfileStateService } from "@bitwarden/common/billing/services/account/billing-account-profile-state.service";
 import { BillingApiService } from "@bitwarden/common/billing/services/billing-api.service";
 import { OrganizationBillingService } from "@bitwarden/common/billing/services/organization-billing.service";
 import { PaymentMethodWarningsService } from "@bitwarden/common/billing/services/payment-method-warnings.service";
+import { BraintreeService } from "@bitwarden/common/billing/services/payment-processors/braintree.service";
+import { StripeService } from "@bitwarden/common/billing/services/payment-processors/stripe.service";
 import { AppIdService as AppIdServiceAbstraction } from "@bitwarden/common/platform/abstractions/app-id.service";
 import { BroadcasterService } from "@bitwarden/common/platform/abstractions/broadcaster.service";
 import { ConfigApiServiceAbstraction } from "@bitwarden/common/platform/abstractions/config/config-api.service.abstraction";
@@ -1189,6 +1195,16 @@ const safeProviders: SafeProvider[] = [
     provide: KdfConfigServiceAbstraction,
     useClass: KdfConfigService,
     deps: [StateProvider],
+  }),
+  safeProvider({
+    provide: BraintreeServiceAbstraction,
+    useClass: BraintreeService,
+    deps: [LogService],
+  }),
+  safeProvider({
+    provide: StripeServiceAbstraction,
+    useClass: StripeService,
+    deps: [LogService],
   }),
 ];
 

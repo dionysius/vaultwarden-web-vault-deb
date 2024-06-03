@@ -1,3 +1,5 @@
+import { TaxInformation } from "@bitwarden/common/billing/models/domain/tax-information";
+
 import { TaxInfoUpdateRequest } from "./tax-info-update.request";
 
 export class ExpandedTaxInfoUpdateRequest extends TaxInfoUpdateRequest {
@@ -6,4 +8,16 @@ export class ExpandedTaxInfoUpdateRequest extends TaxInfoUpdateRequest {
   line2: string;
   city: string;
   state: string;
+
+  static From(taxInformation: TaxInformation): ExpandedTaxInfoUpdateRequest {
+    const request = new ExpandedTaxInfoUpdateRequest();
+    request.country = taxInformation.country;
+    request.postalCode = taxInformation.postalCode;
+    request.taxId = taxInformation.taxId;
+    request.line1 = taxInformation.line1;
+    request.line2 = taxInformation.line2;
+    request.city = taxInformation.city;
+    request.state = taxInformation.state;
+    return request;
+  }
 }
