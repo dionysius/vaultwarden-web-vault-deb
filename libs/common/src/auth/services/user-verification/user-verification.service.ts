@@ -140,6 +140,10 @@ export class UserVerificationService implements UserVerificationServiceAbstracti
    * @param verification User-supplied verification data (OTP, MP, PIN, or biometrics)
    */
   async verifyUser(verification: Verification): Promise<boolean> {
+    if (verification == null) {
+      throw new Error("Verification is required.");
+    }
+
     const [userId, email] = await firstValueFrom(
       this.accountService.activeAccount$.pipe(map((a) => [a?.id, a?.email])),
     );
