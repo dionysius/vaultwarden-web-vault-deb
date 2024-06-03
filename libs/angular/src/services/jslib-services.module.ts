@@ -13,6 +13,7 @@ import {
   InternalUserDecryptionOptionsServiceAbstraction,
   UserDecryptionOptionsService,
   UserDecryptionOptionsServiceAbstraction,
+  LogoutReason,
 } from "@bitwarden/auth/common";
 import { ApiService as ApiServiceAbstraction } from "@bitwarden/common/abstractions/api.service";
 import { AuditService as AuditServiceAbstraction } from "@bitwarden/common/abstractions/audit.service";
@@ -238,6 +239,7 @@ import { SyncNotifierService } from "@bitwarden/common/vault/services/sync/sync-
 import { SyncService } from "@bitwarden/common/vault/services/sync/sync.service";
 import { TotpService } from "@bitwarden/common/vault/services/totp.service";
 import { VaultSettingsService } from "@bitwarden/common/vault/services/vault-settings/vault-settings.service";
+import { ToastService } from "@bitwarden/components";
 import {
   ImportApiService,
   ImportApiServiceAbstraction,
@@ -281,6 +283,7 @@ import {
   DEFAULT_VAULT_TIMEOUT,
   INTRAPROCESS_MESSAGING_SUBJECT,
   CLIENT_TYPE,
+  REFRESH_ACCESS_TOKEN_ERROR_CALLBACK,
 } from "./injection-tokens";
 import { ModalService } from "./modal.service";
 
@@ -322,8 +325,12 @@ const safeProviders: SafeProvider[] = [
   safeProvider({
     provide: LOGOUT_CALLBACK,
     useFactory:
-      (messagingService: MessagingServiceAbstraction) => (expired: boolean, userId?: string) =>
-        Promise.resolve(messagingService.send("logout", { expired: expired, userId: userId })),
+      (messagingService: MessagingServiceAbstraction) =>
+      async (logoutReason: LogoutReason, userId?: string) => {
+        return Promise.resolve(
+          messagingService.send("logout", { logoutReason: logoutReason, userId: userId }),
+        );
+      },
     deps: [MessagingServiceAbstraction],
   }),
   safeProvider({
@@ -532,6 +539,7 @@ const safeProviders: SafeProvider[] = [
       KeyGenerationServiceAbstraction,
       EncryptService,
       LogService,
+      LOGOUT_CALLBACK,
     ],
   }),
   safeProvider({
@@ -586,6 +594,17 @@ const safeProviders: SafeProvider[] = [
     ],
   }),
   safeProvider({
+    provide: REFRESH_ACCESS_TOKEN_ERROR_CALLBACK,
+    useFactory: (toastService: ToastService, i18nService: I18nServiceAbstraction) => () => {
+      toastService.showToast({
+        variant: "error",
+        title: i18nService.t("errorRefreshingAccessToken"),
+        message: i18nService.t("errorRefreshingAccessTokenDesc"),
+      });
+    },
+    deps: [ToastService, I18nServiceAbstraction],
+  }),
+  safeProvider({
     provide: ApiServiceAbstraction,
     useClass: ApiService,
     deps: [
@@ -593,8 +612,10 @@ const safeProviders: SafeProvider[] = [
       PlatformUtilsServiceAbstraction,
       EnvironmentService,
       AppIdServiceAbstraction,
-      VaultTimeoutSettingsServiceAbstraction,
+      REFRESH_ACCESS_TOKEN_ERROR_CALLBACK,
+      LogService,
       LOGOUT_CALLBACK,
+      VaultTimeoutSettingsServiceAbstraction,
     ],
   }),
   safeProvider({

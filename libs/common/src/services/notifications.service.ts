@@ -2,6 +2,8 @@ import * as signalR from "@microsoft/signalr";
 import * as signalRMsgPack from "@microsoft/signalr-protocol-msgpack";
 import { firstValueFrom } from "rxjs";
 
+import { LogoutReason } from "@bitwarden/auth/common";
+
 import { AuthRequestServiceAbstraction } from "../../../auth/src/common/abstractions";
 import { ApiService } from "../abstractions/api.service";
 import { NotificationsService as NotificationsServiceAbstraction } from "../abstractions/notifications.service";
@@ -36,7 +38,7 @@ export class NotificationsService implements NotificationsServiceAbstraction {
     private appIdService: AppIdService,
     private apiService: ApiService,
     private environmentService: EnvironmentService,
-    private logoutCallback: (expired: boolean) => Promise<void>,
+    private logoutCallback: (logoutReason: LogoutReason) => Promise<void>,
     private stateService: StateService,
     private authService: AuthService,
     private authRequestService: AuthRequestServiceAbstraction,
@@ -188,7 +190,7 @@ export class NotificationsService implements NotificationsServiceAbstraction {
         if (isAuthenticated) {
           // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
           // eslint-disable-next-line @typescript-eslint/no-floating-promises
-          this.logoutCallback(true);
+          this.logoutCallback("logoutNotification");
         }
         break;
       case NotificationType.SyncSendCreate:

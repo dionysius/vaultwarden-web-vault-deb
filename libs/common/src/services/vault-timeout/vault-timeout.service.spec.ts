@@ -1,6 +1,8 @@
 import { MockProxy, any, mock } from "jest-mock-extended";
 import { BehaviorSubject, from, of } from "rxjs";
 
+import { LogoutReason } from "@bitwarden/auth/common";
+
 import { FakeAccountService, mockAccountServiceWith } from "../../../spec/fake-account-service";
 import { SearchService } from "../../abstractions/search.service";
 import { VaultTimeoutSettingsService } from "../../abstractions/vault-timeout/vault-timeout-settings.service";
@@ -36,7 +38,7 @@ describe("VaultTimeoutService", () => {
   let vaultTimeoutSettingsService: MockProxy<VaultTimeoutSettingsService>;
   let stateEventRunnerService: MockProxy<StateEventRunnerService>;
   let lockedCallback: jest.Mock<Promise<void>, [userId: string]>;
-  let loggedOutCallback: jest.Mock<Promise<void>, [expired: boolean, userId?: string]>;
+  let loggedOutCallback: jest.Mock<Promise<void>, [logoutReason: LogoutReason, userId?: string]>;
 
   let vaultTimeoutActionSubject: BehaviorSubject<VaultTimeoutAction>;
   let availableVaultTimeoutActionsSubject: BehaviorSubject<VaultTimeoutAction[]>;
@@ -190,7 +192,7 @@ describe("VaultTimeoutService", () => {
   };
 
   const expectUserToHaveLoggedOut = (userId: string) => {
-    expect(loggedOutCallback).toHaveBeenCalledWith(false, userId);
+    expect(loggedOutCallback).toHaveBeenCalledWith("vaultTimeout", userId);
   };
 
   const expectNoAction = (userId: string) => {

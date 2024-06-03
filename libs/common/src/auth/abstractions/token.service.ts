@@ -70,16 +70,16 @@ export abstract class TokenService {
   /**
    * Gets the access token
    * @param userId - The optional user id to get the access token for; if not provided, the active user is used.
-   * @returns A promise that resolves with the access token or undefined.
+   * @returns A promise that resolves with the access token or null.
    */
-  getAccessToken: (userId?: UserId) => Promise<string | undefined>;
+  getAccessToken: (userId?: UserId) => Promise<string | null>;
 
   /**
    * Gets the refresh token.
    * @param userId - The optional user id to get the refresh token for; if not provided, the active user is used.
-   * @returns A promise that resolves with the refresh token or undefined.
+   * @returns A promise that resolves with the refresh token or null.
    */
-  getRefreshToken: (userId?: UserId) => Promise<string | undefined>;
+  getRefreshToken: (userId?: UserId) => Promise<string | null>;
 
   /**
    * Sets the API Key Client ID for the active user id in memory or disk based on the given vaultTimeoutAction and vaultTimeout.

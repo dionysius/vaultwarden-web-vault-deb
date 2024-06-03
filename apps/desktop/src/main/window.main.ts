@@ -6,7 +6,6 @@ import { app, BrowserWindow, ipcMain, nativeTheme, screen, session } from "elect
 import { firstValueFrom } from "rxjs";
 
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
-import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { AbstractStorageService } from "@bitwarden/common/platform/abstractions/storage.service";
 import { BiometricStateService } from "@bitwarden/common/platform/biometrics/biometric-state.service";
 
@@ -38,7 +37,6 @@ export class WindowMain {
   readonly defaultHeight = 600;
 
   constructor(
-    private stateService: StateService,
     private biometricStateService: BiometricStateService,
     private logService: LogService,
     private storageService: AbstractStorageService,

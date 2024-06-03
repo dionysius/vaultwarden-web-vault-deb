@@ -3,6 +3,7 @@ import * as path from "path";
 import { app } from "electron";
 import { Subject, firstValueFrom } from "rxjs";
 
+import { LogoutReason } from "@bitwarden/auth/common";
 import { TokenService as TokenServiceAbstraction } from "@bitwarden/common/auth/abstractions/token.service";
 import { AccountServiceImplementation } from "@bitwarden/common/auth/services/account.service";
 import { TokenService } from "@bitwarden/common/auth/services/token.service";
@@ -31,6 +32,7 @@ import { DefaultSingleUserStateProvider } from "@bitwarden/common/platform/state
 import { DefaultStateProvider } from "@bitwarden/common/platform/state/implementations/default-state.provider";
 import { StateEventRegistrarService } from "@bitwarden/common/platform/state/state-event-registrar.service";
 import { MemoryStorageService as MemoryStorageServiceForStateProviders } from "@bitwarden/common/platform/state/storage/memory-storage.service";
+import { UserId } from "@bitwarden/common/types/guid";
 /* eslint-enable import/no-restricted-paths */
 
 import { DesktopAutofillSettingsService } from "./autofill/services/desktop-autofill-settings.service";
@@ -182,6 +184,7 @@ export class Main {
       this.keyGenerationService,
       this.encryptService,
       this.logService,
+      async (logoutReason: LogoutReason, userId?: UserId) => {},
     );
 
     this.migrationRunner = new MigrationRunner(
@@ -207,11 +210,9 @@ export class Main {
     );
 
     this.desktopSettingsService = new DesktopSettingsService(stateProvider);
-
     const biometricStateService = new DefaultBiometricStateService(stateProvider);
 
     this.windowMain = new WindowMain(
-      this.stateService,
       biometricStateService,
       this.logService,
       this.storageService,

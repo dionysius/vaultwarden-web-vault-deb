@@ -587,6 +587,9 @@
   "loggedOut": {
     "message": "Logged out"
   },
+  "loggedOutDesc": {
+    "message": "You have been logged out of your account."
+  },
   "loginExpired": {
     "message": "Your login session has expired."
   },
@@ -1049,6 +1052,12 @@
   },
   "copyUuid": {
     "message": "Copy UUID"
+  },
+  "errorRefreshingAccessToken":{
+    "message": "Access Token Refresh Error"
+  },
+  "errorRefreshingAccessTokenDesc":{
+    "message": "No refresh token or API keys found. Please try logging out and logging back in."
   },
   "warning": {
     "message": "Warning"

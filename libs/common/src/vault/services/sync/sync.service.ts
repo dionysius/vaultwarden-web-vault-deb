@@ -1,6 +1,6 @@
 import { firstValueFrom } from "rxjs";
 
-import { UserDecryptionOptionsServiceAbstraction } from "@bitwarden/auth/common";
+import { LogoutReason, UserDecryptionOptionsServiceAbstraction } from "@bitwarden/auth/common";
 
 import { ApiService } from "../../../abstractions/api.service";
 import { InternalOrganizationServiceAbstraction } from "../../../admin-console/abstractions/organization/organization.service.abstraction";
@@ -32,6 +32,7 @@ import { SendData } from "../../../tools/send/models/data/send.data";
 import { SendResponse } from "../../../tools/send/models/response/send.response";
 import { SendApiService } from "../../../tools/send/services/send-api.service.abstraction";
 import { InternalSendService } from "../../../tools/send/services/send.service.abstraction";
+import { UserId } from "../../../types/guid";
 import { CipherService } from "../../../vault/abstractions/cipher.service";
 import { FolderApiServiceAbstraction } from "../../../vault/abstractions/folder/folder-api.service.abstraction";
 import { InternalFolderService } from "../../../vault/abstractions/folder/folder.service.abstraction";
@@ -65,7 +66,7 @@ export class SyncService extends CoreSyncService {
     sendApiService: SendApiService,
     private userDecryptionOptionsService: UserDecryptionOptionsServiceAbstraction,
     private avatarService: AvatarService,
-    private logoutCallback: (expired: boolean) => Promise<void>,
+    private logoutCallback: (logoutReason: LogoutReason, userId?: UserId) => Promise<void>,
     private billingAccountProfileStateService: BillingAccountProfileStateService,
     private tokenService: TokenService,
     authService: AuthService,
@@ -147,7 +148,7 @@ export class SyncService extends CoreSyncService {
     const response = await this.apiService.getAccountRevisionDate();
     if (response < 0 && this.logoutCallback) {
       // Account was deleted, log out now
-      await this.logoutCallback(false);
+      await this.logoutCallback("accountDeleted");
     }
 
     if (new Date(response) <= lastSync) {
@@ -160,7 +161,7 @@ export class SyncService extends CoreSyncService {
     const stamp = await this.tokenService.getSecurityStamp(response.id);
     if (stamp != null && stamp !== response.securityStamp) {
       if (this.logoutCallback != null) {
-        await this.logoutCallback(true);
+        await this.logoutCallback("invalidSecurityStamp");
       }
 
       throw new Error("Stamp has changed");

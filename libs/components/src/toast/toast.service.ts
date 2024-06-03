@@ -18,7 +18,7 @@ export type ToastOptions = {
 export class ToastService {
   constructor(private toastrService: ToastrService) {}
 
-  showToast(options: ToastOptions) {
+  showToast(options: ToastOptions): void {
     const toastrConfig: Partial<IndividualConfig> = {
       payload: {
         message: options.message,

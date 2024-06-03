@@ -743,6 +743,9 @@
   "loggedOut": {
     "message": "Logged out"
   },
+  "loggedOutDesc": {
+    "message": "You have been logged out of your account."
+  },
   "loginExpired": {
     "message": "Your login session has expired."
   },
@@ -1211,6 +1214,12 @@
         "example": "Password"
       }
     }
+  },
+  "errorRefreshingAccessToken":{
+    "message": "Access Token Refresh Error"
+  },
+  "errorRefreshingAccessTokenDesc":{
+    "message": "No refresh token or API keys found. Please try logging out and logging back in."
   },
   "help": {
     "message": "Help"
@@ -2473,6 +2482,12 @@
   },
   "important": {
     "message": "Important:"
+  },
+  "accessTokenUnableToBeDecrypted": {
+    "message": "You have been logged out because your access token could not be decrypted. Please log in again to resolve this issue."
+  },
+  "refreshTokenSecureStorageRetrievalFailure": {
+    "message": "You have been logged out because your refresh token could not be retrieved. Please log in again to resolve this issue."
   },
   "masterPasswordHint": {
     "message": "Your master password cannot be recovered if you forget it!"

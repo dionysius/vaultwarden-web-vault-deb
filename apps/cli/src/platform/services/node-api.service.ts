@@ -6,6 +6,7 @@ import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vaul
 import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
 import { AppIdService } from "@bitwarden/common/platform/abstractions/app-id.service";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
+import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { ApiService } from "@bitwarden/common/services/api.service";
 
@@ -21,8 +22,10 @@ export class NodeApiService extends ApiService {
     platformUtilsService: PlatformUtilsService,
     environmentService: EnvironmentService,
     appIdService: AppIdService,
+    refreshAccessTokenErrorCallback: () => Promise<void>,
+    logService: LogService,
+    logoutCallback: () => Promise<void>,
     vaultTimeoutSettingsService: VaultTimeoutSettingsService,
-    logoutCallback: (expired: boolean) => Promise<void>,
     customUserAgent: string = null,
   ) {
     super(
@@ -30,8 +33,10 @@ export class NodeApiService extends ApiService {
       platformUtilsService,
       environmentService,
       appIdService,
-      vaultTimeoutSettingsService,
+      refreshAccessTokenErrorCallback,
+      logService,
       logoutCallback,
+      vaultTimeoutSettingsService,
       customUserAgent,
     );
   }
