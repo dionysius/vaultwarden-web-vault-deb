@@ -21,7 +21,8 @@
       "@bitwarden/vault-export-core": [
         "../../libs/tools/export/vault-export/vault-export-core/src"
       ],
-      "@bitwarden/node/*": ["../../libs/node/src/*"]
+      "@bitwarden/node/*": ["../../libs/node/src/*"],
+      "@bitwarden/bit-common/*": ["../../bitwarden_license/bit-common/src/*"]
     }
   },
   "include": ["src", "src/**/*.spec.ts"]
