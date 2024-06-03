@@ -108,7 +108,7 @@ export class ChipSelectComponent<T = unknown> implements ControlValueAccessor {
    */
   private findOption(tree: ChipSelectOption<T>, value: T): ChipSelectOption<T> | null {
     let result = null;
-    if (tree.value === value) {
+    if (tree.value !== null && tree.value === value) {
       return tree;
     }
 
@@ -183,7 +183,7 @@ export class ChipSelectComponent<T = unknown> implements ControlValueAccessor {
       return;
     }
 
-    this.notifyOnChange(option?.value);
+    this.notifyOnChange(option?.value ?? null);
   }
 
   /** Implemented as part of NG_VALUE_ACCESSOR */

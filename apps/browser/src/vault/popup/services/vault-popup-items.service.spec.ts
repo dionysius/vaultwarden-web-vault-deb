@@ -2,6 +2,7 @@ import { mock } from "jest-mock-extended";
 import { BehaviorSubject } from "rxjs";
 
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
+import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { CipherId } from "@bitwarden/common/types/guid";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { VaultSettingsService } from "@bitwarden/common/vault/abstractions/vault-settings/vault-settings.service";
@@ -12,6 +13,7 @@ import { BrowserApi } from "../../../platform/browser/browser-api";
 import BrowserPopupUtils from "../../../platform/popup/browser-popup-utils";
 
 import { VaultPopupItemsService } from "./vault-popup-items.service";
+import { VaultPopupListFiltersService } from "./vault-popup-list-filters.service";
 
 describe("VaultPopupItemsService", () => {
   let service: VaultPopupItemsService;
@@ -20,6 +22,8 @@ describe("VaultPopupItemsService", () => {
 
   const cipherServiceMock = mock<CipherService>();
   const vaultSettingsServiceMock = mock<VaultSettingsService>();
+  const organizationServiceMock = mock<OrganizationService>();
+  const vaultPopupListFiltersServiceMock = mock<VaultPopupListFiltersService>();
   const searchService = mock<SearchService>();
 
   beforeEach(() => {
@@ -40,6 +44,18 @@ describe("VaultPopupItemsService", () => {
     cipherServiceMock.filterCiphersForUrl.mockImplementation(async () => autoFillCiphers);
     vaultSettingsServiceMock.showCardsCurrentTab$ = new BehaviorSubject(false).asObservable();
     vaultSettingsServiceMock.showIdentitiesCurrentTab$ = new BehaviorSubject(false).asObservable();
+
+    vaultPopupListFiltersServiceMock.filters$ = new BehaviorSubject({
+      organization: null,
+      collection: null,
+      cipherType: null,
+      folder: null,
+    });
+    // Return all ciphers, `filterFunction$` will be tested in `VaultPopupListFiltersService`
+    vaultPopupListFiltersServiceMock.filterFunction$ = new BehaviorSubject(
+      (ciphers: CipherView[]) => ciphers,
+    );
+
     jest.spyOn(BrowserPopupUtils, "inPopout").mockReturnValue(false);
     jest
       .spyOn(BrowserApi, "getTabFromCurrentWindow")
@@ -47,6 +63,8 @@ describe("VaultPopupItemsService", () => {
     service = new VaultPopupItemsService(
       cipherServiceMock,
       vaultSettingsServiceMock,
+      vaultPopupListFiltersServiceMock,
+      organizationServiceMock,
       searchService,
     );
   });
@@ -55,6 +73,8 @@ describe("VaultPopupItemsService", () => {
     service = new VaultPopupItemsService(
       cipherServiceMock,
       vaultSettingsServiceMock,
+      vaultPopupListFiltersServiceMock,
+      organizationServiceMock,
       searchService,
     );
     expect(service).toBeTruthy();
@@ -87,6 +107,8 @@ describe("VaultPopupItemsService", () => {
       service = new VaultPopupItemsService(
         cipherServiceMock,
         vaultSettingsServiceMock,
+        vaultPopupListFiltersServiceMock,
+        organizationServiceMock,
         searchService,
       );
 
@@ -117,6 +139,8 @@ describe("VaultPopupItemsService", () => {
       service = new VaultPopupItemsService(
         cipherServiceMock,
         vaultSettingsServiceMock,
+        vaultPopupListFiltersServiceMock,
+        organizationServiceMock,
         searchService,
       );
 
@@ -228,6 +252,8 @@ describe("VaultPopupItemsService", () => {
       service = new VaultPopupItemsService(
         cipherServiceMock,
         vaultSettingsServiceMock,
+        vaultPopupListFiltersServiceMock,
+        organizationServiceMock,
         searchService,
       );
       service.emptyVault$.subscribe((empty) => {
