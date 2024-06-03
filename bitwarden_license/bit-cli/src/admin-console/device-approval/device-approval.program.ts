@@ -49,14 +49,18 @@ export class DeviceApprovalProgram extends BaseProgram {
 
   private approveCommand(): Command {
     return new Command("approve")
-      .argument("<id>")
+      .argument("<organizationId>", "The id of the organization")
+      .argument("<requestId>", "The id of the request to approve")
       .description("Approve a pending request")
-      .action(async (id: string) => {
+      .action(async (organizationId: string, id: string) => {
         await this.exitIfFeatureFlagDisabled(FeatureFlag.BulkDeviceApproval);
         await this.exitIfLocked();
 
-        const cmd = new ApproveCommand();
-        const response = await cmd.run(id);
+        const cmd = new ApproveCommand(
+          this.serviceContainer.organizationService,
+          this.serviceContainer.organizationAuthRequestService,
+        );
+        const response = await cmd.run(organizationId, id);
         this.processResponse(response);
       });
   }
