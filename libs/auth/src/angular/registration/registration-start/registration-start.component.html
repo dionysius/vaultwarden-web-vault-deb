@@ -1,5 +1,9 @@
 <ng-container *ngIf="state === RegistrationStartState.USER_DATA_ENTRY">
   <form [formGroup]="formGroup" [bitSubmit]="submit">
+    <auth-registration-env-selector
+      (selectedRegionChange)="handleSelectedRegionChange($event)"
+    ></auth-registration-env-selector>
+
     <bit-form-field>
       <bit-label>{{ "emailAddress" | i18n }}</bit-label>
       <input
