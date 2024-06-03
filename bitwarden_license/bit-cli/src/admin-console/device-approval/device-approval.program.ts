@@ -84,14 +84,18 @@ export class DeviceApprovalProgram extends BaseProgram {
 
   private denyCommand(): Command {
     return new Command("deny")
-      .argument("<id>")
+      .argument("<organizationId>", "The id of the organization")
+      .argument("<requestId>", "The id of the request to deny")
       .description("Deny a pending request")
-      .action(async (id: string) => {
+      .action(async (organizationId: string, id: string) => {
         await this.exitIfFeatureFlagDisabled(FeatureFlag.BulkDeviceApproval);
         await this.exitIfLocked();
 
-        const cmd = new DenyCommand();
-        const response = await cmd.run(id);
+        const cmd = new DenyCommand(
+          this.serviceContainer.organizationService,
+          this.serviceContainer.organizationAuthRequestService,
+        );
+        const response = await cmd.run(organizationId, id);
         this.processResponse(response);
       });
   }
@@ -104,7 +108,10 @@ export class DeviceApprovalProgram extends BaseProgram {
         await this.exitIfFeatureFlagDisabled(FeatureFlag.BulkDeviceApproval);
         await this.exitIfLocked();
 
-        const cmd = new DenyAllCommand();
+        const cmd = new DenyAllCommand(
+          this.serviceContainer.organizationService,
+          this.serviceContainer.organizationAuthRequestService,
+        );
         const response = await cmd.run(organizationId);
         this.processResponse(response);
       });

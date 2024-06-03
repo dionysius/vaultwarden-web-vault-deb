@@ -1,9 +1,49 @@
+import { firstValueFrom } from "rxjs";
+
 import { Response } from "@bitwarden/cli/models/response";
+import { MessageResponse } from "@bitwarden/cli/models/response/message.response";
+import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
+import { Utils } from "@bitwarden/common/platform/misc/utils";
+
+import { OrganizationAuthRequestService } from "../../../../bit-common/src/admin-console/auth-requests";
 
 export class DenyAllCommand {
-  constructor() {}
+  constructor(
+    private organizationService: OrganizationService,
+    private organizationAuthRequestService: OrganizationAuthRequestService,
+  ) {}
 
   async run(organizationId: string): Promise<Response> {
-    throw new Error("Not implemented");
+    if (organizationId != null) {
+      organizationId = organizationId.toLowerCase();
+    }
+
+    if (!Utils.isGuid(organizationId)) {
+      return Response.badRequest("`" + organizationId + "` is not a GUID.");
+    }
+
+    const organization = await firstValueFrom(this.organizationService.get$(organizationId));
+    if (!organization?.canManageUsersPassword) {
+      return Response.error(
+        "You do not have permission to approve pending device authorization requests.",
+      );
+    }
+
+    try {
+      const pendingRequests =
+        await this.organizationAuthRequestService.listPendingRequests(organizationId);
+      if (pendingRequests.length == 0) {
+        const res = new MessageResponse("No pending device authorization requests to deny.", null);
+        return Response.success(res);
+      }
+
+      await this.organizationAuthRequestService.denyPendingRequests(
+        organizationId,
+        ...pendingRequests.map((r) => r.id),
+      );
+      return Response.success();
+    } catch (e) {
+      return Response.error(e);
+    }
   }
 }
