@@ -12,6 +12,14 @@ import {
   GlobalState,
 } from "@bitwarden/common/platform/state";
 
+/**
+ * Data properties acceptable for use in route objects (see usage in oss-routing.module.ts for example)
+ */
+export interface DataProperties {
+  titleId?: string; // sets the title of the current HTML document (shows in browser tab)
+  doNotSaveUrl?: boolean; // choose to not keep track of the previous URL in memory
+}
+
 const DEEP_LINK_REDIRECT_URL = new KeyDefinition(ROUTER_DISK, "deepLinkRedirectUrl", {
   deserializer: (value: string) => value,
 });
