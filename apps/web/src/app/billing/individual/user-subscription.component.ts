@@ -146,19 +146,17 @@ export class UserSubscriptionComponent implements OnInit {
     }
   };
 
-  adjustStorage = (add: boolean) => {
-    return async () => {
-      const dialogRef = openAdjustStorageDialog(this.dialogService, {
-        data: {
-          storageGbPrice: 4,
-          add: add,
-        },
-      });
-      const result = await lastValueFrom(dialogRef.closed);
-      if (result === AdjustStorageDialogResult.Adjusted) {
-        await this.load();
-      }
-    };
+  adjustStorage = async (add: boolean) => {
+    const dialogRef = openAdjustStorageDialog(this.dialogService, {
+      data: {
+        storageGbPrice: 4,
+        add: add,
+      },
+    });
+    const result = await lastValueFrom(dialogRef.closed);
+    if (result === AdjustStorageDialogResult.Adjusted) {
+      await this.load();
+    }
   };
 
   get subscriptionMarkedForCancel() {
