@@ -3,6 +3,7 @@ import { Component, EventEmitter, Input, OnDestroy, Output } from "@angular/core
 import { Subject, takeUntil } from "rxjs";
 
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { TableDataSource } from "@bitwarden/components";
 
@@ -134,22 +135,24 @@ export class SecretsListComponent implements OnDestroy {
   /**
    * TODO: Refactor to smart component and remove
    */
-  static copySecretValue(
+  static async copySecretValue(
     id: string,
     platformUtilsService: PlatformUtilsService,
     i18nService: I18nService,
     secretService: SecretService,
+    logService: LogService,
   ) {
-    const value = secretService.getBySecretId(id).then((secret) => secret.value);
-    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    SecretsListComponent.copyToClipboardAsync(value, platformUtilsService).then(() => {
+    try {
+      const value = await secretService.getBySecretId(id).then((secret) => secret.value);
+      platformUtilsService.copyToClipboard(value);
       platformUtilsService.showToast(
         "success",
         null,
         i18nService.t("valueCopied", i18nService.t("value")),
       );
-    });
+    } catch {
+      logService.info("Error fetching secret value.");
+    }
   }
 
   static copySecretUuid(

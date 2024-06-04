@@ -4,6 +4,7 @@ import { combineLatest, combineLatestWith, filter, Observable, startWith, switch
 
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
+import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { DialogService } from "@bitwarden/components";
 
@@ -42,6 +43,7 @@ export class ProjectSecretsComponent {
     private platformUtilsService: PlatformUtilsService,
     private i18nService: I18nService,
     private organizationService: OrganizationService,
+    private logService: LogService,
   ) {}
 
   ngOnInit() {
@@ -109,12 +111,13 @@ export class ProjectSecretsComponent {
     SecretsListComponent.copySecretName(name, this.platformUtilsService, this.i18nService);
   }
 
-  copySecretValue(id: string) {
-    SecretsListComponent.copySecretValue(
+  async copySecretValue(id: string) {
+    await SecretsListComponent.copySecretValue(
       id,
       this.platformUtilsService,
       this.i18nService,
       this.secretService,
+      this.logService,
     );
   }
 

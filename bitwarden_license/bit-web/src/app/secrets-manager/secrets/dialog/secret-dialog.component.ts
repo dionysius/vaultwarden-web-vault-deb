@@ -199,7 +199,7 @@ export class SecretDialogComponent implements OnInit {
     return await this.projectService.create(this.data.organizationId, projectView);
   }
 
-  protected openDeleteSecretDialog() {
+  protected async openDeleteSecretDialog() {
     const secretListView: SecretListView[] = this.getSecretListView();
 
     const dialogRef = this.dialogService.open<unknown, SecretDeleteOperation>(
@@ -212,9 +212,7 @@ export class SecretDialogComponent implements OnInit {
     );
 
     // If the secret is deleted, chain close this dialog after the delete dialog
-    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    lastValueFrom(dialogRef.closed).then(
+    await lastValueFrom(dialogRef.closed).then(
       (closeData) => closeData !== undefined && this.dialogRef.close(),
     );
   }

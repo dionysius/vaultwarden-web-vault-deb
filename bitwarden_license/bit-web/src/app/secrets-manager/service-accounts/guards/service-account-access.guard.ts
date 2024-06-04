@@ -1,6 +1,9 @@
 import { inject } from "@angular/core";
 import { ActivatedRouteSnapshot, CanActivateFn, createUrlTreeFromSnapshot } from "@angular/router";
 
+import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
+import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+
 import { ServiceAccountService } from "../service-account.service";
 
 /**
@@ -8,6 +11,8 @@ import { ServiceAccountService } from "../service-account.service";
  */
 export const serviceAccountAccessGuard: CanActivateFn = async (route: ActivatedRouteSnapshot) => {
   const serviceAccountService = inject(ServiceAccountService);
+  const platformUtilsService = inject(PlatformUtilsService);
+  const i18nService = inject(I18nService);
 
   try {
     const serviceAccount = await serviceAccountService.getByServiceAccountId(
@@ -18,6 +23,12 @@ export const serviceAccountAccessGuard: CanActivateFn = async (route: ActivatedR
       return true;
     }
   } catch {
+    platformUtilsService.showToast(
+      "error",
+      null,
+      i18nService.t("notFound", i18nService.t("machineAccount")),
+    );
+
     return createUrlTreeFromSnapshot(route, [
       "/sm",
       route.params.organizationId,
