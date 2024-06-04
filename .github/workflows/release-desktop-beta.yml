@@ -659,7 +659,7 @@ jobs:
 
       - name: Download artifact from hotfix-rc
         if: github.ref == 'refs/heads/hotfix-rc'
-        uses: dawidd6/action-download-artifact@71072fbb1229e1317f1a8de6b04206afb461bd67 # v3.1.2
+        uses: bitwarden/gh-actions/download-artifacts@main
         with:
           workflow: build-browser.yml
           workflow_conclusion: success
@@ -668,7 +668,7 @@ jobs:
 
       - name: Download artifact from rc
         if: github.ref == 'refs/heads/rc'
-        uses: dawidd6/action-download-artifact@71072fbb1229e1317f1a8de6b04206afb461bd67 # v3.1.2
+        uses: bitwarden/gh-actions/download-artifacts@main
         with:
           workflow: build-browser.yml
           workflow_conclusion: success
@@ -677,7 +677,7 @@ jobs:
 
       - name: Download artifacts from main
         if: ${{ github.ref != 'refs/heads/rc' && github.ref != 'refs/heads/hotfix-rc' }}
-        uses: dawidd6/action-download-artifact@71072fbb1229e1317f1a8de6b04206afb461bd67 # v3.1.2
+        uses: bitwarden/gh-actions/download-artifacts@main
         with:
           workflow: build-browser.yml
           workflow_conclusion: success
@@ -864,7 +864,7 @@ jobs:
 
       - name: Download artifact from hotfix-rc
         if: github.ref == 'refs/heads/hotfix-rc'
-        uses: dawidd6/action-download-artifact@71072fbb1229e1317f1a8de6b04206afb461bd67 # v3.1.2
+        uses: bitwarden/gh-actions/download-artifacts@main
         with:
           workflow: build-browser.yml
           workflow_conclusion: success
@@ -873,7 +873,7 @@ jobs:
 
       - name: Download artifact from rc
         if: github.ref == 'refs/heads/rc'
-        uses: dawidd6/action-download-artifact@71072fbb1229e1317f1a8de6b04206afb461bd67 # v3.1.2
+        uses: bitwarden/gh-actions/download-artifacts@main
         with:
           workflow: build-browser.yml
           workflow_conclusion: success
@@ -882,7 +882,7 @@ jobs:
 
       - name: Download artifact from main
         if: ${{ github.ref != 'refs/heads/rc' && github.ref != 'refs/heads/hotfix-rc' }}
-        uses: dawidd6/action-download-artifact@71072fbb1229e1317f1a8de6b04206afb461bd67 # v3.1.2
+        uses: bitwarden/gh-actions/download-artifacts@main
         with:
           workflow: build-browser.yml
           workflow_conclusion: success
