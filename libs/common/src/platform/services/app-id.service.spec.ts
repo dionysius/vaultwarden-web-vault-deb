@@ -1,20 +1,23 @@
-import { FakeGlobalStateProvider } from "../../../spec";
+import { FakeGlobalState, FakeGlobalStateProvider, ObservableTracker } from "../../../spec";
 import { Utils } from "../misc/utils";
 
 import { ANONYMOUS_APP_ID_KEY, APP_ID_KEY, AppIdService } from "./app-id.service";
 
 describe("AppIdService", () => {
-  const globalStateProvider = new FakeGlobalStateProvider();
-  const appIdState = globalStateProvider.getFake(APP_ID_KEY);
-  const anonymousAppIdState = globalStateProvider.getFake(ANONYMOUS_APP_ID_KEY);
+  let globalStateProvider: FakeGlobalStateProvider;
+  let appIdState: FakeGlobalState<string>;
+  let anonymousAppIdState: FakeGlobalState<string>;
   let sut: AppIdService;
 
   beforeEach(() => {
+    globalStateProvider = new FakeGlobalStateProvider();
+    appIdState = globalStateProvider.getFake(APP_ID_KEY);
+    anonymousAppIdState = globalStateProvider.getFake(ANONYMOUS_APP_ID_KEY);
     sut = new AppIdService(globalStateProvider);
   });
 
   afterEach(() => {
-    jest.restoreAllMocks();
+    jest.resetAllMocks();
   });
 
   describe("getAppId", () => {
@@ -26,19 +29,18 @@ describe("AppIdService", () => {
       expect(appId).toBe("existingAppId");
     });
 
-    it.each([null, undefined])(
-      "uses the util function to create a new id when it AppId does not exist",
-      async (value) => {
-        appIdState.stateSubject.next(value);
-        const spy = jest.spyOn(Utils, "newGuid");
+    it("creates a new appId only once", async () => {
+      appIdState.stateSubject.next(null);
 
-        await sut.getAppId();
+      const appIds: string[] = [];
+      const promises = [async () => appIds.push(await sut.getAppId())];
+      promises.push(async () => appIds.push(await sut.getAppId()));
+      await Promise.all(promises);
 
-        expect(spy).toHaveBeenCalledTimes(1);
-      },
-    );
+      expect(appIds[0]).toBe(appIds[1]);
+    });
 
-    it.each([null, undefined])("returns a new appId when it does not exist", async (value) => {
+    it.each([null, undefined])("returns a new appId when %s", async (value) => {
       appIdState.stateSubject.next(value);
 
       const appId = await sut.getAppId();
@@ -46,16 +48,23 @@ describe("AppIdService", () => {
       expect(appId).toMatch(Utils.guidRegex);
     });
 
-    it.each([null, undefined])(
-      "stores the new guid when it an existing one is not found",
-      async (value) => {
-        appIdState.stateSubject.next(value);
+    it.each([null, undefined])("stores the new guid when %s", async (value) => {
+      appIdState.stateSubject.next(value);
 
-        const appId = await sut.getAppId();
+      const appId = await sut.getAppId();
 
-        expect(appIdState.nextMock).toHaveBeenCalledWith(appId);
-      },
-    );
+      expect(appIdState.nextMock).toHaveBeenCalledWith(appId);
+    });
+
+    it("emits only once when creating a new appId", async () => {
+      appIdState.stateSubject.next(null);
+
+      const tracker = new ObservableTracker(sut.appId$);
+      const appId = await sut.getAppId();
+
+      expect(tracker.emissions).toEqual([appId]);
+      await expect(tracker.pauseUntilReceived(2, 50)).rejects.toThrow("Timeout exceeded");
+    });
   });
 
   describe("getAnonymousAppId", () => {
@@ -67,17 +76,16 @@ describe("AppIdService", () => {
       expect(appId).toBe("existingAppId");
     });
 
-    it.each([null, undefined])(
-      "uses the util function to create a new id when it AppId does not exist",
-      async (value) => {
-        anonymousAppIdState.stateSubject.next(value);
-        const spy = jest.spyOn(Utils, "newGuid");
+    it("creates a new anonymousAppId only once", async () => {
+      anonymousAppIdState.stateSubject.next(null);
 
-        await sut.getAnonymousAppId();
+      const appIds: string[] = [];
+      const promises = [async () => appIds.push(await sut.getAnonymousAppId())];
+      promises.push(async () => appIds.push(await sut.getAnonymousAppId()));
+      await Promise.all(promises);
 
-        expect(spy).toHaveBeenCalledTimes(1);
-      },
-    );
+      expect(appIds[0]).toBe(appIds[1]);
+    });
 
     it.each([null, undefined])("returns a new appId when it does not exist", async (value) => {
       anonymousAppIdState.stateSubject.next(value);
@@ -97,5 +105,15 @@ describe("AppIdService", () => {
         expect(anonymousAppIdState.nextMock).toHaveBeenCalledWith(appId);
       },
     );
+
+    it("emits only once when creating a new anonymousAppId", async () => {
+      anonymousAppIdState.stateSubject.next(null);
+
+      const tracker = new ObservableTracker(sut.anonymousAppId$);
+      const appId = await sut.getAnonymousAppId();
+
+      expect(tracker.emissions).toEqual([appId]);
+      await expect(tracker.pauseUntilReceived(2, 50)).rejects.toThrow("Timeout exceeded");
+    });
   });
 });

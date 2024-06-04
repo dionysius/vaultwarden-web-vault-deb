@@ -1,4 +1,4 @@
-import { Observable, filter, firstValueFrom, tap } from "rxjs";
+import { Observable, concatMap, distinctUntilChanged, firstValueFrom, share } from "rxjs";
 
 import { AppIdService as AppIdServiceAbstraction } from "../abstractions/app-id.service";
 import { Utils } from "../misc/utils";
@@ -19,20 +19,28 @@ export class AppIdService implements AppIdServiceAbstraction {
     const appIdState = globalStateProvider.get(APP_ID_KEY);
     const anonymousAppIdState = globalStateProvider.get(ANONYMOUS_APP_ID_KEY);
     this.appId$ = appIdState.state$.pipe(
-      tap(async (appId) => {
+      concatMap(async (appId) => {
         if (!appId) {
-          await appIdState.update(() => Utils.newGuid());
+          return await appIdState.update(() => Utils.newGuid(), {
+            shouldUpdate: (v) => v == null,
+          });
         }
+        return appId;
       }),
-      filter((appId) => !!appId),
+      distinctUntilChanged(),
+      share(),
     );
     this.anonymousAppId$ = anonymousAppIdState.state$.pipe(
-      tap(async (appId) => {
+      concatMap(async (appId) => {
         if (!appId) {
-          await anonymousAppIdState.update(() => Utils.newGuid());
+          return await anonymousAppIdState.update(() => Utils.newGuid(), {
+            shouldUpdate: (v) => v == null,
+          });
         }
+        return appId;
       }),
-      filter((appId) => !!appId),
+      distinctUntilChanged(),
+      share(),
     );
   }
 
