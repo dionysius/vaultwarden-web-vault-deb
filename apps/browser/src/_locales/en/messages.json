@@ -1437,6 +1437,15 @@
   "collections": {
     "message": "Collections"
   },
+  "nCollections": {
+    "message": "$COUNT$ collections",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "favorites": {
     "message": "Favorites"
   },

@@ -21,6 +21,12 @@
       >
         <app-vault-icon slot="start" [cipher]="cipher"></app-vault-icon>
         {{ cipher.name }}
+        <i
+          class="bwi bwi-sm"
+          *ngIf="cipher.organizationId"
+          [ngClass]="cipher.orgIcon"
+          [appA11yTitle]="orgIconTooltip(cipher)"
+        ></i>
         <span slot="secondary">{{ cipher.subTitle }}</span>
       </a>
       <ng-container slot="end">

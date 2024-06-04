@@ -3,7 +3,7 @@ import { booleanAttribute, Component, EventEmitter, Input, Output } from "@angul
 import { RouterLink } from "@angular/router";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
-import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
+import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import {
   BadgeModule,
   ButtonModule,
@@ -14,6 +14,7 @@ import {
 } from "@bitwarden/components";
 
 import { PopupSectionHeaderComponent } from "../../../../../platform/popup/popup-section-header/popup-section-header.component";
+import { PopupCipherView } from "../../../views/popup-cipher.view";
 import { ItemCopyActionsComponent } from "../item-copy-action/item-copy-actions.component";
 import { ItemMoreOptionsComponent } from "../item-more-options/item-more-options.component";
 
@@ -41,7 +42,7 @@ export class VaultListItemsContainerComponent {
    * The list of ciphers to display.
    */
   @Input()
-  ciphers: CipherView[];
+  ciphers: PopupCipherView[] = [];
 
   /**
    * Title for the vault list item section.
@@ -66,4 +67,18 @@ export class VaultListItemsContainerComponent {
    */
   @Input({ transform: booleanAttribute })
   showAutofillButton: boolean;
+
+  /**
+   * The tooltip text for the organization icon for ciphers that belong to an organization.
+   * @param cipher
+   */
+  orgIconTooltip(cipher: PopupCipherView) {
+    if (cipher.collectionIds.length > 1) {
+      return this.i18nService.t("nCollections", cipher.collectionIds.length);
+    }
+
+    return cipher.collections[0]?.name;
+  }
+
+  constructor(private i18nService: I18nService) {}
 }

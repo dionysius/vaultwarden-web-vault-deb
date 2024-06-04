@@ -4,11 +4,15 @@ import { BehaviorSubject } from "rxjs";
 
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
+import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
+import { ProductType } from "@bitwarden/common/enums";
 import { CipherId } from "@bitwarden/common/types/guid";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
+import { CollectionService } from "@bitwarden/common/vault/abstractions/collection.service";
 import { VaultSettingsService } from "@bitwarden/common/vault/abstractions/vault-settings/vault-settings.service";
 import { CipherType } from "@bitwarden/common/vault/enums";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
+import { CollectionView } from "@bitwarden/common/vault/models/view/collection.view";
 
 import { BrowserApi } from "../../../platform/browser/browser-api";
 import BrowserPopupUtils from "../../../platform/popup/browser-popup-utils";
@@ -22,11 +26,15 @@ describe("VaultPopupItemsService", () => {
   let allCiphers: Record<CipherId, CipherView>;
   let autoFillCiphers: CipherView[];
 
+  let mockOrg: Organization;
+  let mockCollections: CollectionView[];
+
   const cipherServiceMock = mock<CipherService>();
   const vaultSettingsServiceMock = mock<VaultSettingsService>();
   const organizationServiceMock = mock<OrganizationService>();
   const vaultPopupListFiltersServiceMock = mock<VaultPopupListFiltersService>();
   const searchService = mock<SearchService>();
+  const collectionService = mock<CollectionService>();
 
   beforeEach(() => {
     allCiphers = cipherFactory(10);
@@ -43,8 +51,10 @@ describe("VaultPopupItemsService", () => {
 
     cipherServiceMock.getAllDecrypted.mockResolvedValue(cipherList);
     cipherServiceMock.ciphers$ = new BehaviorSubject(null).asObservable();
-    searchService.searchCiphers.mockImplementation(async () => cipherList);
-    cipherServiceMock.filterCiphersForUrl.mockImplementation(async () => autoFillCiphers);
+    searchService.searchCiphers.mockImplementation(async (_, __, ciphers) => ciphers);
+    cipherServiceMock.filterCiphersForUrl.mockImplementation(async (ciphers) =>
+      ciphers.filter((c) => ["0", "1"].includes(c.id)),
+    );
     vaultSettingsServiceMock.showCardsCurrentTab$ = new BehaviorSubject(false);
     vaultSettingsServiceMock.showIdentitiesCurrentTab$ = new BehaviorSubject(false);
 
@@ -63,6 +73,20 @@ describe("VaultPopupItemsService", () => {
       .spyOn(BrowserApi, "getTabFromCurrentWindow")
       .mockResolvedValue({ url: "https://example.com" } as chrome.tabs.Tab);
 
+    mockOrg = {
+      id: "org1",
+      name: "Organization 1",
+      planProductType: ProductType.Enterprise,
+    } as Organization;
+
+    mockCollections = [
+      { id: "col1", name: "Collection 1" } as CollectionView,
+      { id: "col2", name: "Collection 2" } as CollectionView,
+    ];
+
+    organizationServiceMock.organizations$ = new BehaviorSubject([mockOrg]);
+    collectionService.decryptedCollections$ = new BehaviorSubject(mockCollections);
+
     testBed = TestBed.configureTestingModule({
       providers: [
         { provide: CipherService, useValue: cipherServiceMock },
@@ -70,15 +94,33 @@ describe("VaultPopupItemsService", () => {
         { provide: SearchService, useValue: searchService },
         { provide: OrganizationService, useValue: organizationServiceMock },
         { provide: VaultPopupListFiltersService, useValue: vaultPopupListFiltersServiceMock },
+        { provide: CollectionService, useValue: collectionService },
       ],
     });
 
     service = testBed.inject(VaultPopupItemsService);
   });
 
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   it("should be created", () => {
     service = testBed.inject(VaultPopupItemsService);
     expect(service).toBeTruthy();
+  });
+
+  it("should merge cipher views with collections and organization", (done) => {
+    const cipherList = Object.values(allCiphers);
+    cipherList[0].organizationId = "org1";
+    cipherList[0].collectionIds = ["col1", "col2"];
+
+    service.autoFillCiphers$.subscribe((ciphers) => {
+      expect(ciphers[0].organization).toEqual(mockOrg);
+      expect(ciphers[0].collections).toContain(mockCollections[0]);
+      expect(ciphers[0].collections).toContain(mockCollections[1]);
+      done();
+    });
   });
 
   describe("autoFillCiphers$", () => {
@@ -144,19 +186,18 @@ describe("VaultPopupItemsService", () => {
     });
 
     it("should filter autoFillCiphers$ down to search term", (done) => {
-      const cipherList = Object.values(allCiphers);
       const searchText = "Login";
 
-      searchService.searchCiphers.mockImplementation(async () => {
-        return cipherList.filter((cipher) => {
+      searchService.searchCiphers.mockImplementation(async (q, _, ciphers) => {
+        return ciphers.filter((cipher) => {
           return cipher.name.includes(searchText);
         });
       });
 
-      // there is only 1 Login returned for filteredCiphers. but two results expected because of other autofill types
+      // there is only 1 Login returned for filteredCiphers.
       service.autoFillCiphers$.subscribe((ciphers) => {
         expect(ciphers[0].name.includes(searchText)).toBe(true);
-        expect(ciphers.length).toBe(2);
+        expect(ciphers.length).toBe(1);
         done();
       });
     });

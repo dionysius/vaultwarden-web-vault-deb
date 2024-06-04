@@ -3,12 +3,12 @@ import { Component } from "@angular/core";
 import { combineLatest, map, Observable } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
-import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { IconButtonModule, SectionComponent, TypographyModule } from "@bitwarden/components";
 
 import BrowserPopupUtils from "../../../../../platform/popup/browser-popup-utils";
 import { PopupSectionHeaderComponent } from "../../../../../platform/popup/popup-section-header/popup-section-header.component";
 import { VaultPopupItemsService } from "../../../services/vault-popup-items.service";
+import { PopupCipherView } from "../../../views/popup-cipher.view";
 import { VaultListItemsContainerComponent } from "../vault-list-items-container/vault-list-items-container.component";
 
 @Component({
@@ -30,7 +30,7 @@ export class AutofillVaultListItemsComponent {
    * The list of ciphers that can be used to autofill the current page.
    * @protected
    */
-  protected autofillCiphers$: Observable<CipherView[]> =
+  protected autofillCiphers$: Observable<PopupCipherView[]> =
     this.vaultPopupItemsService.autoFillCiphers$;
 
   /**
