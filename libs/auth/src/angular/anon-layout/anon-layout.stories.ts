@@ -119,6 +119,24 @@ export const WithLongContent: Story = {
   }),
 };
 
+export const WithThinPrimaryContent: Story = {
+  render: (args) => ({
+    props: args,
+    template:
+      // Projected content (the <div>'s) and styling is just a sample and can be replaced with any content/styling.
+      `
+      <auth-anon-layout [title]="title" [subtitle]="subtitle" [showReadonlyHostname]="showReadonlyHostname">
+        <div class="text-center">Lorem ipsum</div>
+
+        <div slot="secondary" class="text-center">
+          <div class="tw-font-bold tw-mb-2">Secondary Projected Content (optional)</div>
+          <button bitButton>Perform Action</button>
+        </div>
+      </auth-anon-layout>
+    `,
+  }),
+};
+
 export const WithIcon: Story = {
   render: (args) => ({
     props: args,

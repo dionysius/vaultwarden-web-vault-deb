@@ -13,9 +13,11 @@
     </h1>
     <p *ngIf="subtitle" bitTypography="body1">{{ subtitle }}</p>
   </div>
-  <div class="tw-mb-auto tw-max-w-md tw-mx-auto tw-flex tw-flex-col tw-items-center">
+  <div
+    class="tw-mb-auto tw-min-w-full tw-max-w-md tw-mx-auto tw-flex tw-flex-col tw-items-center sm:tw-min-w-[28rem]"
+  >
     <div
-      class="tw-rounded-xl tw-mb-9 tw-mx-auto tw-min-w-64 sm:tw-bg-background sm:tw-border sm:tw-border-solid sm:tw-border-secondary-300 sm:tw-p-8"
+      class="tw-rounded-xl tw-mb-9 tw-mx-auto tw-min-w-full sm:tw-bg-background sm:tw-border sm:tw-border-solid sm:tw-border-secondary-300 sm:tw-p-8"
     >
       <ng-content></ng-content>
     </div>
