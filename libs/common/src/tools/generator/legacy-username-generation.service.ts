@@ -14,6 +14,7 @@ import { DefaultGeneratorService } from "./default-generator.service";
 import { DefaultGeneratorNavigationService } from "./navigation/default-generator-navigation.service";
 import { GeneratorNavigation } from "./navigation/generator-navigation";
 import { NoPolicy } from "./no-policy";
+import { CryptoServiceRandomizer } from "./random";
 import {
   CatchallGeneratorStrategy,
   SubaddressGeneratorStrategy,
@@ -37,7 +38,6 @@ import {
 } from "./username/options/forwarder-options";
 import { SubaddressGenerationOptions } from "./username/subaddress-generator-options";
 import { UsernameGeneratorOptions } from "./username/username-generation-options";
-import { UsernameGenerationService } from "./username/username-generation.service";
 
 type MappedOptions = {
   generator: GeneratorNavigation;
@@ -65,22 +65,20 @@ export function legacyUsernameGenerationServiceFactory(
   accountService: AccountService,
   stateProvider: StateProvider,
 ): UsernameGenerationServiceAbstraction {
-  // FIXME: Once the username generation service is replaced with this service
-  // in the clients, factor out the deprecated service in its entirety.
-  const deprecatedService = new UsernameGenerationService(cryptoService, null, null);
+  const randomizer = new CryptoServiceRandomizer(cryptoService);
 
   const effUsername = new DefaultGeneratorService(
-    new EffUsernameGeneratorStrategy(deprecatedService, stateProvider),
+    new EffUsernameGeneratorStrategy(randomizer, stateProvider),
     policyService,
   );
 
   const subaddress = new DefaultGeneratorService(
-    new SubaddressGeneratorStrategy(deprecatedService, stateProvider),
+    new SubaddressGeneratorStrategy(randomizer, stateProvider),
     policyService,
   );
 
   const catchall = new DefaultGeneratorService(
-    new CatchallGeneratorStrategy(deprecatedService, stateProvider),
+    new CatchallGeneratorStrategy(randomizer, stateProvider),
     policyService,
   );
 

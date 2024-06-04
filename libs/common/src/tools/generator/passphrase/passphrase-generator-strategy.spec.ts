@@ -11,7 +11,7 @@ import { PolicyType } from "../../../admin-console/enums";
 import { Policy } from "../../../admin-console/models/domain/policy";
 import { StateProvider } from "../../../platform/state";
 import { UserId } from "../../../types/guid";
-import { PasswordGenerationServiceAbstraction } from "../abstractions/password-generation.service.abstraction";
+import { Randomizer } from "../abstractions/randomizer";
 import { PASSPHRASE_SETTINGS } from "../key-definitions";
 
 import { DisabledPassphraseGeneratorPolicy } from "./passphrase-generator-policy";
@@ -65,8 +65,8 @@ describe("Password generation strategy", () => {
   describe("durableState", () => {
     it("should use password settings key", () => {
       const provider = mock<StateProvider>();
-      const legacy = mock<PasswordGenerationServiceAbstraction>();
-      const strategy = new PassphraseGeneratorStrategy(legacy, provider);
+      const randomizer = mock<Randomizer>();
+      const strategy = new PassphraseGeneratorStrategy(randomizer, provider);
 
       strategy.durableState(SomeUser);
 
@@ -86,36 +86,14 @@ describe("Password generation strategy", () => {
 
   describe("policy", () => {
     it("should use password generator policy", () => {
-      const legacy = mock<PasswordGenerationServiceAbstraction>();
-      const strategy = new PassphraseGeneratorStrategy(legacy, null);
+      const randomizer = mock<Randomizer>();
+      const strategy = new PassphraseGeneratorStrategy(randomizer, null);
 
       expect(strategy.policy).toBe(PolicyType.PasswordGenerator);
     });
   });
 
   describe("generate()", () => {
-    it("should call the legacy service with the given options", async () => {
-      const legacy = mock<PasswordGenerationServiceAbstraction>();
-      const strategy = new PassphraseGeneratorStrategy(legacy, null);
-      const options = {
-        type: "passphrase",
-        minNumberWords: 1,
-        capitalize: true,
-        includeNumber: true,
-      };
-
-      await strategy.generate(options);
-
-      expect(legacy.generatePassphrase).toHaveBeenCalledWith(options);
-    });
-
-    it("should set the generation type to passphrase", async () => {
-      const legacy = mock<PasswordGenerationServiceAbstraction>();
-      const strategy = new PassphraseGeneratorStrategy(legacy, null);
-
-      await strategy.generate({ type: "foo" } as any);
-
-      expect(legacy.generatePassphrase).toHaveBeenCalledWith({ type: "passphrase" });
-    });
+    it.todo("should generate a password using the given options");
   });
 });

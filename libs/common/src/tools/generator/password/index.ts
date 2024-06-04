@@ -7,5 +7,4 @@ export { PasswordGeneratorStrategy } from "./password-generator-strategy";
 // legacy interfaces
 export { PasswordGeneratorOptions } from "./password-generator-options";
 export { PasswordGenerationServiceAbstraction } from "../abstractions/password-generation.service.abstraction";
-export { PasswordGenerationService } from "./password-generation.service";
 export { GeneratedPasswordHistory } from "./generated-password-history";

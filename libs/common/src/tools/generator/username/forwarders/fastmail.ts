@@ -1,11 +1,8 @@
-import { BehaviorSubject } from "rxjs";
-
 import { ApiService } from "../../../../abstractions/api.service";
 import { CryptoService } from "../../../../platform/abstractions/crypto.service";
 import { EncryptService } from "../../../../platform/abstractions/encrypt.service";
 import { I18nService } from "../../../../platform/abstractions/i18n.service";
 import { StateProvider } from "../../../../platform/state";
-import { UserId } from "../../../../types/guid";
 import { FASTMAIL_FORWARDER, FASTMAIL_BUFFER } from "../../key-definitions";
 import { ForwarderGeneratorStrategy } from "../forwarder-generator-strategy";
 import { Forwarders } from "../options/constants";
@@ -34,25 +31,14 @@ export class FastmailForwarder extends ForwarderGeneratorStrategy<ApiOptions & E
     keyService: CryptoService,
     stateProvider: StateProvider,
   ) {
-    super(encryptService, keyService, stateProvider);
+    super(encryptService, keyService, stateProvider, DefaultFastmailOptions);
   }
 
-  /** {@link ForwarderGeneratorStrategy.key} */
-  get key() {
-    return FASTMAIL_FORWARDER;
-  }
+  // configuration
+  readonly key = FASTMAIL_FORWARDER;
+  readonly rolloverKey = FASTMAIL_BUFFER;
 
-  /** {@link ForwarderGeneratorStrategy.defaults$} */
-  defaults$ = (userId: UserId) => {
-    return new BehaviorSubject({ ...DefaultFastmailOptions });
-  };
-
-  /** {@link ForwarderGeneratorStrategy.rolloverKey} */
-  get rolloverKey() {
-    return FASTMAIL_BUFFER;
-  }
-
-  /** {@link ForwarderGeneratorStrategy.generate} */
+  // request
   generate = async (options: ApiOptions & EmailPrefixOptions) => {
     if (!options.token || options.token === "") {
       const error = this.i18nService.t("forwaderInvalidToken", Forwarders.Fastmail.name);
@@ -76,7 +62,7 @@ export class FastmailForwarder extends ForwarderGeneratorStrategy<ApiOptions & E
               "new-masked-email": {
                 state: "enabled",
                 description: "",
-                forDomain: options.website,
+                forDomain: options.website ?? "",
                 emailPrefix: options.prefix,
               },
             },

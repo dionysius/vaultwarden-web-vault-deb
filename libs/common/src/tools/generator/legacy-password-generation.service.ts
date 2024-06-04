@@ -40,11 +40,11 @@ import {
 import {
   GeneratedPasswordHistory,
   PasswordGenerationOptions,
-  PasswordGenerationService,
   PasswordGeneratorOptions,
   PasswordGeneratorPolicy,
   PasswordGeneratorStrategy,
 } from "./password";
+import { CryptoServiceRandomizer } from "./random";
 
 type MappedOptions = {
   generator: GeneratorNavigation;
@@ -60,17 +60,15 @@ export function legacyPasswordGenerationServiceFactory(
   accountService: AccountService,
   stateProvider: StateProvider,
 ): PasswordGenerationServiceAbstraction {
-  // FIXME: Once the password generation service is replaced with this service
-  // in the clients, factor out the deprecated service in its entirety.
-  const deprecatedService = new PasswordGenerationService(cryptoService, null, null);
+  const randomizer = new CryptoServiceRandomizer(cryptoService);
 
   const passwords = new DefaultGeneratorService(
-    new PasswordGeneratorStrategy(deprecatedService, stateProvider),
+    new PasswordGeneratorStrategy(randomizer, stateProvider),
     policyService,
   );
 
   const passphrases = new DefaultGeneratorService(
-    new PassphraseGeneratorStrategy(deprecatedService, stateProvider),
+    new PassphraseGeneratorStrategy(randomizer, stateProvider),
     policyService,
   );
 

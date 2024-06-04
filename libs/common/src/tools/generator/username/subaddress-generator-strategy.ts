@@ -1,13 +1,11 @@
-import { BehaviorSubject, map, pipe } from "rxjs";
-
 import { PolicyType } from "../../../admin-console/enums";
 import { StateProvider } from "../../../platform/state";
-import { UserId } from "../../../types/guid";
 import { GeneratorStrategy } from "../abstractions";
-import { UsernameGenerationServiceAbstraction } from "../abstractions/username-generation.service.abstraction";
-import { DefaultPolicyEvaluator } from "../default-policy-evaluator";
+import { Randomizer } from "../abstractions/randomizer";
 import { SUBADDRESS_SETTINGS } from "../key-definitions";
 import { NoPolicy } from "../no-policy";
+import { newDefaultEvaluator } from "../rx-operators";
+import { clone$PerUserId, sharedStateByUserId } from "../util";
 
 import {
   DefaultSubaddressOptions,
@@ -26,34 +24,42 @@ export class SubaddressGeneratorStrategy
    *  @param usernameService generates an email subaddress from an email address
    */
   constructor(
-    private usernameService: UsernameGenerationServiceAbstraction,
+    private random: Randomizer,
     private stateProvider: StateProvider,
+    private defaultOptions: SubaddressGenerationOptions = DefaultSubaddressOptions,
   ) {}
 
-  /** {@link GeneratorStrategy.durableState} */
-  durableState(id: UserId) {
-    return this.stateProvider.getUser(id, SUBADDRESS_SETTINGS);
-  }
+  // configuration
+  durableState = sharedStateByUserId(SUBADDRESS_SETTINGS, this.stateProvider);
+  defaults$ = clone$PerUserId(this.defaultOptions);
+  toEvaluator = newDefaultEvaluator<SubaddressGenerationOptions>();
+  readonly policy = PolicyType.PasswordGenerator;
 
-  /** {@link GeneratorStrategy.defaults$} */
-  defaults$(userId: UserId) {
-    return new BehaviorSubject({ ...DefaultSubaddressOptions }).asObservable();
-  }
+  // algorithm
+  async generate(options: SubaddressGenerationOptions) {
+    const o = Object.assign({}, DefaultSubaddressOptions, options);
 
-  /** {@link GeneratorStrategy.policy} */
-  get policy() {
-    // Uses password generator since there aren't policies
-    // specific to usernames.
-    return PolicyType.PasswordGenerator;
-  }
+    const subaddressEmail = o.subaddressEmail;
+    if (subaddressEmail == null || subaddressEmail.length < 3) {
+      return o.subaddressEmail;
+    }
+    const atIndex = subaddressEmail.indexOf("@");
+    if (atIndex < 1 || atIndex >= subaddressEmail.length - 1) {
+      return subaddressEmail;
+    }
+    if (o.subaddressType == null) {
+      o.subaddressType = "random";
+    }
 
-  /** {@link GeneratorStrategy.toEvaluator} */
-  toEvaluator() {
-    return pipe(map((_) => new DefaultPolicyEvaluator<SubaddressGenerationOptions>()));
-  }
+    const emailBeginning = subaddressEmail.substr(0, atIndex);
+    const emailEnding = subaddressEmail.substr(atIndex + 1, subaddressEmail.length);
 
-  /** {@link GeneratorStrategy.generate} */
-  generate(options: SubaddressGenerationOptions) {
-    return this.usernameService.generateSubaddress(options);
+    let subaddressString = "";
+    if (o.subaddressType === "random") {
+      subaddressString = await this.random.chars(8);
+    } else if (o.subaddressType === "website-name") {
+      subaddressString = o.website;
+    }
+    return emailBeginning + "+" + subaddressString + "@" + emailEnding;
   }
 }

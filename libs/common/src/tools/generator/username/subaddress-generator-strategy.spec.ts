@@ -7,15 +7,13 @@ import { PolicyType } from "../../../admin-console/enums";
 import { Policy } from "../../../admin-console/models/domain/policy";
 import { StateProvider } from "../../../platform/state";
 import { UserId } from "../../../types/guid";
+import { Randomizer } from "../abstractions/randomizer";
 import { DefaultPolicyEvaluator } from "../default-policy-evaluator";
 import { SUBADDRESS_SETTINGS } from "../key-definitions";
 
-import {
-  DefaultSubaddressOptions,
-  SubaddressGenerationOptions,
-} from "./subaddress-generator-options";
+import { DefaultSubaddressOptions } from "./subaddress-generator-options";
 
-import { SubaddressGeneratorStrategy, UsernameGenerationServiceAbstraction } from ".";
+import { SubaddressGeneratorStrategy } from ".";
 
 const SomeUser = "some user" as UserId;
 const SomePolicy = mock<Policy>({
@@ -43,8 +41,8 @@ describe("Email subaddress list generation strategy", () => {
   describe("durableState", () => {
     it("should use password settings key", () => {
       const provider = mock<StateProvider>();
-      const legacy = mock<UsernameGenerationServiceAbstraction>();
-      const strategy = new SubaddressGeneratorStrategy(legacy, provider);
+      const randomizer = mock<Randomizer>();
+      const strategy = new SubaddressGeneratorStrategy(randomizer, provider);
 
       strategy.durableState(SomeUser);
 
@@ -64,26 +62,14 @@ describe("Email subaddress list generation strategy", () => {
 
   describe("policy", () => {
     it("should use password generator policy", () => {
-      const legacy = mock<UsernameGenerationServiceAbstraction>();
-      const strategy = new SubaddressGeneratorStrategy(legacy, null);
+      const randomizer = mock<Randomizer>();
+      const strategy = new SubaddressGeneratorStrategy(randomizer, null);
 
       expect(strategy.policy).toBe(PolicyType.PasswordGenerator);
     });
   });
 
   describe("generate()", () => {
-    it("should call the legacy service with the given options", async () => {
-      const legacy = mock<UsernameGenerationServiceAbstraction>();
-      const strategy = new SubaddressGeneratorStrategy(legacy, null);
-      const options = {
-        subaddressType: "website-name",
-        subaddressEmail: "someone@example.com",
-        website: "foo.com",
-      } as SubaddressGenerationOptions;
-
-      await strategy.generate(options);
-
-      expect(legacy.generateSubaddress).toHaveBeenCalledWith(options);
-    });
+    it.todo("generate email subaddress tests");
   });
 });

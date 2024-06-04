@@ -1,13 +1,11 @@
-import { BehaviorSubject, map, pipe } from "rxjs";
-
 import { PolicyType } from "../../../admin-console/enums";
 import { StateProvider } from "../../../platform/state";
-import { UserId } from "../../../types/guid";
 import { GeneratorStrategy } from "../abstractions";
-import { UsernameGenerationServiceAbstraction } from "../abstractions/username-generation.service.abstraction";
-import { DefaultPolicyEvaluator } from "../default-policy-evaluator";
+import { Randomizer } from "../abstractions/randomizer";
 import { CATCHALL_SETTINGS } from "../key-definitions";
 import { NoPolicy } from "../no-policy";
+import { newDefaultEvaluator } from "../rx-operators";
+import { clone$PerUserId, sharedStateByUserId } from "../util";
 
 import { CatchallGenerationOptions, DefaultCatchallOptions } from "./catchall-generator-options";
 
@@ -19,34 +17,34 @@ export class CatchallGeneratorStrategy
    *  @param usernameService generates a catchall address for a domain
    */
   constructor(
-    private usernameService: UsernameGenerationServiceAbstraction,
+    private random: Randomizer,
     private stateProvider: StateProvider,
+    private defaultOptions: CatchallGenerationOptions = DefaultCatchallOptions,
   ) {}
 
-  /** {@link GeneratorStrategy.durableState} */
-  durableState(id: UserId) {
-    return this.stateProvider.getUser(id, CATCHALL_SETTINGS);
-  }
+  // configuration
+  durableState = sharedStateByUserId(CATCHALL_SETTINGS, this.stateProvider);
+  defaults$ = clone$PerUserId(this.defaultOptions);
+  toEvaluator = newDefaultEvaluator<CatchallGenerationOptions>();
+  readonly policy = PolicyType.PasswordGenerator;
 
-  /** {@link GeneratorStrategy.defaults$} */
-  defaults$(userId: UserId) {
-    return new BehaviorSubject({ ...DefaultCatchallOptions }).asObservable();
-  }
+  // algorithm
+  async generate(options: CatchallGenerationOptions) {
+    const o = Object.assign({}, DefaultCatchallOptions, options);
 
-  /** {@link GeneratorStrategy.policy} */
-  get policy() {
-    // Uses password generator since there aren't policies
-    // specific to usernames.
-    return PolicyType.PasswordGenerator;
-  }
+    if (o.catchallDomain == null || o.catchallDomain === "") {
+      return null;
+    }
+    if (o.catchallType == null) {
+      o.catchallType = "random";
+    }
 
-  /** {@link GeneratorStrategy.toEvaluator} */
-  toEvaluator() {
-    return pipe(map((_) => new DefaultPolicyEvaluator<CatchallGenerationOptions>()));
-  }
-
-  /** {@link GeneratorStrategy.generate} */
-  generate(options: CatchallGenerationOptions) {
-    return this.usernameService.generateCatchall(options);
+    let startString = "";
+    if (o.catchallType === "random") {
+      startString = await this.random.chars(8);
+    } else if (o.catchallType === "website-name") {
+      startString = o.website;
+    }
+    return startString + "@" + o.catchallDomain;
   }
 }

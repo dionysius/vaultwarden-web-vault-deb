@@ -1,11 +1,8 @@
-import { BehaviorSubject } from "rxjs";
-
 import { ApiService } from "../../../../abstractions/api.service";
 import { CryptoService } from "../../../../platform/abstractions/crypto.service";
 import { EncryptService } from "../../../../platform/abstractions/encrypt.service";
 import { I18nService } from "../../../../platform/abstractions/i18n.service";
 import { StateProvider } from "../../../../platform/state";
-import { UserId } from "../../../../types/guid";
 import { DUCK_DUCK_GO_FORWARDER, DUCK_DUCK_GO_BUFFER } from "../../key-definitions";
 import { ForwarderGeneratorStrategy } from "../forwarder-generator-strategy";
 import { Forwarders } from "../options/constants";
@@ -32,25 +29,14 @@ export class DuckDuckGoForwarder extends ForwarderGeneratorStrategy<ApiOptions> 
     keyService: CryptoService,
     stateProvider: StateProvider,
   ) {
-    super(encryptService, keyService, stateProvider);
+    super(encryptService, keyService, stateProvider, DefaultDuckDuckGoOptions);
   }
 
-  /** {@link ForwarderGeneratorStrategy.key} */
-  get key() {
-    return DUCK_DUCK_GO_FORWARDER;
-  }
+  // configuration
+  readonly key = DUCK_DUCK_GO_FORWARDER;
+  readonly rolloverKey = DUCK_DUCK_GO_BUFFER;
 
-  /** {@link ForwarderGeneratorStrategy.rolloverKey} */
-  get rolloverKey() {
-    return DUCK_DUCK_GO_BUFFER;
-  }
-
-  /** {@link ForwarderGeneratorStrategy.defaults$} */
-  defaults$ = (userId: UserId) => {
-    return new BehaviorSubject({ ...DefaultDuckDuckGoOptions });
-  };
-
-  /** {@link ForwarderGeneratorStrategy.generate} */
+  // request
   generate = async (options: ApiOptions): Promise<string> => {
     if (!options.token || options.token === "") {
       const error = this.i18nService.t("forwaderInvalidToken", Forwarders.DuckDuckGo.name);

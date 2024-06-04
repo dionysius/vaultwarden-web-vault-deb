@@ -1,11 +1,8 @@
-import { BehaviorSubject } from "rxjs";
-
 import { ApiService } from "../../../../abstractions/api.service";
 import { CryptoService } from "../../../../platform/abstractions/crypto.service";
 import { EncryptService } from "../../../../platform/abstractions/encrypt.service";
 import { I18nService } from "../../../../platform/abstractions/i18n.service";
 import { StateProvider } from "../../../../platform/state";
-import { UserId } from "../../../../types/guid";
 import { ADDY_IO_FORWARDER, ADDY_IO_BUFFER } from "../../key-definitions";
 import { ForwarderGeneratorStrategy } from "../forwarder-generator-strategy";
 import { Forwarders } from "../options/constants";
@@ -36,25 +33,14 @@ export class AddyIoForwarder extends ForwarderGeneratorStrategy<
     keyService: CryptoService,
     stateProvider: StateProvider,
   ) {
-    super(encryptService, keyService, stateProvider);
+    super(encryptService, keyService, stateProvider, DefaultAddyIoOptions);
   }
 
-  /** {@link ForwarderGeneratorStrategy.key} */
-  get key() {
-    return ADDY_IO_FORWARDER;
-  }
+  // configuration
+  readonly key = ADDY_IO_FORWARDER;
+  readonly rolloverKey = ADDY_IO_BUFFER;
 
-  /** {@link ForwarderGeneratorStrategy.rolloverKey} */
-  get rolloverKey() {
-    return ADDY_IO_BUFFER;
-  }
-
-  /** {@link ForwarderGeneratorStrategy.defaults$} */
-  defaults$ = (userId: UserId) => {
-    return new BehaviorSubject({ ...DefaultAddyIoOptions });
-  };
-
-  /** {@link ForwarderGeneratorStrategy.generate} */
+  // request
   generate = async (options: SelfHostedApiOptions & EmailDomainOptions) => {
     if (!options.token || options.token === "") {
       const error = this.i18nService.t("forwaderInvalidToken", Forwarders.AddyIo.name);

@@ -1,4 +1,4 @@
-import { Observable, map, pipe } from "rxjs";
+import { map } from "rxjs";
 
 import { PolicyType } from "../../../admin-console/enums";
 import { CryptoService } from "../../../platform/abstractions/crypto.service";
@@ -13,8 +13,9 @@ import { SecretKeyDefinition } from "../../state/secret-key-definition";
 import { SecretState } from "../../state/secret-state";
 import { UserKeyEncryptor } from "../../state/user-key-encryptor";
 import { GeneratorStrategy } from "../abstractions";
-import { DefaultPolicyEvaluator } from "../default-policy-evaluator";
 import { NoPolicy } from "../no-policy";
+import { newDefaultEvaluator } from "../rx-operators";
+import { clone$PerUserId, sharedByUserId } from "../util";
 
 import { ApiOptions } from "./options/forwarder-options";
 
@@ -33,29 +34,25 @@ export abstract class ForwarderGeneratorStrategy<
     private readonly encryptService: EncryptService,
     private readonly keyService: CryptoService,
     private stateProvider: StateProvider,
+    private readonly defaultOptions: Options,
   ) {
     super();
-    // Uses password generator since there aren't policies
-    // specific to usernames.
-    this.policy = PolicyType.PasswordGenerator;
   }
 
-  private durableStates = new Map<UserId, SingleUserState<Options>>();
+  /** configures forwarder secret storage  */
+  protected abstract readonly key: UserKeyDefinition<Options>;
 
-  /** {@link GeneratorStrategy.durableState} */
-  durableState = (userId: UserId) => {
-    let state = this.durableStates.get(userId);
+  /** configures forwarder import buffer */
+  protected abstract readonly rolloverKey: BufferedKeyDefinition<Options, Options>;
 
-    if (!state) {
-      state = this.createState(userId);
+  // configuration
+  readonly policy = PolicyType.PasswordGenerator;
+  defaults$ = clone$PerUserId(this.defaultOptions);
+  toEvaluator = newDefaultEvaluator<Options>();
+  durableState = sharedByUserId((userId) => this.getUserSecrets(userId));
 
-      this.durableStates.set(userId, state);
-    }
-
-    return state;
-  };
-
-  private createState(userId: UserId): SingleUserState<Options> {
+  // per-user encrypted state
+  private getUserSecrets(userId: UserId): SingleUserState<Options> {
     // construct the encryptor
     const packer = new PaddedDataPacker(OPTIONS_FRAME_SIZE);
     const encryptor = new UserKeyEncryptor(this.encryptService, this.keyService, packer);
@@ -92,18 +89,4 @@ export abstract class ForwarderGeneratorStrategy<
 
     return rolloverState;
   }
-
-  /** Gets the default options. */
-  abstract defaults$: (userId: UserId) => Observable<Options>;
-
-  /** Determine where forwarder configuration is stored  */
-  protected abstract readonly key: UserKeyDefinition<Options>;
-
-  /** Determine where forwarder rollover configuration is stored  */
-  protected abstract readonly rolloverKey: BufferedKeyDefinition<Options, Options>;
-
-  /** {@link GeneratorStrategy.toEvaluator} */
-  toEvaluator = () => {
-    return pipe(map((_) => new DefaultPolicyEvaluator<Options>()));
-  };
 }

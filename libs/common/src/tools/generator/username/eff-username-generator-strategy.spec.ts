@@ -7,12 +7,13 @@ import { PolicyType } from "../../../admin-console/enums";
 import { Policy } from "../../../admin-console/models/domain/policy";
 import { StateProvider } from "../../../platform/state";
 import { UserId } from "../../../types/guid";
+import { Randomizer } from "../abstractions/randomizer";
 import { DefaultPolicyEvaluator } from "../default-policy-evaluator";
 import { EFF_USERNAME_SETTINGS } from "../key-definitions";
 
 import { DefaultEffUsernameOptions } from "./eff-username-generator-options";
 
-import { EffUsernameGeneratorStrategy, UsernameGenerationServiceAbstraction } from ".";
+import { EffUsernameGeneratorStrategy } from ".";
 
 const SomeUser = "some user" as UserId;
 const SomePolicy = mock<Policy>({
@@ -40,8 +41,8 @@ describe("EFF long word list generation strategy", () => {
   describe("durableState", () => {
     it("should use password settings key", () => {
       const provider = mock<StateProvider>();
-      const legacy = mock<UsernameGenerationServiceAbstraction>();
-      const strategy = new EffUsernameGeneratorStrategy(legacy, provider);
+      const randomizer = mock<Randomizer>();
+      const strategy = new EffUsernameGeneratorStrategy(randomizer, provider);
 
       strategy.durableState(SomeUser);
 
@@ -61,26 +62,14 @@ describe("EFF long word list generation strategy", () => {
 
   describe("policy", () => {
     it("should use password generator policy", () => {
-      const legacy = mock<UsernameGenerationServiceAbstraction>();
-      const strategy = new EffUsernameGeneratorStrategy(legacy, null);
+      const randomizer = mock<Randomizer>();
+      const strategy = new EffUsernameGeneratorStrategy(randomizer, null);
 
       expect(strategy.policy).toBe(PolicyType.PasswordGenerator);
     });
   });
 
   describe("generate()", () => {
-    it("should call the legacy service with the given options", async () => {
-      const legacy = mock<UsernameGenerationServiceAbstraction>();
-      const strategy = new EffUsernameGeneratorStrategy(legacy, null);
-      const options = {
-        wordCapitalize: false,
-        wordIncludeNumber: false,
-        website: null as string,
-      };
-
-      await strategy.generate(options);
-
-      expect(legacy.generateWord).toHaveBeenCalledWith(options);
-    });
+    it.todo("generate username tests");
   });
 });

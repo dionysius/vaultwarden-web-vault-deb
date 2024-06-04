@@ -1,13 +1,13 @@
-import { BehaviorSubject, map, pipe } from "rxjs";
+import { EFFLongWordList } from "@bitwarden/common/platform/misc/wordlist";
 
 import { PolicyType } from "../../../admin-console/enums";
 import { StateProvider } from "../../../platform/state";
-import { UserId } from "../../../types/guid";
 import { GeneratorStrategy } from "../abstractions";
-import { UsernameGenerationServiceAbstraction } from "../abstractions/username-generation.service.abstraction";
-import { DefaultPolicyEvaluator } from "../default-policy-evaluator";
+import { Randomizer } from "../abstractions/randomizer";
 import { EFF_USERNAME_SETTINGS } from "../key-definitions";
 import { NoPolicy } from "../no-policy";
+import { newDefaultEvaluator } from "../rx-operators";
+import { clone$PerUserId, sharedStateByUserId } from "../util";
 
 import {
   DefaultEffUsernameOptions,
@@ -22,34 +22,23 @@ export class EffUsernameGeneratorStrategy
    *  @param usernameService generates a username from EFF word list
    */
   constructor(
-    private usernameService: UsernameGenerationServiceAbstraction,
+    private random: Randomizer,
     private stateProvider: StateProvider,
+    private defaultOptions: EffUsernameGenerationOptions = DefaultEffUsernameOptions,
   ) {}
 
-  /** {@link GeneratorStrategy.durableState} */
-  durableState(id: UserId) {
-    return this.stateProvider.getUser(id, EFF_USERNAME_SETTINGS);
-  }
+  // configuration
+  durableState = sharedStateByUserId(EFF_USERNAME_SETTINGS, this.stateProvider);
+  defaults$ = clone$PerUserId(this.defaultOptions);
+  toEvaluator = newDefaultEvaluator<EffUsernameGenerationOptions>();
+  readonly policy = PolicyType.PasswordGenerator;
 
-  /** {@link GeneratorStrategy.defaults$} */
-  defaults$(userId: UserId) {
-    return new BehaviorSubject({ ...DefaultEffUsernameOptions }).asObservable();
-  }
-
-  /** {@link GeneratorStrategy.policy} */
-  get policy() {
-    // Uses password generator since there aren't policies
-    // specific to usernames.
-    return PolicyType.PasswordGenerator;
-  }
-
-  /** {@link GeneratorStrategy.toEvaluator} */
-  toEvaluator() {
-    return pipe(map((_) => new DefaultPolicyEvaluator<EffUsernameGenerationOptions>()));
-  }
-
-  /** {@link GeneratorStrategy.generate} */
-  generate(options: EffUsernameGenerationOptions) {
-    return this.usernameService.generateWord(options);
+  // algorithm
+  async generate(options: EffUsernameGenerationOptions) {
+    const word = await this.random.pickWord(EFFLongWordList, {
+      titleCase: options.wordCapitalize ?? DefaultEffUsernameOptions.wordCapitalize,
+      number: options.wordIncludeNumber ?? DefaultEffUsernameOptions.wordIncludeNumber,
+    });
+    return word;
   }
 }

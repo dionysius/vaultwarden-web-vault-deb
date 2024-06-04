@@ -25,7 +25,7 @@ class TestForwarder extends ForwarderGeneratorStrategy<ApiOptions> {
     keyService: CryptoService,
     stateProvider: StateProvider,
   ) {
-    super(encryptService, keyService, stateProvider);
+    super(encryptService, keyService, stateProvider, { website: null, token: "" });
   }
 
   get key() {

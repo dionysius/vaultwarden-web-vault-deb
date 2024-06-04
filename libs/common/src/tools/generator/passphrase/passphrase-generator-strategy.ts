@@ -1,25 +1,20 @@
-import { BehaviorSubject, map, pipe } from "rxjs";
-
 import { GeneratorStrategy } from "..";
 import { PolicyType } from "../../../admin-console/enums";
+import { EFFLongWordList } from "../../../platform/misc/wordlist";
 import { StateProvider } from "../../../platform/state";
-import { UserId } from "../../../types/guid";
-import { PasswordGenerationServiceAbstraction } from "../abstractions/password-generation.service.abstraction";
+import { Randomizer } from "../abstractions/randomizer";
 import { PASSPHRASE_SETTINGS } from "../key-definitions";
-import { distinctIfShallowMatch, reduceCollection } from "../rx-operators";
+import { Policies } from "../policies";
+import { mapPolicyToEvaluator } from "../rx-operators";
+import { clone$PerUserId, sharedStateByUserId } from "../util";
 
 import {
   PassphraseGenerationOptions,
   DefaultPassphraseGenerationOptions,
 } from "./passphrase-generation-options";
-import { PassphraseGeneratorOptionsEvaluator } from "./passphrase-generator-options-evaluator";
-import {
-  DisabledPassphraseGeneratorPolicy,
-  PassphraseGeneratorPolicy,
-  leastPrivilege,
-} from "./passphrase-generator-policy";
+import { PassphraseGeneratorPolicy } from "./passphrase-generator-policy";
 
-/** {@link GeneratorStrategy} */
+/** Generates passphrases composed of random words */
 export class PassphraseGeneratorStrategy
   implements GeneratorStrategy<PassphraseGenerationOptions, PassphraseGeneratorPolicy>
 {
@@ -28,36 +23,48 @@ export class PassphraseGeneratorStrategy
    *  @param stateProvider provides durable state
    */
   constructor(
-    private legacy: PasswordGenerationServiceAbstraction,
+    private randomizer: Randomizer,
     private stateProvider: StateProvider,
   ) {}
 
-  /** {@link GeneratorStrategy.durableState} */
-  durableState(id: UserId) {
-    return this.stateProvider.getUser(id, PASSPHRASE_SETTINGS);
-  }
-
-  /** Gets the default options. */
-  defaults$(_: UserId) {
-    return new BehaviorSubject({ ...DefaultPassphraseGenerationOptions }).asObservable();
-  }
-
-  /** {@link GeneratorStrategy.policy} */
-  get policy() {
-    return PolicyType.PasswordGenerator;
-  }
-
-  /** {@link GeneratorStrategy.toEvaluator} */
+  // configuration
+  durableState = sharedStateByUserId(PASSPHRASE_SETTINGS, this.stateProvider);
+  defaults$ = clone$PerUserId(DefaultPassphraseGenerationOptions);
+  readonly policy = PolicyType.PasswordGenerator;
   toEvaluator() {
-    return pipe(
-      reduceCollection(leastPrivilege, DisabledPassphraseGeneratorPolicy),
-      distinctIfShallowMatch(),
-      map((policy) => new PassphraseGeneratorOptionsEvaluator(policy)),
-    );
+    return mapPolicyToEvaluator(Policies.Passphrase);
   }
 
-  /** {@link GeneratorStrategy.generate} */
-  generate(options: PassphraseGenerationOptions): Promise<string> {
-    return this.legacy.generatePassphrase({ ...options, type: "passphrase" });
+  // algorithm
+  async generate(options: PassphraseGenerationOptions): Promise<string> {
+    const o = { ...DefaultPassphraseGenerationOptions, ...options };
+    if (o.numWords == null || o.numWords <= 2) {
+      o.numWords = DefaultPassphraseGenerationOptions.numWords;
+    }
+    if (o.capitalize == null) {
+      o.capitalize = false;
+    }
+    if (o.includeNumber == null) {
+      o.includeNumber = false;
+    }
+
+    // select which word gets the number, if any
+    let luckyNumber = -1;
+    if (o.includeNumber) {
+      luckyNumber = await this.randomizer.uniform(0, o.numWords);
+    }
+
+    // generate the passphrase
+    const wordList = new Array(o.numWords);
+    for (let i = 0; i < o.numWords; i++) {
+      const word = await this.randomizer.pickWord(EFFLongWordList, {
+        titleCase: o.capitalize,
+        number: i === luckyNumber,
+      });
+
+      wordList[i] = word;
+    }
+
+    return wordList.join(o.wordSeparator);
   }
 }
