@@ -6,7 +6,7 @@ import {
   awaitAsync,
   trackEmissions,
 } from "../../../spec";
-import { GENERATOR_DISK, KeyDefinition } from "../../platform/state";
+import { GENERATOR_DISK, UserKeyDefinition } from "../../platform/state";
 import { UserId } from "../../types/guid";
 
 import { BufferedKeyDefinition } from "./buffered-key-definition";
@@ -16,8 +16,9 @@ const SomeUser = "SomeUser" as UserId;
 const accountService = mockAccountServiceWith(SomeUser);
 type SomeType = { foo: boolean; bar: boolean };
 
-const SOME_KEY = new KeyDefinition<SomeType>(GENERATOR_DISK, "fooBar", {
+const SOME_KEY = new UserKeyDefinition<SomeType>(GENERATOR_DISK, "fooBar", {
   deserializer: (jsonValue) => jsonValue as SomeType,
+  clearOn: [],
 });
 const BUFFER_KEY = new BufferedKeyDefinition<SomeType>(GENERATOR_DISK, "fooBar_buffer", {
   deserializer: (jsonValue) => jsonValue as SomeType,
