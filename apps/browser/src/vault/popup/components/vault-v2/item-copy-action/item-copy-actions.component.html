@@ -1,0 +1,77 @@
+<bit-item-action *ngIf="cipher.type === CipherType.Login">
+  <button
+    type="button"
+    bitIconButton="bwi-clone"
+    size="small"
+    [attr.aria-label]="'copyInfoLabel' | i18n: cipher.name"
+    [title]="'copyInfoTitle' | i18n: cipher.name"
+    [bitMenuTriggerFor]="loginOptions"
+  ></button>
+  <bit-menu #loginOptions>
+    <button type="button" bitMenuItem appCopyField="username" [cipher]="cipher">
+      {{ "copyUsername" | i18n }}
+    </button>
+    <button type="button" bitMenuItem appCopyField="password" [cipher]="cipher">
+      {{ "copyPassword" | i18n }}
+    </button>
+    <button type="button" bitMenuItem appCopyField="totp" [cipher]="cipher">
+      {{ "copyVerificationCode" | i18n }}
+    </button>
+  </bit-menu>
+</bit-item-action>
+
+<bit-item-action *ngIf="cipher.type === CipherType.Card">
+  <button
+    type="button"
+    bitIconButton="bwi-clone"
+    size="small"
+    [attr.aria-label]="'copyInfoLabel' | i18n: cipher.name"
+    [title]="'copyInfoTitle' | i18n: cipher.name"
+    [bitMenuTriggerFor]="cardOptions"
+  ></button>
+  <bit-menu #cardOptions>
+    <button type="button" bitMenuItem appCopyField="cardNumber" [cipher]="cipher">
+      {{ "copyNumber" | i18n }}
+    </button>
+    <button type="button" bitMenuItem appCopyField="securityCode" [cipher]="cipher">
+      {{ "copySecurityCode" | i18n }}
+    </button>
+  </bit-menu>
+</bit-item-action>
+
+<bit-item-action *ngIf="cipher.type === CipherType.Identity">
+  <button
+    type="button"
+    bitIconButton="bwi-clone"
+    size="small"
+    [attr.aria-label]="'copyInfoLabel' | i18n: cipher.name"
+    [title]="'copyInfoTitle' | i18n: cipher.name"
+    [bitMenuTriggerFor]="identityOptions"
+  ></button>
+  <bit-menu #identityOptions>
+    <button type="button" bitMenuItem appCopyField="username" [cipher]="cipher">
+      {{ "copyUsername" | i18n }}
+    </button>
+    <button type="button" bitMenuItem appCopyField="email" [cipher]="cipher">
+      {{ "copyEmail" | i18n }}
+    </button>
+    <button type="button" bitMenuItem appCopyField="phone" [cipher]="cipher">
+      {{ "copyPhone" | i18n }}
+    </button>
+    <button type="button" bitMenuItem appCopyField="address" [cipher]="cipher">
+      {{ "copyAddress" | i18n }}
+    </button>
+  </bit-menu>
+</bit-item-action>
+
+<bit-item-action *ngIf="cipher.type === CipherType.SecureNote">
+  <button
+    type="button"
+    bitIconButton="bwi-clone"
+    size="small"
+    [attr.aria-label]="'copyNoteLabel' | i18n: cipher.name"
+    [title]="'copyNoteTitle' | i18n: cipher.name"
+    appCopyField="secureNote"
+    [cipher]="cipher"
+  ></button>
+</bit-item-action>

@@ -14,6 +14,7 @@ import {
 } from "@bitwarden/components";
 
 import { PopupSectionHeaderComponent } from "../../../../../platform/popup/popup-section-header/popup-section-header.component";
+import { ItemCopyActionsComponent } from "../item-copy-action/item-copy-actions.component";
 
 @Component({
   imports: [
@@ -27,6 +28,7 @@ import { PopupSectionHeaderComponent } from "../../../../../platform/popup/popup
     JslibModule,
     PopupSectionHeaderComponent,
     RouterLink,
+    ItemCopyActionsComponent,
   ],
   selector: "app-vault-list-items-container",
   templateUrl: "vault-list-items-container.component.html",

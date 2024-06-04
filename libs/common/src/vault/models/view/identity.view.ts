@@ -142,6 +142,17 @@ export class IdentityView extends ItemView {
     return addressPart2;
   }
 
+  get fullAddressForCopy(): string {
+    let address = this.fullAddress;
+    if (this.city != null || this.state != null || this.postalCode != null) {
+      address += "\n" + this.fullAddressPart2;
+    }
+    if (this.country != null) {
+      address += "\n" + this.country;
+    }
+    return address;
+  }
+
   static fromJSON(obj: Partial<Jsonify<IdentityView>>): IdentityView {
     return Object.assign(new IdentityView(), obj);
   }

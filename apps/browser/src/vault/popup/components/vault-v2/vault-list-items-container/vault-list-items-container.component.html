@@ -13,7 +13,12 @@
   </popup-section-header>
   <bit-item-group>
     <bit-item *ngFor="let cipher of ciphers">
-      <a bit-item-content [routerLink]="['/view-cipher']" [queryParams]="{ cipherId: cipher.id }">
+      <a
+        bit-item-content
+        [routerLink]="['/view-cipher']"
+        [queryParams]="{ cipherId: cipher.id }"
+        [appA11yTitle]="'viewItemTitle' | i18n: cipher.name"
+      >
         <app-vault-icon slot="start" [cipher]="cipher"></app-vault-icon>
         {{ cipher.name }}
         <span slot="secondary">{{ cipher.subTitle }}</span>
@@ -22,14 +27,7 @@
         <bit-item-action *ngIf="showAutoFill">
           <button type="button" bitBadge variant="primary">{{ "autoFill" | i18n }}</button>
         </bit-item-action>
-        <bit-item-action>
-          <button
-            type="button"
-            bitIconButton="bwi-clone"
-            size="small"
-            [attr.aria-label]="'copyInfo' | i18n: cipher.name"
-          ></button>
-        </bit-item-action>
+        <app-item-copy-actions [cipher]="cipher"></app-item-copy-actions>
         <bit-item-action>
           <button
             type="button"
