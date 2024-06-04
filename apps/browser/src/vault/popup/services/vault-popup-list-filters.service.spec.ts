@@ -169,6 +169,13 @@ describe("VaultPopupListFiltersService", () => {
         expect(collections.map((c) => c.label)).toEqual(["Test collection 2"]);
       });
     });
+
+    it("sets collection icon", (done) => {
+      service.collections$.subscribe((collections) => {
+        expect(collections.every(({ icon }) => icon === "bwi-collection")).toBeTruthy();
+        done();
+      });
+    });
   });
 
   describe("folders$", () => {
@@ -206,6 +213,22 @@ describe("VaultPopupListFiltersService", () => {
 
       service.folders$.subscribe((folders) => {
         expect(folders.map((f) => f.label)).toEqual(["Folder 1", "Folder 2"]);
+        done();
+      });
+    });
+
+    it("sets folder icon", (done) => {
+      service.filterForm.patchValue({
+        organization: { id: MY_VAULT_ID } as Organization,
+      });
+
+      folderViews$.next([
+        { id: "1234", name: "Folder 1" },
+        { id: "2345", name: "Folder 2" },
+      ]);
+
+      service.folders$.subscribe((folders) => {
+        expect(folders.every(({ icon }) => icon === "bwi-folder")).toBeTruthy();
         done();
       });
     });
