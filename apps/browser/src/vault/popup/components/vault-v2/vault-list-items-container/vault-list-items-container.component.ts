@@ -15,6 +15,7 @@ import {
 
 import { PopupSectionHeaderComponent } from "../../../../../platform/popup/popup-section-header/popup-section-header.component";
 import { ItemCopyActionsComponent } from "../item-copy-action/item-copy-actions.component";
+import { ItemMoreOptionsComponent } from "../item-more-options/item-more-options.component";
 
 @Component({
   imports: [
@@ -29,6 +30,7 @@ import { ItemCopyActionsComponent } from "../item-copy-action/item-copy-actions.
     PopupSectionHeaderComponent,
     RouterLink,
     ItemCopyActionsComponent,
+    ItemMoreOptionsComponent,
   ],
   selector: "app-vault-list-items-container",
   templateUrl: "vault-list-items-container.component.html",
@@ -63,5 +65,5 @@ export class VaultListItemsContainerComponent {
    * Option to show the autofill button for each item.
    */
   @Input({ transform: booleanAttribute })
-  showAutoFill: boolean;
+  showAutofillButton: boolean;
 }

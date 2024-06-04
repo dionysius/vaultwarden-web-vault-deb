@@ -4,7 +4,7 @@
   [title]="'autofillSuggestions' | i18n"
   [showRefresh]="showRefresh"
   (onRefresh)="refreshCurrentTab()"
-  showAutoFill
+  showAutofillButton
 ></app-vault-list-items-container>
 <ng-container *ngIf="showEmptyAutofillTip$ | async">
   <bit-section>

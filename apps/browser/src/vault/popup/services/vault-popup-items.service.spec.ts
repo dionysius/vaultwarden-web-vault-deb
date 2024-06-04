@@ -1,3 +1,4 @@
+import { TestBed } from "@angular/core/testing";
 import { mock } from "jest-mock-extended";
 import { BehaviorSubject } from "rxjs";
 
@@ -16,6 +17,7 @@ import { VaultPopupItemsService } from "./vault-popup-items.service";
 import { VaultPopupListFiltersService } from "./vault-popup-list-filters.service";
 
 describe("VaultPopupItemsService", () => {
+  let testBed: TestBed;
   let service: VaultPopupItemsService;
   let allCiphers: Record<CipherId, CipherView>;
   let autoFillCiphers: CipherView[];
@@ -39,11 +41,12 @@ describe("VaultPopupItemsService", () => {
     cipherList[2].favorite = true;
     cipherList[3].favorite = true;
 
-    cipherServiceMock.cipherViews$ = new BehaviorSubject(allCiphers).asObservable();
+    cipherServiceMock.getAllDecrypted.mockResolvedValue(cipherList);
+    cipherServiceMock.ciphers$ = new BehaviorSubject(null).asObservable();
     searchService.searchCiphers.mockImplementation(async () => cipherList);
     cipherServiceMock.filterCiphersForUrl.mockImplementation(async () => autoFillCiphers);
-    vaultSettingsServiceMock.showCardsCurrentTab$ = new BehaviorSubject(false).asObservable();
-    vaultSettingsServiceMock.showIdentitiesCurrentTab$ = new BehaviorSubject(false).asObservable();
+    vaultSettingsServiceMock.showCardsCurrentTab$ = new BehaviorSubject(false);
+    vaultSettingsServiceMock.showIdentitiesCurrentTab$ = new BehaviorSubject(false);
 
     vaultPopupListFiltersServiceMock.filters$ = new BehaviorSubject({
       organization: null,
@@ -55,28 +58,26 @@ describe("VaultPopupItemsService", () => {
     vaultPopupListFiltersServiceMock.filterFunction$ = new BehaviorSubject(
       (ciphers: CipherView[]) => ciphers,
     );
-
     jest.spyOn(BrowserPopupUtils, "inPopout").mockReturnValue(false);
     jest
       .spyOn(BrowserApi, "getTabFromCurrentWindow")
       .mockResolvedValue({ url: "https://example.com" } as chrome.tabs.Tab);
-    service = new VaultPopupItemsService(
-      cipherServiceMock,
-      vaultSettingsServiceMock,
-      vaultPopupListFiltersServiceMock,
-      organizationServiceMock,
-      searchService,
-    );
+
+    testBed = TestBed.configureTestingModule({
+      providers: [
+        { provide: CipherService, useValue: cipherServiceMock },
+        { provide: VaultSettingsService, useValue: vaultSettingsServiceMock },
+        { provide: SearchService, useValue: searchService },
+        { provide: OrganizationService, useValue: organizationServiceMock },
+        { provide: VaultPopupListFiltersService, useValue: vaultPopupListFiltersServiceMock },
+      ],
+    });
+
+    service = testBed.inject(VaultPopupItemsService);
   });
 
   it("should be created", () => {
-    service = new VaultPopupItemsService(
-      cipherServiceMock,
-      vaultSettingsServiceMock,
-      vaultPopupListFiltersServiceMock,
-      organizationServiceMock,
-      searchService,
-    );
+    service = testBed.inject(VaultPopupItemsService);
     expect(service).toBeTruthy();
   });
 
@@ -100,17 +101,9 @@ describe("VaultPopupItemsService", () => {
     it("should filter ciphers for the current tab and types", (done) => {
       const currentTab = { url: "https://example.com" } as chrome.tabs.Tab;
 
-      vaultSettingsServiceMock.showCardsCurrentTab$ = new BehaviorSubject(true).asObservable();
-      vaultSettingsServiceMock.showIdentitiesCurrentTab$ = new BehaviorSubject(true).asObservable();
+      (vaultSettingsServiceMock.showCardsCurrentTab$ as BehaviorSubject<boolean>).next(true);
+      (vaultSettingsServiceMock.showIdentitiesCurrentTab$ as BehaviorSubject<boolean>).next(true);
       jest.spyOn(BrowserApi, "getTabFromCurrentWindow").mockResolvedValue(currentTab);
-
-      service = new VaultPopupItemsService(
-        cipherServiceMock,
-        vaultSettingsServiceMock,
-        vaultPopupListFiltersServiceMock,
-        organizationServiceMock,
-        searchService,
-      );
 
       service.autoFillCiphers$.subscribe((ciphers) => {
         expect(cipherServiceMock.filterCiphersForUrl.mock.calls.length).toBe(1);
@@ -134,14 +127,6 @@ describe("VaultPopupItemsService", () => {
       // Assume all ciphers are autofill ciphers to test sorting
       cipherServiceMock.filterCiphersForUrl.mockImplementation(async () =>
         Object.values(allCiphers),
-      );
-
-      service = new VaultPopupItemsService(
-        cipherServiceMock,
-        vaultSettingsServiceMock,
-        vaultPopupListFiltersServiceMock,
-        organizationServiceMock,
-        searchService,
       );
 
       service.autoFillCiphers$.subscribe((ciphers) => {
@@ -248,14 +233,7 @@ describe("VaultPopupItemsService", () => {
 
   describe("emptyVault$", () => {
     it("should return true if there are no ciphers", (done) => {
-      cipherServiceMock.cipherViews$ = new BehaviorSubject({}).asObservable();
-      service = new VaultPopupItemsService(
-        cipherServiceMock,
-        vaultSettingsServiceMock,
-        vaultPopupListFiltersServiceMock,
-        organizationServiceMock,
-        searchService,
-      );
+      cipherServiceMock.getAllDecrypted.mockResolvedValue([]);
       service.emptyVault$.subscribe((empty) => {
         expect(empty).toBe(true);
         done();

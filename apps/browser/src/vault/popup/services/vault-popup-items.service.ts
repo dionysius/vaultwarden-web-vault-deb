@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { inject, Injectable, NgZone } from "@angular/core";
 import {
   BehaviorSubject,
   combineLatest,
@@ -15,12 +15,14 @@ import {
 
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
+import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { VaultSettingsService } from "@bitwarden/common/vault/abstractions/vault-settings/vault-settings.service";
 import { CipherType } from "@bitwarden/common/vault/enums";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 
 import { BrowserApi } from "../../../platform/browser/browser-api";
+import { runInsideAngular } from "../../../platform/browser/run-inside-angular.operator";
 import BrowserPopupUtils from "../../../platform/popup/browser-popup-utils";
 
 import { MY_VAULT_ID, VaultPopupListFiltersService } from "./vault-popup-list-filters.service";
@@ -72,9 +74,11 @@ export class VaultPopupItemsService {
    * Observable that contains the list of all decrypted ciphers.
    * @private
    */
-  private _cipherList$: Observable<CipherView[]> = this.cipherService.cipherViews$.pipe(
+  private _cipherList$: Observable<CipherView[]> = this.cipherService.ciphers$.pipe(
+    runInsideAngular(inject(NgZone)), // Workaround to ensure cipher$ state provider emissions are run inside Angular
+    switchMap(() => Utils.asyncToObservable(() => this.cipherService.getAllDecrypted())),
     map((ciphers) => Object.values(ciphers)),
-    shareReplay({ refCount: false, bufferSize: 1 }),
+    shareReplay({ refCount: true, bufferSize: 1 }),
   );
 
   private _filteredCipherList$: Observable<CipherView[]> = combineLatest([

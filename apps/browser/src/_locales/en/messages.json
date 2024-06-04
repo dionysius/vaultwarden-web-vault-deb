@@ -389,6 +389,9 @@
   "favorite": {
     "message": "Favorite"
   },
+  "unfavorite": {
+    "message": "Unfavorite"
+  },
   "notes": {
     "message": "Notes"
   },
@@ -409,6 +412,9 @@
   },
   "launch": {
     "message": "Launch"
+  },
+  "launchWebsite": {
+    "message": "Launch website"
   },
   "website": {
     "message": "Website"
@@ -822,7 +828,7 @@
   },
   "exportPasswordDescription": {
     "message": "This password will be used to export and import this file"
-  },  
+  },
   "accountRestrictedOptionDescription": {
     "message": "Use your account encryption key, derived from your account's username and Master Password, to encrypt the export and restrict import to only the current Bitwarden account."
   },
@@ -1659,6 +1665,9 @@
   },
   "autoFillAndSave": {
     "message": "Auto-fill and save"
+  },
+  "fillAndSave": {
+    "message": "Fill and save"
   },
   "autoFillSuccessAndSavedUri": {
     "message": "Item auto-filled and URI saved"
@@ -3350,6 +3359,9 @@
         "example": "Secret Item"
       }
     }
+  },
+  "assignCollections": {
+    "message": "Assign collections"
   },
   "copyEmail": {
     "message": "Copy email"

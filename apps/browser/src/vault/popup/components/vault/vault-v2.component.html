@@ -22,10 +22,12 @@
   </div>
 
   <ng-container *ngIf="!(showEmptyState$ | async)">
-    <app-vault-v2-search (searchTextChanged)="handleSearchTextChange($event)">
-    </app-vault-v2-search>
+    <div class="tw-fixed">
+      <app-vault-v2-search (searchTextChanged)="handleSearchTextChange($event)">
+      </app-vault-v2-search>
 
-    <app-vault-list-filters></app-vault-list-filters>
+      <app-vault-list-filters></app-vault-list-filters>
+    </div>
 
     <div
       *ngIf="(showNoResultsState$ | async) && !(showDeactivatedOrg$ | async)"
