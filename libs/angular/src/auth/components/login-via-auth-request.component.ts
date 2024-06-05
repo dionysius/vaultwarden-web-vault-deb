@@ -246,7 +246,10 @@ export class LoginViaAuthRequestComponent
 
     const deviceIdentifier = await this.appIdService.getAppId();
     const publicKey = Utils.fromBufferToB64(this.authRequestKeyPair.publicKey);
-    const accessCode = await this.passwordGenerationService.generatePassword({ length: 25 });
+    const accessCode = await this.passwordGenerationService.generatePassword({
+      type: "password",
+      length: 25,
+    });
 
     this.fingerprintPhrase = (
       await this.cryptoService.getFingerprint(this.email, this.authRequestKeyPair.publicKey)
