@@ -29,6 +29,7 @@ import {
 } from "../shared/offboarding-survey.component";
 
 import { BillingSyncApiKeyComponent } from "./billing-sync-api-key.component";
+import { DownloadLicenceDialogComponent } from "./download-license.component";
 import { ManageBilling } from "./icons/manage-billing.icon";
 import { SecretsManagerSubscriptionOptions } from "./sm-adjust-subscription.component";
 
@@ -354,8 +355,12 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
     this.showChangePlan = false;
   }
 
-  downloadLicense() {
-    this.showDownloadLicense = !this.showDownloadLicense;
+  async downloadLicense() {
+    DownloadLicenceDialogComponent.open(this.dialogService, {
+      data: {
+        organizationId: this.organizationId,
+      },
+    });
   }
 
   async manageBillingSync() {

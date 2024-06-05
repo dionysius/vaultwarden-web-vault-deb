@@ -8,7 +8,7 @@ import { AdjustSubscription } from "./adjust-subscription.component";
 import { BillingSyncApiKeyComponent } from "./billing-sync-api-key.component";
 import { BillingSyncKeyComponent } from "./billing-sync-key.component";
 import { ChangePlanComponent } from "./change-plan.component";
-import { DownloadLicenseComponent } from "./download-license.component";
+import { DownloadLicenceDialogComponent } from "./download-license.component";
 import { OrgBillingHistoryViewComponent } from "./organization-billing-history-view.component";
 import { OrganizationBillingRoutingModule } from "./organization-billing-routing.module";
 import { OrganizationPlansComponent } from "./organization-plans.component";
@@ -32,7 +32,7 @@ import { SubscriptionStatusComponent } from "./subscription-status.component";
     BillingSyncApiKeyComponent,
     BillingSyncKeyComponent,
     ChangePlanComponent,
-    DownloadLicenseComponent,
+    DownloadLicenceDialogComponent,
     OrganizationSubscriptionCloudComponent,
     OrganizationSubscriptionSelfhostComponent,
     OrgBillingHistoryViewComponent,
