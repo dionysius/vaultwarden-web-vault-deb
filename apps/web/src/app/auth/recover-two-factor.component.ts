@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 
 import { LoginStrategyServiceAbstraction } from "@bitwarden/auth/common";
@@ -6,7 +7,6 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { TwoFactorRecoveryRequest } from "@bitwarden/common/auth/models/request/two-factor-recovery.request";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
-import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 
 @Component({
@@ -14,10 +14,11 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
   templateUrl: "recover-two-factor.component.html",
 })
 export class RecoverTwoFactorComponent {
-  email: string;
-  masterPassword: string;
-  recoveryCode: string;
-  formPromise: Promise<any>;
+  protected formGroup = new FormGroup({
+    email: new FormControl(null, [Validators.required]),
+    masterPassword: new FormControl(null, [Validators.required]),
+    recoveryCode: new FormControl(null, [Validators.required]),
+  });
 
   constructor(
     private router: Router,
@@ -26,31 +27,32 @@ export class RecoverTwoFactorComponent {
     private i18nService: I18nService,
     private cryptoService: CryptoService,
     private loginStrategyService: LoginStrategyServiceAbstraction,
-    private logService: LogService,
   ) {}
 
-  async submit() {
-    try {
-      const request = new TwoFactorRecoveryRequest();
-      request.recoveryCode = this.recoveryCode.replace(/\s/g, "").toLowerCase();
-      request.email = this.email.trim().toLowerCase();
-      const key = await this.loginStrategyService.makePreloginKey(
-        this.masterPassword,
-        request.email,
-      );
-      request.masterPasswordHash = await this.cryptoService.hashMasterKey(this.masterPassword, key);
-      this.formPromise = this.apiService.postTwoFactorRecover(request);
-      await this.formPromise;
-      this.platformUtilsService.showToast(
-        "success",
-        null,
-        this.i18nService.t("twoStepRecoverDisabled"),
-      );
-      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-      // eslint-disable-next-line @typescript-eslint/no-floating-promises
-      this.router.navigate(["/"]);
-    } catch (e) {
-      this.logService.error(e);
-    }
+  get email(): string {
+    return this.formGroup.value.email;
   }
+
+  get masterPassword(): string {
+    return this.formGroup.value.masterPassword;
+  }
+
+  get recoveryCode(): string {
+    return this.formGroup.value.recoveryCode;
+  }
+
+  submit = async () => {
+    const request = new TwoFactorRecoveryRequest();
+    request.recoveryCode = this.recoveryCode.replace(/\s/g, "").toLowerCase();
+    request.email = this.email.trim().toLowerCase();
+    const key = await this.loginStrategyService.makePreloginKey(this.masterPassword, request.email);
+    request.masterPasswordHash = await this.cryptoService.hashMasterKey(this.masterPassword, key);
+    await this.apiService.postTwoFactorRecover(request);
+    this.platformUtilsService.showToast(
+      "success",
+      null,
+      this.i18nService.t("twoStepRecoverDisabled"),
+    );
+    await this.router.navigate(["/"]);
+  };
 }
