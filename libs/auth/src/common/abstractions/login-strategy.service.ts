@@ -3,7 +3,6 @@ import { Observable } from "rxjs";
 import { AuthenticationType } from "@bitwarden/common/auth/enums/authentication-type";
 import { AuthResult } from "@bitwarden/common/auth/models/domain/auth-result";
 import { TokenTwoFactorRequest } from "@bitwarden/common/auth/models/request/identity-token/token-two-factor.request";
-import { AuthRequestResponse } from "@bitwarden/common/auth/models/response/auth-request.response";
 import { MasterKey } from "@bitwarden/common/types/key";
 
 import {
@@ -72,12 +71,4 @@ export abstract class LoginStrategyServiceAbstraction {
    * Creates a master key from the provided master password and email.
    */
   makePreloginKey: (masterPassword: string, email: string) => Promise<MasterKey>;
-  /**
-   * Sends a response to an auth request.
-   */
-  passwordlessLogin: (
-    id: string,
-    key: string,
-    requestApproved: boolean,
-  ) => Promise<AuthRequestResponse>;
 }
