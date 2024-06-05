@@ -1,50 +1,53 @@
 import { firstValueFrom } from "rxjs";
 
-import { LogoutReason, UserDecryptionOptionsServiceAbstraction } from "@bitwarden/auth/common";
+import { UserDecryptionOptionsServiceAbstraction } from "../../../../auth/src/common/abstractions";
+import { LogoutReason } from "../../../../auth/src/common/types";
+import { ApiService } from "../../abstractions/api.service";
+import { InternalOrganizationServiceAbstraction } from "../../admin-console/abstractions/organization/organization.service.abstraction";
+import { InternalPolicyService } from "../../admin-console/abstractions/policy/policy.service.abstraction";
+import { ProviderService } from "../../admin-console/abstractions/provider.service";
+import { OrganizationUserType } from "../../admin-console/enums";
+import { OrganizationData } from "../../admin-console/models/data/organization.data";
+import { PolicyData } from "../../admin-console/models/data/policy.data";
+import { ProviderData } from "../../admin-console/models/data/provider.data";
+import { PolicyResponse } from "../../admin-console/models/response/policy.response";
+import { AccountService } from "../../auth/abstractions/account.service";
+import { AuthService } from "../../auth/abstractions/auth.service";
+import { AvatarService } from "../../auth/abstractions/avatar.service";
+import { KeyConnectorService } from "../../auth/abstractions/key-connector.service";
+import { InternalMasterPasswordServiceAbstraction } from "../../auth/abstractions/master-password.service.abstraction";
+import { TokenService } from "../../auth/abstractions/token.service";
+import { ForceSetPasswordReason } from "../../auth/models/domain/force-set-password-reason";
+import { DomainSettingsService } from "../../autofill/services/domain-settings.service";
+import { BillingAccountProfileStateService } from "../../billing/abstractions";
+import { DomainsResponse } from "../../models/response/domains.response";
+import { ProfileResponse } from "../../models/response/profile.response";
+import { SendData } from "../../tools/send/models/data/send.data";
+import { SendResponse } from "../../tools/send/models/response/send.response";
+import { SendApiService } from "../../tools/send/services/send-api.service.abstraction";
+import { InternalSendService } from "../../tools/send/services/send.service.abstraction";
+import { UserId } from "../../types/guid";
+import { CipherService } from "../../vault/abstractions/cipher.service";
+import { CollectionService } from "../../vault/abstractions/collection.service";
+import { FolderApiServiceAbstraction } from "../../vault/abstractions/folder/folder-api.service.abstraction";
+import { InternalFolderService } from "../../vault/abstractions/folder/folder.service.abstraction";
+import { CipherData } from "../../vault/models/data/cipher.data";
+import { CollectionData } from "../../vault/models/data/collection.data";
+import { FolderData } from "../../vault/models/data/folder.data";
+import { CipherResponse } from "../../vault/models/response/cipher.response";
+import { CollectionDetailsResponse } from "../../vault/models/response/collection.response";
+import { FolderResponse } from "../../vault/models/response/folder.response";
+import { CryptoService } from "../abstractions/crypto.service";
+import { LogService } from "../abstractions/log.service";
+import { StateService } from "../abstractions/state.service";
+import { MessageSender } from "../messaging";
+import { sequentialize } from "../misc/sequentialize";
 
-import { ApiService } from "../../../abstractions/api.service";
-import { InternalOrganizationServiceAbstraction } from "../../../admin-console/abstractions/organization/organization.service.abstraction";
-import { InternalPolicyService } from "../../../admin-console/abstractions/policy/policy.service.abstraction";
-import { ProviderService } from "../../../admin-console/abstractions/provider.service";
-import { OrganizationUserType } from "../../../admin-console/enums";
-import { OrganizationData } from "../../../admin-console/models/data/organization.data";
-import { PolicyData } from "../../../admin-console/models/data/policy.data";
-import { ProviderData } from "../../../admin-console/models/data/provider.data";
-import { PolicyResponse } from "../../../admin-console/models/response/policy.response";
-import { AccountService } from "../../../auth/abstractions/account.service";
-import { AuthService } from "../../../auth/abstractions/auth.service";
-import { AvatarService } from "../../../auth/abstractions/avatar.service";
-import { KeyConnectorService } from "../../../auth/abstractions/key-connector.service";
-import { InternalMasterPasswordServiceAbstraction } from "../../../auth/abstractions/master-password.service.abstraction";
-import { TokenService } from "../../../auth/abstractions/token.service";
-import { ForceSetPasswordReason } from "../../../auth/models/domain/force-set-password-reason";
-import { DomainSettingsService } from "../../../autofill/services/domain-settings.service";
-import { BillingAccountProfileStateService } from "../../../billing/abstractions/account/billing-account-profile-state.service";
-import { DomainsResponse } from "../../../models/response/domains.response";
-import { ProfileResponse } from "../../../models/response/profile.response";
-import { CryptoService } from "../../../platform/abstractions/crypto.service";
-import { LogService } from "../../../platform/abstractions/log.service";
-import { StateService } from "../../../platform/abstractions/state.service";
-import { MessageSender } from "../../../platform/messaging";
-import { sequentialize } from "../../../platform/misc/sequentialize";
-import { CoreSyncService } from "../../../platform/sync/core-sync.service";
-import { SendData } from "../../../tools/send/models/data/send.data";
-import { SendResponse } from "../../../tools/send/models/response/send.response";
-import { SendApiService } from "../../../tools/send/services/send-api.service.abstraction";
-import { InternalSendService } from "../../../tools/send/services/send.service.abstraction";
-import { UserId } from "../../../types/guid";
-import { CipherService } from "../../../vault/abstractions/cipher.service";
-import { FolderApiServiceAbstraction } from "../../../vault/abstractions/folder/folder-api.service.abstraction";
-import { InternalFolderService } from "../../../vault/abstractions/folder/folder.service.abstraction";
-import { CipherData } from "../../../vault/models/data/cipher.data";
-import { FolderData } from "../../../vault/models/data/folder.data";
-import { CipherResponse } from "../../../vault/models/response/cipher.response";
-import { FolderResponse } from "../../../vault/models/response/folder.response";
-import { CollectionService } from "../../abstractions/collection.service";
-import { CollectionData } from "../../models/data/collection.data";
-import { CollectionDetailsResponse } from "../../models/response/collection.response";
+import { CoreSyncService } from "./core-sync.service";
 
-export class SyncService extends CoreSyncService {
+export class DefaultSyncService extends CoreSyncService {
+  syncInProgress = false;
+
   constructor(
     private masterPasswordService: InternalMasterPasswordServiceAbstraction,
     accountService: AccountService,
