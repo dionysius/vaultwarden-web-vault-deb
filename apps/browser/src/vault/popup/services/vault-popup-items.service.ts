@@ -5,6 +5,7 @@ import {
   distinctUntilKeyChanged,
   from,
   map,
+  merge,
   Observable,
   of,
   shareReplay,
@@ -78,10 +79,12 @@ export class VaultPopupItemsService {
    * Observable that contains the list of all decrypted ciphers.
    * @private
    */
-  private _cipherList$: Observable<PopupCipherView[]> = this.cipherService.ciphers$.pipe(
+  private _cipherList$: Observable<PopupCipherView[]> = merge(
+    this.cipherService.ciphers$,
+    this.cipherService.localData$,
+  ).pipe(
     runInsideAngular(inject(NgZone)), // Workaround to ensure cipher$ state provider emissions are run inside Angular
     switchMap(() => Utils.asyncToObservable(() => this.cipherService.getAllDecrypted())),
-    map((ciphers) => Object.values(ciphers)),
     switchMap((ciphers) =>
       combineLatest([
         this.organizationService.organizations$,

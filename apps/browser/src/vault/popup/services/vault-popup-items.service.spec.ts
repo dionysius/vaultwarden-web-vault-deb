@@ -6,6 +6,7 @@ import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { ProductType } from "@bitwarden/common/enums";
+import { ObservableTracker } from "@bitwarden/common/spec";
 import { CipherId } from "@bitwarden/common/types/guid";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CollectionService } from "@bitwarden/common/vault/abstractions/collection.service";
@@ -50,7 +51,8 @@ describe("VaultPopupItemsService", () => {
     cipherList[3].favorite = true;
 
     cipherServiceMock.getAllDecrypted.mockResolvedValue(cipherList);
-    cipherServiceMock.ciphers$ = new BehaviorSubject(null).asObservable();
+    cipherServiceMock.ciphers$ = new BehaviorSubject(null);
+    cipherServiceMock.localData$ = new BehaviorSubject(null);
     searchService.searchCiphers.mockImplementation(async (_, __, ciphers) => ciphers);
     cipherServiceMock.filterCiphersForUrl.mockImplementation(async (ciphers) =>
       ciphers.filter((c) => ["0", "1"].includes(c.id)),
@@ -121,6 +123,34 @@ describe("VaultPopupItemsService", () => {
       expect(ciphers[0].collections).toContain(mockCollections[1]);
       done();
     });
+  });
+
+  it("should update cipher list when cipherService.ciphers$ emits", async () => {
+    const tracker = new ObservableTracker(service.autoFillCiphers$);
+
+    await tracker.expectEmission();
+
+    (cipherServiceMock.ciphers$ as BehaviorSubject<any>).next(null);
+
+    await tracker.expectEmission();
+
+    // Should only emit twice
+    expect(tracker.emissions.length).toBe(2);
+    await expect(tracker.pauseUntilReceived(3)).rejects.toThrow("Timeout exceeded");
+  });
+
+  it("should update cipher list when cipherService.localData$ emits", async () => {
+    const tracker = new ObservableTracker(service.autoFillCiphers$);
+
+    await tracker.expectEmission();
+
+    (cipherServiceMock.localData$ as BehaviorSubject<any>).next(null);
+
+    await tracker.expectEmission();
+
+    // Should only emit twice
+    expect(tracker.emissions.length).toBe(2);
+    await expect(tracker.pauseUntilReceived(3)).rejects.toThrow("Timeout exceeded");
   });
 
   describe("autoFillCiphers$", () => {

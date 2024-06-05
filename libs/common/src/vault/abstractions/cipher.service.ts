@@ -1,5 +1,7 @@
 import { Observable } from "rxjs";
 
+import { LocalData } from "@bitwarden/common/vault/models/data/local.data";
+
 import { UriMatchStrategySetting } from "../../models/domain/domain-service";
 import { SymmetricCryptoKey } from "../../platform/models/domain/symmetric-crypto-key";
 import { CipherId, CollectionId, OrganizationId } from "../../types/guid";
@@ -14,6 +16,7 @@ import { AddEditCipherInfo } from "../types/add-edit-cipher-info";
 export abstract class CipherService {
   cipherViews$: Observable<Record<CipherId, CipherView>>;
   ciphers$: Observable<Record<CipherId, CipherData>>;
+  localData$: Observable<Record<CipherId, LocalData>>;
   /**
    *  An observable monitoring the add/edit cipher info saved to memory.
    */
