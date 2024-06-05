@@ -1000,29 +1000,23 @@ describe("OverlayBackground", () => {
         });
       });
 
-      describe("addEditCipherSubmitted message handler", () => {
-        it("updates the overlay ciphers", () => {
-          const message = {
-            command: "addEditCipherSubmitted",
-          };
-          jest.spyOn(overlayBackground as any, "updateOverlayCiphers").mockImplementation();
+      describe("extension messages that trigger an update of the inline menu ciphers", () => {
+        const extensionMessages = [
+          "addedCipher",
+          "addEditCipherSubmitted",
+          "editedCipher",
+          "deletedCipher",
+        ];
 
-          sendMockExtensionMessage(message);
-
-          expect(overlayBackground["updateOverlayCiphers"]).toHaveBeenCalled();
+        beforeEach(() => {
+          jest.spyOn(overlayBackground, "updateOverlayCiphers").mockImplementation();
         });
-      });
 
-      describe("deletedCipher message handler", () => {
-        it("updates the overlay ciphers", () => {
-          const message = {
-            command: "deletedCipher",
-          };
-          jest.spyOn(overlayBackground as any, "updateOverlayCiphers").mockImplementation();
-
-          sendMockExtensionMessage(message);
-
-          expect(overlayBackground["updateOverlayCiphers"]).toHaveBeenCalled();
+        extensionMessages.forEach((message) => {
+          it(`triggers an update of the overlay ciphers when the ${message} message is received`, () => {
+            sendMockExtensionMessage({ command: message });
+            expect(overlayBackground.updateOverlayCiphers).toHaveBeenCalled();
+          });
         });
       });
     });
