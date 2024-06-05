@@ -44,6 +44,7 @@ export class VaultV2Component implements OnInit, OnDestroy {
 
   protected vaultIcon = Icons.Vault;
   protected deactivatedIcon = Icons.DeactivatedOrg;
+  protected noResultsIcon = Icons.NoResults;
 
   constructor(
     private vaultPopupItemsService: VaultPopupItemsService,
@@ -53,10 +54,6 @@ export class VaultV2Component implements OnInit, OnDestroy {
   ngOnInit(): void {}
 
   ngOnDestroy(): void {}
-
-  handleSearchTextChange(searchText: string) {
-    this.vaultPopupItemsService.applyFilter(searchText);
-  }
 
   addCipher() {
     // TODO: Add currently filtered organization to query params if available

@@ -22,18 +22,15 @@
   </div>
 
   <ng-container *ngIf="!(showEmptyState$ | async)">
-    <div class="tw-fixed">
-      <app-vault-v2-search (searchTextChanged)="handleSearchTextChange($event)">
-      </app-vault-v2-search>
+    <app-vault-v2-search> </app-vault-v2-search>
 
-      <app-vault-list-filters></app-vault-list-filters>
-    </div>
+    <app-vault-list-filters></app-vault-list-filters>
 
     <div
       *ngIf="(showNoResultsState$ | async) && !(showDeactivatedOrg$ | async)"
-      class="tw-flex tw-flex-col tw-h-full tw-justify-center"
+      class="tw-flex tw-flex-col tw-justify-center tw-h-auto tw-pt-12"
     >
-      <bit-no-items>
+      <bit-no-items [icon]="noResultsIcon">
         <ng-container slot="title">{{ "noItemsMatchSearch" | i18n }}</ng-container>
         <ng-container slot="description">{{ "clearFiltersOrTryAnother" | i18n }}</ng-container>
       </bit-no-items>
@@ -41,7 +38,7 @@
 
     <div
       *ngIf="showDeactivatedOrg$ | async"
-      class="tw-flex tw-flex-col tw-h-full tw-justify-center"
+      class="tw-flex tw-flex-col tw-justify-center tw-h-auto tw-pt-12"
     >
       <bit-no-items [icon]="deactivatedIcon">
         <ng-container slot="title">{{ "organizationIsDeactivated" | i18n }}</ng-container>
