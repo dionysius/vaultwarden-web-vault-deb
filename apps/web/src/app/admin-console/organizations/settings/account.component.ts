@@ -216,31 +216,33 @@ export class AccountComponent {
   };
 
   async viewApiKey() {
-    await this.modalService.openViewRef(ApiKeyComponent, this.apiKeyModalRef, (comp) => {
-      comp.keyType = "organization";
-      comp.entityId = this.organizationId;
-      comp.postKey = this.organizationApiService.getOrCreateApiKey.bind(
-        this.organizationApiService,
-      );
-      comp.scope = "api.organization";
-      comp.grantType = "client_credentials";
-      comp.apiKeyTitle = "apiKey";
-      comp.apiKeyWarning = "apiKeyWarning";
-      comp.apiKeyDescription = "apiKeyDesc";
+    await ApiKeyComponent.open(this.dialogService, {
+      data: {
+        keyType: "organization",
+        entityId: this.organizationId,
+        postKey: this.organizationApiService.getOrCreateApiKey.bind(this.organizationApiService),
+        scope: "api.organization",
+        grantType: "client_credentials",
+        apiKeyTitle: "apiKey",
+        apiKeyWarning: "apiKeyWarning",
+        apiKeyDescription: "apiKeyDesc",
+      },
     });
   }
 
   async rotateApiKey() {
-    await this.modalService.openViewRef(ApiKeyComponent, this.rotateApiKeyModalRef, (comp) => {
-      comp.keyType = "organization";
-      comp.isRotation = true;
-      comp.entityId = this.organizationId;
-      comp.postKey = this.organizationApiService.rotateApiKey.bind(this.organizationApiService);
-      comp.scope = "api.organization";
-      comp.grantType = "client_credentials";
-      comp.apiKeyTitle = "apiKey";
-      comp.apiKeyWarning = "apiKeyWarning";
-      comp.apiKeyDescription = "apiKeyRotateDesc";
+    await ApiKeyComponent.open(this.dialogService, {
+      data: {
+        keyType: "organization",
+        isRotation: true,
+        entityId: this.organizationId,
+        postKey: this.organizationApiService.rotateApiKey.bind(this.organizationApiService),
+        scope: "api.organization",
+        grantType: "client_credentials",
+        apiKeyTitle: "apiKey",
+        apiKeyWarning: "apiKeyWarning",
+        apiKeyDescription: "apiKeyRotateDesc",
+      },
     });
   }
 }

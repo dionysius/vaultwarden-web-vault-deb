@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild, ViewContainerRef } from "@angular/core";
 
-import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
+import { DialogService } from "@bitwarden/components";
 
 import { ApiKeyComponent } from "./api-key.component";
 
@@ -22,8 +22,8 @@ export class SecurityKeysComponent implements OnInit {
   constructor(
     private userVerificationService: UserVerificationService,
     private stateService: StateService,
-    private modalService: ModalService,
     private apiService: ApiService,
+    private dialogService: DialogService,
   ) {}
 
   async ngOnInit() {
@@ -32,30 +32,34 @@ export class SecurityKeysComponent implements OnInit {
 
   async viewUserApiKey() {
     const entityId = await this.stateService.getUserId();
-    await this.modalService.openViewRef(ApiKeyComponent, this.viewUserApiKeyModalRef, (comp) => {
-      comp.keyType = "user";
-      comp.entityId = entityId;
-      comp.postKey = this.apiService.postUserApiKey.bind(this.apiService);
-      comp.scope = "api";
-      comp.grantType = "client_credentials";
-      comp.apiKeyTitle = "apiKey";
-      comp.apiKeyWarning = "userApiKeyWarning";
-      comp.apiKeyDescription = "userApiKeyDesc";
+    await ApiKeyComponent.open(this.dialogService, {
+      data: {
+        keyType: "user",
+        entityId: entityId,
+        postKey: this.apiService.postUserApiKey.bind(this.apiService),
+        scope: "api",
+        grantType: "client_credentials",
+        apiKeyTitle: "apiKey",
+        apiKeyWarning: "userApiKeyWarning",
+        apiKeyDescription: "userApiKeyDesc",
+      },
     });
   }
 
   async rotateUserApiKey() {
     const entityId = await this.stateService.getUserId();
-    await this.modalService.openViewRef(ApiKeyComponent, this.rotateUserApiKeyModalRef, (comp) => {
-      comp.keyType = "user";
-      comp.isRotation = true;
-      comp.entityId = entityId;
-      comp.postKey = this.apiService.postUserRotateApiKey.bind(this.apiService);
-      comp.scope = "api";
-      comp.grantType = "client_credentials";
-      comp.apiKeyTitle = "apiKey";
-      comp.apiKeyWarning = "userApiKeyWarning";
-      comp.apiKeyDescription = "apiKeyRotateDesc";
+    await ApiKeyComponent.open(this.dialogService, {
+      data: {
+        keyType: "user",
+        isRotation: true,
+        entityId: entityId,
+        postKey: this.apiService.postUserRotateApiKey.bind(this.apiService),
+        scope: "api",
+        grantType: "client_credentials",
+        apiKeyTitle: "apiKey",
+        apiKeyWarning: "userApiKeyWarning",
+        apiKeyDescription: "apiKeyRotateDesc",
+      },
     });
   }
 }
