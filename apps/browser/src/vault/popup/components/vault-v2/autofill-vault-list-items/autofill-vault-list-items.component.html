@@ -8,17 +8,19 @@
 ></app-vault-list-items-container>
 <ng-container *ngIf="showEmptyAutofillTip$ | async">
   <bit-section>
-    <popup-section-header [title]="'autofillSuggestions' | i18n">
+    <bit-section-header>
+      <h2 bitTypography="h6">
+        {{ "autofillSuggestions" | i18n }}
+      </h2>
       <button
         *ngIf="showRefresh"
         bitIconButton="bwi-refresh"
         size="small"
-        slot="title-suffix"
         type="button"
         [appA11yTitle]="'refresh' | i18n"
         (click)="refreshCurrentTab()"
       ></button>
-    </popup-section-header>
+    </bit-section-header>
     <span class="tw-text-muted tw-px-1" bitTypography="body2">{{
       "autofillSuggestionsTip" | i18n
     }}</span>

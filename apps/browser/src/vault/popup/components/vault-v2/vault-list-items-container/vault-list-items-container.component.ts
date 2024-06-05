@@ -10,10 +10,10 @@ import {
   IconButtonModule,
   ItemModule,
   SectionComponent,
+  SectionHeaderComponent,
   TypographyModule,
 } from "@bitwarden/components";
 
-import { PopupSectionHeaderComponent } from "../../../../../platform/popup/popup-section-header/popup-section-header.component";
 import { PopupCipherView } from "../../../views/popup-cipher.view";
 import { ItemCopyActionsComponent } from "../item-copy-action/item-copy-actions.component";
 import { ItemMoreOptionsComponent } from "../item-more-options/item-more-options.component";
@@ -28,7 +28,7 @@ import { ItemMoreOptionsComponent } from "../item-more-options/item-more-options
     SectionComponent,
     TypographyModule,
     JslibModule,
-    PopupSectionHeaderComponent,
+    SectionHeaderComponent,
     RouterLink,
     ItemCopyActionsComponent,
     ItemMoreOptionsComponent,

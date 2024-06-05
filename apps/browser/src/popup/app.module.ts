@@ -46,7 +46,6 @@ import { PopupFooterComponent } from "../platform/popup/layout/popup-footer.comp
 import { PopupHeaderComponent } from "../platform/popup/layout/popup-header.component";
 import { PopupPageComponent } from "../platform/popup/layout/popup-page.component";
 import { PopupTabNavigationComponent } from "../platform/popup/layout/popup-tab-navigation.component";
-import { PopupSectionHeaderComponent } from "../platform/popup/popup-section-header/popup-section-header.component";
 import { FilePopoutCalloutComponent } from "../tools/popup/components/file-popout-callout.component";
 import { GeneratorComponent } from "../tools/popup/generator/generator.component";
 import { PasswordGeneratorHistoryComponent } from "../tools/popup/generator/password-generator-history.component";
@@ -119,7 +118,6 @@ import "../platform/popup/locales";
     PopupFooterComponent,
     PopupHeaderComponent,
     UserVerificationDialogComponent,
-    PopupSectionHeaderComponent,
     CurrentAccountComponent,
   ],
   declarations: [
