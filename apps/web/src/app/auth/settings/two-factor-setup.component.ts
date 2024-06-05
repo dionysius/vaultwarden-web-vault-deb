@@ -1,3 +1,4 @@
+import { DialogRef } from "@angular/cdk/dialog";
 import { Component, OnDestroy, OnInit, Type, ViewChild, ViewContainerRef } from "@angular/core";
 import { firstValueFrom, lastValueFrom, Observable, Subject, takeUntil } from "rxjs";
 
@@ -178,11 +179,14 @@ export class TwoFactorSetupComponent implements OnInit, OnDestroy {
         if (!result) {
           return;
         }
-        const emailComp = await this.openModal(this.emailModalRef, TwoFactorEmailComponent);
-        await emailComp.auth(result);
-        emailComp.onUpdated.pipe(takeUntil(this.destroy$)).subscribe((enabled: boolean) => {
-          this.updateStatus(enabled, TwoFactorProviderType.Email);
+        const authComp: DialogRef<boolean, any> = TwoFactorEmailComponent.open(this.dialogService, {
+          data: result,
         });
+        authComp.componentInstance.onChangeStatus
+          .pipe(takeUntil(this.destroy$))
+          .subscribe((enabled: boolean) => {
+            this.updateStatus(enabled, TwoFactorProviderType.Email);
+          });
         break;
       }
       case TwoFactorProviderType.WebAuthn: {

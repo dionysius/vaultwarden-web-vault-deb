@@ -1,4 +1,6 @@
-import { Component } from "@angular/core";
+import { DIALOG_DATA, DialogConfig, DialogRef } from "@angular/cdk/dialog";
+import { Component, EventEmitter, Inject, Output } from "@angular/core";
+import { FormBuilder, Validators } from "@angular/forms";
 import { firstValueFrom, map } from "rxjs";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
@@ -19,18 +21,22 @@ import { TwoFactorBaseComponent } from "./two-factor-base.component";
 @Component({
   selector: "app-two-factor-email",
   templateUrl: "two-factor-email.component.html",
+  outputs: ["onUpdated"],
 })
 export class TwoFactorEmailComponent extends TwoFactorBaseComponent {
+  @Output() onChangeStatus: EventEmitter<boolean> = new EventEmitter();
   type = TwoFactorProviderType.Email;
-  email: string;
-  token: string;
   sentEmail: string;
   formPromise: Promise<TwoFactorEmailResponse>;
   emailPromise: Promise<unknown>;
-
   override componentName = "app-two-factor-email";
+  formGroup = this.formBuilder.group({
+    token: [null],
+    email: ["", [Validators.email, Validators.required]],
+  });
 
   constructor(
+    @Inject(DIALOG_DATA) protected data: AuthResponse<TwoFactorEmailResponse>,
     apiService: ApiService,
     i18nService: I18nService,
     platformUtilsService: PlatformUtilsService,
@@ -38,6 +44,8 @@ export class TwoFactorEmailComponent extends TwoFactorBaseComponent {
     userVerificationService: UserVerificationService,
     private accountService: AccountService,
     dialogService: DialogService,
+    private formBuilder: FormBuilder,
+    private dialogRef: DialogRef,
   ) {
     super(
       apiService,
@@ -48,31 +56,49 @@ export class TwoFactorEmailComponent extends TwoFactorBaseComponent {
       dialogService,
     );
   }
+  get token() {
+    return this.formGroup.get("token").value;
+  }
+  set token(value: string) {
+    this.formGroup.get("token").setValue(value);
+  }
+  get email() {
+    return this.formGroup.get("email").value;
+  }
+  set email(value: string) {
+    this.formGroup.get("email").setValue(value);
+  }
+
+  async ngOnInit() {
+    await this.auth(this.data);
+  }
 
   auth(authResponse: AuthResponse<TwoFactorEmailResponse>) {
     super.auth(authResponse);
     return this.processResponse(authResponse.response);
   }
 
-  submit() {
+  submit = async () => {
     if (this.enabled) {
-      return super.disable(this.formPromise);
+      await this.disableEmail();
+      this.onChangeStatus.emit(false);
     } else {
-      return this.enable();
+      await this.enable();
+      this.onChangeStatus.emit(true);
     }
+  };
+
+  private disableEmail() {
+    return super.disable(this.formPromise);
   }
 
-  async sendEmail() {
-    try {
-      const request = await this.buildRequestModel(TwoFactorEmailRequest);
-      request.email = this.email;
-      this.emailPromise = this.apiService.postTwoFactorEmailSetup(request);
-      await this.emailPromise;
-      this.sentEmail = this.email;
-    } catch (e) {
-      this.logService.error(e);
-    }
-  }
+  sendEmail = async () => {
+    const request = await this.buildRequestModel(TwoFactorEmailRequest);
+    request.email = this.email;
+    this.emailPromise = this.apiService.postTwoFactorEmailSetup(request);
+    await this.emailPromise;
+    this.sentEmail = this.email;
+  };
 
   protected async enable() {
     const request = await this.buildRequestModel(UpdateTwoFactorEmailRequest);
@@ -86,6 +112,10 @@ export class TwoFactorEmailComponent extends TwoFactorBaseComponent {
     });
   }
 
+  onClose = () => {
+    this.dialogRef.close(this.enabled);
+  };
+
   private async processResponse(response: TwoFactorEmailResponse) {
     this.token = null;
     this.email = response.email;
@@ -95,5 +125,16 @@ export class TwoFactorEmailComponent extends TwoFactorBaseComponent {
         this.accountService.activeAccount$.pipe(map((a) => a?.email)),
       );
     }
+  }
+  /**
+   * Strongly typed helper to open a TwoFactorEmailComponentComponent
+   * @param dialogService Instance of the dialog service that will be used to open the dialog
+   * @param config Configuration for the dialog
+   */
+  static open(
+    dialogService: DialogService,
+    config: DialogConfig<AuthResponse<TwoFactorEmailResponse>>,
+  ) {
+    return dialogService.open<boolean>(TwoFactorEmailComponent, config);
   }
 }
