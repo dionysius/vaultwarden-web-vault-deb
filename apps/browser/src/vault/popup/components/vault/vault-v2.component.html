@@ -11,7 +11,10 @@
     </ng-container>
   </popup-header>
 
-  <div *ngIf="showEmptyState$ | async" class="tw-flex tw-flex-col tw-h-full tw-justify-center">
+  <div
+    *ngIf="vaultState === VaultStateEnum.Empty"
+    class="tw-flex tw-flex-col tw-h-full tw-justify-center"
+  >
     <bit-no-items [icon]="vaultIcon">
       <ng-container slot="title">{{ "yourVaultIsEmpty" | i18n }}</ng-container>
       <ng-container slot="description">{{ "autofillSuggestionsTip" | i18n }}</ng-container>
@@ -21,13 +24,12 @@
     </bit-no-items>
   </div>
 
-  <ng-container *ngIf="!(showEmptyState$ | async)">
+  <ng-container *ngIf="vaultState !== VaultStateEnum.Empty">
     <app-vault-v2-search> </app-vault-v2-search>
 
     <app-vault-list-filters></app-vault-list-filters>
-
     <div
-      *ngIf="(showNoResultsState$ | async) && !(showDeactivatedOrg$ | async)"
+      *ngIf="vaultState === VaultStateEnum.NoResults"
       class="tw-flex tw-flex-col tw-justify-center tw-h-auto tw-pt-12"
     >
       <bit-no-items [icon]="noResultsIcon">
@@ -37,7 +39,7 @@
     </div>
 
     <div
-      *ngIf="showDeactivatedOrg$ | async"
+      *ngIf="vaultState === VaultStateEnum.DeactivatedOrg"
       class="tw-flex tw-flex-col tw-justify-center tw-h-auto tw-pt-12"
     >
       <bit-no-items [icon]="deactivatedIcon">
@@ -46,7 +48,7 @@
       </bit-no-items>
     </div>
 
-    <ng-container *ngIf="!(showNoResultsState$ | async) && !(showDeactivatedOrg$ | async)">
+    <ng-container *ngIf="vaultState === null">
       <app-autofill-vault-list-items></app-autofill-vault-list-items>
       <app-vault-list-items-container
         [title]="'favorites' | i18n"
