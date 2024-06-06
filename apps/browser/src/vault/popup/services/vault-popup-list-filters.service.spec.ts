@@ -4,6 +4,7 @@ import { BehaviorSubject, skipWhile } from "rxjs";
 
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
+import { ProductType } from "@bitwarden/common/enums";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CollectionService } from "@bitwarden/common/vault/abstractions/collection.service";
@@ -18,7 +19,7 @@ import { MY_VAULT_ID, VaultPopupListFiltersService } from "./vault-popup-list-fi
 
 describe("VaultPopupListFiltersService", () => {
   let service: VaultPopupListFiltersService;
-  const memberOrganizations$ = new BehaviorSubject<{ name: string; id: string }[]>([]);
+  const memberOrganizations$ = new BehaviorSubject<Organization[]>([]);
   const folderViews$ = new BehaviorSubject([]);
   const cipherViews$ = new BehaviorSubject({});
   const decryptedCollections$ = new BehaviorSubject<CollectionView[]>([]);
@@ -100,7 +101,8 @@ describe("VaultPopupListFiltersService", () => {
     });
 
     it('adds "myVault" to the list of organizations when there are other organizations', (done) => {
-      memberOrganizations$.next([{ name: "bobby's org", id: "1234-3323-23223" }]);
+      const orgs = [{ name: "bobby's org", id: "1234-3323-23223" }] as Organization[];
+      memberOrganizations$.next(orgs);
 
       service.organizations$.subscribe((organizations) => {
         expect(organizations.map((o) => o.label)).toEqual(["myVault", "bobby's org"]);
@@ -109,10 +111,11 @@ describe("VaultPopupListFiltersService", () => {
     });
 
     it("sorts organizations by name", (done) => {
-      memberOrganizations$.next([
+      const orgs = [
         { name: "bobby's org", id: "1234-3323-23223" },
         { name: "alice's org", id: "2223-4343-99888" },
-      ]);
+      ] as Organization[];
+      memberOrganizations$.next(orgs);
 
       service.organizations$.subscribe((organizations) => {
         expect(organizations.map((o) => o.label)).toEqual([
@@ -121,6 +124,65 @@ describe("VaultPopupListFiltersService", () => {
           "bobby's org",
         ]);
         done();
+      });
+    });
+
+    describe("icons", () => {
+      it("sets family icon for family organizations", (done) => {
+        const orgs = [
+          {
+            name: "family org",
+            id: "1234-3323-23223",
+            enabled: true,
+            planProductType: ProductType.Families,
+          },
+        ] as Organization[];
+
+        memberOrganizations$.next(orgs);
+
+        service.organizations$.subscribe((organizations) => {
+          expect(organizations.map((o) => o.icon)).toEqual(["bwi-user", "bwi-family"]);
+          done();
+        });
+      });
+
+      it("sets family icon for free organizations", (done) => {
+        const orgs = [
+          {
+            name: "free org",
+            id: "1234-3323-23223",
+            enabled: true,
+            planProductType: ProductType.Free,
+          },
+        ] as Organization[];
+
+        memberOrganizations$.next(orgs);
+
+        service.organizations$.subscribe((organizations) => {
+          expect(organizations.map((o) => o.icon)).toEqual(["bwi-user", "bwi-family"]);
+          done();
+        });
+      });
+
+      it("sets warning icon for disabled organizations", (done) => {
+        const orgs = [
+          {
+            name: "free org",
+            id: "1234-3323-23223",
+            enabled: false,
+            planProductType: ProductType.Free,
+          },
+        ] as Organization[];
+
+        memberOrganizations$.next(orgs);
+
+        service.organizations$.subscribe((organizations) => {
+          expect(organizations.map((o) => o.icon)).toEqual([
+            "bwi-user",
+            "bwi-exclamation-triangle tw-text-danger",
+          ]);
+          done();
+        });
       });
     });
   });
