@@ -129,15 +129,6 @@ const routes: Routes = [
         data: { titleId: "joinOrganization", doNotSaveUrl: false } satisfies DataProperties,
       },
       {
-        path: "accept-emergency",
-        canActivate: [deepLinkGuard()],
-        data: { titleId: "acceptEmergency", doNotSaveUrl: false } satisfies DataProperties,
-        loadComponent: () =>
-          import("./auth/emergency-access/accept/accept-emergency.component").then(
-            (mod) => mod.AcceptEmergencyComponent,
-          ),
-      },
-      {
         path: "accept-families-for-enterprise",
         component: AcceptFamilySponsorshipComponent,
         canActivate: [deepLinkGuard()],
@@ -222,6 +213,29 @@ const routes: Routes = [
           pageTitle: "recoverAccountTwoStep",
           titleId: "recoverAccountTwoStep",
         } satisfies DataProperties & AnonLayoutWrapperData,
+      },
+      {
+        path: "accept-emergency",
+        canActivate: [deepLinkGuard()],
+        children: [
+          {
+            path: "",
+            data: {
+              pageTitle: "emergencyAccess",
+              titleId: "acceptEmergency",
+              doNotSaveUrl: false,
+            } satisfies DataProperties & AnonLayoutWrapperData,
+            loadComponent: () =>
+              import("./auth/emergency-access/accept/accept-emergency.component").then(
+                (mod) => mod.AcceptEmergencyComponent,
+              ),
+          },
+          {
+            path: "",
+            component: EnvironmentSelectorComponent,
+            outlet: "environment-selector",
+          },
+        ],
       },
     ],
   },
