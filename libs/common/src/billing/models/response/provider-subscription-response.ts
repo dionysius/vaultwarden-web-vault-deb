@@ -4,11 +4,11 @@ export class ProviderSubscriptionResponse extends BaseResponse {
   status: string;
   currentPeriodEndDate: Date;
   discountPercentage?: number | null;
+  plans: ProviderPlanResponse[] = [];
   collectionMethod: string;
   unpaidPeriodEndDate?: string;
   gracePeriod?: number | null;
   suspensionDate?: string;
-  plans: Plans[] = [];
 
   constructor(response: any) {
     super(response);
@@ -21,12 +21,12 @@ export class ProviderSubscriptionResponse extends BaseResponse {
     this.suspensionDate = this.getResponseProperty("suspensionDate");
     const plans = this.getResponseProperty("plans");
     if (plans != null) {
-      this.plans = plans.map((i: any) => new Plans(i));
+      this.plans = plans.map((i: any) => new ProviderPlanResponse(i));
     }
   }
 }
 
-export class Plans extends BaseResponse {
+export class ProviderPlanResponse extends BaseResponse {
   planName: string;
   seatMinimum: number;
   assignedSeats: number;

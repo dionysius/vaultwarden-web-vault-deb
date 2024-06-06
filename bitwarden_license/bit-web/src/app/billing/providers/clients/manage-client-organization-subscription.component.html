@@ -7,22 +7,20 @@
     <p>
       {{ "manageSeatsDescription" | i18n }}
     </p>
-    <bit-form-field>
+    <bit-form-field disableMargin>
       <bit-label>
         {{ "assignedSeats" | i18n }}
       </bit-label>
       <input id="assignedSeats" type="number" bitInput required [(ngModel)]="assignedSeats" />
+      <bit-hint class="tw-text-muted" *ngIf="remainingOpenSeats > 0">
+        <div class="tw-grid tw-grid-flow-col tw-gap-1 tw-grid-cols-1 tw-grid-rows-2">
+          <span class="tw-col-span-1"
+            >{{ unassignedSeats }} {{ "unassignedSeatsDescription" | i18n | lowercase }}</span
+          >
+          <span class="tw-col-span-1">0 {{ "purchaseSeatDescription" | i18n | lowercase }}</span>
+        </div>
+      </bit-hint>
     </bit-form-field>
-    <ng-container *ngIf="remainingOpenSeats > 0">
-      <p>
-        <small class="tw-text-muted">{{ unassignedSeats }}</small>
-        <small class="tw-text-muted">{{ "unassignedSeatsDescription" | i18n }}</small>
-      </p>
-      <p>
-        <small class="tw-text-muted">{{ AdditionalSeatPurchased }}</small>
-        <small class="tw-text-muted">{{ "purchaseSeatDescription" | i18n }}</small>
-      </p>
-    </ng-container>
   </div>
   <ng-container bitDialogFooter>
     <button

@@ -2,11 +2,12 @@ import { DIALOG_DATA, DialogConfig, DialogRef } from "@angular/cdk/dialog";
 import { Component, Inject, OnInit } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
 
+import { BillingApiServiceAbstraction } from "@bitwarden/common/billing/abstractions/billilng-api.service.abstraction";
 import { PlanType } from "@bitwarden/common/billing/enums";
 import { PlanResponse } from "@bitwarden/common/billing/models/response/plan.response";
+import { ProviderPlanResponse } from "@bitwarden/common/billing/models/response/provider-subscription-response";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
-import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 
 import { WebProviderService } from "../../../admin-console/providers/services/web-provider.service";
 
@@ -33,6 +34,7 @@ type PlanCard = {
   name: string;
   cost: number;
   type: PlanType;
+  plan: PlanResponse;
   selected: boolean;
 };
 
@@ -41,20 +43,24 @@ type PlanCard = {
   templateUrl: "./create-client-organization.component.html",
 })
 export class CreateClientOrganizationComponent implements OnInit {
-  protected ResultType = CreateClientOrganizationResultType;
   protected formGroup = this.formBuilder.group({
     clientOwnerEmail: ["", [Validators.required, Validators.email]],
     organizationName: ["", Validators.required],
     seats: [null, [Validators.required, Validators.min(1)]],
   });
+  protected loading = true;
   protected planCards: PlanCard[];
+  protected ResultType = CreateClientOrganizationResultType;
+
+  private providerPlans: ProviderPlanResponse[];
 
   constructor(
+    private billingApiService: BillingApiServiceAbstraction,
     @Inject(DIALOG_DATA) private dialogParams: CreateClientOrganizationParams,
     private dialogRef: DialogRef<CreateClientOrganizationResultType>,
     private formBuilder: FormBuilder,
     private i18nService: I18nService,
-    private platformUtilsService: PlatformUtilsService,
+    private toastService: ToastService,
     private webProviderService: WebProviderService,
   ) {}
 
@@ -92,6 +98,11 @@ export class CreateClientOrganizationComponent implements OnInit {
   }
 
   async ngOnInit(): Promise<void> {
+    const subscription = await this.billingApiService.getProviderSubscription(
+      this.dialogParams.providerId,
+    );
+    this.providerPlans = subscription?.plans ?? [];
+
     const teamsPlan = this.dialogParams.plans.find((plan) => plan.type === PlanType.TeamsMonthly);
     const enterprisePlan = this.dialogParams.plans.find(
       (plan) => plan.type === PlanType.EnterpriseMonthly,
@@ -102,15 +113,19 @@ export class CreateClientOrganizationComponent implements OnInit {
         name: this.i18nService.t("planNameTeams"),
         cost: teamsPlan.PasswordManager.seatPrice * 0.65, // 35% off for MSPs,
         type: teamsPlan.type,
+        plan: teamsPlan,
         selected: true,
       },
       {
         name: this.i18nService.t("planNameEnterprise"),
         cost: enterprisePlan.PasswordManager.seatPrice * 0.65, // 35% off for MSPs,
         type: enterprisePlan.type,
+        plan: enterprisePlan,
         selected: false,
       },
     ];
+
+    this.loading = false;
   }
 
   protected selectPlan(name: string) {
@@ -135,8 +150,23 @@ export class CreateClientOrganizationComponent implements OnInit {
       this.formGroup.value.seats,
     );
 
-    this.platformUtilsService.showToast("success", null, this.i18nService.t("createdNewClient"));
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("createdNewClient"),
+    });
 
     this.dialogRef.close(this.ResultType.Submitted);
   };
+
+  protected get unassignedSeatsForSelectedPlan(): number {
+    if (this.loading || !this.planCards) {
+      return 0;
+    }
+    const selectedPlan = this.planCards.find((planCard) => planCard.selected).plan;
+    const selectedProviderPlan = this.providerPlans.find(
+      (providerPlan) => providerPlan.planName === selectedPlan.name,
+    );
+    return selectedProviderPlan.seatMinimum - selectedProviderPlan.assignedSeats;
+  }
 }

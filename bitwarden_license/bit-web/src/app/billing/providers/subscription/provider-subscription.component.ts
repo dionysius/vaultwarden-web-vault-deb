@@ -4,7 +4,7 @@ import { Subject, concatMap, takeUntil } from "rxjs";
 
 import { BillingApiServiceAbstraction } from "@bitwarden/common/billing/abstractions/billilng-api.service.abstraction";
 import {
-  Plans,
+  ProviderPlanResponse,
   ProviderSubscriptionResponse,
 } from "@bitwarden/common/billing/models/response/provider-subscription-response";
 
@@ -75,7 +75,7 @@ export class ProviderSubscriptionComponent {
     return totalSeats > 1 ? totalSeats.toString() : "";
   }
 
-  sumCost(plans: Plans[]): number {
+  sumCost(plans: ProviderPlanResponse[]): number {
     return plans.reduce((acc, plan) => acc + plan.cost, 0);
   }
 

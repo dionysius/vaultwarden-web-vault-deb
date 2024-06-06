@@ -4,7 +4,7 @@ import { Component, Inject, OnInit } from "@angular/core";
 import { ProviderOrganizationOrganizationDetailsResponse } from "@bitwarden/common/admin-console/models/response/provider/provider-organization.response";
 import { BillingApiServiceAbstraction as BillingApiService } from "@bitwarden/common/billing/abstractions/billilng-api.service.abstraction";
 import { UpdateClientOrganizationRequest } from "@bitwarden/common/billing/models/request/update-client-organization.request";
-import { Plans } from "@bitwarden/common/billing/models/response/provider-subscription-response";
+import { ProviderPlanResponse } from "@bitwarden/common/billing/models/response/provider-subscription-response";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { DialogService } from "@bitwarden/components";
@@ -83,7 +83,7 @@ export class ManageClientOrganizationSubscriptionComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  getPurchasedSeatsByPlan(planName: string, plans: Plans[]): number {
+  getPurchasedSeatsByPlan(planName: string, plans: ProviderPlanResponse[]): number {
     const plan = plans.find((plan) => plan.planName === planName);
     if (plan) {
       return plan.purchasedSeats;
@@ -92,7 +92,7 @@ export class ManageClientOrganizationSubscriptionComponent implements OnInit {
     }
   }
 
-  getAssignedByPlan(planName: string, plans: Plans[]): number {
+  getAssignedByPlan(planName: string, plans: ProviderPlanResponse[]): number {
     const plan = plans.find((plan) => plan.planName === planName);
     if (plan) {
       return plan.assignedSeats;
@@ -101,7 +101,7 @@ export class ManageClientOrganizationSubscriptionComponent implements OnInit {
     }
   }
 
-  getProviderSeatMinimumByPlan(planName: string, plans: Plans[]) {
+  getProviderSeatMinimumByPlan(planName: string, plans: ProviderPlanResponse[]) {
     const plan = plans.find((plan) => plan.planName === planName);
     if (plan) {
       return plan.seatMinimum;

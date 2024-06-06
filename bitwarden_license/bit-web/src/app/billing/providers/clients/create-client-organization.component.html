@@ -1,5 +1,5 @@
 <form [formGroup]="formGroup" [bitSubmit]="submit">
-  <bit-dialog dialogSize="large">
+  <bit-dialog dialogSize="large" [loading]="loading">
     <span bitDialogTitle class="tw-font-semibold">
       {{ "newClientOrganization" | i18n }}
     </span>
@@ -49,11 +49,21 @@
         </bit-form-field>
       </div>
       <div class="tw-grid tw-grid-flow-col tw-grid-cols-2 tw-gap-4">
-        <bit-form-field>
+        <bit-form-field disableMargin>
           <bit-label>
             {{ "seats" | i18n }}
           </bit-label>
           <input type="text" bitInput formControlName="seats" />
+          <bit-hint
+            class="tw-text-muted tw-grid tw-grid-flow-col tw-gap-1 tw-grid-cols-1 tw-grid-rows-2"
+            *ngIf="unassignedSeatsForSelectedPlan > 0"
+          >
+            <span class="tw-col-span-1"
+              >{{ unassignedSeatsForSelectedPlan }}
+              {{ "unassignedSeatsDescription" | i18n | lowercase }}</span
+            >
+            <span class="tw-col-span-1">0 {{ "purchaseSeatDescription" | i18n | lowercase }}</span>
+          </bit-hint>
         </bit-form-field>
       </div>
     </div>

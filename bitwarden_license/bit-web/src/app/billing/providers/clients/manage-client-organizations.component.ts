@@ -158,6 +158,4 @@ export class ManageClientOrganizationsComponent extends BaseClientsComponent {
 
     await this.load();
   };
-  protected readonly openManageClientOrganizationNameDialog =
-    openManageClientOrganizationNameDialog;
 }
