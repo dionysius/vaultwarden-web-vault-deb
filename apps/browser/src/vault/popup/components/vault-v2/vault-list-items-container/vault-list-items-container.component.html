@@ -1,4 +1,4 @@
-<bit-section *ngIf="ciphers?.length > 0">
+<bit-section *ngIf="ciphers?.length > 0 || description">
   <bit-section-header>
     <h2 bitTypography="h6">
       {{ title }}
@@ -13,6 +13,9 @@
     ></button>
     <span bitTypography="body2" slot="end">{{ ciphers.length }}</span>
   </bit-section-header>
+  <div *ngIf="description" class="tw-text-muted tw-px-1 tw-mb-2" bitTypography="body2">
+    {{ description }}
+  </div>
   <bit-item-group>
     <bit-item *ngFor="let cipher of ciphers">
       <a

@@ -3,6 +3,7 @@ import { Component } from "@angular/core";
 import { combineLatest, map, Observable } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
+import { CipherType } from "@bitwarden/common/vault/enums";
 import {
   IconButtonModule,
   SectionComponent,
@@ -45,7 +46,7 @@ export class AutofillVaultListItemsComponent {
 
   /**
    * Observable that determines whether the empty autofill tip should be shown.
-   * The tip is shown when there are no ciphers to autofill, no filter is applied, and autofill is allowed in
+   * The tip is shown when there are no login ciphers to autofill, no filter is applied, and autofill is allowed in
    * the current context (e.g. not in a popout).
    * @protected
    */
@@ -54,7 +55,10 @@ export class AutofillVaultListItemsComponent {
     this.autofillCiphers$,
     this.vaultPopupItemsService.autofillAllowed$,
   ]).pipe(
-    map(([hasFilter, ciphers, canAutoFill]) => !hasFilter && canAutoFill && ciphers.length === 0),
+    map(
+      ([hasFilter, ciphers, canAutoFill]) =>
+        !hasFilter && canAutoFill && ciphers.filter((c) => c.type == CipherType.Login).length === 0,
+    ),
   );
 
   constructor(private vaultPopupItemsService: VaultPopupItemsService) {

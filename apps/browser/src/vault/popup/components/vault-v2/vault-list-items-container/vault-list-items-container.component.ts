@@ -51,6 +51,13 @@ export class VaultListItemsContainerComponent {
   title: string;
 
   /**
+   * Optional description for the vault list item section. Will be shown below the title even when
+   * no ciphers are available.
+   */
+  @Input()
+  description: string;
+
+  /**
    * Option to show a refresh button in the section header.
    */
   @Input({ transform: booleanAttribute })
