@@ -97,19 +97,15 @@ export abstract class BaseEventsComponent {
     this.loading = true;
     let events: EventView[] = [];
     let promise: Promise<any>;
-    try {
-      promise = this.loadAndParseEvents(
-        dates[0],
-        dates[1],
-        clearExisting ? null : this.continuationToken,
-      );
+    promise = this.loadAndParseEvents(
+      dates[0],
+      dates[1],
+      clearExisting ? null : this.continuationToken,
+    );
 
-      const result = await promise;
-      this.continuationToken = result.continuationToken;
-      events = result.events;
-    } catch (e) {
-      this.logService.error(`Handled exception: ${e}`);
-    }
+    const result = await promise;
+    this.continuationToken = result.continuationToken;
+    events = result.events;
 
     if (!clearExisting && this.events != null && this.events.length > 0) {
       this.events = this.events.concat(events);
