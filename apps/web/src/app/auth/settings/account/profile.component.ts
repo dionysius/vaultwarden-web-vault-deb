@@ -1,28 +1,25 @@
-import { ViewChild, ViewContainerRef, Component, OnDestroy, OnInit } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup } from "@angular/forms";
 import { Subject, takeUntil } from "rxjs";
 
-import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { UpdateProfileRequest } from "@bitwarden/common/auth/models/request/update-profile.request";
 import { ProfileResponse } from "@bitwarden/common/models/response/profile.response";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
+import { DialogService } from "@bitwarden/components";
 
-import { ChangeAvatarComponent } from "./change-avatar.component";
+import { ChangeAvatarDialogComponent } from "./change-avatar-dialog.component";
 
 @Component({
   selector: "app-profile",
   templateUrl: "profile.component.html",
 })
-export class ProfileComponent implements OnInit, OnDestroy {
+export class ProfileComponent implements OnInit {
   loading = true;
   profile: ProfileResponse;
   fingerprintMaterial: string;
-
-  @ViewChild("avatarModalTemplate", { read: ViewContainerRef, static: true })
-  avatarModalRef: ViewContainerRef;
   private destroy$ = new Subject<void>();
 
   protected formGroup = new FormGroup({
@@ -35,7 +32,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
     private stateService: StateService,
-    private modalService: ModalService,
+    private dialogService: DialogService,
   ) {}
 
   async ngOnInit() {
@@ -53,23 +50,16 @@ export class ProfileComponent implements OnInit, OnDestroy {
       });
   }
 
+  openChangeAvatar = async () => {
+    ChangeAvatarDialogComponent.open(this.dialogService, {
+      data: { profile: this.profile },
+    });
+  };
+
   async ngOnDestroy() {
     this.destroy$.next();
     this.destroy$.complete();
   }
-
-  openChangeAvatar = async () => {
-    const modalOpened = await this.modalService.openViewRef(
-      ChangeAvatarComponent,
-      this.avatarModalRef,
-      (modal) => {
-        modal.profile = this.profile;
-        modal.changeColor.pipe(takeUntil(this.destroy$)).subscribe(() => {
-          modalOpened[0].close();
-        });
-      },
-    );
-  };
 
   submit = async () => {
     const request = new UpdateProfileRequest(
