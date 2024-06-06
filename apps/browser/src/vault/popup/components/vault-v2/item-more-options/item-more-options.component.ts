@@ -3,10 +3,17 @@ import { booleanAttribute, Component, Input } from "@angular/core";
 import { Router, RouterModule } from "@angular/router";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
+import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CipherRepromptType, CipherType } from "@bitwarden/common/vault/enums";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
-import { DialogService, IconButtonModule, ItemModule, MenuModule } from "@bitwarden/components";
+import {
+  DialogService,
+  IconButtonModule,
+  ItemModule,
+  MenuModule,
+  ToastService,
+} from "@bitwarden/components";
 import { PasswordRepromptService } from "@bitwarden/vault";
 
 import { BrowserApi } from "../../../../../platform/browser/browser-api";
@@ -38,8 +45,10 @@ export class ItemMoreOptionsComponent {
     private cipherService: CipherService,
     private vaultPopupItemsService: VaultPopupItemsService,
     private passwordRepromptService: PasswordRepromptService,
+    private toastService: ToastService,
     private dialogService: DialogService,
     private router: Router,
+    private i18nService: I18nService,
   ) {}
 
   get canEdit() {
@@ -85,6 +94,13 @@ export class ItemMoreOptionsComponent {
     this.cipher.favorite = !this.cipher.favorite;
     const encryptedCipher = await this.cipherService.encrypt(this.cipher);
     await this.cipherService.updateWithServer(encryptedCipher);
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t(
+        this.cipher.favorite ? "itemAddedToFavorites" : "itemRemovedFromFavorites",
+      ),
+    });
   }
 
   /**
