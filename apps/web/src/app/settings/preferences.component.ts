@@ -158,7 +158,7 @@ export class PreferencesComponent implements OnInit {
     this.form.setValue(initialFormValues, { emitEvent: false });
   }
 
-  async submit() {
+  submit = async () => {
     if (!this.form.controls.vaultTimeout.valid) {
       this.platformUtilsService.showToast(
         "error",
@@ -188,7 +188,7 @@ export class PreferencesComponent implements OnInit {
         this.i18nService.t("preferencesUpdated"),
       );
     }
-  }
+  };
 
   ngOnDestroy() {
     this.destroy$.next();
