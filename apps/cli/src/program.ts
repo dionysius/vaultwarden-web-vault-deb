@@ -83,6 +83,11 @@ export class Program extends BaseProgram {
     });
 
     program.on("--help", () => {
+      writeLn(
+        chalk.yellowBright(
+          "\n  Tip: Managing and retrieving secrets for dev environments is easier with Bitwarden Secrets Manager. Learn more under https://bitwarden.com/products/secrets-manager/",
+        ),
+      );
       writeLn("\n  Examples:");
       writeLn("");
       writeLn("    bw login");
