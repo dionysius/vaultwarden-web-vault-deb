@@ -1,7 +1,5 @@
 <form [formGroup]="formGroup" [bitSubmit]="submit" [appApiAction]="formPromise">
-  <bit-dialog [loading]="loading">
-    <span bitDialogTitle>{{ "editPolicy" | i18n }} - {{ policy.name | i18n }}</span>
-
+  <bit-dialog [loading]="loading" [title]="'editPolicy' | i18n" [subtitle]="policy.name | i18n">
     <ng-container bitDialogContent>
       <div *ngIf="loading">
         <i
