@@ -82,13 +82,6 @@ export abstract class StateService<T extends Account = Account> {
   ) => Promise<void>;
   getDuckDuckGoSharedKey: (options?: StorageOptions) => Promise<string>;
   setDuckDuckGoSharedKey: (value: string, options?: StorageOptions) => Promise<void>;
-  getEnableBrowserIntegration: (options?: StorageOptions) => Promise<boolean>;
-  setEnableBrowserIntegration: (value: boolean, options?: StorageOptions) => Promise<void>;
-  getEnableBrowserIntegrationFingerprint: (options?: StorageOptions) => Promise<boolean>;
-  setEnableBrowserIntegrationFingerprint: (
-    value: boolean,
-    options?: StorageOptions,
-  ) => Promise<void>;
   getEncryptedPasswordGenerationHistory: (
     options?: StorageOptions,
   ) => Promise<GeneratedPasswordHistory[]>;
@@ -99,8 +92,6 @@ export abstract class StateService<T extends Account = Account> {
   getIsAuthenticated: (options?: StorageOptions) => Promise<boolean>;
   getLastSync: (options?: StorageOptions) => Promise<string>;
   setLastSync: (value: string, options?: StorageOptions) => Promise<void>;
-  getMinimizeOnCopyToClipboard: (options?: StorageOptions) => Promise<boolean>;
-  setMinimizeOnCopyToClipboard: (value: boolean, options?: StorageOptions) => Promise<void>;
   getPasswordGenerationOptions: (options?: StorageOptions) => Promise<PasswordGeneratorOptions>;
   setPasswordGenerationOptions: (
     value: PasswordGeneratorOptions,

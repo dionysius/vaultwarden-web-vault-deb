@@ -10,7 +10,6 @@ import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.se
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { BiometricStateService } from "@bitwarden/common/platform/biometrics/biometric-state.service";
 import { KeySuffixOptions } from "@bitwarden/common/platform/enums";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
@@ -23,6 +22,7 @@ import { BrowserSyncVerificationDialogComponent } from "../app/components/browse
 import { LegacyMessage } from "../models/native-messaging/legacy-message";
 import { LegacyMessageWrapper } from "../models/native-messaging/legacy-message-wrapper";
 import { Message } from "../models/native-messaging/message";
+import { DesktopSettingsService } from "../platform/services/desktop-settings.service";
 
 import { NativeMessageHandlerService } from "./native-message-handler.service";
 
@@ -40,7 +40,7 @@ export class NativeMessagingService {
     private platformUtilService: PlatformUtilsService,
     private logService: LogService,
     private messagingService: MessagingService,
-    private stateService: StateService,
+    private desktopSettingService: DesktopSettingsService,
     private biometricStateService: BiometricStateService,
     private nativeMessageHandler: NativeMessageHandlerService,
     private dialogService: DialogService,
@@ -78,7 +78,7 @@ export class NativeMessagingService {
         return;
       }
 
-      if (await this.stateService.getEnableBrowserIntegrationFingerprint()) {
+      if (await firstValueFrom(this.desktopSettingService.browserIntegrationFingerprintEnabled$)) {
         ipc.platform.nativeMessaging.sendMessage({
           command: "verifyFingerprint",
           appId: appId,

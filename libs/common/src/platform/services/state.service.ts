@@ -347,45 +347,6 @@ export class StateService<
       : await this.secureStorageService.save(DDG_SHARED_KEY, value, options);
   }
 
-  async getEnableBrowserIntegration(options?: StorageOptions): Promise<boolean> {
-    return (
-      (await this.getGlobals(this.reconcileOptions(options, await this.defaultOnDiskOptions())))
-        ?.enableBrowserIntegration ?? false
-    );
-  }
-
-  async setEnableBrowserIntegration(value: boolean, options?: StorageOptions): Promise<void> {
-    const globals = await this.getGlobals(
-      this.reconcileOptions(options, await this.defaultOnDiskOptions()),
-    );
-    globals.enableBrowserIntegration = value;
-    await this.saveGlobals(
-      globals,
-      this.reconcileOptions(options, await this.defaultOnDiskOptions()),
-    );
-  }
-
-  async getEnableBrowserIntegrationFingerprint(options?: StorageOptions): Promise<boolean> {
-    return (
-      (await this.getGlobals(this.reconcileOptions(options, await this.defaultOnDiskOptions())))
-        ?.enableBrowserIntegrationFingerprint ?? false
-    );
-  }
-
-  async setEnableBrowserIntegrationFingerprint(
-    value: boolean,
-    options?: StorageOptions,
-  ): Promise<void> {
-    const globals = await this.getGlobals(
-      this.reconcileOptions(options, await this.defaultOnDiskOptions()),
-    );
-    globals.enableBrowserIntegrationFingerprint = value;
-    await this.saveGlobals(
-      globals,
-      this.reconcileOptions(options, await this.defaultOnDiskOptions()),
-    );
-  }
-
   async setEnableDuckDuckGoBrowserIntegration(
     value: boolean,
     options?: StorageOptions,
@@ -453,24 +414,6 @@ export class StateService<
     await this.saveAccount(
       account,
       this.reconcileOptions(options, await this.defaultOnDiskMemoryOptions()),
-    );
-  }
-
-  async getMinimizeOnCopyToClipboard(options?: StorageOptions): Promise<boolean> {
-    return (
-      (await this.getAccount(this.reconcileOptions(options, await this.defaultOnDiskOptions())))
-        ?.settings?.minimizeOnCopyToClipboard ?? false
-    );
-  }
-
-  async setMinimizeOnCopyToClipboard(value: boolean, options?: StorageOptions): Promise<void> {
-    const account = await this.getAccount(
-      this.reconcileOptions(options, await this.defaultOnDiskOptions()),
-    );
-    account.settings.minimizeOnCopyToClipboard = value;
-    await this.saveAccount(
-      account,
-      this.reconcileOptions(options, await this.defaultOnDiskOptions()),
     );
   }
 

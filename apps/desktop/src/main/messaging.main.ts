@@ -2,8 +2,7 @@ import * as fs from "fs";
 import * as path from "path";
 
 import { app, ipcMain } from "electron";
-
-import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
+import { firstValueFrom } from "rxjs";
 
 import { Main } from "../main";
 import { DesktopSettingsService } from "../platform/services/desktop-settings.service";
@@ -17,7 +16,6 @@ export class MessagingMain {
 
   constructor(
     private main: Main,
-    private stateService: StateService,
     private desktopSettingsService: DesktopSettingsService,
   ) {}
 
@@ -29,10 +27,13 @@ export class MessagingMain {
       const loginSettings = app.getLoginItemSettings();
       await this.desktopSettingsService.setOpenAtLogin(loginSettings.openAtLogin);
     }
-    ipcMain.on("messagingService", async (event: any, message: any) => this.onMessage(message));
+    ipcMain.on(
+      "messagingService",
+      async (event: any, message: any) => await this.onMessage(message),
+    );
   }
 
-  onMessage(message: any) {
+  async onMessage(message: any) {
     switch (message.command) {
       case "scheduleNextSync":
         this.scheduleNextSync();
@@ -44,13 +45,14 @@ export class MessagingMain {
         this.updateTrayMenu(message.updateRequest);
         break;
       case "minimizeOnCopy":
-        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-        // eslint-disable-next-line @typescript-eslint/no-floating-promises
-        this.stateService.getMinimizeOnCopyToClipboard().then((shouldMinimize) => {
-          if (shouldMinimize && this.main.windowMain.win !== null) {
+        {
+          const shouldMinimizeOnCopy = await firstValueFrom(
+            this.desktopSettingsService.minimizeOnCopy$,
+          );
+          if (shouldMinimizeOnCopy && this.main.windowMain.win !== null) {
             this.main.windowMain.win.minimize();
           }
-        });
+        }
         break;
       case "showTray":
         this.main.trayMain.showTray();

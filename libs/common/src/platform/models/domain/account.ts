@@ -143,7 +143,6 @@ export class AccountProfile {
 
 export class AccountSettings {
   defaultUriMatch?: UriMatchStrategySetting;
-  minimizeOnCopyToClipboard?: boolean;
   passwordGenerationOptions?: PasswordGeneratorOptions;
   usernameGenerationOptions?: UsernameGeneratorOptions;
   generatorOptions?: GeneratorOptions;
