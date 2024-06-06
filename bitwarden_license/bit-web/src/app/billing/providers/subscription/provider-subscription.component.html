@@ -1,32 +1,10 @@
 <app-header></app-header>
-
 <bit-container>
   <ng-container *ngIf="!firstLoaded && loading">
     <i class="bwi bwi-spinner bwi-spin text-muted" title="{{ 'loading' | i18n }}"></i>
     <span class="sr-only">{{ "loading" | i18n }}</span>
   </ng-container>
-
-  <ng-container *ngIf="subscription && firstLoaded">
-    <bit-callout type="warning" title="{{ 'canceled' | i18n }}" *ngIf="false">
-      {{ "subscriptionCanceled" | i18n }}</bit-callout
-    >
-
-    <dl class="tw-grid tw-grid-flow-col tw-grid-rows-2">
-      <dt>{{ "billingPlan" | i18n }}</dt>
-      <dd>{{ "providerPlan" | i18n }}</dd>
-      <ng-container *ngIf="subscription">
-        <dt>{{ "status" | i18n }}</dt>
-        <dd>
-          <span class="tw-capitalize">{{ subscription.status }}</span>
-        </dd>
-        <dt [ngClass]="{ 'tw-text-danger': isExpired }">{{ "nextCharge" | i18n }}</dt>
-        <dd [ngClass]="{ 'tw-text-danger': isExpired }">
-          {{ subscription.currentPeriodEndDate | date: "mediumDate" }}
-        </dd>
-      </ng-container>
-    </dl>
-  </ng-container>
-
+  <app-subscription-status [providerSubscriptionResponse]="subscription"> </app-subscription-status>
   <ng-container>
     <div class="tw-flex-col">
       <strong class="tw-block tw-border-0 tw-border-b tw-border-solid tw-border-secondary-300 pb-2"

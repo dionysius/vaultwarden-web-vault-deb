@@ -4,6 +4,10 @@ export class ProviderSubscriptionResponse extends BaseResponse {
   status: string;
   currentPeriodEndDate: Date;
   discountPercentage?: number | null;
+  collectionMethod: string;
+  unpaidPeriodEndDate?: string;
+  gracePeriod?: number | null;
+  suspensionDate?: string;
   plans: Plans[] = [];
 
   constructor(response: any) {
@@ -11,6 +15,10 @@ export class ProviderSubscriptionResponse extends BaseResponse {
     this.status = this.getResponseProperty("status");
     this.currentPeriodEndDate = new Date(this.getResponseProperty("currentPeriodEndDate"));
     this.discountPercentage = this.getResponseProperty("discountPercentage");
+    this.collectionMethod = this.getResponseProperty("collectionMethod");
+    this.unpaidPeriodEndDate = this.getResponseProperty("unpaidPeriodEndDate");
+    this.gracePeriod = this.getResponseProperty("gracePeriod");
+    this.suspensionDate = this.getResponseProperty("suspensionDate");
     const plans = this.getResponseProperty("plans");
     if (plans != null) {
       this.plans = plans.map((i: any) => new Plans(i));

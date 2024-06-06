@@ -1,0 +1,32 @@
+<ng-container>
+  <bit-callout *ngIf="data.callout" [type]="data.callout.severity" [title]="data.callout.header">
+    <p>{{ data.callout.body }}</p>
+    <button
+      *ngIf="data.callout.showReinstatementButton"
+      bitButton
+      buttonType="secondary"
+      [bitAction]="requestReinstatement"
+      type="button"
+    >
+      {{ "reinstateSubscription" | i18n }}
+    </button>
+  </bit-callout>
+  <dl class="tw-grid tw-grid-flow-col tw-grid-rows-2">
+    <dt>{{ "billingPlan" | i18n }}</dt>
+    <dd>{{ "providerPlan" | i18n }}</dd>
+    <ng-container *ngIf="data.status && data.date">
+      <dt>{{ data.status.label }}</dt>
+      <dd>
+        <span class="tw-capitalize">
+          {{ displayedStatus }}
+        </span>
+      </dd>
+      <dt [ngClass]="{ 'tw-text-danger': isExpired }">
+        {{ data.date.label | titlecase }}
+      </dt>
+      <dd [ngClass]="{ 'tw-text-danger': isExpired }">
+        {{ data.date.value | date: "mediumDate" }}
+      </dd>
+    </ng-container>
+  </dl>
+</ng-container>
