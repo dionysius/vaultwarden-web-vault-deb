@@ -40,6 +40,7 @@ import { AboutPageV2Component } from "../tools/popup/settings/about-page/about-p
 import { AboutPageComponent } from "../tools/popup/settings/about-page/about-page.component";
 import { MoreFromBitwardenPageV2Component } from "../tools/popup/settings/about-page/more-from-bitwarden-page-v2.component";
 import { MoreFromBitwardenPageComponent } from "../tools/popup/settings/about-page/more-from-bitwarden-page.component";
+import { ExportBrowserV2Component } from "../tools/popup/settings/export/export-browser-v2.component";
 import { ExportBrowserComponent } from "../tools/popup/settings/export/export-browser.component";
 import { ImportBrowserV2Component } from "../tools/popup/settings/import/import-browser-v2.component";
 import { ImportBrowserComponent } from "../tools/popup/settings/import/import-browser.component";
@@ -243,12 +244,11 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     data: { state: "import" },
   }),
-  {
+  ...extensionRefreshSwap(ExportBrowserComponent, ExportBrowserV2Component, {
     path: "export",
-    component: ExportBrowserComponent,
     canActivate: [AuthGuard],
     data: { state: "export" },
-  },
+  }),
   {
     path: "autofill",
     component: AutofillComponent,
