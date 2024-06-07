@@ -3,7 +3,7 @@ import { StorageKey } from "../../types/state";
 import { Utils } from "../misc/utils";
 
 import { array, record } from "./deserialization-helpers";
-import { KeyDefinition, KeyDefinitionOptions } from "./key-definition";
+import { KeyDefinitionOptions } from "./key-definition";
 import { StateDefinition } from "./state-definition";
 
 export type ClearEvent = "lock" | "logout";
@@ -13,15 +13,6 @@ export type UserKeyDefinitionOptions<T> = KeyDefinitionOptions<T> & {
 };
 
 const USER_KEY_DEFINITION_MARKER: unique symbol = Symbol("UserKeyDefinition");
-
-export function isUserKeyDefinition<T>(
-  keyDefinition: KeyDefinition<T> | UserKeyDefinition<T>,
-): keyDefinition is UserKeyDefinition<T> {
-  return (
-    USER_KEY_DEFINITION_MARKER in keyDefinition &&
-    keyDefinition[USER_KEY_DEFINITION_MARKER] === true
-  );
-}
 
 export class UserKeyDefinition<T> {
   readonly [USER_KEY_DEFINITION_MARKER] = true;
@@ -61,20 +52,6 @@ export class UserKeyDefinition<T> {
    */
   get cleanupDelayMs() {
     return this.options.cleanupDelayMs < 0 ? 0 : this.options.cleanupDelayMs ?? 1000;
-  }
-
-  /**
-   *
-   * @param keyDefinition
-   * @returns
-   *
-   * @deprecated You should not use this to convert, just create a {@link UserKeyDefinition}
-   */
-  static fromBaseKeyDefinition<T>(keyDefinition: KeyDefinition<T>) {
-    return new UserKeyDefinition<T>(keyDefinition.stateDefinition, keyDefinition.key, {
-      ...keyDefinition["options"],
-      clearOn: [], // Default to not clearing
-    });
   }
 
   /**

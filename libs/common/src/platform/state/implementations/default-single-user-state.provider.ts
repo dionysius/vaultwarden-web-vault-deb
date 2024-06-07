@@ -1,8 +1,7 @@
 import { UserId } from "../../../types/guid";
 import { StorageServiceProvider } from "../../services/storage-service.provider";
-import { KeyDefinition } from "../key-definition";
 import { StateEventRegistrarService } from "../state-event-registrar.service";
-import { UserKeyDefinition, isUserKeyDefinition } from "../user-key-definition";
+import { UserKeyDefinition } from "../user-key-definition";
 import { SingleUserState } from "../user-state";
 import { SingleUserStateProvider } from "../user-state.provider";
 
@@ -16,13 +15,7 @@ export class DefaultSingleUserStateProvider implements SingleUserStateProvider {
     private readonly stateEventRegistrarService: StateEventRegistrarService,
   ) {}
 
-  get<T>(
-    userId: UserId,
-    keyDefinition: KeyDefinition<T> | UserKeyDefinition<T>,
-  ): SingleUserState<T> {
-    if (!isUserKeyDefinition(keyDefinition)) {
-      keyDefinition = UserKeyDefinition.fromBaseKeyDefinition(keyDefinition);
-    }
+  get<T>(userId: UserId, keyDefinition: UserKeyDefinition<T>): SingleUserState<T> {
     const [location, storageService] = this.storageServiceProvider.get(
       keyDefinition.stateDefinition.defaultStorageLocation,
       keyDefinition.stateDefinition.storageLocationOverrides,
