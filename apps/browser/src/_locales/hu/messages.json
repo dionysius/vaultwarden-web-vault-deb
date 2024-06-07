@@ -389,6 +389,15 @@
   "favorite": {
     "message": "Kedvenc"
   },
+  "unfavorite": {
+    "message": "Nem kedvenc"
+  },
+  "itemAddedToFavorites": {
+    "message": "Item added to favorites"
+  },
+  "itemRemovedFromFavorites": {
+    "message": "Item removed from favorites"
+  },
   "notes": {
     "message": "Jegyzetek"
   },
@@ -409,6 +418,9 @@
   },
   "launch": {
     "message": "Indítás"
+  },
+  "launchWebsite": {
+    "message": "Webhely indítása"
   },
   "website": {
     "message": "Weboldal"
@@ -598,6 +610,9 @@
   },
   "loggedOut": {
     "message": "Kijelentkezett"
+  },
+  "loggedOutDesc": {
+    "message": "You have been logged out of your account."
   },
   "loginExpired": {
     "message": "Bejelentkezési munkamenete lejárt."
@@ -1107,6 +1122,15 @@
   "selfHostedEnvironmentFooter": {
     "message": "A helyileg működtetett Bitwarden telepítés alap webcímének megadása."
   },
+  "selfHostedBaseUrlHint": {
+    "message": "Adjuk meg a helyileg tárolt Bitwarden telepítés alap webcímét. Példa: https://bitwarden.company.com"
+  },
+  "selfHostedCustomEnvHeader": {
+    "message": "Speciális konfigurációhoz külön-külön megadhatjuk az egyes szolgáltatások alap webcímét."
+  },
+  "selfHostedEnvFormInvalid": {
+    "message": "Hozzá kell adni az alapszerver webcímét vagy legalább egy egyedi környezetet."
+  },
   "customEnvironment": {
     "message": "Egyedi környezet"
   },
@@ -1419,6 +1443,15 @@
   "collections": {
     "message": "Gyűjtemények"
   },
+  "nCollections": {
+    "message": "$COUNT$ gyűjtemény",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "favorites": {
     "message": "Kedvencek"
   },
@@ -1648,6 +1681,9 @@
   "autoFillAndSave": {
     "message": "Automatikus kitöltés és mentés"
   },
+  "fillAndSave": {
+    "message": "Kitöltés és mentés"
+  },
   "autoFillSuccessAndSavedUri": {
     "message": "Automatikusan kitöltött elem és mentett URI"
   },
@@ -1743,6 +1779,12 @@
   },
   "ok": {
     "message": "Ok"
+  },
+  "errorRefreshingAccessToken": {
+    "message": "Access Token Refresh Error"
+  },
+  "errorRefreshingAccessTokenDesc": {
+    "message": "No refresh token or API keys found. Please try logging out and logging back in."
   },
   "desktopSyncVerificationTitle": {
     "message": "Asztali szinkronizálás ellenőrzés"
@@ -3263,8 +3305,8 @@
   "clearFiltersOrTryAnother": {
     "message": "Töröljük a szűrőket vagy próbálkozzunk másik keresési kifejezéssel."
   },
-  "copyInfo": {
-    "message": "Adatok másolása, $ITEMNAME$",
+  "copyInfoLabel": {
+    "message": "Infó másolása, $ITEMNAME$",
     "description": "Aria label for a button that opens a menu with options to copy information from an item.",
     "placeholders": {
       "itemname": {
@@ -3273,7 +3315,37 @@
       }
     }
   },
-  "moreOptions": {
+  "copyInfoTitle": {
+    "message": "Infó másolása - $ITEMNAME$",
+    "description": "Title for a button that opens a menu with options to copy information from an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "copyNoteLabel": {
+    "message": "Jegyzet másolása, $ITEMNAME$",
+    "description": "Aria label for a button copies a note to the clipboard.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Note Item"
+      }
+    }
+  },
+  "copyNoteTitle": {
+    "message": "Jegyzet másolása - $ITEMNAME$",
+    "description": "Title for a button copies a note to the clipboard.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Note Item"
+      }
+    }
+  },
+  "moreOptionsLabel": {
     "message": "További opciók, $ITEMNAME$",
     "description": "Aria label for a button that opens a menu with more options for an item.",
     "placeholders": {
@@ -3282,6 +3354,38 @@
         "example": "Secret Item"
       }
     }
+  },
+  "moreOptionsTitle": {
+    "message": "További opciók - $ITEMNAME$",
+    "description": "Title for a button that opens a menu with more options for an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "viewItemTitle": {
+    "message": "Elem megtekkintése - $ITEMNAME$",
+    "description": "Title for a link that opens a view for an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "assignCollections": {
+    "message": "Gyűjtemények hozzárendelése"
+  },
+  "copyEmail": {
+    "message": "Email cím másolása"
+  },
+  "copyPhone": {
+    "message": "Telefonszám másolása"
+  },
+  "copyAddress": {
+    "message": "Cím másolása"
   },
   "adminConsole": {
     "message": "Adminisztrátori konzol"
@@ -3333,5 +3437,14 @@
         "example": "Work"
       }
     }
+  },
+  "itemsWithNoFolder": {
+    "message": "Items with no folder"
+  },
+  "organizationIsDeactivated": {
+    "message": "Organization is deactivated"
+  },
+  "contactYourOrgAdmin": {
+    "message": "Items in deactivated organizations cannot be accessed. Contact your organization owner for assistance."
   }
 }

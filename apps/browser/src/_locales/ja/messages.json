@@ -389,6 +389,15 @@
   "favorite": {
     "message": "お気に入り"
   },
+  "unfavorite": {
+    "message": "お気に入り解除"
+  },
+  "itemAddedToFavorites": {
+    "message": "アイテムをお気に入りに追加しました"
+  },
+  "itemRemovedFromFavorites": {
+    "message": "アイテムをお気に入りから削除しました"
+  },
   "notes": {
     "message": "メモ"
   },
@@ -409,6 +418,9 @@
   },
   "launch": {
     "message": "開く"
+  },
+  "launchWebsite": {
+    "message": "ウェブサイトを開く"
   },
   "website": {
     "message": "ウェブサイト"
@@ -598,6 +610,9 @@
   },
   "loggedOut": {
     "message": "ログアウトしました"
+  },
+  "loggedOutDesc": {
+    "message": "アカウントからログアウトしました。"
   },
   "loginExpired": {
     "message": "ログインセッションの有効期限が切れています。"
@@ -1107,6 +1122,15 @@
   "selfHostedEnvironmentFooter": {
     "message": "セルフホスティングしている Bitwarden のベース URL を指定してください。"
   },
+  "selfHostedBaseUrlHint": {
+    "message": "オンプレミスホストした Bitwarden のベース URL を指定してください。例: https://bitwarden.company.com"
+  },
+  "selfHostedCustomEnvHeader": {
+    "message": "高度な設定では、各サービスのベース URL を個別に指定できます。"
+  },
+  "selfHostedEnvFormInvalid": {
+    "message": "ベース サーバー URL または少なくとも 1 つのカスタム環境を追加する必要があります。"
+  },
   "customEnvironment": {
     "message": "カスタム環境"
   },
@@ -1419,6 +1443,15 @@
   "collections": {
     "message": "コレクション"
   },
+  "nCollections": {
+    "message": "$COUNT$ 個のコレクション",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "favorites": {
     "message": "お気に入り"
   },
@@ -1648,6 +1681,9 @@
   "autoFillAndSave": {
     "message": "自動入力して保存"
   },
+  "fillAndSave": {
+    "message": "入力して保存"
+  },
   "autoFillSuccessAndSavedUri": {
     "message": "アイテムを自動入力して URI を保存しました"
   },
@@ -1743,6 +1779,12 @@
   },
   "ok": {
     "message": "OK"
+  },
+  "errorRefreshingAccessToken": {
+    "message": "アクセストークンの更新エラー"
+  },
+  "errorRefreshingAccessTokenDesc": {
+    "message": "リフレッシュトークンや API キーが見つかりませんでした。ログアウトして再度ログインしてください。"
   },
   "desktopSyncVerificationTitle": {
     "message": "デスクトップ同期の検証"
@@ -3263,7 +3305,7 @@
   "clearFiltersOrTryAnother": {
     "message": "フィルタをクリアするか、別の検索ワードをお試しください"
   },
-  "copyInfo": {
+  "copyInfoLabel": {
     "message": "$ITEMNAME$ の情報をコピー",
     "description": "Aria label for a button that opens a menu with options to copy information from an item.",
     "placeholders": {
@@ -3273,7 +3315,37 @@
       }
     }
   },
-  "moreOptions": {
+  "copyInfoTitle": {
+    "message": "情報をコピー - $ITEMNAME$",
+    "description": "Title for a button that opens a menu with options to copy information from an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "copyNoteLabel": {
+    "message": "$ITEMNAME$ のメモをコピー",
+    "description": "Aria label for a button copies a note to the clipboard.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Note Item"
+      }
+    }
+  },
+  "copyNoteTitle": {
+    "message": "メモをコピー - $ITEMNAME$",
+    "description": "Title for a button copies a note to the clipboard.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Note Item"
+      }
+    }
+  },
+  "moreOptionsLabel": {
     "message": "$ITEMNAME$ のその他のオプション",
     "description": "Aria label for a button that opens a menu with more options for an item.",
     "placeholders": {
@@ -3282,6 +3354,38 @@
         "example": "Secret Item"
       }
     }
+  },
+  "moreOptionsTitle": {
+    "message": "その他のオプション - $ITEMNAME$",
+    "description": "Title for a button that opens a menu with more options for an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "viewItemTitle": {
+    "message": "アイテムを表示 - $ITEMNAME$",
+    "description": "Title for a link that opens a view for an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "assignCollections": {
+    "message": "コレクションを割り当て"
+  },
+  "copyEmail": {
+    "message": "メールアドレスをコピー"
+  },
+  "copyPhone": {
+    "message": "電話番号をコピー"
+  },
+  "copyAddress": {
+    "message": "住所をコピー"
   },
   "adminConsole": {
     "message": "管理コンソール"
@@ -3333,5 +3437,14 @@
         "example": "Work"
       }
     }
+  },
+  "itemsWithNoFolder": {
+    "message": "フォルダーがないアイテム"
+  },
+  "organizationIsDeactivated": {
+    "message": "組織は無効化されています"
+  },
+  "contactYourOrgAdmin": {
+    "message": "無効化された組織のアイテムにアクセスすることはできません。組織の所有者に連絡してください。"
   }
 }

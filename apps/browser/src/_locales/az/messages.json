@@ -389,6 +389,15 @@
   "favorite": {
     "message": "Sevimli"
   },
+  "unfavorite": {
+    "message": "Sevimlilərdən sil"
+  },
+  "itemAddedToFavorites": {
+    "message": "Item added to favorites"
+  },
+  "itemRemovedFromFavorites": {
+    "message": "Item removed from favorites"
+  },
   "notes": {
     "message": "Notlar"
   },
@@ -409,6 +418,9 @@
   },
   "launch": {
     "message": "Başlat"
+  },
+  "launchWebsite": {
+    "message": "Veb saytı başlat"
   },
   "website": {
     "message": "Veb sayt"
@@ -598,6 +610,9 @@
   },
   "loggedOut": {
     "message": "Çıxış edildi"
+  },
+  "loggedOutDesc": {
+    "message": "Hesabınızdan çıxış etmisiniz."
   },
   "loginExpired": {
     "message": "Giriş seansınızın müddəti bitdi."
@@ -1107,6 +1122,15 @@
   "selfHostedEnvironmentFooter": {
     "message": "Öz-özünə sahiblik edən Bitwarden quraşdırmasının baza URL-sini müəyyənləşdirin."
   },
+  "selfHostedBaseUrlHint": {
+    "message": "Şirkət daxili sahiblik edən Bitwarden quraşdırmasının təməl URL-sini qeyd edin. Nümunə: https://bitwarden.company.com"
+  },
+  "selfHostedCustomEnvHeader": {
+    "message": "Qabaqcıl konfiqurasiya üçün hər xidmətin təməl URL-sini müstəqil olaraq qeyd edə bilərsiniz."
+  },
+  "selfHostedEnvFormInvalid": {
+    "message": "Təməl server URL-sini və ya ən azı bir özəl mühiti əlavə etməlisiniz."
+  },
   "customEnvironment": {
     "message": "Özəl mühit"
   },
@@ -1419,6 +1443,15 @@
   "collections": {
     "message": "Kolleksiyalar"
   },
+  "nCollections": {
+    "message": "$COUNT$ kolleksiya",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "favorites": {
     "message": "Sevimlilər"
   },
@@ -1648,6 +1681,9 @@
   "autoFillAndSave": {
     "message": "Avto-doldur və saxla"
   },
+  "fillAndSave": {
+    "message": "Doldur və saxla"
+  },
   "autoFillSuccessAndSavedUri": {
     "message": "Element avto-dolduruldu və URI saxlanıldı"
   },
@@ -1743,6 +1779,12 @@
   },
   "ok": {
     "message": "Oldu"
+  },
+  "errorRefreshingAccessToken": {
+    "message": "Müraciət tokeni təzələmə xətası"
+  },
+  "errorRefreshingAccessTokenDesc": {
+    "message": "Təzələmə tokeni və ya API açarlar tapılmadı. Lütfən çıxış edib yenidən giriş etməyə çalışın."
   },
   "desktopSyncVerificationTitle": {
     "message": "Masaüstü sinxr doğrulaması"
@@ -3263,8 +3305,8 @@
   "clearFiltersOrTryAnother": {
     "message": "Filtrləri təmizləyin və ya başqa bir axtarış terminini sınayın"
   },
-  "copyInfo": {
-    "message": "Məlumatları kopyala, $ITEMNAME$",
+  "copyInfoLabel": {
+    "message": "$ITEMNAME$ elementlərini kopyala",
     "description": "Aria label for a button that opens a menu with options to copy information from an item.",
     "placeholders": {
       "itemname": {
@@ -3273,7 +3315,37 @@
       }
     }
   },
-  "moreOptions": {
+  "copyInfoTitle": {
+    "message": "Məlumatları kopyala - $ITEMNAME$",
+    "description": "Title for a button that opens a menu with options to copy information from an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "copyNoteLabel": {
+    "message": "$ITEMNAME$ notunu kopyala",
+    "description": "Aria label for a button copies a note to the clipboard.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Note Item"
+      }
+    }
+  },
+  "copyNoteTitle": {
+    "message": "Notu kopyala - $ITEMNAME$",
+    "description": "Title for a button copies a note to the clipboard.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Note Item"
+      }
+    }
+  },
+  "moreOptionsLabel": {
     "message": "Daha çox seçim, $ITEMNAME$",
     "description": "Aria label for a button that opens a menu with more options for an item.",
     "placeholders": {
@@ -3282,6 +3354,38 @@
         "example": "Secret Item"
       }
     }
+  },
+  "moreOptionsTitle": {
+    "message": "Daha çox seçim - $ITEMNAME$",
+    "description": "Title for a button that opens a menu with more options for an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "viewItemTitle": {
+    "message": "$ITEMNAME$ elementinə bax",
+    "description": "Title for a link that opens a view for an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "assignCollections": {
+    "message": "Kolleksiyaları təyin et"
+  },
+  "copyEmail": {
+    "message": "E-poçtu kopyala"
+  },
+  "copyPhone": {
+    "message": "Telefonu kopyala"
+  },
+  "copyAddress": {
+    "message": "Ünvanı kopyala"
   },
   "adminConsole": {
     "message": "Admin Konsolu"
@@ -3333,5 +3437,14 @@
         "example": "Work"
       }
     }
+  },
+  "itemsWithNoFolder": {
+    "message": "Qovluğu olmayan elementlər"
+  },
+  "organizationIsDeactivated": {
+    "message": "Təşkilat deaktiv edildi"
+  },
+  "contactYourOrgAdmin": {
+    "message": "Deaktiv edilmiş təşkilatlardakı elementlərə müraciət edilə bilməz. Kömək üçün təşkilatınızın sahibi ilə əlaqə saxlayın."
   }
 }

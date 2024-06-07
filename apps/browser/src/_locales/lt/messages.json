@@ -389,6 +389,15 @@
   "favorite": {
     "message": "Mėgstamas"
   },
+  "unfavorite": {
+    "message": "Unfavorite"
+  },
+  "itemAddedToFavorites": {
+    "message": "Item added to favorites"
+  },
+  "itemRemovedFromFavorites": {
+    "message": "Item removed from favorites"
+  },
   "notes": {
     "message": "Pastabos"
   },
@@ -409,6 +418,9 @@
   },
   "launch": {
     "message": "Paleisti"
+  },
+  "launchWebsite": {
+    "message": "Launch website"
   },
   "website": {
     "message": "Tinklapis"
@@ -598,6 +610,9 @@
   },
   "loggedOut": {
     "message": "Atsijungta"
+  },
+  "loggedOutDesc": {
+    "message": "You have been logged out of your account."
   },
   "loginExpired": {
     "message": "Sesijos laikas baigėsi."
@@ -1107,6 +1122,15 @@
   "selfHostedEnvironmentFooter": {
     "message": "Nurodykite vietinio priglobto „Bitwarden“ diegimo bazinį URL."
   },
+  "selfHostedBaseUrlHint": {
+    "message": "Specify the base URL of your on-premises hosted Bitwarden installation. Example: https://bitwarden.company.com"
+  },
+  "selfHostedCustomEnvHeader": {
+    "message": "For advanced configuration, you can specify the base URL of each service independently."
+  },
+  "selfHostedEnvFormInvalid": {
+    "message": "You must add either the base Server URL or at least one custom environment."
+  },
   "customEnvironment": {
     "message": "Individualizuota aplinka"
   },
@@ -1419,6 +1443,15 @@
   "collections": {
     "message": "Kolekcijos"
   },
+  "nCollections": {
+    "message": "$COUNT$ collections",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "favorites": {
     "message": "Mėgstamiausi"
   },
@@ -1648,6 +1681,9 @@
   "autoFillAndSave": {
     "message": "Automatiškai užpildyti ir išsaugoti"
   },
+  "fillAndSave": {
+    "message": "Fill and save"
+  },
   "autoFillSuccessAndSavedUri": {
     "message": "Elementas automatiškai užpildytas ir URI išsaugotas"
   },
@@ -1744,6 +1780,12 @@
   "ok": {
     "message": "Gerai"
   },
+  "errorRefreshingAccessToken": {
+    "message": "Access Token Refresh Error"
+  },
+  "errorRefreshingAccessTokenDesc": {
+    "message": "No refresh token or API keys found. Please try logging out and logging back in."
+  },
   "desktopSyncVerificationTitle": {
     "message": "Darbalaukio sinchronizavimo verifikavimas"
   },
@@ -1793,10 +1835,10 @@
     "message": "Šiame įrenginyje biometrikos negalima naudoti."
   },
   "biometricsNotUnlockedTitle": {
-    "message": "User locked or logged out"
+    "message": "Naudotojas užrakintas arba atsijungęs"
   },
   "biometricsNotUnlockedDesc": {
-    "message": "Please unlock this user in the desktop application and try again."
+    "message": "Atrakinkite šį naudotoją darbalaukio programoje ir bandykite dar kartą."
   },
   "biometricsFailedTitle": {
     "message": "Biometrika nepavyko"
@@ -3263,7 +3305,7 @@
   "clearFiltersOrTryAnother": {
     "message": "Clear filters or try another search term"
   },
-  "copyInfo": {
+  "copyInfoLabel": {
     "message": "Copy info, $ITEMNAME$",
     "description": "Aria label for a button that opens a menu with options to copy information from an item.",
     "placeholders": {
@@ -3273,7 +3315,37 @@
       }
     }
   },
-  "moreOptions": {
+  "copyInfoTitle": {
+    "message": "Copy info - $ITEMNAME$",
+    "description": "Title for a button that opens a menu with options to copy information from an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "copyNoteLabel": {
+    "message": "Copy Note, $ITEMNAME$",
+    "description": "Aria label for a button copies a note to the clipboard.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Note Item"
+      }
+    }
+  },
+  "copyNoteTitle": {
+    "message": "Copy Note - $ITEMNAME$",
+    "description": "Title for a button copies a note to the clipboard.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Note Item"
+      }
+    }
+  },
+  "moreOptionsLabel": {
     "message": "More options, $ITEMNAME$",
     "description": "Aria label for a button that opens a menu with more options for an item.",
     "placeholders": {
@@ -3282,6 +3354,38 @@
         "example": "Secret Item"
       }
     }
+  },
+  "moreOptionsTitle": {
+    "message": "More options - $ITEMNAME$",
+    "description": "Title for a button that opens a menu with more options for an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "viewItemTitle": {
+    "message": "View item - $ITEMNAME$",
+    "description": "Title for a link that opens a view for an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "assignCollections": {
+    "message": "Assign collections"
+  },
+  "copyEmail": {
+    "message": "Copy email"
+  },
+  "copyPhone": {
+    "message": "Copy phone"
+  },
+  "copyAddress": {
+    "message": "Copy address"
   },
   "adminConsole": {
     "message": "Administratoriaus konsolės"
@@ -3322,7 +3426,7 @@
     }
   },
   "new": {
-    "message": "New"
+    "message": "Naujas"
   },
   "removeItem": {
     "message": "Remove $NAME$",
@@ -3333,5 +3437,14 @@
         "example": "Work"
       }
     }
+  },
+  "itemsWithNoFolder": {
+    "message": "Items with no folder"
+  },
+  "organizationIsDeactivated": {
+    "message": "Organization is deactivated"
+  },
+  "contactYourOrgAdmin": {
+    "message": "Items in deactivated organizations cannot be accessed. Contact your organization owner for assistance."
   }
 }

@@ -389,6 +389,15 @@
   "favorite": {
     "message": "Oblíbené"
   },
+  "unfavorite": {
+    "message": "Unfavorite"
+  },
+  "itemAddedToFavorites": {
+    "message": "Item added to favorites"
+  },
+  "itemRemovedFromFavorites": {
+    "message": "Item removed from favorites"
+  },
   "notes": {
     "message": "Poznámky"
   },
@@ -409,6 +418,9 @@
   },
   "launch": {
     "message": "Spustit"
+  },
+  "launchWebsite": {
+    "message": "Launch website"
   },
   "website": {
     "message": "Webová stránka"
@@ -598,6 +610,9 @@
   },
   "loggedOut": {
     "message": "Odhlášení"
+  },
+  "loggedOutDesc": {
+    "message": "Byli jste odhlášeni ze svého účtu."
   },
   "loginExpired": {
     "message": "Platnost přihlášení vypršela."
@@ -1107,6 +1122,15 @@
   "selfHostedEnvironmentFooter": {
     "message": "Zadejte základní URL adresu vlastní hostované aplikace Bitwarden."
   },
+  "selfHostedBaseUrlHint": {
+    "message": "Zadejte základní URL adresu Vaší vlastní hostované aplikace Bitwarden. Příklad: https://bitwarden.spolecnost.cz"
+  },
+  "selfHostedCustomEnvHeader": {
+    "message": "Pro rozšířená nastavení můžete zadat základní URL adresu každé služby zvlášť."
+  },
+  "selfHostedEnvFormInvalid": {
+    "message": "Musíte přidat buď základní adresu URL serveru nebo alespoň jedno vlastní prostředí."
+  },
   "customEnvironment": {
     "message": "Vlastní prostředí"
   },
@@ -1419,6 +1443,15 @@
   "collections": {
     "message": "Kolekce"
   },
+  "nCollections": {
+    "message": "$COUNT$ collections",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "favorites": {
     "message": "Oblíbené"
   },
@@ -1648,6 +1681,9 @@
   "autoFillAndSave": {
     "message": "Automaticky vyplnit a uložit"
   },
+  "fillAndSave": {
+    "message": "Fill and save"
+  },
   "autoFillSuccessAndSavedUri": {
     "message": "Položka byla automaticky vyplněna a URI bylo uloženo"
   },
@@ -1743,6 +1779,12 @@
   },
   "ok": {
     "message": "OK"
+  },
+  "errorRefreshingAccessToken": {
+    "message": "Chyba aktualizace přístupového tokenu"
+  },
+  "errorRefreshingAccessTokenDesc": {
+    "message": "Nebyly nalezeny žádné obnovovací tokeny nebo API klíče. Zkuste se odhlásit a znovu se přihlásit."
   },
   "desktopSyncVerificationTitle": {
     "message": "Ověření synchronizace s aplikací pro počítač"
@@ -3263,7 +3305,7 @@
   "clearFiltersOrTryAnother": {
     "message": "Vymažte filtry nebo zkuste jiný hledaný výraz"
   },
-  "copyInfo": {
+  "copyInfoLabel": {
     "message": "Kopírovat informace, $ITEMNAME$",
     "description": "Aria label for a button that opens a menu with options to copy information from an item.",
     "placeholders": {
@@ -3273,7 +3315,37 @@
       }
     }
   },
-  "moreOptions": {
+  "copyInfoTitle": {
+    "message": "Kopírovat informace - $ITEMNAME$",
+    "description": "Title for a button that opens a menu with options to copy information from an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "copyNoteLabel": {
+    "message": "Kopírovat poznámku, $ITEMNAME$",
+    "description": "Aria label for a button copies a note to the clipboard.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Note Item"
+      }
+    }
+  },
+  "copyNoteTitle": {
+    "message": "Kopírovat poznámku - $ITEMNAME$",
+    "description": "Title for a button copies a note to the clipboard.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Note Item"
+      }
+    }
+  },
+  "moreOptionsLabel": {
     "message": "Více voleb, $ITEMNAME$",
     "description": "Aria label for a button that opens a menu with more options for an item.",
     "placeholders": {
@@ -3282,6 +3354,38 @@
         "example": "Secret Item"
       }
     }
+  },
+  "moreOptionsTitle": {
+    "message": "Více voleb - $ITEMNAME$",
+    "description": "Title for a button that opens a menu with more options for an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "viewItemTitle": {
+    "message": "Zobrazit položku - $ITEMNAME$",
+    "description": "Title for a link that opens a view for an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "assignCollections": {
+    "message": "Assign collections"
+  },
+  "copyEmail": {
+    "message": "Kopírovat e-mail"
+  },
+  "copyPhone": {
+    "message": "Kopírovat telefon"
+  },
+  "copyAddress": {
+    "message": "Kopírovat adresu"
   },
   "adminConsole": {
     "message": "Konzole správce"
@@ -3333,5 +3437,14 @@
         "example": "Work"
       }
     }
+  },
+  "itemsWithNoFolder": {
+    "message": "Položky bez složky"
+  },
+  "organizationIsDeactivated": {
+    "message": "Organizace je deaktivována"
+  },
+  "contactYourOrgAdmin": {
+    "message": "K položkám v deaktivované organizaci nemáte přístup. Požádejte o pomoc vlastníka organizace."
   }
 }

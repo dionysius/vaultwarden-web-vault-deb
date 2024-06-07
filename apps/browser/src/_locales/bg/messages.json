@@ -389,6 +389,15 @@
   "favorite": {
     "message": "Любими"
   },
+  "unfavorite": {
+    "message": "Изваждане от любими"
+  },
+  "itemAddedToFavorites": {
+    "message": "Item added to favorites"
+  },
+  "itemRemovedFromFavorites": {
+    "message": "Item removed from favorites"
+  },
   "notes": {
     "message": "Бележки"
   },
@@ -409,6 +418,9 @@
   },
   "launch": {
     "message": "Пускане"
+  },
+  "launchWebsite": {
+    "message": "Посещаване на уеб сайта"
   },
   "website": {
     "message": "Сайт"
@@ -598,6 +610,9 @@
   },
   "loggedOut": {
     "message": "Бяхте отписани"
+  },
+  "loggedOutDesc": {
+    "message": "Бяхте отписан(а) от регистрацията си."
   },
   "loginExpired": {
     "message": "Сесията ви изтече."
@@ -1107,6 +1122,15 @@
   "selfHostedEnvironmentFooter": {
     "message": "Укажете базовия адрес за собствената ви инсталирана среда на Bitwarden."
   },
+  "selfHostedBaseUrlHint": {
+    "message": "Посочете базовия адрес на Вашата собствена инсталация на Битуорден. Пример: https://bitwarden.company.com"
+  },
+  "selfHostedCustomEnvHeader": {
+    "message": "За по-детайлна настройка, може да укажете основния адрес на всяка услуга поотделно."
+  },
+  "selfHostedEnvFormInvalid": {
+    "message": "Трябва да добавите или основния адрес на сървъра, или поне една специална среда."
+  },
   "customEnvironment": {
     "message": "Специална среда"
   },
@@ -1419,6 +1443,15 @@
   "collections": {
     "message": "Колекции"
   },
+  "nCollections": {
+    "message": "$COUNT$ колекции",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "favorites": {
     "message": "Любими"
   },
@@ -1648,6 +1681,9 @@
   "autoFillAndSave": {
     "message": "Дописване и обновяване"
   },
+  "fillAndSave": {
+    "message": "Попълване и запазване"
+  },
   "autoFillSuccessAndSavedUri": {
     "message": "Автоматично дописан запис и адрес"
   },
@@ -1743,6 +1779,12 @@
   },
   "ok": {
     "message": "Добре"
+  },
+  "errorRefreshingAccessToken": {
+    "message": "Грешка при опресняването на идентификатора за достъп"
+  },
+  "errorRefreshingAccessTokenDesc": {
+    "message": "Няма намерен идентификатор за опресняване или ключове за ППИ. Опитайте да се отпишете и да се впишете отново."
   },
   "desktopSyncVerificationTitle": {
     "message": "Потвърждаване на синхронизацията на самостоятелното приложение"
@@ -3165,7 +3207,7 @@
     "message": "сървър"
   },
   "hostedAt": {
-    "message": "hosted at"
+    "message": "домакинствано при"
   },
   "useDeviceOrHardwareKey": {
     "message": "Използвайте своето устройство или хардуерен ключ"
@@ -3263,7 +3305,7 @@
   "clearFiltersOrTryAnother": {
     "message": "Изчистете филтрите или опитайте да търсите нещо друго"
   },
-  "copyInfo": {
+  "copyInfoLabel": {
     "message": "Копиране на информацията, $ITEMNAME$",
     "description": "Aria label for a button that opens a menu with options to copy information from an item.",
     "placeholders": {
@@ -3273,7 +3315,37 @@
       }
     }
   },
-  "moreOptions": {
+  "copyInfoTitle": {
+    "message": "Копиране на информацията – $ITEMNAME$",
+    "description": "Title for a button that opens a menu with options to copy information from an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "copyNoteLabel": {
+    "message": "Копиране на бележката, $ITEMNAME$",
+    "description": "Aria label for a button copies a note to the clipboard.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Note Item"
+      }
+    }
+  },
+  "copyNoteTitle": {
+    "message": "Копиране на бележката – $ITEMNAME$",
+    "description": "Title for a button copies a note to the clipboard.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Note Item"
+      }
+    }
+  },
+  "moreOptionsLabel": {
     "message": "Още опции, $ITEMNAME$",
     "description": "Aria label for a button that opens a menu with more options for an item.",
     "placeholders": {
@@ -3282,6 +3354,38 @@
         "example": "Secret Item"
       }
     }
+  },
+  "moreOptionsTitle": {
+    "message": "Още опции – $ITEMNAME$",
+    "description": "Title for a button that opens a menu with more options for an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "viewItemTitle": {
+    "message": "Преглед на елемента – $ITEMNAME$",
+    "description": "Title for a link that opens a view for an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "assignCollections": {
+    "message": "Свързване на колекции"
+  },
+  "copyEmail": {
+    "message": "Копиране на е-пощата"
+  },
+  "copyPhone": {
+    "message": "Копиране на телефона"
+  },
+  "copyAddress": {
+    "message": "Копиране на адреса"
   },
   "adminConsole": {
     "message": "Административна конзола"
@@ -3333,5 +3437,14 @@
         "example": "Work"
       }
     }
+  },
+  "itemsWithNoFolder": {
+    "message": "Елементи без папка"
+  },
+  "organizationIsDeactivated": {
+    "message": "Организацията е деактивирана"
+  },
+  "contactYourOrgAdmin": {
+    "message": "Записите в деактивирани организации не са достъпни. Свържете се със собственика на организацията си за помощ."
   }
 }

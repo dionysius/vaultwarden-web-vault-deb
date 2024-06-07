@@ -389,6 +389,15 @@
   "favorite": {
     "message": "Favorito"
   },
+  "unfavorite": {
+    "message": "Remover dos favoritos"
+  },
+  "itemAddedToFavorites": {
+    "message": "Item adicionado aos favoritos"
+  },
+  "itemRemovedFromFavorites": {
+    "message": "Item removido dos favoritos"
+  },
   "notes": {
     "message": "Notas"
   },
@@ -409,6 +418,9 @@
   },
   "launch": {
     "message": "Iniciar"
+  },
+  "launchWebsite": {
+    "message": "Iniciar site"
   },
   "website": {
     "message": "Site"
@@ -598,6 +610,9 @@
   },
   "loggedOut": {
     "message": "Sessão terminada"
+  },
+  "loggedOutDesc": {
+    "message": "Foi terminada a sessão da sua conta."
   },
   "loginExpired": {
     "message": "A sua sessão expirou."
@@ -1107,6 +1122,15 @@
   "selfHostedEnvironmentFooter": {
     "message": "Especifique o URL de base da sua instalação Bitwarden hospedada no local."
   },
+  "selfHostedBaseUrlHint": {
+    "message": "Especifique o URL de base da sua instalação Bitwarden hospedada no local. Exemplo: https://bitwarden.company.com"
+  },
+  "selfHostedCustomEnvHeader": {
+    "message": "Para uma configuração avançada, pode especificar o URL de base de cada serviço de forma independente."
+  },
+  "selfHostedEnvFormInvalid": {
+    "message": "Deve adicionar o URL do servidor de base ou pelo menos um ambiente personalizado."
+  },
   "customEnvironment": {
     "message": "Ambiente personalizado"
   },
@@ -1419,6 +1443,15 @@
   "collections": {
     "message": "Coleções"
   },
+  "nCollections": {
+    "message": "$COUNT$ coleções",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "favorites": {
     "message": "Favoritos"
   },
@@ -1648,6 +1681,9 @@
   "autoFillAndSave": {
     "message": "Preencher automaticamente e guardar"
   },
+  "fillAndSave": {
+    "message": "Preencher e guardar"
+  },
   "autoFillSuccessAndSavedUri": {
     "message": "Item preenchido automaticamente e URI guardado"
   },
@@ -1743,6 +1779,12 @@
   },
   "ok": {
     "message": "Ok"
+  },
+  "errorRefreshingAccessToken": {
+    "message": "Erro no acesso ao token de atualização"
+  },
+  "errorRefreshingAccessTokenDesc": {
+    "message": "Não foi encontrado nenhum token de atualização ou chaves API. Por favor, tente terminar a sessão e voltar a iniciá-la."
   },
   "desktopSyncVerificationTitle": {
     "message": "Verificação da sincronização da aplicação para computador"
@@ -3263,7 +3305,7 @@
   "clearFiltersOrTryAnother": {
     "message": "Limpe os filtros ou tente outro termo de pesquisa"
   },
-  "copyInfo": {
+  "copyInfoLabel": {
     "message": "Copiar informações, $ITEMNAME$",
     "description": "Aria label for a button that opens a menu with options to copy information from an item.",
     "placeholders": {
@@ -3273,7 +3315,37 @@
       }
     }
   },
-  "moreOptions": {
+  "copyInfoTitle": {
+    "message": "Copiar informações - $ITEMNAME$",
+    "description": "Title for a button that opens a menu with options to copy information from an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "copyNoteLabel": {
+    "message": "Copiar nota, $ITEMNAME$",
+    "description": "Aria label for a button copies a note to the clipboard.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Note Item"
+      }
+    }
+  },
+  "copyNoteTitle": {
+    "message": "Copiar nota - $ITEMNAME$",
+    "description": "Title for a button copies a note to the clipboard.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Note Item"
+      }
+    }
+  },
+  "moreOptionsLabel": {
     "message": "Mais opções, $ITEMNAME$",
     "description": "Aria label for a button that opens a menu with more options for an item.",
     "placeholders": {
@@ -3282,6 +3354,38 @@
         "example": "Secret Item"
       }
     }
+  },
+  "moreOptionsTitle": {
+    "message": "Mais opções - $ITEMNAME$",
+    "description": "Title for a button that opens a menu with more options for an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "viewItemTitle": {
+    "message": "Ver item - $ITEMNAME$",
+    "description": "Title for a link that opens a view for an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "assignCollections": {
+    "message": "Atribuir coleções"
+  },
+  "copyEmail": {
+    "message": "Copiar e-mail"
+  },
+  "copyPhone": {
+    "message": "Copiar telefone"
+  },
+  "copyAddress": {
+    "message": "Copiar endereço"
   },
   "adminConsole": {
     "message": "Consola de administração"
@@ -3333,5 +3437,14 @@
         "example": "Work"
       }
     }
+  },
+  "itemsWithNoFolder": {
+    "message": "Itens sem pasta"
+  },
+  "organizationIsDeactivated": {
+    "message": "A organização está desativada"
+  },
+  "contactYourOrgAdmin": {
+    "message": "Não é possível aceder aos itens de organizações desativadas. Contacte o proprietário da organização para obter assistência."
   }
 }

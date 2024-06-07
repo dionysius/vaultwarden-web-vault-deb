@@ -389,6 +389,15 @@
   "favorite": {
     "message": "Ang Paborito"
   },
+  "unfavorite": {
+    "message": "Unfavorite"
+  },
+  "itemAddedToFavorites": {
+    "message": "Item added to favorites"
+  },
+  "itemRemovedFromFavorites": {
+    "message": "Item removed from favorites"
+  },
   "notes": {
     "message": "Mga nota"
   },
@@ -409,6 +418,9 @@
   },
   "launch": {
     "message": "Paglulunsad"
+  },
+  "launchWebsite": {
+    "message": "Launch website"
   },
   "website": {
     "message": "Website"
@@ -598,6 +610,9 @@
   },
   "loggedOut": {
     "message": "Umalis na"
+  },
+  "loggedOutDesc": {
+    "message": "You have been logged out of your account."
   },
   "loginExpired": {
     "message": "Nag-expire na ang iyong session sa login."
@@ -1107,6 +1122,15 @@
   "selfHostedEnvironmentFooter": {
     "message": "Tukuyin ang base URL ng iyong Bitwarden installation na naka-host sa on-premises."
   },
+  "selfHostedBaseUrlHint": {
+    "message": "Specify the base URL of your on-premises hosted Bitwarden installation. Example: https://bitwarden.company.com"
+  },
+  "selfHostedCustomEnvHeader": {
+    "message": "For advanced configuration, you can specify the base URL of each service independently."
+  },
+  "selfHostedEnvFormInvalid": {
+    "message": "You must add either the base Server URL or at least one custom environment."
+  },
   "customEnvironment": {
     "message": "Kapaligirang Custom"
   },
@@ -1419,6 +1443,15 @@
   "collections": {
     "message": "Koleksyon"
   },
+  "nCollections": {
+    "message": "$COUNT$ collections",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "favorites": {
     "message": "Mga Paborito"
   },
@@ -1648,6 +1681,9 @@
   "autoFillAndSave": {
     "message": "Auto-fill at i-save"
   },
+  "fillAndSave": {
+    "message": "Fill and save"
+  },
   "autoFillSuccessAndSavedUri": {
     "message": "Item na auto-filled at URI na nai-save"
   },
@@ -1743,6 +1779,12 @@
   },
   "ok": {
     "message": "Ok"
+  },
+  "errorRefreshingAccessToken": {
+    "message": "Access Token Refresh Error"
+  },
+  "errorRefreshingAccessTokenDesc": {
+    "message": "No refresh token or API keys found. Please try logging out and logging back in."
   },
   "desktopSyncVerificationTitle": {
     "message": "Pag verify ng pag sync ng desktop"
@@ -3263,7 +3305,7 @@
   "clearFiltersOrTryAnother": {
     "message": "Clear filters or try another search term"
   },
-  "copyInfo": {
+  "copyInfoLabel": {
     "message": "Copy info, $ITEMNAME$",
     "description": "Aria label for a button that opens a menu with options to copy information from an item.",
     "placeholders": {
@@ -3273,7 +3315,37 @@
       }
     }
   },
-  "moreOptions": {
+  "copyInfoTitle": {
+    "message": "Copy info - $ITEMNAME$",
+    "description": "Title for a button that opens a menu with options to copy information from an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "copyNoteLabel": {
+    "message": "Copy Note, $ITEMNAME$",
+    "description": "Aria label for a button copies a note to the clipboard.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Note Item"
+      }
+    }
+  },
+  "copyNoteTitle": {
+    "message": "Copy Note - $ITEMNAME$",
+    "description": "Title for a button copies a note to the clipboard.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Note Item"
+      }
+    }
+  },
+  "moreOptionsLabel": {
     "message": "More options, $ITEMNAME$",
     "description": "Aria label for a button that opens a menu with more options for an item.",
     "placeholders": {
@@ -3282,6 +3354,38 @@
         "example": "Secret Item"
       }
     }
+  },
+  "moreOptionsTitle": {
+    "message": "More options - $ITEMNAME$",
+    "description": "Title for a button that opens a menu with more options for an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "viewItemTitle": {
+    "message": "View item - $ITEMNAME$",
+    "description": "Title for a link that opens a view for an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "assignCollections": {
+    "message": "Assign collections"
+  },
+  "copyEmail": {
+    "message": "Copy email"
+  },
+  "copyPhone": {
+    "message": "Copy phone"
+  },
+  "copyAddress": {
+    "message": "Copy address"
   },
   "adminConsole": {
     "message": "Admin Console"
@@ -3333,5 +3437,14 @@
         "example": "Work"
       }
     }
+  },
+  "itemsWithNoFolder": {
+    "message": "Items with no folder"
+  },
+  "organizationIsDeactivated": {
+    "message": "Organization is deactivated"
+  },
+  "contactYourOrgAdmin": {
+    "message": "Items in deactivated organizations cannot be accessed. Contact your organization owner for assistance."
   }
 }

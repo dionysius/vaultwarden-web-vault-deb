@@ -389,6 +389,15 @@
   "favorite": {
     "message": "Favorito"
   },
+  "unfavorite": {
+    "message": "Desfavoritar"
+  },
+  "itemAddedToFavorites": {
+    "message": "Item added to favorites"
+  },
+  "itemRemovedFromFavorites": {
+    "message": "Item removed from favorites"
+  },
   "notes": {
     "message": "Notas"
   },
@@ -409,6 +418,9 @@
   },
   "launch": {
     "message": "Abrir"
+  },
+  "launchWebsite": {
+    "message": "Abrir site"
   },
   "website": {
     "message": "Site"
@@ -599,6 +611,9 @@
   "loggedOut": {
     "message": "Sessão encerrada"
   },
+  "loggedOutDesc": {
+    "message": "Você foi desconectado de sua conta."
+  },
   "loginExpired": {
     "message": "A sua sessão expirou."
   },
@@ -763,7 +778,7 @@
     "message": "Desbloquear"
   },
   "additionalOptions": {
-    "message": "Additional options"
+    "message": "Opções adicionais"
   },
   "enableContextMenuItem": {
     "message": "Mostrar opções de menu de contexto"
@@ -803,7 +818,7 @@
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportFrom": {
-    "message": "Export from"
+    "message": "Exportar de"
   },
   "exportVault": {
     "message": "Exportar Cofre"
@@ -812,13 +827,13 @@
     "message": "Formato de arquivo"
   },
   "fileEncryptedExportWarningDesc": {
-    "message": "This file export will be password protected and require the file password to decrypt."
+    "message": "Esta arquivo de exportação será protegido por senha e precisará da mesma para ser descriptografado."
   },
   "filePassword": {
-    "message": "File password"
+    "message": "Senha do arquivo"
   },
   "exportPasswordDescription": {
-    "message": "This password will be used to export and import this file"
+    "message": "Esta senha será usada para exportar e importar este arquivo"
   },
   "accountRestrictedOptionDescription": {
     "message": "Use your account encryption key, derived from your account's username and Master Password, to encrypt the export and restrict import to only the current Bitwarden account."
@@ -1106,6 +1121,15 @@
   },
   "selfHostedEnvironmentFooter": {
     "message": "Especifique a URL de base da sua instalação local do Bitwarden."
+  },
+  "selfHostedBaseUrlHint": {
+    "message": "Specify the base URL of your on-premises hosted Bitwarden installation. Example: https://bitwarden.company.com"
+  },
+  "selfHostedCustomEnvHeader": {
+    "message": "For advanced configuration, you can specify the base URL of each service independently."
+  },
+  "selfHostedEnvFormInvalid": {
+    "message": "You must add either the base Server URL or at least one custom environment."
   },
   "customEnvironment": {
     "message": "Ambiente Personalizado"
@@ -1419,6 +1443,15 @@
   "collections": {
     "message": "Coleções"
   },
+  "nCollections": {
+    "message": "$COUNT$ collections",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "favorites": {
     "message": "Favoritos"
   },
@@ -1648,6 +1681,9 @@
   "autoFillAndSave": {
     "message": "Autopreencher e Salvar"
   },
+  "fillAndSave": {
+    "message": "Fill and save"
+  },
   "autoFillSuccessAndSavedUri": {
     "message": "Item Auto-Preenchido e URI Salvo"
   },
@@ -1743,6 +1779,12 @@
   },
   "ok": {
     "message": "Ok"
+  },
+  "errorRefreshingAccessToken": {
+    "message": "Access Token Refresh Error"
+  },
+  "errorRefreshingAccessTokenDesc": {
+    "message": "No refresh token or API keys found. Please try logging out and logging back in."
   },
   "desktopSyncVerificationTitle": {
     "message": "Verificação de sincronização do Desktop"
@@ -3263,8 +3305,8 @@
   "clearFiltersOrTryAnother": {
     "message": "Limpar filtros ou tentar outro termo de pesquisa"
   },
-  "copyInfo": {
-    "message": "Copiar informações, $ITEMNAME$",
+  "copyInfoLabel": {
+    "message": "Copy info, $ITEMNAME$",
     "description": "Aria label for a button that opens a menu with options to copy information from an item.",
     "placeholders": {
       "itemname": {
@@ -3273,8 +3315,38 @@
       }
     }
   },
-  "moreOptions": {
-    "message": "Mais opções, $ITEMNAME$",
+  "copyInfoTitle": {
+    "message": "Copy info - $ITEMNAME$",
+    "description": "Title for a button that opens a menu with options to copy information from an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "copyNoteLabel": {
+    "message": "Copy Note, $ITEMNAME$",
+    "description": "Aria label for a button copies a note to the clipboard.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Note Item"
+      }
+    }
+  },
+  "copyNoteTitle": {
+    "message": "Copy Note - $ITEMNAME$",
+    "description": "Title for a button copies a note to the clipboard.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Note Item"
+      }
+    }
+  },
+  "moreOptionsLabel": {
+    "message": "More options, $ITEMNAME$",
     "description": "Aria label for a button that opens a menu with more options for an item.",
     "placeholders": {
       "itemname": {
@@ -3282,6 +3354,38 @@
         "example": "Secret Item"
       }
     }
+  },
+  "moreOptionsTitle": {
+    "message": "More options - $ITEMNAME$",
+    "description": "Title for a button that opens a menu with more options for an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "viewItemTitle": {
+    "message": "View item - $ITEMNAME$",
+    "description": "Title for a link that opens a view for an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "assignCollections": {
+    "message": "Assign collections"
+  },
+  "copyEmail": {
+    "message": "Copy email"
+  },
+  "copyPhone": {
+    "message": "Copy phone"
+  },
+  "copyAddress": {
+    "message": "Copy address"
   },
   "adminConsole": {
     "message": "Painel de administração"
@@ -3333,5 +3437,14 @@
         "example": "Work"
       }
     }
+  },
+  "itemsWithNoFolder": {
+    "message": "Items with no folder"
+  },
+  "organizationIsDeactivated": {
+    "message": "Organization is deactivated"
+  },
+  "contactYourOrgAdmin": {
+    "message": "Items in deactivated organizations cannot be accessed. Contact your organization owner for assistance."
   }
 }

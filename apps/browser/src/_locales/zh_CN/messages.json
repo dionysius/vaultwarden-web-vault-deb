@@ -389,6 +389,15 @@
   "favorite": {
     "message": "收藏"
   },
+  "unfavorite": {
+    "message": "Unfavorite"
+  },
+  "itemAddedToFavorites": {
+    "message": "Item added to favorites"
+  },
+  "itemRemovedFromFavorites": {
+    "message": "Item removed from favorites"
+  },
   "notes": {
     "message": "备注"
   },
@@ -409,6 +418,9 @@
   },
   "launch": {
     "message": "前往"
+  },
+  "launchWebsite": {
+    "message": "Launch website"
   },
   "website": {
     "message": "网站"
@@ -598,6 +610,9 @@
   },
   "loggedOut": {
     "message": "已注销"
+  },
+  "loggedOutDesc": {
+    "message": "You have been logged out of your account."
   },
   "loginExpired": {
     "message": "您的登录会话已过期。"
@@ -1107,6 +1122,15 @@
   "selfHostedEnvironmentFooter": {
     "message": "指定您本地托管的 Bitwarden 安装的基础 URL。"
   },
+  "selfHostedBaseUrlHint": {
+    "message": "Specify the base URL of your on-premises hosted Bitwarden installation. Example: https://bitwarden.company.com"
+  },
+  "selfHostedCustomEnvHeader": {
+    "message": "For advanced configuration, you can specify the base URL of each service independently."
+  },
+  "selfHostedEnvFormInvalid": {
+    "message": "You must add either the base Server URL or at least one custom environment."
+  },
   "customEnvironment": {
     "message": "自定义环境"
   },
@@ -1419,6 +1443,15 @@
   "collections": {
     "message": "集合"
   },
+  "nCollections": {
+    "message": "$COUNT$ collections",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "favorites": {
     "message": "收藏夹"
   },
@@ -1648,6 +1681,9 @@
   "autoFillAndSave": {
     "message": "自动填充并保存"
   },
+  "fillAndSave": {
+    "message": "Fill and save"
+  },
   "autoFillSuccessAndSavedUri": {
     "message": "项目已自动填充且 URI 已保存"
   },
@@ -1743,6 +1779,12 @@
   },
   "ok": {
     "message": "确定"
+  },
+  "errorRefreshingAccessToken": {
+    "message": "Access Token Refresh Error"
+  },
+  "errorRefreshingAccessTokenDesc": {
+    "message": "No refresh token or API keys found. Please try logging out and logging back in."
   },
   "desktopSyncVerificationTitle": {
     "message": "桌面同步验证"
@@ -3263,8 +3305,8 @@
   "clearFiltersOrTryAnother": {
     "message": "清除筛选器或尝试另一个搜索词"
   },
-  "copyInfo": {
-    "message": "复制信息，$ITEMNAME$",
+  "copyInfoLabel": {
+    "message": "Copy info, $ITEMNAME$",
     "description": "Aria label for a button that opens a menu with options to copy information from an item.",
     "placeholders": {
       "itemname": {
@@ -3273,8 +3315,38 @@
       }
     }
   },
-  "moreOptions": {
-    "message": "更多选项，$ITEMNAME$",
+  "copyInfoTitle": {
+    "message": "Copy info - $ITEMNAME$",
+    "description": "Title for a button that opens a menu with options to copy information from an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "copyNoteLabel": {
+    "message": "Copy Note, $ITEMNAME$",
+    "description": "Aria label for a button copies a note to the clipboard.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Note Item"
+      }
+    }
+  },
+  "copyNoteTitle": {
+    "message": "Copy Note - $ITEMNAME$",
+    "description": "Title for a button copies a note to the clipboard.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Note Item"
+      }
+    }
+  },
+  "moreOptionsLabel": {
+    "message": "More options, $ITEMNAME$",
     "description": "Aria label for a button that opens a menu with more options for an item.",
     "placeholders": {
       "itemname": {
@@ -3282,6 +3354,38 @@
         "example": "Secret Item"
       }
     }
+  },
+  "moreOptionsTitle": {
+    "message": "More options - $ITEMNAME$",
+    "description": "Title for a button that opens a menu with more options for an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "viewItemTitle": {
+    "message": "View item - $ITEMNAME$",
+    "description": "Title for a link that opens a view for an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "assignCollections": {
+    "message": "Assign collections"
+  },
+  "copyEmail": {
+    "message": "Copy email"
+  },
+  "copyPhone": {
+    "message": "Copy phone"
+  },
+  "copyAddress": {
+    "message": "Copy address"
   },
   "adminConsole": {
     "message": "管理控制台"
@@ -3333,5 +3437,14 @@
         "example": "Work"
       }
     }
+  },
+  "itemsWithNoFolder": {
+    "message": "Items with no folder"
+  },
+  "organizationIsDeactivated": {
+    "message": "组织已停用"
+  },
+  "contactYourOrgAdmin": {
+    "message": "Items in deactivated organizations cannot be accessed. Contact your organization owner for assistance."
   }
 }

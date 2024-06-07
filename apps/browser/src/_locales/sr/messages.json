@@ -389,6 +389,15 @@
   "favorite": {
     "message": "Омиљено"
   },
+  "unfavorite": {
+    "message": "Скини омиљено"
+  },
+  "itemAddedToFavorites": {
+    "message": "Item added to favorites"
+  },
+  "itemRemovedFromFavorites": {
+    "message": "Item removed from favorites"
+  },
   "notes": {
     "message": "Белешке"
   },
@@ -409,6 +418,9 @@
   },
   "launch": {
     "message": "Отвори"
+  },
+  "launchWebsite": {
+    "message": "Покрените веб локацију"
   },
   "website": {
     "message": "Веб сајт"
@@ -599,6 +611,9 @@
   "loggedOut": {
     "message": "Одјављено"
   },
+  "loggedOutDesc": {
+    "message": "Одјављени сте са свог налога."
+  },
   "loginExpired": {
     "message": "Ваша сесија је истекла."
   },
@@ -763,7 +778,7 @@
     "message": "Откључај"
   },
   "additionalOptions": {
-    "message": "Additional options"
+    "message": "Додатне опције"
   },
   "enableContextMenuItem": {
     "message": "Прикажи контекстни мени"
@@ -803,7 +818,7 @@
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportFrom": {
-    "message": "Export from"
+    "message": "Извоз од"
   },
   "exportVault": {
     "message": "Извоз сефа"
@@ -812,28 +827,28 @@
     "message": "Формат датотеке"
   },
   "fileEncryptedExportWarningDesc": {
-    "message": "This file export will be password protected and require the file password to decrypt."
+    "message": "Овај извоз ће бити заштићен лозинком и захтеваће лозинку датотеке за дешифровање."
   },
   "filePassword": {
-    "message": "File password"
+    "message": "Лозинка датотеке"
   },
   "exportPasswordDescription": {
-    "message": "This password will be used to export and import this file"
+    "message": "Ова лозинка ће се користити за извоз и увоз ове датотеке"
   },
   "accountRestrictedOptionDescription": {
-    "message": "Use your account encryption key, derived from your account's username and Master Password, to encrypt the export and restrict import to only the current Bitwarden account."
+    "message": "Користите кључ за шифровање вашег налога, изведен из корисничког имена и главне лозинке, да шифрујете извоз и ограничите увоз само на тренутни Bitwarden налог."
   },
   "passwordProtectedOptionDescription": {
-    "message": "Set a file password to encrypt the export and import it to any Bitwarden account using the password for decryption."
+    "message": "Подесите лозинку за шифровање извоза и увоз у било који Bitwarden налог користећи лозинку за дешифровање."
   },
   "exportTypeHeading": {
-    "message": "Export type"
+    "message": "Тип извоза"
   },
   "accountRestricted": {
-    "message": "Account restricted"
+    "message": "Налог је ограничен"
   },
   "filePasswordAndConfirmFilePasswordDoNotMatch": {
-    "message": "“File password”  and “Confirm file password“ do not match."
+    "message": "Унете лозинке се не подударају."
   },
   "warning": {
     "message": "УПОЗОРЕЊЕ",
@@ -1106,6 +1121,15 @@
   },
   "selfHostedEnvironmentFooter": {
     "message": "Наведите основни УРЛ ваше локалне Bitwarden инсталације."
+  },
+  "selfHostedBaseUrlHint": {
+    "message": "Наведите основну УРЛ адресу вашег локалног хостовања Bitwarden-а. Пример: https://bitwarden.company.com"
+  },
+  "selfHostedCustomEnvHeader": {
+    "message": "За напредну конфигурацију, можете навести основну УРЛ адресу сваке услуге независно."
+  },
+  "selfHostedEnvFormInvalid": {
+    "message": "Морате додати или основни УРЛ сервера или бар једно прилагођено окружење."
   },
   "customEnvironment": {
     "message": "Прилагођено окружење"
@@ -1419,6 +1443,15 @@
   "collections": {
     "message": "Колекције"
   },
+  "nCollections": {
+    "message": "$COUNT$ collections",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "favorites": {
     "message": "Омиљени"
   },
@@ -1648,6 +1681,9 @@
   "autoFillAndSave": {
     "message": "Аутоматско попуњавање и чување"
   },
+  "fillAndSave": {
+    "message": "Попуни и сачувај"
+  },
   "autoFillSuccessAndSavedUri": {
     "message": "Аутоматски попуњена ставка и сачуван УРЛ"
   },
@@ -1743,6 +1779,12 @@
   },
   "ok": {
     "message": "У реду"
+  },
+  "errorRefreshingAccessToken": {
+    "message": "Грешка при освежавању токена приступа"
+  },
+  "errorRefreshingAccessTokenDesc": {
+    "message": "Није пронађен токен за освежавање или АПИ кључеви. Покушајте да се одјавите и поново пријавите."
   },
   "desktopSyncVerificationTitle": {
     "message": "Провера синхронизације Desktop-а"
@@ -2213,10 +2255,10 @@
     }
   },
   "exportingOrganizationVaultTitle": {
-    "message": "Exporting organization vault"
+    "message": "Извоз сефа организације"
   },
   "exportingOrganizationVaultDesc": {
-    "message": "Only the organization vault associated with $ORGANIZATION$ will be exported. Items in individual vaults or other organizations will not be included.",
+    "message": "Биће извезен само сеф организације повезан са $ORGANIZATION$. Ставке у појединачним сефовима или другим организацијама неће бити укључене.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -3263,7 +3305,7 @@
   "clearFiltersOrTryAnother": {
     "message": "Обришите филтере или покушајте са другим термином"
   },
-  "copyInfo": {
+  "copyInfoLabel": {
     "message": "Копирај информације, $ITEMNAME$",
     "description": "Aria label for a button that opens a menu with options to copy information from an item.",
     "placeholders": {
@@ -3273,7 +3315,37 @@
       }
     }
   },
-  "moreOptions": {
+  "copyInfoTitle": {
+    "message": "Копирај информације - $ITEMNAME$",
+    "description": "Title for a button that opens a menu with options to copy information from an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "copyNoteLabel": {
+    "message": "Копирај Белешку, $ITEMNAME$",
+    "description": "Aria label for a button copies a note to the clipboard.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Note Item"
+      }
+    }
+  },
+  "copyNoteTitle": {
+    "message": "Копирај Белешку - $ITEMNAME$",
+    "description": "Title for a button copies a note to the clipboard.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Note Item"
+      }
+    }
+  },
+  "moreOptionsLabel": {
     "message": "Више опција, $ITEMNAME$",
     "description": "Aria label for a button that opens a menu with more options for an item.",
     "placeholders": {
@@ -3282,6 +3354,38 @@
         "example": "Secret Item"
       }
     }
+  },
+  "moreOptionsTitle": {
+    "message": "Више опција - $ITEMNAME$",
+    "description": "Title for a button that opens a menu with more options for an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "viewItemTitle": {
+    "message": "Преглед ставке - $ITEMNAME$",
+    "description": "Title for a link that opens a view for an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "assignCollections": {
+    "message": "Додели колекције"
+  },
+  "copyEmail": {
+    "message": "Копирај имејл"
+  },
+  "copyPhone": {
+    "message": "Копирај телефон"
+  },
+  "copyAddress": {
+    "message": "Копирај адресу"
   },
   "adminConsole": {
     "message": "Администраторска конзола"
@@ -3333,5 +3437,14 @@
         "example": "Work"
       }
     }
+  },
+  "itemsWithNoFolder": {
+    "message": "Ставке без фасцикле"
+  },
+  "organizationIsDeactivated": {
+    "message": "Организација је деактивирана"
+  },
+  "contactYourOrgAdmin": {
+    "message": "Није могуће приступити ставкама у деактивираним организацијама. Обратите се власнику ваше организације за помоћ."
   }
 }

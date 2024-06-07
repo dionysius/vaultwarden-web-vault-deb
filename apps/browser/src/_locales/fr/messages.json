@@ -173,19 +173,19 @@
     "message": "Poursuivre vers l'application web ?"
   },
   "continueToWebAppDesc": {
-    "message": "Explore more features of your Bitwarden account on the web app."
+    "message": "Explorez plus de fonctionnalités de votre compte Bitwarden sur l'application Web."
   },
   "continueToHelpCenter": {
-    "message": "Continue to Help Center?"
+    "message": "Continuer vers le centre d'aide ?"
   },
   "continueToHelpCenterDesc": {
-    "message": "Learn more about how to use Bitwarden on the Help Center."
+    "message": "En savoir plus sur l'utilisation de Bitwarden dans le centre d'aide."
   },
   "continueToBrowserExtensionStore": {
-    "message": "Continue to browser extension store?"
+    "message": "Continuer vers le magasin d'extension du navigateur ?"
   },
   "continueToBrowserExtensionStoreDesc": {
-    "message": "Help others find out if Bitwarden is right for them. Visit your browser's extension store and leave a rating now."
+    "message": "Aidez les autres à savoir si Bitwarden est fait pour eux. Visitez le magasin d'extension de votre navigateur et laissez une évaluation maintenant."
   },
   "changeMasterPasswordOnWebConfirmation": {
     "message": "Vous pouvez modifier votre mot de passe principal sur l'application web de Bitwarden."
@@ -205,43 +205,43 @@
     "message": "Se déconnecter"
   },
   "aboutBitwarden": {
-    "message": "About Bitwarden"
+    "message": "À propos de Bitwarden"
   },
   "about": {
     "message": "À propos"
   },
   "moreFromBitwarden": {
-    "message": "More from Bitwarden"
+    "message": "Plus de Bitwarden"
   },
   "continueToBitwardenDotCom": {
-    "message": "Continue to bitwarden.com?"
+    "message": "Continuer vers bitwarden.com?"
   },
   "bitwardenForBusiness": {
-    "message": "Bitwarden for Business"
+    "message": "Bitwarden pour les entreprises"
   },
   "bitwardenAuthenticator": {
     "message": "Bitwarden Authenticator"
   },
   "continueToAuthenticatorPageDesc": {
-    "message": "Bitwarden Authenticator allows you to store authenticator keys and generate TOTP codes for 2-step verification flows. Learn more on the bitwarden.com website"
+    "message": "Bitwarden Authenticator vous permet de stocker les clés d'authentification et de générer des codes TOTP pour les flux de vérification en 2 étapes. En savoir plus sur le site web bitwarden.com"
   },
   "bitwardenSecretsManager": {
     "message": "Bitwarden Secrets Manager"
   },
   "continueToSecretsManagerPageDesc": {
-    "message": "Securely store, manage, and share developer secrets with Bitwarden Secrets Manager. Learn more on the bitwarden.com website."
+    "message": "Stockez, gérez et partagez des mots de passe de développement avec Bitwarden Secrets Manager. Apprenez-en plus sur le site web bitwarden.com."
   },
   "passwordlessDotDev": {
     "message": "Passwordless.dev"
   },
   "continueToPasswordlessDotDevPageDesc": {
-    "message": "Create smooth and secure login experiences free from traditional passwords with Passwordless.dev. Learn more on the bitwarden.com website."
+    "message": "Créez des expériences de connexion faciles et sécurisées à partir des mots de passe traditionnels avec Passwordless.dev. Apprenez-en plus sur le site web bitwarden.com."
   },
   "freeBitwardenFamilies": {
-    "message": "Free Bitwarden Families"
+    "message": "Bitwarden Familles gratuit"
   },
   "freeBitwardenFamiliesPageDesc": {
-    "message": "You are eligible for Free Bitwarden Families. Redeem this offer today in the web app."
+    "message": "Vous êtes éligible pour obtenir Bitwarden Familles gratuitement. Souscrivez à cette offre aujourd'hui dans l'application Web."
   },
   "version": {
     "message": "Version"
@@ -302,7 +302,7 @@
     "message": "Générer automatiquement des mots de passe robustes et uniques pour vos identifiants."
   },
   "bitWebVaultApp": {
-    "message": "Bitwarden web app"
+    "message": "Application web Bitwarden"
   },
   "importItems": {
     "message": "Importer des éléments"
@@ -389,6 +389,15 @@
   "favorite": {
     "message": "Favori"
   },
+  "unfavorite": {
+    "message": "Retirer des favoris"
+  },
+  "itemAddedToFavorites": {
+    "message": "Élément ajouté aux favoris"
+  },
+  "itemRemovedFromFavorites": {
+    "message": "Élément retiré des favoris"
+  },
   "notes": {
     "message": "Notes"
   },
@@ -410,6 +419,9 @@
   "launch": {
     "message": "Ouvrir"
   },
+  "launchWebsite": {
+    "message": "Ouvrir le site web"
+  },
   "website": {
     "message": "Site web"
   },
@@ -423,7 +435,7 @@
     "message": "Autre"
   },
   "unlockMethods": {
-    "message": "Unlock options"
+    "message": "Options de déverrouillage"
   },
   "unlockMethodNeededToChangeTimeoutActionDesc": {
     "message": "Configurez une méthode de déverrouillage pour changer le délai d'expiration de votre coffre."
@@ -432,10 +444,10 @@
     "message": "Configurer une méthode de déverrouillage dans les Paramètres"
   },
   "sessionTimeoutHeader": {
-    "message": "Session timeout"
+    "message": "Expiration de la session"
   },
   "otherOptions": {
-    "message": "Other options"
+    "message": "Autres options"
   },
   "rateExtension": {
     "message": "Noter l'extension"
@@ -598,6 +610,9 @@
   },
   "loggedOut": {
     "message": "Déconnecté"
+  },
+  "loggedOutDesc": {
+    "message": "Vous avez été déconnecté de votre compte."
   },
   "loginExpired": {
     "message": "Votre session a expiré."
@@ -763,7 +778,7 @@
     "message": "Déverrouiller"
   },
   "additionalOptions": {
-    "message": "Additional options"
+    "message": "Options supplémentaires"
   },
   "enableContextMenuItem": {
     "message": "Afficher les options du menu contextuel"
@@ -803,7 +818,7 @@
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportFrom": {
-    "message": "Export from"
+    "message": "Exporter à partir de"
   },
   "exportVault": {
     "message": "Exporter le coffre"
@@ -812,28 +827,28 @@
     "message": "Format de fichier"
   },
   "fileEncryptedExportWarningDesc": {
-    "message": "This file export will be password protected and require the file password to decrypt."
+    "message": "L'export de ce fichier sera protégé par un mot de passe et nécessitera le mot de passe du fichier pour être déchiffré."
   },
   "filePassword": {
-    "message": "File password"
+    "message": "Mot de passe du fichier"
   },
   "exportPasswordDescription": {
-    "message": "This password will be used to export and import this file"
+    "message": "Ce mot de passe sera utilisé pour exporter et importer ce fichier"
   },
   "accountRestrictedOptionDescription": {
-    "message": "Use your account encryption key, derived from your account's username and Master Password, to encrypt the export and restrict import to only the current Bitwarden account."
+    "message": "Utilisez la clé de chiffrement de votre compte, dérivée du nom d'utilisateur et du mot de passe principal de votre compte, pour chiffrer l'export et restreindre l'import au seul compte Bitwarden actuel."
   },
   "passwordProtectedOptionDescription": {
-    "message": "Set a file password to encrypt the export and import it to any Bitwarden account using the password for decryption."
+    "message": "Définissez un mot de passe de fichier pour chiffrer l'exportation et l'importer dans n'importe quel compte Bitwarden en utilisant le mot de passe pour le déchiffrage."
   },
   "exportTypeHeading": {
-    "message": "Export type"
+    "message": "Type d'exportation"
   },
   "accountRestricted": {
-    "message": "Account restricted"
+    "message": "Compte restreint"
   },
   "filePasswordAndConfirmFilePasswordDoNotMatch": {
-    "message": "“File password”  and “Confirm file password“ do not match."
+    "message": "Le \"Mot de passe du fichier\" et le \"Confirmation du mot de passe du fichier\" ne correspondent pas."
   },
   "warning": {
     "message": "AVERTISSEMENT",
@@ -858,7 +873,7 @@
     "message": "Partagé"
   },
   "bitwardenForBusinessPageDesc": {
-    "message": "Bitwarden for Business allows you to share your vault items with others by using an organization. Learn more on the bitwarden.com website."
+    "message": "Bitwarden pour entreprises vous permet de partager les éléments de votre coffre avec les autres en utilisant une organisation. Apprenez-en plus sur le site bitwarden.com."
   },
   "moveToOrganization": {
     "message": "Déplacer vers l'organisation"
@@ -1106,6 +1121,15 @@
   },
   "selfHostedEnvironmentFooter": {
     "message": "Spécifiez l'URL de base de votre installation Bitwarden auto-hébergée."
+  },
+  "selfHostedBaseUrlHint": {
+    "message": "Spécifiez l'URL de base de votre installation autohébergée par Bitwarden. Exemple : https://bitwarden.compagnie.com"
+  },
+  "selfHostedCustomEnvHeader": {
+    "message": "Pour une configuration avancée. Vous pouvez spécifier l'URL de base indépendamment pour chaque service."
+  },
+  "selfHostedEnvFormInvalid": {
+    "message": "Vous devez ajouter soit l'URL du serveur de base, soit au moins un environnement personnalisé."
   },
   "customEnvironment": {
     "message": "Environnement personnalisé"
@@ -1419,6 +1443,15 @@
   "collections": {
     "message": "Collections"
   },
+  "nCollections": {
+    "message": "$COUNT$ collections",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "favorites": {
     "message": "Favoris"
   },
@@ -1637,7 +1670,7 @@
     "message": "Élément restauré"
   },
   "alreadyHaveAccount": {
-    "message": "Already have an account?"
+    "message": "Vous avez déjà un compte ?"
   },
   "vaultTimeoutLogOutConfirmation": {
     "message": "La déconnexion supprimera tout accès à votre coffre et nécessitera une authentification en ligne après la période d'expiration. Êtes-vous sûr de vouloir utiliser ce paramètre ?"
@@ -1647,6 +1680,9 @@
   },
   "autoFillAndSave": {
     "message": "Saisir automatiquement et sauvegarder"
+  },
+  "fillAndSave": {
+    "message": "Remplir et enregistrer"
   },
   "autoFillSuccessAndSavedUri": {
     "message": "Élément saisi automatiquement et URI sauvegardé"
@@ -1744,6 +1780,12 @@
   "ok": {
     "message": "Ok"
   },
+  "errorRefreshingAccessToken": {
+    "message": "Erreur d'Actualisation du Jeton d'Accès"
+  },
+  "errorRefreshingAccessTokenDesc": {
+    "message": "Aucun jeton de rafraîchissement ou clé d'API trouvé. Veuillez essayer de vous déconnecter et de vous reconnecter."
+  },
   "desktopSyncVerificationTitle": {
     "message": "Vérification de la synchronisation avec l'application de bureau"
   },
@@ -1793,10 +1835,10 @@
     "message": "Le déverrouillage biométrique dans le navigateur n’est pas pris en charge sur cet appareil"
   },
   "biometricsNotUnlockedTitle": {
-    "message": "User locked or logged out"
+    "message": "Utilisateur verrouillé ou déconnecté"
   },
   "biometricsNotUnlockedDesc": {
-    "message": "Please unlock this user in the desktop application and try again."
+    "message": "Veuillez déverrouiller cet utilisateur dans l'application de bureau et réessayer."
   },
   "biometricsFailedTitle": {
     "message": "Le déverrouillage biométique a échoué\n"
@@ -2213,10 +2255,10 @@
     }
   },
   "exportingOrganizationVaultTitle": {
-    "message": "Exporting organization vault"
+    "message": "Export du coffre de l'organisation"
   },
   "exportingOrganizationVaultDesc": {
-    "message": "Only the organization vault associated with $ORGANIZATION$ will be exported. Items in individual vaults or other organizations will not be included.",
+    "message": "Seul le coffre d'organisation associé à $ORGANIZATION$ sera exporté. Les éléments dans les coffres individuels ou d'autres organisations ne seront pas inclus.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -2274,7 +2316,7 @@
     "message": "Générer un alias de courriel avec un service de transfert externe."
   },
   "forwarderError": {
-    "message": "$SERVICENAME$ error: $ERRORMESSAGE$",
+    "message": "Erreur $SERVICENAME$ : $ERRORMESSAGE$",
     "description": "Reports an error returned by a forwarding service to the user.",
     "placeholders": {
       "servicename": {
@@ -2288,11 +2330,11 @@
     }
   },
   "forwarderGeneratedBy": {
-    "message": "Generated by Bitwarden.",
+    "message": "Généré par Bitwarden.",
     "description": "Displayed with the address on the forwarding service's configuration screen."
   },
   "forwarderGeneratedByWithWebsite": {
-    "message": "Website: $WEBSITE$. Generated by Bitwarden.",
+    "message": "Site web : $WEBSITE$. Généré par Bitwarden.",
     "description": "Displayed with the address on the forwarding service's configuration screen.",
     "placeholders": {
       "WEBSITE": {
@@ -2302,7 +2344,7 @@
     }
   },
   "forwaderInvalidToken": {
-    "message": "Invalid $SERVICENAME$ API token",
+    "message": "Jeton API $SERVICENAME$ invalide",
     "description": "Displayed when the user's API token is empty or rejected by the forwarding service.",
     "placeholders": {
       "servicename": {
@@ -2312,7 +2354,7 @@
     }
   },
   "forwaderInvalidTokenWithMessage": {
-    "message": "Invalid $SERVICENAME$ API token: $ERRORMESSAGE$",
+    "message": "Jeton API $SERVICENAME$ non valide : $ERRORMESSAGE$",
     "description": "Displayed when the user's API token is rejected by the forwarding service with an error message.",
     "placeholders": {
       "servicename": {
@@ -2326,7 +2368,7 @@
     }
   },
   "forwarderNoAccountId": {
-    "message": "Unable to obtain $SERVICENAME$ masked email account ID.",
+    "message": "Impossible d'obtenir l'ID du compte de courriel masqué $SERVICENAME$.",
     "description": "Displayed when the forwarding service fails to return an account ID.",
     "placeholders": {
       "servicename": {
@@ -2336,7 +2378,7 @@
     }
   },
   "forwarderNoDomain": {
-    "message": "Invalid $SERVICENAME$ domain.",
+    "message": "Domaine de $SERVICENAME$ invalide.",
     "description": "Displayed when the domain is empty or domain authorization failed at the forwarding service.",
     "placeholders": {
       "servicename": {
@@ -2346,7 +2388,7 @@
     }
   },
   "forwarderNoUrl": {
-    "message": "Invalid $SERVICENAME$ url.",
+    "message": "L'URL $SERVICENAME$ invalide.",
     "description": "Displayed when the url of the forwarding service wasn't supplied.",
     "placeholders": {
       "servicename": {
@@ -2356,7 +2398,7 @@
     }
   },
   "forwarderUnknownError": {
-    "message": "Unknown $SERVICENAME$ error occurred.",
+    "message": "Une erreur $SERVICENAME$ inconnue s'est produite.",
     "description": "Displayed when the forwarding service failed due to an unknown error.",
     "placeholders": {
       "servicename": {
@@ -2366,7 +2408,7 @@
     }
   },
   "forwarderUnknownForwarder": {
-    "message": "Unknown forwarder: '$SERVICENAME$'.",
+    "message": "Émetteur inconnu: '$SERVICENAME$'.",
     "description": "Displayed when the forwarding service is not supported.",
     "placeholders": {
       "servicename": {
@@ -2587,25 +2629,25 @@
     "message": "Identifiant SSO de l'organisation requis."
   },
   "creatingAccountOn": {
-    "message": "Creating account on"
+    "message": "Création du compte sur"
   },
   "checkYourEmail": {
-    "message": "Check your email"
+    "message": "Vérifiez vos courriels"
   },
   "followTheLinkInTheEmailSentTo": {
-    "message": "Follow the link in the email sent to"
+    "message": "Suivez le lien dans le courriel envoyé à"
   },
   "andContinueCreatingYourAccount": {
-    "message": "and continue creating your account."
+    "message": "et continuer à créer votre compte."
   },
   "noEmail": {
-    "message": "No email?"
+    "message": "Pas de courriel ?"
   },
   "goBack": {
-    "message": "Go back"
+    "message": "Revenir en arrière"
   },
   "toEditYourEmailAddress": {
-    "message": "to edit your email address."
+    "message": "pour modifier votre adresse mail."
   },
   "eu": {
     "message": "UE",
@@ -3235,7 +3277,7 @@
     "message": "Clé d'identification (passkey) retirée"
   },
   "unassignedItemsBannerNotice": {
-    "message": "Notice: Unassigned organization items are no longer visible in the All Vaults view and only accessible via the Admin Console."
+    "message": "Remarque : Les éléments d'organisation non assignés ne sont plus visibles dans la vue Tous les coffres et ne sont maintenant accessibles que via la Console Admin."
   },
   "unassignedItemsBannerSelfHostNotice": {
     "message": "Remarque : À partir du 16 mai 2024, les éléments d'organisation non assignés ne seront plus visibles dans votre vue Tous les coffres sur les appareils et ne seront maintenant accessibles que via la Console Admin."
@@ -3249,22 +3291,22 @@
     "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
   },
   "autofillSuggestions": {
-    "message": "Auto-fill suggestions"
+    "message": "Suggestions de saisie automatique"
   },
   "autofillSuggestionsTip": {
     "message": "Save a login item for this site to auto-fill"
   },
   "yourVaultIsEmpty": {
-    "message": "Your vault is empty"
+    "message": "Votre coffre-fort est vide"
   },
   "noItemsMatchSearch": {
-    "message": "No items match your search"
+    "message": "Aucun élément ne correspond à votre recherche"
   },
   "clearFiltersOrTryAnother": {
-    "message": "Clear filters or try another search term"
+    "message": "Effacer les filtres ou essayer un autre terme de recherche"
   },
-  "copyInfo": {
-    "message": "Copy info, $ITEMNAME$",
+  "copyInfoLabel": {
+    "message": "Copier les informations, $ITEMNAME$",
     "description": "Aria label for a button that opens a menu with options to copy information from an item.",
     "placeholders": {
       "itemname": {
@@ -3273,8 +3315,38 @@
       }
     }
   },
-  "moreOptions": {
-    "message": "More options, $ITEMNAME$",
+  "copyInfoTitle": {
+    "message": "Copier les informations - $ITEMNAME$",
+    "description": "Title for a button that opens a menu with options to copy information from an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "copyNoteLabel": {
+    "message": "Copier la note, $ITEMNAME$",
+    "description": "Aria label for a button copies a note to the clipboard.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Note Item"
+      }
+    }
+  },
+  "copyNoteTitle": {
+    "message": "Copier la note - $ITEMNAME$",
+    "description": "Title for a button copies a note to the clipboard.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Note Item"
+      }
+    }
+  },
+  "moreOptionsLabel": {
+    "message": "Plus d'options, $ITEMNAME$",
     "description": "Aria label for a button that opens a menu with more options for an item.",
     "placeholders": {
       "itemname": {
@@ -3283,26 +3355,58 @@
       }
     }
   },
+  "moreOptionsTitle": {
+    "message": "Plus d'options - $ITEMNAME$",
+    "description": "Title for a button that opens a menu with more options for an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "viewItemTitle": {
+    "message": "Voir l'élément - $ITEMNAME$",
+    "description": "Title for a link that opens a view for an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "assignCollections": {
+    "message": "Assigner une collection"
+  },
+  "copyEmail": {
+    "message": "Copier l'email"
+  },
+  "copyPhone": {
+    "message": "Copier le numéro de téléphone"
+  },
+  "copyAddress": {
+    "message": "Copier l'adresse"
+  },
   "adminConsole": {
     "message": "Console Admin"
   },
   "accountSecurity": {
-    "message": "Account security"
+    "message": "Sécurité du compte"
   },
   "notifications": {
     "message": "Notifications"
   },
   "appearance": {
-    "message": "Appearance"
+    "message": "Apparence"
   },
   "errorAssigningTargetCollection": {
-    "message": "Error assigning target collection."
+    "message": "Erreur lors de l'assignation de la collection cible."
   },
   "errorAssigningTargetFolder": {
-    "message": "Error assigning target folder."
+    "message": "Erreur lors de l'assignation du dossier cible."
   },
   "viewItemsIn": {
-    "message": "View items in $NAME$",
+    "message": "Voir les éléments dans $NAME$",
     "description": "Button to view the contents of a folder or collection",
     "placeholders": {
       "name": {
@@ -3312,7 +3416,7 @@
     }
   },
   "backTo": {
-    "message": "Back to $NAME$",
+    "message": "Retour à $NAME$",
     "description": "Navigate back to a previous folder or collection",
     "placeholders": {
       "name": {
@@ -3322,10 +3426,10 @@
     }
   },
   "new": {
-    "message": "New"
+    "message": "Nouveau"
   },
   "removeItem": {
-    "message": "Remove $NAME$",
+    "message": "Retirer $NAME$",
     "description": "Remove a selected option, such as a folder or collection",
     "placeholders": {
       "name": {
@@ -3333,5 +3437,14 @@
         "example": "Work"
       }
     }
+  },
+  "itemsWithNoFolder": {
+    "message": "Eléments sans dossier"
+  },
+  "organizationIsDeactivated": {
+    "message": "L'organisation est désactivée"
+  },
+  "contactYourOrgAdmin": {
+    "message": "Les éléments des Organisations désactivées ne sont pas accessibles. Contactez le propriétaire de votre Organisation pour obtenir de l'aide."
   }
 }

@@ -389,6 +389,15 @@
   "favorite": {
     "message": "Обране"
   },
+  "unfavorite": {
+    "message": "Вилучити з обраного"
+  },
+  "itemAddedToFavorites": {
+    "message": "Item added to favorites"
+  },
+  "itemRemovedFromFavorites": {
+    "message": "Item removed from favorites"
+  },
   "notes": {
     "message": "Нотатки"
   },
@@ -409,6 +418,9 @@
   },
   "launch": {
     "message": "Перейти"
+  },
+  "launchWebsite": {
+    "message": "Відкрити вебсайт"
   },
   "website": {
     "message": "Вебсайт"
@@ -598,6 +610,9 @@
   },
   "loggedOut": {
     "message": "Ви вийшли"
+  },
+  "loggedOutDesc": {
+    "message": "Ви вийшли з облікового запису."
   },
   "loginExpired": {
     "message": "Тривалість вашого сеансу завершилась."
@@ -1105,7 +1120,16 @@
     "message": "Середовище власного хостингу"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Вкажіть основну URL-адресу Bitwarden, встановленого на локальному хостингу."
+    "message": "Вкажіть основну URL-адресу локально розміщеного встановлення Bitwarden."
+  },
+  "selfHostedBaseUrlHint": {
+    "message": "Вкажіть основну URL-адресу вашого локально розміщеного встановлення Bitwarden. Зразок: https://bitwarden.company.com"
+  },
+  "selfHostedCustomEnvHeader": {
+    "message": "Для розширеної конфігурації ви можете вказати основну URL-адресу окремо для кожної служби."
+  },
+  "selfHostedEnvFormInvalid": {
+    "message": "Необхідно додати URL-адресу основного сервера, або принаймні одне користувацьке середовище."
   },
   "customEnvironment": {
     "message": "Власне середовище"
@@ -1419,6 +1443,15 @@
   "collections": {
     "message": "Збірки"
   },
+  "nCollections": {
+    "message": "$COUNT$ збірок",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
   "favorites": {
     "message": "Обране"
   },
@@ -1648,6 +1681,9 @@
   "autoFillAndSave": {
     "message": "Заповнити і зберегти"
   },
+  "fillAndSave": {
+    "message": "Заповнити й зберегти"
+  },
   "autoFillSuccessAndSavedUri": {
     "message": "Запис заповнено і збережено"
   },
@@ -1743,6 +1779,12 @@
   },
   "ok": {
     "message": "Ok"
+  },
+  "errorRefreshingAccessToken": {
+    "message": "Помилка оновлення токена доступу"
+  },
+  "errorRefreshingAccessTokenDesc": {
+    "message": "Не знайдено токен оновлення або ключі API. Спробуйте вийти, а потім увійти знову."
   },
   "desktopSyncVerificationTitle": {
     "message": "Перевірка синхронізації на комп'ютері"
@@ -3263,7 +3305,7 @@
   "clearFiltersOrTryAnother": {
     "message": "Скиньте фільтри або спробуйте іншу умову пошуку"
   },
-  "copyInfo": {
+  "copyInfoLabel": {
     "message": "Копіювати інформацію, $ITEMNAME$",
     "description": "Aria label for a button that opens a menu with options to copy information from an item.",
     "placeholders": {
@@ -3273,7 +3315,37 @@
       }
     }
   },
-  "moreOptions": {
+  "copyInfoTitle": {
+    "message": "Копіювати інформацію – $ITEMNAME$",
+    "description": "Title for a button that opens a menu with options to copy information from an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "copyNoteLabel": {
+    "message": "Копіювати нотатку, $ITEMNAME$",
+    "description": "Aria label for a button copies a note to the clipboard.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Note Item"
+      }
+    }
+  },
+  "copyNoteTitle": {
+    "message": "Копіювати нотатку – $ITEMNAME$",
+    "description": "Title for a button copies a note to the clipboard.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Note Item"
+      }
+    }
+  },
+  "moreOptionsLabel": {
     "message": "Інші можливості, $ITEMNAME$",
     "description": "Aria label for a button that opens a menu with more options for an item.",
     "placeholders": {
@@ -3282,6 +3354,38 @@
         "example": "Secret Item"
       }
     }
+  },
+  "moreOptionsTitle": {
+    "message": "Інші можливості – $ITEMNAME$",
+    "description": "Title for a button that opens a menu with more options for an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "viewItemTitle": {
+    "message": "Переглянути запис – $ITEMNAME$",
+    "description": "Title for a link that opens a view for an item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "assignCollections": {
+    "message": "Призначити збірки"
+  },
+  "copyEmail": {
+    "message": "Копіювати е-пошту"
+  },
+  "copyPhone": {
+    "message": "Копіювати телефон"
+  },
+  "copyAddress": {
+    "message": "Копіювати адресу"
   },
   "adminConsole": {
     "message": "консолі адміністратора,"
@@ -3333,5 +3437,14 @@
         "example": "Work"
       }
     }
+  },
+  "itemsWithNoFolder": {
+    "message": "Елементи без теки"
+  },
+  "organizationIsDeactivated": {
+    "message": "Організацію деактивовано"
+  },
+  "contactYourOrgAdmin": {
+    "message": "Елементи в деактивованих організаціях недоступні. Зверніться до власника вашої організації для отримання допомоги."
   }
 }
