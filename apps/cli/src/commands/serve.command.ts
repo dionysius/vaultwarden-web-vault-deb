@@ -87,6 +87,7 @@ export class ServeCommand {
       this.serviceContainer.apiService,
       this.serviceContainer.folderApiService,
       this.serviceContainer.billingAccountProfileStateService,
+      this.serviceContainer.organizationService,
     );
     this.editCommand = new EditCommand(
       this.serviceContainer.cipherService,

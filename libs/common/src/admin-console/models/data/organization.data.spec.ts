@@ -39,6 +39,7 @@ describe("ORGANIZATIONS state", () => {
         permissions: undefined,
         resetPasswordEnrolled: false,
         userId: "userId",
+        organizationUserId: "organizationUserId",
         hasPublicAndPrivateKeys: false,
         providerId: "providerId",
         providerName: "providerName",

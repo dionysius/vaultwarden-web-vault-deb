@@ -36,6 +36,7 @@ export class OrganizationData {
   permissions: PermissionsApi;
   resetPasswordEnrolled: boolean;
   userId: string;
+  organizationUserId: string;
   hasPublicAndPrivateKeys: boolean;
   providerId: string;
   providerName: string;
@@ -96,6 +97,7 @@ export class OrganizationData {
     this.permissions = response.permissions;
     this.resetPasswordEnrolled = response.resetPasswordEnrolled;
     this.userId = response.userId;
+    this.organizationUserId = response.organizationUserId;
     this.hasPublicAndPrivateKeys = response.hasPublicAndPrivateKeys;
     this.providerId = response.providerId;
     this.providerName = response.providerName;

@@ -9,8 +9,10 @@ export class OrganizationCollectionRequest extends CollectionExport {
     req.name = "Collection name";
     req.externalId = null;
     req.groups = [SelectionReadOnly.template(), SelectionReadOnly.template()];
+    req.users = [SelectionReadOnly.template(), SelectionReadOnly.template()];
     return req;
   }
 
   groups: SelectionReadOnly[];
+  users: SelectionReadOnly[];
 }

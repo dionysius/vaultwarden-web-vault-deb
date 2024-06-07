@@ -170,10 +170,17 @@ export class EditCommand {
           : req.groups.map(
               (g) => new SelectionReadOnlyRequest(g.id, g.readOnly, g.hidePasswords, g.manage),
             );
+      const users =
+        req.users == null
+          ? null
+          : req.users.map(
+              (u) => new SelectionReadOnlyRequest(u.id, u.readOnly, u.hidePasswords, u.manage),
+            );
       const request = new CollectionRequest();
       request.name = (await this.cryptoService.encrypt(req.name, orgKey)).encryptedString;
       request.externalId = req.externalId;
       request.groups = groups;
+      request.users = users;
       const response = await this.apiService.putCollection(req.organizationId, id, request);
       const view = CollectionExport.toView(req);
       view.id = response.id;

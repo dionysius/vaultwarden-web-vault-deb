@@ -43,6 +43,7 @@ export class Organization {
   permissions: PermissionsApi;
   resetPasswordEnrolled: boolean;
   userId: string;
+  organizationUserId: string;
   hasPublicAndPrivateKeys: boolean;
   providerId: string;
   providerName: string;
@@ -113,6 +114,7 @@ export class Organization {
     this.permissions = obj.permissions;
     this.resetPasswordEnrolled = obj.resetPasswordEnrolled;
     this.userId = obj.userId;
+    this.organizationUserId = obj.organizationUserId;
     this.hasPublicAndPrivateKeys = obj.hasPublicAndPrivateKeys;
     this.providerId = obj.providerId;
     this.providerName = obj.providerName;
