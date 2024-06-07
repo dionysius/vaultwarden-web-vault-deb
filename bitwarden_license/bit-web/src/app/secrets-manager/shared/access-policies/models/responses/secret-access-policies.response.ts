@@ -1,10 +1,15 @@
 import { BaseResponse } from "@bitwarden/common/models/response/base.response";
 
-import { GroupAccessPolicyResponse, UserAccessPolicyResponse } from "./access-policy.response";
+import {
+  GroupAccessPolicyResponse,
+  UserAccessPolicyResponse,
+  ServiceAccountAccessPolicyResponse,
+} from "./access-policy.response";
 
-export class ServiceAccountPeopleAccessPoliciesResponse extends BaseResponse {
+export class SecretAccessPoliciesResponse extends BaseResponse {
   userAccessPolicies: UserAccessPolicyResponse[];
   groupAccessPolicies: GroupAccessPolicyResponse[];
+  serviceAccountAccessPolicies: ServiceAccountAccessPolicyResponse[];
 
   constructor(response: any) {
     super(response);
@@ -13,6 +18,10 @@ export class ServiceAccountPeopleAccessPoliciesResponse extends BaseResponse {
     const groupAccessPolicies = this.getResponseProperty("GroupAccessPolicies");
     this.groupAccessPolicies = groupAccessPolicies.map(
       (k: any) => new GroupAccessPolicyResponse(k),
+    );
+    const serviceAccountAccessPolicies = this.getResponseProperty("ServiceAccountAccessPolicies");
+    this.serviceAccountAccessPolicies = serviceAccountAccessPolicies.map(
+      (k: any) => new ServiceAccountAccessPolicyResponse(k),
     );
   }
 }

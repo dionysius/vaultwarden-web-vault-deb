@@ -1,10 +1,10 @@
-import { ServiceAccountProjectAccessPolicyView } from "./access-policy.view";
+import { GrantedProjectAccessPolicyView } from "./access-policy.view";
 
 export class ServiceAccountGrantedPoliciesView {
-  grantedProjectPolicies: ServiceAccountProjectPolicyPermissionDetailsView[];
+  grantedProjectPolicies: GrantedProjectPolicyPermissionDetailsView[];
 }
 
-export class ServiceAccountProjectPolicyPermissionDetailsView {
-  accessPolicy: ServiceAccountProjectAccessPolicyView;
+export class GrantedProjectPolicyPermissionDetailsView {
+  accessPolicy: GrantedProjectAccessPolicyView;
   hasPermission: boolean;
 }

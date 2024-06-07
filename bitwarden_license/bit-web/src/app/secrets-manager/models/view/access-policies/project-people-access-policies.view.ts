@@ -1,6 +1,6 @@
-import { GroupProjectAccessPolicyView, UserProjectAccessPolicyView } from "./access-policy.view";
+import { GroupAccessPolicyView, UserAccessPolicyView } from "./access-policy.view";
 
 export class ProjectPeopleAccessPoliciesView {
-  userAccessPolicies: UserProjectAccessPolicyView[];
-  groupAccessPolicies: GroupProjectAccessPolicyView[];
+  userAccessPolicies: UserAccessPolicyView[];
+  groupAccessPolicies: GroupAccessPolicyView[];
 }

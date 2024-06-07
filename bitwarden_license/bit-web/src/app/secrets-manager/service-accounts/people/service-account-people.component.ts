@@ -11,7 +11,7 @@ import { DialogService } from "@bitwarden/components";
 import { AccessPolicySelectorService } from "../../shared/access-policies/access-policy-selector/access-policy-selector.service";
 import {
   ApItemValueType,
-  convertToServiceAccountPeopleAccessPoliciesView,
+  convertToPeopleAccessPoliciesView,
 } from "../../shared/access-policies/access-policy-selector/models/ap-item-value.type";
 import {
   ApItemViewType,
@@ -180,10 +180,7 @@ export class ServiceAccountPeopleComponent implements OnInit, OnDestroy {
     serviceAccountId: string,
     selectedPolicies: ApItemValueType[],
   ) {
-    const serviceAccountPeopleView = convertToServiceAccountPeopleAccessPoliciesView(
-      serviceAccountId,
-      selectedPolicies,
-    );
+    const serviceAccountPeopleView = convertToPeopleAccessPoliciesView(selectedPolicies);
     return await this.accessPolicyService.putServiceAccountPeopleAccessPolicies(
       serviceAccountId,
       serviceAccountPeopleView,

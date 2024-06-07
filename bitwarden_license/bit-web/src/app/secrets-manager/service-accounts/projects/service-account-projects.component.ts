@@ -144,10 +144,7 @@ export class ServiceAccountProjectsComponent implements OnInit, OnDestroy {
     serviceAccountId: string,
     selectedPolicies: ApItemValueType[],
   ): Promise<ServiceAccountGrantedPoliciesView> {
-    const grantedViews = convertToServiceAccountGrantedPoliciesView(
-      serviceAccountId,
-      selectedPolicies,
-    );
+    const grantedViews = convertToServiceAccountGrantedPoliciesView(selectedPolicies);
     return await this.accessPolicyService.putServiceAccountGrantedPolicies(
       organizationId,
       serviceAccountId,
