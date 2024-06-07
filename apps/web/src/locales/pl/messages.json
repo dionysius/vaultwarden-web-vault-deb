@@ -587,6 +587,9 @@
   "loggedOut": {
     "message": "Wylogowano"
   },
+  "loggedOutDesc": {
+    "message": "Zostałeś wylogowany z konta."
+  },
   "loginExpired": {
     "message": "Twoja sesja wygasła."
   },
@@ -1049,6 +1052,12 @@
   },
   "copyUuid": {
     "message": "Skopiuj UUID"
+  },
+  "errorRefreshingAccessToken": {
+    "message": "Błąd podczas odświeżania tokenu"
+  },
+  "errorRefreshingAccessTokenDesc": {
+    "message": "Nie znaleziono tokenu odświeżającego ani kluczy API. Spróbuj wylogować się i zalogować ponownie."
   },
   "warning": {
     "message": "Ostrzeżenie"
@@ -5586,6 +5595,39 @@
   "rotateBillingSyncTokenTitle": {
     "message": "Wymiana tokenu synchronizacji płatności spowoduje unieważnienie poprzedniego tokenu."
   },
+  "selfHostedServer": {
+    "message": "samodzielnie hostowany"
+  },
+  "customEnvironment": {
+    "message": "Niestandardowe środowisko"
+  },
+  "selfHostedBaseUrlHint": {
+    "message": "Określ bazowy adres URL swojej instalacji Bitwarden. Przykład: https://bitwarden.company.com"
+  },
+  "selfHostedCustomEnvHeader": {
+    "message": "Dla zaawansowanych konfiguracji możesz określić podstawowy adres URL niezależnie dla każdej usługi."
+  },
+  "selfHostedEnvFormInvalid": {
+    "message": "Musisz dodać podstawowy adres URL serwera lub co najmniej jedno niestandardowe środowisko."
+  },
+  "apiUrl": {
+    "message": "Adres URL serwera API"
+  },
+  "webVaultUrl": {
+    "message": "Adres URL serwera sejfu internetowego"
+  },
+  "identityUrl": {
+    "message": "Adres URL serwera tożsamości"
+  },
+  "notificationsUrl": {
+    "message": "Adres URL serwera powiadomień"
+  },
+  "iconsUrl": {
+    "message": "Adres URL serwera ikon"
+  },
+  "environmentSaved": {
+    "message": "Adresy URL środowiska zostały zapisane"
+  },
   "selfHostingTitle": {
     "message": "Samodzielnie hostowany"
   },
@@ -8297,5 +8339,20 @@
   },
   "allLoginRequestsApproved": {
     "message": "Wszystkie prośby o logowanie zatwierdzone"
+  },
+  "payPal": {
+    "message": "PayPal"
+  },
+  "bitcoin": {
+    "message": "Bitcoin"
+  },
+  "updatedTaxInformation": {
+    "message": "Zaktualizowane informacje podatkowe"
+  },
+  "unverified": {
+    "message": "Niezweryfikowane"
+  },
+  "verified": {
+    "message": "Zweryfikowane"
   }
 }

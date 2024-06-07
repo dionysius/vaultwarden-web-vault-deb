@@ -587,6 +587,9 @@
   "loggedOut": {
     "message": "Megtörtént a kijelentkezés."
   },
+  "loggedOutDesc": {
+    "message": "You have been logged out of your account."
+  },
   "loginExpired": {
     "message": "A bejelentkezési munkamenet lejárt."
   },
@@ -1049,6 +1052,12 @@
   },
   "copyUuid": {
     "message": "UUID másolása"
+  },
+  "errorRefreshingAccessToken": {
+    "message": "Access Token Refresh Error"
+  },
+  "errorRefreshingAccessTokenDesc": {
+    "message": "No refresh token or API keys found. Please try logging out and logging back in."
   },
   "warning": {
     "message": "Figyelmeztetés"
@@ -5586,6 +5595,39 @@
   "rotateBillingSyncTokenTitle": {
     "message": "A Számlázási szinkron vezérjel gördülő váltása érvényteleníti ez előző vezérjelet."
   },
+  "selfHostedServer": {
+    "message": "saját üzemeltetésű"
+  },
+  "customEnvironment": {
+    "message": "Egyedi környezet"
+  },
+  "selfHostedBaseUrlHint": {
+    "message": "Adjuk meg a helyileg tárolt Bitwarden telepítés alap webcímét. Példa: https://bitwarden.company.com"
+  },
+  "selfHostedCustomEnvHeader": {
+    "message": "Speciális konfigurációhoz külön-külön megadhatjuk az egyes szolgáltatások alap webcímét."
+  },
+  "selfHostedEnvFormInvalid": {
+    "message": "Hozzá kell adni az alapszerver webcímét vagy legalább egy egyedi környezetet."
+  },
+  "apiUrl": {
+    "message": "API szerver webcím"
+  },
+  "webVaultUrl": {
+    "message": "Webes széf szerver webcím"
+  },
+  "identityUrl": {
+    "message": "Személyazonosság szerver webcím"
+  },
+  "notificationsUrl": {
+    "message": "Értesítési szerver webcím"
+  },
+  "iconsUrl": {
+    "message": "Ikonok szerver webcím"
+  },
+  "environmentSaved": {
+    "message": "A környezeti webcímek mentésre kerültek."
+  },
   "selfHostingTitle": {
     "message": "Saját kiszolgáló"
   },
@@ -8297,5 +8339,20 @@
   },
   "allLoginRequestsApproved": {
     "message": "At összes bejelentkezési kérés óváhagyásra került."
+  },
+  "payPal": {
+    "message": "PayPal"
+  },
+  "bitcoin": {
+    "message": "Bitcoin"
+  },
+  "updatedTaxInformation": {
+    "message": "Frissített adó információ"
+  },
+  "unverified": {
+    "message": "Nem ellenőrzött"
+  },
+  "verified": {
+    "message": "Ellenőrzött"
   }
 }

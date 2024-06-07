@@ -587,6 +587,9 @@
   "loggedOut": {
     "message": "Бяхте отписани"
   },
+  "loggedOutDesc": {
+    "message": "Бяхте отписан(а) от регистрацията си."
+  },
   "loginExpired": {
     "message": "Сесията ви изтече."
   },
@@ -1049,6 +1052,12 @@
   },
   "copyUuid": {
     "message": "Copy UUID"
+  },
+  "errorRefreshingAccessToken": {
+    "message": "Грешка при опресняването на идентификатора за достъп"
+  },
+  "errorRefreshingAccessTokenDesc": {
+    "message": "Няма намерен идентификатор за опресняване или ключове за ППИ. Опитайте да се отпишете и да се впишете отново."
   },
   "warning": {
     "message": "Внимание"
@@ -5586,6 +5595,39 @@
   "rotateBillingSyncTokenTitle": {
     "message": "Пресъздаването на идентификатора за синхронизиране на плащанията ще направи така, че досегашният вече няма да работи."
   },
+  "selfHostedServer": {
+    "message": "собствен хостинг"
+  },
+  "customEnvironment": {
+    "message": "Специална среда"
+  },
+  "selfHostedBaseUrlHint": {
+    "message": "Посочете базовия адрес на Вашата собствена инсталация на Битуорден. Пример: https://bitwarden.company.com"
+  },
+  "selfHostedCustomEnvHeader": {
+    "message": "За по-детайлна настройка, може да укажете основния адрес на всяка услуга поотделно."
+  },
+  "selfHostedEnvFormInvalid": {
+    "message": "Трябва да добавите или основния адрес на сървъра, или поне една специална среда."
+  },
+  "apiUrl": {
+    "message": "Адрес на сървъра за ППИ"
+  },
+  "webVaultUrl": {
+    "message": "Адрес на сървъра за трезора по уеб"
+  },
+  "identityUrl": {
+    "message": "Адрес на сървъра за самоличности"
+  },
+  "notificationsUrl": {
+    "message": "Адрес на сървъра за известия"
+  },
+  "iconsUrl": {
+    "message": "Адрес на сървъра за иконки"
+  },
+  "environmentSaved": {
+    "message": "Адресите на средата са запазени"
+  },
   "selfHostingTitle": {
     "message": "Self-hosting"
   },
@@ -8297,5 +8339,20 @@
   },
   "allLoginRequestsApproved": {
     "message": "Всички заявки за вписване са одобрени"
+  },
+  "payPal": {
+    "message": "PayPal"
+  },
+  "bitcoin": {
+    "message": "Биткойн"
+  },
+  "updatedTaxInformation": {
+    "message": "Обновена данъчна информация"
+  },
+  "unverified": {
+    "message": "Непотвърден"
+  },
+  "verified": {
+    "message": "Потвърден"
   }
 }

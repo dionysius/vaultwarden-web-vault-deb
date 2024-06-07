@@ -582,10 +582,13 @@
     "message": "Müraciət səviyyəsi"
   },
   "accessing": {
-    "message": "Accessing"
+    "message": "Müraciət edilir"
   },
   "loggedOut": {
     "message": "Çıxış edildi"
+  },
+  "loggedOutDesc": {
+    "message": "Hesabınızdan çıxış etmisiniz."
   },
   "loginExpired": {
     "message": "Seansın müddəti bitdi."
@@ -1049,6 +1052,12 @@
   },
   "copyUuid": {
     "message": "UUID-ni kopyala"
+  },
+  "errorRefreshingAccessToken": {
+    "message": "Müraciət tokeni təzələmə xətası"
+  },
+  "errorRefreshingAccessTokenDesc": {
+    "message": "Təzələmə tokeni və ya API açarlar tapılmadı. Lütfən çıxış edib yenidən giriş etməyə çalışın."
   },
   "warning": {
     "message": "Xəbərdarlıq"
@@ -5586,6 +5595,39 @@
   "rotateBillingSyncTokenTitle": {
     "message": "Faktura sinxr tokenini döndərmək, əvvəlki tokeni yararsız edəcək."
   },
+  "selfHostedServer": {
+    "message": "öz-özünə sahiblik edən"
+  },
+  "customEnvironment": {
+    "message": "Özəl mühit"
+  },
+  "selfHostedBaseUrlHint": {
+    "message": "Şirkət daxili sahiblik edən Bitwarden quraşdırmasının təməl URL-sini qeyd edin. Nümunə: https://bitwarden.company.com"
+  },
+  "selfHostedCustomEnvHeader": {
+    "message": "Qabaqcıl konfiqurasiya üçün hər xidmətin təməl URL-sini müstəqil olaraq qeyd edə bilərsiniz."
+  },
+  "selfHostedEnvFormInvalid": {
+    "message": "Təməl server URL-sini və ya ən azı bir özəl mühiti əlavə etməlisiniz."
+  },
+  "apiUrl": {
+    "message": "API server URL-si"
+  },
+  "webVaultUrl": {
+    "message": "Veb anbar server URL-si"
+  },
+  "identityUrl": {
+    "message": "Kimlik server URL-si"
+  },
+  "notificationsUrl": {
+    "message": "Bildiriş server URL-si"
+  },
+  "iconsUrl": {
+    "message": "İkon server URL-si"
+  },
+  "environmentSaved": {
+    "message": "Mühit URL-ləri saxlanıldı"
+  },
   "selfHostingTitle": {
     "message": "Öz-özünə sahiblik etmə"
   },
@@ -8297,5 +8339,20 @@
   },
   "allLoginRequestsApproved": {
     "message": "Bütün giriş tələbləri təsdiqləndi"
+  },
+  "payPal": {
+    "message": "PayPal"
+  },
+  "bitcoin": {
+    "message": "Bitcoin"
+  },
+  "updatedTaxInformation": {
+    "message": "Güncəlllənən vergi məlumatı"
+  },
+  "unverified": {
+    "message": "Doğrulanmayıb"
+  },
+  "verified": {
+    "message": "Doğrulandı"
   }
 }

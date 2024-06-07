@@ -587,6 +587,9 @@
   "loggedOut": {
     "message": "Sessão terminada"
   },
+  "loggedOutDesc": {
+    "message": "Foi terminada a sessão da sua conta."
+  },
   "loginExpired": {
     "message": "A sua sessão expirou."
   },
@@ -1049,6 +1052,12 @@
   },
   "copyUuid": {
     "message": "Copiar UUID"
+  },
+  "errorRefreshingAccessToken": {
+    "message": "Erro no acesso ao token de atualização"
+  },
+  "errorRefreshingAccessTokenDesc": {
+    "message": "Não foi encontrado nenhum token de atualização ou chaves API. Por favor, tente terminar a sessão e voltar a iniciá-la."
   },
   "warning": {
     "message": "Aviso"
@@ -2376,7 +2385,7 @@
     "message": "Para criar uma organização alojada no local, é necessário carregar um ficheiro de licença válido."
   },
   "accountEmailMustBeVerified": {
-    "message": "O endereço de e-mail da sua conta deve ser verificado."
+    "message": "O endereço de e-mail da sua conta precisa de ser verificado."
   },
   "newOrganizationDesc": {
     "message": "As organizações permitem-lhe partilhar partes do seu cofre com outras pessoas, bem como gerir utilizadores relacionados para uma entidade específica, como uma família, uma pequena equipa ou uma grande empresa."
@@ -5586,6 +5595,39 @@
   "rotateBillingSyncTokenTitle": {
     "message": "Regenerar o token de sincronização de faturação invalidará o token anterior."
   },
+  "selfHostedServer": {
+    "message": "auto-hospedado"
+  },
+  "customEnvironment": {
+    "message": "Ambiente personalizado"
+  },
+  "selfHostedBaseUrlHint": {
+    "message": "Especifique o URL de base da sua instalação Bitwarden hospedada no local. Exemplo: https://bitwarden.company.com"
+  },
+  "selfHostedCustomEnvHeader": {
+    "message": "Para uma configuração avançada, pode especificar o URL de base de cada serviço de forma independente."
+  },
+  "selfHostedEnvFormInvalid": {
+    "message": "Deve adicionar o URL do servidor de base ou pelo menos um ambiente personalizado."
+  },
+  "apiUrl": {
+    "message": "URL do servidor da API"
+  },
+  "webVaultUrl": {
+    "message": "URL do servidor do cofre Web"
+  },
+  "identityUrl": {
+    "message": "URL do servidor de identidade"
+  },
+  "notificationsUrl": {
+    "message": "URL do servidor de notificações"
+  },
+  "iconsUrl": {
+    "message": "URL do servidor de ícones"
+  },
+  "environmentSaved": {
+    "message": "URLs de ambiente guardados"
+  },
   "selfHostingTitle": {
     "message": "Auto-hospedagem"
   },
@@ -8297,5 +8339,20 @@
   },
   "allLoginRequestsApproved": {
     "message": "Todos os pedidos de início de sessão aprovados"
+  },
+  "payPal": {
+    "message": "PayPal"
+  },
+  "bitcoin": {
+    "message": "Bitcoin"
+  },
+  "updatedTaxInformation": {
+    "message": "Informações fiscais atualizadas"
+  },
+  "unverified": {
+    "message": "Não verificado"
+  },
+  "verified": {
+    "message": "Verificado"
   }
 }

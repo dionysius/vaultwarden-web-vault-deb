@@ -587,6 +587,9 @@
   "loggedOut": {
     "message": "Вы вышли из хранилища"
   },
+  "loggedOutDesc": {
+    "message": "Вы вышли из своего аккаунта."
+  },
   "loginExpired": {
     "message": "Истек срок действия вашей сессии."
   },
@@ -1049,6 +1052,12 @@
   },
   "copyUuid": {
     "message": "Скопировать UUID"
+  },
+  "errorRefreshingAccessToken": {
+    "message": "Ошибка обновления токена доступа"
+  },
+  "errorRefreshingAccessTokenDesc": {
+    "message": "Не найдены токен обновления или ключи API. Пожалуйста, попробуйте выполнить выход и повторно авторизоваться."
   },
   "warning": {
     "message": "Предупреждение"
@@ -5586,6 +5595,39 @@
   "rotateBillingSyncTokenTitle": {
     "message": "Смена токена синхронизации биллинга сделает предыдущий токен недействительным."
   },
+  "selfHostedServer": {
+    "message": "собственный хостинг"
+  },
+  "customEnvironment": {
+    "message": "Пользовательское окружение"
+  },
+  "selfHostedBaseUrlHint": {
+    "message": "Укажите базовый URL вашего локального хостинга Bitwarden. Пример: https://bitwarden.company.com"
+  },
+  "selfHostedCustomEnvHeader": {
+    "message": "Для продвинутой конфигурации можно указать базовый URL каждой службы отдельно."
+  },
+  "selfHostedEnvFormInvalid": {
+    "message": "Вы должны добавить либо базовый URL сервера, либо хотя бы одно пользовательское окружение."
+  },
+  "apiUrl": {
+    "message": "URL API сервера"
+  },
+  "webVaultUrl": {
+    "message": "URL сервера веб-хранилища"
+  },
+  "identityUrl": {
+    "message": "URL сервера идентификации"
+  },
+  "notificationsUrl": {
+    "message": "URL сервера уведомлений"
+  },
+  "iconsUrl": {
+    "message": "URL сервера значков"
+  },
+  "environmentSaved": {
+    "message": "URL окружения сохранены"
+  },
   "selfHostingTitle": {
     "message": "Собственное размещение"
   },
@@ -8297,5 +8339,20 @@
   },
   "allLoginRequestsApproved": {
     "message": "Все запросы на вход одобрены"
+  },
+  "payPal": {
+    "message": "PayPal"
+  },
+  "bitcoin": {
+    "message": "Bitcoin"
+  },
+  "updatedTaxInformation": {
+    "message": "Обновление сведений о налогах"
+  },
+  "unverified": {
+    "message": "Неверифицирован"
+  },
+  "verified": {
+    "message": "Верифицирован"
   }
 }

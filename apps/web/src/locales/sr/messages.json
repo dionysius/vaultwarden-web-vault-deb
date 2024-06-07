@@ -582,10 +582,13 @@
     "message": "Ниво приступа"
   },
   "accessing": {
-    "message": "Accessing"
+    "message": "Приступ"
   },
   "loggedOut": {
     "message": "Одјављено"
+  },
+  "loggedOutDesc": {
+    "message": "Одјављени сте са свог налога."
   },
   "loginExpired": {
     "message": "Ваша сесија је истекла."
@@ -1049,6 +1052,12 @@
   },
   "copyUuid": {
     "message": "Копирај UUID"
+  },
+  "errorRefreshingAccessToken": {
+    "message": "Грешка при освежавању токена приступа"
+  },
+  "errorRefreshingAccessTokenDesc": {
+    "message": "Није пронађен токен за освежавање или АПИ кључеви. Покушајте да се одјавите и поново пријавите."
   },
   "warning": {
     "message": "Упозорење"
@@ -5586,6 +5595,39 @@
   "rotateBillingSyncTokenTitle": {
     "message": "Rotating the billing sync token will invalidate the previous token."
   },
+  "selfHostedServer": {
+    "message": "личан хостинг"
+  },
+  "customEnvironment": {
+    "message": "Прилагођено окружење"
+  },
+  "selfHostedBaseUrlHint": {
+    "message": "Наведите основну УРЛ адресу вашег локалног хостовања Bitwarden-а. Пример: https://bitwarden.company.com"
+  },
+  "selfHostedCustomEnvHeader": {
+    "message": "За напредну конфигурацију, можете навести основну УРЛ адресу сваке услуге независно."
+  },
+  "selfHostedEnvFormInvalid": {
+    "message": "Морате додати или основни УРЛ сервера или бар једно прилагођено окружење."
+  },
+  "apiUrl": {
+    "message": "УРЛ АПИ Сервера"
+  },
+  "webVaultUrl": {
+    "message": "УРЛ сервера Сефа"
+  },
+  "identityUrl": {
+    "message": "УРЛ сервера идентитета"
+  },
+  "notificationsUrl": {
+    "message": "УРЛ сервера обавештења"
+  },
+  "iconsUrl": {
+    "message": "УРЛ сервера иконица"
+  },
+  "environmentSaved": {
+    "message": "УРЛ адресе окружења су сачуване"
+  },
   "selfHostingTitle": {
     "message": "Ауто-хстинг"
   },
@@ -8293,9 +8335,24 @@
     "message": "Будите испред безбедносних пропуста надоградњом на плаћени план за побољшано праћење."
   },
   "approveAllRequests": {
-    "message": "Approve all requests"
+    "message": "Одобри све захтеве"
   },
   "allLoginRequestsApproved": {
-    "message": "All login requests approved"
+    "message": "Сви захтеви за пријаву су одобрени"
+  },
+  "payPal": {
+    "message": "PayPal"
+  },
+  "bitcoin": {
+    "message": "Bitcoin"
+  },
+  "updatedTaxInformation": {
+    "message": "Ажуриране пореске информације"
+  },
+  "unverified": {
+    "message": "Непроверено"
+  },
+  "verified": {
+    "message": "Проверено"
   }
 }

@@ -587,6 +587,9 @@
   "loggedOut": {
     "message": "Uitgeteken"
   },
+  "loggedOutDesc": {
+    "message": "You have been logged out of your account."
+  },
   "loginExpired": {
     "message": "U aantekensessie het verstryk."
   },
@@ -1049,6 +1052,12 @@
   },
   "copyUuid": {
     "message": "Kopieer UUID"
+  },
+  "errorRefreshingAccessToken": {
+    "message": "Access Token Refresh Error"
+  },
+  "errorRefreshingAccessTokenDesc": {
+    "message": "No refresh token or API keys found. Please try logging out and logging back in."
   },
   "warning": {
     "message": "Waarskuwing"
@@ -5586,6 +5595,39 @@
   "rotateBillingSyncTokenTitle": {
     "message": "Rotating the billing sync token will invalidate the previous token."
   },
+  "selfHostedServer": {
+    "message": "self-hosted"
+  },
+  "customEnvironment": {
+    "message": "Custom environment"
+  },
+  "selfHostedBaseUrlHint": {
+    "message": "Specify the base URL of your on-premises hosted Bitwarden installation. Example: https://bitwarden.company.com"
+  },
+  "selfHostedCustomEnvHeader": {
+    "message": "For advanced configuration, you can specify the base URL of each service independently."
+  },
+  "selfHostedEnvFormInvalid": {
+    "message": "You must add either the base Server URL or at least one custom environment."
+  },
+  "apiUrl": {
+    "message": "API server URL"
+  },
+  "webVaultUrl": {
+    "message": "Web vault server URL"
+  },
+  "identityUrl": {
+    "message": "Identity server URL"
+  },
+  "notificationsUrl": {
+    "message": "Notifications server URL"
+  },
+  "iconsUrl": {
+    "message": "Icons server URL"
+  },
+  "environmentSaved": {
+    "message": "Environment URLs saved"
+  },
   "selfHostingTitle": {
     "message": "Selfhuisvesting"
   },
@@ -6838,19 +6880,19 @@
     "message": "Use PIN"
   },
   "useBiometrics": {
-    "message": "Use biometrics"
+    "message": "Gebruik biometrie"
   },
   "enterVerificationCodeSentToEmail": {
-    "message": "Enter the verification code that was sent to your email."
+    "message": "Voer die bevestigingskakel wat na u e-pos gestuur is, in."
   },
   "resendCode": {
-    "message": "Resend code"
+    "message": "Stuur kode weer"
   },
   "memberColumnHeader": {
-    "message": "Member"
+    "message": "Lid"
   },
   "groupSlashMemberColumnHeader": {
-    "message": "Group/Member"
+    "message": "Groep/lid"
   },
   "selectGroupsAndMembers": {
     "message": "Kies groepe en lede"
@@ -6859,7 +6901,7 @@
     "message": "Kies groepe"
   },
   "userPermissionOverrideHelperDesc": {
-    "message": "Permissions set for a member will replace permissions set by that member's group."
+    "message": "Ingestelde toestemmings vir ’n lid sal toestemmings deur daardie lid se groep vervang."
   },
   "noMembersOrGroupsAdded": {
     "message": "Geen lede of groepe toegevoeg"
@@ -7104,7 +7146,7 @@
     "description": "Software Development Kit"
   },
   "createAnAccount": {
-    "message": "Create an account"
+    "message": "Skep ’n rekening"
   },
   "createSecret": {
     "message": "Skep ’n geheim"
@@ -8297,5 +8339,20 @@
   },
   "allLoginRequestsApproved": {
     "message": "All login requests approved"
+  },
+  "payPal": {
+    "message": "PayPal"
+  },
+  "bitcoin": {
+    "message": "Bitcoin"
+  },
+  "updatedTaxInformation": {
+    "message": "Updated tax information"
+  },
+  "unverified": {
+    "message": "Unverified"
+  },
+  "verified": {
+    "message": "Verified"
   }
 }

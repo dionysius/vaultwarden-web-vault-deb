@@ -579,13 +579,16 @@
     "message": "Tilgang"
   },
   "accessLevel": {
-    "message": "Access level"
+    "message": "Tilgangsnivå"
   },
   "accessing": {
-    "message": "Accessing"
+    "message": "Aksesserer"
   },
   "loggedOut": {
     "message": "Logget av"
+  },
+  "loggedOutDesc": {
+    "message": "You have been logged out of your account."
   },
   "loginExpired": {
     "message": "Din innloggingsøkt har utløpt."
@@ -612,79 +615,79 @@
     "message": "Logg på med enhet"
   },
   "loginWithDeviceEnabledNote": {
-    "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
+    "message": "Logg på med enhet må settes opp i Bitwarden-innstillingene. Trenger du et annet alternativ?"
   },
   "loginWithMasterPassword": {
     "message": "Logg på med hovedpassord"
   },
   "readingPasskeyLoading": {
-    "message": "Reading passkey..."
+    "message": "Leser Passkey..."
   },
   "readingPasskeyLoadingInfo": {
-    "message": "Keep this window open and follow prompts from your browser."
+    "message": "Hold dette vinduet åpent og følg anvisningene fra nettleseren."
   },
   "useADifferentLogInMethod": {
-    "message": "Use a different log in method"
+    "message": "Bruk en annen innloggingsmetode"
   },
   "loginWithPasskey": {
-    "message": "Log in with passkey"
+    "message": "Logg inn med Passkey"
   },
   "invalidPasskeyPleaseTryAgain": {
-    "message": "Invalid Passkey. Please try again."
+    "message": "Ugyldig Passkey. Vennligst prøv igjen."
   },
   "twoFactorForPasskeysNotSupportedOnClientUpdateToLogIn": {
-    "message": "2FA for passkeys is not supported. Update the app to log in."
+    "message": "2FA for Passkeys støttes ikke. Oppdater appen for å logge inn."
   },
   "loginWithPasskeyInfo": {
-    "message": "Use a generated passkey that will automatically log you in without a password. Biometrics, like facial recognition or fingerprint, or another FIDO2 security method will verify your identity."
+    "message": "Bruk en generert Passkey som automatisk logger deg inn uten bruk av passord. Biometri, som ansiktsgjenkjenning eller fingeravtrykk, eller en annen FIDO2-sikkerhetsmetode, vil bekrefte identiteten din."
   },
   "newPasskey": {
-    "message": "New passkey"
+    "message": "Ny Passkey"
   },
   "learnMoreAboutPasswordless": {
-    "message": "Learn more about passwordless"
+    "message": "Lær mer om passordfri løsning"
   },
   "creatingPasskeyLoading": {
-    "message": "Creating passkey..."
+    "message": "Oppretter Passkey..."
   },
   "creatingPasskeyLoadingInfo": {
-    "message": "Keep this window open and follow prompts from your browser."
+    "message": "Hold dette vinduet åpent og følg anvisningene fra nettleseren."
   },
   "errorCreatingPasskey": {
-    "message": "Error creating passkey"
+    "message": "Feil ved oppretting av Passkey"
   },
   "errorCreatingPasskeyInfo": {
-    "message": "There was a problem creating your passkey."
+    "message": "Det oppstod et problem under oppretting av Passkeyen."
   },
   "passkeySuccessfullyCreated": {
-    "message": "Passkey successfully created!"
+    "message": "Passkey opprettet!"
   },
   "customPasskeyNameInfo": {
-    "message": "Name your passkey to help you identify it."
+    "message": "Gi Passkeyen et navn for å hjelpe deg med å identifisere den."
   },
   "useForVaultEncryption": {
-    "message": "Use for vault encryption"
+    "message": "Bruk for hvelvkryptering"
   },
   "useForVaultEncryptionInfo": {
-    "message": "Log in and unlock on supported devices without your master password. Follow the prompts from your browser to finalize setup."
+    "message": "Logg inn og lås opp på støttede enheter uten hovedpassord. Følg anvisningene fra nettleseren din for å avslutte oppsettet."
   },
   "useForVaultEncryptionErrorReadingPasskey": {
-    "message": "Error reading passkey. Try again or uncheck this option."
+    "message": "Feil under lesing av Paskey. Prøv igjen, eller fjern avmerkingen for dette alternativet."
   },
   "encryptionNotSupported": {
-    "message": "Encryption not supported"
+    "message": "Kryptering ikke støttet"
   },
   "enablePasskeyEncryption": {
-    "message": "Set up encryption"
+    "message": "Sett opp kryptering"
   },
   "usedForEncryption": {
-    "message": "Used for encryption"
+    "message": "Brukes til kryptering"
   },
   "loginWithPasskeyEnabled": {
-    "message": "Log in with passkey turned on"
+    "message": "Logg inn med Passkey aktivert"
   },
   "passkeySaved": {
-    "message": "$NAME$ saved",
+    "message": "$NAME$ lagret",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -693,19 +696,19 @@
     }
   },
   "passkeyRemoved": {
-    "message": "Passkey removed"
+    "message": "Passkey fjernet"
   },
   "removePasskey": {
-    "message": "Remove passkey"
+    "message": "Fjern Passkey"
   },
   "removePasskeyInfo": {
-    "message": "If all passkeys are removed, you will be unable to log into new devices without your master password."
+    "message": "Hvis alle Passkeys fjernes, vil det ikke være mulig å logge inn på nye enheter uten hovedpassordet ditt."
   },
   "passkeyLimitReachedInfo": {
-    "message": "Passkey limit reached. Remove a passkey to add another."
+    "message": "Grense for antall Passkeys er nådd. Fjern en Passkey for å legge til en annen."
   },
   "tryAgain": {
-    "message": "Try again"
+    "message": "Prøv igjen"
   },
   "createAccount": {
     "message": "Opprett en konto"
@@ -805,7 +808,7 @@
     "message": "En uventet feil har oppstått."
   },
   "expirationDateError": {
-    "message": "Please select an expiration date that is in the future."
+    "message": "Vennligst velg en utløpsdato som er frem i tid."
   },
   "emailAddress": {
     "message": "E-postadresse"
@@ -1048,7 +1051,13 @@
     "message": "Kopier verifiseringskoden"
   },
   "copyUuid": {
-    "message": "Copy UUID"
+    "message": "Kopier UUID"
+  },
+  "errorRefreshingAccessToken": {
+    "message": "Access Token Refresh Error"
+  },
+  "errorRefreshingAccessTokenDesc": {
+    "message": "No refresh token or API keys found. Please try logging out and logging back in."
   },
   "warning": {
     "message": "Advarsel"
@@ -1057,7 +1066,7 @@
     "message": "Bekreft eksport av hvelvet"
   },
   "confirmSecretsExport": {
-    "message": "Confirm secrets export"
+    "message": "Bekreft eksport av hemmeligheter"
   },
   "exportWarningDesc": {
     "message": "Eksporten inneholder dine hvelvdata i ukryptert format. Du bør ikke lagre eller sende den eksporterte filen over usikre tjenester (som e-post). Slett filen umiddelbart etter at du er ferdig med å bruke den."
@@ -1075,13 +1084,13 @@
     "message": "Eksporter"
   },
   "exportFrom": {
-    "message": "Export from"
+    "message": "Eksport fra"
   },
   "exportVault": {
     "message": "Eksporter hvelvet"
   },
   "exportSecrets": {
-    "message": "Export secrets"
+    "message": "Eksporter hemmeligheter"
   },
   "fileFormat": {
     "message": "Filformat"
@@ -5586,6 +5595,39 @@
   "rotateBillingSyncTokenTitle": {
     "message": "Rotasjon av faktureringssynkroniserings-token vil gjøre den forrige token ugyldig."
   },
+  "selfHostedServer": {
+    "message": "self-hosted"
+  },
+  "customEnvironment": {
+    "message": "Custom environment"
+  },
+  "selfHostedBaseUrlHint": {
+    "message": "Specify the base URL of your on-premises hosted Bitwarden installation. Example: https://bitwarden.company.com"
+  },
+  "selfHostedCustomEnvHeader": {
+    "message": "For advanced configuration, you can specify the base URL of each service independently."
+  },
+  "selfHostedEnvFormInvalid": {
+    "message": "You must add either the base Server URL or at least one custom environment."
+  },
+  "apiUrl": {
+    "message": "API server URL"
+  },
+  "webVaultUrl": {
+    "message": "Web vault server URL"
+  },
+  "identityUrl": {
+    "message": "Identity server URL"
+  },
+  "notificationsUrl": {
+    "message": "Notifications server URL"
+  },
+  "iconsUrl": {
+    "message": "Icons server URL"
+  },
+  "environmentSaved": {
+    "message": "Environment URLs saved"
+  },
   "selfHostingTitle": {
     "message": "Selvhosting"
   },
@@ -8297,5 +8339,20 @@
   },
   "allLoginRequestsApproved": {
     "message": "All login requests approved"
+  },
+  "payPal": {
+    "message": "PayPal"
+  },
+  "bitcoin": {
+    "message": "Bitcoin"
+  },
+  "updatedTaxInformation": {
+    "message": "Updated tax information"
+  },
+  "unverified": {
+    "message": "Unverified"
+  },
+  "verified": {
+    "message": "Verified"
   }
 }

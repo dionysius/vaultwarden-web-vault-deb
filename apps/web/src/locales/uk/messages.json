@@ -587,6 +587,9 @@
   "loggedOut": {
     "message": "Ви вийшли"
   },
+  "loggedOutDesc": {
+    "message": "Ви вийшли з облікового запису."
+  },
   "loginExpired": {
     "message": "Тривалість вашого сеансу завершилась."
   },
@@ -1049,6 +1052,12 @@
   },
   "copyUuid": {
     "message": "Копіювати UUID"
+  },
+  "errorRefreshingAccessToken": {
+    "message": "Помилка оновлення токена доступу"
+  },
+  "errorRefreshingAccessTokenDesc": {
+    "message": "Не знайдено токен оновлення або ключі API. Спробуйте вийти, а потім увійти знову."
   },
   "warning": {
     "message": "Попередження"
@@ -2373,7 +2382,7 @@
     "message": "Щоб оновити обліковий запис до Premium, вам необхідно вивантажити дійсний файл ліцензії."
   },
   "uploadLicenseFileOrg": {
-    "message": "Для створення організації з локальним хостингом вам необхідно вивантажити дійсний файл ліцензії."
+    "message": "Щоб створити організацію, розміщену на локальному хостингу, вам необхідно вивантажити дійсний файл ліцензії."
   },
   "accountEmailMustBeVerified": {
     "message": "Необхідно підтвердити адресу електронної пошти вашого облікового запису."
@@ -5586,6 +5595,39 @@
   "rotateBillingSyncTokenTitle": {
     "message": "Оновлення токена платіжної синхронізації призведе до скасування попереднього токена."
   },
+  "selfHostedServer": {
+    "message": "власне розміщення"
+  },
+  "customEnvironment": {
+    "message": "Власне середовище"
+  },
+  "selfHostedBaseUrlHint": {
+    "message": "Вкажіть основну URL-адресу вашого локально розміщеного встановлення Bitwarden. Зразок: https://bitwarden.company.com"
+  },
+  "selfHostedCustomEnvHeader": {
+    "message": "Для розширеної конфігурації ви можете вказати основну URL-адресу окремо для кожної служби."
+  },
+  "selfHostedEnvFormInvalid": {
+    "message": "Необхідно додати URL-адресу основного сервера, або принаймні одне користувацьке середовище."
+  },
+  "apiUrl": {
+    "message": "URL-адреса сервера API"
+  },
+  "webVaultUrl": {
+    "message": "URL-адреса сервера веб сховища"
+  },
+  "identityUrl": {
+    "message": "URL-адреса сервера ідентифікації"
+  },
+  "notificationsUrl": {
+    "message": "URL-адреса сервера сповіщень"
+  },
+  "iconsUrl": {
+    "message": "URL-адреса сервера піктограм"
+  },
+  "environmentSaved": {
+    "message": "URL-адреси середовища збережено"
+  },
   "selfHostingTitle": {
     "message": "Власне розміщення"
   },
@@ -8297,5 +8339,20 @@
   },
   "allLoginRequestsApproved": {
     "message": "Усі запити на вхід схвалено"
+  },
+  "payPal": {
+    "message": "PayPal"
+  },
+  "bitcoin": {
+    "message": "Bitcoin"
+  },
+  "updatedTaxInformation": {
+    "message": "Податкову інформацію оновлено"
+  },
+  "unverified": {
+    "message": "Не перевірений"
+  },
+  "verified": {
+    "message": "Перевірений"
   }
 }
