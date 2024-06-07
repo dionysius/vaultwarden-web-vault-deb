@@ -1,7 +1,7 @@
 export const Fido2ContentScript = {
-  PageScript: "content/fido2/page-script.js",
-  PageScriptAppend: "content/fido2/page-script-append-mv2.js",
-  ContentScript: "content/fido2/content-script.js",
+  PageScript: "content/fido2-page-script.js",
+  PageScriptAppend: "content/fido2-page-script-append-mv2.js",
+  ContentScript: "content/fido2-content-script.js",
 } as const;
 
 export const Fido2ContentScriptId = {

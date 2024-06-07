@@ -60,7 +60,7 @@ describe("Fido2 Content Script", () => {
   chrome.runtime.connect = jest.fn(() => portSpy);
 
   it("destroys the messenger when the port is disconnected", () => {
-    require("./content-script");
+    require("./fido2-content-script");
 
     triggerPortOnDisconnectEvent(portSpy);
 
@@ -75,7 +75,7 @@ describe("Fido2 Content Script", () => {
     const mockResult = { credentialId: "mock" } as CreateCredentialResult;
     jest.spyOn(chrome.runtime, "sendMessage").mockResolvedValue(mockResult);
 
-    require("./content-script");
+    require("./fido2-content-script");
 
     const response = await messenger.handler!(message, new AbortController());
 
@@ -99,7 +99,7 @@ describe("Fido2 Content Script", () => {
       data: mock<InsecureCreateCredentialParams>(),
     });
 
-    require("./content-script");
+    require("./fido2-content-script");
 
     await messenger.handler!(message, new AbortController());
 
@@ -121,7 +121,7 @@ describe("Fido2 Content Script", () => {
     const abortController = new AbortController();
     const abortSpy = jest.spyOn(abortController.signal, "removeEventListener");
 
-    require("./content-script");
+    require("./fido2-content-script");
 
     await messenger.handler!(message, abortController);
 
@@ -141,7 +141,7 @@ describe("Fido2 Content Script", () => {
         abortController.abort();
       });
 
-    require("./content-script");
+    require("./fido2-content-script");
 
     await messenger.handler!(message, abortController);
 
@@ -161,7 +161,7 @@ describe("Fido2 Content Script", () => {
     const abortController = new AbortController();
     jest.spyOn(chrome.runtime, "sendMessage").mockResolvedValue({ error: errorMessage });
 
-    require("./content-script");
+    require("./fido2-content-script");
     const result = messenger.handler!(message, abortController);
 
     await expect(result).rejects.toEqual(errorMessage);
@@ -175,7 +175,7 @@ describe("Fido2 Content Script", () => {
       contentType: "application/json",
     }));
 
-    require("./content-script");
+    require("./fido2-content-script");
 
     expect(messengerForDOMCommunicationSpy).not.toHaveBeenCalled();
   });
@@ -193,7 +193,7 @@ describe("Fido2 Content Script", () => {
       },
     }));
 
-    require("./content-script");
+    require("./fido2-content-script");
 
     expect(messengerForDOMCommunicationSpy).not.toHaveBeenCalled();
   });

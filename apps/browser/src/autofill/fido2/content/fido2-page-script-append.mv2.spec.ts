@@ -13,7 +13,7 @@ describe("FIDO2 page-script for manifest v2", () => {
   it("skips appending the `page-script.js` file if the document contentType is not `text/html`", () => {
     Object.defineProperty(window.document, "contentType", { value: "text/plain", writable: true });
 
-    require("./page-script-append.mv2");
+    require("./fido2-page-script-append.mv2");
 
     expect(window.document.createElement).not.toHaveBeenCalled();
   });
@@ -24,7 +24,7 @@ describe("FIDO2 page-script for manifest v2", () => {
       return node;
     });
 
-    require("./page-script-append.mv2");
+    require("./fido2-page-script-append.mv2");
 
     expect(window.document.createElement).toHaveBeenCalledWith("script");
     expect(chrome.runtime.getURL).toHaveBeenCalledWith(Fido2ContentScript.PageScript);
@@ -42,7 +42,7 @@ describe("FIDO2 page-script for manifest v2", () => {
       return node;
     });
 
-    require("./page-script-append.mv2");
+    require("./fido2-page-script-append.mv2");
 
     expect(window.document.createElement).toHaveBeenCalledWith("script");
     expect(chrome.runtime.getURL).toHaveBeenCalledWith(Fido2ContentScript.PageScript);
@@ -59,7 +59,7 @@ describe("FIDO2 page-script for manifest v2", () => {
       return createdScriptElement;
     });
 
-    require("./page-script-append.mv2");
+    require("./fido2-page-script-append.mv2");
 
     jest.spyOn(createdScriptElement, "remove");
     createdScriptElement.dispatchEvent(new Event("load"));

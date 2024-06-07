@@ -165,8 +165,8 @@ const mainConfig = {
     "content/notificationBar": "./src/autofill/content/notification-bar.ts",
     "content/contextMenuHandler": "./src/autofill/content/context-menu-handler.ts",
     "content/content-message-handler": "./src/autofill/content/content-message-handler.ts",
-    "content/fido2/content-script": "./src/vault/fido2/content/content-script.ts",
-    "content/fido2/page-script": "./src/vault/fido2/content/page-script.ts",
+    "content/fido2-content-script": "./src/autofill/fido2/content/fido2-content-script.ts",
+    "content/fido2-page-script": "./src/autofill/fido2/content/fido2-page-script.ts",
     "notification/bar": "./src/autofill/notification/bar.ts",
     "overlay/button": "./src/autofill/overlay/pages/button/bootstrap-autofill-overlay-button.ts",
     "overlay/list": "./src/autofill/overlay/pages/list/bootstrap-autofill-overlay-list.ts",
@@ -274,8 +274,8 @@ if (manifestVersion == 2) {
   mainConfig.entry.background = "./src/platform/background.ts";
   mainConfig.entry["content/lp-suppress-import-download-script-append-mv2"] =
     "./src/tools/content/lp-suppress-import-download-script-append.mv2.ts";
-  mainConfig.entry["content/fido2/page-script-append-mv2"] =
-    "./src/vault/fido2/content/page-script-append.mv2.ts";
+  mainConfig.entry["content/fido2-page-script-append-mv2"] =
+    "./src/autofill/fido2/content/fido2-page-script-append.mv2.ts";
 
   configs.push(mainConfig);
 } else {
