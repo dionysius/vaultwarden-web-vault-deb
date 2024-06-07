@@ -695,6 +695,15 @@
   "selfHostedEnvironmentFooter": {
     "message": "Zadajte URL Bitwarden inštalácie, ktorú prevádzkujete vo vlastnom prostredí."
   },
+  "selfHostedBaseUrlHint": {
+    "message": "Zadajte základnú URL adresu lokálne hosťovanej inštalácie Bitwarden. Napríklad: https://bitwarden.company.com"
+  },
+  "selfHostedCustomEnvHeader": {
+    "message": "Pre rozšírenú konfiguráciu môžete zadať základnú adresu URL každej služby nezávisle."
+  },
+  "selfHostedEnvFormInvalid": {
+    "message": "Musíte pridať buď základnú adresu URL servera, alebo aspoň jedno vlastné prostredie."
+  },
   "customEnvironment": {
     "message": "Vlastné prostredie"
   },
@@ -742,6 +751,9 @@
   },
   "loggedOut": {
     "message": "Odhlásený"
+  },
+  "loggedOutDesc": {
+    "message": "Boli ste odhlásení zo svojho účtu."
   },
   "loginExpired": {
     "message": "Platnosť prihlásenia vypršala."
@@ -1211,6 +1223,12 @@
         "example": "Password"
       }
     }
+  },
+  "errorRefreshingAccessToken": {
+    "message": "Chyba obnovenia prístupového tokenu"
+  },
+  "errorRefreshingAccessTokenDesc": {
+    "message": "Nenašiel sa žiadny token obnovenia ani kľúče API. Skúste sa odhlásiť a znova prihlásiť."
   },
   "help": {
     "message": "Nápoveď"
@@ -2473,6 +2491,12 @@
   },
   "important": {
     "message": "Dôležité:"
+  },
+  "accessTokenUnableToBeDecrypted": {
+    "message": "Boli ste odhlásení, pretože váš prístupový token nebolo možné dešifrovať. Na vyriešenie tohto problému sa znova prihláste."
+  },
+  "refreshTokenSecureStorageRetrievalFailure": {
+    "message": "Boli ste odhlásení, pretože váš prístupový token nebolo možné načítať. Na vyriešenie tohto problému sa znova prihláste."
   },
   "masterPasswordHint": {
     "message": "Vaše hlavné heslo sa nebude dať obnoviť, ak ho zabudnete!"

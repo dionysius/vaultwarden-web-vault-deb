@@ -695,6 +695,15 @@
   "selfHostedEnvironmentFooter": {
     "message": "A helyileg üzemeltetett Bitwarden telepítés webcímének megadása."
   },
+  "selfHostedBaseUrlHint": {
+    "message": "Adjuk meg a helyileg tárolt Bitwarden telepítés alap webcímét. Példa: https://bitwarden.company.com"
+  },
+  "selfHostedCustomEnvHeader": {
+    "message": "Speciális konfigurációhoz külön-külön megadhatjuk az egyes szolgáltatások alap webcímét."
+  },
+  "selfHostedEnvFormInvalid": {
+    "message": "Hozzá kell adni az alapszerver webcímét vagy legalább egy egyedi környezetet."
+  },
   "customEnvironment": {
     "message": "Egyedi környezet"
   },
@@ -742,6 +751,9 @@
   },
   "loggedOut": {
     "message": "Megtörtént a kijelentkezés."
+  },
+  "loggedOutDesc": {
+    "message": "Megtörtént a kijelentkezés a fiókból."
   },
   "loginExpired": {
     "message": "A bejelentkezési munkamenet lejárt."
@@ -1211,6 +1223,12 @@
         "example": "Password"
       }
     }
+  },
+  "errorRefreshingAccessToken": {
+    "message": "Hozzáférési vezérjel frissítési hiba"
+  },
+  "errorRefreshingAccessTokenDesc": {
+    "message": "Nem található frissítési vezérjel vagy API kulcs. Próbáljunk meg kijelentkezni, majd újra bejelentkezni."
   },
   "help": {
     "message": "Súgó"
@@ -2473,6 +2491,12 @@
   },
   "important": {
     "message": "Fontos:"
+  },
+  "accessTokenUnableToBeDecrypted": {
+    "message": "Megtörtént a kijelentkezés, mert a hozzáférési vezérjelet nem sikerült visszafejteni. Jelentkezzünk be újra a probléma megoldásához."
+  },
+  "refreshTokenSecureStorageRetrievalFailure": {
+    "message": "Megtörtént a kijelentkezés, mert a hozzáférési vezérjelet nem sikerült visszafejteni. Jelentkezzünk be újra a probléma megoldásához."
   },
   "masterPasswordHint": {
     "message": "Az elfelejtett mesterjelszó nem állítható helyre, ha elfelejtik!"

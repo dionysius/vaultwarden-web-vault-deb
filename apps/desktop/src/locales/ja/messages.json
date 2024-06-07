@@ -695,6 +695,15 @@
   "selfHostedEnvironmentFooter": {
     "message": "セルフホスティングしている Bitwarden のベース URL を指定してください。"
   },
+  "selfHostedBaseUrlHint": {
+    "message": "オンプレミスホストした Bitwarden のベース URL を指定してください。例: https://bitwarden.company.com"
+  },
+  "selfHostedCustomEnvHeader": {
+    "message": "高度な設定では、各サービスのベース URL を個別に指定できます。"
+  },
+  "selfHostedEnvFormInvalid": {
+    "message": "ベース サーバー URL または少なくとも 1 つのカスタム環境を追加する必要があります。"
+  },
   "customEnvironment": {
     "message": "カスタム環境"
   },
@@ -742,6 +751,9 @@
   },
   "loggedOut": {
     "message": "ログアウトしました"
+  },
+  "loggedOutDesc": {
+    "message": "アカウントからログアウトしました。"
   },
   "loginExpired": {
     "message": "ログインセッションの有効期限が切れています。"
@@ -1211,6 +1223,12 @@
         "example": "Password"
       }
     }
+  },
+  "errorRefreshingAccessToken": {
+    "message": "アクセストークンの更新エラー"
+  },
+  "errorRefreshingAccessTokenDesc": {
+    "message": "リフレッシュトークンや API キーが見つかりませんでした。ログアウトして再度ログインしてください。"
   },
   "help": {
     "message": "ヘルプ"
@@ -2473,6 +2491,12 @@
   },
   "important": {
     "message": "重要"
+  },
+  "accessTokenUnableToBeDecrypted": {
+    "message": "アクセストークンを復号できなかったためログアウトしました。この問題を解決するためには再度ログインしてください。"
+  },
+  "refreshTokenSecureStorageRetrievalFailure": {
+    "message": "リフレッシュトークンを取得できなかったためログアウトしました。この問題を解決するためには再度ログインしてください。"
   },
   "masterPasswordHint": {
     "message": "マスターパスワードを忘れた場合は復元できません！"

@@ -695,6 +695,15 @@
   "selfHostedEnvironmentFooter": {
     "message": "Укажете базовия адрес за собствената ви инсталирана среда на Bitwarden."
   },
+  "selfHostedBaseUrlHint": {
+    "message": "Посочете базовия адрес на Вашата собствена инсталация на Битуорден. Пример: https://bitwarden.company.com"
+  },
+  "selfHostedCustomEnvHeader": {
+    "message": "За по-детайлна настройка, може да укажете основния адрес на всяка услуга поотделно."
+  },
+  "selfHostedEnvFormInvalid": {
+    "message": "Трябва да добавите или основния адрес на сървъра, или поне една специална среда."
+  },
   "customEnvironment": {
     "message": "Специална среда"
   },
@@ -742,6 +751,9 @@
   },
   "loggedOut": {
     "message": "Бяхте отписани"
+  },
+  "loggedOutDesc": {
+    "message": "Бяхте отписан(а) от регистрацията си."
   },
   "loginExpired": {
     "message": "Сесията ви изтече."
@@ -1211,6 +1223,12 @@
         "example": "Password"
       }
     }
+  },
+  "errorRefreshingAccessToken": {
+    "message": "Грешка при опресняването на идентификатора за достъп"
+  },
+  "errorRefreshingAccessTokenDesc": {
+    "message": "Няма намерен идентификатор за опресняване или ключове за ППИ. Опитайте да се отпишете и да се впишете отново."
   },
   "help": {
     "message": "Помощ"
@@ -2473,6 +2491,12 @@
   },
   "important": {
     "message": "Важно:"
+  },
+  "accessTokenUnableToBeDecrypted": {
+    "message": "Бяхте отписан(а), тъй като идентификаторът Ви за достъп не може да бъде дешифриран. Впишете се отново, за да отстраните проблема."
+  },
+  "refreshTokenSecureStorageRetrievalFailure": {
+    "message": "Бяхте отписан(а), тъй като идентификаторът Ви за опресняване не може да бъде получен. Впишете се отново, за да отстраните проблема."
   },
   "masterPasswordHint": {
     "message": "Главната парола не може да бъде възстановена, ако я забравите!"

@@ -695,6 +695,15 @@
   "selfHostedEnvironmentFooter": {
     "message": "Angiv grund-URL'en til den lokal-hostede Bitwarden-installation."
   },
+  "selfHostedBaseUrlHint": {
+    "message": "Specify the base URL of your on-premises hosted Bitwarden installation. Example: https://bitwarden.company.com"
+  },
+  "selfHostedCustomEnvHeader": {
+    "message": "For advanced configuration, you can specify the base URL of each service independently."
+  },
+  "selfHostedEnvFormInvalid": {
+    "message": "You must add either the base Server URL or at least one custom environment."
+  },
   "customEnvironment": {
     "message": "Tilpasset miljø"
   },
@@ -742,6 +751,9 @@
   },
   "loggedOut": {
     "message": "Logget ud"
+  },
+  "loggedOutDesc": {
+    "message": "Der er blevet logget ud af kontoen."
   },
   "loginExpired": {
     "message": "Loginsessionen er udløbet."
@@ -1211,6 +1223,12 @@
         "example": "Password"
       }
     }
+  },
+  "errorRefreshingAccessToken": {
+    "message": "Adgangstoken genopfriskningsfejl"
+  },
+  "errorRefreshingAccessTokenDesc": {
+    "message": "Ingen genopfriskningstoken eller API-nøgler fundet. Prøv at logge ud og dernæst ind igen."
   },
   "help": {
     "message": "Hjælp"
@@ -2473,6 +2491,12 @@
   },
   "important": {
     "message": "Vigtigt:"
+  },
+  "accessTokenUnableToBeDecrypted": {
+    "message": "Kontoen er blevet logget ud, fordi adgangstokenet ikke kunne dekrypteres. Log ind igen for at løse problemet."
+  },
+  "refreshTokenSecureStorageRetrievalFailure": {
+    "message": "Kontoen er blevet logget ud, fordi opfriskningstokenet ikke kunne dekrypteres. Log ind igen for at løse problemet."
   },
   "masterPasswordHint": {
     "message": "Hovedadgangskoden kan ikke gendannes, hvis den glemmes!"

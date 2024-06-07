@@ -695,6 +695,15 @@
   "selfHostedEnvironmentFooter": {
     "message": "Zadejte základní URL adresu vlastní hostované aplikace Bitwarden."
   },
+  "selfHostedBaseUrlHint": {
+    "message": "Zadejte základní URL adresu Vaší vlastní hostované aplikace Bitwarden. Příklad: https://bitwarden.spolecnost.cz"
+  },
+  "selfHostedCustomEnvHeader": {
+    "message": "Pro rozšířená nastavení můžete zadat základní URL adresu každé služby zvlášť."
+  },
+  "selfHostedEnvFormInvalid": {
+    "message": "Musíte přidat buď základní adresu URL serveru nebo alespoň jedno vlastní prostředí."
+  },
   "customEnvironment": {
     "message": "Vlastní prostředí"
   },
@@ -742,6 +751,9 @@
   },
   "loggedOut": {
     "message": "Odhlášení"
+  },
+  "loggedOutDesc": {
+    "message": "Byli jste odhlášeni ze svého účtu."
   },
   "loginExpired": {
     "message": "Platnost přihlášení vypršela."
@@ -1211,6 +1223,12 @@
         "example": "Password"
       }
     }
+  },
+  "errorRefreshingAccessToken": {
+    "message": "Chyba aktualizace přístupového tokenu"
+  },
+  "errorRefreshingAccessTokenDesc": {
+    "message": "Nebyly nalezeny žádné obnovovací tokeny nebo API klíče. Zkuste se odhlásit a znovu se přihlásit."
   },
   "help": {
     "message": "Nápověda"
@@ -2473,6 +2491,12 @@
   },
   "important": {
     "message": "Důležité:"
+  },
+  "accessTokenUnableToBeDecrypted": {
+    "message": "Byli jste odhlášeni, protože Váš přístupový token nelze dešifrovat. Pro vyřešení tohoto problému se přihlaste znovu."
+  },
+  "refreshTokenSecureStorageRetrievalFailure": {
+    "message": "Byli jste odhlášeni, protože Váš obnovovací token nelze získat. Pro vyřešení tohoto problému se přihlaste znovu."
   },
   "masterPasswordHint": {
     "message": "Pokud zapomenete Vaše hlavní heslo, nebude možné jej obnovit!"
