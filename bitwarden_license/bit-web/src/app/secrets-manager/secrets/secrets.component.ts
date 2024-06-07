@@ -20,6 +20,10 @@ import {
   SecretDialogComponent,
   SecretOperation,
 } from "./dialog/secret-dialog.component";
+import {
+  SecretViewDialogComponent,
+  SecretViewDialogParams,
+} from "./dialog/secret-view-dialog.component";
 import { SecretService } from "./secret.service";
 
 @Component({
@@ -73,6 +77,15 @@ export class SecretsComponent implements OnInit {
         operation: OperationType.Edit,
         secretId: secretId,
         organizationEnabled: this.organizationEnabled,
+      },
+    });
+  }
+
+  openViewSecret(secretId: string) {
+    this.dialogService.open<unknown, SecretViewDialogParams>(SecretViewDialogComponent, {
+      data: {
+        organizationId: this.organizationId,
+        secretId: secretId,
       },
     });
   }

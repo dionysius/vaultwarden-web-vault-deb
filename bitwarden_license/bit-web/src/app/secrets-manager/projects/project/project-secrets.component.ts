@@ -19,6 +19,10 @@ import {
   SecretDialogComponent,
   SecretOperation,
 } from "../../secrets/dialog/secret-dialog.component";
+import {
+  SecretViewDialogComponent,
+  SecretViewDialogParams,
+} from "../../secrets/dialog/secret-view-dialog.component";
 import { SecretService } from "../../secrets/secret.service";
 import { SecretsListComponent } from "../../shared/secrets-list.component";
 import { ProjectService } from "../project.service";
@@ -84,6 +88,15 @@ export class ProjectSecretsComponent {
         operation: OperationType.Edit,
         secretId: secretId,
         organizationEnabled: this.organizationEnabled,
+      },
+    });
+  }
+
+  openViewSecret(secretId: string) {
+    this.dialogService.open<unknown, SecretViewDialogParams>(SecretViewDialogComponent, {
+      data: {
+        organizationId: this.organizationId,
+        secretId: secretId,
       },
     });
   }

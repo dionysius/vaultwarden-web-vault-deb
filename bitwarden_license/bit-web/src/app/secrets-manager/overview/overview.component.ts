@@ -41,6 +41,10 @@ import {
   SecretDialogComponent,
   SecretOperation,
 } from "../secrets/dialog/secret-dialog.component";
+import {
+  SecretViewDialogComponent,
+  SecretViewDialogParams,
+} from "../secrets/dialog/secret-view-dialog.component";
 import { SecretService } from "../secrets/secret.service";
 import {
   ServiceAccountDialogComponent,
@@ -273,6 +277,15 @@ export class OverviewComponent implements OnInit, OnDestroy {
         operation: OperationType.Edit,
         secretId: secretId,
         organizationEnabled: this.organizationEnabled,
+      },
+    });
+  }
+
+  openViewSecret(secretId: string) {
+    this.dialogService.open<unknown, SecretViewDialogParams>(SecretViewDialogComponent, {
+      data: {
+        organizationId: this.organizationId,
+        secretId: secretId,
       },
     });
   }
