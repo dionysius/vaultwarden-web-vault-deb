@@ -8,16 +8,26 @@ on:
       - "main"
       - "rc"
       - "hotfix-rc-*"
-  pull_request:
+  pull_request_target:
+    types: [opened, synchronize]
 
 defaults:
   run:
     shell: bash
 
 jobs:
+  check-run:
+    name: Check PR run
+    uses: bitwarden/gh-actions/.github/workflows/check-run.yml@main
+
   test:
     name: Run tests
     runs-on: ubuntu-22.04
+    needs: check-run
+    permissions:
+      contents: read
+      pull-requests: write
+      
     steps:
       - name: Checkout repo
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
