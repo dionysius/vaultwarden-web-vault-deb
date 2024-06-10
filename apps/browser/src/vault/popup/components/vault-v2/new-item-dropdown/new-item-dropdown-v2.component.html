@@ -1,0 +1,22 @@
+<button bitButton [bitMenuTriggerFor]="itemOptions" buttonType="primary" type="button">
+  <i class="bwi bwi-plus-f" aria-hidden="true"></i>
+  {{ "new" | i18n }}
+</button>
+<bit-menu #itemOptions>
+  <a type="button" bitMenuItem (click)="newItemNavigate(cipherType.Login)">
+    <i class="bwi bwi-globe" slot="start" aria-hidden="true"></i>
+    {{ "typeLogin" | i18n }}
+  </a>
+  <a type="button" bitMenuItem (click)="newItemNavigate(cipherType.Card)">
+    <i class="bwi bwi-credit-card" slot="start" aria-hidden="true"></i>
+    {{ "typeCard" | i18n }}
+  </a>
+  <a type="button" bitMenuItem (click)="newItemNavigate(cipherType.Identity)">
+    <i class="bwi bwi-id-card" slot="start" aria-hidden="true"></i>
+    {{ "typeIdentity" | i18n }}
+  </a>
+  <a type="button" bitMenuItem (click)="newItemNavigate(cipherType.SecureNote)">
+    <i class="bwi bwi-sticky-note" slot="start" aria-hidden="true"></i>
+    {{ "note" | i18n }}
+  </a>
+</bit-menu>

@@ -5,6 +5,7 @@ import { Router, RouterLink } from "@angular/router";
 import { combineLatest } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
+import { CipherType } from "@bitwarden/common/vault/enums";
 import { ButtonModule, Icons, NoItemsModule } from "@bitwarden/components";
 
 import { CurrentAccountComponent } from "../../../../auth/popup/account-switching/current-account.component";
@@ -13,6 +14,7 @@ import { PopupHeaderComponent } from "../../../../platform/popup/layout/popup-he
 import { PopupPageComponent } from "../../../../platform/popup/layout/popup-page.component";
 import { VaultPopupItemsService } from "../../services/vault-popup-items.service";
 import { AutofillVaultListItemsComponent, VaultListItemsContainerComponent } from "../vault-v2";
+import { NewItemDropdownV2Component } from "../vault-v2/new-item-dropdown/new-item-dropdown-v2.component";
 import { VaultListFiltersComponent } from "../vault-v2/vault-list-filters/vault-list-filters.component";
 import { VaultV2SearchComponent } from "../vault-v2/vault-search/vault-v2-search.component";
 
@@ -40,9 +42,11 @@ enum VaultState {
     ButtonModule,
     RouterLink,
     VaultV2SearchComponent,
+    NewItemDropdownV2Component,
   ],
 })
 export class VaultV2Component implements OnInit, OnDestroy {
+  cipherType = CipherType;
   protected favoriteCiphers$ = this.vaultPopupItemsService.favoriteCiphers$;
   protected remainingCiphers$ = this.vaultPopupItemsService.remainingCiphers$;
 
@@ -86,9 +90,4 @@ export class VaultV2Component implements OnInit, OnDestroy {
   ngOnInit(): void {}
 
   ngOnDestroy(): void {}
-
-  addCipher() {
-    // TODO: Add currently filtered organization to query params if available
-    void this.router.navigate(["/add-cipher"], {});
-  }
 }
