@@ -75,7 +75,7 @@ export class AccessSelectorComponent implements ControlValueAccessor, OnInit, On
 
       // The enable() above also enables the permission control, so we need to disable it again
       // Disable permission control if accessAllItems is enabled or not in Edit mode
-      if (item.accessAllItems || this.permissionMode != PermissionMode.Edit) {
+      if (this.permissionMode != PermissionMode.Edit) {
         controlRow.controls.permission.disable();
       }
     }
@@ -197,19 +197,9 @@ export class AccessSelectorComponent implements ControlValueAccessor, OnInit, On
   @Input() showGroupColumn: boolean;
 
   /**
-   * Enable Flexible Collections changes (feature flag)
-   */
-  @Input() set flexibleCollectionsEnabled(value: boolean) {
-    this._flexibleCollectionsEnabled = value;
-    this.permissionList = getPermissionList(value);
-  }
-
-  /**
    * Hide the multi-select so that new items cannot be added
    */
   @Input() hideMultiSelect = false;
-
-  private _flexibleCollectionsEnabled: boolean;
 
   constructor(
     private readonly formBuilder: FormBuilder,
@@ -275,7 +265,7 @@ export class AccessSelectorComponent implements ControlValueAccessor, OnInit, On
   }
 
   async ngOnInit() {
-    this.permissionList = getPermissionList(this._flexibleCollectionsEnabled);
+    this.permissionList = getPermissionList();
     // Watch the internal formArray for changes and propagate them
     this.selectionList.formArray.valueChanges.pipe(takeUntil(this.destroy$)).subscribe((v) => {
       if (!this.notifyOnChange || this.pauseChangeNotification) {
@@ -328,12 +318,8 @@ export class AccessSelectorComponent implements ControlValueAccessor, OnInit, On
     return this.permissionList.find((p) => p.perm == perm)?.labelId;
   }
 
-  protected accessAllLabelId(item: AccessItemView) {
-    return item.type == AccessItemType.Group ? "groupAccessAll" : "memberAccessAll";
-  }
-
   protected canEditItemPermission(item: AccessItemView) {
-    return this.permissionMode == PermissionMode.Edit && !item.readonly && !item.accessAllItems;
+    return this.permissionMode == PermissionMode.Edit && !item.readonly;
   }
 
   private _itemComparator(a: AccessItemView, b: AccessItemView) {

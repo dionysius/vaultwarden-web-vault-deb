@@ -111,15 +111,6 @@
 
         <ng-template #readOnlyPerm>
           <div
-            *ngIf="item.accessAllItems"
-            class="tw-max-w-40 tw-overflow-hidden tw-overflow-ellipsis tw-whitespace-nowrap tw-border tw-border-solid tw-border-transparent tw-font-bold tw-text-muted"
-            [appA11yTitle]="accessAllLabelId(item) | i18n"
-          >
-            {{ "canEdit" | i18n }}
-            <i class="bwi bwi-filter tw-ml-1" aria-hidden="true"></i>
-          </div>
-
-          <div
             *ngIf="item.readonly || disabled"
             class="tw-max-w-40 tw-overflow-hidden tw-overflow-ellipsis tw-whitespace-nowrap tw-font-bold tw-text-muted"
             [title]="permissionLabelId(item.readonlyPermission) | i18n"

@@ -253,7 +253,6 @@ MemberGroupAccess.args = {
       type: AccessItemType.Group,
       listName: "Admin Group",
       labelName: "Admin Group",
-      accessAllItems: true,
     },
   ]),
 };
@@ -309,7 +308,6 @@ CollectionAccess.args = {
       type: AccessItemType.Group,
       listName: "Admin Group",
       labelName: "Admin Group",
-      accessAllItems: true,
       readonly: true,
     },
     {
@@ -320,7 +318,6 @@ CollectionAccess.args = {
       status: OrganizationUserStatusType.Confirmed,
       role: OrganizationUserType.Admin,
       email: "admin@email.com",
-      accessAllItems: true,
       readonly: true,
     },
   ]),

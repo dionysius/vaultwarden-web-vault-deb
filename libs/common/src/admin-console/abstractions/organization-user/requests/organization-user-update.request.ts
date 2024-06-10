@@ -4,7 +4,6 @@ import { SelectionReadOnlyRequest } from "../../../models/request/selection-read
 
 export class OrganizationUserUpdateRequest {
   type: OrganizationUserType;
-  accessAll: boolean;
   accessSecretsManager: boolean;
   collections: SelectionReadOnlyRequest[] = [];
   groups: string[] = [];

@@ -167,11 +167,7 @@ export class ExportComponent implements OnInit, OnDestroy {
     }
 
     this.organizations$ = this.organizationService.memberOrganizations$.pipe(
-      map((orgs) =>
-        orgs
-          .filter((org) => org.flexibleCollections)
-          .sort(Utils.getSortFunction(this.i18nService, "name")),
-      ),
+      map((orgs) => orgs.sort(Utils.getSortFunction(this.i18nService, "name"))),
     );
 
     this.exportForm.controls.vaultSelector.valueChanges

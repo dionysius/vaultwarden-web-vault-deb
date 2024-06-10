@@ -80,7 +80,6 @@ export class InternalGroupService extends GroupService {
   async save(group: GroupView): Promise<GroupView> {
     const request = new GroupRequest();
     request.name = group.name;
-    request.accessAll = group.accessAll;
     request.users = group.members;
     request.collections = group.collections.map(
       (c) => new SelectionReadOnlyRequest(c.id, c.readOnly, c.hidePasswords, c.manage),

@@ -11,7 +11,7 @@
 
     <bit-nav-item
       icon="bwi-collection"
-      [text]="(organization.flexibleCollections ? 'collections' : 'vault') | i18n"
+      [text]="'collections' | i18n"
       route="vault"
       *ngIf="canShowVaultTab(organization)"
     >

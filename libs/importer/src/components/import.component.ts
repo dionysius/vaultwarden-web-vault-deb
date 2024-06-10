@@ -256,17 +256,14 @@ export class ImportComponent implements OnInit, OnDestroy {
         if (!this._importBlockedByPolicy) {
           this.formGroup.controls.targetSelector.enable();
         }
-        const flexCollectionEnabled =
-          organizations.find((x) => x.id == this.organizationId)?.flexibleCollections ?? false;
+
         if (value) {
           this.collections$ = Utils.asyncToObservable(() =>
             this.collectionService
               .getAllDecrypted()
               .then((decryptedCollections) =>
                 decryptedCollections
-                  .filter(
-                    (c2) => c2.organizationId === value && (!flexCollectionEnabled || c2.manage),
-                  )
+                  .filter((c2) => c2.organizationId === value && c2.manage)
                   .sort(Utils.getSortFunction(this.i18nService, "name")),
               ),
           );

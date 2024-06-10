@@ -96,9 +96,6 @@ export class GroupAddEditComponent implements OnInit, OnDestroy {
   private organization$ = this.organizationService
     .get$(this.organizationId)
     .pipe(shareReplay({ refCount: true }));
-  protected flexibleCollectionsEnabled$ = this.organization$.pipe(
-    map((o) => o?.flexibleCollections),
-  );
   private flexibleCollectionsV1Enabled$ = this.configService.getFeatureFlag$(
     FeatureFlag.FlexibleCollectionsV1,
   );
@@ -114,7 +111,6 @@ export class GroupAddEditComponent implements OnInit, OnDestroy {
   group: GroupView;
 
   groupForm = this.formBuilder.group({
-    accessAll: [false],
     name: ["", [Validators.required, Validators.maxLength(100)]],
     externalId: this.formBuilder.control({ value: "", disabled: true }),
     members: [[] as AccessItemValue[]],
@@ -188,7 +184,7 @@ export class GroupAddEditComponent implements OnInit, OnDestroy {
     this.flexibleCollectionsV1Enabled$,
   ]).pipe(
     map(([organization, flexibleCollectionsV1Enabled]) => {
-      if (!flexibleCollectionsV1Enabled || !organization.flexibleCollections) {
+      if (!flexibleCollectionsV1Enabled) {
         return true;
       }
 
@@ -276,7 +272,6 @@ export class GroupAddEditComponent implements OnInit, OnDestroy {
             this.groupForm.patchValue({
               name: this.group.name,
               externalId: this.group.externalId,
-              accessAll: this.group.accessAll,
               members: this.group.members.map((m) => ({
                 id: m,
                 type: AccessItemType.Member,
@@ -328,12 +323,8 @@ export class GroupAddEditComponent implements OnInit, OnDestroy {
 
     const formValue = this.groupForm.value;
     groupView.name = formValue.name;
-    groupView.accessAll = formValue.accessAll;
     groupView.members = formValue.members?.map((m) => m.id) ?? [];
-
-    if (!groupView.accessAll) {
-      groupView.collections = formValue.collections.map((c) => convertToSelectionView(c));
-    }
+    groupView.collections = formValue.collections.map((c) => convertToSelectionView(c));
 
     await this.groupService.save(groupView);
 

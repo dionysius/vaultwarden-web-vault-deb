@@ -89,9 +89,7 @@ export class VaultHeaderComponent implements OnInit {
   }
 
   get title() {
-    const headerType = this.organization?.flexibleCollections
-      ? this.i18nService.t("collections").toLowerCase()
-      : this.i18nService.t("vault").toLowerCase();
+    const headerType = this.i18nService.t("collections").toLowerCase();
 
     if (this.collection != null) {
       return this.collection.node.name;

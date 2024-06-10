@@ -49,15 +49,11 @@ export class CollectionView implements View, ITreeNodeObject {
       );
     }
 
-    if (org?.flexibleCollections) {
-      return (
-        org?.canEditAllCiphers(v1FlexibleCollections, restrictProviderAccess) ||
-        this.manage ||
-        (this.assigned && !this.readOnly)
-      );
-    }
-
-    return org?.canEditAnyCollection(false) || (org?.canEditAssignedCollections && this.assigned);
+    return (
+      org?.canEditAllCiphers(v1FlexibleCollections, restrictProviderAccess) ||
+      this.manage ||
+      (this.assigned && !this.readOnly)
+    );
   }
 
   /**

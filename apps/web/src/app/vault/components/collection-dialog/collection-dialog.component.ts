@@ -223,7 +223,7 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
               (u) => u.userId === this.organization?.userId,
             )?.id;
             const initialSelection: AccessItemValue[] =
-              currentOrgUserId !== undefined && organization.flexibleCollections
+              currentOrgUserId !== undefined
                 ? [
                     {
                       id: currentOrgUserId,
@@ -239,11 +239,7 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
             });
           }
 
-          if (
-            organization.flexibleCollections &&
-            flexibleCollectionsV1 &&
-            !organization.allowAdminAccessToAllCollectionItems
-          ) {
+          if (flexibleCollectionsV1 && !organization.allowAdminAccessToAllCollectionItems) {
             this.formGroup.controls.access.addValidators(validateCanManagePermission);
           } else {
             this.formGroup.controls.access.removeValidators(validateCanManagePermission);
@@ -444,8 +440,7 @@ function mapGroupToAccessItemView(group: GroupView, collectionId: string): Acces
     type: AccessItemType.Group,
     listName: group.name,
     labelName: group.name,
-    accessAllItems: group.accessAll,
-    readonly: group.accessAll,
+    readonly: false,
     readonlyPermission:
       collectionId != null
         ? convertToPermission(group.collections.find((gc) => gc.id == collectionId))
@@ -471,8 +466,7 @@ function mapUserToAccessItemView(
     listName: user.name?.length > 0 ? `${user.name} (${user.email})` : user.email,
     labelName: user.name ?? user.email,
     status: user.status,
-    accessAllItems: user.accessAll,
-    readonly: user.accessAll,
+    readonly: false,
     readonlyPermission:
       collectionId != null
         ? convertToPermission(

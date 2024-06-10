@@ -190,12 +190,10 @@
             class="tw-cursor-pointer"
           >
             <bit-badge-list
-              *ngIf="organization.useGroups || !u.accessAll"
               [items]="organization.useGroups ? u.groupNames : u.collectionNames"
               [maxItems]="3"
               variant="secondary"
             ></bit-badge-list>
-            <span *ngIf="!organization.useGroups && u.accessAll">{{ "all" | i18n }}</span>
           </td>
 
           <td

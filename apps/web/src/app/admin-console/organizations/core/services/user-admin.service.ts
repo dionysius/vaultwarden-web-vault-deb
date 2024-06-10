@@ -41,7 +41,6 @@ export class UserAdminService {
 
   async save(user: OrganizationUserAdminView): Promise<void> {
     const request = new OrganizationUserUpdateRequest();
-    request.accessAll = user.accessAll;
     request.permissions = user.permissions;
     request.type = user.type;
     request.collections = user.collections;
@@ -54,7 +53,6 @@ export class UserAdminService {
   async invite(emails: string[], user: OrganizationUserAdminView): Promise<void> {
     const request = new OrganizationUserInviteRequest();
     request.emails = emails;
-    request.accessAll = user.accessAll;
     request.permissions = user.permissions;
     request.type = user.type;
     request.collections = user.collections;
@@ -77,7 +75,6 @@ export class UserAdminService {
       view.type = u.type;
       view.status = u.status;
       view.externalId = u.externalId;
-      view.accessAll = u.accessAll;
       view.permissions = u.permissions;
       view.resetPasswordEnrolled = u.resetPasswordEnrolled;
       view.collections = u.collections.map((c) => ({

@@ -1,7 +1,7 @@
 import { DIALOG_DATA, DialogConfig, DialogRef } from "@angular/cdk/dialog";
 import { Component, Inject, OnDestroy } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
-import { combineLatest, map, of, Subject, switchMap, takeUntil } from "rxjs";
+import { combineLatest, of, Subject, switchMap, takeUntil } from "rxjs";
 
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { OrganizationUserService } from "@bitwarden/common/admin-console/abstractions/organization-user/organization-user.service";
@@ -42,10 +42,6 @@ export enum BulkCollectionsDialogResult {
   standalone: true,
 })
 export class BulkCollectionsDialogComponent implements OnDestroy {
-  protected flexibleCollectionsEnabled$ = this.organizationService
-    .get$(this.params.organizationId)
-    .pipe(map((o) => o?.flexibleCollections));
-
   protected readonly PermissionMode = PermissionMode;
 
   protected formGroup = this.formBuilder.group({

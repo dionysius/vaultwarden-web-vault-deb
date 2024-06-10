@@ -156,7 +156,7 @@ export class VaultComponent implements OnInit, OnDestroy {
   private _flexibleCollectionsV1FlagEnabled: boolean;
 
   protected get flexibleCollectionsV1Enabled(): boolean {
-    return this._flexibleCollectionsV1FlagEnabled && this.organization?.flexibleCollections;
+    return this._flexibleCollectionsV1FlagEnabled;
   }
   protected orgRevokedUsers: OrganizationUserUserDetailsResponse[];
 

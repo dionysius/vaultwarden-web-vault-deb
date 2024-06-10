@@ -45,7 +45,6 @@
             [columnHeader]="'member' | i18n"
             [selectorLabelText]="'selectMembers' | i18n"
             [emptySelectionText]="'noMembersAdded' | i18n"
-            [flexibleCollectionsEnabled]="flexibleCollectionsEnabled$ | async"
           ></bit-access-selector>
         </bit-tab>
 
@@ -56,24 +55,14 @@
               {{ "restrictedCollectionAssignmentDesc" | i18n }}
             </span>
           </p>
-          <div *ngIf="!(flexibleCollectionsEnabled$ | async)" class="tw-my-3">
-            <input type="checkbox" formControlName="accessAll" id="accessAll" />
-            <label class="tw-mb-0 tw-text-lg" for="accessAll">{{
-              "accessAllCollectionsDesc" | i18n
-            }}</label>
-            <p class="tw-my-0 tw-text-muted">{{ "accessAllCollectionsHelp" | i18n }}</p>
-          </div>
-          <ng-container *ngIf="!groupForm.value.accessAll">
-            <bit-access-selector
-              formControlName="collections"
-              [items]="collections"
-              [permissionMode]="PermissionMode.Edit"
-              [columnHeader]="'collection' | i18n"
-              [selectorLabelText]="'selectCollections' | i18n"
-              [emptySelectionText]="'noCollectionsAdded' | i18n"
-              [flexibleCollectionsEnabled]="flexibleCollectionsEnabled$ | async"
-            ></bit-access-selector>
-          </ng-container>
+          <bit-access-selector
+            formControlName="collections"
+            [items]="collections"
+            [permissionMode]="PermissionMode.Edit"
+            [columnHeader]="'collection' | i18n"
+            [selectorLabelText]="'selectCollections' | i18n"
+            [emptySelectionText]="'noCollectionsAdded' | i18n"
+          ></bit-access-selector>
         </bit-tab>
       </bit-tab-group>
     </div>

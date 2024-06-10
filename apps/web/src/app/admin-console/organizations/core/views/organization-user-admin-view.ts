@@ -13,12 +13,6 @@ export class OrganizationUserAdminView {
   type: OrganizationUserType;
   status: OrganizationUserStatusType;
   externalId: string;
-  /**
-   * @deprecated
-   * To be removed after Flexible Collections.
-   * This will always return `false` if Flexible Collections is enabled.
-   **/
-  accessAll: boolean;
   permissions: PermissionsApi;
   resetPasswordEnrolled: boolean;
   hasMasterPassword: boolean;

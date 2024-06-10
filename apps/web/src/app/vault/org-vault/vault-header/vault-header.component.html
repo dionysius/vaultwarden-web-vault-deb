@@ -6,10 +6,7 @@
       queryParamsHandling="merge"
     >
       {{ organization.name }}
-      <span *ngIf="!organization.flexibleCollections">
-        {{ "vault" | i18n | lowercase }}
-      </span>
-      <span *ngIf="organization.flexibleCollections">
+      <span>
         {{ "collections" | i18n | lowercase }}
       </span>
     </bit-breadcrumb>

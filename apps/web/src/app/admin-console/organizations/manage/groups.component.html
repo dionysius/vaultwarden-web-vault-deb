@@ -74,12 +74,10 @@
         </td>
         <td bitCell (click)="edit(g, ModalTabType.Collections)" class="tw-cursor-pointer">
           <bit-badge-list
-            *ngIf="!g.details.accessAll"
             [items]="g.collectionNames"
             [maxItems]="3"
             variant="secondary"
           ></bit-badge-list>
-          <span *ngIf="g.details.accessAll">{{ "all" | i18n }}</span>
         </td>
         <td bitCell>
           <button
