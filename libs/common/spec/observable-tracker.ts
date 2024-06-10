@@ -1,4 +1,4 @@
-import { Observable, Subject, Subscription, firstValueFrom, throwError, timeout } from "rxjs";
+import { firstValueFrom, Observable, Subject, Subscription, throwError, timeout } from "rxjs";
 
 /** Test class to enable async awaiting of observable emissions */
 export class ObservableTracker<T> {
@@ -43,6 +43,9 @@ export class ObservableTracker<T> {
 
   private trackEmissions(observable: Observable<T>): T[] {
     const emissions: T[] = [];
+    this.emissionReceived.subscribe((value) => {
+      emissions.push(value);
+    });
     this.subscription = observable.subscribe((value) => {
       if (value == null) {
         this.emissionReceived.next(null);
@@ -64,9 +67,7 @@ export class ObservableTracker<T> {
         }
       }
     });
-    this.emissionReceived.subscribe((value) => {
-      emissions.push(value);
-    });
+
     return emissions;
   }
 }

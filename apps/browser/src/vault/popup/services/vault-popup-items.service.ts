@@ -2,6 +2,7 @@ import { inject, Injectable, NgZone } from "@angular/core";
 import {
   BehaviorSubject,
   combineLatest,
+  distinctUntilChanged,
   distinctUntilKeyChanged,
   from,
   map,
@@ -12,6 +13,8 @@ import {
   startWith,
   Subject,
   switchMap,
+  tap,
+  withLatestFrom,
 } from "rxjs";
 
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
@@ -40,6 +43,13 @@ import { MY_VAULT_ID, VaultPopupListFiltersService } from "./vault-popup-list-fi
 export class VaultPopupItemsService {
   private _refreshCurrentTab$ = new Subject<void>();
   private _searchText$ = new BehaviorSubject<string>("");
+
+  /**
+   * Subject that emits whenever new ciphers are being processed/filtered.
+   * @private
+   */
+  private _ciphersLoading$ = new Subject<void>();
+
   latestSearchText$: Observable<string> = this._searchText$.asObservable();
 
   /**
@@ -84,6 +94,7 @@ export class VaultPopupItemsService {
     this.cipherService.localData$,
   ).pipe(
     runInsideAngular(inject(NgZone)), // Workaround to ensure cipher$ state provider emissions are run inside Angular
+    tap(() => this._ciphersLoading$.next()),
     switchMap(() => Utils.asyncToObservable(() => this.cipherService.getAllDecrypted())),
     switchMap((ciphers) =>
       combineLatest([
@@ -112,6 +123,7 @@ export class VaultPopupItemsService {
     this._searchText$,
     this.vaultPopupListFiltersService.filterFunction$,
   ]).pipe(
+    tap(() => this._ciphersLoading$.next()),
     map(([ciphers, searchText, filterFunction]): [CipherView[], string] => [
       filterFunction(ciphers),
       searchText,
@@ -148,10 +160,8 @@ export class VaultPopupItemsService {
    * List of favorite ciphers that are not currently suggested for autofill.
    * Ciphers are sorted by last used date, then by name.
    */
-  favoriteCiphers$: Observable<PopupCipherView[]> = combineLatest([
-    this.autoFillCiphers$,
-    this._filteredCipherList$,
-  ]).pipe(
+  favoriteCiphers$: Observable<PopupCipherView[]> = this.autoFillCiphers$.pipe(
+    withLatestFrom(this._filteredCipherList$),
     map(([autoFillCiphers, ciphers]) =>
       ciphers.filter((cipher) => cipher.favorite && !autoFillCiphers.includes(cipher)),
     ),
@@ -165,12 +175,9 @@ export class VaultPopupItemsService {
    * List of all remaining ciphers that are not currently suggested for autofill or marked as favorite.
    * Ciphers are sorted by name.
    */
-  remainingCiphers$: Observable<PopupCipherView[]> = combineLatest([
-    this.autoFillCiphers$,
-    this.favoriteCiphers$,
-    this._filteredCipherList$,
-  ]).pipe(
-    map(([autoFillCiphers, favoriteCiphers, ciphers]) =>
+  remainingCiphers$: Observable<PopupCipherView[]> = this.favoriteCiphers$.pipe(
+    withLatestFrom(this._filteredCipherList$, this.autoFillCiphers$),
+    map(([favoriteCiphers, ciphers, autoFillCiphers]) =>
       ciphers.filter(
         (cipher) => !autoFillCiphers.includes(cipher) && !favoriteCiphers.includes(cipher),
       ),
@@ -178,6 +185,14 @@ export class VaultPopupItemsService {
     map((ciphers) => ciphers.sort(this.cipherService.getLocaleSortingFunction())),
     shareReplay({ refCount: false, bufferSize: 1 }),
   );
+
+  /**
+   * Observable that indicates whether the service is currently loading ciphers.
+   */
+  loading$: Observable<boolean> = merge(
+    this._ciphersLoading$.pipe(map(() => true)),
+    this.remainingCiphers$.pipe(map(() => false)),
+  ).pipe(startWith(true), distinctUntilChanged(), shareReplay({ refCount: false, bufferSize: 1 }));
 
   /**
    * Observable that indicates whether a filter is currently applied to the ciphers.

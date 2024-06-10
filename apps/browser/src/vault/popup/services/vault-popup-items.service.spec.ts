@@ -379,6 +379,54 @@ describe("VaultPopupItemsService", () => {
     });
   });
 
+  describe("loading$", () => {
+    let tracked: ObservableTracker<boolean>;
+    let trackedCiphers: ObservableTracker<any>;
+    beforeEach(() => {
+      // Start tracking loading$ emissions
+      tracked = new ObservableTracker(service.loading$);
+
+      // Track remainingCiphers$ to make cipher observables active
+      trackedCiphers = new ObservableTracker(service.remainingCiphers$);
+    });
+
+    it("should initialize with true first", async () => {
+      expect(tracked.emissions[0]).toBe(true);
+    });
+
+    it("should emit false once ciphers are available", async () => {
+      expect(tracked.emissions.length).toBe(2);
+      expect(tracked.emissions[0]).toBe(true);
+      expect(tracked.emissions[1]).toBe(false);
+    });
+
+    it("should cycle when cipherService.ciphers$ emits", async () => {
+      // Restart tracking
+      tracked = new ObservableTracker(service.loading$);
+      (cipherServiceMock.ciphers$ as BehaviorSubject<any>).next(null);
+
+      await trackedCiphers.pauseUntilReceived(2);
+
+      expect(tracked.emissions.length).toBe(3);
+      expect(tracked.emissions[0]).toBe(false);
+      expect(tracked.emissions[1]).toBe(true);
+      expect(tracked.emissions[2]).toBe(false);
+    });
+
+    it("should cycle when filters are applied", async () => {
+      // Restart tracking
+      tracked = new ObservableTracker(service.loading$);
+      service.applyFilter("test");
+
+      await trackedCiphers.pauseUntilReceived(2);
+
+      expect(tracked.emissions.length).toBe(3);
+      expect(tracked.emissions[0]).toBe(false);
+      expect(tracked.emissions[1]).toBe(true);
+      expect(tracked.emissions[2]).toBe(false);
+    });
+  });
+
   describe("applyFilter", () => {
     it("should call search Service with the new search term", (done) => {
       const searchText = "Hello";
