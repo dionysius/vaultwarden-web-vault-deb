@@ -13,6 +13,8 @@ import {
 
 import { DynamicTreeNode } from "@bitwarden/angular/vault/vault-filter/models/dynamic-tree-node.model";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
+import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
+import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { ProductType } from "@bitwarden/common/enums";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -88,6 +90,7 @@ export class VaultPopupListFiltersService {
     private i18nService: I18nService,
     private collectionService: CollectionService,
     private formBuilder: FormBuilder,
+    private policyService: PolicyService,
   ) {
     this.filterForm.controls.organization.valueChanges
       .pipe(takeUntilDestroyed())
@@ -167,44 +170,63 @@ export class VaultPopupListFiltersService {
   /**
    * Organization array structured to be directly passed to `ChipSelectComponent`
    */
-  organizations$: Observable<ChipSelectOption<Organization>[]> =
-    this.organizationService.memberOrganizations$.pipe(
-      map((orgs) => orgs.sort(Utils.getSortFunction(this.i18nService, "name"))),
-      map((orgs) => {
-        if (!orgs.length) {
-          return [];
-        }
+  organizations$: Observable<ChipSelectOption<Organization>[]> = combineLatest([
+    this.organizationService.memberOrganizations$,
+    this.policyService.policyAppliesToActiveUser$(PolicyType.PersonalOwnership),
+  ]).pipe(
+    map(([orgs, personalOwnershipApplies]): [Organization[], boolean] => [
+      orgs.sort(Utils.getSortFunction(this.i18nService, "name")),
+      personalOwnershipApplies,
+    ]),
+    map(([orgs, personalOwnershipApplies]) => {
+      // When there are no organizations return an empty array,
+      // resulting in the org filter being hidden
+      if (!orgs.length) {
+        return [];
+      }
 
-        return [
-          // When the user is a member of an organization, make  the "My Vault" option available
-          {
-            value: { id: MY_VAULT_ID } as Organization,
-            label: this.i18nService.t("myVault"),
-            icon: "bwi-user",
-          },
-          ...orgs.map((org) => {
-            let icon = "bwi-business";
+      // When there is only one organization and personal ownership policy applies,
+      // return an empty array, resulting in the org filter being hidden
+      if (orgs.length === 1 && personalOwnershipApplies) {
+        return [];
+      }
 
-            if (!org.enabled) {
-              // Show a warning icon if the organization is deactivated
-              icon = "bwi-exclamation-triangle tw-text-danger";
-            } else if (
-              org.planProductType === ProductType.Families ||
-              org.planProductType === ProductType.Free
-            ) {
-              // Show a family icon if the organization is a family or free org
-              icon = "bwi-family";
-            }
+      const myVaultOrg: ChipSelectOption<Organization>[] = [];
 
-            return {
-              value: org,
-              label: org.name,
-              icon,
-            };
-          }),
-        ];
-      }),
-    );
+      // Only add "My vault" if personal ownership policy does not apply
+      if (!personalOwnershipApplies) {
+        myVaultOrg.push({
+          value: { id: MY_VAULT_ID } as Organization,
+          label: this.i18nService.t("myVault"),
+          icon: "bwi-user",
+        });
+      }
+
+      return [
+        ...myVaultOrg,
+        ...orgs.map((org) => {
+          let icon = "bwi-business";
+
+          if (!org.enabled) {
+            // Show a warning icon if the organization is deactivated
+            icon = "bwi-exclamation-triangle tw-text-danger";
+          } else if (
+            org.planProductType === ProductType.Families ||
+            org.planProductType === ProductType.Free
+          ) {
+            // Show a family icon if the organization is a family or free org
+            icon = "bwi-family";
+          }
+
+          return {
+            value: org,
+            label: org.name,
+            icon,
+          };
+        }),
+      ];
+    }),
+  );
 
   /**
    * Folder array structured to be directly passed to `ChipSelectComponent`

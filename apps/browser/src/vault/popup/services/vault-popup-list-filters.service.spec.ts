@@ -3,6 +3,8 @@ import { FormBuilder } from "@angular/forms";
 import { BehaviorSubject, skipWhile } from "rxjs";
 
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
+import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
+import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { ProductType } from "@bitwarden/common/enums";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -23,6 +25,7 @@ describe("VaultPopupListFiltersService", () => {
   const folderViews$ = new BehaviorSubject([]);
   const cipherViews$ = new BehaviorSubject({});
   const decryptedCollections$ = new BehaviorSubject<CollectionView[]>([]);
+  const policyAppliesToActiveUser$ = new BehaviorSubject<boolean>(false);
 
   const collectionService = {
     decryptedCollections$,
@@ -45,9 +48,15 @@ describe("VaultPopupListFiltersService", () => {
     t: (key: string) => key,
   } as I18nService;
 
+  const policyService = {
+    policyAppliesToActiveUser$: jest.fn(() => policyAppliesToActiveUser$),
+  };
+
   beforeEach(() => {
     memberOrganizations$.next([]);
     decryptedCollections$.next([]);
+    policyAppliesToActiveUser$.next(false);
+    policyService.policyAppliesToActiveUser$.mockClear();
 
     collectionService.getAllNested = () => Promise.resolve([]);
     TestBed.configureTestingModule({
@@ -71,6 +80,10 @@ describe("VaultPopupListFiltersService", () => {
         {
           provide: CollectionService,
           useValue: collectionService,
+        },
+        {
+          provide: PolicyService,
+          useValue: policyService,
         },
         { provide: FormBuilder, useClass: FormBuilder },
       ],
@@ -124,6 +137,65 @@ describe("VaultPopupListFiltersService", () => {
           "bobby's org",
         ]);
         done();
+      });
+    });
+
+    describe("PersonalOwnership policy", () => {
+      it('calls policyAppliesToActiveUser$ with "PersonalOwnership"', () => {
+        expect(policyService.policyAppliesToActiveUser$).toHaveBeenCalledWith(
+          PolicyType.PersonalOwnership,
+        );
+      });
+
+      it("returns an empty array when the policy applies and there is a single organization", (done) => {
+        policyAppliesToActiveUser$.next(true);
+        memberOrganizations$.next([
+          { name: "bobby's org", id: "1234-3323-23223" },
+        ] as Organization[]);
+
+        service.organizations$.subscribe((organizations) => {
+          expect(organizations).toEqual([]);
+          done();
+        });
+      });
+
+      it('adds "myVault" when the policy does not apply and there are multiple organizations', (done) => {
+        policyAppliesToActiveUser$.next(false);
+        const orgs = [
+          { name: "bobby's org", id: "1234-3323-23223" },
+          { name: "alice's org", id: "2223-4343-99888" },
+        ] as Organization[];
+
+        memberOrganizations$.next(orgs);
+
+        service.organizations$.subscribe((organizations) => {
+          expect(organizations.map((o) => o.label)).toEqual([
+            "myVault",
+            "alice's org",
+            "bobby's org",
+          ]);
+          done();
+        });
+      });
+
+      it('does not add "myVault" the policy applies and there are multiple organizations', (done) => {
+        policyAppliesToActiveUser$.next(true);
+        const orgs = [
+          { name: "bobby's org", id: "1234-3323-23223" },
+          { name: "alice's org", id: "2223-3242-99888" },
+          { name: "catherine's org", id: "77733-4343-99888" },
+        ] as Organization[];
+
+        memberOrganizations$.next(orgs);
+
+        service.organizations$.subscribe((organizations) => {
+          expect(organizations.map((o) => o.label)).toEqual([
+            "alice's org",
+            "bobby's org",
+            "catherine's org",
+          ]);
+          done();
+        });
       });
     });
 
