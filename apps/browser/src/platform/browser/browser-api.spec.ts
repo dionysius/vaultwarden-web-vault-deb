@@ -235,6 +235,46 @@ describe("BrowserApi", () => {
     });
   });
 
+  describe("getFrameDetails", () => {
+    it("returns the frame details of the specified frame", async () => {
+      const tabId = 1;
+      const frameId = 2;
+      const mockFrameDetails = mock<chrome.webNavigation.GetFrameResultDetails>();
+      chrome.webNavigation.getFrame = jest
+        .fn()
+        .mockImplementation((_details, callback) => callback(mockFrameDetails));
+
+      const returnFrame = await BrowserApi.getFrameDetails({ tabId, frameId });
+
+      expect(chrome.webNavigation.getFrame).toHaveBeenCalledWith(
+        { tabId, frameId },
+        expect.any(Function),
+      );
+      expect(returnFrame).toEqual(mockFrameDetails);
+    });
+  });
+
+  describe("getAllFrameDetails", () => {
+    it("returns all sub frame details of the specified tab", async () => {
+      const tabId = 1;
+      const mockFrameDetails1 = mock<chrome.webNavigation.GetAllFrameResultDetails>();
+      const mockFrameDetails2 = mock<chrome.webNavigation.GetAllFrameResultDetails>();
+      chrome.webNavigation.getAllFrames = jest
+        .fn()
+        .mockImplementation((_details, callback) =>
+          callback([mockFrameDetails1, mockFrameDetails2]),
+        );
+
+      const frames = await BrowserApi.getAllFrameDetails(tabId);
+
+      expect(chrome.webNavigation.getAllFrames).toHaveBeenCalledWith(
+        { tabId },
+        expect.any(Function),
+      );
+      expect(frames).toEqual([mockFrameDetails1, mockFrameDetails2]);
+    });
+  });
+
   describe("reloadExtension", () => {
     it("reloads the window location if the passed globalContext is for the window", () => {
       const windowMock = mock<Window>({

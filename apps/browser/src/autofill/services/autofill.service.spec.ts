@@ -210,6 +210,9 @@ describe("AutofillService", () => {
       tab3 = createChromeTabMock({ id: 3, url: "chrome-extension://some-extension-route" });
       jest.spyOn(BrowserApi, "tabsQuery").mockResolvedValueOnce([tab1, tab2]);
       jest
+        .spyOn(BrowserApi, "getAllFrameDetails")
+        .mockResolvedValue([mock<chrome.webNavigation.GetAllFrameResultDetails>({ frameId: 0 })]);
+      jest
         .spyOn(autofillService, "getOverlayVisibility")
         .mockResolvedValue(AutofillOverlayVisibility.OnFieldFocus);
       jest.spyOn(autofillService, "getAutofillOnPageLoad").mockResolvedValue(true);
@@ -219,6 +222,7 @@ describe("AutofillService", () => {
       jest.spyOn(autofillService, "injectAutofillScripts");
 
       await autofillService.loadAutofillScriptsOnInstall();
+      await flushPromises();
 
       expect(BrowserApi.tabsQuery).toHaveBeenCalledWith({});
       expect(autofillService.injectAutofillScripts).toHaveBeenCalledWith(tab1, 0, false);

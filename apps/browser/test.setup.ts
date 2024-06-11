@@ -135,6 +135,8 @@ const permissions = {
 };
 
 const webNavigation = {
+  getFrame: jest.fn(),
+  getAllFrames: jest.fn(),
   onCommitted: {
     addListener: jest.fn(),
     removeListener: jest.fn(),

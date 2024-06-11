@@ -176,21 +176,21 @@ export class BrowserApi {
     return BrowserApi.tabSendMessage(tab, obj);
   }
 
-  static async tabSendMessage<T>(
+  static async tabSendMessage<T, TResponse = unknown>(
     tab: chrome.tabs.Tab,
     obj: T,
     options: chrome.tabs.MessageSendOptions = null,
-  ): Promise<void> {
+  ): Promise<TResponse> {
     if (!tab || !tab.id) {
       return;
     }
 
-    return new Promise<void>((resolve) => {
-      chrome.tabs.sendMessage(tab.id, obj, options, () => {
+    return new Promise<TResponse>((resolve) => {
+      chrome.tabs.sendMessage(tab.id, obj, options, (response) => {
         if (chrome.runtime.lastError) {
           // Some error happened
         }
-        resolve();
+        resolve(response);
       });
     });
   }
@@ -261,6 +261,28 @@ export class BrowserApi {
     return new Promise((resolve) =>
       chrome.tabs.create({ url: url, active: active }, (tab) => resolve(tab)),
     );
+  }
+
+  /**
+   * Gathers the details for a specified sub-frame of a tab.
+   *
+   * @param details - The details of the frame to get.
+   */
+  static async getFrameDetails(
+    details: chrome.webNavigation.GetFrameDetails,
+  ): Promise<chrome.webNavigation.GetFrameResultDetails> {
+    return new Promise((resolve) => chrome.webNavigation.getFrame(details, resolve));
+  }
+
+  /**
+   * Gets all frames associated with a tab.
+   *
+   * @param tabId - The id of the tab to get the frames for.
+   */
+  static async getAllFrameDetails(
+    tabId: chrome.tabs.Tab["id"],
+  ): Promise<chrome.webNavigation.GetAllFrameResultDetails[]> {
+    return new Promise((resolve) => chrome.webNavigation.getAllFrames({ tabId }, resolve));
   }
 
   // Keep track of all the events registered in a Safari popup so we can remove

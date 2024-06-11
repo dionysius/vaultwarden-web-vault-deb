@@ -62,7 +62,8 @@
     "scripting",
     "offscreen",
     "webRequest",
-    "webRequestAuthProvider"
+    "webRequestAuthProvider",
+    "webNavigation"
   ],
   "optional_permissions": ["nativeMessaging", "privacy"],
   "host_permissions": ["https://*/*", "http://*/*"],
