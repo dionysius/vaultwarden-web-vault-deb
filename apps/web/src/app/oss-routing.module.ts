@@ -239,25 +239,6 @@ const routes: Routes = [
         ],
       },
       {
-        path: "recover-2fa",
-        canActivate: [unauthGuardFn()],
-        children: [
-          {
-            path: "",
-            component: RecoverTwoFactorComponent,
-          },
-          {
-            path: "",
-            component: EnvironmentSelectorComponent,
-            outlet: "environment-selector",
-          },
-        ],
-        data: {
-          pageTitle: "recoverAccountTwoStep",
-          titleId: "recoverAccountTwoStep",
-        } satisfies DataProperties & AnonLayoutWrapperData,
-      },
-      {
         path: "remove-password",
         component: RemovePasswordComponent,
         canActivate: [AuthGuard],

@@ -27,9 +27,21 @@ export class AnonLayoutWrapperComponent {
     private route: ActivatedRoute,
     private i18nService: I18nService,
   ) {
-    this.pageTitle = this.i18nService.t(this.route.snapshot.firstChild.data["pageTitle"]);
-    this.pageSubtitle = this.i18nService.t(this.route.snapshot.firstChild.data["pageSubtitle"]);
-    this.pageIcon = this.route.snapshot.firstChild.data["pageIcon"];
-    this.showReadonlyHostname = this.route.snapshot.firstChild.data["showReadonlyHostname"];
+    const routeData = this.route.snapshot.firstChild?.data;
+
+    if (!routeData) {
+      return;
+    }
+
+    if (routeData["pageTitle"] !== undefined) {
+      this.pageTitle = this.i18nService.t(routeData["pageTitle"]);
+    }
+
+    if (routeData["pageSubtitle"] !== undefined) {
+      this.pageSubtitle = this.i18nService.t(routeData["pageSubtitle"]);
+    }
+
+    this.pageIcon = routeData["pageIcon"];
+    this.showReadonlyHostname = routeData["showReadonlyHostname"];
   }
 }
