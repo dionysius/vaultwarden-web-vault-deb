@@ -2,12 +2,11 @@
  * include structuredClone in test environment.
  * @jest-environment ../../../../shared/test.environment.ts
  */
-
 import { of, firstValueFrom } from "rxjs";
 
-import { awaitAsync, trackEmissions } from "../../../spec";
+import { awaitAsync, trackEmissions } from "../../spec";
 
-import { distinctIfShallowMatch, reduceCollection } from "./rx-operators";
+import { distinctIfShallowMatch, reduceCollection } from "./rx";
 
 describe("reduceCollection", () => {
   it.each([[null], [undefined], [[]]])(

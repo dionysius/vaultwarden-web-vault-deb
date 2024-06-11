@@ -4,9 +4,9 @@ import { PolicyService } from "../../../admin-console/abstractions/policy/policy
 import { PolicyType } from "../../../admin-console/enums";
 import { StateProvider } from "../../../platform/state";
 import { UserId } from "../../../types/guid";
+import { distinctIfShallowMatch, reduceCollection } from "../../rx";
 import { GeneratorNavigationService } from "../abstractions/generator-navigation.service.abstraction";
 import { GENERATOR_SETTINGS } from "../key-definitions";
-import { distinctIfShallowMatch, reduceCollection } from "../rx-operators";
 
 import { DefaultGeneratorNavigation, GeneratorNavigation } from "./generator-navigation";
 import { GeneratorNavigationEvaluator } from "./generator-navigation-evaluator";

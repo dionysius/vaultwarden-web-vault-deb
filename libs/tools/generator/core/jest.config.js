@@ -8,6 +8,6 @@ module.exports = {
   preset: "ts-jest",
   testEnvironment: "../../../shared/test.environment.ts",
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions?.paths || {}, {
-    prefix: "<rootDir>/../../../",
+    prefix: "<rootDir>/../../",
   }),
 };
