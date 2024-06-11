@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, NgZone, OnDestroy, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { Subject, firstValueFrom, from } from "rxjs";
+import { Subject, firstValueFrom, from, Subscription } from "rxjs";
 import { debounceTime, switchMap, takeUntil } from "rxjs/operators";
 
 import { UnassignedItemsBannerService } from "@bitwarden/angular/services/unassigned-items-banner.service";
@@ -51,12 +51,12 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
   autofillCalloutText: string;
   protected search$ = new Subject<void>();
   private destroy$ = new Subject<void>();
+  private collectPageDetailsSubscription: Subscription;
 
   private totpCode: string;
   private totpTimeout: number;
   private loadedTimeout: number;
   private searchTimeout: number;
-  private initPageDetailsTimeout: number;
 
   protected unassignedItemsBannerEnabled$ = this.configService.getFeatureFlag$(
     FeatureFlag.UnassignedItemsBanner,
@@ -98,15 +98,6 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
                 // eslint-disable-next-line @typescript-eslint/no-floating-promises
                 this.load();
               }, 500);
-            }
-            break;
-          case "collectPageDetailsResponse":
-            if (message.sender === BroadcasterSubscriptionId) {
-              this.pageDetails.push({
-                frameId: message.webExtSender.frameId,
-                tab: message.tab,
-                details: message.details,
-              });
             }
             break;
           default:
@@ -266,6 +257,7 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
   protected async load() {
     this.isLoading = false;
     this.tab = await BrowserApi.getTabFromCurrentWindow();
+
     if (this.tab != null) {
       this.url = this.tab.url;
     } else {
@@ -274,8 +266,14 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
       return;
     }
 
-    this.hostname = Utils.getHostname(this.url);
     this.pageDetails = [];
+    this.collectPageDetailsSubscription?.unsubscribe();
+    this.collectPageDetailsSubscription = this.autofillService
+      .collectPageDetailsFromTab$(this.tab)
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((pageDetails) => (this.pageDetails = pageDetails));
+
+    this.hostname = Utils.getHostname(this.url);
     const otherTypes: CipherType[] = [];
     const dontShowCards = !(await firstValueFrom(this.vaultSettingsService.showCardsCurrentTab$));
     const dontShowIdentities = !(await firstValueFrom(
@@ -323,7 +321,6 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     }
 
     this.isLoading = this.loaded = true;
-    this.collectTabPageDetails();
   }
 
   async goToSettings() {
@@ -360,20 +357,5 @@ export class CurrentTabComponent implements OnInit, OnDestroy {
     } else {
       this.autofillCalloutText = this.i18nService.t("autofillSelectInfoWithoutCommand");
     }
-  }
-
-  private collectTabPageDetails() {
-    void BrowserApi.tabSendMessage(this.tab, {
-      command: "collectPageDetails",
-      tab: this.tab,
-      sender: BroadcasterSubscriptionId,
-    });
-
-    window.clearTimeout(this.initPageDetailsTimeout);
-    this.initPageDetailsTimeout = window.setTimeout(() => {
-      if (this.pageDetails.length === 0) {
-        this.collectTabPageDetails();
-      }
-    }, 250);
   }
 }

@@ -1,4 +1,4 @@
-import { firstValueFrom, startWith } from "rxjs";
+import { filter, firstValueFrom, Observable, scan, startWith } from "rxjs";
 import { pairwise } from "rxjs/operators";
 
 import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
@@ -17,6 +17,7 @@ import {
   UriMatchStrategy,
 } from "@bitwarden/common/models/domain/domain-service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
+import { MessageListener } from "@bitwarden/common/platform/messaging";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { TotpService } from "@bitwarden/common/vault/abstractions/totp.service";
 import { FieldType, CipherType } from "@bitwarden/common/vault/enums";
@@ -27,6 +28,7 @@ import { FieldView } from "@bitwarden/common/vault/models/view/field.view";
 import { BrowserApi } from "../../platform/browser/browser-api";
 import { ScriptInjectorService } from "../../platform/services/abstractions/script-injector.service";
 import { openVaultItemPasswordRepromptPopout } from "../../vault/popup/utils/vault-popout-window";
+import { AutofillMessageCommand, AutofillMessageSender } from "../enums/autofill-message.enums";
 import { AutofillPort } from "../enums/autofill-port.enums";
 import AutofillField from "../models/autofill-field";
 import AutofillPageDetails from "../models/autofill-page-details";
@@ -35,6 +37,7 @@ import AutofillScript from "../models/autofill-script";
 import {
   AutoFillOptions,
   AutofillService as AutofillServiceInterface,
+  COLLECT_PAGE_DETAILS_RESPONSE_COMMAND,
   FormData,
   GenerateFillScriptOptions,
   PageDetail,
@@ -64,7 +67,46 @@ export default class AutofillService implements AutofillServiceInterface {
     private scriptInjectorService: ScriptInjectorService,
     private accountService: AccountService,
     private authService: AuthService,
+    private messageListener: MessageListener,
   ) {}
+
+  /**
+   * Collects page details from the specific tab. This method returns an observable that can
+   * be subscribed to in order to build the results from all collectPageDetailsResponse
+   * messages from the given tab.
+   *
+   * @param tab The tab to collect page details from
+   */
+  collectPageDetailsFromTab$(tab: chrome.tabs.Tab): Observable<PageDetail[]> {
+    const pageDetailsFromTab$ = this.messageListener
+      .messages$(COLLECT_PAGE_DETAILS_RESPONSE_COMMAND)
+      .pipe(
+        filter(
+          (message) =>
+            message.tab.id === tab.id &&
+            message.sender === AutofillMessageSender.collectPageDetailsFromTabObservable,
+        ),
+        scan(
+          (acc, message) => [
+            ...acc,
+            {
+              frameId: message.webExtSender.frameId,
+              tab: message.tab,
+              details: message.details,
+            },
+          ],
+          [] as PageDetail[],
+        ),
+      );
+
+    void BrowserApi.tabSendMessage(tab, {
+      tab: tab,
+      command: AutofillMessageCommand.collectPageDetails,
+      sender: AutofillMessageSender.collectPageDetailsFromTabObservable,
+    });
+
+    return pageDetailsFromTab$;
+  }
 
   /**
    * Triggers on installation of the extension Handles injecting
