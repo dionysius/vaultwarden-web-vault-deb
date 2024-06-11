@@ -1,7 +1,7 @@
 <form [formGroup]="formGroup" [bitSubmit]="submit">
   <div class="tw-grid tw-grid-cols-12 tw-gap-4">
     <div class="tw-col-span-6">
-      <bit-form-field>
+      <bit-form-field [disableMargin]="selectionSupportsAdditionalOptions">
         <bit-label>{{ "country" | i18n }}</bit-label>
         <bit-select formControlName="country">
           <bit-option
@@ -14,7 +14,7 @@
       </bit-form-field>
     </div>
     <div class="tw-col-span-6">
-      <bit-form-field>
+      <bit-form-field [disableMargin]="selectionSupportsAdditionalOptions">
         <bit-label>{{ "zipPostalCode" | i18n }}</bit-label>
         <input bitInput type="text" formControlName="postalCode" autocomplete="postal-code" />
       </bit-form-field>

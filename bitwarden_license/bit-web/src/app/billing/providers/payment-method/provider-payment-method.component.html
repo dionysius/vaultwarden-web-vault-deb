@@ -44,7 +44,7 @@
     <p>{{ "taxInformationDesc" | i18n }}</p>
     <app-manage-tax-information
       *ngIf="taxInformation"
-      [taxInformation]="taxInformation"
+      [startWith]="taxInformation"
       [onSubmit]="updateTaxInformation"
       (taxInformationUpdated)="onDataUpdated()"
     />

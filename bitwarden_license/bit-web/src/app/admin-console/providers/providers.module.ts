@@ -11,6 +11,7 @@ import { OssModule } from "@bitwarden/web-vault/app/oss.module";
 
 import {
   CreateClientOrganizationComponent,
+  NoClientsComponent,
   ManageClientOrganizationNameComponent,
   ManageClientOrganizationsComponent,
   ManageClientOrganizationSubscriptionComponent,
@@ -65,6 +66,7 @@ import { SetupComponent } from "./setup/setup.component";
     SetupProviderComponent,
     UserAddEditComponent,
     CreateClientOrganizationComponent,
+    NoClientsComponent,
     ManageClientOrganizationsComponent,
     ManageClientOrganizationNameComponent,
     ManageClientOrganizationSubscriptionComponent,

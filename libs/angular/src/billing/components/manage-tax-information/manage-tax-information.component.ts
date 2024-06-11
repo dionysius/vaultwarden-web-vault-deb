@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
+import { Subject, takeUntil } from "rxjs";
 
 import { TaxInformation } from "@bitwarden/common/billing/models/domain";
 
@@ -13,8 +14,8 @@ type Country = {
   selector: "app-manage-tax-information",
   templateUrl: "./manage-tax-information.component.html",
 })
-export class ManageTaxInformationComponent implements OnInit {
-  @Input({ required: true }) taxInformation: TaxInformation;
+export class ManageTaxInformationComponent implements OnInit, OnDestroy {
+  @Input() startWith: TaxInformation;
   @Input() onSubmit?: (taxInformation: TaxInformation) => Promise<void>;
   @Output() taxInformationUpdated = new EventEmitter();
 
@@ -29,35 +30,61 @@ export class ManageTaxInformationComponent implements OnInit {
     state: "",
   });
 
+  private destroy$ = new Subject<void>();
+
+  private taxInformation: TaxInformation;
+
   constructor(private formBuilder: FormBuilder) {}
 
-  submit = async () => {
-    await this.onSubmit({
-      country: this.formGroup.value.country,
-      postalCode: this.formGroup.value.postalCode,
-      taxId: this.formGroup.value.taxId,
-      line1: this.formGroup.value.line1,
-      line2: this.formGroup.value.line2,
-      city: this.formGroup.value.city,
-      state: this.formGroup.value.state,
-    });
+  getTaxInformation = (): TaxInformation & { includeTaxId: boolean } => ({
+    ...this.taxInformation,
+    includeTaxId: this.formGroup.value.includeTaxId,
+  });
 
+  submit = async () => {
+    this.formGroup.markAllAsTouched();
+    if (this.formGroup.invalid) {
+      return;
+    }
+    await this.onSubmit(this.taxInformation);
     this.taxInformationUpdated.emit();
   };
 
+  touch = (): boolean => {
+    this.formGroup.markAllAsTouched();
+    return this.formGroup.valid;
+  };
+
   async ngOnInit() {
-    if (this.taxInformation) {
+    if (this.startWith) {
       this.formGroup.patchValue({
-        ...this.taxInformation,
+        ...this.startWith,
         includeTaxId:
-          this.countrySupportsTax(this.taxInformation.country) &&
-          (!!this.taxInformation.taxId ||
-            !!this.taxInformation.line1 ||
-            !!this.taxInformation.line2 ||
-            !!this.taxInformation.city ||
-            !!this.taxInformation.state),
+          this.countrySupportsTax(this.startWith.country) &&
+          (!!this.startWith.taxId ||
+            !!this.startWith.line1 ||
+            !!this.startWith.line2 ||
+            !!this.startWith.city ||
+            !!this.startWith.state),
       });
     }
+
+    this.formGroup.valueChanges.pipe(takeUntil(this.destroy$)).subscribe((values) => {
+      this.taxInformation = {
+        country: values.country,
+        postalCode: values.postalCode,
+        taxId: values.taxId,
+        line1: values.line1,
+        line2: values.line2,
+        city: values.city,
+        state: values.state,
+      };
+    });
+  }
+
+  ngOnDestroy() {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
   protected countrySupportsTax(countryCode: string) {
