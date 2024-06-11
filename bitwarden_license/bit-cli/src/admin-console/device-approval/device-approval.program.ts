@@ -11,6 +11,10 @@ import { DenyAllCommand } from "./deny-all.command";
 import { DenyCommand } from "./deny.command";
 import { ListCommand } from "./list.command";
 
+type Options = {
+  organizationid: string;
+};
+
 export class DeviceApprovalProgram extends BaseProgram {
   constructor(protected serviceContainer: ServiceContainer) {
     super(serviceContainer);
@@ -33,8 +37,8 @@ export class DeviceApprovalProgram extends BaseProgram {
   private listCommand(): Command {
     return new Command("list")
       .description("List all pending requests for an organization")
-      .argument("<organizationId>")
-      .action(async (organizationId: string) => {
+      .requiredOption("--organizationid <organizationid>", "The organization id (required)")
+      .action(async (options: Options) => {
         await this.exitIfFeatureFlagDisabled(FeatureFlag.BulkDeviceApproval);
         await this.exitIfLocked();
 
@@ -42,17 +46,18 @@ export class DeviceApprovalProgram extends BaseProgram {
           this.serviceContainer.organizationAuthRequestService,
           this.serviceContainer.organizationService,
         );
-        const response = await cmd.run(organizationId);
+
+        const response = await cmd.run(options.organizationid);
         this.processResponse(response);
       });
   }
 
   private approveCommand(): Command {
     return new Command("approve")
-      .argument("<organizationId>", "The id of the organization")
       .argument("<requestId>", "The id of the request to approve")
+      .requiredOption("--organizationid <organizationid>", "The organization id (required)")
       .description("Approve a pending request")
-      .action(async (organizationId: string, id: string) => {
+      .action(async (id: string, options: Options) => {
         await this.exitIfFeatureFlagDisabled(FeatureFlag.BulkDeviceApproval);
         await this.exitIfLocked();
 
@@ -60,7 +65,7 @@ export class DeviceApprovalProgram extends BaseProgram {
           this.serviceContainer.organizationService,
           this.serviceContainer.organizationAuthRequestService,
         );
-        const response = await cmd.run(organizationId, id);
+        const response = await cmd.run(options.organizationid, id);
         this.processResponse(response);
       });
   }
@@ -68,8 +73,8 @@ export class DeviceApprovalProgram extends BaseProgram {
   private approveAllCommand(): Command {
     return new Command("approve-all")
       .description("Approve all pending requests for an organization")
-      .argument("<organizationId>")
-      .action(async (organizationId: string) => {
+      .requiredOption("--organizationid <organizationid>", "The organization id (required)")
+      .action(async (options: Options) => {
         await this.exitIfFeatureFlagDisabled(FeatureFlag.BulkDeviceApproval);
         await this.exitIfLocked();
 
@@ -77,17 +82,17 @@ export class DeviceApprovalProgram extends BaseProgram {
           this.serviceContainer.organizationAuthRequestService,
           this.serviceContainer.organizationService,
         );
-        const response = await cmd.run(organizationId);
+        const response = await cmd.run(options.organizationid);
         this.processResponse(response);
       });
   }
 
   private denyCommand(): Command {
     return new Command("deny")
-      .argument("<organizationId>", "The id of the organization")
       .argument("<requestId>", "The id of the request to deny")
+      .requiredOption("--organizationid <organizationid>", "The organization id (required)")
       .description("Deny a pending request")
-      .action(async (organizationId: string, id: string) => {
+      .action(async (id: string, options: Options) => {
         await this.exitIfFeatureFlagDisabled(FeatureFlag.BulkDeviceApproval);
         await this.exitIfLocked();
 
@@ -95,7 +100,7 @@ export class DeviceApprovalProgram extends BaseProgram {
           this.serviceContainer.organizationService,
           this.serviceContainer.organizationAuthRequestService,
         );
-        const response = await cmd.run(organizationId, id);
+        const response = await cmd.run(options.organizationid, id);
         this.processResponse(response);
       });
   }
@@ -103,8 +108,8 @@ export class DeviceApprovalProgram extends BaseProgram {
   private denyAllCommand(): Command {
     return new Command("deny-all")
       .description("Deny all pending requests for an organization")
-      .argument("<organizationId>")
-      .action(async (organizationId: string) => {
+      .requiredOption("--organizationid <organizationid>", "The organization id (required)")
+      .action(async (options: Options) => {
         await this.exitIfFeatureFlagDisabled(FeatureFlag.BulkDeviceApproval);
         await this.exitIfLocked();
 
@@ -112,7 +117,7 @@ export class DeviceApprovalProgram extends BaseProgram {
           this.serviceContainer.organizationService,
           this.serviceContainer.organizationAuthRequestService,
         );
-        const response = await cmd.run(organizationId);
+        const response = await cmd.run(options.organizationid);
         this.processResponse(response);
       });
   }
