@@ -753,6 +753,7 @@ export class ServiceContainer {
 
     await this.stateService.clean();
     await this.accountService.clean(userId);
+    await this.accountService.switchAccount(null);
     process.env.BW_SESSION = null;
   }
 
