@@ -31,7 +31,7 @@ export class TwoFactorEmailComponent extends TwoFactorBaseComponent {
   emailPromise: Promise<unknown>;
   override componentName = "app-two-factor-email";
   formGroup = this.formBuilder.group({
-    token: [null],
+    token: ["", [Validators.required]],
     email: ["", [Validators.email, Validators.required]],
   });
 
@@ -79,6 +79,10 @@ export class TwoFactorEmailComponent extends TwoFactorBaseComponent {
   }
 
   submit = async () => {
+    this.formGroup.markAllAsTouched();
+    if (this.formGroup.invalid) {
+      return;
+    }
     if (this.enabled) {
       await this.disableEmail();
       this.onChangeStatus.emit(false);

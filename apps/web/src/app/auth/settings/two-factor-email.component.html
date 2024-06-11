@@ -26,12 +26,12 @@
             appInputVerbatim="false"
           />
         </bit-form-field>
-        <div class="tw-mb-3 tw-flex">
+        <div class="tw-mb-3 tw-flex tw-items-center">
           <button bitButton type="button" buttonType="primary" [bitAction]="sendEmail">
             {{ "sendEmail" | i18n }}
           </button>
           <span class="tw-text-success tw-ml-3" *ngIf="sentEmail">
-            {{ "verificationCodeEmailSent" | i18n: sentEmail }}
+            {{ "emailSent" | i18n }}
           </span>
         </div>
         <bit-form-field>
