@@ -64,7 +64,11 @@ export class PremiumComponent implements OnInit {
       return;
     }
   }
+
   submit = async () => {
+    if (!this.taxInfoComponent.taxFormGroup.valid) {
+      this.taxInfoComponent.taxFormGroup.markAllAsTouched();
+    }
     this.licenseForm.markAllAsTouched();
     this.addonForm.markAllAsTouched();
     if (this.selfHosted) {
