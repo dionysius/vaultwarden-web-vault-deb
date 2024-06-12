@@ -4,26 +4,12 @@ import { PaymentMethodType, TransactionType } from "../../enums";
 export class BillingResponse extends BaseResponse {
   balance: number;
   paymentSource: BillingSourceResponse;
-  invoices: BillingInvoiceResponse[] = [];
-  transactions: BillingTransactionResponse[] = [];
 
   constructor(response: any) {
     super(response);
     this.balance = this.getResponseProperty("Balance");
     const paymentSource = this.getResponseProperty("PaymentSource");
-    const transactions = this.getResponseProperty("Transactions");
-    const invoices = this.getResponseProperty("Invoices");
     this.paymentSource = paymentSource == null ? null : new BillingSourceResponse(paymentSource);
-    if (transactions != null) {
-      this.transactions = transactions.map((t: any) => new BillingTransactionResponse(t));
-    }
-    if (invoices != null) {
-      this.invoices = invoices.map((i: any) => new BillingInvoiceResponse(i));
-    }
-  }
-
-  get hasNoHistory() {
-    return this.invoices.length == 0 && this.transactions.length == 0;
   }
 }
 

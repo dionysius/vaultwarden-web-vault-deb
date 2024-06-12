@@ -44,7 +44,7 @@ export class OrgBillingHistoryViewComponent implements OnInit, OnDestroy {
       return;
     }
     this.loading = true;
-    this.billing = await this.organizationApiService.getBilling(this.organizationId);
+    this.billing = await this.organizationApiService.getBillingHistory(this.organizationId);
     this.loading = false;
   }
 }

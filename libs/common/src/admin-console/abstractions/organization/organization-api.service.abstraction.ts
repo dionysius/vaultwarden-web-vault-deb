@@ -1,3 +1,5 @@
+import { BillingHistoryResponse } from "@bitwarden/common/billing/models/response/billing-history.response";
+
 import { OrganizationApiKeyRequest } from "../../../admin-console/models/request/organization-api-key.request";
 import { OrganizationSsoRequest } from "../../../auth/models/request/organization-sso.request";
 import { SecretVerificationRequest } from "../../../auth/models/request/secret-verification.request";
@@ -33,6 +35,7 @@ import { ProfileOrganizationResponse } from "../../models/response/profile-organ
 export class OrganizationApiServiceAbstraction {
   get: (id: string) => Promise<OrganizationResponse>;
   getBilling: (id: string) => Promise<BillingResponse>;
+  getBillingHistory: (id: string) => Promise<BillingHistoryResponse>;
   getSubscription: (id: string) => Promise<OrganizationSubscriptionResponse>;
   getLicense: (id: string, installationId: string) => Promise<unknown>;
   getAutoEnrollStatus: (identifier: string) => Promise<OrganizationAutoEnrollStatusResponse>;

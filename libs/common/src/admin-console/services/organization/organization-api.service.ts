@@ -1,3 +1,5 @@
+import { BillingHistoryResponse } from "@bitwarden/common/billing/models/response/billing-history.response";
+
 import { ApiService } from "../../../abstractions/api.service";
 import { OrganizationApiKeyRequest } from "../../../admin-console/models/request/organization-api-key.request";
 import { OrganizationSsoRequest } from "../../../auth/models/request/organization-sso.request";
@@ -53,6 +55,17 @@ export class OrganizationApiService implements OrganizationApiServiceAbstraction
       true,
     );
     return new BillingResponse(r);
+  }
+
+  async getBillingHistory(id: string): Promise<BillingHistoryResponse> {
+    const r = await this.apiService.send(
+      "GET",
+      "/organizations/" + id + "/billing/history",
+      null,
+      true,
+      true,
+    );
+    return new BillingHistoryResponse(r);
   }
 
   async getSubscription(id: string): Promise<OrganizationSubscriptionResponse> {
