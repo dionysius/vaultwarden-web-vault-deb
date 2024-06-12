@@ -43,7 +43,6 @@ export class LoginComponent extends BaseLoginComponent implements OnInit {
   enforcedPasswordPolicyOptions: MasterPasswordPolicyOptions;
   policies: Policy[];
   showPasswordless = false;
-
   constructor(
     private acceptOrganizationInviteService: AcceptOrganizationInviteService,
     devicesApiService: DevicesApiServiceAbstraction,
@@ -92,7 +91,13 @@ export class LoginComponent extends BaseLoginComponent implements OnInit {
     this.onSuccessfulLoginNavigate = this.goAfterLogIn;
     this.showPasswordless = flagEnabled("showPasswordless");
   }
+  submitForm = async (showToast = true) => {
+    return await this.submitFormHelper(showToast);
+  };
 
+  private async submitFormHelper(showToast: boolean) {
+    await super.submit(showToast);
+  }
   async ngOnInit() {
     // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
     this.route.queryParams.pipe(first()).subscribe(async (qParams) => {

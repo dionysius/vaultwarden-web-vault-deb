@@ -66,7 +66,6 @@ const routes: Routes = [
         children: [], // Children lets us have an empty component.
         canActivate: [redirectGuard()], // Redirects either to vault, login, or lock page.
       },
-      { path: "login", component: LoginComponent, canActivate: [UnauthGuard] },
       {
         path: "login-with-device",
         component: LoginViaAuthRequestComponent,
@@ -182,6 +181,24 @@ const routes: Routes = [
     path: "",
     component: AnonLayoutWrapperComponent,
     children: [
+      {
+        path: "login",
+        canActivate: [unauthGuardFn()],
+        children: [
+          {
+            path: "",
+            component: LoginComponent,
+          },
+          {
+            path: "",
+            component: EnvironmentSelectorComponent,
+            outlet: "environment-selector",
+          },
+        ],
+        data: {
+          pageTitle: "logIn",
+        },
+      },
       {
         path: "2fa",
         component: TwoFactorComponent,
