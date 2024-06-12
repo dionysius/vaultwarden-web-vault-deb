@@ -1,3 +1,4 @@
+import { DialogRef } from "@angular/cdk/dialog";
 import { Component } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 
@@ -23,8 +24,16 @@ export class UpdateLicenseDialogComponent extends UpdateLicenseComponent {
     platformUtilsService: PlatformUtilsService,
     organizationApiService: OrganizationApiServiceAbstraction,
     formBuilder: FormBuilder,
+    dialogRef: DialogRef<UpdateLicenseDialogResult>, // Add this line
   ) {
-    super(apiService, i18nService, platformUtilsService, organizationApiService, formBuilder);
+    super(
+      apiService,
+      i18nService,
+      platformUtilsService,
+      organizationApiService,
+      formBuilder,
+      dialogRef,
+    );
   }
   async submitLicense() {
     await this.submit();
