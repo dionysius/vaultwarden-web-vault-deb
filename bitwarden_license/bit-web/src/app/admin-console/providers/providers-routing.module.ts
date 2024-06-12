@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
 import { AuthGuard } from "@bitwarden/angular/auth/guards";
+import { AnonLayoutWrapperComponent } from "@bitwarden/auth/angular";
 import { Provider } from "@bitwarden/common/admin-console/models/domain/provider";
 import { ProvidersComponent } from "@bitwarden/web-vault/app/admin-console/providers/providers.component";
 import { FrontendLayoutComponent } from "@bitwarden/web-vault/app/layouts/frontend-layout.component";
@@ -48,10 +49,19 @@ const routes: Routes = [
         component: SetupProviderComponent,
         data: { titleId: "setupProvider" },
       },
+    ],
+  },
+  {
+    path: "",
+    component: AnonLayoutWrapperComponent,
+    children: [
       {
         path: "accept-provider",
         component: AcceptProviderComponent,
-        data: { titleId: "acceptProvider" },
+        data: {
+          pageTitle: "joinProvider",
+          titleId: "acceptProvider",
+        },
       },
     ],
   },
