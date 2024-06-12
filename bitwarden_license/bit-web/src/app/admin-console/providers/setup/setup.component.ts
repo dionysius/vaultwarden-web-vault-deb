@@ -119,9 +119,15 @@ export class SetupComponent implements OnInit, OnDestroy {
 
   submit = async () => {
     try {
+      const consolidatedBillingEnabled = await firstValueFrom(this.enableConsolidatedBilling$);
+
       this.formGroup.markAllAsTouched();
-      const taxInformationValid = this.manageTaxInformationComponent.touch();
-      if (this.formGroup.invalid || !taxInformationValid) {
+
+      const formIsValid = consolidatedBillingEnabled
+        ? this.formGroup.valid && this.manageTaxInformationComponent.touch()
+        : this.formGroup.valid;
+
+      if (!formIsValid) {
         return;
       }
 
@@ -134,9 +140,7 @@ export class SetupComponent implements OnInit, OnDestroy {
       request.token = this.token;
       request.key = key;
 
-      const enableConsolidatedBilling = await firstValueFrom(this.enableConsolidatedBilling$);
-
-      if (enableConsolidatedBilling) {
+      if (consolidatedBillingEnabled) {
         request.taxInfo = new ExpandedTaxInfoUpdateRequest();
         const taxInformation = this.manageTaxInformationComponent.getTaxInformation();
 
