@@ -1,6 +1,7 @@
-import { Directive, HostBinding, HostListener, Input, OnChanges } from "@angular/core";
+import { Directive, HostBinding, HostListener, Input, OnChanges, Optional } from "@angular/core";
 
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
+import { MenuItemDirective } from "@bitwarden/components";
 import { CopyAction, CopyCipherFieldService } from "@bitwarden/vault";
 
 /**
@@ -8,6 +9,8 @@ import { CopyAction, CopyCipherFieldService } from "@bitwarden/vault";
  * handle the copying of the field and any necessary password re-prompting or totp generation.
  *
  * Automatically disables the host element if the field to copy is not available or null.
+ *
+ * If the host element is a menu item, it will be hidden when disabled.
  *
  * @example
  * ```html
@@ -27,10 +30,22 @@ export class CopyCipherFieldDirective implements OnChanges {
 
   @Input({ required: true }) cipher: CipherView;
 
-  constructor(private copyCipherFieldService: CopyCipherFieldService) {}
+  constructor(
+    private copyCipherFieldService: CopyCipherFieldService,
+    @Optional() private menuItemDirective?: MenuItemDirective,
+  ) {}
 
   @HostBinding("attr.disabled")
   protected disabled: boolean | null = null;
+
+  /**
+   * Hide the element if it is disabled and is a menu item.
+   * @private
+   */
+  @HostBinding("class.tw-hidden")
+  private get hidden() {
+    return this.disabled && this.menuItemDirective;
+  }
 
   @HostListener("click")
   async copy() {
@@ -49,6 +64,11 @@ export class CopyCipherFieldDirective implements OnChanges {
       (this.action === "totp" && !(await this.copyCipherFieldService.totpAllowed(this.cipher)))
         ? true
         : null;
+
+    // If the directive is used on a menu item, update the menu item to prevent keyboard navigation
+    if (this.menuItemDirective) {
+      this.menuItemDirective.disabled = this.disabled;
+    }
   }
 
   private getValueToCopy() {

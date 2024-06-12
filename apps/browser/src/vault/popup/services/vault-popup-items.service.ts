@@ -2,6 +2,7 @@ import { inject, Injectable, NgZone } from "@angular/core";
 import {
   BehaviorSubject,
   combineLatest,
+  concatMap,
   distinctUntilChanged,
   distinctUntilKeyChanged,
   from,
@@ -176,7 +177,12 @@ export class VaultPopupItemsService {
    * Ciphers are sorted by name.
    */
   remainingCiphers$: Observable<PopupCipherView[]> = this.favoriteCiphers$.pipe(
-    withLatestFrom(this._filteredCipherList$, this.autoFillCiphers$),
+    concatMap(
+      (
+        favoriteCiphers, // concatMap->of is used to make withLatestFrom lazy to avoid race conditions with autoFillCiphers$
+      ) =>
+        of(favoriteCiphers).pipe(withLatestFrom(this._filteredCipherList$, this.autoFillCiphers$)),
+    ),
     map(([favoriteCiphers, ciphers, autoFillCiphers]) =>
       ciphers.filter(
         (cipher) => !autoFillCiphers.includes(cipher) && !favoriteCiphers.includes(cipher),

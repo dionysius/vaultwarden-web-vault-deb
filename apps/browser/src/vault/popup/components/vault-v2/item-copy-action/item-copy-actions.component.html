@@ -3,8 +3,10 @@
     type="button"
     bitIconButton="bwi-clone"
     size="small"
-    [attr.aria-label]="'copyInfoLabel' | i18n: cipher.name"
-    [title]="'copyInfoTitle' | i18n: cipher.name"
+    [appA11yTitle]="
+      hasLoginValues ? ('copyInfoTitle' | i18n: cipher.name) : ('noValuesToCopy' | i18n)
+    "
+    [disabled]="!hasLoginValues"
     [bitMenuTriggerFor]="loginOptions"
   ></button>
   <bit-menu #loginOptions>
@@ -25,8 +27,10 @@
     type="button"
     bitIconButton="bwi-clone"
     size="small"
-    [attr.aria-label]="'copyInfoLabel' | i18n: cipher.name"
-    [title]="'copyInfoTitle' | i18n: cipher.name"
+    [appA11yTitle]="
+      hasCardValues ? ('copyInfoTitle' | i18n: cipher.name) : ('noValuesToCopy' | i18n)
+    "
+    [disabled]="!hasCardValues"
     [bitMenuTriggerFor]="cardOptions"
   ></button>
   <bit-menu #cardOptions>
@@ -44,8 +48,10 @@
     type="button"
     bitIconButton="bwi-clone"
     size="small"
-    [attr.aria-label]="'copyInfoLabel' | i18n: cipher.name"
-    [title]="'copyInfoTitle' | i18n: cipher.name"
+    [appA11yTitle]="
+      hasIdentityValues ? ('copyInfoTitle' | i18n: cipher.name) : ('noValuesToCopy' | i18n)
+    "
+    [disabled]="!hasIdentityValues"
     [bitMenuTriggerFor]="identityOptions"
   ></button>
   <bit-menu #identityOptions>
@@ -69,8 +75,9 @@
     type="button"
     bitIconButton="bwi-clone"
     size="small"
-    [attr.aria-label]="'copyNoteLabel' | i18n: cipher.name"
-    [title]="'copyNoteTitle' | i18n: cipher.name"
+    [appA11yTitle]="
+      hasSecureNoteValue ? ('copyNoteTitle' | i18n: cipher.name) : ('noValuesToCopy' | i18n)
+    "
     appCopyField="secureNote"
     [cipher]="cipher"
   ></button>

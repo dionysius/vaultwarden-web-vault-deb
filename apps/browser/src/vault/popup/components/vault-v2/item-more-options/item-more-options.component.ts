@@ -33,11 +33,11 @@ export class ItemMoreOptionsComponent {
   cipher: CipherView;
 
   /**
-   * Flag to hide the login specific menu options. Used for login items that are
+   * Flag to hide the autofill menu options. Used for items that are
    * already in the autofill list suggestion.
    */
   @Input({ transform: booleanAttribute })
-  hideLoginOptions: boolean;
+  hideAutofillOptions: boolean;
 
   protected autofillAllowed$ = this.vaultPopupItemsService.autofillAllowed$;
 
@@ -55,8 +55,11 @@ export class ItemMoreOptionsComponent {
     return this.cipher.edit;
   }
 
-  get isLogin() {
-    return this.cipher.type === CipherType.Login;
+  /**
+   * Determines if the cipher can be autofilled.
+   */
+  get canAutofill() {
+    return [CipherType.Login, CipherType.Card, CipherType.Identity].includes(this.cipher.type);
   }
 
   get favoriteText() {
@@ -67,7 +70,7 @@ export class ItemMoreOptionsComponent {
    * Determines if the login cipher can be launched in a new browser tab.
    */
   get canLaunch() {
-    return this.isLogin && this.cipher.login.canLaunch;
+    return this.cipher.type === CipherType.Login && this.cipher.login.canLaunch;
   }
 
   /**

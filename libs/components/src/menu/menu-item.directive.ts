@@ -1,5 +1,6 @@
 import { FocusableOption } from "@angular/cdk/a11y";
-import { Component, ElementRef, HostBinding } from "@angular/core";
+import { coerceBooleanProperty } from "@angular/cdk/coercion";
+import { Component, ElementRef, HostBinding, Input } from "@angular/core";
 
 @Component({
   selector: "[bitMenuItem]",
@@ -32,6 +33,11 @@ export class MenuItemDirective implements FocusableOption {
   ];
   @HostBinding("attr.role") role = "menuitem";
   @HostBinding("tabIndex") tabIndex = "-1";
+  @HostBinding("attr.disabled") get disabledAttr() {
+    return this.disabled || null; // native disabled attr must be null when false
+  }
+
+  @Input({ transform: coerceBooleanProperty }) disabled?: boolean = false;
 
   constructor(private elementRef: ElementRef) {}
 

@@ -25,5 +25,28 @@ export class ItemCopyActionsComponent {
 
   protected CipherType = CipherType;
 
+  get hasLoginValues() {
+    return (
+      !!this.cipher.login.hasTotp || !!this.cipher.login.password || !!this.cipher.login.username
+    );
+  }
+
+  get hasCardValues() {
+    return !!this.cipher.card.code || !!this.cipher.card.number;
+  }
+
+  get hasIdentityValues() {
+    return (
+      !!this.cipher.identity.fullAddressForCopy ||
+      !!this.cipher.identity.email ||
+      !!this.cipher.identity.username ||
+      !!this.cipher.identity.phone
+    );
+  }
+
+  get hasSecureNoteValue() {
+    return !!this.cipher.notes;
+  }
+
   constructor() {}
 }

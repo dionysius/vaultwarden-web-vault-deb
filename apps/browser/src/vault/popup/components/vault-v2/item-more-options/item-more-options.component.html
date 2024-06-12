@@ -8,7 +8,7 @@
     [bitMenuTriggerFor]="moreOptions"
   ></button>
   <bit-menu #moreOptions>
-    <ng-container *ngIf="isLogin && !hideLoginOptions">
+    <ng-container *ngIf="canAutofill && !hideAutofillOptions">
       <ng-container *ngIf="autofillAllowed$ | async">
         <button type="button" bitMenuItem>
           {{ "autofill" | i18n }}

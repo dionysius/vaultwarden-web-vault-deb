@@ -25,7 +25,7 @@
         [appA11yTitle]="'viewItemTitle' | i18n: cipher.name"
       >
         <app-vault-icon slot="start" [cipher]="cipher"></app-vault-icon>
-        {{ cipher.name }}
+        <span data-testid="item-name">{{ cipher.name }}</span>
         <i
           class="bwi bwi-sm"
           *ngIf="cipher.organizationId"
@@ -36,12 +36,20 @@
       </a>
       <ng-container slot="end">
         <bit-item-action *ngIf="showAutofillButton">
-          <button type="button" bitBadge variant="primary">{{ "autoFill" | i18n }}</button>
+          <button
+            type="button"
+            bitBadge
+            variant="primary"
+            [title]="'autofillTitle' | i18n: cipher.name"
+            [attr.aria-label]="'autofillTitle' | i18n: cipher.name"
+          >
+            {{ "autoFill" | i18n }}
+          </button>
         </bit-item-action>
         <app-item-copy-actions [cipher]="cipher"></app-item-copy-actions>
         <app-item-more-options
           [cipher]="cipher"
-          [hideLoginOptions]="showAutofillButton"
+          [hideAutofillOptions]="showAutofillButton"
         ></app-item-more-options>
       </ng-container>
     </bit-item>
