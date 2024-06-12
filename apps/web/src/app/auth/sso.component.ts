@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { first } from "rxjs/operators";
 
@@ -31,6 +32,14 @@ import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/ge
 })
 // eslint-disable-next-line rxjs-angular/prefer-takeuntil
 export class SsoComponent extends BaseSsoComponent {
+  protected formGroup = new FormGroup({
+    identifier: new FormControl(null, [Validators.required]),
+  });
+
+  get identifierFormControl() {
+    return this.formGroup.controls.identifier;
+  }
+
   constructor(
     ssoLoginService: SsoLoginServiceAbstraction,
     loginStrategyService: LoginStrategyServiceAbstraction,
@@ -82,7 +91,7 @@ export class SsoComponent extends BaseSsoComponent {
     this.route.queryParams.pipe(first()).subscribe(async (qParams) => {
       if (qParams.identifier != null) {
         // SSO Org Identifier in query params takes precedence over claimed domains
-        this.identifier = qParams.identifier;
+        this.identifierFormControl.setValue(qParams.identifier);
       } else {
         // Note: this flow is written for web but both browser and desktop
         // redirect here on SSO button click.
@@ -96,7 +105,7 @@ export class SsoComponent extends BaseSsoComponent {
               await this.orgDomainApiService.getClaimedOrgDomainByEmail(qParams.email);
 
             if (response?.ssoAvailable) {
-              this.identifier = response.organizationIdentifier;
+              this.identifierFormControl.setValue(response.organizationIdentifier);
               await this.submit();
               return;
             }
@@ -110,7 +119,7 @@ export class SsoComponent extends BaseSsoComponent {
         // Fallback to state svc if domain is unclaimed
         const storedIdentifier = await this.ssoLoginService.getOrganizationSsoIdentifier();
         if (storedIdentifier != null) {
-          this.identifier = storedIdentifier;
+          this.identifierFormControl.setValue(storedIdentifier);
         }
       }
     });
@@ -131,13 +140,12 @@ export class SsoComponent extends BaseSsoComponent {
     }
   }
 
-  async submit() {
+  submit = async () => {
+    this.identifier = this.identifierFormControl.value;
     await this.ssoLoginService.setOrganizationSsoIdentifier(this.identifier);
     if (this.clientId === "browser") {
       document.cookie = `ssoHandOffMessage=${this.i18nService.t("ssoHandOff")};SameSite=strict`;
     }
-    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    super.submit();
-  }
+    await Object.getPrototypeOf(this).submit.call(this);
+  };
 }

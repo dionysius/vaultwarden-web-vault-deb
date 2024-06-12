@@ -98,12 +98,6 @@ const routes: Routes = [
         pathMatch: "full",
       },
       {
-        path: "sso",
-        component: SsoComponent,
-        canActivate: [UnauthGuard],
-        data: { titleId: "enterpriseSingleSignOn" } satisfies DataProperties,
-      },
-      {
         path: "set-password",
         component: SetPasswordComponent,
         data: { titleId: "setMasterPassword" } satisfies DataProperties,
@@ -181,6 +175,25 @@ const routes: Routes = [
     path: "",
     component: AnonLayoutWrapperComponent,
     children: [
+      {
+        path: "sso",
+        canActivate: [unauthGuardFn()],
+        children: [
+          {
+            path: "",
+            component: SsoComponent,
+            data: {
+              pageTitle: "enterpriseSingleSignOn",
+              titleId: "enterpriseSingleSignOn",
+            } satisfies DataProperties & AnonLayoutWrapperData,
+          },
+          {
+            path: "",
+            component: EnvironmentSelectorComponent,
+            outlet: "environment-selector",
+          },
+        ],
+      },
       {
         path: "login",
         canActivate: [unauthGuardFn()],

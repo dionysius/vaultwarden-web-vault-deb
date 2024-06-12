@@ -1,52 +1,22 @@
-<form
-  #form
-  (ngSubmit)="submit()"
-  class="container"
-  [appApiAction]="initiateSsoFormPromise"
-  ngNativeValidate
->
-  <div class="row justify-content-md-center mt-5">
-    <div class="col-5">
-      <img class="logo mb-2 logo-themed" alt="Bitwarden" />
-      <div class="card d-block mt-4">
-        <div class="card-body" *ngIf="loggingIn">
-          <i class="bwi bwi-spinner bwi-spin" title="{{ 'loading' | i18n }}" aria-hidden="true"></i>
-          {{ "loading" | i18n }}
-        </div>
-        <div class="card-body" *ngIf="!loggingIn">
-          <p>{{ "ssoLogInWithOrgIdentifier" | i18n }}</p>
-          <div class="form-group">
-            <label for="identifier">{{ "ssoIdentifier" | i18n }}</label>
-            <input
-              id="identifier"
-              class="form-control"
-              type="text"
-              name="Identifier"
-              [(ngModel)]="identifier"
-              required
-              appAutofocus
-            />
-          </div>
-          <hr />
-          <div class="d-flex">
-            <button
-              type="submit"
-              class="btn btn-primary btn-block btn-submit"
-              [disabled]="form.loading"
-            >
-              <span> <i class="bwi bwi-sign-in" aria-hidden="true"></i> {{ "logIn" | i18n }} </span>
-              <i
-                class="bwi bwi-spinner bwi-spin"
-                title="{{ 'loading' | i18n }}"
-                aria-hidden="true"
-              ></i>
-            </button>
-            <a routerLink="/login" class="btn btn-outline-secondary btn-block ml-2 mt-0">
-              {{ "cancel" | i18n }}
-            </a>
-          </div>
-        </div>
-      </div>
+<form [formGroup]="formGroup" [bitSubmit]="submit" class="tw-container">
+  <div *ngIf="loggingIn">
+    <i class="bwi bwi-spinner bwi-spin" title="{{ 'loading' | i18n }}" aria-hidden="true"></i>
+    {{ "loading" | i18n }}
+  </div>
+  <div *ngIf="!loggingIn">
+    <p bitTypography="body1">{{ "ssoLogInWithOrgIdentifier" | i18n }}</p>
+    <bit-form-field>
+      <bit-label>{{ "ssoIdentifier" | i18n }}</bit-label>
+      <input bitInput type="text" formControlName="identifier" appAutofocus />
+    </bit-form-field>
+    <hr />
+    <div class="tw-flex tw-gap-2">
+      <button type="submit" bitButton bitFormButton buttonType="primary" [block]="true">
+        {{ "logIn" | i18n }}
+      </button>
+      <a bitButton buttonType="secondary" routerLink="/login" [block]="true">
+        {{ "cancel" | i18n }}
+      </a>
     </div>
   </div>
 </form>
