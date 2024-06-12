@@ -10,6 +10,7 @@ import {
   map,
   Observable,
   pairwise,
+  startWith,
   Subject,
   switchMap,
   takeUntil,
@@ -150,8 +151,25 @@ export class AccountSecurityComponent implements OnInit {
       timeout = VaultTimeoutStringType.OnRestart;
     }
 
+    const initialValues = {
+      vaultTimeout: timeout,
+      vaultTimeoutAction: await firstValueFrom(
+        this.vaultTimeoutSettingsService.getVaultTimeoutActionByUserId$(activeAccount.id),
+      ),
+      pin: await this.pinService.isPinSet(activeAccount.id),
+      biometric: await this.vaultTimeoutSettingsService.isBiometricLockSet(),
+      enableAutoBiometricsPrompt: await firstValueFrom(
+        this.biometricStateService.promptAutomatically$,
+      ),
+    };
+    this.form.patchValue(initialValues, { emitEvent: false });
+
+    this.supportsBiometric = await this.platformUtilsService.supportsBiometric();
+    this.showChangeMasterPass = await this.userVerificationService.hasMasterPassword();
+
     this.form.controls.vaultTimeout.valueChanges
       .pipe(
+        startWith(initialValues.vaultTimeout), // emit to init pairwise
         pairwise(),
         concatMap(async ([previousValue, newValue]) => {
           await this.saveVaultTimeout(previousValue, newValue);
@@ -162,6 +180,7 @@ export class AccountSecurityComponent implements OnInit {
 
     this.form.controls.vaultTimeoutAction.valueChanges
       .pipe(
+        startWith(initialValues.vaultTimeoutAction), // emit to init pairwise
         pairwise(),
         concatMap(async ([previousValue, newValue]) => {
           await this.saveVaultTimeoutAction(previousValue, newValue);
@@ -169,24 +188,6 @@ export class AccountSecurityComponent implements OnInit {
         takeUntil(this.destroy$),
       )
       .subscribe();
-
-    const userId = (await firstValueFrom(this.accountService.activeAccount$))?.id;
-
-    const initialValues = {
-      vaultTimeout: timeout,
-      vaultTimeoutAction: await firstValueFrom(
-        this.vaultTimeoutSettingsService.getVaultTimeoutActionByUserId$(activeAccount.id),
-      ),
-      pin: await this.pinService.isPinSet(userId),
-      biometric: await this.vaultTimeoutSettingsService.isBiometricLockSet(),
-      enableAutoBiometricsPrompt: await firstValueFrom(
-        this.biometricStateService.promptAutomatically$,
-      ),
-    };
-    this.form.patchValue(initialValues); // Emit event to initialize `pairwise` operator
-
-    this.supportsBiometric = await this.platformUtilsService.supportsBiometric();
-    this.showChangeMasterPass = await this.userVerificationService.hasMasterPassword();
 
     this.form.controls.pin.valueChanges
       .pipe(
