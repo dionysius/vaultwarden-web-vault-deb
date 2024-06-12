@@ -1,4 +1,3 @@
-import { DialogRef } from "@angular/cdk/dialog";
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
 
@@ -7,7 +6,6 @@ import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-conso
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 
-import { UpdateLicenseDialogResult } from "./update-license-dialog.component";
 @Component({
   selector: "app-update-license",
   templateUrl: "update-license.component.html",
@@ -30,7 +28,6 @@ export class UpdateLicenseComponent {
     private platformUtilsService: PlatformUtilsService,
     private organizationApiService: OrganizationApiServiceAbstraction,
     private formBuilder: FormBuilder,
-    private dialogRef: DialogRef<UpdateLicenseDialogResult>,
   ) {}
   protected setSelectedFile(event: Event) {
     const fileInputEl = <HTMLInputElement>event.target;
@@ -54,25 +51,24 @@ export class UpdateLicenseComponent {
     const fd = new FormData();
     fd.append("license", files);
 
-    // let updatePromise: Promise<void | unknown> = null;
-    // if (this.organizationId == null) {
-    //   updatePromise = this.apiService.postAccountLicense(fd);
-    // } else {
-    //   updatePromise = this.organizationApiService.updateLicense(this.organizationId, fd);
-    // }
+    let updatePromise: Promise<void | unknown> = null;
+    if (this.organizationId == null) {
+      updatePromise = this.apiService.postAccountLicense(fd);
+    } else {
+      updatePromise = this.organizationApiService.updateLicense(this.organizationId, fd);
+    }
 
-    // this.formPromise = updatePromise.then(() => {
-    //   return this.apiService.refreshIdentityToken();
-    // });
+    this.formPromise = updatePromise.then(() => {
+      return this.apiService.refreshIdentityToken();
+    });
 
-    // await this.formPromise;
-    // this.platformUtilsService.showToast(
-    //   "success",
-    //   null,
-    //   this.i18nService.t("licenseUploadSuccess"),
-    // );
-    // this.onUpdated.emit();
-    this.dialogRef.close(UpdateLicenseDialogResult.Updated);
+    await this.formPromise;
+    this.platformUtilsService.showToast(
+      "success",
+      null,
+      this.i18nService.t("licenseUploadSuccess"),
+    );
+    this.onUpdated.emit();
   };
 
   cancel = () => {
