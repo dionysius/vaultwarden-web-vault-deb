@@ -87,10 +87,6 @@ export class TrialBillingStepComponent implements OnInit {
   }
 
   async submit(): Promise<void> {
-    if (!this.taxInfoComponent.taxFormGroup.valid) {
-      this.taxInfoComponent.taxFormGroup.markAllAsTouched();
-    }
-
     this.formPromise = this.createOrganization();
 
     const organizationId = await this.formPromise;

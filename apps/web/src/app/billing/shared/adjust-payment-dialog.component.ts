@@ -55,9 +55,6 @@ export class AdjustPaymentDialogComponent {
   }
 
   submit = async () => {
-    if (!this.taxInfoComponent.taxFormGroup.valid) {
-      this.taxInfoComponent.taxFormGroup.markAllAsTouched();
-    }
     const request = new PaymentRequest();
     const response = this.paymentComponent.createPaymentToken().then((result) => {
       request.paymentToken = result[0];
