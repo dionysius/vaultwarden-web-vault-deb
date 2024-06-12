@@ -1,3 +1,4 @@
+import { ScrollingModule } from "@angular/cdk/scrolling";
 import { NgModule } from "@angular/core";
 
 import { PasswordCalloutComponent } from "@bitwarden/auth/angular";
@@ -22,6 +23,7 @@ import { PeopleComponent } from "./people.component";
     MembersRoutingModule,
     UserDialogModule,
     PasswordCalloutComponent,
+    ScrollingModule,
   ],
   declarations: [
     BulkConfirmComponent,
