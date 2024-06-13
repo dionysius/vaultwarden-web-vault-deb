@@ -195,10 +195,18 @@ export class Organization {
   }
 
   canEditUnassignedCiphers(restrictProviderAccessFlagEnabled: boolean) {
-    if (this.isProviderUser) {
-      return !restrictProviderAccessFlagEnabled;
+    // Providers can access items until the restrictProviderAccess flag is enabled
+    // After the flag is enabled and removed, this block will be deleted
+    // so that they permanently lose access to items
+    if (this.isProviderUser && !restrictProviderAccessFlagEnabled) {
+      return true;
     }
-    return this.isAdmin || this.permissions.editAnyCollection;
+
+    return (
+      this.type === OrganizationUserType.Admin ||
+      this.type === OrganizationUserType.Owner ||
+      this.permissions.editAnyCollection
+    );
   }
 
   canEditAllCiphers(
@@ -210,8 +218,11 @@ export class Organization {
       return this.isAdmin || this.permissions.editAnyCollection;
     }
 
-    if (this.isProviderUser) {
-      return !restrictProviderAccessFlagEnabled;
+    // Providers can access items until the restrictProviderAccess flag is enabled
+    // After the flag is enabled and removed, this block will be deleted
+    // so that they permanently lose access to items
+    if (this.isProviderUser && !restrictProviderAccessFlagEnabled) {
+      return true;
     }
 
     // Post Flexible Collections V1, the allowAdminAccessToAllCollectionItems flag can restrict admins
