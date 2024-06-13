@@ -2,10 +2,10 @@ import { Injectable } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { FormBuilder } from "@angular/forms";
 import {
-  Observable,
   combineLatest,
   distinctUntilChanged,
   map,
+  Observable,
   startWith,
   switchMap,
   tap,
@@ -104,6 +104,11 @@ export class VaultPopupListFiltersService {
     map(
       (filters) => (ciphers: CipherView[]) =>
         ciphers.filter((cipher) => {
+          // Vault popup lists never shows deleted ciphers
+          if (cipher.isDeleted) {
+            return false;
+          }
+
           if (filters.cipherType !== null && cipher.type !== filters.cipherType) {
             return false;
           }
