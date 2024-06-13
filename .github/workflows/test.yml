@@ -1,5 +1,4 @@
----
-name: Run tests
+name: Testing
 
 on:
   workflow_dispatch:
@@ -8,29 +7,20 @@ on:
       - "main"
       - "rc"
       - "hotfix-rc-*"
-  pull_request_target:
+  pull_request:
     types: [opened, synchronize]
 
-defaults:
-  run:
-    shell: bash
-
 jobs:
-  check-run:
-    name: Check PR run
-    uses: bitwarden/gh-actions/.github/workflows/check-run.yml@main
-
   test:
     name: Run tests
     runs-on: ubuntu-22.04
-    needs: check-run
     permissions:
       checks: write
       contents: read
       pull-requests: write
       
     steps:
-      - name: Checkout repo
+      - name: Check out repo
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Get Node Version
@@ -75,14 +65,26 @@ jobs:
           reporter: jest-junit
           fail-on-error: true
 
+      - name: Check for Codecov secret
+        id: check-codecov-secret
+        run: |
+          if [ "${{ secrets.CODECOV_TOKEN }}" != '' ]; then
+            echo "available=true" >> $GITHUB_OUTPUT;
+          else
+            echo "available=false" >> $GITHUB_OUTPUT;
+          fi
+
       - name: Upload to codecov.io
         uses: codecov/codecov-action@54bcd8715eee62d40e33596ef5e8f0f48dbbccab # v4.1.0
+        if: steps.check-codecov-secret.outputs.available == 'true'
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
   rust:
-    name: rust - ${{ matrix.os }}
+    name: Run Rust tests on ${{ matrix.os }}
     runs-on: ${{ matrix.os || 'ubuntu-latest' }}
+    permissions:
+      contents: read
 
     strategy:
       matrix:
@@ -92,7 +94,7 @@ jobs:
           - windows-latest
 
     steps:
-      - name: Rust version check
+      - name: Check Rust version
         run: rustup --version
 
       - name: Install gnome-keyring
@@ -101,7 +103,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y gnome-keyring dbus-x11
 
-      - name: Checkout repo
+      - name: Check out repo
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Build
