@@ -802,7 +802,6 @@ const safeProviders: SafeProvider[] = [
       LOGOUT_CALLBACK,
       StateServiceAbstraction,
       AuthServiceAbstraction,
-      AuthRequestServiceAbstraction,
       MessagingServiceAbstraction,
     ],
   }),

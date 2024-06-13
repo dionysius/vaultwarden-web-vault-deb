@@ -62,15 +62,6 @@ describe("AuthRequestService", () => {
     });
   });
 
-  describe("AcceptAuthRequests", () => {
-    it("returns an error when userId isn't provided", async () => {
-      await expect(sut.getAcceptAuthRequests(undefined)).rejects.toThrow("User ID is required");
-      await expect(sut.setAcceptAuthRequests(true, undefined)).rejects.toThrow(
-        "User ID is required",
-      );
-    });
-  });
-
   describe("AdminAuthRequest", () => {
     it("returns an error when userId isn't provided", async () => {
       await expect(sut.getAdminAuthRequest(undefined)).rejects.toThrow("User ID is required");

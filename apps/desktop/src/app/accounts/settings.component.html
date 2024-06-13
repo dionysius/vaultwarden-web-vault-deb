@@ -166,20 +166,6 @@
                   "recommendedForSecurity" | i18n
                 }}</small>
               </div>
-              <div class="form-group">
-                <div class="checkbox">
-                  <label for="approveLoginRequests">
-                    <input
-                      id="approveLoginRequests"
-                      type="checkbox"
-                      formControlName="approveLoginRequests"
-                      (change)="updateApproveLoginRequests()"
-                    />
-                    {{ "approveLoginRequests" | i18n }}
-                  </label>
-                </div>
-                <small class="help-block">{{ "approveLoginRequestDesc" | i18n }}</small>
-              </div>
             </ng-container>
           </div>
         </div>

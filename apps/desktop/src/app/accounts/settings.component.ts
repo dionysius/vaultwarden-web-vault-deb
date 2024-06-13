@@ -3,7 +3,7 @@ import { FormBuilder } from "@angular/forms";
 import { BehaviorSubject, Observable, Subject, firstValueFrom } from "rxjs";
 import { concatMap, debounceTime, filter, map, switchMap, takeUntil, tap } from "rxjs/operators";
 
-import { AuthRequestServiceAbstraction, PinServiceAbstraction } from "@bitwarden/auth/common";
+import { PinServiceAbstraction } from "@bitwarden/auth/common";
 import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout-settings.service";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
@@ -90,7 +90,6 @@ export class SettingsComponent implements OnInit {
     biometric: false,
     autoPromptBiometrics: false,
     requirePasswordOnStart: false,
-    approveLoginRequests: false,
     // Account Preferences
     clearClipboard: [null],
     minimizeOnCopyToClipboard: false,
@@ -135,7 +134,6 @@ export class SettingsComponent implements OnInit {
     private biometricStateService: BiometricStateService,
     private desktopAutofillSettingsService: DesktopAutofillSettingsService,
     private pinService: PinServiceAbstraction,
-    private authRequestService: AuthRequestServiceAbstraction,
     private logService: LogService,
     private nativeMessagingManifestService: NativeMessagingManifestService,
   ) {
@@ -275,8 +273,6 @@ export class SettingsComponent implements OnInit {
       requirePasswordOnStart: await firstValueFrom(
         this.biometricStateService.requirePasswordOnStart$,
       ),
-      approveLoginRequests:
-        (await this.authRequestService.getAcceptAuthRequests(this.currentUserId)) ?? false,
       clearClipboard: await firstValueFrom(this.autofillSettingsService.clearClipboardDelay$),
       minimizeOnCopyToClipboard: await firstValueFrom(this.desktopSettingsService.minimizeOnCopy$),
       enableFavicons: await firstValueFrom(this.domainSettingsService.showFavicons$),
@@ -719,13 +715,6 @@ export class SettingsComponent implements OnInit {
   async saveHardwareAcceleration() {
     await this.desktopSettingsService.setHardwareAcceleration(
       this.form.value.enableHardwareAcceleration,
-    );
-  }
-
-  async updateApproveLoginRequests() {
-    await this.authRequestService.setAcceptAuthRequests(
-      this.form.value.approveLoginRequests,
-      this.currentUserId,
     );
   }
 

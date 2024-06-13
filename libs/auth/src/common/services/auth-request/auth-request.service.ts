@@ -23,20 +23,6 @@ import { MasterKey, UserKey } from "@bitwarden/common/types/key";
 import { AuthRequestServiceAbstraction } from "../../abstractions/auth-request.service.abstraction";
 
 /**
- * Disk-local to maintain consistency between tabs (even though
- * approvals are currently only available on desktop). We don't
- * want to clear this on logout as it's a user preference.
- */
-export const ACCEPT_AUTH_REQUESTS_KEY = new UserKeyDefinition<boolean>(
-  AUTH_REQUEST_DISK_LOCAL,
-  "acceptAuthRequests",
-  {
-    deserializer: (value) => value ?? false,
-    clearOn: [],
-  },
-);
-
-/**
  * Disk-local to maintain consistency between tabs. We don't want to
  * clear this on logout since admin auth requests are long-lived.
  */
@@ -62,25 +48,6 @@ export class AuthRequestService implements AuthRequestServiceAbstraction {
     private stateProvider: StateProvider,
   ) {
     this.authRequestPushNotification$ = this.authRequestPushNotificationSubject.asObservable();
-  }
-
-  async getAcceptAuthRequests(userId: UserId): Promise<boolean> {
-    if (userId == null) {
-      throw new Error("User ID is required");
-    }
-
-    const value = await firstValueFrom(
-      this.stateProvider.getUser(userId, ACCEPT_AUTH_REQUESTS_KEY).state$,
-    );
-    return value;
-  }
-
-  async setAcceptAuthRequests(accept: boolean, userId: UserId): Promise<void> {
-    if (userId == null) {
-      throw new Error("User ID is required");
-    }
-
-    await this.stateProvider.setUserState(ACCEPT_AUTH_REQUESTS_KEY, accept, userId);
   }
 
   async getAdminAuthRequest(userId: UserId): Promise<AdminAuthRequestStorable | null> {

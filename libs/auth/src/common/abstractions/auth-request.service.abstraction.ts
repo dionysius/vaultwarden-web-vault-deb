@@ -11,20 +11,6 @@ export abstract class AuthRequestServiceAbstraction {
   authRequestPushNotification$: Observable<string>;
 
   /**
-   * Returns true if the user has chosen to allow auth requests to show on this client.
-   * Intended to prevent spamming the user with auth requests.
-   * @param userId The user id.
-   * @throws If `userId` is not provided.
-   */
-  abstract getAcceptAuthRequests: (userId: UserId) => Promise<boolean>;
-  /**
-   * Sets whether to allow auth requests to show on this client for this user.
-   * @param accept Whether to allow auth requests to show on this client.
-   * @param userId The user id.
-   * @throws If `userId` is not provided.
-   */
-  abstract setAcceptAuthRequests: (accept: boolean, userId: UserId) => Promise<void>;
-  /**
    * Returns an admin auth request for the given user if it exists.
    * @param userId The user id.
    * @throws If `userId` is not provided.
