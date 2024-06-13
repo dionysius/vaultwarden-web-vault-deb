@@ -166,7 +166,11 @@ export class VaultComponent implements OnInit, OnDestroy {
   }
 
   protected get hideVaultFilters(): boolean {
-    return this.restrictProviderAccessEnabled && this.organization?.isProviderUser;
+    return (
+      this.restrictProviderAccessEnabled &&
+      this.organization?.isProviderUser &&
+      !this.organization?.isMember
+    );
   }
 
   private searchText$ = new Subject<string>();
@@ -351,6 +355,16 @@ export class VaultComponent implements OnInit, OnDestroy {
           this.addAccessToggle(0);
         }
         let ciphers;
+
+        // Restricted providers (who are not members) do not have access org cipher endpoint below
+        // Return early to avoid 404 response
+        if (
+          this.restrictProviderAccessEnabled &&
+          !organization.isMember &&
+          organization.isProviderUser
+        ) {
+          return [];
+        }
 
         if (this.flexibleCollectionsV1Enabled) {
           // Flexible collections V1 logic.

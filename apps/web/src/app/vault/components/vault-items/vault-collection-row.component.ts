@@ -69,9 +69,9 @@ export class VaultCollectionRowComponent {
     if (this.collection instanceof CollectionAdminView) {
       // Only show AddAccess if unmanaged and allowAdminAccessToAllCollectionItems is disabled
       return (
-        !this.organization.allowAdminAccessToAllCollectionItems &&
+        !this.organization?.allowAdminAccessToAllCollectionItems &&
         this.collection.unmanaged &&
-        this.organization.canEditUnmanagedCollections()
+        this.organization?.canEditUnmanagedCollections()
       );
     }
 
