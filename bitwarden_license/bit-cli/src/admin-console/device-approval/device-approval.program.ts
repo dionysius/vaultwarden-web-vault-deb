@@ -26,7 +26,9 @@ export class DeviceApprovalProgram extends BaseProgram {
 
   private deviceApprovalCommand() {
     return new Command("device-approval")
-      .description("Manage device approvals")
+      .description(
+        "Manage device approval requests sent to organizations that use SSO with trusted devices.",
+      )
       .addCommand(this.listCommand())
       .addCommand(this.approveCommand())
       .addCommand(this.approveAllCommand())
