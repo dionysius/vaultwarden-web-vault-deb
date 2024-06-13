@@ -6,6 +6,8 @@ import { MessageResponse } from "@bitwarden/cli/models/response/message.response
 import { OrganizationService } from "@bitwarden/common/admin-console/services/organization/organization.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 
+import { ServiceContainer } from "../../service-container";
+
 export class ApproveAllCommand {
   constructor(
     private organizationAuthRequestService: OrganizationAuthRequestService,
@@ -48,5 +50,12 @@ export class ApproveAllCommand {
     } catch (e) {
       return Response.error(e);
     }
+  }
+
+  static create(serviceContainer: ServiceContainer) {
+    return new ApproveAllCommand(
+      serviceContainer.organizationAuthRequestService,
+      serviceContainer.organizationService,
+    );
   }
 }

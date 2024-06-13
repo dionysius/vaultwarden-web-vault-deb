@@ -6,6 +6,8 @@ import { ListResponse } from "@bitwarden/cli/models/response/list.response";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 
+import { ServiceContainer } from "../../service-container";
+
 import { PendingAuthRequestResponse } from "./pending-auth-request.response";
 
 export class ListCommand {
@@ -38,5 +40,12 @@ export class ListCommand {
     } catch (e) {
       return Response.error(e);
     }
+  }
+
+  static create(serviceContainer: ServiceContainer) {
+    return new ListCommand(
+      serviceContainer.organizationAuthRequestService,
+      serviceContainer.organizationService,
+    );
   }
 }

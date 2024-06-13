@@ -5,6 +5,7 @@ import { OrganizationService } from "@bitwarden/common/admin-console/abstraction
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 
 import { OrganizationAuthRequestService } from "../../../../bit-common/src/admin-console/auth-requests";
+import { ServiceContainer } from "../../service-container";
 
 export class DenyCommand {
   constructor(
@@ -42,5 +43,12 @@ export class DenyCommand {
     } catch (e) {
       return Response.error(e);
     }
+  }
+
+  static create(serviceContainer: ServiceContainer) {
+    return new DenyCommand(
+      serviceContainer.organizationService,
+      serviceContainer.organizationAuthRequestService,
+    );
   }
 }
