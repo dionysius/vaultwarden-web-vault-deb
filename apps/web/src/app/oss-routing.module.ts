@@ -304,14 +304,14 @@ const routes: Routes = [
       {
         path: "recover-delete",
         canActivate: [unauthGuardFn()],
+        data: {
+          pageTitle: "deleteAccount",
+          titleId: "deleteAccount",
+        } satisfies DataProperties & AnonLayoutWrapperData,
         children: [
           {
             path: "",
             component: RecoverDeleteComponent,
-            data: {
-              pageTitle: "deleteAccount",
-              titleId: "deleteAccount",
-            } satisfies DataProperties & AnonLayoutWrapperData,
           },
           {
             path: "",
