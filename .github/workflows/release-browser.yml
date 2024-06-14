@@ -132,7 +132,7 @@ jobs:
           PACKAGE_VERSION: ${{ needs.setup.outputs.release-version }}
         run: |
           mv browser-source.zip browser-source-$PACKAGE_VERSION.zip
-          mv dist-chrome.zip dist-chrome-$PACKAGE_VERSION.zip
+          mv dist-chrome-mv3.zip dist-chrome-$PACKAGE_VERSION.zip
           mv dist-opera.zip dist-opera-$PACKAGE_VERSION.zip
           mv dist-firefox.zip dist-firefox-$PACKAGE_VERSION.zip
           mv dist-edge.zip dist-edge-$PACKAGE_VERSION.zip
