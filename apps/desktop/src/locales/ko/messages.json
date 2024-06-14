@@ -2401,9 +2401,6 @@
   "denyLogIn": {
     "message": "로그인 거부"
   },
-  "approveLoginRequests": {
-    "message": "로그인 요청 승인"
-  },
   "logInConfirmedForEmailOnDevice": {
     "message": "$DEVICE$에서 $EMAIL$(으)로의 로그인이 확인되었습니다",
     "placeholders": {
@@ -2437,9 +2434,6 @@
   },
   "thisRequestIsNoLongerValid": {
     "message": "더 이상 유효하지 않은 요청입니다."
-  },
-  "approveLoginRequestDesc": {
-    "message": "다른 기기에서 발생하는 로그인 요청을 이 기기에서 승인할 수 있습니다."
   },
   "confirmLoginAtemptForMail": {
     "message": "$EMAIL$(으)로의 로그인 시도 확인",

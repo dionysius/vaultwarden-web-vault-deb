@@ -2401,9 +2401,6 @@
   "denyLogIn": {
     "message": "Адхіліць уваход"
   },
-  "approveLoginRequests": {
-    "message": "Ухваліць запыт уваходу"
-  },
   "logInConfirmedForEmailOnDevice": {
     "message": "Уваход пацверджаны для $EMAIL$ на $DEVICE$",
     "placeholders": {
@@ -2437,9 +2434,6 @@
   },
   "thisRequestIsNoLongerValid": {
     "message": "Гэты запыт больш не дзейнічае."
-  },
-  "approveLoginRequestDesc": {
-    "message": "Выкарыстоўваць гэту прыладу для ўхвалення запытаў на ўваход, якія зроблены з іншых прылад."
   },
   "confirmLoginAtemptForMail": {
     "message": "Пацвердзіць спробу ўваходу для $EMAIL$",

@@ -2401,9 +2401,6 @@
   "denyLogIn": {
     "message": "Отказване на вписването"
   },
-  "approveLoginRequests": {
-    "message": "Одобряване на заявки за вписване"
-  },
   "logInConfirmedForEmailOnDevice": {
     "message": "Вписването за $EMAIL$ на $DEVICE$ е одобрено",
     "placeholders": {
@@ -2437,9 +2434,6 @@
   },
   "thisRequestIsNoLongerValid": {
     "message": "Тази заявка вече не е активна."
-  },
-  "approveLoginRequestDesc": {
-    "message": "Използвайте това устройство за одобряване на заявки за вписване направени от други устройства."
   },
   "confirmLoginAtemptForMail": {
     "message": "Потвърждаване на заявката за вписване за $EMAIL$",

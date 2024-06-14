@@ -2401,9 +2401,6 @@
   "denyLogIn": {
     "message": "Refuser la connexion"
   },
-  "approveLoginRequests": {
-    "message": "Approuver les demandes de connexion"
-  },
   "logInConfirmedForEmailOnDevice": {
     "message": "Connexion confirmée pour $EMAIL$ sur $DEVICE$",
     "placeholders": {
@@ -2437,9 +2434,6 @@
   },
   "thisRequestIsNoLongerValid": {
     "message": "Cette demande n'est plus valide."
-  },
-  "approveLoginRequestDesc": {
-    "message": "Utiliser cet appareil pour approuver les demandes de connexion faites à partir d'autres appareils."
   },
   "confirmLoginAtemptForMail": {
     "message": "Confirmer la tentative de connexion pour $EMAIL$",

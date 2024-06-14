@@ -696,13 +696,13 @@
     "message": "指定您本地托管的 Bitwarden 安装的基础 URL。"
   },
   "selfHostedBaseUrlHint": {
-    "message": "Specify the base URL of your on-premises hosted Bitwarden installation. Example: https://bitwarden.company.com"
+    "message": "指定您的本地托管 Bitwarden 安装的基础 URL。例如：https://bitwarden.company.com"
   },
   "selfHostedCustomEnvHeader": {
-    "message": "For advanced configuration, you can specify the base URL of each service independently."
+    "message": "对于高级配置，您可以单独指定每个服务的基础 URL。"
   },
   "selfHostedEnvFormInvalid": {
-    "message": "You must add either the base Server URL or at least one custom environment."
+    "message": "您必须添加基础服务器 URL 或至少添加一个自定义环境。"
   },
   "customEnvironment": {
     "message": "自定义环境"
@@ -753,7 +753,7 @@
     "message": "已注销"
   },
   "loggedOutDesc": {
-    "message": "You have been logged out of your account."
+    "message": "您已注销您的账户。"
   },
   "loginExpired": {
     "message": "您的登录会话已过期。"
@@ -1225,10 +1225,10 @@
     }
   },
   "errorRefreshingAccessToken": {
-    "message": "Access Token Refresh Error"
+    "message": "访问令牌刷新错误"
   },
   "errorRefreshingAccessTokenDesc": {
-    "message": "No refresh token or API keys found. Please try logging out and logging back in."
+    "message": "未找到刷新令牌或 API 密钥。请尝试注销然后重新登录。"
   },
   "help": {
     "message": "帮助"
@@ -2248,7 +2248,7 @@
     }
   },
   "forwarderNoAccountId": {
-    "message": "Unable to obtain $SERVICENAME$ masked email account ID.",
+    "message": "无法获取 $SERVICENAME$ 电子邮件账户 ID。",
     "description": "Displayed when the forwarding service fails to return an account ID.",
     "placeholders": {
       "servicename": {
@@ -2401,9 +2401,6 @@
   "denyLogIn": {
     "message": "拒绝登录"
   },
-  "approveLoginRequests": {
-    "message": "批准登录请求"
-  },
   "logInConfirmedForEmailOnDevice": {
     "message": "已确认 $EMAIL$ 在 $DEVICE$ 上的登录",
     "placeholders": {
@@ -2437,9 +2434,6 @@
   },
   "thisRequestIsNoLongerValid": {
     "message": "此请求已失效。"
-  },
-  "approveLoginRequestDesc": {
-    "message": "使用此设备批准其他设备的登录请求。"
   },
   "confirmLoginAtemptForMail": {
     "message": "确认 $EMAIL$ 的登录尝试",
@@ -2493,10 +2487,10 @@
     "message": "重要事项："
   },
   "accessTokenUnableToBeDecrypted": {
-    "message": "You have been logged out because your access token could not be decrypted. Please log in again to resolve this issue."
+    "message": "由于无法解密您的访问令牌，您已被注销。请重新登录以解决此问题。"
   },
   "refreshTokenSecureStorageRetrievalFailure": {
-    "message": "You have been logged out because your refresh token could not be retrieved. Please log in again to resolve this issue."
+    "message": "由于无法获取您的访问令牌，您已被注销。请重新登录以解决此问题。"
   },
   "masterPasswordHint": {
     "message": "主密码忘记后，将无法恢复！"
@@ -2566,7 +2560,7 @@
     "message": "批准后，您将收到通知。"
   },
   "troubleLoggingIn": {
-    "message": "登录遇到问题？"
+    "message": "登录遇到问题吗？"
   },
   "loginApproved": {
     "message": "登录已批准"

@@ -2401,9 +2401,6 @@
   "denyLogIn": {
     "message": "Одбиј пријављивање"
   },
-  "approveLoginRequests": {
-    "message": "Одобравање захтева за пријављивање"
-  },
   "logInConfirmedForEmailOnDevice": {
     "message": "Пријава потврђена за $EMAIL$ на $DEVICE$",
     "placeholders": {
@@ -2437,9 +2434,6 @@
   },
   "thisRequestIsNoLongerValid": {
     "message": "Овај захтев више не важи."
-  },
-  "approveLoginRequestDesc": {
-    "message": "Користите овај уређај за одобравање захтева за пријављивање са других уређаја."
   },
   "confirmLoginAtemptForMail": {
     "message": "Потврдити пријаву за $EMAIL$",

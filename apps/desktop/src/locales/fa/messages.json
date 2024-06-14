@@ -2401,9 +2401,6 @@
   "denyLogIn": {
     "message": "رد ورود"
   },
-  "approveLoginRequests": {
-    "message": "درخواست های ورود را تأیید کنید"
-  },
   "logInConfirmedForEmailOnDevice": {
     "message": "ورود به سیستم برای $EMAIL$ در $DEVICE$ تأیید شد",
     "placeholders": {
@@ -2437,9 +2434,6 @@
   },
   "thisRequestIsNoLongerValid": {
     "message": "این درخواست دیگر معتبر نیست."
-  },
-  "approveLoginRequestDesc": {
-    "message": "از این دستگاه برای تأیید درخواست‌های ورود به سیستم از دستگاه‌های دیگر استفاده کنید."
   },
   "confirmLoginAtemptForMail": {
     "message": "تأیید تلاش برای ورود به سیستم برای $EMAIL$",

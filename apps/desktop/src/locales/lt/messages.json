@@ -2401,9 +2401,6 @@
   "denyLogIn": {
     "message": "Neleisti prisijungti"
   },
-  "approveLoginRequests": {
-    "message": "Patvirtinti prisijungimo užklausas"
-  },
   "logInConfirmedForEmailOnDevice": {
     "message": "$EMAIL$ prisijungimas patvirtinas $DEVICE$ įrenginyje",
     "placeholders": {
@@ -2437,9 +2434,6 @@
   },
   "thisRequestIsNoLongerValid": {
     "message": "Ši užklausa nebegalioja."
-  },
-  "approveLoginRequestDesc": {
-    "message": "Naudokite šį įrenginį, kad patvirtintumėte prisijungimo užklausas, pateiktas iš kitų įrenginių."
   },
   "confirmLoginAtemptForMail": {
     "message": "Patvirtinti bandymą prisijungti iš $EMAIL$",

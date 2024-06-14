@@ -2401,9 +2401,6 @@
   "denyLogIn": {
     "message": "Bejelentkezés megtagadása"
   },
-  "approveLoginRequests": {
-    "message": "Bejelentkezési kérelmek jóváhagyása"
-  },
   "logInConfirmedForEmailOnDevice": {
     "message": "A bejelelentketés $EMAIL$ email címmel megerősítésre került $DEVICE$ eszközön.",
     "placeholders": {
@@ -2437,9 +2434,6 @@
   },
   "thisRequestIsNoLongerValid": {
     "message": "A kérés a továbbiakban már nem érvényes."
-  },
-  "approveLoginRequestDesc": {
-    "message": "Ezen eszköz használata a más eszközökről történő bejelentkezési kérések jóváhagyására."
   },
   "confirmLoginAtemptForMail": {
     "message": "Bejelentkezési kísérlet megerősítése $EMAIL$ email címmel",

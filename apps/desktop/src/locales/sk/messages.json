@@ -2401,9 +2401,6 @@
   "denyLogIn": {
     "message": "Odmietnuť prihlásenie"
   },
-  "approveLoginRequests": {
-    "message": "Schvaľovanie žiadostí o prihlásenie"
-  },
   "logInConfirmedForEmailOnDevice": {
     "message": "Potvrdené prihlásenie pomocou $EMAIL$ na $DEVICE$",
     "placeholders": {
@@ -2437,9 +2434,6 @@
   },
   "thisRequestIsNoLongerValid": {
     "message": "Táto žiadosť už nie je platná."
-  },
-  "approveLoginRequestDesc": {
-    "message": "Použiť toto zariadenie na schvaľovanie požiadaviek na prihlásenie z iných zariadení."
   },
   "confirmLoginAtemptForMail": {
     "message": "Potvrdiť pokus o prihlásenie pomocou $EMAIL$",

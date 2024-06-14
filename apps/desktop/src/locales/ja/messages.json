@@ -2401,9 +2401,6 @@
   "denyLogIn": {
     "message": "ログインを拒否"
   },
-  "approveLoginRequests": {
-    "message": "ログインリクエストを承認する"
-  },
   "logInConfirmedForEmailOnDevice": {
     "message": "$EMAIL$ に $DEVICE$ でのログインを承認しました",
     "placeholders": {
@@ -2437,9 +2434,6 @@
   },
   "thisRequestIsNoLongerValid": {
     "message": "このリクエストは無効になりました。"
-  },
-  "approveLoginRequestDesc": {
-    "message": "このデバイスを使用して、他のデバイスからのログインリクエストを承認します。"
   },
   "confirmLoginAtemptForMail": {
     "message": "$EMAIL$ のログイン試行を確認",

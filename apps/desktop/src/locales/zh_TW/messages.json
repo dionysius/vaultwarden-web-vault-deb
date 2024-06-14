@@ -2401,9 +2401,6 @@
   "denyLogIn": {
     "message": "拒絕登入"
   },
-  "approveLoginRequests": {
-    "message": "批准登入要求"
-  },
   "logInConfirmedForEmailOnDevice": {
     "message": "已確認 $EMAIL$ 在 $DEVICE$ 上的登入",
     "placeholders": {
@@ -2437,9 +2434,6 @@
   },
   "thisRequestIsNoLongerValid": {
     "message": "此請求已失效"
-  },
-  "approveLoginRequestDesc": {
-    "message": "使用此裝置準予來自其他裝置的登入要求。"
   },
   "confirmLoginAtemptForMail": {
     "message": "確認 $EMAIL$ 的登入嘗試",

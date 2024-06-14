@@ -2401,9 +2401,6 @@
   "denyLogIn": {
     "message": "Zamítnout přihlášení"
   },
-  "approveLoginRequests": {
-    "message": "Schválit žádosti o přihlášení"
-  },
   "logInConfirmedForEmailOnDevice": {
     "message": "Přihlášení bylo potvrzeno z $EMAIL$ pro $DEVICE$",
     "placeholders": {
@@ -2437,9 +2434,6 @@
   },
   "thisRequestIsNoLongerValid": {
     "message": "Tento požadavek již není platný."
-  },
-  "approveLoginRequestDesc": {
-    "message": "Použije toto zařízení pro schvalování žádostí o přihlášení z jiných zařízení."
   },
   "confirmLoginAtemptForMail": {
     "message": "Potvrďte pokus o přihlášení z $EMAIL$",

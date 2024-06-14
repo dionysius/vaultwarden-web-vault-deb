@@ -2401,9 +2401,6 @@
   "denyLogIn": {
     "message": "Weier aantekening"
   },
-  "approveLoginRequests": {
-    "message": "Bevestig aantekenings versoeke"
-  },
   "logInConfirmedForEmailOnDevice": {
     "message": "Aantekening gebevestig vir $EMAIL$ op $DEVICE$",
     "placeholders": {
@@ -2437,9 +2434,6 @@
   },
   "thisRequestIsNoLongerValid": {
     "message": "Hierdie versoek is nie meer geldig nie."
-  },
-  "approveLoginRequestDesc": {
-    "message": "Gebruik hierdie toestel om aantekenings versoeke, van ander toetstelle, goed te keer."
   },
   "confirmLoginAtemptForMail": {
     "message": "Bevestig aantekenings poging vir $EMAIL$",

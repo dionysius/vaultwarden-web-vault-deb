@@ -2401,9 +2401,6 @@
   "denyLogIn": {
     "message": "Denega l'inici de sessió"
   },
-  "approveLoginRequests": {
-    "message": "Aprova les sol·licituds d'inici de sessió"
-  },
   "logInConfirmedForEmailOnDevice": {
     "message": "S'ha confirmat l'inici de sessió per a $EMAIL$ a $DEVICE$",
     "placeholders": {
@@ -2437,9 +2434,6 @@
   },
   "thisRequestIsNoLongerValid": {
     "message": "Aquesta sol·licitud ja no és vàlida."
-  },
-  "approveLoginRequestDesc": {
-    "message": "Utilitzeu aquest dispositiu per aprovar les sol·licituds d'inici de sessió fetes des d'altres dispositius."
   },
   "confirmLoginAtemptForMail": {
     "message": "Confirmeu l'intent d'inici de sessió per a $EMAIL$",

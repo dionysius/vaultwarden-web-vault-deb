@@ -2401,9 +2401,6 @@
   "denyLogIn": {
     "message": "Recusar início de sessão"
   },
-  "approveLoginRequests": {
-    "message": "Aprovar pedidos de início de sessão"
-  },
   "logInConfirmedForEmailOnDevice": {
     "message": "Início de sessão confirmado para $EMAIL$ em $DEVICE$",
     "placeholders": {
@@ -2437,9 +2434,6 @@
   },
   "thisRequestIsNoLongerValid": {
     "message": "Este pedido já não é válido."
-  },
-  "approveLoginRequestDesc": {
-    "message": "Utilize este dispositivo para aprovar pedidos de início de sessão efetuados a partir de outros dispositivos."
   },
   "confirmLoginAtemptForMail": {
     "message": "Confirmar tentativa de início de sessão de $EMAIL$",

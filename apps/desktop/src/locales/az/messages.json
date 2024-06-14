@@ -995,7 +995,7 @@
     "message": "Menyu çubuğuna kiçildiləndə belə Bitwarden ikonunu Yuvada göstər."
   },
   "confirmTrayTitle": {
-    "message": "Bildiriş sahəsi nişanını ləğv et"
+    "message": "Gizlətmə sahəsini təsdiqlə"
   },
   "confirmTrayDesc": {
     "message": "Bu ayarı söndürsəniz, bütün əlaqəli ayarlar da söndürüləcək."
@@ -2401,9 +2401,6 @@
   "denyLogIn": {
     "message": "Girişi rədd et"
   },
-  "approveLoginRequests": {
-    "message": "Giriş tələblərini təsdiqlə"
-  },
   "logInConfirmedForEmailOnDevice": {
     "message": "$DEVICE$ cihazında $EMAIL$ üçün giriş təsdiqləndi",
     "placeholders": {
@@ -2437,9 +2434,6 @@
   },
   "thisRequestIsNoLongerValid": {
     "message": "Bu tələb artıq yararsızdır."
-  },
-  "approveLoginRequestDesc": {
-    "message": "Digər cihazlardan edilən giriş tələblərini təsdiqləmək üçün bu cihazı istifadə edin."
   },
   "confirmLoginAtemptForMail": {
     "message": "$EMAIL$ üçün giriş cəhdini təsdiqlə",

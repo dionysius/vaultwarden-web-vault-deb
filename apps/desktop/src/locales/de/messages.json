@@ -2401,9 +2401,6 @@
   "denyLogIn": {
     "message": "Anmeldung ablehnen"
   },
-  "approveLoginRequests": {
-    "message": "Anmeldeanfragen genehmigen"
-  },
   "logInConfirmedForEmailOnDevice": {
     "message": "Anmeldung von $EMAIL$ auf $DEVICE$ bestätigt",
     "placeholders": {
@@ -2437,9 +2434,6 @@
   },
   "thisRequestIsNoLongerValid": {
     "message": "Diese Anfrage ist nicht mehr gültig."
-  },
-  "approveLoginRequestDesc": {
-    "message": "Benutze dieses Gerät, um Anmeldeanfragen von anderen Geräten zu genehmigen."
   },
   "confirmLoginAtemptForMail": {
     "message": "Anmeldeversuch von $EMAIL$ genehmigen",

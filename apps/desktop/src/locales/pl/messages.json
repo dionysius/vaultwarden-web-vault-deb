@@ -2401,9 +2401,6 @@
   "denyLogIn": {
     "message": "Odrzuć logowanie"
   },
-  "approveLoginRequests": {
-    "message": "Zatwierdź prośby logowania"
-  },
   "logInConfirmedForEmailOnDevice": {
     "message": "Logowanie potwierdzone dla $EMAIL$ dnia $DEVICE$",
     "placeholders": {
@@ -2437,9 +2434,6 @@
   },
   "thisRequestIsNoLongerValid": {
     "message": "Ta prośba nie jest już ważna."
-  },
-  "approveLoginRequestDesc": {
-    "message": "Użyj tego urządzenia, aby zatwierdzić prośby logowania z innych urządzeń."
   },
   "confirmLoginAtemptForMail": {
     "message": "Potwierdź próbę logowania dla $EMAIL$",

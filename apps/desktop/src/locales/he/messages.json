@@ -2401,9 +2401,6 @@
   "denyLogIn": {
     "message": "ביטול התחברות"
   },
-  "approveLoginRequests": {
-    "message": "אישור בקשות התחברות"
-  },
   "logInConfirmedForEmailOnDevice": {
     "message": "התחברות אושרה עבור $EMAIL$ במכשיר $DEVICE$",
     "placeholders": {
@@ -2437,9 +2434,6 @@
   },
   "thisRequestIsNoLongerValid": {
     "message": "This request is no longer valid."
-  },
-  "approveLoginRequestDesc": {
-    "message": "Use this device to approve login requests made from other devices."
   },
   "confirmLoginAtemptForMail": {
     "message": "Confirm login attempt for $EMAIL$",

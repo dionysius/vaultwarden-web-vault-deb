@@ -2401,9 +2401,6 @@
   "denyLogIn": {
     "message": "Tühista sisselogimine"
   },
-  "approveLoginRequests": {
-    "message": "Sisselogimise päringute kinnitamine"
-  },
   "logInConfirmedForEmailOnDevice": {
     "message": "$EMAIL$ sisselogimine seadmes $DEVICE$ on kinnitatud",
     "placeholders": {
@@ -2437,9 +2434,6 @@
   },
   "thisRequestIsNoLongerValid": {
     "message": "See päring ei ole enam kehtiv."
-  },
-  "approveLoginRequestDesc": {
-    "message": "Kasuta seda seadet, et kinnitada teistes seadmetes tehtavad sisselogimised."
   },
   "confirmLoginAtemptForMail": {
     "message": "Kinnita sisselogimise katse $EMAIL$-le",

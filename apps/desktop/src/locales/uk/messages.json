@@ -2401,9 +2401,6 @@
   "denyLogIn": {
     "message": "Заборонити вхід"
   },
-  "approveLoginRequests": {
-    "message": "Схвалювати запити на вхід"
-  },
   "logInConfirmedForEmailOnDevice": {
     "message": "Підтверджено вхід для $EMAIL$ на $DEVICE$",
     "placeholders": {
@@ -2437,9 +2434,6 @@
   },
   "thisRequestIsNoLongerValid": {
     "message": "Цей запит більше недійсний."
-  },
-  "approveLoginRequestDesc": {
-    "message": "Схвалювати запити на вхід, виконані з інших пристроїв."
   },
   "confirmLoginAtemptForMail": {
     "message": "Підтвердити спробу входу для $EMAIL$",

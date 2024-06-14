@@ -696,13 +696,13 @@
     "message": "Määritä omassa palvelinympäristössäsi suoritettavan Bitwarden-asennuksen pääverkkotunnus."
   },
   "selfHostedBaseUrlHint": {
-    "message": "Specify the base URL of your on-premises hosted Bitwarden installation. Example: https://bitwarden.company.com"
+    "message": "Määritä itse ylläpitämäsi Bitwarden-asennuksen perusosoite. Esimerkki: https://bitwarden.yritys.fi."
   },
   "selfHostedCustomEnvHeader": {
-    "message": "For advanced configuration, you can specify the base URL of each service independently."
+    "message": "Edistynyttä määritystä varten voit syöttää jokaisen palvelun perusosoitteen erikseen."
   },
   "selfHostedEnvFormInvalid": {
-    "message": "You must add either the base Server URL or at least one custom environment."
+    "message": "Sinun on lisättävä joko palvelimen perusosoite tai ainakin yksi mukautettu palvelinympäristö."
   },
   "customEnvironment": {
     "message": "Mukautettu palvelinympäristö"
@@ -753,7 +753,7 @@
     "message": "Kirjauduttu ulos"
   },
   "loggedOutDesc": {
-    "message": "You have been logged out of your account."
+    "message": "Sinut on kirjattu ulos tililtäsi."
   },
   "loginExpired": {
     "message": "Kirjautumisistuntosi on erääntynyt."
@@ -827,7 +827,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
-    "message": "Siirry verkkoholviin"
+    "message": "Avaa verkkoholvi"
   },
   "getMobileApp": {
     "message": "Hanki mobiilisovellus"
@@ -1225,10 +1225,10 @@
     }
   },
   "errorRefreshingAccessToken": {
-    "message": "Access Token Refresh Error"
+    "message": "Käyttötunnisteen päivitysvirhe"
   },
   "errorRefreshingAccessTokenDesc": {
-    "message": "No refresh token or API keys found. Please try logging out and logging back in."
+    "message": "Päivitystunnistetta tai API-avaimia ei löytynyt. Kokeile kirjautua ulos ja takaisin sisään."
   },
   "help": {
     "message": "Ohje"
@@ -2224,7 +2224,7 @@
     }
   },
   "forwaderInvalidToken": {
-    "message": "Virheellinen $SERVICENAME$ -rajapinnan tunniste",
+    "message": "Virheellinen $SERVICENAME$ API -tunniste",
     "description": "Displayed when the user's API token is empty or rejected by the forwarding service.",
     "placeholders": {
       "servicename": {
@@ -2234,7 +2234,7 @@
     }
   },
   "forwaderInvalidTokenWithMessage": {
-    "message": "Virheellinen $SERVICENAME$ -rajapinnan tunniste: $ERRORMESSAGE$",
+    "message": "Virheellinen $SERVICENAME$ API -tunniste: $ERRORMESSAGE$",
     "description": "Displayed when the user's API token is rejected by the forwarding service with an error message.",
     "placeholders": {
       "servicename": {
@@ -2248,7 +2248,7 @@
     }
   },
   "forwarderNoAccountId": {
-    "message": "$SERVICENAME$ -palvelun peittämän sähköpostitilin tunnistetta ei saatu.",
+    "message": "$SERVICENAME$ -palvelun peittämän sähköpostitilin tunnusta ei saatu.",
     "description": "Displayed when the forwarding service fails to return an account ID.",
     "placeholders": {
       "servicename": {
@@ -2401,9 +2401,6 @@
   "denyLogIn": {
     "message": "Hylkää kirjautuminen"
   },
-  "approveLoginRequests": {
-    "message": "Hyväksy kirjautumispyyntöjä"
-  },
   "logInConfirmedForEmailOnDevice": {
     "message": "Kirjautuminen vahvistettu tunnuksella $EMAIL$ alustalla $DEVICE$",
     "placeholders": {
@@ -2437,9 +2434,6 @@
   },
   "thisRequestIsNoLongerValid": {
     "message": "Pyyntö ei ole enää voimassa."
-  },
-  "approveLoginRequestDesc": {
-    "message": "Hyväksy muiden laitteiden kirjautumispyynnöt tältä laitteelta."
   },
   "confirmLoginAtemptForMail": {
     "message": "Vahvista kirjautuminen tunnuksella $EMAIL$",
@@ -2493,10 +2487,10 @@
     "message": "Tärkeää:"
   },
   "accessTokenUnableToBeDecrypted": {
-    "message": "You have been logged out because your access token could not be decrypted. Please log in again to resolve this issue."
+    "message": "Sinut on kirjattu ulos, koska käyttötunnisteesi salausta ei voitu purkaa. Ratkaise ongelma kirjautumalla sisään uudelleen."
   },
   "refreshTokenSecureStorageRetrievalFailure": {
-    "message": "You have been logged out because your refresh token could not be retrieved. Please log in again to resolve this issue."
+    "message": "Sinut on kirjattu ulos, koska päivitystunnistettasi ei voitu noutaa. Ratkaise ongelma kirjautumalla sisään uudelleen."
   },
   "masterPasswordHint": {
     "message": "Pääsalasanasi palauttaminen ei ole mahdollista, jos unohdat sen!"
@@ -2584,7 +2578,7 @@
     "message": "pakollinen"
   },
   "search": {
-    "message": "Etsi"
+    "message": "Haku"
   },
   "inputMinLength": {
     "message": "Syötteen tulee sisältää ainakin $COUNT$ merkkiä.",

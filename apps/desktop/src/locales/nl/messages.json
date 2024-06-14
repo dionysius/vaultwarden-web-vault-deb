@@ -2401,9 +2401,6 @@
   "denyLogIn": {
     "message": "Inloggen afwijzen"
   },
-  "approveLoginRequests": {
-    "message": "Inlogverzoeken goedkeuren"
-  },
   "logInConfirmedForEmailOnDevice": {
     "message": "Inloggen voor $EMAIL$ bevestigd op $DEVICE$",
     "placeholders": {
@@ -2437,9 +2434,6 @@
   },
   "thisRequestIsNoLongerValid": {
     "message": "Dit verzoek is niet langer geldig."
-  },
-  "approveLoginRequestDesc": {
-    "message": "Gebruik dit apparaat voor het goedkeuren van inlogverzoeken van andere apparaten."
   },
   "confirmLoginAtemptForMail": {
     "message": "Inlogpoging voor $EMAIL$ bevestigen",

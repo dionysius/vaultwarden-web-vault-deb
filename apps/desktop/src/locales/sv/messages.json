@@ -2401,9 +2401,6 @@
   "denyLogIn": {
     "message": "Neka inloggning"
   },
-  "approveLoginRequests": {
-    "message": "Godkänn inloggningsförfrågningar"
-  },
   "logInConfirmedForEmailOnDevice": {
     "message": "Inloggning bekräftad för $EMAIL$ på $DEVICE$",
     "placeholders": {
@@ -2437,9 +2434,6 @@
   },
   "thisRequestIsNoLongerValid": {
     "message": "Denna begäran är inte längre giltig."
-  },
-  "approveLoginRequestDesc": {
-    "message": "Använd denna enhet för att godkänna inloggningsförfrågningar från andra enheter."
   },
   "confirmLoginAtemptForMail": {
     "message": "Bekräfta inloggningsförsök för $EMAIL$",

@@ -2401,9 +2401,6 @@
   "denyLogIn": {
     "message": "Afvis login"
   },
-  "approveLoginRequests": {
-    "message": "Godkend loginanmodninger"
-  },
   "logInConfirmedForEmailOnDevice": {
     "message": "Login bekræftet for $EMAIL$ på $DEVICE$",
     "placeholders": {
@@ -2437,9 +2434,6 @@
   },
   "thisRequestIsNoLongerValid": {
     "message": "Anmodningen er ikke længere gyldig."
-  },
-  "approveLoginRequestDesc": {
-    "message": "Brug denne enhed til at godkende loginanmodninger fra andre enheder."
   },
   "confirmLoginAtemptForMail": {
     "message": "Bekræft loginforsøg for $EMAIL$",

@@ -2401,9 +2401,6 @@
   "denyLogIn": {
     "message": "Tanggihan ang pag login"
   },
-  "approveLoginRequests": {
-    "message": "Aprubahan ang mga kahilingan sa pag login"
-  },
   "logInConfirmedForEmailOnDevice": {
     "message": "Nakumpirma ang pag-login para sa $EMAIL$ sa $DEVICE$",
     "placeholders": {
@@ -2437,9 +2434,6 @@
   },
   "thisRequestIsNoLongerValid": {
     "message": "Hindi na valid ang request na ito."
-  },
-  "approveLoginRequestDesc": {
-    "message": "Gamitin ang device na ito para aprubahan ang mga kahilingan sa pag-login na ginawa mula sa iba pang mga device."
   },
   "confirmLoginAtemptForMail": {
     "message": "Kumpirmahin ang pagtatangka sa pag-login para sa $EMAIL$",

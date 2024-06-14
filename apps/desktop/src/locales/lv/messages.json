@@ -696,13 +696,13 @@
     "message": "Norādīt pašuzstādīta Bitwarden pamata URL."
   },
   "selfHostedBaseUrlHint": {
-    "message": "Specify the base URL of your on-premises hosted Bitwarden installation. Example: https://bitwarden.company.com"
+    "message": "Jānorāda sava pašizvietotā Bitward servera pamata URL. Piemērs: https://bitwarden.uznemums.lv"
   },
   "selfHostedCustomEnvHeader": {
-    "message": "For advanced configuration, you can specify the base URL of each service independently."
+    "message": "Papildu konfigurācijā ir iespējams norādīt URL katram pakalpojumam atsevišķi."
   },
   "selfHostedEnvFormInvalid": {
-    "message": "You must add either the base Server URL or at least one custom environment."
+    "message": "Jāpievieno vai no servera pamata URL vai vismaz viena pielāgota vide."
   },
   "customEnvironment": {
     "message": "Pielāgota vide"
@@ -753,7 +753,7 @@
     "message": "Atteicies"
   },
   "loggedOutDesc": {
-    "message": "You have been logged out of your account."
+    "message": "Notika izrakstīšanās no Tava konta."
   },
   "loginExpired": {
     "message": "Pieteikšanās sesija ir beigusies."
@@ -1225,10 +1225,10 @@
     }
   },
   "errorRefreshingAccessToken": {
-    "message": "Access Token Refresh Error"
+    "message": "Piekļuves pilnvaras atsvaizināšanas kļūda"
   },
   "errorRefreshingAccessTokenDesc": {
-    "message": "No refresh token or API keys found. Please try logging out and logging back in."
+    "message": "Netika atrastas atsvaidzināšanas pilnvaras vai API atslēgas. Lūgums mēģināt izrakstīties un atkal pieteikties."
   },
   "help": {
     "message": "Palīdzība"
@@ -2401,9 +2401,6 @@
   "denyLogIn": {
     "message": "Atteikt pieteikšanos"
   },
-  "approveLoginRequests": {
-    "message": "Apstiprināt pieteikšanās pieprasījumus"
-  },
   "logInConfirmedForEmailOnDevice": {
     "message": "$EMAIL$ pieteikšanās apstiprināta ierīcē $DEVICE$",
     "placeholders": {
@@ -2437,9 +2434,6 @@
   },
   "thisRequestIsNoLongerValid": {
     "message": "Šis pieprasījums vairs nav derīgs."
-  },
-  "approveLoginRequestDesc": {
-    "message": "Izmantot šo ierīci, lai apstiprinātu pieteikšanās pieprasījumus no citām ierīcēm."
   },
   "confirmLoginAtemptForMail": {
     "message": "Apstiprināt $EMAIL$ pieteikšanās mēģinājumu",
@@ -2493,10 +2487,10 @@
     "message": "Svarīgi:"
   },
   "accessTokenUnableToBeDecrypted": {
-    "message": "You have been logged out because your access token could not be decrypted. Please log in again to resolve this issue."
+    "message": "Notika izrakstīšanās, jo Tavu piekļuves pilnvaru nevarēja atšifrēt. Lūgums pieteikties atkārtoti, lai novērstu šo sarežģījumu."
   },
   "refreshTokenSecureStorageRetrievalFailure": {
-    "message": "You have been logged out because your refresh token could not be retrieved. Please log in again to resolve this issue."
+    "message": "Notika izrakstīšanās, jo Tavu atsvaidzināšanas pilnvaru nevarēja iegūt. Lūgums pieteikties atkārtoti, lai novērstu šo sarežģījumu."
   },
   "masterPasswordHint": {
     "message": "Galvenā parole nevar tikt atgūta, ja tā ir aizmirsta!"

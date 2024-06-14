@@ -2401,9 +2401,6 @@
   "denyLogIn": {
     "message": "Odbij prijavu"
   },
-  "approveLoginRequests": {
-    "message": "Odobri pokušaje prijave"
-  },
   "logInConfirmedForEmailOnDevice": {
     "message": "Prijava za $EMAIL$ potvrđena na uređaju $DEVICE$",
     "placeholders": {
@@ -2437,9 +2434,6 @@
   },
   "thisRequestIsNoLongerValid": {
     "message": "Ovaj zahtjev više nije valjan."
-  },
-  "approveLoginRequestDesc": {
-    "message": "Koristi ovaj uređaj za odobrenje zahtjeva za prijavu na drugim uređajima."
   },
   "confirmLoginAtemptForMail": {
     "message": "Potvrdi pokušaj prijave za $EMAIL$",

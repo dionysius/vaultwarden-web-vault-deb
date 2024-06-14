@@ -2401,9 +2401,6 @@
   "denyLogIn": {
     "message": "Nega accesso"
   },
-  "approveLoginRequests": {
-    "message": "Approva richieste di accesso"
-  },
   "logInConfirmedForEmailOnDevice": {
     "message": "Login per $EMAIL$ da $DEVICE$ confermato",
     "placeholders": {
@@ -2437,9 +2434,6 @@
   },
   "thisRequestIsNoLongerValid": {
     "message": "La richiesta non è più valida."
-  },
-  "approveLoginRequestDesc": {
-    "message": "Usa questo dispositivo per approvare le richieste di accesso fatte da altri dispositivi."
   },
   "confirmLoginAtemptForMail": {
     "message": "Conferma il tentativo di accesso di $EMAIL$",

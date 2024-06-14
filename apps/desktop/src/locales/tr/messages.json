@@ -2401,9 +2401,6 @@
   "denyLogIn": {
     "message": "Girişi reddet"
   },
-  "approveLoginRequests": {
-    "message": "Giriş isteklerini onayla"
-  },
   "logInConfirmedForEmailOnDevice": {
     "message": "$DEVICE$ cihazında $EMAIL$ girişi onaylandı",
     "placeholders": {
@@ -2437,9 +2434,6 @@
   },
   "thisRequestIsNoLongerValid": {
     "message": "Bu istek artık geçerli değil."
-  },
-  "approveLoginRequestDesc": {
-    "message": "Diğer cihazlardan yapılan giriş isteklerini onaylamak için bu cihazı kullan."
   },
   "confirmLoginAtemptForMail": {
     "message": "$EMAIL$ giriş isteğini onayla",

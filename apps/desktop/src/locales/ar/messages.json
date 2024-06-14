@@ -2401,9 +2401,6 @@
   "denyLogIn": {
     "message": "رفض تسجيل الدخول"
   },
-  "approveLoginRequests": {
-    "message": "الموافقة على طلبات تسجيل الدخول"
-  },
   "logInConfirmedForEmailOnDevice": {
     "message": "تم تأكيد تسجيل الدخول لـ $EMAIL$ في $DEVICE$",
     "placeholders": {
@@ -2437,9 +2434,6 @@
   },
   "thisRequestIsNoLongerValid": {
     "message": "هذا الطلب لم يعد صالحًا."
-  },
-  "approveLoginRequestDesc": {
-    "message": "استخدم هذا الجهاز للموافقة على طلبات تسجيل الدخول من الأجهزة الأخرى."
   },
   "confirmLoginAtemptForMail": {
     "message": "تأكيد محاولة تسجيل الدخول لـ $EMAIL$",

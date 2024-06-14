@@ -2401,9 +2401,6 @@
   "denyLogIn": {
     "message": "Запретить вход"
   },
-  "approveLoginRequests": {
-    "message": "Одобрение запросов на вход"
-  },
   "logInConfirmedForEmailOnDevice": {
     "message": "Вход подтвержден для $EMAIL$ на $DEVICE$",
     "placeholders": {
@@ -2437,9 +2434,6 @@
   },
   "thisRequestIsNoLongerValid": {
     "message": "Этот запрос больше не действителен."
-  },
-  "approveLoginRequestDesc": {
-    "message": "Использовать это устройство для подтверждения запросов на вход, сделанных с других устройств."
   },
   "confirmLoginAtemptForMail": {
     "message": "Подтвердите попытку входа для $EMAIL$",
