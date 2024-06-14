@@ -186,17 +186,10 @@ jobs:
       #     path: browser-source/apps/browser/dist/dist-opera-mv3.zip
       #     if-no-files-found: error
 
-      - name: Upload Chrome artifact
+      - name: Upload Chrome MV3 artifact
         uses: actions/upload-artifact@5d5d22a31266ced268874388b861e4b58bb5c2f3 # v4.3.1
         with:
-          name: dist-chrome-${{ env._BUILD_NUMBER }}.zip
-          path: browser-source/apps/browser/dist/dist-chrome.zip
-          if-no-files-found: error
-
-      - name: Upload Chrome MV3 artifact (DO NOT USE FOR PROD)
-        uses: actions/upload-artifact@5d5d22a31266ced268874388b861e4b58bb5c2f3 # v4.3.1
-        with:
-          name: DO-NOT-USE-FOR-PROD-dist-chrome-MV3-${{ env._BUILD_NUMBER }}.zip
+          name: dist-chrome-MV3-${{ env._BUILD_NUMBER }}.zip
           path: browser-source/apps/browser/dist/dist-chrome-mv3.zip
           if-no-files-found: error
 
