@@ -17,5 +17,6 @@ export * from "./user-verification/user-verification-form-input.component";
 
 // registration
 export * from "./registration/registration-start/registration-start.component";
+export * from "./registration/registration-finish/registration-finish.component";
 export * from "./registration/registration-start/registration-start-secondary.component";
 export * from "./registration/registration-env-selector/registration-env-selector.component";

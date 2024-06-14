@@ -1,17 +1,12 @@
 import { CommonModule } from "@angular/common";
 import { Component, EventEmitter, OnDestroy, OnInit, Output } from "@angular/core";
-import {
-  AbstractControl,
-  FormBuilder,
-  FormControl,
-  ReactiveFormsModule,
-  ValidatorFn,
-  Validators,
-} from "@angular/forms";
-import { ActivatedRoute } from "@angular/router";
+import { FormBuilder, ReactiveFormsModule, Validators } from "@angular/forms";
+import { ActivatedRoute, Router } from "@angular/router";
 import { Subject, takeUntil } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
+import { AccountApiService } from "@bitwarden/common/auth/abstractions/account-api.service";
+import { RegisterSendVerificationEmailRequest } from "@bitwarden/common/auth/models/request/registration/register-send-verification-email.request";
 import { RegionConfig, Region } from "@bitwarden/common/platform/abstractions/environment.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import {
@@ -30,6 +25,12 @@ export enum RegistrationStartState {
   USER_DATA_ENTRY = "UserDataEntry",
   CHECK_EMAIL = "CheckEmail",
 }
+
+const DEFAULT_MARKETING_EMAILS_PREF_BY_REGION: Record<Region, boolean> = {
+  [Region.US]: true,
+  [Region.EU]: false,
+  [Region.SelfHosted]: false,
+};
 
 @Component({
   standalone: true,
@@ -60,20 +61,19 @@ export class RegistrationStartComponent implements OnInit, OnDestroy {
   formGroup = this.formBuilder.group({
     email: ["", [Validators.required, Validators.email]],
     name: [""],
-    acceptPolicies: [false, [this.acceptPoliciesValidator()]],
-    selectedRegion: [null],
+    receiveMarketingEmails: [false],
   });
 
-  get email(): FormControl {
-    return this.formGroup.get("email") as FormControl;
+  get email() {
+    return this.formGroup.controls.email;
   }
 
-  get name(): FormControl {
-    return this.formGroup.get("name") as FormControl;
+  get name() {
+    return this.formGroup.controls.name;
   }
 
-  get acceptPolicies(): FormControl {
-    return this.formGroup.get("acceptPolicies") as FormControl;
+  get receiveMarketingEmails() {
+    return this.formGroup.controls.receiveMarketingEmails;
   }
 
   emailReadonly: boolean = false;
@@ -86,8 +86,9 @@ export class RegistrationStartComponent implements OnInit, OnDestroy {
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private platformUtilsService: PlatformUtilsService,
+    private accountApiService: AccountApiService,
+    private router: Router,
   ) {
-    // TODO: this needs to update if user selects self hosted
     this.isSelfHost = platformUtilsService.isSelfHost();
   }
 
@@ -107,6 +108,18 @@ export class RegistrationStartComponent implements OnInit, OnDestroy {
     });
   }
 
+  setReceiveMarketingEmailsByRegion(region: RegionConfig | Region.SelfHosted) {
+    let defaultValue;
+    if (region === Region.SelfHosted) {
+      defaultValue = DEFAULT_MARKETING_EMAILS_PREF_BY_REGION[region];
+    } else {
+      const regionKey = (region as RegionConfig).key;
+      defaultValue = DEFAULT_MARKETING_EMAILS_PREF_BY_REGION[regionKey];
+    }
+
+    this.receiveMarketingEmails.setValue(defaultValue);
+  }
+
   submit = async () => {
     const valid = this.validateForm();
 
@@ -114,14 +127,31 @@ export class RegistrationStartComponent implements OnInit, OnDestroy {
       return;
     }
 
-    // TODO: Implement registration logic
+    const request: RegisterSendVerificationEmailRequest = new RegisterSendVerificationEmailRequest(
+      this.email.value,
+      this.name.value,
+      this.receiveMarketingEmails.value,
+    );
 
+    const result = await this.accountApiService.registerSendVerificationEmail(request);
+
+    if (typeof result === "string") {
+      // we received a token, so the env doesn't support email verification
+      // send the user directly to the finish registration page with the token as a query param
+      await this.router.navigate(["/finish-signup"], { queryParams: { token: result } });
+    }
+
+    // Result is null, so email verification is required
     this.state = RegistrationStartState.CHECK_EMAIL;
     this.registrationStartStateChange.emit(this.state);
   };
 
   handleSelectedRegionChange(region: RegionConfig | Region.SelfHosted | null) {
     this.isSelfHost = region === Region.SelfHosted;
+
+    if (region !== null) {
+      this.setReceiveMarketingEmailsByRegion(region);
+    }
   }
 
   private validateForm(): boolean {
@@ -137,14 +167,6 @@ export class RegistrationStartComponent implements OnInit, OnDestroy {
   goBack() {
     this.state = RegistrationStartState.USER_DATA_ENTRY;
     this.registrationStartStateChange.emit(this.state);
-  }
-
-  private acceptPoliciesValidator(): ValidatorFn {
-    return (control: AbstractControl) => {
-      const ctrlValue = control.value;
-
-      return !ctrlValue && !this.isSelfHost ? { required: true } : null;
-    };
   }
 
   ngOnDestroy(): void {

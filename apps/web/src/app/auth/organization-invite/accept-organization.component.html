@@ -32,7 +32,7 @@
               {{ "logIn" | i18n }}
             </a>
             <a
-              routerLink="/register"
+              [routerLink]="registerRoute"
               [queryParams]="{ email: email }"
               class="btn btn-primary btn-block ml-2 mt-0"
             >

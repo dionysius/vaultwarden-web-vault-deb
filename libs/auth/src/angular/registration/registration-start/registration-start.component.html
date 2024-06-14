@@ -23,38 +23,60 @@
 
     <bit-form-control *ngIf="!isSelfHost">
       <input
-        id="register-start-form-input-accept-policies"
+        id="register-start-form-input-receive-marketing-emails"
         type="checkbox"
         bitCheckbox
-        formControlName="acceptPolicies"
+        formControlName="receiveMarketingEmails"
       />
-      <bit-label for="register-start-form-input-accept-policies">
-        {{ "acceptPolicies" | i18n }}
+      <bit-label for="register-start-form-input-receive-marketing-emails">
+        {{ "receiveMarketingEmails" | i18n }}
         <a
           bitLink
           linkType="primary"
-          href="https://bitwarden.com/terms/"
+          href="https://bitwarden.com/email-preferences"
           target="_blank"
           rel="noreferrer"
-          >{{ "termsOfService" | i18n }}</a
-        >,
-        <a
-          bitLink
-          linkType="primary"
-          href="https://bitwarden.com/privacy/"
-          target="_blank"
-          rel="noreferrer"
-          >{{ "privacyPolicy" | i18n }}</a
+          >{{ "unsubscribe" | i18n }}</a
         >
+        {{ "atAnyTime" | i18n }}
       </bit-label>
     </bit-form-control>
 
-    <button [block]="true" type="submit" buttonType="primary" bitButton bitFormButton>
+    <button
+      [block]="true"
+      type="submit"
+      buttonType="primary"
+      bitButton
+      bitFormButton
+      class="tw-mb-3"
+    >
       {{ "continue" | i18n }}
     </button>
 
+    <p bitTypography="helper" class="tw-text-main tw-text-xs tw-mb-0">
+      {{ "byContinuingYouAgreeToThe" | i18n }}
+      <a
+        bitLink
+        linkType="primary"
+        href="https://bitwarden.com/terms/"
+        target="_blank"
+        rel="noreferrer"
+        >{{ "termsOfService" | i18n }}</a
+      >
+      {{ "and" | i18n }}
+      <a
+        bitLink
+        linkType="primary"
+        href="https://bitwarden.com/privacy/"
+        target="_blank"
+        rel="noreferrer"
+        >{{ "privacyPolicy" | i18n }}</a
+      >
+    </p>
+
     <bit-error-summary *ngIf="showErrorSummary" [formGroup]="formGroup"></bit-error-summary></form
 ></ng-container>
+
 <ng-container *ngIf="state === RegistrationStartState.CHECK_EMAIL">
   <div class="tw-flex tw-flex-col tw-items-center tw-justify-center">
     <bit-icon [icon]="Icons.RegistrationCheckEmailIcon" class="tw-mb-6"></bit-icon>

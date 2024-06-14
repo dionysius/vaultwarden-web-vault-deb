@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { ActivatedRoute, Params, Router } from "@angular/router";
 
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
+import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 
@@ -23,9 +24,10 @@ export class AcceptOrganizationComponent extends BaseAcceptComponent {
     i18nService: I18nService,
     route: ActivatedRoute,
     authService: AuthService,
+    configService: ConfigService,
     private acceptOrganizationInviteService: AcceptOrganizationInviteService,
   ) {
-    super(router, platformUtilsService, i18nService, route, authService);
+    super(router, platformUtilsService, i18nService, route, authService, configService);
   }
 
   async authedHandler(qParams: Params): Promise<void> {
@@ -86,8 +88,26 @@ export class AcceptOrganizationComponent extends BaseAcceptComponent {
 
     // if SSO is disabled OR if sso is enabled but the SSO login required policy is not enabled
     // then send user to create account
-    await this.router.navigate(["/register"], {
-      queryParams: { email: invite.email, fromOrgInvite: true },
+
+    // TODO: update logic when email verification flag is removed
+    let queryParams: Params;
+    if (this.registerRoute === "/register") {
+      queryParams = {
+        fromOrgInvite: "true",
+        email: invite.email,
+      };
+    } else if (this.registerRoute === "/signup") {
+      // We have to override the base component route b/c it is correct for other components
+      // that extend the base accept comp. We don't need users to complete email verification
+      // if they are coming directly from an emailed org invite.
+      this.registerRoute = "/finish-signup";
+      queryParams = {
+        email: invite.email,
+      };
+    }
+
+    await this.router.navigate([this.registerRoute], {
+      queryParams: queryParams,
     });
     return;
   }

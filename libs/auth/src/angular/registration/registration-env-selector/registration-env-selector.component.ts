@@ -93,6 +93,9 @@ export class RegistrationEnvSelectorComponent implements OnInit, OnDestroy {
           // Save this off so we can reset the value to the previously selected region
           // if the self hosted settings are closed without saving.
           this.selectedRegionFromEnv = selectedRegionFromEnv;
+
+          // Emit the initial value
+          this.selectedRegionChange.emit(selectedRegionFromEnv);
         }),
         takeUntil(this.destroy$),
       )

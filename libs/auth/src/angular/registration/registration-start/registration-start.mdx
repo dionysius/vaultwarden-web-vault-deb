@@ -8,8 +8,9 @@ import * as stories from "./registration-start.stories";
 
 The Auth-owned RegistrationStartComponent is to be used for the first step in the new email
 verification stage gated registration process. It collects the environment (required), the user's
-email address (required) and optionally their name. On cloud environments, it requires acceptance of
-the terms of service and the privacy policy; the checkbox is hidden on self hosted environments.
+email address (required) and optionally their name. On cloud environments, it offers a checkbox for
+the user to choose to receive marketing emails or not with the default value changing based on the
+environment (e.g., true for US, false for EU).
 
 ## Web Examples
 
@@ -36,8 +37,10 @@ field will be set to readonly. `emailReadonly` is primarily for the organization
 Behavior to note:
 
 - The self hosted option is present in the environment selector.
-- If you go from non-self hosted to self hosted, the terms of service and privacy policy checkbox
-  will disappear.
+- If you go from non-self hosted to self hosted, the receive marketing emails checkbox will
+  disappear.
+- If you change regions, the receive marketing emails checkbox default value will change based on
+  the region.
 
 ### US Region
 
@@ -49,8 +52,8 @@ Behavior to note:
 
 ### Self Hosted
 
-Note the fact that the terms of service and privacy policy checkbox is not present when the
-environment is self hosted.
+Note the fact that the receive marketing emails checkbox is not present when the environment is self
+hosted.
 
 <Story of={stories.DesktopSelfHostExample} />
 
@@ -59,8 +62,10 @@ environment is self hosted.
 Behavior to note:
 
 - The self hosted option is present in the environment selector.
-- If you go from non-self hosted to self hosted, the terms of service and privacy policy checkbox
-  will disappear.
+- If you go from non-self hosted to self hosted, the receive marketing emails checkbox will
+  disappear.
+- If you change regions, the receive marketing emails checkbox default value will change based on
+  the region.
 
 ### US Region
 
@@ -72,7 +77,7 @@ Behavior to note:
 
 ### Self Hosted
 
-Note the fact that the terms of service and privacy policy checkbox is not present when the
-environment is self hosted.
+Note the fact that the receive marketing emails checkbox is not present when the environment is self
+hosted.
 
 <Story of={stories.BrowserExtensionSelfHostExample} />

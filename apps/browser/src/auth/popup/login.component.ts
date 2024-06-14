@@ -13,6 +13,7 @@ import { DevicesApiServiceAbstraction } from "@bitwarden/common/auth/abstraction
 import { SsoLoginServiceAbstraction } from "@bitwarden/common/auth/abstractions/sso-login.service.abstraction";
 import { WebAuthnLoginServiceAbstraction } from "@bitwarden/common/auth/abstractions/webauthn/webauthn-login.service.abstraction";
 import { AppIdService } from "@bitwarden/common/platform/abstractions/app-id.service";
+import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/crypto-function.service";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -51,6 +52,7 @@ export class LoginComponent extends BaseLoginComponent {
     loginEmailService: LoginEmailServiceAbstraction,
     ssoLoginService: SsoLoginServiceAbstraction,
     webAuthnLoginService: WebAuthnLoginServiceAbstraction,
+    configService: ConfigService,
   ) {
     super(
       devicesApiService,
@@ -71,6 +73,7 @@ export class LoginComponent extends BaseLoginComponent {
       loginEmailService,
       ssoLoginService,
       webAuthnLoginService,
+      configService,
     );
     super.onSuccessfulLogin = async () => {
       await syncService.fullSync(true);

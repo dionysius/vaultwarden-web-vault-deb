@@ -15,6 +15,7 @@ import { SsoLoginServiceAbstraction } from "@bitwarden/common/auth/abstractions/
 import { WebAuthnLoginServiceAbstraction } from "@bitwarden/common/auth/abstractions/webauthn/webauthn-login.service.abstraction";
 import { AppIdService } from "@bitwarden/common/platform/abstractions/app-id.service";
 import { BroadcasterService } from "@bitwarden/common/platform/abstractions/broadcaster.service";
+import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/crypto-function.service";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -71,6 +72,7 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
     loginEmailService: LoginEmailServiceAbstraction,
     ssoLoginService: SsoLoginServiceAbstraction,
     webAuthnLoginService: WebAuthnLoginServiceAbstraction,
+    configService: ConfigService,
   ) {
     super(
       devicesApiService,
@@ -91,6 +93,7 @@ export class LoginComponent extends BaseLoginComponent implements OnDestroy {
       loginEmailService,
       ssoLoginService,
       webAuthnLoginService,
+      configService,
     );
     super.onSuccessfulLogin = () => {
       return syncService.fullSync(true);

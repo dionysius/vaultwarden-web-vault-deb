@@ -5,6 +5,8 @@ import { first, switchMap, takeUntil } from "rxjs/operators";
 
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
+import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
+import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 
@@ -19,6 +21,9 @@ export abstract class BaseAcceptComponent implements OnInit {
   protected failedShortMessage = "inviteAcceptFailedShort";
   protected failedMessage = "inviteAcceptFailed";
 
+  // TODO: remove when email verification flag is removed
+  registerRoute = "/register";
+
   private destroy$ = new Subject<void>();
 
   constructor(
@@ -27,12 +32,22 @@ export abstract class BaseAcceptComponent implements OnInit {
     protected i18nService: I18nService,
     protected route: ActivatedRoute,
     protected authService: AuthService,
+    private configService: ConfigService,
   ) {}
 
   abstract authedHandler(qParams: Params): Promise<void>;
   abstract unauthedHandler(qParams: Params): Promise<void>;
 
-  ngOnInit() {
+  async ngOnInit() {
+    // TODO: remove when email verification flag is removed
+    const emailVerification = await this.configService.getFeatureFlag(
+      FeatureFlag.EmailVerification,
+    );
+
+    if (emailVerification) {
+      this.registerRoute = "/signup";
+    }
+
     this.route.queryParams
       .pipe(
         first(),

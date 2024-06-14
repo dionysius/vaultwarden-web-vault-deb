@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { ActivatedRoute, Params, Router } from "@angular/router";
 
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
+import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 
@@ -28,9 +29,10 @@ export class AcceptEmergencyComponent extends BaseAcceptComponent {
     i18nService: I18nService,
     route: ActivatedRoute,
     authService: AuthService,
+    configService: ConfigService,
     private emergencyAccessService: EmergencyAccessService,
   ) {
-    super(router, platformUtilsService, i18nService, route, authService);
+    super(router, platformUtilsService, i18nService, route, authService, configService);
   }
 
   async authedHandler(qParams: Params): Promise<void> {
