@@ -51,7 +51,7 @@ export class PassphraseGeneratorStrategy
     // select which word gets the number, if any
     let luckyNumber = -1;
     if (o.includeNumber) {
-      luckyNumber = await this.randomizer.uniform(0, o.numWords);
+      luckyNumber = await this.randomizer.uniform(0, o.numWords - 1);
     }
 
     // generate the passphrase
