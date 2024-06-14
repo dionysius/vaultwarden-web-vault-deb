@@ -17,9 +17,12 @@ import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config
 import { InternalMasterPasswordServiceAbstraction } from "@bitwarden/common/auth/abstractions/master-password.service.abstraction";
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
+import { VerificationType } from "@bitwarden/common/auth/enums/verification-type";
 import { ForceSetPasswordReason } from "@bitwarden/common/auth/models/domain/force-set-password-reason";
-import { SecretVerificationRequest } from "@bitwarden/common/auth/models/request/secret-verification.request";
-import { MasterPasswordPolicyResponse } from "@bitwarden/common/auth/models/response/master-password-policy.response";
+import {
+  MasterPasswordVerification,
+  MasterPasswordVerificationResponse,
+} from "@bitwarden/common/auth/types/verification";
 import { VaultTimeoutAction } from "@bitwarden/common/enums/vault-timeout-action.enum";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
@@ -29,7 +32,7 @@ import { MessagingService } from "@bitwarden/common/platform/abstractions/messag
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { BiometricStateService } from "@bitwarden/common/platform/biometrics/biometric-state.service";
-import { HashPurpose, KeySuffixOptions } from "@bitwarden/common/platform/enums";
+import { KeySuffixOptions } from "@bitwarden/common/platform/enums";
 import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/password-strength";
 import { UserId } from "@bitwarden/common/types/guid";
 import { UserKey } from "@bitwarden/common/types/key";
@@ -45,7 +48,7 @@ export class LockComponent implements OnInit, OnDestroy {
   pinEnabled = false;
   masterPasswordEnabled = false;
   webVaultHostname = "";
-  formPromise: Promise<MasterPasswordPolicyResponse>;
+  formPromise: Promise<MasterPasswordVerificationResponse>;
   supportsBiometric: boolean;
   biometricLock: boolean;
 
@@ -218,51 +221,30 @@ export class LockComponent implements OnInit, OnDestroy {
   }
 
   private async doUnlockWithMasterPassword() {
-    const kdfConfig = await this.kdfConfigService.getKdfConfig();
     const userId = (await firstValueFrom(this.accountService.activeAccount$))?.id;
 
-    const masterKey = await this.cryptoService.makeMasterKey(
-      this.masterPassword,
-      this.email,
-      kdfConfig,
-    );
-    const storedMasterKeyHash = await firstValueFrom(
-      this.masterPasswordService.masterKeyHash$(userId),
-    );
+    const verification = {
+      type: VerificationType.MasterPassword,
+      secret: this.masterPassword,
+    } as MasterPasswordVerification;
 
     let passwordValid = false;
-
-    if (storedMasterKeyHash != null) {
-      // Offline unlock possible
-      passwordValid = await this.cryptoService.compareAndUpdateKeyHash(
-        this.masterPassword,
-        masterKey,
+    let response: MasterPasswordVerificationResponse;
+    try {
+      this.formPromise = this.userVerificationService.verifyUserByMasterPassword(
+        verification,
+        userId,
+        this.email,
       );
-    } else {
-      // Online only
-      const request = new SecretVerificationRequest();
-      const serverKeyHash = await this.cryptoService.hashMasterKey(
-        this.masterPassword,
-        masterKey,
-        HashPurpose.ServerAuthorization,
+      response = await this.formPromise;
+      this.enforcedMasterPasswordOptions = MasterPasswordPolicyOptions.fromResponse(
+        response.policyOptions,
       );
-      request.masterPasswordHash = serverKeyHash;
-      try {
-        this.formPromise = this.apiService.postAccountVerifyPassword(request);
-        const response = await this.formPromise;
-        this.enforcedMasterPasswordOptions = MasterPasswordPolicyOptions.fromResponse(response);
-        passwordValid = true;
-        const localKeyHash = await this.cryptoService.hashMasterKey(
-          this.masterPassword,
-          masterKey,
-          HashPurpose.LocalAuthorization,
-        );
-        await this.masterPasswordService.setMasterKeyHash(localKeyHash, userId);
-      } catch (e) {
-        this.logService.error(e);
-      } finally {
-        this.formPromise = null;
-      }
+      passwordValid = true;
+    } catch (e) {
+      this.logService.error(e);
+    } finally {
+      this.formPromise = null;
     }
 
     if (!passwordValid) {
@@ -274,8 +256,9 @@ export class LockComponent implements OnInit, OnDestroy {
       return;
     }
 
-    const userKey = await this.masterPasswordService.decryptUserKeyWithMasterKey(masterKey);
-    await this.masterPasswordService.setMasterKey(masterKey, userId);
+    const userKey = await this.masterPasswordService.decryptUserKeyWithMasterKey(
+      response.masterKey,
+    );
     await this.setUserKeyAndContinue(userKey, true);
   }
 

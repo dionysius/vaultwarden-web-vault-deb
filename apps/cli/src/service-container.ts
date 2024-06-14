@@ -613,7 +613,6 @@ export class ServiceContainer {
       await this.cryptoService.clearStoredUserKey(KeySuffixOptions.Auto);
 
     this.userVerificationService = new UserVerificationService(
-      this.stateService,
       this.cryptoService,
       this.accountService,
       this.masterPasswordService,

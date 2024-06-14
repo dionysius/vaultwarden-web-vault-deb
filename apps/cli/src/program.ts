@@ -270,16 +270,14 @@ export class Program extends BaseProgram {
             this.serviceContainer.accountService,
             this.serviceContainer.masterPasswordService,
             this.serviceContainer.cryptoService,
-            this.serviceContainer.stateService,
+            this.serviceContainer.userVerificationService,
             this.serviceContainer.cryptoFunctionService,
-            this.serviceContainer.apiService,
             this.serviceContainer.logService,
             this.serviceContainer.keyConnectorService,
             this.serviceContainer.environmentService,
             this.serviceContainer.syncService,
             this.serviceContainer.organizationApiService,
             async () => await this.serviceContainer.logout(),
-            this.serviceContainer.kdfConfigService,
           );
           const response = await command.run(password, cmd);
           this.processResponse(response);

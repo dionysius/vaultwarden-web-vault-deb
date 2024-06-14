@@ -8,7 +8,7 @@ import { CryptoService } from "../../../platform/abstractions/crypto.service";
 import { I18nService } from "../../../platform/abstractions/i18n.service";
 import { LogService } from "../../../platform/abstractions/log.service";
 import { PlatformUtilsService } from "../../../platform/abstractions/platform-utils.service";
-import { StateService } from "../../../platform/abstractions/state.service";
+import { HashPurpose } from "../../../platform/enums";
 import { KeySuffixOptions } from "../../../platform/enums/key-suffix-options.enum";
 import { UserId } from "../../../types/guid";
 import { UserKey } from "../../../types/key";
@@ -20,9 +20,11 @@ import { UserVerificationService as UserVerificationServiceAbstraction } from ".
 import { VerificationType } from "../../enums/verification-type";
 import { SecretVerificationRequest } from "../../models/request/secret-verification.request";
 import { VerifyOTPRequest } from "../../models/request/verify-otp.request";
+import { MasterPasswordPolicyResponse } from "../../models/response/master-password-policy.response";
 import { UserVerificationOptions } from "../../types/user-verification-options";
 import {
   MasterPasswordVerification,
+  MasterPasswordVerificationResponse,
   OtpVerification,
   PinVerification,
   ServerSideVerification,
@@ -37,7 +39,6 @@ import {
  */
 export class UserVerificationService implements UserVerificationServiceAbstraction {
   constructor(
-    private stateService: StateService,
     private cryptoService: CryptoService,
     private accountService: AccountService,
     private masterPasswordService: InternalMasterPasswordServiceAbstraction,
@@ -54,14 +55,14 @@ export class UserVerificationService implements UserVerificationServiceAbstracti
   async getAvailableVerificationOptions(
     verificationType: keyof UserVerificationOptions,
   ): Promise<UserVerificationOptions> {
+    const userId = (await firstValueFrom(this.accountService.activeAccount$))?.id;
     if (verificationType === "client") {
-      const userId = (await firstValueFrom(this.accountService.activeAccount$))?.id;
       const [userHasMasterPassword, pinLockType, biometricsLockSet, biometricsUserKeyStored] =
         await Promise.all([
-          this.hasMasterPasswordAndMasterKeyHash(),
+          this.hasMasterPasswordAndMasterKeyHash(userId),
           this.pinService.getPinLockType(userId),
-          this.vaultTimeoutSettingsService.isBiometricLockSet(),
-          this.cryptoService.hasUserKeyStored(KeySuffixOptions.Biometric),
+          this.vaultTimeoutSettingsService.isBiometricLockSet(userId),
+          this.cryptoService.hasUserKeyStored(KeySuffixOptions.Biometric, userId),
         ]);
 
       // note: we do not need to check this.platformUtilsService.supportsBiometric() because
@@ -83,7 +84,7 @@ export class UserVerificationService implements UserVerificationServiceAbstracti
     } else {
       // server
       // Don't check if have MP hash locally, because we are going to send the secret to the server to be verified.
-      const userHasMasterPassword = await this.hasMasterPassword();
+      const userHasMasterPassword = await this.hasMasterPassword(userId);
 
       return {
         client: {
@@ -96,12 +97,6 @@ export class UserVerificationService implements UserVerificationServiceAbstracti
     }
   }
 
-  /**
-   * Create a new request model to be used for server-side verification
-   * @param verification User-supplied verification data (Master Password or OTP)
-   * @param requestClass The request model to create
-   * @param alreadyHashed Whether the master password is already hashed
-   */
   async buildRequest<T extends SecretVerificationRequest>(
     verification: ServerSideVerification,
     requestClass?: new () => T,
@@ -134,11 +129,6 @@ export class UserVerificationService implements UserVerificationServiceAbstracti
     return request;
   }
 
-  /**
-   * Used to verify Master Password, PIN, or biometrics client-side, or send the OTP to the server for verification (with no other data)
-   * Generally used for client-side verification only.
-   * @param verification User-supplied verification data (OTP, MP, PIN, or biometrics)
-   */
   async verifyUser(verification: Verification): Promise<boolean> {
     if (verification == null) {
       throw new Error("Verification is required.");
@@ -156,7 +146,8 @@ export class UserVerificationService implements UserVerificationServiceAbstracti
       case VerificationType.OTP:
         return this.verifyUserByOTP(verification);
       case VerificationType.MasterPassword:
-        return this.verifyUserByMasterPassword(verification, userId, email);
+        await this.verifyUserByMasterPassword(verification, userId, email);
+        return true;
       case VerificationType.PIN:
         return this.verifyUserByPIN(verification, userId);
       case VerificationType.Biometrics:
@@ -179,33 +170,70 @@ export class UserVerificationService implements UserVerificationServiceAbstracti
     return true;
   }
 
-  private async verifyUserByMasterPassword(
+  async verifyUserByMasterPassword(
     verification: MasterPasswordVerification,
     userId: UserId,
     email: string,
-  ): Promise<boolean> {
+  ): Promise<MasterPasswordVerificationResponse> {
+    if (!verification.secret) {
+      throw new Error("Master Password is required. Cannot verify user without a master password.");
+    }
     if (!userId) {
       throw new Error("User ID is required. Cannot verify user by master password.");
+    }
+    if (!email) {
+      throw new Error("Email is required. Cannot verify user by master password.");
+    }
+
+    const kdfConfig = await this.kdfConfigService.getKdfConfig();
+    if (!kdfConfig) {
+      throw new Error("KDF config is required. Cannot verify user by master password.");
     }
 
     let masterKey = await firstValueFrom(this.masterPasswordService.masterKey$(userId));
     if (!masterKey) {
-      masterKey = await this.cryptoService.makeMasterKey(
-        verification.secret,
-        email,
-        await this.kdfConfigService.getKdfConfig(),
-      );
+      masterKey = await this.cryptoService.makeMasterKey(verification.secret, email, kdfConfig);
     }
-    const passwordValid = await this.cryptoService.compareAndUpdateKeyHash(
+
+    if (!masterKey) {
+      throw new Error("Master key could not be created to verify the master password.");
+    }
+
+    let policyOptions: MasterPasswordPolicyResponse | null;
+    // Client-side verification
+    if (await this.hasMasterPasswordAndMasterKeyHash(userId)) {
+      const passwordValid = await this.cryptoService.compareAndUpdateKeyHash(
+        verification.secret,
+        masterKey,
+      );
+      if (!passwordValid) {
+        throw new Error(this.i18nService.t("invalidMasterPassword"));
+      }
+      policyOptions = null;
+    } else {
+      // Server-side verification
+      const request = new SecretVerificationRequest();
+      const serverKeyHash = await this.cryptoService.hashMasterKey(
+        verification.secret,
+        masterKey,
+        HashPurpose.ServerAuthorization,
+      );
+      request.masterPasswordHash = serverKeyHash;
+      try {
+        policyOptions = await this.userVerificationApiService.postAccountVerifyPassword(request);
+      } catch (e) {
+        throw new Error(this.i18nService.t("invalidMasterPassword"));
+      }
+    }
+
+    const localKeyHash = await this.cryptoService.hashMasterKey(
       verification.secret,
       masterKey,
+      HashPurpose.LocalAuthorization,
     );
-    if (!passwordValid) {
-      throw new Error(this.i18nService.t("invalidMasterPassword"));
-    }
-    // TODO: we should re-evaluate later on if user verification should have the side effect of modifying state. Probably not.
+    await this.masterPasswordService.setMasterKeyHash(localKeyHash, userId);
     await this.masterPasswordService.setMasterKey(masterKey, userId);
-    return true;
+    return { policyOptions, masterKey };
   }
 
   private async verifyUserByPIN(verification: PinVerification, userId: UserId): Promise<boolean> {
@@ -236,13 +264,6 @@ export class UserVerificationService implements UserVerificationServiceAbstracti
     await this.userVerificationApiService.postAccountRequestOTP();
   }
 
-  /**
-   * Check if user has master password or can only use passwordless technologies to log in
-   * Note: This only checks the server, not the local state
-   * @param userId The user id to check. If not provided, the current user is used
-   * @returns True if the user has a master password
-   * @deprecated Use UserDecryptionOptionsService.hasMasterPassword$ instead
-   */
   async hasMasterPassword(userId?: string): Promise<boolean> {
     if (userId) {
       const decryptionOptions = await firstValueFrom(
