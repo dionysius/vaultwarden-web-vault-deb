@@ -9,6 +9,7 @@ import { ProviderService } from "@bitwarden/common/admin-console/abstractions/pr
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { Provider } from "@bitwarden/common/admin-console/models/domain/provider";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
+import { SyncService } from "@bitwarden/common/platform/sync";
 import { LayoutComponent, NavigationModule } from "@bitwarden/components";
 import { I18nMockService } from "@bitwarden/components/src/utils/i18n-mock.service";
 
@@ -42,6 +43,12 @@ class MockProviderService implements Partial<ProviderService> {
   @Input()
   set mockProviders(providers: Provider[]) {
     MockProviderService._providers.next(providers);
+  }
+}
+
+class MockSyncService implements Partial<SyncService> {
+  async getLastSync() {
+    return Promise.resolve(new Date());
   }
 }
 
@@ -80,6 +87,7 @@ export default {
       providers: [
         { provide: OrganizationService, useClass: MockOrganizationService },
         { provide: ProviderService, useClass: MockProviderService },
+        { provide: MockSyncService, useClass: MockSyncService },
         ProductSwitcherService,
         {
           provide: I18nPipe,
