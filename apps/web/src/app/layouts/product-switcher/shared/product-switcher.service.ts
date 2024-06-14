@@ -1,13 +1,6 @@
 import { Injectable } from "@angular/core";
-import {
-  ActivatedRoute,
-  Event,
-  NavigationEnd,
-  NavigationStart,
-  ParamMap,
-  Router,
-} from "@angular/router";
-import { combineLatest, concatMap, filter, map, Observable, startWith } from "rxjs";
+import { ActivatedRoute, NavigationEnd, NavigationStart, ParamMap, Router } from "@angular/router";
+import { combineLatest, concatMap, filter, map, Observable, ReplaySubject, startWith } from "rxjs";
 
 import { I18nPipe } from "@bitwarden/angular/platform/pipes/i18n.pipe";
 import {
@@ -16,6 +9,7 @@ import {
 } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { ProviderService } from "@bitwarden/common/admin-console/abstractions/provider.service";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
+import { SyncService } from "@bitwarden/common/platform/sync";
 
 export type ProductSwitcherItem = {
   /**
@@ -59,13 +53,38 @@ export type ProductSwitcherItem = {
   providedIn: "root",
 })
 export class ProductSwitcherService {
+  /**
+   * Emits when the sync service has completed a sync
+   *
+   * Without waiting for a sync to be complete, in accurate product information
+   * can be displayed to the user for a brief moment until the sync is complete
+   * and all data is available.
+   */
+  private syncCompleted$ = new ReplaySubject<void>(1);
+
+  /**
+   * Certain events should trigger an update to the `products$` observable but the values
+   * themselves are not needed. This observable is used to only trigger the update.
+   */
+  private triggerProductUpdate$: Observable<void> = combineLatest([
+    this.syncCompleted$,
+    this.router.events.pipe(
+      // Product paths need to be updated when routes change, but the router event isn't actually needed
+      startWith(null), // Start with a null event to trigger the initial combineLatest
+      filter((e) => e instanceof NavigationEnd || e instanceof NavigationStart || e === null),
+    ),
+  ]).pipe(map(() => null));
+
   constructor(
     private organizationService: OrganizationService,
     private providerService: ProviderService,
     private route: ActivatedRoute,
     private router: Router,
     private i18n: I18nPipe,
-  ) {}
+    private syncService: SyncService,
+  ) {
+    this.pollUntilSynced();
+  }
 
   products$: Observable<{
     bento: ProductSwitcherItem[];
@@ -73,13 +92,9 @@ export class ProductSwitcherService {
   }> = combineLatest([
     this.organizationService.organizations$,
     this.route.paramMap,
-    this.router.events.pipe(
-      // Product paths need to be updated when routes change, but the router event isn't actually needed
-      startWith(null), // Start with a null event to trigger the initial combineLatest
-      filter((e) => e instanceof NavigationEnd || e instanceof NavigationStart || e === null),
-    ),
+    this.triggerProductUpdate$,
   ]).pipe(
-    map(([orgs, ...rest]): [Organization[], ParamMap, Event | null] => {
+    map(([orgs, ...rest]): [Organization[], ParamMap, void] => {
       return [
         // Sort orgs by name to match the order within the sidebar
         orgs.sort((a, b) => a.name.localeCompare(b.name)),
@@ -186,4 +201,15 @@ export class ProductSwitcherService {
       };
     }),
   );
+
+  /** Poll the `syncService` until a sync is completed */
+  private pollUntilSynced() {
+    const interval = setInterval(async () => {
+      const lastSync = await this.syncService.getLastSync();
+      if (lastSync !== null) {
+        clearInterval(interval);
+        this.syncCompleted$.next();
+      }
+    }, 200);
+  }
 }

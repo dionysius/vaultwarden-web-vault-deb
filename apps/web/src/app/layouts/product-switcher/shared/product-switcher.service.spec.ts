@@ -8,6 +8,7 @@ import { OrganizationService } from "@bitwarden/common/admin-console/abstraction
 import { ProviderService } from "@bitwarden/common/admin-console/abstractions/provider.service";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { Provider } from "@bitwarden/common/admin-console/models/domain/provider";
+import { SyncService } from "@bitwarden/common/platform/sync";
 
 import { ProductSwitcherService } from "./product-switcher.service";
 
@@ -17,8 +18,19 @@ describe("ProductSwitcherService", () => {
   let organizationService: MockProxy<OrganizationService>;
   let providerService: MockProxy<ProviderService>;
   let activeRouteParams = convertToParamMap({ organizationId: "1234" });
+  const getLastSync = jest.fn().mockResolvedValue(new Date("2024-05-14"));
+
+  // The service is dependent on the SyncService, which is behind a `setTimeout`
+  // Most of the tests don't need to test this aspect so `advanceTimersByTime`
+  // is used to simulate the completion of the sync
+  function initiateService() {
+    service = TestBed.inject(ProductSwitcherService);
+    jest.advanceTimersByTime(201);
+  }
 
   beforeEach(() => {
+    jest.useFakeTimers();
+    getLastSync.mockResolvedValue(new Date("2024-05-14"));
     router = mock<Router>();
     organizationService = mock<OrganizationService>();
     providerService = mock<ProviderService>();
@@ -46,14 +58,40 @@ describe("ProductSwitcherService", () => {
             transform: (key: string) => key,
           },
         },
+        {
+          provide: SyncService,
+          useValue: { getLastSync },
+        },
       ],
+    });
+  });
+
+  afterEach(() => {
+    jest.useRealTimers();
+  });
+
+  describe("SyncService", () => {
+    it("waits until sync is complete before emitting products", (done) => {
+      getLastSync.mockResolvedValue(null);
+
+      initiateService();
+
+      // The subscription will only emit once the sync returns a value
+      service.products$.subscribe((products) => {
+        expect(products).toBeDefined();
+        done();
+      });
+
+      // Simulate sync completion & advance timers
+      getLastSync.mockResolvedValue(new Date("2024-05-15"));
+      jest.advanceTimersByTime(201);
     });
   });
 
   describe("product separation", () => {
     describe("Password Manager", () => {
       it("is always included", async () => {
-        service = TestBed.inject(ProductSwitcherService);
+        initiateService();
 
         const products = await firstValueFrom(service.products$);
 
@@ -63,7 +101,7 @@ describe("ProductSwitcherService", () => {
 
     describe("Secret Manager", () => {
       it("is included in other when there are no organizations with SM", async () => {
-        service = TestBed.inject(ProductSwitcherService);
+        initiateService();
 
         const products = await firstValueFrom(service.products$);
 
@@ -75,7 +113,7 @@ describe("ProductSwitcherService", () => {
           { id: "1234", canAccessSecretsManager: true, enabled: true },
         ] as Organization[]);
 
-        service = TestBed.inject(ProductSwitcherService);
+        initiateService();
 
         const products = await firstValueFrom(service.products$);
 
@@ -85,7 +123,7 @@ describe("ProductSwitcherService", () => {
 
     describe("Admin/Organizations", () => {
       it("includes Organizations in other when there are organizations", async () => {
-        service = TestBed.inject(ProductSwitcherService);
+        initiateService();
 
         const products = await firstValueFrom(service.products$);
 
@@ -96,7 +134,7 @@ describe("ProductSwitcherService", () => {
       it("includes Admin Console in bento when a user has access to it", async () => {
         organizationService.organizations$ = of([{ id: "1234", isOwner: true }] as Organization[]);
 
-        service = TestBed.inject(ProductSwitcherService);
+        initiateService();
 
         const products = await firstValueFrom(service.products$);
 
@@ -107,8 +145,7 @@ describe("ProductSwitcherService", () => {
 
     describe("Provider Portal", () => {
       it("is not included when there are no providers", async () => {
-        service = TestBed.inject(ProductSwitcherService);
-
+        initiateService();
         const products = await firstValueFrom(service.products$);
 
         expect(products.bento.find((p) => p.name === "Provider Portal")).toBeUndefined();
@@ -118,7 +155,7 @@ describe("ProductSwitcherService", () => {
       it("is included when there are providers", async () => {
         providerService.getAll.mockResolvedValue([{ id: "67899" }] as Provider[]);
 
-        service = TestBed.inject(ProductSwitcherService);
+        initiateService();
 
         const products = await firstValueFrom(service.products$);
 
@@ -129,7 +166,7 @@ describe("ProductSwitcherService", () => {
 
   describe("active product", () => {
     it("marks Password Manager as active", async () => {
-      service = TestBed.inject(ProductSwitcherService);
+      initiateService();
 
       const products = await firstValueFrom(service.products$);
 
@@ -141,7 +178,7 @@ describe("ProductSwitcherService", () => {
     it("marks Secret Manager as active", async () => {
       router.url = "/sm/";
 
-      service = TestBed.inject(ProductSwitcherService);
+      initiateService();
 
       const products = await firstValueFrom(service.products$);
 
@@ -155,7 +192,7 @@ describe("ProductSwitcherService", () => {
       activeRouteParams = convertToParamMap({ organizationId: "1" });
       router.url = "/organizations/";
 
-      service = TestBed.inject(ProductSwitcherService);
+      initiateService();
 
       const products = await firstValueFrom(service.products$);
 
@@ -168,7 +205,7 @@ describe("ProductSwitcherService", () => {
       providerService.getAll.mockResolvedValue([{ id: "67899" }] as Provider[]);
       router.url = "/providers/";
 
-      service = TestBed.inject(ProductSwitcherService);
+      initiateService();
 
       const products = await firstValueFrom(service.products$);
 
@@ -187,7 +224,7 @@ describe("ProductSwitcherService", () => {
         { id: "4243", canAccessSecretsManager: true, enabled: true, name: "Org 32" },
       ] as Organization[]);
 
-      service = TestBed.inject(ProductSwitcherService);
+      initiateService();
 
       const products = await firstValueFrom(service.products$);
 
@@ -205,7 +242,7 @@ describe("ProductSwitcherService", () => {
       { id: "4243", isOwner: true, name: "My Org" },
     ] as Organization[]);
 
-    service = TestBed.inject(ProductSwitcherService);
+    initiateService();
 
     const products = await firstValueFrom(service.products$);
 
