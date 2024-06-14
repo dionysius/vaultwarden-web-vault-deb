@@ -2,6 +2,7 @@ import { PaymentMethodType } from "@bitwarden/common/billing/enums";
 import { ExpandedTaxInfoUpdateRequest } from "@bitwarden/common/billing/models/request/expanded-tax-info-update.request";
 import { TokenizedPaymentMethodRequest } from "@bitwarden/common/billing/models/request/tokenized-payment-method.request";
 import { VerifyBankAccountRequest } from "@bitwarden/common/billing/models/request/verify-bank-account.request";
+import { InvoicesResponse } from "@bitwarden/common/billing/models/response/invoices.response";
 import { PaymentInformationResponse } from "@bitwarden/common/billing/models/response/payment-information.response";
 
 import { SubscriptionCancellationRequest } from "../../billing/models/request/subscription-cancellation.request";
@@ -40,6 +41,10 @@ export abstract class BillingApiServiceAbstraction {
   ) => Promise<OrganizationSubscriptionResponse>;
 
   getPlans: () => Promise<ListResponse<PlanResponse>>;
+
+  getProviderClientInvoiceReport: (providerId: string, invoiceId: string) => Promise<string>;
+
+  getProviderInvoices: (providerId: string) => Promise<InvoicesResponse>;
 
   getProviderPaymentInformation: (providerId: string) => Promise<PaymentInformationResponse>;
 

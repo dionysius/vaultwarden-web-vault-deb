@@ -8361,5 +8361,15 @@
   "providerBillingEmailHint": {
     "message": "This email address will receive all invoices pertaining to this provider",
     "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
+  },
+  "date": {
+    "message": "Date"
+  },
+  "exportClientReport": {
+    "message": "Export client report"
+  },
+  "invoiceNumberHeader": {
+    "message": "Invoice number",
+    "description": "A table header for an invoice's number"
   }
 }

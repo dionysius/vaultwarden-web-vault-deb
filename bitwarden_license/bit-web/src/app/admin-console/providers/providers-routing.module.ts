@@ -13,6 +13,7 @@ import {
   ProviderSubscriptionComponent,
   hasConsolidatedBilling,
   ProviderPaymentMethodComponent,
+  ProviderBillingHistoryComponent,
 } from "../../billing/providers";
 
 import { ClientsComponent } from "./clients/clients.component";
@@ -137,6 +138,13 @@ const routes: Routes = [
                 component: ProviderPaymentMethodComponent,
                 data: {
                   titleId: "paymentMethod",
+                },
+              },
+              {
+                path: "history",
+                component: ProviderBillingHistoryComponent,
+                data: {
+                  titleId: "billingHistory",
                 },
               },
             ],

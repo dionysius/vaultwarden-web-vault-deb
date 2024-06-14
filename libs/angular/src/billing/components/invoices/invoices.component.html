@@ -1,0 +1,66 @@
+<ng-container *ngIf="loading">
+  <i
+    class="bwi bwi-spinner bwi-spin text-muted"
+    title="{{ 'loading' | i18n }}"
+    aria-hidden="true"
+  ></i>
+  <span class="sr-only">{{ "loading" | i18n }}</span>
+</ng-container>
+<bit-table *ngIf="!loading">
+  <ng-container header>
+    <tr>
+      <th bitCell>{{ "date" | i18n }}</th>
+      <th bitCell>{{ "invoiceNumberHeader" | i18n }}</th>
+      <th bitCell>{{ "total" | i18n }}</th>
+      <th bitCell>{{ "status" | i18n }}</th>
+    </tr>
+  </ng-container>
+  <ng-template body>
+    <tr bitRow *ngFor="let invoice of invoices">
+      <td bitCell>{{ invoice.date | date: "mediumDate" }}</td>
+      <td bitCell>
+        <a
+          href="{{ invoice.url }}"
+          target="_blank"
+          rel="noreferrer"
+          title="{{ 'viewInvoice' | i18n }}"
+        >
+          {{ invoice.number }}
+        </a>
+      </td>
+      <td bitCell>{{ invoice.total | currency: "$" }}</td>
+      <td bitCell>{{ invoice.status | titlecase }}</td>
+      <td bitCell>
+        <button
+          [bitMenuTriggerFor]="rowMenu"
+          type="button"
+          bitIconButton="bwi-ellipsis-v"
+          size="default"
+          appA11yTitle="{{ 'options' | i18n }}"
+        ></button>
+        <bit-menu #rowMenu>
+          <a
+            bitMenuItem
+            href="{{ invoice.pdfUrl }}"
+            target="_blank"
+            rel="noreferrer"
+            class="tw-mr-2"
+            appA11yTitle="{{ 'viewInvoice' | i18n }}"
+          >
+            <i aria-hidden="true" class="bwi bwi-file-pdf"></i>
+            {{ "viewInvoice" | i18n }}
+          </a>
+          <button
+            type="button"
+            bitMenuItem
+            *ngIf="getClientInvoiceReport"
+            (click)="runExport(invoice.id)"
+          >
+            <i aria-hidden="true" class="bwi bwi-sign-in"></i>
+            {{ "exportClientReport" | i18n }}
+          </button>
+        </bit-menu>
+      </td>
+    </tr>
+  </ng-template>
+</bit-table>

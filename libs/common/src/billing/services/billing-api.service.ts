@@ -1,3 +1,5 @@
+import { InvoicesResponse } from "@bitwarden/common/billing/models/response/invoices.response";
+
 import { ApiService } from "../../abstractions/api.service";
 import { BillingApiServiceAbstraction } from "../../billing/abstractions";
 import { PaymentMethodType } from "../../billing/enums";
@@ -104,6 +106,28 @@ export class BillingApiService implements BillingApiServiceAbstraction {
   async getPlans(): Promise<ListResponse<PlanResponse>> {
     const r = await this.apiService.send("GET", "/plans", null, false, true);
     return new ListResponse(r, PlanResponse);
+  }
+
+  async getProviderClientInvoiceReport(providerId: string, invoiceId: string): Promise<string> {
+    const response = await this.apiService.send(
+      "GET",
+      "/providers/" + providerId + "/billing/invoices/" + invoiceId,
+      null,
+      true,
+      true,
+    );
+    return response as string;
+  }
+
+  async getProviderInvoices(providerId: string): Promise<InvoicesResponse> {
+    const response = await this.apiService.send(
+      "GET",
+      "/providers/" + providerId + "/billing/invoices",
+      null,
+      true,
+      true,
+    );
+    return new InvoicesResponse(response);
   }
 
   async getProviderPaymentInformation(providerId: string): Promise<PaymentInformationResponse> {
