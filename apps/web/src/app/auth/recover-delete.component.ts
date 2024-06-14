@@ -13,8 +13,12 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
 })
 export class RecoverDeleteComponent {
   protected recoverDeleteForm = new FormGroup({
-    email: new FormControl(null, [Validators.required]),
+    email: new FormControl("", [Validators.required]),
   });
+
+  get email() {
+    return this.recoverDeleteForm.controls.email;
+  }
 
   constructor(
     private router: Router,
@@ -24,8 +28,12 @@ export class RecoverDeleteComponent {
   ) {}
 
   submit = async () => {
+    if (this.recoverDeleteForm.invalid) {
+      return;
+    }
+
     const request = new DeleteRecoverRequest();
-    request.email = this.recoverDeleteForm.value.email.trim().toLowerCase();
+    request.email = this.email.value.trim().toLowerCase();
     await this.apiService.postAccountRecoverDelete(request);
     this.platformUtilsService.showToast(
       "success",
