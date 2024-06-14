@@ -117,6 +117,9 @@ export abstract class OrganizationService {
   hasOrganizations: () => Promise<boolean>;
   get$: (id: string) => Observable<Organization | undefined>;
   get: (id: string) => Promise<Organization>;
+  /**
+   * @deprecated This method is only used in key connector and will be removed soon as part of https://bitwarden.atlassian.net/browse/AC-2252.
+   */
   getAll: (userId?: string) => Promise<Organization[]>;
 
   /**

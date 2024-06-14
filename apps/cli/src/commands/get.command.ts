@@ -468,7 +468,7 @@ export class GetCommand extends DownloadCommand {
     if (Utils.isGuid(id)) {
       org = await this.organizationService.getFromState(id);
     } else if (id.trim() !== "") {
-      let orgs = await this.organizationService.getAll();
+      let orgs = await firstValueFrom(this.organizationService.organizations$);
       orgs = CliUtils.searchOrganizations(orgs, id);
       if (orgs.length > 1) {
         return Response.multipleResults(orgs.map((c) => c.id));

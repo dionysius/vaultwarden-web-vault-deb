@@ -1,3 +1,5 @@
+import { firstValueFrom } from "rxjs";
+
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
@@ -239,7 +241,7 @@ export class ListCommand {
   }
 
   private async listOrganizations(options: Options) {
-    let organizations = await this.organizationService.getAll();
+    let organizations = await firstValueFrom(this.organizationService.memberOrganizations$);
 
     if (options.search != null && options.search.trim() !== "") {
       organizations = CliUtils.searchOrganizations(organizations, options.search);
