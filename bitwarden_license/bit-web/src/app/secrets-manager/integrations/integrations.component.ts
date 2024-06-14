@@ -15,6 +15,14 @@ export class IntegrationsComponent {
   constructor(i18nService: I18nService) {
     this.integrationsAndSdks = [
       {
+        name: "Rust",
+        linkText: i18nService.t("rustSDKRepo"),
+        linkURL: "https://github.com/bitwarden/sdk",
+        image: "../../../../../../../images/secrets-manager/sdks/rust.svg",
+        imageDarkMode: "../../../../../../../images/secrets-manager/sdks/rust-white.svg",
+        type: IntegrationType.SDK,
+      },
+      {
         name: "GitHub Actions",
         linkText: i18nService.t("setUpGithubActions"),
         linkURL: "https://bitwarden.com/help/github-actions-integration/",
@@ -93,6 +101,14 @@ export class IntegrationsComponent {
         linkURL: "https://github.com/bitwarden/sdk/tree/main/languages/ruby",
         image: "../../../../../../../images/secrets-manager/sdks/ruby.png",
         type: IntegrationType.SDK,
+      },
+      {
+        name: "Kubernetes Operator",
+        linkText: i18nService.t("setUpKubernetes"),
+        linkURL: "https://bitwarden.com/help/secrets-manager-kubernetes-operator/",
+        image: "../../../../../../../images/secrets-manager/integrations/kubernetes.svg",
+        type: IntegrationType.Integration,
+        newBadgeExpiration: "2024-8-12",
       },
     ];
   }
