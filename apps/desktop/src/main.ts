@@ -35,6 +35,7 @@ import { WindowMain } from "./main/window.main";
 import { BiometricsService, BiometricsServiceAbstraction } from "./platform/main/biometric/index";
 import { ClipboardMain } from "./platform/main/clipboard.main";
 import { DesktopCredentialStorageListener } from "./platform/main/desktop-credential-storage-listener";
+import { MainCryptoFunctionService } from "./platform/main/main-crypto-function.service";
 import { DesktopSettingsService } from "./platform/services/desktop-settings.service";
 import { ElectronLogMainService } from "./platform/services/electron-log.main.service";
 import { ElectronStorageService } from "./platform/services/electron-storage.service";
@@ -52,6 +53,7 @@ export class Main {
   environmentService: DefaultEnvironmentService;
   desktopCredentialStorageListener: DesktopCredentialStorageListener;
   desktopSettingsService: DesktopSettingsService;
+  mainCryptoFunctionService: MainCryptoFunctionService;
   migrationRunner: MigrationRunner;
 
   windowMain: WindowMain;
@@ -110,6 +112,9 @@ export class Main {
     const globalStateProvider = new DefaultGlobalStateProvider(storageServiceProvider);
 
     this.i18nService = new I18nMainService("en", "./locales/", globalStateProvider);
+
+    this.mainCryptoFunctionService = new MainCryptoFunctionService();
+    this.mainCryptoFunctionService.init();
 
     const accountService = new AccountServiceImplementation(
       MessageSender.EMPTY,
