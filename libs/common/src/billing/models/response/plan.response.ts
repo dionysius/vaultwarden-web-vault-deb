@@ -1,10 +1,9 @@
-import { ProductType } from "../../../enums";
+import { ProductTierType, PlanType } from "../../../billing/enums";
 import { BaseResponse } from "../../../models/response/base.response";
-import { PlanType } from "../../enums";
 
 export class PlanResponse extends BaseResponse {
   type: PlanType;
-  product: ProductType;
+  productTier: ProductTierType;
   name: string;
   isAnnual: boolean;
   nameLocalizationKey: string;
@@ -32,7 +31,7 @@ export class PlanResponse extends BaseResponse {
   constructor(response: any) {
     super(response);
     this.type = this.getResponseProperty("Type");
-    this.product = this.getResponseProperty("Product");
+    this.productTier = this.getResponseProperty("ProductTier");
     this.name = this.getResponseProperty("Name");
     this.isAnnual = this.getResponseProperty("IsAnnual");
     this.nameLocalizationKey = this.getResponseProperty("NameLocalizationKey");

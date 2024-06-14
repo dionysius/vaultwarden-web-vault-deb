@@ -8,10 +8,9 @@ import { OrganizationService } from "@bitwarden/common/admin-console/abstraction
 import { ProviderService } from "@bitwarden/common/admin-console/abstractions/provider.service";
 import { OrganizationApiKeyType, ProviderStatusType } from "@bitwarden/common/admin-console/enums";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
-import { PlanType } from "@bitwarden/common/billing/enums";
+import { PlanType, ProductTierType } from "@bitwarden/common/billing/enums";
 import { OrganizationSubscriptionResponse } from "@bitwarden/common/billing/models/response/organization-subscription.response";
 import { BillingSubscriptionItemResponse } from "@bitwarden/common/billing/models/response/subscription.response";
-import { ProductType } from "@bitwarden/common/enums";
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -53,7 +52,7 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
   manageBillingFromProviderPortal = ManageBilling;
   isProviderManaged = false;
 
-  protected readonly teamsStarter = ProductType.TeamsStarter;
+  protected readonly teamsStarter = ProductTierType.TeamsStarter;
 
   private destroy$ = new Subject<void>();
 
@@ -286,7 +285,7 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
       }
     } else if (this.sub.maxAutoscaleSeats === this.sub.seats && this.sub.seats != null) {
       return this.i18nService.t("subscriptionMaxReached", this.sub.seats.toString());
-    } else if (this.userOrg.planProductType === ProductType.TeamsStarter) {
+    } else if (this.userOrg.productTierType === ProductTierType.TeamsStarter) {
       return this.i18nService.t("subscriptionUserSeatsWithoutAdditionalSeatsOption", 10);
     } else if (this.sub.maxAutoscaleSeats == null) {
       return this.i18nService.t("subscriptionUserSeatsUnlimitedAutoscale");
@@ -440,12 +439,12 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
   };
 
   get showChangePlanButton() {
-    return this.sub.plan.product !== ProductType.Enterprise && !this.showChangePlan;
+    return this.sub.plan.productTier !== ProductTierType.Enterprise && !this.showChangePlan;
   }
 }
 
 /**
- * Helper to sort subscription items by product type and then by addon status
+ * Helper to sort subscription items by productTier type and then by addon status
  */
 function sortSubscriptionItems(
   a: BillingSubscriptionItemResponse,

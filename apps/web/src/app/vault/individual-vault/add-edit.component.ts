@@ -9,7 +9,8 @@ import { OrganizationService } from "@bitwarden/common/admin-console/abstraction
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions/account/billing-account-profile-state.service";
-import { EventType, ProductType } from "@bitwarden/common/enums";
+import { ProductTierType } from "@bitwarden/common/billing/enums";
+import { EventType } from "@bitwarden/common/enums";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
@@ -271,7 +272,7 @@ export class AddEditComponent extends BaseAddEditComponent implements OnInit, On
     return (
       this.cipher.type === CipherType.Login &&
       this.cipher.login.totp &&
-      this.organization?.planProductType != ProductType.Free &&
+      this.organization?.productTierType != ProductTierType.Free &&
       (this.cipher.organizationUseTotp || this.canAccessPremium)
     );
   }

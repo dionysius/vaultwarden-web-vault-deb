@@ -1,5 +1,5 @@
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
-import { ProductType } from "@bitwarden/common/enums";
+import { ProductTierType } from "@bitwarden/common/billing/enums";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { CollectionView } from "@bitwarden/common/vault/models/view/collection.view";
 
@@ -26,13 +26,13 @@ export class PopupCipherView extends CipherView {
    * Get the bwi icon for the cipher according to the organization type.
    */
   get orgIcon(): "bwi-family" | "bwi-business" | null {
-    switch (this.organization?.planProductType) {
-      case ProductType.Free:
-      case ProductType.Families:
+    switch (this.organization?.productTierType) {
+      case ProductTierType.Free:
+      case ProductTierType.Families:
         return "bwi-family";
-      case ProductType.Teams:
-      case ProductType.Enterprise:
-      case ProductType.TeamsStarter:
+      case ProductTierType.Teams:
+      case ProductTierType.Enterprise:
+      case ProductTierType.TeamsStarter:
         return "bwi-business";
       default:
         return null;

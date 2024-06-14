@@ -1,6 +1,6 @@
 import { Component, Input, ViewChild } from "@angular/core";
 
-import { ProductType } from "@bitwarden/common/enums";
+import { ProductTierType } from "@bitwarden/common/billing/enums";
 
 import {
   OrganizationCreatedEvent,
@@ -33,22 +33,22 @@ export class SecretsManagerTrialPaidStepperComponent extends SecretsManagerTrial
 
   get createAccountLabel() {
     const organizationType =
-      this.productType === ProductType.TeamsStarter
+      this.productType === ProductTierType.TeamsStarter
         ? "Teams Starter"
-        : ProductType[this.productType];
+        : ProductTierType[this.productType];
     return `Before creating your ${organizationType} organization, you first need to log in or create a personal account.`;
   }
 
   get productType(): TrialOrganizationType {
     switch (this.organizationTypeQueryParameter) {
       case "enterprise":
-        return ProductType.Enterprise;
+        return ProductTierType.Enterprise;
       case "families":
-        return ProductType.Families;
+        return ProductTierType.Families;
       case "teams":
-        return ProductType.Teams;
+        return ProductTierType.Teams;
       case "teamsStarter":
-        return ProductType.TeamsStarter;
+        return ProductTierType.TeamsStarter;
     }
   }
 

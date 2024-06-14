@@ -5,7 +5,7 @@ import { BehaviorSubject } from "rxjs";
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
-import { ProductType } from "@bitwarden/common/enums";
+import { ProductTierType } from "@bitwarden/common/billing/enums";
 import { ObservableTracker } from "@bitwarden/common/spec";
 import { CipherId } from "@bitwarden/common/types/guid";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
@@ -78,7 +78,7 @@ describe("VaultPopupItemsService", () => {
     mockOrg = {
       id: "org1",
       name: "Organization 1",
-      planProductType: ProductType.Enterprise,
+      productTierType: ProductTierType.Enterprise,
     } as Organization;
 
     mockCollections = [

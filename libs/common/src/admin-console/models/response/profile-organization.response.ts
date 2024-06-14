@@ -1,4 +1,4 @@
-import { ProductType } from "../../../enums";
+import { ProductTierType } from "../../../billing/enums";
 import { BaseResponse } from "../../../models/response/base.response";
 import { OrganizationUserStatusType, OrganizationUserType, ProviderType } from "../../enums";
 import { PermissionsApi } from "../api/permissions.api";
@@ -42,7 +42,7 @@ export class ProfileOrganizationResponse extends BaseResponse {
   providerType?: ProviderType;
   familySponsorshipFriendlyName: string;
   familySponsorshipAvailable: boolean;
-  planProductType: ProductType;
+  planProductType: ProductTierType;
   keyConnectorEnabled: boolean;
   keyConnectorUrl: string;
   familySponsorshipLastSyncDate?: Date;

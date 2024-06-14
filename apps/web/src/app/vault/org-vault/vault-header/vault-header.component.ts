@@ -4,7 +4,7 @@ import { firstValueFrom } from "rxjs";
 
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
-import { ProductType } from "@bitwarden/common/enums";
+import { ProductTierType } from "@bitwarden/common/billing/enums";
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -183,7 +183,7 @@ export class VaultHeaderComponent implements OnInit {
   }
 
   async addCollection() {
-    if (this.organization.planProductType === ProductType.Free) {
+    if (this.organization.productTierType === ProductTierType.Free) {
       const collections = await this.collectionAdminService.getAll(this.organization.id);
       if (collections.length === this.organization.maxCollections) {
         this.showFreeOrgUpgradeDialog();

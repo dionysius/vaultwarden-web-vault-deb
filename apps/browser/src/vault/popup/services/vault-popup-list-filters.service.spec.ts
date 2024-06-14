@@ -6,7 +6,7 @@ import { OrganizationService } from "@bitwarden/common/admin-console/abstraction
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
-import { ProductType } from "@bitwarden/common/enums";
+import { ProductTierType } from "@bitwarden/common/billing/enums";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CollectionService } from "@bitwarden/common/vault/abstractions/collection.service";
@@ -206,7 +206,7 @@ describe("VaultPopupListFiltersService", () => {
             name: "family org",
             id: "1234-3323-23223",
             enabled: true,
-            planProductType: ProductType.Families,
+            productTierType: ProductTierType.Families,
           },
         ] as Organization[];
 
@@ -224,7 +224,7 @@ describe("VaultPopupListFiltersService", () => {
             name: "free org",
             id: "1234-3323-23223",
             enabled: true,
-            planProductType: ProductType.Free,
+            productTierType: ProductTierType.Free,
           },
         ] as Organization[];
 
@@ -242,7 +242,7 @@ describe("VaultPopupListFiltersService", () => {
             name: "free org",
             id: "1234-3323-23223",
             enabled: false,
-            planProductType: ProductType.Free,
+            productTierType: ProductTierType.Free,
           },
         ] as Organization[];
 

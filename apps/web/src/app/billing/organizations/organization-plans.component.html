@@ -51,14 +51,17 @@
   </bit-section>
   <bit-section>
     <h2 bitTypography="h2">{{ "chooseYourPlan" | i18n }}</h2>
-    <bit-radio-group formControlName="product" [block]="true">
+    <bit-radio-group formControlName="productTier" [block]="true">
       <div *ngFor="let selectableProduct of selectableProducts" class="tw-mb-3">
-        <bit-radio-button [value]="selectableProduct.product" (change)="changedProduct()">
+        <bit-radio-button [value]="selectableProduct.productTier" (change)="changedProduct()">
           <bit-label>{{ selectableProduct.nameLocalizationKey | i18n }}</bit-label>
           <bit-hint class="tw-text-sm"
             >{{ selectableProduct.descriptionLocalizationKey | i18n: "1" }}
             <ng-container
-              *ngIf="selectableProduct.product === productTypes.Enterprise; else nonEnterprisePlans"
+              *ngIf="
+                selectableProduct.productTier === productTypes.Enterprise;
+                else nonEnterprisePlans
+              "
             >
               <ul class="tw-pl-0 tw-list-inside tw-mb-0">
                 <li>{{ "includeAllTeamsFeatures" | i18n }}</li>
@@ -75,7 +78,8 @@
             <ng-template #nonEnterprisePlans>
               <ng-container
                 *ngIf="
-                  selectableProduct.product === productTypes.Teams && teamsStarterPlanIsAvailable;
+                  selectableProduct.productTier === productTypes.Teams &&
+                    teamsStarterPlanIsAvailable;
                   else fullFeatureList
                 "
               >
@@ -90,13 +94,13 @@
               </ng-container>
               <ng-template #fullFeatureList>
                 <ul class="tw-pl-0 tw-list-inside tw-mb-0">
-                  <li *ngIf="selectableProduct.product == productTypes.Free">
+                  <li *ngIf="selectableProduct.productTier == productTypes.Free">
                     {{ "limitedUsers" | i18n: selectableProduct.PasswordManager.maxSeats }}
                   </li>
                   <li
                     *ngIf="
-                      selectableProduct.product != productTypes.Free &&
-                      selectableProduct.product != productTypes.TeamsStarter &&
+                      selectableProduct.productTier != productTypes.Free &&
+                      selectableProduct.productTier != productTypes.TeamsStarter &&
                       selectableProduct.PasswordManager.maxSeats
                     "
                   >
@@ -136,7 +140,7 @@
                     {{ "onPremHostingOptional" | i18n }}
                   </li>
                   <li *ngIf="selectableProduct.usersGetPremium">{{ "usersGetPremium" | i18n }}</li>
-                  <li *ngIf="selectableProduct.product != productTypes.Free">
+                  <li *ngIf="selectableProduct.productTier != productTypes.Free">
                     {{ "priorityCustomerSupport" | i18n }}
                   </li>
                   <li *ngIf="selectableProduct.trialPeriodDays && createOrganization">
@@ -147,7 +151,7 @@
             </ng-template>
           </bit-hint>
         </bit-radio-button>
-        <span *ngIf="selectableProduct.product != productTypes.Free" class="tw-pl-4">
+        <span *ngIf="selectableProduct.productTier != productTypes.Free" class="tw-pl-4">
           <ng-container
             *ngIf="selectableProduct.PasswordManager.basePrice && !acceptingSponsorship"
           >
@@ -189,13 +193,13 @@
           }}
           /{{ "month" | i18n }}
         </span>
-        <span *ngIf="selectableProduct.product == productTypes.Free" class="tw-pl-4">{{
+        <span *ngIf="selectableProduct.productTier == productTypes.Free" class="tw-pl-4">{{
           "freeForever" | i18n
         }}</span>
       </div>
     </bit-radio-group>
   </bit-section>
-  <bit-section *ngIf="formGroup.value.product !== productTypes.Free">
+  <bit-section *ngIf="formGroup.value.productTier !== productTypes.Free">
     <bit-section
       *ngIf="
         selectedPlan.PasswordManager.hasAdditionalSeatsOption &&
@@ -415,7 +419,7 @@
   </bit-section>
 
   <!-- Payment info -->
-  <bit-section *ngIf="formGroup.value.product !== productTypes.Free">
+  <bit-section *ngIf="formGroup.value.productTier !== productTypes.Free">
     <h2 bitTypography="h2">
       {{ (createOrganization ? "paymentInformation" : "billingInformation") | i18n }}
     </h2>

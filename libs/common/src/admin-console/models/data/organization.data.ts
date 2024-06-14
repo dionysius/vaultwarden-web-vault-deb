@@ -1,6 +1,6 @@
 import { Jsonify } from "type-fest";
 
-import { ProductType } from "../../../enums";
+import { ProductTierType } from "../../../billing/enums";
 import { OrganizationUserStatusType, OrganizationUserType, ProviderType } from "../../enums";
 import { PermissionsApi } from "../api/permissions.api";
 import { ProfileOrganizationResponse } from "../response/profile-organization.response";
@@ -45,7 +45,7 @@ export class OrganizationData {
   isMember: boolean;
   familySponsorshipFriendlyName: string;
   familySponsorshipAvailable: boolean;
-  planProductType: ProductType;
+  productTierType: ProductTierType;
   keyConnectorEnabled: boolean;
   keyConnectorUrl: string;
   familySponsorshipLastSyncDate?: Date;
@@ -104,7 +104,7 @@ export class OrganizationData {
     this.providerType = response.providerType;
     this.familySponsorshipFriendlyName = response.familySponsorshipFriendlyName;
     this.familySponsorshipAvailable = response.familySponsorshipAvailable;
-    this.planProductType = response.planProductType;
+    this.productTierType = response.planProductType;
     this.keyConnectorEnabled = response.keyConnectorEnabled;
     this.keyConnectorUrl = response.keyConnectorUrl;
     this.familySponsorshipLastSyncDate = response.familySponsorshipLastSyncDate;

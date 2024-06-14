@@ -9,16 +9,15 @@ import {
   PaymentInformation,
   PlanInformation,
 } from "@bitwarden/common/billing/abstractions/organization-billing.service";
-import { PaymentMethodType, PlanType } from "@bitwarden/common/billing/enums";
+import { PaymentMethodType, PlanType, ProductTierType } from "@bitwarden/common/billing/enums";
 import { PlanResponse } from "@bitwarden/common/billing/models/response/plan.response";
-import { ProductType } from "@bitwarden/common/enums";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 
 import { BillingSharedModule, PaymentComponent, TaxInfoComponent } from "../../shared";
 
-export type TrialOrganizationType = Exclude<ProductType, ProductType.Free>;
+export type TrialOrganizationType = Exclude<ProductTierType, ProductTierType.Free>;
 
 export interface OrganizationInfo {
   name: string;
@@ -176,19 +175,19 @@ export class TrialBillingStepComponent implements OnInit {
       [cadence in SubscriptionCadence]?: PlanType;
     };
   } = {
-    [ProductType.Enterprise]: {
+    [ProductTierType.Enterprise]: {
       [SubscriptionCadence.Annual]: PlanType.EnterpriseAnnually,
       [SubscriptionCadence.Monthly]: PlanType.EnterpriseMonthly,
     },
-    [ProductType.Families]: {
+    [ProductTierType.Families]: {
       [SubscriptionCadence.Annual]: PlanType.FamiliesAnnually,
       // No monthly option for Families plan
     },
-    [ProductType.Teams]: {
+    [ProductTierType.Teams]: {
       [SubscriptionCadence.Annual]: PlanType.TeamsAnnually,
       [SubscriptionCadence.Monthly]: PlanType.TeamsMonthly,
     },
-    [ProductType.TeamsStarter]: {
+    [ProductTierType.TeamsStarter]: {
       // No annual option for Teams Starter plan
       [SubscriptionCadence.Monthly]: PlanType.TeamsStarter,
     },
@@ -233,10 +232,10 @@ export class TrialBillingStepComponent implements OnInit {
 
   private isApplicable(plan: PlanResponse): boolean {
     const hasCorrectProductType =
-      plan.product === ProductType.Enterprise ||
-      plan.product === ProductType.Families ||
-      plan.product === ProductType.Teams ||
-      plan.product === ProductType.TeamsStarter;
+      plan.productTier === ProductTierType.Enterprise ||
+      plan.productTier === ProductTierType.Families ||
+      plan.productTier === ProductTierType.Teams ||
+      plan.productTier === ProductTierType.TeamsStarter;
     const notDisabledOrLegacy = !plan.disabled && !plan.legacyYear;
     return hasCorrectProductType && notDisabledOrLegacy;
   }

@@ -2,8 +2,7 @@ import { Component, OnInit, ViewChild } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { first } from "rxjs/operators";
 
-import { PlanType } from "@bitwarden/common/billing/enums";
-import { ProductType } from "@bitwarden/common/enums";
+import { PlanType, ProductTierType } from "@bitwarden/common/billing/enums";
 
 import { OrganizationPlansComponent } from "../../billing";
 import { HeaderModule } from "../../layouts/header/header.module";
@@ -26,16 +25,16 @@ export class CreateOrganizationComponent implements OnInit {
     this.route.queryParams.pipe(first()).subscribe(async (qParams) => {
       if (qParams.plan === "families") {
         this.orgPlansComponent.plan = PlanType.FamiliesAnnually;
-        this.orgPlansComponent.product = ProductType.Families;
+        this.orgPlansComponent.productTier = ProductTierType.Families;
       } else if (qParams.plan === "teams") {
         this.orgPlansComponent.plan = PlanType.TeamsAnnually;
-        this.orgPlansComponent.product = ProductType.Teams;
+        this.orgPlansComponent.productTier = ProductTierType.Teams;
       } else if (qParams.plan === "teamsStarter") {
         this.orgPlansComponent.plan = PlanType.TeamsStarter;
-        this.orgPlansComponent.product = ProductType.TeamsStarter;
+        this.orgPlansComponent.productTier = ProductTierType.TeamsStarter;
       } else if (qParams.plan === "enterprise") {
         this.orgPlansComponent.plan = PlanType.EnterpriseAnnually;
-        this.orgPlansComponent.product = ProductType.Enterprise;
+        this.orgPlansComponent.productTier = ProductTierType.Enterprise;
       }
     });
   }

@@ -1,4 +1,4 @@
-export enum ProductType {
+export enum ProductTierType {
   Free = 0,
   Families = 1,
   Teams = 2,

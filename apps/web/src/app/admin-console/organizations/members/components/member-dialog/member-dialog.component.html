@@ -28,7 +28,8 @@
               <input id="emails" type="text" appAutoFocus bitInput formControlName="emails" />
               <bit-hint>{{
                 "inviteMultipleEmailDesc"
-                  | i18n: (organization.planProductType === ProductType.TeamsStarter ? "10" : "20")
+                  | i18n
+                    : (organization.productTierType === ProductTierType.TeamsStarter ? "10" : "20")
               }}</bit-hint>
             </bit-form-field>
           </ng-container>
