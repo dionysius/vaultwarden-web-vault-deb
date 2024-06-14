@@ -722,6 +722,9 @@
   "logIn": {
     "message": "Είσοδος"
   },
+  "verifyIdentity": {
+    "message": "Verify your Identity"
+  },
   "logInInitiated": {
     "message": "Η σύνδεση ξεκίνησε"
   },
@@ -2794,12 +2797,6 @@
   "userDesc": {
     "message": "Ένας κανονικός χρήστης με πρόσβαση σε ανατεθείσες συλλογές στον οργανισμό σας."
   },
-  "manager": {
-    "message": "Διαχειριστης"
-  },
-  "managerDesc": {
-    "message": "Οι διαχειριστές μπορούν να έχουν πρόσβαση και να διαχειρίζονται εκχωρημένες συλλογές στον οργανισμό σας."
-  },
   "all": {
     "message": "Όλα"
   },
@@ -4576,12 +4573,6 @@
   "permission": {
     "message": "Δικαιώματα"
   },
-  "managerPermissions": {
-    "message": "Δικαιώματα Manager"
-  },
-  "adminPermissions": {
-    "message": "Δικαιώματα Διαχειριστή"
-  },
   "accessEventLogs": {
     "message": "Αρχείο Καταγραφής Πρόσβασης"
   },
@@ -4605,9 +4596,6 @@
   },
   "deleteAnyCollection": {
     "message": "Διαγραφή Οποιασδήποτε Συλλογής"
-  },
-  "manageAssignedCollections": {
-    "message": "Διαχείριση Αντιστοιχισμένων Συλλογών"
   },
   "editAssignedCollections": {
     "message": "Επεξεργασία Αντιστοιχισμένων Συλλογών"
@@ -6669,12 +6657,6 @@
   "restrictedCollectionAssignmentDesc": {
     "message": "You can only assign collections you manage."
   },
-  "accessAllCollectionsDesc": {
-    "message": "Grant access to all current and future collections."
-  },
-  "accessAllCollectionsHelp": {
-    "message": "If checked, this will replace all other collection permissions."
-  },
   "selectMembers": {
     "message": "Select members"
   },
@@ -6716,12 +6698,6 @@
   },
   "group": {
     "message": "Group"
-  },
-  "groupAccessAll": {
-    "message": "This group can access and modify all items."
-  },
-  "memberAccessAll": {
-    "message": "This member can access and modify all items."
   },
   "domainVerification": {
     "message": "Domain verification"
@@ -8354,5 +8330,15 @@
   },
   "verified": {
     "message": "Verified"
+  },
+  "viewSecret": {
+    "message": "View secret"
+  },
+  "noClients": {
+    "message": "There are no clients to list"
+  },
+  "providerBillingEmailHint": {
+    "message": "This email address will receive all invoices pertaining to this provider",
+    "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
   }
 }

@@ -722,6 +722,9 @@
   "logIn": {
     "message": "登入"
   },
+  "verifyIdentity": {
+    "message": "Verify your Identity"
+  },
   "logInInitiated": {
     "message": "登入已發起"
   },
@@ -2794,12 +2797,6 @@
   "userDesc": {
     "message": "存取和新增項目到已指派的集合中"
   },
-  "manager": {
-    "message": "管理員"
-  },
-  "managerDesc": {
-    "message": "在已指派的集合中創建、刪除以及管理存取權限"
-  },
   "all": {
     "message": "全部"
   },
@@ -4576,12 +4573,6 @@
   "permission": {
     "message": "權限"
   },
-  "managerPermissions": {
-    "message": "經理權限"
-  },
-  "adminPermissions": {
-    "message": "管理員權限"
-  },
   "accessEventLogs": {
     "message": "存取事件紀錄"
   },
@@ -4605,9 +4596,6 @@
   },
   "deleteAnyCollection": {
     "message": "刪除任何集合"
-  },
-  "manageAssignedCollections": {
-    "message": "管理已指派的集合"
   },
   "editAssignedCollections": {
     "message": "編輯已指派的集合"
@@ -6669,12 +6657,6 @@
   "restrictedCollectionAssignmentDesc": {
     "message": "You can only assign collections you manage."
   },
-  "accessAllCollectionsDesc": {
-    "message": "授予對所有目前和未來的集合的存取權限。"
-  },
-  "accessAllCollectionsHelp": {
-    "message": "如果選中，這將取代所有其他集合權限。"
-  },
   "selectMembers": {
     "message": "選擇成員"
   },
@@ -6716,12 +6698,6 @@
   },
   "group": {
     "message": "群組"
-  },
-  "groupAccessAll": {
-    "message": "此群組可存取及變更所有項目。"
-  },
-  "memberAccessAll": {
-    "message": "此成員可存取及變更所有項目。"
   },
   "domainVerification": {
     "message": "網域驗證"
@@ -8354,5 +8330,15 @@
   },
   "verified": {
     "message": "Verified"
+  },
+  "viewSecret": {
+    "message": "View secret"
+  },
+  "noClients": {
+    "message": "There are no clients to list"
+  },
+  "providerBillingEmailHint": {
+    "message": "This email address will receive all invoices pertaining to this provider",
+    "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
   }
 }

@@ -722,6 +722,9 @@
   "logIn": {
     "message": "Iniciar sessão"
   },
+  "verifyIdentity": {
+    "message": "Verifique a sua identidade"
+  },
   "logInInitiated": {
     "message": "A preparar o início de sessão"
   },
@@ -2794,12 +2797,6 @@
   "userDesc": {
     "message": "Aceder e adicionar itens às coleções atribuídas"
   },
-  "manager": {
-    "message": "Gestor"
-  },
-  "managerDesc": {
-    "message": "Criar, eliminar e gerir o acesso a coleções atribuídas"
-  },
   "all": {
     "message": "Todos"
   },
@@ -4576,12 +4573,6 @@
   "permission": {
     "message": "Permissão"
   },
-  "managerPermissions": {
-    "message": "Permissões do gestor"
-  },
-  "adminPermissions": {
-    "message": "Permissões do administrador"
-  },
   "accessEventLogs": {
     "message": "Aceder aos registos de eventos"
   },
@@ -4605,9 +4596,6 @@
   },
   "deleteAnyCollection": {
     "message": "Eliminar qualquer coleção"
-  },
-  "manageAssignedCollections": {
-    "message": "Gerir coleções atribuídas"
   },
   "editAssignedCollections": {
     "message": "Editar coleções atribuídas"
@@ -6669,12 +6657,6 @@
   "restrictedCollectionAssignmentDesc": {
     "message": "Só pode atribuir coleções que gere."
   },
-  "accessAllCollectionsDesc": {
-    "message": "Conceder acesso a todas as coleções atuais e futuras."
-  },
-  "accessAllCollectionsHelp": {
-    "message": "Se estiver selecionada, esta opção substitui todas as outras permissões de coleção."
-  },
   "selectMembers": {
     "message": "Selecionar membros"
   },
@@ -6716,12 +6698,6 @@
   },
   "group": {
     "message": "Grupo"
-  },
-  "groupAccessAll": {
-    "message": "Este grupo pode aceder e modificar todos os itens."
-  },
-  "memberAccessAll": {
-    "message": "Este membro pode aceder e modificar todos os itens."
   },
   "domainVerification": {
     "message": "Verificação do domínio"
@@ -8354,5 +8330,15 @@
   },
   "verified": {
     "message": "Verificado"
+  },
+  "viewSecret": {
+    "message": "Ver segredo"
+  },
+  "noClients": {
+    "message": "Não existem clientes para listar"
+  },
+  "providerBillingEmailHint": {
+    "message": "Este endereço de e-mail receberá todas as faturas relativas a este fornecedor",
+    "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
   }
 }

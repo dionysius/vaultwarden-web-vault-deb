@@ -722,6 +722,9 @@
   "logIn": {
     "message": "Войти"
   },
+  "verifyIdentity": {
+    "message": "Подтвердите вашу личность"
+  },
   "logInInitiated": {
     "message": "Вход инициирован"
   },
@@ -2794,12 +2797,6 @@
   "userDesc": {
     "message": "Доступ и добавление элементов в соответствующие коллекции"
   },
-  "manager": {
-    "message": "Менеджер"
-  },
-  "managerDesc": {
-    "message": "Создание, удаление и управление доступом в соответствующих коллекциях"
-  },
   "all": {
     "message": "Все"
   },
@@ -4576,12 +4573,6 @@
   "permission": {
     "message": "Разрешение"
   },
-  "managerPermissions": {
-    "message": "Разрешения менеджера"
-  },
-  "adminPermissions": {
-    "message": "Разрешения администратора"
-  },
   "accessEventLogs": {
     "message": "Доступ к журналам событий"
   },
@@ -4605,9 +4596,6 @@
   },
   "deleteAnyCollection": {
     "message": "Удалять любую коллекцию"
-  },
-  "manageAssignedCollections": {
-    "message": "Управлять назначенными коллекциями"
   },
   "editAssignedCollections": {
     "message": "Изменять назначенные коллекции"
@@ -6669,12 +6657,6 @@
   "restrictedCollectionAssignmentDesc": {
     "message": "Вы можете назначать только те коллекции, которыми управляете."
   },
-  "accessAllCollectionsDesc": {
-    "message": "Предоставить доступ ко всем текущим и будущим коллекциям."
-  },
-  "accessAllCollectionsHelp": {
-    "message": "Если отмечено, это заменит все остальные разрешения на коллекцию."
-  },
   "selectMembers": {
     "message": "Выбрать участников"
   },
@@ -6716,12 +6698,6 @@
   },
   "group": {
     "message": "Группа"
-  },
-  "groupAccessAll": {
-    "message": "Эта группа может иметь доступ и изменять все элементы."
-  },
-  "memberAccessAll": {
-    "message": "Эта пользователь может иметь доступ и изменять все элементы."
   },
   "domainVerification": {
     "message": "Верификация домена"
@@ -8354,5 +8330,15 @@
   },
   "verified": {
     "message": "Верифицирован"
+  },
+  "viewSecret": {
+    "message": "Просмотреть секрет"
+  },
+  "noClients": {
+    "message": "Нет клиентов для отображения"
+  },
+  "providerBillingEmailHint": {
+    "message": "На этот адрес email будут приходить все счета, относящиеся к данному провайдеру",
+    "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
   }
 }

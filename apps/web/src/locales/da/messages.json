@@ -722,6 +722,9 @@
   "logIn": {
     "message": "Log ind"
   },
+  "verifyIdentity": {
+    "message": "Bekræft din identitet"
+  },
   "logInInitiated": {
     "message": "Indlogning påbegyndt"
   },
@@ -2794,12 +2797,6 @@
   "userDesc": {
     "message": "Tilgå og føj emner til tildelte samlinger"
   },
-  "manager": {
-    "message": "Manager"
-  },
-  "managerDesc": {
-    "message": "Opret, slet og håndtér adgang i tildelte samlinger"
-  },
   "all": {
     "message": "Alle"
   },
@@ -4576,12 +4573,6 @@
   "permission": {
     "message": "Tilladelse"
   },
-  "managerPermissions": {
-    "message": "Bestyrer-tilladelser"
-  },
-  "adminPermissions": {
-    "message": "Admin-tilladelser"
-  },
   "accessEventLogs": {
     "message": "Tilgå begivenhedslogger"
   },
@@ -4605,9 +4596,6 @@
   },
   "deleteAnyCollection": {
     "message": "Slet enhver samling"
-  },
-  "manageAssignedCollections": {
-    "message": "Håndtér tildelte samlinger"
   },
   "editAssignedCollections": {
     "message": "Redigér tildelte samlinger"
@@ -6669,12 +6657,6 @@
   "restrictedCollectionAssignmentDesc": {
     "message": "Man kan kun tildele samlinger, man selv håndterer."
   },
-  "accessAllCollectionsDesc": {
-    "message": "Tildel adgang til alle nuværende og fremtidige samlinger."
-  },
-  "accessAllCollectionsHelp": {
-    "message": "Hvis afkrydset, erstatter dette alle andre samlingstilladelser."
-  },
   "selectMembers": {
     "message": "Vælg medlemmer"
   },
@@ -6716,12 +6698,6 @@
   },
   "group": {
     "message": "Gruppe"
-  },
-  "groupAccessAll": {
-    "message": "Denne gruppe kan tilgå og ændre alle emner."
-  },
-  "memberAccessAll": {
-    "message": "Dette medlem kan tilgå og ændre alle emner."
   },
   "domainVerification": {
     "message": "Domænebekræftelse"
@@ -8354,5 +8330,15 @@
   },
   "verified": {
     "message": "Bekræftet"
+  },
+  "viewSecret": {
+    "message": "Vis hemmelighed"
+  },
+  "noClients": {
+    "message": "Der er ingen klienter at vise"
+  },
+  "providerBillingEmailHint": {
+    "message": "Denne e-mailadresse vil modtage alle fakturaer vedr. denne udbyder",
+    "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
   }
 }

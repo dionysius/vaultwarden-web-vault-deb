@@ -722,6 +722,9 @@
   "logIn": {
     "message": "Prijavi se"
   },
+  "verifyIdentity": {
+    "message": "Verify your Identity"
+  },
   "logInInitiated": {
     "message": "Pokrenuta prijava"
   },
@@ -2794,12 +2797,6 @@
   "userDesc": {
     "message": "Pristupi i dodaj stavke dodijeljenim zbirkama"
   },
-  "manager": {
-    "message": "Upravitelj"
-  },
-  "managerDesc": {
-    "message": "Stvori, obriši i upravljaj pristupom u dodijeljenim zbirkama"
-  },
   "all": {
     "message": "Sve"
   },
@@ -4576,12 +4573,6 @@
   "permission": {
     "message": "Dopuštenje"
   },
-  "managerPermissions": {
-    "message": "Dopuštenja upravitelja"
-  },
-  "adminPermissions": {
-    "message": "Dopuštenja administratora"
-  },
   "accessEventLogs": {
     "message": "Pristup zapisnicima događaja"
   },
@@ -4605,9 +4596,6 @@
   },
   "deleteAnyCollection": {
     "message": "Obriši zbirku"
-  },
-  "manageAssignedCollections": {
-    "message": "Upravljanje dodijeljenim zbirkama"
   },
   "editAssignedCollections": {
     "message": "Uredi dodijeljene zbirke"
@@ -6669,12 +6657,6 @@
   "restrictedCollectionAssignmentDesc": {
     "message": "You can only assign collections you manage."
   },
-  "accessAllCollectionsDesc": {
-    "message": "Odobri pristup svim postojećim i budućim zbirkama."
-  },
-  "accessAllCollectionsHelp": {
-    "message": "Ako je uključeno, ovo će zamijeniti sve druge dozvole za prikupljanje."
-  },
   "selectMembers": {
     "message": "Odaberi članove"
   },
@@ -6716,12 +6698,6 @@
   },
   "group": {
     "message": "Grupa"
-  },
-  "groupAccessAll": {
-    "message": "Ova grupa može pristupiti i urediti sve stavke."
-  },
-  "memberAccessAll": {
-    "message": "Ovaj korisnik može pristupiti i urediti sve stavke."
   },
   "domainVerification": {
     "message": "Potvrda domene"
@@ -8354,5 +8330,15 @@
   },
   "verified": {
     "message": "Verified"
+  },
+  "viewSecret": {
+    "message": "View secret"
+  },
+  "noClients": {
+    "message": "There are no clients to list"
+  },
+  "providerBillingEmailHint": {
+    "message": "This email address will receive all invoices pertaining to this provider",
+    "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
   }
 }

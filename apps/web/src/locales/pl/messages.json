@@ -722,6 +722,9 @@
   "logIn": {
     "message": "Zaloguj się"
   },
+  "verifyIdentity": {
+    "message": "Zweryfikuj swoją tożsamość"
+  },
   "logInInitiated": {
     "message": "Logowanie rozpoczęte"
   },
@@ -2794,12 +2797,6 @@
   "userDesc": {
     "message": "Standardowy użytkownik, posiadający dostęp do kolekcji w Twojej organizacji."
   },
-  "manager": {
-    "message": "Menedżer"
-  },
-  "managerDesc": {
-    "message": "Menedżerowie mogą uzyskiwać dostęp do przypisanych kolekcji i zarządzać nimi w organizacji."
-  },
   "all": {
     "message": "Wszyscy"
   },
@@ -4576,12 +4573,6 @@
   "permission": {
     "message": "Uprawnienie"
   },
-  "managerPermissions": {
-    "message": "Menedżer uprawnień"
-  },
-  "adminPermissions": {
-    "message": "Administrator uprawnień"
-  },
   "accessEventLogs": {
     "message": "Dostęp do dziennika zdarzeń"
   },
@@ -4605,9 +4596,6 @@
   },
   "deleteAnyCollection": {
     "message": "Usuń dowolną kolekcję"
-  },
-  "manageAssignedCollections": {
-    "message": "Zarządzaj przypisanymi kolekcjami"
   },
   "editAssignedCollections": {
     "message": "Edytuj przypisane kolekcje"
@@ -6669,12 +6657,6 @@
   "restrictedCollectionAssignmentDesc": {
     "message": "Możesz przypisać tylko kolekcje, którymi zarządzasz."
   },
-  "accessAllCollectionsDesc": {
-    "message": "Udziel dostępu do wszystkich bieżących i przyszłych kolekcji."
-  },
-  "accessAllCollectionsHelp": {
-    "message": "Jeśli zaznaczone, zastąpi to wszystkie inne uprawnienia kolekcji."
-  },
   "selectMembers": {
     "message": "Wybierz członków"
   },
@@ -6716,12 +6698,6 @@
   },
   "group": {
     "message": "Grupa"
-  },
-  "groupAccessAll": {
-    "message": "Ta grupa może wyświetlać i modyfikować wszystkie elementy."
-  },
-  "memberAccessAll": {
-    "message": "Ten użytkownik może wyświetlać i modyfikować wszystkie elementy."
   },
   "domainVerification": {
     "message": "Weryfikacja domeny"
@@ -8354,5 +8330,15 @@
   },
   "verified": {
     "message": "Zweryfikowane"
+  },
+  "viewSecret": {
+    "message": "Zobacz sekret"
+  },
+  "noClients": {
+    "message": "Brak klientów do wyświetlenia"
+  },
+  "providerBillingEmailHint": {
+    "message": "Ten adres e-mail otrzyma wszystkie faktury dotyczące tego dostawcy",
+    "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
   }
 }

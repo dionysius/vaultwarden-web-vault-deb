@@ -722,6 +722,9 @@
   "logIn": {
     "message": "Anmelden"
   },
+  "verifyIdentity": {
+    "message": "Verifiziere deine Identität"
+  },
   "logInInitiated": {
     "message": "Anmeldung eingeleitet"
   },
@@ -2794,12 +2797,6 @@
   "userDesc": {
     "message": "Kann auf Einträge zugewiesener Sammlungen zugreifen und neue hinzufügen"
   },
-  "manager": {
-    "message": "Manager"
-  },
-  "managerDesc": {
-    "message": "Kann Einträge in zugewiesenen Sammlungen erstellen, löschen und Zugriff darauf verwalten"
-  },
   "all": {
     "message": "Alle"
   },
@@ -4576,12 +4573,6 @@
   "permission": {
     "message": "Berechtigung"
   },
-  "managerPermissions": {
-    "message": "Manager-Berechtigungen"
-  },
-  "adminPermissions": {
-    "message": "Administrator-Berechtigungen"
-  },
   "accessEventLogs": {
     "message": "Zugriff auf Ereignisprotokolle"
   },
@@ -4605,9 +4596,6 @@
   },
   "deleteAnyCollection": {
     "message": "Jede Sammlung löschen"
-  },
-  "manageAssignedCollections": {
-    "message": "Zugewiesene Sammlungen verwalten"
   },
   "editAssignedCollections": {
     "message": "Zugewiesene Sammlungen bearbeiten"
@@ -6669,12 +6657,6 @@
   "restrictedCollectionAssignmentDesc": {
     "message": "Du kannst nur von dir verwaltete Sammlungen zuweisen."
   },
-  "accessAllCollectionsDesc": {
-    "message": "Gewähre Zugriff auf alle aktuellen und zukünftigen Sammlungen."
-  },
-  "accessAllCollectionsHelp": {
-    "message": "Wenn aktiviert, ersetzt dies alle anderen Sammlungsberechtigungen."
-  },
   "selectMembers": {
     "message": "Mitglieder auswählen"
   },
@@ -6716,12 +6698,6 @@
   },
   "group": {
     "message": "Gruppe"
-  },
-  "groupAccessAll": {
-    "message": "Diese Gruppe darf auf alle Einträge zugreifen und diese ändern."
-  },
-  "memberAccessAll": {
-    "message": "Dieses Mitglied darf auf alle Einträge zugreifen und diese ändern."
   },
   "domainVerification": {
     "message": "Domain-Verifizierung"
@@ -8354,5 +8330,15 @@
   },
   "verified": {
     "message": "Verifiziert"
+  },
+  "viewSecret": {
+    "message": "Geheimnis anzeigen"
+  },
+  "noClients": {
+    "message": "There are no clients to list"
+  },
+  "providerBillingEmailHint": {
+    "message": "Diese E-Mail-Adresse wird alle Rechnungen erhalten, die diesen Anbieter betreffen",
+    "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
   }
 }

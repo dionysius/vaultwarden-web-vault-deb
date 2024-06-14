@@ -722,6 +722,9 @@
   "logIn": {
     "message": "Prihlásiť sa"
   },
+  "verifyIdentity": {
+    "message": "Overte svoju totožnosť"
+  },
   "logInInitiated": {
     "message": "Iniciované prihlásenie"
   },
@@ -2794,12 +2797,6 @@
   "userDesc": {
     "message": "Obyčajný používateľ s prístupom k zbierkam organizácie."
   },
-  "manager": {
-    "message": "Manažér"
-  },
-  "managerDesc": {
-    "message": "Manažéri môžu pristupovať k a spravovať pridelené zbierky v organizácii."
-  },
   "all": {
     "message": "Všetky"
   },
@@ -4576,12 +4573,6 @@
   "permission": {
     "message": "Oprávnenie"
   },
-  "managerPermissions": {
-    "message": "Oprávnenia manažéra"
-  },
-  "adminPermissions": {
-    "message": "Oprávnenia správcu"
-  },
   "accessEventLogs": {
     "message": "Prístup k protokolom udalostí"
   },
@@ -4605,9 +4596,6 @@
   },
   "deleteAnyCollection": {
     "message": "Odstrániť ľubovoľnú zbierku"
-  },
-  "manageAssignedCollections": {
-    "message": "Spravovať priradené zbierky"
   },
   "editAssignedCollections": {
     "message": "Upraviť priradené zbierky"
@@ -6669,12 +6657,6 @@
   "restrictedCollectionAssignmentDesc": {
     "message": "Prideliť môžete iba zbierky ktoré spravujete."
   },
-  "accessAllCollectionsDesc": {
-    "message": "Povoliť prístup k všetkým súčasným a budúcim zbierkam."
-  },
-  "accessAllCollectionsHelp": {
-    "message": "Zaškrtnutím nahradíte všetky ostatné povolenia ku zbierke."
-  },
   "selectMembers": {
     "message": "Vybrať členov"
   },
@@ -6716,12 +6698,6 @@
   },
   "group": {
     "message": "Skupina"
-  },
-  "groupAccessAll": {
-    "message": "Táto skupina môže upravovať a pristupovať k všetkým položkám."
-  },
-  "memberAccessAll": {
-    "message": "Tento člen môže upravovať a pristupovať k všetkým položkám."
   },
   "domainVerification": {
     "message": "Overenie domény"
@@ -8354,5 +8330,15 @@
   },
   "verified": {
     "message": "Overený"
+  },
+  "viewSecret": {
+    "message": "View secret"
+  },
+  "noClients": {
+    "message": "Neexistujú žiadni klienti na zobrazenie"
+  },
+  "providerBillingEmailHint": {
+    "message": "Na túto e-mailovú adresu budú zasielané všetky faktúry týkajúce sa tohto poskytovateľa",
+    "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
   }
 }

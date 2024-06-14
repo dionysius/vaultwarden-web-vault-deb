@@ -722,6 +722,9 @@
   "logIn": {
     "message": "Mag-log in"
   },
+  "verifyIdentity": {
+    "message": "Verify your Identity"
+  },
   "logInInitiated": {
     "message": "Sinimulan ang pag-log in"
   },
@@ -2794,12 +2797,6 @@
   "userDesc": {
     "message": "Access at magdagdag ng mga item sa mga nakatalagang koleksyon"
   },
-  "manager": {
-    "message": "Manager"
-  },
-  "managerDesc": {
-    "message": "Lumikha, magtanggal, at pamahalaan ang pag access sa mga nakatalagang koleksyon"
-  },
   "all": {
     "message": "Lahat"
   },
@@ -4576,12 +4573,6 @@
   "permission": {
     "message": "Pahintulot"
   },
-  "managerPermissions": {
-    "message": "Mga Pahintulot ng Manager"
-  },
-  "adminPermissions": {
-    "message": "Mga Pahintulot ng Admin"
-  },
   "accessEventLogs": {
     "message": "Access ang mga log ng kaganapan"
   },
@@ -4605,9 +4596,6 @@
   },
   "deleteAnyCollection": {
     "message": "Tanggalin ang anumang koleksyon"
-  },
-  "manageAssignedCollections": {
-    "message": "Pamahalaan ang mga nakatalagang koleksyon"
   },
   "editAssignedCollections": {
     "message": "I-edit ang mga nakatalagang koleksyon"
@@ -6669,12 +6657,6 @@
   "restrictedCollectionAssignmentDesc": {
     "message": "You can only assign collections you manage."
   },
-  "accessAllCollectionsDesc": {
-    "message": "Magbigay ng access sa lahat ng kasalukuyan at hinaharap na mga koleksyon."
-  },
-  "accessAllCollectionsHelp": {
-    "message": "Kung titingnan, papalitan nito ang lahat ng iba pang mga pahintulot sa koleksyon."
-  },
   "selectMembers": {
     "message": "Pumili ng mga miyembro"
   },
@@ -6716,12 +6698,6 @@
   },
   "group": {
     "message": "Grupo"
-  },
-  "groupAccessAll": {
-    "message": "Maaaring ma-access at baguhin ng grupong ito ang lahat ng item."
-  },
-  "memberAccessAll": {
-    "message": "Maaaring ma-access at baguhin ng miyembrong ito ang lahat ng item."
   },
   "domainVerification": {
     "message": "Pagpapatunay ng domain"
@@ -8354,5 +8330,15 @@
   },
   "verified": {
     "message": "Verified"
+  },
+  "viewSecret": {
+    "message": "View secret"
+  },
+  "noClients": {
+    "message": "There are no clients to list"
+  },
+  "providerBillingEmailHint": {
+    "message": "This email address will receive all invoices pertaining to this provider",
+    "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
   }
 }

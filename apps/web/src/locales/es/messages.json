@@ -722,6 +722,9 @@
   "logIn": {
     "message": "Identificarse"
   },
+  "verifyIdentity": {
+    "message": "Verify your Identity"
+  },
   "logInInitiated": {
     "message": "Inicio de sesión en proceso"
   },
@@ -2794,12 +2797,6 @@
   "userDesc": {
     "message": "Un usuario regular con acceso a las colecciones de su organización."
   },
-  "manager": {
-    "message": "Gestor"
-  },
-  "managerDesc": {
-    "message": "Los gestores pueden acceder y gestionar colecciones asignadas en tu organización."
-  },
   "all": {
     "message": "Todo"
   },
@@ -4576,12 +4573,6 @@
   "permission": {
     "message": "Permiso"
   },
-  "managerPermissions": {
-    "message": "Permisos del Administrador"
-  },
-  "adminPermissions": {
-    "message": "Permisos del administrador"
-  },
   "accessEventLogs": {
     "message": "Acceder a los registros de eventos"
   },
@@ -4605,9 +4596,6 @@
   },
   "deleteAnyCollection": {
     "message": "Eliminar cualquier colección"
-  },
-  "manageAssignedCollections": {
-    "message": "Administrar colecciones asignadas"
   },
   "editAssignedCollections": {
     "message": "Editar colecciones asignadas"
@@ -6669,12 +6657,6 @@
   "restrictedCollectionAssignmentDesc": {
     "message": "You can only assign collections you manage."
   },
-  "accessAllCollectionsDesc": {
-    "message": "Otorgar acceso a todas las colecciones actuales y futuras."
-  },
-  "accessAllCollectionsHelp": {
-    "message": "Si está marcado, esto reemplazará todos los demás permisos de la colección."
-  },
   "selectMembers": {
     "message": "Seleccionar miembros"
   },
@@ -6716,12 +6698,6 @@
   },
   "group": {
     "message": "Grupo"
-  },
-  "groupAccessAll": {
-    "message": "Este grupo puede acceder y modificar todos los elementos."
-  },
-  "memberAccessAll": {
-    "message": "Este miembro puede acceder y modificar todos los elementos."
   },
   "domainVerification": {
     "message": "Verificación de dominio"
@@ -8354,5 +8330,15 @@
   },
   "verified": {
     "message": "Verified"
+  },
+  "viewSecret": {
+    "message": "View secret"
+  },
+  "noClients": {
+    "message": "There are no clients to list"
+  },
+  "providerBillingEmailHint": {
+    "message": "This email address will receive all invoices pertaining to this provider",
+    "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
   }
 }

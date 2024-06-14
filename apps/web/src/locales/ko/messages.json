@@ -722,6 +722,9 @@
   "logIn": {
     "message": "로그인"
   },
+  "verifyIdentity": {
+    "message": "Verify your Identity"
+  },
   "logInInitiated": {
     "message": "Log in initiated"
   },
@@ -2794,12 +2797,6 @@
   "userDesc": {
     "message": "조직 내 할당된 컬렉션에 액세스할 수 있는 일반 사용자."
   },
-  "manager": {
-    "message": "관리자"
-  },
-  "managerDesc": {
-    "message": "관리자는 조직 내 할당된 컬렉션에 액세스하고 관리할 수 있습니다."
-  },
   "all": {
     "message": "모두"
   },
@@ -4576,12 +4573,6 @@
   "permission": {
     "message": "Permission"
   },
-  "managerPermissions": {
-    "message": "Manager Permissions"
-  },
-  "adminPermissions": {
-    "message": "Admin Permissions"
-  },
   "accessEventLogs": {
     "message": "이벤트 로그 접근"
   },
@@ -4605,9 +4596,6 @@
   },
   "deleteAnyCollection": {
     "message": "아무 컬렉션 삭제"
-  },
-  "manageAssignedCollections": {
-    "message": "할당된 컬렉션 관리"
   },
   "editAssignedCollections": {
     "message": "할당된 컬렉션 수정"
@@ -6669,12 +6657,6 @@
   "restrictedCollectionAssignmentDesc": {
     "message": "You can only assign collections you manage."
   },
-  "accessAllCollectionsDesc": {
-    "message": "Grant access to all current and future collections."
-  },
-  "accessAllCollectionsHelp": {
-    "message": "If checked, this will replace all other collection permissions."
-  },
   "selectMembers": {
     "message": "구성원 선택"
   },
@@ -6716,12 +6698,6 @@
   },
   "group": {
     "message": "Group"
-  },
-  "groupAccessAll": {
-    "message": "This group can access and modify all items."
-  },
-  "memberAccessAll": {
-    "message": "이 구성원은 모든 항목에 접근 및 수정이 가능합니다."
   },
   "domainVerification": {
     "message": "Domain verification"
@@ -8354,5 +8330,15 @@
   },
   "verified": {
     "message": "Verified"
+  },
+  "viewSecret": {
+    "message": "View secret"
+  },
+  "noClients": {
+    "message": "There are no clients to list"
+  },
+  "providerBillingEmailHint": {
+    "message": "This email address will receive all invoices pertaining to this provider",
+    "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
   }
 }

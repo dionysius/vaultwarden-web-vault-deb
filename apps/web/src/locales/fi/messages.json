@@ -722,6 +722,9 @@
   "logIn": {
     "message": "Kirjaudu sisään"
   },
+  "verifyIdentity": {
+    "message": "Vahvista henkilöllisyytesi"
+  },
   "logInInitiated": {
     "message": "Kirjautuminen aloitettu"
   },
@@ -1054,10 +1057,10 @@
     "message": "Kopioi UUID"
   },
   "errorRefreshingAccessToken": {
-    "message": "Access Token Refresh Error"
+    "message": "Käyttötunnisteen päivitysvirhe"
   },
   "errorRefreshingAccessTokenDesc": {
-    "message": "No refresh token or API keys found. Please try logging out and logging back in."
+    "message": "Päivitystunnistetta tai API-avaimia ei löytynyt. Kokeile kirjautua ulos ja takaisin sisään."
   },
   "warning": {
     "message": "Varoitus"
@@ -2793,12 +2796,6 @@
   },
   "userDesc": {
     "message": "Voi käyttää määritettyjen kokoelmien kohteita ja lisätä niitä."
-  },
-  "manager": {
-    "message": "Valvoja"
-  },
-  "managerDesc": {
-    "message": "Voi luoda, poistaa ja hallita määritettyjen kokoelmien käyttöoikeuksia."
   },
   "all": {
     "message": "Kaikki"
@@ -4576,12 +4573,6 @@
   "permission": {
     "message": "Käyttöoikeus"
   },
-  "managerPermissions": {
-    "message": "Valvojan oikeudet"
-  },
-  "adminPermissions": {
-    "message": "Ylläpitäjän oikeudet"
-  },
   "accessEventLogs": {
     "message": "Tapahtumalokien käyttö"
   },
@@ -4605,9 +4596,6 @@
   },
   "deleteAnyCollection": {
     "message": "Poista kokoelmia"
-  },
-  "manageAssignedCollections": {
-    "message": "Kokoelmamääritysten hallinta"
   },
   "editAssignedCollections": {
     "message": "Muokkaa kokoelmamäärityksiä"
@@ -5599,16 +5587,16 @@
     "message": "itse ylläpidetty"
   },
   "customEnvironment": {
-    "message": "Custom environment"
+    "message": "Mukautettu palvelinympäristö"
   },
   "selfHostedBaseUrlHint": {
-    "message": "Specify the base URL of your on-premises hosted Bitwarden installation. Example: https://bitwarden.company.com"
+    "message": "Määritä itse ylläpitämäsi Bitwarden-asennuksen perusosoite. Esimerkki: https://bitwarden.yritys.fi."
   },
   "selfHostedCustomEnvHeader": {
-    "message": "For advanced configuration, you can specify the base URL of each service independently."
+    "message": "Edistynyttä määritystä varten voit syöttää jokaisen palvelun perusosoitteen erikseen."
   },
   "selfHostedEnvFormInvalid": {
-    "message": "You must add either the base Server URL or at least one custom environment."
+    "message": "Sinun on lisättävä joko palvelimen perusosoite tai ainakin yksi mukautettu palvelinympäristö."
   },
   "apiUrl": {
     "message": "API-palvelimen URL"
@@ -5915,7 +5903,7 @@
     }
   },
   "forwaderInvalidToken": {
-    "message": "Virheellinen $SERVICENAME$ -rajapinnan tunniste",
+    "message": "Virheellinen $SERVICENAME$ API -tunniste",
     "description": "Displayed when the user's API token is empty or rejected by the forwarding service.",
     "placeholders": {
       "servicename": {
@@ -5925,7 +5913,7 @@
     }
   },
   "forwaderInvalidTokenWithMessage": {
-    "message": "Virheellinen $SERVICENAME$ -rajapinnan tunniste: $ERRORMESSAGE$",
+    "message": "Virheellinen $SERVICENAME$ API -tunniste: $ERRORMESSAGE$",
     "description": "Displayed when the user's API token is rejected by the forwarding service with an error message.",
     "placeholders": {
       "servicename": {
@@ -6669,12 +6657,6 @@
   "restrictedCollectionAssignmentDesc": {
     "message": "Voit määrittää vain hallitsemiasi kokoelmia."
   },
-  "accessAllCollectionsDesc": {
-    "message": "Myönnä käyttöoikeudet kaikkiin nykyisiin ja tuleviin kokoelmiin"
-  },
-  "accessAllCollectionsHelp": {
-    "message": "Jos valittu, korvataan kaikki muut kokoelmien käyttöoikeudet."
-  },
   "selectMembers": {
     "message": "Valitse jäsenet"
   },
@@ -6716,12 +6698,6 @@
   },
   "group": {
     "message": "Ryhmä"
-  },
-  "groupAccessAll": {
-    "message": "Tämä ryhmä voi tarkastella ja muokata kaikkia kohteita."
-  },
-  "memberAccessAll": {
-    "message": "Tämä jäsen voi tarkastella ja muokata kaikkia kohteita."
   },
   "domainVerification": {
     "message": "Verkkotunnusvarmennus"
@@ -8119,7 +8095,7 @@
     "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
   },
   "unassignedItemsBannerCTAPartTwo": {
-    "message": ", jotta ne näkyvät.",
+    "message": "ista, jotta ne näkyvät.",
     "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
   },
   "deleteProvider": {
@@ -8296,10 +8272,10 @@
     "message": "Et ole valinnut yhtään kokoelmaa."
   },
   "updateName": {
-    "message": "Päivitä nimi"
+    "message": "Vaihda nimi"
   },
   "updatedOrganizationName": {
-    "message": "Päivitetty organisaation nimi"
+    "message": "Organisaation nimi vaihdettiin"
   },
   "providerPlan": {
     "message": "Hallittu palvelutoimittaja"
@@ -8347,12 +8323,22 @@
     "message": "Bitcoin"
   },
   "updatedTaxInformation": {
-    "message": "Päivitetyt verotiedot"
+    "message": "Verotiedot vaihdettiin"
   },
   "unverified": {
     "message": "Vahvistamaton"
   },
   "verified": {
     "message": "Vahvistettu"
+  },
+  "viewSecret": {
+    "message": "Näytä salaisuus"
+  },
+  "noClients": {
+    "message": "Näytettäviä päätteitä ei ole"
+  },
+  "providerBillingEmailHint": {
+    "message": "Tämä sähköpostiosoite vastaanottaa kaikki tähän palveluntarjoajaan liittyvät laskut",
+    "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
   }
 }

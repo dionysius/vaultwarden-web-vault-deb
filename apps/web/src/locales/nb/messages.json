@@ -722,6 +722,9 @@
   "logIn": {
     "message": "Logg på"
   },
+  "verifyIdentity": {
+    "message": "Verify your Identity"
+  },
   "logInInitiated": {
     "message": "Pålogging startet"
   },
@@ -2794,12 +2797,6 @@
   "userDesc": {
     "message": "En vanlig bruker med tilgang til tilegnede samlinger i din organisasjon."
   },
-  "manager": {
-    "message": "Behandler"
-  },
-  "managerDesc": {
-    "message": "Behandlere har tilgang til og kan behandle tilegnede samlinger i din organisasjon."
-  },
   "all": {
     "message": "Alle"
   },
@@ -4576,12 +4573,6 @@
   "permission": {
     "message": "Tillatelse"
   },
-  "managerPermissions": {
-    "message": "Ledertillatelser"
-  },
-  "adminPermissions": {
-    "message": "Admin-tillatelser"
-  },
   "accessEventLogs": {
     "message": "Få tilgang til hendelseslogger"
   },
@@ -4605,9 +4596,6 @@
   },
   "deleteAnyCollection": {
     "message": "Slett enhver samling"
-  },
-  "manageAssignedCollections": {
-    "message": "Administrer alle tildelte samlinger"
   },
   "editAssignedCollections": {
     "message": "Rediger tildelte samlinger"
@@ -6669,12 +6657,6 @@
   "restrictedCollectionAssignmentDesc": {
     "message": "You can only assign collections you manage."
   },
-  "accessAllCollectionsDesc": {
-    "message": "Gi tilgang til alle nåværende og fremtidige samlinger."
-  },
-  "accessAllCollectionsHelp": {
-    "message": "Hvis merket av, vil dette erstatte alle andre samlingstillatelser."
-  },
   "selectMembers": {
     "message": "Velg medlemmer"
   },
@@ -6716,12 +6698,6 @@
   },
   "group": {
     "message": "Gruppe"
-  },
-  "groupAccessAll": {
-    "message": "Denne gruppen har tilgang til og kan endre alle elementer."
-  },
-  "memberAccessAll": {
-    "message": "Dette medlemmet har tilgang til og kan endre alle elementer."
   },
   "domainVerification": {
     "message": "Domenebekreftelse"
@@ -8354,5 +8330,15 @@
   },
   "verified": {
     "message": "Verified"
+  },
+  "viewSecret": {
+    "message": "View secret"
+  },
+  "noClients": {
+    "message": "There are no clients to list"
+  },
+  "providerBillingEmailHint": {
+    "message": "This email address will receive all invoices pertaining to this provider",
+    "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
   }
 }

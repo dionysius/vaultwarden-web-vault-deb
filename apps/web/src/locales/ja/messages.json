@@ -722,6 +722,9 @@
   "logIn": {
     "message": "ログイン"
   },
+  "verifyIdentity": {
+    "message": "本人確認"
+  },
   "logInInitiated": {
     "message": "ログイン開始"
   },
@@ -2794,12 +2797,6 @@
   "userDesc": {
     "message": "あなたの組織に割り当てられたコレクションへのアクセス権を持つ標準ユーザーです。"
   },
-  "manager": {
-    "message": "マネージャー"
-  },
-  "managerDesc": {
-    "message": "マネージャーは組織内の割り当てられたコレクションへアクセスし管理することができます。"
-  },
   "all": {
     "message": "すべて"
   },
@@ -4576,12 +4573,6 @@
   "permission": {
     "message": "権限"
   },
-  "managerPermissions": {
-    "message": "管理者権限"
-  },
-  "adminPermissions": {
-    "message": "管理者権限"
-  },
   "accessEventLogs": {
     "message": "イベントログにアクセス"
   },
@@ -4605,9 +4596,6 @@
   },
   "deleteAnyCollection": {
     "message": "任意のコレクションを削除"
-  },
-  "manageAssignedCollections": {
-    "message": "割り当てられたコレクションの管理"
   },
   "editAssignedCollections": {
     "message": "割り当てられたコレクションを編集"
@@ -6669,12 +6657,6 @@
   "restrictedCollectionAssignmentDesc": {
     "message": "自分が管理しているコレクションのみを割り当てることができます。"
   },
-  "accessAllCollectionsDesc": {
-    "message": "現在および将来のすべてのコレクションへのアクセスを許可します。"
-  },
-  "accessAllCollectionsHelp": {
-    "message": "チェックされている場合、他のすべてのコレクション権限が置き換えられます。"
-  },
   "selectMembers": {
     "message": "メンバーを選択"
   },
@@ -6716,12 +6698,6 @@
   },
   "group": {
     "message": "グループ"
-  },
-  "groupAccessAll": {
-    "message": "このグループはすべてのアイテムにアクセスして変更できます。"
-  },
-  "memberAccessAll": {
-    "message": "このメンバーはすべてのアイテムにアクセスして変更できます。"
   },
   "domainVerification": {
     "message": "ドメイン検証"
@@ -8354,5 +8330,15 @@
   },
   "verified": {
     "message": "認証済み"
+  },
+  "viewSecret": {
+    "message": "シークレットを表示"
+  },
+  "noClients": {
+    "message": "一覧表示するクライアントがありません"
+  },
+  "providerBillingEmailHint": {
+    "message": "このメールアドレスは、このプロバイダに関連するすべての請求書を受信します",
+    "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
   }
 }

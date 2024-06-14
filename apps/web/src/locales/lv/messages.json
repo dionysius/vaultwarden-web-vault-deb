@@ -588,7 +588,7 @@
     "message": "Atteicies"
   },
   "loggedOutDesc": {
-    "message": "You have been logged out of your account."
+    "message": "Notika izrakstīšanās no Tava konta."
   },
   "loginExpired": {
     "message": "Pieteikšanās sesija ir beigusies."
@@ -721,6 +721,9 @@
   },
   "logIn": {
     "message": "Pieteikties"
+  },
+  "verifyIdentity": {
+    "message": "Apliecināt savu identitāti"
   },
   "logInInitiated": {
     "message": "Uzsākta pieteikšanās"
@@ -1054,10 +1057,10 @@
     "message": "Ievietot UUID starpliktuvē"
   },
   "errorRefreshingAccessToken": {
-    "message": "Access Token Refresh Error"
+    "message": "Piekļuves pilnvaras atsvaizināšanas kļūda"
   },
   "errorRefreshingAccessTokenDesc": {
-    "message": "No refresh token or API keys found. Please try logging out and logging back in."
+    "message": "Netika atrastas atsvaidzināšanas pilnvaras vai API atslēgas. Lūgums mēģināt izrakstīties un atkal pieteikties."
   },
   "warning": {
     "message": "Brīdinājums"
@@ -2793,12 +2796,6 @@
   },
   "userDesc": {
     "message": "Parasts lietotājs ar piekļuvi piešķirtajiem apvienības krājumiem."
-  },
-  "manager": {
-    "message": "Pārvaldnieks"
-  },
-  "managerDesc": {
-    "message": "Vadītāji var piekļūt un pārvaldīt piešķirtos apvienības krājumus."
   },
   "all": {
     "message": "Visi"
@@ -4576,12 +4573,6 @@
   "permission": {
     "message": "Atļauja"
   },
-  "managerPermissions": {
-    "message": "Pārvaldnieka atļaujas"
-  },
-  "adminPermissions": {
-    "message": "Administratora atļaujas"
-  },
   "accessEventLogs": {
     "message": "Piekļūt notikumu žurnāla ierakstiem"
   },
@@ -4605,9 +4596,6 @@
   },
   "deleteAnyCollection": {
     "message": "Izdzēst jebkuru kolekciju"
-  },
-  "manageAssignedCollections": {
-    "message": "Pārvaldīt norīkotos krājumus"
   },
   "editAssignedCollections": {
     "message": "Labot norīkotos krājumus"
@@ -5596,37 +5584,37 @@
     "message": "Norēķinu sinhronizācijas pilnvaras nomaiņa padarīs nederīgu iepriekšējo."
   },
   "selfHostedServer": {
-    "message": "self-hosted"
+    "message": "pašizvietots"
   },
   "customEnvironment": {
-    "message": "Custom environment"
+    "message": "Pielāgota vide"
   },
   "selfHostedBaseUrlHint": {
-    "message": "Specify the base URL of your on-premises hosted Bitwarden installation. Example: https://bitwarden.company.com"
+    "message": "Jānorāda sava pašizvietotā Bitward servera pamata URL. Piemērs: https://bitwarden.uznemums.lv"
   },
   "selfHostedCustomEnvHeader": {
-    "message": "For advanced configuration, you can specify the base URL of each service independently."
+    "message": "Papildu konfigurācijā ir iespējams norādīt URL katram pakalpojumam atsevišķi."
   },
   "selfHostedEnvFormInvalid": {
-    "message": "You must add either the base Server URL or at least one custom environment."
+    "message": "Jāpievieno vai no servera pamata URL vai vismaz viena pielāgota vide."
   },
   "apiUrl": {
-    "message": "API server URL"
+    "message": "API servera URL"
   },
   "webVaultUrl": {
-    "message": "Web vault server URL"
+    "message": "Tīmekļa glabātavas servera URL"
   },
   "identityUrl": {
-    "message": "Identity server URL"
+    "message": "Identitātes servera URL"
   },
   "notificationsUrl": {
-    "message": "Notifications server URL"
+    "message": "Paziņojumu servera URL"
   },
   "iconsUrl": {
-    "message": "Icons server URL"
+    "message": "Ikonu servera URL"
   },
   "environmentSaved": {
-    "message": "Environment URLs saved"
+    "message": "Vides URL saglabāti"
   },
   "selfHostingTitle": {
     "message": "Pašizvietošana"
@@ -6669,12 +6657,6 @@
   "restrictedCollectionAssignmentDesc": {
     "message": "Var piešķirt tikai pārvaldītos krājumus."
   },
-  "accessAllCollectionsDesc": {
-    "message": "Piešķirt piekļuvi visiem pašreizējiem un turpmākajiem krājumiem."
-  },
-  "accessAllCollectionsHelp": {
-    "message": "Ja atzīmēts, tiks aizstātas visas citas krājumu atļaujas."
-  },
   "selectMembers": {
     "message": "Atlasīt dalībniekus"
   },
@@ -6716,12 +6698,6 @@
   },
   "group": {
     "message": "Kopa"
-  },
-  "groupAccessAll": {
-    "message": "Šī kopa var piekļūt visiem vienumiem un mainīt tos."
-  },
-  "memberAccessAll": {
-    "message": "Šis dalībnieks var piekļūt visiem vienumiem un mainīt tos."
   },
   "domainVerification": {
     "message": "Domēna apstiprināšana"
@@ -8347,12 +8323,22 @@
     "message": "Bitcoin"
   },
   "updatedTaxInformation": {
-    "message": "Updated tax information"
+    "message": "Atjaunināta nodokļu informācija"
   },
   "unverified": {
-    "message": "Unverified"
+    "message": "Neapliecināts"
   },
   "verified": {
-    "message": "Verified"
+    "message": "Apliecināts"
+  },
+  "viewSecret": {
+    "message": "Skatīt noslēpumu"
+  },
+  "noClients": {
+    "message": "Nav klientu, ko parādīt"
+  },
+  "providerBillingEmailHint": {
+    "message": "Uz šo e-pasta adresi tiks nosūtīti visi ar šo nodrošinātāju saistītie rēķini",
+    "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
   }
 }

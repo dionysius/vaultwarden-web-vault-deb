@@ -722,6 +722,9 @@
   "logIn": {
     "message": "Inloggen"
   },
+  "verifyIdentity": {
+    "message": "Verify your Identity"
+  },
   "logInInitiated": {
     "message": "Inloggen gestart"
   },
@@ -2794,12 +2797,6 @@
   "userDesc": {
     "message": "Een standaardgebruiker met toegang tot de verzamelingen van je organisatie."
   },
-  "manager": {
-    "message": "Manager"
-  },
-  "managerDesc": {
-    "message": "Managers hebben toegang tot toegewezen verzamelingen binnen je organisatie en kunnen deze ook beheren."
-  },
   "all": {
     "message": "Alle"
   },
@@ -4576,12 +4573,6 @@
   "permission": {
     "message": "Toestemming"
   },
-  "managerPermissions": {
-    "message": "Managersrechten"
-  },
-  "adminPermissions": {
-    "message": "Beheerdersrechten"
-  },
   "accessEventLogs": {
     "message": "Eventlogs"
   },
@@ -4605,9 +4596,6 @@
   },
   "deleteAnyCollection": {
     "message": "Iedere verzameling verwijderen"
-  },
-  "manageAssignedCollections": {
-    "message": "Toegewezen collecties beheren"
   },
   "editAssignedCollections": {
     "message": "Toegewezen verzamelingen bewerken"
@@ -6669,12 +6657,6 @@
   "restrictedCollectionAssignmentDesc": {
     "message": "You can only assign collections you manage."
   },
-  "accessAllCollectionsDesc": {
-    "message": "Geef toegang tot alle huidige en toekomstige collecties."
-  },
-  "accessAllCollectionsHelp": {
-    "message": "Indien aangevinkt, vervangt dit alle andere rechten op collecties."
-  },
   "selectMembers": {
     "message": "Leden selecteren"
   },
@@ -6716,12 +6698,6 @@
   },
   "group": {
     "message": "Groep"
-  },
-  "groupAccessAll": {
-    "message": "Deze groep kan alle items inzien en bewerken."
-  },
-  "memberAccessAll": {
-    "message": "Deze gebruiker kan alle items inzien en bewerken."
   },
   "domainVerification": {
     "message": "Domeinverificatie"
@@ -8354,5 +8330,15 @@
   },
   "verified": {
     "message": "Verified"
+  },
+  "viewSecret": {
+    "message": "Geheim weergeven"
+  },
+  "noClients": {
+    "message": "Er zijn geen weer te geven clients"
+  },
+  "providerBillingEmailHint": {
+    "message": "Dit e-mailadres ontvangt alle facturen van deze provider",
+    "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
   }
 }

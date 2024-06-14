@@ -722,6 +722,9 @@
   "logIn": {
     "message": "Вписване"
   },
+  "verifyIdentity": {
+    "message": "Потвърдете самоличността си"
+  },
   "logInInitiated": {
     "message": "Вписването е стартирано"
   },
@@ -2794,12 +2797,6 @@
   "userDesc": {
     "message": "Редови потребител с достъп до определени колекции в организацията."
   },
-  "manager": {
-    "message": "Мениджър"
-  },
-  "managerDesc": {
-    "message": "Мениджърите достъпват и управляват зададените им колекции в организацията."
-  },
   "all": {
     "message": "Всички"
   },
@@ -4576,12 +4573,6 @@
   "permission": {
     "message": "Право"
   },
-  "managerPermissions": {
-    "message": "Права на управителя"
-  },
-  "adminPermissions": {
-    "message": "Права на администратора"
-  },
   "accessEventLogs": {
     "message": "Достъп до журналите"
   },
@@ -4605,9 +4596,6 @@
   },
   "deleteAnyCollection": {
     "message": "Изтриване на всякакви колекции"
-  },
-  "manageAssignedCollections": {
-    "message": "Управление на възложените колекции"
   },
   "editAssignedCollections": {
     "message": "Редактиране на възложените колекции"
@@ -6669,12 +6657,6 @@
   "restrictedCollectionAssignmentDesc": {
     "message": "Можете да свързвате само колекции, които имате право да управлявате."
   },
-  "accessAllCollectionsDesc": {
-    "message": "Дайте достъп до всички текущи и бъдещи колекции."
-  },
-  "accessAllCollectionsHelp": {
-    "message": "Ако е избрано, това ще замени всички останали права свързани с колекцията."
-  },
   "selectMembers": {
     "message": "Изберете членове"
   },
@@ -6716,12 +6698,6 @@
   },
   "group": {
     "message": "Група"
-  },
-  "groupAccessAll": {
-    "message": "Тази група има достъп до всички записи и може да ги редактира."
-  },
-  "memberAccessAll": {
-    "message": "Този член има достъп до всички записи и може да ги редактира."
   },
   "domainVerification": {
     "message": "Потвърждаване на домейн"
@@ -8354,5 +8330,15 @@
   },
   "verified": {
     "message": "Потвърден"
+  },
+  "viewSecret": {
+    "message": "Преглед на тайната"
+  },
+  "noClients": {
+    "message": "Няма клиенти за показване"
+  },
+  "providerBillingEmailHint": {
+    "message": "На този адрес ще бъдат изпращани всички фактури свързани с този доставчик",
+    "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
   }
 }

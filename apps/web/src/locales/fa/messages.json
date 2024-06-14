@@ -579,16 +579,16 @@
     "message": "دسترسی"
   },
   "accessLevel": {
-    "message": "Access level"
+    "message": "سطح دسترسی"
   },
   "accessing": {
-    "message": "Accessing"
+    "message": "در حال دسترسی"
   },
   "loggedOut": {
     "message": "خارج شد"
   },
   "loggedOutDesc": {
-    "message": "You have been logged out of your account."
+    "message": "شما از اکانت خود خارج شده‌اید."
   },
   "loginExpired": {
     "message": "نشست ورود شما منقضی شده است."
@@ -721,6 +721,9 @@
   },
   "logIn": {
     "message": "ورود"
+  },
+  "verifyIdentity": {
+    "message": "Verify your Identity"
   },
   "logInInitiated": {
     "message": "ورود به سیستم آغاز شد"
@@ -2794,12 +2797,6 @@
   "userDesc": {
     "message": "به مجموعه های اختصاص داده شده دسترسی داشته باشید و موارد را اضافه کنید"
   },
-  "manager": {
-    "message": "مدیر"
-  },
-  "managerDesc": {
-    "message": "ایجاد، حذف و مدیریت دسترسی در مجموعه های اختصاص داده شده"
-  },
   "all": {
     "message": "همه"
   },
@@ -4576,12 +4573,6 @@
   "permission": {
     "message": "مجوز"
   },
-  "managerPermissions": {
-    "message": "مدیریت مجوزها"
-  },
-  "adminPermissions": {
-    "message": "مجوزهای مدیریت"
-  },
   "accessEventLogs": {
     "message": "به گزارش‌های رویداد دسترسی داشته باشید"
   },
@@ -4605,9 +4596,6 @@
   },
   "deleteAnyCollection": {
     "message": "هر مجموعه ای را حذف کنید"
-  },
-  "manageAssignedCollections": {
-    "message": "مدیریت مجموعه های اختصاص داده شده"
   },
   "editAssignedCollections": {
     "message": "ویرایش مجموعه های اختصاص داده شده"
@@ -6669,12 +6657,6 @@
   "restrictedCollectionAssignmentDesc": {
     "message": "You can only assign collections you manage."
   },
-  "accessAllCollectionsDesc": {
-    "message": "اجازه دسترسی به تمام مجموعه‌های فعلی و آینده."
-  },
-  "accessAllCollectionsHelp": {
-    "message": "اگر علامت زده شود، این گزینه جایگزین سایر مجوزهای مجموعه می‌شود."
-  },
   "selectMembers": {
     "message": "انتخاب اعضا"
   },
@@ -6716,12 +6698,6 @@
   },
   "group": {
     "message": "گروه"
-  },
-  "groupAccessAll": {
-    "message": "این گروه می‌تواند به همه موارد دسترسی داشته باشد و آن‌ها را تغییر دهد."
-  },
-  "memberAccessAll": {
-    "message": "این عضو می‌تواند به همه موارد دسترسی داشته باشد و آن‌ها را تغییر دهد."
   },
   "domainVerification": {
     "message": "تائید دامنه"
@@ -8354,5 +8330,15 @@
   },
   "verified": {
     "message": "Verified"
+  },
+  "viewSecret": {
+    "message": "View secret"
+  },
+  "noClients": {
+    "message": "There are no clients to list"
+  },
+  "providerBillingEmailHint": {
+    "message": "This email address will receive all invoices pertaining to this provider",
+    "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
   }
 }

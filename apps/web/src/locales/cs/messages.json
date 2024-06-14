@@ -722,6 +722,9 @@
   "logIn": {
     "message": "Přihlásit se"
   },
+  "verifyIdentity": {
+    "message": "Ověřte svou totožnost"
+  },
   "logInInitiated": {
     "message": "Bylo zahájeno přihlášení"
   },
@@ -2794,12 +2797,6 @@
   "userDesc": {
     "message": "Přistupuje k přiřazeným kolekcím a přidává je."
   },
-  "manager": {
-    "message": "Správce"
-  },
-  "managerDesc": {
-    "message": "Vytváří, maže a spravuje přístupy v přiřazených kolekcích."
-  },
   "all": {
     "message": "Vše"
   },
@@ -4576,12 +4573,6 @@
   "permission": {
     "message": "Oprávnění"
   },
-  "managerPermissions": {
-    "message": "Oprávnění správce"
-  },
-  "adminPermissions": {
-    "message": "Oprávnění administrátora"
-  },
   "accessEventLogs": {
     "message": "Přístup k protokolům událostí"
   },
@@ -4605,9 +4596,6 @@
   },
   "deleteAnyCollection": {
     "message": "Smazání jakékoli kolekce"
-  },
-  "manageAssignedCollections": {
-    "message": "Správa přiřazených kolekcí"
   },
   "editAssignedCollections": {
     "message": "Úprava přiřazených kolekcí"
@@ -6669,12 +6657,6 @@
   "restrictedCollectionAssignmentDesc": {
     "message": "Můžete přiřadit jen Vámi spravované kolekce."
   },
-  "accessAllCollectionsDesc": {
-    "message": "Udělí přístup ke všem aktuálním i budoucím kolekcím."
-  },
-  "accessAllCollectionsHelp": {
-    "message": "Pokud je zaškrtnuto, nahradí to všechna ostatní oprávnění ke kolekcím."
-  },
   "selectMembers": {
     "message": "Vybrat členy"
   },
@@ -6716,12 +6698,6 @@
   },
   "group": {
     "message": "Skupina"
-  },
-  "groupAccessAll": {
-    "message": "Tato skupina může vidět a upravovat vše."
-  },
-  "memberAccessAll": {
-    "message": "Tento uživatel může vidět a upravovat vše."
   },
   "domainVerification": {
     "message": "Ověření domény"
@@ -8354,5 +8330,15 @@
   },
   "verified": {
     "message": "Ověřeno"
+  },
+  "viewSecret": {
+    "message": "Zobrazit tajný klíč"
+  },
+  "noClients": {
+    "message": "Žádní klienti k zobrazení."
+  },
+  "providerBillingEmailHint": {
+    "message": "Tato e-mailová adresa obdrží všechny faktury vztahující se k tomuto poskytovateli",
+    "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
   }
 }

@@ -722,6 +722,9 @@
   "logIn": {
     "message": "Bejelentkezés"
   },
+  "verifyIdentity": {
+    "message": "Személyazonosság ellenőrzése"
+  },
   "logInInitiated": {
     "message": "A bejelentkezés elindításra került."
   },
@@ -2794,12 +2797,6 @@
   "userDesc": {
     "message": "Normál felhasználó a szervezeti gyűjtemények elérésével."
   },
-  "manager": {
-    "message": "Menedzser"
-  },
-  "managerDesc": {
-    "message": "A menedzserek hozzáférhetnek a szervezet összes gyűjteményéhez, valamint kezelhetik azokat."
-  },
   "all": {
     "message": "Összes"
   },
@@ -4576,12 +4573,6 @@
   "permission": {
     "message": "Jogosultság"
   },
-  "managerPermissions": {
-    "message": "Jogosultságok kezelése"
-  },
-  "adminPermissions": {
-    "message": "Adminisztrátori jogosultságok"
-  },
   "accessEventLogs": {
     "message": "Eseménynapló elérése"
   },
@@ -4605,9 +4596,6 @@
   },
   "deleteAnyCollection": {
     "message": "Bármely gyűjtemény törlése"
-  },
-  "manageAssignedCollections": {
-    "message": "Hozzárendelt gyűjtemények kezelése"
   },
   "editAssignedCollections": {
     "message": "Hozzárendelt gyűjtemények szerkesztése"
@@ -6669,12 +6657,6 @@
   "restrictedCollectionAssignmentDesc": {
     "message": "Csak a saját kezelésű gyűjteményeket lehet hozzárendelni."
   },
-  "accessAllCollectionsDesc": {
-    "message": "Hozzáférés kiosztása az összes jelenlegi és jövőbeli gyűjteményhez."
-  },
-  "accessAllCollectionsHelp": {
-    "message": "Bejelöllve lecseréli az összes gyűjtemény jogosultságot."
-  },
   "selectMembers": {
     "message": "Tagok kválasztása"
   },
@@ -6716,12 +6698,6 @@
   },
   "group": {
     "message": "Csoport"
-  },
-  "groupAccessAll": {
-    "message": "A csoport elérheti és módosíthatja az összes elemet."
-  },
-  "memberAccessAll": {
-    "message": "Ez a felhasználó minden elemhez hozzáférhet és módosíthatja az összes elemet."
   },
   "domainVerification": {
     "message": "Domain ellenőrzés"
@@ -8354,5 +8330,15 @@
   },
   "verified": {
     "message": "Ellenőrzött"
+  },
+  "viewSecret": {
+    "message": "Titkos kód megtekintése"
+  },
+  "noClients": {
+    "message": "Nincsenek listázandó ügyfelek."
+  },
+  "providerBillingEmailHint": {
+    "message": "Erre az email címre érkezik az ehhez a szolgáltatóhoz kapcsolódó összes számla.",
+    "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
   }
 }

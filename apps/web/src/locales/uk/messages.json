@@ -722,6 +722,9 @@
   "logIn": {
     "message": "Увійти"
   },
+  "verifyIdentity": {
+    "message": "Підтвердьте свою особу"
+  },
   "logInInitiated": {
     "message": "Ініційовано вхід"
   },
@@ -2794,12 +2797,6 @@
   "userDesc": {
     "message": "Доступ та додавання елементів до призначених збірок"
   },
-  "manager": {
-    "message": "Менеджер"
-  },
-  "managerDesc": {
-    "message": "Створення, видалення та керування доступом у призначених збірках"
-  },
   "all": {
     "message": "Усі"
   },
@@ -4576,12 +4573,6 @@
   "permission": {
     "message": "Дозвіл"
   },
-  "managerPermissions": {
-    "message": "Дозволи менеджера"
-  },
-  "adminPermissions": {
-    "message": "Дозволи адміністратора"
-  },
   "accessEventLogs": {
     "message": "Доступ до журналів подій"
   },
@@ -4605,9 +4596,6 @@
   },
   "deleteAnyCollection": {
     "message": "Видаляти будь-яку збірку"
-  },
-  "manageAssignedCollections": {
-    "message": "Керувати призначеними збірками"
   },
   "editAssignedCollections": {
     "message": "Редагувати призначені збірки"
@@ -6669,12 +6657,6 @@
   "restrictedCollectionAssignmentDesc": {
     "message": "Ви можете призначити лише збірки, якими керуєте."
   },
-  "accessAllCollectionsDesc": {
-    "message": "Надати доступ до всіх наявних і майбутніх збірок."
-  },
-  "accessAllCollectionsHelp": {
-    "message": "Ця опція вилучить усі інші дозволи для збірок."
-  },
   "selectMembers": {
     "message": "Вибрати учасників"
   },
@@ -6716,12 +6698,6 @@
   },
   "group": {
     "message": "Група"
-  },
-  "groupAccessAll": {
-    "message": "Ця група має доступ і може редагувати всі елементи."
-  },
-  "memberAccessAll": {
-    "message": "Цей учасник має доступ і може редагувати всі елементи."
   },
   "domainVerification": {
     "message": "Перевірка доменів"
@@ -8354,5 +8330,15 @@
   },
   "verified": {
     "message": "Перевірений"
+  },
+  "viewSecret": {
+    "message": "Переглянути секрет"
+  },
+  "noClients": {
+    "message": "Немає клієнтів для перегляду"
+  },
+  "providerBillingEmailHint": {
+    "message": "На цю адресу електронної пошти надсилатимуться всі рахунки, які стосуються цього провайдера",
+    "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
   }
 }

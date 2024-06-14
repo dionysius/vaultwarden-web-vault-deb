@@ -722,6 +722,9 @@
   "logIn": {
     "message": "Accedi"
   },
+  "verifyIdentity": {
+    "message": "Verify your Identity"
+  },
   "logInInitiated": {
     "message": "Login avviato"
   },
@@ -2794,12 +2797,6 @@
   "userDesc": {
     "message": "Accedi e aggiungi elementi alle raccolte assegnate"
   },
-  "manager": {
-    "message": "Responsabile"
-  },
-  "managerDesc": {
-    "message": "Crea, elimina, e gestisci l'accesso nelle raccolte assegnate"
-  },
   "all": {
     "message": "Tutti"
   },
@@ -4576,12 +4573,6 @@
   "permission": {
     "message": "Permesso"
   },
-  "managerPermissions": {
-    "message": "Permessi del manager"
-  },
-  "adminPermissions": {
-    "message": "Permesso dell'amministratore"
-  },
   "accessEventLogs": {
     "message": "Accedi al registro degli eventi"
   },
@@ -4605,9 +4596,6 @@
   },
   "deleteAnyCollection": {
     "message": "Elimina tutte le raccolte"
-  },
-  "manageAssignedCollections": {
-    "message": "Gestisci le raccolte assegnate"
   },
   "editAssignedCollections": {
     "message": "Modifica le raccolte assegnate"
@@ -6669,12 +6657,6 @@
   "restrictedCollectionAssignmentDesc": {
     "message": "Puoi assegnare solo le raccolte che gestisci."
   },
-  "accessAllCollectionsDesc": {
-    "message": "Concedi accesso a tutte le raccolte esistenti e future."
-  },
-  "accessAllCollectionsHelp": {
-    "message": "Se attivato, sostituirà tutte le altre autorizzazioni per le raccolte."
-  },
   "selectMembers": {
     "message": "Seleziona membri"
   },
@@ -6716,12 +6698,6 @@
   },
   "group": {
     "message": "Gruppo"
-  },
-  "groupAccessAll": {
-    "message": "Questo gruppo può accedere e modificare tutti gli elementi."
-  },
-  "memberAccessAll": {
-    "message": "Questo membro può accedere e modificare tutti gli elementi."
   },
   "domainVerification": {
     "message": "Verifica del dominio"
@@ -8354,5 +8330,15 @@
   },
   "verified": {
     "message": "Verificato"
+  },
+  "viewSecret": {
+    "message": "View secret"
+  },
+  "noClients": {
+    "message": "There are no clients to list"
+  },
+  "providerBillingEmailHint": {
+    "message": "This email address will receive all invoices pertaining to this provider",
+    "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
   }
 }

@@ -722,6 +722,9 @@
   "logIn": {
     "message": "Пријавите се"
   },
+  "verifyIdentity": {
+    "message": "Verify your Identity"
+  },
   "logInInitiated": {
     "message": "Пријава је покренута"
   },
@@ -2794,12 +2797,6 @@
   "userDesc": {
     "message": "Редовни корисник са приступом додељеним колекцијама у вашој организацији."
   },
-  "manager": {
-    "message": "Менаџер"
-  },
-  "managerDesc": {
-    "message": "Менаџери могу да приступе додељеним колекцијама и управљају њима у вашој организацији."
-  },
   "all": {
     "message": "Све"
   },
@@ -4576,12 +4573,6 @@
   "permission": {
     "message": "Дозвола"
   },
-  "managerPermissions": {
-    "message": "Менаџер созвола"
-  },
-  "adminPermissions": {
-    "message": "Админ дозволе"
-  },
   "accessEventLogs": {
     "message": "Приступе извештаја догађаја"
   },
@@ -4605,9 +4596,6 @@
   },
   "deleteAnyCollection": {
     "message": "Брише било коју колекцију"
-  },
-  "manageAssignedCollections": {
-    "message": "Управљање додељеним колекцијама"
   },
   "editAssignedCollections": {
     "message": "Уреди додељеним колекцијама"
@@ -6669,12 +6657,6 @@
   "restrictedCollectionAssignmentDesc": {
     "message": "Можете да доделите само колекције којима управљате."
   },
-  "accessAllCollectionsDesc": {
-    "message": "Grant access to all current and future collections."
-  },
-  "accessAllCollectionsHelp": {
-    "message": "If checked, this will replace all other collection permissions."
-  },
   "selectMembers": {
     "message": "Изаберите чланове"
   },
@@ -6716,12 +6698,6 @@
   },
   "group": {
     "message": "Група"
-  },
-  "groupAccessAll": {
-    "message": "Ова група може приступити и изменити све ставке."
-  },
-  "memberAccessAll": {
-    "message": "Овај члан може приступити и изменити све ставке."
   },
   "domainVerification": {
     "message": "Верификација домена"
@@ -8354,5 +8330,15 @@
   },
   "verified": {
     "message": "Проверено"
+  },
+  "viewSecret": {
+    "message": "View secret"
+  },
+  "noClients": {
+    "message": "There are no clients to list"
+  },
+  "providerBillingEmailHint": {
+    "message": "This email address will receive all invoices pertaining to this provider",
+    "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
   }
 }
