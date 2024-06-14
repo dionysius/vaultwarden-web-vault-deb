@@ -20,7 +20,7 @@ import {
   elementIsTextAreaElement,
   nodeIsFormElement,
   nodeIsInputElement,
-  sendExtensionMessage,
+  // sendExtensionMessage,
   requestIdleCallbackPolyfill,
 } from "../utils";
 
@@ -57,7 +57,7 @@ class CollectAutofillContentService implements CollectAutofillContentServiceInte
     "image",
     "file",
   ]);
-  private useTreeWalkerStrategyFlagSet = false;
+  private useTreeWalkerStrategyFlagSet = true;
 
   constructor(
     domElementVisibilityService: DomElementVisibilityService,
@@ -72,10 +72,10 @@ class CollectAutofillContentService implements CollectAutofillContentServiceInte
     }
     this.formFieldQueryString = `${inputQuery}, textarea:not([data-bwignore]), select:not([data-bwignore]), span[data-bwautofill]`;
 
-    void sendExtensionMessage("getUseTreeWalkerApiForPageDetailsCollectionFeatureFlag").then(
-      (useTreeWalkerStrategyFlag) =>
-        (this.useTreeWalkerStrategyFlagSet = !!useTreeWalkerStrategyFlag?.result),
-    );
+    // void sendExtensionMessage("getUseTreeWalkerApiForPageDetailsCollectionFeatureFlag").then(
+    //   (useTreeWalkerStrategyFlag) =>
+    //     (this.useTreeWalkerStrategyFlagSet = !!useTreeWalkerStrategyFlag?.result),
+    // );
   }
 
   /**
