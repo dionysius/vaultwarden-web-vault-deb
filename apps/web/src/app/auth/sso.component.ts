@@ -141,6 +141,10 @@ export class SsoComponent extends BaseSsoComponent {
   }
 
   submit = async () => {
+    if (this.formGroup.invalid) {
+      return;
+    }
+
     this.identifier = this.identifierFormControl.value;
     await this.ssoLoginService.setOrganizationSsoIdentifier(this.identifier);
     if (this.clientId === "browser") {
