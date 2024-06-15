@@ -222,14 +222,14 @@ const routes: Routes = [
       {
         path: "sso",
         canActivate: [unauthGuardFn()],
+        data: {
+          pageTitle: "enterpriseSingleSignOn",
+          titleId: "enterpriseSingleSignOn",
+        } satisfies DataProperties & AnonLayoutWrapperData,
         children: [
           {
             path: "",
             component: SsoComponent,
-            data: {
-              pageTitle: "enterpriseSingleSignOn",
-              titleId: "enterpriseSingleSignOn",
-            } satisfies DataProperties & AnonLayoutWrapperData,
           },
           {
             path: "",
@@ -286,14 +286,14 @@ const routes: Routes = [
       {
         path: "accept-emergency",
         canActivate: [deepLinkGuard()],
+        data: {
+          pageTitle: "emergencyAccess",
+          titleId: "acceptEmergency",
+          doNotSaveUrl: false,
+        } satisfies DataProperties & AnonLayoutWrapperData,
         children: [
           {
             path: "",
-            data: {
-              pageTitle: "emergencyAccess",
-              titleId: "acceptEmergency",
-              doNotSaveUrl: false,
-            } satisfies DataProperties & AnonLayoutWrapperData,
             loadComponent: () =>
               import("./auth/emergency-access/accept/accept-emergency.component").then(
                 (mod) => mod.AcceptEmergencyComponent,
