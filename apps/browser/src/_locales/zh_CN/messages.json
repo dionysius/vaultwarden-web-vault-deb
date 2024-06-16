@@ -390,13 +390,13 @@
     "message": "收藏"
   },
   "unfavorite": {
-    "message": "Unfavorite"
+    "message": "取消收藏"
   },
   "itemAddedToFavorites": {
-    "message": "Item added to favorites"
+    "message": "项目已添加到收藏夹"
   },
   "itemRemovedFromFavorites": {
-    "message": "Item removed from favorites"
+    "message": "项目已移出收藏夹"
   },
   "notes": {
     "message": "备注"
@@ -420,7 +420,7 @@
     "message": "前往"
   },
   "launchWebsite": {
-    "message": "Launch website"
+    "message": "启动网站"
   },
   "website": {
     "message": "网站"
@@ -612,7 +612,7 @@
     "message": "已注销"
   },
   "loggedOutDesc": {
-    "message": "You have been logged out of your account."
+    "message": "您已注销您的账户。"
   },
   "loginExpired": {
     "message": "您的登录会话已过期。"
@@ -1123,13 +1123,13 @@
     "message": "指定您本地托管的 Bitwarden 安装的基础 URL。"
   },
   "selfHostedBaseUrlHint": {
-    "message": "Specify the base URL of your on-premises hosted Bitwarden installation. Example: https://bitwarden.company.com"
+    "message": "指定您的本地托管 Bitwarden 安装的基础 URL。例如：https://bitwarden.company.com"
   },
   "selfHostedCustomEnvHeader": {
-    "message": "For advanced configuration, you can specify the base URL of each service independently."
+    "message": "对于高级配置，您可以单独指定每个服务的基础 URL。"
   },
   "selfHostedEnvFormInvalid": {
-    "message": "You must add either the base Server URL or at least one custom environment."
+    "message": "您必须添加基础服务器 URL 或至少添加一个自定义环境。"
   },
   "customEnvironment": {
     "message": "自定义环境"
@@ -1434,6 +1434,24 @@
   "typeIdentity": {
     "message": "身份"
   },
+  "newItemHeader": {
+    "message": "新增 $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "Login"
+      }
+    }
+  },
+  "editItemHeader": {
+    "message": "编辑 $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "Login"
+      }
+    }
+  },
   "passwordHistory": {
     "message": "密码历史记录"
   },
@@ -1444,7 +1462,7 @@
     "message": "集合"
   },
   "nCollections": {
-    "message": "$COUNT$ collections",
+    "message": "$COUNT$ 个集合",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1682,7 +1700,7 @@
     "message": "自动填充并保存"
   },
   "fillAndSave": {
-    "message": "Fill and save"
+    "message": "填充并保存"
   },
   "autoFillSuccessAndSavedUri": {
     "message": "项目已自动填充且 URI 已保存"
@@ -1781,10 +1799,10 @@
     "message": "确定"
   },
   "errorRefreshingAccessToken": {
-    "message": "Access Token Refresh Error"
+    "message": "访问令牌刷新错误"
   },
   "errorRefreshingAccessTokenDesc": {
-    "message": "No refresh token or API keys found. Please try logging out and logging back in."
+    "message": "未找到刷新令牌或 API 密钥。请尝试注销然后重新登录。"
   },
   "desktopSyncVerificationTitle": {
     "message": "桌面同步验证"
@@ -2675,7 +2693,7 @@
     "message": "批准后，您将收到通知。"
   },
   "troubleLoggingIn": {
-    "message": "登录遇到问题？"
+    "message": "登录遇到问题吗？"
   },
   "loginApproved": {
     "message": "登录已批准"
@@ -3305,18 +3323,8 @@
   "clearFiltersOrTryAnother": {
     "message": "清除筛选器或尝试另一个搜索词"
   },
-  "copyInfoLabel": {
-    "message": "Copy info, $ITEMNAME$",
-    "description": "Aria label for a button that opens a menu with options to copy information from an item.",
-    "placeholders": {
-      "itemname": {
-        "content": "$1",
-        "example": "Secret Item"
-      }
-    }
-  },
   "copyInfoTitle": {
-    "message": "Copy info - $ITEMNAME$",
+    "message": "复制信息 - $ITEMNAME$",
     "description": "Title for a button that opens a menu with options to copy information from an item.",
     "placeholders": {
       "itemname": {
@@ -3325,18 +3333,8 @@
       }
     }
   },
-  "copyNoteLabel": {
-    "message": "Copy Note, $ITEMNAME$",
-    "description": "Aria label for a button copies a note to the clipboard.",
-    "placeholders": {
-      "itemname": {
-        "content": "$1",
-        "example": "Secret Note Item"
-      }
-    }
-  },
   "copyNoteTitle": {
-    "message": "Copy Note - $ITEMNAME$",
+    "message": "复制备注 - $ITEMNAME$",
     "description": "Title for a button copies a note to the clipboard.",
     "placeholders": {
       "itemname": {
@@ -3346,7 +3344,7 @@
     }
   },
   "moreOptionsLabel": {
-    "message": "More options, $ITEMNAME$",
+    "message": "更多选项，$ITEMNAME$",
     "description": "Aria label for a button that opens a menu with more options for an item.",
     "placeholders": {
       "itemname": {
@@ -3356,7 +3354,7 @@
     }
   },
   "moreOptionsTitle": {
-    "message": "More options - $ITEMNAME$",
+    "message": "更多选项 - $ITEMNAME$",
     "description": "Title for a button that opens a menu with more options for an item.",
     "placeholders": {
       "itemname": {
@@ -3366,7 +3364,7 @@
     }
   },
   "viewItemTitle": {
-    "message": "View item - $ITEMNAME$",
+    "message": "查看项目 - $ITEMNAME$",
     "description": "Title for a link that opens a view for an item.",
     "placeholders": {
       "itemname": {
@@ -3375,17 +3373,30 @@
       }
     }
   },
+  "autofillTitle": {
+    "message": "自动填充 - $ITEMNAME$",
+    "description": "Title for a button that auto-fills a login item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "noValuesToCopy": {
+    "message": "没有要复制的值"
+  },
   "assignCollections": {
-    "message": "Assign collections"
+    "message": "分配集合"
   },
   "copyEmail": {
-    "message": "Copy email"
+    "message": "复制电子邮件地址"
   },
   "copyPhone": {
-    "message": "Copy phone"
+    "message": "复制电话号码"
   },
   "copyAddress": {
-    "message": "Copy address"
+    "message": "复制地址"
   },
   "adminConsole": {
     "message": "管理控制台"
@@ -3426,7 +3437,7 @@
     }
   },
   "new": {
-    "message": "新建"
+    "message": "新增"
   },
   "removeItem": {
     "message": "删除 $NAME$",
@@ -3439,12 +3450,12 @@
     }
   },
   "itemsWithNoFolder": {
-    "message": "Items with no folder"
+    "message": "无文件夹的项目"
   },
   "organizationIsDeactivated": {
     "message": "组织已停用"
   },
   "contactYourOrgAdmin": {
-    "message": "Items in deactivated organizations cannot be accessed. Contact your organization owner for assistance."
+    "message": "无法访问已停用组织中的项目。请联系您的组织所有者获取协助。"
   }
 }

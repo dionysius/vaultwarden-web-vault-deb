@@ -390,13 +390,13 @@
     "message": "Suosikki"
   },
   "unfavorite": {
-    "message": "Unfavorite"
+    "message": "Poista suosikeista"
   },
   "itemAddedToFavorites": {
-    "message": "Item added to favorites"
+    "message": "Kohde lisättiin suosikkeihin"
   },
   "itemRemovedFromFavorites": {
-    "message": "Item removed from favorites"
+    "message": "Kohde poistettiin suosikeista"
   },
   "notes": {
     "message": "Merkinnät"
@@ -420,7 +420,7 @@
     "message": "Avaa"
   },
   "launchWebsite": {
-    "message": "Launch website"
+    "message": "Avaa verkkosivusto"
   },
   "website": {
     "message": "Verkkosivusto"
@@ -778,7 +778,7 @@
     "message": "Avaa"
   },
   "additionalOptions": {
-    "message": "Lisäasetukset"
+    "message": "Lisävalinnat"
   },
   "enableContextMenuItem": {
     "message": "Näytä sisältövalikon valinnat"
@@ -845,7 +845,7 @@
     "message": "Viennin tyyppi"
   },
   "accountRestricted": {
-    "message": "Rajoitettu tilille"
+    "message": "Tiliä on rajoitettu"
   },
   "filePasswordAndConfirmFilePasswordDoNotMatch": {
     "message": "\"Tiedoston salasana\" ja \"Vahvista tiedoston salasana\" eivät täsmää."
@@ -1120,22 +1120,22 @@
     "message": "Itse ylläpidetty palvelinympäristö"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Määritä omassa palvelinympäristössäsi suoritettavan Bitwarden-asennuksen pääverkkotunnus."
+    "message": "Määritä omassa palvelinympäristössäsi suoritettavan Bitwarden-asennuksen perusosoite."
   },
   "selfHostedBaseUrlHint": {
-    "message": "Specify the base URL of your on-premises hosted Bitwarden installation. Example: https://bitwarden.company.com"
+    "message": "Määritä itse ylläpitämäsi Bitwarden-asennuksen perusosoite. Esimerkki: https://bitwarden.yritys.fi."
   },
   "selfHostedCustomEnvHeader": {
-    "message": "For advanced configuration, you can specify the base URL of each service independently."
+    "message": "Edistynyttä määritystä varten voit syöttää jokaisen palvelun perusosoitteen erikseen."
   },
   "selfHostedEnvFormInvalid": {
-    "message": "You must add either the base Server URL or at least one custom environment."
+    "message": "Sinun on lisättävä joko palvelimen perusosoite tai ainakin yksi mukautettu palvelinympäristö."
   },
   "customEnvironment": {
     "message": "Mukautettu palvelinympäristö"
   },
   "customEnvironmentFooter": {
-    "message": "Edistyneille käyttäjille. Voit määrittää jokaiselle palvelulle oman pääverkkotunnuksen."
+    "message": "Edistyneille käyttäjille. Voit määrittää jokaiselle palvelulle oman perusosoitteen."
   },
   "baseUrl": {
     "message": "Palvelimen URL"
@@ -1434,6 +1434,24 @@
   "typeIdentity": {
     "message": "Henkilöllisyys"
   },
+  "newItemHeader": {
+    "message": "Uusi $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "Login"
+      }
+    }
+  },
+  "editItemHeader": {
+    "message": "Muokkaa $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "Login"
+      }
+    }
+  },
   "passwordHistory": {
     "message": "Salasanahistoria"
   },
@@ -1444,7 +1462,7 @@
     "message": "Kokoelmat"
   },
   "nCollections": {
-    "message": "$COUNT$ collections",
+    "message": "$COUNT$ kokoelmaa",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1682,7 +1700,7 @@
     "message": "Automaattitäytä ja tallenna"
   },
   "fillAndSave": {
-    "message": "Fill and save"
+    "message": "Täytä ja tallenna"
   },
   "autoFillSuccessAndSavedUri": {
     "message": "Kohde täytettiin automaattisesti ja URI tallennettiin"
@@ -1781,10 +1799,10 @@
     "message": "Ok"
   },
   "errorRefreshingAccessToken": {
-    "message": "Access Token Refresh Error"
+    "message": "Käyttötunnisteen päivitysvirhe"
   },
   "errorRefreshingAccessTokenDesc": {
-    "message": "No refresh token or API keys found. Please try logging out and logging back in."
+    "message": "Päivitystunnistetta tai API-avaimia ei löytynyt. Kokeile kirjautua ulos ja takaisin sisään."
   },
   "desktopSyncVerificationTitle": {
     "message": "Työpöytäsynkronoinnin vahvistus"
@@ -2344,7 +2362,7 @@
     }
   },
   "forwaderInvalidToken": {
-    "message": "Virheellinen $SERVICENAME$ -rajapinnan tunniste",
+    "message": "Virheellinen $SERVICENAME$ API -tunniste",
     "description": "Displayed when the user's API token is empty or rejected by the forwarding service.",
     "placeholders": {
       "servicename": {
@@ -2354,7 +2372,7 @@
     }
   },
   "forwaderInvalidTokenWithMessage": {
-    "message": "Virheellinen $SERVICENAME$ -rajapinnan tunniste: $ERRORMESSAGE$",
+    "message": "Virheellinen $SERVICENAME$ API -tunniste: $ERRORMESSAGE$",
     "description": "Displayed when the user's API token is rejected by the forwarding service with an error message.",
     "placeholders": {
       "servicename": {
@@ -2368,7 +2386,7 @@
     }
   },
   "forwarderNoAccountId": {
-    "message": "$SERVICENAME$ -palvelun peittämän sähköpostitilin tunnistetta ei saatu.",
+    "message": "$SERVICENAME$ -palvelun peittämän sähköpostitilin tunnusta ei saatu.",
     "description": "Displayed when the forwarding service fails to return an account ID.",
     "placeholders": {
       "servicename": {
@@ -3305,18 +3323,8 @@
   "clearFiltersOrTryAnother": {
     "message": "Tyhjennä suodattimet tai kokeile toista hakutermiä"
   },
-  "copyInfoLabel": {
-    "message": "Copy info, $ITEMNAME$",
-    "description": "Aria label for a button that opens a menu with options to copy information from an item.",
-    "placeholders": {
-      "itemname": {
-        "content": "$1",
-        "example": "Secret Item"
-      }
-    }
-  },
   "copyInfoTitle": {
-    "message": "Copy info - $ITEMNAME$",
+    "message": "Kopioi tietoja - $ITEMNAME$",
     "description": "Title for a button that opens a menu with options to copy information from an item.",
     "placeholders": {
       "itemname": {
@@ -3325,18 +3333,8 @@
       }
     }
   },
-  "copyNoteLabel": {
-    "message": "Copy Note, $ITEMNAME$",
-    "description": "Aria label for a button copies a note to the clipboard.",
-    "placeholders": {
-      "itemname": {
-        "content": "$1",
-        "example": "Secret Note Item"
-      }
-    }
-  },
   "copyNoteTitle": {
-    "message": "Copy Note - $ITEMNAME$",
+    "message": "Kopioi muistio - $ITEMNAME$",
     "description": "Title for a button copies a note to the clipboard.",
     "placeholders": {
       "itemname": {
@@ -3346,7 +3344,7 @@
     }
   },
   "moreOptionsLabel": {
-    "message": "More options, $ITEMNAME$",
+    "message": "Lisää valintoja, $ITEMNAME$",
     "description": "Aria label for a button that opens a menu with more options for an item.",
     "placeholders": {
       "itemname": {
@@ -3356,7 +3354,7 @@
     }
   },
   "moreOptionsTitle": {
-    "message": "More options - $ITEMNAME$",
+    "message": "Lisää valintoja - $ITEMNAME$",
     "description": "Title for a button that opens a menu with more options for an item.",
     "placeholders": {
       "itemname": {
@@ -3366,7 +3364,7 @@
     }
   },
   "viewItemTitle": {
-    "message": "View item - $ITEMNAME$",
+    "message": "Tarkastele kohdetta - $ITEMNAME$",
     "description": "Title for a link that opens a view for an item.",
     "placeholders": {
       "itemname": {
@@ -3375,17 +3373,30 @@
       }
     }
   },
+  "autofillTitle": {
+    "message": "Auto-fill - $ITEMNAME$",
+    "description": "Title for a button that auto-fills a login item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "noValuesToCopy": {
+    "message": "No values to copy"
+  },
   "assignCollections": {
-    "message": "Assign collections"
+    "message": "Määritä kokoelmat"
   },
   "copyEmail": {
-    "message": "Copy email"
+    "message": "Kopioi sähköpostiosoite"
   },
   "copyPhone": {
-    "message": "Copy phone"
+    "message": "Kopioi puhelinnumero"
   },
   "copyAddress": {
-    "message": "Copy address"
+    "message": "Kopioi osoite"
   },
   "adminConsole": {
     "message": "Hallintapaneelista"
@@ -3439,7 +3450,7 @@
     }
   },
   "itemsWithNoFolder": {
-    "message": "Kohteet, joilla ei ole kansioita"
+    "message": "Kansiottomat kohteet"
   },
   "organizationIsDeactivated": {
     "message": "Organisaatio on poistettu käytöstä"

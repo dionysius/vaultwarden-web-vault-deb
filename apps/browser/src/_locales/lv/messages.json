@@ -390,13 +390,13 @@
     "message": "Izlasē"
   },
   "unfavorite": {
-    "message": "Unfavorite"
+    "message": "Noņemt no izlases"
   },
   "itemAddedToFavorites": {
-    "message": "Item added to favorites"
+    "message": "Vienums pievienots izlasē"
   },
   "itemRemovedFromFavorites": {
-    "message": "Item removed from favorites"
+    "message": "Vienums noņemts no izlases"
   },
   "notes": {
     "message": "Piezīmes"
@@ -420,7 +420,7 @@
     "message": "Palaist"
   },
   "launchWebsite": {
-    "message": "Launch website"
+    "message": "Atvērt tīmekļvietni"
   },
   "website": {
     "message": "Tīmekļa vietne"
@@ -612,7 +612,7 @@
     "message": "Atteicies"
   },
   "loggedOutDesc": {
-    "message": "You have been logged out of your account."
+    "message": "Notika izrakstīšanās no Tava konta."
   },
   "loginExpired": {
     "message": "Pieteikšanās sesija ir beigusies."
@@ -1123,13 +1123,13 @@
     "message": "Norādīt pašuzstādīta Bitwarden pamata URL."
   },
   "selfHostedBaseUrlHint": {
-    "message": "Specify the base URL of your on-premises hosted Bitwarden installation. Example: https://bitwarden.company.com"
+    "message": "Jānorāda sava pašizvietotā Bitward servera pamata URL. Piemērs: https://bitwarden.uznemums.lv"
   },
   "selfHostedCustomEnvHeader": {
-    "message": "For advanced configuration, you can specify the base URL of each service independently."
+    "message": "Papildu konfigurācijā ir iespējams norādīt URL katram pakalpojumam atsevišķi."
   },
   "selfHostedEnvFormInvalid": {
-    "message": "You must add either the base Server URL or at least one custom environment."
+    "message": "Jāpievieno vai no servera pamata URL vai vismaz viena pielāgota vide."
   },
   "customEnvironment": {
     "message": "Pielāgota vide"
@@ -1434,6 +1434,24 @@
   "typeIdentity": {
     "message": "Identitāte"
   },
+  "newItemHeader": {
+    "message": "Jauns/a $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "Login"
+      }
+    }
+  },
+  "editItemHeader": {
+    "message": "Labot $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "Login"
+      }
+    }
+  },
   "passwordHistory": {
     "message": "Paroļu vēsture"
   },
@@ -1444,7 +1462,7 @@
     "message": "Krājumi"
   },
   "nCollections": {
-    "message": "$COUNT$ collections",
+    "message": "$COUNT$ krājumi",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1682,7 +1700,7 @@
     "message": "Automātiski aizpildīt un saglabāt"
   },
   "fillAndSave": {
-    "message": "Fill and save"
+    "message": "Aizpildīt un saglabāt"
   },
   "autoFillSuccessAndSavedUri": {
     "message": "Automātiski aizpildīts vienums un saglabāts URI"
@@ -1781,10 +1799,10 @@
     "message": "Labi"
   },
   "errorRefreshingAccessToken": {
-    "message": "Access Token Refresh Error"
+    "message": "Piekļuves pilnvaras atsvaizināšanas kļūda"
   },
   "errorRefreshingAccessTokenDesc": {
-    "message": "No refresh token or API keys found. Please try logging out and logging back in."
+    "message": "Netika atrastas atsvaidzināšanas pilnvaras vai API atslēgas. Lūgums mēģināt izrakstīties un atkal pieteikties."
   },
   "desktopSyncVerificationTitle": {
     "message": "Darbvirsmas sinhronizācijas apstiprinājums"
@@ -3305,18 +3323,8 @@
   "clearFiltersOrTryAnother": {
     "message": "Jānotīra atlases vērtības vai jāmēģina cits meklēšanas vaicājums"
   },
-  "copyInfoLabel": {
-    "message": "Copy info, $ITEMNAME$",
-    "description": "Aria label for a button that opens a menu with options to copy information from an item.",
-    "placeholders": {
-      "itemname": {
-        "content": "$1",
-        "example": "Secret Item"
-      }
-    }
-  },
   "copyInfoTitle": {
-    "message": "Copy info - $ITEMNAME$",
+    "message": "Ievietot starpliktuvē informāciju - $ITEMNAME$",
     "description": "Title for a button that opens a menu with options to copy information from an item.",
     "placeholders": {
       "itemname": {
@@ -3325,18 +3333,8 @@
       }
     }
   },
-  "copyNoteLabel": {
-    "message": "Copy Note, $ITEMNAME$",
-    "description": "Aria label for a button copies a note to the clipboard.",
-    "placeholders": {
-      "itemname": {
-        "content": "$1",
-        "example": "Secret Note Item"
-      }
-    }
-  },
   "copyNoteTitle": {
-    "message": "Copy Note - $ITEMNAME$",
+    "message": "Ievietot starpliktuvē piezīmi - $ITEMNAME$",
     "description": "Title for a button copies a note to the clipboard.",
     "placeholders": {
       "itemname": {
@@ -3346,7 +3344,7 @@
     }
   },
   "moreOptionsLabel": {
-    "message": "More options, $ITEMNAME$",
+    "message": "Vairāk iespēju, $ITEMNAME$",
     "description": "Aria label for a button that opens a menu with more options for an item.",
     "placeholders": {
       "itemname": {
@@ -3356,7 +3354,7 @@
     }
   },
   "moreOptionsTitle": {
-    "message": "More options - $ITEMNAME$",
+    "message": "Vairāk iespēju - $ITEMNAME$",
     "description": "Title for a button that opens a menu with more options for an item.",
     "placeholders": {
       "itemname": {
@@ -3366,7 +3364,7 @@
     }
   },
   "viewItemTitle": {
-    "message": "View item - $ITEMNAME$",
+    "message": "Skatīt vienumu - $ITEMNAME$",
     "description": "Title for a link that opens a view for an item.",
     "placeholders": {
       "itemname": {
@@ -3375,17 +3373,30 @@
       }
     }
   },
+  "autofillTitle": {
+    "message": "Automātiski aizpildīt - $ITEMNAME$",
+    "description": "Title for a button that auto-fills a login item.",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Secret Item"
+      }
+    }
+  },
+  "noValuesToCopy": {
+    "message": "Nav vērtību, ko ievietot starpliktuvē"
+  },
   "assignCollections": {
-    "message": "Assign collections"
+    "message": "Piešķirt krājumus"
   },
   "copyEmail": {
-    "message": "Copy email"
+    "message": "Ievietot starpliktuvē e-pasta adresi"
   },
   "copyPhone": {
-    "message": "Copy phone"
+    "message": "Ievietot starpliktuvē tālruņa numuru"
   },
   "copyAddress": {
-    "message": "Copy address"
+    "message": "Ievietot starpliktuvē adresi"
   },
   "adminConsole": {
     "message": "pārvaldības konsolē,"
@@ -3439,12 +3450,12 @@
     }
   },
   "itemsWithNoFolder": {
-    "message": "Items with no folder"
+    "message": "Vienumi bez mapes"
   },
   "organizationIsDeactivated": {
-    "message": "Organization is deactivated"
+    "message": "Apvienība ir atspējota"
   },
   "contactYourOrgAdmin": {
-    "message": "Items in deactivated organizations cannot be accessed. Contact your organization owner for assistance."
+    "message": "Atspējotu apvienību vienumiem nevar piekļūt. Jāsazinās ar apvienības īpašnieku, lai iegūtu palīdzību."
   }
 }
