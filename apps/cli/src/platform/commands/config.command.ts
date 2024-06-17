@@ -1,17 +1,21 @@
 import { OptionValues } from "commander";
 import { firstValueFrom } from "rxjs";
 
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import {
   EnvironmentService,
   Region,
 } from "@bitwarden/common/platform/abstractions/environment.service";
 
-import { Response } from "../models/response";
-import { MessageResponse } from "../models/response/message.response";
-import { StringResponse } from "../models/response/string.response";
+import { Response } from "../../models/response";
+import { MessageResponse } from "../../models/response/message.response";
+import { StringResponse } from "../../models/response/string.response";
 
 export class ConfigCommand {
-  constructor(private environmentService: EnvironmentService) {}
+  constructor(
+    private environmentService: EnvironmentService,
+    private accountService: AccountService,
+  ) {}
 
   async run(setting: string, value: string, options: OptionValues): Promise<Response> {
     setting = setting.toLowerCase();
@@ -38,6 +42,12 @@ export class ConfigCommand {
         env.hasBaseUrl() ? env.getUrls().base : "https://bitwarden.com",
       );
       return Response.success(stringRes);
+    }
+
+    // The server config cannot be updated while a user is actively logged in to the current server
+    const activeAccount = await firstValueFrom(this.accountService.activeAccount$);
+    if (activeAccount) {
+      return Response.error("Logout required before server config update.");
     }
 
     url = url === "null" || url === "bitwarden.com" || url === "https://bitwarden.com" ? null : url;
