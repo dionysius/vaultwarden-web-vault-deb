@@ -258,11 +258,21 @@ const routes: Routes = [
       },
       {
         path: "2fa",
-        component: TwoFactorComponent,
         canActivate: [unauthGuardFn()],
+        children: [
+          {
+            path: "",
+            component: TwoFactorComponent,
+          },
+          {
+            path: "",
+            component: EnvironmentSelectorComponent,
+            outlet: "environment-selector",
+          },
+        ],
         data: {
           pageTitle: "verifyIdentity",
-        },
+        } satisfies DataProperties & AnonLayoutWrapperData,
       },
       {
         path: "recover-2fa",
