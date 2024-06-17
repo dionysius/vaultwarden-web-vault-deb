@@ -20,8 +20,8 @@ export class CryptoServiceRandomizer implements Randomizer {
     }
 
     if (options?.number ?? false) {
-      const num = await this.crypto.randomNumber(1, 9999);
-      word = word + this.zeroPad(num.toString(), 4);
+      const num = await this.crypto.randomNumber(1, 9);
+      word = word + num.toString();
     }
 
     return word;
