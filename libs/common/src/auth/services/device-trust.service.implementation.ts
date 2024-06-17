@@ -102,7 +102,7 @@ export class DeviceTrustService implements DeviceTrustServiceAbstraction {
     if (shouldTrustDevice) {
       await this.trustDevice(userId);
       // reset the trust choice
-      await this.setShouldTrustDevice(userId, false);
+      await this.setShouldTrustDevice(userId, null);
     }
   }
 

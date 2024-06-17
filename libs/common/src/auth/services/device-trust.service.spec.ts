@@ -115,7 +115,7 @@ describe("deviceTrustService", () => {
 
       expect(deviceTrustService.getShouldTrustDevice).toHaveBeenCalledTimes(1);
       expect(deviceTrustService.trustDevice).toHaveBeenCalledTimes(1);
-      expect(deviceTrustService.setShouldTrustDevice).toHaveBeenCalledWith(mockUserId, false);
+      expect(deviceTrustService.setShouldTrustDevice).toHaveBeenCalledWith(mockUserId, null);
     });
 
     it("should not trust device nor reset when getShouldTrustDevice returns false", async () => {
