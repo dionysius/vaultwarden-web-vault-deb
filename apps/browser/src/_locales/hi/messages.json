@@ -16,6 +16,12 @@
   "createAccount": {
     "message": "Create Account"
   },
+  "setAStrongPassword": {
+    "message": "Set a strong password"
+  },
+  "finishCreatingYourAccountBySettingAPassword": {
+    "message": "Finish creating your account by setting a password"
+  },
   "login": {
     "message": "Log In"
   },
@@ -1779,6 +1785,21 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "आपका नया मास्टर पासवर्ड पॉलिसी आवश्यकताओं को पूरा नहीं करता है।"
+  },
+  "receiveMarketingEmails": {
+    "message": "Get emails from Bitwarden for announcements, advice, and research opportunities."
+  },
+  "unsubscribe": {
+    "message": "Unsubscribe"
+  },
+  "atAnyTime": {
+    "message": "at any time."
+  },
+  "byContinuingYouAgreeToThe": {
+    "message": "By continuing, you agree to the"
+  },
+  "and": {
+    "message": "and"
   },
   "acceptPolicies": {
     "message": "इस बॉक्स की जांच करके आप निम्नलिखित से सहमत हैं:"

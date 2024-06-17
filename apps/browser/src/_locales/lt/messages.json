@@ -16,6 +16,12 @@
   "createAccount": {
     "message": "Sukurti paskyrą"
   },
+  "setAStrongPassword": {
+    "message": "Nustatyti stiprų slaptažodį"
+  },
+  "finishCreatingYourAccountBySettingAPassword": {
+    "message": "Baigkite kurti paskyrą nustatydami slaptažodį"
+  },
   "login": {
     "message": "Prisijungti"
   },
@@ -1435,7 +1441,7 @@
     "message": "Tapatybė"
   },
   "newItemHeader": {
-    "message": "New $TYPE$",
+    "message": "Naujas $TYPE$",
     "placeholders": {
       "type": {
         "content": "$1",
@@ -1444,7 +1450,7 @@
     }
   },
   "editItemHeader": {
-    "message": "Edit $TYPE$",
+    "message": "Redaguoti $TYPE$",
     "placeholders": {
       "type": {
         "content": "$1",
@@ -1779,6 +1785,21 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "Tavo naujasis pagrindinis slaptažodis neatitinka politikos reikalavimų."
+  },
+  "receiveMarketingEmails": {
+    "message": "Gaukite „Bitwarden“ el. laiškus su skelbimais, patarimais ir tyrimų galimybėmis."
+  },
+  "unsubscribe": {
+    "message": "Atsisakyti prenumeratos"
+  },
+  "atAnyTime": {
+    "message": "bet kuriuo metu."
+  },
+  "byContinuingYouAgreeToThe": {
+    "message": "Tęsiant sutinkate su"
+  },
+  "and": {
+    "message": "ir"
   },
   "acceptPolicies": {
     "message": "Pažymėdami šį laukelį, sutinkate su šiais dalykais:"

@@ -16,6 +16,12 @@
   "createAccount": {
     "message": "അക്കൗണ്ട് സൃഷ്ടിക്കുക"
   },
+  "setAStrongPassword": {
+    "message": "Set a strong password"
+  },
+  "finishCreatingYourAccountBySettingAPassword": {
+    "message": "Finish creating your account by setting a password"
+  },
   "login": {
     "message": "ലോഗിൻ"
   },
@@ -1779,6 +1785,21 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "നിങ്ങളുടെ പുതിയ മാസ്റ്റർ പാസ്‌വേഡ് നയ ആവശ്യകതകൾ നിറവേറ്റുന്നില്ല."
+  },
+  "receiveMarketingEmails": {
+    "message": "Get emails from Bitwarden for announcements, advice, and research opportunities."
+  },
+  "unsubscribe": {
+    "message": "Unsubscribe"
+  },
+  "atAnyTime": {
+    "message": "at any time."
+  },
+  "byContinuingYouAgreeToThe": {
+    "message": "By continuing, you agree to the"
+  },
+  "and": {
+    "message": "and"
   },
   "acceptPolicies": {
     "message": "ഈ ബോക്സ് ചെക്കുചെയ്യുന്നതിലൂടെ നിങ്ങൾ ഇനിപ്പറയുന്നവ അംഗീകരിക്കുന്നു:"

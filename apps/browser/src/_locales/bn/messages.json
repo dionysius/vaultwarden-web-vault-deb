@@ -16,6 +16,12 @@
   "createAccount": {
     "message": "অ্যাকাউন্ট তৈরি করুন"
   },
+  "setAStrongPassword": {
+    "message": "Set a strong password"
+  },
+  "finishCreatingYourAccountBySettingAPassword": {
+    "message": "Finish creating your account by setting a password"
+  },
   "login": {
     "message": "প্রবেশ করুন"
   },
@@ -1779,6 +1785,21 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "আপনার নতুন মূল পাসওয়ার্ড নীতির প্রয়োজনীয়তা পূরণ করে না।"
+  },
+  "receiveMarketingEmails": {
+    "message": "Get emails from Bitwarden for announcements, advice, and research opportunities."
+  },
+  "unsubscribe": {
+    "message": "Unsubscribe"
+  },
+  "atAnyTime": {
+    "message": "at any time."
+  },
+  "byContinuingYouAgreeToThe": {
+    "message": "By continuing, you agree to the"
+  },
+  "and": {
+    "message": "and"
   },
   "acceptPolicies": {
     "message": "এই বাক্সটি টিক করে আপনি নিম্নলিখিতগুলিতে সম্মত হন:"

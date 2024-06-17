@@ -16,6 +16,12 @@
   "createAccount": {
     "message": "Hesab yarat"
   },
+  "setAStrongPassword": {
+    "message": "Güclü bir parol təyin et"
+  },
+  "finishCreatingYourAccountBySettingAPassword": {
+    "message": "Bir parol təyin edərək hesabınızı yaratmağı başa çatdırın"
+  },
   "login": {
     "message": "Giriş et"
   },
@@ -1779,6 +1785,21 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "Yeni ana parolunuz siyasət tələblərini qarşılamır."
+  },
+  "receiveMarketingEmails": {
+    "message": "Elanlar, məsləhətlər və araşdırma fürsətləri üçün Bitwarden-dən e-poçt alın."
+  },
+  "unsubscribe": {
+    "message": "Abunəlikdən çıx"
+  },
+  "atAnyTime": {
+    "message": "istənilən vaxt."
+  },
+  "byContinuingYouAgreeToThe": {
+    "message": "Davam edərək, bunlarla razılaşırsınız"
+  },
+  "and": {
+    "message": "və"
   },
   "acceptPolicies": {
     "message": "Bu qutunu işarələyərək aşağıdakılarla razılaşırsınız:"

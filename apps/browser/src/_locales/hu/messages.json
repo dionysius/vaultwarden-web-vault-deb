@@ -16,6 +16,12 @@
   "createAccount": {
     "message": "Fiók létrehozása"
   },
+  "setAStrongPassword": {
+    "message": "Erős jelszó beállítása"
+  },
+  "finishCreatingYourAccountBySettingAPassword": {
+    "message": "A fiók létrehozásának befejezése jelszó beállításával"
+  },
   "login": {
     "message": "Bejelentkezés"
   },
@@ -1779,6 +1785,21 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "Az új mesterjelszó nem felel meg a szabály követelményeknek."
+  },
+  "receiveMarketingEmails": {
+    "message": "Emaileket kaphatunk a Bitwardentől bejelentésekről, tanácsokról és kutatási lehetőségekről."
+  },
+  "unsubscribe": {
+    "message": "Leiratkozás"
+  },
+  "atAnyTime": {
+    "message": "bármikor."
+  },
+  "byContinuingYouAgreeToThe": {
+    "message": "A folytatással elfogadjuk"
+  },
+  "and": {
+    "message": "és"
   },
   "acceptPolicies": {
     "message": "A doboz bejelölésével elfogadjuk a következőket:"

@@ -16,6 +16,12 @@
   "createAccount": {
     "message": "Opret konto"
   },
+  "setAStrongPassword": {
+    "message": "Indstil en stærk adgangskode"
+  },
+  "finishCreatingYourAccountBySettingAPassword": {
+    "message": "Afslut kontooprettelsen med at indstille en adgangskode"
+  },
   "login": {
     "message": "Log ind"
   },
@@ -1779,6 +1785,21 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "Din nye hovedadgangskode opfylder ikke politikkravene."
+  },
+  "receiveMarketingEmails": {
+    "message": "Get emails from Bitwarden for announcements, advice, and research opportunities."
+  },
+  "unsubscribe": {
+    "message": "Afmeld"
+  },
+  "atAnyTime": {
+    "message": "til enhver tid."
+  },
+  "byContinuingYouAgreeToThe": {
+    "message": "Ved at fortsætte, accepterer du"
+  },
+  "and": {
+    "message": "og"
   },
   "acceptPolicies": {
     "message": "Ved at markere dette felt accepterer du følgende:"

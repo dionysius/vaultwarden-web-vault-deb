@@ -16,6 +16,12 @@
   "createAccount": {
     "message": "Vytvořit účet"
   },
+  "setAStrongPassword": {
+    "message": "Nastavit hlavní heslo"
+  },
+  "finishCreatingYourAccountBySettingAPassword": {
+    "message": "Dokončete vytváření účtu nastavením hesla"
+  },
   "login": {
     "message": "Přihlásit se"
   },
@@ -1779,6 +1785,21 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "Vaše nové hlavní heslo nesplňuje požadavky zásad organizace."
+  },
+  "receiveMarketingEmails": {
+    "message": "Získejte e-maily od Bitwardenu pro oznámení, poradenství a výzkumné příležitosti."
+  },
+  "unsubscribe": {
+    "message": "Odhlásit odběr"
+  },
+  "atAnyTime": {
+    "message": "kdykoli."
+  },
+  "byContinuingYouAgreeToThe": {
+    "message": "Pokračováním souhlasíte s"
+  },
+  "and": {
+    "message": "a"
   },
   "acceptPolicies": {
     "message": "Zaškrtnutím tohoto políčka souhlasíte s následujícím:"

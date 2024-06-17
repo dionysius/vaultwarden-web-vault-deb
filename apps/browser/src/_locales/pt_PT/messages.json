@@ -16,6 +16,12 @@
   "createAccount": {
     "message": "Criar conta"
   },
+  "setAStrongPassword": {
+    "message": "Defina uma palavra-passe forte"
+  },
+  "finishCreatingYourAccountBySettingAPassword": {
+    "message": "Termine a criação da sua conta definindo uma palavra-passe"
+  },
   "login": {
     "message": "Iniciar sessão"
   },
@@ -1779,6 +1785,21 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "A sua nova palavra-passe mestra não cumpre os requisitos da política."
+  },
+  "receiveMarketingEmails": {
+    "message": "Receba e-mails do Bitwarden com anúncios, conselhos e oportunidades de investigação."
+  },
+  "unsubscribe": {
+    "message": "Anular subscrição"
+  },
+  "atAnyTime": {
+    "message": "a qualquer altura."
+  },
+  "byContinuingYouAgreeToThe": {
+    "message": "Ao continuar, concorda com os"
+  },
+  "and": {
+    "message": "e"
   },
   "acceptPolicies": {
     "message": "Ao marcar esta caixa concorda com o seguinte:"

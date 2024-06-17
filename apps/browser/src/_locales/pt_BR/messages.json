@@ -16,6 +16,12 @@
   "createAccount": {
     "message": "Criar Conta"
   },
+  "setAStrongPassword": {
+    "message": "Defina uma senha forte"
+  },
+  "finishCreatingYourAccountBySettingAPassword": {
+    "message": "Termine de criar a sua conta definindo uma senha"
+  },
   "login": {
     "message": "Iniciar Sessão"
   },
@@ -393,10 +399,10 @@
     "message": "Desfavoritar"
   },
   "itemAddedToFavorites": {
-    "message": "Item added to favorites"
+    "message": "Item adicionado aos favoritos"
   },
   "itemRemovedFromFavorites": {
-    "message": "Item removed from favorites"
+    "message": "Item removido dos favoritos"
   },
   "notes": {
     "message": "Notas"
@@ -836,19 +842,19 @@
     "message": "Esta senha será usada para exportar e importar este arquivo"
   },
   "accountRestrictedOptionDescription": {
-    "message": "Use your account encryption key, derived from your account's username and Master Password, to encrypt the export and restrict import to only the current Bitwarden account."
+    "message": "Use sua chave criptográfica da conta, derivada do nome de usuário e Senha Mestra da sua conta, para criptografar a exportação e restringir importação para apenas a conta atual do Bitwarden."
   },
   "passwordProtectedOptionDescription": {
-    "message": "Set a file password to encrypt the export and import it to any Bitwarden account using the password for decryption."
+    "message": "Defina uma senha de arquivo para criptografar a exportação e importá-la para qualquer conta do Bitwarden usando a senha para descriptografia."
   },
   "exportTypeHeading": {
-    "message": "Export type"
+    "message": "Tipo da exportação"
   },
   "accountRestricted": {
-    "message": "Account restricted"
+    "message": "Conta restrita"
   },
   "filePasswordAndConfirmFilePasswordDoNotMatch": {
-    "message": "“File password”  and “Confirm file password“ do not match."
+    "message": "\"Senha do arquivo\" e \"Confirmação de senha\" não correspondem."
   },
   "warning": {
     "message": "AVISO",
@@ -1123,13 +1129,13 @@
     "message": "Especifique a URL de base da sua instalação local do Bitwarden."
   },
   "selfHostedBaseUrlHint": {
-    "message": "Specify the base URL of your on-premises hosted Bitwarden installation. Example: https://bitwarden.company.com"
+    "message": "Especifique a URL de base da sua instalação local do Bitwarden. Exemplo: https://bitwarden.company.com"
   },
   "selfHostedCustomEnvHeader": {
-    "message": "For advanced configuration, you can specify the base URL of each service independently."
+    "message": "Para usuários avançados. Você pode especificar a URL de base de cada serviço independentemente."
   },
   "selfHostedEnvFormInvalid": {
-    "message": "You must add either the base Server URL or at least one custom environment."
+    "message": "Você deve adicionar um URL do servidor de base ou pelo menos um ambiente personalizado."
   },
   "customEnvironment": {
     "message": "Ambiente Personalizado"
@@ -1435,7 +1441,7 @@
     "message": "Identidade"
   },
   "newItemHeader": {
-    "message": "New $TYPE$",
+    "message": "Nova $TYPE$",
     "placeholders": {
       "type": {
         "content": "$1",
@@ -1444,7 +1450,7 @@
     }
   },
   "editItemHeader": {
-    "message": "Edit $TYPE$",
+    "message": "Editar $TYPE$",
     "placeholders": {
       "type": {
         "content": "$1",
@@ -1462,7 +1468,7 @@
     "message": "Coleções"
   },
   "nCollections": {
-    "message": "$COUNT$ collections",
+    "message": "Coleções $COUNT$",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1700,7 +1706,7 @@
     "message": "Autopreencher e Salvar"
   },
   "fillAndSave": {
-    "message": "Fill and save"
+    "message": "Preencher e salvar"
   },
   "autoFillSuccessAndSavedUri": {
     "message": "Item Auto-Preenchido e URI Salvo"
@@ -1780,6 +1786,21 @@
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "A sua nova senha mestra não cumpre aos requisitos da política."
   },
+  "receiveMarketingEmails": {
+    "message": "Obtenha e-mails do Bitwarden para anúncios, conselhos e oportunidades de pesquisa."
+  },
+  "unsubscribe": {
+    "message": "Cancelar subscrição"
+  },
+  "atAnyTime": {
+    "message": "a qualquer momento."
+  },
+  "byContinuingYouAgreeToThe": {
+    "message": "Ao continuar, você concorda com os"
+  },
+  "and": {
+    "message": "e"
+  },
   "acceptPolicies": {
     "message": "Ao marcar esta caixa, você concorda com o seguinte:"
   },
@@ -1799,10 +1820,10 @@
     "message": "Ok"
   },
   "errorRefreshingAccessToken": {
-    "message": "Access Token Refresh Error"
+    "message": "Erro ao Atualizar Token"
   },
   "errorRefreshingAccessTokenDesc": {
-    "message": "No refresh token or API keys found. Please try logging out and logging back in."
+    "message": "Nenhum token de atualização ou chave de API foi encontrado. Tente sair e entrar novamente."
   },
   "desktopSyncVerificationTitle": {
     "message": "Verificação de sincronização do Desktop"
@@ -2273,10 +2294,10 @@
     }
   },
   "exportingOrganizationVaultTitle": {
-    "message": "Exporting organization vault"
+    "message": "Exportando cofre da organização"
   },
   "exportingOrganizationVaultDesc": {
-    "message": "Only the organization vault associated with $ORGANIZATION$ will be exported. Items in individual vaults or other organizations will not be included.",
+    "message": "Apenas o cofre da organização associado com $ORGANIZATION$ será exportado. Itens do cofre pessoal e itens de outras organizações não serão incluídos.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -3324,7 +3345,7 @@
     "message": "Limpar filtros ou tentar outro termo de pesquisa"
   },
   "copyInfoTitle": {
-    "message": "Copy info - $ITEMNAME$",
+    "message": "Copiar informação - $ITEMNAME$",
     "description": "Title for a button that opens a menu with options to copy information from an item.",
     "placeholders": {
       "itemname": {
@@ -3334,7 +3355,7 @@
     }
   },
   "copyNoteTitle": {
-    "message": "Copy Note - $ITEMNAME$",
+    "message": "Copiar Nota - $ITEMNAME$",
     "description": "Title for a button copies a note to the clipboard.",
     "placeholders": {
       "itemname": {
@@ -3344,7 +3365,7 @@
     }
   },
   "moreOptionsLabel": {
-    "message": "More options, $ITEMNAME$",
+    "message": "Mais opções, $ITEMNAME$",
     "description": "Aria label for a button that opens a menu with more options for an item.",
     "placeholders": {
       "itemname": {
@@ -3354,7 +3375,7 @@
     }
   },
   "moreOptionsTitle": {
-    "message": "More options - $ITEMNAME$",
+    "message": "Mais opções - $ITEMNAME$",
     "description": "Title for a button that opens a menu with more options for an item.",
     "placeholders": {
       "itemname": {
@@ -3364,7 +3385,7 @@
     }
   },
   "viewItemTitle": {
-    "message": "View item - $ITEMNAME$",
+    "message": "Visualizar item - $ITEMNAME$",
     "description": "Title for a link that opens a view for an item.",
     "placeholders": {
       "itemname": {
@@ -3374,7 +3395,7 @@
     }
   },
   "autofillTitle": {
-    "message": "Auto-fill - $ITEMNAME$",
+    "message": "Auto-preenchimento - $ITEMNAME$",
     "description": "Title for a button that auto-fills a login item.",
     "placeholders": {
       "itemname": {
@@ -3384,19 +3405,19 @@
     }
   },
   "noValuesToCopy": {
-    "message": "No values to copy"
+    "message": "Não há valores para copiar"
   },
   "assignCollections": {
-    "message": "Assign collections"
+    "message": "Aplicar coleção"
   },
   "copyEmail": {
-    "message": "Copy email"
+    "message": "Copiar e-mail"
   },
   "copyPhone": {
-    "message": "Copy phone"
+    "message": "Copiar telefone"
   },
   "copyAddress": {
-    "message": "Copy address"
+    "message": "Copiar endereço"
   },
   "adminConsole": {
     "message": "Painel de administração"
@@ -3450,12 +3471,12 @@
     }
   },
   "itemsWithNoFolder": {
-    "message": "Items with no folder"
+    "message": "Itens sem pasta"
   },
   "organizationIsDeactivated": {
-    "message": "Organization is deactivated"
+    "message": "A organização está desativada"
   },
   "contactYourOrgAdmin": {
-    "message": "Items in deactivated organizations cannot be accessed. Contact your organization owner for assistance."
+    "message": "Itens em organizações desativadas não podem ser acessados. Entre em contato com o proprietário da sua organização para obter assistência."
   }
 }

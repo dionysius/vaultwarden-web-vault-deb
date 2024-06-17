@@ -16,6 +16,12 @@
   "createAccount": {
     "message": "Створити обліковий запис"
   },
+  "setAStrongPassword": {
+    "message": "Встановіть надійний пароль"
+  },
+  "finishCreatingYourAccountBySettingAPassword": {
+    "message": "Завершіть створення облікового запису, встановивши пароль"
+  },
   "login": {
     "message": "Увійти"
   },
@@ -1779,6 +1785,21 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "Ваш новий головний пароль не задовольняє вимоги політики."
+  },
+  "receiveMarketingEmails": {
+    "message": "Отримуйте електронні листи від Bitwarden з оголошеннями, порадами та інформацією про нові можливості."
+  },
+  "unsubscribe": {
+    "message": "Відписатися"
+  },
+  "atAnyTime": {
+    "message": "можна будь-коли."
+  },
+  "byContinuingYouAgreeToThe": {
+    "message": "Продовжуючи, ви погоджуєтеся з"
+  },
+  "and": {
+    "message": "і"
   },
   "acceptPolicies": {
     "message": "Позначивши цей прапорець, ви погоджуєтеся з:"

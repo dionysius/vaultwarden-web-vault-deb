@@ -16,6 +16,12 @@
   "createAccount": {
     "message": "Создать аккаунт"
   },
+  "setAStrongPassword": {
+    "message": "Задайте надежный пароль"
+  },
+  "finishCreatingYourAccountBySettingAPassword": {
+    "message": "Завершите создание аккаунта, задав пароль"
+  },
   "login": {
     "message": "Войти"
   },
@@ -1779,6 +1785,21 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "Ваш новый мастер-пароль не соответствует требованиям политики."
+  },
+  "receiveMarketingEmails": {
+    "message": "Получайте электронные письма от Bitwarden с анонсами, советами и возможностями для исследований."
+  },
+  "unsubscribe": {
+    "message": "Отписаться"
+  },
+  "atAnyTime": {
+    "message": "в любое время."
+  },
+  "byContinuingYouAgreeToThe": {
+    "message": "Продолжая, вы соглашаетесь с"
+  },
+  "and": {
+    "message": "и"
   },
   "acceptPolicies": {
     "message": "Отметив этот флажок, вы соглашаетесь со следующим:"

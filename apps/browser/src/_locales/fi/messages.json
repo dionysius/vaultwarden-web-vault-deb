@@ -16,6 +16,12 @@
   "createAccount": {
     "message": "Luo tili"
   },
+  "setAStrongPassword": {
+    "message": "Aseta vahva salasana"
+  },
+  "finishCreatingYourAccountBySettingAPassword": {
+    "message": "Viimeistele tilin luonti asettamalla salasana"
+  },
   "login": {
     "message": "Kirjaudu"
   },
@@ -1780,6 +1786,21 @@
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "Uusi pääsalasanasi ei täytä käytännön määrittämiä vaatimuksia."
   },
+  "receiveMarketingEmails": {
+    "message": "Vastaanota Bitwardenilta uutiskirjeitä julkaisuista, tukiresursseista ja tutkimusmahdollisuuksista."
+  },
+  "unsubscribe": {
+    "message": "Lopeta tilaus"
+  },
+  "atAnyTime": {
+    "message": "milloin tahansa."
+  },
+  "byContinuingYouAgreeToThe": {
+    "message": "Jatkaessasi hyväksyt"
+  },
+  "and": {
+    "message": "ja"
+  },
   "acceptPolicies": {
     "message": "Valitsemalla tämän hyväksyt seuraavat:"
   },
@@ -3374,7 +3395,7 @@
     }
   },
   "autofillTitle": {
-    "message": "Auto-fill - $ITEMNAME$",
+    "message": "Automaattitäyttö - $ITEMNAME$",
     "description": "Title for a button that auto-fills a login item.",
     "placeholders": {
       "itemname": {
@@ -3384,7 +3405,7 @@
     }
   },
   "noValuesToCopy": {
-    "message": "No values to copy"
+    "message": "Ei kopioitavia arvoja"
   },
   "assignCollections": {
     "message": "Määritä kokoelmat"

@@ -16,6 +16,12 @@
   "createAccount": {
     "message": "Креирај налог"
   },
+  "setAStrongPassword": {
+    "message": "Поставите јаку лозинку"
+  },
+  "finishCreatingYourAccountBySettingAPassword": {
+    "message": "Завршите креирање налога постављањем лозинке"
+  },
   "login": {
     "message": "Пријавите се"
   },
@@ -393,10 +399,10 @@
     "message": "Скини омиљено"
   },
   "itemAddedToFavorites": {
-    "message": "Item added to favorites"
+    "message": "Ставка је додата у фаворите"
   },
   "itemRemovedFromFavorites": {
-    "message": "Item removed from favorites"
+    "message": "Ставка је уклоњена из фаворите"
   },
   "notes": {
     "message": "Белешке"
@@ -1444,7 +1450,7 @@
     }
   },
   "editItemHeader": {
-    "message": "Edit $TYPE$",
+    "message": "Уреди $TYPE$",
     "placeholders": {
       "type": {
         "content": "$1",
@@ -1779,6 +1785,21 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "Ваша нова главна лозинка не испуњава захтеве смерница."
+  },
+  "receiveMarketingEmails": {
+    "message": "Добијајте е-пошту од Bitwarden-а за најаве, савете и могућности истраживања."
+  },
+  "unsubscribe": {
+    "message": "Одјави се"
+  },
+  "atAnyTime": {
+    "message": "било када."
+  },
+  "byContinuingYouAgreeToThe": {
+    "message": "Ако наставите, слажете се са"
+  },
+  "and": {
+    "message": "и"
   },
   "acceptPolicies": {
     "message": "Означавањем овог поља пристајете на следеће:"
@@ -3374,7 +3395,7 @@
     }
   },
   "autofillTitle": {
-    "message": "Auto-fill - $ITEMNAME$",
+    "message": "Ауто-пуњење - $ITEMNAME$",
     "description": "Title for a button that auto-fills a login item.",
     "placeholders": {
       "itemname": {
@@ -3384,7 +3405,7 @@
     }
   },
   "noValuesToCopy": {
-    "message": "No values to copy"
+    "message": "Нема вредности за копирање"
   },
   "assignCollections": {
     "message": "Додели колекције"
