@@ -42,6 +42,11 @@ export class RecoverTwoFactorComponent {
   }
 
   submit = async () => {
+    this.formGroup.markAllAsTouched();
+    if (this.formGroup.invalid) {
+      return;
+    }
+
     const request = new TwoFactorRecoveryRequest();
     request.recoveryCode = this.recoveryCode.replace(/\s/g, "").toLowerCase();
     request.email = this.email.trim().toLowerCase();
