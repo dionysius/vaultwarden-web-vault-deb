@@ -499,6 +499,12 @@
   "createAccount": {
     "message": "创建账户"
   },
+  "setAStrongPassword": {
+    "message": "设置强密码"
+  },
+  "finishCreatingYourAccountBySettingAPassword": {
+    "message": "设置密码后就能完成账户创建"
+  },
   "logIn": {
     "message": "登录"
   },
@@ -1658,6 +1664,21 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "您的新主密码不符合策略要求。"
+  },
+  "receiveMarketingEmails": {
+    "message": "接收来自 Bitwarden 的电子邮件，以获取公告、建议和调研。"
+  },
+  "unsubscribe": {
+    "message": "取消订阅"
+  },
+  "atAnyTime": {
+    "message": "随时"
+  },
+  "byContinuingYouAgreeToThe": {
+    "message": "若继续，代表您同意"
+  },
+  "and": {
+    "message": "以及"
   },
   "acceptPolicies": {
     "message": "选中此框表示您同意："

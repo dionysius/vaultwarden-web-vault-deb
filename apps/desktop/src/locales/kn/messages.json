@@ -499,6 +499,12 @@
   "createAccount": {
     "message": "ಖಾತೆ ತೆರೆ"
   },
+  "setAStrongPassword": {
+    "message": "Set a strong password"
+  },
+  "finishCreatingYourAccountBySettingAPassword": {
+    "message": "Finish creating your account by setting a password"
+  },
   "logIn": {
     "message": "ಲಾಗಿನ್"
   },
@@ -1658,6 +1664,21 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "ನಿಮ್ಮ ಹೊಸ ಮಾಸ್ಟರ್ ಪಾಸ್‌ವರ್ಡ್ ನೀತಿಯ ಅವಶ್ಯಕತೆಗಳನ್ನು ಪೂರೈಸುವುದಿಲ್ಲ."
+  },
+  "receiveMarketingEmails": {
+    "message": "Get emails from Bitwarden for announcements, advice, and research opportunities."
+  },
+  "unsubscribe": {
+    "message": "Unsubscribe"
+  },
+  "atAnyTime": {
+    "message": "at any time."
+  },
+  "byContinuingYouAgreeToThe": {
+    "message": "By continuing, you agree to the"
+  },
+  "and": {
+    "message": "and"
   },
   "acceptPolicies": {
     "message": "ಈ ಪೆಟ್ಟಿಗೆಯನ್ನು ಪರಿಶೀಲಿಸುವ ಮೂಲಕ ನೀವು ಈ ಕೆಳಗಿನವುಗಳನ್ನು ಒಪ್ಪುತ್ತೀರಿ:"

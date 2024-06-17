@@ -499,6 +499,12 @@
   "createAccount": {
     "message": "Hesap oluştur"
   },
+  "setAStrongPassword": {
+    "message": "Güçlü bir parola belirleyin"
+  },
+  "finishCreatingYourAccountBySettingAPassword": {
+    "message": "Parolanızı belirleyerek hesabınızı oluşturmayı tamamlayın"
+  },
   "logIn": {
     "message": "Giriş yap"
   },
@@ -1658,6 +1664,21 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "Yeni ana parolanız ilke gereksinimlerini karşılamıyor."
+  },
+  "receiveMarketingEmails": {
+    "message": "Bitwarden'dan duyurular, öneriler ve araştırmalarla ilgili e-postalar alın."
+  },
+  "unsubscribe": {
+    "message": "İstediğiniz zaman"
+  },
+  "atAnyTime": {
+    "message": "aboneliğinizi iptal edebilirsiniz."
+  },
+  "byContinuingYouAgreeToThe": {
+    "message": "Devam ederek şunları kabul etmiş olursunuz:"
+  },
+  "and": {
+    "message": "ve"
   },
   "acceptPolicies": {
     "message": "Bu kutuyu işaretleyerek aşağıdakileri kabul etmiş olursunuz:"

@@ -499,6 +499,12 @@
   "createAccount": {
     "message": "Konto erstellen"
   },
+  "setAStrongPassword": {
+    "message": "Ein starkes Passwort festlegen"
+  },
+  "finishCreatingYourAccountBySettingAPassword": {
+    "message": "Schließe die Erstellung deines Kontos ab, indem du ein Passwort festlegst"
+  },
   "logIn": {
     "message": "Anmelden"
   },
@@ -1658,6 +1664,21 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "Dein neues Masterpasswort entspricht nicht den Anforderungen der Richtlinie."
+  },
+  "receiveMarketingEmails": {
+    "message": "Erhalte E-Mails von Bitwarden für Ankündigungen, Ratschläge und Forschungsmöglichkeiten."
+  },
+  "unsubscribe": {
+    "message": "Deabonnieren"
+  },
+  "atAnyTime": {
+    "message": "at any time."
+  },
+  "byContinuingYouAgreeToThe": {
+    "message": "By continuing, you agree to the"
+  },
+  "and": {
+    "message": "and"
   },
   "acceptPolicies": {
     "message": "Durch Anwählen dieses Kästchens erklärst du dich mit folgendem einverstanden:"

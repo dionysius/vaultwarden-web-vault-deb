@@ -499,6 +499,12 @@
   "createAccount": {
     "message": "アカウントの作成"
   },
+  "setAStrongPassword": {
+    "message": "強力なパスワードを設定する"
+  },
+  "finishCreatingYourAccountBySettingAPassword": {
+    "message": "パスワードを設定してアカウントの作成を完了してください"
+  },
   "logIn": {
     "message": "ログイン"
   },
@@ -1658,6 +1664,21 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "新しいマスターパスワードは最低要件を満たしていません。"
+  },
+  "receiveMarketingEmails": {
+    "message": "Bitwarden からのお知らせ、アドバイス、アンケート調査等のメールを受信します。"
+  },
+  "unsubscribe": {
+    "message": "配信停止"
+  },
+  "atAnyTime": {
+    "message": "はいつでもできます。"
+  },
+  "byContinuingYouAgreeToThe": {
+    "message": "続行すると以下に同意したものとみなします："
+  },
+  "and": {
+    "message": "と"
   },
   "acceptPolicies": {
     "message": "以下に同意しチェックします:"

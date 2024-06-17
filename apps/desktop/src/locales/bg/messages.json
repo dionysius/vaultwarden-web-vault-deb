@@ -499,6 +499,12 @@
   "createAccount": {
     "message": "Създаване на абонамент"
   },
+  "setAStrongPassword": {
+    "message": "Използвайте сложна парола"
+  },
+  "finishCreatingYourAccountBySettingAPassword": {
+    "message": "Завършете регистрацията си като зададете парола"
+  },
   "logIn": {
     "message": "Вписване"
   },
@@ -1658,6 +1664,21 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "Паролата ви не отговаря на политиките."
+  },
+  "receiveMarketingEmails": {
+    "message": "Получавайте е-писма от Битоурден за новини, съвети и възможности за проучвания."
+  },
+  "unsubscribe": {
+    "message": "Отписване"
+  },
+  "atAnyTime": {
+    "message": "по всяко време."
+  },
+  "byContinuingYouAgreeToThe": {
+    "message": "Ако продължите, Вие се съгласявате с"
+  },
+  "and": {
+    "message": "и"
   },
   "acceptPolicies": {
     "message": "Чрез тази отметка вие се съгласявате със следното:"

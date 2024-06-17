@@ -499,6 +499,12 @@
   "createAccount": {
     "message": "Креирај налог"
   },
+  "setAStrongPassword": {
+    "message": "Поставите јаку лозинку"
+  },
+  "finishCreatingYourAccountBySettingAPassword": {
+    "message": "Завршите креирање налога постављањем лозинке"
+  },
   "logIn": {
     "message": "Пријавите се"
   },
@@ -1658,6 +1664,21 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "Ваша нова главна лозинка не испуњава захтеве полисе."
+  },
+  "receiveMarketingEmails": {
+    "message": "Добијајте е-пошту од Bitwarden-а за најаве, савете и могућности истраживања."
+  },
+  "unsubscribe": {
+    "message": "Одјави се"
+  },
+  "atAnyTime": {
+    "message": "било када."
+  },
+  "byContinuingYouAgreeToThe": {
+    "message": "Ако наставите, слажете се са"
+  },
+  "and": {
+    "message": "и"
   },
   "acceptPolicies": {
     "message": "Означавањем овог поља пристајете на следеће:"

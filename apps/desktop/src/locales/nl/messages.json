@@ -499,6 +499,12 @@
   "createAccount": {
     "message": "Account aanmaken"
   },
+  "setAStrongPassword": {
+    "message": "Sterk wachtwoord instellen"
+  },
+  "finishCreatingYourAccountBySettingAPassword": {
+    "message": "Rond het aanmaken van je account af met het instellen van een wachtwoord"
+  },
   "logIn": {
     "message": "Inloggen"
   },
@@ -1658,6 +1664,21 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "Je nieuwe hoofdwachtwoord voldoet niet aan de beleidseisen."
+  },
+  "receiveMarketingEmails": {
+    "message": "Ontvang e-mailberichten van Bitwarden voor aankondigingen, advies en onderzoeksmogelijkheden."
+  },
+  "unsubscribe": {
+    "message": "Afmelden"
+  },
+  "atAnyTime": {
+    "message": "op ieder moment."
+  },
+  "byContinuingYouAgreeToThe": {
+    "message": "Door verder te gaan, ga je akkoord met de"
+  },
+  "and": {
+    "message": "en"
   },
   "acceptPolicies": {
     "message": "Door dit vakje aan te vinken, ga je akkoord met het volgende:"

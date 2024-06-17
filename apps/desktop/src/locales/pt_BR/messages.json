@@ -499,6 +499,12 @@
   "createAccount": {
     "message": "Criar Conta"
   },
+  "setAStrongPassword": {
+    "message": "Defina uma senha forte"
+  },
+  "finishCreatingYourAccountBySettingAPassword": {
+    "message": "Termine de criar a sua conta definindo uma senha"
+  },
   "logIn": {
     "message": "Iniciar sessão"
   },
@@ -696,13 +702,13 @@
     "message": "Especifique a URL de base da sua instalação local do Bitwarden."
   },
   "selfHostedBaseUrlHint": {
-    "message": "Specify the base URL of your on-premises hosted Bitwarden installation. Example: https://bitwarden.company.com"
+    "message": "Especifique a URL de base da sua instalação local do Bitwarden. Exemplo: https://bitwarden.company.com"
   },
   "selfHostedCustomEnvHeader": {
-    "message": "For advanced configuration, you can specify the base URL of each service independently."
+    "message": "Para usuários avançados. Você pode especificar a URL de base de cada serviço independentemente."
   },
   "selfHostedEnvFormInvalid": {
-    "message": "You must add either the base Server URL or at least one custom environment."
+    "message": "Você deve adicionar um URL do servidor de base ou pelo menos um ambiente personalizado."
   },
   "customEnvironment": {
     "message": "Ambiente Personalizado"
@@ -753,7 +759,7 @@
     "message": "Sessão encerrada"
   },
   "loggedOutDesc": {
-    "message": "You have been logged out of your account."
+    "message": "Você foi desconectado de sua conta."
   },
   "loginExpired": {
     "message": "A sua sessão expirou."
@@ -1225,10 +1231,10 @@
     }
   },
   "errorRefreshingAccessToken": {
-    "message": "Access Token Refresh Error"
+    "message": "Erro ao Atualizar Token"
   },
   "errorRefreshingAccessTokenDesc": {
-    "message": "No refresh token or API keys found. Please try logging out and logging back in."
+    "message": "Nenhum token de atualização ou chave de API foi encontrado. Tente sair e entrar novamente."
   },
   "help": {
     "message": "Ajuda"
@@ -1318,7 +1324,7 @@
     "description": "ex. Date this password was updated"
   },
   "exportFrom": {
-    "message": "Export from"
+    "message": "Exportar de"
   },
   "exportVault": {
     "message": "Exportar cofre"
@@ -1327,31 +1333,31 @@
     "message": "Formato do arquivo"
   },
   "fileEncryptedExportWarningDesc": {
-    "message": "This file export will be password protected and require the file password to decrypt."
+    "message": "Esta arquivo de exportação será protegido por senha e precisará da mesma para ser descriptografado."
   },
   "filePassword": {
-    "message": "File password"
+    "message": "Senha do arquivo"
   },
   "exportPasswordDescription": {
-    "message": "This password will be used to export and import this file"
+    "message": "Esta senha será usada para exportar e importar este arquivo"
   },
   "accountRestrictedOptionDescription": {
-    "message": "Use your account encryption key, derived from your account's username and Master Password, to encrypt the export and restrict import to only the current Bitwarden account."
+    "message": "Use sua chave criptográfica da conta, derivada do nome de usuário e Senha Mestra da sua conta, para criptografar a exportação e restringir importação para apenas a conta atual do Bitwarden."
   },
   "passwordProtected": {
-    "message": "Password protected"
+    "message": "Protegido por senha"
   },
   "passwordProtectedOptionDescription": {
-    "message": "Set a file password to encrypt the export and import it to any Bitwarden account using the password for decryption."
+    "message": "Defina uma senha de arquivo para criptografar a exportação e importá-la para qualquer conta do Bitwarden usando a senha para descriptografia."
   },
   "exportTypeHeading": {
-    "message": "Export type"
+    "message": "Tipo da exportação"
   },
   "accountRestricted": {
-    "message": "Account restricted"
+    "message": "Conta restrita"
   },
   "filePasswordAndConfirmFilePasswordDoNotMatch": {
-    "message": "“File password”  and “Confirm file password“ do not match."
+    "message": "\"Senha do arquivo\" e \"Confirmação de senha\" não correspondem."
   },
   "hCaptchaUrl": {
     "message": "hCaptcha Url",
@@ -1658,6 +1664,21 @@
   },
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "A sua nova senha mestra não cumpre aos requisitos da política."
+  },
+  "receiveMarketingEmails": {
+    "message": "Obtenha e-mails do Bitwarden para anúncios, conselhos e oportunidades de pesquisa."
+  },
+  "unsubscribe": {
+    "message": "Cancelar subscrição"
+  },
+  "atAnyTime": {
+    "message": "a qualquer momento."
+  },
+  "byContinuingYouAgreeToThe": {
+    "message": "Ao continuar, você concorda com os"
+  },
+  "and": {
+    "message": "e"
   },
   "acceptPolicies": {
     "message": "Ao marcar esta caixa, você concorda com o seguinte:"
@@ -2120,10 +2141,10 @@
     }
   },
   "exportingOrganizationVaultTitle": {
-    "message": "Exporting organization vault"
+    "message": "Exportando cofre da organização"
   },
   "exportingOrganizationVaultDesc": {
-    "message": "Only the organization vault associated with $ORGANIZATION$ will be exported. Items in individual vaults or other organizations will not be included.",
+    "message": "Apenas o cofre da organização associado com $ORGANIZATION$ será exportado. Itens do cofre pessoal e itens de outras organizações não serão incluídos.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -2487,10 +2508,10 @@
     "message": "Importante:"
   },
   "accessTokenUnableToBeDecrypted": {
-    "message": "You have been logged out because your access token could not be decrypted. Please log in again to resolve this issue."
+    "message": "Você foi desconectado porque seu token de acesso não pôde ser descriptografado. Por favor, faça o login novamente para resolver esse problema."
   },
   "refreshTokenSecureStorageRetrievalFailure": {
-    "message": "You have been logged out because your refresh token could not be retrieved. Please log in again to resolve this issue."
+    "message": "Você foi desconectado porque seu token de atualização não pôde ser recuperado. Por favor, faça o login novamente para resolver esse problema."
   },
   "masterPasswordHint": {
     "message": "A sua senha mestra não pode ser recuperada se você esquecê-la!"
