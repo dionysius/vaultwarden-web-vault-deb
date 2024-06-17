@@ -582,13 +582,13 @@
     "message": "Nível de acesso"
   },
   "accessing": {
-    "message": "Accessing"
+    "message": "Acessando"
   },
   "loggedOut": {
     "message": "Sessão encerrada"
   },
   "loggedOutDesc": {
-    "message": "You have been logged out of your account."
+    "message": "Você foi desconectado de sua conta."
   },
   "loginExpired": {
     "message": "A sua sessão expirou."
@@ -713,6 +713,12 @@
   "createAccount": {
     "message": "Criar conta"
   },
+  "setAStrongPassword": {
+    "message": "Defina uma senha forte"
+  },
+  "finishCreatingYourAccountBySettingAPassword": {
+    "message": "Termine de criar a sua conta definindo uma senha"
+  },
   "newAroundHere": {
     "message": "Novo por aqui?"
   },
@@ -723,7 +729,7 @@
     "message": "Iniciar sessão"
   },
   "verifyIdentity": {
-    "message": "Verify your Identity"
+    "message": "Verifique sua identidade"
   },
   "logInInitiated": {
     "message": "Login iniciado"
@@ -1057,10 +1063,10 @@
     "message": "Copiar URL"
   },
   "errorRefreshingAccessToken": {
-    "message": "Access Token Refresh Error"
+    "message": "Erro ao Atualizar Token"
   },
   "errorRefreshingAccessTokenDesc": {
-    "message": "No refresh token or API keys found. Please try logging out and logging back in."
+    "message": "Nenhum token de atualização ou chave de API foi encontrado. Tente sair e entrar novamente."
   },
   "warning": {
     "message": "Aviso"
@@ -3724,6 +3730,21 @@
   "nothingSelected": {
     "message": "Você selecionou nada."
   },
+  "receiveMarketingEmails": {
+    "message": "Obtenha e-mails do Bitwarden para anúncios, conselhos e oportunidades de pesquisa."
+  },
+  "unsubscribe": {
+    "message": "Cancelar subscrição"
+  },
+  "atAnyTime": {
+    "message": "a qualquer momento."
+  },
+  "byContinuingYouAgreeToThe": {
+    "message": "Ao continuar, você concorda com os"
+  },
+  "and": {
+    "message": "e"
+  },
   "acceptPolicies": {
     "message": "Ao marcar esta caixa, você concorda com o seguinte:"
   },
@@ -5584,37 +5605,37 @@
     "message": "Renovar o Token de Sincronização de Cobrança invalidará o token anterior."
   },
   "selfHostedServer": {
-    "message": "self-hosted"
+    "message": "auto-hospedado"
   },
   "customEnvironment": {
-    "message": "Custom environment"
+    "message": "Ambiente personalizado"
   },
   "selfHostedBaseUrlHint": {
-    "message": "Specify the base URL of your on-premises hosted Bitwarden installation. Example: https://bitwarden.company.com"
+    "message": "Especifique a URL de base da sua instalação local do Bitwarden. Exemplo: https://bitwarden.company.com"
   },
   "selfHostedCustomEnvHeader": {
-    "message": "For advanced configuration, you can specify the base URL of each service independently."
+    "message": "Para usuários avançados. Você pode especificar a URL de base de cada serviço independentemente."
   },
   "selfHostedEnvFormInvalid": {
-    "message": "You must add either the base Server URL or at least one custom environment."
+    "message": "Você deve adicionar um URL do servidor de base ou pelo menos um ambiente personalizado."
   },
   "apiUrl": {
-    "message": "API server URL"
+    "message": "URL do servidor API"
   },
   "webVaultUrl": {
-    "message": "Web vault server URL"
+    "message": "URL do servidor do Cofre Web"
   },
   "identityUrl": {
-    "message": "Identity server URL"
+    "message": "URL do servidor de identidade"
   },
   "notificationsUrl": {
-    "message": "Notifications server URL"
+    "message": "URL do servidor notificações"
   },
   "iconsUrl": {
-    "message": "Icons server URL"
+    "message": "URL do Servidor de Ícones"
   },
   "environmentSaved": {
-    "message": "Environment URLs saved"
+    "message": "URLs para ambiente salvo"
   },
   "selfHostingTitle": {
     "message": "Auto-hospedado"
@@ -8159,11 +8180,17 @@
   "setUpGithubActions": {
     "message": "Configurar ações do Github"
   },
+  "setUpKubernetes": {
+    "message": "Set up Kubernetes"
+  },
   "setUpGitlabCICD": {
     "message": "Configurar GitLab CI/CD"
   },
   "setUpAnsible": {
     "message": "Configurar Ansible"
+  },
+  "rustSDKRepo": {
+    "message": "View Rust repository"
   },
   "cSharpSDKRepo": {
     "message": "Visualizar repositório C#"
@@ -8311,10 +8338,10 @@
     "message": "Fique à frente das vulnerabilidades de segurança atualizando para um plano pago para um monitoramento melhorado."
   },
   "approveAllRequests": {
-    "message": "Approve all requests"
+    "message": "Aprovar todas as solicitações"
   },
   "allLoginRequestsApproved": {
-    "message": "All login requests approved"
+    "message": "Todas as solicitações de login aprovadas"
   },
   "payPal": {
     "message": "PayPal"
@@ -8323,22 +8350,32 @@
     "message": "Bitcoin"
   },
   "updatedTaxInformation": {
-    "message": "Updated tax information"
+    "message": "Informações fiscais atualizadas"
   },
   "unverified": {
-    "message": "Unverified"
+    "message": "Não verificado"
   },
   "verified": {
-    "message": "Verified"
+    "message": "Verificado"
   },
   "viewSecret": {
-    "message": "View secret"
+    "message": "Ver segredo"
   },
   "noClients": {
-    "message": "There are no clients to list"
+    "message": "Não há clientes para listar"
   },
   "providerBillingEmailHint": {
-    "message": "This email address will receive all invoices pertaining to this provider",
+    "message": "Este endereço de e-mail receberá todas as faturas referentes a este provedor",
     "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
+  },
+  "date": {
+    "message": "Data"
+  },
+  "exportClientReport": {
+    "message": "Exportar relatório do cliente"
+  },
+  "invoiceNumberHeader": {
+    "message": "Número da fatura",
+    "description": "A table header for an invoice's number"
   }
 }

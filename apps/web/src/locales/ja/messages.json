@@ -713,6 +713,12 @@
   "createAccount": {
     "message": "アカウントの作成"
   },
+  "setAStrongPassword": {
+    "message": "強力なパスワードを設定する"
+  },
+  "finishCreatingYourAccountBySettingAPassword": {
+    "message": "パスワードを設定してアカウントの作成を完了してください"
+  },
   "newAroundHere": {
     "message": "初めてですか?"
   },
@@ -3723,6 +3729,21 @@
   },
   "nothingSelected": {
     "message": "何も選択されていません。"
+  },
+  "receiveMarketingEmails": {
+    "message": "Bitwarden からのお知らせ、アドバイス、アンケート調査等のメールを受信します。"
+  },
+  "unsubscribe": {
+    "message": "配信停止"
+  },
+  "atAnyTime": {
+    "message": "はいつでもできます。"
+  },
+  "byContinuingYouAgreeToThe": {
+    "message": "続行すると以下に同意したものとみなします："
+  },
+  "and": {
+    "message": "と"
   },
   "acceptPolicies": {
     "message": "以下に同意しチェックします:"
@@ -8159,11 +8180,17 @@
   "setUpGithubActions": {
     "message": "Github アクションを設定"
   },
+  "setUpKubernetes": {
+    "message": "Kubernetes を設定"
+  },
   "setUpGitlabCICD": {
     "message": "GitLab CI/CD の設定"
   },
   "setUpAnsible": {
     "message": "Ansible を設定"
+  },
+  "rustSDKRepo": {
+    "message": "Rust リポジトリを表示"
   },
   "cSharpSDKRepo": {
     "message": "C# リポジトリを表示"
@@ -8340,5 +8367,15 @@
   "providerBillingEmailHint": {
     "message": "このメールアドレスは、このプロバイダに関連するすべての請求書を受信します",
     "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
+  },
+  "date": {
+    "message": "日付"
+  },
+  "exportClientReport": {
+    "message": "クライアントレポートをエクスポート"
+  },
+  "invoiceNumberHeader": {
+    "message": "請求書番号",
+    "description": "A table header for an invoice's number"
   }
 }

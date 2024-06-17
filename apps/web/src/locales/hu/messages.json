@@ -713,6 +713,12 @@
   "createAccount": {
     "message": "Fiók létrehozása"
   },
+  "setAStrongPassword": {
+    "message": "Erős jelszó beállítása"
+  },
+  "finishCreatingYourAccountBySettingAPassword": {
+    "message": "A fiók létrehozásának befejezése jelszó beállításával"
+  },
   "newAroundHere": {
     "message": "Új felhasználó vagyunk?"
   },
@@ -3723,6 +3729,21 @@
   },
   "nothingSelected": {
     "message": "Nincs kiválasztva semmi."
+  },
+  "receiveMarketingEmails": {
+    "message": "Emaileket kaphatunk a Bitwardentől bejelentésekről, tanácsokról és kutatási lehetőségekről."
+  },
+  "unsubscribe": {
+    "message": "Leiratkozás"
+  },
+  "atAnyTime": {
+    "message": "bármikor."
+  },
+  "byContinuingYouAgreeToThe": {
+    "message": "A folytatással elfogadjuk"
+  },
+  "and": {
+    "message": "és"
   },
   "acceptPolicies": {
     "message": "A doboz bejelölésével elfogadjuk a következőket:"
@@ -8159,11 +8180,17 @@
   "setUpGithubActions": {
     "message": "Set up Github Actions"
   },
+  "setUpKubernetes": {
+    "message": "Kubernetes beüzemelése"
+  },
   "setUpGitlabCICD": {
     "message": "Set up GitLab CI/CD"
   },
   "setUpAnsible": {
     "message": "Set up Ansible"
+  },
+  "rustSDKRepo": {
+    "message": "Rust tár megtekintése"
   },
   "cSharpSDKRepo": {
     "message": "View C# repository"
@@ -8340,5 +8367,15 @@
   "providerBillingEmailHint": {
     "message": "Erre az email címre érkezik az ehhez a szolgáltatóhoz kapcsolódó összes számla.",
     "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
+  },
+  "date": {
+    "message": "Dátum"
+  },
+  "exportClientReport": {
+    "message": "Ügyfél jelentés exportálás"
+  },
+  "invoiceNumberHeader": {
+    "message": "Számlaszám",
+    "description": "A table header for an invoice's number"
   }
 }

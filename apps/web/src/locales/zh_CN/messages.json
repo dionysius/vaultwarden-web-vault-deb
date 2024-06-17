@@ -713,6 +713,12 @@
   "createAccount": {
     "message": "创建账户"
   },
+  "setAStrongPassword": {
+    "message": "设置强密码"
+  },
+  "finishCreatingYourAccountBySettingAPassword": {
+    "message": "通过设置密码完成账户的创建"
+  },
   "newAroundHere": {
     "message": "初来乍到吗？"
   },
@@ -3723,6 +3729,21 @@
   },
   "nothingSelected": {
     "message": "您尚未选择任何内容。"
+  },
+  "receiveMarketingEmails": {
+    "message": "接收来自 Bitwarden 的电子邮件，以获取公告、建议和调研。"
+  },
+  "unsubscribe": {
+    "message": "取消订阅"
+  },
+  "atAnyTime": {
+    "message": "随时。"
+  },
+  "byContinuingYouAgreeToThe": {
+    "message": "若继续，代表您同意"
+  },
+  "and": {
+    "message": "以及"
   },
   "acceptPolicies": {
     "message": "选中此框表示您同意："
@@ -8159,11 +8180,17 @@
   "setUpGithubActions": {
     "message": "设置 Github Actions"
   },
+  "setUpKubernetes": {
+    "message": "设置 Kubernetes"
+  },
   "setUpGitlabCICD": {
     "message": "设置 GitLab CI/CD"
   },
   "setUpAnsible": {
     "message": "设置 Ansible"
+  },
+  "rustSDKRepo": {
+    "message": "查看 Rust 存储库"
   },
   "cSharpSDKRepo": {
     "message": "查看 C# 存储库"
@@ -8340,5 +8367,15 @@
   "providerBillingEmailHint": {
     "message": "此电子邮件地址将用于接收与此供应商相关的所有账单",
     "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
+  },
+  "date": {
+    "message": "日期"
+  },
+  "exportClientReport": {
+    "message": "导出客户报告"
+  },
+  "invoiceNumberHeader": {
+    "message": "账单编号",
+    "description": "A table header for an invoice's number"
   }
 }

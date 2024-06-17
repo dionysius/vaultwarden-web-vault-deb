@@ -713,6 +713,12 @@
   "createAccount": {
     "message": "Креирај налог"
   },
+  "setAStrongPassword": {
+    "message": "Поставите јаку лозинку"
+  },
+  "finishCreatingYourAccountBySettingAPassword": {
+    "message": "Завршите креирање налога постављањем лозинке"
+  },
   "newAroundHere": {
     "message": "Нов овде?"
   },
@@ -723,7 +729,7 @@
     "message": "Пријавите се"
   },
   "verifyIdentity": {
-    "message": "Verify your Identity"
+    "message": "Потврдите идентитет"
   },
   "logInInitiated": {
     "message": "Пријава је покренута"
@@ -3723,6 +3729,21 @@
   },
   "nothingSelected": {
     "message": "Нисте ништа изабрали."
+  },
+  "receiveMarketingEmails": {
+    "message": "Добијајте е-пошту од Bitwarden-а за најаве, савете и могућности истраживања."
+  },
+  "unsubscribe": {
+    "message": "Одјави се"
+  },
+  "atAnyTime": {
+    "message": "било када."
+  },
+  "byContinuingYouAgreeToThe": {
+    "message": "Ако наставите, слажете се са"
+  },
+  "and": {
+    "message": "и"
   },
   "acceptPolicies": {
     "message": "Означавањем овог поља пристајете на следеће:"
@@ -8159,11 +8180,17 @@
   "setUpGithubActions": {
     "message": "Подесити акције GitHub-а"
   },
+  "setUpKubernetes": {
+    "message": "Подесите Kubernetes"
+  },
   "setUpGitlabCICD": {
     "message": "Подесити GitLab CI/CD"
   },
   "setUpAnsible": {
     "message": "Подесити Ansible"
+  },
+  "rustSDKRepo": {
+    "message": "Преглед Rust спремишта"
   },
   "cSharpSDKRepo": {
     "message": "Преглед C# спремишта"
@@ -8332,13 +8359,23 @@
     "message": "Проверено"
   },
   "viewSecret": {
-    "message": "View secret"
+    "message": "Види тајну"
   },
   "noClients": {
-    "message": "There are no clients to list"
+    "message": "Нема клијената за попис"
   },
   "providerBillingEmailHint": {
-    "message": "This email address will receive all invoices pertaining to this provider",
+    "message": "Овај имејл ће примати све фактуре које се односе на овог провајдера",
     "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
+  },
+  "date": {
+    "message": "Датум"
+  },
+  "exportClientReport": {
+    "message": "Извези извештај клијента"
+  },
+  "invoiceNumberHeader": {
+    "message": "Број фактуре",
+    "description": "A table header for an invoice's number"
   }
 }

@@ -713,6 +713,12 @@
   "createAccount": {
     "message": "Skep rekening"
   },
+  "setAStrongPassword": {
+    "message": "Set a strong password"
+  },
+  "finishCreatingYourAccountBySettingAPassword": {
+    "message": "Finish creating your account by setting a password"
+  },
   "newAroundHere": {
     "message": "Nuut hier rond?"
   },
@@ -3724,6 +3730,21 @@
   "nothingSelected": {
     "message": "U het niks gekies nie."
   },
+  "receiveMarketingEmails": {
+    "message": "Get emails from Bitwarden for announcements, advice, and research opportunities."
+  },
+  "unsubscribe": {
+    "message": "Unsubscribe"
+  },
+  "atAnyTime": {
+    "message": "at any time."
+  },
+  "byContinuingYouAgreeToThe": {
+    "message": "By continuing, you agree to the"
+  },
+  "and": {
+    "message": "and"
+  },
   "acceptPolicies": {
     "message": "Deur hierdie kassie af te merk stem u in tot die volgende:"
   },
@@ -4267,7 +4288,7 @@
     "message": "Gedeaktiveer"
   },
   "revoked": {
-    "message": "Revoked"
+    "message": "Herroep"
   },
   "sendLink": {
     "message": "Send-skakel",
@@ -4323,7 +4344,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "downloadAttachments": {
-    "message": "Download attachments"
+    "message": "Laai aanhegsels af"
   },
   "sendAccessUnavailable": {
     "message": "The Send you are trying to access does not exist or is no longer available.",
@@ -4937,10 +4958,10 @@
     "message": "Verwyder gebruikers"
   },
   "revokeUsers": {
-    "message": "Revoke users"
+    "message": "Herroep gebruikers"
   },
   "restoreUsers": {
-    "message": "Restore users"
+    "message": "Stel gebruikers terug"
   },
   "error": {
     "message": "Fout"
@@ -5016,7 +5037,7 @@
     "message": "Voeg bestaande organisasie toe"
   },
   "addNewOrganization": {
-    "message": "Add new organization"
+    "message": "Voeg nuwe organisasie toe"
   },
   "myProvider": {
     "message": "My aanbieder"
@@ -5089,7 +5110,7 @@
     "message": "U hoofwagwoord voldoen nie aan hierdie organisasie se beleidsvereistes nie. Om by die organisasie aan te sluit moet u u hoofwagwoord nóú bywerk. Deur voort te gaan word u uit u huidige sessie geteken, waarna u weer sal moet aanteken. Aktiewe sessies op ander toestelle kan vir tot ’n uur steeds aktief bly."
   },
   "updateWeakMasterPasswordWarning": {
-    "message": "Your master password does not meet one or more of your organization policies. In order to access the vault, you must update your master password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "U hoofwagwoord voldoen nie aan een of meer van die organisasiebeleide nie. Om toegang tot die kluis te kry, moet u nou u hoofwagwoord bywerk. Deur voort te gaan sal u van u huidige sessie afgeteken word, en u sal weer moet aanteken. Aktiewe sessies op ander toestelle kan vir tot een uur aktief bly."
   },
   "maximumVaultTimeout": {
     "message": "Kluis-uittel"
@@ -5140,7 +5161,7 @@
     }
   },
   "vaultTimeoutActionPolicyInEffect": {
-    "message": "Your organization policies have set your vault timeout action to $ACTION$.",
+    "message": "U organisasie se beleid het u kluisuittelaksie na $ACTION$ gestel.",
     "placeholders": {
       "action": {
         "content": "$1",
@@ -5149,16 +5170,16 @@
     }
   },
   "customVaultTimeout": {
-    "message": "Custom vault timeout"
+    "message": "Pasgemaakte kluisuittel"
   },
   "vaultTimeoutToLarge": {
     "message": "U kluisuittelling oorskry die beperking wat deur u organisasie daargestel is."
   },
   "vaultCustomTimeoutMinimum": {
-    "message": "Minimum custom timeout is 1 minute."
+    "message": "Minimum pasgemaakte uittel is 1 minuut."
   },
   "vaultTimeoutRangeError": {
-    "message": "Vault timeout is not within allowed range."
+    "message": "Kluisuittel is nie binne toegelate omvang nie."
   },
   "disablePersonalVaultExport": {
     "message": "Deaktiveer uitstuur van persoonlike kluis"
@@ -5937,7 +5958,7 @@
     }
   },
   "forwarderNoDomain": {
-    "message": "Invalid $SERVICENAME$ domain.",
+    "message": "Ongeldige $SERVICENAME$-domein.",
     "description": "Displayed when the domain is empty or domain authorization failed at the forwarding service.",
     "placeholders": {
       "servicename": {
@@ -5947,7 +5968,7 @@
     }
   },
   "forwarderNoUrl": {
-    "message": "Invalid $SERVICENAME$ url.",
+    "message": "Ongeldige $SERVICENAME$-url.",
     "description": "Displayed when the url of the forwarding service wasn't supplied.",
     "placeholders": {
       "servicename": {
@@ -8159,11 +8180,17 @@
   "setUpGithubActions": {
     "message": "Stel Github Actions op"
   },
+  "setUpKubernetes": {
+    "message": "Set up Kubernetes"
+  },
   "setUpGitlabCICD": {
     "message": "Stel GitLab CI/CD op"
   },
   "setUpAnsible": {
     "message": "Stel Ansible op"
+  },
+  "rustSDKRepo": {
+    "message": "View Rust repository"
   },
   "cSharpSDKRepo": {
     "message": "View C# repository"
@@ -8340,5 +8367,15 @@
   "providerBillingEmailHint": {
     "message": "This email address will receive all invoices pertaining to this provider",
     "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
+  },
+  "date": {
+    "message": "Date"
+  },
+  "exportClientReport": {
+    "message": "Export client report"
+  },
+  "invoiceNumberHeader": {
+    "message": "Invoice number",
+    "description": "A table header for an invoice's number"
   }
 }

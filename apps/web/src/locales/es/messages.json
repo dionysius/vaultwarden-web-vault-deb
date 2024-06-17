@@ -713,6 +713,12 @@
   "createAccount": {
     "message": "Crear cuenta"
   },
+  "setAStrongPassword": {
+    "message": "Set a strong password"
+  },
+  "finishCreatingYourAccountBySettingAPassword": {
+    "message": "Finish creating your account by setting a password"
+  },
   "newAroundHere": {
     "message": "¿Nuevo por aquí?"
   },
@@ -3723,6 +3729,21 @@
   },
   "nothingSelected": {
     "message": "No has seleccionado nada."
+  },
+  "receiveMarketingEmails": {
+    "message": "Get emails from Bitwarden for announcements, advice, and research opportunities."
+  },
+  "unsubscribe": {
+    "message": "Unsubscribe"
+  },
+  "atAnyTime": {
+    "message": "at any time."
+  },
+  "byContinuingYouAgreeToThe": {
+    "message": "By continuing, you agree to the"
+  },
+  "and": {
+    "message": "and"
   },
   "acceptPolicies": {
     "message": "Al seleccionar esta casilla, acepta lo siguiente:"
@@ -8159,11 +8180,17 @@
   "setUpGithubActions": {
     "message": "Set up Github Actions"
   },
+  "setUpKubernetes": {
+    "message": "Set up Kubernetes"
+  },
   "setUpGitlabCICD": {
     "message": "Set up GitLab CI/CD"
   },
   "setUpAnsible": {
     "message": "Set up Ansible"
+  },
+  "rustSDKRepo": {
+    "message": "View Rust repository"
   },
   "cSharpSDKRepo": {
     "message": "View C# repository"
@@ -8340,5 +8367,15 @@
   "providerBillingEmailHint": {
     "message": "This email address will receive all invoices pertaining to this provider",
     "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
+  },
+  "date": {
+    "message": "Date"
+  },
+  "exportClientReport": {
+    "message": "Export client report"
+  },
+  "invoiceNumberHeader": {
+    "message": "Invoice number",
+    "description": "A table header for an invoice's number"
   }
 }

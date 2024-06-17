@@ -713,6 +713,12 @@
   "createAccount": {
     "message": "Izveidot kontu"
   },
+  "setAStrongPassword": {
+    "message": "Jāiestata droša parole"
+  },
+  "finishCreatingYourAccountBySettingAPassword": {
+    "message": "Jāpabeidz sava konta izveida ar paroles iestatīšanu"
+  },
   "newAroundHere": {
     "message": "Jauns šeit?"
   },
@@ -3723,6 +3729,21 @@
   },
   "nothingSelected": {
     "message": "Nekas nav atlasīts."
+  },
+  "receiveMarketingEmails": {
+    "message": "Saņemt e-pasta ziņojumus no Bitwarden par paziņojumiem, padomiem un izpētes iespējām."
+  },
+  "unsubscribe": {
+    "message": "Atteikt abonēšanu"
+  },
+  "atAnyTime": {
+    "message": "jebkurā laikā."
+  },
+  "byContinuingYouAgreeToThe": {
+    "message": "Turpinot tiek sniegta piekrišana"
+  },
+  "and": {
+    "message": "un"
   },
   "acceptPolicies": {
     "message": "Ar šīs rūtiņas atzīmēšanu tiek piekrists sekojošajam:"
@@ -8159,11 +8180,17 @@
   "setUpGithubActions": {
     "message": "Iestatīt GitHub darbības"
   },
+  "setUpKubernetes": {
+    "message": "Iestatīt Kubernetes"
+  },
   "setUpGitlabCICD": {
     "message": "Iestatīt GitLab CI/CD"
   },
   "setUpAnsible": {
     "message": "Iestatīt Ansible"
+  },
+  "rustSDKRepo": {
+    "message": "Skatīt Rust glabātavu"
   },
   "cSharpSDKRepo": {
     "message": "Skatīt C# glabātavu"
@@ -8340,5 +8367,15 @@
   "providerBillingEmailHint": {
     "message": "Uz šo e-pasta adresi tiks nosūtīti visi ar šo nodrošinātāju saistītie rēķini",
     "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
+  },
+  "date": {
+    "message": "Datums"
+  },
+  "exportClientReport": {
+    "message": "Izgūt klienta atskaiti"
+  },
+  "invoiceNumberHeader": {
+    "message": "Rēķina numurs",
+    "description": "A table header for an invoice's number"
   }
 }
