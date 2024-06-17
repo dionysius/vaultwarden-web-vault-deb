@@ -35,6 +35,7 @@ describe("CollectAutofillContentService", () => {
 
   beforeEach(() => {
     globalThis.requestIdleCallback = jest.fn((cb, options) => setTimeout(cb, 100));
+    globalThis.cancelIdleCallback = jest.fn((id) => clearTimeout(id));
     document.body.innerHTML = mockLoginForm;
     collectAutofillContentService = new CollectAutofillContentService(
       domElementVisibilityService,
@@ -247,11 +248,16 @@ describe("CollectAutofillContentService", () => {
       const isFormFieldViewableSpy = jest
         .spyOn(collectAutofillContentService["domElementVisibilityService"], "isFormFieldViewable")
         .mockResolvedValue(true);
+      const setupAutofillOverlayListenerOnFieldSpy = jest.spyOn(
+        collectAutofillContentService["autofillOverlayContentService"],
+        "setupAutofillOverlayListenerOnField",
+      );
 
       await collectAutofillContentService.getPageDetails();
 
       expect(autofillField.viewable).toBe(true);
       expect(isFormFieldViewableSpy).toHaveBeenCalledWith(fieldElement);
+      expect(setupAutofillOverlayListenerOnFieldSpy).toHaveBeenCalled();
     });
 
     it("returns an object containing information about the current page as well as autofill data for the forms and fields of the page", async () => {
@@ -1191,7 +1197,7 @@ describe("CollectAutofillContentService", () => {
         "aria-disabled": false,
         "aria-haspopup": false,
         "aria-hidden": false,
-        autoCompleteType: null,
+        autoCompleteType: "off",
         checked: false,
         "data-stripe": hiddenField.dataStripe,
         disabled: false,
@@ -2606,6 +2612,7 @@ describe("CollectAutofillContentService", () => {
       expect(setupAutofillOverlayListenerOnFieldSpy).toHaveBeenCalledWith(
         formFieldElement,
         autofillField,
+        expect.anything(),
       );
     });
   });

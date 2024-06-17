@@ -1,6 +1,7 @@
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 
 import AutofillField from "../../models/autofill-field";
+import AutofillPageDetails from "../../models/autofill-page-details";
 import { ElementWithOpId, FormFieldElement } from "../../types";
 
 type OpenAutofillOverlayOptions = {
@@ -19,6 +20,7 @@ interface AutofillOverlayContentService {
   setupAutofillOverlayListenerOnField(
     autofillFieldElement: ElementWithOpId<FormFieldElement>,
     autofillFieldData: AutofillField,
+    pageDetails: AutofillPageDetails,
   ): Promise<void>;
   openAutofillOverlay(options: OpenAutofillOverlayOptions): void;
   removeAutofillOverlay(): void;
