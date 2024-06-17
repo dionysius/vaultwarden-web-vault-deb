@@ -27,7 +27,7 @@ export class RotateableKeySet<ExternalKey extends SymmetricCryptoKey = Symmetric
     readonly encryptedPublicKey: EncString,
 
     /** ExternalKey encrypted PrivateKey */
-    readonly encryptedPrivateKey: EncString,
+    readonly encryptedPrivateKey?: EncString,
   ) {}
 }
 
