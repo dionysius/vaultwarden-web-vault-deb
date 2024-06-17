@@ -1,8 +1,6 @@
 <bit-layout>
-  <nav slot="sidebar" class="tw-flex tw-flex-col tw-h-full">
-    <a routerLink="." class="tw-m-5 tw-mt-7 tw-block" [appA11yTitle]="'passwordManager' | i18n">
-      <bit-icon [icon]="logo"></bit-icon>
-    </a>
+  <bit-side-nav>
+    <bit-nav-logo [openIcon]="logo" route="." [label]="'passwordManager' | i18n"></bit-nav-logo>
 
     <bit-nav-item icon="bwi-collection" [text]="'vaults' | i18n" route="vault"></bit-nav-item>
     <bit-nav-item icon="bwi-send" [text]="'send' | i18n" route="sends"></bit-nav-item>
@@ -33,10 +31,12 @@
       ></bit-nav-item>
     </bit-nav-group>
 
-    <navigation-product-switcher class="tw-mt-auto"></navigation-product-switcher>
+    <ng-container slot="footer">
+      <navigation-product-switcher></navigation-product-switcher>
+      <app-toggle-width></app-toggle-width>
+    </ng-container>
+  </bit-side-nav>
 
-    <app-toggle-width></app-toggle-width>
-  </nav>
   <app-payment-method-warnings
     *ngIf="showPaymentMethodWarningBanners$ | async"
   ></app-payment-method-warnings>

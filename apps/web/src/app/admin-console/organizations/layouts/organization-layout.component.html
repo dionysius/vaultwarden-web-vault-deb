@@ -1,12 +1,6 @@
-<bit-layout variant="secondary">
-  <nav
-    slot="sidebar"
-    *ngIf="organization$ | async as organization"
-    class="tw-flex tw-flex-col tw-h-full"
-  >
-    <a routerLink="." class="tw-m-5 tw-mt-7 tw-block" [appA11yTitle]="'adminConsole' | i18n">
-      <bit-icon [icon]="logo"></bit-icon>
-    </a>
+<bit-layout>
+  <bit-side-nav variant="secondary" *ngIf="organization$ | async as organization">
+    <bit-nav-logo [openIcon]="logo" route="." [label]="'adminConsole' | i18n"></bit-nav-logo>
     <org-switcher [filter]="orgFilter" [hideNewButton]="hideNewOrgButton$ | async"></org-switcher>
 
     <bit-nav-item
@@ -110,10 +104,11 @@
       ></bit-nav-item>
     </bit-nav-group>
 
-    <navigation-product-switcher class="tw-mt-auto"></navigation-product-switcher>
-
-    <app-toggle-width></app-toggle-width>
-  </nav>
+    <ng-container slot="footer">
+      <navigation-product-switcher></navigation-product-switcher>
+      <app-toggle-width></app-toggle-width>
+    </ng-container>
+  </bit-side-nav>
 
   <ng-container *ngIf="organization$ | async as organization">
     <bit-banner

@@ -99,14 +99,14 @@ export const Default: Story = {
     return {
       props: args,
       template: /* HTML */ `<bit-layout>
-        <nav slot="sidebar">
+        <bit-side-nav>
           <bit-nav-group text="Password Managers" icon="bwi-collection" [open]="true">
             <bit-nav-group text="Favorites" icon="bwi-collection" variant="tree" [open]="true">
               <bit-nav-item text="Bitwarden" route="bitwarden"></bit-nav-item>
               <bit-nav-divider></bit-nav-divider>
             </bit-nav-group>
           </bit-nav-group>
-        </nav>
+        </bit-side-nav>
         <router-outlet></router-outlet>
       </bit-layout>`,
     };

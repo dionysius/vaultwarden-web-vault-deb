@@ -11,6 +11,7 @@ import {
 } from "@angular/core";
 
 import { NavBaseComponent } from "./nav-base.component";
+import { SideNavService } from "./side-nav.service";
 
 @Component({
   selector: "bit-nav-group",
@@ -23,9 +24,9 @@ export class NavGroupComponent extends NavBaseComponent implements AfterContentI
   })
   nestedNavComponents!: QueryList<NavBaseComponent>;
 
-  /** The parent nav item should not show active styles when open. */
+  /** When the side nav is open, the parent nav item should not show active styles when open. */
   protected get parentHideActiveStyles(): boolean {
-    return this.hideActiveStyles || this.open;
+    return this.hideActiveStyles || (this.open && this.sideNavService.open);
   }
 
   /**
@@ -42,7 +43,10 @@ export class NavGroupComponent extends NavBaseComponent implements AfterContentI
   @Output()
   openChange = new EventEmitter<boolean>();
 
-  constructor(@Optional() @SkipSelf() private parentNavGroup: NavGroupComponent) {
+  constructor(
+    protected sideNavService: SideNavService,
+    @Optional() @SkipSelf() private parentNavGroup: NavGroupComponent,
+  ) {
     super();
   }
 
@@ -67,6 +71,18 @@ export class NavGroupComponent extends NavBaseComponent implements AfterContentI
     [...this.nestedNavComponents].forEach((navGroupOrItem) => {
       navGroupOrItem.treeDepth += 1;
     });
+  }
+
+  protected handleMainContentClicked() {
+    if (!this.sideNavService.open) {
+      if (!this.route) {
+        this.sideNavService.setOpen();
+      }
+      this.open = true;
+    } else {
+      this.toggle();
+    }
+    this.mainContentClicked.emit();
   }
 
   ngAfterContentInit(): void {

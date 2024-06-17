@@ -1,8 +1,5 @@
-<nav class="tw-flex tw-flex-col tw-h-full">
-  <a routerLink="." class="tw-m-5 tw-mt-7 tw-block">
-    <bit-icon [icon]="logo"></bit-icon>
-  </a>
-
+<bit-side-nav>
+  <bit-nav-logo [openIcon]="logo" route="." [label]="'secretsManager' | i18n"></bit-nav-logo>
   <org-switcher [filter]="orgFilter" [hideNewButton]="true"></org-switcher>
   <bit-nav-item
     icon="bwi-collection"
@@ -35,7 +32,13 @@
     [relativeTo]="route.parent"
     *ngIf="isAdmin$ | async"
   ></bit-nav-item>
-  <bit-nav-group icon="bwi-cog" [text]="'settings' | i18n" *ngIf="isAdmin$ | async">
+  <bit-nav-group
+    icon="bwi-cog"
+    [text]="'settings' | i18n"
+    *ngIf="isAdmin$ | async"
+    route="settings/import"
+    [relativeTo]="route.parent"
+  >
     <bit-nav-item
       [text]="'importData' | i18n"
       route="settings/import"
@@ -48,7 +51,8 @@
     ></bit-nav-item>
   </bit-nav-group>
 
-  <navigation-product-switcher class="tw-mt-auto"></navigation-product-switcher>
-
-  <app-toggle-width></app-toggle-width>
-</nav>
+  <ng-container slot="footer">
+    <navigation-product-switcher></navigation-product-switcher>
+    <app-toggle-width></app-toggle-width>
+  </ng-container>
+</bit-side-nav>

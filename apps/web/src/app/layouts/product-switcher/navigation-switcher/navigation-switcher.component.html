@@ -12,7 +12,7 @@
   <ng-container *ngIf="moreProducts$ | async as moreProducts">
     <section
       *ngIf="moreProducts.length > 0"
-      class="tw-mt-2 tw-flex tw-w-full tw-flex-col tw-gap-2 tw-border-0 tw-border-t tw-border-solid tw-border-t-text-alt2"
+      class="tw-mt-2 tw-flex tw-w-full tw-flex-col tw-gap-2 tw-border-0"
     >
       <span class="tw-text-xs !tw-text-alt2 tw-p-2 tw-pb-0">{{ "moreFromBitwarden" | i18n }}</span>
       <a
