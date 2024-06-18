@@ -87,7 +87,7 @@ export default {
       providers: [
         { provide: OrganizationService, useClass: MockOrganizationService },
         { provide: ProviderService, useClass: MockProviderService },
-        { provide: MockSyncService, useClass: MockSyncService },
+        { provide: SyncService, useClass: MockSyncService },
         ProductSwitcherService,
         {
           provide: I18nPipe,
