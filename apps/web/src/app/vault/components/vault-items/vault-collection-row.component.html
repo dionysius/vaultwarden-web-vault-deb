@@ -34,7 +34,7 @@
     </div>
   </button>
 </td>
-<td bitCell [ngClass]="RowHeightClass" *ngIf="showOwner">
+<td bitCell [ngClass]="RowHeightClass" *ngIf="showOwner" class="tw-hidden lg:tw-table-cell">
   <app-org-badge
     [disabled]="disabled"
     [organizationId]="collection.organizationId"

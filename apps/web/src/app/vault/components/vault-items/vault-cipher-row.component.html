@@ -49,7 +49,7 @@
   <br />
   <span class="tw-text-sm tw-text-muted" appStopProp>{{ cipher.subTitle }}</span>
 </td>
-<td bitCell [ngClass]="RowHeightClass" *ngIf="showOwner">
+<td bitCell [ngClass]="RowHeightClass" *ngIf="showOwner" class="tw-hidden lg:tw-table-cell">
   <app-org-badge
     [disabled]="disabled"
     [organizationId]="cipher.organizationId"
