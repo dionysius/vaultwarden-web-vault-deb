@@ -1,8 +1,11 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, NavigationEnd, Router } from "@angular/router";
-import { filter, map, Observable, startWith, concatMap } from "rxjs";
+import { filter, map, Observable, startWith, concatMap, firstValueFrom } from "rxjs";
 
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
+import { ProductTierType } from "@bitwarden/common/billing/enums";
+import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
+import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 
 import { ReportVariant, reports, ReportType, ReportEntry } from "../../../tools/reports";
 
@@ -14,13 +17,21 @@ export class ReportsHomeComponent implements OnInit {
   reports$: Observable<ReportEntry[]>;
   homepage$: Observable<boolean>;
 
+  private isMemberAccessReportEnabled: boolean;
+
   constructor(
     private route: ActivatedRoute,
     private organizationService: OrganizationService,
     private router: Router,
+    private configService: ConfigService,
   ) {}
 
-  ngOnInit() {
+  async ngOnInit() {
+    // TODO: Remove on "MemberAccessReport" feature flag cleanup
+    this.isMemberAccessReportEnabled = await firstValueFrom(
+      this.configService.getFeatureFlag$(FeatureFlag.MemberAccessReport),
+    );
+
     this.homepage$ = this.router.events.pipe(
       filter((event) => event instanceof NavigationEnd),
       map((event) => this.isReportsHomepageRouteUrl((event as NavigationEnd).urlAfterRedirects)),
@@ -29,16 +40,15 @@ export class ReportsHomeComponent implements OnInit {
 
     this.reports$ = this.route.params.pipe(
       concatMap((params) => this.organizationService.get$(params.organizationId)),
-      map((org) => this.buildReports(org.isFreeOrg)),
+      map((org) => this.buildReports(org.productTierType)),
     );
   }
 
-  private buildReports(upgradeRequired: boolean): ReportEntry[] {
-    const reportRequiresUpgrade = upgradeRequired
-      ? ReportVariant.RequiresUpgrade
-      : ReportVariant.Enabled;
+  private buildReports(productType: ProductTierType): ReportEntry[] {
+    const reportRequiresUpgrade =
+      productType == ProductTierType.Free ? ReportVariant.RequiresUpgrade : ReportVariant.Enabled;
 
-    return [
+    const reportsArray = [
       {
         ...reports[ReportType.ExposedPasswords],
         variant: reportRequiresUpgrade,
@@ -60,6 +70,18 @@ export class ReportsHomeComponent implements OnInit {
         variant: reportRequiresUpgrade,
       },
     ];
+
+    if (this.isMemberAccessReportEnabled) {
+      reportsArray.push({
+        ...reports[ReportType.MemberAccessReport],
+        variant:
+          productType == ProductTierType.Enterprise
+            ? ReportVariant.Enabled
+            : ReportVariant.RequiresEnterprise,
+      });
+    }
+
+    return reportsArray;
   }
 
   private isReportsHomepageRouteUrl(url: string): boolean {
