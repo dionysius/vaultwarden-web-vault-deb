@@ -12,6 +12,6 @@
   },
   "flags": {
     "showPasswordless": true,
-    "enableCipherKeyEncryption": false
+    "enableCipherKeyEncryption": true
   }
 }
