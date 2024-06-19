@@ -3,6 +3,7 @@ import { Observable } from "rxjs";
 import { VaultTimeoutAction } from "../../enums/vault-timeout-action.enum";
 import { UserId } from "../../types/guid";
 import { VaultTimeout } from "../../types/vault-timeout.type";
+import { SetTokensResult } from "../models/domain/set-tokens-result";
 import { DecodedAccessToken } from "../services/token.service";
 
 export abstract class TokenService {
@@ -23,7 +24,7 @@ export abstract class TokenService {
    * @param refreshToken The optional refresh token to set. Note: this is undefined when using the CLI Login Via API Key flow
    * @param clientIdClientSecret The API Key Client ID and Client Secret to set.
    *
-   * @returns A promise that resolves when the tokens have been set.
+   * @returns A promise that resolves with the SetTokensResult containing the tokens that were set.
    */
   setTokens: (
     accessToken: string,
@@ -31,7 +32,7 @@ export abstract class TokenService {
     vaultTimeout: VaultTimeout,
     refreshToken?: string,
     clientIdClientSecret?: [string, string],
-  ) => Promise<void>;
+  ) => Promise<SetTokensResult>;
 
   /**
    * Clears the access token, refresh token, API Key Client ID, and API Key Client Secret out of memory, disk, and secure storage if supported.
@@ -47,13 +48,13 @@ export abstract class TokenService {
    * @param accessToken The access token to set.
    * @param vaultTimeoutAction The action to take when the vault times out.
    * @param vaultTimeout The timeout for the vault.
-   * @returns A promise that resolves when the access token has been set.
+   * @returns A promise that resolves with the access token that has been set.
    */
   setAccessToken: (
     accessToken: string,
     vaultTimeoutAction: VaultTimeoutAction,
     vaultTimeout: VaultTimeout,
-  ) => Promise<void>;
+  ) => Promise<string>;
 
   // TODO: revisit having this public clear method approach once the state service is fully deprecated.
   /**
@@ -86,14 +87,14 @@ export abstract class TokenService {
    * @param clientId The API Key Client ID to set.
    * @param vaultTimeoutAction The action to take when the vault times out.
    * @param vaultTimeout The timeout for the vault.
-   * @returns A promise that resolves when the API Key Client ID has been set.
+   * @returns A promise that resolves with the API Key Client ID that has been set.
    */
   setClientId: (
     clientId: string,
     vaultTimeoutAction: VaultTimeoutAction,
     vaultTimeout: VaultTimeout,
     userId?: UserId,
-  ) => Promise<void>;
+  ) => Promise<string>;
 
   /**
    * Gets the API Key Client ID for the active user.
@@ -106,14 +107,14 @@ export abstract class TokenService {
    * @param clientSecret The API Key Client Secret to set.
    * @param vaultTimeoutAction The action to take when the vault times out.
    * @param vaultTimeout The timeout for the vault.
-   * @returns A promise that resolves when the API Key Client Secret has been set.
+   * @returns A promise that resolves with the client secret that has been set.
    */
   setClientSecret: (
     clientSecret: string,
     vaultTimeoutAction: VaultTimeoutAction,
     vaultTimeout: VaultTimeout,
     userId?: UserId,
-  ) => Promise<void>;
+  ) => Promise<string>;
 
   /**
    * Gets the API Key Client Secret for the active user.

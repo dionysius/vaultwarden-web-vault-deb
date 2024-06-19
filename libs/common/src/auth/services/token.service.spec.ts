@@ -15,6 +15,7 @@ import { SymmetricCryptoKey } from "../../platform/models/domain/symmetric-crypt
 import { CsprngArray } from "../../types/csprng";
 import { UserId } from "../../types/guid";
 import { VaultTimeout, VaultTimeoutStringType } from "../../types/vault-timeout.type";
+import { SetTokensResult } from "../models/domain/set-tokens-result";
 
 import { ACCOUNT_ACTIVE_ACCOUNT_ID } from "./account.service";
 import {
@@ -232,7 +233,7 @@ describe("TokenService", () => {
       describe("Memory storage tests", () => {
         it("set the access token in memory", async () => {
           // Act
-          await tokenService.setAccessToken(
+          const result = await tokenService.setAccessToken(
             accessTokenJwt,
             memoryVaultTimeoutAction,
             memoryVaultTimeout,
@@ -241,13 +242,14 @@ describe("TokenService", () => {
           expect(
             singleUserStateProvider.getFake(userIdFromAccessToken, ACCESS_TOKEN_MEMORY).nextMock,
           ).toHaveBeenCalledWith(accessTokenJwt);
+          expect(result).toEqual(accessTokenJwt);
         });
       });
 
       describe("Disk storage tests (secure storage not supported on platform)", () => {
         it("should set the access token in disk", async () => {
           // Act
-          await tokenService.setAccessToken(
+          const result = await tokenService.setAccessToken(
             accessTokenJwt,
             diskVaultTimeoutAction,
             diskVaultTimeout,
@@ -256,6 +258,7 @@ describe("TokenService", () => {
           expect(
             singleUserStateProvider.getFake(userIdFromAccessToken, ACCESS_TOKEN_DISK).nextMock,
           ).toHaveBeenCalledWith(accessTokenJwt);
+          expect(result).toEqual(accessTokenJwt);
         });
       });
 
@@ -295,7 +298,7 @@ describe("TokenService", () => {
           secureStorageService.get.mockResolvedValueOnce(null).mockResolvedValue(accessTokenKeyB64);
 
           // Act
-          await tokenService.setAccessToken(
+          const result = await tokenService.setAccessToken(
             accessTokenJwt,
             diskVaultTimeoutAction,
             diskVaultTimeout,
@@ -318,6 +321,9 @@ describe("TokenService", () => {
           expect(
             singleUserStateProvider.getFake(userIdFromAccessToken, ACCESS_TOKEN_MEMORY).nextMock,
           ).toHaveBeenCalledWith(null);
+
+          // assert that the decrypted access token was returned
+          expect(result).toEqual(accessTokenJwt);
         });
 
         it("should fallback to disk storage for the access token if the access token cannot be set in secure storage", async () => {
@@ -331,7 +337,7 @@ describe("TokenService", () => {
           secureStorageService.get.mockResolvedValueOnce(null).mockResolvedValue(null);
 
           // Act
-          await tokenService.setAccessToken(
+          const result = await tokenService.setAccessToken(
             accessTokenJwt,
             diskVaultTimeoutAction,
             diskVaultTimeout,
@@ -355,6 +361,9 @@ describe("TokenService", () => {
           expect(
             singleUserStateProvider.getFake(userIdFromAccessToken, ACCESS_TOKEN_DISK).nextMock,
           ).toHaveBeenCalledWith(accessTokenJwt);
+
+          // assert that the decrypted access token was returned
+          expect(result).toEqual(accessTokenJwt);
         });
 
         it("should fallback to disk storage for the access token if secure storage errors on trying to get an existing access token key", async () => {
@@ -368,7 +377,7 @@ describe("TokenService", () => {
           secureStorageService.get.mockRejectedValue(new Error(secureStorageError));
 
           // Act
-          await tokenService.setAccessToken(
+          const result = await tokenService.setAccessToken(
             accessTokenJwt,
             diskVaultTimeoutAction,
             diskVaultTimeout,
@@ -385,6 +394,9 @@ describe("TokenService", () => {
           expect(
             singleUserStateProvider.getFake(userIdFromAccessToken, ACCESS_TOKEN_DISK).nextMock,
           ).toHaveBeenCalledWith(accessTokenJwt);
+
+          // assert that the decrypted access token was returned
+          expect(result).toEqual(accessTokenJwt);
         });
       });
     });
@@ -2376,18 +2388,21 @@ describe("TokenService", () => {
       const clientId = "clientId";
       const clientSecret = "clientSecret";
 
-      (tokenService as any)._setAccessToken = jest.fn();
       // any hack allows for mocking private method.
-      (tokenService as any).setRefreshToken = jest.fn();
-      tokenService.setClientId = jest.fn();
-      tokenService.setClientSecret = jest.fn();
+      (tokenService as any)._setAccessToken = jest.fn().mockReturnValue(accessTokenJwt);
+      (tokenService as any).setRefreshToken = jest.fn().mockReturnValue(refreshToken);
+      tokenService.setClientId = jest.fn().mockReturnValue(clientId);
+      tokenService.setClientSecret = jest.fn().mockReturnValue(clientSecret);
 
       // Act
       // Note: passing a valid access token so that a valid user id can be determined from the access token
-      await tokenService.setTokens(accessTokenJwt, vaultTimeoutAction, vaultTimeout, refreshToken, [
-        clientId,
-        clientSecret,
-      ]);
+      const result = await tokenService.setTokens(
+        accessTokenJwt,
+        vaultTimeoutAction,
+        vaultTimeout,
+        refreshToken,
+        [clientId, clientSecret],
+      );
 
       // Assert
       expect((tokenService as any)._setAccessToken).toHaveBeenCalledWith(
@@ -2417,6 +2432,44 @@ describe("TokenService", () => {
         vaultTimeout,
         userIdFromAccessToken,
       );
+
+      expect(result).toStrictEqual(
+        new SetTokensResult(accessTokenJwt, refreshToken, [clientId, clientSecret]),
+      );
+    });
+
+    it("does not try to set the refresh token when it is not passed in", async () => {
+      // Arrange
+      const vaultTimeoutAction = VaultTimeoutAction.Lock;
+      const vaultTimeout = 30;
+
+      (tokenService as any)._setAccessToken = jest.fn().mockReturnValue(accessTokenJwt);
+      (tokenService as any).setRefreshToken = jest.fn();
+      tokenService.setClientId = jest.fn();
+      tokenService.setClientSecret = jest.fn();
+
+      // Act
+      const result = await tokenService.setTokens(
+        accessTokenJwt,
+        vaultTimeoutAction,
+        vaultTimeout,
+        null,
+      );
+
+      // Assert
+      expect((tokenService as any)._setAccessToken).toHaveBeenCalledWith(
+        accessTokenJwt,
+        vaultTimeoutAction,
+        vaultTimeout,
+        userIdFromAccessToken,
+      );
+
+      // any hack allows for testing private methods
+      expect((tokenService as any).setRefreshToken).not.toHaveBeenCalled();
+      expect(tokenService.setClientId).not.toHaveBeenCalled();
+      expect(tokenService.setClientSecret).not.toHaveBeenCalled();
+
+      expect(result).toStrictEqual(new SetTokensResult(accessTokenJwt));
     });
 
     it("does not try to set client id and client secret when they are not passed in", async () => {
@@ -2425,13 +2478,18 @@ describe("TokenService", () => {
       const vaultTimeoutAction = VaultTimeoutAction.Lock;
       const vaultTimeout = 30;
 
-      (tokenService as any)._setAccessToken = jest.fn();
-      (tokenService as any).setRefreshToken = jest.fn();
+      (tokenService as any)._setAccessToken = jest.fn().mockReturnValue(accessTokenJwt);
+      (tokenService as any).setRefreshToken = jest.fn().mockReturnValue(refreshToken);
       tokenService.setClientId = jest.fn();
       tokenService.setClientSecret = jest.fn();
 
       // Act
-      await tokenService.setTokens(accessTokenJwt, vaultTimeoutAction, vaultTimeout, refreshToken);
+      const result = await tokenService.setTokens(
+        accessTokenJwt,
+        vaultTimeoutAction,
+        vaultTimeout,
+        refreshToken,
+      );
 
       // Assert
       expect((tokenService as any)._setAccessToken).toHaveBeenCalledWith(
@@ -2451,6 +2509,8 @@ describe("TokenService", () => {
 
       expect(tokenService.setClientId).not.toHaveBeenCalled();
       expect(tokenService.setClientSecret).not.toHaveBeenCalled();
+
+      expect(result).toStrictEqual(new SetTokensResult(accessTokenJwt, refreshToken));
     });
 
     it("throws an error when the access token is invalid", async () => {
@@ -2535,10 +2595,16 @@ describe("TokenService", () => {
       (tokenService as any).setRefreshToken = jest.fn();
 
       // Act
-      await tokenService.setTokens(accessTokenJwt, vaultTimeoutAction, vaultTimeout, refreshToken);
+      const result = await tokenService.setTokens(
+        accessTokenJwt,
+        vaultTimeoutAction,
+        vaultTimeout,
+        refreshToken,
+      );
 
       // Assert
       expect((tokenService as any).setRefreshToken).not.toHaveBeenCalled();
+      expect(result).toStrictEqual(new SetTokensResult(accessTokenJwt));
     });
   });
 
