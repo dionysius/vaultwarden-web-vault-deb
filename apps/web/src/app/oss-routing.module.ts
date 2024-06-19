@@ -112,12 +112,6 @@ const routes: Routes = [
         data: { titleId: "setMasterPassword" } satisfies DataProperties,
       },
       {
-        path: "hint",
-        component: HintComponent,
-        canActivate: [UnauthGuard],
-        data: { titleId: "passwordHint" } satisfies DataProperties,
-      },
-      {
         path: "lock",
         component: LockComponent,
         canActivate: [deepLinkGuard(), lockGuard()],
@@ -335,6 +329,25 @@ const routes: Routes = [
               pageTitle: "deleteAccount",
               titleId: "deleteAccount",
             } satisfies DataProperties & AnonLayoutWrapperData,
+          },
+        ],
+      },
+      {
+        path: "hint",
+        canActivate: [unauthGuardFn()],
+        children: [
+          {
+            path: "",
+            component: HintComponent,
+            data: {
+              pageTitle: "passwordHint",
+              titleId: "passwordHint",
+            } satisfies DataProperties & AnonLayoutWrapperData,
+          },
+          {
+            path: "",
+            component: EnvironmentSelectorComponent,
+            outlet: "environment-selector",
           },
         ],
       },
