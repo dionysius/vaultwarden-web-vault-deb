@@ -137,12 +137,6 @@ const routes: Routes = [
       },
       { path: "recover", pathMatch: "full", redirectTo: "recover-2fa" },
       {
-        path: "verify-recover-delete",
-        component: VerifyRecoverDeleteComponent,
-        canActivate: [UnauthGuard],
-        data: { titleId: "deleteAccount" } satisfies DataProperties,
-      },
-      {
         path: "verify-recover-delete-org",
         component: VerifyRecoverDeleteOrgComponent,
         canActivate: [UnauthGuard],
@@ -327,6 +321,20 @@ const routes: Routes = [
             path: "",
             component: EnvironmentSelectorComponent,
             outlet: "environment-selector",
+          },
+        ],
+      },
+      {
+        path: "verify-recover-delete",
+        canActivate: [unauthGuardFn()],
+        children: [
+          {
+            path: "",
+            component: VerifyRecoverDeleteComponent,
+            data: {
+              pageTitle: "deleteAccount",
+              titleId: "deleteAccount",
+            } satisfies DataProperties & AnonLayoutWrapperData,
           },
         ],
       },
