@@ -11,6 +11,7 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 import { UsernameGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/username";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
+import { ToastService } from "@bitwarden/components";
 
 import { GeneratorComponent } from "./generator.component";
 
@@ -58,6 +59,10 @@ describe("GeneratorComponent", () => {
         {
           provide: AccountService,
           useValue: mock<AccountService>(),
+        },
+        {
+          provide: ToastService,
+          useValue: mock<ToastService>(),
         },
       ],
       schemas: [NO_ERRORS_SCHEMA],

@@ -12,7 +12,13 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
 import { SendView } from "@bitwarden/common/tools/send/models/view/send.view";
 import { SendApiService } from "@bitwarden/common/tools/send/services/send-api.service.abstraction";
 import { SendService } from "@bitwarden/common/tools/send/services/send.service.abstraction";
-import { DialogService, NoItemsModule, SearchModule, TableDataSource } from "@bitwarden/components";
+import {
+  DialogService,
+  NoItemsModule,
+  SearchModule,
+  TableDataSource,
+  ToastService,
+} from "@bitwarden/components";
 
 import { HeaderModule } from "../../layouts/header/header.module";
 import { SharedModule } from "../../shared";
@@ -56,6 +62,7 @@ export class SendComponent extends BaseSendComponent {
     logService: LogService,
     sendApiService: SendApiService,
     dialogService: DialogService,
+    toastService: ToastService,
   ) {
     super(
       sendService,
@@ -68,6 +75,7 @@ export class SendComponent extends BaseSendComponent {
       logService,
       sendApiService,
       dialogService,
+      toastService,
     );
   }
 

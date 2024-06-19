@@ -13,6 +13,7 @@ import { UsernameGenerationServiceAbstraction } from "@bitwarden/common/tools/ge
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { AddEditCipherInfo } from "@bitwarden/common/vault/types/add-edit-cipher-info";
+import { ToastService } from "@bitwarden/components";
 
 @Component({
   selector: "app-generator",
@@ -34,6 +35,7 @@ export class GeneratorComponent extends BaseGeneratorComponent {
     logService: LogService,
     ngZone: NgZone,
     private location: Location,
+    toastService: ToastService,
   ) {
     super(
       passwordGenerationService,
@@ -45,6 +47,7 @@ export class GeneratorComponent extends BaseGeneratorComponent {
       route,
       ngZone,
       window,
+      toastService,
     );
     this.cipherService = cipherService;
   }

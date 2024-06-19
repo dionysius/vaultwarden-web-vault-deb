@@ -8,7 +8,7 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 import { UsernameGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/username";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 
 import { PasswordGeneratorHistoryComponent } from "./password-generator-history.component";
 
@@ -27,6 +27,7 @@ export class GeneratorComponent extends BaseGeneratorComponent {
     route: ActivatedRoute,
     ngZone: NgZone,
     private dialogService: DialogService,
+    toastService: ToastService,
   ) {
     super(
       passwordGenerationService,
@@ -38,6 +39,7 @@ export class GeneratorComponent extends BaseGeneratorComponent {
       route,
       ngZone,
       window,
+      toastService,
     );
     if (platformUtilsService.isSelfHost()) {
       // Allow only valid email forwarders for self host

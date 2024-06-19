@@ -6,6 +6,7 @@ import {
   GeneratedPasswordHistory,
   PasswordGenerationServiceAbstraction,
 } from "@bitwarden/common/tools/generator/password";
+import { ToastService } from "@bitwarden/components";
 
 @Directive()
 export class PasswordGeneratorHistoryComponent implements OnInit {
@@ -16,6 +17,7 @@ export class PasswordGeneratorHistoryComponent implements OnInit {
     protected platformUtilsService: PlatformUtilsService,
     protected i18nService: I18nService,
     private win: Window,
+    protected toastService: ToastService,
   ) {}
 
   async ngOnInit() {
@@ -29,10 +31,10 @@ export class PasswordGeneratorHistoryComponent implements OnInit {
   copy(password: string) {
     const copyOptions = this.win != null ? { window: this.win } : null;
     this.platformUtilsService.copyToClipboard(password, copyOptions);
-    this.platformUtilsService.showToast(
-      "info",
-      null,
-      this.i18nService.t("valueCopied", this.i18nService.t("password")),
-    );
+    this.toastService.showToast({
+      variant: "info",
+      title: null,
+      message: this.i18nService.t("valueCopied", this.i18nService.t("password")),
+    });
   }
 }

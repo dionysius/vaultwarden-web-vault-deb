@@ -19,6 +19,7 @@ import {
   UsernameGeneratorOptions,
 } from "@bitwarden/common/tools/generator/username";
 import { EmailForwarderOptions } from "@bitwarden/common/tools/models/domain/email-forwarder-options";
+import { ToastService } from "@bitwarden/components";
 
 @Directive()
 export class GeneratorComponent implements OnInit, OnDestroy {
@@ -67,6 +68,7 @@ export class GeneratorComponent implements OnInit, OnDestroy {
     protected route: ActivatedRoute,
     protected ngZone: NgZone,
     private win: Window,
+    protected toastService: ToastService,
   ) {
     this.typeOptions = [
       { name: i18nService.t("password"), value: "password" },
@@ -317,11 +319,14 @@ export class GeneratorComponent implements OnInit, OnDestroy {
       password ? this.password : this.username,
       copyOptions,
     );
-    this.platformUtilsService.showToast(
-      "info",
-      null,
-      this.i18nService.t("valueCopied", this.i18nService.t(password ? "password" : "username")),
-    );
+    this.toastService.showToast({
+      variant: "info",
+      title: null,
+      message: this.i18nService.t(
+        "valueCopied",
+        this.i18nService.t(password ? "password" : "username"),
+      ),
+    });
   }
 
   select() {

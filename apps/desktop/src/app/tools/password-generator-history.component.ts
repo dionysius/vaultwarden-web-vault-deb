@@ -4,6 +4,7 @@ import { PasswordGeneratorHistoryComponent as BasePasswordGeneratorHistoryCompon
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
+import { ToastService } from "@bitwarden/components";
 
 @Component({
   selector: "app-password-generator-history",
@@ -14,7 +15,8 @@ export class PasswordGeneratorHistoryComponent extends BasePasswordGeneratorHist
     passwordGenerationService: PasswordGenerationServiceAbstraction,
     platformUtilsService: PlatformUtilsService,
     i18nService: I18nService,
+    toastService: ToastService,
   ) {
-    super(passwordGenerationService, platformUtilsService, i18nService, window);
+    super(passwordGenerationService, platformUtilsService, i18nService, window, toastService);
   }
 }

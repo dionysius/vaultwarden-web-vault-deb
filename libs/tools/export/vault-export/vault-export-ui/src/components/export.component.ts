@@ -15,7 +15,6 @@ import { EventType } from "@bitwarden/common/enums";
 import { FileDownloadService } from "@bitwarden/common/platform/abstractions/file-download/file-download.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
-import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { EncryptedExportType } from "@bitwarden/common/tools/enums/encrypted-export-type.enum";
 import {
@@ -28,6 +27,7 @@ import {
   IconButtonModule,
   RadioButtonModule,
   SelectModule,
+  ToastService,
 } from "@bitwarden/components";
 import { VaultExportServiceAbstraction } from "@bitwarden/vault-export-core";
 
@@ -123,7 +123,7 @@ export class ExportComponent implements OnInit, OnDestroy {
 
   constructor(
     protected i18nService: I18nService,
-    protected platformUtilsService: PlatformUtilsService,
+    protected toastService: ToastService,
     protected exportService: VaultExportServiceAbstraction,
     protected eventCollectionService: EventCollectionService,
     private policyService: PolicyService,
@@ -222,11 +222,11 @@ export class ExportComponent implements OnInit, OnDestroy {
 
   submit = async () => {
     if (this.isFileEncryptedExport && this.filePassword != this.confirmFilePassword) {
-      this.platformUtilsService.showToast(
-        "error",
-        this.i18nService.t("errorOccurred"),
-        this.i18nService.t("filePasswordAndConfirmFilePasswordDoNotMatch"),
-      );
+      this.toastService.showToast({
+        variant: "error",
+        title: this.i18nService.t("errorOccurred"),
+        message: this.i18nService.t("filePasswordAndConfirmFilePasswordDoNotMatch"),
+      });
       return;
     }
 
@@ -236,11 +236,11 @@ export class ExportComponent implements OnInit, OnDestroy {
     }
 
     if (this.disabledByPolicy) {
-      this.platformUtilsService.showToast(
-        "error",
-        null,
-        this.i18nService.t("personalVaultExportPolicyInEffect"),
-      );
+      this.toastService.showToast({
+        variant: "error",
+        title: null,
+        message: this.i18nService.t("personalVaultExportPolicyInEffect"),
+      });
       return;
     }
 

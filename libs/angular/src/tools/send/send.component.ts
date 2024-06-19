@@ -20,7 +20,7 @@ import { SendType } from "@bitwarden/common/tools/send/enums/send-type";
 import { SendView } from "@bitwarden/common/tools/send/models/view/send.view";
 import { SendApiService } from "@bitwarden/common/tools/send/services/send-api.service.abstraction";
 import { SendService } from "@bitwarden/common/tools/send/services/send.service.abstraction";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 
 @Directive()
 export class SendComponent implements OnInit, OnDestroy {
@@ -76,6 +76,7 @@ export class SendComponent implements OnInit, OnDestroy {
     private logService: LogService,
     protected sendApiService: SendApiService,
     protected dialogService: DialogService,
+    protected toastService: ToastService,
   ) {}
 
   async ngOnInit() {
@@ -186,7 +187,11 @@ export class SendComponent implements OnInit, OnDestroy {
         this.onSuccessfulRemovePassword();
       } else {
         // Default actions
-        this.platformUtilsService.showToast("success", null, this.i18nService.t("removedPassword"));
+        this.toastService.showToast({
+          variant: "success",
+          title: null,
+          message: this.i18nService.t("removedPassword"),
+        });
         await this.load();
       }
     } catch (e) {
@@ -220,7 +225,11 @@ export class SendComponent implements OnInit, OnDestroy {
         this.onSuccessfulDelete();
       } else {
         // Default actions
-        this.platformUtilsService.showToast("success", null, this.i18nService.t("deletedSend"));
+        this.toastService.showToast({
+          variant: "success",
+          title: null,
+          message: this.i18nService.t("deletedSend"),
+        });
         await this.refresh();
       }
     } catch (e) {
@@ -234,11 +243,11 @@ export class SendComponent implements OnInit, OnDestroy {
     const env = await firstValueFrom(this.environmentService.environment$);
     const link = env.getSendUrl() + s.accessId + "/" + s.urlB64Key;
     this.platformUtilsService.copyToClipboard(link);
-    this.platformUtilsService.showToast(
-      "success",
-      null,
-      this.i18nService.t("valueCopied", this.i18nService.t("sendLink")),
-    );
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("valueCopied", this.i18nService.t("sendLink")),
+    });
   }
 
   searchTextChanged() {
