@@ -270,6 +270,15 @@ export abstract class CryptoService {
   abstract userPrivateKey$(userId: UserId): Observable<UserPrivateKey>;
 
   /**
+   * Gets an observable stream of the given users decrypted private key with legacy support,
+   * will emit null if the user doesn't have a UserKey to decrypt the encrypted private key
+   * or null if the user doesn't have an encrypted private key at all.
+   *
+   * @param userId The user id of the user to get the data for.
+   */
+  abstract userPrivateKeyWithLegacySupport$(userId: UserId): Observable<UserPrivateKey>;
+
+  /**
    * Generates a fingerprint phrase for the user based on their public key
    * @param fingerprintMaterial Fingerprint material
    * @param publicKey The user's public key

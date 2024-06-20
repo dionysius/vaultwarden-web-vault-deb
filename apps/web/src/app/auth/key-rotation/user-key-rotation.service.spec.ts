@@ -1,37 +1,30 @@
 import { mock, MockProxy } from "jest-mock-extended";
-import { BehaviorSubject, of } from "rxjs";
+import { BehaviorSubject } from "rxjs";
 
+import { OrganizationUserResetPasswordWithIdRequest } from "@bitwarden/common/admin-console/abstractions/organization-user/requests";
 import { DeviceTrustServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust.service.abstraction";
 import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
+import { WebauthnRotateCredentialRequest } from "@bitwarden/common/auth/models/request/webauthn-rotate-credential.request";
 import { FakeMasterPasswordService } from "@bitwarden/common/auth/services/master-password/fake-master-password.service";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
-import { EncryptionType } from "@bitwarden/common/platform/enums";
-import { Utils } from "@bitwarden/common/platform/misc/utils";
-import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
-import { Send } from "@bitwarden/common/tools/send/models/domain/send";
+import { SendWithIdRequest } from "@bitwarden/common/tools/send/models/request/send-with-id.request";
 import { SendService } from "@bitwarden/common/tools/send/services/send.service.abstraction";
 import { UserId } from "@bitwarden/common/types/guid";
-import { UserKey } from "@bitwarden/common/types/key";
+import { UserKey, UserPrivateKey } from "@bitwarden/common/types/key";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { FolderService } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
-import { CipherType } from "@bitwarden/common/vault/enums/cipher-type";
-import { Cipher } from "@bitwarden/common/vault/models/domain/cipher";
-import { Folder } from "@bitwarden/common/vault/models/domain/folder";
-import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
-import { FolderView } from "@bitwarden/common/vault/models/view/folder.view";
+import { CipherType } from "@bitwarden/common/vault/enums";
+import { CipherWithIdRequest } from "@bitwarden/common/vault/models/request/cipher-with-id.request";
+import { FolderWithIdRequest } from "@bitwarden/common/vault/models/request/folder-with-id.request";
 
-import {
-  FakeAccountService,
-  mockAccountServiceWith,
-} from "../../../../../../libs/common/spec/fake-account-service";
 import { OrganizationUserResetPasswordService } from "../../admin-console/organizations/members/services/organization-user-reset-password/organization-user-reset-password.service";
-import { StateService } from "../../core";
 import { WebauthnLoginAdminService } from "../core";
 import { EmergencyAccessService } from "../emergency-access";
+import { EmergencyAccessWithIdRequest } from "../emergency-access/request/emergency-access-update.request";
 
 import { UserKeyRotationApiService } from "./user-key-rotation-api.service";
 import { UserKeyRotationService } from "./user-key-rotation.service";
@@ -48,15 +41,18 @@ describe("KeyRotationService", () => {
   let mockDeviceTrustService: MockProxy<DeviceTrustServiceAbstraction>;
   let mockCryptoService: MockProxy<CryptoService>;
   let mockEncryptService: MockProxy<EncryptService>;
-  let mockStateService: MockProxy<StateService>;
   let mockConfigService: MockProxy<ConfigService>;
   let mockKdfConfigService: MockProxy<KdfConfigService>;
   let mockSyncService: MockProxy<SyncService>;
   let mockWebauthnLoginAdminService: MockProxy<WebauthnLoginAdminService>;
-
-  const mockUserId = Utils.newGuid() as UserId;
-  const mockAccountService: FakeAccountService = mockAccountServiceWith(mockUserId);
   let mockMasterPasswordService: FakeMasterPasswordService = new FakeMasterPasswordService();
+
+  const mockUser = {
+    id: "mockUserId" as UserId,
+    email: "mockEmail",
+    emailVerified: true,
+    name: "mockName",
+  };
 
   beforeAll(() => {
     mockMasterPasswordService = new FakeMasterPasswordService();
@@ -69,7 +65,6 @@ describe("KeyRotationService", () => {
     mockDeviceTrustService = mock<DeviceTrustServiceAbstraction>();
     mockCryptoService = mock<CryptoService>();
     mockEncryptService = mock<EncryptService>();
-    mockStateService = mock<StateService>();
     mockConfigService = mock<ConfigService>();
     mockKdfConfigService = mock<KdfConfigService>();
     mockSyncService = mock<SyncService>();
@@ -86,8 +81,6 @@ describe("KeyRotationService", () => {
       mockDeviceTrustService,
       mockCryptoService,
       mockEncryptService,
-      mockStateService,
-      mockAccountService,
       mockKdfConfigService,
       mockSyncService,
       mockWebauthnLoginAdminService,
@@ -98,91 +91,82 @@ describe("KeyRotationService", () => {
     jest.clearAllMocks();
   });
 
-  it("instantiates", () => {
-    expect(keyRotationService).not.toBeFalsy();
-  });
-
   describe("rotateUserKeyAndEncryptedData", () => {
-    let folderViews: BehaviorSubject<FolderView[]>;
-    let sends: BehaviorSubject<Send[]>;
+    let privateKey: BehaviorSubject<UserPrivateKey>;
 
-    beforeAll(() => {
+    beforeEach(() => {
       mockCryptoService.makeMasterKey.mockResolvedValue("mockMasterKey" as any);
       mockCryptoService.makeUserKey.mockResolvedValue([
         new SymmetricCryptoKey(new Uint8Array(64)) as UserKey,
         {
-          encryptedString: "mockEncryptedUserKey",
+          encryptedString: "mockNewUserKey",
         } as any,
       ]);
       mockCryptoService.hashMasterKey.mockResolvedValue("mockMasterPasswordHash");
       mockConfigService.getFeatureFlag.mockResolvedValue(true);
 
-      // Mock private key
-      mockCryptoService.getPrivateKey.mockResolvedValue("MockPrivateKey" as any);
-      mockCryptoService.userKey$.mockReturnValue(
-        of(new SymmetricCryptoKey(new Uint8Array(64)) as UserKey),
-      );
-
-      // Mock ciphers
-      const mockCiphers = [createMockCipher("1", "Cipher 1"), createMockCipher("2", "Cipher 2")];
-      mockCipherService.getAllDecrypted.mockResolvedValue(mockCiphers);
-
-      // Mock folders
-      const mockFolders = [createMockFolder("1", "Folder 1"), createMockFolder("2", "Folder 2")];
-      folderViews = new BehaviorSubject<FolderView[]>(mockFolders);
-      mockFolderService.folderViews$ = folderViews;
-
-      // Mock sends
-      const mockSends = [createMockSend("1", "Send 1"), createMockSend("2", "Send 2")];
-      sends = new BehaviorSubject<Send[]>(mockSends);
-      mockSendService.sends$ = sends;
-
-      mockWebauthnLoginAdminService.rotateWebAuthnKeys.mockResolvedValue([]);
-
-      // Mock encryption methods
       mockEncryptService.encrypt.mockResolvedValue({
         encryptedString: "mockEncryptedData",
       } as any);
 
-      mockFolderService.encrypt.mockImplementation((folder, userKey) => {
-        const encryptedFolder = new Folder();
-        encryptedFolder.id = folder.id;
-        encryptedFolder.name = new EncString(
-          EncryptionType.AesCbc256_HmacSha256_B64,
-          "Encrypted: " + folder.name,
-        );
-        return Promise.resolve(encryptedFolder);
-      });
+      // Mock user key
+      mockCryptoService.userKey$.mockReturnValue(new BehaviorSubject("mockOriginalUserKey" as any));
 
-      mockCipherService.encrypt.mockImplementation((cipher, userKey) => {
-        const encryptedCipher = new Cipher();
-        encryptedCipher.id = cipher.id;
-        encryptedCipher.name = new EncString(
-          EncryptionType.AesCbc256_HmacSha256_B64,
-          "Encrypted: " + cipher.name,
-        );
-        return Promise.resolve(encryptedCipher);
-      });
+      // Mock private key
+      privateKey = new BehaviorSubject("mockPrivateKey" as any);
+      mockCryptoService.userPrivateKeyWithLegacySupport$.mockReturnValue(privateKey);
+
+      // Mock ciphers
+      const mockCiphers = [createMockCipher("1", "Cipher 1"), createMockCipher("2", "Cipher 2")];
+      mockCipherService.getRotatedData.mockResolvedValue(mockCiphers);
+
+      // Mock folders
+      const mockFolders = [createMockFolder("1", "Folder 1"), createMockFolder("2", "Folder 2")];
+      mockFolderService.getRotatedData.mockResolvedValue(mockFolders);
+
+      // Mock sends
+      const mockSends = [createMockSend("1", "Send 1"), createMockSend("2", "Send 2")];
+      mockSendService.getRotatedData.mockResolvedValue(mockSends);
+
+      // Mock emergency access
+      const emergencyAccess = [createMockEmergencyAccess("13")];
+      mockEmergencyAccessService.getRotatedData.mockResolvedValue(emergencyAccess);
+
+      // Mock reset password
+      const resetPassword = [createMockResetPassword("12")];
+      mockResetPasswordService.getRotatedData.mockResolvedValue(resetPassword);
+
+      // Mock Webauthn
+      const webauthn = [createMockWebauthn("13"), createMockWebauthn("14")];
+      mockWebauthnLoginAdminService.getRotatedData.mockResolvedValue(webauthn);
     });
 
     it("rotates the user key and encrypted data", async () => {
-      await keyRotationService.rotateUserKeyAndEncryptedData("mockMasterPassword");
+      await keyRotationService.rotateUserKeyAndEncryptedData("mockMasterPassword", mockUser);
 
       expect(mockApiService.postUserKeyUpdate).toHaveBeenCalled();
       const arg = mockApiService.postUserKeyUpdate.mock.calls[0][0];
+      expect(arg.key).toBe("mockNewUserKey");
+      expect(arg.privateKey).toBe("mockEncryptedData");
       expect(arg.ciphers.length).toBe(2);
       expect(arg.folders.length).toBe(2);
+      expect(arg.sends.length).toBe(2);
+      expect(arg.emergencyAccessKeys.length).toBe(1);
+      expect(arg.resetPasswordKeys.length).toBe(1);
+      expect(arg.webauthnKeys.length).toBe(2);
     });
 
     it("throws if master password provided is falsey", async () => {
-      await expect(keyRotationService.rotateUserKeyAndEncryptedData("")).rejects.toThrow();
+      await expect(
+        keyRotationService.rotateUserKeyAndEncryptedData("", mockUser),
+      ).rejects.toThrow();
     });
 
     it("throws if master key creation fails", async () => {
       mockCryptoService.makeMasterKey.mockResolvedValueOnce(null);
 
       await expect(
-        keyRotationService.rotateUserKeyAndEncryptedData("mockMasterPassword"),
+        keyRotationService.rotateUserKeyAndEncryptedData("mockMasterPassword", mockUser),
       ).rejects.toThrow();
     });
 
@@ -190,16 +174,24 @@ describe("KeyRotationService", () => {
       mockCryptoService.makeUserKey.mockResolvedValueOnce([null, null]);
 
       await expect(
-        keyRotationService.rotateUserKeyAndEncryptedData("mockMasterPassword"),
+        keyRotationService.rotateUserKeyAndEncryptedData("mockMasterPassword", mockUser),
+      ).rejects.toThrow();
+    });
+
+    it("throws if no private key is found", async () => {
+      privateKey.next(null);
+
+      await expect(
+        keyRotationService.rotateUserKeyAndEncryptedData("mockMasterPassword", mockUser),
       ).rejects.toThrow();
     });
 
     it("saves the master key in state after creation", async () => {
-      await keyRotationService.rotateUserKeyAndEncryptedData("mockMasterPassword");
+      await keyRotationService.rotateUserKeyAndEncryptedData("mockMasterPassword", mockUser);
 
       expect(mockMasterPasswordService.mock.setMasterKey).toHaveBeenCalledWith(
         "mockMasterKey" as any,
-        mockUserId,
+        mockUser.id,
       );
     });
 
@@ -207,30 +199,51 @@ describe("KeyRotationService", () => {
       mockApiService.postUserKeyUpdate.mockRejectedValueOnce(new Error("mockError"));
 
       await expect(
-        keyRotationService.rotateUserKeyAndEncryptedData("mockMasterPassword"),
+        keyRotationService.rotateUserKeyAndEncryptedData("mockMasterPassword", mockUser),
       ).rejects.toThrow();
     });
   });
 });
 
-function createMockFolder(id: string, name: string): FolderView {
-  const folder = new FolderView();
-  folder.id = id;
-  folder.name = name;
-  return folder;
+function createMockFolder(id: string, name: string): FolderWithIdRequest {
+  return {
+    id: id,
+    name: name,
+  } as FolderWithIdRequest;
 }
 
-function createMockCipher(id: string, name: string): CipherView {
-  const cipher = new CipherView();
-  cipher.id = id;
-  cipher.name = name;
-  cipher.type = CipherType.Login;
-  return cipher;
+function createMockCipher(id: string, name: string): CipherWithIdRequest {
+  return {
+    id: id,
+    name: name,
+    type: CipherType.Login,
+  } as CipherWithIdRequest;
 }
 
-function createMockSend(id: string, name: string): Send {
-  const send = new Send();
-  send.id = id;
-  send.name = new EncString(EncryptionType.AesCbc256_HmacSha256_B64, name);
-  return send;
+function createMockSend(id: string, name: string): SendWithIdRequest {
+  return {
+    id: id,
+    name: name,
+  } as SendWithIdRequest;
+}
+
+function createMockEmergencyAccess(id: string): EmergencyAccessWithIdRequest {
+  return {
+    id: id,
+    type: 0,
+    waitTimeDays: 5,
+  } as EmergencyAccessWithIdRequest;
+}
+
+function createMockResetPassword(id: string): OrganizationUserResetPasswordWithIdRequest {
+  return {
+    organizationId: id,
+    resetPasswordKey: "mockResetPasswordKey",
+  } as OrganizationUserResetPasswordWithIdRequest;
+}
+
+function createMockWebauthn(id: string): any {
+  return {
+    id: id,
+  } as WebauthnRotateCredentialRequest;
 }

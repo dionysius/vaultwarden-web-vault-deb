@@ -1,19 +1,22 @@
 import { Observable } from "rxjs";
 
+import { UserKeyRotationDataProvider } from "@bitwarden/auth/common";
 import { LocalData } from "@bitwarden/common/vault/models/data/local.data";
 
 import { UriMatchStrategySetting } from "../../models/domain/domain-service";
 import { SymmetricCryptoKey } from "../../platform/models/domain/symmetric-crypto-key";
-import { CipherId, CollectionId, OrganizationId } from "../../types/guid";
+import { CipherId, CollectionId, OrganizationId, UserId } from "../../types/guid";
+import { UserKey } from "../../types/key";
 import { CipherType } from "../enums/cipher-type";
 import { CipherData } from "../models/data/cipher.data";
 import { Cipher } from "../models/domain/cipher";
 import { Field } from "../models/domain/field";
+import { CipherWithIdRequest } from "../models/request/cipher-with-id.request";
 import { CipherView } from "../models/view/cipher.view";
 import { FieldView } from "../models/view/field.view";
 import { AddEditCipherInfo } from "../types/add-edit-cipher-info";
 
-export abstract class CipherService {
+export abstract class CipherService implements UserKeyRotationDataProvider<CipherWithIdRequest> {
   cipherViews$: Observable<Record<CipherId, CipherView>>;
   ciphers$: Observable<Record<CipherId, CipherData>>;
   localData$: Observable<Record<CipherId, LocalData>>;
@@ -146,4 +149,17 @@ export abstract class CipherService {
   restoreManyWithServer: (ids: string[], orgId?: string) => Promise<void>;
   getKeyForCipherKeyDecryption: (cipher: Cipher) => Promise<any>;
   setAddEditCipherInfo: (value: AddEditCipherInfo) => Promise<void>;
+  /**
+   * Returns user ciphers re-encrypted with the new user key.
+   * @param originalUserKey the original user key
+   * @param newUserKey the new user key
+   * @param userId the user id
+   * @throws Error if new user key is null
+   * @returns a list of user ciphers that have been re-encrypted with the new user key
+   */
+  getRotatedData: (
+    originalUserKey: UserKey,
+    newUserKey: UserKey,
+    userId: UserId,
+  ) => Promise<CipherWithIdRequest[]>;
 }

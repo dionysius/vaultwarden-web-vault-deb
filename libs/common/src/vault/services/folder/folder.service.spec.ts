@@ -178,6 +178,29 @@ describe("Folder Service", () => {
     // });
   });
 
+  describe("getRotatedData", () => {
+    const originalUserKey = new SymmetricCryptoKey(new Uint8Array(32)) as UserKey;
+    const newUserKey = new SymmetricCryptoKey(new Uint8Array(32)) as UserKey;
+    let encryptedKey: EncString;
+
+    beforeEach(() => {
+      encryptedKey = new EncString("Re-encrypted Folder");
+      cryptoService.encrypt.mockResolvedValue(encryptedKey);
+    });
+
+    it("returns re-encrypted user folders", async () => {
+      const result = await folderService.getRotatedData(originalUserKey, newUserKey, mockUserId);
+
+      expect(result[0]).toMatchObject({ id: "1", name: "Re-encrypted Folder" });
+    });
+
+    it("throws if the new user key is null", async () => {
+      await expect(folderService.getRotatedData(originalUserKey, null, mockUserId)).rejects.toThrow(
+        "New user key is required for rotation.",
+      );
+    });
+  });
+
   function folderData(id: string, name: string) {
     const data = new FolderData({} as any);
     data.id = id;

@@ -400,8 +400,11 @@ describe("SendService", () => {
     expect(sends[0]).toMatchObject(testSendViewData("1", "Test Send"));
   });
 
-  describe("getRotatedKeys", () => {
+  describe("getRotatedData", () => {
+    const originalUserKey = new SymmetricCryptoKey(new Uint8Array(32)) as UserKey;
+    const newUserKey = new SymmetricCryptoKey(new Uint8Array(32)) as UserKey;
     let encryptedKey: EncString;
+
     beforeEach(() => {
       encryptService.decryptToBytes.mockResolvedValue(new Uint8Array(32));
       encryptedKey = new EncString("Re-encrypted Send Key");
@@ -409,27 +412,30 @@ describe("SendService", () => {
     });
 
     it("returns re-encrypted user sends", async () => {
-      const newUserKey = new SymmetricCryptoKey(new Uint8Array(32)) as UserKey;
-      const result = await sendService.getRotatedKeys(newUserKey);
+      const result = await sendService.getRotatedData(originalUserKey, newUserKey, mockUserId);
 
       expect(result).toMatchObject([{ id: "1", key: "Re-encrypted Send Key" }]);
     });
 
-    it("returns null if there are no sends", async () => {
-      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-      // eslint-disable-next-line @typescript-eslint/no-floating-promises
-      sendService.replace(null);
+    it("returns empty array if there are no sends", async () => {
+      await sendService.replace(null);
 
       await awaitAsync();
 
       const newUserKey = new SymmetricCryptoKey(new Uint8Array(32)) as UserKey;
-      const result = await sendService.getRotatedKeys(newUserKey);
+      const result = await sendService.getRotatedData(originalUserKey, newUserKey, mockUserId);
 
       expect(result).toEqual([]);
     });
 
+    it("throws if the original user key is null", async () => {
+      await expect(sendService.getRotatedData(null, newUserKey, mockUserId)).rejects.toThrow(
+        "Original user key is required for rotation.",
+      );
+    });
+
     it("throws if the new user key is null", async () => {
-      await expect(sendService.getRotatedKeys(null)).rejects.toThrowError(
+      await expect(sendService.getRotatedData(originalUserKey, null, mockUserId)).rejects.toThrow(
         "New user key is required for rotation.",
       );
     });

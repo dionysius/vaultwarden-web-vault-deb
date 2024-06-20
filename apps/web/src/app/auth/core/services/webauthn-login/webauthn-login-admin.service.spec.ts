@@ -190,7 +190,7 @@ describe("WebauthnAdminService", () => {
     it("should throw when old userkey is null", async () => {
       const newUserKey = makeSymmetricCryptoKey(64) as UserKey;
       try {
-        await service.rotateWebAuthnKeys(null, newUserKey);
+        await service.getRotatedData(null, newUserKey, null);
       } catch (error) {
         expect(error).toEqual(new Error("oldUserKey is required"));
       }
@@ -198,7 +198,7 @@ describe("WebauthnAdminService", () => {
     it("should throw when new userkey is null", async () => {
       const oldUserKey = makeSymmetricCryptoKey(64) as UserKey;
       try {
-        await service.rotateWebAuthnKeys(oldUserKey, null);
+        await service.getRotatedData(oldUserKey, null, null);
       } catch (error) {
         expect(error).toEqual(new Error("newUserKey is required"));
       }
@@ -222,7 +222,7 @@ describe("WebauthnAdminService", () => {
         .mockResolvedValue(
           new RotateableKeySet<PrfKey>(mockEncryptedUserKey, mockEncryptedPublicKey),
         );
-      await service.rotateWebAuthnKeys(oldUserKey, newUserKey);
+      await service.getRotatedData(oldUserKey, newUserKey, null);
       expect(rotateKeySetMock).toHaveBeenCalledWith(
         expect.any(RotateableKeySet),
         oldUserKey,
@@ -242,7 +242,7 @@ describe("WebauthnAdminService", () => {
         ],
       } as any);
       const rotateKeySetMock = jest.spyOn(rotateableKeySetService, "rotateKeySet");
-      await service.rotateWebAuthnKeys(oldUserKey, newUserKey);
+      await service.getRotatedData(oldUserKey, newUserKey, null);
       expect(rotateKeySetMock).not.toHaveBeenCalled();
     });
   });

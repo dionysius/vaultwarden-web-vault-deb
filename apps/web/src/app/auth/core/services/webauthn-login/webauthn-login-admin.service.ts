@@ -1,7 +1,7 @@
 import { Injectable, Optional } from "@angular/core";
 import { BehaviorSubject, filter, from, map, Observable, shareReplay, switchMap, tap } from "rxjs";
 
-import { PrfKeySet } from "@bitwarden/auth/common";
+import { PrfKeySet, UserKeyRotationDataProvider } from "@bitwarden/auth/common";
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { WebAuthnLoginPrfCryptoServiceAbstraction } from "@bitwarden/common/auth/abstractions/webauthn/webauthn-login-prf-crypto.service.abstraction";
 import { WebauthnRotateCredentialRequest } from "@bitwarden/common/auth/models/request/webauthn-rotate-credential.request";
@@ -9,6 +9,7 @@ import { WebAuthnLoginCredentialAssertionOptionsView } from "@bitwarden/common/a
 import { WebAuthnLoginCredentialAssertionView } from "@bitwarden/common/auth/models/view/webauthn-login/webauthn-login-credential-assertion.view";
 import { Verification } from "@bitwarden/common/auth/types/verification";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
+import { UserId } from "@bitwarden/common/types/guid";
 import { UserKey } from "@bitwarden/common/types/key";
 
 import { CredentialCreateOptionsView } from "../../views/credential-create-options.view";
@@ -25,7 +26,9 @@ import { WebAuthnLoginAdminApiService } from "./webauthn-login-admin-api.service
 /**
  * Service for managing WebAuthnLogin credentials.
  */
-export class WebauthnLoginAdminService {
+export class WebauthnLoginAdminService
+  implements UserKeyRotationDataProvider<WebauthnRotateCredentialRequest>
+{
   static readonly MaxCredentialCount = 5;
 
   private navigatorCredentials: CredentialsContainer;
@@ -283,11 +286,13 @@ export class WebauthnLoginAdminService {
    *
    * @param oldUserKey The old user key
    * @param newUserKey The new user key
+   * @param userId The user id
    * @returns A promise that returns an array of rotate credential requests when resolved.
    */
-  async rotateWebAuthnKeys(
+  async getRotatedData(
     oldUserKey: UserKey,
     newUserKey: UserKey,
+    userId: UserId,
   ): Promise<WebauthnRotateCredentialRequest[]> {
     if (!oldUserKey) {
       throw new Error("oldUserKey is required");

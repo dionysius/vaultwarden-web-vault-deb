@@ -9,6 +9,7 @@ import { Utils } from "../../../platform/misc/utils";
 import { EncArrayBuffer } from "../../../platform/models/domain/enc-array-buffer";
 import { EncString } from "../../../platform/models/domain/enc-string";
 import { SymmetricCryptoKey } from "../../../platform/models/domain/symmetric-crypto-key";
+import { UserId } from "../../../types/guid";
 import { UserKey } from "../../../types/key";
 import { SendType } from "../enums/send-type";
 import { SendData } from "../models/data/send.data";
@@ -258,12 +259,17 @@ export class SendService implements InternalSendServiceAbstraction {
     await this.stateProvider.setEncryptedSends(sends);
   }
 
-  async getRotatedKeys(newUserKey: UserKey): Promise<SendWithIdRequest[]> {
+  async getRotatedData(
+    originalUserKey: UserKey,
+    newUserKey: UserKey,
+    userId: UserId,
+  ): Promise<SendWithIdRequest[]> {
     if (newUserKey == null) {
       throw new Error("New user key is required for rotation.");
     }
-
-    const originalUserKey = await this.cryptoService.getUserKey();
+    if (originalUserKey == null) {
+      throw new Error("Original user key is required for rotation.");
+    }
 
     const req = await firstValueFrom(
       this.sends$.pipe(

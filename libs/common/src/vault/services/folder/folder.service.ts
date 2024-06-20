@@ -6,12 +6,14 @@ import { Utils } from "../../../platform/misc/utils";
 import { SymmetricCryptoKey } from "../../../platform/models/domain/symmetric-crypto-key";
 import { ActiveUserState, DerivedState, StateProvider } from "../../../platform/state";
 import { UserId } from "../../../types/guid";
+import { UserKey } from "../../../types/key";
 import { CipherService } from "../../../vault/abstractions/cipher.service";
 import { InternalFolderService as InternalFolderServiceAbstraction } from "../../../vault/abstractions/folder/folder.service.abstraction";
 import { FolderData } from "../../../vault/models/data/folder.data";
 import { Folder } from "../../../vault/models/domain/folder";
 import { FolderView } from "../../../vault/models/view/folder.view";
 import { Cipher } from "../../models/domain/cipher";
+import { FolderWithIdRequest } from "../../models/request/folder-with-id.request";
 import { FOLDER_DECRYPTED_FOLDERS, FOLDER_ENCRYPTED_FOLDERS } from "../key-state/folder.state";
 
 export class FolderService implements InternalFolderServiceAbstraction {
@@ -169,5 +171,28 @@ export class FolderService implements InternalFolderServiceAbstraction {
     noneFolder.name = this.i18nService.t("noneFolder");
     decryptedFolders.push(noneFolder);
     return decryptedFolders;
+  }
+
+  async getRotatedData(
+    originalUserKey: UserKey,
+    newUserKey: UserKey,
+    userId: UserId,
+  ): Promise<FolderWithIdRequest[]> {
+    if (newUserKey == null) {
+      throw new Error("New user key is required for rotation.");
+    }
+
+    let encryptedFolders: FolderWithIdRequest[] = [];
+    const folders = await firstValueFrom(this.folderViews$);
+    if (!folders) {
+      return encryptedFolders;
+    }
+    encryptedFolders = await Promise.all(
+      folders.map(async (folder) => {
+        const encryptedFolder = await this.encrypt(folder, newUserKey);
+        return new FolderWithIdRequest(encryptedFolder);
+      }),
+    );
+    return encryptedFolders;
   }
 }

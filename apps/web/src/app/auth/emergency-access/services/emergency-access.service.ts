@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 
+import { UserKeyRotationDataProvider } from "@bitwarden/auth/common";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { PolicyData } from "@bitwarden/common/admin-console/models/data/policy.data";
 import { Policy } from "@bitwarden/common/admin-console/models/domain/policy";
@@ -15,6 +16,7 @@ import { KdfType } from "@bitwarden/common/platform/enums";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { EncryptedString } from "@bitwarden/common/platform/models/domain/enc-string";
 import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
+import { UserId } from "@bitwarden/common/types/guid";
 import { UserKey } from "@bitwarden/common/types/key";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { Cipher } from "@bitwarden/common/vault/models/domain/cipher";
@@ -35,7 +37,9 @@ import {
 import { EmergencyAccessApiService } from "./emergency-access-api.service";
 
 @Injectable()
-export class EmergencyAccessService {
+export class EmergencyAccessService
+  implements UserKeyRotationDataProvider<EmergencyAccessWithIdRequest>
+{
   constructor(
     private emergencyAccessApiService: EmergencyAccessApiService,
     private apiService: ApiService,
@@ -286,9 +290,21 @@ export class EmergencyAccessService {
   /**
    * Returns existing emergency access keys re-encrypted with new user key.
    * Intended for grantor.
+   * @param originalUserKey the original user key
    * @param newUserKey the new user key
+   * @param userId the user id
+   * @throws Error if newUserKey is nullish
+   * @returns an array of re-encrypted emergency access requests or an empty array if there are no requests
    */
-  async getRotatedKeys(newUserKey: UserKey): Promise<EmergencyAccessWithIdRequest[]> {
+  async getRotatedData(
+    originalUserKey: UserKey,
+    newUserKey: UserKey,
+    userId: UserId,
+  ): Promise<EmergencyAccessWithIdRequest[]> {
+    if (newUserKey == null) {
+      throw new Error("New user key is required for rotation.");
+    }
+
     const requests: EmergencyAccessWithIdRequest[] = [];
     const existingEmergencyAccess =
       await this.emergencyAccessApiService.getEmergencyAccessTrusted();

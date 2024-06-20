@@ -220,6 +220,7 @@ export class ChangePasswordComponent extends BaseChangePasswordComponent {
   }
 
   private async updateKey() {
-    await this.keyRotationService.rotateUserKeyAndEncryptedData(this.masterPassword);
+    const user = await firstValueFrom(this.accountService.activeAccount$);
+    await this.keyRotationService.rotateUserKeyAndEncryptedData(this.masterPassword, user);
   }
 }

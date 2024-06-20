@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 
+import { UserKeyRotationDataProvider } from "@bitwarden/auth/common";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { OrganizationUserService } from "@bitwarden/common/admin-console/abstractions/organization-user/organization-user.service";
@@ -19,12 +20,15 @@ import { KdfType } from "@bitwarden/common/platform/enums";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { EncryptedString, EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
+import { UserId } from "@bitwarden/common/types/guid";
 import { UserKey } from "@bitwarden/common/types/key";
 
 @Injectable({
   providedIn: "root",
 })
-export class OrganizationUserResetPasswordService {
+export class OrganizationUserResetPasswordService
+  implements UserKeyRotationDataProvider<OrganizationUserResetPasswordWithIdRequest>
+{
   constructor(
     private cryptoService: CryptoService,
     private encryptService: EncryptService,
@@ -129,11 +133,16 @@ export class OrganizationUserResetPasswordService {
 
   /**
    * Returns existing account recovery keys re-encrypted with the new user key.
+   * @param originalUserKey the original user key
    * @param newUserKey the new user key
+   * @param userId the user id
    * @throws Error if new user key is null
+   * @returns a list of account recovery keys that have been re-encrypted with the new user key
    */
-  async getRotatedKeys(
+  async getRotatedData(
+    originalUserKey: UserKey,
     newUserKey: UserKey,
+    userId: UserId,
   ): Promise<OrganizationUserResetPasswordWithIdRequest[] | null> {
     if (newUserKey == null) {
       throw new Error("New user key is required for rotation.");

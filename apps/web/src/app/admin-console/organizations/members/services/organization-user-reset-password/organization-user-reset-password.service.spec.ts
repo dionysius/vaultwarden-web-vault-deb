@@ -13,6 +13,7 @@ import { EncryptionType, KdfType } from "@bitwarden/common/platform/enums";
 import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
 import { CsprngArray } from "@bitwarden/common/types/csprng";
+import { UserId } from "@bitwarden/common/types/guid";
 import { UserKey, OrgKey, MasterKey } from "@bitwarden/common/types/key";
 
 import { OrganizationUserResetPasswordService } from "./organization-user-reset-password.service";
@@ -157,7 +158,7 @@ describe("OrganizationUserResetPasswordService", () => {
     });
   });
 
-  describe("getRotatedKeys", () => {
+  describe("getRotatedData", () => {
     beforeEach(() => {
       organizationService.getAll.mockResolvedValue([
         createOrganization("1", "org1"),
@@ -175,11 +176,23 @@ describe("OrganizationUserResetPasswordService", () => {
     });
 
     it("should return all re-encrypted account recovery keys", async () => {
-      const result = await sut.getRotatedKeys(
+      const result = await sut.getRotatedData(
         new SymmetricCryptoKey(new Uint8Array(64)) as UserKey,
+        new SymmetricCryptoKey(new Uint8Array(64)) as UserKey,
+        "mockUserId" as UserId,
       );
 
       expect(result).toHaveLength(2);
+    });
+
+    it("throws if the new user key is null", async () => {
+      await expect(
+        sut.getRotatedData(
+          new SymmetricCryptoKey(new Uint8Array(64)) as UserKey,
+          null,
+          "mockUserId" as UserId,
+        ),
+      ).rejects.toThrow("New user key is required for rotation.");
     });
   });
 });
