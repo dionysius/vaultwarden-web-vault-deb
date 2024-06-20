@@ -121,11 +121,20 @@ const sortFn = (a: T, b: T) => (a.id > b.id ? 1 : -1);
 
 ### Filtering
 
-The `TableDataSource` supports a rudimentary filtering capability most commonly used to implement a
-search function. It works by converting each entry into a string of it's properties. The string is
-then compared against the filter value using a simple `indexOf`check.
+Filtering is supported by passing a filter predicate to `filter`.
 
 ```ts
+dataSource.filter = (data) => data.orgType === "family";
+```
+
+Rudimentary string filtering is supported out of the box with `TableDataSource.simpleStringFilter`.
+It works by converting each entry into a string of it's properties. The provided string is then
+compared against the filter value using a simple `indexOf` check. For convienence, you can also just
+pass a string directly.
+
+```ts
+dataSource.filter = TableDataSource.simpleStringFilter("search value");
+// or
 dataSource.filter = "search value";
 ```
 
