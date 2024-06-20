@@ -43,6 +43,10 @@ export class SubscriptionStatusComponent {
   }
 
   get status(): string {
+    if (this.subscription.cancelAt && this.subscription.status === "active") {
+      this.subscription.status = "pending_cancellation";
+    }
+
     return this.subscription.status;
   }
 
@@ -151,13 +155,15 @@ export class SubscriptionStatusComponent {
           },
           date: {
             label: cancellationDateLabel,
-            value: this.subscription.currentPeriodEndDate.toDateString(),
+            value: this.subscription.cancelAt,
           },
           callout: {
             severity: "warning",
             header: pendingCancellationText,
-            body: this.i18nService.t("subscriptionPendingCanceled"),
-            showReinstatementButton: true,
+            body:
+              this.i18nService.t("subscriptionPendingCanceled") +
+              this.i18nService.t("providerReinstate"),
+            showReinstatementButton: false,
           },
         };
       }

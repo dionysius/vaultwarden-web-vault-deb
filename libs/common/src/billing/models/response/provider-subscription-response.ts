@@ -9,6 +9,7 @@ export class ProviderSubscriptionResponse extends BaseResponse {
   unpaidPeriodEndDate?: string;
   gracePeriod?: number | null;
   suspensionDate?: string;
+  cancelAt?: string;
 
   constructor(response: any) {
     super(response);
@@ -19,6 +20,7 @@ export class ProviderSubscriptionResponse extends BaseResponse {
     this.unpaidPeriodEndDate = this.getResponseProperty("unpaidPeriodEndDate");
     this.gracePeriod = this.getResponseProperty("gracePeriod");
     this.suspensionDate = this.getResponseProperty("suspensionDate");
+    this.cancelAt = this.getResponseProperty("cancelAt");
     const plans = this.getResponseProperty("plans");
     if (plans != null) {
       this.plans = plans.map((i: any) => new ProviderPlanResponse(i));
