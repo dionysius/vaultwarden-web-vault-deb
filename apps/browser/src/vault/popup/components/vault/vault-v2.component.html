@@ -33,14 +33,19 @@
       </bit-no-items>
     </div>
 
-    <div
-      *ngIf="vaultState === VaultStateEnum.DeactivatedOrg"
-      class="tw-flex tw-flex-col tw-justify-center tw-h-auto tw-pt-12"
-    >
-      <bit-no-items [icon]="deactivatedIcon">
-        <ng-container slot="title">{{ "organizationIsDeactivated" | i18n }}</ng-container>
-        <ng-container slot="description">{{ "contactYourOrgAdmin" | i18n }}</ng-container>
-      </bit-no-items>
+    <!-- For better consistency with screen readers, the role/aria needs to be on an element that isn't dynamic by *ngIf -->
+    <div role="status" aria-live="polite">
+      <div
+        *ngIf="vaultState === VaultStateEnum.DeactivatedOrg"
+        class="tw-flex tw-flex-col tw-justify-center tw-h-auto tw-pt-12"
+      >
+        <bit-no-items [icon]="deactivatedIcon">
+          <ng-container slot="title">
+            {{ "organizationIsDeactivated" | i18n }}
+          </ng-container>
+          <ng-container slot="description">{{ "contactYourOrgAdmin" | i18n }}</ng-container>
+        </bit-no-items>
+      </div>
     </div>
 
     <ng-container *ngIf="vaultState === null">

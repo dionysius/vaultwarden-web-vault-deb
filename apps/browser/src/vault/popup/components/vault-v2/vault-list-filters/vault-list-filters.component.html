@@ -1,39 +1,41 @@
-<form [formGroup]="filterForm" class="tw-flex tw-flex-wrap tw-gap-2 tw-mb-6 tw-mt-2">
-  <ng-container *ngIf="organizations$ | async as organizations">
+<div role="toolbar" [ariaLabel]="'filters' | i18n">
+  <form [formGroup]="filterForm" class="tw-flex tw-flex-wrap tw-gap-2 tw-mb-6 tw-mt-2">
+    <ng-container *ngIf="organizations$ | async as organizations">
+      <bit-chip-select
+        *ngIf="organizations.length"
+        formControlName="organization"
+        placeholderIcon="bwi-vault"
+        [placeholderText]="'vault' | i18n"
+        [options]="organizations"
+      >
+      </bit-chip-select>
+    </ng-container>
+    <ng-container *ngIf="collections$ | async as collections">
+      <bit-chip-select
+        *ngIf="collections.length"
+        formControlName="collection"
+        placeholderIcon="bwi-collection"
+        [placeholderText]="'collection' | i18n"
+        [options]="collections"
+      >
+      </bit-chip-select>
+    </ng-container>
+    <ng-container *ngIf="folders$ | async as folders">
+      <bit-chip-select
+        *ngIf="folders.length"
+        placeholderIcon="bwi-folder"
+        formControlName="folder"
+        [placeholderText]="'folder' | i18n"
+        [options]="folders"
+      >
+      </bit-chip-select>
+    </ng-container>
     <bit-chip-select
-      *ngIf="organizations.length"
-      formControlName="organization"
-      placeholderIcon="bwi-vault"
-      [placeholderText]="'vault' | i18n"
-      [options]="organizations"
+      formControlName="cipherType"
+      placeholderIcon="bwi-list"
+      [placeholderText]="'type' | i18n"
+      [options]="cipherTypes"
     >
     </bit-chip-select>
-  </ng-container>
-  <ng-container *ngIf="collections$ | async as collections">
-    <bit-chip-select
-      *ngIf="collections.length"
-      formControlName="collection"
-      placeholderIcon="bwi-collection"
-      [placeholderText]="'collection' | i18n"
-      [options]="collections"
-    >
-    </bit-chip-select>
-  </ng-container>
-  <ng-container *ngIf="folders$ | async as folders">
-    <bit-chip-select
-      *ngIf="folders.length"
-      placeholderIcon="bwi-folder"
-      formControlName="folder"
-      [placeholderText]="'folder' | i18n"
-      [options]="folders"
-    >
-    </bit-chip-select>
-  </ng-container>
-  <bit-chip-select
-    formControlName="cipherType"
-    placeholderIcon="bwi-list"
-    [placeholderText]="'type' | i18n"
-    [options]="cipherTypes"
-  >
-  </bit-chip-select>
-</form>
+  </form>
+</div>
