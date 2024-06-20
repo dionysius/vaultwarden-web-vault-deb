@@ -20,9 +20,9 @@
         </button>
       </div>
       <div class="modal-body" *ngIf="cipher">
-        <app-callout type="info" *ngIf="allowOwnershipAssignment() && !allowPersonal">
+        <bit-callout type="info" *ngIf="allowOwnershipAssignment() && !allowPersonal">
           {{ "personalOwnershipPolicyInEffect" | i18n }}
-        </app-callout>
+        </bit-callout>
         <div class="row" *ngIf="!editMode && !viewOnly">
           <div class="col-6 form-group">
             <label for="type">{{ "whatTypeOfItem" | i18n }}</label>

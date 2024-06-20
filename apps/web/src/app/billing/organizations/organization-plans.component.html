@@ -455,7 +455,9 @@
     </ng-container>
   </bit-section>
   <bit-section *ngIf="singleOrgPolicyBlock">
-    <app-callout [type]="'error'">{{ "singleOrgBlockCreateMessage" | i18n }}</app-callout>
+    <bit-callout type="danger" [title]="'error' | i18n">
+      {{ "singleOrgBlockCreateMessage" | i18n }}
+    </bit-callout>
   </bit-section>
   <bit-section>
     <button

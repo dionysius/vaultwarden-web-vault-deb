@@ -5,11 +5,11 @@
       <p bitTypography="body1">{{ data.apiKeyDescription | i18n }}</p>
       <app-user-verification-form-input formControlName="masterPassword" *ngIf="!clientSecret">
       </app-user-verification-form-input>
-      <app-callout type="warning" *ngIf="clientSecret">{{ data.apiKeyWarning | i18n }}</app-callout>
-      <app-callout
+      <bit-callout type="warning" *ngIf="clientSecret">{{ data.apiKeyWarning | i18n }}</bit-callout>
+      <bit-callout
         type="info"
         title="{{ 'oauth2ClientCredentials' | i18n }}"
-        icon="bwi bwi-key"
+        icon="bwi-key"
         *ngIf="clientSecret"
       >
         <p bitTypography="body1" class="tw-mb-1">
@@ -28,7 +28,7 @@
           <strong>grant_type:</strong><br />
           <code>{{ data.grantType }}</code>
         </p>
-      </app-callout>
+      </bit-callout>
     </div>
     <div bitDialogFooter>
       <button type="submit" buttonType="primary" *ngIf="!clientSecret" bitButton bitFormButton>

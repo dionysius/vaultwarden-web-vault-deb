@@ -41,9 +41,9 @@
         {{ "addAccess" | i18n }}
       </bit-toggle>
     </bit-toggle-group>
-    <app-callout type="warning" *ngIf="activeFilter.isDeleted" icon="bwi bwi-exclamation-triangle">
+    <bit-callout type="warning" *ngIf="activeFilter.isDeleted">
       {{ trashCleanupWarning }}
-    </app-callout>
+    </bit-callout>
     <app-vault-items
       [ciphers]="ciphers"
       [collections]="collections"

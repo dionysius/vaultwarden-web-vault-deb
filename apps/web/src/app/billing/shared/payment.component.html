@@ -63,9 +63,9 @@
     </div>
   </ng-container>
   <ng-container *ngIf="showMethods && method === paymentMethodType.BankAccount">
-    <app-callout type="warning" title="{{ 'verifyBankAccount' | i18n }}">
+    <bit-callout type="warning" title="{{ 'verifyBankAccount' | i18n }}">
       {{ "verifyBankAccountInitialDesc" | i18n }} {{ "verifyBankAccountFailureWarning" | i18n }}
-    </app-callout>
+    </bit-callout>
     <div class="tw-grid tw-grid-cols-12 tw-gap-4" formGroupName="bank">
       <bit-form-field class="tw-col-span-6">
         <bit-label>{{ "routingNumber" | i18n }}</bit-label>
@@ -106,8 +106,8 @@
     </div>
   </ng-container>
   <ng-container *ngIf="showMethods && method === paymentMethodType.Credit">
-    <app-callout type="note">
+    <bit-callout>
       {{ "makeSureEnoughCredit" | i18n }}
-    </app-callout>
+    </bit-callout>
   </ng-container>
 </div>

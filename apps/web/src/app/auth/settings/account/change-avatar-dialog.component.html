@@ -4,9 +4,6 @@
       <i class="bwi bwi-spinner bwi-spin" title="{{ 'loading' | i18n }}" aria-hidden="true"></i>
       {{ "loading" | i18n }}
     </div>
-    <app-callout type="error" *ngIf="error">
-      {{ error }}
-    </app-callout>
     <p class="tw-text-lg">{{ "pickAnAvatarColor" | i18n }}</p>
     <div class="tw-flex tw-flex-wrap tw-justify-center tw-gap-8">
       <ng-container *ngFor="let c of defaultColorPalette">

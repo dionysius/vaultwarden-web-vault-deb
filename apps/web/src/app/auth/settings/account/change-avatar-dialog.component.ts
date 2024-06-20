@@ -31,7 +31,6 @@ export class ChangeAvatarDialogComponent implements OnInit, OnDestroy {
   @ViewChild("colorPicker") colorPickerElement: ElementRef<HTMLElement>;
 
   loading = false;
-  error: string;
   defaultColorPalette: NamedAvatarColor[] = [
     { name: "brightBlue", color: "#16cbfc" },
     { name: "green", color: "#94cc4b" },

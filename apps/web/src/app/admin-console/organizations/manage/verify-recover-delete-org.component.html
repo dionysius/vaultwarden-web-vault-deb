@@ -3,9 +3,9 @@
     <p class="tw-text-xl tw-text-center tw-mb-4">{{ "deleteOrganization" | i18n }}</p>
     <div class="tw-rounded-md tw-border tw-border-solid tw-border-secondary-300 tw-bg-background">
       <div class="tw-p-5">
-        <app-callout type="warning">{{
-          "deletingOrganizationIsPermanentWarning" | i18n: name
-        }}</app-callout>
+        <bit-callout type="warning">
+          {{ "deletingOrganizationIsPermanentWarning" | i18n: name }}
+        </bit-callout>
         <p class="tw-text-center">
           <strong>{{ name }}</strong>
         </p>

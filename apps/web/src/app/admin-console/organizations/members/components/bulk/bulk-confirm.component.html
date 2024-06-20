@@ -1,11 +1,11 @@
 <bit-dialog dialogSize="large" [title]="'confirmUsers' | i18n" [loading]="loading">
   <ng-container bitDialogContent>
-    <app-callout type="danger" *ngIf="filteredUsers.length <= 0">
+    <bit-callout type="danger" *ngIf="filteredUsers.length <= 0">
       {{ "noSelectedUsersApplicable" | i18n }}
-    </app-callout>
-    <app-callout type="error" *ngIf="error">
+    </bit-callout>
+    <bit-callout type="danger" [title]="'error' | i18n" *ngIf="error">
       {{ error }}
-    </app-callout>
+    </bit-callout>
     <ng-container *ngIf="!loading && !done">
       <p bitTypography="body1">
         {{ "fingerprintEnsureIntegrityVerify" | i18n }}

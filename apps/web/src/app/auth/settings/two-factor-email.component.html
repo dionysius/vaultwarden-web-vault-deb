@@ -6,9 +6,9 @@
     </span>
     <ng-container bitDialogContent>
       <ng-container *ngIf="enabled">
-        <app-callout type="success" title="{{ 'enabled' | i18n }}" icon="bwi bwi-check-circle">
+        <bit-callout type="success" title="{{ 'enabled' | i18n }}" icon="bwi-check-circle">
           {{ "twoStepLoginProviderEnabled" | i18n }}
-        </app-callout>
+        </bit-callout>
         <strong>{{ "email" | i18n }}:</strong> {{ email }}
       </ng-container>
       <ng-container *ngIf="!enabled">

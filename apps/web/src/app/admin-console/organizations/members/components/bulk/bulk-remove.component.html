@@ -1,18 +1,18 @@
 <bit-dialog dialogSize="large" [title]="'removeUsers' | i18n">
   <ng-container bitDialogContent>
-    <app-callout type="danger" *ngIf="users.length <= 0">
+    <bit-callout type="danger" *ngIf="users.length <= 0">
       {{ "noSelectedUsersApplicable" | i18n }}
-    </app-callout>
-    <app-callout type="error" *ngIf="error">
+    </bit-callout>
+    <bit-callout type="danger" [title]="'error' | i18n" *ngIf="error">
       {{ error }}
-    </app-callout>
+    </bit-callout>
     <ng-container *ngIf="!done">
-      <app-callout type="warning" *ngIf="users.length > 0 && !error">
+      <bit-callout type="warning" *ngIf="users.length > 0 && !error">
         <p bitTypography="body1">{{ removeUsersWarning }}</p>
         <p *ngIf="this.showNoMasterPasswordWarning" bitTypography="body1">
           {{ "removeMembersWithoutMasterPasswordWarning" | i18n }}
         </p>
-      </app-callout>
+      </bit-callout>
       <bit-table>
         <ng-container header>
           <tr>

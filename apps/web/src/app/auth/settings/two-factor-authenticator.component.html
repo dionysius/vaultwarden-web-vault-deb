@@ -1,7 +1,7 @@
 <form *ngIf="authed" [formGroup]="formGroup" [bitSubmit]="submit">
   <bit-dialog dialogSize="default">
-    <span bitDialogTitle
-      >{{ "twoStepLogin" | i18n }}
+    <span bitDialogTitle>
+      {{ "twoStepLogin" | i18n }}
       <span bitTypography="body1">{{ "authenticatorAppTitle" | i18n }}</span>
     </span>
     <ng-container bitDialogContent>
@@ -13,10 +13,10 @@
         </p>
       </ng-container>
       <ng-container *ngIf="enabled">
-        <app-callout type="success" title="{{ 'enabled' | i18n }}" icon="bwi bwi-check-circle">
+        <bit-callout type="success" title="{{ 'enabled' | i18n }}" icon="bwi-check-circle">
           <p bitTypography="body1">{{ "twoStepLoginProviderEnabled" | i18n }}</p>
           {{ "twoStepAuthenticatorReaddDesc" | i18n }}
-        </app-callout>
+        </bit-callout>
         <img class="float-right mfaType0" alt="Authenticator app logo" />
         <p bitTypography="body1">{{ "twoStepAuthenticatorNeedApp" | i18n }}</p>
       </ng-container>
