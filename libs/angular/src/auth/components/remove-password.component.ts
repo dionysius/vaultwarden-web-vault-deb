@@ -41,7 +41,7 @@ export class RemovePasswordComponent implements OnInit {
     this.loading = false;
   }
 
-  async convert() {
+  convert = async () => {
     this.continuing = true;
     this.actionPromise = this.keyConnectorService.migrateUser();
 
@@ -59,9 +59,9 @@ export class RemovePasswordComponent implements OnInit {
     } catch (e) {
       this.platformUtilsService.showToast("error", this.i18nService.t("errorOccurred"), e.message);
     }
-  }
+  };
 
-  async leave() {
+  leave = async () => {
     const confirmed = await this.dialogService.openSimpleDialog({
       title: this.organization.name,
       content: { key: "leaveOrganizationConfirmation" },
@@ -84,5 +84,5 @@ export class RemovePasswordComponent implements OnInit {
     } catch (e) {
       this.platformUtilsService.showToast("error", this.i18nService.t("errorOccurred"), e);
     }
-  }
+  };
 }
