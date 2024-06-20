@@ -127,7 +127,7 @@
                 appStopClick
                 (click)="removePasskey()"
                 appA11yTitle="{{ 'removePasskey' | i18n }}"
-                [disabled]="!cipher.edit && editMode"
+                *ngIf="!(!cipher.edit && editMode)"
               >
                 <i class="bwi bwi-fw bwi-minus-circle bwi-lg" aria-hidden="true"></i>
               </button>
@@ -488,7 +488,7 @@
                 appStopClick
                 (click)="removeUri(u)"
                 appA11yTitle="{{ 'remove' | i18n }}"
-                [disabled]="!cipher.edit && editMode"
+                *ngIf="!(!cipher.edit && editMode)"
               >
                 <i class="bwi bwi-minus-circle bwi-lg" aria-hidden="true"></i>
               </button>
@@ -500,6 +500,7 @@
                   name="Login.Uris[{{ i }}].Uri"
                   [(ngModel)]="u.uri"
                   placeholder="{{ 'ex' | i18n }} https://google.com"
+                  [readonly]="!cipher.edit && editMode"
                   appInputVerbatim
                 />
                 <label for="loginUriMatch{{ i }}" class="sr-only">
@@ -533,6 +534,7 @@
                       ($any(u).showOptions == null && u.match == null)
                     )
                   "
+                  [disabled]="!cipher.edit && editMode"
                 >
                   <i class="bwi bwi-lg bwi-cog" aria-hidden="true"></i>
                 </button>
