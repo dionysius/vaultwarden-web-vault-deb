@@ -165,10 +165,10 @@ export class LoginComponent extends BaseLoginComponent implements OnInit {
   }
 
   async goToRegister() {
-    const email = this.formGroup.value.email;
-
-    if (email) {
-      await this.router.navigate([this.registerRoute], { queryParams: { email: email } });
+    if (this.emailFormControl.valid) {
+      await this.router.navigate([this.registerRoute], {
+        queryParams: { email: this.emailFormControl.value },
+      });
       return;
     }
 

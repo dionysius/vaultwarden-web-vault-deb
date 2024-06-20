@@ -7,13 +7,7 @@
     <div class="tw-mb-3">
       <bit-form-field>
         <bit-label>{{ "emailAddress" | i18n }}</bit-label>
-        <input
-          bitInput
-          type="email"
-          formControlName="email"
-          appAutofocus
-          (keyup.enter)="validateEmail()"
-        />
+        <input bitInput type="email" formControlName="email" appAutofocus />
       </bit-form-field>
     </div>
 
@@ -27,7 +21,7 @@
     <div class="tw-mb-3">
       <button
         bitButton
-        type="button"
+        type="submit"
         buttonType="primary"
         class="tw-w-full"
         (click)="validateEmail()"
@@ -54,8 +48,19 @@
 
     <p class="tw-m-0 tw-text-sm">
       {{ "newAroundHere" | i18n }}
-      <!--mousedown event is used over click because it prevents the validation from firing  -->
-      <a bitLink href="#" (mousedown)="goToRegister()">{{ "createAccount" | i18n }}</a>
+      <!-- Two notes:  
+           (1) We check the value and validity of email so we don't send an invalid email to autofill 
+           on load of register for both enter and mouse based navigation
+           (2) We use mousedown to trigger navigation so that the onBlur form validation does not fire 
+           and move the create account link down the page on click which causes the user to miss actually 
+           clicking on the link. Mousedown fires before onBlur. 
+      -->
+      <a
+        [routerLink]="registerRoute"
+        [queryParams]="emailFormControl.valid ? { email: emailFormControl.value } : {}"
+        (mousedown)="goToRegister()"
+        >{{ "createAccount" | i18n }}</a
+      >
     </p>
   </ng-container>
 
@@ -67,7 +72,7 @@
         <button type="button" bitSuffix bitIconButton bitPasswordInputToggle></button>
       </bit-form-field>
       <a
-        class="-tw-mt-2"
+        class="tw-mt-2"
         routerLink="/hint"
         (mousedown)="goToHint()"
         (click)="setLoginEmailValues()"

@@ -47,6 +47,10 @@ export class LoginComponent extends CaptchaProtectedComponent implements OnInit,
   validatedEmail = false;
   paramEmailSet = false;
 
+  get emailFormControl() {
+    return this.formGroup.controls.email;
+  }
+
   formGroup = this.formBuilder.group({
     email: ["", [Validators.required, Validators.email]],
     masterPassword: [
@@ -277,8 +281,8 @@ export class LoginComponent extends CaptchaProtectedComponent implements OnInit,
 
   async validateEmail() {
     this.formGroup.controls.email.markAsTouched();
-    const emailInvalid = this.formGroup.get("email").invalid;
-    if (!emailInvalid) {
+    const emailValid = this.formGroup.get("email").valid;
+    if (emailValid) {
       this.toggleValidateEmail(true);
       await this.getLoginWithDevice(this.loggedEmail);
     }
