@@ -27,6 +27,7 @@ import { ServiceAccountGrantedPoliciesRequest } from "../access-policies/models/
 
 import { AccessPolicyRequest } from "./models/requests/access-policy.request";
 import { ProjectServiceAccountsAccessPoliciesRequest } from "./models/requests/project-service-accounts-access-policies.request";
+import { SecretAccessPoliciesRequest } from "./models/requests/secret-access-policies.request";
 import {
   GroupAccessPolicyResponse,
   UserAccessPolicyResponse,
@@ -231,6 +232,20 @@ export class AccessPolicyService {
     );
     const results = new ListResponse(r, PotentialGranteeResponse);
     return await this.createPotentialGranteeViews(organizationId, results.data);
+  }
+
+  getSecretAccessPoliciesRequest(view: SecretAccessPoliciesView): SecretAccessPoliciesRequest {
+    return {
+      userAccessPolicyRequests: view.userAccessPolicies.map((ap) => {
+        return this.getAccessPolicyRequest(ap.organizationUserId, ap);
+      }),
+      groupAccessPolicyRequests: view.groupAccessPolicies.map((ap) => {
+        return this.getAccessPolicyRequest(ap.groupId, ap);
+      }),
+      serviceAccountAccessPolicyRequests: view.serviceAccountAccessPolicies.map((ap) => {
+        return this.getAccessPolicyRequest(ap.serviceAccountId, ap);
+      }),
+    };
   }
 
   private async getOrganizationKey(organizationId: string): Promise<SymmetricCryptoKey> {
