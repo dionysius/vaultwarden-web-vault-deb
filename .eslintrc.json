@@ -206,11 +206,29 @@
       }
     },
     {
-      "files": ["libs/tools/generator/extensions/src/**/*.ts"],
+      "files": ["libs/tools/generator/extensions/history/src/**/*.ts"],
       "rules": {
         "no-restricted-imports": [
           "error",
-          { "patterns": ["@bitwarden/generator-extensions/*", "src/**/*"] }
+          { "patterns": ["@bitwarden/generator-history/*", "src/**/*"] }
+        ]
+      }
+    },
+    {
+      "files": ["libs/tools/generator/extensions/legacy/src/**/*.ts"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          { "patterns": ["@bitwarden/generator-legacy/*", "src/**/*"] }
+        ]
+      }
+    },
+    {
+      "files": ["libs/tools/generator/extensions/navigation/src/**/*.ts"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          { "patterns": ["@bitwarden/generator-navigation/*", "src/**/*"] }
         ]
       }
     },

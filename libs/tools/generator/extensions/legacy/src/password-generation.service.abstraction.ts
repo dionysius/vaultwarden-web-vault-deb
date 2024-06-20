@@ -1,8 +1,7 @@
 import { Observable } from "rxjs";
 
 import { PasswordGeneratorPolicyOptions } from "@bitwarden/common/admin-console/models/domain/password-generator-policy-options";
-
-import { GeneratedPasswordHistory } from "../history";
+import { GeneratedPasswordHistory } from "@bitwarden/generator-history";
 
 import { PasswordGeneratorOptions } from "./password-generator-options";
 

@@ -24,15 +24,15 @@ import {
   SubaddressGenerationOptions,
   policies,
 } from "@bitwarden/generator-core";
-
-import { mockAccountServiceWith } from "../../../../../common/spec";
 import {
   GeneratorNavigationPolicy,
   GeneratorNavigationEvaluator,
   DefaultGeneratorNavigation,
   GeneratorNavigation,
   GeneratorNavigationService,
-} from "../navigation";
+} from "@bitwarden/generator-navigation";
+
+import { mockAccountServiceWith } from "../../../../../common/spec";
 
 import { LegacyUsernameGenerationService } from "./legacy-username-generation.service";
 import { UsernameGeneratorOptions } from "./username-generation-options";

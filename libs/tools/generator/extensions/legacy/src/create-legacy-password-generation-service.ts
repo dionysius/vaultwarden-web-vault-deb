@@ -4,9 +4,8 @@ import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.se
 import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { StateProvider } from "@bitwarden/common/platform/state";
 import { engine, services, strategies } from "@bitwarden/generator-core";
-
-import { LocalGeneratorHistoryService } from "../history";
-import { DefaultGeneratorNavigationService } from "../navigation";
+import { LocalGeneratorHistoryService } from "@bitwarden/generator-history";
+import { DefaultGeneratorNavigationService } from "@bitwarden/generator-navigation";
 
 import { LegacyPasswordGenerationService } from "./legacy-password-generation.service";
 import { PasswordGenerationServiceAbstraction } from "./password-generation.service.abstraction";

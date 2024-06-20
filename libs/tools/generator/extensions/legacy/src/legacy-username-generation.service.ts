@@ -14,8 +14,7 @@ import {
   Forwarders,
   SubaddressGenerationOptions,
 } from "@bitwarden/generator-core";
-
-import { GeneratorNavigationService, GeneratorNavigation } from "../navigation";
+import { GeneratorNavigationService, GeneratorNavigation } from "@bitwarden/generator-navigation";
 
 import { UsernameGeneratorOptions } from "./username-generation-options";
 import { UsernameGenerationServiceAbstraction } from "./username-generation.service.abstraction";

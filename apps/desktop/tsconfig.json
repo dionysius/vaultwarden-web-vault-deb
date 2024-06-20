@@ -19,7 +19,9 @@
       "@bitwarden/components": ["../../libs/components/src"],
       "@bitwarden/generator-components": ["../../libs/tools/generator/components/src"],
       "@bitwarden/generator-core": ["../../libs/tools/generator/core/src"],
-      "@bitwarden/generator-extensions": ["../../libs/tools/generator/extensions/src"],
+      "@bitwarden/generator-history": ["../../libs/tools/generator/extensions/history/src"],
+      "@bitwarden/generator-legacy": ["../../libs/tools/generator/extensions/legacy/src"],
+      "@bitwarden/generator-navigation": ["../../libs/tools/generator/extensions/navigation/src"],
       "@bitwarden/vault-export-core": [
         "../../libs/tools/export/vault-export/vault-export-core/src"
       ],

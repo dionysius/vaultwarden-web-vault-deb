@@ -14,16 +14,20 @@ import {
   PasswordGeneratorPolicy,
   policies,
 } from "@bitwarden/generator-core";
-
-import { mockAccountServiceWith } from "../../../../../common/spec";
-import { GeneratedCredential, GeneratorHistoryService, GeneratedPasswordHistory } from "../history";
+import {
+  GeneratedCredential,
+  GeneratorHistoryService,
+  GeneratedPasswordHistory,
+} from "@bitwarden/generator-history";
 import {
   GeneratorNavigationService,
   DefaultGeneratorNavigation,
   GeneratorNavigation,
   GeneratorNavigationEvaluator,
   GeneratorNavigationPolicy,
-} from "../navigation";
+} from "@bitwarden/generator-navigation";
+
+import { mockAccountServiceWith } from "../../../../../common/spec";
 
 import { LegacyPasswordGenerationService } from "./legacy-password-generation.service";
 import { PasswordGeneratorOptions } from "./password-generator-options";

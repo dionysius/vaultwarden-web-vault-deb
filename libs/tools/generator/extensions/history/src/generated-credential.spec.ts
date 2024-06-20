@@ -1,4 +1,4 @@
-import { GeneratorCategory, GeneratedCredential } from "./";
+import { GeneratorCategory, GeneratedCredential } from ".";
 
 describe("GeneratedCredential", () => {
   describe("constructor", () => {

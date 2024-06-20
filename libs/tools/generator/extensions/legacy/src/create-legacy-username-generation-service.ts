@@ -6,8 +6,7 @@ import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { StateProvider } from "@bitwarden/common/platform/state";
 import { engine, services, strategies } from "@bitwarden/generator-core";
-
-import { DefaultGeneratorNavigationService } from "../navigation";
+import { DefaultGeneratorNavigationService } from "@bitwarden/generator-navigation";
 
 import { LegacyUsernameGenerationService } from "./legacy-username-generation.service";
 import { UsernameGenerationServiceAbstraction } from "./username-generation.service.abstraction";

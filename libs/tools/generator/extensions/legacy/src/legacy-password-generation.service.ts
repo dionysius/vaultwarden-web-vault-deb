@@ -22,13 +22,16 @@ import {
   PasswordGeneratorPolicy,
   PolicyEvaluator,
 } from "@bitwarden/generator-core";
-
-import { GeneratedCredential, GeneratorHistoryService, GeneratedPasswordHistory } from "../history";
+import {
+  GeneratedCredential,
+  GeneratorHistoryService,
+  GeneratedPasswordHistory,
+} from "@bitwarden/generator-history";
 import {
   GeneratorNavigationService,
   GeneratorNavigation,
   GeneratorNavigationPolicy,
-} from "../navigation";
+} from "@bitwarden/generator-navigation";
 
 import { PasswordGenerationServiceAbstraction } from "./password-generation.service.abstraction";
 import { PasswordGeneratorOptions } from "./password-generator-options";

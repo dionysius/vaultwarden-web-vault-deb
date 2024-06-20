@@ -16,7 +16,7 @@ import {
   GeneratorNavigationEvaluator,
   DefaultGeneratorNavigationService,
   DefaultGeneratorNavigation,
-} from "./";
+} from ".";
 
 const SomeUser = "some user" as UserId;
 
