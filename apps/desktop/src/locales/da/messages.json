@@ -526,6 +526,19 @@
   "masterPassHint": {
     "message": "Hovedadgangskodetip (valgfrit)"
   },
+  "masterPassHintText": {
+    "message": "Glemmer du din adgangskode, kan adgangskodetippet sendes til din e-mail. $CURRENT$/$MAXIMUM$ tegns maksimum.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "settings": {
     "message": "Indstillinger"
   },
@@ -2691,6 +2704,9 @@
   },
   "submenu": {
     "message": "Undermenu"
+  },
+  "toggleSideNavigation": {
+    "message": "Slå sidenavigering til/fra"
   },
   "skipToContent": {
     "message": "Spring til indhold"

@@ -526,6 +526,19 @@
   "masterPassHint": {
     "message": "Подсказване за главната парола (по избор)"
   },
+  "masterPassHintText": {
+    "message": "Ако забравите паролата си, подсказката може да бъде изпратена на е-пощата Ви. $CURRENT$/$MAXIMUM$ максимален брой знаци.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "settings": {
     "message": "Настройки"
   },
@@ -2691,6 +2704,9 @@
   },
   "submenu": {
     "message": "Подменю"
+  },
+  "toggleSideNavigation": {
+    "message": "Превключване на страничната навигация"
   },
   "skipToContent": {
     "message": "Прескачане към съдържанието"

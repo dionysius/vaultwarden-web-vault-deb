@@ -526,6 +526,19 @@
   "masterPassHint": {
     "message": "主密碼提示（選用）"
   },
+  "masterPassHintText": {
+    "message": "If you forget your password, the password hint can be sent to your email. $CURRENT$/$MAXIMUM$ character maximum.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "settings": {
     "message": "設定"
   },
@@ -2691,6 +2704,9 @@
   },
   "submenu": {
     "message": "子選單"
+  },
+  "toggleSideNavigation": {
+    "message": "Toggle side navigation"
   },
   "skipToContent": {
     "message": "跳至內容"

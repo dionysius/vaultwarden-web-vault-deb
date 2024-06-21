@@ -526,6 +526,19 @@
   "masterPassHint": {
     "message": "ಮಾಸ್ಟರ್ ಪಾಸ್ವರ್ಡ್ ಸುಳಿವು (ಐಚ್ಛಿಕ)"
   },
+  "masterPassHintText": {
+    "message": "If you forget your password, the password hint can be sent to your email. $CURRENT$/$MAXIMUM$ character maximum.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "settings": {
     "message": "ಸೆಟ್ಟಿಂಗ್‍ಗಳು"
   },
@@ -2691,6 +2704,9 @@
   },
   "submenu": {
     "message": "Submenu"
+  },
+  "toggleSideNavigation": {
+    "message": "Toggle side navigation"
   },
   "skipToContent": {
     "message": "Skip to content"

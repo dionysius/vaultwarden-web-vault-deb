@@ -526,6 +526,19 @@
   "masterPassHint": {
     "message": "Nápoveď k hlavnému heslo (voliteľné)"
   },
+  "masterPassHintText": {
+    "message": "Ak zabudnete heslo, na váš e-mail môžete dostať pomôcku k heslu. Zadaných $CURRENT$ znakov, limit je $MAXIMUM$.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "settings": {
     "message": "Nastavenia"
   },
@@ -2691,6 +2704,9 @@
   },
   "submenu": {
     "message": "Podponuka"
+  },
+  "toggleSideNavigation": {
+    "message": "Prepnúť bočnú navigáciu"
   },
   "skipToContent": {
     "message": "Preskočiť na obsah"

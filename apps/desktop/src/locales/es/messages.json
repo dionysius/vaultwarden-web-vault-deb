@@ -500,10 +500,10 @@
     "message": "Crear cuenta"
   },
   "setAStrongPassword": {
-    "message": "Set a strong password"
+    "message": "Establece una contraseña fuerte"
   },
   "finishCreatingYourAccountBySettingAPassword": {
-    "message": "Finish creating your account by setting a password"
+    "message": "Termina de crear tu cuenta estableciendo una contraseña"
   },
   "logIn": {
     "message": "Identificarse"
@@ -525,6 +525,19 @@
   },
   "masterPassHint": {
     "message": "Pista de contraseña maestra (opcional)"
+  },
+  "masterPassHintText": {
+    "message": "Si olvidas tu contraseña, la pista de contraseña puede ser enviada a tu correo electrónico. Máximo de caracteres de $CURRENT$/$MAXIMUM$.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
   },
   "settings": {
     "message": "Ajustes"
@@ -702,13 +715,13 @@
     "message": "Especifica la URL base de tu instalación de Bitwarden de alojamiento propio."
   },
   "selfHostedBaseUrlHint": {
-    "message": "Specify the base URL of your on-premises hosted Bitwarden installation. Example: https://bitwarden.company.com"
+    "message": "Especifica la dirección URL base de tu instalación alojada localmente de Bitwarden. Por ejemplo: https://bitwarden.empresa.com"
   },
   "selfHostedCustomEnvHeader": {
-    "message": "For advanced configuration, you can specify the base URL of each service independently."
+    "message": "Para la configuración avanzada, puedes especificar la URL base de cada servicio de forma independiente."
   },
   "selfHostedEnvFormInvalid": {
-    "message": "You must add either the base Server URL or at least one custom environment."
+    "message": "Debes añadir o bien la URL del servidor base, o al menos un entorno personalizado."
   },
   "customEnvironment": {
     "message": "Entorno personalizado"
@@ -759,7 +772,7 @@
     "message": "Sesión terminada"
   },
   "loggedOutDesc": {
-    "message": "You have been logged out of your account."
+    "message": "Has cerrado sesión de tu cuenta."
   },
   "loginExpired": {
     "message": "Tu sesión ha expirado."
@@ -1231,10 +1244,10 @@
     }
   },
   "errorRefreshingAccessToken": {
-    "message": "Access Token Refresh Error"
+    "message": "Error de actualización del token de acceso"
   },
   "errorRefreshingAccessTokenDesc": {
-    "message": "No refresh token or API keys found. Please try logging out and logging back in."
+    "message": "No se encontró un token de actualización o clave de API. Por favor, intenta cerrar la sesión y volver a iniciarla."
   },
   "help": {
     "message": "Ayuda"
@@ -1324,7 +1337,7 @@
     "description": "ex. Date this password was updated"
   },
   "exportFrom": {
-    "message": "Export from"
+    "message": "Exportar desde"
   },
   "exportVault": {
     "message": "Exportar caja fuerte"
@@ -1333,31 +1346,31 @@
     "message": "Formato de archivo"
   },
   "fileEncryptedExportWarningDesc": {
-    "message": "This file export will be password protected and require the file password to decrypt."
+    "message": "Esta exportación de archivo estará protegida por contraseña, y requerirá la contraseña del archivo para descifrarla."
   },
   "filePassword": {
-    "message": "File password"
+    "message": "Contraseña del archivo"
   },
   "exportPasswordDescription": {
-    "message": "This password will be used to export and import this file"
+    "message": "Esta contraseña será utilizada para exportar e importar este archivo"
   },
   "accountRestrictedOptionDescription": {
-    "message": "Use your account encryption key, derived from your account's username and Master Password, to encrypt the export and restrict import to only the current Bitwarden account."
+    "message": "Utiliza la clave de cifrado de tu cuenta, derivada del nombre de usuario y contraseña maestra de tu cuenta, para cifrar la exportación y restringir la importación sólo a la cuenta actual de Bitwarden."
   },
   "passwordProtected": {
-    "message": "Password protected"
+    "message": "Protegido por contraseña"
   },
   "passwordProtectedOptionDescription": {
-    "message": "Set a file password to encrypt the export and import it to any Bitwarden account using the password for decryption."
+    "message": "Establece una contraseña de archivo para cifrar la exportación e importarla a cualquier cuenta de Bitwarden utilizando la contraseña para descifrarla."
   },
   "exportTypeHeading": {
-    "message": "Export type"
+    "message": "Tipo de exportación"
   },
   "accountRestricted": {
-    "message": "Account restricted"
+    "message": "Cuenta restringida"
   },
   "filePasswordAndConfirmFilePasswordDoNotMatch": {
-    "message": "“File password”  and “Confirm file password“ do not match."
+    "message": "\"Contraseña del archivo\" y \"Confirmar contraseña del archivo\" no coinciden."
   },
   "hCaptchaUrl": {
     "message": "hCaptcha Url",
@@ -1666,19 +1679,19 @@
     "message": "Su nueva contraseña maestra no cumple con los requisitos de la política."
   },
   "receiveMarketingEmails": {
-    "message": "Get emails from Bitwarden for announcements, advice, and research opportunities."
+    "message": "Obtén correos electrónicos de Bitwarden para anuncios, consejos y oportunidades de investigación."
   },
   "unsubscribe": {
-    "message": "Unsubscribe"
+    "message": "Darse de baja"
   },
   "atAnyTime": {
-    "message": "at any time."
+    "message": "en cualquier momento."
   },
   "byContinuingYouAgreeToThe": {
-    "message": "By continuing, you agree to the"
+    "message": "Al continuar, aceptas los"
   },
   "and": {
-    "message": "and"
+    "message": "y"
   },
   "acceptPolicies": {
     "message": "Al seleccionar esta casilla, acepto lo siguiente:"
@@ -1961,10 +1974,10 @@
     "message": "Actualizar contraseña maestra"
   },
   "updateMasterPasswordWarning": {
-    "message": "Su contraseña maestra ha sido cambiada recientemente por un administrador de su organización. Para acceder a la caja fuerte, debe actualizarla ahora. Proceder le desconectará de su sesión actual, requiriendo que vuelva a iniciar sesión. Las sesiones activas en otros dispositivos pueden seguir estando activas durante una hora."
+    "message": "Tu contraseña maestra ha sido cambiada recientemente por un administrador de tu organización. Para acceder a la caja fuerte, debes actualizarla ahora. Proceder te desconectará de tu sesión actual, requiriendo que vuelvas a iniciar sesión. Las sesiones activas en otros dispositivos pueden seguir estando activas durante una hora."
   },
   "updateWeakMasterPasswordWarning": {
-    "message": "Su contraseña maestra no cumple con una o más de las políticas de su organización. Para acceder a la caja fuerte, debe actualizar su contraseña maestra ahora. Proceder le desconectará de su sesión actual, requiriendo que vuelva a iniciar sesión. Las sesiones activas en otros dispositivos pueden seguir estando activas durante hasta una hora."
+    "message": "Tu contraseña maestra no cumple con una o más de las políticas de tu organización. Para acceder a la caja fuerte, debes actualizar tu contraseña maestra ahora. Proceder te desconectará de tu sesión actual, requiriendo que vuelva a iniciar sesión. Las sesiones activas en otros dispositivos pueden seguir estando activas durante hasta una hora."
   },
   "tryAgain": {
     "message": "Intentar de nuevo"
@@ -2141,10 +2154,10 @@
     }
   },
   "exportingOrganizationVaultTitle": {
-    "message": "Exporting organization vault"
+    "message": "Exportando caja fuerte de la organización"
   },
   "exportingOrganizationVaultDesc": {
-    "message": "Only the organization vault associated with $ORGANIZATION$ will be exported. Items in individual vaults or other organizations will not be included.",
+    "message": "Solo se exportará la caja fuerte de la organización asociada a $ORGANIZATION$. Los elementos en las cajas fuertes individuales o de otras organizaciones no serán incluidos.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -2478,7 +2491,7 @@
     "message": "Sigue el enlace en el correo electrónico enviado a"
   },
   "andContinueCreatingYourAccount": {
-    "message": "y contunúa creando una cuenta."
+    "message": "y continúa creando tu cuenta."
   },
   "noEmail": {
     "message": "¿Sin correo electrónico?"
@@ -2508,10 +2521,10 @@
     "message": "Importante:"
   },
   "accessTokenUnableToBeDecrypted": {
-    "message": "You have been logged out because your access token could not be decrypted. Please log in again to resolve this issue."
+    "message": "Se ha cerrado la sesión porque tu token de acceso no pudo ser descifrado. Por favor, inicia sesión de nuevo para resolver este problema."
   },
   "refreshTokenSecureStorageRetrievalFailure": {
-    "message": "You have been logged out because your refresh token could not be retrieved. Please log in again to resolve this issue."
+    "message": "Se ha cerrado la sesión porque tu token de actualización no pudo ser recuperado. Por favor, inicia sesión de nuevo para resolver este problema."
   },
   "masterPasswordHint": {
     "message": "Tu contraseña maestra no se puede recuperar si la olvidas"
@@ -2691,6 +2704,9 @@
   },
   "submenu": {
     "message": "Submenú"
+  },
+  "toggleSideNavigation": {
+    "message": "Alternar navegación lateral"
   },
   "skipToContent": {
     "message": "Saltar al contenido"

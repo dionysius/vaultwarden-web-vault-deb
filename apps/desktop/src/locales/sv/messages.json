@@ -526,6 +526,19 @@
   "masterPassHint": {
     "message": "Huvudlösenordsledtråd (valfri)"
   },
+  "masterPassHintText": {
+    "message": "Om du glömmer ditt lösenord kan lösenordsledtråden skickas till din e-postadress. $CURRENT$/$MAXIMUM$ tecken max.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "settings": {
     "message": "Inställningar"
   },
@@ -2691,6 +2704,9 @@
   },
   "submenu": {
     "message": "Undermeny"
+  },
+  "toggleSideNavigation": {
+    "message": "Toggle side navigation"
   },
   "skipToContent": {
     "message": "Hoppa till innehåll"

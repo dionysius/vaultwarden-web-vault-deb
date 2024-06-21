@@ -526,6 +526,19 @@
   "masterPassHint": {
     "message": "Hinweis zum Master-Passwort (optional)"
   },
+  "masterPassHintText": {
+    "message": "Wenn du dein Passwort vergessen hast, kann der Passwort-Hinweis an deine E-Mail-Adresse gesendet werden. Maximal $CURRENT$/$MAXIMUM$ Zeichen.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "settings": {
     "message": "Einstellungen"
   },
@@ -2691,6 +2704,9 @@
   },
   "submenu": {
     "message": "Untermenü"
+  },
+  "toggleSideNavigation": {
+    "message": "Seitennavigation umschalten"
   },
   "skipToContent": {
     "message": "Zum Inhalt wechseln"

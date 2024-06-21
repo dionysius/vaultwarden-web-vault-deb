@@ -526,6 +526,19 @@
   "masterPassHint": {
     "message": "Podpowiedź do hasła głównego (opcjonalnie)"
   },
+  "masterPassHintText": {
+    "message": "Jeśli zapomnisz hasła, podpowiedź hasła może zostać wysłana na Twój adres e-mail. $CURRENT$ z $MAXIMUM$ znaków.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "settings": {
     "message": "Ustawienia"
   },
@@ -2691,6 +2704,9 @@
   },
   "submenu": {
     "message": "Podmenu"
+  },
+  "toggleSideNavigation": {
+    "message": "Przełącz nawigację boczną"
   },
   "skipToContent": {
     "message": "Przejdź do treści"

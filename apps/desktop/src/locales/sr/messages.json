@@ -526,6 +526,19 @@
   "masterPassHint": {
     "message": "Савет Главне Лозинке (опционо)"
   },
+  "masterPassHintText": {
+    "message": "Ако заборавите лозинку, наговештај за лозинку се може послати на ваш имејл. $CURRENT$/$MAXIMUM$ карактера максимум.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "settings": {
     "message": "Подешавања"
   },
@@ -2691,6 +2704,9 @@
   },
   "submenu": {
     "message": "Под-мени"
+  },
+  "toggleSideNavigation": {
+    "message": "Укључите бочну навигацију"
   },
   "skipToContent": {
     "message": "Прескочи на садржај"

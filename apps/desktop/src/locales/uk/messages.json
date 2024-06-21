@@ -526,6 +526,19 @@
   "masterPassHint": {
     "message": "Підказка для головного пароля (необов'язково)"
   },
+  "masterPassHintText": {
+    "message": "У разі втрати пароля, можна отримати підказку на вашу електронну пошту. Максимум $CURRENT$/$MAXIMUM$ символів.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "settings": {
     "message": "Налаштування"
   },
@@ -2691,6 +2704,9 @@
   },
   "submenu": {
     "message": "Підменю"
+  },
+  "toggleSideNavigation": {
+    "message": "Перемкнути бічну навігацію"
   },
   "skipToContent": {
     "message": "Перейти до вмісту"

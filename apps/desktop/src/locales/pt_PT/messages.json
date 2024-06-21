@@ -526,6 +526,19 @@
   "masterPassHint": {
     "message": "Dica da palavra-passe mestra (opcional)"
   },
+  "masterPassHintText": {
+    "message": "Se se esquecer da sua palavra-passe, a dica da palavra-passe pode ser enviada para o seu e-mail. Máximo de $CURRENT$/$MAXIMUM$ caracteres.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "settings": {
     "message": "Definições"
   },
@@ -2691,6 +2704,9 @@
   },
   "submenu": {
     "message": "Submenu"
+  },
+  "toggleSideNavigation": {
+    "message": "Ativar/desativar navegação lateral"
   },
   "skipToContent": {
     "message": "Avançar para o conteúdo"

@@ -526,6 +526,19 @@
   "masterPassHint": {
     "message": "Ana parol məsləhəti (ixtiyari)"
   },
+  "masterPassHintText": {
+    "message": "Parolunuzu unutsanız, parol ipucu e-poçtunuza göndərilə bilər. Maksimum $CURRENT$/$MAXIMUM$ simvol.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "settings": {
     "message": "Ayarlar"
   },
@@ -2691,6 +2704,9 @@
   },
   "submenu": {
     "message": "Alt menyu"
+  },
+  "toggleSideNavigation": {
+    "message": "Yan naviqasiyanı aç/bağla"
   },
   "skipToContent": {
     "message": "Məzmunu ötür"

@@ -526,6 +526,19 @@
   "masterPassHint": {
     "message": "Nápověda k hlavnímu heslu (volitelné)"
   },
+  "masterPassHintText": {
+    "message": "Pokud zapomenete své heslo, může být nápověda k heslu odeslána na Váš e-mail. $CURRENT$/$MAXIMUM$ znaků maximálně.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "settings": {
     "message": "Nastavení"
   },
@@ -2691,6 +2704,9 @@
   },
   "submenu": {
     "message": "Podmenu"
+  },
+  "toggleSideNavigation": {
+    "message": "Přepnout boční navigaci"
   },
   "skipToContent": {
     "message": "Přeskočit na obsah"

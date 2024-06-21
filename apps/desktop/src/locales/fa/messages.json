@@ -500,10 +500,10 @@
     "message": "ایجاد حساب کاربری"
   },
   "setAStrongPassword": {
-    "message": "Set a strong password"
+    "message": "تنظیم رمز عبور قوی"
   },
   "finishCreatingYourAccountBySettingAPassword": {
-    "message": "Finish creating your account by setting a password"
+    "message": "ایجاد حساب‌تان را با تنظیم کردن رمز عبور تکمیل کنید"
   },
   "logIn": {
     "message": "ورود"
@@ -525,6 +525,19 @@
   },
   "masterPassHint": {
     "message": "یادآور کلمه عبور اصلی (اختیاری)"
+  },
+  "masterPassHintText": {
+    "message": "If you forget your password, the password hint can be sent to your email. $CURRENT$/$MAXIMUM$ character maximum.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
   },
   "settings": {
     "message": "تنظیمات"
@@ -567,10 +580,10 @@
     "message": "حساب کاربری جدید شما ساخته شد! حالا می‌توانید وارد شوید."
   },
   "youSuccessfullyLoggedIn": {
-    "message": "You successfully logged in"
+    "message": "شما با موفقیت وارد شدید"
   },
   "youMayCloseThisWindow": {
-    "message": "You may close this window"
+    "message": "می‌توانید این پنجره را ببندید"
   },
   "masterPassSent": {
     "message": "ما یک ایمیل همراه با یادآور کلمه عبور اصلی برایتان ارسال کردیم."
@@ -759,7 +772,7 @@
     "message": "خارج شد"
   },
   "loggedOutDesc": {
-    "message": "You have been logged out of your account."
+    "message": "شما از حساب خود خارج شده‌اید."
   },
   "loginExpired": {
     "message": "نشست ورود شما منقضی شده است."
@@ -819,10 +832,10 @@
     "message": "تغییر کلمه عبور اصلی"
   },
   "continueToWebApp": {
-    "message": "Continue to web app?"
+    "message": "با برنامه وب ادامه می‌دهید؟"
   },
   "changeMasterPasswordOnWebConfirmation": {
-    "message": "You can change your master password on the Bitwarden web app."
+    "message": "می‌توانید کلمه عبور اصلی خود را در برنامه وب Bitwarden تغییر دهید."
   },
   "fingerprintPhrase": {
     "message": "عبارت اثر انگشت",
@@ -1324,7 +1337,7 @@
     "description": "ex. Date this password was updated"
   },
   "exportFrom": {
-    "message": "Export from"
+    "message": "صادرات از"
   },
   "exportVault": {
     "message": "برون ریزی گاوصندوق"
@@ -1336,7 +1349,7 @@
     "message": "This file export will be password protected and require the file password to decrypt."
   },
   "filePassword": {
-    "message": "File password"
+    "message": "رمز فایل"
   },
   "exportPasswordDescription": {
     "message": "This password will be used to export and import this file"
@@ -1345,19 +1358,19 @@
     "message": "Use your account encryption key, derived from your account's username and Master Password, to encrypt the export and restrict import to only the current Bitwarden account."
   },
   "passwordProtected": {
-    "message": "Password protected"
+    "message": "محافظت ‌شده با کلمه عبور"
   },
   "passwordProtectedOptionDescription": {
     "message": "Set a file password to encrypt the export and import it to any Bitwarden account using the password for decryption."
   },
   "exportTypeHeading": {
-    "message": "Export type"
+    "message": "نوع صادرات"
   },
   "accountRestricted": {
-    "message": "Account restricted"
+    "message": "حساب کاربری محدود شده است"
   },
   "filePasswordAndConfirmFilePasswordDoNotMatch": {
-    "message": "“File password”  and “Confirm file password“ do not match."
+    "message": "عدم تطابق \"رمز فایل\" و \"تایید رمز فایل\" با یکدیگر."
   },
   "hCaptchaUrl": {
     "message": "نشانی اینترنتی hCaptcha",
@@ -1672,13 +1685,13 @@
     "message": "Unsubscribe"
   },
   "atAnyTime": {
-    "message": "at any time."
+    "message": "در هر زمان."
   },
   "byContinuingYouAgreeToThe": {
-    "message": "By continuing, you agree to the"
+    "message": "با ادامه دادن، شما موافقت می‌کنید که"
   },
   "and": {
-    "message": "and"
+    "message": "و"
   },
   "acceptPolicies": {
     "message": "با علامت زدن این کادر با موارد زیر موافقت می‌کنید:"
@@ -1723,7 +1736,7 @@
     "message": "هنگام ایجاد پیوند بین دسکتاپ و مرورگر خود، با تأیید اعتبار اثر انگشت، یک لایه امنیتی دیگر را فعال کنید. درصورت فعال بودن، این امر مستلزم مداخله و تأیید کاربر در هر بار برقراری ارتباط است."
   },
   "enableHardwareAcceleration": {
-    "message": "Use hardware acceleration"
+    "message": "استفاده از شتاب سخت افزاری"
   },
   "enableHardwareAccelerationDesc": {
     "message": "By default this setting is ON. Turn OFF only if you experience graphical issues. Restart is required."
@@ -2120,7 +2133,7 @@
     "message": "تعویض حساب کاربری"
   },
   "alreadyHaveAccount": {
-    "message": "Already have an account?"
+    "message": "در حال حاضر حساب کاربری دارید؟"
   },
   "options": {
     "message": "گزینه‌ها"
@@ -2691,6 +2704,9 @@
   },
   "submenu": {
     "message": "زیرمنو"
+  },
+  "toggleSideNavigation": {
+    "message": "Toggle side navigation"
   },
   "skipToContent": {
     "message": "پرش به محتوا"

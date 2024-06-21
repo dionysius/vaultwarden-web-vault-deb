@@ -526,6 +526,19 @@
   "masterPassHint": {
     "message": "マスターパスワードのヒント (省略可能)"
   },
+  "masterPassHintText": {
+    "message": "パスワードを忘れた場合、パスワードのヒントをメールに送信できます。 最大文字数：$CURRENT$/$MAXIMUM$",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "settings": {
     "message": "設定"
   },
@@ -2691,6 +2704,9 @@
   },
   "submenu": {
     "message": "サブメニュー"
+  },
+  "toggleSideNavigation": {
+    "message": "サイドナビゲーションの切り替え"
   },
   "skipToContent": {
     "message": "コンテンツへ移動"
