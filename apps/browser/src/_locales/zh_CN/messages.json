@@ -49,6 +49,19 @@
   "masterPassHintDesc": {
     "message": "主密码提示可以在您忘记密码时帮您回忆起来。"
   },
+  "masterPassHintText": {
+    "message": "If you forget your password, the password hint can be sent to your email. $CURRENT$/$MAXIMUM$ character maximum.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "reTypeMasterPass": {
     "message": "再次输入主密码"
   },
@@ -2876,6 +2889,9 @@
     "message": "关闭主密码重新提示以编辑此字段",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
+  "toggleSideNavigation": {
+    "message": "Toggle side navigation"
+  },
   "skipToContent": {
     "message": "跳转到正文"
   },
@@ -3478,5 +3494,8 @@
   },
   "contactYourOrgAdmin": {
     "message": "无法访问已停用组织中的项目。请联系您的组织所有者获取协助。"
+  },
+  "filters": {
+    "message": "Filters"
   }
 }

@@ -49,6 +49,19 @@
   "masterPassHintDesc": {
     "message": "Подсказка к мастер-паролю может помочь вам его вспомнить."
   },
+  "masterPassHintText": {
+    "message": "Если вы забудете свой пароль, на ваш email может быть отправлена подсказка для пароля. Максимальное количество символов $CURRENT$/$MAXIMUM$.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "reTypeMasterPass": {
     "message": "Введите мастер-пароль повторно"
   },
@@ -2876,6 +2889,9 @@
     "message": "Для редактирования этого поля отключите повторный запрос мастер-пароля",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
+  "toggleSideNavigation": {
+    "message": "Переключить боковую навигацию"
+  },
   "skipToContent": {
     "message": "Перейти к содержимому"
   },
@@ -3478,5 +3494,8 @@
   },
   "contactYourOrgAdmin": {
     "message": "Доступ к элементам в деактивированных организациях невозможен. Обратитесь за помощью к владельцу организации."
+  },
+  "filters": {
+    "message": "Filters"
   }
 }

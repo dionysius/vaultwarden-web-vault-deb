@@ -3,7 +3,7 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden Password Manager",
+    "message": "مدیریت رمز عبور Bitwarden",
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
@@ -17,7 +17,7 @@
     "message": "ایجاد حساب کاربری"
   },
   "setAStrongPassword": {
-    "message": "Set a strong password"
+    "message": "تنظیم رمز عبور قوی"
   },
   "finishCreatingYourAccountBySettingAPassword": {
     "message": "Finish creating your account by setting a password"
@@ -48,6 +48,19 @@
   },
   "masterPassHintDesc": {
     "message": "یادآور کلمه عبور اصلی کمک می‌کند در صورت فراموشی آن را به یاد بیارید."
+  },
+  "masterPassHintText": {
+    "message": "If you forget your password, the password hint can be sent to your email. $CURRENT$/$MAXIMUM$ character maximum.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
   },
   "reTypeMasterPass": {
     "message": "نوشتن دوباره کلمه عبور اصلی"
@@ -211,7 +224,7 @@
     "message": "خروج"
   },
   "aboutBitwarden": {
-    "message": "About Bitwarden"
+    "message": "درباره Bitwarden"
   },
   "about": {
     "message": "درباره"
@@ -223,10 +236,10 @@
     "message": "Continue to bitwarden.com?"
   },
   "bitwardenForBusiness": {
-    "message": "Bitwarden for Business"
+    "message": "Bitwarden برای کسب و کارها"
   },
   "bitwardenAuthenticator": {
-    "message": "Bitwarden Authenticator"
+    "message": "تاییدکننده هویت Bitwarden"
   },
   "continueToAuthenticatorPageDesc": {
     "message": "Bitwarden Authenticator allows you to store authenticator keys and generate TOTP codes for 2-step verification flows. Learn more on the bitwarden.com website"
@@ -244,7 +257,7 @@
     "message": "Create smooth and secure login experiences free from traditional passwords with Passwordless.dev. Learn more on the bitwarden.com website."
   },
   "freeBitwardenFamilies": {
-    "message": "Free Bitwarden Families"
+    "message": "خانواده‌های رایگان Bitwarden"
   },
   "freeBitwardenFamiliesPageDesc": {
     "message": "You are eligible for Free Bitwarden Families. Redeem this offer today in the web app."
@@ -396,13 +409,13 @@
     "message": "مورد علاقه"
   },
   "unfavorite": {
-    "message": "Unfavorite"
+    "message": "حذف از علایق"
   },
   "itemAddedToFavorites": {
-    "message": "Item added to favorites"
+    "message": "به موارد مورد علاقه افزوده شد"
   },
   "itemRemovedFromFavorites": {
-    "message": "Item removed from favorites"
+    "message": "از علایق حذف شد"
   },
   "notes": {
     "message": "یادداشت‌ها"
@@ -453,7 +466,7 @@
     "message": "Session timeout"
   },
   "otherOptions": {
-    "message": "Other options"
+    "message": "سایر گزینه‌ها"
   },
   "rateExtension": {
     "message": "به این افزونه امتیاز دهید"
@@ -575,10 +588,10 @@
     "message": "حساب کاربری جدید شما ساخته شد! حالا می‌توانید وارد شوید."
   },
   "youSuccessfullyLoggedIn": {
-    "message": "You successfully logged in"
+    "message": "شما با موفقیت وارد شدید"
   },
   "youMayCloseThisWindow": {
-    "message": "You may close this window"
+    "message": "می‌توانید این پنجره را ببندید"
   },
   "masterPassSent": {
     "message": "ما یک ایمیل همراه با راهنمای کلمه عبور اصلی برایتان ارسال کردیم."
@@ -606,7 +619,7 @@
     "message": "Unable to scan QR code from the current webpage"
   },
   "totpCaptureSuccess": {
-    "message": "Authenticator key added"
+    "message": "کلید احراز هویت اضافه شد"
   },
   "totpCapture": {
     "message": "Scan authenticator QR code from current webpage"
@@ -766,7 +779,7 @@
     "message": "Ask to update a login's password when a change is detected on a website. Applies to all logged in accounts."
   },
   "enableUsePasskeys": {
-    "message": "Ask to save and use passkeys"
+    "message": "برای ذخیره و استفاده از passkey اجازه بگیر"
   },
   "usePasskeysDesc": {
     "message": "Ask to save new passkeys or log in with passkeys stored in your vault. Applies to all logged in accounts."
@@ -784,7 +797,7 @@
     "message": "باز کردن قفل"
   },
   "additionalOptions": {
-    "message": "Additional options"
+    "message": "گزینه‌های اضافی"
   },
   "enableContextMenuItem": {
     "message": "نمایش گزینه‌های منوی زمینه"
@@ -824,7 +837,7 @@
     "description": "'Solarized' is a noun and the name of a color scheme. It should not be translated."
   },
   "exportFrom": {
-    "message": "Export from"
+    "message": "صادرات از"
   },
   "exportVault": {
     "message": "برون ریزی گاوصندوق"
@@ -836,7 +849,7 @@
     "message": "This file export will be password protected and require the file password to decrypt."
   },
   "filePassword": {
-    "message": "File password"
+    "message": "رمز فایل"
   },
   "exportPasswordDescription": {
     "message": "This password will be used to export and import this file"
@@ -848,13 +861,13 @@
     "message": "Set a file password to encrypt the export and import it to any Bitwarden account using the password for decryption."
   },
   "exportTypeHeading": {
-    "message": "Export type"
+    "message": "نوع صادرات"
   },
   "accountRestricted": {
-    "message": "Account restricted"
+    "message": "حساب کاربری محدود شده است"
   },
   "filePasswordAndConfirmFilePasswordDoNotMatch": {
-    "message": "“File password”  and “Confirm file password“ do not match."
+    "message": "عدم تطابق \"رمز فایل\" و \"تایید رمز فایل\" با یکدیگر."
   },
   "warning": {
     "message": "اخطار",
@@ -1175,10 +1188,10 @@
     "message": "Turn off your browser’s built in password manager settings to avoid conflicts."
   },
   "turnOffBrowserBuiltInPasswordManagerSettingsLink": {
-    "message": "Edit browser settings."
+    "message": "ویرایش تنظیمات مرورگر."
   },
   "autofillOverlayVisibilityOff": {
-    "message": "Off",
+    "message": "خاموش",
     "description": "Overlay setting select option for disabling autofill overlay"
   },
   "autofillOverlayVisibilityOnFieldFocus": {
@@ -1441,7 +1454,7 @@
     "message": "هویت"
   },
   "newItemHeader": {
-    "message": "New $TYPE$",
+    "message": "$TYPE$ جدید",
     "placeholders": {
       "type": {
         "content": "$1",
@@ -1450,7 +1463,7 @@
     }
   },
   "editItemHeader": {
-    "message": "Edit $TYPE$",
+    "message": "ویرایش $TYPE$",
     "placeholders": {
       "type": {
         "content": "$1",
@@ -1706,7 +1719,7 @@
     "message": "پر کردن خودکار و ذخیره"
   },
   "fillAndSave": {
-    "message": "Fill and save"
+    "message": "پرکردن و ذخیره"
   },
   "autoFillSuccessAndSavedUri": {
     "message": "مورد خودکار پر شد و نشانی اینترنتی ذخیره شد"
@@ -1790,16 +1803,16 @@
     "message": "Get emails from Bitwarden for announcements, advice, and research opportunities."
   },
   "unsubscribe": {
-    "message": "Unsubscribe"
+    "message": "لغو اشتراک"
   },
   "atAnyTime": {
-    "message": "at any time."
+    "message": "در هر زمان."
   },
   "byContinuingYouAgreeToThe": {
-    "message": "By continuing, you agree to the"
+    "message": "با ادامه دادن، شما موافقت می‌کنید که"
   },
   "and": {
-    "message": "and"
+    "message": "و"
   },
   "acceptPolicies": {
     "message": "با علامت زدن این کادر با موارد زیر موافقت می‌کنید:"
@@ -1874,7 +1887,7 @@
     "message": "بیومتریک مرورگر در این دستگاه پشتیبانی نمی‌شود."
   },
   "biometricsNotUnlockedTitle": {
-    "message": "User locked or logged out"
+    "message": "کاربر قفل یا خارج شد"
   },
   "biometricsNotUnlockedDesc": {
     "message": "Please unlock this user in the desktop application and try again."
@@ -2176,7 +2189,7 @@
     "message": "پوشه را انتخاب کنید..."
   },
   "noFoldersFound": {
-    "message": "No folders found",
+    "message": "هیچ پوشه‌ای پیدا نشد",
     "description": "Used as a message within the notification bar when no folders are found"
   },
   "orgPermissionsUpdatedMustSetPassword": {
@@ -2188,7 +2201,7 @@
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "verificationRequired": {
-    "message": "Verification required",
+    "message": "تایید لازم است",
     "description": "Default title for the user verification dialog."
   },
   "hours": {
@@ -2417,7 +2430,7 @@
     }
   },
   "forwarderNoDomain": {
-    "message": "Invalid $SERVICENAME$ domain.",
+    "message": "دامنه $SERVICENAME$ نامعتبر.",
     "description": "Displayed when the domain is empty or domain authorization failed at the forwarding service.",
     "placeholders": {
       "servicename": {
@@ -2427,7 +2440,7 @@
     }
   },
   "forwarderNoUrl": {
-    "message": "Invalid $SERVICENAME$ url.",
+    "message": "آدرس $SERVICENAME$ نامعتبر.",
     "description": "Displayed when the url of the forwarding service wasn't supplied.",
     "placeholders": {
       "servicename": {
@@ -2437,7 +2450,7 @@
     }
   },
   "forwarderUnknownError": {
-    "message": "Unknown $SERVICENAME$ error occurred.",
+    "message": "خطای $SERVICENAME$ نامعلومی رخ داد.",
     "description": "Displayed when the forwarding service failed due to an unknown error.",
     "placeholders": {
       "servicename": {
@@ -2668,16 +2681,16 @@
     "message": "شناسه سازمان SSO مورد نیاز است."
   },
   "creatingAccountOn": {
-    "message": "Creating account on"
+    "message": "در حال ساخت حساب روی"
   },
   "checkYourEmail": {
-    "message": "Check your email"
+    "message": "ایمیل خود را چک کنید"
   },
   "followTheLinkInTheEmailSentTo": {
-    "message": "Follow the link in the email sent to"
+    "message": "دنبال کنید لینکی را که در ایمیل فرستاده شده به"
   },
   "andContinueCreatingYourAccount": {
-    "message": "and continue creating your account."
+    "message": "و به ساختن حساب‌تان ادامه دهید."
   },
   "noEmail": {
     "message": "No email?"
@@ -2876,6 +2889,9 @@
     "message": "برای ویرایش این فیلد، درخواست مجدد کلمه عبور اصلی را خاموش کنید",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
+  "toggleSideNavigation": {
+    "message": "Toggle side navigation"
+  },
   "skipToContent": {
     "message": "Skip to content"
   },
@@ -2908,15 +2924,15 @@
     "description": "Screen reader text for when a login item is focused where a partial username is displayed. SR will announce this phrase before reading the text of the partial username"
   },
   "noItemsToShow": {
-    "message": "No items to show",
+    "message": "موردی برای نمایش وجود ندارد",
     "description": "Text to show in overlay if there are no matching items"
   },
   "newItem": {
-    "message": "New item",
+    "message": "مورد جدید",
     "description": "Button text to display in overlay when there are no matching items"
   },
   "addNewVaultItem": {
-    "message": "Add new vault item",
+    "message": "افزودن موردی جدید به گاوصندوق",
     "description": "Screen reader text (aria-label) for new item button in overlay"
   },
   "bitwardenOverlayMenuAvailable": {
@@ -2924,32 +2940,32 @@
     "description": "Screen reader text for announcing when the overlay opens on the page"
   },
   "turnOn": {
-    "message": "Turn on"
+    "message": "روشن کردن"
   },
   "ignore": {
-    "message": "Ignore"
+    "message": "نادیده گرفتن"
   },
   "importData": {
-    "message": "Import data",
+    "message": "وارد کردن اطلاعات",
     "description": "Used for the header of the import dialog, the import button and within the file-password-prompt"
   },
   "importError": {
-    "message": "Import error"
+    "message": "خطای وارد کردن"
   },
   "importErrorDesc": {
-    "message": "There was a problem with the data you tried to import. Please resolve the errors listed below in your source file and try again."
+    "message": "مشکلی با داده‌هایی که سعی کردید وارد کنید وجود داشت. لطفاً خطاهای فهرست شده زیر را در فایل منبع خود برطرف کرده و دوباره امتحان کنید."
   },
   "resolveTheErrorsBelowAndTryAgain": {
     "message": "Resolve the errors below and try again."
   },
   "description": {
-    "message": "Description"
+    "message": "توضیحات"
   },
   "importSuccess": {
-    "message": "Data successfully imported"
+    "message": "داده‌ها با موفقیت وارد شد"
   },
   "importSuccessNumberOfItems": {
-    "message": "A total of $AMOUNT$ items were imported.",
+    "message": "در کل $AMOUNT$ مورد وارد شده است.",
     "placeholders": {
       "amount": {
         "content": "$1",
@@ -2958,34 +2974,34 @@
     }
   },
   "tryAgain": {
-    "message": "Try again"
+    "message": "دوباره سعی کنید"
   },
   "verificationRequiredForActionSetPinToContinue": {
     "message": "Verification required for this action. Set a PIN to continue."
   },
   "setPin": {
-    "message": "Set PIN"
+    "message": "تنظیم PIN"
   },
   "verifyWithBiometrics": {
-    "message": "Verify with biometrics"
+    "message": "تایید با استفاده از بیومتریک"
   },
   "awaitingConfirmation": {
-    "message": "Awaiting confirmation"
+    "message": "در انتظار تایید"
   },
   "couldNotCompleteBiometrics": {
-    "message": "Could not complete biometrics."
+    "message": "تکمیل بیومتریک ممکن نشد."
   },
   "needADifferentMethod": {
-    "message": "Need a different method?"
+    "message": "نیازمند روش دیگری هستید؟"
   },
   "useMasterPassword": {
-    "message": "Use master password"
+    "message": "استفاده از رمز عبور اصلی"
   },
   "usePin": {
-    "message": "Use PIN"
+    "message": "استفاده از PIN"
   },
   "useBiometrics": {
-    "message": "Use biometrics"
+    "message": "استفاده از بیومتریک"
   },
   "enterVerificationCodeSentToEmail": {
     "message": "Enter the verification code that was sent to your email."
@@ -2994,7 +3010,7 @@
     "message": "Resend code"
   },
   "total": {
-    "message": "Total"
+    "message": "مجموع"
   },
   "importWarning": {
     "message": "You are importing data to $ORGANIZATION$. Your data may be shared with members of this organization. Do you want to proceed?",
@@ -3018,13 +3034,13 @@
     "message": "Popout extension"
   },
   "launchDuo": {
-    "message": "Launch Duo"
+    "message": "اجرای Duo"
   },
   "importFormatError": {
-    "message": "Data is not formatted correctly. Please check your import file and try again."
+    "message": "داده‌ها به درستی قالب‌بندی نشده‌اند. لطفا فایل وارد شده خود را بررسی و دوباره امتحان کنید."
   },
   "importNothingError": {
-    "message": "Nothing was imported."
+    "message": "چیزی وارد نشد."
   },
   "importEncKeyError": {
     "message": "Error decrypting the exported file. Your encryption key does not match the encryption key used export the data."
@@ -3039,7 +3055,7 @@
     "message": "Learn about your import options"
   },
   "selectImportFolder": {
-    "message": "Select a folder"
+    "message": "یک پوشه انتخاب کنید"
   },
   "selectImportCollection": {
     "message": "Select a collection"
@@ -3478,5 +3494,8 @@
   },
   "contactYourOrgAdmin": {
     "message": "Items in deactivated organizations cannot be accessed. Contact your organization owner for assistance."
+  },
+  "filters": {
+    "message": "Filters"
   }
 }

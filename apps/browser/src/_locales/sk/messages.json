@@ -49,6 +49,19 @@
   "masterPassHintDesc": {
     "message": "Nápoveda k hlavnému heslu vám môže pomôcť spomenúť si na heslo, ak ho zabudnete."
   },
+  "masterPassHintText": {
+    "message": "Ak zabudnete heslo, na váš e-mail vám môže zaslať pomôcku k heslu. Zadaných $CURRENT$ znakov, limit je $MAXIMUM$.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "reTypeMasterPass": {
     "message": "Znovu zadajte hlavné heslo"
   },
@@ -2876,6 +2889,9 @@
     "message": "Vypnite výzvu na opätovné zadanie hlavného hesla na úpravu tohto poľa",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
+  "toggleSideNavigation": {
+    "message": "Prepnúť bočnú navigáciu"
+  },
   "skipToContent": {
     "message": "Preskočiť na obsah"
   },
@@ -3478,5 +3494,8 @@
   },
   "contactYourOrgAdmin": {
     "message": "K položkám vo vypnutej organizácii nie je možné pristupovať. Požiadajte o pomoc vlastníka organizácie."
+  },
+  "filters": {
+    "message": "Filters"
   }
 }

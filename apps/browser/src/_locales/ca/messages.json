@@ -17,10 +17,10 @@
     "message": "Crea un compte"
   },
   "setAStrongPassword": {
-    "message": "Set a strong password"
+    "message": "Estableix una contrasenya segura"
   },
   "finishCreatingYourAccountBySettingAPassword": {
-    "message": "Finish creating your account by setting a password"
+    "message": "Acabeu de crear el vostre compte establint una contrasenya"
   },
   "login": {
     "message": "Inicia sessió"
@@ -48,6 +48,19 @@
   },
   "masterPassHintDesc": {
     "message": "Una pista de contrasenya mestra us pot ajudar a recordar-la si l'oblideu."
+  },
+  "masterPassHintText": {
+    "message": "If you forget your password, the password hint can be sent to your email. $CURRENT$/$MAXIMUM$ character maximum.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
   },
   "reTypeMasterPass": {
     "message": "Torneu a escriure la contrasenya mestra"
@@ -2876,6 +2889,9 @@
     "message": "Desactiveu la sol·licitud de nova contrasenya mestra per editar aquest camp",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
+  "toggleSideNavigation": {
+    "message": "Toggle side navigation"
+  },
   "skipToContent": {
     "message": "Vés al contingut"
   },
@@ -3478,5 +3494,8 @@
   },
   "contactYourOrgAdmin": {
     "message": "Items in deactivated organizations cannot be accessed. Contact your organization owner for assistance."
+  },
+  "filters": {
+    "message": "Filters"
   }
 }

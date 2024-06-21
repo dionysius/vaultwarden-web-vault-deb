@@ -49,6 +49,19 @@
   "masterPassHintDesc": {
     "message": "Uma dica da palavra-passe mestra pode ajudá-lo a lembrar-se da sua palavra-passe, caso se esqueça dela."
   },
+  "masterPassHintText": {
+    "message": "Se se esquecer da sua palavra-passe, a dica da palavra-passe pode ser enviada para o seu e-mail. Máximo de $CURRENT$/$MAXIMUM$ caracteres.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "reTypeMasterPass": {
     "message": "Reintroduza a palavra-passe mestra"
   },
@@ -2876,6 +2889,9 @@
     "message": "Desativar o pedido para reintroduzir a palavra-passe mestra para editar este campo",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
+  "toggleSideNavigation": {
+    "message": "Ativar/desativar navegação lateral"
+  },
   "skipToContent": {
     "message": "Avançar para o conteúdo"
   },
@@ -3478,5 +3494,8 @@
   },
   "contactYourOrgAdmin": {
     "message": "Não é possível aceder aos itens de organizações desativadas. Contacte o proprietário da organização para obter assistência."
+  },
+  "filters": {
+    "message": "Filtros"
   }
 }

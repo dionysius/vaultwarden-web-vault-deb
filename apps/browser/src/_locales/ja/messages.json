@@ -49,6 +49,19 @@
   "masterPassHintDesc": {
     "message": "マスターパスワードのヒントは、パスワードを忘れた場合に役立ちます。"
   },
+  "masterPassHintText": {
+    "message": "パスワードを忘れた場合、パスワードのヒントをメールに送信できます。 最大文字数：$CURRENT$/$MAXIMUM$",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "reTypeMasterPass": {
     "message": "新しいパスワードを再入力"
   },
@@ -2876,6 +2889,9 @@
     "message": "このフィールドを編集するには、マスターパスワードの再入力をオフにしてください",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
+  "toggleSideNavigation": {
+    "message": "サイドナビゲーションの切り替え"
+  },
   "skipToContent": {
     "message": "コンテンツへ移動"
   },
@@ -3478,5 +3494,8 @@
   },
   "contactYourOrgAdmin": {
     "message": "無効化された組織のアイテムにアクセスすることはできません。組織の所有者に連絡してください。"
+  },
+  "filters": {
+    "message": "フィルター"
   }
 }

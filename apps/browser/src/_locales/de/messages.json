@@ -49,6 +49,19 @@
   "masterPassHintDesc": {
     "message": "Ein Master-Passwort-Hinweis kann dir helfen, dich an das Passwort zu erinnern, sofern du es vergessen hast."
   },
+  "masterPassHintText": {
+    "message": "Wenn du dein Passwort vergessen hast, kann der Passwort-Hinweis an deine E-Mail-Adresse gesendet werden. Maximal $CURRENT$/$MAXIMUM$ Zeichen.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "reTypeMasterPass": {
     "message": "Master-Passwort erneut eingeben"
   },
@@ -2876,6 +2889,9 @@
     "message": "Deaktiviere die erneute Abfrage des Master-Passworts, um dieses Feld zu bearbeiten",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
+  "toggleSideNavigation": {
+    "message": "Seitennavigation umschalten"
+  },
   "skipToContent": {
     "message": "Zum Inhalt wechseln"
   },
@@ -3478,5 +3494,8 @@
   },
   "contactYourOrgAdmin": {
     "message": "Auf Einträge in deaktivierten Organisationen kann nicht zugegriffen werden. Kontaktiere deinen Organisationseigentümer für Unterstützung."
+  },
+  "filters": {
+    "message": "Filter"
   }
 }

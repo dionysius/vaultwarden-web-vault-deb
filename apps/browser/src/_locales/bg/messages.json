@@ -49,6 +49,19 @@
   "masterPassHintDesc": {
     "message": "Ако сте забравили главната парола, то подсказването може да ви помогне да си я припомните."
   },
+  "masterPassHintText": {
+    "message": "Ако забравите паролата си, подсказката може да бъде изпратена на е-пощата Ви. $CURRENT$/$MAXIMUM$ максимален брой знаци.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "reTypeMasterPass": {
     "message": "Въведете пак главната парола"
   },
@@ -2876,6 +2889,9 @@
     "message": "Изключете повторното въвеждане на главната парола, за да редактирате това поле",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
+  "toggleSideNavigation": {
+    "message": "Превключване на страничната навигация"
+  },
   "skipToContent": {
     "message": "Прескачане към съдържанието"
   },
@@ -3478,5 +3494,8 @@
   },
   "contactYourOrgAdmin": {
     "message": "Записите в деактивирани организации не са достъпни. Свържете се със собственика на организацията си за помощ."
+  },
+  "filters": {
+    "message": "Filters"
   }
 }

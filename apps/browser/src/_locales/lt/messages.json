@@ -3,11 +3,11 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden Password Manager",
+    "message": "„Bitwarden“ slaptažodžių tvarkyklė",
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
-    "message": "At home, at work, or on the go, Bitwarden easily secures all your passwords, passkeys, and sensitive information",
+    "message": "Namuose, darbe ar kelyje, Bitwarden apsaugo jūsų slaptažodžius, raktažodžius ir svarbią informaciją",
     "description": "Extension description, MUST be less than 112 characters (Safari restriction)"
   },
   "loginOrCreateNewAccount": {
@@ -48,6 +48,19 @@
   },
   "masterPassHintDesc": {
     "message": "Pagrindinio slaptažodžio užuomina gali padėti Jums prisiminti slaptažodį, jei jį pamiršite."
+  },
+  "masterPassHintText": {
+    "message": "Jei pamiršote savo slaptažodį, slaptažodžio užuomina gali būti išsiūstas į jūsų el. pašto adresą. $CURRENT$/$MAXIMUM$ simbolių.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
   },
   "reTypeMasterPass": {
     "message": "Pakartokite pagrindinį slaptažodį"
@@ -179,19 +192,19 @@
     "message": "Tęsti į žiniatinklio programėlę?"
   },
   "continueToWebAppDesc": {
-    "message": "Explore more features of your Bitwarden account on the web app."
+    "message": "Atraskite daugiau savo Bitwarden paskyros funkcijų web programoje."
   },
   "continueToHelpCenter": {
-    "message": "Continue to Help Center?"
+    "message": "Eiti į pagalbos centrą?"
   },
   "continueToHelpCenterDesc": {
-    "message": "Learn more about how to use Bitwarden on the Help Center."
+    "message": "Pagalbos Centre sužinokite daugiau kaip naudotis Bitwarden."
   },
   "continueToBrowserExtensionStore": {
-    "message": "Continue to browser extension store?"
+    "message": "Eiti į naršyklės plėtinių svetainę?"
   },
   "continueToBrowserExtensionStoreDesc": {
-    "message": "Help others find out if Bitwarden is right for them. Visit your browser's extension store and leave a rating now."
+    "message": "Padėkite kitiems sužinoti ar Bitwarden yra jiems tinkamas. Apsilankykite naršyklės plėtinių svetainėje ir įvertinkite Bitwarden."
   },
   "changeMasterPasswordOnWebConfirmation": {
     "message": "Pagrindinį slaptažodį galite pakeisti „Bitwarden“ žiniatinklio programėlėje."
@@ -211,43 +224,43 @@
     "message": "Atsijungti"
   },
   "aboutBitwarden": {
-    "message": "About Bitwarden"
+    "message": "Apie Bitwarden"
   },
   "about": {
     "message": "Apie"
   },
   "moreFromBitwarden": {
-    "message": "More from Bitwarden"
+    "message": "Daugiau iš Bitwarden"
   },
   "continueToBitwardenDotCom": {
-    "message": "Continue to bitwarden.com?"
+    "message": "Eiti į bitwarden.com?"
   },
   "bitwardenForBusiness": {
-    "message": "Bitwarden for Business"
+    "message": "Bitwarden Verslui"
   },
   "bitwardenAuthenticator": {
     "message": "Bitwarden Authenticator"
   },
   "continueToAuthenticatorPageDesc": {
-    "message": "Bitwarden Authenticator allows you to store authenticator keys and generate TOTP codes for 2-step verification flows. Learn more on the bitwarden.com website"
+    "message": "„Bitwarden Authenticator“ leidžia saugoti autentifikavimo raktus ir generuoti TOTP kodus dviejų etapų patvirtinimui. Sužinokite daugiau bitwarden.com svetainėje"
   },
   "bitwardenSecretsManager": {
     "message": "Bitwarden Secrets Manager"
   },
   "continueToSecretsManagerPageDesc": {
-    "message": "Securely store, manage, and share developer secrets with Bitwarden Secrets Manager. Learn more on the bitwarden.com website."
+    "message": "Saugiai saugokite, tvarkykite ir dalinkitės kūrėjų slaptais duomenimis su „Bitwarden Secrets Manager“. Sužinokite daugiau bitwarden.com svetainėje."
   },
   "passwordlessDotDev": {
     "message": "Passwordless.dev"
   },
   "continueToPasswordlessDotDevPageDesc": {
-    "message": "Create smooth and secure login experiences free from traditional passwords with Passwordless.dev. Learn more on the bitwarden.com website."
+    "message": "Sukurkite sklandžią ir saugią prisijungimo patirtį be tradicinių slaptažodžių su Passwordless.dev. Sužinokite daugiau bitwarden.com svetainėje."
   },
   "freeBitwardenFamilies": {
-    "message": "Free Bitwarden Families"
+    "message": "Nemokamas „Bitwarden Families“"
   },
   "freeBitwardenFamiliesPageDesc": {
-    "message": "You are eligible for Free Bitwarden Families. Redeem this offer today in the web app."
+    "message": "Jūs turite galimybę gauti nemokamą „Bitwarden Families“ paskyrą. Pasinaudokite šiuo pasiūlymu šiandien Interneto svetainėje."
   },
   "version": {
     "message": "Versija"
@@ -308,7 +321,7 @@
     "message": "Automatiškai generuokite stiprius, unikalius prisijungimo slaptažodžius."
   },
   "bitWebVaultApp": {
-    "message": "Bitwarden web app"
+    "message": "Bitwarden Interneto svetainė"
   },
   "importItems": {
     "message": "Importuoti elementus"
@@ -396,13 +409,13 @@
     "message": "Mėgstamas"
   },
   "unfavorite": {
-    "message": "Unfavorite"
+    "message": "Pašalinti iš mėgstamiausių"
   },
   "itemAddedToFavorites": {
-    "message": "Item added to favorites"
+    "message": "Elementas pridėtas prie mėgstamiausių"
   },
   "itemRemovedFromFavorites": {
-    "message": "Item removed from favorites"
+    "message": "Elementas pašalintas iš mėgstamiausių"
   },
   "notes": {
     "message": "Pastabos"
@@ -426,7 +439,7 @@
     "message": "Paleisti"
   },
   "launchWebsite": {
-    "message": "Launch website"
+    "message": "Atidaryti svetainę"
   },
   "website": {
     "message": "Tinklapis"
@@ -618,7 +631,7 @@
     "message": "Atsijungta"
   },
   "loggedOutDesc": {
-    "message": "You have been logged out of your account."
+    "message": "Jūs atsijungėte."
   },
   "loginExpired": {
     "message": "Sesijos laikas baigėsi."
@@ -784,7 +797,7 @@
     "message": "Atrakinti"
   },
   "additionalOptions": {
-    "message": "Additional options"
+    "message": "Papildomos parinktys"
   },
   "enableContextMenuItem": {
     "message": "Rodyti kontekstinio meniu pasririnkimus"
@@ -2876,6 +2889,9 @@
     "message": "Išjunkite pagrindinio slaptažodžio raginimą, jei norite redaguoti šį lauką",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
+  "toggleSideNavigation": {
+    "message": "Toggle side navigation"
+  },
   "skipToContent": {
     "message": "Pereiti prie turinio"
   },
@@ -3478,5 +3494,8 @@
   },
   "contactYourOrgAdmin": {
     "message": "Items in deactivated organizations cannot be accessed. Contact your organization owner for assistance."
+  },
+  "filters": {
+    "message": "Filtrai"
   }
 }

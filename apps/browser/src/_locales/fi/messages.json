@@ -49,6 +49,19 @@
   "masterPassHintDesc": {
     "message": "Pääsalasanan vihje voi auttaa sinua muistamaan unohtamasi salasanan."
   },
+  "masterPassHintText": {
+    "message": "Jos unohdat salasanasi, salasanavihje voidaan lähettää sähköpostiisi. Merkkien enimmäismäärä: $CURRENT$/$MAXIMUM$.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "reTypeMasterPass": {
     "message": "Syötä pääsalasana uudelleen"
   },
@@ -2876,6 +2889,9 @@
     "message": "Poista pääsalasanan uudelleenkysely käytöstä muokataksesi kenttää",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
+  "toggleSideNavigation": {
+    "message": "Toggle side navigation"
+  },
   "skipToContent": {
     "message": "Siirry sisältöön"
   },
@@ -3478,5 +3494,8 @@
   },
   "contactYourOrgAdmin": {
     "message": "Käytöstä poistettujen organisaatioiden kohteet eivät ole käytettävissä. Ole yhteydessä organisaation omistajaan saadaksesi apua."
+  },
+  "filters": {
+    "message": "Filters"
   }
 }

@@ -49,6 +49,19 @@
   "masterPassHintDesc": {
     "message": "Un suggerimento per la password principale può aiutarti a ricordarla se la dimentichi."
   },
+  "masterPassHintText": {
+    "message": "If you forget your password, the password hint can be sent to your email. $CURRENT$/$MAXIMUM$ character maximum.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "reTypeMasterPass": {
     "message": "Inserisci password principale di nuovo"
   },
@@ -2876,6 +2889,9 @@
     "message": "Disattiva l'inserimento della password principale di nuovo per modificare questo campo",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
+  "toggleSideNavigation": {
+    "message": "Toggle side navigation"
+  },
   "skipToContent": {
     "message": "Vai al contenuto"
   },
@@ -3478,5 +3494,8 @@
   },
   "contactYourOrgAdmin": {
     "message": "Non puoi accedere agli elementi nelle organizzazioni disattivate. Contatta il proprietario della tua organizzazione per ricevere assistenza."
+  },
+  "filters": {
+    "message": "Filters"
   }
 }

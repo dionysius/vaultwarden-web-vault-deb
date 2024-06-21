@@ -49,6 +49,19 @@
   "masterPassHintDesc": {
     "message": "Et tip til hovedadgangskoden kan hjælpe dig med at huske din adgangskode, hvis du glemmer den."
   },
+  "masterPassHintText": {
+    "message": "Glemmer du din adgangskode, kan adgangskodetippet sendes til din e-mail. $CURRENT$/$MAXIMUM$ tegns maksimum.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "reTypeMasterPass": {
     "message": "Indtast hovedadgangskode igen"
   },
@@ -2876,6 +2889,9 @@
     "message": "Slå anmodning om hovedadgangskode igen fra for at redigere dette felt",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
+  "toggleSideNavigation": {
+    "message": "Slå sidenavigering til/fra"
+  },
   "skipToContent": {
     "message": "Spring til indhold"
   },
@@ -3478,5 +3494,8 @@
   },
   "contactYourOrgAdmin": {
     "message": "Emner i deaktiverede organisationer kan ikke tilgås. Kontakt organisationsejeren for assistance."
+  },
+  "filters": {
+    "message": "Filters"
   }
 }

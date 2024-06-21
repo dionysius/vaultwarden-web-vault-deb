@@ -49,6 +49,19 @@
   "masterPassHintDesc": {
     "message": "मास्टर पासवर्ड संकेत आपको भूल जाने की अवस्था में पासवर्ड को याद करने में सहायता करता है।"
   },
+  "masterPassHintText": {
+    "message": "If you forget your password, the password hint can be sent to your email. $CURRENT$/$MAXIMUM$ character maximum.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "reTypeMasterPass": {
     "message": "Re-type Master Password"
   },
@@ -2876,6 +2889,9 @@
     "message": "Turn off master password re-prompt to edit this field",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
+  "toggleSideNavigation": {
+    "message": "Toggle side navigation"
+  },
   "skipToContent": {
     "message": "सीधे सामग्री पर जाएं"
   },
@@ -3478,5 +3494,8 @@
   },
   "contactYourOrgAdmin": {
     "message": "Items in deactivated organizations cannot be accessed. Contact your organization owner for assistance."
+  },
+  "filters": {
+    "message": "Filters"
   }
 }

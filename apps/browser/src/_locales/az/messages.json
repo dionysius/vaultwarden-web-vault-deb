@@ -49,6 +49,19 @@
   "masterPassHintDesc": {
     "message": "Ana parol məsləhəti, unutduğunuz parolunuzu xatırlamağınıza kömək edir."
   },
+  "masterPassHintText": {
+    "message": "Parolunuzu unutsanız, parol ipucu e-poçtunuza göndərilə bilər. Maksimum $CURRENT$/$MAXIMUM$ simvol.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "reTypeMasterPass": {
     "message": "Ana parolu yenidən yaz"
   },
@@ -2876,6 +2889,9 @@
     "message": "Bu sahəyə düzəliş etmək üçün \"Ana parolu təkrar soruş\"u söndürün",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
+  "toggleSideNavigation": {
+    "message": "Yan naviqasiyanı aç/bağla"
+  },
   "skipToContent": {
     "message": "Məzmunu ötür"
   },
@@ -3478,5 +3494,8 @@
   },
   "contactYourOrgAdmin": {
     "message": "Deaktiv edilmiş təşkilatlardakı elementlərə müraciət edilə bilməz. Kömək üçün təşkilatınızın sahibi ilə əlaqə saxlayın."
+  },
+  "filters": {
+    "message": "Filters"
   }
 }

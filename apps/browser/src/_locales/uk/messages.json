@@ -49,6 +49,19 @@
   "masterPassHintDesc": {
     "message": "Якщо ви забудете головний пароль, підказка може допомогти вам згадати його."
   },
+  "masterPassHintText": {
+    "message": "У разі втрати пароля, можна отримати підказку на вашу електронну пошту. Максимум $CURRENT$/$MAXIMUM$ символів.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "reTypeMasterPass": {
     "message": "Введіть головний пароль ще раз"
   },
@@ -2876,6 +2889,9 @@
     "message": "Вимкніть повторний запит головного пароля, щоб редагувати це поле",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
+  "toggleSideNavigation": {
+    "message": "Перемкнути бічну навігацію"
+  },
   "skipToContent": {
     "message": "Перейти до вмісту"
   },
@@ -3478,5 +3494,8 @@
   },
   "contactYourOrgAdmin": {
     "message": "Елементи в деактивованих організаціях недоступні. Зверніться до власника вашої організації для отримання допомоги."
+  },
+  "filters": {
+    "message": "Filters"
   }
 }

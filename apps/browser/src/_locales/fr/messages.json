@@ -49,6 +49,19 @@
   "masterPassHintDesc": {
     "message": "Un indice de mot de passe principal peut vous aider à vous souvenir de votre mot de passe si vous l'oubliez."
   },
+  "masterPassHintText": {
+    "message": "If you forget your password, the password hint can be sent to your email. $CURRENT$/$MAXIMUM$ character maximum.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "reTypeMasterPass": {
     "message": "Ressaisir le mot de passe principal"
   },
@@ -2876,6 +2889,9 @@
     "message": "Désactivez la resaisie du mot de passe maître pour éditer ce champ",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
+  "toggleSideNavigation": {
+    "message": "Toggle side navigation"
+  },
   "skipToContent": {
     "message": "Accéder directement au contenu"
   },
@@ -3478,5 +3494,8 @@
   },
   "contactYourOrgAdmin": {
     "message": "Les éléments des Organisations désactivées ne sont pas accessibles. Contactez le propriétaire de votre Organisation pour obtenir de l'aide."
+  },
+  "filters": {
+    "message": "Filters"
   }
 }

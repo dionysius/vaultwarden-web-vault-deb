@@ -49,6 +49,19 @@
   "masterPassHintDesc": {
     "message": "Una pista de tu contraseña maestra puede ayudarte a recordarla en caso de que la olvides."
   },
+  "masterPassHintText": {
+    "message": "Si olvidas tu contraseña, puedes enviar la pista de contraseña a tu correo electrónico. $CURRENT$/$MAXIMUM$ máximo de caracteres.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "reTypeMasterPass": {
     "message": "Vuelve a escribir tu contraseña maestra"
   },
@@ -2876,6 +2889,9 @@
     "message": "Desactiva la solicitud de contraseña maestra para editar este campo",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
+  "toggleSideNavigation": {
+    "message": "Activar/desactivar navegación lateral"
+  },
   "skipToContent": {
     "message": "Ir al contenido"
   },
@@ -3478,5 +3494,8 @@
   },
   "contactYourOrgAdmin": {
     "message": "No se puede acceder a los elementos de las organizaciones desactivadas. Ponte en contacto con el propietario de tu organización para obtener ayuda."
+  },
+  "filters": {
+    "message": "Filters"
   }
 }

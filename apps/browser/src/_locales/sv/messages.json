@@ -49,6 +49,19 @@
   "masterPassHintDesc": {
     "message": "En huvudlösenordsledtråd kan hjälpa dig att komma ihåg ditt lösenord om du glömmer bort det."
   },
+  "masterPassHintText": {
+    "message": "Om du glömmer ditt lösenord kan lösenordsledtråden skickas till din e-postadress. $CURRENT$/$MAXIMUM$ tecken max.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "reTypeMasterPass": {
     "message": "Ange huvudlösenordet igen"
   },
@@ -2876,6 +2889,9 @@
     "message": "Stäng av \"återupprepa huvudlösenord\" för att redigera detta fält",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
+  "toggleSideNavigation": {
+    "message": "Toggle side navigation"
+  },
   "skipToContent": {
     "message": "Hoppa till innehåll"
   },
@@ -3478,5 +3494,8 @@
   },
   "contactYourOrgAdmin": {
     "message": "Items in deactivated organizations cannot be accessed. Contact your organization owner for assistance."
+  },
+  "filters": {
+    "message": "Filters"
   }
 }

@@ -49,6 +49,19 @@
   "masterPassHintDesc": {
     "message": "Podpowiedź do hasła głównego może pomóc Ci przypomnieć hasło, jeśli je zapomnisz."
   },
+  "masterPassHintText": {
+    "message": "Jeśli zapomnisz hasła, podpowiedź hasła może zostać wysłana na Twój adres e-mail. $CURRENT$ z $MAXIMUM$ znaków.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "reTypeMasterPass": {
     "message": "Wpisz ponownie hasło główne"
   },
@@ -2876,6 +2889,9 @@
     "message": "Wyłącz prośbę o podanie hasła głównego, aby edytować to pole",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
+  "toggleSideNavigation": {
+    "message": "Przełącz nawigację boczną"
+  },
   "skipToContent": {
     "message": "Przejdź do treści"
   },
@@ -3478,5 +3494,8 @@
   },
   "contactYourOrgAdmin": {
     "message": "Nie można uzyskać dostępu do elementów w wyłączonych organizacjach. Skontaktuj się z właścicielem organizacji, aby uzyskać pomoc."
+  },
+  "filters": {
+    "message": "Filtry"
   }
 }

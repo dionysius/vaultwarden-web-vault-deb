@@ -3,11 +3,11 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden Password Manager",
+    "message": "Bitwarden Менаџер Лозинке",
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
-    "message": "At home, at work, or on the go, Bitwarden easily secures all your passwords, passkeys, and sensitive information",
+    "message": "Било где, Bitwarden лако обезбеђује све ваше лозинке, приступне кључеве и осетљиве информације",
     "description": "Extension description, MUST be less than 112 characters (Safari restriction)"
   },
   "loginOrCreateNewAccount": {
@@ -48,6 +48,19 @@
   },
   "masterPassHintDesc": {
     "message": "Савет Главне Лозинке може да Вам помогне да се потсетите ако је заборавите."
+  },
+  "masterPassHintText": {
+    "message": "Ако заборавите лозинку, наговештај за лозинку се може послати на ваш имејл. $CURRENT$/$MAXIMUM$ карактера максимум.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
   },
   "reTypeMasterPass": {
     "message": "Поновите Главну Лозинку"
@@ -2599,7 +2612,7 @@
     "message": "Како ауто-попуњавати"
   },
   "autofillSelectInfoWithCommand": {
-    "message": "Select an item from this screen, use the shortcut $COMMAND$, or explore other options in settings.",
+    "message": "Изаберите ставку са овог екрана, користите пречицу $COMMAND$, или истражите друге опције у подешавањима.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -2608,7 +2621,7 @@
     }
   },
   "autofillSelectInfoWithoutCommand": {
-    "message": "Select an item from this screen, or explore other options in settings."
+    "message": "Изаберите ставку са овог екрана, или истражите друге опције у подешавањима."
   },
   "gotIt": {
     "message": "Разумем"
@@ -2875,6 +2888,9 @@
   "turnOffMasterPasswordPromptToEditField": {
     "message": "Искључите поновни упит главне лозинке да бисте уредили ово поље",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
+  },
+  "toggleSideNavigation": {
+    "message": "Укључите бочну навигацију"
   },
   "skipToContent": {
     "message": "Прескочи на садржај"
@@ -3478,5 +3494,8 @@
   },
   "contactYourOrgAdmin": {
     "message": "Није могуће приступити ставкама у деактивираним организацијама. Обратите се власнику ваше организације за помоћ."
+  },
+  "filters": {
+    "message": "Filters"
   }
 }

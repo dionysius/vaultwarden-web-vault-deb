@@ -49,6 +49,19 @@
   "masterPassHintDesc": {
     "message": "A mesterjelszó emlékeztető segíthet emlékezni a jelszóra elfelejtés esetén."
   },
+  "masterPassHintText": {
+    "message": "Ha elfelejtettük a jelszót, a jelszóra vonatkozó tippet elküldhetjük a saját email címre. $CURRENT$/$MAXIMUM$ maximum karakter.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "reTypeMasterPass": {
     "message": "A mesterjelszó ismételt begépelése"
   },
@@ -2876,6 +2889,9 @@
     "message": "Kapcsoljuk ki a mesterjelszó újbóli bekérését a mező szerkesztéséhez.",
     "description": "Message appearing below the autofill on load message when master password reprompt is set for a vault item."
   },
+  "toggleSideNavigation": {
+    "message": "Toggle side navigation"
+  },
   "skipToContent": {
     "message": "Ugrás a tartalomra"
   },
@@ -3478,5 +3494,8 @@
   },
   "contactYourOrgAdmin": {
     "message": "Items in deactivated organizations cannot be accessed. Contact your organization owner for assistance."
+  },
+  "filters": {
+    "message": "Filters"
   }
 }
