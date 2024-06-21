@@ -767,6 +767,19 @@
   "masterPassHintLabel": {
     "message": "Ana parol məsləhəti"
   },
+  "masterPassHintText": {
+    "message": "Parolunuzu unutsanız, parol ipucu e-poçtunuza göndərilə bilər. Maksimum $CURRENT$/$MAXIMUM$ simvol.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "settings": {
     "message": "Ayarlar"
   },
@@ -1383,7 +1396,7 @@
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
   "onboardingImportDataDetailsPartTwoNoOrgs": {
-    "message": " instead.",
+    "message": " ",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead."
   },
   "onboardingImportDataDetailsPartTwoWithOrgs": {
@@ -7655,6 +7668,9 @@
   "alreadyHaveAccount": {
     "message": "Artıq bir hesabınız var?"
   },
+  "toggleSideNavigation": {
+    "message": "Yan naviqasiyanı aç/bağla"
+  },
   "skipToContent": {
     "message": "Məzmunu ötür"
   },
@@ -8181,7 +8197,7 @@
     "message": "Github Actions qur"
   },
   "setUpKubernetes": {
-    "message": "Set up Kubernetes"
+    "message": "Kubernetes-i qur"
   },
   "setUpGitlabCICD": {
     "message": "GitLab CI/CD qur"
@@ -8190,7 +8206,7 @@
     "message": "Ansible qur"
   },
   "rustSDKRepo": {
-    "message": "View Rust repository"
+    "message": "Rust repozitoriyasına bax"
   },
   "cSharpSDKRepo": {
     "message": "C# repozitoriyasına bax"
@@ -8368,6 +8384,12 @@
     "message": "Bu e-poçt ünvanı, bu provayderə aid bütün fakturaları alacaq",
     "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
   },
+  "upgradeOrganizationEnterprise": {
+    "message": "Üzv müraciətini yoxlayaraq güvənlik risklərini müəyyənləşdir"
+  },
+  "onlyAvailableForEnterpriseOrganization": {
+    "message": "Müəssisə planına yüksəltməklə təşkilat daxilində üzv müraciətinə cəld baxın."
+  },
   "date": {
     "message": "Tarix"
   },
@@ -8377,5 +8399,53 @@
   "invoiceNumberHeader": {
     "message": "Faktura nömrəsi",
     "description": "A table header for an invoice's number"
+  },
+  "memberAccessReport": {
+    "message": "Üzv müraciəti"
+  },
+  "memberAccessReportDesc": {
+    "message": "Üzvlərin düzgün kimlik məlumatlarına müraciət etdiklərinə və onların hesabınlarının güvəndə olduğuna əmin olun. Üzv müraciəti və hesab konfiqurasiyalarının CSV-sini əldə etmək üçün bu hesabatı istifadə edin."
+  },
+  "higherKDFIterations": {
+    "message": "Daha yüksək KDF iterasiyaları, ana parolunuzu təcavüzkar tərəfindən \"brute force\" hücumuna qarşı qorumağa kömək edir."
+  },
+  "incrementsOf100,000": {
+    "message": "100,000-lik artım"
+  },
+  "smallIncrements": {
+    "message": "kiçik artım"
+  },
+  "kdfIterationRecommends": {
+    "message": "600,000 və ya daha çoxunu tövsiyə edirik"
+  },
+  "kdfToHighWarningIncreaseInIncrements": {
+    "message": "Daha köhnə cihazlar üçün KDF-inizi çox yüksək ayarlamaq performans problemlərinə səbəb ola bilər. $VALUE$ üzrə dəyəri artırın və cihazınızı test edin.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "increments of 100,000"
+      }
+    }
+  },
+  "providerReinstate": {
+    "message": " Abunəliyinizi bərpa etmək üçün Müştəri Dəstəyi ilə əlaqə saxlayın."
+  },
+  "secretPeopleDescription": {
+    "message": "Grant groups or people access to this secret. Permissions set for people will override permissions set by groups."
+  },
+  "secretPeopleEmptyMessage": {
+    "message": "Add people or groups to share access to this secret"
+  },
+  "secretMachineAccountsDescription": {
+    "message": "Grant machine accounts access to this secret."
+  },
+  "secretMachineAccountsEmptyMessage": {
+    "message": "Add machine accounts to grant access to this secret"
+  },
+  "smAccessRemovalWarningSecretTitle": {
+    "message": "Remove access to this secret"
+  },
+  "smAccessRemovalSecretMessage": {
+    "message": "This action will remove your access to this secret."
   }
 }

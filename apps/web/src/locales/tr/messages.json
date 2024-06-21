@@ -588,7 +588,7 @@
     "message": "Çıkış yapıldı"
   },
   "loggedOutDesc": {
-    "message": "You have been logged out of your account."
+    "message": "Hesabınızdan çıkış yapıldı."
   },
   "loginExpired": {
     "message": "Oturumunuz zaman aşımına uğradı."
@@ -714,10 +714,10 @@
     "message": "Hesap aç"
   },
   "setAStrongPassword": {
-    "message": "Set a strong password"
+    "message": "Güçlü bir parola belirleyin"
   },
   "finishCreatingYourAccountBySettingAPassword": {
-    "message": "Finish creating your account by setting a password"
+    "message": "Parolanızı belirleyerek hesabınızı oluşturmayı tamamlayın"
   },
   "newAroundHere": {
     "message": "Buralarda yeni misiniz?"
@@ -729,7 +729,7 @@
     "message": "Giriş yap"
   },
   "verifyIdentity": {
-    "message": "Verify your Identity"
+    "message": "Kimliğinizi doğrulayın"
   },
   "logInInitiated": {
     "message": "Giriş başlatıldı"
@@ -766,6 +766,19 @@
   },
   "masterPassHintLabel": {
     "message": "Ana parola ipucu"
+  },
+  "masterPassHintText": {
+    "message": "If you forget your password, the password hint can be sent to your email. $CURRENT$/$MAXIMUM$ character maximum.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
   },
   "settings": {
     "message": "Ayarlar"
@@ -1735,10 +1748,10 @@
     "message": "Duo Yönetici panelinizden Bitwarden uygulama bilgilerini girin."
   },
   "twoFactorDuoClientId": {
-    "message": "Client Id"
+    "message": "İstemci kimliği"
   },
   "twoFactorDuoClientSecret": {
-    "message": "Client Secret"
+    "message": "İstemci anahtarı"
   },
   "twoFactorDuoApiHostname": {
     "message": "API sunucusu"
@@ -3260,25 +3273,25 @@
     "message": "Cihaz"
   },
   "creatingAccountOn": {
-    "message": "Creating account on"
+    "message": "Hesap oluşturuluyor:"
   },
   "checkYourEmail": {
-    "message": "Check your email"
+    "message": "E-postanızı kontrol edin"
   },
   "followTheLinkInTheEmailSentTo": {
-    "message": "Follow the link in the email sent to"
+    "message": "Hesabınızı oluşturmaya devam etmek için"
   },
   "andContinueCreatingYourAccount": {
-    "message": "and continue creating your account."
+    "message": "adresine gönderdiğimiz e-postadaki bağlantıya tıklayın."
   },
   "noEmail": {
-    "message": "No email?"
+    "message": "E-posta gelmedi mi?"
   },
   "goBack": {
-    "message": "Go back"
+    "message": "Geri dönüp"
   },
   "toEditYourEmailAddress": {
-    "message": "to edit your email address."
+    "message": "e-posta adresinizi düzenleyin."
   },
   "view": {
     "message": "Görüntüle"
@@ -3731,19 +3744,19 @@
     "message": "Hiçbir şey seçmediniz."
   },
   "receiveMarketingEmails": {
-    "message": "Get emails from Bitwarden for announcements, advice, and research opportunities."
+    "message": "Bitwarden'dan duyurular, öneriler ve araştırmalarla ilgili e-postalar alın."
   },
   "unsubscribe": {
-    "message": "Unsubscribe"
+    "message": "İstediğiniz zaman"
   },
   "atAnyTime": {
-    "message": "at any time."
+    "message": "aboneliğinizi iptal edebilirsiniz."
   },
   "byContinuingYouAgreeToThe": {
-    "message": "By continuing, you agree to the"
+    "message": "Devam ederek şunları kabul etmiş olursunuz:"
   },
   "and": {
-    "message": "and"
+    "message": "ve"
   },
   "acceptPolicies": {
     "message": "Bu kutuyu işaretleyerek aşağıdakileri kabul etmiş olursunuz:"
@@ -7655,6 +7668,9 @@
   "alreadyHaveAccount": {
     "message": "Zaten hesabınız var mı?"
   },
+  "toggleSideNavigation": {
+    "message": "Toggle side navigation"
+  },
   "skipToContent": {
     "message": "İçeriğe geç"
   },
@@ -8368,6 +8384,12 @@
     "message": "This email address will receive all invoices pertaining to this provider",
     "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
   },
+  "upgradeOrganizationEnterprise": {
+    "message": "Identify security risks by auditing member access"
+  },
+  "onlyAvailableForEnterpriseOrganization": {
+    "message": "Quickly view member access across the organization by upgrading to an Enterprise plan."
+  },
   "date": {
     "message": "Date"
   },
@@ -8377,5 +8399,53 @@
   "invoiceNumberHeader": {
     "message": "Invoice number",
     "description": "A table header for an invoice's number"
+  },
+  "memberAccessReport": {
+    "message": "Member access"
+  },
+  "memberAccessReportDesc": {
+    "message": "Ensure members have access to the right credentials and their accounts are secure. Use this report to obtain a CSV of member access and account configurations."
+  },
+  "higherKDFIterations": {
+    "message": "KDF iterasyonunun daha yüksek olması ana parolanızı kaba kuvvet saldırılarına karşı daha iyi korur."
+  },
+  "incrementsOf100,000": {
+    "message": "100.000'lik artışlar"
+  },
+  "smallIncrements": {
+    "message": "küçük artışlar"
+  },
+  "kdfIterationRecommends": {
+    "message": "600.000 veya üstünü öneriyoruz"
+  },
+  "kdfToHighWarningIncreaseInIncrements": {
+    "message": "KDF'in çok yüksek olması eski cihazlarda performans sorunlarına yol açabilir. Değeri $VALUE$ halinde artırıp cihazlarınızı test edebilirsiniz.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "increments of 100,000"
+      }
+    }
+  },
+  "providerReinstate": {
+    "message": " Aboneliğinizi yeniden başlatmak için müşteri hizmetleri ile iletişime geçebilirsiniz."
+  },
+  "secretPeopleDescription": {
+    "message": "Grant groups or people access to this secret. Permissions set for people will override permissions set by groups."
+  },
+  "secretPeopleEmptyMessage": {
+    "message": "Add people or groups to share access to this secret"
+  },
+  "secretMachineAccountsDescription": {
+    "message": "Grant machine accounts access to this secret."
+  },
+  "secretMachineAccountsEmptyMessage": {
+    "message": "Add machine accounts to grant access to this secret"
+  },
+  "smAccessRemovalWarningSecretTitle": {
+    "message": "Remove access to this secret"
+  },
+  "smAccessRemovalSecretMessage": {
+    "message": "This action will remove your access to this secret."
   }
 }

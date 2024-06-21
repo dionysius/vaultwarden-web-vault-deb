@@ -767,6 +767,19 @@
   "masterPassHintLabel": {
     "message": "Подсказка к мастер-паролю"
   },
+  "masterPassHintText": {
+    "message": "Если вы забудете свой пароль, на ваш email может быть отправлена подсказка для пароля. Максимальное количество символов $CURRENT$/$MAXIMUM$.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "settings": {
     "message": "Настройки"
   },
@@ -7655,6 +7668,9 @@
   "alreadyHaveAccount": {
     "message": "Уже зарегистрированы?"
   },
+  "toggleSideNavigation": {
+    "message": "Переключить боковую навигацию"
+  },
   "skipToContent": {
     "message": "Перейти к содержимому"
   },
@@ -8368,6 +8384,12 @@
     "message": "На этот адрес email будут приходить все счета, относящиеся к данному провайдеру",
     "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
   },
+  "upgradeOrganizationEnterprise": {
+    "message": "Выявление рисков безопасности путем аудита доступа пользователей"
+  },
+  "onlyAvailableForEnterpriseOrganization": {
+    "message": "Быстро просмотреть доступ пользователей по всей организации можно, перейдя на тарифный план Enterprise."
+  },
   "date": {
     "message": "Дата"
   },
@@ -8377,5 +8399,53 @@
   "invoiceNumberHeader": {
     "message": "Номер счета",
     "description": "A table header for an invoice's number"
+  },
+  "memberAccessReport": {
+    "message": "Доступ пользователей"
+  },
+  "memberAccessReportDesc": {
+    "message": "Убедитесь, что пользователи имеют доступ к необходимым им учетным данным, а их аккаунты надежно защищены. Используйте этот отчет, чтобы получить CSV-файл с данными о доступе пользователей и конфигурациях аккаунтов."
+  },
+  "higherKDFIterations": {
+    "message": "Увеличение числа итераций KDF может помочь защитить ваш мастер-пароль от взлома его злоумышленником."
+  },
+  "incrementsOf100,000": {
+    "message": "с шагом 100 000"
+  },
+  "smallIncrements": {
+    "message": "небольшие приращения"
+  },
+  "kdfIterationRecommends": {
+    "message": "Мы рекомендуем 600000 или более"
+  },
+  "kdfToHighWarningIncreaseInIncrements": {
+    "message": "Для устаревших устройств слишком высокое значение KDF может привести к проблемам с производительностью. Увеличьте значение до $VALUE$ и протестируйте свои устройства.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "increments of 100,000"
+      }
+    }
+  },
+  "providerReinstate": {
+    "message": " Обратитесь в службу поддержки клиентов, чтобы восстановить подписку."
+  },
+  "secretPeopleDescription": {
+    "message": "Предоставьте группам или пользователям доступ к этому секрету. Разрешения, установленные для пользователей, отменяют разрешения, установленные для групп."
+  },
+  "secretPeopleEmptyMessage": {
+    "message": "Добавьте пользователей или группы для совместного доступа к этому секрету"
+  },
+  "secretMachineAccountsDescription": {
+    "message": "Предоставить аккаунтам компьютеров доступ к этому секрету."
+  },
+  "secretMachineAccountsEmptyMessage": {
+    "message": "Добавить аккаунты компьютеров для представления доступа к этому секрету"
+  },
+  "smAccessRemovalWarningSecretTitle": {
+    "message": "Удалить доступ к этому секрету"
+  },
+  "smAccessRemovalSecretMessage": {
+    "message": "Это действие удалит ваш доступ к этому секрету."
   }
 }

@@ -582,13 +582,13 @@
     "message": "Nivel de acceso"
   },
   "accessing": {
-    "message": "Accessing"
+    "message": "Accediendo"
   },
   "loggedOut": {
     "message": "Sesión terminada"
   },
   "loggedOutDesc": {
-    "message": "You have been logged out of your account."
+    "message": "Has cerrado sesión de tu cuenta."
   },
   "loginExpired": {
     "message": "Tu sesión ha expirado."
@@ -714,10 +714,10 @@
     "message": "Crear cuenta"
   },
   "setAStrongPassword": {
-    "message": "Set a strong password"
+    "message": "Establece una contraseña fuerte"
   },
   "finishCreatingYourAccountBySettingAPassword": {
-    "message": "Finish creating your account by setting a password"
+    "message": "Termina de crear tu cuenta estableciendo una contraseña"
   },
   "newAroundHere": {
     "message": "¿Nuevo por aquí?"
@@ -729,7 +729,7 @@
     "message": "Identificarse"
   },
   "verifyIdentity": {
-    "message": "Verify your Identity"
+    "message": "Verifica tu identidad"
   },
   "logInInitiated": {
     "message": "Inicio de sesión en proceso"
@@ -766,6 +766,19 @@
   },
   "masterPassHintLabel": {
     "message": "Pista de contraseña maestra"
+  },
+  "masterPassHintText": {
+    "message": "Si olvidas tu contraseña, la pista de contraseña puede ser enviada a tu correo electrónico. Máximo de caracteres de $CURRENT$/$MAXIMUM$.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
   },
   "settings": {
     "message": "Configuración"
@@ -1063,10 +1076,10 @@
     "message": "Copiar UUID"
   },
   "errorRefreshingAccessToken": {
-    "message": "Access Token Refresh Error"
+    "message": "Error de actualización del token de acceso"
   },
   "errorRefreshingAccessTokenDesc": {
-    "message": "No refresh token or API keys found. Please try logging out and logging back in."
+    "message": "No se encontró un token de actualización o clave de API. Por favor, intenta cerrar la sesión y volver a iniciarla."
   },
   "warning": {
     "message": "Advertencia"
@@ -1123,7 +1136,7 @@
     "message": "Confirmar contraseña del archivo"
   },
   "accountRestrictedOptionDescription": {
-    "message": "Utilice la clave de cifrado de su cuenta, derivada del nombre de usuario y contraseña maestra de su cuenta, para cifrar la exportación y restringir la importación sólo a la cuenta actual de Bitwarden."
+    "message": "Utiliza la clave de cifrado de tu cuenta, derivada del nombre de usuario y contraseña maestra de tu cuenta, para cifrar la exportación y restringir la importación sólo a la cuenta actual de Bitwarden."
   },
   "passwordProtectedOptionDescription": {
     "message": "Crear una contraseña generada por el usuario para proteger la exportación. Utilice esto para crear una exportación que pueda ser usada en otras cuentas."
@@ -1735,7 +1748,7 @@
     "message": "Introduce la información de la aplicación Bitwarden de tu panel de administración Duo."
   },
   "twoFactorDuoClientId": {
-    "message": "Client Id"
+    "message": "Id de cliente"
   },
   "twoFactorDuoClientSecret": {
     "message": "Client Secret"
@@ -3260,25 +3273,25 @@
     "message": "Dispositivo"
   },
   "creatingAccountOn": {
-    "message": "Creating account on"
+    "message": "Creando una cuenta en"
   },
   "checkYourEmail": {
-    "message": "Check your email"
+    "message": "Comprueba tu correo electrónico"
   },
   "followTheLinkInTheEmailSentTo": {
-    "message": "Follow the link in the email sent to"
+    "message": "Sigue el enlace en el correo electrónico enviado a"
   },
   "andContinueCreatingYourAccount": {
-    "message": "and continue creating your account."
+    "message": "y continúa creando tu cuenta."
   },
   "noEmail": {
-    "message": "No email?"
+    "message": "¿Sin correo electrónico?"
   },
   "goBack": {
-    "message": "Go back"
+    "message": "Volver"
   },
   "toEditYourEmailAddress": {
-    "message": "to edit your email address."
+    "message": "para editar tu dirección de correo electrónico."
   },
   "view": {
     "message": "Ver"
@@ -3428,7 +3441,7 @@
     "message": "Has solicitado eliminar tu cuenta de Bitwarden. Pulsa en el botón inferior para confirmar."
   },
   "deleteRecoverOrgConfirmDesc": {
-    "message": "You have requested to delete your Bitwarden organization."
+    "message": "Has solicitado eliminar tu organización de Bitwarden."
   },
   "myOrganization": {
     "message": "Mi organización"
@@ -3608,7 +3621,7 @@
     "message": "Los ajustes a su suscripción provocarán cambios prorrateados en su facturación total. Si los usuarios recién invitados exceden sus asientos de suscripción, recibirá inmediatamente un cargo prorrateado para los usuarios adicionales."
   },
   "smStandaloneTrialSeatCountUpdateMessageFragment1": {
-    "message": "If you want to add additional"
+    "message": "Si deseas añadir más"
   },
   "smStandaloneTrialSeatCountUpdateMessageFragment2": {
     "message": "seats without the bundled offer, please contact"
@@ -3731,19 +3744,19 @@
     "message": "No has seleccionado nada."
   },
   "receiveMarketingEmails": {
-    "message": "Get emails from Bitwarden for announcements, advice, and research opportunities."
+    "message": "Obtén correos electrónicos de Bitwarden para anuncios, consejos y oportunidades de investigación."
   },
   "unsubscribe": {
-    "message": "Unsubscribe"
+    "message": "Darse de baja"
   },
   "atAnyTime": {
-    "message": "at any time."
+    "message": "en cualquier momento."
   },
   "byContinuingYouAgreeToThe": {
-    "message": "By continuing, you agree to the"
+    "message": "Al continuar, aceptas los"
   },
   "and": {
-    "message": "and"
+    "message": "y"
   },
   "acceptPolicies": {
     "message": "Al seleccionar esta casilla, acepta lo siguiente:"
@@ -5605,10 +5618,10 @@
     "message": "Rotar el token de sincronización de facturación invalidará el token anterior."
   },
   "selfHostedServer": {
-    "message": "self-hosted"
+    "message": "autoalojado"
   },
   "customEnvironment": {
-    "message": "Custom environment"
+    "message": "Entorno personalizado"
   },
   "selfHostedBaseUrlHint": {
     "message": "Specify the base URL of your on-premises hosted Bitwarden installation. Example: https://bitwarden.company.com"
@@ -5617,22 +5630,22 @@
     "message": "For advanced configuration, you can specify the base URL of each service independently."
   },
   "selfHostedEnvFormInvalid": {
-    "message": "You must add either the base Server URL or at least one custom environment."
+    "message": "Debes añadir o bien la URL del servidor base, o al menos un entorno personalizado."
   },
   "apiUrl": {
-    "message": "API server URL"
+    "message": "URL del servidor de la API"
   },
   "webVaultUrl": {
-    "message": "Web vault server URL"
+    "message": "URL del servidor de la caja fuerte web"
   },
   "identityUrl": {
-    "message": "Identity server URL"
+    "message": "URL del servidor de identidad"
   },
   "notificationsUrl": {
-    "message": "Notifications server URL"
+    "message": "URL del servidor de notificaciones"
   },
   "iconsUrl": {
-    "message": "Icons server URL"
+    "message": "URL del servidor de iconos"
   },
   "environmentSaved": {
     "message": "Environment URLs saved"
@@ -5910,7 +5923,7 @@
     }
   },
   "forwarderGeneratedBy": {
-    "message": "Generated by Bitwarden.",
+    "message": "Generado por Bitwarden.",
     "description": "Displayed with the address on the forwarding service's configuration screen."
   },
   "forwarderGeneratedByWithWebsite": {
@@ -6161,7 +6174,7 @@
     "message": "Duo two-step login is required for your account."
   },
   "launchDuo": {
-    "message": "Launch Duo"
+    "message": "Iniciar Duo"
   },
   "turnOn": {
     "message": "Activar"
@@ -6877,19 +6890,19 @@
     "message": "Utilizar PIN"
   },
   "useBiometrics": {
-    "message": "Use biometrics"
+    "message": "Usar datos biométricos"
   },
   "enterVerificationCodeSentToEmail": {
     "message": "Enter the verification code that was sent to your email."
   },
   "resendCode": {
-    "message": "Resend code"
+    "message": "Reenviar código"
   },
   "memberColumnHeader": {
-    "message": "Member"
+    "message": "Miembro"
   },
   "groupSlashMemberColumnHeader": {
-    "message": "Group/Member"
+    "message": "Grupo/Miembro"
   },
   "selectGroupsAndMembers": {
     "message": "Seleccionar grupos y miembros"
@@ -7143,7 +7156,7 @@
     "description": "Software Development Kit"
   },
   "createAnAccount": {
-    "message": "Create an account"
+    "message": "Crear una cuenta"
   },
   "createSecret": {
     "message": "Crear un secreto"
@@ -7308,7 +7321,7 @@
     "message": "Cifrado de dispositivo de confianza"
   },
   "trustedDevices": {
-    "message": "Trusted devices"
+    "message": "Dispositivos de confianza"
   },
   "memberDecryptionOptionTdeDescriptionPartOne": {
     "message": "Once authenticated, members will decrypt vault data using a key stored on their device. The",
@@ -7620,7 +7633,7 @@
     "message": "Administrador de contraseñas"
   },
   "freeOrganization": {
-    "message": "Free Organization"
+    "message": "Organización gratuita"
   },
   "limitServiceAccounts": {
     "message": "Limit service accounts (optional)"
@@ -7655,6 +7668,9 @@
   "alreadyHaveAccount": {
     "message": "¿Ya tienes una cuenta?"
   },
+  "toggleSideNavigation": {
+    "message": "Alternar navegación lateral"
+  },
   "skipToContent": {
     "message": "Skip to content"
   },
@@ -7662,10 +7678,10 @@
     "message": "At least one member or group must have can manage permission."
   },
   "typePasskey": {
-    "message": "Passkey"
+    "message": "Clave de acceso"
   },
   "passkeyNotCopied": {
-    "message": "Passkey will not be copied"
+    "message": "La clave de acceso no se copiará"
   },
   "passkeyNotCopiedAlert": {
     "message": "The passkey will not be copied to the cloned item. Do you want to continue cloning this item?"
@@ -7806,28 +7822,28 @@
     "message": "Provider Portal"
   },
   "success": {
-    "message": "Success"
+    "message": "Éxito"
   },
   "restrictedGroupAccess": {
-    "message": "You cannot add yourself to groups."
+    "message": "No puedes añadirte a ti mismo a grupos."
   },
   "cannotAddYourselfToCollections": {
-    "message": "You cannot add yourself to collections."
+    "message": "No puedes añadirte a ti mismo tus colecciones."
   },
   "assign": {
-    "message": "Assign"
+    "message": "Asignar"
   },
   "assignToCollections": {
-    "message": "Assign to collections"
+    "message": "Asignar a colecciones"
   },
   "assignToTheseCollections": {
-    "message": "Assign to these collections"
+    "message": "Asignar a estas colecciones"
   },
   "bulkCollectionAssignmentDialogDescription": {
     "message": "Select the collections that the items will be shared with. Once an item is updated in one collection, it will be reflected in all collections. Only organization members with access to these collections will be able to see the items."
   },
   "selectCollectionsToAssign": {
-    "message": "Select collections to assign"
+    "message": "Seleccionar colecciones para asignar"
   },
   "noCollectionsAssigned": {
     "message": "No collections have been assigned"
@@ -7849,22 +7865,22 @@
     }
   },
   "items": {
-    "message": "Items"
+    "message": "Elementos"
   },
   "assignedSeats": {
     "message": "Assigned seats"
   },
   "assigned": {
-    "message": "Assigned"
+    "message": "Asignado"
   },
   "used": {
-    "message": "Used"
+    "message": "Usado"
   },
   "remaining": {
-    "message": "Remaining"
+    "message": "Restante"
   },
   "unlinkOrganization": {
-    "message": "Unlink organization"
+    "message": "Desvincular organización"
   },
   "manageSeats": {
     "message": "MANAGE SEATS"
@@ -8368,6 +8384,12 @@
     "message": "This email address will receive all invoices pertaining to this provider",
     "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
   },
+  "upgradeOrganizationEnterprise": {
+    "message": "Identify security risks by auditing member access"
+  },
+  "onlyAvailableForEnterpriseOrganization": {
+    "message": "Quickly view member access across the organization by upgrading to an Enterprise plan."
+  },
   "date": {
     "message": "Date"
   },
@@ -8377,5 +8399,53 @@
   "invoiceNumberHeader": {
     "message": "Invoice number",
     "description": "A table header for an invoice's number"
+  },
+  "memberAccessReport": {
+    "message": "Member access"
+  },
+  "memberAccessReportDesc": {
+    "message": "Ensure members have access to the right credentials and their accounts are secure. Use this report to obtain a CSV of member access and account configurations."
+  },
+  "higherKDFIterations": {
+    "message": "Higher KDF iterations can help protect your master password from being brute forced by an attacker."
+  },
+  "incrementsOf100,000": {
+    "message": "increments of 100,000"
+  },
+  "smallIncrements": {
+    "message": "small increments"
+  },
+  "kdfIterationRecommends": {
+    "message": "We recommend 600,000 or more"
+  },
+  "kdfToHighWarningIncreaseInIncrements": {
+    "message": "For older devices, setting your KDF too high may lead to performance issues. Increase the value in $VALUE$ and test your devices.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "increments of 100,000"
+      }
+    }
+  },
+  "providerReinstate": {
+    "message": " Contact Customer Support to reinstate your subscription."
+  },
+  "secretPeopleDescription": {
+    "message": "Grant groups or people access to this secret. Permissions set for people will override permissions set by groups."
+  },
+  "secretPeopleEmptyMessage": {
+    "message": "Add people or groups to share access to this secret"
+  },
+  "secretMachineAccountsDescription": {
+    "message": "Grant machine accounts access to this secret."
+  },
+  "secretMachineAccountsEmptyMessage": {
+    "message": "Add machine accounts to grant access to this secret"
+  },
+  "smAccessRemovalWarningSecretTitle": {
+    "message": "Remove access to this secret"
+  },
+  "smAccessRemovalSecretMessage": {
+    "message": "This action will remove your access to this secret."
   }
 }

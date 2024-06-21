@@ -582,13 +582,13 @@
     "message": "存取等級"
   },
   "accessing": {
-    "message": "Accessing"
+    "message": "正在存取"
   },
   "loggedOut": {
     "message": "已登出"
   },
   "loggedOutDesc": {
-    "message": "You have been logged out of your account."
+    "message": "你已經登出了你的帳號。"
   },
   "loginExpired": {
     "message": "您的登入工作階段已逾期。"
@@ -714,7 +714,7 @@
     "message": "建立帳戶"
   },
   "setAStrongPassword": {
-    "message": "Set a strong password"
+    "message": "設定一個強密碼"
   },
   "finishCreatingYourAccountBySettingAPassword": {
     "message": "Finish creating your account by setting a password"
@@ -729,7 +729,7 @@
     "message": "登入"
   },
   "verifyIdentity": {
-    "message": "Verify your Identity"
+    "message": "核實你的身份"
   },
   "logInInitiated": {
     "message": "登入已發起"
@@ -766,6 +766,19 @@
   },
   "masterPassHintLabel": {
     "message": "主密碼提示"
+  },
+  "masterPassHintText": {
+    "message": "If you forget your password, the password hint can be sent to your email. $CURRENT$/$MAXIMUM$ character maximum.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
   },
   "settings": {
     "message": "設定"
@@ -3260,10 +3273,10 @@
     "message": "裝置"
   },
   "creatingAccountOn": {
-    "message": "Creating account on"
+    "message": "建立帳號於"
   },
   "checkYourEmail": {
-    "message": "Check your email"
+    "message": "查看你的電子郵件"
   },
   "followTheLinkInTheEmailSentTo": {
     "message": "Follow the link in the email sent to"
@@ -3272,10 +3285,10 @@
     "message": "and continue creating your account."
   },
   "noEmail": {
-    "message": "No email?"
+    "message": "沒有電子郵件？"
   },
   "goBack": {
-    "message": "Go back"
+    "message": "返回"
   },
   "toEditYourEmailAddress": {
     "message": "to edit your email address."
@@ -3734,16 +3747,16 @@
     "message": "Get emails from Bitwarden for announcements, advice, and research opportunities."
   },
   "unsubscribe": {
-    "message": "Unsubscribe"
+    "message": "取消訂閱"
   },
   "atAnyTime": {
-    "message": "at any time."
+    "message": "於任何時間。"
   },
   "byContinuingYouAgreeToThe": {
     "message": "By continuing, you agree to the"
   },
   "and": {
-    "message": "and"
+    "message": "和"
   },
   "acceptPolicies": {
     "message": "選中此選取框，即表示您同意下列條款："
@@ -5605,10 +5618,10 @@
     "message": "輪換「計費同步權杖」會導致之前的權杖失效。"
   },
   "selfHostedServer": {
-    "message": "self-hosted"
+    "message": "自建"
   },
   "customEnvironment": {
-    "message": "Custom environment"
+    "message": "自訂環境"
   },
   "selfHostedBaseUrlHint": {
     "message": "Specify the base URL of your on-premises hosted Bitwarden installation. Example: https://bitwarden.company.com"
@@ -5620,22 +5633,22 @@
     "message": "You must add either the base Server URL or at least one custom environment."
   },
   "apiUrl": {
-    "message": "API server URL"
+    "message": "API 伺服器網址"
   },
   "webVaultUrl": {
-    "message": "Web vault server URL"
+    "message": "網頁版密碼庫伺服器網址"
   },
   "identityUrl": {
-    "message": "Identity server URL"
+    "message": "身份伺服器網址"
   },
   "notificationsUrl": {
-    "message": "Notifications server URL"
+    "message": "通知伺服器網址"
   },
   "iconsUrl": {
-    "message": "Icons server URL"
+    "message": "圖示伺服器網址"
   },
   "environmentSaved": {
-    "message": "Environment URLs saved"
+    "message": "環境網址已儲存"
   },
   "selfHostingTitle": {
     "message": "自我裝載"
@@ -7655,6 +7668,9 @@
   "alreadyHaveAccount": {
     "message": "已經有一個帳戶了嗎？"
   },
+  "toggleSideNavigation": {
+    "message": "切換側邊導航"
+  },
   "skipToContent": {
     "message": "跳過道內容"
   },
@@ -7885,7 +7901,7 @@
     "message": "Subscription update failed"
   },
   "trial": {
-    "message": "Trial",
+    "message": "試用",
     "description": "A subscription status label."
   },
   "pastDue": {
@@ -8181,7 +8197,7 @@
     "message": "設定 GitHub Actions"
   },
   "setUpKubernetes": {
-    "message": "Set up Kubernetes"
+    "message": "設定 Kubernetes"
   },
   "setUpGitlabCICD": {
     "message": "設定 GitLab CI/CD"
@@ -8190,7 +8206,7 @@
     "message": "設定 Ansible"
   },
   "rustSDKRepo": {
-    "message": "View Rust repository"
+    "message": "檢視 Rust 儲存庫"
   },
   "cSharpSDKRepo": {
     "message": "檢視 C# 儲存庫"
@@ -8256,7 +8272,7 @@
     "message": "從提供者入口網站管理計費"
   },
   "viewItemsIn": {
-    "message": "View items in $NAME$",
+    "message": "檢視項目位於 $NAME$",
     "description": "Button to view the contents of a folder or collection",
     "placeholders": {
       "name": {
@@ -8266,7 +8282,7 @@
     }
   },
   "backTo": {
-    "message": "Back to $NAME$",
+    "message": "返回至 $NAME$",
     "description": "Navigate back to a previous folder or collection",
     "placeholders": {
       "name": {
@@ -8276,11 +8292,11 @@
     }
   },
   "back": {
-    "message": "Back",
+    "message": "返回",
     "description": "Button text to navigate back"
   },
   "removeItem": {
-    "message": "Remove $NAME$",
+    "message": "移除 $NAME$",
     "description": "Remove a selected option, such as a folder or collection",
     "placeholders": {
       "name": {
@@ -8338,28 +8354,28 @@
     "message": "Stay ahead of security vulnerabilities by upgrading to a paid plan for enhanced monitoring."
   },
   "approveAllRequests": {
-    "message": "Approve all requests"
+    "message": "核准所有請求"
   },
   "allLoginRequestsApproved": {
-    "message": "All login requests approved"
+    "message": "所有登入請求均已核准"
   },
   "payPal": {
     "message": "PayPal"
   },
   "bitcoin": {
-    "message": "Bitcoin"
+    "message": "比特幣"
   },
   "updatedTaxInformation": {
-    "message": "Updated tax information"
+    "message": "已更新稅務資訊"
   },
   "unverified": {
-    "message": "Unverified"
+    "message": "未驗證"
   },
   "verified": {
-    "message": "Verified"
+    "message": "已驗證"
   },
   "viewSecret": {
-    "message": "View secret"
+    "message": "檢視秘密"
   },
   "noClients": {
     "message": "There are no clients to list"
@@ -8368,14 +8384,68 @@
     "message": "This email address will receive all invoices pertaining to this provider",
     "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
   },
+  "upgradeOrganizationEnterprise": {
+    "message": "Identify security risks by auditing member access"
+  },
+  "onlyAvailableForEnterpriseOrganization": {
+    "message": "Quickly view member access across the organization by upgrading to an Enterprise plan."
+  },
   "date": {
-    "message": "Date"
+    "message": "日期"
   },
   "exportClientReport": {
-    "message": "Export client report"
+    "message": "匯出用戶端報告"
   },
   "invoiceNumberHeader": {
-    "message": "Invoice number",
+    "message": "單據號碼",
     "description": "A table header for an invoice's number"
+  },
+  "memberAccessReport": {
+    "message": "成員存取"
+  },
+  "memberAccessReportDesc": {
+    "message": "Ensure members have access to the right credentials and their accounts are secure. Use this report to obtain a CSV of member access and account configurations."
+  },
+  "higherKDFIterations": {
+    "message": "Higher KDF iterations can help protect your master password from being brute forced by an attacker."
+  },
+  "incrementsOf100,000": {
+    "message": "increments of 100,000"
+  },
+  "smallIncrements": {
+    "message": "small increments"
+  },
+  "kdfIterationRecommends": {
+    "message": "We recommend 600,000 or more"
+  },
+  "kdfToHighWarningIncreaseInIncrements": {
+    "message": "For older devices, setting your KDF too high may lead to performance issues. Increase the value in $VALUE$ and test your devices.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "increments of 100,000"
+      }
+    }
+  },
+  "providerReinstate": {
+    "message": " Contact Customer Support to reinstate your subscription."
+  },
+  "secretPeopleDescription": {
+    "message": "Grant groups or people access to this secret. Permissions set for people will override permissions set by groups."
+  },
+  "secretPeopleEmptyMessage": {
+    "message": "Add people or groups to share access to this secret"
+  },
+  "secretMachineAccountsDescription": {
+    "message": "Grant machine accounts access to this secret."
+  },
+  "secretMachineAccountsEmptyMessage": {
+    "message": "Add machine accounts to grant access to this secret"
+  },
+  "smAccessRemovalWarningSecretTitle": {
+    "message": "Remove access to this secret"
+  },
+  "smAccessRemovalSecretMessage": {
+    "message": "This action will remove your access to this secret."
   }
 }

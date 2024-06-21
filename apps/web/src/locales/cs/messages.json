@@ -767,6 +767,19 @@
   "masterPassHintLabel": {
     "message": "Nápověda k hlavnímu heslu"
   },
+  "masterPassHintText": {
+    "message": "Pokud zapomenete své heslo, může být nápověda k heslu odeslána na Váš e-mail. $CURRENT$/$MAXIMUM$ znaků maximálně.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "settings": {
     "message": "Nastavení"
   },
@@ -7655,6 +7668,9 @@
   "alreadyHaveAccount": {
     "message": "Už máte účet?"
   },
+  "toggleSideNavigation": {
+    "message": "Přepnout boční navigaci"
+  },
   "skipToContent": {
     "message": "Přeskočit na obsah"
   },
@@ -8368,6 +8384,12 @@
     "message": "Tato e-mailová adresa obdrží všechny faktury vztahující se k tomuto poskytovateli",
     "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
   },
+  "upgradeOrganizationEnterprise": {
+    "message": "Zjistěte bezpečnostní rizika díky auditu přístupu členů"
+  },
+  "onlyAvailableForEnterpriseOrganization": {
+    "message": "Rychle si prohlédněte přístup členů v rámci organizace a přejděte na plán Enterprise."
+  },
   "date": {
     "message": "Datum"
   },
@@ -8377,5 +8399,53 @@
   "invoiceNumberHeader": {
     "message": "Číslo faktury",
     "description": "A table header for an invoice's number"
+  },
+  "memberAccessReport": {
+    "message": "Přístup členů"
+  },
+  "memberAccessReportDesc": {
+    "message": "Ujistěte se, že členové mají přístup k správným údajům a jejich účty jsou bezpečné. Použijte tuto zprávu k získání CSV přístupu členů a konfigurací účtu."
+  },
+  "higherKDFIterations": {
+    "message": "Více iterací KDF Vám může pomoci ochránit hlavní heslo před útočníkem, který by ho vylákal hrubou silou."
+  },
+  "incrementsOf100,000": {
+    "message": "přírůstky po 100 000"
+  },
+  "smallIncrements": {
+    "message": "malé přírůstky"
+  },
+  "kdfIterationRecommends": {
+    "message": "Doporučujeme 600 000 nebo více"
+  },
+  "kdfToHighWarningIncreaseInIncrements": {
+    "message": "U starších zařízení může příliš vysoké nastavení KDF vést k problémům s výkonem. Zvyšte hodnotu v $VALUE$ a otestujte svá zařízení.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "increments of 100,000"
+      }
+    }
+  },
+  "providerReinstate": {
+    "message": " Pro obnovení předplatného se obraťte na zákaznickou podporu."
+  },
+  "secretPeopleDescription": {
+    "message": "Udělí skupinám nebo osobám přístup k tomuto tajnému klíči. Oprávnění nastavená pro osoby přepíšou oprávnění nastavená skupinami."
+  },
+  "secretPeopleEmptyMessage": {
+    "message": "Přidejte osoby nebo skupiny pro sdílení přístupu k tomuto tajnému klíči"
+  },
+  "secretMachineAccountsDescription": {
+    "message": "Udělí strojovým účtům přístup k tomuto tajnému klíči."
+  },
+  "secretMachineAccountsEmptyMessage": {
+    "message": "Přidejte strojové účty pro udělení přístupu k tomuto tajnému klíči"
+  },
+  "smAccessRemovalWarningSecretTitle": {
+    "message": "Odebrat přístup k tomuto tajnému klíči"
+  },
+  "smAccessRemovalSecretMessage": {
+    "message": "Tato akce odebere Váš přístup k tomuto tajnému klíči."
   }
 }

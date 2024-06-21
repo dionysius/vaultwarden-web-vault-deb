@@ -767,6 +767,19 @@
   "masterPassHintLabel": {
     "message": "Підказка для головного пароля"
   },
+  "masterPassHintText": {
+    "message": "У разі втрати пароля, можна отримати підказку на вашу електронну пошту. Максимум $CURRENT$/$MAXIMUM$ символів.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "settings": {
     "message": "Налаштування"
   },
@@ -7655,6 +7668,9 @@
   "alreadyHaveAccount": {
     "message": "Вже маєте обліковий запис?"
   },
+  "toggleSideNavigation": {
+    "message": "Перемкнути бічну навігацію"
+  },
   "skipToContent": {
     "message": "Перейти до вмісту"
   },
@@ -8368,6 +8384,12 @@
     "message": "На цю адресу електронної пошти надсилатимуться всі рахунки, які стосуються цього провайдера",
     "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
   },
+  "upgradeOrganizationEnterprise": {
+    "message": "Ідентифікація ризиків безпеки шляхом аудиту доступу учасників"
+  },
+  "onlyAvailableForEnterpriseOrganization": {
+    "message": "Швидко переглядайте доступ учасників організації, перейшовши на тарифний план Enterprise."
+  },
   "date": {
     "message": "Дата"
   },
@@ -8377,5 +8399,53 @@
   "invoiceNumberHeader": {
     "message": "Номер рахунку",
     "description": "A table header for an invoice's number"
+  },
+  "memberAccessReport": {
+    "message": "Доступ учасників"
+  },
+  "memberAccessReportDesc": {
+    "message": "Переконайтеся, що учасники мають доступ до належних облікових даних і їхні облікові записи надійні. Використовуйте цей звіт, щоб отримати файл CSV з даними про доступ учасників та конфігурації облікових записів."
+  },
+  "higherKDFIterations": {
+    "message": "Вищі значення KDF-ітерацій можуть допомогти захистити ваш головний пароль від грубого зламу зловмисником."
+  },
+  "incrementsOf100,000": {
+    "message": "кроком 100 000"
+  },
+  "smallIncrements": {
+    "message": "невеликі кроки"
+  },
+  "kdfIterationRecommends": {
+    "message": "Ми рекомендуємо 600 000 або більше"
+  },
+  "kdfToHighWarningIncreaseInIncrements": {
+    "message": "Для старіших пристроїв занадто високе значення KDF може призвести до проблем зі швидкодією. Збільшуйте значення з $VALUE$ і тестуйте роботу на пристрої.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "increments of 100,000"
+      }
+    }
+  },
+  "providerReinstate": {
+    "message": " Зверніться до служби підтримки для відновлення передплати."
+  },
+  "secretPeopleDescription": {
+    "message": "Grant groups or people access to this secret. Permissions set for people will override permissions set by groups."
+  },
+  "secretPeopleEmptyMessage": {
+    "message": "Add people or groups to share access to this secret"
+  },
+  "secretMachineAccountsDescription": {
+    "message": "Grant machine accounts access to this secret."
+  },
+  "secretMachineAccountsEmptyMessage": {
+    "message": "Add machine accounts to grant access to this secret"
+  },
+  "smAccessRemovalWarningSecretTitle": {
+    "message": "Remove access to this secret"
+  },
+  "smAccessRemovalSecretMessage": {
+    "message": "This action will remove your access to this secret."
   }
 }

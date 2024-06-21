@@ -767,6 +767,19 @@
   "masterPassHintLabel": {
     "message": "Majstra Pasvorta Konsilo"
   },
+  "masterPassHintText": {
+    "message": "If you forget your password, the password hint can be sent to your email. $CURRENT$/$MAXIMUM$ character maximum.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "settings": {
     "message": "Agordoj"
   },
@@ -7655,6 +7668,9 @@
   "alreadyHaveAccount": {
     "message": "Already have an account?"
   },
+  "toggleSideNavigation": {
+    "message": "Toggle side navigation"
+  },
   "skipToContent": {
     "message": "Skip to content"
   },
@@ -8368,6 +8384,12 @@
     "message": "This email address will receive all invoices pertaining to this provider",
     "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
   },
+  "upgradeOrganizationEnterprise": {
+    "message": "Identify security risks by auditing member access"
+  },
+  "onlyAvailableForEnterpriseOrganization": {
+    "message": "Quickly view member access across the organization by upgrading to an Enterprise plan."
+  },
   "date": {
     "message": "Date"
   },
@@ -8377,5 +8399,53 @@
   "invoiceNumberHeader": {
     "message": "Invoice number",
     "description": "A table header for an invoice's number"
+  },
+  "memberAccessReport": {
+    "message": "Member access"
+  },
+  "memberAccessReportDesc": {
+    "message": "Ensure members have access to the right credentials and their accounts are secure. Use this report to obtain a CSV of member access and account configurations."
+  },
+  "higherKDFIterations": {
+    "message": "Higher KDF iterations can help protect your master password from being brute forced by an attacker."
+  },
+  "incrementsOf100,000": {
+    "message": "increments of 100,000"
+  },
+  "smallIncrements": {
+    "message": "small increments"
+  },
+  "kdfIterationRecommends": {
+    "message": "We recommend 600,000 or more"
+  },
+  "kdfToHighWarningIncreaseInIncrements": {
+    "message": "For older devices, setting your KDF too high may lead to performance issues. Increase the value in $VALUE$ and test your devices.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "increments of 100,000"
+      }
+    }
+  },
+  "providerReinstate": {
+    "message": " Contact Customer Support to reinstate your subscription."
+  },
+  "secretPeopleDescription": {
+    "message": "Grant groups or people access to this secret. Permissions set for people will override permissions set by groups."
+  },
+  "secretPeopleEmptyMessage": {
+    "message": "Add people or groups to share access to this secret"
+  },
+  "secretMachineAccountsDescription": {
+    "message": "Grant machine accounts access to this secret."
+  },
+  "secretMachineAccountsEmptyMessage": {
+    "message": "Add machine accounts to grant access to this secret"
+  },
+  "smAccessRemovalWarningSecretTitle": {
+    "message": "Remove access to this secret"
+  },
+  "smAccessRemovalSecretMessage": {
+    "message": "This action will remove your access to this secret."
   }
 }

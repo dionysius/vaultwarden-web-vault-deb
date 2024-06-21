@@ -767,6 +767,19 @@
   "masterPassHintLabel": {
     "message": "Hovedadgangskodetip"
   },
+  "masterPassHintText": {
+    "message": "Glemmer du din adgangskode, kan adgangskodetippet sendes til din e-mail. $CURRENT$/$MAXIMUM$ tegns maksimum.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "settings": {
     "message": "Indstillinger"
   },
@@ -7655,6 +7668,9 @@
   "alreadyHaveAccount": {
     "message": "Har allerede en konto?"
   },
+  "toggleSideNavigation": {
+    "message": "Slå sidenavigering til/fra"
+  },
   "skipToContent": {
     "message": "Spring til indhold"
   },
@@ -8368,6 +8384,12 @@
     "message": "Denne e-mailadresse vil modtage alle fakturaer vedr. denne udbyder",
     "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
   },
+  "upgradeOrganizationEnterprise": {
+    "message": "Identificér sikkerhedsrisici ved at inspicere medlemsadgang"
+  },
+  "onlyAvailableForEnterpriseOrganization": {
+    "message": "Se hurtigt medlemsadgang på tværs af organisationen ved at opgradere til en Enterprise-abonnementstype."
+  },
   "date": {
     "message": "Dato"
   },
@@ -8377,5 +8399,53 @@
   "invoiceNumberHeader": {
     "message": "Fakturanummer",
     "description": "A table header for an invoice's number"
+  },
+  "memberAccessReport": {
+    "message": "Medlemsadgang"
+  },
+  "memberAccessReportDesc": {
+    "message": "Sikr, at medlemmerne har adgang til de rigtige legitimationsoplysninger, og at deres konti er sikre. Brug denne rapport til at få en CSV over medlemsadgang og kontoopsætninger."
+  },
+  "higherKDFIterations": {
+    "message": "Højere KDF-iterationer kan hjælpe med at beskytte hovedadgangskoden mod brute force-angreb."
+  },
+  "incrementsOf100,000": {
+    "message": "forøgelsesintervaller på 100.000"
+  },
+  "smallIncrements": {
+    "message": "små forøgelser"
+  },
+  "kdfIterationRecommends": {
+    "message": "Vi anbefaler 600.000 eller højere"
+  },
+  "kdfToHighWarningIncreaseInIncrements": {
+    "message": "Indstilling af for høj KDF kan på ældre enheder medføre ydeevneproblemer. Forøg værdien i $VALUE$ og test på enhederne.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "increments of 100,000"
+      }
+    }
+  },
+  "providerReinstate": {
+    "message": " Kontakt kundesupport for at genoprette abonnementet."
+  },
+  "secretPeopleDescription": {
+    "message": "Grant groups or people access to this secret. Permissions set for people will override permissions set by groups."
+  },
+  "secretPeopleEmptyMessage": {
+    "message": "Add people or groups to share access to this secret"
+  },
+  "secretMachineAccountsDescription": {
+    "message": "Grant machine accounts access to this secret."
+  },
+  "secretMachineAccountsEmptyMessage": {
+    "message": "Add machine accounts to grant access to this secret"
+  },
+  "smAccessRemovalWarningSecretTitle": {
+    "message": "Remove access to this secret"
+  },
+  "smAccessRemovalSecretMessage": {
+    "message": "This action will remove your access to this secret."
   }
 }

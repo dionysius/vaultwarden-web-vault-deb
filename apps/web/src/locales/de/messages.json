@@ -767,6 +767,19 @@
   "masterPassHintLabel": {
     "message": "Master-Passwort-Hinweis"
   },
+  "masterPassHintText": {
+    "message": "Wenn du dein Passwort vergessen hast, kann der Passwort-Hinweis an deine E-Mail-Adresse gesendet werden. Maximal $CURRENT$/$MAXIMUM$ Zeichen.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "settings": {
     "message": "Einstellungen"
   },
@@ -7655,6 +7668,9 @@
   "alreadyHaveAccount": {
     "message": "Hast du bereits ein Konto?"
   },
+  "toggleSideNavigation": {
+    "message": "Seitennavigation umschalten"
+  },
   "skipToContent": {
     "message": "Zum Inhalt wechseln"
   },
@@ -8368,6 +8384,12 @@
     "message": "Diese E-Mail-Adresse wird alle Rechnungen erhalten, die diesen Anbieter betreffen",
     "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
   },
+  "upgradeOrganizationEnterprise": {
+    "message": "Sicherheitsrisiken durch Kontrolle des Mitgliederzugriffs identifizieren"
+  },
+  "onlyAvailableForEnterpriseOrganization": {
+    "message": "Mitgliederzugriffe schnell innerhalb der Organisation anzeigen durch ein Upgrade auf einen Enterprise-Tarif."
+  },
   "date": {
     "message": "Datum"
   },
@@ -8377,5 +8399,53 @@
   "invoiceNumberHeader": {
     "message": "Rechnungsnummer",
     "description": "A table header for an invoice's number"
+  },
+  "memberAccessReport": {
+    "message": "Mitgliederzugriff"
+  },
+  "memberAccessReportDesc": {
+    "message": "Stelle sicher, dass Mitglieder Zugriff auf die richtigen Zugangsdaten haben und ihre Konten sicher sind. Benutze diesen Bericht, um eine CSV-Datei mit Mitgliederzugriffen und Kontokonfigurationen zu erhalten."
+  },
+  "higherKDFIterations": {
+    "message": "Höhere KDF-Iterationen können helfen, dein Master-Passwort vor Brute-Force-Attacken durch einen Angreifer zu schützen."
+  },
+  "incrementsOf100,000": {
+    "message": "Schritten von 100.000"
+  },
+  "smallIncrements": {
+    "message": "kleinen Schritten"
+  },
+  "kdfIterationRecommends": {
+    "message": "Wir empfehlen 600.000 oder mehr"
+  },
+  "kdfToHighWarningIncreaseInIncrements": {
+    "message": "Auf älteren Geräten kann es durch zu hohe KDF-Iterationen zu Leistungsproblemen kommen. Erhöhe den Wert in $VALUE$ und teste es auf deinen Geräten.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "increments of 100,000"
+      }
+    }
+  },
+  "providerReinstate": {
+    "message": " Kontaktiere den Kundensupport, um dein Abonnement wiederherzustellen."
+  },
+  "secretPeopleDescription": {
+    "message": "Gewähre Gruppen oder Personen Zugriff auf dieses Geheimnis. Festgelegte Berechtigungen für Personen überschreiben die festgelegten Gruppen-Berechtigungen."
+  },
+  "secretPeopleEmptyMessage": {
+    "message": "Personen oder Gruppen hinzufügen, um den Zugriff auf dieses Geheimnis zu teilen"
+  },
+  "secretMachineAccountsDescription": {
+    "message": "Gewähre Gerätekonten Zugriff auf dieses Geheimnis."
+  },
+  "secretMachineAccountsEmptyMessage": {
+    "message": "Gerätekonten hinzufügen, um Zugriff auf dieses Geheimnis zu gewähren"
+  },
+  "smAccessRemovalWarningSecretTitle": {
+    "message": "Zugriff auf dieses Geheimnis entziehen"
+  },
+  "smAccessRemovalSecretMessage": {
+    "message": "Diese Aktion wird deinen Zugriff auf dieses Geheimnis entziehen."
   }
 }

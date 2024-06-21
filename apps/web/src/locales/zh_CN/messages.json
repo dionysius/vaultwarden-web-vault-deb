@@ -767,6 +767,19 @@
   "masterPassHintLabel": {
     "message": "主密码提示"
   },
+  "masterPassHintText": {
+    "message": "如果您忘记了密码，可以将密码提示发送到您的电子邮箱。$CURRENT$ / $MAXIMUM$ 最大字符数。",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "settings": {
     "message": "设置"
   },
@@ -7655,6 +7668,9 @@
   "alreadyHaveAccount": {
     "message": "已经拥有账户了吗？"
   },
+  "toggleSideNavigation": {
+    "message": "切换侧边导航"
+  },
   "skipToContent": {
     "message": "跳转到内容"
   },
@@ -8368,6 +8384,12 @@
     "message": "此电子邮件地址将用于接收与此供应商相关的所有账单",
     "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
   },
+  "upgradeOrganizationEnterprise": {
+    "message": "通过审计成员访问权限来识别安全风险"
+  },
+  "onlyAvailableForEnterpriseOrganization": {
+    "message": "通过升级为企业计划，快速查看整个组织的成员访问权限。"
+  },
   "date": {
     "message": "日期"
   },
@@ -8377,5 +8399,53 @@
   "invoiceNumberHeader": {
     "message": "账单编号",
     "description": "A table header for an invoice's number"
+  },
+  "memberAccessReport": {
+    "message": "成员访问权限"
+  },
+  "memberAccessReportDesc": {
+    "message": "确保成员能够访问正确的凭据，以及他们的账户是安全的。使用此报告获取包含会员访问权限和账户配置的 CSV 文件 。"
+  },
+  "higherKDFIterations": {
+    "message": "更高的 KDF 迭代可以保护您的主密码不被攻击者暴力破解。"
+  },
+  "incrementsOf100,000": {
+    "message": "100,000 增量"
+  },
+  "smallIncrements": {
+    "message": "小增量"
+  },
+  "kdfIterationRecommends": {
+    "message": "我们推荐 600,000 或更高"
+  },
+  "kdfToHighWarningIncreaseInIncrements": {
+    "message": "对于老旧设备，将 KDF 设置得太高可能导致性能问题。以 $VALUE$ 值增加然后测试您的设备。",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "increments of 100,000"
+      }
+    }
+  },
+  "providerReinstate": {
+    "message": " 联系客户支持恢复您的订阅。"
+  },
+  "secretPeopleDescription": {
+    "message": "Grant groups or people access to this secret. Permissions set for people will override permissions set by groups."
+  },
+  "secretPeopleEmptyMessage": {
+    "message": "Add people or groups to share access to this secret"
+  },
+  "secretMachineAccountsDescription": {
+    "message": "Grant machine accounts access to this secret."
+  },
+  "secretMachineAccountsEmptyMessage": {
+    "message": "Add machine accounts to grant access to this secret"
+  },
+  "smAccessRemovalWarningSecretTitle": {
+    "message": "Remove access to this secret"
+  },
+  "smAccessRemovalSecretMessage": {
+    "message": "This action will remove your access to this secret."
   }
 }

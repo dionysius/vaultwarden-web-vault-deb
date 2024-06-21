@@ -767,6 +767,19 @@
   "masterPassHintLabel": {
     "message": "マスターパスワードのヒント"
   },
+  "masterPassHintText": {
+    "message": "パスワードを忘れた場合、パスワードのヒントをメールに送信できます。 最大文字数：$CURRENT$/$MAXIMUM$",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "settings": {
     "message": "設定"
   },
@@ -7655,6 +7668,9 @@
   "alreadyHaveAccount": {
     "message": "既にアカウントをお持ちですか？"
   },
+  "toggleSideNavigation": {
+    "message": "サイドナビゲーションの切り替え"
+  },
   "skipToContent": {
     "message": "コンテンツへ移動"
   },
@@ -8368,6 +8384,12 @@
     "message": "このメールアドレスは、このプロバイダに関連するすべての請求書を受信します",
     "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
   },
+  "upgradeOrganizationEnterprise": {
+    "message": "メンバーアクセスを監査してセキュリティリスクを特定する"
+  },
+  "onlyAvailableForEnterpriseOrganization": {
+    "message": "エンタープライズプランにアップグレードすると、組織全体のメンバーアクセスをすばやく確認できます。"
+  },
   "date": {
     "message": "日付"
   },
@@ -8377,5 +8399,53 @@
   "invoiceNumberHeader": {
     "message": "請求書番号",
     "description": "A table header for an invoice's number"
+  },
+  "memberAccessReport": {
+    "message": "メンバーアクセス"
+  },
+  "memberAccessReportDesc": {
+    "message": "メンバーが適切な資格情報にアクセスでき、アカウントが安全であることを確認します。 このレポートを使用するとメンバーアクセスとアカウント設定の CSV を取得できます。"
+  },
+  "higherKDFIterations": {
+    "message": "KDF 反復回数を多くすることで、攻撃者による総当たり攻撃からマスターパスワードを守ることができます。"
+  },
+  "incrementsOf100,000": {
+    "message": "100,000回"
+  },
+  "smallIncrements": {
+    "message": "少ない回数で"
+  },
+  "kdfIterationRecommends": {
+    "message": "600,000以上がおすすめです"
+  },
+  "kdfToHighWarningIncreaseInIncrements": {
+    "message": "古いデバイスでは、KDF を高く設定するとパフォーマンスの問題が発生する可能性があります。 $VALUE$増やしてデバイスをテストしてください。",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "increments of 100,000"
+      }
+    }
+  },
+  "providerReinstate": {
+    "message": " サブスクリプションを復活させるには、カスタマーサポートにご連絡ください。"
+  },
+  "secretPeopleDescription": {
+    "message": "このシークレットへのグループまたはユーザーのアクセスを許可します。ユーザーへの権限はグループへの権限を上書きします。"
+  },
+  "secretPeopleEmptyMessage": {
+    "message": "このシークレットへのアクセスを共有するユーザーやグループを追加します"
+  },
+  "secretMachineAccountsDescription": {
+    "message": "このシークレットへのマシンアカウントのアクセスを許可します。"
+  },
+  "secretMachineAccountsEmptyMessage": {
+    "message": "このシークレットへのアクセスを許可するマシンアカウントを追加します"
+  },
+  "smAccessRemovalWarningSecretTitle": {
+    "message": "このシークレットへのアクセスを削除"
+  },
+  "smAccessRemovalSecretMessage": {
+    "message": "このシークレットへのアクセスを削除します。"
   }
 }

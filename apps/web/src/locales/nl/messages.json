@@ -767,6 +767,19 @@
   "masterPassHintLabel": {
     "message": "Hoofdwachtwoordhint"
   },
+  "masterPassHintText": {
+    "message": "Als je je wachtwoord vergeten bent, kan de hint naar je e-mail gestuurd worden. $CURRENT$/$MAXIMUM$ tekens maximaal.",
+    "placeholders": {
+      "current": {
+        "content": "$1",
+        "example": "0"
+      },
+      "maximum": {
+        "content": "$2",
+        "example": "50"
+      }
+    }
+  },
   "settings": {
     "message": "Instellingen"
   },
@@ -7655,6 +7668,9 @@
   "alreadyHaveAccount": {
     "message": "Heb je al een account?"
   },
+  "toggleSideNavigation": {
+    "message": "Zijnavigatie schakelen"
+  },
   "skipToContent": {
     "message": "Ga naar de inhoud"
   },
@@ -8368,6 +8384,12 @@
     "message": "Dit e-mailadres ontvangt alle facturen van deze provider",
     "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
   },
+  "upgradeOrganizationEnterprise": {
+    "message": "Beveiligingsrisico's identificeren door ledentoegang te controleren"
+  },
+  "onlyAvailableForEnterpriseOrganization": {
+    "message": "Bekijk snel de toegang van leden in de hele organisatie door te upgraden naar een Enterprise-abonnement."
+  },
   "date": {
     "message": "Datum"
   },
@@ -8377,5 +8399,53 @@
   "invoiceNumberHeader": {
     "message": "Factuurnummer",
     "description": "A table header for an invoice's number"
+  },
+  "memberAccessReport": {
+    "message": "Ledentoegang"
+  },
+  "memberAccessReportDesc": {
+    "message": "Zorg ervoor dat leden toegang hebben tot de juiste inloggegevens en dat hun accounts veilig zijn. Dit CSV-rapport geeft inzicht in ledentoegang en accountconfiguraties."
+  },
+  "higherKDFIterations": {
+    "message": "Hogere KDF-iteraties beschermen je hoofdwachtwoord tegen brute-foce-aanvallen."
+  },
+  "incrementsOf100,000": {
+    "message": "verhogingen van 100.000"
+  },
+  "smallIncrements": {
+    "message": "kleine verhogingen"
+  },
+  "kdfIterationRecommends": {
+    "message": "We adviseren 600.000 of meer"
+  },
+  "kdfToHighWarningIncreaseInIncrements": {
+    "message": "Voor oudere apparaten kan het te hoog instellen van je KDF tot prestatieproblemen leiden. Verhoog de waarde in $VALUE$ en test je apparaten.",
+    "placeholders": {
+      "value": {
+        "content": "$1",
+        "example": "increments of 100,000"
+      }
+    }
+  },
+  "providerReinstate": {
+    "message": " Neem contact op met de klantenservice om je abonnement te herstellen."
+  },
+  "secretPeopleDescription": {
+    "message": "Groepen of mensen toegang tot dit secret geven. Machtigingen die zijn ingesteld voor mensen overschrijven de rechten die zijn ingesteld door groepen."
+  },
+  "secretPeopleEmptyMessage": {
+    "message": "Mensen of groepen toevoegen om toegang tot dit secret te delen"
+  },
+  "secretMachineAccountsDescription": {
+    "message": "Machine-accounts toegang tot dit project geven."
+  },
+  "secretMachineAccountsEmptyMessage": {
+    "message": "Machine-accounts toevoegen om toegang te verlenen tot dit geheim"
+  },
+  "smAccessRemovalWarningSecretTitle": {
+    "message": "Verwijder de toegang tot dit secret"
+  },
+  "smAccessRemovalSecretMessage": {
+    "message": "Hiermee trek je je toegang tot het project in."
   }
 }
