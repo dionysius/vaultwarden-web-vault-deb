@@ -64,7 +64,7 @@ export class SponsoredFamiliesComponent implements OnInit, OnDestroy {
             true,
           ),
         ],
-        updateOn: "blur",
+        updateOn: "change",
       }),
     });
   }
