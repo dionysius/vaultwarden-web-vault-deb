@@ -104,7 +104,7 @@ export class OrganizationData {
     this.providerType = response.providerType;
     this.familySponsorshipFriendlyName = response.familySponsorshipFriendlyName;
     this.familySponsorshipAvailable = response.familySponsorshipAvailable;
-    this.productTierType = response.planProductType;
+    this.productTierType = response.productTierType;
     this.keyConnectorEnabled = response.keyConnectorEnabled;
     this.keyConnectorUrl = response.keyConnectorUrl;
     this.familySponsorshipLastSyncDate = response.familySponsorshipLastSyncDate;
