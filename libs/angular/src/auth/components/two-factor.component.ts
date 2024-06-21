@@ -506,6 +506,7 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
     return authType == AuthenticationType.Sso || authType == AuthenticationType.UserApiKey;
   }
 
-  // implemented in clients
-  async launchDuoFrameless() {}
+  async launchDuoFrameless() {
+    this.platformUtilsService.launchUri(this.duoFramelessUrl);
+  }
 }
