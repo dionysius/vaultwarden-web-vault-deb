@@ -100,7 +100,7 @@
       </bit-form-control>
       <div class="tw-mt-5 tw-flex" (click)="toggleOptions()">
         <h4 bitTypography="h4" class="tw-mb-0 tw-mr-2">
-          <button type="button" bitLink appStopClick>
+          <button type="button" bitLink appStopClick [attr.aria-expanded]="showOptions">
             <i
               class="bwi"
               aria-hidden="true"
