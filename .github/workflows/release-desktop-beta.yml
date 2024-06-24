@@ -415,6 +415,9 @@ jobs:
           cache-dependency-path: '**/package-lock.json'
           node-version: ${{ env._NODE_VERSION }}
 
+      - name: Set up Node-gyp
+        run: python3 -m pip install setuptools
+
       - name: Print environment
         run: |
           node --version
@@ -545,6 +548,9 @@ jobs:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
           node-version: ${{ env._NODE_VERSION }}
+
+      - name: Set up Node-gyp
+        run: python3 -m pip install setuptools
 
       - name: Print environment
         run: |
@@ -755,6 +761,9 @@ jobs:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
           node-version: ${{ env._NODE_VERSION }}
+
+      - name: Set up Node-gyp
+        run: python3 -m pip install setuptools
 
       - name: Print environment
         run: |
