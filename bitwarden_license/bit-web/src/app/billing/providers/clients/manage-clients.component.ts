@@ -10,7 +10,7 @@ import { ProviderUserType } from "@bitwarden/common/admin-console/enums";
 import { Provider } from "@bitwarden/common/admin-console/models/domain/provider";
 import { ProviderOrganizationOrganizationDetailsResponse } from "@bitwarden/common/admin-console/models/response/provider/provider-organization.response";
 import { BillingApiServiceAbstraction as BillingApiService } from "@bitwarden/common/billing/abstractions/billilng-api.service.abstraction";
-import { canAccessBilling } from "@bitwarden/common/billing/abstractions/provider-billing.service.abstraction";
+import { hasConsolidatedBilling } from "@bitwarden/common/billing/abstractions/provider-billing.service.abstraction";
 import { PlanResponse } from "@bitwarden/common/billing/models/response/plan.response";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -21,24 +21,27 @@ import { BaseClientsComponent } from "../../../admin-console/providers/clients/b
 import { WebProviderService } from "../../../admin-console/providers/services/web-provider.service";
 
 import {
-  CreateClientOrganizationResultType,
-  openCreateClientOrganizationDialog,
-} from "./create-client-organization.component";
+  CreateClientDialogResultType,
+  openCreateClientDialog,
+} from "./create-client-dialog.component";
 import {
-  ManageClientOrganizationNameResultType,
-  openManageClientOrganizationNameDialog,
-} from "./manage-client-organization-name.component";
-import { ManageClientOrganizationSubscriptionComponent } from "./manage-client-organization-subscription.component";
+  ManageClientNameDialogResultType,
+  openManageClientNameDialog,
+} from "./manage-client-name-dialog.component";
+import {
+  ManageClientSubscriptionDialogResultType,
+  openManageClientSubscriptionDialog,
+} from "./manage-client-subscription-dialog.component";
 
 @Component({
-  templateUrl: "manage-client-organizations.component.html",
+  templateUrl: "manage-clients.component.html",
 })
-export class ManageClientOrganizationsComponent extends BaseClientsComponent {
+export class ManageClientsComponent extends BaseClientsComponent {
   providerId: string;
   provider: Provider;
 
   loading = true;
-  manageOrganizations = false;
+  isProviderAdmin = false;
 
   protected plans: PlanResponse[];
 
@@ -73,9 +76,9 @@ export class ManageClientOrganizationsComponent extends BaseClientsComponent {
         switchMap((params) => {
           this.providerId = params.providerId;
           return this.providerService.get$(this.providerId).pipe(
-            canAccessBilling(this.configService),
-            map((canAccessBilling) => {
-              if (!canAccessBilling) {
+            hasConsolidatedBilling(this.configService),
+            map((hasConsolidatedBilling) => {
+              if (!hasConsolidatedBilling) {
                 return from(
                   this.router.navigate(["../clients"], {
                     relativeTo: this.activatedRoute,
@@ -99,7 +102,7 @@ export class ManageClientOrganizationsComponent extends BaseClientsComponent {
   async load() {
     this.provider = await firstValueFrom(this.providerService.get$(this.providerId));
 
-    this.manageOrganizations = this.provider.type === ProviderUserType.ProviderAdmin;
+    this.isProviderAdmin = this.provider.type === ProviderUserType.ProviderAdmin;
 
     this.clients = (await this.apiService.getProviderClients(this.providerId)).data;
 
@@ -110,8 +113,23 @@ export class ManageClientOrganizationsComponent extends BaseClientsComponent {
     this.loading = false;
   }
 
-  async manageName(organization: ProviderOrganizationOrganizationDetailsResponse) {
-    const dialogRef = openManageClientOrganizationNameDialog(this.dialogService, {
+  createClient = async () => {
+    const reference = openCreateClientDialog(this.dialogService, {
+      data: {
+        providerId: this.providerId,
+        plans: this.plans,
+      },
+    });
+
+    const result = await lastValueFrom(reference.closed);
+
+    if (result === CreateClientDialogResultType.Submitted) {
+      await this.load();
+    }
+  };
+
+  manageClientName = async (organization: ProviderOrganizationOrganizationDetailsResponse) => {
+    const dialogRef = openManageClientNameDialog(this.dialogService, {
       data: {
         providerId: this.providerId,
         organization: {
@@ -124,38 +142,25 @@ export class ManageClientOrganizationsComponent extends BaseClientsComponent {
 
     const result = await firstValueFrom(dialogRef.closed);
 
-    if (result === ManageClientOrganizationNameResultType.Submitted) {
+    if (result === ManageClientNameDialogResultType.Submitted) {
       await this.load();
     }
-  }
+  };
 
-  async manageSubscription(organization: ProviderOrganizationOrganizationDetailsResponse) {
-    if (organization == null) {
-      return;
-    }
-
-    const dialogRef = ManageClientOrganizationSubscriptionComponent.open(this.dialogService, {
-      organization: organization,
-    });
-
-    await firstValueFrom(dialogRef.closed);
-    await this.load();
-  }
-
-  createClientOrganization = async () => {
-    const reference = openCreateClientOrganizationDialog(this.dialogService, {
+  manageClientSubscription = async (
+    organization: ProviderOrganizationOrganizationDetailsResponse,
+  ) => {
+    const dialogRef = openManageClientSubscriptionDialog(this.dialogService, {
       data: {
-        providerId: this.providerId,
-        plans: this.plans,
+        organization,
+        provider: this.provider,
       },
     });
 
-    const result = await lastValueFrom(reference.closed);
+    const result = await firstValueFrom(dialogRef.closed);
 
-    if (result === CreateClientOrganizationResultType.Closed) {
-      return;
+    if (result === ManageClientSubscriptionDialogResultType.Submitted) {
+      await this.load();
     }
-
-    await this.load();
   };
 }

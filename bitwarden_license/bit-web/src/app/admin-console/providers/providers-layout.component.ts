@@ -1,13 +1,13 @@
 import { CommonModule } from "@angular/common";
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { ActivatedRoute, RouterModule } from "@angular/router";
-import { switchMap, Observable, Subject, filter, startWith } from "rxjs";
+import { switchMap, Observable, Subject, combineLatest, map } from "rxjs";
 import { takeUntil } from "rxjs/operators";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { ProviderService } from "@bitwarden/common/admin-console/abstractions/provider.service";
 import { Provider } from "@bitwarden/common/admin-console/models/domain/provider";
-import { canAccessBilling } from "@bitwarden/common/billing/abstractions/provider-billing.service.abstraction";
+import { hasConsolidatedBilling } from "@bitwarden/common/billing/abstractions/provider-billing.service.abstraction";
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { IconModule, LayoutComponent, NavigationModule } from "@bitwarden/components";
@@ -37,6 +37,8 @@ export class ProvidersLayoutComponent implements OnInit, OnDestroy {
 
   private destroy$ = new Subject<void>();
   protected provider$: Observable<Provider>;
+
+  protected hasConsolidatedBilling$: Observable<boolean>;
   protected canAccessBilling$: Observable<boolean>;
 
   protected showPaymentMethodWarningBanners$ = this.configService.getFeatureFlag$(
@@ -57,10 +59,15 @@ export class ProvidersLayoutComponent implements OnInit, OnDestroy {
       takeUntil(this.destroy$),
     );
 
-    this.canAccessBilling$ = this.provider$.pipe(
-      filter((provider) => !!provider),
-      canAccessBilling(this.configService),
-      startWith(false),
+    this.hasConsolidatedBilling$ = this.provider$.pipe(
+      hasConsolidatedBilling(this.configService),
+      takeUntil(this.destroy$),
+    );
+
+    this.canAccessBilling$ = combineLatest([this.hasConsolidatedBilling$, this.provider$]).pipe(
+      map(
+        ([hasConsolidatedBilling, provider]) => hasConsolidatedBilling && provider.isProviderAdmin,
+      ),
       takeUntil(this.destroy$),
     );
   }

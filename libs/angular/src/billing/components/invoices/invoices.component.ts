@@ -46,4 +46,19 @@ export class InvoicesComponent implements OnInit {
     }
     this.loading = false;
   }
+
+  expandInvoiceStatus = (
+    invoice: InvoiceResponse,
+  ): "open" | "unpaid" | "paid" | "uncollectible" => {
+    switch (invoice.status) {
+      case "open": {
+        const dueDate = new Date(invoice.dueDate);
+        return dueDate < new Date() ? "unpaid" : invoice.status;
+      }
+      case "paid":
+      case "uncollectible": {
+        return invoice.status;
+      }
+    }
+  };
 }

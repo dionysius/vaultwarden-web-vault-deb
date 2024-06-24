@@ -10,7 +10,7 @@ import { OrganizationService } from "@bitwarden/common/admin-console/abstraction
 import { ProviderService } from "@bitwarden/common/admin-console/abstractions/provider.service";
 import { ProviderUserType } from "@bitwarden/common/admin-console/enums";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
-import { canAccessBilling } from "@bitwarden/common/billing/abstractions/provider-billing.service.abstraction";
+import { hasConsolidatedBilling } from "@bitwarden/common/billing/abstractions/provider-billing.service.abstraction";
 import { PlanType } from "@bitwarden/common/billing/enums";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -72,9 +72,9 @@ export class ClientsComponent extends BaseClientsComponent {
         switchMap((params) => {
           this.providerId = params.providerId;
           return this.providerService.get$(this.providerId).pipe(
-            canAccessBilling(this.configService),
-            map((canAccessBilling) => {
-              if (canAccessBilling) {
+            hasConsolidatedBilling(this.configService),
+            map((hasConsolidatedBilling) => {
+              if (hasConsolidatedBilling) {
                 return from(
                   this.router.navigate(["../manage-client-organizations"], {
                     relativeTo: this.activatedRoute,

@@ -1,12 +1,6 @@
 <app-header>
   <bit-search [placeholder]="'search' | i18n" [(ngModel)]="searchText"></bit-search>
-  <a
-    type="button"
-    bitButton
-    *ngIf="manageOrganizations"
-    buttonType="primary"
-    (click)="createClientOrganization()"
-  >
+  <a type="button" bitButton *ngIf="isProviderAdmin" buttonType="primary" (click)="createClient()">
     <i class="bwi bwi-plus bwi-fw" aria-hidden="true"></i>
     {{ "addNewOrganization" | i18n }}
   </a>
@@ -73,15 +67,15 @@
             appA11yTitle="{{ 'options' | i18n }}"
           ></button>
           <bit-menu #rowMenu>
-            <button type="button" bitMenuItem (click)="manageName(client)">
+            <button type="button" bitMenuItem (click)="manageClientName(client)">
               <i aria-hidden="true" class="bwi bwi-pencil-square"></i>
               {{ "updateName" | i18n }}
             </button>
-            <button type="button" bitMenuItem (click)="manageSubscription(client)">
+            <button type="button" bitMenuItem (click)="manageClientSubscription(client)">
               <i aria-hidden="true" class="bwi bwi-family"></i>
               {{ "manageSubscription" | i18n }}
             </button>
-            <button type="button" bitMenuItem (click)="remove(client)">
+            <button *ngIf="this.isProviderAdmin" type="button" bitMenuItem (click)="remove(client)">
               <span class="tw-text-danger">
                 <i aria-hidden="true" class="bwi bwi-close"></i> {{ "unlinkOrganization" | i18n }}
               </span>
@@ -92,6 +86,9 @@
     </ng-template>
   </bit-table>
   <div *ngIf="clients.length === 0" class="tw-mt-10">
-    <app-no-clients (addNewOrganizationClicked)="createClientOrganization()" />
+    <app-no-clients
+      [showAddOrganizationButton]="this.isProviderAdmin"
+      (addNewOrganizationClicked)="createClient()"
+    />
   </div>
 </ng-container>

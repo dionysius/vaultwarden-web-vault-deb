@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 
 import { svgIcon } from "@bitwarden/components";
 
@@ -26,7 +26,13 @@ const gearIcon = svgIcon`
   template: `<div class="tw-flex tw-flex-col tw-items-center tw-text-info">
     <bit-icon [icon]="icon"></bit-icon>
     <p class="tw-mt-4">{{ "noClients" | i18n }}</p>
-    <a type="button" bitButton buttonType="primary" (click)="addNewOrganization()">
+    <a
+      *ngIf="showAddOrganizationButton"
+      type="button"
+      bitButton
+      buttonType="primary"
+      (click)="addNewOrganization()"
+    >
       <i class="bwi bwi-plus bwi-fw" aria-hidden="true"></i>
       {{ "addNewOrganization" | i18n }}
     </a>
@@ -34,6 +40,7 @@ const gearIcon = svgIcon`
 })
 export class NoClientsComponent {
   icon = gearIcon;
+  @Input() showAddOrganizationButton = true;
   @Output() addNewOrganizationClicked = new EventEmitter();
 
   addNewOrganization = () => this.addNewOrganizationClicked.emit();

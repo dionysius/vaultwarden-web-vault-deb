@@ -9,7 +9,7 @@ import { FrontendLayoutComponent } from "@bitwarden/web-vault/app/layouts/fronte
 import { UserLayoutComponent } from "@bitwarden/web-vault/app/layouts/user-layout.component";
 
 import {
-  ManageClientOrganizationsComponent,
+  ManageClientsComponent,
   ProviderSubscriptionComponent,
   hasConsolidatedBilling,
   ProviderPaymentMethodComponent,
@@ -85,7 +85,7 @@ const routes: Routes = [
           {
             path: "manage-client-organizations",
             canActivate: [hasConsolidatedBilling],
-            component: ManageClientOrganizationsComponent,
+            component: ManageClientsComponent,
             data: { titleId: "clients" },
           },
           {
@@ -118,7 +118,7 @@ const routes: Routes = [
           },
           {
             path: "billing",
-            canActivate: [hasConsolidatedBilling],
+            canActivate: [ProviderPermissionsGuard, hasConsolidatedBilling],
             data: { providerPermissions: (provider: Provider) => provider.isProviderAdmin },
             children: [
               {
@@ -129,6 +129,7 @@ const routes: Routes = [
               {
                 path: "subscription",
                 component: ProviderSubscriptionComponent,
+                canActivate: [ProviderPermissionsGuard],
                 data: {
                   titleId: "subscription",
                 },
@@ -136,6 +137,7 @@ const routes: Routes = [
               {
                 path: "payment-method",
                 component: ProviderPaymentMethodComponent,
+                canActivate: [ProviderPermissionsGuard],
                 data: {
                   titleId: "paymentMethod",
                 },
@@ -143,6 +145,7 @@ const routes: Routes = [
               {
                 path: "history",
                 component: ProviderBillingHistoryComponent,
+                canActivate: [ProviderPermissionsGuard],
                 data: {
                   titleId: "billingHistory",
                 },

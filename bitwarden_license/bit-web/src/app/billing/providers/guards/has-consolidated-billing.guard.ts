@@ -20,7 +20,6 @@ export const hasConsolidatedBilling: CanActivateFn = async (route: ActivatedRout
   if (
     !consolidatedBillingEnabled ||
     !provider ||
-    !provider.isProviderAdmin ||
     provider.providerStatus !== ProviderStatusType.Billable
   ) {
     return createUrlTreeFromSnapshot(route, ["/providers", route.params.providerId]);

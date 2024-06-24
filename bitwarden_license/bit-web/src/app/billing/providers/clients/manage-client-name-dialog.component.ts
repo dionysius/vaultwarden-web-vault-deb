@@ -7,7 +7,7 @@ import { UpdateClientOrganizationRequest } from "@bitwarden/common/billing/model
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { DialogService, ToastService } from "@bitwarden/components";
 
-type ManageClientOrganizationNameParams = {
+type ManageClientNameDialogParams = {
   providerId: string;
   organization: {
     id: string;
@@ -16,34 +16,33 @@ type ManageClientOrganizationNameParams = {
   };
 };
 
-export enum ManageClientOrganizationNameResultType {
+export enum ManageClientNameDialogResultType {
   Closed = "closed",
   Submitted = "submitted",
 }
 
-export const openManageClientOrganizationNameDialog = (
+export const openManageClientNameDialog = (
   dialogService: DialogService,
-  dialogConfig: DialogConfig<ManageClientOrganizationNameParams>,
+  dialogConfig: DialogConfig<ManageClientNameDialogParams>,
 ) =>
-  dialogService.open<ManageClientOrganizationNameResultType, ManageClientOrganizationNameParams>(
-    ManageClientOrganizationNameComponent,
+  dialogService.open<ManageClientNameDialogResultType, ManageClientNameDialogParams>(
+    ManageClientNameDialogComponent,
     dialogConfig,
   );
 
 @Component({
-  selector: "app-manage-client-organization-name",
-  templateUrl: "manage-client-organization-name.component.html",
+  templateUrl: "manage-client-name-dialog.component.html",
 })
-export class ManageClientOrganizationNameComponent {
-  protected ResultType = ManageClientOrganizationNameResultType;
+export class ManageClientNameDialogComponent {
+  protected ResultType = ManageClientNameDialogResultType;
   protected formGroup = this.formBuilder.group({
     name: [this.dialogParams.organization.name, Validators.required],
   });
 
   constructor(
-    @Inject(DIALOG_DATA) protected dialogParams: ManageClientOrganizationNameParams,
+    @Inject(DIALOG_DATA) protected dialogParams: ManageClientNameDialogParams,
     private billingApiService: BillingApiServiceAbstraction,
-    private dialogRef: DialogRef<ManageClientOrganizationNameResultType>,
+    private dialogRef: DialogRef<ManageClientNameDialogResultType>,
     private formBuilder: FormBuilder,
     private i18nService: I18nService,
     private toastService: ToastService,

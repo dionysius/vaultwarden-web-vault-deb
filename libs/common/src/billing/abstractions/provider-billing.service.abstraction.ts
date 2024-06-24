@@ -7,7 +7,7 @@ import { ConfigService } from "@bitwarden/common/platform/abstractions/config/co
 
 type MaybeProvider = Provider | undefined;
 
-export const canAccessBilling = (
+export const hasConsolidatedBilling = (
   configService: ConfigService,
 ): OperatorFunction<MaybeProvider, boolean> =>
   switchMap<MaybeProvider, Observable<boolean>>((provider) =>
@@ -16,9 +16,7 @@ export const canAccessBilling = (
       .pipe(
         map((consolidatedBillingEnabled) =>
           provider
-            ? provider.isProviderAdmin &&
-              provider.providerStatus === ProviderStatusType.Billable &&
-              consolidatedBillingEnabled
+            ? provider.providerStatus === ProviderStatusType.Billable && consolidatedBillingEnabled
             : false,
         ),
       ),
