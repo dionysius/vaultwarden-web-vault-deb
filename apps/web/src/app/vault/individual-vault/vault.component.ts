@@ -394,6 +394,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
     this.destroy$.next();
     this.destroy$.complete();
+    this.vaultFilterService.clearOrganizationFilter();
   }
 
   async onVaultItemsEvent(event: VaultItemEvent) {
