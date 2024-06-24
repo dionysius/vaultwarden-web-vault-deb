@@ -110,9 +110,11 @@ export class PasswordManagerPlanFeaturesResponse extends BaseResponse {
   // Seats
   stripePlanId: string;
   stripeSeatPlanId: string;
+  stripeProviderPortalSeatPlanId: string;
   stripePremiumAccessPlanId: string;
   basePrice: number;
   seatPrice: number;
+  providerPortalSeatPrice: number;
   premiumAccessOptionPrice: number;
   baseSeats: number;
   maxAdditionalSeats: number;
@@ -134,10 +136,14 @@ export class PasswordManagerPlanFeaturesResponse extends BaseResponse {
     super(response);
     this.stripePlanId = this.getResponseProperty("StripePlanId");
     this.stripeSeatPlanId = this.getResponseProperty("StripeSeatPlanId");
+    this.stripeProviderPortalSeatPlanId = this.getResponseProperty(
+      "StripeProviderPortalSeatPlanId",
+    );
     this.stripeStoragePlanId = this.getResponseProperty("StripeStoragePlanId");
     this.stripePremiumAccessPlanId = this.getResponseProperty("StripePremiumAccessPlanId");
     this.basePrice = this.getResponseProperty("BasePrice");
     this.seatPrice = this.getResponseProperty("SeatPrice");
+    this.providerPortalSeatPrice = this.getResponseProperty("ProviderPortalSeatPrice");
     this.baseSeats = this.getResponseProperty("BaseSeats");
     this.maxAdditionalSeats = this.getResponseProperty("MaxAdditionalSeats");
     this.premiumAccessOptionPrice = this.getResponseProperty("PremiumAccessOptionPrice");

@@ -109,14 +109,14 @@ export class CreateClientDialogComponent implements OnInit {
     this.planCards = [
       {
         name: this.i18nService.t("planNameTeams"),
-        cost: teamsPlan.PasswordManager.seatPrice * 0.65, // 35% off for MSPs,
+        cost: teamsPlan.PasswordManager.providerPortalSeatPrice * 0.65, // 35% off for MSPs,
         type: teamsPlan.type,
         plan: teamsPlan,
         selected: true,
       },
       {
         name: this.i18nService.t("planNameEnterprise"),
-        cost: enterprisePlan.PasswordManager.seatPrice * 0.65, // 35% off for MSPs,
+        cost: enterprisePlan.PasswordManager.providerPortalSeatPrice * 0.65, // 35% off for MSPs,
         type: enterprisePlan.type,
         plan: enterprisePlan,
         selected: false,
