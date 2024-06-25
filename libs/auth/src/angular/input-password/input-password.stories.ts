@@ -29,7 +29,10 @@ const mockMasterPasswordPolicyOptions = {
 export default {
   title: "Auth/Input Password",
   component: InputPasswordComponent,
-  decorators: [
+} as Meta;
+
+const decorators = (options: { hasPolicy?: boolean }) => {
+  return [
     applicationConfig({
       providers: [
         importProvidersFrom(PreloadedEnglishI18nModule),
@@ -56,13 +59,15 @@ export default {
         {
           provide: PolicyApiServiceAbstraction,
           useValue: {
-            getMasterPasswordPolicyOptsForOrgUser: () => mockMasterPasswordPolicyOptions,
+            getMasterPasswordPolicyOptsForOrgUser: () =>
+              options.hasPolicy ? mockMasterPasswordPolicyOptions : null,
           } as Partial<PolicyService>,
         },
         {
           provide: PolicyService,
           useValue: {
-            masterPasswordPolicyOptions$: () => of(mockMasterPasswordPolicyOptions),
+            masterPasswordPolicyOptions$: () =>
+              options.hasPolicy ? of(mockMasterPasswordPolicyOptions) : null,
             evaluateMasterPassword: (score) => {
               if (score < 4) {
                 return false;
@@ -101,8 +106,8 @@ export default {
         },
       ],
     }),
-  ],
-} as Meta;
+  ];
+};
 
 type Story = StoryObj<InputPasswordComponent>;
 
@@ -112,5 +117,20 @@ export const Default: Story = {
     template: `
       <auth-input-password></auth-input-password>
     `,
+  }),
+  decorators: decorators({
+    hasPolicy: false,
+  }),
+};
+
+export const WithPolicy: Story = {
+  render: (args) => ({
+    props: args,
+    template: `
+      <auth-input-password></auth-input-password>
+    `,
+  }),
+  decorators: decorators({
+    hasPolicy: true,
   }),
 };
