@@ -32,7 +32,7 @@ const contentScriptDetails = {
   ...sharedScriptInjectionDetails,
 };
 const sharedRegistrationOptions = {
-  matches: ["https://*/*"],
+  matches: ["https://*/*", "http://localhost/*"],
   excludeMatches: ["https://*/*.xml*"],
   allFrames: true,
   ...sharedExecuteScriptOptions,

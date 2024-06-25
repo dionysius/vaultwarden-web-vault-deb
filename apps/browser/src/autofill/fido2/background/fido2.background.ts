@@ -33,7 +33,7 @@ export class Fido2Background implements Fido2BackgroundInterface {
     runAt: "document_start",
   };
   private readonly sharedRegistrationOptions: SharedFido2ScriptRegistrationOptions = {
-    matches: ["https://*/*"],
+    matches: ["https://*/*", "http://localhost/*"],
     excludeMatches: ["https://*/*.xml*"],
     allFrames: true,
     ...this.sharedInjectionDetails,

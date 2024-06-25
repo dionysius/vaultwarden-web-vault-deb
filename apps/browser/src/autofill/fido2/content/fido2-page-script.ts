@@ -8,7 +8,9 @@ import { Messenger } from "./messaging/messenger";
 (function (globalContext) {
   const shouldExecuteContentScript =
     globalContext.document.contentType === "text/html" &&
-    globalContext.document.location.protocol === "https:";
+    (globalContext.document.location.protocol === "https:" ||
+      (globalContext.document.location.protocol === "http:" &&
+        globalContext.document.location.hostname === "localhost"));
 
   if (!shouldExecuteContentScript) {
     return;

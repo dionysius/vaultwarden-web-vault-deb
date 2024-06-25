@@ -16,8 +16,9 @@ const mockGlobalThisDocument = {
   contentType: "text/html",
   location: {
     ...originalGlobalThis.document.location,
-    href: "https://localhost",
-    origin: "https://localhost",
+    href: "https://bitwarden.com",
+    origin: "https://bitwarden.com",
+    hostname: "bitwarden.com",
     protocol: "https:",
   },
 };
@@ -166,8 +167,8 @@ describe("Fido2 page script with native WebAuthn support", () => {
         ...mockGlobalThisDocument,
         location: {
           ...mockGlobalThisDocument.location,
-          href: "http://localhost",
-          origin: "http://localhost",
+          href: "http://bitwarden.com",
+          origin: "http://bitwarden.com",
           protocol: "http:",
         },
       }));
