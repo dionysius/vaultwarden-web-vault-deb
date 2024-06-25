@@ -30,20 +30,24 @@ export class ChangeKdfComponent implements OnInit {
         this.kdfConfig.iterations,
         [
           Validators.required,
-          Validators.min(PBKDF2_ITERATIONS.min),
-          Validators.max(PBKDF2_ITERATIONS.max),
+          Validators.min(PBKDF2KdfConfig.ITERATIONS.min),
+          Validators.max(PBKDF2KdfConfig.ITERATIONS.max),
         ],
       ],
       memory: [
         null as number,
-        [Validators.required, Validators.min(ARGON2_MEMORY.min), Validators.max(ARGON2_MEMORY.max)],
+        [
+          Validators.required,
+          Validators.min(Argon2KdfConfig.MEMORY.min),
+          Validators.max(Argon2KdfConfig.MEMORY.max),
+        ],
       ],
       parallelism: [
         null as number,
         [
           Validators.required,
-          Validators.min(ARGON2_PARALLELISM.min),
-          Validators.max(ARGON2_PARALLELISM.max),
+          Validators.min(Argon2KdfConfig.PARALLELISM.min),
+          Validators.max(Argon2KdfConfig.PARALLELISM.max),
         ],
       ],
     }),
@@ -91,26 +95,26 @@ export class ChangeKdfComponent implements OnInit {
         config = new PBKDF2KdfConfig();
         validators.iterations = [
           Validators.required,
-          Validators.min(PBKDF2_ITERATIONS.min),
-          Validators.max(PBKDF2_ITERATIONS.max),
+          Validators.min(PBKDF2KdfConfig.ITERATIONS.min),
+          Validators.max(PBKDF2KdfConfig.ITERATIONS.max),
         ];
         break;
       case KdfType.Argon2id:
         config = new Argon2KdfConfig();
         validators.iterations = [
           Validators.required,
-          Validators.min(ARGON2_ITERATIONS.min),
-          Validators.max(ARGON2_ITERATIONS.max),
+          Validators.min(Argon2KdfConfig.ITERATIONS.min),
+          Validators.max(Argon2KdfConfig.ITERATIONS.max),
         ];
         validators.memory = [
           Validators.required,
-          Validators.min(ARGON2_MEMORY.min),
-          Validators.max(ARGON2_MEMORY.max),
+          Validators.min(Argon2KdfConfig.MEMORY.min),
+          Validators.max(Argon2KdfConfig.MEMORY.max),
         ];
         validators.parallelism = [
           Validators.required,
-          Validators.min(ARGON2_PARALLELISM.min),
-          Validators.max(ARGON2_PARALLELISM.max),
+          Validators.min(Argon2KdfConfig.PARALLELISM.min),
+          Validators.max(Argon2KdfConfig.PARALLELISM.max),
         ];
         break;
       default:

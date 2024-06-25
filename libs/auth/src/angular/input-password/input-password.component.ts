@@ -6,10 +6,12 @@ import { AuditService } from "@bitwarden/common/abstractions/audit.service";
 import { PolicyApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/policy/policy-api.service.abstraction";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { MasterPasswordPolicyOptions } from "@bitwarden/common/admin-console/models/domain/master-password-policy-options";
-import { PBKDF2KdfConfig } from "@bitwarden/common/auth/models/domain/kdf-config";
+import {
+  DEFAULT_KDF_CONFIG,
+  PBKDF2KdfConfig,
+} from "@bitwarden/common/auth/models/domain/kdf-config";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
-import { DEFAULT_KDF_CONFIG } from "@bitwarden/common/platform/enums";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { MasterKey } from "@bitwarden/common/types/key";
 import {
