@@ -9,7 +9,7 @@
         *ngIf="showBackButton"
         [title]="'back' | i18n"
         [ariaLabel]="'back' | i18n"
-        (click)="back()"
+        [bitAction]="backAction"
       ></button>
       <h1 bitTypography="h3" class="!tw-mb-0.5 tw-text-headers">{{ pageTitle }}</h1>
     </div>

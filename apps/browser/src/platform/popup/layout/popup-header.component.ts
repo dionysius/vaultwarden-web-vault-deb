@@ -3,13 +3,18 @@ import { CommonModule, Location } from "@angular/common";
 import { Component, Input } from "@angular/core";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
-import { IconButtonModule, TypographyModule } from "@bitwarden/components";
+import {
+  AsyncActionsModule,
+  FunctionReturningAwaitable,
+  IconButtonModule,
+  TypographyModule,
+} from "@bitwarden/components";
 
 @Component({
   selector: "popup-header",
   templateUrl: "popup-header.component.html",
   standalone: true,
-  imports: [TypographyModule, CommonModule, IconButtonModule, JslibModule],
+  imports: [TypographyModule, CommonModule, IconButtonModule, JslibModule, AsyncActionsModule],
 })
 export class PopupHeaderComponent {
   /** Display the back button, which uses Location.back() to go back one page in history */
@@ -26,9 +31,15 @@ export class PopupHeaderComponent {
   /** Title string that will be inserted as an h1 */
   @Input({ required: true }) pageTitle: string;
 
-  constructor(private location: Location) {}
-
-  back() {
+  /**
+   * Async action that occurs when clicking the back button
+   *
+   * If unset, will call `location.back()`
+   **/
+  @Input()
+  backAction: FunctionReturningAwaitable = async () => {
     this.location.back();
-  }
+  };
+
+  constructor(private location: Location) {}
 }
