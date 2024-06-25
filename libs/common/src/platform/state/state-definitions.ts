@@ -112,7 +112,7 @@ export const DESKTOP_SETTINGS_DISK = new StateDefinition("desktopSettings", "dis
 export const ENVIRONMENT_DISK = new StateDefinition("environment", "disk");
 export const ENVIRONMENT_MEMORY = new StateDefinition("environment", "memory");
 export const THEMING_DISK = new StateDefinition("theming", "disk", { web: "disk-local" });
-export const TRANSLATION_DISK = new StateDefinition("translation", "disk");
+export const TRANSLATION_DISK = new StateDefinition("translation", "disk", { web: "disk-local" });
 
 // Secrets Manager
 
