@@ -92,11 +92,6 @@ const plugins = [
   }),
   new HtmlWebpackInjector(),
   new HtmlWebpackPlugin({
-    template: "./src/connectors/duo.html",
-    filename: "duo-connector.html",
-    chunks: ["connectors/duo"],
-  }),
-  new HtmlWebpackPlugin({
     template: "./src/connectors/webauthn.html",
     filename: "webauthn-connector.html",
     chunks: ["connectors/webauthn"],
@@ -324,7 +319,6 @@ const webpackConfig = {
     "app/main": "./src/main.ts",
     "connectors/webauthn": "./src/connectors/webauthn.ts",
     "connectors/webauthn-fallback": "./src/connectors/webauthn-fallback.ts",
-    "connectors/duo": "./src/connectors/duo.ts",
     "connectors/sso": "./src/connectors/sso.ts",
     "connectors/captcha": "./src/connectors/captcha.ts",
     "connectors/duo-redirect": "./src/connectors/duo-redirect.ts",

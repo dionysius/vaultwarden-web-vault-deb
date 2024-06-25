@@ -59,8 +59,8 @@ export class TwoFactorDuoComponent extends TwoFactorBaseComponent {
 
   protected async enable() {
     const request = await this.buildRequestModel(UpdateTwoFactorDuoRequest);
-    request.integrationKey = this.clientId;
-    request.secretKey = this.clientSecret;
+    request.clientId = this.clientId;
+    request.clientSecret = this.clientSecret;
     request.host = this.host;
 
     return super.enable(async () => {
@@ -78,8 +78,8 @@ export class TwoFactorDuoComponent extends TwoFactorBaseComponent {
   }
 
   private processResponse(response: TwoFactorDuoResponse) {
-    this.clientId = response.integrationKey;
-    this.clientSecret = response.secretKey;
+    this.clientId = response.clientId;
+    this.clientSecret = response.clientSecret;
     this.host = response.host;
     this.enabled = response.enabled;
   }

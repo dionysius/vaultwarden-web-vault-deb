@@ -69,14 +69,7 @@
       "reviewers": ["team:team-admin-console-dev"]
     },
     {
-      "matchPackageNames": [
-        "@types/duo_web_sdk",
-        "@types/node-ipc",
-        "duo_web_sdk",
-        "node-ipc",
-        "qrious",
-        "regedit"
-      ],
+      "matchPackageNames": ["@types/node-ipc", "node-ipc", "qrious", "regedit"],
       "description": "Auth owned dependencies",
       "commitMessagePrefix": "[deps] Auth:",
       "reviewers": ["team:team-auth-dev"]

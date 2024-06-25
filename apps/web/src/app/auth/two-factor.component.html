@@ -54,25 +54,14 @@
     </ng-container>
     <!-- Duo -->
     <ng-container *ngIf="isDuoProvider">
-      <ng-container *ngIf="duoFrameless">
-        <p
-          bitTypography="body1"
-          *ngIf="selectedProviderType === providerType.OrganizationDuo"
-          class="tw-mb-0"
-        >
-          {{ "duoRequiredByOrgForAccount" | i18n }}
-        </p>
-        <p bitTypography="body1">{{ "launchDuoAndFollowStepsToFinishLoggingIn" | i18n }}</p>
-      </ng-container>
-
-      <ng-container *ngIf="!duoFrameless">
-        <div id="duo-frame" class="tw-mb-3">
-          <iframe
-            id="duo_iframe"
-            sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox"
-          ></iframe>
-        </div>
-      </ng-container>
+      <p
+        bitTypography="body1"
+        *ngIf="selectedProviderType === providerType.OrganizationDuo"
+        class="tw-mb-0"
+      >
+        {{ "duoRequiredByOrgForAccount" | i18n }}
+      </p>
+      <p bitTypography="body1">{{ "launchDuoAndFollowStepsToFinishLoggingIn" | i18n }}</p>
     </ng-container>
     <bit-form-control *ngIf="selectedProviderType != null">
       <bit-label>{{ "rememberMe" | i18n }}</bit-label>
@@ -107,7 +96,7 @@
         buttonType="primary"
         bitButton
         bitFormButton
-        *ngIf="duoFrameless && isDuoProvider"
+        *ngIf="isDuoProvider"
       >
         <span> {{ "launchDuo" | i18n }} </span>
       </button>

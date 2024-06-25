@@ -1,6 +1,5 @@
 import { Directive, Inject, OnDestroy, OnInit } from "@angular/core";
 import { ActivatedRoute, NavigationExtras, Router } from "@angular/router";
-import * as DuoWebSDK from "duo_web_sdk";
 import { firstValueFrom } from "rxjs";
 import { first } from "rxjs/operators";
 
@@ -53,7 +52,6 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
   emailPromise: Promise<any>;
   orgIdentifier: string = null;
 
-  duoFrameless = false;
   duoFramelessUrl: string = null;
   duoResultListenerInitialized = false;
 
@@ -177,42 +175,14 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
         break;
       case TwoFactorProviderType.Duo:
       case TwoFactorProviderType.OrganizationDuo:
-        // 2 Duo 2FA flows available
-        // 1. Duo Web SDK (iframe) - existing, to be deprecated
-        // 2. Duo Frameless (new tab) - new
-
-        // AuthUrl only exists for new Duo Frameless flow
-        if (providerData.AuthUrl) {
-          this.duoFrameless = true;
-          // Setup listener for duo-redirect.ts connector to send back the code
-
-          if (!this.duoResultListenerInitialized) {
-            // setup client specific duo result listener
-            this.setupDuoResultListener();
-            this.duoResultListenerInitialized = true;
-          }
-
-          // flow must be launched by user so they can choose to remember the device or not.
-          this.duoFramelessUrl = providerData.AuthUrl;
-        } else {
-          // Duo Web SDK (iframe) flow
-          // TODO: remove when we remove the "duo-redirect" feature flag
-          setTimeout(() => {
-            DuoWebSDK.init({
-              iframe: undefined,
-              host: providerData.Host,
-              sig_request: providerData.Signature,
-              submit_callback: async (f: HTMLFormElement) => {
-                const sig = f.querySelector('input[name="sig_response"]') as HTMLInputElement;
-                if (sig != null) {
-                  this.token = sig.value;
-                  await this.submit();
-                }
-              },
-            });
-          }, 0);
+        // Setup listener for duo-redirect.ts connector to send back the code
+        if (!this.duoResultListenerInitialized) {
+          // setup client specific duo result listener
+          this.setupDuoResultListener();
+          this.duoResultListenerInitialized = true;
         }
-
+        // flow must be launched by user so they can choose to remember the device or not.
+        this.duoFramelessUrl = providerData.AuthUrl;
         break;
       case TwoFactorProviderType.Email:
         this.twoFactorEmail = providerData.Email;
