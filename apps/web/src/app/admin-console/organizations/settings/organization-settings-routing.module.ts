@@ -56,12 +56,14 @@ const routes: Routes = [
           },
           {
             path: "export",
-            loadChildren: () =>
-              import("../tools/vault-export/org-vault-export.module").then(
-                (m) => m.OrganizationVaultExportModule,
+            loadComponent: () =>
+              import("../tools/vault-export/org-vault-export.component").then(
+                (mod) => mod.OrganizationVaultExportComponent,
               ),
+            canActivate: [OrganizationPermissionsGuard],
             data: {
               titleId: "exportVault",
+              organizationPermissions: (org: Organization) => org.canAccessImportExport,
             },
           },
         ],

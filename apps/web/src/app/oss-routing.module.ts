@@ -448,8 +448,13 @@ const routes: Routes = [
           },
           {
             path: "export",
-            loadChildren: () =>
-              import("./tools/vault-export/export.module").then((m) => m.ExportModule),
+            loadComponent: () =>
+              import("./tools/vault-export/export-web.component").then(
+                (mod) => mod.ExportWebComponent,
+              ),
+            data: {
+              titleId: "exportVault",
+            } satisfies DataProperties,
           },
           {
             path: "generator",
