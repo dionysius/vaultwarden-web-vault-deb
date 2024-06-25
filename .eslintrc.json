@@ -324,6 +324,26 @@
       "rules": {
         "no-restricted-imports": ["error", { "patterns": ["@bitwarden/bit-common/*", "src/**/*"] }]
       }
+    },
+    {
+      "files": ["apps/**/*.ts"],
+      "rules": {
+        // Catches static imports
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": ["biwarden_license/**", "@bitwarden/bit-common/*", "@bitwarden/bit-web/*"]
+          }
+        ],
+        // Catches dynamic imports, e.g. in routing modules where modules are lazy-loaded
+        "no-restricted-syntax": [
+          "error",
+          {
+            "message": "Don't import Bitwarden licensed code into OSS code.",
+            "selector": "ImportExpression > Literal.source[value=/.*(bitwarden_license|bit-common|bit-web).*/]"
+          }
+        ]
+      }
     }
   ]
 }
