@@ -85,6 +85,10 @@ export class OrganizationAuthRequestService {
     );
   }
 
+  async denyPendingRequest(organizationId: string, requestId: string) {
+    await this.organizationAuthRequestApiService.denyPendingRequest(organizationId, requestId);
+  }
+
   /**
    * Creates a copy of the user key that has been encrypted with the provided device's public key.
    * @param organizationId

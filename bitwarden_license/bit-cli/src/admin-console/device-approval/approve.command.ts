@@ -43,7 +43,7 @@ export class ApproveCommand {
 
       const request = pendingRequests.find((r) => r.id == id);
       if (request == null) {
-        return Response.error("Invalid request id");
+        return Response.error("The request id is invalid.");
       }
 
       await this.organizationAuthRequestService.approvePendingRequest(organizationId, request);

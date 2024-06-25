@@ -38,10 +38,16 @@ export class DenyCommand {
     }
 
     try {
-      await this.organizationAuthRequestService.denyPendingRequests(organizationId, id);
+      await this.organizationAuthRequestService.denyPendingRequest(organizationId, id);
       return Response.success();
-    } catch (e) {
-      return Response.error(e);
+    } catch (error) {
+      if (error?.statusCode === 404) {
+        return Response.error(
+          "The request id is invalid or you do not have permission to update it.",
+        );
+      }
+
+      return Response.error(error);
     }
   }
 

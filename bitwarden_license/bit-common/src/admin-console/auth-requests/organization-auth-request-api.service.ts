@@ -61,4 +61,14 @@ export class OrganizationAuthRequestApiService {
       false,
     );
   }
+
+  async denyPendingRequest(organizationId: string, requestId: string): Promise<void> {
+    await this.apiService.send(
+      "POST",
+      `/organizations/${organizationId}/auth-requests/${requestId}`,
+      new AdminAuthRequestUpdateRequest(false),
+      true,
+      false,
+    );
+  }
 }
