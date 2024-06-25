@@ -153,8 +153,17 @@ export class AccountComponent {
     }
 
     const request = new OrganizationUpdateRequest();
-    request.name = this.formGroup.value.orgName;
-    request.billingEmail = this.formGroup.value.billingEmail;
+
+    /*
+     * When you disable a FormControl, it is removed from formGroup.values, so we have to use
+     * the original value.
+     * */
+    request.name = this.formGroup.get("orgName").disabled
+      ? this.org.name
+      : this.formGroup.value.orgName;
+    request.billingEmail = this.formGroup.get("billingEmail").disabled
+      ? this.org.billingEmail
+      : this.formGroup.value.billingEmail;
 
     // Backfill pub/priv key if necessary
     if (!this.org.hasPublicAndPrivateKeys) {
