@@ -2,10 +2,14 @@ import { mock, MockProxy } from "jest-mock-extended";
 
 import { PinServiceAbstraction } from "@bitwarden/auth/common";
 import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
+import {
+  DEFAULT_KDF_CONFIG,
+  PBKDF2KdfConfig,
+} from "@bitwarden/common/auth/models/domain/kdf-config";
 import { CipherWithIdExport } from "@bitwarden/common/models/export/cipher-with-ids.export";
 import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/crypto-function.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
-import { DEFAULT_KDF_CONFIG, KdfType, PBKDF2_ITERATIONS } from "@bitwarden/common/platform/enums";
+import { KdfType } from "@bitwarden/common/platform/enums";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { EncryptedString, EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
@@ -238,7 +242,7 @@ describe("VaultExportService", () => {
       });
 
       it("specifies kdfIterations", () => {
-        expect(exportObject.kdfIterations).toEqual(PBKDF2_ITERATIONS.defaultValue);
+        expect(exportObject.kdfIterations).toEqual(PBKDF2KdfConfig.ITERATIONS.defaultValue);
       });
 
       it("has kdfType", () => {

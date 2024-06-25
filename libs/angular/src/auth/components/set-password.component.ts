@@ -17,6 +17,7 @@ import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config
 import { InternalMasterPasswordServiceAbstraction } from "@bitwarden/common/auth/abstractions/master-password.service.abstraction";
 import { SsoLoginServiceAbstraction } from "@bitwarden/common/auth/abstractions/sso-login.service.abstraction";
 import { ForceSetPasswordReason } from "@bitwarden/common/auth/models/domain/force-set-password-reason";
+import { DEFAULT_KDF_CONFIG } from "@bitwarden/common/auth/models/domain/kdf-config";
 import { SetPasswordRequest } from "@bitwarden/common/auth/models/request/set-password.request";
 import { KeysRequest } from "@bitwarden/common/models/request/keys.request";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
@@ -24,7 +25,7 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
-import { HashPurpose, DEFAULT_KDF_CONFIG } from "@bitwarden/common/platform/enums";
+import { HashPurpose } from "@bitwarden/common/platform/enums";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";

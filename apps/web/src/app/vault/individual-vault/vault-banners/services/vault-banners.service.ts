@@ -5,9 +5,10 @@ import { mergeMap, take } from "rxjs/operators";
 import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
 import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
+import { PBKDF2KdfConfig } from "@bitwarden/common/auth/models/domain/kdf-config";
 import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions/account/billing-account-profile-state.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { KdfType, PBKDF2_ITERATIONS } from "@bitwarden/common/platform/enums";
+import { KdfType } from "@bitwarden/common/platform/enums";
 import {
   StateProvider,
   ActiveUserState,
@@ -200,7 +201,7 @@ export class VaultBannersService {
     const kdfConfig = await this.kdfConfigService.getKdfConfig();
     return (
       kdfConfig.kdfType === KdfType.PBKDF2_SHA256 &&
-      kdfConfig.iterations < PBKDF2_ITERATIONS.defaultValue
+      kdfConfig.iterations < PBKDF2KdfConfig.ITERATIONS.defaultValue
     );
   }
 

@@ -5,17 +5,11 @@ import { Subject, takeUntil } from "rxjs";
 import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
 import {
   Argon2KdfConfig,
+  DEFAULT_KDF_CONFIG,
   KdfConfig,
   PBKDF2KdfConfig,
 } from "@bitwarden/common/auth/models/domain/kdf-config";
-import {
-  DEFAULT_KDF_CONFIG,
-  PBKDF2_ITERATIONS,
-  ARGON2_ITERATIONS,
-  ARGON2_MEMORY,
-  ARGON2_PARALLELISM,
-  KdfType,
-} from "@bitwarden/common/platform/enums";
+import { KdfType } from "@bitwarden/common/platform/enums";
 import { DialogService } from "@bitwarden/components";
 
 import { ChangeKdfConfirmationComponent } from "./change-kdf-confirmation.component";
@@ -56,10 +50,10 @@ export class ChangeKdfComponent implements OnInit {
   });
 
   // Default values for template
-  protected PBKDF2_ITERATIONS = PBKDF2_ITERATIONS;
-  protected ARGON2_ITERATIONS = ARGON2_ITERATIONS;
-  protected ARGON2_MEMORY = ARGON2_MEMORY;
-  protected ARGON2_PARALLELISM = ARGON2_PARALLELISM;
+  protected PBKDF2_ITERATIONS = PBKDF2KdfConfig.ITERATIONS;
+  protected ARGON2_ITERATIONS = Argon2KdfConfig.ITERATIONS;
+  protected ARGON2_MEMORY = Argon2KdfConfig.MEMORY;
+  protected ARGON2_PARALLELISM = Argon2KdfConfig.PARALLELISM;
 
   constructor(
     private dialogService: DialogService,
