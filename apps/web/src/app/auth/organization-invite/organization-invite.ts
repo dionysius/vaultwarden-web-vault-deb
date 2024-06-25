@@ -11,11 +11,19 @@ export class OrganizationInvite {
   organizationUserId: string;
   token: string;
 
-  static fromJSON(json: Jsonify<OrganizationInvite>) {
+  static fromJSON(json: Jsonify<OrganizationInvite>): OrganizationInvite | null {
+    if (json == null) {
+      return null;
+    }
+
     return Object.assign(new OrganizationInvite(), json);
   }
 
-  static fromParams(params: Params): OrganizationInvite {
+  static fromParams(params: Params): OrganizationInvite | null {
+    if (params == null) {
+      return null;
+    }
+
     return Object.assign(new OrganizationInvite(), {
       email: params.email,
       initOrganization: params.initOrganization?.toLocaleLowerCase() === "true",

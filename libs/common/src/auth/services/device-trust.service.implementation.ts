@@ -28,13 +28,18 @@ import {
 } from "../models/request/update-devices-trust.request";
 
 /** Uses disk storage so that the device key can persist after log out and tab removal. */
-export const DEVICE_KEY = new UserKeyDefinition<DeviceKey>(DEVICE_TRUST_DISK_LOCAL, "deviceKey", {
-  deserializer: (deviceKey) => SymmetricCryptoKey.fromJSON(deviceKey) as DeviceKey,
-  clearOn: [], // Device key is needed to log back into device, so we can't clear it automatically during lock or logout
-});
+export const DEVICE_KEY = new UserKeyDefinition<DeviceKey | null>(
+  DEVICE_TRUST_DISK_LOCAL,
+  "deviceKey",
+  {
+    deserializer: (deviceKey) =>
+      deviceKey ? (SymmetricCryptoKey.fromJSON(deviceKey) as DeviceKey) : null,
+    clearOn: [], // Device key is needed to log back into device, so we can't clear it automatically during lock or logout
+  },
+);
 
 /** Uses disk storage so that the shouldTrustDevice bool can persist across login. */
-export const SHOULD_TRUST_DEVICE = new UserKeyDefinition<boolean>(
+export const SHOULD_TRUST_DEVICE = new UserKeyDefinition<boolean | null>(
   DEVICE_TRUST_DISK_LOCAL,
   "shouldTrustDevice",
   {

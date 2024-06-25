@@ -29,7 +29,7 @@ import { KeyConnectorUserKeyRequest } from "../models/request/key-connector-user
 import { SetKeyConnectorKeyRequest } from "../models/request/set-key-connector-key.request";
 import { IdentityTokenResponse } from "../models/response/identity-token.response";
 
-export const USES_KEY_CONNECTOR = new UserKeyDefinition<boolean>(
+export const USES_KEY_CONNECTOR = new UserKeyDefinition<boolean | null>(
   KEY_CONNECTOR_DISK,
   "usesKeyConnector",
   {
@@ -38,7 +38,7 @@ export const USES_KEY_CONNECTOR = new UserKeyDefinition<boolean>(
   },
 );
 
-export const CONVERT_ACCOUNT_TO_KEY_CONNECTOR = new UserKeyDefinition<boolean>(
+export const CONVERT_ACCOUNT_TO_KEY_CONNECTOR = new UserKeyDefinition<boolean | null>(
   KEY_CONNECTOR_DISK,
   "convertAccountToKeyConnector",
   {

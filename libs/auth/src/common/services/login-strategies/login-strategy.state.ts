@@ -36,7 +36,7 @@ export const CACHE_EXPIRATION_KEY = new KeyDefinition<Date | null>(
  * foreground instance to send out the notification.
  * TODO: Move to Auth Request service.
  */
-export const AUTH_REQUEST_PUSH_NOTIFICATION_KEY = new KeyDefinition<string>(
+export const AUTH_REQUEST_PUSH_NOTIFICATION_KEY = new KeyDefinition<string | null>(
   LOGIN_STRATEGY_MEMORY,
   "authRequestPushNotification",
   {
