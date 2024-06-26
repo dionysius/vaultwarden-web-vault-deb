@@ -26,27 +26,31 @@ import { Route, Routes } from "@angular/router";
  * @param defaultComponent - The default component to render.
  * @param altComponent - The alternate component to render when the condition is met.
  * @param shouldSwapFn - The async function to determine if the alternate component should be rendered.
- * @param options - The shared route options to apply to both components.
+ * @param options - The shared route options to apply to the default component, and to the alt component if altOptions is not provided.
+ * @param altOptions - The alt route options to apply to the alt component.
  */
 export function componentRouteSwap(
   defaultComponent: Type<any>,
   altComponent: Type<any>,
   shouldSwapFn: () => Promise<boolean>,
   options: Route,
+  altOptions?: Route,
 ): Routes {
   const defaultRoute = {
     ...options,
     component: defaultComponent,
   };
 
+  const selectedAltOptions = altOptions ?? options;
+
   const altRoute: Route = {
-    ...options,
+    ...selectedAltOptions,
     component: altComponent,
     canMatch: [
       async () => {
         return await shouldSwapFn();
       },
-      ...(options.canMatch ?? []),
+      ...(selectedAltOptions.canMatch ?? []),
     ],
   };
 
