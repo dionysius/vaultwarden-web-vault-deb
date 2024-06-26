@@ -13,6 +13,7 @@
       <th bitCell>{{ "invoice" | i18n }}</th>
       <th bitCell>{{ "total" | i18n }}</th>
       <th bitCell>{{ "status" | i18n }}</th>
+      <th bitCell>{{ "clientDetails" | i18n }}</th>
     </tr>
   </ng-container>
   <ng-template body>
@@ -47,35 +48,9 @@
         </span>
       </td>
       <td bitCell>
-        <button
-          [bitMenuTriggerFor]="rowMenu"
-          type="button"
-          bitIconButton="bwi-ellipsis-v"
-          size="default"
-          appA11yTitle="{{ 'options' | i18n }}"
-        ></button>
-        <bit-menu #rowMenu>
-          <a
-            bitMenuItem
-            href="{{ invoice.pdfUrl }}"
-            target="_blank"
-            rel="noreferrer"
-            class="tw-mr-2"
-            appA11yTitle="{{ 'viewInvoice' | i18n }}"
-          >
-            <i aria-hidden="true" class="bwi bwi-file-pdf"></i>
-            {{ "viewInvoice" | i18n }}
-          </a>
-          <button
-            type="button"
-            bitMenuItem
-            *ngIf="getClientInvoiceReport"
-            (click)="runExport(invoice.id)"
-          >
-            <i aria-hidden="true" class="bwi bwi-sign-in"></i>
-            {{ "exportClientReport" | i18n }}
-          </button>
-        </bit-menu>
+        <button type="button" bitLink (click)="runExport(invoice.id)">
+          <span class="tw-font-normal">{{ "downloadCSV" | i18n }}</span>
+        </button>
       </td>
     </tr>
   </ng-template>

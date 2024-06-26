@@ -20,7 +20,6 @@ export class InvoiceResponse extends BaseResponse {
   status: string;
   dueDate: string;
   url: string;
-  pdfUrl: string;
 
   constructor(response: any) {
     super(response);
@@ -31,6 +30,5 @@ export class InvoiceResponse extends BaseResponse {
     this.status = this.getResponseProperty("Status");
     this.dueDate = this.getResponseProperty("DueDate");
     this.url = this.getResponseProperty("Url");
-    this.pdfUrl = this.getResponseProperty("PdfUrl");
   }
 }

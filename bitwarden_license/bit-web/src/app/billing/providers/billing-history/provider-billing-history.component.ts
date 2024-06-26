@@ -25,7 +25,7 @@ export class ProviderBillingHistoryComponent implements OnInit, OnDestroy {
 
   getClientInvoiceReportName = (invoice: InvoiceResponse) => {
     const date = this.datePipe.transform(invoice.date, "yyyyMMdd");
-    return `bitwarden_provider_${date}_${invoice.number}`;
+    return `bitwarden_provider-billing-history_${date}_${invoice.number}`;
   };
 
   getInvoices = async () => await this.billingApiService.getProviderInvoices(this.providerId);
