@@ -31,9 +31,9 @@ export class CryptoServiceRandomizer implements Randomizer {
   async shuffle<T>(items: Array<T>, options?: { copy?: boolean }) {
     const shuffled = options?.copy ?? true ? [...items] : items;
 
-    for (let i = items.length - 1; i > 0; i--) {
+    for (let i = shuffled.length - 1; i > 0; i--) {
       const j = await this.uniform(0, i);
-      [items[i], items[j]] = [items[j], items[i]];
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
 
     return shuffled;
