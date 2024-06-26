@@ -38,9 +38,6 @@ export class PaymentMethodComponent implements OnInit {
   organizationId: string;
   isUnpaid = false;
 
-  verifyBankPromise: Promise<any>;
-  taxFormPromise: Promise<any>;
-
   verifyBankForm = this.formBuilder.group({
     amount1: new FormControl<number>(null, [
       Validators.required,
@@ -53,6 +50,8 @@ export class PaymentMethodComponent implements OnInit {
       Validators.min(0),
     ]),
   });
+
+  taxForm = this.formBuilder.group({});
 
   constructor(
     protected apiService: ApiService,
@@ -83,7 +82,7 @@ export class PaymentMethodComponent implements OnInit {
     });
   }
 
-  async load() {
+  load = async () => {
     if (this.loading) {
       return;
     }
@@ -109,7 +108,7 @@ export class PaymentMethodComponent implements OnInit {
     this.isUnpaid = this.subscription?.status === "unpaid" ?? false;
 
     this.loading = false;
-  }
+  };
 
   addCredit = async () => {
     const dialogRef = openAddCreditDialog(this.dialogService, {
@@ -136,35 +135,23 @@ export class PaymentMethodComponent implements OnInit {
     }
   };
 
-  async verifyBank() {
+  verifyBank = async () => {
     if (this.loading || !this.forOrganization) {
       return;
     }
 
-    try {
-      const request = new VerifyBankRequest();
-      request.amount1 = this.verifyBankForm.value.amount1;
-      request.amount2 = this.verifyBankForm.value.amount2;
-      this.verifyBankPromise = this.organizationApiService.verifyBank(this.organizationId, request);
-      await this.verifyBankPromise;
-      this.platformUtilsService.showToast(
-        "success",
-        null,
-        this.i18nService.t("verifiedBankAccount"),
-      );
-      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-      // eslint-disable-next-line @typescript-eslint/no-floating-promises
-      this.load();
-    } catch (e) {
-      this.logService.error(e);
-    }
-  }
+    const request = new VerifyBankRequest();
+    request.amount1 = this.verifyBankForm.value.amount1;
+    request.amount2 = this.verifyBankForm.value.amount2;
+    await this.organizationApiService.verifyBank(this.organizationId, request);
+    this.platformUtilsService.showToast("success", null, this.i18nService.t("verifiedBankAccount"));
+    await this.load();
+  };
 
-  async submitTaxInfo() {
-    this.taxFormPromise = this.taxInfo.submitTaxInfo();
-    await this.taxFormPromise;
+  submitTaxInfo = async () => {
+    await this.taxInfo.submitTaxInfo();
     this.platformUtilsService.showToast("success", null, this.i18nService.t("taxInfoUpdated"));
-  }
+  };
 
   get isCreditBalance() {
     return this.billing == null || this.billing.balance <= 0;
