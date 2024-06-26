@@ -1,0 +1,14 @@
+<button bitButton [bitMenuTriggerFor]="itemOptions" buttonType="primary" type="button">
+  <i class="bwi bwi-plus-f" aria-hidden="true"></i>
+  {{ "new" | i18n }}
+</button>
+<bit-menu #itemOptions>
+  <a type="button" bitMenuItem (click)="newItemNavigate(sendType.Text)">
+    <i class="bwi bwi-file-text" slot="start" aria-hidden="true"></i>
+    {{ "sendTypeText" | i18n }}
+  </a>
+  <a type="button" bitMenuItem (click)="newItemNavigate(sendType.File)">
+    <i class="bwi bwi-file" slot="start" aria-hidden="true"></i>
+    {{ "sendTypeFile" | i18n }}
+  </a>
+</bit-menu>
