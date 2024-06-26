@@ -1,5 +1,5 @@
 import { DatePipe } from "@angular/common";
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 import { ProviderSubscriptionResponse } from "@bitwarden/common/billing/models/response/provider-subscription-response";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -17,45 +17,27 @@ type ComponentData = {
     severity: "danger" | "warning";
     header: string;
     body: string;
-    showReinstatementButton: boolean;
   };
 };
 
 @Component({
-  selector: "app-subscription-status",
-  templateUrl: "subscription-status.component.html",
+  selector: "app-provider-subscription-status",
+  templateUrl: "provider-subscription-status.component.html",
 })
-export class SubscriptionStatusComponent {
-  @Input({ required: true }) providerSubscriptionResponse: ProviderSubscriptionResponse;
-  @Output() reinstatementRequested = new EventEmitter<void>();
+export class ProviderSubscriptionStatusComponent {
+  @Input({ required: true }) subscription: ProviderSubscriptionResponse;
 
   constructor(
     private datePipe: DatePipe,
     private i18nService: I18nService,
   ) {}
 
-  get displayedStatus(): string {
-    return this.data.status.value;
-  }
-
-  get planName() {
-    return this.providerSubscriptionResponse.plans[0];
-  }
-
   get status(): string {
     if (this.subscription.cancelAt && this.subscription.status === "active") {
-      this.subscription.status = "pending_cancellation";
+      return "pending_cancellation";
     }
 
     return this.subscription.status;
-  }
-
-  get isExpired() {
-    return this.subscription.status !== "active";
-  }
-
-  get subscription() {
-    return this.providerSubscriptionResponse;
   }
 
   get data(): ComponentData {
@@ -66,21 +48,6 @@ export class SubscriptionStatusComponent {
     const cancellationDateLabel = this.i18nService.t("cancellationDate");
 
     switch (this.status) {
-      case "free": {
-        return {};
-      }
-      case "trialing": {
-        return {
-          status: {
-            label: defaultStatusLabel,
-            value: this.i18nService.t("trial"),
-          },
-          date: {
-            label: nextChargeDateLabel,
-            value: this.subscription.currentPeriodEndDate.toDateString(),
-          },
-        };
-      }
       case "active": {
         return {
           status: {
@@ -89,26 +56,26 @@ export class SubscriptionStatusComponent {
           },
           date: {
             label: nextChargeDateLabel,
-            value: this.subscription.currentPeriodEndDate.toDateString(),
+            value: this.subscription.currentPeriodEndDate,
           },
         };
       }
       case "past_due": {
         const pastDueText = this.i18nService.t("pastDue");
         const suspensionDate = this.datePipe.transform(
-          this.subscription.suspensionDate,
+          this.subscription.suspension.suspensionDate,
           "mediumDate",
         );
         const calloutBody =
           this.subscription.collectionMethod === "charge_automatically"
             ? this.i18nService.t(
                 "pastDueWarningForChargeAutomatically",
-                this.subscription.gracePeriod,
+                this.subscription.suspension.gracePeriod,
                 suspensionDate,
               )
             : this.i18nService.t(
                 "pastDueWarningForSendInvoice",
-                this.subscription.gracePeriod,
+                this.subscription.suspension.gracePeriod,
                 suspensionDate,
               );
         return {
@@ -118,13 +85,12 @@ export class SubscriptionStatusComponent {
           },
           date: {
             label: subscriptionExpiredDateLabel,
-            value: this.subscription.unpaidPeriodEndDate,
+            value: this.subscription.suspension.unpaidPeriodEndDate,
           },
           callout: {
             severity: "warning",
             header: pastDueText,
             body: calloutBody,
-            showReinstatementButton: false,
           },
         };
       }
@@ -136,13 +102,12 @@ export class SubscriptionStatusComponent {
           },
           date: {
             label: subscriptionExpiredDateLabel,
-            value: this.subscription.currentPeriodEndDate.toDateString(),
+            value: this.subscription.suspension.unpaidPeriodEndDate,
           },
           callout: {
             severity: "danger",
             header: this.i18nService.t("unpaidInvoice"),
             body: this.i18nService.t("toReactivateYourSubscription"),
-            showReinstatementButton: false,
           },
         };
       }
@@ -163,7 +128,6 @@ export class SubscriptionStatusComponent {
             body:
               this.i18nService.t("subscriptionPendingCanceled") +
               this.i18nService.t("providerReinstate"),
-            showReinstatementButton: false,
           },
         };
       }
@@ -177,18 +141,15 @@ export class SubscriptionStatusComponent {
           },
           date: {
             label: cancellationDateLabel,
-            value: this.subscription.currentPeriodEndDate.toDateString(),
+            value: this.subscription.currentPeriodEndDate,
           },
           callout: {
             severity: "danger",
             header: canceledText,
             body: this.i18nService.t("subscriptionCanceled"),
-            showReinstatementButton: false,
           },
         };
       }
     }
   }
-
-  requestReinstatement = () => this.reinstatementRequested.emit();
 }

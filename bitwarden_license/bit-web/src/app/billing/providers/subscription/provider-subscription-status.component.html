@@ -1,15 +1,6 @@
 <ng-container>
   <bit-callout *ngIf="data.callout" [type]="data.callout.severity" [title]="data.callout.header">
     <p>{{ data.callout.body }}</p>
-    <button
-      *ngIf="data.callout.showReinstatementButton"
-      bitButton
-      buttonType="secondary"
-      [bitAction]="requestReinstatement"
-      type="button"
-    >
-      {{ "reinstateSubscription" | i18n }}
-    </button>
   </bit-callout>
   <dl class="tw-grid tw-grid-flow-col tw-grid-rows-2">
     <dt>{{ "billingPlan" | i18n }}</dt>
@@ -18,7 +9,7 @@
       <dt>{{ data.status.label }}</dt>
       <dd>
         <span class="tw-capitalize">
-          {{ displayedStatus }}
+          {{ data.status.value }}
         </span>
       </dd>
       <dt>

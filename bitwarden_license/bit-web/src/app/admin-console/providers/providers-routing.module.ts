@@ -12,7 +12,6 @@ import {
   ManageClientsComponent,
   ProviderSubscriptionComponent,
   hasConsolidatedBilling,
-  ProviderPaymentMethodComponent,
   ProviderBillingHistoryComponent,
 } from "../../billing/providers";
 
@@ -132,14 +131,6 @@ const routes: Routes = [
                 canActivate: [ProviderPermissionsGuard],
                 data: {
                   titleId: "subscription",
-                },
-              },
-              {
-                path: "payment-method",
-                component: ProviderPaymentMethodComponent,
-                canActivate: [ProviderPermissionsGuard],
-                data: {
-                  titleId: "paymentMethod",
                 },
               },
               {
