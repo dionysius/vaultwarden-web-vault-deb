@@ -1,6 +1,6 @@
 import { svgIcon } from "@bitwarden/components";
 
-export const ExpiredSend = svgIcon`
+export const ExpiredSendIcon = svgIcon`
     <svg xmlns="http://www.w3.org/2000/svg" width="130" height="130" fill="none">
         <path class="tw-fill-secondary-600" fill-rule="evenodd" d="M22.75 29.695c0-4.991 4.074-9.037 9.1-9.037h14.3v2.582h-14.3c-3.59 0-6.5 2.89-6.5 6.455v68.428h-2.6V29.696Zm75.4 76.175V68.428h2.6v37.442c0 4.991-4.074 9.038-9.1 9.038h-53.3v-2.582h53.3c3.59 0 6.5-2.891 6.5-6.456Z" clip-rule="evenodd"/>
         <path class="tw-fill-secondary-600" fill-rule="evenodd" d="M43.55 37.441c0-17.113 13.969-30.986 31.2-30.986s31.2 13.873 31.2 30.986c0 17.114-13.969 30.987-31.2 30.987s-31.2-13.873-31.2-30.986Zm31.2-33.568c-18.667 0-33.8 15.03-33.8 33.569S56.083 71.01 74.75 71.01c18.668 0 33.8-15.03 33.8-33.569S93.418 3.873 74.75 3.873Z" clip-rule="evenodd"/>

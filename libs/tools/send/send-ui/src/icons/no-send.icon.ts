@@ -1,6 +1,6 @@
 import { svgIcon } from "@bitwarden/components";
 
-export const NoSend = svgIcon`
+export const NoSendsIcon = svgIcon`
   <svg xmlns="http://www.w3.org/2000/svg" width="120" height="125" fill="none">
     <path class="tw-stroke-secondary-600" stroke-width="3" d="M13.425 11.994H5.99a4.311 4.311 0 0 0-4.311 4.312v62.09a4.311 4.311 0 0 0 4.311 4.311h40.09"/>
     <path class="tw-stroke-secondary-600" stroke-width="3" d="M66.27 75.142h-49.9a3.234 3.234 0 0 1-3.233-3.234V9.818a3.234 3.234 0 0 1 3.234-3.233h35.764a3.233 3.233 0 0 1 2.293.953l14.134 14.216c.602.605.94 1.425.94 2.28v47.874a3.233 3.233 0 0 1-3.233 3.234Z"/>

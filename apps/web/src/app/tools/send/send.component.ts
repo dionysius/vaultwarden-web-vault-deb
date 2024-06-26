@@ -19,12 +19,12 @@ import {
   TableDataSource,
   ToastService,
 } from "@bitwarden/components";
+import { NoSendsIcon } from "@bitwarden/send-ui";
 
 import { HeaderModule } from "../../layouts/header/header.module";
 import { SharedModule } from "../../shared";
 
 import { AddEditComponent } from "./add-edit.component";
-import { NoSend } from "./icons/no-send.icon";
 
 const BroadcasterSubscriptionId = "SendComponent";
 
@@ -37,7 +37,7 @@ const BroadcasterSubscriptionId = "SendComponent";
 export class SendComponent extends BaseSendComponent {
   @ViewChild("sendAddEdit", { read: ViewContainerRef, static: true })
   sendAddEditModalRef: ViewContainerRef;
-  noItemIcon = NoSend;
+  noItemIcon = NoSendsIcon;
 
   override set filteredSends(filteredSends: SendView[]) {
     super.filteredSends = filteredSends;
