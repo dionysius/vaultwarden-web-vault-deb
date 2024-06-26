@@ -7,7 +7,9 @@
       <p>{{ "createNewClientToManageAsProvider" | i18n }}</p>
       <div class="tw-mb-3">
         <span class="tw-text-lg tw-pr-1">{{ "selectAPlan" | i18n }}</span>
-        <span bitBadge variant="success">{{ "thirtyFivePercentDiscount" | i18n }}</span>
+        <span *ngIf="this.discountPercentage" bitBadge variant="success">{{
+          "providerDiscount" | i18n: this.discountPercentage
+        }}</span>
       </div>
       <ng-container>
         <div class="tw-grid tw-grid-flow-col tw-grid-cols-2 tw-gap-4 tw-mb-4">

@@ -42,6 +42,7 @@ type PlanCard = {
   templateUrl: "./create-client-dialog.component.html",
 })
 export class CreateClientDialogComponent implements OnInit {
+  protected discountPercentage: number;
   protected formGroup = new FormGroup({
     clientOwnerEmail: new FormControl<string>("", [Validators.required, Validators.email]),
     organizationName: new FormControl<string>("", [Validators.required]),
@@ -96,27 +97,31 @@ export class CreateClientDialogComponent implements OnInit {
   }
 
   async ngOnInit(): Promise<void> {
-    const subscription = await this.billingApiService.getProviderSubscription(
+    const response = await this.billingApiService.getProviderSubscription(
       this.dialogParams.providerId,
     );
-    this.providerPlans = subscription?.plans ?? [];
+
+    this.providerPlans = response?.plans ?? [];
 
     const teamsPlan = this.dialogParams.plans.find((plan) => plan.type === PlanType.TeamsMonthly);
     const enterprisePlan = this.dialogParams.plans.find(
       (plan) => plan.type === PlanType.EnterpriseMonthly,
     );
 
+    this.discountPercentage = response.discountPercentage;
+    const discountFactor = this.discountPercentage ? (100 - this.discountPercentage) / 100 : 1;
+
     this.planCards = [
       {
         name: this.i18nService.t("planNameTeams"),
-        cost: teamsPlan.PasswordManager.providerPortalSeatPrice * 0.65, // 35% off for MSPs,
+        cost: teamsPlan.PasswordManager.providerPortalSeatPrice * discountFactor,
         type: teamsPlan.type,
         plan: teamsPlan,
         selected: true,
       },
       {
         name: this.i18nService.t("planNameEnterprise"),
-        cost: enterprisePlan.PasswordManager.providerPortalSeatPrice * 0.65, // 35% off for MSPs,
+        cost: enterprisePlan.PasswordManager.providerPortalSeatPrice * discountFactor,
         type: enterprisePlan.type,
         plan: enterprisePlan,
         selected: false,

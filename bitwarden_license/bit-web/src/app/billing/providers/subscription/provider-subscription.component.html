@@ -41,7 +41,7 @@
                   {{ ((100 - subscription.discountPercentage) / 100) * i.cost | currency: "$" }} /{{
                     "month" | i18n
                   }}
-                  <div>
+                  <div *ngIf="subscription.discountPercentage">
                     <bit-hint class="tw-text-sm tw-line-through">
                       {{ i.cost | currency: "$" }} /{{ "month" | i18n }}
                     </bit-hint>
