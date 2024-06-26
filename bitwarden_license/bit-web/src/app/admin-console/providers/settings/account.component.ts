@@ -1,5 +1,7 @@
-import { Component } from "@angular/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
+import { FormBuilder, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
+import { Subject, switchMap, takeUntil } from "rxjs";
 
 import { UserVerificationDialogComponent } from "@bitwarden/auth/angular";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
@@ -19,15 +21,18 @@ import { DialogService } from "@bitwarden/components";
   templateUrl: "account.component.html",
 })
 // eslint-disable-next-line rxjs-angular/prefer-takeuntil
-export class AccountComponent {
+export class AccountComponent implements OnDestroy, OnInit {
   selfHosted = false;
   loading = true;
   provider: ProviderResponse;
-  formPromise: Promise<any>;
   taxFormPromise: Promise<any>;
 
+  private destroy$ = new Subject<void>();
   private providerId: string;
-
+  protected formGroup = this.formBuilder.group({
+    providerName: ["" as ProviderResponse["name"]],
+    providerBillingEmail: ["" as ProviderResponse["billingEmail"], Validators.email],
+  });
   protected enableDeleteProvider$ = this.configService.getFeatureFlag$(
     FeatureFlag.EnableDeleteProvider,
   );
@@ -42,39 +47,47 @@ export class AccountComponent {
     private dialogService: DialogService,
     private configService: ConfigService,
     private providerApiService: ProviderApiServiceAbstraction,
+    private formBuilder: FormBuilder,
     private router: Router,
   ) {}
 
   async ngOnInit() {
     this.selfHosted = this.platformUtilsService.isSelfHost();
-    // eslint-disable-next-line rxjs-angular/prefer-takeuntil, rxjs/no-async-subscribe
-    this.route.parent.parent.params.subscribe(async (params) => {
-      this.providerId = params.providerId;
-      try {
-        this.provider = await this.providerApiService.getProvider(this.providerId);
-      } catch (e) {
-        this.logService.error(`Handled exception: ${e}`);
-      }
-    });
-    this.loading = false;
+    this.route.parent.parent.params
+      .pipe(
+        switchMap(async (params) => {
+          this.providerId = params.providerId;
+          try {
+            this.provider = await this.providerApiService.getProvider(this.providerId);
+            this.formGroup.patchValue({
+              providerName: this.provider.name,
+              providerBillingEmail: this.provider.billingEmail,
+            });
+          } catch (e) {
+            this.logService.error(`Handled exception: ${e}`);
+          } finally {
+            this.loading = false;
+          }
+        }),
+        takeUntil(this.destroy$),
+      )
+      .subscribe();
   }
-
-  async submit() {
-    try {
-      const request = new ProviderUpdateRequest();
-      request.name = this.provider.name;
-      request.businessName = this.provider.businessName;
-      request.billingEmail = this.provider.billingEmail;
-
-      this.formPromise = this.providerApiService.putProvider(this.providerId, request).then(() => {
-        return this.syncService.fullSync(true);
-      });
-      await this.formPromise;
-      this.platformUtilsService.showToast("success", null, this.i18nService.t("providerUpdated"));
-    } catch (e) {
-      this.logService.error(`Handled exception: ${e}`);
-    }
+  ngOnDestroy() {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
+  submit = async () => {
+    const request = new ProviderUpdateRequest();
+    request.name = this.formGroup.value.providerName;
+    request.businessName = this.formGroup.value.providerName;
+    request.billingEmail = this.formGroup.value.providerBillingEmail;
+
+    await this.providerApiService.putProvider(this.providerId, request);
+    await this.syncService.fullSync(true);
+    this.provider = await this.providerApiService.getProvider(this.providerId);
+    this.platformUtilsService.showToast("success", null, this.i18nService.t("providerUpdated"));
+  };
 
   async deleteProvider() {
     const providerClients = await this.apiService.getProviderClients(this.providerId);
@@ -105,7 +118,6 @@ export class AccountComponent {
     } catch (e) {
       this.logService.error(e);
     }
-
     await this.router.navigate(["/"]);
   }
 
