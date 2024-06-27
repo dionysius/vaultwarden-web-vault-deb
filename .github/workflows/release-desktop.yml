@@ -29,11 +29,6 @@ on:
         required: true
         default: true
         type: boolean
-      electron_publish:
-        description: 'Publish Electron to S3 bucket'
-        required: true
-        default: true
-        type: boolean
       github_release:
         description: 'Publish GitHub release'
         required: true
@@ -142,7 +137,6 @@ jobs:
         run: mv Bitwarden-${{ env.PKG_VERSION }}-universal.pkg Bitwarden-${{ env.PKG_VERSION }}-universal.pkg.archive
 
       - name: Set staged rollout percentage
-        if: ${{ github.event.inputs.electron_publish == 'true' }}
         env:
           RELEASE_CHANNEL: ${{ steps.release-channel.outputs.channel }}
           ROLLOUT_PCT: ${{ inputs.rollout_percentage }}
@@ -152,7 +146,7 @@ jobs:
           echo "stagingPercentage: ${ROLLOUT_PCT}" >> apps/desktop/artifacts/${RELEASE_CHANNEL}-mac.yml
 
       - name: Publish artifacts to S3
-        if: ${{ github.event.inputs.release_type != 'Dry Run' && github.event.inputs.electron_publish == 'true' }}
+        if: ${{ github.event.inputs.release_type != 'Dry Run' }}
         env:
           AWS_ACCESS_KEY_ID: ${{ steps.retrieve-secrets.outputs.aws-electron-access-id }}
           AWS_SECRET_ACCESS_KEY: ${{ steps.retrieve-secrets.outputs.aws-electron-access-key }}
