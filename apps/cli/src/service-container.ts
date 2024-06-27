@@ -729,6 +729,7 @@ export class ServiceContainer {
       this.organizationService,
       this.eventUploadService,
       this.authService,
+      this.accountService,
     );
 
     this.providerApiService = new ProviderApiService(this.apiService);

@@ -869,6 +869,7 @@ export default class MainBackground {
       this.organizationService,
       this.eventUploadService,
       this.authService,
+      this.accountService,
     );
     this.totpService = new TotpService(this.cryptoFunctionService, this.logService);
 
