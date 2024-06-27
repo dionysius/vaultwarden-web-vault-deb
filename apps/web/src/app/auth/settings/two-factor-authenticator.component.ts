@@ -148,4 +148,29 @@ export class TwoFactorAuthenticatorComponent
   ) {
     return dialogService.open<boolean>(TwoFactorAuthenticatorComponent, config);
   }
+
+  async launchExternalUrl(url: string) {
+    const hostname = new URL(url).hostname;
+    const confirmed = await this.dialogService.openSimpleDialog({
+      title: this.i18nService.t("continueToExternalUrlTitle", hostname),
+      content: this.i18nService.t("continueToExternalUrlDesc"),
+      type: "info",
+      acceptButtonText: { key: "continue" },
+    });
+    if (confirmed) {
+      this.platformUtilsService.launchUri(url);
+    }
+  }
+
+  async launchBitwardenUrl(url: string) {
+    const confirmed = await this.dialogService.openSimpleDialog({
+      title: this.i18nService.t("twoStepContinueToBitwardenUrlTitle"),
+      content: this.i18nService.t("twoStepContinueToBitwardenUrlDesc"),
+      type: "info",
+      acceptButtonText: { key: "continue" },
+    });
+    if (confirmed) {
+      this.platformUtilsService.launchUri(url);
+    }
+  }
 }

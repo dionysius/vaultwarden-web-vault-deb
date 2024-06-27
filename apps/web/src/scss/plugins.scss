@@ -32,29 +32,37 @@
 
 .list-group-2fa {
   .logo-2fa {
-    min-width: 100px;
+    min-width: 120px;
   }
 }
 
 @each $mfaType in $mfaTypes {
   .mfaType#{$mfaType} {
     content: url("../images/two-factor/" + $mfaType + ".png");
-    max-width: 100px;
+    max-width: 120px;
+  }
+}
+
+.mfaType0 {
+  @include themify($themes) {
+    content: url("../images/two-factor/0.png");
+    max-width: 120px;
+    max-height: 62px;
   }
 }
 
 .mfaType1 {
   @include themify($themes) {
     content: url("../images/two-factor/1" + themed("mfaLogoSuffix"));
-    max-width: 100px;
-    max-height: 45px;
+    max-width: 120px;
+    max-height: 62px;
   }
 }
 
 .mfaType7 {
   @include themify($themes) {
     content: url("../images/two-factor/7" + themed("mfaLogoSuffix"));
-    max-width: 100px;
+    max-width: 120px;
   }
 }
 
