@@ -119,6 +119,49 @@ jobs:
           # Set the sync utility to use for deployment to the environment (az-sync or azcopy)
           echo "sync-utility=azcopy" >> $GITHUB_OUTPUT
 
+      - name: Environment Protection
+        env:
+          BUILD_WEB_RUN_ID: ${{ inputs.build-web-run-id }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          BRANCH_OR_TAG_LOWER=""
+          if [[ "$BUILD_WEB_RUN_ID" == "" ]]; then
+            BRANCH_OR_TAG_LOWER=$(echo ${{ inputs.branch-or-tag }} | awk '{print tolower($0)}')
+          else
+            BRANCH_OR_TAG_LOWER=$(gh api /repos/bitwarden/clients/actions/runs/$BUILD_WEB_RUN_ID/artifacts --jq '.artifacts[0].workflow_run.head_branch' | awk '{print tolower($0)}')
+          fi
+
+          echo "Branch/Tag: $BRANCH_OR_TAG_LOWER"
+
+          PROD_ENV_PATTERN='USPROD|EUPROD'
+          PROD_ALLOWED_TAGS_PATTERN='web-v[0-9]+\.[0-9]+\.[0-9]+'
+
+          QA_ENV_PATTERN='USQA|EUQA'
+          QA_ALLOWED_TAGS_PATTERN='.*'
+
+          DEV_ENV_PATTERN='USDEV'
+          DEV_ALLOWED_TAGS_PATTERN='main'
+
+          if [[ \
+              ${{ inputs.environment }} =~ \.*($PROD_ENV_PATTERN)\.* && \
+              ! "$BRANCH_OR_TAG_LOWER" =~ ^($PROD_ALLOWED_TAGS_PATTERN).* \
+          ]] || [[ \
+              ${{ inputs.environment }} =~ \.*($QA_ENV_PATTERN)\.* && \
+              ! "$BRANCH_OR_TAG_LOWER" =~ ^($QA_ALLOWED_TAGS_PATTERN).* \
+          ]] || [[ \
+              ${{ inputs.environment }} =~ \.*($DEV_ENV_PATTERN)\.* && \
+              $BRANCH_OR_TAG_LOWER != $DEV_ALLOWED_TAGS_PATTERN \
+          ]]; then
+              echo "!Deployment blocked!"
+              echo "Attempting to deploy a tag that is not allowed in ${{ inputs.environment }} environment"
+              echo
+              echo "Environment: ${{ inputs.environment }}"
+              echo "Tag: $BRANCH_OR_TAG_LOWER"
+              exit 1
+          else
+              echo "The input Branch/Tag: '$BRANCH_OR_TAG_LOWER' is allowed to deploy on ${{ inputs.environment }} environment"
+          fi
+
   approval:
     name: Approval for Deployment to ${{ needs.setup.outputs.environment-name }}
     needs: setup
