@@ -14,6 +14,7 @@ import {
   TypographyModule,
 } from "@bitwarden/components";
 
+import { VaultPopupAutofillService } from "../../../services/vault-popup-autofill.service";
 import { PopupCipherView } from "../../../views/popup-cipher.view";
 import { ItemCopyActionsComponent } from "../item-copy-action/item-copy-actions.component";
 import { ItemMoreOptionsComponent } from "../item-more-options/item-more-options.component";
@@ -87,5 +88,12 @@ export class VaultListItemsContainerComponent {
     return cipher.collections[0]?.name;
   }
 
-  constructor(private i18nService: I18nService) {}
+  constructor(
+    private i18nService: I18nService,
+    private vaultPopupAutofillService: VaultPopupAutofillService,
+  ) {}
+
+  async doAutofill(cipher: PopupCipherView) {
+    await this.vaultPopupAutofillService.doAutofill(cipher);
+  }
 }

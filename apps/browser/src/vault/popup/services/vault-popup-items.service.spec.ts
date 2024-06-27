@@ -16,8 +16,8 @@ import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { CollectionView } from "@bitwarden/common/vault/models/view/collection.view";
 
 import { BrowserApi } from "../../../platform/browser/browser-api";
-import BrowserPopupUtils from "../../../platform/popup/browser-popup-utils";
 
+import { VaultPopupAutofillService } from "./vault-popup-autofill.service";
 import { VaultPopupItemsService } from "./vault-popup-items.service";
 import { VaultPopupListFiltersService } from "./vault-popup-list-filters.service";
 
@@ -36,6 +36,7 @@ describe("VaultPopupItemsService", () => {
   const vaultPopupListFiltersServiceMock = mock<VaultPopupListFiltersService>();
   const searchService = mock<SearchService>();
   const collectionService = mock<CollectionService>();
+  const vaultAutofillServiceMock = mock<VaultPopupAutofillService>();
 
   beforeEach(() => {
     allCiphers = cipherFactory(10);
@@ -70,10 +71,10 @@ describe("VaultPopupItemsService", () => {
     vaultPopupListFiltersServiceMock.filterFunction$ = new BehaviorSubject(
       (ciphers: CipherView[]) => ciphers,
     );
-    jest.spyOn(BrowserPopupUtils, "inPopout").mockReturnValue(false);
-    jest
-      .spyOn(BrowserApi, "getTabFromCurrentWindow")
-      .mockResolvedValue({ url: "https://example.com" } as chrome.tabs.Tab);
+
+    vaultAutofillServiceMock.currentAutofillTab$ = new BehaviorSubject({
+      url: "https://example.com",
+    } as chrome.tabs.Tab);
 
     mockOrg = {
       id: "org1",
@@ -97,6 +98,7 @@ describe("VaultPopupItemsService", () => {
         { provide: OrganizationService, useValue: organizationServiceMock },
         { provide: VaultPopupListFiltersService, useValue: vaultPopupListFiltersServiceMock },
         { provide: CollectionService, useValue: collectionService },
+        { provide: VaultPopupAutofillService, useValue: vaultAutofillServiceMock },
       ],
     });
 
@@ -155,15 +157,7 @@ describe("VaultPopupItemsService", () => {
 
   describe("autoFillCiphers$", () => {
     it("should return empty array if there is no current tab", (done) => {
-      jest.spyOn(BrowserApi, "getTabFromCurrentWindow").mockResolvedValue(null);
-      service.autoFillCiphers$.subscribe((ciphers) => {
-        expect(ciphers).toEqual([]);
-        done();
-      });
-    });
-
-    it("should return empty array if in Popout window", (done) => {
-      jest.spyOn(BrowserPopupUtils, "inPopout").mockReturnValue(true);
+      (vaultAutofillServiceMock.currentAutofillTab$ as BehaviorSubject<any>).next(null);
       service.autoFillCiphers$.subscribe((ciphers) => {
         expect(ciphers).toEqual([]);
         done();
@@ -314,31 +308,6 @@ describe("VaultPopupItemsService", () => {
     it("should return false if there are ciphers", (done) => {
       service.emptyVault$.subscribe((empty) => {
         expect(empty).toBe(false);
-        done();
-      });
-    });
-  });
-
-  describe("autoFillAllowed$", () => {
-    it("should return true if there is a current tab", (done) => {
-      service.autofillAllowed$.subscribe((allowed) => {
-        expect(allowed).toBe(true);
-        done();
-      });
-    });
-
-    it("should return false if there is no current tab", (done) => {
-      jest.spyOn(BrowserApi, "getTabFromCurrentWindow").mockResolvedValue(null);
-      service.autofillAllowed$.subscribe((allowed) => {
-        expect(allowed).toBe(false);
-        done();
-      });
-    });
-
-    it("should return false if in a Popout", (done) => {
-      jest.spyOn(BrowserPopupUtils, "inPopout").mockReturnValue(true);
-      service.autofillAllowed$.subscribe((allowed) => {
-        expect(allowed).toBe(false);
         done();
       });
     });

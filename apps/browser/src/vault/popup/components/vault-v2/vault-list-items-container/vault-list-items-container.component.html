@@ -40,6 +40,7 @@
             type="button"
             bitBadge
             variant="primary"
+            (click)="doAutofill(cipher)"
             [title]="'autofillTitle' | i18n: cipher.name"
             [attr.aria-label]="'autofillTitle' | i18n: cipher.name"
           >

@@ -1,7 +1,7 @@
 import { CommonModule } from "@angular/common";
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
-import { Router, RouterLink } from "@angular/router";
+import { RouterLink } from "@angular/router";
 import { combineLatest } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
@@ -59,10 +59,7 @@ export class VaultV2Component implements OnInit, OnDestroy {
 
   protected VaultStateEnum = VaultState;
 
-  constructor(
-    private vaultPopupItemsService: VaultPopupItemsService,
-    private router: Router,
-  ) {
+  constructor(private vaultPopupItemsService: VaultPopupItemsService) {
     combineLatest([
       this.vaultPopupItemsService.emptyVault$,
       this.vaultPopupItemsService.noFilteredResults$,

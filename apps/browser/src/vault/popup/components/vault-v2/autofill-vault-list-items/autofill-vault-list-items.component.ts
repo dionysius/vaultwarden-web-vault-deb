@@ -12,6 +12,7 @@ import {
 } from "@bitwarden/components";
 
 import BrowserPopupUtils from "../../../../../platform/popup/browser-popup-utils";
+import { VaultPopupAutofillService } from "../../../services/vault-popup-autofill.service";
 import { VaultPopupItemsService } from "../../../services/vault-popup-items.service";
 import { PopupCipherView } from "../../../views/popup-cipher.view";
 import { VaultListItemsContainerComponent } from "../vault-list-items-container/vault-list-items-container.component";
@@ -53,7 +54,7 @@ export class AutofillVaultListItemsComponent {
   protected showEmptyAutofillTip$: Observable<boolean> = combineLatest([
     this.vaultPopupItemsService.hasFilterApplied$,
     this.autofillCiphers$,
-    this.vaultPopupItemsService.autofillAllowed$,
+    this.vaultPopupAutofillService.autofillAllowed$,
   ]).pipe(
     map(
       ([hasFilter, ciphers, canAutoFill]) =>
@@ -61,7 +62,10 @@ export class AutofillVaultListItemsComponent {
     ),
   );
 
-  constructor(private vaultPopupItemsService: VaultPopupItemsService) {
+  constructor(
+    private vaultPopupItemsService: VaultPopupItemsService,
+    private vaultPopupAutofillService: VaultPopupAutofillService,
+  ) {
     // TODO: Migrate logic to show Autofill policy toast PM-8144
   }
 
@@ -70,6 +74,6 @@ export class AutofillVaultListItemsComponent {
    * @protected
    */
   protected refreshCurrentTab() {
-    this.vaultPopupItemsService.refreshCurrentTab();
+    this.vaultPopupAutofillService.refreshCurrentTab();
   }
 }
