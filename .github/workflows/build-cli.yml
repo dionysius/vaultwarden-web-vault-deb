@@ -71,8 +71,8 @@ jobs:
          ]
         license_type:
          [
-          { prefix: "oss", readable: "open source license" },
-          { prefix: "bit", readable: "commercial license"}
+          { build_prefix: "oss", artifact_prefix: "-oss", readable: "open source license" },
+          { build_prefix: "bit", artifact_prefix: "", readable: "commercial license"}
          ]
     runs-on: ${{ matrix.os.distro }}
     needs:
@@ -104,16 +104,16 @@ jobs:
         working-directory: ./
 
       - name: Build & Package Unix
-        run: npm run dist:${{ matrix.license_type.prefix }}:${{ env.SHORT_RUNNER_OS }} --quiet
+        run: npm run dist:${{ matrix.license_type.build_prefix }}:${{ env.SHORT_RUNNER_OS }} --quiet
 
       - name: Zip Unix
         run: |
-          cd ./dist/${{ matrix.license_type.prefix }}/${{ env.LOWER_RUNNER_OS }}
-          zip ../../bw-${{ matrix.license_type.prefix }}-${{ env.LOWER_RUNNER_OS }}-${{ env._PACKAGE_VERSION }}.zip ./bw
+          cd ./dist/${{ matrix.license_type.build_prefix }}/${{ env.LOWER_RUNNER_OS }}
+          zip ../../bw${{ matrix.license_type.artifact_prefix }}-${{ env.LOWER_RUNNER_OS }}-${{ env._PACKAGE_VERSION }}.zip ./bw
 
       - name: Version Test
         run: |
-          unzip "./dist/bw-${{ matrix.license_type.prefix }}-${{ env.LOWER_RUNNER_OS }}-${{ env._PACKAGE_VERSION }}.zip" -d "./test"
+          unzip "./dist/bw${{ matrix.license_type.artifact_prefix }}-${{ env.LOWER_RUNNER_OS }}-${{ env._PACKAGE_VERSION }}.zip" -d "./test"
           testVersion=$(./test/bw -v)
           echo "version: $_PACKAGE_VERSION"
           echo "testVersion: $testVersion"
@@ -125,21 +125,22 @@ jobs:
       - name: Create checksums Unix
         run: |
           cd ./dist
-          shasum -a 256 bw-${{ matrix.license_type.prefix }}-${{ env.LOWER_RUNNER_OS }}-${{ env._PACKAGE_VERSION }}.zip \
-            | awk '{split($0, a); print a[1]}' > bw-${{ matrix.license_type.prefix }}-${{ env.LOWER_RUNNER_OS }}-sha256-${{ env._PACKAGE_VERSION }}.txt
+          shasum -a 256 bw${{ matrix.license_type.artifact_prefix }}-${{ env.LOWER_RUNNER_OS }}-${{ env._PACKAGE_VERSION }}.zip \
+            | awk '{split($0, a); print a[1]}' > bw${{
+          matrix.license_type.artifact_prefix }}-${{ env.LOWER_RUNNER_OS }}-sha256-${{ env._PACKAGE_VERSION }}.txt
 
       - name: Upload unix zip asset
         uses: actions/upload-artifact@5d5d22a31266ced268874388b861e4b58bb5c2f3 # v4.3.1
         with:
-          name: bw-${{ matrix.license_type.prefix }}-${{ env.LOWER_RUNNER_OS }}-${{ env._PACKAGE_VERSION }}.zip
-          path: apps/cli/dist/bw-${{ matrix.license_type.prefix }}-${{ env.LOWER_RUNNER_OS }}-${{ env._PACKAGE_VERSION }}.zip
+          name: bw${{ matrix.license_type.artifact_prefix }}-${{ env.LOWER_RUNNER_OS }}-${{ env._PACKAGE_VERSION }}.zip
+          path: apps/cli/dist/bw${{ matrix.license_type.artifact_prefix }}-${{ env.LOWER_RUNNER_OS }}-${{ env._PACKAGE_VERSION }}.zip
           if-no-files-found: error
 
       - name: Upload unix checksum asset
         uses: actions/upload-artifact@5d5d22a31266ced268874388b861e4b58bb5c2f3 # v4.3.1
         with:
-          name: bw-${{ matrix.license_type.prefix }}-${{ env.LOWER_RUNNER_OS }}-sha256-${{ env._PACKAGE_VERSION }}.txt
-          path: apps/cli/dist/bw-${{ matrix.license_type.prefix }}-${{ env.LOWER_RUNNER_OS }}-sha256-${{ env._PACKAGE_VERSION }}.txt
+          name: bw${{ matrix.license_type.artifact_prefix }}-${{ env.LOWER_RUNNER_OS }}-sha256-${{ env._PACKAGE_VERSION }}.txt
+          path: apps/cli/dist/bw${{ matrix.license_type.artifact_prefix }}-${{ env.LOWER_RUNNER_OS }}-sha256-${{ env._PACKAGE_VERSION }}.txt
           if-no-files-found: error
 
   cli-windows:
@@ -148,8 +149,8 @@ jobs:
       matrix:
         license_type:
          [
-          { prefix: "oss", readable: "open source license" },
-          { prefix: "bit", readable: "commercial license"}
+          { build_prefix: "oss", artifact_prefix: "-oss", readable: "open source license" },
+          { build_prefix: "bit", artifact_prefix: "", readable: "commercial license"}
          ]
     runs-on: windows-2022
     needs:
@@ -236,26 +237,26 @@ jobs:
         working-directory: ./
 
       - name: Build & Package Windows
-        run: npm run dist:${{ matrix.license_type.prefix }}:win --quiet
+        run: npm run dist:${{ matrix.license_type.build_prefix }}:win --quiet
 
       - name: Package Chocolatey
         shell: pwsh
-        if: ${{ matrix.license_type.prefix }} == 'bit'
+        if: ${{ matrix.license_type.build_prefix }} == 'bit'
         run: |
           Copy-Item -Path stores/chocolatey -Destination dist/chocolatey -Recurse
-          Copy-Item dist/${{ matrix.license_type.prefix }}/windows/bw.exe -Destination dist/chocolatey/tools
+          Copy-Item dist/${{ matrix.license_type.build_prefix }}/windows/bw.exe -Destination dist/chocolatey/tools
           Copy-Item ${{ github.workspace }}/LICENSE.txt -Destination dist/chocolatey/tools
           choco pack dist/chocolatey/bitwarden-cli.nuspec --version ${{ env._PACKAGE_VERSION }} --out dist/chocolatey
 
       - name: Zip Windows
         shell: cmd
-        run: 7z a ./dist/bw-${{ matrix.license_type.prefix }}-windows-%_PACKAGE_VERSION%.zip ./dist/${{ matrix.license_type.prefix }}/windows/bw.exe
+        run: 7z a ./dist/bw${{ matrix.license_type.artifact_prefix}}-windows-%_PACKAGE_VERSION%.zip ./dist/${{ matrix.license_type.build_prefix }}/windows/bw.exe
 
       - name: Version Test
         run: |
           dir ./dist/
-          Expand-Archive -Path "./dist/bw-${{ matrix.license_type.prefix }}-windows-${env:_PACKAGE_VERSION}.zip" -DestinationPath "./test/${{ matrix.license_type.prefix }}/windows"
-          $testVersion = Invoke-Expression '& ./test/${{ matrix.license_type.prefix }}/windows/bw.exe -v'
+          Expand-Archive -Path "./dist/bw${{ matrix.license_type.artifact_prefix }}-windows-${env:_PACKAGE_VERSION}.zip" -DestinationPath "./test/${{ matrix.license_type.build_prefix }}/windows"
+          $testVersion = Invoke-Expression '& ./test/${{ matrix.license_type.build_prefix }}/windows/bw.exe -v'
           echo "version: $env:_PACKAGE_VERSION"
           echo "testVersion: $testVersion"
           if($testVersion -ne $env:_PACKAGE_VERSION) {
@@ -264,25 +265,25 @@ jobs:
 
       - name: Create checksums Windows
         run: |
-          checksum -f="./dist/bw-${{ matrix.license_type.prefix }}-windows-${env:_PACKAGE_VERSION}.zip" `
-            -t sha256 | Out-File -Encoding ASCII ./dist/bw-${{ matrix.license_type.prefix }}-windows-sha256-${env:_PACKAGE_VERSION}.txt
+          checksum -f="./dist/bw${{ matrix.license_type.artifact_prefix }}-windows-${env:_PACKAGE_VERSION}.zip" `
+            -t sha256 | Out-File -Encoding ASCII ./dist/bw${{ matrix.license_type.artifact_prefix }}-windows-sha256-${env:_PACKAGE_VERSION}.txt
 
       - name: Upload windows zip asset
         uses: actions/upload-artifact@5d5d22a31266ced268874388b861e4b58bb5c2f3 # v4.3.1
         with:
-          name: bw-${{ matrix.license_type.prefix }}-windows-${{ env._PACKAGE_VERSION }}.zip
-          path: apps/cli/dist/bw-${{ matrix.license_type.prefix }}-windows-${{ env._PACKAGE_VERSION }}.zip
+          name: bw${{ matrix.license_type.artifact_prefix }}-windows-${{ env._PACKAGE_VERSION }}.zip
+          path: apps/cli/dist/bw${{ matrix.license_type.artifact_prefix }}-windows-${{ env._PACKAGE_VERSION }}.zip
           if-no-files-found: error
 
       - name: Upload windows checksum asset
         uses: actions/upload-artifact@5d5d22a31266ced268874388b861e4b58bb5c2f3 # v4.3.1
         with:
-          name: bw-${{ matrix.license_type.prefix }}-windows-sha256-${{ env._PACKAGE_VERSION }}.txt
-          path: apps/cli/dist/bw-${{ matrix.license_type.prefix }}-windows-sha256-${{ env._PACKAGE_VERSION }}.txt
+          name: bw${{ matrix.license_type.artifact_prefix }}-windows-sha256-${{ env._PACKAGE_VERSION }}.txt
+          path: apps/cli/dist/bw${{ matrix.license_type.artifact_prefix }}-windows-sha256-${{ env._PACKAGE_VERSION }}.txt
           if-no-files-found: error
 
       - name: Upload Chocolatey asset
-        if: matrix.license_type.prefix == 'bit'
+        if: matrix.license_type.build_prefix == 'bit'
         uses: actions/upload-artifact@5d5d22a31266ced268874388b861e4b58bb5c2f3 # v4.3.1
         with:
           name: bitwarden-cli.${{ env._PACKAGE_VERSION }}.nupkg
@@ -290,7 +291,7 @@ jobs:
           if-no-files-found: error
 
       - name: Upload NPM Build Directory asset
-        if: matrix.license_type.prefix == 'bit'
+        if: matrix.license_type.build_prefix == 'bit'
         uses: actions/upload-artifact@5d5d22a31266ced268874388b861e4b58bb5c2f3 # v4.3.1
         with:
           name: bitwarden-cli-${{ env._PACKAGE_VERSION }}-npm-build.zip
@@ -320,13 +321,8 @@ jobs:
       - name: Get bw linux cli
         uses: actions/download-artifact@c850b930e6ba138125429b7e5c93fc707a7f8427 # v4.1.4
         with:
-          name: bw-bit-linux-${{ env._PACKAGE_VERSION }}.zip
+          name: bw-linux-${{ env._PACKAGE_VERSION }}.zip
           path: apps/cli/dist/snap
-
-      - name: Rename snap artifact
-        run: |
-          cd dist/snap
-          mv bw-bit-linux-${{ env._PACKAGE_VERSION }}.zip bw-linux-${{ env._PACKAGE_VERSION }}.zip
 
       - name: Setup Snap Package
         run: |
