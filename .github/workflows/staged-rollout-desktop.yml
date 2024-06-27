@@ -41,11 +41,11 @@ jobs:
           AWS_S3_BUCKET_NAME: ${{ steps.retrieve-secrets.outputs.aws-electron-bucket-name }}
         run: |
           aws s3 cp $AWS_S3_BUCKET_NAME/desktop/latest.yml . \
-          --quiet \
+          --quiet
           aws s3 cp $AWS_S3_BUCKET_NAME/desktop/latest-linux.yml . \
-          --quiet \
+          --quiet
           aws s3 cp $AWS_S3_BUCKET_NAME/desktop/latest-mac.yml . \
-          --quiet \
+          --quiet
 
       - name: Check new rollout percentage
         env:
