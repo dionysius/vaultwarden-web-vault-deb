@@ -1,6 +1,6 @@
 import { DIALOG_DATA, DialogConfig, DialogRef } from "@angular/cdk/dialog";
 import { Component, EventEmitter, Inject, OnDestroy, OnInit, Output } from "@angular/core";
-import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { FormBuilder, FormControl, Validators } from "@angular/forms";
 import { firstValueFrom, map } from "rxjs";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
@@ -48,8 +48,8 @@ export class TwoFactorAuthenticatorComponent
   override componentName = "app-two-factor-authenticator";
   private qrScript: HTMLScriptElement;
 
-  protected formGroup = new FormGroup({
-    token: new FormControl(null, [Validators.required]),
+  formGroup = this.formBuilder.group({
+    token: new FormControl(null, [Validators.required, Validators.minLength(6)]),
   });
 
   constructor(
@@ -58,6 +58,7 @@ export class TwoFactorAuthenticatorComponent
     apiService: ApiService,
     i18nService: I18nService,
     userVerificationService: UserVerificationService,
+    private formBuilder: FormBuilder,
     platformUtilsService: PlatformUtilsService,
     logService: LogService,
     private accountService: AccountService,
@@ -85,12 +86,19 @@ export class TwoFactorAuthenticatorComponent
     window.document.body.removeChild(this.qrScript);
   }
 
+  validateTokenControl() {
+    this.formGroup.controls.token.markAsTouched();
+  }
+
   auth(authResponse: AuthResponse<TwoFactorAuthenticatorResponse>) {
     super.auth(authResponse);
     return this.processResponse(authResponse.response);
   }
 
   submit = async () => {
+    if (this.formGroup.invalid && !this.enabled) {
+      return;
+    }
     if (this.enabled) {
       await this.disableAuthentication(this.formPromise);
       this.onChangeStatus.emit(this.enabled);

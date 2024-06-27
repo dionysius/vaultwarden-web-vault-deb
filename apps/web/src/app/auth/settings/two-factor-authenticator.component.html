@@ -10,7 +10,6 @@
           <p bitTypography="body1">{{ "twoStepLoginProviderEnabled" | i18n }}</p>
           {{ "twoStepAuthenticatorReaddDesc" | i18n }}
         </bit-callout>
-        <img class="float-right mfaType0" alt="Authenticator app logo" />
         <p bitTypography="body1">{{ "twoStepAuthenticatorNeedApp" | i18n }}</p>
       </ng-container>
       <ng-container *ngIf="!enabled">
@@ -72,19 +71,23 @@
         {{ "twoStepAuthenticatorScanCodeV2" | i18n }}
       </ng-container>
       <hr *ngIf="enabled" />
-      <p class="text-center" [ngClass]="{ 'mb-0': enabled }">
+      <p class="tw-text-center tw-mb-0">
         <canvas id="qr"></canvas><br />
         <code appA11yTitle="{{ 'key' | i18n }}">{{ key }}</code>
       </p>
-      <ng-container *ngIf="!enabled">
-        <bit-form-field>
-          <bit-label>{{ "twoStepAuthenticatorEnterCodeV2" | i18n }}</bit-label>
-          <input bitInput type="text" formControlName="token" appInputVerbatim />
-        </bit-form-field>
-      </ng-container>
+      <bit-form-field *ngIf="!enabled" [disableMargin]="true">
+        <bit-label>{{ "twoStepAuthenticatorEnterCodeV2" | i18n }}</bit-label>
+        <input bitInput type="text" formControlName="token" appInputVerbatim />
+      </bit-form-field>
     </ng-container>
     <ng-container bitDialogFooter>
-      <button bitButton bitFormButton type="submit" buttonType="primary">
+      <button
+        bitButton
+        bitFormButton
+        type="submit"
+        buttonType="primary"
+        (click)="validateTokenControl()"
+      >
         {{ (enabled ? "disable" : "enable") | i18n }}
       </button>
       <button bitButton bitFormButton type="button" buttonType="secondary" [bitAction]="close">
