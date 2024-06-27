@@ -12,7 +12,6 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password/";
 import { SendApiService } from "@bitwarden/common/tools/send/services/send-api.service.abstraction";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CollectionService } from "@bitwarden/common/vault/abstractions/collection.service";
@@ -20,6 +19,7 @@ import { FolderService } from "@bitwarden/common/vault/abstractions/folder/folde
 import { TotpService } from "@bitwarden/common/vault/abstractions/totp.service";
 import { Cipher } from "@bitwarden/common/vault/models/domain/cipher";
 import { DialogService } from "@bitwarden/components";
+import { PasswordGenerationServiceAbstraction } from "@bitwarden/generator-legacy";
 import { PasswordRepromptService } from "@bitwarden/vault";
 
 import { AddEditComponent as BaseAddEditComponent } from "../../../../vault/individual-vault/add-edit.component";

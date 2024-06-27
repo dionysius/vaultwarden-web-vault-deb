@@ -1,10 +1,12 @@
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
-import { DefaultPassphraseGenerationOptions } from "@bitwarden/common/tools/generator/passphrase";
 import {
   DefaultPasswordGenerationOptions,
+  DefaultPassphraseGenerationOptions,
+} from "@bitwarden/generator-core";
+import {
+  PasswordGeneratorOptions,
   PasswordGenerationServiceAbstraction,
-} from "@bitwarden/common/tools/generator/password";
-import { PasswordGeneratorOptions } from "@bitwarden/common/tools/generator/password/password-generator-options";
+} from "@bitwarden/generator-legacy";
 
 import { Response } from "../models/response";
 import { StringResponse } from "../models/response/string.response";

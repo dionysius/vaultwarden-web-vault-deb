@@ -203,12 +203,6 @@ import { SearchService } from "@bitwarden/common/services/search.service";
 import { VaultTimeoutSettingsService } from "@bitwarden/common/services/vault-timeout/vault-timeout-settings.service";
 import { VaultTimeoutService } from "@bitwarden/common/services/vault-timeout/vault-timeout.service";
 import {
-  legacyPasswordGenerationServiceFactory,
-  legacyUsernameGenerationServiceFactory,
-} from "@bitwarden/common/tools/generator";
-import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
-import { UsernameGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/username";
-import {
   PasswordStrengthService,
   PasswordStrengthServiceAbstraction,
 } from "@bitwarden/common/tools/password-strength";
@@ -239,6 +233,12 @@ import { FolderService } from "@bitwarden/common/vault/services/folder/folder.se
 import { TotpService } from "@bitwarden/common/vault/services/totp.service";
 import { VaultSettingsService } from "@bitwarden/common/vault/services/vault-settings/vault-settings.service";
 import { ToastService } from "@bitwarden/components";
+import {
+  legacyPasswordGenerationServiceFactory,
+  legacyUsernameGenerationServiceFactory,
+  PasswordGenerationServiceAbstraction,
+  UsernameGenerationServiceAbstraction,
+} from "@bitwarden/generator-legacy";
 import {
   ImportApiService,
   ImportApiServiceAbstraction,

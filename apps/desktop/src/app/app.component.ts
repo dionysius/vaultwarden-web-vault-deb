@@ -43,7 +43,6 @@ import { BiometricStateService } from "@bitwarden/common/platform/biometrics/bio
 import { clearCaches } from "@bitwarden/common/platform/misc/sequentialize";
 import { StateEventRunnerService } from "@bitwarden/common/platform/state";
 import { SyncService } from "@bitwarden/common/platform/sync";
-import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 import { UserId } from "@bitwarden/common/types/guid";
 import { VaultTimeout, VaultTimeoutStringType } from "@bitwarden/common/types/vault-timeout.type";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
@@ -51,6 +50,7 @@ import { CollectionService } from "@bitwarden/common/vault/abstractions/collecti
 import { InternalFolderService } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
 import { CipherType } from "@bitwarden/common/vault/enums";
 import { DialogService, ToastOptions, ToastService } from "@bitwarden/components";
+import { PasswordGenerationServiceAbstraction } from "@bitwarden/generator-legacy";
 
 import { DeleteAccountComponent } from "../auth/delete-account.component";
 import { LoginApprovalComponent } from "../auth/login/login-approval.component";

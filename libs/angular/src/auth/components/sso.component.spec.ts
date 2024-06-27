@@ -27,8 +27,8 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { FakeAccountService, mockAccountServiceWith } from "@bitwarden/common/spec";
-import { PasswordGenerationServiceAbstraction } from "@bitwarden/common/tools/generator/password";
 import { UserId } from "@bitwarden/common/types/guid";
+import { PasswordGenerationServiceAbstraction } from "@bitwarden/generator-legacy";
 
 import { SsoComponent } from "./sso.component";
 // test component that extends the SsoComponent
@@ -201,7 +201,10 @@ describe("SsoComponent", () => {
         { provide: ApiService, useValue: mockApiService },
         { provide: CryptoFunctionService, useValue: mockCryptoFunctionService },
         { provide: EnvironmentService, useValue: mockEnvironmentService },
-        { provide: PasswordGenerationServiceAbstraction, useValue: mockPasswordGenerationService },
+        {
+          provide: PasswordGenerationServiceAbstraction,
+          useValue: mockPasswordGenerationService,
+        },
 
         {
           provide: UserDecryptionOptionsServiceAbstraction,
