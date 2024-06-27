@@ -6,12 +6,14 @@ import { ActivatedRoute } from "@angular/router";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
+import { CipherId } from "@bitwarden/common/types/guid";
 import { CipherType } from "@bitwarden/common/vault/enums";
 import { SearchModule, ButtonModule } from "@bitwarden/components";
 
 import { PopupFooterComponent } from "../../../../../platform/popup/layout/popup-footer.component";
 import { PopupHeaderComponent } from "../../../../../platform/popup/layout/popup-header.component";
 import { PopupPageComponent } from "../../../../../platform/popup/layout/popup-page.component";
+import { OpenAttachmentsComponent } from "../attachments/open-attachments/open-attachments.component";
 
 @Component({
   selector: "app-add-edit-v2",
@@ -23,6 +25,7 @@ import { PopupPageComponent } from "../../../../../platform/popup/layout/popup-p
     JslibModule,
     FormsModule,
     ButtonModule,
+    OpenAttachmentsComponent,
     PopupPageComponent,
     PopupHeaderComponent,
     PopupFooterComponent,
@@ -30,6 +33,8 @@ import { PopupPageComponent } from "../../../../../platform/popup/layout/popup-p
 })
 export class AddEditV2Component {
   headerText: string;
+  cipherId: CipherId;
+  isEdit: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -40,9 +45,11 @@ export class AddEditV2Component {
 
   subscribeToParams(): void {
     this.route.queryParams.pipe(takeUntilDestroyed()).subscribe((params) => {
-      const isNew = params.isNew.toLowerCase() === "true";
+      const isNew = params.isNew?.toLowerCase() === "true";
       const cipherType = parseInt(params.type);
 
+      this.isEdit = !isNew;
+      this.cipherId = params.cipherId;
       this.headerText = this.setHeader(isNew, cipherType);
     });
   }

@@ -1,6 +1,8 @@
 <popup-page>
   <popup-header slot="header" [pageTitle]="headerText" showBackButton> </popup-header>
 
+  <app-open-attachments *ngIf="isEdit" [cipherId]="cipherId"></app-open-attachments>
+
   <popup-footer slot="footer">
     <button bitButton type="button" buttonType="primary">
       {{ "save" | i18n }}
