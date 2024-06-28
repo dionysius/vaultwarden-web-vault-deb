@@ -321,28 +321,28 @@ const routes: Routes = [
       {
         path: "verify-recover-delete",
         canActivate: [unauthGuardFn()],
+        data: {
+          pageTitle: "deleteAccount",
+          titleId: "deleteAccount",
+        } satisfies DataProperties & AnonLayoutWrapperData,
         children: [
           {
             path: "",
             component: VerifyRecoverDeleteComponent,
-            data: {
-              pageTitle: "deleteAccount",
-              titleId: "deleteAccount",
-            } satisfies DataProperties & AnonLayoutWrapperData,
           },
         ],
       },
       {
         path: "hint",
         canActivate: [unauthGuardFn()],
+        data: {
+          pageTitle: "passwordHint",
+          titleId: "passwordHint",
+        } satisfies DataProperties & AnonLayoutWrapperData,
         children: [
           {
             path: "",
             component: HintComponent,
-            data: {
-              pageTitle: "passwordHint",
-              titleId: "passwordHint",
-            } satisfies DataProperties & AnonLayoutWrapperData,
           },
           {
             path: "",
