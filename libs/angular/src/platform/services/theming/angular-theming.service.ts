@@ -18,17 +18,24 @@ export class AngularThemingService implements AbstractThemingService {
   static createSystemThemeFromWindow(window: Window): Observable<ThemeType> {
     return merge(
       // This observable should always emit at least once, so go and get the current system theme designation
-      of(
-        window.matchMedia("(prefers-color-scheme: dark)").matches
-          ? ThemeType.Dark
-          : ThemeType.Light,
-      ),
+      of(AngularThemingService.getSystemThemeFromWindow(window)),
       // Start listening to changes
       fromEvent<MediaQueryListEvent>(
         window.matchMedia("(prefers-color-scheme: dark)"),
         "change",
       ).pipe(map((event) => (event.matches ? ThemeType.Dark : ThemeType.Light))),
     );
+  }
+
+  /**
+   * Gets the currently active system theme based on the given window.
+   * @param window The window to query for the current theme.
+   * @returns The active system theme.
+   */
+  static getSystemThemeFromWindow(window: Window): ThemeType {
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? ThemeType.Dark
+      : ThemeType.Light;
   }
 
   readonly theme$ = this.themeStateService.selectedTheme$.pipe(

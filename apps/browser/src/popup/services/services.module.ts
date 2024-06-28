@@ -1,6 +1,6 @@
 import { APP_INITIALIZER, NgModule, NgZone } from "@angular/core";
 import { Router } from "@angular/router";
-import { Subject, merge } from "rxjs";
+import { Subject, merge, of } from "rxjs";
 
 import { UnauthGuard as BaseUnauthGuardService } from "@bitwarden/angular/auth/guards";
 import { AngularThemingService } from "@bitwarden/angular/platform/services/theming/angular-theming.service";
@@ -485,14 +485,15 @@ const safeProviders: SafeProvider[] = [
     provide: SYSTEM_THEME_OBSERVABLE,
     useFactory: (platformUtilsService: PlatformUtilsService) => {
       // Safari doesn't properly handle the (prefers-color-scheme) media query in the popup window, it always returns light.
-      // In Safari, we have to use the background page instead, which comes with limitations like not dynamically changing the extension theme when the system theme is changed.
-      let windowContext = window;
+      // This means we have to use the background page instead, which comes with limitations like not dynamically
+      // changing the extension theme when the system theme is changed. We also have issues with memory leaks when
+      // holding the reference to the background page.
       const backgroundWindow = BrowserApi.getBackgroundPage();
       if (platformUtilsService.isSafari() && backgroundWindow) {
-        windowContext = backgroundWindow;
+        return of(AngularThemingService.getSystemThemeFromWindow(backgroundWindow));
+      } else {
+        return AngularThemingService.createSystemThemeFromWindow(window);
       }
-
-      return AngularThemingService.createSystemThemeFromWindow(windowContext);
     },
     deps: [PlatformUtilsService],
   }),
