@@ -573,17 +573,17 @@
       }
     }
   },
-  "masterPassDoesntMatch": {
-    "message": "De to adgangskoder matcher ikke."
-  },
-  "newAccountCreated": {
-    "message": "Den nye konto er oprettet! Der kan nu logges ind."
-  },
   "youSuccessfullyLoggedIn": {
     "message": "Du er nu logget ind"
   },
   "youMayCloseThisWindow": {
     "message": "Dette vindue kan nu lukkes"
+  },
+  "masterPassDoesntMatch": {
+    "message": "De to adgangskoder matcher ikke."
+  },
+  "newAccountCreated": {
+    "message": "Den nye konto er oprettet! Der kan nu logges ind."
   },
   "masterPassSent": {
     "message": "Der er sendt en e-mail til dig med dit hovedadgangskodetip."
@@ -666,18 +666,18 @@
   "authenticatorAppTitle": {
     "message": "Godkendelses-app"
   },
-  "authenticatorAppDesc": {
-    "message": "Brug en godkendelses-app (såsom Authy eller Google Autenticator) til at generere tidsbaserede bekræftelseskoder.",
-    "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
+  "authenticatorAppDescV2": {
+    "message": "Angiv en kode genereret af en godkendelses-app såsom Bitwarden Authenticator.",
+    "description": "'Bitwarden Authenticator' is a product name and should not be translated."
   },
-  "yubiKeyTitle": {
-    "message": "YubiKey OTP-sikkerhedsnøgle"
+  "yubiKeyTitleV2": {
+    "message": "Yubico OTP-sikkerhedsnøgle"
   },
   "yubiKeyDesc": {
     "message": "Brug en YubiKey for at tilgå din konto. Fungerer med YubiKey 4-, 4 Nano-, 4C- samt NEO-enheder."
   },
-  "duoDesc": {
-    "message": "Bekræft med Duo Security vha. Duo Mobile-app, SMS, telefonopkald eller U2F-sikkerhedsnøgle.",
+  "duoDescV2": {
+    "message": "Angiv en kode genereret af Duo Security.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
@@ -693,8 +693,8 @@
   "emailTitle": {
     "message": "E-mail"
   },
-  "emailDesc": {
-    "message": "Bekræftelseskoder vil blive e-mailet til dig."
+  "emailDescV2": {
+    "message": "Angiv en kode tilsendt pr. e-mail."
   },
   "loginUnavailable": {
     "message": "Login utilgængelig"
@@ -2842,6 +2842,9 @@
   },
   "confirmFilePassword": {
     "message": "Bekræft filadgangskode"
+  },
+  "exportSuccess": {
+    "message": "Boksdata eksporteret"
   },
   "multifactorAuthenticationCancelled": {
     "message": "Multifaktorgodkendelse afbrudt"

@@ -573,17 +573,17 @@
       }
     }
   },
-  "masterPassDoesntMatch": {
-    "message": "Підтвердження головного пароля не збігається."
-  },
-  "newAccountCreated": {
-    "message": "Ваш обліковий запис створений! Тепер ви можете увійти."
-  },
   "youSuccessfullyLoggedIn": {
     "message": "Ви успішно увійшли в систему"
   },
   "youMayCloseThisWindow": {
     "message": "Можете закрити це вікно"
+  },
+  "masterPassDoesntMatch": {
+    "message": "Підтвердження головного пароля не збігається."
+  },
+  "newAccountCreated": {
+    "message": "Ваш обліковий запис створений! Тепер ви можете увійти."
   },
   "masterPassSent": {
     "message": "Ми надіслали вам лист з підказкою для головного пароля."
@@ -666,18 +666,18 @@
   "authenticatorAppTitle": {
     "message": "Програма автентифікації"
   },
-  "authenticatorAppDesc": {
-    "message": "Використовуйте програму автентифікації (наприклад, Authy або Google Authenticator), щоб генерувати тимчасові коди підтвердження.",
-    "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
+  "authenticatorAppDescV2": {
+    "message": "Введіть код, згенерований програмою для автентифікації, як-от Bitwarden Authenticator.",
+    "description": "'Bitwarden Authenticator' is a product name and should not be translated."
   },
-  "yubiKeyTitle": {
-    "message": "Ключ безпеки YubiKey OTP"
+  "yubiKeyTitleV2": {
+    "message": "Ключ безпеки Yubico OTP"
   },
   "yubiKeyDesc": {
     "message": "Використовуйте YubiKey для доступу до сховища. Працює з YubiKey 4, 4 Nano, 4C та пристроями NEO."
   },
-  "duoDesc": {
-    "message": "Авторизуйтесь за допомогою Duo Security з використанням мобільного додатку Duo Mobile, SMS, телефонного виклику, або ключа безпеки U2F.",
+  "duoDescV2": {
+    "message": "Введіть код, згенерований Duo Security.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
@@ -693,8 +693,8 @@
   "emailTitle": {
     "message": "Е-пошта"
   },
-  "emailDesc": {
-    "message": "Коди підтвердження будуть надсилатися на вашу пошту."
+  "emailDescV2": {
+    "message": "Введіть код, надісланий вам електронною поштою."
   },
   "loginUnavailable": {
     "message": "Вхід недоступний"
@@ -2842,6 +2842,9 @@
   },
   "confirmFilePassword": {
     "message": "Підтвердьте пароль файлу"
+  },
+  "exportSuccess": {
+    "message": "Дані сховища експортовано"
   },
   "multifactorAuthenticationCancelled": {
     "message": "Багатофакторну автентифікацію скасовано"

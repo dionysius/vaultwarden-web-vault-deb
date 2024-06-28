@@ -573,17 +573,17 @@
       }
     }
   },
-  "masterPassDoesntMatch": {
-    "message": "Potvrzení hlavního hesla se neshoduje."
-  },
-  "newAccountCreated": {
-    "message": "Váš účet byl vytvořen! Můžete se přihlásit."
-  },
   "youSuccessfullyLoggedIn": {
     "message": "Byli jste úspěšně přihlášeni"
   },
   "youMayCloseThisWindow": {
     "message": "Toto okno můžete zavřít"
+  },
+  "masterPassDoesntMatch": {
+    "message": "Potvrzení hlavního hesla se neshoduje."
+  },
+  "newAccountCreated": {
+    "message": "Váš účet byl vytvořen! Můžete se přihlásit."
   },
   "masterPassSent": {
     "message": "Poslali jsme vám e-mail s nápovědou k hlavnímu heslu."
@@ -666,18 +666,18 @@
   "authenticatorAppTitle": {
     "message": "Ověřovací aplikace"
   },
-  "authenticatorAppDesc": {
-    "message": "Použijte ověřovací aplikaci (jako je Authy nebo Google Authenticator) pro generování časově omezených kódů.",
-    "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
+  "authenticatorAppDescV2": {
+    "message": "Zadejte kód vygenerovaný ověřovací aplikací, jako je Autentikátor Bitwarden.",
+    "description": "'Bitwarden Authenticator' is a product name and should not be translated."
   },
-  "yubiKeyTitle": {
+  "yubiKeyTitleV2": {
     "message": "Bezpečnostní klíč YubiKey OTP"
   },
   "yubiKeyDesc": {
     "message": "Použije YubiKey pro přístup k Vašemu trezoru. Podporuje YubiKey 4, 4 Nano, 4C a NEO."
   },
-  "duoDesc": {
-    "message": "Ověření pomocí Duo Security prostřednictvím aplikace Duo Mobile, SMS, telefonního hovoru nebo bezpečnostního klíče U2F.",
+  "duoDescV2": {
+    "message": "Zadejte kód vygenerovaný DUO Security.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
@@ -693,8 +693,8 @@
   "emailTitle": {
     "message": "E-mail"
   },
-  "emailDesc": {
-    "message": "Ověřovací kódy Vám budou zaslány e-mailem."
+  "emailDescV2": {
+    "message": "Zadejte kód odeslaný na Váš e-mail."
   },
   "loginUnavailable": {
     "message": "Přihlášení není dostupné"
@@ -2842,6 +2842,9 @@
   },
   "confirmFilePassword": {
     "message": "Potvrzení hesla souboru"
+  },
+  "exportSuccess": {
+    "message": "Data trezoru byla exportována"
   },
   "multifactorAuthenticationCancelled": {
     "message": "Vícefázové ověření zrušeno"

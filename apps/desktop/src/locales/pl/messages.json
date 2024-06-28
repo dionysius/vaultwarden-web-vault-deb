@@ -573,17 +573,17 @@
       }
     }
   },
-  "masterPassDoesntMatch": {
-    "message": "Hasła nie pasują do siebie."
-  },
-  "newAccountCreated": {
-    "message": "Konto zostało utworzone! Teraz możesz się zalogować."
-  },
   "youSuccessfullyLoggedIn": {
     "message": "Zalogowałeś się pomyślnie"
   },
   "youMayCloseThisWindow": {
     "message": "Możesz zamknąć to okno"
+  },
+  "masterPassDoesntMatch": {
+    "message": "Hasła nie pasują do siebie."
+  },
+  "newAccountCreated": {
+    "message": "Konto zostało utworzone! Teraz możesz się zalogować."
   },
   "masterPassSent": {
     "message": "Wysłaliśmy Tobie wiadomość e-mail z podpowiedzią do hasła głównego."
@@ -666,18 +666,18 @@
   "authenticatorAppTitle": {
     "message": "Aplikacja uwierzytelniająca"
   },
-  "authenticatorAppDesc": {
-    "message": "Użyj aplikacji mobilnej (np. Authy lub Google Authenticator) do generowania czasowych kodów weryfikacyjnych.",
-    "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
+  "authenticatorAppDescV2": {
+    "message": "Wprowadź kod wygenerowany przez aplikację uwierzytelniającą, jak Bitwarden Authenticator.",
+    "description": "'Bitwarden Authenticator' is a product name and should not be translated."
   },
-  "yubiKeyTitle": {
-    "message": "Klucz bezpieczeństwa YubiKey OTP"
+  "yubiKeyTitleV2": {
+    "message": "Klucz bezpieczeństwa Yubico OTP"
   },
   "yubiKeyDesc": {
     "message": "Użyj YubiKey jako metody dostępu do konta. Działa z YubiKey 4, 4 Nano, 4C i urządzeniami NEO."
   },
-  "duoDesc": {
-    "message": "Weryfikacja z użyciem Duo Security poprzez aplikację Duo Mobile, SMS, połączenie telefoniczne lub klucz bezpieczeństwa U2F.",
+  "duoDescV2": {
+    "message": "Wprowadź kod wygenerowany przez Duo Security.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
@@ -693,8 +693,8 @@
   "emailTitle": {
     "message": "Adres e-mail"
   },
-  "emailDesc": {
-    "message": "Kody weryfikacyjne zostaną wysłane do Ciebie wiadomością e-mail."
+  "emailDescV2": {
+    "message": "Wpisz kod wysłany na Twój adres e-mail."
   },
   "loginUnavailable": {
     "message": "Logowanie jest niedostępne"
@@ -2842,6 +2842,9 @@
   },
   "confirmFilePassword": {
     "message": "Potwierdź hasło pliku"
+  },
+  "exportSuccess": {
+    "message": "Dane sejfu zostały wyeksportowane"
   },
   "multifactorAuthenticationCancelled": {
     "message": "Uwierzytelnianie wieloskładnikowe zostało anulowane"

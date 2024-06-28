@@ -573,17 +573,17 @@
       }
     }
   },
-  "masterPassDoesntMatch": {
-    "message": "Potvrdenie hlavného hesla sa nezhoduje."
-  },
-  "newAccountCreated": {
-    "message": "Váš nový účet bol vytvorený! Teraz sa môžete prihlásiť."
-  },
   "youSuccessfullyLoggedIn": {
     "message": "Úspešne ste sa prihlásili"
   },
   "youMayCloseThisWindow": {
     "message": "Toto okno môžete zavrieť"
+  },
+  "masterPassDoesntMatch": {
+    "message": "Potvrdenie hlavného hesla sa nezhoduje."
+  },
+  "newAccountCreated": {
+    "message": "Váš nový účet bol vytvorený! Teraz sa môžete prihlásiť."
   },
   "masterPassSent": {
     "message": "Emailom sme vám poslali nápoveď k hlavnému heslu."
@@ -666,18 +666,18 @@
   "authenticatorAppTitle": {
     "message": "Overovacia aplikácia"
   },
-  "authenticatorAppDesc": {
-    "message": "Použite overovaciu aplikáciu (napríklad Authy alebo Google Authenticator) na generovanie časovo obmedzených overovacích kódov.",
-    "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
+  "authenticatorAppDescV2": {
+    "message": "Zadajte kód vygenerovaný overovacou aplikáciou akou je Bitwarden Authenticator.",
+    "description": "'Bitwarden Authenticator' is a product name and should not be translated."
   },
-  "yubiKeyTitle": {
-    "message": "YubiKey OTP bezpečnostný kľúč"
+  "yubiKeyTitleV2": {
+    "message": "Bezpečnostný kľúč Yubico OTP"
   },
   "yubiKeyDesc": {
     "message": "Použiť YubiKey pre prístup k vášmu účtu. Pracuje s YubiKey 4, 4 Nano, 4C a s NEO zariadeniami."
   },
-  "duoDesc": {
-    "message": "Overiť sa prostredníctvom Duo Security použitím Duo Mobile aplikácie, SMS, telefonátu alebo U2F bezpečnostným kľúčom.",
+  "duoDescV2": {
+    "message": "Zadajte kód vygenerovaný aplikáciou Duo Security.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
@@ -693,8 +693,8 @@
   "emailTitle": {
     "message": "Email"
   },
-  "emailDesc": {
-    "message": "Overovacie kódy vám budú zaslané emailom."
+  "emailDescV2": {
+    "message": "Zadajte kód zaslaný na váš e-mail."
   },
   "loginUnavailable": {
     "message": "Prihlásenie nedostupné"
@@ -2842,6 +2842,9 @@
   },
   "confirmFilePassword": {
     "message": "Potvrdiť heslo súboru"
+  },
+  "exportSuccess": {
+    "message": "Údaje z trezora boli exportované"
   },
   "multifactorAuthenticationCancelled": {
     "message": "Viacfaktorové overenie zrušené"
