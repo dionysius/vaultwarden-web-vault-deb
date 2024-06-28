@@ -962,18 +962,18 @@
   "authenticatorAppTitle": {
     "message": "Hitelesítő alkalmazás"
   },
-  "authenticatorAppDesc": {
-    "message": "Hitelesítő alkalmazás használata (mint például az Authy vagy a Google Authenticator) idő alapú ellenőrzőkód generálásához.",
-    "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
+  "authenticatorAppDescV2": {
+    "message": "Adjunk meg egy hitelesítő alkalmazás, például a Bitwarden Authenticator által generált kódot.",
+    "description": "'Bitwarden Authenticator' is a product name and should not be translated."
   },
-  "yubiKeyTitle": {
-    "message": "YubiKey OTP egyszeri időalapú jelszó biztonsági kulcs"
+  "yubiKeyTitleV2": {
+    "message": "YubiKey OTP biztonsági kulcs"
   },
   "yubiKeyDesc": {
     "message": "YubiKey használata a fiók eléréséhez. Működik a YubiKey 4, 4 Nano, 4C, és NEO eszközökkel."
   },
-  "duoDesc": {
-    "message": "Ellenőrzés Duo Security-val, a Duo Mobile alkalmazás, SMS, telefonhívás vagy U2F biztonsági kulcs használatával.",
+  "duoDescV2": {
+    "message": "Adjuk meg a Duo Security által generált kódot.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
@@ -998,8 +998,8 @@
   "emailTitle": {
     "message": "Email cím"
   },
-  "emailDesc": {
-    "message": "Az ellenőrző kódok emailben kerülnek elküldésre."
+  "emailDescV2": {
+    "message": "Adjuk meg az email címre elküldött kódot."
   },
   "continue": {
     "message": "Folytatás"
@@ -1639,35 +1639,44 @@
   "twoStepLoginAuthDesc": {
     "message": "A kétlépéses bejelentkezési beállítások módosításához meg kell adni a mesterjelszót."
   },
-  "twoStepAuthenticatorDesc": {
-    "message": "Kövesük a következő lépéseket a kétlépéses bejelentkezés beállításához egy hitelesítő alkalmazással:"
+  "twoStepAuthenticatorInstructionPrefix": {
+    "message": "Töltsünk le egy hitelesítő alkalmazást, mint például"
   },
-  "twoStepAuthenticatorDownloadApp": {
-    "message": "Kétlépéses hitelesítő alkalmazás letöltése"
+  "twoStepAuthenticatorInstructionInfix1": {
+    "message": ","
   },
-  "twoStepAuthenticatorNeedApp": {
-    "message": "Szükség van egy kétlépéses hitelesítő alkalmazásra? Töltsük le a következők egyikét."
+  "twoStepAuthenticatorInstructionInfix2": {
+    "message": "vagy"
   },
-  "iosDevices": {
-    "message": "iOS eszközök"
+  "twoStepAuthenticatorInstructionSuffix": {
+    "message": "."
   },
-  "androidDevices": {
-    "message": "Android eszközök"
+  "continueToExternalUrlTitle": {
+    "message": "Tovább: $URL$?",
+    "placeholders": {
+      "url": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
   },
-  "windowsDevices": {
-    "message": "Windows eszközök"
+  "continueToExternalUrlDesc": {
+    "message": "Kilépümk a Bitwardenből és egy külső webhelyet indítunk el egy új ablakban."
   },
-  "twoStepAuthenticatorAppsRecommended": {
-    "message": "Ezek az alkalmazások ajánlottak, de más hitelesítő alkalmazások is működnek."
+  "twoStepContinueToBitwardenUrlTitle": {
+    "message": "Folytatás a bitwarden.com webhelyen?"
   },
-  "twoStepAuthenticatorScanCode": {
-    "message": "Ezt a kódot kell beolvasni a hitelesítő alkalmazással."
+  "twoStepContinueToBitwardenUrlDesc": {
+    "message": "A Bitwarden Authenticator lehetővé teszi hitelesítő kulcsok tárolását és TOTP kódok generálását a kétlépcsős ellenőrzési folyamatokhoz. Tudjunk meg többet a bitwarden.com webhelyen."
+  },
+  "twoStepAuthenticatorScanCodeV2": {
+    "message": "Olvassuk be az alábbi QR kódot a hitelesítő alkalmazással,vagy írjuk be a kulcsot."
   },
   "key": {
     "message": "Kulcs"
   },
-  "twoStepAuthenticatorEnterCode": {
-    "message": "Adjuk meg az alkalmazásból kapott 6 számjegyű ellenőrző kódot."
+  "twoStepAuthenticatorEnterCodeV2": {
+    "message": "Ellenőrző kód"
   },
   "twoStepAuthenticatorReaddDesc": {
     "message": "Ha ezt egy másik eszközhöz is hozzá kell adni, lentebb található a hitelesítő alkalmazás QR kódja (vagy kulcsa)."
@@ -4150,6 +4159,9 @@
   },
   "thisWindowWillCloseIn5Seconds": {
     "message": "Ez az ablak 5 másodpercen belül automatikusan bezárul."
+  },
+  "youMayCloseThisWindow": {
+    "message": "Most már bezárható ez az ablak."
   },
   "includeAllTeamsFeatures": {
     "message": "Összes Csapat funkció, továbbá:"
@@ -8396,10 +8408,6 @@
   "exportClientReport": {
     "message": "Ügyfél jelentés exportálás"
   },
-  "invoiceNumberHeader": {
-    "message": "Számlaszám",
-    "description": "A table header for an invoice's number"
-  },
   "memberAccessReport": {
     "message": "Tagi hozzáférés"
   },
@@ -8431,21 +8439,55 @@
     "message": " Lépjünk kapcsolatba az ügyfélszolgálattal az előfizetés visszaállításához."
   },
   "secretPeopleDescription": {
-    "message": "Grant groups or people access to this secret. Permissions set for people will override permissions set by groups."
+    "message": "Adjunk hozzáférést csoportoknak vagy személyeknek ehhez a titkos kódhoz. A személyek számára beállított engedélyek felülírják a csoportok által beállított engedélyeket."
   },
   "secretPeopleEmptyMessage": {
-    "message": "Add people or groups to share access to this secret"
+    "message": "Személyek vagy csoportok hozzáadása a hozzáférés megosztásához ennél a tiktos kódnál"
   },
   "secretMachineAccountsDescription": {
-    "message": "Grant machine accounts access to this secret."
+    "message": "Gépi fiókok elérésének engedélyezése ehhez a titkos kódhoz."
   },
   "secretMachineAccountsEmptyMessage": {
-    "message": "Add machine accounts to grant access to this secret"
+    "message": "Gépi fiókok hozzáadása a titkos kód hozzáféréséhez"
   },
   "smAccessRemovalWarningSecretTitle": {
-    "message": "Remove access to this secret"
+    "message": "Hozzáférés eltávolítása ennél a titkos kódnál"
   },
   "smAccessRemovalSecretMessage": {
-    "message": "This action will remove your access to this secret."
+    "message": "Ez a művelet eltávolítja a hozzáférést ennél a titkos kódnál."
+  },
+  "invoice": {
+    "message": "Számla"
+  },
+  "unassignedSeatsAvailable": {
+    "message": "$SEATS$ kiosztatlan hely van.",
+    "placeholders": {
+      "seats": {
+        "content": "$1",
+        "example": "10"
+      }
+    },
+    "description": "A message showing how many unassigned seats are available for a provider."
+  },
+  "contactYourProviderForAdditionalSeats": {
+    "message": "További helyek vásárlásához forduljunk a szolgáltatóhoz."
+  },
+  "open": {
+    "message": "Megnyitás",
+    "description": "The status of an invoice."
+  },
+  "uncollectible": {
+    "message": "Begyűjthetetlen",
+    "description": "The status of an invoice."
+  },
+  "clientDetails": {
+    "message": "Ügyfél részletek"
+  },
+  "downloadCSV": {
+    "message": "CSV letöltése"
+  },
+  "billingHistoryDescription": {
+    "message": "Töltsük le a CSV fájlt, hogy minden számlázási dátumhoz megkapjuk az ügyfél részleteket. Az arányos költségeket a CSV nem tartalmazza és eltérhetnek a hivatkozott számlától. A legpontosabb számlázási részletekért tekintsük meg havi számlákat.",
+    "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
   }
 }

@@ -962,18 +962,18 @@
   "authenticatorAppTitle": {
     "message": "Aplikacja uwierzytelniająca"
   },
-  "authenticatorAppDesc": {
-    "message": "Użyj aplikacji mobilnej (np. Authy lub Google Authenticator) do generowania czasowych kodów weryfikacyjnych.",
-    "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
+  "authenticatorAppDescV2": {
+    "message": "Wprowadź kod wygenerowany przez aplikację uwierzytelniającą, jak Bitwarden Authenticator.",
+    "description": "'Bitwarden Authenticator' is a product name and should not be translated."
   },
-  "yubiKeyTitle": {
-    "message": "Klucz bezpieczeństwa YubiKey OTP"
+  "yubiKeyTitleV2": {
+    "message": "Klucz bezpieczeństwa Yubico OTP"
   },
   "yubiKeyDesc": {
     "message": "Użyj YubiKey jako metody dostępu do konta. Działa z YubiKey serii 4, serii 5 i urządzeniami NEO."
   },
-  "duoDesc": {
-    "message": "Weryfikacja z użyciem Duo Security poprzez aplikację Duo Mobile, SMS, połączenie telefoniczne lub klucz bezpieczeństwa U2F.",
+  "duoDescV2": {
+    "message": "Wprowadź kod wygenerowany przez Duo Security.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
@@ -998,8 +998,8 @@
   "emailTitle": {
     "message": "Adres e-mail"
   },
-  "emailDesc": {
-    "message": "Kody weryfikacyjne zostaną wysłane do Ciebie wiadomością e-mail."
+  "emailDescV2": {
+    "message": "Wpisz kod wysłany na Twój adres e-mail."
   },
   "continue": {
     "message": "Kontynuuj"
@@ -1639,35 +1639,44 @@
   "twoStepLoginAuthDesc": {
     "message": "Wpisz hasło główne, aby zmienić ustawienia logowania dwustopniowego."
   },
-  "twoStepAuthenticatorDesc": {
-    "message": "Wykonaj poniższe kroki, aby aktywować logowanie dwustopniowe przez aplikację uwierzytelniającą:"
+  "twoStepAuthenticatorInstructionPrefix": {
+    "message": "Pobierz aplikację uwierzytelniającą, taką jak"
   },
-  "twoStepAuthenticatorDownloadApp": {
-    "message": "Pobierz aplikację uwierzytelniającą"
+  "twoStepAuthenticatorInstructionInfix1": {
+    "message": ","
   },
-  "twoStepAuthenticatorNeedApp": {
-    "message": "Potrzebujesz aplikacji uwierzytelniającej? Pobierz jedną z nich"
+  "twoStepAuthenticatorInstructionInfix2": {
+    "message": "lub"
   },
-  "iosDevices": {
-    "message": "Urządzenia z systemem iOS"
+  "twoStepAuthenticatorInstructionSuffix": {
+    "message": "."
   },
-  "androidDevices": {
-    "message": "Urządzenia z systemem Android"
+  "continueToExternalUrlTitle": {
+    "message": "Kontynuować do $URL$?",
+    "placeholders": {
+      "url": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
   },
-  "windowsDevices": {
-    "message": "Urządzenia z systemem Windows"
+  "continueToExternalUrlDesc": {
+    "message": "Opuszczasz Bitwarden i uruchamiasz zewnętrzną stronę internetową w nowym oknie."
   },
-  "twoStepAuthenticatorAppsRecommended": {
-    "message": "Te aplikacje uwierzytelniające są zalecane, jednak inne również będą działać."
+  "twoStepContinueToBitwardenUrlTitle": {
+    "message": "Kontynuować do bitwarden.com?"
   },
-  "twoStepAuthenticatorScanCode": {
-    "message": "Zeskanuj kod QR w aplikacji uwierzytelniającej"
+  "twoStepContinueToBitwardenUrlDesc": {
+    "message": "Bitwarden Authenticator pozwala na przechowywanie kluczy uwierzytelniających i generowanie kodów TOTP do dwuetapowego procesu weryfikacji. Dowiedz się więcej na stronie bitwarden.com."
+  },
+  "twoStepAuthenticatorScanCodeV2": {
+    "message": "Zeskanuj poniższy kod QR za pomocą aplikacji uwierzytelniającej lub wprowadź klucz."
   },
   "key": {
     "message": "Klucz"
   },
-  "twoStepAuthenticatorEnterCode": {
-    "message": "Wpisz 6-cyfrowy kod weryfikacyjny z aplikacji uwierzytelniającej"
+  "twoStepAuthenticatorEnterCodeV2": {
+    "message": "Kod weryfikacyjny"
   },
   "twoStepAuthenticatorReaddDesc": {
     "message": "Jeśli chcesz dodać inne urządzenie, poniżej znajdziesz kod QR (lub klucz) wymagany przez aplikację uwierzytelniającą."
@@ -4150,6 +4159,9 @@
   },
   "thisWindowWillCloseIn5Seconds": {
     "message": "To okno zostanie automatycznie zamknięte za 5 sekund"
+  },
+  "youMayCloseThisWindow": {
+    "message": "Możesz zamknąć to okno"
   },
   "includeAllTeamsFeatures": {
     "message": "Wszystkie funkcje zespołów oraz:"
@@ -8385,7 +8397,7 @@
     "description": "A hint that shows up on the Provider setup page to inform the admin the billing email will receive the provider's invoices."
   },
   "upgradeOrganizationEnterprise": {
-    "message": "Identify security risks by auditing member access"
+    "message": "Zidentyfikuj ryzyka bezpieczeństwa poprzez audyt dostępów członków"
   },
   "onlyAvailableForEnterpriseOrganization": {
     "message": "Szybko przejrzyj dostęp członków do całej organizacji poprzez uaktualnienie do planu Enterprise."
@@ -8396,15 +8408,11 @@
   "exportClientReport": {
     "message": "Eksportuj raport klienta"
   },
-  "invoiceNumberHeader": {
-    "message": "Numer faktury",
-    "description": "A table header for an invoice's number"
-  },
   "memberAccessReport": {
-    "message": "Member access"
+    "message": "Dostęp członków"
   },
   "memberAccessReportDesc": {
-    "message": "Ensure members have access to the right credentials and their accounts are secure. Use this report to obtain a CSV of member access and account configurations."
+    "message": "Upewnij się, że członkowie mają dostęp do odpowiednich danych uwierzytelniających, a ich konta są bezpieczne. Użyj tego raportu, aby uzyskać dostęp do CSV z dostępem użytkownika i konfiguracją konta."
   },
   "higherKDFIterations": {
     "message": "Wyższe wartości iteracji KDF mogą pomóc chronić Twoje hasło główne przed złamaniem przez atakującego."
@@ -8447,5 +8455,39 @@
   },
   "smAccessRemovalSecretMessage": {
     "message": "Ta akcja usunie Twój dostęp do tego sekretu."
+  },
+  "invoice": {
+    "message": "Faktura"
+  },
+  "unassignedSeatsAvailable": {
+    "message": "Masz $SEATS$ nieprzypisanych miejsc.",
+    "placeholders": {
+      "seats": {
+        "content": "$1",
+        "example": "10"
+      }
+    },
+    "description": "A message showing how many unassigned seats are available for a provider."
+  },
+  "contactYourProviderForAdditionalSeats": {
+    "message": "Skontaktuj się z administratorem dostawcąy w celu zakupu dodatkowych miejsc."
+  },
+  "open": {
+    "message": "Otwarta",
+    "description": "The status of an invoice."
+  },
+  "uncollectible": {
+    "message": "Niesciągalna",
+    "description": "The status of an invoice."
+  },
+  "clientDetails": {
+    "message": "Szczegóły klienta"
+  },
+  "downloadCSV": {
+    "message": "Pobierz CSV"
+  },
+  "billingHistoryDescription": {
+    "message": "Pobierz plik CSV, aby uzyskać dane klienta dla każdej daty rozliczeniowej. Proporcjonalne opłaty nie są uwzględnione w CSV i mogą różnić się od powiązanej faktury. Aby uzyskać najdokładniejsze dane rozliczeniowe, zapoznaj się z Twoimi miesięcznymi fakturami.",
+    "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
   }
 }

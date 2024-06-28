@@ -216,7 +216,7 @@
     "message": "Afficher/Masquer"
   },
   "toggleCollapse": {
-    "message": "Déplier ou replier",
+    "message": "Déplier / replier",
     "description": "Toggling an expand/collapse state."
   },
   "generatePassword": {
@@ -962,18 +962,18 @@
   "authenticatorAppTitle": {
     "message": "Application d'authentification"
   },
-  "authenticatorAppDesc": {
-    "message": "Utilisez une application d'authentification (comme Authy ou Google Authenticator) pour générer des codes de vérification basés sur le temps.",
-    "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
+  "authenticatorAppDescV2": {
+    "message": "Entrez un code généré par une application d'authentification comme Bitwarden Authenticator.",
+    "description": "'Bitwarden Authenticator' is a product name and should not be translated."
   },
-  "yubiKeyTitle": {
-    "message": "Clé de sécurité OTP YubiKey"
+  "yubiKeyTitleV2": {
+    "message": "Clé de sécurité OTP de Yubico"
   },
   "yubiKeyDesc": {
     "message": "Utilisez une YubiKey pour accéder à votre compte. Fonctionne avec les YubiKey séries 4, séries 5 et NEO."
   },
-  "duoDesc": {
-    "message": "Vérifiez avec Duo Security à l'aide de l'application Duo Mobile, d'un SMS, d'un appel téléphonique ou d'une clé de sécurité U2F.",
+  "duoDescV2": {
+    "message": "Entrez un code généré par Duo Security.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
@@ -998,8 +998,8 @@
   "emailTitle": {
     "message": "Courriel"
   },
-  "emailDesc": {
-    "message": "Les codes de vérification vous seront envoyés par courriel."
+  "emailDescV2": {
+    "message": "Entrez le code envoyé à votre adresse courriel."
   },
   "continue": {
     "message": "Continuer"
@@ -1639,35 +1639,44 @@
   "twoStepLoginAuthDesc": {
     "message": "Saisissez votre mot de passe principal pour modifier les paramètres d'authentification à deux facteurs."
   },
-  "twoStepAuthenticatorDesc": {
-    "message": "Suivre ces étapes pour mettre en place l''authentification à deux facteurs avec une application d'authentification :"
+  "twoStepAuthenticatorInstructionPrefix": {
+    "message": "Télécharger une application d'authentification telle que"
   },
-  "twoStepAuthenticatorDownloadApp": {
-    "message": "Télécharger une application d'authentification à deux facteurs"
+  "twoStepAuthenticatorInstructionInfix1": {
+    "message": ","
   },
-  "twoStepAuthenticatorNeedApp": {
-    "message": "Besoin d'une application d'authentification à deux facteurs ? Téléchargez en une parmi les suivantes"
+  "twoStepAuthenticatorInstructionInfix2": {
+    "message": "ou"
   },
-  "iosDevices": {
-    "message": "Appareils iOS"
+  "twoStepAuthenticatorInstructionSuffix": {
+    "message": "."
   },
-  "androidDevices": {
-    "message": "Appareils Android"
+  "continueToExternalUrlTitle": {
+    "message": "Continuer vers $URL$?",
+    "placeholders": {
+      "url": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
   },
-  "windowsDevices": {
-    "message": "Appareils Windows"
+  "continueToExternalUrlDesc": {
+    "message": "Vous quittez Bitwarden et lancez un site web externe dans une nouvelle fenêtre."
   },
-  "twoStepAuthenticatorAppsRecommended": {
-    "message": "Ces applications sont recommandées, mais d'autres applications d'authentification fonctionneront également."
+  "twoStepContinueToBitwardenUrlTitle": {
+    "message": "Continuer vers bitwarden.com?"
   },
-  "twoStepAuthenticatorScanCode": {
-    "message": "Scannez ce QR code avec votre application d'authentification"
+  "twoStepContinueToBitwardenUrlDesc": {
+    "message": "Bitwarden Authenticator vous permet de stocker les clés d'authentification et de générer des codes TOTP pour les demande d'authentification en 2 étapes. Apprenez-en plus sur le site web bitwarden.com."
+  },
+  "twoStepAuthenticatorScanCodeV2": {
+    "message": "Scannez le code QR ci-dessous avec votre application d'authentification ou saisissez la clé."
   },
   "key": {
     "message": "Clé"
   },
-  "twoStepAuthenticatorEnterCode": {
-    "message": "Entrez le code de vérification à 6 chiffres fourni par l’application"
+  "twoStepAuthenticatorEnterCodeV2": {
+    "message": "Code de vérification"
   },
   "twoStepAuthenticatorReaddDesc": {
     "message": "Dans le cas où vous devez l’ajouter à un autre appareil, voici le code QR (ou clé) requis par votre application d'authentification."
@@ -2392,7 +2401,7 @@
     "message": "Fichier de licence"
   },
   "licenseFileDesc": {
-    "message": "Votre fichier de licence sera nommé comme quelque chose comme $FILE_NAME$",
+    "message": "Votre fichier de licence aura un nom similaire à $FILE_NAME$",
     "placeholders": {
       "file_name": {
         "content": "$1",
@@ -4150,6 +4159,9 @@
   },
   "thisWindowWillCloseIn5Seconds": {
     "message": "Cette fenêtre se fermera automatiquement dans 5 secondes"
+  },
+  "youMayCloseThisWindow": {
+    "message": "Vous pouvez fermer cette fenêtre"
   },
   "includeAllTeamsFeatures": {
     "message": "Toutes les fonctionnalités pour les équipes, plus :"
@@ -8396,10 +8408,6 @@
   "exportClientReport": {
     "message": "Exporter le rapport client"
   },
-  "invoiceNumberHeader": {
-    "message": "Numéro de facture",
-    "description": "A table header for an invoice's number"
-  },
   "memberAccessReport": {
     "message": "Accès des membres"
   },
@@ -8431,21 +8439,55 @@
     "message": " Contactez le Support Client pour rétablir votre abonnement."
   },
   "secretPeopleDescription": {
-    "message": "Grant groups or people access to this secret. Permissions set for people will override permissions set by groups."
+    "message": "Autoriser les groupes ou les personnes à accéder à ce secret. Les permissions définies pour les personnes remplaceront les permissions définies par les groupes."
   },
   "secretPeopleEmptyMessage": {
-    "message": "Add people or groups to share access to this secret"
+    "message": "Ajouter des personnes ou des groupes pour partager l'accès à ce secret"
   },
   "secretMachineAccountsDescription": {
-    "message": "Grant machine accounts access to this secret."
+    "message": "Accorder l'accès aux comptes de machine à ce projet."
   },
   "secretMachineAccountsEmptyMessage": {
-    "message": "Add machine accounts to grant access to this secret"
+    "message": "Ajouter des comptes de machine pour accorder l'accès à ce secret"
   },
   "smAccessRemovalWarningSecretTitle": {
-    "message": "Remove access to this secret"
+    "message": "Retirer l'accès à ce secret"
   },
   "smAccessRemovalSecretMessage": {
-    "message": "This action will remove your access to this secret."
+    "message": "Cette action retirera votre accès à ce secret."
+  },
+  "invoice": {
+    "message": "Facture"
+  },
+  "unassignedSeatsAvailable": {
+    "message": "Vous avez $SEATS$ licences non-assignées disponibles.",
+    "placeholders": {
+      "seats": {
+        "content": "$1",
+        "example": "10"
+      }
+    },
+    "description": "A message showing how many unassigned seats are available for a provider."
+  },
+  "contactYourProviderForAdditionalSeats": {
+    "message": "Contactez l'administrateur de votre fournisseur pour acheter des licences supplémentaires."
+  },
+  "open": {
+    "message": "Ouvrir",
+    "description": "The status of an invoice."
+  },
+  "uncollectible": {
+    "message": "Ne peut pas être collecté",
+    "description": "The status of an invoice."
+  },
+  "clientDetails": {
+    "message": "Détails Du Client"
+  },
+  "downloadCSV": {
+    "message": "Télécharger le fichier CSV"
+  },
+  "billingHistoryDescription": {
+    "message": "Téléchargez un fichier CSV pour obtenir les détails du client pour chaque date de facturation. Les frais au prorata ne sont pas inclus dans le fichier CSV et peuvent varier de la facture liée. Pour obtenir les détails de facturation les plus exacts, reportez-vous à vos factures mensuelles.",
+    "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
   }
 }

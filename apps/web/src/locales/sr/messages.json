@@ -962,18 +962,18 @@
   "authenticatorAppTitle": {
     "message": "Апликација Аутентификатор"
   },
-  "authenticatorAppDesc": {
-    "message": "Користите апликацију за аутентификацију (као што је Authy или Google Authenticator) за генерисање верификационих кодова.",
-    "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
+  "authenticatorAppDescV2": {
+    "message": "Унесите кôд који генерише апликација за аутентификацију као што је Bitwarden Authenticator.",
+    "description": "'Bitwarden Authenticator' is a product name and should not be translated."
   },
-  "yubiKeyTitle": {
-    "message": "YubiKey OTP сигурносни кључ"
+  "yubiKeyTitleV2": {
+    "message": "Yubico OTP сигурносни кључ"
   },
   "yubiKeyDesc": {
     "message": "Користите YubiKey за приступ налогу. Ради са YubiKey 4 и 5, и NEO уређаје."
   },
-  "duoDesc": {
-    "message": "Провери са Duo Security користећи Duo Mobile апликацију, СМС, телефонски позив, или U2F кључ.",
+  "duoDescV2": {
+    "message": "Унесите кôд који је генерисао Duo Security.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
@@ -998,8 +998,8 @@
   "emailTitle": {
     "message": "Е-пошта"
   },
-  "emailDesc": {
-    "message": "Верификациони кодови ће вам бити послати имејлом."
+  "emailDescV2": {
+    "message": "Унесите код послат на вашу е-пошту."
   },
   "continue": {
     "message": "Настави"
@@ -1639,35 +1639,44 @@
   "twoStepLoginAuthDesc": {
     "message": "Унесите главну лозинку да бисте изменили подешавања пријављивања у два корака."
   },
-  "twoStepAuthenticatorDesc": {
-    "message": "Следите ове кораке за подешавање пријаве у два корака помоћу апликације за проверу аутентичности:"
+  "twoStepAuthenticatorInstructionPrefix": {
+    "message": "Преузмите апликацију за аутентификацију као што је"
   },
-  "twoStepAuthenticatorDownloadApp": {
-    "message": "Преузмите апликацију за аутентификацију у два корака"
+  "twoStepAuthenticatorInstructionInfix1": {
+    "message": ","
   },
-  "twoStepAuthenticatorNeedApp": {
-    "message": "Треба вам апликација за аутентификацију у два корака? Преузмите једну од следеће"
+  "twoStepAuthenticatorInstructionInfix2": {
+    "message": "или"
   },
-  "iosDevices": {
-    "message": "iOS уређаји"
+  "twoStepAuthenticatorInstructionSuffix": {
+    "message": "."
   },
-  "androidDevices": {
-    "message": "Android уређаји"
+  "continueToExternalUrlTitle": {
+    "message": "Наставити на $URL$?",
+    "placeholders": {
+      "url": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
   },
-  "windowsDevices": {
-    "message": "Windows уређаји"
+  "continueToExternalUrlDesc": {
+    "message": "Напуштате Bitwarden и покрећете спољне веб странице у новом прозору."
   },
-  "twoStepAuthenticatorAppsRecommended": {
-    "message": "Ове апликације се препоручују, међутим, друге апликације за утврђивање аутентичности такође ће радити."
+  "twoStepContinueToBitwardenUrlTitle": {
+    "message": "Наставити на bitwarden.com?"
   },
-  "twoStepAuthenticatorScanCode": {
-    "message": "Скенирајте овај QR код са апликацијом за идентификљцију"
+  "twoStepContinueToBitwardenUrlDesc": {
+    "message": "Bitwarden Authenticator омогућава вам да чувате кључеве аутентификатора и генеришете ТОТП кодове за токове верификације у 2 корака. Сазнајте више на bitwarden.com."
+  },
+  "twoStepAuthenticatorScanCodeV2": {
+    "message": "Скенирајте КР кôд у наставку помоћу апликације за аутентификацију или унесите кључ."
   },
   "key": {
     "message": "Кључ"
   },
-  "twoStepAuthenticatorEnterCode": {
-    "message": "Унесите резултирајући шестоцифрени код из апликације"
+  "twoStepAuthenticatorEnterCodeV2": {
+    "message": "Верификациони кôд"
   },
   "twoStepAuthenticatorReaddDesc": {
     "message": "У случају да га требате додати на други уређај, доле је КР код (или кључ) који захтева ваша апликација за аутентификацију."
@@ -4150,6 +4159,9 @@
   },
   "thisWindowWillCloseIn5Seconds": {
     "message": "Овај прозор ће се аутоматски затворити за 5 секунди"
+  },
+  "youMayCloseThisWindow": {
+    "message": "Можете затворити овај прозор"
   },
   "includeAllTeamsFeatures": {
     "message": "Све функције тима, плус:"
@@ -8396,10 +8408,6 @@
   "exportClientReport": {
     "message": "Извези извештај клијента"
   },
-  "invoiceNumberHeader": {
-    "message": "Број фактуре",
-    "description": "A table header for an invoice's number"
-  },
   "memberAccessReport": {
     "message": "Приступ чланова"
   },
@@ -8428,24 +8436,58 @@
     }
   },
   "providerReinstate": {
-    "message": " Contact Customer Support to reinstate your subscription."
+    "message": " Контактирајте корисничку подршку да бисте обновили претплату."
   },
   "secretPeopleDescription": {
-    "message": "Grant groups or people access to this secret. Permissions set for people will override permissions set by groups."
+    "message": "Одобрите групама или особама приступ овој тајни. Дозволе постављене за особе ће заменити дозволе које су поставиле групе."
   },
   "secretPeopleEmptyMessage": {
-    "message": "Add people or groups to share access to this secret"
+    "message": "Додајте особе или групе да бисте делили приступ овој тајни"
   },
   "secretMachineAccountsDescription": {
-    "message": "Grant machine accounts access to this secret."
+    "message": "Одобрите налозима машине приступ овој тајни."
   },
   "secretMachineAccountsEmptyMessage": {
-    "message": "Add machine accounts to grant access to this secret"
+    "message": "Додајте машинске налоге да бисте одобрили приступ овој тајни"
   },
   "smAccessRemovalWarningSecretTitle": {
-    "message": "Remove access to this secret"
+    "message": "Уклоните приступ овој тајни"
   },
   "smAccessRemovalSecretMessage": {
-    "message": "This action will remove your access to this secret."
+    "message": "Ова радња ће вам уклонити приступ овој тајни."
+  },
+  "invoice": {
+    "message": "Фактура"
+  },
+  "unassignedSeatsAvailable": {
+    "message": "Имат $SEATS$ доступна нераспоређена места.",
+    "placeholders": {
+      "seats": {
+        "content": "$1",
+        "example": "10"
+      }
+    },
+    "description": "A message showing how many unassigned seats are available for a provider."
+  },
+  "contactYourProviderForAdditionalSeats": {
+    "message": "Обратите се свом админ провајдеру да бисте купили додатна места."
+  },
+  "open": {
+    "message": "Отвори",
+    "description": "The status of an invoice."
+  },
+  "uncollectible": {
+    "message": "Ненаплативо",
+    "description": "The status of an invoice."
+  },
+  "clientDetails": {
+    "message": "Детаљи клијента"
+  },
+  "downloadCSV": {
+    "message": "Преузми ЦСВ"
+  },
+  "billingHistoryDescription": {
+    "message": "Преузмите ЦСВ да бисте добили детаље о клијенту за сваки датум обрачуна. Пропорционални трошкови нису укључени у ЦСВ и могу се разликовати од повезане фактуре. За најтачније податке о обрачуну погледајте своје месечне фактуре.",
+    "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
   }
 }

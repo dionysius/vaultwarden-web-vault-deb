@@ -962,18 +962,18 @@
   "authenticatorAppTitle": {
     "message": "Програма автентифікації"
   },
-  "authenticatorAppDesc": {
-    "message": "Використовуйте програму автентифікації (наприклад, Authy або Google Authenticator), щоб генерувати тимчасові коди підтвердження.",
-    "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
+  "authenticatorAppDescV2": {
+    "message": "Введіть код, згенерований програмою для автентифікації, як-от Bitwarden Authenticator.",
+    "description": "'Bitwarden Authenticator' is a product name and should not be translated."
   },
-  "yubiKeyTitle": {
-    "message": "Ключ безпеки YubiKey OTP"
+  "yubiKeyTitleV2": {
+    "message": "Ключ безпеки Yubico OTP"
   },
   "yubiKeyDesc": {
-    "message": "Використовуйте YubiKey для доступу до облікового запису. Працює з YubiKey серії 4, 5, а також пристроями NEO."
+    "message": "Використовуйте YubiKey 4, 5, або пристрій NEO."
   },
-  "duoDesc": {
-    "message": "Авторизуйтесь за допомогою Duo Security з використанням мобільного додатку Duo Mobile, SMS, телефонного виклику, або ключа безпеки U2F.",
+  "duoDescV2": {
+    "message": "Введіть код, згенерований Duo Security.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
@@ -987,10 +987,10 @@
     "message": "Ключ безпеки FIDO U2F"
   },
   "webAuthnTitle": {
-    "message": "FIDO2 WebAuthn"
+    "message": "Ключ доступу"
   },
   "webAuthnDesc": {
-    "message": "Використовуйте будь-який ключ безпеки WebAuthn для доступу до сховища."
+    "message": "Використовуйте біометрію вашого пристрою або сумісний ключ безпеки FIDO2."
   },
   "webAuthnMigrated": {
     "message": "(Перенесено з FIDO)"
@@ -998,8 +998,8 @@
   "emailTitle": {
     "message": "Е-пошта"
   },
-  "emailDesc": {
-    "message": "Коди підтвердження будуть надсилатися на вашу пошту."
+  "emailDescV2": {
+    "message": "Введіть код, надісланий вам електронною поштою."
   },
   "continue": {
     "message": "Продовжити"
@@ -1639,35 +1639,44 @@
   "twoStepLoginAuthDesc": {
     "message": "Введіть головний пароль, щоб змінити налаштування двоетапної перевірки."
   },
-  "twoStepAuthenticatorDesc": {
-    "message": "Налаштуйте двоетапну перевірку за допомогою програми автентифікації:"
+  "twoStepAuthenticatorInstructionPrefix": {
+    "message": "Завантажте програму для автентифікації, як от"
   },
-  "twoStepAuthenticatorDownloadApp": {
-    "message": "Завантажте програму автентифікації для двоетапної перевірки"
+  "twoStepAuthenticatorInstructionInfix1": {
+    "message": ","
   },
-  "twoStepAuthenticatorNeedApp": {
-    "message": "Необхідна програма автентифікації для двоетапної перевірки? Завантажте одну з таких"
+  "twoStepAuthenticatorInstructionInfix2": {
+    "message": "або"
   },
-  "iosDevices": {
-    "message": "Пристрої iOS"
+  "twoStepAuthenticatorInstructionSuffix": {
+    "message": "."
   },
-  "androidDevices": {
-    "message": "Пристрої Android"
+  "continueToExternalUrlTitle": {
+    "message": "Продовжити на $URL$?",
+    "placeholders": {
+      "url": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
   },
-  "windowsDevices": {
-    "message": "Пристрої Windows"
+  "continueToExternalUrlDesc": {
+    "message": "Зараз ви перейдете з Bitwarden до вебсайту в новому вікні."
   },
-  "twoStepAuthenticatorAppsRecommended": {
-    "message": "Ці програми є рекомендованими, однак ви можете використовувати й інші."
+  "twoStepContinueToBitwardenUrlTitle": {
+    "message": "Продовжити на bitwarden.com?"
   },
-  "twoStepAuthenticatorScanCode": {
-    "message": "Скануйте цей QR-код за допомогою програми автентифікації"
+  "twoStepContinueToBitwardenUrlDesc": {
+    "message": "Bitwarden Authenticator дозволяє зберігати ключі авторизації та генерувати одноразові коди TOTP для двоетапної перевірки. Дізнайтеся більше про це на вебсайті bitwarden.com."
+  },
+  "twoStepAuthenticatorScanCodeV2": {
+    "message": "Скануйте зазначений нижче QR-код за допомогою програми для автентифікації або введіть ключ."
   },
   "key": {
     "message": "Ключ"
   },
-  "twoStepAuthenticatorEnterCode": {
-    "message": "Введіть отриманий в програмі 6-значний код підтвердження"
+  "twoStepAuthenticatorEnterCodeV2": {
+    "message": "Код підтвердження"
   },
   "twoStepAuthenticatorReaddDesc": {
     "message": "Якщо вам необхідно додати інший пристрій, скануйте зазначений нижче QR-код (або введіть ключ) для вашої програми автентифікації."
@@ -4150,6 +4159,9 @@
   },
   "thisWindowWillCloseIn5Seconds": {
     "message": "Це вікно автоматично закриється через 5 секунд"
+  },
+  "youMayCloseThisWindow": {
+    "message": "Можете закрити це вікно"
   },
   "includeAllTeamsFeatures": {
     "message": "Усі функції команд, плюс:"
@@ -7889,7 +7901,7 @@
     "message": "Скориговані місця будуть відображені в наступному платіжному циклі."
   },
   "unassignedSeatsDescription": {
-    "message": "Непризначені місця передплати"
+    "message": "Непризначені місця"
   },
   "purchaseSeatDescription": {
     "message": "Додаткові придбані місця"
@@ -8396,10 +8408,6 @@
   "exportClientReport": {
     "message": "Експортувати звіт клієнта"
   },
-  "invoiceNumberHeader": {
-    "message": "Номер рахунку",
-    "description": "A table header for an invoice's number"
-  },
   "memberAccessReport": {
     "message": "Доступ учасників"
   },
@@ -8431,21 +8439,55 @@
     "message": " Зверніться до служби підтримки для відновлення передплати."
   },
   "secretPeopleDescription": {
-    "message": "Grant groups or people access to this secret. Permissions set for people will override permissions set by groups."
+    "message": "Надайте групам або людям доступ до цього секрету. Дозволи, надані користувачам, перевизначать дозволи, встановлені для груп."
   },
   "secretPeopleEmptyMessage": {
-    "message": "Add people or groups to share access to this secret"
+    "message": "Додайте людей або групи, щоб поділитися доступом до цього секрету"
   },
   "secretMachineAccountsDescription": {
-    "message": "Grant machine accounts access to this secret."
+    "message": "Надайте машинним обліковим записам доступ до цього секрету."
   },
   "secretMachineAccountsEmptyMessage": {
-    "message": "Add machine accounts to grant access to this secret"
+    "message": "Додайте машинні облікові записи для надання доступу до цього секрету"
   },
   "smAccessRemovalWarningSecretTitle": {
-    "message": "Remove access to this secret"
+    "message": "Скасувати доступ до цього секрету"
   },
   "smAccessRemovalSecretMessage": {
-    "message": "This action will remove your access to this secret."
+    "message": "Ця дія призведе до вилучення вашого доступу до цього секрету."
+  },
+  "invoice": {
+    "message": "Рахунок"
+  },
+  "unassignedSeatsAvailable": {
+    "message": "У вас доступно $SEATS$ непризначених місць.",
+    "placeholders": {
+      "seats": {
+        "content": "$1",
+        "example": "10"
+      }
+    },
+    "description": "A message showing how many unassigned seats are available for a provider."
+  },
+  "contactYourProviderForAdditionalSeats": {
+    "message": "Зверніться до адміністратора вашого провайдера для придбання додаткових місць."
+  },
+  "open": {
+    "message": "Відкрито",
+    "description": "The status of an invoice."
+  },
+  "uncollectible": {
+    "message": "Не збирається",
+    "description": "The status of an invoice."
+  },
+  "clientDetails": {
+    "message": "Подробиці клієнта"
+  },
+  "downloadCSV": {
+    "message": "Завантажити CSV"
+  },
+  "billingHistoryDescription": {
+    "message": "Завантажте CSV для отримання клієнтських даних для кожної платіжної дати. Пропорційні витрати не включаються до CSV і можуть відрізнятися від пов'язаного рахунка. Для отримання найточніших даних щодо оплати, перегляньте щомісячні рахунки.",
+    "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
   }
 }

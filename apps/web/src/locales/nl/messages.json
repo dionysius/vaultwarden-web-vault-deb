@@ -962,18 +962,18 @@
   "authenticatorAppTitle": {
     "message": "Authenticatie-app"
   },
-  "authenticatorAppDesc": {
-    "message": "Gebruik een authenticatie-app (zoals Authy of Google Authenticator) om tijdgebaseerde authenticatiecodes te genereren.",
-    "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
+  "authenticatorAppDescV2": {
+    "message": "Door een authenticatie-app zoals Bitwarden Authenticator gegenereerde code invoeren.",
+    "description": "'Bitwarden Authenticator' is a product name and should not be translated."
   },
-  "yubiKeyTitle": {
+  "yubiKeyTitleV2": {
     "message": "YubiKey OTP-beveiligingssleutel"
   },
   "yubiKeyDesc": {
     "message": "Gebruik een YubiKey om toegang te krijgen tot je account. Werkt met YubiKey 4, 4 Nano, 4C en Neo-apparaten."
   },
-  "duoDesc": {
-    "message": "Verifieer met Duo Security middels de Duo Mobile-app, sms, spraakoproep of een U2F-beveiligingssleutel.",
+  "duoDescV2": {
+    "message": "Door Duo Security gegenereerde code invoeren.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
@@ -998,8 +998,8 @@
   "emailTitle": {
     "message": "E-mailadres"
   },
-  "emailDesc": {
-    "message": "Je ontvangt verificatiecodes via e-mail."
+  "emailDescV2": {
+    "message": "Via e-mail verstuurde code invoeren."
   },
   "continue": {
     "message": "Doorgaan"
@@ -1639,35 +1639,44 @@
   "twoStepLoginAuthDesc": {
     "message": "Vul je hoofdwachtwoord in om je tweestapsaanmeldingsinstellingen te wijzigen."
   },
-  "twoStepAuthenticatorDesc": {
-    "message": "Volg deze stappen om tweestapsaanmelding in te stellen met een authenticatie-app:"
+  "twoStepAuthenticatorInstructionPrefix": {
+    "message": "Download een authenticatie-app zoals"
   },
-  "twoStepAuthenticatorDownloadApp": {
-    "message": "Download een tweestapsauthenticatie-app"
+  "twoStepAuthenticatorInstructionInfix1": {
+    "message": ","
   },
-  "twoStepAuthenticatorNeedApp": {
-    "message": "Een tweestapsauthenticatie app nodig? Download een van de volgende"
+  "twoStepAuthenticatorInstructionInfix2": {
+    "message": "of"
   },
-  "iosDevices": {
-    "message": "iOS-apparaten"
+  "twoStepAuthenticatorInstructionSuffix": {
+    "message": "."
   },
-  "androidDevices": {
-    "message": "Android-apparaten"
+  "continueToExternalUrlTitle": {
+    "message": "Doorgaan naar $URL$?",
+    "placeholders": {
+      "url": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
   },
-  "windowsDevices": {
-    "message": "Windows-apparaten"
+  "continueToExternalUrlDesc": {
+    "message": "Je verlaat Bitwarden en start een externe website in een nieuw venster."
   },
-  "twoStepAuthenticatorAppsRecommended": {
-    "message": "Deze apps zijn aanbevolen, maar andere authenticatie-apps werken ook."
+  "twoStepContinueToBitwardenUrlTitle": {
+    "message": "Doorgaan naar bitwarden.com?"
   },
-  "twoStepAuthenticatorScanCode": {
-    "message": "Scan deze QR-code met je authenticatie-app"
+  "twoStepContinueToBitwardenUrlDesc": {
+    "message": "Met Bitwarden Authenticator kunt je authenticatiesleutels opslaan en TOTP-codes voor tweestapsaanmelding genereren. Lees meer op de website bitwarden.com."
+  },
+  "twoStepAuthenticatorScanCodeV2": {
+    "message": "Scan de onderstaande QR-code met je authenticator-app of voer de sleutel in."
   },
   "key": {
     "message": "Sleutel"
   },
-  "twoStepAuthenticatorEnterCode": {
-    "message": "Voer de 6-cijferige verificatiecode uit je authenticatie-app in"
+  "twoStepAuthenticatorEnterCodeV2": {
+    "message": "Verificatiecode"
   },
   "twoStepAuthenticatorReaddDesc": {
     "message": "In het geval dat je het aan een ander apparaat moet toevoegen, is hieronder de QR-code (of sleutel) die je authenticatie-app nodig heeft."
@@ -4150,6 +4159,9 @@
   },
   "thisWindowWillCloseIn5Seconds": {
     "message": "Dit scherm sluit automatisch over 5 seconden"
+  },
+  "youMayCloseThisWindow": {
+    "message": "Je kunt dit venster sluiten"
   },
   "includeAllTeamsFeatures": {
     "message": "Alle functionaliteit van Teams plus:"
@@ -8396,10 +8408,6 @@
   "exportClientReport": {
     "message": "Klantenrapport exporteren"
   },
-  "invoiceNumberHeader": {
-    "message": "Factuurnummer",
-    "description": "A table header for an invoice's number"
-  },
   "memberAccessReport": {
     "message": "Ledentoegang"
   },
@@ -8447,5 +8455,39 @@
   },
   "smAccessRemovalSecretMessage": {
     "message": "Hiermee trek je je toegang tot het project in."
+  },
+  "invoice": {
+    "message": "Factuur"
+  },
+  "unassignedSeatsAvailable": {
+    "message": "Je hebt $SEATS$ niet-toegewezen plaatsen beschikbaar.",
+    "placeholders": {
+      "seats": {
+        "content": "$1",
+        "example": "10"
+      }
+    },
+    "description": "A message showing how many unassigned seats are available for a provider."
+  },
+  "contactYourProviderForAdditionalSeats": {
+    "message": "Neem contact op met je beheerder om extra plaatsen te kopen."
+  },
+  "open": {
+    "message": "Openen",
+    "description": "The status of an invoice."
+  },
+  "uncollectible": {
+    "message": "Oninbaar",
+    "description": "The status of an invoice."
+  },
+  "clientDetails": {
+    "message": "Klantgegevens"
+  },
+  "downloadCSV": {
+    "message": "CSV downloaden"
+  },
+  "billingHistoryDescription": {
+    "message": "Download een CSV om klantgegevens voor elke factuurdatum te krijgen. De CSV bevat geen pro rata kosten en kan afwijken van de gekoppelde factuur. Voor de meest nauwkeurige factureringsgegevens kun je je maandelijkse facturen raadplegen.",
+    "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
   }
 }

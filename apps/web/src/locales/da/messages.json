@@ -962,18 +962,18 @@
   "authenticatorAppTitle": {
     "message": "Godkendelses-app"
   },
-  "authenticatorAppDesc": {
-    "message": "Benyt en godkendelses-app (såsom Authy eller Google Authenticator) til at generere tidsbaserede bekræftelseskoder.",
-    "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
+  "authenticatorAppDescV2": {
+    "message": "Angiv en kode genereret af en godkendelses-app såsom Bitwarden Authenticator.",
+    "description": "'Bitwarden Authenticator' is a product name and should not be translated."
   },
-  "yubiKeyTitle": {
-    "message": "YubiKey OTP-sikkerhedsnøgle"
+  "yubiKeyTitleV2": {
+    "message": "Yubico OTP-sikkerhedsnøgle"
   },
   "yubiKeyDesc": {
-    "message": "Benyt en YubiKey for at tilgå din konto. Fungerer med YubiKey 4- og 5-serien samt NEO-enheder."
+    "message": "Benyt en YubiKey for at tilgå din konto. Fungerer med YubiKey 4-/5-serien samt NEO-enheder."
   },
-  "duoDesc": {
-    "message": "Bekræft med Duo Security vha. Duo Mobile-appen, SMS, telefonopkald eller U2F-sikkerhedsnøgle.",
+  "duoDescV2": {
+    "message": "Angiv en kode genereret af Duo Security.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
@@ -998,8 +998,8 @@
   "emailTitle": {
     "message": "E-mail"
   },
-  "emailDesc": {
-    "message": "Bekræftelseskoder vil blive e-mailet til dig."
+  "emailDescV2": {
+    "message": "Angiv en kode tilsendt pr. e-mail."
   },
   "continue": {
     "message": "Fortsæt"
@@ -1639,35 +1639,44 @@
   "twoStepLoginAuthDesc": {
     "message": "Angiv hovedadgangskoden for at ændre indstillinger for totrins-login."
   },
-  "twoStepAuthenticatorDesc": {
-    "message": "Følg disse trin for at opsætte totrins-login vha. en godkendelses-app:"
+  "twoStepAuthenticatorInstructionPrefix": {
+    "message": "Download en godkendelses-app, såsom f.eks."
   },
-  "twoStepAuthenticatorDownloadApp": {
-    "message": "Download en totrins godkendelses-app"
+  "twoStepAuthenticatorInstructionInfix1": {
+    "message": ","
   },
-  "twoStepAuthenticatorNeedApp": {
-    "message": "Behov for en totrins godkendelses-app? Download en af følgende"
+  "twoStepAuthenticatorInstructionInfix2": {
+    "message": "eller"
   },
-  "iosDevices": {
-    "message": "iOS-enheder"
+  "twoStepAuthenticatorInstructionSuffix": {
+    "message": "."
   },
-  "androidDevices": {
-    "message": "Android-enheder"
+  "continueToExternalUrlTitle": {
+    "message": "Fortsæt til $URL$?",
+    "placeholders": {
+      "url": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
   },
-  "windowsDevices": {
-    "message": "Windows-enheder"
+  "continueToExternalUrlDesc": {
+    "message": "Bitwarden forlades nu og et eksternt websted åbnes i et nyt vindue."
   },
-  "twoStepAuthenticatorAppsRecommended": {
-    "message": "Disse apps anbefales, men andre godkendelses-apps vil også fungere."
+  "twoStepContinueToBitwardenUrlTitle": {
+    "message": "Fortsæt til bitwarden.com?"
   },
-  "twoStepAuthenticatorScanCode": {
-    "message": "Skan denne QR-kode med godkendelses-appen"
+  "twoStepContinueToBitwardenUrlDesc": {
+    "message": "Bitwarden Authenticator muliggør at gemme godkendelsesnøgler og generere TOTP-koder til totrinsbekræftelsesstrømme. Læs mere på bitwarden.com-webstedet."
+  },
+  "twoStepAuthenticatorScanCodeV2": {
+    "message": "Skan QR-koden nedenfor med godkendelses-appen eller angiv nøglen."
   },
   "key": {
     "message": "Nøgle"
   },
-  "twoStepAuthenticatorEnterCode": {
-    "message": "Angiv den 6-cifrede bekræftelseskode fra appen"
+  "twoStepAuthenticatorEnterCodeV2": {
+    "message": "Bekræftelseskode"
   },
   "twoStepAuthenticatorReaddDesc": {
     "message": "Ønskes den føjet til en anden enhed, er nedenstående den QR-kode (eller nøgle), der kræves af godkendelses-appen."
@@ -4151,6 +4160,9 @@
   "thisWindowWillCloseIn5Seconds": {
     "message": "Dette vindue lukkes automatisk om 5 sekunder"
   },
+  "youMayCloseThisWindow": {
+    "message": "Dette vindue kan nu lukkes"
+  },
   "includeAllTeamsFeatures": {
     "message": "Alle teamfunktioner, plus:"
   },
@@ -5618,7 +5630,7 @@
     "message": "Rotering af faktureringssynk-tokenet vil ugyldiggøre det foregående token."
   },
   "selfHostedServer": {
-    "message": "self-hosted"
+    "message": "selv-hostet"
   },
   "customEnvironment": {
     "message": "Custom environment"
@@ -8396,10 +8408,6 @@
   "exportClientReport": {
     "message": "Eksportér klientrapport"
   },
-  "invoiceNumberHeader": {
-    "message": "Fakturanummer",
-    "description": "A table header for an invoice's number"
-  },
   "memberAccessReport": {
     "message": "Medlemsadgang"
   },
@@ -8431,21 +8439,55 @@
     "message": " Kontakt kundesupport for at genoprette abonnementet."
   },
   "secretPeopleDescription": {
-    "message": "Grant groups or people access to this secret. Permissions set for people will override permissions set by groups."
+    "message": "Tildel grupper eller personer adgang til denne hemmelighed. Tilladelser sat for personer tilsidesætter tilladelser sat af grupper."
   },
   "secretPeopleEmptyMessage": {
-    "message": "Add people or groups to share access to this secret"
+    "message": "Tilføj personer eller grupper for at dele adgang til denne hemmelighed"
   },
   "secretMachineAccountsDescription": {
-    "message": "Grant machine accounts access to this secret."
+    "message": "Tildel maskinkonti adgang til denne hemmelighed."
   },
   "secretMachineAccountsEmptyMessage": {
-    "message": "Add machine accounts to grant access to this secret"
+    "message": "Tilføj maskinkontiadgang til denne hemmelighed"
   },
   "smAccessRemovalWarningSecretTitle": {
-    "message": "Remove access to this secret"
+    "message": "Fjern adgang til denne hemmelighed"
   },
   "smAccessRemovalSecretMessage": {
-    "message": "This action will remove your access to this secret."
+    "message": "Denne handling fjerner projektadgangen."
+  },
+  "invoice": {
+    "message": "Faktura"
+  },
+  "unassignedSeatsAvailable": {
+    "message": "Der er $SEATS$ utildelte pladser tilgængelige.",
+    "placeholders": {
+      "seats": {
+        "content": "$1",
+        "example": "10"
+      }
+    },
+    "description": "A message showing how many unassigned seats are available for a provider."
+  },
+  "contactYourProviderForAdditionalSeats": {
+    "message": "Kontakt udbyder-admin for tilkøb af yderligere pladser."
+  },
+  "open": {
+    "message": "Åben",
+    "description": "The status of an invoice."
+  },
+  "uncollectible": {
+    "message": "Uopkrævelig",
+    "description": "The status of an invoice."
+  },
+  "clientDetails": {
+    "message": "Kundeoplysninger"
+  },
+  "downloadCSV": {
+    "message": "Download CSV"
+  },
+  "billingHistoryDescription": {
+    "message": "Download en CSV-fil for at få klientoplysninger for hver faktureringsdato. Forholdsmæssige gebyrer er ikke inkluderet i CSV og kan variere ift. den tilknyttede faktura. For de mest nøjagtige faktureringsoplysninger, se de månedlige fakturaer.",
+    "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
   }
 }

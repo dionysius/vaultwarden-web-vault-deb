@@ -962,18 +962,18 @@
   "authenticatorAppTitle": {
     "message": "Ověřovací aplikace"
   },
-  "authenticatorAppDesc": {
-    "message": "Použijte ověřovací aplikaci (jako je Authy nebo Google Authenticator) pro generování časově omezených kódů.",
-    "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
+  "authenticatorAppDescV2": {
+    "message": "Zadejte kód vygenerovaný ověřovací aplikací, jako je Autentikátor Bitwarden.",
+    "description": "'Bitwarden Authenticator' is a product name and should not be translated."
   },
-  "yubiKeyTitle": {
+  "yubiKeyTitleV2": {
     "message": "Bezpečnostní klíč YubiKey OTP"
   },
   "yubiKeyDesc": {
     "message": "Použije YubiKey pro přístup k Vašemu trezoru. Podporuje YubiKey 4, 5 a NEO."
   },
-  "duoDesc": {
-    "message": "Ověření pomocí Duo Security prostřednictvím aplikace Duo Mobile, SMS, telefonního hovoru nebo bezpečnostního klíče U2F.",
+  "duoDescV2": {
+    "message": "Zadejte kód vygenerovaný DUO Security.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
@@ -987,10 +987,10 @@
     "message": "Bezpečnostní klíč FIDO U2F"
   },
   "webAuthnTitle": {
-    "message": "FIDO2 WebAuthn"
+    "message": "Přístupový klíč"
   },
   "webAuthnDesc": {
-    "message": "Použije jakýkoli bezpečnostní klíč WebAuthn pro přístup k Vašemu účtu."
+    "message": "Používejte biometrické prvky Vašeho zařízení nebo bezpečnostní klíč kompatibilní s FIDO2."
   },
   "webAuthnMigrated": {
     "message": "(Migrováno z FIDO)"
@@ -998,8 +998,8 @@
   "emailTitle": {
     "message": "E-mail"
   },
-  "emailDesc": {
-    "message": "Ověřovací kódy Vám budou zaslány e-mailem."
+  "emailDescV2": {
+    "message": "Zadejte kód odeslaný na Váš e-mail."
   },
   "continue": {
     "message": "Pokračovat"
@@ -1639,35 +1639,44 @@
   "twoStepLoginAuthDesc": {
     "message": "Zadejte hlavní heslo pro úpravu dvoufázového přihlášení."
   },
-  "twoStepAuthenticatorDesc": {
-    "message": "Pro nastavení dvoufázového přihlášení pomocí ověřovací aplikace postupujte podle následujících kroků:"
+  "twoStepAuthenticatorInstructionPrefix": {
+    "message": "Stáhnout ověřovací aplikaci, jako je"
   },
-  "twoStepAuthenticatorDownloadApp": {
-    "message": "Stáhněte si ověřovací aplikaci"
+  "twoStepAuthenticatorInstructionInfix1": {
+    "message": ","
   },
-  "twoStepAuthenticatorNeedApp": {
-    "message": "Potřebujete aplikaci pro dvoufázové ověření? Stáhněte si jednu z následujících:"
+  "twoStepAuthenticatorInstructionInfix2": {
+    "message": "nebo"
   },
-  "iosDevices": {
-    "message": "iOS zařízení"
+  "twoStepAuthenticatorInstructionSuffix": {
+    "message": "."
   },
-  "androidDevices": {
-    "message": "Android zařízení"
+  "continueToExternalUrlTitle": {
+    "message": "Pokračovat na $URL$?",
+    "placeholders": {
+      "url": {
+        "content": "$1",
+        "example": "bitwarden.com"
+      }
+    }
   },
-  "windowsDevices": {
-    "message": "Windows zařízení"
+  "continueToExternalUrlDesc": {
+    "message": "Opouštíte Bitwarden a spouštíte externí webové stránky v novém okně."
   },
-  "twoStepAuthenticatorAppsRecommended": {
-    "message": "Tyto aplikace doporučujeme, nicméně další aplikace pro ověření budou fungovat také."
+  "twoStepContinueToBitwardenUrlTitle": {
+    "message": "Pokračovat na bitwarden.com?"
   },
-  "twoStepAuthenticatorScanCode": {
-    "message": "Naskenujte tento QR kód Vaší ověřovací aplikací"
+  "twoStepContinueToBitwardenUrlDesc": {
+    "message": "Autentikátor Bitwarden umožňuje ukládat ověřovací klíče a generovat TOTP kódy pro 2-fázové ověřování. Další informace naleznete na stránkách bitwarden.com"
+  },
+  "twoStepAuthenticatorScanCodeV2": {
+    "message": "Naskenujte QR kód pomocí Vaší ověřovací aplikace nebo zadejte klíč."
   },
   "key": {
     "message": "Klíč"
   },
-  "twoStepAuthenticatorEnterCode": {
-    "message": "Zadejte 6místný kód z ověřovací aplikace"
+  "twoStepAuthenticatorEnterCodeV2": {
+    "message": "Ověřovací kód"
   },
   "twoStepAuthenticatorReaddDesc": {
     "message": "V případě potřeby přidání do jiného zařízení je níže zobrazen QR kód (nebo klíč) vyžadovaný ověřovací aplikací."
@@ -4150,6 +4159,9 @@
   },
   "thisWindowWillCloseIn5Seconds": {
     "message": "Toto okno se automaticky zavře za 5 sekund"
+  },
+  "youMayCloseThisWindow": {
+    "message": "Toto okno můžete zavřít"
   },
   "includeAllTeamsFeatures": {
     "message": "Všechny funkce týmů, navíc:"
@@ -7889,7 +7901,7 @@
     "message": "Nastavení uživatelů bude započítáno v dalším fakturačním cyklu."
   },
   "unassignedSeatsDescription": {
-    "message": "Nepřiřazení uživatelé k odběru"
+    "message": "Nepřiřazení uživatelé"
   },
   "purchaseSeatDescription": {
     "message": "Další zakoupení uživatelé"
@@ -8396,10 +8408,6 @@
   "exportClientReport": {
     "message": "Exportovat hlášení klienta"
   },
-  "invoiceNumberHeader": {
-    "message": "Číslo faktury",
-    "description": "A table header for an invoice's number"
-  },
   "memberAccessReport": {
     "message": "Přístup členů"
   },
@@ -8447,5 +8455,39 @@
   },
   "smAccessRemovalSecretMessage": {
     "message": "Tato akce odebere Váš přístup k tomuto tajnému klíči."
+  },
+  "invoice": {
+    "message": "Faktura"
+  },
+  "unassignedSeatsAvailable": {
+    "message": "Máte $SEATS$ uživatelů k dispozici.",
+    "placeholders": {
+      "seats": {
+        "content": "$1",
+        "example": "10"
+      }
+    },
+    "description": "A message showing how many unassigned seats are available for a provider."
+  },
+  "contactYourProviderForAdditionalSeats": {
+    "message": "Obraťte se na správce svého poskytovatele pro nákup dalších uživatelů."
+  },
+  "open": {
+    "message": "Otevřít",
+    "description": "The status of an invoice."
+  },
+  "uncollectible": {
+    "message": "Nedobytné",
+    "description": "The status of an invoice."
+  },
+  "clientDetails": {
+    "message": "Detaily klienta"
+  },
+  "downloadCSV": {
+    "message": "Stáhnout CSV"
+  },
+  "billingHistoryDescription": {
+    "message": "Stáhněte si soubor CSV a získejte údaje o klientovi pro každé datum fakturace. Proporcionální poplatky nejsou v CSV zahrnuty a mohou se lišit od propojené faktury. Nejpřesnější údaje o vyúčtování naleznete v měsíčních fakturách.",
+    "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
   }
 }
