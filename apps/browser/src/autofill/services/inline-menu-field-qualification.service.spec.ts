@@ -34,10 +34,23 @@ describe("InlineMenuFieldQualificationService", () => {
           );
         });
 
+        it("has a keyword value that indicates the field is for a create account form", () => {
+          const field = mock<AutofillField>({
+            type: "password",
+            placeholder: "create account password",
+            autoCompleteType: "",
+          });
+
+          expect(inlineMenuFieldQualificationService.isFieldForLoginForm(field, pageDetails)).toBe(
+            false,
+          );
+        });
+
         it("has a type that is an excluded type", () => {
           AutoFillConstants.ExcludedAutofillLoginTypes.forEach((excludedType) => {
             const field = mock<AutofillField>({
               type: excludedType,
+              autoCompleteType: "",
             });
 
             expect(
@@ -53,6 +66,7 @@ describe("InlineMenuFieldQualificationService", () => {
               htmlID: index === 0 ? attribute : "",
               htmlName: index === 1 ? attribute : "",
               placeholder: index > 1 ? attribute : "",
+              autoCompleteType: "",
             });
 
             expect(
@@ -67,6 +81,7 @@ describe("InlineMenuFieldQualificationService", () => {
             htmlID: "not-password",
             htmlName: "not-password",
             placeholder: "not-password",
+            autoCompleteType: "",
           });
 
           expect(inlineMenuFieldQualificationService.isFieldForLoginForm(field, pageDetails)).toBe(
@@ -80,6 +95,7 @@ describe("InlineMenuFieldQualificationService", () => {
             htmlID: "something-else",
             htmlName: "something-else",
             placeholder: "something-else",
+            autoCompleteType: "",
           });
 
           expect(inlineMenuFieldQualificationService.isFieldForLoginForm(field, pageDetails)).toBe(
@@ -93,6 +109,7 @@ describe("InlineMenuFieldQualificationService", () => {
             htmlID: "search",
             htmlName: "something-else",
             placeholder: "something-else",
+            autoCompleteType: "",
           });
 
           expect(inlineMenuFieldQualificationService.isFieldForLoginForm(field, pageDetails)).toBe(
@@ -112,12 +129,14 @@ describe("InlineMenuFieldQualificationService", () => {
               htmlName: "user-password",
               placeholder: "user-password",
               form: "",
+              autoCompleteType: "",
             });
             const secondField = mock<AutofillField>({
               type: "password",
               htmlID: "some-other-password",
               htmlName: "some-other-password",
               placeholder: "some-other-password",
+              autoCompleteType: "",
             });
             pageDetails.fields = [field, secondField];
 
@@ -133,18 +152,21 @@ describe("InlineMenuFieldQualificationService", () => {
               htmlName: "user-password",
               placeholder: "user-password",
               form: "",
+              autoCompleteType: "",
             });
             const usernameField = mock<AutofillField>({
               type: "text",
               htmlID: "user-username",
               htmlName: "user-username",
               placeholder: "user-username",
+              autoCompleteType: "",
             });
             const secondUsernameField = mock<AutofillField>({
               type: "text",
               htmlID: "some-other-user-username",
               htmlName: "some-other-user-username",
               placeholder: "some-other-user-username",
+              autoCompleteType: "",
             });
             pageDetails.fields = [field, usernameField, secondUsernameField];
 
@@ -186,6 +208,7 @@ describe("InlineMenuFieldQualificationService", () => {
               htmlName: "user-password",
               placeholder: "user-password",
               form: "validFormId",
+              autoCompleteType: "",
             });
             const secondField = mock<AutofillField>({
               type: "password",
@@ -193,6 +216,7 @@ describe("InlineMenuFieldQualificationService", () => {
               htmlName: "some-other-password",
               placeholder: "some-other-password",
               form: "validFormId",
+              autoCompleteType: "",
             });
             pageDetails.fields = [field, secondField];
 
@@ -218,12 +242,35 @@ describe("InlineMenuFieldQualificationService", () => {
           );
         });
 
+        it("is structured on a page with a single set of username and password fields", () => {
+          const field = mock<AutofillField>({
+            type: "password",
+            htmlID: "user-password",
+            htmlName: "user-password",
+            placeholder: "user-password",
+            autoCompleteType: "",
+          });
+          const usernameField = mock<AutofillField>({
+            type: "text",
+            htmlID: "user-username",
+            htmlName: "user-username",
+            placeholder: "user-username",
+            autoCompleteType: "",
+          });
+          pageDetails.fields = [field, usernameField];
+
+          expect(inlineMenuFieldQualificationService.isFieldForLoginForm(field, pageDetails)).toBe(
+            true,
+          );
+        });
+
         it("has a type of `text` with an attribute that indicates the field is a password field", () => {
           const field = mock<AutofillField>({
             type: "text",
             htmlID: null,
             htmlName: "user-password",
             placeholder: "user-password",
+            autoCompleteType: "",
           });
 
           expect(inlineMenuFieldQualificationService.isFieldForLoginForm(field, pageDetails)).toBe(
@@ -247,6 +294,7 @@ describe("InlineMenuFieldQualificationService", () => {
               htmlID: "user-username",
               htmlName: "user-username",
               placeholder: "user-username",
+              autoCompleteType: "",
             });
             pageDetails.fields = [field, usernameField];
 
@@ -273,6 +321,7 @@ describe("InlineMenuFieldQualificationService", () => {
               htmlName: "user-password",
               placeholder: "user-password",
               form: "validFormId",
+              autoCompleteType: "",
             });
             const secondPasswordField = mock<AutofillField>({
               type: "password",
@@ -280,6 +329,7 @@ describe("InlineMenuFieldQualificationService", () => {
               htmlName: "some-other-password",
               placeholder: "some-other-password",
               form: "anotherFormId",
+              autoCompleteType: "",
             });
             const usernameField = mock<AutofillField>({
               type: "text",
@@ -287,6 +337,7 @@ describe("InlineMenuFieldQualificationService", () => {
               htmlName: "user-username",
               placeholder: "user-username",
               form: "validFormId",
+              autoCompleteType: "",
             });
             pageDetails.fields = [field, secondPasswordField, usernameField];
 
@@ -310,6 +361,7 @@ describe("InlineMenuFieldQualificationService", () => {
               htmlName: "some-other-password",
               placeholder: "some-other-password",
               form: "anotherFormId",
+              autoCompleteType: "",
             });
             pageDetails.fields = [field, secondPasswordField];
 
@@ -347,21 +399,23 @@ describe("InlineMenuFieldQualificationService", () => {
           });
         });
 
-        ["new", "change", "neue", "ändern"].forEach((keyword) => {
-          it(`has a keyword of ${keyword} that indicates a 'new or changed' username is being filled`, () => {
-            const field = mock<AutofillField>({
-              type: "text",
-              autoCompleteType: "",
-              htmlID: "user-username",
-              htmlName: "user-username",
-              placeholder: `${keyword} username`,
-            });
+        ["new", "change", "neue", "ändern", "register", "create", "registration"].forEach(
+          (keyword) => {
+            it(`has a keyword of ${keyword} that indicates a 'new or changed' username is being filled`, () => {
+              const field = mock<AutofillField>({
+                type: "text",
+                autoCompleteType: "",
+                htmlID: "user-username",
+                htmlName: "user-username",
+                placeholder: `${keyword} username`,
+              });
 
-            expect(
-              inlineMenuFieldQualificationService.isFieldForLoginForm(field, pageDetails),
-            ).toBe(false);
-          });
-        });
+              expect(
+                inlineMenuFieldQualificationService.isFieldForLoginForm(field, pageDetails),
+              ).toBe(false);
+            });
+          },
+        );
 
         describe("does not have a parent form element", () => {
           beforeEach(() => {
