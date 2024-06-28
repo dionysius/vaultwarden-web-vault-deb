@@ -1105,18 +1105,18 @@
   "authenticatorAppTitle": {
     "message": "Aplicação de autenticação"
   },
-  "authenticatorAppDesc": {
-    "message": "Utilize uma aplicação de autenticação (como o Authy ou o Google Authenticator) para gerar códigos de verificação baseados no tempo.",
-    "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
+  "authenticatorAppDescV2": {
+    "message": "Introduza um código gerado por uma aplicação de autenticação como o Bitwarden Authenticator.",
+    "description": "'Bitwarden Authenticator' is a product name and should not be translated."
   },
-  "yubiKeyTitle": {
-    "message": "Chave de segurança YubiKey OTP"
+  "yubiKeyTitleV2": {
+    "message": "Chave de segurança Yubico OTP"
   },
   "yubiKeyDesc": {
     "message": "Utilize uma YubiKey para aceder à sua conta. Funciona com os dispositivos YubiKey 4, 4 Nano, 4C e NEO."
   },
-  "duoDesc": {
-    "message": "Verifique com a Duo Security utilizando a aplicação Duo Mobile, SMS, chamada telefónica ou chave de segurança U2F.",
+  "duoDescV2": {
+    "message": "Introduza um código gerado pelo Duo Security.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
@@ -1132,8 +1132,8 @@
   "emailTitle": {
     "message": "E-mail"
   },
-  "emailDesc": {
-    "message": "Os códigos de verificação ser-lhe-ão enviados por e-mail."
+  "emailDescV2": {
+    "message": "Introduza um código enviado para o seu e-mail."
   },
   "selfHostedEnvironment": {
     "message": "Ambiente auto-hospedado"
@@ -1382,7 +1382,7 @@
     "message": "Nome próprio"
   },
   "middleName": {
-    "message": "Segundo nome"
+    "message": "Nome do meio"
   },
   "lastName": {
     "message": "Apelido"
@@ -3107,6 +3107,9 @@
   "confirmFilePassword": {
     "message": "Confirmar a palavra-passe do ficheiro"
   },
+  "exportSuccess": {
+    "message": "Dados do cofre exportados"
+  },
   "typePasskey": {
     "message": "Chave de acesso"
   },
@@ -3494,6 +3497,42 @@
   },
   "contactYourOrgAdmin": {
     "message": "Não é possível aceder aos itens de organizações desativadas. Contacte o proprietário da organização para obter assistência."
+  },
+  "upload": {
+    "message": "Carregar"
+  },
+  "addAttachment": {
+    "message": "Adicionar anexo"
+  },
+  "maxFileSizeSansPunctuation": {
+    "message": "O tamanho máximo do ficheiro é de 500 MB"
+  },
+  "deleteAttachmentName": {
+    "message": "Eliminar o anexo $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Attachment Name"
+      }
+    }
+  },
+  "downloadAttachmentName": {
+    "message": "Transferir $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Attachment Name"
+      }
+    }
+  },
+  "permanentlyDeleteAttachmentConfirmation": {
+    "message": "Tem a certeza de que pretende eliminar permanentemente este anexo?"
+  },
+  "premium": {
+    "message": "Premium"
+  },
+  "freeOrgsCannotUseAttachments": {
+    "message": "As organizações gratuitas não podem utilizar anexos"
   },
   "filters": {
     "message": "Filtros"

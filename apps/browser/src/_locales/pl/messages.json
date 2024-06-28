@@ -1105,18 +1105,18 @@
   "authenticatorAppTitle": {
     "message": "Aplikacja uwierzytelniająca"
   },
-  "authenticatorAppDesc": {
-    "message": "Użyj aplikacji mobilnej (np. Authy lub Google Authenticator) do generowania czasowych kodów weryfikacyjnych.",
-    "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
+  "authenticatorAppDescV2": {
+    "message": "Wprowadź kod wygenerowany przez aplikację uwierzytelniającą, jak Bitwarden Authenticator.",
+    "description": "'Bitwarden Authenticator' is a product name and should not be translated."
   },
-  "yubiKeyTitle": {
-    "message": "Klucz bezpieczeństwa YubiKey OTP"
+  "yubiKeyTitleV2": {
+    "message": "Klucz bezpieczeństwa Yubico OTP"
   },
   "yubiKeyDesc": {
     "message": "Użyj YubiKey jako metody dostępu do konta. Działa z YubiKey 4, 4 Nano, 4C i urządzeniami NEO."
   },
-  "duoDesc": {
-    "message": "Weryfikacja z użyciem Duo Security poprzez aplikację Duo Mobile, SMS, połączenie telefoniczne lub klucz bezpieczeństwa U2F.",
+  "duoDescV2": {
+    "message": "Wprowadź kod wygenerowany przez Duo Security.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
@@ -1132,8 +1132,8 @@
   "emailTitle": {
     "message": "Adres e-mail"
   },
-  "emailDesc": {
-    "message": "Kody weryfikacyjne zostaną wysłane do Ciebie wiadomością e-mail."
+  "emailDescV2": {
+    "message": "Wpisz kod wysłany na Twój adres e-mail."
   },
   "selfHostedEnvironment": {
     "message": "Samodzielnie hostowane środowisko"
@@ -3107,6 +3107,9 @@
   "confirmFilePassword": {
     "message": "Potwierdź hasło pliku"
   },
+  "exportSuccess": {
+    "message": "Dane sejfu zostały wyeksportowane"
+  },
   "typePasskey": {
     "message": "Passkey"
   },
@@ -3494,6 +3497,42 @@
   },
   "contactYourOrgAdmin": {
     "message": "Nie można uzyskać dostępu do elementów w wyłączonych organizacjach. Skontaktuj się z właścicielem organizacji, aby uzyskać pomoc."
+  },
+  "upload": {
+    "message": "Wyślij"
+  },
+  "addAttachment": {
+    "message": "Dodaj załącznik"
+  },
+  "maxFileSizeSansPunctuation": {
+    "message": "Maksymalny rozmiar pliku to 500 MB"
+  },
+  "deleteAttachmentName": {
+    "message": "Usuń załącznik $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Attachment Name"
+      }
+    }
+  },
+  "downloadAttachmentName": {
+    "message": "Pobierz $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Attachment Name"
+      }
+    }
+  },
+  "permanentlyDeleteAttachmentConfirmation": {
+    "message": "Czy na pewno chcesz trwale usunąć ten załącznik?"
+  },
+  "premium": {
+    "message": "Premium"
+  },
+  "freeOrgsCannotUseAttachments": {
+    "message": "Darmowe organizacje nie mogą używać załączników"
   },
   "filters": {
     "message": "Filtry"

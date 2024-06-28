@@ -1105,18 +1105,18 @@
   "authenticatorAppTitle": {
     "message": "Hitelesítő alkalmazás"
   },
-  "authenticatorAppDesc": {
-    "message": "Használj egy másik alkalmazást (mint például az Authy vagy a Google Authenticator) idő alapú ellenőrzőkód generálásához.",
-    "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
+  "authenticatorAppDescV2": {
+    "message": "Adjunk meg egy hitelesítő alkalmazás, például a Bitwarden Authenticator által generált kódot.",
+    "description": "'Bitwarden Authenticator' is a product name and should not be translated."
   },
-  "yubiKeyTitle": {
+  "yubiKeyTitleV2": {
     "message": "YubiKey OTP biztonsági kulcs"
   },
   "yubiKeyDesc": {
     "message": "Használj egy YubiKey-t, hogy hozzá férhess a felhasználódhoz. Működik a YubiKey 4, 4 Nano, 4C, és NEO eszközökkel."
   },
-  "duoDesc": {
-    "message": "Ellenőrizd Duo Security-val a Duo Mobile alkalmazás, SMS, telefon hívás vagy U2F biztonsági kulcs segítségével.",
+  "duoDescV2": {
+    "message": "Adjuk meg a Duo Security által generált kódot.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
@@ -1132,8 +1132,8 @@
   "emailTitle": {
     "message": "E-mail"
   },
-  "emailDesc": {
-    "message": "Ellenőrző kódok el lesznek e-mailbe küldve neked."
+  "emailDescV2": {
+    "message": "Adjuk meg az email címre elküldött kódot."
   },
   "selfHostedEnvironment": {
     "message": "Saját üzemeltetésű környezet"
@@ -3107,6 +3107,9 @@
   "confirmFilePassword": {
     "message": "Fájl jelszó megerősítés"
   },
+  "exportSuccess": {
+    "message": "A széfadatok exportálásra kerültek."
+  },
   "typePasskey": {
     "message": "Hozzáférési kulcs"
   },
@@ -3495,7 +3498,43 @@
   "contactYourOrgAdmin": {
     "message": "Items in deactivated organizations cannot be accessed. Contact your organization owner for assistance."
   },
+  "upload": {
+    "message": "Feltöltés"
+  },
+  "addAttachment": {
+    "message": "Melléklet hozzáadása"
+  },
+  "maxFileSizeSansPunctuation": {
+    "message": "A naximális fájlméret 500 MB."
+  },
+  "deleteAttachmentName": {
+    "message": "$NAME$ melléklet törlése",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Attachment Name"
+      }
+    }
+  },
+  "downloadAttachmentName": {
+    "message": "$NAME$ letöltése",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Attachment Name"
+      }
+    }
+  },
+  "permanentlyDeleteAttachmentConfirmation": {
+    "message": "Biztosan véglegesen törlésre kerüljön ez a melléklet?"
+  },
+  "premium": {
+    "message": "Prémium"
+  },
+  "freeOrgsCannotUseAttachments": {
+    "message": "Az ingyenes szervezetek nem használhatnak mellékleteket."
+  },
   "filters": {
-    "message": "Filters"
+    "message": "Szűrők"
   }
 }

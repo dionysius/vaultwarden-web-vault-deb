@@ -1105,18 +1105,18 @@
   "authenticatorAppTitle": {
     "message": "Апликација Аутентификатор"
   },
-  "authenticatorAppDesc": {
-    "message": "Користите апликацију за аутентификацију (као што је Authy или Google Authenticator) за генерисање верификационих кодова.",
-    "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
+  "authenticatorAppDescV2": {
+    "message": "Унесите кôд који генерише апликација за аутентификацију као што је Bitwarden Authenticator.",
+    "description": "'Bitwarden Authenticator' is a product name and should not be translated."
   },
-  "yubiKeyTitle": {
-    "message": "YubiKey OTP сигурносни кључ"
+  "yubiKeyTitleV2": {
+    "message": "Yubico OTP сигурносни кључ"
   },
   "yubiKeyDesc": {
     "message": "Користите YubiKey за приступ налогу. Ради са YubiKey 4, 4 Nano, 4C, и NEO уређајима."
   },
-  "duoDesc": {
-    "message": "Провери са Duo Security користећи Duo Mobile апликацију, СМС, телефонски позив, или U2F кључ.",
+  "duoDescV2": {
+    "message": "Унесите кôд који је генерисао Duo Security.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
@@ -1132,8 +1132,8 @@
   "emailTitle": {
     "message": "Е-пошта"
   },
-  "emailDesc": {
-    "message": "Верификациони кодови ће вам бити послати имејлом."
+  "emailDescV2": {
+    "message": "Унесите кôд послат на ваш имејл."
   },
   "selfHostedEnvironment": {
     "message": "Самостално окружење"
@@ -3107,6 +3107,9 @@
   "confirmFilePassword": {
     "message": "Потврдити лозинку датотеке"
   },
+  "exportSuccess": {
+    "message": "Подаци из сефа су извезени"
+  },
   "typePasskey": {
     "message": "Приступачни кључ"
   },
@@ -3495,7 +3498,43 @@
   "contactYourOrgAdmin": {
     "message": "Није могуће приступити ставкама у деактивираним организацијама. Обратите се власнику ваше организације за помоћ."
   },
+  "upload": {
+    "message": "Отпреми"
+  },
+  "addAttachment": {
+    "message": "Додај прилог"
+  },
+  "maxFileSizeSansPunctuation": {
+    "message": "Максимална величина је 500МБ"
+  },
+  "deleteAttachmentName": {
+    "message": "Обриши прилог $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Attachment Name"
+      }
+    }
+  },
+  "downloadAttachmentName": {
+    "message": "Преузми $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Attachment Name"
+      }
+    }
+  },
+  "permanentlyDeleteAttachmentConfirmation": {
+    "message": "Да ли сте сигурни да желите да трајно избришете овај прилог?"
+  },
+  "premium": {
+    "message": "Премијум"
+  },
+  "freeOrgsCannotUseAttachments": {
+    "message": "Бесплатне организације не могу да користе прилоге"
+  },
   "filters": {
-    "message": "Filters"
+    "message": "Филтери"
   }
 }

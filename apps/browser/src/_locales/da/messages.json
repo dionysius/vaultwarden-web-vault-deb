@@ -1105,18 +1105,18 @@
   "authenticatorAppTitle": {
     "message": "Autentificerings-app"
   },
-  "authenticatorAppDesc": {
-    "message": "Brug en autentificerings app (f.eks. Authy eller Google Autentificering) til at generere tidsbaserede bekræftelseskoder.",
-    "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
+  "authenticatorAppDescV2": {
+    "message": "Angiv en kode genereret af en godkendelses-app såsom Bitwarden Authenticator.",
+    "description": "'Bitwarden Authenticator' is a product name and should not be translated."
   },
-  "yubiKeyTitle": {
-    "message": "YubiKey OTP sikkerhedsnøgle"
+  "yubiKeyTitleV2": {
+    "message": "Yubico OTP-sikkerhedsnøgle"
   },
   "yubiKeyDesc": {
     "message": "Brug en YubiKey til at få adgang til din konto. Virker med YubiKey 4, 4 Nano, 4C og NEO enheder."
   },
-  "duoDesc": {
-    "message": "Bekræft med Duo sikkerhed ved hjælp af Duo Mobile app, SMS, telefonopkald eller U2F sikkerhedsnøgle.",
+  "duoDescV2": {
+    "message": "Angiv en kode genereret af Duo Security.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
@@ -1132,8 +1132,8 @@
   "emailTitle": {
     "message": "E-mail"
   },
-  "emailDesc": {
-    "message": "Bekræftelseskoder vil blive e-mailet til dig."
+  "emailDescV2": {
+    "message": "Angiv en kode tilsendt pr. e-mail."
   },
   "selfHostedEnvironment": {
     "message": "Selv-hosted miljø"
@@ -1142,13 +1142,13 @@
     "message": "Angiv grund-URL'en i din lokal-hostede Bitwarden-installation."
   },
   "selfHostedBaseUrlHint": {
-    "message": "Specify the base URL of your on-premises hosted Bitwarden installation. Example: https://bitwarden.company.com"
+    "message": "Angiv basis-URL'en for den lokalt-hosted Bitwarden-installation. Eks.: https://bitwarden.firma.dk"
   },
   "selfHostedCustomEnvHeader": {
-    "message": "For advanced configuration, you can specify the base URL of each service independently."
+    "message": "Til avancerede brugere. Man kan angive basis-URL'en for hver tjeneste uafhængigt."
   },
   "selfHostedEnvFormInvalid": {
-    "message": "You must add either the base Server URL or at least one custom environment."
+    "message": "Der skal tilføjes enten basis server-URL'en eller mindst ét tilpasset miljø."
   },
   "customEnvironment": {
     "message": "Brugerdefineret miljø"
@@ -3107,6 +3107,9 @@
   "confirmFilePassword": {
     "message": "Bekræft filadgangskode"
   },
+  "exportSuccess": {
+    "message": "Boksdata eksporteret"
+  },
   "typePasskey": {
     "message": "Adgangsnøgle"
   },
@@ -3495,7 +3498,43 @@
   "contactYourOrgAdmin": {
     "message": "Emner i deaktiverede organisationer kan ikke tilgås. Kontakt organisationsejeren for assistance."
   },
+  "upload": {
+    "message": "Upload"
+  },
+  "addAttachment": {
+    "message": "Tilføj vedhæftning"
+  },
+  "maxFileSizeSansPunctuation": {
+    "message": "Maks. filstørrelse er 500 MB"
+  },
+  "deleteAttachmentName": {
+    "message": "Slet vedhæftelse $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Attachment Name"
+      }
+    }
+  },
+  "downloadAttachmentName": {
+    "message": "Download $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Attachment Name"
+      }
+    }
+  },
+  "permanentlyDeleteAttachmentConfirmation": {
+    "message": "Sikker på, at denne vedhæftning skal slettes permanent?"
+  },
+  "premium": {
+    "message": "Premium"
+  },
+  "freeOrgsCannotUseAttachments": {
+    "message": "Gratis organisationer kan ikke bruge vedhæftninger"
+  },
   "filters": {
-    "message": "Filters"
+    "message": "Filtre"
   }
 }

@@ -1105,18 +1105,18 @@
   "authenticatorAppTitle": {
     "message": "Overovacia aplikácia"
   },
-  "authenticatorAppDesc": {
-    "message": "Použite overovaciu aplikáciu (napríklad Authy alebo Google Authenticator) na generovanie časovo obmedzených overovacích kódov.",
-    "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
+  "authenticatorAppDescV2": {
+    "message": "Zadajte kód vygenerovaný overovacou aplikáciou akou je Bitwarden Authenticator.",
+    "description": "'Bitwarden Authenticator' is a product name and should not be translated."
   },
-  "yubiKeyTitle": {
-    "message": "YubiKey OTP bezpečnostný kľúč"
+  "yubiKeyTitleV2": {
+    "message": "Bezpečnostný kľúč Yubico OTP"
   },
   "yubiKeyDesc": {
     "message": "Použiť YubiKey pre prístup k vášmu účtu. Pracuje s YubiKey 4, 4 Nano, 4C a s NEO zariadeniami."
   },
-  "duoDesc": {
-    "message": "Overiť s Duo Security použitím Duo Mobile aplikácie, SMS, telefonátu alebo U2F bezpečnostným kľúčom.",
+  "duoDescV2": {
+    "message": "Zadajte kód vygenerovaný aplikáciou Duo Security.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
@@ -1132,8 +1132,8 @@
   "emailTitle": {
     "message": "Email"
   },
-  "emailDesc": {
-    "message": "Verifikačné kódy vám budú zaslané emailom."
+  "emailDescV2": {
+    "message": "Zadajte kód zaslaný na váš e-mail."
   },
   "selfHostedEnvironment": {
     "message": "Sebou hosťované prostredie"
@@ -3107,6 +3107,9 @@
   "confirmFilePassword": {
     "message": "Potvrdiť heslo súboru"
   },
+  "exportSuccess": {
+    "message": "Údaje z trezora boli exportované"
+  },
   "typePasskey": {
     "message": "Prístupový kľúč"
   },
@@ -3495,7 +3498,43 @@
   "contactYourOrgAdmin": {
     "message": "K položkám vo vypnutej organizácii nie je možné pristupovať. Požiadajte o pomoc vlastníka organizácie."
   },
+  "upload": {
+    "message": "Nahrať"
+  },
+  "addAttachment": {
+    "message": "Priložiť prílohu"
+  },
+  "maxFileSizeSansPunctuation": {
+    "message": "Maximálna veľkosť súboru je 500 MB"
+  },
+  "deleteAttachmentName": {
+    "message": "Odstrániť prílohu $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Attachment Name"
+      }
+    }
+  },
+  "downloadAttachmentName": {
+    "message": "Stiahnuť $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Attachment Name"
+      }
+    }
+  },
+  "permanentlyDeleteAttachmentConfirmation": {
+    "message": "Naozaj chcete natrvalo odstrániť túto prílohu?"
+  },
+  "premium": {
+    "message": "Prémium"
+  },
+  "freeOrgsCannotUseAttachments": {
+    "message": "Bezplatné organizácie nemôžu používať prílohy"
+  },
   "filters": {
-    "message": "Filters"
+    "message": "Filtre"
   }
 }

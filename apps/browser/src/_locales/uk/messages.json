@@ -1105,18 +1105,18 @@
   "authenticatorAppTitle": {
     "message": "Програма автентифікації"
   },
-  "authenticatorAppDesc": {
-    "message": "Використовуйте програму автентифікації (наприклад, Authy або Google Authenticator), щоб генерувати тимчасові коди підтвердження.",
-    "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
+  "authenticatorAppDescV2": {
+    "message": "Введіть код, згенерований програмою для автентифікації, як-от Bitwarden Authenticator.",
+    "description": "'Bitwarden Authenticator' is a product name and should not be translated."
   },
-  "yubiKeyTitle": {
-    "message": "Ключ безпеки YubiKey OTP"
+  "yubiKeyTitleV2": {
+    "message": "Ключ безпеки Yubico OTP"
   },
   "yubiKeyDesc": {
     "message": "Використовуйте YubiKey для доступу до сховища. Працює з YubiKey 4, 4 Nano, 4C та пристроями NEO."
   },
-  "duoDesc": {
-    "message": "Авторизуйтесь за допомогою Duo Security з використанням мобільного додатку Duo Mobile, SMS, телефонного виклику, або ключа безпеки U2F.",
+  "duoDescV2": {
+    "message": "Введіть код, згенерований Duo Security.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
@@ -1132,8 +1132,8 @@
   "emailTitle": {
     "message": "Е-пошта"
   },
-  "emailDesc": {
-    "message": "Коди підтвердження будуть надсилатися на вашу пошту."
+  "emailDescV2": {
+    "message": "Введіть код, надісланий вам електронною поштою."
   },
   "selfHostedEnvironment": {
     "message": "Середовище власного хостингу"
@@ -3107,6 +3107,9 @@
   "confirmFilePassword": {
     "message": "Підтвердьте пароль файлу"
   },
+  "exportSuccess": {
+    "message": "Дані сховища експортовано"
+  },
   "typePasskey": {
     "message": "Ключ доступу"
   },
@@ -3495,7 +3498,43 @@
   "contactYourOrgAdmin": {
     "message": "Елементи в деактивованих організаціях недоступні. Зверніться до власника вашої організації для отримання допомоги."
   },
+  "upload": {
+    "message": "Вивантажити"
+  },
+  "addAttachment": {
+    "message": "Додати вкладення"
+  },
+  "maxFileSizeSansPunctuation": {
+    "message": "Максимальний розмір файлу – 500 МБ"
+  },
+  "deleteAttachmentName": {
+    "message": "Видалити вкладення $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Attachment Name"
+      }
+    }
+  },
+  "downloadAttachmentName": {
+    "message": "Завантажити $NAME$",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Attachment Name"
+      }
+    }
+  },
+  "permanentlyDeleteAttachmentConfirmation": {
+    "message": "Ви дійсно хочете остаточно видалити це вкладення?"
+  },
+  "premium": {
+    "message": "Преміум"
+  },
+  "freeOrgsCannotUseAttachments": {
+    "message": "Організації без передплати не можуть використовувати вкладення"
+  },
   "filters": {
-    "message": "Filters"
+    "message": "Фільтри"
   }
 }

@@ -1105,18 +1105,18 @@
   "authenticatorAppTitle": {
     "message": "Authenticatie-app"
   },
-  "authenticatorAppDesc": {
-    "message": "Gebruik een authenticatie-app (zoals Authy of Google Authenticator) om tijdgebaseerde authenticatiecodes te genereren.",
-    "description": "'Authy' and 'Google Authenticator' are product names and should not be translated."
+  "authenticatorAppDescV2": {
+    "message": "Door een authenticatie-app zoals Bitwarden Authenticator gegenereerde code invoeren.",
+    "description": "'Bitwarden Authenticator' is a product name and should not be translated."
   },
-  "yubiKeyTitle": {
+  "yubiKeyTitleV2": {
     "message": "YubiKey OTP-beveiligingssleutel"
   },
   "yubiKeyDesc": {
     "message": "Gebruik een YubiKey om toegang te krijgen tot uw account. Werkt met YubiKey 4, 4 Nano, 4C en Neo-apparaten."
   },
-  "duoDesc": {
-    "message": "Verificatie met Duo Security middels de Duo Mobile-app, sms, spraakoproep of een U2F-beveiligingssleutel.",
+  "duoDescV2": {
+    "message": "Door Duo Security gegenereerde code invoeren.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
@@ -1132,8 +1132,8 @@
   "emailTitle": {
     "message": "E-mail"
   },
-  "emailDesc": {
-    "message": "Je ontvangt verificatiecodes via e-mail."
+  "emailDescV2": {
+    "message": "Via e-mail verstuurde code invoeren."
   },
   "selfHostedEnvironment": {
     "message": "Zelfgehoste omgeving"
@@ -3107,6 +3107,9 @@
   "confirmFilePassword": {
     "message": "Bestandswachtwoord bevestigen"
   },
+  "exportSuccess": {
+    "message": "Kluisgegevens geëxporteerd"
+  },
   "typePasskey": {
     "message": "Passkey"
   },
@@ -3494,6 +3497,42 @@
   },
   "contactYourOrgAdmin": {
     "message": "Items in een gedeactiveerde organisatie zijn niet toegankelijk. Neem contact op met de eigenaar van je organisatie voor hulp."
+  },
+  "upload": {
+    "message": "Uploaden"
+  },
+  "addAttachment": {
+    "message": "Bijlage toevoegen"
+  },
+  "maxFileSizeSansPunctuation": {
+    "message": "Maximale bestandsgrootte is 500 MB"
+  },
+  "deleteAttachmentName": {
+    "message": "Bijlage $NAME$ verwijderen",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Attachment Name"
+      }
+    }
+  },
+  "downloadAttachmentName": {
+    "message": "$NAME$ downloaden",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Attachment Name"
+      }
+    }
+  },
+  "permanentlyDeleteAttachmentConfirmation": {
+    "message": "Weet je zeker dat je deze bijlage definitief permanen wilt verwijderen?"
+  },
+  "premium": {
+    "message": "Premium"
+  },
+  "freeOrgsCannotUseAttachments": {
+    "message": "Gratis organisaties kunnen geen bijlagen gebruiken"
   },
   "filters": {
     "message": "Filters"
