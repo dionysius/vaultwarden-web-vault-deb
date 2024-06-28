@@ -1,13 +1,18 @@
-import { Directive, Input, OnChanges, OnDestroy, OnInit } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { Component, Input, OnChanges, OnDestroy, OnInit } from "@angular/core";
 import {
   AbstractControl,
   ControlValueAccessor,
   FormBuilder,
+  NG_VALIDATORS,
+  NG_VALUE_ACCESSOR,
+  ReactiveFormsModule,
   ValidationErrors,
   Validator,
 } from "@angular/forms";
 import { filter, map, Observable, Subject, takeUntil } from "rxjs";
 
+import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout-settings.service";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
@@ -15,6 +20,7 @@ import { Policy } from "@bitwarden/common/admin-console/models/domain/policy";
 import { VaultTimeoutAction } from "@bitwarden/common/enums/vault-timeout-action.enum";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { VaultTimeout, VaultTimeoutOption } from "@bitwarden/common/types/vault-timeout.type";
+import { FormFieldModule, SelectModule } from "@bitwarden/components";
 
 interface VaultTimeoutFormValue {
   vaultTimeout: VaultTimeout | null;
@@ -24,7 +30,24 @@ interface VaultTimeoutFormValue {
   };
 }
 
-@Directive()
+@Component({
+  selector: "auth-vault-timeout-input",
+  templateUrl: "vault-timeout-input.component.html",
+  standalone: true,
+  imports: [CommonModule, JslibModule, ReactiveFormsModule, FormFieldModule, SelectModule],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      multi: true,
+      useExisting: VaultTimeoutInputComponent,
+    },
+    {
+      provide: NG_VALIDATORS,
+      multi: true,
+      useExisting: VaultTimeoutInputComponent,
+    },
+  ],
+})
 export class VaultTimeoutInputComponent
   implements ControlValueAccessor, Validator, OnInit, OnDestroy, OnChanges
 {
