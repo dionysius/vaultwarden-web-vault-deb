@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
+import { firstValueFrom } from "rxjs";
 import { first } from "rxjs/operators";
 
 import { SsoComponent as BaseSsoComponent } from "@bitwarden/angular/auth/components/sso.component";
@@ -92,6 +93,7 @@ export class SsoComponent extends BaseSsoComponent {
       if (qParams.identifier != null) {
         // SSO Org Identifier in query params takes precedence over claimed domains
         this.identifierFormControl.setValue(qParams.identifier);
+        await this.submit();
       } else {
         // Note: this flow is written for web but both browser and desktop
         // redirect here on SSO button click.
@@ -145,11 +147,21 @@ export class SsoComponent extends BaseSsoComponent {
       return;
     }
 
+    const autoSubmit = (await firstValueFrom(this.route.queryParams)).identifier != null;
+
     this.identifier = this.identifierFormControl.value;
     await this.ssoLoginService.setOrganizationSsoIdentifier(this.identifier);
     if (this.clientId === "browser") {
       document.cookie = `ssoHandOffMessage=${this.i18nService.t("ssoHandOff")};SameSite=strict`;
     }
-    await Object.getPrototypeOf(this).submit.call(this);
+    try {
+      await Object.getPrototypeOf(this).submit.call(this);
+    } catch (error) {
+      if (autoSubmit) {
+        await this.router.navigate(["/login"]);
+      } else {
+        this.validationService.showError(error);
+      }
+    }
   };
 }
