@@ -128,6 +128,14 @@ export class AddEditComponent extends BaseAddEditComponent {
       await this.load();
 
       if (!this.editMode || this.cloneMode) {
+        // Only allow setting username if there's no existing value
+        if (
+          params.username &&
+          (this.cipher.login.username == null || this.cipher.login.username === "")
+        ) {
+          this.cipher.login.username = params.username;
+        }
+
         if (params.name && (this.cipher.name == null || this.cipher.name === "")) {
           this.cipher.name = params.name;
         }

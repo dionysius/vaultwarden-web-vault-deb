@@ -111,7 +111,7 @@ export class Fido2AuthenticatorService implements Fido2AuthenticatorServiceAbstr
       let pubKeyDer: ArrayBuffer;
       const response = await userInterfaceSession.confirmNewCredential({
         credentialName: params.rpEntity.name,
-        userName: params.userEntity.displayName,
+        userName: params.userEntity.name,
         userVerification: params.requireUserVerification,
         rpId: params.rpEntity.id,
       });
@@ -145,6 +145,10 @@ export class Fido2AuthenticatorService implements Fido2AuthenticatorServiceAbstr
 
         fido2Credential = await createKeyView(params, keyPair.privateKey);
         cipher.login.fido2Credentials = [fido2Credential];
+        // update username if username is missing
+        if (Utils.isNullOrEmpty(cipher.login.username)) {
+          cipher.login.username = fido2Credential.userName;
+        }
         const reencrypted = await this.cipherService.encrypt(cipher);
         await this.cipherService.updateWithServer(reencrypted);
         credentialId = fido2Credential.credentialId;

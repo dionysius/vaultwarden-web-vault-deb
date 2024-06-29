@@ -256,7 +256,7 @@ export class Fido2Component implements OnInit, OnDestroy {
       const name = data.credentialName || data.rpId;
       // TODO: Revert to check for user verification once user verification for passkeys is approved for production.
       // PM-4577 - https://github.com/bitwarden/clients/pull/8746
-      await this.createNewCipher(name);
+      await this.createNewCipher(name, data.userName);
 
       // We are bypassing user verification pending approval.
       this.send({
@@ -310,6 +310,7 @@ export class Fido2Component implements OnInit, OnDestroy {
         name: data.credentialName || data.rpId,
         uri: this.url,
         uilocation: "popout",
+        username: data.userName,
         senderTabId: this.senderTabId,
         sessionId: this.sessionId,
         userVerification: data.userVerification,
@@ -357,11 +358,13 @@ export class Fido2Component implements OnInit, OnDestroy {
     this.destroy$.complete();
   }
 
-  private buildCipher(name: string) {
+  private buildCipher(name: string, username: string) {
     this.cipher = new CipherView();
     this.cipher.name = name;
+
     this.cipher.type = CipherType.Login;
     this.cipher.login = new LoginView();
+    this.cipher.login.username = username;
     this.cipher.login.uris = [new LoginUriView()];
     this.cipher.login.uris[0].uri = this.url;
     this.cipher.card = new CardView();
@@ -371,8 +374,8 @@ export class Fido2Component implements OnInit, OnDestroy {
     this.cipher.reprompt = CipherRepromptType.None;
   }
 
-  private async createNewCipher(name: string) {
-    this.buildCipher(name);
+  private async createNewCipher(name: string, username: string) {
+    this.buildCipher(name, username);
     const cipher = await this.cipherService.encrypt(this.cipher);
     try {
       await this.cipherService.createWithServer(cipher);
