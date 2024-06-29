@@ -28,6 +28,7 @@
             </ng-container>
           </span>
         </span>
+        <span class="detail" *ngIf="getSubName(cipher)">{{ getSubName(cipher) }}</span>
         <span class="detail" *ngIf="cipher.subTitle">{{ cipher.subTitle }}</span>
       </div>
     </button>
