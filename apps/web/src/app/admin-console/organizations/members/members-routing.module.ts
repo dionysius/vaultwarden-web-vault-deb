@@ -5,12 +5,12 @@ import { canAccessMembersTab } from "@bitwarden/common/admin-console/abstraction
 
 import { OrganizationPermissionsGuard } from "../guards/org-permissions.guard";
 
-import { PeopleComponent } from "./people.component";
+import { MembersComponent } from "./members.component";
 
 const routes: Routes = [
   {
     path: "",
-    component: PeopleComponent,
+    component: MembersComponent,
     canActivate: [OrganizationPermissionsGuard],
     data: {
       titleId: "members",

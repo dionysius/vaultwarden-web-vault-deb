@@ -14,26 +14,35 @@
 <div class="tw-mb-4 tw-flex tw-flex-col tw-space-y-4">
   <bit-toggle-group
     [selected]="status"
-    (selectedChange)="filter($event)"
+    (selectedChange)="statusToggle.next($event)"
     [attr.aria-label]="'memberStatusFilter' | i18n"
   >
     <bit-toggle [value]="null">
-      {{ "all" | i18n }} <span bitBadge variant="info" *ngIf="allCount">{{ allCount }}</span>
+      {{ "all" | i18n }}
+      <span bitBadge variant="info" *ngIf="dataSource.activeUserCount as allCount">{{
+        allCount
+      }}</span>
     </bit-toggle>
 
     <bit-toggle [value]="userStatusType.Invited">
       {{ "invited" | i18n }}
-      <span bitBadge variant="info" *ngIf="invitedCount">{{ invitedCount }}</span>
+      <span bitBadge variant="info" *ngIf="dataSource.invitedUserCount as invitedCount">{{
+        invitedCount
+      }}</span>
     </bit-toggle>
 
     <bit-toggle [value]="userStatusType.Accepted">
       {{ "needsConfirmation" | i18n }}
-      <span bitBadge variant="info" *ngIf="acceptedCount">{{ acceptedCount }}</span>
+      <span bitBadge variant="info" *ngIf="dataSource.acceptedUserCount as acceptedUserCount">{{
+        acceptedUserCount
+      }}</span>
     </bit-toggle>
 
     <bit-toggle [value]="userStatusType.Revoked">
       {{ "revoked" | i18n }}
-      <span bitBadge variant="info" *ngIf="revokedCount">{{ revokedCount }}</span>
+      <span bitBadge variant="info" *ngIf="dataSource.revokedUserCount as revokedCount">{{
+        revokedCount
+      }}</span>
     </bit-toggle>
   </bit-toggle-group>
 </div>
@@ -67,7 +76,7 @@
                 type="checkbox"
                 bitCheckbox
                 class="tw-mr-1"
-                (change)="selectAll($any($event.target).checked)"
+                (change)="dataSource.checkAllFilteredUsers($any($event.target).checked)"
                 id="selectAll"
               />
               <label class="tw-mb-0 !tw-font-bold !tw-text-muted" for="selectAll">{{
@@ -134,7 +143,7 @@
             alignContent="middle"
             [ngClass]="rowHeightClass"
           >
-            <td bitCell (click)="checkUser(u)">
+            <td bitCell (click)="dataSource.checkUser(u)">
               <input type="checkbox" bitCheckbox [(ngModel)]="$any(u).checked" />
             </td>
             <td bitCell (click)="edit(u)" class="tw-cursor-pointer">
@@ -314,10 +323,4 @@
     </cdk-virtual-scroll-viewport>
   </ng-container>
 </ng-container>
-<ng-template #addEdit></ng-template>
-<ng-template #groupsTemplate></ng-template>
-<ng-template #confirmTemplate></ng-template>
 <ng-template #resetPasswordTemplate></ng-template>
-<ng-template #bulkStatusTemplate></ng-template>
-<ng-template #bulkConfirmTemplate></ng-template>
-<ng-template #bulkRemoveTemplate></ng-template>

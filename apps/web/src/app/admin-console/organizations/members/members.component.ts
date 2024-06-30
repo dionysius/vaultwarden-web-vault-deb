@@ -37,19 +37,19 @@ import { ProductTierType } from "@bitwarden/common/billing/enums";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
-import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { ValidationService } from "@bitwarden/common/platform/abstractions/validation.service";
 import { CollectionService } from "@bitwarden/common/vault/abstractions/collection.service";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 import { CollectionData } from "@bitwarden/common/vault/models/data/collection.data";
 import { Collection } from "@bitwarden/common/vault/models/domain/collection";
 import { CollectionDetailsResponse } from "@bitwarden/common/vault/models/response/collection.response";
-import { DialogService, SimpleDialogOptions } from "@bitwarden/components";
+import { DialogService, SimpleDialogOptions, ToastService } from "@bitwarden/components";
 
-import { openEntityEventsDialog } from "../../../admin-console/organizations/manage/entity-events.component";
 import { NewBasePeopleComponent } from "../../common/new-base.people.component";
+import { PeopleTableDataSource } from "../../common/people-table-data-source";
 import { GroupService } from "../core";
 import { OrganizationUserView } from "../core/views/organization-user.view";
+import { openEntityEventsDialog } from "../manage/entity-events.component";
 
 import { BulkConfirmComponent } from "./components/bulk/bulk-confirm.component";
 import { BulkEnableSecretsManagerDialogComponent } from "./components/bulk/bulk-enable-sm-dialog.component";
@@ -63,27 +63,21 @@ import {
 } from "./components/member-dialog";
 import { ResetPasswordComponent } from "./components/reset-password.component";
 
+class MembersTableDataSource extends PeopleTableDataSource<OrganizationUserView> {
+  protected statusType = OrganizationUserStatusType;
+}
+
 @Component({
-  selector: "app-org-people",
-  templateUrl: "people.component.html",
+  templateUrl: "members.component.html",
 })
-export class PeopleComponent extends NewBasePeopleComponent<OrganizationUserView> {
-  @ViewChild("groupsTemplate", { read: ViewContainerRef, static: true })
-  groupsModalRef: ViewContainerRef;
-  @ViewChild("confirmTemplate", { read: ViewContainerRef, static: true })
-  confirmModalRef: ViewContainerRef;
+export class MembersComponent extends NewBasePeopleComponent<OrganizationUserView> {
   @ViewChild("resetPasswordTemplate", { read: ViewContainerRef, static: true })
   resetPasswordModalRef: ViewContainerRef;
-  @ViewChild("bulkStatusTemplate", { read: ViewContainerRef, static: true })
-  bulkStatusModalRef: ViewContainerRef;
-  @ViewChild("bulkConfirmTemplate", { read: ViewContainerRef, static: true })
-  bulkConfirmModalRef: ViewContainerRef;
-  @ViewChild("bulkRemoveTemplate", { read: ViewContainerRef, static: true })
-  bulkRemoveModalRef: ViewContainerRef;
 
   userType = OrganizationUserType;
   userStatusType = OrganizationUserStatusType;
   memberTab = MemberDialogTab;
+  protected dataSource = new MembersTableDataSource();
 
   organization: Organization;
   status: OrganizationUserStatusType = null;
@@ -98,31 +92,30 @@ export class PeopleComponent extends NewBasePeopleComponent<OrganizationUserView
 
   constructor(
     apiService: ApiService,
-    private route: ActivatedRoute,
     i18nService: I18nService,
+    organizationManagementPreferencesService: OrganizationManagementPreferencesService,
     modalService: ModalService,
-    platformUtilsService: PlatformUtilsService,
     cryptoService: CryptoService,
     validationService: ValidationService,
-    private policyService: PolicyService,
-    private policyApiService: PolicyApiService,
     logService: LogService,
     userNamePipe: UserNamePipe,
+    dialogService: DialogService,
+    toastService: ToastService,
+    private policyService: PolicyService,
+    private policyApiService: PolicyApiService,
+    private route: ActivatedRoute,
     private syncService: SyncService,
     private organizationService: OrganizationService,
     private organizationApiService: OrganizationApiServiceAbstraction,
     private organizationUserService: OrganizationUserService,
-    dialogService: DialogService,
     private router: Router,
     private groupService: GroupService,
     private collectionService: CollectionService,
-    organizationManagementPreferencesService: OrganizationManagementPreferencesService,
     private billingApiService: BillingApiServiceAbstraction,
   ) {
     super(
       apiService,
       i18nService,
-      platformUtilsService,
       cryptoService,
       validationService,
       modalService,
@@ -130,6 +123,7 @@ export class PeopleComponent extends NewBasePeopleComponent<OrganizationUserView
       userNamePipe,
       dialogService,
       organizationManagementPreferencesService,
+      toastService,
     );
 
     const organization$ = this.route.params.pipe(
@@ -293,6 +287,44 @@ export class PeopleComponent extends NewBasePeopleComponent<OrganizationUserView
     );
   }
 
+  async revoke(user: OrganizationUserView) {
+    const confirmed = await this.revokeUserConfirmationDialog(user);
+
+    if (!confirmed) {
+      return false;
+    }
+
+    this.actionPromise = this.revokeUser(user.id);
+    try {
+      await this.actionPromise;
+      this.toastService.showToast({
+        variant: "success",
+        title: null,
+        message: this.i18nService.t("revokedUserId", this.userNamePipe.transform(user)),
+      });
+      await this.load();
+    } catch (e) {
+      this.validationService.showError(e);
+    }
+    this.actionPromise = null;
+  }
+
+  async restore(user: OrganizationUserView) {
+    this.actionPromise = this.restoreUser(user.id);
+    try {
+      await this.actionPromise;
+      this.toastService.showToast({
+        variant: "success",
+        title: null,
+        message: this.i18nService.t("restoredUserId", this.userNamePipe.transform(user)),
+      });
+      await this.load();
+    } catch (e) {
+      this.validationService.showError(e);
+    }
+    this.actionPromise = null;
+  }
+
   allowResetPassword(orgUser: OrganizationUserView): boolean {
     // Hierarchy check
     let callingUserHasPermission = false;
@@ -407,12 +439,16 @@ export class PeopleComponent extends NewBasePeopleComponent<OrganizationUserView
   }
 
   async edit(user: OrganizationUserView, initialTab: MemberDialogTab = MemberDialogTab.Role) {
-    if (!user && this.organization.hasReseller && this.organization.seats === this.confirmedCount) {
-      this.platformUtilsService.showToast(
-        "error",
-        this.i18nService.t("seatLimitReached"),
-        this.i18nService.t("contactYourProvider"),
-      );
+    if (
+      !user &&
+      this.organization.hasReseller &&
+      this.organization.seats === this.dataSource.confirmedUserCount
+    ) {
+      this.toastService.showToast({
+        variant: "error",
+        title: this.i18nService.t("seatLimitReached"),
+        message: this.i18nService.t("contactYourProvider"),
+      });
       return;
     }
 
@@ -422,7 +458,7 @@ export class PeopleComponent extends NewBasePeopleComponent<OrganizationUserView
     // User attempting to invite new users in a free org with max users
     if (
       !user &&
-      this.allUsers.length === this.organization.seats &&
+      this.dataSource.data.length === this.organization.seats &&
       (this.organization.productTierType === ProductTierType.Free ||
         this.organization.productTierType === ProductTierType.TeamsStarter)
     ) {
@@ -436,18 +472,18 @@ export class PeopleComponent extends NewBasePeopleComponent<OrganizationUserView
         name: this.userNamePipe.transform(user),
         organizationId: this.organization.id,
         organizationUserId: user != null ? user.id : null,
-        allOrganizationUserEmails: this.allUsers?.map((user) => user.email) ?? [],
+        allOrganizationUserEmails: this.dataSource.data?.map((user) => user.email) ?? [],
         usesKeyConnector: user?.usesKeyConnector,
         isOnSecretsManagerStandalone: this.orgIsOnSecretsManagerStandalone,
         initialTab: initialTab,
-        numConfirmedMembers: this.confirmedCount,
+        numConfirmedMembers: this.dataSource.confirmedUserCount,
       },
     });
 
     const result = await lastValueFrom(dialog.closed);
     switch (result) {
       case MemberDialogResult.Deleted:
-        this.removeUser(user);
+        this.dataSource.removeUser(user);
         break;
       case MemberDialogResult.Saved:
       case MemberDialogResult.Revoked:
@@ -467,7 +503,7 @@ export class PeopleComponent extends NewBasePeopleComponent<OrganizationUserView
     const dialogRef = BulkRemoveComponent.open(this.dialogService, {
       data: {
         organizationId: this.organization.id,
-        users: this.getCheckedUsers(),
+        users: this.dataSource.getCheckedUsers(),
       },
     });
     await lastValueFrom(dialogRef.closed);
@@ -489,7 +525,7 @@ export class PeopleComponent extends NewBasePeopleComponent<OrganizationUserView
 
     const ref = BulkRestoreRevokeComponent.open(this.dialogService, {
       organizationId: this.organization.id,
-      users: this.getCheckedUsers(),
+      users: this.dataSource.getCheckedUsers(),
       isRevoking: isRevoking,
     });
 
@@ -502,15 +538,15 @@ export class PeopleComponent extends NewBasePeopleComponent<OrganizationUserView
       return;
     }
 
-    const users = this.getCheckedUsers();
+    const users = this.dataSource.getCheckedUsers();
     const filteredUsers = users.filter((u) => u.status === OrganizationUserStatusType.Invited);
 
     if (filteredUsers.length <= 0) {
-      this.platformUtilsService.showToast(
-        "error",
-        this.i18nService.t("errorOccurred"),
-        this.i18nService.t("noSelectedUsersApplicable"),
-      );
+      this.toastService.showToast({
+        variant: "error",
+        title: this.i18nService.t("errorOccurred"),
+        message: this.i18nService.t("noSelectedUsersApplicable"),
+      });
       return;
     }
 
@@ -546,7 +582,7 @@ export class PeopleComponent extends NewBasePeopleComponent<OrganizationUserView
     const dialogRef = BulkConfirmComponent.open(this.dialogService, {
       data: {
         organizationId: this.organization.id,
-        users: this.getCheckedUsers(),
+        users: this.dataSource.getCheckedUsers(),
       },
     });
 
@@ -555,14 +591,14 @@ export class PeopleComponent extends NewBasePeopleComponent<OrganizationUserView
   }
 
   async bulkEnableSM() {
-    const users = this.getCheckedUsers().filter((ou) => !ou.accessSecretsManager);
+    const users = this.dataSource.getCheckedUsers().filter((ou) => !ou.accessSecretsManager);
 
     if (users.length === 0) {
-      this.platformUtilsService.showToast(
-        "error",
-        this.i18nService.t("errorOccurred"),
-        this.i18nService.t("noSelectedUsersApplicable"),
-      );
+      this.toastService.showToast({
+        variant: "error",
+        title: this.i18nService.t("errorOccurred"),
+        message: this.i18nService.t("noSelectedUsersApplicable"),
+      });
       return;
     }
 
@@ -572,7 +608,7 @@ export class PeopleComponent extends NewBasePeopleComponent<OrganizationUserView
     });
 
     await lastValueFrom(dialogRef.closed);
-    this.selectAll(false);
+    this.dataSource.uncheckAllUsers();
     await this.load();
   }
 
@@ -637,7 +673,7 @@ export class PeopleComponent extends NewBasePeopleComponent<OrganizationUserView
   protected async revokeUserConfirmationDialog(user: OrganizationUserView) {
     const confirmed = await this.dialogService.openSimpleDialog({
       title: { key: "revokeAccess", placeholders: [this.userNamePipe.transform(user)] },
-      content: this.revokeWarningMessage(),
+      content: this.i18nService.t("revokeUserConfirmation"),
       acceptButtonText: { key: "revokeAccess" },
       type: "warning",
     });

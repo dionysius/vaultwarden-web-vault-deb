@@ -14,7 +14,7 @@ import { BulkStatusComponent } from "./components/bulk/bulk-status.component";
 import { UserDialogModule } from "./components/member-dialog";
 import { ResetPasswordComponent } from "./components/reset-password.component";
 import { MembersRoutingModule } from "./members-routing.module";
-import { PeopleComponent } from "./people.component";
+import { MembersComponent } from "./members.component";
 
 @NgModule({
   imports: [
@@ -31,7 +31,7 @@ import { PeopleComponent } from "./people.component";
     BulkRemoveComponent,
     BulkRestoreRevokeComponent,
     BulkStatusComponent,
-    PeopleComponent,
+    MembersComponent,
     ResetPasswordComponent,
   ],
 })
