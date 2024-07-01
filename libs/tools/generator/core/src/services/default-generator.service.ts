@@ -1,4 +1,4 @@
-import { firstValueFrom, share, timer, ReplaySubject, Observable } from "rxjs";
+import { firstValueFrom, Observable } from "rxjs";
 
 // FIXME: use index.ts imports once policy abstractions and models
 // implement ADR-0002
@@ -6,13 +6,6 @@ import { PolicyService } from "@bitwarden/common/admin-console/abstractions/poli
 import { UserId } from "@bitwarden/common/types/guid";
 
 import { GeneratorStrategy, GeneratorService, PolicyEvaluator } from "../abstractions";
-
-type DefaultGeneratorServiceTuning = {
-  /* amount of time to keep the most recent policy after a subscription ends. Once the
-   * cache expires, the ignoreQty and timeoutMs settings apply to the next lookup.
-   */
-  policyCacheMs: number;
-};
 
 /** {@link GeneratorServiceAbstraction} */
 export class DefaultGeneratorService<Options, Policy> implements GeneratorService<Options, Policy> {
@@ -24,18 +17,8 @@ export class DefaultGeneratorService<Options, Policy> implements GeneratorServic
   constructor(
     private strategy: GeneratorStrategy<Options, Policy>,
     private policy: PolicyService,
-    tuning: Partial<DefaultGeneratorServiceTuning> = {},
-  ) {
-    this.tuning = Object.assign(
-      {
-        // a minute
-        policyCacheMs: 60000,
-      },
-      tuning,
-    );
-  }
+  ) {}
 
-  private tuning: DefaultGeneratorServiceTuning;
   private _evaluators$ = new Map<UserId, Observable<PolicyEvaluator<Policy, Options>>>();
 
   /** {@link GeneratorService.options$} */
@@ -69,13 +52,6 @@ export class DefaultGeneratorService<Options, Policy> implements GeneratorServic
     const evaluator$ = this.policy.getAll$(this.strategy.policy, userId).pipe(
       // create the evaluator from the policies
       this.strategy.toEvaluator(),
-
-      // cache evaluator in a replay subject to amortize creation cost
-      // and reduce GC pressure.
-      share({
-        connector: () => new ReplaySubject(1),
-        resetOnRefCountZero: () => timer(this.tuning.policyCacheMs),
-      }),
     );
 
     return evaluator$;
