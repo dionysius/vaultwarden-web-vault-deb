@@ -220,12 +220,9 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
       this.token = this.token.replace(" ", "").trim();
     }
 
-    try {
-      await this.doSubmit();
-    } catch {
-      if (this.selectedProviderType === TwoFactorProviderType.WebAuthn && this.webAuthn != null) {
-        this.webAuthn.start();
-      }
+    await this.doSubmit();
+    if (this.selectedProviderType === TwoFactorProviderType.WebAuthn && this.webAuthn != null) {
+      this.webAuthn.start();
     }
   }
 

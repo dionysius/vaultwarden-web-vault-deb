@@ -78,15 +78,15 @@ export class TwoFactorEmailComponent extends TwoFactorBaseComponent {
   }
 
   submit = async () => {
+    this.formGroup.markAllAsTouched();
+
     if (this.enabled) {
       await this.disableEmail();
       this.onChangeStatus.emit(false);
     } else {
-      this.formGroup.markAllAsTouched();
       if (this.formGroup.invalid) {
         return;
       }
-
       await this.enable();
       this.onChangeStatus.emit(true);
     }
