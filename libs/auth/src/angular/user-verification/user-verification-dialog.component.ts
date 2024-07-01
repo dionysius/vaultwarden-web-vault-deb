@@ -142,6 +142,31 @@ export class UserVerificationDialogComponent {
    *   return;
    * }
    *
+   * ----------------------------------------------------------
+   *
+   * @example
+   * // Example 4: Custom user verification validation
+   *
+   * const result = await UserVerificationDialogComponent.open(dialogService, {
+   *   verificationType: {
+   *     type: "custom",
+   *     // Pass in a function that will be used to validate the input of the
+   *     // verification dialog, returning true when finished.
+   *     verificationFn: async (secret: VerificationWithSecret) => {
+   *       const request = await userVerificationService.buildRequest<CustomRequestType>(secret);
+   *
+   *      // ... Do something with the custom request type
+   *
+   *       await someServicer.sendMyRequestThatVerfiesUserIdentity(
+   *         // ... Some other data
+   *         request,
+   *       );
+   *       return true;
+   *     },
+   *   },
+   * });
+   *
+   * // ... Evaluate the result as usual
    */
   static async open(
     dialogService: DialogService,
@@ -202,6 +227,18 @@ export class UserVerificationDialogComponent {
     }
 
     try {
+      if (
+        typeof this.dialogOptions.verificationType === "object" &&
+        this.dialogOptions.verificationType.type === "custom"
+      ) {
+        const success = await this.dialogOptions.verificationType.verificationFn(this.secret.value);
+        this.close({
+          userAction: "confirm",
+          verificationSuccess: success,
+        });
+        return;
+      }
+
       // TODO: once we migrate all user verification scenarios to use this new implementation,
       // we should consider refactoring the user verification service handling of the
       // OTP and MP flows to not throw errors on verification failure.

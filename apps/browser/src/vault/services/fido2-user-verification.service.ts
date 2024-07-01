@@ -54,7 +54,7 @@ export class Fido2UserVerificationService {
 
   private async showUserVerificationDialog(): Promise<boolean> {
     const result = await UserVerificationDialogComponent.open(this.dialogService, {
-      clientSideOnlyVerification: true,
+      verificationType: "client",
     });
 
     if (result.userAction === "cancel") {

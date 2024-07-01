@@ -10,6 +10,7 @@ import { PolicyService } from "@bitwarden/common/admin-console/abstractions/poli
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { Policy } from "@bitwarden/common/admin-console/models/domain/policy";
+import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
@@ -48,6 +49,7 @@ export class OrganizationOptionsComponent implements OnInit, OnDestroy {
     private userDecryptionOptionsService: UserDecryptionOptionsServiceAbstraction,
     private dialogService: DialogService,
     private resetPasswordService: OrganizationUserResetPasswordService,
+    private userVerificationService: UserVerificationService,
   ) {}
 
   async ngOnInit() {
@@ -155,6 +157,7 @@ export class OrganizationOptionsComponent implements OnInit, OnDestroy {
         this.i18nService,
         this.syncService,
         this.logService,
+        this.userVerificationService,
       );
     } else {
       // Remove reset password
