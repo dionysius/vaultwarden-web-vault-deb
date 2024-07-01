@@ -51,6 +51,7 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
   showUpdatedSubscriptionStatusSection$: Observable<boolean>;
   manageBillingFromProviderPortal = ManageBilling;
   isProviderManaged = false;
+  enableTimeThreshold: boolean;
 
   protected readonly teamsStarter = ProductTierType.TeamsStarter;
 
@@ -58,6 +59,10 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
 
   protected enableConsolidatedBilling$ = this.configService.getFeatureFlag$(
     FeatureFlag.EnableConsolidatedBilling,
+  );
+
+  protected enableTimeThreshold$ = this.configService.getFeatureFlag$(
+    FeatureFlag.EnableTimeThreshold,
   );
 
   constructor(
@@ -94,6 +99,7 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
     this.showUpdatedSubscriptionStatusSection$ = this.configService.getFeatureFlag$(
       FeatureFlag.AC1795_UpdatedSubscriptionStatusSection,
     );
+    this.enableTimeThreshold = await firstValueFrom(this.enableTimeThreshold$);
   }
 
   ngOnDestroy() {
@@ -284,16 +290,38 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
         return this.i18nService.t("subscriptionUpgrade", this.sub.seats.toString());
       }
     } else if (this.sub.maxAutoscaleSeats === this.sub.seats && this.sub.seats != null) {
-      return this.i18nService.t("subscriptionMaxReached", this.sub.seats.toString());
+      if (!this.enableTimeThreshold) {
+        return this.i18nService.t("subscriptionMaxReached", this.sub.seats.toString());
+      }
+      const seatAdjustmentMessage = this.sub.plan.isAnnual
+        ? "annualSubscriptionUserSeatsMessage"
+        : "monthlySubscriptionUserSeatsMessage";
+      return this.i18nService.t(
+        seatAdjustmentMessage + "subscriptionSeatMaxReached",
+        this.sub.seats.toString(),
+      );
     } else if (this.userOrg.productTierType === ProductTierType.TeamsStarter) {
       return this.i18nService.t("subscriptionUserSeatsWithoutAdditionalSeatsOption", 10);
     } else if (this.sub.maxAutoscaleSeats == null) {
-      return this.i18nService.t("subscriptionUserSeatsUnlimitedAutoscale");
+      if (!this.enableTimeThreshold) {
+        return this.i18nService.t("subscriptionUserSeatsUnlimitedAutoscale");
+      }
+
+      const seatAdjustmentMessage = this.sub.plan.isAnnual
+        ? "annualSubscriptionUserSeatsMessage"
+        : "monthlySubscriptionUserSeatsMessage";
+      return this.i18nService.t(seatAdjustmentMessage);
     } else {
-      return this.i18nService.t(
-        "subscriptionUserSeatsLimitedAutoscale",
-        this.sub.maxAutoscaleSeats.toString(),
-      );
+      if (!this.enableTimeThreshold) {
+        return this.i18nService.t(
+          "subscriptionUserSeatsLimitedAutoscale",
+          this.sub.maxAutoscaleSeats.toString(),
+        );
+      }
+      const seatAdjustmentMessage = this.sub.plan.isAnnual
+        ? "annualSubscriptionUserSeatsMessage"
+        : "monthlySubscriptionUserSeatsMessage";
+      return this.i18nService.t(seatAdjustmentMessage, this.sub.maxAutoscaleSeats.toString());
     }
   }
 
