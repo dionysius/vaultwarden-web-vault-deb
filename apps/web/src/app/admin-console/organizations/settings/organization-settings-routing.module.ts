@@ -5,7 +5,7 @@ import { canAccessSettingsTab } from "@bitwarden/common/admin-console/abstractio
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 
 import { OrganizationPermissionsGuard } from "../../organizations/guards/org-permissions.guard";
-import { OrganizationRedirectGuard } from "../../organizations/guards/org-redirect.guard";
+import { organizationRedirectGuard } from "../../organizations/guards/org-redirect.guard";
 import { PoliciesComponent } from "../../organizations/policies";
 
 import { AccountComponent } from "./account.component";
@@ -20,10 +20,7 @@ const routes: Routes = [
       {
         path: "",
         pathMatch: "full",
-        canActivate: [OrganizationRedirectGuard],
-        data: {
-          autoRedirectCallback: getSettingsRoute,
-        },
+        canActivate: [organizationRedirectGuard(getSettingsRoute)],
         children: [], // This is required to make the auto redirect work,
       },
       { path: "account", component: AccountComponent, data: { titleId: "organizationInfo" } },

@@ -13,7 +13,7 @@ import {
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 
 import { OrganizationPermissionsGuard } from "../../admin-console/organizations/guards/org-permissions.guard";
-import { OrganizationRedirectGuard } from "../../admin-console/organizations/guards/org-redirect.guard";
+import { organizationRedirectGuard } from "../../admin-console/organizations/guards/org-redirect.guard";
 import { OrganizationLayoutComponent } from "../../admin-console/organizations/layouts/organization-layout.component";
 import { GroupsComponent } from "../../admin-console/organizations/manage/groups.component";
 import { deepLinkGuard } from "../../auth/guards/deep-link.guard";
@@ -31,10 +31,7 @@ const routes: Routes = [
       {
         path: "",
         pathMatch: "full",
-        canActivate: [OrganizationRedirectGuard],
-        data: {
-          autoRedirectCallback: getOrganizationRoute,
-        },
+        canActivate: [organizationRedirectGuard(getOrganizationRoute)],
         children: [], // This is required to make the auto redirect work, },
       },
       {

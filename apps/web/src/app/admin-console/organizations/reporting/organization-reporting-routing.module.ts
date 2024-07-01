@@ -11,7 +11,7 @@ import { UnsecuredWebsitesReportComponent } from "../../../admin-console/organiz
 import { WeakPasswordsReportComponent } from "../../../admin-console/organizations/tools/weak-passwords-report.component";
 import { IsPaidOrgGuard } from "../guards/is-paid-org.guard";
 import { OrganizationPermissionsGuard } from "../guards/org-permissions.guard";
-import { OrganizationRedirectGuard } from "../guards/org-redirect.guard";
+import { organizationRedirectGuard } from "../guards/org-redirect.guard";
 import { EventsComponent } from "../manage/events.component";
 
 import { ReportsHomeComponent } from "./reports-home.component";
@@ -25,10 +25,7 @@ const routes: Routes = [
       {
         path: "",
         pathMatch: "full",
-        canActivate: [OrganizationRedirectGuard],
-        data: {
-          autoRedirectCallback: getReportRoute,
-        },
+        canActivate: [organizationRedirectGuard(getReportRoute)],
         children: [], // This is required to make the auto redirect work,
       },
       {
