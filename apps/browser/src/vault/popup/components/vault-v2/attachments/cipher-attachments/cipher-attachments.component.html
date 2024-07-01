@@ -4,8 +4,8 @@
   <li *ngFor="let attachment of cipher.attachments">
     <bit-item>
       <bit-item-content>
-        {{ attachment.fileName }}
-        <span slot="secondary">{{ attachment.sizeName }}</span>
+        <span data-testid="file-name">{{ attachment.fileName }}</span>
+        <span slot="secondary" data-testid="file-size">{{ attachment.sizeName }}</span>
       </bit-item-content>
       <ng-container slot="end">
         <bit-item-action>

@@ -103,6 +103,24 @@ describe("CipherAttachmentsComponent", () => {
     expect(component.cipher).toEqual(cipherView);
   });
 
+  it("sets testids for automation testing", () => {
+    const attachment = {
+      id: "1234-5678",
+      fileName: "test file.txt",
+      sizeName: "244.2 KB",
+    } as AttachmentView;
+
+    component.cipher.attachments = [attachment];
+
+    fixture.detectChanges();
+
+    const fileName = fixture.debugElement.query(By.css('[data-testid="file-name"]'));
+    const fileSize = fixture.debugElement.query(By.css('[data-testid="file-size"]'));
+
+    expect(fileName.nativeElement.textContent).toEqual(attachment.fileName);
+    expect(fileSize.nativeElement.textContent).toEqual(attachment.sizeName);
+  });
+
   describe("bitSubmit", () => {
     beforeEach(() => {
       component.submitBtn.disabled = undefined;
