@@ -2,7 +2,7 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
-import { biometrics, passwords } from "@bitwarden/desktop-native";
+import { biometrics, passwords } from "@bitwarden/desktop-napi";
 
 import { WindowMain } from "../../../main/window.main";
 

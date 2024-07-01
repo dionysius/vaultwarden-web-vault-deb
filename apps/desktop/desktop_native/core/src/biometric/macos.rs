@@ -1,8 +1,8 @@
 use anyhow::{bail, Result};
 
-use crate::biometrics::{KeyMaterial, OsDerivedKey};
+use crate::biometric::{KeyMaterial, OsDerivedKey};
 
-/// The Unix implementation of the biometric trait.
+/// The MacOS implementation of the biometric trait.
 pub struct Biometric {}
 
 impl super::BiometricTrait for Biometric {
@@ -30,7 +30,7 @@ impl super::BiometricTrait for Biometric {
         _service: &str,
         _account: &str,
         _secret: &str,
-        _key_material: Option<KeyMaterial>,
+        _key_material: Option<super::KeyMaterial>,
         _iv_b64: &str,
     ) -> Result<String> {
         bail!("platform not supported");

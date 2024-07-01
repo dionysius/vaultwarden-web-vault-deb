@@ -29,7 +29,7 @@ use windows::{
 };
 
 use crate::{
-    biometrics::{KeyMaterial, OsDerivedKey},
+    biometric::{KeyMaterial, OsDerivedKey},
     crypto::{self, CipherString},
 };
 

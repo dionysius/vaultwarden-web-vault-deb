@@ -13,7 +13,7 @@ import BiometricWindowsMain from "./biometric.windows.main";
 import { BiometricsService } from "./biometrics.service";
 import { OsBiometricService } from "./biometrics.service.abstraction";
 
-jest.mock("@bitwarden/desktop-native", () => {
+jest.mock("@bitwarden/desktop-napi", () => {
   return {
     biometrics: jest.fn(),
     passwords: jest.fn(),

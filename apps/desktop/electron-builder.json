@@ -15,9 +15,9 @@
   "asarUnpack": ["**/*.node"],
   "files": [
     "**/*",
-    "!**/node_modules/@bitwarden/desktop-native/**/*",
-    "**/node_modules/@bitwarden/desktop-native/index.js",
-    "**/node_modules/@bitwarden/desktop-native/desktop_native.${platform}-${arch}*.node",
+    "!**/node_modules/@bitwarden/desktop-napi/**/*",
+    "**/node_modules/@bitwarden/desktop-napi/index.js",
+    "**/node_modules/@bitwarden/desktop-napi/desktop_napi.${platform}-${arch}*.node",
 
     "!**/node_modules/argon2/**/*",
     "**/node_modules/argon2/argon2.cjs",
@@ -71,7 +71,7 @@
       ],
       "CFBundleDevelopmentRegion": "en"
     },
-    "singleArchFiles": "node_modules/@bitwarden/desktop-native/desktop_native.darwin-*.node",
+    "singleArchFiles": "node_modules/@bitwarden/desktop-napi/desktop_napi.darwin-*.node",
     "target": ["dmg", "zip"]
   },
   "win": {

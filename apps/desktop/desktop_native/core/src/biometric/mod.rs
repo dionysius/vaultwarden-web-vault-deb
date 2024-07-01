@@ -7,7 +7,15 @@ mod biometric;
 
 pub use biometric::Biometric;
 
-use crate::biometrics::{KeyMaterial, OsDerivedKey};
+pub struct KeyMaterial {
+    pub os_key_part_b64: String,
+    pub client_key_part_b64: Option<String>,
+}
+
+pub struct OsDerivedKey {
+    pub key_b64: String,
+    pub iv_b64: String,
+}
 
 pub trait BiometricTrait {
     fn prompt(hwnd: Vec<u8>, message: String) -> Result<bool>;

@@ -1,25 +1,19 @@
 #[macro_use]
 extern crate napi_derive;
 
-mod biometric;
-mod clipboard;
-mod crypto;
-mod error;
-mod password;
-
 #[napi]
 pub mod passwords {
     /// Fetch the stored password from the keychain.
     #[napi]
     pub async fn get_password(service: String, account: String) -> napi::Result<String> {
-        super::password::get_password(&service, &account)
+        desktop_core::password::get_password(&service, &account)
             .map_err(|e| napi::Error::from_reason(e.to_string()))
     }
 
     /// Fetch the stored password from the keychain that was stored with Keytar.
     #[napi]
     pub async fn get_password_keytar(service: String, account: String) -> napi::Result<String> {
-        super::password::get_password_keytar(&service, &account)
+        desktop_core::password::get_password_keytar(&service, &account)
             .map_err(|e| napi::Error::from_reason(e.to_string()))
     }
 
@@ -30,21 +24,21 @@ pub mod passwords {
         account: String,
         password: String,
     ) -> napi::Result<()> {
-        super::password::set_password(&service, &account, &password)
+        desktop_core::password::set_password(&service, &account, &password)
             .map_err(|e| napi::Error::from_reason(e.to_string()))
     }
 
     /// Delete the stored password from the keychain.
     #[napi]
     pub async fn delete_password(service: String, account: String) -> napi::Result<()> {
-        super::password::delete_password(&service, &account)
+        desktop_core::password::delete_password(&service, &account)
             .map_err(|e| napi::Error::from_reason(e.to_string()))
     }
 }
 
 #[napi]
 pub mod biometrics {
-    use super::biometric::{Biometric, BiometricTrait};
+    use desktop_core::biometric::{Biometric, BiometricTrait};
 
     // Prompt for biometric confirmation
     #[napi]
@@ -68,8 +62,14 @@ pub mod biometrics {
         key_material: Option<KeyMaterial>,
         iv_b64: String,
     ) -> napi::Result<String> {
-        Biometric::set_biometric_secret(&service, &account, &secret, key_material, &iv_b64)
-            .map_err(|e| napi::Error::from_reason(e.to_string()))
+        Biometric::set_biometric_secret(
+            &service,
+            &account,
+            &secret,
+            key_material.map(|m| m.into()),
+            &iv_b64,
+        )
+        .map_err(|e| napi::Error::from_reason(e.to_string()))
     }
 
     #[napi]
@@ -78,8 +78,9 @@ pub mod biometrics {
         account: String,
         key_material: Option<KeyMaterial>,
     ) -> napi::Result<String> {
-        let result = Biometric::get_biometric_secret(&service, &account, key_material)
-            .map_err(|e| napi::Error::from_reason(e.to_string()));
+        let result =
+            Biometric::get_biometric_secret(&service, &account, key_material.map(|m| m.into()))
+                .map_err(|e| napi::Error::from_reason(e.to_string()));
         result
     }
 
@@ -93,6 +94,7 @@ pub mod biometrics {
     #[napi]
     pub async fn derive_key_material(iv: Option<String>) -> napi::Result<OsDerivedKey> {
         Biometric::derive_key_material(iv.as_deref())
+            .map(|k| k.into())
             .map_err(|e| napi::Error::from_reason(e.to_string()))
     }
 
@@ -102,10 +104,28 @@ pub mod biometrics {
         pub client_key_part_b64: Option<String>,
     }
 
+    impl From<KeyMaterial> for desktop_core::biometric::KeyMaterial {
+        fn from(km: KeyMaterial) -> Self {
+            desktop_core::biometric::KeyMaterial {
+                os_key_part_b64: km.os_key_part_b64,
+                client_key_part_b64: km.client_key_part_b64,
+            }
+        }
+    }
+
     #[napi(object)]
     pub struct OsDerivedKey {
         pub key_b64: String,
         pub iv_b64: String,
+    }
+
+    impl From<desktop_core::biometric::OsDerivedKey> for OsDerivedKey {
+        fn from(km: desktop_core::biometric::OsDerivedKey) -> Self {
+            OsDerivedKey {
+                key_b64: km.key_b64,
+                iv_b64: km.iv_b64,
+            }
+        }
     }
 }
 
@@ -113,12 +133,12 @@ pub mod biometrics {
 pub mod clipboards {
     #[napi]
     pub async fn read() -> napi::Result<String> {
-        super::clipboard::read().map_err(|e| napi::Error::from_reason(e.to_string()))
+        desktop_core::clipboard::read().map_err(|e| napi::Error::from_reason(e.to_string()))
     }
 
     #[napi]
     pub async fn write(text: String, password: bool) -> napi::Result<()> {
-        super::clipboard::write(&text, password)
+        desktop_core::clipboard::write(&text, password)
             .map_err(|e| napi::Error::from_reason(e.to_string()))
     }
 }
