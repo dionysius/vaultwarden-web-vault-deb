@@ -3,8 +3,9 @@ import { firstValueFrom } from "rxjs";
 
 import { AccountInfo } from "@bitwarden/common/auth/abstractions/account.service";
 import { DeviceTrustServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust.service.abstraction";
-import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
-import { InternalMasterPasswordServiceAbstraction } from "@bitwarden/common/auth/abstractions/master-password.service.abstraction";
+import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
+import { VerificationType } from "@bitwarden/common/auth/enums/verification-type";
+import { MasterPasswordVerification } from "@bitwarden/common/auth/types/verification";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { EncryptedString } from "@bitwarden/common/platform/models/domain/enc-string";
@@ -25,7 +26,7 @@ import { UserKeyRotationApiService } from "./user-key-rotation-api.service";
 @Injectable()
 export class UserKeyRotationService {
   constructor(
-    private masterPasswordService: InternalMasterPasswordServiceAbstraction,
+    private userVerificationService: UserVerificationService,
     private apiService: UserKeyRotationApiService,
     private cipherService: CipherService,
     private folderService: FolderService,
@@ -35,7 +36,6 @@ export class UserKeyRotationService {
     private deviceTrustService: DeviceTrustServiceAbstraction,
     private cryptoService: CryptoService,
     private encryptService: EncryptService,
-    private kdfConfigService: KdfConfigService,
     private syncService: SyncService,
     private webauthnLoginAdminService: WebauthnLoginAdminService,
   ) {}
@@ -58,19 +58,19 @@ export class UserKeyRotationService {
       );
     }
 
-    // Create master key to validate the master password
-    const masterKey = await this.cryptoService.makeMasterKey(
-      masterPassword,
+    // Verify master password
+    // UV service sets master key on success since it is stored in memory and can be lost on refresh
+    const verification = {
+      type: VerificationType.MasterPassword,
+      secret: masterPassword,
+    } as MasterPasswordVerification;
+
+    const { masterKey } = await this.userVerificationService.verifyUserByMasterPassword(
+      verification,
+      user.id,
       user.email,
-      await this.kdfConfigService.getKdfConfig(),
     );
 
-    if (!masterKey) {
-      throw new Error("Master key could not be created");
-    }
-
-    // Set master key again in case it was lost (could be lost on refresh)
-    await this.masterPasswordService.setMasterKey(masterKey, user.id);
     const [newUserKey, newEncUserKey] = await this.cryptoService.makeUserKey(masterKey);
 
     if (!newUserKey || !newEncUserKey) {

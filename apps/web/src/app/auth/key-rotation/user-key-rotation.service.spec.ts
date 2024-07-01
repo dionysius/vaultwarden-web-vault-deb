@@ -3,9 +3,8 @@ import { BehaviorSubject } from "rxjs";
 
 import { OrganizationUserResetPasswordWithIdRequest } from "@bitwarden/common/admin-console/abstractions/organization-user/requests";
 import { DeviceTrustServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust.service.abstraction";
-import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
+import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { WebauthnRotateCredentialRequest } from "@bitwarden/common/auth/models/request/webauthn-rotate-credential.request";
-import { FakeMasterPasswordService } from "@bitwarden/common/auth/services/master-password/fake-master-password.service";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
@@ -32,6 +31,7 @@ import { UserKeyRotationService } from "./user-key-rotation.service";
 describe("KeyRotationService", () => {
   let keyRotationService: UserKeyRotationService;
 
+  let mockUserVerificationService: MockProxy<UserVerificationService>;
   let mockApiService: MockProxy<UserKeyRotationApiService>;
   let mockCipherService: MockProxy<CipherService>;
   let mockFolderService: MockProxy<FolderService>;
@@ -42,10 +42,8 @@ describe("KeyRotationService", () => {
   let mockCryptoService: MockProxy<CryptoService>;
   let mockEncryptService: MockProxy<EncryptService>;
   let mockConfigService: MockProxy<ConfigService>;
-  let mockKdfConfigService: MockProxy<KdfConfigService>;
   let mockSyncService: MockProxy<SyncService>;
   let mockWebauthnLoginAdminService: MockProxy<WebauthnLoginAdminService>;
-  let mockMasterPasswordService: FakeMasterPasswordService = new FakeMasterPasswordService();
 
   const mockUser = {
     id: "mockUserId" as UserId,
@@ -55,7 +53,7 @@ describe("KeyRotationService", () => {
   };
 
   beforeAll(() => {
-    mockMasterPasswordService = new FakeMasterPasswordService();
+    mockUserVerificationService = mock<UserVerificationService>();
     mockApiService = mock<UserKeyRotationApiService>();
     mockCipherService = mock<CipherService>();
     mockFolderService = mock<FolderService>();
@@ -66,12 +64,11 @@ describe("KeyRotationService", () => {
     mockCryptoService = mock<CryptoService>();
     mockEncryptService = mock<EncryptService>();
     mockConfigService = mock<ConfigService>();
-    mockKdfConfigService = mock<KdfConfigService>();
     mockSyncService = mock<SyncService>();
     mockWebauthnLoginAdminService = mock<WebauthnLoginAdminService>();
 
     keyRotationService = new UserKeyRotationService(
-      mockMasterPasswordService,
+      mockUserVerificationService,
       mockApiService,
       mockCipherService,
       mockFolderService,
@@ -81,7 +78,6 @@ describe("KeyRotationService", () => {
       mockDeviceTrustService,
       mockCryptoService,
       mockEncryptService,
-      mockKdfConfigService,
       mockSyncService,
       mockWebauthnLoginAdminService,
     );
@@ -95,7 +91,6 @@ describe("KeyRotationService", () => {
     let privateKey: BehaviorSubject<UserPrivateKey>;
 
     beforeEach(() => {
-      mockCryptoService.makeMasterKey.mockResolvedValue("mockMasterKey" as any);
       mockCryptoService.makeUserKey.mockResolvedValue([
         new SymmetricCryptoKey(new Uint8Array(64)) as UserKey,
         {
@@ -108,6 +103,12 @@ describe("KeyRotationService", () => {
       mockEncryptService.encrypt.mockResolvedValue({
         encryptedString: "mockEncryptedData",
       } as any);
+
+      // Mock user verification
+      mockUserVerificationService.verifyUserByMasterPassword.mockResolvedValue({
+        masterKey: "mockMasterKey" as any,
+        policyOptions: null,
+      });
 
       // Mock user key
       mockCryptoService.userKey$.mockReturnValue(new BehaviorSubject("mockOriginalUserKey" as any));
@@ -162,14 +163,6 @@ describe("KeyRotationService", () => {
       ).rejects.toThrow();
     });
 
-    it("throws if master key creation fails", async () => {
-      mockCryptoService.makeMasterKey.mockResolvedValueOnce(null);
-
-      await expect(
-        keyRotationService.rotateUserKeyAndEncryptedData("mockMasterPassword", mockUser),
-      ).rejects.toThrow();
-    });
-
     it("throws if user key creation fails", async () => {
       mockCryptoService.makeUserKey.mockResolvedValueOnce([null, null]);
 
@@ -186,13 +179,14 @@ describe("KeyRotationService", () => {
       ).rejects.toThrow();
     });
 
-    it("saves the master key in state after creation", async () => {
-      await keyRotationService.rotateUserKeyAndEncryptedData("mockMasterPassword", mockUser);
-
-      expect(mockMasterPasswordService.mock.setMasterKey).toHaveBeenCalledWith(
-        "mockMasterKey" as any,
-        mockUser.id,
+    it("throws if master password is incorrect", async () => {
+      mockUserVerificationService.verifyUserByMasterPassword.mockRejectedValueOnce(
+        new Error("Invalid master password"),
       );
+
+      await expect(
+        keyRotationService.rotateUserKeyAndEncryptedData("mockMasterPassword", mockUser),
+      ).rejects.toThrow();
     });
 
     it("throws if server rotation fails", async () => {
