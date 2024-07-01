@@ -27,7 +27,7 @@
     </bit-toggle>
 
     <bit-toggle [value]="userStatusType.Accepted">
-      {{ "accepted" | i18n }}
+      {{ "needsConfirmation" | i18n }}
       <span bitBadge variant="warning" *ngIf="acceptedCount">{{ acceptedCount }}</span>
     </bit-toggle>
   </bit-toggle-group>
@@ -123,7 +123,7 @@
               "invited" | i18n
             }}</span>
             <span bitBadge variant="warning" *ngIf="u.status === userStatusType.Accepted">{{
-              "accepted" | i18n
+              "needsConfirmation" | i18n
             }}</span>
             <small class="text-muted d-block" *ngIf="u.name">{{ u.name }}</small>
           </td>
