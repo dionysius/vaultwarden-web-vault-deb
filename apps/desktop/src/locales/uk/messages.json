@@ -736,7 +736,7 @@
     "message": "URL-адреса сервера API"
   },
   "webVaultUrl": {
-    "message": "URL-адреса сервера веб сховища"
+    "message": "URL-адреса сервера вебсховища"
   },
   "identityUrl": {
     "message": "URL-адреса сервера ідентифікації"
@@ -846,7 +846,7 @@
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
-    "message": "Перейти у веб сховище"
+    "message": "Перейти у вебсховище"
   },
   "getMobileApp": {
     "message": "Отримати мобільний додаток"
@@ -1837,7 +1837,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
-    "message": "За бажанням вимагати пароль в користувачів для доступу до цього відправлення.",
+    "message": "Ви можете встановити пароль для доступу до цього відправлення.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
