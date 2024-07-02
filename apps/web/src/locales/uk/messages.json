@@ -173,6 +173,10 @@
     "message": "Без теки",
     "description": "This is the folder for uncategorized items"
   },
+  "selfOwnershipLabel": {
+    "message": "You",
+    "description": "Used as a label to indicate that the user is the owner of an item."
+  },
   "addFolder": {
     "message": "Додати теку"
   },
@@ -400,6 +404,21 @@
   },
   "item": {
     "message": "Запис"
+  },
+  "itemDetails": {
+    "message": "Item details"
+  },
+  "itemName": {
+    "message": "Item name"
+  },
+  "cannotRemoveViewOnlyCollections": {
+    "message": "You cannot remove collections with View only permissions: $COLLECTIONS$",
+    "placeholders": {
+      "collections": {
+        "content": "$1",
+        "example": "Work, Personal"
+      }
+    }
   },
   "ex": {
     "message": "зразок",
@@ -1499,7 +1518,7 @@
     "message": "Налаштування"
   },
   "preferencesDesc": {
-    "message": "Налаштуйте свою роботу з веб сховищем."
+    "message": "Налаштуйте свою роботу з вебсховищем."
   },
   "preferencesUpdated": {
     "message": "Налаштування збережено"
@@ -1508,7 +1527,7 @@
     "message": "Мова"
   },
   "languageDesc": {
-    "message": "Змінити мову інтерфейсу веб сховища."
+    "message": "Змінити мову інтерфейсу вебсховища."
   },
   "enableFavicon": {
     "message": "Показувати піктограми вебсайтів"
@@ -1706,7 +1725,7 @@
     "message": "У зв'язку з обмеженнями платформи, YubiKey не можна використовувати в усіх програмах Bitwarden. Вам слід активувати іншого провайдера двоетапної перевірки, щоб мати змогу отримати доступ до свого облікового запису, коли неможливо скористатися YubiKey. Підтримувані платформи:"
   },
   "twoFactorYubikeySupportUsb": {
-    "message": "Веб сховище, програма для комп'ютера, CLI, а також усі розширення браузера на пристроях, де можливо під'єднати YubiKey до USB."
+    "message": "Вебсховище, програма для комп'ютера, CLI, а також усі розширення браузера на пристроях, де можливо під'єднати YubiKey до USB."
   },
   "twoFactorYubikeySupportMobile": {
     "message": "Мобільні програми на пристроях з NFC, або порт даних, який може приймати YubiKey."
@@ -1808,7 +1827,7 @@
     "message": "У зв'язку з обмеженнями платформи, FIDO U2F не можна використовувати в усіх програмах Bitwarden. Вам слід активувати іншого провайдера двоетапної перевірки, щоб мати змогу отримати доступ до свого облікового запису, коли неможливо скористатися FIDO U2F. Підтримувані платформи:"
   },
   "twoFactorU2fSupportWeb": {
-    "message": "Веб сховище і розширення браузера на комп'ютерах і ноутбуках з браузерами, що мають підтримку U2F (Chrome, Opera, Vivaldi, або Firefox з увімкненим FIDO U2F)."
+    "message": "Вебсховище і розширення браузера на комп'ютерах і ноутбуках з браузерами, що мають підтримку U2F (Chrome, Opera, Vivaldi, або Firefox з увімкненим FIDO U2F)."
   },
   "twoFactorU2fWaiting": {
     "message": "Чекаємо доки ви торкнетеся кнопки на своєму ключі безпеки"
@@ -1823,7 +1842,7 @@
     "message": "У зв'язку з обмеженнями платформи, WebAuthn не можна використовувати в усіх програмах Bitwarden. Вам слід активувати іншого провайдера двоетапної перевірки, щоб мати змогу отримати доступ до свого облікового запису, коли неможливо скористатися WebAuthn. Підтримувані платформи:"
   },
   "twoFactorWebAuthnSupportWeb": {
-    "message": "Веб сховище і розширення браузера на комп'ютерах і ноутбуках з браузерами, що мають підтримку WebAuthn (Chrome, Opera, Vivaldi, або Firefox з увімкненим FIDO U2F)."
+    "message": "Вебсховище і розширення браузера на комп'ютерах і ноутбуках з браузерами, що мають підтримку WebAuthn (Chrome, Opera, Vivaldi, або Firefox з увімкненим FIDO U2F)."
   },
   "twoFactorRecoveryYourCode": {
     "message": "Ваш код відновлення двоетапної перевірки Bitwarden"
@@ -2272,7 +2291,7 @@
     "message": "Необмежений термін дії"
   },
   "status": {
-    "message": "Статус"
+    "message": "Стан"
   },
   "nextCharge": {
     "message": "Наступна оплата"
@@ -2795,9 +2814,6 @@
   "invited": {
     "message": "Запрошено"
   },
-  "accepted": {
-    "message": "Схвалено"
-  },
   "confirmed": {
     "message": "Підтверджено"
   },
@@ -2862,13 +2878,13 @@
     "description": "Desktop app"
   },
   "webVault": {
-    "message": "Веб сховище"
+    "message": "Вебсховище"
   },
   "cli": {
     "message": "CLI"
   },
   "bitWebVault": {
-    "message": "Веб сховище Bitwarden"
+    "message": "Вебсховище Bitwarden"
   },
   "bitSecretsManager": {
     "message": "Менеджер секретів Bitwarden"
@@ -3396,7 +3412,7 @@
     "message": "Оновити браузер"
   },
   "updateBrowserDesc": {
-    "message": "Ви використовуєте непідтримуваний браузер. Веб сховище може працювати неправильно."
+    "message": "Ви використовуєте непідтримуваний браузер. Вебсховище може працювати неправильно."
   },
   "joinOrganization": {
     "message": "Приєднатися до організації"
@@ -3682,6 +3698,15 @@
   },
   "subscriptionMaxReached": {
     "message": "Коригування передплати призведе до відповідної зміни суми вашого рахунку. Ви не можете запросити понад $COUNT$ користувачів, не збільшивши кількість передплачених місць.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "50"
+      }
+    }
+  },
+  "subscriptionSeatMaxReached": {
+    "message": "Ви не можете запросити більш як $COUNT$ учасників, не збільшивши кількість місць вашого тарифного плану.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -4302,7 +4327,7 @@
     "message": "Поточна кількість доступів"
   },
   "sendPasswordDesc": {
-    "message": "За бажанням вимагати пароль в користувачів для доступу до цього відправлення.",
+    "message": "Ви можете встановити пароль для доступу до цього відправлення.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
@@ -5648,7 +5673,7 @@
     "message": "URL-адреса сервера API"
   },
   "webVaultUrl": {
-    "message": "URL-адреса сервера веб сховища"
+    "message": "URL-адреса сервера вебсховища"
   },
   "identityUrl": {
     "message": "URL-адреса сервера ідентифікації"
@@ -8489,5 +8514,11 @@
   "billingHistoryDescription": {
     "message": "Завантажте CSV для отримання клієнтських даних для кожної платіжної дати. Пропорційні витрати не включаються до CSV і можуть відрізнятися від пов'язаного рахунка. Для отримання найточніших даних щодо оплати, перегляньте щомісячні рахунки.",
     "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
+  },
+  "monthlySubscriptionUserSeatsMessage": {
+    "message": "Коригування передплати призведе до перерахунку суми вашого платежу в наступному платіжному періоді. "
+  },
+  "annualSubscriptionUserSeatsMessage": {
+    "message": "Коригування передплати призведе до перерахунку суми вашого платежу для щомісячного платіжного циклу. "
   }
 }

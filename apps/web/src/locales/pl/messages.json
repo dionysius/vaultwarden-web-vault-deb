@@ -173,6 +173,10 @@
     "message": "Nieprzypisane",
     "description": "This is the folder for uncategorized items"
   },
+  "selfOwnershipLabel": {
+    "message": "Ty",
+    "description": "Used as a label to indicate that the user is the owner of an item."
+  },
   "addFolder": {
     "message": "Dodaj folder"
   },
@@ -400,6 +404,21 @@
   },
   "item": {
     "message": "Element"
+  },
+  "itemDetails": {
+    "message": "Szczegóły elementu"
+  },
+  "itemName": {
+    "message": "Nazwa elementu"
+  },
+  "cannotRemoveViewOnlyCollections": {
+    "message": "Nie można usunąć kolekcji z uprawnieniami tylko do przeglądania: $COLLECTIONS$",
+    "placeholders": {
+      "collections": {
+        "content": "$1",
+        "example": "Work, Personal"
+      }
+    }
   },
   "ex": {
     "message": "np.",
@@ -2795,9 +2814,6 @@
   "invited": {
     "message": "Zaproszony"
   },
-  "accepted": {
-    "message": "Zaakceptowany"
-  },
   "confirmed": {
     "message": "Potwierdzone"
   },
@@ -3682,6 +3698,15 @@
   },
   "subscriptionMaxReached": {
     "message": "Zmiany w subskrypcji spowodują proporcjonalne zmiany w rozliczeniach. Nie można zaprosić więcej niż $COUNT$ użytkowników bez zwiększenia liczby stanowisk w subskrypcji.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "50"
+      }
+    }
+  },
+  "subscriptionSeatMaxReached": {
+    "message": "Nie możesz zaprosić więcej niż $COUNT$ członków bez zwiększenia ilości miejsc w subskrypcji.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -8489,5 +8514,11 @@
   "billingHistoryDescription": {
     "message": "Pobierz plik CSV, aby uzyskać dane klienta dla każdej daty rozliczeniowej. Proporcjonalne opłaty nie są uwzględnione w CSV i mogą różnić się od powiązanej faktury. Aby uzyskać najdokładniejsze dane rozliczeniowe, zapoznaj się z Twoimi miesięcznymi fakturami.",
     "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
+  },
+  "monthlySubscriptionUserSeatsMessage": {
+    "message": "Zmiany w Twojej subskrypcji spowodują doliczenie procentu opłaty do sumy rozliczeniowej w następnym okresie rozliczeniowym. "
+  },
+  "annualSubscriptionUserSeatsMessage": {
+    "message": "Zmiany w Twojej subskrypcji spowodują doliczenie procentu opłaty w miesięcznym cyklu rozliczeniowym. "
   }
 }

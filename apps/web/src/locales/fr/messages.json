@@ -173,6 +173,10 @@
     "message": "Aucun dossier",
     "description": "This is the folder for uncategorized items"
   },
+  "selfOwnershipLabel": {
+    "message": "Vous",
+    "description": "Used as a label to indicate that the user is the owner of an item."
+  },
   "addFolder": {
     "message": "Ajouter un dossier"
   },
@@ -400,6 +404,21 @@
   },
   "item": {
     "message": "Élément"
+  },
+  "itemDetails": {
+    "message": "Détails de l'élément"
+  },
+  "itemName": {
+    "message": "Nom de l’élément"
+  },
+  "cannotRemoveViewOnlyCollections": {
+    "message": "Vous ne pouvez pas supprimer des collections avec les autorisations d'affichage uniquement : $COLLECTIONS$",
+    "placeholders": {
+      "collections": {
+        "content": "$1",
+        "example": "Work, Personal"
+      }
+    }
   },
   "ex": {
     "message": "ex.",
@@ -2795,9 +2814,6 @@
   "invited": {
     "message": "Invité"
   },
-  "accepted": {
-    "message": "Accepté"
-  },
   "confirmed": {
     "message": "Confirmé"
   },
@@ -3682,6 +3698,15 @@
   },
   "subscriptionMaxReached": {
     "message": "Les ajustements apportés à votre abonnement entraîneront des modifications au prorata de vos totaux de facturation. Vous ne pouvez pas inviter plus de $COUNT$ utilisateurs sans augmenter votre nombre de licences.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "50"
+      }
+    }
+  },
+  "subscriptionSeatMaxReached": {
+    "message": "Vous ne pouvez pas inviter plus de membres $COUNT$ sans augmenter le nombre de licences de votre abonnement.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -8489,5 +8514,11 @@
   "billingHistoryDescription": {
     "message": "Téléchargez un fichier CSV pour obtenir les détails du client pour chaque date de facturation. Les frais au prorata ne sont pas inclus dans le fichier CSV et peuvent varier de la facture liée. Pour obtenir les détails de facturation les plus exacts, reportez-vous à vos factures mensuelles.",
     "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
+  },
+  "monthlySubscriptionUserSeatsMessage": {
+    "message": "Les ajustements à votre abonnement entraîneront des frais au prorata de vos totaux facturés lors de votre prochaine période de facturation. "
+  },
+  "annualSubscriptionUserSeatsMessage": {
+    "message": "Les ajustements à votre abonnement entraîneront des frais au prorata d'une période de facturation mensuelle. "
   }
 }

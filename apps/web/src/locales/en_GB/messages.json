@@ -173,6 +173,10 @@
     "message": "No folder",
     "description": "This is the folder for uncategorized items"
   },
+  "selfOwnershipLabel": {
+    "message": "You",
+    "description": "Used as a label to indicate that the user is the owner of an item."
+  },
   "addFolder": {
     "message": "Add folder"
   },
@@ -400,6 +404,21 @@
   },
   "item": {
     "message": "Item"
+  },
+  "itemDetails": {
+    "message": "Item details"
+  },
+  "itemName": {
+    "message": "Item name"
+  },
+  "cannotRemoveViewOnlyCollections": {
+    "message": "You cannot remove collections with View only permissions: $COLLECTIONS$",
+    "placeholders": {
+      "collections": {
+        "content": "$1",
+        "example": "Work, Personal"
+      }
+    }
   },
   "ex": {
     "message": "e.g.",
@@ -669,7 +688,7 @@
     "message": "Use for vault encryption"
   },
   "useForVaultEncryptionInfo": {
-    "message": "Log in and unlock on supported devices without your master password. Follow the prompts from your browser to finalize setup."
+    "message": "Log in and unlock on supported devices without your master password. Follow the prompts from your browser to finalise setup."
   },
   "useForVaultEncryptionErrorReadingPasskey": {
     "message": "Error reading passkey. Try again or uncheck this option."
@@ -1376,7 +1395,7 @@
     "message": "Your account has been closed and all associated data has been deleted."
   },
   "deleteOrganizationWarning": {
-    "message": "Deleting your organization is permanent. It cannot be undone."
+    "message": "Deleting your organisation is permanent. It cannot be undone."
   },
   "myAccount": {
     "message": "My account"
@@ -1400,7 +1419,7 @@
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead."
   },
   "onboardingImportDataDetailsPartTwoWithOrgs": {
-    "message": " instead. You may need to wait until your administrator confirms your organization membership.",
+    "message": " instead. You may need to wait until your administrator confirms your organisation membership.",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. You may need to wait until your administrator confirms your organization membership."
   },
   "importError": {
@@ -1568,7 +1587,7 @@
     "message": "Secure your account by requiring an additional step when logging in."
   },
   "twoStepLoginTeamsDesc": {
-    "message": "Enable two-step login for your organization."
+    "message": "Enable two-step login for your organisation."
   },
   "twoStepLoginEnterpriseDescStart": {
     "message": "Enforce Bitwarden Two-step Login options for members by using the ",
@@ -2795,9 +2814,6 @@
   "invited": {
     "message": "Invited"
   },
-  "accepted": {
-    "message": "Accepted"
-  },
   "confirmed": {
     "message": "Confirmed"
   },
@@ -3411,7 +3427,7 @@
     "message": "You can access this organisation once an administrator confirms your membership. We'll send you an email when that happens."
   },
   "inviteInitAcceptedDesc": {
-    "message": "You can now access this organization."
+    "message": "You can now access this organisation."
   },
   "inviteAcceptFailed": {
     "message": "Unable to accept invitation. Ask an organisation admin to send a new invitation."
@@ -3450,7 +3466,7 @@
     "message": "You have requested to delete your Bitwarden account. Use the button below to confirm."
   },
   "deleteRecoverOrgConfirmDesc": {
-    "message": "You have requested to delete your Bitwarden organization."
+    "message": "You have requested to delete your Bitwarden organisation."
   },
   "myOrganization": {
     "message": "My organisation"
@@ -3689,6 +3705,15 @@
       }
     }
   },
+  "subscriptionSeatMaxReached": {
+    "message": "You cannot invite more than $COUNT$ members without increasing your subscription seats.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "50"
+      }
+    }
+  },
   "seatsToAdd": {
     "message": "Seats to add"
   },
@@ -3828,16 +3853,16 @@
     "message": "Organisation suspended"
   },
   "secretsAccessSuspended": {
-    "message": "Suspended organizations cannot be accessed. Please contact your organization owner for assistance."
+    "message": "Suspended organisations cannot be accessed. Please contact your organisation owner for assistance."
   },
   "secretsCannotCreate": {
-    "message": "Secrets cannot be created in suspended organizations. Please contact your organization owner for assistance."
+    "message": "Secrets cannot be created in suspended organisations. Please contact your organisation owner for assistance."
   },
   "projectsCannotCreate": {
-    "message": "Projects cannot be created in suspended organizations. Please contact your organization owner for assistance."
+    "message": "Projects cannot be created in suspended organisations. Please contact your organisation owner for assistance."
   },
   "serviceAccountsCannotCreate": {
-    "message": "Service accounts cannot be created in suspended organizations. Please contact your organization owner for assistance."
+    "message": "Service accounts cannot be created in suspended organisations. Please contact your organisation owner for assistance."
   },
   "disabledOrganizationFilterError": {
     "message": "Items in suspended organisations cannot be accessed. Contact your organisation owner for assistance."
@@ -4794,7 +4819,7 @@
     "message": "Your password hint cannot be the same as your password."
   },
   "enrollAccountRecovery": {
-    "message": "Enroll in account recovery"
+    "message": "Enrol in account recovery"
   },
   "enrolledAccountRecovery": {
     "message": "Enrolled in account recovery"
@@ -4809,7 +4834,7 @@
     "message": "Withdrawal success!"
   },
   "eventEnrollAccountRecovery": {
-    "message": "User $ID$ enrolled in account recovery.",
+    "message": "User $ID$ enroled in account recovery.",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -4884,10 +4909,10 @@
     "message": "Based on the encryption method, recover accounts when master passwords or trusted devices are forgotten or lost."
   },
   "accountRecoveryPolicyWarning": {
-    "message": "Existing accounts with master passwords will require members to self-enroll before administrators can recover their accounts. Automatic enrollment will turn on account recovery for new members."
+    "message": "Existing accounts with master passwords will require members to self-enrol before administrators can recover their accounts. Automatic enrolment will turn on account recovery for new members."
   },
   "accountRecoverySingleOrgRequirementDesc": {
-    "message": "The single organization Enterprise policy must be turned on before activating this policy."
+    "message": "The single organisation Enterprise policy must be turned on before activating this policy."
   },
   "resetPasswordPolicyAutoEnroll": {
     "message": "Automatic enrolment"
@@ -5062,7 +5087,7 @@
     "message": "Add existing organisation"
   },
   "addNewOrganization": {
-    "message": "Add new organization"
+    "message": "Add new organisation"
   },
   "myProvider": {
     "message": "My Provider"
@@ -5135,7 +5160,7 @@
     "message": "Your master password does not meet the policy requirements of this organisation. In order to join the organisation, you must update your master password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
   },
   "updateWeakMasterPasswordWarning": {
-    "message": "Your master password does not meet one or more of your organization policies. In order to access the vault, you must update your master password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+    "message": "Your master password does not meet one or more of your organisation policies. In order to access the vault, you must update your master password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
   },
   "maximumVaultTimeout": {
     "message": "Vault timeout"
@@ -5169,7 +5194,7 @@
     }
   },
   "vaultTimeoutPolicyWithActionInEffect": {
-    "message": "Your organization policies are affecting your vault timeout. Maximum allowed vault timeout is $HOURS$ hour(s) and $MINUTES$ minute(s). Your vault timeout action is set to $ACTION$.",
+    "message": "Your organisation policies are affecting your vault timeout. Maximum allowed vault timeout is $HOURS$ hour(s) and $MINUTES$ minute(s). Your vault timeout action is set to $ACTION$.",
     "placeholders": {
       "hours": {
         "content": "$1",
@@ -5186,7 +5211,7 @@
     }
   },
   "vaultTimeoutActionPolicyInEffect": {
-    "message": "Your organization policies have set your vault timeout action to $ACTION$.",
+    "message": "Your organisation policies have set your vault timeout action to $ACTION$.",
     "placeholders": {
       "action": {
         "content": "$1",
@@ -5318,7 +5343,7 @@
     "message": "Set a unique SP entity ID"
   },
   "spUniqueEntityIdDesc": {
-    "message": "Generate an identifier that is unique to your organization"
+    "message": "Generate an identifier that is unique to your organisation"
   },
   "idpEntityId": {
     "message": "Entity ID"
@@ -5541,7 +5566,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescLink": {
-    "message": "require SSO authentication and single organization policies",
+    "message": "require SSO authentication and single organisation policies",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Connect login with SSO to your self-hosted decryption key server. Using this option, members won’t need to use their master passwords to decrypt vault data. The require SSO authentication and single organization policies are required to set up Key Connector decryption. Contact Bitwarden Support for set up assistance.'"
   },
   "memberDecryptionKeyConnectorDescEnd": {
@@ -5766,7 +5791,7 @@
     "message": "Exporting organisation vault"
   },
   "exportingIndividualVaultDescription": {
-    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organization vault items will not be included. Only vault item information will be exported and will not include associated attachments.",
+    "message": "Only the individual vault items associated with $EMAIL$ will be exported. Organisation vault items will not be included. Only vault item information will be exported and will not include associated attachments.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -5775,7 +5800,7 @@
     }
   },
   "exportingOrganizationVaultDesc": {
-    "message": "Only the organization vault associated with $ORGANIZATION$ will be exported. Items in individual vaults or other organizations will not be included.",
+    "message": "Only the organisation vault associated with $ORGANIZATION$ will be exported. Items in individual vaults or other organisations will not be included.",
     "placeholders": {
       "organization": {
         "content": "$1",
@@ -6779,7 +6804,7 @@
     "message": "Automatic Domain Verification"
   },
   "automaticDomainVerificationProcess": {
-    "message": "Bitwarden will attempt to verify the domain 3 times during the first 72 hours. If the domain can’t be verified, check the DNS record in your host and manually verify. The domain will be removed from your organization in 7 days if it is not verified"
+    "message": "Bitwarden will attempt to verify the domain 3 times during the first 72 hours. If the domain can’t be verified, check the DNS record in your host and manually verify. The domain will be removed from your organisation in 7 days if it is not verified"
   },
   "invalidDomainNameMessage": {
     "message": "Input is not a valid format. Format: mydomain.com. Subdomains require separate entries to be verified."
@@ -6977,7 +7002,7 @@
     }
   },
   "teamsStarterPlanInvLimitReachedNoManageBilling": {
-    "message": "Teams Starter plans may have up to $SEATCOUNT$ members. Contact your organization owner to upgrade your plan and invite more members.",
+    "message": "Teams Starter plans may have up to $SEATCOUNT$ members. Contact your organisation owner to upgrade your plan and invite more members.",
     "placeholders": {
       "seatcount": {
         "content": "$1",
@@ -7061,10 +7086,10 @@
     "message": "Billing Sync help"
   },
   "licensePaidFeaturesHelp": {
-    "message": "License paid features help"
+    "message": "Licence paid features help"
   },
   "selfHostGracePeriodHelp": {
-    "message": "After your subscription expires, you have 60 days to apply an updated license file to your organization. Grace period ends $GRACE_PERIOD_END_DATE$.",
+    "message": "After your subscription expires, you have 60 days to apply an updated licence file to your organisation. Grace period ends $GRACE_PERIOD_END_DATE$.",
     "placeholders": {
       "GRACE_PERIOD_END_DATE": {
         "content": "$1",
@@ -7288,10 +7313,10 @@
     "message": "Dismiss"
   },
   "notAvailableForFreeOrganization": {
-    "message": "This feature is not available for free organizations. Contact your organization owner to upgrade."
+    "message": "This feature is not available for free organisations. Contact your organisation owner to upgrade."
   },
   "smProjectSecretsNoItemsNoAccess": {
-    "message": "Contact your organization's admin to manage secrets for this project.",
+    "message": "Contact your organisation's admin to manage secrets for this project.",
     "description": "The message shown to the user under a project's secrets tab when the user only has read access to the project."
   },
   "enforceOnLoginDesc": {
@@ -7302,7 +7327,7 @@
     "description": "The individual description shown to the user when the user doesn't have access to delete a project."
   },
   "smProjectsDeleteBulkConfirmation": {
-    "message": "The following projects can not be deleted. Would you like to continue?",
+    "message": "The following projects cannot be deleted. Would you like to continue?",
     "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
   },
   "updateKdfSettings": {
@@ -7340,7 +7365,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO Required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionOptionTdeDescriptionLinkOne": {
-    "message": "single organization",
+    "message": "single organisation",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionOptionTdeDescriptionPartTwo": {
@@ -7360,15 +7385,15 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "memberDecryptionOptionTdeDescriptionPartFour": {
-    "message": "policy with automatic enrollment will turn on when this option is used.",
+    "message": "policy with automatic enrolment will turn on when this option is used.",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Once authenticated, members will decrypt vault data using a key stored on their device. The single organization policy, SSO required policy, and account recovery administration policy with automatic enrollment will turn on when this option is used.'"
   },
   "orgPermissionsUpdatedMustSetPassword": {
-    "message": "Your organization permissions were updated, requiring you to set a master password.",
+    "message": "Your organisation permissions were updated, requiring you to set a master password.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "orgRequiresYouToSetPassword": {
-    "message": "Your organization requires you to set a master password.",
+    "message": "Your organisation requires you to set a master password.",
     "description": "Used as a card title description on the set password page to explain why the user is there"
   },
   "notFound": {
@@ -7405,7 +7430,7 @@
     "message": "Activate Secrets Manager"
   },
   "yourOrganizationsFingerprint": {
-    "message": "Your organization's fingerprint phrase",
+    "message": "Your organisation's fingerprint phrase",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their organization's public key with another user, for the purposes of sharing."
   },
   "deviceApprovals": {
@@ -7558,7 +7583,7 @@
     "message": "For engineering and DevOps teams to manage secrets throughout the software development lifecycle."
   },
   "free2PersonOrganization": {
-    "message": "Free 2-person Organizations"
+    "message": "Free 2-person Organisations"
   },
   "unlimitedSecrets": {
     "message": "Unlimited secrets"
@@ -7624,7 +7649,7 @@
     "message": "Collection management"
   },
   "collectionManagementDesc": {
-    "message": "Manage the collection behavior for the organization"
+    "message": "Manage the collection behaviour for the organisation"
   },
   "limitCollectionCreationDeletionDesc": {
     "message": "Limit collection creation and deletion to owners and admins"
@@ -7645,7 +7670,7 @@
     "message": "Password Manager"
   },
   "freeOrganization": {
-    "message": "Free Organization"
+    "message": "Free Organisation"
   },
   "limitServiceAccounts": {
     "message": "Limit service accounts (optional)"
@@ -7775,7 +7800,7 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'To maintain your subscription for $ORG$, add a payment method.'"
   },
   "organizationInformation": {
-    "message": "Organization information"
+    "message": "Organisation information"
   },
   "confirmationDetails": {
     "message": "Confirmation details"
@@ -7787,11 +7812,11 @@
     "message": "We've sent a confirmation email to your email at "
   },
   "sorryToSeeYouGo": {
-    "message": "Sorry to see you go! Help improve Bitwarden by sharing why you're canceling.",
+    "message": "Sorry to see you go! Help improve Bitwarden by sharing why you're cancelling.",
     "description": "A message shown to users as part of an offboarding survey asking them to provide more information on their subscription cancelation."
   },
   "selectCancellationReason": {
-    "message": "Select a reason for canceling",
+    "message": "Select a reason for cancelling",
     "description": "Used as a form field label for a select input on the offboarding survey."
   },
   "anyOtherFeedback": {
@@ -7852,7 +7877,7 @@
     "message": "Assign to these collections"
   },
   "bulkCollectionAssignmentDialogDescription": {
-    "message": "Select the collections that the items will be shared with. Once an item is updated in one collection, it will be reflected in all collections. Only organization members with access to these collections will be able to see the items."
+    "message": "Select the collections that the items will be shared with. Once an item is updated in one collection, it will be reflected in all collections. Only organisation members with access to these collections will be able to see the items."
   },
   "selectCollectionsToAssign": {
     "message": "Select collections to assign"
@@ -7892,7 +7917,7 @@
     "message": "Remaining"
   },
   "unlinkOrganization": {
-    "message": "Unlink organization"
+    "message": "Unlink organisation"
   },
   "manageSeats": {
     "message": "MANAGE SEATS"
@@ -7907,7 +7932,7 @@
     "message": "Additional seats purchased"
   },
   "assignedSeatCannotUpdate": {
-    "message": "Assigned Seats can not be updated. Please contact your organization owner for assistance."
+    "message": "Assigned Seats cannot be updated. Please contact your organisation owner for assistance."
   },
   "subscriptionUpdateFailed": {
     "message": "Subscription update failed"
@@ -7965,7 +7990,7 @@
     "description": "The date header used when a subscription is cancelled."
   },
   "machineAccountsCannotCreate": {
-    "message": "Machine accounts cannot be created in suspended organizations. Please contact your organization owner for assistance."
+    "message": "Machine accounts cannot be created in suspended organisations. Please contact your organisation owner for assistance."
   },
   "machineAccount": {
     "message": "Machine account",
@@ -8131,13 +8156,13 @@
     "message": "You cannot add yourself to a group."
   },
   "unassignedItemsBannerSelfHost": {
-    "message": "Notice: On May 2, 2024, unassigned organization items will no longer be visible in your All Vaults view across devices and will only be accessible via the Admin Console. Assign these items to a collection from the Admin Console to make them visible."
+    "message": "Notice: On May 2, 2024, unassigned organisation items will no longer be visible in your All Vaults view across devices and will only be accessible via the Admin Console. Assign these items to a collection from the Admin Console to make them visible."
   },
   "unassignedItemsBannerNotice": {
-    "message": "Notice: Unassigned organization items are no longer visible in your All Vaults view across devices and are now only accessible via the Admin Console."
+    "message": "Notice: Unassigned organisation items are no longer visible in your All Vaults view across devices and are now only accessible via the Admin Console."
   },
   "unassignedItemsBannerSelfHostNotice": {
-    "message": "Notice: On May 16, 2024, unassigned organization items will no longer be visible in your All Vaults view across devices and will only be accessible via the Admin Console."
+    "message": "Notice: On May 16, 2024, unassigned organisation items will no longer be visible in your All Vaults view across devices and will only be accessible via the Admin Console."
   },
   "unassignedItemsBannerCTAPartOne": {
     "message": "Assign these items to a collection from the",
@@ -8245,7 +8270,7 @@
     "message": "View Go repository"
   },
   "createNewClientToManageAsProvider": {
-    "message": "Create a new client organization to manage as a Provider. Additional seats will be reflected in the next billing cycle."
+    "message": "Create a new client organisation to manage as a Provider. Additional seats will be reflected in the next billing cycle."
   },
   "selectAPlan": {
     "message": "Select a plan"
@@ -8260,7 +8285,7 @@
     "message": "Seats"
   },
   "addOrganization": {
-    "message": "Add organization"
+    "message": "Add organisation"
   },
   "createdNewClient": {
     "message": "Successfully created new client"
@@ -8272,7 +8297,7 @@
     "message": "This collection is only accessible from the admin console"
   },
   "organizationOptionsMenu": {
-    "message": "Toggle Organization Menu"
+    "message": "Toggle Organisation Menu"
   },
   "vaultItemSelect": {
     "message": "Select vault item"
@@ -8330,13 +8355,13 @@
     "message": "Update name"
   },
   "updatedOrganizationName": {
-    "message": "Updated organization name"
+    "message": "Updated organisation name"
   },
   "providerPlan": {
     "message": "Managed Service Provider"
   },
   "orgSeats": {
-    "message": "Organization Seats"
+    "message": "Organisation Seats"
   },
   "providerDiscount": {
     "message": "$AMOUNT$% Discount",
@@ -8400,7 +8425,7 @@
     "message": "Identify security risks by auditing member access"
   },
   "onlyAvailableForEnterpriseOrganization": {
-    "message": "Quickly view member access across the organization by upgrading to an Enterprise plan."
+    "message": "Quickly view member access across the organisation by upgrading to an Enterprise plan."
   },
   "date": {
     "message": "Date"
@@ -8489,5 +8514,11 @@
   "billingHistoryDescription": {
     "message": "Download a CSV to obtain client details for each billing date. Prorated charges are not included in the CSV and may vary from the linked invoice. For the most accurate billing details, refer to your monthly invoices.",
     "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
+  },
+  "monthlySubscriptionUserSeatsMessage": {
+    "message": "Adjustments to your subscription will result in prorated charges to your billing totals on your next billing period. "
+  },
+  "annualSubscriptionUserSeatsMessage": {
+    "message": "Adjustments to your subscription will result in prorated charges on a monthly billing cycle. "
   }
 }

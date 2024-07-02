@@ -173,6 +173,10 @@
     "message": "Geen map",
     "description": "This is the folder for uncategorized items"
   },
+  "selfOwnershipLabel": {
+    "message": "Jij",
+    "description": "Used as a label to indicate that the user is the owner of an item."
+  },
   "addFolder": {
     "message": "Map toevoegen"
   },
@@ -400,6 +404,21 @@
   },
   "item": {
     "message": "Item"
+  },
+  "itemDetails": {
+    "message": "Itemdetails"
+  },
+  "itemName": {
+    "message": "Itemnaam"
+  },
+  "cannotRemoveViewOnlyCollections": {
+    "message": "Je kunt verzamelingen niet verwijderen met alleen rechten voor weergeven: $COLLECTIONS$",
+    "placeholders": {
+      "collections": {
+        "content": "$1",
+        "example": "Work, Personal"
+      }
+    }
   },
   "ex": {
     "message": "bijv.",
@@ -2795,9 +2814,6 @@
   "invited": {
     "message": "Uitgenodigd"
   },
-  "accepted": {
-    "message": "Geaccepteerd"
-  },
   "confirmed": {
     "message": "Bevestigd"
   },
@@ -3682,6 +3698,15 @@
   },
   "subscriptionMaxReached": {
     "message": "Aanpassingen aan je abonnement leiden tot evenredige wijzigingen in uw factuurtotaal. Je kunt niet meer dan $COUNT$ gebruikers uitnodigen zonder je abonnementsplaatsen te verhogen.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "50"
+      }
+    }
+  },
+  "subscriptionSeatMaxReached": {
+    "message": "Je kunt niet meer dan $COUNT$ leden uitnodigen zonder je abonnement te upgraden.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -8489,5 +8514,11 @@
   "billingHistoryDescription": {
     "message": "Download een CSV om klantgegevens voor elke factuurdatum te krijgen. De CSV bevat geen pro rata kosten en kan afwijken van de gekoppelde factuur. Voor de meest nauwkeurige factureringsgegevens kun je je maandelijkse facturen raadplegen.",
     "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
+  },
+  "monthlySubscriptionUserSeatsMessage": {
+    "message": "Aanpassingen van je abonnement leiden tot evenredige kosten op je volgende maandelijkse factureringsperiode. "
+  },
+  "annualSubscriptionUserSeatsMessage": {
+    "message": "Aanpassingen van je abonnement leiden tot evenredige kosten op een maandelijkse factureringscyclus. "
   }
 }

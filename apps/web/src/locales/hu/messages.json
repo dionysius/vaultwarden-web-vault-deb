@@ -173,6 +173,10 @@
     "message": "Nincs mappa",
     "description": "This is the folder for uncategorized items"
   },
+  "selfOwnershipLabel": {
+    "message": "You",
+    "description": "Used as a label to indicate that the user is the owner of an item."
+  },
   "addFolder": {
     "message": "Mappa hozzáadása"
   },
@@ -400,6 +404,21 @@
   },
   "item": {
     "message": "Elem"
+  },
+  "itemDetails": {
+    "message": "Item details"
+  },
+  "itemName": {
+    "message": "Item name"
+  },
+  "cannotRemoveViewOnlyCollections": {
+    "message": "You cannot remove collections with View only permissions: $COLLECTIONS$",
+    "placeholders": {
+      "collections": {
+        "content": "$1",
+        "example": "Work, Personal"
+      }
+    }
   },
   "ex": {
     "message": "Példa:",
@@ -2795,9 +2814,6 @@
   "invited": {
     "message": "Meghívott"
   },
-  "accepted": {
-    "message": "Elfogadva"
-  },
   "confirmed": {
     "message": "Megerősítve"
   },
@@ -3682,6 +3698,15 @@
   },
   "subscriptionMaxReached": {
     "message": "Az előfizetés módosítása a számlázási összegek arányos módosítását eredményezi. Nem hívhatunk meg több, mint $COUNT$ felhasználót az előfizetői helyek növelése nélkül.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "50"
+      }
+    }
+  },
+  "subscriptionSeatMaxReached": {
+    "message": "$COUNT$ tagnál több nem hívható meg az előfizetői helyek növelése nélkül.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -8489,5 +8514,11 @@
   "billingHistoryDescription": {
     "message": "Töltsük le a CSV fájlt, hogy minden számlázási dátumhoz megkapjuk az ügyfél részleteket. Az arányos költségeket a CSV nem tartalmazza és eltérhetnek a hivatkozott számlától. A legpontosabb számlázási részletekért tekintsük meg havi számlákat.",
     "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
+  },
+  "monthlySubscriptionUserSeatsMessage": {
+    "message": "Az előfizetés módosítása a következő számlázási időszakban arányos költségeket eredményez a számlázási végösszegben."
+  },
+  "annualSubscriptionUserSeatsMessage": {
+    "message": "Az előfizetés módosítása a havi számlázási ciklusban arányos költségeket eredményez."
   }
 }

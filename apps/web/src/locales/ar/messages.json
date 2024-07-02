@@ -173,6 +173,10 @@
     "message": "لا يوجد مجلد",
     "description": "This is the folder for uncategorized items"
   },
+  "selfOwnershipLabel": {
+    "message": "You",
+    "description": "Used as a label to indicate that the user is the owner of an item."
+  },
   "addFolder": {
     "message": "إضافة مجلد"
   },
@@ -401,6 +405,21 @@
   "item": {
     "message": "عنصر"
   },
+  "itemDetails": {
+    "message": "Item details"
+  },
+  "itemName": {
+    "message": "Item name"
+  },
+  "cannotRemoveViewOnlyCollections": {
+    "message": "You cannot remove collections with View only permissions: $COLLECTIONS$",
+    "placeholders": {
+      "collections": {
+        "content": "$1",
+        "example": "Work, Personal"
+      }
+    }
+  },
   "ex": {
     "message": "مثال.",
     "description": "Short abbreviation for 'example'."
@@ -579,7 +598,7 @@
     "message": "وصول"
   },
   "accessLevel": {
-    "message": "Access level"
+    "message": "مستوى الوصول"
   },
   "accessing": {
     "message": "Accessing"
@@ -2795,9 +2814,6 @@
   "invited": {
     "message": "Invited"
   },
-  "accepted": {
-    "message": "Accepted"
-  },
   "confirmed": {
     "message": "Confirmed"
   },
@@ -3682,6 +3698,15 @@
   },
   "subscriptionMaxReached": {
     "message": "Adjustments to your subscription will result in prorated changes to your billing totals. You cannot invite more than $COUNT$ members without increasing your subscription seats.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "50"
+      }
+    }
+  },
+  "subscriptionSeatMaxReached": {
+    "message": "You cannot invite more than $COUNT$ members without increasing your subscription seats.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -8489,5 +8514,11 @@
   "billingHistoryDescription": {
     "message": "Download a CSV to obtain client details for each billing date. Prorated charges are not included in the CSV and may vary from the linked invoice. For the most accurate billing details, refer to your monthly invoices.",
     "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
+  },
+  "monthlySubscriptionUserSeatsMessage": {
+    "message": "Adjustments to your subscription will result in prorated charges to your billing totals on your next billing period. "
+  },
+  "annualSubscriptionUserSeatsMessage": {
+    "message": "Adjustments to your subscription will result in prorated charges on a monthly billing cycle. "
   }
 }

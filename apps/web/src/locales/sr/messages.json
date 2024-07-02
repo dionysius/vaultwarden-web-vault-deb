@@ -173,6 +173,10 @@
     "message": "Без фасцикле",
     "description": "This is the folder for uncategorized items"
   },
+  "selfOwnershipLabel": {
+    "message": "You",
+    "description": "Used as a label to indicate that the user is the owner of an item."
+  },
   "addFolder": {
     "message": "Додај фасциклу"
   },
@@ -400,6 +404,21 @@
   },
   "item": {
     "message": "Ставка"
+  },
+  "itemDetails": {
+    "message": "Item details"
+  },
+  "itemName": {
+    "message": "Item name"
+  },
+  "cannotRemoveViewOnlyCollections": {
+    "message": "You cannot remove collections with View only permissions: $COLLECTIONS$",
+    "placeholders": {
+      "collections": {
+        "content": "$1",
+        "example": "Work, Personal"
+      }
+    }
   },
   "ex": {
     "message": "нпр.",
@@ -2795,9 +2814,6 @@
   "invited": {
     "message": "Позвано"
   },
-  "accepted": {
-    "message": "Прихваћено"
-  },
   "confirmed": {
     "message": "Потврђено"
   },
@@ -3682,6 +3698,15 @@
   },
   "subscriptionMaxReached": {
     "message": "Подешавање ваше претплате резултираће прорисаним променама у вашим новчаним вредностима. Не можете позвати више од $COUNT$ корисника без повећања лиценца за претплату.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "50"
+      }
+    }
+  },
+  "subscriptionSeatMaxReached": {
+    "message": "Не можете позвати више од $COUNT$ чланова без надоградње смештаја претплате.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -8489,5 +8514,11 @@
   "billingHistoryDescription": {
     "message": "Преузмите ЦСВ да бисте добили детаље о клијенту за сваки датум обрачуна. Пропорционални трошкови нису укључени у ЦСВ и могу се разликовати од повезане фактуре. За најтачније податке о обрачуну погледајте своје месечне фактуре.",
     "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
+  },
+  "monthlySubscriptionUserSeatsMessage": {
+    "message": "Прилагођавања ваше претплате ће резултирати пропорционалним трошковима у односу на укупне износе рачуна у вашем следећем обрачунском периоду. "
+  },
+  "annualSubscriptionUserSeatsMessage": {
+    "message": "Прилагођавања ваше претплате ће резултирати пропорционалним трошковима за месечни обрачунски циклус. "
   }
 }
