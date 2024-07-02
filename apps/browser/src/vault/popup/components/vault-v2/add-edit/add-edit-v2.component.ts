@@ -104,7 +104,7 @@ export class AddEditV2Component {
   }
 
   get originalCipherId(): CipherId | null {
-    return this.config?.originalCipher.id as CipherId;
+    return this.config?.originalCipher?.id as CipherId;
   }
 
   constructor(
