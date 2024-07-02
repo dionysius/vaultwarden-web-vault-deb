@@ -10,7 +10,7 @@ import { ReusedPasswordsReportComponent } from "../../../admin-console/organizat
 import { UnsecuredWebsitesReportComponent } from "../../../admin-console/organizations/tools/unsecured-websites-report.component";
 import { WeakPasswordsReportComponent } from "../../../admin-console/organizations/tools/weak-passwords-report.component";
 import { isPaidOrgGuard } from "../guards/is-paid-org.guard";
-import { OrganizationPermissionsGuard } from "../guards/org-permissions.guard";
+import { organizationPermissionsGuard } from "../guards/org-permissions.guard";
 import { organizationRedirectGuard } from "../guards/org-redirect.guard";
 import { EventsComponent } from "../manage/events.component";
 
@@ -19,8 +19,7 @@ import { ReportsHomeComponent } from "./reports-home.component";
 const routes: Routes = [
   {
     path: "",
-    canActivate: [OrganizationPermissionsGuard],
-    data: { organizationPermissions: canAccessReportingTab },
+    canActivate: [organizationPermissionsGuard(canAccessReportingTab)],
     children: [
       {
         path: "",
@@ -31,7 +30,7 @@ const routes: Routes = [
       {
         path: "reports",
         component: ReportsHomeComponent,
-        canActivate: [OrganizationPermissionsGuard],
+        canActivate: [organizationPermissionsGuard()],
         data: {
           titleId: "reports",
         },
@@ -81,10 +80,9 @@ const routes: Routes = [
       {
         path: "events",
         component: EventsComponent,
-        canActivate: [OrganizationPermissionsGuard],
+        canActivate: [organizationPermissionsGuard((org) => org.canAccessEventLogs)],
         data: {
           titleId: "eventLogs",
-          organizationPermissions: (org: Organization) => org.canAccessEventLogs,
         },
       },
     ],
