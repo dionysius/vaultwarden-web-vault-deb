@@ -1806,13 +1806,13 @@
     "message": "Deabonnieren"
   },
   "atAnyTime": {
-    "message": "at any time."
+    "message": "jederzeit."
   },
   "byContinuingYouAgreeToThe": {
-    "message": "By continuing, you agree to the"
+    "message": "Indem Sie fortfahren, stimmen Sie unseren"
   },
   "and": {
-    "message": "and"
+    "message": "und"
   },
   "acceptPolicies": {
     "message": "Durch Anwählen dieses Kästchens erklärst du dich mit Folgendem einverstanden:"
@@ -3108,7 +3108,7 @@
     "message": "Dateipasswort bestätigen"
   },
   "exportSuccess": {
-    "message": "Vault data exported"
+    "message": "Tresor-Daten exportiert"
   },
   "typePasskey": {
     "message": "Passkey"
@@ -3492,23 +3492,45 @@
   "itemsWithNoFolder": {
     "message": "Einträge ohne Ordner"
   },
+  "itemDetails": {
+    "message": "Item details"
+  },
+  "itemName": {
+    "message": "Item name"
+  },
+  "cannotRemoveViewOnlyCollections": {
+    "message": "You cannot remove collections with View only permissions: $COLLECTIONS$",
+    "placeholders": {
+      "collections": {
+        "content": "$1",
+        "example": "Work, Personal"
+      }
+    }
+  },
   "organizationIsDeactivated": {
     "message": "Organisation ist deaktiviert"
+  },
+  "owner": {
+    "message": "Owner"
+  },
+  "selfOwnershipLabel": {
+    "message": "You",
+    "description": "Used as a label to indicate that the user is the owner of an item."
   },
   "contactYourOrgAdmin": {
     "message": "Auf Einträge in deaktivierten Organisationen kann nicht zugegriffen werden. Kontaktiere deinen Organisationseigentümer für Unterstützung."
   },
   "upload": {
-    "message": "Upload"
+    "message": "Hochladen"
   },
   "addAttachment": {
-    "message": "Add attachment"
+    "message": "Anhang hinzufügen"
   },
   "maxFileSizeSansPunctuation": {
-    "message": "Maximum file size is 500 MB"
+    "message": "Die maximale Dateigröße beträgt 500 MB"
   },
   "deleteAttachmentName": {
-    "message": "Delete attachment $NAME$",
+    "message": "Datei $NAME$ löschen",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -3517,7 +3539,7 @@
     }
   },
   "downloadAttachmentName": {
-    "message": "Download $NAME$",
+    "message": "$NAME$ herunterladen",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -3526,7 +3548,7 @@
     }
   },
   "permanentlyDeleteAttachmentConfirmation": {
-    "message": "Are you sure you want to permanently delete this attachment?"
+    "message": "Sind Sie sich sicher, dass Sie diesen Anhang dauerhaft löschen möchten?"
   },
   "premium": {
     "message": "Premium"

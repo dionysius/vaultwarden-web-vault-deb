@@ -3492,8 +3492,30 @@
   "itemsWithNoFolder": {
     "message": "Elementy bez folderu"
   },
+  "itemDetails": {
+    "message": "Szczegóły elementu"
+  },
+  "itemName": {
+    "message": "Nazwa elementu"
+  },
+  "cannotRemoveViewOnlyCollections": {
+    "message": "Nie można usunąć kolekcji z uprawnieniami tylko do przeglądania: $COLLECTIONS$",
+    "placeholders": {
+      "collections": {
+        "content": "$1",
+        "example": "Work, Personal"
+      }
+    }
+  },
   "organizationIsDeactivated": {
     "message": "Organizacja jest wyłączona"
+  },
+  "owner": {
+    "message": "Właściciel"
+  },
+  "selfOwnershipLabel": {
+    "message": "Ty",
+    "description": "Used as a label to indicate that the user is the owner of an item."
   },
   "contactYourOrgAdmin": {
     "message": "Nie można uzyskać dostępu do elementów w wyłączonych organizacjach. Skontaktuj się z właścicielem organizacji, aby uzyskać pomoc."

@@ -1106,7 +1106,7 @@
     "message": "Overovacia aplikácia"
   },
   "authenticatorAppDescV2": {
-    "message": "Zadajte kód vygenerovaný overovacou aplikáciou akou je Bitwarden Authenticator.",
+    "message": "Zadajte kód vygenerovaný overovacou aplikáciou akou je napríklad Bitwarden Authenticator.",
     "description": "'Bitwarden Authenticator' is a product name and should not be translated."
   },
   "yubiKeyTitleV2": {
@@ -3492,8 +3492,30 @@
   "itemsWithNoFolder": {
     "message": "Položky bez priečinka"
   },
+  "itemDetails": {
+    "message": "Item details"
+  },
+  "itemName": {
+    "message": "Item name"
+  },
+  "cannotRemoveViewOnlyCollections": {
+    "message": "You cannot remove collections with View only permissions: $COLLECTIONS$",
+    "placeholders": {
+      "collections": {
+        "content": "$1",
+        "example": "Work, Personal"
+      }
+    }
+  },
   "organizationIsDeactivated": {
     "message": "Organizácia je vypnutá"
+  },
+  "owner": {
+    "message": "Owner"
+  },
+  "selfOwnershipLabel": {
+    "message": "You",
+    "description": "Used as a label to indicate that the user is the owner of an item."
   },
   "contactYourOrgAdmin": {
     "message": "K položkám vo vypnutej organizácii nie je možné pristupovať. Požiadajte o pomoc vlastníka organizácie."

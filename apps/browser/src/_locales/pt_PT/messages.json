@@ -239,10 +239,10 @@
     "message": "Bitwarden para Empresas"
   },
   "bitwardenAuthenticator": {
-    "message": "Autenticador Bitwarden"
+    "message": "Bitwarden Authenticator"
   },
   "continueToAuthenticatorPageDesc": {
-    "message": "O Autenticador Bitwarden permite-lhe armazenar chaves de autenticação e gerar códigos TOTP para fluxos de verificação de 2 passos. Saiba mais no site bitwarden.com"
+    "message": "O Bitwarden Authenticator permite-lhe armazenar chaves de autenticação e gerar códigos TOTP para fluxos de verificação de 2 passos. Saiba mais no site bitwarden.com"
   },
   "bitwardenSecretsManager": {
     "message": "Gestor de Segredos Bitwarden"
@@ -1391,7 +1391,7 @@
     "message": "Nome completo"
   },
   "identityName": {
-    "message": "Nome de identidade"
+    "message": "Nome da identidade"
   },
   "company": {
     "message": "Empresa"
@@ -1642,7 +1642,7 @@
     "message": "Desbloquear com PIN"
   },
   "setYourPinCode": {
-    "message": "Defina o seu código PIN para desbloquear o Bitwarden. As suas definições de PIN serão redefinidas se alguma vez terminar sessão completamente da aplicação."
+    "message": "Defina o seu código PIN para desbloquear o Bitwarden. As suas definições de PIN serão redefinidas se alguma vez terminar sessão por completo da aplicação."
   },
   "pinRequired": {
     "message": "É necessário o código PIN."
@@ -3492,8 +3492,30 @@
   "itemsWithNoFolder": {
     "message": "Itens sem pasta"
   },
+  "itemDetails": {
+    "message": "Item details"
+  },
+  "itemName": {
+    "message": "Item name"
+  },
+  "cannotRemoveViewOnlyCollections": {
+    "message": "You cannot remove collections with View only permissions: $COLLECTIONS$",
+    "placeholders": {
+      "collections": {
+        "content": "$1",
+        "example": "Work, Personal"
+      }
+    }
+  },
   "organizationIsDeactivated": {
     "message": "A organização está desativada"
+  },
+  "owner": {
+    "message": "Owner"
+  },
+  "selfOwnershipLabel": {
+    "message": "You",
+    "description": "Used as a label to indicate that the user is the owner of an item."
   },
   "contactYourOrgAdmin": {
     "message": "Não é possível aceder aos itens de organizações desativadas. Contacte o proprietário da organização para obter assistência."

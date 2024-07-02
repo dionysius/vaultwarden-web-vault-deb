@@ -3492,8 +3492,30 @@
   "itemsWithNoFolder": {
     "message": "Items zonder map"
   },
+  "itemDetails": {
+    "message": "Itemdetails"
+  },
+  "itemName": {
+    "message": "Itemnaam"
+  },
+  "cannotRemoveViewOnlyCollections": {
+    "message": "Je kunt verzamelingen niet verwijderen met alleen rechten voor weergeven: $COLLECTIONS$",
+    "placeholders": {
+      "collections": {
+        "content": "$1",
+        "example": "Work, Personal"
+      }
+    }
+  },
   "organizationIsDeactivated": {
     "message": "Organisatie is gedeactiveerd"
+  },
+  "owner": {
+    "message": "Eigenaar"
+  },
+  "selfOwnershipLabel": {
+    "message": "Jij",
+    "description": "Used as a label to indicate that the user is the owner of an item."
   },
   "contactYourOrgAdmin": {
     "message": "Items in een gedeactiveerde organisatie zijn niet toegankelijk. Neem contact op met de eigenaar van je organisatie voor hulp."

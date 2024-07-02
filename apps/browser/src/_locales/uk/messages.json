@@ -472,7 +472,7 @@
     "message": "Оцінити розширення"
   },
   "rateExtensionDesc": {
-    "message": "Будь ласка, подумайте про те, щоб допомогти нам хорошим відгуком!"
+    "message": "Розкажіть іншим про свої враження, залишивши хороший відгук!"
   },
   "browserNotSupportClipboard": {
     "message": "Ваш браузер не підтримує копіювання даних в буфер обміну. Скопіюйте вручну."
@@ -1163,7 +1163,7 @@
     "message": "URL-адреса сервера API"
   },
   "webVaultUrl": {
-    "message": "URL-адреса сервера веб сховища"
+    "message": "URL-адреса сервера вебсховища"
   },
   "identityUrl": {
     "message": "URL-адреса сервера ідентифікації"
@@ -2059,7 +2059,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
-    "message": "За бажанням вимагати пароль в користувачів для доступу до цього відправлення.",
+    "message": "Ви можете встановити пароль для доступу до цього відправлення.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
@@ -2165,7 +2165,7 @@
     "message": "Необхідно підтвердити е-пошту"
   },
   "emailVerificationRequiredDesc": {
-    "message": "Для використання цієї функції необхідно підтвердити електронну пошту. Ви можете виконати підтвердження у веб сховищі."
+    "message": "Для використання цієї функції необхідно підтвердити електронну пошту. Ви можете виконати підтвердження у вебсховищі."
   },
   "updatedMasterPassword": {
     "message": "Головний пароль оновлено"
@@ -3492,8 +3492,30 @@
   "itemsWithNoFolder": {
     "message": "Елементи без теки"
   },
+  "itemDetails": {
+    "message": "Item details"
+  },
+  "itemName": {
+    "message": "Item name"
+  },
+  "cannotRemoveViewOnlyCollections": {
+    "message": "You cannot remove collections with View only permissions: $COLLECTIONS$",
+    "placeholders": {
+      "collections": {
+        "content": "$1",
+        "example": "Work, Personal"
+      }
+    }
+  },
   "organizationIsDeactivated": {
     "message": "Організацію деактивовано"
+  },
+  "owner": {
+    "message": "Owner"
+  },
+  "selfOwnershipLabel": {
+    "message": "You",
+    "description": "Used as a label to indicate that the user is the owner of an item."
   },
   "contactYourOrgAdmin": {
     "message": "Елементи в деактивованих організаціях недоступні. Зверніться до власника вашої організації для отримання допомоги."
