@@ -1,7 +1,8 @@
+import { DialogRef } from "@angular/cdk/dialog";
 import { Component } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { concatMap, takeUntil, map, lastValueFrom } from "rxjs";
-import { tap } from "rxjs/operators";
+import { first, tap } from "rxjs/operators";
 
 import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
@@ -64,6 +65,9 @@ export class TwoFactorSetupComponent extends BaseTwoFactorSetupComponent {
   }
 
   async manage(type: TwoFactorProviderType) {
+    // clear any existing subscriptions before creating a new one
+    this.twoFactorSetupSubscription?.unsubscribe();
+
     switch (type) {
       case TwoFactorProviderType.OrganizationDuo: {
         const twoFactorVerifyDialogRef = TwoFactorVerifyComponent.open(this.dialogService, {
@@ -75,9 +79,18 @@ export class TwoFactorSetupComponent extends BaseTwoFactorSetupComponent {
         if (!result) {
           return;
         }
-        const duoComp = TwoFactorDuoComponent.open(this.dialogService, { data: result });
-        const enabled: boolean = await lastValueFrom(duoComp.closed);
-        this.updateStatus(enabled, TwoFactorProviderType.Duo);
+        const duoComp: DialogRef<boolean, any> = TwoFactorDuoComponent.open(this.dialogService, {
+          data: {
+            authResponse: result,
+            organizationId: this.organizationId,
+          },
+        });
+        this.twoFactorSetupSubscription = duoComp.componentInstance.onChangeStatus
+          .pipe(first(), takeUntil(this.destroy$))
+          .subscribe((enabled: boolean) => {
+            duoComp.close();
+            this.updateStatus(enabled, TwoFactorProviderType.OrganizationDuo);
+          });
 
         break;
       }

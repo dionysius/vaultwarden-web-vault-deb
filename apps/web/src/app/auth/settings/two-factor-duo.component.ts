@@ -31,7 +31,7 @@ export class TwoFactorDuoComponent extends TwoFactorBaseComponent {
   override componentName = "app-two-factor-duo";
 
   constructor(
-    @Inject(DIALOG_DATA) protected data: AuthResponse<TwoFactorDuoResponse>,
+    @Inject(DIALOG_DATA) protected data: TwoFactorDuoComponentConfig,
     apiService: ApiService,
     i18nService: I18nService,
     platformUtilsService: PlatformUtilsService,
@@ -71,8 +71,17 @@ export class TwoFactorDuoComponent extends TwoFactorBaseComponent {
   }
 
   async ngOnInit() {
-    super.auth(this.data);
-    this.processResponse(this.data.response);
+    if (!this.data?.authResponse) {
+      throw Error("TwoFactorDuoComponent requires a TwoFactorDuoResponse to initialize");
+    }
+
+    super.auth(this.data.authResponse);
+    this.processResponse(this.data.authResponse.response);
+
+    if (this.data.organizationId) {
+      this.type = TwoFactorProviderType.OrganizationDuo;
+      this.organizationId = this.data.organizationId;
+    }
   }
 
   submit = async () => {
@@ -124,8 +133,13 @@ export class TwoFactorDuoComponent extends TwoFactorBaseComponent {
    */
   static open = (
     dialogService: DialogService,
-    config: DialogConfig<AuthResponse<TwoFactorDuoResponse>>,
+    config: DialogConfig<TwoFactorDuoComponentConfig>,
   ) => {
     return dialogService.open<boolean>(TwoFactorDuoComponent, config);
   };
 }
+
+type TwoFactorDuoComponentConfig = {
+  authResponse: AuthResponse<TwoFactorDuoResponse>;
+  organizationId?: string;
+};
