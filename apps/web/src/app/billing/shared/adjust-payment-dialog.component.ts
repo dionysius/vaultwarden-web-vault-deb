@@ -55,21 +55,24 @@ export class AdjustPaymentDialogComponent {
   }
 
   submit = async () => {
+    if (!this.taxInfoComponent.taxFormGroup.valid) {
+      this.taxInfoComponent.taxFormGroup.markAllAsTouched();
+    }
     const request = new PaymentRequest();
     const response = this.paymentComponent.createPaymentToken().then((result) => {
       request.paymentToken = result[0];
       request.paymentMethodType = result[1];
-      request.postalCode = this.taxInfoComponent.taxInfo.postalCode;
-      request.country = this.taxInfoComponent.taxInfo.country;
+      request.postalCode = this.taxInfoComponent.taxFormGroup?.value.postalCode;
+      request.country = this.taxInfoComponent.taxFormGroup?.value.country;
       if (this.organizationId == null) {
         return this.apiService.postAccountPayment(request);
       } else {
-        request.taxId = this.taxInfoComponent.taxInfo.taxId;
-        request.state = this.taxInfoComponent.taxInfo.state;
-        request.line1 = this.taxInfoComponent.taxInfo.line1;
-        request.line2 = this.taxInfoComponent.taxInfo.line2;
-        request.city = this.taxInfoComponent.taxInfo.city;
-        request.state = this.taxInfoComponent.taxInfo.state;
+        request.taxId = this.taxInfoComponent.taxFormGroup?.value.taxId;
+        request.state = this.taxInfoComponent.taxFormGroup?.value.state;
+        request.line1 = this.taxInfoComponent.taxFormGroup?.value.line1;
+        request.line2 = this.taxInfoComponent.taxFormGroup?.value.line2;
+        request.city = this.taxInfoComponent.taxFormGroup?.value.city;
+        request.state = this.taxInfoComponent.taxFormGroup?.value.state;
         return this.organizationApiService.updatePayment(this.organizationId, request);
       }
     });
