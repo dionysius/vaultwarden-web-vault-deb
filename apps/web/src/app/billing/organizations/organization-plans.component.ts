@@ -549,7 +549,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
   }
 
   submit = async () => {
-    if (!this.taxComponent?.taxFormGroup.valid) {
+    if (!this.taxComponent?.taxFormGroup.valid && this.taxComponent?.taxFormGroup.touched) {
       this.taxComponent?.taxFormGroup.markAllAsTouched();
       return;
     }
