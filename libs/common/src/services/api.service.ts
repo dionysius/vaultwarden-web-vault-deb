@@ -791,7 +791,7 @@ export class ApiService implements ApiServiceAbstraction {
       true,
       true,
     );
-    return new CollectionDetailsResponse(r);
+    return new CollectionAccessDetailsResponse(r);
   }
 
   async putCollection(
@@ -806,7 +806,7 @@ export class ApiService implements ApiServiceAbstraction {
       true,
       true,
     );
-    return new CollectionDetailsResponse(r);
+    return new CollectionAccessDetailsResponse(r);
   }
 
   async putCollectionUsers(
