@@ -3,6 +3,7 @@ import { Component, Inject, OnInit } from "@angular/core";
 
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { ToastService } from "@bitwarden/components";
 
 export interface AccessTokenDetails {
   subTitle: string;
@@ -18,10 +19,9 @@ export class AccessTokenDialogComponent implements OnInit {
     public dialogRef: DialogRef,
     @Inject(DIALOG_DATA) public data: AccessTokenDetails,
     private platformUtilsService: PlatformUtilsService,
+    private toastService: ToastService,
     private i18nService: I18nService,
-  ) {
-    this.dialogRef.disableClose = true;
-  }
+  ) {}
 
   ngOnInit(): void {
     // TODO remove null checks once strictNullChecks in TypeScript is turned on.
@@ -33,11 +33,11 @@ export class AccessTokenDialogComponent implements OnInit {
 
   copyAccessToken(): void {
     this.platformUtilsService.copyToClipboard(this.data.accessToken);
-    this.platformUtilsService.showToast(
-      "success",
-      null,
-      this.i18nService.t("accessTokenCreatedAndCopied"),
-    );
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("accessTokenCreatedAndCopied"),
+    });
     this.dialogRef.close();
   }
 }
