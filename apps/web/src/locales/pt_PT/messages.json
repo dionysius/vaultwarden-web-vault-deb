@@ -174,7 +174,7 @@
     "description": "This is the folder for uncategorized items"
   },
   "selfOwnershipLabel": {
-    "message": "You",
+    "message": "Eu",
     "description": "Used as a label to indicate that the user is the owner of an item."
   },
   "addFolder": {
@@ -406,13 +406,13 @@
     "message": "Item"
   },
   "itemDetails": {
-    "message": "Item details"
+    "message": "Detalhes do item"
   },
   "itemName": {
-    "message": "Item name"
+    "message": "Nome do item"
   },
   "cannotRemoveViewOnlyCollections": {
-    "message": "You cannot remove collections with View only permissions: $COLLECTIONS$",
+    "message": "Não é possível remover coleções com permissões de Apenas visualização: $COLLECTIONS$",
     "placeholders": {
       "collections": {
         "content": "$1",
@@ -8511,14 +8511,18 @@
   "downloadCSV": {
     "message": "Transferir CSV"
   },
-  "billingHistoryDescription": {
-    "message": "Transfira um CSV para obter os dados do cliente para cada data de faturação. As taxas rateadas não estão incluídas no CSV e podem variar em relação à fatura associada. Para obter os dados de faturação mais precisos, consulte as suas faturas mensais.",
-    "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
-  },
   "monthlySubscriptionUserSeatsMessage": {
     "message": "Os ajustes à sua subscrição resultarão em encargos proporcionais aos seus totais de faturação no período de faturação seguinte. "
   },
   "annualSubscriptionUserSeatsMessage": {
     "message": "Os ajustes à sua subscrição resultarão em encargos proporcionais num ciclo de faturação mensal. "
+  },
+  "billingHistoryDescription": {
+    "message": "Transfira um CSV para obter os dados do cliente para cada data de faturação. As taxas rateadas não estão incluídas no CSV e podem variar em relação à fatura associada. Para obter os dados de faturação mais precisos, consulte as suas faturas mensais.",
+    "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
+  },
+  "noInvoicesToList": {
+    "message": "Não há faturas a enumerar",
+    "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
   }
 }

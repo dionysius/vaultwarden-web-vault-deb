@@ -8511,14 +8511,18 @@
   "downloadCSV": {
     "message": "Преузми ЦСВ"
   },
-  "billingHistoryDescription": {
-    "message": "Преузмите ЦСВ да бисте добили детаље о клијенту за сваки датум обрачуна. Пропорционални трошкови нису укључени у ЦСВ и могу се разликовати од повезане фактуре. За најтачније податке о обрачуну погледајте своје месечне фактуре.",
-    "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
-  },
   "monthlySubscriptionUserSeatsMessage": {
     "message": "Прилагођавања ваше претплате ће резултирати пропорционалним трошковима у односу на укупне износе рачуна у вашем следећем обрачунском периоду. "
   },
   "annualSubscriptionUserSeatsMessage": {
     "message": "Прилагођавања ваше претплате ће резултирати пропорционалним трошковима за месечни обрачунски циклус. "
+  },
+  "billingHistoryDescription": {
+    "message": "Преузмите ЦСВ да бисте добили детаље о клијенту за сваки датум обрачуна. Пропорционални трошкови нису укључени у ЦСВ и могу се разликовати од повезане фактуре. За најтачније податке о обрачуну погледајте своје месечне фактуре.",
+    "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
+  },
+  "noInvoicesToList": {
+    "message": "There are no invoices to list",
+    "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
   }
 }

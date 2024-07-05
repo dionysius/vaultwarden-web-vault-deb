@@ -174,7 +174,7 @@
     "description": "This is the folder for uncategorized items"
   },
   "selfOwnershipLabel": {
-    "message": "You",
+    "message": "您",
     "description": "Used as a label to indicate that the user is the owner of an item."
   },
   "addFolder": {
@@ -406,13 +406,13 @@
     "message": "项目"
   },
   "itemDetails": {
-    "message": "Item details"
+    "message": "项目详情"
   },
   "itemName": {
-    "message": "Item name"
+    "message": "项目名称"
   },
   "cannotRemoveViewOnlyCollections": {
-    "message": "You cannot remove collections with View only permissions: $COLLECTIONS$",
+    "message": "您无法删除仅具有「查看」权限的集合：$COLLECTIONS$",
     "placeholders": {
       "collections": {
         "content": "$1",
@@ -8511,14 +8511,18 @@
   "downloadCSV": {
     "message": "下载 CSV"
   },
-  "billingHistoryDescription": {
-    "message": "下载 CSV 以获取每个计费日期的客户详细信息。按比例分摊的费用不包含在此 CSV 中，并且可能与链接的账单不同。如需获取最准确的计费详细信息，请参阅您的月度账单。",
-    "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
-  },
   "monthlySubscriptionUserSeatsMessage": {
     "message": "调整订阅将导致在下一个计费周期按比例分摊您的计费总金额。 "
   },
   "annualSubscriptionUserSeatsMessage": {
     "message": "调整订阅将导致在月度计费周期按比例分摊费用。 "
+  },
+  "billingHistoryDescription": {
+    "message": "下载 CSV 以获取每个计费日期的客户详细信息。按比例分摊的费用不包含在此 CSV 中，并且可能与链接的账单不同。如需获取最准确的计费详细信息，请参阅您的月度账单。",
+    "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
+  },
+  "noInvoicesToList": {
+    "message": "没有可列出的账单",
+    "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
   }
 }

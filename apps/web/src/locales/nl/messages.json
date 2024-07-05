@@ -8511,14 +8511,18 @@
   "downloadCSV": {
     "message": "CSV downloaden"
   },
-  "billingHistoryDescription": {
-    "message": "Download een CSV om klantgegevens voor elke factuurdatum te krijgen. De CSV bevat geen pro rata kosten en kan afwijken van de gekoppelde factuur. Voor de meest nauwkeurige factureringsgegevens kun je je maandelijkse facturen raadplegen.",
-    "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
-  },
   "monthlySubscriptionUserSeatsMessage": {
     "message": "Aanpassingen van je abonnement leiden tot evenredige kosten op je volgende maandelijkse factureringsperiode. "
   },
   "annualSubscriptionUserSeatsMessage": {
     "message": "Aanpassingen van je abonnement leiden tot evenredige kosten op een maandelijkse factureringscyclus. "
+  },
+  "billingHistoryDescription": {
+    "message": "Download een CSV om klantgegevens voor elke factuurdatum te krijgen. De CSV bevat geen pro rata kosten en kan afwijken van de gekoppelde factuur. Voor de meest nauwkeurige factureringsgegevens kun je je maandelijkse facturen raadplegen.",
+    "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
+  },
+  "noInvoicesToList": {
+    "message": "Er zijn geen facturen om weer te geven",
+    "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
   }
 }

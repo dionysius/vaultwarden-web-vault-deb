@@ -174,7 +174,7 @@
     "description": "This is the folder for uncategorized items"
   },
   "selfOwnershipLabel": {
-    "message": "You",
+    "message": "ನಿಮ್ಮ",
     "description": "Used as a label to indicate that the user is the owner of an item."
   },
   "addFolder": {
@@ -468,7 +468,7 @@
     "description": "Copy URI to clipboard"
   },
   "me": {
-    "message": "Me"
+    "message": "ನನ್ನ"
   },
   "myVault": {
     "message": "ನನ್ನ ವಾಲ್ಟ್"
@@ -637,13 +637,13 @@
     "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
   },
   "loginWithMasterPassword": {
-    "message": "Log in with master password"
+    "message": "Master password ಉಪಯೋಗಿಸಿ ಲಾಗಿನ್ ಮಾಡಿ"
   },
   "readingPasskeyLoading": {
     "message": "Reading passkey..."
   },
   "readingPasskeyLoadingInfo": {
-    "message": "Keep this window open and follow prompts from your browser."
+    "message": "ಈ ವಿಂಡೋವನ್ನು ತೆರೆದಿಡಿ ಮತ್ತು ನಿಮ್ಮ ಬ್ರೌಸರ್‌ನಿಂದ ಪ್ರಾಂಪ್ಟ್‌ಗಳನ್ನು ಅನುಸರಿಸಿ."
   },
   "useADifferentLogInMethod": {
     "message": "Use a different log in method"
@@ -818,7 +818,7 @@
     "message": "ಅಮಾನ್ಯ ಇಮೇಲ್ ವಿಳಾಸ."
   },
   "masterPasswordRequired": {
-    "message": "Master password is required."
+    "message": "ಮಾಸ್ಟರ್ ಪಾಸ್ವರ್ಡ್ ಅಗತ್ಯವಿದೆ."
   },
   "confirmMasterPasswordRequired": {
     "message": "Master password retype is required."
@@ -1665,7 +1665,7 @@
     "message": ","
   },
   "twoStepAuthenticatorInstructionInfix2": {
-    "message": "or"
+    "message": "ಅಥವ"
   },
   "twoStepAuthenticatorInstructionSuffix": {
     "message": "."
@@ -2653,7 +2653,7 @@
     "message": "ವಾರ್ಷಿಕವಾಗಿ"
   },
   "annual": {
-    "message": "Annual"
+    "message": "ವಾರ್ಷಿಕವಾಗಿ"
   },
   "basePrice": {
     "message": "ಮೂಲ ದರ"
@@ -2884,7 +2884,7 @@
     "message": "CLI"
   },
   "bitWebVault": {
-    "message": "Bitwarden Web vault"
+    "message": "ಬಿಟ್ವಾರ್ಡೆನ್ ವೆಬ್ ವಾಲ್ಟ್"
   },
   "bitSecretsManager": {
     "message": "Bitwarden Secrets Manager"
@@ -3313,7 +3313,7 @@
     "message": "No email?"
   },
   "goBack": {
-    "message": "Go back"
+    "message": "ಹಿಂದಕ್ಕೆ ಹೋಗಿ"
   },
   "toEditYourEmailAddress": {
     "message": "to edit your email address."
@@ -3790,7 +3790,7 @@
     "message": "By continuing, you agree to the"
   },
   "and": {
-    "message": "and"
+    "message": "ಮತ್ತು"
   },
   "acceptPolicies": {
     "message": "ಈ ಪೆಟ್ಟಿಗೆಯನ್ನು ಪರಿಶೀಲಿಸುವ ಮೂಲಕ ನೀವು ಈ ಕೆಳಗಿನವುಗಳನ್ನು ಒಪ್ಪುತ್ತೀರಿ:"
@@ -4642,7 +4642,7 @@
     "message": "ಅನುಮತಿಗಳು"
   },
   "permission": {
-    "message": "Permission"
+    "message": "ಅನುಮತಿ"
   },
   "accessEventLogs": {
     "message": "ಈವೆಂಟ್ ಲಾಗ್‌ಗಳನ್ನು ಪ್ರವೇಶಿಸಿ"
@@ -4963,7 +4963,7 @@
     "message": "When member(s) are revoked, they no longer have access to organization data. To quickly restore member access, go to the Revoked tab. The process may take a few seconds to complete and cannot be interrupted or canceled."
   },
   "theme": {
-    "message": "Theme"
+    "message": "ಥೀಮ್"
   },
   "themeDesc": {
     "message": "Choose a theme for your web vault."
@@ -4972,10 +4972,10 @@
     "message": "Use system theme"
   },
   "themeDark": {
-    "message": "Dark"
+    "message": "ಡಾರ್ಕ್"
   },
   "themeLight": {
-    "message": "Light"
+    "message": "ಬೆಳಕು"
   },
   "confirmSelected": {
     "message": "ಆಯ್ಕೆಮಾಡಿದದನ್ನು ದೃಢೀಕರಿಸಿ"
@@ -8511,14 +8511,18 @@
   "downloadCSV": {
     "message": "Download CSV"
   },
-  "billingHistoryDescription": {
-    "message": "Download a CSV to obtain client details for each billing date. Prorated charges are not included in the CSV and may vary from the linked invoice. For the most accurate billing details, refer to your monthly invoices.",
-    "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
-  },
   "monthlySubscriptionUserSeatsMessage": {
     "message": "Adjustments to your subscription will result in prorated charges to your billing totals on your next billing period. "
   },
   "annualSubscriptionUserSeatsMessage": {
     "message": "Adjustments to your subscription will result in prorated charges on a monthly billing cycle. "
+  },
+  "billingHistoryDescription": {
+    "message": "Download a CSV to obtain client details for each billing date. Prorated charges are not included in the CSV and may vary from the linked invoice. For the most accurate billing details, refer to your monthly invoices.",
+    "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
+  },
+  "noInvoicesToList": {
+    "message": "There are no invoices to list",
+    "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
   }
 }

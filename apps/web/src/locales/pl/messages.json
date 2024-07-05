@@ -8511,14 +8511,18 @@
   "downloadCSV": {
     "message": "Pobierz CSV"
   },
-  "billingHistoryDescription": {
-    "message": "Pobierz plik CSV, aby uzyskać dane klienta dla każdej daty rozliczeniowej. Proporcjonalne opłaty nie są uwzględnione w CSV i mogą różnić się od powiązanej faktury. Aby uzyskać najdokładniejsze dane rozliczeniowe, zapoznaj się z Twoimi miesięcznymi fakturami.",
-    "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
-  },
   "monthlySubscriptionUserSeatsMessage": {
     "message": "Zmiany w Twojej subskrypcji spowodują doliczenie procentu opłaty do sumy rozliczeniowej w następnym okresie rozliczeniowym. "
   },
   "annualSubscriptionUserSeatsMessage": {
     "message": "Zmiany w Twojej subskrypcji spowodują doliczenie procentu opłaty w miesięcznym cyklu rozliczeniowym. "
+  },
+  "billingHistoryDescription": {
+    "message": "Pobierz plik CSV, aby uzyskać dane klienta dla każdej daty rozliczeniowej. Proporcjonalne opłaty nie są uwzględnione w CSV i mogą różnić się od powiązanej faktury. Aby uzyskać najdokładniejsze dane rozliczeniowe, zapoznaj się z Twoimi miesięcznymi fakturami.",
+    "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
+  },
+  "noInvoicesToList": {
+    "message": "Brak faktur do wyświetlenia",
+    "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
   }
 }

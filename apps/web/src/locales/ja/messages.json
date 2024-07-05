@@ -174,7 +174,7 @@
     "description": "This is the folder for uncategorized items"
   },
   "selfOwnershipLabel": {
-    "message": "You",
+    "message": "あなた",
     "description": "Used as a label to indicate that the user is the owner of an item."
   },
   "addFolder": {
@@ -406,13 +406,13 @@
     "message": "アイテム"
   },
   "itemDetails": {
-    "message": "Item details"
+    "message": "アイテムの詳細"
   },
   "itemName": {
-    "message": "Item name"
+    "message": "アイテム名"
   },
   "cannotRemoveViewOnlyCollections": {
-    "message": "You cannot remove collections with View only permissions: $COLLECTIONS$",
+    "message": "表示のみの権限が与えられているコレクションを削除することはできません: $COLLECTIONS$",
     "placeholders": {
       "collections": {
         "content": "$1",
@@ -8511,14 +8511,18 @@
   "downloadCSV": {
     "message": "CSV をダウンロード"
   },
-  "billingHistoryDescription": {
-    "message": "請求日ごとにクライアントの詳細を取得するには、CSV をダウンロードしてください。 分割料金は CSV に含まれておらず、リンクされた請求書によって異なる場合があります。 最も正確な請求の詳細については、毎月の請求書を参照してください。",
-    "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
-  },
   "monthlySubscriptionUserSeatsMessage": {
     "message": "サブスクリプションのユーザー数を調整すると、次回の請求期間の請求合計に日割り計算で追加されます。"
   },
   "annualSubscriptionUserSeatsMessage": {
     "message": "サブスクリプションのユーザー数を調整すると、毎月の請求サイクルで日割り計算されて請求されます。"
+  },
+  "billingHistoryDescription": {
+    "message": "請求日ごとにクライアントの詳細を取得するには、CSV をダウンロードしてください。 分割料金は CSV に含まれておらず、リンクされた請求書によって異なる場合があります。 最も正確な請求の詳細については、毎月の請求書を参照してください。",
+    "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
+  },
+  "noInvoicesToList": {
+    "message": "一覧表示する請求書がありません",
+    "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
   }
 }

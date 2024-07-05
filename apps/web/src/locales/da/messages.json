@@ -174,7 +174,7 @@
     "description": "This is the folder for uncategorized items"
   },
   "selfOwnershipLabel": {
-    "message": "You",
+    "message": "Dig",
     "description": "Used as a label to indicate that the user is the owner of an item."
   },
   "addFolder": {
@@ -406,13 +406,13 @@
     "message": "Emne"
   },
   "itemDetails": {
-    "message": "Item details"
+    "message": "Emnedetaljer"
   },
   "itemName": {
-    "message": "Item name"
+    "message": "Emnenavn"
   },
   "cannotRemoveViewOnlyCollections": {
-    "message": "You cannot remove collections with View only permissions: $COLLECTIONS$",
+    "message": "Samlinger med kun tilladelsen Vis kan ikke fjernes: $COLLECTIONS$",
     "placeholders": {
       "collections": {
         "content": "$1",
@@ -8511,14 +8511,18 @@
   "downloadCSV": {
     "message": "Download CSV"
   },
-  "billingHistoryDescription": {
-    "message": "Download en CSV-fil for at få klientoplysninger for hver faktureringsdato. Forholdsmæssige gebyrer er ikke inkluderet i CSV og kan variere ift. den tilknyttede faktura. For de mest nøjagtige faktureringsoplysninger, se de månedlige fakturaer.",
-    "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
-  },
   "monthlySubscriptionUserSeatsMessage": {
     "message": "Justeringer af abonnementet vil resultere i forholdsmæssige gebyrer på faktureringsbeløbet for næste faktureringsperiode. "
   },
   "annualSubscriptionUserSeatsMessage": {
     "message": "Justeringer til abonnementet vil resultere i forholdsmæssige gebyrer på en månedlig faktureringscyklus. "
+  },
+  "billingHistoryDescription": {
+    "message": "Download en CSV-fil for at få klientoplysninger for hver faktureringsdato. Forholdsmæssige gebyrer er ikke inkluderet i CSV og kan variere ift. den tilknyttede faktura. For de mest nøjagtige faktureringsoplysninger, se de månedlige fakturaer.",
+    "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
+  },
+  "noInvoicesToList": {
+    "message": "Ingen fakturaer at vise",
+    "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
   }
 }

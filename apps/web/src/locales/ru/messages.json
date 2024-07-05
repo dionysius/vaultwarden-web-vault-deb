@@ -174,7 +174,7 @@
     "description": "This is the folder for uncategorized items"
   },
   "selfOwnershipLabel": {
-    "message": "You",
+    "message": "Вы",
     "description": "Used as a label to indicate that the user is the owner of an item."
   },
   "addFolder": {
@@ -406,13 +406,13 @@
     "message": "Элемент"
   },
   "itemDetails": {
-    "message": "Item details"
+    "message": "Информация об элементе"
   },
   "itemName": {
-    "message": "Item name"
+    "message": "Название элемента"
   },
   "cannotRemoveViewOnlyCollections": {
-    "message": "You cannot remove collections with View only permissions: $COLLECTIONS$",
+    "message": "Вы не можете удалить коллекции с правами только на просмотр: $COLLECTIONS$",
     "placeholders": {
       "collections": {
         "content": "$1",
@@ -8511,14 +8511,18 @@
   "downloadCSV": {
     "message": "Скачать CSV"
   },
-  "billingHistoryDescription": {
-    "message": "Скачайте файл CSV, чтобы получить данные о клиенте за каждую расчетную дату. Пропорциональные расходы не включены в CSV и могут отличаться от привязанного счета. Для получения наиболее точной информации о счетах обратитесь к ежемесячным счетам.",
-    "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
-  },
   "monthlySubscriptionUserSeatsMessage": {
     "message": "Корректировка подписки приведет к пропорциональным расходам в следующем расчетном периоде. "
   },
   "annualSubscriptionUserSeatsMessage": {
     "message": "Корректировка подписки приведет к пропорциональным изменениям ежемесячного цикла выставления счетов. "
+  },
+  "billingHistoryDescription": {
+    "message": "Скачайте файл CSV, чтобы получить данные о клиенте за каждую расчетную дату. Пропорциональные расходы не включены в CSV и могут отличаться от привязанного счета. Для получения наиболее точной информации о счетах обратитесь к ежемесячным счетам.",
+    "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
+  },
+  "noInvoicesToList": {
+    "message": "Нет счетов",
+    "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
   }
 }

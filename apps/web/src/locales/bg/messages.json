@@ -8511,14 +8511,18 @@
   "downloadCSV": {
     "message": "Сваляне на CSV"
   },
-  "billingHistoryDescription": {
-    "message": "Свалете файл CSV с подробна информация за клиента и всяка платежна дата. Частичните плащания може да не са включени във файла и да се различават с данните във фактурата. Най-точната информация относно плащанията може да бъде намерена в месечните фактури.",
-    "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
-  },
   "monthlySubscriptionUserSeatsMessage": {
     "message": "Промените в абонамента Ви ще добавят частични такси към общата сума за плащане в следващия платежен цикъл. "
   },
   "annualSubscriptionUserSeatsMessage": {
     "message": "Промените в абонамента Ви ще добавят частични такси към общата сума за плащане в месечния платежен цикъл. "
+  },
+  "billingHistoryDescription": {
+    "message": "Свалете файл CSV с подробна информация за клиента и всяка платежна дата. Частичните плащания може да не са включени във файла и да се различават с данните във фактурата. Най-точната информация относно плащанията може да бъде намерена в месечните фактури.",
+    "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
+  },
+  "noInvoicesToList": {
+    "message": "There are no invoices to list",
+    "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
   }
 }
