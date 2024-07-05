@@ -3493,13 +3493,13 @@
     "message": "Элементы без папки"
   },
   "itemDetails": {
-    "message": "Item details"
+    "message": "Информация об элементе"
   },
   "itemName": {
-    "message": "Item name"
+    "message": "Название элемента"
   },
   "cannotRemoveViewOnlyCollections": {
-    "message": "You cannot remove collections with View only permissions: $COLLECTIONS$",
+    "message": "Вы не можете удалить коллекции с правами только на просмотр: $COLLECTIONS$",
     "placeholders": {
       "collections": {
         "content": "$1",
@@ -3511,10 +3511,10 @@
     "message": "Организация деактивирована"
   },
   "owner": {
-    "message": "Owner"
+    "message": "Владелец"
   },
   "selfOwnershipLabel": {
-    "message": "You",
+    "message": "Вы",
     "description": "Used as a label to indicate that the user is the owner of an item."
   },
   "contactYourOrgAdmin": {
@@ -3558,5 +3558,17 @@
   },
   "filters": {
     "message": "Фильтры"
+  },
+  "cardDetails": {
+    "message": "Реквизиты карты"
+  },
+  "cardBrandDetails": {
+    "message": "Реквизиты $BRAND$",
+    "placeholders": {
+      "brand": {
+        "content": "$1",
+        "example": "Visa"
+      }
+    }
   }
 }

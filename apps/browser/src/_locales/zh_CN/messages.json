@@ -3493,13 +3493,13 @@
     "message": "无文件夹的项目"
   },
   "itemDetails": {
-    "message": "Item details"
+    "message": "项目详情"
   },
   "itemName": {
-    "message": "Item name"
+    "message": "项目名称"
   },
   "cannotRemoveViewOnlyCollections": {
-    "message": "You cannot remove collections with View only permissions: $COLLECTIONS$",
+    "message": "您无法删除仅具有「查看」权限的集合：$COLLECTIONS$",
     "placeholders": {
       "collections": {
         "content": "$1",
@@ -3511,10 +3511,10 @@
     "message": "组织已停用"
   },
   "owner": {
-    "message": "Owner"
+    "message": "所有者"
   },
   "selfOwnershipLabel": {
-    "message": "You",
+    "message": "您",
     "description": "Used as a label to indicate that the user is the owner of an item."
   },
   "contactYourOrgAdmin": {
@@ -3558,5 +3558,17 @@
   },
   "filters": {
     "message": "筛选"
+  },
+  "cardDetails": {
+    "message": "支付卡详情"
+  },
+  "cardBrandDetails": {
+    "message": "$BRAND$ 详情",
+    "placeholders": {
+      "brand": {
+        "content": "$1",
+        "example": "Visa"
+      }
+    }
   }
 }

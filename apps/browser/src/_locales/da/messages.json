@@ -3493,13 +3493,13 @@
     "message": "Emner uden mappe"
   },
   "itemDetails": {
-    "message": "Item details"
+    "message": "Emnedetaljer"
   },
   "itemName": {
-    "message": "Item name"
+    "message": "Emnenavn"
   },
   "cannotRemoveViewOnlyCollections": {
-    "message": "You cannot remove collections with View only permissions: $COLLECTIONS$",
+    "message": "Samlinger med kun tilladelsen Vis kan ikke fjernes: $COLLECTIONS$",
     "placeholders": {
       "collections": {
         "content": "$1",
@@ -3511,10 +3511,10 @@
     "message": "Organisation er deaktiveret"
   },
   "owner": {
-    "message": "Owner"
+    "message": "Ejer"
   },
   "selfOwnershipLabel": {
-    "message": "You",
+    "message": "Dig",
     "description": "Used as a label to indicate that the user is the owner of an item."
   },
   "contactYourOrgAdmin": {
@@ -3558,5 +3558,17 @@
   },
   "filters": {
     "message": "Filtre"
+  },
+  "cardDetails": {
+    "message": "Kortoplysninger"
+  },
+  "cardBrandDetails": {
+    "message": "$BRAND$ oplysninger",
+    "placeholders": {
+      "brand": {
+        "content": "$1",
+        "example": "Visa"
+      }
+    }
   }
 }

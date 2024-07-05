@@ -3493,13 +3493,13 @@
     "message": "フォルダーがないアイテム"
   },
   "itemDetails": {
-    "message": "Item details"
+    "message": "アイテムの詳細"
   },
   "itemName": {
-    "message": "Item name"
+    "message": "アイテム名"
   },
   "cannotRemoveViewOnlyCollections": {
-    "message": "You cannot remove collections with View only permissions: $COLLECTIONS$",
+    "message": "表示のみの権限が与えられているコレクションを削除することはできません: $COLLECTIONS$",
     "placeholders": {
       "collections": {
         "content": "$1",
@@ -3511,10 +3511,10 @@
     "message": "組織は無効化されています"
   },
   "owner": {
-    "message": "Owner"
+    "message": "所有者"
   },
   "selfOwnershipLabel": {
-    "message": "You",
+    "message": "あなた",
     "description": "Used as a label to indicate that the user is the owner of an item."
   },
   "contactYourOrgAdmin": {
@@ -3558,5 +3558,17 @@
   },
   "filters": {
     "message": "フィルター"
+  },
+  "cardDetails": {
+    "message": "カード情報"
+  },
+  "cardBrandDetails": {
+    "message": "$BRAND$ の詳細",
+    "placeholders": {
+      "brand": {
+        "content": "$1",
+        "example": "Visa"
+      }
+    }
   }
 }

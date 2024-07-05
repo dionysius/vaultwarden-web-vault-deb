@@ -102,7 +102,7 @@
     "message": "Копиране на потребителското име"
   },
   "copyNumber": {
-    "message": "Копиране на но̀мера"
+    "message": "Копиране на номера"
   },
   "copySecurityCode": {
     "message": "Копиране на кода за сигурност"
@@ -3493,13 +3493,13 @@
     "message": "Елементи без папка"
   },
   "itemDetails": {
-    "message": "Item details"
+    "message": "Подробности за елемент"
   },
   "itemName": {
-    "message": "Item name"
+    "message": "Име на елемент"
   },
   "cannotRemoveViewOnlyCollections": {
-    "message": "You cannot remove collections with View only permissions: $COLLECTIONS$",
+    "message": "Не можете да премахнете колекции с права „Само за преглед“: $COLLECTIONS$",
     "placeholders": {
       "collections": {
         "content": "$1",
@@ -3511,10 +3511,10 @@
     "message": "Организацията е деактивирана"
   },
   "owner": {
-    "message": "Owner"
+    "message": "Собственик"
   },
   "selfOwnershipLabel": {
-    "message": "You",
+    "message": "Вие",
     "description": "Used as a label to indicate that the user is the owner of an item."
   },
   "contactYourOrgAdmin": {
@@ -3558,5 +3558,17 @@
   },
   "filters": {
     "message": "Филтри"
+  },
+  "cardDetails": {
+    "message": "Данни за картата"
+  },
+  "cardBrandDetails": {
+    "message": "$BRAND$ подробности",
+    "placeholders": {
+      "brand": {
+        "content": "$1",
+        "example": "Visa"
+      }
+    }
   }
 }

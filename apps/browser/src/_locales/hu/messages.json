@@ -3493,13 +3493,13 @@
     "message": "Items with no folder"
   },
   "itemDetails": {
-    "message": "Item details"
+    "message": "Elem részletek"
   },
   "itemName": {
-    "message": "Item name"
+    "message": "Elem neve"
   },
   "cannotRemoveViewOnlyCollections": {
-    "message": "You cannot remove collections with View only permissions: $COLLECTIONS$",
+    "message": "Nem távolíthatók el a csak megtekintési engedéllyel bíró gyűjtemények: $COLLECTIONS$",
     "placeholders": {
       "collections": {
         "content": "$1",
@@ -3511,10 +3511,10 @@
     "message": "Organization is deactivated"
   },
   "owner": {
-    "message": "Owner"
+    "message": "Tulajdonos"
   },
   "selfOwnershipLabel": {
-    "message": "You",
+    "message": "Saját magam",
     "description": "Used as a label to indicate that the user is the owner of an item."
   },
   "contactYourOrgAdmin": {
@@ -3558,5 +3558,17 @@
   },
   "filters": {
     "message": "Szűrők"
+  },
+  "cardDetails": {
+    "message": "Kártyaadatok"
+  },
+  "cardBrandDetails": {
+    "message": "$BRAND$ adatok",
+    "placeholders": {
+      "brand": {
+        "content": "$1",
+        "example": "Visa"
+      }
+    }
   }
 }

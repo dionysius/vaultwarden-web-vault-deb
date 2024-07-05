@@ -3558,5 +3558,17 @@
   },
   "filters": {
     "message": "Filters"
+  },
+  "cardDetails": {
+    "message": "Kaartgegevens"
+  },
+  "cardBrandDetails": {
+    "message": "",
+    "placeholders": {
+      "brand": {
+        "content": "$1",
+        "example": "Visa"
+      }
+    }
   }
 }

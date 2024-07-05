@@ -3496,7 +3496,7 @@
     "message": "Item details"
   },
   "itemName": {
-    "message": "Item name"
+    "message": "Objektnamn"
   },
   "cannotRemoveViewOnlyCollections": {
     "message": "You cannot remove collections with View only permissions: $COLLECTIONS$",
@@ -3511,10 +3511,10 @@
     "message": "Organization is deactivated"
   },
   "owner": {
-    "message": "Owner"
+    "message": "Ägare"
   },
   "selfOwnershipLabel": {
-    "message": "You",
+    "message": "Du",
     "description": "Used as a label to indicate that the user is the owner of an item."
   },
   "contactYourOrgAdmin": {
@@ -3558,5 +3558,17 @@
   },
   "filters": {
     "message": "Filters"
+  },
+  "cardDetails": {
+    "message": "Card details"
+  },
+  "cardBrandDetails": {
+    "message": "$BRAND$ details",
+    "placeholders": {
+      "brand": {
+        "content": "$1",
+        "example": "Visa"
+      }
+    }
   }
 }

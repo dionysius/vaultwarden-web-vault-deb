@@ -3493,13 +3493,13 @@
     "message": "Položky bez priečinka"
   },
   "itemDetails": {
-    "message": "Item details"
+    "message": "Podrobnosti o položke"
   },
   "itemName": {
-    "message": "Item name"
+    "message": "Názov položky"
   },
   "cannotRemoveViewOnlyCollections": {
-    "message": "You cannot remove collections with View only permissions: $COLLECTIONS$",
+    "message": "Zbierky, ktoré môžete len zobraziť nemôžete odstrániť: $COLLECTIONS$",
     "placeholders": {
       "collections": {
         "content": "$1",
@@ -3511,10 +3511,10 @@
     "message": "Organizácia je vypnutá"
   },
   "owner": {
-    "message": "Owner"
+    "message": "Vlastník"
   },
   "selfOwnershipLabel": {
-    "message": "You",
+    "message": "Vy",
     "description": "Used as a label to indicate that the user is the owner of an item."
   },
   "contactYourOrgAdmin": {
@@ -3558,5 +3558,17 @@
   },
   "filters": {
     "message": "Filtre"
+  },
+  "cardDetails": {
+    "message": "Podrobnosti o karte"
+  },
+  "cardBrandDetails": {
+    "message": "Podrobnosti o $BRAND$",
+    "placeholders": {
+      "brand": {
+        "content": "$1",
+        "example": "Visa"
+      }
+    }
   }
 }

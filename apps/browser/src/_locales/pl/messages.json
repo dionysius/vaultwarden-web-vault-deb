@@ -3558,5 +3558,17 @@
   },
   "filters": {
     "message": "Filtry"
+  },
+  "cardDetails": {
+    "message": "Szczegóły karty"
+  },
+  "cardBrandDetails": {
+    "message": "Szczegóły $BRAND$",
+    "placeholders": {
+      "brand": {
+        "content": "$1",
+        "example": "Visa"
+      }
+    }
   }
 }

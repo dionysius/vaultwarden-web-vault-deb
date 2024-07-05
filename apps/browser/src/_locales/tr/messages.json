@@ -3493,10 +3493,10 @@
     "message": "Klasörü olmayan kayıtlar"
   },
   "itemDetails": {
-    "message": "Item details"
+    "message": "Kayıt ayrıntıları"
   },
   "itemName": {
-    "message": "Item name"
+    "message": "Kayıt adı"
   },
   "cannotRemoveViewOnlyCollections": {
     "message": "You cannot remove collections with View only permissions: $COLLECTIONS$",
@@ -3511,10 +3511,10 @@
     "message": "Kuruluş pasifleştirilmiş"
   },
   "owner": {
-    "message": "Owner"
+    "message": "Sahibi"
   },
   "selfOwnershipLabel": {
-    "message": "You",
+    "message": "Siz",
     "description": "Used as a label to indicate that the user is the owner of an item."
   },
   "contactYourOrgAdmin": {
@@ -3558,5 +3558,17 @@
   },
   "filters": {
     "message": "Filtreler"
+  },
+  "cardDetails": {
+    "message": "Kart bilgileri"
+  },
+  "cardBrandDetails": {
+    "message": "$BRAND$ bilgileri",
+    "placeholders": {
+      "brand": {
+        "content": "$1",
+        "example": "Visa"
+      }
+    }
   }
 }
