@@ -8523,6 +8523,14 @@
   },
   "noInvoicesToList": {
     "message": "There are no invoices to list",
-    "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."    
+    "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
+  },
+  "providerClientVaultPrivacyNotification": {
+    "message": "Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions,",
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact Bitwarden support'."
+  },
+  "contactBitwardenSupport": {
+    "message": "contact Bitwarden support.",
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact Bitwarden support'. 'Bitwarden' should not be translated"
   }
 }
