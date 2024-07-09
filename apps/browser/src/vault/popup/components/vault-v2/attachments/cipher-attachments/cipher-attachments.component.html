@@ -47,7 +47,13 @@
         (change)="onFileChange($event)"
       />
       <div class="tw-flex tw-gap-2 tw-items-center" aria-hidden="true">
-        <button bitButton buttonType="secondary" type="button" (click)="fileInput.click()">
+        <button
+          bitButton
+          buttonType="secondary"
+          type="button"
+          (click)="fileInput.click()"
+          class="tw-whitespace-nowrap"
+        >
           {{ "chooseFile" | i18n }}
         </button>
         <p bitTypography="body2" class="tw-text-muted tw-mb-0">
