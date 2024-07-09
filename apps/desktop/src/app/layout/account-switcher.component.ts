@@ -165,8 +165,6 @@ export class AccountSwitcherComponent {
   async addAccount() {
     this.close();
 
-    const activeAccount = await firstValueFrom(this.accountService.activeAccount$);
-    await this.stateService.clearDecryptedData(activeAccount?.id as UserId);
     await this.accountService.switchAccount(null);
     await this.router.navigate(["/login"]);
   }

@@ -729,6 +729,10 @@ const safeProviders: SafeProvider[] = [
     deps: [StateProvider],
   }),
   safeProvider({
+    provide: STATE_FACTORY,
+    useValue: new StateFactory(GlobalState, Account),
+  }),
+  safeProvider({
     provide: StateServiceAbstraction,
     useClass: StateService,
     deps: [
