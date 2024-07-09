@@ -1,5 +1,5 @@
 import { DialogRef } from "@angular/cdk/dialog";
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { concatMap, takeUntil, map, lastValueFrom } from "rxjs";
 import { first, tap } from "rxjs/operators";
@@ -24,7 +24,7 @@ import { TwoFactorVerifyComponent } from "../../../auth/settings/two-factor-veri
   templateUrl: "../../../auth/settings/two-factor-setup.component.html",
 })
 // eslint-disable-next-line rxjs-angular/prefer-takeuntil
-export class TwoFactorSetupComponent extends BaseTwoFactorSetupComponent {
+export class TwoFactorSetupComponent extends BaseTwoFactorSetupComponent implements OnInit {
   tabbedHeader = false;
   constructor(
     dialogService: DialogService,

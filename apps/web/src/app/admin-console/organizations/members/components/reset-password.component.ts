@@ -31,7 +31,7 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
   @Input() email: string;
   @Input() id: string;
   @Input() organizationId: string;
-  @Output() onPasswordReset = new EventEmitter();
+  @Output() passwordReset = new EventEmitter();
   @ViewChild(PasswordStrengthComponent) passwordStrengthComponent: PasswordStrengthComponent;
 
   enforcedPolicyOptions: MasterPasswordPolicyOptions;
@@ -156,7 +156,7 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
         null,
         this.i18nService.t("resetPasswordSuccess"),
       );
-      this.onPasswordReset.emit();
+      this.passwordReset.emit();
     } catch (e) {
       this.logService.error(e);
     }

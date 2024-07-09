@@ -18,8 +18,8 @@ export class UserAddEditComponent implements OnInit {
   @Input() name: string;
   @Input() providerUserId: string;
   @Input() providerId: string;
-  @Output() onSavedUser = new EventEmitter();
-  @Output() onDeletedUser = new EventEmitter();
+  @Output() savedUser = new EventEmitter();
+  @Output() deletedUser = new EventEmitter();
 
   loading = true;
   editMode = false;
@@ -82,7 +82,7 @@ export class UserAddEditComponent implements OnInit {
         null,
         this.i18nService.t(this.editMode ? "editedUserId" : "invitedUsers", this.name),
       );
-      this.onSavedUser.emit();
+      this.savedUser.emit();
     } catch (e) {
       this.logService.error(e);
     }
@@ -111,7 +111,7 @@ export class UserAddEditComponent implements OnInit {
         null,
         this.i18nService.t("removedUserId", this.name),
       );
-      this.onDeletedUser.emit();
+      this.deletedUser.emit();
     } catch (e) {
       this.logService.error(e);
     }

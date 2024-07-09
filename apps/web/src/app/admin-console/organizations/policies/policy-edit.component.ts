@@ -1,5 +1,12 @@
 import { DIALOG_DATA, DialogConfig, DialogRef } from "@angular/cdk/dialog";
-import { ChangeDetectorRef, Component, Inject, ViewChild, ViewContainerRef } from "@angular/core";
+import {
+  AfterViewInit,
+  ChangeDetectorRef,
+  Component,
+  Inject,
+  ViewChild,
+  ViewContainerRef,
+} from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 
 import { PolicyApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/policy/policy-api.service.abstraction";
@@ -28,7 +35,7 @@ export enum PolicyEditDialogResult {
   selector: "app-policy-edit",
   templateUrl: "policy-edit.component.html",
 })
-export class PolicyEditComponent {
+export class PolicyEditComponent implements AfterViewInit {
   @ViewChild("policyForm", { read: ViewContainerRef, static: true })
   policyFormRef: ViewContainerRef;
 

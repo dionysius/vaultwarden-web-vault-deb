@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { firstValueFrom, from, map } from "rxjs";
 import { switchMap, takeUntil } from "rxjs/operators";
@@ -33,7 +33,7 @@ const DisallowedPlanTypes = [
 @Component({
   templateUrl: "clients.component.html",
 })
-export class ClientsComponent extends BaseClientsComponent {
+export class ClientsComponent extends BaseClientsComponent implements OnInit, OnDestroy {
   providerId: string;
   addableOrganizations: Organization[];
   loading = true;

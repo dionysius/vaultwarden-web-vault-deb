@@ -24,7 +24,7 @@ export class PaidOrganizationOnlyComponent {}
 @Component({
   template: "<h1>This is the organization upgrade screen!</h1>",
 })
-export class OrganizationUpgradeScreen {}
+export class OrganizationUpgradeScreenComponent {}
 
 const orgFactory = (props: Partial<Organization> = {}) =>
   Object.assign(
@@ -62,7 +62,7 @@ describe("Is Paid Org Guard", () => {
           },
           {
             path: "organizations/:organizationId/billing/subscription",
-            component: OrganizationUpgradeScreen,
+            component: OrganizationUpgradeScreenComponent,
           },
         ]),
       ],

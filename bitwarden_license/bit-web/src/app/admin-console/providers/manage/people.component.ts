@@ -1,4 +1,4 @@
-import { Component, ViewChild, ViewContainerRef } from "@angular/core";
+import { Component, OnInit, ViewChild, ViewContainerRef } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { lastValueFrom } from "rxjs";
 import { first } from "rxjs/operators";
@@ -34,7 +34,10 @@ import { UserAddEditComponent } from "./user-add-edit.component";
   templateUrl: "people.component.html",
 })
 // eslint-disable-next-line rxjs-angular/prefer-takeuntil
-export class PeopleComponent extends BasePeopleComponent<ProviderUserUserDetailsResponse> {
+export class PeopleComponent
+  extends BasePeopleComponent<ProviderUserUserDetailsResponse>
+  implements OnInit
+{
   @ViewChild("addEdit", { read: ViewContainerRef, static: true }) addEditModalRef: ViewContainerRef;
   @ViewChild("groupsTemplate", { read: ViewContainerRef, static: true })
   groupsModalRef: ViewContainerRef;
@@ -154,11 +157,11 @@ export class PeopleComponent extends BasePeopleComponent<ProviderUserUserDetails
         comp.name = this.userNamePipe.transform(user);
         comp.providerId = this.providerId;
         comp.providerUserId = user != null ? user.id : null;
-        comp.onSavedUser.subscribe(() => {
+        comp.savedUser.subscribe(() => {
           modal.close();
           this.load();
         });
-        comp.onDeletedUser.subscribe(() => {
+        comp.deletedUser.subscribe(() => {
           modal.close();
           this.removeUser(user);
         });
