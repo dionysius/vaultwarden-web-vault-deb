@@ -100,7 +100,7 @@ export class CollectionsComponent implements OnInit {
       this.platformUtilsService.showToast("success", null, this.i18nService.t("editedItem"));
       return true;
     } catch (e) {
-      this.logService.error(e);
+      this.platformUtilsService.showToast("error", this.i18nService.t("errorOccurred"), e.message);
       return false;
     }
   }
