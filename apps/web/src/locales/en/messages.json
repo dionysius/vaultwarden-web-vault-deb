@@ -854,8 +854,8 @@
   "emailAddress": {
     "message": "Email address"
   },
-  "yourVaultIsLocked": {
-    "message": "Your vault is locked. Verify your master password to continue."
+  "yourVaultIsLockedV2": {
+    "message": "Your vault is locked."
   },
   "uuid":{
     "message" : "UUID"
