@@ -55,6 +55,9 @@ export class OpenAttachmentsComponent implements OnInit {
   }
 
   async ngOnInit(): Promise<void> {
+    if (!this.cipherId) {
+      return;
+    }
     const cipherDomain = await this.cipherService.get(this.cipherId);
     const cipher = await cipherDomain.decrypt(
       await this.cipherService.getKeyForCipherKeyDecryption(cipherDomain),

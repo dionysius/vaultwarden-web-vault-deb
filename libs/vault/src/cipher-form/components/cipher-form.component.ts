@@ -36,6 +36,7 @@ import { CipherFormService } from "../abstractions/cipher-form.service";
 import { CipherForm, CipherFormContainer } from "../cipher-form-container";
 
 import { CardDetailsSectionComponent } from "./card-details-section/card-details-section.component";
+import { IdentitySectionComponent } from "./identity/identity.component";
 import { ItemDetailsSectionComponent } from "./item-details/item-details-section.component";
 
 @Component({
@@ -59,6 +60,7 @@ import { ItemDetailsSectionComponent } from "./item-details/item-details-section
     SelectModule,
     ItemDetailsSectionComponent,
     CardDetailsSectionComponent,
+    IdentitySectionComponent,
     NgIf,
   ],
 })

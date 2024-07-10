@@ -6,6 +6,12 @@
       [originalCipherView]="originalCipherView"
     ></vault-item-details-section>
 
+    <vault-identity-section
+      *ngIf="config.cipherType === CipherType.Identity"
+      [disabled]="config.mode === 'partial-edit'"
+      [originalCipherView]="originalCipherView"
+    ></vault-identity-section>
+
     <vault-card-details-section
       *ngIf="config.cipherType === CipherType.Card"
       [originalCipherView]="originalCipherView"
