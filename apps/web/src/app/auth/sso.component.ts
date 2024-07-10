@@ -93,6 +93,7 @@ export class SsoComponent extends BaseSsoComponent {
       if (qParams.identifier != null) {
         // SSO Org Identifier in query params takes precedence over claimed domains
         this.identifierFormControl.setValue(qParams.identifier);
+        this.loggingIn = true;
         await this.submit();
       } else {
         // Note: this flow is written for web but both browser and desktop
