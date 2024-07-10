@@ -8,6 +8,9 @@ export interface PasswordColorText {
   text: string;
 }
 
+/**
+ * @deprecated July 2024: Use new PasswordStrengthV2Component instead
+ */
 @Component({
   selector: "app-password-strength",
   templateUrl: "password-strength.component.html",
