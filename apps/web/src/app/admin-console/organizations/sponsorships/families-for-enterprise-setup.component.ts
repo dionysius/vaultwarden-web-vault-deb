@@ -6,6 +6,7 @@ import { first, map, takeUntil } from "rxjs/operators";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
+import { OrganizationUserType } from "@bitwarden/common/admin-console/enums";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { OrganizationSponsorshipRedeemRequest } from "@bitwarden/common/admin-console/models/request/organization/organization-sponsorship-redeem.request";
 import { PlanSponsorshipType, PlanType, ProductTierType } from "@bitwarden/common/billing/enums";
@@ -95,7 +96,12 @@ export class FamiliesForEnterpriseSetupComponent implements OnInit, OnDestroy {
     });
 
     this.existingFamilyOrganizations$ = this.organizationService.organizations$.pipe(
-      map((orgs) => orgs.filter((o) => o.productTierType === ProductTierType.Families)),
+      map((orgs) =>
+        orgs.filter(
+          (o) =>
+            o.productTierType === ProductTierType.Families && o.type === OrganizationUserType.Owner,
+        ),
+      ),
     );
 
     this.existingFamilyOrganizations$.pipe(takeUntil(this._destroy)).subscribe((orgs) => {
