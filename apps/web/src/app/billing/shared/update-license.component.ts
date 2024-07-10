@@ -6,6 +6,8 @@ import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-conso
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 
+import { UpdateLicenseDialogResult } from "./update-license-dialog.component";
+
 @Component({
   selector: "app-update-license",
   templateUrl: "update-license.component.html",
@@ -69,6 +71,7 @@ export class UpdateLicenseComponent {
       this.i18nService.t("licenseUploadSuccess"),
     );
     this.onUpdated.emit();
+    return new Promise((resolve) => resolve(UpdateLicenseDialogResult.Updated));
   };
 
   cancel = () => {
