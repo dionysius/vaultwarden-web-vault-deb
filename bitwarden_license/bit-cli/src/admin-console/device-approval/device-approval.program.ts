@@ -1,7 +1,6 @@
 import { program, Command } from "commander";
 
 import { BaseProgram } from "@bitwarden/cli/base-program";
-import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 
 import { ServiceContainer } from "../../service-container";
 
@@ -41,7 +40,6 @@ export class DeviceApprovalProgram extends BaseProgram {
       .description("List all pending requests for an organization")
       .requiredOption("--organizationid <organizationid>", "The organization id (required)")
       .action(async (options: Options) => {
-        await this.exitIfFeatureFlagDisabled(FeatureFlag.BulkDeviceApproval);
         await this.exitIfLocked();
 
         const cmd = ListCommand.create(this.serviceContainer);
@@ -56,7 +54,6 @@ export class DeviceApprovalProgram extends BaseProgram {
       .requiredOption("--organizationid <organizationid>", "The organization id (required)")
       .description("Approve a pending request")
       .action(async (id: string, options: Options) => {
-        await this.exitIfFeatureFlagDisabled(FeatureFlag.BulkDeviceApproval);
         await this.exitIfLocked();
 
         const cmd = ApproveCommand.create(this.serviceContainer);
@@ -70,7 +67,6 @@ export class DeviceApprovalProgram extends BaseProgram {
       .description("Approve all pending requests for an organization")
       .requiredOption("--organizationid <organizationid>", "The organization id (required)")
       .action(async (options: Options) => {
-        await this.exitIfFeatureFlagDisabled(FeatureFlag.BulkDeviceApproval);
         await this.exitIfLocked();
 
         const cmd = ApproveAllCommand.create(this.serviceContainer);
@@ -85,7 +81,6 @@ export class DeviceApprovalProgram extends BaseProgram {
       .requiredOption("--organizationid <organizationid>", "The organization id (required)")
       .description("Deny a pending request")
       .action(async (id: string, options: Options) => {
-        await this.exitIfFeatureFlagDisabled(FeatureFlag.BulkDeviceApproval);
         await this.exitIfLocked();
 
         const cmd = DenyCommand.create(this.serviceContainer);
@@ -99,7 +94,6 @@ export class DeviceApprovalProgram extends BaseProgram {
       .description("Deny all pending requests for an organization")
       .requiredOption("--organizationid <organizationid>", "The organization id (required)")
       .action(async (options: Options) => {
-        await this.exitIfFeatureFlagDisabled(FeatureFlag.BulkDeviceApproval);
         await this.exitIfLocked();
 
         const cmd = DenyAllCommand.create(this.serviceContainer);

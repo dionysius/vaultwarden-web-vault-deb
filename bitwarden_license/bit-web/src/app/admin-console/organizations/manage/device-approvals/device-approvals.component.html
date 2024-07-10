@@ -29,7 +29,6 @@
         ></button>
         <bit-menu #headerMenu>
           <button
-            *ngIf="bulkDeviceApprovalEnabled$ | async"
             type="button"
             bitMenuItem
             (click)="approveAllRequests()"
