@@ -18,7 +18,13 @@
     <bit-form-field>
       <bit-label>{{ "number" | i18n }}</bit-label>
       <input id="cardNumber" bitInput formControlName="number" type="password" />
-      <button type="button" bitIconButton bitSuffix bitPasswordInputToggle></button>
+      <button
+        type="button"
+        bitIconButton
+        bitSuffix
+        bitPasswordInputToggle
+        data-testid="visibility-for-card-number"
+      ></button>
     </bit-form-field>
 
     <bit-form-field>
@@ -53,7 +59,13 @@
     <bit-form-field>
       <bit-label>{{ "securityCode" | i18n }}</bit-label>
       <input id="cardCode" bitInput formControlName="code" type="password" />
-      <button type="button" bitIconButton bitSuffix bitPasswordInputToggle></button>
+      <button
+        type="button"
+        bitIconButton
+        bitSuffix
+        bitPasswordInputToggle
+        data-testid="visibility-for-card-code"
+      ></button>
     </bit-form-field>
   </bit-card>
 </bit-section>
