@@ -87,14 +87,16 @@ export class VaultPopupItemsService {
         map(([organizations, collections]) => {
           const orgMap = Object.fromEntries(organizations.map((org) => [org.id, org]));
           const collectionMap = Object.fromEntries(collections.map((col) => [col.id, col]));
-          return ciphers.map(
-            (cipher) =>
-              new PopupCipherView(
-                cipher,
-                cipher.collectionIds?.map((colId) => collectionMap[colId as CollectionId]),
-                orgMap[cipher.organizationId as OrganizationId],
-              ),
-          );
+          return ciphers
+            .filter((c) => !c.isDeleted)
+            .map(
+              (cipher) =>
+                new PopupCipherView(
+                  cipher,
+                  cipher.collectionIds?.map((colId) => collectionMap[colId as CollectionId]),
+                  orgMap[cipher.organizationId as OrganizationId],
+                ),
+            );
         }),
       ),
     ),

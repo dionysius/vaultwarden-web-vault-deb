@@ -311,6 +311,19 @@ describe("VaultPopupItemsService", () => {
         done();
       });
     });
+
+    it("should return true when all ciphers are deleted", (done) => {
+      cipherServiceMock.getAllDecrypted.mockResolvedValue([
+        { id: "1", type: CipherType.Login, name: "Login 1", isDeleted: true },
+        { id: "2", type: CipherType.Login, name: "Login 2", isDeleted: true },
+        { id: "3", type: CipherType.Login, name: "Login 3", isDeleted: true },
+      ] as CipherView[]);
+
+      service.emptyVault$.subscribe((empty) => {
+        expect(empty).toBe(true);
+        done();
+      });
+    });
   });
 
   describe("noFilteredResults$", () => {
