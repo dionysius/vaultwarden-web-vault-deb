@@ -8,12 +8,9 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { DialogService } from "@bitwarden/components";
 
+import { UpdateLicenseDialogResult } from "./update-license-types";
 import { UpdateLicenseComponent } from "./update-license.component";
 
-export enum UpdateLicenseDialogResult {
-  Updated = "updated",
-  Cancelled = "cancelled",
-}
 @Component({
   templateUrl: "update-license-dialog.component.html",
 })

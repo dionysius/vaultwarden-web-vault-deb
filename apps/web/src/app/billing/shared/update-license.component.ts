@@ -6,7 +6,7 @@ import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-conso
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 
-import { UpdateLicenseDialogResult } from "./update-license-dialog.component";
+import { UpdateLicenseDialogResult } from "./update-license-types";
 
 @Component({
   selector: "app-update-license",

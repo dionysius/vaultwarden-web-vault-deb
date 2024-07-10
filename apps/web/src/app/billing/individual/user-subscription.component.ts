@@ -20,10 +20,8 @@ import {
   OffboardingSurveyDialogResultType,
   openOffboardingSurvey,
 } from "../shared/offboarding-survey.component";
-import {
-  UpdateLicenseDialogComponent,
-  UpdateLicenseDialogResult,
-} from "../shared/update-license-dialog.component";
+import { UpdateLicenseDialogComponent } from "../shared/update-license-dialog.component";
+import { UpdateLicenseDialogResult } from "../shared/update-license-types";
 
 @Component({
   templateUrl: "user-subscription.component.html",
