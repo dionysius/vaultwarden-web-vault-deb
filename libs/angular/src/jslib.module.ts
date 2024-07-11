@@ -46,6 +46,7 @@ import { StopClickDirective } from "./directives/stop-click.directive";
 import { StopPropDirective } from "./directives/stop-prop.directive";
 import { TrueFalseValueDirective } from "./directives/true-false-value.directive";
 import { CreditCardNumberPipe } from "./pipes/credit-card-number.pipe";
+import { PluralizePipe } from "./pipes/pluralize.pipe";
 import { SearchCiphersPipe } from "./pipes/search-ciphers.pipe";
 import { SearchPipe } from "./pipes/search.pipe";
 import { UserNamePipe } from "./pipes/user-name.pipe";
@@ -162,6 +163,7 @@ import { IconComponent } from "./vault/components/icon.component";
     UserNamePipe,
     UserTypePipe,
     FingerprintPipe,
+    PluralizePipe,
   ],
 })
 export class JslibModule {}

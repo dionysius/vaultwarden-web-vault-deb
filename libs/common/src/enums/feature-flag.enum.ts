@@ -23,6 +23,7 @@ export enum FeatureFlag {
   EnableTimeThreshold = "PM-5864-dollar-threshold",
   GroupsComponentRefactor = "groups-component-refactor",
   ProviderClientVaultPrivacyBanner = "ac-2833-provider-client-vault-privacy-banner",
+  VaultBulkManagementAction = "vault-bulk-management-action",
 }
 
 export type AllowedFeatureFlagTypes = boolean | number | string;
@@ -56,6 +57,7 @@ export const DefaultFeatureFlagValue = {
   [FeatureFlag.EnableTimeThreshold]: FALSE,
   [FeatureFlag.GroupsComponentRefactor]: FALSE,
   [FeatureFlag.ProviderClientVaultPrivacyBanner]: FALSE,
+  [FeatureFlag.VaultBulkManagementAction]: FALSE,
 } satisfies Record<FeatureFlag, AllowedFeatureFlagTypes>;
 
 export type DefaultFeatureFlagValueType = typeof DefaultFeatureFlagValue;

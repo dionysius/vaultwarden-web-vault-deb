@@ -4,3 +4,8 @@ export { CopyCipherFieldDirective } from "./components/copy-cipher-field.directi
 
 export * from "./cipher-view";
 export * from "./cipher-form";
+export {
+  AssignCollectionsComponent,
+  CollectionAssignmentParams,
+  CollectionAssignmentResult,
+} from "./components/assign-collections.component";
