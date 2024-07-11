@@ -42,7 +42,7 @@ export class ManageClientSubscriptionDialogComponent implements OnInit {
   protected formGroup = new FormGroup({
     assignedSeats: new FormControl<number>(this.dialogParams.organization.seats, [
       Validators.required,
-      Validators.min(0),
+      Validators.min(this.dialogParams.organization.occupiedSeats),
     ]),
   });
 

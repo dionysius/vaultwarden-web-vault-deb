@@ -56,7 +56,7 @@
           <bit-label>
             {{ "seats" | i18n }}
           </bit-label>
-          <input type="text" bitInput formControlName="seats" />
+          <input type="number" bitInput formControlName="seats" min="1" />
           <bit-hint
             class="tw-text-muted tw-grid tw-grid-flow-col tw-gap-1 tw-grid-cols-1 tw-grid-rows-2"
             *ngIf="openSeats > 0"
