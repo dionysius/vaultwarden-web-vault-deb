@@ -19,6 +19,7 @@ import {
 } from "@bitwarden/components";
 
 import BrowserPopupUtils from "../../../../../../platform/popup/browser-popup-utils";
+import { FilePopoutUtilsService } from "../../../../../../tools/popup/services/file-popout-utils.service";
 
 @Component({
   standalone: true,
@@ -31,7 +32,7 @@ export class OpenAttachmentsComponent implements OnInit {
   @Input({ required: true }) cipherId: CipherId;
 
   /** True when the attachments window should be opened in a popout */
-  openAttachmentsInPopout = BrowserPopupUtils.inPopup(window);
+  openAttachmentsInPopout: boolean;
 
   /** True when the user has access to premium or h  */
   canAccessAttachments: boolean;
@@ -46,6 +47,7 @@ export class OpenAttachmentsComponent implements OnInit {
     private organizationService: OrganizationService,
     private toastService: ToastService,
     private i18nService: I18nService,
+    private filePopoutUtilsService: FilePopoutUtilsService,
   ) {
     this.billingAccountProfileStateService.hasPremiumFromAnySource$
       .pipe(takeUntilDestroyed())
@@ -55,9 +57,12 @@ export class OpenAttachmentsComponent implements OnInit {
   }
 
   async ngOnInit(): Promise<void> {
+    this.openAttachmentsInPopout = this.filePopoutUtilsService.showFilePopoutMessage(window);
+
     if (!this.cipherId) {
       return;
     }
+
     const cipherDomain = await this.cipherService.get(this.cipherId);
     const cipher = await cipherDomain.decrypt(
       await this.cipherService.getKeyForCipherKeyDecryption(cipherDomain),

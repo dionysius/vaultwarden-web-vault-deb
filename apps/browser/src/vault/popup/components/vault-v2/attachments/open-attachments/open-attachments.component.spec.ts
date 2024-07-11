@@ -15,6 +15,7 @@ import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { ToastService } from "@bitwarden/components";
 
 import BrowserPopupUtils from "../../../../../../platform/popup/browser-popup-utils";
+import { FilePopoutUtilsService } from "../../../../../../tools/popup/services/file-popout-utils.service";
 
 import { OpenAttachmentsComponent } from "./open-attachments.component";
 
@@ -48,12 +49,14 @@ describe("OpenAttachmentsComponent", () => {
 
   const getCipher = jest.fn().mockResolvedValue(cipherDomain);
   const getOrganization = jest.fn().mockResolvedValue(org);
+  const showFilePopoutMessage = jest.fn().mockReturnValue(false);
 
   beforeEach(async () => {
     openCurrentPagePopout.mockClear();
     getCipher.mockClear();
     showToast.mockClear();
     getOrganization.mockClear();
+    showFilePopoutMessage.mockClear();
 
     await TestBed.configureTestingModule({
       imports: [OpenAttachmentsComponent, RouterTestingModule],
@@ -75,6 +78,10 @@ describe("OpenAttachmentsComponent", () => {
           provide: OrganizationService,
           useValue: { get: getOrganization },
         },
+        {
+          provide: FilePopoutUtilsService,
+          useValue: { showFilePopoutMessage },
+        },
       ],
     }).compileComponents();
   });
@@ -89,7 +96,9 @@ describe("OpenAttachmentsComponent", () => {
   });
 
   it("opens attachments in new popout", async () => {
-    component.openAttachmentsInPopout = true;
+    showFilePopoutMessage.mockReturnValue(true);
+
+    await component.ngOnInit();
 
     await component.openAttachments();
 
@@ -101,7 +110,9 @@ describe("OpenAttachmentsComponent", () => {
   });
 
   it("opens attachments in same window", async () => {
-    component.openAttachmentsInPopout = false;
+    showFilePopoutMessage.mockReturnValue(false);
+
+    await component.ngOnInit();
 
     await component.openAttachments();
 
