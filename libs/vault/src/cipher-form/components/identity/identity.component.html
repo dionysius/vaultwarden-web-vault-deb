@@ -53,14 +53,26 @@
           {{ "ssn" | i18n }}
         </bit-label>
         <input formControlName="ssn" bitInput type="password" />
-        <button type="button" bitIconButton bitPasswordInputToggle></button>
+        <button
+          type="button"
+          bitIconButton
+          bitSuffix
+          bitPasswordInputToggle
+          data-testid="visibility-for-ssn"
+        ></button>
       </bit-form-field>
       <bit-form-field>
         <bit-label>
           {{ "passportNumber" | i18n }}
         </bit-label>
         <input formControlName="passportNumber" bitInput type="password" />
-        <button type="button" bitIconButton bitPasswordInputToggle></button>
+        <button
+          type="button"
+          bitIconButton
+          bitSuffix
+          bitPasswordInputToggle
+          data-testid="visibility-for-passport-number"
+        ></button>
       </bit-form-field>
       <bit-form-field>
         <bit-label>
