@@ -1,11 +1,10 @@
 import { Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
-import { Subject, firstValueFrom, takeUntil } from "rxjs";
+import { Subject, firstValueFrom, switchMap, takeUntil } from "rxjs";
 
 import { EnvironmentSelectorComponent } from "@bitwarden/angular/auth/components/environment-selector.component";
 import { LoginEmailServiceAbstraction, RegisterRouteService } from "@bitwarden/auth/common";
-import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 
@@ -34,7 +33,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     private formBuilder: FormBuilder,
     private router: Router,
     private i18nService: I18nService,
-    private environmentService: EnvironmentService,
     private loginEmailService: LoginEmailServiceAbstraction,
     private accountSwitcherService: AccountSwitcherService,
     private registerRouteService: RegisterRouteService,
@@ -55,13 +53,14 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
 
     this.environmentSelector.onOpenSelfHostedSettings
-      .pipe(takeUntil(this.destroyed$))
-      .subscribe(() => {
-        this.setLoginEmailValues();
-        // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-        // eslint-disable-next-line @typescript-eslint/no-floating-promises
-        this.router.navigate(["environment"]);
-      });
+      .pipe(
+        switchMap(async () => {
+          await this.setLoginEmailValues();
+          await this.router.navigate(["environment"]);
+        }),
+        takeUntil(this.destroyed$),
+      )
+      .subscribe();
   }
 
   ngOnDestroy(): void {
@@ -85,12 +84,14 @@ export class HomeComponent implements OnInit, OnDestroy {
       return;
     }
 
-    this.setLoginEmailValues();
+    await this.setLoginEmailValues();
     await this.router.navigate(["login"], { queryParams: { email: this.formGroup.value.email } });
   }
 
-  setLoginEmailValues() {
-    this.loginEmailService.setEmail(this.formGroup.value.email);
+  async setLoginEmailValues() {
+    // Note: Browser saves email settings here instead of the login component
     this.loginEmailService.setRememberEmail(this.formGroup.value.rememberEmail);
+    this.loginEmailService.setEmail(this.formGroup.value.email);
+    await this.loginEmailService.saveEmailSettings();
   }
 }

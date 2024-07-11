@@ -137,14 +137,16 @@ describe("LoginEmailService", () => {
       expect(result).toEqual("initialEmail@bitwarden.com");
     });
 
-    it("clears the email and rememberEmail after saving", async () => {
+    it("does not clear the email and rememberEmail after saving", async () => {
+      // Browser uses these values to maintain the email between login and 2fa components so
+      // we do not want to clear them too early.
       sut.setEmail("userEmail@bitwarden.com");
       sut.setRememberEmail(true);
       await sut.saveEmailSettings();
 
       const result = sut.getEmail();
 
-      expect(result).toBeNull();
+      expect(result).toBe("userEmail@bitwarden.com");
     });
   });
 });
