@@ -145,6 +145,17 @@ export class CardDetailsSectionComponent implements OnInit {
     }
   }
 
+  /** Get the section heading based on the card brand */
+  getSectionHeading(): string {
+    const { brand } = this.cardDetailsForm.value;
+
+    if (brand && brand !== "Other") {
+      return this.i18nService.t("cardBrandDetails", brand);
+    }
+
+    return this.i18nService.t("cardDetails");
+  }
+
   /** Set form initial form values from the current cipher */
   private setInitialValues() {
     const { cardholderName, number, brand, expMonth, expYear, code } = this.originalCipherView.card;

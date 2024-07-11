@@ -28,7 +28,7 @@ describe("CardDetailsSectionComponent", () => {
       imports: [CardDetailsSectionComponent, CommonModule, ReactiveFormsModule],
       providers: [
         { provide: CipherFormContainer, useValue: cipherFormProvider },
-        { provide: I18nService, useValue: mock<I18nService>() },
+        { provide: I18nService, useValue: { t: (key: string) => key } },
       ],
     }).compileComponents();
   });
@@ -121,5 +121,25 @@ describe("CardDetailsSectionComponent", () => {
     numberInput.nativeElement.dispatchEvent(new Event("input"));
 
     expect(component.cardDetailsForm.controls.brand.value).toBe("Visa");
+  });
+
+  it('displays brand heading text when "brand" is not "Other"', () => {
+    component.cardDetailsForm.patchValue({
+      brand: "Visa",
+    });
+
+    fixture.detectChanges();
+
+    const heading = fixture.debugElement.query(By.css("h2"));
+
+    expect(heading.nativeElement.textContent.trim()).toBe("cardBrandDetails");
+
+    component.cardDetailsForm.patchValue({
+      brand: "Other",
+    });
+
+    fixture.detectChanges();
+
+    expect(heading.nativeElement.textContent.trim()).toBe("cardDetails");
   });
 });
