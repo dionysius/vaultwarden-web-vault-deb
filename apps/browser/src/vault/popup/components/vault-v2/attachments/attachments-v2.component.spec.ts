@@ -26,6 +26,7 @@ import { CipherAttachmentsComponent } from "./cipher-attachments/cipher-attachme
 })
 class MockPopupHeaderComponent {
   @Input() pageTitle: string;
+  @Input() backAction: () => void;
 }
 
 @Component({

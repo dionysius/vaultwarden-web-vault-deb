@@ -1,4 +1,4 @@
-import { CommonModule } from "@angular/common";
+import { CommonModule, Location } from "@angular/common";
 import { Component } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { ActivatedRoute, Router } from "@angular/router";
@@ -41,11 +41,27 @@ export class AttachmentsV2Component {
   constructor(
     private router: Router,
     private cipherService: CipherService,
+    private location: Location,
     route: ActivatedRoute,
   ) {
     route.queryParams.pipe(takeUntilDestroyed(), first()).subscribe(({ cipherId }) => {
       this.cipherId = cipherId;
     });
+  }
+
+  /**
+   * Navigates to previous view or edit-cipher path
+   * depending on the history length.
+   *
+   * This can happen when history is lost due to the extension being
+   * forced into a popout window.
+   */
+  async handleBackButton() {
+    if (history.length === 1) {
+      await this.navigateToEditScreen();
+    } else {
+      this.location.back();
+    }
   }
 
   /** Navigate the user back to the edit screen after uploading an attachment */

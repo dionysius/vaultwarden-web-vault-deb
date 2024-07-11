@@ -1,11 +1,16 @@
 <popup-page>
-  <popup-header slot="header" [pageTitle]="headerText" showBackButton> </popup-header>
+  <popup-header
+    slot="header"
+    [pageTitle]="headerText"
+    [backAction]="handleBackButton.bind(this)"
+    showBackButton
+  ></popup-header>
 
   <vault-cipher-form
     *ngIf="!loading"
     formId="cipherForm"
     [config]="config"
-    (cipherSaved)="onCipherSaved($event)"
+    (cipherSaved)="onCipherSaved()"
     [submitBtn]="submitBtn"
   >
     <app-open-attachments

@@ -1,5 +1,10 @@
 <popup-page>
-  <popup-header slot="header" [pageTitle]="'attachments' | i18n" showBackButton>
+  <popup-header
+    slot="header"
+    [pageTitle]="'attachments' | i18n"
+    showBackButton
+    [backAction]="handleBackButton.bind(this)"
+  >
     <app-pop-out slot="end" />
   </popup-header>
 
