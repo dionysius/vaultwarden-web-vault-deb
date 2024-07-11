@@ -4,7 +4,12 @@ import { RouterModule } from "@angular/router";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
-import { CardComponent, SectionComponent, SectionHeaderComponent } from "@bitwarden/components";
+import {
+  CardComponent,
+  SectionComponent,
+  SectionHeaderComponent,
+  TypographyModule,
+} from "@bitwarden/components";
 
 @Component({
   selector: "app-item-history-v2",
@@ -17,6 +22,7 @@ import { CardComponent, SectionComponent, SectionHeaderComponent } from "@bitwar
     CardComponent,
     SectionComponent,
     SectionHeaderComponent,
+    TypographyModule,
   ],
 })
 export class ItemHistoryV2Component {

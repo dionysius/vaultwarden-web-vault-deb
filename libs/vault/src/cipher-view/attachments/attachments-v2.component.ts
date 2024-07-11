@@ -22,6 +22,7 @@ import {
   IconButtonModule,
   SectionComponent,
   SectionHeaderComponent,
+  TypographyModule,
 } from "@bitwarden/components";
 import { PasswordRepromptService } from "@bitwarden/vault";
 
@@ -36,6 +37,7 @@ import { PasswordRepromptService } from "@bitwarden/vault";
     IconButtonModule,
     SectionComponent,
     SectionHeaderComponent,
+    TypographyModule,
   ],
 })
 export class AttachmentsV2Component {

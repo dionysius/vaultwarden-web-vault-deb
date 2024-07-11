@@ -12,6 +12,7 @@ import {
   InputModule,
   SectionComponent,
   SectionHeaderComponent,
+  TypographyModule,
 } from "@bitwarden/components";
 
 @Component({
@@ -27,6 +28,7 @@ import {
     InputModule,
     SectionComponent,
     SectionHeaderComponent,
+    TypographyModule,
   ],
 })
 export class CustomFieldV2Component {
