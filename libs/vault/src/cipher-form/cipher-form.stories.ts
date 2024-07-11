@@ -7,6 +7,7 @@ import {
   moduleMetadata,
   StoryObj,
 } from "@storybook/angular";
+import { BehaviorSubject } from "rxjs";
 
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { CipherType } from "@bitwarden/common/vault/enums";
@@ -15,7 +16,7 @@ import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { CollectionView } from "@bitwarden/common/vault/models/view/collection.view";
 import { FolderView } from "@bitwarden/common/vault/models/view/folder.view";
 import { AsyncActionsModule, ButtonModule, ToastService } from "@bitwarden/components";
-import { CipherFormConfig } from "@bitwarden/vault";
+import { CipherFormConfig, PasswordRepromptService } from "@bitwarden/vault";
 import { PreloadedEnglishI18nModule } from "@bitwarden/web-vault/src/app/core/tests";
 
 import { CipherFormService } from "./abstractions/cipher-form.service";
@@ -71,6 +72,7 @@ const defaultConfig: CipherFormConfig = {
     folderId: "folder2",
     collectionIds: ["col1"],
     favorite: false,
+    notes: "Example notes",
   } as unknown as Cipher,
 };
 
@@ -103,6 +105,12 @@ export default {
           provide: ToastService,
           useValue: {
             showToast: action("showToast"),
+          },
+        },
+        {
+          provide: PasswordRepromptService,
+          useValue: {
+            enabled$: new BehaviorSubject(true),
           },
         },
       ],

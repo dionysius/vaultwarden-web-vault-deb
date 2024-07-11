@@ -1,7 +1,8 @@
 import { Injectable } from "@angular/core";
-import { lastValueFrom } from "rxjs";
+import { firstValueFrom, lastValueFrom } from "rxjs";
 
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
+import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { CipherRepromptType } from "@bitwarden/common/vault/enums";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { DialogService } from "@bitwarden/components";
@@ -18,6 +19,10 @@ export class PasswordRepromptService {
     private dialogService: DialogService,
     private userVerificationService: UserVerificationService,
   ) {}
+
+  enabled$ = Utils.asyncToObservable(() =>
+    this.userVerificationService.hasMasterPasswordAndMasterKeyHash(),
+  );
 
   protectedFields() {
     return ["TOTP", "Password", "H_Field", "Card Number", "Security Code"];
@@ -45,7 +50,7 @@ export class PasswordRepromptService {
     return result === true;
   }
 
-  async enabled() {
-    return await this.userVerificationService.hasMasterPasswordAndMasterKeyHash();
+  enabled() {
+    return firstValueFrom(this.enabled$);
   }
 }

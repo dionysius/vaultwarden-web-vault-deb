@@ -35,6 +35,7 @@ import { CipherFormConfig } from "../abstractions/cipher-form-config.service";
 import { CipherFormService } from "../abstractions/cipher-form.service";
 import { CipherForm, CipherFormContainer } from "../cipher-form-container";
 
+import { AdditionalOptionsSectionComponent } from "./additional-options/additional-options-section.component";
 import { CardDetailsSectionComponent } from "./card-details-section/card-details-section.component";
 import { IdentitySectionComponent } from "./identity/identity.component";
 import { ItemDetailsSectionComponent } from "./item-details/item-details-section.component";
@@ -62,6 +63,7 @@ import { ItemDetailsSectionComponent } from "./item-details/item-details-section
     CardDetailsSectionComponent,
     IdentitySectionComponent,
     NgIf,
+    AdditionalOptionsSectionComponent,
   ],
 })
 export class CipherFormComponent implements AfterViewInit, OnInit, OnChanges, CipherFormContainer {
@@ -92,16 +94,15 @@ export class CipherFormComponent implements AfterViewInit, OnInit, OnChanges, Ci
   @Output() cipherSaved = new EventEmitter<CipherView>();
 
   /**
+   * The original cipher being edited or cloned. Null for add mode.
+   */
+  originalCipherView: CipherView | null;
+
+  /**
    * The form group for the cipher. Starts empty and is populated by child components via the `registerChildForm` method.
    * @protected
    */
   protected cipherForm = this.formBuilder.group<CipherForm>({});
-
-  /**
-   * The original cipher being edited or cloned. Null for add mode.
-   * @protected
-   */
-  protected originalCipherView: CipherView | null;
 
   /**
    * The value of the updated cipher. Starts as a new cipher (or clone of originalCipher) and is updated

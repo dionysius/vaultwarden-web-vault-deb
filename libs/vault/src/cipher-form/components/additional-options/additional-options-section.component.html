@@ -1,0 +1,20 @@
+<bit-section [formGroup]="additionalOptionsForm">
+  <bit-section-header>
+    <h2 bitTypography="h5">{{ "additionalOptions" | i18n }}</h2>
+  </bit-section-header>
+
+  <bit-card>
+    <bit-form-field>
+      <bit-label>{{ "notes" | i18n }}</bit-label>
+      <textarea bitInput formControlName="notes"></textarea>
+    </bit-form-field>
+    <bit-form-control *ngIf="passwordRepromptEnabled$ | async">
+      <input type="checkbox" bitCheckbox formControlName="reprompt" />
+      <bit-label>{{ "passwordPrompt" | i18n }}</bit-label>
+    </bit-form-control>
+
+    <!-- TODO: Add "+ Add Field" button for Custom Fields - PM-8803 -->
+  </bit-card>
+</bit-section>
+
+<!-- TODO: Add Custom Fields section component - PM-8803 -->
