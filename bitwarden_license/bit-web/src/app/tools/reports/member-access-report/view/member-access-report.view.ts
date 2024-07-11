@@ -1,7 +1,7 @@
-export class MemberAccessReportView {
+export type MemberAccessReportView = {
   name: string;
   email: string;
-  collections: number;
-  groups: number;
-  items: number;
-}
+  collectionsCount: number;
+  groupsCount: number;
+  itemsCount: number;
+};

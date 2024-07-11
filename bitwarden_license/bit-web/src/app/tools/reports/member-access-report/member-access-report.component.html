@@ -5,7 +5,7 @@
     class="tw-grow"
   ></bit-search>
 
-  <button type="button" bitButton buttonType="primary">
+  <button type="button" bitButton buttonType="primary" [bitAction]="exportReportAction">
     <span>{{ "export" | i18n }}</span>
     <i class="bwi bwi-fw bwi-sign-in" aria-hidden="true"></i>
   </button>
@@ -21,9 +21,9 @@
   <ng-container header>
     <tr>
       <th bitCell bitSortable="name" default>Members</th>
-      <th bitCell bitSortable="groups">Groups</th>
-      <th bitCell bitSortable="collections">Collections</th>
-      <th bitCell bitSortable="items">Items</th>
+      <th bitCell bitSortable="groupsCount">Groups</th>
+      <th bitCell bitSortable="collectionsCount">Collections</th>
+      <th bitCell bitSortable="itemsCount">Items</th>
     </tr>
   </ng-container>
   <ng-template body let-rows$>
@@ -42,9 +42,9 @@
           </div>
         </div>
       </td>
-      <td bitCell class="tw-text-muted tw-w-[278px] tw-p-4">{{ r.groups }}</td>
-      <td bitCell class="tw-text-muted tw-w-[278px] tw-p-4">{{ r.collections }}</td>
-      <td bitCell class="tw-text-muted tw-w-[278px] tw-p-4">{{ r.items }}</td>
+      <td bitCell class="tw-text-muted tw-w-[278px] tw-p-4">{{ r.groupsCount }}</td>
+      <td bitCell class="tw-text-muted tw-w-[278px] tw-p-4">{{ r.collectionsCount }}</td>
+      <td bitCell class="tw-text-muted tw-w-[278px] tw-p-4">{{ r.itemsCount }}</td>
     </tr>
   </ng-template>
 </bit-table>
