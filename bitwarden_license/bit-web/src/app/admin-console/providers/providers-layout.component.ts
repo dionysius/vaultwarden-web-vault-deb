@@ -10,17 +10,9 @@ import { Provider } from "@bitwarden/common/admin-console/models/domain/provider
 import { hasConsolidatedBilling } from "@bitwarden/common/billing/abstractions/provider-billing.service.abstraction";
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
-import {
-  BannerModule,
-  IconModule,
-  LayoutComponent,
-  LinkModule,
-  NavigationModule,
-} from "@bitwarden/components";
+import { BannerModule, IconModule, LinkModule } from "@bitwarden/components";
 import { ProviderPortalLogo } from "@bitwarden/web-vault/app/admin-console/icons/provider-portal-logo";
-import { PaymentMethodWarningsModule } from "@bitwarden/web-vault/app/billing/shared";
-import { ProductSwitcherModule } from "@bitwarden/web-vault/app/layouts/product-switcher/product-switcher.module";
-import { ToggleWidthComponent } from "@bitwarden/web-vault/app/layouts/toggle-width.component";
+import { WebLayoutModule } from "@bitwarden/web-vault/app/layouts/web-layout.module";
 
 import { ProviderClientVaultPrivacyBannerService } from "./services/provider-client-vault-privacy-banner.service";
 
@@ -32,14 +24,10 @@ import { ProviderClientVaultPrivacyBannerService } from "./services/provider-cli
     CommonModule,
     RouterModule,
     JslibModule,
-    LayoutComponent,
+    WebLayoutModule,
     IconModule,
-    NavigationModule,
-    PaymentMethodWarningsModule,
-    ToggleWidthComponent,
-    ProductSwitcherModule,
-    BannerModule,
     LinkModule,
+    BannerModule,
   ],
 })
 export class ProvidersLayoutComponent implements OnInit, OnDestroy {
@@ -50,10 +38,6 @@ export class ProvidersLayoutComponent implements OnInit, OnDestroy {
 
   protected hasConsolidatedBilling$: Observable<boolean>;
   protected canAccessBilling$: Observable<boolean>;
-
-  protected showPaymentMethodWarningBanners$ = this.configService.getFeatureFlag$(
-    FeatureFlag.ShowPaymentMethodWarningBanners,
-  );
 
   protected showProviderClientVaultPrivacyWarningBanner$ = this.configService.getFeatureFlag$(
     FeatureFlag.ProviderClientVaultPrivacyBanner,

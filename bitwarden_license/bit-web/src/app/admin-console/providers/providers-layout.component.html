@@ -1,5 +1,5 @@
-<bit-layout variant="secondary">
-  <bit-side-nav *ngIf="provider$ | async as provider">
+<app-layout>
+  <app-side-nav variant="secondary" *ngIf="provider$ | async as provider">
     <bit-nav-logo [openIcon]="logo" route="." [label]="'providerPortal' | i18n"></bit-nav-logo>
 
     <bit-nav-item
@@ -39,12 +39,8 @@
       route="settings"
       *ngIf="showSettingsTab(provider)"
     ></bit-nav-item>
+  </app-side-nav>
 
-    <ng-container slot="footer">
-      <navigation-product-switcher></navigation-product-switcher>
-      <app-toggle-width></app-toggle-width>
-    </ng-container>
-  </bit-side-nav>
   <bit-banner
     class="-tw-m-6 tw-flex tw-flex-col tw-pb-6"
     (onClose)="(true)"
@@ -65,8 +61,5 @@
       {{ "contactBitwardenSupport" | i18n }} </a
     >.
   </bit-banner>
-  <app-payment-method-warnings
-    *ngIf="showPaymentMethodWarningBanners$ | async"
-  ></app-payment-method-warnings>
   <router-outlet></router-outlet>
-</bit-layout>
+</app-layout>
