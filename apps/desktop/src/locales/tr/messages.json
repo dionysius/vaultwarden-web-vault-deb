@@ -539,6 +539,18 @@
       }
     }
   },
+  "masterPassword": {
+    "message": "Ana parola"
+  },
+  "masterPassImportant": {
+    "message": "Ana parolanızı unutursanız kurtaramazsınız!"
+  },
+  "confirmMasterPassword": {
+    "message": "Ana parolayı onaylayın"
+  },
+  "masterPassHintLabel": {
+    "message": "Ana parola ipucu"
+  },
   "settings": {
     "message": "Ayarlar"
   },
@@ -1349,28 +1361,28 @@
     "message": "This file export will be password protected and require the file password to decrypt."
   },
   "filePassword": {
-    "message": "File password"
+    "message": "Dosya parolası"
   },
   "exportPasswordDescription": {
-    "message": "This password will be used to export and import this file"
+    "message": "Bu parola, bu dosyayı dışa ve içe aktarmak için kullanılacaktır"
   },
   "accountRestrictedOptionDescription": {
-    "message": "Use your account encryption key, derived from your account's username and Master Password, to encrypt the export and restrict import to only the current Bitwarden account."
+    "message": "Dışa aktarmayı şifrelemek ve içe aktarmayı yalnızca mevcut Bitwarden hesabıyla kısıtlamak için, hesabınızın kullanıcı adı ve ana parolasından türetilen hesap şifreleme anahtarınızı kullanın."
   },
   "passwordProtected": {
-    "message": "Password protected"
+    "message": "Parola korumalı"
   },
   "passwordProtectedOptionDescription": {
-    "message": "Set a file password to encrypt the export and import it to any Bitwarden account using the password for decryption."
+    "message": "Dışa aktardığınız dosyayı şifrelemek ve bir Bitwarden hesabına içe aktarmak için kullanacağınız parolayı belirleyin."
   },
   "exportTypeHeading": {
-    "message": "Export type"
+    "message": "Dışa aktarma türü"
   },
   "accountRestricted": {
-    "message": "Account restricted"
+    "message": "Hesap kısıtlı"
   },
   "filePasswordAndConfirmFilePasswordDoNotMatch": {
-    "message": "“File password”  and “Confirm file password“ do not match."
+    "message": "\"Dosya parolası\" ile \"Dosya parolasını onaylayın\" eşleşmiyor."
   },
   "hCaptchaUrl": {
     "message": "hCaptcha adresi",
@@ -1955,6 +1967,9 @@
   "emailVerificationRequired": {
     "message": "E-posta doğrulaması gerekiyor"
   },
+  "emailVerifiedV2": {
+    "message": "E-posta doğrulandı"
+  },
   "emailVerificationRequiredDesc": {
     "message": "Bu özelliği kullanmak için e-postanızı doğrulamalısınız."
   },
@@ -2133,7 +2148,7 @@
     "message": "Hesabı değiştir"
   },
   "alreadyHaveAccount": {
-    "message": "Already have an account?"
+    "message": "Zaten hesabınız var mı?"
   },
   "options": {
     "message": "Seçenekler"
@@ -2154,7 +2169,7 @@
     }
   },
   "exportingOrganizationVaultTitle": {
-    "message": "Exporting organization vault"
+    "message": "Kuruluş kasasını dışa aktarma"
   },
   "exportingOrganizationVaultDesc": {
     "message": "Only the organization vault associated with $ORGANIZATION$ will be exported. Items in individual vaults or other organizations will not be included.",
@@ -2482,25 +2497,25 @@
     "message": "Giriş istendi"
   },
   "creatingAccountOn": {
-    "message": "Creating account on"
+    "message": "Hesap oluşturuluyor:"
   },
   "checkYourEmail": {
-    "message": "Check your email"
+    "message": "E-postanızı kontrol edin"
   },
   "followTheLinkInTheEmailSentTo": {
-    "message": "Follow the link in the email sent to"
+    "message": "Hesabınızı oluşturmaya devam etmek için"
   },
   "andContinueCreatingYourAccount": {
-    "message": "and continue creating your account."
+    "message": "adresine gönderdiğimiz e-postadaki bağlantıya tıklayın."
   },
   "noEmail": {
-    "message": "No email?"
+    "message": "E-posta gelmedi mi?"
   },
   "goBack": {
-    "message": "Go back"
+    "message": "Geri dönüp"
   },
   "toEditYourEmailAddress": {
-    "message": "to edit your email address."
+    "message": "e-posta adresinizi düzenleyin."
   },
   "exposedMasterPassword": {
     "message": "Açığa Çıkmış Ana Parola"
@@ -2968,11 +2983,11 @@
     }
   },
   "back": {
-    "message": "Back",
+    "message": "Geri",
     "description": "Button text to navigate back"
   },
   "removeItem": {
-    "message": "Remove $NAME$",
+    "message": "$NAME$ klasörünü kaldır",
     "description": "Remove a selected option, such as a folder or collection",
     "placeholders": {
       "name": {

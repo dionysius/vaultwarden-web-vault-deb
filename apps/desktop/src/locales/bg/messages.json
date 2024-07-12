@@ -539,6 +539,18 @@
       }
     }
   },
+  "masterPassword": {
+    "message": "Главна парола"
+  },
+  "masterPassImportant": {
+    "message": "Главната парола не може да бъде възстановена, ако я забравите!"
+  },
+  "confirmMasterPassword": {
+    "message": "Потвърждаване на главната парола"
+  },
+  "masterPassHintLabel": {
+    "message": "Подсказка за главната парола"
+  },
   "settings": {
     "message": "Настройки"
   },
@@ -1954,6 +1966,9 @@
   },
   "emailVerificationRequired": {
     "message": "Изисква се потвърждение на е-пощата"
+  },
+  "emailVerifiedV2": {
+    "message": "Е-пощата е потвърдена"
   },
   "emailVerificationRequiredDesc": {
     "message": "Трябва да потвърдите е-пощата си, за да можете да използвате тази функционалност."

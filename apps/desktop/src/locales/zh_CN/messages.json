@@ -539,6 +539,18 @@
       }
     }
   },
+  "masterPassword": {
+    "message": "主密码"
+  },
+  "masterPassImportant": {
+    "message": "主密码忘记后，将无法恢复！"
+  },
+  "confirmMasterPassword": {
+    "message": "确认主密码"
+  },
+  "masterPassHintLabel": {
+    "message": "主密码提示"
+  },
   "settings": {
     "message": "设置"
   },
@@ -1954,6 +1966,9 @@
   },
   "emailVerificationRequired": {
     "message": "需要验证电子邮件"
+  },
+  "emailVerifiedV2": {
+    "message": "电子邮箱已验证"
   },
   "emailVerificationRequiredDesc": {
     "message": "您必须验证您的电子邮件才能使用此功能。"
