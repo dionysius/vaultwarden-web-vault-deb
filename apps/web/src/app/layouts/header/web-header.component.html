@@ -1,31 +1,3 @@
-<bit-banner
-  class="-tw-m-6 tw-flex tw-flex-col tw-pb-6"
-  (onClose)="unassignedItemsBannerService.hideBanner()"
-  *ngIf="
-    (unassignedItemsBannerEnabled$ | async) &&
-    (unassignedItemsBannerService.showBanner$ | async) &&
-    !(unassignedItemsBannerService.loading$ | async)
-  "
->
-  {{ unassignedItemsBannerService.bannerText$ | async | i18n }}
-  {{ "unassignedItemsBannerCTAPartOne" | i18n }}
-  <a
-    [href]="unassignedItemsBannerService.adminConsoleUrl$ | async"
-    bitLink
-    linkType="contrast"
-    rel="noreferrer"
-    >{{ "adminConsole" | i18n }}</a
-  >
-  {{ "unassignedItemsBannerCTAPartTwo" | i18n }}
-  <a
-    href="https://bitwarden.com/help/unassigned-vault-items-moved-to-admin-console"
-    bitLink
-    linkType="contrast"
-    target="_blank"
-    rel="noreferrer"
-    >{{ "learnMore" | i18n }}</a
-  >
-</bit-banner>
 <header
   *ngIf="routeData$ | async as routeData"
   class="-tw-m-6 tw-mb-3 tw-flex tw-flex-col tw-p-6"

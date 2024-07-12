@@ -36,44 +36,6 @@
   </div>
   <ng-container *ngIf="loaded">
     <app-vault-select (onVaultSelectionChanged)="load()"></app-vault-select>
-    <app-callout
-      *ngIf="
-        (unassignedItemsBannerEnabled$ | async) &&
-        (unassignedItemsBannerService.showBanner$ | async) &&
-        !(unassignedItemsBannerService.loading$ | async)
-      "
-      type="info"
-    >
-      <p>
-        {{ unassignedItemsBannerService.bannerText$ | async | i18n }}
-        {{ "unassignedItemsBannerCTAPartOne" | i18n }}
-        <a
-          [href]="unassignedItemsBannerService.adminConsoleUrl$ | async"
-          bitLink
-          linkType="contrast"
-          target="_blank"
-          rel="noreferrer"
-          >{{ "adminConsole" | i18n }}</a
-        >
-        {{ "unassignedItemsBannerCTAPartTwo" | i18n }}
-        <a
-          href="https://bitwarden.com/help/unassigned-vault-items-moved-to-admin-console"
-          bitLink
-          linkType="contrast"
-          target="_blank"
-          rel="noreferrer"
-          >{{ "learnMore" | i18n }}</a
-        >
-      </p>
-      <button
-        type="button"
-        class="btn primary callout-half"
-        appStopClick
-        (click)="unassignedItemsBannerService.hideBanner()"
-      >
-        {{ "gotIt" | i18n }}
-      </button>
-    </app-callout>
     <div class="box list" *ngIf="loginCiphers">
       <h2 class="box-header">
         {{ "typeLogins" | i18n }}
