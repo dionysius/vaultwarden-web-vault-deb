@@ -233,6 +233,9 @@ export default class RuntimeBackground {
       case "addToLockedVaultPendingNotifications":
         this.lockedVaultPendingNotifications.push(msg.data);
         break;
+      case "lockVault":
+        await this.main.vaultTimeoutService.lock(msg.userId);
+        break;
       case "logout":
         await this.main.logout(msg.expired, msg.userId);
         break;

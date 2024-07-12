@@ -50,6 +50,7 @@ import { FileDownloadService } from "@bitwarden/common/platform/abstractions/fil
 import { I18nService as I18nServiceAbstraction } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { KeyGenerationService } from "@bitwarden/common/platform/abstractions/key-generation.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
+import { MessagingService as MessagingServiceAbstraction } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import {
@@ -104,6 +105,7 @@ import { ForegroundPlatformUtilsService } from "../../platform/services/platform
 import { BrowserStorageServiceProvider } from "../../platform/storage/browser-storage-service.provider";
 import { ForegroundMemoryStorageService } from "../../platform/storage/foreground-memory-storage.service";
 import { fromChromeRuntimeMessaging } from "../../platform/utils/from-chrome-runtime-messaging";
+import { ForegroundVaultTimeoutService } from "../../services/vault-timeout/foreground-vault-timeout.service";
 import { BrowserSendStateService } from "../../tools/popup/services/browser-send-state.service";
 import { FilePopoutUtilsService } from "../../tools/popup/services/file-popout-utils.service";
 import { Fido2UserVerificationService } from "../../vault/services/fido2-user-verification.service";
@@ -320,8 +322,8 @@ const safeProviders: SafeProvider[] = [
   }),
   safeProvider({
     provide: VaultTimeoutService,
-    useFactory: getBgService<VaultTimeoutService>("vaultTimeoutService"),
-    deps: [],
+    useClass: ForegroundVaultTimeoutService,
+    deps: [MessagingServiceAbstraction],
   }),
   safeProvider({
     provide: NotificationsService,
