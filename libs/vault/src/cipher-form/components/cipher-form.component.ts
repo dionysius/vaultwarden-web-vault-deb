@@ -16,7 +16,7 @@ import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { FormBuilder, ReactiveFormsModule } from "@angular/forms";
 
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
-import { CipherType } from "@bitwarden/common/vault/enums";
+import { CipherType, SecureNoteType } from "@bitwarden/common/vault/enums";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import {
   AsyncActionsModule,
@@ -185,6 +185,10 @@ export class CipherFormComponent implements AfterViewInit, OnInit, OnChanges, Ci
       this.updatedCipherView = Object.assign(this.updatedCipherView, this.originalCipherView);
     } else {
       this.updatedCipherView.type = this.config.cipherType;
+
+      if (this.config.cipherType === CipherType.SecureNote) {
+        this.updatedCipherView.secureNote.type = SecureNoteType.Generic;
+      }
     }
 
     this.loading = false;
