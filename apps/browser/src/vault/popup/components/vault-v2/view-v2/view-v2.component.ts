@@ -102,7 +102,20 @@ export class ViewV2Component {
     return await cipher.decrypt(await this.cipherService.getKeyForCipherKeyDecryption(cipher));
   }
 
-  editCipher() {
+  async checkForPasswordReprompt() {
+    this.passwordReprompted =
+      this.passwordReprompted ||
+      (await this.passwordRepromptService.passwordRepromptCheck(this.cipher));
+    if (!this.passwordReprompted) {
+      return false;
+    }
+    return true;
+  }
+
+  async editCipher() {
+    if (!(await this.checkForPasswordReprompt())) {
+      return;
+    }
     if (this.cipher.isDeleted) {
       return false;
     }
@@ -113,10 +126,7 @@ export class ViewV2Component {
   }
 
   delete = async (): Promise<boolean> => {
-    this.passwordReprompted =
-      this.passwordReprompted ||
-      (await this.passwordRepromptService.passwordRepromptCheck(this.cipher));
-    if (!this.passwordReprompted) {
+    if (!(await this.checkForPasswordReprompt())) {
       return;
     }
 
