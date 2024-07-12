@@ -556,6 +556,18 @@
   "security": {
     "message": "Безопасность"
   },
+  "confirmMasterPassword": {
+    "message": "Подтвердите мастер-пароль"
+  },
+  "masterPassword": {
+    "message": "Мастер-пароль"
+  },
+  "masterPassImportant": {
+    "message": "Ваш мастер-пароль невозможно восстановить, если вы его забудете!"
+  },
+  "masterPassHintLabel": {
+    "message": "Подсказка к мастер-паролю"
+  },
   "errorOccurred": {
     "message": "Произошла ошибка"
   },
@@ -1471,6 +1483,15 @@
       }
     }
   },
+  "viewItemHeader": {
+    "message": "Просмотр $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "Login"
+      }
+    }
+  },
   "passwordHistory": {
     "message": "История паролей"
   },
@@ -2163,6 +2184,9 @@
   },
   "emailVerificationRequired": {
     "message": "Требуется подтверждение электронной почты"
+  },
+  "emailVerifiedV2": {
+    "message": "Email подтвержден"
   },
   "emailVerificationRequiredDesc": {
     "message": "Для использования этой функции необходимо подтвердить ваш email. Вы можете это сделать в веб-хранилище."
@@ -3520,6 +3544,24 @@
   "contactYourOrgAdmin": {
     "message": "Доступ к элементам в деактивированных организациях невозможен. Обратитесь за помощью к владельцу организации."
   },
+  "additionalInformation": {
+    "message": "Дополнительная информация"
+  },
+  "itemHistory": {
+    "message": "История элемента"
+  },
+  "lastEdited": {
+    "message": "Последнее изменение"
+  },
+  "ownerYou": {
+    "message": "Владелец: вы"
+  },
+  "linked": {
+    "message": "Связано"
+  },
+  "copySuccessful": {
+    "message": "Скопировано успешно"
+  },
   "upload": {
     "message": "Загрузить"
   },
@@ -3558,6 +3600,24 @@
   },
   "filters": {
     "message": "Фильтры"
+  },
+  "personalDetails": {
+    "message": "Личные данные"
+  },
+  "identification": {
+    "message": "Идентификация"
+  },
+  "contactInfo": {
+    "message": "Контактная информация"
+  },
+  "downloadAttachment": {
+    "message": "Скачать - $ITEMNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Your File"
+      }
+    }
   },
   "cardDetails": {
     "message": "Реквизиты карты"

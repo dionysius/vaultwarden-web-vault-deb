@@ -556,6 +556,18 @@
   "security": {
     "message": "Сигурност"
   },
+  "confirmMasterPassword": {
+    "message": "Потвърждаване на главната парола"
+  },
+  "masterPassword": {
+    "message": "Главна парола"
+  },
+  "masterPassImportant": {
+    "message": "Главната парола не може да бъде възстановена, ако я забравите!"
+  },
+  "masterPassHintLabel": {
+    "message": "Подсказка за главната парола"
+  },
   "errorOccurred": {
     "message": "Възникна грешка"
   },
@@ -1471,6 +1483,15 @@
       }
     }
   },
+  "viewItemHeader": {
+    "message": "Преглед на $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "Login"
+      }
+    }
+  },
   "passwordHistory": {
     "message": "Хронология на паролата"
   },
@@ -2163,6 +2184,9 @@
   },
   "emailVerificationRequired": {
     "message": "Изисква се потвърждение на е-пощата"
+  },
+  "emailVerifiedV2": {
+    "message": "Е-пощата е потвърдена"
   },
   "emailVerificationRequiredDesc": {
     "message": "Трябва да потвърдите е-пощата си, за да използвате тази функционалност. Можете да го направите в уеб-трезора."
@@ -3493,13 +3517,13 @@
     "message": "Елементи без папка"
   },
   "itemDetails": {
-    "message": "Подробности за елемент"
+    "message": "Подробности за елемента"
   },
   "itemName": {
-    "message": "Име на елемент"
+    "message": "Име на елемента"
   },
   "cannotRemoveViewOnlyCollections": {
-    "message": "Не можете да премахнете колекции с права „Само за преглед“: $COLLECTIONS$",
+    "message": "Не можете да премахвате колекции с права „Само за преглед“: $COLLECTIONS$",
     "placeholders": {
       "collections": {
         "content": "$1",
@@ -3519,6 +3543,24 @@
   },
   "contactYourOrgAdmin": {
     "message": "Записите в деактивирани организации не са достъпни. Свържете се със собственика на организацията си за помощ."
+  },
+  "additionalInformation": {
+    "message": "Допълнителна информация"
+  },
+  "itemHistory": {
+    "message": "История на елемента"
+  },
+  "lastEdited": {
+    "message": "Последна промяна"
+  },
+  "ownerYou": {
+    "message": "Собственик: Вие"
+  },
+  "linked": {
+    "message": "Свързано"
+  },
+  "copySuccessful": {
+    "message": "Копирането е успешно"
   },
   "upload": {
     "message": "Качване"
@@ -3559,11 +3601,29 @@
   "filters": {
     "message": "Филтри"
   },
+  "personalDetails": {
+    "message": "Лични данни"
+  },
+  "identification": {
+    "message": "Идентификация"
+  },
+  "contactInfo": {
+    "message": "Информация за връзка"
+  },
+  "downloadAttachment": {
+    "message": "Сваляне – $ITEMNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Your File"
+      }
+    }
+  },
   "cardDetails": {
     "message": "Данни за картата"
   },
   "cardBrandDetails": {
-    "message": "$BRAND$ подробности",
+    "message": "Подробности за $BRAND$",
     "placeholders": {
       "brand": {
         "content": "$1",

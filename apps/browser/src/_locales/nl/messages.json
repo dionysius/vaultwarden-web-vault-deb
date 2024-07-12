@@ -556,6 +556,18 @@
   "security": {
     "message": "Beveiliging"
   },
+  "confirmMasterPassword": {
+    "message": "Hoofdwachtwoord bevestigen"
+  },
+  "masterPassword": {
+    "message": "Hoofdwachtwoord"
+  },
+  "masterPassImportant": {
+    "message": "Je kunt je hoofdwachtwoord niet herstellen als je het vergeet!"
+  },
+  "masterPassHintLabel": {
+    "message": "Hoofdwachtwoordhint"
+  },
   "errorOccurred": {
     "message": "Er is een fout opgetreden"
   },
@@ -1471,6 +1483,15 @@
       }
     }
   },
+  "viewItemHeader": {
+    "message": "$TYPE$ weergeven",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "Login"
+      }
+    }
+  },
   "passwordHistory": {
     "message": "Geschiedenis"
   },
@@ -2163,6 +2184,9 @@
   },
   "emailVerificationRequired": {
     "message": "E-mailverificatie vereist"
+  },
+  "emailVerifiedV2": {
+    "message": "E-mailadres geverifieerd"
   },
   "emailVerificationRequiredDesc": {
     "message": "Je moet je e-mailadres verifiëren om deze functie te gebruiken. Je kunt je e-mailadres verifiëren in de kluis."
@@ -3520,6 +3544,24 @@
   "contactYourOrgAdmin": {
     "message": "Items in een gedeactiveerde organisatie zijn niet toegankelijk. Neem contact op met de eigenaar van je organisatie voor hulp."
   },
+  "additionalInformation": {
+    "message": "Aanvullende informatie"
+  },
+  "itemHistory": {
+    "message": "Itemgeschiedenis"
+  },
+  "lastEdited": {
+    "message": "Laatst gewijzigd"
+  },
+  "ownerYou": {
+    "message": "Eigenaar: Jij"
+  },
+  "linked": {
+    "message": "Gekoppeld"
+  },
+  "copySuccessful": {
+    "message": "Kopiëren gelukt"
+  },
   "upload": {
     "message": "Uploaden"
   },
@@ -3558,6 +3600,24 @@
   },
   "filters": {
     "message": "Filters"
+  },
+  "personalDetails": {
+    "message": "Persoonlijke gegevens"
+  },
+  "identification": {
+    "message": "Identificatie"
+  },
+  "contactInfo": {
+    "message": "Contactgegevens"
+  },
+  "downloadAttachment": {
+    "message": "$ITEMNAME$ downloaden",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Your File"
+      }
+    }
   },
   "cardDetails": {
     "message": "Kaartgegevens"

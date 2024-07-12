@@ -556,6 +556,18 @@
   "security": {
     "message": "Suojaus"
   },
+  "confirmMasterPassword": {
+    "message": "Confirm master password"
+  },
+  "masterPassword": {
+    "message": "Master password"
+  },
+  "masterPassImportant": {
+    "message": "Your master password cannot be recovered if you forget it!"
+  },
+  "masterPassHintLabel": {
+    "message": "Master password hint"
+  },
   "errorOccurred": {
     "message": "Tapahtui virhe"
   },
@@ -1463,7 +1475,16 @@
     }
   },
   "editItemHeader": {
-    "message": "Muokkaa $TYPE$",
+    "message": "Muokkaa kohdetta $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "Login"
+      }
+    }
+  },
+  "viewItemHeader": {
+    "message": "View $TYPE$",
     "placeholders": {
       "type": {
         "content": "$1",
@@ -2163,6 +2184,9 @@
   },
   "emailVerificationRequired": {
     "message": "Sähköpostiosoite on vahvistettava"
+  },
+  "emailVerifiedV2": {
+    "message": "Email verified"
   },
   "emailVerificationRequiredDesc": {
     "message": "Sinun on vahvistettava sähköpostiosoitteesi käyttääksesi ominaisuutta. Voit vahvistaa osoitteesi verkkoholvissa."
@@ -3520,6 +3544,24 @@
   "contactYourOrgAdmin": {
     "message": "Käytöstä poistettujen organisaatioiden kohteet eivät ole käytettävissä. Ole yhteydessä organisaation omistajaan saadaksesi apua."
   },
+  "additionalInformation": {
+    "message": "Additional information"
+  },
+  "itemHistory": {
+    "message": "Item history"
+  },
+  "lastEdited": {
+    "message": "Last edited"
+  },
+  "ownerYou": {
+    "message": "Owner: You"
+  },
+  "linked": {
+    "message": "Linked"
+  },
+  "copySuccessful": {
+    "message": "Copy Successful"
+  },
   "upload": {
     "message": "Lähetä"
   },
@@ -3548,7 +3590,7 @@
     }
   },
   "permanentlyDeleteAttachmentConfirmation": {
-    "message": "Haluatko varmasti poistaa tämän liitteen pysyvästi?"
+    "message": "Haluatko varmasti poistaa liitteen pysyvästi?"
   },
   "premium": {
     "message": "Premium"
@@ -3558,6 +3600,24 @@
   },
   "filters": {
     "message": "Suodattimet"
+  },
+  "personalDetails": {
+    "message": "Personal details"
+  },
+  "identification": {
+    "message": "Identification"
+  },
+  "contactInfo": {
+    "message": "Contact info"
+  },
+  "downloadAttachment": {
+    "message": "Download - $ITEMNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Your File"
+      }
+    }
   },
   "cardDetails": {
     "message": "Kortin tiedot"

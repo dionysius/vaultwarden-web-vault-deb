@@ -556,6 +556,18 @@
   "security": {
     "message": "安全"
   },
+  "confirmMasterPassword": {
+    "message": "确认主密码"
+  },
+  "masterPassword": {
+    "message": "主密码"
+  },
+  "masterPassImportant": {
+    "message": "主密码忘记后，将无法恢复！"
+  },
+  "masterPassHintLabel": {
+    "message": "主密码提示"
+  },
   "errorOccurred": {
     "message": "发生了一个错误"
   },
@@ -1471,6 +1483,15 @@
       }
     }
   },
+  "viewItemHeader": {
+    "message": "查看 $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "Login"
+      }
+    }
+  },
   "passwordHistory": {
     "message": "密码历史记录"
   },
@@ -2163,6 +2184,9 @@
   },
   "emailVerificationRequired": {
     "message": "需要验证电子邮件"
+  },
+  "emailVerifiedV2": {
+    "message": "电子邮箱已验证"
   },
   "emailVerificationRequiredDesc": {
     "message": "您必须验证电子邮件才能使用此功能。您可以在网页密码库中验证您的电子邮件。"
@@ -3520,6 +3544,24 @@
   "contactYourOrgAdmin": {
     "message": "无法访问已停用组织中的项目。请联系您的组织所有者获取协助。"
   },
+  "additionalInformation": {
+    "message": "更多信息"
+  },
+  "itemHistory": {
+    "message": "项目历史记录"
+  },
+  "lastEdited": {
+    "message": "上次编辑"
+  },
+  "ownerYou": {
+    "message": "所有者：您"
+  },
+  "linked": {
+    "message": "已链接"
+  },
+  "copySuccessful": {
+    "message": "复制成功"
+  },
   "upload": {
     "message": "上传"
   },
@@ -3558,6 +3600,24 @@
   },
   "filters": {
     "message": "筛选"
+  },
+  "personalDetails": {
+    "message": "个人信息"
+  },
+  "identification": {
+    "message": "身份"
+  },
+  "contactInfo": {
+    "message": "联系信息"
+  },
+  "downloadAttachment": {
+    "message": "下载 - $ITEMNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Your File"
+      }
+    }
   },
   "cardDetails": {
     "message": "支付卡详情"

@@ -556,6 +556,18 @@
   "security": {
     "message": "Segurança"
   },
+  "confirmMasterPassword": {
+    "message": "Confirmar a palavra-passe mestra"
+  },
+  "masterPassword": {
+    "message": "Palavra-passe mestra"
+  },
+  "masterPassImportant": {
+    "message": "A sua palavra-passe mestra não pode ser recuperada se a esquecer!"
+  },
+  "masterPassHintLabel": {
+    "message": "Dica da palavra-passe mestra"
+  },
   "errorOccurred": {
     "message": "Ocorreu um erro"
   },
@@ -1082,7 +1094,7 @@
     "message": "Abrir novo separador"
   },
   "webAuthnAuthenticate": {
-    "message": "Autenticar WebAuthn"
+    "message": "Autenticar o WebAuthn"
   },
   "loginUnavailable": {
     "message": "Início de sessão indisponível"
@@ -1464,6 +1476,15 @@
   },
   "editItemHeader": {
     "message": "Editar $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "Login"
+      }
+    }
+  },
+  "viewItemHeader": {
+    "message": "Ver $TYPE$",
     "placeholders": {
       "type": {
         "content": "$1",
@@ -2164,6 +2185,9 @@
   "emailVerificationRequired": {
     "message": "Verificação de e-mail necessária"
   },
+  "emailVerifiedV2": {
+    "message": "E-mail verificado"
+  },
   "emailVerificationRequiredDesc": {
     "message": "Tem de verificar o seu e-mail para utilizar esta funcionalidade. Pode verificar o seu e-mail no cofre Web."
   },
@@ -2274,7 +2298,7 @@
     }
   },
   "leaveOrganization": {
-    "message": "Deixar a organização"
+    "message": "Sair da organização"
   },
   "removeMasterPassword": {
     "message": "Remover palavra-passe mestra"
@@ -2283,7 +2307,7 @@
     "message": "Palavra-passe mestra removida"
   },
   "leaveOrganizationConfirmation": {
-    "message": "Tem a certeza de que pretende deixar esta organização?"
+    "message": "Tem a certeza de que pretende sair desta organização?"
   },
   "leftOrganization": {
     "message": "Saiu da organização."
@@ -3520,6 +3544,24 @@
   "contactYourOrgAdmin": {
     "message": "Não é possível aceder aos itens de organizações desativadas. Contacte o proprietário da organização para obter assistência."
   },
+  "additionalInformation": {
+    "message": "Informações adicionais"
+  },
+  "itemHistory": {
+    "message": "Histórico do item"
+  },
+  "lastEdited": {
+    "message": "Última edição"
+  },
+  "ownerYou": {
+    "message": "Proprietário: Eu"
+  },
+  "linked": {
+    "message": "Associado"
+  },
+  "copySuccessful": {
+    "message": "Cópia bem-sucedida"
+  },
   "upload": {
     "message": "Carregar"
   },
@@ -3558,6 +3600,24 @@
   },
   "filters": {
     "message": "Filtros"
+  },
+  "personalDetails": {
+    "message": "Dados pessoais"
+  },
+  "identification": {
+    "message": "Identificação"
+  },
+  "contactInfo": {
+    "message": "Informações de contacto"
+  },
+  "downloadAttachment": {
+    "message": "Transferir - $ITEMNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Your File"
+      }
+    }
   },
   "cardDetails": {
     "message": "Detalhes do cartão"

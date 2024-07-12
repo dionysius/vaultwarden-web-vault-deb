@@ -556,6 +556,18 @@
   "security": {
     "message": "Sikkerhed"
   },
+  "confirmMasterPassword": {
+    "message": "Bekræft hovedadgangskode"
+  },
+  "masterPassword": {
+    "message": "Hovedadgangskode"
+  },
+  "masterPassImportant": {
+    "message": "Hovedadgangskoden kan ikke gendannes, hvis den glemmes!"
+  },
+  "masterPassHintLabel": {
+    "message": "Hovedadgangskodetip"
+  },
   "errorOccurred": {
     "message": "Der er opstået en fejl"
   },
@@ -1471,6 +1483,15 @@
       }
     }
   },
+  "viewItemHeader": {
+    "message": "Vis $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "Login"
+      }
+    }
+  },
   "passwordHistory": {
     "message": "Adgangskodehistorik"
   },
@@ -2163,6 +2184,9 @@
   },
   "emailVerificationRequired": {
     "message": "E-mailbekræftelse kræves"
+  },
+  "emailVerifiedV2": {
+    "message": "E-mail bekræftet"
   },
   "emailVerificationRequiredDesc": {
     "message": "Du skal bekræfte din e-mail for at bruge denne funktion. Du kan bekræfte din e-mail i web-boksen."
@@ -3520,6 +3544,24 @@
   "contactYourOrgAdmin": {
     "message": "Emner i deaktiverede organisationer kan ikke tilgås. Kontakt organisationsejeren for assistance."
   },
+  "additionalInformation": {
+    "message": "Yderligere oplysninger"
+  },
+  "itemHistory": {
+    "message": "Emnehistorik"
+  },
+  "lastEdited": {
+    "message": "Senest redigeret"
+  },
+  "ownerYou": {
+    "message": "Ejer: Dig"
+  },
+  "linked": {
+    "message": "Linket"
+  },
+  "copySuccessful": {
+    "message": "Kopieret"
+  },
   "upload": {
     "message": "Upload"
   },
@@ -3558,6 +3600,24 @@
   },
   "filters": {
     "message": "Filtre"
+  },
+  "personalDetails": {
+    "message": "Personlige oplysninger"
+  },
+  "identification": {
+    "message": "Identifikation"
+  },
+  "contactInfo": {
+    "message": "Kontaktoplysninger"
+  },
+  "downloadAttachment": {
+    "message": "Download - $ITEMNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Your File"
+      }
+    }
   },
   "cardDetails": {
     "message": "Kortoplysninger"

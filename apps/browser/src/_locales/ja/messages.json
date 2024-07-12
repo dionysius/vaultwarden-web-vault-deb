@@ -556,6 +556,18 @@
   "security": {
     "message": "セキュリティ"
   },
+  "confirmMasterPassword": {
+    "message": "マスターパスワードの確認"
+  },
+  "masterPassword": {
+    "message": "マスターパスワード"
+  },
+  "masterPassImportant": {
+    "message": "マスターパスワードを忘れた場合は復元できません！"
+  },
+  "masterPassHintLabel": {
+    "message": "マスターパスワードのヒント"
+  },
   "errorOccurred": {
     "message": "エラーが発生しました"
   },
@@ -1471,6 +1483,15 @@
       }
     }
   },
+  "viewItemHeader": {
+    "message": "$TYPE$ を表示",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "Login"
+      }
+    }
+  },
   "passwordHistory": {
     "message": "パスワードの履歴"
   },
@@ -2163,6 +2184,9 @@
   },
   "emailVerificationRequired": {
     "message": "メールアドレスの確認が必要です"
+  },
+  "emailVerifiedV2": {
+    "message": "メールアドレスを認証しました"
   },
   "emailVerificationRequiredDesc": {
     "message": "この機能を使用するにはメールアドレスを確認する必要があります。ウェブ保管庫でメールアドレスを確認できます。"
@@ -3520,6 +3544,24 @@
   "contactYourOrgAdmin": {
     "message": "無効化された組織のアイテムにアクセスすることはできません。組織の所有者に連絡してください。"
   },
+  "additionalInformation": {
+    "message": "その他の情報"
+  },
+  "itemHistory": {
+    "message": "アイテム履歴"
+  },
+  "lastEdited": {
+    "message": "最終更新日"
+  },
+  "ownerYou": {
+    "message": "所有者: あなた"
+  },
+  "linked": {
+    "message": "リンク済"
+  },
+  "copySuccessful": {
+    "message": "コピーしました"
+  },
   "upload": {
     "message": "アップロード"
   },
@@ -3558,6 +3600,24 @@
   },
   "filters": {
     "message": "フィルター"
+  },
+  "personalDetails": {
+    "message": "個人情報"
+  },
+  "identification": {
+    "message": "ID"
+  },
+  "contactInfo": {
+    "message": "連絡先情報"
+  },
+  "downloadAttachment": {
+    "message": "ダウンロード - $ITEMNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Your File"
+      }
+    }
   },
   "cardDetails": {
     "message": "カード情報"

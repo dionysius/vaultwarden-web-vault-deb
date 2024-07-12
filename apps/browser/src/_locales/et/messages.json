@@ -3,30 +3,30 @@
     "message": "Bitwarden"
   },
   "extName": {
-    "message": "Bitwarden Password Manager",
+    "message": "Bitwardeni paroolihaldur",
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
-    "message": "At home, at work, or on the go, Bitwarden easily secures all your passwords, passkeys, and sensitive information",
+    "message": "Kodus, tööl ja teel - Bitwarden hoiustab imelihtsalt kõik su paroolid, pääsuvõtmed ja tundliku info",
     "description": "Extension description, MUST be less than 112 characters (Safari restriction)"
   },
   "loginOrCreateNewAccount": {
     "message": "Logi oma olemasolevasse kontosse sisse või loo uus konto."
   },
   "createAccount": {
-    "message": "Loo konto"
+    "message": "Konto loomine"
   },
   "setAStrongPassword": {
-    "message": "Set a strong password"
+    "message": "Määra tugev parool"
   },
   "finishCreatingYourAccountBySettingAPassword": {
-    "message": "Finish creating your account by setting a password"
+    "message": "Lõpeta konto loomine parooli luues"
   },
   "login": {
     "message": "Logi sisse"
   },
   "enterpriseSingleSignOn": {
-    "message": "Ettevõtte Single Sign-On"
+    "message": "Ettevõtte ühekordne sisselogimine"
   },
   "cancel": {
     "message": "Tühista"
@@ -50,7 +50,7 @@
     "message": "Vihje võib abiks olla olukorras, kui oled ülemparooli unustanud."
   },
   "masterPassHintText": {
-    "message": "If you forget your password, the password hint can be sent to your email. $CURRENT$/$MAXIMUM$ character maximum.",
+    "message": "Kui sa unustad oma parooli, saad saata parooli vihje e-mailile.\n$CURRENT$/$MAXIMUM$ tähepiirang.",
     "placeholders": {
       "current": {
         "content": "$1",
@@ -72,13 +72,13 @@
     "message": "Kaart"
   },
   "vault": {
-    "message": "Hoidla"
+    "message": "Seif"
   },
   "myVault": {
-    "message": "Minu hoidla"
+    "message": "Minu seif"
   },
   "allVaults": {
-    "message": "Kõik hoidlad"
+    "message": "Kõik seifid"
   },
   "tools": {
     "message": "Tööriistad"
@@ -111,10 +111,10 @@
     "message": "Automaatne täitmine"
   },
   "autoFillLogin": {
-    "message": "Täida konto andmed"
+    "message": "Täida andmed automaatselt"
   },
   "autoFillCard": {
-    "message": "Täida kaardi andmed"
+    "message": "Täida automaatselt kaardi andmed"
   },
   "autoFillIdentity": {
     "message": "Täida identiteet"
@@ -126,7 +126,7 @@
     "message": "Kopeeri kohandatud välja nimi"
   },
   "noMatchingLogins": {
-    "message": "Sobivaid kontoandmeid ei leitud."
+    "message": "Sobivaid kontoandmeid ei leitud"
   },
   "noCards": {
     "message": "Kaardid puuduvad"
@@ -144,7 +144,7 @@
     "message": "Lisa identiteet"
   },
   "unlockVaultMenu": {
-    "message": "Lukusta hoidla lahti"
+    "message": "Ava hoidla"
   },
   "loginToVaultMenu": {
     "message": "Logi hoidlasse sisse"
@@ -156,7 +156,7 @@
     "message": "Lisa konto andmed"
   },
   "addItem": {
-    "message": "Lisa kirje"
+    "message": "Lisa ese"
   },
   "passwordHint": {
     "message": "Parooli vihje"
@@ -189,25 +189,25 @@
     "message": "Muuda ülemparooli"
   },
   "continueToWebApp": {
-    "message": "Continue to web app?"
+    "message": "Jätka veebibrauseris?"
   },
   "continueToWebAppDesc": {
-    "message": "Explore more features of your Bitwarden account on the web app."
+    "message": "Uuri teisi Bitwardeni konto funktsioone veebirakenduses."
   },
   "continueToHelpCenter": {
-    "message": "Continue to Help Center?"
+    "message": "Kas soovid minna Abikeskusesse?"
   },
   "continueToHelpCenterDesc": {
-    "message": "Learn more about how to use Bitwarden on the Help Center."
+    "message": "Uuri teisigi Bitwardeni kasutusvõimalusi Abikeskuses."
   },
   "continueToBrowserExtensionStore": {
-    "message": "Continue to browser extension store?"
+    "message": "Mine edasi veebilaienduste poodi?"
   },
   "continueToBrowserExtensionStoreDesc": {
     "message": "Help others find out if Bitwarden is right for them. Visit your browser's extension store and leave a rating now."
   },
   "changeMasterPasswordOnWebConfirmation": {
-    "message": "You can change your master password on the Bitwarden web app."
+    "message": "Ülemparooli saab muuta Bitwardeni veebirakenduses."
   },
   "fingerprintPhrase": {
     "message": "Sõrmejälje fraas",
@@ -224,7 +224,7 @@
     "message": "Logi välja"
   },
   "aboutBitwarden": {
-    "message": "About Bitwarden"
+    "message": "Meist"
   },
   "about": {
     "message": "Rakenduse info"
@@ -233,10 +233,10 @@
     "message": "More from Bitwarden"
   },
   "continueToBitwardenDotCom": {
-    "message": "Continue to bitwarden.com?"
+    "message": "Mine edasi bitwarden.com-i?"
   },
   "bitwardenForBusiness": {
-    "message": "Bitwarden for Business"
+    "message": "Bitwarden Ärikliendile"
   },
   "bitwardenAuthenticator": {
     "message": "Bitwarden Authenticator"
@@ -257,7 +257,7 @@
     "message": "Create smooth and secure login experiences free from traditional passwords with Passwordless.dev. Learn more on the bitwarden.com website."
   },
   "freeBitwardenFamilies": {
-    "message": "Free Bitwarden Families"
+    "message": "Tasuta Bitwarden Peredele"
   },
   "freeBitwardenFamiliesPageDesc": {
     "message": "You are eligible for Free Bitwarden Families. Redeem this offer today in the web app."
@@ -321,7 +321,7 @@
     "message": "Loo oma kontodele tugevaid ja unikaalseid paroole."
   },
   "bitWebVaultApp": {
-    "message": "Bitwarden web app"
+    "message": "Bitwardeni veebirakendus"
   },
   "importItems": {
     "message": "Impordi andmed"
@@ -409,13 +409,13 @@
     "message": "Lemmik"
   },
   "unfavorite": {
-    "message": "Unfavorite"
+    "message": "Eemalda lemmikutest"
   },
   "itemAddedToFavorites": {
-    "message": "Item added to favorites"
+    "message": "Ese lisatud lemmikutesse"
   },
   "itemRemovedFromFavorites": {
-    "message": "Item removed from favorites"
+    "message": "Ese eemaldatud lemmikutest"
   },
   "notes": {
     "message": "Märkmed"
@@ -439,7 +439,7 @@
     "message": "Käivita"
   },
   "launchWebsite": {
-    "message": "Launch website"
+    "message": "Ava Veebileht"
   },
   "website": {
     "message": "Veebileht"
@@ -463,10 +463,10 @@
     "message": "Set up an unlock method in Settings"
   },
   "sessionTimeoutHeader": {
-    "message": "Session timeout"
+    "message": "Sessiooni ajalõpp"
   },
   "otherOptions": {
-    "message": "Other options"
+    "message": "Muud valikud"
   },
   "rateExtension": {
     "message": "Hinda seda laiendust"
@@ -509,7 +509,7 @@
     "message": "Lukusta paroolihoidla"
   },
   "lockAll": {
-    "message": "Lock all"
+    "message": "Lukusta kõik"
   },
   "immediately": {
     "message": "Koheselt"
@@ -556,6 +556,18 @@
   "security": {
     "message": "Turvalisus"
   },
+  "confirmMasterPassword": {
+    "message": "Kinnita ülemparool"
+  },
+  "masterPassword": {
+    "message": "Ülemparool"
+  },
+  "masterPassImportant": {
+    "message": "Ülemparooli ei saa taastada, kui sa selle unustama peaksid!"
+  },
+  "masterPassHintLabel": {
+    "message": "Vihje ülemparoolile"
+  },
   "errorOccurred": {
     "message": "Ilmnes viga"
   },
@@ -588,10 +600,10 @@
     "message": "Konto on loodud! Võid nüüd sisse logida."
   },
   "youSuccessfullyLoggedIn": {
-    "message": "You successfully logged in"
+    "message": "Sisselogimine õnnestus"
   },
   "youMayCloseThisWindow": {
-    "message": "You may close this window"
+    "message": "Võid selle akna sulgeda"
   },
   "masterPassSent": {
     "message": "Ülemparooli vihje saadeti sinu e-postile."
@@ -616,7 +628,7 @@
     "message": "Automaatne täitmine ebaõnnestus. Palun kopeeri informatsioon käsitsi."
   },
   "totpCaptureError": {
-    "message": "Unable to scan QR code from the current webpage"
+    "message": "Ei õnnestunud skännida sellelt lehelt QR-kood"
   },
   "totpCaptureSuccess": {
     "message": "Authenticator key added"
@@ -631,7 +643,7 @@
     "message": "Välja logitud"
   },
   "loggedOutDesc": {
-    "message": "You have been logged out of your account."
+    "message": "Sa logisid oma kontolt välja."
   },
   "loginExpired": {
     "message": "Sessioon on aegunud."
@@ -779,7 +791,7 @@
     "message": "Ask to update a login's password when a change is detected on a website. Applies to all logged in accounts."
   },
   "enableUsePasskeys": {
-    "message": "Ask to save and use passkeys"
+    "message": "Küsi luba pääsuvõtmete salvestamiseks ja kasutamiseks"
   },
   "usePasskeysDesc": {
     "message": "Ask to save new passkeys or log in with passkeys stored in your vault. Applies to all logged in accounts."
@@ -1464,6 +1476,15 @@
   },
   "editItemHeader": {
     "message": "Edit $TYPE$",
+    "placeholders": {
+      "type": {
+        "content": "$1",
+        "example": "Login"
+      }
+    }
+  },
+  "viewItemHeader": {
+    "message": "View $TYPE$",
     "placeholders": {
       "type": {
         "content": "$1",
@@ -2163,6 +2184,9 @@
   },
   "emailVerificationRequired": {
     "message": "Vajalik on e-posti kinnitamine"
+  },
+  "emailVerifiedV2": {
+    "message": "Email verified"
   },
   "emailVerificationRequiredDesc": {
     "message": "Selle funktsiooni kasutamiseks pead kinnitama oma e-posti aadressi. Saad seda teha veebihoidlas."
@@ -3520,6 +3544,24 @@
   "contactYourOrgAdmin": {
     "message": "Items in deactivated organizations cannot be accessed. Contact your organization owner for assistance."
   },
+  "additionalInformation": {
+    "message": "Additional information"
+  },
+  "itemHistory": {
+    "message": "Item history"
+  },
+  "lastEdited": {
+    "message": "Last edited"
+  },
+  "ownerYou": {
+    "message": "Owner: You"
+  },
+  "linked": {
+    "message": "Linked"
+  },
+  "copySuccessful": {
+    "message": "Copy Successful"
+  },
   "upload": {
     "message": "Upload"
   },
@@ -3558,6 +3600,24 @@
   },
   "filters": {
     "message": "Filters"
+  },
+  "personalDetails": {
+    "message": "Personal details"
+  },
+  "identification": {
+    "message": "Identification"
+  },
+  "contactInfo": {
+    "message": "Contact info"
+  },
+  "downloadAttachment": {
+    "message": "Download - $ITEMNAME$",
+    "placeholders": {
+      "itemname": {
+        "content": "$1",
+        "example": "Your File"
+      }
+    }
   },
   "cardDetails": {
     "message": "Card details"
