@@ -174,7 +174,7 @@
     "description": "This is the folder for uncategorized items"
   },
   "selfOwnershipLabel": {
-    "message": "You",
+    "message": "Tu",
     "description": "Used as a label to indicate that the user is the owner of an item."
   },
   "addFolder": {
@@ -406,13 +406,13 @@
     "message": "Vienums"
   },
   "itemDetails": {
-    "message": "Item details"
+    "message": "Vienuma dati"
   },
   "itemName": {
-    "message": "Item name"
+    "message": "Vienuma nosaukums"
   },
   "cannotRemoveViewOnlyCollections": {
-    "message": "You cannot remove collections with View only permissions: $COLLECTIONS$",
+    "message": "Nevar noņemt krājumus ar tiesībām \"Tikai skatīt\": $COLLECTIONS$",
     "placeholders": {
       "collections": {
         "content": "$1",
@@ -854,8 +854,8 @@
   "emailAddress": {
     "message": "E-pasta adrese"
   },
-  "yourVaultIsLocked": {
-    "message": "Glabātava ir aizslēgta. Nepieciešams norādīt galveno paroli, lai turpinātu."
+  "yourVaultIsLockedV2": {
+    "message": "Glabātava ir slēgta."
   },
   "uuid": {
     "message": "UUID"
@@ -1060,7 +1060,7 @@
     "message": "Vai tiešām vēlaties turpināt?"
   },
   "moveSelectedItemsDesc": {
-    "message": "Izvēlēties mapi, uz kuru pārvietot atlasīto(s) $COUNT$ vienumu(s).",
+    "message": "Choose a folder that you would like to add the $COUNT$ selected item(s) to.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1690,6 +1690,9 @@
   },
   "twoStepAuthenticatorScanCodeV2": {
     "message": "Zemāk esošais kvadrātkods jānolasa ar autnetificētāja lietotni vai jāievada atslēga."
+  },
+  "twoStepAuthenticatorQRCanvasError": {
+    "message": "Nevarēja ielādēt kvadrātkodu. Jāmēģina vēlreiz vai jāizmanto zemāk esošā atslēga."
   },
   "key": {
     "message": "Atslēga"
@@ -3399,6 +3402,9 @@
   "emailVerified": {
     "message": "E-pasta adrese ir apstiprināta."
   },
+  "emailVerifiedV2": {
+    "message": "E-pasta adrese ir apliecināta"
+  },
   "emailVerifiedFailed": {
     "message": "Nevar apstiprināt e-pasta adresi. Var mēģināt sūtīt atkārtotu apstiprinājuma e-pasta ziņojumu."
   },
@@ -3706,7 +3712,7 @@
     }
   },
   "subscriptionSeatMaxReached": {
-    "message": "You cannot invite more than $COUNT$ members without increasing your subscription seats.",
+    "message": "Nevar uzaicināt vairāk kā $COUNT$ dalībnieku(s) bez abonementa vietu skaita palielināšanas.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -6804,7 +6810,7 @@
     "message": "Automātiska domēnu apstiprināšana"
   },
   "automaticDomainVerificationProcess": {
-    "message": "Bitwarden mēģinās pārbaudīt domēnu 3 reizes pirmajās 72 stundās. Ja domēnu nevarēs apstiprināt, būs jāpārbauda DNS ieraksts saimniekdatorā un pašrocīgi jāapstiprina. Domēns tiks noņemts no apvienības pēc 7 dienām, ja tas nebūs apstiprināts"
+    "message": "Bitwarden mēģinās pārbaudīt domēnu 3 reizes pirmajās 72 stundās. Ja domēnu nevarēs apliecināt, būs jāpārbauda DNS ieraksts saimniekdatorā un pašrocīgi tas jāapliecina. Domēns tiks noņemts no apvienības pēc 7 dienām, ja tas nebūs apliecināts"
   },
   "invalidDomainNameMessage": {
     "message": "Ievadītā vērtība ir nederīga. Piemēram: mansdomens.lv. Apakšdomēniem ir nepieciešams apstiprināt atsevišķus ierakstus."
@@ -6822,7 +6828,7 @@
     "message": "Domēns ir saglabāts"
   },
   "domainVerified": {
-    "message": "Domēns ir apstiprināts"
+    "message": "Domēns ir apliecināts"
   },
   "duplicateDomainError": {
     "message": "Vienu domēnu nevar pieprasīt divreiz."
@@ -7877,7 +7883,7 @@
     "message": "Piešķirt šiem krājumiem"
   },
   "bulkCollectionAssignmentDialogDescription": {
-    "message": "Jāatlasa krājumi, ar kuriem vienumi tiks kopīgoti. Tiklīdz kāds vienums tiks atjaunināts vienā krājumā, tas atspoguļosies visos pārējos. Tikai apvienības dalībnieki ar piekļuvi šiem krājumiem varēs redzēt vienumus."
+    "message": "Only organization members with access to these collections will be able to see the items."
   },
   "selectCollectionsToAssign": {
     "message": "Atlasīt krājumus, lai piešķirtu"
@@ -8439,6 +8445,9 @@
   "memberAccessReportDesc": {
     "message": "Nodrošini, ka dalībniekiem ir piekļuve pareizajiem piekļuves datiem un viņu konti ir droši. Šī atskaite ir izmantojama, lai iegūtu CSV ar dalībnieku piekļuvi un kontu konfigurāciju."
   },
+  "memberAccessReportPageDesc": {
+    "message": "Pārskatīt apvienības dalībnieku piekļuvi dažādām kopām, krājumiem un krājumu vienumiem. CSV izgūšana sniedz izvērstu pārskatu par katru dalībnieku, tajā skaitā informāciju par krājumu atļaujām un konta konfigurāciju."
+  },
   "higherKDFIterations": {
     "message": "Lielāks KDF atkārtojumu skaits var palīdzēt aizsargāt galveno paroli pārlases uzbrukuma gadījumā."
   },
@@ -8512,17 +8521,59 @@
     "message": "Lejupielādēt CSV"
   },
   "monthlySubscriptionUserSeatsMessage": {
-    "message": "Adjustments to your subscription will result in prorated charges to your billing totals on your next billing period. "
+    "message": "Abonementa pielāgojumi izvērtīsies attiecīgās izmaksās kopējā rēķinā nākamajā norēķinu laika posmā. "
   },
   "annualSubscriptionUserSeatsMessage": {
-    "message": "Adjustments to your subscription will result in prorated charges on a monthly billing cycle. "
+    "message": "Abonementa pielāgojumi izvērtīsies attiecīgās izmaksās ikmēneša norēķinos. "
   },
   "billingHistoryDescription": {
     "message": "Lejupielādēt CSV, lai iegūtu informāciju par klientiem katrā norēķinu datumā. Samērīgā sadalījuma maksas netiek iekļautas CSV un var atšķirties no saistītā rēķina. Visatbilstošāko norēķinu informāciju var iegūt ikmēneša rēķinos.",
     "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
   },
   "noInvoicesToList": {
-    "message": "There are no invoices to list",
+    "message": "Nav rēķinu, ko parādīt",
     "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
+  },
+  "providerClientVaultPrivacyNotification": {
+    "message": "Paziņojums: šajā mēnesī klienta glabātavas privātums tiks uzlabots, un nodrošinātāja dalībniekiem vairs nebūs tiešas piekļuves klienta glabātavas vienumiem. Ar jautājumiem",
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact Bitwarden support'."
+  },
+  "contactBitwardenSupport": {
+    "message": "vērsties pie Bitwarden atbalsta.",
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact Bitwarden support'. 'Bitwarden' should not be translated"
+  },
+  "sponsored": {
+    "message": "Sponsorēts"
+  },
+  "licenseAndBillingManagementDesc": {
+    "message": "Pēc atjauninājumu veikšanas Bitwarden mākoņa serverī jāaugšupielādē sava licences datne, lai pielietotu nesenākās izmaiņas."
+  },
+  "addToFolder": {
+    "message": "Pievienot mapei"
+  },
+  "selectFolder": {
+    "message": "Atlasīt mapi"
+  },
+  "personalItemsTransferWarning": {
+    "message": "$PERSONAL_ITEMS_COUNT$ tiks neatgriezeniski nodoti atlasītajai apvienībai. Šie vienumi Tev vairs nepiederēs.",
+    "placeholders": {
+      "personal_items_count": {
+        "content": "$1",
+        "example": "2 items"
+      }
+    }
+  },
+  "personalItemsWithOrgTransferWarning": {
+    "message": "$PERSONAL_ITEMS_COUNT$ tiks neatgriezeniski nodoti $ORG$. Šie vienumi Tev vairs nepiederēs.",
+    "placeholders": {
+      "personal_items_count": {
+        "content": "$1",
+        "example": "2 items"
+      },
+      "org": {
+        "content": "$2",
+        "example": "Organization name"
+      }
+    }
   }
 }

@@ -854,8 +854,8 @@
   "emailAddress": {
     "message": "Email cím"
   },
-  "yourVaultIsLocked": {
-    "message": "A széf zárolásra került. A folytatáshoz meg kell adni a mesterjelszót."
+  "yourVaultIsLockedV2": {
+    "message": "A széf zárolva van."
   },
   "uuid": {
     "message": "UUID"
@@ -1060,7 +1060,7 @@
     "message": "Biztos folytatni szeretnénk?"
   },
   "moveSelectedItemsDesc": {
-    "message": "Célmappa kiválasztás $COUNT$ kijelölt elem áthelyezéséhez.",
+    "message": "Choose a folder that you would like to add the $COUNT$ selected item(s) to.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1690,6 +1690,9 @@
   },
   "twoStepAuthenticatorScanCodeV2": {
     "message": "Olvassuk be az alábbi QR kódot a hitelesítő alkalmazással,vagy írjuk be a kulcsot."
+  },
+  "twoStepAuthenticatorQRCanvasError": {
+    "message": "Nem sikerült betölteni a QR-kódot. Próbáljuk újra vagy használjuk az alábbi kulcsot."
   },
   "key": {
     "message": "Kulcs"
@@ -3398,6 +3401,9 @@
   },
   "emailVerified": {
     "message": "Az email cím megerősítésre került."
+  },
+  "emailVerifiedV2": {
+    "message": "Az email cím ellenőrzésre került."
   },
   "emailVerifiedFailed": {
     "message": "Nem sikerült az email cím ellenőrzése. Új ellenőrző email küldése."
@@ -7877,7 +7883,7 @@
     "message": "Hozzárendelés ezen gyűjteményekhez"
   },
   "bulkCollectionAssignmentDialogDescription": {
-    "message": "Válasszuk ki azokat a gyűjteményeket, amelyekkel az elemek megosztásra kerülnek. Ha egy elem egy gyűjteményben frissítésre kerül, az az összes gyűjteményben megjelenik. Csak az ezekhez a gyűjteményekhez hozzáféréssel rendelkező szervezeti tagok láthatják az elemeket."
+    "message": "Only organization members with access to these collections will be able to see the items."
   },
   "selectCollectionsToAssign": {
     "message": "Hozzárendelendő gyűjtemények kiválasztása"
@@ -8439,6 +8445,9 @@
   "memberAccessReportDesc": {
     "message": "Győződjünk meg arról, hogy a tagok hozzáférnek a megfelelő hitelesítő adatokhoz és fiókjaik biztonságosak. Ezzel a jelentéssel szerezhetjük be a tagok hozzáférését és a fiókkonfigurációkat tartalmazó CSV fájlt."
   },
+  "memberAccessReportPageDesc": {
+    "message": "A szervezeti tagok hozzáférésének ellenőrzése a csoportok, gyűjtemények és gyűjteményelemek között. A CSV exportálás tagonként részletes lebontást biztosít, beleértve a gyűjtemény engedélyekre és a fiókkonfigurációkra vonatkozó információkat."
+  },
   "higherKDFIterations": {
     "message": "A magasabb szintű KDF iterációk segíthetnek megvédeni mesterjelszót a támadók erőszakossága ellen."
   },
@@ -8524,5 +8533,47 @@
   "noInvoicesToList": {
     "message": "Nincsenek listázandó számlák.",
     "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
+  },
+  "providerClientVaultPrivacyNotification": {
+    "message": "Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions,",
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact Bitwarden support'."
+  },
+  "contactBitwardenSupport": {
+    "message": "contact Bitwarden support.",
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact Bitwarden support'. 'Bitwarden' should not be translated"
+  },
+  "sponsored": {
+    "message": "Szponzorált"
+  },
+  "licenseAndBillingManagementDesc": {
+    "message": "A Bitwarden felhőkiszolgáló frissítése után töltsük fel a licenszfájlt a legutóbbi módosítások alkalmazásához."
+  },
+  "addToFolder": {
+    "message": "Add to folder"
+  },
+  "selectFolder": {
+    "message": "Select folder"
+  },
+  "personalItemsTransferWarning": {
+    "message": "$PERSONAL_ITEMS_COUNT$ will be permanently transferred to the selected organization. You will no longer own these items.",
+    "placeholders": {
+      "personal_items_count": {
+        "content": "$1",
+        "example": "2 items"
+      }
+    }
+  },
+  "personalItemsWithOrgTransferWarning": {
+    "message": "$PERSONAL_ITEMS_COUNT$ will be permanently transferred to $ORG$. You will no longer own these items.",
+    "placeholders": {
+      "personal_items_count": {
+        "content": "$1",
+        "example": "2 items"
+      },
+      "org": {
+        "content": "$2",
+        "example": "Organization name"
+      }
+    }
   }
 }

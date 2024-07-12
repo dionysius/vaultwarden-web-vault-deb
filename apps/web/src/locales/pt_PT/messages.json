@@ -854,8 +854,8 @@
   "emailAddress": {
     "message": "Endereço de e-mail"
   },
-  "yourVaultIsLocked": {
-    "message": "O seu cofre está bloqueado. Verifique a sua palavra-passe mestra para continuar."
+  "yourVaultIsLockedV2": {
+    "message": "O seu cofre está bloqueado."
   },
   "uuid": {
     "message": "UUID"
@@ -1060,7 +1060,7 @@
     "message": "Tem a certeza de que deseja continuar?"
   },
   "moveSelectedItemsDesc": {
-    "message": "Escolha uma pasta para a qual pretende mover o(s) $COUNT$ item(ns) selecionado(s).",
+    "message": "Choose a folder that you would like to add the $COUNT$ selected item(s) to.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1690,6 +1690,9 @@
   },
   "twoStepAuthenticatorScanCodeV2": {
     "message": "Digitalize o código QR abaixo com a sua aplicação de autenticação ou introduza a chave."
+  },
+  "twoStepAuthenticatorQRCanvasError": {
+    "message": "Não foi possível carregar o código QR. Tente novamente ou utilize a chave abaixo."
   },
   "key": {
     "message": "Chave"
@@ -2671,7 +2674,7 @@
     "message": "Sair"
   },
   "leaveOrganizationConfirmation": {
-    "message": "Tem a certeza de que pretende deixar esta organização?"
+    "message": "Tem a certeza de que pretende sair desta organização?"
   },
   "leftOrganization": {
     "message": "Saiu da organização"
@@ -3398,6 +3401,9 @@
   },
   "emailVerified": {
     "message": "E-mail da conta verificado"
+  },
+  "emailVerifiedV2": {
+    "message": "E-mail verificado"
   },
   "emailVerifiedFailed": {
     "message": "Não foi possível verificar o seu e-mail. Tente enviar um novo e-mail de verificação."
@@ -4807,7 +4813,7 @@
     "message": "Para verificar a sua 2FA, por favor, clique no botão abaixo."
   },
   "webAuthnAuthenticate": {
-    "message": "Autenticar WebAuthn"
+    "message": "Autenticar o WebAuthn"
   },
   "webAuthnNotSupported": {
     "message": "O WebAuthn não é suportado por este navegador."
@@ -5526,7 +5532,7 @@
     }
   },
   "leaveOrganization": {
-    "message": "Deixar a organização"
+    "message": "Sair da organização"
   },
   "removeMasterPassword": {
     "message": "Remover palavra-passe mestra"
@@ -7877,7 +7883,7 @@
     "message": "Atribuir a estas coleções"
   },
   "bulkCollectionAssignmentDialogDescription": {
-    "message": "Selecione as coleções com as quais os itens serão partilhados. Assim que um item for atualizado numa coleção, será refletido em todas as coleções. Apenas os membros da organização com acesso a estas coleções poderão ver os itens."
+    "message": "Only organization members with access to these collections will be able to see the items."
   },
   "selectCollectionsToAssign": {
     "message": "Selecione as coleções a atribuir"
@@ -8439,6 +8445,9 @@
   "memberAccessReportDesc": {
     "message": "Certifique-se de que os membros têm acesso às credenciais corretas e que as suas contas estão seguras. Utilize este relatório para obter um CSV das configurações de acesso e de contas dos membros."
   },
+  "memberAccessReportPageDesc": {
+    "message": "Audite o acesso dos membros da organização a grupos, coleções e itens de coleção. A exportação CSV fornece uma análise detalhada por membro, incluindo informações sobre permissões de coleção e configurações de conta."
+  },
   "higherKDFIterations": {
     "message": "Iterações KDF mais altas podem ajudar a proteger a sua palavra-passe mestra de ser forçada por um atacante."
   },
@@ -8524,5 +8533,47 @@
   "noInvoicesToList": {
     "message": "Não há faturas a enumerar",
     "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
+  },
+  "providerClientVaultPrivacyNotification": {
+    "message": "Aviso: No final deste mês, a privacidade do cofre do cliente será melhorada e os membros do fornecedor deixarão de ter acesso direto aos itens do cofre do cliente. Para questões,",
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact Bitwarden support'."
+  },
+  "contactBitwardenSupport": {
+    "message": "contacte o suporte do Bitwarden.",
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact Bitwarden support'. 'Bitwarden' should not be translated"
+  },
+  "sponsored": {
+    "message": "Patrocinado"
+  },
+  "licenseAndBillingManagementDesc": {
+    "message": "Depois de fazer atualizações no servidor de nuvem Bitwarden, carregue o seu ficheiro de licença para aplicar as alterações mais recentes."
+  },
+  "addToFolder": {
+    "message": "Adicionar à pasta"
+  },
+  "selectFolder": {
+    "message": "Selecionar pasta"
+  },
+  "personalItemsTransferWarning": {
+    "message": "$PERSONAL_ITEMS_COUNT$ serão permanentemente transferidos para a organização selecionada. Estes itens deixarão de lhe pertencer.",
+    "placeholders": {
+      "personal_items_count": {
+        "content": "$1",
+        "example": "2 items"
+      }
+    }
+  },
+  "personalItemsWithOrgTransferWarning": {
+    "message": "$PERSONAL_ITEMS_COUNT$ serão permanentemente transferidos para $ORG$. Deixará de ser proprietário destes itens.",
+    "placeholders": {
+      "personal_items_count": {
+        "content": "$1",
+        "example": "2 items"
+      },
+      "org": {
+        "content": "$2",
+        "example": "Organization name"
+      }
+    }
   }
 }

@@ -854,8 +854,8 @@
   "emailAddress": {
     "message": "Emailová adresa"
   },
-  "yourVaultIsLocked": {
-    "message": "Váš trezor je uzamknutý. Overte sa hlavným heslom ak chcete pokračovať."
+  "yourVaultIsLockedV2": {
+    "message": "Váš trezor je zamknutý."
   },
   "uuid": {
     "message": "UUID"
@@ -1060,7 +1060,7 @@
     "message": "Ste si istí, že chcete pokračovať?"
   },
   "moveSelectedItemsDesc": {
-    "message": "Vyberte priečinok do ktorého chcete presunúť $COUNT$ vybraných položiek.",
+    "message": "Choose a folder that you would like to add the $COUNT$ selected item(s) to.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1690,6 +1690,9 @@
   },
   "twoStepAuthenticatorScanCodeV2": {
     "message": "S vašou overovacou aplikáciou skenujte QR kód nižšie, alebo ručne zadajte kľúč."
+  },
+  "twoStepAuthenticatorQRCanvasError": {
+    "message": "Nepodarilo sa načítať QR kód. Skúste to znova, alebo použite kľúč nižšie."
   },
   "key": {
     "message": "Kľúč"
@@ -3398,6 +3401,9 @@
   },
   "emailVerified": {
     "message": "Emailová adresa konta bola overená"
+  },
+  "emailVerifiedV2": {
+    "message": "Email bol overený"
   },
   "emailVerifiedFailed": {
     "message": "Overovanie zlyhalo. Skúste si odoslať nový verifikačný e-mail."
@@ -7877,7 +7883,7 @@
     "message": "Prideliť k týmto zbierkam"
   },
   "bulkCollectionAssignmentDialogDescription": {
-    "message": "Vyberte zbierky s ktorými budú položky zdieľané. Zmeny položky v jednej zbierke sa prejavia vo všetkých zbierkach. Iba členovia organizácie s prístupom k týmto zbierkam budu položky vidieť."
+    "message": "Only organization members with access to these collections will be able to see the items."
   },
   "selectCollectionsToAssign": {
     "message": "Vyberte zbierky na pridelenie"
@@ -8439,6 +8445,9 @@
   "memberAccessReportDesc": {
     "message": "Uistite sa, že členovia majú prístup k správnym prístupovým údajom a ich kontá sú bezpečné. Prostredníctvom tohto reportu získajte CSV o prístupe a konfigurácii členov."
   },
+  "memberAccessReportPageDesc": {
+    "message": "Audit prístupu členov organizácie v skupinách, kolekciách a položkách kolekcie. Export CSV poskytuje podrobný rozpis podľa jednotlivých členov vrátane informácií o oprávneniach kolekcií a konfiguráciách účtov."
+  },
   "higherKDFIterations": {
     "message": "Zvýšenie počtu KDF iterácií môže pomôcť chrániť vaše hlavné heslo pri brute force útoku."
   },
@@ -8524,5 +8533,47 @@
   "noInvoicesToList": {
     "message": "Neexistujú žiadne faktúry na zobrazenie",
     "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
+  },
+  "providerClientVaultPrivacyNotification": {
+    "message": "Upozornenie: Koncom tohto mesiaca sa zlepší ochrana osobných údajov v trezore klienta a členovia poskytovateľa už nebudú mať priamy prístup k položkám v trezore klienta. V prípade otázok",
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact Bitwarden support'."
+  },
+  "contactBitwardenSupport": {
+    "message": "kontaktujte podporu spoločnosti Bitwarden.",
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact Bitwarden support'. 'Bitwarden' should not be translated"
+  },
+  "sponsored": {
+    "message": "Sponzorované"
+  },
+  "licenseAndBillingManagementDesc": {
+    "message": "Po vykonaní aktualizácií na cloudovom serveri Bitwarden nahrajte svoj licenčný súbor, aby ste aplikovali najnovšie zmeny."
+  },
+  "addToFolder": {
+    "message": "Add to folder"
+  },
+  "selectFolder": {
+    "message": "Select folder"
+  },
+  "personalItemsTransferWarning": {
+    "message": "$PERSONAL_ITEMS_COUNT$ will be permanently transferred to the selected organization. You will no longer own these items.",
+    "placeholders": {
+      "personal_items_count": {
+        "content": "$1",
+        "example": "2 items"
+      }
+    }
+  },
+  "personalItemsWithOrgTransferWarning": {
+    "message": "$PERSONAL_ITEMS_COUNT$ will be permanently transferred to $ORG$. You will no longer own these items.",
+    "placeholders": {
+      "personal_items_count": {
+        "content": "$1",
+        "example": "2 items"
+      },
+      "org": {
+        "content": "$2",
+        "example": "Organization name"
+      }
+    }
   }
 }

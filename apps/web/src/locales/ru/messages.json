@@ -854,8 +854,8 @@
   "emailAddress": {
     "message": "Адрес email"
   },
-  "yourVaultIsLocked": {
-    "message": "Ваше хранилище заблокировано. Для продолжения введите мастер-пароль."
+  "yourVaultIsLockedV2": {
+    "message": "Ваше хранилище заблокировано."
   },
   "uuid": {
     "message": "UUID"
@@ -1060,7 +1060,7 @@
     "message": "Вы действительно хотите продолжить?"
   },
   "moveSelectedItemsDesc": {
-    "message": "Выберите папку, в которую вы хотите переместить выбранные элементы ($COUNT$ шт.).",
+    "message": "Выберите папку, в которую вы хотите добавить выбранные элементы ($COUNT$).",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1690,6 +1690,9 @@
   },
   "twoStepAuthenticatorScanCodeV2": {
     "message": "Сосканируйте приведенный ниже QR-код с помощью приложения-аутентификатора или введите ключ."
+  },
+  "twoStepAuthenticatorQRCanvasError": {
+    "message": "Не удалось загрузить QR-код. Попробуйте еще раз или воспользуйтесь ключом ниже."
   },
   "key": {
     "message": "Ключ"
@@ -3398,6 +3401,9 @@
   },
   "emailVerified": {
     "message": "Адрес email аккаунта подтвержден"
+  },
+  "emailVerifiedV2": {
+    "message": "Email подтвержден"
   },
   "emailVerifiedFailed": {
     "message": "Не удалось подтвердить ваш email. Попробуйте отправить новое письмо с подтверждением."
@@ -7877,7 +7883,7 @@
     "message": "Назначить этим коллекциям"
   },
   "bulkCollectionAssignmentDialogDescription": {
-    "message": "Выберите коллекции, в которые будут переданы элементы. Если элемент обновлен в одной коллекции, это изменение будет отражено во всех коллекциях. Только члены организации, имеющие доступ к этим коллекциям, смогут видеть элементы."
+    "message": "Только члены организации, имеющие доступ к этим коллекциям, смогут видеть элементы."
   },
   "selectCollectionsToAssign": {
     "message": "Выбрать коллекции для назначения"
@@ -8439,6 +8445,9 @@
   "memberAccessReportDesc": {
     "message": "Убедитесь, что пользователи имеют доступ к необходимым им учетным данным, а их аккаунты надежно защищены. Используйте этот отчет, чтобы получить CSV-файл с данными о доступе пользователей и конфигурациях аккаунтов."
   },
+  "memberAccessReportPageDesc": {
+    "message": "Аудит доступа членов организации к группам, коллекциям и элементам коллекций. Экспорт в формате CSV содержит подробную разбивку по членам, включая информацию о разрешениях на коллекции и конфигурациях учетных записей."
+  },
   "higherKDFIterations": {
     "message": "Увеличение числа итераций KDF может помочь защитить ваш мастер-пароль от взлома его злоумышленником."
   },
@@ -8524,5 +8533,47 @@
   "noInvoicesToList": {
     "message": "Нет счетов",
     "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
+  },
+  "providerClientVaultPrivacyNotification": {
+    "message": "Уведомление: позднее в этом месяце конфиденциальность клиентского хранилища будет улучшена, и провайдеры больше не будут иметь прямого доступа к элементам клиентского хранилища. По вопросам",
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact Bitwarden support'."
+  },
+  "contactBitwardenSupport": {
+    "message": "обращайтесь в службу поддержки Bitwarden.",
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact Bitwarden support'. 'Bitwarden' should not be translated"
+  },
+  "sponsored": {
+    "message": "Спонсировано"
+  },
+  "licenseAndBillingManagementDesc": {
+    "message": "После обновления на сервере Bitwarden загрузите файл лицензии для применения последних изменений."
+  },
+  "addToFolder": {
+    "message": "Добавить в папку"
+  },
+  "selectFolder": {
+    "message": "Выбрать папку"
+  },
+  "personalItemsTransferWarning": {
+    "message": "$PERSONAL_ITEMS_COUNT$ будут навсегда переданы выбранной организации. Вы больше не будете владельцем этих элементов.",
+    "placeholders": {
+      "personal_items_count": {
+        "content": "$1",
+        "example": "2 items"
+      }
+    }
+  },
+  "personalItemsWithOrgTransferWarning": {
+    "message": "$PERSONAL_ITEMS_COUNT$ будут навсегда переданы $ORG$. Вы больше не будете владельцем этих элементов.",
+    "placeholders": {
+      "personal_items_count": {
+        "content": "$1",
+        "example": "2 items"
+      },
+      "org": {
+        "content": "$2",
+        "example": "Organization name"
+      }
+    }
   }
 }

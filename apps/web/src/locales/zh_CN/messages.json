@@ -854,8 +854,8 @@
   "emailAddress": {
     "message": "电子邮件地址"
   },
-  "yourVaultIsLocked": {
-    "message": "您的密码库已锁定，请验证您的主密码以继续。"
+  "yourVaultIsLockedV2": {
+    "message": "您的密码库已锁定"
   },
   "uuid": {
     "message": "UUID"
@@ -1060,7 +1060,7 @@
     "message": "确定要继续吗？"
   },
   "moveSelectedItemsDesc": {
-    "message": "选择要将这 $COUNT$ 个项目移动到的文件夹。",
+    "message": "Choose a folder that you would like to add the $COUNT$ selected item(s) to.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1690,6 +1690,9 @@
   },
   "twoStepAuthenticatorScanCodeV2": {
     "message": "用您的验证器 App 扫描下面的二维码或输入密钥。"
+  },
+  "twoStepAuthenticatorQRCanvasError": {
+    "message": "无法加载二维码。请重试或使用下面的密钥。"
   },
   "key": {
     "message": "密钥"
@@ -3398,6 +3401,9 @@
   },
   "emailVerified": {
     "message": "账户电子邮件已验证"
+  },
+  "emailVerifiedV2": {
+    "message": "电子邮箱已验证"
   },
   "emailVerifiedFailed": {
     "message": "无法验证您的电子邮件。尝试发送新的验证电子邮件。"
@@ -7877,7 +7883,7 @@
     "message": "分配到这些集合"
   },
   "bulkCollectionAssignmentDialogDescription": {
-    "message": "选择与其共享项目的集合。当一个项目在某个集合中更新后，它将反映到所有集合中。只有具有这些集合访问权限的组织成员才能看到这些项目。"
+    "message": "只有具有这些集合访问权限的组织成员才能看到这些项目。"
   },
   "selectCollectionsToAssign": {
     "message": "选择要分配的集合"
@@ -8439,6 +8445,9 @@
   "memberAccessReportDesc": {
     "message": "确保成员具有对合适的凭据的访问权限，以及他们的账户是安全的。使用此报告获取包含会员访问权限和账户配置的 CSV 文件 。"
   },
+  "memberAccessReportPageDesc": {
+    "message": "审计组织成员在各个群组、集合和集合项目之间的访问权限。CSV 导出文件提供了每位成员的详细信息，包括集合权限和账户配置的相关信息。"
+  },
   "higherKDFIterations": {
     "message": "更高的 KDF 迭代可以帮助保护您的主密码免遭攻击者的暴力破解。"
   },
@@ -8524,5 +8533,47 @@
   "noInvoicesToList": {
     "message": "没有可列出的账单",
     "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
+  },
+  "providerClientVaultPrivacyNotification": {
+    "message": "注意：本月晚些时候，客户密码库隐私将被改进，提供商成员将不再能够直接访问客户密码库项目。如有疑问，",
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact Bitwarden support'."
+  },
+  "contactBitwardenSupport": {
+    "message": "联系 Bitwarden 支持。",
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact Bitwarden support'. 'Bitwarden' should not be translated"
+  },
+  "sponsored": {
+    "message": "赞助"
+  },
+  "licenseAndBillingManagementDesc": {
+    "message": "在 Bitwarden 云服务器中进行更新后，上传许可证文件以应用最新的更改。"
+  },
+  "addToFolder": {
+    "message": "添加到文件夹"
+  },
+  "selectFolder": {
+    "message": "选择文件夹"
+  },
+  "personalItemsTransferWarning": {
+    "message": "$PERSONAL_ITEMS_COUNT$ 将永久转移到所选组织。您将不再拥有这些项目。",
+    "placeholders": {
+      "personal_items_count": {
+        "content": "$1",
+        "example": "2 items"
+      }
+    }
+  },
+  "personalItemsWithOrgTransferWarning": {
+    "message": "$PERSONAL_ITEMS_COUNT$ 将永久转移到 $ORG$。您将不再拥有这些项目。",
+    "placeholders": {
+      "personal_items_count": {
+        "content": "$1",
+        "example": "2 items"
+      },
+      "org": {
+        "content": "$2",
+        "example": "Organization name"
+      }
+    }
   }
 }

@@ -174,7 +174,7 @@
     "description": "This is the folder for uncategorized items"
   },
   "selfOwnershipLabel": {
-    "message": "You",
+    "message": "Вие",
     "description": "Used as a label to indicate that the user is the owner of an item."
   },
   "addFolder": {
@@ -406,13 +406,13 @@
     "message": "Елемент"
   },
   "itemDetails": {
-    "message": "Item details"
+    "message": "Подробности за елемента"
   },
   "itemName": {
-    "message": "Item name"
+    "message": "Име на елемента"
   },
   "cannotRemoveViewOnlyCollections": {
-    "message": "You cannot remove collections with View only permissions: $COLLECTIONS$",
+    "message": "Не можете да премахвате колекции с права „Само за преглед“: $COLLECTIONS$",
     "placeholders": {
       "collections": {
         "content": "$1",
@@ -854,8 +854,8 @@
   "emailAddress": {
     "message": "Адрес на електронната поща"
   },
-  "yourVaultIsLocked": {
-    "message": "Трезорът е заключен — въведете главната си парола, за да продължите."
+  "yourVaultIsLockedV2": {
+    "message": "Трезорът Ви е заключен."
   },
   "uuid": {
     "message": "UUID"
@@ -1060,7 +1060,7 @@
     "message": "Наистина ли искате да продължите?"
   },
   "moveSelectedItemsDesc": {
-    "message": "Избор на папка, в която да се преместят $COUNT$ избрани записи.",
+    "message": "Choose a folder that you would like to add the $COUNT$ selected item(s) to.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1690,6 +1690,9 @@
   },
   "twoStepAuthenticatorScanCodeV2": {
     "message": "Сканирайте QR-кода по-долу с приложението за удостоверяване, или въведете ключа."
+  },
+  "twoStepAuthenticatorQRCanvasError": {
+    "message": "QR-кодът не може да бъде зареден. Опитайте отново или използвайте ключа по-долу."
   },
   "key": {
     "message": "Ключ"
@@ -3398,6 +3401,9 @@
   },
   "emailVerified": {
     "message": "Адресът на електронната ви поща е потвърден."
+  },
+  "emailVerifiedV2": {
+    "message": "Е-пощата е потвърдена"
   },
   "emailVerifiedFailed": {
     "message": "Адресът на електронната ви поща не е потвърден. Пробвайте да изпратите ново писмо за потвърждение."
@@ -7877,7 +7883,7 @@
     "message": "Свързване с тези колекции"
   },
   "bulkCollectionAssignmentDialogDescription": {
-    "message": "Изберете колекциите, с които да бъдат споделени тези елементи. Когато даден елемент бъде променен в една колекция, промяната ще бъде отразена във всички колекции. Само членовете на организацията с достъп до тези колекции ще могат да виждат елементите."
+    "message": "Only organization members with access to these collections will be able to see the items."
   },
   "selectCollectionsToAssign": {
     "message": "Изберете колекции за свързване"
@@ -8439,6 +8445,9 @@
   "memberAccessReportDesc": {
     "message": "Уверете се, че членовете имат достъп до правилните идентификационни данни, както и че регистрациите им са защитени. Използвайте този доклад, за да получите файл CSV с достъпа на членовете и настройките на регистрациите им."
   },
+  "memberAccessReportPageDesc": {
+    "message": "Направете проверка на достъпа на членовете до групи, колекции и елементи в колекциите. Изнасянето на на данните като файл CSV предоставя подробна разбивка по членове, включително информация относно правата за колекции и настройките на регистрациите."
+  },
   "higherKDFIterations": {
     "message": "По-високите стойности за броя на повторения на KDF може да защитят главната Ви парола от атаки тип „груба сила“."
   },
@@ -8522,7 +8531,49 @@
     "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
   },
   "noInvoicesToList": {
-    "message": "There are no invoices to list",
+    "message": "Няма фактури за показване",
     "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
+  },
+  "providerClientVaultPrivacyNotification": {
+    "message": "Обявление: По-късно този месец поверителността на клиентския трезор ще бъде подобрена и членовете на доставчик вече няма да имат директен достъп до елементите в клиентския трезор. Ако имате въпроси,",
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact Bitwarden support'."
+  },
+  "contactBitwardenSupport": {
+    "message": "свържете се с поддръжката на Битуорден.",
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact Bitwarden support'. 'Bitwarden' should not be translated"
+  },
+  "sponsored": {
+    "message": "Спонсорирано"
+  },
+  "licenseAndBillingManagementDesc": {
+    "message": "След като направите промени в облачния сървър на Битуорден, качете файла с лиценза си, за да приложите последните промени."
+  },
+  "addToFolder": {
+    "message": "Добавяне в папка"
+  },
+  "selectFolder": {
+    "message": "Изберете папка"
+  },
+  "personalItemsTransferWarning": {
+    "message": "$PERSONAL_ITEMS_COUNT$ ще бъдат преместени завинаги в избраната организация. Вече няма да притежавате тези елементи.",
+    "placeholders": {
+      "personal_items_count": {
+        "content": "$1",
+        "example": "2 items"
+      }
+    }
+  },
+  "personalItemsWithOrgTransferWarning": {
+    "message": "$PERSONAL_ITEMS_COUNT$ ще бъдат преместени завинаги в $ORG$. Вече няма да притежавате тези елементи.",
+    "placeholders": {
+      "personal_items_count": {
+        "content": "$1",
+        "example": "2 items"
+      },
+      "org": {
+        "content": "$2",
+        "example": "Organization name"
+      }
+    }
   }
 }

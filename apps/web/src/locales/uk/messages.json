@@ -854,8 +854,8 @@
   "emailAddress": {
     "message": "Адреса е-пошти"
   },
-  "yourVaultIsLocked": {
-    "message": "Сховище заблоковано. Введіть головний пароль для продовження."
+  "yourVaultIsLockedV2": {
+    "message": "Ваше сховище заблоковано."
   },
   "uuid": {
     "message": "UUID"
@@ -1060,7 +1060,7 @@
     "message": "Ви дійсно хочете продовжити?"
   },
   "moveSelectedItemsDesc": {
-    "message": "Оберіть теку, в яку ви бажаєте перемістити $COUNT$ вибраних записів.",
+    "message": "Choose a folder that you would like to add the $COUNT$ selected item(s) to.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1690,6 +1690,9 @@
   },
   "twoStepAuthenticatorScanCodeV2": {
     "message": "Скануйте зазначений нижче QR-код за допомогою програми для автентифікації або введіть ключ."
+  },
+  "twoStepAuthenticatorQRCanvasError": {
+    "message": "Не вдалося завантажити QR-код. Повторіть спробу або скористайтеся зазначеним нижче ключем."
   },
   "key": {
     "message": "Ключ"
@@ -3398,6 +3401,9 @@
   },
   "emailVerified": {
     "message": "Адресу е-пошти підтверджено"
+  },
+  "emailVerifiedV2": {
+    "message": "Електронну пошту підтверджено"
   },
   "emailVerifiedFailed": {
     "message": "Неможливо підтвердити вашу е-пошту. Спробуйте надіслати нове повідомлення для підтвердження."
@@ -7877,7 +7883,7 @@
     "message": "Призначити до цих збірок"
   },
   "bulkCollectionAssignmentDialogDescription": {
-    "message": "Оберіть збірки, в яких поширюватимуться записи. Після оновлення запису в одній збірці зміни буде відображено у всіх збірках. Лише учасники організації з доступом до цих збірок зможуть переглядати записи."
+    "message": "Only organization members with access to these collections will be able to see the items."
   },
   "selectCollectionsToAssign": {
     "message": "Оберіть збірки для призначення"
@@ -8439,6 +8445,9 @@
   "memberAccessReportDesc": {
     "message": "Переконайтеся, що учасники мають доступ до належних облікових даних і їхні облікові записи надійні. Використовуйте цей звіт, щоб отримати файл CSV з даними про доступ учасників та конфігурації облікових записів."
   },
+  "memberAccessReportPageDesc": {
+    "message": "Аудит доступу учасника організації до груп, збірок та елементів збірок. Експорт CSV надає детальну розбивку для кожного учасника, зокрема інформацію про дозволи для збірок та конфігурації облікового запису."
+  },
   "higherKDFIterations": {
     "message": "Вищі значення KDF-ітерацій можуть допомогти захистити ваш головний пароль від грубого зламу зловмисником."
   },
@@ -8524,5 +8533,47 @@
   "noInvoicesToList": {
     "message": "Немає рахунків для показу",
     "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
+  },
+  "providerClientVaultPrivacyNotification": {
+    "message": "Повідомлення: пізніше цього місяця приватність клієнтського сховища буде поліпшено й учасники провайдера більше не матимуть прямого доступу до елементів клієнтських сховищ. Для отримання відповідей на запитання,",
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact Bitwarden support'."
+  },
+  "contactBitwardenSupport": {
+    "message": "зверніться до служби підтримки Bitwarden.",
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact Bitwarden support'. 'Bitwarden' should not be translated"
+  },
+  "sponsored": {
+    "message": "Спонсоровано"
+  },
+  "licenseAndBillingManagementDesc": {
+    "message": "After making updates in the Bitwarden cloud server, upload your license file to apply the most recent changes."
+  },
+  "addToFolder": {
+    "message": "Add to folder"
+  },
+  "selectFolder": {
+    "message": "Select folder"
+  },
+  "personalItemsTransferWarning": {
+    "message": "$PERSONAL_ITEMS_COUNT$ will be permanently transferred to the selected organization. You will no longer own these items.",
+    "placeholders": {
+      "personal_items_count": {
+        "content": "$1",
+        "example": "2 items"
+      }
+    }
+  },
+  "personalItemsWithOrgTransferWarning": {
+    "message": "$PERSONAL_ITEMS_COUNT$ will be permanently transferred to $ORG$. You will no longer own these items.",
+    "placeholders": {
+      "personal_items_count": {
+        "content": "$1",
+        "example": "2 items"
+      },
+      "org": {
+        "content": "$2",
+        "example": "Organization name"
+      }
+    }
   }
 }

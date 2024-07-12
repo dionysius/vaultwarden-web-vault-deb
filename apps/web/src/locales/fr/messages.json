@@ -854,8 +854,8 @@
   "emailAddress": {
     "message": "Adresse électronique"
   },
-  "yourVaultIsLocked": {
-    "message": "Votre coffre est verrouillé. Vérifiez votre mot de passe principal pour continuer."
+  "yourVaultIsLockedV2": {
+    "message": "Votre coffre est verrouillé."
   },
   "uuid": {
     "message": "UUID"
@@ -1060,7 +1060,7 @@
     "message": "Êtes-vous sûr(e) de vouloir continuer ?"
   },
   "moveSelectedItemsDesc": {
-    "message": "Choisissez le dossier vers lequel vous souhaitez déplacer les $COUNT$ élément(s) sélectionné(s).",
+    "message": "Choose a folder that you would like to add the $COUNT$ selected item(s) to.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1690,6 +1690,9 @@
   },
   "twoStepAuthenticatorScanCodeV2": {
     "message": "Scannez le code QR ci-dessous avec votre application d'authentification ou saisissez la clé."
+  },
+  "twoStepAuthenticatorQRCanvasError": {
+    "message": "Impossible de charger le code QR. Réessayez ou utilisez la clé ci-dessous."
   },
   "key": {
     "message": "Clé"
@@ -3398,6 +3401,9 @@
   },
   "emailVerified": {
     "message": "Courriel du compte vérifié"
+  },
+  "emailVerifiedV2": {
+    "message": "Courriel vérifié"
   },
   "emailVerifiedFailed": {
     "message": "Impossible de vérifier votre courriel. Essayez en envoyant un nouveau courriel de vérification."
@@ -7877,7 +7883,7 @@
     "message": "Assigner à ces collections"
   },
   "bulkCollectionAssignmentDialogDescription": {
-    "message": "Sélectionnez les collections avec lesquelles les éléments seront partagés. Une fois qu'un élément est mis à jour dans une collection, il le sera aussi dans toutes ces collections. Seuls les membres de l'organisation ayant accès à ces collections pourront voir les éléments."
+    "message": "Only organization members with access to these collections will be able to see the items."
   },
   "selectCollectionsToAssign": {
     "message": "Sélectionnez les collections à assigner"
@@ -8439,6 +8445,9 @@
   "memberAccessReportDesc": {
     "message": "S'assurer que les membres ont accès aux bons identifiants et que leurs comptes sont sécurisés. Utilisez ce rapport pour obtenir un CSV d'accès aux membres et des configurations de compte."
   },
+  "memberAccessReportPageDesc": {
+    "message": "Audite les accès des membres de l'organisation au sein des groupes, des collections et des éléments des collections. L'exportation CSV fournit un rapport détaillé par membre comprenant des informations sur les collections autorisées et les configurations de compte."
+  },
   "higherKDFIterations": {
     "message": "Des itérations KDF plus élevées peuvent aider à protéger votre mot de passe principal contre la force brute d'un assaillant."
   },
@@ -8524,5 +8533,47 @@
   "noInvoicesToList": {
     "message": "Il n'y a aucune facture à afficher",
     "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
+  },
+  "providerClientVaultPrivacyNotification": {
+    "message": "Remarque : Plus tard ce mois-ci, la confidentialité du coffre du client sera améliorée et les membres du fournisseur n'auront plus un accès direct aux éléments du coffre du client. Pour les questions,",
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact Bitwarden support'."
+  },
+  "contactBitwardenSupport": {
+    "message": "contactez le support Bitwarden.",
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact Bitwarden support'. 'Bitwarden' should not be translated"
+  },
+  "sponsored": {
+    "message": "Parrainé"
+  },
+  "licenseAndBillingManagementDesc": {
+    "message": "Après avoir fait des mises à jour sur le serveur cloud de Bitwarden, téléversez votre fichier de licence pour appliquer les modifications les plus récentes."
+  },
+  "addToFolder": {
+    "message": "Ajouter au dossier"
+  },
+  "selectFolder": {
+    "message": "Sélectionner un dossier"
+  },
+  "personalItemsTransferWarning": {
+    "message": "$PERSONAL_ITEMS_COUNT$ seront transférés à l'organisation sélectionnée de façon permanente. Vous ne serez plus propriétaire de ces éléments.",
+    "placeholders": {
+      "personal_items_count": {
+        "content": "$1",
+        "example": "2 items"
+      }
+    }
+  },
+  "personalItemsWithOrgTransferWarning": {
+    "message": "$PERSONAL_ITEMS_COUNT$ seront transférés à $ORG$ de façon permanente. Vous ne serez plus propriétaire de ces éléments.",
+    "placeholders": {
+      "personal_items_count": {
+        "content": "$1",
+        "example": "2 items"
+      },
+      "org": {
+        "content": "$2",
+        "example": "Organization name"
+      }
+    }
   }
 }

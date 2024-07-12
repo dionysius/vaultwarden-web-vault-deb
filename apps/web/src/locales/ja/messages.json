@@ -854,8 +854,8 @@
   "emailAddress": {
     "message": "メールアドレス"
   },
-  "yourVaultIsLocked": {
-    "message": "保管庫がロックされています。開くにはマスターパスワードを入力してください。"
+  "yourVaultIsLockedV2": {
+    "message": "保管庫はロックされています。"
   },
   "uuid": {
     "message": "UUID"
@@ -1060,7 +1060,7 @@
     "message": "本当に続行しますか？"
   },
   "moveSelectedItemsDesc": {
-    "message": "$COUNT$個のアイテムを移動したいフォルダーを選択してください。",
+    "message": "Choose a folder that you would like to add the $COUNT$ selected item(s) to.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1690,6 +1690,9 @@
   },
   "twoStepAuthenticatorScanCodeV2": {
     "message": "以下の QR コードを認証アプリでスキャンするか、キーを入力してください。"
+  },
+  "twoStepAuthenticatorQRCanvasError": {
+    "message": "QR コードを読み込めませんでした。もう一度試すか、以下のキーを使用してください。"
   },
   "key": {
     "message": "キー"
@@ -3398,6 +3401,9 @@
   },
   "emailVerified": {
     "message": "メールアドレスが確認されました。"
+  },
+  "emailVerifiedV2": {
+    "message": "メールアドレスを認証しました"
   },
   "emailVerifiedFailed": {
     "message": "メールアドレスを確認できませんでした。確認メールを再送信してください。"
@@ -7877,7 +7883,7 @@
     "message": "これらのコレクションに割り当てる"
   },
   "bulkCollectionAssignmentDialogDescription": {
-    "message": "アイテムを共有するコレクションを選択します。1つのコレクションでアイテムが更新されると、すべてのコレクションに反映されます。これらのコレクションにアクセスできる組織メンバーだけがアイテムを見ることができます。"
+    "message": "Only organization members with access to these collections will be able to see the items."
   },
   "selectCollectionsToAssign": {
     "message": "割り当てるコレクションを選択"
@@ -8439,6 +8445,9 @@
   "memberAccessReportDesc": {
     "message": "メンバーが適切な資格情報にアクセスでき、アカウントが安全であることを確認します。 このレポートを使用するとメンバーアクセスとアカウント設定の CSV を取得できます。"
   },
+  "memberAccessReportPageDesc": {
+    "message": "組織メンバーによるグループ、コレクション、コレクションアイテム間のアクセスを監査します。 CSV エクスポートには、コレクションの権限とアカウント構成に関する情報を含むメンバーごとの詳細な内訳が表示されます。"
+  },
   "higherKDFIterations": {
     "message": "KDF 反復回数を多くすることで、攻撃者による総当たり攻撃からマスターパスワードを守ることができます。"
   },
@@ -8524,5 +8533,47 @@
   "noInvoicesToList": {
     "message": "一覧表示する請求書がありません",
     "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
+  },
+  "providerClientVaultPrivacyNotification": {
+    "message": "お知らせ: 今月後半にクライアント保管庫のプライバシーが改善され、プロバイダのメンバーはクライアント保管庫のアイテムに直接アクセスできなくなります。",
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact Bitwarden support'."
+  },
+  "contactBitwardenSupport": {
+    "message": "詳細は Bitwarden サポートにお問い合わせください。",
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact Bitwarden support'. 'Bitwarden' should not be translated"
+  },
+  "sponsored": {
+    "message": "Sponsored"
+  },
+  "licenseAndBillingManagementDesc": {
+    "message": "Bitwarden クラウドサーバーで更新を行った後、ライセンスファイルをアップロードして最新の変更を適用してください。"
+  },
+  "addToFolder": {
+    "message": "フォルダーに追加"
+  },
+  "selectFolder": {
+    "message": "フォルダーを選択"
+  },
+  "personalItemsTransferWarning": {
+    "message": "$PERSONAL_ITEMS_COUNT$ は選択した組織に恒久的に移行されます。これらのアイテムはあなたの所有ではなくなります。",
+    "placeholders": {
+      "personal_items_count": {
+        "content": "$1",
+        "example": "2 items"
+      }
+    }
+  },
+  "personalItemsWithOrgTransferWarning": {
+    "message": "$PERSONAL_ITEMS_COUNT$ は $ORG$ に恒久的に移行されます。これらのアイテムはあなたの所有ではなくなります。",
+    "placeholders": {
+      "personal_items_count": {
+        "content": "$1",
+        "example": "2 items"
+      },
+      "org": {
+        "content": "$2",
+        "example": "Organization name"
+      }
+    }
   }
 }

@@ -854,8 +854,8 @@
   "emailAddress": {
     "message": "E-mailadresse"
   },
-  "yourVaultIsLocked": {
-    "message": "Din boks er låst. Bekræft din hovedadgangskode for at fortsætte."
+  "yourVaultIsLockedV2": {
+    "message": "Boksen er låst."
   },
   "uuid": {
     "message": "UUID"
@@ -1060,7 +1060,7 @@
     "message": "Sikker på, at du vil fortsætte?"
   },
   "moveSelectedItemsDesc": {
-    "message": "Vælg en mappe, hvortil de(t) $COUNT$ valgte emne(r) ønskes flyttet.",
+    "message": "Choose a folder that you would like to add the $COUNT$ selected item(s) to.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1690,6 +1690,9 @@
   },
   "twoStepAuthenticatorScanCodeV2": {
     "message": "Skan QR-koden nedenfor med godkendelses-appen eller angiv nøglen."
+  },
+  "twoStepAuthenticatorQRCanvasError": {
+    "message": "Kunne ikke indlæse QR-kode. Forsøg igen eller brug nøglen nedenfor."
   },
   "key": {
     "message": "Nøgle"
@@ -3398,6 +3401,9 @@
   },
   "emailVerified": {
     "message": "Kontoe-mail bekræftet"
+  },
+  "emailVerifiedV2": {
+    "message": "E-mail bekræftet"
   },
   "emailVerifiedFailed": {
     "message": "Kan ikke bekræfte din e-mail. Prøv at sende en ny verifikations-email."
@@ -7877,7 +7883,7 @@
     "message": "Tildel til samlinger"
   },
   "bulkCollectionAssignmentDialogDescription": {
-    "message": "Vælg de samlinger som emnerne vil blive delt med. Når et emne er opdateret i en samling, vil det blive afspejlet i alle samlinger. Kun organisationsmedlemmer med adgang til disse samlinger vil kunne se emnerne."
+    "message": "Only organization members with access to these collections will be able to see the items."
   },
   "selectCollectionsToAssign": {
     "message": "Vælg samlinger at tildele"
@@ -8439,6 +8445,9 @@
   "memberAccessReportDesc": {
     "message": "Sikr, at medlemmerne har adgang til de rigtige legitimationsoplysninger, og at deres konti er sikre. Brug denne rapport til at få en CSV over medlemsadgang og kontoopsætninger."
   },
+  "memberAccessReportPageDesc": {
+    "message": "Inspicér organisationsmedlemsadgang på tværs af grupper, samlinger og samlingsemner. CSV-eksporten giver en detaljeret opdeling pr. medlem, herunder oplysninger om samlingstilladelser og kontoopsætninger."
+  },
   "higherKDFIterations": {
     "message": "Højere KDF-iterationer kan hjælpe med at beskytte hovedadgangskoden mod brute force-angreb."
   },
@@ -8524,5 +8533,47 @@
   "noInvoicesToList": {
     "message": "Ingen fakturaer at vise",
     "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
+  },
+  "providerClientVaultPrivacyNotification": {
+    "message": "Bemærk: Senere på måneden forbedres klientboksfortroligheden, og udbydermedlemmer vil ikke længere kunne tilgå klientboksemner direkte. For evt. spørgsmål,",
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact Bitwarden support'."
+  },
+  "contactBitwardenSupport": {
+    "message": "contact Bitwarden support.",
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact Bitwarden support'. 'Bitwarden' should not be translated"
+  },
+  "sponsored": {
+    "message": "Sponseret"
+  },
+  "licenseAndBillingManagementDesc": {
+    "message": "Efter at have foretaget opdateringer på Bitwarden cloud-serveren, uploade licensfilen for at anvende de seneste ændringer."
+  },
+  "addToFolder": {
+    "message": "Føj til mappe"
+  },
+  "selectFolder": {
+    "message": "Vælg mappe"
+  },
+  "personalItemsTransferWarning": {
+    "message": "$PERSONAL_ITEMS_COUNT$ overføres permanent til den valgte organisation. Man vil ikke længere eje disse emner.",
+    "placeholders": {
+      "personal_items_count": {
+        "content": "$1",
+        "example": "2 items"
+      }
+    }
+  },
+  "personalItemsWithOrgTransferWarning": {
+    "message": "$PERSONAL_ITEMS_COUNT$ overføres permanent til $ORG$. Man vil ikke længere eje disse emner.",
+    "placeholders": {
+      "personal_items_count": {
+        "content": "$1",
+        "example": "2 items"
+      },
+      "org": {
+        "content": "$2",
+        "example": "Organization name"
+      }
+    }
   }
 }

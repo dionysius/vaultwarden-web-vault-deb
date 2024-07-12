@@ -854,8 +854,8 @@
   "emailAddress": {
     "message": "Adres e-mail"
   },
-  "yourVaultIsLocked": {
-    "message": "Sejf jest zablokowany. Wpisz hasło główne, aby kontynuować."
+  "yourVaultIsLockedV2": {
+    "message": "Twój sejf jest zablokowany."
   },
   "uuid": {
     "message": "UUID"
@@ -1060,7 +1060,7 @@
     "message": "Czy na pewno chcesz kontynuować?"
   },
   "moveSelectedItemsDesc": {
-    "message": "Wybierz folder do którego chcesz przenieść zaznaczone elementy.",
+    "message": "Choose a folder that you would like to add the $COUNT$ selected item(s) to.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1690,6 +1690,9 @@
   },
   "twoStepAuthenticatorScanCodeV2": {
     "message": "Zeskanuj poniższy kod QR za pomocą aplikacji uwierzytelniającej lub wprowadź klucz."
+  },
+  "twoStepAuthenticatorQRCanvasError": {
+    "message": "Nie można wyczytać kodu QR. Spróbuj ponownie lub użyj poniższego klucza."
   },
   "key": {
     "message": "Klucz"
@@ -3398,6 +3401,9 @@
   },
   "emailVerified": {
     "message": "Adres e-mail został zweryfikowany"
+  },
+  "emailVerifiedV2": {
+    "message": "E-mail zweryfikowany"
   },
   "emailVerifiedFailed": {
     "message": "Nie możemy zweryfikować Twojego adresu e-mail. Spróbuj ponownie wysłać wiadomość weryfikacyjną."
@@ -7877,7 +7883,7 @@
     "message": "Przypisz do tych kolekcji"
   },
   "bulkCollectionAssignmentDialogDescription": {
-    "message": "Wybierz kolekcje, z którymi elementy będą udostępniane. Gdy element zostanie zaktualizowany w jednej kolekcji, zostanie to odzwierciedlone we wszystkich kolekcjach. Tylko członkowie organizacji z dostępem do tych kolekcji będą mogli zobaczyć te elementy."
+    "message": "Only organization members with access to these collections will be able to see the items."
   },
   "selectCollectionsToAssign": {
     "message": "Wybierz kolekcje do przypisania"
@@ -8439,6 +8445,9 @@
   "memberAccessReportDesc": {
     "message": "Upewnij się, że członkowie mają dostęp do odpowiednich danych uwierzytelniających, a ich konta są bezpieczne. Użyj tego raportu, aby uzyskać dostęp do CSV z dostępem użytkownika i konfiguracją konta."
   },
+  "memberAccessReportPageDesc": {
+    "message": "Dostęp członków organizacji audytowej do wszystkich grup, kolekcji i elementów kolekcji. Eksport CSV zapewnia szczegółowy podział na członków, w tym informacje o uprawnieniach do zbierania i konfiguracjach kont."
+  },
   "higherKDFIterations": {
     "message": "Wyższe wartości iteracji KDF mogą pomóc chronić Twoje hasło główne przed złamaniem przez atakującego."
   },
@@ -8524,5 +8533,47 @@
   "noInvoicesToList": {
     "message": "Brak faktur do wyświetlenia",
     "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
+  },
+  "providerClientVaultPrivacyNotification": {
+    "message": "Uwaga: później w tym miesiącu poprawiona zostanie prywatność sejfu klienta, a członkowie dostawcy nie będą już mieli bezpośredniego dostępu do elementów sejfu klienta. Na pytania,",
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact Bitwarden support'."
+  },
+  "contactBitwardenSupport": {
+    "message": "skontaktuj się z pomocą techniczną Bitwarden.",
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact Bitwarden support'. 'Bitwarden' should not be translated"
+  },
+  "sponsored": {
+    "message": "Sponsorowane"
+  },
+  "licenseAndBillingManagementDesc": {
+    "message": "Po dokonaniu aktualizacji na serwerze w chmurze Bitwarden, prześlij plik licencyjny, aby zastosować najnowsze zmiany."
+  },
+  "addToFolder": {
+    "message": "Dodaj do folderu"
+  },
+  "selectFolder": {
+    "message": "Wybierz folder"
+  },
+  "personalItemsTransferWarning": {
+    "message": "$PERSONAL_ITEMS_COUNT$ zostanie trwale przeniesiony do wybranej organizacji. Nie będziesz już posiadać tych elementów.",
+    "placeholders": {
+      "personal_items_count": {
+        "content": "$1",
+        "example": "2 items"
+      }
+    }
+  },
+  "personalItemsWithOrgTransferWarning": {
+    "message": "$PERSONAL_ITEMS_COUNT$ zostanie trwale przeniesiony do $ORG$. Nie będziesz już właścicielem tych elementów.",
+    "placeholders": {
+      "personal_items_count": {
+        "content": "$1",
+        "example": "2 items"
+      },
+      "org": {
+        "content": "$2",
+        "example": "Organization name"
+      }
+    }
   }
 }

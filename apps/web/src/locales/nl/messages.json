@@ -854,8 +854,8 @@
   "emailAddress": {
     "message": "E-mailadres"
   },
-  "yourVaultIsLocked": {
-    "message": "Je kluis is vergrendeld. Voer je hoofdwachtwoord in om door te gaan."
+  "yourVaultIsLockedV2": {
+    "message": "Je kluis is vergrendeld."
   },
   "uuid": {
     "message": "UUID"
@@ -1060,7 +1060,7 @@
     "message": "Weet je zeker dat je wilt doorgaan?"
   },
   "moveSelectedItemsDesc": {
-    "message": "Kies een map waar je de $COUNT$ geselecteerde item(s) heen wilt verplaatsen.",
+    "message": "Choose a folder that you would like to add the $COUNT$ selected item(s) to.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -1690,6 +1690,9 @@
   },
   "twoStepAuthenticatorScanCodeV2": {
     "message": "Scan de onderstaande QR-code met je authenticator-app of voer de sleutel in."
+  },
+  "twoStepAuthenticatorQRCanvasError": {
+    "message": "Kan de QR-code niet laden. Probeer het opnieuw of gebruik de onderstaande sleutel."
   },
   "key": {
     "message": "Sleutel"
@@ -3398,6 +3401,9 @@
   },
   "emailVerified": {
     "message": "Je e-mailadres is geverifieerd."
+  },
+  "emailVerifiedV2": {
+    "message": "E-mailadres geverifieerd"
   },
   "emailVerifiedFailed": {
     "message": "Je e-mailadres kon niet worden geverifieerd. Probeer een nieuwe e-mail met verificatielink te versturen."
@@ -7877,7 +7883,7 @@
     "message": "Aan deze collecties toewijzen"
   },
   "bulkCollectionAssignmentDialogDescription": {
-    "message": "Selecteer de collecies om de items mee te delen. Zodra een item in een collectie is bijgewerkt, werkt dat door in alle collecties. Alleen organisatieleden met toegang tot deze collecties kunnen de items zien."
+    "message": "Only organization members with access to these collections will be able to see the items."
   },
   "selectCollectionsToAssign": {
     "message": "Collecties voor toewijzen selecteren"
@@ -8439,6 +8445,9 @@
   "memberAccessReportDesc": {
     "message": "Zorg ervoor dat leden toegang hebben tot de juiste inloggegevens en dat hun accounts veilig zijn. Dit CSV-rapport geeft inzicht in ledentoegang en accountconfiguraties."
   },
+  "memberAccessReportPageDesc": {
+    "message": "Audit de toegang van een organisatielid tot groepen, verzamelingen en verzamelen van items. De CSV-export biedt een gedetailleerde verdeling per lid, inclusief informatie over verzamelrechten en accountconfiguraties."
+  },
   "higherKDFIterations": {
     "message": "Hogere KDF-iteraties beschermen je hoofdwachtwoord tegen brute-foce-aanvallen."
   },
@@ -8524,5 +8533,47 @@
   "noInvoicesToList": {
     "message": "Er zijn geen facturen om weer te geven",
     "description": "A paragraph on the Billing History page of the Provider Portal letting users know they can download a CSV report for their invoices that does not include prorations."
+  },
+  "providerClientVaultPrivacyNotification": {
+    "message": "Let op: Later deze maand wordt de privacy van kluis verbeterd en hebben leden geen directe toegang meer tot kluisitems van de client. Voor vragen,",
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact Bitwarden support'."
+  },
+  "contactBitwardenSupport": {
+    "message": "contact op Bitwarden support.",
+    "description": "This will be displayed as part of a larger sentence. The whole sentence reads: 'Notice: Later this month, client vault privacy will be improved and provider members will no longer have direct access to client vault items. For questions, please contact Bitwarden support'. 'Bitwarden' should not be translated"
+  },
+  "sponsored": {
+    "message": "Gesponsord"
+  },
+  "licenseAndBillingManagementDesc": {
+    "message": "Na het bijwerken in de Bitwarden-cloud-server, upload je je licentiebestand voor het toepassen van de meest recente wijzigingen."
+  },
+  "addToFolder": {
+    "message": "Aan map toevoegen"
+  },
+  "selectFolder": {
+    "message": "Map selecteren"
+  },
+  "personalItemsTransferWarning": {
+    "message": "$PERSONAL_ITEMS_COUNT$ worden permanent overgedragen aan de geselecteerde organisatie. Je bent niet langer de eigenaar van deze items.",
+    "placeholders": {
+      "personal_items_count": {
+        "content": "$1",
+        "example": "2 items"
+      }
+    }
+  },
+  "personalItemsWithOrgTransferWarning": {
+    "message": "$PERSONAL_ITEMS_COUNT$ wordt permanent overgedragen aan $ORG$. Je bent niet langer de eigenaar van deze items.",
+    "placeholders": {
+      "personal_items_count": {
+        "content": "$1",
+        "example": "2 items"
+      },
+      "org": {
+        "content": "$2",
+        "example": "Organization name"
+      }
+    }
   }
 }
