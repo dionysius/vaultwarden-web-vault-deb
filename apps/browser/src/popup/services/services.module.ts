@@ -20,18 +20,13 @@ import { JslibServicesModule } from "@bitwarden/angular/services/jslib-services.
 import { PinServiceAbstraction } from "@bitwarden/auth/common";
 import { EventCollectionService as EventCollectionServiceAbstraction } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { NotificationsService } from "@bitwarden/common/abstractions/notifications.service";
-import { VaultTimeoutSettingsService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout-settings.service";
 import { VaultTimeoutService } from "@bitwarden/common/abstractions/vault-timeout/vault-timeout.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { AccountService as AccountServiceAbstraction } from "@bitwarden/common/auth/abstractions/account.service";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
-import { DeviceTrustServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust.service.abstraction";
-import { DevicesServiceAbstraction } from "@bitwarden/common/auth/abstractions/devices/devices.service.abstraction";
 import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
-import { KeyConnectorService } from "@bitwarden/common/auth/abstractions/key-connector.service";
 import { InternalMasterPasswordServiceAbstraction } from "@bitwarden/common/auth/abstractions/master-password.service.abstraction";
-import { SsoLoginServiceAbstraction } from "@bitwarden/common/auth/abstractions/sso-login.service.abstraction";
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import {
   AutofillSettingsService,
@@ -169,11 +164,6 @@ const safeProviders: SafeProvider[] = [
     deps: [AuthService, Router],
   }),
   safeProvider({
-    provide: SsoLoginServiceAbstraction,
-    useFactory: getBgService<SsoLoginServiceAbstraction>("ssoLoginService"),
-    deps: [],
-  }),
-  safeProvider({
     provide: CryptoFunctionService,
     useFactory: () => new WebCryptoFunctionService(window),
     deps: [],
@@ -256,16 +246,6 @@ const safeProviders: SafeProvider[] = [
     deps: [CryptoFunctionService, LogService],
   }),
   safeProvider({
-    provide: DeviceTrustServiceAbstraction,
-    useFactory: getBgService<DeviceTrustServiceAbstraction>("deviceTrustService"),
-    deps: [],
-  }),
-  safeProvider({
-    provide: DevicesServiceAbstraction,
-    useFactory: getBgService<DevicesServiceAbstraction>("devicesService"),
-    deps: [],
-  }),
-  safeProvider({
     provide: OffscreenDocumentService,
     useClass: DefaultOffscreenDocumentService,
     deps: [LogService],
@@ -337,21 +317,6 @@ const safeProviders: SafeProvider[] = [
     provide: ScriptInjectorService,
     useClass: BrowserScriptInjectorService,
     deps: [PlatformUtilsService, LogService],
-  }),
-  safeProvider({
-    provide: KeyConnectorService,
-    useFactory: getBgService<KeyConnectorService>("keyConnectorService"),
-    deps: [],
-  }),
-  safeProvider({
-    provide: UserVerificationService,
-    useFactory: getBgService<UserVerificationService>("userVerificationService"),
-    deps: [],
-  }),
-  safeProvider({
-    provide: VaultTimeoutSettingsService,
-    useFactory: getBgService<VaultTimeoutSettingsService>("vaultTimeoutSettingsService"),
-    deps: [],
   }),
   safeProvider({
     provide: VaultTimeoutService,
