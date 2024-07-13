@@ -315,17 +315,6 @@ export class TaxInfoComponent {
   ];
   taxRates: TaxRateResponse[];
 
-  // private pristine: TaxInfoView = {
-  //   taxId: null,
-  //   line1: null,
-  //   line2: null,
-  //   city: null,
-  //   state: null,
-  //   postalCode: null,
-  //   country: "US",
-  //   includeTaxId: false,
-  // };
-
   constructor(
     private apiService: ApiService,
     private route: ActivatedRoute,
@@ -435,8 +424,6 @@ export class TaxInfoComponent {
         try {
           const taxInfo = await this.apiService.getTaxInfo();
           if (taxInfo) {
-            // this.taxInfo.postalCode = taxInfo.postalCode;
-            // this.taxInfo.country = taxInfo.country || "US";
             this.postalCode = taxInfo.postalCode;
             this.country = taxInfo.country || "US";
           }
@@ -451,8 +438,6 @@ export class TaxInfoComponent {
         this.taxFormGroup.get("postalCode").updateValueAndValidity();
       }
 
-      //this.pristine = Object.assign({}, this.taxInfo);
-      // If not the default (US) then trigger onCountryChanged
       if (this.country !== "US") {
         this.onCountryChanged.emit();
       }
@@ -487,7 +472,6 @@ export class TaxInfoComponent {
   get taxRate() {
     if (this.taxRates != null) {
       const localTaxRate = this.taxRates.find(
-        //(x) => x.country === this.taxInfo.country && x.postalCode === this.taxInfo.postalCode,
         (x) => x.country === this.country && x.postalCode === this.postalCode,
       );
       return localTaxRate?.rate ?? null;
@@ -577,16 +561,6 @@ export class TaxInfoComponent {
   countrySupportsTax(countryCode: string) {
     return this.taxSupportedCountryCodes.includes(countryCode);
   }
-
-  // private hasChanged(): boolean {
-  //   for (const key in this.taxInfo) {
-  //     // eslint-disable-next-line
-  //     if (this.pristine.hasOwnProperty(key) && this.pristine[key] !== this.taxInfo[key]) {
-  //       return true;
-  //     }
-  //   }
-  //   return false;
-  // }
 
   private taxSupportedCountryCodes: string[] = [
     "CN",

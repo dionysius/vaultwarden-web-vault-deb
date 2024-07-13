@@ -112,7 +112,7 @@ export class TrialBillingStepComponent implements OnInit {
   }
 
   protected changedCountry() {
-    this.paymentComponent.hideBank = this.taxInfoComponent.taxInfo.country !== "US";
+    this.paymentComponent.hideBank = this.taxInfoComponent.taxFormGroup.value.country !== "US";
     if (
       this.paymentComponent.hideBank &&
       this.paymentComponent.method === PaymentMethodType.BankAccount
@@ -206,13 +206,13 @@ export class TrialBillingStepComponent implements OnInit {
 
   private getBillingInformationFromTaxInfoComponent(): BillingInformation {
     return {
-      postalCode: this.taxInfoComponent.taxInfo.postalCode,
-      country: this.taxInfoComponent.taxInfo.country,
-      taxId: this.taxInfoComponent.taxInfo.taxId,
-      addressLine1: this.taxInfoComponent.taxInfo.line1,
-      addressLine2: this.taxInfoComponent.taxInfo.line2,
-      city: this.taxInfoComponent.taxInfo.city,
-      state: this.taxInfoComponent.taxInfo.state,
+      postalCode: this.taxInfoComponent.taxFormGroup?.value.postalCode,
+      country: this.taxInfoComponent.taxFormGroup?.value.country,
+      taxId: this.taxInfoComponent.taxFormGroup?.value.taxId,
+      addressLine1: this.taxInfoComponent.taxFormGroup?.value.line1,
+      addressLine2: this.taxInfoComponent.taxFormGroup?.value.line2,
+      city: this.taxInfoComponent.taxFormGroup?.value.city,
+      state: this.taxInfoComponent.taxFormGroup?.value.state,
     };
   }
 

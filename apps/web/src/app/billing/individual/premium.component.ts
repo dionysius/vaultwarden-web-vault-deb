@@ -108,8 +108,8 @@ export class PremiumComponent implements OnInit {
             fd.append("paymentToken", result[0]);
           }
           fd.append("additionalStorageGb", (this.additionalStorage || 0).toString());
-          fd.append("country", this.taxInfoComponent.taxInfo.country);
-          fd.append("postalCode", this.taxInfoComponent.taxInfo.postalCode);
+          fd.append("country", this.taxInfoComponent?.taxFormGroup?.value.country);
+          fd.append("postalCode", this.taxInfoComponent?.taxFormGroup?.value.postalCode);
           return this.apiService.postPremium(fd);
         })
         .then((paymentResponse) => {
