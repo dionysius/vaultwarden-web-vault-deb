@@ -80,7 +80,7 @@ export class AccountSwitcherService {
 
         if (!hasMaxAccounts) {
           options.push({
-            name: "Add account",
+            name: "addAccount",
             id: this.SPECIAL_ADD_ACCOUNT_ID,
             isActive: false,
           });
