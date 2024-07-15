@@ -9,6 +9,7 @@ import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.servi
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 import { CipherRepromptType } from "@bitwarden/common/vault/enums/cipher-reprompt-type";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
+import { TableDataSource } from "@bitwarden/components";
 import { PasswordRepromptService } from "@bitwarden/vault";
 
 import { AddEditComponent } from "../../../vault/individual-vault/add-edit.component";
@@ -24,6 +25,7 @@ export class CipherReportComponent implements OnDestroy {
   hasLoaded = false;
   ciphers: CipherView[] = [];
   allCiphers: CipherView[] = [];
+  dataSource = new TableDataSource<CipherView>();
   organization: Organization;
   organizations: Organization[];
   organizations$: Observable<Organization[]>;
@@ -104,6 +106,7 @@ export class CipherReportComponent implements OnDestroy {
     } else {
       this.ciphers = this.ciphers.filter((c: any) => c.orgFilterStatus === status);
     }
+    this.dataSource.data = this.ciphers;
   }
 
   async load() {
@@ -192,6 +195,8 @@ export class CipherReportComponent implements OnDestroy {
       }
       return ciph;
     });
+
+    this.dataSource.data = this.ciphers;
 
     if (this.filterStatus.length > 2) {
       this.showFilterToggle = true;
