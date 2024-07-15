@@ -19,12 +19,13 @@
       </div>
       <input
         #fileSelector
-        hidden
         bitInput
         type="file"
         formControlName="file"
         (change)="setSelectedFile($event)"
         accept="application/JSON"
+        hidden
+        class="tw-hidden"
       />
       <bit-hint>{{ "licenseFileDesc" | i18n: "bitwarden_organization_license.json" }}</bit-hint>
     </bit-form-field>

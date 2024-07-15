@@ -82,6 +82,7 @@
         formControlName="file"
         (change)="setSelectedFile($event)"
         hidden
+        class="tw-hidden"
       />
       <bit-hint>{{ "licenseFileDesc" | i18n: "bitwarden_premium_license.json" }}</bit-hint>
     </bit-form-field>
