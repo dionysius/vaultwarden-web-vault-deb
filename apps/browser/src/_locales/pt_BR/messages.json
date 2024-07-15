@@ -3358,20 +3358,6 @@
   "passkeyRemoved": {
     "message": "Chave de acesso removida"
   },
-  "unassignedItemsBannerNotice": {
-    "message": "Aviso: Itens da organização não atribuídos não estão mais visíveis na visualização Todos os Cofres e só são acessíveis por meio do painel de administração."
-  },
-  "unassignedItemsBannerSelfHostNotice": {
-    "message": "Aviso: Em 16 de maio, 2024, itens da organização não serão mais visíveis na visualização Todos os Cofres e só serão acessíveis por meio do painel de administração."
-  },
-  "unassignedItemsBannerCTAPartOne": {
-    "message": "Atribua estes itens a uma coleção da",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
-  "unassignedItemsBannerCTAPartTwo": {
-    "message": "para torná-los visíveis.",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
   "autofillSuggestions": {
     "message": "Sugestões de autopreenchimento"
   },
@@ -3630,5 +3616,8 @@
         "example": "Visa"
       }
     }
+  },
+  "addAccount": {
+    "message": "Add account"
   }
 }

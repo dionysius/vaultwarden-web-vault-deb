@@ -572,13 +572,13 @@
     "message": "Ocorreu um erro"
   },
   "emailRequired": {
-    "message": "É necessário o endereço de e-mail."
+    "message": "O endereço de e-mail é obrigatório."
   },
   "invalidEmail": {
     "message": "Endereço de e-mail inválido."
   },
   "masterPasswordRequired": {
-    "message": "É necessária a palavra-passe mestra."
+    "message": "A palavra-passe mestra é obrigatória."
   },
   "confirmMasterPasswordRequired": {
     "message": "É necessário reescrever a palavra-passe mestra."
@@ -661,7 +661,7 @@
     "message": "Ocorreu um erro inesperado."
   },
   "nameRequired": {
-    "message": "É necessário o nome."
+    "message": "O nome é obrigatório."
   },
   "addedFolder": {
     "message": "Pasta adicionada"
@@ -2763,10 +2763,10 @@
     "message": "Dispositivo de confiança"
   },
   "inputRequired": {
-    "message": "Campo necessário."
+    "message": "Campo obrigatório."
   },
   "required": {
-    "message": "necessário"
+    "message": "obrigatório"
   },
   "search": {
     "message": "Procurar"
@@ -3358,20 +3358,6 @@
   "passkeyRemoved": {
     "message": "Chave de acesso removida"
   },
-  "unassignedItemsBannerNotice": {
-    "message": "Aviso: Os itens da organização não atribuídos já não são visíveis na vista Todos os cofres e só são acessíveis através da Consola de administração."
-  },
-  "unassignedItemsBannerSelfHostNotice": {
-    "message": "Aviso: A 16 de maio de 2024, os itens da organização não atribuídos deixarão de estar visíveis na vista Todos os cofres e só estarão acessíveis através da consola de administração."
-  },
-  "unassignedItemsBannerCTAPartOne": {
-    "message": "Atribua estes itens a uma coleção a partir da",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
-  "unassignedItemsBannerCTAPartTwo": {
-    "message": "para os tornar visíveis.",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
   "autofillSuggestions": {
     "message": "Sugestões de preenchimento automático"
   },
@@ -3630,5 +3616,8 @@
         "example": "Visa"
       }
     }
+  },
+  "addAccount": {
+    "message": "Add account"
   }
 }

@@ -1484,7 +1484,7 @@
     }
   },
   "viewItemHeader": {
-    "message": "View $TYPE$",
+    "message": "Видети $TYPE$",
     "placeholders": {
       "type": {
         "content": "$1",
@@ -3358,20 +3358,6 @@
   "passkeyRemoved": {
     "message": "Приступачни кључ је уклоњен"
   },
-  "unassignedItemsBannerNotice": {
-    "message": "Напомена: Недодељене ставке организације више нису видљиве у приказу Сви сефови и доступне су само преко Админ конзоле."
-  },
-  "unassignedItemsBannerSelfHostNotice": {
-    "message": "Напомена: од 16 Маја 2024м недодељене ставке организације више нису видљиве у приказу Сви сефови и доступне су само преко Админ конзоле."
-  },
-  "unassignedItemsBannerCTAPartOne": {
-    "message": "Assign these items to a collection from the",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
-  "unassignedItemsBannerCTAPartTwo": {
-    "message": "to make them visible.",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
   "autofillSuggestions": {
     "message": "Предлози за ауто-попуњавање"
   },
@@ -3545,22 +3531,22 @@
     "message": "Није могуће приступити ставкама у деактивираним организацијама. Обратите се власнику ваше организације за помоћ."
   },
   "additionalInformation": {
-    "message": "Additional information"
+    "message": "Додатне информације"
   },
   "itemHistory": {
-    "message": "Item history"
+    "message": "Историја предмета"
   },
   "lastEdited": {
-    "message": "Last edited"
+    "message": "Последња измена"
   },
   "ownerYou": {
-    "message": "Owner: You"
+    "message": "Власник: Ви"
   },
   "linked": {
-    "message": "Linked"
+    "message": "Повезано"
   },
   "copySuccessful": {
-    "message": "Copy Successful"
+    "message": "Копија успешна"
   },
   "upload": {
     "message": "Отпреми"
@@ -3602,16 +3588,16 @@
     "message": "Филтери"
   },
   "personalDetails": {
-    "message": "Personal details"
+    "message": "Личне информације"
   },
   "identification": {
-    "message": "Identification"
+    "message": "Идентификација"
   },
   "contactInfo": {
-    "message": "Contact info"
+    "message": "Контакт инфо"
   },
   "downloadAttachment": {
-    "message": "Download - $ITEMNAME$",
+    "message": "Преузми - $ITEMNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -3630,5 +3616,8 @@
         "example": "Visa"
       }
     }
+  },
+  "addAccount": {
+    "message": "Add account"
   }
 }

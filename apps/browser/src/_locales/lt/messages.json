@@ -3358,20 +3358,6 @@
   "passkeyRemoved": {
     "message": "Pašalintas slaptaraktis"
   },
-  "unassignedItemsBannerNotice": {
-    "message": "Pranešimas: nepriskirti organizacijos elementai nebėra matomi peržiūros rodinyje Visi saugyklos ir yra pasiekiami tik per Administratoriaus konsolę."
-  },
-  "unassignedItemsBannerSelfHostNotice": {
-    "message": "Pranešimas: 2024 m. gegužės 16 d. nepriskirti organizacijos elementai nebėra matomi peržiūros rodinyje Visi saugyklos ir yra pasiekiami tik per Administratoriaus konsolę."
-  },
-  "unassignedItemsBannerCTAPartOne": {
-    "message": "Priskirkite šiuos elementus kolekcijai iš",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
-  "unassignedItemsBannerCTAPartTwo": {
-    "message": ", kad jie būtų matomi.",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
   "autofillSuggestions": {
     "message": "Auto-fill suggestions"
   },
@@ -3630,5 +3616,8 @@
         "example": "Visa"
       }
     }
+  },
+  "addAccount": {
+    "message": "Add account"
   }
 }

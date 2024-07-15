@@ -3358,20 +3358,6 @@
   "passkeyRemoved": {
     "message": "Parol silindi"
   },
-  "unassignedItemsBannerNotice": {
-    "message": "Bildiriş: Təyin edilməyən təşkilat elementləri artıq Bütün Anbarlar görünüşündə görünən olmayacaq və yalnız Admin Konsolu vasitəsilə əlçatan olacaq."
-  },
-  "unassignedItemsBannerSelfHostNotice": {
-    "message": "Bildiriş: 16 May 2024-cü il tarixindən etibarən, təyin edilməyən təşkilat elementləri Bütün Anbarlar görünüşündə görünən olmayacaq və yalnız Admin Konsolu vasitəsilə əlçatan olacaq."
-  },
-  "unassignedItemsBannerCTAPartOne": {
-    "message": "Bu elementləri görünən etmək üçün",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
-  "unassignedItemsBannerCTAPartTwo": {
-    "message": "bir kolleksiyaya təyin edin.",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
   "autofillSuggestions": {
     "message": "Avto-doldurma təklifləri"
   },
@@ -3602,13 +3588,13 @@
     "message": "Filtrlər"
   },
   "personalDetails": {
-    "message": "Personal details"
+    "message": "Şəxsi detallar"
   },
   "identification": {
-    "message": "Identification"
+    "message": "İdentifikasiya"
   },
   "contactInfo": {
-    "message": "Contact info"
+    "message": "Əlaqə məlumatı"
   },
   "downloadAttachment": {
     "message": "$ITEMNAME$ - endir",
@@ -3630,5 +3616,8 @@
         "example": "Visa"
       }
     }
+  },
+  "addAccount": {
+    "message": "Add account"
   }
 }

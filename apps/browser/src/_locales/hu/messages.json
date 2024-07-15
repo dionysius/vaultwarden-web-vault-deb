@@ -3358,20 +3358,6 @@
   "passkeyRemoved": {
     "message": "A jelszó eltávolításra került."
   },
-  "unassignedItemsBannerNotice": {
-    "message": "Megjegyzés: A nem hozzárendelt szervezeti elemek már nem láthatók az Összes széf nézetben a különböző eszközökön és csak az Adminisztrátori konzolon keresztül érhetők el."
-  },
-  "unassignedItemsBannerSelfHostNotice": {
-    "message": "Megjegyzés: 2024. május 16-tól a nem hozzárendelt szervezeti elemek többé nem lesznek láthatók az Összes széf nézetben a különböző eszközökön és csak az Adminisztrátori konzolon keresztül lesznek elérhetők."
-  },
-  "unassignedItemsBannerCTAPartOne": {
-    "message": "Rendeljük hozzá ezeket az elemeket a gyűjteményhez",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
-  "unassignedItemsBannerCTAPartTwo": {
-    "message": "a láthatósághoz.",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
   "autofillSuggestions": {
     "message": "Automatikus kitöltés javaslatok"
   },
@@ -3630,5 +3616,8 @@
         "example": "Visa"
       }
     }
+  },
+  "addAccount": {
+    "message": "Add account"
   }
 }

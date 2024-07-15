@@ -3358,20 +3358,6 @@
   "passkeyRemoved": {
     "message": "Přístupový klíč byl odebrán"
   },
-  "unassignedItemsBannerNotice": {
-    "message": "Upozornění: Nepřiřazené položky organizace již nejsou viditelné ve vašem zobrazení všech trezorů a jsou nyní přístupné pouze v konzoli správce."
-  },
-  "unassignedItemsBannerSelfHostNotice": {
-    "message": "Upozornění: 16. květba 2024 již nebudou nepřiřazené položky organizace viditelné ve vašem zobrazení všech trezorů a budou přístupné pouze v konzoli správce."
-  },
-  "unassignedItemsBannerCTAPartOne": {
-    "message": "Přiřadit tyto položky ke kolekci z",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
-  "unassignedItemsBannerCTAPartTwo": {
-    "message": "aby byly viditelné.",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
   "autofillSuggestions": {
     "message": "Návrhy automatického vyplňování"
   },
@@ -3630,5 +3616,8 @@
         "example": "Visa"
       }
     }
+  },
+  "addAccount": {
+    "message": "Add account"
   }
 }

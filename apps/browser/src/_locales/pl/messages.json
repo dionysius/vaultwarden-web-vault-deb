@@ -3358,20 +3358,6 @@
   "passkeyRemoved": {
     "message": "Passkey został usunięty"
   },
-  "unassignedItemsBannerNotice": {
-    "message": "Uwaga: Nieprzypisane elementy organizacji nie są już widoczne w widoku Wszystkie sejfy i są teraz dostępne tylko przez Konsolę Administracyjną."
-  },
-  "unassignedItemsBannerSelfHostNotice": {
-    "message": "Uwaga: 16 maja 2024 r. nieprzypisana elementy w organizacji nie będą już widoczne w widoku Wszystkie sejfy i będą dostępne tylko przez Konsolę Administracyjną."
-  },
-  "unassignedItemsBannerCTAPartOne": {
-    "message": "Przypisz te elementy do kolekcji z",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
-  "unassignedItemsBannerCTAPartTwo": {
-    "message": ", aby były widoczne.",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
   "autofillSuggestions": {
     "message": "Sugestie autouzupełnienia"
   },
@@ -3630,5 +3616,8 @@
         "example": "Visa"
       }
     }
+  },
+  "addAccount": {
+    "message": "Add account"
   }
 }

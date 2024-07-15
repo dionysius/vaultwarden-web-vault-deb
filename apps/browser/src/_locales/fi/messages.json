@@ -557,16 +557,16 @@
     "message": "Suojaus"
   },
   "confirmMasterPassword": {
-    "message": "Confirm master password"
+    "message": "Vahvista pääsalasana"
   },
   "masterPassword": {
-    "message": "Master password"
+    "message": "Pääsalasana"
   },
   "masterPassImportant": {
-    "message": "Your master password cannot be recovered if you forget it!"
+    "message": "Pääsalasanasi palauttaminen ei ole mahdollista, jos unohdat sen!"
   },
   "masterPassHintLabel": {
-    "message": "Master password hint"
+    "message": "Pääsalasanan vihje"
   },
   "errorOccurred": {
     "message": "Tapahtui virhe"
@@ -1484,7 +1484,7 @@
     }
   },
   "viewItemHeader": {
-    "message": "View $TYPE$",
+    "message": "Näytä $TYPE$",
     "placeholders": {
       "type": {
         "content": "$1",
@@ -2186,7 +2186,7 @@
     "message": "Sähköpostiosoite on vahvistettava"
   },
   "emailVerifiedV2": {
-    "message": "Email verified"
+    "message": "Sähköpostiosoite on vahvistettu"
   },
   "emailVerificationRequiredDesc": {
     "message": "Sinun on vahvistettava sähköpostiosoitteesi käyttääksesi ominaisuutta. Voit vahvistaa osoitteesi verkkoholvissa."
@@ -3358,20 +3358,6 @@
   "passkeyRemoved": {
     "message": "Suojausavain poistettiin"
   },
-  "unassignedItemsBannerNotice": {
-    "message": "Huomioi: Määrittämättömät organisaatiokohteet eivät enää näy \"Kaikki holvit\" -näkymässä, vaan ne ovat käytettävissä vain Hallintapaneelista."
-  },
-  "unassignedItemsBannerSelfHostNotice": {
-    "message": "Huomioi: Alkaen 16. toukokuuta 2024, määrittämättömät organisaatiokohteet eivät enää näy \"Kaikki holvit\" -näkymässä, vaan ne ovat käytettävissä vain Hallintapaneelista."
-  },
-  "unassignedItemsBannerCTAPartOne": {
-    "message": "Määritä nämä kohteet kokoelmaan",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
-  "unassignedItemsBannerCTAPartTwo": {
-    "message": ", jotta ne näkyvät.",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
   "autofillSuggestions": {
     "message": "Automaattitäytä ehdotukset"
   },
@@ -3545,22 +3531,22 @@
     "message": "Käytöstä poistettujen organisaatioiden kohteet eivät ole käytettävissä. Ole yhteydessä organisaation omistajaan saadaksesi apua."
   },
   "additionalInformation": {
-    "message": "Additional information"
+    "message": "Lisätietoja"
   },
   "itemHistory": {
-    "message": "Item history"
+    "message": "Kohdehistoria"
   },
   "lastEdited": {
-    "message": "Last edited"
+    "message": "Viimeksi muokattu"
   },
   "ownerYou": {
-    "message": "Owner: You"
+    "message": "Omistaja: Sinä"
   },
   "linked": {
-    "message": "Linked"
+    "message": "Linkitetty"
   },
   "copySuccessful": {
-    "message": "Copy Successful"
+    "message": "Kopiointi onnistui"
   },
   "upload": {
     "message": "Lähetä"
@@ -3602,16 +3588,16 @@
     "message": "Suodattimet"
   },
   "personalDetails": {
-    "message": "Personal details"
+    "message": "Henkilökohtaiset tiedot"
   },
   "identification": {
-    "message": "Identification"
+    "message": "Tunnistautuminen"
   },
   "contactInfo": {
-    "message": "Contact info"
+    "message": "Yhteystiedot"
   },
   "downloadAttachment": {
-    "message": "Download - $ITEMNAME$",
+    "message": "Lataa - $ITEMNAME$",
     "placeholders": {
       "itemname": {
         "content": "$1",
@@ -3630,5 +3616,8 @@
         "example": "Visa"
       }
     }
+  },
+  "addAccount": {
+    "message": "Add account"
   }
 }
