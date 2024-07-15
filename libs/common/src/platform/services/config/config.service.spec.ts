@@ -14,6 +14,8 @@ import {
   mockAccountServiceWith,
 } from "../../../../spec";
 import { subscribeTo } from "../../../../spec/observable-tracker";
+import { AuthService } from "../../../auth/abstractions/auth.service";
+import { AuthenticationStatus } from "../../../auth/enums/authentication-status";
 import { UserId } from "../../../types/guid";
 import { ConfigApiServiceAbstraction } from "../../abstractions/config/config-api.service.abstraction";
 import { ServerConfig } from "../../abstractions/config/server-config";
@@ -39,6 +41,9 @@ describe("ConfigService", () => {
   const configApiService = mock<ConfigApiServiceAbstraction>();
   const environmentService = mock<EnvironmentService>();
   const logService = mock<LogService>();
+  const authService = mock<AuthService>({
+    authStatusFor$: (userId) => of(AuthenticationStatus.Unlocked),
+  });
   let stateProvider: FakeStateProvider;
   let globalState: FakeGlobalState<Record<ApiUrl, ServerConfig>>;
   let userState: FakeSingleUserState<ServerConfig>;
@@ -71,6 +76,7 @@ describe("ConfigService", () => {
         environmentService,
         logService,
         stateProvider,
+        authService,
       );
     });
 
@@ -188,6 +194,30 @@ describe("ConfigService", () => {
     });
   });
 
+  it("gets global config when there is an locked active user", async () => {
+    await accountService.switchAccount(userId);
+    environmentService.environment$ = of(environmentFactory(activeApiUrl));
+
+    globalState.stateSubject.next({
+      [activeApiUrl]: serverConfigFactory(activeApiUrl + "global"),
+    });
+    userState.nextState(serverConfigFactory(userId));
+
+    const sut = new DefaultConfigService(
+      configApiService,
+      environmentService,
+      logService,
+      stateProvider,
+      mock<AuthService>({
+        authStatusFor$: () => of(AuthenticationStatus.Locked),
+      }),
+    );
+
+    const config = await firstValueFrom(sut.serverConfig$);
+
+    expect(config.gitHash).toEqual(activeApiUrl + "global");
+  });
+
   describe("environment change", () => {
     let sut: DefaultConfigService;
     let environmentSubject: Subject<Environment>;
@@ -205,6 +235,7 @@ describe("ConfigService", () => {
         environmentService,
         logService,
         stateProvider,
+        authService,
       );
     });
 

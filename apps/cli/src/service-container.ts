@@ -586,6 +586,7 @@ export class ServiceContainer {
       this.environmentService,
       this.logService,
       this.stateProvider,
+      this.authService,
     );
 
     this.cipherService = new CipherService(

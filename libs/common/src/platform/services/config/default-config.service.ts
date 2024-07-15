@@ -13,6 +13,8 @@ import {
 } from "rxjs";
 import { SemVer } from "semver";
 
+import { AuthService } from "../../../auth/abstractions/auth.service";
+import { AuthenticationStatus } from "../../../auth/enums/authentication-status";
 import {
   DefaultFeatureFlagValue,
   FeatureFlag,
@@ -60,16 +62,25 @@ export class DefaultConfigService implements ConfigService {
     private environmentService: EnvironmentService,
     private logService: LogService,
     private stateProvider: StateProvider,
+    private authService: AuthService,
   ) {
     const apiUrl$ = this.environmentService.environment$.pipe(
       map((environment) => environment.getApiUrl()),
     );
+    const userId$ = this.stateProvider.activeUserId$;
+    const authStatus$ = userId$.pipe(
+      switchMap((userId) => (userId == null ? of(null) : this.authService.authStatusFor$(userId))),
+    );
 
-    this.serverConfig$ = combineLatest([this.stateProvider.activeUserId$, apiUrl$]).pipe(
-      switchMap(([userId, apiUrl]) => {
-        const config$ =
-          userId == null ? this.globalConfigFor$(apiUrl) : this.userConfigFor$(userId);
-        return config$.pipe(map((config) => [config, userId, apiUrl] as const));
+    this.serverConfig$ = combineLatest([userId$, apiUrl$, authStatus$]).pipe(
+      switchMap(([userId, apiUrl, authStatus]) => {
+        if (userId == null || authStatus !== AuthenticationStatus.Unlocked) {
+          return this.globalConfigFor$(apiUrl).pipe(
+            map((config) => [config, null, apiUrl] as const),
+          );
+        }
+
+        return this.userConfigFor$(userId).pipe(map((config) => [config, userId, apiUrl] as const));
       }),
       tap(async (rec) => {
         const [existingConfig, userId, apiUrl] = rec;
