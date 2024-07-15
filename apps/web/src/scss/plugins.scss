@@ -108,6 +108,13 @@
   border: none;
 }
 
+// hide duplicate paypal iframe
+.braintree-sheet__content--button
+  .braintree-sheet__button--paypal
+  iframe.zoid-prerender-frame.zoid-invisible {
+  display: none !important;
+}
+
 [data-braintree-id="upper-container"]::before {
   @include themify($themes) {
     background-color: themed("backgroundColor");
