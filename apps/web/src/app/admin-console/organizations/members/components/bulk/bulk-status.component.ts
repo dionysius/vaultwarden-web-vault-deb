@@ -33,7 +33,7 @@ type BulkStatusDialogData = {
   users: Array<OrganizationUserView | ProviderUserUserDetailsResponse>;
   filteredUsers: Array<OrganizationUserView | ProviderUserUserDetailsResponse>;
   request: Promise<ListResponse<OrganizationUserBulkResponse | ProviderUserBulkResponse>>;
-  successfullMessage: string;
+  successfulMessage: string;
 };
 
 @Component({
@@ -67,7 +67,7 @@ export class BulkStatusComponent implements OnInit {
       );
 
       this.users = data.users.map((user) => {
-        let message = keyedErrors[user.id] ?? data.successfullMessage;
+        let message = keyedErrors[user.id] ?? data.successfulMessage;
         // eslint-disable-next-line
         if (!keyedFilteredUsers.hasOwnProperty(user.id)) {
           message = this.i18nService.t("bulkFilteredMessage");

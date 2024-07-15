@@ -3,6 +3,9 @@ import { Component, Input } from "@angular/core";
 import { ProviderUserBulkRequest } from "@bitwarden/common/admin-console/models/request/provider/provider-user-bulk.request";
 import { BulkRemoveComponent as OrganizationBulkRemoveComponent } from "@bitwarden/web-vault/app/admin-console/organizations/members/components/bulk/bulk-remove.component";
 
+/**
+ * @deprecated Please use the {@link BulkRemoveDialogComponent} instead.
+ */
 @Component({
   templateUrl:
     "../../../../../../../../apps/web/src/app/admin-console/organizations/members/components/bulk/bulk-remove.component.html",

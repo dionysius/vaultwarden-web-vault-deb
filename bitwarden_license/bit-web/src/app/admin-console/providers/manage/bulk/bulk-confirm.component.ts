@@ -7,6 +7,9 @@ import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/sym
 import { BulkConfirmComponent as OrganizationBulkConfirmComponent } from "@bitwarden/web-vault/app/admin-console/organizations/members/components/bulk/bulk-confirm.component";
 import { BulkUserDetails } from "@bitwarden/web-vault/app/admin-console/organizations/members/components/bulk/bulk-status.component";
 
+/**
+ * @deprecated Please use the {@link BulkConfirmDialogComponent} instead.
+ */
 @Component({
   templateUrl:
     "../../../../../../../../apps/web/src/app/admin-console/organizations/members/components/bulk/bulk-confirm.component.html",

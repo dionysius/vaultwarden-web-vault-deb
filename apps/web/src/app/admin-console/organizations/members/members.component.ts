@@ -45,7 +45,7 @@ import { Collection } from "@bitwarden/common/vault/models/domain/collection";
 import { CollectionDetailsResponse } from "@bitwarden/common/vault/models/response/collection.response";
 import { DialogService, SimpleDialogOptions, ToastService } from "@bitwarden/components";
 
-import { NewBasePeopleComponent } from "../../common/new-base.people.component";
+import { BaseMembersComponent } from "../../common/base-members.component";
 import { PeopleTableDataSource } from "../../common/people-table-data-source";
 import { GroupService } from "../core";
 import { OrganizationUserView } from "../core/views/organization-user.view";
@@ -70,7 +70,7 @@ class MembersTableDataSource extends PeopleTableDataSource<OrganizationUserView>
 @Component({
   templateUrl: "members.component.html",
 })
-export class MembersComponent extends NewBasePeopleComponent<OrganizationUserView> {
+export class MembersComponent extends BaseMembersComponent<OrganizationUserView> {
   @ViewChild("resetPasswordTemplate", { read: ViewContainerRef, static: true })
   resetPasswordModalRef: ViewContainerRef;
 
@@ -94,7 +94,6 @@ export class MembersComponent extends NewBasePeopleComponent<OrganizationUserVie
     apiService: ApiService,
     i18nService: I18nService,
     organizationManagementPreferencesService: OrganizationManagementPreferencesService,
-    modalService: ModalService,
     cryptoService: CryptoService,
     validationService: ValidationService,
     logService: LogService,
@@ -112,13 +111,13 @@ export class MembersComponent extends NewBasePeopleComponent<OrganizationUserVie
     private groupService: GroupService,
     private collectionService: CollectionService,
     private billingApiService: BillingApiServiceAbstraction,
+    private modalService: ModalService,
   ) {
     super(
       apiService,
       i18nService,
       cryptoService,
       validationService,
-      modalService,
       logService,
       userNamePipe,
       dialogService,
@@ -564,7 +563,7 @@ export class MembersComponent extends NewBasePeopleComponent<OrganizationUserVie
           users: users,
           filteredUsers: filteredUsers,
           request: response,
-          successfullMessage: this.i18nService.t("bulkReinviteMessage"),
+          successfulMessage: this.i18nService.t("bulkReinviteMessage"),
         },
       });
       await lastValueFrom(dialogRef.closed);

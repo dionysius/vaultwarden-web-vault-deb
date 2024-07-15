@@ -10,6 +10,9 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { DialogService } from "@bitwarden/components";
 
+/**
+ * @deprecated Please use the {@link MembersDialogComponent} instead.
+ */
 @Component({
   selector: "provider-user-add-edit",
   templateUrl: "user-add-edit.component.html",

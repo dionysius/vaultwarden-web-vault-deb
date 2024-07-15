@@ -103,7 +103,12 @@
                   </button>
                   <bit-menu-divider></bit-menu-divider>
                 </ng-container>
-                <button type="button" bitMenuItem (click)="bulkReinvite()">
+                <button
+                  type="button"
+                  bitMenuItem
+                  (click)="bulkReinvite()"
+                  *ngIf="showBulkReinviteUsers"
+                >
                   <i class="bwi bwi-fw bwi-envelope" aria-hidden="true"></i>
                   {{ "reinviteSelected" | i18n }}
                 </button>

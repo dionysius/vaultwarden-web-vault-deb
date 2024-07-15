@@ -4,7 +4,6 @@ import { FormControl } from "@angular/forms";
 import { firstValueFrom, lastValueFrom, debounceTime, combineLatest, BehaviorSubject } from "rxjs";
 
 import { UserNamePipe } from "@bitwarden/angular/pipes/user-name.pipe";
-import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { OrganizationManagementPreferencesService } from "@bitwarden/common/admin-console/abstractions/organization-management-preferences/organization-management-preferences.service";
 import {
@@ -35,7 +34,7 @@ export type UserViewTypes = ProviderUserUserDetailsResponse | OrganizationUserVi
  * This will replace BasePeopleComponent once all subclasses have been changed over to use this class.
  */
 @Directive()
-export abstract class NewBasePeopleComponent<UserView extends UserViewTypes> {
+export abstract class BaseMembersComponent<UserView extends UserViewTypes> {
   /**
    * Shows a banner alerting the admin that users need to be confirmed.
    */
@@ -50,6 +49,10 @@ export abstract class NewBasePeopleComponent<UserView extends UserViewTypes> {
 
   get showBulkConfirmUsers(): boolean {
     return this.dataSource.acceptedUserCount > 0;
+  }
+
+  get showBulkReinviteUsers(): boolean {
+    return this.dataSource.invitedUserCount > 0;
   }
 
   abstract userType: typeof OrganizationUserType | typeof ProviderUserType;
@@ -77,7 +80,6 @@ export abstract class NewBasePeopleComponent<UserView extends UserViewTypes> {
     protected i18nService: I18nService,
     protected cryptoService: CryptoService,
     protected validationService: ValidationService,
-    protected modalService: ModalService,
     private logService: LogService,
     protected userNamePipe: UserNamePipe,
     protected dialogService: DialogService,

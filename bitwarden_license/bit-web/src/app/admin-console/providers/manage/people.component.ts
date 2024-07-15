@@ -15,6 +15,7 @@ import { ProviderUserBulkRequest } from "@bitwarden/common/admin-console/models/
 import { ProviderUserConfirmRequest } from "@bitwarden/common/admin-console/models/request/provider/provider-user-confirm.request";
 import { ProviderUserUserDetailsResponse } from "@bitwarden/common/admin-console/models/response/provider/provider-user.response";
 import { ListResponse } from "@bitwarden/common/models/response/list.response";
+import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
@@ -29,6 +30,9 @@ import { BulkConfirmComponent } from "./bulk/bulk-confirm.component";
 import { BulkRemoveComponent } from "./bulk/bulk-remove.component";
 import { UserAddEditComponent } from "./user-add-edit.component";
 
+/**
+ * @deprecated Please use the {@link MembersComponent} instead.
+ */
 @Component({
   selector: "provider-people",
   templateUrl: "people.component.html",
@@ -70,6 +74,7 @@ export class PeopleComponent
     private providerService: ProviderService,
     dialogService: DialogService,
     organizationManagementPreferencesService: OrganizationManagementPreferencesService,
+    private configService: ConfigService,
   ) {
     super(
       apiService,
@@ -228,7 +233,7 @@ export class PeopleComponent
           users: users,
           filteredUsers: filteredUsers,
           request: response,
-          successfullMessage: this.i18nService.t("bulkReinviteMessage"),
+          successfulMessage: this.i18nService.t("bulkReinviteMessage"),
         },
       });
       await lastValueFrom(dialogRef.closed);
