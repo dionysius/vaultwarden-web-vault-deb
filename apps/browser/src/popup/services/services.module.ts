@@ -61,6 +61,7 @@ import { BiometricStateService } from "@bitwarden/common/platform/biometrics/bio
 import { Message, MessageListener, MessageSender } from "@bitwarden/common/platform/messaging";
 // eslint-disable-next-line no-restricted-imports -- Used for dependency injection
 import { SubjectMessageSender } from "@bitwarden/common/platform/messaging/internal";
+import { TaskSchedulerService } from "@bitwarden/common/platform/scheduling";
 import { ConsoleLogService } from "@bitwarden/common/platform/services/console-log.service";
 import { ContainerService } from "@bitwarden/common/platform/services/container.service";
 import { StorageServiceProvider } from "@bitwarden/common/platform/services/storage-service.provider";
@@ -102,6 +103,7 @@ import BrowserLocalStorageService from "../../platform/services/browser-local-st
 import { BrowserScriptInjectorService } from "../../platform/services/browser-script-injector.service";
 import I18nService from "../../platform/services/i18n.service";
 import { ForegroundPlatformUtilsService } from "../../platform/services/platform-utils/foreground-platform-utils.service";
+import { ForegroundTaskSchedulerService } from "../../platform/services/task-scheduler/foreground-task-scheduler.service";
 import { BrowserStorageServiceProvider } from "../../platform/storage/browser-storage-service.provider";
 import { ForegroundMemoryStorageService } from "../../platform/storage/foreground-memory-storage.service";
 import { fromChromeRuntimeMessaging } from "../../platform/utils/from-chrome-runtime-messaging";
@@ -515,6 +517,15 @@ const safeProviders: SafeProvider[] = [
     provide: Fido2UserVerificationService,
     useClass: Fido2UserVerificationService,
     deps: [PasswordRepromptService, UserVerificationService, DialogService],
+  }),
+  safeProvider({
+    provide: TaskSchedulerService,
+    useExisting: ForegroundTaskSchedulerService,
+  }),
+  safeProvider({
+    provide: ForegroundTaskSchedulerService,
+    useFactory: getBgService<ForegroundTaskSchedulerService>("taskSchedulerService"),
+    deps: [],
   }),
 ];
 

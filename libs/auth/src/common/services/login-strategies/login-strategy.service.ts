@@ -5,6 +5,7 @@ import {
   map,
   Observable,
   shareReplay,
+  Subscription,
 } from "rxjs";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
@@ -37,6 +38,7 @@ import { MessagingService } from "@bitwarden/common/platform/abstractions/messag
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { KdfType } from "@bitwarden/common/platform/enums/kdf-type.enum";
+import { TaskSchedulerService, ScheduledTaskNames } from "@bitwarden/common/platform/scheduling";
 import { GlobalState, GlobalStateProvider } from "@bitwarden/common/platform/state";
 import { DeviceTrustServiceAbstraction } from "@bitwarden/common/src/auth/abstractions/device-trust.service.abstraction";
 import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/password-strength";
@@ -69,7 +71,7 @@ import {
 const sessionTimeoutLength = 2 * 60 * 1000; // 2 minutes
 
 export class LoginStrategyService implements LoginStrategyServiceAbstraction {
-  private sessionTimeout: unknown;
+  private sessionTimeoutSubscription: Subscription;
   private currentAuthnTypeState: GlobalState<AuthenticationType | null>;
   private loginStrategyCacheState: GlobalState<CacheData | null>;
   private loginStrategyCacheExpirationState: GlobalState<Date | null>;
@@ -111,12 +113,17 @@ export class LoginStrategyService implements LoginStrategyServiceAbstraction {
     protected billingAccountProfileStateService: BillingAccountProfileStateService,
     protected vaultTimeoutSettingsService: VaultTimeoutSettingsService,
     protected kdfConfigService: KdfConfigService,
+    protected taskSchedulerService: TaskSchedulerService,
   ) {
     this.currentAuthnTypeState = this.stateProvider.get(CURRENT_LOGIN_STRATEGY_KEY);
     this.loginStrategyCacheState = this.stateProvider.get(CACHE_KEY);
     this.loginStrategyCacheExpirationState = this.stateProvider.get(CACHE_EXPIRATION_KEY);
     this.authRequestPushNotificationState = this.stateProvider.get(
       AUTH_REQUEST_PUSH_NOTIFICATION_KEY,
+    );
+    this.taskSchedulerService.registerTaskHandler(
+      ScheduledTaskNames.loginStrategySessionTimeout,
+      () => this.clearCache(),
     );
 
     this.currentAuthType$ = this.currentAuthnTypeState.state$;
@@ -268,15 +275,23 @@ export class LoginStrategyService implements LoginStrategyServiceAbstraction {
 
   private async startSessionTimeout(): Promise<void> {
     await this.clearSessionTimeout();
+
+    // This Login Strategy Cache Expiration State value set here is used to clear the cache on re-init
+    // of the application in the case where the timeout is terminated due to a closure of the application
+    // window. The browser extension popup in particular is susceptible to this concern, as the user
+    // is almost always likely to close the popup window before the session timeout is reached.
     await this.loginStrategyCacheExpirationState.update(
       (_) => new Date(Date.now() + sessionTimeoutLength),
     );
-    this.sessionTimeout = setTimeout(() => this.clearCache(), sessionTimeoutLength);
+    this.sessionTimeoutSubscription = this.taskSchedulerService.setTimeout(
+      ScheduledTaskNames.loginStrategySessionTimeout,
+      sessionTimeoutLength,
+    );
   }
 
   private async clearSessionTimeout(): Promise<void> {
     await this.loginStrategyCacheExpirationState.update((_) => null);
-    this.sessionTimeout = null;
+    this.sessionTimeoutSubscription?.unsubscribe();
   }
 
   private async isSessionValid(): Promise<boolean> {
@@ -284,6 +299,9 @@ export class LoginStrategyService implements LoginStrategyServiceAbstraction {
     if (cache == null) {
       return false;
     }
+
+    // If the Login Strategy Cache Expiration State value is less than the current
+    // datetime stamp, then the cache is invalid and should be cleared.
     const expiration = await firstValueFrom(this.loginStrategyCacheExpirationState.state$);
     if (expiration != null && expiration < new Date()) {
       await this.clearCache();

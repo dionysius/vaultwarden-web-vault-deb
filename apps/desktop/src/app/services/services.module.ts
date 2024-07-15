@@ -45,6 +45,7 @@ import { BiometricStateService } from "@bitwarden/common/platform/biometrics/bio
 import { Message, MessageListener, MessageSender } from "@bitwarden/common/platform/messaging";
 // eslint-disable-next-line no-restricted-imports -- Used for dependency injection
 import { SubjectMessageSender } from "@bitwarden/common/platform/messaging/internal";
+import { TaskSchedulerService } from "@bitwarden/common/platform/scheduling";
 import { MemoryStorageService } from "@bitwarden/common/platform/services/memory-storage.service";
 import { SystemService } from "@bitwarden/common/platform/services/system.service";
 import { GlobalStateProvider, StateProvider } from "@bitwarden/common/platform/state";
@@ -177,6 +178,7 @@ const safeProviders: SafeProvider[] = [
       VaultTimeoutSettingsService,
       BiometricStateService,
       AccountServiceAbstraction,
+      TaskSchedulerService,
     ],
   }),
   safeProvider({
