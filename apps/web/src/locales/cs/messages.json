@@ -8161,23 +8161,6 @@
   "restrictedGroupAccessDesc": {
     "message": "Do skupiny nemůžete přidat sami sebe."
   },
-  "unassignedItemsBannerSelfHost": {
-    "message": "Upozornění: Dne 2. května 2024 již nebudou nepřiřazené položky organizace viditelné v zobrazení Všechny trezory ve všech zařízeních a budou přístupné jen prostřednictvím konzoly správce. Přiřaďte tyto položky do kolekce z konzoly pro správce, aby byly viditelné."
-  },
-  "unassignedItemsBannerNotice": {
-    "message": "Upozornění: Nepřiřazené položky organizace již nejsou viditelné ve Vašem zobrazení všech trezorů napříč zařízeními a jsou nyní přístupné pouze v konzoli správce."
-  },
-  "unassignedItemsBannerSelfHostNotice": {
-    "message": "Upozornění: 16. květba 2024 již nebudou nepřiřazené položky organizace viditelné ve Vašem zobrazení všech trezorů napříč zařízeními a budou přístupné pouze v konzoli správce."
-  },
-  "unassignedItemsBannerCTAPartOne": {
-    "message": "Přiřadit tyto položky ke kolekci z",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
-  "unassignedItemsBannerCTAPartTwo": {
-    "message": "aby byly viditelné.",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
   "deleteProvider": {
     "message": "Smazat poskytovatele"
   },

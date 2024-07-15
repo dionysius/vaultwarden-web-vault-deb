@@ -8161,23 +8161,6 @@
   "restrictedGroupAccessDesc": {
     "message": "Je kunt jezelf niet aan een groep toevoegen."
   },
-  "unassignedItemsBannerSelfHost": {
-    "message": "Kennisgeving: Vanaf 2 mei 2024 zijn niet-toegewezen organisatie-items op geen enkel apparaat meer zichtbaar in de weergave van alle kluisjes en alleen toegankelijk via de Admin Console. Je kunt deze items in het Admin Console aan een collectie toewijzen om ze zichtbaar te maken."
-  },
-  "unassignedItemsBannerNotice": {
-    "message": "Let op: Niet-toegewezen organisatie-items zijn niet langer zichtbaar in de weergave van alle kluissen op verschillende apparaten en zijn nu alleen toegankelijk via de Admin Console."
-  },
-  "unassignedItemsBannerSelfHostNotice": {
-    "message": "Let op: Vanaf 16 mei 2024 zijn niet-toegewezen organisatie-items niet langer zichtbaar in de weergave van alle kluissen op verschillende apparaten en alleen toegankelijk via de Admin Console."
-  },
-  "unassignedItemsBannerCTAPartOne": {
-    "message": "Deze items toewijzen aan een collectie van de",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
-  "unassignedItemsBannerCTAPartTwo": {
-    "message": "om ze zichtbaar te maken.",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
   "deleteProvider": {
     "message": "Provider verwijderen"
   },

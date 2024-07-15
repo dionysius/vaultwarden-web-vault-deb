@@ -8161,23 +8161,6 @@
   "restrictedGroupAccessDesc": {
     "message": "Ви не можете додати себе до групи."
   },
-  "unassignedItemsBannerSelfHost": {
-    "message": "Сповіщення: 2 травня 2024 року, непризначені елементи організації більше не будуть видимі на ваших пристроях у поданні \"Усі сховища\", і будуть доступні лише через консоль адміністратора. Щоб зробити їх видимими, призначте ці елементи збірці в консолі адміністратора."
-  },
-  "unassignedItemsBannerNotice": {
-    "message": "Примітка: непризначені елементи організації більше не видимі на ваших пристроях у поданні \"Усі сховища\", і тепер доступні лише через консоль адміністратора."
-  },
-  "unassignedItemsBannerSelfHostNotice": {
-    "message": "Примітка: 16 травня 2024 року непризначені елементи організації більше не будуть видимі на ваших пристроях у поданні \"Усі сховища\", і будуть доступні лише через консоль адміністратора."
-  },
-  "unassignedItemsBannerCTAPartOne": {
-    "message": "Призначте ці елементи збірці в",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
-  "unassignedItemsBannerCTAPartTwo": {
-    "message": "щоб зробити їх видимими.",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
   "deleteProvider": {
     "message": "Видалити провайдера"
   },

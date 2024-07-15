@@ -7883,7 +7883,7 @@
     "message": "Assign to these collections"
   },
   "bulkCollectionAssignmentDialogDescription": {
-    "message": "Only organization members with access to these collections will be able to see the items."
+    "message": "Only organisation members with access to these collections will be able to see the items."
   },
   "selectCollectionsToAssign": {
     "message": "Select collections to assign"
@@ -8160,23 +8160,6 @@
   },
   "restrictedGroupAccessDesc": {
     "message": "You cannot add yourself to a group."
-  },
-  "unassignedItemsBannerSelfHost": {
-    "message": "Notice: On May 2, 2024, unassigned organisation items will no longer be visible in your All Vaults view across devices and will only be accessible via the Admin Console. Assign these items to a collection from the Admin Console to make them visible."
-  },
-  "unassignedItemsBannerNotice": {
-    "message": "Notice: Unassigned organisation items are no longer visible in your All Vaults view across devices and are now only accessible via the Admin Console."
-  },
-  "unassignedItemsBannerSelfHostNotice": {
-    "message": "Notice: On May 16, 2024, unassigned organisation items will no longer be visible in your All Vaults view across devices and will only be accessible via the Admin Console."
-  },
-  "unassignedItemsBannerCTAPartOne": {
-    "message": "Assign these items to a collection from the",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
-  "unassignedItemsBannerCTAPartTwo": {
-    "message": "to make them visible.",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
   },
   "deleteProvider": {
     "message": "Delete provider"

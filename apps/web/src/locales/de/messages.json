@@ -8161,23 +8161,6 @@
   "restrictedGroupAccessDesc": {
     "message": "Du kannst dich nicht selbst zu einer Gruppe hinzufügen."
   },
-  "unassignedItemsBannerSelfHost": {
-    "message": "Hinweis: Ab dem 2. Mai 2024 werden nicht zugewiesene Organisationseinträge nicht mehr geräteübergreifend in der Ansicht aller Tresore sichtbar sein und sind nur über die Administrator-Konsole zugänglich. Weise diese Elemente einer Sammlung aus der Administrator-Konsole zu, um sie sichtbar zu machen."
-  },
-  "unassignedItemsBannerNotice": {
-    "message": "Hinweis: Nicht zugewiesene Organisationseinträge sind nicht mehr geräteübergreifend in der Ansicht aller Tresore sichtbar und nun nur über die Administrator-Konsole zugänglich."
-  },
-  "unassignedItemsBannerSelfHostNotice": {
-    "message": "Hinweis: Ab dem 16. Mai 2024 werden nicht zugewiesene Organisationseinträge nicht mehr geräteübergreifend in der Ansicht aller Tresore sichtbar sein und nur über die Administrator-Konsole zugänglich."
-  },
-  "unassignedItemsBannerCTAPartOne": {
-    "message": "Weise diese Einträge einer Sammlung aus der",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
-  "unassignedItemsBannerCTAPartTwo": {
-    "message": "zu, um sie sichtbar zu machen.",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
   "deleteProvider": {
     "message": "Anbieter löschen"
   },
@@ -8549,13 +8532,13 @@
     "message": "Lade nach der Durchführung von Aktualisierungen im Bitwarden Cloud Server deine Lizenzdatei hoch, um die neuesten Änderungen anzuwenden."
   },
   "addToFolder": {
-    "message": "Add to folder"
+    "message": "Zu Ordner hinzufügen"
   },
   "selectFolder": {
-    "message": "Select folder"
+    "message": "Ordner auswählen"
   },
   "personalItemsTransferWarning": {
-    "message": "$PERSONAL_ITEMS_COUNT$ will be permanently transferred to the selected organization. You will no longer own these items.",
+    "message": "$PERSONAL_ITEMS_COUNT$ werden dauerhaft an die ausgewählte Organisation übertragen. Du wirst diese Einträge nicht mehr besitzen.",
     "placeholders": {
       "personal_items_count": {
         "content": "$1",
@@ -8564,7 +8547,7 @@
     }
   },
   "personalItemsWithOrgTransferWarning": {
-    "message": "$PERSONAL_ITEMS_COUNT$ will be permanently transferred to $ORG$. You will no longer own these items.",
+    "message": "$PERSONAL_ITEMS_COUNT$ werden dauerhaft an $ORG$ übertragen. Du wirst diese Einträge nicht mehr besitzen.",
     "placeholders": {
       "personal_items_count": {
         "content": "$1",

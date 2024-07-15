@@ -1060,7 +1060,7 @@
     "message": "确定要继续吗？"
   },
   "moveSelectedItemsDesc": {
-    "message": "Choose a folder that you would like to add the $COUNT$ selected item(s) to.",
+    "message": "选择一个您想要将这 $COUNT$ 个所选项目添加到的文件夹。",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -8160,23 +8160,6 @@
   },
   "restrictedGroupAccessDesc": {
     "message": "您不能将自己添加到群组。"
-  },
-  "unassignedItemsBannerSelfHost": {
-    "message": "注意：从 2024 年 5 月 2 日起，未分配的组织项目在您所有设备的「所有密码库」视图中将不再可见，只能通过管理控制台访问。通过管理控制台将这些项目分配给集合以使其可见。"
-  },
-  "unassignedItemsBannerNotice": {
-    "message": "注意：未分配的组织项目在您所有设备的「所有密码库」视图中不再可见，现在只能通过管理控制台访问。"
-  },
-  "unassignedItemsBannerSelfHostNotice": {
-    "message": "注意：从 2024 年 5 月 2 日起，未分配的组织项目在您所有设备的「所有密码库」视图中将不再可见，只能通过管理控制台访问。"
-  },
-  "unassignedItemsBannerCTAPartOne": {
-    "message": "将这些项目分配到集合，通过",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
-  "unassignedItemsBannerCTAPartTwo": {
-    "message": "，以使其可见。",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
   },
   "deleteProvider": {
     "message": "删除提供商"

@@ -812,13 +812,13 @@
     "message": "Obter a dica da palavra-passe mestra"
   },
   "emailRequired": {
-    "message": "É necessário o endereço de e-mail."
+    "message": "O endereço de e-mail é obrigatório."
   },
   "invalidEmail": {
     "message": "Endereço de e-mail inválido."
   },
   "masterPasswordRequired": {
-    "message": "É necessária a palavra-passe mestra."
+    "message": "A palavra-passe mestra é obrigatória."
   },
   "confirmMasterPasswordRequired": {
     "message": "É necessário reescrever a palavra-passe mestra."
@@ -855,7 +855,7 @@
     "message": "Endereço de e-mail"
   },
   "yourVaultIsLockedV2": {
-    "message": "O seu cofre está bloqueado."
+    "message": "O seu cofre está bloqueado"
   },
   "uuid": {
     "message": "UUID"
@@ -1060,7 +1060,7 @@
     "message": "Tem a certeza de que deseja continuar?"
   },
   "moveSelectedItemsDesc": {
-    "message": "Choose a folder that you would like to add the $COUNT$ selected item(s) to.",
+    "message": "Escolha uma pasta à qual pretende adicionar o(s) $COUNT$ item(ns) selecionado(s).",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -5742,7 +5742,7 @@
     "message": "1 campo acima precisa da sua atenção."
   },
   "fieldRequiredError": {
-    "message": "$FIELDNAME$ é necessário.",
+    "message": "$FIELDNAME$ obrigatório.",
     "placeholders": {
       "fieldname": {
         "content": "$1",
@@ -5751,7 +5751,7 @@
     }
   },
   "required": {
-    "message": "necessário"
+    "message": "obrigatório"
   },
   "charactersCurrentAndMaximum": {
     "message": "$CURRENT$/$MAX$ máximo de caracteres",
@@ -6139,7 +6139,7 @@
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "inputRequired": {
-    "message": "Campo necessário."
+    "message": "Campo obrigatório."
   },
   "inputEmail": {
     "message": "O campo não é um endereço de e-mail."
@@ -6673,7 +6673,7 @@
     "description": "A unique string that gives a client application (eg. CLI) access to a secret or set of secrets."
   },
   "accessTokenExpirationRequired": {
-    "message": "Prazo de validade necessário",
+    "message": "Prazo de validade obrigatório",
     "description": "Error message indicating that an expiration date for the access token must be set."
   },
   "accessTokenCreatedAndCopied": {
@@ -7883,7 +7883,7 @@
     "message": "Atribuir a estas coleções"
   },
   "bulkCollectionAssignmentDialogDescription": {
-    "message": "Only organization members with access to these collections will be able to see the items."
+    "message": "Apenas os membros da organização com acesso a estas coleções poderão ver os itens."
   },
   "selectCollectionsToAssign": {
     "message": "Selecione as coleções a atribuir"
@@ -8160,23 +8160,6 @@
   },
   "restrictedGroupAccessDesc": {
     "message": "Não se pode adicionar a si próprio a um grupo."
-  },
-  "unassignedItemsBannerSelfHost": {
-    "message": "Aviso: A 2 de maio de 2024, os itens da organização não atribuídos deixarão de estar visíveis na vista Todos os cofres em todos os dispositivos e só estarão acessíveis através da Consola de administração. Atribua estes itens a uma coleção a partir da Consola de administração para os tornar visíveis."
-  },
-  "unassignedItemsBannerNotice": {
-    "message": "Aviso: Os itens da organização não atribuídos já não são visíveis na vista Todos os cofres em todos os dispositivos e agora só estão acessíveis através da Consola de administração."
-  },
-  "unassignedItemsBannerSelfHostNotice": {
-    "message": "Aviso: A 16 de maio de 2024, os itens da organização não atribuídos deixarão de estar visíveis na vista Todos os cofres em todos os dispositivos e só estarão acessíveis através da Consola de administração."
-  },
-  "unassignedItemsBannerCTAPartOne": {
-    "message": "Atribua estes itens a uma coleção a partir da",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
-  "unassignedItemsBannerCTAPartTwo": {
-    "message": "para os tornar visíveis.",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
   },
   "deleteProvider": {
     "message": "Eliminar fornecedor"

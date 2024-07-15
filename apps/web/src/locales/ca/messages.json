@@ -8161,23 +8161,6 @@
   "restrictedGroupAccessDesc": {
     "message": "No podeu afegir-vos vosaltres mateix a un grup."
   },
-  "unassignedItemsBannerSelfHost": {
-    "message": "Avís: el 2 de maig de 2024, els elements de l'organització no assignats deixaran de ser visibles a la vista \"Totes les caixes fortes\" en tots els dispositius i només es podran accedir des de la Consola d'administració. Assigna aquests elements a una col·lecció des de la Consola d'administració per fer-los visibles."
-  },
-  "unassignedItemsBannerNotice": {
-    "message": "Avís: els elements de l'organització no assignats ja no són visibles a la visualització de Totes les caixes fortes en tots els dispositius i ara només es poden accedir des de la Consola d'administració."
-  },
-  "unassignedItemsBannerSelfHostNotice": {
-    "message": "Avís: el 16 de maig de 2024, els elements de l'organització no assignats deixaran de ser visibles a la visualització de Totes les caixes fortes en tots els dispositius i només es podran accedir des de la Consola d'administració."
-  },
-  "unassignedItemsBannerCTAPartOne": {
-    "message": "Assigna aquests elements a una col·lecció de",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
-  "unassignedItemsBannerCTAPartTwo": {
-    "message": "per fer-los visibles.",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
   "deleteProvider": {
     "message": "Suprimeix proveïdor"
   },

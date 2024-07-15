@@ -8161,23 +8161,6 @@
   "restrictedGroupAccessDesc": {
     "message": "Você não pode adicionar você mesmo a um grupo."
   },
-  "unassignedItemsBannerSelfHost": {
-    "message": "Aviso: Em 2 de maio de 2024, itens da organização não estarão mais visíveis em sua visualização de Todos os Cofres entre dispositivos e só serão acessíveis por meio do painel de administração. Atribuir estes itens a uma coleção do Console de Administração para torná-los visíveis."
-  },
-  "unassignedItemsBannerNotice": {
-    "message": "Aviso: Itens de organização não atribuídos não estão mais visíveis na sua tela Todos os Cofres através dos dispositivos e agora só são acessíveis por meio do Console de Administração."
-  },
-  "unassignedItemsBannerSelfHostNotice": {
-    "message": "Aviso: Em 16 de maio, 2024, itens da organização que não foram atribuídos não estarão mais visíveis em sua visualização de Todos os Cofres dos dispositivos e só serão acessíveis por meio do painel de administração."
-  },
-  "unassignedItemsBannerCTAPartOne": {
-    "message": "Atribua estes itens a uma coleção da",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
-  "unassignedItemsBannerCTAPartTwo": {
-    "message": "para torná-los visíveis.",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
   "deleteProvider": {
     "message": "Excluir Provedor"
   },

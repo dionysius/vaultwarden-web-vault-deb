@@ -8161,23 +8161,6 @@
   "restrictedGroupAccessDesc": {
     "message": "Vous ne pouvez pas vous ajouter vous-même à un groupe."
   },
-  "unassignedItemsBannerSelfHost": {
-    "message": "Remarque : le 2 mai 2024, les éléments d'organisation non assignés ne seront plus visibles dans votre vue Tous les coffres sur les appareils et seront uniquement accessibles via la Console Admin. Assignez ces éléments à une collection à partir de la Console Admin pour les rendre visibles."
-  },
-  "unassignedItemsBannerNotice": {
-    "message": "Remarque : Les éléments d'organisation non assignés ne sont plus visibles dans la vue Tous les coffres sur les appareils et ne sont maintenant accessibles que via la Console Admin."
-  },
-  "unassignedItemsBannerSelfHostNotice": {
-    "message": "Remarque : À partir du 16 mai 2024, les éléments d'organisation non assignés ne seront plus visibles dans la vue Tous les coffres sur les appareils et ne seront maintenant accessibles que via la Console Admin."
-  },
-  "unassignedItemsBannerCTAPartOne": {
-    "message": "Assigner ces éléments à une collection depuis",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
-  "unassignedItemsBannerCTAPartTwo": {
-    "message": "pour les rendre visibles.",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
   "deleteProvider": {
     "message": "Supprimer le fournisseur"
   },

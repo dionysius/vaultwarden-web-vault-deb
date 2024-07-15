@@ -8161,23 +8161,6 @@
   "restrictedGroupAccessDesc": {
     "message": "Nem adhadjuk magunkat a csoporthoz."
   },
-  "unassignedItemsBannerSelfHost": {
-    "message": "Notice: On May 2, 2024, unassigned organization items will no longer be visible in your All Vaults view across devices and will only be accessible via the Admin Console. Assign these items to a collection from the Admin Console to make them visible."
-  },
-  "unassignedItemsBannerNotice": {
-    "message": "Megjegyzés: A nem hozzárendelt szervezeti elemek már nem láthatók az Összes széf nézetben a különböző eszközökön és csak az Adminisztrátori konzolon keresztül érhetők el."
-  },
-  "unassignedItemsBannerSelfHostNotice": {
-    "message": "Megjegyzés: 2024. május 16-tól a nem hozzárendelt szervezeti elemek többé nem lesznek láthatók az Összes széf nézetben a különböző eszközökön és csak az Adminisztrátoir konzolon keresztül lesznek elérhetők."
-  },
-  "unassignedItemsBannerCTAPartOne": {
-    "message": "Rendeljük hozzá ezeket az elemeket a gyűjteményhez",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
-  "unassignedItemsBannerCTAPartTwo": {
-    "message": "a láthatósághoz.",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
   "deleteProvider": {
     "message": "Delete provider"
   },
@@ -8549,13 +8532,13 @@
     "message": "A Bitwarden felhőkiszolgáló frissítése után töltsük fel a licenszfájlt a legutóbbi módosítások alkalmazásához."
   },
   "addToFolder": {
-    "message": "Add to folder"
+    "message": "Mappához adás"
   },
   "selectFolder": {
-    "message": "Select folder"
+    "message": "Mappa kiválasztása"
   },
   "personalItemsTransferWarning": {
-    "message": "$PERSONAL_ITEMS_COUNT$ will be permanently transferred to the selected organization. You will no longer own these items.",
+    "message": "$PERSONAL_ITEMS_COUNT$ véglegesen átkerül a kiválasztott szervezethez. A továbbiakban nem leszünk a tulajdonosa ezeknek az elemeknek.",
     "placeholders": {
       "personal_items_count": {
         "content": "$1",
@@ -8564,7 +8547,7 @@
     }
   },
   "personalItemsWithOrgTransferWarning": {
-    "message": "$PERSONAL_ITEMS_COUNT$ will be permanently transferred to $ORG$. You will no longer own these items.",
+    "message": "$PERSONAL_ITEMS_COUNT$ véglegesen átkerül $ORG$ szervezeti egységbe. A továbbiakban nem leszünk a tulajdonosa ezeknek az elemeknek.",
     "placeholders": {
       "personal_items_count": {
         "content": "$1",

@@ -8161,23 +8161,6 @@
   "restrictedGroupAccessDesc": {
     "message": "Sevi nevar pievienot kopai."
   },
-  "unassignedItemsBannerSelfHost": {
-    "message": "Jāņem vērā: no 2024. gada 2. maija nepiešķirti apvienības vienumi vairs nebūs redzami skatā \"Visas glabātavas\" dažādās ierīcēs un būs sasniedzami tikai no pārvaldības konsoles, kur šie vienumi jāpiešķir krājumam, lai padarītu tos redzamus."
-  },
-  "unassignedItemsBannerNotice": {
-    "message": "Jāņem vērā: nepiešķirti apvienības vienumi vairs nav redzami skatā \"Visas glabātavas\" dažādās ierīcēs un tagad ir pieejami tikai pārvaldības konsolē."
-  },
-  "unassignedItemsBannerSelfHostNotice": {
-    "message": "Jāņem vērā: no 2024. gada 16. maija nepiešķirti apvienības vienumi vairs nebūs redzami skatā \"Visas glabātavas\" dažādās ierīcēs un būs pieejami tikai pārvaldības konsolē."
-  },
-  "unassignedItemsBannerCTAPartOne": {
-    "message": "Piešķirt šos vienumus krājumam",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
-  "unassignedItemsBannerCTAPartTwo": {
-    "message": ", lai padarītu tos redzamus.",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
   "deleteProvider": {
     "message": "Izdzēst nodrošinātāju"
   },

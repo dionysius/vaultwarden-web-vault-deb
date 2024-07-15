@@ -8161,23 +8161,6 @@
   "restrictedGroupAccessDesc": {
     "message": "Man kan ikke føje sig selv til en gruppe."
   },
-  "unassignedItemsBannerSelfHost": {
-    "message": "Bemærk: Pr. 2. maj 2024 vil utildelte organisationsemner ikke længere være synlige i Alle Bokse-visningen på tværs af enheder og vil kun være tilgængelige via Admin-konsollen. Tildel disse emner til en samling via Admin-konsollen for at gøre dem synlige."
-  },
-  "unassignedItemsBannerNotice": {
-    "message": "Bemærk: Utildelte organisationsemner er ikke længere synlige i Alle Bokse-visningen, men er kun tilgængelige via Admin-konsol."
-  },
-  "unassignedItemsBannerSelfHostNotice": {
-    "message": "Bemærk: Pr. 16. maj 2024 er utildelte organisationsemner er ikke længere synlige i Alle Bokse-visningen, men er kun tilgængelige via Admin-konsol."
-  },
-  "unassignedItemsBannerCTAPartOne": {
-    "message": "Tildel disse emner til en samling via",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
-  "unassignedItemsBannerCTAPartTwo": {
-    "message": "for at gøre dem synlige.",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
   "deleteProvider": {
     "message": "Slet udbyder"
   },

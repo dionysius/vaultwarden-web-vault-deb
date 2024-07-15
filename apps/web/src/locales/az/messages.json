@@ -1060,7 +1060,7 @@
     "message": "Davam etmək istədiyinizə əminsiniz?"
   },
   "moveSelectedItemsDesc": {
-    "message": "Choose a folder that you would like to add the $COUNT$ selected item(s) to.",
+    "message": "Seçilmiş $COUNT$ elementi əlavə etmək istədiyiniz qovluğu seçin.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -7883,7 +7883,7 @@
     "message": "Bu kolleksiyalara təyin et"
   },
   "bulkCollectionAssignmentDialogDescription": {
-    "message": "Only organization members with access to these collections will be able to see the items."
+    "message": "Yalnız bu kolleksiyalara müraciəti olan təşkilat üzvləri bu elementləri görə biləcək."
   },
   "selectCollectionsToAssign": {
     "message": "Təyin ediləcək kolleksiyaları seçin"
@@ -8160,23 +8160,6 @@
   },
   "restrictedGroupAccessDesc": {
     "message": "Özünüzü bir qrupa əlavə edə bilməzsiniz."
-  },
-  "unassignedItemsBannerSelfHost": {
-    "message": "Bildiriş: 2 May 2024-cü ildən etibarən təyin edilməmiş təşkilat elementləri artıq cihazlar arasında Bütün Anbarlar görünüşündə görünməyən və yalnız Admin Konsolu vasitəsilə əlçatan olacaq. Bu elementləri görünən etmək üçün Admin Konsolundan bir kolleksiyaya təyin edin."
-  },
-  "unassignedItemsBannerNotice": {
-    "message": "Bildiriş: Təyin edilməyən təşkilat elementləri artıq Bütün Anbarlar görünüşündə görünən olmayacaq və yalnız Admin Konsolu vasitəsilə əlçatan olacaq."
-  },
-  "unassignedItemsBannerSelfHostNotice": {
-    "message": "Bildiriş: 16 May 2024-cü il tarixindən etibarən, təyin edilməyən təşkilat elementləri cihazlar arasında və Bütün Anbarlar görünüşündə görünən olmayacaq və yalnız Admin Konsolu vasitəsilə əlçatan olacaq."
-  },
-  "unassignedItemsBannerCTAPartOne": {
-    "message": "Bu elementləri görünən etmək üçün",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
-  "unassignedItemsBannerCTAPartTwo": {
-    "message": "bir kolleksiyaya təyin edin.",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
   },
   "deleteProvider": {
     "message": "Provayderi sil"
@@ -8546,16 +8529,16 @@
     "message": "Sponsorlu"
   },
   "licenseAndBillingManagementDesc": {
-    "message": "After making updates in the Bitwarden cloud server, upload your license file to apply the most recent changes."
+    "message": "Bitwarden bulud serverində güncəlləmələr etdikdən sonra, ən son dəyişiklikləri tətbiq etmək üçün lisenziya faylınızı yükləyin."
   },
   "addToFolder": {
-    "message": "Add to folder"
+    "message": "Qovluğa əlavə et"
   },
   "selectFolder": {
-    "message": "Select folder"
+    "message": "Qovluq seç"
   },
   "personalItemsTransferWarning": {
-    "message": "$PERSONAL_ITEMS_COUNT$ will be permanently transferred to the selected organization. You will no longer own these items.",
+    "message": "$PERSONAL_ITEMS_COUNT$ seçilmiş təşkilata birdəfəlik transfer ediləcək. Artıq bu elementlərə sahib olmaya bilməyəcəksiniz.",
     "placeholders": {
       "personal_items_count": {
         "content": "$1",
@@ -8564,7 +8547,7 @@
     }
   },
   "personalItemsWithOrgTransferWarning": {
-    "message": "$PERSONAL_ITEMS_COUNT$ will be permanently transferred to $ORG$. You will no longer own these items.",
+    "message": "$PERSONAL_ITEMS_COUNT$, $ORG$ təşkilatına birdəfəlik transfer ediləcək. Artıq bu elementlərə sahib olmaya bilməyəcəksiniz.",
     "placeholders": {
       "personal_items_count": {
         "content": "$1",

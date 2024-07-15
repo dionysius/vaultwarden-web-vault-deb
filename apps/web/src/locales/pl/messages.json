@@ -8161,23 +8161,6 @@
   "restrictedGroupAccessDesc": {
     "message": "Nie możesz dodać siebie do grupy."
   },
-  "unassignedItemsBannerSelfHost": {
-    "message": "Uwaga: 2 maja 2024 r. nieprzypisane elementy w organizacji nie będą już widoczne w widoku Wszystkie sejfy na urządzeniach i będą dostępne tylko przez Konsolę Administracyjną. Przypisz te elementy do kolekcji z konsoli administracyjnej, aby były one widoczne."
-  },
-  "unassignedItemsBannerNotice": {
-    "message": "Uwaga: Nieprzypisane elementy organizacji nie są już widoczne w widoku Wszystkie sejfy na urządzeniach i są teraz dostępne tylko przez Konsolę Administracyjną."
-  },
-  "unassignedItemsBannerSelfHostNotice": {
-    "message": "Uwaga: 16 maja 2024 r. nieprzypisana elementy w organizacji nie będą już widoczne w widoku Wszystkie sejfy na urządzeniach i będą dostępne tylko przez Konsolę Administracyjną."
-  },
-  "unassignedItemsBannerCTAPartOne": {
-    "message": "Przypisz te elementy do kolekcji z",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
-  "unassignedItemsBannerCTAPartTwo": {
-    "message": ", aby były widoczne.",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
   "deleteProvider": {
     "message": "Usuń dostawcę"
   },

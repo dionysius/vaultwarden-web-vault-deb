@@ -8161,23 +8161,6 @@
   "restrictedGroupAccessDesc": {
     "message": "あなた自身をグループに追加することはできません。"
   },
-  "unassignedItemsBannerSelfHost": {
-    "message": "お知らせ：2024年5月2日に、 割り当てられていない組織アイテムはデバイス間のすべての保管庫ビューに表示されなくなり、管理コンソールからのみアクセス可能になります。 管理コンソールからコレクションにこれらのアイテムを割り当てると、表示できるようになります。"
-  },
-  "unassignedItemsBannerNotice": {
-    "message": "注意: 割り当てられていない組織アイテムは、デバイス間のすべての保管庫ビューでは表示されなくなり、管理コンソールからのみアクセスできるようになりました。"
-  },
-  "unassignedItemsBannerSelfHostNotice": {
-    "message": "お知らせ：2024年5月16日に、 割り当てられていない組織アイテムは、デバイス間のすべての保管庫ビューに表示されなくなり、管理コンソールからのみアクセス可能になります。"
-  },
-  "unassignedItemsBannerCTAPartOne": {
-    "message": "これらのアイテムのコレクションへの割り当てを",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
-  "unassignedItemsBannerCTAPartTwo": {
-    "message": "で実行すると表示できるようになります。",
-    "description": "This will be part of a larger sentence, which will read like so: Assign these items to a collection from the Admin Console to make them visible."
-  },
   "deleteProvider": {
     "message": "プロバイダを削除"
   },
