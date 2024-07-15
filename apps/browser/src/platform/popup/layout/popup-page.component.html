@@ -1,7 +1,16 @@
 <ng-content select="[slot=header]"></ng-content>
-<main class="tw-bg-background-alt tw-flex-1 tw-overflow-y-auto tw-h-full">
-  <div class="tw-max-w-screen-sm tw-mx-auto tw-p-3 tw-overflow-y-auto tw-h-full">
+<main class="tw-flex-1 tw-overflow-y-auto tw-h-full tw-relative tw-bg-background-alt">
+  <div
+    class="tw-max-w-screen-sm tw-mx-auto tw-p-3 tw-overflow-y-auto tw-h-full"
+    [ngClass]="{ 'tw-invisible': loading }"
+  >
     <ng-content></ng-content>
   </div>
+  <span
+    class="tw-absolute tw-inset-0 tw-flex tw-items-center tw-justify-center tw-text-main"
+    [ngClass]="{ 'tw-invisible': !loading }"
+  >
+    <i class="bwi bwi-spinner bwi-lg bwi-spin" [attr.aria-label]="loadingText"></i>
+  </span>
 </main>
 <ng-content select="[slot=footer]"></ng-content>

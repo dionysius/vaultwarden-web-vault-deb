@@ -44,6 +44,14 @@ page looks nice when the extension is popped out.
 - default
   - Whatever content you want in `main`.
 
+**Inputs**
+
+- `loading`
+  - When `true`, displays a loading state overlay instead of the default content. Defaults to
+    `false`.
+- `loadingText`
+  - Custom text to be applied to the loading element for screenreaders only. Defaults to "Loading".
+
 Basic usage example:
 
 ```html
@@ -137,8 +145,20 @@ When the browser extension is popped out, the "popout" button should not be pass
   <Story of={stories.PoppedOut} />
 </Canvas>
 
+# Other stories
+
 ## Centered Content
+
+An example of how to center the default content.
 
 <Canvas>
   <Story of={stories.CenteredContent} />
+</Canvas>
+
+## Loading
+
+An example of what the loading state looks like.
+
+<Canvas>
+  <Story of={stories.Loading} />
 </Canvas>
