@@ -32,6 +32,7 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
+import { ToastService } from "@bitwarden/components";
 
 import { CaptchaProtectedComponent } from "./captcha-protected.component";
 
@@ -94,6 +95,7 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
     protected configService: ConfigService,
     protected masterPasswordService: InternalMasterPasswordServiceAbstraction,
     protected accountService: AccountService,
+    protected toastService: ToastService,
   ) {
     super(environmentService, i18nService, platformUtilsService);
     this.webAuthnSupported = this.platformUtilsService.supportsWebAuthn(win);
@@ -474,6 +476,15 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
   }
 
   async launchDuoFrameless() {
+    if (this.duoFramelessUrl === null) {
+      this.toastService.showToast({
+        variant: "error",
+        title: null,
+        message: this.i18nService.t("duoHealthCheckResultsInNullAuthUrlError"),
+      });
+      return;
+    }
+
     this.platformUtilsService.launchUri(this.duoFramelessUrl);
   }
 }

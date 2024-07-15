@@ -25,6 +25,7 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
+import { ToastService } from "@bitwarden/components";
 
 import { TwoFactorOptionsComponent } from "./two-factor-options.component";
 
@@ -64,6 +65,7 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
     configService: ConfigService,
     masterPasswordService: InternalMasterPasswordServiceAbstraction,
     accountService: AccountService,
+    toastService: ToastService,
     @Inject(WINDOW) protected win: Window,
   ) {
     super(
@@ -85,6 +87,7 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
       configService,
       masterPasswordService,
       accountService,
+      toastService,
     );
     super.onSuccessfulLogin = async () => {
       // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
@@ -149,6 +152,15 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
   }
 
   override async launchDuoFrameless() {
+    if (this.duoFramelessUrl === null) {
+      this.toastService.showToast({
+        variant: "error",
+        title: null,
+        message: this.i18nService.t("duoHealthCheckResultsInNullAuthUrlError"),
+      });
+      return;
+    }
+
     const duoHandOffMessage = {
       title: this.i18nService.t("youSuccessfullyLoggedIn"),
       message: this.i18nService.t("youMayCloseThisWindow"),

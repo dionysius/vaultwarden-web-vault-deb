@@ -25,7 +25,7 @@ import { MessagingService } from "@bitwarden/common/platform/abstractions/messag
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 
 import { BrowserApi } from "../../platform/browser/browser-api";
 import { ZonedMessageListenerService } from "../../platform/browser/zoned-message-listener.service";
@@ -62,6 +62,7 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
     private dialogService: DialogService,
     masterPasswordService: InternalMasterPasswordServiceAbstraction,
     accountService: AccountService,
+    toastService: ToastService,
     @Inject(WINDOW) protected win: Window,
     private browserMessagingApi: ZonedMessageListenerService,
   ) {
@@ -84,6 +85,7 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
       configService,
       masterPasswordService,
       accountService,
+      toastService,
     );
     super.onSuccessfulLogin = async () => {
       // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
@@ -226,6 +228,15 @@ export class TwoFactorComponent extends BaseTwoFactorComponent {
   }
 
   override async launchDuoFrameless() {
+    if (this.duoFramelessUrl === null) {
+      this.toastService.showToast({
+        variant: "error",
+        title: null,
+        message: this.i18nService.t("duoHealthCheckResultsInNullAuthUrlError"),
+      });
+      return;
+    }
+
     const duoHandOffMessage = {
       title: this.i18nService.t("youSuccessfullyLoggedIn"),
       message: this.i18nService.t("youMayCloseThisWindow"),
