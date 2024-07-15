@@ -106,12 +106,27 @@ const plugins = [
     chunks: ["notification/bar"],
   }),
   new HtmlWebpackPlugin({
-    template: "./src/autofill/overlay/pages/button/button.html",
+    template: "./src/autofill/overlay/inline-menu/pages/button/button.html",
+    filename: "overlay/menu-button.html",
+    chunks: ["overlay/menu-button"],
+  }),
+  new HtmlWebpackPlugin({
+    template: "./src/autofill/overlay/inline-menu/pages/list/list.html",
+    filename: "overlay/menu-list.html",
+    chunks: ["overlay/menu-list"],
+  }),
+  new HtmlWebpackPlugin({
+    template: "./src/autofill/overlay/inline-menu/pages/menu-container/menu-container.html",
+    filename: "overlay/menu.html",
+    chunks: ["overlay/menu"],
+  }),
+  new HtmlWebpackPlugin({
+    template: "./src/autofill/deprecated/overlay/pages/button/legacy-button.html",
     filename: "overlay/button.html",
     chunks: ["overlay/button"],
   }),
   new HtmlWebpackPlugin({
-    template: "./src/autofill/overlay/pages/list/list.html",
+    template: "./src/autofill/deprecated/overlay/pages/list/legacy-list.html",
     filename: "overlay/list.html",
     chunks: ["overlay/list"],
   }),
@@ -161,6 +176,8 @@ const mainConfig = {
       "./src/autofill/content/trigger-autofill-script-injection.ts",
     "content/bootstrap-autofill": "./src/autofill/content/bootstrap-autofill.ts",
     "content/bootstrap-autofill-overlay": "./src/autofill/content/bootstrap-autofill-overlay.ts",
+    "content/bootstrap-legacy-autofill-overlay":
+      "./src/autofill/deprecated/content/bootstrap-legacy-autofill-overlay.ts",
     "content/autofiller": "./src/autofill/content/autofiller.ts",
     "content/notificationBar": "./src/autofill/content/notification-bar.ts",
     "content/contextMenuHandler": "./src/autofill/content/context-menu-handler.ts",
@@ -168,8 +185,16 @@ const mainConfig = {
     "content/fido2-content-script": "./src/autofill/fido2/content/fido2-content-script.ts",
     "content/fido2-page-script": "./src/autofill/fido2/content/fido2-page-script.ts",
     "notification/bar": "./src/autofill/notification/bar.ts",
-    "overlay/button": "./src/autofill/overlay/pages/button/bootstrap-autofill-overlay-button.ts",
-    "overlay/list": "./src/autofill/overlay/pages/list/bootstrap-autofill-overlay-list.ts",
+    "overlay/menu-button":
+      "./src/autofill/overlay/inline-menu/pages/button/bootstrap-autofill-inline-menu-button.ts",
+    "overlay/menu-list":
+      "./src/autofill/overlay/inline-menu/pages/list/bootstrap-autofill-inline-menu-list.ts",
+    "overlay/menu":
+      "./src/autofill/overlay/inline-menu/pages/menu-container/bootstrap-autofill-inline-menu-container.ts",
+    "overlay/button":
+      "./src/autofill/deprecated/overlay/pages/button/bootstrap-autofill-overlay-button.deprecated.ts",
+    "overlay/list":
+      "./src/autofill/deprecated/overlay/pages/list/bootstrap-autofill-overlay-list.deprecated.ts",
     "encrypt-worker": "../../libs/common/src/platform/services/cryptography/encrypt.worker.ts",
     "content/lp-fileless-importer": "./src/tools/content/lp-fileless-importer.ts",
     "content/send-on-installed-message": "./src/vault/content/send-on-installed-message.ts",

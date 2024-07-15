@@ -12,10 +12,12 @@ import { DomainSettingsService } from "@bitwarden/common/autofill/services/domai
 import { InlineMenuVisibilitySetting } from "@bitwarden/common/autofill/types";
 import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions/account/billing-account-profile-state.service";
 import { EventType } from "@bitwarden/common/enums";
+import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import {
   UriMatchStrategySetting,
   UriMatchStrategy,
 } from "@bitwarden/common/models/domain/domain-service";
+import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { MessageListener } from "@bitwarden/common/platform/messaging";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
@@ -29,7 +31,7 @@ import { BrowserApi } from "../../platform/browser/browser-api";
 import { ScriptInjectorService } from "../../platform/services/abstractions/script-injector.service";
 import { openVaultItemPasswordRepromptPopout } from "../../vault/popup/utils/vault-popout-window";
 import { AutofillMessageCommand, AutofillMessageSender } from "../enums/autofill-message.enums";
-import { AutofillPort } from "../enums/autofill-port.enums";
+import { AutofillPort } from "../enums/autofill-port.enum";
 import AutofillField from "../models/autofill-field";
 import AutofillPageDetails from "../models/autofill-page-details";
 import AutofillScript from "../models/autofill-script";
@@ -67,6 +69,7 @@ export default class AutofillService implements AutofillServiceInterface {
     private scriptInjectorService: ScriptInjectorService,
     private accountService: AccountService,
     private authService: AuthService,
+    private configService: ConfigService,
     private messageListener: MessageListener,
   ) {}
 
@@ -160,16 +163,23 @@ export default class AutofillService implements AutofillServiceInterface {
     const activeAccount = await firstValueFrom(this.accountService.activeAccount$);
     const authStatus = await firstValueFrom(this.authService.activeAccountStatus$);
     const accountIsUnlocked = authStatus === AuthenticationStatus.Unlocked;
-    let overlayVisibility: InlineMenuVisibilitySetting = AutofillOverlayVisibility.Off;
+    let inlineMenuVisibility: InlineMenuVisibilitySetting = AutofillOverlayVisibility.Off;
     let autoFillOnPageLoadIsEnabled = false;
 
     if (activeAccount) {
-      overlayVisibility = await this.getOverlayVisibility();
+      inlineMenuVisibility = await this.getInlineMenuVisibility();
     }
 
-    const mainAutofillScript = overlayVisibility
-      ? "bootstrap-autofill-overlay.js"
-      : "bootstrap-autofill.js";
+    let mainAutofillScript = "bootstrap-autofill.js";
+
+    if (inlineMenuVisibility) {
+      const inlineMenuPositioningImprovements = await this.configService.getFeatureFlag(
+        FeatureFlag.InlineMenuPositioningImprovements,
+      );
+      mainAutofillScript = inlineMenuPositioningImprovements
+        ? "bootstrap-autofill-overlay.js"
+        : "bootstrap-legacy-autofill-overlay.js";
+    }
 
     const injectedScripts = [mainAutofillScript];
 
@@ -274,7 +284,7 @@ export default class AutofillService implements AutofillServiceInterface {
   /**
    * Gets the overlay's visibility setting from the autofill settings service.
    */
-  async getOverlayVisibility(): Promise<InlineMenuVisibilitySetting> {
+  async getInlineMenuVisibility(): Promise<InlineMenuVisibilitySetting> {
     return await firstValueFrom(this.autofillSettingsService.inlineMenuVisibility$);
   }
 
@@ -2162,8 +2172,8 @@ export default class AutofillService implements AutofillServiceInterface {
     if (!inlineMenuPreviouslyDisabled && !inlineMenuCurrentlyDisabled) {
       const tabs = await BrowserApi.tabsQuery({});
       tabs.forEach((tab) =>
-        BrowserApi.tabSendMessageData(tab, "updateAutofillOverlayVisibility", {
-          autofillOverlayVisibility: currentSetting,
+        BrowserApi.tabSendMessageData(tab, "updateAutofillInlineMenuVisibility", {
+          inlineMenuVisibility: currentSetting,
         }),
       );
       return;

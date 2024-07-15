@@ -48,6 +48,22 @@ export function sendPortMessage(port: chrome.runtime.Port, message: any) {
   });
 }
 
+export function triggerPortOnConnectEvent(port: chrome.runtime.Port) {
+  (chrome.runtime.onConnect.addListener as unknown as jest.SpyInstance).mock.calls.forEach(
+    (call) => {
+      const callback = call[0];
+      callback(port);
+    },
+  );
+}
+
+export function triggerPortOnMessageEvent(port: chrome.runtime.Port, message: any) {
+  (port.onMessage.addListener as unknown as jest.SpyInstance).mock.calls.forEach((call) => {
+    const callback = call[0];
+    callback(message, port);
+  });
+}
+
 export function triggerPortOnDisconnectEvent(port: chrome.runtime.Port) {
   (port.onDisconnect.addListener as unknown as jest.SpyInstance).mock.calls.forEach((call) => {
     const callback = call[0];
@@ -103,6 +119,17 @@ export function triggerOnAlarmEvent(alarm: chrome.alarms.Alarm) {
     const callback = call[0];
     callback(alarm);
   });
+}
+
+export function triggerWebNavigationOnCommittedEvent(
+  details: chrome.webNavigation.WebNavigationFramedCallbackDetails,
+) {
+  (chrome.webNavigation.onCommitted.addListener as unknown as jest.SpyInstance).mock.calls.forEach(
+    (call) => {
+      const callback = call[0];
+      callback(details);
+    },
+  );
 }
 
 export function mockQuerySelectorAllDefinedCall() {
