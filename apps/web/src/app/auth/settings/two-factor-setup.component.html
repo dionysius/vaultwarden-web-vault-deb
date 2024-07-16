@@ -39,7 +39,7 @@
         title="{{ 'loading' | i18n }}"
         aria-hidden="true"
       ></i>
-      <span class="sr-only">{{ "loading" | i18n }}</span>
+      <span class="tw-sr-only">{{ "loading" | i18n }}</span>
     </small>
   </h2>
   <bit-callout type="warning" *ngIf="showPolicyWarning">
@@ -64,7 +64,7 @@
               title="{{ 'enabled' | i18n }}"
               aria-hidden="true"
             ></i>
-            <span class="sr-only">{{ "enabled" | i18n }}</span>
+            <span class="tw-sr-only">{{ "enabled" | i18n }}</span>
           </ng-container>
           <app-premium-badge *ngIf="p.premium"></app-premium-badge>
         </h3>

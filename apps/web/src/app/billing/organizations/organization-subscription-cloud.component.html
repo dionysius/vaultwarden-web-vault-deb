@@ -3,7 +3,7 @@
 <bit-container *ngIf="!isProviderManaged">
   <ng-container *ngIf="!firstLoaded && loading">
     <i class="bwi bwi-spinner bwi-spin text-muted" title="{{ 'loading' | i18n }}"></i>
-    <span class="sr-only">{{ "loading" | i18n }}</span>
+    <span class="tw-sr-only">{{ "loading" | i18n }}</span>
   </ng-container>
 
   <app-org-subscription-hidden

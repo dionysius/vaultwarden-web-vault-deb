@@ -85,7 +85,7 @@
 
       <td bitCell *ngIf="permissionMode != 'hidden'">
         <ng-container *ngIf="canEditItemPermission(item); else readOnlyPerm">
-          <label class="sr-only" [for]="'permission' + i"
+          <label class="tw-sr-only" [for]="'permission' + i"
             >{{ item.labelName }} {{ "permission" | i18n }}</label
           >
           <div class="tw-relative tw-inline-block">

@@ -369,7 +369,7 @@ export class SsoComponent implements OnInit, OnDestroy {
     );
 
     const div = document.createElement("div");
-    div.className = "sr-only";
+    div.className = "tw-sr-only";
     div.id = "srErrorCount";
     div.setAttribute("aria-live", "polite");
     div.innerText = errorText + ": " + errorCountText;

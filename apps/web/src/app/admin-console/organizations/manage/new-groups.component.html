@@ -16,7 +16,7 @@
     title="{{ 'loading' | i18n }}"
     aria-hidden="true"
   ></i>
-  <span class="sr-only">{{ "loading" | i18n }}</span>
+  <span class="tw-sr-only">{{ "loading" | i18n }}</span>
 </ng-container>
 <ng-container *ngIf="!loading">
   <p *ngIf="!dataSource.filteredData.length">{{ "noGroupsInList" | i18n }}</p>
