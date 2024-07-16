@@ -2,6 +2,10 @@ import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { ReactiveFormsModule, FormBuilder, Validators } from "@angular/forms";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
+import {
+  PasswordStrengthScore,
+  PasswordStrengthV2Component,
+} from "@bitwarden/angular/tools/password-strength/password-strength-v2.component";
 import { AuditService } from "@bitwarden/common/abstractions/audit.service";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { MasterPasswordPolicyOptions } from "@bitwarden/common/admin-console/models/domain/master-password-policy-options";
@@ -40,6 +44,7 @@ import { PasswordInputResult } from "./password-input-result";
     ReactiveFormsModule,
     SharedModule,
     PasswordCalloutComponent,
+    PasswordStrengthV2Component,
     JslibModule,
   ],
 })
@@ -56,7 +61,7 @@ export class InputPasswordComponent implements OnInit {
 
   protected minPasswordLength = Utils.minimumPasswordLength;
   protected minPasswordMsg = "";
-  protected passwordStrengthResult: any;
+  protected passwordStrengthScore: PasswordStrengthScore;
   protected showErrorSummary = false;
   protected showPassword = false;
 
@@ -112,8 +117,8 @@ export class InputPasswordComponent implements OnInit {
     }
   }
 
-  getPasswordStrengthResult(result: any) {
-    this.passwordStrengthResult = result;
+  getPasswordStrengthScore(score: PasswordStrengthScore) {
+    this.passwordStrengthScore = score;
   }
 
   protected submit = async () => {
@@ -147,7 +152,7 @@ export class InputPasswordComponent implements OnInit {
     if (
       this.masterPasswordPolicyOptions != null &&
       !this.policyService.evaluateMasterPassword(
-        this.passwordStrengthResult.score,
+        this.passwordStrengthScore,
         password,
         this.masterPasswordPolicyOptions,
       )
