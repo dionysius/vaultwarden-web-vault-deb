@@ -62,6 +62,10 @@ export class ChangePasswordComponent implements OnInit, OnDestroy {
         (enforcedPasswordPolicyOptions) =>
           (this.enforcedPolicyOptions ??= enforcedPasswordPolicyOptions),
       );
+
+    if (this.enforcedPolicyOptions?.minLength) {
+      this.minimumLength = this.enforcedPolicyOptions.minLength;
+    }
   }
 
   ngOnDestroy(): void {
