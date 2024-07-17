@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, OnInit } from "@angular/core";
+import { ChangeDetectorRef, Component, OnInit, ViewChild } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { FormBuilder, ReactiveFormsModule } from "@angular/forms";
 import { shareReplay } from "rxjs";
@@ -10,6 +10,7 @@ import {
   CardComponent,
   CheckboxModule,
   FormFieldModule,
+  LinkModule,
   SectionComponent,
   SectionHeaderComponent,
   TypographyModule,
@@ -17,12 +18,14 @@ import {
 
 import { PasswordRepromptService } from "../../../services/password-reprompt.service";
 import { CipherFormContainer } from "../../cipher-form-container";
+import { CustomFieldsComponent } from "../custom-fields/custom-fields.component";
 
 @Component({
   selector: "vault-additional-options-section",
   templateUrl: "./additional-options-section.component.html",
   standalone: true,
   imports: [
+    CommonModule,
     SectionComponent,
     SectionHeaderComponent,
     TypographyModule,
@@ -32,9 +35,13 @@ import { CipherFormContainer } from "../../cipher-form-container";
     ReactiveFormsModule,
     CheckboxModule,
     CommonModule,
+    CustomFieldsComponent,
+    LinkModule,
   ],
 })
 export class AdditionalOptionsSectionComponent implements OnInit {
+  @ViewChild(CustomFieldsComponent) customFieldsComponent: CustomFieldsComponent;
+
   additionalOptionsForm = this.formBuilder.group({
     notes: [null as string],
     reprompt: [false],
@@ -44,10 +51,17 @@ export class AdditionalOptionsSectionComponent implements OnInit {
     shareReplay({ refCount: false, bufferSize: 1 }),
   );
 
+  /** When false when the add field button should be displayed in the Additional Options section  */
+  hasCustomFields = false;
+
+  /** True when the form is in `partial-edit` mode */
+  isPartialEdit = false;
+
   constructor(
     private cipherFormContainer: CipherFormContainer,
     private formBuilder: FormBuilder,
     private passwordRepromptService: PasswordRepromptService,
+    private changeDetectorRef: ChangeDetectorRef,
   ) {
     this.cipherFormContainer.registerChildForm("additionalOptions", this.additionalOptionsForm);
 
@@ -70,6 +84,22 @@ export class AdditionalOptionsSectionComponent implements OnInit {
 
     if (this.cipherFormContainer.config.mode === "partial-edit") {
       this.additionalOptionsForm.disable();
+      this.isPartialEdit = true;
     }
+  }
+
+  /** Opens the add custom field dialog */
+  addCustomField() {
+    this.customFieldsComponent.openAddEditCustomFieldDialog();
+  }
+
+  /** Update the local state when the number of fields changes */
+  handleCustomFieldChange(numberOfCustomFields: number) {
+    this.hasCustomFields = numberOfCustomFields > 0;
+
+    // The event that triggers `handleCustomFieldChange` can occur within
+    // the CustomFieldComponent `ngOnInit` lifecycle hook, so we need to
+    // manually trigger change detection to update the view.
+    this.changeDetectorRef.detectChanges();
   }
 }
