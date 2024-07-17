@@ -352,8 +352,10 @@ describe("Cipher Service", () => {
 
       const cipher1 = new CipherView(cipherObj);
       cipher1.id = "Cipher 1";
+      cipher1.organizationId = null;
       const cipher2 = new CipherView(cipherObj);
       cipher2.id = "Cipher 2";
+      cipher2.organizationId = null;
 
       decryptedCiphers = new BehaviorSubject({
         Cipher1: cipher1,

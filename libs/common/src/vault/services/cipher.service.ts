@@ -1184,11 +1184,16 @@ export class CipherService implements CipherServiceAbstraction {
     let encryptedCiphers: CipherWithIdRequest[] = [];
 
     const ciphers = await this.getAllDecrypted();
-    if (!ciphers || ciphers.length === 0) {
+    if (!ciphers) {
+      return encryptedCiphers;
+    }
+
+    const userCiphers = ciphers.filter((c) => c.organizationId == null);
+    if (userCiphers.length === 0) {
       return encryptedCiphers;
     }
     encryptedCiphers = await Promise.all(
-      ciphers.map(async (cipher) => {
+      userCiphers.map(async (cipher) => {
         const encryptedCipher = await this.encrypt(cipher, newUserKey, originalUserKey);
         return new CipherWithIdRequest(encryptedCipher);
       }),
