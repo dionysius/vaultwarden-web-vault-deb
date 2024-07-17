@@ -16,21 +16,27 @@
           formControlName="assignedSeats"
           [min]="dialogParams.organization.occupiedSeats"
         />
-        <bit-hint class="tw-text-muted" *ngIf="openSeats > 0 || isServiceUserWithPurchasedSeats">
+        <bit-hint class="tw-text-muted" *ngIf="!isServiceUserWithPurchasedSeats">
           <div
-            *ngIf="!this.isServiceUserWithPurchasedSeats"
             class="tw-grid tw-grid-flow-col tw-gap-1 tw-grid-cols-1"
-            [ngClass]="{ 'tw-grid-rows-2': this.isProviderAdmin }"
+            [ngClass]="{
+              'tw-grid-rows-1': additionalSeatsPurchased === 0,
+              'tw-grid-rows-2': purchasingSeats || sellingSeats
+            }"
           >
             <span class="tw-col-span-1">
               {{ unassignedSeats }} {{ "unassignedSeatsDescription" | i18n | lowercase }}
             </span>
-            <span *ngIf="this.isProviderAdmin" class="tw-col-span-1"
+            <span *ngIf="purchasingSeats" class="tw-col-span-1"
               >{{ additionalSeatsPurchased }}
               {{ "purchaseSeatDescription" | i18n | lowercase }}</span
             >
+            <span *ngIf="sellingSeats" class="tw-col-span-1"
+              >{{ purchasedSeatsRemoved }} {{ "purchasedSeatsRemoved" | i18n | lowercase }}</span
+            >
           </div>
         </bit-hint>
+        <bit-hint *ngIf="isServiceUserWithPurchasedSeats"></bit-hint>
       </bit-form-field>
     </div>
     <ng-container bitDialogFooter>

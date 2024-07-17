@@ -36,7 +36,10 @@ export const openManageClientSubscriptionDialog = (
 export class ManageClientSubscriptionDialogComponent implements OnInit {
   protected loading = true;
   protected providerPlan: ProviderPlanResponse;
+  protected assignedSeats: number;
   protected openSeats: number;
+  protected purchasedSeats: number;
+  protected seatMinimum: number;
   protected readonly ResultType = ManageClientSubscriptionDialogResultType;
 
   protected formGroup = new FormGroup({
@@ -63,7 +66,10 @@ export class ManageClientSubscriptionDialogComponent implements OnInit {
       (plan) => plan.planName === this.dialogParams.organization.plan,
     );
 
+    this.assignedSeats = this.providerPlan.assignedSeats;
     this.openSeats = this.providerPlan.seatMinimum - this.providerPlan.assignedSeats;
+    this.purchasedSeats = this.providerPlan.purchasedSeats;
+    this.seatMinimum = this.providerPlan.seatMinimum;
 
     this.formGroup.controls.assignedSeats.addValidators(
       this.isServiceUserWithPurchasedSeats
@@ -165,9 +171,22 @@ export class ManageClientSubscriptionDialogComponent implements OnInit {
     const seatDifference =
       this.formGroup.value.assignedSeats - this.dialogParams.organization.seats;
 
-    const purchasedSeats = seatDifference - this.openSeats;
+    if (this.purchasedSeats > 0) {
+      return seatDifference;
+    }
 
-    return purchasedSeats > 0 ? purchasedSeats : 0;
+    return seatDifference - this.openSeats;
+  }
+
+  get purchasedSeatsRemoved(): number {
+    const seatDifference =
+      this.dialogParams.organization.seats - this.formGroup.value.assignedSeats;
+
+    if (this.purchasedSeats >= seatDifference) {
+      return seatDifference;
+    }
+
+    return this.purchasedSeats;
   }
 
   get isProviderAdmin(): boolean {
@@ -176,5 +195,13 @@ export class ManageClientSubscriptionDialogComponent implements OnInit {
 
   get isServiceUserWithPurchasedSeats(): boolean {
     return !this.isProviderAdmin && this.providerPlan && this.providerPlan.purchasedSeats > 0;
+  }
+
+  get purchasingSeats(): boolean {
+    return this.additionalSeatsPurchased > 0;
+  }
+
+  get sellingSeats(): boolean {
+    return this.purchasedSeats > 0 && this.additionalSeatsPurchased < 0;
   }
 }
