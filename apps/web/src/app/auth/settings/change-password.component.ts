@@ -16,7 +16,9 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
+import { HashPurpose } from "@bitwarden/common/platform/enums";
 import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
+import { UserId } from "@bitwarden/common/types/guid";
 import { MasterKey, UserKey } from "@bitwarden/common/types/key";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
@@ -178,6 +180,13 @@ export class ChangePasswordComponent extends BaseChangePasswordComponent {
       await this.kdfConfigService.getKdfConfig(),
     );
 
+    const userId = await firstValueFrom(this.accountService.activeAccount$.pipe(map((a) => a?.id)));
+    const newLocalKeyHash = await this.cryptoService.hashMasterKey(
+      this.masterPassword,
+      newMasterKey,
+      HashPurpose.LocalAuthorization,
+    );
+
     const userKey = await this.masterPasswordService.decryptUserKeyWithMasterKey(masterKey);
     if (userKey == null) {
       this.platformUtilsService.showToast(
@@ -199,7 +208,10 @@ export class ChangePasswordComponent extends BaseChangePasswordComponent {
 
     try {
       if (this.rotateUserKey) {
-        this.formPromise = this.apiService.postPassword(request).then(() => {
+        this.formPromise = this.apiService.postPassword(request).then(async () => {
+          // we need to save this for local masterkey verification during rotation
+          await this.masterPasswordService.setMasterKeyHash(newLocalKeyHash, userId as UserId);
+          await this.masterPasswordService.setMasterKey(newMasterKey, userId as UserId);
           return this.updateKey();
         });
       } else {
