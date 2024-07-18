@@ -11,13 +11,13 @@
     <span class="tw-sr-only">{{ "loading" | i18n }}</span>
   </div>
   <div class="mt-4" *ngIf="hasLoaded">
-    <app-callout type="success" title="{{ 'goodNews' | i18n }}" *ngIf="!ciphers.length">
+    <bit-callout type="success" title="{{ 'goodNews' | i18n }}" *ngIf="!ciphers.length">
       {{ "noUnsecuredWebsites" | i18n }}
-    </app-callout>
+    </bit-callout>
     <ng-container *ngIf="ciphers.length">
-      <app-callout type="danger" title="{{ 'unsecuredWebsitesFound' | i18n }}">
+      <bit-callout type="danger" title="{{ 'unsecuredWebsitesFound' | i18n }}">
         {{ "unsecuredWebsitesFoundReportDesc" | i18n: (ciphers.length | number) : vaultMsg }}
-      </app-callout>
+      </bit-callout>
 
       <bit-toggle-group
         *ngIf="showFilterToggle && !isAdminConsoleActive"
@@ -32,27 +32,24 @@
           </bit-toggle>
         </ng-container>
       </bit-toggle-group>
-      <table class="table table-hover table-list table-ciphers">
-        <thead
-          class="tw-border-0 tw-border-b-2 tw-border-solid tw-border-secondary-300 tw-font-bold tw-text-muted"
-          *ngIf="!isAdminConsoleActive"
-        >
+      <bit-table [dataSource]="dataSource" class="table">
+        <ng-container header *ngIf="!isAdminConsoleActive">
           <tr>
             <th></th>
             <th>{{ "name" | i18n }}</th>
             <th>{{ "owner" | i18n }}</th>
           </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let c of ciphers">
+        </ng-container>
+        <ng-template body let-rows$>
+          <tr bitRow *ngFor="let r of rows$ | async">
             <td class="table-list-icon">
-              <app-vault-icon [cipher]="c"></app-vault-icon>
+              <app-vault-icon [cipher]="r"></app-vault-icon>
             </td>
             <td class="reduced-lh wrap">
-              <a href="#" appStopClick (click)="selectCipher(c)" title="{{ 'editItem' | i18n }}">{{
-                c.name
+              <a href="#" appStopClick (click)="selectCipher(r)" title="{{ 'editItem' | i18n }}">{{
+                r.name
               }}</a>
-              <ng-container *ngIf="!organization && c.organizationId">
+              <ng-container *ngIf="!organization && r.organizationId">
                 <i
                   class="bwi bwi-collection"
                   appStopProp
@@ -61,7 +58,7 @@
                 ></i>
                 <span class="tw-sr-only">{{ "shared" | i18n }}</span>
               </ng-container>
-              <ng-container *ngIf="c.hasAttachments">
+              <ng-container *ngIf="r.hasAttachments">
                 <i
                   class="bwi bwi-paperclip"
                   appStopProp
@@ -71,21 +68,21 @@
                 <span class="tw-sr-only">{{ "attachments" | i18n }}</span>
               </ng-container>
               <br />
-              <small>{{ c.subTitle }}</small>
+              <small>{{ r.subTitle }}</small>
             </td>
             <td>
               <app-org-badge
                 *ngIf="!organization"
                 [disabled]="disabled"
-                [organizationId]="c.organizationId"
-                [organizationName]="c.organizationId | orgNameFromId: (organizations$ | async)"
+                [organizationId]="r.organizationId"
+                [organizationName]="r.organizationId | orgNameFromId: (organizations$ | async)"
                 appStopProp
               >
               </app-org-badge>
             </td>
           </tr>
-        </tbody>
-      </table>
+        </ng-template>
+      </bit-table>
     </ng-container>
   </div>
   <ng-template #cipherAddEdit></ng-template>
