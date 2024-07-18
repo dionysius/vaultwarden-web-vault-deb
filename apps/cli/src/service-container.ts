@@ -75,6 +75,7 @@ import { DefaultConfigService } from "@bitwarden/common/platform/services/config
 import { ContainerService } from "@bitwarden/common/platform/services/container.service";
 import { CryptoService } from "@bitwarden/common/platform/services/crypto.service";
 import { EncryptServiceImplementation } from "@bitwarden/common/platform/services/cryptography/encrypt.service.implementation";
+import { FallbackBulkEncryptService } from "@bitwarden/common/platform/services/cryptography/fallback-bulk-encrypt.service";
 import { DefaultEnvironmentService } from "@bitwarden/common/platform/services/default-environment.service";
 import { FileUploadService } from "@bitwarden/common/platform/services/file-upload/file-upload.service";
 import { KeyGenerationService } from "@bitwarden/common/platform/services/key-generation.service";
@@ -605,6 +606,7 @@ export class ServiceContainer {
       this.stateService,
       this.autofillSettingsService,
       this.encryptService,
+      new FallbackBulkEncryptService(this.encryptService),
       this.cipherFileUploadService,
       this.configService,
       this.stateProvider,
