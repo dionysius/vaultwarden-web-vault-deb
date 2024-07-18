@@ -9,6 +9,7 @@ import { InternalAccountService } from "../abstractions/account.service";
 import { UserVerificationService } from "../abstractions/user-verification/user-verification.service.abstraction";
 import { RegisterFinishRequest } from "../models/request/registration/register-finish.request";
 import { RegisterSendVerificationEmailRequest } from "../models/request/registration/register-send-verification-email.request";
+import { RegisterVerificationEmailClickedRequest } from "../models/request/registration/register-verification-email-clicked.request";
 import { Verification } from "../types/verification";
 
 export class AccountApiServiceImplementation implements AccountApiService {
@@ -55,6 +56,28 @@ export class AccountApiServiceImplementation implements AccountApiService {
         }
       }
 
+      this.logService.error(e);
+      throw e;
+    }
+  }
+
+  async registerVerificationEmailClicked(
+    request: RegisterVerificationEmailClickedRequest,
+  ): Promise<void> {
+    const env = await firstValueFrom(this.environmentService.environment$);
+
+    try {
+      const response = await this.apiService.send(
+        "POST",
+        "/accounts/register/verification-email-clicked",
+        request,
+        false,
+        false,
+        env.getIdentityUrl(),
+      );
+
+      return response;
+    } catch (e: unknown) {
       this.logService.error(e);
       throw e;
     }

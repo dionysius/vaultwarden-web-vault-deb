@@ -660,6 +660,21 @@
   "loginExpired": {
     "message": "Your login session has expired."
   },
+  "logIn": {
+    "message": "Log in"
+  },
+  "restartRegistration": {
+    "message": "Restart registration"
+  },
+  "expiredLink": {
+    "message": "Expired link"
+  },
+  "pleaseRestartRegistrationOrTryLoggingIn": {
+    "message": "Please restart registration or try logging in."
+  },
+  "youMayAlreadyHaveAnAccount": {
+    "message": "You may already have an account"
+  },
   "logOutConfirmation": {
     "message": "Are you sure you want to log out?"
   },
