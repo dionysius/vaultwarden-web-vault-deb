@@ -71,6 +71,7 @@ import { VaultItemsComponent } from "../vault/popup/components/vault/vault-items
 import { VaultV2Component } from "../vault/popup/components/vault/vault-v2.component";
 import { ViewComponent } from "../vault/popup/components/vault/view.component";
 import { AddEditV2Component } from "../vault/popup/components/vault-v2/add-edit/add-edit-v2.component";
+import { AssignCollections } from "../vault/popup/components/vault-v2/assign-collections/assign-collections.component";
 import { AttachmentsV2Component } from "../vault/popup/components/vault-v2/attachments/attachments-v2.component";
 import { ViewV2Component } from "../vault/popup/components/vault-v2/view-v2/view-v2.component";
 import { AppearanceComponent } from "../vault/popup/settings/appearance.component";
@@ -407,6 +408,12 @@ const routes: Routes = [
         ],
       },
     ],
+  },
+  {
+    path: "assign-collections",
+    component: AssignCollections,
+    canActivate: [canAccessFeature(FeatureFlag.ExtensionRefresh, true, "/")],
+    data: { state: "assign-collections" },
   },
   ...extensionRefreshSwap(AboutPageComponent, AboutPageV2Component, {
     path: "about",
