@@ -184,7 +184,7 @@ export class EditCommand {
       const response = await this.apiService.putCollection(req.organizationId, id, request);
       const view = CollectionExport.toView(req);
       view.id = response.id;
-      const res = new OrganizationCollectionResponse(view, groups);
+      const res = new OrganizationCollectionResponse(view, groups, users);
       return Response.success(res);
     } catch (e) {
       return Response.error(e);

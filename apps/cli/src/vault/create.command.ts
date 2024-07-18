@@ -208,7 +208,7 @@ export class CreateCommand {
       const response = await this.apiService.postCollection(req.organizationId, request);
       const view = CollectionExport.toView(req);
       view.id = response.id;
-      const res = new OrganizationCollectionResponse(view, groups);
+      const res = new OrganizationCollectionResponse(view, groups, users);
       return Response.success(res);
     } catch (e) {
       return Response.error(e);
