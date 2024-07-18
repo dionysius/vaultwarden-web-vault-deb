@@ -1,0 +1,110 @@
+<bit-section [formGroup]="loginDetailsForm">
+  <bit-section-header>
+    <h2 bitTypography="h5">
+      {{ "loginCredentials" | i18n }}
+    </h2>
+  </bit-section-header>
+
+  <bit-card>
+    <bit-form-field>
+      <bit-label>{{ "username" | i18n }}</bit-label>
+      <input bitInput formControlName="username" />
+      <button
+        type="button"
+        bitIconButton="bwi-generate"
+        bitSuffix
+        *ngIf="loginDetailsForm.controls.username.enabled"
+        data-testid="generate-username-button"
+        [appA11yTitle]="'generateUsername' | i18n"
+        [bitAction]="generateUsername"
+      ></button>
+    </bit-form-field>
+
+    <bit-form-field>
+      <bit-label>{{ "password" | i18n }}</bit-label>
+      <input bitInput formControlName="password" type="password" />
+      <button
+        type="button"
+        bitIconButton="bwi-check-circle"
+        bitSuffix
+        *ngIf="
+          loginDetailsForm.controls.password.enabled &&
+          loginDetailsForm.controls.password.value?.length > 0
+        "
+        data-testid="check-password-button"
+        [appA11yTitle]="'checkPassword' | i18n"
+        [bitAction]="checkPassword"
+      ></button>
+      <button
+        type="button"
+        bitIconButton
+        bitSuffix
+        *ngIf="viewHiddenFields"
+        data-testid="toggle-password-visibility"
+        bitPasswordInputToggle
+      ></button>
+      <button
+        type="button"
+        bitIconButton="bwi-generate"
+        bitSuffix
+        *ngIf="loginDetailsForm.controls.password.enabled"
+        data-testid="generate-password-button"
+        [appA11yTitle]="'generatePassword' | i18n"
+        [bitAction]="generatePassword"
+      ></button>
+    </bit-form-field>
+
+    <bit-form-field *ngIf="hasPasskey">
+      <bit-label>{{ "typePasskey" | i18n }}</bit-label>
+      <input
+        bitInput
+        disabled
+        [value]="fido2CredentialCreationDateValue"
+        data-testid="passkey-field"
+      />
+      <button
+        type="button"
+        bitIconButton="bwi-minus-circle"
+        buttonType="danger"
+        bitSuffix
+        *ngIf="loginDetailsForm.enabled"
+        [bitAction]="removePasskey"
+        data-testid="remove-passkey-button"
+        [appA11yTitle]="'removePasskey' | i18n"
+      ></button>
+    </bit-form-field>
+
+    <bit-form-field>
+      <bit-label>
+        {{ "authenticatorKey" | i18n }}
+        <button
+          bitIconButton="bwi-question-circle"
+          type="button"
+          size="small"
+          [bitPopoverTriggerFor]="totpPopover"
+        ></button>
+        <bit-popover #totpPopover [title]="'totpHelperTitle' | i18n">
+          <p>{{ (canCaptureTotp ? "totpHelperWithCapture" : "totpHelper") | i18n }}</p>
+        </bit-popover>
+      </bit-label>
+      <input bitInput formControlName="totp" type="password" />
+      <button
+        type="button"
+        bitIconButton
+        bitSuffix
+        *ngIf="viewHiddenFields"
+        data-testid="toggle-totp-visibility"
+        bitPasswordInputToggle
+      ></button>
+      <button
+        type="button"
+        bitIconButton="bwi-camera"
+        bitSuffix
+        *ngIf="canCaptureTotp"
+        data-testid="capture-totp-button"
+        [bitAction]="captureTotp"
+        [appA11yTitle]="'totpCapture' | i18n"
+      ></button>
+    </bit-form-field>
+  </bit-card>
+</bit-section>

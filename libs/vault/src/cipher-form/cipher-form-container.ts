@@ -6,6 +6,7 @@ import { CardDetailsSectionComponent } from "./components/card-details-section/c
 import { CustomFieldsComponent } from "./components/custom-fields/custom-fields.component";
 import { IdentitySectionComponent } from "./components/identity/identity.component";
 import { ItemDetailsSectionComponent } from "./components/item-details/item-details-section.component";
+import { LoginDetailsSectionComponent } from "./components/login-details-section/login-details-section.component";
 
 /**
  * The complete form for a cipher. Includes all the sub-forms from their respective section components.
@@ -14,6 +15,7 @@ import { ItemDetailsSectionComponent } from "./components/item-details/item-deta
 export type CipherForm = {
   itemDetails?: ItemDetailsSectionComponent["itemDetailsForm"];
   additionalOptions?: AdditionalOptionsSectionComponent["additionalOptionsForm"];
+  loginDetails?: LoginDetailsSectionComponent["loginDetailsForm"];
   cardDetails?: CardDetailsSectionComponent["cardDetailsForm"];
   identityDetails?: IdentitySectionComponent["identityForm"];
   customFields?: CustomFieldsComponent["customFieldsForm"];

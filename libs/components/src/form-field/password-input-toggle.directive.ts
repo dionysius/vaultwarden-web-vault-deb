@@ -56,7 +56,9 @@ export class BitPasswordInputToggleDirective implements AfterContentInit, OnChan
   }
 
   ngAfterContentInit(): void {
-    this.toggled = this.formField.input.type !== "password";
+    if (this.formField.input?.type) {
+      this.toggled = this.formField.input.type !== "password";
+    }
     this.button.icon = this.icon;
   }
 

@@ -639,6 +639,15 @@
   "totpCapture": {
     "message": "Scan authenticator QR code from current webpage"
   },
+  "totpHelperTitle": {
+    "message": "Make 2-step verification seamless"
+  },
+  "totpHelper": {
+    "message": "Bitwarden can store and fill 2-step verification codes. Copy and paste the key into this field."
+  },
+  "totpHelperWithCapture": {
+    "message": "Bitwarden can store and fill 2-step verification codes. Select the camera icon to take a screenshot of this website's authenticator QR code, or copy and paste the key into this field."
+  },
   "copyTOTP": {
     "message": "Copy Authenticator key (TOTP)"
   },
@@ -3618,6 +3627,12 @@
         "example": "Your File"
       }
     }
+  },
+  "loginCredentials": {
+    "message": "Login credentials"
+  },
+  "authenticatorKey": {
+    "message": "Authenticator key"
   },
   "cardDetails": {
     "message": "Card details"
