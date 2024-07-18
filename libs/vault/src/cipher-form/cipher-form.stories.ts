@@ -86,7 +86,7 @@ const defaultConfig: CipherFormConfig = {
       password: "testpassword",
       fido2Credentials: [
         {
-          creationDate: new Date(),
+          creationDate: new Date(2024, 6, 18),
         },
       ],
       totp: "123456",
