@@ -127,9 +127,12 @@ export class RegistrationStartComponent implements OnInit, OnDestroy {
       return;
     }
 
+    // The app expects null for name and not empty string.
+    const sanitizedName = this.name.value === "" ? null : this.name.value;
+
     const request: RegisterSendVerificationEmailRequest = new RegisterSendVerificationEmailRequest(
       this.email.value,
-      this.name.value,
+      sanitizedName,
       this.receiveMarketingEmails.value,
     );
 

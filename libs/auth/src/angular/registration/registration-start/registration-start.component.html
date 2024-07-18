@@ -12,7 +12,6 @@
         type="email"
         formControlName="email"
         [attr.readonly]="emailReadonly ? true : null"
-        appAutofocus
       />
     </bit-form-field>
 
@@ -86,8 +85,8 @@
       id="check_your_email_heading"
       class="tw-font-bold tw-mb-3 tw-text-main"
       tabindex="0"
-      appAutofocus
       aria-describedby="follow_the_link_body"
+      appAutofocus
     >
       {{ "checkYourEmail" | i18n }}
     </h2>
