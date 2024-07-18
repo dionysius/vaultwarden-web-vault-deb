@@ -201,6 +201,7 @@ export class CustomFieldsComponent implements OnInit, AfterViewInit {
           addField: this.addField.bind(this),
           updateLabel: this.updateLabel.bind(this),
           removeField: this.removeField.bind(this),
+          cipherType: this.cipherFormContainer.config.cipherType,
           editLabelConfig,
         },
       },

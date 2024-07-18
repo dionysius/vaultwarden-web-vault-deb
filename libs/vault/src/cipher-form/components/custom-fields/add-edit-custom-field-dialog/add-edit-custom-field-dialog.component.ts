@@ -5,7 +5,7 @@ import { FormBuilder, ReactiveFormsModule, Validators } from "@angular/forms";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
-import { FieldType } from "@bitwarden/common/vault/enums";
+import { CipherType, FieldType } from "@bitwarden/common/vault/enums";
 import {
   AsyncActionsModule,
   ButtonModule,
@@ -19,6 +19,8 @@ export type AddEditCustomFieldDialogData = {
   addField: (type: FieldType, label: string) => void;
   updateLabel: (index: number, label: string) => void;
   removeField: (index: number) => void;
+  /** Type of cipher */
+  cipherType: CipherType;
   /** When provided, dialog will display edit label variants */
   editLabelConfig?: { index: number; label: string };
 };
@@ -62,6 +64,15 @@ export class AddEditCustomFieldDialogComponent {
     private i18nService: I18nService,
   ) {
     this.variant = data.editLabelConfig ? "edit" : "add";
+
+    this.fieldTypeOptions = this.fieldTypeOptions.filter((option) => {
+      // Filter out the Linked field type for Secure Notes
+      if (this.data.cipherType === CipherType.SecureNote) {
+        return option.value !== FieldType.Linked;
+      }
+
+      return true;
+    });
 
     if (this.variant === "edit") {
       this.customFieldForm.controls.label.setValue(data.editLabelConfig.label);

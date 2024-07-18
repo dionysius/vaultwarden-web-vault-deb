@@ -2,7 +2,7 @@ import { DIALOG_DATA } from "@angular/cdk/dialog";
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
-import { FieldType } from "@bitwarden/common/vault/enums";
+import { CipherType, FieldType } from "@bitwarden/common/vault/enums";
 
 import {
   AddEditCustomFieldDialogComponent,
@@ -20,6 +20,7 @@ describe("AddEditCustomFieldDialogComponent", () => {
     addField,
     updateLabel,
     removeField,
+    cipherType: CipherType.Login,
   } as AddEditCustomFieldDialogData;
 
   beforeEach(async () => {
@@ -68,5 +69,16 @@ describe("AddEditCustomFieldDialogComponent", () => {
     component.removeField();
 
     expect(removeField).toHaveBeenCalledWith(2);
+  });
+
+  it('filters out "Linked" field type for SecureNote cipher type', () => {
+    dialogData.cipherType = CipherType.SecureNote;
+
+    fixture = TestBed.createComponent(AddEditCustomFieldDialogComponent);
+    component = fixture.componentInstance;
+
+    expect(component.fieldTypeOptions).not.toContainEqual(
+      expect.objectContaining({ value: FieldType.Linked }),
+    );
   });
 });
