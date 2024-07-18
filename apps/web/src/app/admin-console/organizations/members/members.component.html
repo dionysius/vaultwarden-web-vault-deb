@@ -5,7 +5,7 @@
     [placeholder]="'searchMembers' | i18n"
   ></bit-search>
 
-  <button type="button" bitButton buttonType="primary" (click)="invite()">
+  <button type="button" bitButton buttonType="primary" (click)="invite()" [disabled]="!firstLoaded">
     <i class="bwi bwi-plus bwi-fw" aria-hidden="true"></i>
     {{ "inviteMember" | i18n }}
   </button>
