@@ -8,7 +8,7 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { FolderApiServiceAbstraction } from "@bitwarden/common/vault/abstractions/folder/folder-api.service.abstraction";
 import { FolderService } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 
 @Component({
   selector: "app-folder-add-edit",
@@ -24,6 +24,7 @@ export class FolderAddEditComponent extends BaseFolderAddEditComponent {
     logService: LogService,
     dialogService: DialogService,
     formBuilder: FormBuilder,
+    protected toastService: ToastService,
     protected dialogRef: DialogRef<FolderAddEditDialogResult>,
     @Inject(DIALOG_DATA) params: FolderAddEditDialogParams,
   ) {
@@ -51,10 +52,12 @@ export class FolderAddEditComponent extends BaseFolderAddEditComponent {
     }
 
     try {
-      this.deletePromise = this.folderApiService.delete(this.folder.id);
-      await this.deletePromise;
-      this.platformUtilsService.showToast("success", null, this.i18nService.t("deletedFolder"));
-      this.onDeletedFolder.emit(this.folder);
+      await this.folderApiService.delete(this.folder.id);
+      this.toastService.showToast({
+        variant: "success",
+        title: null,
+        message: this.i18nService.t("deletedFolder"),
+      });
     } catch (e) {
       this.logService.error(e);
     }

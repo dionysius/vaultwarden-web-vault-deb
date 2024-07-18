@@ -137,16 +137,14 @@ export class FolderService implements InternalFolderServiceAbstraction {
         return;
       }
 
-      if (typeof id === "string") {
-        if (folders[id] == null) {
-          return;
+      const folderIdsToDelete = Array.isArray(id) ? id : [id];
+
+      folderIdsToDelete.forEach((id) => {
+        if (folders[id] != null) {
+          delete folders[id];
         }
-        delete folders[id];
-      } else {
-        (id as string[]).forEach((i) => {
-          delete folders[i];
-        });
-      }
+      });
+
       return folders;
     });
 

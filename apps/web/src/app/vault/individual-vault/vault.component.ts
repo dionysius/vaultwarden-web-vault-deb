@@ -464,9 +464,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     const result = await lastValueFrom(dialog.closed);
 
     if (result === FolderAddEditDialogResult.Deleted) {
-      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-      // eslint-disable-next-line @typescript-eslint/no-floating-promises
-      this.router.navigate([], {
+      await this.router.navigate([], {
         queryParams: { folderId: null },
         queryParamsHandling: "merge",
         replaceUrl: true,
