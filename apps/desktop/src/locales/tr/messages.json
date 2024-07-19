@@ -627,6 +627,9 @@
   "verificationCodeRequired": {
     "message": "Doğrulama kodu gereklidir."
   },
+  "webauthnCancelOrTimeout": {
+    "message": "Kimlik doğrulama iptal edildi ve çok uzun sürdü. Lütfen yeniden deneyin."
+  },
   "invalidVerificationCode": {
     "message": "Geçersiz doğrulama kodu"
   },
@@ -683,7 +686,7 @@
     "description": "'Bitwarden Authenticator' is a product name and should not be translated."
   },
   "yubiKeyTitleV2": {
-    "message": "Yubico OTP security key"
+    "message": "YubiKey OTP güvenlik anahtarı"
   },
   "yubiKeyDesc": {
     "message": "Hesabınıza erişmek için bir YubiKey kullanın. YubiKey 4, 4 Nano, 4C ve NEO cihazlarıyla çalışır."
@@ -2778,6 +2781,9 @@
       }
     }
   },
+  "duoHealthCheckResultsInNullAuthUrlError": {
+    "message": "Error connecting with the Duo service. Use a different two-step login method or contact Duo for assistance."
+  },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
     "message": "Duo'yu başlatın ve oturum açmayı tamamlamak için adımları izleyin."
   },
@@ -2812,7 +2818,7 @@
     "message": "Bir koleksiyon seçin"
   },
   "importTargetHint": {
-    "message": "Select this option if you want the imported file contents moved to a $DESTINATION$",
+    "message": "İçe aktarılan dosya içeriklerinin $DESTINATION$ konumuna taşınmasını istiyorsanız bu seçeneği seçin",
     "description": "Located as a hint under the import target. Will be appended by either folder or collection, depending if the user is importing into an individual or an organizational vault.",
     "placeholders": {
       "destination": {
@@ -2963,7 +2969,7 @@
     "message": "Hedef klasör atama hatası."
   },
   "viewItemsIn": {
-    "message": "View items in $NAME$",
+    "message": "$NAME$ içindeki kayıtları görüntüle",
     "description": "Button to view the contents of a folder or collection",
     "placeholders": {
       "name": {
@@ -2973,7 +2979,7 @@
     }
   },
   "backTo": {
-    "message": "Back to $NAME$",
+    "message": "$NAME$ klasörüne dön",
     "description": "Navigate back to a previous folder or collection",
     "placeholders": {
       "name": {
