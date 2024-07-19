@@ -611,6 +611,9 @@
   "verificationCodeRequired": {
     "message": "Необходимо ввести код подтверждения."
   },
+  "webauthnCancelOrTimeout": {
+    "message": "Аутентификация была отменена или заняла слишком много времени. Пожалуйста, попробуйте еще раз."
+  },
   "invalidVerificationCode": {
     "message": "Неверный код подтверждения"
   },
@@ -636,6 +639,15 @@
   "totpCapture": {
     "message": "Сканировать QR-код аутентификатора с текущей веб-страницы"
   },
+  "totpHelperTitle": {
+    "message": "Сделать двухэтапную аутентификацию бесшовной"
+  },
+  "totpHelper": {
+    "message": "Bitwarden может хранить и заполнять коды двухэтапной аутентификации. Скопируйте и вставьте ключ в это поле."
+  },
+  "totpHelperWithCapture": {
+    "message": "Bitwarden может хранить и заполнять коды двухэтапной аутентификации. Выберите значок камеры, чтобы сделать скриншот QR-кода этого сайта, или скопируйте и вставьте ключ в это поле."
+  },
   "copyTOTP": {
     "message": "Скопировать ключ аутентификатора (TOTP)"
   },
@@ -647,6 +659,21 @@
   },
   "loginExpired": {
     "message": "Истек срок действия вашего сеанса."
+  },
+  "logIn": {
+    "message": "Log in"
+  },
+  "restartRegistration": {
+    "message": "Restart registration"
+  },
+  "expiredLink": {
+    "message": "Expired link"
+  },
+  "pleaseRestartRegistrationOrTryLoggingIn": {
+    "message": "Please restart registration or try logging in."
+  },
+  "youMayAlreadyHaveAnAccount": {
+    "message": "You may already have an account"
   },
   "logOutConfirmation": {
     "message": "Вы действительно хотите выйти?"
@@ -1820,8 +1847,8 @@
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "Ваш новый мастер-пароль не соответствует требованиям политики."
   },
-  "receiveMarketingEmails": {
-    "message": "Получайте электронные письма от Bitwarden с анонсами, советами и возможностями для исследований."
+  "receiveMarketingEmailsV2": {
+    "message": "Get advice, announcements, and research opportunities from Bitwarden in your inbox."
   },
   "unsubscribe": {
     "message": "Отписаться"
@@ -2762,6 +2789,14 @@
   "deviceTrusted": {
     "message": "Доверенное устройство"
   },
+  "sendsNoItemsTitle": {
+    "message": "Нет активных Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendsNoItemsMessage": {
+    "message": "Используйте Send для безопасного обмена зашифрованной информацией с кем угодно.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "inputRequired": {
     "message": "Необходимо ввести данные."
   },
@@ -3044,6 +3079,9 @@
         "example": "My Org Name"
       }
     }
+  },
+  "duoHealthCheckResultsInNullAuthUrlError": {
+    "message": "Ошибка при подключении к сервису Duo. Используйте другой метод двухэтапной аутентификации или обратитесь за помощью в Duo."
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
     "message": "Запустите Duo и следуйте шагам для завершения авторизации."
@@ -3605,6 +3643,12 @@
       }
     }
   },
+  "loginCredentials": {
+    "message": "Данные для авторизации"
+  },
+  "authenticatorKey": {
+    "message": "Ключ аутентификатора"
+  },
   "cardDetails": {
     "message": "Реквизиты карты"
   },
@@ -3618,6 +3662,167 @@
     }
   },
   "addAccount": {
-    "message": "Add account"
+    "message": "Добавить аккаунт"
+  },
+  "loading": {
+    "message": "Загрузка"
+  },
+  "assign": {
+    "message": "Назначить"
+  },
+  "bulkCollectionAssignmentDialogDescription": {
+    "message": "Только члены организации, имеющие доступ к этим коллекциям, смогут видеть элементы."
+  },
+  "bulkCollectionAssignmentWarning": {
+    "message": "Вы выбрали $TOTAL_COUNT$ элемента(-ов). Вы не можете обновить $READONLY_COUNT$ элемента(-ов), поскольку у вас нет прав на редактирование.",
+    "placeholders": {
+      "total_count": {
+        "content": "$1",
+        "example": "10"
+      },
+      "readonly_count": {
+        "content": "$2"
+      }
+    }
+  },
+  "addField": {
+    "message": "Добавить поле"
+  },
+  "add": {
+    "message": "Добавить"
+  },
+  "fieldType": {
+    "message": "Тип поля"
+  },
+  "fieldLabel": {
+    "message": "Метка поля"
+  },
+  "textHelpText": {
+    "message": "Используйте текстовые поля для простых данных, таких как контрольные вопросы"
+  },
+  "hiddenHelpText": {
+    "message": "Используйте скрытые поля для конфиденциальных данных, таких как пароли"
+  },
+  "checkBoxHelpText": {
+    "message": "Используйте флажки, если вы хотите автоматически заполнить поле формы, например, email"
+  },
+  "linkedHelpText": {
+    "message": "Используйте связанное поле, если у вас возникли проблемы с автозаполнением для конкретного сайта."
+  },
+  "linkedLabelHelpText": {
+    "message": "Введите HTML-идентификатор поля, имя, aria-label, или плейсхолдер."
+  },
+  "editField": {
+    "message": "Изменить поле"
+  },
+  "editFieldLabel": {
+    "message": "Изменить $LABEL$",
+    "placeholders": {
+      "label": {
+        "content": "$1",
+        "example": "Custom field"
+      }
+    }
+  },
+  "deleteCustomField": {
+    "message": "Удалить $LABEL$",
+    "placeholders": {
+      "label": {
+        "content": "$1",
+        "example": "Custom field"
+      }
+    }
+  },
+  "fieldAdded": {
+    "message": "$LABEL$ добавлен(о)",
+    "placeholders": {
+      "label": {
+        "content": "$1",
+        "example": "Custom field"
+      }
+    }
+  },
+  "reorderToggleButton": {
+    "message": "Изменить порядок $LABEL$. Используйте клавиши курсора для перемещения элемента вверх или вниз.",
+    "placeholders": {
+      "label": {
+        "content": "$1",
+        "example": "Custom field"
+      }
+    }
+  },
+  "reorderFieldUp": {
+    "message": "$LABEL$ перемещено вверх, позиция $INDEX$ $LENGTH$",
+    "placeholders": {
+      "label": {
+        "content": "$1",
+        "example": "Custom field"
+      },
+      "index": {
+        "content": "$2",
+        "example": "1"
+      },
+      "length": {
+        "content": "$3",
+        "example": "3"
+      }
+    }
+  },
+  "selectCollectionsToAssign": {
+    "message": "Выбрать коллекции для назначения"
+  },
+  "personalItemsTransferWarning": {
+    "message": "$PERSONAL_ITEMS_COUNT$ будут навсегда переданы выбранной организации. Вы больше не будете владельцем этих элементов.",
+    "placeholders": {
+      "personal_items_count": {
+        "content": "$1",
+        "example": "2 items"
+      }
+    }
+  },
+  "personalItemsWithOrgTransferWarning": {
+    "message": "$PERSONAL_ITEMS_COUNT$ будут навсегда переданы $ORG$. Вы больше не будете владельцем этих элементов.",
+    "placeholders": {
+      "personal_items_count": {
+        "content": "$1",
+        "example": "2 items"
+      },
+      "org": {
+        "content": "$2",
+        "example": "Organization name"
+      }
+    }
+  },
+  "successfullyAssignedCollections": {
+    "message": "Коллекции успешно назначены"
+  },
+  "nothingSelected": {
+    "message": "Вы ничего не выбрали."
+  },
+  "movedItemsToOrg": {
+    "message": "Выбранные элементы перемещены в $ORGNAME$",
+    "placeholders": {
+      "orgname": {
+        "content": "$1",
+        "example": "Company Name"
+      }
+    }
+  },
+  "reorderFieldDown": {
+    "message": "$LABEL$ перемещено вниз, позиция $INDEX$ $LENGTH$",
+    "placeholders": {
+      "label": {
+        "content": "$1",
+        "example": "Custom field"
+      },
+      "index": {
+        "content": "$2",
+        "example": "1"
+      },
+      "length": {
+        "content": "$3",
+        "example": "3"
+      }
+    }
   }
 }

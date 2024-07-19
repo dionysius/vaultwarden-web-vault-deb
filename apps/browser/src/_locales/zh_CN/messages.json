@@ -611,6 +611,9 @@
   "verificationCodeRequired": {
     "message": "必须填写验证码。"
   },
+  "webauthnCancelOrTimeout": {
+    "message": "身份验证被取消或耗时过长。请重试。"
+  },
   "invalidVerificationCode": {
     "message": "无效的验证码"
   },
@@ -636,6 +639,15 @@
   "totpCapture": {
     "message": "从当前网页扫描验证器二维码"
   },
+  "totpHelperTitle": {
+    "message": "Make 2-step verification seamless"
+  },
+  "totpHelper": {
+    "message": "Bitwarden can store and fill 2-step verification codes. Copy and paste the key into this field."
+  },
+  "totpHelperWithCapture": {
+    "message": "Bitwarden can store and fill 2-step verification codes. Select the camera icon to take a screenshot of this website's authenticator QR code, or copy and paste the key into this field."
+  },
   "copyTOTP": {
     "message": "复制验证器密钥 (TOTP)"
   },
@@ -647,6 +659,21 @@
   },
   "loginExpired": {
     "message": "您的登录会话已过期。"
+  },
+  "logIn": {
+    "message": "Log in"
+  },
+  "restartRegistration": {
+    "message": "Restart registration"
+  },
+  "expiredLink": {
+    "message": "Expired link"
+  },
+  "pleaseRestartRegistrationOrTryLoggingIn": {
+    "message": "Please restart registration or try logging in."
+  },
+  "youMayAlreadyHaveAnAccount": {
+    "message": "You may already have an account"
   },
   "logOutConfirmation": {
     "message": "确定要注销吗？"
@@ -1820,8 +1847,8 @@
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "您的新主密码不符合策略要求。"
   },
-  "receiveMarketingEmails": {
-    "message": "接收来自 Bitwarden 的电子邮件，以获取公告、建议和调研。"
+  "receiveMarketingEmailsV2": {
+    "message": "Get advice, announcements, and research opportunities from Bitwarden in your inbox."
   },
   "unsubscribe": {
     "message": "取消订阅"
@@ -2762,6 +2789,14 @@
   "deviceTrusted": {
     "message": "设备已信任"
   },
+  "sendsNoItemsTitle": {
+    "message": "没有活跃的 Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendsNoItemsMessage": {
+    "message": "使用 Send 与任何人安全地分享加密信息。",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "inputRequired": {
     "message": "必须输入内容。"
   },
@@ -2998,7 +3033,7 @@
     }
   },
   "tryAgain": {
-    "message": "再试一次"
+    "message": "请重试"
   },
   "verificationRequiredForActionSetPinToContinue": {
     "message": "此操作需要验证。设置一个 PIN 码以继续。"
@@ -3044,6 +3079,9 @@
         "example": "My Org Name"
       }
     }
+  },
+  "duoHealthCheckResultsInNullAuthUrlError": {
+    "message": "与 Duo 服务连接时出错。使用不同的两步登录方式或联系 Duo 寻求帮助。"
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
     "message": "启动 DUO 并按照步骤完成登录。"
@@ -3605,6 +3643,12 @@
       }
     }
   },
+  "loginCredentials": {
+    "message": "Login credentials"
+  },
+  "authenticatorKey": {
+    "message": "Authenticator key"
+  },
   "cardDetails": {
     "message": "支付卡详情"
   },
@@ -3618,6 +3662,167 @@
     }
   },
   "addAccount": {
-    "message": "Add account"
+    "message": "添加账户"
+  },
+  "loading": {
+    "message": "加载中"
+  },
+  "assign": {
+    "message": "Assign"
+  },
+  "bulkCollectionAssignmentDialogDescription": {
+    "message": "Only organization members with access to these collections will be able to see the items."
+  },
+  "bulkCollectionAssignmentWarning": {
+    "message": "You have selected $TOTAL_COUNT$ items. You cannot update $READONLY_COUNT$ of the items because you do not have edit permissions.",
+    "placeholders": {
+      "total_count": {
+        "content": "$1",
+        "example": "10"
+      },
+      "readonly_count": {
+        "content": "$2"
+      }
+    }
+  },
+  "addField": {
+    "message": "添加字段"
+  },
+  "add": {
+    "message": "添加"
+  },
+  "fieldType": {
+    "message": "字段类型"
+  },
+  "fieldLabel": {
+    "message": "字段标签"
+  },
+  "textHelpText": {
+    "message": "文本型字段用于比如安全问题之类的数据"
+  },
+  "hiddenHelpText": {
+    "message": "隐藏型字段用于比如密码之类的敏感数据"
+  },
+  "checkBoxHelpText": {
+    "message": "如果您想自动勾选表单复选框（例如记住电子邮件地址），请勾选复选框"
+  },
+  "linkedHelpText": {
+    "message": "当您处理特定网站的自动填充问题时，请使用链接型字段。"
+  },
+  "linkedLabelHelpText": {
+    "message": "输入字段的 html id、名称、aria-label 或占位符。"
+  },
+  "editField": {
+    "message": "编辑字段"
+  },
+  "editFieldLabel": {
+    "message": "编辑 $LABEL$",
+    "placeholders": {
+      "label": {
+        "content": "$1",
+        "example": "Custom field"
+      }
+    }
+  },
+  "deleteCustomField": {
+    "message": "删除 $LABEL$",
+    "placeholders": {
+      "label": {
+        "content": "$1",
+        "example": "Custom field"
+      }
+    }
+  },
+  "fieldAdded": {
+    "message": "$LABEL$ 已添加",
+    "placeholders": {
+      "label": {
+        "content": "$1",
+        "example": "Custom field"
+      }
+    }
+  },
+  "reorderToggleButton": {
+    "message": "重新排序 $LABEL$。使用方向键向上或向下移动项目。",
+    "placeholders": {
+      "label": {
+        "content": "$1",
+        "example": "Custom field"
+      }
+    }
+  },
+  "reorderFieldUp": {
+    "message": "$LABEL$ 已上移，位置 $INDEX$ / $LENGTH$",
+    "placeholders": {
+      "label": {
+        "content": "$1",
+        "example": "Custom field"
+      },
+      "index": {
+        "content": "$2",
+        "example": "1"
+      },
+      "length": {
+        "content": "$3",
+        "example": "3"
+      }
+    }
+  },
+  "selectCollectionsToAssign": {
+    "message": "Select collections to assign"
+  },
+  "personalItemsTransferWarning": {
+    "message": "$PERSONAL_ITEMS_COUNT$ will be permanently transferred to the selected organization. You will no longer own these items.",
+    "placeholders": {
+      "personal_items_count": {
+        "content": "$1",
+        "example": "2 items"
+      }
+    }
+  },
+  "personalItemsWithOrgTransferWarning": {
+    "message": "$PERSONAL_ITEMS_COUNT$ will be permanently transferred to $ORG$. You will no longer own these items.",
+    "placeholders": {
+      "personal_items_count": {
+        "content": "$1",
+        "example": "2 items"
+      },
+      "org": {
+        "content": "$2",
+        "example": "Organization name"
+      }
+    }
+  },
+  "successfullyAssignedCollections": {
+    "message": "Successfully assigned collections"
+  },
+  "nothingSelected": {
+    "message": "You have not selected anything."
+  },
+  "movedItemsToOrg": {
+    "message": "Selected items moved to $ORGNAME$",
+    "placeholders": {
+      "orgname": {
+        "content": "$1",
+        "example": "Company Name"
+      }
+    }
+  },
+  "reorderFieldDown": {
+    "message": "$LABEL$ 已下移，位置 $INDEX$ / $LENGTH$",
+    "placeholders": {
+      "label": {
+        "content": "$1",
+        "example": "Custom field"
+      },
+      "index": {
+        "content": "$2",
+        "example": "1"
+      },
+      "length": {
+        "content": "$3",
+        "example": "3"
+      }
+    }
   }
 }

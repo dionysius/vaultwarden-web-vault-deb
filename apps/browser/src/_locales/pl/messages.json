@@ -509,7 +509,7 @@
     "message": "Zablokuj"
   },
   "lockAll": {
-    "message": "Zablokuj wszystko"
+    "message": "Zablokuj wszystkie"
   },
   "immediately": {
     "message": "Natychmiast"
@@ -611,6 +611,9 @@
   "verificationCodeRequired": {
     "message": "Kod weryfikacyjny jest wymagany."
   },
+  "webauthnCancelOrTimeout": {
+    "message": "Uwierzytelnianie zostało anulowane lub trwało zbyt długo. Spróbuj ponownie."
+  },
   "invalidVerificationCode": {
     "message": "Kod weryfikacyjny jest nieprawidłowy"
   },
@@ -636,6 +639,15 @@
   "totpCapture": {
     "message": "Zeskanuj kod QR z bieżącej strony"
   },
+  "totpHelperTitle": {
+    "message": "Spraw, aby dwuetapowa weryfikacja była bezproblemowa"
+  },
+  "totpHelper": {
+    "message": "Bitwarden może przechowywać i wypełniać kody weryfikacyjne. Skopiuj i wklej klucz do tego pola."
+  },
+  "totpHelperWithCapture": {
+    "message": "Bitwarden może przechowywać i wypełniać kody weryfikacyjne. Wybierz ikonę aparatu, aby zrobić zrzut ekranu z kodem QR lub skopiuj i wklej klucz do tego pola."
+  },
   "copyTOTP": {
     "message": "Kopiuj klucz uwierzytelniający (TOTP)"
   },
@@ -647,6 +659,21 @@
   },
   "loginExpired": {
     "message": "Twoja sesja wygasła."
+  },
+  "logIn": {
+    "message": "Zaloguj się"
+  },
+  "restartRegistration": {
+    "message": "Zrestartuj rejestrację"
+  },
+  "expiredLink": {
+    "message": "Link wygasł"
+  },
+  "pleaseRestartRegistrationOrTryLoggingIn": {
+    "message": "Zrestartuj rejestrację lub spróbuj się zalogować."
+  },
+  "youMayAlreadyHaveAnAccount": {
+    "message": "Możesz mieć już konto"
   },
   "logOutConfirmation": {
     "message": "Czy na pewno chcesz się wylogować?"
@@ -1820,8 +1847,8 @@
   "masterPasswordPolicyRequirementsNotMet": {
     "message": "Nowe hasło główne nie spełnia wymaganych zasad."
   },
-  "receiveMarketingEmails": {
-    "message": "Otrzymuj e-maile od Bitwarden z ogłoszeniami, poradami i badaniami."
+  "receiveMarketingEmailsV2": {
+    "message": "Uzyskaj poradę, ogłoszenia i możliwości badawcze od Bitwarden w swojej skrzynce odbiorczej."
   },
   "unsubscribe": {
     "message": "Anuluj subskrypcję"
@@ -2762,6 +2789,14 @@
   "deviceTrusted": {
     "message": "Zaufano urządzeniu"
   },
+  "sendsNoItemsTitle": {
+    "message": "Brak aktywnych wysyłek",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendsNoItemsMessage": {
+    "message": "Użyj wysyłki, aby bezpiecznie dzielić się zaszyfrowanymi informacjami ze wszystkimi.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "inputRequired": {
     "message": "Dane wejściowe są wymagane."
   },
@@ -3044,6 +3079,9 @@
         "example": "My Org Name"
       }
     }
+  },
+  "duoHealthCheckResultsInNullAuthUrlError": {
+    "message": "Wystąpił błąd podczas połączenia z usługą Duo. Aby uzyskać pomoc, użyj innej metody dwustopniowego logowania lub skontaktuj się z Duo."
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
     "message": "Uruchom DUO i wykonaj kroki, aby zakończyć logowanie."
@@ -3605,6 +3643,12 @@
       }
     }
   },
+  "loginCredentials": {
+    "message": "Dane logowania"
+  },
+  "authenticatorKey": {
+    "message": "Klucz uwierzytelniający"
+  },
   "cardDetails": {
     "message": "Szczegóły karty"
   },
@@ -3618,6 +3662,167 @@
     }
   },
   "addAccount": {
-    "message": "Add account"
+    "message": "Dodaj konto"
+  },
+  "loading": {
+    "message": "Wczytywanie"
+  },
+  "assign": {
+    "message": "Przypisz"
+  },
+  "bulkCollectionAssignmentDialogDescription": {
+    "message": "Tylko członkowie organizacji z dostępem do tych kolekcji będą mogli zobaczyć te elementy."
+  },
+  "bulkCollectionAssignmentWarning": {
+    "message": "Wybrałeś $TOTAL_COUNT$ elementów. Nie możesz zaktualizować $READONLY_COUNT$ elementów, ponieważ nie masz uprawnień do edycji.",
+    "placeholders": {
+      "total_count": {
+        "content": "$1",
+        "example": "10"
+      },
+      "readonly_count": {
+        "content": "$2"
+      }
+    }
+  },
+  "addField": {
+    "message": "Dodaj pole"
+  },
+  "add": {
+    "message": "Dodaj"
+  },
+  "fieldType": {
+    "message": "Typ pola"
+  },
+  "fieldLabel": {
+    "message": "Etykieta pola"
+  },
+  "textHelpText": {
+    "message": "Użyj pól tekstowych dla danych takich jak pytania bezpieczeństwa"
+  },
+  "hiddenHelpText": {
+    "message": "Użyj ukrytych pól dla danych poufnych, takich jak hasło"
+  },
+  "checkBoxHelpText": {
+    "message": "Użyj pól wyboru, jeśli chcesz automatycznie wypełnić pole wyboru formularza, np. zapamiętaj e-mail"
+  },
+  "linkedHelpText": {
+    "message": "Użyj powiązanego pola, gdy masz problemy z autouzupełnianiem na konkretnej stronie internetowej."
+  },
+  "linkedLabelHelpText": {
+    "message": "Wprowadź atrybut z HTML'a: id, name, aria-label lub placeholder."
+  },
+  "editField": {
+    "message": "Edytuj pole"
+  },
+  "editFieldLabel": {
+    "message": "Edytuj $LABEL$",
+    "placeholders": {
+      "label": {
+        "content": "$1",
+        "example": "Custom field"
+      }
+    }
+  },
+  "deleteCustomField": {
+    "message": "Usuń $LABEL$",
+    "placeholders": {
+      "label": {
+        "content": "$1",
+        "example": "Custom field"
+      }
+    }
+  },
+  "fieldAdded": {
+    "message": "Dodano $LABEL$",
+    "placeholders": {
+      "label": {
+        "content": "$1",
+        "example": "Custom field"
+      }
+    }
+  },
+  "reorderToggleButton": {
+    "message": "Zmień kolejność $LABEL$. Użyj klawiszy że strzałkami aby przenieść element w górę lub w dół.",
+    "placeholders": {
+      "label": {
+        "content": "$1",
+        "example": "Custom field"
+      }
+    }
+  },
+  "reorderFieldUp": {
+    "message": "$LABEL$ przeniósł się w górę, pozycja $INDEX$ z $LENGTH$",
+    "placeholders": {
+      "label": {
+        "content": "$1",
+        "example": "Custom field"
+      },
+      "index": {
+        "content": "$2",
+        "example": "1"
+      },
+      "length": {
+        "content": "$3",
+        "example": "3"
+      }
+    }
+  },
+  "selectCollectionsToAssign": {
+    "message": "Wybierz kolekcje do przypisania"
+  },
+  "personalItemsTransferWarning": {
+    "message": "$PERSONAL_ITEMS_COUNT$ zostanie trwale przeniesiony do wybranej organizacji. Nie będziesz już posiadać tych elementów.",
+    "placeholders": {
+      "personal_items_count": {
+        "content": "$1",
+        "example": "2 items"
+      }
+    }
+  },
+  "personalItemsWithOrgTransferWarning": {
+    "message": "$PERSONAL_ITEMS_COUNT$ zostanie trwale przeniesiony do $ORG$. Nie będziesz już właścicielem tych elementów.",
+    "placeholders": {
+      "personal_items_count": {
+        "content": "$1",
+        "example": "2 items"
+      },
+      "org": {
+        "content": "$2",
+        "example": "Organization name"
+      }
+    }
+  },
+  "successfullyAssignedCollections": {
+    "message": "Pomyślnie przypisano kolekcje"
+  },
+  "nothingSelected": {
+    "message": "Nie zaznaczyłeś żadnych elementów."
+  },
+  "movedItemsToOrg": {
+    "message": "Zaznaczone elementy zostały przeniesione do $ORGNAME$",
+    "placeholders": {
+      "orgname": {
+        "content": "$1",
+        "example": "Company Name"
+      }
+    }
+  },
+  "reorderFieldDown": {
+    "message": "$LABEL$ przeniósł się w dół, pozycja $INDEX$ z $LENGTH$",
+    "placeholders": {
+      "label": {
+        "content": "$1",
+        "example": "Custom field"
+      },
+      "index": {
+        "content": "$2",
+        "example": "1"
+      },
+      "length": {
+        "content": "$3",
+        "example": "3"
+      }
+    }
   }
 }
