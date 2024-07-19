@@ -3,7 +3,12 @@
     <h2 bitTypography="h5">{{ "customFields" | i18n }}</h2>
   </bit-section-header>
   <form [formGroup]="customFieldsForm">
-    <bit-card formArrayName="fields" cdkDropList (cdkDropListDropped)="drop($event)">
+    <bit-card
+      formArrayName="fields"
+      cdkDropList
+      (cdkDropListDropped)="drop($event)"
+      data-testid="custom-fields"
+    >
       <div
         *ngFor="let field of fields.controls; let i = index"
         [formGroupName]="i"
@@ -11,6 +16,7 @@
         [ngClass]="{
           'tw-items-center': field.value.type === FieldType.Boolean
         }"
+        [attr.data-testid]="field.value.name + '-entry'"
         cdkDrag
         #customFieldRow
       >
