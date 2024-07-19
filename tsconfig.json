@@ -49,6 +49,7 @@
     "apps/web/src/**/*",
     "apps/browser/src/**/*",
     "libs/*/src/**/*",
+    "libs/tools/send/**/src/**/*",
     "bitwarden_license/bit-web/src/**/*",
     "bitwarden_license/bit-common/src/**/*"
   ],

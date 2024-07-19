@@ -35,6 +35,7 @@ module.exports = {
     "<rootDir>/libs/tools/generator/extensions/history/jest.config.js",
     "<rootDir>/libs/tools/generator/extensions/legacy/jest.config.js",
     "<rootDir>/libs/tools/generator/extensions/navigation/jest.config.js",
+    "<rootDir>/libs/tools/send/send-ui/jest.config.js",
     "<rootDir>/libs/importer/jest.config.js",
     "<rootDir>/libs/platform/jest.config.js",
     "<rootDir>/libs/node/jest.config.js",

@@ -1,0 +1,4 @@
+<form [id]="formId" [formGroup]="sendForm" [bitSubmit]="submit">
+  <!-- TODO: Should we show a loading spinner here? Or emit a ready event for the container to handle loading state -->
+  <ng-container *ngIf="!loading"> </ng-container>
+</form>
