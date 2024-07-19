@@ -9,7 +9,7 @@ import {
   ViewChild,
 } from "@angular/core";
 import { ReactiveFormsModule, UntypedFormBuilder, Validators } from "@angular/forms";
-import { map, merge, Observable, startWith, Subject, takeUntil } from "rxjs";
+import { combineLatest, map, merge, Observable, startWith, Subject, takeUntil } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { PasswordStrengthV2Component } from "@bitwarden/angular/tools/password-strength/password-strength-v2.component";
@@ -25,6 +25,7 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { EncryptedExportType } from "@bitwarden/common/tools/enums/encrypted-export-type.enum";
+import { CollectionService } from "@bitwarden/common/vault/abstractions/collection.service";
 import {
   AsyncActionsModule,
   BitSubmitDirective,
@@ -160,6 +161,7 @@ export class ExportComponent implements OnInit, OnDestroy {
     protected fileDownloadService: FileDownloadService,
     protected dialogService: DialogService,
     protected organizationService: OrganizationService,
+    private collectionService: CollectionService,
   ) {}
 
   async ngOnInit() {
@@ -196,8 +198,21 @@ export class ExportComponent implements OnInit, OnDestroy {
       return;
     }
 
-    this.organizations$ = this.organizationService.memberOrganizations$.pipe(
-      map((orgs) => orgs.sort(Utils.getSortFunction(this.i18nService, "name"))),
+    this.organizations$ = combineLatest({
+      collections: this.collectionService.decryptedCollections$,
+      memberOrganizations: this.organizationService.memberOrganizations$,
+    }).pipe(
+      map(({ collections, memberOrganizations }) => {
+        const managedCollectionsOrgIds = new Set(
+          collections.filter((c) => c.manage).map((c) => c.organizationId),
+        );
+        // Filter organizations that exist in managedCollectionsOrgIds
+        const filteredOrgs = memberOrganizations.filter((org) =>
+          managedCollectionsOrgIds.has(org.id),
+        );
+        // Sort the filtered organizations based on the name
+        return filteredOrgs.sort(Utils.getSortFunction(this.i18nService, "name"));
+      }),
     );
 
     this.exportForm.controls.vaultSelector.valueChanges
