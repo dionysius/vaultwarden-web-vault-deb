@@ -37,7 +37,9 @@ import { TwoFactorOptionsComponent } from "../auth/popup/two-factor-options.comp
 import { TwoFactorComponent } from "../auth/popup/two-factor.component";
 import { UpdateTempPasswordComponent } from "../auth/popup/update-temp-password.component";
 import { AutofillComponent } from "../autofill/popup/settings/autofill.component";
+import { ExcludedDomainsV1Component } from "../autofill/popup/settings/excluded-domains-v1.component";
 import { ExcludedDomainsComponent } from "../autofill/popup/settings/excluded-domains.component";
+import { NotificationsSettingsV1Component } from "../autofill/popup/settings/notifications-v1.component";
 import { NotificationsSettingsComponent } from "../autofill/popup/settings/notifications.component";
 import { PremiumComponent } from "../billing/popup/settings/premium.component";
 import { PopOutComponent } from "../platform/popup/components/pop-out.component";
@@ -108,10 +110,12 @@ import "../platform/popup/locales";
     ScrollingModule,
     ServicesModule,
     DialogModule,
+    ExcludedDomainsComponent,
     FilePopoutCalloutComponent,
     AvatarModule,
     AccountComponent,
     ButtonModule,
+    NotificationsSettingsComponent,
     PopOutComponent,
     PopupPageComponent,
     PopupTabNavigationComponent,
@@ -133,7 +137,7 @@ import "../platform/popup/locales";
     ColorPasswordCountPipe,
     CurrentTabComponent,
     EnvironmentComponent,
-    ExcludedDomainsComponent,
+    ExcludedDomainsV1Component,
     Fido2CipherRowComponent,
     Fido2UseBrowserLinkComponent,
     FolderAddEditComponent,
@@ -146,7 +150,7 @@ import "../platform/popup/locales";
     LoginComponent,
     LoginViaAuthRequestComponent,
     LoginDecryptionOptionsComponent,
-    NotificationsSettingsComponent,
+    NotificationsSettingsV1Component,
     AppearanceComponent,
     GeneratorComponent,
     PasswordGeneratorHistoryComponent,

@@ -4,6 +4,7 @@ import { Component } from "@angular/core";
 import { firstValueFrom } from "rxjs";
 
 import { DomainSettingsService } from "@bitwarden/common/autofill/services/domain-settings.service";
+import { NeverDomains } from "@bitwarden/common/models/domain/domain-service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
@@ -92,7 +93,7 @@ export class Fido2UseBrowserLinkComponent {
     const exisitingDomains = await firstValueFrom(this.domainSettingsService.neverDomains$);
 
     const validDomain = Utils.getHostname(uri);
-    const savedDomains: { [name: string]: unknown } = {
+    const savedDomains: NeverDomains = {
       ...exisitingDomains,
     };
     savedDomains[validDomain] = null;
