@@ -8,8 +8,8 @@ import { Policy } from "@bitwarden/common/admin-console/models/domain/policy";
 import { StateProvider } from "@bitwarden/common/platform/state";
 import { UserId } from "@bitwarden/common/types/guid";
 
-import { Randomizer } from "../abstractions";
 import { DefaultEffUsernameOptions } from "../data";
+import { UsernameRandomizer } from "../engine";
 import { DefaultPolicyEvaluator } from "../policies";
 
 import { EffUsernameGeneratorStrategy } from "./eff-username-generator-strategy";
@@ -41,8 +41,7 @@ describe("EFF long word list generation strategy", () => {
   describe("durableState", () => {
     it("should use password settings key", () => {
       const provider = mock<StateProvider>();
-      const randomizer = mock<Randomizer>();
-      const strategy = new EffUsernameGeneratorStrategy(randomizer, provider);
+      const strategy = new EffUsernameGeneratorStrategy(null, provider);
 
       strategy.durableState(SomeUser);
 
@@ -62,14 +61,104 @@ describe("EFF long word list generation strategy", () => {
 
   describe("policy", () => {
     it("should use password generator policy", () => {
-      const randomizer = mock<Randomizer>();
-      const strategy = new EffUsernameGeneratorStrategy(randomizer, null);
+      const strategy = new EffUsernameGeneratorStrategy(null, null);
 
       expect(strategy.policy).toBe(PolicyType.PasswordGenerator);
     });
   });
 
   describe("generate()", () => {
-    it.todo("generate username tests");
+    const randomizer = mock<UsernameRandomizer>();
+
+    beforeEach(() => {
+      randomizer.randomWords.mockResolvedValue("username");
+    });
+
+    afterEach(() => {
+      jest.resetAllMocks();
+    });
+
+    it("generates a username", async () => {
+      const strategy = new EffUsernameGeneratorStrategy(randomizer, null);
+
+      const result = await strategy.generate({
+        wordCapitalize: false,
+        wordIncludeNumber: false,
+        website: null,
+      });
+
+      expect(result).toEqual("username");
+      expect(randomizer.randomWords).toHaveBeenCalledWith({
+        numberOfWords: 1,
+        casing: "lowercase",
+        digits: 0,
+      });
+    });
+
+    it("includes a 4-digit number in the username", async () => {
+      const strategy = new EffUsernameGeneratorStrategy(randomizer, null);
+
+      const result = await strategy.generate({
+        wordCapitalize: false,
+        wordIncludeNumber: true,
+        website: null,
+      });
+
+      expect(result).toEqual("username");
+      expect(randomizer.randomWords).toHaveBeenCalledWith({
+        numberOfWords: 1,
+        casing: "lowercase",
+        digits: 4,
+      });
+    });
+
+    it("capitalizes the username", async () => {
+      const strategy = new EffUsernameGeneratorStrategy(randomizer, null);
+
+      const result = await strategy.generate({
+        wordCapitalize: true,
+        wordIncludeNumber: false,
+        website: null,
+      });
+
+      expect(result).toEqual("username");
+      expect(randomizer.randomWords).toHaveBeenCalledWith({
+        numberOfWords: 1,
+        casing: "TitleCase",
+        digits: 0,
+      });
+    });
+
+    it("defaults to lowercase", async () => {
+      const strategy = new EffUsernameGeneratorStrategy(randomizer, null);
+
+      const result = await strategy.generate({
+        wordIncludeNumber: false,
+        website: null,
+      });
+
+      expect(result).toEqual("username");
+      expect(randomizer.randomWords).toHaveBeenCalledWith({
+        numberOfWords: 1,
+        casing: "lowercase",
+        digits: 0,
+      });
+    });
+
+    it("defaults to a word without digits", async () => {
+      const strategy = new EffUsernameGeneratorStrategy(randomizer, null);
+
+      const result = await strategy.generate({
+        wordCapitalize: false,
+        website: null,
+      });
+
+      expect(result).toEqual("username");
+      expect(randomizer.randomWords).toHaveBeenCalledWith({
+        numberOfWords: 1,
+        casing: "lowercase",
+        digits: 0,
+      });
+    });
   });
 });

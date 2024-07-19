@@ -8,8 +8,8 @@ import { Policy } from "@bitwarden/common/admin-console/models/domain/policy";
 import { StateProvider } from "@bitwarden/common/platform/state";
 import { UserId } from "@bitwarden/common/types/guid";
 
-import { Randomizer } from "../abstractions";
 import { DefaultPassphraseGenerationOptions, DisabledPassphraseGeneratorPolicy } from "../data";
+import { PasswordRandomizer } from "../engine";
 import { PassphraseGeneratorOptionsEvaluator } from "../policies";
 
 import { PassphraseGeneratorStrategy } from "./passphrase-generator-strategy";
@@ -58,8 +58,7 @@ describe("Password generation strategy", () => {
   describe("durableState", () => {
     it("should use password settings key", () => {
       const provider = mock<StateProvider>();
-      const randomizer = mock<Randomizer>();
-      const strategy = new PassphraseGeneratorStrategy(randomizer, provider);
+      const strategy = new PassphraseGeneratorStrategy(null, provider);
 
       strategy.durableState(SomeUser);
 
@@ -79,14 +78,111 @@ describe("Password generation strategy", () => {
 
   describe("policy", () => {
     it("should use password generator policy", () => {
-      const randomizer = mock<Randomizer>();
-      const strategy = new PassphraseGeneratorStrategy(randomizer, null);
+      const strategy = new PassphraseGeneratorStrategy(null, null);
 
       expect(strategy.policy).toBe(PolicyType.PasswordGenerator);
     });
   });
 
   describe("generate()", () => {
-    it.todo("should generate a password using the given options");
+    const randomizer = mock<PasswordRandomizer>();
+    beforeEach(() => {
+      randomizer.randomEffLongWords.mockResolvedValue("passphrase");
+    });
+
+    afterEach(() => {
+      jest.resetAllMocks();
+    });
+
+    it("should map options", async () => {
+      const strategy = new PassphraseGeneratorStrategy(randomizer, null);
+
+      const result = await strategy.generate({
+        numWords: 4,
+        capitalize: true,
+        includeNumber: true,
+        wordSeparator: "!",
+      });
+
+      expect(result).toEqual("passphrase");
+      expect(randomizer.randomEffLongWords).toHaveBeenCalledWith({
+        numberOfWords: 4,
+        capitalize: true,
+        number: true,
+        separator: "!",
+      });
+    });
+
+    it("should default numWords", async () => {
+      const strategy = new PassphraseGeneratorStrategy(randomizer, null);
+
+      const result = await strategy.generate({
+        capitalize: true,
+        includeNumber: true,
+        wordSeparator: "!",
+      });
+
+      expect(result).toEqual("passphrase");
+      expect(randomizer.randomEffLongWords).toHaveBeenCalledWith({
+        numberOfWords: DefaultPassphraseGenerationOptions.numWords,
+        capitalize: true,
+        number: true,
+        separator: "!",
+      });
+    });
+
+    it("should default capitalize", async () => {
+      const strategy = new PassphraseGeneratorStrategy(randomizer, null);
+
+      const result = await strategy.generate({
+        numWords: 4,
+        includeNumber: true,
+        wordSeparator: "!",
+      });
+
+      expect(result).toEqual("passphrase");
+      expect(randomizer.randomEffLongWords).toHaveBeenCalledWith({
+        numberOfWords: 4,
+        capitalize: DefaultPassphraseGenerationOptions.capitalize,
+        number: true,
+        separator: "!",
+      });
+    });
+
+    it("should default includeNumber", async () => {
+      const strategy = new PassphraseGeneratorStrategy(randomizer, null);
+
+      const result = await strategy.generate({
+        numWords: 4,
+        capitalize: true,
+        wordSeparator: "!",
+      });
+
+      expect(result).toEqual("passphrase");
+      expect(randomizer.randomEffLongWords).toHaveBeenCalledWith({
+        numberOfWords: 4,
+        capitalize: true,
+        number: DefaultPassphraseGenerationOptions.includeNumber,
+        separator: "!",
+      });
+    });
+
+    it("should default wordSeparator", async () => {
+      const strategy = new PassphraseGeneratorStrategy(randomizer, null);
+
+      const result = await strategy.generate({
+        numWords: 4,
+        capitalize: true,
+        includeNumber: true,
+      });
+
+      expect(result).toEqual("passphrase");
+      expect(randomizer.randomEffLongWords).toHaveBeenCalledWith({
+        numberOfWords: 4,
+        capitalize: true,
+        number: true,
+        separator: DefaultPassphraseGenerationOptions.wordSeparator,
+      });
+    });
   });
 });

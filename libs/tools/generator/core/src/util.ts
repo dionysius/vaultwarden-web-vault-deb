@@ -43,3 +43,7 @@ export function sharedByUserId<Value>(create: (userId: UserId) => SingleUserStat
 export function sharedStateByUserId<Value>(key: UserKeyDefinition<Value>, provider: StateProvider) {
   return (id: UserId) => provider.getUser<Value>(id, key);
 }
+
+/** returns the sum of items in the list. */
+export const sum = (...items: number[]) =>
+  (items ?? []).reduce((sum: number, current: number) => sum + (current ?? 0), 0);

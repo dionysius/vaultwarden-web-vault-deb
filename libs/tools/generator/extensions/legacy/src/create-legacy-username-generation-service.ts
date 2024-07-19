@@ -11,17 +11,19 @@ import { DefaultGeneratorNavigationService } from "@bitwarden/generator-navigati
 import { LegacyUsernameGenerationService } from "./legacy-username-generation.service";
 import { UsernameGenerationServiceAbstraction } from "./username-generation.service.abstraction";
 
+const { CryptoServiceRandomizer, UsernameRandomizer, EmailRandomizer, EmailCalculator } = engine;
 const DefaultGeneratorService = services.DefaultGeneratorService;
-const CryptoServiceRandomizer = engine.CryptoServiceRandomizer;
-const CatchallGeneratorStrategy = strategies.CatchallGeneratorStrategy;
-const SubaddressGeneratorStrategy = strategies.SubaddressGeneratorStrategy;
-const EffUsernameGeneratorStrategy = strategies.EffUsernameGeneratorStrategy;
-const AddyIoForwarder = strategies.AddyIoForwarder;
-const DuckDuckGoForwarder = strategies.DuckDuckGoForwarder;
-const FastmailForwarder = strategies.FastmailForwarder;
-const FirefoxRelayForwarder = strategies.FirefoxRelayForwarder;
-const ForwardEmailForwarder = strategies.ForwardEmailForwarder;
-const SimpleLoginForwarder = strategies.SimpleLoginForwarder;
+const {
+  CatchallGeneratorStrategy,
+  SubaddressGeneratorStrategy,
+  EffUsernameGeneratorStrategy,
+  AddyIoForwarder,
+  DuckDuckGoForwarder,
+  FastmailForwarder,
+  FirefoxRelayForwarder,
+  ForwardEmailForwarder,
+  SimpleLoginForwarder,
+} = strategies;
 
 export function legacyUsernameGenerationServiceFactory(
   apiService: ApiService,
@@ -33,19 +35,22 @@ export function legacyUsernameGenerationServiceFactory(
   stateProvider: StateProvider,
 ): UsernameGenerationServiceAbstraction {
   const randomizer = new CryptoServiceRandomizer(cryptoService);
+  const usernameRandomizer = new UsernameRandomizer(randomizer);
+  const emailRandomizer = new EmailRandomizer(randomizer);
+  const emailCalculator = new EmailCalculator();
 
   const effUsername = new DefaultGeneratorService(
-    new EffUsernameGeneratorStrategy(randomizer, stateProvider),
+    new EffUsernameGeneratorStrategy(usernameRandomizer, stateProvider),
     policyService,
   );
 
   const subaddress = new DefaultGeneratorService(
-    new SubaddressGeneratorStrategy(randomizer, stateProvider),
+    new SubaddressGeneratorStrategy(emailCalculator, emailRandomizer, stateProvider),
     policyService,
   );
 
   const catchall = new DefaultGeneratorService(
-    new CatchallGeneratorStrategy(randomizer, stateProvider),
+    new CatchallGeneratorStrategy(emailCalculator, emailRandomizer, stateProvider),
     policyService,
   );
 

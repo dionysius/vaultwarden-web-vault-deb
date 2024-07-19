@@ -15,3 +15,4 @@ export * from "./disabled-passphrase-generator-policy";
 export * from "./disabled-password-generator-policy";
 export * from "./forwarders";
 export * from "./policies";
+export * from "./username-digits";

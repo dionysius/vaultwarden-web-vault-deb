@@ -5,9 +5,17 @@ import { WordOptions } from "../types";
 
 /** A randomizer backed by a CryptoService. */
 export class CryptoServiceRandomizer implements Randomizer {
+  /** instantiates the type.
+   * @param crypto generates random numbers
+   */
   constructor(private crypto: CryptoService) {}
 
-  async pick<Entry>(list: Array<Entry>) {
+  async pick<Entry>(list: Array<Entry>): Promise<Entry> {
+    const length = list?.length ?? 0;
+    if (length <= 0) {
+      throw new Error("list must have at least one entry.");
+    }
+
     const index = await this.uniform(0, list.length - 1);
     return list[index];
   }
@@ -29,6 +37,11 @@ export class CryptoServiceRandomizer implements Randomizer {
 
   // ref: https://stackoverflow.com/a/12646864/1090359
   async shuffle<T>(items: Array<T>, options?: { copy?: boolean }) {
+    const length = items?.length ?? 0;
+    if (length <= 0) {
+      throw new Error("items must have at least one entry.");
+    }
+
     const shuffled = options?.copy ?? true ? [...items] : items;
 
     for (let i = shuffled.length - 1; i > 0; i--) {
@@ -51,12 +64,5 @@ export class CryptoServiceRandomizer implements Randomizer {
 
   async uniform(min: number, max: number) {
     return this.crypto.randomNumber(min, max);
-  }
-
-  // ref: https://stackoverflow.com/a/10073788
-  private zeroPad(number: string, width: number) {
-    return number.length >= width
-      ? number
-      : new Array(width - number.length + 1).join("0") + number;
   }
 }

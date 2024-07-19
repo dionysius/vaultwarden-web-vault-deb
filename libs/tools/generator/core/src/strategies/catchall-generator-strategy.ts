@@ -1,8 +1,9 @@
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { StateProvider } from "@bitwarden/common/platform/state";
 
-import { GeneratorStrategy, Randomizer } from "../abstractions";
+import { GeneratorStrategy } from "../abstractions";
 import { DefaultCatchallOptions } from "../data";
+import { EmailCalculator, EmailRandomizer } from "../engine";
 import { newDefaultEvaluator } from "../rx";
 import { NoPolicy, CatchallGenerationOptions } from "../types";
 import { clone$PerUserId, sharedStateByUserId } from "../util";
@@ -17,7 +18,8 @@ export class CatchallGeneratorStrategy
    *  @param usernameService generates a catchall address for a domain
    */
   constructor(
-    private random: Randomizer,
+    private emailCalculator: EmailCalculator,
+    private emailRandomizer: EmailRandomizer,
     private stateProvider: StateProvider,
     private defaultOptions: CatchallGenerationOptions = DefaultCatchallOptions,
   ) {}
@@ -30,21 +32,14 @@ export class CatchallGeneratorStrategy
 
   // algorithm
   async generate(options: CatchallGenerationOptions) {
-    const o = Object.assign({}, DefaultCatchallOptions, options);
-
-    if (o.catchallDomain == null || o.catchallDomain === "") {
-      return null;
-    }
-    if (o.catchallType == null) {
-      o.catchallType = "random";
+    if (options.catchallType == null) {
+      options.catchallType = "random";
     }
 
-    let startString = "";
-    if (o.catchallType === "random") {
-      startString = await this.random.chars(8);
-    } else if (o.catchallType === "website-name") {
-      startString = o.website;
+    if (options.catchallType === "website-name") {
+      return await this.emailCalculator.concatenate(options.website, options.catchallDomain);
     }
-    return startString + "@" + o.catchallDomain;
+
+    return this.emailRandomizer.randomAsciiCatchall(options.catchallDomain);
   }
 }

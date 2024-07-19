@@ -10,9 +10,9 @@ import { DefaultGeneratorNavigationService } from "@bitwarden/generator-navigati
 import { LegacyPasswordGenerationService } from "./legacy-password-generation.service";
 import { PasswordGenerationServiceAbstraction } from "./password-generation.service.abstraction";
 
-const PassphraseGeneratorStrategy = strategies.PassphraseGeneratorStrategy;
-const PasswordGeneratorStrategy = strategies.PasswordGeneratorStrategy;
-const CryptoServiceRandomizer = engine.CryptoServiceRandomizer;
+const { PassphraseGeneratorStrategy, PasswordGeneratorStrategy } = strategies;
+const { CryptoServiceRandomizer, PasswordRandomizer } = engine;
+
 const DefaultGeneratorService = services.DefaultGeneratorService;
 
 export function legacyPasswordGenerationServiceFactory(
@@ -23,14 +23,15 @@ export function legacyPasswordGenerationServiceFactory(
   stateProvider: StateProvider,
 ): PasswordGenerationServiceAbstraction {
   const randomizer = new CryptoServiceRandomizer(cryptoService);
+  const passwordRandomizer = new PasswordRandomizer(randomizer);
 
   const passwords = new DefaultGeneratorService(
-    new PasswordGeneratorStrategy(randomizer, stateProvider),
+    new PasswordGeneratorStrategy(passwordRandomizer, stateProvider),
     policyService,
   );
 
   const passphrases = new DefaultGeneratorService(
-    new PassphraseGeneratorStrategy(randomizer, stateProvider),
+    new PassphraseGeneratorStrategy(passwordRandomizer, stateProvider),
     policyService,
   );
 

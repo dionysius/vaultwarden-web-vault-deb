@@ -8,8 +8,8 @@ import { Policy } from "@bitwarden/common/admin-console/models/domain/policy";
 import { StateProvider } from "@bitwarden/common/platform/state";
 import { UserId } from "@bitwarden/common/types/guid";
 
-import { Randomizer } from "../abstractions";
 import { DefaultPasswordGenerationOptions, DisabledPasswordGeneratorPolicy } from "../data";
+import { PasswordRandomizer } from "../engine";
 import { PasswordGeneratorOptionsEvaluator } from "../policies";
 
 import { PasswordGeneratorStrategy } from "./password-generator-strategy";
@@ -66,8 +66,7 @@ describe("Password generation strategy", () => {
   describe("durableState", () => {
     it("should use password settings key", () => {
       const provider = mock<StateProvider>();
-      const randomizer = mock<Randomizer>();
-      const strategy = new PasswordGeneratorStrategy(randomizer, provider);
+      const strategy = new PasswordGeneratorStrategy(null, provider);
 
       strategy.durableState(SomeUser);
 
@@ -87,14 +86,390 @@ describe("Password generation strategy", () => {
 
   describe("policy", () => {
     it("should use password generator policy", () => {
-      const randomizer = mock<Randomizer>();
-      const strategy = new PasswordGeneratorStrategy(randomizer, null);
+      const strategy = new PasswordGeneratorStrategy(null, null);
 
       expect(strategy.policy).toBe(PolicyType.PasswordGenerator);
     });
   });
 
   describe("generate()", () => {
-    it.todo("should generate a password using the given options");
+    const randomizer = mock<PasswordRandomizer>();
+    beforeEach(() => {
+      randomizer.randomAscii.mockResolvedValue("password");
+    });
+
+    afterEach(() => {
+      jest.resetAllMocks();
+    });
+
+    it("should map options", async () => {
+      const strategy = new PasswordGeneratorStrategy(randomizer, null);
+
+      const result = await strategy.generate({
+        length: 20,
+        ambiguous: true,
+        uppercase: true,
+        lowercase: true,
+        number: true,
+        special: true,
+        minUppercase: 1,
+        minLowercase: 2,
+        minNumber: 3,
+        minSpecial: 4,
+      });
+
+      expect(result).toEqual("password");
+      expect(randomizer.randomAscii).toHaveBeenCalledWith({
+        all: 10,
+        uppercase: 1,
+        lowercase: 2,
+        digits: 3,
+        special: 4,
+        ambiguous: true,
+      });
+    });
+
+    it("should disable uppercase", async () => {
+      const strategy = new PasswordGeneratorStrategy(randomizer, null);
+
+      const result = await strategy.generate({
+        length: 3,
+        ambiguous: true,
+        uppercase: false,
+        lowercase: true,
+        number: true,
+        special: true,
+        minUppercase: 1,
+        minLowercase: 1,
+        minNumber: 1,
+        minSpecial: 1,
+      });
+
+      expect(result).toEqual("password");
+      expect(randomizer.randomAscii).toHaveBeenCalledWith({
+        all: 0,
+        uppercase: undefined,
+        lowercase: 1,
+        digits: 1,
+        special: 1,
+        ambiguous: true,
+      });
+    });
+
+    it("should disable lowercase", async () => {
+      const strategy = new PasswordGeneratorStrategy(randomizer, null);
+
+      const result = await strategy.generate({
+        length: 3,
+        ambiguous: true,
+        uppercase: true,
+        lowercase: false,
+        number: true,
+        special: true,
+        minUppercase: 1,
+        minLowercase: 1,
+        minNumber: 1,
+        minSpecial: 1,
+      });
+
+      expect(result).toEqual("password");
+      expect(randomizer.randomAscii).toHaveBeenCalledWith({
+        all: 0,
+        uppercase: 1,
+        lowercase: undefined,
+        digits: 1,
+        special: 1,
+        ambiguous: true,
+      });
+    });
+
+    it("should disable digits", async () => {
+      const strategy = new PasswordGeneratorStrategy(randomizer, null);
+
+      const result = await strategy.generate({
+        length: 3,
+        ambiguous: true,
+        uppercase: true,
+        lowercase: true,
+        number: false,
+        special: true,
+        minUppercase: 1,
+        minLowercase: 1,
+        minNumber: 1,
+        minSpecial: 1,
+      });
+
+      expect(result).toEqual("password");
+      expect(randomizer.randomAscii).toHaveBeenCalledWith({
+        all: 0,
+        uppercase: 1,
+        lowercase: 1,
+        digits: undefined,
+        special: 1,
+        ambiguous: true,
+      });
+    });
+
+    it("should disable special", async () => {
+      const strategy = new PasswordGeneratorStrategy(randomizer, null);
+
+      const result = await strategy.generate({
+        length: 3,
+        ambiguous: true,
+        uppercase: true,
+        lowercase: true,
+        number: true,
+        special: false,
+        minUppercase: 1,
+        minLowercase: 1,
+        minNumber: 1,
+        minSpecial: 1,
+      });
+
+      expect(result).toEqual("password");
+      expect(randomizer.randomAscii).toHaveBeenCalledWith({
+        all: 0,
+        uppercase: 1,
+        lowercase: 1,
+        digits: 1,
+        special: undefined,
+        ambiguous: true,
+      });
+    });
+
+    it("should override length with minimums", async () => {
+      const strategy = new PasswordGeneratorStrategy(randomizer, null);
+
+      const result = await strategy.generate({
+        length: 20,
+        ambiguous: true,
+        uppercase: true,
+        lowercase: true,
+        number: true,
+        special: true,
+        minUppercase: 1,
+        minLowercase: 2,
+        minNumber: 3,
+        minSpecial: 4,
+      });
+
+      expect(result).toEqual("password");
+      expect(randomizer.randomAscii).toHaveBeenCalledWith({
+        all: 10,
+        uppercase: 1,
+        lowercase: 2,
+        digits: 3,
+        special: 4,
+        ambiguous: true,
+      });
+    });
+
+    it("should default uppercase", async () => {
+      const strategy = new PasswordGeneratorStrategy(randomizer, null);
+
+      const result = await strategy.generate({
+        length: 2,
+        ambiguous: true,
+        lowercase: true,
+        number: true,
+        special: true,
+        minUppercase: 2,
+        minLowercase: 0,
+        minNumber: 0,
+        minSpecial: 0,
+      });
+
+      expect(result).toEqual("password");
+      expect(randomizer.randomAscii).toHaveBeenCalledWith({
+        all: 0,
+        uppercase: 2,
+        lowercase: 0,
+        digits: 0,
+        special: 0,
+        ambiguous: true,
+      });
+    });
+
+    it("should default lowercase", async () => {
+      const strategy = new PasswordGeneratorStrategy(randomizer, null);
+
+      const result = await strategy.generate({
+        length: 0,
+        ambiguous: true,
+        uppercase: true,
+        number: true,
+        special: true,
+        minUppercase: 0,
+        minLowercase: 2,
+        minNumber: 0,
+        minSpecial: 0,
+      });
+
+      expect(result).toEqual("password");
+      expect(randomizer.randomAscii).toHaveBeenCalledWith({
+        all: 0,
+        uppercase: 0,
+        lowercase: 2,
+        digits: 0,
+        special: 0,
+        ambiguous: true,
+      });
+    });
+
+    it("should default number", async () => {
+      const strategy = new PasswordGeneratorStrategy(randomizer, null);
+
+      const result = await strategy.generate({
+        length: 0,
+        ambiguous: true,
+        uppercase: true,
+        lowercase: true,
+        special: true,
+        minUppercase: 0,
+        minLowercase: 0,
+        minNumber: 2,
+        minSpecial: 0,
+      });
+
+      expect(result).toEqual("password");
+      expect(randomizer.randomAscii).toHaveBeenCalledWith({
+        all: 0,
+        uppercase: 0,
+        lowercase: 0,
+        digits: 2,
+        special: 0,
+        ambiguous: true,
+      });
+    });
+
+    it("should default special", async () => {
+      const strategy = new PasswordGeneratorStrategy(randomizer, null);
+
+      const result = await strategy.generate({
+        length: 0,
+        ambiguous: true,
+        uppercase: true,
+        lowercase: true,
+        number: true,
+        minUppercase: 0,
+        minLowercase: 0,
+        minNumber: 0,
+        minSpecial: 0,
+      });
+
+      expect(result).toEqual("password");
+      expect(randomizer.randomAscii).toHaveBeenCalledWith({
+        all: 0,
+        uppercase: 0,
+        lowercase: 0,
+        digits: 0,
+        special: undefined,
+        ambiguous: true,
+      });
+    });
+
+    it("should default minUppercase", async () => {
+      const strategy = new PasswordGeneratorStrategy(randomizer, null);
+
+      const result = await strategy.generate({
+        length: 0,
+        ambiguous: true,
+        uppercase: true,
+        lowercase: true,
+        number: true,
+        special: true,
+        minLowercase: 0,
+        minNumber: 0,
+        minSpecial: 0,
+      });
+
+      expect(result).toEqual("password");
+      expect(randomizer.randomAscii).toHaveBeenCalledWith({
+        all: 0,
+        uppercase: 1,
+        lowercase: 0,
+        digits: 0,
+        special: 0,
+        ambiguous: true,
+      });
+    });
+
+    it("should default minLowercase", async () => {
+      const strategy = new PasswordGeneratorStrategy(randomizer, null);
+
+      const result = await strategy.generate({
+        length: 0,
+        ambiguous: true,
+        uppercase: true,
+        lowercase: true,
+        number: true,
+        special: true,
+        minUppercase: 0,
+        minNumber: 0,
+        minSpecial: 0,
+      });
+
+      expect(result).toEqual("password");
+      expect(randomizer.randomAscii).toHaveBeenCalledWith({
+        all: 0,
+        uppercase: 0,
+        lowercase: 1,
+        digits: 0,
+        special: 0,
+        ambiguous: true,
+      });
+    });
+
+    it("should default minNumber", async () => {
+      const strategy = new PasswordGeneratorStrategy(randomizer, null);
+
+      const result = await strategy.generate({
+        length: 0,
+        ambiguous: true,
+        uppercase: true,
+        lowercase: true,
+        number: true,
+        special: true,
+        minUppercase: 0,
+        minLowercase: 0,
+        minSpecial: 0,
+      });
+
+      expect(result).toEqual("password");
+      expect(randomizer.randomAscii).toHaveBeenCalledWith({
+        all: 0,
+        uppercase: 0,
+        lowercase: 0,
+        digits: 1,
+        special: 0,
+        ambiguous: true,
+      });
+    });
+
+    it("should default minSpecial", async () => {
+      const strategy = new PasswordGeneratorStrategy(randomizer, null);
+
+      const result = await strategy.generate({
+        length: 0,
+        ambiguous: true,
+        uppercase: true,
+        lowercase: true,
+        number: true,
+        special: true,
+        minUppercase: 0,
+        minLowercase: 0,
+        minNumber: 0,
+      });
+
+      expect(result).toEqual("password");
+      expect(randomizer.randomAscii).toHaveBeenCalledWith({
+        all: 0,
+        uppercase: 0,
+        lowercase: 0,
+        digits: 0,
+        special: 0,
+        ambiguous: true,
+      });
+    });
   });
 });

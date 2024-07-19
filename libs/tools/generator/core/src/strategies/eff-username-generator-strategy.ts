@@ -1,9 +1,9 @@
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
-import { EFFLongWordList } from "@bitwarden/common/platform/misc/wordlist";
 import { StateProvider } from "@bitwarden/common/platform/state";
 
-import { GeneratorStrategy, Randomizer } from "../abstractions";
-import { DefaultEffUsernameOptions } from "../data";
+import { GeneratorStrategy } from "../abstractions";
+import { DefaultEffUsernameOptions, UsernameDigits } from "../data";
+import { UsernameRandomizer } from "../engine";
 import { newDefaultEvaluator } from "../rx";
 import { EffUsernameGenerationOptions, NoPolicy } from "../types";
 import { clone$PerUserId, sharedStateByUserId } from "../util";
@@ -18,7 +18,7 @@ export class EffUsernameGeneratorStrategy
    *  @param usernameService generates a username from EFF word list
    */
   constructor(
-    private random: Randomizer,
+    private randomizer: UsernameRandomizer,
     private stateProvider: StateProvider,
     private defaultOptions: EffUsernameGenerationOptions = DefaultEffUsernameOptions,
   ) {}
@@ -31,10 +31,15 @@ export class EffUsernameGeneratorStrategy
 
   // algorithm
   async generate(options: EffUsernameGenerationOptions) {
-    const word = await this.random.pickWord(EFFLongWordList, {
-      titleCase: options.wordCapitalize ?? DefaultEffUsernameOptions.wordCapitalize,
-      number: options.wordIncludeNumber ?? DefaultEffUsernameOptions.wordIncludeNumber,
-    });
+    const casing =
+      options.wordCapitalize ?? DefaultEffUsernameOptions.wordCapitalize
+        ? "TitleCase"
+        : "lowercase";
+    const digits =
+      options.wordIncludeNumber ?? DefaultEffUsernameOptions.wordIncludeNumber
+        ? UsernameDigits.enabled
+        : UsernameDigits.disabled;
+    const word = await this.randomizer.randomWords({ numberOfWords: 1, casing, digits });
     return word;
   }
 }
