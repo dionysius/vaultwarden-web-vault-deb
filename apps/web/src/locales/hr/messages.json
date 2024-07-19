@@ -42,6 +42,12 @@
   "cardholderName": {
     "message": "Vlasnik platne kartice"
   },
+  "loginCredentials": {
+    "message": "Login credentials"
+  },
+  "authenticatorKey": {
+    "message": "Authenticator key"
+  },
   "number": {
     "message": "Broj"
   },
@@ -137,6 +143,15 @@
   },
   "authenticatorKeyTotp": {
     "message": "Ključ autentifikatora (TOTP)"
+  },
+  "totpHelperTitle": {
+    "message": "Make 2-step verification seamless"
+  },
+  "totpHelper": {
+    "message": "Bitwarden can store and fill 2-step verification codes. Copy and paste the key into this field."
+  },
+  "totpHelperWithCapture": {
+    "message": "Bitwarden can store and fill 2-step verification codes. Select the camera icon to take a screenshot of this website's authenticator QR code, or copy and paste the key into this field."
   },
   "folder": {
     "message": "Mapa"
@@ -611,6 +626,18 @@
   },
   "loginExpired": {
     "message": "Sesija je istekla."
+  },
+  "restartRegistration": {
+    "message": "Restart registration"
+  },
+  "expiredLink": {
+    "message": "Expired link"
+  },
+  "pleaseRestartRegistrationOrTryLoggingIn": {
+    "message": "Please restart registration or try logging in."
+  },
+  "youMayAlreadyHaveAnAccount": {
+    "message": "You may already have an account"
   },
   "logOutConfirmation": {
     "message": "Sigurno se želiš odjaviti?"
@@ -3783,8 +3810,8 @@
   "nothingSelected": {
     "message": "Ništa nije odabrano."
   },
-  "receiveMarketingEmails": {
-    "message": "Get emails from Bitwarden for announcements, advice, and research opportunities."
+  "receiveMarketingEmailsV2": {
+    "message": "Get advice, announcements, and research opportunities from Bitwarden in your inbox."
   },
   "unsubscribe": {
     "message": "Unsubscribe"
@@ -5519,6 +5546,9 @@
   "verificationCodeRequired": {
     "message": "Potvrdni kôd je obavezan."
   },
+  "webauthnCancelOrTimeout": {
+    "message": "The authentication was cancelled or took too long. Please try again."
+  },
   "invalidVerificationCode": {
     "message": "Nevažeći kôd za provjeru"
   },
@@ -6209,6 +6239,9 @@
         "example": "4"
       }
     }
+  },
+  "duoHealthCheckResultsInNullAuthUrlError": {
+    "message": "Error connecting with the Duo service. Use a different two-step login method or contact Duo for assistance."
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
     "message": "Launch Duo and follow the steps to finish logging in."
@@ -8558,5 +8591,8 @@
         "example": "Organization name"
       }
     }
+  },
+  "purchasedSeatsRemoved": {
+    "message": "purchased seats removed"
   }
 }

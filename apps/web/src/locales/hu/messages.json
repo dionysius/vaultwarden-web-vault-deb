@@ -42,6 +42,12 @@
   "cardholderName": {
     "message": "Kártyatulajdonos neve"
   },
+  "loginCredentials": {
+    "message": "Login credentials"
+  },
+  "authenticatorKey": {
+    "message": "Authenticator key"
+  },
   "number": {
     "message": "Szám"
   },
@@ -137,6 +143,15 @@
   },
   "authenticatorKeyTotp": {
     "message": "Hitelesítő kulcs (egyszeri idő alapú)"
+  },
+  "totpHelperTitle": {
+    "message": "Make 2-step verification seamless"
+  },
+  "totpHelper": {
+    "message": "Bitwarden can store and fill 2-step verification codes. Copy and paste the key into this field."
+  },
+  "totpHelperWithCapture": {
+    "message": "Bitwarden can store and fill 2-step verification codes. Select the camera icon to take a screenshot of this website's authenticator QR code, or copy and paste the key into this field."
   },
   "folder": {
     "message": "Mappa"
@@ -611,6 +626,18 @@
   },
   "loginExpired": {
     "message": "A bejelentkezési munkamenet lejárt."
+  },
+  "restartRegistration": {
+    "message": "Restart registration"
+  },
+  "expiredLink": {
+    "message": "Expired link"
+  },
+  "pleaseRestartRegistrationOrTryLoggingIn": {
+    "message": "Please restart registration or try logging in."
+  },
+  "youMayAlreadyHaveAnAccount": {
+    "message": "You may already have an account"
   },
   "logOutConfirmation": {
     "message": "Biztosan szeretnénk kijelentkezni?"
@@ -3783,8 +3810,8 @@
   "nothingSelected": {
     "message": "Nincs kiválasztva semmi."
   },
-  "receiveMarketingEmails": {
-    "message": "Emaileket kaphatunk a Bitwardentől bejelentésekről, tanácsokról és kutatási lehetőségekről."
+  "receiveMarketingEmailsV2": {
+    "message": "Get advice, announcements, and research opportunities from Bitwarden in your inbox."
   },
   "unsubscribe": {
     "message": "Leiratkozás"
@@ -5519,6 +5546,9 @@
   "verificationCodeRequired": {
     "message": "Az ellenőrző kód kötelező."
   },
+  "webauthnCancelOrTimeout": {
+    "message": "A hitelesítés megszakításra került vagy túl sokáig tartott. Próbáljuk újra."
+  },
   "invalidVerificationCode": {
     "message": "Érvénytelen ellenőrző kód"
   },
@@ -6209,6 +6239,9 @@
         "example": "4"
       }
     }
+  },
+  "duoHealthCheckResultsInNullAuthUrlError": {
+    "message": "Hiba történt a Duo szolgáltatáshoz csatlakozáskor. Használjunk másik kétlépcsős bejelentkezési módot vagy kérjünk segítséget a Duotól."
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
     "message": "Indítsuk el a DUO-t és kövessük a lépéseket a bejelentkezés befejezéséhez."
@@ -8558,5 +8591,8 @@
         "example": "Organization name"
       }
     }
+  },
+  "purchasedSeatsRemoved": {
+    "message": "megvásárolt hely eltávolításra került."
   }
 }

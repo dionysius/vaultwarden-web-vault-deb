@@ -42,6 +42,12 @@
   "cardholderName": {
     "message": "持卡人姓名"
   },
+  "loginCredentials": {
+    "message": "Login credentials"
+  },
+  "authenticatorKey": {
+    "message": "Authenticator key"
+  },
   "number": {
     "message": "号码"
   },
@@ -137,6 +143,15 @@
   },
   "authenticatorKeyTotp": {
     "message": "验证器密钥 (TOTP)"
+  },
+  "totpHelperTitle": {
+    "message": "Make 2-step verification seamless"
+  },
+  "totpHelper": {
+    "message": "Bitwarden can store and fill 2-step verification codes. Copy and paste the key into this field."
+  },
+  "totpHelperWithCapture": {
+    "message": "Bitwarden can store and fill 2-step verification codes. Select the camera icon to take a screenshot of this website's authenticator QR code, or copy and paste the key into this field."
   },
   "folder": {
     "message": "文件夹"
@@ -612,6 +627,18 @@
   "loginExpired": {
     "message": "您的登录会话已过期。"
   },
+  "restartRegistration": {
+    "message": "Restart registration"
+  },
+  "expiredLink": {
+    "message": "Expired link"
+  },
+  "pleaseRestartRegistrationOrTryLoggingIn": {
+    "message": "Please restart registration or try logging in."
+  },
+  "youMayAlreadyHaveAnAccount": {
+    "message": "You may already have an account"
+  },
   "logOutConfirmation": {
     "message": "确定要注销吗？"
   },
@@ -727,7 +754,7 @@
     "message": "通行密钥已达上限。移除一个通行密钥以添加另一个。"
   },
   "tryAgain": {
-    "message": "再试一次"
+    "message": "请重试"
   },
   "createAccount": {
     "message": "创建账户"
@@ -3043,7 +3070,7 @@
     }
   },
   "copiedHiddenFieldItemId": {
-    "message": "复制了项目 $ID$ 隐藏字段。",
+    "message": "复制了项目 $ID$ 的隐藏字段。",
     "placeholders": {
       "id": {
         "content": "$1",
@@ -3760,7 +3787,7 @@
     "message": "订阅"
   },
   "loading": {
-    "message": "正在加载"
+    "message": "加载中"
   },
   "upgrade": {
     "message": "升级"
@@ -3783,8 +3810,8 @@
   "nothingSelected": {
     "message": "您尚未选择任何内容。"
   },
-  "receiveMarketingEmails": {
-    "message": "接收来自 Bitwarden 的电子邮件，以获取公告、建议和调研。"
+  "receiveMarketingEmailsV2": {
+    "message": "Get advice, announcements, and research opportunities from Bitwarden in your inbox."
   },
   "unsubscribe": {
     "message": "取消订阅"
@@ -5519,6 +5546,9 @@
   "verificationCodeRequired": {
     "message": "必须填写验证码。"
   },
+  "webauthnCancelOrTimeout": {
+    "message": "身份验证被取消或耗时过长。请重试。"
+  },
   "invalidVerificationCode": {
     "message": "无效的验证码"
   },
@@ -6209,6 +6239,9 @@
         "example": "4"
       }
     }
+  },
+  "duoHealthCheckResultsInNullAuthUrlError": {
+    "message": "与 Duo 服务连接时出错。使用不同的两步登录方式或联系 Duo 寻求帮助。"
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
     "message": "启动 Duo 然后按照步骤完成登录。"
@@ -8558,5 +8591,8 @@
         "example": "Organization name"
       }
     }
+  },
+  "purchasedSeatsRemoved": {
+    "message": "购买的席位已移除"
   }
 }

@@ -42,6 +42,12 @@
   "cardholderName": {
     "message": "Kartes īpašnieka vārds"
   },
+  "loginCredentials": {
+    "message": "Login credentials"
+  },
+  "authenticatorKey": {
+    "message": "Authenticator key"
+  },
   "number": {
     "message": "Numurs"
   },
@@ -137,6 +143,15 @@
   },
   "authenticatorKeyTotp": {
     "message": "Autentificētāja atslēga (TOTP)"
+  },
+  "totpHelperTitle": {
+    "message": "Make 2-step verification seamless"
+  },
+  "totpHelper": {
+    "message": "Bitwarden can store and fill 2-step verification codes. Copy and paste the key into this field."
+  },
+  "totpHelperWithCapture": {
+    "message": "Bitwarden can store and fill 2-step verification codes. Select the camera icon to take a screenshot of this website's authenticator QR code, or copy and paste the key into this field."
   },
   "folder": {
     "message": "Mape"
@@ -612,6 +627,18 @@
   "loginExpired": {
     "message": "Pieteikšanās sesija ir beigusies."
   },
+  "restartRegistration": {
+    "message": "Restart registration"
+  },
+  "expiredLink": {
+    "message": "Expired link"
+  },
+  "pleaseRestartRegistrationOrTryLoggingIn": {
+    "message": "Please restart registration or try logging in."
+  },
+  "youMayAlreadyHaveAnAccount": {
+    "message": "You may already have an account"
+  },
   "logOutConfirmation": {
     "message": "Vai tiešām atteikties?"
   },
@@ -1060,7 +1087,7 @@
     "message": "Vai tiešām vēlaties turpināt?"
   },
   "moveSelectedItemsDesc": {
-    "message": "Choose a folder that you would like to add the $COUNT$ selected item(s) to.",
+    "message": "Jāizvelas mape, kurā pievienot $COUNT$ atlasīto(s) vienumu(s).",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3783,8 +3810,8 @@
   "nothingSelected": {
     "message": "Nekas nav atlasīts."
   },
-  "receiveMarketingEmails": {
-    "message": "Saņemt e-pasta ziņojumus no Bitwarden par paziņojumiem, padomiem un izpētes iespējām."
+  "receiveMarketingEmailsV2": {
+    "message": "Get advice, announcements, and research opportunities from Bitwarden in your inbox."
   },
   "unsubscribe": {
     "message": "Atteikt abonēšanu"
@@ -5519,6 +5546,9 @@
   "verificationCodeRequired": {
     "message": "Ir nepieciešams apstiprinājuma kods."
   },
+  "webauthnCancelOrTimeout": {
+    "message": "Autentifikācija tika atcelta vai tā aizņēma pārāk daudz laika. Lūgums mēģināt vēlreiz."
+  },
   "invalidVerificationCode": {
     "message": "Nederīgs apstiprinājuma kods"
   },
@@ -6209,6 +6239,9 @@
         "example": "4"
       }
     }
+  },
+  "duoHealthCheckResultsInNullAuthUrlError": {
+    "message": "Kļūda savienojuma izveidošanā ar Duo pakalpojumu. Jāizmanto cits divpakāpju pieteikšanāš veids vai jāvēršas pie Duo pēc palīdzības."
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
     "message": "Jāpalaiž DUO un jāseko soļiem, lai pabeigtu pieteikšanos."
@@ -7570,7 +7603,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendsNoItemsMessage": {
-    "message": "Send ir izmantojami, lai ar ikvienu droši kopīgotu šifrētu informāciju.",
+    "message": "Send ir izmantojams, lai ar ikvienu droši kopīgotu šifrētu informāciju.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "inviteUsers": {
@@ -7883,7 +7916,7 @@
     "message": "Piešķirt šiem krājumiem"
   },
   "bulkCollectionAssignmentDialogDescription": {
-    "message": "Only organization members with access to these collections will be able to see the items."
+    "message": "Vienumus varēs redzēt tikai apvnienības dalībnieki ar piekļuvi šiem krājumiem."
   },
   "selectCollectionsToAssign": {
     "message": "Atlasīt krājumus, lai piešķirtu"
@@ -8558,5 +8591,8 @@
         "example": "Organization name"
       }
     }
+  },
+  "purchasedSeatsRemoved": {
+    "message": "iegādātās vietas noņemtas"
   }
 }

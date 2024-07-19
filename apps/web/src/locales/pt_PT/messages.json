@@ -42,6 +42,12 @@
   "cardholderName": {
     "message": "Titular do cartão"
   },
+  "loginCredentials": {
+    "message": "Credenciais de início de sessão"
+  },
+  "authenticatorKey": {
+    "message": "Chave de autenticação"
+  },
   "number": {
     "message": "Número"
   },
@@ -137,6 +143,15 @@
   },
   "authenticatorKeyTotp": {
     "message": "Chave de autenticação (TOTP)"
+  },
+  "totpHelperTitle": {
+    "message": "Torne a verificação de dois passos simples"
+  },
+  "totpHelper": {
+    "message": "O Bitwarden pode armazenar e preencher códigos de verificação de dois passos. Copie e cole a chave neste campo."
+  },
+  "totpHelperWithCapture": {
+    "message": "O Bitwarden pode armazenar e preencher códigos de verificação de dois passos. Selecione o ícone da câmara para tirar uma captura de ecrã do código QR do autenticador deste site ou copie e cole a chave neste campo."
   },
   "folder": {
     "message": "Pasta"
@@ -611,6 +626,18 @@
   },
   "loginExpired": {
     "message": "A sua sessão expirou."
+  },
+  "restartRegistration": {
+    "message": "Restart registration"
+  },
+  "expiredLink": {
+    "message": "Expired link"
+  },
+  "pleaseRestartRegistrationOrTryLoggingIn": {
+    "message": "Please restart registration or try logging in."
+  },
+  "youMayAlreadyHaveAnAccount": {
+    "message": "You may already have an account"
   },
   "logOutConfirmation": {
     "message": "Tem a certeza de que pretende terminar sessão?"
@@ -3783,8 +3810,8 @@
   "nothingSelected": {
     "message": "Não selecionou nada."
   },
-  "receiveMarketingEmails": {
-    "message": "Receba e-mails do Bitwarden com anúncios, conselhos e oportunidades de investigação."
+  "receiveMarketingEmailsV2": {
+    "message": "Receba conselhos, anúncios e oportunidades de investigação do Bitwarden na sua caixa de entrada."
   },
   "unsubscribe": {
     "message": "Anular subscrição"
@@ -5519,6 +5546,9 @@
   "verificationCodeRequired": {
     "message": "É necessário o código de verificação."
   },
+  "webauthnCancelOrTimeout": {
+    "message": "A autenticação foi cancelada ou demorou demasiado tempo. Por favor, tente novamente."
+  },
   "invalidVerificationCode": {
     "message": "Código de verificação inválido"
   },
@@ -6209,6 +6239,9 @@
         "example": "4"
       }
     }
+  },
+  "duoHealthCheckResultsInNullAuthUrlError": {
+    "message": "Erro ao ligar ao serviço Duo. Utilize um método de verificação de dois passos diferente ou contacte o Duo para obter assistência."
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
     "message": "Inicie o DUO e siga os passos para concluir o início de sessão."
@@ -8558,5 +8591,8 @@
         "example": "Organization name"
       }
     }
+  },
+  "purchasedSeatsRemoved": {
+    "message": "lugares adquiridos removidos"
   }
 }

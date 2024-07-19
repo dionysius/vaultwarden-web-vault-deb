@@ -42,6 +42,12 @@
   "cardholderName": {
     "message": "Имя владельца карты"
   },
+  "loginCredentials": {
+    "message": "Данные для авторизации"
+  },
+  "authenticatorKey": {
+    "message": "Authenticator key"
+  },
   "number": {
     "message": "Номер"
   },
@@ -137,6 +143,15 @@
   },
   "authenticatorKeyTotp": {
     "message": "Ключ аутентификатора (TOTP)"
+  },
+  "totpHelperTitle": {
+    "message": "Сделать двухэтапную аутентификацию бесшовной"
+  },
+  "totpHelper": {
+    "message": "Bitwarden может хранить и заполнять коды двухэтапной аутентификации. Скопируйте и вставьте ключ в это поле."
+  },
+  "totpHelperWithCapture": {
+    "message": "Bitwarden может хранить и заполнять коды двухэтапной аутентификации. Выберите значок камеры, чтобы сделать скриншот QR-кода этого сайта, или скопируйте и вставьте ключ в это поле."
   },
   "folder": {
     "message": "Папка"
@@ -611,6 +626,18 @@
   },
   "loginExpired": {
     "message": "Истек срок действия вашей сессии."
+  },
+  "restartRegistration": {
+    "message": "Restart registration"
+  },
+  "expiredLink": {
+    "message": "Expired link"
+  },
+  "pleaseRestartRegistrationOrTryLoggingIn": {
+    "message": "Please restart registration or try logging in."
+  },
+  "youMayAlreadyHaveAnAccount": {
+    "message": "You may already have an account"
   },
   "logOutConfirmation": {
     "message": "Вы действительно хотите выйти?"
@@ -3783,8 +3810,8 @@
   "nothingSelected": {
     "message": "Вы ничего не выбрали."
   },
-  "receiveMarketingEmails": {
-    "message": "Получайте электронные письма от Bitwarden с анонсами, советами и возможностями для исследований."
+  "receiveMarketingEmailsV2": {
+    "message": "Get advice, announcements, and research opportunities from Bitwarden in your inbox."
   },
   "unsubscribe": {
     "message": "Отписаться"
@@ -5519,6 +5546,9 @@
   "verificationCodeRequired": {
     "message": "Необходимо ввести код подтверждения."
   },
+  "webauthnCancelOrTimeout": {
+    "message": "Аутентификация была отменена или заняла слишком много времени. Пожалуйста, попробуйте еще раз."
+  },
   "invalidVerificationCode": {
     "message": "Неверный код подтверждения"
   },
@@ -6209,6 +6239,9 @@
         "example": "4"
       }
     }
+  },
+  "duoHealthCheckResultsInNullAuthUrlError": {
+    "message": "Ошибка при подключении к сервису Duo. Используйте другой метод двухэтапной аутентификации или обратитесь за помощью в Duo."
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
     "message": "Запустите Duo и следуйте шагам для завершения авторизации."
@@ -8558,5 +8591,8 @@
         "example": "Organization name"
       }
     }
+  },
+  "purchasedSeatsRemoved": {
+    "message": "купленные места удалены"
   }
 }

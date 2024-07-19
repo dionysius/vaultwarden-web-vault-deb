@@ -42,6 +42,12 @@
   "cardholderName": {
     "message": "Tên chủ thẻ"
   },
+  "loginCredentials": {
+    "message": "Login credentials"
+  },
+  "authenticatorKey": {
+    "message": "Authenticator key"
+  },
   "number": {
     "message": "Số"
   },
@@ -137,6 +143,15 @@
   },
   "authenticatorKeyTotp": {
     "message": "Khóa xác thực (TOTP)"
+  },
+  "totpHelperTitle": {
+    "message": "Make 2-step verification seamless"
+  },
+  "totpHelper": {
+    "message": "Bitwarden can store and fill 2-step verification codes. Copy and paste the key into this field."
+  },
+  "totpHelperWithCapture": {
+    "message": "Bitwarden can store and fill 2-step verification codes. Select the camera icon to take a screenshot of this website's authenticator QR code, or copy and paste the key into this field."
   },
   "folder": {
     "message": "Thư mục"
@@ -611,6 +626,18 @@
   },
   "loginExpired": {
     "message": "Phiên đăng nhập của bạn đã hết hạn."
+  },
+  "restartRegistration": {
+    "message": "Restart registration"
+  },
+  "expiredLink": {
+    "message": "Expired link"
+  },
+  "pleaseRestartRegistrationOrTryLoggingIn": {
+    "message": "Please restart registration or try logging in."
+  },
+  "youMayAlreadyHaveAnAccount": {
+    "message": "You may already have an account"
   },
   "logOutConfirmation": {
     "message": "Bạn có chắc muốn đăng xuất?"
@@ -1167,7 +1194,7 @@
     "message": "Tài khoản bị hạn chế"
   },
   "passwordProtected": {
-    "message": "Đã được bảo vệ mật khẩu"
+    "message": "Mật khẩu đã được bảo vệ"
   },
   "filePasswordAndConfirmFilePasswordDoNotMatch": {
     "message": "“Mật khẩu tập tin” và “Nhập lại mật khẩu tập tin” không khớp."
@@ -1179,7 +1206,7 @@
     "message": "Tập tin này được bảo vệ bằng mật khẩu. Vui lòng nhập mật khẩu để nhập dữ liệu."
   },
   "exportSuccess": {
-    "message": "Đã xuất dữ liệu kho cảu bạn"
+    "message": "Đã xuất dữ liệu kho của bạn"
   },
   "passwordGenerator": {
     "message": "Tạo mật khẩu"
@@ -3783,8 +3810,8 @@
   "nothingSelected": {
     "message": "You have not selected anything."
   },
-  "receiveMarketingEmails": {
-    "message": "Get emails from Bitwarden for announcements, advice, and research opportunities."
+  "receiveMarketingEmailsV2": {
+    "message": "Get advice, announcements, and research opportunities from Bitwarden in your inbox."
   },
   "unsubscribe": {
     "message": "Unsubscribe"
@@ -4277,7 +4304,7 @@
     "message": "Văn bản"
   },
   "createSend": {
-    "message": "Gửi mới",
+    "message": "Mục Gửi mới",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editSend": {
@@ -4969,19 +4996,19 @@
     "message": "When member(s) are revoked, they no longer have access to organization data. To quickly restore member access, go to the Revoked tab. The process may take a few seconds to complete and cannot be interrupted or canceled."
   },
   "theme": {
-    "message": "Theme"
+    "message": "Chủ đề"
   },
   "themeDesc": {
-    "message": "Choose a theme for your web vault."
+    "message": "Chọn chủ đề cho kho lưu trữ web của bạn."
   },
   "themeSystem": {
-    "message": "Use system theme"
+    "message": "Sử dụng chủ đề của hệ thống"
   },
   "themeDark": {
-    "message": "Dark"
+    "message": "Tối"
   },
   "themeLight": {
-    "message": "Light"
+    "message": "Sáng"
   },
   "confirmSelected": {
     "message": "Confirm selected"
@@ -5518,6 +5545,9 @@
   },
   "verificationCodeRequired": {
     "message": "Verification code is required."
+  },
+  "webauthnCancelOrTimeout": {
+    "message": "The authentication was cancelled or took too long. Please try again."
   },
   "invalidVerificationCode": {
     "message": "Invalid verification code"
@@ -6209,6 +6239,9 @@
         "example": "4"
       }
     }
+  },
+  "duoHealthCheckResultsInNullAuthUrlError": {
+    "message": "Error connecting with the Duo service. Use a different two-step login method or contact Duo for assistance."
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
     "message": "Launch Duo and follow the steps to finish logging in."
@@ -8558,5 +8591,8 @@
         "example": "Organization name"
       }
     }
+  },
+  "purchasedSeatsRemoved": {
+    "message": "purchased seats removed"
   }
 }

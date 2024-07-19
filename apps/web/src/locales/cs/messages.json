@@ -42,6 +42,12 @@
   "cardholderName": {
     "message": "Jméno držitele karty"
   },
+  "loginCredentials": {
+    "message": "Přihlašovací údaje"
+  },
+  "authenticatorKey": {
+    "message": "Ověřovací klíč"
+  },
   "number": {
     "message": "Číslo"
   },
@@ -137,6 +143,15 @@
   },
   "authenticatorKeyTotp": {
     "message": "Autentizační klíč (TOTP)"
+  },
+  "totpHelperTitle": {
+    "message": "Bezproblémové dvoufázové ověřování"
+  },
+  "totpHelper": {
+    "message": "Bitwarden umí ukládat a vyplňovat dvoufázové ověřovací kódy. Zkopírujte a vložte klíč do tohoto pole."
+  },
+  "totpHelperWithCapture": {
+    "message": "Bitwarden umí ukládat a vyplňovat dvoufázové ověřovací kódy. Vyberte ikonu fotoaparátu a pořiďte snímek obrazovky ověřovacího QR kódu této webové stránky nebo klíč zkopírujte a vložte do tohoto pole."
   },
   "folder": {
     "message": "Složka"
@@ -612,6 +627,18 @@
   "loginExpired": {
     "message": "Platnost přihlášení vypršela."
   },
+  "restartRegistration": {
+    "message": "Restart registration"
+  },
+  "expiredLink": {
+    "message": "Expired link"
+  },
+  "pleaseRestartRegistrationOrTryLoggingIn": {
+    "message": "Please restart registration or try logging in."
+  },
+  "youMayAlreadyHaveAnAccount": {
+    "message": "You may already have an account"
+  },
   "logOutConfirmation": {
     "message": "Opravdu se chcete odhlásit?"
   },
@@ -855,7 +882,7 @@
     "message": "E-mailová adresa"
   },
   "yourVaultIsLockedV2": {
-    "message": "Your vault is locked"
+    "message": "Váš trezor je uzamčen"
   },
   "uuid": {
     "message": "UUID"
@@ -992,7 +1019,7 @@
     "message": "Použije YubiKey pro přístup k Vašemu trezoru. Podporuje YubiKey 4, 5 a NEO."
   },
   "duoDescV2": {
-    "message": "Zadejte kód vygenerovaný DUO Security.",
+    "message": "Zadejte kód vygenerovaný Duo Security.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
@@ -1060,7 +1087,7 @@
     "message": "Opravdu chcete pokračovat?"
   },
   "moveSelectedItemsDesc": {
-    "message": "Choose a folder that you would like to add the $COUNT$ selected item(s) to.",
+    "message": "Vyberte složku, do které chcete přidat $COUNT$ vybraných položek.",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3783,8 +3810,8 @@
   "nothingSelected": {
     "message": "Nevybrali jste žádné položky."
   },
-  "receiveMarketingEmails": {
-    "message": "Získejte e-maily od Bitwardenu pro oznámení, poradenství a výzkumné příležitosti."
+  "receiveMarketingEmailsV2": {
+    "message": "Get advice, announcements, and research opportunities from Bitwarden in your inbox."
   },
   "unsubscribe": {
     "message": "Odhlásit odběr"
@@ -5519,6 +5546,9 @@
   "verificationCodeRequired": {
     "message": "Je vyžadován ověřovací kód."
   },
+  "webauthnCancelOrTimeout": {
+    "message": "Ověření bylo zrušeno nebo trvalo příliš dlouho. Zkuste to znovu."
+  },
   "invalidVerificationCode": {
     "message": "Neplatný ověřovací kód"
   },
@@ -6210,14 +6240,17 @@
       }
     }
   },
+  "duoHealthCheckResultsInNullAuthUrlError": {
+    "message": "Chyba při připojování ke službě Duo. Použijte jinou dvoufázovou metodu přihlášení nebo kontaktujte Duo o pomoc."
+  },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
-    "message": "Spusťte DUO a pro dokončení přihlášení postupujte podle kroků."
+    "message": "Spusťte Duo a pro dokončení přihlášení postupujte podle kroků."
   },
   "duoRequiredByOrgForAccount": {
-    "message": "Pro Váš účet je vyžadováno dvoufázové přihlášení DUO."
+    "message": "Pro Váš účet je vyžadováno dvoufázové přihlášení Duo."
   },
   "launchDuo": {
-    "message": "Spustit DUO"
+    "message": "Spustit Duo"
   },
   "turnOn": {
     "message": "Zapnout"
@@ -7883,7 +7916,7 @@
     "message": "Přiřadit k těmto kolekcím"
   },
   "bulkCollectionAssignmentDialogDescription": {
-    "message": "Only organization members with access to these collections will be able to see the items."
+    "message": "Jen členové organizace s přístupem k těmto kolekcím budou moci vidět položky."
   },
   "selectCollectionsToAssign": {
     "message": "Vyberte kolekce pro přiřazení"
@@ -8558,5 +8591,8 @@
         "example": "Organization name"
       }
     }
+  },
+  "purchasedSeatsRemoved": {
+    "message": "zakoupení uživatelé odebráni"
   }
 }

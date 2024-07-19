@@ -42,6 +42,12 @@
   "cardholderName": {
     "message": "Właściciel karty"
   },
+  "loginCredentials": {
+    "message": "Dane logowania"
+  },
+  "authenticatorKey": {
+    "message": "Klucz uwierzytelniający"
+  },
   "number": {
     "message": "Numer"
   },
@@ -137,6 +143,15 @@
   },
   "authenticatorKeyTotp": {
     "message": "Klucz uwierzytelniający (TOTP)"
+  },
+  "totpHelperTitle": {
+    "message": "Spraw, aby dwuetapowa weryfikacja była bezproblemowa"
+  },
+  "totpHelper": {
+    "message": "Bitwarden może przechowywać i wypełniać kody weryfikacyjne. Skopiuj i wklej klucz do tego pola."
+  },
+  "totpHelperWithCapture": {
+    "message": "Bitwarden może przechowywać i wypełniać kody weryfikacyjne. Wybierz ikonę aparatu, aby zrobić zrzut ekranu z kodem QR lub skopiuj i wklej klucz do tego pola."
   },
   "folder": {
     "message": "Folder"
@@ -601,7 +616,7 @@
     "message": "Poziom dostępu"
   },
   "accessing": {
-    "message": "Accessing"
+    "message": "Uzyskiwanie dostępu"
   },
   "loggedOut": {
     "message": "Wylogowano"
@@ -611,6 +626,18 @@
   },
   "loginExpired": {
     "message": "Twoja sesja wygasła."
+  },
+  "restartRegistration": {
+    "message": "Zrestartuj rejestrację"
+  },
+  "expiredLink": {
+    "message": "Link wygasł"
+  },
+  "pleaseRestartRegistrationOrTryLoggingIn": {
+    "message": "Zrestartuj rejestrację lub spróbuj się zalogować."
+  },
+  "youMayAlreadyHaveAnAccount": {
+    "message": "Możesz mieć już konto"
   },
   "logOutConfirmation": {
     "message": "Czy na pewno chcesz się wylogować?"
@@ -1060,7 +1087,7 @@
     "message": "Czy na pewno chcesz kontynuować?"
   },
   "moveSelectedItemsDesc": {
-    "message": "Choose a folder that you would like to add the $COUNT$ selected item(s) to.",
+    "message": "Wybierz folder, do którego chcesz dodać $COUNT$ wybrane(ych) elementy(ów).",
     "placeholders": {
       "count": {
         "content": "$1",
@@ -3783,8 +3810,8 @@
   "nothingSelected": {
     "message": "Nie zaznaczyłeś żadnych elementów."
   },
-  "receiveMarketingEmails": {
-    "message": "Otrzymuj e-maile od Bitwarden z ogłoszeniami, poradami i badaniami."
+  "receiveMarketingEmailsV2": {
+    "message": "Uzyskaj poradę, ogłoszenia i możliwości badawcze od Bitwarden w swojej skrzynce odbiorczej."
   },
   "unsubscribe": {
     "message": "Anuluj subskrypcję"
@@ -5519,6 +5546,9 @@
   "verificationCodeRequired": {
     "message": "Kod weryfikacyjny jest wymagany."
   },
+  "webauthnCancelOrTimeout": {
+    "message": "Uwierzytelnianie zostało anulowane lub trwało zbyt długo. Spróbuj ponownie."
+  },
   "invalidVerificationCode": {
     "message": "Kod weryfikacyjny jest nieprawidłowy"
   },
@@ -6209,6 +6239,9 @@
         "example": "4"
       }
     }
+  },
+  "duoHealthCheckResultsInNullAuthUrlError": {
+    "message": "Wystąpił błąd podczas połączenia z usługą Duo. Aby uzyskać pomoc, użyj innej metody dwustopniowego logowania lub skontaktuj się z Duo."
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
     "message": "Uruchom DUO i wykonaj kroki, aby zakończyć logowanie."
@@ -7883,7 +7916,7 @@
     "message": "Przypisz do tych kolekcji"
   },
   "bulkCollectionAssignmentDialogDescription": {
-    "message": "Only organization members with access to these collections will be able to see the items."
+    "message": "Tylko członkowie organizacji z dostępem do tych kolekcji będą mogli zobaczyć te elementy."
   },
   "selectCollectionsToAssign": {
     "message": "Wybierz kolekcje do przypisania"
@@ -8558,5 +8591,8 @@
         "example": "Organization name"
       }
     }
+  },
+  "purchasedSeatsRemoved": {
+    "message": "zakupione miejsca usunięte"
   }
 }

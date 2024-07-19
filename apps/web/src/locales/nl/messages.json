@@ -42,6 +42,12 @@
   "cardholderName": {
     "message": "Naam kaarthouder"
   },
+  "loginCredentials": {
+    "message": "Inloggegevens"
+  },
+  "authenticatorKey": {
+    "message": "Authenticatiesleutel"
+  },
   "number": {
     "message": "Kaartnummer"
   },
@@ -137,6 +143,15 @@
   },
   "authenticatorKeyTotp": {
     "message": "Authenticatiesleutel (TOTP)"
+  },
+  "totpHelperTitle": {
+    "message": "Maak tweestapsaanmelding naadloos"
+  },
+  "totpHelper": {
+    "message": "Bitwarden kan tweestapsaanmeldingscodes opslaan en invullen. Kopieer en plak de sleutel in dit veld."
+  },
+  "totpHelperWithCapture": {
+    "message": "Bitwarden kan tweestapsaanmeldingscodes opslaan en invullen. Selecteer het camerapictogram om een schermafbeelding van de QR-code van deze website te maken of kopieer en plak de sleutel in dit veld."
   },
   "folder": {
     "message": "Map"
@@ -611,6 +626,18 @@
   },
   "loginExpired": {
     "message": "Je inlogsessie is verlopen."
+  },
+  "restartRegistration": {
+    "message": "Restart registration"
+  },
+  "expiredLink": {
+    "message": "Expired link"
+  },
+  "pleaseRestartRegistrationOrTryLoggingIn": {
+    "message": "Please restart registration or try logging in."
+  },
+  "youMayAlreadyHaveAnAccount": {
+    "message": "You may already have an account"
   },
   "logOutConfirmation": {
     "message": "Weet je zeker dat je wilt uitloggen?"
@@ -3783,8 +3810,8 @@
   "nothingSelected": {
     "message": "Je hebt niets geselecteerd."
   },
-  "receiveMarketingEmails": {
-    "message": "Ontvang e-mailberichten van Bitwarden voor aankondigingen, advies en onderzoeksmogelijkheden."
+  "receiveMarketingEmailsV2": {
+    "message": "Get advice, announcements, and research opportunities from Bitwarden in your inbox."
   },
   "unsubscribe": {
     "message": "Afmelden"
@@ -5519,6 +5546,9 @@
   "verificationCodeRequired": {
     "message": "Verificatiecode vereist."
   },
+  "webauthnCancelOrTimeout": {
+    "message": "De authenticatie werd geannuleerd of duurde te lang. Probeer het opnieuw."
+  },
   "invalidVerificationCode": {
     "message": "Ongeldige verificatiecode"
   },
@@ -6209,6 +6239,9 @@
         "example": "4"
       }
     }
+  },
+  "duoHealthCheckResultsInNullAuthUrlError": {
+    "message": "Fout bij het verbinden met de Duo-service. Gebruik een andere tweestapsaanmeldingsmethode of neem contact op met Duo voor hulp."
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
     "message": "Start DUO en volg de stappen om in te loggen."
@@ -8558,5 +8591,8 @@
         "example": "Organization name"
       }
     }
+  },
+  "purchasedSeatsRemoved": {
+    "message": "gekochte plaatsen verwijderd"
   }
 }

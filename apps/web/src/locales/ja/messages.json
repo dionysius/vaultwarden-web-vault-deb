@@ -42,6 +42,12 @@
   "cardholderName": {
     "message": "カードの名義人名"
   },
+  "loginCredentials": {
+    "message": "Login credentials"
+  },
+  "authenticatorKey": {
+    "message": "Authenticator key"
+  },
   "number": {
     "message": "番号"
   },
@@ -137,6 +143,15 @@
   },
   "authenticatorKeyTotp": {
     "message": "認証キー (TOTP)"
+  },
+  "totpHelperTitle": {
+    "message": "Make 2-step verification seamless"
+  },
+  "totpHelper": {
+    "message": "Bitwarden can store and fill 2-step verification codes. Copy and paste the key into this field."
+  },
+  "totpHelperWithCapture": {
+    "message": "Bitwarden can store and fill 2-step verification codes. Select the camera icon to take a screenshot of this website's authenticator QR code, or copy and paste the key into this field."
   },
   "folder": {
     "message": "フォルダー"
@@ -611,6 +626,18 @@
   },
   "loginExpired": {
     "message": "ログインセッションの有効期限が切れています。"
+  },
+  "restartRegistration": {
+    "message": "Restart registration"
+  },
+  "expiredLink": {
+    "message": "Expired link"
+  },
+  "pleaseRestartRegistrationOrTryLoggingIn": {
+    "message": "Please restart registration or try logging in."
+  },
+  "youMayAlreadyHaveAnAccount": {
+    "message": "You may already have an account"
   },
   "logOutConfirmation": {
     "message": "ログアウトしてもよろしいですか？"
@@ -3783,8 +3810,8 @@
   "nothingSelected": {
     "message": "何も選択されていません。"
   },
-  "receiveMarketingEmails": {
-    "message": "Bitwarden からのお知らせ、アドバイス、アンケート調査等のメールを受信します。"
+  "receiveMarketingEmailsV2": {
+    "message": "Get advice, announcements, and research opportunities from Bitwarden in your inbox."
   },
   "unsubscribe": {
     "message": "配信停止"
@@ -5519,6 +5546,9 @@
   "verificationCodeRequired": {
     "message": "認証コードが必要です。"
   },
+  "webauthnCancelOrTimeout": {
+    "message": "認証がキャンセルされたか、時間がかかりすぎました。もう一度やり直してください。"
+  },
   "invalidVerificationCode": {
     "message": "認証コードが間違っています"
   },
@@ -6209,6 +6239,9 @@
         "example": "4"
       }
     }
+  },
+  "duoHealthCheckResultsInNullAuthUrlError": {
+    "message": "Duo サービスへの接続中にエラーが発生しました。異なる二段階ログイン方法を使用するか、Duo に連絡してください。"
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
     "message": "ログインを完了するには DUO を起動し手順に従ってください。"
@@ -8558,5 +8591,8 @@
         "example": "Organization name"
       }
     }
+  },
+  "purchasedSeatsRemoved": {
+    "message": "購入済みシートが削除されました"
   }
 }

@@ -42,6 +42,12 @@
   "cardholderName": {
     "message": "Kortholdernavn"
   },
+  "loginCredentials": {
+    "message": "Login-legitimationsoplysninger"
+  },
+  "authenticatorKey": {
+    "message": "Godkendelsesnøgle"
+  },
   "number": {
     "message": "Nummer"
   },
@@ -137,6 +143,15 @@
   },
   "authenticatorKeyTotp": {
     "message": "Godkendelsesnøgle (TOTP)"
+  },
+  "totpHelperTitle": {
+    "message": "Gør 2-trinsbekræftelse problemfri"
+  },
+  "totpHelper": {
+    "message": "Bitwarden kan gemme og udfylde 2-trinsbekræftelseskoder. Kopiér og indsæt nøglen i dette felt."
+  },
+  "totpHelperWithCapture": {
+    "message": "Bitwarden kan gemme og udfylde 2-trinsbekræftelseskoder. Vælg kameraikonet for at tage et skærmfoto af dette websteds godkendelses-QR-kode, eller kopiér og indsæt nøglen i dette felt."
   },
   "folder": {
     "message": "Mappe"
@@ -611,6 +626,18 @@
   },
   "loginExpired": {
     "message": "Login-session udløbet."
+  },
+  "restartRegistration": {
+    "message": "Restart registration"
+  },
+  "expiredLink": {
+    "message": "Expired link"
+  },
+  "pleaseRestartRegistrationOrTryLoggingIn": {
+    "message": "Please restart registration or try logging in."
+  },
+  "youMayAlreadyHaveAnAccount": {
+    "message": "You may already have an account"
   },
   "logOutConfirmation": {
     "message": "Sikker på, at du vil logge ud?"
@@ -3783,8 +3810,8 @@
   "nothingSelected": {
     "message": "Du har ikke valgt noget."
   },
-  "receiveMarketingEmails": {
-    "message": "Få e-mails fra Bitwarden om annonceringer, råd og forskningsmuligheder."
+  "receiveMarketingEmailsV2": {
+    "message": "Get advice, announcements, and research opportunities from Bitwarden in your inbox."
   },
   "unsubscribe": {
     "message": "Afmeld"
@@ -5519,6 +5546,9 @@
   "verificationCodeRequired": {
     "message": "Bekræftelseskode kræves."
   },
+  "webauthnCancelOrTimeout": {
+    "message": "Godkendelsen blev afbrudt eller tog for lang tid. Forsøg igen."
+  },
   "invalidVerificationCode": {
     "message": "Ugyldig bekræftelseskode"
   },
@@ -6209,6 +6239,9 @@
         "example": "4"
       }
     }
+  },
+  "duoHealthCheckResultsInNullAuthUrlError": {
+    "message": "Fejl under forbindelsesoprettelsen til Duo-tjenesten. Brug en anden totrins-indlogningsmetode eller kontakt Duo for hjælp."
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
     "message": "Start DUO og følg trinene for at fuldføre indlogningen."
@@ -8558,5 +8591,8 @@
         "example": "Organization name"
       }
     }
+  },
+  "purchasedSeatsRemoved": {
+    "message": "købte pladser fjernet"
   }
 }

@@ -42,6 +42,12 @@
   "cardholderName": {
     "message": "Kart sahibinin adı"
   },
+  "loginCredentials": {
+    "message": "Giriş məlumatları"
+  },
+  "authenticatorKey": {
+    "message": "Kimlik doğrulayıcı açarı"
+  },
   "number": {
     "message": "Nömrə"
   },
@@ -137,6 +143,15 @@
   },
   "authenticatorKeyTotp": {
     "message": "Kimlik doğrulayıcı açarı (TOTP)"
+  },
+  "totpHelperTitle": {
+    "message": "2 addımlı doğrulama problemsiz edin"
+  },
+  "totpHelper": {
+    "message": "Bitwarden, 2 addımlı doğrulama kodlarını saxlaya və doldura bilər. Açarı kopyalayıb bu xanaya yapışdırın."
+  },
+  "totpHelperWithCapture": {
+    "message": "Bitwarden, 2 addımlı doğrulama kodlarını saxlaya və doldura bilər. Bu veb sayt kimlik doğrulayıcı QR kodunun ekran şəklini çəkmək üçün kamera ikonunu seçin, ya da açarı kopyalayıb bu xanaya yapışdırın."
   },
   "folder": {
     "message": "Qovluq"
@@ -611,6 +626,18 @@
   },
   "loginExpired": {
     "message": "Seansın müddəti bitdi."
+  },
+  "restartRegistration": {
+    "message": "Restart registration"
+  },
+  "expiredLink": {
+    "message": "Expired link"
+  },
+  "pleaseRestartRegistrationOrTryLoggingIn": {
+    "message": "Please restart registration or try logging in."
+  },
+  "youMayAlreadyHaveAnAccount": {
+    "message": "You may already have an account"
   },
   "logOutConfirmation": {
     "message": "Çıxış etmək istədiyinizə əminsiniz?"
@@ -3783,8 +3810,8 @@
   "nothingSelected": {
     "message": "Heç nə seçmədiniz."
   },
-  "receiveMarketingEmails": {
-    "message": "Elanlar, məsləhətlər və araşdırma fürsətləri üçün Bitwarden-dən e-poçt alın."
+  "receiveMarketingEmailsV2": {
+    "message": "Get advice, announcements, and research opportunities from Bitwarden in your inbox."
   },
   "unsubscribe": {
     "message": "Abunəlikdən çıx"
@@ -5519,6 +5546,9 @@
   "verificationCodeRequired": {
     "message": "Doğrulama kodu tələb olunur."
   },
+  "webauthnCancelOrTimeout": {
+    "message": "Kimlik doğrulama ləğv edildi və ya çox uzun çəkdi. Lütfən yenidən sınayın."
+  },
   "invalidVerificationCode": {
     "message": "Yararsız doğrulama kodu"
   },
@@ -6209,6 +6239,9 @@
         "example": "4"
       }
     }
+  },
+  "duoHealthCheckResultsInNullAuthUrlError": {
+    "message": "Duo xidmətinə bağlanarkən xəta baş verdi. Fərqli iki addımlı giriş üsulu istifadə edin və ya kömək üçün Duo ilə əlaqə saxlayın."
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
     "message": "DUO-nu başladın və giriş prosesini tamamlamaq üçün addımları izləyin."
@@ -8558,5 +8591,8 @@
         "example": "Organization name"
       }
     }
+  },
+  "purchasedSeatsRemoved": {
+    "message": "satın alınmış yerlər silindi"
   }
 }

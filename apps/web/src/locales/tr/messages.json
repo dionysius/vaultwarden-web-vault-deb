@@ -42,6 +42,12 @@
   "cardholderName": {
     "message": "Kart sahibinin adı"
   },
+  "loginCredentials": {
+    "message": "Login credentials"
+  },
+  "authenticatorKey": {
+    "message": "Authenticator key"
+  },
   "number": {
     "message": "Numara"
   },
@@ -137,6 +143,15 @@
   },
   "authenticatorKeyTotp": {
     "message": "Kimlik doğrulama anahtarı (TOTP)"
+  },
+  "totpHelperTitle": {
+    "message": "Make 2-step verification seamless"
+  },
+  "totpHelper": {
+    "message": "Bitwarden can store and fill 2-step verification codes. Copy and paste the key into this field."
+  },
+  "totpHelperWithCapture": {
+    "message": "Bitwarden can store and fill 2-step verification codes. Select the camera icon to take a screenshot of this website's authenticator QR code, or copy and paste the key into this field."
   },
   "folder": {
     "message": "Klasör"
@@ -611,6 +626,18 @@
   },
   "loginExpired": {
     "message": "Oturumunuz zaman aşımına uğradı."
+  },
+  "restartRegistration": {
+    "message": "Restart registration"
+  },
+  "expiredLink": {
+    "message": "Expired link"
+  },
+  "pleaseRestartRegistrationOrTryLoggingIn": {
+    "message": "Please restart registration or try logging in."
+  },
+  "youMayAlreadyHaveAnAccount": {
+    "message": "You may already have an account"
   },
   "logOutConfirmation": {
     "message": "Çıkmak istediğinizden emin misiniz?"
@@ -3783,8 +3810,8 @@
   "nothingSelected": {
     "message": "Hiçbir şey seçmediniz."
   },
-  "receiveMarketingEmails": {
-    "message": "Bitwarden'dan duyurular, öneriler ve araştırmalarla ilgili e-postalar alın."
+  "receiveMarketingEmailsV2": {
+    "message": "Get advice, announcements, and research opportunities from Bitwarden in your inbox."
   },
   "unsubscribe": {
     "message": "İstediğiniz zaman"
@@ -5519,6 +5546,9 @@
   "verificationCodeRequired": {
     "message": "Doğrulama kodu gereklidir."
   },
+  "webauthnCancelOrTimeout": {
+    "message": "Kimlik doğrulama iptal edildi ve çok uzun sürdü. Lütfen yeniden deneyin."
+  },
   "invalidVerificationCode": {
     "message": "Geçersiz doğrulama kodu"
   },
@@ -6209,6 +6239,9 @@
         "example": "4"
       }
     }
+  },
+  "duoHealthCheckResultsInNullAuthUrlError": {
+    "message": "Error connecting with the Duo service. Use a different two-step login method or contact Duo for assistance."
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
     "message": "Duo'yu başlatın ve oturum açmayı tamamlamak için adımları izleyin."
@@ -8558,5 +8591,8 @@
         "example": "Organization name"
       }
     }
+  },
+  "purchasedSeatsRemoved": {
+    "message": "purchased seats removed"
   }
 }
