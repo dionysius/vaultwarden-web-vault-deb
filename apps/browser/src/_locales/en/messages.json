@@ -1317,6 +1317,9 @@
   "cfTypeBoolean": {
     "message": "Boolean"
   },
+  "cfTypeChecked": {
+    "message": "Checked"
+  },
   "cfTypeLinked": {
     "message": "Linked",
     "description": "This describes a field that is 'linked' (tied) to another field."
