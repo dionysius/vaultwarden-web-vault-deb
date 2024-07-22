@@ -52,7 +52,7 @@ export class AddEditCustomFieldDialogComponent {
   fieldTypeOptions = [
     { name: this.i18nService.t("cfTypeText"), value: FieldType.Text },
     { name: this.i18nService.t("cfTypeHidden"), value: FieldType.Hidden },
-    { name: this.i18nService.t("cfTypeChecked"), value: FieldType.Boolean },
+    { name: this.i18nService.t("cfTypeCheckbox"), value: FieldType.Boolean },
     { name: this.i18nService.t("cfTypeLinked"), value: FieldType.Linked },
   ];
 
