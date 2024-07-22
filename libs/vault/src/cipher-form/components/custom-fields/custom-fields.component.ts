@@ -16,7 +16,7 @@ import {
 } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { FormArray, FormBuilder, FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { Subject, switchMap, take } from "rxjs";
+import { Subject, zip } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -173,16 +173,12 @@ export class CustomFieldsComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     // Focus on the new input field when it is added
     // This is done after the view is initialized to ensure the input is rendered
-    this.focusOnNewInput$
-      .pipe(
-        takeUntilDestroyed(this.destroyed$),
-        // QueryList changes are emitted after the view is updated
-        switchMap(() => this.customFieldRows.changes.pipe(take(1))),
-      )
+    zip(this.focusOnNewInput$, this.customFieldRows.changes)
+      .pipe(takeUntilDestroyed(this.destroyed$))
       .subscribe(() => {
-        const input =
-          this.customFieldRows.last.nativeElement.querySelector<HTMLInputElement>("input");
-        const label = document.querySelector(`label[for="${input.id}"]`).textContent.trim();
+        const mostRecentRow = this.customFieldRows.last.nativeElement;
+        const input = mostRecentRow.querySelector<HTMLInputElement>("input");
+        const label = mostRecentRow.querySelector<HTMLLabelElement>("label").textContent.trim();
 
         // Focus the input after the announcement element is added to the DOM,
         // this should stop the announcement from being cut off by the "focus" event.
