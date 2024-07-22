@@ -21,8 +21,11 @@ import { Subject, switchMap, take } from "rxjs";
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
-import { FieldType, LinkedIdType } from "@bitwarden/common/vault/enums";
+import { CipherType, FieldType, LinkedIdType } from "@bitwarden/common/vault/enums";
+import { CardView } from "@bitwarden/common/vault/models/view/card.view";
 import { FieldView } from "@bitwarden/common/vault/models/view/field.view";
+import { IdentityView } from "@bitwarden/common/vault/models/view/identity.view";
+import { LoginView } from "@bitwarden/common/vault/models/view/login.view";
 import {
   DialogService,
   SectionComponent,
@@ -131,10 +134,9 @@ export class CustomFieldsComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
+    const linkedFieldsOptionsForCipher = this.getLinkedFieldsOptionsForCipher();
     // Populate options for linked custom fields
-    this.linkedFieldOptions = Array.from(
-      this.cipherFormContainer.originalCipherView?.linkedFieldOptions?.entries() ?? [],
-    )
+    this.linkedFieldOptions = Array.from(linkedFieldsOptionsForCipher?.entries() ?? [])
       .map(([id, linkedFieldOption]) => ({
         name: this.i18nService.t(linkedFieldOption.i18nKey),
         value: id,
@@ -300,6 +302,24 @@ export class CustomFieldsComponent implements OnInit, AfterViewInit {
         this.i18nService.t("reorderFieldDown", label, currentIndex + 1, this.fields.length),
         "assertive",
       );
+    }
+  }
+
+  /**
+   * Returns the linked field options for the current cipher type
+   *
+   * Note: Note ciphers do not have linked fields
+   */
+  private getLinkedFieldsOptionsForCipher() {
+    switch (this.cipherFormContainer.config.cipherType) {
+      case CipherType.Login:
+        return LoginView.prototype.linkedFieldOptions;
+      case CipherType.Card:
+        return CardView.prototype.linkedFieldOptions;
+      case CipherType.Identity:
+        return IdentityView.prototype.linkedFieldOptions;
+      default:
+        return null;
     }
   }
 

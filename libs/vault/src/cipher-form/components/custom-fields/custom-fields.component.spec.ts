@@ -6,13 +6,19 @@ import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { By } from "@angular/platform-browser";
 
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
-import { CipherType, FieldType, LoginLinkedId } from "@bitwarden/common/vault/enums";
+import {
+  CardLinkedId,
+  CipherType,
+  FieldType,
+  IdentityLinkedId,
+  LoginLinkedId,
+} from "@bitwarden/common/vault/enums";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { FieldView } from "@bitwarden/common/vault/models/view/field.view";
-import { LoginView } from "@bitwarden/common/vault/models/view/login.view";
 import { DialogService } from "@bitwarden/components";
 
 import { BitPasswordInputToggleDirective } from "../../../../../components/src/form-field/password-input-toggle.directive";
+import { CipherFormConfig } from "../../abstractions/cipher-form-config.service";
 import { CipherFormContainer } from "../../cipher-form-container";
 
 import { CustomField, CustomFieldsComponent } from "./custom-fields.component";
@@ -25,8 +31,6 @@ const mockFieldViews = [
 ] as FieldView[];
 
 let originalCipherView: CipherView | null = new CipherView();
-originalCipherView.type = CipherType.Login;
-originalCipherView.login = new LoginView();
 
 describe("CustomFieldsComponent", () => {
   let component: CustomFieldsComponent;
@@ -34,14 +38,14 @@ describe("CustomFieldsComponent", () => {
   let open: jest.Mock;
   let announce: jest.Mock;
   let patchCipher: jest.Mock;
+  let config: CipherFormConfig;
 
   beforeEach(async () => {
     open = jest.fn();
     announce = jest.fn().mockResolvedValue(null);
     patchCipher = jest.fn();
     originalCipherView = new CipherView();
-    originalCipherView.type = CipherType.Login;
-    originalCipherView.login = new LoginView();
+    config = {} as CipherFormConfig;
 
     await TestBed.configureTestingModule({
       imports: [CustomFieldsComponent],
@@ -52,7 +56,7 @@ describe("CustomFieldsComponent", () => {
         },
         {
           provide: CipherFormContainer,
-          useValue: { patchCipher, originalCipherView, registerChildForm: jest.fn(), config: {} },
+          useValue: { patchCipher, originalCipherView, registerChildForm: jest.fn(), config },
         },
         {
           provide: LiveAnnouncer,
@@ -73,20 +77,6 @@ describe("CustomFieldsComponent", () => {
   });
 
   describe("initializing", () => {
-    it("populates linkedFieldOptions", () => {
-      originalCipherView.login.linkedFieldOptions = new Map([
-        [1, { i18nKey: "one-i18", propertyKey: "one" }],
-        [2, { i18nKey: "two-i18", propertyKey: "two" }],
-      ]);
-
-      component.ngOnInit();
-
-      expect(component.linkedFieldOptions).toEqual([
-        { value: 1, name: "one-i18" },
-        { value: 2, name: "two-i18" },
-      ]);
-    });
-
     it("populates customFieldsForm", () => {
       originalCipherView.fields = mockFieldViews;
 
@@ -129,6 +119,50 @@ describe("CustomFieldsComponent", () => {
       const button = fixture.debugElement.query(By.directive(BitPasswordInputToggleDirective));
 
       expect(button.nativeElement.disabled).toBe(true);
+    });
+
+    describe("linkedFieldOptions", () => {
+      /** Retrieve the numerical values of an enum object */
+      const getEnumValues = (enumType: object) =>
+        Object.values(enumType).filter((v) => typeof v === "number");
+
+      it("populates for login ciphers", () => {
+        config.cipherType = CipherType.Login;
+
+        component.ngOnInit();
+
+        expect(component.linkedFieldOptions.map((o) => o.value)).toEqual(
+          expect.arrayContaining(getEnumValues(LoginLinkedId)),
+        );
+      });
+
+      it("populates for card ciphers", () => {
+        config.cipherType = CipherType.Card;
+
+        component.ngOnInit();
+
+        expect(component.linkedFieldOptions.map((o) => o.value)).toEqual(
+          expect.arrayContaining(getEnumValues(CardLinkedId)),
+        );
+      });
+
+      it("populates for identity ciphers", () => {
+        config.cipherType = CipherType.Identity;
+
+        component.ngOnInit();
+
+        expect(component.linkedFieldOptions.map((o) => o.value)).toEqual(
+          expect.arrayContaining(getEnumValues(IdentityLinkedId)),
+        );
+      });
+
+      it("sets an empty array for note ciphers", () => {
+        config.cipherType = CipherType.SecureNote;
+
+        component.ngOnInit();
+
+        expect(component.linkedFieldOptions).toEqual([]);
+      });
     });
   });
 
