@@ -1,6 +1,7 @@
 import { zip, firstValueFrom, map, concatMap, combineLatest } from "rxjs";
 
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
+import { UserId } from "@bitwarden/common/types/guid";
 import {
   ApiOptions,
   EmailDomainOptions,
@@ -13,6 +14,8 @@ import {
   EffUsernameGenerationOptions,
   Forwarders,
   SubaddressGenerationOptions,
+  UsernameGeneratorType,
+  ForwarderId,
 } from "@bitwarden/generator-core";
 import { GeneratorNavigationService, GeneratorNavigation } from "@bitwarden/generator-navigation";
 
@@ -178,28 +181,76 @@ export class LegacyUsernameGenerationService implements UsernameGenerationServic
     const stored = this.toStoredOptions(options);
     const activeAccount = await firstValueFrom(this.accountService.activeAccount$);
 
+    const saved = await this.saveGeneratorOptions(activeAccount.id, options.type, stored);
+    if (!saved) {
+      await this.saveForwarderOptions(activeAccount.id, options.forwardedService, stored);
+    }
+
+    // run navigation options 2nd so that navigation options update doesn't race the `saved options`
+    // update in Firefox.
+    await this.saveNavigationOptions(activeAccount.id, stored);
+  }
+
+  private async saveNavigationOptions(account: UserId, options: MappedOptions) {
     // generator settings needs to preserve whether password or passphrase is selected,
     // so `navigationOptions` is mutated.
     const navigationOptions$ = zip(
-      this.navigation.options$(activeAccount.id),
-      this.navigation.defaults$(activeAccount.id),
+      this.navigation.options$(account),
+      this.navigation.defaults$(account),
     ).pipe(map(([options, defaults]) => options ?? defaults));
-    let navigationOptions = await firstValueFrom(navigationOptions$);
-    navigationOptions = Object.assign(navigationOptions, stored.generator);
-    await this.navigation.saveOptions(activeAccount.id, navigationOptions);
 
-    // overwrite all other settings with latest values
-    await Promise.all([
-      this.catchall.saveOptions(activeAccount.id, stored.algorithms.catchall),
-      this.effUsername.saveOptions(activeAccount.id, stored.algorithms.effUsername),
-      this.subaddress.saveOptions(activeAccount.id, stored.algorithms.subaddress),
-      this.addyIo.saveOptions(activeAccount.id, stored.forwarders.addyIo),
-      this.duckDuckGo.saveOptions(activeAccount.id, stored.forwarders.duckDuckGo),
-      this.fastmail.saveOptions(activeAccount.id, stored.forwarders.fastmail),
-      this.firefoxRelay.saveOptions(activeAccount.id, stored.forwarders.firefoxRelay),
-      this.forwardEmail.saveOptions(activeAccount.id, stored.forwarders.forwardEmail),
-      this.simpleLogin.saveOptions(activeAccount.id, stored.forwarders.simpleLogin),
-    ]);
+    let navigationOptions = await firstValueFrom(navigationOptions$);
+    navigationOptions = Object.assign(navigationOptions, options.generator);
+    await this.navigation.saveOptions(account, navigationOptions);
+  }
+
+  private async saveGeneratorOptions(
+    account: UserId,
+    type: UsernameGeneratorType,
+    options: MappedOptions,
+  ) {
+    switch (type) {
+      case "word":
+        await this.effUsername.saveOptions(account, options.algorithms.effUsername);
+        return true;
+      case "subaddress":
+        await this.subaddress.saveOptions(account, options.algorithms.subaddress);
+        return true;
+      case "catchall":
+        await this.catchall.saveOptions(account, options.algorithms.catchall);
+        return true;
+      default:
+        return false;
+    }
+  }
+
+  private async saveForwarderOptions(
+    account: UserId,
+    forwarder: ForwarderId | "",
+    options: MappedOptions,
+  ) {
+    switch (forwarder) {
+      case "anonaddy":
+        await this.addyIo.saveOptions(account, options.forwarders.addyIo);
+        return true;
+      case "duckduckgo":
+        await this.duckDuckGo.saveOptions(account, options.forwarders.duckDuckGo);
+        return true;
+      case "fastmail":
+        await this.fastmail.saveOptions(account, options.forwarders.fastmail);
+        return true;
+      case "firefoxrelay":
+        await this.firefoxRelay.saveOptions(account, options.forwarders.firefoxRelay);
+        return true;
+      case "forwardemail":
+        await this.forwardEmail.saveOptions(account, options.forwarders.forwardEmail);
+        return true;
+      case "simplelogin":
+        await this.simpleLogin.saveOptions(account, options.forwarders.simpleLogin);
+        return true;
+      default:
+        return false;
+    }
   }
 
   private toStoredOptions(options: UsernameGeneratorOptions) {

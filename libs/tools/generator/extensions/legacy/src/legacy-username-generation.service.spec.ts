@@ -638,6 +638,10 @@ describe("LegacyUsernameGenerationService", () => {
   });
 
   describe("saveOptions", () => {
+    // this test is awful, but the coupling of the legacy username generator
+    // would cause the test file's size to bloat to ~2000 loc. Since the legacy
+    // generators are actively being rewritten, this heinous test seemed the lesser
+    // of two evils.
     it("saves option sets to its inner generators", async () => {
       const account = mockAccountServiceWith(SomeUser);
       const navigation = createNavigationGenerator({ type: "password" });
@@ -665,7 +669,7 @@ describe("LegacyUsernameGenerationService", () => {
         simpleLogin,
       );
 
-      await generator.saveOptions({
+      const options: UsernameGeneratorOptions = {
         type: "catchall",
         wordCapitalize: true,
         wordIncludeNumber: false,
@@ -685,7 +689,9 @@ describe("LegacyUsernameGenerationService", () => {
         forwardedSimpleLoginApiKey: "simpleLoginToken",
         forwardedSimpleLoginBaseUrl: "https://simplelogin.api.example.com",
         website: null,
-      });
+      };
+
+      await generator.saveOptions(options);
 
       expect(navigation.saveOptions).toHaveBeenCalledWith(SomeUser, {
         type: "password",
@@ -699,17 +705,27 @@ describe("LegacyUsernameGenerationService", () => {
         website: null,
       });
 
+      options.type = "word";
+      await generator.saveOptions(options);
+
       expect(effUsername.saveOptions).toHaveBeenCalledWith(SomeUser, {
         wordCapitalize: true,
         wordIncludeNumber: false,
         website: null,
       });
 
+      options.type = "subaddress";
+      await generator.saveOptions(options);
+
       expect(subaddress.saveOptions).toHaveBeenCalledWith(SomeUser, {
         subaddressType: "random",
         subaddressEmail: "foo@example.com",
         website: null,
       });
+
+      options.type = "forwarded";
+      options.forwardedService = "anonaddy";
+      await generator.saveOptions(options);
 
       expect(addyIo.saveOptions).toHaveBeenCalledWith(SomeUser, {
         token: "addyIoToken",
@@ -718,26 +734,46 @@ describe("LegacyUsernameGenerationService", () => {
         website: null,
       });
 
+      options.type = "forwarded";
+      options.forwardedService = "duckduckgo";
+      await generator.saveOptions(options);
+
       expect(duckDuckGo.saveOptions).toHaveBeenCalledWith(SomeUser, {
         token: "ddgToken",
         website: null,
       });
+
+      options.type = "forwarded";
+      options.forwardedService = "fastmail";
+      await generator.saveOptions(options);
 
       expect(fastmail.saveOptions).toHaveBeenCalledWith(SomeUser, {
         token: "fastmailToken",
         website: null,
       });
 
+      options.type = "forwarded";
+      options.forwardedService = "firefoxrelay";
+      await generator.saveOptions(options);
+
       expect(firefoxRelay.saveOptions).toHaveBeenCalledWith(SomeUser, {
         token: "firefoxToken",
         website: null,
       });
+
+      options.type = "forwarded";
+      options.forwardedService = "forwardemail";
+      await generator.saveOptions(options);
 
       expect(forwardEmail.saveOptions).toHaveBeenCalledWith(SomeUser, {
         token: "forwardEmailToken",
         domain: "example.com",
         website: null,
       });
+
+      options.type = "forwarded";
+      options.forwardedService = "simplelogin";
+      await generator.saveOptions(options);
 
       expect(simpleLogin.saveOptions).toHaveBeenCalledWith(SomeUser, {
         token: "simpleLoginToken",
