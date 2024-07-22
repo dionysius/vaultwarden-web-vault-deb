@@ -3,7 +3,6 @@ import { firstValueFrom, map } from "rxjs";
 
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
-import { MasterPasswordServiceAbstraction } from "@bitwarden/common/auth/abstractions/master-password.service.abstraction";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/crypto-function.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
@@ -34,7 +33,6 @@ export class NativeMessagingService {
   private sharedSecrets = new Map<string, SymmetricCryptoKey>();
 
   constructor(
-    private masterPasswordService: MasterPasswordServiceAbstraction,
     private cryptoFunctionService: CryptoFunctionService,
     private cryptoService: CryptoService,
     private platformUtilService: PlatformUtilsService,
@@ -177,19 +175,12 @@ export class NativeMessagingService {
             KeySuffixOptions.Biometric,
             message.userId,
           );
-          const masterKey = await firstValueFrom(
-            this.masterPasswordService.masterKey$(message.userId as UserId),
-          );
 
           if (userKey != null) {
-            // we send the master key still for backwards compatibility
-            // with older browser extensions
-            // TODO: Remove after 2023.10 release (https://bitwarden.atlassian.net/browse/PM-3472)
             await this.send(
               {
                 command: "biometricUnlock",
                 response: "unlocked",
-                keyB64: masterKey?.keyB64,
                 userKeyB64: userKey.keyB64,
               },
               appId,

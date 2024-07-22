@@ -405,9 +405,6 @@ export class PinService implements PinServiceAbstraction {
 
     await this.clearOldPinKeyEncryptedMasterKey(userId);
 
-    // This also clears the old Biometrics key since the new Biometrics key will be created when the user key is set.
-    await this.stateService.setCryptoMasterKeyBiometric(null, { userId: userId });
-
     return userKey;
   }
 

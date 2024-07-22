@@ -13,13 +13,12 @@ import { StateService } from "@bitwarden/common/platform/abstractions/state.serv
 import { BiometricStateService } from "@bitwarden/common/platform/biometrics/biometric-state.service";
 import { KeySuffixOptions } from "@bitwarden/common/platform/enums";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
-import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
 import { CryptoService } from "@bitwarden/common/platform/services/crypto.service";
 import { StateProvider } from "@bitwarden/common/platform/state";
 import { CsprngString } from "@bitwarden/common/types/csprng";
 import { UserId } from "@bitwarden/common/types/guid";
-import { UserKey, MasterKey } from "@bitwarden/common/types/key";
+import { UserKey } from "@bitwarden/common/types/key";
 
 export class ElectronCryptoService extends CryptoService {
   constructor(
@@ -53,9 +52,7 @@ export class ElectronCryptoService extends CryptoService {
 
   override async hasUserKeyStored(keySuffix: KeySuffixOptions, userId?: UserId): Promise<boolean> {
     if (keySuffix === KeySuffixOptions.Biometric) {
-      // TODO: Remove after 2023.10 release (https://bitwarden.atlassian.net/browse/PM-3474)
-      const oldKey = await this.stateService.hasCryptoMasterKeyBiometric({ userId: userId });
-      return oldKey || (await this.stateService.hasUserKeyBiometric({ userId: userId }));
+      return await this.stateService.hasUserKeyBiometric({ userId: userId });
     }
     return super.hasUserKeyStored(keySuffix, userId);
   }
@@ -90,7 +87,6 @@ export class ElectronCryptoService extends CryptoService {
     userId?: UserId,
   ): Promise<UserKey> {
     if (keySuffix === KeySuffixOptions.Biometric) {
-      await this.migrateBiometricKeyIfNeeded(userId);
       const userKey = await this.stateService.getUserKeyBiometric({ userId: userId });
       return userKey == null
         ? null
@@ -148,47 +144,5 @@ export class ElectronCryptoService extends CryptoService {
     }
 
     return biometricKey;
-  }
-
-  // --LEGACY METHODS--
-  // We previously used the master key for additional keys, but now we use the user key.
-  // These methods support migrating the old keys to the new ones.
-  // TODO: Remove after 2023.10 release (https://bitwarden.atlassian.net/browse/PM-3475)
-
-  override async clearDeprecatedKeys(keySuffix: KeySuffixOptions, userId?: UserId) {
-    if (keySuffix === KeySuffixOptions.Biometric) {
-      await this.stateService.setCryptoMasterKeyBiometric(null, { userId: userId });
-    }
-
-    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    super.clearDeprecatedKeys(keySuffix, userId);
-  }
-
-  private async migrateBiometricKeyIfNeeded(userId?: UserId) {
-    if (await this.stateService.hasCryptoMasterKeyBiometric({ userId })) {
-      const oldBiometricKey = await this.stateService.getCryptoMasterKeyBiometric({ userId });
-      // decrypt
-      const masterKey = new SymmetricCryptoKey(Utils.fromB64ToArray(oldBiometricKey)) as MasterKey;
-      userId ??= (await firstValueFrom(this.accountService.activeAccount$))?.id;
-      const encUserKeyPrim = await this.stateService.getEncryptedCryptoSymmetricKey({
-        userId: userId,
-      });
-      const encUserKey =
-        encUserKeyPrim != null
-          ? new EncString(encUserKeyPrim)
-          : await this.masterPasswordService.getMasterKeyEncryptedUserKey(userId);
-      if (!encUserKey) {
-        throw new Error("No user key found during biometric migration");
-      }
-      const userKey = await this.masterPasswordService.decryptUserKeyWithMasterKey(
-        masterKey,
-        encUserKey,
-        userId,
-      );
-      // migrate
-      await this.storeBiometricKey(userKey, userId);
-      await this.stateService.setCryptoMasterKeyBiometric(null, { userId });
-    }
   }
 }

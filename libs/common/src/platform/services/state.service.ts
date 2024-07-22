@@ -33,7 +33,6 @@ const partialKeys = {
   userBiometricKey: "_user_biometric",
 
   autoKey: "_masterkey_auto",
-  biometricKey: "_masterkey_biometric",
   masterKey: "_masterkey",
 };
 
@@ -252,54 +251,6 @@ export class StateService<
       return;
     }
     await this.saveSecureStorageKey(partialKeys.masterKey, value, options);
-  }
-
-  /**
-   * @deprecated Use UserKeyBiometric instead
-   */
-  async getCryptoMasterKeyBiometric(options?: StorageOptions): Promise<string> {
-    options = this.reconcileOptions(
-      this.reconcileOptions(options, { keySuffix: "biometric" }),
-      await this.defaultSecureStorageOptions(),
-    );
-    if (options?.userId == null) {
-      return null;
-    }
-    return await this.secureStorageService.get<string>(
-      `${options.userId}${partialKeys.biometricKey}`,
-      options,
-    );
-  }
-
-  /**
-   * @deprecated Use UserKeyBiometric instead
-   */
-  async hasCryptoMasterKeyBiometric(options?: StorageOptions): Promise<boolean> {
-    options = this.reconcileOptions(
-      this.reconcileOptions(options, { keySuffix: "biometric" }),
-      await this.defaultSecureStorageOptions(),
-    );
-    if (options?.userId == null) {
-      return false;
-    }
-    return await this.secureStorageService.has(
-      `${options.userId}${partialKeys.biometricKey}`,
-      options,
-    );
-  }
-
-  /**
-   * @deprecated Use UserKeyBiometric instead
-   */
-  async setCryptoMasterKeyBiometric(value: BiometricKey, options?: StorageOptions): Promise<void> {
-    options = this.reconcileOptions(
-      this.reconcileOptions(options, { keySuffix: "biometric" }),
-      await this.defaultSecureStorageOptions(),
-    );
-    if (options?.userId == null) {
-      return;
-    }
-    await this.saveSecureStorageKey(partialKeys.biometricKey, value, options);
   }
 
   async getDuckDuckGoSharedKey(options?: StorageOptions): Promise<string> {
@@ -678,7 +629,6 @@ export class StateService<
     await this.setUserKeyAutoUnlock(null, { userId: userId });
     await this.setUserKeyBiometric(null, { userId: userId });
     await this.setCryptoMasterKeyAuto(null, { userId: userId });
-    await this.setCryptoMasterKeyBiometric(null, { userId: userId });
     await this.setCryptoMasterKeyB64(null, { userId: userId });
   }
 

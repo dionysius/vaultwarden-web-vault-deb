@@ -109,14 +109,6 @@ describe("electronCryptoService", () => {
           userId: mockUserId,
         });
       });
-
-      it("clears the old deprecated Biometric key whenever a User Key is set", async () => {
-        await sut.setUserKey(mockUserKey, mockUserId);
-
-        expect(stateService.setCryptoMasterKeyBiometric).toHaveBeenCalledWith(null, {
-          userId: mockUserId,
-        });
-      });
     });
   });
 });

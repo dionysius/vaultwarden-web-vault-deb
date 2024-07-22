@@ -455,8 +455,6 @@ describe("PinService", () => {
       await sut.setUserKeyEncryptedPin(mockUserKeyEncryptedPin, mockUserId);
 
       await sut.clearOldPinKeyEncryptedMasterKey(mockUserId);
-
-      await stateService.setCryptoMasterKeyBiometric(null, { userId: mockUserId });
     }
 
     function mockDecryptUserKeyFn() {
