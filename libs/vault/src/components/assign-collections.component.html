@@ -1,7 +1,7 @@
 <form [formGroup]="formGroup" [bitSubmit]="submit" id="assign_collections_form">
   <p>{{ "bulkCollectionAssignmentDialogDescription" | i18n }}</p>
 
-  <ul class="tw-list-none tw-pl-5 tw-space-y-2">
+  <ul class="tw-list-none tw-pl-5 tw-space-y-2 tw-break-words">
     <li *ngIf="readonlyItemCount > 0">
       <p>
         {{ "bulkCollectionAssignmentWarning" | i18n: totalItemCount : readonlyItemCount }}
@@ -15,7 +15,7 @@
   </ul>
 
   <div class="tw-flex" *ngIf="showOrgSelector">
-    <bit-form-field class="tw-grow">
+    <bit-form-field class="tw-grow tw-max-w-full">
       <bit-label>{{ "moveToOrganization" | i18n }}</bit-label>
       <bit-select formControlName="selectedOrg">
         <bit-option
@@ -30,7 +30,7 @@
   </div>
 
   <div class="tw-flex">
-    <bit-form-field class="tw-grow">
+    <bit-form-field class="tw-grow tw-max-w-full">
       <bit-label>{{ "selectCollectionsToAssign" | i18n }}</bit-label>
       <bit-multi-select
         class="tw-w-full"

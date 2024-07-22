@@ -123,6 +123,11 @@ export class AssignCollectionsComponent implements OnInit {
           setTimeout(() => {
             this.formGroup.patchValue({ selectedOrg: orgs[0].id });
             this.setFormValidators();
+
+            // Disable the org selector if there is only one organization
+            if (orgs.length === 1) {
+              this.formGroup.controls.selectedOrg.disable();
+            }
           });
         }
       }),
@@ -139,7 +144,7 @@ export class AssignCollectionsComponent implements OnInit {
   // Get the selected organization ID. If the user has not selected an organization from the form,
   // fallback to use the organization ID from the params.
   private get selectedOrgId(): OrganizationId {
-    return this.formGroup.value.selectedOrg || this.params.organizationId;
+    return this.formGroup.getRawValue().selectedOrg || this.params.organizationId;
   }
   private destroy$ = new Subject<void>();
 
