@@ -20,10 +20,10 @@
 <bit-table [dataSource]="dataSource" class="tw-mt-2">
   <ng-container header>
     <tr>
-      <th bitCell bitSortable="name" default>Members</th>
-      <th bitCell bitSortable="groupsCount">Groups</th>
-      <th bitCell bitSortable="collectionsCount">Collections</th>
-      <th bitCell bitSortable="itemsCount">Items</th>
+      <th bitCell bitSortable="name" default>{{ "members" | i18n }}</th>
+      <th bitCell bitSortable="groupsCount">{{ "groups" | i18n }}</th>
+      <th bitCell bitSortable="collectionsCount">{{ "collections" | i18n }}</th>
+      <th bitCell bitSortable="itemsCount">{{ "items" | i18n }}</th>
     </tr>
   </ng-container>
   <ng-template body let-rows$>
