@@ -13,6 +13,8 @@ import {
   TypographyModule,
 } from "@bitwarden/components";
 
+import { OrgIconDirective } from "../../components/org-icon.directive";
+
 @Component({
   selector: "app-item-details-v2",
   templateUrl: "item-details-v2.component.html",
@@ -24,6 +26,7 @@ import {
     SectionComponent,
     SectionHeaderComponent,
     TypographyModule,
+    OrgIconDirective,
   ],
 })
 export class ItemDetailsV2Component {

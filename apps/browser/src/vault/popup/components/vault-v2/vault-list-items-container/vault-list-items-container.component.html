@@ -27,9 +27,10 @@
         <app-vault-icon slot="start" [cipher]="cipher"></app-vault-icon>
         <span data-testid="item-name">{{ cipher.name }}</span>
         <i
-          class="bwi bwi-sm"
           *ngIf="cipher.organizationId"
-          [ngClass]="cipher.orgIcon"
+          appOrgIcon
+          [tierType]="cipher.organization.productTierType"
+          [size]="'small'"
           [appA11yTitle]="orgIconTooltip(cipher)"
         ></i>
         <span slot="secondary">{{ cipher.subTitle }}</span>
