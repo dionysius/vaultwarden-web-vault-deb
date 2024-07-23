@@ -52,6 +52,7 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
   manageBillingFromProviderPortal = ManageBilling;
   isProviderManaged = false;
   enableTimeThreshold: boolean;
+  preSelectedProductTier: ProductTierType = ProductTierType.Free;
 
   protected readonly teamsStarter = ProductTierType.TeamsStarter;
 
@@ -83,6 +84,13 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
       // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
       // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.changePlan();
+      const productTierTypeStr = this.route.snapshot.queryParamMap.get("productTierType");
+      if (productTierTypeStr != null) {
+        const productTier = Number(productTierTypeStr);
+        if (Object.values(ProductTierType).includes(productTier as ProductTierType)) {
+          this.preSelectedProductTier = productTier;
+        }
+      }
     }
 
     this.route.params

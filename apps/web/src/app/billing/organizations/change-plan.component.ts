@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 
+import { ProductTierType } from "@bitwarden/common/billing/enums";
 import { PlanResponse } from "@bitwarden/common/billing/models/response/plan.response";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 
@@ -10,6 +11,7 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 export class ChangePlanComponent {
   @Input() organizationId: string;
   @Input() currentPlan: PlanResponse;
+  @Input() preSelectedProductTier: ProductTierType;
   @Output() onChanged = new EventEmitter();
   @Output() onCanceled = new EventEmitter();
 

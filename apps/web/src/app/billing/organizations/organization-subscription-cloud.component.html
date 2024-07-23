@@ -122,6 +122,7 @@
         <app-change-plan
           [organizationId]="organizationId"
           [currentPlan]="sub.plan"
+          [preSelectedProductTier]="preSelectedProductTier"
           (onChanged)="closeChangePlan()"
           (onCanceled)="closeChangePlan()"
           *ngIf="showChangePlan"

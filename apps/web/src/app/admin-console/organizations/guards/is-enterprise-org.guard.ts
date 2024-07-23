@@ -56,7 +56,7 @@ export class IsEnterpriseOrgGuard implements CanActivate {
         });
         if (upgradeConfirmed) {
           await this.router.navigate(["organizations", org.id, "billing", "subscription"], {
-            queryParams: { upgrade: true },
+            queryParams: { upgrade: true, productTierType: ProductTierType.Enterprise },
           });
         }
       }
