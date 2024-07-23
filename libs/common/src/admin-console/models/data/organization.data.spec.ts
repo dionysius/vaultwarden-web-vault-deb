@@ -53,7 +53,6 @@ describe("ORGANIZATIONS state", () => {
         accessSecretsManager: false,
         limitCollectionCreationDeletion: false,
         allowAdminAccessToAllCollectionItems: false,
-        flexibleCollections: false,
         familySponsorshipLastSyncDate: new Date(),
       },
     };

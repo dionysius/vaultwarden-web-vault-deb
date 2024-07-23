@@ -34,7 +34,6 @@ export class OrganizationResponse extends BaseResponse {
   maxAutoscaleSmServiceAccounts?: number;
   limitCollectionCreationDeletion: boolean;
   allowAdminAccessToAllCollectionItems: boolean;
-  flexibleCollections: boolean;
 
   constructor(response: any) {
     super(response);
@@ -76,6 +75,5 @@ export class OrganizationResponse extends BaseResponse {
     this.allowAdminAccessToAllCollectionItems = this.getResponseProperty(
       "AllowAdminAccessToAllCollectionItems",
     );
-    this.flexibleCollections = this.getResponseProperty("FlexibleCollections");
   }
 }
