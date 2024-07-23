@@ -18,6 +18,8 @@ import { AttachmentView } from "@bitwarden/common/vault/models/view/attachment.v
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { AsyncActionsModule, IconButtonModule, ToastService } from "@bitwarden/components";
 
+import { PasswordRepromptService } from "../../services/password-reprompt.service";
+
 @Component({
   standalone: true,
   selector: "app-download-attachment",
@@ -31,8 +33,13 @@ export class DownloadAttachmentComponent {
   /** The cipher associated with the attachment */
   @Input({ required: true }) cipher: CipherView;
 
+  // When in view mode, we will want to check for the master password reprompt
+  @Input() checkPwReprompt?: boolean = false;
+
   /** The organization key if the cipher is associated with one */
   private orgKey: OrgKey | null = null;
+
+  private passwordReprompted = false;
 
   constructor(
     private i18nService: I18nService,
@@ -42,6 +49,7 @@ export class DownloadAttachmentComponent {
     private encryptService: EncryptService,
     private stateProvider: StateProvider,
     private cryptoService: CryptoService,
+    private passwordRepromptService: PasswordRepromptService,
   ) {
     this.stateProvider.activeUserId$
       .pipe(
@@ -57,6 +65,15 @@ export class DownloadAttachmentComponent {
 
   /** Download the attachment */
   download = async () => {
+    if (this.checkPwReprompt) {
+      this.passwordReprompted =
+        this.passwordReprompted ||
+        (await this.passwordRepromptService.passwordRepromptCheck(this.cipher));
+      if (!this.passwordReprompted) {
+        return;
+      }
+    }
+
     let url: string;
 
     try {

@@ -12,12 +12,12 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CipherType } from "@bitwarden/common/vault/enums";
 import { ButtonComponent } from "@bitwarden/components";
+import { CipherAttachmentsComponent } from "@bitwarden/vault";
 
 import { PopupFooterComponent } from "../../../../../platform/popup/layout/popup-footer.component";
 import { PopupHeaderComponent } from "../../../../../platform/popup/layout/popup-header.component";
 
 import { AttachmentsV2Component } from "./attachments-v2.component";
-import { CipherAttachmentsComponent } from "./cipher-attachments/cipher-attachments.component";
 
 @Component({
   standalone: true,

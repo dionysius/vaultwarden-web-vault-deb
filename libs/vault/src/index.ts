@@ -9,3 +9,5 @@ export {
   CollectionAssignmentParams,
   CollectionAssignmentResult,
 } from "./components/assign-collections.component";
+
+export { DownloadAttachmentComponent } from "./components/download-attachment/download-attachment.component";

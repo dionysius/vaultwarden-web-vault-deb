@@ -18,7 +18,7 @@ import { PopupHeaderComponent } from "../../../../apps/browser/src/platform/popu
 import { PopupPageComponent } from "../../../../apps/browser/src/platform/popup/layout/popup-page.component";
 
 import { AdditionalInformationComponent } from "./additional-information/additional-information.component";
-import { AttachmentsV2Component } from "./attachments/attachments-v2.component";
+import { AttachmentsV2ViewComponent } from "./attachments/attachments-v2-view.component";
 import { CustomFieldV2Component } from "./custom-fields/custom-fields-v2.component";
 import { ItemDetailsV2Component } from "./item-details/item-details-v2.component";
 import { ItemHistoryV2Component } from "./item-history/item-history-v2.component";
@@ -36,7 +36,7 @@ import { ItemHistoryV2Component } from "./item-history/item-history-v2.component
     PopupFooterComponent,
     ItemDetailsV2Component,
     AdditionalInformationComponent,
-    AttachmentsV2Component,
+    AttachmentsV2ViewComponent,
     ItemHistoryV2Component,
     CustomFieldV2Component,
   ],

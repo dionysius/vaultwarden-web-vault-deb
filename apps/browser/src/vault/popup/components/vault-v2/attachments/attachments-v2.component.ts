@@ -8,13 +8,12 @@ import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { CipherId } from "@bitwarden/common/types/guid";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { ButtonModule } from "@bitwarden/components";
+import { CipherAttachmentsComponent } from "@bitwarden/vault";
 
 import { PopOutComponent } from "../../../../../platform/popup/components/pop-out.component";
 import { PopupFooterComponent } from "../../../../../platform/popup/layout/popup-footer.component";
 import { PopupHeaderComponent } from "../../../../../platform/popup/layout/popup-header.component";
 import { PopupPageComponent } from "../../../../../platform/popup/layout/popup-page.component";
-
-import { CipherAttachmentsComponent } from "./cipher-attachments/cipher-attachments.component";
 
 @Component({
   standalone: true,

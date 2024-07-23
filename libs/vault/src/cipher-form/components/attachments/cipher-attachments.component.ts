@@ -39,8 +39,9 @@ import {
   TypographyModule,
 } from "@bitwarden/components";
 
+import { DownloadAttachmentComponent } from "../../../components/download-attachment/download-attachment.component";
+
 import { DeleteAttachmentComponent } from "./delete-attachment/delete-attachment.component";
-import { DownloadAttachmentComponent } from "./download-attachment/download-attachment.component";
 
 type CipherAttachmentForm = FormGroup<{
   file: FormControl<File | null>;
