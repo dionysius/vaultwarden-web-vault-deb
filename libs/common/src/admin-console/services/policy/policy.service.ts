@@ -235,6 +235,9 @@ export class PolicyService implements InternalPolicyServiceAbstraction {
       case PolicyType.PasswordGenerator:
         // password generation policy applies to everyone
         return false;
+      case PolicyType.PersonalOwnership:
+        // individual vault policy applies to everyone except admins and owners
+        return organization.isAdmin;
       default:
         return organization.canManagePolicies;
     }
