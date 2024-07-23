@@ -10,9 +10,9 @@ import { ItemView } from "./item.view";
 import { LoginUriView } from "./login-uri.view";
 
 export class LoginView extends ItemView {
-  @linkedFieldOption(LinkedId.Username)
+  @linkedFieldOption(LinkedId.Username, { sortPosition: 0 })
   username: string = null;
-  @linkedFieldOption(LinkedId.Password)
+  @linkedFieldOption(LinkedId.Password, { sortPosition: 1 })
   password: string = null;
 
   passwordRevisionDate?: Date = null;

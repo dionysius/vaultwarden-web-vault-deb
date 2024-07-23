@@ -20,7 +20,6 @@ import { Subject, zip } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
-import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { CipherType, FieldType, LinkedIdType } from "@bitwarden/common/vault/enums";
 import { CardView } from "@bitwarden/common/vault/models/view/card.view";
 import { FieldView } from "@bitwarden/common/vault/models/view/field.view";
@@ -135,13 +134,14 @@ export class CustomFieldsComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     const linkedFieldsOptionsForCipher = this.getLinkedFieldsOptionsForCipher();
+    const optionsArray = Array.from(linkedFieldsOptionsForCipher?.entries() ?? []);
+    optionsArray.sort((a, b) => a[1].sortPosition - b[1].sortPosition);
+
     // Populate options for linked custom fields
-    this.linkedFieldOptions = Array.from(linkedFieldsOptionsForCipher?.entries() ?? [])
-      .map(([id, linkedFieldOption]) => ({
-        name: this.i18nService.t(linkedFieldOption.i18nKey),
-        value: id,
-      }))
-      .sort(Utils.getSortFunction(this.i18nService, "name"));
+    this.linkedFieldOptions = optionsArray.map(([id, linkedFieldOption]) => ({
+      name: this.i18nService.t(linkedFieldOption.i18nKey),
+      value: id,
+    }));
 
     // Populate the form with the existing fields
     this.cipherFormContainer.originalCipherView?.fields?.forEach((field) => {

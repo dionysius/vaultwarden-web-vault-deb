@@ -7,37 +7,37 @@ import { linkedFieldOption } from "../../linked-field-option.decorator";
 import { ItemView } from "./item.view";
 
 export class IdentityView extends ItemView {
-  @linkedFieldOption(LinkedId.Title)
+  @linkedFieldOption(LinkedId.Title, { sortPosition: 0 })
   title: string = null;
-  @linkedFieldOption(LinkedId.MiddleName)
+  @linkedFieldOption(LinkedId.MiddleName, { sortPosition: 2 })
   middleName: string = null;
-  @linkedFieldOption(LinkedId.Address1)
+  @linkedFieldOption(LinkedId.Address1, { sortPosition: 12 })
   address1: string = null;
-  @linkedFieldOption(LinkedId.Address2)
+  @linkedFieldOption(LinkedId.Address2, { sortPosition: 13 })
   address2: string = null;
-  @linkedFieldOption(LinkedId.Address3)
+  @linkedFieldOption(LinkedId.Address3, { sortPosition: 14 })
   address3: string = null;
-  @linkedFieldOption(LinkedId.City, "cityTown")
+  @linkedFieldOption(LinkedId.City, { sortPosition: 15, i18nKey: "cityTown" })
   city: string = null;
-  @linkedFieldOption(LinkedId.State, "stateProvince")
+  @linkedFieldOption(LinkedId.State, { sortPosition: 16, i18nKey: "stateProvince" })
   state: string = null;
-  @linkedFieldOption(LinkedId.PostalCode, "zipPostalCode")
+  @linkedFieldOption(LinkedId.PostalCode, { sortPosition: 17, i18nKey: "zipPostalCode" })
   postalCode: string = null;
-  @linkedFieldOption(LinkedId.Country)
+  @linkedFieldOption(LinkedId.Country, { sortPosition: 18 })
   country: string = null;
-  @linkedFieldOption(LinkedId.Company)
+  @linkedFieldOption(LinkedId.Company, { sortPosition: 6 })
   company: string = null;
-  @linkedFieldOption(LinkedId.Email)
+  @linkedFieldOption(LinkedId.Email, { sortPosition: 10 })
   email: string = null;
-  @linkedFieldOption(LinkedId.Phone)
+  @linkedFieldOption(LinkedId.Phone, { sortPosition: 11 })
   phone: string = null;
-  @linkedFieldOption(LinkedId.Ssn)
+  @linkedFieldOption(LinkedId.Ssn, { sortPosition: 7 })
   ssn: string = null;
-  @linkedFieldOption(LinkedId.Username)
+  @linkedFieldOption(LinkedId.Username, { sortPosition: 5 })
   username: string = null;
-  @linkedFieldOption(LinkedId.PassportNumber)
+  @linkedFieldOption(LinkedId.PassportNumber, { sortPosition: 8 })
   passportNumber: string = null;
-  @linkedFieldOption(LinkedId.LicenseNumber)
+  @linkedFieldOption(LinkedId.LicenseNumber, { sortPosition: 9 })
   licenseNumber: string = null;
 
   private _firstName: string = null;
@@ -48,7 +48,7 @@ export class IdentityView extends ItemView {
     super();
   }
 
-  @linkedFieldOption(LinkedId.FirstName)
+  @linkedFieldOption(LinkedId.FirstName, { sortPosition: 1 })
   get firstName(): string {
     return this._firstName;
   }
@@ -57,7 +57,7 @@ export class IdentityView extends ItemView {
     this._subTitle = null;
   }
 
-  @linkedFieldOption(LinkedId.LastName)
+  @linkedFieldOption(LinkedId.LastName, { sortPosition: 4 })
   get lastName(): string {
     return this._lastName;
   }
@@ -83,7 +83,7 @@ export class IdentityView extends ItemView {
     return this._subTitle;
   }
 
-  @linkedFieldOption(LinkedId.FullName)
+  @linkedFieldOption(LinkedId.FullName, { sortPosition: 3 })
   get fullName(): string {
     if (
       this.title != null ||
