@@ -1,0 +1,11 @@
+<div role="toolbar" [ariaLabel]="'filters' | i18n">
+  <form [formGroup]="filterForm" class="tw-flex tw-flex-wrap tw-gap-2 tw-mb-6 tw-mt-2">
+    <bit-chip-select
+      formControlName="sendTypes"
+      placeholderIcon="bwi-list"
+      [placeholderText]="'type' | i18n"
+      [options]="sendTypes"
+    >
+    </bit-chip-select>
+  </form>
+</div>

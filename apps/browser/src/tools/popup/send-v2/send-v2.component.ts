@@ -5,7 +5,11 @@ import { RouterLink } from "@angular/router";
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { SendType } from "@bitwarden/common/tools/send/enums/send-type";
 import { ButtonModule, NoItemsModule } from "@bitwarden/components";
-import { NoSendsIcon, NewSendDropdownComponent } from "@bitwarden/send-ui";
+import {
+  NoSendsIcon,
+  NewSendDropdownComponent,
+  SendListFiltersComponent,
+} from "@bitwarden/send-ui";
 
 import { CurrentAccountComponent } from "../../../auth/popup/account-switching/current-account.component";
 import { PopOutComponent } from "../../../platform/popup/components/pop-out.component";
@@ -30,6 +34,7 @@ enum SendsListState {
     ButtonModule,
     RouterLink,
     NewSendDropdownComponent,
+    SendListFiltersComponent,
   ],
 })
 export class SendV2Component implements OnInit, OnDestroy {
