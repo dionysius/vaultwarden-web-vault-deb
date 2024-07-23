@@ -38,12 +38,12 @@ describe("KeyDefinition", () => {
       expect(keyDefinition.cleanupDelayMs).toBe(500);
     });
 
-    it.each([0, -1])("throws on 0 or negative (%s)", (testValue: number) => {
+    it("throws on negative", () => {
       expect(
         () =>
           new KeyDefinition<boolean>(fakeStateDefinition, "fake", {
             deserializer: (value) => value,
-            cleanupDelayMs: testValue,
+            cleanupDelayMs: -1,
           }),
       ).toThrow();
     });

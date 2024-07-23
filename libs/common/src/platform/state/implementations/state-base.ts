@@ -48,15 +48,22 @@ export abstract class StateBase<T, KeyDef extends KeyDefinitionRequirements<T>> 
       }),
     );
 
-    this.state$ = merge(
+    let state$ = merge(
       defer(() => getStoredValue(key, storageService, keyDefinition.deserializer)),
       storageUpdate$,
-    ).pipe(
-      share({
-        connector: () => new ReplaySubject(1),
-        resetOnRefCountZero: () => timer(keyDefinition.cleanupDelayMs),
-      }),
     );
+
+    // If 0 cleanup is chosen, treat this as absolutely no cache
+    if (keyDefinition.cleanupDelayMs !== 0) {
+      state$ = state$.pipe(
+        share({
+          connector: () => new ReplaySubject(1),
+          resetOnRefCountZero: () => timer(keyDefinition.cleanupDelayMs),
+        }),
+      );
+    }
+
+    this.state$ = state$;
   }
 
   async update<TCombine>(

@@ -100,6 +100,24 @@ describe("DefaultSingleUserState", () => {
       );
       expect(state).toBeTruthy();
     });
+
+    it("should go to disk each subscription if a cleanupDelayMs of 0 is given", async () => {
+      const state = new DefaultSingleUserState(
+        userId,
+        new UserKeyDefinition(testStateDefinition, "test", {
+          cleanupDelayMs: 0,
+          deserializer: TestState.fromJSON,
+          clearOn: [],
+        }),
+        diskStorageService,
+        stateEventRegistrarService,
+      );
+
+      await firstValueFrom(state.state$);
+      await firstValueFrom(state.state$);
+
+      expect(diskStorageService.mock.get).toHaveBeenCalledTimes(2);
+    });
   });
 
   describe("combinedState$", () => {

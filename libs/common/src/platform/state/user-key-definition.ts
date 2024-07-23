@@ -30,9 +30,9 @@ export class UserKeyDefinition<T> {
       throw new Error(`'deserializer' is a required property on key ${this.errorKeyName}`);
     }
 
-    if (options.cleanupDelayMs <= 0) {
+    if (options.cleanupDelayMs < 0) {
       throw new Error(
-        `'cleanupDelayMs' must be greater than 0. Value of ${options.cleanupDelayMs} passed to key ${this.errorKeyName} `,
+        `'cleanupDelayMs' must be greater than or equal to 0. Value of ${options.cleanupDelayMs} passed to key ${this.errorKeyName} `,
       );
     }
 
