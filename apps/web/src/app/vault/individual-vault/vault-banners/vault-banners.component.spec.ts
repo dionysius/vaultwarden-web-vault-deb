@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { By } from "@angular/platform-browser";
+import { RouterTestingModule } from "@angular/router/testing";
 import { mock } from "jest-mock-extended";
 import { BehaviorSubject } from "rxjs";
 
@@ -11,7 +12,7 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
 import { BannerComponent, BannerModule } from "@bitwarden/components";
 
 import { VerifyEmailComponent } from "../../../auth/settings/verify-email.component";
-import { LooseComponentsModule } from "../../../shared";
+import { SharedModule } from "../../../shared";
 
 import { VaultBannersService, VisibleVaultBanner } from "./services/vault-banners.service";
 import { VaultBannersComponent } from "./vault-banners.component";
@@ -36,13 +37,15 @@ describe("VaultBannersComponent", () => {
     bannerService.shouldShowLowKDFBanner.mockResolvedValue(false);
 
     await TestBed.configureTestingModule({
-      imports: [BannerModule, LooseComponentsModule, VerifyEmailComponent],
-      declarations: [VaultBannersComponent, I18nPipe],
+      imports: [
+        BannerModule,
+        SharedModule,
+        VerifyEmailComponent,
+        VaultBannersComponent,
+        RouterTestingModule,
+      ],
+      declarations: [I18nPipe],
       providers: [
-        {
-          provide: VaultBannersService,
-          useValue: bannerService,
-        },
         {
           provide: I18nService,
           useValue: mock<I18nService>({ t: (key) => key }),
@@ -60,7 +63,9 @@ describe("VaultBannersComponent", () => {
           useValue: mock<TokenService>(),
         },
       ],
-    }).compileComponents();
+    })
+      .overrideProvider(VaultBannersService, { useValue: bannerService })
+      .compileComponents();
   });
 
   beforeEach(() => {

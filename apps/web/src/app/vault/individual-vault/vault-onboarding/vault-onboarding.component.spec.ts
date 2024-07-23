@@ -158,10 +158,9 @@ describe("VaultOnboardingComponent", () => {
     });
 
     it("should set installExtension to true when hasBWInstalled command is passed", async () => {
-      const saveCompletedTasksSpy = jest.spyOn(
-        (component as any).vaultOnboardingService,
-        "setVaultOnboardingTasks",
-      );
+      const saveCompletedTasksSpy = jest
+        .spyOn((component as any).vaultOnboardingService, "setVaultOnboardingTasks")
+        .mockReturnValue(Promise.resolve());
 
       (component as any).vaultOnboardingService.vaultOnboardingState$ = of({
         createAccount: true,

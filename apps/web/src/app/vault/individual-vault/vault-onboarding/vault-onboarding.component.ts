@@ -24,11 +24,17 @@ import { LinkModule } from "@bitwarden/components";
 import { OnboardingModule } from "../../../shared/components/onboarding/onboarding.module";
 
 import { VaultOnboardingService as VaultOnboardingServiceAbstraction } from "./services/abstraction/vault-onboarding.service";
-import { VaultOnboardingTasks } from "./services/vault-onboarding.service";
+import { VaultOnboardingService, VaultOnboardingTasks } from "./services/vault-onboarding.service";
 
 @Component({
   standalone: true,
   imports: [OnboardingModule, CommonModule, JslibModule, LinkModule],
+  providers: [
+    {
+      provide: VaultOnboardingServiceAbstraction,
+      useClass: VaultOnboardingService,
+    },
+  ],
   selector: "app-vault-onboarding",
   templateUrl: "vault-onboarding.component.html",
 })

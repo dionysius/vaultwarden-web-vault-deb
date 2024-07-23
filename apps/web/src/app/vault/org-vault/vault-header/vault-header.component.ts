@@ -1,7 +1,9 @@
+import { CommonModule } from "@angular/common";
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { Router } from "@angular/router";
 import { firstValueFrom } from "rxjs";
 
+import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { ProductTierType } from "@bitwarden/common/billing/enums";
@@ -9,8 +11,16 @@ import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { TreeNode } from "@bitwarden/common/vault/models/domain/tree-node";
-import { DialogService, SimpleDialogOptions } from "@bitwarden/components";
+import {
+  DialogService,
+  SimpleDialogOptions,
+  BreadcrumbsModule,
+  MenuModule,
+  SearchModule,
+} from "@bitwarden/components";
 
+import { HeaderModule } from "../../../layouts/header/header.module";
+import { SharedModule } from "../../../shared";
 import { CollectionAdminView } from "../../../vault/core/views/collection-admin.view";
 import { CollectionDialogTabType } from "../../components/collection-dialog";
 import { CollectionAdminService } from "../../core/collection-admin.service";
@@ -21,8 +31,18 @@ import {
 } from "../../individual-vault/vault-filter/shared/models/routed-vault-filter.model";
 
 @Component({
+  standalone: true,
   selector: "app-org-vault-header",
   templateUrl: "./vault-header.component.html",
+  imports: [
+    CommonModule,
+    MenuModule,
+    SharedModule,
+    BreadcrumbsModule,
+    HeaderModule,
+    SearchModule,
+    JslibModule,
+  ],
 })
 export class VaultHeaderComponent implements OnInit {
   protected All = All;

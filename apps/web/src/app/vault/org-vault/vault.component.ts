@@ -58,11 +58,12 @@ import { TreeNode } from "@bitwarden/common/vault/models/domain/tree-node";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { CollectionView } from "@bitwarden/common/vault/models/view/collection.view";
 import { ServiceUtils } from "@bitwarden/common/vault/service-utils";
-import { DialogService, Icons, ToastService } from "@bitwarden/components";
+import { DialogService, Icons, NoItemsModule, ToastService } from "@bitwarden/components";
 import { CollectionAssignmentResult, PasswordRepromptService } from "@bitwarden/vault";
 
 import { GroupService, GroupView } from "../../admin-console/organizations/core";
 import { openEntityEventsDialog } from "../../admin-console/organizations/manage/entity-events.component";
+import { SharedModule } from "../../shared";
 import { VaultFilterService } from "../../vault/individual-vault/vault-filter/services/abstractions/vault-filter.service";
 import { VaultFilter } from "../../vault/individual-vault/vault-filter/shared/models/vault-filter.model";
 import { AssignCollectionsWebComponent } from "../components/assign-collections";
@@ -72,6 +73,7 @@ import {
   openCollectionDialog,
 } from "../components/collection-dialog";
 import { VaultItemEvent } from "../components/vault-items/vault-item-event";
+import { VaultItemsModule } from "../components/vault-items/vault-items.module";
 import { CollectionAdminService } from "../core/collection-admin.service";
 import { CollectionAdminView } from "../core/views/collection-admin.view";
 import {
@@ -87,6 +89,7 @@ import {
   RoutedVaultFilterModel,
   Unassigned,
 } from "../individual-vault/vault-filter/shared/models/routed-vault-filter.model";
+import { VaultHeaderComponent } from "../org-vault/vault-header/vault-header.component";
 import { getNestedCollectionTree } from "../utils/collection-utils";
 
 import { AddEditComponent } from "./add-edit.component";
@@ -95,7 +98,9 @@ import {
   BulkCollectionsDialogComponent,
   BulkCollectionsDialogResult,
 } from "./bulk-collections-dialog";
+import { CollectionAccessRestrictedComponent } from "./collection-access-restricted.component";
 import { openOrgVaultCollectionsDialog } from "./collections.component";
+import { VaultFilterModule } from "./vault-filter/vault-filter.module";
 
 const BroadcasterSubscriptionId = "OrgVaultComponent";
 const SearchTextDebounceInterval = 200;
@@ -106,8 +111,17 @@ enum AddAccessStatusType {
 }
 
 @Component({
+  standalone: true,
   selector: "app-org-vault",
   templateUrl: "vault.component.html",
+  imports: [
+    VaultHeaderComponent,
+    CollectionAccessRestrictedComponent,
+    VaultFilterModule,
+    VaultItemsModule,
+    SharedModule,
+    NoItemsModule,
+  ],
   providers: [RoutedVaultFilterService, RoutedVaultFilterBridgeService],
 })
 export class VaultComponent implements OnInit, OnDestroy {
@@ -577,7 +591,11 @@ export class VaultComponent implements OnInit, OnDestroy {
           if (canEditCipher) {
             await this.editCipherId(cipherId);
           } else {
-            this.platformUtilsService.showToast("error", null, this.i18nService.t("unknownCipher"));
+            this.toastService.showToast({
+              variant: "error",
+              title: null,
+              message: this.i18nService.t("unknownCipher"),
+            });
             await this.router.navigate([], {
               queryParams: { cipherId: null, itemId: null },
               queryParamsHandling: "merge",
@@ -598,14 +616,14 @@ export class VaultComponent implements OnInit, OnDestroy {
           }
           const cipher = allCiphers$.find((c) => c.id === cipherId);
           if (organization.useEvents && cipher != undefined) {
-            // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-            // eslint-disable-next-line @typescript-eslint/no-floating-promises
-            this.viewEvents(cipher);
+            await this.viewEvents(cipher);
           } else {
-            this.platformUtilsService.showToast("error", null, this.i18nService.t("unknownCipher"));
-            // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-            // eslint-disable-next-line @typescript-eslint/no-floating-promises
-            this.router.navigate([], {
+            this.toastService.showToast({
+              variant: "error",
+              title: null,
+              message: this.i18nService.t("unknownCipher"),
+            });
+            await this.router.navigate([], {
               queryParams: { viewEvents: null },
               queryParamsHandling: "merge",
             });
@@ -686,50 +704,65 @@ export class VaultComponent implements OnInit, OnDestroy {
     this.processingEvent = true;
 
     try {
-      if (event.type === "viewAttachments") {
-        await this.editCipherAttachments(event.item);
-      } else if (event.type === "viewCipherCollections") {
-        await this.editCipherCollections(event.item);
-      } else if (event.type === "clone") {
-        await this.cloneCipher(event.item);
-      } else if (event.type === "restore") {
-        if (event.items.length === 1) {
-          await this.restore(event.items[0]);
-        } else {
-          await this.bulkRestore(event.items);
+      switch (event.type) {
+        case "viewAttachments":
+          await this.editCipherAttachments(event.item);
+          break;
+        case "viewCipherCollections":
+          await this.editCipherCollections(event.item);
+          break;
+        case "clone":
+          await this.cloneCipher(event.item);
+          break;
+        case "restore":
+          if (event.items.length === 1) {
+            await this.restore(event.items[0]);
+          } else {
+            await this.bulkRestore(event.items);
+          }
+          break;
+        case "delete": {
+          const ciphers = event.items
+            .filter((i) => i.collection === undefined)
+            .map((i) => i.cipher);
+          const collections = event.items
+            .filter((i) => i.cipher === undefined)
+            .map((i) => i.collection);
+          if (ciphers.length === 1 && collections.length === 0) {
+            await this.deleteCipher(ciphers[0]);
+          } else if (ciphers.length === 0 && collections.length === 1) {
+            await this.deleteCollection(collections[0] as CollectionAdminView);
+          } else {
+            await this.bulkDelete(ciphers, collections, this.organization);
+          }
+          break;
         }
-      } else if (event.type === "delete") {
-        const ciphers = event.items.filter((i) => i.collection === undefined).map((i) => i.cipher);
-        const collections = event.items
-          .filter((i) => i.cipher === undefined)
-          .map((i) => i.collection);
-        if (ciphers.length === 1 && collections.length === 0) {
-          await this.deleteCipher(ciphers[0]);
-        } else if (ciphers.length === 0 && collections.length === 1) {
-          await this.deleteCollection(collections[0] as CollectionAdminView);
-        } else {
-          await this.bulkDelete(ciphers, collections, this.organization);
-        }
-      } else if (event.type === "copyField") {
-        await this.copy(event.item, event.field);
-      } else if (event.type === "editCollection") {
-        await this.editCollection(
-          event.item as CollectionAdminView,
-          CollectionDialogTabType.Info,
-          event.readonly,
-        );
-      } else if (event.type === "viewCollectionAccess") {
-        await this.editCollection(
-          event.item as CollectionAdminView,
-          CollectionDialogTabType.Access,
-          event.readonly,
-        );
-      } else if (event.type === "bulkEditCollectionAccess") {
-        await this.bulkEditCollectionAccess(event.items, this.organization);
-      } else if (event.type === "assignToCollections") {
-        await this.bulkAssignToCollections(event.items);
-      } else if (event.type === "viewEvents") {
-        await this.viewEvents(event.item);
+        case "copyField":
+          await this.copy(event.item, event.field);
+          break;
+        case "editCollection":
+          await this.editCollection(
+            event.item as CollectionAdminView,
+            CollectionDialogTabType.Info,
+            event.readonly,
+          );
+          break;
+        case "viewCollectionAccess":
+          await this.editCollection(
+            event.item as CollectionAdminView,
+            CollectionDialogTabType.Access,
+            event.readonly,
+          );
+          break;
+        case "bulkEditCollectionAccess":
+          await this.bulkEditCollectionAccess(event.items, this.organization);
+          break;
+        case "assignToCollections":
+          await this.bulkAssignToCollections(event.items);
+          break;
+        case "viewEvents":
+          await this.viewEvents(event.item);
+          break;
       }
     } finally {
       this.processingEvent = false;
@@ -962,7 +995,11 @@ export class VaultComponent implements OnInit, OnDestroy {
         this.organization?.canEditAnyCollection(this.flexibleCollectionsV1Enabled) ||
         c.isUnassigned;
       await this.cipherService.restoreWithServer(c.id, asAdmin);
-      this.platformUtilsService.showToast("success", null, this.i18nService.t("restoredItem"));
+      this.toastService.showToast({
+        variant: "success",
+        title: null,
+        message: this.i18nService.t("restoredItem"),
+      });
       this.refresh();
     } catch (e) {
       this.logService.error(e);
@@ -1008,11 +1045,11 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     if (unassignedCiphers.length === 0 && editAccessCiphers.length === 0) {
-      this.platformUtilsService.showToast(
-        "error",
-        this.i18nService.t("errorOccurred"),
-        this.i18nService.t("nothingSelected"),
-      );
+      this.toastService.showToast({
+        variant: "error",
+        title: this.i18nService.t("errorOccurred"),
+        message: this.i18nService.t("nothingSelected"),
+      });
       return;
     }
 
@@ -1023,7 +1060,11 @@ export class VaultComponent implements OnInit, OnDestroy {
       );
     }
 
-    this.platformUtilsService.showToast("success", null, this.i18nService.t("restoredItems"));
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("restoredItems"),
+    });
     this.refresh();
   }
 
@@ -1058,11 +1099,11 @@ export class VaultComponent implements OnInit, OnDestroy {
 
     try {
       await this.deleteCipherWithServer(c.id, permanent, c.isUnassigned);
-      this.platformUtilsService.showToast(
-        "success",
-        null,
-        this.i18nService.t(permanent ? "permanentlyDeletedItem" : "deletedItem"),
-      );
+      this.toastService.showToast({
+        variant: "success",
+        title: null,
+        message: this.i18nService.t(permanent ? "permanentlyDeletedItem" : "deletedItem"),
+      });
       this.refresh();
     } catch (e) {
       this.logService.error(e);
@@ -1085,11 +1126,11 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
     try {
       await this.apiService.deleteCollection(this.organization?.id, collection.id);
-      this.platformUtilsService.showToast(
-        "success",
-        null,
-        this.i18nService.t("deletedCollectionId", collection.name),
-      );
+      this.toastService.showToast({
+        variant: "success",
+        title: null,
+        message: this.i18nService.t("deletedCollectionId", collection.name),
+      });
 
       // Navigate away if we deleted the collection we were viewing
       if (this.selectedCollection?.node.id === collection.id) {
@@ -1128,7 +1169,11 @@ export class VaultComponent implements OnInit, OnDestroy {
     });
 
     if (ciphers.length === 0 && collections.length === 0) {
-      this.platformUtilsService.showToast("error", null, this.i18nService.t("nothingSelected"));
+      this.toastService.showToast({
+        variant: "error",
+        title: null,
+        message: this.i18nService.t("nothingSelected"),
+      });
       return;
     }
 
@@ -1182,7 +1227,11 @@ export class VaultComponent implements OnInit, OnDestroy {
       value = await this.totpService.getCode(cipher.login.totp);
       typeI18nKey = "verificationCodeTotp";
     } else {
-      this.platformUtilsService.showToast("info", null, this.i18nService.t("unexpectedError"));
+      this.toastService.showToast({
+        variant: "error",
+        title: null,
+        message: this.i18nService.t("unexpectedError"),
+      });
       return;
     }
 
@@ -1198,20 +1247,19 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
 
     this.platformUtilsService.copyToClipboard(value, { window: window });
-    this.platformUtilsService.showToast(
-      "info",
-      null,
-      this.i18nService.t("valueCopied", this.i18nService.t(typeI18nKey)),
-    );
+    this.toastService.showToast({
+      variant: "info",
+      title: null,
+      message: this.i18nService.t("valueCopied", this.i18nService.t(typeI18nKey)),
+    });
 
     if (field === "password") {
-      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-      // eslint-disable-next-line @typescript-eslint/no-floating-promises
-      this.eventCollectionService.collect(EventType.Cipher_ClientCopiedPassword, cipher.id);
+      await this.eventCollectionService.collect(EventType.Cipher_ClientCopiedPassword, cipher.id);
     } else if (field === "totp") {
-      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-      // eslint-disable-next-line @typescript-eslint/no-floating-promises
-      this.eventCollectionService.collect(EventType.Cipher_ClientCopiedHiddenField, cipher.id);
+      await this.eventCollectionService.collect(
+        EventType.Cipher_ClientCopiedHiddenField,
+        cipher.id,
+      );
     }
   }
 
@@ -1310,7 +1358,11 @@ export class VaultComponent implements OnInit, OnDestroy {
 
   async bulkAssignToCollections(items: CipherView[]) {
     if (items.length === 0) {
-      this.platformUtilsService.showToast("error", null, this.i18nService.t("nothingSelected"));
+      this.toastService.showToast({
+        variant: "error",
+        title: null,
+        message: this.i18nService.t("nothingSelected"),
+      });
       return;
     }
 
@@ -1381,9 +1433,7 @@ export class VaultComponent implements OnInit, OnDestroy {
       };
     }
 
-    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    this.router.navigate([], {
+    void this.router.navigate([], {
       relativeTo: this.route,
       queryParams: queryParams,
       queryParamsHandling: "merge",

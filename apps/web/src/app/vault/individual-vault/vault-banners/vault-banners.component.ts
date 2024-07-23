@@ -1,11 +1,19 @@
 import { Component, OnInit } from "@angular/core";
 import { Observable } from "rxjs";
 
+import { BannerModule } from "@bitwarden/components";
+
+import { VerifyEmailComponent } from "../../../auth/settings/verify-email.component";
+import { SharedModule } from "../../../shared";
+
 import { VaultBannersService, VisibleVaultBanner } from "./services/vault-banners.service";
 
 @Component({
+  standalone: true,
   selector: "app-vault-banners",
   templateUrl: "./vault-banners.component.html",
+  imports: [VerifyEmailComponent, SharedModule, BannerModule],
+  providers: [VaultBannersService],
 })
 export class VaultBannersComponent implements OnInit {
   visibleBanners: VisibleVaultBanner[] = [];
