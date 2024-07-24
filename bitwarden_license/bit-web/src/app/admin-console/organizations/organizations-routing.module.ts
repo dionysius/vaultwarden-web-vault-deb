@@ -3,7 +3,7 @@ import { RouterModule, Routes } from "@angular/router";
 
 import { AuthGuard } from "@bitwarden/angular/auth/guards";
 import { canAccessSettingsTab } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
-import { IsEnterpriseOrgGuard } from "@bitwarden/web-vault/app/admin-console/organizations/guards/is-enterprise-org.guard";
+import { isEnterpriseOrgGuard } from "@bitwarden/web-vault/app/admin-console/organizations/guards/is-enterprise-org.guard";
 import { organizationPermissionsGuard } from "@bitwarden/web-vault/app/admin-console/organizations/guards/org-permissions.guard";
 import { OrganizationLayoutComponent } from "@bitwarden/web-vault/app/admin-console/organizations/layouts/organization-layout.component";
 
@@ -72,7 +72,7 @@ const routes: Routes = [
             data: {
               titleId: "memberAccessReport",
             },
-            canActivate: [IsEnterpriseOrgGuard],
+            canActivate: [isEnterpriseOrgGuard()],
           },
         ],
       },

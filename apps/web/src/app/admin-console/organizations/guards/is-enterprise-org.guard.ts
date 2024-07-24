@@ -1,44 +1,45 @@
-import { Injectable } from "@angular/core";
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from "@angular/router";
-import { firstValueFrom } from "rxjs";
+import { inject } from "@angular/core";
+import {
+  ActivatedRouteSnapshot,
+  CanActivateFn,
+  Router,
+  RouterStateSnapshot,
+} from "@angular/router";
 
+import { canAccessFeature } from "@bitwarden/angular/platform/guard/feature-flag.guard";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { ProductTierType } from "@bitwarden/common/billing/enums";
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
-import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { DialogService } from "@bitwarden/components";
 
-@Injectable({
-  providedIn: "root",
-})
-export class IsEnterpriseOrgGuard implements CanActivate {
-  constructor(
-    private router: Router,
-    private organizationService: OrganizationService,
-    private dialogService: DialogService,
-    private configService: ConfigService,
-  ) {}
+/**
+ * `CanActivateFn` that checks if the organization matching the id in the URL
+ * parameters is of enterprise type. If the organization is not enterprise instructions are
+ * provided on how to upgrade into an enterprise organization, and the user is redirected
+ * if they have access to upgrade the organization. If the organization is
+ * enterprise routing proceeds."
+ */
+export function isEnterpriseOrgGuard(): CanActivateFn {
+  return async (route: ActivatedRouteSnapshot, _state: RouterStateSnapshot) => {
+    const router = inject(Router);
+    const organizationService = inject(OrganizationService);
+    const dialogService = inject(DialogService);
 
-  async canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    const isMemberAccessReportEnabled = await firstValueFrom(
-      this.configService.getFeatureFlag$(FeatureFlag.MemberAccessReport),
-    );
-
-    // TODO: Remove on "MemberAccessReport" feature flag cleanup
-    if (!isMemberAccessReportEnabled) {
-      return this.router.createUrlTree(["/"]);
-    }
-
-    const org = await this.organizationService.get(route.params.organizationId);
+    const org = await organizationService.get(route.params.organizationId);
 
     if (org == null) {
-      return this.router.createUrlTree(["/"]);
+      return router.createUrlTree(["/"]);
+    }
+
+    // TODO: Remove on "MemberAccessReport" feature flag cleanup
+    if (!canAccessFeature(FeatureFlag.MemberAccessReport)) {
+      return router.createUrlTree(["/"]);
     }
 
     if (org.productTierType != ProductTierType.Enterprise) {
       // Users without billing permission can't access billing
       if (!org.canEditSubscription) {
-        await this.dialogService.openSimpleDialog({
+        await dialogService.openSimpleDialog({
           title: { key: "upgradeOrganizationEnterprise" },
           content: { key: "onlyAvailableForEnterpriseOrganization" },
           acceptButtonText: { key: "ok" },
@@ -47,7 +48,7 @@ export class IsEnterpriseOrgGuard implements CanActivate {
         });
         return false;
       } else {
-        const upgradeConfirmed = await this.dialogService.openSimpleDialog({
+        const upgradeConfirmed = await dialogService.openSimpleDialog({
           title: { key: "upgradeOrganizationEnterprise" },
           content: { key: "onlyAvailableForEnterpriseOrganization" },
           acceptButtonText: { key: "upgradeOrganization" },
@@ -55,7 +56,7 @@ export class IsEnterpriseOrgGuard implements CanActivate {
           icon: "bwi-arrow-circle-up",
         });
         if (upgradeConfirmed) {
-          await this.router.navigate(["organizations", org.id, "billing", "subscription"], {
+          await router.navigate(["organizations", org.id, "billing", "subscription"], {
             queryParams: { upgrade: true, productTierType: ProductTierType.Enterprise },
           });
         }
@@ -63,5 +64,5 @@ export class IsEnterpriseOrgGuard implements CanActivate {
     }
 
     return org.productTierType == ProductTierType.Enterprise;
-  }
+  };
 }
