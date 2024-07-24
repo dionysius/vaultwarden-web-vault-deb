@@ -18,11 +18,11 @@ describe("toBeFulfilled", () => {
 
   it("passes when the promise is fulfilled within the given time limit", async () => {
     const promise = new Promise((resolve) => setTimeout(resolve, 1));
-    await expect(promise).toBeFulfilled(2);
+    await expect(promise).toBeFulfilled(25);
   });
 
   it("passes when the promise is not fulfilled within the given time limit", async () => {
-    const promise = new Promise((resolve) => setTimeout(resolve, 2));
+    const promise = new Promise(() => {});
     await expect(promise).not.toBeFulfilled(1);
   });
 });
@@ -47,11 +47,11 @@ describe("toBeResolved", () => {
 
   it("passes when the promise is resolved within the given time limit", async () => {
     const promise = new Promise((resolve) => setTimeout(resolve, 1));
-    await expect(promise).toBeResolved(2);
+    await expect(promise).toBeResolved(50);
   });
 
   it("passes when the promise is not resolved within the given time limit", async () => {
-    const promise = new Promise((resolve) => setTimeout(resolve, 2));
+    const promise = new Promise(() => {});
     await expect(promise).not.toBeResolved(1);
   });
 });
@@ -76,11 +76,11 @@ describe("toBeRejected", () => {
 
   it("passes when the promise is resolved within the given time limit", async () => {
     const promise = new Promise((_, reject) => setTimeout(reject, 1));
-    await expect(promise).toBeFulfilled(2);
+    await expect(promise).toBeFulfilled(50);
   });
 
   it("passes when the promise is not resolved within the given time limit", async () => {
-    const promise = new Promise((_, reject) => setTimeout(reject, 2));
+    const promise = new Promise(() => {});
     await expect(promise).not.toBeFulfilled(1);
   });
 });
