@@ -36,7 +36,9 @@
       [ngClass]="{
         'tw-p-4': !disablePadding,
         'tw-overflow-y-auto': !loading,
-        'tw-invisible tw-overflow-y-hidden': loading
+        'tw-invisible tw-overflow-y-hidden': loading,
+        'tw-bg-background': background === 'default',
+        'tw-bg-background-alt': background === 'alt'
       }"
     >
       <ng-content select="[bitDialogContent]"></ng-content>

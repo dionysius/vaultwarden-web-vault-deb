@@ -1,12 +1,19 @@
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { NoopAnimationsModule } from "@angular/platform-browser/animations";
 import { Meta, StoryObj, moduleMetadata } from "@storybook/angular";
 
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 
+import { BadgeModule } from "../../badge";
 import { ButtonModule } from "../../button";
+import { CardComponent } from "../../card";
+import { FormFieldModule } from "../../form-field";
 import { IconButtonModule } from "../../icon-button";
+import { InputModule } from "../../input";
+import { SectionComponent, SectionHeaderComponent } from "../../section";
 import { SharedModule } from "../../shared";
 import { TabsModule } from "../../tabs";
+import { TypographyModule } from "../../typography";
 import { I18nMockService } from "../../utils/i18n-mock.service";
 import { DialogModule } from "../dialog.module";
 
@@ -19,11 +26,20 @@ export default {
     moduleMetadata({
       imports: [
         DialogModule,
+        BadgeModule,
         ButtonModule,
         SharedModule,
         IconButtonModule,
         TabsModule,
         NoopAnimationsModule,
+        SectionComponent,
+        SectionHeaderComponent,
+        CardComponent,
+        TypographyModule,
+        FormsModule,
+        ReactiveFormsModule,
+        FormFieldModule,
+        InputModule,
       ],
       providers: [
         {
@@ -31,6 +47,7 @@ export default {
           useFactory: () => {
             return new I18nMockService({
               close: "Close",
+              loading: "Loading",
             });
           },
         },
@@ -63,6 +80,9 @@ export const Default: Story = {
     props: args,
     template: `
       <bit-dialog [dialogSize]="dialogSize" [title]="title" [subtitle]="subtitle" [loading]="loading" [disablePadding]="disablePadding">
+        <ng-container bitDialogTitle>
+          <span bitBadge variant="success">Foobar</span>
+        </ng-container>
         <ng-container bitDialogContent>Dialog body text goes here.</ng-container>
         <ng-container bitDialogFooter>
           <button bitButton buttonType="primary" [disabled]="loading">Save</button>
@@ -171,5 +191,81 @@ export const TabContent: Story = {
       storyDescription: `An example of using the \`bitTabGroup\` component within the Dialog. The content padding should be
       disabled (via \`disablePadding\`) so that the tabs are flush against the dialog title.`,
     },
+  },
+};
+
+export const WithCards: Story = {
+  render: (args: DialogComponent) => ({
+    props: {
+      formObj: new FormGroup({
+        name: new FormControl(""),
+      }),
+      ...args,
+    },
+    template: /*html*/ `
+      <form [formGroup]="formObj">
+      <bit-dialog background="alt" [dialogSize]="dialogSize" [title]="title" [subtitle]="subtitle" [loading]="loading" [disablePadding]="disablePadding">
+        <ng-container bitDialogContent>
+          <bit-section>
+            <bit-section-header>
+              <h2 bitTypography="h6">
+                Foo
+              </h2>
+              <button bitIconButton="bwi-star" size="small" slot="end"></button>
+            </bit-section-header>
+            <bit-card>
+              <bit-form-field>
+                <bit-label>Label</bit-label>
+                <input bitInput formControlName="name" />
+                <bit-hint>Optional Hint</bit-hint>
+              </bit-form-field>
+              <bit-form-field disableMargin>
+                <bit-label>Label</bit-label>
+                <input bitInput formControlName="name" />
+                <bit-hint>Optional Hint</bit-hint>
+              </bit-form-field>
+            </bit-card>
+          </bit-section>
+          <bit-section>
+            <bit-section-header>
+              <h2 bitTypography="h6">
+                Bar
+              </h2>
+              <button bitIconButton="bwi-star" size="small" slot="end"></button>
+            </bit-section-header>
+            <bit-card>
+              <bit-form-field>
+                <bit-label>Label</bit-label>
+                <input bitInput formControlName="name" />
+                <bit-hint>Optional Hint</bit-hint>
+              </bit-form-field>
+              <bit-form-field disableMargin>
+                <bit-label>Label</bit-label>
+                <input bitInput formControlName="name" />
+                <bit-hint>Optional Hint</bit-hint>
+              </bit-form-field>
+            </bit-card>
+          </bit-section>
+        </ng-container>
+        <ng-container bitDialogFooter>
+          <button bitButton buttonType="primary" [disabled]="loading">Save</button>
+          <button bitButton buttonType="secondary" [disabled]="loading">Cancel</button>
+          <button
+            [disabled]="loading"
+            class="tw-ml-auto"
+            bitIconButton="bwi-trash"
+            buttonType="danger"
+            size="default"
+            title="Delete"
+            aria-label="Delete"></button>
+        </ng-container>
+      </bit-dialog>
+  </form>
+    `,
+  }),
+  args: {
+    dialogSize: "default",
+    title: "Default",
+    subtitle: "Subtitle",
   },
 };

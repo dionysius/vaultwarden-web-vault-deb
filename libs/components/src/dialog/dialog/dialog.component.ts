@@ -9,6 +9,10 @@ import { fadeIn } from "../animations";
   animations: [fadeIn],
 })
 export class DialogComponent {
+  /** Background color */
+  @Input()
+  background: "default" | "alt" = "default";
+
   /**
    * Dialog size, more complex dialogs should use large, otherwise default is fine.
    */
