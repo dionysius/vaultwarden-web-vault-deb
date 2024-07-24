@@ -13,7 +13,6 @@ import {
 } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
-import { PluralizePipe } from "@bitwarden/angular/pipes/pluralize.pipe";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { OrganizationUserStatusType } from "@bitwarden/common/admin-console/enums";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
@@ -134,10 +133,18 @@ export class AssignCollectionsComponent implements OnInit {
     );
 
   protected transferWarningText = (orgName: string, itemsCount: number) => {
-    const pluralizedItems = this.pluralizePipe.transform(itemsCount, "item", "items");
-    return orgName
-      ? this.i18nService.t("personalItemsWithOrgTransferWarning", pluralizedItems, orgName)
-      : this.i18nService.t("personalItemsTransferWarning", pluralizedItems);
+    const haveOrgName = !!orgName;
+
+    if (itemsCount > 1 && haveOrgName) {
+      return this.i18nService.t("personalItemsWithOrgTransferWarningPlural", itemsCount, orgName);
+    }
+    if (itemsCount > 1 && !haveOrgName) {
+      return this.i18nService.t("personalItemsTransferWarningPlural", itemsCount);
+    }
+    if (itemsCount === 1 && haveOrgName) {
+      return this.i18nService.t("personalItemWithOrgTransferWarningSingular", orgName);
+    }
+    return this.i18nService.t("personalItemTransferWarningSingular");
   };
 
   private editableItems: CipherView[] = [];
@@ -155,7 +162,6 @@ export class AssignCollectionsComponent implements OnInit {
     private organizationService: OrganizationService,
     private collectionService: CollectionService,
     private formBuilder: FormBuilder,
-    private pluralizePipe: PluralizePipe,
     private toastService: ToastService,
   ) {}
 
@@ -416,7 +422,7 @@ export class AssignCollectionsComponent implements OnInit {
       variant: "success",
       title: null,
       message: this.i18nService.t(
-        "movedItemsToOrg",
+        shareableCiphers.length === 1 ? "itemMovedToOrg" : "itemsMovedToOrg",
         this.orgName ?? this.i18nService.t("organization"),
       ),
     });
