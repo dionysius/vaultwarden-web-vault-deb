@@ -12,6 +12,7 @@ import {
   IconButtonModule,
   ItemModule,
   NoItemsModule,
+  SearchModule,
 } from "@bitwarden/components";
 
 import { PopupFooterComponent } from "./popup-footer.component";
@@ -104,6 +105,18 @@ class MockPopoutButtonComponent {}
 class MockCurrentAccountComponent {}
 
 @Component({
+  selector: "mock-search",
+  template: `
+    <div class="tw-p-4">
+      <bit-search placeholder="Search"> </bit-search>
+    </div>
+  `,
+  standalone: true,
+  imports: [SearchModule],
+})
+class MockSearchComponent {}
+
+@Component({
   selector: "mock-vault-page",
   template: `
     <popup-page>
@@ -114,6 +127,7 @@ class MockCurrentAccountComponent {}
           <mock-current-account></mock-current-account>
         </ng-container>
       </popup-header>
+      <mock-search slot="above-scroll-area"></mock-search>
       <vault-placeholder></vault-placeholder>
     </popup-page>
   `,
@@ -124,6 +138,7 @@ class MockCurrentAccountComponent {}
     MockAddButtonComponent,
     MockPopoutButtonComponent,
     MockCurrentAccountComponent,
+    MockSearchComponent,
     VaultComponent,
   ],
 })
