@@ -13,6 +13,19 @@ import { SectionComponent, SectionHeaderComponent } from "@bitwarden/components"
 Sections are simple containers that apply a responsive bottom margin and utilize the semantic
 `section` HTML element.
 
+```html
+<bit-section>
+  <div>Lots of amazing content!</div>
+</bit-section>
+```
+
+To remove the bottom margin (for example, if the section is the last item on the page), you can pass
+the `disableMargin` input.
+
+```html
+<bit-section disableMargin></bit-section>
+```
+
 <Canvas>
   <Story of={stories.Default} />
 </Canvas>
@@ -24,7 +37,7 @@ Sections often contain a heading. Use `bit-section-header` inside of the `bit-se
 ```html
 <bit-section>
   <bit-section-header>
-    <h1 bitTypography="h1">I'm a section header</h2>
+    <h1 bitTypography="h1">I'm a section header</h1>
   </bit-section-header>
   <div>Section content here!</div>
 </bit-section>

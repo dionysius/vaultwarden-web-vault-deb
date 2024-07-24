@@ -1,4 +1,4 @@
-<bit-section *ngIf="ciphers?.length > 0 || description">
+<bit-section *ngIf="ciphers?.length > 0 || description" [disableMargin]="disableSectionMargin">
   <bit-section-header>
     <h2 bitTypography="h6">
       {{ title }}

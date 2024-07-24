@@ -13,6 +13,7 @@ import {
   ItemModule,
   NoItemsModule,
   SearchModule,
+  SectionComponent,
 } from "@bitwarden/components";
 
 import { PopupFooterComponent } from "./popup-footer.component";
@@ -34,30 +35,36 @@ class ExtensionContainerComponent {}
 @Component({
   selector: "vault-placeholder",
   template: `
-    <bit-item-group aria-label="Mock Vault Items">
-      <bit-item *ngFor="let item of data; index as i">
-        <button bit-item-content>
-          <i slot="start" class="bwi bwi-globe tw-text-3xl tw-text-muted" aria-hidden="true"></i>
-          {{ i }} of {{ data.length - 1 }}
-          <span slot="secondary">Bar</span>
-        </button>
+    <bit-section disableMargin>
+      <bit-item-group aria-label="Mock Vault Items">
+        <bit-item *ngFor="let item of data; index as i">
+          <button bit-item-content>
+            <i slot="start" class="bwi bwi-globe tw-text-3xl tw-text-muted" aria-hidden="true"></i>
+            {{ i }} of {{ data.length - 1 }}
+            <span slot="secondary">Bar</span>
+          </button>
 
-        <ng-container slot="end">
-          <bit-item-action>
-            <button type="button" bitBadge variant="primary">Auto-fill</button>
-          </bit-item-action>
-          <bit-item-action>
-            <button type="button" bitIconButton="bwi-clone" aria-label="Copy item"></button>
-          </bit-item-action>
-          <bit-item-action>
-            <button type="button" bitIconButton="bwi-ellipsis-v" aria-label="More options"></button>
-          </bit-item-action>
-        </ng-container>
-      </bit-item>
-    </bit-item-group>
+          <ng-container slot="end">
+            <bit-item-action>
+              <button type="button" bitBadge variant="primary">Auto-fill</button>
+            </bit-item-action>
+            <bit-item-action>
+              <button type="button" bitIconButton="bwi-clone" aria-label="Copy item"></button>
+            </bit-item-action>
+            <bit-item-action>
+              <button
+                type="button"
+                bitIconButton="bwi-ellipsis-v"
+                aria-label="More options"
+              ></button>
+            </bit-item-action>
+          </ng-container>
+        </bit-item>
+      </bit-item-group>
+    </bit-section>
   `,
   standalone: true,
-  imports: [CommonModule, ItemModule, BadgeModule, IconButtonModule],
+  imports: [CommonModule, ItemModule, BadgeModule, IconButtonModule, SectionComponent],
 })
 class VaultComponent {
   protected data = Array.from(Array(20).keys());

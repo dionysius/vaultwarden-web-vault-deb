@@ -79,6 +79,13 @@ export class VaultListItemsContainerComponent {
   showAutofillButton: boolean;
 
   /**
+   * Remove the bottom margin from the bit-section in this component
+   * (used for containers at the end of the page where bottom margin is not needed)
+   */
+  @Input({ transform: booleanAttribute })
+  disableSectionMargin: boolean = false;
+
+  /**
    * The tooltip text for the organization icon for ciphers that belong to an organization.
    * @param cipher
    */
