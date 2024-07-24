@@ -1050,6 +1050,7 @@ const safeProviders: SafeProvider[] = [
       SECURE_STORAGE,
       UserDecryptionOptionsServiceAbstraction,
       LogService,
+      ConfigService,
     ],
   }),
   safeProvider({

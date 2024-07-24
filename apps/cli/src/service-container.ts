@@ -534,6 +534,7 @@ export class ServiceContainer {
       this.secureStorageService,
       this.userDecryptionOptionsService,
       this.logService,
+      this.configService,
     );
 
     this.authRequestService = new AuthRequestService(

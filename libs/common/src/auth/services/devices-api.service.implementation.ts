@@ -101,4 +101,18 @@ export class DevicesApiServiceImplementation implements DevicesApiServiceAbstrac
     );
     return new ProtectedDeviceResponse(result);
   }
+
+  async postDeviceTrustLoss(deviceIdentifier: string): Promise<void> {
+    await this.apiService.send(
+      "POST",
+      "/devices/lost-trust",
+      null,
+      true,
+      false,
+      null,
+      (headers) => {
+        headers.set("Device-Identifier", deviceIdentifier);
+      },
+    );
+  }
 }

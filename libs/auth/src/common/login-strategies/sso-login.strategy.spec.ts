@@ -312,6 +312,27 @@ describe("SsoLoginStrategy", () => {
       expect(cryptoService.setUserKey).not.toHaveBeenCalled();
     });
 
+    it("logs when a device key is found but no decryption keys were recieved in token response", async () => {
+      // Arrange
+      const userDecryptionOpts = userDecryptionOptsServerResponseWithTdeOption;
+      userDecryptionOpts.TrustedDeviceOption.EncryptedPrivateKey = null;
+      userDecryptionOpts.TrustedDeviceOption.EncryptedUserKey = null;
+
+      const idTokenResponse: IdentityTokenResponse = identityTokenResponseFactory(
+        null,
+        userDecryptionOpts,
+      );
+
+      apiService.postIdentityToken.mockResolvedValue(idTokenResponse);
+      deviceTrustService.getDeviceKey.mockResolvedValue(mockDeviceKey);
+
+      // Act
+      await ssoLoginStrategy.logIn(credentials);
+
+      // Assert
+      expect(deviceTrustService.recordDeviceTrustLoss).toHaveBeenCalledTimes(1);
+    });
+
     describe("AdminAuthRequest", () => {
       let tokenResponse: IdentityTokenResponse;
 

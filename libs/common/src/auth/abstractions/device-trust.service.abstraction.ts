@@ -32,4 +32,9 @@ export abstract class DeviceTrustServiceAbstraction {
     newUserKey: UserKey,
     masterPasswordHash: string,
   ) => Promise<void>;
+  /**
+   * Notifies the server that the device has a device key, but didn't receive any associated decryption keys.
+   * Note: For debugging purposes only.
+   */
+  recordDeviceTrustLoss: () => Promise<void>;
 }

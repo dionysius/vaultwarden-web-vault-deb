@@ -296,16 +296,20 @@ export class SsoLoginStrategy extends LoginStrategy {
 
     if (!deviceKey || !encDevicePrivateKey || !encUserKey) {
       if (!deviceKey) {
-        await this.logService.warning("Unable to set user key due to missing device key.");
+        this.logService.warning("Unable to set user key due to missing device key.");
+      } else if (!encDevicePrivateKey || !encUserKey) {
+        // Tell the server that we have a device key, but received no decryption keys
+        await this.deviceTrustService.recordDeviceTrustLoss();
       }
       if (!encDevicePrivateKey) {
-        await this.logService.warning(
+        this.logService.warning(
           "Unable to set user key due to missing encrypted device private key.",
         );
       }
       if (!encUserKey) {
-        await this.logService.warning("Unable to set user key due to missing encrypted user key.");
+        this.logService.warning("Unable to set user key due to missing encrypted user key.");
       }
+
       return;
     }
 
