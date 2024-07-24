@@ -53,6 +53,7 @@ export class IdentitySectionComponent implements OnInit {
   protected identityForm = this.formBuilder.group({
     title: [null],
     firstName: [""],
+    middleName: [""],
     lastName: [""],
     username: [""],
     company: [""],
@@ -80,6 +81,7 @@ export class IdentitySectionComponent implements OnInit {
       const data = new IdentityView();
       data.title = value.title;
       data.firstName = value.firstName;
+      data.middleName = value.middleName;
       data.lastName = value.lastName;
       data.username = value.username;
       data.company = value.company;
@@ -118,6 +120,7 @@ export class IdentitySectionComponent implements OnInit {
     this.identityForm.setValue({
       title: identity.title,
       firstName: identity.firstName,
+      middleName: identity.middleName,
       lastName: identity.lastName,
       username: identity.username,
       company: identity.company,
