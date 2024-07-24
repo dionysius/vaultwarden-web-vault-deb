@@ -1,6 +1,6 @@
 <app-header></app-header>
 
-<bit-container *ngIf="!isProviderManaged">
+<bit-container *ngIf="!isManagedByConsolidatedBillingMSP">
   <ng-container *ngIf="!firstLoaded && loading">
     <i class="bwi bwi-spinner bwi-spin text-muted" title="{{ 'loading' | i18n }}"></i>
     <span class="tw-sr-only">{{ "loading" | i18n }}</span>
@@ -274,7 +274,7 @@
     </ng-container>
   </ng-container>
 </bit-container>
-<bit-container *ngIf="isProviderManaged">
+<bit-container *ngIf="isManagedByConsolidatedBillingMSP">
   <div
     class="tw-mx-auto tw-flex tw-flex-col tw-items-center tw-justify-center tw-pt-24 tw-text-center tw-font-bold"
   >
