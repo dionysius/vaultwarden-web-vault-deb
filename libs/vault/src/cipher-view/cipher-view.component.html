@@ -15,7 +15,8 @@
 
   <!-- CUSTOM FIELDS -->
   <ng-container *ngIf="cipher.fields">
-    <app-custom-fields-v2 [fields]="cipher.fields"> </app-custom-fields-v2>
+    <app-custom-fields-v2 [fields]="cipher.fields" [cipherType]="cipher.type">
+    </app-custom-fields-v2>
   </ng-container>
 
   <!-- ATTACHMENTS SECTION -->

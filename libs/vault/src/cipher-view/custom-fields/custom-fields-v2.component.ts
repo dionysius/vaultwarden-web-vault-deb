@@ -1,10 +1,13 @@
 import { CommonModule } from "@angular/common";
-import { Component, Input } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
-import { FieldType, LinkedIdType, LoginLinkedId } from "@bitwarden/common/vault/enums";
+import { CipherType, FieldType, LinkedIdType } from "@bitwarden/common/vault/enums";
+import { CardView } from "@bitwarden/common/vault/models/view/card.view";
 import { FieldView } from "@bitwarden/common/vault/models/view/field.view";
+import { IdentityView } from "@bitwarden/common/vault/models/view/identity.view";
+import { LoginView } from "@bitwarden/common/vault/models/view/login.view";
 import {
   CardComponent,
   IconButtonModule,
@@ -33,19 +36,33 @@ import {
     CheckboxModule,
   ],
 })
-export class CustomFieldV2Component {
+export class CustomFieldV2Component implements OnInit {
   @Input() fields: FieldView[];
+  @Input() cipherType: CipherType;
   fieldType = FieldType;
+  fieldOptions: any;
 
   constructor(private i18nService: I18nService) {}
 
-  getLinkedType(linkedId: LinkedIdType) {
-    if (linkedId === LoginLinkedId.Username) {
-      return this.i18nService.t("username");
-    }
+  ngOnInit(): void {
+    this.fieldOptions = this.getLinkedFieldsOptionsForCipher();
+  }
 
-    if (linkedId === LoginLinkedId.Password) {
-      return this.i18nService.t("password");
+  getLinkedType(linkedId: LinkedIdType) {
+    const linkedType = this.fieldOptions.get(linkedId);
+    return this.i18nService.t(linkedType.i18nKey);
+  }
+
+  private getLinkedFieldsOptionsForCipher() {
+    switch (this.cipherType) {
+      case CipherType.Login:
+        return LoginView.prototype.linkedFieldOptions;
+      case CipherType.Card:
+        return CardView.prototype.linkedFieldOptions;
+      case CipherType.Identity:
+        return IdentityView.prototype.linkedFieldOptions;
+      default:
+        return null;
     }
   }
 }
