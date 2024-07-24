@@ -6,9 +6,10 @@
     <label class="tw-text-xs tw-text-muted tw-select-none">
       {{ "note" | i18n }}
     </label>
-    <div class="tw-flex tw-justify-between">
+    <bit-form-field>
       <textarea readonly bitInput aria-readonly="true">{{ notes }}</textarea>
       <button
+        bitSuffix
         bitIconButton="bwi-clone"
         size="small"
         type="button"
@@ -16,6 +17,6 @@
         showToast
         [appA11yTitle]="'copyValue' | i18n"
       ></button>
-    </div>
+    </bit-form-field>
   </bit-card>
 </bit-section>
