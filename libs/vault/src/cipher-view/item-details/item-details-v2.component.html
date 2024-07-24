@@ -7,7 +7,14 @@
       <label class="tw-block tw-w-full tw-mb-1 tw-text-xs tw-text-muted tw-select-none">
         {{ "itemName" | i18n }}
       </label>
-      <input readonly bitInput type="text" [value]="cipher.name" aria-readonly="true" />
+      <input
+        readonly
+        bitInput
+        type="text"
+        [value]="cipher.name"
+        aria-readonly="true"
+        data-testid="item-name"
+      />
     </div>
 
     <ul
@@ -20,6 +27,7 @@
         [ngClass]="{ 'tw-mb-3': cipher.collectionIds }"
         bitTypography="body2"
         [attr.aria-label]="('owner' | i18n) + organization.name"
+        data-testid="owner"
       >
         <i
           class="tw-pt-1"
@@ -37,7 +45,7 @@
         *ngIf="cipher.collectionIds && collections"
         [attr.aria-label]="'collection' | i18n"
       >
-        <ul>
+        <ul data-testid="collections">
           <li
             *ngFor="let collection of collections; let last = last"
             class="tw-flex tw-list-none"
@@ -61,6 +69,7 @@
         bitTypography="body2"
         class="tw-flex tw-list-none"
         [attr.aria-label]="('folder' | i18n) + folder.name"
+        data-testid="folder"
       >
         <i class="bwi bwi-folder bwi-lg tw-pt-1" aria-hidden="true" [title]="'folder' | i18n"></i>
         <span aria-hidden="true" class="tw-pl-1 tw-mb-1">{{ folder.name }} </span>
