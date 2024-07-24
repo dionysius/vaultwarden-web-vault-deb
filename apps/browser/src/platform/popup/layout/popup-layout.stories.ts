@@ -303,6 +303,7 @@ export default {
         MockSettingsPageComponent,
         MockVaultPagePoppedComponent,
         NoItemsModule,
+        VaultComponent,
       ],
       providers: [
         {
@@ -311,6 +312,7 @@ export default {
             return new I18nMockService({
               back: "Back",
               loading: "Loading",
+              search: "Search",
             });
           },
         },
@@ -417,6 +419,23 @@ export const Loading: Story = {
             Content would go here
           </popup-page>
         </popup-tab-navigation>
+      </extension-container>
+    `,
+  }),
+};
+
+export const TransparentHeader: Story = {
+  render: (args) => ({
+    props: args,
+    template: /* HTML */ `
+      <extension-container>
+        <popup-page>
+          <popup-header slot="header" background="alt"
+            ><span class="tw-italic tw-text-main">🤠 Custom Content</span></popup-header
+          >
+
+          <vault-placeholder></vault-placeholder>
+        </popup-page>
       </extension-container>
     `,
   }),

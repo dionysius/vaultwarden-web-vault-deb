@@ -74,6 +74,9 @@ Basic usage example:
 - `showBackButton`: optional, defaults to `false`
   - Toggles the back button to appear. The back button uses `Location.back()` to navigate back one
     page in history.
+- `background`: optional
+  - `"default"` uses a white background
+  - `"alt"` uses a transparent background
 
 **Slots**
 
@@ -91,6 +94,12 @@ Usage example:
   </ng-container>
 </popup-header>
 ```
+
+### Transparent header
+
+<Canvas>
+  <Story of={stories.TransparentHeader} />
+</Canvas>
 
 Common interactive elements to insert into the `end` slot are:
 

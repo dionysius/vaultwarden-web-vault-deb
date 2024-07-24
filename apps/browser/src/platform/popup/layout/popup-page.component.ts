@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, Input, inject } from "@angular/core";
+import { Component, Input, inject, signal } from "@angular/core";
 
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 
@@ -17,6 +17,13 @@ export class PopupPageComponent {
 
   @Input() loading = false;
 
+  protected scrolled = signal(false);
+  isScrolled = this.scrolled.asReadonly();
+
   /** Accessible loading label for the spinner. Defaults to "loading" */
   @Input() loadingText?: string = this.i18nService.t("loading");
+
+  handleScroll(event: Event) {
+    this.scrolled.set((event.currentTarget as HTMLElement).scrollTop !== 0);
+  }
 }
