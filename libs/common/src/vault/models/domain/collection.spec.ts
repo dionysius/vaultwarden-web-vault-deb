@@ -42,7 +42,7 @@ describe("Collection", () => {
       id: "id",
       organizationId: "orgId",
       name: { encryptedString: "encName", encryptionType: 0 },
-      externalId: "extId",
+      externalId: { encryptedString: "extId", encryptionType: 0 },
       readOnly: true,
       manage: true,
       hidePasswords: true,
