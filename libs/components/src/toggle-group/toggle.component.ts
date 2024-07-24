@@ -17,7 +17,7 @@ export class ToggleComponent<TValue> {
   constructor(private groupComponent: ToggleGroupComponent<TValue>) {}
 
   @HostBinding("tabIndex") tabIndex = "-1";
-  @HostBinding("class") classList = ["tw-group"];
+  @HostBinding("class") classList = ["tw-group/toggle"];
 
   get name() {
     return this.groupComponent.name;
@@ -28,7 +28,7 @@ export class ToggleComponent<TValue> {
   }
 
   get inputClasses() {
-    return ["tw-peer", "tw-appearance-none", "tw-outline-none"];
+    return ["tw-peer/toggle-input", "tw-appearance-none", "tw-outline-none"];
   }
 
   get labelClasses() {
@@ -43,27 +43,27 @@ export class ToggleComponent<TValue> {
       "tw-border-r",
       "tw-border-l-0",
       "tw-cursor-pointer",
-      "group-first-of-type:tw-border-l",
-      "group-first-of-type:tw-rounded-l",
-      "group-last-of-type:tw-rounded-r",
+      "group-first-of-type/toggle:tw-border-l",
+      "group-first-of-type/toggle:tw-rounded-l",
+      "group-last-of-type/toggle:tw-rounded-r",
 
-      "peer-focus:tw-outline-none",
-      "peer-focus:tw-ring",
-      "peer-focus:tw-ring-offset-2",
-      "peer-focus:tw-ring-primary-600",
-      "peer-focus:tw-z-10",
-      "peer-focus:tw-bg-primary-600",
-      "peer-focus:tw-border-primary-600",
-      "peer-focus:!tw-text-contrast",
+      "peer-focus/toggle-input:tw-outline-none",
+      "peer-focus/toggle-input:tw-ring",
+      "peer-focus/toggle-input:tw-ring-offset-2",
+      "peer-focus/toggle-input:tw-ring-primary-600",
+      "peer-focus/toggle-input:tw-z-10",
+      "peer-focus/toggle-input:tw-bg-primary-600",
+      "peer-focus/toggle-input:tw-border-primary-600",
+      "peer-focus/toggle-input:!tw-text-contrast",
 
       "hover:tw-no-underline",
       "hover:tw-bg-text-muted",
       "hover:tw-border-text-muted",
       "hover:!tw-text-contrast",
 
-      "peer-checked:tw-bg-primary-600",
-      "peer-checked:tw-border-primary-600",
-      "peer-checked:!tw-text-contrast",
+      "peer-checked/toggle-input:tw-bg-primary-600",
+      "peer-checked/toggle-input:tw-border-primary-600",
+      "peer-checked/toggle-input:!tw-text-contrast",
       "tw-py-1.5",
       "tw-px-3",
 
