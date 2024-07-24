@@ -38,6 +38,7 @@ import { TwoFactorAuthComponent } from "../auth/popup/two-factor-auth.component"
 import { TwoFactorOptionsComponent } from "../auth/popup/two-factor-options.component";
 import { TwoFactorComponent } from "../auth/popup/two-factor.component";
 import { UpdateTempPasswordComponent } from "../auth/popup/update-temp-password.component";
+import { AutofillV1Component } from "../autofill/popup/settings/autofill-v1.component";
 import { AutofillComponent } from "../autofill/popup/settings/autofill.component";
 import { ExcludedDomainsV1Component } from "../autofill/popup/settings/excluded-domains-v1.component";
 import { ExcludedDomainsComponent } from "../autofill/popup/settings/excluded-domains.component";
@@ -278,12 +279,11 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     data: { state: "export" },
   }),
-  {
+  ...extensionRefreshSwap(AutofillV1Component, AutofillComponent, {
     path: "autofill",
-    component: AutofillComponent,
     canActivate: [AuthGuard],
     data: { state: "autofill" },
-  },
+  }),
   {
     path: "account-security",
     component: AccountSecurityComponent,

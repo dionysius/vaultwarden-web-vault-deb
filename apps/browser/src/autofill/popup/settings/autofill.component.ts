@@ -1,12 +1,25 @@
+import { CommonModule } from "@angular/common";
 import { Component, OnInit } from "@angular/core";
+import { FormsModule } from "@angular/forms";
+import { RouterModule } from "@angular/router";
 import { firstValueFrom } from "rxjs";
 
-import { AutofillOverlayVisibility } from "@bitwarden/common/autofill/constants";
+import { JslibModule } from "@bitwarden/angular/jslib.module";
+import {
+  AutofillOverlayVisibility,
+  BrowserClientVendors,
+  BrowserShortcutsUris,
+  ClearClipboardDelay,
+  DisablePasswordManagerUris,
+} from "@bitwarden/common/autofill/constants";
 import { AutofillSettingsServiceAbstraction } from "@bitwarden/common/autofill/services/autofill-settings.service";
 import { DomainSettingsService } from "@bitwarden/common/autofill/services/domain-settings.service";
 import {
-  InlineMenuVisibilitySetting,
+  BrowserClientVendor,
+  BrowserShortcutsUri,
   ClearClipboardDelaySetting,
+  DisablePasswordManagerUri,
+  InlineMenuVisibilitySetting,
 } from "@bitwarden/common/autofill/types";
 import {
   UriMatchStrategy,
@@ -16,33 +29,77 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { VaultSettingsService } from "@bitwarden/common/vault/abstractions/vault-settings/vault-settings.service";
-import { DialogService } from "@bitwarden/components";
+import {
+  CardComponent,
+  CheckboxModule,
+  DialogService,
+  FormFieldModule,
+  IconButtonModule,
+  ItemModule,
+  LinkModule,
+  SectionComponent,
+  SectionHeaderComponent,
+  SelectModule,
+  TypographyModule,
+} from "@bitwarden/components";
 
 import { BrowserApi } from "../../../platform/browser/browser-api";
-import { enableAccountSwitching } from "../../../platform/flags";
-import { AutofillService } from "../../services/abstractions/autofill.service";
+import { PopOutComponent } from "../../../platform/popup/components/pop-out.component";
+import { PopupFooterComponent } from "../../../platform/popup/layout/popup-footer.component";
+import { PopupHeaderComponent } from "../../../platform/popup/layout/popup-header.component";
+import { PopupPageComponent } from "../../../platform/popup/layout/popup-page.component";
 
 @Component({
-  selector: "app-autofill",
   templateUrl: "autofill.component.html",
+  standalone: true,
+  imports: [
+    CardComponent,
+    CheckboxModule,
+    CommonModule,
+    FormFieldModule,
+    FormsModule,
+    IconButtonModule,
+    ItemModule,
+    JslibModule,
+    LinkModule,
+    PopOutComponent,
+    PopupFooterComponent,
+    PopupHeaderComponent,
+    PopupPageComponent,
+    RouterModule,
+    SectionComponent,
+    SectionHeaderComponent,
+    SelectModule,
+    TypographyModule,
+  ],
 })
 export class AutofillComponent implements OnInit {
+  /*
+   * Default values set here are used in component state operations
+   * until corresponding stored settings have loaded on init.
+   */
   protected canOverrideBrowserAutofillSetting = false;
   protected defaultBrowserAutofillDisabled = false;
-  protected autoFillOverlayVisibility: InlineMenuVisibilitySetting;
-  protected autoFillOverlayVisibilityOptions: any[];
-  protected disablePasswordManagerLink: string;
-  enableAutoFillOnPageLoad = false;
-  autoFillOnPageLoadDefault = false;
-  autoFillOnPageLoadOptions: any[];
+  protected inlineMenuVisibility: InlineMenuVisibilitySetting =
+    AutofillOverlayVisibility.OnFieldFocus;
+  protected browserClientVendor: BrowserClientVendor = BrowserClientVendors.Unknown;
+  protected disablePasswordManagerURI: DisablePasswordManagerUri =
+    DisablePasswordManagerUris.Unknown;
+  protected browserShortcutsURI: BrowserShortcutsUri = BrowserShortcutsUris.Unknown;
+  protected browserClientIsUnknown: boolean;
+  enableAutofillOnPageLoad = false;
+  enableInlineMenu = false;
+  enableInlineMenuOnIconSelect = false;
+  autofillOnPageLoadDefault = false;
+  autofillOnPageLoadOptions: { name: string; value: boolean }[];
   enableContextMenuItem = false;
-  enableAutoTotpCopy = false; // TODO: Does it matter if this is set to false or true?
+  enableAutoTotpCopy = false;
   clearClipboard: ClearClipboardDelaySetting;
-  clearClipboardOptions: any[];
+  clearClipboardOptions: { name: string; value: ClearClipboardDelaySetting }[];
   defaultUriMatch: UriMatchStrategySetting = UriMatchStrategy.Domain;
-  uriMatchOptions: any[];
-  showCardsCurrentTab = false;
-  showIdentitiesCurrentTab = false;
+  uriMatchOptions: { name: string; value: UriMatchStrategySetting }[];
+  showCardsCurrentTab = true;
+  showIdentitiesCurrentTab = true;
   autofillKeyboardHelperText: string;
   accountSwitcherEnabled = false;
 
@@ -50,38 +107,23 @@ export class AutofillComponent implements OnInit {
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
     private domainSettingsService: DomainSettingsService,
-    private autofillService: AutofillService,
     private dialogService: DialogService,
     private autofillSettingsService: AutofillSettingsServiceAbstraction,
     private messagingService: MessagingService,
     private vaultSettingsService: VaultSettingsService,
   ) {
-    this.autoFillOverlayVisibilityOptions = [
-      {
-        name: i18nService.t("autofillOverlayVisibilityOff"),
-        value: AutofillOverlayVisibility.Off,
-      },
-      {
-        name: i18nService.t("autofillOverlayVisibilityOnFieldFocus"),
-        value: AutofillOverlayVisibility.OnFieldFocus,
-      },
-      {
-        name: i18nService.t("autofillOverlayVisibilityOnButtonClick"),
-        value: AutofillOverlayVisibility.OnButtonClick,
-      },
-    ];
-    this.autoFillOnPageLoadOptions = [
+    this.autofillOnPageLoadOptions = [
       { name: i18nService.t("autoFillOnPageLoadYes"), value: true },
       { name: i18nService.t("autoFillOnPageLoadNo"), value: false },
     ];
     this.clearClipboardOptions = [
-      { name: i18nService.t("never"), value: null },
-      { name: i18nService.t("tenSeconds"), value: 10 },
-      { name: i18nService.t("twentySeconds"), value: 20 },
-      { name: i18nService.t("thirtySeconds"), value: 30 },
-      { name: i18nService.t("oneMinute"), value: 60 },
-      { name: i18nService.t("twoMinutes"), value: 120 },
-      { name: i18nService.t("fiveMinutes"), value: 300 },
+      { name: i18nService.t("never"), value: ClearClipboardDelay.Never },
+      { name: i18nService.t("tenSeconds"), value: ClearClipboardDelay.TenSeconds },
+      { name: i18nService.t("twentySeconds"), value: ClearClipboardDelay.TwentySeconds },
+      { name: i18nService.t("thirtySeconds"), value: ClearClipboardDelay.ThirtySeconds },
+      { name: i18nService.t("oneMinute"), value: ClearClipboardDelay.OneMinute },
+      { name: i18nService.t("twoMinutes"), value: ClearClipboardDelay.TwoMinutes },
+      { name: i18nService.t("fiveMinutes"), value: ClearClipboardDelay.FiveMinutes },
     ];
     this.uriMatchOptions = [
       { name: i18nService.t("baseDomain"), value: UriMatchStrategy.Domain },
@@ -92,28 +134,32 @@ export class AutofillComponent implements OnInit {
       { name: i18nService.t("never"), value: UriMatchStrategy.Never },
     ];
 
-    this.accountSwitcherEnabled = enableAccountSwitching();
-    this.disablePasswordManagerLink = this.getDisablePasswordManagerLink();
+    this.browserClientVendor = this.getBrowserClientVendor();
+    this.disablePasswordManagerURI = DisablePasswordManagerUris[this.browserClientVendor];
+    this.browserShortcutsURI = BrowserShortcutsUris[this.browserClientVendor];
+    this.browserClientIsUnknown = this.browserClientVendor === BrowserClientVendors.Unknown;
   }
 
   async ngOnInit() {
-    this.canOverrideBrowserAutofillSetting =
-      this.platformUtilsService.isChrome() ||
-      this.platformUtilsService.isEdge() ||
-      this.platformUtilsService.isOpera() ||
-      this.platformUtilsService.isVivaldi();
-
+    this.canOverrideBrowserAutofillSetting = !this.browserClientIsUnknown;
     this.defaultBrowserAutofillDisabled = await this.browserAutofillSettingCurrentlyOverridden();
 
-    this.autoFillOverlayVisibility = await firstValueFrom(
+    this.inlineMenuVisibility = await firstValueFrom(
       this.autofillSettingsService.inlineMenuVisibility$,
     );
 
-    this.enableAutoFillOnPageLoad = await firstValueFrom(
+    this.enableInlineMenuOnIconSelect =
+      this.inlineMenuVisibility === AutofillOverlayVisibility.OnButtonClick;
+
+    this.enableInlineMenu =
+      this.inlineMenuVisibility === AutofillOverlayVisibility.OnFieldFocus ||
+      this.enableInlineMenuOnIconSelect;
+
+    this.enableAutofillOnPageLoad = await firstValueFrom(
       this.autofillSettingsService.autofillOnPageLoad$,
     );
 
-    this.autoFillOnPageLoadDefault = await firstValueFrom(
+    this.autofillOnPageLoadDefault = await firstValueFrom(
       this.autofillSettingsService.autofillOnPageLoadDefault$,
     );
 
@@ -140,17 +186,27 @@ export class AutofillComponent implements OnInit {
     );
   }
 
-  async updateAutoFillOverlayVisibility() {
-    await this.autofillSettingsService.setInlineMenuVisibility(this.autoFillOverlayVisibility);
+  async updateInlineMenuVisibility() {
+    if (!this.enableInlineMenu) {
+      this.enableInlineMenuOnIconSelect = false;
+    }
+
+    const newInlineMenuVisibilityValue = this.enableInlineMenuOnIconSelect
+      ? AutofillOverlayVisibility.OnButtonClick
+      : this.enableInlineMenu
+        ? AutofillOverlayVisibility.OnFieldFocus
+        : AutofillOverlayVisibility.Off;
+
+    await this.autofillSettingsService.setInlineMenuVisibility(newInlineMenuVisibilityValue);
     await this.requestPrivacyPermission();
   }
 
-  async updateAutoFillOnPageLoad() {
-    await this.autofillSettingsService.setAutofillOnPageLoad(this.enableAutoFillOnPageLoad);
+  async updateAutofillOnPageLoad() {
+    await this.autofillSettingsService.setAutofillOnPageLoad(this.enableAutofillOnPageLoad);
   }
 
-  async updateAutoFillOnPageLoadDefault() {
-    await this.autofillSettingsService.setAutofillOnPageLoadDefault(this.autoFillOnPageLoadDefault);
+  async updateAutofillOnPageLoadDefault() {
+    await this.autofillSettingsService.setAutofillOnPageLoadDefault(this.autofillOnPageLoadDefault);
   }
 
   async saveDefaultUriMatch() {
@@ -165,57 +221,81 @@ export class AutofillComponent implements OnInit {
     }
   }
 
-  async commandSettings() {
+  private getBrowserClientVendor(): BrowserClientVendor {
     if (this.platformUtilsService.isChrome()) {
-      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-      // eslint-disable-next-line @typescript-eslint/no-floating-promises
-      BrowserApi.createNewTab("chrome://extensions/shortcuts");
-    } else if (this.platformUtilsService.isOpera()) {
-      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-      // eslint-disable-next-line @typescript-eslint/no-floating-promises
-      BrowserApi.createNewTab("opera://extensions/shortcuts");
-    } else if (this.platformUtilsService.isEdge()) {
-      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-      // eslint-disable-next-line @typescript-eslint/no-floating-promises
-      BrowserApi.createNewTab("edge://extensions/shortcuts");
-    } else if (this.platformUtilsService.isVivaldi()) {
-      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-      // eslint-disable-next-line @typescript-eslint/no-floating-promises
-      BrowserApi.createNewTab("vivaldi://extensions/shortcuts");
-    } else {
-      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-      // eslint-disable-next-line @typescript-eslint/no-floating-promises
-      BrowserApi.createNewTab("https://bitwarden.com/help/keyboard-shortcuts");
+      return BrowserClientVendors.Chrome;
     }
-  }
 
-  private getDisablePasswordManagerLink(): string {
-    if (this.platformUtilsService.isChrome()) {
-      return "chrome://settings/autofill";
-    }
     if (this.platformUtilsService.isOpera()) {
-      return "opera://settings/autofill";
-    }
-    if (this.platformUtilsService.isEdge()) {
-      return "edge://settings/passwords";
-    }
-    if (this.platformUtilsService.isVivaldi()) {
-      return "vivaldi://settings/autofill";
+      return BrowserClientVendors.Opera;
     }
 
-    return "https://bitwarden.com/help/disable-browser-autofill/";
+    if (this.platformUtilsService.isEdge()) {
+      return BrowserClientVendors.Edge;
+    }
+
+    if (this.platformUtilsService.isVivaldi()) {
+      return BrowserClientVendors.Vivaldi;
+    }
+
+    return BrowserClientVendors.Unknown;
   }
 
-  protected openDisablePasswordManagerLink(event: Event) {
+  protected async openURI(event: Event, uri: BrowserShortcutsUri | DisablePasswordManagerUri) {
     event.preventDefault();
-    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    BrowserApi.createNewTab(this.disablePasswordManagerLink);
+
+    // If the destination is a password management settings page, ask the user to confirm before proceeding
+    if (uri === DisablePasswordManagerUris[this.browserClientVendor]) {
+      await this.dialogService.openSimpleDialog({
+        ...(this.browserClientIsUnknown
+          ? {
+              content: { key: "confirmContinueToHelpCenterPasswordManagementContent" },
+              title: { key: "confirmContinueToHelpCenter" },
+            }
+          : {
+              content: { key: "confirmContinueToBrowserPasswordManagementSettingsContent" },
+              title: { key: "confirmContinueToBrowserSettingsTitle" },
+            }),
+        acceptButtonText: { key: "continue" },
+        acceptAction: async () => {
+          await BrowserApi.createNewTab(uri);
+        },
+        cancelButtonText: { key: "cancel" },
+        type: "info",
+      });
+
+      return;
+    }
+
+    // If the destination is a browser shortcut settings page, ask the user to confirm before proceeding
+    if (uri === BrowserShortcutsUris[this.browserClientVendor]) {
+      await this.dialogService.openSimpleDialog({
+        ...(this.browserClientIsUnknown
+          ? {
+              content: { key: "confirmContinueToHelpCenterKeyboardShortcutsContent" },
+              title: { key: "confirmContinueToHelpCenter" },
+            }
+          : {
+              content: { key: "confirmContinueToBrowserKeyboardShortcutSettingsContent" },
+              title: { key: "confirmContinueToBrowserSettingsTitle" },
+            }),
+        acceptButtonText: { key: "continue" },
+        acceptAction: async () => {
+          await BrowserApi.createNewTab(uri);
+        },
+        cancelButtonText: { key: "cancel" },
+        type: "info",
+      });
+
+      return;
+    }
+
+    await BrowserApi.createNewTab(uri);
   }
 
   async requestPrivacyPermission() {
     if (
-      this.autoFillOverlayVisibility === AutofillOverlayVisibility.Off ||
+      this.inlineMenuVisibility === AutofillOverlayVisibility.Off ||
       !this.canOverrideBrowserAutofillSetting ||
       (await this.browserAutofillSettingCurrentlyOverridden())
     ) {
@@ -225,9 +305,9 @@ export class AutofillComponent implements OnInit {
     await this.dialogService.openSimpleDialog({
       title: { key: "overrideDefaultBrowserAutofillTitle" },
       content: { key: "overrideDefaultBrowserAutofillDescription" },
-      acceptButtonText: { key: "makeDefault" },
+      acceptButtonText: { key: "continue" },
       acceptAction: async () => await this.handleOverrideDialogAccept(),
-      cancelButtonText: { key: "ignore" },
+      cancelButtonText: { key: "cancel" },
       type: "info",
     });
   }
