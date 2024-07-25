@@ -143,12 +143,11 @@ export class CipherFormComponent implements AfterViewInit, OnInit, OnChanges, Ci
   }
 
   /**
-   * Patches the updated cipher with the provided partial cipher. Used by child components to update the cipher
-   * as their form values change.
-   * @param cipher
+   * Method to update the cipherView with the new values. This method should be called by the child form components
+   * @param updateFn - A function that takes the current cipherView and returns the updated cipherView
    */
-  patchCipher(cipher: Partial<CipherView>): void {
-    this.updatedCipherView = Object.assign(this.updatedCipherView, cipher);
+  patchCipher(updateFn: (current: CipherView) => CipherView): void {
+    this.updatedCipherView = updateFn(this.updatedCipherView);
   }
 
   /**

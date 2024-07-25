@@ -70,13 +70,14 @@ describe("LoginDetailsSectionComponent", () => {
       totp: "123456",
     });
 
-    expect(cipherFormContainer.patchCipher).toHaveBeenLastCalledWith({
-      login: expect.objectContaining({
-        username: "new-username",
-        password: "secret-password",
-        totp: "123456",
-      }),
-    });
+    expect(cipherFormContainer.patchCipher).toHaveBeenCalled();
+    const patchFn = cipherFormContainer.patchCipher.mock.lastCall[0];
+
+    const updatedCipher = patchFn(new CipherView());
+
+    expect(updatedCipher.login.username).toBe("new-username");
+    expect(updatedCipher.login.password).toBe("secret-password");
+    expect(updatedCipher.login.totp).toBe("123456");
   });
 
   it("disables 'loginDetailsForm' when in partial-edit mode", async () => {
@@ -154,12 +155,13 @@ describe("LoginDetailsSectionComponent", () => {
         username: "new-username",
       });
 
-      expect(cipherFormContainer.patchCipher).toHaveBeenLastCalledWith({
-        login: expect.objectContaining({
-          username: "new-username",
-          password: "original-password",
-        }),
-      });
+      expect(cipherFormContainer.patchCipher).toHaveBeenCalled();
+      const patchFn = cipherFormContainer.patchCipher.mock.lastCall[0];
+
+      const updatedCipher = patchFn(new CipherView());
+
+      expect(updatedCipher.login.username).toBe("new-username");
+      expect(updatedCipher.login.password).toBe("original-password");
     });
   });
 
@@ -493,11 +495,13 @@ describe("LoginDetailsSectionComponent", () => {
 
       tick();
 
-      expect(cipherFormContainer.patchCipher).toHaveBeenLastCalledWith({
-        login: expect.objectContaining({
-          fido2Credentials: null,
-        }),
-      });
+      expect(cipherFormContainer.patchCipher).toHaveBeenCalled();
+      const patchFn = cipherFormContainer.patchCipher.mock.lastCall[0];
+
+      const updatedCipher = patchFn(new CipherView());
+
+      expect(updatedCipher.login.fido2Credentials).toBeNull();
+      expect(component.hasPasskey).toBe(false);
     }));
   });
 });
