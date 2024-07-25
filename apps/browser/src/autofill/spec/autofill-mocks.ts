@@ -7,7 +7,10 @@ import { CipherType } from "@bitwarden/common/vault/enums";
 import { CipherRepromptType } from "@bitwarden/common/vault/enums/cipher-reprompt-type";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 
-import { InlineMenuCipherData } from "../background/abstractions/overlay.background";
+import {
+  FocusedFieldData,
+  InlineMenuCipherData,
+} from "../background/abstractions/overlay.background";
 import AutofillField from "../models/autofill-field";
 import AutofillForm from "../models/autofill-form";
 import AutofillPageDetails from "../models/autofill-page-details";
@@ -243,7 +246,9 @@ export function createInitAutofillInlineMenuListMessageMock(
   };
 }
 
-export function createFocusedFieldDataMock(customFields = {}) {
+export function createFocusedFieldDataMock(
+  customFields: Partial<FocusedFieldData> = {},
+): FocusedFieldData {
   return {
     focusedFieldRects: {
       top: 1,

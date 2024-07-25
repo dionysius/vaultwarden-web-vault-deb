@@ -37,6 +37,8 @@ export type FocusedFieldData = {
   filledByCipherType?: CipherType;
   tabId?: number;
   frameId?: number;
+  accountCreationFieldType?: string;
+  showInlineMenuAccountCreation?: boolean;
 };
 
 export type InlineMenuElementPosition = {
@@ -67,10 +69,30 @@ export type NewCardCipherData = {
   cvv: string;
 };
 
+export type NewIdentityCipherData = {
+  title: string;
+  firstName: string;
+  middleName: string;
+  lastName: string;
+  fullName: string;
+  address1: string;
+  address2: string;
+  address3: string;
+  city: string;
+  state: string;
+  postalCode: string;
+  country: string;
+  company: string;
+  phone: string;
+  email: string;
+  username: string;
+};
+
 export type OverlayAddNewItemMessage = {
   addNewCipherType?: CipherType;
   login?: NewLoginCipherData;
   card?: NewCardCipherData;
+  identity?: NewIdentityCipherData;
 };
 
 export type CloseInlineMenuMessage = {
@@ -115,8 +137,13 @@ export type InlineMenuCipherData = {
   reprompt: CipherRepromptType;
   favorite: boolean;
   icon: WebsiteIconData;
+  accountCreationFieldType?: string;
   login?: { username: string };
   card?: string;
+  identity?: {
+    fullName: string;
+    username?: string;
+  };
 };
 
 export type BackgroundMessageParam = {
@@ -180,7 +207,7 @@ export type PortOnMessageHandlerParams = PortMessageParam & PortConnectionParam;
 
 export type InlineMenuButtonPortMessageHandlers = {
   [key: string]: CallableFunction;
-  triggerDelayedAutofillInlineMenuClosure: ({ port }: PortConnectionParam) => void;
+  triggerDelayedAutofillInlineMenuClosure: () => void;
   autofillInlineMenuButtonClicked: ({ port }: PortConnectionParam) => void;
   autofillInlineMenuBlurred: () => void;
   redirectAutofillInlineMenuFocusOut: ({ message, port }: PortOnMessageHandlerParams) => void;

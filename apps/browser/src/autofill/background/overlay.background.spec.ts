@@ -43,11 +43,11 @@ import {
 } from "../enums/autofill-overlay.enum";
 import { AutofillService } from "../services/abstractions/autofill.service";
 import {
-  createChromeTabMock,
   createAutofillPageDetailsMock,
-  createPortSpyMock,
+  createChromeTabMock,
   createFocusedFieldDataMock,
   createPageDetailMock,
+  createPortSpyMock,
 } from "../spec/autofill-mocks";
 import {
   flushPromises,
@@ -713,9 +713,22 @@ describe("OverlayBackground", () => {
       type: CipherType.Login,
       login: { username: "username-3", uri: url },
     });
+    const cipher4 = mock<CipherView>({
+      id: "id-4",
+      localData: { lastUsedDate: 222 },
+      name: "name-4",
+      type: CipherType.Identity,
+      identity: {
+        username: "username",
+        firstName: "Test",
+        lastName: "User",
+        email: "email@example.com",
+      },
+    });
 
-    beforeEach(() => {
+    beforeEach(async () => {
       activeAccountStatusMock$.next(AuthenticationStatus.Unlocked);
+      await initOverlayElementPorts();
     });
 
     it("skips updating the overlay ciphers if the user's auth status is not unlocked", async () => {
@@ -767,7 +780,10 @@ describe("OverlayBackground", () => {
       await overlayBackground.updateOverlayCiphers();
 
       expect(BrowserApi.getTabFromCurrentWindowId).toHaveBeenCalled();
-      expect(cipherService.getAllDecryptedForUrl).toHaveBeenCalledWith(url, [CipherType.Card]);
+      expect(cipherService.getAllDecryptedForUrl).toHaveBeenCalledWith(url, [
+        CipherType.Card,
+        CipherType.Identity,
+      ]);
       expect(cipherService.sortCiphersByLastUsedThenName).toHaveBeenCalled();
       expect(overlayBackground["inlineMenuCiphers"]).toStrictEqual(
         new Map([
@@ -804,7 +820,10 @@ describe("OverlayBackground", () => {
       await overlayBackground.updateOverlayCiphers(false);
 
       expect(BrowserApi.getTabFromCurrentWindowId).toHaveBeenCalled();
-      expect(cipherService.getAllDecryptedForUrl).toHaveBeenCalledWith(url, [CipherType.Card]);
+      expect(cipherService.getAllDecryptedForUrl).toHaveBeenCalledWith(url, [
+        CipherType.Card,
+        CipherType.Identity,
+      ]);
       expect(cipherService.sortCiphersByLastUsedThenName).toHaveBeenCalled();
       expect(overlayBackground["inlineMenuCiphers"]).toStrictEqual(
         new Map([
@@ -815,7 +834,6 @@ describe("OverlayBackground", () => {
     });
 
     it("posts an `updateOverlayListCiphers` message to the overlay list port, and send a `updateAutofillInlineMenuListCiphers` message to the tab indicating that the list of ciphers is populated", async () => {
-      overlayBackground["inlineMenuListPort"] = mock<chrome.runtime.Port>();
       overlayBackground["focusedFieldData"] = createFocusedFieldDataMock({ tabId: tab.id });
       cipherService.getAllDecryptedForUrl.mockResolvedValue([cipher1, cipher2]);
       cipherService.sortCiphersByLastUsedThenName.mockReturnValue(-1);
@@ -823,11 +841,12 @@ describe("OverlayBackground", () => {
 
       await overlayBackground.updateOverlayCiphers();
 
-      expect(overlayBackground["inlineMenuListPort"].postMessage).toHaveBeenCalledWith({
+      expect(listPortSpy.postMessage).toHaveBeenCalledWith({
         command: "updateAutofillInlineMenuListCiphers",
+        showInlineMenuAccountCreation: false,
         ciphers: [
           {
-            card: null,
+            accountCreationFieldType: undefined,
             favorite: cipher1.favorite,
             icon: {
               fallbackImage: "images/bwi-globe.png",
@@ -844,6 +863,205 @@ describe("OverlayBackground", () => {
             type: CipherType.Login,
           },
         ],
+      });
+    });
+
+    it("updates the inline menu list with card ciphers", async () => {
+      overlayBackground["focusedFieldData"] = createFocusedFieldDataMock({
+        tabId: tab.id,
+        filledByCipherType: CipherType.Card,
+      });
+      cipherService.getAllDecryptedForUrl.mockResolvedValue([cipher1, cipher2]);
+      cipherService.sortCiphersByLastUsedThenName.mockReturnValue(-1);
+      getTabFromCurrentWindowIdSpy.mockResolvedValueOnce(tab);
+
+      await overlayBackground.updateOverlayCiphers();
+
+      expect(listPortSpy.postMessage).toHaveBeenCalledWith({
+        command: "updateAutofillInlineMenuListCiphers",
+        showInlineMenuAccountCreation: false,
+        ciphers: [
+          {
+            accountCreationFieldType: undefined,
+            favorite: cipher2.favorite,
+            icon: {
+              fallbackImage: "",
+              icon: "bwi-credit-card",
+              image: undefined,
+              imageEnabled: true,
+            },
+            id: "inline-menu-cipher-0",
+            card: cipher2.card.subTitle,
+            name: cipher2.name,
+            reprompt: cipher2.reprompt,
+            type: CipherType.Card,
+          },
+        ],
+      });
+    });
+
+    describe("updating ciphers for an account creation inline menu", () => {
+      it("updates the ciphers with a list of identity ciphers that contain a username", async () => {
+        overlayBackground["focusedFieldData"] = createFocusedFieldDataMock({
+          tabId: tab.id,
+          accountCreationFieldType: "text",
+          showInlineMenuAccountCreation: true,
+        });
+        cipherService.getAllDecryptedForUrl.mockResolvedValue([cipher4, cipher2]);
+        cipherService.sortCiphersByLastUsedThenName.mockReturnValue(-1);
+        getTabFromCurrentWindowIdSpy.mockResolvedValueOnce(tab);
+
+        await overlayBackground.updateOverlayCiphers();
+
+        expect(listPortSpy.postMessage).toHaveBeenCalledWith({
+          command: "updateAutofillInlineMenuListCiphers",
+          showInlineMenuAccountCreation: true,
+          ciphers: [
+            {
+              accountCreationFieldType: "text",
+              favorite: cipher4.favorite,
+              icon: {
+                fallbackImage: "",
+                icon: "bwi-id-card",
+                image: undefined,
+                imageEnabled: true,
+              },
+              id: "inline-menu-cipher-1",
+              name: cipher4.name,
+              reprompt: cipher4.reprompt,
+              type: CipherType.Identity,
+              identity: {
+                fullName: `${cipher4.identity.firstName} ${cipher4.identity.lastName}`,
+                username: cipher4.identity.username,
+              },
+            },
+          ],
+        });
+      });
+
+      it("appends any found login ciphers to the list of identity ciphers", async () => {
+        overlayBackground["focusedFieldData"] = createFocusedFieldDataMock({
+          tabId: tab.id,
+          accountCreationFieldType: "text",
+          showInlineMenuAccountCreation: true,
+        });
+        cipherService.getAllDecryptedForUrl.mockResolvedValue([cipher1, cipher4]);
+        cipherService.sortCiphersByLastUsedThenName.mockReturnValue(-1);
+        getTabFromCurrentWindowIdSpy.mockResolvedValueOnce(tab);
+
+        await overlayBackground.updateOverlayCiphers();
+
+        expect(listPortSpy.postMessage).toHaveBeenCalledWith({
+          command: "updateAutofillInlineMenuListCiphers",
+          showInlineMenuAccountCreation: true,
+          ciphers: [
+            {
+              accountCreationFieldType: "text",
+              favorite: cipher4.favorite,
+              icon: {
+                fallbackImage: "",
+                icon: "bwi-id-card",
+                image: undefined,
+                imageEnabled: true,
+              },
+              id: "inline-menu-cipher-0",
+              name: cipher4.name,
+              reprompt: cipher4.reprompt,
+              type: CipherType.Identity,
+              identity: {
+                fullName: `${cipher4.identity.firstName} ${cipher4.identity.lastName}`,
+                username: cipher4.identity.username,
+              },
+            },
+            {
+              accountCreationFieldType: "text",
+              favorite: cipher1.favorite,
+              icon: {
+                fallbackImage: "images/bwi-globe.png",
+                icon: "bwi-globe",
+                image: "https://icons.bitwarden.com//jest-testing-website.com/icon.png",
+                imageEnabled: true,
+              },
+              id: "inline-menu-cipher-1",
+              login: {
+                username: cipher1.login.username,
+              },
+              name: cipher1.name,
+              reprompt: cipher1.reprompt,
+              type: CipherType.Login,
+            },
+          ],
+        });
+      });
+
+      it("skips any identity ciphers that do not contain a username or an email address", async () => {
+        overlayBackground["focusedFieldData"] = createFocusedFieldDataMock({
+          tabId: tab.id,
+          accountCreationFieldType: "email",
+          showInlineMenuAccountCreation: true,
+        });
+        const identityCipherWithoutUsername = mock<CipherView>({
+          id: "id-5",
+          localData: { lastUsedDate: 222 },
+          name: "name-5",
+          type: CipherType.Identity,
+          identity: {
+            username: "",
+            email: "",
+          },
+        });
+        cipherService.getAllDecryptedForUrl.mockResolvedValue([
+          cipher4,
+          identityCipherWithoutUsername,
+        ]);
+        cipherService.sortCiphersByLastUsedThenName.mockReturnValue(-1);
+        getTabFromCurrentWindowIdSpy.mockResolvedValueOnce(tab);
+
+        await overlayBackground.updateOverlayCiphers();
+
+        expect(listPortSpy.postMessage).toHaveBeenCalledWith({
+          command: "updateAutofillInlineMenuListCiphers",
+          showInlineMenuAccountCreation: true,
+          ciphers: [
+            {
+              accountCreationFieldType: "email",
+              favorite: cipher4.favorite,
+              icon: {
+                fallbackImage: "",
+                icon: "bwi-id-card",
+                image: undefined,
+                imageEnabled: true,
+              },
+              id: "inline-menu-cipher-1",
+              name: cipher4.name,
+              reprompt: cipher4.reprompt,
+              type: CipherType.Identity,
+              identity: {
+                fullName: `${cipher4.identity.firstName} ${cipher4.identity.lastName}`,
+                username: cipher4.identity.email,
+              },
+            },
+          ],
+        });
+      });
+
+      it("does not add the identity ciphers if the field is for a password field", async () => {
+        overlayBackground["focusedFieldData"] = createFocusedFieldDataMock({
+          tabId: tab.id,
+          accountCreationFieldType: "password",
+          showInlineMenuAccountCreation: true,
+        });
+        cipherService.getAllDecryptedForUrl.mockResolvedValue([cipher4]);
+        cipherService.sortCiphersByLastUsedThenName.mockReturnValue(-1);
+        getTabFromCurrentWindowIdSpy.mockResolvedValueOnce(tab);
+
+        await overlayBackground.updateOverlayCiphers();
+
+        expect(listPortSpy.postMessage).toHaveBeenCalledWith({
+          command: "updateAutofillInlineMenuListCiphers",
+          showInlineMenuAccountCreation: true,
+          ciphers: [],
+        });
       });
     });
   });
@@ -954,6 +1172,95 @@ describe("OverlayBackground", () => {
         expect(sendMessageSpy).toHaveBeenCalledWith("inlineAutofillMenuRefreshAddEditCipher");
         expect(openAddEditVaultItemPopoutSpy).toHaveBeenCalled();
       });
+
+      describe("creating a new identity cipher", () => {
+        it("populates an identity cipher view and creates it", async () => {
+          sendMockExtensionMessage(
+            {
+              command: "autofillOverlayAddNewVaultItem",
+              addNewCipherType: CipherType.Identity,
+              identity: {
+                title: "title",
+                firstName: "firstName",
+                middleName: "middleName",
+                lastName: "lastName",
+                fullName: "fullName",
+                address1: "address1",
+                address2: "address2",
+                address3: "address3",
+                city: "city",
+                state: "state",
+                postalCode: "postalCode",
+                country: "country",
+                company: "company",
+                phone: "phone",
+                email: "email",
+                username: "username",
+              },
+            },
+            sender,
+          );
+          await flushPromises();
+
+          expect(cipherService.setAddEditCipherInfo).toHaveBeenCalled();
+          expect(sendMessageSpy).toHaveBeenCalledWith("inlineAutofillMenuRefreshAddEditCipher");
+          expect(openAddEditVaultItemPopoutSpy).toHaveBeenCalled();
+        });
+
+        it("saves the first name based on the full name value", async () => {
+          sendMockExtensionMessage(
+            {
+              command: "autofillOverlayAddNewVaultItem",
+              addNewCipherType: CipherType.Identity,
+              identity: {
+                firstName: "",
+                lastName: "",
+                fullName: "fullName",
+              },
+            },
+            sender,
+          );
+          await flushPromises();
+
+          expect(cipherService.setAddEditCipherInfo).toHaveBeenCalled();
+        });
+
+        it("saves the first and middle names based on the full name value", async () => {
+          sendMockExtensionMessage(
+            {
+              command: "autofillOverlayAddNewVaultItem",
+              addNewCipherType: CipherType.Identity,
+              identity: {
+                firstName: "",
+                lastName: "",
+                fullName: "firstName middleName",
+              },
+            },
+            sender,
+          );
+          await flushPromises();
+
+          expect(cipherService.setAddEditCipherInfo).toHaveBeenCalled();
+        });
+
+        it("saves the first, middle, and last names based on the full name value", async () => {
+          sendMockExtensionMessage(
+            {
+              command: "autofillOverlayAddNewVaultItem",
+              addNewCipherType: CipherType.Identity,
+              identity: {
+                firstName: "",
+                lastName: "",
+                fullName: "firstName middleName lastName",
+              },
+            },
+            sender,
+          );
+          await flushPromises();
+
+          expect(cipherService.setAddEditCipherInfo).toHaveBeenCalled();
+        });
+      });
     });
 
     describe("checkIsInlineMenuCiphersPopulated message handler", () => {
@@ -1029,6 +1336,29 @@ describe("OverlayBackground", () => {
           { command: "unsetMostRecentlyFocusedField" },
           { frameId: firstSender.frameId },
         );
+      });
+
+      it("triggers an update of the identity ciphers present on a login field", async () => {
+        await initOverlayElementPorts();
+        activeAccountStatusMock$.next(AuthenticationStatus.Unlocked);
+        const tab = createChromeTabMock({ id: 2 });
+        overlayBackground["focusedFieldData"] = createFocusedFieldDataMock();
+        overlayBackground["isInlineMenuButtonVisible"] = true;
+        const sender = mock<chrome.runtime.MessageSender>({ tab, frameId: 100 });
+        const focusedFieldData = createFocusedFieldDataMock({
+          tabId: tab.id,
+          frameId: sender.frameId,
+          showInlineMenuAccountCreation: true,
+        });
+
+        sendMockExtensionMessage({ command: "updateFocusedFieldData", focusedFieldData }, sender);
+        await flushPromises();
+
+        expect(listPortSpy.postMessage).toHaveBeenCalledWith({
+          command: "updateAutofillInlineMenuListCiphers",
+          ciphers: [],
+          showInlineMenuAccountCreation: true,
+        });
       });
     });
 

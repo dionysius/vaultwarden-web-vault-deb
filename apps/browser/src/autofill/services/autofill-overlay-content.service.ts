@@ -12,9 +12,13 @@ import { CipherType } from "@bitwarden/common/vault/enums";
 
 import {
   FocusedFieldData,
+  NewCardCipherData,
+  NewIdentityCipherData,
+  NewLoginCipherData,
   SubFrameOffsetData,
 } from "../background/abstractions/overlay.background";
 import { AutofillExtensionMessage } from "../content/abstractions/autofill-init";
+import { AutofillFieldQualifier, AutofillFieldQualifierType } from "../enums/autofill-field.enums";
 import {
   AutofillOverlayElement,
   MAX_SUB_FRAME_DEPTH,
@@ -75,6 +79,54 @@ export class AutofillOverlayContentService implements AutofillOverlayContentServ
     checkMostRecentlyFocusedFieldHasValue: () => this.mostRecentlyFocusedFieldHasValue(),
     setupRebuildSubFrameOffsetsListeners: () => this.setupRebuildSubFrameOffsetsListeners(),
     destroyAutofillInlineMenuListeners: () => this.destroy(),
+  };
+  private readonly cardFieldQualifiers: Record<string, CallableFunction> = {
+    [AutofillFieldQualifier.cardholderName]:
+      this.inlineMenuFieldQualificationService.isFieldForCardholderName,
+    [AutofillFieldQualifier.cardNumber]:
+      this.inlineMenuFieldQualificationService.isFieldForCardNumber,
+    [AutofillFieldQualifier.cardExpirationMonth]:
+      this.inlineMenuFieldQualificationService.isFieldForCardExpirationMonth,
+    [AutofillFieldQualifier.cardExpirationYear]:
+      this.inlineMenuFieldQualificationService.isFieldForCardExpirationYear,
+    [AutofillFieldQualifier.cardExpirationDate]:
+      this.inlineMenuFieldQualificationService.isFieldForCardExpirationDate,
+    [AutofillFieldQualifier.cardCvv]: this.inlineMenuFieldQualificationService.isFieldForCardCvv,
+  };
+  private readonly identityFieldQualifiers: Record<string, CallableFunction> = {
+    [AutofillFieldQualifier.identityTitle]:
+      this.inlineMenuFieldQualificationService.isFieldForIdentityTitle,
+    [AutofillFieldQualifier.identityFirstName]:
+      this.inlineMenuFieldQualificationService.isFieldForIdentityFirstName,
+    [AutofillFieldQualifier.identityMiddleName]:
+      this.inlineMenuFieldQualificationService.isFieldForIdentityMiddleName,
+    [AutofillFieldQualifier.identityLastName]:
+      this.inlineMenuFieldQualificationService.isFieldForIdentityLastName,
+    [AutofillFieldQualifier.identityFullName]:
+      this.inlineMenuFieldQualificationService.isFieldForIdentityFullName,
+    [AutofillFieldQualifier.identityAddress1]:
+      this.inlineMenuFieldQualificationService.isFieldForIdentityAddress1,
+    [AutofillFieldQualifier.identityAddress2]:
+      this.inlineMenuFieldQualificationService.isFieldForIdentityAddress2,
+    [AutofillFieldQualifier.identityAddress3]:
+      this.inlineMenuFieldQualificationService.isFieldForIdentityAddress3,
+    [AutofillFieldQualifier.identityCity]:
+      this.inlineMenuFieldQualificationService.isFieldForIdentityCity,
+    [AutofillFieldQualifier.identityState]:
+      this.inlineMenuFieldQualificationService.isFieldForIdentityState,
+    [AutofillFieldQualifier.identityPostalCode]:
+      this.inlineMenuFieldQualificationService.isFieldForIdentityPostalCode,
+    [AutofillFieldQualifier.identityCountry]:
+      this.inlineMenuFieldQualificationService.isFieldForIdentityCountry,
+    [AutofillFieldQualifier.identityCompany]:
+      this.inlineMenuFieldQualificationService.isFieldForIdentityCompany,
+    [AutofillFieldQualifier.identityPhone]:
+      this.inlineMenuFieldQualificationService.isFieldForIdentityPhone,
+    [AutofillFieldQualifier.identityEmail]:
+      this.inlineMenuFieldQualificationService.isFieldForIdentityEmail,
+    [AutofillFieldQualifier.identityUsername]:
+      this.inlineMenuFieldQualificationService.isFieldForIdentityUsername,
+    [AutofillFieldQualifier.password]: this.inlineMenuFieldQualificationService.isNewPasswordField,
   };
 
   constructor(private inlineMenuFieldQualificationService: InlineMenuFieldQualificationService) {}
@@ -204,7 +256,7 @@ export class AutofillOverlayContentService implements AutofillOverlayContentServ
     const command = "autofillOverlayAddNewVaultItem";
 
     if (addNewCipherType === CipherType.Login) {
-      const login = {
+      const login: NewLoginCipherData = {
         username: this.userFilledFields["username"]?.value || "",
         password: this.userFilledFields["password"]?.value || "",
         uri: globalThis.document.URL,
@@ -217,7 +269,7 @@ export class AutofillOverlayContentService implements AutofillOverlayContentServ
     }
 
     if (addNewCipherType === CipherType.Card) {
-      const card = {
+      const card: NewCardCipherData = {
         cardholderName: this.userFilledFields["cardholderName"]?.value || "",
         number: this.userFilledFields["cardNumber"]?.value || "",
         expirationMonth: this.userFilledFields["cardExpirationMonth"]?.value || "",
@@ -227,6 +279,31 @@ export class AutofillOverlayContentService implements AutofillOverlayContentServ
       };
 
       void this.sendExtensionMessage(command, { addNewCipherType, card });
+
+      return;
+    }
+
+    if (addNewCipherType === CipherType.Identity) {
+      const identity: NewIdentityCipherData = {
+        title: this.userFilledFields["identityTitle"]?.value || "",
+        firstName: this.userFilledFields["identityFirstName"]?.value || "",
+        middleName: this.userFilledFields["identityMiddleName"]?.value || "",
+        lastName: this.userFilledFields["identityLastName"]?.value || "",
+        fullName: this.userFilledFields["identityFullName"]?.value || "",
+        address1: this.userFilledFields["identityAddress1"]?.value || "",
+        address2: this.userFilledFields["identityAddress2"]?.value || "",
+        address3: this.userFilledFields["identityAddress3"]?.value || "",
+        city: this.userFilledFields["identityCity"]?.value || "",
+        state: this.userFilledFields["identityState"]?.value || "",
+        postalCode: this.userFilledFields["identityPostalCode"]?.value || "",
+        country: this.userFilledFields["identityCountry"]?.value || "",
+        company: this.userFilledFields["identityCompany"]?.value || "",
+        phone: this.userFilledFields["identityPhone"]?.value || "",
+        email: this.userFilledFields["identityEmail"]?.value || "",
+        username: this.userFilledFields["identityUsername"]?.value || "",
+      };
+
+      void this.sendExtensionMessage(command, { addNewCipherType, identity });
     }
   }
 
@@ -459,67 +536,92 @@ export class AutofillOverlayContentService implements AutofillOverlayContentServ
       return;
     }
 
-    if (autofillFieldData.filledByCipherType === CipherType.Login) {
-      this.storeUserFilledLoginField(formFieldElement);
+    if (!autofillFieldData.fieldQualifier) {
+      switch (autofillFieldData.filledByCipherType) {
+        case CipherType.Login:
+          this.qualifyUserFilledLoginField(autofillFieldData);
+          break;
+        case CipherType.Card:
+          this.qualifyUserFilledCardField(autofillFieldData);
+          break;
+        case CipherType.Identity:
+          this.qualifyUserFilledIdentityField(autofillFieldData);
+          break;
+      }
     }
 
-    if (autofillFieldData.filledByCipherType === CipherType.Card) {
-      this.storeUserFilledCardField(formFieldElement, autofillFieldData);
-    }
+    this.storeQualifiedUserFilledField(formFieldElement, autofillFieldData);
   }
 
   /**
-   * Handles storing the user field login field to be used when adding a new vault item.
+   * Handles qualifying the user field login field to be used when adding a new vault item.
    *
-   * @param formFieldElement - The form field element that triggered the input event.
+   * @param autofillFieldData - Autofill field data captured from the form field element.
    */
-  private storeUserFilledLoginField(formFieldElement: ElementWithOpId<FillableFormFieldElement>) {
-    if (formFieldElement.type === "password") {
-      this.userFilledFields.password = formFieldElement;
+  private qualifyUserFilledLoginField(autofillFieldData: AutofillField) {
+    if (autofillFieldData.type === "password") {
+      autofillFieldData.fieldQualifier = AutofillFieldQualifier.password;
       return;
     }
 
-    this.userFilledFields.username = formFieldElement;
+    autofillFieldData.fieldQualifier = AutofillFieldQualifier.username;
   }
 
   /**
-   * Handles storing the user field card field to be used when adding a new vault item.
+   * Handles qualifying the user field card field to be used when adding a new vault item.
+   *
+   * @param autofillFieldData - Autofill field data captured from the form field element.
+   */
+  private qualifyUserFilledCardField(autofillFieldData: AutofillField) {
+    for (const [fieldQualifier, fieldQualifierFunction] of Object.entries(
+      this.cardFieldQualifiers,
+    )) {
+      if (fieldQualifierFunction(autofillFieldData)) {
+        autofillFieldData.fieldQualifier = fieldQualifier as AutofillFieldQualifierType;
+        return;
+      }
+    }
+  }
+
+  /**
+   *  Handles qualifying the user field identity field to be used when adding a new vault item.
+   *
+   * @param autofillFieldData - Autofill field data captured from the form field element.
+   */
+  private qualifyUserFilledIdentityField(autofillFieldData: AutofillField) {
+    for (const [fieldQualifier, fieldQualifierFunction] of Object.entries(
+      this.identityFieldQualifiers,
+    )) {
+      if (fieldQualifierFunction(autofillFieldData)) {
+        autofillFieldData.fieldQualifier = fieldQualifier as AutofillFieldQualifierType;
+        return;
+      }
+    }
+  }
+
+  /**
+   * Stores the qualified user filled filed to allow for referencing its value when adding a new vault item.
    *
    * @param formFieldElement - The form field element that triggered the input event.
    * @param autofillFieldData - Autofill field data captured from the form field element.
    */
-  private storeUserFilledCardField(
+  private storeQualifiedUserFilledField(
     formFieldElement: ElementWithOpId<FillableFormFieldElement>,
     autofillFieldData: AutofillField,
   ) {
-    if (this.inlineMenuFieldQualificationService.isFieldForCardholderName(autofillFieldData)) {
-      this.userFilledFields.cardholderName = formFieldElement;
+    if (!autofillFieldData.fieldQualifier) {
       return;
     }
 
-    if (this.inlineMenuFieldQualificationService.isFieldForCardNumber(autofillFieldData)) {
-      this.userFilledFields.cardNumber = formFieldElement;
-      return;
+    const identityLoginFields: AutofillFieldQualifierType[] = [
+      AutofillFieldQualifier.identityUsername,
+      AutofillFieldQualifier.identityEmail,
+    ];
+    if (identityLoginFields.includes(autofillFieldData.fieldQualifier)) {
+      this.userFilledFields[AutofillFieldQualifier.username] = formFieldElement;
     }
 
-    if (this.inlineMenuFieldQualificationService.isFieldForCardExpirationMonth(autofillFieldData)) {
-      this.userFilledFields.cardExpirationMonth = formFieldElement;
-      return;
-    }
-
-    if (this.inlineMenuFieldQualificationService.isFieldForCardExpirationYear(autofillFieldData)) {
-      this.userFilledFields.cardExpirationYear = formFieldElement;
-      return;
-    }
-
-    if (this.inlineMenuFieldQualificationService.isFieldForCardExpirationDate(autofillFieldData)) {
-      this.userFilledFields.cardExpirationDate = formFieldElement;
-      return;
-    }
-
-    if (this.inlineMenuFieldQualificationService.isFieldForCardCvv(autofillFieldData)) {
-      this.userFilledFields.cardCvv = formFieldElement;
-    }
+    this.userFilledFields[autofillFieldData.fieldQualifier] = formFieldElement;
   }
 
   /**
@@ -665,10 +767,25 @@ export class AutofillOverlayContentService implements AutofillOverlayContentServ
     const { width, height, top, left } =
       await this.getMostRecentlyFocusedFieldRects(formFieldElement);
     const autofillFieldData = this.formFieldElements.get(formFieldElement);
+    let accountCreationFieldType = null;
+    if (
+      (autofillFieldData?.showInlineMenuAccountCreation ||
+        autofillFieldData?.filledByCipherType === CipherType.Login) &&
+      this.inlineMenuFieldQualificationService.isUsernameField(autofillFieldData)
+    ) {
+      accountCreationFieldType = this.inlineMenuFieldQualificationService.isEmailField(
+        autofillFieldData,
+      )
+        ? "email"
+        : autofillFieldData.type;
+    }
+
     this.focusedFieldData = {
       focusedFieldStyles: { paddingRight, paddingLeft },
       focusedFieldRects: { width, height, top, left },
       filledByCipherType: autofillFieldData?.filledByCipherType,
+      showInlineMenuAccountCreation: autofillFieldData?.showInlineMenuAccountCreation,
+      accountCreationFieldType,
     };
 
     await this.sendExtensionMessage("updateFocusedFieldData", {
@@ -760,6 +877,27 @@ export class AutofillOverlayContentService implements AutofillOverlayContentServ
       )
     ) {
       autofillFieldData.filledByCipherType = CipherType.Card;
+      return false;
+    }
+
+    if (
+      this.inlineMenuFieldQualificationService.isFieldForAccountCreationForm(
+        autofillFieldData,
+        pageDetails,
+      )
+    ) {
+      autofillFieldData.filledByCipherType = CipherType.Identity;
+      autofillFieldData.showInlineMenuAccountCreation = true;
+      return false;
+    }
+
+    if (
+      this.inlineMenuFieldQualificationService.isFieldForIdentityForm(
+        autofillFieldData,
+        pageDetails,
+      )
+    ) {
+      autofillFieldData.filledByCipherType = CipherType.Identity;
       return false;
     }
 

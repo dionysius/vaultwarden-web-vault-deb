@@ -16,8 +16,10 @@ describe("InlineMenuFieldQualificationService", () => {
       forms: {},
       fields: [],
     });
+    chrome.runtime.sendMessage = jest.fn().mockImplementation((message) => ({
+      result: message.command === "getInlineMenuFieldQualificationFeatureFlag",
+    }));
     inlineMenuFieldQualificationService = new InlineMenuFieldQualificationService();
-    inlineMenuFieldQualificationService["inlineMenuFieldQualificationFlagSet"] = true;
   });
 
   describe("isFieldForLoginForm", () => {
@@ -862,6 +864,75 @@ describe("InlineMenuFieldQualificationService", () => {
           ).toBe(true);
         });
       });
+    });
+  });
+
+  describe("isFieldForAccountCreationForm", () => {
+    it("validates a field for an account creation if the field is formless but at least one new password field exists in the page details", () => {
+      const field = mock<AutofillField>({
+        placeholder: "username",
+        autoCompleteType: "username",
+        type: "text",
+        htmlName: "username",
+        htmlID: "username",
+      });
+      const passwordField = mock<AutofillField>({
+        placeholder: "new password",
+        autoCompleteType: "new-password",
+        type: "password",
+        htmlName: "new-password",
+        htmlID: "new-password",
+      });
+      pageDetails.forms = {};
+      pageDetails.fields = [field, passwordField];
+
+      expect(
+        inlineMenuFieldQualificationService.isFieldForAccountCreationForm(field, pageDetails),
+      ).toBe(true);
+    });
+
+    it("validates a field for an account creation if the field is formless and contains an account creation keyword", () => {
+      const field = mock<AutofillField>({
+        placeholder: "register username",
+        autoCompleteType: "username",
+        type: "text",
+        htmlName: "username",
+        htmlID: "username",
+      });
+      pageDetails.forms = {};
+      pageDetails.fields = [field];
+
+      expect(
+        inlineMenuFieldQualificationService.isFieldForAccountCreationForm(field, pageDetails),
+      ).toBe(true);
+    });
+  });
+
+  describe("isFieldForIdentityUsername", () => {
+    it("returns true if the field contains a keyword indicating that it is for a username field", () => {
+      const field = mock<AutofillField>({
+        placeholder: "user-name",
+        autoCompleteType: "",
+        type: "text",
+        htmlName: "user-name",
+        htmlID: "user-name",
+      });
+
+      expect(inlineMenuFieldQualificationService.isFieldForIdentityUsername(field)).toBe(true);
+    });
+  });
+
+  describe("isEmailField", () => {
+    it("returns true if the field type is of `email`", () => {
+      const field = mock<AutofillField>({
+        placeholder: "email",
+        autoCompleteType: "",
+        type: "email",
+        htmlName: "email",
+        htmlID: "email",
+      });
+
+      expect(inlineMenuFieldQualificationService.isEmailField(field)).toBe(true);
     });
   });
 });

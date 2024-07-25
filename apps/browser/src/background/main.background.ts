@@ -347,6 +347,7 @@ export default class MainBackground {
   kdfConfigService: kdfConfigServiceAbstraction;
   offscreenDocumentService: OffscreenDocumentService;
   syncServiceListener: SyncServiceListener;
+  themeStateService: DefaultThemeStateService;
 
   onUpdatedRan: boolean;
   onReplacedRan: boolean;
@@ -568,7 +569,7 @@ export default class MainBackground {
       migrationRunner,
     );
 
-    const themeStateService = new DefaultThemeStateService(this.globalStateProvider);
+    this.themeStateService = new DefaultThemeStateService(this.globalStateProvider);
 
     this.masterPasswordService = new MasterPasswordService(
       this.stateProvider,
@@ -1055,7 +1056,7 @@ export default class MainBackground {
         this.domainSettingsService,
         this.environmentService,
         this.logService,
-        themeStateService,
+        this.themeStateService,
         this.configService,
       );
 
@@ -1147,47 +1148,6 @@ export default class MainBackground {
     }
 
     this.userAutoUnlockKeyService = new UserAutoUnlockKeyService(this.cryptoService);
-
-    this.configService
-      .getFeatureFlag(FeatureFlag.InlineMenuPositioningImprovements)
-      .then(async (enabled) => {
-        if (!enabled) {
-          this.overlayBackground = new LegacyOverlayBackground(
-            this.cipherService,
-            this.autofillService,
-            this.authService,
-            this.environmentService,
-            this.domainSettingsService,
-            this.autofillSettingsService,
-            this.i18nService,
-            this.platformUtilsService,
-            themeStateService,
-          );
-        } else {
-          this.overlayBackground = new OverlayBackground(
-            this.logService,
-            this.cipherService,
-            this.autofillService,
-            this.authService,
-            this.environmentService,
-            this.domainSettingsService,
-            this.autofillSettingsService,
-            this.i18nService,
-            this.platformUtilsService,
-            themeStateService,
-          );
-        }
-
-        this.tabsBackground = new TabsBackground(
-          this,
-          this.notificationBackground,
-          this.overlayBackground,
-        );
-
-        await this.overlayBackground.init();
-        await this.tabsBackground.init();
-      })
-      .catch((error) => this.logService.error(`Error initializing OverlayBackground: ${error}`));
   }
 
   async bootstrap() {
@@ -1238,11 +1198,13 @@ export default class MainBackground {
       );
     }
 
+    await this.initOverlayAndTabsBackground();
+
     return new Promise<void>((resolve) => {
       setTimeout(async () => {
         await this.refreshBadge();
         await this.fullSync(true);
-        await this.taskSchedulerService.setInterval(
+        this.taskSchedulerService.setInterval(
           ScheduledTaskNames.scheduleNextSyncInterval,
           5 * 60 * 1000, // check every 5 minutes
         );
@@ -1508,5 +1470,51 @@ export default class MainBackground {
     if (override || lastSyncAgo >= syncInternal) {
       await this.syncService.fullSync(override);
     }
+  }
+
+  /**
+   * Temporary solution to handle initialization of the overlay background behind a feature flag.
+   * Will be reverted to instantiation within the constructor once the feature flag is removed.
+   */
+  private async initOverlayAndTabsBackground() {
+    const inlineMenuPositioningImprovementsEnabled = await this.configService.getFeatureFlag(
+      FeatureFlag.InlineMenuPositioningImprovements,
+    );
+
+    if (!inlineMenuPositioningImprovementsEnabled) {
+      this.overlayBackground = new LegacyOverlayBackground(
+        this.cipherService,
+        this.autofillService,
+        this.authService,
+        this.environmentService,
+        this.domainSettingsService,
+        this.autofillSettingsService,
+        this.i18nService,
+        this.platformUtilsService,
+        this.themeStateService,
+      );
+    } else {
+      this.overlayBackground = new OverlayBackground(
+        this.logService,
+        this.cipherService,
+        this.autofillService,
+        this.authService,
+        this.environmentService,
+        this.domainSettingsService,
+        this.autofillSettingsService,
+        this.i18nService,
+        this.platformUtilsService,
+        this.themeStateService,
+      );
+    }
+
+    this.tabsBackground = new TabsBackground(
+      this,
+      this.notificationBackground,
+      this.overlayBackground,
+    );
+
+    await this.overlayBackground.init();
+    await this.tabsBackground.init();
   }
 }
