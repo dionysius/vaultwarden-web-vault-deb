@@ -2799,12 +2799,6 @@
   "accessControl": {
     "message": "Access control"
   },
-  "groupAccessAllItems": {
-    "message": "This group can access and modify all items."
-  },
-  "groupAccessSelectedCollections": {
-    "message": "This group can access only the selected collections."
-  },
   "readOnly": {
     "message": "Read only"
   },
@@ -2849,12 +2843,6 @@
   },
   "userUsingTwoStep": {
     "message": "This user is using two-step login to protect their account."
-  },
-  "userAccessAllItems": {
-    "message": "This user can access and modify all items."
-  },
-  "userAccessSelectedCollections": {
-    "message": "This user can access only the selected collections."
   },
   "search": {
     "message": "Search"
