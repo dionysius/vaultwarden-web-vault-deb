@@ -17,6 +17,7 @@ import {
   RegistrationStartComponent,
   RegistrationStartSecondaryComponent,
   RegistrationStartSecondaryComponentData,
+  SetPasswordJitComponent,
   LockIcon,
   RegistrationLinkExpiredComponent,
 } from "@bitwarden/auth/angular";
@@ -205,6 +206,15 @@ const routes: Routes = [
             component: RegistrationFinishComponent,
           },
         ],
+      },
+      {
+        path: "set-password-jit",
+        canActivate: [canAccessFeature(FeatureFlag.EmailVerification)],
+        component: SetPasswordJitComponent,
+        data: {
+          pageTitle: "joinOrganization",
+          pageSubtitle: "finishJoiningThisOrganizationBySettingAMasterPassword",
+        } satisfies AnonLayoutWrapperData,
       },
       {
         path: "signup-link-expired",

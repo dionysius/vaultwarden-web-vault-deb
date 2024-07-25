@@ -16,6 +16,7 @@ import {
   RegistrationStartComponent,
   RegistrationStartSecondaryComponent,
   RegistrationStartSecondaryComponentData,
+  SetPasswordJitComponent,
 } from "@bitwarden/auth/angular";
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 
@@ -408,6 +409,15 @@ const routes: Routes = [
             component: RegistrationFinishComponent,
           },
         ],
+      },
+      {
+        path: "set-password-jit",
+        canActivate: [canAccessFeature(FeatureFlag.EmailVerification)],
+        component: SetPasswordJitComponent,
+        data: {
+          pageTitle: "joinOrganization",
+          pageSubtitle: "finishJoiningThisOrganizationBySettingAMasterPassword",
+        } satisfies AnonLayoutWrapperData,
       },
     ],
   },
