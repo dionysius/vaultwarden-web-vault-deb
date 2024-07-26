@@ -43,10 +43,10 @@
     "message": "持卡人姓名"
   },
   "loginCredentials": {
-    "message": "Login credentials"
+    "message": "登录凭据"
   },
   "authenticatorKey": {
-    "message": "Authenticator key"
+    "message": "验证器密钥"
   },
   "number": {
     "message": "号码"
@@ -145,13 +145,13 @@
     "message": "验证器密钥 (TOTP)"
   },
   "totpHelperTitle": {
-    "message": "Make 2-step verification seamless"
+    "message": "无缝两步验证"
   },
   "totpHelper": {
-    "message": "Bitwarden can store and fill 2-step verification codes. Copy and paste the key into this field."
+    "message": "Bitwarden 可以存储并填充两步验证码。复制并粘贴密钥到此字段。"
   },
   "totpHelperWithCapture": {
-    "message": "Bitwarden can store and fill 2-step verification codes. Select the camera icon to take a screenshot of this website's authenticator QR code, or copy and paste the key into this field."
+    "message": "Bitwarden 可以存储并填充两步验证码。选择相机图标来截取此网站的验证器二维码，或者手动复制并粘贴密钥到此字段。"
   },
   "folder": {
     "message": "文件夹"
@@ -570,6 +570,24 @@
       }
     }
   },
+  "itemsMovedToOrg": {
+    "message": "项目已移动到 $ORGNAME$",
+    "placeholders": {
+      "orgname": {
+        "content": "$1",
+        "example": "Company Name"
+      }
+    }
+  },
+  "itemMovedToOrg": {
+    "message": "项目已移动到 $ORGNAME$",
+    "placeholders": {
+      "orgname": {
+        "content": "$1",
+        "example": "Company Name"
+      }
+    }
+  },
   "deleteItem": {
     "message": "删除项目"
   },
@@ -628,16 +646,16 @@
     "message": "您的登录会话已过期。"
   },
   "restartRegistration": {
-    "message": "Restart registration"
+    "message": "重新开始注册"
   },
   "expiredLink": {
-    "message": "Expired link"
+    "message": "失效链接"
   },
   "pleaseRestartRegistrationOrTryLoggingIn": {
-    "message": "Please restart registration or try logging in."
+    "message": "请重新注册或尝试登录。"
   },
   "youMayAlreadyHaveAnAccount": {
-    "message": "You may already have an account"
+    "message": "您可能已经有一个账户了"
   },
   "logOutConfirmation": {
     "message": "确定要注销吗？"
@@ -1488,8 +1506,8 @@
   "importEncKeyError": {
     "message": "解密导出的文件时出错。您的加密密钥与导出数据时使用的加密密钥不匹配。"
   },
-  "importDestination": {
-    "message": "导入目的地"
+  "destination": {
+    "message": "Destination"
   },
   "learnAboutImportOptions": {
     "message": "了解您的导入选项"
@@ -2749,7 +2767,7 @@
     "message": "确定要删除此群组吗？"
   },
   "deleteMultipleGroupsConfirmation": {
-    "message": "确定要删除如下 $QUANTITY$ 个群组吗？",
+    "message": "确定要删除以下 $QUANTITY$ 个群组吗？",
     "placeholders": {
       "quantity": {
         "content": "$1",
@@ -2780,12 +2798,6 @@
   },
   "accessControl": {
     "message": "访问控制"
-  },
-  "groupAccessAllItems": {
-    "message": "此群组可以访问和修改所有项目。"
-  },
-  "groupAccessSelectedCollections": {
-    "message": "此群组只能访问选定的集合。"
   },
   "readOnly": {
     "message": "只读"
@@ -2831,12 +2843,6 @@
   },
   "userUsingTwoStep": {
     "message": "此用户正在使用两步登录来保护他们的账户。"
-  },
-  "userAccessAllItems": {
-    "message": "此用户可以访问和修改所有项目。"
-  },
-  "userAccessSelectedCollections": {
-    "message": "此用户只能访问选定的集合。"
   },
   "search": {
     "message": "搜索"
@@ -3328,7 +3334,7 @@
     "message": "设备"
   },
   "creatingAccountOn": {
-    "message": "创建账户于"
+    "message": "正创建账户于"
   },
   "checkYourEmail": {
     "message": "检查您的电子邮箱"
@@ -3452,6 +3458,9 @@
   },
   "joinOrganizationDesc": {
     "message": "您已被邀请加入上面的组织。要接受邀请，您需要登录或者创建一个 Bitwarden 账户。"
+  },
+  "finishJoiningThisOrganizationBySettingAMasterPassword": {
+    "message": "通过设置主密码完成加入此组织。"
   },
   "inviteAccepted": {
     "message": "邀请已接受"
@@ -3811,7 +3820,7 @@
     "message": "您尚未选择任何内容。"
   },
   "receiveMarketingEmailsV2": {
-    "message": "Get advice, announcements, and research opportunities from Bitwarden in your inbox."
+    "message": "获取来自 Bitwarden 的建议、公告和调研电子邮件。"
   },
   "unsubscribe": {
     "message": "取消订阅"
@@ -4377,6 +4386,9 @@
     "message": "Send 链接",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
+  "copyLink": {
+    "message": "Copy link"
+  },
   "copySendLink": {
     "message": "复制 Send 链接",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -4792,6 +4804,75 @@
     "message": "或",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more, see how it works, **or** try it now.'"
   },
+  "developmentDevOpsAndITTeamsChooseBWSecret": {
+    "message": "开发 DevOps 和 IT 团队选择 Bitwarden 机密管理器来安全管理和部署他们的基础设施和机器秘密。"
+  },
+  "centralizeSecretsManagement": {
+    "message": "集中管理秘密。"
+  },
+  "centralizeSecretsManagementDescription": {
+    "message": "Securely store and manage secrets in one location to prevent secret sprawl across your organization."
+  },
+  "preventSecretLeaks": {
+    "message": "Prevent secret leaks."
+  },
+  "preventSecretLeaksDescription": {
+    "message": "Protect secrets with end-to-end encryption. No more hard coding secrets or sharing through .env files."
+  },
+  "enhanceDeveloperProductivity": {
+    "message": "Enhance developer productivity."
+  },
+  "enhanceDeveloperProductivityDescription": {
+    "message": "Programmatically retrieve and deploy secrets at runtime so developers can focus on what matters most, like improving code quality."
+  },
+  "strengthenBusinessSecurity": {
+    "message": "Strengthen business security."
+  },
+  "strengthenBusinessSecurityDescription": {
+    "message": "Maintain tight control over machine and human access to secrets with SSO integrations, event logs, and access rotation."
+  },
+  "tryItNow": {
+    "message": "Try it now"
+  },
+  "sendRequest": {
+    "message": "Send request"
+  },
+  "addANote": {
+    "message": "Add a note"
+  },
+  "bitwardenSecretsManager": {
+    "message": "Bitwarden Secrets Manager"
+  },
+  "moreProductsFromBitwarden": {
+    "message": "More products from Bitwarden"
+  },
+  "requestAccessToSecretsManager": {
+    "message": "Request access to Secrets Manager"
+  },
+  "youNeedApprovalFromYourAdminToTrySecretsManager": {
+    "message": "You need approval from your administrator to try Secrets Manager."
+  },
+  "smAccessRequestEmailSent": {
+    "message": "Access request for secrets manager email sent to admins."
+  },
+  "requestAccessSMDefaultEmailContent": {
+    "message": "Hi,\n\nI am requesting a subscription to Bitwarden Secrets Manager for our team. Your support would mean a great deal!\n\nBitwarden Secrets Manager is an end-to-end encrypted secrets management solution for securely storing, sharing, and deploying machine credentials like API keys, database passwords, and authentication certificates.\n\nSecrets Manager will help us to:\n\n- Improve security\n- Streamline operations\n- Prevent costly secret leaks\n\nTo request a free trial for our team, please reach out to Bitwarden.\n\nThank you for your help!"
+  },
+  "giveMembersAccess": {
+    "message": "Give members access:"
+  },
+  "viewAndSelectTheMembers": {
+    "message": "view and select the members you want to give access to Secrets Manager."
+  },
+  "openYourOrganizations": {
+    "message": "Open your organization's"
+  },
+  "usingTheMenuSelect": {
+    "message": "Using the menu, select"
+  },
+  "toGrantAccessToSelectedMembers": {
+    "message": "to grant access to selected members."
+  },
   "sendVaultCardTryItNow": {
     "message": "立即体验",
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more, see how it works, or **try it now**.'"
@@ -4927,7 +5008,7 @@
     "message": "此用户"
   },
   "resetPasswordMasterPasswordPolicyInEffect": {
-    "message": "一个或多个组织策略要求主密码满足下列要求："
+    "message": "一个或多个组织策略要求主密码满足以下要求："
   },
   "resetPasswordSuccess": {
     "message": "密码重置成功！"
@@ -5032,7 +5113,7 @@
     "message": "成功恢复组织的访问权限"
   },
   "bulkFilteredMessage": {
-    "message": "已排除，不适用于此操作"
+    "message": "已拒绝，不适用于此操作"
   },
   "fingerprint": {
     "message": "指纹"
@@ -7366,7 +7447,7 @@
     "description": "The individual description shown to the user when the user doesn't have access to delete a project."
   },
   "smProjectsDeleteBulkConfirmation": {
-    "message": "无法删除下列工程。是否继续？",
+    "message": "以下工程无法删除。是否继续？",
     "description": "The message shown to the user when bulk deleting projects and the user doesn't have access to some projects."
   },
   "updateKdfSettings": {
@@ -7915,7 +7996,10 @@
   "assignToTheseCollections": {
     "message": "分配到这些集合"
   },
-  "bulkCollectionAssignmentDialogDescription": {
+  "bulkCollectionAssignmentDialogDescriptionSingular": {
+    "message": "只有具有这些集合访问权限的组织成员才能看到这个项目。"
+  },
+  "bulkCollectionAssignmentDialogDescriptionPlural": {
     "message": "只有具有这些集合访问权限的组织成员才能看到这些项目。"
   },
   "selectCollectionsToAssign": {
@@ -7956,7 +8040,7 @@
     "message": "剩余"
   },
   "unlinkOrganization": {
-    "message": "取消链接组织"
+    "message": "脱离组织"
   },
   "manageSeats": {
     "message": "管理席位"
@@ -8570,27 +8654,42 @@
   "selectFolder": {
     "message": "选择文件夹"
   },
-  "personalItemsTransferWarning": {
-    "message": "$PERSONAL_ITEMS_COUNT$ 将永久转移到所选组织。您将不再拥有这些项目。",
+  "personalItemTransferWarningSingular": {
+    "message": "1 个项目将永久转移到所选组织。您将不再拥有该项目。"
+  },
+  "personalItemsTransferWarningPlural": {
+    "message": "$PERSONAL_ITEMS_COUNT$ 个项目将永久转移到所选组织。您将不再拥有这些项目。",
     "placeholders": {
       "personal_items_count": {
         "content": "$1",
-        "example": "2 items"
+        "example": "2"
       }
     }
   },
-  "personalItemsWithOrgTransferWarning": {
-    "message": "$PERSONAL_ITEMS_COUNT$ 将永久转移到 $ORG$。您将不再拥有这些项目。",
+  "personalItemWithOrgTransferWarningSingular": {
+    "message": "1 个项目将永久转移到 $ORG$ 。您将不再拥有该项目。",
+    "placeholders": {
+      "org": {
+        "content": "$1",
+        "example": "Organization name"
+      }
+    }
+  },
+  "personalItemsWithOrgTransferWarningPlural": {
+    "message": "$PERSONAL_ITEMS_COUNT$ 个项目将永久转移到 $ORG$ 。您将不再拥有这些项目。",
     "placeholders": {
       "personal_items_count": {
         "content": "$1",
-        "example": "2 items"
+        "example": "2"
       },
       "org": {
         "content": "$2",
         "example": "Organization name"
       }
     }
+  },
+  "data": {
+    "message": "Data"
   },
   "purchasedSeatsRemoved": {
     "message": "购买的席位已移除"
