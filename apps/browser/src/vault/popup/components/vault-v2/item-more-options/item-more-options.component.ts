@@ -152,4 +152,15 @@ export class ItemMoreOptionsComponent {
       } as AddEditQueryParams,
     });
   }
+
+  /** Prompts for password when necessary then navigates to the assign collections route */
+  async conditionallyNavigateToAssignCollections() {
+    if (this.cipher.reprompt && !(await this.passwordRepromptService.showPasswordPrompt())) {
+      return;
+    }
+
+    await this.router.navigate(["/assign-collections"], {
+      queryParams: { cipherId: this.cipher.id },
+    });
+  }
 }
