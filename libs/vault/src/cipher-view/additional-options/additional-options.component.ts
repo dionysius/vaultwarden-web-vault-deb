@@ -13,8 +13,8 @@ import {
 } from "@bitwarden/components";
 
 @Component({
-  selector: "app-additional-information",
-  templateUrl: "additional-information.component.html",
+  selector: "app-additional-options",
+  templateUrl: "additional-options.component.html",
   standalone: true,
   imports: [
     CommonModule,
@@ -28,6 +28,6 @@ import {
     FormFieldModule,
   ],
 })
-export class AdditionalInformationComponent {
+export class AdditionalOptionsComponent {
   @Input() notes: string;
 }
