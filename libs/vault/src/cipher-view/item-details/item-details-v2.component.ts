@@ -8,10 +8,10 @@ import { CollectionView } from "@bitwarden/common/vault/models/view/collection.v
 import { FolderView } from "@bitwarden/common/vault/models/view/folder.view";
 import {
   CardComponent,
+  FormFieldModule,
   SectionComponent,
   SectionHeaderComponent,
   TypographyModule,
-  FormFieldModule,
 } from "@bitwarden/components";
 
 import { OrgIconDirective } from "../../components/org-icon.directive";
