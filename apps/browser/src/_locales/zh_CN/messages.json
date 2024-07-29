@@ -14,7 +14,7 @@
     "message": "登录或者创建一个账户来访问您的安全密码库。"
   },
   "inviteAccepted": {
-    "message": "Invitation accepted"
+    "message": "邀请已接受"
   },
   "createAccount": {
     "message": "创建账户"
@@ -72,10 +72,10 @@
     "message": "主密码提示（可选）"
   },
   "joinOrganization": {
-    "message": "Join organization"
+    "message": "加入组织"
   },
   "finishJoiningThisOrganizationBySettingAMasterPassword": {
-    "message": "Finish joining this organization by setting a master password."
+    "message": "通过设置主密码完成加入此组织。"
   },
   "tab": {
     "message": "标签页"
@@ -808,7 +808,7 @@
     "message": "在标签页上列出支付卡项目，以便于自动填充。"
   },
   "showIdentitiesInVaultView": {
-    "message": "在密码库视图中将支身份显示为自动填充建议"
+    "message": "在密码库视图中将身份显示为自动填充建议"
   },
   "showIdentitiesCurrentTab": {
     "message": "在标签页上显示身份"
@@ -1279,7 +1279,7 @@
     "message": "页面加载时自动填充"
   },
   "enableAutoFillOnPageLoadDesc": {
-    "message": "如果检测到登录表单，则在网页加载时执行自动填充。"
+    "message": "网页加载时如果检测到登录表单，则执行自动填充。"
   },
   "autofillOnPageLoadWarning": {
     "message": "$OPENTAG$警告：$CLOSETAG$不完整或不信任的网站可以利用页面加载时的自动填充功能。",
@@ -2090,7 +2090,7 @@
     "message": "密码保护"
   },
   "copyLink": {
-    "message": "Copy link"
+    "message": "复制链接"
   },
   "copySendLink": {
     "message": "复制 Send 链接",
@@ -3049,7 +3049,7 @@
     "description": "Text to display in overlay when the account is locked."
   },
   "unlockYourAccountToViewAutofillSuggestions": {
-    "message": "Unlock your account to view autofill suggestions",
+    "message": "解锁您的账户以查看自动填充建议",
     "description": "Text to display in overlay when the account is locked."
   },
   "unlockAccount": {
@@ -3057,7 +3057,7 @@
     "description": "Button text to display in overlay when the account is locked."
   },
   "unlockAccountAria": {
-    "message": "Unlock your account, opens in a new window",
+    "message": "解锁您的账户（在新窗口中打开）",
     "description": "Screen reader text (aria-label) for unlock account button in overlay"
   },
   "fillCredentialsFor": {
@@ -3081,27 +3081,27 @@
     "description": "Screen reader text (aria-label) for new item button in overlay"
   },
   "newLogin": {
-    "message": "New login",
+    "message": "新增登录",
     "description": "Button text to display within inline menu when there are no matching items on a login field"
   },
   "addNewLoginItemAria": {
-    "message": "Add new vault login item, opens in a new window",
+    "message": "添加新的密码库登录项目（在新窗口中打开）",
     "description": "Screen reader text (aria-label) for new login button within inline menu"
   },
   "newCard": {
-    "message": "New card",
+    "message": "新增支付卡",
     "description": "Button text to display within inline menu when there are no matching items on a credit card field"
   },
   "addNewCardItemAria": {
-    "message": "Add new vault card item, opens in a new window",
+    "message": "添加新的密码库支付卡项目（在新窗口中打开）",
     "description": "Screen reader text (aria-label) for new card button within inline menu"
   },
   "newIdentity": {
-    "message": "New identity",
+    "message": "新增身份",
     "description": "Button text to display within inline menu when there are no matching items on an identity field"
   },
   "addNewIdentityItemAria": {
-    "message": "Add new vault identity item, opens in a new window",
+    "message": "添加新的密码库身份项目（在新窗口中打开）",
     "description": "Screen reader text (aria-label) for new identity button within inline menu"
   },
   "bitwardenOverlayMenuAvailable": {
@@ -3221,7 +3221,7 @@
     "message": "无效的文件密码，请使用您创建导出文件时输入的密码。"
   },
   "destination": {
-    "message": "Destination"
+    "message": "目的地"
   },
   "learnAboutImportOptions": {
     "message": "了解您的导入选项"
@@ -3778,7 +3778,7 @@
     }
   },
   "cardNumberEndsWith": {
-    "message": "card number ends with",
+    "message": "卡号结尾为",
     "description": "Used within the inline menu to provide an aria description when users are attempting to fill a card cipher."
   },
   "loginCredentials": {
@@ -3806,7 +3806,7 @@
     "message": "加载中"
   },
   "data": {
-    "message": "Data"
+    "message": "数据"
   },
   "assign": {
     "message": "分配"

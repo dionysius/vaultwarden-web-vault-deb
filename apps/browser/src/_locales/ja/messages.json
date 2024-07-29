@@ -14,7 +14,7 @@
     "message": "安全なデータ保管庫へアクセスするためにログインまたはアカウントを作成してください。"
   },
   "inviteAccepted": {
-    "message": "Invitation accepted"
+    "message": "招待が承認されました"
   },
   "createAccount": {
     "message": "アカウントの作成"
@@ -72,10 +72,10 @@
     "message": "マスターパスワードのヒント (省略可能)"
   },
   "joinOrganization": {
-    "message": "Join organization"
+    "message": "組織に参加"
   },
   "finishJoiningThisOrganizationBySettingAMasterPassword": {
-    "message": "Finish joining this organization by setting a master password."
+    "message": "マスターパスワードを設定して、この組織への参加を完了します。"
   },
   "tab": {
     "message": "タブ"
@@ -2090,7 +2090,7 @@
     "message": "パスワード保護あり"
   },
   "copyLink": {
-    "message": "Copy link"
+    "message": "リンクをコピー"
   },
   "copySendLink": {
     "message": "Send リンクをコピー",
@@ -3049,7 +3049,7 @@
     "description": "Text to display in overlay when the account is locked."
   },
   "unlockYourAccountToViewAutofillSuggestions": {
-    "message": "Unlock your account to view autofill suggestions",
+    "message": "自動入力候補を表示するにはアカウントのロックを解除してください",
     "description": "Text to display in overlay when the account is locked."
   },
   "unlockAccount": {
@@ -3057,7 +3057,7 @@
     "description": "Button text to display in overlay when the account is locked."
   },
   "unlockAccountAria": {
-    "message": "Unlock your account, opens in a new window",
+    "message": "アカウントのロックを解除し、新しいウィンドウで開く",
     "description": "Screen reader text (aria-label) for unlock account button in overlay"
   },
   "fillCredentialsFor": {
@@ -3081,27 +3081,27 @@
     "description": "Screen reader text (aria-label) for new item button in overlay"
   },
   "newLogin": {
-    "message": "New login",
+    "message": "新規ログイン",
     "description": "Button text to display within inline menu when there are no matching items on a login field"
   },
   "addNewLoginItemAria": {
-    "message": "Add new vault login item, opens in a new window",
+    "message": "新しい保管庫のログインアイテムを追加し、新しいウィンドウで開く",
     "description": "Screen reader text (aria-label) for new login button within inline menu"
   },
   "newCard": {
-    "message": "New card",
+    "message": "新しいカード",
     "description": "Button text to display within inline menu when there are no matching items on a credit card field"
   },
   "addNewCardItemAria": {
-    "message": "Add new vault card item, opens in a new window",
+    "message": "新しい保管庫のカードアイテムを追加し、新しいウィンドウで開く",
     "description": "Screen reader text (aria-label) for new card button within inline menu"
   },
   "newIdentity": {
-    "message": "New identity",
+    "message": "新しい ID",
     "description": "Button text to display within inline menu when there are no matching items on an identity field"
   },
   "addNewIdentityItemAria": {
-    "message": "Add new vault identity item, opens in a new window",
+    "message": "新しい保管庫 ID アイテムを追加し、新しいウィンドウで開く",
     "description": "Screen reader text (aria-label) for new identity button within inline menu"
   },
   "bitwardenOverlayMenuAvailable": {
@@ -3778,7 +3778,7 @@
     }
   },
   "cardNumberEndsWith": {
-    "message": "card number ends with",
+    "message": "カード番号の末尾",
     "description": "Used within the inline menu to provide an aria description when users are attempting to fill a card cipher."
   },
   "loginCredentials": {

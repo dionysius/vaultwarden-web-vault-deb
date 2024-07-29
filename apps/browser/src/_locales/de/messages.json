@@ -14,7 +14,7 @@
     "message": "Melde dich an oder erstelle ein neues Konto, um auf deinen Tresor zuzugreifen."
   },
   "inviteAccepted": {
-    "message": "Invitation accepted"
+    "message": "Einladung angenommen"
   },
   "createAccount": {
     "message": "Konto erstellen"
@@ -72,10 +72,10 @@
     "message": "Master-Passwort-Hinweis (optional)"
   },
   "joinOrganization": {
-    "message": "Join organization"
+    "message": "Organisation beitreten"
   },
   "finishJoiningThisOrganizationBySettingAMasterPassword": {
-    "message": "Finish joining this organization by setting a master password."
+    "message": "Schließe den Beitritt zu dieser Organisation ab, indem du ein Master-Passwort festlegst."
   },
   "tab": {
     "message": "Tab"
@@ -799,7 +799,7 @@
     "message": "Nach dem Hinzufügen eines Eintrags fragen, wenn er nicht in deinem Tresor gefunden wurde. Gilt für alle angemeldeten Konten."
   },
   "showCardsInVaultView": {
-    "message": "Show cards as Autofill suggestions on Vault view"
+    "message": "Karten als Vorschläge zum Auto-Ausfüllen in der Tresor-Ansicht anzeigen"
   },
   "showCardsCurrentTab": {
     "message": "Karten auf Tab Seite anzeigen"
@@ -808,7 +808,7 @@
     "message": "Karten-Einträge auf der Tab Seite anzeigen, um das Auto-Ausfüllen zu vereinfachen."
   },
   "showIdentitiesInVaultView": {
-    "message": "Show identifies as Autofill suggestions on Vault view"
+    "message": "Identitäten als Vorschläge zum Auto-Ausfüllen in der Tresor-Ansicht anzeigen"
   },
   "showIdentitiesCurrentTab": {
     "message": "Identitäten auf Tab Seite anzeigen"
@@ -1243,16 +1243,16 @@
     "description": "Represents the message for allowing the user to enable the auto-fill overlay"
   },
   "autofillSuggestionsSectionTitle": {
-    "message": "Autofill suggestions"
+    "message": "Vorschläge zum Auto-Ausfüllen"
   },
   "showInlineMenuLabel": {
-    "message": "Show autofill suggestions on form fields"
+    "message": "Vorschläge zum Auto-Ausfüllen in Formularfeldern anzeigen"
   },
   "showInlineMenuOnIconSelectionLabel": {
-    "message": "Display suggestions when icon is selected"
+    "message": "Vorschläge anzeigen, wenn Symbol ausgewählt ist"
   },
   "showInlineMenuOnFormFieldsDescAlt": {
-    "message": "Applies to all logged in accounts."
+    "message": "Gilt für alle angemeldeten Konten."
   },
   "turnOffBrowserBuiltInPasswordManagerSettings": {
     "message": "Deaktiviere die Einstellungen des eingebauten Passwort-Managers deines Browsers, um Konflikte zu vermeiden."
@@ -1273,7 +1273,7 @@
     "description": "Overlay appearance select option for showing the field on click of the overlay icon"
   },
   "enableAutoFillOnPageLoadSectionTitle": {
-    "message": "Autofill on page load"
+    "message": "Auto-Ausfüllen beim Laden einer Seite"
   },
   "enableAutoFillOnPageLoad": {
     "message": "Auto-Ausfüllen beim Laden einer Seite aktivieren"
@@ -1282,7 +1282,7 @@
     "message": "Wenn eine Anmeldemaske erkannt wird, die Zugangsdaten automatisch ausfüllen während die Webseite lädt."
   },
   "autofillOnPageLoadWarning": {
-    "message": "$OPENTAG$Warning:$CLOSETAG$ Compromised or untrusted websites can exploit autofill on page load.",
+    "message": "$OPENTAG$Warnung:$CLOSETAG$ Kompromittierte oder nicht vertrauenswürdige Websites können Auto-Ausfüllen beim Laden einer Seite missbrauchen.",
     "placeholders": {
       "openTag": {
         "content": "$1",
@@ -1298,7 +1298,7 @@
     "message": "Kompromittierte oder nicht vertrauenswürdige Websites können Auto-Ausfüllen beim Laden der Seite ausnutzen."
   },
   "learnMoreAboutAutofillOnPageLoadLinkText": {
-    "message": "Learn more about risks"
+    "message": "Erfahre mehr über Risiken"
   },
   "learnMoreAboutAutofill": {
     "message": "Erfahre mehr über Auto-Ausfüllen"
@@ -2090,7 +2090,7 @@
     "message": "Passwortgeschützt"
   },
   "copyLink": {
-    "message": "Copy link"
+    "message": "Link kopieren"
   },
   "copySendLink": {
     "message": "Send-Link kopieren",
@@ -2753,10 +2753,10 @@
     "message": "Auto-Ausfüllen Einstellungen"
   },
   "autofillKeyboardShortcutSectionTitle": {
-    "message": "Autofill shortcut"
+    "message": "Auto-Ausfüllen Tastenkombination"
   },
   "autofillKeyboardShortcutUpdateLabel": {
-    "message": "Change shortcut"
+    "message": "Tastenkombination ändern"
   },
   "autofillShortcut": {
     "message": "Auto-Ausfüllen Tastaturkürzel"
@@ -3049,7 +3049,7 @@
     "description": "Text to display in overlay when the account is locked."
   },
   "unlockYourAccountToViewAutofillSuggestions": {
-    "message": "Unlock your account to view autofill suggestions",
+    "message": "Entsperre dein Konto, um Auto-Ausfüllen-Vorschläge anzuzeigen",
     "description": "Text to display in overlay when the account is locked."
   },
   "unlockAccount": {
@@ -3057,7 +3057,7 @@
     "description": "Button text to display in overlay when the account is locked."
   },
   "unlockAccountAria": {
-    "message": "Unlock your account, opens in a new window",
+    "message": "Dein Konto entsperren, öffnet sich in einem neuen Fenster",
     "description": "Screen reader text (aria-label) for unlock account button in overlay"
   },
   "fillCredentialsFor": {
@@ -3081,27 +3081,27 @@
     "description": "Screen reader text (aria-label) for new item button in overlay"
   },
   "newLogin": {
-    "message": "New login",
+    "message": "Neue Zugangsdaten",
     "description": "Button text to display within inline menu when there are no matching items on a login field"
   },
   "addNewLoginItemAria": {
-    "message": "Add new vault login item, opens in a new window",
+    "message": "Neuen Tresor-Zugangsdateneintrag hinzufügen, öffnet sich in einem neuen Fenster",
     "description": "Screen reader text (aria-label) for new login button within inline menu"
   },
   "newCard": {
-    "message": "New card",
+    "message": "Neue Karte",
     "description": "Button text to display within inline menu when there are no matching items on a credit card field"
   },
   "addNewCardItemAria": {
-    "message": "Add new vault card item, opens in a new window",
+    "message": "Neuen Tresor-Karteneintrag hinzufügen, öffnet sich in einem neuen Fenster",
     "description": "Screen reader text (aria-label) for new card button within inline menu"
   },
   "newIdentity": {
-    "message": "New identity",
+    "message": "Neue Identität",
     "description": "Button text to display within inline menu when there are no matching items on an identity field"
   },
   "addNewIdentityItemAria": {
-    "message": "Add new vault identity item, opens in a new window",
+    "message": "Neuen Tresor-Identitätseintrag hinzufügen, öffnet sich in einem neuen Fenster",
     "description": "Screen reader text (aria-label) for new identity button within inline menu"
   },
   "bitwardenOverlayMenuAvailable": {
@@ -3221,7 +3221,7 @@
     "message": "Ungültiges Dateipasswort. Bitte verwende das Passwort, das du beim Erstellen der Exportdatei eingegeben hast."
   },
   "destination": {
-    "message": "Destination"
+    "message": "Ziel"
   },
   "learnAboutImportOptions": {
     "message": "Erfahre mehr über deine Importoptionen"
@@ -3462,27 +3462,27 @@
     "description": "Label indicating the most common import formats"
   },
   "confirmContinueToBrowserSettingsTitle": {
-    "message": "Continue to browser settings?",
+    "message": "Weiter zu den Browsereinstellungen?",
     "description": "Title for dialog which asks if the user wants to proceed to a relevant browser settings page"
   },
   "confirmContinueToHelpCenter": {
-    "message": "Continue to Help Center?",
+    "message": "Weiter zum Hilfezentrum?",
     "description": "Title for dialog which asks if the user wants to proceed to a relevant Help Center page"
   },
   "confirmContinueToHelpCenterPasswordManagementContent": {
-    "message": "Change your browser's autofill and password management settings.",
+    "message": "Ändere die Auto-Ausfüllen- und Passwort-Verwaltungseinstellungen deines Browsers.",
     "description": "Body content for dialog which asks if the user wants to proceed to the Help Center's page about browser password management settings"
   },
   "confirmContinueToHelpCenterKeyboardShortcutsContent": {
-    "message": "You can view and set extension shortcuts in your browser's settings.",
+    "message": "Du kannst Tastenkombinationen für Erweiterungen in den Einstellungen deines Browsers anzeigen und festlegen.",
     "description": "Body content for dialog which asks if the user wants to proceed to the Help Center's page about browser keyboard shortcut settings"
   },
   "confirmContinueToBrowserPasswordManagementSettingsContent": {
-    "message": "Change your browser's autofill and password management settings.",
+    "message": "Ändere die Auto-Ausfüllen- und Passwort-Verwaltungseinstellungen deines Browsers.",
     "description": "Body content for dialog which asks if the user wants to proceed to the browser's password management settings page"
   },
   "confirmContinueToBrowserKeyboardShortcutSettingsContent": {
-    "message": "You can view and set extension shortcuts in your browser's settings.",
+    "message": "Du kannst Tastenkombinationen für Erweiterungen in den Einstellungen deines Browsers anzeigen und festlegen.",
     "description": "Body content for dialog which asks if the user wants to proceed to the browser's keyboard shortcut settings page"
   },
   "overrideDefaultBrowserAutofillTitle": {
@@ -3609,7 +3609,7 @@
     "message": "Keine Werte zum Kopieren"
   },
   "assignToCollections": {
-    "message": "Assign to collections"
+    "message": "Sammlungen zuweisen"
   },
   "copyEmail": {
     "message": "E-Mail-Adresse kopieren"
@@ -3778,7 +3778,7 @@
     }
   },
   "cardNumberEndsWith": {
-    "message": "card number ends with",
+    "message": "Kartennummer endet mit",
     "description": "Used within the inline menu to provide an aria description when users are attempting to fill a card cipher."
   },
   "loginCredentials": {
@@ -3806,16 +3806,16 @@
     "message": "Wird geladen"
   },
   "data": {
-    "message": "Data"
+    "message": "Daten"
   },
   "assign": {
     "message": "Zuweisen"
   },
   "bulkCollectionAssignmentDialogDescriptionSingular": {
-    "message": "Only organization members with access to these collections will be able to see the item."
+    "message": "Nur Organisationsmitglieder mit Zugriff auf diese Sammlungen können die Einträge sehen."
   },
   "bulkCollectionAssignmentDialogDescriptionPlural": {
-    "message": "Only organization members with access to these collections will be able to see the items."
+    "message": "Nur Organisationsmitglieder mit Zugriff auf diese Sammlungen können die Einträge sehen."
   },
   "bulkCollectionAssignmentWarning": {
     "message": "Du hast $TOTAL_COUNT$ Einträge ausgewählt. Du kannst $READONLY_COUNT$ der Einträge nicht aktualisieren, da du keine Bearbeitungsrechte hast.",
@@ -3916,10 +3916,10 @@
     "message": "Zu zuweisende Sammlungen auswählen"
   },
   "personalItemTransferWarningSingular": {
-    "message": "1 item will be permanently transferred to the selected organization. You will no longer own this item."
+    "message": "1 Eintrag wird dauerhaft an die ausgewählte Organisation übertragen. Du wirst diesen Eintrag nicht mehr besitzen."
   },
   "personalItemsTransferWarningPlural": {
-    "message": "$PERSONAL_ITEMS_COUNT$ items will be permanently transferred to the selected organization. You will no longer own these items.",
+    "message": "$PERSONAL_ITEMS_COUNT$ werden dauerhaft an die ausgewählte Organisation übertragen. Du wirst diese Einträge nicht mehr besitzen.",
     "placeholders": {
       "personal_items_count": {
         "content": "$1",
@@ -3928,7 +3928,7 @@
     }
   },
   "personalItemWithOrgTransferWarningSingular": {
-    "message": "1 item will be permanently transferred to $ORG$. You will no longer own this item.",
+    "message": "1 Eintrag wird dauerhaft an $ORG$ übertragen. Du wirst diesen Eintrag nicht mehr besitzen.",
     "placeholders": {
       "org": {
         "content": "$1",
@@ -3937,7 +3937,7 @@
     }
   },
   "personalItemsWithOrgTransferWarningPlural": {
-    "message": "$PERSONAL_ITEMS_COUNT$ items will be permanently transferred to $ORG$. You will no longer own these items.",
+    "message": "$PERSONAL_ITEMS_COUNT$ werden dauerhaft an $ORG$ übertragen. Du wirst diese Einträge nicht mehr besitzen.",
     "placeholders": {
       "personal_items_count": {
         "content": "$1",
@@ -3965,7 +3965,7 @@
     }
   },
   "itemsMovedToOrg": {
-    "message": "Items moved to $ORGNAME$",
+    "message": "Einträge verschoben nach $ORGNAME$",
     "placeholders": {
       "orgname": {
         "content": "$1",
@@ -3974,7 +3974,7 @@
     }
   },
   "itemMovedToOrg": {
-    "message": "Item moved to $ORGNAME$",
+    "message": "Eintrag verschoben nach $ORGNAME$",
     "placeholders": {
       "orgname": {
         "content": "$1",
