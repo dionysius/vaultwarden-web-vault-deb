@@ -552,10 +552,10 @@
     "message": "Підказка для головного пароля"
   },
   "joinOrganization": {
-    "message": "Join organization"
+    "message": "Приєднатися до організації"
   },
   "finishJoiningThisOrganizationBySettingAMasterPassword": {
-    "message": "Finish joining this organization by setting a master password."
+    "message": "Завершіть приєднання до цієї організації, встановивши головний пароль."
   },
   "settings": {
     "message": "Налаштування"
@@ -2100,7 +2100,7 @@
     "message": "Час очікування сховища перевищує обмеження, встановлені вашою організацією."
   },
   "inviteAccepted": {
-    "message": "Invitation accepted"
+    "message": "Запрошення прийнято"
   },
   "resetPasswordPolicyAutoEnroll": {
     "message": "Автоматичне подання запиту"
@@ -2827,7 +2827,7 @@
     "message": "Неправильний пароль файлу. Використайте пароль, який ви вводили під час створення експортованого файлу."
   },
   "destination": {
-    "message": "Destination"
+    "message": "Призначення"
   },
   "learnAboutImportOptions": {
     "message": "Дізнайтеся про параметри імпорту"
@@ -3024,6 +3024,6 @@
     }
   },
   "data": {
-    "message": "Data"
+    "message": "Дані"
   }
 }
