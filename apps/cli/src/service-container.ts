@@ -291,7 +291,10 @@ export class ServiceContainer {
       this.memoryStorageForStateProviders,
     );
 
-    this.globalStateProvider = new DefaultGlobalStateProvider(storageServiceProvider);
+    this.globalStateProvider = new DefaultGlobalStateProvider(
+      storageServiceProvider,
+      this.logService,
+    );
 
     const stateEventRegistrarService = new StateEventRegistrarService(
       this.globalStateProvider,
@@ -308,6 +311,7 @@ export class ServiceContainer {
     this.singleUserStateProvider = new DefaultSingleUserStateProvider(
       storageServiceProvider,
       stateEventRegistrarService,
+      this.logService,
     );
 
     this.messagingService = MessageSender.EMPTY;
