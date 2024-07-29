@@ -54,6 +54,7 @@ export class VaultV2Component implements OnInit, OnDestroy {
   cipherType = CipherType;
   protected favoriteCiphers$ = this.vaultPopupItemsService.favoriteCiphers$;
   protected remainingCiphers$ = this.vaultPopupItemsService.remainingCiphers$;
+  protected loading$ = this.vaultPopupItemsService.loading$;
 
   protected newItemItemValues$: Observable<NewItemInitialValues> =
     this.vaultPopupListFiltersService.filters$.pipe(
