@@ -571,7 +571,7 @@
     }
   },
   "itemsMovedToOrg": {
-    "message": "Items moved to $ORGNAME$",
+    "message": "Елементи переміщено до $ORGNAME$",
     "placeholders": {
       "orgname": {
         "content": "$1",
@@ -580,7 +580,7 @@
     }
   },
   "itemMovedToOrg": {
-    "message": "Item moved to $ORGNAME$",
+    "message": "Елемент переміщено до $ORGNAME$",
     "placeholders": {
       "orgname": {
         "content": "$1",
@@ -1507,7 +1507,7 @@
     "message": "Помилка розшифрування експортованого файлу. Ваш ключ шифрування відрізняється від ключа, використаного для експортування даних."
   },
   "destination": {
-    "message": "Destination"
+    "message": "Призначення"
   },
   "learnAboutImportOptions": {
     "message": "Дізнайтеся про параметри імпорту"
@@ -3460,7 +3460,7 @@
     "message": "Вас було запрошено приєднатися до зазначеної вгорі організації. Щоб підтвердити запрошення, вам необхідно увійти в обліковий запис Bitwarden, або створити його."
   },
   "finishJoiningThisOrganizationBySettingAMasterPassword": {
-    "message": "Finish joining this organization by setting a master password."
+    "message": "Завершіть приєднання до цієї організації, встановивши головний пароль."
   },
   "inviteAccepted": {
     "message": "Запрошення прийнято"
@@ -4387,7 +4387,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "copyLink": {
-    "message": "Copy link"
+    "message": "Копіювати посилання"
   },
   "copySendLink": {
     "message": "Копіювати посилання відправлення",
@@ -4805,73 +4805,73 @@
     "description": "This will be used as part of a larger sentence, broken up to include links. The full sentence will read 'Learn more, see how it works, **or** try it now.'"
   },
   "developmentDevOpsAndITTeamsChooseBWSecret": {
-    "message": "Development, DevOps, and IT teams choose Bitwarden Secrets Manager to securely manage and deploy their infrastructure and machine secrets."
+    "message": "Команди розробників, DevOps та IT-спеціалісти обирають Менеджер секретів Bitwarden для безпечного керування і розгортання інфраструктурних і машинних секретів."
   },
   "centralizeSecretsManagement": {
-    "message": "Centralize secrets management."
+    "message": "Централізуйте керування секретами."
   },
   "centralizeSecretsManagementDescription": {
-    "message": "Securely store and manage secrets in one location to prevent secret sprawl across your organization."
+    "message": "Безпечно зберігайте та керуйте секретами в одному місці, щоб запобігти неналежному розповсюдженню в організації."
   },
   "preventSecretLeaks": {
-    "message": "Prevent secret leaks."
+    "message": "Запобігайте витоку секретів."
   },
   "preventSecretLeaksDescription": {
-    "message": "Protect secrets with end-to-end encryption. No more hard coding secrets or sharing through .env files."
+    "message": "Захистіть секрети за допомогою наскрізного шифрування. Більше не потрібно кодувати секрети чи ділитися ними за допомогою файлів .env."
   },
   "enhanceDeveloperProductivity": {
-    "message": "Enhance developer productivity."
+    "message": "Підвищте продуктивність розробників."
   },
   "enhanceDeveloperProductivityDescription": {
-    "message": "Programmatically retrieve and deploy secrets at runtime so developers can focus on what matters most, like improving code quality."
+    "message": "Програмовано отримуйте та розгортайте секрети, щоб розробники могли зосередитися на найважливішому, як-от вдосконалення якості коду."
   },
   "strengthenBusinessSecurity": {
-    "message": "Strengthen business security."
+    "message": "Посильте безпеку бізнесу."
   },
   "strengthenBusinessSecurityDescription": {
-    "message": "Maintain tight control over machine and human access to secrets with SSO integrations, event logs, and access rotation."
+    "message": "Надійно контролюйте доступ машин і людей до секретів за допомогою інтеграції SSO, журналів подій та оновлення дозволів на доступ."
   },
   "tryItNow": {
-    "message": "Try it now"
+    "message": "Спробувати зараз"
   },
   "sendRequest": {
-    "message": "Send request"
+    "message": "Надіслати запит"
   },
   "addANote": {
-    "message": "Add a note"
+    "message": "Додати нотатку"
   },
   "bitwardenSecretsManager": {
-    "message": "Bitwarden Secrets Manager"
+    "message": "Менеджер секретів Bitwarden"
   },
   "moreProductsFromBitwarden": {
-    "message": "More products from Bitwarden"
+    "message": "Інші продукти від Bitwarden"
   },
   "requestAccessToSecretsManager": {
-    "message": "Request access to Secrets Manager"
+    "message": "Запитати доступ до менеджера секретів"
   },
   "youNeedApprovalFromYourAdminToTrySecretsManager": {
-    "message": "You need approval from your administrator to try Secrets Manager."
+    "message": "Щоб спробувати менеджер секретів, необхідне схвалення вашого адміністратора."
   },
   "smAccessRequestEmailSent": {
-    "message": "Access request for secrets manager email sent to admins."
+    "message": "Електронний лист із запитом на доступ до менеджера секретів надіслано адміністраторам."
   },
   "requestAccessSMDefaultEmailContent": {
-    "message": "Hi,\n\nI am requesting a subscription to Bitwarden Secrets Manager for our team. Your support would mean a great deal!\n\nBitwarden Secrets Manager is an end-to-end encrypted secrets management solution for securely storing, sharing, and deploying machine credentials like API keys, database passwords, and authentication certificates.\n\nSecrets Manager will help us to:\n\n- Improve security\n- Streamline operations\n- Prevent costly secret leaks\n\nTo request a free trial for our team, please reach out to Bitwarden.\n\nThank you for your help!"
+    "message": "Вітаю!\n\nПрошу надати передплату на Менеджер секретів Bitwarden для нашої команди. Ваша підтримка дуже важлива для нас!\n\nМенеджер секретів Bitwarden – це рішення з наскрізним шифруванням для керування секретами, яке дає змогу надійно зберігати, ділитися та розгортати машинні облікові дані, як-от ключі API, паролі баз даних і сертифікати автентифікації.\n\nЗа допомогою менеджера секретів ми зможемо:\n\n- Вдосконалити безпеку\n- Підвищити продуктивність операцій\n- Запобігти витоку секретів\n\nЩоб надіслати запит на безплатний пробний період для нашої команди, зверніться до Bitwarden.\n\nДякую за допомогу!"
   },
   "giveMembersAccess": {
-    "message": "Give members access:"
+    "message": "Надати доступ учасникам:"
   },
   "viewAndSelectTheMembers": {
-    "message": "view and select the members you want to give access to Secrets Manager."
+    "message": "перегляньте й виберіть учасників, яким ви хочете надати доступ до менеджера секретів."
   },
   "openYourOrganizations": {
-    "message": "Open your organization's"
+    "message": "Відкрийте"
   },
   "usingTheMenuSelect": {
-    "message": "Using the menu, select"
+    "message": "За допомогою меню виберіть"
   },
   "toGrantAccessToSelectedMembers": {
-    "message": "to grant access to selected members."
+    "message": "вашої організації, щоб надати доступ вибраним учасникам."
   },
   "sendVaultCardTryItNow": {
     "message": "спробуйте",
@@ -7997,10 +7997,10 @@
     "message": "Призначити до цих збірок"
   },
   "bulkCollectionAssignmentDialogDescriptionSingular": {
-    "message": "Only organization members with access to these collections will be able to see the item."
+    "message": "Лише учасники організації з доступом до цих збірок зможуть переглядати запис."
   },
   "bulkCollectionAssignmentDialogDescriptionPlural": {
-    "message": "Only organization members with access to these collections will be able to see the items."
+    "message": "Лише учасники організації з доступом до цих збірок зможуть переглядати записи."
   },
   "selectCollectionsToAssign": {
     "message": "Оберіть збірки для призначення"
@@ -8655,10 +8655,10 @@
     "message": "Вибрати теку"
   },
   "personalItemTransferWarningSingular": {
-    "message": "1 item will be permanently transferred to the selected organization. You will no longer own this item."
+    "message": "1 елемент буде остаточно перенесено до вибраної організації. Ви більше не будете власником цього елемента."
   },
   "personalItemsTransferWarningPlural": {
-    "message": "$PERSONAL_ITEMS_COUNT$ items will be permanently transferred to the selected organization. You will no longer own these items.",
+    "message": "$PERSONAL_ITEMS_COUNT$ елементи буде остаточно перенесено до вибраної організації. Ви більше не будете власником цих елементів.",
     "placeholders": {
       "personal_items_count": {
         "content": "$1",
@@ -8667,7 +8667,7 @@
     }
   },
   "personalItemWithOrgTransferWarningSingular": {
-    "message": "1 item will be permanently transferred to $ORG$. You will no longer own this item.",
+    "message": "1 елемент буде остаточно перенесено до $ORG$. Ви більше не будете власником цього елемента.",
     "placeholders": {
       "org": {
         "content": "$1",
@@ -8676,7 +8676,7 @@
     }
   },
   "personalItemsWithOrgTransferWarningPlural": {
-    "message": "$PERSONAL_ITEMS_COUNT$ items will be permanently transferred to $ORG$. You will no longer own these items.",
+    "message": "$PERSONAL_ITEMS_COUNT$ елементи буде остаточно перенесено до $ORG$. Ви більше не будете власником цих елементів.",
     "placeholders": {
       "personal_items_count": {
         "content": "$1",
@@ -8689,7 +8689,7 @@
     }
   },
   "data": {
-    "message": "Data"
+    "message": "Дані"
   },
   "purchasedSeatsRemoved": {
     "message": "куплених місць вилучено"
