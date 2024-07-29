@@ -67,7 +67,7 @@
         bitIconButton="bwi-minus-circle"
         buttonType="danger"
         bitSuffix
-        *ngIf="loginDetailsForm.enabled"
+        *ngIf="loginDetailsForm.enabled && viewHiddenFields"
         [bitAction]="removePasskey"
         data-testid="remove-passkey-button"
         [appA11yTitle]="'removePasskey' | i18n"

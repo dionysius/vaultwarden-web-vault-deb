@@ -91,6 +91,12 @@ export class CipherFormComponent implements AfterViewInit, OnInit, OnChanges, Ci
   submitBtn?: ButtonComponent;
 
   /**
+   * Optional function to call before submitting the form. If the function returns false, the form will not be submitted.
+   */
+  @Input()
+  beforeSubmit: () => Promise<boolean>;
+
+  /**
    * Event emitted when the cipher is saved successfully.
    */
   @Output() cipherSaved = new EventEmitter<CipherView>();
@@ -213,7 +219,17 @@ export class CipherFormComponent implements AfterViewInit, OnInit, OnChanges, Ci
       return;
     }
 
-    await this.addEditFormService.saveCipher(this.updatedCipherView, this.config);
+    if (this.beforeSubmit) {
+      const shouldSubmit = await this.beforeSubmit();
+      if (!shouldSubmit) {
+        return;
+      }
+    }
+
+    const savedCipher = await this.addEditFormService.saveCipher(
+      this.updatedCipherView,
+      this.config,
+    );
 
     this.toastService.showToast({
       variant: "success",
@@ -225,6 +241,6 @@ export class CipherFormComponent implements AfterViewInit, OnInit, OnChanges, Ci
       ),
     });
 
-    this.cipherSaved.emit(this.updatedCipherView);
+    this.cipherSaved.emit(savedCipher);
   };
 }

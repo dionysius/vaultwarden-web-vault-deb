@@ -452,6 +452,8 @@ describe("LoginDetailsSectionComponent", () => {
 
       fixture = TestBed.createComponent(LoginDetailsSectionComponent);
       component = fixture.componentInstance;
+
+      jest.spyOn(component, "viewHiddenFields", "get").mockReturnValue(true);
     });
 
     it("renders the passkey field when available", () => {
@@ -469,11 +471,19 @@ describe("LoginDetailsSectionComponent", () => {
     it("renders the passkey remove button when editable", () => {
       fixture.detectChanges();
 
-      expect(getRemovePasskeyBtn).not.toBeNull();
+      expect(getRemovePasskeyBtn()).not.toBeNull();
     });
 
     it("does not render the passkey remove button when not editable", () => {
       cipherFormContainer.config.mode = "partial-edit";
+
+      fixture.detectChanges();
+
+      expect(getRemovePasskeyBtn()).toBeNull();
+    });
+
+    it("does not render the passkey remove button when viewHiddenFields is false", () => {
+      jest.spyOn(component, "viewHiddenFields", "get").mockReturnValue(false);
 
       fixture.detectChanges();
 

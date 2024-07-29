@@ -144,9 +144,10 @@ export class LoginDetailsSectionComponent implements OnInit {
   }
 
   private async initNewCipher() {
-    this.loginDetailsForm.controls.password.patchValue(
-      await this.generationService.generateInitialPassword(),
-    );
+    this.loginDetailsForm.patchValue({
+      username: this.cipherFormContainer.config.initialValues?.username || "",
+      password: await this.generationService.generateInitialPassword(),
+    });
   }
 
   captureTotp = async () => {
