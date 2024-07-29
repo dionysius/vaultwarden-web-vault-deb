@@ -13,7 +13,7 @@ import {
   ViewChild,
 } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
-import { FormBuilder, ReactiveFormsModule } from "@angular/forms";
+import { FormBuilder, FormGroup, ReactiveFormsModule } from "@angular/forms";
 
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { CipherType, SecureNoteType } from "@bitwarden/common/vault/enums";
@@ -213,9 +213,35 @@ export class CipherFormComponent implements AfterViewInit, OnInit, OnChanges, Ci
     private i18nService: I18nService,
   ) {}
 
+  /**
+   * Counts the number of invalid fields in a form group.
+   * @param formGroup - The form group to count the invalid fields in.
+   * @returns The number of invalid fields in the form group.
+   */
+  private countInvalidFields(formGroup: FormGroup): number {
+    return Object.values(formGroup.controls).reduce((count, control) => {
+      if (control instanceof FormGroup) {
+        return count + this.countInvalidFields(control);
+      }
+      return count + (control.invalid ? 1 : 0);
+    }, 0);
+  }
+
   submit = async () => {
     if (this.cipherForm.invalid) {
       this.cipherForm.markAllAsTouched();
+
+      const invalidFieldsCount = this.countInvalidFields(this.cipherForm);
+      if (invalidFieldsCount > 0) {
+        this.toastService.showToast({
+          variant: "error",
+          title: null,
+          message:
+            invalidFieldsCount === 1
+              ? this.i18nService.t("singleFieldNeedsAttention")
+              : this.i18nService.t("multipleFieldsNeedAttention", invalidFieldsCount),
+        });
+      }
       return;
     }
 
