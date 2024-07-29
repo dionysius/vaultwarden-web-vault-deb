@@ -7,14 +7,16 @@
       <label class="tw-block tw-w-full tw-mb-1 tw-text-xs tw-text-muted tw-select-none">
         {{ "itemName" | i18n }}
       </label>
-      <input
-        readonly
-        bitInput
-        type="text"
-        [value]="cipher.name"
-        aria-readonly="true"
-        data-testid="item-name"
-      />
+      <bit-form-field>
+        <input
+          readonly
+          bitInput
+          type="text"
+          [value]="cipher.name"
+          aria-readonly="true"
+          data-testid="item-name"
+        />
+      </bit-form-field>
     </div>
 
     <ul

@@ -11,6 +11,7 @@ import {
   SectionComponent,
   SectionHeaderComponent,
   TypographyModule,
+  FormFieldModule,
 } from "@bitwarden/components";
 
 import { OrgIconDirective } from "../../components/org-icon.directive";
@@ -27,6 +28,7 @@ import { OrgIconDirective } from "../../components/org-icon.directive";
     SectionHeaderComponent,
     TypographyModule,
     OrgIconDirective,
+    FormFieldModule,
   ],
 })
 export class ItemDetailsV2Component {
