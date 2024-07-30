@@ -22,6 +22,7 @@ import { AttachmentsV2ViewComponent } from "./attachments/attachments-v2-view.co
 import { CustomFieldV2Component } from "./custom-fields/custom-fields-v2.component";
 import { ItemDetailsV2Component } from "./item-details/item-details-v2.component";
 import { ItemHistoryV2Component } from "./item-history/item-history-v2.component";
+import { ViewIdentitySectionsComponent } from "./view-identity-sections/view-identity-sections.component";
 
 @Component({
   selector: "app-cipher-view",
@@ -39,6 +40,7 @@ import { ItemHistoryV2Component } from "./item-history/item-history-v2.component
     AttachmentsV2ViewComponent,
     ItemHistoryV2Component,
     CustomFieldV2Component,
+    ViewIdentitySectionsComponent,
   ],
 })
 export class CipherViewComponent implements OnInit {
