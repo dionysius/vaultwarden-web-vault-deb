@@ -8738,5 +8738,92 @@
   },
   "purchasedSeatsRemoved": {
     "message": "purchased seats removed"
+  },
+  "includesXMembers": {
+    "message": "for $COUNT$ member",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "costPerMember": {
+    "message": "$COST$",
+    "placeholders": {
+      "cost": {
+        "content": "$1",
+        "example": "$3"
+      }
+    }
+  },
+  "optionalOnPremHosting": {
+    "message": "Optional on-premises hosting"
+  },
+  "upgradeFreeOrganization": {
+    "message": "Upgrade your $NAME$ organization ",
+    "placeholders": {
+      "name": {
+        "content": "$1",
+        "example": "Teams"
+      }
+    }
+  },
+  "includeSsoAuthenticationMessage": {
+    "message": "SSO Authentication"
+  },
+  "familiesPlanInvLimitReachedManageBilling": {
+    "message": "Families organizations may have up to $SEATCOUNT$ members. Upgrade to a paid plan to invite more members.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "6"
+      }
+    }
+  },
+  "familiesPlanInvLimitReachedNoManageBilling": {
+    "message": "Families organizations may have up to $SEATCOUNT$ members. Contact your organization owner to upgrade.",
+    "placeholders": {
+      "seatcount": {
+        "content": "$1",
+        "example": "6"
+      }
+    }
+  },
+  "upgradePlan": {
+    "message": "Upgrade your plan to invite more members and gain access to additional Bitwarden features"
+  },
+  "upgradeDiscount": {
+    "message": "Save $AMOUNT$%",
+    "placeholders": {
+      "amount": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "upgradeEnterpriseMessage": {
+    "message": "Advanced capabilities for larger businesses"
+  },
+  "upgradeTeamsMessage": {
+    "message": "Businesses looking for powerful security"
+  },
+  "teamsInviteMessage": {
+    "message": "Invite unlimited members"
+  },
+  "accessToCreateGroups": {
+    "message": "Access to create groups"
+  },
+  "syncGroupsAndUsersFromDirectory": {
+    "message": "Sync groups and users from a directory"
+  },
+  "upgradeFamilyMessage": {
+    "message": "Share with families and friends"
+  },
+  "accessToPremiumFeatures": {
+    "message": "Access to Premium features"
+  },
+  "additionalStorageGbMessage": {
+    "message": "GB additional storage"
   }
 }
