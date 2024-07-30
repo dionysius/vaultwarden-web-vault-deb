@@ -23,6 +23,12 @@ export class AnonLayoutComponent {
   @Input() subtitle: string;
   @Input() icon: Icon;
   @Input() showReadonlyHostname: boolean;
+  /**
+   * Max width of the layout content
+   *
+   * @default 'md'
+   */
+  @Input() maxWidth: "md" | "3xl" = "md";
 
   protected logo: Icon;
 
@@ -45,6 +51,7 @@ export class AnonLayoutComponent {
   }
 
   async ngOnInit() {
+    this.maxWidth = this.maxWidth ?? "md";
     this.hostname = (await firstValueFrom(this.environmentService.environment$)).getHostname();
     this.version = await this.platformUtilsService.getApplicationVersion();
     this.theme = await firstValueFrom(this.themeStateService.selectedTheme$);

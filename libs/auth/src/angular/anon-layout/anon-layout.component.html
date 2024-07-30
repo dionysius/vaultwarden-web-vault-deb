@@ -15,6 +15,7 @@
   </div>
   <div
     class="tw-mb-auto tw-w-full tw-max-w-md tw-mx-auto tw-flex tw-flex-col tw-items-center sm:tw-min-w-[28rem]"
+    [ngClass]="{ 'tw-max-w-md': maxWidth === 'md', 'tw-max-w-3xl': maxWidth === '3xl' }"
   >
     <div
       class="tw-rounded-xl tw-mb-9 tw-mx-auto tw-w-full sm:tw-bg-background sm:tw-border sm:tw-border-solid sm:tw-border-secondary-300 sm:tw-p-8"

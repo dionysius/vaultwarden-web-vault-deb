@@ -190,6 +190,7 @@ export class InputPasswordComponent {
       localMasterKeyHash,
       kdfConfig,
       hint: this.formGroup.controls.hint.value,
+      password,
     });
   };
 }
