@@ -19,6 +19,7 @@ import { PopupPageComponent } from "../../../../apps/browser/src/platform/popup/
 
 import { AdditionalOptionsComponent } from "./additional-options/additional-options.component";
 import { AttachmentsV2ViewComponent } from "./attachments/attachments-v2-view.component";
+import { CardDetailsComponent } from "./card-details/card-details-view.component";
 import { CustomFieldV2Component } from "./custom-fields/custom-fields-v2.component";
 import { ItemDetailsV2Component } from "./item-details/item-details-v2.component";
 import { ItemHistoryV2Component } from "./item-history/item-history-v2.component";
@@ -40,6 +41,7 @@ import { ViewIdentitySectionsComponent } from "./view-identity-sections/view-ide
     AttachmentsV2ViewComponent,
     ItemHistoryV2Component,
     CustomFieldV2Component,
+    CardDetailsComponent,
     ViewIdentitySectionsComponent,
   ],
 })
@@ -62,6 +64,11 @@ export class CipherViewComponent implements OnInit {
   ngOnDestroy(): void {
     this.destroyed$.next();
     this.destroyed$.complete();
+  }
+
+  get hasCard() {
+    const { cardholderName, code, expMonth, expYear, brand, number } = this.cipher.card;
+    return cardholderName || code || expMonth || expYear || brand || number;
   }
 
   async loadCipherData() {
