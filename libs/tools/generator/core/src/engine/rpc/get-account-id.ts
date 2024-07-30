@@ -33,6 +33,7 @@ export class GetAccountIdRpc<
       headers: new Headers({
         ...token,
         "Content-Type": "application/json",
+        Accept: "application/json",
       }),
     });
 

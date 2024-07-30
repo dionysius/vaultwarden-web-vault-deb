@@ -37,7 +37,7 @@ describe("CreateForwardingAddressRpc", () => {
       expect(result.cache).toEqual("no-store");
       expect(result.method).toEqual("POST");
       expect(result.headers.get("Content-Type")).toEqual("application/json");
-      expect(result.headers.get("X-Requested-With")).toEqual("XMLHttpRequest");
+      expect(result.headers.get("Accept")).toEqual("application/json");
     });
 
     it("provides the request and context to the rpc definition functions", () => {

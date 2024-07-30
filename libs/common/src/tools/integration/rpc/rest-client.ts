@@ -48,7 +48,7 @@ export class RestClient {
       const message = await this.tryGetErrorMessage(response);
       const key = message ? "forwaderInvalidTokenWithMessage" : "forwaderInvalidToken";
       return [key, message];
-    } else if (response.status === 429 || response.status >= 500) {
+    } else if (response.status >= 400) {
       const message = await this.tryGetErrorMessage(response);
       const key = message ? "forwarderError" : "forwarderUnknownError";
       return [key, message];
@@ -59,6 +59,7 @@ export class RestClient {
     const body = (await response.text()) ?? "";
 
     // nullish continues processing; false returns undefined
+    // FIXME: inspect content-type header to determine extraction process
     const error =
       this.tryFindErrorAsJson(body) ?? this.tryFindErrorAsText(body) ?? response.statusText;
 
