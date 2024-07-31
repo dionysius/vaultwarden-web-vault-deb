@@ -159,7 +159,7 @@
           >
             <option
               *ngFor="let o of autofillOnPageLoadOptions"
-              [value]="o.value"
+              [ngValue]="o.value"
               [label]="o.name"
             ></option>
           </select>
@@ -206,7 +206,7 @@
             <option
               *ngFor="let o of clearClipboardOptions"
               [label]="o.name"
-              [value]="o.value"
+              [ngValue]="o.value"
             ></option>
           </select>
           <bit-hint class="tw-text-sm" id="clearClipboardHelp">
@@ -222,7 +222,7 @@
             (change)="saveDefaultUriMatch()"
             [(ngModel)]="defaultUriMatch"
           >
-            <option *ngFor="let o of uriMatchOptions" [label]="o.name" [value]="o.value"></option>
+            <option *ngFor="let o of uriMatchOptions" [label]="o.name" [ngValue]="o.value"></option>
           </select>
           <bit-hint class="tw-text-sm" id="defaultUriMatchHelp">
             {{ "defaultUriMatchDetectionDesc" | i18n }}
