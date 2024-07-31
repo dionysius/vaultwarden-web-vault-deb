@@ -159,9 +159,9 @@ export class AutofillV1Component implements OnInit {
 
   private async setAutofillKeyboardHelperText(command: string) {
     if (command) {
-      this.autofillKeyboardHelperText = this.i18nService.t("autofillShortcutText", command);
+      this.autofillKeyboardHelperText = this.i18nService.t("autofillLoginShortcutText", command);
     } else {
-      this.autofillKeyboardHelperText = this.i18nService.t("autofillShortcutNotSet");
+      this.autofillKeyboardHelperText = this.i18nService.t("autofillLoginShortcutNotSet");
     }
   }
 

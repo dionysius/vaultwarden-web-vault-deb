@@ -1232,22 +1232,21 @@ describe("AutofillService", () => {
       jest.spyOn(autofillService as any, "getActiveTab").mockResolvedValueOnce(tab);
       jest.spyOn(autofillService, "doAutoFill").mockImplementation();
       jest
-        .spyOn(autofillService["cipherService"], "getAllDecryptedForUrl")
-        .mockResolvedValueOnce([cardCipher]);
+        .spyOn(autofillService["cipherService"], "getNextCardCipher")
+        .mockResolvedValueOnce(cardCipher);
 
-      await autofillService.doAutoFillActiveTab(cardFormPageDetails, false, CipherType.Card);
+      await autofillService.doAutoFillActiveTab(cardFormPageDetails, true, CipherType.Card);
 
-      expect(autofillService["cipherService"].getAllDecryptedForUrl).toHaveBeenCalled();
       expect(autofillService.doAutoFill).toHaveBeenCalledWith({
         tab: tab,
         cipher: cardCipher,
         pageDetails: cardFormPageDetails,
-        skipLastUsed: true,
-        skipUsernameOnlyFill: true,
-        onlyEmptyFields: true,
-        onlyVisibleFields: true,
+        skipLastUsed: false,
+        skipUsernameOnlyFill: false,
+        onlyEmptyFields: false,
+        onlyVisibleFields: false,
         fillNewPassword: false,
-        allowUntrustedIframe: false,
+        allowUntrustedIframe: true,
         allowTotpAutofill: false,
       });
     });
@@ -1280,26 +1279,21 @@ describe("AutofillService", () => {
       jest.spyOn(autofillService as any, "getActiveTab").mockResolvedValueOnce(tab);
       jest.spyOn(autofillService, "doAutoFill").mockImplementation();
       jest
-        .spyOn(autofillService["cipherService"], "getAllDecryptedForUrl")
-        .mockResolvedValueOnce([identityCipher]);
+        .spyOn(autofillService["cipherService"], "getNextIdentityCipher")
+        .mockResolvedValueOnce(identityCipher);
 
-      await autofillService.doAutoFillActiveTab(
-        identityFormPageDetails,
-        false,
-        CipherType.Identity,
-      );
+      await autofillService.doAutoFillActiveTab(identityFormPageDetails, true, CipherType.Identity);
 
-      expect(autofillService["cipherService"].getAllDecryptedForUrl).toHaveBeenCalled();
       expect(autofillService.doAutoFill).toHaveBeenCalledWith({
         tab: tab,
         cipher: identityCipher,
         pageDetails: identityFormPageDetails,
-        skipLastUsed: true,
-        skipUsernameOnlyFill: true,
-        onlyEmptyFields: true,
-        onlyVisibleFields: true,
+        skipLastUsed: false,
+        skipUsernameOnlyFill: false,
+        onlyEmptyFields: false,
+        onlyVisibleFields: false,
         fillNewPassword: false,
-        allowUntrustedIframe: false,
+        allowUntrustedIframe: true,
         allowTotpAutofill: false,
       });
     });

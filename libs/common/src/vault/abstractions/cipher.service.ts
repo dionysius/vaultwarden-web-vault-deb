@@ -162,4 +162,6 @@ export abstract class CipherService implements UserKeyRotationDataProvider<Ciphe
     newUserKey: UserKey,
     userId: UserId,
   ) => Promise<CipherWithIdRequest[]>;
+  getNextCardCipher: () => Promise<CipherView>;
+  getNextIdentityCipher: () => Promise<CipherView>;
 }

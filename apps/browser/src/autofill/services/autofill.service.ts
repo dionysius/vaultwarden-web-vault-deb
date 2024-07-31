@@ -520,16 +520,30 @@ export default class AutofillService implements AutofillServiceInterface {
       return await this.doAutoFillOnTab(pageDetails, tab, fromCommand);
     }
 
-    // Cipher is a non-login type
-    const cipher: CipherView = (
-      (await this.cipherService.getAllDecryptedForUrl(tab.url, [cipherType])) || []
-    ).find(({ type }) => type === cipherType);
+    let cipher: CipherView;
+    let cacheKey = "";
 
-    if (!cipher || cipher.reprompt !== CipherRepromptType.None) {
+    if (cipherType === CipherType.Card) {
+      cacheKey = "cardCiphers";
+      cipher = await this.cipherService.getNextCardCipher();
+    } else {
+      cacheKey = "identityCiphers";
+      cipher = await this.cipherService.getNextIdentityCipher();
+    }
+
+    if (!cipher || !cacheKey || (cipher.reprompt === CipherRepromptType.Password && !fromCommand)) {
       return null;
     }
 
-    return await this.doAutoFill({
+    if (await this.isPasswordRepromptRequired(cipher, tab)) {
+      if (fromCommand) {
+        this.cipherService.updateLastUsedIndexForUrl(cacheKey);
+      }
+
+      return null;
+    }
+
+    const totpCode = await this.doAutoFill({
       tab: tab,
       cipher: cipher,
       pageDetails: pageDetails,
@@ -541,6 +555,12 @@ export default class AutofillService implements AutofillServiceInterface {
       allowUntrustedIframe: fromCommand,
       allowTotpAutofill: false,
     });
+
+    if (fromCommand) {
+      this.cipherService.updateLastUsedIndexForUrl(cacheKey);
+    }
+
+    return totpCode;
   }
 
   /**

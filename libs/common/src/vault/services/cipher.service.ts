@@ -500,6 +500,13 @@ export class CipherService implements CipherServiceAbstraction {
     });
   }
 
+  private async getAllDecryptedCiphersOfType(type: CipherType[]): Promise<CipherView[]> {
+    const ciphers = await this.getAllDecrypted();
+    return ciphers
+      .filter((cipher) => cipher.deletedDate == null && type.includes(cipher.type))
+      .sort((a, b) => this.sortCiphersByLastUsedThenName(a, b));
+  }
+
   async getAllFromApiForOrganization(organizationId: string): Promise<CipherView[]> {
     const response = await this.apiService.getCiphersOrganization(organizationId);
     return await this.decryptOrganizationCiphersResponse(response, organizationId);
@@ -547,6 +554,36 @@ export class CipherService implements CipherServiceAbstraction {
 
   async getNextCipherForUrl(url: string): Promise<CipherView> {
     return this.getCipherForUrl(url, false, false, false);
+  }
+
+  async getNextCardCipher(): Promise<CipherView> {
+    const cacheKey = "cardCiphers";
+
+    if (!this.sortedCiphersCache.isCached(cacheKey)) {
+      const ciphers = await this.getAllDecryptedCiphersOfType([CipherType.Card]);
+      if (!ciphers?.length) {
+        return null;
+      }
+
+      this.sortedCiphersCache.addCiphers(cacheKey, ciphers);
+    }
+
+    return this.sortedCiphersCache.getNext(cacheKey);
+  }
+
+  async getNextIdentityCipher() {
+    const cacheKey = "identityCiphers";
+
+    if (!this.sortedCiphersCache.isCached(cacheKey)) {
+      const ciphers = await this.getAllDecryptedCiphersOfType([CipherType.Identity]);
+      if (!ciphers?.length) {
+        return null;
+      }
+
+      this.sortedCiphersCache.addCiphers(cacheKey, ciphers);
+    }
+
+    return this.sortedCiphersCache.getNext(cacheKey);
   }
 
   updateLastUsedIndexForUrl(url: string) {
