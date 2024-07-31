@@ -1196,7 +1196,7 @@ const safeProviders: SafeProvider[] = [
   safeProvider({
     provide: BillingApiServiceAbstraction,
     useClass: BillingApiService,
-    deps: [ApiServiceAbstraction],
+    deps: [ApiServiceAbstraction, LogService, ToastService],
   }),
   safeProvider({
     provide: PaymentMethodWarningsServiceAbstraction,
