@@ -190,7 +190,6 @@ export type OverlayBackgroundExtensionMessageHandlers = {
   }: BackgroundOnMessageHandlerParams) => void;
   collectPageDetailsResponse: ({ message, sender }: BackgroundOnMessageHandlerParams) => void;
   unlockCompleted: ({ message }: BackgroundMessageParam) => void;
-  doFullSync: () => void;
   addedCipher: () => void;
   addEditCipherSubmitted: () => void;
   editedCipher: () => void;

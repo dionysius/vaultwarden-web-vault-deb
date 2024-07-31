@@ -2014,7 +2014,6 @@ describe("OverlayBackground", () => {
 
     describe("extension messages that trigger an update of the inline menu ciphers", () => {
       const extensionMessages = [
-        "doFullSync",
         "addedCipher",
         "addEditCipherSubmitted",
         "editedCipher",

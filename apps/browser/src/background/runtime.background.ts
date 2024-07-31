@@ -200,6 +200,7 @@ export default class RuntimeBackground {
         let item: LockedVaultPendingNotificationsData;
 
         if (msg.command === "loggedIn") {
+          await this.main.initOverlayAndTabsBackground();
           await this.sendBwInstalledMessageToVault();
           await this.autofillService.reloadAutofillScripts();
         }
@@ -246,6 +247,7 @@ export default class RuntimeBackground {
             await this.main.refreshMenu();
           }, 2000);
           await this.configService.ensureConfigFetched();
+          await this.main.updateOverlayCiphers();
         }
         break;
       case "openPopup":
