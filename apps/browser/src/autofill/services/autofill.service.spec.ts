@@ -580,8 +580,8 @@ describe("AutofillService", () => {
 
   describe("doAutoFill", () => {
     let autofillOptions: AutoFillOptions;
-    const nothingToAutofillError = "Nothing to auto-fill.";
-    const didNotAutofillError = "Did not auto-fill.";
+    const nothingToAutofillError = "Nothing to autofill.";
+    const didNotAutofillError = "Did not autofill.";
 
     beforeEach(() => {
       autofillOptions = {
@@ -805,7 +805,7 @@ describe("AutofillService", () => {
         triggerTestFailure();
       } catch (error) {
         expect(logService.info).toHaveBeenCalledWith(
-          "Auto-fill on page load was blocked due to an untrusted iframe.",
+          "Autofill on page load was blocked due to an untrusted iframe.",
         );
         expect(error.message).toBe(didNotAutofillError);
       }
@@ -819,7 +819,7 @@ describe("AutofillService", () => {
       await autofillService.doAutoFill(autofillOptions);
 
       expect(logService.info).not.toHaveBeenCalledWith(
-        "Auto-fill on page load was blocked due to an untrusted iframe.",
+        "Autofill on page load was blocked due to an untrusted iframe.",
       );
     });
 
@@ -1204,7 +1204,7 @@ describe("AutofillService", () => {
       expect(result).toBe(totp);
     });
 
-    it("auto-fills card cipher types", async () => {
+    it("autofills card cipher types", async () => {
       const cardFormPageDetails = [
         {
           frameId: 1,
@@ -1251,7 +1251,7 @@ describe("AutofillService", () => {
       });
     });
 
-    it("auto-fills identity cipher types", async () => {
+    it("autofills identity cipher types", async () => {
       const identityFormPageDetails = [
         {
           frameId: 1,

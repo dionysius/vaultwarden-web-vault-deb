@@ -317,7 +317,7 @@ export default class AutofillService implements AutofillServiceInterface {
   async doAutoFill(options: AutoFillOptions): Promise<string | null> {
     const tab = options.tab;
     if (!tab || !options.cipher || !options.pageDetails || !options.pageDetails.length) {
-      throw new Error("Nothing to auto-fill.");
+      throw new Error("Nothing to autofill.");
     }
 
     let totp: string | null = null;
@@ -359,7 +359,7 @@ export default class AutofillService implements AutofillServiceInterface {
           options.allowUntrustedIframe != undefined &&
           !options.allowUntrustedIframe
         ) {
-          this.logService.info("Auto-fill on page load was blocked due to an untrusted iframe.");
+          this.logService.info("Autofill on page load was blocked due to an untrusted iframe.");
           return;
         }
 
@@ -414,7 +414,7 @@ export default class AutofillService implements AutofillServiceInterface {
         return null;
       }
     } else {
-      throw new Error("Did not auto-fill.");
+      throw new Error("Did not autofill.");
     }
   }
 
@@ -1187,7 +1187,7 @@ export default class AutofillService implements AutofillServiceInterface {
     options: GenerateFillScriptOptions,
   ): Promise<boolean> {
     // If the pageUrl (from the content script) matches the tabUrl (from the sender tab), we are not in an iframe
-    // This also avoids a false positive if no URI is saved and the user triggers auto-fill anyway
+    // This also avoids a false positive if no URI is saved and the user triggers autofill anyway
     if (pageUrl === options.tabUrl) {
       return false;
     }
