@@ -3,7 +3,9 @@
     <h2 bitTypography="h6">{{ "itemDetails" | i18n }}</h2>
   </bit-section-header>
   <bit-card>
-    <bit-form-field>
+    <bit-form-field
+      [disableMargin]="!cipher.collectionIds?.length && !cipher.organizationId && !cipher.folderId"
+    >
       <bit-label>
         {{ "itemName" | i18n }}
       </bit-label>
@@ -19,7 +21,7 @@
 
     <ul
       [attr.aria-label]="'itemLocation' | i18n"
-      *ngIf="cipher.collectionIds || cipher.organizationId || cipher.folderId"
+      *ngIf="cipher.collectionIds?.length || cipher.organizationId || cipher.folderId"
     >
       <li
         *ngIf="cipher.organizationId && organization"
