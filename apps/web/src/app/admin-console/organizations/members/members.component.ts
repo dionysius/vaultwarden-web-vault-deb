@@ -92,7 +92,7 @@ export class MembersComponent extends BaseMembersComponent<OrganizationUserView>
 
   protected canUseSecretsManager$: Observable<boolean>;
 
-  protected EnableUpgradePasswordManagerSub$ = this.configService.getFeatureFlag$(
+  protected enableUpgradePasswordManagerSub$ = this.configService.getFeatureFlag$(
     FeatureFlag.EnableUpgradePasswordManagerSub,
   );
 
@@ -476,10 +476,10 @@ export class MembersComponent extends BaseMembersComponent<OrganizationUserView>
         this.organization.productTierType === ProductTierType.TeamsStarter ||
         this.organization.productTierType === ProductTierType.Families)
     ) {
-      const EnableUpgradePasswordManagerSub = await firstValueFrom(
-        this.EnableUpgradePasswordManagerSub$,
+      const enableUpgradePasswordManagerSub = await firstValueFrom(
+        this.enableUpgradePasswordManagerSub$,
       );
-      if (EnableUpgradePasswordManagerSub) {
+      if (enableUpgradePasswordManagerSub) {
         const reference = openChangePlanDialog(this.dialogService, {
           data: {
             organizationId: this.organization.id,
