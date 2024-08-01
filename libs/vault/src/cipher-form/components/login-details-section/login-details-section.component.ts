@@ -24,6 +24,7 @@ import {
 import { CipherFormGenerationService } from "../../abstractions/cipher-form-generation.service";
 import { TotpCaptureService } from "../../abstractions/totp-capture.service";
 import { CipherFormContainer } from "../../cipher-form-container";
+import { AutofillOptionsComponent } from "../autofill-options/autofill-options.component";
 
 @Component({
   selector: "vault-login-details-section",
@@ -41,6 +42,7 @@ import { CipherFormContainer } from "../../cipher-form-container";
     AsyncActionsModule,
     NgIf,
     PopoverModule,
+    AutofillOptionsComponent,
   ],
 })
 export class LoginDetailsSectionComponent implements OnInit {

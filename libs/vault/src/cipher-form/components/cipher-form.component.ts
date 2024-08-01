@@ -190,7 +190,10 @@ export class CipherFormComponent implements AfterViewInit, OnInit, OnChanges, Ci
         this.config.originalCipher,
       );
 
-      this.updatedCipherView = Object.assign(this.updatedCipherView, this.originalCipherView);
+      // decryptCipher again to ensure we have a separate instance of CipherView
+      this.updatedCipherView = await this.addEditFormService.decryptCipher(
+        this.config.originalCipher,
+      );
 
       if (this.config.mode === "clone") {
         this.updatedCipherView.id = null;
