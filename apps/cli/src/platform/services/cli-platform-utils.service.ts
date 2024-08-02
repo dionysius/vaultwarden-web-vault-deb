@@ -131,6 +131,14 @@ export class CliPlatformUtilsService implements PlatformUtilsService {
     throw new Error("Not implemented.");
   }
 
+  supportsBiometric(): Promise<boolean> {
+    return Promise.resolve(false);
+  }
+
+  authenticateBiometric(): Promise<boolean> {
+    return Promise.resolve(false);
+  }
+
   supportsSecureStorage(): boolean {
     return false;
   }

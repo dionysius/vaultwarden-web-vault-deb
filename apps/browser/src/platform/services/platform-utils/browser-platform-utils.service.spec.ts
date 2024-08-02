@@ -16,7 +16,7 @@ class TestBrowserPlatformUtilsService extends BrowserPlatformUtilsService {
     win: Window & typeof globalThis,
     offscreenDocumentService: OffscreenDocumentService,
   ) {
-    super(clipboardSpy, win, offscreenDocumentService);
+    super(clipboardSpy, null, win, offscreenDocumentService);
   }
 
   showToast(

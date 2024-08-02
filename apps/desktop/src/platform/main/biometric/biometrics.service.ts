@@ -6,9 +6,9 @@ import { UserId } from "@bitwarden/common/types/guid";
 
 import { WindowMain } from "../../../main/window.main";
 
-import { DesktopBiometricsService, OsBiometricService } from "./desktop.biometrics.service";
+import { BiometricsServiceAbstraction, OsBiometricService } from "./biometrics.service.abstraction";
 
-export class BiometricsService extends DesktopBiometricsService {
+export class BiometricsService implements BiometricsServiceAbstraction {
   private platformSpecificService: OsBiometricService;
   private clientKeyHalves = new Map<string, string>();
 
@@ -20,7 +20,6 @@ export class BiometricsService extends DesktopBiometricsService {
     private platform: NodeJS.Platform,
     private biometricStateService: BiometricStateService,
   ) {
-    super();
     this.loadPlatformSpecificService(this.platform);
   }
 
@@ -56,7 +55,7 @@ export class BiometricsService extends DesktopBiometricsService {
     this.platformSpecificService = new NoopBiometricsService();
   }
 
-  async supportsBiometric() {
+  async osSupportsBiometric() {
     return await this.platformSpecificService.osSupportsBiometric();
   }
 
@@ -72,7 +71,7 @@ export class BiometricsService extends DesktopBiometricsService {
     const requireClientKeyHalf = await this.biometricStateService.getRequirePasswordOnStart(userId);
     const clientKeyHalfB64 = this.getClientKeyHalf(service, key);
     const clientKeyHalfSatisfied = !requireClientKeyHalf || !!clientKeyHalfB64;
-    return clientKeyHalfSatisfied && (await this.supportsBiometric());
+    return clientKeyHalfSatisfied && (await this.osSupportsBiometric());
   }
 
   async authenticateBiometric(): Promise<boolean> {
@@ -89,10 +88,6 @@ export class BiometricsService extends DesktopBiometricsService {
       },
     );
     return result;
-  }
-
-  async isBiometricUnlockAvailable(): Promise<boolean> {
-    return await this.platformSpecificService.osSupportsBiometric();
   }
 
   async getBiometricKey(service: string, storageKey: string): Promise<string | null> {

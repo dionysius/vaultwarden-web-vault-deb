@@ -1,10 +1,5 @@
-import { BiometricsService } from "@bitwarden/common/platform/biometrics/biometric.service";
-
-/**
- * This service extends the base biometrics service to provide desktop specific functions,
- * specifically for the main process.
- */
-export abstract class DesktopBiometricsService extends BiometricsService {
+export abstract class BiometricsServiceAbstraction {
+  abstract osSupportsBiometric(): Promise<boolean>;
   abstract canAuthBiometric({
     service,
     key,
@@ -14,6 +9,7 @@ export abstract class DesktopBiometricsService extends BiometricsService {
     key: string;
     userId: string;
   }): Promise<boolean>;
+  abstract authenticateBiometric(): Promise<boolean>;
   abstract getBiometricKey(service: string, key: string): Promise<string | null>;
   abstract setBiometricKey(service: string, key: string, value: string): Promise<void>;
   abstract setEncryptionKeyHalf({
