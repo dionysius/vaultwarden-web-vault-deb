@@ -462,16 +462,21 @@ export default class MainBackground {
     };
 
     this.secureStorageService = this.storageService; // secure storage is not supported in browsers, so we use local storage and warn users when it is used
-    this.memoryStorageForStateProviders = BrowserApi.isManifestVersion(3)
-      ? new BrowserMemoryStorageService() // mv3 stores to storage.session
-      : popupOnlyContext
-        ? new ForegroundMemoryStorageService()
-        : new BackgroundMemoryStorageService(); // mv2 stores to memory
-    this.memoryStorageService = BrowserApi.isManifestVersion(3)
-      ? this.memoryStorageForStateProviders // manifest v3 can reuse the same storage. They are split for v2 due to lacking a good sync mechanism, which isn't true for v3
-      : popupOnlyContext
-        ? new ForegroundMemoryStorageService()
-        : new BackgroundMemoryStorageService();
+
+    if (BrowserApi.isManifestVersion(3)) {
+      // manifest v3 can reuse the same storage. They are split for v2 due to lacking a good sync mechanism, which isn't true for v3
+      this.memoryStorageForStateProviders = new BrowserMemoryStorageService(); // mv3 stores to storage.session
+      this.memoryStorageService = this.memoryStorageForStateProviders;
+    } else {
+      if (popupOnlyContext) {
+        this.memoryStorageForStateProviders = new ForegroundMemoryStorageService();
+        this.memoryStorageService = new ForegroundMemoryStorageService();
+      } else {
+        this.memoryStorageForStateProviders = new BackgroundMemoryStorageService(); // mv2 stores to memory
+        this.memoryStorageService = this.memoryStorageForStateProviders;
+      }
+    }
+
     this.largeObjectMemoryStorageForStateProviders = BrowserApi.isManifestVersion(3)
       ? mv3MemoryStorageCreator() // mv3 stores to local-backed session storage
       : this.memoryStorageForStateProviders; // mv2 stores to the same location
