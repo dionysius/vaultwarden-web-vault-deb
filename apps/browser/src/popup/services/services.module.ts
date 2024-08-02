@@ -57,6 +57,7 @@ import {
   ObservableStorageService,
 } from "@bitwarden/common/platform/abstractions/storage.service";
 import { BiometricStateService } from "@bitwarden/common/platform/biometrics/biometric-state.service";
+import { BiometricsService } from "@bitwarden/common/platform/biometrics/biometric.service";
 import { Message, MessageListener, MessageSender } from "@bitwarden/common/platform/messaging";
 // eslint-disable-next-line no-restricted-imports -- Used for dependency injection
 import { SubjectMessageSender } from "@bitwarden/common/platform/messaging/internal";
@@ -99,6 +100,7 @@ import { BrowserCryptoService } from "../../platform/services/browser-crypto.ser
 import { BrowserEnvironmentService } from "../../platform/services/browser-environment.service";
 import BrowserLocalStorageService from "../../platform/services/browser-local-storage.service";
 import { BrowserScriptInjectorService } from "../../platform/services/browser-script-injector.service";
+import { ForegroundBrowserBiometricsService } from "../../platform/services/foreground-browser-biometrics";
 import I18nService from "../../platform/services/i18n.service";
 import { ForegroundPlatformUtilsService } from "../../platform/services/platform-utils/foreground-platform-utils.service";
 import { ForegroundTaskSchedulerService } from "../../platform/services/task-scheduler/foreground-task-scheduler.service";
@@ -203,6 +205,7 @@ const safeProviders: SafeProvider[] = [
       accountService: AccountServiceAbstraction,
       stateProvider: StateProvider,
       biometricStateService: BiometricStateService,
+      biometricsService: BiometricsService,
       kdfConfigService: KdfConfigService,
     ) => {
       const cryptoService = new BrowserCryptoService(
@@ -217,6 +220,7 @@ const safeProviders: SafeProvider[] = [
         accountService,
         stateProvider,
         biometricStateService,
+        biometricsService,
         kdfConfigService,
       );
       new ContainerService(cryptoService, encryptService).attachToGlobal(self);
@@ -234,6 +238,7 @@ const safeProviders: SafeProvider[] = [
       AccountServiceAbstraction,
       StateProvider,
       BiometricStateService,
+      BiometricsService,
       KdfConfigService,
     ],
   }),
@@ -258,21 +263,18 @@ const safeProviders: SafeProvider[] = [
         (clipboardValue: string, clearMs: number) => {
           void BrowserApi.sendMessage("clearClipboard", { clipboardValue, clearMs });
         },
-        async () => {
-          const response = await BrowserApi.sendMessageWithResponse<{
-            result: boolean;
-            error: string;
-          }>("biometricUnlock");
-          if (!response.result) {
-            throw response.error;
-          }
-          return response.result;
-        },
         window,
         offscreenDocumentService,
       );
     },
     deps: [ToastService, OffscreenDocumentService],
+  }),
+  safeProvider({
+    provide: BiometricsService,
+    useFactory: () => {
+      return new ForegroundBrowserBiometricsService();
+    },
+    deps: [],
   }),
   safeProvider({
     provide: SyncService,

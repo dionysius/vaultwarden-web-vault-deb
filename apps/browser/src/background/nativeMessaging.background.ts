@@ -326,6 +326,15 @@ export class NativeMessagingBackground {
             type: "danger",
           });
           break;
+        } else if (message.response === "not available") {
+          this.messagingService.send("showDialog", {
+            title: { key: "biometricsNotAvailableTitle" },
+            content: { key: "biometricsNotAvailableDesc" },
+            acceptButtonText: { key: "ok" },
+            cancelButtonText: null,
+            type: "danger",
+          });
+          break;
         } else if (message.response === "canceled") {
           break;
         }
@@ -390,6 +399,10 @@ export class NativeMessagingBackground {
           // eslint-disable-next-line @typescript-eslint/no-floating-promises
           this.runtimeBackground.processMessage({ command: "unlocked" });
         }
+        break;
+      }
+      case "biometricUnlockAvailable": {
+        this.resolver(message);
         break;
       }
       default:
