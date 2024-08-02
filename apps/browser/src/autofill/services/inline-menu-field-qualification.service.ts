@@ -1057,7 +1057,7 @@ export class InlineMenuFieldQualificationService
     returnStringValue: boolean,
   ) {
     if (!this.autofillFieldKeywordsMap.has(autofillFieldData)) {
-      const keywords = [
+      const keywordsSet = new Set<string>([
         autofillFieldData.htmlID,
         autofillFieldData.htmlName,
         autofillFieldData.htmlClass,
@@ -1071,9 +1071,8 @@ export class InlineMenuFieldQualificationService
         autofillFieldData["label-right"],
         autofillFieldData["label-tag"],
         autofillFieldData["label-top"],
-      ];
-      const keywordsSet = new Set<string>(keywords);
-      const stringValue = keywords.join(",").toLowerCase();
+      ]);
+      const stringValue = Array.from(keywordsSet).join(",").toLowerCase();
       this.autofillFieldKeywordsMap.set(autofillFieldData, { keywordsSet, stringValue });
     }
 
