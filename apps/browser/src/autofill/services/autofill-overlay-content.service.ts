@@ -338,7 +338,12 @@ export class AutofillOverlayContentService implements AutofillOverlayContentServ
 
     const indexOffset = direction === RedirectFocusDirection.Previous ? -1 : 1;
     const redirectFocusElement = this.focusableElements[focusedElementIndex + indexOffset];
-    redirectFocusElement?.focus();
+    if (redirectFocusElement) {
+      redirectFocusElement.focus();
+      return;
+    }
+
+    this.focusMostRecentlyFocusedField();
   }
 
   /**
@@ -1418,8 +1423,8 @@ export class AutofillOverlayContentService implements AutofillOverlayContentServ
       focusedFieldRectsTop + this.focusedFieldData?.focusedFieldRects?.height;
     const viewportHeight = globalThis.innerHeight + globalThis.scrollY;
     return (
-      focusedFieldRectsTop &&
-      focusedFieldRectsTop > 0 &&
+      !globalThis.isNaN(focusedFieldRectsTop) &&
+      focusedFieldRectsTop >= 0 &&
       focusedFieldRectsTop < viewportHeight &&
       focusedFieldRectsBottom < viewportHeight
     );

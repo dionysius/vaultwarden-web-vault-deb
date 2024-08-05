@@ -97,7 +97,8 @@ export class OverlayBackground implements OverlayBackgroundInterface {
     checkIsInlineMenuCiphersPopulated: ({ sender }) =>
       this.checkIsInlineMenuCiphersPopulated(sender),
     updateFocusedFieldData: ({ message, sender }) => this.setFocusedFieldData(message, sender),
-    updateIsFieldCurrentlyFocused: ({ message }) => this.updateIsFieldCurrentlyFocused(message),
+    updateIsFieldCurrentlyFocused: ({ message, sender }) =>
+      this.updateIsFieldCurrentlyFocused(message, sender),
     checkIsFieldCurrentlyFocused: () => this.checkIsFieldCurrentlyFocused(),
     updateIsFieldCurrentlyFilling: ({ message }) => this.updateIsFieldCurrentlyFilling(message),
     checkIsFieldCurrentlyFilling: () => this.checkIsFieldCurrentlyFilling(),
@@ -1090,7 +1091,7 @@ export class OverlayBackground implements OverlayBackgroundInterface {
     { focusedFieldData }: OverlayBackgroundExtensionMessage,
     sender: chrome.runtime.MessageSender,
   ) {
-    if (this.focusedFieldData?.frameId && this.focusedFieldData.frameId !== sender.frameId) {
+    if (this.focusedFieldData && !this.senderFrameHasFocusedField(sender)) {
       void BrowserApi.tabSendMessage(
         sender.tab,
         { command: "unsetMostRecentlyFocusedField" },
@@ -1100,6 +1101,7 @@ export class OverlayBackground implements OverlayBackgroundInterface {
 
     const previousFocusedFieldData = this.focusedFieldData;
     this.focusedFieldData = { ...focusedFieldData, tabId: sender.tab.id, frameId: sender.frameId };
+    this.isFieldCurrentlyFocused = true;
 
     const accountCreationFieldBlurred =
       previousFocusedFieldData?.showInlineMenuAccountCreation &&
@@ -1558,8 +1560,16 @@ export class OverlayBackground implements OverlayBackgroundInterface {
    * Updates the property that identifies if a form field set up for the inline menu is currently focused.
    *
    * @param message - The message received from the web page
+   * @param sender - The sender of the port message
    */
-  private updateIsFieldCurrentlyFocused(message: OverlayBackgroundExtensionMessage) {
+  private updateIsFieldCurrentlyFocused(
+    message: OverlayBackgroundExtensionMessage,
+    sender: chrome.runtime.MessageSender,
+  ) {
+    if (this.focusedFieldData && !this.senderFrameHasFocusedField(sender)) {
+      return;
+    }
+
     this.isFieldCurrentlyFocused = message.isFieldCurrentlyFocused;
   }
 
@@ -1651,7 +1661,7 @@ export class OverlayBackground implements OverlayBackgroundInterface {
       return false;
     }
 
-    if (this.focusedFieldData?.frameId === sender.frameId) {
+    if (this.senderFrameHasFocusedField(sender)) {
       return true;
     }
 
@@ -1674,6 +1684,15 @@ export class OverlayBackground implements OverlayBackgroundInterface {
    */
   private senderTabHasFocusedField(sender: chrome.runtime.MessageSender) {
     return sender.tab.id === this.focusedFieldData?.tabId;
+  }
+
+  /**
+   * Identifies if the sender frame is the same as the focused field's frame.
+   *
+   * @param sender - The sender of the message
+   */
+  private senderFrameHasFocusedField(sender: chrome.runtime.MessageSender) {
+    return sender.frameId === this.focusedFieldData?.frameId;
   }
 
   /**

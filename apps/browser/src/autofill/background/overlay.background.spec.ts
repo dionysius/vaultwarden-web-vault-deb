@@ -526,10 +526,13 @@ describe("OverlayBackground", () => {
           });
 
           it("skips updating the position of either inline menu element if a field is not currently focused", async () => {
-            sendMockExtensionMessage({
-              command: "updateIsFieldCurrentlyFocused",
-              isFieldCurrentlyFocused: false,
-            });
+            sendMockExtensionMessage(
+              {
+                command: "updateIsFieldCurrentlyFocused",
+                isFieldCurrentlyFocused: false,
+              },
+              mock<chrome.runtime.MessageSender>({ frameId: 20 }),
+            );
 
             sendMockExtensionMessage({ command: "triggerAutofillOverlayReposition" }, sender);
             await flushUpdateInlineMenuPromises();
@@ -1359,6 +1362,25 @@ describe("OverlayBackground", () => {
           ciphers: [],
           showInlineMenuAccountCreation: true,
         });
+      });
+    });
+
+    describe("updateIsFieldCurrentlyFocused message handler", () => {
+      it("skips updating the isFiledCurrentlyFocused value when the focused field data is populated and the sender frame id does not equal the focused field's frame id", async () => {
+        const focusedFieldData = createFocusedFieldDataMock();
+        sendMockExtensionMessage(
+          { command: "updateFocusedFieldData", focusedFieldData },
+          mock<chrome.runtime.MessageSender>({ tab: { id: 1 }, frameId: 10 }),
+        );
+        overlayBackground["isFieldCurrentlyFocused"] = true;
+
+        sendMockExtensionMessage(
+          { command: "updateIsFieldCurrentlyFocused", isFieldCurrentlyFocused: false },
+          mock<chrome.runtime.MessageSender>({ tab: { id: 1 }, frameId: 20 }),
+        );
+        await flushPromises();
+
+        expect(overlayBackground["isFieldCurrentlyFocused"]).toBe(true);
       });
     });
 
