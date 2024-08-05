@@ -249,10 +249,6 @@ export class AutofillOverlayContentService implements AutofillOverlayContentServ
    * to the background script to add a new cipher.
    */
   async addNewVaultItem({ addNewCipherType }: AutofillExtensionMessage) {
-    if (!(await this.isInlineMenuListVisible())) {
-      return;
-    }
-
     const command = "autofillOverlayAddNewVaultItem";
 
     if (addNewCipherType === CipherType.Login) {
@@ -680,7 +676,9 @@ export class AutofillOverlayContentService implements AutofillOverlayContentServ
     }
 
     if (elementIsSelectElement(formFieldElement)) {
-      await this.sendExtensionMessage("closeAutofillInlineMenu");
+      await this.sendExtensionMessage("closeAutofillInlineMenu", {
+        forceCloseInlineMenu: true,
+      });
       return;
     }
 
@@ -763,7 +761,11 @@ export class AutofillOverlayContentService implements AutofillOverlayContentServ
   private async updateMostRecentlyFocusedField(
     formFieldElement: ElementWithOpId<FormFieldElement>,
   ) {
-    if (!formFieldElement || !elementIsFillableFormField(formFieldElement)) {
+    if (
+      !formFieldElement ||
+      !elementIsFillableFormField(formFieldElement) ||
+      elementIsSelectElement(formFieldElement)
+    ) {
       return;
     }
 

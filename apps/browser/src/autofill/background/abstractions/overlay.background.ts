@@ -95,6 +95,10 @@ export type OverlayAddNewItemMessage = {
   identity?: NewIdentityCipherData;
 };
 
+export type CurrentAddNewItemData = OverlayAddNewItemMessage & {
+  sender: chrome.runtime.MessageSender;
+};
+
 export type CloseInlineMenuMessage = {
   forceCloseInlineMenu?: boolean;
   overlayElement?: string;

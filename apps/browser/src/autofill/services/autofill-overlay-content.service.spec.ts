@@ -1099,7 +1099,9 @@ describe("AutofillOverlayContentService", () => {
           selectFieldElement.dispatchEvent(new Event("focus"));
           await flushPromises();
 
-          expect(sendExtensionMessageSpy).toHaveBeenCalledWith("closeAutofillInlineMenu");
+          expect(sendExtensionMessageSpy).toHaveBeenCalledWith("closeAutofillInlineMenu", {
+            forceCloseInlineMenu: true,
+          });
         });
 
         it("updates the most recently focused field", async () => {
