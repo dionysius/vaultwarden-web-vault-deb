@@ -3,7 +3,7 @@
     <h2 bitTypography="h6">{{ setSectionTitle }}</h2>
   </bit-section-header>
   <bit-card class="[&_bit-form-field:last-of-type]:tw-mb-0">
-    <bit-form-field>
+    <bit-form-field *ngIf="card.cardholderName">
       <bit-label>{{ "cardholderName" | i18n }}</bit-label>
       <input
         readonly
