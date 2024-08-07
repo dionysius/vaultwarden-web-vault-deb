@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, DestroyRef, EventEmitter, Input, Output } from "@angular/core";
+import { Component, DestroyRef, EventEmitter, Input, OnChanges, Output } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { firstValueFrom, map, startWith, Subject, Subscription, switchMap, tap } from "rxjs";
 
@@ -42,7 +42,7 @@ import {
     TypographyModule,
   ],
 })
-export class CipherFormGeneratorComponent {
+export class CipherFormGeneratorComponent implements OnChanges {
   /**
    * The type of generator form to show.
    */

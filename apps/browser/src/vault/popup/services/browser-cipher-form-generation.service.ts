@@ -39,7 +39,4 @@ export class BrowserCipherFormGenerationService implements CipherFormGenerationS
 
     return result.generatedValue;
   }
-  async generateInitialPassword(): Promise<string> {
-    return "";
-  }
 }
