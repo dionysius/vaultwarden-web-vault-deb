@@ -82,3 +82,19 @@ export const ScrollingContent: Story = {
     useDefaultIcon: true,
   },
 };
+
+export const TextOverflow: Story = {
+  render: (args) => ({
+    props: args,
+    template: `
+      <bit-simple-dialog>
+        <span bitDialogTitle>Alert Dialogdialogdialogdialogdialogdialogdialogdialogdialogdialogdialogdialogdialog</span>
+        <span bitDialogContent>Message Contentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontent</span>
+        <ng-container bitDialogFooter>
+          <button bitButton buttonType="primary">Yes</button>
+          <button bitButton buttonType="secondary">No</button>
+        </ng-container>
+      </bit-simple-dialog>
+    `,
+  }),
+};
