@@ -1803,6 +1803,18 @@
   "passwordGeneratorPolicyInEffect": {
     "message": "One or more organization policies are affecting your generator settings."
   },
+  "passwordGenerator": {
+    "message": "Password generator"
+  },
+  "usernameGenerator": {
+    "message": "Username generator"
+  },
+  "useThisPassword": {
+    "message": "Use this password"
+  },
+  "useThisUsername": {
+      "message": "Use this username"
+  },
   "vaultTimeoutAction": {
     "message": "Vault timeout action"
   },

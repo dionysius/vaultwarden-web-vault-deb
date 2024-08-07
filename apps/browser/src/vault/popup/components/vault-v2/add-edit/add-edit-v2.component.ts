@@ -14,6 +14,7 @@ import { AsyncActionsModule, ButtonModule, SearchModule } from "@bitwarden/compo
 import {
   CipherFormConfig,
   CipherFormConfigService,
+  CipherFormGenerationService,
   CipherFormMode,
   CipherFormModule,
   DefaultCipherFormConfigService,
@@ -27,6 +28,7 @@ import { PopupHeaderComponent } from "../../../../../platform/popup/layout/popup
 import { PopupPageComponent } from "../../../../../platform/popup/layout/popup-page.component";
 import { PopupCloseWarningService } from "../../../../../popup/services/popup-close-warning.service";
 import { BrowserFido2UserInterfaceSession } from "../../../../fido2/browser-fido2-user-interface.service";
+import { BrowserCipherFormGenerationService } from "../../../services/browser-cipher-form-generation.service";
 import { BrowserTotpCaptureService } from "../../../services/browser-totp-capture.service";
 import {
   fido2PopoutSessionData$,
@@ -106,6 +108,7 @@ export type AddEditQueryParams = Partial<Record<keyof QueryParams, string>>;
   providers: [
     { provide: CipherFormConfigService, useClass: DefaultCipherFormConfigService },
     { provide: TotpCaptureService, useClass: BrowserTotpCaptureService },
+    { provide: CipherFormGenerationService, useClass: BrowserCipherFormGenerationService },
   ],
   imports: [
     CommonModule,
