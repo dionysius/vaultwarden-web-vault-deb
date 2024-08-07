@@ -128,6 +128,17 @@ describe("Fido2 page script with native WebAuthn support", () => {
         mockCredentialAssertResult,
       );
     });
+
+    it("initiates a conditional mediated webauth request", async () => {
+      mockCredentialRequestOptions.mediation = "conditional";
+      mockCredentialRequestOptions.signal = new AbortController().signal;
+
+      await navigator.credentials.get(mockCredentialRequestOptions);
+
+      expect(WebauthnUtils.mapCredentialAssertResult).toHaveBeenCalledWith(
+        mockCredentialAssertResult,
+      );
+    });
   });
 
   describe("destroy", () => {
