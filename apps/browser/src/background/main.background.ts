@@ -1025,6 +1025,7 @@ export default class MainBackground {
         this.fido2ClientService,
         this.vaultSettingsService,
         this.scriptInjectorService,
+        this.configService,
       );
       this.runtimeBackground = new RuntimeBackground(
         this,
