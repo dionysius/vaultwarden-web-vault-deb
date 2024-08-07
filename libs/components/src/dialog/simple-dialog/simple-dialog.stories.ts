@@ -64,10 +64,9 @@ export const ScrollingContent: Story = {
       <bit-simple-dialog>
         <span bitDialogTitle>Alert Dialog</span>
         <span bitDialogContent>
-          Message Content
-          Message text goes here.<br>
+          Message Content Message text goes here.<br />
           <ng-container *ngFor="let _ of [].constructor(100)">
-            repeating lines of characters <br>
+            repeating lines of characters <br />
           </ng-container>
           end of sequence!
         </span>
