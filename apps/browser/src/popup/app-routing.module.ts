@@ -64,6 +64,7 @@ import { ImportBrowserV2Component } from "../tools/popup/settings/import/import-
 import { ImportBrowserComponent } from "../tools/popup/settings/import/import-browser.component";
 import { SettingsV2Component } from "../tools/popup/settings/settings-v2.component";
 import { SettingsComponent } from "../tools/popup/settings/settings.component";
+import { clearVaultStateGuard } from "../vault/guards/clear-vault-state.guard";
 import { AddEditComponent } from "../vault/popup/components/vault/add-edit.component";
 import { AttachmentsComponent } from "../vault/popup/components/vault/attachments.component";
 import { CollectionsComponent } from "../vault/popup/components/vault/collections.component";
@@ -457,6 +458,7 @@ const routes: Routes = [
       ...extensionRefreshSwap(VaultFilterComponent, VaultV2Component, {
         path: "vault",
         canActivate: [authGuard],
+        canDeactivate: [clearVaultStateGuard],
         data: { state: "tabs_vault" },
       }),
       {
