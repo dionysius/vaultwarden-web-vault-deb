@@ -1,4 +1,4 @@
-import { WebauthnUtils } from "../../../vault/fido2/webauthn-utils";
+import { WebauthnUtils } from "../utils/webauthn-utils";
 
 import { MessageType } from "./messaging/message";
 import { Messenger } from "./messaging/messenger";

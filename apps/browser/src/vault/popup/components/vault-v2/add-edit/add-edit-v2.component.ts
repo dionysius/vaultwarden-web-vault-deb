@@ -21,13 +21,13 @@ import {
   TotpCaptureService,
 } from "@bitwarden/vault";
 
+import { BrowserFido2UserInterfaceSession } from "../../../../../autofill/fido2/services/browser-fido2-user-interface.service";
 import BrowserPopupUtils from "../../../../../platform/popup/browser-popup-utils";
 import { PopOutComponent } from "../../../../../platform/popup/components/pop-out.component";
 import { PopupFooterComponent } from "../../../../../platform/popup/layout/popup-footer.component";
 import { PopupHeaderComponent } from "../../../../../platform/popup/layout/popup-header.component";
 import { PopupPageComponent } from "../../../../../platform/popup/layout/popup-page.component";
 import { PopupCloseWarningService } from "../../../../../popup/services/popup-close-warning.service";
-import { BrowserFido2UserInterfaceSession } from "../../../../fido2/browser-fido2-user-interface.service";
 import { BrowserCipherFormGenerationService } from "../../../services/browser-cipher-form-generation.service";
 import { BrowserTotpCaptureService } from "../../../services/browser-totp-capture.service";
 import {

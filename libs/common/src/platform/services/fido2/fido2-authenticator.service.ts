@@ -234,15 +234,14 @@ export class Fido2AuthenticatorService implements Fido2AuthenticatorServiceAbstr
         throw new Fido2AuthenticatorError(Fido2AuthenticatorErrorCode.NotAllowed);
       }
 
-      let response;
+      let response = { cipherId: cipherOptions[0].id, userVerified: false };
       if (this.requiresUserVerificationPrompt(params, cipherOptions)) {
         response = await userInterfaceSession.pickCredential({
           cipherIds: cipherOptions.map((cipher) => cipher.id),
           userVerification: params.requireUserVerification,
         });
-      } else {
-        response = { cipherId: cipherOptions[0].id, userVerified: false };
       }
+
       const selectedCipherId = response.cipherId;
       const userVerified = response.userVerified;
       const selectedCipher = cipherOptions.find((c) => c.id === selectedCipherId);

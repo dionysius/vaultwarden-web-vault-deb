@@ -13,6 +13,7 @@ import {
   DomainSettingsService,
 } from "@bitwarden/common/autofill/services/domain-settings.service";
 import { InlineMenuVisibilitySetting } from "@bitwarden/common/autofill/types";
+import { NeverDomains } from "@bitwarden/common/models/domain/domain-service";
 import {
   EnvironmentService,
   Region,
@@ -75,6 +76,7 @@ describe("OverlayBackground", () => {
   let accountService: FakeAccountService;
   let fakeStateProvider: FakeStateProvider;
   let showFaviconsMock$: BehaviorSubject<boolean>;
+  let neverDomainsMock$: BehaviorSubject<NeverDomains>;
   let domainSettingsService: DomainSettingsService;
   let logService: MockProxy<LogService>;
   let cipherService: MockProxy<CipherService>;
@@ -133,8 +135,10 @@ describe("OverlayBackground", () => {
     accountService = mockAccountServiceWith(mockUserId);
     fakeStateProvider = new FakeStateProvider(accountService);
     showFaviconsMock$ = new BehaviorSubject(true);
+    neverDomainsMock$ = new BehaviorSubject({});
     domainSettingsService = new DefaultDomainSettingsService(fakeStateProvider);
     domainSettingsService.showFavicons$ = showFaviconsMock$;
+    domainSettingsService.neverDomains$ = neverDomainsMock$;
     logService = mock<LogService>();
     cipherService = mock<CipherService>();
     autofillService = mock<AutofillService>();
@@ -754,6 +758,7 @@ describe("OverlayBackground", () => {
             credentialId: "credential-id",
             rpName: "credential-name",
             userName: "credential-username",
+            rpId: "jest-testing-website.com",
           }),
         ],
       },
@@ -1181,6 +1186,64 @@ describe("OverlayBackground", () => {
         ],
         showInlineMenuAccountCreation: false,
         showPasskeysLabels: true,
+      });
+    });
+
+    it("does not add a passkey to the inline menu when its rpId is part of the neverDomains exclusion list", async () => {
+      availableAutofillCredentialsMock$.next(passkeyCipher.login.fido2Credentials);
+      overlayBackground["focusedFieldData"] = createFocusedFieldDataMock({
+        tabId: tab.id,
+        filledByCipherType: CipherType.Login,
+      });
+      cipherService.getAllDecryptedForUrl.mockResolvedValue([loginCipher1, passkeyCipher]);
+      cipherService.sortCiphersByLastUsedThenName.mockReturnValue(-1);
+      getTabFromCurrentWindowIdSpy.mockResolvedValueOnce(tab);
+      neverDomainsMock$.next({ "jest-testing-website.com": null });
+
+      await overlayBackground.updateOverlayCiphers();
+
+      expect(listPortSpy.postMessage).toHaveBeenCalledWith({
+        command: "updateAutofillInlineMenuListCiphers",
+        ciphers: [
+          {
+            id: "inline-menu-cipher-0",
+            name: passkeyCipher.name,
+            type: CipherType.Login,
+            reprompt: passkeyCipher.reprompt,
+            favorite: passkeyCipher.favorite,
+            icon: {
+              fallbackImage: "images/bwi-globe.png",
+              icon: "bwi-globe",
+              image: "https://icons.bitwarden.com//jest-testing-website.com/icon.png",
+              imageEnabled: true,
+            },
+            accountCreationFieldType: undefined,
+            login: {
+              username: passkeyCipher.login.username,
+              passkey: null,
+            },
+          },
+          {
+            id: "inline-menu-cipher-1",
+            name: loginCipher1.name,
+            type: CipherType.Login,
+            reprompt: loginCipher1.reprompt,
+            favorite: loginCipher1.favorite,
+            icon: {
+              fallbackImage: "images/bwi-globe.png",
+              icon: "bwi-globe",
+              image: "https://icons.bitwarden.com//jest-testing-website.com/icon.png",
+              imageEnabled: true,
+            },
+            accountCreationFieldType: undefined,
+            login: {
+              username: loginCipher1.login.username,
+              passkey: null,
+            },
+          },
+        ],
+        showInlineMenuAccountCreation: false,
+        showPasskeysLabels: false,
       });
     });
   });

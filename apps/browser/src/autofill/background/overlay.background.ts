@@ -7,6 +7,7 @@ import {
   switchMap,
   debounceTime,
 } from "rxjs";
+import { parse } from "tldts";
 
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
@@ -17,6 +18,7 @@ import {
 import { AutofillSettingsServiceAbstraction } from "@bitwarden/common/autofill/services/autofill-settings.service";
 import { DomainSettingsService } from "@bitwarden/common/autofill/services/domain-settings.service";
 import { InlineMenuVisibilitySetting } from "@bitwarden/common/autofill/types";
+import { NeverDomains } from "@bitwarden/common/models/domain/domain-service";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { Fido2ClientService } from "@bitwarden/common/platform/abstractions/fido2/fido2-client.service.abstraction";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -364,7 +366,10 @@ export class OverlayBackground implements OverlayBackgroundInterface {
         true,
       );
     } else {
-      inlineMenuCipherData = this.buildInlineMenuCiphers(inlineMenuCiphersArray, showFavicons);
+      inlineMenuCipherData = await this.buildInlineMenuCiphers(
+        inlineMenuCiphersArray,
+        showFavicons,
+      );
     }
 
     this.currentInlineMenuCiphersCount = inlineMenuCipherData.length;
@@ -432,12 +437,17 @@ export class OverlayBackground implements OverlayBackgroundInterface {
    * @param inlineMenuCiphersArray - Array of inline menu ciphers
    * @param showFavicons - Identifies whether favicons should be shown
    */
-  private buildInlineMenuCiphers(
+  private async buildInlineMenuCiphers(
     inlineMenuCiphersArray: [string, CipherView][],
     showFavicons: boolean,
   ) {
     const inlineMenuCipherData: InlineMenuCipherData[] = [];
     const passkeyCipherData: InlineMenuCipherData[] = [];
+    const domainExclusions = await this.getExcludedDomains();
+    let domainExclusionsSet: Set<string> | null = null;
+    if (domainExclusions) {
+      domainExclusionsSet = new Set(Object.keys(await this.getExcludedDomains()));
+    }
 
     for (let cipherIndex = 0; cipherIndex < inlineMenuCiphersArray.length; cipherIndex++) {
       const [inlineMenuCipherId, cipher] = inlineMenuCiphersArray[cipherIndex];
@@ -445,7 +455,7 @@ export class OverlayBackground implements OverlayBackgroundInterface {
         continue;
       }
 
-      if (this.showCipherAsPasskey(cipher)) {
+      if (this.showCipherAsPasskey(cipher, domainExclusionsSet)) {
         passkeyCipherData.push(
           this.buildCipherData({
             inlineMenuCipherId,
@@ -472,13 +482,28 @@ export class OverlayBackground implements OverlayBackgroundInterface {
    * Identifies whether we should show the cipher as a passkey in the inline menu list.
    *
    * @param cipher - The cipher to check
+   * @param domainExclusions - The domain exclusions to check against
    */
-  private showCipherAsPasskey(cipher: CipherView): boolean {
+  private showCipherAsPasskey(cipher: CipherView, domainExclusions: Set<string> | null): boolean {
+    if (cipher.type !== CipherType.Login) {
+      return false;
+    }
+
+    const fido2Credentials = cipher.login.fido2Credentials;
+    if (!fido2Credentials?.length) {
+      return false;
+    }
+
+    const credentialId = fido2Credentials[0].credentialId;
+    const rpId = fido2Credentials[0].rpId;
+    const parsedRpId = parse(rpId, { allowPrivateDomains: true });
+    if (domainExclusions?.has(parsedRpId.domain)) {
+      return false;
+    }
+
     return (
-      cipher.type === CipherType.Login &&
-      cipher.login.fido2Credentials?.length > 0 &&
-      (this.inlineMenuFido2Credentials.size === 0 ||
-        this.inlineMenuFido2Credentials.has(cipher.login.fido2Credentials[0].credentialId))
+      this.inlineMenuFido2Credentials.size === 0 ||
+      this.inlineMenuFido2Credentials.has(credentialId)
     );
   }
 
@@ -597,9 +622,17 @@ export class OverlayBackground implements OverlayBackgroundInterface {
    * @param credentials - The FIDO2 credentials to store
    */
   private storeInlineMenuFido2Credentials(credentials: Fido2CredentialView[]) {
-    credentials
-      .map((credential) => credential.credentialId)
-      .forEach((credentialId) => this.inlineMenuFido2Credentials.add(credentialId));
+    credentials.forEach(
+      (credential) =>
+        credential?.credentialId && this.inlineMenuFido2Credentials.add(credential.credentialId),
+    );
+  }
+
+  /**
+   * Gets the neverDomains setting from the domain settings service.
+   */
+  async getExcludedDomains(): Promise<NeverDomains> {
+    return await firstValueFrom(this.domainSettingsService.neverDomains$);
   }
 
   /**

@@ -25,8 +25,8 @@ import {
 } from "@bitwarden/common/platform/abstractions/fido2/fido2-user-interface.service.abstraction";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 
-import { BrowserApi } from "../../platform/browser/browser-api";
-import { closeFido2Popout, openFido2Popout } from "../popup/utils/vault-popout-window";
+import { BrowserApi } from "../../../platform/browser/browser-api";
+import { closeFido2Popout, openFido2Popout } from "../../../vault/popup/utils/vault-popout-window";
 
 const BrowserFido2MessageName = "BrowserFido2UserInterfaceServiceMessage";
 
