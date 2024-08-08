@@ -1428,7 +1428,7 @@ export class AutofillOverlayContentService implements AutofillOverlayContentServ
       !globalThis.isNaN(focusedFieldRectsTop) &&
       focusedFieldRectsTop >= 0 &&
       focusedFieldRectsTop < viewportHeight &&
-      focusedFieldRectsBottom < viewportHeight
+      focusedFieldRectsBottom <= viewportHeight
     );
   }
 
