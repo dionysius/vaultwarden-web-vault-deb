@@ -1,3 +1,19 @@
+diff --git a/apps/web/package.json b/apps/web/package.json
+index 82c447c9b4..4ae2970707 100644
+--- a/apps/web/package.json
++++ b/apps/web/package.json
+@@ -3,11 +3,8 @@
+   "version": "2024.6.2",
+   "scripts": {
+     "build:oss": "webpack",
+-    "build:bit": "webpack -c ../../bitwarden_license/bit-web/webpack.config.js",
+     "build:oss:watch": "webpack serve",
+-    "build:bit:watch": "webpack serve -c ../../bitwarden_license/bit-web/webpack.config.js",
+     "build:bit:dev": "cross-env ENV=development npm run build:bit",
+-    "build:bit:dev:analyze": "cross-env LOGGING=false webpack -c ../../bitwarden_license/bit-web/webpack.config.js --profile --json > stats.json && npx webpack-bundle-analyzer stats.json build/",
+     "build:bit:dev:watch": "cross-env ENV=development NODE_OPTIONS=\"--max-old-space-size=8192\" npm run build:bit:watch",
+     "build:bit:qa": "cross-env NODE_ENV=production ENV=qa npm run build:bit",
+     "build:bit:euprd": "cross-env NODE_ENV=production ENV=euprd npm run build:bit",
 diff --git a/apps/web/src/app/admin-console/organizations/create/organization-information.component.html b/apps/web/src/app/admin-console/organizations/create/organization-information.component.html
 index e0a8006081..789efd9264 100644
 --- a/apps/web/src/app/admin-console/organizations/create/organization-information.component.html
@@ -12,10 +28,10 @@ index e0a8006081..789efd9264 100644
      </bit-form-field>
      <bit-form-field class="tw-w-1/2" *ngIf="isProvider">
 diff --git a/apps/web/src/app/admin-console/organizations/layouts/organization-layout.component.ts b/apps/web/src/app/admin-console/organizations/layouts/organization-layout.component.ts
-index 7de0c98cd5..f842ad907b 100644
+index 4383656bee..eb2f6a154e 100644
 --- a/apps/web/src/app/admin-console/organizations/layouts/organization-layout.component.ts
 +++ b/apps/web/src/app/admin-console/organizations/layouts/organization-layout.component.ts
-@@ -120,6 +120,7 @@ export class OrganizationLayoutComponent implements OnInit, OnDestroy {
+@@ -147,6 +147,7 @@ export class OrganizationLayoutComponent implements OnInit, OnDestroy {
    }
  
    canShowBillingTab(organization: Organization): boolean {
@@ -23,23 +39,11 @@ index 7de0c98cd5..f842ad907b 100644
      return canAccessBillingTab(organization);
    }
  
-diff --git a/apps/web/src/app/admin-console/organizations/members/components/member-dialog/validators/org-seat-limit-reached.validator.ts b/apps/web/src/app/admin-console/organizations/members/components/member-dialog/validators/org-seat-limit-reached.validator.ts
-index 8b521e2c17..9112c18195 100644
---- a/apps/web/src/app/admin-console/organizations/members/components/member-dialog/validators/org-seat-limit-reached.validator.ts
-+++ b/apps/web/src/app/admin-console/organizations/members/components/member-dialog/validators/org-seat-limit-reached.validator.ts
-@@ -17,6 +17,7 @@ export function orgSeatLimitReachedValidator(
-   errorMessage: string,
- ): ValidatorFn {
-   return (control: AbstractControl): ValidationErrors | null => {
-+    return null; // disable orgSeatLimitReachedValidator
-     if (control.value === "" || !control.value) {
-       return null;
-     }
 diff --git a/apps/web/src/app/admin-console/organizations/members/people.component.ts b/apps/web/src/app/admin-console/organizations/members/people.component.ts
-index f385583445..c6f08a32e5 100644
+index a47e0acd0c..06f21a5361 100644
 --- a/apps/web/src/app/admin-console/organizations/members/people.component.ts
 +++ b/apps/web/src/app/admin-console/organizations/members/people.component.ts
-@@ -193,11 +193,7 @@ export class PeopleComponent extends BasePeopleComponent<OrganizationUserView> {
+@@ -182,11 +182,7 @@ export class PeopleComponent extends NewBasePeopleComponent<OrganizationUserView
              .find((p) => p.organizationId === this.organization.id);
            this.orgResetPasswordPolicyEnabled = resetPasswordPolicy?.enabled;
  
@@ -71,7 +75,7 @@ index 7abee6b0d0..2e3b789b23 100644
    },
  ];
 diff --git a/apps/web/src/app/admin-console/organizations/settings/account.component.html b/apps/web/src/app/admin-console/organizations/settings/account.component.html
-index 082fe7eb80..32feab6f4d 100644
+index ae27df1ce9..8a644c63e3 100644
 --- a/apps/web/src/app/admin-console/organizations/settings/account.component.html
 +++ b/apps/web/src/app/admin-console/organizations/settings/account.component.html
 @@ -17,7 +17,7 @@
@@ -84,10 +88,10 @@ index 082fe7eb80..32feab6f4d 100644
          </bit-form-field>
        </div>
 diff --git a/apps/web/src/app/admin-console/organizations/settings/account.component.ts b/apps/web/src/app/admin-console/organizations/settings/account.component.ts
-index d8091e46ae..7e4947c4bb 100644
+index 41cf9b9e8f..4d7f6426fd 100644
 --- a/apps/web/src/app/admin-console/organizations/settings/account.component.ts
 +++ b/apps/web/src/app/admin-console/organizations/settings/account.component.ts
-@@ -93,7 +93,7 @@ export class AccountComponent {
+@@ -87,7 +87,7 @@ export class AccountComponent {
    ) {}
  
    async ngOnInit() {
@@ -96,60 +100,101 @@ index d8091e46ae..7e4947c4bb 100644
  
      this.route.params
        .pipe(
-@@ -195,6 +195,7 @@ export class AccountComponent {
-   }
+@@ -169,6 +169,7 @@ export class AccountComponent {
+   };
  
    submitCollectionManagement = async () => {
 +    return; // flexible collections are not supported by Vaultwarden
      // Early exit if self-hosted
      if (this.selfHosted) {
        return;
+diff --git a/apps/web/src/app/admin-console/organizations/users/enroll-master-password-reset.component.ts b/apps/web/src/app/admin-console/organizations/users/enroll-master-password-reset.component.ts
+index b228a4d135..e262fa51ff 100644
+--- a/apps/web/src/app/admin-console/organizations/users/enroll-master-password-reset.component.ts
++++ b/apps/web/src/app/admin-console/organizations/users/enroll-master-password-reset.component.ts
+@@ -2,6 +2,8 @@ import { UserVerificationDialogComponent } from "@bitwarden/auth/angular";
+ import { OrganizationUserService } from "@bitwarden/common/admin-console/abstractions/organization-user/organization-user.service";
+ import { OrganizationUserResetPasswordEnrollmentRequest } from "@bitwarden/common/admin-console/abstractions/organization-user/requests";
+ import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
++import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
++import { VerificationWithSecret } from "@bitwarden/common/auth/types/verification";
+ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
+ import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
+ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+@@ -26,6 +28,7 @@ export class EnrollMasterPasswordReset {
+     i18nService: I18nService,
+     syncService: SyncService,
+     logService: LogService,
++    userVerificationService: UserVerificationService,
+   ) {
+     const result = await UserVerificationDialogComponent.open(dialogService, {
+       title: "enrollAccountRecovery",
+@@ -33,36 +36,42 @@ export class EnrollMasterPasswordReset {
+         text: "resetPasswordEnrollmentWarning",
+         type: "warning",
+       },
++      verificationType: {
++        type: "custom",
++        verificationFn: async (secret: VerificationWithSecret) => {
++          const request =
++            await userVerificationService.buildRequest<OrganizationUserResetPasswordEnrollmentRequest>(
++              secret,
++            );
++          request.resetPasswordKey = await resetPasswordService.buildRecoveryKey(
++            data.organization.id,
++          );
++
++          // Process the enrollment request, which is an endpoint that is
++          // gated by a server-side check of the master password hash
++          await organizationUserService.putOrganizationUserResetPasswordEnrollment(
++            data.organization.id,
++            data.organization.userId,
++            request,
++          );
++          return true;
++        },
++      },
+     });
+ 
+-    // Handle the result of the dialog based on user action and verification success
++    // User canceled enrollment
+     if (result.userAction === "cancel") {
+       return;
+     }
+ 
+-    // User confirmed the dialog so check verification success
++    // Enrollment failed
+     if (!result.verificationSuccess) {
+-      // verification failed
+       return;
+     }
+ 
+-    // Verification succeeded
++    // Enrollment succeeded
+     try {
+-      // This object is missing most of the properties in the
+-      // `OrganizationUserResetPasswordEnrollmentRequest()`, but those
+-      // properties don't carry over to the server model anyway and are
+-      // never used by this flow.
+-      const request = new OrganizationUserResetPasswordEnrollmentRequest();
+-      request.resetPasswordKey = await resetPasswordService.buildRecoveryKey(data.organization.id);
+-
+-      await organizationUserService.putOrganizationUserResetPasswordEnrollment(
+-        data.organization.id,
+-        data.organization.userId,
+-        request,
+-      );
+-
+       platformUtilsService.showToast("success", null, i18nService.t("enrollPasswordResetSuccess"));
+-
+       await syncService.fullSync(true);
+     } catch (e) {
+       logService.error(e);
 diff --git a/apps/web/src/app/app.component.ts b/apps/web/src/app/app.component.ts
-index 6e2761a9c4..307c54104a 100644
+index 254f23eeb2..133eb4c059 100644
 --- a/apps/web/src/app/app.component.ts
 +++ b/apps/web/src/app/app.component.ts
-@@ -2,7 +2,7 @@ import { DOCUMENT } from "@angular/common";
- import { Component, Inject, NgZone, OnDestroy, OnInit } from "@angular/core";
- import { NavigationEnd, Router } from "@angular/router";
- import * as jq from "jquery";
--import { Subject, filter, firstValueFrom, map, switchMap, takeUntil, timeout, timer } from "rxjs";
-+import { Subject, filter, firstValueFrom, map, takeUntil, timeout } from "rxjs";
- 
- import { EventUploadService } from "@bitwarden/common/abstractions/event/event-upload.service";
- import { NotificationsService } from "@bitwarden/common/abstractions/notifications.service";
-@@ -14,7 +14,6 @@ import { AccountService } from "@bitwarden/common/auth/abstractions/account.serv
- import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
- import { KeyConnectorService } from "@bitwarden/common/auth/abstractions/key-connector.service";
- import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
--import { PaymentMethodWarningsServiceAbstraction as PaymentMethodWarningService } from "@bitwarden/common/billing/abstractions/payment-method-warnings-service.abstraction";
- import { BroadcasterService } from "@bitwarden/common/platform/abstractions/broadcaster.service";
- import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
- import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
-@@ -46,7 +45,6 @@ import {
- 
- const BroadcasterSubscriptionId = "AppComponent";
- const IdleTimeout = 60000 * 10; // 10 minutes
--const PaymentMethodWarningsRefresh = 60000; // 1 Minute
- 
- @Component({
-   selector: "app-root",
-@@ -57,7 +55,6 @@ export class AppComponent implements OnDestroy, OnInit {
-   private idleTimer: number = null;
-   private isIdle = false;
-   private destroy$ = new Subject<void>();
--  private paymentMethodWarningsRefresh$ = timer(0, PaymentMethodWarningsRefresh);
- 
-   constructor(
-     @Inject(DOCUMENT) private document: Document,
-@@ -86,7 +83,6 @@ export class AppComponent implements OnDestroy, OnInit {
-     private dialogService: DialogService,
-     private biometricStateService: BiometricStateService,
-     private stateEventRunnerService: StateEventRunnerService,
--    private paymentMethodWarningService: PaymentMethodWarningService,
-     private organizationService: InternalOrganizationServiceAbstraction,
-     private accountService: AccountService,
-   ) {}
-@@ -207,6 +203,10 @@ export class AppComponent implements OnDestroy, OnInit {
+@@ -219,6 +219,10 @@ export class AppComponent implements OnDestroy, OnInit {
              break;
            }
            case "showToast":
@@ -160,36 +205,6 @@ index 6e2761a9c4..307c54104a 100644
              this.toastService._showToast(message);
              break;
            case "convertAccountToKeyConnector":
-@@ -240,21 +240,6 @@ export class AppComponent implements OnDestroy, OnInit {
-       new DisableSendPolicy(),
-       new SendOptionsPolicy(),
-     ]);
--
--    this.paymentMethodWarningsRefresh$
--      .pipe(
--        switchMap(() => this.organizationService.memberOrganizations$),
--        switchMap(
--          async (organizations) =>
--            await Promise.all(
--              organizations.map((organization) =>
--                this.paymentMethodWarningService.update(organization.id),
--              ),
--            ),
--        ),
--        takeUntil(this.destroy$),
--      )
--      .subscribe();
-   }
- 
-   ngOnDestroy() {
-@@ -287,7 +272,6 @@ export class AppComponent implements OnDestroy, OnInit {
-       this.collectionService.clear(userId),
-       this.passwordGenerationService.clear(),
-       this.biometricStateService.logout(userId),
--      this.paymentMethodWarningService.clear(),
-     ]);
- 
-     await this.stateEventRunnerService.handleEvent("logout", userId);
 diff --git a/apps/web/src/app/auth/emergency-access/accept/accept-emergency.component.html b/apps/web/src/app/auth/emergency-access/accept/accept-emergency.component.html
 index 4690a4e63a..9d297671d2 100644
 --- a/apps/web/src/app/auth/emergency-access/accept/accept-emergency.component.html
@@ -235,10 +250,10 @@ index 7c3c22b3d7..9a6900104d 100644
 -
 -<app-webauthn-login-settings></app-webauthn-login-settings>
 diff --git a/apps/web/src/app/auth/settings/two-factor-authenticator.component.ts b/apps/web/src/app/auth/settings/two-factor-authenticator.component.ts
-index 849e003440..de32156aad 100644
+index 88b695eb72..f9aafc450a 100644
 --- a/apps/web/src/app/auth/settings/two-factor-authenticator.component.ts
 +++ b/apps/web/src/app/auth/settings/two-factor-authenticator.component.ts
-@@ -109,11 +109,11 @@ export class TwoFactorAuthenticatorComponent
+@@ -112,11 +112,11 @@ export class TwoFactorAuthenticatorComponent
        new window.QRious({
          element: document.getElementById("qr"),
          value:
@@ -266,32 +281,37 @@ index 78872aa6a9..eed953b91a 100644
    }
  }
 diff --git a/apps/web/src/app/billing/organizations/organization-plans.component.html b/apps/web/src/app/billing/organizations/organization-plans.component.html
-index a77d42a359..7de4e33fe2 100644
+index 1bd6b99dd1..ed391eb94c 100644
 --- a/apps/web/src/app/billing/organizations/organization-plans.component.html
 +++ b/apps/web/src/app/billing/organizations/organization-plans.component.html
 @@ -6,7 +6,7 @@
    ></i>
-   <span class="sr-only">{{ "loading" | i18n }}</span>
+   <span class="tw-sr-only">{{ "loading" | i18n }}</span>
  </ng-container>
 -<ng-container *ngIf="createOrganization && selfHosted">
 +<ng-container *ngIf="createOrganization && false">
-   <p>{{ "uploadLicenseFileOrg" | i18n }}</p>
-   <form #form (ngSubmit)="submit()" [appApiAction]="formPromise" ngNativeValidate>
-     <div class="form-group">
-@@ -28,7 +28,7 @@
-   (ngSubmit)="submit()"
-   [appApiAction]="formPromise"
-   ngNativeValidate
+   <p bitTypography="body1">{{ "uploadLicenseFileOrg" | i18n }}</p>
+   <form [formGroup]="selfHostedForm" [bitSubmit]="submit">
+     <bit-form-field>
+@@ -33,12 +33,7 @@
+     </button>
+   </form>
+ </ng-container>
+-<form
+-  [formGroup]="formGroup"
+-  [bitSubmit]="submit"
 -  *ngIf="!loading && !selfHosted && this.passwordManagerPlans && this.secretsManagerPlans"
-+  *ngIf="!loading"
-   class="tw-pt-6"
- >
-   <app-org-info
+-  class="tw-pt-6"
+->
++<form [formGroup]="formGroup" [bitSubmit]="submit" *ngIf="!loading" class="tw-pt-6">
+   <bit-section>
+     <app-org-info
+       (changedBusinessOwned)="changedOwnedBusiness()"
 diff --git a/apps/web/src/app/billing/organizations/organization-plans.component.ts b/apps/web/src/app/billing/organizations/organization-plans.component.ts
-index 23d48d93be..e648643504 100644
+index 2228ad9f3a..21dc59117b 100644
 --- a/apps/web/src/app/billing/organizations/organization-plans.component.ts
 +++ b/apps/web/src/app/billing/organizations/organization-plans.component.ts
-@@ -152,10 +152,11 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
+@@ -157,10 +157,11 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
    async ngOnInit() {
      if (this.organizationId) {
        this.organization = await this.organizationService.get(this.organizationId);
@@ -305,7 +325,7 @@ index 23d48d93be..e648643504 100644
      if (!this.selfHosted) {
        const plans = await this.apiService.getPlans();
        this.passwordManagerPlans = plans.data.filter((plan) => !!plan.PasswordManager);
-@@ -187,6 +188,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
+@@ -192,6 +193,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
        this.plan = providerDefaultPlan.type;
        this.product = providerDefaultPlan.product;
      }
@@ -313,7 +333,7 @@ index 23d48d93be..e648643504 100644
  
      if (!this.createOrganization) {
        this.upgradeFlowPrefillForm();
-@@ -258,6 +260,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
+@@ -263,6 +265,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
    }
  
    get selectableProducts() {
@@ -321,7 +341,7 @@ index 23d48d93be..e648643504 100644
      if (this.acceptingSponsorship) {
        const familyPlan = this.passwordManagerPlans.find(
          (plan) => plan.type === PlanType.FamiliesAnnually,
-@@ -289,6 +292,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
+@@ -294,6 +297,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
    }
  
    get selectablePlans() {
@@ -329,7 +349,7 @@ index 23d48d93be..e648643504 100644
      const selectedProductType = this.formGroup.controls.product.value;
      const result =
        this.passwordManagerPlans?.filter(
-@@ -430,10 +434,12 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
+@@ -435,6 +439,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
    }
  
    get planOffersSecretsManager() {
@@ -337,21 +357,29 @@ index 23d48d93be..e648643504 100644
      return this.selectedSecretsManagerPlan != null;
    }
  
+@@ -443,6 +448,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
+   }
+ 
    changedProduct() {
 +    return; // no choice of products in Vaultwarden
      const selectedPlan = this.selectablePlans[0];
  
      this.setPlanType(selectedPlan.type);
-@@ -546,7 +552,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
-           const orgKeys = await this.cryptoService.makeKeyPair(orgKey[1]);
+@@ -562,11 +568,8 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
+         const collectionCt = collection.encryptedString;
+         const orgKeys = await this.cryptoService.makeKeyPair(orgKey[1]);
  
-           if (this.selfHosted) {
--            orgId = await this.createSelfHosted(key, collectionCt, orgKeys);
-+            orgId = await this.createCloudHosted(key, collectionCt, orgKeys, orgKey[1]);
-           } else {
-             orgId = await this.createCloudHosted(key, collectionCt, orgKeys, orgKey[1]);
-           }
-@@ -645,7 +651,9 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
+-        if (this.selfHosted) {
+-          orgId = await this.createSelfHosted(key, collectionCt, orgKeys);
+-        } else {
+-          orgId = await this.createCloudHosted(key, collectionCt, orgKeys, orgKey[1]);
+-        }
++        // always use createCloudHosted() to disable license file upload
++        orgId = await this.createCloudHosted(key, collectionCt, orgKeys, orgKey[1]);
+ 
+         this.platformUtilsService.showToast(
+           "success",
+@@ -659,7 +662,9 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
      request.billingEmail = this.formGroup.controls.billingEmail.value;
      request.initiationPath = "New organization creation in-product";
      request.keys = new OrganizationKeysRequest(orgKeys[0], orgKeys[1].encryptedString);
@@ -361,7 +389,7 @@ index 23d48d93be..e648643504 100644
      if (this.selectedPlan.type === PlanType.Free) {
        request.planType = PlanType.Free;
      } else {
-@@ -672,6 +680,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
+@@ -686,6 +691,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
  
      // Secrets Manager
      this.buildSecretsManagerRequest(request);
@@ -369,7 +397,7 @@ index 23d48d93be..e648643504 100644
  
      if (this.hasProvider) {
        const providerRequest = new ProviderOrganizationCreateRequest(
-@@ -753,6 +762,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
+@@ -765,6 +771,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
    }
  
    private upgradeFlowPrefillForm() {
@@ -378,7 +406,7 @@ index 23d48d93be..e648643504 100644
        this.formGroup.controls.product.setValue(ProductType.Families);
        this.changedProduct();
 diff --git a/apps/web/src/app/core/router.service.ts b/apps/web/src/app/core/router.service.ts
-index caebb22733..b64392a944 100644
+index c0c1ec2640..fe4422a3b0 100644
 --- a/apps/web/src/app/core/router.service.ts
 +++ b/apps/web/src/app/core/router.service.ts
 @@ -45,7 +45,7 @@ export class RouterService {
@@ -448,6 +476,19 @@ index e2b3e7910a..fda32e9257 100644
                  <i class="bwi bwi-fw bwi-question-circle" aria-hidden="true"></i>
                  {{ "getHelp" | i18n }}
                </a>
+diff --git a/apps/web/src/app/layouts/product-switcher/navigation-switcher/navigation-switcher.component.html b/apps/web/src/app/layouts/product-switcher/navigation-switcher/navigation-switcher.component.html
+index 17698367bf..e1ea9cbab4 100644
+--- a/apps/web/src/app/layouts/product-switcher/navigation-switcher/navigation-switcher.component.html
++++ b/apps/web/src/app/layouts/product-switcher/navigation-switcher/navigation-switcher.component.html
+@@ -11,7 +11,7 @@
+   </bit-nav-item>
+   <ng-container *ngIf="moreProducts$ | async as moreProducts">
+     <section
+-      *ngIf="moreProducts.length > 0"
++      *ngIf="false"
+       class="tw-mt-2 tw-flex tw-w-full tw-flex-col tw-gap-2 tw-border-0 tw-border-t tw-border-solid tw-border-t-text-alt2"
+     >
+       <span class="tw-text-xs !tw-text-alt2 tw-p-2 tw-pb-0">{{ "moreFromBitwarden" | i18n }}</span>
 diff --git a/apps/web/src/app/layouts/product-switcher/product-switcher-content.component.html b/apps/web/src/app/layouts/product-switcher/product-switcher-content.component.html
 index 62d8b6a075..ec8a14c115 100644
 --- a/apps/web/src/app/layouts/product-switcher/product-switcher-content.component.html
@@ -461,21 +502,8 @@ index 62d8b6a075..ec8a14c115 100644
        class="tw-mt-4 tw-flex tw-w-full tw-flex-col tw-gap-2 tw-border-0 tw-border-t tw-border-solid tw-border-t-text-muted tw-p-2 tw-pb-0"
      >
        <span class="tw-mb-1 tw-text-xs tw-text-muted">{{ "moreFromBitwarden" | i18n }}</span>
-diff --git a/apps/web/src/app/layouts/user-layout.component.html b/apps/web/src/app/layouts/user-layout.component.html
-index 15a01fa07b..719b9ba7f3 100644
---- a/apps/web/src/app/layouts/user-layout.component.html
-+++ b/apps/web/src/app/layouts/user-layout.component.html
-@@ -35,8 +35,5 @@
- 
-     <app-toggle-width></app-toggle-width>
-   </nav>
--  <app-payment-method-warnings
--    *ngIf="showPaymentMethodWarningBanners$ | async"
--  ></app-payment-method-warnings>
-   <router-outlet></router-outlet>
- </bit-layout>
 diff --git a/apps/web/src/app/layouts/user-layout.component.ts b/apps/web/src/app/layouts/user-layout.component.ts
-index eb507bd997..480ae62cb8 100644
+index 1ce8d4d227..ca8268adcc 100644
 --- a/apps/web/src/app/layouts/user-layout.component.ts
 +++ b/apps/web/src/app/layouts/user-layout.component.ts
 @@ -1,7 +1,7 @@
@@ -487,24 +515,7 @@ index eb507bd997..480ae62cb8 100644
  
  import { JslibModule } from "@bitwarden/angular/jslib.module";
  import { ApiService } from "@bitwarden/common/abstractions/api.service";
-@@ -13,8 +13,6 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
- import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
- import { IconModule, LayoutComponent, NavigationModule } from "@bitwarden/components";
- 
--import { PaymentMethodWarningsModule } from "../billing/shared";
--
- import { PasswordManagerLogo } from "./password-manager-logo";
- import { ToggleWidthComponent } from "./toggle-width.component";
- 
-@@ -29,7 +27,6 @@ import { ToggleWidthComponent } from "./toggle-width.component";
-     LayoutComponent,
-     IconModule,
-     NavigationModule,
--    PaymentMethodWarningsModule,
-     ToggleWidthComponent,
-   ],
- })
-@@ -56,26 +53,7 @@ export class UserLayoutComponent implements OnInit {
+@@ -58,26 +58,7 @@ export class UserLayoutComponent implements OnInit {
  
      await this.syncService.fullSync(false);
  
@@ -534,10 +545,10 @@ index eb507bd997..480ae62cb8 100644
    }
  }
 diff --git a/apps/web/src/app/oss-routing.module.ts b/apps/web/src/app/oss-routing.module.ts
-index 066ed5db10..1a0ac5ebd3 100644
+index e543a6f083..343933b043 100644
 --- a/apps/web/src/app/oss-routing.module.ts
 +++ b/apps/web/src/app/oss-routing.module.ts
-@@ -229,13 +229,6 @@ const routes: Routes = [
+@@ -236,13 +236,6 @@ const routes: Routes = [
              component: DomainRulesComponent,
              data: { titleId: "domainRules" },
            },
@@ -572,29 +583,9 @@ index c2eb37eea5..2b5ac93392 100644
 +    let baseUrl = this.win.location.href;
 +    baseUrl = baseUrl.replace(/(\/+|\/*#.*|\/*\?.*)$/, ""); // Strip off trailing `/`, `#`, `?` and everything after.
 +    const urls = { base: baseUrl };
-
+ 
      // Find the region
      const domain = Utils.getDomain(this.win.location.href);
-diff --git a/apps/web/src/app/shared/loose-components.module.ts b/apps/web/src/app/shared/loose-components.module.ts
-index b511f5d766..25c26f5e39 100644
---- a/apps/web/src/app/shared/loose-components.module.ts
-+++ b/apps/web/src/app/shared/loose-components.module.ts
-@@ -62,7 +62,6 @@ import { UpdatePasswordComponent } from "../auth/update-password.component";
- import { UpdateTempPasswordComponent } from "../auth/update-temp-password.component";
- import { VerifyEmailTokenComponent } from "../auth/verify-email-token.component";
- import { VerifyRecoverDeleteComponent } from "../auth/verify-recover-delete.component";
--import { PaymentMethodWarningsModule } from "../billing/shared";
- import { DynamicAvatarComponent } from "../components/dynamic-avatar.component";
- import { SelectableAvatarComponent } from "../components/selectable-avatar.component";
- import { FrontendLayoutComponent } from "../layouts/frontend-layout.component";
-@@ -116,7 +115,6 @@ import { SharedModule } from "./shared.module";
-     HeaderModule,
-     OrganizationLayoutComponent,
-     UserLayoutComponent,
--    PaymentMethodWarningsModule,
-   ],
-   declarations: [
-     AcceptFamilySponsorshipComponent,
 diff --git a/apps/web/src/app/tools/send/access.component.html b/apps/web/src/app/tools/send/access.component.html
 index 6fef7d361d..1deb1164ff 100644
 --- a/apps/web/src/app/tools/send/access.component.html
@@ -646,6 +637,34 @@ index 3225b61350..2a192514bf 100644
              <button type="button" bitIconButton bitSuffix bitPasswordInputToggle></button>
              <bit-hint>{{ "sendPasswordDesc" | i18n }}</bit-hint>
            </bit-form-field>
+diff --git a/apps/web/src/app/vault/individual-vault/vault-filter/components/organization-options.component.ts b/apps/web/src/app/vault/individual-vault/vault-filter/components/organization-options.component.ts
+index 8dd63e62dd..1a1e45cc35 100644
+--- a/apps/web/src/app/vault/individual-vault/vault-filter/components/organization-options.component.ts
++++ b/apps/web/src/app/vault/individual-vault/vault-filter/components/organization-options.component.ts
+@@ -10,6 +10,7 @@ import { PolicyService } from "@bitwarden/common/admin-console/abstractions/poli
+ import { PolicyType } from "@bitwarden/common/admin-console/enums";
+ import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
+ import { Policy } from "@bitwarden/common/admin-console/models/domain/policy";
++import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
+ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
+ import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
+ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+@@ -48,6 +49,7 @@ export class OrganizationOptionsComponent implements OnInit, OnDestroy {
+     private userDecryptionOptionsService: UserDecryptionOptionsServiceAbstraction,
+     private dialogService: DialogService,
+     private resetPasswordService: OrganizationUserResetPasswordService,
++    private userVerificationService: UserVerificationService,
+   ) {}
+ 
+   async ngOnInit() {
+@@ -155,6 +157,7 @@ export class OrganizationOptionsComponent implements OnInit, OnDestroy {
+         this.i18nService,
+         this.syncService,
+         this.logService,
++        this.userVerificationService,
+       );
+     } else {
+       // Remove reset password
 diff --git a/apps/web/src/index.html b/apps/web/src/index.html
 index c3a2c03ed9..1a326771a6 100644
 --- a/apps/web/src/index.html
@@ -773,24 +792,23 @@ index 8fbea200a9..5ad0893e69 100644
 +  background-position-y: bottom;
 +}
 +/**** END Vaultwarden CHANGES ****/
-diff --git a/apps/web/src/scss/variables.scss b/apps/web/src/scss/variables.scss
-index 9d3d8d6ad4..5bc773c0d8 100644
---- a/apps/web/src/scss/variables.scss
-+++ b/apps/web/src/scss/variables.scss
-@@ -3,7 +3,7 @@ $dark-icon-themes: "theme_dark";
- $primary: #175ddc;
- $primary-accent: #1252a3;
- $secondary: #ced4da;
--$secondary-alt: #1a3b66;
-+$secondary-alt: #212529;
- $success: #017e45;
- $info: #555555;
- $warning: #8b6609;
+diff --git a/apps/web/tailwind.config.js b/apps/web/tailwind.config.js
+index 08673c3f9a..db1dd55694 100644
+--- a/apps/web/tailwind.config.js
++++ b/apps/web/tailwind.config.js
+@@ -6,7 +6,6 @@ config.content = [
+   "../../libs/components/src/**/*.{html,ts}",
+   "../../libs/auth/src/**/*.{html,ts}",
+   "../../libs/angular/src/**/*.{html,ts}",
+-  "../../bitwarden_license/bit-web/src/**/*.{html,ts}",
+ ];
+ 
+ module.exports = config;
 diff --git a/apps/web/webpack.config.js b/apps/web/webpack.config.js
-index 815a8aff9e..de7402dd4a 100644
+index f22d98f081..a9904a2ecf 100644
 --- a/apps/web/webpack.config.js
 +++ b/apps/web/webpack.config.js
-@@ -139,8 +139,6 @@ const plugins = [
+@@ -138,8 +138,6 @@ const plugins = [
        { from: "./src/favicon.ico" },
        { from: "./src/browserconfig.xml" },
        { from: "./src/app-id.json" },
@@ -799,11 +817,59 @@ index 815a8aff9e..de7402dd4a 100644
        { from: "./src/images", to: "images" },
        { from: "./src/locales", to: "locales" },
        { from: "../../node_modules/qrious/dist/qrious.min.js", to: "scripts" },
+diff --git a/clients.code-workspace b/clients.code-workspace
+index a424f91eeb..72f7c59185 100644
+--- a/clients.code-workspace
++++ b/clients.code-workspace
+@@ -8,18 +8,10 @@
+       "name": "web vault",
+       "path": "apps/web",
+     },
+-    {
+-      "name": "web vault (bit)",
+-      "path": "bitwarden_license/bit-web",
+-    },
+     {
+       "name": "cli",
+       "path": "apps/cli",
+     },
+-    {
+-      "name": "cli (bit)",
+-      "path": "bitwarden_license/bit-cli",
+-    },
+     {
+       "name": "desktop",
+       "path": "apps/desktop",
+@@ -32,10 +24,6 @@
+       "name": "libs",
+       "path": "libs",
+     },
+-    {
+-      "name": "common (bit)",
+-      "path": "bitwarden_license/bit-common",
+-    },
+   ],
+   "settings": {
+     "eslint.options": {
+diff --git a/jest.config.js b/jest.config.js
+index f4e97262a3..12e11b35a3 100644
+--- a/jest.config.js
++++ b/jest.config.js
+@@ -20,9 +20,6 @@ module.exports = {
+     "<rootDir>/apps/cli/jest.config.js",
+     "<rootDir>/apps/desktop/jest.config.js",
+     "<rootDir>/apps/web/jest.config.js",
+-    "<rootDir>/bitwarden_license/bit-web/jest.config.js",
+-    "<rootDir>/bitwarden_license/bit-cli/jest.config.js",
+-    "<rootDir>/bitwarden_license/bit-common/jest.config.js",
+ 
+     "<rootDir>/libs/admin-console/jest.config.js",
+     "<rootDir>/libs/angular/jest.config.js",
 diff --git a/libs/angular/src/auth/components/register.component.ts b/libs/angular/src/auth/components/register.component.ts
-index 2ba7669290..dfb9e87e26 100644
+index e3197355dc..e3004ebdf7 100644
 --- a/libs/angular/src/auth/components/register.component.ts
 +++ b/libs/angular/src/auth/components/register.component.ts
-@@ -106,6 +106,14 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
+@@ -110,6 +110,14 @@ export class RegisterComponent extends CaptchaProtectedComponent implements OnIn
    }
  
    async submit(showToast = true) {
@@ -818,6 +884,164 @@ index 2ba7669290..dfb9e87e26 100644
      let email = this.formGroup.value.email;
      email = email.trim().toLowerCase();
      let name = this.formGroup.value.name;
+diff --git a/libs/auth/src/angular/user-verification/user-verification-dialog.component.html b/libs/auth/src/angular/user-verification/user-verification-dialog.component.html
+index aa4d26ae61..fb3b7cf4cb 100644
+--- a/libs/auth/src/angular/user-verification/user-verification-dialog.component.html
++++ b/libs/auth/src/angular/user-verification/user-verification-dialog.component.html
+@@ -9,8 +9,8 @@
+       <!-- Show optional content when verification is server side or client side and verification methods were found. -->
+       <ng-container
+         *ngIf="
+-          !dialogOptions.clientSideOnlyVerification ||
+-          (dialogOptions.clientSideOnlyVerification &&
++          dialogOptions.verificationType !== 'client' ||
++          (dialogOptions.verificationType === 'client' &&
+             activeClientVerificationOption !== ActiveClientVerificationOption.None)
+         "
+       >
+@@ -29,7 +29,7 @@
+       <!-- Shown when client side verification methods picked and no verification methods found -->
+       <ng-container
+         *ngIf="
+-          dialogOptions.clientSideOnlyVerification &&
++          dialogOptions.verificationType === 'client' &&
+           activeClientVerificationOption === ActiveClientVerificationOption.None
+         "
+       >
+@@ -41,7 +41,7 @@
+       <app-user-verification-form-input
+         [(invalidSecret)]="invalidSecret"
+         formControlName="secret"
+-        [verificationType]="dialogOptions.clientSideOnlyVerification ? 'client' : 'server'"
++        [verificationType]="dialogOptions.verificationType === 'client' ? 'client' : 'server'"
+         (activeClientVerificationOptionChange)="handleActiveClientVerificationOptionChange($event)"
+         (biometricsVerificationResultChange)="handleBiometricsVerificationResultChange($event)"
+       ></app-user-verification-form-input>
+@@ -50,8 +50,8 @@
+       <!-- Confirm button container - shown for server side validation but hidden if client side validation + biometrics  -->
+       <ng-container
+         *ngIf="
+-          !dialogOptions.clientSideOnlyVerification ||
+-          (dialogOptions.clientSideOnlyVerification &&
++          dialogOptions.verificationType !== 'client' ||
++          (dialogOptions.verificationType === 'client' &&
+             activeClientVerificationOption !== ActiveClientVerificationOption.Biometrics)
+         "
+       >
+@@ -85,10 +85,12 @@
+         <ng-container
+           *ngIf="activeClientVerificationOption === ActiveClientVerificationOption.None"
+         >
+-          <!-- For no client verifications found, show set a pin confirm button. 
+-            Note: this doesn't make sense for web as web doesn't support PINs, but this is how we are handling it for now 
+-          as the expectation is that only browser and desktop will use the new clientSideOnlyVerification flow. 
+-          We might genericize this in the future to just tell the user they need to configure a valid user verification option like PIN or Biometrics.  -->
++          <!--
++            For no client verifications found, show set a pin confirm button.
++            Note: this doesn't make sense for web as web doesn't support PINs, but this is how we are handling it for now
++            as the expectation is that only browser and desktop will use the new verificationType 'client' flow.
++            We might genericize this in the future to just tell the user they need to configure a valid user verification option like PIN or Biometrics.
++          -->
+           <button type="submit" bitButton bitFormButton buttonType="primary">
+             {{ "setPin" | i18n }}
+           </button>
+diff --git a/libs/auth/src/angular/user-verification/user-verification-dialog.component.ts b/libs/auth/src/angular/user-verification/user-verification-dialog.component.ts
+index 7b2c869e3a..f8746b5b24 100644
+--- a/libs/auth/src/angular/user-verification/user-verification-dialog.component.ts
++++ b/libs/auth/src/angular/user-verification/user-verification-dialog.component.ts
+@@ -142,6 +142,31 @@ export class UserVerificationDialogComponent {
+    *   return;
+    * }
+    *
++   * ----------------------------------------------------------
++   *
++   * @example
++   * // Example 4: Custom user verification validation
++   *
++   * const result = await UserVerificationDialogComponent.open(dialogService, {
++   *   verificationType: {
++   *     type: "custom",
++   *     // Pass in a function that will be used to validate the input of the
++   *     // verification dialog, returning true when finished.
++   *     verificationFn: async (secret: VerificationWithSecret) => {
++   *       const request = await userVerificationService.buildRequest<CustomRequestType>(secret);
++   *
++   *      // ... Do something with the custom request type
++   *
++   *       await someServicer.sendMyRequestThatVerfiesUserIdentity(
++   *         // ... Some other data
++   *         request,
++   *       );
++   *       return true;
++   *     },
++   *   },
++   * });
++   *
++   * // ... Evaluate the result as usual
+    */
+   static async open(
+     dialogService: DialogService,
+@@ -202,6 +227,18 @@ export class UserVerificationDialogComponent {
+     }
+ 
+     try {
++      if (
++        typeof this.dialogOptions.verificationType === "object" &&
++        this.dialogOptions.verificationType.type === "custom"
++      ) {
++        const success = await this.dialogOptions.verificationType.verificationFn(this.secret.value);
++        this.close({
++          userAction: "confirm",
++          verificationSuccess: success,
++        });
++        return;
++      }
++
+       // TODO: once we migrate all user verification scenarios to use this new implementation,
+       // we should consider refactoring the user verification service handling of the
+       // OTP and MP flows to not throw errors on verification failure.
+diff --git a/libs/auth/src/angular/user-verification/user-verification-dialog.types.ts b/libs/auth/src/angular/user-verification/user-verification-dialog.types.ts
+index f4637c770a..cb03f4e18f 100644
+--- a/libs/auth/src/angular/user-verification/user-verification-dialog.types.ts
++++ b/libs/auth/src/angular/user-verification/user-verification-dialog.types.ts
+@@ -1,3 +1,4 @@
++import { VerificationWithSecret } from "@bitwarden/common/auth/types/verification";
+ import { ButtonType } from "@bitwarden/components";
+ 
+ /**
+@@ -60,12 +61,27 @@ export type UserVerificationDialogOptions = {
+    */
+   confirmButtonOptions?: UserVerificationConfirmButtonOptions;
+ 
+-  /**
+-   * Indicates whether the verification is only performed client-side. Includes local MP verification, PIN, and Biometrics.
+-   * Optional.
+-   * **Important:** Only for use on desktop and browser platforms as when there are no client verification methods, the user is instructed to set a pin (which is not supported on web)
++  /** The validation method used to verify the secret.
++   *
++   * Possible values:
++   *
++   * - "default": Perform the default validation operation for the determined
++   *   secret type. This would, for example, validate master passwords
++   *   locally but OTPs on the server.
++   * - "client": Only do a client-side verification with no possible server
++   *   request. Includes local MP verification, PIN, and Biometrics.
++   *   **Important:** This option is only for use on desktop and browser
++   *   platforms. When there are no client verification methods the user is
++   *   instructed to set a pin, and this is not supported on web.
++   * - "custom": Custom validation is done to verify the secret. This is
++   *   passed in from callers when opening the dialog. The custom type is
++   *   meant to provide a mechanism where users can call a secured endpoint
++   *   that performs user verification server side.
+    */
+-  clientSideOnlyVerification?: boolean;
++  verificationType?:
++    | "default"
++    | "client"
++    | { type: "custom"; verificationFn: (secret: VerificationWithSecret) => Promise<boolean> };
+ };
+ 
+ /**
 diff --git a/libs/components/src/tw-theme.css b/libs/components/src/tw-theme.css
 index 00ab2ff717..0950b9d787 100644
 --- a/libs/components/src/tw-theme.css
@@ -844,3 +1068,56 @@ index 00ab2ff717..0950b9d787 100644
  
    --color-secondary-100: 240 240 240;
    --color-secondary-300: 206 212 220;
+diff --git a/libs/components/tailwind.config.js b/libs/components/tailwind.config.js
+index 7a53c82ec5..9d0a337bd2 100644
+--- a/libs/components/tailwind.config.js
++++ b/libs/components/tailwind.config.js
+@@ -6,7 +6,6 @@ config.content = [
+   "libs/auth/src/**/*.{html,ts,mdx}",
+   "apps/web/src/**/*.{html,ts,mdx}",
+   "apps/browser/src/**/*.{html,ts,mdx}",
+-  "bitwarden_license/bit-web/src/**/*.{html,ts,mdx}",
+   ".storybook/preview.tsx",
+ ];
+ config.safelist = [
+diff --git a/tailwind.config.js b/tailwind.config.js
+index 50d82bf7d8..9b543ed950 100644
+--- a/tailwind.config.js
++++ b/tailwind.config.js
+@@ -9,7 +9,6 @@ config.content = [
+   "./libs/platform/src/**/*.{html,ts,mdx}",
+   "./libs/vault/src/**/*.{html,ts,mdx}",
+   "./apps/web/src/**/*.{html,ts,mdx}",
+-  "./bitwarden_license/bit-web/src/**/*.{html,ts,mdx}",
+   "./.storybook/preview.js",
+ ];
+ config.safelist = [
+diff --git a/tsconfig.json b/tsconfig.json
+index 8085b9f832..81a954ec84 100644
+--- a/tsconfig.json
++++ b/tsconfig.json
+@@ -33,8 +33,7 @@
+       "@bitwarden/send-ui": ["./libs/tools/send/send-ui/src"],
+       "@bitwarden/node/*": ["./libs/node/src/*"],
+       "@bitwarden/web-vault/*": ["./apps/web/src/*"],
+-      "@bitwarden/vault": ["./libs/vault/src"],
+-      "@bitwarden/bit-common/*": ["./bitwarden_license/bit-common/src/*"]
++      "@bitwarden/vault": ["./libs/vault/src"]
+     },
+     "plugins": [
+       {
+@@ -43,13 +42,7 @@
+     ],
+     "useDefineForClassFields": false
+   },
+-  "include": [
+-    "apps/web/src/**/*",
+-    "apps/browser/src/**/*",
+-    "libs/*/src/**/*",
+-    "bitwarden_license/bit-web/src/**/*",
+-    "bitwarden_license/bit-common/src/**/*"
+-  ],
++  "include": ["apps/web/src/**/*", "apps/browser/src/**/*", "libs/*/src/**/*"],
+   "exclude": [
+     "apps/web/src/**/*.spec.ts",
+     "apps/browser/src/**/*.spec.ts",
