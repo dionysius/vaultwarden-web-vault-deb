@@ -304,6 +304,24 @@
   "editFolder": {
     "message": "Edit folder"
   },
+  "newFolder": {
+    "message": "New folder"
+  },
+  "folderName": {
+    "message": "Folder name"
+  },
+  "folderHintText": {
+    "message": "Nest a folder by adding the parent folder's name followed by a “/”. Example: Social/Forums"
+  },
+  "noFoldersAdded": {
+    "message": "No folders added"
+  },
+  "createFoldersToOrganize": {
+    "message": "Create folders to organize your vault items"
+  },
+  "deleteFolderPermanently":{
+    "message": "Are you sure you want to permanently delete this folder?"
+  },
   "deleteFolder": {
     "message": "Delete folder"
   },
