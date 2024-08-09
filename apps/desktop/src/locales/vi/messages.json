@@ -1510,8 +1510,14 @@
   "additionalWindowsHelloSettings": {
     "message": "Cài đặt Windows Hello bổ sung"
   },
+  "unlockWithPolkit": {
+    "message": "Unlock with system authentication"
+  },
   "windowsHelloConsentMessage": {
     "message": "Xác minh cho Bitwarden."
+  },
+  "polkitConsentMessage": {
+    "message": "Authenticate to unlock Bitwarden."
   },
   "unlockWithTouchId": {
     "message": "Mở khóa với Touch ID"
@@ -1524,6 +1530,9 @@
   },
   "autoPromptWindowsHello": {
     "message": "Yêu cầu xác minh Windows Hello khi mở"
+  },
+  "autoPromptPolkit": {
+    "message": "Ask for system authentication on launch"
   },
   "autoPromptTouchId": {
     "message": "Yêu cầu xác minh Touch ID khi mở"
@@ -1804,6 +1813,12 @@
   "biometricsNotEnabledDesc": {
     "message": "Sinh trắc học trên trình duyệt yêu cầu sinh trắc học trên máy tính phải được cài đặt trước."
   },
+  "biometricsManualSetupTitle": {
+    "message": "Autometic setup not available"
+  },
+  "biometricsManualSetupDesc": {
+    "message": "Due to the installation method, biometrics support could not be automatically enabled. Would you like to open the documentation on how to do this manually?"
+  },
   "personalOwnershipSubmitError": {
     "message": "Do chính sách doanh nghiệp, bạn bị hạn chế lưu các mục vào kho cá nhân của mình. Thay đổi tùy chọn quyền sở hữu thành một tổ chức và chọn từ các bộ sưu tập có sẵn."
   },
@@ -2014,6 +2029,9 @@
   },
   "updateWeakMasterPasswordWarning": {
     "message": "Mật khẩu chính của bạn không đáp ứng chính sách tổ chức của bạn. Để truy cập kho, bạn phải cập nhật mật khẩu chính của mình ngay bây giờ. Việc tiếp tục sẽ đăng xuất bạn khỏi phiên hiện tại và bắt buộc đăng nhập lại. Các phiên hoạt động trên các thiết bị khác có thể tiếp tục duy trì hoạt động trong tối đa một giờ."
+  },
+  "tdeDisabledMasterPasswordRequired": {
+    "message": "Your organization has disabled trusted device encryption. Please set a master password to access your vault."
   },
   "tryAgain": {
     "message": "Thử lại"
@@ -3025,5 +3043,11 @@
   },
   "data": {
     "message": "Dữ liệu"
+  },
+  "fileSends": {
+    "message": "File Sends"
+  },
+  "textSends": {
+    "message": "Text Sends"
   }
 }
