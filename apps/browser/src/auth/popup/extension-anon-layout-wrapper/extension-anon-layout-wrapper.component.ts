@@ -149,7 +149,15 @@ export class ExtensionAnonLayoutWrapperComponent implements OnInit, OnDestroy {
     }
 
     if (data.pageSubtitle) {
-      this.pageSubtitle = this.i18nService.t(data.pageSubtitle);
+      // If you pass just a string, we translate it by default
+      if (typeof data.pageSubtitle === "string") {
+        this.pageSubtitle = this.i18nService.t(data.pageSubtitle);
+      } else {
+        // if you pass an object, you can specify if you want to translate it or not
+        this.pageSubtitle = data.pageSubtitle.translate
+          ? this.i18nService.t(data.pageSubtitle.subtitle)
+          : data.pageSubtitle.subtitle;
+      }
     }
 
     if (data.pageIcon) {
