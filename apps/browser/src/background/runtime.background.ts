@@ -33,6 +33,7 @@ export default class RuntimeBackground {
   private pageDetailsToAutoFill: any[] = [];
   private onInstalledReason: string = null;
   private lockedVaultPendingNotifications: LockedVaultPendingNotificationsData[] = [];
+  private extensionRefreshIsActive: boolean = false;
 
   constructor(
     private main: MainBackground,
@@ -88,6 +89,10 @@ export default class RuntimeBackground {
       );
       return false;
     };
+
+    this.extensionRefreshIsActive = await this.configService.getFeatureFlag(
+      FeatureFlag.ExtensionRefresh,
+    );
 
     this.messageListener.allMessages$
       .pipe(
@@ -228,7 +233,10 @@ export default class RuntimeBackground {
         // `getAllDecryptedForUrl` and is anticipated to be refactored
         await this.main.refreshBadge();
         await this.main.refreshMenu(false);
-        await this.autofillService.setAutoFillOnPageLoadOrgPolicy();
+
+        if (this.extensionRefreshIsActive) {
+          await this.autofillService.setAutoFillOnPageLoadOrgPolicy();
+        }
         break;
       }
       case "addToLockedVaultPendingNotifications":
@@ -248,7 +256,10 @@ export default class RuntimeBackground {
           }, 2000);
           await this.configService.ensureConfigFetched();
           await this.main.updateOverlayCiphers();
-          await this.autofillService.setAutoFillOnPageLoadOrgPolicy();
+
+          if (this.extensionRefreshIsActive) {
+            await this.autofillService.setAutoFillOnPageLoadOrgPolicy();
+          }
         }
         break;
       case "openPopup":
