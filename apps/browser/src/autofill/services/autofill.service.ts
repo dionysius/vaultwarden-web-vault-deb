@@ -571,6 +571,19 @@ export default class AutofillService implements AutofillServiceInterface {
   }
 
   /**
+   * Activates the autofill on page load org policy.
+   */
+  async setAutoFillOnPageLoadOrgPolicy(): Promise<void> {
+    const autofillOnPageLoadOrgPolicy = await firstValueFrom(
+      this.autofillSettingsService.activateAutofillOnPageLoadFromPolicy$,
+    );
+
+    if (autofillOnPageLoadOrgPolicy) {
+      await this.autofillSettingsService.setAutofillOnPageLoad(true);
+    }
+  }
+
+  /**
    * Gets the active tab from the current window.
    * Throws an error if no tab is found.
    * @returns {Promise<chrome.tabs.Tab>}

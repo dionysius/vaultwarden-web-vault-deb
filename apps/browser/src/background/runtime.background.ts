@@ -228,7 +228,7 @@ export default class RuntimeBackground {
         // `getAllDecryptedForUrl` and is anticipated to be refactored
         await this.main.refreshBadge();
         await this.main.refreshMenu(false);
-
+        await this.autofillService.setAutoFillOnPageLoadOrgPolicy();
         break;
       }
       case "addToLockedVaultPendingNotifications":
@@ -248,6 +248,7 @@ export default class RuntimeBackground {
           }, 2000);
           await this.configService.ensureConfigFetched();
           await this.main.updateOverlayCiphers();
+          await this.autofillService.setAutoFillOnPageLoadOrgPolicy();
         }
         break;
       case "openPopup":
