@@ -1,7 +1,10 @@
 <popup-page>
   <popup-header slot="header" [pageTitle]="'folders' | i18n" showBackButton>
     <ng-container slot="end">
-      <app-new-item-dropdown></app-new-item-dropdown>
+      <button bitButton buttonType="primary" type="button" (click)="openAddEditFolderDialog()">
+        <i class="bwi bwi-plus-f" aria-hidden="true"></i>
+        {{ "new" | i18n }}
+      </button>
       <app-pop-out></app-pop-out>
     </ng-container>
   </popup-header>

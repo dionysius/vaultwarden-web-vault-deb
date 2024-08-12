@@ -23,7 +23,6 @@ import {
   AddEditFolderDialogComponent,
   AddEditFolderDialogData,
 } from "../components/vault-v2/add-edit-folder-dialog/add-edit-folder-dialog.component";
-import { NewItemDropdownV2Component } from "../components/vault-v2/new-item-dropdown/new-item-dropdown-v2.component";
 
 @Component({
   standalone: true,
@@ -31,7 +30,6 @@ import { NewItemDropdownV2Component } from "../components/vault-v2/new-item-drop
   imports: [
     CommonModule,
     JslibModule,
-    NewItemDropdownV2Component,
     PopOutComponent,
     PopupPageComponent,
     PopupHeaderComponent,
