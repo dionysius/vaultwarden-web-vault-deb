@@ -49,6 +49,7 @@ import { StorageServiceProvider } from "@bitwarden/common/platform/services/stor
 import { GlobalStateProvider, StateProvider } from "@bitwarden/common/platform/state";
 import { MemoryStorageService as MemoryStorageServiceForStateProviders } from "@bitwarden/common/platform/state/storage/memory-storage.service";
 /* eslint-enable import/no-restricted-paths -- Implementation for memory storage */
+import { WindowStorageService } from "@bitwarden/common/platform/storage/window-storage.service";
 import {
   DefaultThemeStateService,
   ThemeStateService,
@@ -63,7 +64,6 @@ import { I18nService } from "../core/i18n.service";
 import { WebEnvironmentService } from "../platform/web-environment.service";
 import { WebMigrationRunner } from "../platform/web-migration-runner";
 import { WebStorageServiceProvider } from "../platform/web-storage-service.provider";
-import { WindowStorageService } from "../platform/window-storage.service";
 import { CollectionAdminService } from "../vault/core/collection-admin.service";
 
 import { EventService } from "./event.service";

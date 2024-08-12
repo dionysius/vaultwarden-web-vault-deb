@@ -73,6 +73,8 @@ import {
 } from "@bitwarden/common/platform/state";
 // eslint-disable-next-line import/no-restricted-paths -- Used for dependency injection
 import { InlineDerivedStateProvider } from "@bitwarden/common/platform/state/implementations/inline-derived-state";
+import { PrimarySecondaryStorageService } from "@bitwarden/common/platform/storage/primary-secondary-storage.service";
+import { WindowStorageService } from "@bitwarden/common/platform/storage/window-storage.service";
 import { SyncService } from "@bitwarden/common/platform/sync";
 import { VaultTimeoutStringType } from "@bitwarden/common/types/vault-timeout.type";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
@@ -121,6 +123,10 @@ import { PopupCloseWarningService } from "./popup-close-warning.service";
 const OBSERVABLE_LARGE_OBJECT_MEMORY_STORAGE = new SafeInjectionToken<
   AbstractStorageService & ObservableStorageService
 >("OBSERVABLE_LARGE_OBJECT_MEMORY_STORAGE");
+
+const DISK_BACKUP_LOCAL_STORAGE = new SafeInjectionToken<
+  AbstractStorageService & ObservableStorageService
+>("DISK_BACKUP_LOCAL_STORAGE");
 
 const needsBackgroundInit = BrowserPopupUtils.backgroundInitializationRequired();
 const mainBackground: MainBackground = needsBackgroundInit
@@ -497,12 +503,19 @@ const safeProviders: SafeProvider[] = [
     deps: [],
   }),
   safeProvider({
+    provide: DISK_BACKUP_LOCAL_STORAGE,
+    useFactory: (diskStorage: AbstractStorageService & ObservableStorageService) =>
+      new PrimarySecondaryStorageService(diskStorage, new WindowStorageService(self.localStorage)),
+    deps: [OBSERVABLE_DISK_STORAGE],
+  }),
+  safeProvider({
     provide: StorageServiceProvider,
     useClass: BrowserStorageServiceProvider,
     deps: [
       OBSERVABLE_DISK_STORAGE,
       OBSERVABLE_MEMORY_STORAGE,
       OBSERVABLE_LARGE_OBJECT_MEMORY_STORAGE,
+      DISK_BACKUP_LOCAL_STORAGE,
     ],
   }),
   safeProvider({

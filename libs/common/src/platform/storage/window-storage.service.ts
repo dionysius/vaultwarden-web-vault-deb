@@ -4,8 +4,8 @@ import {
   AbstractStorageService,
   ObservableStorageService,
   StorageUpdate,
-} from "@bitwarden/common/platform/abstractions/storage.service";
-import { StorageOptions } from "@bitwarden/common/platform/models/domain/storage-options";
+} from "../abstractions/storage.service";
+import { StorageOptions } from "../models/domain/storage-options";
 
 export class WindowStorageService implements AbstractStorageService, ObservableStorageService {
   private readonly updatesSubject = new Subject<StorageUpdate>();

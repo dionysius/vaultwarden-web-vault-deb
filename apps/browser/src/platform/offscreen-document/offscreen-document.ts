@@ -14,6 +14,9 @@ class OffscreenDocument implements OffscreenDocumentInterface {
   private readonly extensionMessageHandlers: OffscreenDocumentExtensionMessageHandlers = {
     offscreenCopyToClipboard: ({ message }) => this.handleOffscreenCopyToClipboard(message),
     offscreenReadFromClipboard: () => this.handleOffscreenReadFromClipboard(),
+    localStorageGet: ({ message }) => this.handleLocalStorageGet(message.key),
+    localStorageSave: ({ message }) => this.handleLocalStorageSave(message.key, message.value),
+    localStorageRemove: ({ message }) => this.handleLocalStorageRemove(message.key),
   };
 
   /**
@@ -37,6 +40,18 @@ class OffscreenDocument implements OffscreenDocumentInterface {
    */
   private async handleOffscreenReadFromClipboard() {
     return await BrowserClipboardService.read(self);
+  }
+
+  private handleLocalStorageGet(key: string) {
+    return self.localStorage.getItem(key);
+  }
+
+  private handleLocalStorageSave(key: string, value: string) {
+    self.localStorage.setItem(key, value);
+  }
+
+  private handleLocalStorageRemove(key: string) {
+    self.localStorage.removeItem(key);
   }
 
   /**
