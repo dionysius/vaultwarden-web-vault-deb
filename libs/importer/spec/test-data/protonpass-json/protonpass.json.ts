@@ -102,7 +102,7 @@ export const testData: ProtonPassJsonFile = {
               cardType: 0,
               number: "1234222233334444",
               verificationNumber: "333",
-              expirationDate: "012025",
+              expirationDate: "2025-01",
               pin: "1234",
             },
           },
