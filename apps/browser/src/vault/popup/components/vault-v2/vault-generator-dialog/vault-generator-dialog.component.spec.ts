@@ -7,6 +7,8 @@ import { mock, MockProxy } from "jest-mock-extended";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { CipherFormGeneratorComponent } from "@bitwarden/vault";
 
+import { PopupRouterCacheService } from "../../../../../platform/popup/view-cache/popup-router-cache.service";
+
 import {
   GeneratorDialogParams,
   GeneratorDialogResult,
@@ -39,6 +41,7 @@ describe("VaultGeneratorDialogComponent", () => {
         { provide: I18nService, useValue: { t: (key: string) => key } },
         { provide: DIALOG_DATA, useValue: dialogData },
         { provide: DialogRef, useValue: mockDialogRef },
+        { provide: PopupRouterCacheService, useValue: mock<PopupRouterCacheService>() },
       ],
     })
       .overrideComponent(VaultGeneratorDialogComponent, {

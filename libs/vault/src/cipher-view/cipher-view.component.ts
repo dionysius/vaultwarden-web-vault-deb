@@ -13,10 +13,6 @@ import { CollectionView } from "@bitwarden/common/vault/models/view/collection.v
 import { FolderView } from "@bitwarden/common/vault/models/view/folder.view";
 import { SearchModule } from "@bitwarden/components";
 
-import { PopupFooterComponent } from "../../../../apps/browser/src/platform/popup/layout/popup-footer.component";
-import { PopupHeaderComponent } from "../../../../apps/browser/src/platform/popup/layout/popup-header.component";
-import { PopupPageComponent } from "../../../../apps/browser/src/platform/popup/layout/popup-page.component";
-
 import { AdditionalOptionsComponent } from "./additional-options/additional-options.component";
 import { AttachmentsV2ViewComponent } from "./attachments/attachments-v2-view.component";
 import { AutofillOptionsViewComponent } from "./autofill-options/autofill-options-view.component";
@@ -35,9 +31,6 @@ import { ViewIdentitySectionsComponent } from "./view-identity-sections/view-ide
     CommonModule,
     SearchModule,
     JslibModule,
-    PopupPageComponent,
-    PopupHeaderComponent,
-    PopupFooterComponent,
     ItemDetailsV2Component,
     AdditionalOptionsComponent,
     AttachmentsV2ViewComponent,

@@ -34,6 +34,7 @@ import { CurrentAccountComponent } from "../../../auth/popup/account-switching/c
 import { PopOutComponent } from "../../../platform/popup/components/pop-out.component";
 import { PopupHeaderComponent } from "../../../platform/popup/layout/popup-header.component";
 import { PopupPageComponent } from "../../../platform/popup/layout/popup-page.component";
+import { PopupRouterCacheService } from "../../../platform/popup/view-cache/popup-router-cache.service";
 
 import { SendV2Component, SendState } from "./send-v2.component";
 
@@ -102,6 +103,7 @@ describe("SendV2Component", () => {
         { provide: SendItemsService, useValue: sendItemsService },
         { provide: I18nService, useValue: { t: (key: string) => key } },
         { provide: SendListFiltersService, useValue: sendListFiltersService },
+        { provide: PopupRouterCacheService, useValue: mock<PopupRouterCacheService>() },
       ],
     }).compileComponents();
 
