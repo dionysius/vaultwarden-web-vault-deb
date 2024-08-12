@@ -31,8 +31,8 @@ describe("Protonpass Json Importer", () => {
     expect(uriView.uri).toEqual("https://example.com/");
     expect(cipher.notes).toEqual("My login secure note.");
 
-    expect(cipher.fields.at(0).name).toEqual("itemUsername");
-    expect(cipher.fields.at(0).value).toEqual("someOtherUsername");
+    expect(cipher.fields.at(0).name).toEqual("email");
+    expect(cipher.fields.at(0).value).toEqual("Email");
 
     expect(cipher.fields.at(3).name).toEqual("second 2fa secret");
     expect(cipher.fields.at(3).value).toEqual("TOTPCODE");
