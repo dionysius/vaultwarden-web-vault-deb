@@ -74,8 +74,12 @@ export default abstract class AbstractChromeStorageService
   }
 
   async get<T>(key: string): Promise<T> {
-    return new Promise((resolve) => {
-      this.chromeStorageApi.get(key, (obj: any) => {
+    return new Promise((resolve, reject) => {
+      this.chromeStorageApi.get(key, (obj) => {
+        if (chrome.runtime.lastError) {
+          return reject(chrome.runtime.lastError);
+        }
+
         if (obj != null && obj[key] != null) {
           resolve(this.processGetObject(obj[key]));
           return;
@@ -98,16 +102,24 @@ export default abstract class AbstractChromeStorageService
     }
 
     const keyedObj = { [key]: obj };
-    return new Promise<void>((resolve) => {
+    return new Promise<void>((resolve, reject) => {
       this.chromeStorageApi.set(keyedObj, () => {
+        if (chrome.runtime.lastError) {
+          return reject(chrome.runtime.lastError);
+        }
+
         resolve();
       });
     });
   }
 
   async remove(key: string): Promise<void> {
-    return new Promise<void>((resolve) => {
+    return new Promise<void>((resolve, reject) => {
       this.chromeStorageApi.remove(key, () => {
+        if (chrome.runtime.lastError) {
+          return reject(chrome.runtime.lastError);
+        }
+
         resolve();
       });
     });

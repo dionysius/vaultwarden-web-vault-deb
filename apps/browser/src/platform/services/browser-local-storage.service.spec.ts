@@ -62,6 +62,7 @@ describe("BrowserLocalStorageService", () => {
   });
 
   afterEach(() => {
+    chrome.runtime.lastError = undefined;
     jest.resetAllMocks();
   });
 
@@ -120,6 +121,24 @@ describe("BrowserLocalStorageService", () => {
       await service.reseed();
 
       expect(clearMock).toHaveBeenCalledTimes(1);
+    });
+
+    it("throws if get has chrome.runtime.lastError", async () => {
+      getMock.mockImplementation((key, callback) => {
+        chrome.runtime.lastError = new Error("Get Test Error");
+        callback();
+      });
+
+      await expect(async () => await service.reseed()).rejects.toThrow("Get Test Error");
+    });
+
+    it("throws if save has chrome.runtime.lastError", async () => {
+      saveMock.mockImplementation((obj, callback) => {
+        chrome.runtime.lastError = new Error("Save Test Error");
+        callback();
+      });
+
+      await expect(async () => await service.reseed()).rejects.toThrow("Save Test Error");
     });
   });
 

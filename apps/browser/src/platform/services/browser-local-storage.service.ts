@@ -81,8 +81,11 @@ export default class BrowserLocalStorageService extends AbstractChromeStorageSer
    * Clears local storage
    */
   private async clear() {
-    return new Promise<void>((resolve) => {
+    return new Promise<void>((resolve, reject) => {
       this.chromeStorageApi.clear(() => {
+        if (chrome.runtime.lastError) {
+          return reject(chrome.runtime.lastError);
+        }
         resolve();
       });
     });
@@ -95,8 +98,12 @@ export default class BrowserLocalStorageService extends AbstractChromeStorageSer
    * @returns Promise resolving to keyed object of all stored data
    */
   private async getAll(): Promise<Record<string, unknown>> {
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
       this.chromeStorageApi.get(null, (allStorage) => {
+        if (chrome.runtime.lastError) {
+          return reject(chrome.runtime.lastError);
+        }
+
         const resolved = Object.entries(allStorage).reduce(
           (agg, [key, value]) => {
             agg[key] = this.processGetObject(value);
@@ -110,7 +117,7 @@ export default class BrowserLocalStorageService extends AbstractChromeStorageSer
   }
 
   private async saveAll(data: Record<string, unknown>): Promise<void> {
-    return new Promise<void>((resolve) => {
+    return new Promise<void>((resolve, reject) => {
       const keyedData = Object.entries(data).reduce(
         (agg, [key, value]) => {
           agg[key] = objToStore(value);
@@ -119,6 +126,10 @@ export default class BrowserLocalStorageService extends AbstractChromeStorageSer
         {} as Record<string, SerializedValue>,
       );
       this.chromeStorageApi.set(keyedData, () => {
+        if (chrome.runtime.lastError) {
+          return reject(chrome.runtime.lastError);
+        }
+
         resolve();
       });
     });
