@@ -17,12 +17,8 @@
       <bit-label>{{ "itemName" | i18n }}</bit-label>
       <input bitInput formControlName="name" />
     </bit-form-field>
-    <div class="tw-flex tw-flex-wrap tw-gap-1">
-      <bit-form-field
-        class="tw-flex-1"
-        *ngIf="showOwnership"
-        [disableMargin]="!showCollectionsControl"
-      >
+    <div class="tw-grid tw-grid-cols-2 tw-gap-1">
+      <bit-form-field *ngIf="showOwnership" [disableMargin]="!showCollectionsControl">
         <bit-label>{{ "owner" | i18n }}</bit-label>
         <bit-select formControlName="organizationId">
           <bit-option
@@ -37,7 +33,10 @@
           ></bit-option>
         </bit-select>
       </bit-form-field>
-      <bit-form-field class="tw-flex-1" [disableMargin]="!showCollectionsControl">
+      <bit-form-field
+        [class.tw-col-span-2]="!showOwnership"
+        [disableMargin]="!showCollectionsControl"
+      >
         <bit-label>{{ "folder" | i18n }}</bit-label>
         <bit-select formControlName="folderId">
           <bit-option
