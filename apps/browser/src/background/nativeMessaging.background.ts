@@ -337,7 +337,8 @@ export class NativeMessagingBackground {
 
           // Verify key is correct by attempting to decrypt a secret
           try {
-            await this.cryptoService.getFingerprint(await this.stateService.getUserId());
+            const userId = (await firstValueFrom(this.accountService.activeAccount$))?.id;
+            await this.cryptoService.getFingerprint(userId);
           } catch (e) {
             this.logService.error("Unable to verify key: " + e);
             await this.cryptoService.clearKeys();
