@@ -32,6 +32,7 @@ describe("AutofillOptionsComponent", () => {
 
     autofillSettingsService = mock<AutofillSettingsServiceAbstraction>();
     autofillSettingsService.autofillOnPageLoadDefault$ = new BehaviorSubject(false);
+    autofillSettingsService.autofillOnPageLoad$ = new BehaviorSubject(true);
 
     await TestBed.configureTestingModule({
       imports: [AutofillOptionsComponent],
@@ -143,6 +144,22 @@ describe("AutofillOptionsComponent", () => {
     fixture.detectChanges();
 
     expect(component["autofillOptions"][0].label).toEqual("defaultLabel yes");
+  });
+
+  it("hides the autofill on page load field when the setting is disabled", () => {
+    fixture.detectChanges();
+    let control = fixture.nativeElement.querySelector(
+      "bit-select[formControlName='autofillOnPageLoad']",
+    );
+    expect(control).toBeTruthy();
+
+    (autofillSettingsService.autofillOnPageLoad$ as BehaviorSubject<boolean>).next(false);
+
+    fixture.detectChanges();
+    control = fixture.nativeElement.querySelector(
+      "bit-select[formControlName='autofillOnPageLoad']",
+    );
+    expect(control).toBeFalsy();
   });
 
   it("announces the addition of a new URI input", fakeAsync(() => {

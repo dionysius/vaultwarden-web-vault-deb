@@ -70,6 +70,7 @@ export class AutofillOptionsComponent implements OnInit {
   }
 
   protected defaultMatchDetection$ = this.domainSettingsService.defaultUriMatchStrategy$;
+  protected autofillOnPageLoadEnabled$ = this.autofillSettingsService.autofillOnPageLoad$;
 
   protected autofillOptions: { label: string; value: boolean | null }[] = [
     { label: this.i18nService.t("default"), value: null },

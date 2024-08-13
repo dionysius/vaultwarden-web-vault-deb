@@ -13,6 +13,7 @@
         (remove)="removeUri(i)"
         [canRemove]="uriControls.length > 1"
         [defaultMatchDetection]="defaultMatchDetection$ | async"
+        [index]="i"
       ></vault-autofill-uri-option>
     </ng-container>
 
@@ -20,7 +21,7 @@
       type="button"
       bitLink
       linkType="primary"
-      class="tw-mb-6"
+      [class.tw-mb-6]="autofillOnPageLoadEnabled$ | async"
       (click)="addUri({ uri: null, matchDetection: null }, true)"
       *ngIf="autofillOptionsForm.enabled"
     >
@@ -28,7 +29,7 @@
       {{ "addWebsite" | i18n }}
     </button>
 
-    <bit-form-field>
+    <bit-form-field *ngIf="autofillOnPageLoadEnabled$ | async" disableMargin>
       <bit-label>{{ "autoFillOnPageLoad" | i18n }}</bit-label>
       <bit-select formControlName="autofillOnPageLoad" [items]="autofillOptions"></bit-select>
     </bit-form-field>

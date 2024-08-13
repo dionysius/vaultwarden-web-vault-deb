@@ -1,6 +1,6 @@
 <ng-container [formGroup]="uriForm">
   <bit-form-field>
-    <bit-label>{{ "websiteUri" | i18n }}</bit-label>
+    <bit-label>{{ uriLabel }}</bit-label>
     <input bitInput formControlName="uri" #uriInput />
     <button
       type="button"

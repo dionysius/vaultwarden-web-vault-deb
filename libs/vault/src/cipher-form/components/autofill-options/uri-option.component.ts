@@ -90,6 +90,11 @@ export class UriOptionComponent implements ControlValueAccessor {
   }
 
   /**
+   * The index of the URI in the form. Used to render the correct label.
+   */
+  @Input({ required: true }) index: number;
+
+  /**
    * Emits when the remove button is clicked and URI should be removed from the form.
    */
   @Output()
@@ -102,6 +107,12 @@ export class UriOptionComponent implements ControlValueAccessor {
     if (this.showMatchDetection) {
       setTimeout(() => this.matchDetectionSelect?.select?.focus(), 0);
     }
+  }
+
+  protected get uriLabel() {
+    return this.index === 0
+      ? this.i18nService.t("websiteUri")
+      : this.i18nService.t("websiteUriCount", this.index + 1);
   }
 
   protected get toggleTitle() {
