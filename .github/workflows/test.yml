@@ -11,9 +11,28 @@ on:
     types: [opened, synchronize]
 
 jobs:
-  test:
+  check-test-secrets:
+    name: Check for test secrets
+    runs-on: ubuntu-22.04
+    outputs:
+      available: ${{ steps.check-test-secrets.outputs.available }}
+    permissions:
+      contents: read
+
+    steps:
+      - name: Check
+        id: check-test-secrets
+        run: |
+          if [ "${{ secrets.CODECOV_TOKEN }}" != '' ]; then
+            echo "available=true" >> $GITHUB_OUTPUT;
+          else
+            echo "available=false" >> $GITHUB_OUTPUT;
+          fi
+
+  testing:
     name: Run tests
     runs-on: ubuntu-22.04
+    needs: check-test-secrets
     permissions:
       checks: write
       contents: read
@@ -58,25 +77,16 @@ jobs:
 
       - name: Report test results
         uses: dorny/test-reporter@eaa763f6ffc21c7a37837f56cd5f9737f27fc6c8 # v1.8.0
-        if: always()
+        if: ${{ needs.check-test-secrets.outputs.available == 'true' }} && always()
         with:
           name: Test Results
           path: "junit.xml"
           reporter: jest-junit
           fail-on-error: true
 
-      - name: Check for Codecov secret
-        id: check-codecov-secret
-        run: |
-          if [ "${{ secrets.CODECOV_TOKEN }}" != '' ]; then
-            echo "available=true" >> $GITHUB_OUTPUT;
-          else
-            echo "available=false" >> $GITHUB_OUTPUT;
-          fi
-
       - name: Upload to codecov.io
         uses: codecov/codecov-action@54bcd8715eee62d40e33596ef5e8f0f48dbbccab # v4.1.0
-        if: steps.check-codecov-secret.outputs.available == 'true'
+        if: ${{ needs.check-test-secrets.outputs.available == 'true' }}
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
