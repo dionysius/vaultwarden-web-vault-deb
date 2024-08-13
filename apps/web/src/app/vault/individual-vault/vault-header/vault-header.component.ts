@@ -84,17 +84,12 @@ export class VaultHeaderComponent implements OnInit {
   /** Emits an event when the delete collection button is clicked in the header */
   @Output() onDeleteCollection = new EventEmitter<void>();
 
-  private flexibleCollectionsV1Enabled = false;
-
   constructor(
     private i18nService: I18nService,
     private configService: ConfigService,
   ) {}
 
   async ngOnInit() {
-    this.flexibleCollectionsV1Enabled = await firstValueFrom(
-      this.configService.getFeatureFlag$(FeatureFlag.FlexibleCollectionsV1),
-    );
     this.extensionRefreshEnabled = await firstValueFrom(
       this.configService.getFeatureFlag$(FeatureFlag.ExtensionRefresh),
     );
@@ -180,7 +175,7 @@ export class VaultHeaderComponent implements OnInit {
     const organization = this.organizations.find(
       (o) => o.id === this.collection?.node.organizationId,
     );
-    return this.collection.node.canEdit(organization, this.flexibleCollectionsV1Enabled);
+    return this.collection.node.canEdit(organization);
   }
 
   async editCollection(tab: CollectionDialogTabType): Promise<void> {
@@ -198,7 +193,7 @@ export class VaultHeaderComponent implements OnInit {
       (o) => o.id === this.collection?.node.organizationId,
     );
 
-    return this.collection.node.canDelete(organization, this.flexibleCollectionsV1Enabled);
+    return this.collection.node.canDelete(organization);
   }
 
   deleteCollection() {
