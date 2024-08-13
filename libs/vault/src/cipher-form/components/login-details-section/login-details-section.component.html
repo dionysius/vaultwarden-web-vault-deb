@@ -28,9 +28,14 @@
           {{ "securePasswordGenerated" | i18n }}
         </ng-container>
         <ng-container *ngIf="!newPasswordGenerated">
-          {{ "useGeneratorHelpTextPartOne" | i18n }}
-          <i class="bwi bwi-generate" aria-hidden="true"></i>
-          {{ "useGeneratorHelpTextPartTwo" | i18n }}
+          <span class="tw-sr-only">
+            {{ "useGeneratorHelpTextPartOne" | i18n }} {{ "useGeneratorHelpTextPartTwo" | i18n }}
+          </span>
+          <span aria-hidden="true">
+            {{ "useGeneratorHelpTextPartOne" | i18n }}
+            <i class="bwi bwi-generate" aria-hidden="true"></i>
+            {{ "useGeneratorHelpTextPartTwo" | i18n }}
+          </span>
         </ng-container>
       </bit-hint>
       <button
