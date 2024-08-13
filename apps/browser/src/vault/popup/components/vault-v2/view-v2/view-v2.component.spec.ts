@@ -10,6 +10,8 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CipherType } from "@bitwarden/common/vault/enums";
 
+import { PopupRouterCacheService } from "../../../../../platform/popup/view-cache/popup-router-cache.service";
+
 import { ViewV2Component } from "./view-v2.component";
 
 // 'qrcode-parser' is used by `BrowserTotpCaptureService` but is an es6 module that jest can't compile.
@@ -44,6 +46,7 @@ describe("ViewV2Component", () => {
         { provide: LogService, useValue: mock<LogService>() },
         { provide: PlatformUtilsService, useValue: mock<PlatformUtilsService>() },
         { provide: ConfigService, useValue: mock<ConfigService>() },
+        { provide: PopupRouterCacheService, useValue: mock<PopupRouterCacheService>() },
         { provide: ActivatedRoute, useValue: { queryParams: params$ } },
         {
           provide: I18nService,
