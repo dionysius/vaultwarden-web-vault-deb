@@ -14,6 +14,7 @@ import {
   CardComponent,
   FormFieldModule,
   IconButtonModule,
+  LinkModule,
   PopoverModule,
   SectionComponent,
   SectionHeaderComponent,
@@ -43,6 +44,7 @@ import { AutofillOptionsComponent } from "../autofill-options/autofill-options.c
     NgIf,
     PopoverModule,
     AutofillOptionsComponent,
+    LinkModule,
   ],
 })
 export class LoginDetailsSectionComponent implements OnInit {
