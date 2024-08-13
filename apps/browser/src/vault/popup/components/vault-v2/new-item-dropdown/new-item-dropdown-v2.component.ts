@@ -14,6 +14,7 @@ export interface NewItemInitialValues {
   folderId?: string;
   organizationId?: OrganizationId;
   collectionId?: CollectionId;
+  uri?: string;
 }
 
 @Component({
@@ -42,6 +43,7 @@ export class NewItemDropdownV2Component {
       collectionId: this.initialValues?.collectionId,
       organizationId: this.initialValues?.organizationId,
       folderId: this.initialValues?.folderId,
+      uri: this.initialValues?.uri,
     };
   }
 

@@ -2,7 +2,7 @@ import { CommonModule } from "@angular/common";
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { RouterLink } from "@angular/router";
-import { combineLatest, map, Observable, shareReplay } from "rxjs";
+import { combineLatest, Observable, shareReplay, switchMap } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { CollectionId, OrganizationId } from "@bitwarden/common/types/guid";
@@ -11,6 +11,7 @@ import { ButtonModule, Icons, NoItemsModule } from "@bitwarden/components";
 import { VaultIcons } from "@bitwarden/vault";
 
 import { CurrentAccountComponent } from "../../../../auth/popup/account-switching/current-account.component";
+import { BrowserApi } from "../../../../platform/browser/browser-api";
 import { PopOutComponent } from "../../../../platform/popup/components/pop-out.component";
 import { PopupHeaderComponent } from "../../../../platform/popup/layout/popup-header.component";
 import { PopupPageComponent } from "../../../../platform/popup/layout/popup-page.component";
@@ -62,12 +63,16 @@ export class VaultV2Component implements OnInit, OnDestroy {
 
   protected newItemItemValues$: Observable<NewItemInitialValues> =
     this.vaultPopupListFiltersService.filters$.pipe(
-      map((filter) => ({
-        organizationId: (filter.organization?.id ||
-          filter.collection?.organizationId) as OrganizationId,
-        collectionId: filter.collection?.id as CollectionId,
-        folderId: filter.folder?.id,
-      })),
+      switchMap(
+        async (filter) =>
+          ({
+            organizationId: (filter.organization?.id ||
+              filter.collection?.organizationId) as OrganizationId,
+            collectionId: filter.collection?.id as CollectionId,
+            folderId: filter.folder?.id,
+            uri: (await BrowserApi.getTabFromCurrentWindow())?.url,
+          }) as NewItemInitialValues,
+      ),
       shareReplay({ refCount: true, bufferSize: 1 }),
     );
 
