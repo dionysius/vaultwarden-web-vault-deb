@@ -76,6 +76,10 @@ export class AnonLayoutComponent implements OnInit, OnChanges {
       const theme = await firstValueFrom(this.themeStateService.selectedTheme$);
       await this.updateIcon(theme);
     }
+
+    if (changes.maxWidth) {
+      this.maxWidth = changes.maxWidth.currentValue ?? "md";
+    }
   }
 
   private async updateIcon(theme: string) {

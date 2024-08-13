@@ -129,6 +129,7 @@ export class AnonLayoutWrapperComponent implements OnInit, OnDestroy {
     this.pageSubtitle = null;
     this.pageIcon = null;
     this.showReadonlyHostname = null;
+    this.maxWidth = null;
   }
 
   ngOnDestroy() {

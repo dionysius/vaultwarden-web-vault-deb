@@ -189,6 +189,7 @@ export class ExtensionAnonLayoutWrapperComponent implements OnInit, OnDestroy {
     this.showAcctSwitcher = null;
     this.showBackButton = null;
     this.showLogo = null;
+    this.maxWidth = null;
   }
 
   ngOnDestroy() {
