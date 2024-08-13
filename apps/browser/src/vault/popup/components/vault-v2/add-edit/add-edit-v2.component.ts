@@ -228,7 +228,10 @@ export class AddEditV2Component implements OnInit {
       return;
     }
 
-    this.location.back();
+    await this.router.navigate(["/view-cipher"], {
+      replaceUrl: true,
+      queryParams: { cipherId: cipher.id },
+    });
   }
 
   subscribeToParams(): void {

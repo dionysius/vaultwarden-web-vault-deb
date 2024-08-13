@@ -54,7 +54,6 @@ import { PopupPageComponent } from "./../../../../../platform/popup/layout/popup
 })
 export class ViewV2Component {
   headerText: string;
-  cipherId: string;
   cipher: CipherView;
   organization$: Observable<Organization>;
   folder$: Observable<FolderView>;
@@ -75,14 +74,14 @@ export class ViewV2Component {
   subscribeToParams(): void {
     this.route.queryParams
       .pipe(
-        switchMap((param) => {
-          return this.getCipherData(param.cipherId);
+        switchMap(async (params): Promise<CipherView> => {
+          return await this.getCipherData(params.cipherId);
         }),
         takeUntilDestroyed(),
       )
-      .subscribe((data) => {
-        this.cipher = data;
-        this.headerText = this.setHeader(data.type);
+      .subscribe((cipher) => {
+        this.cipher = cipher;
+        this.headerText = this.setHeader(cipher.type);
       });
   }
 
