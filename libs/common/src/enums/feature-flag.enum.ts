@@ -6,7 +6,6 @@
 export enum FeatureFlag {
   BrowserFilelessImport = "browser-fileless-import",
   ItemShare = "item-share",
-  FlexibleCollectionsV1 = "flexible-collections-v-1", // v-1 is intentional
   GeneratorToolsModernization = "generator-tools-modernization",
   ShowPaymentMethodWarningBanners = "show-payment-method-warning-banners",
   EnableConsolidatedBilling = "enable-consolidated-billing",
@@ -48,7 +47,6 @@ const FALSE = false as boolean;
 export const DefaultFeatureFlagValue = {
   [FeatureFlag.BrowserFilelessImport]: FALSE,
   [FeatureFlag.ItemShare]: FALSE,
-  [FeatureFlag.FlexibleCollectionsV1]: FALSE,
   [FeatureFlag.GeneratorToolsModernization]: FALSE,
   [FeatureFlag.ShowPaymentMethodWarningBanners]: FALSE,
   [FeatureFlag.EnableConsolidatedBilling]: FALSE,
