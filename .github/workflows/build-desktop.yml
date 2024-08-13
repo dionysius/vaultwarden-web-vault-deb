@@ -776,10 +776,18 @@ jobs:
           mkdir PlugIns
           cp -r $GITHUB_WORKSPACE/browser-build-artifacts/Safari/dmg/build/Release/safari.appex PlugIns/safari.appex
 
+      - name: Set up private auth key
+        run: |
+          mkdir ~/private_keys
+          cat << EOF > ~/private_keys/AuthKey_6TV9MKN3GP.p8
+          ${{ secrets.APP_STORE_CONNECT_AUTH_KEY }}
+          EOF
+
       - name: Build application (dist)
         env:
-          APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
-          APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
+          APP_STORE_CONNECT_TEAM_ISSUER: ${{ secrets.APP_STORE_CONNECT_TEAM_ISSUER }}
+          APP_STORE_CONNECT_AUTH_KEY: 6TV9MKN3GP
+          APP_STORE_CONNECT_AUTH_KEY_PATH: ~/private_keys/AuthKey_6TV9MKN3GP.p8
           CSC_FOR_PULL_REQUEST: true
         run: npm run pack:mac
 
@@ -985,12 +993,20 @@ jobs:
           mkdir PlugIns
           cp -r $GITHUB_WORKSPACE/browser-build-artifacts/Safari/mas/build/Release/safari.appex PlugIns/safari.appex
 
+      - name: Set up private auth key
+        run: |
+          mkdir ~/private_keys
+          cat << EOF > ~/private_keys/AuthKey_6TV9MKN3GP.p8
+          ${{ secrets.APP_STORE_CONNECT_AUTH_KEY }}
+          EOF
+
       - name: Build application for App Store
-        run: npm run pack:mac:mas
         env:
-          APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
-          APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
+          APP_STORE_CONNECT_TEAM_ISSUER: ${{ secrets.APP_STORE_CONNECT_TEAM_ISSUER }}
+          APP_STORE_CONNECT_AUTH_KEY: 6TV9MKN3GP
+          APP_STORE_CONNECT_AUTH_KEY_PATH: ~/private_keys/AuthKey_6TV9MKN3GP.p8
           CSC_FOR_PULL_REQUEST: true
+        run: npm run pack:mac:mas
 
       - name: Upload .pkg artifact
         uses: actions/upload-artifact@5d5d22a31266ced268874388b861e4b58bb5c2f3 # v4.3.1
@@ -1000,15 +1016,15 @@ jobs:
           if-no-files-found: error
 
       - name: Deploy to TestFlight
-        env:
-          APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
-          APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
         if: |
             (github.ref == 'refs/heads/main'
               && needs.setup.outputs.rc_branch_exists == 0
               && needs.setup.outputs.hotfix_branch_exists == 0)
             || (github.ref == 'refs/heads/rc' && needs.setup.outputs.hotfix_branch_exists == 0)
             || github.ref == 'refs/heads/hotfix-rc-desktop'
+        env:
+          APP_STORE_CONNECT_TEAM_ISSUER: ${{ secrets.APP_STORE_CONNECT_TEAM_ISSUER }}
+          APP_STORE_CONNECT_AUTH_KEY: 6TV9MKN3GP
         run: npm run upload:mas
 
 
@@ -1180,11 +1196,18 @@ jobs:
           mkdir PlugIns
           cp -r $GITHUB_WORKSPACE/browser-build-artifacts/Safari/masdev/build/Release/safari.appex PlugIns/safari.appex
 
+      - name: Set up private auth key
+        run: |
+          mkdir ~/private_keys
+          cat << EOF > ~/private_keys/AuthKey_6TV9MKN3GP.p8
+          ${{ secrets.APP_STORE_CONNECT_AUTH_KEY }}
+          EOF
+
       - name: Build dev application for App Store
-        run: npm run pack:mac:masdev
         env:
-          APPLE_ID_USERNAME: ${{ secrets.APPLE_ID_USERNAME }}
-          APPLE_ID_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
+          APP_STORE_CONNECT_TEAM_ISSUER: ${{ secrets.APP_STORE_CONNECT_TEAM_ISSUER }}
+          APP_STORE_CONNECT_AUTH_KEY_PATH: ~/private_keys/AuthKey_6TV9MKN3GP.p8
+        run: npm run pack:mac:masdev
 
       - name: Zip masdev asset
         run: |
