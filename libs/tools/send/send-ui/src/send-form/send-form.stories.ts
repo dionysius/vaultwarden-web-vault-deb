@@ -13,6 +13,8 @@ import { Send } from "@bitwarden/common/tools/send/models/domain/send";
 import { SendView } from "@bitwarden/common/tools/send/models/view/send.view";
 import { AsyncActionsModule, ButtonModule, ToastService } from "@bitwarden/components";
 import { SendFormConfig } from "@bitwarden/send-ui";
+// FIXME: remove `/apps` import from `/libs`
+// eslint-disable-next-line import/no-restricted-paths
 import { PreloadedEnglishI18nModule } from "@bitwarden/web-vault/src/app/core/tests";
 
 import { SendFormService } from "./abstractions/send-form.service";

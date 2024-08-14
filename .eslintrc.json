@@ -101,6 +101,11 @@
           {
             "zones": [
               {
+                "target": ["libs/**/*"],
+                "from": ["apps/**/*"],
+                "message": "Libs should not import app-specific code."
+              },
+              {
                 // avoid specific frameworks or large dependencies in common
                 "target": "./libs/common/**/*",
                 "from": [

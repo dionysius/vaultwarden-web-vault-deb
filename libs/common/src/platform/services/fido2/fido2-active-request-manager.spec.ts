@@ -1,6 +1,8 @@
 import { mock } from "jest-mock-extended";
 import { firstValueFrom, Observable } from "rxjs";
 
+// FIXME: remove `/apps` import from `/libs`
+// eslint-disable-next-line import/no-restricted-paths
 import { flushPromises } from "@bitwarden/browser/src/autofill/spec/testing-utils";
 
 import { Fido2CredentialView } from "../../../vault/models/view/fido2-credential.view";

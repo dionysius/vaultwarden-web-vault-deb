@@ -27,6 +27,8 @@ import {
   TypographyModule,
 } from "@bitwarden/components";
 
+// FIXME: remove `/apps` import from `/libs`
+// eslint-disable-next-line import/no-restricted-paths
 import { PreloadedEnglishI18nModule } from "../../../../../../apps/web/src/app/core/tests";
 
 import { RegistrationStartComponent } from "./registration-start.component";

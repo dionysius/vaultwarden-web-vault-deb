@@ -11,6 +11,8 @@ import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.se
 import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/password-strength";
 import { DialogService, ToastService } from "@bitwarden/components";
 
+// FIXME: remove `/apps` import from `/libs`
+// eslint-disable-next-line import/no-restricted-paths
 import { PreloadedEnglishI18nModule } from "../../../../../apps/web/src/app/core/tests";
 
 import { InputPasswordComponent } from "./input-password.component";
