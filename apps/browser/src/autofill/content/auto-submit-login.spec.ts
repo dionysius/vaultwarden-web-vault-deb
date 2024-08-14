@@ -61,10 +61,13 @@ describe("AutoSubmitLogin content script", () => {
 
     await initAutoSubmitWorkflow();
 
-    expect(chrome.runtime.sendMessage).toHaveBeenCalledWith({
-      command: "updateIsFieldCurrentlyFilling",
-      isFieldCurrentlyFilling: false,
-    });
+    expect(chrome.runtime.sendMessage).toHaveBeenCalledWith(
+      {
+        command: "updateIsFieldCurrentlyFilling",
+        isFieldCurrentlyFilling: false,
+      },
+      expect.any(Function),
+    );
   });
 
   describe("when the page contains form fields", () => {
@@ -78,10 +81,13 @@ describe("AutoSubmitLogin content script", () => {
       });
       await flushPromises();
 
-      expect(chrome.runtime.sendMessage).toHaveBeenCalledWith({
-        command: "updateIsFieldCurrentlyFilling",
-        isFieldCurrentlyFilling: false,
-      });
+      expect(chrome.runtime.sendMessage).toHaveBeenCalledWith(
+        {
+          command: "updateIsFieldCurrentlyFilling",
+          isFieldCurrentlyFilling: false,
+        },
+        expect.any(Function),
+      );
     });
 
     describe("triggering auto-submit on formless fields", () => {
