@@ -8,7 +8,7 @@ import { FillableFormFieldElement, FormElementWithAttribute, FormFieldElement } 
 
 import { InlineMenuFieldQualificationService } from "./abstractions/inline-menu-field-qualifications.service";
 import { AutofillOverlayContentService } from "./autofill-overlay-content.service";
-import CollectAutofillContentService from "./collect-autofill-content.service";
+import { CollectAutofillContentService } from "./collect-autofill-content.service";
 import DomElementVisibilityService from "./dom-element-visibility.service";
 import InsertAutofillContentService from "./insert-autofill-content.service";
 

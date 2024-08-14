@@ -17,7 +17,7 @@ export default class AutofillScript {
   script: FillScript[] = [];
   properties: AutofillScriptProperties = {};
   metadata: any = {}; // Unused, not written or read
-  autosubmit: any = null; // Appears to be unused, read but not written
+  autosubmit: string[]; // Appears to be unused, read but not written
   savedUrls: string[];
   untrustedIframe: boolean;
   itemType: string; // Appears to be unused, read but not written

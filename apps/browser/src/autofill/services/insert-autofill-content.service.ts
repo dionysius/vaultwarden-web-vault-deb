@@ -10,7 +10,7 @@ import {
 } from "../utils";
 
 import { InsertAutofillContentService as InsertAutofillContentServiceInterface } from "./abstractions/insert-autofill-content.service";
-import CollectAutofillContentService from "./collect-autofill-content.service";
+import { CollectAutofillContentService } from "./collect-autofill-content.service";
 import DomElementVisibilityService from "./dom-element-visibility.service";
 
 class InsertAutofillContentService implements InsertAutofillContentServiceInterface {

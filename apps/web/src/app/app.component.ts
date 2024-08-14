@@ -94,7 +94,7 @@ export class AppComponent implements OnDestroy, OnInit {
     private policyService: InternalPolicyService,
     protected policyListService: PolicyListService,
     private keyConnectorService: KeyConnectorService,
-    private configService: ConfigService,
+    protected configService: ConfigService,
     private dialogService: DialogService,
     private biometricStateService: BiometricStateService,
     private stateEventRunnerService: StateEventRunnerService,

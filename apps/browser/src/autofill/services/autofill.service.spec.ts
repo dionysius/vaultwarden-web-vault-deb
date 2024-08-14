@@ -696,6 +696,7 @@ describe("AutofillService", () => {
           onlyVisibleFields: autofillOptions.onlyVisibleFields || false,
           fillNewPassword: autofillOptions.fillNewPassword || false,
           allowTotpAutofill: autofillOptions.allowTotpAutofill || false,
+          autoSubmitLogin: autofillOptions.allowTotpAutofill || false,
           cipher: autofillOptions.cipher,
           tabUrl: autofillOptions.tab.url,
           defaultUriMatch: 0,
@@ -709,7 +710,6 @@ describe("AutofillService", () => {
         {
           command: "fillForm",
           fillScript: {
-            autosubmit: null,
             metadata: {},
             properties: {
               delay_between_operations: 20,
@@ -1015,6 +1015,7 @@ describe("AutofillService", () => {
           fillNewPassword: fromCommand,
           allowUntrustedIframe: fromCommand,
           allowTotpAutofill: fromCommand,
+          autoSubmitLogin: false,
         });
         expect(result).toBe(totpCode);
       });
@@ -1044,6 +1045,7 @@ describe("AutofillService", () => {
           fillNewPassword: fromCommand,
           allowUntrustedIframe: fromCommand,
           allowTotpAutofill: fromCommand,
+          autoSubmitLogin: false,
         });
         expect(result).toBe(totpCode);
       });
@@ -1070,6 +1072,7 @@ describe("AutofillService", () => {
           fillNewPassword: fromCommand,
           allowUntrustedIframe: fromCommand,
           allowTotpAutofill: fromCommand,
+          autoSubmitLogin: false,
         });
         expect(result).toBe(totpCode);
       });
@@ -1548,7 +1551,6 @@ describe("AutofillService", () => {
 
       expect(autofillService["generateLoginFillScript"]).toHaveBeenCalledWith(
         {
-          autosubmit: null,
           metadata: {},
           properties: {},
           script: [
@@ -1587,7 +1589,6 @@ describe("AutofillService", () => {
 
       expect(autofillService["generateCardFillScript"]).toHaveBeenCalledWith(
         {
-          autosubmit: null,
           metadata: {},
           properties: {},
           script: [
@@ -1626,7 +1627,6 @@ describe("AutofillService", () => {
 
       expect(autofillService["generateIdentityFillScript"]).toHaveBeenCalledWith(
         {
-          autosubmit: null,
           metadata: {},
           properties: {},
           script: [

@@ -132,6 +132,39 @@ export function triggerWebNavigationOnCommittedEvent(
   );
 }
 
+export function triggerWebNavigationOnCompletedEvent(
+  details: chrome.webNavigation.WebNavigationFramedCallbackDetails,
+) {
+  (chrome.webNavigation.onCompleted.addListener as unknown as jest.SpyInstance).mock.calls.forEach(
+    (call) => {
+      const callback = call[0];
+      callback(details);
+    },
+  );
+}
+
+export function triggerWebRequestOnBeforeRequestEvent(
+  details: chrome.webRequest.WebRequestDetails,
+) {
+  (chrome.webRequest.onBeforeRequest.addListener as unknown as jest.SpyInstance).mock.calls.forEach(
+    (call) => {
+      const callback = call[0];
+      callback(details);
+    },
+  );
+}
+
+export function triggerWebRequestOnBeforeRedirectEvent(
+  details: chrome.webRequest.WebRequestDetails,
+) {
+  (
+    chrome.webRequest.onBeforeRedirect.addListener as unknown as jest.SpyInstance
+  ).mock.calls.forEach((call) => {
+    const callback = call[0];
+    callback(details);
+  });
+}
+
 export function mockQuerySelectorAllDefinedCall() {
   const originalDocumentQuerySelectorAll = document.querySelectorAll;
   document.querySelectorAll = function (selector: string) {

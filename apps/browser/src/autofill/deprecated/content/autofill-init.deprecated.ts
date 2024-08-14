@@ -1,6 +1,6 @@
 import { AutofillInit } from "../../content/abstractions/autofill-init";
 import AutofillPageDetails from "../../models/autofill-page-details";
-import CollectAutofillContentService from "../../services/collect-autofill-content.service";
+import { CollectAutofillContentService } from "../../services/collect-autofill-content.service";
 import DomElementVisibilityService from "../../services/dom-element-visibility.service";
 import InsertAutofillContentService from "../../services/insert-autofill-content.service";
 import { sendExtensionMessage } from "../../utils";

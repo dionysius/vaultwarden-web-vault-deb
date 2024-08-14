@@ -3,7 +3,7 @@ import { EVENTS } from "@bitwarden/common/autofill/constants";
 import AutofillPageDetails from "../models/autofill-page-details";
 import { AutofillInlineMenuContentService } from "../overlay/inline-menu/abstractions/autofill-inline-menu-content.service";
 import { AutofillOverlayContentService } from "../services/abstractions/autofill-overlay-content.service";
-import CollectAutofillContentService from "../services/collect-autofill-content.service";
+import { CollectAutofillContentService } from "../services/collect-autofill-content.service";
 import DomElementVisibilityService from "../services/dom-element-visibility.service";
 import InsertAutofillContentService from "../services/insert-autofill-content.service";
 import { sendExtensionMessage } from "../utils";

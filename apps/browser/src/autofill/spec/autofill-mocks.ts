@@ -114,6 +114,7 @@ export function createGenerateFillScriptOptionsMock(customFields = {}): Generate
     onlyVisibleFields: false,
     fillNewPassword: false,
     allowTotpAutofill: false,
+    autoSubmitLogin: false,
     cipher: mock<CipherView>(),
     tabUrl: "https://jest-testing-website.com",
     defaultUriMatch: UriMatchStrategy.Domain,
