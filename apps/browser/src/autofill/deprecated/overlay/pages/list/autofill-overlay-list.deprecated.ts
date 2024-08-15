@@ -395,6 +395,16 @@ class AutofillOverlayList extends AutofillOverlayPageElement {
       try {
         const url = new URL(cipher.icon.image);
         cipherIcon.style.backgroundImage = `url(${url.href})`;
+
+        const dummyImageElement = globalThis.document.createElement("img");
+        dummyImageElement.src = url.href;
+        dummyImageElement.addEventListener("error", () => {
+          cipherIcon.style.backgroundImage = "";
+          cipherIcon.classList.add("cipher-icon");
+          cipherIcon.append(buildSvgDomElement(globeIcon));
+        });
+        dummyImageElement.remove();
+
         return cipherIcon;
       } catch {
         // Silently default to the globe icon element if the image URL is invalid
@@ -402,7 +412,9 @@ class AutofillOverlayList extends AutofillOverlayPageElement {
     }
 
     if (cipher.icon?.icon) {
-      cipherIcon.classList.add("cipher-icon", "bwi", cipher.icon.icon);
+      const iconClasses = cipher.icon.icon.split(" ");
+      cipherIcon.classList.add("cipher-icon", "bwi", ...iconClasses);
+
       return cipherIcon;
     }
 

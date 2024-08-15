@@ -7,7 +7,9 @@ import { CipherType } from "@bitwarden/common/vault/enums";
 import { InlineMenuCipherData } from "../../../../background/abstractions/overlay.background";
 import { buildSvgDomElement, throttle } from "../../../../utils";
 import {
+  creditCardIcon,
   globeIcon,
+  idCardIcon,
   lockIcon,
   plusIcon,
   viewCipherIcon,
@@ -747,8 +749,8 @@ export class AutofillInlineMenuList extends AutofillInlineMenuPageElement {
         dummyImageElement.src = url.href;
         dummyImageElement.addEventListener("error", () => {
           cipherIcon.style.backgroundImage = "";
-          const iconClasses = cipher.icon.icon.split(" ");
-          cipherIcon.classList.add("cipher-icon", "bwi", ...iconClasses);
+          cipherIcon.classList.add("cipher-icon");
+          cipherIcon.append(buildSvgDomElement(globeIcon));
         });
         dummyImageElement.remove();
 
@@ -758,13 +760,23 @@ export class AutofillInlineMenuList extends AutofillInlineMenuPageElement {
       }
     }
 
-    if (cipher.icon?.icon) {
-      const iconClasses = cipher.icon.icon.split(" ");
-      cipherIcon.classList.add("cipher-icon", "bwi", ...iconClasses);
+    if (!cipher.icon?.icon) {
+      cipherIcon.append(buildSvgDomElement(globeIcon));
       return cipherIcon;
     }
 
-    cipherIcon.append(buildSvgDomElement(globeIcon));
+    if (cipher.icon.icon.includes("bwi-credit-card")) {
+      cipherIcon.append(buildSvgDomElement(creditCardIcon));
+      return cipherIcon;
+    }
+
+    if (cipher.icon.icon.includes("bwi-id-card")) {
+      cipherIcon.append(buildSvgDomElement(idCardIcon));
+      return cipherIcon;
+    }
+
+    const iconClasses = cipher.icon.icon.split(" ");
+    cipherIcon.classList.add("cipher-icon", "bwi", ...iconClasses);
     return cipherIcon;
   }
 
