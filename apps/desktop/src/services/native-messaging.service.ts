@@ -3,6 +3,7 @@ import { firstValueFrom, map } from "rxjs";
 
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
+import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/crypto-function.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
@@ -177,7 +178,17 @@ export class NativeMessagingService {
               },
               appId,
             );
-            await ipc.platform.reloadProcess();
+
+            const currentlyActiveAccountId = (
+              await firstValueFrom(this.accountService.activeAccount$)
+            ).id;
+            const isCurrentlyActiveAccountUnlocked =
+              (await this.authService.getAuthStatus(userId)) == AuthenticationStatus.Unlocked;
+
+            // prevent proc reloading an active account, when it is the same as the browser
+            if (currentlyActiveAccountId != message.userId || !isCurrentlyActiveAccountUnlocked) {
+              await ipc.platform.reloadProcess();
+            }
           } else {
             await this.send({ command: "biometricUnlock", response: "canceled" }, appId);
           }
