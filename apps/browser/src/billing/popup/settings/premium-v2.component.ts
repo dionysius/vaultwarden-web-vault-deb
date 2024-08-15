@@ -1,6 +1,8 @@
-import { CurrencyPipe, Location } from "@angular/common";
+import { CommonModule, CurrencyPipe, Location } from "@angular/common";
 import { Component } from "@angular/core";
+import { RouterModule } from "@angular/router";
 
+import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { PremiumComponent as BasePremiumComponent } from "@bitwarden/angular/vault/components/premium.component";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions/account/billing-account-profile-state.service";
@@ -9,13 +11,38 @@ import { EnvironmentService } from "@bitwarden/common/platform/abstractions/envi
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { DialogService } from "@bitwarden/components";
+import {
+  ButtonModule,
+  CardComponent,
+  DialogService,
+  ItemModule,
+  SectionComponent,
+} from "@bitwarden/components";
+
+import { CurrentAccountComponent } from "../../../auth/popup/account-switching/current-account.component";
+import { PopOutComponent } from "../../../platform/popup/components/pop-out.component";
+import { PopupHeaderComponent } from "../../../platform/popup/layout/popup-header.component";
+import { PopupPageComponent } from "../../../platform/popup/layout/popup-page.component";
 
 @Component({
   selector: "app-premium",
-  templateUrl: "premium.component.html",
+  templateUrl: "premium-v2.component.html",
+  standalone: true,
+  imports: [
+    ButtonModule,
+    CardComponent,
+    CommonModule,
+    CurrentAccountComponent,
+    ItemModule,
+    JslibModule,
+    PopupPageComponent,
+    PopupHeaderComponent,
+    PopOutComponent,
+    RouterModule,
+    SectionComponent,
+  ],
 })
-export class PremiumComponent extends BasePremiumComponent {
+export class PremiumV2Component extends BasePremiumComponent {
   priceString: string;
 
   constructor(

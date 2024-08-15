@@ -46,6 +46,7 @@ import { ExcludedDomainsV1Component } from "../autofill/popup/settings/excluded-
 import { ExcludedDomainsComponent } from "../autofill/popup/settings/excluded-domains.component";
 import { NotificationsSettingsV1Component } from "../autofill/popup/settings/notifications-v1.component";
 import { NotificationsSettingsComponent } from "../autofill/popup/settings/notifications.component";
+import { PremiumV2Component } from "../billing/popup/settings/premium-v2.component";
 import { PremiumComponent } from "../billing/popup/settings/premium.component";
 import BrowserPopupUtils from "../platform/popup/browser-popup-utils";
 import { popupRouterCacheGuard } from "../platform/popup/view-cache/popup-router-cache.service";
@@ -337,12 +338,12 @@ const routes: Routes = [
     canActivate: [authGuard],
     data: { state: "excluded-domains" },
   }),
-  {
+  ...extensionRefreshSwap(PremiumComponent, PremiumV2Component, {
     path: "premium",
     component: PremiumComponent,
     canActivate: [authGuard],
     data: { state: "premium" },
-  },
+  }),
   ...extensionRefreshSwap(AppearanceComponent, AppearanceV2Component, {
     path: "appearance",
     canActivate: [authGuard],
