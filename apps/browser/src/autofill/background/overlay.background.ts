@@ -1589,7 +1589,7 @@ export class OverlayBackground implements OverlayBackgroundInterface {
     }
 
     if (login && this.isAddingNewLogin()) {
-      this.updateCurrentAddNewItemLogin(login);
+      this.updateCurrentAddNewItemLogin(login, sender);
     }
 
     if (card && this.isAddingNewCard()) {
@@ -1629,20 +1629,54 @@ export class OverlayBackground implements OverlayBackgroundInterface {
    * login data is already present, the data will be merged with the existing data.
    *
    * @param login - The login data captured from the extension message
+   * @param sender - The sender of the extension message
    */
-  private updateCurrentAddNewItemLogin(login: NewLoginCipherData) {
+  private updateCurrentAddNewItemLogin(
+    login: NewLoginCipherData,
+    sender: chrome.runtime.MessageSender,
+  ) {
+    const { username, password } = login;
+
+    if (this.partialLoginDataFoundInSubFrame(sender, login)) {
+      login.uri = "";
+      login.hostname = "";
+    }
+
     if (!this.currentAddNewItemData.login) {
       this.currentAddNewItemData.login = login;
       return;
     }
 
     const currentLoginData = this.currentAddNewItemData.login;
+    if (sender.frameId === 0 && currentLoginData.hostname && !username && !password) {
+      login.uri = "";
+      login.hostname = "";
+    }
+
     this.currentAddNewItemData.login = {
       uri: login.uri || currentLoginData.uri,
       hostname: login.hostname || currentLoginData.hostname,
-      username: login.username || currentLoginData.username,
-      password: login.password || currentLoginData.password,
+      username: username || currentLoginData.username,
+      password: password || currentLoginData.password,
     };
+  }
+
+  /**
+   * Handles verifying if the login data for a tab is separated between various
+   * iframe elements. If that is the case, we want to ignore the login uri and
+   * domain to ensure the top frame is treated as the primary source of login data.
+   *
+   * @param sender - The sender of the extension message
+   * @param login - The login data captured from the extension message
+   */
+  private partialLoginDataFoundInSubFrame(
+    sender: chrome.runtime.MessageSender,
+    login: NewLoginCipherData,
+  ) {
+    const { frameId } = sender;
+    const { username, password } = login;
+
+    return frameId !== 0 && (!username || !password);
   }
 
   /**
