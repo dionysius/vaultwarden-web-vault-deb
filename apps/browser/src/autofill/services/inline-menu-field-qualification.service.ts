@@ -290,7 +290,7 @@ export class InlineMenuFieldQualificationService
 
     return (
       !this.fieldContainsAutocompleteValues(field, this.autocompleteDisabledValues) &&
-      this.keywordsFoundInFieldData(field, this.identityFieldKeywords)
+      this.keywordsFoundInFieldData(field, this.identityFieldKeywords, false)
     );
   }
 
