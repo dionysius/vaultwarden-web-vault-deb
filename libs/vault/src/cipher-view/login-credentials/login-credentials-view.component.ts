@@ -5,7 +5,7 @@ import { Observable, shareReplay } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions";
-import { LoginView } from "@bitwarden/common/vault/models/view/login.view";
+import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import {
   CardComponent,
   FormFieldModule,
@@ -16,6 +16,8 @@ import {
   BadgeModule,
   ColorPasswordModule,
 } from "@bitwarden/components";
+
+import { BitTotpCountdownComponent } from "../../components/totp-countdown/totp-countdown.component";
 
 @Component({
   selector: "app-login-credentials-view",
@@ -32,17 +34,19 @@ import {
     IconButtonModule,
     BadgeModule,
     ColorPasswordModule,
+    BitTotpCountdownComponent,
   ],
 })
 export class LoginCredentialsViewComponent {
-  @Input() login: LoginView;
-  @Input() viewPassword: boolean;
+  @Input() cipher: CipherView;
+
   isPremium$: Observable<boolean> =
     this.billingAccountProfileStateService.hasPremiumFromAnySource$.pipe(
       shareReplay({ refCount: true, bufferSize: 1 }),
     );
   showPasswordCount: boolean = false;
   passwordRevealed: boolean = false;
+  totpCopyCode: string;
 
   constructor(
     private billingAccountProfileStateService: BillingAccountProfileStateService,
@@ -59,5 +63,9 @@ export class LoginCredentialsViewComponent {
 
   togglePasswordCount() {
     this.showPasswordCount = !this.showPasswordCount;
+  }
+
+  setTotpCopyCode(e: any) {
+    this.totpCopyCode = e;
   }
 }
