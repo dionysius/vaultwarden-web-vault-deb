@@ -98,15 +98,13 @@ export class CipherReportComponent implements OnDestroy {
 
   async filterOrgToggle(status: any) {
     this.currentFilterStatus = status;
-    await this.setCiphers();
     if (status === 0) {
-      return;
+      this.dataSource.filter = null;
     } else if (status === 1) {
-      this.ciphers = this.ciphers.filter((c: any) => c.orgFilterStatus == null);
+      this.dataSource.filter = (c: any) => c.orgFilterStatus == null;
     } else {
-      this.ciphers = this.ciphers.filter((c: any) => c.orgFilterStatus === status);
+      this.dataSource.filter = (c: any) => c.orgFilterStatus === status;
     }
-    this.dataSource.data = this.ciphers;
   }
 
   async load() {
