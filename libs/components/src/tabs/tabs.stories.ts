@@ -103,7 +103,7 @@ export const ContentTabs: Story = {
 };
 
 export const NavigationTabs: Story = {
-  render: (args: TabGroupComponent) => ({
+  render: (args) => ({
     props: args,
     template: `
       <bit-tab-nav-bar label="Main">
@@ -126,7 +126,7 @@ export const NavigationTabs: Story = {
 };
 
 export const PreserveContentTabs: Story = {
-  render: (args: any) => ({
+  render: (args) => ({
     props: args,
     template: `
       <bit-tab-group label="Preserve Content Tabs" [preserveContent]="true" class="tw-text-main">
@@ -147,7 +147,7 @@ export const PreserveContentTabs: Story = {
 };
 
 export const KeyboardNavigation: Story = {
-  render: (args: any) => ({
+  render: (args) => ({
     props: args,
     template: `
       <bit-tab-group label="Keyboard Navigation Tabs" class="tw-text-main">
