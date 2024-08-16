@@ -33,7 +33,6 @@ export class PremiumComponent extends BasePremiumComponent {
       apiService,
       configService,
       logService,
-      stateService,
       dialogService,
       environmentService,
       billingAccountProfileStateService,
