@@ -1511,13 +1511,13 @@
     "message": "Додатна подешавања Windows Hello"
   },
   "unlockWithPolkit": {
-    "message": "Unlock with system authentication"
+    "message": "Откључати системском аутентификацијом"
   },
   "windowsHelloConsentMessage": {
     "message": "Потврди за Bitwarden."
   },
   "polkitConsentMessage": {
-    "message": "Authenticate to unlock Bitwarden."
+    "message": "Аутентификујте се да бисте откључали Bitwarden."
   },
   "unlockWithTouchId": {
     "message": "Откључај са Touch ID"
@@ -1532,7 +1532,7 @@
     "message": "Захтевај Windows Hello при покретању"
   },
   "autoPromptPolkit": {
-    "message": "Ask for system authentication on launch"
+    "message": "Затражите аутентификацију система при покретању"
   },
   "autoPromptTouchId": {
     "message": "Захтевај Touch ID при покретању"
@@ -1814,10 +1814,10 @@
     "message": "Биометрија прегледача захтева да у поставкама прво буде омогућена биометрија desktop-а."
   },
   "biometricsManualSetupTitle": {
-    "message": "Autometic setup not available"
+    "message": "Аутоматско подешавање није доступно"
   },
   "biometricsManualSetupDesc": {
-    "message": "Due to the installation method, biometrics support could not be automatically enabled. Would you like to open the documentation on how to do this manually?"
+    "message": "Због начина инсталације, подршка за биометрију није могла бити аутоматски омогућена. Да ли желите да отворите документацију о томе како то да ручно урадите?"
   },
   "personalOwnershipSubmitError": {
     "message": "Због смерница за предузећа, ограничено вам је чување предмета у вашем личном трезору. Промените опцију власништва у организацију и изаберите из доступних колекција."
@@ -3045,9 +3045,9 @@
     "message": "Подаци"
   },
   "fileSends": {
-    "message": "File Sends"
+    "message": "Датотека „Send“"
   },
   "textSends": {
-    "message": "Text Sends"
+    "message": "Текст „Send“"
   }
 }

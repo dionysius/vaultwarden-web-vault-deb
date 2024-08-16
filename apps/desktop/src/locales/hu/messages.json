@@ -1511,13 +1511,13 @@
     "message": "Kiegészítő Windows Hello beállítások"
   },
   "unlockWithPolkit": {
-    "message": "Unlock with system authentication"
+    "message": "Feloldás rendszer hitelesítéssel"
   },
   "windowsHelloConsentMessage": {
     "message": "Bitwarden ellenőrzés."
   },
   "polkitConsentMessage": {
-    "message": "Authenticate to unlock Bitwarden."
+    "message": "Hitelesítés a Bitwarden feloldásához."
   },
   "unlockWithTouchId": {
     "message": "Feloldás Touch ID segítségével"
@@ -1532,7 +1532,7 @@
     "message": "Windows Hello kérése indításkor"
   },
   "autoPromptPolkit": {
-    "message": "Ask for system authentication on launch"
+    "message": "Rendszer hiteletesítés bekérése indításkor"
   },
   "autoPromptTouchId": {
     "message": "Érintés AZ kérése indításkor"
@@ -1814,10 +1814,10 @@
     "message": "A böngésző biometrikus adataihoz először az asztali biometrikus adatokat kell engedélyezni a beállításokban."
   },
   "biometricsManualSetupTitle": {
-    "message": "Autometic setup not available"
+    "message": "Az automatikus beüzemelés nem érhető el."
   },
   "biometricsManualSetupDesc": {
-    "message": "Due to the installation method, biometrics support could not be automatically enabled. Would you like to open the documentation on how to do this manually?"
+    "message": "A telepítési mód miatt a biometrikus adatok támogatása nem volt automatikusan engedélyezhető. Szeretnénk megnyitni a dokumentációt arról, hogyan kell ezt manuálisan megtenni?"
   },
   "personalOwnershipSubmitError": {
     "message": "Egy vállalati házirend miatt korlátozásra került az elemek személyes tárolóba történő mentése. Módosítsuk a Tulajdon opciót egy szervezetre és válasszunk az elérhető gyűjtemények közül."
@@ -3045,9 +3045,9 @@
     "message": "Adat"
   },
   "fileSends": {
-    "message": "File Sends"
+    "message": "Fájl küldés"
   },
   "textSends": {
-    "message": "Text Sends"
+    "message": "Szöveg küldés"
   }
 }

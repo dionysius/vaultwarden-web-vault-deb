@@ -1511,13 +1511,13 @@
     "message": "Další nastavení Windows Hello"
   },
   "unlockWithPolkit": {
-    "message": "Unlock with system authentication"
+    "message": "Odemknout pomocí systémového ověření"
   },
   "windowsHelloConsentMessage": {
     "message": "Ověřte se pro Bitwarden."
   },
   "polkitConsentMessage": {
-    "message": "Authenticate to unlock Bitwarden."
+    "message": "Ověřte se pro odemknutí Bitwardenu."
   },
   "unlockWithTouchId": {
     "message": "Odemknout pomocí Touch ID"
@@ -1532,7 +1532,7 @@
     "message": "Požádat o Windows Hello při spuštění aplikace"
   },
   "autoPromptPolkit": {
-    "message": "Ask for system authentication on launch"
+    "message": "Požádat o systémové ověření při spuštění"
   },
   "autoPromptTouchId": {
     "message": "Požádat o Touch ID při spuštění aplikace"
@@ -1814,10 +1814,10 @@
     "message": "Biometrické prvky v prohlížeči vyžadují, aby byla nastavena biometrie nejprve v aplikaci pro počítač."
   },
   "biometricsManualSetupTitle": {
-    "message": "Autometic setup not available"
+    "message": "Automatické nastavení není k dispozici"
   },
   "biometricsManualSetupDesc": {
-    "message": "Due to the installation method, biometrics support could not be automatically enabled. Would you like to open the documentation on how to do this manually?"
+    "message": "Kvůli metodě instalace nelze automaticky povolit podporu biometrických prvků. Chcete otevřít dokumentaci o tom, jak to provést ručně?"
   },
   "personalOwnershipSubmitError": {
     "message": "Z důvodu podnikových zásad nemůžete ukládat položky do svého osobního trezoru. Změňte vlastnictví položky na organizaci a poté si vyberte z dostupných kolekcí."
@@ -3045,9 +3045,9 @@
     "message": "Data"
   },
   "fileSends": {
-    "message": "File Sends"
+    "message": "Sends se soubory"
   },
   "textSends": {
-    "message": "Text Sends"
+    "message": "Sends s texty"
   }
 }

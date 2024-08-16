@@ -1511,13 +1511,13 @@
     "message": "Əlavə Windows Hello ayarları"
   },
   "unlockWithPolkit": {
-    "message": "Unlock with system authentication"
+    "message": "Sistem kimlik doğrulaması ilə kilidi aç"
   },
   "windowsHelloConsentMessage": {
     "message": "Bitwarden üçün doğrula."
   },
   "polkitConsentMessage": {
-    "message": "Authenticate to unlock Bitwarden."
+    "message": "Bitwarden kilidini açmaq üçün kimliyi doğrula."
   },
   "unlockWithTouchId": {
     "message": "Touch ID kilidini aç"
@@ -1532,7 +1532,7 @@
     "message": "Açılışda Windows Hello-nu soruşun"
   },
   "autoPromptPolkit": {
-    "message": "Ask for system authentication on launch"
+    "message": "Açılışda sistem kimlik doğrulamasını tələb et"
   },
   "autoPromptTouchId": {
     "message": "Açılışda Touch ID-ni soruşun"
@@ -1814,10 +1814,10 @@
     "message": "Brauzer biometrikləri, əvvəlcə ayarlarda masaüstü biometriklərinin qurulmasını tələb edir."
   },
   "biometricsManualSetupTitle": {
-    "message": "Autometic setup not available"
+    "message": "Avtomatik quraşdırma mövcud deyil"
   },
   "biometricsManualSetupDesc": {
-    "message": "Due to the installation method, biometrics support could not be automatically enabled. Would you like to open the documentation on how to do this manually?"
+    "message": "Quraşdırma üsuluna görə, biometrik dəstəyi avtomatik fəallaşdırıla bilmədi. Bunun necə manual edildiyi ilə bağlı sənədləşdirmələri açmaq istəyirsiniz?"
   },
   "personalOwnershipSubmitError": {
     "message": "Müəssisə Siyasətinə görə, elementləri şəxsi anbarınızda saxlamağınız məhdudlaşdırılıb. Sahiblik seçimini təşkilat olaraq dəyişdirin və mövcud kolleksiyalar arasından seçim edin."
@@ -3045,9 +3045,9 @@
     "message": "Data"
   },
   "fileSends": {
-    "message": "File Sends"
+    "message": "Fayl \"Send\"ləri"
   },
   "textSends": {
-    "message": "Text Sends"
+    "message": "Mətn \"Send\"ləri"
   }
 }
