@@ -33,7 +33,6 @@ export default class RuntimeBackground {
   private pageDetailsToAutoFill: any[] = [];
   private onInstalledReason: string = null;
   private lockedVaultPendingNotifications: LockedVaultPendingNotificationsData[] = [];
-  private extensionRefreshIsActive: boolean = false;
 
   constructor(
     private main: MainBackground,
@@ -89,10 +88,6 @@ export default class RuntimeBackground {
       );
       return false;
     };
-
-    this.extensionRefreshIsActive = await this.configService.getFeatureFlag(
-      FeatureFlag.ExtensionRefresh,
-    );
 
     this.messageListener.allMessages$
       .pipe(
@@ -234,7 +229,7 @@ export default class RuntimeBackground {
         await this.main.refreshBadge();
         await this.main.refreshMenu(false);
 
-        if (this.extensionRefreshIsActive) {
+        if (await this.configService.getFeatureFlag(FeatureFlag.ExtensionRefresh)) {
           await this.autofillService.setAutoFillOnPageLoadOrgPolicy();
         }
         break;
@@ -257,7 +252,7 @@ export default class RuntimeBackground {
           await this.configService.ensureConfigFetched();
           await this.main.updateOverlayCiphers();
 
-          if (this.extensionRefreshIsActive) {
+          if (await this.configService.getFeatureFlag(FeatureFlag.ExtensionRefresh)) {
             await this.autofillService.setAutoFillOnPageLoadOrgPolicy();
           }
         }
