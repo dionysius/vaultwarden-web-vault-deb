@@ -120,13 +120,15 @@ export class WindowMain {
               }
             }
 
-            this.logService.info(
-              "Disabling external memory dumps & debugger access in main process",
-            );
-            try {
-              await processisolations.disableMemoryAccess();
-            } catch (e) {
-              this.logService.error("Failed to disable memory access", e);
+            // this currently breaks the file portal, so should only be used when
+            // no files are needed but security requirements are super high https://github.com/flatpak/xdg-desktop-portal/issues/785
+            if (process.env.EXPERIMENTAL_PREVENT_DEBUGGER_MEMORY_ACCESS === "true") {
+              this.logService.info("Disabling memory dumps in main process");
+              try {
+                await processisolations.disableMemoryAccess();
+              } catch (e) {
+                this.logService.error("Failed to disable memory dumps", e);
+              }
             }
           }
 
