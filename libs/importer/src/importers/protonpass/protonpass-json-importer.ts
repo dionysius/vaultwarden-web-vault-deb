@@ -43,6 +43,7 @@ export class ProtonPassJsonImporter extends BaseImporter implements Importer {
         const cipher = this.initLoginCipher();
         cipher.name = this.getValueOrDefault(item.data.metadata.name, "--");
         cipher.notes = this.getValueOrDefault(item.data.metadata.note);
+        cipher.favorite = item.pinned;
 
         switch (item.data.type) {
           case "login": {

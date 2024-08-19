@@ -24,6 +24,7 @@ export type ProtonPassItem = {
   contentFormatVersion: number;
   createTime: number;
   modifyTime: number;
+  pinned: boolean;
 };
 
 export enum ProtonPassItemState {
@@ -34,6 +35,7 @@ export enum ProtonPassItemState {
 export type ProtonPassItemData = {
   metadata: ProtonPassItemMetadata;
   extraFields: ProtonPassItemExtraField[];
+  platformSpecific?: any;
   type: "login" | "alias" | "creditCard" | "note";
   content: ProtonPassLoginItemContent | ProtonPassCreditCardItemContent;
 };
@@ -60,6 +62,7 @@ export type ProtonPassLoginItemContent = {
   password?: string;
   urls?: string[];
   totpUri?: string;
+  passkeys: [];
   itemUsername?: string;
 };
 
