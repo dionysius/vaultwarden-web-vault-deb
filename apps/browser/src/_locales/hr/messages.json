@@ -305,22 +305,22 @@
     "message": "Uredi mapu"
   },
   "newFolder": {
-    "message": "New folder"
+    "message": "Nova mapa"
   },
   "folderName": {
-    "message": "Folder name"
+    "message": "Naziv mape"
   },
   "folderHintText": {
-    "message": "Nest a folder by adding the parent folder's name followed by a “/”. Example: Social/Forums"
+    "message": "Ugnijezdi mapu dodavanjem naziva roditeljske mape i znaka kroz. Npr. Mreže/Forumi"
   },
   "noFoldersAdded": {
-    "message": "No folders added"
+    "message": "Mapa nije dodana"
   },
   "createFoldersToOrganize": {
-    "message": "Create folders to organize your vault items"
+    "message": "Za organiziranje stavki u trezoru, stvori mape"
   },
   "deleteFolderPermanently": {
-    "message": "Are you sure you want to permanently delete this folder?"
+    "message": "Sigurno želiš trajno izbrisati ovu mapu?"
   },
   "deleteFolder": {
     "message": "Izbriši mapu"
@@ -689,6 +689,9 @@
   },
   "totpHelperWithCapture": {
     "message": "Bitwarden može pohraniti i ispuniti kodove za dvostruku autentifikaciju. Odaberi ikonu kamere i označi QR kôd za provjeru autentičnosti ove web stranice ili kopiraj i zalijepi ključ u ovo polje."
+  },
+  "learnMoreAboutAuthenticators": {
+    "message": "Više o autentifikatorima"
   },
   "copyTOTP": {
     "message": "Kopiraj ključ autentifikatora (TOTP)"
@@ -1079,6 +1082,9 @@
   "ppremiumSignUpStorage": {
     "message": "1 GB šifriranog prostora za pohranu podataka."
   },
+  "premiumSignUpEmergency": {
+    "message": "Emergency access"
+  },
   "premiumSignUpTwoStepOptions": {
     "message": "Mogućnosti za prijavu u dva koraka kao što su YubiKey i Duo."
   },
@@ -1099,6 +1105,9 @@
   },
   "premiumPurchaseAlert": {
     "message": "Možeš kupiti premium članstvo na web trezoru. Želiš li sada posjetiti bitwarden.com?"
+  },
+  "premiumPurchaseAlertV2": {
+    "message": "You can purchase Premium from your account settings on the Bitwarden web app."
   },
   "premiumCurrentMember": {
     "message": "Ti si premium član!"
@@ -1822,26 +1831,26 @@
     "message": "Jedno ili više pravila organizacije utječe na postavke generatora."
   },
   "passwordGenerator": {
-    "message": "Password generator"
+    "message": "Generator lozinki"
   },
   "usernameGenerator": {
-    "message": "Username generator"
+    "message": "Generator korisničkih imena"
   },
   "useThisPassword": {
-    "message": "Use this password"
+    "message": "Koristi ovu lozinku"
   },
   "useThisUsername": {
-    "message": "Use this username"
+    "message": "Koristi ovo korisničko ime"
   },
   "securePasswordGenerated": {
-    "message": "Secure password generated! Don't forget to also update your password on the website."
+    "message": "Sigurna lozinka generirana! Ne zaboravi ažurirati lozinku na web stranici."
   },
   "useGeneratorHelpTextPartOne": {
-    "message": "Use the generator",
+    "message": "Koristi generator",
     "description": "This will be used as part of a larger sentence, broken up to include the generator icon. The full sentence will read 'Use the generator [GENERATOR_ICON] to create a strong unique password'"
   },
   "useGeneratorHelpTextPartTwo": {
-    "message": "to create a strong unique password",
+    "message": "za stvaranje snažne, jedinstvene lozinke",
     "description": "This will be used as part of a larger sentence, broken up to include the generator icon. The full sentence will read 'Use the generator [GENERATOR_ICON] to create a strong unique password'"
   },
   "vaultTimeoutAction": {
@@ -2293,6 +2302,24 @@
   },
   "createdSend": {
     "message": "Send stvoren",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createdSendSuccessfully": {
+    "message": "Send je uspješno stvoren!",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendAvailability": {
+    "message": "Send će biti dostupan svakome s poveznicom ovoliko dana: $DAYS$.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "sendLinkCopied": {
+    "message": "Kopirana poveznica Senda",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
@@ -3883,6 +3910,16 @@
   "websiteUri": {
     "message": "Web stranica (URI)"
   },
+  "websiteUriCount": {
+    "message": "Broj URI-ja: $COUNT$",
+    "description": "Label for an input field that contains a website URI. The input field is part of a list of fields, and the count indicates the position of the field in the list.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
   "websiteAdded": {
     "message": "Web stranica dodana"
   },
@@ -3945,15 +3982,15 @@
     "message": "Podaci"
   },
   "passkeys": {
-    "message": "Passkeys",
+    "message": "Pristupni ključevi",
     "description": "A section header for a list of passkeys."
   },
   "passwords": {
-    "message": "Passwords",
+    "message": "Lozinke",
     "description": "A section header for a list of passwords."
   },
   "logInWithPasskeyAriaLabel": {
-    "message": "Log in with passkey",
+    "message": "Prijava pristupnim ključem",
     "description": "ARIA label for the inline menu button that logs in with a passkey."
   },
   "assign": {
@@ -4151,10 +4188,10 @@
     "message": "Lokacija stavke"
   },
   "fileSends": {
-    "message": "File Sends"
+    "message": "Send datoteke"
   },
   "textSends": {
-    "message": "Text Sends"
+    "message": "Send tekstovi"
   },
   "bitwardenNewLook": {
     "message": "Bitwarden ima novi izgled!"
@@ -4166,9 +4203,12 @@
     "message": "Radnje na računu"
   },
   "showNumberOfAutofillSuggestions": {
-    "message": "Show number of login autofill suggestions on extension icon"
+    "message": "Prikaži broj prijedloga auto-ispune na ikoni proširenja"
   },
   "systemDefault": {
-    "message": "System default"
+    "message": "Zadano sustavom"
+  },
+  "enterprisePolicyRequirementsApplied": {
+    "message": "Pravila tvrtke primijenjena su na ovu postavku"
   }
 }

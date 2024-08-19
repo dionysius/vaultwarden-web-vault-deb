@@ -305,22 +305,22 @@
     "message": "Mappa szerkesztése"
   },
   "newFolder": {
-    "message": "New folder"
+    "message": "Új mappa"
   },
   "folderName": {
-    "message": "Folder name"
+    "message": "Mappanév"
   },
   "folderHintText": {
-    "message": "Nest a folder by adding the parent folder's name followed by a “/”. Example: Social/Forums"
+    "message": "Mappa beágyazása a szülőmappa nevének hozzáadásával, majd egy “/” karakterrel. Példa: Közösségi/Fórumok"
   },
   "noFoldersAdded": {
-    "message": "No folders added"
+    "message": "Nem lett mappa hozzáadva."
   },
   "createFoldersToOrganize": {
-    "message": "Create folders to organize your vault items"
+    "message": "Hozzunk létre mappákat a széfelemek rendszerezéséhez"
   },
   "deleteFolderPermanently": {
-    "message": "Are you sure you want to permanently delete this folder?"
+    "message": "Biztosan véglegesen törlésre kerüljön ez a mappa?"
   },
   "deleteFolder": {
     "message": "Mappa törlése"
@@ -689,6 +689,9 @@
   },
   "totpHelperWithCapture": {
     "message": "A Bitwarden képes tárolni és kitölteni a kétlépcsős ellenőrző kódokat. Válasszuk a kamera ikont, hogy képernyőképet készítsünk a webhely hitelesítő QR kódjáról vagy másoljuk ki és illesszük be a kulcsot ebbe a mezőbe."
+  },
+  "learnMoreAboutAuthenticators": {
+    "message": "További információ a hitelesítőkről"
   },
   "copyTOTP": {
     "message": "Hitelesítő kód másolása (TOTP)"
@@ -1079,6 +1082,9 @@
   "ppremiumSignUpStorage": {
     "message": "1 GB titkosított tárhely a fájlmellékleteknek."
   },
+  "premiumSignUpEmergency": {
+    "message": "Emergency access"
+  },
   "premiumSignUpTwoStepOptions": {
     "message": "Saját kétlépcsős bejelentkezési lehetőségek mint a YubiKey és a Duo."
   },
@@ -1099,6 +1105,9 @@
   },
   "premiumPurchaseAlert": {
     "message": "A prémium tagság megvásárolható a bitwarden.com webes széfben. Szeretnénk felkeresni a webhelyet most?"
+  },
+  "premiumPurchaseAlertV2": {
+    "message": "You can purchase Premium from your account settings on the Bitwarden web app."
   },
   "premiumCurrentMember": {
     "message": "Prémium tag vagyunk!"
@@ -1822,26 +1831,26 @@
     "message": "Egy vagy több szervezeti szabály érinti a generátor beállításokat."
   },
   "passwordGenerator": {
-    "message": "Password generator"
+    "message": "Jelszó generátor"
   },
   "usernameGenerator": {
-    "message": "Username generator"
+    "message": "Felhasználónév generátor"
   },
   "useThisPassword": {
-    "message": "Use this password"
+    "message": "Jelszó használata"
   },
   "useThisUsername": {
-    "message": "Use this username"
+    "message": "Felhasználónév használata"
   },
   "securePasswordGenerated": {
-    "message": "Secure password generated! Don't forget to also update your password on the website."
+    "message": "A biztonságos jelszó generálásra került! Ne felejtsük el frissíteni a jelszót a webhelyen is."
   },
   "useGeneratorHelpTextPartOne": {
-    "message": "Use the generator",
+    "message": "Generátor használata",
     "description": "This will be used as part of a larger sentence, broken up to include the generator icon. The full sentence will read 'Use the generator [GENERATOR_ICON] to create a strong unique password'"
   },
   "useGeneratorHelpTextPartTwo": {
-    "message": "to create a strong unique password",
+    "message": "erős egyedi jelszó létrehozásához",
     "description": "This will be used as part of a larger sentence, broken up to include the generator icon. The full sentence will read 'Use the generator [GENERATOR_ICON] to create a strong unique password'"
   },
   "vaultTimeoutAction": {
@@ -2042,10 +2051,10 @@
     "message": "A fiók nem egyezik."
   },
   "nativeMessagingWrongUserKeyDesc": {
-    "message": "Biometric unlock failed. The biometric secret key failed to unlock the vault. Please try to set up biometrics again."
+    "message": "A biometrikus feloldás nem sikerült. A biometrikus titkos kulcs nem tudta feloldani a széfet. Próbáljuk újra beállítani a biometrikus adatokat."
   },
   "nativeMessagingWrongUserKeyTitle": {
-    "message": "Biometric key missmatch"
+    "message": "A biometrikus kulcs nem egyezik."
   },
   "biometricsNotEnabledTitle": {
     "message": "A biometrikus adatok nincsenek beüzemelve."
@@ -2293,6 +2302,24 @@
   },
   "createdSend": {
     "message": "A Send létrejött.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createdSendSuccessfully": {
+    "message": "A Send sikeresen létrejött!",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendAvailability": {
+    "message": "A Send bárki számára elérhető a hivatkozással a következő $DAYS$ napban.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "sendLinkCopied": {
+    "message": "A Send hivatkozás másolásra került.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
@@ -3883,6 +3910,16 @@
   "websiteUri": {
     "message": "Webhely (URI)"
   },
+  "websiteUriCount": {
+    "message": "Webhely (URI) $COUNT$",
+    "description": "Label for an input field that contains a website URI. The input field is part of a list of fields, and the count indicates the position of the field in the list.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
   "websiteAdded": {
     "message": "A webhely hozzáadásra került."
   },
@@ -3945,15 +3982,15 @@
     "message": "Adat"
   },
   "passkeys": {
-    "message": "Passkeys",
+    "message": "Hozzáférési kulcsok",
     "description": "A section header for a list of passkeys."
   },
   "passwords": {
-    "message": "Passwords",
+    "message": "Jelszavak",
     "description": "A section header for a list of passwords."
   },
   "logInWithPasskeyAriaLabel": {
-    "message": "Log in with passkey",
+    "message": "Bejelentkezés hozzáférési kulccsal",
     "description": "ARIA label for the inline menu button that logs in with a passkey."
   },
   "assign": {
@@ -4151,10 +4188,10 @@
     "message": "Elem helyek"
   },
   "fileSends": {
-    "message": "File Sends"
+    "message": "Fájl küldés"
   },
   "textSends": {
-    "message": "Text Sends"
+    "message": "Szöveg küldés"
   },
   "bitwardenNewLook": {
     "message": "Bitwarden has a new look!"
@@ -4166,9 +4203,12 @@
     "message": "Fiókműveletek"
   },
   "showNumberOfAutofillSuggestions": {
-    "message": "Show number of login autofill suggestions on extension icon"
+    "message": "Az automatikus bejelentkezési kitöltési javaslatok számának megjelenítése a bővítmény ikonján"
   },
   "systemDefault": {
-    "message": "System default"
+    "message": "Rendszer alapértelmezett"
+  },
+  "enterprisePolicyRequirementsApplied": {
+    "message": "Erre a beállításra a vállalkozás rendszabály követelmények lettek alkalmazva."
   }
 }

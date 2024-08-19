@@ -305,22 +305,22 @@
     "message": "编辑文件夹"
   },
   "newFolder": {
-    "message": "New folder"
+    "message": "新增文件夹"
   },
   "folderName": {
-    "message": "Folder name"
+    "message": "文件夹名称"
   },
   "folderHintText": {
-    "message": "Nest a folder by adding the parent folder's name followed by a “/”. Example: Social/Forums"
+    "message": "通过在父文件夹名后面跟随一个「/」来嵌套文件夹。例如：Social/Forums"
   },
   "noFoldersAdded": {
-    "message": "No folders added"
+    "message": "未添加文件夹"
   },
   "createFoldersToOrganize": {
-    "message": "Create folders to organize your vault items"
+    "message": "创建文件夹以整理你的密码库项目"
   },
   "deleteFolderPermanently": {
-    "message": "Are you sure you want to permanently delete this folder?"
+    "message": "您确定要永久删除这个文件夹吗？"
   },
   "deleteFolder": {
     "message": "删除文件夹"
@@ -689,6 +689,9 @@
   },
   "totpHelperWithCapture": {
     "message": "Bitwarden 可以存储并填充两步验证码。选择相机图标来截取此网站的验证器二维码，或者手动复制并粘贴密钥到此字段。"
+  },
+  "learnMoreAboutAuthenticators": {
+    "message": "了解更多关于验证器的信息"
   },
   "copyTOTP": {
     "message": "复制验证器密钥 (TOTP)"
@@ -1079,6 +1082,9 @@
   "ppremiumSignUpStorage": {
     "message": "1 GB 文件附件加密存储。"
   },
+  "premiumSignUpEmergency": {
+    "message": "Emergency access"
+  },
   "premiumSignUpTwoStepOptions": {
     "message": "专有的两步登录选项，如 YubiKey 和 Duo。"
   },
@@ -1099,6 +1105,9 @@
   },
   "premiumPurchaseAlert": {
     "message": "您可以在 bitwarden.com 网页版密码库购买高级会员。现在要访问吗？"
+  },
+  "premiumPurchaseAlertV2": {
+    "message": "You can purchase Premium from your account settings on the Bitwarden web app."
   },
   "premiumCurrentMember": {
     "message": "您目前是高级会员！"
@@ -1837,7 +1846,7 @@
     "message": "安全密码生成好了！别忘了也在网站上更新一下您的密码。"
   },
   "useGeneratorHelpTextPartOne": {
-    "message": "使用此生成器",
+    "message": "使用生成器",
     "description": "This will be used as part of a larger sentence, broken up to include the generator icon. The full sentence will read 'Use the generator [GENERATOR_ICON] to create a strong unique password'"
   },
   "useGeneratorHelpTextPartTwo": {
@@ -2293,6 +2302,24 @@
   },
   "createdSend": {
     "message": "Send 已创建",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createdSendSuccessfully": {
+    "message": "Send created successfully!",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendAvailability": {
+    "message": "The Send will be available to anyone with the link for the next $DAYS$ days.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "sendLinkCopied": {
+    "message": "Send link copied",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
@@ -3883,6 +3910,16 @@
   "websiteUri": {
     "message": "网站 (URI)"
   },
+  "websiteUriCount": {
+    "message": "网站 (URI) $COUNT$",
+    "description": "Label for an input field that contains a website URI. The input field is part of a list of fields, and the count indicates the position of the field in the list.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
   "websiteAdded": {
     "message": "网址已添加"
   },
@@ -4166,9 +4203,12 @@
     "message": "账户操作"
   },
   "showNumberOfAutofillSuggestions": {
-    "message": "Show number of login autofill suggestions on extension icon"
+    "message": "在扩展图标上显示自动填充建议的登录的数量"
   },
   "systemDefault": {
-    "message": "System default"
+    "message": "跟随系统"
+  },
+  "enterprisePolicyRequirementsApplied": {
+    "message": "企业策略要求已应用于此设置"
   }
 }

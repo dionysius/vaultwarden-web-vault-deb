@@ -682,13 +682,16 @@
     "message": "Сканировать QR-код аутентификатора с текущей веб-страницы"
   },
   "totpHelperTitle": {
-    "message": "Сделать двухэтапную аутентификацию бесшовной"
+    "message": "Сделайте двухэтапную аутентификацию простой и удобной"
   },
   "totpHelper": {
     "message": "Bitwarden может хранить и заполнять коды двухэтапной аутентификации. Скопируйте и вставьте ключ в это поле."
   },
   "totpHelperWithCapture": {
     "message": "Bitwarden может хранить и заполнять коды двухэтапной аутентификации. Выберите значок камеры, чтобы сделать скриншот QR-кода этого сайта, или скопируйте и вставьте ключ в это поле."
+  },
+  "learnMoreAboutAuthenticators": {
+    "message": "Узнайте больше об аутентификаторах"
   },
   "copyTOTP": {
     "message": "Скопировать ключ аутентификатора (TOTP)"
@@ -1079,6 +1082,9 @@
   "ppremiumSignUpStorage": {
     "message": "1 ГБ зашифрованного хранилища для вложенных файлов."
   },
+  "premiumSignUpEmergency": {
+    "message": "Экстренный доступ"
+  },
   "premiumSignUpTwoStepOptions": {
     "message": "Проприетарные варианты двухэтапной аутентификации, такие как YubiKey или Duo."
   },
@@ -1099,6 +1105,9 @@
   },
   "premiumPurchaseAlert": {
     "message": "Вы можете купить Премиум на bitwarden.com. Перейти на сайт сейчас?"
+  },
+  "premiumPurchaseAlertV2": {
+    "message": "Премиум можно приобрести в настройках аккаунта в веб-версии Bitwarden."
   },
   "premiumCurrentMember": {
     "message": "У вас есть Премиум!"
@@ -2293,6 +2302,24 @@
   },
   "createdSend": {
     "message": "Send создана",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createdSendSuccessfully": {
+    "message": "Send успешно создана!",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendAvailability": {
+    "message": "Send будет доступна всем, кто получит ссылку в течение следующих дней: $DAYS$.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "sendLinkCopied": {
+    "message": "Ссылка на Send скопирована",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
@@ -3883,6 +3910,16 @@
   "websiteUri": {
     "message": "Сайт (URI)"
   },
+  "websiteUriCount": {
+    "message": "Веб-сайт (URI) $COUNT$",
+    "description": "Label for an input field that contains a website URI. The input field is part of a list of fields, and the count indicates the position of the field in the list.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
   "websiteAdded": {
     "message": "Сайт добавлен"
   },
@@ -4166,9 +4203,12 @@
     "message": "Действия с аккаунтом"
   },
   "showNumberOfAutofillSuggestions": {
-    "message": "Show number of login autofill suggestions on extension icon"
+    "message": "Показывать количество вариантов автозаполнения логина на значке расширения"
   },
   "systemDefault": {
-    "message": "System default"
+    "message": "Системный"
+  },
+  "enterprisePolicyRequirementsApplied": {
+    "message": "К этой настройке были применены требования корпоративной политики"
   }
 }

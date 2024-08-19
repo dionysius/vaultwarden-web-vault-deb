@@ -305,22 +305,22 @@
     "message": "Upravit složku"
   },
   "newFolder": {
-    "message": "New folder"
+    "message": "Nová složka"
   },
   "folderName": {
-    "message": "Folder name"
+    "message": "Název složky"
   },
   "folderHintText": {
-    "message": "Nest a folder by adding the parent folder's name followed by a “/”. Example: Social/Forums"
+    "message": "Vnořit složku přidáním názvu nadřazené složky následovaného znakem \"/\". Příklad: Sociální/Fóra"
   },
   "noFoldersAdded": {
-    "message": "No folders added"
+    "message": "Nebyly přidány žádné složky"
   },
   "createFoldersToOrganize": {
-    "message": "Create folders to organize your vault items"
+    "message": "Vytvořte složky pro organizaci Vašich položek trezoru"
   },
   "deleteFolderPermanently": {
-    "message": "Are you sure you want to permanently delete this folder?"
+    "message": "Opravdu chcete trvale smazat tuto složku?"
   },
   "deleteFolder": {
     "message": "Smazat složku"
@@ -689,6 +689,9 @@
   },
   "totpHelperWithCapture": {
     "message": "Bitwarden umí ukládat a vyplňovat dvoufázové ověřovací kódy. Vyberte ikonu fotoaparátu a pořiďte snímek obrazovky ověřovacího QR kódu této webové stránky nebo klíč zkopírujte a vložte do tohoto pole."
+  },
+  "learnMoreAboutAuthenticators": {
+    "message": "Zjistěte více o autentizátorech"
   },
   "copyTOTP": {
     "message": "Kopírovat autentizační klíč (TOTP)"
@@ -1079,6 +1082,9 @@
   "ppremiumSignUpStorage": {
     "message": "1 GB šifrovaného úložiště pro přílohy."
   },
+  "premiumSignUpEmergency": {
+    "message": "Nouzový přístup"
+  },
   "premiumSignUpTwoStepOptions": {
     "message": "Volby proprietálních dvoufázových přihlášení jako je YubiKey a Duo."
   },
@@ -1099,6 +1105,9 @@
   },
   "premiumPurchaseAlert": {
     "message": "Prémiové členství můžete zakoupit na webové stránce bitwarden.com. Chcete tuto stránku nyní otevřít?"
+  },
+  "premiumPurchaseAlertV2": {
+    "message": "Premium si můžete zakoupit v nastavení účtu ve webové aplikaci Bitwarden."
   },
   "premiumCurrentMember": {
     "message": "Jste prémiovým členem!"
@@ -1822,26 +1831,26 @@
     "message": "Jedna nebo více zásad organizace ovlivňují nastavení generátoru."
   },
   "passwordGenerator": {
-    "message": "Password generator"
+    "message": "Generátor hesla"
   },
   "usernameGenerator": {
-    "message": "Username generator"
+    "message": "Generátor uživatelského jména"
   },
   "useThisPassword": {
-    "message": "Use this password"
+    "message": "Použít toto heslo"
   },
   "useThisUsername": {
-    "message": "Use this username"
+    "message": "Použít toto uživatelské jméno"
   },
   "securePasswordGenerated": {
-    "message": "Secure password generated! Don't forget to also update your password on the website."
+    "message": "Bezpečné heslo bylo vygenerováno! Nezapomeňte také aktualizovat heslo na webu."
   },
   "useGeneratorHelpTextPartOne": {
-    "message": "Use the generator",
+    "message": "Použijte generátor",
     "description": "This will be used as part of a larger sentence, broken up to include the generator icon. The full sentence will read 'Use the generator [GENERATOR_ICON] to create a strong unique password'"
   },
   "useGeneratorHelpTextPartTwo": {
-    "message": "to create a strong unique password",
+    "message": "pro vytvoření silného jedinečného hesla",
     "description": "This will be used as part of a larger sentence, broken up to include the generator icon. The full sentence will read 'Use the generator [GENERATOR_ICON] to create a strong unique password'"
   },
   "vaultTimeoutAction": {
@@ -2042,10 +2051,10 @@
     "message": "Neshoda účtů"
   },
   "nativeMessagingWrongUserKeyDesc": {
-    "message": "Biometric unlock failed. The biometric secret key failed to unlock the vault. Please try to set up biometrics again."
+    "message": "Biometrické odemknutí se nezdařilo. Zkuste znovu nastavit biometrické prvky."
   },
   "nativeMessagingWrongUserKeyTitle": {
-    "message": "Biometric key missmatch"
+    "message": "Neshoda biometrického klíče"
   },
   "biometricsNotEnabledTitle": {
     "message": "Biometrie není nastavena"
@@ -2293,6 +2302,24 @@
   },
   "createdSend": {
     "message": "Send vytvořen",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createdSendSuccessfully": {
+    "message": "Send byl úspěšně vytvořen!",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendAvailability": {
+    "message": "Send bude k dispozici na příštích $DAYS$ dnů každému, kdo má odkaz.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "sendLinkCopied": {
+    "message": "Odkaz Send byl zkopírován",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
@@ -3878,10 +3905,20 @@
     "message": "Ověřovací klíč"
   },
   "autofillOptions": {
-    "message": "Nastavení automatického vyplňování"
+    "message": "Volby automatického vyplňování"
   },
   "websiteUri": {
     "message": "Webová stránka (URI)"
+  },
+  "websiteUriCount": {
+    "message": "Webová stránka (URI) $COUNT$",
+    "description": "Label for an input field that contains a website URI. The input field is part of a list of fields, and the count indicates the position of the field in the list.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
   },
   "websiteAdded": {
     "message": "Webová stránka přidána"
@@ -3945,15 +3982,15 @@
     "message": "Data"
   },
   "passkeys": {
-    "message": "Passkeys",
+    "message": "Přístupové klíče",
     "description": "A section header for a list of passkeys."
   },
   "passwords": {
-    "message": "Passwords",
+    "message": "Hesla",
     "description": "A section header for a list of passwords."
   },
   "logInWithPasskeyAriaLabel": {
-    "message": "Log in with passkey",
+    "message": "Přihlásit se pomocí přístupového klíče",
     "description": "ARIA label for the inline menu button that logs in with a passkey."
   },
   "assign": {
@@ -4151,10 +4188,10 @@
     "message": "Umístění položky"
   },
   "fileSends": {
-    "message": "File Sends"
+    "message": "Sends se soubory"
   },
   "textSends": {
-    "message": "Text Sends"
+    "message": "Sends s texty"
   },
   "bitwardenNewLook": {
     "message": "Bitwarden má nový vzhled!"
@@ -4166,9 +4203,12 @@
     "message": "Činnosti účtu"
   },
   "showNumberOfAutofillSuggestions": {
-    "message": "Show number of login autofill suggestions on extension icon"
+    "message": "Zobrazit počet návrhů automatického vyplňování přihlášení na ikoně rozšíření"
   },
   "systemDefault": {
-    "message": "System default"
+    "message": "Systémový výchozí"
+  },
+  "enterprisePolicyRequirementsApplied": {
+    "message": "Na toto nastavení byly uplatněny požadavky podnikových zásad"
   }
 }

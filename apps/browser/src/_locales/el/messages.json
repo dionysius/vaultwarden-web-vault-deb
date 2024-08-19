@@ -305,22 +305,22 @@
     "message": "Επεξεργασία φακέλου"
   },
   "newFolder": {
-    "message": "New folder"
+    "message": "Νέος φάκελος"
   },
   "folderName": {
-    "message": "Folder name"
+    "message": "Όνομα φακέλου"
   },
   "folderHintText": {
     "message": "Nest a folder by adding the parent folder's name followed by a “/”. Example: Social/Forums"
   },
   "noFoldersAdded": {
-    "message": "No folders added"
+    "message": "Δεν προστέθηκαν φάκελοι"
   },
   "createFoldersToOrganize": {
-    "message": "Create folders to organize your vault items"
+    "message": "Δημιουργήστε φακέλους για να οργανώσετε τα στοιχεία του θησαυ/κίου σας"
   },
   "deleteFolderPermanently": {
-    "message": "Are you sure you want to permanently delete this folder?"
+    "message": "Είστε σίγουροι ότι θέλετε να διαγράψετε μόνιμα αυτόν το φάκελο;"
   },
   "deleteFolder": {
     "message": "Διαγραφή φακέλου"
@@ -689,6 +689,9 @@
   },
   "totpHelperWithCapture": {
     "message": "Το Bitwarden μπορεί να αποθηκεύσει και να συμπληρώσει τους κωδικούς επαλήθευσης 2 βημάτων. Επιλέξτε το εικονίδιο της κάμερας για λήψη στιγμιότυπου του κωδικού QR του αυθεντικοποιητή αυτής της ιστοσελίδας, ή αντιγράψτε και επικολλήστε το κλειδί σε αυτό το πεδίο."
+  },
+  "learnMoreAboutAuthenticators": {
+    "message": "Μάθετε περισσότερα για της εφαρμογές αυθεντικοποίησης"
   },
   "copyTOTP": {
     "message": "Αντιγραφή κλειδιού Αυθεντικοποιητή (TOTP)"
@@ -1079,6 +1082,9 @@
   "ppremiumSignUpStorage": {
     "message": "1 GB κρυπτογραφημένο αποθηκευτικό χώρο για συνημμένα αρχεία."
   },
+  "premiumSignUpEmergency": {
+    "message": "Πρόσβαση έκτακτης ανάγκης"
+  },
   "premiumSignUpTwoStepOptions": {
     "message": "Πρόσθετες επιλογές σύνδεσης δύο βημάτων, όπως το YubiKey και το Duo."
   },
@@ -1099,6 +1105,9 @@
   },
   "premiumPurchaseAlert": {
     "message": "Μπορείτε να αγοράσετε συνδρομή Premium στο διαδικτυακό θησαυ/κιο του bitwarden.com. Θέλετε να επισκεφθείτε την ιστοσελίδα τώρα;"
+  },
+  "premiumPurchaseAlertV2": {
+    "message": "Μπορείτε να αγοράσετε το Premium από τις ρυθμίσεις λογαριασμού σας στην διαδικτυακή εφαρμογή Bitwarden."
   },
   "premiumCurrentMember": {
     "message": "Είστε Premium μέλος!"
@@ -1822,26 +1831,26 @@
     "message": "Μία ή περισσότερες πολιτικές του οργανισμού επηρεάζουν τις ρυθμίσεις της γεννήτριας."
   },
   "passwordGenerator": {
-    "message": "Password generator"
+    "message": "Γεννήτρια κωδικού πρόσβασης"
   },
   "usernameGenerator": {
-    "message": "Username generator"
+    "message": "Γεννήτρια ονόματος χρήστη"
   },
   "useThisPassword": {
-    "message": "Use this password"
+    "message": "Χρήση αυτού του κωδικού πρόσβασης"
   },
   "useThisUsername": {
-    "message": "Use this username"
+    "message": "Χρήση αυτού του ονόματος χρήστη"
   },
   "securePasswordGenerated": {
-    "message": "Secure password generated! Don't forget to also update your password on the website."
+    "message": "Δημιουργήθηκε ασφαλής κωδικός πρόσβασης! Μην ξεχάσετε να ενημερώσετε επίσης τον κωδικό πρόσβασής σας στην ιστοσελίδα."
   },
   "useGeneratorHelpTextPartOne": {
-    "message": "Use the generator",
+    "message": "Χρήση της γεννήτριας",
     "description": "This will be used as part of a larger sentence, broken up to include the generator icon. The full sentence will read 'Use the generator [GENERATOR_ICON] to create a strong unique password'"
   },
   "useGeneratorHelpTextPartTwo": {
-    "message": "to create a strong unique password",
+    "message": "για να δημιουργήσετε έναν ισχυρό μοναδικό κωδικό πρόσβασης",
     "description": "This will be used as part of a larger sentence, broken up to include the generator icon. The full sentence will read 'Use the generator [GENERATOR_ICON] to create a strong unique password'"
   },
   "vaultTimeoutAction": {
@@ -2293,6 +2302,24 @@
   },
   "createdSend": {
     "message": "Το Send δημιουργήθηκε",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "createdSendSuccessfully": {
+    "message": "Το Send δημιουργήθηκε επιτυχώς!",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
+  "sendAvailability": {
+    "message": "The Send will be available to anyone with the link for the next $DAYS$ days.",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
+    "placeholders": {
+      "days": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "sendLinkCopied": {
+    "message": "Ο σύνδεσμος Send αντιγράφηκε",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
@@ -3883,6 +3910,16 @@
   "websiteUri": {
     "message": "Ιστοσελίδα (URI)"
   },
+  "websiteUriCount": {
+    "message": "Ιστοσελίδα (URI) $COUNT$",
+    "description": "Label for an input field that contains a website URI. The input field is part of a list of fields, and the count indicates the position of the field in the list.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
   "websiteAdded": {
     "message": "Η ιστοσελίδα προστέθηκε"
   },
@@ -3945,15 +3982,15 @@
     "message": "Δεδομένα"
   },
   "passkeys": {
-    "message": "Passkeys",
+    "message": "Κλειδιά πρόσβασης",
     "description": "A section header for a list of passkeys."
   },
   "passwords": {
-    "message": "Passwords",
+    "message": "Κωδικοί πρόσβασης",
     "description": "A section header for a list of passwords."
   },
   "logInWithPasskeyAriaLabel": {
-    "message": "Log in with passkey",
+    "message": "Σύνδεση με κλειδί πρόσβασης",
     "description": "ARIA label for the inline menu button that logs in with a passkey."
   },
   "assign": {
@@ -4151,10 +4188,10 @@
     "message": "Τοποθεσία Αντικειμένου"
   },
   "fileSends": {
-    "message": "File Sends"
+    "message": "Send αρχείων"
   },
   "textSends": {
-    "message": "Text Sends"
+    "message": "Send κειμένων"
   },
   "bitwardenNewLook": {
     "message": "Το Bitwarden έχει μια νέα εμφάνιση!"
@@ -4166,9 +4203,12 @@
     "message": "Ενέργειες λογαριασμού"
   },
   "showNumberOfAutofillSuggestions": {
-    "message": "Show number of login autofill suggestions on extension icon"
+    "message": "Εμφάνιση αριθμού προτάσεων αυτόματης συμπλήρωσης σύνδεσης στο εικονίδιο επέκτασης"
   },
   "systemDefault": {
-    "message": "System default"
+    "message": "Προεπιλογή συστήματος"
+  },
+  "enterprisePolicyRequirementsApplied": {
+    "message": "Οι απαιτήσεις της πολιτικής για επιχειρήσεις έχουν εφαρμοστεί σε αυτήν τη ρύθμιση"
   }
 }
