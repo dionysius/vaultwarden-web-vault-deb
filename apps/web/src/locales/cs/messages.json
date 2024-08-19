@@ -36,6 +36,9 @@
   "notes": {
     "message": "Poznámky"
   },
+  "note": {
+    "message": "Poznámka"
+  },
   "customFields": {
     "message": "Vlastní pole"
   },
@@ -53,6 +56,16 @@
   },
   "websiteUri": {
     "message": "Webová stránka (URI)"
+  },
+  "websiteUriCount": {
+    "message": "Webová stránka (URI) $COUNT$",
+    "description": "Label for an input field that contains a website URI. The input field is part of a list of fields, and the count indicates the position of the field in the list.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
   },
   "websiteAdded": {
     "message": "Webová stránka přidána"
@@ -198,6 +211,9 @@
   },
   "totpHelperWithCapture": {
     "message": "Bitwarden umí ukládat a vyplňovat dvoufázové ověřovací kódy. Vyberte ikonu fotoaparátu a pořiďte snímek obrazovky ověřovacího QR kódu této webové stránky nebo klíč zkopírujte a vložte do tohoto pole."
+  },
+  "learnMoreAboutAuthenticators": {
+    "message": "Zjistěte více o autentizátorech"
   },
   "folder": {
     "message": "Složka"
@@ -1504,6 +1520,10 @@
   "onboardingImportDataDetailsLink": {
     "message": "novou položku",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
+  },
+  "onboardingImportDataDetailsLoginLink": {
+    "message": "nové přihlášení",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new login instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
   "onboardingImportDataDetailsPartTwoNoOrgs": {
     "message": ".",
@@ -4146,7 +4166,7 @@
     "message": "Minimální počet slov"
   },
   "overridePasswordTypePolicy": {
-    "message": "Password Type",
+    "message": "Typ hesla",
     "description": "Name of the password generator policy that overrides the user's password/passphrase selection."
   },
   "userPreference": {
@@ -5323,6 +5343,18 @@
   "updateWeakMasterPasswordWarning": {
     "message": "Vaše hlavní heslo nesplňuje jednu nebo více zásad Vaší organizace. Pro přístup k trezoru musíte nyní aktualizovat své hlavní heslo. Pokračování Vás odhlásí z Vaší aktuální relace a bude nutné se přihlásit. Aktivní relace na jiných zařízeních mohou zůstat aktivní až po dobu jedné hodiny."
   },
+  "automaticAppLogin": {
+    "message": "Automaticky přihlásit uživatele pro povolené aplikace"
+  },
+  "automaticAppLoginDesc": {
+    "message": "Přihlašovací formuláře budou automaticky vyplněny a odeslány pro aplikace spuštěné od Vašeho nakonfigurovaného poskytovatele identity."
+  },
+  "automaticAppLoginIdpHostLabel": {
+    "message": "Hostitel poskytovatele identity"
+  },
+  "automaticAppLoginIdpHostDesc": {
+    "message": "Zadejte URL hostitele poskytovatele identity. Zadejte více adres URL oddělením čárkou."
+  },
   "tdeDisabledMasterPasswordRequired": {
     "message": "Vaše organizace aktualizovala možnosti dešifrování. Nastavte hlavní heslo pro přístup k Vašemu trezoru."
   },
@@ -6051,23 +6083,23 @@
     "message": "Náhodné slovo"
   },
   "usernameGenerator": {
-    "message": "Username generator"
+    "message": "Generátor uživatelského jména"
   },
   "useThisPassword": {
-    "message": "Use this password"
+    "message": "Použít toto heslo"
   },
   "useThisUsername": {
-    "message": "Use this username"
+    "message": "Použít toto uživatelské jméno"
   },
   "securePasswordGenerated": {
-    "message": "Secure password generated! Don't forget to also update your password on the website."
+    "message": "Bezpečné heslo bylo vygenerováno! Nezapomeňte také aktualizovat heslo na webu."
   },
   "useGeneratorHelpTextPartOne": {
-    "message": "Use the generator",
+    "message": "Použijte generátor",
     "description": "This will be used as part of a larger sentence, broken up to include the generator icon. The full sentence will read 'Use the generator [GENERATOR_ICON] to create a strong unique password'"
   },
   "useGeneratorHelpTextPartTwo": {
-    "message": "to create a strong unique password",
+    "message": "pro vytvoření silného jedinečného hesla",
     "description": "This will be used as part of a larger sentence, broken up to include the generator icon. The full sentence will read 'Use the generator [GENERATOR_ICON] to create a strong unique password'"
   },
   "service": {
@@ -8816,10 +8848,10 @@
     "message": "zakoupení uživatelé odebráni"
   },
   "fileSends": {
-    "message": "File Sends"
+    "message": "Sends se soubory"
   },
   "textSends": {
-    "message": "Text Sends"
+    "message": "Sends s texty"
   },
   "includesXMembers": {
     "message": "pro $COUNT$ členů",

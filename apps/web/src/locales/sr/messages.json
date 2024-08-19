@@ -36,6 +36,9 @@
   "notes": {
     "message": "Напомене"
   },
+  "note": {
+    "message": "Белешка"
+  },
   "customFields": {
     "message": "Прилагођена поља"
   },
@@ -53,6 +56,16 @@
   },
   "websiteUri": {
     "message": "Вебсајт (URI)"
+  },
+  "websiteUriCount": {
+    "message": "Сајт (URI) $COUNT$",
+    "description": "Label for an input field that contains a website URI. The input field is part of a list of fields, and the count indicates the position of the field in the list.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
   },
   "websiteAdded": {
     "message": "Вебсајт додат"
@@ -198,6 +211,9 @@
   },
   "totpHelperWithCapture": {
     "message": "Bitwarden може да чува и попуњава верификационе кодове у 2 корака. Изаберите икону камере да бисте направили снимак екрана QR кода за аутентификацију ове веб локације или копирајте и налепите кључ у ово поље."
+  },
+  "learnMoreAboutAuthenticators": {
+    "message": "Сазнајте више о аутентификаторима"
   },
   "folder": {
     "message": "Фасцикла"
@@ -1504,6 +1520,10 @@
   "onboardingImportDataDetailsLink": {
     "message": "нову ставку",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
+  },
+  "onboardingImportDataDetailsLoginLink": {
+    "message": "new login",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new login instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
   "onboardingImportDataDetailsPartTwoNoOrgs": {
     "message": " уместо.",
@@ -4146,7 +4166,7 @@
     "message": "Минимални број речи"
   },
   "overridePasswordTypePolicy": {
-    "message": "Password Type",
+    "message": "Тип лозинке",
     "description": "Name of the password generator policy that overrides the user's password/passphrase selection."
   },
   "userPreference": {
@@ -4855,28 +4875,28 @@
     "message": "Development, DevOps, and IT teams choose Bitwarden Secrets Manager to securely manage and deploy their infrastructure and machine secrets."
   },
   "centralizeSecretsManagement": {
-    "message": "Centralize secrets management."
+    "message": "Централизујте управљање тајнама."
   },
   "centralizeSecretsManagementDescription": {
-    "message": "Securely store and manage secrets in one location to prevent secret sprawl across your organization."
+    "message": "Безбедно чувајте тајне и управљајте њима на једној локацији да бисте спречили ширење тајни широм ваше организације."
   },
   "preventSecretLeaks": {
-    "message": "Prevent secret leaks."
+    "message": "Спречите цурење тајне."
   },
   "preventSecretLeaksDescription": {
-    "message": "Protect secrets with end-to-end encryption. No more hard coding secrets or sharing through .env files."
+    "message": "Заштитите тајне помоћу енкрипције од краја до краја. Нема више тајни тврдог кодирања или дељења путем .env датотека."
   },
   "enhanceDeveloperProductivity": {
-    "message": "Enhance developer productivity."
+    "message": "Повећајте продуктивност програмера."
   },
   "enhanceDeveloperProductivityDescription": {
-    "message": "Programmatically retrieve and deploy secrets at runtime so developers can focus on what matters most, like improving code quality."
+    "message": "Програмски преузмите и примените тајне како би програмери могли да се усредсреде на оно што је најважније, као што је побољшање квалитета кода."
   },
   "strengthenBusinessSecurity": {
-    "message": "Strengthen business security."
+    "message": "Ојачајте сигурност пословања."
   },
   "strengthenBusinessSecurityDescription": {
-    "message": "Maintain tight control over machine and human access to secrets with SSO integrations, event logs, and access rotation."
+    "message": "Одржавајте чврсту контролу над машинским и људским приступом тајнама помоћу SSO интеграција, евиденције догађаја и ротације приступа."
   },
   "tryItNow": {
     "message": "Пробајте сада"
@@ -5322,6 +5342,18 @@
   },
   "updateWeakMasterPasswordWarning": {
     "message": "Ваша главна лозинка не испуњава једну или више смерница ваше организације. Да бисте приступили сефу, морате одмах да ажурирате главну лозинку. Ако наставите, одјавићете се са ваше тренутне сесије, што захтева да се поново пријавите. Активне сесије на другим уређајима могу да остану активне до један сат."
+  },
+  "automaticAppLogin": {
+    "message": "Аутоматски пријавите кориснике за дозвољене апликације"
+  },
+  "automaticAppLoginDesc": {
+    "message": "Обрасци за пријаву ће аутоматски бити попуњени и послати за апликације које покреће ваш провајдер идентитета."
+  },
+  "automaticAppLoginIdpHostLabel": {
+    "message": "Хост добављача идентитета"
+  },
+  "automaticAppLoginIdpHostDesc": {
+    "message": "Унесите УРЛ хоста добављача идентитета. Унесите више УРЛ-ова одвајањем зарезом."
   },
   "tdeDisabledMasterPasswordRequired": {
     "message": "Ваша организација је ажурирала опције дешифровања. Поставите главну лозинку за приступ вашем сефу."
@@ -8816,10 +8848,10 @@
     "message": "купљена места уклоњена"
   },
   "fileSends": {
-    "message": "File Sends"
+    "message": "Датотека „Send“"
   },
   "textSends": {
-    "message": "Text Sends"
+    "message": "Текст „Send“"
   },
   "includesXMembers": {
     "message": "for $COUNT$ member",

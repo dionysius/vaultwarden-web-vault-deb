@@ -36,6 +36,9 @@
   "notes": {
     "message": "备注"
   },
+  "note": {
+    "message": "备注"
+  },
   "customFields": {
     "message": "自定义字段"
   },
@@ -53,6 +56,16 @@
   },
   "websiteUri": {
     "message": "网站 (URI)"
+  },
+  "websiteUriCount": {
+    "message": "网站 (URI) $COUNT$",
+    "description": "Label for an input field that contains a website URI. The input field is part of a list of fields, and the count indicates the position of the field in the list.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
   },
   "websiteAdded": {
     "message": "网址已添加"
@@ -198,6 +211,9 @@
   },
   "totpHelperWithCapture": {
     "message": "Bitwarden 可以存储并填充两步验证码。选择相机图标来截取此网站的验证器二维码，或者手动复制并粘贴密钥到此字段。"
+  },
+  "learnMoreAboutAuthenticators": {
+    "message": "了解更多关于验证器的信息"
   },
   "folder": {
     "message": "文件夹"
@@ -1505,6 +1521,10 @@
     "message": "新的项目",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
+  "onboardingImportDataDetailsLoginLink": {
+    "message": "新的登录",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new login instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
+  },
   "onboardingImportDataDetailsPartTwoNoOrgs": {
     "message": " 。",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead."
@@ -2258,7 +2278,7 @@
     "message": "Bitwarden 家庭版计划。"
   },
   "addons": {
-    "message": "插件"
+    "message": "附加"
   },
   "premiumAccess": {
     "message": "高级会员"
@@ -2300,7 +2320,7 @@
     }
   },
   "summary": {
-    "message": "概要"
+    "message": "摘要"
   },
   "total": {
     "message": "总计"
@@ -5323,6 +5343,18 @@
   "updateWeakMasterPasswordWarning": {
     "message": "您的主密码不符合某一项或多项组织策略要求。要访问密码库，必须立即更新您的主密码。继续操作将使您退出当前会话，并要求您重新登录。其他设备上的活动会话可能会继续保持活动状态长达一小时。"
   },
+  "automaticAppLogin": {
+    "message": "为允许的应用程序自动登录用户"
+  },
+  "automaticAppLoginDesc": {
+    "message": "登录表单将自动填写并提交给从您配置的身份提供程序启动的 App。"
+  },
+  "automaticAppLoginIdpHostLabel": {
+    "message": "身份提供程序主机"
+  },
+  "automaticAppLoginIdpHostDesc": {
+    "message": "输入您的身份提供程序主机 URL。使用逗号分隔输入多个 URL。"
+  },
   "tdeDisabledMasterPasswordRequired": {
     "message": "您的组织更新了您的解密选项。要访问您的密码库，请设置一个主密码。"
   },
@@ -6063,7 +6095,7 @@
     "message": "安全密码生成好了！别忘了也在网站上更新一下您的密码。"
   },
   "useGeneratorHelpTextPartOne": {
-    "message": "使用此生成器",
+    "message": "使用生成器",
     "description": "This will be used as part of a larger sentence, broken up to include the generator icon. The full sentence will read 'Use the generator [GENERATOR_ICON] to create a strong unique password'"
   },
   "useGeneratorHelpTextPartTwo": {

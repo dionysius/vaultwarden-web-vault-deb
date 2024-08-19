@@ -36,6 +36,9 @@
   "notes": {
     "message": "Нотатки"
   },
+  "note": {
+    "message": "Нотатка"
+  },
   "customFields": {
     "message": "Власні поля"
   },
@@ -53,6 +56,16 @@
   },
   "websiteUri": {
     "message": "Вебсайт (URI)"
+  },
+  "websiteUriCount": {
+    "message": "Вебсайт (URI) $COUNT$",
+    "description": "Label for an input field that contains a website URI. The input field is part of a list of fields, and the count indicates the position of the field in the list.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
   },
   "websiteAdded": {
     "message": "Вебсайт додано"
@@ -198,6 +211,9 @@
   },
   "totpHelperWithCapture": {
     "message": "Bitwarden може автоматично заповнювати одноразові коди двоетапної перевірки. Відкрийте камеру, щоб сканувати QR-код на цьому вебсайті, або скопіюйте і вставте ключ у це поле."
+  },
+  "learnMoreAboutAuthenticators": {
+    "message": "Докладніше про програми автентифікації"
   },
   "folder": {
     "message": "Тека"
@@ -1504,6 +1520,10 @@
   "onboardingImportDataDetailsLink": {
     "message": "новий запис",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
+  },
+  "onboardingImportDataDetailsLoginLink": {
+    "message": "новий запис",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new login instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
   "onboardingImportDataDetailsPartTwoNoOrgs": {
     "message": " натомість.",
@@ -5322,6 +5342,18 @@
   },
   "updateWeakMasterPasswordWarning": {
     "message": "Ваш головний пароль не відповідає одній або більше політикам вашої організації. Щоб отримати доступ до сховища, вам необхідно оновити свій головний пароль зараз. Продовживши, ви вийдете з поточного сеансу, після чого потрібно буде повторно виконати вхід. Сеанси на інших пристроях можуть залишатися активними протягом однієї години."
+  },
+  "automaticAppLogin": {
+    "message": "Автоматичний вхід користувачів для дозволених програм"
+  },
+  "automaticAppLoginDesc": {
+    "message": "Форми входу автоматично заповнюватимуться і надсилатимуться для програм, запущених від налаштованого провайдера ідентифікації."
+  },
+  "automaticAppLoginIdpHostLabel": {
+    "message": "Вузол провайдера ідентифікації"
+  },
+  "automaticAppLoginIdpHostDesc": {
+    "message": "Введіть URL-адресу вузла вашого провайдера ідентифікації. Можна ввести декілька URL-адрес, розділивши їх комою."
   },
   "tdeDisabledMasterPasswordRequired": {
     "message": "Ваша організація оновила параметри дешифрування. Встановіть головний пароль для доступу до сховища."

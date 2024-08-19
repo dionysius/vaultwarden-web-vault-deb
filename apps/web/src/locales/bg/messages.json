@@ -36,6 +36,9 @@
   "notes": {
     "message": "Бележки"
   },
+  "note": {
+    "message": "Бележка"
+  },
   "customFields": {
     "message": "Допълнителни полета"
   },
@@ -53,6 +56,16 @@
   },
   "websiteUri": {
     "message": "Уеб сайт (адрес)"
+  },
+  "websiteUriCount": {
+    "message": "Уеб сайт (адрес) $COUNT$",
+    "description": "Label for an input field that contains a website URI. The input field is part of a list of fields, and the count indicates the position of the field in the list.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
   },
   "websiteAdded": {
     "message": "Уеб сайтът е добавен"
@@ -198,6 +211,9 @@
   },
   "totpHelperWithCapture": {
     "message": "Битуорден може да съхранява и попълва кодовете за 2-стъпково потвърждаване. Изберете иконката с камера, за да направите екранна снимка на QR-кода от този уеб сайт или копирайте ключа в това поле."
+  },
+  "learnMoreAboutAuthenticators": {
+    "message": "Научете повече за средствата за удостоверяване"
   },
   "folder": {
     "message": "Папка"
@@ -1504,6 +1520,10 @@
   "onboardingImportDataDetailsLink": {
     "message": "нов елемент",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
+  },
+  "onboardingImportDataDetailsLoginLink": {
+    "message": "нов елемент за вписване",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new login instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
   "onboardingImportDataDetailsPartTwoNoOrgs": {
     "message": ".",
@@ -5322,6 +5342,18 @@
   },
   "updateWeakMasterPasswordWarning": {
     "message": "Вашата главна парола не отговаря на една или повече политики на организацията Ви. За да получите достъп до трезора, трябва да промените главната си парола сега. Това означава, че ще бъдете отписан(а) от текущата си сесия и ще трябва да се впишете отново. Активните сесии на други устройства може да продължат да бъдат активни още един час."
+  },
+  "automaticAppLogin": {
+    "message": "Автоматично вписване на потребителите за разрешените приложения"
+  },
+  "automaticAppLoginDesc": {
+    "message": "Формулярите за вписване ще бъдат попълвани и изпращани автоматично за приложенията, стартирани от настроения Ви доставчик на самоличност."
+  },
+  "automaticAppLoginIdpHostLabel": {
+    "message": "Сървър на доставчика на самоличност"
+  },
+  "automaticAppLoginIdpHostDesc": {
+    "message": "Въведете адреса на сървъра на своя доставчик на самоличност. Можете да въведете повече от един адрес, като ги разделите със запетаи."
   },
   "tdeDisabledMasterPasswordRequired": {
     "message": "Вашата организация е променила настройките за шифроване. Задайте главна парола, за да получите достъп до трезора си."

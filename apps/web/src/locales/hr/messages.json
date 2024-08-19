@@ -36,6 +36,9 @@
   "notes": {
     "message": "Bilješke"
   },
+  "note": {
+    "message": "Bilješka"
+  },
   "customFields": {
     "message": "Prilagođena polja"
   },
@@ -53,6 +56,16 @@
   },
   "websiteUri": {
     "message": "Web stranica (URI)"
+  },
+  "websiteUriCount": {
+    "message": "Broj URI-ja: $COUNT$",
+    "description": "Label for an input field that contains a website URI. The input field is part of a list of fields, and the count indicates the position of the field in the list.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
   },
   "websiteAdded": {
     "message": "Web stranica dodana"
@@ -198,6 +211,9 @@
   },
   "totpHelperWithCapture": {
     "message": "Bitwarden može pohraniti i ispuniti kodove za dvostruku autentifikaciju. Odaberi ikonu kamere i označi QR kôd za provjeru autentičnosti ove web stranice ili kopiraj i zalijepi ključ u ovo polje."
+  },
+  "learnMoreAboutAuthenticators": {
+    "message": "Više o autentifikatorima"
   },
   "folder": {
     "message": "Mapa"
@@ -1504,6 +1520,10 @@
   "onboardingImportDataDetailsLink": {
     "message": "novu stavku",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
+  },
+  "onboardingImportDataDetailsLoginLink": {
+    "message": "novu prijavu",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new login instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
   "onboardingImportDataDetailsPartTwoNoOrgs": {
     "message": ".",
@@ -5323,6 +5343,18 @@
   "updateWeakMasterPasswordWarning": {
     "message": "Tvoja glavna lozinka ne zadovoljava pravila ove organizacije. Za pristup trezoru moraš odmah ažurirati svoju glavnu lozinku. Ako nastaviš, odjaviti ćeš se iz trenutne sesije te ćeš se morati ponovno prijaviti. Aktivne sesije na drugim uređajima mogu ostati aktivne do jedan sat."
   },
+  "automaticAppLogin": {
+    "message": "Automatski prijavi korisnike za dopuštene aplikacije"
+  },
+  "automaticAppLoginDesc": {
+    "message": "Obrasci za prijavu će biti automatski ispunjeni i poslani za aplikacije pokrenute od strane konfiguriranog davatelja identiteta."
+  },
+  "automaticAppLoginIdpHostLabel": {
+    "message": "Poslužitelj pružatelja identiteta"
+  },
+  "automaticAppLoginIdpHostDesc": {
+    "message": "Unesi URL poslužitelja pružatelja identiteta. Više URL-ova odvoji zarezom."
+  },
   "tdeDisabledMasterPasswordRequired": {
     "message": "Tvoja je organizacija ažurirala tvoje opcije dešifriranja. Postavi glavnu lozinku za pristup svom trezoru."
   },
@@ -6051,23 +6083,23 @@
     "message": "Nasumična riječ"
   },
   "usernameGenerator": {
-    "message": "Username generator"
+    "message": "Generator korisničkih imena"
   },
   "useThisPassword": {
-    "message": "Use this password"
+    "message": "Koristi ovu lozinku"
   },
   "useThisUsername": {
-    "message": "Use this username"
+    "message": "Koristi ovo korisničko ime"
   },
   "securePasswordGenerated": {
-    "message": "Secure password generated! Don't forget to also update your password on the website."
+    "message": "Sigurna lozinka generirana! Ne zaboravi ažurirati lozinku na web stranici."
   },
   "useGeneratorHelpTextPartOne": {
-    "message": "Use the generator",
+    "message": "Koristi generator",
     "description": "This will be used as part of a larger sentence, broken up to include the generator icon. The full sentence will read 'Use the generator [GENERATOR_ICON] to create a strong unique password'"
   },
   "useGeneratorHelpTextPartTwo": {
-    "message": "to create a strong unique password",
+    "message": "za stvaranje snažne, jedinstvene lozinke",
     "description": "This will be used as part of a larger sentence, broken up to include the generator icon. The full sentence will read 'Use the generator [GENERATOR_ICON] to create a strong unique password'"
   },
   "service": {
@@ -8816,10 +8848,10 @@
     "message": "kupljenih mjesta uklonjeno"
   },
   "fileSends": {
-    "message": "File Sends"
+    "message": "Send datoteke"
   },
   "textSends": {
-    "message": "Text Sends"
+    "message": "Send tekstovi"
   },
   "includesXMembers": {
     "message": "za ovoliko članova: $COUNT$",

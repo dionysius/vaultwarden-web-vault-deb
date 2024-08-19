@@ -36,6 +36,9 @@
   "notes": {
     "message": "Jegyzetek"
   },
+  "note": {
+    "message": "Jegyzet"
+  },
   "customFields": {
     "message": "Egyedi mezők"
   },
@@ -53,6 +56,16 @@
   },
   "websiteUri": {
     "message": "Webhely (URI)"
+  },
+  "websiteUriCount": {
+    "message": "Webhely (URI) $COUNT$",
+    "description": "Label for an input field that contains a website URI. The input field is part of a list of fields, and the count indicates the position of the field in the list.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
   },
   "websiteAdded": {
     "message": "A webhely hozzáadásra került."
@@ -198,6 +211,9 @@
   },
   "totpHelperWithCapture": {
     "message": "A Bitwarden képes tárolni és kitölteni a kétlépcsős ellenőrző kódokat. Válasszuk a kamera ikont, hogy képernyőképet készítsünk a webhely hitelesítő QR kódjáról vagy másoljuk ki és illesszük be a kulcsot ebbe a mezőbe."
+  },
+  "learnMoreAboutAuthenticators": {
+    "message": "További információ a hitelesítőkről"
   },
   "folder": {
     "message": "Mappa"
@@ -1504,6 +1520,10 @@
   "onboardingImportDataDetailsLink": {
     "message": "új elemet",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
+  },
+  "onboardingImportDataDetailsLoginLink": {
+    "message": "új bejelentkezés",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new login instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
   "onboardingImportDataDetailsPartTwoNoOrgs": {
     "message": " helyett.",
@@ -4146,7 +4166,7 @@
     "message": "Szavak minimális száma"
   },
   "overridePasswordTypePolicy": {
-    "message": "Password Type",
+    "message": "Jelszótípus",
     "description": "Name of the password generator policy that overrides the user's password/passphrase selection."
   },
   "userPreference": {
@@ -5323,6 +5343,18 @@
   "updateWeakMasterPasswordWarning": {
     "message": "A mesterjelszó nem felel meg egy vagy több szervezeti szabályzatnak. A széf eléréséhez frissíteni kell a meszerjelszót. A továbblépés kijelentkeztet az aktuális munkamenetből és újra be kell jelentkezni. A többi eszközön lévő aktív munkamenetek akár egy óráig is aktívak maradhatnak."
   },
+  "automaticAppLogin": {
+    "message": "A felhasználók automatikus bejelentkezése az engedélyezett alkalmazásokhoz"
+  },
+  "automaticAppLoginDesc": {
+    "message": "A bejelentkezési űrlapok automatikusan kitöltésre és elküldésre kerülnek a konfigurált azonosság szolgáltatótól indított alkalmazásokhoz."
+  },
+  "automaticAppLoginIdpHostLabel": {
+    "message": "Azonosság szolgáltató kiszolgáló"
+  },
+  "automaticAppLoginIdpHostDesc": {
+    "message": "Adjuk meg az azonosság szolgáltató kiszolgáló webcímét. Több webcímet vesszővel elválasztva adjunk meg."
+  },
   "tdeDisabledMasterPasswordRequired": {
     "message": "A szervezete frissítette a visszafejtési beállításokat. Állítsunk be egy mestarjelszót a széf eléréséhez."
   },
@@ -6051,23 +6083,23 @@
     "message": "Véletlenszerű szó"
   },
   "usernameGenerator": {
-    "message": "Username generator"
+    "message": "Felhasználónév generátor"
   },
   "useThisPassword": {
-    "message": "Use this password"
+    "message": "Jelszó használata"
   },
   "useThisUsername": {
-    "message": "Use this username"
+    "message": "Felhasználónév használata"
   },
   "securePasswordGenerated": {
-    "message": "Secure password generated! Don't forget to also update your password on the website."
+    "message": "A biztonságos jelszó generálásra került! Ne felejtsük el frissíteni a jelszót a webhelyen is."
   },
   "useGeneratorHelpTextPartOne": {
-    "message": "Use the generator",
+    "message": "Generátor használata",
     "description": "This will be used as part of a larger sentence, broken up to include the generator icon. The full sentence will read 'Use the generator [GENERATOR_ICON] to create a strong unique password'"
   },
   "useGeneratorHelpTextPartTwo": {
-    "message": "to create a strong unique password",
+    "message": "erős egyedi jelszó létrehozásához",
     "description": "This will be used as part of a larger sentence, broken up to include the generator icon. The full sentence will read 'Use the generator [GENERATOR_ICON] to create a strong unique password'"
   },
   "service": {
@@ -8816,10 +8848,10 @@
     "message": "megvásárolt hely eltávolításra került."
   },
   "fileSends": {
-    "message": "File Sends"
+    "message": "Fájl küldés"
   },
   "textSends": {
-    "message": "Text Sends"
+    "message": "Szöveg küldés"
   },
   "includesXMembers": {
     "message": "$COUNT$ member részére",

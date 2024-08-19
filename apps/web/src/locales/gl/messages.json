@@ -1,9 +1,9 @@
 {
   "whatTypeOfItem": {
-    "message": "What type of item is this?"
+    "message": "Que tipo de elemento é este?"
   },
   "name": {
-    "message": "Name"
+    "message": "Nome"
   },
   "uri": {
     "message": "URI"
@@ -19,52 +19,65 @@
     }
   },
   "newUri": {
-    "message": "New URI"
+    "message": "Nova URI"
   },
   "username": {
-    "message": "Username"
+    "message": "Nome de usuario"
   },
   "password": {
-    "message": "Password"
+    "message": "Contrasinal"
   },
   "newPassword": {
-    "message": "New password"
+    "message": "Novo contrasinal"
   },
   "passphrase": {
-    "message": "Passphrase"
+    "message": "Frase de contrasinal"
   },
   "notes": {
-    "message": "Notes"
+    "message": "Notas"
+  },
+  "note": {
+    "message": "Nota"
   },
   "customFields": {
-    "message": "Custom fields"
+    "message": "Campos personalizados"
   },
   "cardholderName": {
-    "message": "Cardholder name"
+    "message": "Nome do titular da tarxeta"
   },
   "loginCredentials": {
-    "message": "Login credentials"
+    "message": "Credenciais"
   },
   "authenticatorKey": {
-    "message": "Authenticator key"
+    "message": "Clave de autenticación"
   },
   "autofillOptions": {
-    "message": "Auto-fill options"
+    "message": "Preferencias do enchido automaticamente"
   },
   "websiteUri": {
-    "message": "Website (URI)"
+    "message": "Sitio web (URI)"
+  },
+  "websiteUriCount": {
+    "message": "Website (URI) $COUNT$",
+    "description": "Label for an input field that contains a website URI. The input field is part of a list of fields, and the count indicates the position of the field in the list.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
   },
   "websiteAdded": {
-    "message": "Website added"
+    "message": "Sitio web enadido"
   },
   "addWebsite": {
-    "message": "Add website"
+    "message": "Engadir sitio web"
   },
   "deleteWebsite": {
-    "message": "Delete website"
+    "message": "Eliminar sitio web"
   },
   "defaultLabel": {
-    "message": "Default ($VALUE$)",
+    "message": "Predeterminado ($VALUE$)",
     "description": "A label that indicates the default value for a field with the current default value in parentheses.",
     "placeholders": {
       "value": {
@@ -74,7 +87,7 @@
     }
   },
   "showMatchDetection": {
-    "message": "Show match detection $WEBSITE$",
+    "message": "Mostrar detección de coincidencia $WEBSITE$",
     "placeholders": {
       "website": {
         "content": "$1",
@@ -83,7 +96,7 @@
     }
   },
   "hideMatchDetection": {
-    "message": "Hide match detection $WEBSITE$",
+    "message": "Agochar detección de coincidencia $WEBSITE$",
     "placeholders": {
       "website": {
         "content": "$1",
@@ -92,85 +105,85 @@
     }
   },
   "autoFillOnPageLoad": {
-    "message": "Autofill on page load?"
+    "message": "Autoencher ao carregar a páxina?"
   },
   "number": {
-    "message": "Number"
+    "message": "Número"
   },
   "brand": {
-    "message": "Brand"
+    "message": "Marca"
   },
   "expiration": {
-    "message": "Expiration"
+    "message": "Data de expiración"
   },
   "securityCode": {
-    "message": "Security code (CVV)"
+    "message": "Código de seguridade do reverso (CVV)"
   },
   "identityName": {
-    "message": "Identity name"
+    "message": "Nome da identidade"
   },
   "company": {
-    "message": "Company"
+    "message": "Empresa"
   },
   "ssn": {
-    "message": "Social Security number"
+    "message": "Número de identidade"
   },
   "passportNumber": {
-    "message": "Passport number"
+    "message": "Número de pasaporte"
   },
   "licenseNumber": {
-    "message": "License number"
+    "message": "Número de matrícula"
   },
   "email": {
-    "message": "Email"
+    "message": "Enderezo de correo electrónico"
   },
   "phone": {
-    "message": "Phone"
+    "message": "Número de teléfono"
   },
   "january": {
-    "message": "January"
+    "message": "Xaneiro"
   },
   "february": {
-    "message": "February"
+    "message": "Febreiro"
   },
   "march": {
-    "message": "March"
+    "message": "Marzo"
   },
   "april": {
-    "message": "April"
+    "message": "Abril"
   },
   "may": {
-    "message": "May"
+    "message": "Maio"
   },
   "june": {
-    "message": "June"
+    "message": "Xuño"
   },
   "july": {
-    "message": "July"
+    "message": "Xullo"
   },
   "august": {
-    "message": "August"
+    "message": "Agosto"
   },
   "september": {
-    "message": "September"
+    "message": "Setembro"
   },
   "october": {
-    "message": "October"
+    "message": "Outubro"
   },
   "november": {
-    "message": "November"
+    "message": "Novembro"
   },
   "december": {
-    "message": "December"
+    "message": "Decembro"
   },
   "title": {
-    "message": "Title"
+    "message": "Título"
   },
   "mr": {
-    "message": "Mr"
+    "message": "Don"
   },
   "mrs": {
-    "message": "Mrs"
+    "message": "Dona"
   },
   "ms": {
     "message": "Ms"
@@ -198,6 +211,9 @@
   },
   "totpHelperWithCapture": {
     "message": "Bitwarden can store and fill 2-step verification codes. Select the camera icon to take a screenshot of this website's authenticator QR code, or copy and paste the key into this field."
+  },
+  "learnMoreAboutAuthenticators": {
+    "message": "Learn more about authenticators"
   },
   "folder": {
     "message": "Folder"
@@ -340,140 +356,140 @@
     "description": "Search Login type"
   },
   "searchCard": {
-    "message": "Search cards",
+    "message": "Procurar tarxetas",
     "description": "Search Card type"
   },
   "searchIdentity": {
-    "message": "Search identities",
+    "message": "Procurar identidades",
     "description": "Search Identity type"
   },
   "searchSecureNote": {
-    "message": "Search secure notes",
+    "message": "Procurar notas seguras",
     "description": "Search Secure Note type"
   },
   "searchVault": {
-    "message": "Search vault"
+    "message": "Procurar no baúl"
   },
   "searchMyVault": {
-    "message": "Search my vault"
+    "message": "Procurar no meu baúl"
   },
   "searchOrganization": {
-    "message": "Search organization"
+    "message": "Procurar na organización"
   },
   "searchMembers": {
-    "message": "Search members"
+    "message": "Procurar membros"
   },
   "searchGroups": {
-    "message": "Search groups"
+    "message": "Procurar grupos"
   },
   "allItems": {
-    "message": "All items"
+    "message": "Todos os elementos"
   },
   "favorites": {
-    "message": "Favorites"
+    "message": "Favoritos"
   },
   "types": {
-    "message": "Types"
+    "message": "Tipos"
   },
   "typeLogin": {
-    "message": "Login"
+    "message": "Inicio de sesión"
   },
   "typeCard": {
-    "message": "Card"
+    "message": "Tarxeta"
   },
   "typeIdentity": {
-    "message": "Identity"
+    "message": "Identidade"
   },
   "typeSecureNote": {
-    "message": "Secure note"
+    "message": "Nota segura"
   },
   "typeLoginPlural": {
-    "message": "Logins"
+    "message": "Inicios de sesión"
   },
   "typeCardPlural": {
-    "message": "Cards"
+    "message": "Tarxetas"
   },
   "typeIdentityPlural": {
-    "message": "Identities"
+    "message": "Identidades"
   },
   "typeSecureNotePlural": {
-    "message": "Secure notes"
+    "message": "Notas seguras"
   },
   "folders": {
-    "message": "Folders"
+    "message": "Cartafoles"
   },
   "collections": {
-    "message": "Collections"
+    "message": "Coleccións"
   },
   "firstName": {
-    "message": "First name"
+    "message": "Primeiro nome"
   },
   "middleName": {
-    "message": "Middle name"
+    "message": "Segundo nome"
   },
   "lastName": {
-    "message": "Last name"
+    "message": "Apelidos"
   },
   "fullName": {
-    "message": "Full name"
+    "message": "Nome completo"
   },
   "address1": {
-    "message": "Address 1"
+    "message": "Enderezo 1"
   },
   "address2": {
-    "message": "Address 2"
+    "message": "Enderezo 2"
   },
   "address3": {
-    "message": "Address 3"
+    "message": "Enderezo 3"
   },
   "cityTown": {
-    "message": "City / Town"
+    "message": "Concello"
   },
   "stateProvince": {
-    "message": "State / Province"
+    "message": "Provincia / Comunidade Autónoma"
   },
   "zipPostalCode": {
-    "message": "Zip / Postal code"
+    "message": "Código postal"
   },
   "country": {
-    "message": "Country"
+    "message": "País"
   },
   "shared": {
-    "message": "Shared"
+    "message": "Compartido"
   },
   "attachments": {
-    "message": "Attachments"
+    "message": "Anexos"
   },
   "select": {
-    "message": "Select"
+    "message": "Seleccionar"
   },
   "newItem": {
-    "message": "New item"
+    "message": "Novo elemento"
   },
   "addItem": {
-    "message": "Add item"
+    "message": "Engadir elemento"
   },
   "editItem": {
-    "message": "Edit item"
+    "message": "Editar elemento"
   },
   "viewItem": {
-    "message": "View item"
+    "message": "Ver elemento"
   },
   "new": {
-    "message": "New",
+    "message": "Novo",
     "description": "for adding new items"
   },
   "item": {
-    "message": "Item"
+    "message": "Elemento"
   },
   "itemDetails": {
-    "message": "Item details"
+    "message": "Detalles do elemento"
   },
   "itemName": {
-    "message": "Item name"
+    "message": "Nome do elemento"
   },
   "cannotRemoveViewOnlyCollections": {
-    "message": "You cannot remove collections with View only permissions: $COLLECTIONS$",
+    "message": "Non podes eliminar coleccións con permisos de só lectura: $COLLECTIONS$",
     "placeholders": {
       "collections": {
         "content": "$1",
@@ -486,16 +502,16 @@
     "description": "Short abbreviation for 'example'."
   },
   "other": {
-    "message": "Other"
+    "message": "Outros"
   },
   "share": {
-    "message": "Share"
+    "message": "Compartir"
   },
   "moveToOrganization": {
-    "message": "Move to organization"
+    "message": "Mover á organización"
   },
   "valueCopied": {
-    "message": "$VALUE$ copied",
+    "message": "$VALUE$ copiado",
     "description": "Value has been copied to the clipboard.",
     "placeholders": {
       "value": {
@@ -505,7 +521,7 @@
     }
   },
   "copyValue": {
-    "message": "Copy value",
+    "message": "Copiar valor",
     "description": "Copy value to clipboard"
   },
   "copyPassword": {
@@ -692,37 +708,37 @@
     "message": "Your login session has expired."
   },
   "restartRegistration": {
-    "message": "Restart registration"
+    "message": "Reiniciar rexistro"
   },
   "expiredLink": {
-    "message": "Expired link"
+    "message": "Ligazón caducada"
   },
   "pleaseRestartRegistrationOrTryLoggingIn": {
-    "message": "Please restart registration or try logging in."
+    "message": "Por favor, reinicie o rexistro ou tente iniciar sesión."
   },
   "youMayAlreadyHaveAnAccount": {
-    "message": "You may already have an account"
+    "message": "Pode que xa teñas unha conta"
   },
   "logOutConfirmation": {
-    "message": "Are you sure you want to log out?"
+    "message": "Estás seguro de que queres pechar a sesión?"
   },
   "logOut": {
-    "message": "Log out"
+    "message": "Pechar sesión"
   },
   "ok": {
-    "message": "Ok"
+    "message": "Aceptar"
   },
   "yes": {
-    "message": "Yes"
+    "message": "Si"
   },
   "no": {
-    "message": "No"
+    "message": "Non"
   },
   "loginOrCreateNewAccount": {
-    "message": "Log in or create a new account to access your secure vault."
+    "message": "Rexístrate ou crea unha nova conta para acceder ó teu baúl."
   },
   "loginWithDevice": {
-    "message": "Log in with device"
+    "message": "Iniciar sesión cun dispositivo"
   },
   "loginWithDeviceEnabledNote": {
     "message": "Log in with device must be set up in the settings of the Bitwarden app. Need another option?"
@@ -1504,6 +1520,10 @@
   "onboardingImportDataDetailsLink": {
     "message": "new item",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
+  },
+  "onboardingImportDataDetailsLoginLink": {
+    "message": "new login",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new login instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
   "onboardingImportDataDetailsPartTwoNoOrgs": {
     "message": " instead.",
@@ -5322,6 +5342,18 @@
   },
   "updateWeakMasterPasswordWarning": {
     "message": "Your master password does not meet one or more of your organization policies. In order to access the vault, you must update your master password now. Proceeding will log you out of your current session, requiring you to log back in. Active sessions on other devices may continue to remain active for up to one hour."
+  },
+  "automaticAppLogin": {
+    "message": "Automatically log in users for allowed applications"
+  },
+  "automaticAppLoginDesc": {
+    "message": "Login forms will automatically be filled and submitted for apps launched from your configured identity provider."
+  },
+  "automaticAppLoginIdpHostLabel": {
+    "message": "Identity provider host"
+  },
+  "automaticAppLoginIdpHostDesc": {
+    "message": "Enter your identity provider host URL. Enter multiple URLs by separating with a comma."
   },
   "tdeDisabledMasterPasswordRequired": {
     "message": "Your organization has updated your decryption options. Please set a master password to access your vault."

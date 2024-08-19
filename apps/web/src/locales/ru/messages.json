@@ -36,6 +36,9 @@
   "notes": {
     "message": "Заметки"
   },
+  "note": {
+    "message": "Заметка"
+  },
   "customFields": {
     "message": "Пользовательские поля"
   },
@@ -53,6 +56,16 @@
   },
   "websiteUri": {
     "message": "Сайт (URI)"
+  },
+  "websiteUriCount": {
+    "message": "Веб-сайт (URI) $COUNT$",
+    "description": "Label for an input field that contains a website URI. The input field is part of a list of fields, and the count indicates the position of the field in the list.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
   },
   "websiteAdded": {
     "message": "Сайт добавлен"
@@ -191,13 +204,16 @@
     "message": "Ключ аутентификатора (TOTP)"
   },
   "totpHelperTitle": {
-    "message": "Сделать двухэтапную аутентификацию бесшовной"
+    "message": "Сделайте двухэтапную аутентификацию простой и удобной"
   },
   "totpHelper": {
     "message": "Bitwarden может хранить и заполнять коды двухэтапной аутентификации. Скопируйте и вставьте ключ в это поле."
   },
   "totpHelperWithCapture": {
     "message": "Bitwarden может хранить и заполнять коды двухэтапной аутентификации. Выберите значок камеры, чтобы сделать скриншот QR-кода этого сайта, или скопируйте и вставьте ключ в это поле."
+  },
+  "learnMoreAboutAuthenticators": {
+    "message": "Узнайте больше об аутентификаторах"
   },
   "folder": {
     "message": "Папка"
@@ -1504,6 +1520,10 @@
   "onboardingImportDataDetailsLink": {
     "message": "новый элемент.",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
+  },
+  "onboardingImportDataDetailsLoginLink": {
+    "message": "новый логин",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new login instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
   "onboardingImportDataDetailsPartTwoNoOrgs": {
     "message": " вместо этого.",
@@ -5323,6 +5343,18 @@
   "updateWeakMasterPasswordWarning": {
     "message": "Ваш мастер-пароль не соответствует требованиям политики вашей организации. Для доступа к хранилищу вы должны обновить свой мастер-пароль прямо сейчас. При этом текущий сеанс будет завершен и потребуется повторная авторизация. Сеансы на других устройствах могут оставаться активными в течение часа."
   },
+  "automaticAppLogin": {
+    "message": "Автоматическая авторизация пользователей в разрешенные приложения"
+  },
+  "automaticAppLoginDesc": {
+    "message": "Формы авторизаций будут автоматически заполняться и отправляться для приложений, запущенных с помощью настроенного провайдера идентификационных данных."
+  },
+  "automaticAppLoginIdpHostLabel": {
+    "message": "Хост провайдера идентификации"
+  },
+  "automaticAppLoginIdpHostDesc": {
+    "message": "Введите URL хоста провайдера идентификационных данных. Вводите несколько URL, разделяя их запятой."
+  },
   "tdeDisabledMasterPasswordRequired": {
     "message": "Ваша организация обновила параметры расшифровки. Пожалуйста, установите мастер-пароль для доступа к вашему хранилищу."
   },
@@ -7699,7 +7731,7 @@
     "message": "Запрошено одобрение устройства."
   },
   "tdeOffboardingPasswordSet": {
-    "message": "Пользователь установил мастер-пароль во время регистрации в TDE."
+    "message": "Пользователь установил мастер-пароль при деактивации TDE."
   },
   "startYour7DayFreeTrialOfBitwardenFor": {
     "message": "Начните 7-дневную бесплатную пробную версию Bitwarden для $ORG$",

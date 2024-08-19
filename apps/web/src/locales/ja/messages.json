@@ -36,6 +36,9 @@
   "notes": {
     "message": "メモ"
   },
+  "note": {
+    "message": "メモ"
+  },
   "customFields": {
     "message": "カスタムフィールド"
   },
@@ -53,6 +56,16 @@
   },
   "websiteUri": {
     "message": "ウェブサイト (URI)"
+  },
+  "websiteUriCount": {
+    "message": "ウェブサイト (URI) $COUNT$",
+    "description": "Label for an input field that contains a website URI. The input field is part of a list of fields, and the count indicates the position of the field in the list.",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
   },
   "websiteAdded": {
     "message": "ウェブサイトを追加しました"
@@ -198,6 +211,9 @@
   },
   "totpHelperWithCapture": {
     "message": "Bitwarden は2段階認証コードを保存・入力できます。 カメラアイコンを選択して、このウェブサイトの認証 QR コードのスクリーンショットを撮るか、キーをコピーしてこのフィールドに貼り付けてください。"
+  },
+  "learnMoreAboutAuthenticators": {
+    "message": "認証方法の詳細"
   },
   "folder": {
     "message": "フォルダー"
@@ -1504,6 +1520,10 @@
   "onboardingImportDataDetailsLink": {
     "message": "新しいアイテム",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
+  },
+  "onboardingImportDataDetailsLoginLink": {
+    "message": "新しいログイン",
+    "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new login instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
   "onboardingImportDataDetailsPartTwoNoOrgs": {
     "message": "を作成してください。",
@@ -5322,6 +5342,18 @@
   },
   "updateWeakMasterPasswordWarning": {
     "message": "マスターパスワードが組織のポリシーに適合していません。保管庫にアクセスするには、今すぐマスターパスワードを更新しなければなりません。続行すると現在のセッションからログアウトし、再度ログインする必要があります。 他のデバイス上のアクティブなセッションは、最大1時間アクティブであり続けることがあります。"
+  },
+  "automaticAppLogin": {
+    "message": "許可されたアプリでユーザーを自動的にログインする"
+  },
+  "automaticAppLoginDesc": {
+    "message": "ログインフォームは自動的に入力され、設定された ID プロバイダーから起動されたアプリに送信されます。"
+  },
+  "automaticAppLoginIdpHostLabel": {
+    "message": "ID プロバイダーホスト"
+  },
+  "automaticAppLoginIdpHostDesc": {
+    "message": "ID プロバイダーのホスト URL を入力します。カンマで区切ると複数の URL を入力できます。"
   },
   "tdeDisabledMasterPasswordRequired": {
     "message": "組織が復号オプションを更新しました。保管庫にアクセスするにはマスターパスワードを設定してください。"
