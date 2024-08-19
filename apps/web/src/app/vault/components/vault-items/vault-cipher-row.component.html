@@ -19,11 +19,12 @@
       class="tw-overflow-hidden tw-text-ellipsis tw-text-start tw-leading-snug"
       [disabled]="disabled"
       [routerLink]="[]"
-      [queryParams]="{ itemId: cipher.id }"
+      [queryParams]="{ itemId: cipher.id, action: extensionRefreshEnabled ? 'view' : null }"
       queryParamsHandling="merge"
       title="{{ 'editItemWithName' | i18n: cipher.name }}"
       type="button"
       appStopProp
+      aria-haspopup="true"
     >
       {{ cipher.name }}
     </button>

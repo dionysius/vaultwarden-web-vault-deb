@@ -109,6 +109,11 @@ import { FolderFilter, OrganizationFilter } from "./vault-filter/shared/models/v
 import { VaultFilterModule } from "./vault-filter/vault-filter.module";
 import { VaultHeaderComponent } from "./vault-header/vault-header.component";
 import { VaultOnboardingComponent } from "./vault-onboarding/vault-onboarding.component";
+import {
+  openViewCipherDialog,
+  ViewCipherDialogCloseResult,
+  ViewCipherDialogResult,
+} from "./view.component";
 
 const BroadcasterSubscriptionId = "VaultComponent";
 const SearchTextDebounceInterval = 200;
@@ -215,6 +220,8 @@ export class VaultComponent implements OnInit, OnDestroy {
         cipherView.id = cipherId;
         if (params.action === "clone") {
           await this.cloneCipher(cipherView);
+        } else if (params.action === "view") {
+          await this.viewCipher(cipherView);
         } else if (params.action === "edit") {
           await this.editCipher(cipherView);
         }
@@ -336,9 +343,14 @@ export class VaultComponent implements OnInit, OnDestroy {
         switchMap(() => this.route.queryParams),
         switchMap(async (params) => {
           const cipherId = getCipherIdFromParams(params);
+
           if (cipherId) {
-            if ((await this.cipherService.get(cipherId)) != null) {
-              await this.editCipherId(cipherId);
+            if (await this.cipherService.get(cipherId)) {
+              if (params.action === "view") {
+                await this.viewCipherById(cipherId);
+              } else {
+                await this.editCipherId(cipherId);
+              }
             } else {
               this.toastService.showToast({
                 variant: "error",
@@ -626,7 +638,7 @@ export class VaultComponent implements OnInit, OnDestroy {
       !(await this.passwordRepromptService.showPasswordPrompt())
     ) {
       // didn't pass password prompt, so don't open add / edit modal
-      this.go({ cipherId: null, itemId: null });
+      this.go({ cipherId: null, itemId: null, action: null });
       return;
     }
 
@@ -653,10 +665,62 @@ export class VaultComponent implements OnInit, OnDestroy {
     // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     modal.onClosedPromise().then(() => {
-      this.go({ cipherId: null, itemId: null });
+      this.go({ cipherId: null, itemId: null, action: null });
     });
 
     return childComponent;
+  }
+
+  /**
+   * Takes a CipherView and opens a dialog where it can be viewed (wraps viewCipherById).
+   * @param cipher - CipherView
+   * @returns Promise<void>
+   */
+  viewCipher(cipher: CipherView) {
+    return this.viewCipherById(cipher.id);
+  }
+
+  /**
+   * Takes a cipher id and opens a dialog where it can be viewed.
+   * @param id - string
+   * @returns Promise<void>
+   */
+  async viewCipherById(id: string) {
+    const cipher = await this.cipherService.get(id);
+    // If cipher exists (cipher is null when new) and MP reprompt
+    // is on for this cipher, then show password reprompt.
+    if (
+      cipher &&
+      cipher.reprompt !== 0 &&
+      !(await this.passwordRepromptService.showPasswordPrompt())
+    ) {
+      // Didn't pass password prompt, so don't open add / edit modal.
+      this.go({ cipherId: null, itemId: null });
+      return;
+    }
+
+    // Decrypt the cipher.
+    const cipherView = await cipher.decrypt(
+      await this.cipherService.getKeyForCipherKeyDecryption(cipher),
+    );
+
+    // Open the dialog.
+    const dialogRef = openViewCipherDialog(this.dialogService, {
+      data: { cipher: cipherView },
+    });
+
+    // Wait for the dialog to close.
+    const result: ViewCipherDialogCloseResult = await lastValueFrom(dialogRef.closed);
+
+    // If the dialog was closed by deleting the cipher, refresh the vault.
+    if (result.action === ViewCipherDialogResult.deleted) {
+      this.refresh();
+    }
+
+    // If the dialog was closed by any other action (close button, escape key, etc), navigate back to the vault.
+    if (!result.action) {
+      this.go({ cipherId: null, itemId: null, action: null });
+    }
   }
 
   async addCollection() {
