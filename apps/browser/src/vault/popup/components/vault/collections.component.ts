@@ -5,6 +5,7 @@ import { first } from "rxjs/operators";
 
 import { CollectionsComponent as BaseCollectionsComponent } from "@bitwarden/angular/admin-console/components/collections.component";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
@@ -28,6 +29,7 @@ export class CollectionsComponent extends BaseCollectionsComponent implements On
     private location: Location,
     logService: LogService,
     configService: ConfigService,
+    accountService: AccountService,
   ) {
     super(
       collectionService,
@@ -37,6 +39,7 @@ export class CollectionsComponent extends BaseCollectionsComponent implements On
       organizationService,
       logService,
       configService,
+      accountService,
     );
   }
 

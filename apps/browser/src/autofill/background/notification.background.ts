@@ -1,7 +1,8 @@
-import { firstValueFrom } from "rxjs";
+import { firstValueFrom, map } from "rxjs";
 
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 import {
@@ -90,6 +91,7 @@ export default class NotificationBackground {
     private logService: LogService,
     private themeStateService: ThemeStateService,
     private configService: ConfigService,
+    private accountService: AccountService,
   ) {}
 
   async init() {
@@ -556,7 +558,11 @@ export default class NotificationBackground {
         return;
       }
 
-      const cipher = await this.cipherService.encrypt(newCipher);
+      const activeUserId = await firstValueFrom(
+        this.accountService.activeAccount$.pipe(map((a) => a?.id)),
+      );
+
+      const cipher = await this.cipherService.encrypt(newCipher, activeUserId);
       try {
         await this.cipherService.createWithServer(cipher);
         await BrowserApi.tabSendMessage(tab, { command: "saveCipherAttemptCompleted" });
@@ -594,7 +600,11 @@ export default class NotificationBackground {
       return;
     }
 
-    const cipher = await this.cipherService.encrypt(cipherView);
+    const activeUserId = await firstValueFrom(
+      this.accountService.activeAccount$.pipe(map((a) => a?.id)),
+    );
+
+    const cipher = await this.cipherService.encrypt(cipherView, activeUserId);
     try {
       // We've only updated the password, no need to broadcast editedCipher message
       await this.cipherService.updateWithServer(cipher);
@@ -634,7 +644,13 @@ export default class NotificationBackground {
   private async getDecryptedCipherById(cipherId: string) {
     const cipher = await this.cipherService.get(cipherId);
     if (cipher != null && cipher.type === CipherType.Login) {
-      return await cipher.decrypt(await this.cipherService.getKeyForCipherKeyDecryption(cipher));
+      const activeUserId = await firstValueFrom(
+        this.accountService.activeAccount$.pipe(map((a) => a?.id)),
+      );
+
+      return await cipher.decrypt(
+        await this.cipherService.getKeyForCipherKeyDecryption(cipher, activeUserId),
+      );
     }
     return null;
   }

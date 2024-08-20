@@ -1,6 +1,7 @@
-import { firstValueFrom } from "rxjs";
+import { firstValueFrom, map } from "rxjs";
 
 import { PinServiceAbstraction } from "@bitwarden/auth/common";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import {
   CipherWithIdExport,
   CollectionWithIdExport,
@@ -33,6 +34,7 @@ export class BitwardenJsonImporter extends BaseImporter implements Importer {
     protected i18nService: I18nService,
     protected cipherService: CipherService,
     protected pinService: PinServiceAbstraction,
+    protected accountService: AccountService,
   ) {
     super();
   }
@@ -103,8 +105,11 @@ export class BitwardenJsonImporter extends BaseImporter implements Importer {
         });
       }
 
+      const activeUserId = await firstValueFrom(
+        this.accountService.activeAccount$.pipe(map((a) => a?.id)),
+      );
       const view = await cipher.decrypt(
-        await this.cipherService.getKeyForCipherKeyDecryption(cipher),
+        await this.cipherService.getKeyForCipherKeyDecryption(cipher, activeUserId),
       );
       this.cleanupCipher(view);
       this.result.ciphers.push(view);

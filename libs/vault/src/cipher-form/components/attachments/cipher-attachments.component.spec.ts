@@ -3,17 +3,21 @@ import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { By } from "@angular/platform-browser";
 import { mock } from "jest-mock-extended";
 
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { CipherId } from "@bitwarden/common/types/guid";
+import { Utils } from "@bitwarden/common/platform/misc/utils";
+import { CipherId, UserId } from "@bitwarden/common/types/guid";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CipherType } from "@bitwarden/common/vault/enums";
 import { AttachmentView } from "@bitwarden/common/vault/models/view/attachment.view";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { ButtonComponent, ToastService } from "@bitwarden/components";
 import { DownloadAttachmentComponent } from "@bitwarden/vault";
+
+import { FakeAccountService, mockAccountServiceWith } from "../../../../../common/spec";
 
 import { CipherAttachmentsComponent } from "./cipher-attachments.component";
 import { DeleteAttachmentComponent } from "./delete-attachment/delete-attachment.component";
@@ -49,6 +53,9 @@ describe("CipherAttachmentsComponent", () => {
   const cipherServiceGet = jest.fn().mockResolvedValue(cipherDomain);
   const saveAttachmentWithServer = jest.fn().mockResolvedValue(cipherDomain);
 
+  const mockUserId = Utils.newGuid() as UserId;
+  const accountService: FakeAccountService = mockAccountServiceWith(mockUserId);
+
   beforeEach(async () => {
     cipherServiceGet.mockClear();
     showToast.mockClear();
@@ -75,6 +82,10 @@ describe("CipherAttachmentsComponent", () => {
         { provide: LogService, useValue: mock<LogService>() },
         { provide: ConfigService, useValue: mock<ConfigService>() },
         { provide: PlatformUtilsService, useValue: mock<PlatformUtilsService>() },
+        {
+          provide: AccountService,
+          useValue: accountService,
+        },
       ],
     })
       .overrideComponent(CipherAttachmentsComponent, {
@@ -219,7 +230,7 @@ describe("CipherAttachmentsComponent", () => {
       it("calls `saveAttachmentWithServer`", async () => {
         await component.submit();
 
-        expect(saveAttachmentWithServer).toHaveBeenCalledWith(cipherDomain, file);
+        expect(saveAttachmentWithServer).toHaveBeenCalledWith(cipherDomain, file, mockUserId);
       });
 
       it("resets form and input values", async () => {

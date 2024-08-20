@@ -184,6 +184,7 @@ export class VaultProgram extends BaseProgram {
           this.serviceContainer.organizationService,
           this.serviceContainer.eventCollectionService,
           this.serviceContainer.billingAccountProfileStateService,
+          this.serviceContainer.accountService,
         );
         const response = await command.run(object, id, cmd);
         this.processResponse(response);
@@ -227,6 +228,7 @@ export class VaultProgram extends BaseProgram {
           this.serviceContainer.folderApiService,
           this.serviceContainer.billingAccountProfileStateService,
           this.serviceContainer.organizationService,
+          this.serviceContainer.accountService,
         );
         const response = await command.run(object, encodedJson, cmd);
         this.processResponse(response);
@@ -272,6 +274,7 @@ export class VaultProgram extends BaseProgram {
           this.serviceContainer.cryptoService,
           this.serviceContainer.apiService,
           this.serviceContainer.folderApiService,
+          this.serviceContainer.accountService,
         );
         const response = await command.run(object, id, encodedJson, cmd);
         this.processResponse(response);
@@ -375,7 +378,10 @@ export class VaultProgram extends BaseProgram {
       })
       .action(async (id, organizationId, encodedJson, cmd) => {
         await this.exitIfLocked();
-        const command = new ShareCommand(this.serviceContainer.cipherService);
+        const command = new ShareCommand(
+          this.serviceContainer.cipherService,
+          this.serviceContainer.accountService,
+        );
         const response = await command.run(id, organizationId, encodedJson);
         this.processResponse(response);
       });

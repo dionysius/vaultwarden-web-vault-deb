@@ -175,7 +175,7 @@ export class DefaultSyncService extends CoreSyncService {
       throw new Error("Stamp has changed");
     }
 
-    await this.cryptoService.setMasterKeyEncryptedUserKey(response.key);
+    await this.cryptoService.setMasterKeyEncryptedUserKey(response.key, response.id);
     await this.cryptoService.setPrivateKey(response.privateKey, response.id);
     await this.cryptoService.setProviderKeys(response.providers, response.id);
     await this.cryptoService.setOrgKeys(

@@ -1,6 +1,8 @@
 import { mock } from "jest-mock-extended";
 import { Jsonify } from "type-fest";
 
+import { UserId } from "@bitwarden/common/types/guid";
+
 import { makeStaticByteArray, mockEnc, mockFromJson } from "../../../../spec/utils";
 import { UriMatchStrategy } from "../../../models/domain/domain-service";
 import { CryptoService } from "../../../platform/abstractions/crypto.service";
@@ -247,7 +249,7 @@ describe("Cipher DTO", () => {
       );
 
       const cipherView = await cipher.decrypt(
-        await cipherService.getKeyForCipherKeyDecryption(cipher),
+        await cipherService.getKeyForCipherKeyDecryption(cipher, mockUserId),
       );
 
       expect(cipherView).toMatchObject({
@@ -367,7 +369,7 @@ describe("Cipher DTO", () => {
       );
 
       const cipherView = await cipher.decrypt(
-        await cipherService.getKeyForCipherKeyDecryption(cipher),
+        await cipherService.getKeyForCipherKeyDecryption(cipher, mockUserId),
       );
 
       expect(cipherView).toMatchObject({
@@ -505,7 +507,7 @@ describe("Cipher DTO", () => {
       );
 
       const cipherView = await cipher.decrypt(
-        await cipherService.getKeyForCipherKeyDecryption(cipher),
+        await cipherService.getKeyForCipherKeyDecryption(cipher, mockUserId),
       );
 
       expect(cipherView).toMatchObject({
@@ -667,7 +669,7 @@ describe("Cipher DTO", () => {
       );
 
       const cipherView = await cipher.decrypt(
-        await cipherService.getKeyForCipherKeyDecryption(cipher),
+        await cipherService.getKeyForCipherKeyDecryption(cipher, mockUserId),
       );
 
       expect(cipherView).toMatchObject({
@@ -754,3 +756,5 @@ describe("Cipher DTO", () => {
     });
   });
 });
+
+const mockUserId = "TestUserId" as UserId;

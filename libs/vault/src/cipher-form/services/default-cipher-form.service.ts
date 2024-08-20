@@ -1,5 +1,7 @@
 import { inject, Injectable } from "@angular/core";
+import { firstValueFrom, map } from "rxjs";
 
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { Cipher } from "@bitwarden/common/vault/models/domain/cipher";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
@@ -14,15 +16,25 @@ function isSetEqual(a: Set<string>, b: Set<string>) {
 @Injectable()
 export class DefaultCipherFormService implements CipherFormService {
   private cipherService: CipherService = inject(CipherService);
+  private accountService: AccountService = inject(AccountService);
 
   async decryptCipher(cipher: Cipher): Promise<CipherView> {
-    return await cipher.decrypt(await this.cipherService.getKeyForCipherKeyDecryption(cipher));
+    const activeUserId = await firstValueFrom(
+      this.accountService.activeAccount$.pipe(map((a) => a?.id)),
+    );
+    return await cipher.decrypt(
+      await this.cipherService.getKeyForCipherKeyDecryption(cipher, activeUserId),
+    );
   }
 
   async saveCipher(cipher: CipherView, config: CipherFormConfig): Promise<CipherView> {
     // Passing the original cipher is important here as it is responsible for appending to password history
+    const activeUserId = await firstValueFrom(
+      this.accountService.activeAccount$.pipe(map((a) => a?.id)),
+    );
     const encryptedCipher = await this.cipherService.encrypt(
       cipher,
+      activeUserId,
       null,
       null,
       config.originalCipher ?? null,
@@ -34,7 +46,7 @@ export class DefaultCipherFormService implements CipherFormService {
     if (cipher.id == null) {
       savedCipher = await this.cipherService.createWithServer(encryptedCipher, config.admin);
       return await savedCipher.decrypt(
-        await this.cipherService.getKeyForCipherKeyDecryption(savedCipher),
+        await this.cipherService.getKeyForCipherKeyDecryption(savedCipher, activeUserId),
       );
     }
 
@@ -68,7 +80,7 @@ export class DefaultCipherFormService implements CipherFormService {
     }
 
     return await savedCipher.decrypt(
-      await this.cipherService.getKeyForCipherKeyDecryption(savedCipher),
+      await this.cipherService.getKeyForCipherKeyDecryption(savedCipher, activeUserId),
     );
   }
 }

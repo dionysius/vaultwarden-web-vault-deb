@@ -9,11 +9,12 @@ import {
   OnInit,
   Output,
 } from "@angular/core";
-import { firstValueFrom } from "rxjs";
+import { firstValueFrom, map } from "rxjs";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AuditService } from "@bitwarden/common/abstractions/audit.service";
 import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
 import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions/account/billing-account-profile-state.service";
 import { EventType } from "@bitwarden/common/enums";
@@ -100,6 +101,7 @@ export class ViewComponent implements OnDestroy, OnInit {
     protected fileDownloadService: FileDownloadService,
     protected dialogService: DialogService,
     protected datePipe: DatePipe,
+    protected accountService: AccountService,
     private billingAccountProfileStateService: BillingAccountProfileStateService,
   ) {}
 
@@ -129,8 +131,11 @@ export class ViewComponent implements OnDestroy, OnInit {
     this.cleanUp();
 
     const cipher = await this.cipherService.get(this.cipherId);
+    const activeUserId = await firstValueFrom(
+      this.accountService.activeAccount$.pipe(map((a) => a?.id)),
+    );
     this.cipher = await cipher.decrypt(
-      await this.cipherService.getKeyForCipherKeyDecryption(cipher),
+      await this.cipherService.getKeyForCipherKeyDecryption(cipher, activeUserId),
     );
     this.canAccessPremium = await firstValueFrom(
       this.billingAccountProfileStateService.hasPremiumFromAnySource$,

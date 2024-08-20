@@ -1,8 +1,10 @@
 import { CommonModule } from "@angular/common";
 import { booleanAttribute, Component, Input } from "@angular/core";
 import { Router, RouterModule } from "@angular/router";
+import { firstValueFrom, map } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CipherRepromptType, CipherType } from "@bitwarden/common/vault/enums";
@@ -50,6 +52,7 @@ export class ItemMoreOptionsComponent {
     private router: Router,
     private i18nService: I18nService,
     private vaultPopupAutofillService: VaultPopupAutofillService,
+    private accountService: AccountService,
   ) {}
 
   get canEdit() {
@@ -108,7 +111,10 @@ export class ItemMoreOptionsComponent {
    */
   async toggleFavorite() {
     this.cipher.favorite = !this.cipher.favorite;
-    const encryptedCipher = await this.cipherService.encrypt(this.cipher);
+    const activeUserId = await firstValueFrom(
+      this.accountService.activeAccount$.pipe(map((a) => a?.id)),
+    );
+    const encryptedCipher = await this.cipherService.encrypt(this.cipher, activeUserId);
     await this.cipherService.updateWithServer(encryptedCipher);
     this.toastService.showToast({
       variant: "success",

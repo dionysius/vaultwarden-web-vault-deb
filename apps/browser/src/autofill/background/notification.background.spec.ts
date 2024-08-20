@@ -2,6 +2,7 @@ import { mock } from "jest-mock-extended";
 import { BehaviorSubject, firstValueFrom } from "rxjs";
 
 import { PolicyService } from "@bitwarden/common/admin-console/services/policy/policy.service";
+import { AccountInfo, AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 import { AuthService } from "@bitwarden/common/auth/services/auth.service";
 import { ExtensionCommand } from "@bitwarden/common/autofill/constants";
@@ -12,6 +13,7 @@ import { EnvironmentService } from "@bitwarden/common/platform/abstractions/envi
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { SelfHostedEnvironment } from "@bitwarden/common/platform/services/default-environment.service";
 import { ThemeStateService } from "@bitwarden/common/platform/theming/theme-state.service";
+import { UserId } from "@bitwarden/common/types/guid";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { FolderView } from "@bitwarden/common/vault/models/view/folder.view";
 import { CipherService } from "@bitwarden/common/vault/services/cipher.service";
@@ -55,6 +57,7 @@ describe("NotificationBackground", () => {
   const logService = mock<LogService>();
   const themeStateService = mock<ThemeStateService>();
   const configService = mock<ConfigService>();
+  const accountService = mock<AccountService>();
 
   beforeEach(() => {
     notificationBackground = new NotificationBackground(
@@ -69,6 +72,7 @@ describe("NotificationBackground", () => {
       logService,
       themeStateService,
       configService,
+      accountService,
     );
   });
 
@@ -691,6 +695,13 @@ describe("NotificationBackground", () => {
       });
 
       describe("saveOrUpdateCredentials", () => {
+        const activeAccountSubject = new BehaviorSubject<{ id: UserId } & AccountInfo>({
+          id: "testId" as UserId,
+          email: "test@example.com",
+          emailVerified: true,
+          name: "Test User",
+        });
+
         let getDecryptedCipherByIdSpy: jest.SpyInstance;
         let getAllDecryptedForUrlSpy: jest.SpyInstance;
         let updatePasswordSpy: jest.SpyInstance;
@@ -727,6 +738,8 @@ describe("NotificationBackground", () => {
           updateWithServerSpy = jest.spyOn(cipherService, "updateWithServer");
           folderExistsSpy = jest.spyOn(notificationBackground as any, "folderExists");
           cipherEncryptSpy = jest.spyOn(cipherService, "encrypt");
+
+          accountService.activeAccount$ = activeAccountSubject;
         });
 
         it("skips saving the cipher if the notification queue does not have a tab that is related to the sender", async () => {
@@ -981,7 +994,7 @@ describe("NotificationBackground", () => {
             queueMessage,
             null,
           );
-          expect(cipherEncryptSpy).toHaveBeenCalledWith(cipherView);
+          expect(cipherEncryptSpy).toHaveBeenCalledWith(cipherView, "testId");
           expect(createWithServerSpy).toHaveBeenCalled();
           expect(tabSendMessageSpy).toHaveBeenCalledWith(sender.tab, {
             command: "saveCipherAttemptCompleted",
@@ -1020,7 +1033,7 @@ describe("NotificationBackground", () => {
           sendMockExtensionMessage(message, sender);
           await flushPromises();
 
-          expect(cipherEncryptSpy).toHaveBeenCalledWith(cipherView);
+          expect(cipherEncryptSpy).toHaveBeenCalledWith(cipherView, "testId");
           expect(createWithServerSpy).toThrow(errorMessage);
           expect(tabSendMessageSpy).not.toHaveBeenCalledWith(sender.tab, {
             command: "addedCipher",

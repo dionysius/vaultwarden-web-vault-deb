@@ -2,10 +2,13 @@ import { TestBed } from "@angular/core/testing";
 import { mock } from "jest-mock-extended";
 import { BehaviorSubject } from "rxjs";
 
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { subscribeTo } from "@bitwarden/common/spec";
+import { Utils } from "@bitwarden/common/platform/misc/utils";
+import { FakeAccountService, mockAccountServiceWith, subscribeTo } from "@bitwarden/common/spec";
+import { UserId } from "@bitwarden/common/types/guid";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CipherRepromptType, CipherType } from "@bitwarden/common/vault/enums";
 import { Cipher } from "@bitwarden/common/vault/models/domain/cipher";
@@ -40,6 +43,9 @@ describe("VaultPopupAutofillService", () => {
   const mockCipherService = mock<CipherService>();
   const mockMessagingService = mock<MessagingService>();
 
+  const mockUserId = Utils.newGuid() as UserId;
+  const accountService: FakeAccountService = mockAccountServiceWith(mockUserId);
+
   beforeEach(() => {
     jest.spyOn(BrowserPopupUtils, "inPopout").mockReturnValue(false);
     jest.spyOn(BrowserApi, "getTabFromCurrentWindow").mockResolvedValue(mockCurrentTab);
@@ -55,6 +61,10 @@ describe("VaultPopupAutofillService", () => {
         { provide: PasswordRepromptService, useValue: mockPasswordRepromptService },
         { provide: CipherService, useValue: mockCipherService },
         { provide: MessagingService, useValue: mockMessagingService },
+        {
+          provide: AccountService,
+          useValue: accountService,
+        },
       ],
     });
 
@@ -311,7 +321,7 @@ describe("VaultPopupAutofillService", () => {
         expect(result).toBe(true);
         expect(mockCipher.login.uris).toHaveLength(1);
         expect(mockCipher.login.uris[0].uri).toBe(mockCurrentTab.url);
-        expect(mockCipherService.encrypt).toHaveBeenCalledWith(mockCipher);
+        expect(mockCipherService.encrypt).toHaveBeenCalledWith(mockCipher, mockUserId);
         expect(mockCipherService.updateWithServer).toHaveBeenCalledWith(mockEncryptedCipher);
       });
 

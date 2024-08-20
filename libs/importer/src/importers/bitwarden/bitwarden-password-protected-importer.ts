@@ -1,4 +1,5 @@
 import { PinServiceAbstraction } from "@bitwarden/auth/common";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import {
   Argon2KdfConfig,
   KdfConfig,
@@ -25,9 +26,10 @@ export class BitwardenPasswordProtectedImporter extends BitwardenJsonImporter im
     i18nService: I18nService,
     cipherService: CipherService,
     pinService: PinServiceAbstraction,
+    accountService: AccountService,
     private promptForPassword_callback: () => Promise<string>,
   ) {
-    super(cryptoService, i18nService, cipherService, pinService);
+    super(cryptoService, i18nService, cipherService, pinService, accountService);
   }
 
   async parse(data: string): Promise<ImportResult> {

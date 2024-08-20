@@ -2,12 +2,13 @@ import { DatePipe, Location } from "@angular/common";
 import { ChangeDetectorRef, Component, NgZone, OnInit, OnDestroy } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Subject, firstValueFrom, takeUntil, Subscription } from "rxjs";
-import { first } from "rxjs/operators";
+import { first, map } from "rxjs/operators";
 
 import { ViewComponent as BaseViewComponent } from "@bitwarden/angular/vault/components/view.component";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AuditService } from "@bitwarden/common/abstractions/audit.service";
 import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
 import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions/account/billing-account-profile-state.service";
 import { BroadcasterService } from "@bitwarden/common/platform/abstractions/broadcaster.service";
@@ -97,6 +98,7 @@ export class ViewComponent extends BaseViewComponent implements OnInit, OnDestro
     fileDownloadService: FileDownloadService,
     dialogService: DialogService,
     datePipe: DatePipe,
+    accountService: AccountService,
     billingAccountProfileStateService: BillingAccountProfileStateService,
   ) {
     super(
@@ -120,6 +122,7 @@ export class ViewComponent extends BaseViewComponent implements OnInit, OnDestro
       fileDownloadService,
       dialogService,
       datePipe,
+      accountService,
       billingAccountProfileStateService,
     );
   }
@@ -267,7 +270,10 @@ export class ViewComponent extends BaseViewComponent implements OnInit, OnDestro
       this.cipher.login.uris.push(loginUri);
 
       try {
-        const cipher: Cipher = await this.cipherService.encrypt(this.cipher);
+        const activeUserId = await firstValueFrom(
+          this.accountService.activeAccount$.pipe(map((a) => a?.id)),
+        );
+        const cipher: Cipher = await this.cipherService.encrypt(this.cipher, activeUserId);
         await this.cipherService.updateWithServer(cipher);
         this.platformUtilsService.showToast(
           "success",

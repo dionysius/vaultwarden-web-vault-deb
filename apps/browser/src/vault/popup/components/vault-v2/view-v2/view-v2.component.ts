@@ -3,10 +3,11 @@ import { Component } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { FormsModule } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
-import { Observable, switchMap } from "rxjs";
+import { firstValueFrom, map, Observable, switchMap } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
@@ -67,6 +68,7 @@ export class ViewV2Component {
     private dialogService: DialogService,
     private logService: LogService,
     private toastService: ToastService,
+    private accountService: AccountService,
   ) {
     this.subscribeToParams();
   }
@@ -103,7 +105,12 @@ export class ViewV2Component {
 
   async getCipherData(id: string) {
     const cipher = await this.cipherService.get(id);
-    return await cipher.decrypt(await this.cipherService.getKeyForCipherKeyDecryption(cipher));
+    const activeUserId = await firstValueFrom(
+      this.accountService.activeAccount$.pipe(map((a) => a?.id)),
+    );
+    return await cipher.decrypt(
+      await this.cipherService.getKeyForCipherKeyDecryption(cipher, activeUserId),
+    );
   }
 
   async editCipher() {

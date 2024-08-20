@@ -3,9 +3,10 @@ import { Component } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { ReactiveFormsModule } from "@angular/forms";
 import { ActivatedRoute } from "@angular/router";
-import { Observable, combineLatest, first, switchMap } from "rxjs";
+import { Observable, combineLatest, first, map, switchMap } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { OrganizationId } from "@bitwarden/common/types/guid";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CollectionService } from "@bitwarden/common/vault/abstractions/collection.service";
@@ -52,18 +53,24 @@ export class AssignCollections {
     private location: Location,
     private collectionService: CollectionService,
     private cipherService: CipherService,
+    private accountService: AccountService,
     route: ActivatedRoute,
   ) {
-    const $cipher: Observable<CipherView> = route.queryParams.pipe(
+    const cipher$: Observable<CipherView> = route.queryParams.pipe(
       switchMap(({ cipherId }) => this.cipherService.get(cipherId)),
       switchMap((cipherDomain) =>
-        this.cipherService
-          .getKeyForCipherKeyDecryption(cipherDomain)
-          .then(cipherDomain.decrypt.bind(cipherDomain)),
+        this.accountService.activeAccount$.pipe(
+          map((account) => account?.id),
+          switchMap((userId) =>
+            this.cipherService
+              .getKeyForCipherKeyDecryption(cipherDomain, userId)
+              .then(cipherDomain.decrypt.bind(cipherDomain)),
+          ),
+        ),
       ),
     );
 
-    combineLatest([$cipher, this.collectionService.decryptedCollections$])
+    combineLatest([cipher$, this.collectionService.decryptedCollections$])
       .pipe(takeUntilDestroyed(), first())
       .subscribe(([cipherView, collections]) => {
         let availableCollections = collections.filter((c) => !c.readOnly);

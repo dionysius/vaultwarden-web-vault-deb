@@ -14,6 +14,7 @@ import {
 } from "rxjs";
 
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { DomainSettingsService } from "@bitwarden/common/autofill/services/domain-settings.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
@@ -80,6 +81,7 @@ export class Fido2Component implements OnInit, OnDestroy {
     private browserMessagingApi: ZonedMessageListenerService,
     private passwordRepromptService: PasswordRepromptService,
     private fido2UserVerificationService: Fido2UserVerificationService,
+    private accountService: AccountService,
   ) {}
 
   ngOnInit() {
@@ -156,11 +158,15 @@ export class Fido2Component implements OnInit, OnDestroy {
           }
 
           case "PickCredentialRequest": {
+            const activeUserId = await firstValueFrom(
+              this.accountService.activeAccount$.pipe(map((a) => a?.id)),
+            );
+
             this.ciphers = await Promise.all(
               message.cipherIds.map(async (cipherId) => {
                 const cipher = await this.cipherService.get(cipherId);
                 return cipher.decrypt(
-                  await this.cipherService.getKeyForCipherKeyDecryption(cipher),
+                  await this.cipherService.getKeyForCipherKeyDecryption(cipher, activeUserId),
                 );
               }),
             );
@@ -172,11 +178,15 @@ export class Fido2Component implements OnInit, OnDestroy {
           }
 
           case "InformExcludedCredentialRequest": {
+            const activeUserId = await firstValueFrom(
+              this.accountService.activeAccount$.pipe(map((a) => a?.id)),
+            );
+
             this.ciphers = await Promise.all(
               message.existingCipherIds.map(async (cipherId) => {
                 const cipher = await this.cipherService.get(cipherId);
                 return cipher.decrypt(
-                  await this.cipherService.getKeyForCipherKeyDecryption(cipher),
+                  await this.cipherService.getKeyForCipherKeyDecryption(cipher, activeUserId),
                 );
               }),
             );
@@ -378,8 +388,12 @@ export class Fido2Component implements OnInit, OnDestroy {
   }
 
   private async createNewCipher(name: string, username: string) {
+    const activeUserId = await firstValueFrom(
+      this.accountService.activeAccount$.pipe(map((a) => a?.id)),
+    );
+
     this.buildCipher(name, username);
-    const cipher = await this.cipherService.encrypt(this.cipher);
+    const cipher = await this.cipherService.encrypt(this.cipher, activeUserId);
     try {
       await this.cipherService.createWithServer(cipher);
       this.cipher.id = cipher.id;

@@ -714,6 +714,7 @@ export class ServiceContainer {
       this.collectionService,
       this.cryptoService,
       this.pinService,
+      this.accountService,
     );
 
     this.individualExportService = new IndividualVaultExportService(
@@ -733,6 +734,7 @@ export class ServiceContainer {
       this.cryptoFunctionService,
       this.collectionService,
       this.kdfConfigService,
+      this.accountService,
     );
 
     this.exportService = new VaultExportService(

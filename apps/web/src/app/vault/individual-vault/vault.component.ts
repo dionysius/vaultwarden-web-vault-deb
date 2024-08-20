@@ -35,6 +35,7 @@ import { EventCollectionService } from "@bitwarden/common/abstractions/event/eve
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions/account/billing-account-profile-state.service";
 import { EventType } from "@bitwarden/common/enums";
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
@@ -198,6 +199,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     private apiService: ApiService,
     private billingAccountProfileStateService: BillingAccountProfileStateService,
     private toastService: ToastService,
+    private accountService: AccountService,
   ) {}
 
   async ngOnInit() {
@@ -699,9 +701,12 @@ export class VaultComponent implements OnInit, OnDestroy {
       return;
     }
 
+    const activeUserId = await firstValueFrom(
+      this.accountService.activeAccount$.pipe(map((a) => a?.id)),
+    );
     // Decrypt the cipher.
     const cipherView = await cipher.decrypt(
-      await this.cipherService.getKeyForCipherKeyDecryption(cipher),
+      await this.cipherService.getKeyForCipherKeyDecryption(cipher, activeUserId),
     );
 
     // Open the dialog.

@@ -149,6 +149,7 @@ export class SendProgram extends BaseProgram {
           this.serviceContainer.organizationService,
           this.serviceContainer.eventCollectionService,
           this.serviceContainer.billingAccountProfileStateService,
+          this.serviceContainer.accountService,
         );
         const response = await cmd.run("template", object, null);
         this.processResponse(response);

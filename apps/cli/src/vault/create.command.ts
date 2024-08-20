@@ -1,11 +1,12 @@
 import * as fs from "fs";
 import * as path from "path";
 
-import { firstValueFrom } from "rxjs";
+import { firstValueFrom, map } from "rxjs";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { SelectionReadOnlyRequest } from "@bitwarden/common/admin-console/models/request/selection-read-only.request";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions/account/billing-account-profile-state.service";
 import { CipherExport } from "@bitwarden/common/models/export/cipher.export";
 import { CollectionExport } from "@bitwarden/common/models/export/collection.export";
@@ -34,6 +35,7 @@ export class CreateCommand {
     private folderApiService: FolderApiServiceAbstraction,
     private accountProfileService: BillingAccountProfileStateService,
     private organizationService: OrganizationService,
+    private accountService: AccountService,
   ) {}
 
   async run(
@@ -80,11 +82,14 @@ export class CreateCommand {
   }
 
   private async createCipher(req: CipherExport) {
-    const cipher = await this.cipherService.encrypt(CipherExport.toView(req));
+    const activeUserId = await firstValueFrom(
+      this.accountService.activeAccount$.pipe(map((a) => a?.id)),
+    );
+    const cipher = await this.cipherService.encrypt(CipherExport.toView(req), activeUserId);
     try {
       const newCipher = await this.cipherService.createWithServer(cipher);
       const decCipher = await newCipher.decrypt(
-        await this.cipherService.getKeyForCipherKeyDecryption(newCipher),
+        await this.cipherService.getKeyForCipherKeyDecryption(newCipher, activeUserId),
       );
       const res = new CipherResponse(decCipher);
       return Response.success(res);
@@ -143,13 +148,17 @@ export class CreateCommand {
     }
 
     try {
+      const activeUserId = await firstValueFrom(
+        this.accountService.activeAccount$.pipe(map((a) => a?.id)),
+      );
       const updatedCipher = await this.cipherService.saveAttachmentRawWithServer(
         cipher,
         fileName,
         new Uint8Array(fileBuf).buffer,
+        activeUserId,
       );
       const decCipher = await updatedCipher.decrypt(
-        await this.cipherService.getKeyForCipherKeyDecryption(updatedCipher),
+        await this.cipherService.getKeyForCipherKeyDecryption(updatedCipher, activeUserId),
       );
       return Response.success(new CipherResponse(decCipher));
     } catch (e) {

@@ -4,6 +4,7 @@ import { ActivatedRoute } from "@angular/router";
 import { first } from "rxjs/operators";
 
 import { PasswordHistoryComponent as BasePasswordHistoryComponent } from "@bitwarden/angular/vault/components/password-history.component";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
@@ -18,10 +19,11 @@ export class PasswordHistoryComponent extends BasePasswordHistoryComponent imple
     cipherService: CipherService,
     platformUtilsService: PlatformUtilsService,
     i18nService: I18nService,
+    accountService: AccountService,
     private location: Location,
     private route: ActivatedRoute,
   ) {
-    super(cipherService, platformUtilsService, i18nService, window);
+    super(cipherService, platformUtilsService, i18nService, accountService, window);
   }
 
   async ngOnInit() {

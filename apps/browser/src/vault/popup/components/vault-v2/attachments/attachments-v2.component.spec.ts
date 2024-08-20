@@ -5,10 +5,14 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { mock } from "jest-mock-extended";
 import { BehaviorSubject } from "rxjs";
 
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { Utils } from "@bitwarden/common/platform/misc/utils";
+import { FakeAccountService, mockAccountServiceWith } from "@bitwarden/common/spec";
+import { UserId } from "@bitwarden/common/types/guid";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { ButtonComponent } from "@bitwarden/components";
 import { CipherAttachmentsComponent } from "@bitwarden/vault";
@@ -46,6 +50,9 @@ describe("AttachmentsV2Component", () => {
   const navigate = jest.fn();
   const back = jest.fn().mockResolvedValue(undefined);
 
+  const mockUserId = Utils.newGuid() as UserId;
+  const accountService: FakeAccountService = mockAccountServiceWith(mockUserId);
+
   beforeEach(async () => {
     back.mockClear();
     navigate.mockClear();
@@ -65,6 +72,10 @@ describe("AttachmentsV2Component", () => {
           useValue: {
             queryParams,
           },
+        },
+        {
+          provide: AccountService,
+          useValue: accountService,
         },
       ],
     })

@@ -1,7 +1,10 @@
 import { TextEncoder } from "util";
 
 import { mock, MockProxy } from "jest-mock-extended";
+import { BehaviorSubject } from "rxjs";
 
+import { AccountInfo, AccountService } from "../../../auth/abstractions/account.service";
+import { UserId } from "../../../types/guid";
 import { CipherService } from "../../../vault/abstractions/cipher.service";
 import { SyncService } from "../../../vault/abstractions/sync/sync.service.abstraction";
 import { CipherRepromptType } from "../../../vault/enums/cipher-reprompt-type";
@@ -30,10 +33,18 @@ import { guidToRawFormat } from "./guid-utils";
 const RpId = "bitwarden.com";
 
 describe("FidoAuthenticatorService", () => {
+  const activeAccountSubject = new BehaviorSubject<{ id: UserId } & AccountInfo>({
+    id: "testId" as UserId,
+    email: "test@example.com",
+    emailVerified: true,
+    name: "Test User",
+  });
+
   let cipherService!: MockProxy<CipherService>;
   let userInterface!: MockProxy<Fido2UserInterfaceService>;
   let userInterfaceSession!: MockProxy<Fido2UserInterfaceSession>;
   let syncService!: MockProxy<SyncService>;
+  let accountService!: MockProxy<AccountService>;
   let authenticator!: Fido2AuthenticatorService;
   let tab!: chrome.tabs.Tab;
 
@@ -43,8 +54,15 @@ describe("FidoAuthenticatorService", () => {
     userInterfaceSession = mock<Fido2UserInterfaceSession>();
     userInterface.newSession.mockResolvedValue(userInterfaceSession);
     syncService = mock<SyncService>();
-    authenticator = new Fido2AuthenticatorService(cipherService, userInterface, syncService);
+    accountService = mock<AccountService>();
+    authenticator = new Fido2AuthenticatorService(
+      cipherService,
+      userInterface,
+      syncService,
+      accountService,
+    );
     tab = { id: 123, windowId: 456 } as chrome.tabs.Tab;
+    accountService.activeAccount$ = activeAccountSubject;
   });
 
   describe("makeCredential", () => {
@@ -677,6 +695,7 @@ describe("FidoAuthenticatorService", () => {
               ],
             }),
           }),
+          "testId",
         );
       });
 

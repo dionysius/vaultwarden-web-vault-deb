@@ -1,8 +1,9 @@
 import * as papa from "papaparse";
-import { firstValueFrom } from "rxjs";
+import { firstValueFrom, map } from "rxjs";
 
 import { PinServiceAbstraction } from "@bitwarden/auth/common";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
 import { CipherWithIdExport, CollectionWithIdExport } from "@bitwarden/common/models/export";
 import { CryptoFunctionService } from "@bitwarden/common/platform/abstractions/crypto-function.service";
@@ -42,6 +43,7 @@ export class OrganizationVaultExportService
     cryptoFunctionService: CryptoFunctionService,
     private collectionService: CollectionService,
     kdfConfigService: KdfConfigService,
+    private accountService: AccountService,
   ) {
     super(pinService, cryptoService, cryptoFunctionService, kdfConfigService);
   }
@@ -87,6 +89,9 @@ export class OrganizationVaultExportService
     const decCollections: CollectionView[] = [];
     const decCiphers: CipherView[] = [];
     const promises = [];
+    const activeUserId = await firstValueFrom(
+      this.accountService.activeAccount$.pipe(map((a) => a?.id)),
+    );
 
     promises.push(
       this.apiService.getOrganizationExport(organizationId).then((exportData) => {
@@ -111,7 +116,7 @@ export class OrganizationVaultExportService
                 const cipher = new Cipher(new CipherData(c));
                 exportPromises.push(
                   this.cipherService
-                    .getKeyForCipherKeyDecryption(cipher)
+                    .getKeyForCipherKeyDecryption(cipher, activeUserId)
                     .then((key) => cipher.decrypt(key))
                     .then((decCipher) => {
                       decCiphers.push(decCipher);

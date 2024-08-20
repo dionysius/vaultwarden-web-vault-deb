@@ -1,3 +1,6 @@
+import { firstValueFrom, map } from "rxjs";
+
+import { AccountService } from "../../../auth/abstractions/account.service";
 import { CipherService } from "../../../vault/abstractions/cipher.service";
 import { SyncService } from "../../../vault/abstractions/sync/sync.service.abstraction";
 import { CipherRepromptType } from "../../../vault/enums/cipher-reprompt-type";
@@ -42,6 +45,7 @@ export class Fido2AuthenticatorService implements Fido2AuthenticatorServiceAbstr
     private cipherService: CipherService,
     private userInterface: Fido2UserInterfaceService,
     private syncService: SyncService,
+    private accountService: AccountService,
     private logService?: LogService,
   ) {}
 
@@ -130,8 +134,12 @@ export class Fido2AuthenticatorService implements Fido2AuthenticatorServiceAbstr
         keyPair = await createKeyPair();
         pubKeyDer = await crypto.subtle.exportKey("spki", keyPair.publicKey);
         const encrypted = await this.cipherService.get(cipherId);
+        const activeUserId = await firstValueFrom(
+          this.accountService.activeAccount$.pipe(map((a) => a?.id)),
+        );
+
         cipher = await encrypted.decrypt(
-          await this.cipherService.getKeyForCipherKeyDecryption(encrypted),
+          await this.cipherService.getKeyForCipherKeyDecryption(encrypted, activeUserId),
         );
 
         if (
@@ -150,7 +158,7 @@ export class Fido2AuthenticatorService implements Fido2AuthenticatorServiceAbstr
         if (Utils.isNullOrEmpty(cipher.login.username)) {
           cipher.login.username = fido2Credential.userName;
         }
-        const reencrypted = await this.cipherService.encrypt(cipher);
+        const reencrypted = await this.cipherService.encrypt(cipher, activeUserId);
         await this.cipherService.updateWithServer(reencrypted);
         credentialId = fido2Credential.credentialId;
       } catch (error) {
@@ -277,7 +285,10 @@ export class Fido2AuthenticatorService implements Fido2AuthenticatorServiceAbstr
         };
 
         if (selectedFido2Credential.counter > 0) {
-          const encrypted = await this.cipherService.encrypt(selectedCipher);
+          const activeUserId = await firstValueFrom(
+            this.accountService.activeAccount$.pipe(map((a) => a?.id)),
+          );
+          const encrypted = await this.cipherService.encrypt(selectedCipher, activeUserId);
           await this.cipherService.updateWithServer(encrypted);
         }
 

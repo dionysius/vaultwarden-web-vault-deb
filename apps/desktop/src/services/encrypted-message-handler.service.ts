@@ -164,7 +164,10 @@ export class EncryptedMessageHandlerService {
     cipherView.login.uris[0].uri = credentialCreatePayload.uri;
 
     try {
-      const encrypted = await this.cipherService.encrypt(cipherView);
+      const activeUserId = await firstValueFrom(
+        this.accountService.activeAccount$.pipe(map((a) => a?.id)),
+      );
+      const encrypted = await this.cipherService.encrypt(cipherView, activeUserId);
       await this.cipherService.createWithServer(encrypted);
 
       // Notify other clients of new login
@@ -197,14 +200,17 @@ export class EncryptedMessageHandlerService {
       if (cipher === null) {
         return { status: "failure" };
       }
+      const activeUserId = await firstValueFrom(
+        this.accountService.activeAccount$.pipe(map((a) => a?.id)),
+      );
       const cipherView = await cipher.decrypt(
-        await this.cipherService.getKeyForCipherKeyDecryption(cipher),
+        await this.cipherService.getKeyForCipherKeyDecryption(cipher, activeUserId),
       );
       cipherView.name = credentialUpdatePayload.name;
       cipherView.login.password = credentialUpdatePayload.password;
       cipherView.login.username = credentialUpdatePayload.userName;
       cipherView.login.uris[0].uri = credentialUpdatePayload.uri;
-      const encrypted = await this.cipherService.encrypt(cipherView);
+      const encrypted = await this.cipherService.encrypt(cipherView, activeUserId);
 
       await this.cipherService.updateWithServer(encrypted);
 

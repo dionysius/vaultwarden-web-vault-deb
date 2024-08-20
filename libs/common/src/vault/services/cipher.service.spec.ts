@@ -121,6 +121,8 @@ describe("Cipher Service", () => {
   accountService = mockAccountServiceWith(mockUserId);
   const stateProvider = new FakeStateProvider(accountService);
 
+  const userId = "TestUserId" as UserId;
+
   let cipherService: CipherService;
   let cipherObj: Cipher;
 
@@ -168,7 +170,7 @@ describe("Cipher Service", () => {
 
       const spy = jest.spyOn(cipherFileUploadService, "upload");
 
-      await cipherService.saveAttachmentRawWithServer(new Cipher(), fileName, fileData);
+      await cipherService.saveAttachmentRawWithServer(new Cipher(), fileName, fileData, userId);
 
       expect(spy).toHaveBeenCalled();
     });
@@ -283,7 +285,7 @@ describe("Cipher Service", () => {
           { uri: "uri", match: UriMatchStrategy.RegularExpression } as LoginUriView,
         ];
 
-        const domain = await cipherService.encrypt(cipherView);
+        const domain = await cipherService.encrypt(cipherView, userId);
 
         expect(domain.login.uris).toEqual([
           {
@@ -299,7 +301,7 @@ describe("Cipher Service", () => {
       it("is null when enableCipherKeyEncryption flag is false", async () => {
         setEncryptionKeyFlag(false);
 
-        const cipher = await cipherService.encrypt(cipherView);
+        const cipher = await cipherService.encrypt(cipherView, userId);
 
         expect(cipher.key).toBeNull();
       });
@@ -307,7 +309,7 @@ describe("Cipher Service", () => {
       it("is defined when enableCipherKeyEncryption flag is true", async () => {
         setEncryptionKeyFlag(true);
 
-        const cipher = await cipherService.encrypt(cipherView);
+        const cipher = await cipherService.encrypt(cipherView, userId);
 
         expect(cipher.key).toBeDefined();
       });
@@ -321,7 +323,7 @@ describe("Cipher Service", () => {
       it("is not called when enableCipherKeyEncryption is false", async () => {
         setEncryptionKeyFlag(false);
 
-        await cipherService.encrypt(cipherView);
+        await cipherService.encrypt(cipherView, userId);
 
         expect(cipherService["encryptCipherWithCipherKey"]).not.toHaveBeenCalled();
       });
@@ -329,7 +331,7 @@ describe("Cipher Service", () => {
       it("is called when enableCipherKeyEncryption is true", async () => {
         setEncryptionKeyFlag(true);
 
-        await cipherService.encrypt(cipherView);
+        await cipherService.encrypt(cipherView, userId);
 
         expect(cipherService["encryptCipherWithCipherKey"]).toHaveBeenCalled();
       });

@@ -1,4 +1,4 @@
-import { firstValueFrom } from "rxjs";
+import { firstValueFrom, map } from "rxjs";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { AuditService } from "@bitwarden/common/abstractions/audit.service";
@@ -6,6 +6,7 @@ import { EventCollectionService } from "@bitwarden/common/abstractions/event/eve
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions/account/billing-account-profile-state.service";
 import { EventType } from "@bitwarden/common/enums";
 import { CardExport } from "@bitwarden/common/models/export/card.export";
@@ -62,6 +63,7 @@ export class GetCommand extends DownloadCommand {
     private organizationService: OrganizationService,
     private eventCollectionService: EventCollectionService,
     private accountProfileService: BillingAccountProfileStateService,
+    private accountService: AccountService,
   ) {
     super(cryptoService);
   }
@@ -110,9 +112,12 @@ export class GetCommand extends DownloadCommand {
     let decCipher: CipherView = null;
     if (Utils.isGuid(id)) {
       const cipher = await this.cipherService.get(id);
+      const activeUserId = await firstValueFrom(
+        this.accountService.activeAccount$.pipe(map((a) => a?.id)),
+      );
       if (cipher != null) {
         decCipher = await cipher.decrypt(
-          await this.cipherService.getKeyForCipherKeyDecryption(cipher),
+          await this.cipherService.getKeyForCipherKeyDecryption(cipher, activeUserId),
         );
       }
     } else if (id.trim() !== "") {

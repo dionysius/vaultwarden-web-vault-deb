@@ -3,6 +3,7 @@ import { firstValueFrom } from "rxjs";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions/account/billing-account-profile-state.service";
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
@@ -12,6 +13,7 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
+import { UserId } from "@bitwarden/common/types/guid";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CipherData } from "@bitwarden/common/vault/models/data/cipher.data";
 import { Cipher } from "@bitwarden/common/vault/models/domain/cipher";
@@ -41,6 +43,7 @@ export class AttachmentsComponent extends BaseAttachmentsComponent implements On
     fileDownloadService: FileDownloadService,
     dialogService: DialogService,
     billingAccountProfileStateService: BillingAccountProfileStateService,
+    accountService: AccountService,
     private configService: ConfigService,
   ) {
     super(
@@ -54,6 +57,7 @@ export class AttachmentsComponent extends BaseAttachmentsComponent implements On
       fileDownloadService,
       dialogService,
       billingAccountProfileStateService,
+      accountService,
     );
   }
 
@@ -81,10 +85,11 @@ export class AttachmentsComponent extends BaseAttachmentsComponent implements On
     return new Cipher(new CipherData(response));
   }
 
-  protected saveCipherAttachment(file: File) {
+  protected saveCipherAttachment(file: File, userId: UserId) {
     return this.cipherService.saveAttachmentWithServer(
       this.cipherDomain,
       file,
+      userId,
       this.organization.canEditAllCiphers(this.restrictProviderAccess),
     );
   }

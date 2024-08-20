@@ -10,6 +10,7 @@ import {
   switchMap,
 } from "rxjs";
 
+import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
@@ -72,6 +73,7 @@ export class VaultPopupAutofillService {
     private passwordRepromptService: PasswordRepromptService,
     private cipherService: CipherService,
     private messagingService: MessagingService,
+    private accountService: AccountService,
   ) {
     this._currentPageDetails$.subscribe();
   }
@@ -221,7 +223,10 @@ export class VaultPopupAutofillService {
     cipher.login.uris.push(loginUri);
 
     try {
-      const encCipher = await this.cipherService.encrypt(cipher);
+      const activeUserId = await firstValueFrom(
+        this.accountService.activeAccount$.pipe(map((a) => a?.id)),
+      );
+      const encCipher = await this.cipherService.encrypt(cipher, activeUserId);
       await this.cipherService.updateWithServer(encCipher);
       this.messagingService.send("editedCipher");
       return true;
