@@ -64,6 +64,7 @@ export default {
               skipToContent: "Skip to content",
               submenu: "submenu",
               toggleCollapse: "toggle collapse",
+              toggleSideNavigation: "toggle side navigation",
             });
           },
         },

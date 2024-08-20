@@ -1,5 +1,14 @@
 import { Meta, Story, Source } from "@storybook/addon-docs";
 
+import * as formStories from "./form.stories";
+import * as fieldStories from "../form-field/form-field.stories";
+import * as passwordToggleStories from "../form-field/password-input-toggle.stories";
+import * as searchStories from "../search/search.stories";
+import * as selectStories from "../select/select.stories";
+import * as multiSelectStories from "../form-field/multi-select.stories";
+import * as radioStories from "../radio-button/radio-button.stories";
+import * as checkboxStories from "../checkbox/checkbox.stories";
+
 <Meta title="Component Library/Form" />
 
 # Forms
@@ -8,9 +17,9 @@ Component Library forms should always be built using [Angular Reactive Forms][re
 [ADR-0001][adr-0001] for a background to this decision. In practice this means that forms should
 always use the native `form` element and bind a `formGroup`.
 
-<Story id="component-library-form--full-example" />
+<Story of={formStories.FullExample} />
 
-<Source id="component-library-form--full-example" />
+<br />
 
 ## Form spacing and sections
 
@@ -48,25 +57,25 @@ controls like email verification, number selection, and more.
 
 #### Default with required attribute
 
-<Story id="component-library-form-field--default" />
+<Story of={fieldStories.Default} />
 
 #### Password Toggle
 
-<Story id="component-library-form-password-toggle--default" />
+<Story of={passwordToggleStories.Default} />
 
-#### Search
+### Search
 
-<Story id="component-library-form-search--default" />
+<Story of={searchStories.Default} />
 
 ### Selects
 
 #### Searchable single select (default)
 
-<Story id="component-library-form-select--default" />
+<Story of={selectStories.Default} />
 
 #### Multi-select
 
-<Story id="component-library-form-multi-select--members" />
+<Story of={multiSelectStories.Members} />
 
 ### Radio group
 
@@ -89,14 +98,11 @@ using a radio group for more than 5 options even if the options require addition
 
 #### Block
 
-<Story id="component-library-form-radio-button--block" />
+<Story of={radioStories.Block} />
 
 #### Inline
 
-<Story id="component-library-form-radio-button--inline" />
-
-[reactive]: https://angular.io/guide/reactive-forms
-[adr-0001]: https://contributing.bitwarden.com/architecture/adr/reactive-forms
+<Story of={radioStories.Inline} />
 
 ### Checkbox
 
@@ -116,7 +122,7 @@ If a checkbox group has more than 4 options a
 
 #### Single checkbox
 
-<Story id="component-library-form-checkbox--default" />
+<Story of={checkboxStories.Default} />
 
 ## Accessibility
 
@@ -176,3 +182,6 @@ the field’s label.
   Maintain a ratio of 3:1 with the form's background.
 - Error styling should not rely only on using the `danger-600`color change. Use
   <i class="bwi bwi-error"></i> as a prefix to highlight the text as error text versus helper
+
+[reactive]: https://angular.io/guide/reactive-forms
+[adr-0001]: https://contributing.bitwarden.com/architecture/adr/reactive-forms
