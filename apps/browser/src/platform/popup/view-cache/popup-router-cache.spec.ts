@@ -65,6 +65,16 @@ describe("Popup router cache guard", () => {
     expect(response).toBe(true);
   });
 
+  it("returns true if the history stack is null", async () => {
+    await service.setHistory(null);
+
+    const response = await firstValueFrom(
+      testBed.runInInjectionContext(() => popupRouterCacheGuard()),
+    );
+
+    expect(response).toBe(true);
+  });
+
   it("redirects to the latest stored route", async () => {
     await router.navigate(["a"]);
     await router.navigate(["b"]);

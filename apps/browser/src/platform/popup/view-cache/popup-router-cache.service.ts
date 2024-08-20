@@ -7,7 +7,7 @@ import {
   Router,
   UrlSerializer,
 } from "@angular/router";
-import { filter, first, firstValueFrom, map, Observable, of, switchMap } from "rxjs";
+import { filter, first, firstValueFrom, map, Observable, of, switchMap, tap } from "rxjs";
 
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
@@ -29,16 +29,25 @@ export class PopupRouterCacheService {
   private state = inject(GlobalStateProvider).get(POPUP_ROUTE_HISTORY_KEY);
   private location = inject(Location);
 
+  private hasNavigated = false;
+
   constructor() {
     // init history with existing state
     this.history$()
       .pipe(first())
-      .subscribe((history) => history.forEach((location) => this.location.go(location)));
+      .subscribe(
+        (history) =>
+          Array.isArray(history) && history.forEach((location) => this.location.go(location)),
+      );
 
     // update state when route change occurs
     this.router.events
       .pipe(
         filter((event) => event instanceof NavigationEnd),
+        tap(() => {
+          // `Location.back()` can now be called successfully
+          this.hasNavigated = true;
+        }),
         filter((_event: NavigationEnd) => {
           const state: ActivatedRouteSnapshot = this.router.routerState.snapshot.root;
 
@@ -77,7 +86,7 @@ export class PopupRouterCacheService {
   /**
    * If in browser popup, push new route onto history stack
    */
-  private async push(url: string): Promise<boolean> {
+  private async push(url: string) {
     if (!BrowserPopupUtils.inPopup(window) || url === (await firstValueFrom(this.last$()))) {
       return;
     }
@@ -88,11 +97,10 @@ export class PopupRouterCacheService {
    * Navigate back in history
    */
   async back() {
-    await this.state.update((prevState) => prevState.slice(0, -1));
+    await this.state.update((prevState) => (prevState ? prevState.slice(0, -1) : []));
 
-    const url = this.router.url;
-    this.location.back();
-    if (url !== this.router.url) {
+    if (this.hasNavigated) {
+      this.location.back();
       return;
     }
 

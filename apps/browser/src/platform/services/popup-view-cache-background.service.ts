@@ -6,6 +6,7 @@ import {
   GlobalStateProvider,
 } from "@bitwarden/common/platform/state";
 
+import { BrowserApi } from "../browser/browser-api";
 import { fromChromeEvent } from "../browser/from-chrome-event";
 
 const popupClosedPortName = "new_popup";
@@ -27,7 +28,7 @@ export class PopupViewCacheBackgroundService {
     merge(
       // on tab changed, excluding extension tabs
       fromChromeEvent(chrome.tabs.onActivated).pipe(
-        switchMap(([tabInfo]) => chrome.tabs.get(tabInfo.tabId)),
+        switchMap(([tabInfo]) => BrowserApi.getTab(tabInfo.tabId)),
         map((tab) => tab.url || tab.pendingUrl),
         filter((url) => !url.startsWith(chrome.runtime.getURL(""))),
       ),
