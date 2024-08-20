@@ -94,16 +94,13 @@ export class OpenAttachmentsComponent implements OnInit {
       return;
     }
 
+    await this.router.navigate(["/attachments"], { queryParams: { cipherId: this.cipherId } });
+
+    // Open the attachments page in a popout
+    // This is done after the router navigation to ensure that the navigation
+    // is included in the `PopupRouterCacheService` history
     if (this.openAttachmentsInPopout) {
-      const destinationUrl = this.router
-        .createUrlTree(["/attachments"], { queryParams: { cipherId: this.cipherId } })
-        .toString();
-
-      const currentBaseUrl = window.location.href.replace(this.router.url, "");
-
-      await BrowserPopupUtils.openCurrentPagePopout(window, currentBaseUrl + destinationUrl);
-    } else {
-      await this.router.navigate(["/attachments"], { queryParams: { cipherId: this.cipherId } });
+      await BrowserPopupUtils.openCurrentPagePopout(window);
     }
   }
 }

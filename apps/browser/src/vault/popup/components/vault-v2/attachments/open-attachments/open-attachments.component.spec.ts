@@ -102,11 +102,10 @@ describe("OpenAttachmentsComponent", () => {
 
     await component.openAttachments();
 
-    expect(router.navigate).not.toHaveBeenCalled();
-    expect(openCurrentPagePopout).toHaveBeenCalledWith(
-      window,
-      "http:/localhost//attachments?cipherId=5555-444-3333",
-    );
+    expect(router.navigate).toHaveBeenCalledWith(["/attachments"], {
+      queryParams: { cipherId: "5555-444-3333" },
+    });
+    expect(openCurrentPagePopout).toHaveBeenCalledWith(window);
   });
 
   it("opens attachments in same window", async () => {
