@@ -14,6 +14,7 @@ import { InternalMasterPasswordServiceAbstraction } from "@bitwarden/common/auth
 import { SsoLoginServiceAbstraction } from "@bitwarden/common/auth/abstractions/sso-login.service.abstraction";
 import { BroadcasterService } from "@bitwarden/common/platform/abstractions/broadcaster.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
+import { EncryptService } from "@bitwarden/common/platform/abstractions/encrypt.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
@@ -54,6 +55,7 @@ export class SetPasswordComponent extends BaseSetPasswordComponent implements On
     ssoLoginService: SsoLoginServiceAbstraction,
     dialogService: DialogService,
     kdfConfigService: KdfConfigService,
+    encryptService: EncryptService,
   ) {
     super(
       accountService,
@@ -76,6 +78,7 @@ export class SetPasswordComponent extends BaseSetPasswordComponent implements On
       ssoLoginService,
       dialogService,
       kdfConfigService,
+      encryptService,
     );
   }
 
