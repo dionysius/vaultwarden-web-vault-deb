@@ -74,7 +74,7 @@ export class PremiumV2Component extends BasePremiumComponent {
     const formattedPrice = this.platformUtilsService.isSafari()
       ? thePrice.replace("$", "$$$")
       : thePrice;
-    this.priceString = i18nService.t("premiumPrice", formattedPrice);
+    this.priceString = i18nService.t("premiumPriceV2", formattedPrice);
     if (this.priceString.indexOf("%price%") > -1) {
       this.priceString = this.priceString.replace("%price%", thePrice);
     }
