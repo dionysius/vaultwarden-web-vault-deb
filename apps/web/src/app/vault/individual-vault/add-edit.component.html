@@ -23,6 +23,9 @@
         <bit-callout type="info" *ngIf="allowOwnershipAssignment() && !allowPersonal">
           {{ "personalOwnershipPolicyInEffect" | i18n }}
         </bit-callout>
+        <bit-callout *ngIf="cardIsExpired" type="info" [title]="'cardExpiredTitle' | i18n">
+          {{ "cardExpiredMessage" | i18n }}
+        </bit-callout>
         <div class="row" *ngIf="!editMode && !viewOnly">
           <div class="col-6 form-group">
             <label for="type">{{ "whatTypeOfItem" | i18n }}</label>

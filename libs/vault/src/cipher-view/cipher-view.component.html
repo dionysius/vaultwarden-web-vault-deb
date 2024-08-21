@@ -1,4 +1,8 @@
 <ng-container *ngIf="!!cipher">
+  <bit-callout *ngIf="cardIsExpired" type="info" [title]="'cardExpiredTitle' | i18n">
+    {{ "cardExpiredMessage" | i18n }}
+  </bit-callout>
+
   <!-- ITEM DETAILS -->
   <app-item-details-v2
     [cipher]="cipher"
