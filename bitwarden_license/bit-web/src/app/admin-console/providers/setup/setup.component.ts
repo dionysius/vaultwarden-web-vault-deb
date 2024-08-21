@@ -7,7 +7,6 @@ import { first, takeUntil } from "rxjs/operators";
 import { ManageTaxInformationComponent } from "@bitwarden/angular/billing/components";
 import { ProviderApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/provider/provider-api.service.abstraction";
 import { ProviderSetupRequest } from "@bitwarden/common/admin-console/models/request/provider/provider-setup.request";
-import { TaxInformation } from "@bitwarden/common/billing/models/domain";
 import { ExpandedTaxInfoUpdateRequest } from "@bitwarden/common/billing/models/request/expanded-tax-info-update.request";
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
@@ -34,12 +33,6 @@ export class SetupComponent implements OnInit, OnDestroy {
     name: ["", Validators.required],
     billingEmail: ["", [Validators.required, Validators.email]],
   });
-
-  protected readonly TaxInformation = TaxInformation;
-
-  protected showPaymentMethodWarningBanners$ = this.configService.getFeatureFlag$(
-    FeatureFlag.ShowPaymentMethodWarningBanners,
-  );
 
   protected enableConsolidatedBilling$ = this.configService.getFeatureFlag$(
     FeatureFlag.EnableConsolidatedBilling,

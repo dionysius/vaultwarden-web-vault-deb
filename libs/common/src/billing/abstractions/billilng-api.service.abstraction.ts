@@ -8,7 +8,6 @@ import { PaymentInformationResponse } from "@bitwarden/common/billing/models/res
 
 import { SubscriptionCancellationRequest } from "../../billing/models/request/subscription-cancellation.request";
 import { OrganizationBillingMetadataResponse } from "../../billing/models/response/organization-billing-metadata.response";
-import { OrganizationBillingStatusResponse } from "../../billing/models/response/organization-billing-status.response";
 import { PlanResponse } from "../../billing/models/response/plan.response";
 import { ListResponse } from "../../models/response/list.response";
 import { CreateClientOrganizationRequest } from "../models/request/create-client-organization.request";
@@ -33,8 +32,6 @@ export abstract class BillingApiServiceAbstraction {
   getOrganizationBillingMetadata: (
     organizationId: string,
   ) => Promise<OrganizationBillingMetadataResponse>;
-
-  getOrganizationBillingStatus: (id: string) => Promise<OrganizationBillingStatusResponse>;
 
   getPlans: () => Promise<ListResponse<PlanResponse>>;
 

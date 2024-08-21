@@ -61,7 +61,6 @@ import { VerifyEmailTokenComponent } from "../auth/verify-email-token.component"
 import { VerifyRecoverDeleteComponent } from "../auth/verify-recover-delete.component";
 import { SponsoredFamiliesComponent } from "../billing/settings/sponsored-families.component";
 import { SponsoringOrgRowComponent } from "../billing/settings/sponsoring-org-row.component";
-import { PaymentMethodWarningsModule } from "../billing/shared";
 import { DynamicAvatarComponent } from "../components/dynamic-avatar.component";
 import { SelectableAvatarComponent } from "../components/selectable-avatar.component";
 import { FrontendLayoutComponent } from "../layouts/frontend-layout.component";
@@ -113,7 +112,6 @@ import { SharedModule } from "./shared.module";
     HeaderModule,
     OrganizationLayoutComponent,
     UserLayoutComponent,
-    PaymentMethodWarningsModule,
     VerifyRecoverDeleteOrgComponent,
     VaultTimeoutInputComponent,
   ],

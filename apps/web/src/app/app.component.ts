@@ -2,17 +2,7 @@ import { DOCUMENT } from "@angular/common";
 import { Component, Inject, NgZone, OnDestroy, OnInit } from "@angular/core";
 import { NavigationEnd, Router } from "@angular/router";
 import * as jq from "jquery";
-import {
-  Subject,
-  combineLatest,
-  filter,
-  firstValueFrom,
-  map,
-  switchMap,
-  takeUntil,
-  timeout,
-  timer,
-} from "rxjs";
+import { Subject, filter, firstValueFrom, map, takeUntil, timeout } from "rxjs";
 
 import { LogoutReason } from "@bitwarden/auth/common";
 import { EventUploadService } from "@bitwarden/common/abstractions/event/event-upload.service";
@@ -25,8 +15,6 @@ import { AccountService } from "@bitwarden/common/auth/abstractions/account.serv
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { KeyConnectorService } from "@bitwarden/common/auth/abstractions/key-connector.service";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
-import { PaymentMethodWarningsServiceAbstraction as PaymentMethodWarningService } from "@bitwarden/common/billing/abstractions/payment-method-warnings-service.abstraction";
-import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { BroadcasterService } from "@bitwarden/common/platform/abstractions/broadcaster.service";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
@@ -58,7 +46,6 @@ import {
 
 const BroadcasterSubscriptionId = "AppComponent";
 const IdleTimeout = 60000 * 10; // 10 minutes
-const PaymentMethodWarningsRefresh = 60000; // 1 Minute
 
 @Component({
   selector: "app-root",
@@ -69,7 +56,6 @@ export class AppComponent implements OnDestroy, OnInit {
   private idleTimer: number = null;
   private isIdle = false;
   private destroy$ = new Subject<void>();
-  private paymentMethodWarningsRefresh$ = timer(0, PaymentMethodWarningsRefresh);
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
@@ -98,7 +84,6 @@ export class AppComponent implements OnDestroy, OnInit {
     private dialogService: DialogService,
     private biometricStateService: BiometricStateService,
     private stateEventRunnerService: StateEventRunnerService,
-    private paymentMethodWarningService: PaymentMethodWarningService,
     private organizationService: InternalOrganizationServiceAbstraction,
     private accountService: AccountService,
   ) {}
@@ -252,25 +237,6 @@ export class AppComponent implements OnDestroy, OnInit {
       new DisableSendPolicy(),
       new SendOptionsPolicy(),
     ]);
-
-    combineLatest([
-      this.configService.getFeatureFlag$(FeatureFlag.ShowPaymentMethodWarningBanners),
-      this.paymentMethodWarningsRefresh$,
-    ])
-      .pipe(
-        filter(([showPaymentMethodWarningBanners]) => showPaymentMethodWarningBanners),
-        switchMap(() => this.organizationService.memberOrganizations$),
-        switchMap(
-          async (organizations) =>
-            await Promise.all(
-              organizations.map((organization) =>
-                this.paymentMethodWarningService.update(organization.id),
-              ),
-            ),
-        ),
-        takeUntil(this.destroy$),
-      )
-      .subscribe();
   }
 
   ngOnDestroy() {
@@ -328,7 +294,6 @@ export class AppComponent implements OnDestroy, OnInit {
       this.folderService.clear(userId),
       this.collectionService.clear(userId),
       this.biometricStateService.logout(userId),
-      this.paymentMethodWarningService.clear(),
     ]);
 
     await this.stateEventRunnerService.handleEvent("logout", userId);

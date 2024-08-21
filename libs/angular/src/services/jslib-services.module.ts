@@ -123,14 +123,12 @@ import {
   BillingApiServiceAbstraction,
   BraintreeServiceAbstraction,
   OrganizationBillingServiceAbstraction,
-  PaymentMethodWarningsServiceAbstraction,
   StripeServiceAbstraction,
 } from "@bitwarden/common/billing/abstractions";
 import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions/account/billing-account-profile-state.service";
 import { DefaultBillingAccountProfileStateService } from "@bitwarden/common/billing/services/account/billing-account-profile-state.service";
 import { BillingApiService } from "@bitwarden/common/billing/services/billing-api.service";
 import { OrganizationBillingService } from "@bitwarden/common/billing/services/organization-billing.service";
-import { PaymentMethodWarningsService } from "@bitwarden/common/billing/services/payment-method-warnings.service";
 import { BraintreeService } from "@bitwarden/common/billing/services/payment-processors/braintree.service";
 import { StripeService } from "@bitwarden/common/billing/services/payment-processors/stripe.service";
 import { AppIdService as AppIdServiceAbstraction } from "@bitwarden/common/platform/abstractions/app-id.service";
@@ -1200,11 +1198,6 @@ const safeProviders: SafeProvider[] = [
     provide: BillingApiServiceAbstraction,
     useClass: BillingApiService,
     deps: [ApiServiceAbstraction, LogService, ToastService],
-  }),
-  safeProvider({
-    provide: PaymentMethodWarningsServiceAbstraction,
-    useClass: PaymentMethodWarningsService,
-    deps: [BillingApiServiceAbstraction, StateProvider],
   }),
   safeProvider({
     provide: BillingAccountProfileStateService,

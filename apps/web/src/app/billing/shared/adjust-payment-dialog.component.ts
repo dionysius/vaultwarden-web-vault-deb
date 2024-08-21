@@ -1,14 +1,11 @@
 import { DIALOG_DATA, DialogConfig, DialogRef } from "@angular/cdk/dialog";
 import { Component, Inject, ViewChild } from "@angular/core";
 import { FormGroup } from "@angular/forms";
-import { firstValueFrom } from "rxjs";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
-import { PaymentMethodWarningsServiceAbstraction as PaymentMethodWarningService } from "@bitwarden/common/billing/abstractions/payment-method-warnings-service.abstraction";
 import { PaymentMethodType } from "@bitwarden/common/billing/enums";
 import { PaymentRequest } from "@bitwarden/common/billing/models/request/payment.request";
-import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { DialogService, ToastService } from "@bitwarden/components";
@@ -46,7 +43,6 @@ export class AdjustPaymentDialogComponent {
     private apiService: ApiService,
     private i18nService: I18nService,
     private organizationApiService: OrganizationApiServiceAbstraction,
-    private paymentMethodWarningService: PaymentMethodWarningService,
     private configService: ConfigService,
     private toastService: ToastService,
   ) {
@@ -78,12 +74,6 @@ export class AdjustPaymentDialogComponent {
       }
     });
     await response;
-    const showPaymentMethodWarningBanners = await firstValueFrom(
-      this.configService.getFeatureFlag$(FeatureFlag.ShowPaymentMethodWarningBanners),
-    );
-    if (this.organizationId && showPaymentMethodWarningBanners) {
-      await this.paymentMethodWarningService.removeSubscriptionRisk(this.organizationId);
-    }
     this.toastService.showToast({
       variant: "success",
       title: null,

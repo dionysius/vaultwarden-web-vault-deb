@@ -12,7 +12,6 @@ import { SubscriptionCancellationRequest } from "../../billing/models/request/su
 import { TokenizedPaymentMethodRequest } from "../../billing/models/request/tokenized-payment-method.request";
 import { VerifyBankAccountRequest } from "../../billing/models/request/verify-bank-account.request";
 import { OrganizationBillingMetadataResponse } from "../../billing/models/response/organization-billing-metadata.response";
-import { OrganizationBillingStatusResponse } from "../../billing/models/response/organization-billing-status.response";
 import { PaymentInformationResponse } from "../../billing/models/response/payment-information.response";
 import { PlanResponse } from "../../billing/models/response/plan.response";
 import { ListResponse } from "../../models/response/list.response";
@@ -70,17 +69,6 @@ export class BillingApiService implements BillingApiServiceAbstraction {
     };
     const response = await this.apiService.send("POST", getPath(), null, true, true);
     return response as string;
-  }
-
-  async getOrganizationBillingStatus(id: string): Promise<OrganizationBillingStatusResponse> {
-    const r = await this.apiService.send(
-      "GET",
-      "/organizations/" + id + "/billing-status",
-      null,
-      true,
-      true,
-    );
-    return new OrganizationBillingStatusResponse(r);
   }
 
   async getOrganizationBillingMetadata(
