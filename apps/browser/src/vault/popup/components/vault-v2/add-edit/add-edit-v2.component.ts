@@ -151,10 +151,10 @@ export class AddEditV2Component implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private popupRouterCacheService: PopupRouterCacheService,
     private i18nService: I18nService,
     private addEditFormConfigService: CipherFormConfigService,
     private popupCloseWarningService: PopupCloseWarningService,
+    private popupRouterCacheService: PopupRouterCacheService,
     private router: Router,
   ) {
     this.subscribeToParams();
@@ -183,11 +183,7 @@ export class AddEditV2Component implements OnInit {
   };
 
   /**
-   * Navigates to previous view or view-cipher path
-   * depending on the history length.
-   *
-   * This can happen when history is lost due to the extension being
-   * forced into a popout window.
+   * Handle back button
    */
   async handleBackButton() {
     if (this.inFido2PopoutWindow) {
@@ -223,10 +219,18 @@ export class AddEditV2Component implements OnInit {
       return;
     }
 
-    await this.router.navigate(["/view-cipher"], {
-      replaceUrl: true,
-      queryParams: { cipherId: cipher.id },
-    });
+    // When the cipher is in edit / partial edit, the previous page was the view-cipher page.
+    // In the case of creating a new cipher, the user should go view-cipher page but we need to also
+    // remove it from the history stack. This avoids the user having to click back twice on the
+    // view-cipher page.
+    if (this.config.mode === "edit" || this.config.mode === "partial-edit") {
+      await this.popupRouterCacheService.back();
+    } else {
+      await this.router.navigate(["/view-cipher"], {
+        replaceUrl: true,
+        queryParams: { cipherId: cipher.id },
+      });
+    }
   }
 
   subscribeToParams(): void {
