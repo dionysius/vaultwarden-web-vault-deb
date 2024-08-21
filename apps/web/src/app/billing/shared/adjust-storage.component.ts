@@ -10,7 +10,7 @@ import { StorageRequest } from "@bitwarden/common/models/request/storage.request
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 
 import { PaymentComponent } from "./payment.component";
 
@@ -56,6 +56,7 @@ export class AdjustStorageComponent {
     private activatedRoute: ActivatedRoute,
     private logService: LogService,
     private organizationApiService: OrganizationApiServiceAbstraction,
+    private toastService: ToastService,
   ) {
     this.storageGbPrice = data.storageGbPrice;
     this.add = data.add;
@@ -93,21 +94,21 @@ export class AdjustStorageComponent {
     await action();
     this.dialogRef.close(AdjustStorageDialogResult.Adjusted);
     if (paymentFailed) {
-      this.platformUtilsService.showToast(
-        "warning",
-        null,
-        this.i18nService.t("couldNotChargeCardPayInvoice"),
-        { timeout: 10000 },
-      );
+      this.toastService.showToast({
+        variant: "warning",
+        title: null,
+        message: this.i18nService.t("couldNotChargeCardPayInvoice"),
+        timeout: 10000,
+      });
       // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
       // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.router.navigate(["../billing"], { relativeTo: this.activatedRoute });
     } else {
-      this.platformUtilsService.showToast(
-        "success",
-        null,
-        this.i18nService.t("adjustedStorage", request.storageGbAdjustment.toString()),
-      );
+      this.toastService.showToast({
+        variant: "success",
+        title: null,
+        message: this.i18nService.t("adjustedStorage", request.storageGbAdjustment.toString()),
+      });
     }
   };
 

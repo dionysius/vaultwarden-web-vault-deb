@@ -13,7 +13,7 @@ import { VerifyBankRequest } from "@bitwarden/common/models/request/verify-bank.
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 
 import { AddCreditDialogResult, openAddCreditDialog } from "./add-credit-dialog.component";
 import {
@@ -63,6 +63,7 @@ export class PaymentMethodComponent implements OnInit {
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
     private dialogService: DialogService,
+    private toastService: ToastService,
   ) {}
 
   async ngOnInit() {
@@ -144,13 +145,21 @@ export class PaymentMethodComponent implements OnInit {
     request.amount1 = this.verifyBankForm.value.amount1;
     request.amount2 = this.verifyBankForm.value.amount2;
     await this.organizationApiService.verifyBank(this.organizationId, request);
-    this.platformUtilsService.showToast("success", null, this.i18nService.t("verifiedBankAccount"));
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("verifiedBankAccount"),
+    });
     await this.load();
   };
 
   submitTaxInfo = async () => {
     await this.taxInfo.submitTaxInfo();
-    this.platformUtilsService.showToast("success", null, this.i18nService.t("taxInfoUpdated"));
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("taxInfoUpdated"),
+    });
   };
 
   get isCreditBalance() {

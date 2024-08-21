@@ -37,6 +37,7 @@ import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 import { SymmetricCryptoKey } from "@bitwarden/common/platform/models/domain/symmetric-crypto-key";
 import { OrgKey } from "@bitwarden/common/types/key";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
+import { ToastService } from "@bitwarden/components";
 
 import { OrganizationCreateModule } from "../../admin-console/organizations/create/organization-create.module";
 import { BillingSharedModule, secretsManagerSubscribeFormFactory } from "../shared";
@@ -150,6 +151,7 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
     private formBuilder: FormBuilder,
     private organizationApiService: OrganizationApiServiceAbstraction,
     private providerApiService: ProviderApiServiceAbstraction,
+    private toastService: ToastService,
   ) {
     this.selfHosted = platformUtilsService.isSelfHost();
   }
@@ -582,18 +584,18 @@ export class OrganizationPlansComponent implements OnInit, OnDestroy {
           orgId = await this.createCloudHosted(key, collectionCt, orgKeys, orgKey[1]);
         }
 
-        this.platformUtilsService.showToast(
-          "success",
-          this.i18nService.t("organizationCreated"),
-          this.i18nService.t("organizationReadyToGo"),
-        );
+        this.toastService.showToast({
+          variant: "success",
+          title: this.i18nService.t("organizationCreated"),
+          message: this.i18nService.t("organizationReadyToGo"),
+        });
       } else {
         orgId = await this.updateOrganization(orgId);
-        this.platformUtilsService.showToast(
-          "success",
-          null,
-          this.i18nService.t("organizationUpgraded"),
-        );
+        this.toastService.showToast({
+          variant: "success",
+          title: null,
+          message: this.i18nService.t("organizationUpgraded"),
+        });
       }
 
       await this.apiService.refreshIdentityToken();

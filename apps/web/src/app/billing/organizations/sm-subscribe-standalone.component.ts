@@ -11,6 +11,7 @@ import { BillingCustomerDiscount } from "@bitwarden/common/billing/models/respon
 import { PlanResponse } from "@bitwarden/common/billing/models/response/plan.response";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { ToastService } from "@bitwarden/components";
 
 import { secretsManagerSubscribeFormFactory } from "../shared";
 
@@ -33,6 +34,7 @@ export class SecretsManagerSubscribeStandaloneComponent {
     private i18nService: I18nService,
     private organizationApiService: OrganizationApiServiceAbstraction,
     private organizationService: InternalOrganizationServiceAbstraction,
+    private toastService: ToastService,
   ) {}
 
   submit = async () => {
@@ -60,11 +62,11 @@ export class SecretsManagerSubscribeStandaloneComponent {
     */
     await this.apiService.refreshIdentityToken();
 
-    this.platformUtilsService.showToast(
-      "success",
-      null,
-      this.i18nService.t("subscribedToSecretsManager"),
-    );
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("subscribedToSecretsManager"),
+    });
 
     this.onSubscribe.emit();
   };

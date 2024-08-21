@@ -18,6 +18,7 @@ import { PlanSponsorshipType } from "@bitwarden/common/billing/enums";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
+import { ToastService } from "@bitwarden/components";
 
 interface RequestSponsorshipForm {
   selectedSponsorshipOrgId: FormControl<string>;
@@ -51,6 +52,7 @@ export class SponsoredFamiliesComponent implements OnInit, OnDestroy {
     private organizationService: OrganizationService,
     private formBuilder: FormBuilder,
     private accountService: AccountService,
+    private toastService: ToastService,
   ) {
     this.sponsorshipForm = this.formBuilder.group<RequestSponsorshipForm>({
       selectedSponsorshipOrgId: new FormControl("", {
@@ -118,7 +120,11 @@ export class SponsoredFamiliesComponent implements OnInit, OnDestroy {
     );
 
     await this.formPromise;
-    this.platformUtilsService.showToast("success", null, this.i18nService.t("sponsorshipCreated"));
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("sponsorshipCreated"),
+    });
     this.formPromise = null;
     // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
     // eslint-disable-next-line @typescript-eslint/no-floating-promises

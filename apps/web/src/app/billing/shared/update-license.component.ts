@@ -6,6 +6,7 @@ import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-conso
 import { ProductTierType } from "@bitwarden/common/billing/enums";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { ToastService } from "@bitwarden/components";
 
 import { UpdateLicenseDialogResult } from "./update-license-types";
 
@@ -32,6 +33,7 @@ export class UpdateLicenseComponent implements OnInit {
     private platformUtilsService: PlatformUtilsService,
     private organizationApiService: OrganizationApiServiceAbstraction,
     private formBuilder: FormBuilder,
+    private toastService: ToastService,
   ) {}
   async ngOnInit() {
     const org = await this.organizationApiService.get(this.organizationId);
@@ -52,11 +54,11 @@ export class UpdateLicenseComponent implements OnInit {
     }
     const files = this.licenseFile;
     if (files == null) {
-      this.platformUtilsService.showToast(
-        "error",
-        this.i18nService.t("errorOccurred"),
-        this.i18nService.t("selectFile"),
-      );
+      this.toastService.showToast({
+        variant: "error",
+        title: this.i18nService.t("errorOccurred"),
+        message: this.i18nService.t("selectFile"),
+      });
       return;
     }
     const fd = new FormData();
@@ -74,11 +76,11 @@ export class UpdateLicenseComponent implements OnInit {
     });
 
     await this.formPromise;
-    this.platformUtilsService.showToast(
-      "success",
-      null,
-      this.i18nService.t("licenseUploadSuccess"),
-    );
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("licenseUploadSuccess"),
+    });
     this.onUpdated.emit();
     return new Promise((resolve) => resolve(UpdateLicenseDialogResult.Updated));
   };

@@ -6,6 +6,7 @@ import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-conso
 import { OrganizationSubscriptionUpdateRequest } from "@bitwarden/common/billing/models/request/organization-subscription-update.request";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { ToastService } from "@bitwarden/components";
 
 @Component({
   selector: "app-adjust-subscription",
@@ -33,6 +34,7 @@ export class AdjustSubscription implements OnInit, OnDestroy {
     private platformUtilsService: PlatformUtilsService,
     private organizationApiService: OrganizationApiServiceAbstraction,
     private formBuilder: FormBuilder,
+    private toastService: ToastService,
   ) {}
 
   ngOnInit() {
@@ -76,7 +78,11 @@ export class AdjustSubscription implements OnInit, OnDestroy {
     );
     await this.organizationApiService.updatePasswordManagerSeats(this.organizationId, request);
 
-    this.platformUtilsService.showToast("success", null, this.i18nService.t("subscriptionUpdated"));
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("subscriptionUpdated"),
+    });
 
     this.onAdjusted.emit();
   };

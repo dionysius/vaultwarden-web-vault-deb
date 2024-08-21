@@ -11,6 +11,7 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
+import { ToastService } from "@bitwarden/components";
 
 import { PaymentComponent, TaxInfoComponent } from "../shared";
 
@@ -46,6 +47,7 @@ export class PremiumComponent implements OnInit {
     private syncService: SyncService,
     private environmentService: EnvironmentService,
     private billingAccountProfileStateService: BillingAccountProfileStateService,
+    private toastService: ToastService,
   ) {
     this.selfHosted = platformUtilsService.isSelfHost();
     this.canAccessPremium$ = billingAccountProfileStateService.hasPremiumFromAnySource$;
@@ -75,11 +77,11 @@ export class PremiumComponent implements OnInit {
     this.addonForm.markAllAsTouched();
     if (this.selfHosted) {
       if (this.licenseFile == null) {
-        this.platformUtilsService.showToast(
-          "error",
-          this.i18nService.t("errorOccurred"),
-          this.i18nService.t("selectFile"),
-        );
+        this.toastService.showToast({
+          variant: "error",
+          title: this.i18nService.t("errorOccurred"),
+          message: this.i18nService.t("selectFile"),
+        });
         return;
       }
     }
@@ -87,11 +89,11 @@ export class PremiumComponent implements OnInit {
     if (this.selfHosted) {
       // eslint-disable-next-line @typescript-eslint/no-misused-promises
       if (!this.tokenService.getEmailVerified()) {
-        this.platformUtilsService.showToast(
-          "error",
-          this.i18nService.t("errorOccurred"),
-          this.i18nService.t("verifyEmailFirst"),
-        );
+        this.toastService.showToast({
+          variant: "error",
+          title: this.i18nService.t("errorOccurred"),
+          message: this.i18nService.t("verifyEmailFirst"),
+        });
         return;
       }
 
@@ -130,7 +132,11 @@ export class PremiumComponent implements OnInit {
   async finalizePremium() {
     await this.apiService.refreshIdentityToken();
     await this.syncService.fullSync(true);
-    this.platformUtilsService.showToast("success", null, this.i18nService.t("premiumUpdated"));
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("premiumUpdated"),
+    });
     await this.router.navigate(["/settings/subscription/user-subscription"]);
   }
 

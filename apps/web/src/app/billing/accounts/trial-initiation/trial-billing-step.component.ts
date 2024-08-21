@@ -14,6 +14,7 @@ import { PlanResponse } from "@bitwarden/common/billing/models/response/plan.res
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { ToastService } from "@bitwarden/components";
 
 import { BillingSharedModule, PaymentComponent, TaxInfoComponent } from "../../shared";
 
@@ -75,6 +76,7 @@ export class TrialBillingStepComponent implements OnInit {
     private messagingService: MessagingService,
     private organizationBillingService: OrganizationBillingService,
     private platformUtilsService: PlatformUtilsService,
+    private toastService: ToastService,
   ) {}
 
   async ngOnInit(): Promise<void> {
@@ -96,11 +98,11 @@ export class TrialBillingStepComponent implements OnInit {
     const organizationId = await this.formPromise;
     const planDescription = this.getPlanDescription();
 
-    this.platformUtilsService.showToast(
-      "success",
-      this.i18nService.t("organizationCreated"),
-      this.i18nService.t("organizationReadyToGo"),
-    );
+    this.toastService.showToast({
+      variant: "success",
+      title: this.i18nService.t("organizationCreated"),
+      message: this.i18nService.t("organizationReadyToGo"),
+    });
 
     this.organizationCreated.emit({
       organizationId,

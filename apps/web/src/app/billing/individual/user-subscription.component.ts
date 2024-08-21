@@ -10,7 +10,7 @@ import { FileDownloadService } from "@bitwarden/common/platform/abstractions/fil
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 
 import {
   AdjustStorageDialogResult,
@@ -48,6 +48,7 @@ export class UserSubscriptionComponent implements OnInit {
     private dialogService: DialogService,
     private environmentService: EnvironmentService,
     private billingAccountProfileStateService: BillingAccountProfileStateService,
+    private toastService: ToastService,
   ) {
     this.selfHosted = platformUtilsService.isSelfHost();
   }
@@ -94,7 +95,11 @@ export class UserSubscriptionComponent implements OnInit {
     try {
       this.reinstatePromise = this.apiService.postReinstatePremium();
       await this.reinstatePromise;
-      this.platformUtilsService.showToast("success", null, this.i18nService.t("reinstated"));
+      this.toastService.showToast({
+        variant: "success",
+        title: null,
+        message: this.i18nService.t("reinstated"),
+      });
       // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
       // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.load();

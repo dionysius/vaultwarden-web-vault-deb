@@ -16,7 +16,7 @@ import { EnvironmentService } from "@bitwarden/common/platform/abstractions/envi
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 
 import { BillingSyncKeyComponent } from "./billing-sync-key.component";
 
@@ -84,6 +84,7 @@ export class OrganizationSubscriptionSelfhostComponent implements OnInit, OnDest
     private i18nService: I18nService,
     private environmentService: EnvironmentService,
     private dialogService: DialogService,
+    private toastService: ToastService,
   ) {}
 
   async ngOnInit() {
@@ -169,7 +170,11 @@ export class OrganizationSubscriptionSelfhostComponent implements OnInit, OnDest
     this.load();
     await this.loadOrganizationConnection();
     this.messagingService.send("updatedOrgLicense");
-    this.platformUtilsService.showToast("success", null, this.i18nService.t("licenseSyncSuccess"));
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("licenseSyncSuccess"),
+    });
   };
 
   get billingSyncSetUp() {

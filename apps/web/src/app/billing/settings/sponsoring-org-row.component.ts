@@ -7,7 +7,7 @@ import { Organization } from "@bitwarden/common/admin-console/models/domain/orga
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 
 @Component({
   selector: "[sponsoring-org-row]",
@@ -30,6 +30,7 @@ export class SponsoringOrgRowComponent implements OnInit {
     private logService: LogService,
     private platformUtilsService: PlatformUtilsService,
     private dialogService: DialogService,
+    private toastService: ToastService,
   ) {}
 
   async ngOnInit() {
@@ -53,7 +54,11 @@ export class SponsoringOrgRowComponent implements OnInit {
 
   async resendEmail() {
     await this.apiService.postResendSponsorshipOffer(this.sponsoringOrg.id);
-    this.platformUtilsService.showToast("success", null, this.i18nService.t("emailSent"));
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("emailSent"),
+    });
   }
 
   get isSentAwaitingSync() {
@@ -73,7 +78,11 @@ export class SponsoringOrgRowComponent implements OnInit {
     }
 
     await this.apiService.deleteRevokeSponsorship(this.sponsoringOrg.id);
-    this.platformUtilsService.showToast("success", null, this.i18nService.t("reclaimedFreePlan"));
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("reclaimedFreePlan"),
+    });
     this.sponsorshipRemoved.emit();
   }
 

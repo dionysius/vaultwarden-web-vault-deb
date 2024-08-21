@@ -16,7 +16,7 @@ import { ConfigService } from "@bitwarden/common/platform/abstractions/config/co
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 
 import {
   AdjustStorageDialogResult,
@@ -82,6 +82,7 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
     private dialogService: DialogService,
     private configService: ConfigService,
     private providerService: ProviderService,
+    private toastService: ToastService,
   ) {}
 
   async ngOnInit() {
@@ -378,7 +379,11 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
 
     try {
       await this.organizationApiService.reinstate(this.organizationId);
-      this.platformUtilsService.showToast("success", null, this.i18nService.t("reinstated"));
+      this.toastService.showToast({
+        variant: "success",
+        title: null,
+        message: this.i18nService.t("reinstated"),
+      });
       // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
       // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.load();
@@ -475,11 +480,11 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
 
     try {
       await this.apiService.deleteRemoveSponsorship(this.organizationId);
-      this.platformUtilsService.showToast(
-        "success",
-        null,
-        this.i18nService.t("removeSponsorshipSuccess"),
-      );
+      this.toastService.showToast({
+        variant: "success",
+        title: null,
+        message: this.i18nService.t("removeSponsorshipSuccess"),
+      });
       await this.load();
     } catch (e) {
       this.logService.error(e);

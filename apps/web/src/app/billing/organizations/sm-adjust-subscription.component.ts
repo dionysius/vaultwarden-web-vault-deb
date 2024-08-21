@@ -6,6 +6,7 @@ import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-conso
 import { OrganizationSmSubscriptionUpdateRequest } from "@bitwarden/common/billing/models/request/organization-sm-subscription-update.request";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { ToastService } from "@bitwarden/components";
 
 export interface SecretsManagerSubscriptionOptions {
   interval: "year" | "month";
@@ -100,6 +101,7 @@ export class SecretsManagerAdjustSubscriptionComponent implements OnInit, OnDest
     private organizationApiService: OrganizationApiServiceAbstraction,
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
+    private toastService: ToastService,
   ) {}
 
   ngOnInit() {
@@ -158,11 +160,11 @@ export class SecretsManagerAdjustSubscriptionComponent implements OnInit, OnDest
       request,
     );
 
-    await this.platformUtilsService.showToast(
-      "success",
-      null,
-      this.i18nService.t("subscriptionUpdated"),
-    );
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("subscriptionUpdated"),
+    });
 
     this.onAdjusted.emit();
   };
