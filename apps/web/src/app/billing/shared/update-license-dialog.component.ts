@@ -6,7 +6,7 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 
 import { UpdateLicenseDialogResult } from "./update-license-types";
 import { UpdateLicenseComponent } from "./update-license.component";
@@ -22,8 +22,16 @@ export class UpdateLicenseDialogComponent extends UpdateLicenseComponent {
     platformUtilsService: PlatformUtilsService,
     organizationApiService: OrganizationApiServiceAbstraction,
     formBuilder: FormBuilder,
+    toastService: ToastService,
   ) {
-    super(apiService, i18nService, platformUtilsService, organizationApiService, formBuilder);
+    super(
+      apiService,
+      i18nService,
+      platformUtilsService,
+      organizationApiService,
+      formBuilder,
+      toastService,
+    );
   }
   async submitLicense() {
     const result = await this.submit();
