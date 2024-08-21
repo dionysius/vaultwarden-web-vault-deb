@@ -30,6 +30,7 @@ describe("VaultPopupItemsService", () => {
 
   let mockOrg: Organization;
   let mockCollections: CollectionView[];
+  let activeUserLastSync$: BehaviorSubject<Date>;
 
   const cipherServiceMock = mock<CipherService>();
   const vaultSettingsServiceMock = mock<VaultSettingsService>();
@@ -92,7 +93,8 @@ describe("VaultPopupItemsService", () => {
     organizationServiceMock.organizations$ = new BehaviorSubject([mockOrg]);
     collectionService.decryptedCollections$ = new BehaviorSubject(mockCollections);
 
-    syncServiceMock.getLastSync.mockResolvedValue(new Date());
+    activeUserLastSync$ = new BehaviorSubject(new Date());
+    syncServiceMock.activeUserLastSync$.mockReturnValue(activeUserLastSync$);
 
     testBed = TestBed.configureTestingModule({
       providers: [
@@ -161,7 +163,7 @@ describe("VaultPopupItemsService", () => {
   });
 
   it("should not emit cipher list if syncService.getLastSync returns null", async () => {
-    syncServiceMock.getLastSync.mockResolvedValue(null);
+    activeUserLastSync$.next(null);
 
     const obs$ = service.autoFillCiphers$.pipe(timeout(50));
 
