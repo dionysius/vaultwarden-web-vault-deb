@@ -194,6 +194,12 @@
   "dr": {
     "message": "MUDr."
   },
+  "cardExpiredTitle": {
+    "message": "Prošlá karta"
+  },
+  "cardExpiredMessage": {
+    "message": "Pokud jste ji obnovili, aktualizujte informace o kartě"
+  },
   "expirationMonth": {
     "message": "Měsíc expirace"
   },
@@ -474,6 +480,15 @@
   },
   "viewItem": {
     "message": "Zobrazit položku"
+  },
+  "viewItemType": {
+    "message": "Zobrazit $ITEMTYPE$",
+    "placeholders": {
+      "itemtype": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
   },
   "new": {
     "message": "Nový",

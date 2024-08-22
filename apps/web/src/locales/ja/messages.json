@@ -194,6 +194,12 @@
   "dr": {
     "message": "Dr"
   },
+  "cardExpiredTitle": {
+    "message": "期限切れのカード"
+  },
+  "cardExpiredMessage": {
+    "message": "カードの更新があった場合、カード情報を更新してください"
+  },
   "expirationMonth": {
     "message": "有効期限月"
   },
@@ -474,6 +480,15 @@
   },
   "viewItem": {
     "message": "アイテムの表示"
+  },
+  "viewItemType": {
+    "message": "$ITEMTYPE$ を表示",
+    "placeholders": {
+      "itemtype": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
   },
   "new": {
     "message": "新規作成",

@@ -46,13 +46,13 @@
     "message": "Kortinnehavarens namn"
   },
   "loginCredentials": {
-    "message": "Login credentials"
+    "message": "Inloggningsuppgifter"
   },
   "authenticatorKey": {
     "message": "Autentiseringsnyckel"
   },
   "autofillOptions": {
-    "message": "Autofill options"
+    "message": "Alternativ för autofyll"
   },
   "websiteUri": {
     "message": "Webbplats (URI)"
@@ -193,6 +193,12 @@
   },
   "dr": {
     "message": "Dr"
+  },
+  "cardExpiredTitle": {
+    "message": "Expired card"
+  },
+  "cardExpiredMessage": {
+    "message": "If you've renewed it, update the card's information"
   },
   "expirationMonth": {
     "message": "Utgångsmånad"
@@ -474,6 +480,15 @@
   },
   "viewItem": {
     "message": "Visa objekt"
+  },
+  "viewItemType": {
+    "message": "Visa $ITEMTYPE$",
+    "placeholders": {
+      "itemtype": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
   },
   "new": {
     "message": "Nytt",

@@ -194,6 +194,12 @@
   "dr": {
     "message": "Dr."
   },
+  "cardExpiredTitle": {
+    "message": "Abgelaufene Karte"
+  },
+  "cardExpiredMessage": {
+    "message": "Wenn du die Karte erneuert hast, aktualisiere die Angaben zur Karte"
+  },
   "expirationMonth": {
     "message": "Ablaufmonat"
   },
@@ -474,6 +480,15 @@
   },
   "viewItem": {
     "message": "Eintrag anzeigen"
+  },
+  "viewItemType": {
+    "message": "$ITEMTYPE$ anzeigen",
+    "placeholders": {
+      "itemtype": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
   },
   "new": {
     "message": "Neu",
@@ -1514,11 +1529,11 @@
     "message": "Daten importieren"
   },
   "onboardingImportDataDetailsPartOne": {
-    "message": "Wenn du keine Daten zu importieren hast, kannst du stattdessen einen ",
+    "message": "Wenn du keine Daten zu importieren hast, kannst du stattdessen ",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
   "onboardingImportDataDetailsLink": {
-    "message": "neuen Eintrag",
+    "message": "einen neuen Eintrag",
     "description": "This will be part of a larger sentence, that will read like this: If you don't have any data to import, you can create a new item instead. (Optional second half: You may need to wait until your administrator confirms your organization membership.)"
   },
   "onboardingImportDataDetailsLoginLink": {
@@ -4929,7 +4944,7 @@
     "message": "Mitgliedern Zugriff geben:"
   },
   "viewAndSelectTheMembers": {
-    "message": "Die Mitgliedern anzeigen und auswählen, denen du Zugriff auf den Secrets Manager gewähren möchtest."
+    "message": "Die Mitglieder anzeigen und auswählen, denen du Zugriff auf den Secrets Manager gewähren möchtest."
   },
   "openYourOrganizations": {
     "message": "Open your organization's"

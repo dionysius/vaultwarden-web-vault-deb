@@ -37,7 +37,7 @@
     "message": "Merkinnät"
   },
   "note": {
-    "message": "Merkintä"
+    "message": "Muistiinpano"
   },
   "customFields": {
     "message": "Lisäkentät"
@@ -68,7 +68,7 @@
     }
   },
   "websiteAdded": {
-    "message": "Verkkosivusto lisättiin"
+    "message": "Sivusto lisätty"
   },
   "addWebsite": {
     "message": "Lisää verkkosivusto"
@@ -193,6 +193,12 @@
   },
   "dr": {
     "message": "Tri"
+  },
+  "cardExpiredTitle": {
+    "message": "Vanhentunut kortti"
+  },
+  "cardExpiredMessage": {
+    "message": "Jos olet uusinut sen, päivitä kortin tiedot"
   },
   "expirationMonth": {
     "message": "Erääntymiskuukausi"
@@ -474,6 +480,15 @@
   },
   "viewItem": {
     "message": "Näytä kohde"
+  },
+  "viewItemType": {
+    "message": "Näytä $ITEMTYPE$",
+    "placeholders": {
+      "itemtype": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
   },
   "new": {
     "message": "Uusi",

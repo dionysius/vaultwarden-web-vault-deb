@@ -194,6 +194,12 @@
   "dr": {
     "message": "Д-р"
   },
+  "cardExpiredTitle": {
+    "message": "Изтекла карта"
+  },
+  "cardExpiredMessage": {
+    "message": "Ако сте я подновили, актуализирайте информацията за картата"
+  },
   "expirationMonth": {
     "message": "Месец на изтичане"
   },
@@ -474,6 +480,15 @@
   },
   "viewItem": {
     "message": "Преглед на елемента"
+  },
+  "viewItemType": {
+    "message": "Преглед на $ITEMTYPE$",
+    "placeholders": {
+      "itemtype": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
   },
   "new": {
     "message": "Ново",

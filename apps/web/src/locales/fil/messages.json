@@ -194,6 +194,12 @@
   "dr": {
     "message": "Dr(a)"
   },
+  "cardExpiredTitle": {
+    "message": "Expired card"
+  },
+  "cardExpiredMessage": {
+    "message": "If you've renewed it, update the card's information"
+  },
   "expirationMonth": {
     "message": "Buwan ng pag-expire"
   },
@@ -474,6 +480,15 @@
   },
   "viewItem": {
     "message": "Tingnan ang item"
+  },
+  "viewItemType": {
+    "message": "View $ITEMTYPE$",
+    "placeholders": {
+      "itemtype": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
   },
   "new": {
     "message": "Bago",

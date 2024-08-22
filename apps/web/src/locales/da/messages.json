@@ -194,6 +194,12 @@
   "dr": {
     "message": "Dr."
   },
+  "cardExpiredTitle": {
+    "message": "Udløbet kort"
+  },
+  "cardExpiredMessage": {
+    "message": "Er det blevet fornyet, opdatér venligst kortoplysningerne"
+  },
   "expirationMonth": {
     "message": "Udløbsmåned"
   },
@@ -474,6 +480,15 @@
   },
   "viewItem": {
     "message": "Vis emne"
+  },
+  "viewItemType": {
+    "message": "Vis $ITEMTYPE$",
+    "placeholders": {
+      "itemtype": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
   },
   "new": {
     "message": "Nyt",

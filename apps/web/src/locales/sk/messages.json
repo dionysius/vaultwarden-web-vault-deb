@@ -58,7 +58,7 @@
     "message": "Webová stránka (URI)"
   },
   "websiteUriCount": {
-    "message": "Website (URI) $COUNT$",
+    "message": "Webová stránka (URI) $COUNT$",
     "description": "Label for an input field that contains a website URI. The input field is part of a list of fields, and the count indicates the position of the field in the list.",
     "placeholders": {
       "count": {
@@ -194,6 +194,12 @@
   "dr": {
     "message": "Dr"
   },
+  "cardExpiredTitle": {
+    "message": "Expirovaná karta"
+  },
+  "cardExpiredMessage": {
+    "message": "Ak ste kartu obnovili, aktualizujte jej údaje"
+  },
   "expirationMonth": {
     "message": "Mesiac exspirácie"
   },
@@ -213,7 +219,7 @@
     "message": "Bitwarden umožňuje uložiť a vyplniť kódy dvojstupňového overenia. Vyberte ikonu fotoaparátu a zosnímajte obrazovku QR kódu overovacej aplikácie tejto webovej stránky alebo skopírujte a vložte kľúč do tohto poľa."
   },
   "learnMoreAboutAuthenticators": {
-    "message": "Learn more about authenticators"
+    "message": "Viac informácií o overovateľoch"
   },
   "folder": {
     "message": "Priečinok"
@@ -474,6 +480,15 @@
   },
   "viewItem": {
     "message": "Zobraziť položku"
+  },
+  "viewItemType": {
+    "message": "Zobraziť $ITEMTYPE$",
+    "placeholders": {
+      "itemtype": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
   },
   "new": {
     "message": "New",

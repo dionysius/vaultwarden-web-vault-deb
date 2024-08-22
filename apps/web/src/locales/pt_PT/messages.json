@@ -194,6 +194,12 @@
   "dr": {
     "message": "Dr."
   },
+  "cardExpiredTitle": {
+    "message": "Cartão expirado"
+  },
+  "cardExpiredMessage": {
+    "message": "Se o renovou, atualize as informações do cartão"
+  },
   "expirationMonth": {
     "message": "Mês de validade"
   },
@@ -474,6 +480,15 @@
   },
   "viewItem": {
     "message": "Ver item"
+  },
+  "viewItemType": {
+    "message": "Ver $ITEMTYPE$",
+    "placeholders": {
+      "itemtype": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
   },
   "new": {
     "message": "Novo",

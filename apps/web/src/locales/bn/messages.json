@@ -194,6 +194,12 @@
   "dr": {
     "message": "ডাঃ"
   },
+  "cardExpiredTitle": {
+    "message": "Expired card"
+  },
+  "cardExpiredMessage": {
+    "message": "If you've renewed it, update the card's information"
+  },
   "expirationMonth": {
     "message": "মেয়াদোত্তীর্ণ মাস"
   },
@@ -474,6 +480,15 @@
   },
   "viewItem": {
     "message": "বস্তু দেখুন"
+  },
+  "viewItemType": {
+    "message": "View $ITEMTYPE$",
+    "placeholders": {
+      "itemtype": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
   },
   "new": {
     "message": "New",

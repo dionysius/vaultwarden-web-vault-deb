@@ -194,6 +194,12 @@
   "dr": {
     "message": "Доктор"
   },
+  "cardExpiredTitle": {
+    "message": "Протермінована картка"
+  },
+  "cardExpiredMessage": {
+    "message": "Якщо ви її поновили, оновіть інформацію"
+  },
   "expirationMonth": {
     "message": "Місяць завершення"
   },
@@ -474,6 +480,15 @@
   },
   "viewItem": {
     "message": "Переглянути запис"
+  },
+  "viewItemType": {
+    "message": "Переглянути $ITEMTYPE$",
+    "placeholders": {
+      "itemtype": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
   },
   "new": {
     "message": "Новий",

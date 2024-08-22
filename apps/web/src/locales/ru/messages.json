@@ -194,6 +194,12 @@
   "dr": {
     "message": "Тов."
   },
+  "cardExpiredTitle": {
+    "message": "Истек срок действия карты"
+  },
+  "cardExpiredMessage": {
+    "message": "If you've renewed it, update the card's information"
+  },
   "expirationMonth": {
     "message": "Месяц"
   },
@@ -474,6 +480,15 @@
   },
   "viewItem": {
     "message": "Просмотр элемента"
+  },
+  "viewItemType": {
+    "message": "Просмотр $ITEMTYPE$",
+    "placeholders": {
+      "itemtype": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
   },
   "new": {
     "message": "Новый",

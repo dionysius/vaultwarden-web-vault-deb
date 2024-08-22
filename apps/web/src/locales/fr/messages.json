@@ -194,6 +194,12 @@
   "dr": {
     "message": "Dr"
   },
+  "cardExpiredTitle": {
+    "message": "Carte expirée"
+  },
+  "cardExpiredMessage": {
+    "message": "Si vous l'avez renouvelée, mettez à jour les informations de la carte"
+  },
   "expirationMonth": {
     "message": "Mois d'expiration"
   },
@@ -474,6 +480,15 @@
   },
   "viewItem": {
     "message": "Afficher l'élément"
+  },
+  "viewItemType": {
+    "message": "Voir $ITEMTYPE$",
+    "placeholders": {
+      "itemtype": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
   },
   "new": {
     "message": "Nouveau",
@@ -1167,7 +1182,7 @@
     "message": "Êtes-vous sûr(e) de vouloir continuer ?"
   },
   "moveSelectedItemsDesc": {
-    "message": "Choose a folder that you would like to add the $COUNT$ selected item(s) to.",
+    "message": "Choisissez un dossier dans lequel vous souhaitez ajouter le(s) $COUNT$ élément(s) sélectionné(s).",
     "placeholders": {
       "count": {
         "content": "$1",

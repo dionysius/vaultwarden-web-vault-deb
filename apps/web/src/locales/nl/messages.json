@@ -194,6 +194,12 @@
   "dr": {
     "message": "Dr."
   },
+  "cardExpiredTitle": {
+    "message": "Verlopen kaart"
+  },
+  "cardExpiredMessage": {
+    "message": "Als je het hebt vernieuwd, werk dan de informatie van de kaart bij"
+  },
   "expirationMonth": {
     "message": "Vervalmaand"
   },
@@ -474,6 +480,15 @@
   },
   "viewItem": {
     "message": "Item weergeven"
+  },
+  "viewItemType": {
+    "message": "$ITEMTYPE$ weergeven",
+    "placeholders": {
+      "itemtype": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
   },
   "new": {
     "message": "Nieuw",

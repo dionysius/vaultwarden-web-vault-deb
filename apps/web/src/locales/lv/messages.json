@@ -194,6 +194,12 @@
   "dr": {
     "message": "Dr."
   },
+  "cardExpiredTitle": {
+    "message": "Beidzies kartes derīgums"
+  },
+  "cardExpiredMessage": {
+    "message": "Ja atjaunoji to, jāatjaunina kartes informācija"
+  },
   "expirationMonth": {
     "message": "Derīguma mēnesis"
   },
@@ -474,6 +480,15 @@
   },
   "viewItem": {
     "message": "Skatīt vienumu"
+  },
+  "viewItemType": {
+    "message": "Apskatīt $ITEMTYPE$",
+    "placeholders": {
+      "itemtype": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
   },
   "new": {
     "message": "Jauns",

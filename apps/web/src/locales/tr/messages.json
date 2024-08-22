@@ -194,6 +194,12 @@
   "dr": {
     "message": "Dr"
   },
+  "cardExpiredTitle": {
+    "message": "Kartın süresi dolmuş"
+  },
+  "cardExpiredMessage": {
+    "message": "Kartı yenilediyseniz kart bilgilerini güncelleyin"
+  },
   "expirationMonth": {
     "message": "Son kullanma ayı"
   },
@@ -474,6 +480,15 @@
   },
   "viewItem": {
     "message": "Kaydı göster"
+  },
+  "viewItemType": {
+    "message": "$ITEMTYPE$ bilgileri",
+    "placeholders": {
+      "itemtype": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
   },
   "new": {
     "message": "Yeni",

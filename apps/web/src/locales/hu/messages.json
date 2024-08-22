@@ -194,6 +194,12 @@
   "dr": {
     "message": "Dr."
   },
+  "cardExpiredTitle": {
+    "message": "Lejárt kártya"
+  },
+  "cardExpiredMessage": {
+    "message": "Ha megújítottuk, frissítsük a kártya adatait."
+  },
   "expirationMonth": {
     "message": "Lejárati hónap"
   },
@@ -474,6 +480,15 @@
   },
   "viewItem": {
     "message": "Elem megtekintése"
+  },
+  "viewItemType": {
+    "message": "$ITEMTYPE$ megtekintése",
+    "placeholders": {
+      "itemtype": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
   },
   "new": {
     "message": "Új",

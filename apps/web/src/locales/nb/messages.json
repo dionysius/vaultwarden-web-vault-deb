@@ -194,6 +194,12 @@
   "dr": {
     "message": "Dr․"
   },
+  "cardExpiredTitle": {
+    "message": "Expired card"
+  },
+  "cardExpiredMessage": {
+    "message": "If you've renewed it, update the card's information"
+  },
   "expirationMonth": {
     "message": "Utløpsmåned"
   },
@@ -474,6 +480,15 @@
   },
   "viewItem": {
     "message": "Vis elementet"
+  },
+  "viewItemType": {
+    "message": "View $ITEMTYPE$",
+    "placeholders": {
+      "itemtype": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
   },
   "new": {
     "message": "Ny",

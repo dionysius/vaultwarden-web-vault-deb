@@ -194,6 +194,12 @@
   "dr": {
     "message": "博士"
   },
+  "cardExpiredTitle": {
+    "message": "过期的支付卡"
+  },
+  "cardExpiredMessage": {
+    "message": "如果您的支付卡已续期，请更新该卡的信息。"
+  },
   "expirationMonth": {
     "message": "过期月份"
   },
@@ -474,6 +480,15 @@
   },
   "viewItem": {
     "message": "查看项目"
+  },
+  "viewItemType": {
+    "message": "查看 $ITEMTYPE$",
+    "placeholders": {
+      "itemtype": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
   },
   "new": {
     "message": "新增",
@@ -2250,7 +2265,7 @@
     "message": "优先客户支持。"
   },
   "premiumSignUpFuture": {
-    "message": "未来会增加更多高级功能。敬请期待！"
+    "message": "未来的更多高级功能。敬请期待！"
   },
   "premiumPrice": {
     "message": "只需 $PRICE$ /年！",
@@ -2528,7 +2543,7 @@
     "message": "已更新付款方式。"
   },
   "purchasePremium": {
-    "message": "购买高级会员"
+    "message": "购买高级版"
   },
   "licenseFile": {
     "message": "许可证文件"
@@ -4063,7 +4078,7 @@
     "message": "您的 API 密钥可用于验证 Bitwarden 公共 API。"
   },
   "apiKeyRotateDesc": {
-    "message": "轮换 API 密钥将使前一个密钥无效。如果你认为当前密钥不再安全，你可以轮换您的 API 密钥。"
+    "message": "轮换 API 密钥将使前一个密钥失效。如果您认为当前密钥不再安全，可以轮换 API 密钥。"
   },
   "apiKeyWarning": {
     "message": "您的 API 密钥拥有组织的全部访问权限。请严格保密。"
@@ -5347,7 +5362,7 @@
     "message": "为允许的应用程序自动登录用户"
   },
   "automaticAppLoginDesc": {
-    "message": "登录表单将自动填写并提交给从您配置的身份提供程序启动的 App。"
+    "message": "从您配置的身份提供程序启动的 App 的登录表单将自动填写并提交。"
   },
   "automaticAppLoginIdpHostLabel": {
     "message": "身份提供程序主机"

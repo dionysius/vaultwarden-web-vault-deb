@@ -194,6 +194,12 @@
   "dr": {
     "message": "Доктар"
   },
+  "cardExpiredTitle": {
+    "message": "Expired card"
+  },
+  "cardExpiredMessage": {
+    "message": "If you've renewed it, update the card's information"
+  },
   "expirationMonth": {
     "message": "Месяц завяршэння"
   },
@@ -474,6 +480,15 @@
   },
   "viewItem": {
     "message": "Прагледзець элемент"
+  },
+  "viewItemType": {
+    "message": "View $ITEMTYPE$",
+    "placeholders": {
+      "itemtype": {
+        "content": "$1",
+        "example": "login"
+      }
+    }
   },
   "new": {
     "message": "Новы",
