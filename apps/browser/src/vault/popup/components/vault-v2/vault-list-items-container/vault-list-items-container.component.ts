@@ -1,3 +1,4 @@
+import { ScrollingModule } from "@angular/cdk/scrolling";
 import { CommonModule } from "@angular/common";
 import { booleanAttribute, Component, EventEmitter, Input, Output } from "@angular/core";
 import { Router, RouterLink } from "@angular/router";
@@ -6,6 +7,8 @@ import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import {
   BadgeModule,
+  BitItemHeight,
+  BitItemHeightClass,
   ButtonModule,
   IconButtonModule,
   ItemModule,
@@ -35,12 +38,16 @@ import { ItemMoreOptionsComponent } from "../item-more-options/item-more-options
     ItemCopyActionsComponent,
     ItemMoreOptionsComponent,
     OrgIconDirective,
+    ScrollingModule,
   ],
   selector: "app-vault-list-items-container",
   templateUrl: "vault-list-items-container.component.html",
   standalone: true,
 })
 export class VaultListItemsContainerComponent {
+  protected ItemHeightClass = BitItemHeightClass;
+  protected ItemHeight = BitItemHeight;
+
   /**
    * The list of ciphers to display.
    */

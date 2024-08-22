@@ -1,3 +1,4 @@
+import { ScrollingModule } from "@angular/cdk/scrolling";
 import { CommonModule } from "@angular/common";
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
@@ -51,6 +52,7 @@ enum VaultState {
     RouterLink,
     VaultV2SearchComponent,
     NewItemDropdownV2Component,
+    ScrollingModule,
   ],
   providers: [VaultUiOnboardingService],
 })

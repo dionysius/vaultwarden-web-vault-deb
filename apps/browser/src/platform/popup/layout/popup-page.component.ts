@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, Input, inject, signal } from "@angular/core";
+import { booleanAttribute, Component, inject, Input, signal } from "@angular/core";
 
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 
@@ -16,6 +16,9 @@ export class PopupPageComponent {
   protected i18nService = inject(I18nService);
 
   @Input() loading = false;
+
+  @Input({ transform: booleanAttribute })
+  disablePadding = false;
 
   protected scrolled = signal(false);
   isScrolled = this.scrolled.asReadonly();

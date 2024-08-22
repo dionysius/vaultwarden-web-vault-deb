@@ -17,7 +17,8 @@
     [ngClass]="{ 'tw-invisible': loading }"
   >
     <div
-      class="tw-max-w-screen-sm tw-mx-auto tw-p-3 tw-flex-1 tw-flex tw-flex-col tw-h-full tw-w-full"
+      class="tw-max-w-screen-sm tw-mx-auto tw-flex-1 tw-flex tw-flex-col tw-h-full tw-w-full"
+      [ngClass]="{ 'tw-p-3': !disablePadding }"
     >
       <ng-content></ng-content>
     </div>
