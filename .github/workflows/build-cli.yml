@@ -65,15 +65,15 @@ jobs:
     strategy:
       matrix:
         os:
-         [
-          { base: "linux", distro: "ubuntu-22.04" },
-          { base: "mac", distro: "macos-13" }
-         ]
+          [
+            { base: "linux", distro: "ubuntu-22.04" },
+            { base: "mac", distro: "macos-13" }
+          ]
         license_type:
-         [
-          { build_prefix: "oss", artifact_prefix: "-oss", readable: "open source license" },
-          { build_prefix: "bit", artifact_prefix: "", readable: "commercial license"}
-         ]
+          [
+            { build_prefix: "oss", artifact_prefix: "-oss", readable: "open source license" },
+            { build_prefix: "bit", artifact_prefix: "", readable: "commercial license" }
+          ]
     runs-on: ${{ matrix.os.distro }}
     needs:
       - setup
@@ -148,10 +148,10 @@ jobs:
     strategy:
       matrix:
         license_type:
-         [
-          { build_prefix: "oss", artifact_prefix: "-oss", readable: "open source license" },
-          { build_prefix: "bit", artifact_prefix: "", readable: "commercial license"}
-         ]
+          [
+            { build_prefix: "oss", artifact_prefix: "-oss", readable: "open source license" },
+            { build_prefix: "bit", artifact_prefix: "", readable: "commercial license" }
+          ]
     runs-on: windows-2022
     needs:
       - setup
@@ -241,7 +241,7 @@ jobs:
 
       - name: Package Chocolatey
         shell: pwsh
-        if: ${{ matrix.license_type.build_prefix }} == 'bit'
+        if: ${{ matrix.license_type.build_prefix == 'bit' }}
         run: |
           Copy-Item -Path stores/chocolatey -Destination dist/chocolatey -Recurse
           Copy-Item dist/${{ matrix.license_type.build_prefix }}/windows/bw.exe -Destination dist/chocolatey/tools

@@ -49,25 +49,35 @@ jobs:
       tag-name: ${{ steps.version.outputs.tag_name }}
       deployment-id: ${{ steps.deployment.outputs.deployment_id }}
     steps:
+      - name: Branch check
+        if: ${{ inputs.publish_type != 'Dry Run' }}
+        run: |
+          if [[ "$GITHUB_REF" != "refs/heads/rc" ]] && [[ "$GITHUB_REF" != "refs/heads/hotfix-rc-desktop" ]]; then
+            echo "==================================="
+            echo "[!] Can only publish from the 'rc' or 'hotfix-rc-desktop' branches"
+            echo "==================================="
+            exit 1
+          fi
+
       - name: Check Publish Version
         id: version
         run: |
-          if [[ "${{ github.event.inputs.version }}" == "latest" || "${{ github.event.inputs.version }}" == "" ]]; then
+          if [[ "${{ inputs.version }}" == "latest" || "${{ inputs.version }}" == "" ]]; then
             TAG_NAME=$(curl  "https://api.github.com/repos/bitwarden/clients/releases" | jq -c '.[] | select(.tag_name | contains("desktop")) | .tag_name' | head -1 | cut -d '"' -f 2)
             VERSION=$(echo $TAG_NAME | sed "s/desktop-v//")
             echo "Latest Released Version: $VERSION"
-            echo "::set-output name=version::$VERSION"
+            echo "version=$VERSION" >> $GITHUB_OUTPUT
 
             echo "Tag name: $TAG_NAME"
-            echo "::set-output name=tag_name::$TAG_NAME"
+            echo "tag_name=$TAG_NAME" >> $GITHUB_OUTPUT
           else
-            echo "Release Version: ${{ github.event.inputs.version }}"
-            echo "::set-output name=version::${{ github.event.inputs.version }}"
+            echo "Release Version: ${{ inputs.version }}"
+            echo "version=${{ inputs.version }}"
 
-            $TAG_NAME="desktop-v${{ github.event.inputs.version }}"
+            $TAG_NAME="desktop-v${{ inputs.version }}"
 
             echo "Tag name: $TAG_NAME"
-            echo "::set-output name=tag_name::$TAG_NAME"
+            echo "tag_name=$TAG_NAME" >> $GITHUB_OUTPUT
           fi
 
       - name: Get Version Channel
@@ -88,7 +98,7 @@ jobs:
           esac
 
       - name: Create GitHub deployment
-        if: ${{ github.event.inputs.publish_type != 'Dry Run' }}
+        if: ${{ inputs.publish_type != 'Dry Run' }}
         uses: chrnorm/deployment-action@55729fcebec3d284f60f5bcabbd8376437d696b1 # v2.0.7
         id: deployment
         with:
@@ -101,6 +111,7 @@ jobs:
   electron-blob:
     name: Electron blob publish
     runs-on: ubuntu-22.04
+    needs: setup
     env:
       _PKG_VERSION: ${{ needs.setup.outputs.release-version }}
       _RELEASE_TAG: ${{ needs.setup.outputs.tag-name }}
@@ -120,7 +131,7 @@ jobs:
             aws-electron-bucket-name"
 
       - name: Download all artifacts
-        if: ${{ github.event.inputs.publish_type != 'Dry Run' }}
+        if: ${{ inputs.publish_type != 'Dry Run' }}
         uses: bitwarden/gh-actions/download-artifacts@main
         with:
           workflow: build-desktop.yml
@@ -134,7 +145,7 @@ jobs:
 
       - name: Set staged rollout percentage
         env:
-          RELEASE_CHANNEL: ${{ steps.release-channel.outputs.channel }}
+          RELEASE_CHANNEL: ${{ needs.setup.outputs.release-channel }}
           ROLLOUT_PCT: ${{ inputs.rollout_percentage }}
         run: |
           echo "stagingPercentage: ${ROLLOUT_PCT}" >> apps/desktop/artifacts/${RELEASE_CHANNEL}.yml
@@ -142,7 +153,7 @@ jobs:
           echo "stagingPercentage: ${ROLLOUT_PCT}" >> apps/desktop/artifacts/${RELEASE_CHANNEL}-mac.yml
 
       - name: Publish artifacts to S3
-        if: ${{ github.event.inputs.publish_type != 'Dry Run' }}
+        if: ${{ inputs.publish_type != 'Dry Run' }}
         env:
           AWS_ACCESS_KEY_ID: ${{ steps.retrieve-secrets.outputs.aws-electron-access-id }}
           AWS_SECRET_ACCESS_KEY: ${{ steps.retrieve-secrets.outputs.aws-electron-access-key }}
@@ -156,26 +167,26 @@ jobs:
           --quiet
 
       - name: Update deployment status to Success
-        if: ${{ github.event.inputs.publish_type != 'Dry Run' && success() }}
+        if: ${{ inputs.publish_type != 'Dry Run' && success() }}
         uses: chrnorm/deployment-status@9a72af4586197112e0491ea843682b5dc280d806 # v2.0.3
         with:
           token: '${{ secrets.GITHUB_TOKEN }}'
           state: 'success'
-          deployment-id: ${{ steps.deployment.outputs.deployment_id }}
+          deployment-id: ${{ needs.setup.outputs.deployment-id }}
 
       - name: Update deployment status to Failure
-        if: ${{ github.event.inputs.publish_type != 'Dry Run' && failure() }}
+        if: ${{ inputs.publish_type != 'Dry Run' && failure() }}
         uses: chrnorm/deployment-status@9a72af4586197112e0491ea843682b5dc280d806 # v2.0.3
         with:
           token: '${{ secrets.GITHUB_TOKEN }}'
           state: 'failure'
-          deployment-id: ${{ steps.deployment.outputs.deployment_id }}
+          deployment-id: ${{ needs.setup.outputs.deployment-id }}
 
   snap:
     name: Deploy Snap
     runs-on: ubuntu-22.04
     needs: setup
-    if: ${{ github.event.inputs.snap_publish == 'true' }}
+    if: ${{ inputs.snap_publish == 'true' }}
     env:
       _PKG_VERSION: ${{ needs.setup.outputs.release-version }}
       _RELEASE_TAG: ${{ needs.setup.outputs.tag-name }}
@@ -207,7 +218,7 @@ jobs:
         run: wget https://github.com/bitwarden/clients/releases/${{ env._RELEASE_TAG }}/download/bitwarden_${{ env._PKG_VERSION }}_amd64.snap
 
       - name: Deploy to Snap Store
-        if: ${{ github.event.inputs.publish_type != 'Dry Run' }}
+        if: ${{ inputs.publish_type != 'Dry Run' }}
         env:
           SNAPCRAFT_STORE_CREDENTIALS: ${{ steps.retrieve-secrets.outputs.snapcraft-store-token }}
         run: |
@@ -219,7 +230,7 @@ jobs:
     name: Deploy Choco
     runs-on: windows-2022
     needs: setup
-    if: ${{ github.event.inputs.choco_publish == 'true' }}
+    if: ${{ inputs.choco_publish == 'true' }}
     env:
       _PKG_VERSION: ${{ needs.setup.outputs.release-version }}
       _RELEASE_TAG: ${{ needs.setup.outputs.tag-name }}
@@ -260,7 +271,7 @@ jobs:
         run: wget https://github.com/bitwarden/clients/releases/${{ env._RELEASE_TAG }}/download/bitwarden.${{ env._PKG_VERSION }}.nupkg
 
       - name: Push to Chocolatey
-        if: ${{ github.event.inputs.publish_type != 'Dry Run' }}
+        if: ${{ inputs.publish_type != 'Dry Run' }}
         shell: pwsh
         run: choco push --source=https://push.chocolatey.org/
         working-directory: apps/desktop/dist
@@ -273,14 +284,14 @@ jobs:
       - electron-blob
       - snap
       - choco
-    if: ${{ always() && github.event.inputs.publish_type != 'Dry Run' }}
+    if: ${{ always() && inputs.publish_type != 'Dry Run' }}
     steps:
       - name: Check if any job failed
         if: contains(needs.*.result, 'failure')
         run: exit 1
 
       - name: Update deployment status to Success
-        if: ${{ github.event.inputs.release_type != 'Dry Run' && success() }}
+        if: ${{ inputs.publish_type != 'Dry Run' && success() }}
         uses: chrnorm/deployment-status@9a72af4586197112e0491ea843682b5dc280d806 # v2.0.3
         with:
           token: '${{ secrets.GITHUB_TOKEN }}'
@@ -288,7 +299,7 @@ jobs:
           deployment-id: ${{ needs.setup.outputs.deployment-id }}
 
       - name: Update deployment status to Failure
-        if: ${{ github.event.inputs.release_type != 'Dry Run' && failure() }}
+        if: ${{ inputs.publish_type != 'Dry Run' && failure() }}
         uses: chrnorm/deployment-status@9a72af4586197112e0491ea843682b5dc280d806 # v2.0.3
         with:
           token: '${{ secrets.GITHUB_TOKEN }}'

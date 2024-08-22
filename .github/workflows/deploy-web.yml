@@ -7,7 +7,7 @@ on:
     inputs:
       environment:
         description: 'Environment'
-        default: 'QA'
+        default: 'USQA'
         type: choice
         options:
           - USQA

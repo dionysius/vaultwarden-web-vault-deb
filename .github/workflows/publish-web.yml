@@ -30,11 +30,11 @@ jobs:
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Branch check
-        if: ${{ github.event.inputs.publish_type != 'Dry Run' }}
+        if: ${{ inputs.publish_type != 'Dry Run' }}
         run: |
           if [[ "$GITHUB_REF" != "refs/heads/rc" ]] && [[ "$GITHUB_REF" != "refs/heads/hotfix-rc-web" ]]; then
             echo "==================================="
-            echo "[!] Can only release from the 'rc' or 'hotfix-rc-web' branches"
+            echo "[!] Can only publish from the 'rc' or 'hotfix-rc-web' branches"
             echo "==================================="
             exit 1
           fi
@@ -43,7 +43,7 @@ jobs:
         id: version
         uses: bitwarden/gh-actions/release-version-check@main
         with:
-          release-type: ${{ github.event.inputs.publish_type }}
+          release-type: ${{ inputs.publish_type }}
           project-type: ts
           file: apps/web/package.json
           monorepo: true
@@ -56,7 +56,7 @@ jobs:
     env:
       _BRANCH_NAME: ${{ github.ref_name }}
       _RELEASE_VERSION: ${{ needs.setup.outputs.release_version }}
-      _RELEASE_OPTION: ${{ github.event.inputs.publish_type }}
+      _RELEASE_OPTION: ${{ inputs.publish_type }}
     steps:
       - name: Print environment
         run: |
@@ -79,7 +79,7 @@ jobs:
         run: az acr login -n bitwardenprod
 
       - name: Create GitHub deployment
-        if: ${{ github.event.inputs.publish_type != 'Dry Run' }}
+        if: ${{ inputs.publish_type != 'Dry Run' }}
         uses: chrnorm/deployment-action@55729fcebec3d284f60f5bcabbd8376437d696b1 # v2.0.7
         id: deployment
         with:
@@ -92,7 +92,7 @@ jobs:
 
       - name: Pull branch image
         run: |
-          if [[ "${{ github.event.inputs.publish_type }}" == "Dry Run" ]]; then
+          if [[ "${{ inputs.publish_type }}" == "Dry Run" ]]; then
             docker pull $_AZ_REGISTRY/web:latest
           else
             docker pull $_AZ_REGISTRY/web:$_BRANCH_NAME
@@ -100,7 +100,7 @@ jobs:
 
       - name: Tag version
         run: |
-          if [[ "${{ github.event.inputs.publish_type }}" == "Dry Run" ]]; then
+          if [[ "${{ inputs.publish_type }}" == "Dry Run" ]]; then
             docker tag $_AZ_REGISTRY/web:latest $_AZ_REGISTRY/web:dryrun
             docker tag $_AZ_REGISTRY/web:latest $_AZ_REGISTRY/web-sh:dryrun
           else
@@ -112,7 +112,7 @@ jobs:
 
       - name: Push version
         run: |
-          if [[ "${{ github.event.inputs.publish_type }}" == "Dry Run" ]]; then
+          if [[ "${{ inputs.publish_type }}" == "Dry Run" ]]; then
             docker push $_AZ_REGISTRY/web:dryrun
             docker push $_AZ_REGISTRY/web-sh:dryrun
           else
@@ -123,7 +123,7 @@ jobs:
           fi
 
       - name: Update deployment status to Success
-        if: ${{ github.event.inputs.publish_type != 'Dry Run' && success() }}
+        if: ${{ inputs.publish_type != 'Dry Run' && success() }}
         uses: chrnorm/deployment-status@9a72af4586197112e0491ea843682b5dc280d806 # v2.0.3
         with:
           token: '${{ secrets.GITHUB_TOKEN }}'
@@ -132,7 +132,7 @@ jobs:
           deployment-id: ${{ steps.deployment.outputs.deployment_id }}
 
       - name: Update deployment status to Failure
-        if: ${{ github.event.inputs.publish_type != 'Dry Run' && failure() }}
+        if: ${{ inputs.publish_type != 'Dry Run' && failure() }}
         uses: chrnorm/deployment-status@9a72af4586197112e0491ea843682b5dc280d806 # v2.0.3
         with:
           token: '${{ secrets.GITHUB_TOKEN }}'

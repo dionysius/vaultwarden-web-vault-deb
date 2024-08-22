@@ -59,4 +59,3 @@ jobs:
           working_directory: apps/${{ matrix.app_name }}
           gpg_private_key: ${{ steps.retrieve-secrets.outputs.github-gpg-private-key }}
           gpg_passphrase: ${{ steps.retrieve-secrets.outputs.github-gpg-private-key-passphrase }}
-
