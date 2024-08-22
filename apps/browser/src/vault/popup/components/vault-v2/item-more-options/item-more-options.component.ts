@@ -79,7 +79,7 @@ export class ItemMoreOptionsComponent {
   }
 
   async doAutofillAndSave() {
-    await this.vaultPopupAutofillService.doAutofillAndSave(this.cipher);
+    await this.vaultPopupAutofillService.doAutofillAndSave(this.cipher, false);
   }
 
   /**

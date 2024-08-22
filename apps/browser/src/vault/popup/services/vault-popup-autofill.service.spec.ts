@@ -1,6 +1,7 @@
 import { TestBed } from "@angular/core/testing";
+import { ActivatedRoute } from "@angular/router";
 import { mock } from "jest-mock-extended";
-import { BehaviorSubject } from "rxjs";
+import { BehaviorSubject, of } from "rxjs";
 
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -33,6 +34,9 @@ describe("VaultPopupAutofillService", () => {
   let service: VaultPopupAutofillService;
 
   const mockCurrentTab = { url: "https://example.com" } as chrome.tabs.Tab;
+  const mockActivatedRoute = {
+    queryParams: of({}),
+  } as any;
 
   // Create mocks for VaultPopupAutofillService
   const mockAutofillService = mock<AutofillService>();
@@ -61,6 +65,7 @@ describe("VaultPopupAutofillService", () => {
         { provide: PasswordRepromptService, useValue: mockPasswordRepromptService },
         { provide: CipherService, useValue: mockCipherService },
         { provide: MessagingService, useValue: mockMessagingService },
+        { provide: ActivatedRoute, useValue: mockActivatedRoute },
         {
           provide: AccountService,
           useValue: accountService,
@@ -257,6 +262,17 @@ describe("VaultPopupAutofillService", () => {
           jest.advanceTimersByTime(50);
           expect(setTimeout).toHaveBeenCalledTimes(1);
           expect(BrowserApi.closePopup).toHaveBeenCalled();
+        });
+
+        it("should show a successful toast message if login form is populated", async () => {
+          jest.spyOn(BrowserPopupUtils, "inSingleActionPopout").mockReturnValue(true);
+          (service as any).currentAutofillTab$ = of({ id: 1234 });
+          await service.doAutofill(mockCipher);
+          expect(mockToastService.showToast).toHaveBeenCalledWith({
+            variant: "success",
+            title: null,
+            message: mockI18nService.t("autoFillSuccess"),
+          });
         });
       });
     });

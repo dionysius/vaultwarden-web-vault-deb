@@ -1,5 +1,7 @@
 import { Injectable } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
 import {
+  combineLatest,
   firstValueFrom,
   map,
   Observable,
@@ -27,20 +29,30 @@ import {
 } from "../../../autofill/services/abstractions/autofill.service";
 import { BrowserApi } from "../../../platform/browser/browser-api";
 import BrowserPopupUtils from "../../../platform/popup/browser-popup-utils";
+import { closeViewVaultItemPopout, VaultPopoutType } from "../utils/vault-popout-window";
 
 @Injectable({
   providedIn: "root",
 })
 export class VaultPopupAutofillService {
   private _refreshCurrentTab$ = new Subject<void>();
-
+  private senderTabId$: Observable<number | undefined> = this.route.queryParams.pipe(
+    map((params) => (params?.senderTabId ? parseInt(params.senderTabId, 10) : undefined)),
+  );
   /**
-   * Observable that contains the current tab to be considered for autofill. If there is no current tab
-   * or the popup is in a popout window, this will be null.
+   * Observable that contains the current tab to be considered for autofill.
+   * This can be the tab from the current window if opened in a Popup OR
+   * the sending tab when opened the single action Popout (specified by the senderTabId route query parameter)
    */
-  currentAutofillTab$: Observable<chrome.tabs.Tab | null> = this._refreshCurrentTab$.pipe(
-    startWith(null),
-    switchMap(async () => {
+  currentAutofillTab$: Observable<chrome.tabs.Tab | null> = combineLatest([
+    this.senderTabId$,
+    this._refreshCurrentTab$.pipe(startWith(null)),
+  ]).pipe(
+    switchMap(async ([senderTabId]) => {
+      if (senderTabId) {
+        return await BrowserApi.getTab(senderTabId);
+      }
+
       if (BrowserPopupUtils.inPopout(window)) {
         return null;
       }
@@ -73,6 +85,7 @@ export class VaultPopupAutofillService {
     private passwordRepromptService: PasswordRepromptService,
     private cipherService: CipherService,
     private messagingService: MessagingService,
+    private route: ActivatedRoute,
     private accountService: AccountService,
   ) {
     this._currentPageDetails$.subscribe();
@@ -124,7 +137,21 @@ export class VaultPopupAutofillService {
     return true;
   }
 
-  private _closePopup() {
+  private async _closePopup(cipher: CipherView, tab: chrome.tabs.Tab | null) {
+    if (BrowserPopupUtils.inSingleActionPopout(window, VaultPopoutType.viewVaultItem) && tab.id) {
+      this.toastService.showToast({
+        variant: "success",
+        title: null,
+        message: this.i18nService.t("autoFillSuccess"),
+      });
+      setTimeout(async () => {
+        await BrowserApi.focusTab(tab.id);
+        await closeViewVaultItemPopout(`${VaultPopoutType.viewVaultItem}_${cipher.id}`);
+      }, 1000);
+
+      return;
+    }
+
     if (!BrowserPopupUtils.inPopup(window)) {
       return;
     }
@@ -158,7 +185,7 @@ export class VaultPopupAutofillService {
     const didAutofill = await this._internalDoAutofill(cipher, tab, pageDetails);
 
     if (didAutofill && closePopup) {
-      this._closePopup();
+      await this._closePopup(cipher, tab);
     }
 
     return didAutofill;
@@ -193,7 +220,7 @@ export class VaultPopupAutofillService {
     }
 
     if (closePopup) {
-      this._closePopup();
+      await this._closePopup(cipher, tab);
     } else {
       this.toastService.showToast({
         variant: "success",

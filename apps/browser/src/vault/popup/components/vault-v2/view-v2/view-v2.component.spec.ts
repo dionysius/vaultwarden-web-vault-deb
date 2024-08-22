@@ -16,6 +16,7 @@ import { CipherType } from "@bitwarden/common/vault/enums";
 
 import { PopupRouterCacheService } from "../../../../../platform/popup/view-cache/popup-router-cache.service";
 
+import { VaultPopupAutofillService } from "./../../../services/vault-popup-autofill.service";
 import { ViewV2Component } from "./view-v2.component";
 
 // 'qrcode-parser' is used by `BrowserTotpCaptureService` but is an es6 module that jest can't compile.
@@ -34,6 +35,9 @@ describe("ViewV2Component", () => {
     type: CipherType.Login,
   };
 
+  const mockVaultPopupAutofillService = {
+    doAutofill: jest.fn(),
+  };
   const mockUserId = Utils.newGuid() as UserId;
   const accountService: FakeAccountService = mockAccountServiceWith(mockUserId);
 
@@ -66,6 +70,7 @@ describe("ViewV2Component", () => {
             },
           },
         },
+        { provide: VaultPopupAutofillService, useValue: mockVaultPopupAutofillService },
         {
           provide: AccountService,
           useValue: accountService,
