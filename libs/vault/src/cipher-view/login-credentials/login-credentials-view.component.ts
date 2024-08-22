@@ -1,10 +1,11 @@
-import { CommonModule } from "@angular/common";
-import { Component, Input } from "@angular/core";
+import { CommonModule, DatePipe } from "@angular/common";
+import { Component, inject, Input } from "@angular/core";
 import { Router } from "@angular/router";
 import { Observable, shareReplay } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions";
+import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import {
   CardComponent,
@@ -47,11 +48,22 @@ export class LoginCredentialsViewComponent {
   showPasswordCount: boolean = false;
   passwordRevealed: boolean = false;
   totpCopyCode: string;
+  private datePipe = inject(DatePipe);
 
   constructor(
     private billingAccountProfileStateService: BillingAccountProfileStateService,
     private router: Router,
+    private i18nService: I18nService,
   ) {}
+
+  get fido2CredentialCreationDateValue(): string {
+    const dateCreated = this.i18nService.t("dateCreated");
+    const creationDate = this.datePipe.transform(
+      this.cipher.login.fido2Credentials[0]?.creationDate,
+      "short",
+    );
+    return `${dateCreated} ${creationDate}`;
+  }
 
   async getPremium() {
     await this.router.navigate(["/premium"]);

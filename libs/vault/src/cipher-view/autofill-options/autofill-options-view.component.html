@@ -8,12 +8,20 @@
         <bit-label>
           {{ "website" | i18n }}
         </bit-label>
-        <input readonly bitInput type="text" [value]="login.hostOrUri" aria-readonly="true" />
+        <input
+          readonly
+          bitInput
+          type="text"
+          [value]="login.hostOrUri"
+          aria-readonly="true"
+          data-testid="login-website"
+        />
         <button
           bitIconButton="bwi-external-link"
           bitSuffix
           type="button"
           (click)="openWebsite(login.launchUri)"
+          data-testid="launch-website"
         ></button>
         <button
           bitIconButton="bwi-clone"
@@ -23,6 +31,7 @@
           [valueLabel]="'website' | i18n"
           showToast
           [appA11yTitle]="'copyValue' | i18n"
+          data-testid="copy-website"
         ></button>
       </bit-form-field>
     </ng-container>
