@@ -25,9 +25,6 @@
   "finishCreatingYourAccountBySettingAPassword": {
     "message": "Viimeistele tilin luonti asettamalla salasana"
   },
-  "login": {
-    "message": "Kirjaudu"
-  },
   "enterpriseSingleSignOn": {
     "message": "Yrityksen kertakirjautuminen (SSO)"
   },
@@ -311,13 +308,13 @@
     "message": "Kansion nimi"
   },
   "folderHintText": {
-    "message": "Luo alikansioita lisäämällä olemassa olevan kansion nimi merkin “/” jälkeen. Esim: Some/Foorumit"
+    "message": "Luo alikansio lisäämällä olemassa olevan kansion nimi \"/\"-merkin jälkeen. Esim: Some/Foorumit."
   },
   "noFoldersAdded": {
     "message": "Kansioita ei ole lisätty"
   },
   "createFoldersToOrganize": {
-    "message": "Luo kansioita järjestääksesi holvisi kohteita"
+    "message": "Lajittele holvisi kohteita luomalla kansioita"
   },
   "deleteFolderPermanently": {
     "message": "Haluatko varmasti poistaa kansion pysyvästi?"
@@ -1083,7 +1080,7 @@
     "message": "1 Gt salattua tallennustilaa tiedostoliitteille."
   },
   "premiumSignUpEmergency": {
-    "message": "Emergency access"
+    "message": "Varmuuskäyttö"
   },
   "premiumSignUpTwoStepOptions": {
     "message": "Omisteiset kaksivaiheisen kirjautumisen vaihtoehdot, kuten YubiKey ja Duo."
@@ -1107,7 +1104,7 @@
     "message": "Voit ostaa Premium-jäsenyyden bitwarden.com-verkkoholvista. Haluatko avata sivuston nyt?"
   },
   "premiumPurchaseAlertV2": {
-    "message": "You can purchase Premium from your account settings on the Bitwarden web app."
+    "message": "Voit ostaa Premiumin tiliasetuksistasi Bitwardenin verkkosovelluksen kautta."
   },
   "premiumCurrentMember": {
     "message": "Olet Premium-jäsen!"
@@ -1115,7 +1112,19 @@
   "premiumCurrentMemberThanks": {
     "message": "Kiitos kun tuet Bitwardenia."
   },
+  "premiumFeatures": {
+    "message": "Päivitä premium-tilaukseen ja saat:"
+  },
   "premiumPrice": {
+    "message": "Kaikki tämä vain $PRICE$/vuosi!",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
+  },
+  "premiumPriceV2": {
     "message": "Kaikki tämä vain $PRICE$/vuosi!",
     "placeholders": {
       "price": {
@@ -2305,11 +2314,11 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSendSuccessfully": {
-    "message": "Send created successfully!",
+    "message": "Sendin luonti onnistui!",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendAvailability": {
-    "message": "The Send will be available to anyone with the link for the next $DAYS$ days.",
+    "message": "Tämän linkin välityksellä Send on kenen tahansa avattavissa seuraavien $DAYS$ päivän ajan.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
     "placeholders": {
       "days": {
@@ -2319,7 +2328,7 @@
     }
   },
   "sendLinkCopied": {
-    "message": "Send link copied",
+    "message": "Send-linkki kopioitiin",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
@@ -3959,6 +3968,12 @@
   },
   "autoFillOnPageLoad": {
     "message": "Automaattitäytetäänkö sivun avautuessa?"
+  },
+  "cardExpiredTitle": {
+    "message": "Kortti on vanhentunut"
+  },
+  "cardExpiredMessage": {
+    "message": "Jos olet uusinut sen, päivitä kortin tiedot"
   },
   "cardDetails": {
     "message": "Kortin tiedot"

@@ -25,9 +25,6 @@
   "finishCreatingYourAccountBySettingAPassword": {
     "message": "A fiók létrehozásának befejezése jelszó beállításával"
   },
-  "login": {
-    "message": "Bejelentkezés"
-  },
   "enterpriseSingleSignOn": {
     "message": "Vállalati önálló bejelentkezés"
   },
@@ -1083,7 +1080,7 @@
     "message": "1 GB titkosított tárhely a fájlmellékleteknek."
   },
   "premiumSignUpEmergency": {
-    "message": "Emergency access"
+    "message": "Sürgősségi hozzáférés"
   },
   "premiumSignUpTwoStepOptions": {
     "message": "Saját kétlépcsős bejelentkezési lehetőségek mint a YubiKey és a Duo."
@@ -1107,7 +1104,7 @@
     "message": "A prémium tagság megvásárolható a bitwarden.com webes széfben. Szeretnénk felkeresni a webhelyet most?"
   },
   "premiumPurchaseAlertV2": {
-    "message": "You can purchase Premium from your account settings on the Bitwarden web app."
+    "message": "Prémium szolgáltatást vásárolhatunk a Bitwarden webalkalmazás fiókbeállításai között."
   },
   "premiumCurrentMember": {
     "message": "Prémium tag vagyunk!"
@@ -1115,8 +1112,20 @@
   "premiumCurrentMemberThanks": {
     "message": "Köszönjük a Bitwarden támogatását."
   },
+  "premiumFeatures": {
+    "message": "Áttérés prémium verzióra és fogadás:"
+  },
   "premiumPrice": {
     "message": "Mindez csak $PRICE$ /év.",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
+  },
+  "premiumPriceV2": {
+    "message": "Mindez csak $PRICE$ /év!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -3959,6 +3968,12 @@
   },
   "autoFillOnPageLoad": {
     "message": "Automatikus kitöltés oldalbetöltésnél?"
+  },
+  "cardExpiredTitle": {
+    "message": "Lejárt kártya"
+  },
+  "cardExpiredMessage": {
+    "message": "Ha megújítottuk, frissítsük a kártya adatait."
   },
   "cardDetails": {
     "message": "Kártyaadatok"

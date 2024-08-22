@@ -25,9 +25,6 @@
   "finishCreatingYourAccountBySettingAPassword": {
     "message": "设置密码以完成账户的创建"
   },
-  "login": {
-    "message": "登录"
-  },
   "enterpriseSingleSignOn": {
     "message": "企业单点登录"
   },
@@ -1083,7 +1080,7 @@
     "message": "1 GB 文件附件加密存储。"
   },
   "premiumSignUpEmergency": {
-    "message": "Emergency access"
+    "message": "紧急访问。"
   },
   "premiumSignUpTwoStepOptions": {
     "message": "专有的两步登录选项，如 YubiKey 和 Duo。"
@@ -1098,7 +1095,7 @@
     "message": "优先客户支持。"
   },
   "ppremiumSignUpFuture": {
-    "message": "未来会增加更多高级功能。敬请期待！"
+    "message": "未来的更多高级功能。敬请期待！"
   },
   "premiumPurchase": {
     "message": "购买高级版"
@@ -1107,7 +1104,7 @@
     "message": "您可以在 bitwarden.com 网页版密码库购买高级会员。现在要访问吗？"
   },
   "premiumPurchaseAlertV2": {
-    "message": "You can purchase Premium from your account settings on the Bitwarden web app."
+    "message": "您可以在 Bitwarden 网页 App 的账户设置中购买高级版。"
   },
   "premiumCurrentMember": {
     "message": "您目前是高级会员！"
@@ -1115,8 +1112,20 @@
   "premiumCurrentMemberThanks": {
     "message": "感谢您支持 Bitwarden。"
   },
+  "premiumFeatures": {
+    "message": "升级到高级版并接收："
+  },
   "premiumPrice": {
-    "message": "只需 $PRICE$ /年！",
+    "message": "所有功能仅需 $PRICE$ /年！",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
+  },
+  "premiumPriceV2": {
+    "message": "所有功能仅需 $PRICE$ /年！",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -2305,11 +2314,11 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSendSuccessfully": {
-    "message": "Send created successfully!",
+    "message": "Send 创建成功！",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendAvailability": {
-    "message": "The Send will be available to anyone with the link for the next $DAYS$ days.",
+    "message": "在接下来的 $DAYS$ 天内，任何拥有链接的人都可以访问此 Send。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
     "placeholders": {
       "days": {
@@ -2319,7 +2328,7 @@
     }
   },
   "sendLinkCopied": {
-    "message": "Send link copied",
+    "message": "Send 链接已复制",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
@@ -3959,6 +3968,12 @@
   },
   "autoFillOnPageLoad": {
     "message": "页面加载时自动填充吗？"
+  },
+  "cardExpiredTitle": {
+    "message": "Expired card"
+  },
+  "cardExpiredMessage": {
+    "message": "If you've renewed it, update the card's information"
   },
   "cardDetails": {
     "message": "支付卡详情"

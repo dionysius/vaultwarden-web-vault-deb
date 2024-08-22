@@ -25,9 +25,6 @@
   "finishCreatingYourAccountBySettingAPassword": {
     "message": "Termine de criar a sua conta definindo uma senha"
   },
-  "login": {
-    "message": "Iniciar Sessão"
-  },
   "enterpriseSingleSignOn": {
     "message": "Iniciar Sessão Empresarial Única"
   },
@@ -1083,7 +1080,7 @@
     "message": "1 GB de armazenamento de arquivos encriptados."
   },
   "premiumSignUpEmergency": {
-    "message": "Emergency access"
+    "message": "Emergency access."
   },
   "premiumSignUpTwoStepOptions": {
     "message": "Opções de login em duas etapas como YubiKey e Duo."
@@ -1115,8 +1112,20 @@
   "premiumCurrentMemberThanks": {
     "message": "Obrigado por apoiar o Bitwarden."
   },
+  "premiumFeatures": {
+    "message": "Upgrade to premium and receive:"
+  },
   "premiumPrice": {
     "message": "Tudo por apenas %price% /ano!",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
+  },
+  "premiumPriceV2": {
+    "message": "All for just $PRICE$ per year!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -3959,6 +3968,12 @@
   },
   "autoFillOnPageLoad": {
     "message": "Preenchimento automático ao carregar a página?"
+  },
+  "cardExpiredTitle": {
+    "message": "Expired card"
+  },
+  "cardExpiredMessage": {
+    "message": "If you've renewed it, update the card's information"
   },
   "cardDetails": {
     "message": "Detalhes do cartão"

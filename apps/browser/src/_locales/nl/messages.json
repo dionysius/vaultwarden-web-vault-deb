@@ -25,9 +25,6 @@
   "finishCreatingYourAccountBySettingAPassword": {
     "message": "Rond het aanmaken van je account af met het instellen van een wachtwoord"
   },
-  "login": {
-    "message": "Inloggen"
-  },
   "enterpriseSingleSignOn": {
     "message": "Single sign-on voor bedrijven"
   },
@@ -1083,7 +1080,7 @@
     "message": "1 GB versleutelde opslag voor bijlagen."
   },
   "premiumSignUpEmergency": {
-    "message": "Emergency access"
+    "message": "Noodtoegang"
   },
   "premiumSignUpTwoStepOptions": {
     "message": "Eigen opties voor tweestapsaanmelding zoals YubiKey en Duo."
@@ -1107,7 +1104,7 @@
     "message": "Je kunt een Premium-abonnement aanschaffen in de webkluis op bitwarden.com. Wil je de website nu bezoeken?"
   },
   "premiumPurchaseAlertV2": {
-    "message": "You can purchase Premium from your account settings on the Bitwarden web app."
+    "message": "Je kunt Premium via je accountinstellingen in de Bitwarden-webapp kopen."
   },
   "premiumCurrentMember": {
     "message": "Je bent Premium-lid!"
@@ -1115,7 +1112,19 @@
   "premiumCurrentMemberThanks": {
     "message": "Bedankt voor het ondersteunen van Bitwarden."
   },
+  "premiumFeatures": {
+    "message": "Upgrade naar premium en ontvang:"
+  },
   "premiumPrice": {
+    "message": "Dit alles voor slechts $PRICE$ per jaar!",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
+  },
+  "premiumPriceV2": {
     "message": "Dit alles voor slechts $PRICE$ per jaar!",
     "placeholders": {
       "price": {
@@ -2305,11 +2314,11 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSendSuccessfully": {
-    "message": "Send created successfully!",
+    "message": "Send succesvol aangemaakt!",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendAvailability": {
-    "message": "The Send will be available to anyone with the link for the next $DAYS$ days.",
+    "message": "De Send is de komende $DAYS$ dagen beschikbaar voor iedereen met de link.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
     "placeholders": {
       "days": {
@@ -2319,7 +2328,7 @@
     }
   },
   "sendLinkCopied": {
-    "message": "Send link copied",
+    "message": "Send-link gekopieerd",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
@@ -3959,6 +3968,12 @@
   },
   "autoFillOnPageLoad": {
     "message": "Automatisch invullen bij laden van pagina?"
+  },
+  "cardExpiredTitle": {
+    "message": "Verlopen kaart"
+  },
+  "cardExpiredMessage": {
+    "message": "Als je het hebt vernieuwd, werk dan de informatie van de kaart bij"
   },
   "cardDetails": {
     "message": "Kaartgegevens"

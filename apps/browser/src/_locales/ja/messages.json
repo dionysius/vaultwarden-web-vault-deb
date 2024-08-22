@@ -25,9 +25,6 @@
   "finishCreatingYourAccountBySettingAPassword": {
     "message": "パスワードを設定してアカウントの作成を完了してください"
   },
-  "login": {
-    "message": "ログイン"
-  },
   "enterpriseSingleSignOn": {
     "message": "組織のシングルサインオン"
   },
@@ -1083,7 +1080,7 @@
     "message": "1GB の暗号化されたファイルストレージ"
   },
   "premiumSignUpEmergency": {
-    "message": "Emergency access"
+    "message": "緊急アクセス"
   },
   "premiumSignUpTwoStepOptions": {
     "message": "YubiKey、Duo などのプロプライエタリな2段階認証オプション。"
@@ -1107,7 +1104,7 @@
     "message": "プレミアム会員権は bitwarden.com ウェブ保管庫で購入できます。ウェブサイトを開きますか？"
   },
   "premiumPurchaseAlertV2": {
-    "message": "You can purchase Premium from your account settings on the Bitwarden web app."
+    "message": "Bitwarden ウェブアプリでアカウント設定からプレミアムを購入できます。"
   },
   "premiumCurrentMember": {
     "message": "あなたはプレミアム会員です！"
@@ -1115,8 +1112,20 @@
   "premiumCurrentMemberThanks": {
     "message": "Bitwarden を支援いただき、ありがとうございます。"
   },
+  "premiumFeatures": {
+    "message": "プレミアムにアップグレードして受け取る："
+  },
   "premiumPrice": {
     "message": "全部でなんと$PRICE$/年だけ！",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
+  },
+  "premiumPriceV2": {
+    "message": "すべて込みで年間たったの$PRICE$！",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -2305,11 +2314,11 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSendSuccessfully": {
-    "message": "Send created successfully!",
+    "message": "Send を作成しました！",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendAvailability": {
-    "message": "The Send will be available to anyone with the link for the next $DAYS$ days.",
+    "message": "Send は、次の $DAYS$ 日間はリンクを知っている人全員が利用できます。",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
     "placeholders": {
       "days": {
@@ -2319,7 +2328,7 @@
     }
   },
   "sendLinkCopied": {
-    "message": "Send link copied",
+    "message": "Send リンクをコピーしました",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
@@ -3959,6 +3968,12 @@
   },
   "autoFillOnPageLoad": {
     "message": "ページ読み込み時に自動入力する"
+  },
+  "cardExpiredTitle": {
+    "message": "期限切れのカード"
+  },
+  "cardExpiredMessage": {
+    "message": "カードの更新があった場合、カード情報を更新してください"
   },
   "cardDetails": {
     "message": "カード情報"

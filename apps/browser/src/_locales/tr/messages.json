@@ -25,9 +25,6 @@
   "finishCreatingYourAccountBySettingAPassword": {
     "message": "Parolanızı belirleyerek hesabınızı oluşturmayı tamamlayın"
   },
-  "login": {
-    "message": "Giriş yap"
-  },
   "enterpriseSingleSignOn": {
     "message": "Kurumsal tek oturum açma (SSO)"
   },
@@ -1083,7 +1080,7 @@
     "message": "Dosya ekleri için 1 GB şifrelenmiş depolama."
   },
   "premiumSignUpEmergency": {
-    "message": "Emergency access"
+    "message": "Acil durum erişimi"
   },
   "premiumSignUpTwoStepOptions": {
     "message": "YubiKey ve Duo gibi marka bazlı iki aşamalı giriş seçenekleri."
@@ -1115,8 +1112,20 @@
   "premiumCurrentMemberThanks": {
     "message": "Bitwarden'ı desteklediğiniz için teşekkür ederiz."
   },
+  "premiumFeatures": {
+    "message": "Upgrade to premium and receive:"
+  },
   "premiumPrice": {
     "message": "Bunların hepsi sadece yılda $PRICE$!",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
+  },
+  "premiumPriceV2": {
+    "message": "All for just $PRICE$ per year!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -3311,7 +3320,7 @@
     "message": "Error connecting with the Duo service. Use a different two-step login method or contact Duo for assistance."
   },
   "launchDuoAndFollowStepsToFinishLoggingIn": {
-    "message": "Duo'yu başlatın ve oturum açmayı tamamlamak için adımları izleyin."
+    "message": "Duo'yu açın ve girişi tamamlamak için adımları izleyin."
   },
   "duoRequiredForAccount": {
     "message": "Hesabınız için Duo iki adımlı giriş gereklidir."
@@ -3323,7 +3332,7 @@
     "message": "Uzantıyı dışarı al"
   },
   "launchDuo": {
-    "message": "Duo'yu başlat"
+    "message": "Duo'yu aç"
   },
   "importFormatError": {
     "message": "Veriler doğru biçimlendirilmemiş. Lütfen içe aktarma dosyanızı kontrol edin ve tekrar deneyin."
@@ -3557,7 +3566,7 @@
     "message": "konum"
   },
   "useDeviceOrHardwareKey": {
-    "message": "Cihazınızı veya donanımsal anahtarınızı kullanın"
+    "message": "Cihazımı veya anahtar donanımımı kullanacağım"
   },
   "justOnce": {
     "message": "Yalnızca bir defa"
@@ -3959,6 +3968,12 @@
   },
   "autoFillOnPageLoad": {
     "message": "Sayfa yüklendiğinde otomatik doldur"
+  },
+  "cardExpiredTitle": {
+    "message": "Kartın süresi dolmuş"
+  },
+  "cardExpiredMessage": {
+    "message": "Kartı yenilediyseniz kart bilgilerini güncelleyin"
   },
   "cardDetails": {
     "message": "Kart bilgileri"

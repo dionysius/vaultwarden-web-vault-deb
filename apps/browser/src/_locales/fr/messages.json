@@ -25,9 +25,6 @@
   "finishCreatingYourAccountBySettingAPassword": {
     "message": "Terminer la création de votre compte en définissant un mot de passe"
   },
-  "login": {
-    "message": "Se connecter"
-  },
   "enterpriseSingleSignOn": {
     "message": "Portail de connexion unique d'entreprise"
   },
@@ -1083,7 +1080,7 @@
     "message": "1 Go de stockage chiffré pour les fichiers joints."
   },
   "premiumSignUpEmergency": {
-    "message": "Emergency access"
+    "message": "Emergency access."
   },
   "premiumSignUpTwoStepOptions": {
     "message": "Options de connexion propriétaires à deux facteurs telles que YubiKey et Duo."
@@ -1115,8 +1112,20 @@
   "premiumCurrentMemberThanks": {
     "message": "Merci de soutenir Bitwarden."
   },
+  "premiumFeatures": {
+    "message": "Upgrade to premium and receive:"
+  },
   "premiumPrice": {
     "message": "Tout pour seulement $PRICE$/an !",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
+  },
+  "premiumPriceV2": {
+    "message": "All for just $PRICE$ per year!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1285,7 +1294,7 @@
     "description": "Represents the message for allowing the user to enable the autofill overlay"
   },
   "autofillSuggestionsSectionTitle": {
-    "message": "Autofill suggestions"
+    "message": "Suggestions de saisie automatique"
   },
   "showInlineMenuLabel": {
     "message": "Show autofill suggestions on form fields"
@@ -3960,6 +3969,12 @@
   "autoFillOnPageLoad": {
     "message": "Autofill on page load?"
   },
+  "cardExpiredTitle": {
+    "message": "Expired card"
+  },
+  "cardExpiredMessage": {
+    "message": "If you've renewed it, update the card's information"
+  },
   "cardDetails": {
     "message": "Card details"
   },
@@ -3973,7 +3988,7 @@
     }
   },
   "addAccount": {
-    "message": "Add account"
+    "message": "Ajouter un compte"
   },
   "loading": {
     "message": "Loading"

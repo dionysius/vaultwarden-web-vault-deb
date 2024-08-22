@@ -25,9 +25,6 @@
   "finishCreatingYourAccountBySettingAPassword": {
     "message": "Завершите создание аккаунта, задав пароль"
   },
-  "login": {
-    "message": "Войти"
-  },
   "enterpriseSingleSignOn": {
     "message": "Единая корпоративная авторизация"
   },
@@ -1115,7 +1112,19 @@
   "premiumCurrentMemberThanks": {
     "message": "Благодарим вас за поддержку Bitwarden."
   },
+  "premiumFeatures": {
+    "message": "Перейдите на Премиум и получите:"
+  },
   "premiumPrice": {
+    "message": "Всего лишь $PRICE$ в год!",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
+  },
+  "premiumPriceV2": {
     "message": "Всего лишь $PRICE$ в год!",
     "placeholders": {
       "price": {
@@ -3959,6 +3968,12 @@
   },
   "autoFillOnPageLoad": {
     "message": "Автозаполнение при загрузке страницы?"
+  },
+  "cardExpiredTitle": {
+    "message": "Истек срок действия карты"
+  },
+  "cardExpiredMessage": {
+    "message": "Если вы заменили карту, обновите информацию о ней"
   },
   "cardDetails": {
     "message": "Реквизиты карты"

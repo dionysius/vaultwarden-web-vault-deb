@@ -25,9 +25,6 @@
   "finishCreatingYourAccountBySettingAPassword": {
     "message": "Dokončete vytváření účtu nastavením hesla"
   },
-  "login": {
-    "message": "Přihlásit se"
-  },
   "enterpriseSingleSignOn": {
     "message": "Jednotné podnikové přihlášení"
   },
@@ -1115,7 +1112,19 @@
   "premiumCurrentMemberThanks": {
     "message": "Děkujeme za podporu Bitwardenu."
   },
+  "premiumFeatures": {
+    "message": "Přejděte na Premium a získáte:"
+  },
   "premiumPrice": {
+    "message": "Vše jen za $PRICE$ ročně!",
+    "placeholders": {
+      "price": {
+        "content": "$1",
+        "example": "$10"
+      }
+    }
+  },
+  "premiumPriceV2": {
     "message": "Vše jen za $PRICE$ ročně!",
     "placeholders": {
       "price": {
@@ -3959,6 +3968,12 @@
   },
   "autoFillOnPageLoad": {
     "message": "Automaticky vyplnit při načtení stránky?"
+  },
+  "cardExpiredTitle": {
+    "message": "Prošlá karta"
+  },
+  "cardExpiredMessage": {
+    "message": "Pokud jste ji obnovili, aktualizujte informace o kartě"
   },
   "cardDetails": {
     "message": "Podrobnosti karty"
