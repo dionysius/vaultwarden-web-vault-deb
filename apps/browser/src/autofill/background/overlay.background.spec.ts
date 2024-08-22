@@ -717,7 +717,7 @@ describe("OverlayBackground", () => {
       localData: { lastUsedDate: 222 },
       name: "name-1",
       type: CipherType.Login,
-      login: { username: "username-1", uri: url },
+      login: { username: "username-1", password: "password", uri: url },
     });
     const cardCipher = mock<CipherView>({
       id: "id-2",
@@ -752,6 +752,7 @@ describe("OverlayBackground", () => {
       type: CipherType.Login,
       login: {
         username: "username-5",
+        password: "password",
         uri: url,
         fido2Credentials: [
           mock<Fido2CredentialView>({
@@ -1116,6 +1117,7 @@ describe("OverlayBackground", () => {
       overlayBackground["focusedFieldData"] = createFocusedFieldDataMock({
         tabId: tab.id,
         filledByCipherType: CipherType.Login,
+        showPasskeys: true,
       });
       cipherService.getAllDecryptedForUrl.mockResolvedValue([loginCipher1, passkeyCipher]);
       cipherService.sortCiphersByLastUsedThenName.mockReturnValue(-1);
@@ -2517,6 +2519,7 @@ describe("OverlayBackground", () => {
 
     describe("extension messages that trigger an update of the inline menu ciphers", () => {
       const extensionMessages = [
+        "doFullSync",
         "addedCipher",
         "addEditCipherSubmitted",
         "editedCipher",

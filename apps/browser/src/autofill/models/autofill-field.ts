@@ -115,5 +115,7 @@ export default class AutofillField {
 
   showInlineMenuAccountCreation?: boolean;
 
+  showPasskeys?: boolean;
+
   fieldQualifier?: AutofillFieldQualifierType;
 }

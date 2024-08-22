@@ -139,6 +139,7 @@ export class OverlayBackground implements OverlayBackgroundInterface {
       this.triggerDestroyInlineMenuListeners(sender.tab, message.subFrameData.frameId),
     collectPageDetailsResponse: ({ message, sender }) => this.storePageDetails(message, sender),
     unlockCompleted: ({ message }) => this.unlockCompleted(message),
+    doFullSync: () => this.updateOverlayCiphers(true),
     addedCipher: () => this.updateOverlayCiphers(),
     addEditCipherSubmitted: () => this.updateOverlayCiphers(),
     editedCipher: () => this.updateOverlayCiphers(),
@@ -455,18 +456,27 @@ export class OverlayBackground implements OverlayBackgroundInterface {
         continue;
       }
 
-      if (this.showCipherAsPasskey(cipher, domainExclusionsSet)) {
-        passkeyCipherData.push(
-          this.buildCipherData({
-            inlineMenuCipherId,
-            cipher,
-            showFavicons,
-            hasPasskey: true,
-          }),
+      if (!this.showCipherAsPasskey(cipher, domainExclusionsSet)) {
+        inlineMenuCipherData.push(
+          this.buildCipherData({ inlineMenuCipherId, cipher, showFavicons }),
         );
+        continue;
       }
 
-      inlineMenuCipherData.push(this.buildCipherData({ inlineMenuCipherId, cipher, showFavicons }));
+      passkeyCipherData.push(
+        this.buildCipherData({
+          inlineMenuCipherId,
+          cipher,
+          showFavicons,
+          hasPasskey: true,
+        }),
+      );
+
+      if (cipher.login?.password && cipher.login.username) {
+        inlineMenuCipherData.push(
+          this.buildCipherData({ inlineMenuCipherId, cipher, showFavicons }),
+        );
+      }
     }
 
     if (passkeyCipherData.length) {
@@ -485,7 +495,7 @@ export class OverlayBackground implements OverlayBackgroundInterface {
    * @param domainExclusions - The domain exclusions to check against
    */
   private showCipherAsPasskey(cipher: CipherView, domainExclusions: Set<string> | null): boolean {
-    if (cipher.type !== CipherType.Login) {
+    if (cipher.type !== CipherType.Login || !this.focusedFieldData?.showPasskeys) {
       return false;
     }
 
