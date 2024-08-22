@@ -239,7 +239,7 @@
     "message": "นางสาว"
   },
   "mx": {
-    "message": "Mx"
+    "message": "เอมเอ็ก"
   },
   "dr": {
     "message": "ดร."
@@ -1173,6 +1173,9 @@
   },
   "premiumPurchaseAlert": {
     "message": "You can purchase premium membership on the bitwarden.com web vault. Do you want to visit the website now?"
+  },
+  "premiumPurchaseAlertV2": {
+    "message": "You can purchase Premium from your account settings on the Bitwarden web app."
   },
   "premiumCurrentMember": {
     "message": "You are a premium member!"

@@ -552,7 +552,7 @@
     "message": "Gợi ý mật khẩu chính"
   },
   "joinOrganization": {
-    "message": "Join organization"
+    "message": "Tham gia tổ chức"
   },
   "finishJoiningThisOrganizationBySettingAMasterPassword": {
     "message": "Finish joining this organization by setting a master password."
@@ -1174,6 +1174,9 @@
   "premiumPurchaseAlert": {
     "message": "Bạn có thể nâng cấp làm thành viên cao cấp trong kho bitwarden nền web. Bạn có muốn truy cập trang web bây giờ?"
   },
+  "premiumPurchaseAlertV2": {
+    "message": "You can purchase Premium from your account settings on the Bitwarden web app."
+  },
   "premiumCurrentMember": {
     "message": "Bạn là một thành viên cao cấp!"
   },
@@ -1721,16 +1724,16 @@
     "message": "Mật khẩu chính bạn chọn không đáp ứng yêu cầu."
   },
   "receiveMarketingEmailsV2": {
-    "message": "Nhận lời khuyên, thông báo và cơ hội nghiên cứu từ Bitwarden trong hộp thư đến của bạn."
+    "message": "Nhận đề xuất, thông báo và cơ hội nghiên cứu từ Bitwarden trong hộp thư đến của bạn."
   },
   "unsubscribe": {
-    "message": "Huỷ đăng ký"
+    "message": "Hủy đăng ký"
   },
   "atAnyTime": {
     "message": "bất cứ lúc nào."
   },
   "byContinuingYouAgreeToThe": {
-    "message": "Bằng cách tiếp tục, bạn đồng ý"
+    "message": "Nếu tiếp tục, bạn đồng ý"
   },
   "and": {
     "message": "và"
@@ -2118,7 +2121,7 @@
     "message": "Thời gian mở kho vượt quá giới hạn do tổ chức của bạn đặt ra."
   },
   "inviteAccepted": {
-    "message": "Invitation accepted"
+    "message": "Lời mời được chấp nhận"
   },
   "resetPasswordPolicyAutoEnroll": {
     "message": "Đăng ký tự động"
@@ -2142,7 +2145,7 @@
     "message": "Đã xóa mật khẩu chính"
   },
   "convertOrganizationEncryptionDesc": {
-    "message": "$ORGANIZATION$ đang sử dụng SSO với khóa máy chủ tự lưu trữ. Các thành viên của tổ chức này không cần mật khẩu chính để đăng nhập.",
+    "message": "$ORGANIZATION$ đang sử dụng SSO với khóa máy chủ tự lưu trữ. Mật khẩu chính không còn cần để đăng nhập cho các thành viên của tổ chức này.",
     "placeholders": {
       "organization": {
         "content": "$1",
