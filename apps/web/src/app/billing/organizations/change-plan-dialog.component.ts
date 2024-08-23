@@ -138,7 +138,7 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
     clientOwnerEmail: ["", [Validators.email]],
     plan: [this.plan],
     productTier: [this.productTier],
-    planInterval: [1],
+    // planInterval: [1],
   });
 
   planType: string;
@@ -146,6 +146,7 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
   selectedInterval: number = 1;
   planIntervals = PlanInterval;
   passwordManagerPlans: PlanResponse[];
+  secretsManagerPlans: PlanResponse[];
   organization: Organization;
   sub: OrganizationSubscriptionResponse;
   billing: BillingResponse;
@@ -188,6 +189,7 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
     if (!this.selfHosted) {
       const plans = await this.apiService.getPlans();
       this.passwordManagerPlans = plans.data.filter((plan) => !!plan.PasswordManager);
+      this.secretsManagerPlans = plans.data.filter((plan) => !!plan.SecretsManager);
 
       if (
         this.productTier === ProductTierType.Enterprise ||
@@ -230,12 +232,6 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
         selected: false,
       },
     ];
-
-    this.formGroup
-      .get("planInterval")
-      .valueChanges.pipe(takeUntil(this.destroy$))
-      .subscribe((value: number) => (this.selectedInterval = value));
-
     this.discountPercentageFromSub = this.sub?.customerDiscount?.percentOff;
 
     this.setInitialPlanSelection();
@@ -243,15 +239,42 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
   }
 
   setInitialPlanSelection() {
-    this.selectPlan(this.getPlanByType(ProductTierType.Enterprise));
+    if (
+      this.organization.useSecretsManager &&
+      this.currentPlan.productTier == ProductTierType.Free
+    ) {
+      this.selectPlan(this.getPlanByType(ProductTierType.Teams));
+    } else {
+      this.selectPlan(this.getPlanByType(ProductTierType.Enterprise));
+    }
   }
 
   getPlanByType(productTier: ProductTierType) {
     return this.selectableProducts.find((product) => product.productTier === productTier);
   }
 
+  isSecretsManagerTrial(): boolean {
+    return (
+      this.sub?.subscription?.items?.some((item) =>
+        this.sub?.customerDiscount?.appliesTo?.includes(item.productId),
+      ) ?? false
+    );
+  }
+
   planTypeChanged() {
-    this.selectPlan(this.getPlanByType(ProductTierType.Enterprise));
+    if (
+      this.organization.useSecretsManager &&
+      this.currentPlan.productTier == ProductTierType.Free
+    ) {
+      this.selectPlan(this.getPlanByType(ProductTierType.Teams));
+    } else {
+      this.selectPlan(this.getPlanByType(ProductTierType.Enterprise));
+    }
+  }
+
+  updateInterval(event: number) {
+    this.selectedInterval = event;
+    this.planTypeChanged();
   }
 
   protected getPlanIntervals() {
@@ -270,7 +293,9 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
   protected getPlanCardContainerClasses(plan: PlanResponse, index: number) {
     let cardState: PlanCardState;
 
-    if (plan == this.selectedPlan) {
+    if (plan == this.currentPlan) {
+      cardState = PlanCardState.Disabled;
+    } else if (plan == this.selectedPlan) {
       cardState = PlanCardState.Selected;
     } else if (
       this.selectedInterval === PlanInterval.Monthly &&
@@ -283,36 +308,19 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
 
     switch (cardState) {
       case PlanCardState.Selected: {
-        if (this.currentPlan.productTier === ProductTierType.Teams) {
-          return [
-            "tw-group",
-            "tw-cursor-pointer",
-            "tw-block",
-            "tw-rounded",
-            "tw-w-1/2",
-            "tw-border",
-            "tw-border-solid",
-            "tw-border-primary-600",
-            "hover:tw-border-primary-700",
-            "focus:tw-border-2",
-            "focus:tw-border-primary-700",
-            "focus:tw-rounded-lg",
-          ];
-        } else {
-          return [
-            "tw-group",
-            "tw-cursor-pointer",
-            "tw-block",
-            "tw-rounded",
-            "tw-border",
-            "tw-border-solid",
-            "tw-border-primary-600",
-            "hover:tw-border-primary-700",
-            "focus:tw-border-2",
-            "focus:tw-border-primary-700",
-            "focus:tw-rounded-lg",
-          ];
-        }
+        return [
+          "tw-group",
+          "tw-cursor-pointer",
+          "tw-block",
+          "tw-rounded",
+          "tw-border",
+          "tw-border-solid",
+          "tw-border-primary-600",
+          "hover:tw-border-primary-700",
+          "focus:tw-border-2",
+          "focus:tw-border-primary-700",
+          "focus:tw-rounded-lg",
+        ];
       }
       case PlanCardState.NotSelected: {
         return [
@@ -336,10 +344,6 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
           "tw-text-muted",
           "tw-block",
           "tw-rounded",
-          "tw-border",
-          "tw-border-solid",
-          "tw-border-1",
-          "tw-border-secondary-300",
         ];
       }
     }
@@ -367,6 +371,10 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
       !this.showFree &&
       !this.billing?.paymentSource
     );
+  }
+
+  get selectedSecretsManagerPlan() {
+    return this.secretsManagerPlans.find((plan) => plan.type === this.selectedPlan.type);
   }
 
   get selectedPlanInterval() {
@@ -397,9 +405,37 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
         this.planIsEnabled(plan),
     );
 
+    if (
+      this.currentPlan.productTier === ProductTierType.Free &&
+      this.selectedInterval === PlanInterval.Monthly &&
+      !this.organization.useSecretsManager
+    ) {
+      const familyPlan = this.passwordManagerPlans.find(
+        (plan) => plan.productTier == ProductTierType.Families,
+      );
+      result.push(familyPlan);
+    }
+
+    if (
+      this.organization.useSecretsManager &&
+      this.currentPlan.productTier === ProductTierType.Free
+    ) {
+      const familyPlanIndex = result.findIndex(
+        (plan) => plan.productTier === ProductTierType.Families,
+      );
+
+      if (familyPlanIndex !== -1) {
+        result.splice(familyPlanIndex, 1);
+      }
+    }
+
+    if (this.currentPlan.productTier !== ProductTierType.Free) {
+      result.push(this.currentPlan);
+    }
+
     result.sort((planA, planB) => planA.displaySortOrder - planB.displaySortOrder);
 
-    return result.reverse();
+    return result;
   }
 
   get selectablePlans() {
@@ -414,12 +450,39 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
   }
 
   passwordManagerSeatTotal(plan: PlanResponse): number {
-    if (!plan.PasswordManager.hasAdditionalSeatsOption) {
+    if (!plan.PasswordManager.hasAdditionalSeatsOption || this.isSecretsManagerTrial()) {
       return 0;
     }
 
     const result = plan.PasswordManager.seatPrice * Math.abs(this.organization.seats || 0);
     return result;
+  }
+
+  secretsManagerSeatTotal(plan: PlanResponse, seats: number): number {
+    if (!plan.SecretsManager.hasAdditionalSeatsOption) {
+      return 0;
+    }
+
+    return plan.SecretsManager.seatPrice * Math.abs(seats || 0);
+  }
+
+  additionalStorageTotal(plan: PlanResponse): number {
+    if (!plan.PasswordManager.hasAdditionalStorageOption) {
+      return 0;
+    }
+
+    return (
+      plan.PasswordManager.additionalStoragePricePerGb *
+      Math.abs(this.organization.maxStorageGb || 0)
+    );
+  }
+
+  additionalServiceAccountTotal(plan: PlanResponse): number {
+    if (!plan.SecretsManager.hasAdditionalServiceAccountOption || this.additionalServiceAccount) {
+      return 0;
+    }
+
+    return plan.SecretsManager.additionalPricePerServiceAccount * this.additionalServiceAccount;
   }
 
   get passwordManagerSubtotal() {
@@ -433,18 +496,51 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
     return subTotal - this.discount;
   }
 
+  get secretsManagerSubtotal() {
+    const plan = this.selectedSecretsManagerPlan;
+
+    if (!this.organization.useSecretsManager) {
+      return 0;
+    }
+
+    return (
+      plan.SecretsManager.basePrice +
+      this.secretsManagerSeatTotal(plan, this.sub?.smSeats) +
+      this.additionalServiceAccountTotal(plan)
+    );
+  }
+
   get taxCharges() {
     return this.taxComponent != null && this.taxComponent.taxRate != null
       ? (this.taxComponent.taxRate / 100) * this.passwordManagerSubtotal
       : 0;
   }
 
+  get passwordManagerSeats() {
+    if (this.selectedPlan.productTier === ProductTierType.Families) {
+      return this.selectedPlan.PasswordManager.baseSeats;
+    }
+    return this.organization.seats;
+  }
+
   get total() {
+    if (this.organization.useSecretsManager) {
+      return this.passwordManagerSubtotal + this.secretsManagerSubtotal + this.taxCharges || 0;
+    }
     return this.passwordManagerSubtotal + this.taxCharges || 0;
   }
 
   get teamsStarterPlanIsAvailable() {
     return this.selectablePlans.some((plan) => plan.type === PlanType.TeamsStarter);
+  }
+
+  get additionalServiceAccount() {
+    const baseServiceAccount = this.selectedPlan.SecretsManager?.baseServiceAccount || 0;
+    const usedServiceAccounts = this.sub?.smServiceAccounts || 0;
+
+    const additionalServiceAccounts = baseServiceAccount - usedServiceAccounts;
+
+    return additionalServiceAccounts <= 0 ? Math.abs(additionalServiceAccounts) : 0;
   }
 
   changedProduct() {
@@ -552,6 +648,9 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
       request.billingAddressPostalCode = this.taxComponent.taxFormGroup?.value.postalCode;
     }
 
+    // Secrets Manager
+    this.buildSecretsManagerRequest(request);
+
     if (this.upgradeRequiresPaymentMethod || this.showPayment) {
       const tokenResult = await this.paymentComponent.createPaymentToken();
       const paymentRequest = new PaymentRequest();
@@ -591,6 +690,22 @@ export class ChangePlanDialogComponent implements OnInit, OnDestroy {
     }
 
     return text;
+  }
+
+  private buildSecretsManagerRequest(request: OrganizationUpgradeRequest): void {
+    request.useSecretsManager = this.organization.useSecretsManager;
+    if (!this.organization.useSecretsManager) {
+      return;
+    }
+
+    if (
+      this.selectedPlan.SecretsManager.hasAdditionalSeatsOption &&
+      this.currentPlan.productTier === ProductTierType.Free
+    ) {
+      request.additionalSmSeats = this.organization.seats;
+    } else {
+      request.additionalSmSeats = this.sub?.smSeats;
+    }
   }
 
   private upgradeFlowPrefillForm() {
