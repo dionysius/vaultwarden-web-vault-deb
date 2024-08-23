@@ -35,6 +35,10 @@ on:
         default: true
         type: boolean
 
+defaults:
+  run:
+    working-directory: apps/cli
+
 jobs:
   setup:
     name: Setup
@@ -42,6 +46,9 @@ jobs:
     outputs:
       release-version: ${{ steps.version-output.outputs.version }}
       deployment-id: ${{ steps.deployment.outputs.deployment_id }}
+    defaults:
+      run:
+        working-directory: .
     steps:
       - name: Branch check
         if: ${{ inputs.publish_type != 'Dry Run' }}
@@ -83,9 +90,6 @@ jobs:
     if: inputs.snap_publish
     env:
       _PKG_VERSION: ${{ needs.setup.outputs.release-version }}
-    defaults:
-      run:
-        working-directory: apps/cli
     steps:
       - name: Checkout repo
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
@@ -106,7 +110,7 @@ jobs:
         uses: samuelmeuli/action-snapcraft@d33c176a9b784876d966f80fb1b461808edc0641  # v2.1.1
 
       - name: Download artifacts
-        run: wget https://github.com/bitwarden/clients/releases/cli-v${{ env._PKG_VERSION }}/download/bw_${{ env._PKG_VERSION }}_amd64.snap
+        run: wget https://github.com/bitwarden/clients/releases/download/cli-v${{ env._PKG_VERSION }}/bw_${{ env._PKG_VERSION }}_amd64.snap
 
       - name: Publish Snap & logout
         if: ${{ inputs.publish_type != 'Dry Run' }}
@@ -145,15 +149,14 @@ jobs:
           CHOCO_API_KEY: ${{ steps.retrieve-secrets.outputs.cli-choco-api-key }}
 
       - name: Make dist dir
-        shell: pwsh
         run: New-Item -ItemType directory -Path ./dist
 
       - name: Download artifacts
-        run: wget https://github.com/bitwarden/clients/releases/cli-v${{ env._PKG_VERSION }}/download/bitwarden-cli.${{ env._PKG_VERSION }}.nupkg
+        shell: bash
+        run: wget https://github.com/bitwarden/clients/releases/download/cli-v${{ env._PKG_VERSION }}/bitwarden-cli.${{ env._PKG_VERSION }}.nupkg
 
       - name: Push to Chocolatey
         if: ${{ inputs.publish_type != 'Dry Run' }}
-        shell: pwsh
         run: |
           cd dist
           choco push --source=https://push.chocolatey.org/
@@ -182,7 +185,7 @@ jobs:
           secrets: "npm-api-key"
 
       - name: Download artifacts
-        run: wget https://github.com/bitwarden/clients/releases/cli-v${{ env._PKG_VERSION }}/download/bitwarden-cli-${{ env._PKG_VERSION }}-npm-build.zip
+        run: wget https://github.com/bitwarden/clients/releases/download/cli-v${{ env._PKG_VERSION }}/bitwarden-cli-${{ env._PKG_VERSION }}-npm-build.zip
 
       - name: Setup NPM
         run: |

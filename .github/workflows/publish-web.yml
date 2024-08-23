@@ -8,10 +8,10 @@ on:
       publish_type:
         description: 'Publish Options'
         required: true
-        default: 'Initial Publish'
+        default: 'Initial Release'
         type: choice
         options:
-          - Initial Publish
+          - Initial Release
           - Redeploy
           - Dry Run
 

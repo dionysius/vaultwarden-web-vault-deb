@@ -92,7 +92,8 @@ jobs:
                       apps/cli/bw-linux-sha256-${{ env.PKG_VERSION }}.txt,
                       apps/cli/bitwarden-cli.${{ env.PKG_VERSION }}.nupkg,
                       apps/cli/bw_${{ env.PKG_VERSION }}_amd64.snap,
-                      apps/cli/bw-snap-sha256-${{ env.PKG_VERSION }}.txt"
+                      apps/cli/bw-snap-sha256-${{ env.PKG_VERSION }}.txt,
+                      apps/cli/bitwarden-cli-${{ env.PKG_VERSION }}-npm-build.zip"
           commit: ${{ github.sha }}
           tag: cli-v${{ env.PKG_VERSION }}
           name: CLI v${{ env.PKG_VERSION }}
