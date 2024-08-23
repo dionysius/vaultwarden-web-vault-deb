@@ -83,7 +83,6 @@ export class ChangePasswordComponent
       this.router.navigate(["/settings/security/two-factor"]);
     }
 
-    this.masterPasswordHint = (await this.apiService.getProfile()).masterPasswordHint;
     await super.ngOnInit();
 
     this.characterMinimumMessage = this.i18nService.t("characterMinimum", this.minimumLength);
@@ -138,7 +137,10 @@ export class ChangePasswordComponent
   }
 
   async submit() {
-    if (this.masterPasswordHint != null && this.masterPasswordHint == this.masterPassword) {
+    if (
+      this.masterPasswordHint != null &&
+      this.masterPasswordHint.toLowerCase() === this.masterPassword.toLowerCase()
+    ) {
       this.platformUtilsService.showToast(
         "error",
         this.i18nService.t("errorOccurred"),

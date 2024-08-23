@@ -62,10 +62,7 @@ export class ProfileComponent implements OnInit, OnDestroy {
   }
 
   submit = async () => {
-    const request = new UpdateProfileRequest(
-      this.formGroup.get("name").value,
-      this.profile.masterPasswordHint,
-    );
+    const request = new UpdateProfileRequest(this.formGroup.get("name").value);
     await this.apiService.putProfile(request);
     this.platformUtilsService.showToast("success", null, this.i18nService.t("accountUpdated"));
   };
