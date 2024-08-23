@@ -7,7 +7,7 @@ import { MockProxy, mock } from "jest-mock-extended";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
-import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { ToastService } from "@bitwarden/components";
 
 import { RouterService } from "../../../../../../../apps/web/src/app/core/router.service";
 import { ProjectView } from "../../models/view/project.view";
@@ -30,7 +30,7 @@ describe("Project Redirect Guard", () => {
   let routerService: MockProxy<RouterService>;
   let projectServiceMock: MockProxy<ProjectService>;
   let i18nServiceMock: MockProxy<I18nService>;
-  let platformUtilsService: MockProxy<PlatformUtilsService>;
+  let toastService: MockProxy<ToastService>;
   let router: Router;
 
   const smOrg1 = { id: "123", canAccessSecretsManager: true } as Organization;
@@ -49,7 +49,7 @@ describe("Project Redirect Guard", () => {
     routerService = mock<RouterService>();
     projectServiceMock = mock<ProjectService>();
     i18nServiceMock = mock<I18nService>();
-    platformUtilsService = mock<PlatformUtilsService>();
+    toastService = mock<ToastService>();
 
     TestBed.configureTestingModule({
       imports: [
@@ -74,7 +74,7 @@ describe("Project Redirect Guard", () => {
         { provide: RouterService, useValue: routerService },
         { provide: ProjectService, useValue: projectServiceMock },
         { provide: I18nService, useValue: i18nServiceMock },
-        { provide: PlatformUtilsService, useValue: platformUtilsService },
+        { provide: ToastService, useValue: toastService },
       ],
     });
 
@@ -114,7 +114,11 @@ describe("Project Redirect Guard", () => {
     // Act
     await router.navigateByUrl("sm/123/projects/123");
     // Assert
-    expect(platformUtilsService.showToast).toHaveBeenCalledWith("error", null, "Project not found");
+    expect(toastService.showToast).toHaveBeenCalledWith({
+      variant: "error",
+      title: null,
+      message: "Project not found",
+    });
     expect(router.url).toBe("/sm/123/projects");
   });
 });

@@ -7,7 +7,7 @@ import { MockProxy, mock } from "jest-mock-extended";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
-import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { ToastService } from "@bitwarden/components";
 
 import { RouterService } from "../../../../../../../../clients/apps/web/src/app/core/router.service";
 import { ServiceAccountView } from "../../models/view/service-account.view";
@@ -30,7 +30,7 @@ describe("Service account Redirect Guard", () => {
   let routerService: MockProxy<RouterService>;
   let serviceAccountServiceMock: MockProxy<ServiceAccountService>;
   let i18nServiceMock: MockProxy<I18nService>;
-  let platformUtilsService: MockProxy<PlatformUtilsService>;
+  let toastService: MockProxy<ToastService>;
   let router: Router;
 
   const smOrg1 = { id: "123", canAccessSecretsManager: true } as Organization;
@@ -45,7 +45,7 @@ describe("Service account Redirect Guard", () => {
     routerService = mock<RouterService>();
     serviceAccountServiceMock = mock<ServiceAccountService>();
     i18nServiceMock = mock<I18nService>();
-    platformUtilsService = mock<PlatformUtilsService>();
+    toastService = mock<ToastService>();
 
     TestBed.configureTestingModule({
       imports: [
@@ -70,7 +70,7 @@ describe("Service account Redirect Guard", () => {
         { provide: RouterService, useValue: routerService },
         { provide: ServiceAccountService, useValue: serviceAccountServiceMock },
         { provide: I18nService, useValue: i18nServiceMock },
-        { provide: PlatformUtilsService, useValue: platformUtilsService },
+        { provide: ToastService, useValue: toastService },
       ],
     });
 
@@ -112,11 +112,11 @@ describe("Service account Redirect Guard", () => {
     // Act
     await router.navigateByUrl("sm/123/machine-accounts/123");
     // Assert
-    expect(platformUtilsService.showToast).toHaveBeenCalledWith(
-      "error",
-      null,
-      "Service account not found",
-    );
+    expect(toastService.showToast).toHaveBeenCalledWith({
+      variant: "error",
+      title: null,
+      message: "Service account not found",
+    });
     expect(router.url).toBe("/sm/123/machine-accounts");
   });
 });

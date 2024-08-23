@@ -6,6 +6,7 @@ import { combineLatest, Subject, switchMap, takeUntil } from "rxjs";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { ValidationService } from "@bitwarden/common/platform/abstractions/validation.service";
+import { ToastService } from "@bitwarden/components";
 
 import { ServiceAccountGrantedPoliciesView } from "../../models/view/access-policies/service-account-granted-policies.view";
 import {
@@ -63,6 +64,7 @@ export class ServiceAccountProjectsComponent implements OnInit, OnDestroy {
     private accessPolicyService: AccessPolicyService,
     private platformUtilsService: PlatformUtilsService,
     private i18nService: I18nService,
+    private toastService: ToastService,
   ) {}
 
   ngOnInit(): void {
@@ -103,11 +105,11 @@ export class ServiceAccountProjectsComponent implements OnInit, OnDestroy {
 
       this.currentAccessPolicies = convertGrantedPoliciesToAccessPolicyItemViews(grantedViews);
 
-      this.platformUtilsService.showToast(
-        "success",
-        null,
-        this.i18nService.t("serviceAccountAccessUpdated"),
-      );
+      this.toastService.showToast({
+        variant: "success",
+        title: null,
+        message: this.i18nService.t("serviceAccountAccessUpdated"),
+      });
     } catch (e) {
       this.validationService.showError(e);
       this.setSelected(this.currentAccessPolicies);

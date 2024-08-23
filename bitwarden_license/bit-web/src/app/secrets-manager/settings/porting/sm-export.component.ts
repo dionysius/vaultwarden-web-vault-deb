@@ -8,7 +8,7 @@ import { FileDownloadService } from "@bitwarden/common/platform/abstractions/fil
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 import { openUserVerificationPrompt } from "@bitwarden/web-vault/app/auth/shared/components/user-verification";
 
 import { SecretsManagerPortingApiService } from "../services/sm-porting-api.service";
@@ -44,6 +44,7 @@ export class SecretsManagerExportComponent implements OnInit, OnDestroy {
     private logService: LogService,
     private dialogService: DialogService,
     private secretsManagerApiService: SecretsManagerPortingApiService,
+    private toastService: ToastService,
   ) {}
 
   async ngOnInit() {
@@ -85,7 +86,11 @@ export class SecretsManagerExportComponent implements OnInit, OnDestroy {
     const exportData = await this.secretsManagerApiService.export(this.orgId);
 
     await this.downloadFile(exportData, fileExtension);
-    this.platformUtilsService.showToast("success", null, this.i18nService.t("dataExportSuccess"));
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("dataExportSuccess"),
+    });
   }
 
   private async downloadFile(data: string, format: string) {

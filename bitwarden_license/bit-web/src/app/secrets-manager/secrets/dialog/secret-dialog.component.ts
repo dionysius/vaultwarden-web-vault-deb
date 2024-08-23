@@ -7,7 +7,7 @@ import { OrganizationService } from "@bitwarden/common/admin-console/abstraction
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
-import { DialogService, BitValidators } from "@bitwarden/components";
+import { DialogService, BitValidators, ToastService } from "@bitwarden/components";
 
 import { SecretAccessPoliciesView } from "../../models/view/access-policies/secret-access-policies.view";
 import { ProjectListView } from "../../models/view/project-list.view";
@@ -97,6 +97,7 @@ export class SecretDialogComponent implements OnInit, OnDestroy {
     private organizationService: OrganizationService,
     private accessPolicyService: AccessPolicyService,
     private accessPolicySelectorService: AccessPolicySelectorService,
+    private toastService: ToastService,
   ) {}
 
   get title() {
@@ -139,7 +140,11 @@ export class SecretDialogComponent implements OnInit, OnDestroy {
 
   submit = async () => {
     if (!this.data.organizationEnabled) {
-      this.platformUtilsService.showToast("error", null, this.i18nService.t("secretsCannotCreate"));
+      this.toastService.showToast({
+        variant: "error",
+        title: null,
+        message: this.i18nService.t("secretsCannotCreate"),
+      });
       return;
     }
 
@@ -318,7 +323,11 @@ export class SecretDialogComponent implements OnInit, OnDestroy {
     secretAccessPoliciesView: SecretAccessPoliciesView,
   ) {
     await this.secretService.create(this.data.organizationId, secretView, secretAccessPoliciesView);
-    this.platformUtilsService.showToast("success", null, this.i18nService.t("secretCreated"));
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("secretCreated"),
+    });
   }
 
   private getNewProjectView() {
@@ -333,7 +342,11 @@ export class SecretDialogComponent implements OnInit, OnDestroy {
     secretAccessPoliciesView: SecretAccessPoliciesView,
   ) {
     await this.secretService.update(this.data.organizationId, secretView, secretAccessPoliciesView);
-    this.platformUtilsService.showToast("success", null, this.i18nService.t("secretEdited"));
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("secretEdited"),
+    });
   }
 
   private getSecretView() {
@@ -417,11 +430,14 @@ export class SecretDialogComponent implements OnInit, OnDestroy {
     this.formGroup.markAllAsTouched();
 
     if (this.formGroup.invalid && this.tabIndex !== SecretDialogTabType.NameValuePair) {
-      this.platformUtilsService.showToast(
-        "error",
-        null,
-        this.i18nService.t("fieldOnTabRequiresAttention", this.i18nService.t("nameValuePair")),
-      );
+      this.toastService.showToast({
+        variant: "error",
+        title: null,
+        message: this.i18nService.t(
+          "fieldOnTabRequiresAttention",
+          this.i18nService.t("nameValuePair"),
+        ),
+      });
     }
 
     return this.formGroup.invalid;

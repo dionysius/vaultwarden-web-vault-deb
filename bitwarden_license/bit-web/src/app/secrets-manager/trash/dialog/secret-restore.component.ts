@@ -3,6 +3,7 @@ import { Component, Inject } from "@angular/core";
 
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { ToastService } from "@bitwarden/components";
 
 import { SecretService } from "../../secrets/secret.service";
 
@@ -21,6 +22,7 @@ export class SecretRestoreDialogComponent {
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
     @Inject(DIALOG_DATA) public data: SecretRestoreOperation,
+    private toastService: ToastService,
   ) {}
 
   get title() {
@@ -35,6 +37,10 @@ export class SecretRestoreDialogComponent {
         ? "secretRestoredSuccessToast"
         : "secretsRestoredSuccessToast";
     this.dialogRef.close(this.data.secretIds);
-    this.platformUtilsService.showToast("success", null, this.i18nService.t(message));
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t(message),
+    });
   };
 }

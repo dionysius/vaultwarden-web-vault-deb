@@ -4,7 +4,7 @@ import { Subject, takeUntil } from "rxjs";
 
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { TableDataSource } from "@bitwarden/components";
+import { TableDataSource, ToastService } from "@bitwarden/components";
 
 import {
   ServiceAccountSecretsDetailsView,
@@ -47,6 +47,7 @@ export class ServiceAccountsListComponent implements OnDestroy {
   constructor(
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
+    private toastService: ToastService,
   ) {
     this.selection.changed
       .pipe(takeUntil(this.destroy$))
@@ -85,11 +86,11 @@ export class ServiceAccountsListComponent implements OnDestroy {
         this.serviceAccounts.filter((sa) => this.selection.isSelected(sa.id)),
       );
     } else {
-      this.platformUtilsService.showToast(
-        "error",
-        this.i18nService.t("errorOccurred"),
-        this.i18nService.t("nothingSelected"),
-      );
+      this.toastService.showToast({
+        variant: "error",
+        title: this.i18nService.t("errorOccurred"),
+        message: this.i18nService.t("nothingSelected"),
+      });
     }
   }
 }
