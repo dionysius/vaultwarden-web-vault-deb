@@ -1116,7 +1116,7 @@
     "message": "升级到高级版并接收："
   },
   "premiumPrice": {
-    "message": "所有功能仅需 $PRICE$ /年！",
+    "message": "全部仅需 $PRICE$ /年！",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1125,7 +1125,7 @@
     }
   },
   "premiumPriceV2": {
-    "message": "所有功能仅需 $PRICE$ /年！",
+    "message": "全部仅需 $PRICE$ /年！",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -3970,10 +3970,10 @@
     "message": "页面加载时自动填充吗？"
   },
   "cardExpiredTitle": {
-    "message": "Expired card"
+    "message": "过期的支付卡"
   },
   "cardExpiredMessage": {
-    "message": "If you've renewed it, update the card's information"
+    "message": "如果您的支付卡已续期，请更新该卡的信息。"
   },
   "cardDetails": {
     "message": "支付卡详情"
