@@ -41,7 +41,7 @@ jobs:
 
     steps:
       - name: Check out repo
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
 
       - name: Get Node Version
         id: retrieve-node-version
@@ -51,7 +51,7 @@ jobs:
           echo "node_version=$NODE_VERSION" >> $GITHUB_OUTPUT
 
       - name: Set up Node
-        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+        uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4.0.3
         with:
           cache: 'npm'
           cache-dependency-path: '**/package-lock.json'
@@ -86,7 +86,7 @@ jobs:
           fail-on-error: true
 
       - name: Upload coverage to codecov.io
-        uses: codecov/codecov-action@54bcd8715eee62d40e33596ef5e8f0f48dbbccab # v4.1.0
+        uses: codecov/codecov-action@e28ff129e5465c2c0dcc6f003fc735cb6ae0c673 # v4.5.0
         if: ${{ needs.check-test-secrets.outputs.available == 'true' }}
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
@@ -121,7 +121,7 @@ jobs:
           sudo apt-get install -y gnome-keyring dbus-x11
 
       - name: Check out repo
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
 
       - name: Build
         working-directory: ./apps/desktop/desktop_native
