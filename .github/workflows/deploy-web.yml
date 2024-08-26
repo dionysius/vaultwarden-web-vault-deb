@@ -256,7 +256,7 @@ jobs:
       - setup
       - artifact-check
     runs-on: ubuntu-22.04
-    if: ${{ always() && contains( inputs.environment , 'QA' ) }}
+    if: ${{ always() && ( contains( inputs.environment , 'QA' ) || contains( inputs.environment , 'DEV' ) ) }}
     outputs:
       channel_id: ${{ steps.slack-message.outputs.channel_id }}
       ts: ${{ steps.slack-message.outputs.ts }}
@@ -407,7 +407,7 @@ jobs:
   notify:
     name: Notify Slack with result
     runs-on: ubuntu-22.04
-    if: ${{ always() && contains( inputs.environment , 'QA' ) }}
+    if: ${{ always() && ( contains( inputs.environment , 'QA' ) || contains( inputs.environment , 'DEV' ) ) }}
     needs:
       - setup
       - notify-start
