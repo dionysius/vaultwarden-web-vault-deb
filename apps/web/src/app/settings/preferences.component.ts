@@ -167,7 +167,10 @@ export class PreferencesComponent implements OnInit, OnDestroy {
       );
       return;
     }
-    const values = this.form.value;
+
+    // must get raw value b/c the vault timeout action is disabled when a policy is applied
+    // which removes the timeout action property and value from the normal form.value.
+    const values = this.form.getRawValue();
 
     const activeAcct = await firstValueFrom(this.accountService.activeAccount$);
 
