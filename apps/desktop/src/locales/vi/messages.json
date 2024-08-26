@@ -871,11 +871,11 @@
     "message": "Bạn có thể thay đổi mật khẩu chính của mình trên Bitwarden bản web."
   },
   "fingerprintPhrase": {
-    "message": "Cụm từ mật khẩu",
+    "message": "Cụm vân tay",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Cụm từ mật khẩu tài khoản của bạn",
+    "message": "Cụm vân tay tài khoản của bạn",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "goToWebVault": {
@@ -1649,7 +1649,7 @@
     "message": "Xoá vĩnh viễn"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Tuỳ chọn đăng xuất sẽ đăng xuất khỏi kho sau khi hết thời gian mở kho và bạn sẽ cần đăng nhập lại để tiếp tục sử dụng. Bạn có chắc muốn sử dụng tuỳ chọn này không?"
+    "message": "Đăng xuất sẽ xóa tất cả quyền truy cập vào kho của bạn và yêu cầu xác minh trực tuyến sau khi hết thời gian chờ. Bạn có chắc chắn muốn sử dụng cài đặt này không?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
     "message": "Xác nhận hành động khi hết thời gian chờ"
@@ -1778,7 +1778,7 @@
     "message": "Yêu cầu xác minh để tích hợp trình duyệt"
   },
   "enableBrowserIntegrationFingerprintDesc": {
-    "message": "Tăng cường bảo mật bằng cách yêu cầu xác nhận cụm từ mật khẩu khi kết nối máy tính với trình duyệt. Việc này yêu cầu bạn phải thực hiện thao tác xác minh mỗi khi tạo kết nối mới."
+    "message": "Tăng cường bảo mật bằng cách yêu cầu xác nhận cụm vân tay khi kết nối máy tính với trình duyệt. Việc này yêu cầu bạn phải thực hiện thao tác xác minh mỗi khi tạo kết nối."
   },
   "enableHardwareAcceleration": {
     "message": "Dùng tính năng tăng tốc phần cứng"
@@ -1793,7 +1793,7 @@
     "message": "Xác minh kết nối trình duyệt"
   },
   "verifyBrowserDesc": {
-    "message": "Vui lòng đảm bảo dấu vân tay hiển thị giống hệt với dấu vân tay được hiển thị trong tiện ích mở rộng trình duyệt."
+    "message": "Vui lòng đảm bảo cụm vân tay hiển thị giống hệt với cụm vân tay được hiển thị trong tiện ích mở rộng trình duyệt."
   },
   "verifyNativeMessagingConnectionTitle": {
     "message": "$APPID$ muốn kết nối với Bitwarden",
@@ -1817,7 +1817,7 @@
     "message": "Sinh trắc học trên trình duyệt yêu cầu sinh trắc học trên máy tính phải được cài đặt trước."
   },
   "biometricsManualSetupTitle": {
-    "message": "Autometic setup not available"
+    "message": "Automatic setup not available"
   },
   "biometricsManualSetupDesc": {
     "message": "Due to the installation method, biometrics support could not be automatically enabled. Would you like to open the documentation on how to do this manually?"
@@ -2450,10 +2450,10 @@
     "message": "Một thông báo đã được gửi đến thiết bị của bạn."
   },
   "fingerprintMatchInfo": {
-    "message": "Vui lòng đảm bảo rằng bạn đã mở khoá kho và cụm từ mật khẩu khớp trên thiết bị khác."
+    "message": "Vui lòng đảm bảo rằng bạn đã mở khoá kho và cụm vân tay khớp trên thiết bị khác."
   },
   "fingerprintPhraseHeader": {
-    "message": "Cụm từ mật khẩu"
+    "message": "Cụm vân tay"
   },
   "needAnotherOption": {
     "message": "Đăng nhập bằng thiết bị phải được thiết lập trong cài đặt của ứng dụng Bitwarden. Dùng cách khác?"
