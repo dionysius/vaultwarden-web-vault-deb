@@ -183,8 +183,11 @@ jobs:
           keyvault: "bitwarden-ci"
           secrets: "npm-api-key"
 
-      - name: Download artifacts
-        run: wget https://github.com/bitwarden/clients/releases/download/cli-v${{ env._PKG_VERSION }}/bitwarden-cli-${{ env._PKG_VERSION }}-npm-build.zip
+      - name: Download and set up artifact
+        run: |
+          mkdir -p build
+          wget https://github.com/bitwarden/clients/releases/download/cli-v${{ env._PKG_VERSION }}/bitwarden-cli-${{ env._PKG_VERSION }}-npm-build.zip
+          unzip bitwarden-cli-${{ env._PKG_VERSION }}-npm-build.zip -d build
 
       - name: Setup NPM
         run: |
