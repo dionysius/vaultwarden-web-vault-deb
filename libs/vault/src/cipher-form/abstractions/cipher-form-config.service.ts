@@ -23,6 +23,7 @@ export type OptionalInitialValues = {
   collectionIds?: CollectionId[];
   loginUri?: string;
   username?: string;
+  password?: string;
   name?: string;
 };
 
@@ -58,7 +59,8 @@ type BaseCipherFormConfig = {
   originalCipher?: Cipher;
 
   /**
-   * Optional initial values for the form when creating a new cipher. Useful when creating a cipher in a filtered view.
+   * Optional initial values for the form when opening the cipher form.
+   * Useful when creating a new cipher in a filtered view or modifying a cipher with values from another source (e.g. the notification bar in Browser)
    */
   initialValues?: OptionalInitialValues;
 

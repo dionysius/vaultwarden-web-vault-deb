@@ -8,8 +8,10 @@ import { firstValueFrom, map, switchMap } from "rxjs";
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { CipherId, CollectionId, OrganizationId } from "@bitwarden/common/types/guid";
+import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CipherType } from "@bitwarden/common/vault/enums";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
+import { AddEditCipherInfo } from "@bitwarden/common/vault/types/add-edit-cipher-info";
 import { AsyncActionsModule, ButtonModule, SearchModule } from "@bitwarden/components";
 import {
   CipherFormConfig,
@@ -18,6 +20,7 @@ import {
   CipherFormMode,
   CipherFormModule,
   DefaultCipherFormConfigService,
+  OptionalInitialValues,
   TotpCaptureService,
 } from "@bitwarden/vault";
 
@@ -156,6 +159,7 @@ export class AddEditV2Component implements OnInit {
     private popupCloseWarningService: PopupCloseWarningService,
     private popupRouterCacheService: PopupRouterCacheService,
     private router: Router,
+    private cipherService: CipherService,
   ) {
     this.subscribeToParams();
   }
@@ -255,7 +259,21 @@ export class AddEditV2Component implements OnInit {
             config.mode = "partial-edit";
           }
 
-          this.setInitialValuesFromParams(params, config);
+          config.initialValues = this.setInitialValuesFromParams(params);
+
+          // The browser notification bar and overlay use addEditCipherInfo$ to pass modified cipher details to the form
+          // Attempt to fetch them here and overwrite the initialValues if present
+          const cachedCipherInfo = await firstValueFrom(this.cipherService.addEditCipherInfo$);
+
+          if (cachedCipherInfo != null) {
+            // Cached cipher info has priority over queryParams
+            config.initialValues = {
+              ...config.initialValues,
+              ...mapAddEditCipherInfoToInitialValues(cachedCipherInfo),
+            };
+            // Be sure to clear the "cached" cipher info, so it doesn't get used again
+            await this.cipherService.setAddEditCipherInfo(null);
+          }
 
           return config;
         }),
@@ -266,26 +284,27 @@ export class AddEditV2Component implements OnInit {
       });
   }
 
-  setInitialValuesFromParams(params: QueryParams, config: CipherFormConfig) {
-    config.initialValues = {};
+  setInitialValuesFromParams(params: QueryParams) {
+    const initialValues = {} as OptionalInitialValues;
     if (params.folderId) {
-      config.initialValues.folderId = params.folderId;
+      initialValues.folderId = params.folderId;
     }
     if (params.organizationId) {
-      config.initialValues.organizationId = params.organizationId;
+      initialValues.organizationId = params.organizationId;
     }
     if (params.collectionId) {
-      config.initialValues.collectionIds = [params.collectionId];
+      initialValues.collectionIds = [params.collectionId];
     }
     if (params.uri) {
-      config.initialValues.loginUri = params.uri;
+      initialValues.loginUri = params.uri;
     }
     if (params.username) {
-      config.initialValues.username = params.username;
+      initialValues.username = params.username;
     }
     if (params.name) {
-      config.initialValues.name = params.name;
+      initialValues.name = params.name;
     }
+    return initialValues;
   }
 
   setHeader(mode: CipherFormMode, type: CipherType) {
@@ -303,3 +322,63 @@ export class AddEditV2Component implements OnInit {
     }
   }
 }
+
+/**
+ * Helper to map the old AddEditCipherInfo to the new OptionalInitialValues type used by the CipherForm
+ * @param cipherInfo
+ */
+const mapAddEditCipherInfoToInitialValues = (
+  cipherInfo: AddEditCipherInfo | null,
+): OptionalInitialValues => {
+  const initialValues: OptionalInitialValues = {};
+
+  if (cipherInfo == null) {
+    return initialValues;
+  }
+
+  if (cipherInfo.collectionIds != null) {
+    initialValues.collectionIds = cipherInfo.collectionIds as CollectionId[];
+  }
+
+  if (cipherInfo.cipher == null) {
+    return initialValues;
+  }
+
+  const cipher = cipherInfo.cipher;
+
+  if (cipher.folderId != null) {
+    initialValues.folderId = cipher.folderId;
+  }
+
+  if (cipher.organizationId != null) {
+    initialValues.organizationId = cipher.organizationId as OrganizationId;
+  }
+
+  if (cipher.name != null) {
+    initialValues.name = cipher.name;
+  }
+
+  if (cipher.type === CipherType.Login) {
+    const login = cipher.login;
+
+    if (login != null) {
+      if (login.uris != null && login.uris.length > 0) {
+        initialValues.loginUri = login.uris[0].uri;
+      }
+
+      if (login.username != null) {
+        initialValues.username = login.username;
+      }
+
+      if (login.password != null) {
+        initialValues.password = login.password;
+      }
+    }
+  }
+
+  if (cipher.type === CipherType.Identity && cipher.identity?.username != null) {
+    initialValues.username = cipher.identity.username;
+  }
+
+  return initialValues;
+};

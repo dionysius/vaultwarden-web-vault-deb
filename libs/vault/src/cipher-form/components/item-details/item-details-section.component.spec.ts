@@ -5,6 +5,7 @@ import { mock, MockProxy } from "jest-mock-extended";
 
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
+import { CollectionId, OrganizationId } from "@bitwarden/common/types/guid";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { CollectionView } from "@bitwarden/common/vault/models/view/collection.view";
 
@@ -101,6 +102,43 @@ describe("ItemDetailsSectionComponent", () => {
       expect(updatedCipher.organizationId).toBe("org1");
       expect(updatedCipher.folderId).toBe("folder1");
       expect(updatedCipher.collectionIds).toEqual(["col1"]);
+      expect(updatedCipher.favorite).toBe(true);
+    }));
+
+    it("should prioritize initialValues when editing an existing cipher ", fakeAsync(async () => {
+      component.config.allowPersonalOwnership = true;
+      component.config.organizations = [{ id: "org1" } as Organization];
+      component.config.collections = [
+        { id: "col1", name: "Collection 1", organizationId: "org1" } as CollectionView,
+        { id: "col2", name: "Collection 2", organizationId: "org1" } as CollectionView,
+      ];
+      component.originalCipherView = {
+        name: "cipher1",
+        organizationId: "org1",
+        folderId: "folder1",
+        collectionIds: ["col1"],
+        favorite: true,
+      } as CipherView;
+
+      component.config.initialValues = {
+        name: "new-name",
+        folderId: "new-folder",
+        organizationId: "bad-org" as OrganizationId, // Should not be set in edit mode
+        collectionIds: ["col2" as CollectionId],
+      };
+
+      await component.ngOnInit();
+      tick();
+
+      expect(cipherFormProvider.patchCipher).toHaveBeenCalled();
+      const patchFn = cipherFormProvider.patchCipher.mock.lastCall[0];
+
+      const updatedCipher = patchFn(new CipherView());
+
+      expect(updatedCipher.name).toBe("new-name");
+      expect(updatedCipher.organizationId).toBe("org1");
+      expect(updatedCipher.folderId).toBe("new-folder");
+      expect(updatedCipher.collectionIds).toEqual(["col2"]);
       expect(updatedCipher.favorite).toBe(true);
     }));
 

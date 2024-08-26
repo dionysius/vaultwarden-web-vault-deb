@@ -143,6 +143,20 @@ export class AutofillOptionsComponent implements OnInit {
     this.autofillOptionsForm.patchValue({
       autofillOnPageLoad: existingLogin.autofillOnPageLoad,
     });
+
+    if (this.cipherFormContainer.config.initialValues?.loginUri) {
+      // Avoid adding the same uri again if it already exists
+      if (
+        existingLogin.uris?.findIndex(
+          (uri) => uri.uri === this.cipherFormContainer.config.initialValues.loginUri,
+        ) === -1
+      ) {
+        this.addUri({
+          uri: this.cipherFormContainer.config.initialValues.loginUri,
+          matchDetection: null,
+        });
+      }
+    }
   }
 
   private initNewCipher() {

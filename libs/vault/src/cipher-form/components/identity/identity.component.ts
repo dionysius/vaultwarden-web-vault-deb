@@ -127,7 +127,7 @@ export class IdentitySectionComponent implements OnInit {
       firstName: identity.firstName,
       middleName: identity.middleName,
       lastName: identity.lastName,
-      username: identity.username,
+      username: this.cipherFormContainer.config.initialValues?.username ?? identity.username,
       company: identity.company,
       ssn: identity.ssn,
       passportNumber: identity.passportNumber,
