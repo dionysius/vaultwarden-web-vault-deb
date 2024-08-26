@@ -1,8 +1,8 @@
 import { CommonModule } from "@angular/common";
-import { Component, OnDestroy, OnInit } from "@angular/core";
+import { QueryList, Component, ElementRef, OnDestroy, OnInit, ViewChildren } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { Router, RouterModule } from "@angular/router";
-import { firstValueFrom } from "rxjs";
+import { firstValueFrom, Subject, takeUntil } from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { DomainSettingsService } from "@bitwarden/common/autofill/services/domain-settings.service";
@@ -56,12 +56,16 @@ const BroadcasterSubscriptionId = "excludedDomainsState";
   ],
 })
 export class ExcludedDomainsComponent implements OnInit, OnDestroy {
+  @ViewChildren("uriInput") uriInputElements: QueryList<ElementRef<HTMLInputElement>>;
+
   accountSwitcherEnabled = false;
   dataIsPristine = true;
   excludedDomainsState: string[] = [];
   storedExcludedDomains: string[] = [];
   // How many fields should be non-editable before editable fields
   fieldsEditThreshold: number = 0;
+
+  private destroy$ = new Subject<void>();
 
   constructor(
     private domainSettingsService: DomainSettingsService,
@@ -84,10 +88,22 @@ export class ExcludedDomainsComponent implements OnInit, OnDestroy {
 
     // Do not allow the first x (pre-existing) fields to be edited
     this.fieldsEditThreshold = this.storedExcludedDomains.length;
+
+    this.uriInputElements.changes.pipe(takeUntil(this.destroy$)).subscribe(({ last }) => {
+      this.focusNewUriInput(last);
+    });
   }
 
   ngOnDestroy() {
     this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
+
+  focusNewUriInput(elementRef: ElementRef) {
+    if (elementRef?.nativeElement) {
+      elementRef.nativeElement.focus();
+    }
   }
 
   async addNewDomain() {
