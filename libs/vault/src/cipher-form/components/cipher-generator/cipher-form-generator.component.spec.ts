@@ -126,15 +126,22 @@ describe("CipherFormGeneratorComponent", () => {
       expect(fixture.nativeElement.querySelector("bit-toggle-group")).toBeTruthy();
     });
 
-    it("should save password options when the password type is updated", async () => {
-      mockLegacyPasswordGenerationService.generatePassword.mockResolvedValue("generated-password");
+    it("should update the generated value when the password type is updated", fakeAsync(async () => {
+      mockLegacyPasswordGenerationService.generatePassword
+        .mockResolvedValueOnce("first-password")
+        .mockResolvedValueOnce("second-password");
+
+      component.ngOnChanges();
+      tick();
+
+      expect(component["generatedValue"]).toBe("first-password");
 
       await component["updatePasswordType"]("passphrase");
+      tick();
 
-      expect(mockLegacyPasswordGenerationService.saveOptions).toHaveBeenCalledWith({
-        type: "passphrase",
-      });
-    });
+      expect(component["generatedValue"]).toBe("second-password");
+      expect(mockLegacyPasswordGenerationService.generatePassword).toHaveBeenCalledTimes(2);
+    }));
 
     it("should update the password history when a new password is generated", fakeAsync(() => {
       mockLegacyPasswordGenerationService.generatePassword.mockResolvedValue("new-password");

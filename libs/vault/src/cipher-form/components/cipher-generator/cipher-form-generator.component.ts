@@ -1,7 +1,18 @@
 import { CommonModule } from "@angular/common";
 import { Component, DestroyRef, EventEmitter, Input, OnChanges, Output } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
-import { firstValueFrom, map, startWith, Subject, Subscription, switchMap, tap } from "rxjs";
+import {
+  combineLatest,
+  map,
+  merge,
+  shareReplay,
+  startWith,
+  Subject,
+  Subscription,
+  switchMap,
+  take,
+  tap,
+} from "rxjs";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -61,17 +72,12 @@ export class CipherFormGeneratorComponent implements OnChanges {
 
   protected regenerateButtonTitle: string;
   protected regenerate$ = new Subject<void>();
+  protected passwordTypeSubject$ = new Subject<GeneratorType>();
   /**
    * The currently generated value displayed to the user.
    * @protected
    */
   protected generatedValue: string = "";
-
-  /**
-   * The current password generation options.
-   * @private
-   */
-  private passwordOptions$ = this.legacyPasswordGenerationService.getOptions$();
 
   /**
    * The current username generation options.
@@ -80,10 +86,30 @@ export class CipherFormGeneratorComponent implements OnChanges {
   private usernameOptions$ = this.legacyUsernameGenerationService.getOptions$();
 
   /**
-   * The current password type specified by the password generation options.
+   * The current password type selected in the UI. Starts with the saved value from the service.
    * @protected
    */
-  protected passwordType$ = this.passwordOptions$.pipe(map(([options]) => options.type));
+  protected passwordType$ = merge(
+    this.legacyPasswordGenerationService.getOptions$().pipe(
+      take(1),
+      map(([options]) => options.type),
+    ),
+    this.passwordTypeSubject$,
+  ).pipe(shareReplay({ bufferSize: 1, refCount: false }));
+
+  /**
+   * The current password generation options.
+   * @private
+   */
+  private passwordOptions$ = combineLatest([
+    this.legacyPasswordGenerationService.getOptions$(),
+    this.passwordType$,
+  ]).pipe(
+    map(([[options], type]) => {
+      options.type = type;
+      return options;
+    }),
+  );
 
   /**
    * Tracks the regenerate$ subscription
@@ -121,7 +147,7 @@ export class CipherFormGeneratorComponent implements OnChanges {
       .pipe(
         startWith(null),
         switchMap(() => this.passwordOptions$),
-        switchMap(([options]) => this.legacyPasswordGenerationService.generatePassword(options)),
+        switchMap((options) => this.legacyPasswordGenerationService.generatePassword(options)),
         tap(async (password) => {
           await this.legacyPasswordGenerationService.addHistory(password);
         }),
@@ -148,12 +174,10 @@ export class CipherFormGeneratorComponent implements OnChanges {
   }
 
   /**
-   * Switch the password generation type and save the options (generating a new password automatically).
+   * Switch the password generation type.
    * @param value The new password generation type.
    */
   protected updatePasswordType = async (value: GeneratorType) => {
-    const [currentOptions] = await firstValueFrom(this.passwordOptions$);
-    currentOptions.type = value;
-    await this.legacyPasswordGenerationService.saveOptions(currentOptions);
+    this.passwordTypeSubject$.next(value);
   };
 }
