@@ -1125,7 +1125,7 @@
     }
   },
   "premiumPriceV2": {
-    "message": "全部仅需 $PRICE$ /年！",
+    "message": "全部仅需 $PRICE$ 每年！",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -3986,6 +3986,9 @@
         "example": "Visa"
       }
     }
+  },
+  "enableAnimations": {
+    "message": "启用动画"
   },
   "addAccount": {
     "message": "添加账户"

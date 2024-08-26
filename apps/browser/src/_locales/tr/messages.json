@@ -1125,7 +1125,7 @@
     }
   },
   "premiumPriceV2": {
-    "message": "All for just $PRICE$ per year!",
+    "message": "Bunların hepsi yılda sadece $PRICE$!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -1852,14 +1852,14 @@
     "message": "Bu kullanıcı adını kullan"
   },
   "securePasswordGenerated": {
-    "message": "Secure password generated! Don't forget to also update your password on the website."
+    "message": "Güvenli parola üretildi. Web sitesindeki parolanızı da güncellemeyi unutmayın."
   },
   "useGeneratorHelpTextPartOne": {
-    "message": "Use the generator",
+    "message": "Güçlü ve benzersiz bir parola üretmek için",
     "description": "This will be used as part of a larger sentence, broken up to include the generator icon. The full sentence will read 'Use the generator [GENERATOR_ICON] to create a strong unique password'"
   },
   "useGeneratorHelpTextPartTwo": {
-    "message": "to create a strong unique password",
+    "message": "üreteci kullanabilirsiniz",
     "description": "This will be used as part of a larger sentence, broken up to include the generator icon. The full sentence will read 'Use the generator [GENERATOR_ICON] to create a strong unique password'"
   },
   "vaultTimeoutAction": {
@@ -3986,6 +3986,9 @@
         "example": "Visa"
       }
     }
+  },
+  "enableAnimations": {
+    "message": "Animasyonları etkinleştir"
   },
   "addAccount": {
     "message": "Hesap ekle"

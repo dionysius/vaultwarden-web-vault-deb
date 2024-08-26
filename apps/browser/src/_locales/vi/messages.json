@@ -231,11 +231,11 @@
     "message": "Bạn có thể thay đổi mật khẩu chính của mình trên Bitwarden bản web."
   },
   "fingerprintPhrase": {
-    "message": "Fingerprint Phrase",
+    "message": "Cụm vân tay",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "yourAccountsFingerprint": {
-    "message": "Cụm từ mật khẩu của tài khoản của bạn",
+    "message": "Cụm vân tay của tài khoản của bạn",
     "description": "A 'fingerprint phrase' is a unique word phrase (similar to a passphrase) that a user can use to authenticate their public key with another user, for the purposes of sharing."
   },
   "twoStepLogin": {
@@ -542,7 +542,7 @@
     "message": "Mật khẩu chính không hợp lệ"
   },
   "vaultTimeout": {
-    "message": "Thời gian chờ của kho lưu trữ"
+    "message": "Thời gian chờ của kho"
   },
   "lockNow": {
     "message": "Khóa ngay"
@@ -934,7 +934,7 @@
     "message": "Xuất từ"
   },
   "exportVault": {
-    "message": "Xuất kho lưu trữ"
+    "message": "Xuất kho"
   },
   "fileFormat": {
     "message": "Định dạng tập tin"
@@ -968,7 +968,7 @@
     "description": "WARNING (should stay in capitalized letters if the language permits)"
   },
   "confirmVaultExport": {
-    "message": "Xác nhận xuất kho lưu trữ"
+    "message": "Xác nhận xuất kho"
   },
   "exportWarningDesc": {
     "message": "Bản xuất này chứa dữ liệu kho bạn và không được mã hóa. Bạn không nên lưu trữ hay gửi tập tin đã xuất thông qua phương thức rủi ro (như email). Vui lòng xóa nó ngay lập tức khi bạn đã sử dụng xong."
@@ -980,7 +980,7 @@
     "message": "Khóa mã hóa tài khoản là duy nhất cho mỗi tài khoản Bitwarden, vì vậy bạn không thể nhập tệp xuất được mã hóa vào một tài khoản khác."
   },
   "exportMasterPassword": {
-    "message": "Nhập mật khẩu chính để xuất kho lưu trữ của bạn."
+    "message": "Nhập mật khẩu chính để xuất kho của bạn."
   },
   "shared": {
     "message": "Đã chia sẻ"
@@ -1391,7 +1391,7 @@
     "message": "Tạo và sao chép một mật khẩu ngẫu nhiên mới vào khay nhớ tạm"
   },
   "commandLockVaultDesc": {
-    "message": "Khoá kho lưu trữ"
+    "message": "Khoá kho"
   },
   "customFields": {
     "message": "Trường tùy chỉnh"
@@ -1447,7 +1447,7 @@
     "message": "Hiển thị biểu tượng bộ đếm"
   },
   "badgeCounterDesc": {
-    "message": "Cho biết bạn có bao nhiêu lần đăng nhập cho trang web hiện tại."
+    "message": "Cho biết bạn có bao nhiêu thông tin đăng nhập cho trang web hiện tại."
   },
   "cardholderName": {
     "message": "Tên chủ thẻ"
@@ -1895,7 +1895,7 @@
     "message": "Bạn đã có tài khoản?"
   },
   "vaultTimeoutLogOutConfirmation": {
-    "message": "Việc đăng xuất sẽ loại bỏ tất cả truy cập vào kho lưu trữ của bạn và yêu cầu xác minh trực tuyến sau khi hết giai đoạn thời gian chờ. Bạn có chắc chắn muốn dùng cài đặt này không?"
+    "message": "Đăng xuất sẽ xóa tất cả quyền truy cập vào kho của bạn và yêu cầu xác minh trực tuyến sau khi hết thời gian chờ. Bạn có chắc chắn muốn sử dụng cài đặt này không?"
   },
   "vaultTimeoutLogOutConfirmationTitle": {
     "message": "Xác nhận hành động khi hết thời gian chờ"
@@ -2027,7 +2027,7 @@
     "message": "Xác minh đồng bộ máy tính"
   },
   "desktopIntegrationVerificationText": {
-    "message": "Vui lòng xác minh rằng ứng dụng trên máy tính thấy vân tay này:"
+    "message": "Vui lòng xác minh ứng dụng trên máy tính hiển thị cụm vân tay này: "
   },
   "desktopIntegrationDisabledTitle": {
     "message": "Tích hợp trình duyệt chưa được kích hoạt"
@@ -2487,7 +2487,7 @@
     "message": "Thời gian mở kho vượt quá giới hạn do tổ chức của bạn đặt ra."
   },
   "vaultExportDisabled": {
-    "message": "Xuất kho lưu trữ không có sẵn"
+    "message": "Xuất kho không có sẵn"
   },
   "personalVaultExportPolicyInEffect": {
     "message": "Các chính sách của tổ chức ngăn cản bạn xuất kho lưu trữ cá nhân của mình."
@@ -2777,7 +2777,7 @@
     "message": "Đang đăng nhập với tên"
   },
   "notYou": {
-    "message": "Không phải bạn sao?"
+    "message": "Không phải bạn?"
   },
   "newAroundHere": {
     "message": "Bạn mới tới đây sao?"
@@ -2792,10 +2792,10 @@
     "message": "Đăng nhập bằng thiết bị phải được thiết lập trong cài đặt của ứng dụng Bitwarden. Dùng cách khác?"
   },
   "fingerprintPhraseHeader": {
-    "message": "Cụm từ dấu vân tay"
+    "message": "Cụm vân tay"
   },
   "fingerprintMatchInfo": {
-    "message": "Vui lòng đảm bảo rằng bạn đã mở khoá kho và cụm từ mật khẩu khớp trên thiết bị khác."
+    "message": "Vui lòng đảm bảo rằng bạn đã mở khoá kho và cụm vân tay khớp trên thiết bị khác."
   },
   "resendNotification": {
     "message": "Gửi lại thông báo"
@@ -3620,7 +3620,7 @@
     "description": "Dialog message facilitating the ability to override a chrome browser's default autofill behavior"
   },
   "overrideDefaultBrowserAutoFillSettings": {
-    "message": "Đặt Bitwarden làm trình quản lý mật khẩu mặc định của bạn",
+    "message": "Bitwarden làm trình quản lý mật khẩu mặc định",
     "description": "Label for the setting that allows overriding the default browser autofill settings"
   },
   "privacyPermissionAdditionNotGrantedTitle": {
@@ -3986,6 +3986,9 @@
         "example": "Visa"
       }
     }
+  },
+  "enableAnimations": {
+    "message": "Enable animations"
   },
   "addAccount": {
     "message": "Thêm tài khoản"

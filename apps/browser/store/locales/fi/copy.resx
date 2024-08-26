@@ -121,7 +121,7 @@
     <value>Bitwarden Salasanahallinta</value>
   </data>
   <data name="Summary" xml:space="preserve">
-    <value>Kotona, töissä tai reissussa, Bitwarden suojaa helposti salasanasi, suojausavaimesi ja arkaluonteiset tietosi.</value>
+    <value>Kotona, töissä tai reissussa, Bitwarden suojaa salasanasi, pääsyavaimesi ja arkaluonteiset tietosi helposti.</value>
   </data>
   <data name="Description" xml:space="preserve">
     <value>Muun muassa PCMag, WIRED, The Verge, CNET sekä G2 ovat nimenneet Bitwardenin parhaaksi salasanahallinnaksi!
@@ -147,10 +147,10 @@ Maailmanluoka salaus:
 Salasanat on suojattu edistyneellä päästä päähän salauksella (AES-256 bit, suolattu hajautus sekä PBKDF2 SHA-256), joten tietosi pysyvät turvassa ja yksityisinä.
 
 Riippumattomat auditoinnit
-Bitwarden teetättää säännöllisesti tunnettujen tietoturvayritysten suorittamia kattavia riippumattomia tietoturva-arviointeja. Näissä vuotuisissa auditoinneissa arvioidaan lähdekoodia ja suoritetaan murtotestausta Bitwardenin IP-osoittelle, palvelimille ja verkkosovelluksille.
+Bitwarden teetättää säännöllisesti kattavia riippumattomia tietoturva-arviointeja tunnettuilla tietoturvayrityksillä. Näissä vuotuisissa auditoinneissa arvioidaan lähdekoodia ja suoritetaan murtotestausta Bitwardenin IP-osoitteille, palvelimille ja verkkosovelluksille.
 
 Edistynyt kaksivaiheinen tunnistautuminen
-Suojaa kirjautumistietosi riippumattomalla todennussovelluksella, sähköpostikoodeilla tai FIDO2 WEBAuthn -standardin mukaisilla fyysisillä tai ohjelmallisilla suojausavaimilla.
+Suojaa kirjautumistietosi riippumattomalla todennussovelluksella, sähköpostikoodeilla, tai FIDO2 WEBAuthn -standardin mukaisilla tunnistustavoilla kuten fyysisillä suojausavaimilla tai pääsyavaimilla.
 
 Bitwarden Send
 Välitä tietoja muille suoraan, päästä päähän salausta menettämättä ja rajoitaen niiden näkyvyyttä.
@@ -169,7 +169,7 @@ Bitwardenin päästä päähän salatut käyttäjätietojen hallintaratkaisut ta
 </value>
   </data>
   <data name="AssetTitle" xml:space="preserve">
-    <value>Kotona, töissä tai reissussa, Bitwarden suojaa helposti salasanasi, suojausavaimesi ja arkaluonteiset tietosi.</value>
+    <value>Kotona, töissä tai reissussa, Bitwarden suojaa salasanasi, pääsyavaimesi ja arkaluonteiset tietosi helposti.</value>
   </data>
   <data name="ScreenshotSync" xml:space="preserve">
     <value>Synkronoi ja hallitse holviasi useilla laitteilla</value>

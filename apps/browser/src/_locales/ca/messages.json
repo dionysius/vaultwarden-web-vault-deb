@@ -302,16 +302,16 @@
     "message": "Edita la carpeta"
   },
   "newFolder": {
-    "message": "New folder"
+    "message": "Carpeta nova"
   },
   "folderName": {
-    "message": "Folder name"
+    "message": "Nom de la carpeta"
   },
   "folderHintText": {
-    "message": "Nest a folder by adding the parent folder's name followed by a “/”. Example: Social/Forums"
+    "message": "Imbriqueu una carpeta afegint el nom de la carpeta principal seguit d'una \"/\". Exemple: Social/Fòrums"
   },
   "noFoldersAdded": {
-    "message": "No folders added"
+    "message": "No s'ha afegit cap carpeta"
   },
   "createFoldersToOrganize": {
     "message": "Create folders to organize your vault items"
@@ -448,7 +448,7 @@
     "message": "Preferit"
   },
   "unfavorite": {
-    "message": "Suprimeix de Preferits"
+    "message": "Trau dels preferits"
   },
   "itemAddedToFavorites": {
     "message": "Element afegit als preferits"
@@ -847,7 +847,7 @@
     "message": "Mostra les identitats a la pàgina de pestanya"
   },
   "showIdentitiesCurrentTabDesc": {
-    "message": "Llista els elements d'identitat de la pàgina de pestanya per facilitar l'autoemplenat."
+    "message": "Llista els elements d'identitat de la pestanya de la pàgina per facilitar l'autoemplenat."
   },
   "clearClipboard": {
     "message": "Buida el porta-retalls",
@@ -3141,11 +3141,11 @@
     "message": "Alies de domini"
   },
   "passwordRepromptDisabledAutofillOnPageLoad": {
-    "message": "Els elements amb una nova sol·licitud de contrasenya mestra no es poden omplir automàticament en carregar la pàgina. L'emplenament automàtic en carregar de la pàgina està desactivat.",
+    "message": "Els elements amb una nova sol·licitud de contrasenya mestra no es poden omplir automàticament en carregar la pàgina. L'emplenament automàtic en carregar la pàgina està desactivat.",
     "description": "Toast message for describing that master password re-prompt cannot be autofilled on page load."
   },
   "autofillOnPageLoadSetToDefault": {
-    "message": "S'ha configurat l'emplenament automàtic en carregar la pàgina per que utilitze la configuració predeterminada.",
+    "message": "S'ha configurat l'emplenament automàtic en carregar la pàgina perquè utilitze la configuració predeterminada.",
     "description": "Toast message for informing the user that autofill on page load has been set to the default setting."
   },
   "turnOffMasterPasswordPromptToEditField": {
@@ -3986,6 +3986,9 @@
         "example": "Visa"
       }
     }
+  },
+  "enableAnimations": {
+    "message": "Enable animations"
   },
   "addAccount": {
     "message": "Afig compte"

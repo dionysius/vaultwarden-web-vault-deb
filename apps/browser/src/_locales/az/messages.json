@@ -1113,7 +1113,7 @@
     "message": "Bitwarden-i dəstəklədiyiniz üçün təşəkkürlər!"
   },
   "premiumFeatures": {
-    "message": "Upgrade to premium and receive:"
+    "message": "Premium-a yüksəlt və bunları əldə et:"
   },
   "premiumPrice": {
     "message": "Hamısı sadəcə ildə $PRICE$!",
@@ -1125,7 +1125,7 @@
     }
   },
   "premiumPriceV2": {
-    "message": "All for just $PRICE$ per year!",
+    "message": "Hamısı sadəcə ildə $PRICE$!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -3970,10 +3970,10 @@
     "message": "Səhifə yüklənəndə avto-doldurulsun?"
   },
   "cardExpiredTitle": {
-    "message": "Expired card"
+    "message": "Vaxtı bitmiş kart"
   },
   "cardExpiredMessage": {
-    "message": "If you've renewed it, update the card's information"
+    "message": "Yeniləmisinizsə, kart məlumatlarınızı güncəlləyin"
   },
   "cardDetails": {
     "message": "Kart detalları"
@@ -3986,6 +3986,9 @@
         "example": "Visa"
       }
     }
+  },
+  "enableAnimations": {
+    "message": "Animasiyaları fəallaşdır"
   },
   "addAccount": {
     "message": "Hesab əlavə et"

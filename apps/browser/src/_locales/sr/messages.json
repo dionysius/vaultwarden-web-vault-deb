@@ -1080,7 +1080,7 @@
     "message": "1ГБ шифровано складиште за прилоге."
   },
   "premiumSignUpEmergency": {
-    "message": "Emergency access."
+    "message": "Хитан приступ."
   },
   "premiumSignUpTwoStepOptions": {
     "message": "Приоритарне опције пријаве у два корака као што су YubiKey и Duo."
@@ -1104,7 +1104,7 @@
     "message": "Можете купити премијум претплату на bitwarden.com. Да ли желите да посетите веб сајт сада?"
   },
   "premiumPurchaseAlertV2": {
-    "message": "You can purchase Premium from your account settings on the Bitwarden web app."
+    "message": "Можете да купите Премиум у подешавањима налога у веб апликацији Bitwarden."
   },
   "premiumCurrentMember": {
     "message": "Ви сте премијум члан!"
@@ -1113,7 +1113,7 @@
     "message": "Хвала Вам за подршку Bitwarden-а."
   },
   "premiumFeatures": {
-    "message": "Upgrade to premium and receive:"
+    "message": "Надоградите на премиум и добијте:"
   },
   "premiumPrice": {
     "message": "Све за само $PRICE$ годишње!",
@@ -1125,7 +1125,7 @@
     }
   },
   "premiumPriceV2": {
-    "message": "All for just $PRICE$ per year!",
+    "message": "Све то за само $PRICE$ годишње!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -2314,7 +2314,7 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSendSuccessfully": {
-    "message": "Send created successfully!",
+    "message": "Send је успешно направљен!",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendAvailability": {
@@ -2328,7 +2328,7 @@
     }
   },
   "sendLinkCopied": {
-    "message": "Send link copied",
+    "message": "Send линк је копиран",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
@@ -3970,10 +3970,10 @@
     "message": "Ауто-попуњавање при учитавању странице?"
   },
   "cardExpiredTitle": {
-    "message": "Expired card"
+    "message": "Картица је истекла"
   },
   "cardExpiredMessage": {
-    "message": "If you've renewed it, update the card's information"
+    "message": "Ако сте је обновили, ажурирајте податке о картици"
   },
   "cardDetails": {
     "message": "Детаљи картице"
@@ -3986,6 +3986,9 @@
         "example": "Visa"
       }
     }
+  },
+  "enableAnimations": {
+    "message": "Омогући анимације"
   },
   "addAccount": {
     "message": "Додај налог"

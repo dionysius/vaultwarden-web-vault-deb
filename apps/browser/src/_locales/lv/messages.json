@@ -1379,13 +1379,13 @@
     "message": "Atvērt glabātavu sānu joslā"
   },
   "commandAutofillLoginDesc": {
-    "message": "Autofill the last used login for the current website"
+    "message": "Automātiski aizpildīt ar iepriekš izmantoto pieteikšanās vienumu pašreizējā tīmekļvietnē"
   },
   "commandAutofillCardDesc": {
-    "message": "Autofill the last used card for the current website"
+    "message": "Automātiski aizpildīt ar iepriekš izmantoto karti pašreizējā tīmekļvietnē"
   },
   "commandAutofillIdentityDesc": {
-    "message": "Autofill the last used identity for the current website"
+    "message": "Automātiski aizpildīt ar iepriekš izmantoto identitāti pašreizējā tīmekļvietnē"
   },
   "commandGeneratePasswordDesc": {
     "message": "Izveidot jaunu nejaušu paroli un ievietot to starpliktuvē"
@@ -1692,7 +1692,7 @@
     "description": "Domain name. Ex. website.com"
   },
   "baseDomainOptionRecommended": {
-    "message": "Base domain (recommended)",
+    "message": "Pamata domēns (ieteicams)",
     "description": "Domain name. Ex. website.com"
   },
   "domainName": {
@@ -2870,16 +2870,16 @@
     "message": "Mainīt īsinājumtaustiņus"
   },
   "autofillKeyboardManagerShortcutsLabel": {
-    "message": "Manage shortcuts"
+    "message": "Pārvaldīt saīsnes"
   },
   "autofillShortcut": {
     "message": "Automātiskās aizpildes īsinājumtaustiņi"
   },
   "autofillLoginShortcutNotSet": {
-    "message": "The autofill login shortcut is not set. Change this in the browser's settings."
+    "message": "Automātiskās aizpildes īsceļš pieteikšanās vienumiem nav uzstādīts. To var izdarīt pārlūka iestatījumos."
   },
   "autofillLoginShortcutText": {
-    "message": "The autofill login shortcut is $COMMAND$. Manage all shortcuts in the browser's settings.",
+    "message": "Automātiskās aizpildes īsceļš pieteikšanās vienumiem ir: $COMMAND$. Visus īsinājumtaustiņus var pārvaldīt pārlūka iestatījumos.",
     "placeholders": {
       "command": {
         "content": "$1",
@@ -3986,6 +3986,9 @@
         "example": "Visa"
       }
     }
+  },
+  "enableAnimations": {
+    "message": "Iespējot animācijas"
   },
   "addAccount": {
     "message": "Pievienot kontu"

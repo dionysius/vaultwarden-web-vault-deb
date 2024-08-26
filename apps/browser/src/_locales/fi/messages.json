@@ -7,7 +7,7 @@
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
-    "message": "Kotona, töissä tai reissussa, Bitwarden suojaa salasanasi, suojausavaimesi ja arkaluonteiset tietosi helposti.",
+    "message": "Kotona, töissä tai reissussa, Bitwarden suojaa salasanasi, pääsyavaimesi ja arkaluonteiset tietosi helposti.",
     "description": "Extension description, MUST be less than 112 characters (Safari restriction)"
   },
   "loginOrCreateNewAccount": {
@@ -715,7 +715,7 @@
     "message": "Aloita rekisteröityminen alusta tai yritä kirjautua sisään uudelleen."
   },
   "youMayAlreadyHaveAnAccount": {
-    "message": "Sinulla saattaa olla jo tili"
+    "message": "Sinulla saattaa jo olla tili"
   },
   "logOutConfirmation": {
     "message": "Haluatko varmasti kirjautua ulos?"
@@ -736,7 +736,7 @@
     "message": "Kansio lisätty"
   },
   "twoStepLoginConfirmation": {
-    "message": "Kaksivaiheinen kirjautuminen parantaa tilisi suojausta vaatimalla kirjautumisen vahvistuksen salasanan lisäksi todennuslaitteen, ‑sovelluksen, tekstiviestin, puhelun tai sähköpostin avulla. Voit ottaa kaksivaiheisen kirjautumisen käyttöön bitwarden.com‑verkkoholvissa. Haluatko avata sen nyt?"
+    "message": "Kaksivaiheinen kirjautuminen parantaa tilisi suojausta vaatimalla kirjautumisen vahvistuksen salasanan lisäksi suojausavaimen, ‑sovelluksen, tekstiviestin, puhelun tai sähköpostin avulla. Voit ottaa kaksivaiheisen kirjautumisen käyttöön bitwarden.com‑verkkoholvissa. Haluatko avata sen nyt?"
   },
   "editedFolder": {
     "message": "Kansio tallennettiin"
@@ -873,10 +873,10 @@
     "message": "Tarjoa kirjautumistiedon salasanan päivitystä, kun verkkosivustolla havaitaan uusi salasana. Koskee kaikkia kirjautuneita tilejä."
   },
   "enableUsePasskeys": {
-    "message": "Tarjoa suojausvainten tallennusta ja käyttöä"
+    "message": "Tarjoa pääsyavainten tallennusta ja käyttöä"
   },
   "usePasskeysDesc": {
-    "message": "Tarjoa tallennusta uusille suojausavaimille tai kirjautumista holvissasi olevilla salausavaimilla. Koskee kaikkia kirjautuneita tilejä."
+    "message": "Tarjoa uusien pääsyavainten tallennusta sekä kirjautumista holvissasi olevilla pääsyavaimilla. Koskee kaikkia kirjautuneita tilejä."
   },
   "notificationChangeDesc": {
     "message": "Haluatko päivittää salasanan Bitwardeniin?"
@@ -1152,10 +1152,10 @@
     "message": "Tämä ominaisuus edellyttää Premium-jäsenyyttä."
   },
   "enterVerificationCodeApp": {
-    "message": "Syötä 6-numeroinen todennuskoodi todennussovelluksestasi."
+    "message": "Syötä todennussovelluksesi näyttämä kuusinumeroinen todennuskoodi."
   },
   "enterVerificationCodeEmail": {
-    "message": "Syötä 6-numeroinen todennuskoodi, joka lähetettiin sähköpostitse osoitteeseen $EMAIL$.",
+    "message": "Syötä osoitteeseen $EMAIL$ lähetetty kuusinumeroinen todennuskoodi.",
     "placeholders": {
       "email": {
         "content": "$1",
@@ -1185,7 +1185,7 @@
     "message": "Kytke YubiKey-todennuslaitteesi tietokoneen USB-porttiin ja paina sen painiketta."
   },
   "insertU2f": {
-    "message": "Kytke todennuslaitteesi tietokoneen USB-porttiin. Jos laitteessa on painike, paina sitä."
+    "message": "Kytke suojausavaimesi tietokoneen USB-porttiin. Jos laitteessa on painike, paina sitä."
   },
   "webAuthnNewTab": {
     "message": "Aloittaaksesi kaksivaiheisen WebAuthn-tunnistautumisen, seuraa alla olevasta painikkeesta uuteen välilehteen avautuvia ohjeita."
@@ -1222,7 +1222,7 @@
     "description": "'Bitwarden Authenticator' is a product name and should not be translated."
   },
   "yubiKeyTitleV2": {
-    "message": "Yubico OTP -todennuslaite"
+    "message": "Yubico OTP -suojausavain"
   },
   "yubiKeyDesc": {
     "message": "Käytä YubiKey-todennuslaitetta tilisi avaukseen. Toimii YubiKey 4, 4 Nano, 4C sekä NEO -laitteiden kanssa."
@@ -1232,14 +1232,14 @@
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Vahvista organisaatiollesi Duo Securityn avulla käyttäen Duo Mobile ‑sovellusta, tekstiviestiä, puhelua tai U2F-todennuslaitetta.",
+    "message": "Vahvista organisaatiollesi Duo Securityn avulla käyttäen Duo Mobile ‑sovellusta, tekstiviestiä, puhelua tai U2F-suojausavainta.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "webAuthnTitle": {
     "message": "FIDO2 WebAuthn"
   },
   "webAuthnDesc": {
-    "message": "Käytä mitä tahansa WebAuthn‑yhteensopivaa todennuslaitetta päästäksesi käsiksi tiliisi."
+    "message": "Käytä mitä tahansa WebAuthn‑yhteensopivaa suojausavainta päästäksesi tilillesi."
   },
   "emailTitle": {
     "message": "Sähköposti"
@@ -1852,7 +1852,7 @@
     "message": "Käytä tätä käyttäjätunnusta"
   },
   "securePasswordGenerated": {
-    "message": "Turvallinen salasana luotu! Muista myös päivittää salasana verkkosivustolla."
+    "message": "Turvallinen salasana luotiin! Muista päivittää salasana myös verkkosivustolla."
   },
   "useGeneratorHelpTextPartOne": {
     "message": "Käytä generaattoria",
@@ -3063,7 +3063,7 @@
     }
   },
   "singleFieldNeedsAttention": {
-    "message": "1 kenttä vaatii huomiotasi."
+    "message": "Yksi kenttä vaatii huomiotasi."
   },
   "multipleFieldsNeedAttention": {
     "message": "$COUNT$ kenttää vaatii huomiotasi.",
@@ -3409,25 +3409,25 @@
     "message": "Holvin tiedot on viety"
   },
   "typePasskey": {
-    "message": "Suojausavain"
+    "message": "Pääsyavain"
   },
   "passkeyNotCopied": {
-    "message": "Suojausavainta ei kopioida"
+    "message": "Pääsyavainta ei kopioida"
   },
   "passkeyNotCopiedAlert": {
-    "message": "Suojausavain ei kopioidu kloonattuun kohteeseen. Haluatko jatkaa kloonausta?"
+    "message": "Pääsyavain ei kopioidu kloonattuun kohteeseen. Haluatko jatkaa kloonausta?"
   },
   "passkeyFeatureIsNotImplementedForAccountsWithoutMasterPassword": {
-    "message": "Käynnistävä sivusto edellyttää todennusta. Ominaisuutta ei ole vielä toteutettu tileille, joilla ei ole pääsalasanaa."
+    "message": "Käynnistänyt sivusto edellyttää vahvistusta. Ominaisuutta ei ole vielä toteutettu tileille, joilla ei ole pääsalasanaa."
   },
   "logInWithPasskey": {
-    "message": "Kirjaudutaanko suojausavaimella?"
+    "message": "Kirjaudutaanko pääsyavaimella?"
   },
   "passkeyAlreadyExists": {
-    "message": "Tälle sovellukselle on jo tallennettu suojausavain."
+    "message": "Tälle sovellukselle on jo tallennettu pääsyavain."
   },
   "noPasskeysFoundForThisApplication": {
-    "message": "Tälle sovellukselle ei löytynyt suojausavaimia."
+    "message": "Tälle sovellukselle ei löytynyt pääsyavaimia."
   },
   "noMatchingPasskeyLogin": {
     "message": "Holvissasi ei ole tälle sivustolle sopivaa kirjautumistietoa."
@@ -3436,28 +3436,28 @@
     "message": "Vahvista"
   },
   "savePasskey": {
-    "message": "Tallenna suojausavain"
+    "message": "Tallenna pääsyavain"
   },
   "savePasskeyNewLogin": {
-    "message": "Tallenna suojausavain uuteen kirjautumistietoon"
+    "message": "Tallenna pääsyavain uuteen kirjautumistietoon"
   },
   "choosePasskey": {
-    "message": "Valitse kirjautumistieto, johon suojausavain tallennetaan"
+    "message": "Valitse kirjautumistieto, johon pääsyavain tallennetaan"
   },
   "passkeyItem": {
-    "message": "Suojausavainkohde"
+    "message": "Pääsyavainkohde"
   },
   "overwritePasskey": {
-    "message": "Korvataanko suojausavain?"
+    "message": "Korvataanko pääsyavain?"
   },
   "overwritePasskeyAlert": {
-    "message": "Kohde sisältää jo suojausavaimen. Haluatko varmasti korvata nykyisen suojausavaimen?"
+    "message": "Kohde sisältää jo pääsyavaimen. Haluatko varmasti korvata nykyisen avaimen?"
   },
   "featureNotSupported": {
     "message": "Ominaisuutta ei vielä tueta"
   },
   "yourPasskeyIsLocked": {
-    "message": "Salausavaimen käyttö edellyttää todennusta. Jatka vahvistamalla henkilöllisyytesi."
+    "message": "Pääsyavaimen käyttö edellyttää tunnistautumista. Jatka vahvistamalla henkilöllisyytesi."
   },
   "multifactorAuthenticationCancelled": {
     "message": "Monivaiheinen todennus peruttiin"
@@ -3651,10 +3651,10 @@
     "message": "Onnistui"
   },
   "removePasskey": {
-    "message": "Poista suojausavain"
+    "message": "Poista pääsyavain"
   },
   "passkeyRemoved": {
-    "message": "Suojausavain poistettiin"
+    "message": "Pääsyavain poistettiin"
   },
   "autofillSuggestions": {
     "message": "Automaattitäytä ehdotukset"
@@ -3987,6 +3987,9 @@
       }
     }
   },
+  "enableAnimations": {
+    "message": "Käytä animaatioita"
+  },
   "addAccount": {
     "message": "Lisää tili"
   },
@@ -3997,7 +4000,7 @@
     "message": "Tiedot"
   },
   "passkeys": {
-    "message": "Avainkoodit",
+    "message": "Pääsyavaimet",
     "description": "A section header for a list of passkeys."
   },
   "passwords": {
@@ -4005,7 +4008,7 @@
     "description": "A section header for a list of passwords."
   },
   "logInWithPasskeyAriaLabel": {
-    "message": "Kirjaudu avainkoodilla",
+    "message": "Kirjaudu pääsyavaimella",
     "description": "ARIA label for the inline menu button that logs in with a passkey."
   },
   "assign": {
@@ -4165,7 +4168,7 @@
     }
   },
   "itemsMovedToOrg": {
-    "message": "Kohteet siirrettiin organisaatioon $ORGNAME$",
+    "message": "Kohteet siirrettiin organisaatiolle $ORGNAME$",
     "placeholders": {
       "orgname": {
         "content": "$1",
@@ -4174,7 +4177,7 @@
     }
   },
   "itemMovedToOrg": {
-    "message": "Kohde siirrettiin organisaatioon $ORGNAME$",
+    "message": "Kohde siirrettiin organisaatiolle $ORGNAME$",
     "placeholders": {
       "orgname": {
         "content": "$1",
@@ -4218,7 +4221,7 @@
     "message": "Tilitoiminnot"
   },
   "showNumberOfAutofillSuggestions": {
-    "message": "Näytä kirjautumisen automaattitäytön ehtotusten määrä laajennuksen kuvakkeessa"
+    "message": "Näytä automaattitäytön kirjautumistietoehdotusten määrä laajennuksen kuvakkeessa"
   },
   "systemDefault": {
     "message": "Järjestelmän oletus"
