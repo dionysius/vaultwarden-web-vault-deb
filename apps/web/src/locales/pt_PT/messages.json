@@ -905,6 +905,9 @@
   "masterPassHint": {
     "message": "Dica da palavra-passe mestra (opcional)"
   },
+  "newMasterPassHint": {
+    "message": "Nova dica da palavra-passe mestra (opcional)"
+  },
   "masterPassHintLabel": {
     "message": "Dica da palavra-passe mestra"
   },
@@ -8954,5 +8957,56 @@
   },
   "additionalStorageGbMessage": {
     "message": "GB de armazenamento adicional"
+  },
+  "premiumAccounts": {
+    "message": "6 contas Premium"
+  },
+  "unlimitedSharing": {
+    "message": "Partilha ilimitada"
+  },
+  "unlimitedCollections": {
+    "message": "Coleções ilimitadas"
+  },
+  "secureDataSharing": {
+    "message": "Partilha segura de dados"
+  },
+  "eventLogMonitoring": {
+    "message": "Monitorização do registo de eventos"
+  },
+  "directoryIntegration": {
+    "message": "Integração de diretórios"
+  },
+  "passwordLessSso": {
+    "message": "PasswordLess SSO"
+  },
+  "accountRecovery": {
+    "message": "Recuperação de contas"
+  },
+  "customRoles": {
+    "message": "Papéis personalizados"
+  },
+  "unlimitedSecretsStorage": {
+    "message": "Armazenamento ilimitado de segredos"
+  },
+  "unlimitedUsers": {
+    "message": "Utilizadores ilimitados"
+  },
+  "UpTo50MachineAccounts": {
+    "message": "Até 50 contas automáticas"
+  },
+  "UpTo20MachineAccounts": {
+    "message": "Até 20 contas automáticas"
+  },
+  "current": {
+    "message": "Atual"
+  },
+  "secretsManagerSubInfo": {
+    "message": "A sua subscrição do Gestor de Segredos será atualizada com base no plano selecionado"
+  },
+  "bitwardenPasswordManager": {
+    "message": "Bitwarden - Gestor de Palavras-passe"
+  },
+  "secretsManagerWithFreePasswordManagerInfo": {
+    "message": "A sua subscrição complementar de um ano do Gestor de Palavras-passe será atualizada para o plano selecionado. Não será cobrado até que o período de cortesia termine."
   }
 }

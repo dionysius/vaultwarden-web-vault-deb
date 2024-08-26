@@ -905,6 +905,9 @@
   "masterPassHint": {
     "message": "Hoofdwachtwoordhint (optioneel)"
   },
+  "newMasterPassHint": {
+    "message": "Nieuwe hoofdwachtwoordhint (optioneel)"
+  },
   "masterPassHintLabel": {
     "message": "Hoofdwachtwoordhint"
   },
@@ -8954,5 +8957,56 @@
   },
   "additionalStorageGbMessage": {
     "message": "GB extra opslagruimte"
+  },
+  "premiumAccounts": {
+    "message": "6 premium accounts"
+  },
+  "unlimitedSharing": {
+    "message": "Onbeperkt delen"
+  },
+  "unlimitedCollections": {
+    "message": "Onbeperkte collecties"
+  },
+  "secureDataSharing": {
+    "message": "Beveiligd gegevens delen"
+  },
+  "eventLogMonitoring": {
+    "message": "Eventlog monitoring"
+  },
+  "directoryIntegration": {
+    "message": "Directory-integratie"
+  },
+  "passwordLessSso": {
+    "message": "PasswordLess SSO"
+  },
+  "accountRecovery": {
+    "message": "Accountherstel"
+  },
+  "customRoles": {
+    "message": "Aangepaste rollen"
+  },
+  "unlimitedSecretsStorage": {
+    "message": "Onbeperkte opslag geheimen"
+  },
+  "unlimitedUsers": {
+    "message": "Onbeperkte gebruikers"
+  },
+  "UpTo50MachineAccounts": {
+    "message": "Tot 50 machine-accounts"
+  },
+  "UpTo20MachineAccounts": {
+    "message": "Tot 20 machine-accounts"
+  },
+  "current": {
+    "message": "Huidig"
+  },
+  "secretsManagerSubInfo": {
+    "message": "Je Secrets Manager-abonnement zal upgraden naar het geselecteerde abonnement"
+  },
+  "bitwardenPasswordManager": {
+    "message": "Bitwarden Password Manager"
+  },
+  "secretsManagerWithFreePasswordManagerInfo": {
+    "message": "Your complementary one year Password Manager subscription will upgrade to the selected plan. You will not be charged until the complimentary period is over."
   }
 }

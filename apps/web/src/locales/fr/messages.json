@@ -905,6 +905,9 @@
   "masterPassHint": {
     "message": "Indice du mot de passe principal (facultatif)"
   },
+  "newMasterPassHint": {
+    "message": "Indice du nouveau mot de passe principal (facultatif)"
+  },
   "masterPassHintLabel": {
     "message": "Indice du mot de passe principal"
   },
@@ -8954,5 +8957,56 @@
   },
   "additionalStorageGbMessage": {
     "message": "GB de stockage additionnel"
+  },
+  "premiumAccounts": {
+    "message": "6 comptes premium"
+  },
+  "unlimitedSharing": {
+    "message": "Partage illimité"
+  },
+  "unlimitedCollections": {
+    "message": "Collections illimitées"
+  },
+  "secureDataSharing": {
+    "message": "Partage sécurisé de données"
+  },
+  "eventLogMonitoring": {
+    "message": "Surveillance du journal des événements"
+  },
+  "directoryIntegration": {
+    "message": "Intégration des répertoires"
+  },
+  "passwordLessSso": {
+    "message": "SSO sans mot de passe"
+  },
+  "accountRecovery": {
+    "message": "Récupération de compte"
+  },
+  "customRoles": {
+    "message": "Rôles personnalisés"
+  },
+  "unlimitedSecretsStorage": {
+    "message": "Stockage illimité des secrets"
+  },
+  "unlimitedUsers": {
+    "message": "Utillisateurs illimités"
+  },
+  "UpTo50MachineAccounts": {
+    "message": "Jusqu'à 50 comptes machines"
+  },
+  "UpTo20MachineAccounts": {
+    "message": "Jusqu'à 20 comptes de machine"
+  },
+  "current": {
+    "message": "Actuel"
+  },
+  "secretsManagerSubInfo": {
+    "message": "Votre abonnement au Secrets Manager sera mis à niveau selon le plan sélectionné"
+  },
+  "bitwardenPasswordManager": {
+    "message": "Gestionnaire de Mots de Passe Bitwarden"
+  },
+  "secretsManagerWithFreePasswordManagerInfo": {
+    "message": "Votre abonnement complémentaire d'un an au Gestionnaire de Mots de Passe sera mis à niveau au plan sélectionné. Vous ne serez pas chargé avant la fin de votre période gratuite."
   }
 }

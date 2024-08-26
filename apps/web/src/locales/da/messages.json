@@ -905,6 +905,9 @@
   "masterPassHint": {
     "message": "Hovedadgangskodetip (valgfri)"
   },
+  "newMasterPassHint": {
+    "message": "Nyt hovedadgangskodetip (valgfrit)"
+  },
   "masterPassHintLabel": {
     "message": "Hovedadgangskodetip"
   },
@@ -8954,5 +8957,56 @@
   },
   "additionalStorageGbMessage": {
     "message": "GB ekstra lagerplads"
+  },
+  "premiumAccounts": {
+    "message": "6 Premium-konti"
+  },
+  "unlimitedSharing": {
+    "message": "Ubegrænset antal delinger"
+  },
+  "unlimitedCollections": {
+    "message": "Ubegrænset antal samlinger"
+  },
+  "secureDataSharing": {
+    "message": "Sikker datadeling"
+  },
+  "eventLogMonitoring": {
+    "message": "Hændelseslogmonitorering"
+  },
+  "directoryIntegration": {
+    "message": "Mappeintegration"
+  },
+  "passwordLessSso": {
+    "message": "PasswordLess SSO"
+  },
+  "accountRecovery": {
+    "message": "Kontogenskabelse"
+  },
+  "customRoles": {
+    "message": "Tilpassede roller"
+  },
+  "unlimitedSecretsStorage": {
+    "message": "Ubegrænset hemmelighedslagring"
+  },
+  "unlimitedUsers": {
+    "message": "Ubegrænset antal brugere"
+  },
+  "UpTo50MachineAccounts": {
+    "message": "Op til 50 maskinkonti"
+  },
+  "UpTo20MachineAccounts": {
+    "message": "Op til 20 maskinkonti"
+  },
+  "current": {
+    "message": "Nuværende"
+  },
+  "secretsManagerSubInfo": {
+    "message": "Secrets Manager-abonnementet vil opgradere baseret på den valgte plan"
+  },
+  "bitwardenPasswordManager": {
+    "message": "Bitwarden Adgangskodehåndtering"
+  },
+  "secretsManagerWithFreePasswordManagerInfo": {
+    "message": "Det komplementære et års abonnement på Adgangskodehåndtering opgraderes til den valgte abonnementstype. Betaling opkræves først efter den gratis periode."
   }
 }

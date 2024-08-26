@@ -905,6 +905,9 @@
   "masterPassHint": {
     "message": "Huvudlösenordsledtråd (valfritt)"
   },
+  "newMasterPassHint": {
+    "message": "Ny huvudlösenordsledtråd (valfritt)"
+  },
   "masterPassHintLabel": {
     "message": "Huvudlösenordsledtråd"
   },
@@ -8954,5 +8957,56 @@
   },
   "additionalStorageGbMessage": {
     "message": "GB additional storage"
+  },
+  "premiumAccounts": {
+    "message": "6 premium accounts"
+  },
+  "unlimitedSharing": {
+    "message": "Obegränsad delning"
+  },
+  "unlimitedCollections": {
+    "message": "Obegränsat antal samlingar"
+  },
+  "secureDataSharing": {
+    "message": "Säker datadelning"
+  },
+  "eventLogMonitoring": {
+    "message": "Event log monitoring"
+  },
+  "directoryIntegration": {
+    "message": "Directory integration"
+  },
+  "passwordLessSso": {
+    "message": "PasswordLess SSO"
+  },
+  "accountRecovery": {
+    "message": "Kontoåterställning"
+  },
+  "customRoles": {
+    "message": "Anpassade roller"
+  },
+  "unlimitedSecretsStorage": {
+    "message": "Unlimited secrets storage"
+  },
+  "unlimitedUsers": {
+    "message": "Obegränsat antal användare"
+  },
+  "UpTo50MachineAccounts": {
+    "message": "Up to 50 machine accounts"
+  },
+  "UpTo20MachineAccounts": {
+    "message": "Up to 20 machine accounts"
+  },
+  "current": {
+    "message": "Current"
+  },
+  "secretsManagerSubInfo": {
+    "message": "Your Secrets Manager subscription will upgrade base on the plan selected"
+  },
+  "bitwardenPasswordManager": {
+    "message": "Bitwarden Password Manager"
+  },
+  "secretsManagerWithFreePasswordManagerInfo": {
+    "message": "Your complementary one year Password Manager subscription will upgrade to the selected plan. You will not be charged until the complimentary period is over."
   }
 }

@@ -905,6 +905,9 @@
   "masterPassHint": {
     "message": "Nápověda k hlavnímu heslu (volitelné)"
   },
+  "newMasterPassHint": {
+    "message": "Nápověda k novému hlavnímu heslu (volitelné)"
+  },
   "masterPassHintLabel": {
     "message": "Nápověda k hlavnímu heslu"
   },
@@ -8954,5 +8957,56 @@
   },
   "additionalStorageGbMessage": {
     "message": "GB dodatečného úložiště"
+  },
+  "premiumAccounts": {
+    "message": "6 účtů Premium"
+  },
+  "unlimitedSharing": {
+    "message": "Neomezené sdílení"
+  },
+  "unlimitedCollections": {
+    "message": "Neomezené kolekce"
+  },
+  "secureDataSharing": {
+    "message": "Zabezpečené sdílení dat"
+  },
+  "eventLogMonitoring": {
+    "message": "Monitorování logů událostí"
+  },
+  "directoryIntegration": {
+    "message": "Integrace adresáře"
+  },
+  "passwordLessSso": {
+    "message": "SSO bez hesla"
+  },
+  "accountRecovery": {
+    "message": "Obnovení účtu"
+  },
+  "customRoles": {
+    "message": "Vlastní role"
+  },
+  "unlimitedSecretsStorage": {
+    "message": "Neomezené úložiště tajných klíčů"
+  },
+  "unlimitedUsers": {
+    "message": "Neomezení uživatelé"
+  },
+  "UpTo50MachineAccounts": {
+    "message": "Až 50 účtů"
+  },
+  "UpTo20MachineAccounts": {
+    "message": "Až 20 účtů"
+  },
+  "current": {
+    "message": "Aktuální"
+  },
+  "secretsManagerSubInfo": {
+    "message": "Vaše předplatné Správce tajných klíčů bude aktualizováno na základě vybraného tarifu"
+  },
+  "bitwardenPasswordManager": {
+    "message": "Bitwarden - Správce hesel"
+  },
+  "secretsManagerWithFreePasswordManagerInfo": {
+    "message": "Vaše doplňkové roční předplatné Správce hesel bude aktualizováno na vybraný plán. Poplatek Vám bude účtován až po skončení bezplatného období."
   }
 }

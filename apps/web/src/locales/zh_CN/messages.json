@@ -905,6 +905,9 @@
   "masterPassHint": {
     "message": "主密码提示（可选）"
   },
+  "newMasterPassHint": {
+    "message": "新的主密码提示（可选）"
+  },
   "masterPassHintLabel": {
     "message": "主密码提示"
   },
@@ -2277,7 +2280,7 @@
     }
   },
   "premiumPriceWithFamilyPlan": {
-    "message": "升级高级会员仅需 $PRICE$/年，或成为高级账户，其具有 $FAMILYPLANUSERCOUNT$ 个用户，以及无限制的家庭共享，家庭共享具有 ",
+    "message": "升级高级会员仅需 $PRICE$/年，或成为具有 $FAMILYPLANUSERCOUNT$ 位用户以及无限制的家庭共享的高级账户，通过 ",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -2701,10 +2704,10 @@
     }
   },
   "addShareUnlimitedUsers": {
-    "message": "添加并与无限的用户共享"
+    "message": "添加并与不限数量的用户共享"
   },
   "createUnlimitedCollections": {
-    "message": "创建无限个集合"
+    "message": "创建不限数量的集合"
   },
   "gbEncryptedFileStorage": {
     "message": "$SIZE$ 加密文件存储",
@@ -2965,7 +2968,7 @@
     "message": "添加访问权限"
   },
   "addAccessFilter": {
-    "message": "Add Access Filter"
+    "message": "添加访问过滤器"
   },
   "refresh": {
     "message": "刷新"
@@ -8954,5 +8957,56 @@
   },
   "additionalStorageGbMessage": {
     "message": "GB 附加存储"
+  },
+  "premiumAccounts": {
+    "message": "6 个高级账户"
+  },
+  "unlimitedSharing": {
+    "message": "无限制的共享"
+  },
+  "unlimitedCollections": {
+    "message": "不限数量的集合"
+  },
+  "secureDataSharing": {
+    "message": "安全数据共享"
+  },
+  "eventLogMonitoring": {
+    "message": "事件日志监测"
+  },
+  "directoryIntegration": {
+    "message": "目录集成"
+  },
+  "passwordLessSso": {
+    "message": "PasswordLess SSO"
+  },
+  "accountRecovery": {
+    "message": "账户恢复"
+  },
+  "customRoles": {
+    "message": "自定义角色"
+  },
+  "unlimitedSecretsStorage": {
+    "message": "无限制的机密存储"
+  },
+  "unlimitedUsers": {
+    "message": "不限数量的用户"
+  },
+  "UpTo50MachineAccounts": {
+    "message": "最多 50 个机器账户"
+  },
+  "UpTo20MachineAccounts": {
+    "message": "最多 20 个机器账户"
+  },
+  "current": {
+    "message": "当前"
+  },
+  "secretsManagerSubInfo": {
+    "message": "您的机密管理器订阅将基于所选的计划进行升级"
+  },
+  "bitwardenPasswordManager": {
+    "message": "Bitwarden 密码管理器"
+  },
+  "secretsManagerWithFreePasswordManagerInfo": {
+    "message": "您的免费一年密码管理器订阅将升级到所选计划。免费期结束之前不会收费。"
   }
 }

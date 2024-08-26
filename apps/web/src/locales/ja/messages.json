@@ -905,6 +905,9 @@
   "masterPassHint": {
     "message": "マスターパスワードのヒント (省略可能)"
   },
+  "newMasterPassHint": {
+    "message": "新しいマスターパスワードのヒント (オプション)"
+  },
   "masterPassHintLabel": {
     "message": "マスターパスワードのヒント"
   },
@@ -8954,5 +8957,56 @@
   },
   "additionalStorageGbMessage": {
     "message": "GB の追加ストレージ"
+  },
+  "premiumAccounts": {
+    "message": "6個のプレミアムアカウント"
+  },
+  "unlimitedSharing": {
+    "message": "無制限の共有"
+  },
+  "unlimitedCollections": {
+    "message": "無制限のコレクション"
+  },
+  "secureDataSharing": {
+    "message": "セキュアなデータ共有"
+  },
+  "eventLogMonitoring": {
+    "message": "イベントログの監視"
+  },
+  "directoryIntegration": {
+    "message": "ディレクトリの統合"
+  },
+  "passwordLessSso": {
+    "message": "パスワードレス SSO"
+  },
+  "accountRecovery": {
+    "message": "アカウントの復元"
+  },
+  "customRoles": {
+    "message": "カスタムロール"
+  },
+  "unlimitedSecretsStorage": {
+    "message": "無制限のシークレットストレージ"
+  },
+  "unlimitedUsers": {
+    "message": "無制限のユーザー数"
+  },
+  "UpTo50MachineAccounts": {
+    "message": "最大50個のマシンアカウント"
+  },
+  "UpTo20MachineAccounts": {
+    "message": "最大20個のマシンアカウント"
+  },
+  "current": {
+    "message": "現在"
+  },
+  "secretsManagerSubInfo": {
+    "message": "シークレットマネージャーのサブスクリプションは、選択されたプランを基準にアップグレードされます"
+  },
+  "bitwardenPasswordManager": {
+    "message": "Bitwarden パスワードマネージャー"
+  },
+  "secretsManagerWithFreePasswordManagerInfo": {
+    "message": "1年間のパスワードマネージャーサブスクリプションは、選択したプランにアップグレードされます。無料期間が終了するまで課金されることはありません。"
   }
 }

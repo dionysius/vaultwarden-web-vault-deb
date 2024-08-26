@@ -905,6 +905,9 @@
   "masterPassHint": {
     "message": "Підказка для головного пароля (необов'язково)"
   },
+  "newMasterPassHint": {
+    "message": "Підказка для нового головного пароля (необов'язково)"
+  },
   "masterPassHintLabel": {
     "message": "Підказка для головного пароля"
   },
@@ -8954,5 +8957,56 @@
   },
   "additionalStorageGbMessage": {
     "message": "ГБ додаткового сховища"
+  },
+  "premiumAccounts": {
+    "message": "6 облікових записів Преміум"
+  },
+  "unlimitedSharing": {
+    "message": "Необмежений спільний доступ"
+  },
+  "unlimitedCollections": {
+    "message": "Необмежена кількість збірок"
+  },
+  "secureDataSharing": {
+    "message": "Безпечний обмін даними"
+  },
+  "eventLogMonitoring": {
+    "message": "Моніторинг подій"
+  },
+  "directoryIntegration": {
+    "message": "Інтеграція з каталогом"
+  },
+  "passwordLessSso": {
+    "message": "Безпарольний вхід за допомогою SSO"
+  },
+  "accountRecovery": {
+    "message": "Відновлення облікового запису"
+  },
+  "customRoles": {
+    "message": "Користувацькі ролі"
+  },
+  "unlimitedSecretsStorage": {
+    "message": "Необмежене сховище для секретів"
+  },
+  "unlimitedUsers": {
+    "message": "Необмежена кількість користувачів"
+  },
+  "UpTo50MachineAccounts": {
+    "message": "До 50 машинних облікових записів"
+  },
+  "UpTo20MachineAccounts": {
+    "message": "До 20 машинних облікових записів"
+  },
+  "current": {
+    "message": "Поточний"
+  },
+  "secretsManagerSubInfo": {
+    "message": "Ваша передплата менеджера секретів поновиться на основі вибраного плану"
+  },
+  "bitwardenPasswordManager": {
+    "message": "Bitwarden – менеджер паролів"
+  },
+  "secretsManagerWithFreePasswordManagerInfo": {
+    "message": "Ваша додаткова річна передплата менеджера паролів поновиться до вибраного плану. З вас не стягуватиметься платіж доки не завершиться додатковий період."
   }
 }

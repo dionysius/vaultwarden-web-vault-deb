@@ -905,6 +905,9 @@
   "masterPassHint": {
     "message": "Ana parola ipucu (isteğe bağlı)"
   },
+  "newMasterPassHint": {
+    "message": "Yeni ana parola ipucu (isteğe bağlı)"
+  },
   "masterPassHintLabel": {
     "message": "Ana parola ipucu"
   },
@@ -8954,5 +8957,56 @@
   },
   "additionalStorageGbMessage": {
     "message": "GB additional storage"
+  },
+  "premiumAccounts": {
+    "message": "6 premium hesap"
+  },
+  "unlimitedSharing": {
+    "message": "Sınırsız paylaşım"
+  },
+  "unlimitedCollections": {
+    "message": "Sınırsız koleksiyon"
+  },
+  "secureDataSharing": {
+    "message": "Güvenli veri paylaşımı"
+  },
+  "eventLogMonitoring": {
+    "message": "Olay günlüğü takibi"
+  },
+  "directoryIntegration": {
+    "message": "Dizin entegrasyonu"
+  },
+  "passwordLessSso": {
+    "message": "Parolasız SSO"
+  },
+  "accountRecovery": {
+    "message": "Hesap kurtarma"
+  },
+  "customRoles": {
+    "message": "Özel roller"
+  },
+  "unlimitedSecretsStorage": {
+    "message": "Sınırsız sız depolama"
+  },
+  "unlimitedUsers": {
+    "message": "Sınırsız kullanıcı"
+  },
+  "UpTo50MachineAccounts": {
+    "message": "50 makine hesabı"
+  },
+  "UpTo20MachineAccounts": {
+    "message": "20 makine hesabı"
+  },
+  "current": {
+    "message": "Current"
+  },
+  "secretsManagerSubInfo": {
+    "message": "Your Secrets Manager subscription will upgrade base on the plan selected"
+  },
+  "bitwardenPasswordManager": {
+    "message": "Bitwarden Parola Yöneticisi"
+  },
+  "secretsManagerWithFreePasswordManagerInfo": {
+    "message": "Your complementary one year Password Manager subscription will upgrade to the selected plan. You will not be charged until the complimentary period is over."
   }
 }

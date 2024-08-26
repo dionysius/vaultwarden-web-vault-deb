@@ -195,10 +195,10 @@
     "message": "Др"
   },
   "cardExpiredTitle": {
-    "message": "Expired card"
+    "message": "Картица је истекла"
   },
   "cardExpiredMessage": {
-    "message": "If you've renewed it, update the card's information"
+    "message": "Ако сте је обновили, ажурирајте податке о картици"
   },
   "expirationMonth": {
     "message": "Месец истека"
@@ -482,7 +482,7 @@
     "message": "Види ставку"
   },
   "viewItemType": {
-    "message": "View $ITEMTYPE$",
+    "message": "Видети $ITEMTYPE$",
     "placeholders": {
       "itemtype": {
         "content": "$1",
@@ -904,6 +904,9 @@
   },
   "masterPassHint": {
     "message": "Савет Главне Лозинке (опционо)"
+  },
+  "newMasterPassHint": {
+    "message": "Савет за нову главну лозинку (опционо)"
   },
   "masterPassHintLabel": {
     "message": "Савет Главне Лозинке"
@@ -8954,5 +8957,56 @@
   },
   "additionalStorageGbMessage": {
     "message": "ГБ додатног простора за складиштење"
+  },
+  "premiumAccounts": {
+    "message": "6 премијум налога"
+  },
+  "unlimitedSharing": {
+    "message": "Неограничено дељење"
+  },
+  "unlimitedCollections": {
+    "message": "Неограничене колекције"
+  },
+  "secureDataSharing": {
+    "message": "Сигурносно дељење података"
+  },
+  "eventLogMonitoring": {
+    "message": "Праћење дневника догађаја"
+  },
+  "directoryIntegration": {
+    "message": "Directory integration"
+  },
+  "passwordLessSso": {
+    "message": "PasswordLess SSO"
+  },
+  "accountRecovery": {
+    "message": "Опоравка налога"
+  },
+  "customRoles": {
+    "message": "Прилагођене улоге"
+  },
+  "unlimitedSecretsStorage": {
+    "message": "Неограничено складиштење тајни"
+  },
+  "unlimitedUsers": {
+    "message": "Неограничен број корисника"
+  },
+  "UpTo50MachineAccounts": {
+    "message": "До 50 машинских налога"
+  },
+  "UpTo20MachineAccounts": {
+    "message": "До 20 машинских налога"
+  },
+  "current": {
+    "message": "Тренутно"
+  },
+  "secretsManagerSubInfo": {
+    "message": "Your Secrets Manager subscription will upgrade base on the plan selected"
+  },
+  "bitwardenPasswordManager": {
+    "message": "Bitwarden Менаџер Лозинке"
+  },
+  "secretsManagerWithFreePasswordManagerInfo": {
+    "message": "Ваша комплементарна једногодишња претплата на Менаџер Лозинки ће надоградити на изабрани план. Неће вам бити наплаћено док се бесплатни период не заврши."
   }
 }

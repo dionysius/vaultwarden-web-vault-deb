@@ -905,6 +905,9 @@
   "masterPassHint": {
     "message": "Mesterjelszó emlékeztető (nem kötelező)"
   },
+  "newMasterPassHint": {
+    "message": "New master password hint (optional)"
+  },
   "masterPassHintLabel": {
     "message": "Mesterjelszó emlékeztető"
   },
@@ -8954,5 +8957,56 @@
   },
   "additionalStorageGbMessage": {
     "message": "GB kiegészítő tároló"
+  },
+  "premiumAccounts": {
+    "message": "6 prémium fiók"
+  },
+  "unlimitedSharing": {
+    "message": "Korlátlan megosztás"
+  },
+  "unlimitedCollections": {
+    "message": "Korlátlan gyűjtemény"
+  },
+  "secureDataSharing": {
+    "message": "Biztonságos adatmegosztás"
+  },
+  "eventLogMonitoring": {
+    "message": "Eseménynapló monitorozás"
+  },
+  "directoryIntegration": {
+    "message": "Könyvtár integráció"
+  },
+  "passwordLessSso": {
+    "message": "Jelszómentes SSO"
+  },
+  "accountRecovery": {
+    "message": "Fiók helyreállítás"
+  },
+  "customRoles": {
+    "message": "Egyéni szerepek"
+  },
+  "unlimitedSecretsStorage": {
+    "message": "Korlátlan titkos tároló"
+  },
+  "unlimitedUsers": {
+    "message": "Korlátlan felhasználó"
+  },
+  "UpTo50MachineAccounts": {
+    "message": "Legfeljebb 50 gépi fiók"
+  },
+  "UpTo20MachineAccounts": {
+    "message": "Legfeljebb 20 gépi fiók"
+  },
+  "current": {
+    "message": "Jelenlegi"
+  },
+  "secretsManagerSubInfo": {
+    "message": "A Titkos kód kezelő előfizetés a kiválasztott csomag alapján frissül."
+  },
+  "bitwardenPasswordManager": {
+    "message": "Bitwarden jelszókezelő"
+  },
+  "secretsManagerWithFreePasswordManagerInfo": {
+    "message": "A kiegészítő egyéves Jelszókezelő előfizetés a kiválasztott csomagra frissül. A díjmentes időszak lejártáig nem számítunk fel díjat."
   }
 }

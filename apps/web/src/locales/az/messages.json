@@ -195,10 +195,10 @@
     "message": "Dr"
   },
   "cardExpiredTitle": {
-    "message": "Expired card"
+    "message": "Kartın müddəti bitib"
   },
   "cardExpiredMessage": {
-    "message": "If you've renewed it, update the card's information"
+    "message": "Yeniləmisinizsə, kart məlumatlarınızı güncəlləyin"
   },
   "expirationMonth": {
     "message": "Son istifadə ayı"
@@ -904,6 +904,9 @@
   },
   "masterPassHint": {
     "message": "Ana parol məsləhəti (ixtiyari)"
+  },
+  "newMasterPassHint": {
+    "message": "Yeni ana parol ipucusu (ixtiyari)"
   },
   "masterPassHintLabel": {
     "message": "Ana parol məsləhəti"
@@ -5359,19 +5362,19 @@
     "message": "Ana parolunuz təşkilatınızdakı siyasətlərdən birinə və ya bir neçəsinə uyğun gəlmir. Anbara müraciət üçün ana parolunuzu indi güncəlləməlisiniz. Davam etsəniz, hazırkı seansdan çıxış etmiş və təkrar giriş etməli olacaqsınız. Digər cihazlardakı aktiv seanslar bir saata qədər aktiv qalmağa davam edə bilər."
   },
   "automaticAppLogin": {
-    "message": "Automatically log in users for allowed applications"
+    "message": "İcazə verilən tətbiqlər üçün istifadəçilərin avtomatik giriş etməsi"
   },
   "automaticAppLoginDesc": {
-    "message": "Login forms will automatically be filled and submitted for apps launched from your configured identity provider."
+    "message": "Konfiqurasiya edilmiş kimlik provayderinizdən başladılan tətbiqlər üçün giriş xanaları avtomatik doldurulub göndəriləcək."
   },
   "automaticAppLoginIdpHostLabel": {
-    "message": "Identity provider host"
+    "message": "Provayder host-unu müəyyənləşdir"
   },
   "automaticAppLoginIdpHostDesc": {
-    "message": "Enter your identity provider host URL. Enter multiple URLs by separating with a comma."
+    "message": "Provayder host kimliyinin URL-sini daxil edin. Çoxlu URL-ləri vergüllə ayırın."
   },
   "tdeDisabledMasterPasswordRequired": {
-    "message": "Your organization has updated your decryption options. Please set a master password to access your vault."
+    "message": "Təşkilatınız, şifrə açma seçimlərinizi güncəllədi. Anbarınıza müraciət etmək üçün lütfən ana parol təyin edin."
   },
   "maximumVaultTimeout": {
     "message": "Anbara müraciət bitəcək"
@@ -8954,5 +8957,56 @@
   },
   "additionalStorageGbMessage": {
     "message": "GB əlavə saxlama sahəsi"
+  },
+  "premiumAccounts": {
+    "message": "6 premium hesab"
+  },
+  "unlimitedSharing": {
+    "message": "Limitsiz paylaşım"
+  },
+  "unlimitedCollections": {
+    "message": "Limitsiz kolleksiya"
+  },
+  "secureDataSharing": {
+    "message": "Güvənli data paylaşımı"
+  },
+  "eventLogMonitoring": {
+    "message": "Event log izləmə"
+  },
+  "directoryIntegration": {
+    "message": "Directory inteqrasiyası"
+  },
+  "passwordLessSso": {
+    "message": "PasswordLess SSO"
+  },
+  "accountRecovery": {
+    "message": "Hesab geri qaytarma"
+  },
+  "customRoles": {
+    "message": "Özəl rollar"
+  },
+  "unlimitedSecretsStorage": {
+    "message": "Limitsiz sirr anbarı"
+  },
+  "unlimitedUsers": {
+    "message": "Limitsiz istifadəçi"
+  },
+  "UpTo50MachineAccounts": {
+    "message": "50-yə qədər maşın hesabı"
+  },
+  "UpTo20MachineAccounts": {
+    "message": "20-yə qədər maşın hesabı"
+  },
+  "current": {
+    "message": "Hazırkı"
+  },
+  "secretsManagerSubInfo": {
+    "message": "Sirr Meneceri abunəliyiniz seçilmiş plan əsasında yüksəldiləcək"
+  },
+  "bitwardenPasswordManager": {
+    "message": "Bitwarden Parol Meneceri"
+  },
+  "secretsManagerWithFreePasswordManagerInfo": {
+    "message": "Tamamlayıcı bir illik Parol Meneceri abunəliyiniz seçilmiş plana yüksəldiləcək. Ödənişsiz dövr bitənə qədər sizdən ödəniş alınmayacaq."
   }
 }
