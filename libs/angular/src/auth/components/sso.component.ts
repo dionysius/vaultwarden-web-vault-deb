@@ -81,6 +81,11 @@ export class SsoComponent implements OnInit {
         const state = await this.ssoLoginService.getSsoState();
         await this.ssoLoginService.setCodeVerifier(null);
         await this.ssoLoginService.setSsoState(null);
+
+        if (qParams.redirectUri != null) {
+          this.redirectUri = qParams.redirectUri;
+        }
+
         if (
           qParams.code != null &&
           codeVerifier != null &&

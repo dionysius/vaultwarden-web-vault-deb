@@ -23,6 +23,7 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
+import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/generator-legacy";
 
@@ -186,5 +187,41 @@ export class LoginComponent extends BaseLoginComponent implements OnInit, OnDest
   private focusInput() {
     const email = this.loggedEmail;
     document.getElementById(email == null || email === "" ? "email" : "masterPassword")?.focus();
+  }
+
+  async launchSsoBrowser(clientId: string, ssoRedirectUri: string) {
+    if (!ipc.platform.isAppImage && !ipc.platform.isSnapStore && !ipc.platform.isDev) {
+      return super.launchSsoBrowser(clientId, ssoRedirectUri);
+    }
+
+    // Save off email for SSO
+    await this.ssoLoginService.setSsoEmail(this.formGroup.value.email);
+
+    // Generate necessary sso params
+    const passwordOptions: any = {
+      type: "password",
+      length: 64,
+      uppercase: true,
+      lowercase: true,
+      numbers: true,
+      special: false,
+    };
+    const state = await this.passwordGenerationService.generatePassword(passwordOptions);
+    const ssoCodeVerifier = await this.passwordGenerationService.generatePassword(passwordOptions);
+    const codeVerifierHash = await this.cryptoFunctionService.hash(ssoCodeVerifier, "sha256");
+    const codeChallenge = Utils.fromBufferToUrlB64(codeVerifierHash);
+
+    // Save sso params
+    await this.ssoLoginService.setSsoState(state);
+    await this.ssoLoginService.setCodeVerifier(ssoCodeVerifier);
+    try {
+      await ipc.platform.localhostCallbackService.openSsoPrompt(codeChallenge, state);
+    } catch (err) {
+      this.platformUtilsService.showToast(
+        "error",
+        this.i18nService.t("errorOccured"),
+        this.i18nService.t("ssoError"),
+      );
+    }
   }
 }

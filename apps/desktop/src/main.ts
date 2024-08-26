@@ -41,6 +41,7 @@ import { ElectronLogMainService } from "./platform/services/electron-log.main.se
 import { ElectronStorageService } from "./platform/services/electron-storage.service";
 import { EphemeralValueStorageService } from "./platform/services/ephemeral-value-storage.main.service";
 import { I18nMainService } from "./platform/services/i18n.main.service";
+import { SSOLocalhostCallbackService } from "./platform/services/sso-localhost-callback.service";
 import { ElectronMainMessagingService } from "./services/electron-main-messaging.service";
 import { isMacAppStore } from "./utils";
 
@@ -227,6 +228,7 @@ export class Main {
     this.clipboardMain.init();
 
     new EphemeralValueStorageService();
+    new SSOLocalhostCallbackService(this.environmentService, this.messagingService);
   }
 
   bootstrap() {
