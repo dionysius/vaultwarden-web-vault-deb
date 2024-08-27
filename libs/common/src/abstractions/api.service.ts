@@ -90,7 +90,6 @@ import { DeleteRecoverRequest } from "../models/request/delete-recover.request";
 import { EventRequest } from "../models/request/event.request";
 import { KdfRequest } from "../models/request/kdf.request";
 import { KeysRequest } from "../models/request/keys.request";
-import { OrganizationImportRequest } from "../models/request/organization-import.request";
 import { PreloginRequest } from "../models/request/prelogin.request";
 import { RegisterRequest } from "../models/request/register.request";
 import { StorageRequest } from "../models/request/storage.request";
@@ -301,7 +300,6 @@ export abstract class ApiService {
   deleteGroupUser: (organizationId: string, id: string, organizationUserId: string) => Promise<any>;
 
   getSync: () => Promise<SyncResponse>;
-  postPublicImportDirectory: (request: OrganizationImportRequest) => Promise<any>;
 
   getSettingsDomains: () => Promise<DomainsResponse>;
   putSettingsDomains: (request: UpdateDomainsRequest) => Promise<DomainsResponse>;

@@ -22,6 +22,7 @@ import { BaseEventsComponent } from "../../common/base.events.component";
 const EVENT_SYSTEM_USER_TO_TRANSLATION: Record<EventSystemUser, string> = {
   [EventSystemUser.SCIM]: null, // SCIM acronym not able to be translated so just display SCIM
   [EventSystemUser.DomainVerification]: "domainVerification",
+  [EventSystemUser.PublicApi]: "publicApi",
 };
 
 @Component({
