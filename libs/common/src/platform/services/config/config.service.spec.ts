@@ -287,7 +287,10 @@ describe("ConfigService", () => {
       environmentService.environment$ = environmentSubject;
 
       globalState.stateSubject.next({ [apiUrl(0)]: config });
-      userState.stateSubject.next([userId, config]);
+      userState.stateSubject.next({
+        syncValue: true,
+        combinedState: [userId, config],
+      });
 
       configApiService.get.mockImplementation(() => {
         return new Promise<ServerConfigResponse>((resolve) => {
