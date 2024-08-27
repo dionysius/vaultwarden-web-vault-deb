@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 import { ActivatedRoute } from "@angular/router";
 
+import { AnonLayoutWrapperDataService } from "@bitwarden/auth/angular";
 import { RegisterRouteService } from "@bitwarden/auth/common";
 import { ErrorResponse } from "@bitwarden/common/models/response/error.response";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
@@ -70,6 +71,7 @@ export class AccessComponent implements OnInit {
     private i18nService: I18nService,
     private configService: ConfigService,
     private registerRouteService: RegisterRouteService,
+    private layoutWrapperDataService: AnonLayoutWrapperDataService,
     protected formBuilder: FormBuilder,
   ) {}
 
@@ -151,6 +153,15 @@ export class AccessComponent implements OnInit {
       !this.passwordRequired &&
       !this.loading &&
       !this.unavailable;
+
+    if (this.creatorIdentifier != null) {
+      this.layoutWrapperDataService.setAnonLayoutWrapperData({
+        pageSubtitle: {
+          subtitle: this.i18nService.t("sendAccessCreatorIdentifier", this.creatorIdentifier),
+          translate: false,
+        },
+      });
+    }
   };
 
   protected setPassword(password: string) {
