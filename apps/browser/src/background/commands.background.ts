@@ -26,7 +26,7 @@ export default class CommandsBackground {
     this.isVivaldi = this.platformUtilsService.isVivaldi();
   }
 
-  async init() {
+  init() {
     BrowserApi.messageListener("commands.background", (msg: any) => {
       if (msg.command === "unlockCompleted" && msg.data.target === "commands.background") {
         this.processCommand(

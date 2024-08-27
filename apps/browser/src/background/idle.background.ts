@@ -23,7 +23,7 @@ export default class IdleBackground {
     this.idle = chrome.idle || (browser != null ? browser.idle : null);
   }
 
-  async init() {
+  init() {
     if (!this.idle) {
       return;
     }

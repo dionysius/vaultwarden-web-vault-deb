@@ -1238,11 +1238,11 @@ export default class MainBackground {
     await this.vaultTimeoutService.init(true);
     this.fido2Background.init();
     await this.runtimeBackground.init();
-    await this.notificationBackground.init();
+    this.notificationBackground.init();
     this.filelessImporterBackground.init();
-    await this.commandsBackground.init();
+    this.commandsBackground.init();
     this.contextMenusBackground?.init();
-    await this.idleBackground.init();
+    this.idleBackground.init();
     this.webRequestBackground?.startListening();
     this.syncServiceListener?.listener$().subscribe();
     await this.autoSubmitLoginBackground.init();

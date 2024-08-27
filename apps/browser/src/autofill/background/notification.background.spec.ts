@@ -137,8 +137,8 @@ describe("NotificationBackground", () => {
   });
 
   describe("notification bar extension message handlers", () => {
-    beforeEach(async () => {
-      await notificationBackground.init();
+    beforeEach(() => {
+      notificationBackground.init();
     });
 
     it("ignores messages whose command does not match the expected handlers", () => {
