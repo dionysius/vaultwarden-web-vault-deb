@@ -9,7 +9,7 @@ import { KeyConnectorService } from "@bitwarden/common/auth/abstractions/key-con
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 
 @Directive()
 export class RemovePasswordComponent implements OnInit {
@@ -30,6 +30,7 @@ export class RemovePasswordComponent implements OnInit {
     private keyConnectorService: KeyConnectorService,
     private organizationApiService: OrganizationApiServiceAbstraction,
     private dialogService: DialogService,
+    private toastService: ToastService,
   ) {}
 
   async ngOnInit() {
@@ -47,17 +48,21 @@ export class RemovePasswordComponent implements OnInit {
 
     try {
       await this.actionPromise;
-      this.platformUtilsService.showToast(
-        "success",
-        null,
-        this.i18nService.t("removedMasterPassword"),
-      );
+      this.toastService.showToast({
+        variant: "success",
+        title: null,
+        message: this.i18nService.t("removedMasterPassword"),
+      });
       await this.keyConnectorService.removeConvertAccountRequired();
       // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
       // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.router.navigate([""]);
     } catch (e) {
-      this.platformUtilsService.showToast("error", this.i18nService.t("errorOccurred"), e.message);
+      this.toastService.showToast({
+        variant: "error",
+        title: this.i18nService.t("errorOccurred"),
+        message: e.message,
+      });
     }
   };
 
@@ -76,13 +81,21 @@ export class RemovePasswordComponent implements OnInit {
       this.leaving = true;
       this.actionPromise = this.organizationApiService.leave(this.organization.id);
       await this.actionPromise;
-      this.platformUtilsService.showToast("success", null, this.i18nService.t("leftOrganization"));
+      this.toastService.showToast({
+        variant: "success",
+        title: null,
+        message: this.i18nService.t("leftOrganization"),
+      });
       await this.keyConnectorService.removeConvertAccountRequired();
       // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
       // eslint-disable-next-line @typescript-eslint/no-floating-promises
       this.router.navigate([""]);
     } catch (e) {
-      this.platformUtilsService.showToast("error", this.i18nService.t("errorOccurred"), e);
+      this.toastService.showToast({
+        variant: "error",
+        title: this.i18nService.t("errorOccurred"),
+        message: e,
+      });
     }
   };
 }

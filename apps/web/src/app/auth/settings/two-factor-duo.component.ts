@@ -11,7 +11,7 @@ import { AuthResponse } from "@bitwarden/common/auth/types/auth-response";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 
 import { TwoFactorBaseComponent } from "./two-factor-base.component";
 
@@ -40,6 +40,7 @@ export class TwoFactorDuoComponent extends TwoFactorBaseComponent implements OnI
     dialogService: DialogService,
     private formBuilder: FormBuilder,
     private dialogRef: DialogRef,
+    protected toastService: ToastService,
   ) {
     super(
       apiService,
@@ -48,6 +49,7 @@ export class TwoFactorDuoComponent extends TwoFactorBaseComponent implements OnI
       logService,
       userVerificationService,
       dialogService,
+      toastService,
     );
   }
 

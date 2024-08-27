@@ -17,7 +17,7 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/generator-legacy";
 
 import { AcceptOrganizationInviteService } from "../organization-invite/accept-organization.service";
@@ -52,6 +52,7 @@ export class RegisterFormComponent extends BaseRegisterComponent implements OnIn
     auditService: AuditService,
     dialogService: DialogService,
     acceptOrgInviteService: AcceptOrganizationInviteService,
+    toastService: ToastService,
   ) {
     super(
       formValidationErrorService,
@@ -68,6 +69,7 @@ export class RegisterFormComponent extends BaseRegisterComponent implements OnIn
       logService,
       auditService,
       dialogService,
+      toastService,
     );
     super.modifyRegisterRequest = async (request: RegisterRequest) => {
       // Org invites are deep linked. Non-existent accounts are redirected to the register page.
@@ -104,11 +106,11 @@ export class RegisterFormComponent extends BaseRegisterComponent implements OnIn
         this.enforcedPolicyOptions,
       )
     ) {
-      this.platformUtilsService.showToast(
-        "error",
-        this.i18nService.t("errorOccurred"),
-        this.i18nService.t("masterPasswordPolicyRequirementsNotMet"),
-      );
+      this.toastService.showToast({
+        variant: "error",
+        title: this.i18nService.t("errorOccurred"),
+        message: this.i18nService.t("masterPasswordPolicyRequirementsNotMet"),
+      });
       return;
     }
 

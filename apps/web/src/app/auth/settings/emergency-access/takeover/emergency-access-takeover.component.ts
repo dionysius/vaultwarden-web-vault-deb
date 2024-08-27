@@ -15,7 +15,7 @@ import { MessagingService } from "@bitwarden/common/platform/abstractions/messag
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { KdfType } from "@bitwarden/common/platform/enums";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/generator-legacy";
 
 import { EmergencyAccessService } from "../../../emergency-access";
@@ -64,6 +64,7 @@ export class EmergencyAccessTakeoverComponent
     kdfConfigService: KdfConfigService,
     masterPasswordService: InternalMasterPasswordServiceAbstraction,
     accountService: AccountService,
+    protected toastService: ToastService,
   ) {
     super(
       i18nService,
@@ -77,6 +78,7 @@ export class EmergencyAccessTakeoverComponent
       kdfConfigService,
       masterPasswordService,
       accountService,
+      toastService,
     );
   }
 
@@ -114,11 +116,11 @@ export class EmergencyAccessTakeoverComponent
       );
     } catch (e) {
       this.logService.error(e);
-      this.platformUtilsService.showToast(
-        "error",
-        this.i18nService.t("errorOccurred"),
-        this.i18nService.t("unexpectedError"),
-      );
+      this.toastService.showToast({
+        variant: "error",
+        title: this.i18nService.t("errorOccurred"),
+        message: this.i18nService.t("unexpectedError"),
+      });
     }
     this.dialogRef.close(EmergencyAccessTakeoverResultType.Done);
   };

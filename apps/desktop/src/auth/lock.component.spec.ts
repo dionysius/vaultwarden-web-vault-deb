@@ -34,7 +34,7 @@ import { FakeAccountService, mockAccountServiceWith } from "@bitwarden/common/sp
 import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/password-strength";
 import { UserId } from "@bitwarden/common/types/guid";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 
 import { BiometricsService } from "src/platform/main/biometric";
 
@@ -62,6 +62,7 @@ describe("LockComponent", () => {
   let platformUtilsServiceMock: MockProxy<PlatformUtilsService>;
   let activatedRouteMock: MockProxy<ActivatedRoute>;
   let mockMasterPasswordService: FakeMasterPasswordService;
+  let mockToastService: MockProxy<ToastService>;
 
   const mockUserId = Utils.newGuid() as UserId;
   const accountService: FakeAccountService = mockAccountServiceWith(mockUserId);
@@ -72,6 +73,7 @@ describe("LockComponent", () => {
     messagingServiceMock = mock<MessagingService>();
     broadcasterServiceMock = mock<BroadcasterService>();
     platformUtilsServiceMock = mock<PlatformUtilsService>();
+    mockToastService = mock<ToastService>();
 
     activatedRouteMock = mock<ActivatedRoute>();
     activatedRouteMock.queryParams = mock<ActivatedRoute["queryParams"]>();
@@ -186,6 +188,10 @@ describe("LockComponent", () => {
         {
           provide: SyncService,
           useValue: mock<SyncService>(),
+        },
+        {
+          provide: ToastService,
+          useValue: mockToastService,
         },
       ],
       schemas: [NO_ERRORS_SCHEMA],

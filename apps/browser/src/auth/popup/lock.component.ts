@@ -27,7 +27,7 @@ import { BiometricStateService } from "@bitwarden/common/platform/biometrics/bio
 import { BiometricsService } from "@bitwarden/common/platform/biometrics/biometric.service";
 import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/password-strength";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 
 import { BiometricErrors, BiometricErrorTypes } from "../../models/biometricErrors";
 import { BrowserRouterService } from "../../platform/popup/services/browser-router.service";
@@ -72,6 +72,7 @@ export class LockComponent extends BaseLockComponent implements OnInit {
     accountService: AccountService,
     kdfConfigService: KdfConfigService,
     syncService: SyncService,
+    toastService: ToastService,
   ) {
     super(
       masterPasswordService,
@@ -100,6 +101,7 @@ export class LockComponent extends BaseLockComponent implements OnInit {
       authService,
       kdfConfigService,
       syncService,
+      toastService,
     );
     this.successRoute = "/tabs/current";
     this.isInitialLockScreen = (window as any).previousPopupUrl == null;

@@ -32,6 +32,7 @@ import {
   LinkModule,
   TypographyModule,
   DialogService,
+  ToastService,
 } from "@bitwarden/components";
 
 import {
@@ -95,6 +96,7 @@ export class TwoFactorAuthComponent
     @Inject(WINDOW) protected win: Window,
     private syncService: SyncService,
     private messagingService: MessagingService,
+    toastService: ToastService,
   ) {
     super(
       loginStrategyService,
@@ -114,6 +116,7 @@ export class TwoFactorAuthComponent
       accountService,
       formBuilder,
       win,
+      toastService,
     );
     super.onSuccessfulLoginTdeNavigate = async () => {
       this.win.close();

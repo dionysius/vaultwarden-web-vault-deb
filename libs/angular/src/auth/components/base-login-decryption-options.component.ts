@@ -39,6 +39,7 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { ValidationService } from "@bitwarden/common/platform/abstractions/validation.service";
 import { UserId } from "@bitwarden/common/types/guid";
+import { ToastService } from "@bitwarden/components";
 
 enum State {
   NewUser,
@@ -104,6 +105,7 @@ export class BaseLoginDecryptionOptionsComponent implements OnInit, OnDestroy {
     protected passwordResetEnrollmentService: PasswordResetEnrollmentServiceAbstraction,
     protected ssoLoginService: SsoLoginServiceAbstraction,
     protected accountService: AccountService,
+    protected toastService: ToastService,
   ) {}
 
   async ngOnInit() {
@@ -275,11 +277,11 @@ export class BaseLoginDecryptionOptionsComponent implements OnInit, OnDestroy {
       const keysRequest = new KeysRequest(publicKey, privateKey.encryptedString);
       await this.apiService.postAccountKeys(keysRequest);
 
-      this.platformUtilsService.showToast(
-        "success",
-        null,
-        this.i18nService.t("accountSuccessfullyCreated"),
-      );
+      this.toastService.showToast({
+        variant: "success",
+        title: null,
+        message: this.i18nService.t("accountSuccessfullyCreated"),
+      });
 
       await this.passwordResetEnrollmentService.enroll(this.data.organizationId);
 

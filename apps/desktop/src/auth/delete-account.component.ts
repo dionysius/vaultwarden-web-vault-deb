@@ -13,6 +13,7 @@ import {
   CalloutModule,
   DialogModule,
   DialogService,
+  ToastService,
 } from "@bitwarden/components";
 
 import { UserVerificationComponent } from "../app/components/user-verification.component";
@@ -41,6 +42,7 @@ export class DeleteAccountComponent {
     private platformUtilsService: PlatformUtilsService,
     private formBuilder: FormBuilder,
     private accountApiService: AccountApiService,
+    private toastService: ToastService,
   ) {}
 
   static open(dialogService: DialogService): DialogRef<DeleteAccountComponent> {
@@ -54,10 +56,10 @@ export class DeleteAccountComponent {
   submit = async () => {
     const verification = this.deleteForm.get("verification").value;
     await this.accountApiService.deleteAccount(verification);
-    this.platformUtilsService.showToast(
-      "success",
-      this.i18nService.t("accountDeleted"),
-      this.i18nService.t("accountDeletedDesc"),
-    );
+    this.toastService.showToast({
+      variant: "success",
+      title: this.i18nService.t("accountDeleted"),
+      message: this.i18nService.t("accountDeletedDesc"),
+    });
   };
 }

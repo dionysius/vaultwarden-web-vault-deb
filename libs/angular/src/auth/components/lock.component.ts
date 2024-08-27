@@ -36,7 +36,7 @@ import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/pass
 import { UserId } from "@bitwarden/common/types/guid";
 import { UserKey } from "@bitwarden/common/types/key";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 
 @Directive()
 export class LockComponent implements OnInit, OnDestroy {
@@ -90,6 +90,7 @@ export class LockComponent implements OnInit, OnDestroy {
     protected authService: AuthService,
     protected kdfConfigService: KdfConfigService,
     protected syncService: SyncService,
+    protected toastService: ToastService,
   ) {}
 
   async ngOnInit() {
@@ -167,11 +168,11 @@ export class LockComponent implements OnInit, OnDestroy {
 
   private async handlePinRequiredUnlock() {
     if (this.pin == null || this.pin === "") {
-      this.platformUtilsService.showToast(
-        "error",
-        this.i18nService.t("errorOccurred"),
-        this.i18nService.t("pinRequired"),
-      );
+      this.toastService.showToast({
+        variant: "error",
+        title: this.i18nService.t("errorOccurred"),
+        message: this.i18nService.t("pinRequired"),
+      });
       return;
     }
 
@@ -195,36 +196,36 @@ export class LockComponent implements OnInit, OnDestroy {
 
       // Log user out if they have entered an invalid PIN too many times
       if (this.invalidPinAttempts >= MAX_INVALID_PIN_ENTRY_ATTEMPTS) {
-        this.platformUtilsService.showToast(
-          "error",
-          null,
-          this.i18nService.t("tooManyInvalidPinEntryAttemptsLoggingOut"),
-        );
+        this.toastService.showToast({
+          variant: "error",
+          title: null,
+          message: this.i18nService.t("tooManyInvalidPinEntryAttemptsLoggingOut"),
+        });
         this.messagingService.send("logout");
         return;
       }
 
-      this.platformUtilsService.showToast(
-        "error",
-        this.i18nService.t("errorOccurred"),
-        this.i18nService.t("invalidPin"),
-      );
+      this.toastService.showToast({
+        variant: "error",
+        title: this.i18nService.t("errorOccurred"),
+        message: this.i18nService.t("invalidPin"),
+      });
     } catch {
-      this.platformUtilsService.showToast(
-        "error",
-        this.i18nService.t("errorOccurred"),
-        this.i18nService.t("unexpectedError"),
-      );
+      this.toastService.showToast({
+        variant: "error",
+        title: this.i18nService.t("errorOccurred"),
+        message: this.i18nService.t("unexpectedError"),
+      });
     }
   }
 
   private async handleMasterPasswordRequiredUnlock() {
     if (this.masterPassword == null || this.masterPassword === "") {
-      this.platformUtilsService.showToast(
-        "error",
-        this.i18nService.t("errorOccurred"),
-        this.i18nService.t("masterPasswordRequired"),
-      );
+      this.toastService.showToast({
+        variant: "error",
+        title: this.i18nService.t("errorOccurred"),
+        message: this.i18nService.t("masterPasswordRequired"),
+      });
       return;
     }
     await this.doUnlockWithMasterPassword();
@@ -258,11 +259,11 @@ export class LockComponent implements OnInit, OnDestroy {
     }
 
     if (!passwordValid) {
-      this.platformUtilsService.showToast(
-        "error",
-        this.i18nService.t("errorOccurred"),
-        this.i18nService.t("invalidMasterPassword"),
-      );
+      this.toastService.showToast({
+        variant: "error",
+        title: this.i18nService.t("errorOccurred"),
+        message: this.i18nService.t("invalidMasterPassword"),
+      });
       return;
     }
 

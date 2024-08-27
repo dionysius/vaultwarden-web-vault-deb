@@ -22,7 +22,7 @@ import { UserId } from "@bitwarden/common/types/guid";
 import { MasterKey, UserKey } from "@bitwarden/common/types/key";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/generator-legacy";
 
 import { UserKeyRotationService } from "../key-rotation/user-key-rotation.service";
@@ -60,6 +60,7 @@ export class ChangePasswordComponent
     kdfConfigService: KdfConfigService,
     masterPasswordService: InternalMasterPasswordServiceAbstraction,
     accountService: AccountService,
+    toastService: ToastService,
   ) {
     super(
       i18nService,
@@ -73,6 +74,7 @@ export class ChangePasswordComponent
       kdfConfigService,
       masterPasswordService,
       accountService,
+      toastService,
     );
   }
 
@@ -141,11 +143,11 @@ export class ChangePasswordComponent
       this.masterPasswordHint != null &&
       this.masterPasswordHint.toLowerCase() === this.masterPassword.toLowerCase()
     ) {
-      this.platformUtilsService.showToast(
-        "error",
-        this.i18nService.t("errorOccurred"),
-        this.i18nService.t("hintEqualsPassword"),
-      );
+      this.toastService.showToast({
+        variant: "error",
+        title: this.i18nService.t("errorOccurred"),
+        message: this.i18nService.t("hintEqualsPassword"),
+      });
       return;
     }
 
@@ -159,11 +161,11 @@ export class ChangePasswordComponent
 
   async setupSubmitActions() {
     if (this.currentMasterPassword == null || this.currentMasterPassword === "") {
-      this.platformUtilsService.showToast(
-        "error",
-        this.i18nService.t("errorOccurred"),
-        this.i18nService.t("masterPasswordRequired"),
-      );
+      this.toastService.showToast({
+        variant: "error",
+        title: this.i18nService.t("errorOccurred"),
+        message: this.i18nService.t("masterPasswordRequired"),
+      });
       return false;
     }
 
@@ -194,11 +196,11 @@ export class ChangePasswordComponent
 
     const userKey = await this.masterPasswordService.decryptUserKeyWithMasterKey(masterKey);
     if (userKey == null) {
-      this.platformUtilsService.showToast(
-        "error",
-        null,
-        this.i18nService.t("invalidMasterPassword"),
-      );
+      this.toastService.showToast({
+        variant: "error",
+        title: null,
+        message: this.i18nService.t("invalidMasterPassword"),
+      });
       return;
     }
 
@@ -225,14 +227,18 @@ export class ChangePasswordComponent
 
       await this.formPromise;
 
-      this.platformUtilsService.showToast(
-        "success",
-        this.i18nService.t("masterPasswordChanged"),
-        this.i18nService.t("logBackIn"),
-      );
+      this.toastService.showToast({
+        variant: "success",
+        title: this.i18nService.t("masterPasswordChanged"),
+        message: this.i18nService.t("logBackIn"),
+      });
       this.messagingService.send("logout");
     } catch {
-      this.platformUtilsService.showToast("error", null, this.i18nService.t("errorOccurred"));
+      this.toastService.showToast({
+        variant: "error",
+        title: null,
+        message: this.i18nService.t("errorOccurred"),
+      });
     }
   }
 

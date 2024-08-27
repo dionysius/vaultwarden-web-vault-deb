@@ -17,7 +17,7 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 
 import { TwoFactorBaseComponent } from "./two-factor-base.component";
 
@@ -68,6 +68,7 @@ export class TwoFactorAuthenticatorComponent
     private accountService: AccountService,
     dialogService: DialogService,
     private configService: ConfigService,
+    protected toastService: ToastService,
   ) {
     super(
       apiService,
@@ -76,6 +77,7 @@ export class TwoFactorAuthenticatorComponent
       logService,
       userVerificationService,
       dialogService,
+      toastService,
     );
     this.qrScript = window.document.createElement("script");
     this.qrScript.src = "scripts/qrious.min.js";
@@ -148,7 +150,11 @@ export class TwoFactorAuthenticatorComponent
     request.userVerificationToken = this.userVerificationToken;
     await this.apiService.deleteTwoFactorAuthenticator(request);
     this.enabled = false;
-    this.platformUtilsService.showToast("success", null, this.i18nService.t("twoStepDisabled"));
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("twoStepDisabled"),
+    });
     this.onUpdated.emit(false);
   }
 

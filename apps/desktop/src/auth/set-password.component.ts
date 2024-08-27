@@ -22,7 +22,7 @@ import { StateService } from "@bitwarden/common/platform/abstractions/state.serv
 import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 import { MasterKey, UserKey } from "@bitwarden/common/types/key";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/generator-legacy";
 
 const BroadcasterSubscriptionId = "SetPasswordComponent";
@@ -56,6 +56,7 @@ export class SetPasswordComponent extends BaseSetPasswordComponent implements On
     dialogService: DialogService,
     kdfConfigService: KdfConfigService,
     encryptService: EncryptService,
+    toastService: ToastService,
   ) {
     super(
       accountService,
@@ -79,6 +80,7 @@ export class SetPasswordComponent extends BaseSetPasswordComponent implements On
       dialogService,
       kdfConfigService,
       encryptService,
+      toastService,
     );
   }
 

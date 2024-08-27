@@ -22,6 +22,7 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
+import { ToastService } from "@bitwarden/components";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/generator-legacy";
 
 import { flagEnabled } from "../../platform/flags";
@@ -53,6 +54,7 @@ export class LoginComponent extends BaseLoginComponent {
     ssoLoginService: SsoLoginServiceAbstraction,
     webAuthnLoginService: WebAuthnLoginServiceAbstraction,
     registerRouteService: RegisterRouteService,
+    toastService: ToastService,
   ) {
     super(
       devicesApiService,
@@ -74,6 +76,7 @@ export class LoginComponent extends BaseLoginComponent {
       ssoLoginService,
       webAuthnLoginService,
       registerRouteService,
+      toastService,
     );
     super.onSuccessfulLogin = async () => {
       await syncService.fullSync(true);

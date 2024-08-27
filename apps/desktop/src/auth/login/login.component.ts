@@ -25,6 +25,7 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
+import { ToastService } from "@bitwarden/components";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/generator-legacy";
 
 import { EnvironmentComponent } from "../environment.component";
@@ -74,6 +75,7 @@ export class LoginComponent extends BaseLoginComponent implements OnInit, OnDest
     ssoLoginService: SsoLoginServiceAbstraction,
     webAuthnLoginService: WebAuthnLoginServiceAbstraction,
     registerRouteService: RegisterRouteService,
+    toastService: ToastService,
   ) {
     super(
       devicesApiService,
@@ -95,6 +97,7 @@ export class LoginComponent extends BaseLoginComponent implements OnInit, OnDest
       ssoLoginService,
       webAuthnLoginService,
       registerRouteService,
+      toastService,
     );
     super.onSuccessfulLogin = () => {
       return syncService.fullSync(true);
@@ -162,11 +165,11 @@ export class LoginComponent extends BaseLoginComponent implements OnInit, OnDest
   async continue() {
     await super.validateEmail();
     if (!this.formGroup.controls.email.valid) {
-      this.platformUtilsService.showToast(
-        "error",
-        this.i18nService.t("errorOccured"),
-        this.i18nService.t("invalidEmail"),
-      );
+      this.toastService.showToast({
+        variant: "error",
+        title: this.i18nService.t("errorOccured"),
+        message: this.i18nService.t("invalidEmail"),
+      });
       return;
     }
     this.focusInput();

@@ -8,6 +8,7 @@ import { TwoFactorRecoveryRequest } from "@bitwarden/common/auth/models/request/
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { ToastService } from "@bitwarden/components";
 
 @Component({
   selector: "app-recover-two-factor",
@@ -27,6 +28,7 @@ export class RecoverTwoFactorComponent {
     private i18nService: I18nService,
     private cryptoService: CryptoService,
     private loginStrategyService: LoginStrategyServiceAbstraction,
+    private toastService: ToastService,
   ) {}
 
   get email(): string {
@@ -53,11 +55,11 @@ export class RecoverTwoFactorComponent {
     const key = await this.loginStrategyService.makePreloginKey(this.masterPassword, request.email);
     request.masterPasswordHash = await this.cryptoService.hashMasterKey(this.masterPassword, key);
     await this.apiService.postTwoFactorRecover(request);
-    this.platformUtilsService.showToast(
-      "success",
-      null,
-      this.i18nService.t("twoStepRecoverDisabled"),
-    );
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("twoStepRecoverDisabled"),
+    });
     await this.router.navigate(["/"]);
   };
 }

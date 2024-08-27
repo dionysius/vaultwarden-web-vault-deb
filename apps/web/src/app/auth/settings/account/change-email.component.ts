@@ -12,6 +12,7 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
+import { ToastService } from "@bitwarden/components";
 
 @Component({
   selector: "app-change-email",
@@ -39,6 +40,7 @@ export class ChangeEmailComponent implements OnInit {
     private stateService: StateService,
     private formBuilder: FormBuilder,
     private kdfConfigService: KdfConfigService,
+    private toastService: ToastService,
   ) {}
 
   async ngOnInit() {
@@ -100,11 +102,11 @@ export class ChangeEmailComponent implements OnInit {
       try {
         await this.apiService.postEmail(request);
         this.reset();
-        this.platformUtilsService.showToast(
-          "success",
-          this.i18nService.t("emailChanged"),
-          this.i18nService.t("logBackIn"),
-        );
+        this.toastService.showToast({
+          variant: "success",
+          title: this.i18nService.t("emailChanged"),
+          message: this.i18nService.t("logBackIn"),
+        });
         this.messagingService.send("logout");
       } catch (e) {
         this.logService.error(e);

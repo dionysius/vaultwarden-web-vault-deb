@@ -22,6 +22,7 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
+import { ToastService } from "@bitwarden/components";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/generator-legacy";
 
 import { BrowserApi } from "../../platform/browser/browser-api";
@@ -51,6 +52,7 @@ export class SsoComponent extends BaseSsoComponent {
     accountService: AccountService,
     private authService: AuthService,
     @Inject(WINDOW) private win: Window,
+    toastService: ToastService,
   ) {
     super(
       ssoLoginService,
@@ -69,6 +71,7 @@ export class SsoComponent extends BaseSsoComponent {
       configService,
       masterPasswordService,
       accountService,
+      toastService,
     );
 
     environmentService.environment$.pipe(takeUntilDestroyed()).subscribe((env) => {

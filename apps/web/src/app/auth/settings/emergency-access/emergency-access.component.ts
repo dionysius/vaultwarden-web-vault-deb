@@ -10,7 +10,7 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 
 import { EmergencyAccessService } from "../../emergency-access";
 import { EmergencyAccessStatusType } from "../../emergency-access/enums/emergency-access-status-type";
@@ -66,6 +66,7 @@ export class EmergencyAccessComponent implements OnInit {
     protected dialogService: DialogService,
     billingAccountProfileStateService: BillingAccountProfileStateService,
     protected organizationManagementPreferencesService: OrganizationManagementPreferencesService,
+    private toastService: ToastService,
   ) {
     this.canAccessPremium$ = billingAccountProfileStateService.hasPremiumFromAnySource$;
   }
@@ -121,11 +122,11 @@ export class EmergencyAccessComponent implements OnInit {
     }
     this.actionPromise = this.emergencyAccessService.reinvite(contact.id);
     await this.actionPromise;
-    this.platformUtilsService.showToast(
-      "success",
-      null,
-      this.i18nService.t("hasBeenReinvited", contact.email),
-    );
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("hasBeenReinvited", contact.email),
+    });
     this.actionPromise = null;
   }
 
@@ -153,11 +154,11 @@ export class EmergencyAccessComponent implements OnInit {
       if (result === EmergencyAccessConfirmDialogResult.Confirmed) {
         await this.emergencyAccessService.confirm(contact.id, contact.granteeId);
         updateUser();
-        this.platformUtilsService.showToast(
-          "success",
-          null,
-          this.i18nService.t("hasBeenConfirmed", this.userNamePipe.transform(contact)),
-        );
+        this.toastService.showToast({
+          variant: "success",
+          title: null,
+          message: this.i18nService.t("hasBeenConfirmed", this.userNamePipe.transform(contact)),
+        });
       }
       return;
     }
@@ -166,11 +167,11 @@ export class EmergencyAccessComponent implements OnInit {
     await this.actionPromise;
     updateUser();
 
-    this.platformUtilsService.showToast(
-      "success",
-      null,
-      this.i18nService.t("hasBeenConfirmed", this.userNamePipe.transform(contact)),
-    );
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("hasBeenConfirmed", this.userNamePipe.transform(contact)),
+    });
     this.actionPromise = null;
   }
 
@@ -187,11 +188,11 @@ export class EmergencyAccessComponent implements OnInit {
 
     try {
       await this.emergencyAccessService.delete(details.id);
-      this.platformUtilsService.showToast(
-        "success",
-        null,
-        this.i18nService.t("removedUserId", this.userNamePipe.transform(details)),
-      );
+      this.toastService.showToast({
+        variant: "success",
+        title: null,
+        message: this.i18nService.t("removedUserId", this.userNamePipe.transform(details)),
+      });
 
       if (details instanceof GranteeEmergencyAccess) {
         this.removeGrantee(details);
@@ -221,11 +222,11 @@ export class EmergencyAccessComponent implements OnInit {
     await this.emergencyAccessService.requestAccess(details.id);
 
     details.status = EmergencyAccessStatusType.RecoveryInitiated;
-    this.platformUtilsService.showToast(
-      "success",
-      null,
-      this.i18nService.t("requestSent", this.userNamePipe.transform(details)),
-    );
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("requestSent", this.userNamePipe.transform(details)),
+    });
   }
 
   async approve(details: GranteeEmergencyAccess) {
@@ -250,22 +251,22 @@ export class EmergencyAccessComponent implements OnInit {
     await this.emergencyAccessService.approve(details.id);
     details.status = EmergencyAccessStatusType.RecoveryApproved;
 
-    this.platformUtilsService.showToast(
-      "success",
-      null,
-      this.i18nService.t("emergencyApproved", this.userNamePipe.transform(details)),
-    );
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("emergencyApproved", this.userNamePipe.transform(details)),
+    });
   }
 
   async reject(details: GranteeEmergencyAccess) {
     await this.emergencyAccessService.reject(details.id);
     details.status = EmergencyAccessStatusType.Confirmed;
 
-    this.platformUtilsService.showToast(
-      "success",
-      null,
-      this.i18nService.t("emergencyRejected", this.userNamePipe.transform(details)),
-    );
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("emergencyRejected", this.userNamePipe.transform(details)),
+    });
   }
 
   takeover = async (details: GrantorEmergencyAccess) => {
@@ -278,11 +279,11 @@ export class EmergencyAccessComponent implements OnInit {
     });
     const result = await lastValueFrom(dialogRef.closed);
     if (result === EmergencyAccessTakeoverResultType.Done) {
-      this.platformUtilsService.showToast(
-        "success",
-        null,
-        this.i18nService.t("passwordResetFor", this.userNamePipe.transform(details)),
-      );
+      this.toastService.showToast({
+        variant: "success",
+        title: null,
+        message: this.i18nService.t("passwordResetFor", this.userNamePipe.transform(details)),
+      });
     }
   };
 

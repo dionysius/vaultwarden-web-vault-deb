@@ -26,6 +26,7 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
+import { ToastService } from "@bitwarden/components";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/generator-legacy";
 
 @Directive()
@@ -71,6 +72,7 @@ export class SsoComponent implements OnInit {
     protected configService: ConfigService,
     protected masterPasswordService: InternalMasterPasswordServiceAbstraction,
     protected accountService: AccountService,
+    protected toastService: ToastService,
   ) {}
 
   async ngOnInit() {
@@ -111,11 +113,11 @@ export class SsoComponent implements OnInit {
 
   async submit(returnUri?: string, includeUserIdentifier?: boolean) {
     if (this.identifier == null || this.identifier === "") {
-      this.platformUtilsService.showToast(
-        "error",
-        this.i18nService.t("ssoValidationFailed"),
-        this.i18nService.t("ssoIdentifierRequired"),
-      );
+      this.toastService.showToast({
+        variant: "error",
+        title: this.i18nService.t("ssoValidationFailed"),
+        message: this.i18nService.t("ssoIdentifierRequired"),
+      });
       return;
     }
 
@@ -382,11 +384,11 @@ export class SsoComponent implements OnInit {
 
     // TODO: Key Connector Service should pass this error message to the logout callback instead of displaying here
     if (e.message === "Key Connector error") {
-      this.platformUtilsService.showToast(
-        "error",
-        null,
-        this.i18nService.t("ssoKeyConnectorError"),
-      );
+      this.toastService.showToast({
+        variant: "error",
+        title: null,
+        message: this.i18nService.t("ssoKeyConnectorError"),
+      });
     }
   }
 

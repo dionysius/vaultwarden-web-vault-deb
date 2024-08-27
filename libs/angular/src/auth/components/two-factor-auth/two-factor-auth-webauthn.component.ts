@@ -21,6 +21,7 @@ import {
   TypographyModule,
   FormFieldModule,
   AsyncActionsModule,
+  ToastService,
 } from "@bitwarden/components";
 
 @Component({
@@ -56,6 +57,7 @@ export class TwoFactorAuthWebAuthnComponent implements OnInit, OnDestroy {
     protected environmentService: EnvironmentService,
     protected twoFactorService: TwoFactorService,
     protected route: ActivatedRoute,
+    private toastService: ToastService,
   ) {
     this.webAuthnSupported = this.platformUtilsService.supportsWebAuthn(win);
 
@@ -85,11 +87,11 @@ export class TwoFactorAuthWebAuthnComponent implements OnInit, OnDestroy {
           this.token.emit(token);
         },
         (error: string) => {
-          this.platformUtilsService.showToast(
-            "error",
-            this.i18nService.t("errorOccurred"),
-            this.i18nService.t("webauthnCancelOrTimeout"),
-          );
+          this.toastService.showToast({
+            variant: "error",
+            title: this.i18nService.t("errorOccurred"),
+            message: this.i18nService.t("webauthnCancelOrTimeout"),
+          });
         },
         (info: string) => {
           if (info === "ready") {

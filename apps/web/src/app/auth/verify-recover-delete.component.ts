@@ -7,6 +7,7 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { VerifyDeleteRecoverRequest } from "@bitwarden/common/models/request/verify-delete-recover.request";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { ToastService } from "@bitwarden/components";
 
 @Component({
   selector: "app-verify-recover-delete",
@@ -26,6 +27,7 @@ export class VerifyRecoverDeleteComponent implements OnInit {
     private platformUtilsService: PlatformUtilsService,
     private i18nService: I18nService,
     private route: ActivatedRoute,
+    private toastService: ToastService,
   ) {}
 
   ngOnInit() {
@@ -44,11 +46,11 @@ export class VerifyRecoverDeleteComponent implements OnInit {
   submit = async () => {
     const request = new VerifyDeleteRecoverRequest(this.userId, this.token);
     await this.apiService.postAccountRecoverDeleteToken(request);
-    this.platformUtilsService.showToast(
-      "success",
-      this.i18nService.t("accountDeleted"),
-      this.i18nService.t("accountDeletedDesc"),
-    );
+    this.toastService.showToast({
+      variant: "success",
+      title: this.i18nService.t("accountDeleted"),
+      message: this.i18nService.t("accountDeletedDesc"),
+    });
     await this.router.navigate(["/"]);
   };
 }

@@ -6,6 +6,7 @@ import { EnvironmentService } from "@bitwarden/common/platform/abstractions/envi
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
+import { ToastService } from "@bitwarden/components";
 
 @Directive()
 export abstract class CaptchaProtectedComponent {
@@ -17,6 +18,7 @@ export abstract class CaptchaProtectedComponent {
     protected environmentService: EnvironmentService,
     protected i18nService: I18nService,
     protected platformUtilsService: PlatformUtilsService,
+    protected toastService: ToastService,
   ) {}
 
   async setupCaptcha() {
@@ -31,10 +33,18 @@ export abstract class CaptchaProtectedComponent {
         this.captchaToken = token;
       },
       (error: string) => {
-        this.platformUtilsService.showToast("error", this.i18nService.t("errorOccurred"), error);
+        this.toastService.showToast({
+          variant: "error",
+          title: this.i18nService.t("errorOccurred"),
+          message: error,
+        });
       },
       (info: string) => {
-        this.platformUtilsService.showToast("info", this.i18nService.t("info"), info);
+        this.toastService.showToast({
+          variant: "info",
+          title: this.i18nService.t("info"),
+          message: info,
+        });
       },
     );
   }

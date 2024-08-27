@@ -28,7 +28,7 @@ import { BiometricStateService } from "@bitwarden/common/platform/biometrics/bio
 import { BiometricsService } from "@bitwarden/common/platform/biometrics/biometric.service";
 import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/password-strength";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 
 const BroadcasterSubscriptionId = "LockComponent";
 
@@ -72,6 +72,7 @@ export class LockComponent extends BaseLockComponent implements OnInit, OnDestro
     authService: AuthService,
     kdfConfigService: KdfConfigService,
     syncService: SyncService,
+    toastService: ToastService,
   ) {
     super(
       masterPasswordService,
@@ -100,6 +101,7 @@ export class LockComponent extends BaseLockComponent implements OnInit, OnDestro
       authService,
       kdfConfigService,
       syncService,
+      toastService,
     );
   }
 

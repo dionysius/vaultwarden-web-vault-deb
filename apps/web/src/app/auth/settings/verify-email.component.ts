@@ -6,7 +6,13 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { TokenService } from "@bitwarden/common/auth/abstractions/token.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { AsyncActionsModule, BannerModule, ButtonModule, LinkModule } from "@bitwarden/components";
+import {
+  AsyncActionsModule,
+  BannerModule,
+  ButtonModule,
+  LinkModule,
+  ToastService,
+} from "@bitwarden/components";
 
 @Component({
   standalone: true,
@@ -25,22 +31,27 @@ export class VerifyEmailComponent {
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
     private tokenService: TokenService,
+    private toastService: ToastService,
   ) {}
 
   async verifyEmail(): Promise<void> {
     await this.apiService.refreshIdentityToken();
     if (await this.tokenService.getEmailVerified()) {
       this.onVerified.emit(true);
-      this.platformUtilsService.showToast("success", null, this.i18nService.t("emailVerified"));
+      this.toastService.showToast({
+        variant: "success",
+        title: null,
+        message: this.i18nService.t("emailVerified"),
+      });
       return;
     }
 
     await this.apiService.postAccountVerifyEmail();
-    this.platformUtilsService.showToast(
-      "success",
-      null,
-      this.i18nService.t("checkInboxForVerification"),
-    );
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("checkInboxForVerification"),
+    });
   }
 
   send = async () => {

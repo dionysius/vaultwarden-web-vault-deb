@@ -32,6 +32,7 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
 import { ValidationService } from "@bitwarden/common/platform/abstractions/validation.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { UserId } from "@bitwarden/common/types/guid";
+import { ToastService } from "@bitwarden/components";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/generator-legacy";
 
 import { CaptchaProtectedComponent } from "./captcha-protected.component";
@@ -88,8 +89,9 @@ export class LoginViaAuthRequestComponent
     private deviceTrustService: DeviceTrustServiceAbstraction,
     private authRequestService: AuthRequestServiceAbstraction,
     private loginStrategyService: LoginStrategyServiceAbstraction,
+    protected toastService: ToastService,
   ) {
-    super(environmentService, i18nService, platformUtilsService);
+    super(environmentService, i18nService, platformUtilsService, toastService);
 
     // TODO: I don't know why this is necessary.
     // Why would the existence of the email depend on the navigation?
@@ -105,7 +107,11 @@ export class LoginViaAuthRequestComponent
       .subscribe((id) => {
         // eslint-disable-next-line @typescript-eslint/no-floating-promises
         this.verifyAndHandleApprovedAuthReq(id).catch((e: Error) => {
-          this.platformUtilsService.showToast("error", this.i18nService.t("error"), e.message);
+          this.toastService.showToast({
+            variant: "error",
+            title: this.i18nService.t("error"),
+            message: e.message,
+          });
           this.logService.error("Failed to use approved auth request: " + e.message);
         });
       });
@@ -135,7 +141,11 @@ export class LoginViaAuthRequestComponent
       const userId = (await firstValueFrom(this.accountService.activeAccount$)).id;
 
       if (!this.email) {
-        this.platformUtilsService.showToast("error", null, this.i18nService.t("userEmailMissing"));
+        this.toastService.showToast({
+          variant: "error",
+          title: null,
+          message: this.i18nService.t("userEmailMissing"),
+        });
         // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
         // eslint-disable-next-line @typescript-eslint/no-floating-promises
         this.router.navigate(["/login-initiated"]);
@@ -158,7 +168,11 @@ export class LoginViaAuthRequestComponent
       this.email = this.loginEmailService.getEmail();
 
       if (!this.email) {
-        this.platformUtilsService.showToast("error", null, this.i18nService.t("userEmailMissing"));
+        this.toastService.showToast({
+          variant: "error",
+          title: null,
+          message: this.i18nService.t("userEmailMissing"),
+        });
         // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
         // eslint-disable-next-line @typescript-eslint/no-floating-promises
         this.router.navigate(["/login"]);
@@ -402,7 +416,11 @@ export class LoginViaAuthRequestComponent
     // TODO: this should eventually be enforced via deleting this on the server once it is used
     await this.authRequestService.clearAdminAuthRequest(userId);
 
-    this.platformUtilsService.showToast("success", null, this.i18nService.t("loginApproved"));
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("loginApproved"),
+    });
 
     // Now that we have a decrypted user key in memory, we can check if we
     // need to establish trust on the current device

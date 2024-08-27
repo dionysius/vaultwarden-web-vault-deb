@@ -35,7 +35,7 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { FakeAccountService, mockAccountServiceWith } from "@bitwarden/common/spec";
 import { UserId } from "@bitwarden/common/types/guid";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 
 import { TwoFactorAuthComponent } from "./two-factor-auth.component";
 
@@ -76,6 +76,7 @@ describe("TwoFactorComponent", () => {
   let mockMasterPasswordService: FakeMasterPasswordService;
   let mockAccountService: FakeAccountService;
   let mockDialogService: MockProxy<DialogService>;
+  let mockToastService: MockProxy<ToastService>;
 
   let mockUserDecryptionOpts: {
     noMasterPassword: UserDecryptionOptions;
@@ -113,6 +114,7 @@ describe("TwoFactorComponent", () => {
     mockAccountService = mockAccountServiceWith(userId);
     mockMasterPasswordService = new FakeMasterPasswordService();
     mockDialogService = mock<DialogService>();
+    mockToastService = mock<ToastService>();
 
     mockUserDecryptionOpts = {
       noMasterPassword: new UserDecryptionOptions({
@@ -193,6 +195,7 @@ describe("TwoFactorComponent", () => {
         { provide: InternalMasterPasswordServiceAbstraction, useValue: mockMasterPasswordService },
         { provide: AccountService, useValue: mockAccountService },
         { provide: DialogService, useValue: mockDialogService },
+        { provide: ToastService, useValue: mockToastService },
       ],
     });
 

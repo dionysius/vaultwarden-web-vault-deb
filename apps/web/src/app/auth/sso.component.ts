@@ -25,6 +25,7 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { ValidationService } from "@bitwarden/common/platform/abstractions/validation.service";
+import { ToastService } from "@bitwarden/components";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/generator-legacy";
 
 @Component({
@@ -60,6 +61,7 @@ export class SsoComponent extends BaseSsoComponent implements OnInit {
     configService: ConfigService,
     masterPasswordService: InternalMasterPasswordServiceAbstraction,
     accountService: AccountService,
+    toastService: ToastService,
   ) {
     super(
       ssoLoginService,
@@ -78,6 +80,7 @@ export class SsoComponent extends BaseSsoComponent implements OnInit {
       configService,
       masterPasswordService,
       accountService,
+      toastService,
     );
     this.redirectUri = window.location.origin + "/sso-connector.html";
     this.clientId = "web";

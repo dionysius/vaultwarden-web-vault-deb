@@ -10,7 +10,7 @@ import { AuthResponseBase } from "@bitwarden/common/auth/types/auth-response";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 
 @Directive()
 export abstract class TwoFactorBaseComponent {
@@ -33,6 +33,7 @@ export abstract class TwoFactorBaseComponent {
     protected logService: LogService,
     protected userVerificationService: UserVerificationService,
     protected dialogService: DialogService,
+    protected toastService: ToastService,
   ) {}
 
   protected auth(authResponse: AuthResponseBase) {
@@ -76,7 +77,11 @@ export abstract class TwoFactorBaseComponent {
       }
       await promise;
       this.enabled = false;
-      this.platformUtilsService.showToast("success", null, this.i18nService.t("twoStepDisabled"));
+      this.toastService.showToast({
+        variant: "success",
+        title: null,
+        message: this.i18nService.t("twoStepDisabled"),
+      });
       this.onUpdated.emit(false);
     } catch (e) {
       this.logService.error(e);
@@ -102,7 +107,11 @@ export abstract class TwoFactorBaseComponent {
       await this.apiService.putTwoFactorDisable(request);
     }
     this.enabled = false;
-    this.platformUtilsService.showToast("success", null, this.i18nService.t("twoStepDisabled"));
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("twoStepDisabled"),
+    });
     this.onUpdated.emit(false);
   }
 

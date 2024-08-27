@@ -9,6 +9,7 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
+import { ToastService } from "@bitwarden/components";
 
 import { SharedModule } from "../../shared";
 import { UserKeyRotationModule } from "../key-rotation/user-key-rotation.module";
@@ -35,6 +36,7 @@ export class MigrateFromLegacyEncryptionComponent {
     private messagingService: MessagingService,
     private logService: LogService,
     private syncService: SyncService,
+    private toastService: ToastService,
   ) {}
 
   submit = async () => {
@@ -59,12 +61,12 @@ export class MigrateFromLegacyEncryptionComponent {
 
       await this.keyRotationService.rotateUserKeyAndEncryptedData(masterPassword, activeUser);
 
-      this.platformUtilsService.showToast(
-        "success",
-        this.i18nService.t("keyUpdated"),
-        this.i18nService.t("logBackInOthersToo"),
-        { timeout: 15000 },
-      );
+      this.toastService.showToast({
+        variant: "success",
+        title: this.i18nService.t("keyUpdated"),
+        message: this.i18nService.t("logBackInOthersToo"),
+        timeout: 15000,
+      });
       this.messagingService.send("logout");
     } catch (e) {
       this.logService.error(e);

@@ -55,7 +55,7 @@ export class TwoFactorYubiKeyComponent extends TwoFactorBaseComponent implements
     userVerificationService: UserVerificationService,
     dialogService: DialogService,
     private formBuilder: FormBuilder,
-    private toastService: ToastService,
+    protected toastService: ToastService,
   ) {
     super(
       apiService,
@@ -64,6 +64,7 @@ export class TwoFactorYubiKeyComponent extends TwoFactorBaseComponent implements
       logService,
       userVerificationService,
       dialogService,
+      toastService,
     );
   }
 

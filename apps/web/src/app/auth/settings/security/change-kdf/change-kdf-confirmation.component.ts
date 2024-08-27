@@ -12,6 +12,7 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { MessagingService } from "@bitwarden/common/platform/abstractions/messaging.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { KdfType } from "@bitwarden/common/platform/enums";
+import { ToastService } from "@bitwarden/components";
 
 @Component({
   selector: "app-change-kdf-confirmation",
@@ -35,6 +36,7 @@ export class ChangeKdfConfirmationComponent {
     private messagingService: MessagingService,
     @Inject(DIALOG_DATA) params: { kdf: KdfType; kdfConfig: KdfConfig },
     private accountService: AccountService,
+    private toastService: ToastService,
   ) {
     this.kdfConfig = params.kdfConfig;
     this.masterPassword = null;
@@ -46,11 +48,11 @@ export class ChangeKdfConfirmationComponent {
     }
     this.loading = true;
     await this.makeKeyAndSaveAsync();
-    this.platformUtilsService.showToast(
-      "success",
-      this.i18nService.t("encKeySettingsChanged"),
-      this.i18nService.t("logBackIn"),
-    );
+    this.toastService.showToast({
+      variant: "success",
+      title: this.i18nService.t("encKeySettingsChanged"),
+      message: this.i18nService.t("logBackIn"),
+    });
     this.messagingService.send("logout");
     this.loading = false;
   };

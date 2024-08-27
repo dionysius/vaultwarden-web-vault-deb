@@ -97,7 +97,7 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
     protected accountService: AccountService,
     protected toastService: ToastService,
   ) {
-    super(environmentService, i18nService, platformUtilsService);
+    super(environmentService, i18nService, platformUtilsService, toastService);
     this.webAuthnSupported = this.platformUtilsService.supportsWebAuthn(win);
   }
 
@@ -135,7 +135,11 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
           this.submit();
         },
         (error: string) => {
-          this.platformUtilsService.showToast("error", this.i18nService.t("errorOccurred"), error);
+          this.toastService.showToast({
+            variant: "error",
+            title: this.i18nService.t("errorOccurred"),
+            message: error,
+          });
         },
         (info: string) => {
           if (info === "ready") {
@@ -201,11 +205,11 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
     await this.setupCaptcha();
 
     if (this.token == null || this.token === "") {
-      this.platformUtilsService.showToast(
-        "error",
-        this.i18nService.t("errorOccurred"),
-        this.i18nService.t("verificationCodeRequired"),
-      );
+      this.toastService.showToast({
+        variant: "error",
+        title: this.i18nService.t("errorOccurred"),
+        message: this.i18nService.t("verificationCodeRequired"),
+      });
       return;
     }
 
@@ -243,11 +247,11 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
       return false;
     }
 
-    this.platformUtilsService.showToast(
-      "error",
-      this.i18nService.t("errorOccured"),
-      this.i18nService.t("encryptionKeyMigrationRequired"),
-    );
+    this.toastService.showToast({
+      variant: "error",
+      title: this.i18nService.t("errorOccured"),
+      message: this.i18nService.t("encryptionKeyMigrationRequired"),
+    });
     return true;
   }
 
@@ -414,11 +418,11 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
     }
 
     if ((await this.loginStrategyService.getEmail()) == null) {
-      this.platformUtilsService.showToast(
-        "error",
-        this.i18nService.t("errorOccurred"),
-        this.i18nService.t("sessionTimeout"),
-      );
+      this.toastService.showToast({
+        variant: "error",
+        title: this.i18nService.t("errorOccurred"),
+        message: this.i18nService.t("sessionTimeout"),
+      });
       return;
     }
 
@@ -434,11 +438,11 @@ export class TwoFactorComponent extends CaptchaProtectedComponent implements OnI
       this.emailPromise = this.apiService.postTwoFactorEmail(request);
       await this.emailPromise;
       if (doToast) {
-        this.platformUtilsService.showToast(
-          "success",
-          null,
-          this.i18nService.t("verificationCodeEmailSent", this.twoFactorEmail),
-        );
+        this.toastService.showToast({
+          variant: "success",
+          title: null,
+          message: this.i18nService.t("verificationCodeEmailSent", this.twoFactorEmail),
+        });
       }
     } catch (e) {
       this.logService.error(e);
