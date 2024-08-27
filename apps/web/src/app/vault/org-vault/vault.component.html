@@ -4,7 +4,7 @@
   [organization]="organization"
   [collection]="selectedCollection"
   [searchText]="currentSearchText$ | async"
-  (onAddCipher)="addCipher()"
+  (onAddCipher)="addCipher($event)"
   (onAddCollection)="addCollection()"
   (onEditCollection)="editCollection(selectedCollection.node, $event.tab, $event.readonly)"
   (onDeleteCollection)="deleteCollection(selectedCollection.node)"

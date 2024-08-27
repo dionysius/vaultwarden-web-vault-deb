@@ -10,6 +10,7 @@ import { ProductTierType } from "@bitwarden/common/billing/enums";
 import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
+import { CipherType } from "@bitwarden/common/vault/enums";
 import { TreeNode } from "@bitwarden/common/vault/models/domain/tree-node";
 import {
   DialogService,
@@ -67,7 +68,7 @@ export class VaultHeaderComponent implements OnInit {
   @Input() searchText: string;
 
   /** Emits an event when the new item button is clicked in the header */
-  @Output() onAddCipher = new EventEmitter<void>();
+  @Output() onAddCipher = new EventEmitter<CipherType | undefined>();
 
   /** Emits an event when the new collection button is clicked in the header */
   @Output() onAddCollection = new EventEmitter<void>();
@@ -89,6 +90,14 @@ export class VaultHeaderComponent implements OnInit {
 
   protected restrictProviderAccessFlag = false;
 
+  /**
+   * Whether the extension refresh feature flag is enabled.
+   */
+  protected extensionRefreshEnabled = false;
+
+  /** The cipher type enum. */
+  protected CipherType = CipherType;
+
   constructor(
     private organizationService: OrganizationService,
     private i18nService: I18nService,
@@ -101,6 +110,9 @@ export class VaultHeaderComponent implements OnInit {
   async ngOnInit() {
     this.restrictProviderAccessFlag = await this.configService.getFeatureFlag(
       FeatureFlag.RestrictProviderAccess,
+    );
+    this.extensionRefreshEnabled = await this.configService.getFeatureFlag(
+      FeatureFlag.ExtensionRefresh,
     );
   }
 
@@ -194,8 +206,8 @@ export class VaultHeaderComponent implements OnInit {
     return this.collection.node.canEdit(this.organization);
   }
 
-  addCipher() {
-    this.onAddCipher.emit();
+  addCipher(cipherType?: CipherType) {
+    this.onAddCipher.emit(cipherType);
   }
 
   async addCollection() {
