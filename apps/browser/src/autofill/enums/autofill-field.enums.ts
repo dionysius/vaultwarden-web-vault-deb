@@ -1,5 +1,6 @@
 export const AutofillFieldQualifier = {
   password: "password",
+  newPassword: "newPassword",
   username: "username",
   cardholderName: "cardholderName",
   cardNumber: "cardNumber",

@@ -5,11 +5,14 @@ import { sendExtensionMessage } from "../utils";
 import {
   AutofillKeywordsMap,
   InlineMenuFieldQualificationService as InlineMenuFieldQualificationServiceInterface,
+  SubmitButtonKeywordsMap,
 } from "./abstractions/inline-menu-field-qualifications.service";
 import {
   AutoFillConstants,
   CreditCardAutoFillConstants,
   IdentityAutoFillConstants,
+  SubmitChangePasswordButtonNames,
+  SubmitLoginButtonNames,
 } from "./autofill-constants";
 
 export class InlineMenuFieldQualificationService
@@ -31,6 +34,7 @@ export class InlineMenuFieldQualificationService
   private currentPasswordAutocompleteValue = "current-password";
   private newPasswordAutoCompleteValue = "new-password";
   private autofillFieldKeywordsMap: AutofillKeywordsMap = new WeakMap();
+  private submitButtonKeywordsMap: SubmitButtonKeywordsMap = new WeakMap();
   private autocompleteDisabledValues = new Set(["off", "false"]);
   private newFieldKeywords = new Set(["new", "change", "neue", "ändern"]);
   private accountCreationFieldKeywords = [
@@ -378,7 +382,9 @@ export class InlineMenuFieldQualificationService
     // If the provided field is set with an autocomplete of "username", we should assume that
     // the page developer intends for this field to be interpreted as a username field.
     if (this.fieldContainsAutocompleteValues(field, this.loginUsernameAutocompleteValues)) {
-      const newPasswordFieldsInPageDetails = pageDetails.fields.filter(this.isNewPasswordField);
+      const newPasswordFieldsInPageDetails = pageDetails.fields.filter(
+        (field) => field.viewable && this.isNewPasswordField(field),
+      );
       return newPasswordFieldsInPageDetails.length === 0;
     }
 
@@ -435,7 +441,7 @@ export class InlineMenuFieldQualificationService
       // If the form that contains the field has more than one visible field, we should assume
       // that the field is part of an account creation form.
       const fieldsWithinForm = pageDetails.fields.filter(
-        (pageDetailsField) => pageDetailsField.form === field.form && pageDetailsField.viewable,
+        (pageDetailsField) => pageDetailsField.form === field.form,
       );
       return fieldsWithinForm.length === 1;
     }
@@ -453,6 +459,12 @@ export class InlineMenuFieldQualificationService
     // provided field is part of an account creation form.
     if (visiblePasswordFieldsInPageDetails.length > 1) {
       return false;
+    }
+
+    // If no visible fields are found on the page, but we have a single password
+    // field we should assume that the field is part of a login form.
+    if (passwordFieldsInPageDetails.length === 1) {
+      return true;
     }
 
     // If no visible password fields are found, this field might be part of a multipart form.
@@ -1000,6 +1012,67 @@ export class InlineMenuFieldQualificationService
     }
 
     return false;
+  }
+
+  /**
+   * Validates the provided field to indicate if the field is a submit button for a login form.
+   *
+   * @param element - The element to validate
+   */
+  isElementLoginSubmitButton = (element: HTMLElement): boolean => {
+    const keywordValues = this.getSubmitButtonKeywords(element);
+    return SubmitLoginButtonNames.some((keyword) => keywordValues.indexOf(keyword) > -1);
+  };
+
+  /**
+   * Validates the provided field to indicate if the field is a submit button for a change password form.
+   *
+   * @param element - The element to validate
+   */
+  isElementChangePasswordSubmitButton = (element: HTMLElement): boolean => {
+    const keywordValues = this.getSubmitButtonKeywords(element);
+    return SubmitChangePasswordButtonNames.some((keyword) => keywordValues.indexOf(keyword) > -1);
+  };
+
+  /**
+   * Gather the keywords from the provided element to validate the submit button.
+   *
+   * @param element - The element to validate
+   */
+  private getSubmitButtonKeywords(element: HTMLElement): string {
+    if (!this.submitButtonKeywordsMap.has(element)) {
+      const keywords = [
+        element.textContent,
+        element.getAttribute("value"),
+        element.getAttribute("aria-label"),
+        element.getAttribute("aria-labelledby"),
+        element.getAttribute("aria-describedby"),
+        element.getAttribute("title"),
+        element.getAttribute("id"),
+        element.getAttribute("name"),
+        element.getAttribute("class"),
+      ];
+
+      const keywordsSet = new Set<string>();
+      for (let i = 0; i < keywords.length; i++) {
+        if (typeof keywords[i] === "string") {
+          keywords[i]
+            .toLowerCase()
+            .replace(/[-\s]/g, "")
+            .replace(/[^a-zA-Z0-9]+/g, "|")
+            .split("|")
+            .forEach((keyword) => {
+              if (keyword) {
+                keywordsSet.add(keyword);
+              }
+            });
+        }
+      }
+
+      this.submitButtonKeywordsMap.set(element, Array.from(keywordsSet).join(","));
+    }
+
+    return this.submitButtonKeywordsMap.get(element);
   }
 
   /**

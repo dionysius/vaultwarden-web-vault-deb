@@ -12,16 +12,22 @@ let pageDetailsMock: AutofillPageDetails;
 let fillScriptMock: AutofillScript;
 let autofillFieldElementByOpidMock: FormFieldElement;
 
+jest.mock("../services/dom-query.service", () => {
+  const module = jest.requireActual("../services/dom-query.service");
+  return {
+    DomQueryService: class extends module.DomQueryService {
+      deepQueryElements<T>(element: HTMLElement, queryString: string): T[] {
+        return Array.from(element.querySelectorAll(queryString)) as T[];
+      }
+    },
+  };
+});
 jest.mock("../services/collect-autofill-content.service", () => {
   const module = jest.requireActual("../services/collect-autofill-content.service");
   return {
     CollectAutofillContentService: class extends module.CollectAutofillContentService {
       async getPageDetails(): Promise<AutofillPageDetails> {
         return pageDetailsMock;
-      }
-
-      deepQueryElements<T>(element: HTMLElement, queryString: string): T[] {
-        return Array.from(element.querySelectorAll(queryString)) as T[];
       }
 
       getAutofillFieldElementByOpid(opid: string) {

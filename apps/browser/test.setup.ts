@@ -163,6 +163,10 @@ const webRequest = {
     addListener: jest.fn(),
     removeListener: jest.fn(),
   },
+  onCompleted: {
+    addListener: jest.fn(),
+    removeListener: jest.fn(),
+  },
 };
 
 const alarms = {

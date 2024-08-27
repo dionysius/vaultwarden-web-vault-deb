@@ -16,6 +16,13 @@ export type SubFrameDataFromWindowMessage = SubFrameOffsetData & {
   subFrameDepth: number;
 };
 
+export type NotificationFormFieldData = {
+  uri: string;
+  username: string;
+  password: string;
+  newPassword: string;
+};
+
 export type AutofillOverlayContentExtensionMessageHandlers = {
   [key: string]: CallableFunction;
   openAutofillInlineMenu: ({ message }: AutofillExtensionMessageParam) => void;
@@ -32,13 +39,14 @@ export type AutofillOverlayContentExtensionMessageHandlers = {
   checkMostRecentlyFocusedFieldHasValue: () => boolean;
   setupRebuildSubFrameOffsetsListeners: () => void;
   destroyAutofillInlineMenuListeners: () => void;
+  getFormFieldDataForNotification: () => Promise<NotificationFormFieldData>;
 };
 
 export interface AutofillOverlayContentService {
   pageDetailsUpdateRequired: boolean;
   messageHandlers: AutofillOverlayContentExtensionMessageHandlers;
   init(): void;
-  setupInlineMenu(
+  setupOverlayListeners(
     autofillFieldElement: ElementWithOpId<FormFieldElement>,
     autofillFieldData: AutofillField,
     pageDetails: AutofillPageDetails,

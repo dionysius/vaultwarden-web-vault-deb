@@ -4,13 +4,16 @@ import AutofillPageDetails from "../models/autofill-page-details";
 import AutofillScript from "../models/autofill-script";
 import { CollectAutofillContentService } from "../services/collect-autofill-content.service";
 import DomElementVisibilityService from "../services/dom-element-visibility.service";
+import { DomQueryService } from "../services/dom-query.service";
 import InsertAutofillContentService from "../services/insert-autofill-content.service";
 import { elementIsInputElement, nodeIsFormElement, sendExtensionMessage } from "../utils";
 
 (function (globalContext) {
+  const domQueryService = new DomQueryService();
   const domElementVisibilityService = new DomElementVisibilityService();
   const collectAutofillContentService = new CollectAutofillContentService(
     domElementVisibilityService,
+    domQueryService,
   );
   const insertAutofillContentService = new InsertAutofillContentService(
     domElementVisibilityService,
@@ -191,7 +194,7 @@ import { elementIsInputElement, nodeIsFormElement, sendExtensionMessage } from "
     element: HTMLElement,
     lastFieldIsPasswordInput = false,
   ): boolean {
-    const genericSubmitElement = collectAutofillContentService.deepQueryElements<HTMLButtonElement>(
+    const genericSubmitElement = domQueryService.deepQueryElements<HTMLButtonElement>(
       element,
       "[type='submit']",
     );
@@ -200,10 +203,7 @@ import { elementIsInputElement, nodeIsFormElement, sendExtensionMessage } from "
       return true;
     }
 
-    const buttons = collectAutofillContentService.deepQueryElements<HTMLButtonElement>(
-      element,
-      "button",
-    );
+    const buttons = domQueryService.deepQueryElements<HTMLButtonElement>(element, "button");
     for (let i = 0; i < buttons.length; i++) {
       if (isLoginButton(buttons[i])) {
         clickSubmitElement(buttons[i], lastFieldIsPasswordInput);
@@ -274,7 +274,7 @@ import { elementIsInputElement, nodeIsFormElement, sendExtensionMessage } from "
    */
   function getAutofillFormElements(): HTMLFormElement[] {
     const formElements: HTMLFormElement[] = [];
-    collectAutofillContentService.queryAllTreeWalkerNodes(
+    domQueryService.queryAllTreeWalkerNodes(
       globalContext.document.documentElement,
       (node: Node) => {
         if (nodeIsFormElement(node)) {

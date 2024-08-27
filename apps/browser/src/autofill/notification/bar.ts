@@ -4,6 +4,8 @@ import type { FolderView } from "@bitwarden/common/vault/models/view/folder.view
 
 import { FilelessImportPort, FilelessImportType } from "../../tools/enums/fileless-import.enums";
 import { AdjustNotificationBarMessageData } from "../background/abstractions/notification.background";
+import { buildSvgDomElement } from "../utils";
+import { circleCheckIcon } from "../utils/svg-icons";
 
 import {
   NotificationBarWindowMessageHandlers,
@@ -212,20 +214,24 @@ function handleSaveCipherAttemptCompletedMessage(message: NotificationBarWindowM
       notificationBarOuterWrapper.classList.add("error-event");
     });
 
+    adjustHeight();
     logService.error(`Error encountered when saving credentials: ${message.error}`);
     return;
   }
   const messageName =
-    notificationBarIframeInitData.type === "add"
-      ? "saveCipherAttemptSuccess"
-      : "updateCipherAttemptSuccess";
+    notificationBarIframeInitData.type === "add" ? "passwordSaved" : "passwordUpdated";
 
   addSaveButtonContainers.forEach((element) => {
     element.textContent = chrome.i18n.getMessage(messageName);
+    element.prepend(buildSvgDomElement(circleCheckIcon));
     element.classList.add("success-message");
     notificationBarOuterWrapper.classList.add("success-event");
   });
-  setTimeout(() => sendPlatformMessage({ command: "bgCloseNotificationBar" }), 1250);
+  adjustHeight();
+  globalThis.setTimeout(
+    () => sendPlatformMessage({ command: "bgCloseNotificationBar", fadeOutNotification: true }),
+    3000,
+  );
 }
 
 function handleTypeUnlock() {
@@ -276,14 +282,17 @@ function handleTypeFilelessImport() {
 
     if (msg.command === "filelessImportCompleted") {
       filelessImportButtons.textContent = chrome.i18n.getMessage("dataSuccessfullyImported");
+      filelessImportButtons.prepend(buildSvgDomElement(circleCheckIcon));
       filelessImportButtons.classList.add("success-message");
       notificationBarOuterWrapper.classList.add("success-event");
+      adjustHeight();
       return;
     }
 
     filelessImportButtons.textContent = chrome.i18n.getMessage("dataImportFailed");
     filelessImportButtons.classList.add("error-message");
     notificationBarOuterWrapper.classList.add("error-event");
+    adjustHeight();
     logService.error(`Error Encountered During Import: ${msg.importErrorMessage}`);
   };
   port.onMessage.addListener(handlePortMessage);
@@ -390,6 +399,10 @@ function setNotificationBarTheme() {
   }
 
   document.documentElement.classList.add(`theme_${theme}`);
+
+  if (notificationBarIframeInitData.applyRedesign) {
+    document.body.classList.add("notification-bar-redesign");
+  }
 }
 
 function postMessageToParent(message: NotificationBarWindowMessage) {

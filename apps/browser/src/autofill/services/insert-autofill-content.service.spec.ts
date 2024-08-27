@@ -10,6 +10,7 @@ import { InlineMenuFieldQualificationService } from "./abstractions/inline-menu-
 import { AutofillOverlayContentService } from "./autofill-overlay-content.service";
 import { CollectAutofillContentService } from "./collect-autofill-content.service";
 import DomElementVisibilityService from "./dom-element-visibility.service";
+import { DomQueryService } from "./dom-query.service";
 import InsertAutofillContentService from "./insert-autofill-content.service";
 
 const mockLoginForm = `
@@ -68,12 +69,15 @@ function setMockWindowLocation({
 
 describe("InsertAutofillContentService", () => {
   const inlineMenuFieldQualificationService = mock<InlineMenuFieldQualificationService>();
+  const domQueryService = new DomQueryService();
   const domElementVisibilityService = new DomElementVisibilityService();
   const autofillOverlayContentService = new AutofillOverlayContentService(
+    domQueryService,
     inlineMenuFieldQualificationService,
   );
   const collectAutofillContentService = new CollectAutofillContentService(
     domElementVisibilityService,
+    domQueryService,
     autofillOverlayContentService,
   );
   let insertAutofillContentService: InsertAutofillContentService;

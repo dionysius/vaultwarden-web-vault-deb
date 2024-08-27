@@ -226,6 +226,10 @@ const mainConfig = {
       "./src/autofill/content/trigger-autofill-script-injection.ts",
     "content/bootstrap-autofill": "./src/autofill/content/bootstrap-autofill.ts",
     "content/bootstrap-autofill-overlay": "./src/autofill/content/bootstrap-autofill-overlay.ts",
+    "content/bootstrap-autofill-overlay-menu":
+      "./src/autofill/content/bootstrap-autofill-overlay-menu.ts",
+    "content/bootstrap-autofill-overlay-notifications":
+      "./src/autofill/content/bootstrap-autofill-overlay-notifications.ts",
     "content/bootstrap-legacy-autofill-overlay":
       "./src/autofill/deprecated/content/bootstrap-legacy-autofill-overlay.ts",
     "content/autofiller": "./src/autofill/content/autofiller.ts",

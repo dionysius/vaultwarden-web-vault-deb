@@ -14,8 +14,6 @@ import { CollectAutofillContentService } from "./collect-autofill-content.servic
 import DomElementVisibilityService from "./dom-element-visibility.service";
 
 class InsertAutofillContentService implements InsertAutofillContentServiceInterface {
-  private readonly domElementVisibilityService: DomElementVisibilityService;
-  private readonly collectAutofillContentService: CollectAutofillContentService;
   private readonly autofillInsertActions: AutofillInsertActions = {
     fill_by_opid: ({ opid, value }) => this.handleFillFieldByOpidAction(opid, value),
     click_on_opid: ({ opid }) => this.handleClickOnFieldByOpidAction(opid),
@@ -27,12 +25,9 @@ class InsertAutofillContentService implements InsertAutofillContentServiceInterf
    * DomElementVisibilityService and CollectAutofillContentService classes.
    */
   constructor(
-    domElementVisibilityService: DomElementVisibilityService,
-    collectAutofillContentService: CollectAutofillContentService,
-  ) {
-    this.domElementVisibilityService = domElementVisibilityService;
-    this.collectAutofillContentService = collectAutofillContentService;
-  }
+    private domElementVisibilityService: DomElementVisibilityService,
+    private collectAutofillContentService: CollectAutofillContentService,
+  ) {}
 
   /**
    * Handles autofill of the forms on the current page based on the

@@ -44,6 +44,7 @@ import {
   NotificationBackgroundExtensionMessage,
   NotificationBackgroundExtensionMessageHandlers,
 } from "./abstractions/notification.background";
+import { NotificationTypeData } from "./abstractions/overlay-notifications.background";
 import { OverlayBackgroundExtensionMessage } from "./abstractions/overlay.background";
 
 export default class NotificationBackground {
@@ -58,7 +59,8 @@ export default class NotificationBackground {
   private readonly extensionMessageHandlers: NotificationBackgroundExtensionMessageHandlers = {
     unlockCompleted: ({ message, sender }) => this.handleUnlockCompleted(message, sender),
     bgGetFolderData: () => this.getFolderData(),
-    bgCloseNotificationBar: ({ sender }) => this.handleCloseNotificationBarMessage(sender),
+    bgCloseNotificationBar: ({ message, sender }) =>
+      this.handleCloseNotificationBarMessage(message, sender),
     bgAdjustNotificationBar: ({ message, sender }) =>
       this.handleAdjustNotificationBarMessage(message, sender),
     bgAddLogin: ({ message, sender }) => this.addLogin(message, sender),
@@ -132,6 +134,10 @@ export default class NotificationBackground {
     return await firstValueFrom(this.configService.serverConfig$);
   }
 
+  private async getAuthStatus() {
+    return await firstValueFrom(this.authService.activeAccountStatus$);
+  }
+
   /**
    * Checks the notification queue for any messages that need to be sent to the
    * specified tab. If no tab is specified, the current tab will be used.
@@ -186,9 +192,10 @@ export default class NotificationBackground {
   ) {
     const notificationType = notificationQueueMessage.type;
 
-    const typeData: Record<string, any> = {
+    const typeData: NotificationTypeData = {
       isVaultLocked: notificationQueueMessage.wasVaultLocked,
       theme: await firstValueFrom(this.themeStateService.selectedTheme$),
+      launchTimestamp: notificationQueueMessage.launchTimestamp,
     };
 
     switch (notificationType) {
@@ -230,11 +237,11 @@ export default class NotificationBackground {
    * @param message - The message to add to the queue
    * @param sender - The contextual sender of the message
    */
-  private async addLogin(
+  async addLogin(
     message: NotificationBackgroundExtensionMessage,
     sender: chrome.runtime.MessageSender,
   ) {
-    const authStatus = await this.authService.getAuthStatus();
+    const authStatus = await this.getAuthStatus();
     if (authStatus === AuthenticationStatus.LoggedOut) {
       return;
     }
@@ -289,6 +296,7 @@ export default class NotificationBackground {
   ) {
     // remove any old messages for this tab
     this.removeTabFromNotificationQueue(tab);
+    const launchTimestamp = new Date().getTime();
     const message: AddLoginQueueMessage = {
       type: NotificationQueueMessageType.AddLogin,
       username: loginInfo.username,
@@ -296,7 +304,8 @@ export default class NotificationBackground {
       domain: loginDomain,
       uri: loginInfo.url,
       tab: tab,
-      expires: new Date(new Date().getTime() + NOTIFICATION_BAR_LIFESPAN_MS),
+      launchTimestamp,
+      expires: new Date(launchTimestamp + NOTIFICATION_BAR_LIFESPAN_MS),
       wasVaultLocked: isVaultLocked,
     };
     this.notificationQueue.push(message);
@@ -310,7 +319,7 @@ export default class NotificationBackground {
    * @param message - The message to add to the queue
    * @param sender - The contextual sender of the message
    */
-  private async changedPassword(
+  async changedPassword(
     message: NotificationBackgroundExtensionMessage,
     sender: chrome.runtime.MessageSender,
   ) {
@@ -320,7 +329,7 @@ export default class NotificationBackground {
       return;
     }
 
-    if ((await this.authService.getAuthStatus()) < AuthenticationStatus.Unlocked) {
+    if ((await this.getAuthStatus()) < AuthenticationStatus.Unlocked) {
       await this.pushChangePasswordToQueue(
         null,
         loginDomain,
@@ -380,7 +389,7 @@ export default class NotificationBackground {
       return;
     }
 
-    const currentAuthStatus = await this.authService.getAuthStatus();
+    const currentAuthStatus = await this.getAuthStatus();
     if (currentAuthStatus !== AuthenticationStatus.Locked || this.notificationQueue.length) {
       return;
     }
@@ -399,7 +408,7 @@ export default class NotificationBackground {
    * @param importType - The type of import that is being requested
    */
   async requestFilelessImport(tab: chrome.tabs.Tab, importType: string) {
-    const currentAuthStatus = await this.authService.getAuthStatus();
+    const currentAuthStatus = await this.getAuthStatus();
     if (currentAuthStatus !== AuthenticationStatus.Unlocked || this.notificationQueue.length) {
       return;
     }
@@ -419,13 +428,15 @@ export default class NotificationBackground {
   ) {
     // remove any old messages for this tab
     this.removeTabFromNotificationQueue(tab);
+    const launchTimestamp = new Date().getTime();
     const message: AddChangePasswordQueueMessage = {
       type: NotificationQueueMessageType.ChangePassword,
       cipherId: cipherId,
       newPassword: newPassword,
       domain: loginDomain,
       tab: tab,
-      expires: new Date(new Date().getTime() + NOTIFICATION_BAR_LIFESPAN_MS),
+      launchTimestamp,
+      expires: new Date(launchTimestamp + NOTIFICATION_BAR_LIFESPAN_MS),
       wasVaultLocked: isVaultLocked,
     };
     this.notificationQueue.push(message);
@@ -434,11 +445,13 @@ export default class NotificationBackground {
 
   private async pushUnlockVaultToQueue(loginDomain: string, tab: chrome.tabs.Tab) {
     this.removeTabFromNotificationQueue(tab);
+    const launchTimestamp = new Date().getTime();
     const message: AddUnlockVaultQueueMessage = {
       type: NotificationQueueMessageType.UnlockVault,
       domain: loginDomain,
       tab: tab,
-      expires: new Date(new Date().getTime() + 0.5 * 60000), // 30 seconds
+      launchTimestamp,
+      expires: new Date(launchTimestamp + 0.5 * 60000), // 30 seconds
       wasVaultLocked: true,
     };
     await this.sendNotificationQueueMessage(tab, message);
@@ -459,11 +472,13 @@ export default class NotificationBackground {
     importType?: string,
   ) {
     this.removeTabFromNotificationQueue(tab);
+    const launchTimestamp = new Date().getTime();
     const message: AddRequestFilelessImportQueueMessage = {
       type: NotificationQueueMessageType.RequestFilelessImport,
       domain: loginDomain,
       tab,
-      expires: new Date(new Date().getTime() + 0.5 * 60000), // 30 seconds
+      launchTimestamp,
+      expires: new Date(launchTimestamp + 0.5 * 60000), // 30 seconds
       wasVaultLocked: false,
       importType,
     };
@@ -484,7 +499,7 @@ export default class NotificationBackground {
     message: NotificationBackgroundExtensionMessage,
     sender: chrome.runtime.MessageSender,
   ) {
-    if ((await this.authService.getAuthStatus()) < AuthenticationStatus.Unlocked) {
+    if ((await this.getAuthStatus()) < AuthenticationStatus.Unlocked) {
       await BrowserApi.tabSendMessageData(sender.tab, "addToLockedVaultPendingNotifications", {
         commandToRetry: {
           message: {
@@ -736,10 +751,16 @@ export default class NotificationBackground {
    * Sends a message back to the sender tab which
    * triggers closure of the notification bar.
    *
+   * @param message - The extension message
    * @param sender - The contextual sender of the message
    */
-  private async handleCloseNotificationBarMessage(sender: chrome.runtime.MessageSender) {
-    await BrowserApi.tabSendMessageData(sender.tab, "closeNotificationBar");
+  private async handleCloseNotificationBarMessage(
+    message: NotificationBackgroundExtensionMessage,
+    sender: chrome.runtime.MessageSender,
+  ) {
+    await BrowserApi.tabSendMessageData(sender.tab, "closeNotificationBar", {
+      fadeOutNotification: !!message.fadeOutNotification,
+    });
   }
 
   /**

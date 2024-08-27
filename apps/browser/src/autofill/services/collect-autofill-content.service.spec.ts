@@ -15,6 +15,7 @@ import { InlineMenuFieldQualificationService } from "./abstractions/inline-menu-
 import { AutofillOverlayContentService } from "./autofill-overlay-content.service";
 import { CollectAutofillContentService } from "./collect-autofill-content.service";
 import DomElementVisibilityService from "./dom-element-visibility.service";
+import { DomQueryService } from "./dom-query.service";
 
 const mockLoginForm = `
   <div id="root">
@@ -30,7 +31,9 @@ const waitForIdleCallback = () => new Promise((resolve) => globalThis.requestIdl
 describe("CollectAutofillContentService", () => {
   const domElementVisibilityService = new DomElementVisibilityService();
   const inlineMenuFieldQualificationService = mock<InlineMenuFieldQualificationService>();
+  const domQueryService = new DomQueryService();
   const autofillOverlayContentService = new AutofillOverlayContentService(
+    domQueryService,
     inlineMenuFieldQualificationService,
   );
   let collectAutofillContentService: CollectAutofillContentService;
@@ -43,6 +46,7 @@ describe("CollectAutofillContentService", () => {
     document.body.innerHTML = mockLoginForm;
     collectAutofillContentService = new CollectAutofillContentService(
       domElementVisibilityService,
+      domQueryService,
       autofillOverlayContentService,
     );
     window.IntersectionObserver = jest.fn(() => mockIntersectionObserver);
@@ -254,7 +258,7 @@ describe("CollectAutofillContentService", () => {
         .mockResolvedValue(true);
       const setupAutofillOverlayListenerOnFieldSpy = jest.spyOn(
         collectAutofillContentService["autofillOverlayContentService"],
-        "setupInlineMenu",
+        "setupOverlayListeners",
       );
 
       await collectAutofillContentService.getPageDetails();
@@ -454,51 +458,6 @@ describe("CollectAutofillContentService", () => {
         collectAutofillContentService.getAutofillFieldElementByOpid("__999");
 
       expect(foundElementWithOpid).toBeNull();
-    });
-  });
-
-  describe("deepQueryElements", () => {
-    beforeEach(() => {
-      collectAutofillContentService["mutationObserver"] = mock<MutationObserver>();
-    });
-
-    it("queries form field elements that are nested within a ShadowDOM", () => {
-      const root = document.createElement("div");
-      const shadowRoot = root.attachShadow({ mode: "open" });
-      const form = document.createElement("form");
-      const input = document.createElement("input");
-      input.type = "text";
-      form.appendChild(input);
-      shadowRoot.appendChild(form);
-
-      const formFieldElements = collectAutofillContentService.deepQueryElements(
-        shadowRoot,
-        "input",
-        true,
-      );
-
-      expect(formFieldElements).toStrictEqual([input]);
-    });
-
-    it("queries form field elements that are nested within multiple ShadowDOM elements", () => {
-      const root = document.createElement("div");
-      const shadowRoot1 = root.attachShadow({ mode: "open" });
-      const root2 = document.createElement("div");
-      const shadowRoot2 = root2.attachShadow({ mode: "open" });
-      const form = document.createElement("form");
-      const input = document.createElement("input");
-      input.type = "text";
-      form.appendChild(input);
-      shadowRoot2.appendChild(form);
-      shadowRoot1.appendChild(root2);
-
-      const formFieldElements = collectAutofillContentService.deepQueryElements(
-        shadowRoot1,
-        "input",
-        true,
-      );
-
-      expect(formFieldElements).toStrictEqual([input]);
     });
   });
 
@@ -2570,7 +2529,7 @@ describe("CollectAutofillContentService", () => {
       );
       setupAutofillOverlayListenerOnFieldSpy = jest.spyOn(
         collectAutofillContentService["autofillOverlayContentService"],
-        "setupInlineMenu",
+        "setupOverlayListeners",
       );
     });
 

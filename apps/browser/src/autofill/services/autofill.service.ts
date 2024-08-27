@@ -2,13 +2,14 @@ import { filter, firstValueFrom, Observable, scan, startWith } from "rxjs";
 import { pairwise } from "rxjs/operators";
 
 import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
-import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
+import { AccountInfo, AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { AuthService } from "@bitwarden/common/auth/abstractions/auth.service";
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { AuthenticationStatus } from "@bitwarden/common/auth/enums/authentication-status";
 import { AutofillOverlayVisibility } from "@bitwarden/common/autofill/constants";
 import { AutofillSettingsServiceAbstraction } from "@bitwarden/common/autofill/services/autofill-settings.service";
 import { DomainSettingsService } from "@bitwarden/common/autofill/services/domain-settings.service";
+import { UserNotificationSettingsServiceAbstraction } from "@bitwarden/common/autofill/services/user-notification-settings.service";
 import { InlineMenuVisibilitySetting } from "@bitwarden/common/autofill/types";
 import { BillingAccountProfileStateService } from "@bitwarden/common/billing/abstractions/account/billing-account-profile-state.service";
 import { EventType } from "@bitwarden/common/enums";
@@ -20,6 +21,7 @@ import {
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { MessageListener } from "@bitwarden/common/platform/messaging";
+import { UserId } from "@bitwarden/common/types/guid";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { TotpService } from "@bitwarden/common/vault/abstractions/totp.service";
 import { FieldType, CipherType } from "@bitwarden/common/vault/enums";
@@ -71,6 +73,7 @@ export default class AutofillService implements AutofillServiceInterface {
     private accountService: AccountService,
     private authService: AuthService,
     private configService: ConfigService,
+    private userNotificationSettingsService: UserNotificationSettingsServiceAbstraction,
     private messageListener: MessageListener,
   ) {}
 
@@ -164,25 +167,14 @@ export default class AutofillService implements AutofillServiceInterface {
     const activeAccount = await firstValueFrom(this.accountService.activeAccount$);
     const authStatus = await firstValueFrom(this.authService.activeAccountStatus$);
     const accountIsUnlocked = authStatus === AuthenticationStatus.Unlocked;
-    let inlineMenuVisibility: InlineMenuVisibilitySetting = AutofillOverlayVisibility.Off;
     let autoFillOnPageLoadIsEnabled = false;
+    const addLoginImprovementsFlagActive = await this.configService.getFeatureFlag(
+      FeatureFlag.NotificationBarAddLoginImprovements,
+    );
 
-    if (activeAccount) {
-      inlineMenuVisibility = await this.getInlineMenuVisibility();
-    }
-
-    let mainAutofillScript = "bootstrap-autofill.js";
-
-    if (inlineMenuVisibility) {
-      const inlineMenuPositioningImprovements = await this.configService.getFeatureFlag(
-        FeatureFlag.InlineMenuPositioningImprovements,
-      );
-      mainAutofillScript = inlineMenuPositioningImprovements
-        ? "bootstrap-autofill-overlay.js"
-        : "bootstrap-legacy-autofill-overlay.js";
-    }
-
-    const injectedScripts = [mainAutofillScript];
+    const injectedScripts = [
+      await this.getBootstrapAutofillContentScript(activeAccount, addLoginImprovementsFlagActive),
+    ];
 
     if (activeAccount && accountIsUnlocked) {
       autoFillOnPageLoadIsEnabled = await this.getAutofillOnPageLoad();
@@ -199,7 +191,11 @@ export default class AutofillService implements AutofillServiceInterface {
       });
     }
 
-    injectedScripts.push("notificationBar.js", "contextMenuHandler.js");
+    if (!addLoginImprovementsFlagActive) {
+      injectedScripts.push("notificationBar.js");
+    }
+
+    injectedScripts.push("contextMenuHandler.js");
 
     for (const injectedScript of injectedScripts) {
       await this.scriptInjectorService.inject({
@@ -211,6 +207,55 @@ export default class AutofillService implements AutofillServiceInterface {
         },
       });
     }
+  }
+
+  /**
+   * Identifies the correct autofill script to inject based on whether the
+   * inline menu is enabled, and whether the user has the notification bar
+   * enabled.
+   *
+   * @param activeAccount - The active account
+   * @param addLoginImprovementsFlagActive - Whether the add login improvements feature flag is active
+   */
+  private async getBootstrapAutofillContentScript(
+    activeAccount: { id: UserId | undefined } & AccountInfo,
+    addLoginImprovementsFlagActive = false,
+  ): Promise<string> {
+    let inlineMenuVisibility: InlineMenuVisibilitySetting = AutofillOverlayVisibility.Off;
+
+    if (activeAccount) {
+      inlineMenuVisibility = await this.getInlineMenuVisibility();
+    }
+
+    const inlineMenuPositioningImprovements = await this.configService.getFeatureFlag(
+      FeatureFlag.InlineMenuPositioningImprovements,
+    );
+    if (!inlineMenuPositioningImprovements) {
+      return "bootstrap-legacy-autofill-overlay.js";
+    }
+
+    const enableChangedPasswordPrompt = await firstValueFrom(
+      this.userNotificationSettingsService.enableChangedPasswordPrompt$,
+    );
+    const enableAddedLoginPrompt = await firstValueFrom(
+      this.userNotificationSettingsService.enableAddedLoginPrompt$,
+    );
+    const isNotificationBarEnabled =
+      addLoginImprovementsFlagActive && (enableChangedPasswordPrompt || enableAddedLoginPrompt);
+
+    if (!inlineMenuVisibility && !isNotificationBarEnabled) {
+      return "bootstrap-autofill.js";
+    }
+
+    if (!inlineMenuVisibility && isNotificationBarEnabled) {
+      return "bootstrap-autofill-overlay-notifications.js";
+    }
+
+    if (inlineMenuVisibility && !isNotificationBarEnabled) {
+      return "bootstrap-autofill-overlay-menu.js";
+    }
+
+    return "bootstrap-autofill-overlay.js";
   }
 
   /**

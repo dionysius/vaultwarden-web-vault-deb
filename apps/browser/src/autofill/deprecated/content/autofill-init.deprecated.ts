@@ -2,6 +2,7 @@ import { AutofillInit } from "../../content/abstractions/autofill-init";
 import AutofillPageDetails from "../../models/autofill-page-details";
 import { CollectAutofillContentService } from "../../services/collect-autofill-content.service";
 import DomElementVisibilityService from "../../services/dom-element-visibility.service";
+import { DomQueryService } from "../../services/dom-query.service";
 import InsertAutofillContentService from "../../services/insert-autofill-content.service";
 import { sendExtensionMessage } from "../../utils";
 import { LegacyAutofillOverlayContentService } from "../services/abstractions/autofill-overlay-content.service";
@@ -40,8 +41,10 @@ class LegacyAutofillInit implements AutofillInit {
   constructor(autofillOverlayContentService?: LegacyAutofillOverlayContentService) {
     this.autofillOverlayContentService = autofillOverlayContentService;
     this.domElementVisibilityService = new DomElementVisibilityService();
+    const domQueryService = new DomQueryService();
     this.collectAutofillContentService = new CollectAutofillContentService(
       this.domElementVisibilityService,
+      domQueryService,
       this.autofillOverlayContentService,
     );
     this.insertAutofillContentService = new InsertAutofillContentService(

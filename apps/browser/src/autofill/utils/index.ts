@@ -346,7 +346,7 @@ export function getPropertyOrAttribute(element: HTMLElement, attributeName: stri
  * @param callback - The callback function to throttle.
  * @param limit - The time in milliseconds to throttle the callback.
  */
-export function throttle(callback: () => void, limit: number) {
+export function throttle(callback: (_args: any) => any, limit: number) {
   let waitingDelay = false;
   return function (...args: unknown[]) {
     if (!waitingDelay) {
