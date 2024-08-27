@@ -117,6 +117,13 @@ export class StateService<
         state.accounts = {};
       }
       state.accounts[userId] = this.createAccount();
+
+      if (diskAccount == null) {
+        // Return early because we can't set the diskAccount.profile
+        // if diskAccount itself is null
+        return state;
+      }
+
       state.accounts[userId].profile = diskAccount.profile;
       return state;
     });
