@@ -33,6 +33,7 @@ import { MessagingService } from "@bitwarden/common/platform/abstractions/messag
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { BiometricStateService } from "@bitwarden/common/platform/biometrics/biometric-state.service";
+import { BiometricsService } from "@bitwarden/common/platform/biometrics/biometric.service";
 import {
   VaultTimeout,
   VaultTimeoutOption,
@@ -94,6 +95,7 @@ export class AccountSecurityComponent implements OnInit, OnDestroy {
     private dialogService: DialogService,
     private changeDetectorRef: ChangeDetectorRef,
     private biometricStateService: BiometricStateService,
+    private biometricsService: BiometricsService,
   ) {
     this.accountSwitcherEnabled = enableAccountSwitching();
   }
@@ -165,7 +167,7 @@ export class AccountSecurityComponent implements OnInit, OnDestroy {
     };
     this.form.patchValue(initialValues, { emitEvent: false });
 
-    this.supportsBiometric = await this.platformUtilsService.supportsBiometric();
+    this.supportsBiometric = await this.biometricsService.supportsBiometric();
     this.showChangeMasterPass = await this.userVerificationService.hasMasterPassword();
 
     this.form.controls.vaultTimeout.valueChanges
@@ -405,7 +407,7 @@ export class AccountSecurityComponent implements OnInit, OnDestroy {
 
       const biometricsPromise = async () => {
         try {
-          const result = await this.platformUtilsService.authenticateBiometric();
+          const result = await this.biometricsService.authenticateBiometric();
 
           // prevent duplicate dialog
           biometricsResponseReceived = true;

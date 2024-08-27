@@ -11,7 +11,8 @@ export type BiometricErrorTypes =
   | "not unlocked"
   | "invalidateEncryption"
   | "userkey wrong"
-  | "wrongUserId";
+  | "wrongUserId"
+  | "not available";
 
 export const BiometricErrors: Record<BiometricErrorTypes, BiometricError> = {
   startDesktop: {
@@ -45,5 +46,9 @@ export const BiometricErrors: Record<BiometricErrorTypes, BiometricError> = {
   wrongUserId: {
     title: "biometricsWrongUserTitle",
     description: "biometricsWrongUserDesc",
+  },
+  "not available": {
+    title: "biometricsNotAvailableTitle",
+    description: "biometricsNotAvailableDesc",
   },
 };

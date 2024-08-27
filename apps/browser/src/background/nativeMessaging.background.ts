@@ -285,7 +285,9 @@ export class NativeMessagingBackground {
     switch (message.command) {
       case "biometricUnlock": {
         if (
-          ["not enabled", "not supported", "not unlocked", "canceled"].includes(message.response)
+          ["not available", "not enabled", "not supported", "not unlocked", "canceled"].includes(
+            message.response,
+          )
         ) {
           this.rejecter(message.response);
           return;
@@ -350,6 +352,10 @@ export class NativeMessagingBackground {
           // eslint-disable-next-line @typescript-eslint/no-floating-promises
           this.runtimeBackground.processMessage({ command: "unlocked" });
         }
+        break;
+      }
+      case "biometricUnlockAvailable": {
+        this.resolver(message);
         break;
       }
       default:
