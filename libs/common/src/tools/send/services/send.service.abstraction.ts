@@ -55,6 +55,6 @@ export abstract class SendService implements UserKeyRotationDataProvider<SendWit
 
 export abstract class InternalSendService extends SendService {
   upsert: (send: SendData | SendData[]) => Promise<any>;
-  replace: (sends: { [id: string]: SendData }) => Promise<void>;
+  replace: (sends: { [id: string]: SendData }, userId: UserId) => Promise<void>;
   delete: (id: string | string[]) => Promise<any>;
 }

@@ -222,7 +222,11 @@ export abstract class LoginStrategy {
           ),
     );
 
-    await this.billingAccountProfileStateService.setHasPremium(accountInformation.premium, false);
+    await this.billingAccountProfileStateService.setHasPremium(
+      accountInformation.premium,
+      false,
+      userId,
+    );
     return userId;
   }
 

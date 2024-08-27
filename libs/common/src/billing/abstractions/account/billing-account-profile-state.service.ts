@@ -1,5 +1,7 @@
 import { Observable } from "rxjs";
 
+import { UserId } from "../../../types/guid";
+
 export type BillingAccountProfile = {
   hasPremiumPersonally: boolean;
   hasPremiumFromAnyOrganization: boolean;
@@ -32,5 +34,6 @@ export abstract class BillingAccountProfileStateService {
   abstract setHasPremium(
     hasPremiumPersonally: boolean,
     hasPremiumFromAnyOrganization: boolean,
+    userId: UserId,
   ): Promise<void>;
 }

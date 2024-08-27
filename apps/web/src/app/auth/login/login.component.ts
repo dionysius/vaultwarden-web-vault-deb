@@ -28,6 +28,7 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { StateService } from "@bitwarden/common/platform/abstractions/state.service";
 import { PasswordStrengthServiceAbstraction } from "@bitwarden/common/tools/password-strength";
+import { UserId } from "@bitwarden/common/types/guid";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/generator-legacy";
 
 import { flagEnabled } from "../../../utils/flags";
@@ -129,7 +130,7 @@ export class LoginComponent extends BaseLoginComponent implements OnInit {
     }
   }
 
-  async goAfterLogIn() {
+  async goAfterLogIn(userId: UserId) {
     const masterPassword = this.formGroup.value.masterPassword;
 
     // Check master password against policy
@@ -150,7 +151,7 @@ export class LoginComponent extends BaseLoginComponent implements OnInit {
       ) {
         const policiesData: { [id: string]: PolicyData } = {};
         this.policies.map((p) => (policiesData[p.id] = PolicyData.fromPolicy(p)));
-        await this.policyService.replace(policiesData);
+        await this.policyService.replace(policiesData, userId);
         await this.router.navigate(["update-password"]);
         return;
       }

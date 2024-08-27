@@ -365,9 +365,9 @@ describe("cryptoService", () => {
       const userKeyState = stateProvider.singleUser.getFake(mockUserId, USER_KEY);
       const fakeMasterKey = makeMasterKey ? makeSymmetricCryptoKey<MasterKey>(64) : null;
       masterPasswordService.masterKeySubject.next(fakeMasterKey);
-      userKeyState.stateSubject.next([mockUserId, null]);
+      userKeyState.nextState(null);
       const fakeUserKey = makeUserKey ? makeSymmetricCryptoKey<UserKey>(64) : null;
-      userKeyState.stateSubject.next([mockUserId, fakeUserKey]);
+      userKeyState.nextState(fakeUserKey);
       return [fakeUserKey, fakeMasterKey];
     }
 
@@ -384,10 +384,7 @@ describe("cryptoService", () => {
 
       const fakeEncryptedUserPrivateKey = makeEncString("1");
 
-      userEncryptedPrivateKeyState.stateSubject.next([
-        mockUserId,
-        fakeEncryptedUserPrivateKey.encryptedString,
-      ]);
+      userEncryptedPrivateKeyState.nextState(fakeEncryptedUserPrivateKey.encryptedString);
 
       // Decryption of the user private key
       const fakeDecryptedUserPrivateKey = makeStaticByteArray(10, 1);
@@ -423,7 +420,7 @@ describe("cryptoService", () => {
         mockUserId,
         USER_ENCRYPTED_PRIVATE_KEY,
       );
-      encryptedUserPrivateKeyState.stateSubject.next([mockUserId, null]);
+      encryptedUserPrivateKeyState.nextState(null);
 
       const userPrivateKey = await firstValueFrom(cryptoService.userPrivateKey$(mockUserId));
       expect(userPrivateKey).toBeFalsy();
@@ -463,7 +460,7 @@ describe("cryptoService", () => {
     function updateKeys(keys: Partial<UpdateKeysParams> = {}) {
       if ("userKey" in keys) {
         const userKeyState = stateProvider.singleUser.getFake(mockUserId, USER_KEY);
-        userKeyState.stateSubject.next([mockUserId, keys.userKey]);
+        userKeyState.nextState(keys.userKey);
       }
 
       if ("encryptedPrivateKey" in keys) {
@@ -471,10 +468,7 @@ describe("cryptoService", () => {
           mockUserId,
           USER_ENCRYPTED_PRIVATE_KEY,
         );
-        userEncryptedPrivateKey.stateSubject.next([
-          mockUserId,
-          keys.encryptedPrivateKey.encryptedString,
-        ]);
+        userEncryptedPrivateKey.nextState(keys.encryptedPrivateKey.encryptedString);
       }
 
       if ("orgKeys" in keys) {
@@ -482,7 +476,7 @@ describe("cryptoService", () => {
           mockUserId,
           USER_ENCRYPTED_ORGANIZATION_KEYS,
         );
-        orgKeysState.stateSubject.next([mockUserId, keys.orgKeys]);
+        orgKeysState.nextState(keys.orgKeys);
       }
 
       if ("providerKeys" in keys) {
@@ -490,7 +484,7 @@ describe("cryptoService", () => {
           mockUserId,
           USER_ENCRYPTED_PROVIDER_KEYS,
         );
-        providerKeysState.stateSubject.next([mockUserId, keys.providerKeys]);
+        providerKeysState.nextState(keys.providerKeys);
       }
 
       encryptService.decryptToBytes.mockImplementation((encryptedPrivateKey, userKey) => {

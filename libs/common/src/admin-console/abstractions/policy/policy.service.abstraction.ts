@@ -77,5 +77,5 @@ export abstract class PolicyService {
 
 export abstract class InternalPolicyService extends PolicyService {
   upsert: (policy: PolicyData) => Promise<void>;
-  replace: (policies: { [id: string]: PolicyData }) => Promise<void>;
+  replace: (policies: { [id: string]: PolicyData }, userId: UserId) => Promise<void>;
 }

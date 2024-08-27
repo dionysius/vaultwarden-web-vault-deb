@@ -342,7 +342,7 @@ export class LoginCommand {
         }
       }
 
-      return await this.handleSuccessResponse();
+      return await this.handleSuccessResponse(response);
     } catch (e) {
       return Response.error(e);
     }
@@ -353,8 +353,8 @@ export class LoginCommand {
     process.env.BW_SESSION = Utils.fromBufferToB64(key);
   }
 
-  private async handleSuccessResponse(): Promise<Response> {
-    const usesKeyConnector = await this.keyConnectorService.getUsesKeyConnector();
+  private async handleSuccessResponse(response: AuthResult): Promise<Response> {
+    const usesKeyConnector = await this.keyConnectorService.getUsesKeyConnector(response.userId);
 
     if (
       (this.options.sso != null || this.options.apikey != null) &&

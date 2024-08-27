@@ -15,6 +15,7 @@ import {
   StateProvider,
   UserKeyDefinition,
 } from "../../platform/state";
+import { UserId } from "../../types/guid";
 
 const SHOW_FAVICONS = new KeyDefinition(DOMAIN_SETTINGS_DISK, "showFavicons", {
   deserializer: (value: boolean) => value ?? true,
@@ -44,7 +45,7 @@ export abstract class DomainSettingsService {
   neverDomains$: Observable<NeverDomains>;
   setNeverDomains: (newValue: NeverDomains) => Promise<void>;
   equivalentDomains$: Observable<EquivalentDomains>;
-  setEquivalentDomains: (newValue: EquivalentDomains) => Promise<void>;
+  setEquivalentDomains: (newValue: EquivalentDomains, userId: UserId) => Promise<void>;
   defaultUriMatchStrategy$: Observable<UriMatchStrategySetting>;
   setDefaultUriMatchStrategy: (newValue: UriMatchStrategySetting) => Promise<void>;
   getUrlEquivalentDomains: (url: string) => Observable<Set<string>>;
@@ -87,8 +88,8 @@ export class DefaultDomainSettingsService implements DomainSettingsService {
     await this.neverDomainsState.update(() => newValue);
   }
 
-  async setEquivalentDomains(newValue: EquivalentDomains): Promise<void> {
-    await this.equivalentDomainsState.update(() => newValue);
+  async setEquivalentDomains(newValue: EquivalentDomains, userId: UserId): Promise<void> {
+    await this.stateProvider.getUser(userId, EQUIVALENT_DOMAINS).update(() => newValue);
   }
 
   async setDefaultUriMatchStrategy(newValue: UriMatchStrategySetting): Promise<void> {

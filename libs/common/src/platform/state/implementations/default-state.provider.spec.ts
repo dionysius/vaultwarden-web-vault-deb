@@ -143,7 +143,7 @@ describe("DefaultStateProvider", () => {
     it("should not emit any values until a truthy user id is supplied", async () => {
       accountService.activeAccountSubject.next(null);
       const state = singleUserStateProvider.getFake(userId, keyDefinition);
-      state.stateSubject.next([userId, "value"]);
+      state.nextState("value");
 
       const emissions = trackEmissions(sut.getUserState$(keyDefinition));
 

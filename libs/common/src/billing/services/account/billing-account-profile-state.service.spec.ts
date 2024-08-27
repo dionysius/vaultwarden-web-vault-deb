@@ -3,7 +3,6 @@ import { firstValueFrom } from "rxjs";
 import {
   FakeAccountService,
   mockAccountServiceWith,
-  FakeActiveUserState,
   FakeStateProvider,
   FakeSingleUserState,
 } from "../../../../spec";
@@ -18,7 +17,6 @@ import {
 describe("BillingAccountProfileStateService", () => {
   let stateProvider: FakeStateProvider;
   let sut: DefaultBillingAccountProfileStateService;
-  let billingAccountProfileState: FakeActiveUserState<BillingAccountProfile>;
   let userBillingAccountProfileState: FakeSingleUserState<BillingAccountProfile>;
   let accountService: FakeAccountService;
 
@@ -29,10 +27,6 @@ describe("BillingAccountProfileStateService", () => {
     stateProvider = new FakeStateProvider(accountService);
 
     sut = new DefaultBillingAccountProfileStateService(stateProvider);
-
-    billingAccountProfileState = stateProvider.activeUser.getFake(
-      BILLING_ACCOUNT_PROFILE_KEY_DEFINITION,
-    );
 
     userBillingAccountProfileState = stateProvider.singleUser.getFake(
       userId,
@@ -133,12 +127,11 @@ describe("BillingAccountProfileStateService", () => {
 
   describe("setHasPremium", () => {
     it("should update the active users state when called", async () => {
-      await sut.setHasPremium(true, false);
+      await sut.setHasPremium(true, false, userId);
 
-      expect(billingAccountProfileState.nextMock).toHaveBeenCalledWith([
-        userId,
-        { hasPremiumPersonally: true, hasPremiumFromAnyOrganization: false },
-      ]);
+      expect(await firstValueFrom(sut.hasPremiumFromAnyOrganization$)).toBe(false);
+      expect(await firstValueFrom(sut.hasPremiumPersonally$)).toBe(true);
+      expect(await firstValueFrom(sut.hasPremiumFromAnySource$)).toBe(true);
     });
   });
 });

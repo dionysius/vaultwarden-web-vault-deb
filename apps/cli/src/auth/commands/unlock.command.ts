@@ -73,6 +73,7 @@ export class UnlockCommand {
 
     if (await this.keyConnectorService.getConvertAccountRequired()) {
       const convertToKeyConnectorCommand = new ConvertToKeyConnectorCommand(
+        userId,
         this.keyConnectorService,
         this.environmentService,
         this.syncService,

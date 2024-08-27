@@ -45,7 +45,7 @@ export abstract class FolderService implements UserKeyRotationDataProvider<Folde
 
 export abstract class InternalFolderService extends FolderService {
   upsert: (folder: FolderData | FolderData[]) => Promise<void>;
-  replace: (folders: { [id: string]: FolderData }) => Promise<void>;
+  replace: (folders: { [id: string]: FolderData }, userId: UserId) => Promise<void>;
   clear: (userId?: string) => Promise<void>;
   delete: (id: string | string[]) => Promise<any>;
 }

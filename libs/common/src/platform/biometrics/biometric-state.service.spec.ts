@@ -119,7 +119,7 @@ describe("BiometricStateService", () => {
 
   describe("getRequirePasswordOnStart", () => {
     it("returns the requirePasswordOnStart state value", async () => {
-      stateProvider.singleUser.mockFor(userId, REQUIRE_PASSWORD_ON_START.key, true);
+      stateProvider.singleUser.mockFor(userId, REQUIRE_PASSWORD_ON_START, true);
 
       expect(await sut.getRequirePasswordOnStart(userId)).toBe(true);
     });

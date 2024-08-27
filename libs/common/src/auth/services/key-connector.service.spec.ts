@@ -78,9 +78,9 @@ describe("KeyConnectorService", () => {
 
       const newValue = true;
 
-      await keyConnectorService.setUsesKeyConnector(newValue);
+      await keyConnectorService.setUsesKeyConnector(newValue, mockUserId);
 
-      expect(await keyConnectorService.getUsesKeyConnector()).toBe(newValue);
+      expect(await keyConnectorService.getUsesKeyConnector(mockUserId)).toBe(newValue);
     });
   });
 
@@ -185,7 +185,7 @@ describe("KeyConnectorService", () => {
       const state = stateProvider.activeUser.getFake(USES_KEY_CONNECTOR);
       state.nextState(false);
 
-      const result = await keyConnectorService.userNeedsMigration();
+      const result = await keyConnectorService.userNeedsMigration(mockUserId);
 
       expect(result).toBe(true);
     });
@@ -197,7 +197,7 @@ describe("KeyConnectorService", () => {
 
       const state = stateProvider.activeUser.getFake(USES_KEY_CONNECTOR);
       state.nextState(true);
-      const result = await keyConnectorService.userNeedsMigration();
+      const result = await keyConnectorService.userNeedsMigration(mockUserId);
 
       expect(result).toBe(false);
     });

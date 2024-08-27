@@ -111,12 +111,12 @@ export class FolderService implements InternalFolderServiceAbstraction {
     });
   }
 
-  async replace(folders: { [id: string]: FolderData }): Promise<void> {
+  async replace(folders: { [id: string]: FolderData }, userId: UserId): Promise<void> {
     if (!folders) {
       return;
     }
 
-    await this.encryptedFoldersState.update(() => {
+    await this.stateProvider.getUser(userId, FOLDER_ENCRYPTED_FOLDERS).update(() => {
       const newFolders: Record<string, FolderData> = { ...folders };
       return newFolders;
     });

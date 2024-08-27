@@ -133,7 +133,7 @@ export abstract class CipherService implements UserKeyRotationDataProvider<Ciphe
    * @returns A promise that resolves to a record of updated cipher store, keyed by their cipher ID. Returns all ciphers, not just those updated
    */
   upsert: (cipher: CipherData | CipherData[]) => Promise<Record<CipherId, CipherData>>;
-  replace: (ciphers: { [id: string]: CipherData }) => Promise<any>;
+  replace: (ciphers: { [id: string]: CipherData }, userId: UserId) => Promise<any>;
   clear: (userId?: string) => Promise<void>;
   moveManyWithServer: (ids: string[], folderId: string) => Promise<any>;
   delete: (id: string | string[]) => Promise<any>;

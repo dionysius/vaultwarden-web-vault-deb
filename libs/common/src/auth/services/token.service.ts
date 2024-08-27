@@ -9,6 +9,7 @@ import { KeyGenerationService } from "../../platform/abstractions/key-generation
 import { LogService } from "../../platform/abstractions/log.service";
 import { AbstractStorageService } from "../../platform/abstractions/storage.service";
 import { StorageLocation } from "../../platform/enums";
+import { Utils } from "../../platform/misc/utils";
 import { EncString, EncryptedString } from "../../platform/models/domain/enc-string";
 import { StorageOptions } from "../../platform/models/domain/storage-options";
 import { SymmetricCryptoKey } from "../../platform/models/domain/symmetric-crypto-key";
@@ -875,8 +876,13 @@ export class TokenService implements TokenServiceAbstraction {
   // jwthelper methods
   // ref https://github.com/auth0/angular-jwt/blob/master/src/angularJwt/services/jwt.js
 
-  async decodeAccessToken(token?: string): Promise<DecodedAccessToken> {
-    token = token ?? (await this.getAccessToken());
+  async decodeAccessToken(tokenOrUserId?: string | UserId): Promise<DecodedAccessToken> {
+    let token = tokenOrUserId as string;
+    if (Utils.isGuid(tokenOrUserId)) {
+      token = await this.getAccessToken(tokenOrUserId as UserId);
+    } else {
+      token ??= await this.getAccessToken();
+    }
 
     if (token == null) {
       throw new Error("Access token not found.");
@@ -1012,10 +1018,10 @@ export class TokenService implements TokenServiceAbstraction {
     return decoded.iss;
   }
 
-  async getIsExternal(): Promise<boolean> {
+  async getIsExternal(userId: UserId): Promise<boolean> {
     let decoded: DecodedAccessToken;
     try {
-      decoded = await this.decodeAccessToken();
+      decoded = await this.decodeAccessToken(userId);
     } catch (error) {
       throw new Error("Failed to decode access token: " + error.message);
     }

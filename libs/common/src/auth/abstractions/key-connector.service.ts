@@ -4,17 +4,17 @@ import { IdentityTokenResponse } from "../models/response/identity-token.respons
 
 export abstract class KeyConnectorService {
   setMasterKeyFromUrl: (url: string, userId: UserId) => Promise<void>;
-  getManagingOrganization: () => Promise<Organization>;
-  getUsesKeyConnector: () => Promise<boolean>;
-  migrateUser: () => Promise<void>;
-  userNeedsMigration: () => Promise<boolean>;
+  getManagingOrganization: (userId?: UserId) => Promise<Organization>;
+  getUsesKeyConnector: (userId: UserId) => Promise<boolean>;
+  migrateUser: (userId?: UserId) => Promise<void>;
+  userNeedsMigration: (userId: UserId) => Promise<boolean>;
   convertNewSsoUserToKeyConnector: (
     tokenResponse: IdentityTokenResponse,
     orgId: string,
     userId: UserId,
   ) => Promise<void>;
-  setUsesKeyConnector: (enabled: boolean) => Promise<void>;
-  setConvertAccountRequired: (status: boolean) => Promise<void>;
+  setUsesKeyConnector: (enabled: boolean, userId: UserId) => Promise<void>;
+  setConvertAccountRequired: (status: boolean, userId?: UserId) => Promise<void>;
   getConvertAccountRequired: () => Promise<boolean>;
-  removeConvertAccountRequired: () => Promise<void>;
+  removeConvertAccountRequired: (userId?: UserId) => Promise<void>;
 }

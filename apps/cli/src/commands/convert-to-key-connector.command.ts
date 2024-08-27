@@ -7,6 +7,7 @@ import {
   EnvironmentService,
   Region,
 } from "@bitwarden/common/platform/abstractions/environment.service";
+import { UserId } from "@bitwarden/common/types/guid";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 
 import { Response } from "../models/response";
@@ -14,6 +15,7 @@ import { MessageResponse } from "../models/response/message.response";
 
 export class ConvertToKeyConnectorCommand {
   constructor(
+    private readonly userId: UserId,
     private keyConnectorService: KeyConnectorService,
     private environmentService: EnvironmentService,
     private syncService: SyncService,
@@ -68,7 +70,7 @@ export class ConvertToKeyConnectorCommand {
       }
 
       await this.keyConnectorService.removeConvertAccountRequired();
-      await this.keyConnectorService.setUsesKeyConnector(true);
+      await this.keyConnectorService.setUsesKeyConnector(true, this.userId);
 
       // Update environment URL - required for api key login
       const env = await firstValueFrom(this.environmentService.environment$);

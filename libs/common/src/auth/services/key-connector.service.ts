@@ -69,25 +69,25 @@ export class KeyConnectorService implements KeyConnectorServiceAbstraction {
     );
   }
 
-  async setUsesKeyConnector(usesKeyConnector: boolean) {
-    await this.usesKeyConnectorState.update(() => usesKeyConnector);
+  async setUsesKeyConnector(usesKeyConnector: boolean, userId: UserId) {
+    await this.stateProvider.getUser(userId, USES_KEY_CONNECTOR).update(() => usesKeyConnector);
   }
 
-  getUsesKeyConnector(): Promise<boolean> {
-    return firstValueFrom(this.usesKeyConnectorState.state$);
+  getUsesKeyConnector(userId: UserId): Promise<boolean> {
+    return firstValueFrom(this.stateProvider.getUserState$(USES_KEY_CONNECTOR, userId));
   }
 
-  async userNeedsMigration() {
-    const loggedInUsingSso = await this.tokenService.getIsExternal();
-    const requiredByOrganization = (await this.getManagingOrganization()) != null;
-    const userIsNotUsingKeyConnector = !(await this.getUsesKeyConnector());
+  async userNeedsMigration(userId: UserId) {
+    const loggedInUsingSso = await this.tokenService.getIsExternal(userId);
+    const requiredByOrganization = (await this.getManagingOrganization(userId)) != null;
+    const userIsNotUsingKeyConnector = !(await this.getUsesKeyConnector(userId));
 
     return loggedInUsingSso && requiredByOrganization && userIsNotUsingKeyConnector;
   }
 
-  async migrateUser() {
-    const organization = await this.getManagingOrganization();
-    const userId = (await firstValueFrom(this.accountService.activeAccount$))?.id;
+  async migrateUser(userId?: UserId) {
+    userId ??= (await firstValueFrom(this.accountService.activeAccount$))?.id;
+    const organization = await this.getManagingOrganization(userId);
     const masterKey = await firstValueFrom(this.masterPasswordService.masterKey$(userId));
     const keyConnectorRequest = new KeyConnectorUserKeyRequest(masterKey.encKeyB64);
 
@@ -115,8 +115,8 @@ export class KeyConnectorService implements KeyConnectorServiceAbstraction {
     }
   }
 
-  async getManagingOrganization(): Promise<Organization> {
-    const orgs = await this.organizationService.getAll();
+  async getManagingOrganization(userId?: UserId): Promise<Organization> {
+    const orgs = await this.organizationService.getAll(userId);
     return orgs.find(
       (o) =>
         o.keyConnectorEnabled &&
@@ -178,16 +178,16 @@ export class KeyConnectorService implements KeyConnectorServiceAbstraction {
     await this.apiService.postSetKeyConnectorKey(setPasswordRequest);
   }
 
-  async setConvertAccountRequired(status: boolean) {
-    await this.convertAccountToKeyConnectorState.update(() => status);
+  async setConvertAccountRequired(status: boolean, userId?: UserId) {
+    await this.stateProvider.setUserState(CONVERT_ACCOUNT_TO_KEY_CONNECTOR, status, userId);
   }
 
   getConvertAccountRequired(): Promise<boolean> {
     return firstValueFrom(this.convertAccountToKeyConnectorState.state$);
   }
 
-  async removeConvertAccountRequired() {
-    await this.setConvertAccountRequired(null);
+  async removeConvertAccountRequired(userId?: UserId) {
+    await this.setConvertAccountRequired(null, userId);
   }
 
   private handleKeyConnectorError(e: any) {

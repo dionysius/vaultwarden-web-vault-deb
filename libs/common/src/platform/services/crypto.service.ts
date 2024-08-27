@@ -225,7 +225,7 @@ export class CryptoService implements CryptoServiceAbstraction {
     }
   }
 
-  async setMasterKeyEncryptedUserKey(userKeyMasterKey: string, userId?: UserId): Promise<void> {
+  async setMasterKeyEncryptedUserKey(userKeyMasterKey: string, userId: UserId): Promise<void> {
     userId ??= await firstValueFrom(this.stateProvider.activeUserId$);
     await this.masterPasswordService.setMasterKeyEncryptedUserKey(
       new EncString(userKeyMasterKey),

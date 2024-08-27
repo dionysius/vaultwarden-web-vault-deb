@@ -99,7 +99,7 @@ export class AuthRequestLoginStrategy extends LoginStrategy {
     const authRequestCredentials = this.cache.value.authRequestCredentials;
     // User now may or may not have a master password
     // but set the master key encrypted user key if it exists regardless
-    await this.cryptoService.setMasterKeyEncryptedUserKey(response.key);
+    await this.cryptoService.setMasterKeyEncryptedUserKey(response.key, userId);
 
     if (authRequestCredentials.decryptedUserKey) {
       await this.cryptoService.setUserKey(authRequestCredentials.decryptedUserKey, userId);

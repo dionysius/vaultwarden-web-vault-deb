@@ -6,6 +6,7 @@ import {
   StateProvider,
   UserKeyDefinition,
 } from "../../../platform/state";
+import { UserId } from "../../../types/guid";
 import {
   BillingAccountProfile,
   BillingAccountProfileStateService,
@@ -27,7 +28,7 @@ export class DefaultBillingAccountProfileStateService implements BillingAccountP
   hasPremiumPersonally$: Observable<boolean>;
   hasPremiumFromAnySource$: Observable<boolean>;
 
-  constructor(stateProvider: StateProvider) {
+  constructor(private readonly stateProvider: StateProvider) {
     this.billingAccountProfileState = stateProvider.getActive(
       BILLING_ACCOUNT_PROFILE_KEY_DEFINITION,
     );
@@ -62,8 +63,9 @@ export class DefaultBillingAccountProfileStateService implements BillingAccountP
   async setHasPremium(
     hasPremiumPersonally: boolean,
     hasPremiumFromAnyOrganization: boolean,
+    userId: UserId,
   ): Promise<void> {
-    await this.billingAccountProfileState.update((billingAccountProfile) => {
+    await this.stateProvider.getUser(userId, BILLING_ACCOUNT_PROFILE_KEY_DEFINITION).update((_) => {
       return {
         hasPremiumPersonally: hasPremiumPersonally,
         hasPremiumFromAnyOrganization: hasPremiumFromAnyOrganization,

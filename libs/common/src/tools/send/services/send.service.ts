@@ -28,10 +28,10 @@ export class SendService implements InternalSendServiceAbstraction {
   readonly sendKeyPurpose = "send";
 
   sends$ = this.stateProvider.encryptedState$.pipe(
-    map((record) => Object.values(record || {}).map((data) => new Send(data))),
+    map(([, record]) => Object.values(record || {}).map((data) => new Send(data))),
   );
   sendViews$ = this.stateProvider.encryptedState$.pipe(
-    concatMap((record) =>
+    concatMap(([, record]) =>
       this.decryptSends(Object.values(record || {}).map((data) => new Send(data))),
     ),
   );
@@ -167,7 +167,7 @@ export class SendService implements InternalSendServiceAbstraction {
   }
 
   async getFromState(id: string): Promise<Send> {
-    const sends = await this.stateProvider.getEncryptedSends();
+    const [, sends] = await this.stateProvider.getEncryptedSends();
     // eslint-disable-next-line
     if (sends == null || !sends.hasOwnProperty(id)) {
       return null;
@@ -177,7 +177,7 @@ export class SendService implements InternalSendServiceAbstraction {
   }
 
   async getAll(): Promise<Send[]> {
-    const sends = await this.stateProvider.getEncryptedSends();
+    const [, sends] = await this.stateProvider.getEncryptedSends();
     const response: Send[] = [];
     for (const id in sends) {
       // eslint-disable-next-line
@@ -214,7 +214,8 @@ export class SendService implements InternalSendServiceAbstraction {
   }
 
   async upsert(send: SendData | SendData[]): Promise<any> {
-    let sends = await this.stateProvider.getEncryptedSends();
+    const [userId, currentSends] = await this.stateProvider.getEncryptedSends();
+    let sends = currentSends;
     if (sends == null) {
       sends = {};
     }
@@ -227,16 +228,11 @@ export class SendService implements InternalSendServiceAbstraction {
       });
     }
 
-    await this.replace(sends);
-  }
-
-  async clear(userId?: string): Promise<any> {
-    await this.stateProvider.setDecryptedSends(null);
-    await this.stateProvider.setEncryptedSends(null);
+    await this.replace(sends, userId);
   }
 
   async delete(id: string | string[]): Promise<any> {
-    const sends = await this.stateProvider.getEncryptedSends();
+    const [userId, sends] = await this.stateProvider.getEncryptedSends();
     if (sends == null) {
       return;
     }
@@ -252,11 +248,11 @@ export class SendService implements InternalSendServiceAbstraction {
       });
     }
 
-    await this.replace(sends);
+    await this.replace(sends, userId);
   }
 
-  async replace(sends: { [id: string]: SendData }): Promise<any> {
-    await this.stateProvider.setEncryptedSends(sends);
+  async replace(sends: { [id: string]: SendData }, userId: UserId): Promise<any> {
+    await this.stateProvider.setEncryptedSends(sends, userId);
   }
 
   async getRotatedData(

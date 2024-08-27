@@ -120,7 +120,7 @@ describe("Folder Service", () => {
   });
 
   it("replace", async () => {
-    await folderService.replace({ "2": folderData("2", "test 2") });
+    await folderService.replace({ "2": folderData("2", "test 2") }, mockUserId);
 
     expect(await firstValueFrom(folderService.folders$)).toEqual([
       {

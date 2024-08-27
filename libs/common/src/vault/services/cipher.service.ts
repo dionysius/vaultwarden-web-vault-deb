@@ -913,8 +913,8 @@ export class CipherService implements CipherServiceAbstraction {
     });
   }
 
-  async replace(ciphers: { [id: string]: CipherData }): Promise<any> {
-    await this.updateEncryptedCipherState(() => ciphers);
+  async replace(ciphers: { [id: string]: CipherData }, userId: UserId): Promise<any> {
+    await this.updateEncryptedCipherState(() => ciphers, userId);
   }
 
   /**
@@ -924,15 +924,18 @@ export class CipherService implements CipherServiceAbstraction {
    */
   private async updateEncryptedCipherState(
     update: (current: Record<CipherId, CipherData>) => Record<CipherId, CipherData>,
+    userId: UserId = null,
   ): Promise<Record<CipherId, CipherData>> {
-    const userId = await firstValueFrom(this.stateProvider.activeUserId$);
+    userId ||= await firstValueFrom(this.stateProvider.activeUserId$);
     // Store that we should wait for an update to return any ciphers
     await this.ciphersExpectingUpdate.forceValue(true);
     await this.clearDecryptedCiphersState(userId);
-    const [, updatedCiphers] = await this.encryptedCiphersState.update((current) => {
-      const result = update(current ?? {});
-      return result;
-    });
+    const updatedCiphers = await this.stateProvider
+      .getUser(userId, ENCRYPTED_CIPHERS)
+      .update((current) => {
+        const result = update(current ?? {});
+        return result;
+      });
     return updatedCiphers;
   }
 

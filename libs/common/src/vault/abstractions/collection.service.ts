@@ -1,6 +1,6 @@
 import { Observable } from "rxjs";
 
-import { CollectionId } from "../../types/guid";
+import { CollectionId, UserId } from "../../types/guid";
 import { CollectionData } from "../models/data/collection.data";
 import { Collection } from "../models/domain/collection";
 import { TreeNode } from "../models/domain/tree-node";
@@ -22,7 +22,7 @@ export abstract class CollectionService {
   getAllNested: (collections?: CollectionView[]) => Promise<TreeNode<CollectionView>[]>;
   getNested: (id: string) => Promise<TreeNode<CollectionView>>;
   upsert: (collection: CollectionData | CollectionData[]) => Promise<any>;
-  replace: (collections: { [id: string]: CollectionData }) => Promise<any>;
+  replace: (collections: { [id: string]: CollectionData }, userId: UserId) => Promise<any>;
   clear: (userId?: string) => Promise<void>;
   delete: (id: string | string[]) => Promise<any>;
 }
