@@ -1,5 +1,6 @@
 export * from "./boundary";
 export * from "./catchall-generator-options";
+export * from "./credential-generator-configuration";
 export * from "./eff-username-generator-options";
 export * from "./forwarder-options";
 export * from "./generator-options";

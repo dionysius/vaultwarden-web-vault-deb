@@ -18,6 +18,19 @@ export function mapPolicyToEvaluator<Policy, Evaluator>(
   );
 }
 
+/** Maps an administrative console policy to a policy evaluator using the provided configuration.
+ *  @param configuration the configuration that constructs the evaluator.
+ */
+export function mapPolicyToEvaluatorV2<Policy, Evaluator>(
+  configuration: PolicyConfiguration<Policy, Evaluator>,
+) {
+  return pipe(
+    reduceCollection(configuration.combine, configuration.disabledValue),
+    distinctIfShallowMatch(),
+    map(configuration.createEvaluatorV2),
+  );
+}
+
 /** Constructs a method that maps a policy to the default (no-op) policy. */
 export function newDefaultEvaluator<Target>() {
   return () => {

@@ -32,6 +32,7 @@ module.exports = {
     "<rootDir>/libs/components/jest.config.js",
     "<rootDir>/libs/tools/export/vault-export/vault-export-core/jest.config.js",
     "<rootDir>/libs/tools/generator/core/jest.config.js",
+    "<rootDir>/libs/tools/generator/components/jest.config.js",
     "<rootDir>/libs/tools/generator/extensions/history/jest.config.js",
     "<rootDir>/libs/tools/generator/extensions/legacy/jest.config.js",
     "<rootDir>/libs/tools/generator/extensions/navigation/jest.config.js",

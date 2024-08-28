@@ -8,7 +8,7 @@ import { Policy } from "@bitwarden/common/admin-console/models/domain/policy";
 import { StateProvider } from "@bitwarden/common/platform/state";
 import { UserId } from "@bitwarden/common/types/guid";
 
-import { DefaultPassphraseGenerationOptions, DisabledPassphraseGeneratorPolicy } from "../data";
+import { DefaultPassphraseGenerationOptions, Policies } from "../data";
 import { PasswordRandomizer } from "../engine";
 import { PassphraseGeneratorOptionsEvaluator } from "../policies";
 
@@ -50,7 +50,7 @@ describe("Password generation strategy", () => {
         const evaluator = await firstValueFrom(evaluator$);
 
         expect(evaluator).toBeInstanceOf(PassphraseGeneratorOptionsEvaluator);
-        expect(evaluator.policy).toMatchObject(DisabledPassphraseGeneratorPolicy);
+        expect(evaluator.policy).toMatchObject(Policies.Passphrase.disabledValue);
       },
     );
   });

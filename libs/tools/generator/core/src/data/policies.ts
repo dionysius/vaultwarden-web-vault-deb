@@ -1,23 +1,45 @@
-import { DisabledPassphraseGeneratorPolicy, DisabledPasswordGeneratorPolicy } from "../data";
+import { PolicyType } from "@bitwarden/common/admin-console/enums";
+
 import {
   passphraseLeastPrivilege,
   passwordLeastPrivilege,
   PassphraseGeneratorOptionsEvaluator,
   PasswordGeneratorOptionsEvaluator,
 } from "../policies";
-import { PassphraseGeneratorPolicy, PasswordGeneratorPolicy, PolicyConfiguration } from "../types";
+import {
+  PassphraseGenerationOptions,
+  PassphraseGeneratorPolicy,
+  PasswordGenerationOptions,
+  PasswordGeneratorPolicy,
+  PolicyConfiguration,
+} from "../types";
 
 const PASSPHRASE = Object.freeze({
-  disabledValue: DisabledPassphraseGeneratorPolicy,
+  type: PolicyType.PasswordGenerator,
+  disabledValue: Object.freeze({
+    minNumberWords: 0,
+    capitalize: false,
+    includeNumber: false,
+  }),
   combine: passphraseLeastPrivilege,
   createEvaluator: (policy) => new PassphraseGeneratorOptionsEvaluator(policy),
-} as PolicyConfiguration<PassphraseGeneratorPolicy, PassphraseGeneratorOptionsEvaluator>);
+  createEvaluatorV2: (policy) => new PassphraseGeneratorOptionsEvaluator(policy),
+} as PolicyConfiguration<PassphraseGeneratorPolicy, PassphraseGenerationOptions>);
 
 const PASSWORD = Object.freeze({
-  disabledValue: DisabledPasswordGeneratorPolicy,
+  type: PolicyType.PasswordGenerator,
+  disabledValue: Object.freeze({
+    minLength: 0,
+    useUppercase: false,
+    useLowercase: false,
+    useNumbers: false,
+    numberCount: 0,
+    useSpecial: false,
+    specialCount: 0,
+  }),
   combine: passwordLeastPrivilege,
   createEvaluator: (policy) => new PasswordGeneratorOptionsEvaluator(policy),
-} as PolicyConfiguration<PasswordGeneratorPolicy, PasswordGeneratorOptionsEvaluator>);
+} as PolicyConfiguration<PasswordGeneratorPolicy, PasswordGenerationOptions>);
 
 /** Policy configurations */
 export const Policies = Object.freeze({

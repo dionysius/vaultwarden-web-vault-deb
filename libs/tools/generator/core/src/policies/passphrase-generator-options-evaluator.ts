@@ -1,3 +1,5 @@
+import { Constraints } from "@bitwarden/common/tools/types";
+
 import { PolicyEvaluator } from "../abstractions";
 import { DefaultPassphraseGenerationOptions, DefaultPassphraseBoundaries } from "../data";
 import { Boundary, PassphraseGenerationOptions, PassphraseGeneratorPolicy } from "../types";
@@ -5,7 +7,9 @@ import { Boundary, PassphraseGenerationOptions, PassphraseGeneratorPolicy } from
 /** Enforces policy for passphrase generation options.
  */
 export class PassphraseGeneratorOptionsEvaluator
-  implements PolicyEvaluator<PassphraseGeneratorPolicy, PassphraseGenerationOptions>
+  implements
+    PolicyEvaluator<PassphraseGeneratorPolicy, PassphraseGenerationOptions>,
+    Constraints<PassphraseGenerationOptions>
 {
   // This design is not ideal, but it is a step towards a more robust passphrase
   // generator. Ideally, `sanitize` would be implemented on an options class,

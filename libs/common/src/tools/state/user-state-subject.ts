@@ -15,6 +15,8 @@ import {
   ignoreElements,
   endWith,
   startWith,
+  Observable,
+  Subscription,
 } from "rxjs";
 import { Simplify } from "type-fest";
 
@@ -59,7 +61,10 @@ export type UserStateSubjectDependencies<State, Dependency> = Simplify<
  * @template State the state stored by the subject
  * @template Dependencies use-specific dependencies provided by the user.
  */
-export class UserStateSubject<State, Dependencies = null> implements SubjectLike<State> {
+export class UserStateSubject<State, Dependencies = null>
+  extends Observable<State>
+  implements SubjectLike<State>
+{
   /**
    * Instantiates the user state subject
    * @param state the backing store of the subject
@@ -76,6 +81,8 @@ export class UserStateSubject<State, Dependencies = null> implements SubjectLike
     private state: SingleUserState<State>,
     private dependencies: UserStateSubjectDependencies<State, Dependencies>,
   ) {
+    super();
+
     // normalize dependencies
     const when$ = (this.dependencies.when$ ?? new BehaviorSubject(true)).pipe(
       distinctUntilChanged(),
@@ -114,6 +121,12 @@ export class UserStateSubject<State, Dependencies = null> implements SubjectLike
       });
   }
 
+  /** The userId to which the subject is bound.
+   */
+  get userId() {
+    return this.state.userId;
+  }
+
   next(value: State) {
     this.input?.next(value);
   }
@@ -130,7 +143,7 @@ export class UserStateSubject<State, Dependencies = null> implements SubjectLike
    * @param observer listening for events
    * @returns the subscription
    */
-  subscribe(observer: Partial<Observer<State>> | ((value: State) => void)): Unsubscribable {
+  subscribe(observer?: Partial<Observer<State>> | ((value: State) => void) | null): Subscription {
     return this.output.subscribe(observer);
   }
 

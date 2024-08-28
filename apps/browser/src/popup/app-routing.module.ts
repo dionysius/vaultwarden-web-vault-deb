@@ -9,6 +9,7 @@ import {
   unauthGuardFn,
 } from "@bitwarden/angular/auth/guards";
 import { canAccessFeature } from "@bitwarden/angular/platform/guard/feature-flag.guard";
+import { generatorSwap } from "@bitwarden/angular/tools/generator/generator-swap";
 import { extensionRefreshSwap } from "@bitwarden/angular/utils/extension-refresh-swap";
 import {
   AnonLayoutWrapperComponent,
@@ -51,6 +52,7 @@ import { PremiumV2Component } from "../billing/popup/settings/premium-v2.compone
 import { PremiumComponent } from "../billing/popup/settings/premium.component";
 import BrowserPopupUtils from "../platform/popup/browser-popup-utils";
 import { popupRouterCacheGuard } from "../platform/popup/view-cache/popup-router-cache.service";
+import { CredentialGeneratorComponent } from "../tools/popup/generator/credential-generator.component";
 import { GeneratorComponent } from "../tools/popup/generator/generator.component";
 import { PasswordGeneratorHistoryComponent } from "../tools/popup/generator/password-generator-history.component";
 import { SendAddEditComponent } from "../tools/popup/send/send-add-edit.component";
@@ -472,12 +474,11 @@ const routes: Routes = [
         canDeactivate: [clearVaultStateGuard],
         data: { state: "tabs_vault" },
       }),
-      {
+      ...generatorSwap(GeneratorComponent, CredentialGeneratorComponent, {
         path: "generator",
-        component: GeneratorComponent,
         canActivate: [authGuard],
         data: { state: "tabs_generator" },
-      },
+      }),
       ...extensionRefreshSwap(SettingsComponent, SettingsV2Component, {
         path: "settings",
         canActivate: [authGuard],

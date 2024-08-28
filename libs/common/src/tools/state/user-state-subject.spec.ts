@@ -257,8 +257,8 @@ describe("UserStateSubject", () => {
 
       let actual: TestType = null;
       subject.subscribe({
-        error: (value) => {
-          actual = value;
+        error: (value: unknown) => {
+          actual = value as any;
         },
       });
       subject.error(expected);
@@ -275,8 +275,8 @@ describe("UserStateSubject", () => {
 
       let actual: TestType = null;
       subject.subscribe({
-        error: (value) => {
-          actual = value;
+        error: (value: unknown) => {
+          actual = value as any;
         },
       });
       subject.error("expectedError");
@@ -415,8 +415,8 @@ describe("UserStateSubject", () => {
 
       let error = false;
       subject.subscribe({
-        error: (e) => {
-          error = e;
+        error: (e: unknown) => {
+          error = e as any;
         },
       });
       singleUserId$.next(errorUserId);
@@ -434,8 +434,8 @@ describe("UserStateSubject", () => {
 
       let actual = false;
       subject.subscribe({
-        error: (e) => {
-          actual = e;
+        error: (e: unknown) => {
+          actual = e as any;
         },
       });
       singleUserId$.error(expected);
@@ -454,14 +454,24 @@ describe("UserStateSubject", () => {
 
       let actual = false;
       subject.subscribe({
-        error: (e) => {
-          actual = e;
+        error: (e: unknown) => {
+          actual = e as any;
         },
       });
       when$.error(expected);
       await awaitAsync();
 
       expect(actual).toEqual(expected);
+    });
+  });
+
+  describe("userId", () => {
+    it("returns the userId to which the subject is bound", () => {
+      const state = new FakeSingleUserState<TestType>(SomeUser, { foo: "init" });
+      const singleUserId$ = new Subject<UserId>();
+      const subject = new UserStateSubject(state, { singleUserId$ });
+
+      expect(subject.userId).toEqual(SomeUser);
     });
   });
 });

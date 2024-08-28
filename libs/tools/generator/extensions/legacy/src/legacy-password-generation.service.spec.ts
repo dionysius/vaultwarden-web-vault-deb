@@ -7,8 +7,7 @@ import {
   GeneratorService,
   DefaultPassphraseGenerationOptions,
   DefaultPasswordGenerationOptions,
-  DisabledPassphraseGeneratorPolicy,
-  DisabledPasswordGeneratorPolicy,
+  Policies,
   PassphraseGenerationOptions,
   PassphraseGeneratorPolicy,
   PasswordGenerationOptions,
@@ -39,7 +38,7 @@ const PasswordGeneratorOptionsEvaluator = policies.PasswordGeneratorOptionsEvalu
 
 function createPassphraseGenerator(
   options: PassphraseGenerationOptions = {},
-  policy: PassphraseGeneratorPolicy = DisabledPassphraseGeneratorPolicy,
+  policy: PassphraseGeneratorPolicy = Policies.Passphrase.disabledValue,
 ) {
   let savedOptions = options;
   const generator = mock<GeneratorService<PassphraseGenerationOptions, PassphraseGeneratorPolicy>>({
@@ -64,7 +63,7 @@ function createPassphraseGenerator(
 
 function createPasswordGenerator(
   options: PasswordGenerationOptions = {},
-  policy: PasswordGeneratorPolicy = DisabledPasswordGeneratorPolicy,
+  policy: PasswordGeneratorPolicy = Policies.Password.disabledValue,
 ) {
   let savedOptions = options;
   const generator = mock<GeneratorService<PasswordGenerationOptions, PasswordGeneratorPolicy>>({

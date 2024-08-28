@@ -4,7 +4,7 @@ import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { Policy } from "@bitwarden/common/admin-console/models/domain/policy";
 import { PolicyId } from "@bitwarden/common/types/guid";
 
-import { DisabledPassphraseGeneratorPolicy } from "../data";
+import { Policies } from "../data";
 
 import { passphraseLeastPrivilege } from "./passphrase-least-privilege";
 
@@ -26,17 +26,17 @@ describe("passphraseLeastPrivilege", () => {
   it("should return the accumulator when the policy type does not apply", () => {
     const policy = createPolicy({}, PolicyType.RequireSso);
 
-    const result = passphraseLeastPrivilege(DisabledPassphraseGeneratorPolicy, policy);
+    const result = passphraseLeastPrivilege(Policies.Passphrase.disabledValue, policy);
 
-    expect(result).toEqual(DisabledPassphraseGeneratorPolicy);
+    expect(result).toEqual(Policies.Passphrase.disabledValue);
   });
 
   it("should return the accumulator when the policy is not enabled", () => {
     const policy = createPolicy({}, PolicyType.PasswordGenerator, false);
 
-    const result = passphraseLeastPrivilege(DisabledPassphraseGeneratorPolicy, policy);
+    const result = passphraseLeastPrivilege(Policies.Passphrase.disabledValue, policy);
 
-    expect(result).toEqual(DisabledPassphraseGeneratorPolicy);
+    expect(result).toEqual(Policies.Passphrase.disabledValue);
   });
 
   it.each([
@@ -46,8 +46,8 @@ describe("passphraseLeastPrivilege", () => {
   ])("should take the %p from the policy", (input, value) => {
     const policy = createPolicy({ [input]: value });
 
-    const result = passphraseLeastPrivilege(DisabledPassphraseGeneratorPolicy, policy);
+    const result = passphraseLeastPrivilege(Policies.Passphrase.disabledValue, policy);
 
-    expect(result).toEqual({ ...DisabledPassphraseGeneratorPolicy, [input]: value });
+    expect(result).toEqual({ ...Policies.Passphrase.disabledValue, [input]: value });
   });
 });

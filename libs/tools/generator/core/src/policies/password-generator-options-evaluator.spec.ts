@@ -1,4 +1,4 @@
-import { DefaultPasswordBoundaries, DisabledPasswordGeneratorPolicy } from "../data";
+import { DefaultPasswordBoundaries, Policies } from "../data";
 import { PasswordGenerationOptions } from "../types";
 
 import { PasswordGeneratorOptionsEvaluator } from "./password-generator-options-evaluator";
@@ -8,7 +8,7 @@ describe("Password generator options builder", () => {
 
   describe("constructor()", () => {
     it("should set the policy object to a copy of the input policy", () => {
-      const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+      const policy = Object.assign({}, Policies.Password.disabledValue);
       policy.minLength = 10; // arbitrary change for deep equality check
 
       const builder = new PasswordGeneratorOptionsEvaluator(policy);
@@ -18,7 +18,7 @@ describe("Password generator options builder", () => {
     });
 
     it("should set default boundaries when a default policy is used", () => {
-      const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+      const policy = Object.assign({}, Policies.Password.disabledValue);
 
       const builder = new PasswordGeneratorOptionsEvaluator(policy);
 
@@ -32,7 +32,7 @@ describe("Password generator options builder", () => {
       (minLength) => {
         expect(minLength).toBeLessThan(DefaultPasswordBoundaries.length.min);
 
-        const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+        const policy = Object.assign({}, Policies.Password.disabledValue);
         policy.minLength = minLength;
 
         const builder = new PasswordGeneratorOptionsEvaluator(policy);
@@ -47,7 +47,7 @@ describe("Password generator options builder", () => {
         expect(expectedLength).toBeGreaterThan(DefaultPasswordBoundaries.length.min);
         expect(expectedLength).toBeLessThanOrEqual(DefaultPasswordBoundaries.length.max);
 
-        const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+        const policy = Object.assign({}, Policies.Password.disabledValue);
         policy.minLength = expectedLength;
 
         const builder = new PasswordGeneratorOptionsEvaluator(policy);
@@ -62,7 +62,7 @@ describe("Password generator options builder", () => {
       (expectedLength) => {
         expect(expectedLength).toBeGreaterThan(DefaultPasswordBoundaries.length.max);
 
-        const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+        const policy = Object.assign({}, Policies.Password.disabledValue);
         policy.minLength = expectedLength;
 
         const builder = new PasswordGeneratorOptionsEvaluator(policy);
@@ -78,7 +78,7 @@ describe("Password generator options builder", () => {
         expect(expectedMinDigits).toBeGreaterThan(DefaultPasswordBoundaries.minDigits.min);
         expect(expectedMinDigits).toBeLessThanOrEqual(DefaultPasswordBoundaries.minDigits.max);
 
-        const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+        const policy = Object.assign({}, Policies.Password.disabledValue);
         policy.numberCount = expectedMinDigits;
 
         const builder = new PasswordGeneratorOptionsEvaluator(policy);
@@ -93,7 +93,7 @@ describe("Password generator options builder", () => {
       (expectedMinDigits) => {
         expect(expectedMinDigits).toBeGreaterThan(DefaultPasswordBoundaries.minDigits.max);
 
-        const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+        const policy = Object.assign({}, Policies.Password.disabledValue);
         policy.numberCount = expectedMinDigits;
 
         const builder = new PasswordGeneratorOptionsEvaluator(policy);
@@ -113,7 +113,7 @@ describe("Password generator options builder", () => {
           DefaultPasswordBoundaries.minSpecialCharacters.max,
         );
 
-        const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+        const policy = Object.assign({}, Policies.Password.disabledValue);
         policy.specialCount = expectedSpecialCharacters;
 
         const builder = new PasswordGeneratorOptionsEvaluator(policy);
@@ -132,7 +132,7 @@ describe("Password generator options builder", () => {
           DefaultPasswordBoundaries.minSpecialCharacters.max,
         );
 
-        const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+        const policy = Object.assign({}, Policies.Password.disabledValue);
         policy.specialCount = expectedSpecialCharacters;
 
         const builder = new PasswordGeneratorOptionsEvaluator(policy);
@@ -151,7 +151,7 @@ describe("Password generator options builder", () => {
       (expectedLength, numberCount, specialCount) => {
         expect(expectedLength).toBeGreaterThanOrEqual(DefaultPasswordBoundaries.length.min);
 
-        const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+        const policy = Object.assign({}, Policies.Password.disabledValue);
         policy.numberCount = numberCount;
         policy.specialCount = specialCount;
 
@@ -164,14 +164,14 @@ describe("Password generator options builder", () => {
 
   describe("policyInEffect", () => {
     it("should return false when the policy has no effect", () => {
-      const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+      const policy = Object.assign({}, Policies.Password.disabledValue);
       const builder = new PasswordGeneratorOptionsEvaluator(policy);
 
       expect(builder.policyInEffect).toEqual(false);
     });
 
     it("should return true when the policy has a minlength greater than the default boundary", () => {
-      const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+      const policy = Object.assign({}, Policies.Password.disabledValue);
       policy.minLength = DefaultPasswordBoundaries.length.min + 1;
       const builder = new PasswordGeneratorOptionsEvaluator(policy);
 
@@ -179,7 +179,7 @@ describe("Password generator options builder", () => {
     });
 
     it("should return true when the policy has a number count greater than the default boundary", () => {
-      const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+      const policy = Object.assign({}, Policies.Password.disabledValue);
       policy.numberCount = DefaultPasswordBoundaries.minDigits.min + 1;
       const builder = new PasswordGeneratorOptionsEvaluator(policy);
 
@@ -187,7 +187,7 @@ describe("Password generator options builder", () => {
     });
 
     it("should return true when the policy has a special character count greater than the default boundary", () => {
-      const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+      const policy = Object.assign({}, Policies.Password.disabledValue);
       policy.specialCount = DefaultPasswordBoundaries.minSpecialCharacters.min + 1;
       const builder = new PasswordGeneratorOptionsEvaluator(policy);
 
@@ -195,7 +195,7 @@ describe("Password generator options builder", () => {
     });
 
     it("should return true when the policy has uppercase enabled", () => {
-      const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+      const policy = Object.assign({}, Policies.Password.disabledValue);
       policy.useUppercase = true;
       const builder = new PasswordGeneratorOptionsEvaluator(policy);
 
@@ -203,7 +203,7 @@ describe("Password generator options builder", () => {
     });
 
     it("should return true when the policy has lowercase enabled", () => {
-      const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+      const policy = Object.assign({}, Policies.Password.disabledValue);
       policy.useLowercase = true;
       const builder = new PasswordGeneratorOptionsEvaluator(policy);
 
@@ -211,7 +211,7 @@ describe("Password generator options builder", () => {
     });
 
     it("should return true when the policy has numbers enabled", () => {
-      const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+      const policy = Object.assign({}, Policies.Password.disabledValue);
       policy.useNumbers = true;
       const builder = new PasswordGeneratorOptionsEvaluator(policy);
 
@@ -219,7 +219,7 @@ describe("Password generator options builder", () => {
     });
 
     it("should return true when the policy has special characters enabled", () => {
-      const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+      const policy = Object.assign({}, Policies.Password.disabledValue);
       policy.useSpecial = true;
       const builder = new PasswordGeneratorOptionsEvaluator(policy);
 
@@ -237,7 +237,7 @@ describe("Password generator options builder", () => {
     ])(
       "should set `options.uppercase` to '%s' when `policy.useUppercase` is false and `options.uppercase` is '%s'",
       (expectedUppercase, uppercase) => {
-        const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+        const policy = Object.assign({}, Policies.Password.disabledValue);
         policy.useUppercase = false;
         const builder = new PasswordGeneratorOptionsEvaluator(policy);
         const options = Object.freeze({ ...defaultOptions, uppercase });
@@ -251,7 +251,7 @@ describe("Password generator options builder", () => {
     it.each([false, true, undefined])(
       "should set `options.uppercase` (= %s) to true when `policy.useUppercase` is true",
       (uppercase) => {
-        const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+        const policy = Object.assign({}, Policies.Password.disabledValue);
         policy.useUppercase = true;
         const builder = new PasswordGeneratorOptionsEvaluator(policy);
         const options = Object.freeze({ ...defaultOptions, uppercase });
@@ -269,7 +269,7 @@ describe("Password generator options builder", () => {
     ])(
       "should set `options.lowercase` to '%s' when `policy.useLowercase` is false and `options.lowercase` is '%s'",
       (expectedLowercase, lowercase) => {
-        const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+        const policy = Object.assign({}, Policies.Password.disabledValue);
         policy.useLowercase = false;
         const builder = new PasswordGeneratorOptionsEvaluator(policy);
         const options = Object.freeze({ ...defaultOptions, lowercase });
@@ -283,7 +283,7 @@ describe("Password generator options builder", () => {
     it.each([false, true, undefined])(
       "should set `options.lowercase` (= %s) to true when `policy.useLowercase` is true",
       (lowercase) => {
-        const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+        const policy = Object.assign({}, Policies.Password.disabledValue);
         policy.useLowercase = true;
         const builder = new PasswordGeneratorOptionsEvaluator(policy);
         const options = Object.freeze({ ...defaultOptions, lowercase });
@@ -301,7 +301,7 @@ describe("Password generator options builder", () => {
     ])(
       "should set `options.number` to '%s' when `policy.useNumbers` is false and `options.number` is '%s'",
       (expectedNumber, number) => {
-        const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+        const policy = Object.assign({}, Policies.Password.disabledValue);
         policy.useNumbers = false;
         const builder = new PasswordGeneratorOptionsEvaluator(policy);
         const options = Object.freeze({ ...defaultOptions, number });
@@ -315,7 +315,7 @@ describe("Password generator options builder", () => {
     it.each([false, true, undefined])(
       "should set `options.number` (= %s) to true when `policy.useNumbers` is true",
       (number) => {
-        const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+        const policy = Object.assign({}, Policies.Password.disabledValue);
         policy.useNumbers = true;
         const builder = new PasswordGeneratorOptionsEvaluator(policy);
         const options = Object.freeze({ ...defaultOptions, number });
@@ -333,7 +333,7 @@ describe("Password generator options builder", () => {
     ])(
       "should set `options.special` to '%s' when `policy.useSpecial` is false and `options.special` is '%s'",
       (expectedSpecial, special) => {
-        const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+        const policy = Object.assign({}, Policies.Password.disabledValue);
         policy.useSpecial = false;
         const builder = new PasswordGeneratorOptionsEvaluator(policy);
         const options = Object.freeze({ ...defaultOptions, special });
@@ -347,7 +347,7 @@ describe("Password generator options builder", () => {
     it.each([false, true, undefined])(
       "should set `options.special` (= %s) to true when `policy.useSpecial` is true",
       (special) => {
-        const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+        const policy = Object.assign({}, Policies.Password.disabledValue);
         policy.useSpecial = true;
         const builder = new PasswordGeneratorOptionsEvaluator(policy);
         const options = Object.freeze({ ...defaultOptions, special });
@@ -361,7 +361,7 @@ describe("Password generator options builder", () => {
     it.each([1, 2, 3, 4])(
       "should set `options.length` (= %i) to the minimum it is less than the minimum length",
       (length) => {
-        const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+        const policy = Object.assign({}, Policies.Password.disabledValue);
         const builder = new PasswordGeneratorOptionsEvaluator(policy);
         expect(length).toBeLessThan(builder.length.min);
 
@@ -376,7 +376,7 @@ describe("Password generator options builder", () => {
     it.each([5, 10, 50, 100, 128])(
       "should not change `options.length` (= %i) when it is within the boundaries",
       (length) => {
-        const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+        const policy = Object.assign({}, Policies.Password.disabledValue);
         const builder = new PasswordGeneratorOptionsEvaluator(policy);
         expect(length).toBeGreaterThanOrEqual(builder.length.min);
         expect(length).toBeLessThanOrEqual(builder.length.max);
@@ -392,7 +392,7 @@ describe("Password generator options builder", () => {
     it.each([129, 500, 9000])(
       "should set `options.length` (= %i) to the maximum length when it is exceeded",
       (length) => {
-        const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+        const policy = Object.assign({}, Policies.Password.disabledValue);
         const builder = new PasswordGeneratorOptionsEvaluator(policy);
         expect(length).toBeGreaterThan(builder.length.max);
 
@@ -414,7 +414,7 @@ describe("Password generator options builder", () => {
     ])(
       "should set `options.number === %s` when `options.minNumber` (= %i) is set to a value greater than 0",
       (expectedNumber, minNumber) => {
-        const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+        const policy = Object.assign({}, Policies.Password.disabledValue);
         const builder = new PasswordGeneratorOptionsEvaluator(policy);
         const options = Object.freeze({ ...defaultOptions, minNumber });
 
@@ -425,7 +425,7 @@ describe("Password generator options builder", () => {
     );
 
     it("should set `options.minNumber` to the minimum value when `options.number` is true", () => {
-      const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+      const policy = Object.assign({}, Policies.Password.disabledValue);
       const builder = new PasswordGeneratorOptionsEvaluator(policy);
       const options = Object.freeze({ ...defaultOptions, number: true });
 
@@ -435,7 +435,7 @@ describe("Password generator options builder", () => {
     });
 
     it("should set `options.minNumber` to 0 when `options.number` is false", () => {
-      const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+      const policy = Object.assign({}, Policies.Password.disabledValue);
       const builder = new PasswordGeneratorOptionsEvaluator(policy);
       const options = Object.freeze({ ...defaultOptions, number: false });
 
@@ -447,7 +447,7 @@ describe("Password generator options builder", () => {
     it.each([1, 2, 3, 4])(
       "should set `options.minNumber` (= %i) to the minimum it is less than the minimum number",
       (minNumber) => {
-        const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+        const policy = Object.assign({}, Policies.Password.disabledValue);
         policy.numberCount = 5; // arbitrary value greater than minNumber
         expect(minNumber).toBeLessThan(policy.numberCount);
 
@@ -463,7 +463,7 @@ describe("Password generator options builder", () => {
     it.each([1, 3, 5, 7, 9])(
       "should not change `options.minNumber` (= %i) when it is within the boundaries",
       (minNumber) => {
-        const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+        const policy = Object.assign({}, Policies.Password.disabledValue);
         const builder = new PasswordGeneratorOptionsEvaluator(policy);
         expect(minNumber).toBeGreaterThanOrEqual(builder.minDigits.min);
         expect(minNumber).toBeLessThanOrEqual(builder.minDigits.max);
@@ -479,7 +479,7 @@ describe("Password generator options builder", () => {
     it.each([10, 20, 400])(
       "should set `options.minNumber` (= %i) to the maximum digit boundary when it is exceeded",
       (minNumber) => {
-        const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+        const policy = Object.assign({}, Policies.Password.disabledValue);
         const builder = new PasswordGeneratorOptionsEvaluator(policy);
         expect(minNumber).toBeGreaterThan(builder.minDigits.max);
 
@@ -501,7 +501,7 @@ describe("Password generator options builder", () => {
     ])(
       "should set `options.special === %s` when `options.minSpecial` (= %i) is set to a value greater than 0",
       (expectedSpecial, minSpecial) => {
-        const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+        const policy = Object.assign({}, Policies.Password.disabledValue);
         const builder = new PasswordGeneratorOptionsEvaluator(policy);
         const options = Object.freeze({ ...defaultOptions, minSpecial });
 
@@ -512,7 +512,7 @@ describe("Password generator options builder", () => {
     );
 
     it("should set `options.minSpecial` to the minimum value when `options.special` is true", () => {
-      const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+      const policy = Object.assign({}, Policies.Password.disabledValue);
       const builder = new PasswordGeneratorOptionsEvaluator(policy);
       const options = Object.freeze({ ...defaultOptions, special: true });
 
@@ -522,7 +522,7 @@ describe("Password generator options builder", () => {
     });
 
     it("should set `options.minSpecial` to 0 when `options.special` is false", () => {
-      const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+      const policy = Object.assign({}, Policies.Password.disabledValue);
       const builder = new PasswordGeneratorOptionsEvaluator(policy);
       const options = Object.freeze({ ...defaultOptions, special: false });
 
@@ -534,7 +534,7 @@ describe("Password generator options builder", () => {
     it.each([1, 2, 3, 4])(
       "should set `options.minSpecial` (= %i) to the minimum it is less than the minimum special characters",
       (minSpecial) => {
-        const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+        const policy = Object.assign({}, Policies.Password.disabledValue);
         policy.specialCount = 5; // arbitrary value greater than minSpecial
         expect(minSpecial).toBeLessThan(policy.specialCount);
 
@@ -550,7 +550,7 @@ describe("Password generator options builder", () => {
     it.each([1, 3, 5, 7, 9])(
       "should not change `options.minSpecial` (= %i) when it is within the boundaries",
       (minSpecial) => {
-        const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+        const policy = Object.assign({}, Policies.Password.disabledValue);
         const builder = new PasswordGeneratorOptionsEvaluator(policy);
         expect(minSpecial).toBeGreaterThanOrEqual(builder.minSpecialCharacters.min);
         expect(minSpecial).toBeLessThanOrEqual(builder.minSpecialCharacters.max);
@@ -566,7 +566,7 @@ describe("Password generator options builder", () => {
     it.each([10, 20, 400])(
       "should set `options.minSpecial` (= %i) to the maximum special character boundary when it is exceeded",
       (minSpecial) => {
-        const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+        const policy = Object.assign({}, Policies.Password.disabledValue);
         const builder = new PasswordGeneratorOptionsEvaluator(policy);
         expect(minSpecial).toBeGreaterThan(builder.minSpecialCharacters.max);
 
@@ -579,7 +579,7 @@ describe("Password generator options builder", () => {
     );
 
     it("should preserve unknown properties", () => {
-      const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+      const policy = Object.assign({}, Policies.Password.disabledValue);
       const builder = new PasswordGeneratorOptionsEvaluator(policy);
       const options = Object.freeze({
         unknown: "property",
@@ -602,7 +602,7 @@ describe("Password generator options builder", () => {
     ])(
       "should output `options.minLowercase === %i` when `options.lowercase` is %s",
       (expectedMinLowercase, lowercase) => {
-        const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+        const policy = Object.assign({}, Policies.Password.disabledValue);
         const builder = new PasswordGeneratorOptionsEvaluator(policy);
         const options = Object.freeze({ lowercase, ...defaultOptions });
 
@@ -618,7 +618,7 @@ describe("Password generator options builder", () => {
     ])(
       "should output `options.minUppercase === %i` when `options.uppercase` is %s",
       (expectedMinUppercase, uppercase) => {
-        const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+        const policy = Object.assign({}, Policies.Password.disabledValue);
         const builder = new PasswordGeneratorOptionsEvaluator(policy);
         const options = Object.freeze({ uppercase, ...defaultOptions });
 
@@ -634,7 +634,7 @@ describe("Password generator options builder", () => {
     ])(
       "should output `options.minNumber === %i` when `options.number` is %s and `options.minNumber` is not set",
       (expectedMinNumber, number) => {
-        const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+        const policy = Object.assign({}, Policies.Password.disabledValue);
         const builder = new PasswordGeneratorOptionsEvaluator(policy);
         const options = Object.freeze({ number, ...defaultOptions });
 
@@ -652,7 +652,7 @@ describe("Password generator options builder", () => {
     ])(
       "should output `options.number === %s` when `options.minNumber` is %i and `options.number` is not set",
       (expectedNumber, minNumber) => {
-        const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+        const policy = Object.assign({}, Policies.Password.disabledValue);
         const builder = new PasswordGeneratorOptionsEvaluator(policy);
         const options = Object.freeze({ minNumber, ...defaultOptions });
 
@@ -668,7 +668,7 @@ describe("Password generator options builder", () => {
     ])(
       "should output `options.minSpecial === %i` when `options.special` is %s and `options.minSpecial` is not set",
       (special, expectedMinSpecial) => {
-        const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+        const policy = Object.assign({}, Policies.Password.disabledValue);
         const builder = new PasswordGeneratorOptionsEvaluator(policy);
         const options = Object.freeze({ special, ...defaultOptions });
 
@@ -686,7 +686,7 @@ describe("Password generator options builder", () => {
     ])(
       "should output `options.special === %s` when `options.minSpecial` is %i and `options.special` is not set",
       (minSpecial, expectedSpecial) => {
-        const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+        const policy = Object.assign({}, Policies.Password.disabledValue);
         const builder = new PasswordGeneratorOptionsEvaluator(policy);
         const options = Object.freeze({ minSpecial, ...defaultOptions });
 
@@ -707,7 +707,7 @@ describe("Password generator options builder", () => {
         const sumOfMinimums = minLowercase + minUppercase + minNumber + minSpecial;
         expect(sumOfMinimums).toBeLessThan(DefaultPasswordBoundaries.length.min);
 
-        const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+        const policy = Object.assign({}, Policies.Password.disabledValue);
         const builder = new PasswordGeneratorOptionsEvaluator(policy);
         const options = Object.freeze({
           minLowercase,
@@ -732,7 +732,7 @@ describe("Password generator options builder", () => {
       (expectedMinLength, minLowercase, minUppercase, minNumber, minSpecial) => {
         expect(expectedMinLength).toBeGreaterThanOrEqual(DefaultPasswordBoundaries.length.min);
 
-        const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+        const policy = Object.assign({}, Policies.Password.disabledValue);
         const builder = new PasswordGeneratorOptionsEvaluator(policy);
         const options = Object.freeze({
           minLowercase,
@@ -749,7 +749,7 @@ describe("Password generator options builder", () => {
     );
 
     it("should preserve unknown properties", () => {
-      const policy = Object.assign({}, DisabledPasswordGeneratorPolicy);
+      const policy = Object.assign({}, Policies.Password.disabledValue);
       const builder = new PasswordGeneratorOptionsEvaluator(policy);
       const options = Object.freeze({
         unknown: "property",
