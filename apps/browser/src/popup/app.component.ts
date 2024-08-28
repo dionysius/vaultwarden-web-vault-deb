@@ -20,7 +20,6 @@ import {
   ToastService,
 } from "@bitwarden/components";
 
-import { BrowserApi } from "../platform/browser/browser-api";
 import { PopupViewCacheService } from "../platform/popup/view-cache/popup-view-cache.service";
 import { initPopupClosedListener } from "../platform/services/popup-view-cache-background.service";
 import { BrowserSendStateService } from "../tools/popup/services/browser-send-state.service";
@@ -128,16 +127,6 @@ export class AppComponent implements OnInit, OnDestroy {
             this.showNativeMessagingFingerprintDialog(msg);
           } else if (msg.command === "showToast") {
             this.toastService._showToast(msg);
-          } else if (msg.command === "reloadProcess") {
-            const forceWindowReload =
-              this.platformUtilsService.isSafari() ||
-              this.platformUtilsService.isFirefox() ||
-              this.platformUtilsService.isOpera();
-            // Wait to make sure background has reloaded first.
-            window.setTimeout(
-              () => BrowserApi.reloadExtension(forceWindowReload ? window : null),
-              2000,
-            );
           } else if (msg.command === "reloadPopup") {
             // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
             // eslint-disable-next-line @typescript-eslint/no-floating-promises

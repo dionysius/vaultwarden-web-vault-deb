@@ -1028,12 +1028,8 @@ export default class MainBackground {
     );
 
     const systemUtilsServiceReloadCallback = async () => {
-      const forceWindowReload =
-        this.platformUtilsService.isSafari() ||
-        this.platformUtilsService.isFirefox() ||
-        this.platformUtilsService.isOpera();
       await this.taskSchedulerService.clearAllScheduledTasks();
-      BrowserApi.reloadExtension(forceWindowReload ? self : null);
+      BrowserApi.reloadExtension();
     };
 
     this.systemService = new SystemService(
