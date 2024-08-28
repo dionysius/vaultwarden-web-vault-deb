@@ -1,7 +1,9 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
+import { featureFlaggedRoute } from "@bitwarden/angular/platform/utils/feature-flagged-route";
 import { canAccessBillingTab } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
+import { FeatureFlag } from "@bitwarden/common/enums/feature-flag.enum";
 
 import { organizationPermissionsGuard } from "../../admin-console/organizations/guards/org-permissions.guard";
 import { organizationIsUnmanaged } from "../../billing/guards/organization-is-unmanaged.guard";
@@ -11,6 +13,7 @@ import { PaymentMethodComponent } from "../shared";
 import { OrgBillingHistoryViewComponent } from "./organization-billing-history-view.component";
 import { OrganizationSubscriptionCloudComponent } from "./organization-subscription-cloud.component";
 import { OrganizationSubscriptionSelfhostComponent } from "./organization-subscription-selfhost.component";
+import { OrganizationPaymentMethodComponent } from "./payment-method/organization-payment-method.component";
 
 const routes: Routes = [
   {
@@ -25,17 +28,21 @@ const routes: Routes = [
           : OrganizationSubscriptionCloudComponent,
         data: { titleId: "subscription" },
       },
-      {
-        path: "payment-method",
-        component: PaymentMethodComponent,
-        canActivate: [
-          organizationPermissionsGuard((org) => org.canEditPaymentMethods),
-          organizationIsUnmanaged,
-        ],
-        data: {
-          titleId: "paymentMethod",
+      ...featureFlaggedRoute({
+        defaultComponent: PaymentMethodComponent,
+        flaggedComponent: OrganizationPaymentMethodComponent,
+        featureFlag: FeatureFlag.AC2476_DeprecateStripeSourcesAPI,
+        routeOptions: {
+          path: "payment-method",
+          canActivate: [
+            organizationPermissionsGuard((org) => org.canEditPaymentMethods),
+            organizationIsUnmanaged,
+          ],
+          data: {
+            titleId: "paymentMethod",
+          },
         },
-      },
+      }),
       {
         path: "history",
         component: OrgBillingHistoryViewComponent,

@@ -11,7 +11,7 @@
       <input bitInput type="number" step="1" placeholder="xx" formControlName="amount2" />
       <span bitPrefix>$0.</span>
     </bit-form-field>
-    <button type="submit" bitButton bitFormButton buttonType="primary">
+    <button *ngIf="onSubmit" type="submit" bitButton bitFormButton buttonType="primary">
       {{ "submit" | i18n }}
     </button>
   </form>

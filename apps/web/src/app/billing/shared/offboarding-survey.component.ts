@@ -2,7 +2,7 @@ import { DIALOG_DATA, DialogConfig, DialogRef } from "@angular/cdk/dialog";
 import { Component, Inject } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
 
-import { BillingApiServiceAbstraction as BillingApiService } from "@bitwarden/common/billing/abstractions/billilng-api.service.abstraction";
+import { BillingApiServiceAbstraction as BillingApiService } from "@bitwarden/common/billing/abstractions/billing-api.service.abstraction";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { DialogService, ToastService } from "@bitwarden/components";

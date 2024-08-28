@@ -7,8 +7,6 @@ import {
   InvoicesComponent,
   NoInvoicesComponent,
   ManageTaxInformationComponent,
-  SelectPaymentMethodComponent,
-  VerifyBankAccountComponent,
 } from "@bitwarden/angular/billing/components";
 import {
   AsyncActionsModule,
@@ -116,8 +114,6 @@ import { IconComponent } from "./vault/components/icon.component";
     InvoicesComponent,
     NoInvoicesComponent,
     ManageTaxInformationComponent,
-    SelectPaymentMethodComponent,
-    VerifyBankAccountComponent,
     TwoFactorIconComponent,
   ],
   exports: [
@@ -153,8 +149,6 @@ import { IconComponent } from "./vault/components/icon.component";
     InvoicesComponent,
     NoInvoicesComponent,
     ManageTaxInformationComponent,
-    SelectPaymentMethodComponent,
-    VerifyBankAccountComponent,
     TwoFactorIconComponent,
   ],
   providers: [

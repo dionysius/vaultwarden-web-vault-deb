@@ -9,7 +9,7 @@ import { ProviderService } from "@bitwarden/common/admin-console/abstractions/pr
 import { ProviderUserType } from "@bitwarden/common/admin-console/enums";
 import { Provider } from "@bitwarden/common/admin-console/models/domain/provider";
 import { ProviderOrganizationOrganizationDetailsResponse } from "@bitwarden/common/admin-console/models/response/provider/provider-organization.response";
-import { BillingApiServiceAbstraction as BillingApiService } from "@bitwarden/common/billing/abstractions/billilng-api.service.abstraction";
+import { BillingApiServiceAbstraction as BillingApiService } from "@bitwarden/common/billing/abstractions/billing-api.service.abstraction";
 import { hasConsolidatedBilling } from "@bitwarden/common/billing/abstractions/provider-billing.service.abstraction";
 import { PlanResponse } from "@bitwarden/common/billing/models/response/plan.response";
 import { ConfigService } from "@bitwarden/common/platform/abstractions/config/config.service";

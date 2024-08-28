@@ -43,24 +43,31 @@
   <ng-container *ngIf="usingCard">
     <div class="tw-grid tw-grid-cols-2 tw-gap-4 tw-mb-4">
       <div class="tw-col-span-1">
-        <label for="stripe-card-number">{{ "number" | i18n }}</label>
+        <label for="stripe-card-number">
+          {{ "number" | i18n }}
+          <span class="tw-text-xs tw-font-normal">({{ "required" | i18n }})</span>
+        </label>
         <div id="stripe-card-number" class="form-control stripe-form-control"></div>
       </div>
       <div class="tw-col-span-1 tw-flex tw-items-end">
         <img
-          src="../../images/cards.png"
+          src="../../../images/cards.png"
           alt="Visa, MasterCard, Discover, AmEx, JCB, Diners Club, UnionPay"
           class="tw-max-w-full"
         />
       </div>
       <div class="tw-col-span-1">
-        <label for="stripe-card-expiry">{{ "expiration" | i18n }}</label>
+        <label for="stripe-card-expiry">
+          {{ "expiration" | i18n }}
+          <span class="tw-text-xs tw-font-normal">({{ "required" | i18n }})</span>
+        </label>
         <div id="stripe-card-expiry" class="form-control stripe-form-control"></div>
       </div>
       <div class="tw-col-span-1">
         <div class="tw-flex">
           <label for="stripe-card-cvc">
             {{ "securityCode" | i18n }}
+            <span class="tw-text-xs tw-font-normal">({{ "required" | i18n }})</span>
           </label>
           <a
             href="https://www.cvvnumber.com/cvv.html"
@@ -82,7 +89,7 @@
     <app-callout type="warning" title="{{ 'verifyBankAccount' | i18n }}">
       {{ "verifyBankAccountInitialDesc" | i18n }} {{ "verifyBankAccountFailureWarning" | i18n }}
     </app-callout>
-    <div class="tw-grid tw-grid-cols-2 tw-gap-4" formGroupName="bankInformation">
+    <div class="tw-grid tw-grid-cols-2 tw-gap-4 tw-mb-4" formGroupName="bankInformation">
       <bit-form-field class="tw-col-span-1" disableMargin>
         <bit-label>{{ "routingNumber" | i18n }}</bit-label>
         <input

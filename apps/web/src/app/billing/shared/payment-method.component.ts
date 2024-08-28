@@ -19,7 +19,7 @@ import { AddCreditDialogResult, openAddCreditDialog } from "./add-credit-dialog.
 import {
   AdjustPaymentDialogResult,
   openAdjustPaymentDialog,
-} from "./adjust-payment-dialog.component";
+} from "./adjust-payment-dialog/adjust-payment-dialog.component";
 import { TaxInfoComponent } from "./tax-info.component";
 
 @Component({

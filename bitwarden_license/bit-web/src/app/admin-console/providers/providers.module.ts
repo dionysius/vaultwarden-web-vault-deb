@@ -16,8 +16,6 @@ import {
   ManageClientsComponent,
   ManageClientSubscriptionDialogComponent,
   ProviderBillingHistoryComponent,
-  ProviderPaymentMethodComponent,
-  ProviderSelectPaymentMethodDialogComponent,
   ProviderSubscriptionComponent,
   ProviderSubscriptionStatusComponent,
 } from "../../billing/providers";
@@ -80,8 +78,6 @@ import { SetupComponent } from "./setup/setup.component";
     ManageClientSubscriptionDialogComponent,
     ProviderBillingHistoryComponent,
     ProviderSubscriptionComponent,
-    ProviderSelectPaymentMethodDialogComponent,
-    ProviderPaymentMethodComponent,
     ProviderSubscriptionStatusComponent,
   ],
   providers: [WebProviderService],

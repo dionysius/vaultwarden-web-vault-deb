@@ -12,7 +12,7 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { DialogService, ToastService } from "@bitwarden/components";
 
-import { PaymentComponent } from "./payment.component";
+import { PaymentComponent } from "./payment/payment.component";
 
 export interface AdjustStorageDialogData {
   storageGbPrice: number;

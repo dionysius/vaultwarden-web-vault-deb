@@ -7,7 +7,7 @@ import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { PaymentMethodType } from "@bitwarden/common/billing/enums";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 
-import { SharedModule } from "../../shared";
+import { SharedModule } from "../../../shared";
 
 @Component({
   selector: "app-payment",

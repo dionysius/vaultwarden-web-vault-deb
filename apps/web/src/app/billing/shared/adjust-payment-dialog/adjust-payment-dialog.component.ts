@@ -10,8 +10,8 @@ import { ConfigService } from "@bitwarden/common/platform/abstractions/config/co
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { DialogService, ToastService } from "@bitwarden/components";
 
-import { PaymentComponent } from "./payment.component";
-import { TaxInfoComponent } from "./tax-info.component";
+import { PaymentComponent } from "../payment/payment.component";
+import { TaxInfoComponent } from "../tax-info.component";
 
 export interface AdjustPaymentDialogData {
   organizationId: string;

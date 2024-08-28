@@ -2,7 +2,7 @@ import { DIALOG_DATA, DialogConfig, DialogRef } from "@angular/cdk/dialog";
 import { Component, Inject, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 
-import { BillingApiServiceAbstraction } from "@bitwarden/common/billing/abstractions/billilng-api.service.abstraction";
+import { BillingApiServiceAbstraction } from "@bitwarden/common/billing/abstractions/billing-api.service.abstraction";
 import { PlanType } from "@bitwarden/common/billing/enums";
 import { PlanResponse } from "@bitwarden/common/billing/models/response/plan.response";
 import { ProviderPlanResponse } from "@bitwarden/common/billing/models/response/provider-subscription-response";

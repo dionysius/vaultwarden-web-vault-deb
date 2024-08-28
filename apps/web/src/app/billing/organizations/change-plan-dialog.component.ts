@@ -37,7 +37,7 @@ import { MessagingService } from "@bitwarden/common/platform/abstractions/messag
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 import { DialogService, ToastService } from "@bitwarden/components";
 
-import { PaymentComponent } from "../shared/payment.component";
+import { PaymentComponent } from "../shared/payment/payment.component";
 import { TaxInfoComponent } from "../shared/tax-info.component";
 
 type ChangePlanDialogParams = {

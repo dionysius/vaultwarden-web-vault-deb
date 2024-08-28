@@ -1,6 +1,6 @@
 import { PaymentMethodType } from "@bitwarden/common/billing/enums";
 
-export type TokenizedPaymentMethod = {
+export class TokenizedPaymentSourceRequest {
   type: PaymentMethodType;
   token: string;
-};
+}

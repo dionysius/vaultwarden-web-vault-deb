@@ -41,7 +41,7 @@ import { ToastService } from "@bitwarden/components";
 
 import { OrganizationCreateModule } from "../../admin-console/organizations/create/organization-create.module";
 import { BillingSharedModule, secretsManagerSubscribeFormFactory } from "../shared";
-import { PaymentComponent } from "../shared/payment.component";
+import { PaymentComponent } from "../shared/payment/payment.component";
 import { TaxInfoComponent } from "../shared/tax-info.component";
 
 interface OnSuccessArgs {
