@@ -22,6 +22,7 @@
           type="button"
           (click)="openWebsite(login.launchUri)"
           data-testid="launch-website"
+          [attr.aria-label]="('launch' | i18n) + ' ' + login.hostOrUri"
         ></button>
         <button
           bitIconButton="bwi-clone"
