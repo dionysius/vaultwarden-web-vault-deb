@@ -20,6 +20,7 @@ import { OrganizationId, UserId } from "../../types/guid";
 import { UserKey, MasterKey } from "../../types/key";
 import { VaultTimeoutStringType } from "../../types/vault-timeout.type";
 import { CryptoFunctionService } from "../abstractions/crypto-function.service";
+import { UserPrivateKeyDecryptionFailedError } from "../abstractions/crypto.service";
 import { EncryptService } from "../abstractions/encrypt.service";
 import { KeyGenerationService } from "../abstractions/key-generation.service";
 import { LogService } from "../abstractions/log.service";
@@ -315,6 +316,70 @@ describe("cryptoService", () => {
         expect(pinService.clearPinKeyEncryptedUserKeyPersistent).toHaveBeenCalledWith(mockUserId);
         expect(pinService.clearPinKeyEncryptedUserKeyEphemeral).toHaveBeenCalledWith(mockUserId);
       });
+    });
+  });
+
+  describe("setUserKeys", () => {
+    let mockUserKey: UserKey;
+    let mockEncPrivateKey: EncryptedString;
+    let everHadUserKeyState: FakeSingleUserState<boolean>;
+
+    beforeEach(() => {
+      const mockRandomBytes = new Uint8Array(64) as CsprngArray;
+      mockUserKey = new SymmetricCryptoKey(mockRandomBytes) as UserKey;
+      mockEncPrivateKey = new SymmetricCryptoKey(mockRandomBytes).toString() as EncryptedString;
+      everHadUserKeyState = stateProvider.singleUser.getFake(mockUserId, USER_EVER_HAD_USER_KEY);
+
+      // Initialize storage
+      everHadUserKeyState.nextState(null);
+
+      // Mock private key decryption
+      encryptService.decryptToBytes.mockResolvedValue(mockRandomBytes);
+    });
+
+    it("throws if userKey is null", async () => {
+      await expect(cryptoService.setUserKeys(null, mockEncPrivateKey, mockUserId)).rejects.toThrow(
+        "No userKey provided.",
+      );
+    });
+
+    it("throws if encPrivateKey is null", async () => {
+      await expect(cryptoService.setUserKeys(mockUserKey, null, mockUserId)).rejects.toThrow(
+        "No encPrivateKey provided.",
+      );
+    });
+
+    it("throws if userId is null", async () => {
+      await expect(cryptoService.setUserKeys(mockUserKey, mockEncPrivateKey, null)).rejects.toThrow(
+        "No userId provided.",
+      );
+    });
+
+    it("throws if encPrivateKey cannot be decrypted with the userKey", async () => {
+      encryptService.decryptToBytes.mockResolvedValue(null);
+
+      await expect(
+        cryptoService.setUserKeys(mockUserKey, mockEncPrivateKey, mockUserId),
+      ).rejects.toThrow(UserPrivateKeyDecryptionFailedError);
+    });
+
+    // We already have tests for setUserKey, so we just need to test that the correct methods are called
+    it("calls setUserKey with the userKey and userId", async () => {
+      const setUserKeySpy = jest.spyOn(cryptoService, "setUserKey");
+
+      await cryptoService.setUserKeys(mockUserKey, mockEncPrivateKey, mockUserId);
+
+      expect(setUserKeySpy).toHaveBeenCalledWith(mockUserKey, mockUserId);
+    });
+
+    // We already have tests for setPrivateKey, so we just need to test that the correct methods are called
+    // TODO: Move those tests into here since `setPrivateKey` will be converted to a private method
+    it("calls setPrivateKey with the encPrivateKey and userId", async () => {
+      const setEncryptedPrivateKeySpy = jest.spyOn(cryptoService, "setPrivateKey");
+
+      await cryptoService.setUserKeys(mockUserKey, mockEncPrivateKey, mockUserId);
+
+      expect(setEncryptedPrivateKeySpy).toHaveBeenCalledWith(mockEncPrivateKey, mockUserId);
     });
   });
 

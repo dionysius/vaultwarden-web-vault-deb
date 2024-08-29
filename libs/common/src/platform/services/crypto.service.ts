@@ -38,6 +38,7 @@ import { CryptoFunctionService } from "../abstractions/crypto-function.service";
 import {
   CipherDecryptionKeys,
   CryptoService as CryptoServiceAbstraction,
+  UserPrivateKeyDecryptionFailedError,
 } from "../abstractions/crypto.service";
 import { EncryptService } from "../abstractions/encrypt.service";
 import { KeyGenerationService } from "../abstractions/key-generation.service";
@@ -102,6 +103,30 @@ export class CryptoService implements CryptoServiceAbstraction {
     await this.stateProvider.setUserState(USER_EVER_HAD_USER_KEY, true, userId);
 
     await this.storeAdditionalKeys(key, userId);
+  }
+
+  async setUserKeys(
+    userKey: UserKey,
+    encPrivateKey: EncryptedString,
+    userId: UserId,
+  ): Promise<void> {
+    if (userKey == null) {
+      throw new Error("No userKey provided. Lock the user to clear the key");
+    }
+    if (encPrivateKey == null) {
+      throw new Error("No encPrivateKey provided.");
+    }
+    if (userId == null) {
+      throw new Error("No userId provided.");
+    }
+
+    const decryptedPrivateKey = await this.decryptPrivateKey(encPrivateKey, userKey);
+    if (decryptedPrivateKey == null) {
+      throw new UserPrivateKeyDecryptionFailedError();
+    }
+
+    await this.setUserKey(userKey, userId);
+    await this.setPrivateKey(encPrivateKey, userId);
   }
 
   async refreshAdditionalKeys(): Promise<void> {
