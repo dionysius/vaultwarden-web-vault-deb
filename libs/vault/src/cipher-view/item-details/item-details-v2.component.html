@@ -47,12 +47,12 @@
         *ngIf="cipher.collectionIds && collections"
         [attr.aria-label]="'collection' | i18n"
       >
-        <ul data-testid="collections">
+        <ul data-testid="collections" [ngClass]="{ 'tw-mb-0': !cipher.folderId }">
           <li
             *ngFor="let collection of collections; let last = last"
             class="tw-flex tw-items-center tw-list-none"
             bitTypography="body2"
-            [ngClass]="{ 'tw-mb-3': last }"
+            [ngClass]="{ 'tw-mb-3': last && cipher.folderId }"
             [attr.aria-label]="collection.name"
           >
             <i
