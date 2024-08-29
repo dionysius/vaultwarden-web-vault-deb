@@ -39,6 +39,7 @@ import { I18nService as I18nServiceAbstraction } from "@bitwarden/common/platfor
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService as PlatformUtilsServiceAbstraction } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { AbstractStorageService } from "@bitwarden/common/platform/abstractions/storage.service";
+import { BiometricsService } from "@bitwarden/common/platform/biometrics/biometric.service";
 import { ThemeType } from "@bitwarden/common/platform/enums";
 import { MemoryStorageService } from "@bitwarden/common/platform/services/memory-storage.service";
 // eslint-disable-next-line import/no-restricted-paths -- Implementation for memory storage
@@ -61,6 +62,7 @@ import { WebSetPasswordJitService, WebRegistrationFinishService } from "../auth"
 import { AcceptOrganizationInviteService } from "../auth/organization-invite/accept-organization.service";
 import { HtmlStorageService } from "../core/html-storage.service";
 import { I18nService } from "../core/i18n.service";
+import { WebBiometricsService } from "../platform/web-biometric.service";
 import { WebEnvironmentService } from "../platform/web-environment.service";
 import { WebMigrationRunner } from "../platform/web-migration-runner";
 import { WebStorageServiceProvider } from "../platform/web-storage-service.provider";
@@ -162,6 +164,11 @@ const safeProviders: SafeProvider[] = [
     provide: EnvironmentService,
     useClass: WebEnvironmentService,
     deps: [WINDOW, StateProvider, AccountService],
+  }),
+  safeProvider({
+    provide: BiometricsService,
+    useClass: WebBiometricsService,
+    deps: [],
   }),
   safeProvider({
     provide: ThemeStateService,
