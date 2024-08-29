@@ -1,3 +1,5 @@
+import { Constraints } from "@bitwarden/common/tools/types";
+
 import { PolicyEvaluator } from "../abstractions";
 import { DefaultPasswordBoundaries } from "../data";
 import { Boundary, PasswordGeneratorPolicy, PasswordGenerationOptions } from "../types";
@@ -5,8 +7,19 @@ import { Boundary, PasswordGeneratorPolicy, PasswordGenerationOptions } from "..
 /** Enforces policy for password generation.
  */
 export class PasswordGeneratorOptionsEvaluator
-  implements PolicyEvaluator<PasswordGeneratorPolicy, PasswordGenerationOptions>
+  implements
+    PolicyEvaluator<PasswordGeneratorPolicy, PasswordGenerationOptions>,
+    Constraints<PasswordGenerationOptions>
 {
+  // Constraints<PasswordGenerationOptions> compatibility
+  get minNumber() {
+    return this.minDigits;
+  }
+
+  get minSpecial() {
+    return this.minSpecialCharacters;
+  }
+
   // This design is not ideal, but it is a step towards a more robust password
   // generator. Ideally, `sanitize` would be implemented on an options class,
   // and `applyPolicy` would be implemented on a policy class, "mise en place".

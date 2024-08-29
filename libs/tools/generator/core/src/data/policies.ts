@@ -39,6 +39,7 @@ const PASSWORD = Object.freeze({
   }),
   combine: passwordLeastPrivilege,
   createEvaluator: (policy) => new PasswordGeneratorOptionsEvaluator(policy),
+  createEvaluatorV2: (policy) => new PasswordGeneratorOptionsEvaluator(policy),
 } as PolicyConfiguration<PasswordGeneratorPolicy, PasswordGenerationOptions>);
 
 /** Policy configurations */

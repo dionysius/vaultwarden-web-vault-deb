@@ -1,11 +1,14 @@
 import { Component } from "@angular/core";
 
-import { PassphraseSettingsComponent } from "@bitwarden/generator-components";
+import {
+  PassphraseSettingsComponent,
+  PasswordSettingsComponent,
+} from "@bitwarden/generator-components";
 
 @Component({
   standalone: true,
   selector: "credential-generator",
   templateUrl: "credential-generator.component.html",
-  imports: [PassphraseSettingsComponent],
+  imports: [PassphraseSettingsComponent, PasswordSettingsComponent],
 })
 export class CredentialGeneratorComponent {}
