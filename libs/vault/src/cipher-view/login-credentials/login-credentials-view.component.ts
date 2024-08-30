@@ -20,6 +20,11 @@ import {
 
 import { BitTotpCountdownComponent } from "../../components/totp-countdown/totp-countdown.component";
 
+type TotpCodeValues = {
+  totpCode: string;
+  totpCodeFormatted?: string;
+};
+
 @Component({
   selector: "app-login-credentials-view",
   templateUrl: "login-credentials-view.component.html",
@@ -47,7 +52,7 @@ export class LoginCredentialsViewComponent {
     );
   showPasswordCount: boolean = false;
   passwordRevealed: boolean = false;
-  totpCopyCode: string;
+  totpCodeCopyObj: TotpCodeValues;
   private datePipe = inject(DatePipe);
 
   constructor(
@@ -77,7 +82,7 @@ export class LoginCredentialsViewComponent {
     this.showPasswordCount = !this.showPasswordCount;
   }
 
-  setTotpCopyCode(e: any) {
-    this.totpCopyCode = e;
+  setTotpCopyCode(e: TotpCodeValues) {
+    this.totpCodeCopyObj = e;
   }
 }
