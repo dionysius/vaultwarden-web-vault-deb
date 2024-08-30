@@ -36,7 +36,7 @@
     "message": "Tìm kiếm trong Kho"
   },
   "addItem": {
-    "message": "Thêm Mục"
+    "message": "Thêm"
   },
   "shared": {
     "message": "Đã chia sẻ"
@@ -64,13 +64,13 @@
     "message": "Chọn một tổ chức mà bạn muốn chuyển mục này đến. Việc chuyển đến một tổ chức sẽ chuyển quyền sở hữu mục này cho tổ chức đó. Bạn sẽ không còn là chủ sở hữu trực tiếp của mục này khi đã chuyển."
   },
   "attachments": {
-    "message": "Tệp đính kèm"
+    "message": "Đính kèm"
   },
   "viewItem": {
-    "message": "Xem mục"
+    "message": "Chi tiết"
   },
   "name": {
-    "message": "Tên mục"
+    "message": "Tên"
   },
   "uri": {
     "message": "Đường dẫn"
@@ -86,7 +86,7 @@
     }
   },
   "newUri": {
-    "message": "URL Mới"
+    "message": "URI Mới"
   },
   "username": {
     "message": "Tên người dùng"
@@ -98,16 +98,16 @@
     "message": "Cụm từ mật khẩu"
   },
   "editItem": {
-    "message": "Chỉnh sửa mục"
+    "message": "Chỉnh sửa"
   },
   "emailAddress": {
-    "message": "Địa chỉ Email"
+    "message": "Địa chỉ email"
   },
   "verificationCodeTotp": {
     "message": "Mã xác thực (TOTP)"
   },
   "website": {
-    "message": "Trang web"
+    "message": "Địa chỉ"
   },
   "notes": {
     "message": "Ghi chú"
@@ -555,7 +555,7 @@
     "message": "Tham gia tổ chức"
   },
   "finishJoiningThisOrganizationBySettingAMasterPassword": {
-    "message": "Finish joining this organization by setting a master password."
+    "message": "Hoàn tất gia nhập tổ chức này bằng cách đặt một mật khẩu chính."
   },
   "settings": {
     "message": "Cài đặt"
@@ -604,10 +604,10 @@
     "message": "Tài khoản của bạn đã được tạo. Bạn có thể đăng nhập bây giờ."
   },
   "newAccountCreated2": {
-    "message": "Your new account has been created!"
+    "message": "Tài khoản của bạn đã được tạo thành công!"
   },
   "youHaveBeenLoggedIn": {
-    "message": "You have been logged in!"
+    "message": "Bạn đã đăng nhập thành công!"
   },
   "masterPassSent": {
     "message": "Chúng tôi đã gửi cho bạn email có chứa gợi ý mật khẩu chính của bạn."
@@ -1181,7 +1181,7 @@
     "message": "Bạn có thể nâng cấp làm thành viên cao cấp trong kho bitwarden nền web. Bạn có muốn truy cập trang web bây giờ?"
   },
   "premiumPurchaseAlertV2": {
-    "message": "You can purchase Premium from your account settings on the Bitwarden web app."
+    "message": "Bạn có thể mua gói Premium từ cài đặt tài khoản trên trang Bitwarden."
   },
   "premiumCurrentMember": {
     "message": "Bạn là một thành viên cao cấp!"
@@ -1520,13 +1520,13 @@
     "message": "Cài đặt Windows Hello bổ sung"
   },
   "unlockWithPolkit": {
-    "message": "Unlock with system authentication"
+    "message": "Mở khóa bằng bảo mật hệ thống"
   },
   "windowsHelloConsentMessage": {
     "message": "Xác minh cho Bitwarden."
   },
   "polkitConsentMessage": {
-    "message": "Authenticate to unlock Bitwarden."
+    "message": "Xác thực để mở khóa Bitwarden."
   },
   "unlockWithTouchId": {
     "message": "Mở khóa với Touch ID"
@@ -1541,7 +1541,7 @@
     "message": "Yêu cầu xác minh Windows Hello khi mở"
   },
   "autoPromptPolkit": {
-    "message": "Ask for system authentication on launch"
+    "message": "Hỏi xác thực hệ thống khi khởi chạy"
   },
   "autoPromptTouchId": {
     "message": "Yêu cầu xác minh Touch ID khi mở"
@@ -1823,10 +1823,10 @@
     "message": "Sinh trắc học trên trình duyệt yêu cầu sinh trắc học trên máy tính phải được cài đặt trước."
   },
   "biometricsManualSetupTitle": {
-    "message": "Automatic setup not available"
+    "message": "Thiết lập sinh trắc tự động không khả dụng"
   },
   "biometricsManualSetupDesc": {
-    "message": "Due to the installation method, biometrics support could not be automatically enabled. Would you like to open the documentation on how to do this manually?"
+    "message": "Do phương pháp cài đặt, sinh trắc học không thể được bật tự động. Bạn có muốn mở hướng dẫn cách thực hiện thủ công?"
   },
   "personalOwnershipSubmitError": {
     "message": "Do chính sách doanh nghiệp, bạn bị hạn chế lưu các mục vào kho cá nhân của mình. Thay đổi tùy chọn quyền sở hữu thành một tổ chức và chọn từ các bộ sưu tập có sẵn."
@@ -2040,7 +2040,7 @@
     "message": "Mật khẩu chính của bạn không đáp ứng chính sách tổ chức của bạn. Để truy cập kho, bạn phải cập nhật mật khẩu chính của mình ngay bây giờ. Việc tiếp tục sẽ đăng xuất bạn khỏi phiên hiện tại và bắt buộc đăng nhập lại. Các phiên hoạt động trên các thiết bị khác có thể tiếp tục duy trì hoạt động trong tối đa một giờ."
   },
   "tdeDisabledMasterPasswordRequired": {
-    "message": "Your organization has disabled trusted device encryption. Please set a master password to access your vault."
+    "message": "Tổ chức của bạn đã vô hiệu hóa mã hóa bằng thiết bị đáng tin cậy. Vui lòng đặt mật khẩu chính để truy cập Kho của bạn."
   },
   "tryAgain": {
     "message": "Thử lại"
@@ -3054,12 +3054,12 @@
     "message": "Dữ liệu"
   },
   "fileSends": {
-    "message": "File Sends"
+    "message": "Gửi file"
   },
   "textSends": {
-    "message": "Text Sends"
+    "message": "Gửi tin nhắn"
   },
   "ssoError": {
-    "message": "No free ports could be found for the sso login."
+    "message": "Không thể tìm thấy cổng trống để đăng nhập SSO."
   }
 }
