@@ -345,6 +345,13 @@ export class OrganizationSubscriptionCloudComponent implements OnInit, OnDestroy
     );
   }
 
+  shownSelfHost(): boolean {
+    return (
+      this.sub?.plan.productTier !== ProductTierType.Teams &&
+      this.sub?.plan.productTier !== ProductTierType.Free
+    );
+  }
+
   cancelSubscription = async () => {
     const reference = openOffboardingSurvey(this.dialogService, {
       data: {
