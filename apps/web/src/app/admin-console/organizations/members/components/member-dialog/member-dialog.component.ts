@@ -487,7 +487,7 @@ export class MemberDialogComponent implements OnDestroy {
       }
     }
 
-    await this.organizationUserService.deleteOrganizationUser(
+    await this.organizationUserService.removeOrganizationUser(
       this.params.organizationId,
       this.params.organizationUserId,
     );

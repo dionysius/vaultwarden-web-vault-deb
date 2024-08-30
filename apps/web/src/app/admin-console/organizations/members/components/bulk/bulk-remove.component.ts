@@ -45,7 +45,7 @@ export class BulkRemoveComponent {
   submit = async () => {
     this.loading = true;
     try {
-      const response = await this.deleteUsers();
+      const response = await this.removeUsers();
 
       response.data.forEach((entry) => {
         const error = entry.error !== "" ? entry.error : this.i18nService.t("bulkRemovedMessage");
@@ -59,8 +59,8 @@ export class BulkRemoveComponent {
     this.loading = false;
   };
 
-  protected async deleteUsers() {
-    return await this.organizationUserService.deleteManyOrganizationUsers(
+  protected async removeUsers() {
+    return await this.organizationUserService.removeManyOrganizationUsers(
       this.organizationId,
       this.users.map((user) => user.id),
     );

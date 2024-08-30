@@ -96,7 +96,7 @@ export abstract class BaseMembersComponent<UserView extends UserViewTypes> {
 
   abstract edit(user: UserView): void;
   abstract getUsers(): Promise<ListResponse<UserView> | UserView[]>;
-  abstract deleteUser(id: string): Promise<void>;
+  abstract removeUser(id: string): Promise<void>;
   abstract reinviteUser(id: string): Promise<void>;
   abstract confirmUser(user: UserView, publicKey: Uint8Array): Promise<void>;
 
@@ -132,7 +132,7 @@ export abstract class BaseMembersComponent<UserView extends UserViewTypes> {
       return false;
     }
 
-    this.actionPromise = this.deleteUser(user.id);
+    this.actionPromise = this.removeUser(user.id);
     try {
       await this.actionPromise;
       this.toastService.showToast({
