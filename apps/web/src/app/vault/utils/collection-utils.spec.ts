@@ -24,5 +24,16 @@ describe("CollectionUtils Service", () => {
       expect(result[0].node.name).toBe("Parent");
       expect(result[0].children[0].node.name).toBe("Child");
     });
+
+    it("should return an empty array if no collections are provided", () => {
+      // Arrange
+      const collections: CollectionView[] = [];
+
+      // Act
+      const result = getNestedCollectionTree(collections);
+
+      // Assert
+      expect(result).toEqual([]);
+    });
   });
 });
