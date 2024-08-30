@@ -3,6 +3,15 @@
     {{ "cardExpiredMessage" | i18n }}
   </bit-callout>
 
+  <!-- HELPER TEXT -->
+  <p
+    class="tw-text-sm tw-text-muted"
+    bitTypography="helper"
+    *ngIf="cipher?.isDeleted && !cipher?.edit"
+  >
+    {{ "noEditPermissions" | i18n }}
+  </p>
+
   <!-- ITEM DETAILS -->
   <app-item-details-v2
     [cipher]="cipher"

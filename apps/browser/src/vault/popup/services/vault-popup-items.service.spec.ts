@@ -358,6 +358,24 @@ describe("VaultPopupItemsService", () => {
     });
   });
 
+  describe("deletedCiphers$", () => {
+    it("should return deleted ciphers", (done) => {
+      const ciphers = [
+        { id: "1", type: CipherType.Login, name: "Login 1", isDeleted: true },
+        { id: "2", type: CipherType.Login, name: "Login 2", isDeleted: true },
+        { id: "3", type: CipherType.Login, name: "Login 3", isDeleted: true },
+        { id: "4", type: CipherType.Login, name: "Login 4", isDeleted: false },
+      ] as CipherView[];
+
+      cipherServiceMock.getAllDecrypted.mockResolvedValue(ciphers);
+
+      service.deletedCiphers$.subscribe((deletedCiphers) => {
+        expect(deletedCiphers.length).toBe(3);
+        done();
+      });
+    });
+  });
+
   describe("hasFilterApplied$", () => {
     it("should return true if the search term provided is searchable", (done) => {
       searchService.isSearchable.mockImplementation(async () => true);

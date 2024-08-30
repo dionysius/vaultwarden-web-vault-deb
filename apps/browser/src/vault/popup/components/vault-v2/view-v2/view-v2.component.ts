@@ -162,9 +162,28 @@ export class ViewV2Component {
     return true;
   };
 
+  restore = async (): Promise<void> => {
+    try {
+      await this.cipherService.restoreWithServer(this.cipher.id);
+    } catch (e) {
+      this.logService.error(e);
+    }
+
+    await this.router.navigate(["/vault"]);
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("restoredItem"),
+    });
+  };
+
   protected deleteCipher() {
     return this.cipher.isDeleted
       ? this.cipherService.deleteWithServer(this.cipher.id)
       : this.cipherService.softDeleteWithServer(this.cipher.id);
+  }
+
+  protected showFooter(): boolean {
+    return this.cipher && (!this.cipher.isDeleted || (this.cipher.isDeleted && this.cipher.edit));
   }
 }

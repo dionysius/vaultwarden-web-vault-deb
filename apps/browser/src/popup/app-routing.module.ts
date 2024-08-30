@@ -91,6 +91,7 @@ import { FolderAddEditComponent } from "../vault/popup/settings/folder-add-edit.
 import { FoldersV2Component } from "../vault/popup/settings/folders-v2.component";
 import { FoldersComponent } from "../vault/popup/settings/folders.component";
 import { SyncComponent } from "../vault/popup/settings/sync.component";
+import { TrashComponent } from "../vault/popup/settings/trash.component";
 import { VaultSettingsV2Component } from "../vault/popup/settings/vault-settings-v2.component";
 import { VaultSettingsComponent } from "../vault/popup/settings/vault-settings.component";
 
@@ -495,6 +496,12 @@ const routes: Routes = [
     path: "account-switcher",
     component: AccountSwitcherComponent,
     data: { state: "account-switcher", doNotSaveUrl: true },
+  },
+  {
+    path: "trash",
+    component: TrashComponent,
+    canActivate: [authGuard],
+    data: { state: "trash" },
   },
 ];
 
