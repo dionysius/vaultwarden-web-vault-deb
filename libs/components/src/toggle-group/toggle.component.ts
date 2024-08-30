@@ -33,7 +33,10 @@ export class ToggleComponent<TValue> {
 
   get labelClasses() {
     return [
+      "tw-w-full",
+      "tw-justify-center",
       "!tw-font-semibold",
+      "tw-inline-block",
       "tw-transition",
       "tw-text-center",
       "tw-border-text-muted",
