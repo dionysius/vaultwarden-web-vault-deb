@@ -105,7 +105,11 @@ export async function sendExtensionMessage(
   command: string,
   options: Record<string, any> = {},
 ): Promise<any> {
-  if (typeof browser?.runtime?.sendMessage !== "undefined") {
+  if (
+    typeof browser !== "undefined" &&
+    typeof browser.runtime !== "undefined" &&
+    typeof browser.runtime.sendMessage !== "undefined"
+  ) {
     return browser.runtime.sendMessage({ command, ...options });
   }
 
