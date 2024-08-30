@@ -540,22 +540,22 @@
     }
   },
   "masterPassword": {
-    "message": "Master password"
+    "message": "Mot de passe principal"
   },
   "masterPassImportant": {
-    "message": "Your master password cannot be recovered if you forget it!"
+    "message": "Votre mot de passe principal ne peut pas être récupéré si vous l'oubliez !"
   },
   "confirmMasterPassword": {
-    "message": "Confirm master password"
+    "message": "Confirmer le mot de passe principal"
   },
   "masterPassHintLabel": {
-    "message": "Master password hint"
+    "message": "Indice du mot de passe principal"
   },
   "joinOrganization": {
-    "message": "Join organization"
+    "message": "Rejoindre l'organisation"
   },
   "finishJoiningThisOrganizationBySettingAMasterPassword": {
-    "message": "Finish joining this organization by setting a master password."
+    "message": "Terminez votre adhésion à cette organisation en définissant un mot de passe principal."
   },
   "settings": {
     "message": "Paramètres"
@@ -603,6 +603,12 @@
   "newAccountCreated": {
     "message": "Votre nouveau compte a été créé ! Vous pouvez maintenant vous authentifier."
   },
+  "newAccountCreated2": {
+    "message": "Your new account has been created!"
+  },
+  "youHaveBeenLoggedIn": {
+    "message": "You have been logged in!"
+  },
   "masterPassSent": {
     "message": "Nous vous avons envoyé un courriel avec votre indice de mot de passe principal."
   },
@@ -634,7 +640,7 @@
     "message": "Le code de vérification est requis."
   },
   "webauthnCancelOrTimeout": {
-    "message": "The authentication was cancelled or took too long. Please try again."
+    "message": "L'authentification a été annulée ou a pris trop de temps. Veuillez réessayer."
   },
   "invalidVerificationCode": {
     "message": "Code de vérification invalide"
@@ -799,16 +805,16 @@
     "message": "Votre session a expiré."
   },
   "restartRegistration": {
-    "message": "Restart registration"
+    "message": "Redémarrer l'inscription"
   },
   "expiredLink": {
-    "message": "Expired link"
+    "message": "Lien expiré"
   },
   "pleaseRestartRegistrationOrTryLoggingIn": {
-    "message": "Please restart registration or try logging in."
+    "message": "Veuillez redémarrer votre inscription ou essayez de vous connecter."
   },
   "youMayAlreadyHaveAnAccount": {
-    "message": "You may already have an account"
+    "message": "Vous avez peut-être déjà un compte"
   },
   "logOutConfirmation": {
     "message": "Êtes-vous sûr de vouloir vous déconnecter ?"
@@ -1514,13 +1520,13 @@
     "message": "Paramètres supplémentaires de Windows Hello"
   },
   "unlockWithPolkit": {
-    "message": "Unlock with system authentication"
+    "message": "Déverrouiller avec l'authentification du système"
   },
   "windowsHelloConsentMessage": {
     "message": "Vérifier pour Bitwarden."
   },
   "polkitConsentMessage": {
-    "message": "Authenticate to unlock Bitwarden."
+    "message": "S'authentifier pour déverrouiller Bitwarden."
   },
   "unlockWithTouchId": {
     "message": "Déverrouiller avec Touch ID"
@@ -1535,7 +1541,7 @@
     "message": "Demander à Windows Hello au démarrage"
   },
   "autoPromptPolkit": {
-    "message": "Ask for system authentication on launch"
+    "message": "Demander l'authentification du système au lancement"
   },
   "autoPromptTouchId": {
     "message": "Demander Touch ID au démarrage de l'application"
@@ -2007,7 +2013,7 @@
     "message": "Vérification de courriel requise"
   },
   "emailVerifiedV2": {
-    "message": "Email verified"
+    "message": "Courriel vérifié"
   },
   "emailVerificationRequiredDesc": {
     "message": "Vous devez vérifier votre courriel pour utiliser cette fonctionnalité."
@@ -2121,7 +2127,7 @@
     "message": "Le délai d'expiration de votre coffre dépasse les restrictions définies par votre organisation."
   },
   "inviteAccepted": {
-    "message": "Invitation accepted"
+    "message": "Invitation acceptée"
   },
   "resetPasswordPolicyAutoEnroll": {
     "message": "Inscription automatique"
@@ -3045,12 +3051,15 @@
     }
   },
   "data": {
-    "message": "Data"
+    "message": "Données"
   },
   "fileSends": {
     "message": "File Sends"
   },
   "textSends": {
     "message": "Text Sends"
+  },
+  "ssoError": {
+    "message": "No free ports could be found for the sso login."
   }
 }

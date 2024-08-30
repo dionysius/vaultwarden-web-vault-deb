@@ -603,6 +603,12 @@
   "newAccountCreated": {
     "message": "Yeni hesabınız oluşturuldu! Şimdi giriş yapabilirsiniz."
   },
+  "newAccountCreated2": {
+    "message": "Yeni hesabınız oluşturuldu."
+  },
+  "youHaveBeenLoggedIn": {
+    "message": "Oturum açtınız."
+  },
   "masterPassSent": {
     "message": "Size ana parolanızın ipucunu içeren bir e-posta gönderdik."
   },
@@ -3052,5 +3058,8 @@
   },
   "textSends": {
     "message": "Metin Send'leri"
+  },
+  "ssoError": {
+    "message": "SSO girişi için açık port bulunamadı."
   }
 }

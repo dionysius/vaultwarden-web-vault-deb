@@ -603,6 +603,12 @@
   "newAccountCreated": {
     "message": "Den nye konto er oprettet! Der kan nu logges ind."
   },
+  "newAccountCreated2": {
+    "message": "Din nye konto er oprettet!"
+  },
+  "youHaveBeenLoggedIn": {
+    "message": "Du er blevet logget ind!"
+  },
   "masterPassSent": {
     "message": "Der er sendt en e-mail til dig med dit hovedadgangskodetip."
   },
@@ -3052,5 +3058,8 @@
   },
   "textSends": {
     "message": "Tekst-Sends"
+  },
+  "ssoError": {
+    "message": "Ingen ledige porte fundet til SSO-login."
   }
 }

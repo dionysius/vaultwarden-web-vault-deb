@@ -603,6 +603,12 @@
   "newAccountCreated": {
     "message": "Den nye kontoen din har blitt oppretta! Du kan no logge inn."
   },
+  "newAccountCreated2": {
+    "message": "Your new account has been created!"
+  },
+  "youHaveBeenLoggedIn": {
+    "message": "You have been logged in!"
+  },
   "masterPassSent": {
     "message": "Me har sendt deg ein e-post med eit hint om hovudpassordet ditt."
   },
@@ -3052,5 +3058,8 @@
   },
   "textSends": {
     "message": "Text Sends"
+  },
+  "ssoError": {
+    "message": "No free ports could be found for the sso login."
   }
 }

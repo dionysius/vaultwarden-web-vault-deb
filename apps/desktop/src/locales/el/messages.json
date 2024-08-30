@@ -603,6 +603,12 @@
   "newAccountCreated": {
     "message": "Ο λογαριασμός σας έχει δημιουργηθεί! Τώρα μπορείτε να συνδεθείτε."
   },
+  "newAccountCreated2": {
+    "message": "Your new account has been created!"
+  },
+  "youHaveBeenLoggedIn": {
+    "message": "You have been logged in!"
+  },
   "masterPassSent": {
     "message": "Σας στείλαμε ένα email με την υπόδειξη του κύριου κωδικού."
   },
@@ -3052,5 +3058,8 @@
   },
   "textSends": {
     "message": "Send κειμένων"
+  },
+  "ssoError": {
+    "message": "No free ports could be found for the sso login."
   }
 }

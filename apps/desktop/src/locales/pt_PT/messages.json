@@ -603,6 +603,12 @@
   "newAccountCreated": {
     "message": "A sua nova conta foi criada! Pode agora iniciar sessão."
   },
+  "newAccountCreated2": {
+    "message": "A sua nova conta foi criada!"
+  },
+  "youHaveBeenLoggedIn": {
+    "message": "Iniciou sessão!"
+  },
   "masterPassSent": {
     "message": "Enviámos-lhe um e-mail com a dica da sua palavra-passe mestra."
   },
@@ -3052,5 +3058,8 @@
   },
   "textSends": {
     "message": "Sends de texto"
+  },
+  "ssoError": {
+    "message": "Não foi possível encontrar portas livres para o início de sessão sso."
   }
 }

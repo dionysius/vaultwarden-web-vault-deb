@@ -603,6 +603,12 @@
   "newAccountCreated": {
     "message": "تم إنشاء حسابك الجديد! يمكنك الآن تسجيل الدخول."
   },
+  "newAccountCreated2": {
+    "message": "Your new account has been created!"
+  },
+  "youHaveBeenLoggedIn": {
+    "message": "You have been logged in!"
+  },
   "masterPassSent": {
     "message": "لقد أرسلنا لك رسالة بريد إلكتروني تحتوي على تلميحات كلمة المرور الرئيسية."
   },
@@ -3052,5 +3058,8 @@
   },
   "textSends": {
     "message": "إرسال النص"
+  },
+  "ssoError": {
+    "message": "No free ports could be found for the sso login."
   }
 }

@@ -603,6 +603,12 @@
   "newAccountCreated": {
     "message": "Ваш налог је креиран! Сада се можете пријавити."
   },
+  "newAccountCreated2": {
+    "message": "Your new account has been created!"
+  },
+  "youHaveBeenLoggedIn": {
+    "message": "You have been logged in!"
+  },
   "masterPassSent": {
     "message": "Послали смо Вам поруку са саветом главне лозинке."
   },
@@ -3052,5 +3058,8 @@
   },
   "textSends": {
     "message": "Текст „Send“"
+  },
+  "ssoError": {
+    "message": "No free ports could be found for the sso login."
   }
 }

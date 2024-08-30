@@ -603,6 +603,12 @@
   "newAccountCreated": {
     "message": "Абонаментът ви бе създаден. Вече можете да се впишете."
   },
+  "newAccountCreated2": {
+    "message": "Your new account has been created!"
+  },
+  "youHaveBeenLoggedIn": {
+    "message": "You have been logged in!"
+  },
   "masterPassSent": {
     "message": "Изпратили сме ви е-писмо с подсказка за главната ви парола."
   },
@@ -3052,5 +3058,8 @@
   },
   "textSends": {
     "message": "Текстови изпращания"
+  },
+  "ssoError": {
+    "message": "Не могат да бъдат открити свободни портове за еднократната идентификация."
   }
 }

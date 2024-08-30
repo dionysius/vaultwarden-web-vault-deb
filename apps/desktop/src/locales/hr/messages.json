@@ -603,6 +603,12 @@
   "newAccountCreated": {
     "message": "Tvoj novi račun je stvoren! Sada se možeš prijaviti."
   },
+  "newAccountCreated2": {
+    "message": "Your new account has been created!"
+  },
+  "youHaveBeenLoggedIn": {
+    "message": "You have been logged in!"
+  },
   "masterPassSent": {
     "message": "Poslali smo e-poštu s podsjetnikom glavne lozinke."
   },
@@ -1175,7 +1181,7 @@
     "message": "Možeš kupiti premium članstvo na web trezoru. Želiš li sada posjetiti bitwarden.com?"
   },
   "premiumPurchaseAlertV2": {
-    "message": "You can purchase Premium from your account settings on the Bitwarden web app."
+    "message": "Premium možeš kupiti u postavkama računa na Bitwarden web aplikaciji."
   },
   "premiumCurrentMember": {
     "message": "Ti si premium član!"
@@ -3052,5 +3058,8 @@
   },
   "textSends": {
     "message": "Send tekstovi"
+  },
+  "ssoError": {
+    "message": "Nisu nađeni slobodni portovi za SSO prijavu."
   }
 }

@@ -603,6 +603,12 @@
   "newAccountCreated": {
     "message": "您的新账户已创建！您现在可以登录了。"
   },
+  "newAccountCreated2": {
+    "message": "Your new account has been created!"
+  },
+  "youHaveBeenLoggedIn": {
+    "message": "You have been logged in!"
+  },
   "masterPassSent": {
     "message": "我们已经为您发送了包含主密码提示的邮件。"
   },
@@ -2456,7 +2462,7 @@
     "message": "指纹短语"
   },
   "needAnotherOption": {
-    "message": "设备登录必须在 Bitwarden 应用程序的设置中启用。需要其他登录选项吗？"
+    "message": "必须在 Bitwarden App 的设置中启用设备登录。需要其他登录选项吗？"
   },
   "viewAllLoginOptions": {
     "message": "查看所有登录选项"
@@ -3052,5 +3058,8 @@
   },
   "textSends": {
     "message": "文本 Send"
+  },
+  "ssoError": {
+    "message": "找不到用于 SSO 登录的可用端口。"
   }
 }

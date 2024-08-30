@@ -603,6 +603,12 @@
   "newAccountCreated": {
     "message": "Yeni hesabınız yaradıldı! İndi giriş edə bilərsiniz."
   },
+  "newAccountCreated2": {
+    "message": "Your new account has been created!"
+  },
+  "youHaveBeenLoggedIn": {
+    "message": "You have been logged in!"
+  },
   "masterPassSent": {
     "message": "Ana parol məsləhətini ehtiva edən bir e-poçt göndərdik."
   },
@@ -3052,5 +3058,8 @@
   },
   "textSends": {
     "message": "Mətn \"Send\"ləri"
+  },
+  "ssoError": {
+    "message": "No free ports could be found for the sso login."
   }
 }

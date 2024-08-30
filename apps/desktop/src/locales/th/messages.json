@@ -603,6 +603,12 @@
   "newAccountCreated": {
     "message": "บัญชีใหม่ของคุณถูกสร้างขึ้นแล้ว! ตอนนี้คุณสามารถเข้าสู่ระบบ"
   },
+  "newAccountCreated2": {
+    "message": "Your new account has been created!"
+  },
+  "youHaveBeenLoggedIn": {
+    "message": "You have been logged in!"
+  },
   "masterPassSent": {
     "message": "เราได้ส่งอีเมลพร้อมคำใบ้รหัสผ่านหลักของคุณ"
   },
@@ -3052,5 +3058,8 @@
   },
   "textSends": {
     "message": "Text Sends"
+  },
+  "ssoError": {
+    "message": "No free ports could be found for the sso login."
   }
 }

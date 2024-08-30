@@ -603,6 +603,12 @@
   "newAccountCreated": {
     "message": "Аккаунт создан! Теперь вы можете войти в систему."
   },
+  "newAccountCreated2": {
+    "message": "Ваш новый аккаунт создан!"
+  },
+  "youHaveBeenLoggedIn": {
+    "message": "Вы авторизовались!"
+  },
   "masterPassSent": {
     "message": "Мы отправили вам письмо с подсказкой к мастер-паролю."
   },
@@ -3052,5 +3058,8 @@
   },
   "textSends": {
     "message": "Текстовая Send"
+  },
+  "ssoError": {
+    "message": "Не удалось найти свободные порты для авторизации SSO."
   }
 }

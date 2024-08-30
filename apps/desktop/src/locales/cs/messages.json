@@ -603,6 +603,12 @@
   "newAccountCreated": {
     "message": "Váš účet byl vytvořen! Můžete se přihlásit."
   },
+  "newAccountCreated2": {
+    "message": "Váš nový účet byl vytvořen!"
+  },
+  "youHaveBeenLoggedIn": {
+    "message": "Byli jste přihlášeni!"
+  },
   "masterPassSent": {
     "message": "Poslali jsme vám e-mail s nápovědou k hlavnímu heslu."
   },
@@ -3052,5 +3058,8 @@
   },
   "textSends": {
     "message": "Sends s texty"
+  },
+  "ssoError": {
+    "message": "Pro přihlášení SSO nebyly nalezeny žádné volné porty."
   }
 }

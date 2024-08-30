@@ -603,6 +603,12 @@
   "newAccountCreated": {
     "message": "A fiók létrehozásra került. Most már be lehet jelentkezni."
   },
+  "newAccountCreated2": {
+    "message": "Your new account has been created!"
+  },
+  "youHaveBeenLoggedIn": {
+    "message": "You have been logged in!"
+  },
   "masterPassSent": {
     "message": "Elküldtünk neked egy emailt a mesterjelszó emlékeztetővel."
   },
@@ -3052,5 +3058,8 @@
   },
   "textSends": {
     "message": "Szöveg küldés"
+  },
+  "ssoError": {
+    "message": "Nem található szabad port az sso bejelentkezéshez."
   }
 }

@@ -603,6 +603,12 @@
   "newAccountCreated": {
     "message": "U nuwe rekening is geskep! U kan nou aanteken."
   },
+  "newAccountCreated2": {
+    "message": "Your new account has been created!"
+  },
+  "youHaveBeenLoggedIn": {
+    "message": "You have been logged in!"
+  },
   "masterPassSent": {
     "message": "Ons het ’n e-pos gestuur met u hoofwagwoordwenk."
   },
@@ -3052,5 +3058,8 @@
   },
   "textSends": {
     "message": "Teks stuur"
+  },
+  "ssoError": {
+    "message": "No free ports could be found for the sso login."
   }
 }
