@@ -147,7 +147,7 @@
     "message": "Kopírovať názov vlastného poľa"
   },
   "noMatchingLogins": {
-    "message": "Žiadne zodpovedajúce prihlasovacie údaje."
+    "message": "Žiadne zodpovedajúce prihlasovacie údaje"
   },
   "noCards": {
     "message": "Žiadne karty"
@@ -171,7 +171,7 @@
     "message": "Prihláste sa do trezora"
   },
   "autoFillInfo": {
-    "message": "Nie sú prístupné žiadne prihlasovacie údaje na automatické vyplnenie pre aktuálnu kartu."
+    "message": "Nie sú k dispozícii žiadne prihlasovacie údaje na automatické vyplnenie pre aktuálnu kartu."
   },
   "addLogin": {
     "message": "Pridať prihlasovacie údaje"
@@ -180,13 +180,13 @@
     "message": "Pridať položku"
   },
   "passwordHint": {
-    "message": "Nápoveda k heslu"
+    "message": "Pomôcka pre heslo"
   },
   "enterEmailToGetHint": {
     "message": "Zadajte emailovú adresu na zaslanie nápovedy pre vaše hlavné heslo."
   },
   "getMasterPasswordHint": {
-    "message": "Získať nápovedu k hlavnému heslu"
+    "message": "Získať pomôcku pre hlavné heslo"
   },
   "continue": {
     "message": "Pokračovať"
@@ -296,7 +296,7 @@
     "message": "Pridať priečinok"
   },
   "name": {
-    "message": "Meno"
+    "message": "Názov"
   },
   "editFolder": {
     "message": "Upraviť priečinok"
@@ -384,16 +384,56 @@
     "message": "Minimálna dĺžka hesla"
   },
   "uppercase": {
-    "message": "Veľké písmená (A-Z)"
+    "message": "Veľké písmená (A-Z)",
+    "description": "deprecated. Use uppercaseLabel instead."
   },
   "lowercase": {
-    "message": "Malé písmená (a-z)"
+    "message": "Malé písmená (a-z)",
+    "description": "deprecated. Use lowercaseLabel instead."
   },
   "numbers": {
-    "message": "Čísla (0-9)"
+    "message": "Čísla (0-9)",
+    "description": "deprecated. Use numbersLabel instead."
   },
   "specialCharacters": {
-    "message": "Špeciálne znaky (!@#$%^&*)"
+    "message": "Špeciálne znaky (!@#$%^&*)",
+    "description": "deprecated. Use specialCharactersLabel instead."
+  },
+  "include": {
+    "message": "Zahrnúť",
+    "description": "Card header for password generator include block"
+  },
+  "uppercaseDescription": {
+    "message": "Zahrnúť veľké písmená",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Zahrnúť malé písmená",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Zahrnúť čísla",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Zahrnúť špeciálne znaky",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
   },
   "numWords": {
     "message": "Počet slov"
@@ -412,10 +452,15 @@
     "message": "Minimum číslic"
   },
   "minSpecial": {
-    "message": "Minimum špec. znakov"
+    "message": "Minimum špeciálnych znakov"
   },
   "avoidAmbChar": {
-    "message": "Vyhnúť sa zameniteľným znakom"
+    "message": "Vyhnúť sa zameniteľným znakom",
+    "description": "deprecated. Use avoidAmbiguous instead."
+  },
+  "avoidAmbiguous": {
+    "message": "Vyhnúť sa zameniteľným znakom",
+    "description": "Label for the avoid ambiguous characters checkbox."
   },
   "searchVault": {
     "message": "Prehľadávať trezor"
@@ -638,6 +683,12 @@
   "newAccountCreated": {
     "message": "Váš nový účet bol vytvorený! Teraz sa môžete prihlásiť."
   },
+  "newAccountCreated2": {
+    "message": "Váš nový účet bol vytvorený!"
+  },
+  "youHaveBeenLoggedIn": {
+    "message": "Boli ste prihlásený!"
+  },
   "youSuccessfullyLoggedIn": {
     "message": "Úspešne ste sa prihlásili"
   },
@@ -751,7 +802,7 @@
     "message": "Začiatočnícka príručka"
   },
   "gettingStartedTutorialVideo": {
-    "message": "Sledujte našu začiatočnícku príručku, aby ste sa naučili, ako získať maximum z nášho rozšírenia prehliadača."
+    "message": "Pozrite našu príručku pre začiatočníkov, v ktorej sa dozviete, ako získať maximum z nášho rozšírenia pre prehliadač."
   },
   "syncingComplete": {
     "message": "Synchronizácia kompletná"
@@ -810,7 +861,7 @@
     "message": "Prehľadávať priečinok"
   },
   "searchCollection": {
-    "message": "Vyhľadať zbierku"
+    "message": "Hľadať v zbierke"
   },
   "searchType": {
     "message": "Typ vyhľadávania"
@@ -826,7 +877,7 @@
     "message": "Uložiť do nastavení trezora"
   },
   "addLoginNotificationDesc": {
-    "message": "Opýtať sa na pridanie prihlasovacích údajov ak ich ešte nemáte v trezore."
+    "message": "Opýtať sa na pridanie prihlasovacích údajov, ak ich ešte nemáte v trezore."
   },
   "addLoginNotificationDescAlt": {
     "message": "Požiada o pridanie položky, ak sa v trezore nenachádza. Platí pre všetky prihlásené účty."
@@ -858,7 +909,7 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
-    "message": "Má si pre vás Bitwarden zapamätať toto heslo?"
+    "message": "Má si Bitwarden zapamätať toto heslo?"
   },
   "notificationAddSave": {
     "message": "Uložiť"
@@ -1047,7 +1098,7 @@
     "message": "Súbor"
   },
   "selectFile": {
-    "message": "Vybrať súbor."
+    "message": "Vyberte súbor"
   },
   "maxFileSize": {
     "message": "Maximálna veľkosť súboru je 500 MB."
@@ -1077,7 +1128,7 @@
     "message": "Zaregistrujte sa pre prémiové členstvo a získajte:"
   },
   "ppremiumSignUpStorage": {
-    "message": "1 GB šifrovaného úložiska."
+    "message": "1 GB šifrovaného úložiska na prílohy."
   },
   "premiumSignUpEmergency": {
     "message": "Núdzový prístup"
@@ -1101,7 +1152,7 @@
     "message": "Zakúpiť Prémiový účet"
   },
   "premiumPurchaseAlert": {
-    "message": "Svoje prémiové členstvo môžete zakúpiť vo webovom trezore bitwarden.com. Chcete navštíviť túto stránku teraz?"
+    "message": "Svoje prémiové členstvo si môžete zakúpiť vo webovom trezore bitwarden.com. Chcete navštíviť túto stránku teraz?"
   },
   "premiumPurchaseAlertV2": {
     "message": "Prémiové členstvo si môžete zakúpiť v nastaveniach svojho účtu vo webovej aplikácii Bitwarden."
@@ -1197,7 +1248,7 @@
     "message": "Overiť cez WebAuthn"
   },
   "loginUnavailable": {
-    "message": "Prihlasovací údaj nedostupný"
+    "message": "Prihlásenie nie je dispozícii"
   },
   "noTwoStepProviders": {
     "message": "Tento účet má povolené dvojstupňové prihlásenie, ale žiadny z nakonfigurovaných poskytovateľov nie je podporovaný týmto prehliadačom."
@@ -1225,7 +1276,7 @@
     "message": "Bezpečnostný kľúč Yubico OTP"
   },
   "yubiKeyDesc": {
-    "message": "Použiť YubiKey pre prístup k vášmu účtu. Pracuje s YubiKey 4, 4 Nano, 4C a s NEO zariadeniami."
+    "message": "Použiť YubiKey na prístup k vášmu účtu. Pracuje s YubiKey 4, 4 Nano, 4C a s NEO zariadeniami."
   },
   "duoDescV2": {
     "message": "Zadajte kód vygenerovaný aplikáciou Duo Security.",
@@ -1248,7 +1299,7 @@
     "message": "Zadajte kód zaslaný na váš e-mail."
   },
   "selfHostedEnvironment": {
-    "message": "Sebou hosťované prostredie"
+    "message": "Prostredie s vlastným hostingom"
   },
   "selfHostedEnvironmentFooter": {
     "message": "Zadajte základnú URL adresu lokálne hosťovanej inštalácie Bitwarden."
@@ -1266,7 +1317,7 @@
     "message": "Vlastné prostredie"
   },
   "customEnvironmentFooter": {
-    "message": "Pre pokročilých používateľov. Môžete špecifikovať základnú URL pre každú službu nezávisle."
+    "message": "Pre pokročilých používateľov. Základnú adresu URL každej služby môžete určiť samostatne."
   },
   "baseUrl": {
     "message": "URL servera"
@@ -2082,6 +2133,12 @@
   },
   "biometricsNotUnlockedDesc": {
     "message": "Prosím, odomknite tohto používateľa v počítačovej aplikácii a skúste to znova."
+  },
+  "biometricsNotAvailableTitle": {
+    "message": "Odomykanie biometrickými údajmi je nedostupné"
+  },
+  "biometricsNotAvailableDesc": {
+    "message": "Odomykanie biometrickými údajmi je momentálne nedostupné. Skúste to znova neskôr."
   },
   "biometricsFailedTitle": {
     "message": "Biometria zlyhala"
@@ -3639,8 +3696,16 @@
     "message": "Prihlasovacie údaje boli úspešne uložené!",
     "description": "Notification message for when saving credentials has succeeded."
   },
+  "passwordSaved": {
+    "message": "Heslo bolo uložené!",
+    "description": "Notification message for when saving credentials has succeeded."
+  },
   "updateCipherAttemptSuccess": {
     "message": "Prihlasovacie údaje boli úspešne aktualizované!",
+    "description": "Notification message for when updating credentials has succeeded."
+  },
+  "passwordUpdated": {
+    "message": "Heslo bolo aktualizované!",
     "description": "Notification message for when updating credentials has succeeded."
   },
   "saveCipherAttemptFailed": {
@@ -4228,5 +4293,8 @@
   },
   "enterprisePolicyRequirementsApplied": {
     "message": "Na toto nastavenie boli uplatnené požiadavky pravidiel spoločnosti"
+  },
+  "additionalContentAvailable": {
+    "message": "K dispozícii je ďalší obsah"
   }
 }

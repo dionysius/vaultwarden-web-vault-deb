@@ -11,7 +11,7 @@
     "description": "Extension description, MUST be less than 112 characters (Safari restriction)"
   },
   "loginOrCreateNewAccount": {
-    "message": "登录或者创建一个账户来访问您的安全密码库。"
+    "message": "登录或创建一个新账户以访问您的安全密码库。"
   },
   "inviteAccepted": {
     "message": "邀请已接受"
@@ -384,16 +384,56 @@
     "message": "最小密码长度"
   },
   "uppercase": {
-    "message": "大写 (A-Z)"
+    "message": "大写 (A-Z)",
+    "description": "deprecated. Use uppercaseLabel instead."
   },
   "lowercase": {
-    "message": "小写 (a-z)"
+    "message": "小写 (a-z)",
+    "description": "deprecated. Use lowercaseLabel instead."
   },
   "numbers": {
-    "message": "数字 (0-9)"
+    "message": "数字 (0-9)",
+    "description": "deprecated. Use numbersLabel instead."
   },
   "specialCharacters": {
-    "message": "特殊字符 (!@#$%^&*)"
+    "message": "特殊字符 (!@#$%^&*)",
+    "description": "deprecated. Use specialCharactersLabel instead."
+  },
+  "include": {
+    "message": "包含",
+    "description": "Card header for password generator include block"
+  },
+  "uppercaseDescription": {
+    "message": "包含大写字符",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "包含小写字符",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "包含数字",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "包含特殊字符",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
   },
   "numWords": {
     "message": "单词个数"
@@ -415,7 +455,12 @@
     "message": "符号最少个数"
   },
   "avoidAmbChar": {
-    "message": "避免易混淆的字符"
+    "message": "避免易混淆的字符",
+    "description": "deprecated. Use avoidAmbiguous instead."
+  },
+  "avoidAmbiguous": {
+    "message": "避免易混淆的字符",
+    "description": "Label for the avoid ambiguous characters checkbox."
   },
   "searchVault": {
     "message": "搜索密码库"
@@ -637,6 +682,12 @@
   },
   "newAccountCreated": {
     "message": "您的新账户已创建！您现在可以登录了。"
+  },
+  "newAccountCreated2": {
+    "message": "您的新账户已成功创建！"
+  },
+  "youHaveBeenLoggedIn": {
+    "message": "您已登录！"
   },
   "youSuccessfullyLoggedIn": {
     "message": "您已成功登录"
@@ -2083,6 +2134,12 @@
   "biometricsNotUnlockedDesc": {
     "message": "请在桌面应用程序中解锁此用户，然后重试。"
   },
+  "biometricsNotAvailableTitle": {
+    "message": "生物识别解锁不可用"
+  },
+  "biometricsNotAvailableDesc": {
+    "message": "生物识别解锁当前不可用。请稍后再试。"
+  },
   "biometricsFailedTitle": {
     "message": "生物识别失败"
   },
@@ -2789,7 +2846,7 @@
     "message": "使用设备登录"
   },
   "loginWithDeviceEnabledInfo": {
-    "message": "设备登录必须在 Bitwarden 应用程序的设置中启用。需要其他登录选项吗？"
+    "message": "必须在 Bitwarden App 的设置中启用设备登录。需要其他登录选项吗？"
   },
   "fingerprintPhraseHeader": {
     "message": "指纹短语"
@@ -3639,8 +3696,16 @@
     "message": "凭据保存成功！",
     "description": "Notification message for when saving credentials has succeeded."
   },
+  "passwordSaved": {
+    "message": "密码已保存！",
+    "description": "Notification message for when saving credentials has succeeded."
+  },
   "updateCipherAttemptSuccess": {
     "message": "凭据更新成功！",
+    "description": "Notification message for when updating credentials has succeeded."
+  },
+  "passwordUpdated": {
+    "message": "密码已更新！",
     "description": "Notification message for when updating credentials has succeeded."
   },
   "saveCipherAttemptFailed": {
@@ -4228,5 +4293,8 @@
   },
   "enterprisePolicyRequirementsApplied": {
     "message": "企业策略要求已应用于此设置"
+  },
+  "additionalContentAvailable": {
+    "message": "Additional content is available"
   }
 }

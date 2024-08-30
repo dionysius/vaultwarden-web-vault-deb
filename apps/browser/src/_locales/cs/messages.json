@@ -384,16 +384,56 @@
     "message": "Minimální délka hesla"
   },
   "uppercase": {
-    "message": "Velká písmena (A-Z)"
+    "message": "Velká písmena (A-Z)",
+    "description": "deprecated. Use uppercaseLabel instead."
   },
   "lowercase": {
-    "message": "Malá písmena (a-z)"
+    "message": "Malá písmena (a-z)",
+    "description": "deprecated. Use lowercaseLabel instead."
   },
   "numbers": {
-    "message": "Číslice (0-9)"
+    "message": "Číslice (0-9)",
+    "description": "deprecated. Use numbersLabel instead."
   },
   "specialCharacters": {
-    "message": "Speciální znaky (!@#$%^&*)"
+    "message": "Speciální znaky (!@#$%^&*)",
+    "description": "deprecated. Use specialCharactersLabel instead."
+  },
+  "include": {
+    "message": "Zahrnout",
+    "description": "Card header for password generator include block"
+  },
+  "uppercaseDescription": {
+    "message": "Zahrnout velká písmena",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Zahrnout malá písmena",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Zahrnout číslice",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Zahrnout speciální znaky",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
   },
   "numWords": {
     "message": "Počet slov"
@@ -415,7 +455,12 @@
     "message": "Minimální počet speciálních znaků"
   },
   "avoidAmbChar": {
-    "message": "Nepoužívat zaměnitelné znaky"
+    "message": "Nepoužívat zaměnitelné znaky",
+    "description": "deprecated. Use avoidAmbiguous instead."
+  },
+  "avoidAmbiguous": {
+    "message": "Nepoužívat zaměnitelné znaky",
+    "description": "Label for the avoid ambiguous characters checkbox."
   },
   "searchVault": {
     "message": "Vyhledat v trezoru"
@@ -637,6 +682,12 @@
   },
   "newAccountCreated": {
     "message": "Váš účet byl vytvořen! Můžete se přihlásit."
+  },
+  "newAccountCreated2": {
+    "message": "Váš nový účet byl vytvořen!"
+  },
+  "youHaveBeenLoggedIn": {
+    "message": "Byli jste přihlášeni!"
   },
   "youSuccessfullyLoggedIn": {
     "message": "Byli jste úspěšně přihlášeni"
@@ -2082,6 +2133,12 @@
   },
   "biometricsNotUnlockedDesc": {
     "message": "Odemkněte tohoto uživatele v programu pro počítač a zkuste to znovu."
+  },
+  "biometricsNotAvailableTitle": {
+    "message": "Biometrické odemknutí není k dispozici"
+  },
+  "biometricsNotAvailableDesc": {
+    "message": "Biometrické odemknutí je momentálně nedostupné. Opakujte akci později."
   },
   "biometricsFailedTitle": {
     "message": "Biometrika selhala"
@@ -3639,8 +3696,16 @@
     "message": "Pověření byla úspěšně uložena!",
     "description": "Notification message for when saving credentials has succeeded."
   },
+  "passwordSaved": {
+    "message": "Heslo uloženo!",
+    "description": "Notification message for when saving credentials has succeeded."
+  },
   "updateCipherAttemptSuccess": {
     "message": "Pověření byla úspěšně aktualizována!",
+    "description": "Notification message for when updating credentials has succeeded."
+  },
+  "passwordUpdated": {
+    "message": "Heslo aktualizováno!",
     "description": "Notification message for when updating credentials has succeeded."
   },
   "saveCipherAttemptFailed": {
@@ -4228,5 +4293,8 @@
   },
   "enterprisePolicyRequirementsApplied": {
     "message": "Na toto nastavení byly uplatněny požadavky podnikových zásad"
+  },
+  "additionalContentAvailable": {
+    "message": "Je k dispozici další obsah"
   }
 }

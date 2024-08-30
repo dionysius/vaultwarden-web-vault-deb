@@ -171,7 +171,7 @@
     "message": "登入您的密碼庫"
   },
   "autoFillInfo": {
-    "message": "沒有可以自動填入目前瀏覽器分頁的登入資料。"
+    "message": "沒有可以自動填入目前瀏覽器分頁的登入資訊。"
   },
   "addLogin": {
     "message": "新增登入資料"
@@ -384,16 +384,56 @@
     "message": "最小密碼長度"
   },
   "uppercase": {
-    "message": "大寫 (A-Z)"
+    "message": "大寫 (A-Z)",
+    "description": "deprecated. Use uppercaseLabel instead."
   },
   "lowercase": {
-    "message": "小寫 (a-z)"
+    "message": "小寫 (a-z)",
+    "description": "deprecated. Use lowercaseLabel instead."
   },
   "numbers": {
-    "message": "數字 (0-9)"
+    "message": "數字 (0-9)",
+    "description": "deprecated. Use numbersLabel instead."
   },
   "specialCharacters": {
-    "message": "特殊字元 (!@#$%^&*)"
+    "message": "特殊字元 (!@#$%^&*)",
+    "description": "deprecated. Use specialCharactersLabel instead."
+  },
+  "include": {
+    "message": "Include",
+    "description": "Card header for password generator include block"
+  },
+  "uppercaseDescription": {
+    "message": "Include uppercase characters",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Include lowercase characters",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Include numbers",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Include special characters",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
   },
   "numWords": {
     "message": "單字數量"
@@ -415,7 +455,12 @@
     "message": "最少符號位數"
   },
   "avoidAmbChar": {
-    "message": "避免易混淆的字元"
+    "message": "避免易混淆的字元",
+    "description": "deprecated. Use avoidAmbiguous instead."
+  },
+  "avoidAmbiguous": {
+    "message": "Avoid ambiguous characters",
+    "description": "Label for the avoid ambiguous characters checkbox."
   },
   "searchVault": {
     "message": "搜尋密碼庫"
@@ -499,7 +544,7 @@
     "message": "設定解鎖方法來變更您的密碼庫逾時動作。"
   },
   "unlockMethodNeeded": {
-    "message": "設定中設定解鎖"
+    "message": "在設定中設定一個解鎖方式"
   },
   "sessionTimeoutHeader": {
     "message": "Session timeout"
@@ -638,6 +683,12 @@
   "newAccountCreated": {
     "message": "帳戶已建立！現在可以登入了。"
   },
+  "newAccountCreated2": {
+    "message": "Your new account has been created!"
+  },
+  "youHaveBeenLoggedIn": {
+    "message": "You have been logged in!"
+  },
   "youSuccessfullyLoggedIn": {
     "message": "登入成功"
   },
@@ -667,7 +718,7 @@
     }
   },
   "autofillError": {
-    "message": "無法在此頁面自動填入所選項目。請手動複製貼上。"
+    "message": "無法在此頁面自動填入所選項目。請手動複製並貼上。"
   },
   "totpCaptureError": {
     "message": "無法掃描此網頁的二維碼"
@@ -1113,7 +1164,7 @@
     "message": "感謝您支持 Bitwarden 。"
   },
   "premiumFeatures": {
-    "message": "Upgrade to premium and receive:"
+    "message": "Upgrade to Premium and receive:"
   },
   "premiumPrice": {
     "message": "每年只需 $PRICE$！",
@@ -2082,6 +2133,12 @@
   },
   "biometricsNotUnlockedDesc": {
     "message": "Please unlock this user in the desktop application and try again."
+  },
+  "biometricsNotAvailableTitle": {
+    "message": "Biometric unlock unavailable"
+  },
+  "biometricsNotAvailableDesc": {
+    "message": "Biometric unlock is currently unavailable. Please try again later."
   },
   "biometricsFailedTitle": {
     "message": "生物特徵辨識失敗"
@@ -3639,8 +3696,16 @@
     "message": "Credentials saved successfully!",
     "description": "Notification message for when saving credentials has succeeded."
   },
+  "passwordSaved": {
+    "message": "Password saved!",
+    "description": "Notification message for when saving credentials has succeeded."
+  },
   "updateCipherAttemptSuccess": {
     "message": "Credentials updated successfully!",
+    "description": "Notification message for when updating credentials has succeeded."
+  },
+  "passwordUpdated": {
+    "message": "Password updated!",
     "description": "Notification message for when updating credentials has succeeded."
   },
   "saveCipherAttemptFailed": {
@@ -4228,5 +4293,8 @@
   },
   "enterprisePolicyRequirementsApplied": {
     "message": "Enterprise policy requirements have been applied to this setting"
+  },
+  "additionalContentAvailable": {
+    "message": "Additional content is available"
   }
 }

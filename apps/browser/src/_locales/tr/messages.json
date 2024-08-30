@@ -384,16 +384,56 @@
     "message": "Minimum parola uzunluğu"
   },
   "uppercase": {
-    "message": "Büyük harf (A-Z)"
+    "message": "Büyük harf (A-Z)",
+    "description": "deprecated. Use uppercaseLabel instead."
   },
   "lowercase": {
-    "message": "Küçük harf (a-z)"
+    "message": "Küçük harf (a-z)",
+    "description": "deprecated. Use lowercaseLabel instead."
   },
   "numbers": {
-    "message": "Rakamlar (0-9)"
+    "message": "Rakamlar (0-9)",
+    "description": "deprecated. Use numbersLabel instead."
   },
   "specialCharacters": {
-    "message": "Özel karakterler (!@#$%^&*)"
+    "message": "Özel karakterler (!@#$%^&*)",
+    "description": "deprecated. Use specialCharactersLabel instead."
+  },
+  "include": {
+    "message": "Dahil et",
+    "description": "Card header for password generator include block"
+  },
+  "uppercaseDescription": {
+    "message": "Büyük harfleri dahil et",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Küçük harfleri dahil et",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Rakamları dahil et",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Özel karakterleri dahil et",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
   },
   "numWords": {
     "message": "Kelime sayısı"
@@ -415,7 +455,12 @@
     "message": "En az özel karakter"
   },
   "avoidAmbChar": {
-    "message": "Okurken karışabilecek karakterleri kullanma"
+    "message": "Okurken karışabilecek karakterleri kullanma",
+    "description": "deprecated. Use avoidAmbiguous instead."
+  },
+  "avoidAmbiguous": {
+    "message": "Okurken karışabilecek karakterleri kullanma",
+    "description": "Label for the avoid ambiguous characters checkbox."
   },
   "searchVault": {
     "message": "Kasada ara"
@@ -637,6 +682,12 @@
   },
   "newAccountCreated": {
     "message": "Yeni hesabınız oluşturuldu! Şimdi giriş yapabilirsiniz."
+  },
+  "newAccountCreated2": {
+    "message": "Yeni hesabınız oluşturuldu."
+  },
+  "youHaveBeenLoggedIn": {
+    "message": "Oturum açtınız."
   },
   "youSuccessfullyLoggedIn": {
     "message": "Başarıyla giriş yaptınız"
@@ -1113,7 +1164,7 @@
     "message": "Bitwarden'ı desteklediğiniz için teşekkür ederiz."
   },
   "premiumFeatures": {
-    "message": "Upgrade to premium and receive:"
+    "message": "Upgrade to Premium and receive:"
   },
   "premiumPrice": {
     "message": "Bunların hepsi sadece yılda $PRICE$!",
@@ -2082,6 +2133,12 @@
   },
   "biometricsNotUnlockedDesc": {
     "message": "Lütfen masaüstü uygulamasından bu kullanıcının kilidini açıp yeniden deneyin."
+  },
+  "biometricsNotAvailableTitle": {
+    "message": "Biyometrik kilit açma kullanılamıyor"
+  },
+  "biometricsNotAvailableDesc": {
+    "message": "Biyometrik kilit açma şu anda kullanılamıyor. Lütfen daha sonra tekrar deneyin."
   },
   "biometricsFailedTitle": {
     "message": "Biyometri doğrulanamadı"
@@ -3639,8 +3696,16 @@
     "message": "Kimlik bilgileri başarıyla kaydedildi!",
     "description": "Notification message for when saving credentials has succeeded."
   },
+  "passwordSaved": {
+    "message": "Parola kaydedildi!",
+    "description": "Notification message for when saving credentials has succeeded."
+  },
   "updateCipherAttemptSuccess": {
     "message": "Kimlik bilgileri başarıyla güncellendi!",
+    "description": "Notification message for when updating credentials has succeeded."
+  },
+  "passwordUpdated": {
+    "message": "Parola güncellendi!",
     "description": "Notification message for when updating credentials has succeeded."
   },
   "saveCipherAttemptFailed": {
@@ -4228,5 +4293,8 @@
   },
   "enterprisePolicyRequirementsApplied": {
     "message": "Bu ayara kurumsal ilke gereksinimleri uygulandı"
+  },
+  "additionalContentAvailable": {
+    "message": "Additional content is available"
   }
 }

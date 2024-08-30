@@ -302,22 +302,22 @@
     "message": "Editar Pasta"
   },
   "newFolder": {
-    "message": "New folder"
+    "message": "Nova pasta"
   },
   "folderName": {
-    "message": "Folder name"
+    "message": "Nome da pasta"
   },
   "folderHintText": {
-    "message": "Nest a folder by adding the parent folder's name followed by a “/”. Example: Social/Forums"
+    "message": "Aninhe uma pasta adicionando o nome da pasta pai seguido de um \"/\". Exemplo: Social/Fóruns"
   },
   "noFoldersAdded": {
-    "message": "No folders added"
+    "message": "Nenhuma pasta adicionada"
   },
   "createFoldersToOrganize": {
-    "message": "Create folders to organize your vault items"
+    "message": "Crie pastas para organizar os itens do seu cofre"
   },
   "deleteFolderPermanently": {
-    "message": "Are you sure you want to permanently delete this folder?"
+    "message": "Você tem certeza que deseja excluir esta pasta permanentemente?"
   },
   "deleteFolder": {
     "message": "Excluir Pasta"
@@ -384,16 +384,56 @@
     "message": "Tamanho mínimo da senha"
   },
   "uppercase": {
-    "message": "Maiúsculas (A-Z)"
+    "message": "Maiúsculas (A-Z)",
+    "description": "deprecated. Use uppercaseLabel instead."
   },
   "lowercase": {
-    "message": "Minúsculas (a-z)"
+    "message": "Minúsculas (a-z)",
+    "description": "deprecated. Use lowercaseLabel instead."
   },
   "numbers": {
-    "message": "Números (0-9)"
+    "message": "Números (0-9)",
+    "description": "deprecated. Use numbersLabel instead."
   },
   "specialCharacters": {
-    "message": "Caracteres especiais (!@#$%^&*)"
+    "message": "Caracteres especiais (!@#$%^&*)",
+    "description": "deprecated. Use specialCharactersLabel instead."
+  },
+  "include": {
+    "message": "Include",
+    "description": "Card header for password generator include block"
+  },
+  "uppercaseDescription": {
+    "message": "Include uppercase characters",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Include lowercase characters",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Include numbers",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Include special characters",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
   },
   "numWords": {
     "message": "Número de Palavras"
@@ -415,7 +455,12 @@
     "message": "Especiais Mínimos"
   },
   "avoidAmbChar": {
-    "message": "Evitar Caracteres Ambíguos"
+    "message": "Evitar Caracteres Ambíguos",
+    "description": "deprecated. Use avoidAmbiguous instead."
+  },
+  "avoidAmbiguous": {
+    "message": "Avoid ambiguous characters",
+    "description": "Label for the avoid ambiguous characters checkbox."
   },
   "searchVault": {
     "message": "Pesquisar no Cofre"
@@ -638,6 +683,12 @@
   "newAccountCreated": {
     "message": "A sua nova conta foi criada! Agora você pode iniciar a sessão."
   },
+  "newAccountCreated2": {
+    "message": "Your new account has been created!"
+  },
+  "youHaveBeenLoggedIn": {
+    "message": "You have been logged in!"
+  },
   "youSuccessfullyLoggedIn": {
     "message": "Você logou na sua conta com sucesso"
   },
@@ -688,7 +739,7 @@
     "message": "O Bitwarden pode armazenar e preencher códigos de verificação de duas etapas. Selecione o ícone de câmera para tirar uma captura da tela do código QR de autenticador deste site, ou copie e cole a chave neste campo."
   },
   "learnMoreAboutAuthenticators": {
-    "message": "Learn more about authenticators"
+    "message": "Saiba mais sobre os autenticadores"
   },
   "copyTOTP": {
     "message": "Copiar chave de Autenticação (TOTP)"
@@ -1080,7 +1131,7 @@
     "message": "1 GB de armazenamento de arquivos encriptados."
   },
   "premiumSignUpEmergency": {
-    "message": "Emergency access."
+    "message": "Acesso de emergência."
   },
   "premiumSignUpTwoStepOptions": {
     "message": "Opções de login em duas etapas como YubiKey e Duo."
@@ -1104,7 +1155,7 @@
     "message": "Você pode comprar a assinatura premium no cofre web em bitwarden.com. Você deseja visitar o site agora?"
   },
   "premiumPurchaseAlertV2": {
-    "message": "You can purchase Premium from your account settings on the Bitwarden web app."
+    "message": "Você pode comprar Premium nas configurações de sua conta no aplicativo web do Bitwarden."
   },
   "premiumCurrentMember": {
     "message": "Você é um membro premium!"
@@ -1113,7 +1164,7 @@
     "message": "Obrigado por apoiar o Bitwarden."
   },
   "premiumFeatures": {
-    "message": "Upgrade to premium and receive:"
+    "message": "Atualize para a versão Premium e receba:"
   },
   "premiumPrice": {
     "message": "Tudo por apenas %price% /ano!",
@@ -1125,7 +1176,7 @@
     }
   },
   "premiumPriceV2": {
-    "message": "All for just $PRICE$ per year!",
+    "message": "Tudo por apenas $PRICE$ por ano!",
     "placeholders": {
       "price": {
         "content": "$1",
@@ -2083,6 +2134,12 @@
   "biometricsNotUnlockedDesc": {
     "message": "Por favor, desbloqueie esse usuário no aplicativo da área de trabalho e tente novamente."
   },
+  "biometricsNotAvailableTitle": {
+    "message": "Desbloqueio biométrico indisponível"
+  },
+  "biometricsNotAvailableDesc": {
+    "message": "O desbloqueio biométrico está indisponível no momento. Tente novamente mais tarde."
+  },
   "biometricsFailedTitle": {
     "message": "Biometria falhou"
   },
@@ -2314,11 +2371,11 @@
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "createdSendSuccessfully": {
-    "message": "Send created successfully!",
+    "message": "Envio criado com sucesso!",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "sendAvailability": {
-    "message": "The Send will be available to anyone with the link for the next $DAYS$ days.",
+    "message": "O envio estará disponível para qualquer pessoa com o link para os próximos $DAYS$ dias.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated.",
     "placeholders": {
       "days": {
@@ -2328,7 +2385,7 @@
     }
   },
   "sendLinkCopied": {
-    "message": "Send link copied",
+    "message": "Enviar link copiado",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "editedSend": {
@@ -3639,8 +3696,16 @@
     "message": "Credenciais salvas com sucesso!",
     "description": "Notification message for when saving credentials has succeeded."
   },
+  "passwordSaved": {
+    "message": "Password saved!",
+    "description": "Notification message for when saving credentials has succeeded."
+  },
   "updateCipherAttemptSuccess": {
     "message": "Credenciais atualizadas com sucesso!",
+    "description": "Notification message for when updating credentials has succeeded."
+  },
+  "passwordUpdated": {
+    "message": "Password updated!",
     "description": "Notification message for when updating credentials has succeeded."
   },
   "saveCipherAttemptFailed": {
@@ -3920,7 +3985,7 @@
     "message": "Site (URI)"
   },
   "websiteUriCount": {
-    "message": "Website (URI) $COUNT$",
+    "message": "Site (URI) $COUNT$",
     "description": "Label for an input field that contains a website URI. The input field is part of a list of fields, and the count indicates the position of the field in the list.",
     "placeholders": {
       "count": {
@@ -3970,10 +4035,10 @@
     "message": "Preenchimento automático ao carregar a página?"
   },
   "cardExpiredTitle": {
-    "message": "Expired card"
+    "message": "Cartão expirado"
   },
   "cardExpiredMessage": {
-    "message": "If you've renewed it, update the card's information"
+    "message": "Se você o renovou, atualize as informações do cartão"
   },
   "cardDetails": {
     "message": "Detalhes do cartão"
@@ -3988,7 +4053,7 @@
     }
   },
   "enableAnimations": {
-    "message": "Enable animations"
+    "message": "Habilita animações"
   },
   "addAccount": {
     "message": "Adicionar conta"
@@ -4221,12 +4286,15 @@
     "message": "Ações da conta"
   },
   "showNumberOfAutofillSuggestions": {
-    "message": "Show number of login autofill suggestions on extension icon"
+    "message": "Mostrar o número de sugestões de preenchimento automático de login no ícone da extensão"
   },
   "systemDefault": {
-    "message": "System default"
+    "message": "Padrão do sistema"
   },
   "enterprisePolicyRequirementsApplied": {
-    "message": "Enterprise policy requirements have been applied to this setting"
+    "message": "Os requisitos de política empresarial foram aplicados nesta configuração"
+  },
+  "additionalContentAvailable": {
+    "message": "Additional content is available"
   }
 }

@@ -384,16 +384,56 @@
     "message": "Minimale Passwortlänge"
   },
   "uppercase": {
-    "message": "Großbuchstaben (A-Z)"
+    "message": "Großbuchstaben (A-Z)",
+    "description": "deprecated. Use uppercaseLabel instead."
   },
   "lowercase": {
-    "message": "Kleinbuchstaben (a-z)"
+    "message": "Kleinbuchstaben (a-z)",
+    "description": "deprecated. Use lowercaseLabel instead."
   },
   "numbers": {
-    "message": "Zahlen (0-9)"
+    "message": "Zahlen (0-9)",
+    "description": "deprecated. Use numbersLabel instead."
   },
   "specialCharacters": {
-    "message": "Sonderzeichen (!@#$%^&*)"
+    "message": "Sonderzeichen (!@#$%^&*)",
+    "description": "deprecated. Use specialCharactersLabel instead."
+  },
+  "include": {
+    "message": "Einschließen",
+    "description": "Card header for password generator include block"
+  },
+  "uppercaseDescription": {
+    "message": "Großbuchstaben verwenden",
+    "description": "Tooltip for the password generator uppercase character checkbox"
+  },
+  "uppercaseLabel": {
+    "message": "A-Z",
+    "description": "Label for the password generator uppercase character checkbox"
+  },
+  "lowercaseDescription": {
+    "message": "Kleinbuchstaben verwenden",
+    "description": "Full description for the password generator lowercase character checkbox"
+  },
+  "lowercaseLabel": {
+    "message": "a-z",
+    "description": "Label for the password generator lowercase character checkbox"
+  },
+  "numbersDescription": {
+    "message": "Ziffern verwenden",
+    "description": "Full description for the password generator numbers checkbox"
+  },
+  "numbersLabel": {
+    "message": "0-9",
+    "description": "Label for the password generator numbers checkbox"
+  },
+  "specialCharactersDescription": {
+    "message": "Sonderzeichen verwenden",
+    "description": "Full description for the password generator special characters checkbox"
+  },
+  "specialCharactersLabel": {
+    "message": "!@#$%^&*",
+    "description": "Label for the password generator special characters checkbox"
   },
   "numWords": {
     "message": "Anzahl der Wörter"
@@ -415,7 +455,12 @@
     "message": "Mindestanzahl Sonderzeichen"
   },
   "avoidAmbChar": {
-    "message": "Mehrdeutige Zeichen vermeiden"
+    "message": "Mehrdeutige Zeichen vermeiden",
+    "description": "deprecated. Use avoidAmbiguous instead."
+  },
+  "avoidAmbiguous": {
+    "message": "Mehrdeutige Zeichen vermeiden",
+    "description": "Label for the avoid ambiguous characters checkbox."
   },
   "searchVault": {
     "message": "Tresor durchsuchen"
@@ -637,6 +682,12 @@
   },
   "newAccountCreated": {
     "message": "Dein neues Konto wurde erstellt! Du kannst dich jetzt anmelden."
+  },
+  "newAccountCreated2": {
+    "message": "Dein neues Konto wurde erstellt!"
+  },
+  "youHaveBeenLoggedIn": {
+    "message": "Du wurdest angemeldet!"
   },
   "youSuccessfullyLoggedIn": {
     "message": "Du hast dich erfolgreich angemeldet."
@@ -2082,6 +2133,12 @@
   },
   "biometricsNotUnlockedDesc": {
     "message": "Bitte entsperre diesen Nutzer in der Desktop-Anwendung und versuche es erneut."
+  },
+  "biometricsNotAvailableTitle": {
+    "message": "Biometrisches Entsperren nicht verfügbar"
+  },
+  "biometricsNotAvailableDesc": {
+    "message": "Biometrisches Entsperren ist derzeit nicht verfügbar. Bitte versuche es später erneut."
   },
   "biometricsFailedTitle": {
     "message": "Biometrie fehlgeschlagen"
@@ -3639,8 +3696,16 @@
     "message": "Zugangsdaten erfolgreich gespeichert!",
     "description": "Notification message for when saving credentials has succeeded."
   },
+  "passwordSaved": {
+    "message": "Passwort gespeichert!",
+    "description": "Notification message for when saving credentials has succeeded."
+  },
   "updateCipherAttemptSuccess": {
     "message": "Zugangsdaten erfolgreich aktualisiert!",
+    "description": "Notification message for when updating credentials has succeeded."
+  },
+  "passwordUpdated": {
+    "message": "Passwort aktualisiert!",
     "description": "Notification message for when updating credentials has succeeded."
   },
   "saveCipherAttemptFailed": {
@@ -3988,7 +4053,7 @@
     }
   },
   "enableAnimations": {
-    "message": "Enable animations"
+    "message": "Animationen aktivieren"
   },
   "addAccount": {
     "message": "Konto hinzufügen"
@@ -4228,5 +4293,8 @@
   },
   "enterprisePolicyRequirementsApplied": {
     "message": "Unternehmens-Richtlinienanforderungen wurden auf diese Einstellung angewandt"
+  },
+  "additionalContentAvailable": {
+    "message": "Zusätzlicher Inhalt ist verfügbar"
   }
 }
