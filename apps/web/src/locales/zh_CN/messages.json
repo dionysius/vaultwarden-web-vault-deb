@@ -711,7 +711,7 @@
     "message": "访问权限等级"
   },
   "accessing": {
-    "message": "访问中"
+    "message": "正在访问"
   },
   "loggedOut": {
     "message": "已注销"
@@ -750,7 +750,7 @@
     "message": "否"
   },
   "loginOrCreateNewAccount": {
-    "message": "登录或者创建一个账户来访问您的安全密码库。"
+    "message": "登录或创建一个新账户以访问您的安全密码库。"
   },
   "loginWithDevice": {
     "message": "使用设备登录"
@@ -965,10 +965,10 @@
     "message": "您的新账户已创建！您现在可以登录了。"
   },
   "newAccountCreated2": {
-    "message": "Your new account has been created!"
+    "message": "您的新账户已成功创建！"
   },
   "youHaveBeenLoggedIn": {
-    "message": "You have been logged in!"
+    "message": "您已登录！"
   },
   "trialAccountCreated": {
     "message": "账户创建成功。"
@@ -8470,7 +8470,7 @@
     "message": "SDK"
   },
   "sdksDesc": {
-    "message": "使用以下编程语言的 Bitwarden 机密管理器 SDK 来构建您自己的应用程序。"
+    "message": "使用以下编程语言中的 Bitwarden 机密管理器 SDK 来构建您自己的应用程序。"
   },
   "setUpGithubActions": {
     "message": "设置 Github Actions"
