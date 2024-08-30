@@ -38,6 +38,7 @@ export class AutoFillConstants {
     "mfacode",
     "otc",
     "otc-code",
+    "otp",
     "otp-code",
     "otpcode",
     "pin",
