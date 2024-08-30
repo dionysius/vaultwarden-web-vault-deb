@@ -14,7 +14,7 @@ import { Utils } from "@bitwarden/common/platform/misc/utils";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CipherType } from "@bitwarden/common/vault/enums";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 
 import { UserVerificationModule } from "../../../../auth/shared/components/user-verification";
 import { SharedModule } from "../../../../shared/shared.module";
@@ -94,6 +94,7 @@ export class DeleteOrganizationDialogComponent implements OnInit, OnDestroy {
     private organizationService: OrganizationService,
     private organizationApiService: OrganizationApiServiceAbstraction,
     private formBuilder: FormBuilder,
+    private toastService: ToastService,
   ) {}
 
   ngOnDestroy(): void {
@@ -121,11 +122,11 @@ export class DeleteOrganizationDialogComponent implements OnInit, OnDestroy {
       .buildRequest(this.formGroup.value.secret)
       .then((request) => this.organizationApiService.delete(this.organization.id, request));
 
-    this.platformUtilsService.showToast(
-      "success",
-      this.i18nService.t("organizationDeleted"),
-      this.i18nService.t("organizationDeletedDesc"),
-    );
+    this.toastService.showToast({
+      variant: "success",
+      title: this.i18nService.t("organizationDeleted"),
+      message: this.i18nService.t("organizationDeletedDesc"),
+    });
     this.dialogRef.close(DeleteOrganizationDialogResult.Deleted);
   };
 

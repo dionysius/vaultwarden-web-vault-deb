@@ -9,7 +9,7 @@ import {
 import { ProviderService } from "@bitwarden/common/admin-console/abstractions/provider.service";
 import { Provider } from "@bitwarden/common/admin-console/models/domain/provider";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
-import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { ToastService } from "@bitwarden/components";
 
 /**
  * `CanActivateFn` that asserts the logged in user has permission to access
@@ -36,8 +36,8 @@ export function providerPermissionsGuard(
   return async (route: ActivatedRouteSnapshot, _state: RouterStateSnapshot) => {
     const providerService = inject(ProviderService);
     const router = inject(Router);
-    const platformUtilsService = inject(PlatformUtilsService);
     const i18nService = inject(I18nService);
+    const toastService = inject(ToastService);
 
     const provider = await providerService.get(route.params.providerId);
     if (provider == null) {
@@ -45,14 +45,22 @@ export function providerPermissionsGuard(
     }
 
     if (!provider.isProviderAdmin && !provider.enabled) {
-      platformUtilsService.showToast("error", null, i18nService.t("providerIsDisabled"));
+      toastService.showToast({
+        variant: "error",
+        title: null,
+        message: i18nService.t("providerIsDisabled"),
+      });
       return router.createUrlTree(["/"]);
     }
 
     const hasSpecifiedPermissions = permissionsCallback == null || permissionsCallback(provider);
 
     if (!hasSpecifiedPermissions) {
-      platformUtilsService.showToast("error", null, i18nService.t("accessDenied"));
+      toastService.showToast({
+        variant: "error",
+        title: null,
+        message: i18nService.t("accessDenied"),
+      });
       return router.createUrlTree(["/providers", provider.id]);
     }
 

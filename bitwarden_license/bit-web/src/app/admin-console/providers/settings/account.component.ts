@@ -14,7 +14,7 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 
 @Component({
   selector: "provider-account",
@@ -49,6 +49,7 @@ export class AccountComponent implements OnDestroy, OnInit {
     private providerApiService: ProviderApiServiceAbstraction,
     private formBuilder: FormBuilder,
     private router: Router,
+    private toastService: ToastService,
   ) {}
 
   async ngOnInit() {
@@ -86,7 +87,11 @@ export class AccountComponent implements OnDestroy, OnInit {
     await this.providerApiService.putProvider(this.providerId, request);
     await this.syncService.fullSync(true);
     this.provider = await this.providerApiService.getProvider(this.providerId);
-    this.platformUtilsService.showToast("success", null, this.i18nService.t("providerUpdated"));
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("providerUpdated"),
+    });
   };
 
   async deleteProvider() {
@@ -110,11 +115,11 @@ export class AccountComponent implements OnDestroy, OnInit {
 
     try {
       await this.providerApiService.deleteProvider(this.providerId);
-      this.platformUtilsService.showToast(
-        "success",
-        this.i18nService.t("providerDeleted"),
-        this.i18nService.t("providerDeletedDesc"),
-      );
+      this.toastService.showToast({
+        variant: "success",
+        title: this.i18nService.t("providerDeleted"),
+        message: this.i18nService.t("providerDeletedDesc"),
+      });
     } catch (e) {
       this.logService.error(e);
     }

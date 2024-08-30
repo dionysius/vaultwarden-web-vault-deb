@@ -8,7 +8,7 @@ import { ProviderUserUpdateRequest } from "@bitwarden/common/admin-console/model
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 
 /**
  * @deprecated Please use the {@link MembersDialogComponent} instead.
@@ -42,6 +42,7 @@ export class UserAddEditComponent implements OnInit {
     private platformUtilsService: PlatformUtilsService,
     private logService: LogService,
     private dialogService: DialogService,
+    private toastService: ToastService,
   ) {}
 
   async ngOnInit() {
@@ -80,11 +81,11 @@ export class UserAddEditComponent implements OnInit {
         this.formPromise = this.apiService.postProviderUserInvite(this.providerId, request);
       }
       await this.formPromise;
-      this.platformUtilsService.showToast(
-        "success",
-        null,
-        this.i18nService.t(this.editMode ? "editedUserId" : "invitedUsers", this.name),
-      );
+      this.toastService.showToast({
+        variant: "success",
+        title: null,
+        message: this.i18nService.t(this.editMode ? "editedUserId" : "invitedUsers", this.name),
+      });
       this.savedUser.emit();
     } catch (e) {
       this.logService.error(e);
@@ -109,11 +110,11 @@ export class UserAddEditComponent implements OnInit {
     try {
       this.deletePromise = this.apiService.deleteProviderUser(this.providerId, this.providerUserId);
       await this.deletePromise;
-      this.platformUtilsService.showToast(
-        "success",
-        null,
-        this.i18nService.t("removedUserId", this.name),
-      );
+      this.toastService.showToast({
+        variant: "success",
+        title: null,
+        message: this.i18nService.t("removedUserId", this.name),
+      });
       this.deletedUser.emit();
     } catch (e) {
       this.logService.error(e);

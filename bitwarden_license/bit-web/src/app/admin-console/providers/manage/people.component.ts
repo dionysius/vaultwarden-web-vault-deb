@@ -21,7 +21,7 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { ValidationService } from "@bitwarden/common/platform/abstractions/validation.service";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 import { BasePeopleComponent } from "@bitwarden/web-vault/app/admin-console/common/base.people.component";
 import { openEntityEventsDialog } from "@bitwarden/web-vault/app/admin-console/organizations/manage/entity-events.component";
 import { BulkStatusComponent } from "@bitwarden/web-vault/app/admin-console/organizations/members/components/bulk/bulk-status.component";
@@ -75,6 +75,7 @@ export class PeopleComponent
     dialogService: DialogService,
     organizationManagementPreferencesService: OrganizationManagementPreferencesService,
     private configService: ConfigService,
+    protected toastService: ToastService,
   ) {
     super(
       apiService,
@@ -89,6 +90,7 @@ export class PeopleComponent
       userNamePipe,
       dialogService,
       organizationManagementPreferencesService,
+      toastService,
     );
   }
 
@@ -213,11 +215,11 @@ export class PeopleComponent
     const filteredUsers = users.filter((u) => u.status === ProviderUserStatusType.Invited);
 
     if (filteredUsers.length <= 0) {
-      this.platformUtilsService.showToast(
-        "error",
-        this.i18nService.t("errorOccurred"),
-        this.i18nService.t("noSelectedUsersApplicable"),
-      );
+      this.toastService.showToast({
+        variant: "error",
+        title: this.i18nService.t("errorOccurred"),
+        message: this.i18nService.t("noSelectedUsersApplicable"),
+      });
       return;
     }
 

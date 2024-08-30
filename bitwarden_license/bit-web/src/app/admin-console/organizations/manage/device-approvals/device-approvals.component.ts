@@ -14,7 +14,7 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { ValidationService } from "@bitwarden/common/platform/abstractions/validation.service";
-import { TableDataSource, NoItemsModule } from "@bitwarden/components";
+import { TableDataSource, NoItemsModule, ToastService } from "@bitwarden/components";
 import { Devices } from "@bitwarden/web-vault/app/admin-console/icons";
 import { LooseComponentsModule } from "@bitwarden/web-vault/app/shared";
 import { SharedModule } from "@bitwarden/web-vault/app/shared/shared.module";
@@ -54,6 +54,7 @@ export class DeviceApprovalsComponent implements OnInit, OnDestroy {
     private logService: LogService,
     private validationService: ValidationService,
     private configService: ConfigService,
+    private toastService: ToastService,
   ) {}
 
   async ngOnInit() {
@@ -84,17 +85,17 @@ export class DeviceApprovalsComponent implements OnInit, OnDestroy {
           authRequest,
         );
 
-        this.platformUtilsService.showToast(
-          "success",
-          null,
-          this.i18nService.t("loginRequestApproved"),
-        );
+        this.toastService.showToast({
+          variant: "success",
+          title: null,
+          message: this.i18nService.t("loginRequestApproved"),
+        });
       } catch (error) {
-        this.platformUtilsService.showToast(
-          "error",
-          null,
-          this.i18nService.t("resetPasswordDetailsError"),
-        );
+        this.toastService.showToast({
+          variant: "error",
+          title: null,
+          message: this.i18nService.t("resetPasswordDetailsError"),
+        });
       }
     });
   }
@@ -109,18 +110,22 @@ export class DeviceApprovalsComponent implements OnInit, OnDestroy {
         this.organizationId,
         this.tableDataSource.data,
       );
-      this.platformUtilsService.showToast(
-        "success",
-        null,
-        this.i18nService.t("allLoginRequestsApproved"),
-      );
+      this.toastService.showToast({
+        variant: "success",
+        title: null,
+        message: this.i18nService.t("allLoginRequestsApproved"),
+      });
     });
   }
 
   async denyRequest(requestId: string) {
     await this.performAsyncAction(async () => {
       await this.organizationAuthRequestService.denyPendingRequests(this.organizationId, requestId);
-      this.platformUtilsService.showToast("error", null, this.i18nService.t("loginRequestDenied"));
+      this.toastService.showToast({
+        variant: "error",
+        title: null,
+        message: this.i18nService.t("loginRequestDenied"),
+      });
     });
   }
 
@@ -134,11 +139,11 @@ export class DeviceApprovalsComponent implements OnInit, OnDestroy {
         this.organizationId,
         ...this.tableDataSource.data.map((r) => r.id),
       );
-      this.platformUtilsService.showToast(
-        "error",
-        null,
-        this.i18nService.t("allLoginRequestsDenied"),
-      );
+      this.toastService.showToast({
+        variant: "error",
+        title: null,
+        message: this.i18nService.t("allLoginRequestsDenied"),
+      });
     });
   }
 

@@ -13,7 +13,7 @@ import { CryptoFunctionService as CryptoFunctionServiceAbstraction } from "@bitw
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { ValidationService } from "@bitwarden/common/platform/abstractions/validation.service";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 
 import { domainNameValidator } from "./validators/domain-name.validator";
 import { uniqueInArrayValidator } from "./validators/unique-in-array.validator";
@@ -66,6 +66,7 @@ export class DomainAddEditDialogComponent implements OnInit, OnDestroy {
     private orgDomainService: OrgDomainServiceAbstraction,
     private validationService: ValidationService,
     private dialogService: DialogService,
+    private toastService: ToastService,
   ) {}
 
   // Angular Method Implementations
@@ -112,7 +113,11 @@ export class DomainAddEditDialogComponent implements OnInit, OnDestroy {
   // Creates a new domain record. The DNS TXT Record will be generated server-side and returned in the response.
   saveDomain = async (): Promise<void> => {
     if (this.domainForm.invalid) {
-      this.platformUtilsService.showToast("error", null, this.i18nService.t("domainFormInvalid"));
+      this.toastService.showToast({
+        variant: "error",
+        title: null,
+        message: this.i18nService.t("domainFormInvalid"),
+      });
       return;
     }
 
@@ -126,7 +131,11 @@ export class DomainAddEditDialogComponent implements OnInit, OnDestroy {
       this.data.orgDomain = await this.orgDomainApiService.post(this.data.organizationId, request);
       // Patch the DNS TXT Record that was generated server-side
       this.domainForm.controls.txt.patchValue(this.data.orgDomain.txt);
-      this.platformUtilsService.showToast("success", null, this.i18nService.t("domainSaved"));
+      this.toastService.showToast({
+        variant: "success",
+        title: null,
+        message: this.i18nService.t("domainSaved"),
+      });
     } catch (e) {
       this.handleDomainSaveError(e);
     }
@@ -177,7 +186,11 @@ export class DomainAddEditDialogComponent implements OnInit, OnDestroy {
   verifyDomain = async (): Promise<void> => {
     if (this.domainForm.invalid) {
       // Note: shouldn't be possible, but going to leave this to be safe.
-      this.platformUtilsService.showToast("error", null, this.i18nService.t("domainFormInvalid"));
+      this.toastService.showToast({
+        variant: "error",
+        title: null,
+        message: this.i18nService.t("domainFormInvalid"),
+      });
       return;
     }
 
@@ -188,7 +201,11 @@ export class DomainAddEditDialogComponent implements OnInit, OnDestroy {
       );
 
       if (this.data.orgDomain.verifiedDate) {
-        this.platformUtilsService.showToast("success", null, this.i18nService.t("domainVerified"));
+        this.toastService.showToast({
+          variant: "success",
+          title: null,
+          message: this.i18nService.t("domainVerified"),
+        });
         this.dialogRef.close();
       } else {
         this.domainNameCtrl.setErrors({
@@ -250,7 +267,11 @@ export class DomainAddEditDialogComponent implements OnInit, OnDestroy {
     }
 
     await this.orgDomainApiService.delete(this.data.organizationId, this.data.orgDomain.id);
-    this.platformUtilsService.showToast("success", null, this.i18nService.t("domainRemoved"));
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("domainRemoved"),
+    });
 
     this.dialogRef.close();
   };

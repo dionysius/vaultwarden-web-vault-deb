@@ -11,7 +11,7 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CollectionService } from "@bitwarden/common/vault/abstractions/collection.service";
 import { CollectionView } from "@bitwarden/common/vault/models/view/collection.view";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 
 @Component({
   selector: "app-vault-collections",
@@ -29,6 +29,7 @@ export class CollectionsComponent extends BaseCollectionsComponent implements On
     accountService: AccountService,
     protected dialogRef: DialogRef,
     @Inject(DIALOG_DATA) params: CollectionsDialogParams,
+    toastService: ToastService,
   ) {
     super(
       collectionService,
@@ -39,6 +40,7 @@ export class CollectionsComponent extends BaseCollectionsComponent implements On
       logService,
       configService,
       accountService,
+      toastService,
     );
     this.cipherId = params?.cipherId;
   }

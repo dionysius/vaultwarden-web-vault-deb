@@ -10,7 +10,7 @@ import { ErrorResponse } from "@bitwarden/common/models/response/error.response"
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { ValidationService } from "@bitwarden/common/platform/abstractions/validation.service";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 
 import {
   DomainAddEditDialogComponent,
@@ -37,6 +37,7 @@ export class DomainVerificationComponent implements OnInit, OnDestroy {
     private orgDomainService: OrgDomainServiceAbstraction,
     private dialogService: DialogService,
     private validationService: ValidationService,
+    private toastService: ToastService,
   ) {}
 
   // eslint-disable-next-line @typescript-eslint/no-empty-function
@@ -110,13 +111,17 @@ export class DomainVerificationComponent implements OnInit, OnDestroy {
       );
 
       if (orgDomain.verifiedDate) {
-        this.platformUtilsService.showToast("success", null, this.i18nService.t("domainVerified"));
+        this.toastService.showToast({
+          variant: "success",
+          title: null,
+          message: this.i18nService.t("domainVerified"),
+        });
       } else {
-        this.platformUtilsService.showToast(
-          "error",
-          null,
-          this.i18nService.t("domainNotVerified", domainName),
-        );
+        this.toastService.showToast({
+          variant: "error",
+          title: null,
+          message: this.i18nService.t("domainNotVerified", domainName),
+        });
         // Update this item so the last checked date gets updated.
         await this.updateOrgDomain(orgDomainId);
       }
@@ -138,11 +143,11 @@ export class DomainVerificationComponent implements OnInit, OnDestroy {
       switch (errorResponse.statusCode) {
         case HttpStatusCode.Conflict:
           if (errorResponse.message.includes("The domain is not available to be claimed")) {
-            this.platformUtilsService.showToast(
-              "error",
-              null,
-              this.i18nService.t("domainNotAvailable", domainName),
-            );
+            this.toastService.showToast({
+              variant: "error",
+              title: null,
+              message: this.i18nService.t("domainNotAvailable", domainName),
+            });
           }
           break;
 
@@ -166,7 +171,11 @@ export class DomainVerificationComponent implements OnInit, OnDestroy {
 
     await this.orgDomainApiService.delete(this.organizationId, orgDomainId);
 
-    this.platformUtilsService.showToast("success", null, this.i18nService.t("domainRemoved"));
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("domainRemoved"),
+    });
   }
 
   ngOnDestroy(): void {

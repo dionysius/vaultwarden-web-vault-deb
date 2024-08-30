@@ -6,7 +6,7 @@ import { ProviderService } from "@bitwarden/common/admin-console/abstractions/pr
 import { ProviderUserType } from "@bitwarden/common/admin-console/enums";
 import { Provider } from "@bitwarden/common/admin-console/models/domain/provider";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
-import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { ToastService } from "@bitwarden/components";
 
 import { providerPermissionsGuard } from "./provider-permissions.guard";
 
@@ -39,7 +39,7 @@ describe("Provider Permissions Guard", () => {
     TestBed.configureTestingModule({
       providers: [
         { provide: ProviderService, useValue: providerService },
-        { provide: PlatformUtilsService, useValue: mock<PlatformUtilsService>() },
+        { provide: ToastService, useValue: mock<ToastService>() },
         { provide: I18nService, useValue: mock<I18nService>() },
         { provide: Router, useValue: mock<Router>() },
       ],

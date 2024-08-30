@@ -6,6 +6,7 @@ import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-conso
 import { OrganizationVerifyDeleteRecoverRequest } from "@bitwarden/common/admin-console/models/request/organization-verify-delete-recover.request";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { ToastService } from "@bitwarden/components";
 
 import { SharedModule } from "../../../shared/shared.module";
 
@@ -27,6 +28,7 @@ export class VerifyRecoverDeleteOrgComponent implements OnInit {
     private platformUtilsService: PlatformUtilsService,
     private i18nService: I18nService,
     private route: ActivatedRoute,
+    private toastService: ToastService,
   ) {}
 
   async ngOnInit() {
@@ -44,11 +46,11 @@ export class VerifyRecoverDeleteOrgComponent implements OnInit {
   submit = async () => {
     const request = new OrganizationVerifyDeleteRecoverRequest(this.token);
     await this.apiService.deleteUsingToken(this.orgId, request);
-    this.platformUtilsService.showToast(
-      "success",
-      this.i18nService.t("organizationDeleted"),
-      this.i18nService.t("organizationDeletedDesc"),
-    );
+    this.toastService.showToast({
+      variant: "success",
+      title: this.i18nService.t("organizationDeleted"),
+      message: this.i18nService.t("organizationDeletedDesc"),
+    });
     await this.router.navigate(["/"]);
   };
 }

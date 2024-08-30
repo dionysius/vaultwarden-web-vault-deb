@@ -12,6 +12,7 @@ import { LogService } from "@bitwarden/common/platform/abstractions/log.service"
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
 import { CollectionService } from "@bitwarden/common/vault/abstractions/collection.service";
+import { ToastService } from "@bitwarden/components";
 
 @Component({
   selector: "app-vault-collections",
@@ -30,6 +31,7 @@ export class CollectionsComponent extends BaseCollectionsComponent implements On
     logService: LogService,
     configService: ConfigService,
     accountService: AccountService,
+    toastService: ToastService,
   ) {
     super(
       collectionService,
@@ -40,6 +42,7 @@ export class CollectionsComponent extends BaseCollectionsComponent implements On
       logService,
       configService,
       accountService,
+      toastService,
     );
   }
 

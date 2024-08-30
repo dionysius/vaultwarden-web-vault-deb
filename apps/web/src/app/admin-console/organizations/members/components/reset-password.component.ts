@@ -17,7 +17,7 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/generator-legacy";
 
 import { OrganizationUserResetPasswordService } from "../services/organization-user-reset-password/organization-user-reset-password.service";
@@ -50,6 +50,7 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
     private policyService: PolicyService,
     private logService: LogService,
     private dialogService: DialogService,
+    private toastService: ToastService,
   ) {}
 
   async ngOnInit() {
@@ -88,30 +89,30 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
     }
 
     this.platformUtilsService.copyToClipboard(value, { window: window });
-    this.platformUtilsService.showToast(
-      "info",
-      null,
-      this.i18nService.t("valueCopied", this.i18nService.t("password")),
-    );
+    this.toastService.showToast({
+      variant: "info",
+      title: null,
+      message: this.i18nService.t("valueCopied", this.i18nService.t("password")),
+    });
   }
 
   async submit() {
     // Validation
     if (this.newPassword == null || this.newPassword === "") {
-      this.platformUtilsService.showToast(
-        "error",
-        this.i18nService.t("errorOccurred"),
-        this.i18nService.t("masterPasswordRequired"),
-      );
+      this.toastService.showToast({
+        variant: "error",
+        title: this.i18nService.t("errorOccurred"),
+        message: this.i18nService.t("masterPasswordRequired"),
+      });
       return false;
     }
 
     if (this.newPassword.length < Utils.minimumPasswordLength) {
-      this.platformUtilsService.showToast(
-        "error",
-        this.i18nService.t("errorOccurred"),
-        this.i18nService.t("masterPasswordMinlength", Utils.minimumPasswordLength),
-      );
+      this.toastService.showToast({
+        variant: "error",
+        title: this.i18nService.t("errorOccurred"),
+        message: this.i18nService.t("masterPasswordMinlength", Utils.minimumPasswordLength),
+      });
       return false;
     }
 
@@ -123,11 +124,11 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
         this.enforcedPolicyOptions,
       )
     ) {
-      this.platformUtilsService.showToast(
-        "error",
-        this.i18nService.t("errorOccurred"),
-        this.i18nService.t("masterPasswordPolicyRequirementsNotMet"),
-      );
+      this.toastService.showToast({
+        variant: "error",
+        title: this.i18nService.t("errorOccurred"),
+        message: this.i18nService.t("masterPasswordPolicyRequirementsNotMet"),
+      });
       return;
     }
 
@@ -151,11 +152,11 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
         this.organizationId,
       );
       await this.formPromise;
-      this.platformUtilsService.showToast(
-        "success",
-        null,
-        this.i18nService.t("resetPasswordSuccess"),
-      );
+      this.toastService.showToast({
+        variant: "success",
+        title: null,
+        message: this.i18nService.t("resetPasswordSuccess"),
+      });
       this.passwordReset.emit();
     } catch (e) {
       this.logService.error(e);

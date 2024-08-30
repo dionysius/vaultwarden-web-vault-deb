@@ -14,7 +14,7 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { ValidationService } from "@bitwarden/common/platform/abstractions/validation.service";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 
 import { OrganizationPlansComponent } from "../../../billing";
 import { SharedModule } from "../../../shared";
@@ -68,6 +68,7 @@ export class FamiliesForEnterpriseSetupComponent implements OnInit, OnDestroy {
     private organizationService: OrganizationService,
     private dialogService: DialogService,
     private formBuilder: FormBuilder,
+    private toastService: ToastService,
   ) {}
 
   async ngOnInit() {
@@ -76,12 +77,12 @@ export class FamiliesForEnterpriseSetupComponent implements OnInit, OnDestroy {
     this.route.queryParams.pipe(first()).subscribe(async (qParams) => {
       const error = qParams.token == null;
       if (error) {
-        this.platformUtilsService.showToast(
-          "error",
-          null,
-          this.i18nService.t("sponsoredFamiliesAcceptFailed"),
-          { timeout: 10000 },
-        );
+        this.toastService.showToast({
+          variant: "error",
+          title: null,
+          message: this.i18nService.t("sponsoredFamiliesAcceptFailed"),
+          timeout: 10000,
+        });
         // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
         // eslint-disable-next-line @typescript-eslint/no-floating-promises
         this.router.navigate(["/"]);
@@ -139,11 +140,11 @@ export class FamiliesForEnterpriseSetupComponent implements OnInit, OnDestroy {
       request.sponsoredOrganizationId = organizationId;
 
       await this.apiService.postRedeemSponsorship(this.token, request);
-      this.platformUtilsService.showToast(
-        "success",
-        null,
-        this.i18nService.t("sponsoredFamiliesOfferRedeemed"),
-      );
+      this.toastService.showToast({
+        variant: "success",
+        title: null,
+        message: this.i18nService.t("sponsoredFamiliesOfferRedeemed"),
+      });
       await this.syncService.fullSync(true);
 
       // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.

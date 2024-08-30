@@ -14,7 +14,7 @@ import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.se
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { Utils } from "@bitwarden/common/platform/misc/utils";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 
 import { ApiKeyComponent } from "../../../auth/settings/security/api-key.component";
 import { PurgeVaultComponent } from "../../../vault/settings/purge-vault.component";
@@ -77,6 +77,7 @@ export class AccountComponent implements OnInit, OnDestroy {
     private organizationApiService: OrganizationApiServiceAbstraction,
     private dialogService: DialogService,
     private formBuilder: FormBuilder,
+    private toastService: ToastService,
   ) {}
 
   async ngOnInit() {
@@ -167,7 +168,11 @@ export class AccountComponent implements OnInit, OnDestroy {
 
     await this.organizationApiService.save(this.organizationId, request);
 
-    this.platformUtilsService.showToast("success", null, this.i18nService.t("organizationUpdated"));
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("organizationUpdated"),
+    });
   };
 
   submitCollectionManagement = async () => {
@@ -184,11 +189,11 @@ export class AccountComponent implements OnInit, OnDestroy {
 
     await this.organizationApiService.updateCollectionManagement(this.organizationId, request);
 
-    this.platformUtilsService.showToast(
-      "success",
-      null,
-      this.i18nService.t("updatedCollectionManagement"),
-    );
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("updatedCollectionManagement"),
+    });
   };
 
   async deleteOrganization() {

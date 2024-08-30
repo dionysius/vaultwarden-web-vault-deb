@@ -8,7 +8,7 @@ import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.servic
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 
 import { OrganizationUserResetPasswordService } from "../members/services/organization-user-reset-password/organization-user-reset-password.service";
 
@@ -29,6 +29,7 @@ export class EnrollMasterPasswordReset {
     syncService: SyncService,
     logService: LogService,
     userVerificationService: UserVerificationService,
+    toastService: ToastService,
   ) {
     const result = await UserVerificationDialogComponent.open(dialogService, {
       title: "enrollAccountRecovery",
@@ -71,7 +72,11 @@ export class EnrollMasterPasswordReset {
 
     // Enrollment succeeded
     try {
-      platformUtilsService.showToast("success", null, i18nService.t("enrollPasswordResetSuccess"));
+      toastService.showToast({
+        variant: "success",
+        title: null,
+        message: i18nService.t("enrollPasswordResetSuccess"),
+      });
       await syncService.fullSync(true);
     } catch (e) {
       logService.error(e);

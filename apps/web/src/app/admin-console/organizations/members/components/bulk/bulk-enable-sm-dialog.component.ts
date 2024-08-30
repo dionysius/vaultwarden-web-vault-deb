@@ -4,7 +4,7 @@ import { Component, Inject, OnInit } from "@angular/core";
 import { OrganizationUserService } from "@bitwarden/common/admin-console/abstractions/organization-user/organization-user.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { DialogService, TableDataSource } from "@bitwarden/components";
+import { DialogService, TableDataSource, ToastService } from "@bitwarden/components";
 
 import { OrganizationUserView } from "../../../core";
 
@@ -24,6 +24,7 @@ export class BulkEnableSecretsManagerDialogComponent implements OnInit {
     private organizationUserService: OrganizationUserService,
     private platformUtilsService: PlatformUtilsService,
     private i18nService: I18nService,
+    private toastService: ToastService,
   ) {}
 
   ngOnInit(): void {
@@ -35,11 +36,11 @@ export class BulkEnableSecretsManagerDialogComponent implements OnInit {
       this.data.orgId,
       this.dataSource.data.map((u) => u.id),
     );
-    this.platformUtilsService.showToast(
-      "success",
-      null,
-      this.i18nService.t("activatedAccessToSecretsManager"),
-    );
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("activatedAccessToSecretsManager"),
+    });
     this.dialogRef.close();
   };
 

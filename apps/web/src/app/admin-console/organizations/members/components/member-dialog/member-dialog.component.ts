@@ -26,7 +26,7 @@ import { ProductTierType } from "@bitwarden/common/billing/enums";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { CollectionView } from "@bitwarden/common/vault/models/view/collection.view";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 
 import { CollectionAdminService } from "../../../../../vault/core/collection-admin.service";
 import { CollectionAdminView } from "../../../../../vault/core/views/collection-admin.view";
@@ -143,6 +143,7 @@ export class MemberDialogComponent implements OnDestroy {
     private dialogService: DialogService,
     private accountService: AccountService,
     organizationService: OrganizationService,
+    private toastService: ToastService,
   ) {
     this.organization$ = organizationService
       .get$(this.params.organizationId)
@@ -376,11 +377,11 @@ export class MemberDialogComponent implements OnDestroy {
     ) {
       this.permissionsGroup.value.manageUsers = true;
       (document.getElementById("manageUsers") as HTMLInputElement).checked = true;
-      this.platformUtilsService.showToast(
-        "info",
-        null,
-        this.i18nService.t("accountRecoveryManageUsers"),
-      );
+      this.toastService.showToast({
+        variant: "info",
+        title: null,
+        message: this.i18nService.t("accountRecoveryManageUsers"),
+      });
     }
   }
 
@@ -389,11 +390,11 @@ export class MemberDialogComponent implements OnDestroy {
 
     if (this.formGroup.invalid) {
       if (this.tabIndex !== MemberDialogTab.Role) {
-        this.platformUtilsService.showToast(
-          "error",
-          null,
-          this.i18nService.t("fieldOnTabRequiresAttention", this.i18nService.t("role")),
-        );
+        this.toastService.showToast({
+          variant: "error",
+          title: null,
+          message: this.i18nService.t("fieldOnTabRequiresAttention", this.i18nService.t("role")),
+        });
       }
       return;
     }
@@ -401,11 +402,11 @@ export class MemberDialogComponent implements OnDestroy {
     const organization = await firstValueFrom(this.organization$);
 
     if (!organization.useCustomPermissions && this.customUserTypeSelected) {
-      this.platformUtilsService.showToast(
-        "error",
-        null,
-        this.i18nService.t("customNonEnterpriseError"),
-      );
+      this.toastService.showToast({
+        variant: "error",
+        title: null,
+        message: this.i18nService.t("customNonEnterpriseError"),
+      });
       return;
     }
 
@@ -452,11 +453,14 @@ export class MemberDialogComponent implements OnDestroy {
       await this.userService.invite(emails, userView);
     }
 
-    this.platformUtilsService.showToast(
-      "success",
-      null,
-      this.i18nService.t(this.editMode ? "editedUserId" : "invitedUsers", this.params.name),
-    );
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t(
+        this.editMode ? "editedUserId" : "invitedUsers",
+        this.params.name,
+      ),
+    });
     this.close(MemberDialogResult.Saved);
   };
 
@@ -492,11 +496,11 @@ export class MemberDialogComponent implements OnDestroy {
       this.params.organizationUserId,
     );
 
-    this.platformUtilsService.showToast(
-      "success",
-      null,
-      this.i18nService.t("removedUserId", this.params.name),
-    );
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("removedUserId", this.params.name),
+    });
     this.close(MemberDialogResult.Deleted);
   };
 
@@ -529,11 +533,11 @@ export class MemberDialogComponent implements OnDestroy {
       this.params.organizationUserId,
     );
 
-    this.platformUtilsService.showToast(
-      "success",
-      null,
-      this.i18nService.t("revokedUserId", this.params.name),
-    );
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("revokedUserId", this.params.name),
+    });
     this.isRevoked = true;
     this.close(MemberDialogResult.Revoked);
   };
@@ -548,11 +552,11 @@ export class MemberDialogComponent implements OnDestroy {
       this.params.organizationUserId,
     );
 
-    this.platformUtilsService.showToast(
-      "success",
-      null,
-      this.i18nService.t("restoredUserId", this.params.name),
-    );
+    this.toastService.showToast({
+      variant: "success",
+      title: null,
+      message: this.i18nService.t("restoredUserId", this.params.name),
+    });
     this.isRevoked = false;
     this.close(MemberDialogResult.Restored);
   };

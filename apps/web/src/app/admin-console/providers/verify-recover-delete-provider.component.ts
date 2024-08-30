@@ -7,6 +7,7 @@ import { ProviderVerifyRecoverDeleteRequest } from "@bitwarden/common/admin-cons
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
+import { ToastService } from "@bitwarden/components";
 
 @Component({
   selector: "app-verify-recover-delete-provider",
@@ -27,6 +28,7 @@ export class VerifyRecoverDeleteProviderComponent implements OnInit {
     private i18nService: I18nService,
     private route: ActivatedRoute,
     private logService: LogService,
+    private toastService: ToastService,
   ) {}
 
   async ngOnInit() {
@@ -48,11 +50,11 @@ export class VerifyRecoverDeleteProviderComponent implements OnInit {
         request,
       );
       await this.formPromise;
-      this.platformUtilsService.showToast(
-        "success",
-        this.i18nService.t("providerDeleted"),
-        this.i18nService.t("providerDeletedDesc"),
-      );
+      this.toastService.showToast({
+        variant: "success",
+        title: this.i18nService.t("providerDeleted"),
+        message: this.i18nService.t("providerDeletedDesc"),
+      });
       await this.router.navigate(["/"]);
     } catch (e) {
       this.logService.error(e);

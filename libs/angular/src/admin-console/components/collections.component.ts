@@ -14,6 +14,7 @@ import { CollectionService } from "@bitwarden/common/vault/abstractions/collecti
 import { Cipher } from "@bitwarden/common/vault/models/domain/cipher";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { CollectionView } from "@bitwarden/common/vault/models/view/collection.view";
+import { ToastService } from "@bitwarden/components";
 
 @Directive()
 export class CollectionsComponent implements OnInit {
@@ -39,6 +40,7 @@ export class CollectionsComponent implements OnInit {
     private logService: LogService,
     private configService: ConfigService,
     private accountService: AccountService,
+    private toastService: ToastService,
   ) {}
 
   async ngOnInit() {
@@ -82,11 +84,11 @@ export class CollectionsComponent implements OnInit {
       })
       .map((c) => c.id);
     if (!this.allowSelectNone && selectedCollectionIds.length === 0) {
-      this.platformUtilsService.showToast(
-        "error",
-        this.i18nService.t("errorOccurred"),
-        this.i18nService.t("selectOneCollection"),
-      );
+      this.toastService.showToast({
+        variant: "error",
+        title: this.i18nService.t("errorOccurred"),
+        message: this.i18nService.t("selectOneCollection"),
+      });
       return false;
     }
     this.cipherDomain.collectionIds = selectedCollectionIds;
@@ -94,10 +96,18 @@ export class CollectionsComponent implements OnInit {
       this.formPromise = this.saveCollections();
       await this.formPromise;
       this.onSavedCollections.emit();
-      this.platformUtilsService.showToast("success", null, this.i18nService.t("editedItem"));
+      this.toastService.showToast({
+        variant: "success",
+        title: null,
+        message: this.i18nService.t("editedItem"),
+      });
       return true;
     } catch (e) {
-      this.platformUtilsService.showToast("error", this.i18nService.t("errorOccurred"), e.message);
+      this.toastService.showToast({
+        variant: "error",
+        title: this.i18nService.t("errorOccurred"),
+        message: e.message,
+      });
       return false;
     }
   }

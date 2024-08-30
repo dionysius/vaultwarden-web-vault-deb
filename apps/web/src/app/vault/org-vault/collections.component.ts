@@ -15,7 +15,7 @@ import { CipherData } from "@bitwarden/common/vault/models/data/cipher.data";
 import { Cipher } from "@bitwarden/common/vault/models/domain/cipher";
 import { CipherCollectionsRequest } from "@bitwarden/common/vault/models/request/cipher-collections.request";
 import { CollectionView } from "@bitwarden/common/vault/models/view/collection.view";
-import { DialogService } from "@bitwarden/components";
+import { DialogService, ToastService } from "@bitwarden/components";
 
 import {
   CollectionsComponent as BaseCollectionsComponent,
@@ -41,6 +41,7 @@ export class CollectionsComponent extends BaseCollectionsComponent {
     accountService: AccountService,
     protected dialogRef: DialogRef,
     @Inject(DIALOG_DATA) params: OrgVaultCollectionsDialogParams,
+    toastService: ToastService,
   ) {
     super(
       collectionService,
@@ -53,6 +54,7 @@ export class CollectionsComponent extends BaseCollectionsComponent {
       accountService,
       dialogRef,
       params,
+      toastService,
     );
     this.allowSelectNone = true;
     this.collectionIds = params?.collectionIds;
