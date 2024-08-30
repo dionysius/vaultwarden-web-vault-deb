@@ -62,12 +62,6 @@ describe("CopyCipherFieldService", () => {
       expect(platformUtilsService.copyToClipboard).not.toHaveBeenCalled();
     });
 
-    it("should return early when cipher.viewPassword is false", async () => {
-      cipher.viewPassword = false;
-      await service.copy(valueToCopy, actionType, cipher, skipReprompt);
-      expect(platformUtilsService.copyToClipboard).not.toHaveBeenCalled();
-    });
-
     it("should copy value to clipboard", async () => {
       await service.copy(valueToCopy, actionType, cipher, skipReprompt);
       expect(platformUtilsService.copyToClipboard).toHaveBeenCalledWith(valueToCopy);

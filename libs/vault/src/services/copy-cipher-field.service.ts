@@ -106,7 +106,7 @@ export class CopyCipherFieldService {
       return;
     }
 
-    if (valueToCopy == null || !cipher.viewPassword) {
+    if (valueToCopy == null) {
       return;
     }
 
