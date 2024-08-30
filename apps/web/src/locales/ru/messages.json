@@ -964,6 +964,12 @@
   "newAccountCreated": {
     "message": "Ваш аккаунт создан! Теперь вы можете войти в систему."
   },
+  "newAccountCreated2": {
+    "message": "Ваш новый аккаунт создан!"
+  },
+  "youHaveBeenLoggedIn": {
+    "message": "Вы авторизовались!"
+  },
   "trialAccountCreated": {
     "message": "Аккаунт успешно создан."
   },
@@ -4982,6 +4988,10 @@
         "example": "An email address"
       }
     }
+  },
+  "viewSend": {
+    "message": "Просмотр Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "viewSendHiddenEmailWarning": {
     "message": "Пользователь Bitwarden, создавший эту Send, решил скрыть свой адрес email. Вы должны убедиться, что доверяете источнику этой ссылки, прежде чем использовать или скачивать ее содержимое.",
@@ -9008,5 +9018,12 @@
   },
   "secretsManagerWithFreePasswordManagerInfo": {
     "message": "Ваш дополнительный год подписки на Менеджер паролей обновится до выбранный тарифа. Плата не будет взиматься до окончания бесплатного периода."
+  },
+  "publicApi": {
+    "message": "Публичный API",
+    "description": "The text, 'API', is an acronymn and should not be translated."
+  },
+  "additionalContentAvailable": {
+    "message": "Additional content is available"
   }
 }

@@ -964,6 +964,12 @@
   "newAccountCreated": {
     "message": "Nalikha na ang iyong bagong account! Maaari ka nang mag-log in."
   },
+  "newAccountCreated2": {
+    "message": "Your new account has been created!"
+  },
+  "youHaveBeenLoggedIn": {
+    "message": "You have been logged in!"
+  },
   "trialAccountCreated": {
     "message": "Matagumpay na nalikha ang account."
   },
@@ -4982,6 +4988,10 @@
         "example": "An email address"
       }
     }
+  },
+  "viewSend": {
+    "message": "View Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "viewSendHiddenEmailWarning": {
     "message": "Ang gumagamit ng Bitwarden na lumikha ng Send na ito ay piniling itago ang kanilang email address. Dapat mong tiyakin na pinagkakatiwalaan mo ang pinagmulan ng link na ito bago gamitin o i download ang nilalaman nito.",
@@ -9008,5 +9018,12 @@
   },
   "secretsManagerWithFreePasswordManagerInfo": {
     "message": "Your complementary one year Password Manager subscription will upgrade to the selected plan. You will not be charged until the complimentary period is over."
+  },
+  "publicApi": {
+    "message": "Public API",
+    "description": "The text, 'API', is an acronymn and should not be translated."
+  },
+  "additionalContentAvailable": {
+    "message": "Additional content is available"
   }
 }

@@ -964,6 +964,12 @@
   "newAccountCreated": {
     "message": "Ваш обліковий запис створений! Тепер ви можете увійти."
   },
+  "newAccountCreated2": {
+    "message": "Ваш обліковий запис створено!"
+  },
+  "youHaveBeenLoggedIn": {
+    "message": "Ви увійшли!"
+  },
   "trialAccountCreated": {
     "message": "Обліковий запис успішно створено."
   },
@@ -1121,7 +1127,7 @@
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "duoOrganizationDesc": {
-    "message": "Авторизуйтесь за допомогою Duo Security для вашої організації з використанням мобільного додатку Duo Mobile, SMS, телефонного виклику, або ключа безпеки U2F.",
+    "message": "Авторизуйтесь за допомогою Duo Security для вашої організації з використанням програми Duo Mobile, SMS, телефонного виклику, або ключа безпеки U2F.",
     "description": "'Duo Security' and 'Duo Mobile' are product names and should not be translated."
   },
   "u2fDesc": {
@@ -1402,7 +1408,7 @@
     "message": "Повторно виконайте вхід."
   },
   "logBackInOthersToo": {
-    "message": "Будь ласка, повторно виконайте вхід. Якщо ви користуєтесь іншими додатками Bitwarden, також вийдіть із них, і знову увійдіть."
+    "message": "Будь ласка, повторно виконайте вхід. Якщо ви користуєтесь іншими програмами Bitwarden, також вийдіть із них, і знову увійдіть."
   },
   "changeMasterPassword": {
     "message": "Змінити головний пароль"
@@ -2815,7 +2821,7 @@
     "message": "Отримати допомогу"
   },
   "getApps": {
-    "message": "Отримати додатки"
+    "message": "Отримати програми"
   },
   "loggedInAs": {
     "message": "Вхід виконано"
@@ -4982,6 +4988,10 @@
         "example": "An email address"
       }
     }
+  },
+  "viewSend": {
+    "message": "Переглянути відправлення",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "viewSendHiddenEmailWarning": {
     "message": "Користувач Bitwarden, який створив це відправлення, вирішив приховати свою адресу електронної пошти. Вам слід упевнитися в надійності джерела цього посилання перед його використанням чи завантаженням вмісту.",
@@ -9008,5 +9018,12 @@
   },
   "secretsManagerWithFreePasswordManagerInfo": {
     "message": "Ваша додаткова річна передплата менеджера паролів поновиться до вибраного плану. З вас не стягуватиметься платіж доки не завершиться додатковий період."
+  },
+  "publicApi": {
+    "message": "Відкритий API",
+    "description": "The text, 'API', is an acronymn and should not be translated."
+  },
+  "additionalContentAvailable": {
+    "message": "Additional content is available"
   }
 }

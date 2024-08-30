@@ -964,6 +964,12 @@
   "newAccountCreated": {
     "message": "Akun baru Anda telah dibuat! Sekarang Anda bisa masuk."
   },
+  "newAccountCreated2": {
+    "message": "Your new account has been created!"
+  },
+  "youHaveBeenLoggedIn": {
+    "message": "You have been logged in!"
+  },
   "trialAccountCreated": {
     "message": "Akun berhasil dibuat."
   },
@@ -4982,6 +4988,10 @@
         "example": "An email address"
       }
     }
+  },
+  "viewSend": {
+    "message": "View Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "viewSendHiddenEmailWarning": {
     "message": "Pengguna Bitwarden yang membuat Send ini memilih untuk menyembunyikan alamat emailnya. Kamu harus yakin bahwa kamu mempercayai sumber dari link it sebelum mengunduh isinya.",
@@ -9008,5 +9018,12 @@
   },
   "secretsManagerWithFreePasswordManagerInfo": {
     "message": "Your complementary one year Password Manager subscription will upgrade to the selected plan. You will not be charged until the complimentary period is over."
+  },
+  "publicApi": {
+    "message": "Public API",
+    "description": "The text, 'API', is an acronymn and should not be translated."
+  },
+  "additionalContentAvailable": {
+    "message": "Additional content is available"
   }
 }

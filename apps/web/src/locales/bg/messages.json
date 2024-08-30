@@ -87,7 +87,7 @@
     }
   },
   "showMatchDetection": {
-    "message": "Show match detection $WEBSITE$",
+    "message": "Показване на откритото съвпадение $WEBSITE$",
     "placeholders": {
       "website": {
         "content": "$1",
@@ -96,7 +96,7 @@
     }
   },
   "hideMatchDetection": {
-    "message": "Hide match detection $WEBSITE$",
+    "message": "Скриване на откритото съвпадение $WEBSITE$",
     "placeholders": {
       "website": {
         "content": "$1",
@@ -963,6 +963,12 @@
   },
   "newAccountCreated": {
     "message": "Абонаментът ви бе създаден. Вече можете да се впишете."
+  },
+  "newAccountCreated2": {
+    "message": "Your new account has been created!"
+  },
+  "youHaveBeenLoggedIn": {
+    "message": "You have been logged in!"
   },
   "trialAccountCreated": {
     "message": "Регистрацията е създадена успешно."
@@ -4983,6 +4989,10 @@
       }
     }
   },
+  "viewSend": {
+    "message": "Преглед на изпращането",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "viewSendHiddenEmailWarning": {
     "message": "Потребителят, който е създал това изпращане, е избрал да скрие адреса на своята е-поща. Уверете се, че източникът на тази връзка е достоверен, преди да я последвате или да свалите съдържание чрез нея.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -5653,7 +5663,7 @@
     "message": "Free Bitwarden Families offer successfully redeemed"
   },
   "redeemed": {
-    "message": "Redeemed"
+    "message": "Използван"
   },
   "redeemedAccount": {
     "message": "Регистрацията е присвоена"
@@ -6875,7 +6885,7 @@
     "description": "Label for the expiration date of an access token."
   },
   "canRead": {
-    "message": "Can read",
+    "message": "Може да чете",
     "description": "Label for the access level of an access token (Read only)."
   },
   "accessTokensNoItemsTitle": {
@@ -7200,7 +7210,7 @@
     "message": "Member status filter"
   },
   "inviteMember": {
-    "message": "Invite member"
+    "message": "Покана на член"
   },
   "needsConfirmation": {
     "message": "Изисква потвърждение"
@@ -9008,5 +9018,12 @@
   },
   "secretsManagerWithFreePasswordManagerInfo": {
     "message": "Your complementary one year Password Manager subscription will upgrade to the selected plan. You will not be charged until the complimentary period is over."
+  },
+  "publicApi": {
+    "message": "Публичен ППИ",
+    "description": "The text, 'API', is an acronymn and should not be translated."
+  },
+  "additionalContentAvailable": {
+    "message": "Additional content is available"
   }
 }

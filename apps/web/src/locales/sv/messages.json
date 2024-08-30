@@ -964,6 +964,12 @@
   "newAccountCreated": {
     "message": "Ditt nya konto har skapats! Du kan nu logga in."
   },
+  "newAccountCreated2": {
+    "message": "Ditt nya konto har skapats!"
+  },
+  "youHaveBeenLoggedIn": {
+    "message": "Du har blivit inloggad!"
+  },
   "trialAccountCreated": {
     "message": "Kontot har skapats."
   },
@@ -4982,6 +4988,10 @@
         "example": "An email address"
       }
     }
+  },
+  "viewSend": {
+    "message": "Visa Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "viewSendHiddenEmailWarning": {
     "message": "Bitwarden-användaren som skapade denna Send har valt att dölja sin e-postadress. Du bör se till att du litar på källan till denna länk innan du använder eller hämtar innehållet.",
@@ -9008,5 +9018,12 @@
   },
   "secretsManagerWithFreePasswordManagerInfo": {
     "message": "Your complementary one year Password Manager subscription will upgrade to the selected plan. You will not be charged until the complimentary period is over."
+  },
+  "publicApi": {
+    "message": "Public API",
+    "description": "The text, 'API', is an acronymn and should not be translated."
+  },
+  "additionalContentAvailable": {
+    "message": "Additional content is available"
   }
 }

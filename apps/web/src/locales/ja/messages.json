@@ -964,6 +964,12 @@
   "newAccountCreated": {
     "message": "新しいアカウントを作成しました！今すぐログインできます。"
   },
+  "newAccountCreated2": {
+    "message": "新しいアカウントを作成しました！"
+  },
+  "youHaveBeenLoggedIn": {
+    "message": "ログインしました！"
+  },
   "trialAccountCreated": {
     "message": "アカウントを正常に作成しました。"
   },
@@ -4982,6 +4988,10 @@
         "example": "An email address"
       }
     }
+  },
+  "viewSend": {
+    "message": "Send を表示",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "viewSendHiddenEmailWarning": {
     "message": "この Send を作成した Bitwarden ユーザーが、自身のメールアドレスを非表示にしました。 コンテンツを使用またはダウンロードする前に、このリンクのソースが信頼できるかどうか確認する必要があります。",
@@ -9008,5 +9018,12 @@
   },
   "secretsManagerWithFreePasswordManagerInfo": {
     "message": "1年間のパスワードマネージャーサブスクリプションは、選択したプランにアップグレードされます。無料期間が終了するまで課金されることはありません。"
+  },
+  "publicApi": {
+    "message": "公開 API",
+    "description": "The text, 'API', is an acronymn and should not be translated."
+  },
+  "additionalContentAvailable": {
+    "message": "追加コンテンツが利用可能です"
   }
 }

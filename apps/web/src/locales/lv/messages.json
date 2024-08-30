@@ -964,6 +964,12 @@
   "newAccountCreated": {
     "message": "Jaunais konts ir izveidots. Tagad vari pieteikties."
   },
+  "newAccountCreated2": {
+    "message": "Your new account has been created!"
+  },
+  "youHaveBeenLoggedIn": {
+    "message": "You have been logged in!"
+  },
   "trialAccountCreated": {
     "message": "Konts tika veiksmīgi izveidots."
   },
@@ -4983,6 +4989,10 @@
       }
     }
   },
+  "viewSend": {
+    "message": "Apskatīt Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "viewSendHiddenEmailWarning": {
     "message": "Bitwarden lietotājs, kurš izveidoja šo Send, ir izvēlējies slēpt savu e-pasta adresi. Ir jāpārliecinās par šīs saites avota uzticamību, pirms saturs tiek izmantots vai lejupielādēts.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -8890,10 +8900,10 @@
     }
   },
   "optionalOnPremHosting": {
-    "message": "Optional on-premises hosting"
+    "message": "Iespēja mitināt savā serverī"
   },
   "upgradeFreeOrganization": {
-    "message": "Upgrade your $NAME$ organization ",
+    "message": "Uzlabo savu $NAME$ apvienību ",
     "placeholders": {
       "name": {
         "content": "$1",
@@ -8902,10 +8912,10 @@
     }
   },
   "includeSsoAuthenticationMessage": {
-    "message": "SSO Authentication"
+    "message": "SSO autentifikācija"
   },
   "familiesPlanInvLimitReachedManageBilling": {
-    "message": "Families organizations may have up to $SEATCOUNT$ members. Upgrade to a paid plan to invite more members.",
+    "message": "Ģimeņu apvienībās var būt līdz $SEATCOUNT$ dalībniekiem. Jāpāriet uz maksas plānu, lai uzaicinātu vairāk dalībnieku.",
     "placeholders": {
       "seatcount": {
         "content": "$1",
@@ -8914,7 +8924,7 @@
     }
   },
   "familiesPlanInvLimitReachedNoManageBilling": {
-    "message": "Families organizations may have up to $SEATCOUNT$ members. Contact your organization owner to upgrade.",
+    "message": "Ģiemņu apvienībās var būt līdz $SEATCOUNT$ dalībniekiem. Jāsazinās ar apvienības īpašnieku, lai pārietu uz maksas plānu.",
     "placeholders": {
       "seatcount": {
         "content": "$1",
@@ -8923,7 +8933,7 @@
     }
   },
   "upgradePlan": {
-    "message": "Upgrade your plan to invite more members and gain access to additional Bitwarden features"
+    "message": "Uzlabo savu plānu, lai uzaicinātu vairāk dalībnieku un iegūtu piekļuvi papildu Bitwarden iespējām"
   },
   "upgradeDiscount": {
     "message": "Ietaupi $AMOUNT$%",
@@ -9008,5 +9018,12 @@
   },
   "secretsManagerWithFreePasswordManagerInfo": {
     "message": "Bezmaksas viena gada Paroļu pārvaldnieka abonements tiks uzlabots uz izvēlēto plānu. Maksa netiks ieturēta līdz bezmaksas izmantošanas laika beigām."
+  },
+  "publicApi": {
+    "message": "Publiskais API",
+    "description": "The text, 'API', is an acronymn and should not be translated."
+  },
+  "additionalContentAvailable": {
+    "message": "Additional content is available"
   }
 }

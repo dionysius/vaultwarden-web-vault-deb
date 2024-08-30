@@ -964,6 +964,12 @@
   "newAccountCreated": {
     "message": "Yeni hesabınız yaradıldı! İndi giriş edə bilərsiniz."
   },
+  "newAccountCreated2": {
+    "message": "Your new account has been created!"
+  },
+  "youHaveBeenLoggedIn": {
+    "message": "You have been logged in!"
+  },
   "trialAccountCreated": {
     "message": "Hesab uğurla yaradıldı."
   },
@@ -4982,6 +4988,10 @@
         "example": "An email address"
       }
     }
+  },
+  "viewSend": {
+    "message": "\"Send\"ə bax",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "viewSendHiddenEmailWarning": {
     "message": "Bu \"Send\"i yaradan Bitwarden istifadəçisi e-poçt ünvanını gizlətməyi seçib. İstifadə etməzdən və ya endirməzdən əvvəl bu keçidin mənbəyinin etibarlı olduğuna əmin olmalısınız.",
@@ -9008,5 +9018,12 @@
   },
   "secretsManagerWithFreePasswordManagerInfo": {
     "message": "Tamamlayıcı bir illik Parol Meneceri abunəliyiniz seçilmiş plana yüksəldiləcək. Ödənişsiz dövr bitənə qədər sizdən ödəniş alınmayacaq."
+  },
+  "publicApi": {
+    "message": "Hər kəsə açıq API",
+    "description": "The text, 'API', is an acronymn and should not be translated."
+  },
+  "additionalContentAvailable": {
+    "message": "Additional content is available"
   }
 }

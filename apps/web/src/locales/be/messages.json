@@ -964,6 +964,12 @@
   "newAccountCreated": {
     "message": "Ваш уліковы запіс створаны! Цяпер вы можаце ўвайсці ў яго."
   },
+  "newAccountCreated2": {
+    "message": "Your new account has been created!"
+  },
+  "youHaveBeenLoggedIn": {
+    "message": "You have been logged in!"
+  },
   "trialAccountCreated": {
     "message": "Уліковы запіс паспяхова створаны."
   },
@@ -4982,6 +4988,10 @@
         "example": "An email address"
       }
     }
+  },
+  "viewSend": {
+    "message": "View Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "viewSendHiddenEmailWarning": {
     "message": "Карыстальнік Bitwarden, які стварыў гэты Send, вырашыў схаваць сваю электронную пошту. Пераканайцеся, што гэта спасылка атрымана з надзейных крыніц і толькі пасля гэтага выкарыстоўвайце або пампуйце дадзенае змесціва.",
@@ -9008,5 +9018,12 @@
   },
   "secretsManagerWithFreePasswordManagerInfo": {
     "message": "Your complementary one year Password Manager subscription will upgrade to the selected plan. You will not be charged until the complimentary period is over."
+  },
+  "publicApi": {
+    "message": "Public API",
+    "description": "The text, 'API', is an acronymn and should not be translated."
+  },
+  "additionalContentAvailable": {
+    "message": "Additional content is available"
   }
 }

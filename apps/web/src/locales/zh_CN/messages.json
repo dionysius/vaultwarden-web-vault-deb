@@ -756,7 +756,7 @@
     "message": "使用设备登录"
   },
   "loginWithDeviceEnabledNote": {
-    "message": "设备登录必须在 Bitwarden 应用程序的设置中启用。需要其他登录选项吗？"
+    "message": "必须在 Bitwarden App 的设置中启用设备登录。需要其他登录选项吗？"
   },
   "loginWithMasterPassword": {
     "message": "使用主密码登录"
@@ -963,6 +963,12 @@
   },
   "newAccountCreated": {
     "message": "您的新账户已创建！您现在可以登录了。"
+  },
+  "newAccountCreated2": {
+    "message": "Your new account has been created!"
+  },
+  "youHaveBeenLoggedIn": {
+    "message": "You have been logged in!"
   },
   "trialAccountCreated": {
     "message": "账户创建成功。"
@@ -4982,6 +4988,10 @@
         "example": "An email address"
       }
     }
+  },
+  "viewSend": {
+    "message": "查看 Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "viewSendHiddenEmailWarning": {
     "message": "创建此 Send 的 Bitwarden 用户已选择隐藏他们的电子邮件地址。在使用或下载此链接的内容之前，应确保您信任此链接的来源。",
@@ -9008,5 +9018,12 @@
   },
   "secretsManagerWithFreePasswordManagerInfo": {
     "message": "您的免费一年密码管理器订阅将升级到所选计划。免费期结束之前不会收费。"
+  },
+  "publicApi": {
+    "message": "公共 API",
+    "description": "The text, 'API', is an acronymn and should not be translated."
+  },
+  "additionalContentAvailable": {
+    "message": "Additional content is available"
   }
 }

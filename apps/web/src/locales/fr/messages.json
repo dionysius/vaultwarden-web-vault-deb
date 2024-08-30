@@ -964,6 +964,12 @@
   "newAccountCreated": {
     "message": "Votre nouveau compte a été créé ! Vous pouvez maintenant vous authentifier."
   },
+  "newAccountCreated2": {
+    "message": "Votre nouveau compte a été créé !"
+  },
+  "youHaveBeenLoggedIn": {
+    "message": "Vous avez été connecté!"
+  },
   "trialAccountCreated": {
     "message": "Compte créé avec succès."
   },
@@ -4982,6 +4988,10 @@
         "example": "An email address"
       }
     }
+  },
+  "viewSend": {
+    "message": "Voir le Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "viewSendHiddenEmailWarning": {
     "message": "L'utilisateur de Bitwarden qui a créé ce Send a choisi de masquer son adresse électronique. Vous devriez vous assurer que vous faites confiance à la source de ce lien avant d'utiliser ou de télécharger son contenu.",
@@ -9008,5 +9018,12 @@
   },
   "secretsManagerWithFreePasswordManagerInfo": {
     "message": "Votre abonnement complémentaire d'un an au Gestionnaire de Mots de Passe sera mis à niveau au plan sélectionné. Vous ne serez pas chargé avant la fin de votre période gratuite."
+  },
+  "publicApi": {
+    "message": "API publique",
+    "description": "The text, 'API', is an acronymn and should not be translated."
+  },
+  "additionalContentAvailable": {
+    "message": "Du contenu supplémentaire est disponible"
   }
 }

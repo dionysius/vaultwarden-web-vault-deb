@@ -964,6 +964,12 @@
   "newAccountCreated": {
     "message": "ನಿಮ್ಮ ಹೊಸ ಖಾತೆಯನ್ನು ರಚಿಸಲಾಗಿದೆ! ನೀವು ಈಗ ಲಾಗ್ ಇನ್ ಮಾಡಬಹುದು."
   },
+  "newAccountCreated2": {
+    "message": "Your new account has been created!"
+  },
+  "youHaveBeenLoggedIn": {
+    "message": "You have been logged in!"
+  },
   "trialAccountCreated": {
     "message": "Account created successfully."
   },
@@ -4982,6 +4988,10 @@
         "example": "An email address"
       }
     }
+  },
+  "viewSend": {
+    "message": "View Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "viewSendHiddenEmailWarning": {
     "message": "ಈ ಕಳುಹಿಸುವಿಕೆಯನ್ನು ರಚಿಸಿದ ಬಿಟ್‌ವಾರ್ಡೆನ್ ಬಳಕೆದಾರರು ತಮ್ಮ ಇಮೇಲ್ ವಿಳಾಸವನ್ನು ಮರೆಮಾಡಲು ಆಯ್ಕೆ ಮಾಡಿದ್ದಾರೆ. ಈ ಲಿಂಕ್‌ನ ವಿಷಯವನ್ನು ಬಳಸುವ ಅಥವಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡುವ ಮೊದಲು ಅದರ ಮೂಲವನ್ನು ನೀವು ನಂಬಿದ್ದೀರಿ ಎಂದು ನೀವು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಬೇಕು.",
@@ -9008,5 +9018,12 @@
   },
   "secretsManagerWithFreePasswordManagerInfo": {
     "message": "Your complementary one year Password Manager subscription will upgrade to the selected plan. You will not be charged until the complimentary period is over."
+  },
+  "publicApi": {
+    "message": "Public API",
+    "description": "The text, 'API', is an acronymn and should not be translated."
+  },
+  "additionalContentAvailable": {
+    "message": "Additional content is available"
   }
 }

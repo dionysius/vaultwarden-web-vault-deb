@@ -195,10 +195,10 @@
     "message": "dr."
   },
   "cardExpiredTitle": {
-    "message": "Expired card"
+    "message": "Istekla kartica"
   },
   "cardExpiredMessage": {
-    "message": "If you've renewed it, update the card's information"
+    "message": "Ako je obnovljeno, ažuriraj podatke o kartici"
   },
   "expirationMonth": {
     "message": "Mjesec isteka"
@@ -482,7 +482,7 @@
     "message": "Prikaz stavke"
   },
   "viewItemType": {
-    "message": "View $ITEMTYPE$",
+    "message": "Pogledaj $ITEMTYPE$",
     "placeholders": {
       "itemtype": {
         "content": "$1",
@@ -906,7 +906,7 @@
     "message": "Podsjetnik glavne lozinke (neobavezno)"
   },
   "newMasterPassHint": {
-    "message": "New master password hint (optional)"
+    "message": "Podsjetnik nove glavne lozinke (neobavezno)"
   },
   "masterPassHintLabel": {
     "message": "Podsjetnik glavne lozinke"
@@ -963,6 +963,12 @@
   },
   "newAccountCreated": {
     "message": "Tvoj novi račun je stvoren! Sada se možeš prijaviti."
+  },
+  "newAccountCreated2": {
+    "message": "Your new account has been created!"
+  },
+  "youHaveBeenLoggedIn": {
+    "message": "You have been logged in!"
   },
   "trialAccountCreated": {
     "message": "Račun je uspješno stvoren."
@@ -4983,6 +4989,10 @@
       }
     }
   },
+  "viewSend": {
+    "message": "View Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "viewSendHiddenEmailWarning": {
     "message": "Bitwarden korisnik koji je stvorio ovaj Send odabrao/la je sakriti svoju e-poštu. Koristi i/ili preuzmi ove podatke samo ako vjeruješ izvoru iz kojeg je primljena ova vezu.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -8959,54 +8969,61 @@
     "message": "GB dodatnog prostora"
   },
   "premiumAccounts": {
-    "message": "6 premium accounts"
+    "message": "6 premium računa"
   },
   "unlimitedSharing": {
-    "message": "Unlimited sharing"
+    "message": "Neograničeno dijeljenje"
   },
   "unlimitedCollections": {
-    "message": "Unlimited collections"
+    "message": "Neograničen broj zbirki"
   },
   "secureDataSharing": {
-    "message": "Secure data sharing"
+    "message": "Sigurno dijeljenje podataka"
   },
   "eventLogMonitoring": {
-    "message": "Event log monitoring"
+    "message": "Praćenje dnevnika događaja"
   },
   "directoryIntegration": {
-    "message": "Directory integration"
+    "message": "Integracija s imenikom"
   },
   "passwordLessSso": {
     "message": "PasswordLess SSO"
   },
   "accountRecovery": {
-    "message": "Account recovery"
+    "message": "Oporavak računa"
   },
   "customRoles": {
-    "message": "Custom roles"
+    "message": "Prilagođene uloge"
   },
   "unlimitedSecretsStorage": {
-    "message": "Unlimited secrets storage"
+    "message": "Neograničena pohrana tajni"
   },
   "unlimitedUsers": {
-    "message": "Unlimited users"
+    "message": "Neograničen broj korisnika"
   },
   "UpTo50MachineAccounts": {
-    "message": "Up to 50 machine accounts"
+    "message": "Do 50 strojnih računa"
   },
   "UpTo20MachineAccounts": {
-    "message": "Up to 20 machine accounts"
+    "message": "Do 20 strojnih računa"
   },
   "current": {
-    "message": "Current"
+    "message": "Trenutno"
   },
   "secretsManagerSubInfo": {
-    "message": "Your Secrets Manager subscription will upgrade base on the plan selected"
+    "message": "Tvoja pretplata na Secrets Manager će se nadograditi na temelju odabranog plana"
   },
   "bitwardenPasswordManager": {
-    "message": "Bitwarden Password Manager"
+    "message": "Bitwarden upravitelj lozinki"
   },
   "secretsManagerWithFreePasswordManagerInfo": {
-    "message": "Your complementary one year Password Manager subscription will upgrade to the selected plan. You will not be charged until the complimentary period is over."
+    "message": "Tvoja jednogodišnja poklon pretplata na Upravitelj tajni će se nadograditi na odabrani plan. Neće biti naplate dok ne završi besplatno razdoblje."
+  },
+  "publicApi": {
+    "message": "Public API",
+    "description": "The text, 'API', is an acronymn and should not be translated."
+  },
+  "additionalContentAvailable": {
+    "message": "Additional content is available"
   }
 }

@@ -491,7 +491,7 @@
     }
   },
   "new": {
-    "message": "New",
+    "message": "Nový",
     "description": "for adding new items"
   },
   "item": {
@@ -906,7 +906,7 @@
     "message": "Nápoveď k hlavnému heslo (voliteľné)"
   },
   "newMasterPassHint": {
-    "message": "New master password hint (optional)"
+    "message": "Nová nápoveď k hlavnému heslu (voliteľné)"
   },
   "masterPassHintLabel": {
     "message": "Nápoveď pre hlavné heslo"
@@ -963,6 +963,12 @@
   },
   "newAccountCreated": {
     "message": "Váš nový účet bol vytvorený! Teraz sa môžete prihlásiť."
+  },
+  "newAccountCreated2": {
+    "message": "Your new account has been created!"
+  },
+  "youHaveBeenLoggedIn": {
+    "message": "You have been logged in!"
   },
   "trialAccountCreated": {
     "message": "Účet bol úspešne vytvorený."
@@ -4983,6 +4989,10 @@
       }
     }
   },
+  "viewSend": {
+    "message": "Zobraziť Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+  },
   "viewSendHiddenEmailWarning": {
     "message": "Používateľ Bitwardenu, ktorý vytvoril tento Send, skryl e-mailové adresy pred príjemcami. Mali by ste zvážiť, či dôverujete zdrojovému odkazu pred jeho použitím alebo stiahnutím jeho obsahu.",
     "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
@@ -8959,54 +8969,61 @@
     "message": "GB additional storage"
   },
   "premiumAccounts": {
-    "message": "6 premium accounts"
+    "message": "6 prémiových účtov"
   },
   "unlimitedSharing": {
-    "message": "Unlimited sharing"
+    "message": "Neobmedzené zdieľanie"
   },
   "unlimitedCollections": {
-    "message": "Unlimited collections"
+    "message": "Neobmedzené množstvo zbierok"
   },
   "secureDataSharing": {
-    "message": "Secure data sharing"
+    "message": "Bezpečné zdieľanie dát"
   },
   "eventLogMonitoring": {
-    "message": "Event log monitoring"
+    "message": "Monitorovanie denníka udalostí"
   },
   "directoryIntegration": {
-    "message": "Directory integration"
+    "message": "Integrácia s adresárom"
   },
   "passwordLessSso": {
-    "message": "PasswordLess SSO"
+    "message": "SSO bez hesla"
   },
   "accountRecovery": {
-    "message": "Account recovery"
+    "message": "Obnovenie účtu"
   },
   "customRoles": {
-    "message": "Custom roles"
+    "message": "Vlastné roly"
   },
   "unlimitedSecretsStorage": {
-    "message": "Unlimited secrets storage"
+    "message": "Neobmedzené úložisko na položky"
   },
   "unlimitedUsers": {
-    "message": "Unlimited users"
+    "message": "Neobmedzený počet používateľov"
   },
   "UpTo50MachineAccounts": {
-    "message": "Up to 50 machine accounts"
+    "message": "Až 50 strojových účtov"
   },
   "UpTo20MachineAccounts": {
-    "message": "Up to 20 machine accounts"
+    "message": "Až 20 strojových účtov"
   },
   "current": {
-    "message": "Current"
+    "message": "Aktuálne"
   },
   "secretsManagerSubInfo": {
-    "message": "Your Secrets Manager subscription will upgrade base on the plan selected"
+    "message": "Vaše predplatné Secrets Manager sa obnoví na základe vybraného plánu"
   },
   "bitwardenPasswordManager": {
-    "message": "Bitwarden Password Manager"
+    "message": "Bitwarden Správca Hesiel"
   },
   "secretsManagerWithFreePasswordManagerInfo": {
-    "message": "Your complementary one year Password Manager subscription will upgrade to the selected plan. You will not be charged until the complimentary period is over."
+    "message": "Vaše bezplatné ročné predplatné programu Password Manager sa zmení na vybraný plán. Poplatok vám bude účtovaný až po skončení bezplatného obdobia."
+  },
+  "publicApi": {
+    "message": "Verejné API",
+    "description": "The text, 'API', is an acronymn and should not be translated."
+  },
+  "additionalContentAvailable": {
+    "message": "Additional content is available"
   }
 }

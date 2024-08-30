@@ -964,6 +964,12 @@
   "newAccountCreated": {
     "message": "Din nye konto er oprettet! Du kan nu logge ind."
   },
+  "newAccountCreated2": {
+    "message": "Din nye konto er oprettet!"
+  },
+  "youHaveBeenLoggedIn": {
+    "message": "Du er blevet logget ind!"
+  },
   "trialAccountCreated": {
     "message": "Konto oprettet."
   },
@@ -4982,6 +4988,10 @@
         "example": "An email address"
       }
     }
+  },
+  "viewSend": {
+    "message": "Vis Send",
+    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
   },
   "viewSendHiddenEmailWarning": {
     "message": "Bitwarden-brugeren, der oprettede denne Send, har valgt at skjule sin e-mailadresse. Du bør sikre dig, at du stoler på kilden til dette link, inden dets indhold downloades/benyttes.",
@@ -9008,5 +9018,12 @@
   },
   "secretsManagerWithFreePasswordManagerInfo": {
     "message": "Det komplementære et års abonnement på Adgangskodehåndtering opgraderes til den valgte abonnementstype. Betaling opkræves først efter den gratis periode."
+  },
+  "publicApi": {
+    "message": "Offentlig API",
+    "description": "The text, 'API', is an acronymn and should not be translated."
+  },
+  "additionalContentAvailable": {
+    "message": "Yderligere indhold er tilgængeligt"
   }
 }
