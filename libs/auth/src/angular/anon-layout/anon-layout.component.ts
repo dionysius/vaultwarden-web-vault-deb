@@ -5,13 +5,11 @@ import { firstValueFrom } from "rxjs";
 import { ClientType } from "@bitwarden/common/enums";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { ThemeStateService } from "@bitwarden/common/platform/theming/theme-state.service";
 
 import { IconModule, Icon } from "../../../../components/src/icon";
 import { SharedModule } from "../../../../components/src/shared";
 import { TypographyModule } from "../../../../components/src/typography";
-import { BitwardenLogoPrimary, BitwardenLogoWhite } from "../icons";
-import { BitwardenShieldPrimary, BitwardenShieldWhite } from "../icons/bitwarden-shield.icon";
+import { BitwardenLogo, BitwardenShield } from "../icons";
 
 @Component({
   standalone: true,
@@ -34,20 +32,17 @@ export class AnonLayoutComponent implements OnInit, OnChanges {
    */
   @Input() maxWidth: "md" | "3xl" = "md";
 
-  protected logo: Icon;
-
+  protected logo = BitwardenLogo;
   protected year = "2024";
   protected clientType: ClientType;
   protected hostname: string;
   protected version: string;
-  protected theme: string;
 
   protected hideYearAndVersion = false;
 
   constructor(
     private environmentService: EnvironmentService,
     private platformUtilsService: PlatformUtilsService,
-    private themeStateService: ThemeStateService,
   ) {
     this.year = new Date().getFullYear().toString();
     this.clientType = this.platformUtilsService.getClientType();
@@ -56,41 +51,18 @@ export class AnonLayoutComponent implements OnInit, OnChanges {
 
   async ngOnInit() {
     this.maxWidth = this.maxWidth ?? "md";
-
-    this.theme = await firstValueFrom(this.themeStateService.selectedTheme$);
-
-    if (this.theme === "dark") {
-      this.logo = BitwardenLogoWhite;
-    } else {
-      this.logo = BitwardenLogoPrimary;
-    }
-
-    await this.updateIcon(this.theme);
-
     this.hostname = (await firstValueFrom(this.environmentService.environment$)).getHostname();
     this.version = await this.platformUtilsService.getApplicationVersion();
+
+    // If there is no icon input, then use the default icon
+    if (this.icon == null) {
+      this.icon = BitwardenShield;
+    }
   }
 
   async ngOnChanges(changes: SimpleChanges) {
-    if (changes.icon) {
-      const theme = await firstValueFrom(this.themeStateService.selectedTheme$);
-      await this.updateIcon(theme);
-    }
-
     if (changes.maxWidth) {
       this.maxWidth = changes.maxWidth.currentValue ?? "md";
-    }
-  }
-
-  private async updateIcon(theme: string) {
-    if (this.icon == null) {
-      if (theme === "dark") {
-        this.icon = BitwardenShieldWhite;
-      }
-
-      if (theme !== "dark") {
-        this.icon = BitwardenShieldPrimary;
-      }
     }
   }
 }

@@ -1,11 +1,10 @@
 import { Meta, StoryObj, moduleMetadata } from "@storybook/angular";
-import { BehaviorSubject, of } from "rxjs";
+import { BehaviorSubject } from "rxjs";
 
 import { ClientType } from "@bitwarden/common/enums";
 import { EnvironmentService } from "@bitwarden/common/platform/abstractions/environment.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
-import { ThemeStateService } from "@bitwarden/common/platform/theming/theme-state.service";
 
 import { ButtonModule } from "../../../../components/src/button";
 import { I18nMockService } from "../../../../components/src/utils/i18n-mock.service";
@@ -45,12 +44,6 @@ export default {
                 return "bitwarden.com";
               },
             }).asObservable(),
-          },
-        },
-        {
-          provide: ThemeStateService,
-          useValue: {
-            selectedTheme$: of("light"),
           },
         },
       ],

@@ -1,7 +1,7 @@
 import { CommonModule } from "@angular/common";
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { ActivatedRoute, Data, NavigationEnd, Router, RouterModule } from "@angular/router";
-import { Subject, filter, firstValueFrom, switchMap, takeUntil, tap } from "rxjs";
+import { Subject, filter, switchMap, takeUntil, tap } from "rxjs";
 
 import {
   AnonLayoutComponent,
@@ -9,7 +9,6 @@ import {
   AnonLayoutWrapperDataService,
 } from "@bitwarden/auth/angular";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
-import { ThemeStateService } from "@bitwarden/common/platform/theming/theme-state.service";
 import { Icon, IconModule } from "@bitwarden/components";
 
 import { PopOutComponent } from "../../../platform/popup/components/pop-out.component";
@@ -17,10 +16,7 @@ import { PopupHeaderComponent } from "../../../platform/popup/layout/popup-heade
 import { PopupPageComponent } from "../../../platform/popup/layout/popup-page.component";
 import { CurrentAccountComponent } from "../account-switching/current-account.component";
 
-import {
-  ExtensionBitwardenLogoPrimary,
-  ExtensionBitwardenLogoWhite,
-} from "./extension-bitwarden-logo.icon";
+import { ExtensionBitwardenLogo } from "./extension-bitwarden-logo.icon";
 
 export interface ExtensionAnonLayoutWrapperData extends AnonLayoutWrapperData {
   showAcctSwitcher?: boolean;
@@ -56,14 +52,13 @@ export class ExtensionAnonLayoutWrapperComponent implements OnInit, OnDestroy {
   protected maxWidth: "md" | "3xl";
 
   protected theme: string;
-  protected logo: Icon;
+  protected logo = ExtensionBitwardenLogo;
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private i18nService: I18nService,
     private extensionAnonLayoutWrapperDataService: AnonLayoutWrapperDataService,
-    private themeStateService: ThemeStateService,
   ) {}
 
   async ngOnInit(): Promise<void> {
@@ -73,14 +68,6 @@ export class ExtensionAnonLayoutWrapperComponent implements OnInit, OnDestroy {
     // Listen for page changes and update the page data appropriately
     this.listenForPageDataChanges();
     this.listenForServiceDataChanges();
-
-    this.theme = await firstValueFrom(this.themeStateService.selectedTheme$);
-
-    if (this.theme === "dark") {
-      this.logo = ExtensionBitwardenLogoWhite;
-    } else {
-      this.logo = ExtensionBitwardenLogoPrimary;
-    }
   }
 
   private listenForPageDataChanges() {
