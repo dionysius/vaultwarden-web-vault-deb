@@ -43,7 +43,7 @@ describe("LoginEmailService", () => {
 
   describe("storedEmail$", () => {
     it("returns the stored email when not adding an account", async () => {
-      sut.setEmail("userEmail@bitwarden.com");
+      await sut.setLoginEmail("userEmail@bitwarden.com");
       sut.setRememberEmail(true);
       await sut.saveEmailSettings();
 
@@ -53,7 +53,7 @@ describe("LoginEmailService", () => {
     });
 
     it("returns the stored email when not adding an account and the user has just logged in", async () => {
-      sut.setEmail("userEmail@bitwarden.com");
+      await sut.setLoginEmail("userEmail@bitwarden.com");
       sut.setRememberEmail(true);
       await sut.saveEmailSettings();
 
@@ -66,7 +66,7 @@ describe("LoginEmailService", () => {
     });
 
     it("returns null when adding an account", async () => {
-      sut.setEmail("userEmail@bitwarden.com");
+      await sut.setLoginEmail("userEmail@bitwarden.com");
       sut.setRememberEmail(true);
       await sut.saveEmailSettings();
 
@@ -83,7 +83,7 @@ describe("LoginEmailService", () => {
 
   describe("saveEmailSettings", () => {
     it("saves the email when not adding an account", async () => {
-      sut.setEmail("userEmail@bitwarden.com");
+      await sut.setLoginEmail("userEmail@bitwarden.com");
       sut.setRememberEmail(true);
       await sut.saveEmailSettings();
 
@@ -95,7 +95,7 @@ describe("LoginEmailService", () => {
     it("clears the email when not adding an account and rememberEmail is false", async () => {
       storedEmailState.stateSubject.next("initialEmail@bitwarden.com");
 
-      sut.setEmail("userEmail@bitwarden.com");
+      await sut.setLoginEmail("userEmail@bitwarden.com");
       sut.setRememberEmail(false);
       await sut.saveEmailSettings();
 
@@ -110,7 +110,7 @@ describe("LoginEmailService", () => {
         ["OtherUserId" as UserId]: AuthenticationStatus.Locked,
       });
 
-      sut.setEmail("userEmail@bitwarden.com");
+      await sut.setLoginEmail("userEmail@bitwarden.com");
       sut.setRememberEmail(true);
       await sut.saveEmailSettings();
 
@@ -127,7 +127,7 @@ describe("LoginEmailService", () => {
         ["OtherUserId" as UserId]: AuthenticationStatus.Locked,
       });
 
-      sut.setEmail("userEmail@bitwarden.com");
+      await sut.setLoginEmail("userEmail@bitwarden.com");
       sut.setRememberEmail(false);
       await sut.saveEmailSettings();
 
@@ -140,11 +140,11 @@ describe("LoginEmailService", () => {
     it("does not clear the email and rememberEmail after saving", async () => {
       // Browser uses these values to maintain the email between login and 2fa components so
       // we do not want to clear them too early.
-      sut.setEmail("userEmail@bitwarden.com");
+      await sut.setLoginEmail("userEmail@bitwarden.com");
       sut.setRememberEmail(true);
       await sut.saveEmailSettings();
 
-      const result = sut.getEmail();
+      const result = await firstValueFrom(sut.loginEmail$);
 
       expect(result).toBe("userEmail@bitwarden.com");
     });

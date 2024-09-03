@@ -1,5 +1,6 @@
 import { Directive, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { firstValueFrom } from "rxjs";
 
 import { LoginEmailServiceAbstraction } from "@bitwarden/auth/common";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
@@ -27,8 +28,8 @@ export class HintComponent implements OnInit {
     protected toastService: ToastService,
   ) {}
 
-  ngOnInit(): void {
-    this.email = this.loginEmailService.getEmail() ?? "";
+  async ngOnInit(): Promise<void> {
+    this.email = (await firstValueFrom(this.loginEmailService.loginEmail$)) ?? "";
   }
 
   async submit() {

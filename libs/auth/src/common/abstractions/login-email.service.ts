@@ -2,28 +2,27 @@ import { Observable } from "rxjs";
 
 export abstract class LoginEmailServiceAbstraction {
   /**
+   * An observable that monitors the loginEmail in memory.
+   * The loginEmail is the email that is being used in the current login process.
+   */
+  loginEmail$: Observable<string | null>;
+  /**
    * An observable that monitors the storedEmail on disk.
    * This will return null if an account is being added.
    */
   storedEmail$: Observable<string | null>;
   /**
-   * Gets the current email being used in the login process from memory.
-   * @returns A string of the email.
+   * Sets the loginEmail in memory.
+   * The loginEmail is the email that is being used in the current login process.
    */
-  getEmail: () => string;
-  /**
-   * Sets the current email being used in the login process in memory.
-   * @param email The email to be set.
-   */
-  setEmail: (email: string) => void;
+  setLoginEmail: (email: string) => Promise<void>;
   /**
    * Gets from memory whether or not the email should be stored on disk when `saveEmailSettings` is called.
    * @returns A boolean stating whether or not the email should be stored on disk.
    */
   getRememberEmail: () => boolean;
   /**
-   * Sets in memory whether or not the email should be stored on disk when
-   * `saveEmailSettings` is called.
+   * Sets in memory whether or not the email should be stored on disk when `saveEmailSettings` is called.
    */
   setRememberEmail: (value: boolean) => void;
   /**

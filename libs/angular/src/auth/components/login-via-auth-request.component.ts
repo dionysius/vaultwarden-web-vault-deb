@@ -93,13 +93,6 @@ export class LoginViaAuthRequestComponent
   ) {
     super(environmentService, i18nService, platformUtilsService, toastService);
 
-    // TODO: I don't know why this is necessary.
-    // Why would the existence of the email depend on the navigation?
-    const navigation = this.router.getCurrentNavigation();
-    if (navigation) {
-      this.email = this.loginEmailService.getEmail();
-    }
-
     // Gets signalR push notification
     // Only fires on approval to prevent enumeration
     this.authRequestService.authRequestPushNotification$
@@ -118,6 +111,7 @@ export class LoginViaAuthRequestComponent
   }
 
   async ngOnInit() {
+    this.email = await firstValueFrom(this.loginEmailService.loginEmail$);
     this.userAuthNStatus = await this.authService.getAuthStatus();
 
     const matchOptions: IsActiveMatchOptions = {
@@ -165,7 +159,7 @@ export class LoginViaAuthRequestComponent
     } else {
       // Standard auth request
       // TODO: evaluate if we can remove the setting of this.email in the constructor
-      this.email = this.loginEmailService.getEmail();
+      this.email = await firstValueFrom(this.loginEmailService.loginEmail$);
 
       if (!this.email) {
         this.toastService.showToast({

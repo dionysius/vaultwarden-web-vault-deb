@@ -251,12 +251,12 @@ export class BaseLoginDecryptionOptionsComponent implements OnInit, OnDestroy {
       return;
     }
 
-    this.loginEmailService.setEmail(this.data.userEmail);
+    this.loginEmailService.setLoginEmail(this.data.userEmail);
     await this.router.navigate(["/login-with-device"]);
   }
 
   async requestAdminApproval() {
-    this.loginEmailService.setEmail(this.data.userEmail);
+    this.loginEmailService.setLoginEmail(this.data.userEmail);
     await this.router.navigate(["/admin-approval-requested"]);
   }
 

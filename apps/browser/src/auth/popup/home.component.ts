@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   ) {}
 
   async ngOnInit(): Promise<void> {
-    const email = this.loginEmailService.getEmail();
+    const email = await firstValueFrom(this.loginEmailService.loginEmail$);
     const rememberEmail = this.loginEmailService.getRememberEmail();
 
     if (email != null) {
@@ -93,7 +93,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   async setLoginEmailValues() {
     // Note: Browser saves email settings here instead of the login component
     this.loginEmailService.setRememberEmail(this.formGroup.value.rememberEmail);
-    this.loginEmailService.setEmail(this.formGroup.value.email);
+    await this.loginEmailService.setLoginEmail(this.formGroup.value.email);
     await this.loginEmailService.saveEmailSettings();
   }
 }

@@ -1,4 +1,4 @@
-import { Component, NgZone } from "@angular/core";
+import { Component, NgZone, OnInit } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { firstValueFrom } from "rxjs";
@@ -31,7 +31,7 @@ import { flagEnabled } from "../../platform/flags";
   selector: "app-login",
   templateUrl: "login.component.html",
 })
-export class LoginComponent extends BaseLoginComponent {
+export class LoginComponent extends BaseLoginComponent implements OnInit {
   showPasswordless = false;
   constructor(
     devicesApiService: DevicesApiServiceAbstraction,
@@ -83,13 +83,14 @@ export class LoginComponent extends BaseLoginComponent {
     };
     super.successRoute = "/tabs/vault";
     this.showPasswordless = flagEnabled("showPasswordless");
+  }
 
+  async ngOnInit(): Promise<void> {
     if (this.showPasswordless) {
-      this.formGroup.controls.email.setValue(this.loginEmailService.getEmail());
+      const loginEmail = await firstValueFrom(this.loginEmailService.loginEmail$);
+      this.formGroup.controls.email.setValue(loginEmail);
       this.formGroup.controls.rememberEmail.setValue(this.loginEmailService.getRememberEmail());
-      // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
-      // eslint-disable-next-line @typescript-eslint/no-floating-promises
-      this.validateEmail();
+      await this.validateEmail();
     }
   }
 

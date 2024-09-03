@@ -44,8 +44,8 @@ export class HintComponent extends BaseHintComponent implements OnInit {
     );
   }
 
-  ngOnInit(): void {
-    super.ngOnInit();
+  async ngOnInit(): Promise<void> {
+    await super.ngOnInit();
     this.emailFormControl.setValue(this.email);
   }
 
