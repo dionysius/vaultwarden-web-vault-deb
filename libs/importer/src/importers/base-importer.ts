@@ -11,6 +11,7 @@ import { FolderView } from "@bitwarden/common/vault/models/view/folder.view";
 import { LoginUriView } from "@bitwarden/common/vault/models/view/login-uri.view";
 import { LoginView } from "@bitwarden/common/vault/models/view/login.view";
 import { SecureNoteView } from "@bitwarden/common/vault/models/view/secure-note.view";
+import { normalizeExpiryYearFormat } from "@bitwarden/common/vault/utils";
 
 import { ImportResult } from "../models/import-result";
 
@@ -263,7 +264,8 @@ export abstract class BaseImporter {
 
     cipher.card.expMonth = expiryMatch.groups.month;
     const year: string = expiryMatch.groups.year;
-    cipher.card.expYear = year.length === 2 ? "20" + year : year;
+    cipher.card.expYear = normalizeExpiryYearFormat(year);
+
     return true;
   }
 

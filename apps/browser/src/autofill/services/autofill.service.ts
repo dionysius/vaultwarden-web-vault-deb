@@ -29,6 +29,7 @@ import { CipherRepromptType } from "@bitwarden/common/vault/enums/cipher-repromp
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { FieldView } from "@bitwarden/common/vault/models/view/field.view";
 import { IdentityView } from "@bitwarden/common/vault/models/view/identity.view";
+import { normalizeExpiryYearFormat } from "@bitwarden/common/vault/utils";
 
 import { BrowserApi } from "../../platform/browser/browser-api";
 import { ScriptInjectorService } from "../../platform/services/abstractions/script-injector.service";
@@ -1095,7 +1096,7 @@ export default class AutofillService implements AutofillServiceInterface {
         fillFields.expYear.maxLength === 4
       ) {
         if (expYear.length === 2) {
-          expYear = "20" + expYear;
+          expYear = normalizeExpiryYearFormat(expYear);
         }
       } else if (
         this.fieldAttrsContain(fillFields.expYear, "yy") ||
@@ -1121,7 +1122,7 @@ export default class AutofillService implements AutofillServiceInterface {
       let partYear: string = null;
       if (fullYear.length === 2) {
         partYear = fullYear;
-        fullYear = "20" + fullYear;
+        fullYear = normalizeExpiryYearFormat(fullYear);
       } else if (fullYear.length === 4) {
         partYear = fullYear.substr(2, 2);
       }

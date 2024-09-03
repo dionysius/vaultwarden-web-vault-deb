@@ -7,6 +7,7 @@ import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { CardView } from "@bitwarden/common/vault/models/view/card.view";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
+import { normalizeExpiryYearFormat } from "@bitwarden/common/vault/utils";
 import {
   CardComponent,
   FormFieldModule,
@@ -101,9 +102,7 @@ export class CardDetailsSectionComponent implements OnInit {
       .pipe(takeUntilDestroyed())
       .subscribe(({ cardholderName, number, brand, expMonth, expYear, code }) => {
         this.cipherFormContainer.patchCipher((cipher) => {
-          // The input[type="number"] is returning a number, convert it to a string
-          // An empty field returns null, avoid casting `"null"` to a string
-          const expirationYear = expYear !== null ? `${expYear}` : null;
+          const expirationYear = normalizeExpiryYearFormat(expYear);
 
           Object.assign(cipher.card, {
             cardholderName,

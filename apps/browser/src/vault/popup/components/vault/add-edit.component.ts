@@ -23,6 +23,7 @@ import { CollectionService } from "@bitwarden/common/vault/abstractions/collecti
 import { FolderService } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
 import { CipherType } from "@bitwarden/common/vault/enums";
 import { LoginUriView } from "@bitwarden/common/vault/models/view/login-uri.view";
+import { normalizeExpiryYearFormat } from "@bitwarden/common/vault/utils";
 import { DialogService } from "@bitwarden/components";
 import { PasswordRepromptService } from "@bitwarden/vault";
 
@@ -181,6 +182,11 @@ export class AddEditComponent extends BaseAddEditComponent implements OnInit {
     const fido2SessionData = await firstValueFrom(this.fido2PopoutSessionData$);
     const { isFido2Session, sessionId, userVerification } = fido2SessionData;
     const inFido2PopoutWindow = BrowserPopupUtils.inPopout(window) && isFido2Session;
+
+    // normalize card expiry year on save
+    if (this.cipher.type === this.cipherType.Card) {
+      this.cipher.card.expYear = normalizeExpiryYearFormat(this.cipher.card.expYear);
+    }
 
     // TODO: Revert to use fido2 user verification service once user verification for passkeys is approved for production.
     // PM-4577 - https://github.com/bitwarden/clients/pull/8746

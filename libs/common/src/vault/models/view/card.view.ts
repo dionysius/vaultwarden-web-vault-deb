@@ -2,6 +2,7 @@ import { Jsonify } from "type-fest";
 
 import { CardLinkedId as LinkedId } from "../../enums";
 import { linkedFieldOption } from "../../linked-field-option.decorator";
+import { normalizeExpiryYearFormat } from "../../utils";
 
 import { ItemView } from "./item.view";
 
@@ -65,17 +66,16 @@ export class CardView extends ItemView {
   }
 
   get expiration(): string {
-    if (!this.expMonth && !this.expYear) {
+    const normalizedYear = normalizeExpiryYearFormat(this.expYear);
+
+    if (!this.expMonth && !normalizedYear) {
       return null;
     }
 
     let exp = this.expMonth != null ? ("0" + this.expMonth).slice(-2) : "__";
-    exp += " / " + (this.expYear != null ? this.formatYear(this.expYear) : "____");
-    return exp;
-  }
+    exp += " / " + (normalizedYear || "____");
 
-  private formatYear(year: string): string {
-    return year.length === 2 ? "20" + year : year;
+    return exp;
   }
 
   static fromJSON(obj: Partial<Jsonify<CardView>>): CardView {
