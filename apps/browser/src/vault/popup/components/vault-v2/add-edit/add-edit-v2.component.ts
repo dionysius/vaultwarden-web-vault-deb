@@ -312,13 +312,13 @@ export class AddEditV2Component implements OnInit {
 
     switch (type) {
       case CipherType.Login:
-        return this.i18nService.t(partOne, this.i18nService.t("typeLogin"));
+        return this.i18nService.t(partOne, this.i18nService.t("typeLogin").toLocaleLowerCase());
       case CipherType.Card:
-        return this.i18nService.t(partOne, this.i18nService.t("typeCard"));
+        return this.i18nService.t(partOne, this.i18nService.t("typeCard").toLocaleLowerCase());
       case CipherType.Identity:
-        return this.i18nService.t(partOne, this.i18nService.t("typeIdentity"));
+        return this.i18nService.t(partOne, this.i18nService.t("typeIdentity").toLocaleLowerCase());
       case CipherType.SecureNote:
-        return this.i18nService.t(partOne, this.i18nService.t("note"));
+        return this.i18nService.t(partOne, this.i18nService.t("note").toLocaleLowerCase());
     }
   }
 }
