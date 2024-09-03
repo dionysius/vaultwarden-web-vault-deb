@@ -401,6 +401,8 @@ export default class MainBackground {
     const logoutCallback = async (logoutReason: LogoutReason, userId?: UserId) =>
       await this.logout(logoutReason, userId);
 
+    const runtimeNativeMessagingBackground = () => this.nativeMessagingBackground;
+
     const refreshAccessTokenErrorCallback = () => {
       // Send toast to popup
       this.messagingService.send("showToast", {
@@ -616,7 +618,9 @@ export default class MainBackground {
 
     this.i18nService = new I18nService(BrowserApi.getUILanguage(), this.globalStateProvider);
 
-    this.biometricsService = new BackgroundBrowserBiometricsService(this.nativeMessagingBackground);
+    this.biometricsService = new BackgroundBrowserBiometricsService(
+      runtimeNativeMessagingBackground,
+    );
 
     this.kdfConfigService = new KdfConfigService(this.stateProvider);
 
