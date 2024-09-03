@@ -27,6 +27,7 @@
     </p>
     <a
       *ngIf="cipher.hasPasswordHistory && isLogin"
+      bitLink
       class="tw-font-bold tw-no-underline"
       routerLink="/cipher-password-history"
       [queryParams]="{ cipherId: cipher.id }"

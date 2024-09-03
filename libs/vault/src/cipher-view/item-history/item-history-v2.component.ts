@@ -7,6 +7,7 @@ import { CipherType } from "@bitwarden/common/vault/enums";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import {
   CardComponent,
+  LinkModule,
   SectionComponent,
   SectionHeaderComponent,
   TypographyModule,
@@ -24,6 +25,7 @@ import {
     SectionComponent,
     SectionHeaderComponent,
     TypographyModule,
+    LinkModule,
   ],
 })
 export class ItemHistoryV2Component {
