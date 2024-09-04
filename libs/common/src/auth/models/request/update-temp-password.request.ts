@@ -1,4 +1,4 @@
-import { OrganizationUserResetPasswordRequest } from "../../../admin-console/abstractions/organization-user/requests";
+import { OrganizationUserResetPasswordRequest } from "@bitwarden/admin-console/common";
 
 export class UpdateTempPasswordRequest extends OrganizationUserResetPasswordRequest {
   masterPasswordHint: string;

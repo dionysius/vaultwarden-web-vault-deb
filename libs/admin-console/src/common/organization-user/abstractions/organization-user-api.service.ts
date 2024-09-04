@@ -1,4 +1,4 @@
-import { ListResponse } from "../../../models/response/list.response";
+import { ListResponse } from "@bitwarden/common/models/response/list.response";
 
 import {
   OrganizationUserAcceptInitRequest,
@@ -9,19 +9,19 @@ import {
   OrganizationUserResetPasswordEnrollmentRequest,
   OrganizationUserResetPasswordRequest,
   OrganizationUserUpdateRequest,
-} from "./requests";
+} from "../models/requests";
 import {
   OrganizationUserBulkPublicKeyResponse,
   OrganizationUserBulkResponse,
   OrganizationUserDetailsResponse,
   OrganizationUserResetPasswordDetailsResponse,
   OrganizationUserUserDetailsResponse,
-} from "./responses";
+} from "../models/responses";
 
 /**
  * Service for interacting with Organization Users via the API
  */
-export abstract class OrganizationUserService {
+export abstract class OrganizationUserApiService {
   /**
    * Retrieve a single organization user by Id
    * @param organizationId - Identifier for the user's organization

@@ -13,15 +13,17 @@ import {
   switchMap,
 } from "rxjs";
 
+import {
+  OrganizationUserApiService,
+  OrganizationUserConfirmRequest,
+  OrganizationUserUserDetailsResponse,
+} from "@bitwarden/admin-console/common";
 import { UserNamePipe } from "@bitwarden/angular/pipes/user-name.pipe";
 import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
 import { OrganizationManagementPreferencesService } from "@bitwarden/common/admin-console/abstractions/organization-management-preferences/organization-management-preferences.service";
-import { OrganizationUserService } from "@bitwarden/common/admin-console/abstractions/organization-user/organization-user.service";
-import { OrganizationUserConfirmRequest } from "@bitwarden/common/admin-console/abstractions/organization-user/requests";
-import { OrganizationUserUserDetailsResponse } from "@bitwarden/common/admin-console/abstractions/organization-user/responses";
 import { PolicyApiServiceAbstraction as PolicyApiService } from "@bitwarden/common/admin-console/abstractions/policy/policy-api.service.abstraction";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import {
@@ -116,7 +118,7 @@ export class MembersComponent extends BaseMembersComponent<OrganizationUserView>
     private syncService: SyncService,
     private organizationService: OrganizationService,
     private organizationApiService: OrganizationApiServiceAbstraction,
-    private organizationUserService: OrganizationUserService,
+    private organizationUserApiService: OrganizationUserApiService,
     private router: Router,
     private groupService: GroupService,
     private collectionService: CollectionService,
@@ -213,7 +215,7 @@ export class MembersComponent extends BaseMembersComponent<OrganizationUserView>
     let collectionsPromise: Promise<Map<string, string>>;
 
     // We don't need both groups and collections for the table, so only load one
-    const userPromise = this.organizationUserService.getAllUsers(this.organization.id, {
+    const userPromise = this.organizationUserApiService.getAllUsers(this.organization.id, {
       includeGroups: this.organization.useGroups,
       includeCollections: !this.organization.useGroups,
     });
@@ -270,19 +272,19 @@ export class MembersComponent extends BaseMembersComponent<OrganizationUserView>
   }
 
   removeUser(id: string): Promise<void> {
-    return this.organizationUserService.removeOrganizationUser(this.organization.id, id);
+    return this.organizationUserApiService.removeOrganizationUser(this.organization.id, id);
   }
 
   revokeUser(id: string): Promise<void> {
-    return this.organizationUserService.revokeOrganizationUser(this.organization.id, id);
+    return this.organizationUserApiService.revokeOrganizationUser(this.organization.id, id);
   }
 
   restoreUser(id: string): Promise<void> {
-    return this.organizationUserService.restoreOrganizationUser(this.organization.id, id);
+    return this.organizationUserApiService.restoreOrganizationUser(this.organization.id, id);
   }
 
   reinviteUser(id: string): Promise<void> {
-    return this.organizationUserService.postOrganizationUserReinvite(this.organization.id, id);
+    return this.organizationUserApiService.postOrganizationUserReinvite(this.organization.id, id);
   }
 
   async confirmUser(user: OrganizationUserView, publicKey: Uint8Array): Promise<void> {
@@ -290,7 +292,7 @@ export class MembersComponent extends BaseMembersComponent<OrganizationUserView>
     const key = await this.cryptoService.rsaEncrypt(orgKey.key, publicKey);
     const request = new OrganizationUserConfirmRequest();
     request.key = key.encryptedString;
-    await this.organizationUserService.postOrganizationUserConfirm(
+    await this.organizationUserApiService.postOrganizationUserConfirm(
       this.organization.id,
       user.id,
       request,
@@ -585,7 +587,7 @@ export class MembersComponent extends BaseMembersComponent<OrganizationUserView>
     }
 
     try {
-      const response = this.organizationUserService.postManyOrganizationUserReinvite(
+      const response = this.organizationUserApiService.postManyOrganizationUserReinvite(
         this.organization.id,
         filteredUsers.map((user) => user.id),
       );

@@ -71,7 +71,7 @@ export class OssServeConfigurator {
       this.serviceContainer.collectionService,
       this.serviceContainer.organizationService,
       this.serviceContainer.searchService,
-      this.serviceContainer.organizationUserService,
+      this.serviceContainer.organizationUserApiService,
       this.serviceContainer.apiService,
       this.serviceContainer.eventCollectionService,
     );
@@ -114,7 +114,7 @@ export class OssServeConfigurator {
     this.confirmCommand = new ConfirmCommand(
       this.serviceContainer.apiService,
       this.serviceContainer.cryptoService,
-      this.serviceContainer.organizationUserService,
+      this.serviceContainer.organizationUserApiService,
     );
     this.restoreCommand = new RestoreCommand(this.serviceContainer.cipherService);
     this.shareCommand = new ShareCommand(

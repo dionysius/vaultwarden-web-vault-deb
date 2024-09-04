@@ -5,6 +5,10 @@ import * as jsdom from "jsdom";
 import { firstValueFrom } from "rxjs";
 
 import {
+  OrganizationUserApiService,
+  DefaultOrganizationUserApiService,
+} from "@bitwarden/admin-console/common";
+import {
   InternalUserDecryptionOptionsServiceAbstraction,
   AuthRequestService,
   LoginStrategyService,
@@ -16,12 +20,10 @@ import {
 import { EventCollectionService as EventCollectionServiceAbstraction } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { EventUploadService as EventUploadServiceAbstraction } from "@bitwarden/common/abstractions/event/event-upload.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
-import { OrganizationUserService } from "@bitwarden/common/admin-console/abstractions/organization-user/organization-user.service";
 import { PolicyApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/policy/policy-api.service.abstraction";
 import { ProviderApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/provider/provider-api.service.abstraction";
 import { OrganizationApiService } from "@bitwarden/common/admin-console/services/organization/organization-api.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/services/organization/organization.service";
-import { OrganizationUserServiceImplementation } from "@bitwarden/common/admin-console/services/organization-user/organization-user.service.implementation";
 import { PolicyApiService } from "@bitwarden/common/admin-console/services/policy/policy-api.service";
 import { PolicyService } from "@bitwarden/common/admin-console/services/policy/policy.service";
 import { ProviderApiService } from "@bitwarden/common/admin-console/services/provider/provider-api.service";
@@ -184,7 +186,7 @@ export class ServiceContainer {
   environmentService: EnvironmentService;
   cipherService: CipherService;
   folderService: InternalFolderService;
-  organizationUserService: OrganizationUserService;
+  organizationUserApiService: OrganizationUserApiService;
   collectionService: CollectionService;
   vaultTimeoutService: VaultTimeoutService;
   masterPasswordService: InternalMasterPasswordServiceAbstraction;
@@ -492,7 +494,7 @@ export class ServiceContainer {
 
     this.providerService = new ProviderService(this.stateProvider);
 
-    this.organizationUserService = new OrganizationUserServiceImplementation(this.apiService);
+    this.organizationUserApiService = new DefaultOrganizationUserApiService(this.apiService);
 
     this.policyApiService = new PolicyApiService(this.policyService, this.apiService);
 

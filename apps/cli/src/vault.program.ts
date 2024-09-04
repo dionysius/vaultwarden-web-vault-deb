@@ -108,7 +108,7 @@ export class VaultProgram extends BaseProgram {
           this.serviceContainer.collectionService,
           this.serviceContainer.organizationService,
           this.serviceContainer.searchService,
-          this.serviceContainer.organizationUserService,
+          this.serviceContainer.organizationUserApiService,
           this.serviceContainer.apiService,
           this.serviceContainer.eventCollectionService,
         );
@@ -412,7 +412,7 @@ export class VaultProgram extends BaseProgram {
         const command = new ConfirmCommand(
           this.serviceContainer.apiService,
           this.serviceContainer.cryptoService,
-          this.serviceContainer.organizationUserService,
+          this.serviceContainer.organizationUserApiService,
         );
         const response = await command.run(object, id, cmd);
         this.processResponse(response);

@@ -1,8 +1,11 @@
-import { BaseResponse } from "../../../../models/response/base.response";
-import { KdfType } from "../../../../platform/enums";
-import { OrganizationUserStatusType, OrganizationUserType } from "../../../enums";
-import { PermissionsApi } from "../../../models/api/permissions.api";
-import { SelectionReadOnlyResponse } from "../../../models/response/selection-read-only.response";
+import {
+  OrganizationUserStatusType,
+  OrganizationUserType,
+} from "@bitwarden/common/admin-console/enums";
+import { PermissionsApi } from "@bitwarden/common/admin-console/models/api/permissions.api";
+import { SelectionReadOnlyResponse } from "@bitwarden/common/admin-console/models/response/selection-read-only.response";
+import { BaseResponse } from "@bitwarden/common/models/response/base.response";
+import { KdfType } from "@bitwarden/common/platform/enums";
 
 export class OrganizationUserResponse extends BaseResponse {
   id: string;

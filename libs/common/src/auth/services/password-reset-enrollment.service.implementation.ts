@@ -1,8 +1,11 @@
 import { firstValueFrom, map } from "rxjs";
 
+import {
+  OrganizationUserApiService,
+  OrganizationUserResetPasswordEnrollmentRequest,
+} from "@bitwarden/admin-console/common";
+
 import { OrganizationApiServiceAbstraction } from "../../admin-console/abstractions/organization/organization-api.service.abstraction";
-import { OrganizationUserService } from "../../admin-console/abstractions/organization-user/organization-user.service";
-import { OrganizationUserResetPasswordEnrollmentRequest } from "../../admin-console/abstractions/organization-user/requests";
 import { CryptoService } from "../../platform/abstractions/crypto.service";
 import { I18nService } from "../../platform/abstractions/i18n.service";
 import { Utils } from "../../platform/misc/utils";
@@ -17,7 +20,7 @@ export class PasswordResetEnrollmentServiceImplementation
     protected organizationApiService: OrganizationApiServiceAbstraction,
     protected accountService: AccountService,
     protected cryptoService: CryptoService,
-    protected organizationUserService: OrganizationUserService,
+    protected organizationUserApiService: OrganizationUserApiService,
     protected i18nService: I18nService,
   ) {}
 
@@ -49,7 +52,7 @@ export class PasswordResetEnrollmentServiceImplementation
     const resetRequest = new OrganizationUserResetPasswordEnrollmentRequest();
     resetRequest.resetPasswordKey = encryptedKey.encryptedString;
 
-    await this.organizationUserService.putOrganizationUserResetPasswordEnrollment(
+    await this.organizationUserApiService.putOrganizationUserResetPasswordEnrollment(
       organizationId,
       userId,
       resetRequest,

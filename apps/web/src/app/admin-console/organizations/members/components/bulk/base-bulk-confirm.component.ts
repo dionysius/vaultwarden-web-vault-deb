@@ -3,7 +3,7 @@ import { Directive, OnInit } from "@angular/core";
 import {
   OrganizationUserBulkPublicKeyResponse,
   OrganizationUserBulkResponse,
-} from "@bitwarden/common/admin-console/abstractions/organization-user/responses";
+} from "@bitwarden/admin-console/common";
 import { ProviderUserBulkPublicKeyResponse } from "@bitwarden/common/admin-console/models/response/provider/provider-user-bulk-public-key.response";
 import { ProviderUserBulkResponse } from "@bitwarden/common/admin-console/models/response/provider/provider-user-bulk.response";
 import { ListResponse } from "@bitwarden/common/models/response/list.response";

@@ -3,8 +3,8 @@ import { Component, Inject, OnDestroy } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 import { combineLatest, of, Subject, switchMap, takeUntil } from "rxjs";
 
+import { OrganizationUserApiService } from "@bitwarden/admin-console/common";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
-import { OrganizationUserService } from "@bitwarden/common/admin-console/abstractions/organization-user/organization-user.service";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
@@ -60,7 +60,7 @@ export class BulkCollectionsDialogComponent implements OnDestroy {
     private formBuilder: FormBuilder,
     private organizationService: OrganizationService,
     private groupService: GroupService,
-    private organizationUserService: OrganizationUserService,
+    private organizationUserApiService: OrganizationUserApiService,
     private platformUtilsService: PlatformUtilsService,
     private i18nService: I18nService,
     private collectionAdminService: CollectionAdminService,
@@ -79,7 +79,7 @@ export class BulkCollectionsDialogComponent implements OnDestroy {
     combineLatest([
       organization$,
       groups$,
-      this.organizationUserService.getAllUsers(this.params.organizationId),
+      this.organizationUserApiService.getAllUsers(this.params.organizationId),
     ])
       .pipe(takeUntil(this.destroy$))
       .subscribe(([organization, groups, users]) => {

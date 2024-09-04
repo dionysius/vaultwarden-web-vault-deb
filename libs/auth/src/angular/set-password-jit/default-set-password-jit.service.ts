@@ -1,10 +1,12 @@
 import { firstValueFrom } from "rxjs";
 
+import {
+  OrganizationUserApiService,
+  OrganizationUserResetPasswordEnrollmentRequest,
+} from "@bitwarden/admin-console/common";
 import { InternalUserDecryptionOptionsServiceAbstraction } from "@bitwarden/auth/common";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
-import { OrganizationUserService } from "@bitwarden/common/admin-console/abstractions/organization-user/organization-user.service";
-import { OrganizationUserResetPasswordEnrollmentRequest } from "@bitwarden/common/admin-console/abstractions/organization-user/requests";
 import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
 import { InternalMasterPasswordServiceAbstraction } from "@bitwarden/common/auth/abstractions/master-password.service.abstraction";
 import { ForceSetPasswordReason } from "@bitwarden/common/auth/models/domain/force-set-password-reason";
@@ -31,7 +33,7 @@ export class DefaultSetPasswordJitService implements SetPasswordJitService {
     protected kdfConfigService: KdfConfigService,
     protected masterPasswordService: InternalMasterPasswordServiceAbstraction,
     protected organizationApiService: OrganizationApiServiceAbstraction,
-    protected organizationUserService: OrganizationUserService,
+    protected organizationUserApiService: OrganizationUserApiService,
     protected userDecryptionOptionsService: InternalUserDecryptionOptionsServiceAbstraction,
   ) {}
 
@@ -161,7 +163,7 @@ export class DefaultSetPasswordJitService implements SetPasswordJitService {
     resetRequest.masterPasswordHash = masterKeyHash;
     resetRequest.resetPasswordKey = encryptedUserKey.encryptedString;
 
-    await this.organizationUserService.putOrganizationUserResetPasswordEnrollment(
+    await this.organizationUserApiService.putOrganizationUserResetPasswordEnrollment(
       orgId,
       userId,
       resetRequest,

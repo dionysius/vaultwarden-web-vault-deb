@@ -1,7 +1,7 @@
 import { DIALOG_DATA } from "@angular/cdk/dialog";
 import { Component, Inject } from "@angular/core";
 
-import { OrganizationUserService } from "@bitwarden/common/admin-console/abstractions/organization-user/organization-user.service";
+import { OrganizationUserApiService } from "@bitwarden/admin-console/common";
 import { OrganizationUserStatusType } from "@bitwarden/common/admin-console/enums";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { DialogService } from "@bitwarden/components";
@@ -32,7 +32,7 @@ export class BulkRestoreRevokeComponent {
 
   constructor(
     protected i18nService: I18nService,
-    private organizationUserService: OrganizationUserService,
+    private organizationUserApiService: OrganizationUserApiService,
     @Inject(DIALOG_DATA) protected data: BulkRestoreDialogParams,
   ) {
     this.isRevoking = data.isRevoking;
@@ -66,12 +66,12 @@ export class BulkRestoreRevokeComponent {
   protected async performBulkUserAction() {
     const userIds = this.users.map((user) => user.id);
     if (this.isRevoking) {
-      return await this.organizationUserService.revokeManyOrganizationUsers(
+      return await this.organizationUserApiService.revokeManyOrganizationUsers(
         this.organizationId,
         userIds,
       );
     } else {
-      return await this.organizationUserService.restoreManyOrganizationUsers(
+      return await this.organizationUserApiService.restoreManyOrganizationUsers(
         this.organizationId,
         userIds,
       );

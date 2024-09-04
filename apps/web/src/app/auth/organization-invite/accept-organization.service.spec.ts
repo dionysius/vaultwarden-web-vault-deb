@@ -1,9 +1,9 @@
 import { FakeGlobalStateProvider } from "@bitwarden/common/../spec/fake-state-provider";
 import { MockProxy, mock } from "jest-mock-extended";
 
+import { OrganizationUserApiService } from "@bitwarden/admin-console/common";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
-import { OrganizationUserService } from "@bitwarden/common/admin-console/abstractions/organization-user/organization-user.service";
 import { PolicyApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/policy/policy-api.service.abstraction";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
@@ -35,7 +35,7 @@ describe("AcceptOrganizationInviteService", () => {
   let policyService: MockProxy<PolicyService>;
   let logService: MockProxy<LogService>;
   let organizationApiService: MockProxy<OrganizationApiServiceAbstraction>;
-  let organizationUserService: MockProxy<OrganizationUserService>;
+  let organizationUserApiService: MockProxy<OrganizationUserApiService>;
   let i18nService: MockProxy<I18nService>;
   let globalStateProvider: FakeGlobalStateProvider;
   let globalState: FakeGlobalState<OrganizationInvite>;
@@ -49,7 +49,7 @@ describe("AcceptOrganizationInviteService", () => {
     policyService = mock();
     logService = mock();
     organizationApiService = mock();
-    organizationUserService = mock();
+    organizationUserApiService = mock();
     i18nService = mock();
     globalStateProvider = new FakeGlobalStateProvider();
     globalState = globalStateProvider.getFake(ORGANIZATION_INVITE);
@@ -63,7 +63,7 @@ describe("AcceptOrganizationInviteService", () => {
       policyService,
       logService,
       organizationApiService,
-      organizationUserService,
+      organizationUserApiService,
       i18nService,
       globalStateProvider,
     );
@@ -85,10 +85,10 @@ describe("AcceptOrganizationInviteService", () => {
       const result = await sut.validateAndAcceptInvite(invite);
 
       expect(result).toBe(true);
-      expect(organizationUserService.postOrganizationUserAcceptInit).toHaveBeenCalled();
+      expect(organizationUserApiService.postOrganizationUserAcceptInit).toHaveBeenCalled();
       expect(apiService.refreshIdentityToken).toHaveBeenCalled();
       expect(globalState.nextMock).toHaveBeenCalledWith(null);
-      expect(organizationUserService.postOrganizationUserAccept).not.toHaveBeenCalled();
+      expect(organizationUserApiService.postOrganizationUserAccept).not.toHaveBeenCalled();
       expect(authService.logOut).not.toHaveBeenCalled();
     });
 
@@ -133,10 +133,10 @@ describe("AcceptOrganizationInviteService", () => {
       const result = await sut.validateAndAcceptInvite(invite);
 
       expect(result).toBe(true);
-      expect(organizationUserService.postOrganizationUserAccept).toHaveBeenCalled();
+      expect(organizationUserApiService.postOrganizationUserAccept).toHaveBeenCalled();
       expect(apiService.refreshIdentityToken).toHaveBeenCalled();
       expect(globalState.nextMock).toHaveBeenCalledWith(null);
-      expect(organizationUserService.postOrganizationUserAcceptInit).not.toHaveBeenCalled();
+      expect(organizationUserApiService.postOrganizationUserAcceptInit).not.toHaveBeenCalled();
       expect(authService.logOut).not.toHaveBeenCalled();
     });
 
@@ -161,8 +161,8 @@ describe("AcceptOrganizationInviteService", () => {
       const result = await sut.validateAndAcceptInvite(invite);
 
       expect(result).toBe(true);
-      expect(organizationUserService.postOrganizationUserAccept).toHaveBeenCalled();
-      expect(organizationUserService.postOrganizationUserAcceptInit).not.toHaveBeenCalled();
+      expect(organizationUserApiService.postOrganizationUserAccept).toHaveBeenCalled();
+      expect(organizationUserApiService.postOrganizationUserAcceptInit).not.toHaveBeenCalled();
       expect(authService.logOut).not.toHaveBeenCalled();
     });
   });

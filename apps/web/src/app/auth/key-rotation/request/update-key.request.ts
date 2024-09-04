@@ -1,4 +1,4 @@
-import { OrganizationUserResetPasswordWithIdRequest } from "@bitwarden/common/admin-console/abstractions/organization-user/requests";
+import { OrganizationUserResetPasswordWithIdRequest } from "@bitwarden/admin-console/common";
 import { WebauthnRotateCredentialRequest } from "@bitwarden/common/auth/models/request/webauthn-rotate-credential.request";
 import { SendWithIdRequest } from "@bitwarden/common/src/tools/send/models/request/send-with-id.request";
 import { CipherWithIdRequest } from "@bitwarden/common/src/vault/models/request/cipher-with-id.request";

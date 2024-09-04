@@ -2,10 +2,10 @@ import { Component, OnDestroy, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { concatMap, Subject, takeUntil } from "rxjs";
 
+import { OrganizationUserApiService } from "@bitwarden/admin-console/common";
 import { UserNamePipe } from "@bitwarden/angular/pipes/user-name.pipe";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
-import { OrganizationUserService } from "@bitwarden/common/admin-console/abstractions/organization-user/organization-user.service";
 import { ProviderService } from "@bitwarden/common/admin-console/abstractions/provider.service";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { EventSystemUser } from "@bitwarden/common/enums";
@@ -49,7 +49,7 @@ export class EventsComponent extends BaseEventsComponent implements OnInit, OnDe
     logService: LogService,
     private userNamePipe: UserNamePipe,
     private organizationService: OrganizationService,
-    private organizationUserService: OrganizationUserService,
+    private organizationUserApiService: OrganizationUserApiService,
     private providerService: ProviderService,
     fileDownloadService: FileDownloadService,
     toastService: ToastService,
@@ -83,7 +83,7 @@ export class EventsComponent extends BaseEventsComponent implements OnInit, OnDe
   }
 
   async load() {
-    const response = await this.organizationUserService.getAllUsers(this.organizationId);
+    const response = await this.organizationUserApiService.getAllUsers(this.organizationId);
     response.data.forEach((u) => {
       const name = this.userNamePipe.transform(u);
       this.orgUsersUserIdMap.set(u.userId, { name: name, email: u.email });

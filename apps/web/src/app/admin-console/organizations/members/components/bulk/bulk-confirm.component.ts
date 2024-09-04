@@ -1,9 +1,11 @@
 import { DIALOG_DATA, DialogConfig } from "@angular/cdk/dialog";
 import { Component, Inject, OnInit } from "@angular/core";
 
+import {
+  OrganizationUserApiService,
+  OrganizationUserBulkConfirmRequest,
+} from "@bitwarden/admin-console/common";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
-import { OrganizationUserService } from "@bitwarden/common/admin-console/abstractions/organization-user/organization-user.service";
-import { OrganizationUserBulkConfirmRequest } from "@bitwarden/common/admin-console/abstractions/organization-user/requests";
 import { OrganizationUserStatusType } from "@bitwarden/common/admin-console/enums";
 import { CryptoService } from "@bitwarden/common/platform/abstractions/crypto.service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -40,7 +42,7 @@ export class BulkConfirmComponent implements OnInit {
     @Inject(DIALOG_DATA) protected data: BulkConfirmDialogData,
     protected cryptoService: CryptoService,
     protected apiService: ApiService,
-    private organizationUserService: OrganizationUserService,
+    private organizationUserApiService: OrganizationUserApiService,
     private i18nService: I18nService,
   ) {
     this.organizationId = data.organizationId;
@@ -104,7 +106,7 @@ export class BulkConfirmComponent implements OnInit {
   }
 
   protected async getPublicKeys() {
-    return await this.organizationUserService.postOrganizationUsersPublicKey(
+    return await this.organizationUserApiService.postOrganizationUsersPublicKey(
       this.organizationId,
       this.filteredUsers.map((user) => user.id),
     );
@@ -116,7 +118,7 @@ export class BulkConfirmComponent implements OnInit {
 
   protected async postConfirmRequest(userIdsWithKeys: any[]) {
     const request = new OrganizationUserBulkConfirmRequest(userIdsWithKeys);
-    return await this.organizationUserService.postOrganizationUserBulkConfirm(
+    return await this.organizationUserApiService.postOrganizationUserBulkConfirm(
       this.organizationId,
       request,
     );

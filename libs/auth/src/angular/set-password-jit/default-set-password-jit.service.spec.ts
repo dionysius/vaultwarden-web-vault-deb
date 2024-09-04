@@ -1,13 +1,13 @@
 import { MockProxy, mock } from "jest-mock-extended";
 import { BehaviorSubject, of } from "rxjs";
 
+import { OrganizationUserApiService } from "@bitwarden/admin-console/common";
 import {
   FakeUserDecryptionOptions as UserDecryptionOptions,
   InternalUserDecryptionOptionsServiceAbstraction,
 } from "@bitwarden/auth/common";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
-import { OrganizationUserService } from "@bitwarden/common/admin-console/abstractions/organization-user/organization-user.service";
 import { OrganizationKeysResponse } from "@bitwarden/common/admin-console/models/response/organization-keys.response";
 import { KdfConfigService } from "@bitwarden/common/auth/abstractions/kdf-config.service";
 import { InternalMasterPasswordServiceAbstraction } from "@bitwarden/common/auth/abstractions/master-password.service.abstraction";
@@ -37,7 +37,7 @@ describe("DefaultSetPasswordJitService", () => {
   let kdfConfigService: MockProxy<KdfConfigService>;
   let masterPasswordService: MockProxy<InternalMasterPasswordServiceAbstraction>;
   let organizationApiService: MockProxy<OrganizationApiServiceAbstraction>;
-  let organizationUserService: MockProxy<OrganizationUserService>;
+  let organizationUserApiService: MockProxy<OrganizationUserApiService>;
   let userDecryptionOptionsService: MockProxy<InternalUserDecryptionOptionsServiceAbstraction>;
 
   beforeEach(() => {
@@ -47,7 +47,7 @@ describe("DefaultSetPasswordJitService", () => {
     kdfConfigService = mock<KdfConfigService>();
     masterPasswordService = mock<InternalMasterPasswordServiceAbstraction>();
     organizationApiService = mock<OrganizationApiServiceAbstraction>();
-    organizationUserService = mock<OrganizationUserService>();
+    organizationUserApiService = mock<OrganizationUserApiService>();
     userDecryptionOptionsService = mock<InternalUserDecryptionOptionsServiceAbstraction>();
 
     sut = new DefaultSetPasswordJitService(
@@ -57,7 +57,7 @@ describe("DefaultSetPasswordJitService", () => {
       kdfConfigService,
       masterPasswordService,
       organizationApiService,
-      organizationUserService,
+      organizationUserApiService,
       userDecryptionOptionsService,
     );
   });
@@ -170,7 +170,7 @@ describe("DefaultSetPasswordJitService", () => {
       cryptoService.userKey$.mockReturnValue(of(userKey));
       cryptoService.rsaEncrypt.mockResolvedValue(userKeyEncString);
 
-      organizationUserService.putOrganizationUserResetPasswordEnrollment.mockResolvedValue(
+      organizationUserApiService.putOrganizationUserResetPasswordEnrollment.mockResolvedValue(
         undefined,
       );
     }
@@ -211,7 +211,9 @@ describe("DefaultSetPasswordJitService", () => {
       expect(apiService.setPassword).toHaveBeenCalledWith(setPasswordRequest);
       expect(organizationApiService.getKeys).toHaveBeenCalledWith(orgId);
       expect(cryptoService.rsaEncrypt).toHaveBeenCalledWith(userKey.key, orgPublicKey);
-      expect(organizationUserService.putOrganizationUserResetPasswordEnrollment).toHaveBeenCalled();
+      expect(
+        organizationUserApiService.putOrganizationUserResetPasswordEnrollment,
+      ).toHaveBeenCalled();
     });
 
     it("when handling reset password auto enroll, it should throw an error if organization keys are not found", async () => {
@@ -224,7 +226,7 @@ describe("DefaultSetPasswordJitService", () => {
       // Act and Assert
       await expect(sut.setPassword(credentials)).rejects.toThrow();
       expect(
-        organizationUserService.putOrganizationUserResetPasswordEnrollment,
+        organizationUserApiService.putOrganizationUserResetPasswordEnrollment,
       ).not.toHaveBeenCalled();
     });
   });

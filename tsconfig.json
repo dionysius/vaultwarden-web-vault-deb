@@ -15,7 +15,7 @@
     "baseUrl": ".",
     "resolveJsonModule": true,
     "paths": {
-      "@bitwarden/admin-console": ["./libs/admin-console/src"],
+      "@bitwarden/admin-console/common": ["./libs/admin-console/src/common"],
       "@bitwarden/angular/*": ["./libs/angular/src/*"],
       "@bitwarden/auth/common": ["./libs/auth/src/common"],
       "@bitwarden/auth/angular": ["./libs/auth/src/angular"],

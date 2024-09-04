@@ -5,7 +5,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@bitwarden/admin-console": ["../../libs/admin-console/src"],
+      "@bitwarden/admin-console/common": ["../../libs/admin-console/src/common"],
       "@bitwarden/angular/*": ["../../libs/angular/src/*"],
       "@bitwarden/auth": ["../../libs/auth/src"],
       "@bitwarden/billing": ["../../libs/billing/src"],

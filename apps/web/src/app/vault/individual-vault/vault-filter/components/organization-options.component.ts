@@ -1,11 +1,13 @@
 import { Component, Inject, OnDestroy, OnInit } from "@angular/core";
 import { combineLatest, map, Observable, Subject, takeUntil } from "rxjs";
 
+import {
+  OrganizationUserApiService,
+  OrganizationUserResetPasswordEnrollmentRequest,
+} from "@bitwarden/admin-console/common";
 import { UserDecryptionOptionsServiceAbstraction } from "@bitwarden/auth/common";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
-import { OrganizationUserService } from "@bitwarden/common/admin-console/abstractions/organization-user/organization-user.service";
-import { OrganizationUserResetPasswordEnrollmentRequest } from "@bitwarden/common/admin-console/abstractions/organization-user/requests";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
@@ -45,7 +47,7 @@ export class OrganizationOptionsComponent implements OnInit, OnDestroy {
     private policyService: PolicyService,
     private logService: LogService,
     private organizationApiService: OrganizationApiServiceAbstraction,
-    private organizationUserService: OrganizationUserService,
+    private organizationUserApiService: OrganizationUserApiService,
     private userDecryptionOptionsService: UserDecryptionOptionsServiceAbstraction,
     private dialogService: DialogService,
     private resetPasswordService: OrganizationUserResetPasswordService,
@@ -153,7 +155,7 @@ export class OrganizationOptionsComponent implements OnInit, OnDestroy {
         this.dialogService,
         { organization: org },
         this.resetPasswordService,
-        this.organizationUserService,
+        this.organizationUserApiService,
         this.platformUtilsService,
         this.i18nService,
         this.syncService,
@@ -166,11 +168,12 @@ export class OrganizationOptionsComponent implements OnInit, OnDestroy {
       const request = new OrganizationUserResetPasswordEnrollmentRequest();
       request.masterPasswordHash = "ignored";
       request.resetPasswordKey = null;
-      this.actionPromise = this.organizationUserService.putOrganizationUserResetPasswordEnrollment(
-        this.organization.id,
-        this.organization.userId,
-        request,
-      );
+      this.actionPromise =
+        this.organizationUserApiService.putOrganizationUserResetPasswordEnrollment(
+          this.organization.id,
+          this.organization.userId,
+          request,
+        );
       try {
         await this.actionPromise;
         this.platformUtilsService.showToast(

@@ -17,6 +17,7 @@ import {
   take,
 } from "rxjs";
 
+import { OrganizationUserApiService } from "@bitwarden/admin-console/common";
 import {
   LoginEmailServiceAbstraction,
   UserDecryptionOptions,
@@ -24,7 +25,6 @@ import {
 } from "@bitwarden/auth/common";
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
-import { OrganizationUserService } from "@bitwarden/common/admin-console/abstractions/organization-user/organization-user.service";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { DeviceTrustServiceAbstraction } from "@bitwarden/common/auth/abstractions/device-trust.service.abstraction";
 import { DevicesServiceAbstraction } from "@bitwarden/common/auth/abstractions/devices/devices.service.abstraction";
@@ -95,7 +95,7 @@ export class BaseLoginDecryptionOptionsComponent implements OnInit, OnDestroy {
     protected loginEmailService: LoginEmailServiceAbstraction,
     protected organizationApiService: OrganizationApiServiceAbstraction,
     protected cryptoService: CryptoService,
-    protected organizationUserService: OrganizationUserService,
+    protected organizationUserApiService: OrganizationUserApiService,
     protected apiService: ApiService,
     protected i18nService: I18nService,
     protected validationService: ValidationService,

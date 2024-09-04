@@ -1,13 +1,13 @@
 import { Injectable } from "@angular/core";
 
+import {
+  OrganizationUserApiService,
+  OrganizationUserResetPasswordRequest,
+  OrganizationUserResetPasswordWithIdRequest,
+} from "@bitwarden/admin-console/common";
 import { UserKeyRotationDataProvider } from "@bitwarden/auth/common";
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
-import { OrganizationUserService } from "@bitwarden/common/admin-console/abstractions/organization-user/organization-user.service";
-import {
-  OrganizationUserResetPasswordRequest,
-  OrganizationUserResetPasswordWithIdRequest,
-} from "@bitwarden/common/admin-console/abstractions/organization-user/requests";
 import {
   Argon2KdfConfig,
   KdfConfig,
@@ -33,7 +33,7 @@ export class OrganizationUserResetPasswordService
     private cryptoService: CryptoService,
     private encryptService: EncryptService,
     private organizationService: OrganizationService,
-    private organizationUserService: OrganizationUserService,
+    private organizationUserApiService: OrganizationUserApiService,
     private organizationApiService: OrganizationApiServiceAbstraction,
     private i18nService: I18nService,
   ) {}
@@ -76,7 +76,7 @@ export class OrganizationUserResetPasswordService
     orgUserId: string,
     orgId: string,
   ): Promise<void> {
-    const response = await this.organizationUserService.getOrganizationUserResetPasswordDetails(
+    const response = await this.organizationUserApiService.getOrganizationUserResetPasswordDetails(
       orgId,
       orgUserId,
     );
@@ -128,7 +128,11 @@ export class OrganizationUserResetPasswordService
     request.newMasterPasswordHash = newMasterKeyHash;
 
     // Change user's password
-    await this.organizationUserService.putOrganizationUserResetPassword(orgId, orgUserId, request);
+    await this.organizationUserApiService.putOrganizationUserResetPassword(
+      orgId,
+      orgUserId,
+      request,
+    );
   }
 
   /**

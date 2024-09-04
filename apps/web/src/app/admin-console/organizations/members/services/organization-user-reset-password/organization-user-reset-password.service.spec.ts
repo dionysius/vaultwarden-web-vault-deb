@@ -1,8 +1,10 @@
 import { mock, MockProxy } from "jest-mock-extended";
 
+import {
+  OrganizationUserApiService,
+  OrganizationUserResetPasswordDetailsResponse,
+} from "@bitwarden/admin-console/common";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
-import { OrganizationUserService } from "@bitwarden/common/admin-console/abstractions/organization-user/organization-user.service";
-import { OrganizationUserResetPasswordDetailsResponse } from "@bitwarden/common/admin-console/abstractions/organization-user/responses";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { OrganizationKeysResponse } from "@bitwarden/common/admin-console/models/response/organization-keys.response";
 import { OrganizationApiService } from "@bitwarden/common/admin-console/services/organization/organization-api.service";
@@ -24,7 +26,7 @@ describe("OrganizationUserResetPasswordService", () => {
   let cryptoService: MockProxy<CryptoService>;
   let encryptService: MockProxy<EncryptService>;
   let organizationService: MockProxy<OrganizationService>;
-  let organizationUserService: MockProxy<OrganizationUserService>;
+  let organizationUserApiService: MockProxy<OrganizationUserApiService>;
   let organizationApiService: MockProxy<OrganizationApiService>;
   let i18nService: MockProxy<I18nService>;
 
@@ -32,7 +34,7 @@ describe("OrganizationUserResetPasswordService", () => {
     cryptoService = mock<CryptoService>();
     encryptService = mock<EncryptService>();
     organizationService = mock<OrganizationService>();
-    organizationUserService = mock<OrganizationUserService>();
+    organizationUserApiService = mock<OrganizationUserApiService>();
     organizationApiService = mock<OrganizationApiService>();
     i18nService = mock<I18nService>();
 
@@ -40,7 +42,7 @@ describe("OrganizationUserResetPasswordService", () => {
       cryptoService,
       encryptService,
       organizationService,
-      organizationUserService,
+      organizationUserApiService,
       organizationApiService,
       i18nService,
     );
@@ -112,7 +114,7 @@ describe("OrganizationUserResetPasswordService", () => {
     const mockOrgId = "test-org-id";
 
     beforeEach(() => {
-      organizationUserService.getOrganizationUserResetPasswordDetails.mockResolvedValue(
+      organizationUserApiService.getOrganizationUserResetPasswordDetails.mockResolvedValue(
         new OrganizationUserResetPasswordDetailsResponse({
           kdf: KdfType.PBKDF2_SHA256,
           kdfIterations: 5000,
@@ -140,11 +142,11 @@ describe("OrganizationUserResetPasswordService", () => {
 
     it("should reset the user's master password", async () => {
       await sut.resetMasterPassword(mockNewMP, mockEmail, mockOrgUserId, mockOrgId);
-      expect(organizationUserService.putOrganizationUserResetPassword).toHaveBeenCalled();
+      expect(organizationUserApiService.putOrganizationUserResetPassword).toHaveBeenCalled();
     });
 
     it("should throw an error if the user details are null", async () => {
-      organizationUserService.getOrganizationUserResetPasswordDetails.mockResolvedValue(null);
+      organizationUserApiService.getOrganizationUserResetPasswordDetails.mockResolvedValue(null);
       await expect(
         sut.resetMasterPassword(mockNewMP, mockEmail, mockOrgUserId, mockOrgId),
       ).rejects.toThrow();

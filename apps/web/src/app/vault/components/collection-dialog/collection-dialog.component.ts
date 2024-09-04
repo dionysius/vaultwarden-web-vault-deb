@@ -13,9 +13,11 @@ import {
 } from "rxjs";
 import { first } from "rxjs/operators";
 
+import {
+  OrganizationUserApiService,
+  OrganizationUserUserDetailsResponse,
+} from "@bitwarden/admin-console/common";
 import { OrganizationService } from "@bitwarden/common/admin-console/abstractions/organization/organization.service.abstraction";
-import { OrganizationUserService } from "@bitwarden/common/admin-console/abstractions/organization-user/organization-user.service";
-import { OrganizationUserUserDetailsResponse } from "@bitwarden/common/admin-console/abstractions/organization-user/responses/organization-user.response";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
@@ -106,7 +108,7 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
     private collectionAdminService: CollectionAdminService,
     private i18nService: I18nService,
     private platformUtilsService: PlatformUtilsService,
-    private organizationUserService: OrganizationUserService,
+    private organizationUserApiService: OrganizationUserApiService,
     private dialogService: DialogService,
     private changeDetectorRef: ChangeDetectorRef,
   ) {
@@ -155,7 +157,7 @@ export class CollectionDialogComponent implements OnInit, OnDestroy {
       collections: this.collectionAdminService.getAll(orgId),
       groups: groups$,
       // Collection(s) needed to map readonlypermission for (potential) access selector disabled state
-      users: this.organizationUserService.getAllUsers(orgId, { includeCollections: true }),
+      users: this.organizationUserApiService.getAllUsers(orgId, { includeCollections: true }),
     })
       .pipe(takeUntil(this.formGroup.controls.selectedOrg.valueChanges), takeUntil(this.destroy$))
       .subscribe(({ organization, collections: allCollections, groups, users }) => {

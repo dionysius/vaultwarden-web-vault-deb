@@ -3,7 +3,7 @@
   "compilerOptions": {
     "resolveJsonModule": true,
     "paths": {
-      "@bitwarden/admin-console": ["../admin-console/src"],
+      "@bitwarden/admin-console/common": ["../admin-console/src/common"],
       "@bitwarden/angular/*": ["../angular/src/*"],
       "@bitwarden/auth/common": ["../auth/src/common"],
       "@bitwarden/auth/angular": ["../auth/src/angular"],

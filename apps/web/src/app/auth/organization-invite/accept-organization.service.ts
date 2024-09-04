@@ -1,13 +1,13 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, firstValueFrom, map } from "rxjs";
 
-import { ApiService } from "@bitwarden/common/abstractions/api.service";
-import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
-import { OrganizationUserService } from "@bitwarden/common/admin-console/abstractions/organization-user/organization-user.service";
 import {
+  OrganizationUserApiService,
   OrganizationUserAcceptRequest,
   OrganizationUserAcceptInitRequest,
-} from "@bitwarden/common/admin-console/abstractions/organization-user/requests";
+} from "@bitwarden/admin-console/common";
+import { ApiService } from "@bitwarden/common/abstractions/api.service";
+import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
 import { PolicyApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/policy/policy-api.service.abstraction";
 import { PolicyService } from "@bitwarden/common/admin-console/abstractions/policy/policy.service.abstraction";
 import { PolicyType } from "@bitwarden/common/admin-console/enums";
@@ -58,7 +58,7 @@ export class AcceptOrganizationInviteService {
     private readonly policyService: PolicyService,
     private readonly logService: LogService,
     private readonly organizationApiService: OrganizationApiServiceAbstraction,
-    private readonly organizationUserService: OrganizationUserService,
+    private readonly organizationUserApiService: OrganizationUserApiService,
     private readonly i18nService: I18nService,
     private readonly globalStateProvider: GlobalStateProvider,
   ) {
@@ -121,7 +121,7 @@ export class AcceptOrganizationInviteService {
 
   private async acceptAndInitOrganization(invite: OrganizationInvite): Promise<void> {
     await this.prepareAcceptAndInitRequest(invite).then((request) =>
-      this.organizationUserService.postOrganizationUserAcceptInit(
+      this.organizationUserApiService.postOrganizationUserAcceptInit(
         invite.organizationId,
         invite.organizationUserId,
         request,
@@ -156,7 +156,7 @@ export class AcceptOrganizationInviteService {
 
   private async accept(invite: OrganizationInvite): Promise<void> {
     await this.prepareAcceptRequest(invite).then((request) =>
-      this.organizationUserService.postOrganizationUserAccept(
+      this.organizationUserApiService.postOrganizationUserAccept(
         invite.organizationId,
         invite.organizationUserId,
         request,

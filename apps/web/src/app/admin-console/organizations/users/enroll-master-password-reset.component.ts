@@ -1,6 +1,8 @@
+import {
+  OrganizationUserApiService,
+  OrganizationUserResetPasswordEnrollmentRequest,
+} from "@bitwarden/admin-console/common";
 import { UserVerificationDialogComponent } from "@bitwarden/auth/angular";
-import { OrganizationUserService } from "@bitwarden/common/admin-console/abstractions/organization-user/organization-user.service";
-import { OrganizationUserResetPasswordEnrollmentRequest } from "@bitwarden/common/admin-console/abstractions/organization-user/requests";
 import { Organization } from "@bitwarden/common/admin-console/models/domain/organization";
 import { UserVerificationService } from "@bitwarden/common/auth/abstractions/user-verification/user-verification.service.abstraction";
 import { VerificationWithSecret } from "@bitwarden/common/auth/types/verification";
@@ -23,7 +25,7 @@ export class EnrollMasterPasswordReset {
     dialogService: DialogService,
     data: EnrollMasterPasswordResetData,
     resetPasswordService: OrganizationUserResetPasswordService,
-    organizationUserService: OrganizationUserService,
+    organizationUserApiService: OrganizationUserApiService,
     platformUtilsService: PlatformUtilsService,
     i18nService: I18nService,
     syncService: SyncService,
@@ -50,7 +52,7 @@ export class EnrollMasterPasswordReset {
 
           // Process the enrollment request, which is an endpoint that is
           // gated by a server-side check of the master password hash
-          await organizationUserService.putOrganizationUserResetPasswordEnrollment(
+          await organizationUserApiService.putOrganizationUserResetPasswordEnrollment(
             data.organization.id,
             data.organization.userId,
             request,

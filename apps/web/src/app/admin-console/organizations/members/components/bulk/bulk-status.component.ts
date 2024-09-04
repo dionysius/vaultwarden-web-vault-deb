@@ -1,7 +1,7 @@
 import { DIALOG_DATA, DialogConfig } from "@angular/cdk/dialog";
 import { Component, Inject, OnInit } from "@angular/core";
 
-import { OrganizationUserBulkResponse } from "@bitwarden/common/admin-console/abstractions/organization-user/responses";
+import { OrganizationUserBulkResponse } from "@bitwarden/admin-console/common";
 import {
   OrganizationUserStatusType,
   ProviderUserStatusType,
