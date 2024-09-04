@@ -70,8 +70,8 @@ export class CipherViewComponent implements OnInit, OnDestroy {
   }
 
   get hasCard() {
-    const { cardholderName, code, expMonth, expYear, brand, number } = this.cipher.card;
-    return cardholderName || code || expMonth || expYear || brand || number;
+    const { cardholderName, code, expMonth, expYear, number } = this.cipher.card;
+    return cardholderName || code || expMonth || expYear || number;
   }
 
   get hasLogin() {
