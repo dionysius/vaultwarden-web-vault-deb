@@ -7,7 +7,7 @@
   },
   "flags": {
     "showPasswordless": true,
-    "enableCipherKeyEncryption": true,
+    "enableCipherKeyEncryption": false,
     "accountSwitching": true
   }
 }
