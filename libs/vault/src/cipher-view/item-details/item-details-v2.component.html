@@ -5,6 +5,9 @@
   <bit-card>
     <bit-form-field
       [disableMargin]="!cipher.collectionIds?.length && !cipher.organizationId && !cipher.folderId"
+      [disableReadOnlyBorder]="
+        !cipher.collectionIds?.length && !cipher.organizationId && !cipher.folderId
+      "
     >
       <bit-label>
         {{ "itemName" | i18n }}

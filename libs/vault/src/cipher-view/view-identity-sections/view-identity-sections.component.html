@@ -3,7 +3,7 @@
     <h2 bitTypography="h6">{{ "personalDetails" | i18n }}</h2>
   </bit-section-header>
 
-  <bit-card class="[&_bit-form-field:last-of-type]:tw-mb-0">
+  <read-only-cipher-card>
     <bit-form-field *ngIf="cipher.identity.fullName">
       <bit-label>{{ "name" | i18n }}</bit-label>
       <input bitInput [value]="cipher.identity.fullName" readonly data-testid="name" />
@@ -43,7 +43,7 @@
         [valueLabel]="'company' | i18n"
       ></button>
     </bit-form-field>
-  </bit-card>
+  </read-only-cipher-card>
 </bit-section>
 
 <bit-section *ngIf="showIdentificationDetails">
@@ -51,7 +51,7 @@
     <h2 bitTypography="h6">{{ "identification" | i18n }}</h2>
   </bit-section-header>
 
-  <bit-card class="[&_bit-form-field:last-of-type]:tw-mb-0">
+  <read-only-cipher-card>
     <bit-form-field *ngIf="cipher.identity.ssn">
       <bit-label>{{ "ssn" | i18n }}</bit-label>
       <input bitInput type="password" [value]="cipher.identity.ssn" readonly data-testid="ssn" />
@@ -111,7 +111,7 @@
         [valueLabel]="'licenseNumber' | i18n"
       ></button>
     </bit-form-field>
-  </bit-card>
+  </read-only-cipher-card>
 </bit-section>
 
 <bit-section *ngIf="showContactDetails">
@@ -119,7 +119,7 @@
     <h2 bitTypography="h6">{{ "contactInfo" | i18n }}</h2>
   </bit-section-header>
 
-  <bit-card class="[&_bit-form-field:last-of-type]:tw-mb-0">
+  <read-only-cipher-card>
     <bit-form-field *ngIf="cipher.identity.email">
       <bit-label>{{ "email" | i18n }}</bit-label>
       <input bitInput [value]="cipher.identity.email" readonly data-testid="email" />
@@ -166,5 +166,5 @@
         [valueLabel]="'address' | i18n"
       ></button>
     </bit-form-field>
-  </bit-card>
+  </read-only-cipher-card>
 </bit-section>

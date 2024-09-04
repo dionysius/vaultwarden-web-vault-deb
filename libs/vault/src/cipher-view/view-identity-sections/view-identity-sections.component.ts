@@ -12,6 +12,8 @@ import {
   TypographyModule,
 } from "@bitwarden/components";
 
+import { ReadOnlyCipherCardComponent } from "../read-only-cipher-card/read-only-cipher-card.component";
+
 @Component({
   standalone: true,
   selector: "app-view-identity-sections",
@@ -25,6 +27,7 @@ import {
     TypographyModule,
     FormFieldModule,
     IconButtonModule,
+    ReadOnlyCipherCardComponent,
   ],
 })
 export class ViewIdentitySectionsComponent implements OnInit {

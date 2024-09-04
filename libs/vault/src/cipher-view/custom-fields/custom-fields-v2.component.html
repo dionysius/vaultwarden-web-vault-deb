@@ -8,7 +8,7 @@
       *ngFor="let field of fields; let last = last"
       [ngClass]="{ 'tw-mb-4': !last }"
     >
-      <bit-form-field *ngIf="field.type === fieldType.Text">
+      <bit-form-field *ngIf="field.type === fieldType.Text" [disableReadOnlyBorder]="last">
         <bit-label>{{ field.name }}</bit-label>
         <input readonly bitInput type="text" [value]="field.value" aria-readonly="true" />
         <button
@@ -21,7 +21,7 @@
           [appA11yTitle]="'copyValue' | i18n"
         ></button>
       </bit-form-field>
-      <bit-form-field *ngIf="field.type === fieldType.Hidden">
+      <bit-form-field *ngIf="field.type === fieldType.Hidden" [disableReadOnlyBorder]="last">
         <bit-label>{{ field.name }}</bit-label>
         <input readonly bitInput type="password" [value]="field.value" aria-readonly="true" />
         <button bitSuffix type="button" bitIconButton bitPasswordInputToggle></button>
@@ -45,7 +45,7 @@
         />
         <bit-label> {{ field.name }} </bit-label>
       </bit-form-control>
-      <bit-form-field *ngIf="field.type === fieldType.Linked">
+      <bit-form-field *ngIf="field.type === fieldType.Linked" [disableReadOnlyBorder]="last">
         <bit-label> {{ "linked" | i18n }}: {{ field.name }} </bit-label>
         <input
           readonly

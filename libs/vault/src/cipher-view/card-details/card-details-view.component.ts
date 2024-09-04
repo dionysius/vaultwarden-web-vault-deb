@@ -13,6 +13,8 @@ import {
   IconButtonModule,
 } from "@bitwarden/components";
 
+import { ReadOnlyCipherCardComponent } from "../read-only-cipher-card/read-only-cipher-card.component";
+
 @Component({
   selector: "app-card-details-view",
   templateUrl: "card-details-view.component.html",
@@ -26,6 +28,7 @@ import {
     TypographyModule,
     FormFieldModule,
     IconButtonModule,
+    ReadOnlyCipherCardComponent,
   ],
 })
 export class CardDetailsComponent {

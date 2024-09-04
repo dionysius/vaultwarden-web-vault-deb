@@ -1,6 +1,7 @@
 import { coerceBooleanProperty } from "@angular/cdk/coercion";
 import {
   AfterContentChecked,
+  booleanAttribute,
   Component,
   ContentChild,
   ContentChildren,
@@ -37,6 +38,13 @@ export class BitFormFieldComponent implements AfterContentChecked {
   get disableMargin() {
     return this._disableMargin;
   }
+
+  /**
+   * NOTE: Placeholder to match the API of the form-field component in the `ps/extension` branch,
+   * no functionality is implemented as of now.
+   */
+  @Input({ transform: booleanAttribute })
+  disableReadOnlyBorder = false;
 
   @HostBinding("class")
   get classList() {
