@@ -36,13 +36,13 @@
           <bit-menu #accountMenu>
             <div class="tw-flex tw-min-w-52 tw-max-w-72 tw-flex-col">
               <div
-                class="tw-flex tw-items-center tw-px-4 tw-py-1 tw-leading-tight tw-text-info"
+                class="tw-flex tw-items-center tw-px-4 tw-py-1 tw-leading-tight tw-text-muted"
                 appStopProp
               >
                 <dynamic-avatar [id]="account.id" [text]="account | userName"></dynamic-avatar>
                 <div class="tw-ml-2 tw-block tw-overflow-hidden tw-whitespace-nowrap">
                   <span>{{ "loggedInAs" | i18n }}</span>
-                  <small class="tw-block tw-overflow-hidden tw-whitespace-nowrap tw-text-muted">
+                  <small class="tw-block tw-overflow-hidden tw-whitespace-nowrap">
                     {{ account | userName }}
                   </small>
                 </div>
