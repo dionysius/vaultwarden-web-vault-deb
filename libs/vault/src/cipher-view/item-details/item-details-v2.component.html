@@ -25,7 +25,7 @@
     <ul
       [attr.aria-label]="'itemLocation' | i18n"
       *ngIf="cipher.collectionIds?.length || cipher.organizationId || cipher.folderId"
-      class="tw-mb-0"
+      class="tw-mb-0 tw-pl-0"
     >
       <li
         *ngIf="cipher.organizationId && organization"
@@ -50,7 +50,7 @@
         *ngIf="cipher.collectionIds && collections"
         [attr.aria-label]="'collection' | i18n"
       >
-        <ul data-testid="collections" [ngClass]="{ 'tw-mb-0': !cipher.folderId }">
+        <ul data-testid="collections" [ngClass]="{ 'tw-mb-0': !cipher.folderId }" class="tw-pl-0">
           <li
             *ngFor="let collection of collections; let last = last"
             class="tw-flex tw-items-center tw-list-none"
