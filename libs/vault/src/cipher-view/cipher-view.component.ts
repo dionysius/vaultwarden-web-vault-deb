@@ -8,10 +8,10 @@ import { Organization } from "@bitwarden/common/admin-console/models/domain/orga
 import { CollectionId } from "@bitwarden/common/types/guid";
 import { CollectionService } from "@bitwarden/common/vault/abstractions/collection.service";
 import { FolderService } from "@bitwarden/common/vault/abstractions/folder/folder.service.abstraction";
-import { CardView } from "@bitwarden/common/vault/models/view/card.view";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
 import { CollectionView } from "@bitwarden/common/vault/models/view/collection.view";
 import { FolderView } from "@bitwarden/common/vault/models/view/folder.view";
+import { isCardExpired } from "@bitwarden/common/vault/utils";
 import { SearchModule, CalloutModule } from "@bitwarden/components";
 
 import { AdditionalOptionsComponent } from "./additional-options/additional-options.component";
@@ -61,7 +61,7 @@ export class CipherViewComponent implements OnInit, OnDestroy {
   async ngOnInit() {
     await this.loadCipherData();
 
-    this.cardIsExpired = this.isCardExpiryInThePast();
+    this.cardIsExpired = isCardExpired(this.cipher.card);
   }
 
   ngOnDestroy(): void {
@@ -101,25 +101,5 @@ export class CipherViewComponent implements OnInit, OnDestroy {
         .getDecrypted$(this.cipher.folderId)
         .pipe(takeUntil(this.destroyed$));
     }
-  }
-
-  isCardExpiryInThePast() {
-    if (this.cipher.card) {
-      const { expMonth, expYear }: CardView = this.cipher.card;
-
-      if (expYear && expMonth) {
-        // `Date` months are zero-indexed
-        const parsedMonth = parseInt(expMonth) - 1;
-        const parsedYear = parseInt(expYear);
-
-        // First day of the next month minus one, to get last day of the card month
-        const cardExpiry = new Date(parsedYear, parsedMonth + 1, 0);
-        const now = new Date();
-
-        return cardExpiry < now;
-      }
-    }
-
-    return false;
   }
 }

@@ -1,3 +1,5 @@
+import { CardView } from "@bitwarden/common/vault/models/view/card.view";
+
 type NonZeroIntegers = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
 type Year = `${NonZeroIntegers}${NonZeroIntegers}${0 | NonZeroIntegers}${0 | NonZeroIntegers}`;
 
@@ -39,4 +41,43 @@ export function normalizeExpiryYearFormat(yearInput: string | number): Year | nu
   }
 
   return expirationYear as Year | null;
+}
+
+/**
+ * Takes a cipher card view and returns "true" if the month and year affirmativey indicate
+ * the card is expired.
+ *
+ * @export
+ * @param {CardView} cipherCard
+ * @return {*}  {boolean}
+ */
+export function isCardExpired(cipherCard: CardView): boolean {
+  if (cipherCard) {
+    const { expMonth = null, expYear = null } = cipherCard;
+
+    const now = new Date();
+    const normalizedYear = normalizeExpiryYearFormat(expYear);
+
+    // If the card year is before the current year, don't bother checking the month
+    if (normalizedYear && parseInt(normalizedYear) < now.getFullYear()) {
+      return true;
+    }
+
+    if (normalizedYear && expMonth) {
+      // `Date` months are zero-indexed
+      const parsedMonth =
+        parseInt(expMonth) - 1 ||
+        // Add a month floor of 0 to protect against an invalid low month value of "0"
+        0;
+
+      const parsedYear = parseInt(normalizedYear);
+
+      // First day of the next month minus one, to get last day of the card month
+      const cardExpiry = new Date(parsedYear, parsedMonth + 1, 0);
+
+      return cardExpiry < now;
+    }
+  }
+
+  return false;
 }

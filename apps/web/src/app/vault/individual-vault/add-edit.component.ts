@@ -24,7 +24,7 @@ import { FolderService } from "@bitwarden/common/vault/abstractions/folder/folde
 import { TotpService } from "@bitwarden/common/vault/abstractions/totp.service";
 import { CipherType } from "@bitwarden/common/vault/enums";
 import { Launchable } from "@bitwarden/common/vault/interfaces/launchable";
-import { CardView } from "@bitwarden/common/vault/models/view/card.view";
+import { isCardExpired } from "@bitwarden/common/vault/utils";
 import { DialogService } from "@bitwarden/components";
 import { PasswordGenerationServiceAbstraction } from "@bitwarden/generator-legacy";
 import { PasswordRepromptService } from "@bitwarden/vault";
@@ -123,7 +123,7 @@ export class AddEditComponent extends BaseAddEditComponent implements OnInit, On
       this.configService.getFeatureFlag$(FeatureFlag.ExtensionRefresh),
     );
 
-    this.cardIsExpired = extensionRefreshEnabled && this.isCardExpiryInThePast();
+    this.cardIsExpired = extensionRefreshEnabled && isCardExpired(this.cipher.card);
   }
 
   ngOnDestroy() {
@@ -233,24 +233,6 @@ export class AddEditComponent extends BaseAddEditComponent implements OnInit, On
 
   viewHistory() {
     this.viewingPasswordHistory = !this.viewingPasswordHistory;
-  }
-
-  isCardExpiryInThePast() {
-    if (this.cipher.card) {
-      const { expMonth, expYear }: CardView = this.cipher.card;
-
-      if (expYear && expMonth) {
-        // `Date` months are zero-indexed
-        const parsedMonth = parseInt(expMonth) - 1;
-        const parsedYear = parseInt(expYear);
-
-        // First day of the next month minus one, to get last day of the card month
-        const cardExpiry = new Date(parsedYear, parsedMonth + 1, 0);
-        const now = new Date();
-
-        return cardExpiry < now;
-      }
-    }
   }
 
   protected cleanUp() {
