@@ -6,7 +6,8 @@ import { SharedModule } from "../../shared";
 import { AddCreditDialogComponent } from "./add-credit-dialog.component";
 import { AdjustPaymentDialogV2Component } from "./adjust-payment-dialog/adjust-payment-dialog-v2.component";
 import { AdjustPaymentDialogComponent } from "./adjust-payment-dialog/adjust-payment-dialog.component";
-import { AdjustStorageComponent } from "./adjust-storage.component";
+import { AdjustStorageDialogV2Component } from "./adjust-storage-dialog/adjust-storage-dialog-v2.component";
+import { AdjustStorageDialogComponent } from "./adjust-storage-dialog/adjust-storage-dialog.component";
 import { BillingHistoryComponent } from "./billing-history.component";
 import { OffboardingSurveyComponent } from "./offboarding-survey.component";
 import { PaymentV2Component } from "./payment/payment-v2.component";
@@ -30,7 +31,7 @@ import { VerifyBankAccountComponent } from "./verify-bank-account/verify-bank-ac
   declarations: [
     AddCreditDialogComponent,
     AdjustPaymentDialogComponent,
-    AdjustStorageComponent,
+    AdjustStorageDialogComponent,
     BillingHistoryComponent,
     PaymentMethodComponent,
     SecretsManagerSubscribeComponent,
@@ -38,12 +39,13 @@ import { VerifyBankAccountComponent } from "./verify-bank-account/verify-bank-ac
     UpdateLicenseDialogComponent,
     OffboardingSurveyComponent,
     AdjustPaymentDialogV2Component,
+    AdjustStorageDialogV2Component,
   ],
   exports: [
     SharedModule,
     PaymentComponent,
     TaxInfoComponent,
-    AdjustStorageComponent,
+    AdjustStorageDialogComponent,
     BillingHistoryComponent,
     SecretsManagerSubscribeComponent,
     UpdateLicenseComponent,
