@@ -122,29 +122,9 @@ export class InlineMenuFieldQualificationService
     ...this.identityAddressAutoCompleteValues,
     ...this.identityCountryAutocompleteValues,
     ...this.identityPhoneNumberAutocompleteValues,
+    this.identityCompanyAutocompleteValue,
     this.identityPostalCodeAutocompleteValue,
   ]);
-  private identityFieldKeywords = [
-    ...new Set([
-      ...IdentityAutoFillConstants.TitleFieldNames,
-      ...IdentityAutoFillConstants.FullNameFieldNames,
-      ...IdentityAutoFillConstants.FirstnameFieldNames,
-      ...IdentityAutoFillConstants.MiddlenameFieldNames,
-      ...IdentityAutoFillConstants.LastnameFieldNames,
-      ...IdentityAutoFillConstants.AddressFieldNames,
-      ...IdentityAutoFillConstants.Address1FieldNames,
-      ...IdentityAutoFillConstants.Address2FieldNames,
-      ...IdentityAutoFillConstants.Address3FieldNames,
-      ...IdentityAutoFillConstants.PostalCodeFieldNames,
-      ...IdentityAutoFillConstants.CityFieldNames,
-      ...IdentityAutoFillConstants.StateFieldNames,
-      ...IdentityAutoFillConstants.CountryFieldNames,
-      ...IdentityAutoFillConstants.CompanyFieldNames,
-      ...IdentityAutoFillConstants.PhoneFieldNames,
-      ...IdentityAutoFillConstants.EmailFieldNames,
-      ...IdentityAutoFillConstants.UserNameFieldNames,
-    ]),
-  ];
   private inlineMenuFieldQualificationFlagSet = false;
 
   constructor() {
@@ -288,14 +268,7 @@ export class InlineMenuFieldQualificationService
       return false;
     }
 
-    if (this.fieldContainsAutocompleteValues(field, this.identityAutocompleteValues)) {
-      return true;
-    }
-
-    return (
-      !this.fieldContainsAutocompleteValues(field, this.autocompleteDisabledValues) &&
-      this.keywordsFoundInFieldData(field, this.identityFieldKeywords, false)
-    );
+    return this.fieldContainsAutocompleteValues(field, this.identityAutocompleteValues);
   }
 
   /**
