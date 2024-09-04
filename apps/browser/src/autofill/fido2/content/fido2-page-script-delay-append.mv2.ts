@@ -2,26 +2,35 @@
  * This script handles injection of the FIDO2 override page script into the document.
  * This is required for manifest v2, but will be removed when we migrate fully to manifest v3.
  */
-import { Fido2ContentScript } from "../enums/fido2-content-script.enum";
-
 (function (globalContext) {
   if (globalContext.document.contentType !== "text/html") {
     return;
   }
 
-  if (globalContext.document.readyState === "complete") {
-    loadScript();
+  const script = globalContext.document.createElement("script");
+  script.src = chrome.runtime.getURL("content/fido2-page-script.js");
+  script.addEventListener("load", removeScriptOnLoad);
+
+  // We are ensuring that the script injection is delayed in the event that we are loading
+  // within an iframe element. This prevents an issue with web mail clients that load content
+  // using ajax within iframes. In particular, Zimbra web mail client was observed to have this issue.
+  // @see https://github.com/bitwarden/clients/issues/9618
+  const delayScriptInjection =
+    globalContext.window.top !== globalContext.window &&
+    globalContext.document.readyState !== "complete";
+  if (delayScriptInjection) {
+    globalContext.document.addEventListener("DOMContentLoaded", injectScript);
   } else {
-    globalContext.addEventListener("DOMContentLoaded", loadScript);
+    injectScript();
   }
 
-  function loadScript() {
-    const script = globalContext.document.createElement("script");
-    script.src = chrome.runtime.getURL(Fido2ContentScript.PageScript);
-    script.addEventListener("load", () => script.remove());
-
+  function injectScript() {
     const scriptInsertionPoint =
       globalContext.document.head || globalContext.document.documentElement;
-    scriptInsertionPoint.insertBefore(script, scriptInsertionPoint.firstChild);
+    scriptInsertionPoint.prepend(script);
+  }
+
+  function removeScriptOnLoad() {
+    globalThis.setTimeout(() => script?.remove(), 5000);
   }
 })(globalThis);
