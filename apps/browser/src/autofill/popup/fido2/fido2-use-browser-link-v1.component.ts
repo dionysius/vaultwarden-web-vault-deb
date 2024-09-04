@@ -1,11 +1,8 @@
 import { animate, state, style, transition, trigger } from "@angular/animations";
-import { A11yModule } from "@angular/cdk/a11y";
-import { ConnectedPosition, CdkOverlayOrigin, CdkConnectedOverlay } from "@angular/cdk/overlay";
-import { CommonModule } from "@angular/common";
+import { ConnectedPosition } from "@angular/cdk/overlay";
 import { Component } from "@angular/core";
 import { firstValueFrom } from "rxjs";
 
-import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { DomainSettingsService } from "@bitwarden/common/autofill/services/domain-settings.service";
 import { NeverDomains } from "@bitwarden/common/models/domain/domain-service";
 import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
@@ -16,10 +13,8 @@ import { fido2PopoutSessionData$ } from "../../../vault/popup/utils/fido2-popout
 import { BrowserFido2UserInterfaceSession } from "../../fido2/services/browser-fido2-user-interface.service";
 
 @Component({
-  selector: "app-fido2-use-browser-link",
-  templateUrl: "fido2-use-browser-link.component.html",
-  standalone: true,
-  imports: [A11yModule, CdkConnectedOverlay, CdkOverlayOrigin, CommonModule, JslibModule],
+  selector: "app-fido2-use-browser-link-v1",
+  templateUrl: "fido2-use-browser-link-v1.component.html",
   animations: [
     trigger("transformPanel", [
       state(
@@ -41,7 +36,7 @@ import { BrowserFido2UserInterfaceSession } from "../../fido2/services/browser-f
     ]),
   ],
 })
-export class Fido2UseBrowserLinkComponent {
+export class Fido2UseBrowserLinkV1Component {
   showOverlay = false;
   isOpen = false;
   overlayPosition: ConnectedPosition[] = [

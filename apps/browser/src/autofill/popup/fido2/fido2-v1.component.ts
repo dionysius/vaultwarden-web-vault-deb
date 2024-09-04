@@ -1,6 +1,4 @@
-import { CommonModule } from "@angular/common";
 import { Component, OnDestroy, OnInit } from "@angular/core";
-import { FormsModule } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import {
   BehaviorSubject,
@@ -15,14 +13,13 @@ import {
   takeUntil,
 } from "rxjs";
 
-import { JslibModule } from "@bitwarden/angular/jslib.module";
 import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { AccountService } from "@bitwarden/common/auth/abstractions/account.service";
 import { DomainSettingsService } from "@bitwarden/common/autofill/services/domain-settings.service";
 import { LogService } from "@bitwarden/common/platform/abstractions/log.service";
 import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/platform-utils.service";
 import { CipherService } from "@bitwarden/common/vault/abstractions/cipher.service";
-import { SecureNoteType, CipherType } from "@bitwarden/common/vault/enums";
+import { CipherType, SecureNoteType } from "@bitwarden/common/vault/enums";
 import { CipherRepromptType } from "@bitwarden/common/vault/enums/cipher-reprompt-type";
 import { CardView } from "@bitwarden/common/vault/models/view/card.view";
 import { CipherView } from "@bitwarden/common/vault/models/view/cipher.view";
@@ -30,21 +27,10 @@ import { IdentityView } from "@bitwarden/common/vault/models/view/identity.view"
 import { LoginUriView } from "@bitwarden/common/vault/models/view/login-uri.view";
 import { LoginView } from "@bitwarden/common/vault/models/view/login.view";
 import { SecureNoteView } from "@bitwarden/common/vault/models/view/secure-note.view";
-import {
-  ButtonModule,
-  DialogService,
-  Icons,
-  ItemModule,
-  NoItemsModule,
-  SearchModule,
-  SectionComponent,
-  SectionHeaderComponent,
-} from "@bitwarden/components";
+import { DialogService } from "@bitwarden/components";
 import { PasswordRepromptService } from "@bitwarden/vault";
 
 import { ZonedMessageListenerService } from "../../../platform/browser/zoned-message-listener.service";
-import { PopupHeaderComponent } from "../../../platform/popup/layout/popup-header.component";
-import { PopupPageComponent } from "../../../platform/popup/layout/popup-page.component";
 import { VaultPopoutType } from "../../../vault/popup/utils/vault-popout-window";
 import { Fido2UserVerificationService } from "../../../vault/services/fido2-user-verification.service";
 import {
@@ -53,63 +39,37 @@ import {
   BrowserFido2MessageTypes,
 } from "../../fido2/services/browser-fido2-user-interface.service";
 
-import { Fido2CipherRowComponent } from "./fido2-cipher-row.component";
-import { Fido2UseBrowserLinkComponent } from "./fido2-use-browser-link.component";
-
-const PasskeyActions = {
-  Register: "register",
-  Authenticate: "authenticate",
-} as const;
-
-type PasskeyActionValue = (typeof PasskeyActions)[keyof typeof PasskeyActions];
-
 interface ViewData {
   message: BrowserFido2Message;
   fallbackSupported: boolean;
 }
 
 @Component({
-  selector: "app-fido2",
-  templateUrl: "fido2.component.html",
-  standalone: true,
-  imports: [
-    ButtonModule,
-    CommonModule,
-    Fido2CipherRowComponent,
-    Fido2UseBrowserLinkComponent,
-    FormsModule,
-    ItemModule,
-    JslibModule,
-    NoItemsModule,
-    PopupHeaderComponent,
-    PopupPageComponent,
-    SearchModule,
-    SectionComponent,
-    SectionHeaderComponent,
-  ],
+  selector: "app-fido2-v1",
+  templateUrl: "fido2-v1.component.html",
+  styleUrls: [],
 })
-export class Fido2Component implements OnInit, OnDestroy {
+export class Fido2V1Component implements OnInit, OnDestroy {
   private destroy$ = new Subject<void>();
-  private message$ = new BehaviorSubject<BrowserFido2Message>(null);
   private hasSearched = false;
-  protected BrowserFido2MessageTypes = BrowserFido2MessageTypes;
+
   protected cipher: CipherView;
-  protected ciphers?: CipherView[] = [];
-  protected data$: Observable<ViewData>;
-  protected displayedCiphers?: CipherView[] = [];
-  protected equivalentDomains: Set<string>;
-  protected equivalentDomainsURL: string;
-  protected hostname: string;
-  protected loading = false;
-  protected noResultsIcon = Icons.NoResults;
-  protected passkeyAction: PasskeyActionValue = PasskeyActions.Register;
-  protected PasskeyActions = PasskeyActions;
-  protected searchText: string;
   protected searchTypeSearch = false;
-  protected senderTabId?: string;
-  protected sessionId?: string;
-  protected showNewPasskeyButton: boolean = false;
+  protected searchPending = false;
+  protected searchText: string;
   protected url: string;
+  protected hostname: string;
+  protected data$: Observable<ViewData>;
+  protected sessionId?: string;
+  protected senderTabId?: string;
+  protected ciphers?: CipherView[] = [];
+  protected displayedCiphers?: CipherView[] = [];
+  protected loading = false;
+  protected subtitleText: string;
+  protected credentialText: string;
+  protected BrowserFido2MessageTypes = BrowserFido2MessageTypes;
+
+  private message$ = new BehaviorSubject<BrowserFido2Message>(null);
 
   constructor(
     private router: Router,
@@ -122,8 +82,8 @@ export class Fido2Component implements OnInit, OnDestroy {
     private dialogService: DialogService,
     private browserMessagingApi: ZonedMessageListenerService,
     private passwordRepromptService: PasswordRepromptService,
-    private accountService: AccountService,
     private fido2UserVerificationService: Fido2UserVerificationService,
+    private accountService: AccountService,
   ) {}
 
   ngOnInit() {
@@ -187,18 +147,15 @@ export class Fido2Component implements OnInit, OnDestroy {
             this.ciphers = (await this.cipherService.getAllDecrypted()).filter(
               (cipher) => cipher.type === CipherType.Login && !cipher.isDeleted,
             );
-
             this.displayedCiphers = this.ciphers.filter(
               (cipher) =>
                 cipher.login.matchesUri(this.url, equivalentDomains) &&
-                this.cipherHasNoOtherPasskeys(cipher, message.userHandle),
+                this.hasNoOtherPasskeys(cipher, message.userHandle),
             );
 
-            this.passkeyAction = PasskeyActions.Register;
-
-            // @TODO fix new cipher creation for other fido2 registration message types and remove `showNewPasskeyButton` from the template
-            this.showNewPasskeyButton = true;
-
+            if (this.displayedCiphers.length > 0) {
+              this.selectedPasskey(this.displayedCiphers[0]);
+            }
             break;
           }
 
@@ -215,11 +172,10 @@ export class Fido2Component implements OnInit, OnDestroy {
                 );
               }),
             );
-
             this.displayedCiphers = [...this.ciphers];
-
-            this.passkeyAction = PasskeyActions.Authenticate;
-
+            if (this.displayedCiphers.length > 0) {
+              this.selectedPasskey(this.displayedCiphers[0]);
+            }
             break;
           }
 
@@ -236,27 +192,26 @@ export class Fido2Component implements OnInit, OnDestroy {
                 );
               }),
             );
-
             this.displayedCiphers = [...this.ciphers];
 
-            this.passkeyAction = PasskeyActions.Register;
-
-            break;
-          }
-
-          case BrowserFido2MessageTypes.InformCredentialNotFoundRequest: {
-            this.passkeyAction = PasskeyActions.Authenticate;
-
+            if (this.displayedCiphers.length > 0) {
+              this.selectedPasskey(this.displayedCiphers[0]);
+            }
             break;
           }
         }
 
+        this.subtitleText =
+          this.displayedCiphers.length > 0
+            ? this.getCredentialSubTitleText(message.type)
+            : "noMatchingPasskeyLogin";
+
+        this.credentialText = this.getCredentialButtonText(message.type);
         return {
           message,
           fallbackSupported: "fallbackSupported" in message && message.fallbackSupported,
         };
       }),
-
       takeUntil(this.destroy$),
     );
 
@@ -270,7 +225,6 @@ export class Fido2Component implements OnInit, OnDestroy {
 
   protected async submit() {
     const data = this.message$.value;
-
     if (data?.type === BrowserFido2MessageTypes.PickCredentialRequest) {
       // TODO: Revert to use fido2 user verification service once user verification for passkeys is approved for production.
       // PM-4577 - https://github.com/bitwarden/clients/pull/8746
@@ -312,7 +266,6 @@ export class Fido2Component implements OnInit, OnDestroy {
 
   protected async saveNewLogin() {
     const data = this.message$.value;
-
     if (data?.type === BrowserFido2MessageTypes.ConfirmNewCredentialRequest) {
       const name = data.credentialName || data.rpId;
       // TODO: Revert to check for user verification once user verification for passkeys is approved for production.
@@ -331,47 +284,63 @@ export class Fido2Component implements OnInit, OnDestroy {
     this.loading = true;
   }
 
-  async handleCipherItemSelect(item: CipherView) {
-    this.cipher = item;
-
-    await this.submit();
+  getCredentialSubTitleText(messageType: string): string {
+    return messageType == BrowserFido2MessageTypes.ConfirmNewCredentialRequest
+      ? "chooseCipherForPasskeySave"
+      : "logInWithPasskeyQuestion";
   }
 
-  async addCipher() {
+  getCredentialButtonText(messageType: string): string {
+    return messageType == BrowserFido2MessageTypes.ConfirmNewCredentialRequest
+      ? "savePasskey"
+      : "confirm";
+  }
+
+  selectedPasskey(item: CipherView) {
+    this.cipher = item;
+  }
+
+  viewPasskey() {
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    this.router.navigate(["/view-cipher"], {
+      queryParams: {
+        cipherId: this.cipher.id,
+        uilocation: "popout",
+        senderTabId: this.senderTabId,
+        sessionId: this.sessionId,
+        singleActionPopout: `${VaultPopoutType.fido2Popout}_${this.sessionId}`,
+      },
+    });
+  }
+
+  addCipher() {
     const data = this.message$.value;
 
-    if (data?.type === BrowserFido2MessageTypes.ConfirmNewCredentialRequest) {
-      await this.router.navigate(["/add-cipher"], {
-        queryParams: {
-          type: CipherType.Login.toString(),
-          name: data.credentialName || data.rpId,
-          uri: this.url,
-          uilocation: "popout",
-          username: data.userName,
-          senderTabId: this.senderTabId,
-          sessionId: this.sessionId,
-          userVerification: data.userVerification,
-          singleActionPopout: `${VaultPopoutType.fido2Popout}_${this.sessionId}`,
-        },
-      });
+    if (data?.type !== BrowserFido2MessageTypes.ConfirmNewCredentialRequest) {
+      return;
     }
 
-    return;
-  }
-
-  async getEquivalentDomains() {
-    if (this.equivalentDomainsURL !== this.url) {
-      this.equivalentDomainsURL = this.url;
-      this.equivalentDomains = await firstValueFrom(
-        this.domainSettingsService.getUrlEquivalentDomains(this.url),
-      );
-    }
-
-    return this.equivalentDomains;
+    // FIXME: Verify that this floating promise is intentional. If it is, add an explanatory comment and ensure there is proper error handling.
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    this.router.navigate(["/add-cipher"], {
+      queryParams: {
+        name: data.credentialName || data.rpId,
+        uri: this.url,
+        type: CipherType.Login.toString(),
+        uilocation: "popout",
+        username: data.userName,
+        senderTabId: this.senderTabId,
+        sessionId: this.sessionId,
+        userVerification: data.userVerification,
+        singleActionPopout: `${VaultPopoutType.fido2Popout}_${this.sessionId}`,
+      },
+    });
   }
 
   protected async search() {
     this.hasSearched = await this.searchService.isSearchable(this.searchText);
+    this.searchPending = true;
     if (this.hasSearched) {
       this.displayedCiphers = await this.searchService.searchCiphers(
         this.searchText,
@@ -379,11 +348,15 @@ export class Fido2Component implements OnInit, OnDestroy {
         this.ciphers,
       );
     } else {
-      const equivalentDomains = await this.getEquivalentDomains();
+      const equivalentDomains = await firstValueFrom(
+        this.domainSettingsService.getUrlEquivalentDomains(this.url),
+      );
       this.displayedCiphers = this.ciphers.filter((cipher) =>
         cipher.login.matchesUri(this.url, equivalentDomains),
       );
     }
+    this.searchPending = false;
+    this.selectedPasskey(this.displayedCiphers[0]);
   }
 
   abort(fallback: boolean) {
@@ -460,7 +433,7 @@ export class Fido2Component implements OnInit, OnDestroy {
    * This methods returns true if a cipher either has no passkeys, or has a passkey matching with userHandle
    * @param userHandle
    */
-  private cipherHasNoOtherPasskeys(cipher: CipherView, userHandle: string): boolean {
+  private hasNoOtherPasskeys(cipher: CipherView, userHandle: string): boolean {
     if (cipher.login.fido2Credentials == null || cipher.login.fido2Credentials.length === 0) {
       return true;
     }
