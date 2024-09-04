@@ -1,23 +1,16 @@
 import { EncString } from "@bitwarden/common/platform/models/domain/enc-string";
 
-export type MemberAccessCollectionModel = {
-  id: string;
-  name: EncString;
+/**
+ * Details for the parents MemberAccessReport
+ */
+export type MemberAccessDetails = {
+  collectionId: string;
+  groupId: string;
+  groupName: string;
+  // Comes encrypted from the server
+  collectionName: EncString;
   itemCount: number;
-};
-
-export type MemberAccessGroupModel = {
-  id: string;
-  name: string;
-  itemCount: number;
-  collections: MemberAccessCollectionModel[];
-};
-
-export type MemberAccessReportModel = {
-  userName: string;
-  email: string;
-  twoFactorEnabled: boolean;
-  accountRecoveryEnabled: boolean;
-  collections: MemberAccessCollectionModel[];
-  groups: MemberAccessGroupModel[];
+  readOnly: boolean;
+  hidePasswords: boolean;
+  manage: boolean;
 };

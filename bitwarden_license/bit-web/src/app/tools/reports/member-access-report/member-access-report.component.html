@@ -32,7 +32,7 @@
         <div class="tw-flex tw-items-center">
           <bit-avatar size="small" [text]="r.name" class="tw-mr-3"></bit-avatar>
           <div class="tw-flex tw-flex-col">
-            <button type="button" bitLink>
+            <button type="button" bitLink (click)="edit(r)">
               {{ r.name }}
             </button>
 
