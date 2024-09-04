@@ -15,6 +15,7 @@ import {
   SectionComponent,
   SectionHeaderComponent,
   ToastService,
+  TypographyModule,
 } from "@bitwarden/components";
 import { PasswordRepromptService } from "@bitwarden/vault";
 
@@ -30,6 +31,7 @@ import { PasswordRepromptService } from "@bitwarden/vault";
     SectionHeaderComponent,
     MenuModule,
     IconButtonModule,
+    TypographyModule,
   ],
 })
 export class TrashListItemsContainerComponent {
