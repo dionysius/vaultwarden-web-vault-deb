@@ -1,5 +1,5 @@
 import { DIALOG_DATA, DialogConfig, DialogRef } from "@angular/cdk/dialog";
-import { Component, EventEmitter, Inject, NgZone, Output } from "@angular/core";
+import { Component, Inject, NgZone } from "@angular/core";
 import { FormControl, FormGroup } from "@angular/forms";
 
 import { ApiService } from "@bitwarden/common/abstractions/api.service";
@@ -33,7 +33,6 @@ interface Key {
   templateUrl: "two-factor-webauthn.component.html",
 })
 export class TwoFactorWebAuthnComponent extends TwoFactorBaseComponent {
-  @Output() onChangeStatus = new EventEmitter<boolean>();
   type = TwoFactorProviderType.WebAuthn;
   name: string;
   keys: Key[];
@@ -85,33 +84,32 @@ export class TwoFactorWebAuthnComponent extends TwoFactorBaseComponent {
       // Should never happen.
       return Promise.reject();
     }
+    return this.enable();
+  };
+
+  protected async enable() {
     const request = await this.buildRequestModel(UpdateTwoFactorWebAuthnRequest);
     request.deviceResponse = this.webAuthnResponse;
     request.id = this.keyIdAvailable;
     request.name = this.formGroup.value.name;
 
-    return this.enableWebAuth(request);
-  };
-
-  private enableWebAuth(request: any) {
-    return super.enable(async () => {
-      this.formPromise = this.apiService.putTwoFactorWebAuthn(request);
-      const response = await this.formPromise;
-      this.processResponse(response);
+    const response = await this.apiService.putTwoFactorWebAuthn(request);
+    this.processResponse(response);
+    this.toastService.showToast({
+      title: this.i18nService.t("success"),
+      message: this.i18nService.t("twoFactorProviderEnabled"),
+      variant: "success",
     });
+    this.onUpdated.emit(response.enabled);
   }
 
   disable = async () => {
-    await this.disableWebAuth();
+    await this.disableMethod();
     if (!this.enabled) {
-      this.onChangeStatus.emit(this.enabled);
+      this.onUpdated.emit(this.enabled);
       this.dialogRef.close();
     }
   };
-
-  private async disableWebAuth() {
-    return super.disable(this.formPromise);
-  }
 
   async remove(key: Key) {
     if (this.keysConfiguredCount <= 1 || key.removePromise != null) {
@@ -208,7 +206,7 @@ export class TwoFactorWebAuthnComponent extends TwoFactorBaseComponent {
       }
     }
     this.enabled = response.enabled;
-    this.onChangeStatus.emit(this.enabled);
+    this.onUpdated.emit(this.enabled);
   }
 
   static open(

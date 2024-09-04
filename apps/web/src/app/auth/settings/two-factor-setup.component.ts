@@ -220,7 +220,7 @@ export class TwoFactorSetupComponent implements OnInit, OnDestroy {
           this.dialogService,
           { data: result },
         );
-        this.twoFactorSetupSubscription = webAuthnComp.componentInstance.onChangeStatus
+        this.twoFactorSetupSubscription = webAuthnComp.componentInstance.onUpdated
           .pipe(first(), takeUntil(this.destroy$))
           .subscribe((enabled: boolean) => {
             webAuthnComp.close();
