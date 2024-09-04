@@ -1,13 +1,8 @@
 import { importProvidersFrom } from "@angular/core";
-import { FormBuilder, FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { action } from "@storybook/addon-actions";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { applicationConfig, Meta, moduleMetadata, StoryObj } from "@storybook/angular";
 
 import { JslibModule } from "@bitwarden/angular/jslib.module";
-import {
-  OrganizationUserStatusType,
-  OrganizationUserType,
-} from "@bitwarden/common/admin-console/enums";
 import {
   AvatarModule,
   BadgeModule,
@@ -21,10 +16,20 @@ import {
 
 import { PreloadedEnglishI18nModule } from "../../../../../core/tests";
 
-import { AccessSelectorComponent } from "./access-selector.component";
-import { AccessItemType, AccessItemView, CollectionPermission } from "./access-selector.models";
+import { AccessSelectorComponent, PermissionMode } from "./access-selector.component";
+import { AccessItemType, AccessItemValue, CollectionPermission } from "./access-selector.models";
+import { actionsData, itemsFactory } from "./storybook-utils";
 import { UserTypePipe } from "./user-type.pipe";
 
+/**
+ * The Access Selector is used to view and edit:
+ * - member and group access to collections
+ * - members assigned to groups
+ *
+ * It is highly configurable in order to display these relationships from each perspective. For example, you can
+ * manage member-group relationships from the perspective of a particular member (showing all their groups) or a
+ * particular group (showing all its members).
+ */
 export default {
   title: "Web/Organizations/Access Selector",
   decorators: [
@@ -49,65 +54,16 @@ export default {
       providers: [importProvidersFrom(PreloadedEnglishI18nModule)],
     }),
   ],
-  parameters: {},
-  argTypes: {
-    formObj: { table: { disable: true } },
-  },
 } as Meta;
 
-// TODO: This is a workaround since this story does weird things.
-type Story = StoryObj<any>;
-
-const actionsData = {
-  onValueChanged: action("onValueChanged"),
-  onSubmit: action("onSubmit"),
-};
-
-/**
- * Factory to help build semi-realistic looking items
- * @param n - The number of items to build
- * @param type - Which type to build
- */
-const itemsFactory = (n: number, type: AccessItemType) => {
-  return [...Array(n)].map((_: unknown, id: number) => {
-    const item: AccessItemView = {
-      id: id.toString(),
-      type: type,
-    } as AccessItemView;
-
-    switch (item.type) {
-      case AccessItemType.Collection:
-        item.labelName = item.listName = `Collection ${id}`;
-        item.id = item.id + "c";
-        item.parentGrouping = "Collection Parent Group " + ((id % 2) + 1);
-        break;
-      case AccessItemType.Group:
-        item.labelName = item.listName = `Group ${id}`;
-        item.id = item.id + "g";
-        break;
-      case AccessItemType.Member:
-        item.id = item.id + "m";
-        item.email = `member${id}@email.com`;
-        item.status = id % 3 == 0 ? 0 : 2;
-        item.labelName = item.status == 2 ? `Member ${id}` : item.email;
-        item.listName = item.status == 2 ? `${item.labelName} (${item.email})` : item.email;
-        item.role = id % 5;
-        break;
-    }
-
-    return item;
-  });
-};
+type Story = StoryObj<AccessSelectorComponent & { initialValue: AccessItemValue[] }>;
 
 const sampleMembers = itemsFactory(10, AccessItemType.Member);
 const sampleGroups = itemsFactory(6, AccessItemType.Group);
 
-// TODO: These renders are badly handled but storybook has made it more difficult to use multiple renders in a single story.
-const StandaloneAccessSelectorRender = (args: any) => ({
+const render: Story["render"] = (args) => ({
   props: {
-    items: [],
     valueChanged: actionsData.onValueChanged,
-    initialValue: [],
     ...args,
   },
   template: `
@@ -127,49 +83,8 @@ const StandaloneAccessSelectorRender = (args: any) => ({
   `,
 });
 
-const DialogAccessSelectorRender = (args: any) => ({
-  props: {
-    items: [],
-    valueChanged: actionsData.onValueChanged,
-    initialValue: [],
-    ...args,
-  },
-  template: `
-    <bit-dialog [dialogSize]="dialogSize" [disablePadding]="disablePadding">
-      <span bitDialogTitle>Access selector</span>
-      <span bitDialogContent>
-        <bit-access-selector
-          (ngModelChange)="valueChanged($event)"
-          [ngModel]="initialValue"
-          [items]="items"
-          [disabled]="disabled"
-          [columnHeader]="columnHeader"
-          [showGroupColumn]="showGroupColumn"
-          [selectorLabelText]="selectorLabelText"
-          [selectorHelpText]="selectorHelpText"
-          [emptySelectionText]="emptySelectionText"
-          [permissionMode]="permissionMode"
-          [showMemberRoles]="showMemberRoles"
-        ></bit-access-selector>
-      </span>
-      <ng-container bitDialogFooter>
-        <button bitButton buttonType="primary">Save</button>
-        <button bitButton buttonType="secondary">Cancel</button>
-        <button
-          class="tw-ml-auto"
-          bitIconButton="bwi-trash"
-          buttonType="danger"
-          size="default"
-          title="Delete"
-          aria-label="Delete"></button>
-      </ng-container>
-    </bit-dialog>
-  `,
-});
-
-const dialogAccessItems = itemsFactory(10, AccessItemType.Collection);
-
-const memberCollectionAccessItems = itemsFactory(3, AccessItemType.Collection).concat([
+const memberCollectionAccessItems = itemsFactory(5, AccessItemType.Collection).concat([
+  // These represent collection access via a group
   {
     id: "c1-group1",
     type: AccessItemType.Collection,
@@ -190,25 +105,25 @@ const memberCollectionAccessItems = itemsFactory(3, AccessItemType.Collection).c
   },
 ]);
 
-export const Dialog: Story = {
-  args: {
-    permissionMode: "edit",
-    showMemberRoles: false,
-    showGroupColumn: true,
-    columnHeader: "Collection",
-    selectorLabelText: "Select Collections",
-    selectorHelpText: "Some helper text describing what this does",
-    emptySelectionText: "No collections added",
-    disabled: false,
-    initialValue: [] as any[],
-    items: dialogAccessItems,
-  },
-  render: DialogAccessSelectorRender,
-};
+// Simulate the current user not having permission to change access to this collection
+// TODO: currently the member dialog duplicates the AccessItemValue.permission on the
+// AccessItemView.readonlyPermission, this will be refactored to reduce this duplication:
+// https://bitwarden.atlassian.net/browse/PM-11590
+memberCollectionAccessItems[4].readonly = true;
+memberCollectionAccessItems[4].readonlyPermission = CollectionPermission.Manage;
 
+/**
+ * Displays a member's collection access.
+ *
+ * This is currently used in the **Member dialog -> Collections tab**. Note that it includes collection access that the
+ * member has via a group.
+ *
+ * This is also used in the **Groups dialog -> Collections tab** to show a group's collection access and in this
+ * case the Group column is hidden.
+ */
 export const MemberCollectionAccess: Story = {
   args: {
-    permissionMode: "edit",
+    permissionMode: PermissionMode.Edit,
     showMemberRoles: false,
     showGroupColumn: true,
     columnHeader: "Collection",
@@ -216,22 +131,41 @@ export const MemberCollectionAccess: Story = {
     selectorHelpText: "Some helper text describing what this does",
     emptySelectionText: "No collections added",
     disabled: false,
-    initialValue: [],
+    initialValue: [
+      {
+        id: "4c",
+        type: AccessItemType.Collection,
+        permission: CollectionPermission.Manage,
+      },
+      {
+        id: "2c",
+        type: AccessItemType.Collection,
+        permission: CollectionPermission.Edit,
+      },
+    ],
     items: memberCollectionAccessItems,
   },
-  render: StandaloneAccessSelectorRender,
+  render,
 };
 
+/**
+ * Displays the groups a member is assigned to.
+ *
+ * This is currently used in the **Member dialog -> Groups tab**.
+ */
 export const MemberGroupAccess: Story = {
   args: {
-    permissionMode: "readonly",
+    permissionMode: PermissionMode.Hidden,
     showMemberRoles: false,
     columnHeader: "Groups",
     selectorLabelText: "Select Groups",
     selectorHelpText: "Some helper text describing what this does",
     emptySelectionText: "No groups added",
     disabled: false,
-    initialValue: [{ id: "3g" }, { id: "0g" }],
+    initialValue: [
+      { id: "3g", type: AccessItemType.Group },
+      { id: "0g", type: AccessItemType.Group },
+    ],
     items: itemsFactory(4, AccessItemType.Group).concat([
       {
         id: "admin",
@@ -241,27 +175,40 @@ export const MemberGroupAccess: Story = {
       },
     ]),
   },
-  render: StandaloneAccessSelectorRender,
+  render,
 };
 
+/**
+ * Displays the members assigned to a group.
+ *
+ * This is currently used in the **Group dialog -> Members tab**.
+ */
 export const GroupMembersAccess: Story = {
   args: {
-    permissionMode: "hidden",
+    permissionMode: PermissionMode.Hidden,
     showMemberRoles: true,
     columnHeader: "Members",
     selectorLabelText: "Select Members",
     selectorHelpText: "Some helper text describing what this does",
     emptySelectionText: "No members added",
     disabled: false,
-    initialValue: [{ id: "2m" }, { id: "0m" }],
+    initialValue: [
+      { id: "2m", type: AccessItemType.Member },
+      { id: "0m", type: AccessItemType.Member },
+    ],
     items: sampleMembers,
   },
-  render: StandaloneAccessSelectorRender,
+  render,
 };
 
+/**
+ * Displays the members and groups assigned to a collection.
+ *
+ * This is currently used in the **Collection dialog -> Access tab**.
+ */
 export const CollectionAccess: Story = {
   args: {
-    permissionMode: "edit",
+    permissionMode: PermissionMode.Edit,
     showMemberRoles: false,
     columnHeader: "Groups/Members",
     selectorLabelText: "Select groups and members",
@@ -270,68 +217,38 @@ export const CollectionAccess: Story = {
     emptySelectionText: "No members or groups added",
     disabled: false,
     initialValue: [
-      { id: "3g", permission: CollectionPermission.EditExceptPass },
-      { id: "0m", permission: CollectionPermission.View },
+      { id: "3g", type: AccessItemType.Group, permission: CollectionPermission.EditExceptPass },
+      { id: "0m", type: AccessItemType.Member, permission: CollectionPermission.View },
+      { id: "7m", type: AccessItemType.Member, permission: CollectionPermission.Manage },
     ],
-    items: sampleGroups.concat(sampleMembers).concat([
-      {
-        id: "admin-group",
-        type: AccessItemType.Group,
-        listName: "Admin Group",
-        labelName: "Admin Group",
-        readonly: true,
-      },
-      {
-        id: "admin-member",
-        type: AccessItemType.Member,
-        listName: "Admin Member (admin@email.com)",
-        labelName: "Admin Member",
-        status: OrganizationUserStatusType.Confirmed,
-        role: OrganizationUserType.Admin,
-        email: "admin@email.com",
-        readonly: true,
-      },
-    ]),
-  },
-  render: StandaloneAccessSelectorRender,
-};
-
-const fb = new FormBuilder();
-
-const ReactiveFormAccessSelectorRender = (args: any) => ({
-  props: {
-    items: [],
-    onSubmit: actionsData.onSubmit,
-    ...args,
-  },
-  template: `
-    <form [formGroup]="formObj" (ngSubmit)="onSubmit(formObj.controls.formItems.value)">
-      <bit-access-selector
-        formControlName="formItems"
-        [items]="items"
-        [columnHeader]="columnHeader"
-        [selectorLabelText]="selectorLabelText"
-        [selectorHelpText]="selectorHelpText"
-        [emptySelectionText]="emptySelectionText"
-        [permissionMode]="permissionMode"
-        [showMemberRoles]="showMemberRoles"
-      ></bit-access-selector>
-      <button type="submit" bitButton buttonType="primary" class="tw-mt-5">Submit</button>
-    </form>
-`,
-});
-
-export const ReactiveForm: Story = {
-  args: {
-    formObj: fb.group({ formItems: [[{ id: "1g" }]] }),
-    permissionMode: "edit",
-    showMemberRoles: false,
-    columnHeader: "Groups/Members",
-    selectorLabelText: "Select groups and members",
-    selectorHelpText:
-      "Permissions set for a member will replace permissions set by that member's group",
-    emptySelectionText: "No members or groups added",
     items: sampleGroups.concat(sampleMembers),
   },
-  render: ReactiveFormAccessSelectorRender,
+  render,
+};
+
+// TODO: currently the collection dialog duplicates the AccessItemValue.permission on the
+// AccessItemView.readonlyPermission, this will be refactored to reduce this duplication:
+// https://bitwarden.atlassian.net/browse/PM-11590
+const disabledMembers = itemsFactory(3, AccessItemType.Member);
+disabledMembers[1].readonlyPermission = CollectionPermission.Manage;
+disabledMembers[2].readonlyPermission = CollectionPermission.View;
+
+const disabledGroups = itemsFactory(2, AccessItemType.Group);
+disabledGroups[0].readonlyPermission = CollectionPermission.ViewExceptPass;
+
+/**
+ * Displays the members and groups assigned to a collection when the control is in a disabled state.
+ */
+export const DisabledCollectionAccess: Story = {
+  args: {
+    ...CollectionAccess.args,
+    disabled: true,
+    items: disabledGroups.concat(disabledMembers),
+    initialValue: [
+      { id: "1m", type: AccessItemType.Member, permission: CollectionPermission.Manage },
+      { id: "2m", type: AccessItemType.Member, permission: CollectionPermission.View },
+      { id: "0g", type: AccessItemType.Group, permission: CollectionPermission.ViewExceptPass },
+    ],
+  },
+  render,
 };
