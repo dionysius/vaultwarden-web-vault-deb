@@ -3,18 +3,6 @@ import { LogService } from "../abstractions/log.service";
 import { AbstractStorageService } from "../abstractions/storage.service";
 import { Utils } from "../misc/utils";
 
-// export const APP_ID_KEY = new KeyDefinition(APPLICATION_ID_DISK, "appId", {
-//   deserializer: (value: string) => value,
-//   cleanupDelayMs: 0,
-//   debug: {
-//     enableRetrievalLogging: true,
-//     enableUpdateLogging: true,
-//   },
-// });
-// export const ANONYMOUS_APP_ID_KEY = new KeyDefinition(APPLICATION_ID_DISK, "anonymousAppId", {
-//   deserializer: (value: string) => value,
-// });
-
 export const APP_ID_KEY = "global_applicationId_appId";
 export const ANONYMOUS_APP_ID_KEY = "global_applicationId_appId";
 
