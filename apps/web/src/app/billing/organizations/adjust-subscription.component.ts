@@ -1,6 +1,6 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
-import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
+import { Subject, takeUntil } from "rxjs";
 
 import { OrganizationApiServiceAbstraction } from "@bitwarden/common/admin-console/abstractions/organization/organization-api.service.abstraction";
 import { OrganizationSubscriptionUpdateRequest } from "@bitwarden/common/billing/models/request/organization-subscription-update.request";
@@ -11,13 +11,15 @@ import { ToastService } from "@bitwarden/components";
   selector: "app-adjust-subscription",
   templateUrl: "adjust-subscription.component.html",
 })
-export class AdjustSubscription {
+export class AdjustSubscription implements OnInit, OnDestroy {
   @Input() organizationId: string;
   @Input() maxAutoscaleSeats: number;
   @Input() currentSeatCount: number;
   @Input() seatPrice = 0;
   @Input() interval = "year";
   @Output() onAdjusted = new EventEmitter();
+
+  private destroy$ = new Subject<void>();
 
   adjustSubscriptionForm = this.formBuilder.group({
     newSeatCount: [0, [Validators.min(0)]],
@@ -30,30 +32,25 @@ export class AdjustSubscription {
     private organizationApiService: OrganizationApiServiceAbstraction,
     private formBuilder: FormBuilder,
     private toastService: ToastService,
-  ) {
+  ) {}
+
+  ngOnInit() {
+    this.adjustSubscriptionForm.valueChanges.pipe(takeUntil(this.destroy$)).subscribe((value) => {
+      const maxAutoscaleSeatsControl = this.adjustSubscriptionForm.controls.newMaxSeats;
+
+      if (value.limitSubscription) {
+        maxAutoscaleSeatsControl.setValidators([Validators.min(value.newSeatCount)]);
+        maxAutoscaleSeatsControl.enable({ emitEvent: false });
+      } else {
+        maxAutoscaleSeatsControl.disable({ emitEvent: false });
+      }
+    });
+
     this.adjustSubscriptionForm.patchValue({
       newSeatCount: this.currentSeatCount,
-      limitSubscription: this.maxAutoscaleSeats != null,
       newMaxSeats: this.maxAutoscaleSeats,
+      limitSubscription: this.maxAutoscaleSeats != null,
     });
-    this.adjustSubscriptionForm
-      .get("limitSubscription")
-      .valueChanges.pipe(takeUntilDestroyed())
-      .subscribe((value: boolean) => {
-        if (value) {
-          this.adjustSubscriptionForm
-            .get("newMaxSeats")
-            .addValidators([
-              Validators.min(
-                this.adjustSubscriptionForm.value.newSeatCount == null
-                  ? 1
-                  : this.adjustSubscriptionForm.value.newSeatCount,
-              ),
-              Validators.required,
-            ]);
-        }
-        this.adjustSubscriptionForm.get("newMaxSeats").updateValueAndValidity();
-      });
   }
 
   submit = async () => {
@@ -98,5 +95,10 @@ export class AdjustSubscription {
 
   get limitSubscription(): boolean {
     return this.adjustSubscriptionForm.value.limitSubscription;
+  }
+
+  ngOnDestroy() {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 }
