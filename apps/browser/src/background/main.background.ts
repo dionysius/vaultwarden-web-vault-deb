@@ -652,7 +652,7 @@ export default class MainBackground {
       this.kdfConfigService,
     );
 
-    this.appIdService = new AppIdService(this.globalStateProvider);
+    this.appIdService = new AppIdService(this.storageService, this.logService);
 
     this.userDecryptionOptionsService = new UserDecryptionOptionsService(this.stateProvider);
     this.organizationService = new OrganizationService(this.stateProvider);
