@@ -69,7 +69,7 @@
   <form [formGroup]="licenseForm" [bitSubmit]="submit">
     <bit-form-field>
       <bit-label>{{ "licenseFile" | i18n }}</bit-label>
-      <div>
+      <div class="tw-pt-2 tw-pb-1">
         <button bitButton type="button" buttonType="secondary" (click)="fileSelector.click()">
           {{ "chooseFile" | i18n }}
         </button>
