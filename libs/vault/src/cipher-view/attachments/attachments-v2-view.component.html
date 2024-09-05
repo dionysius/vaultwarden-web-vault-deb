@@ -5,7 +5,7 @@
   <bit-item-group>
     <bit-item *ngFor="let attachment of cipher.attachments">
       <bit-item-content>
-        <span data-testid="file-name">{{ attachment.fileName }}</span>
+        <span data-testid="file-name" [title]="attachment.fileName">{{ attachment.fileName }}</span>
         <span slot="secondary" data-testid="file-size">{{ attachment.sizeName }}</span>
       </bit-item-content>
       <ng-container slot="end">
