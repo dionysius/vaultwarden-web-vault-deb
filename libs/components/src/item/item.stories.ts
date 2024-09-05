@@ -1,12 +1,17 @@
 import { ScrollingModule } from "@angular/cdk/scrolling";
 import { CommonModule } from "@angular/common";
+import { RouterTestingModule } from "@angular/router/testing";
 import { Meta, StoryObj, componentWrapperDecorator, moduleMetadata } from "@storybook/angular";
+
+import { I18nService } from "@bitwarden/common/platform/abstractions/i18n.service";
 
 import { A11yGridDirective } from "../a11y/a11y-grid.directive";
 import { AvatarModule } from "../avatar";
 import { BadgeModule } from "../badge";
 import { IconButtonModule } from "../icon-button";
+import { LayoutComponent } from "../layout";
 import { TypographyModule } from "../typography";
+import { I18nMockService } from "../utils/i18n-mock.service";
 
 import { ItemActionComponent } from "./item-action.component";
 import { ItemContentComponent } from "./item-content.component";
@@ -29,6 +34,21 @@ export default {
         ItemContentComponent,
         A11yGridDirective,
         ScrollingModule,
+        LayoutComponent,
+        RouterTestingModule,
+      ],
+      providers: [
+        {
+          provide: I18nService,
+          useFactory: () => {
+            return new I18nMockService({
+              toggleSideNavigation: "Toggle side navigation",
+              skipToContent: "Skip to content",
+              submenu: "submenu",
+              toggleCollapse: "toggle collapse",
+            });
+          },
+        },
       ],
     }),
     componentWrapperDecorator((story) => `<div class="tw-bg-background-alt tw-p-2">${story}</div>`),
@@ -330,6 +350,35 @@ export const VirtualScrolling: Story = {
           </bit-item>
         </bit-item-group>
       </cdk-virtual-scroll-viewport>
+    `,
+  }),
+};
+
+export const WithoutBorderRadius: Story = {
+  render: (args) => ({
+    props: args,
+    template: /*html*/ `
+      <bit-layout>
+      <bit-item>
+        <button bit-item-content>
+          <i slot="start" class="bwi bwi-globe tw-text-3xl tw-text-muted" aria-hidden="true"></i>
+          Foo
+          <span slot="secondary">Bar</span>
+        </button>
+
+        <ng-container slot="end">
+          <bit-item-action>
+            <button type="button" bitBadge variant="primary">Auto-fill</button>
+          </bit-item-action>
+          <bit-item-action>
+            <button type="button" bitIconButton="bwi-clone"></button>
+          </bit-item-action>
+          <bit-item-action>
+            <button type="button" bitIconButton="bwi-ellipsis-v"></button>
+          </bit-item-action>
+        </ng-container>
+      </bit-item>
+    </bit-layout>
     `,
   }),
 };
