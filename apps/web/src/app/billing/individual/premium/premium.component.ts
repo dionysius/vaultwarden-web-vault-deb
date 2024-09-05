@@ -13,7 +13,7 @@ import { PlatformUtilsService } from "@bitwarden/common/platform/abstractions/pl
 import { SyncService } from "@bitwarden/common/vault/abstractions/sync/sync.service.abstraction";
 import { ToastService } from "@bitwarden/components";
 
-import { PaymentComponent, TaxInfoComponent } from "../shared";
+import { PaymentComponent, TaxInfoComponent } from "../../shared";
 
 @Component({
   templateUrl: "premium.component.html",
