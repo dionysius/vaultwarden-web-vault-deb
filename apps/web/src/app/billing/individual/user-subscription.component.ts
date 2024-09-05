@@ -40,9 +40,13 @@ export class UserSubscriptionComponent implements OnInit {
   sub: SubscriptionResponse;
   selfHosted = false;
   cloudWebVaultUrl: string;
+  enableTimeThreshold: boolean;
 
   cancelPromise: Promise<any>;
   reinstatePromise: Promise<any>;
+  protected enableTimeThreshold$ = this.configService.getFeatureFlag$(
+    FeatureFlag.EnableTimeThreshold,
+  );
 
   protected deprecateStripeSourcesAPI$ = this.configService.getFeatureFlag$(
     FeatureFlag.AC2476_DeprecateStripeSourcesAPI,
@@ -67,6 +71,7 @@ export class UserSubscriptionComponent implements OnInit {
   async ngOnInit() {
     this.cloudWebVaultUrl = await firstValueFrom(this.environmentService.cloudWebVaultUrl$);
     await this.load();
+    this.enableTimeThreshold = await firstValueFrom(this.enableTimeThreshold$);
     this.firstLoaded = true;
   }
 
