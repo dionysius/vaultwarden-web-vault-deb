@@ -21,12 +21,29 @@ describe("InlineMenuFieldQualificationService", () => {
   });
 
   describe("isFieldForLoginForm", () => {
+    it("disqualifies totp fields", () => {
+      const field = mock<AutofillField>({
+        type: "text",
+        autoCompleteType: "one-time-code",
+        htmlName: "totp",
+        htmlID: "totp",
+        placeholder: "totp",
+      });
+
+      expect(inlineMenuFieldQualificationService.isFieldForLoginForm(field, pageDetails)).toBe(
+        false,
+      );
+    });
+
     describe("qualifying a password field for a login form", () => {
       describe("an invalid password field", () => {
         it("has a `new-password` autoCompleteType", () => {
           const field = mock<AutofillField>({
             type: "password",
             autoCompleteType: "new-password",
+            htmlName: "input-password",
+            htmlID: "input-password",
+            placeholder: "input-password",
           });
 
           expect(inlineMenuFieldQualificationService.isFieldForLoginForm(field, pageDetails)).toBe(
@@ -39,6 +56,8 @@ describe("InlineMenuFieldQualificationService", () => {
             type: "password",
             placeholder: "create account password",
             autoCompleteType: "",
+            htmlName: "input-password",
+            htmlID: "input-password",
           });
 
           expect(inlineMenuFieldQualificationService.isFieldForLoginForm(field, pageDetails)).toBe(

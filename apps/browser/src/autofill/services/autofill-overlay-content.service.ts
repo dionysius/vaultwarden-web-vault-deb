@@ -87,6 +87,11 @@ export class AutofillOverlayContentService implements AutofillOverlayContentServ
     destroyAutofillInlineMenuListeners: () => this.destroy(),
     getFormFieldDataForNotification: () => this.handleGetFormFieldDataForNotificationMessage(),
   };
+  private readonly loginFieldQualifiers: Record<string, CallableFunction> = {
+    [AutofillFieldQualifier.username]: this.inlineMenuFieldQualificationService.isUsernameField,
+    [AutofillFieldQualifier.password]:
+      this.inlineMenuFieldQualificationService.isCurrentPasswordField,
+  };
   private readonly cardFieldQualifiers: Record<string, CallableFunction> = {
     [AutofillFieldQualifier.cardholderName]:
       this.inlineMenuFieldQualificationService.isFieldForCardholderName,
@@ -781,12 +786,14 @@ export class AutofillOverlayContentService implements AutofillOverlayContentServ
    * @param autofillFieldData - Autofill field data captured from the form field element.
    */
   private qualifyUserFilledLoginField(autofillFieldData: AutofillField) {
-    if (autofillFieldData.type === "password") {
-      autofillFieldData.fieldQualifier = AutofillFieldQualifier.password;
-      return;
+    for (const [fieldQualifier, fieldQualifierFunction] of Object.entries(
+      this.loginFieldQualifiers,
+    )) {
+      if (fieldQualifierFunction(autofillFieldData)) {
+        autofillFieldData.fieldQualifier = fieldQualifier as AutofillFieldQualifierType;
+        return;
+      }
     }
-
-    autofillFieldData.fieldQualifier = AutofillFieldQualifier.username;
   }
 
   /**
